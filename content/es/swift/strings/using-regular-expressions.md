@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:12.385484-07:00
-description: "Las expresiones regulares, o regex, son secuencias de caracteres que\
-  \ forman un patr\xF3n de b\xFAsqueda, a menudo utilizadas para tareas de coincidencia\
-  \ o\u2026"
+description: "C\xF3mo: El soporte nativo de Swift para regex utiliza la clase `NSRegularExpression`,\
+  \ junto con los m\xE9todos de rango y reemplazo de la clase String. A\u2026"
 lastmod: '2024-03-13T22:44:59.406856-06:00'
 model: gpt-4-0125-preview
-summary: "Las expresiones regulares, o regex, son secuencias de caracteres que forman\
-  \ un patr\xF3n de b\xFAsqueda, a menudo utilizadas para tareas de coincidencia o\
-  \ manipulaci\xF3n de cadenas."
+summary: "El soporte nativo de Swift para regex utiliza la clase `NSRegularExpression`,\
+  \ junto con los m\xE9todos de rango y reemplazo de la clase String."
 title: Usando expresiones regulares
 weight: 11
 ---

@@ -2,15 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:16.462698-07:00
-description: "Pliki CSV (Comma-Separated Values, warto\u015Bci rozdzielane przecinkami)\
-  \ s\u0105 powszechnym formatem wymiany danych, kt\xF3ry przedstawia dane tabelaryczne\
-  \ w postaci\u2026"
+description: "Jak to zrobi\u0107: Praca z plikami CSV w C# mo\u017Ce by\u0107 realizowana\
+  \ za pomoc\u0105 przestrzeni nazw `System.IO` dla podstawowych operacji, a w przypadku\
+  \ bardziej\u2026"
 lastmod: '2024-03-13T22:44:35.431420-06:00'
 model: gpt-4-0125-preview
-summary: "Pliki CSV (Comma-Separated Values, warto\u015Bci rozdzielane przecinkami)\
-  \ s\u0105 powszechnym formatem wymiany danych, kt\xF3ry przedstawia dane tabelaryczne\
-  \ w postaci zwyk\u0142ego tekstu, u\u017Cywaj\u0105c przecink\xF3w do oddzielania\
-  \ poszczeg\xF3lnych warto\u015Bci."
+summary: "Praca z plikami CSV w C# mo\u017Ce by\u0107 realizowana za pomoc\u0105 przestrzeni\
+  \ nazw `System.IO` dla podstawowych operacji, a w przypadku bardziej skomplikowanych\
+  \ manipulacji lub obs\u0142ugi wi\u0119kszych plik\xF3w \u0142adnie, mo\u017Cna\
+  \ rozwa\u017Cy\u0107 u\u017Cycie bibliotek firm trzecich, takich jak `CsvHelper`."
 title: Praca z plikami CSV
 weight: 37
 ---

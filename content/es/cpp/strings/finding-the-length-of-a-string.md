@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:47:13.485545-07:00
-description: "Encontrar la longitud de una cadena es calcular cu\xE1ntos caracteres\
-  \ contiene. Los programadores lo hacen para, por ejemplo, validar entradas, bucles\
-  \ de\u2026"
+description: "C\xF3mo hacerlo: C++ moderno nos ofrece opciones sencillas."
 lastmod: '2024-03-13T22:44:59.366583-06:00'
 model: gpt-4-1106-preview
-summary: "Encontrar la longitud de una cadena es calcular cu\xE1ntos caracteres contiene."
+summary: C++ moderno nos ofrece opciones sencillas.
 title: Calculando la longitud de una cadena
 weight: 7
 ---

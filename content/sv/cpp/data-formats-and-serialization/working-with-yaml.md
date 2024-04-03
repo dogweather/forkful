@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:39.236977-07:00
-description: "YAML, som st\xE5r f\xF6r YAML Ain't Markup Language, \xE4r ett l\xE4\
-  sbart data-serialiseringsformat f\xF6r m\xE4nniskor. Programmerare anv\xE4nder det\
-  \ f\xF6r konfigurationsfiler,\u2026"
+description: "Hur man g\xF6r: F\xF6r att arbeta med YAML i C++ \xE4r ett popul\xE4\
+  rt val biblioteket `yaml-cpp`. Se f\xF6rst till att du har `yaml-cpp` installerat\
+  \ och korrekt l\xE4nkat\u2026"
 lastmod: '2024-03-13T22:44:38.229742-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, som st\xE5r f\xF6r YAML Ain't Markup Language, \xE4r ett l\xE4sbart\
-  \ data-serialiseringsformat f\xF6r m\xE4nniskor."
+summary: "F\xF6r att arbeta med YAML i C++ \xE4r ett popul\xE4rt val biblioteket `yaml-cpp`."
 title: Att Arbeta med YAML
 weight: 41
 ---

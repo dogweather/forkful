@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:00.105512-07:00
-description: "Het samenvoegen van strings in Bash betekent het aan elkaar plakken\
-  \ van twee of meer tekststukken. Programmeurs doen dit om commando's op te bouwen,\u2026"
+description: 'Hoe te: Hier is de snelle manier om je strings in Bash gezellig dicht
+  bij elkaar te brengen.'
 lastmod: '2024-03-13T22:44:50.971582-06:00'
 model: gpt-4-0125-preview
-summary: Het samenvoegen van strings in Bash betekent het aan elkaar plakken van twee
-  of meer tekststukken.
+summary: Hier is de snelle manier om je strings in Bash gezellig dicht bij elkaar
+  te brengen.
 title: Samenvoegen van strings
 weight: 3
 ---

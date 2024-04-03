@@ -1,10 +1,11 @@
 ---
 date: 2024-01-26 01:10:23.194448-07:00
-description: "Den gesamten Code auf einen Haufen werfen? Schlechte Idee. Ihn in Funktionen\
-  \ aufteilen? Gute Idee. Es h\xE4lt deinen Elm Code sauber, wiederverwendbar und\u2026"
+description: "Wie geht das: Hier ist ein St\xFCck Elm Code mit einer einfachen Funktion,\
+  \ um einen Benutzer zu begr\xFC\xDFen."
 lastmod: '2024-03-13T22:44:53.810477-06:00'
 model: gpt-4-1106-preview
-summary: Den gesamten Code auf einen Haufen werfen.
+summary: "Hier ist ein St\xFCck Elm Code mit einer einfachen Funktion, um einen Benutzer\
+  \ zu begr\xFC\xDFen."
 title: Code in Funktionen organisieren
 weight: 18
 ---

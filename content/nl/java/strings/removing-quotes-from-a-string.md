@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:31.693210-07:00
-description: "Het verwijderen van aanhalingstekens uit een string betekent het weghalen\
-  \ van enkele (' '), dubbele (\" \"), of beide soorten aanhalingstekens uit de\u2026"
+description: "Hoe te: Laten we die vervelende aanhalingstekens uit onze tekst trekken.\
+  \ We gebruiken de `replace()` methode voor de snelle oplossingen en regex voor de\u2026"
 lastmod: '2024-03-13T22:44:50.668618-06:00'
 model: gpt-4-0125-preview
-summary: Het verwijderen van aanhalingstekens uit een string betekent het weghalen
-  van enkele (' '), dubbele (" "), of beide soorten aanhalingstekens uit de tekstgegevens.
+summary: Laten we die vervelende aanhalingstekens uit onze tekst trekken.
 title: Quotes verwijderen uit een string
 weight: 9
 ---

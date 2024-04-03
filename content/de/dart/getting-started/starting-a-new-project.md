@@ -2,12 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:29.278396-07:00
-description: "Ein neues Projekt in Dart zu starten, erfordert das Einrichten einer\
-  \ Umgebung, die eine effiziente Entwicklung, Tests und Bereitstellung f\xF6rdert.\u2026"
+description: "Wie geht das: 1. **Dart installieren**: Stellen Sie sicher, dass Dart\
+  \ auf Ihrem System installiert ist. Wenn nicht, k\xF6nnen Sie es von\u2026"
 lastmod: '2024-03-13T22:44:53.581514-06:00'
 model: gpt-4-0125-preview
-summary: "Ein neues Projekt in Dart zu starten, erfordert das Einrichten einer Umgebung,\
-  \ die eine effiziente Entwicklung, Tests und Bereitstellung f\xF6rdert."
+summary: '1.'
 title: Ein neues Projekt starten
 weight: 1
 ---

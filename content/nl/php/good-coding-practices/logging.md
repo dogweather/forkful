@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:06.655131-07:00
-description: "Loggen is in feite te vergelijken met het bijhouden van een dagboek\
-  \ voor je code; het is het registreren van gebeurtenissen, fouten en andere significante\u2026"
+description: "Hoe te: PHP bevat een ingebouwde foutenlogfunctie die eenvoudig te gebruiken\
+  \ is. Plaats gewoon `error_log()` in je code om een bericht naar je serverlogs\u2026"
 lastmod: '2024-03-13T22:44:50.902022-06:00'
 model: gpt-4-0125-preview
-summary: Loggen is in feite te vergelijken met het bijhouden van een dagboek voor
-  je code; het is het registreren van gebeurtenissen, fouten en andere significante
-  gegevenspunten die plaatsvinden wanneer je applicatie draait.
+summary: PHP bevat een ingebouwde foutenlogfunctie die eenvoudig te gebruiken is.
 title: Logboekregistratie
 weight: 17
 ---

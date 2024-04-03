@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:31.990809-07:00
-description: "Iniciar um novo projeto em Visual Basic para Aplica\xE7\xF5es (VBA)\
-  \ envolve configurar um ambiente dentro de um aplicativo host, como o Excel, para\
-  \ automatizar\u2026"
+description: "Como: Quando estiver pronto para come\xE7ar um novo projeto VBA, o ponto\
+  \ de partida geralmente envolve acessar o editor VBA e inicializar a estrutura do\
+  \ seu\u2026"
 lastmod: '2024-03-13T22:44:46.412731-06:00'
 model: gpt-4-0125-preview
-summary: "Iniciar um novo projeto em Visual Basic para Aplica\xE7\xF5es (VBA) envolve\
-  \ configurar um ambiente dentro de um aplicativo host, como o Excel, para automatizar\
-  \ tarefas ou estender funcionalidades."
+summary: "Quando estiver pronto para come\xE7ar um novo projeto VBA, o ponto de partida\
+  \ geralmente envolve acessar o editor VBA e inicializar a estrutura do seu projeto."
 title: Iniciando um novo projeto
 weight: 1
 ---

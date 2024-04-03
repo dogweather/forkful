@@ -1,13 +1,10 @@
 ---
 date: 2024-01-26 04:24:44.909709-07:00
-description: "TOML, abr\xE9viation de Tom's Obvious, Minimal Language, est un format\
-  \ de s\xE9rialisation de donn\xE9es facile \xE0 lire gr\xE2ce \xE0 sa s\xE9mantique\
-  \ claire. Les\u2026"
+description: "Comment : Dans PowerShell, il n'existe pas de cmdlet natif pour analyser\
+  \ le TOML. Vous utiliseriez typiquement un module ou convertiriez le TOML en JSON\u2026"
 lastmod: '2024-03-13T22:44:58.085690-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, abr\xE9viation de Tom's Obvious, Minimal Language, est un format de\
-  \ s\xE9rialisation de donn\xE9es facile \xE0 lire gr\xE2ce \xE0 sa s\xE9mantique\
-  \ claire."
+summary: Dans PowerShell, il n'existe pas de cmdlet natif pour analyser le TOML.
 title: Travailler avec TOML
 weight: 39
 ---

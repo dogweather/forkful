@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:35:51.195648-07:00
-description: "Das Umwandeln eines Datums in einen String bedeutet, ein Datum in Textform\
-  \ auszudr\xFCcken. Programmierer nutzen dies f\xFCr eine bessere Lesbarkeit und\
-  \ um\u2026"
+description: "Vorgehensweise: Bash bietet `date`, ein m\xE4chtiges Tool f\xFCr Datum\
+  \ und Zeit. Hier ist, wie man es verwendet."
 lastmod: '2024-03-13T22:44:54.070861-06:00'
 model: gpt-4-1106-preview
-summary: "Das Umwandeln eines Datums in einen String bedeutet, ein Datum in Textform\
-  \ auszudr\xFCcken."
+summary: "Bash bietet `date`, ein m\xE4chtiges Tool f\xFCr Datum und Zeit."
 title: Datum in einen String umwandeln
 weight: 28
 ---

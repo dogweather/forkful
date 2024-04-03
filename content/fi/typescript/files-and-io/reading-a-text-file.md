@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:55:22.953079-07:00
-description: "Tekstitiedoston lukeminen tarkoittaa tekstin kutsumista tiedostosta\
-  \ ohjelman k\xE4ytett\xE4v\xE4ksi. Ohjelmoijat tekev\xE4t t\xE4m\xE4n, jotta he\
-  \ voivat k\xE4sitell\xE4 tai\u2026"
+description: 'How to: Asennetaan ensin node:n tyypitykset.'
 lastmod: '2024-03-13T22:44:56.332283-06:00'
 model: gpt-4-1106-preview
-summary: "Tekstitiedoston lukeminen tarkoittaa tekstin kutsumista tiedostosta ohjelman\
-  \ k\xE4ytett\xE4v\xE4ksi."
+summary: Asennetaan ensin node:n tyypitykset.
 title: Tekstitiedoston lukeminen
 weight: 22
 ---

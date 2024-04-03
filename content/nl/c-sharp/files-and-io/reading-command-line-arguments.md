@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:06.952604-07:00
-description: "Commandoregelargumenten lezen stelt een C# programma in staat om gebruikersinvoer\
-  \ te verwerken die bij het starten wordt gegeven. Programmeurs gebruiken\u2026"
+description: 'Hoe: Zo verslind je die commandoregelargumenten.'
 lastmod: '2024-03-13T22:44:50.825463-06:00'
 model: gpt-4-0125-preview
-summary: Commandoregelargumenten lezen stelt een C# programma in staat om gebruikersinvoer
-  te verwerken die bij het starten wordt gegeven.
+summary: Zo verslind je die commandoregelargumenten.
 title: Commandoregelargumenten lezen
 weight: 23
 ---

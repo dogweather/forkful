@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:04.136107-07:00
-description: "In PowerShell, verificare l'esistenza di una directory \xE8 un compito\
-  \ comune che aiuta gli script a prendere decisioni basate sulla struttura dei file\u2026"
+description: "Come fare: PowerShell offre un modo semplice per verificare la presenza\
+  \ di una directory utilizzando il cmdlet `Test-Path`. Questo cmdlet restituisce\
+  \ un\u2026"
 lastmod: '2024-03-13T22:44:43.656843-06:00'
 model: gpt-4-0125-preview
-summary: "In PowerShell, verificare l'esistenza di una directory \xE8 un compito comune\
-  \ che aiuta gli script a prendere decisioni basate sulla struttura dei file system\u2014\
-  come evitare errori confermando che una directory di destinazione sia presente prima\
-  \ di tentare di leggerla o scriverci."
+summary: PowerShell offre un modo semplice per verificare la presenza di una directory
+  utilizzando il cmdlet `Test-Path`.
 title: Verifica se una directory esiste
 weight: 20
 ---

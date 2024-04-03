@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:09:28.447292-07:00
-description: "Att organisera kod i funktioner handlar om att paketera kodblock som\
-  \ utf\xF6r specifika uppgifter. Genom att g\xF6ra detta blir koden renare, l\xE4\
-  ttare att\u2026"
+description: "Hur man g\xF6r: Clojure-funktioner definieras med `defn`, f\xF6ljt av\
+  \ ett namn, parametrar och en kropp. H\xE4r \xE4r ett snabbt exempel."
 lastmod: '2024-03-13T22:44:37.530800-06:00'
 model: gpt-4-1106-preview
-summary: "Att organisera kod i funktioner handlar om att paketera kodblock som utf\xF6\
-  r specifika uppgifter."
+summary: "Clojure-funktioner definieras med `defn`, f\xF6ljt av ett namn, parametrar\
+  \ och en kropp."
 title: Att organisera kod i funktioner
 weight: 18
 ---

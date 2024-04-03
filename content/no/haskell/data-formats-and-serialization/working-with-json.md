@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:52.319734-07:00
-description: "\xC5 jobbe med JSON (JavaScript Object Notation) i Haskell inneb\xE6\
-  rer \xE5 analysere JSON-data til Haskell-typer og konvertere Haskell-typer tilbake\
-  \ til JSON.\u2026"
+description: "Hvordan: Haskell har ikke innebygd st\xF8tte for JSON som JavaScript,\
+  \ men med hjelp fra tredjepartsbiblioteker som **Aeson**, blir h\xE5ndtering av\
+  \ JSON enkelt.\u2026"
 lastmod: '2024-03-13T22:44:40.864890-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 jobbe med JSON (JavaScript Object Notation) i Haskell inneb\xE6rer\
-  \ \xE5 analysere JSON-data til Haskell-typer og konvertere Haskell-typer tilbake\
-  \ til JSON."
+summary: "Haskell har ikke innebygd st\xF8tte for JSON som JavaScript, men med hjelp\
+  \ fra tredjepartsbiblioteker som **Aeson**, blir h\xE5ndtering av JSON enkelt."
 title: Arbeider med JSON
 weight: 38
 ---

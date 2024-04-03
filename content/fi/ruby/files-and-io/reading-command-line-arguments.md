@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:56:52.050431-07:00
-description: "Komentoriviparametrit ovat tietoja, jotka siirtyv\xE4t ohjelmaasi k\xE4\
-  ynnistyksen yhteydess\xE4. Niit\xE4 k\xE4ytet\xE4\xE4n muokkaamaan ohjelman toimintaa\
-  \ lennosta ja\u2026"
+description: "How to: (Kuinka tehd\xE4:) ."
 lastmod: '2024-03-13T22:44:57.102650-06:00'
 model: gpt-4-1106-preview
-summary: "Komentoriviparametrit ovat tietoja, jotka siirtyv\xE4t ohjelmaasi k\xE4\
-  ynnistyksen yhteydess\xE4."
+summary: .
 title: Komennoriviparametrien lukeminen
 weight: 23
 ---

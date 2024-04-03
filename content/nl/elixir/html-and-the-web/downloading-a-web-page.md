@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:55.981178-07:00
-description: "Een webpagina downloaden betekent het ophalen van de inhoud ervan via\
-  \ het internet\u2014essentieel, wat je browser doet. Programmeurs doen dit om\u2026"
+description: 'Hoe: Elixir, met zijn krachtige HTTP-clientbibliotheken, maakt deze
+  taak eenvoudig. Hier is hoe met `HTTPoison`.'
 lastmod: '2024-03-13T22:44:50.460816-06:00'
 model: gpt-4-0125-preview
-summary: "Een webpagina downloaden betekent het ophalen van de inhoud ervan via het\
-  \ internet\u2014essentieel, wat je browser doet."
+summary: Elixir, met zijn krachtige HTTP-clientbibliotheken, maakt deze taak eenvoudig.
 title: Een webpagina downloaden
 weight: 42
 ---

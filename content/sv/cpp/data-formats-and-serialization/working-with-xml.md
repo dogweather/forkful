@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:28:31.619570-07:00
-description: "Att arbeta med XML inneb\xE4r att tolka, skapa och manipulera XML (eXtensible\
-  \ Markup Language)-data. Programmerare hanterar XML f\xF6r att hantera utbyte av\u2026"
+description: "Hur man g\xF6r: H\xE4r \xE4r ett enkelt s\xE4tt att tolka XML med hj\xE4\
+  lp av TinyXML-2-biblioteket."
 lastmod: '2024-03-13T22:44:38.233789-06:00'
 model: gpt-4-0125-preview
-summary: "Att arbeta med XML inneb\xE4r att tolka, skapa och manipulera XML (eXtensible\
-  \ Markup Language)-data."
+summary: "H\xE4r \xE4r ett enkelt s\xE4tt att tolka XML med hj\xE4lp av TinyXML-2-biblioteket."
 title: Att arbeta med XML
 weight: 40
 ---

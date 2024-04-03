@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:48:29.771155-07:00
-description: "\"Mik\xE4 & Miksi?\" Stringin pituuden selvitt\xE4minen tarkoittaa merkkien\
-  \ m\xE4\xE4r\xE4n laskemista siin\xE4. Koodarit tekev\xE4t t\xE4m\xE4n validoidakseen\
-  \ sy\xF6tteen, rajatakseen\u2026"
+description: "How to: \"N\xE4in tehd\xE4\xE4n:\" Swiftiss\xE4 voit selvitt\xE4\xE4\
+  \ stringin pituuden k\xE4ytt\xE4m\xE4ll\xE4 `count` ominaisuutta. Kataotaanpa esimerkki."
 lastmod: '2024-03-13T22:44:56.898396-06:00'
 model: gpt-4-1106-preview
-summary: "\"Mik\xE4 & Miksi."
+summary: "\"N\xE4in tehd\xE4\xE4n:\"\nSwiftiss\xE4 voit selvitt\xE4\xE4 stringin pituuden\
+  \ k\xE4ytt\xE4m\xE4ll\xE4 `count` ominaisuutta."
 title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---

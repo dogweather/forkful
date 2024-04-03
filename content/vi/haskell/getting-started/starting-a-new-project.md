@@ -3,15 +3,10 @@ changelog:
 - 2024-01-21, dogweather, Reviewed for accuracy
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:50.147581-07:00
-description: "M\u1ED7i d\u1EF1 \xE1n b\u1EAFt \u0111\u1EA7u v\u1EDBi m\u1ED9t b\u01B0\
-  \u1EDBc \u0111i \u0111\u1EA7u ti\xEAn. \u0110\u1ED1i v\u1EDBi c\xE1c l\u1EADp tr\xEC\
-  nh vi\xEAn, \u0111i\u1EC1u \u0111\xF3 c\xF3 ngh\u0129a l\xE0 thi\u1EBFt l\u1EAD\
-  p c\u1EA5u tr\xFAc ban \u0111\u1EA7u v\xE0 vi\u1EBFt m\xE3 kh\u1EDFi \u0111\u1EA7\
-  u. Ch\xFAng ta l\xE0m\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: ."
 lastmod: '2024-03-13T22:44:36.712963-06:00'
 model: gpt-4-0125-preview
-summary: "M\u1ED7i d\u1EF1 \xE1n b\u1EAFt \u0111\u1EA7u v\u1EDBi m\u1ED9t b\u01B0\u1EDB\
-  c \u0111i \u0111\u1EA7u ti\xEAn."
+summary: .
 title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---

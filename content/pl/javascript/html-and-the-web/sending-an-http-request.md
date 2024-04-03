@@ -1,13 +1,12 @@
 ---
 date: 2024-01-20 18:00:17.160766-07:00
-description: "Wysy\u0142anie zapytania HTTP to spos\xF3b, w jaki nasz kod komunikuje\
-  \ si\u0119 z serwerami internetowymi - pobiera dane, wysy\u0142a informacje, aktualizuje\
-  \ zawarto\u015B\u0107.\u2026"
+description: "Jak to zrobi\u0107: Aby wys\u0142a\u0107 zapytanie HTTP w JavaScript,\
+  \ mo\u017Cemy u\u017Cy\u0107 wbudowanego interfejsu `fetch` albo starszego `XMLHttpRequest`.\
+  \ Oto przyk\u0142ad u\u017Cycia\u2026"
 lastmod: '2024-03-13T22:44:35.793306-06:00'
 model: gpt-4-1106-preview
-summary: "Wysy\u0142anie zapytania HTTP to spos\xF3b, w jaki nasz kod komunikuje si\u0119\
-  \ z serwerami internetowymi - pobiera dane, wysy\u0142a informacje, aktualizuje\
-  \ zawarto\u015B\u0107."
+summary: "Aby wys\u0142a\u0107 zapytanie HTTP w JavaScript, mo\u017Cemy u\u017Cy\u0107\
+  \ wbudowanego interfejsu `fetch` albo starszego `XMLHttpRequest`."
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---

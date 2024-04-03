@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:39.592562-07:00
-description: "Regulj\xE4ra uttryck (regex) i Elixir anv\xE4nds f\xF6r att s\xF6ka,\
-  \ matcha och manipulera str\xE4ngar baserat p\xE5 specifika m\xF6nster. Programmerare\
-  \ anv\xE4nder regex f\xF6r\u2026"
+description: "Hur man g\xF6r: Elixir anv\xE4nder `Regex`-modulen, som utnyttjar Erlangs\
+  \ regex-bibliotek, f\xF6r regex-operationer. H\xE4r \xE4r grundl\xE4ggande anv\xE4\
+  ndningsomr\xE5den."
 lastmod: '2024-03-13T22:44:37.556938-06:00'
 model: gpt-4-0125-preview
-summary: "Regulj\xE4ra uttryck (regex) i Elixir anv\xE4nds f\xF6r att s\xF6ka, matcha\
-  \ och manipulera str\xE4ngar baserat p\xE5 specifika m\xF6nster."
+summary: "Elixir anv\xE4nder `Regex`-modulen, som utnyttjar Erlangs regex-bibliotek,\
+  \ f\xF6r regex-operationer."
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---

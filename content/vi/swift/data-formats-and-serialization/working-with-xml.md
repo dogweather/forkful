@@ -2,14 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:29.566057-07:00
-description: "L\xE0m vi\u1EC7c v\u1EDBi XML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xEDch\
-  \ c\xFA ph\xE1p v\xE0 t\u1EA1o ra d\u1EEF li\u1EC7u XML trong Swift. C\xE1c l\u1EAD\
-  p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y cho vi\u1EC7c trao\
-  \ \u0111\u1ED5i d\u1EEF li\u1EC7u, \u0111\u1EB7c\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Swift cung c\u1EA5p `XMLParser` v\xE0 `XMLDocument`\
+  \ \u0111\u1EC3 ph\xE2n t\xEDch c\xFA ph\xE1p d\u1EEF li\u1EC7u XML. D\u01B0\u1EDB\
+  i \u0111\xE2y l\xE0 m\u1ED9t \u0111o\u1EA1n m\xE3 \u0111\u1EC3 ph\xE2n t\xEDch m\u1ED9\
+  t chu\u1ED7i XML \u0111\u01A1n gi\u1EA3n."
 lastmod: '2024-03-13T22:44:37.129630-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m vi\u1EC7c v\u1EDBi XML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xEDch c\xFA\
-  \ ph\xE1p v\xE0 t\u1EA1o ra d\u1EEF li\u1EC7u XML trong Swift."
+summary: "Swift cung c\u1EA5p `XMLParser` v\xE0 `XMLDocument` \u0111\u1EC3 ph\xE2\
+  n t\xEDch c\xFA ph\xE1p d\u1EEF li\u1EC7u XML."
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---

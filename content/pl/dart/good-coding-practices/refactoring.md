@@ -2,14 +2,10 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:02.723251-07:00
-description: "Refaktoryzacja w Dart to proces restrukturyzacji istniej\u0105cego kodu\
-  \ bez zmiany jego zewn\u0119trznego zachowania, maj\u0105cy na celu popraw\u0119\
-  \ jego wewn\u0119trznej\u2026"
+description: "Jak to zrobi\u0107: #."
 lastmod: '2024-03-13T22:44:35.100828-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktoryzacja w Dart to proces restrukturyzacji istniej\u0105cego kodu\
-  \ bez zmiany jego zewn\u0119trznego zachowania, maj\u0105cy na celu popraw\u0119\
-  \ jego wewn\u0119trznej struktury, czytelno\u015Bci i mo\u017Cliwo\u015Bci utrzymania."
+summary: '#.'
 title: Refaktoryzacja
 weight: 19
 ---

@@ -2,15 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:01.692251-07:00
-description: "Ph\xE2n t\xEDch c\xFA ph\xE1p ng\xE0y t\u1EE9c l\xE0 d\u1ECBch m\u1ED9\
-  t chu\u1ED7i sang c\xE1i m\xE0 m\xE1y t\xEDnh c\xF3 th\u1EC3 hi\u1EC3u\u2014nh\u01B0\
-  \ m\u1ED9t \u0111\u1ED1i t\u01B0\u1EE3ng ng\xE0y th\u1EF1c s\u1EF1. C\xE1c l\u1EAD\
-  p tr\xECnh vi\xEAn l\xE0m vi\u1EC7c n\xE0y v\xEC ch\xFAng t\xF4i\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Ruby \u0111\xE3 h\u1ED7 tr\u1EE3 b\u1EA1n v\u1EDB\
+  i th\u01B0 vi\u1EC7n `Date` c\u1EE7a m\xECnh, gi\xFAp bi\u1EBFn \u0111\u1ED5i chu\u1ED7\
+  i th\xE0nh ng\xE0y c\u1EF1c k\u1EF3 d\u1EC5 d\xE0ng. Ch\u1EC9 \u0111\u1EEBng qu\xEA\
+  n `require 'date'` tr\u01B0\u1EDBc khi b\u1EA1n\u2026"
 lastmod: '2024-03-13T22:44:37.353766-06:00'
 model: gpt-4-0125-preview
-summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p ng\xE0y t\u1EE9c l\xE0 d\u1ECBch m\u1ED9t\
-  \ chu\u1ED7i sang c\xE1i m\xE0 m\xE1y t\xEDnh c\xF3 th\u1EC3 hi\u1EC3u\u2014nh\u01B0\
-  \ m\u1ED9t \u0111\u1ED1i t\u01B0\u1EE3ng ng\xE0y th\u1EF1c s\u1EF1."
+summary: "Ruby \u0111\xE3 h\u1ED7 tr\u1EE3 b\u1EA1n v\u1EDBi th\u01B0 vi\u1EC7n `Date`\
+  \ c\u1EE7a m\xECnh, gi\xFAp bi\u1EBFn \u0111\u1ED5i chu\u1ED7i th\xE0nh ng\xE0y\
+  \ c\u1EF1c k\u1EF3 d\u1EC5 d\xE0ng."
 title: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB chu\u1ED7i k\xED t\u1EF1"
 weight: 30
 ---

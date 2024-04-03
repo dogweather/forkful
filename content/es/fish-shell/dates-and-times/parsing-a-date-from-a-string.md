@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:05.420669-07:00
-description: "Analizar una fecha de una cadena implica extraer informaci\xF3n de fecha\
-  \ codificada dentro de cadenas y convertirla en un formato estructurado que los\u2026"
+description: "C\xF3mo hacerlo: En Fish Shell, no tienes comandos integrados espec\xED\
+  ficamente dise\xF1ados para analizar fechas de cadenas. En su lugar, dependes de\
+  \ utilidades\u2026"
 lastmod: '2024-03-13T22:44:59.510938-06:00'
 model: gpt-4-0125-preview
-summary: "Analizar una fecha de una cadena implica extraer informaci\xF3n de fecha\
-  \ codificada dentro de cadenas y convertirla en un formato estructurado que los\
-  \ entornos de programaci\xF3n pueden reconocer y manipular."
+summary: "En Fish Shell, no tienes comandos integrados espec\xEDficamente dise\xF1\
+  ados para analizar fechas de cadenas."
 title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---

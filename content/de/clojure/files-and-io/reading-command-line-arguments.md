@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:55:38.396030-07:00
-description: "Lesen von Kommandozeilenargumenten erm\xF6glicht es Programmen, beim\
-  \ Start spezifische Optionen und Daten zu erhalten. Programmierer nutzen dies, um\u2026"
+description: 'How to: Hier ist die einfache Art, wie man in Clojure Kommandozeilenargumenten
+  liest.'
 lastmod: '2024-03-13T22:44:53.435530-06:00'
 model: gpt-4-1106-preview
-summary: "Lesen von Kommandozeilenargumenten erm\xF6glicht es Programmen, beim Start\
-  \ spezifische Optionen und Daten zu erhalten."
+summary: Hier ist die einfache Art, wie man in Clojure Kommandozeilenargumenten liest.
 title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---

@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:58:31.337986-07:00
-description: "La recherche et le remplacement de texte permettent de localiser des\
-  \ s\xE9quences sp\xE9cifiques dans une cha\xEEne et de les remplacer par d'autres.\
-  \ Les\u2026"
+description: 'Comment faire : Voici un petit script Python qui recherche et remplace
+  du texte .'
 lastmod: '2024-03-13T22:44:57.218706-06:00'
 model: gpt-4-1106-preview
-summary: "La recherche et le remplacement de texte permettent de localiser des s\xE9\
-  quences sp\xE9cifiques dans une cha\xEEne et de les remplacer par d'autres."
+summary: Voici un petit script Python qui recherche et remplace du texte.
 title: Recherche et remplacement de texte
 weight: 10
 ---

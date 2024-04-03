@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:50.514844-07:00
-description: "I Bash-programmering er det \xE5 sjekke om en mappe eksisterer en essensiell\
-  \ kontrollmekanisme som brukes for \xE5 verifisere tilstedev\xE6relsen av en mappe\
-  \ f\xF8r\u2026"
+description: "Hvordan: I sin kjerne tillater Bash deg \xE5 sjekke for eksistensen\
+  \ av en mappe ved \xE5 bruke betingede uttrykk og `-d`-operat\xF8ren. Nedenfor er\
+  \ et enkelt\u2026"
 lastmod: '2024-03-13T22:44:40.989201-06:00'
 model: gpt-4-0125-preview
-summary: "I Bash-programmering er det \xE5 sjekke om en mappe eksisterer en essensiell\
-  \ kontrollmekanisme som brukes for \xE5 verifisere tilstedev\xE6relsen av en mappe\
-  \ f\xF8r man utf\xF8rer filoperasjoner."
+summary: "I sin kjerne tillater Bash deg \xE5 sjekke for eksistensen av en mappe ved\
+  \ \xE5 bruke betingede uttrykk og `-d`-operat\xF8ren."
 title: Sjekker om en mappe eksisterer
 weight: 20
 ---

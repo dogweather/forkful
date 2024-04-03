@@ -1,11 +1,10 @@
 ---
 date: 2024-01-25 02:59:56.448373-07:00
-description: "Organizing code into functions is about breaking your program into reusable,\
-  \ modular chunks identified by a name. We do it to make our code cleaner, more\u2026"
+description: 'How to: Say you''ve got code that calculates the area of a circle multiple
+  times. Instead of repeating the formula, you wrap it into a function.'
 lastmod: '2024-03-13T22:44:59.900896-06:00'
 model: gpt-4-1106-preview
-summary: Organizing code into functions is about breaking your program into reusable,
-  modular chunks identified by a name.
+summary: Say you've got code that calculates the area of a circle multiple times.
 title: Organizing code into functions
 weight: 18
 ---

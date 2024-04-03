@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:38.354320-07:00
-description: "En programmation, mettre en majuscule une cha\xEEne de caract\xE8res\
-  \ consiste \xE0 convertir son premier caract\xE8re en majuscule s'il ne l'est pas\
-  \ d\xE9j\xE0, ce qui est\u2026"
+description: "Comment faire : En Kotlin, les cha\xEEnes de caract\xE8res peuvent \xEA\
+  tre mises en majuscules en utilisant les fonctions de la biblioth\xE8que standard\
+  \ sans\u2026"
 lastmod: '2024-03-13T22:44:57.717727-06:00'
 model: gpt-4-0125-preview
-summary: "En programmation, mettre en majuscule une cha\xEEne de caract\xE8res consiste\
-  \ \xE0 convertir son premier caract\xE8re en majuscule s'il ne l'est pas d\xE9j\xE0\
-  , ce qui est utile pour formater les entr\xE9es des utilisateurs ou afficher du\
-  \ texte dans une interface utilisateur de mani\xE8re plus standardis\xE9e ou conviviale."
+summary: "En Kotlin, les cha\xEEnes de caract\xE8res peuvent \xEAtre mises en majuscules\
+  \ en utilisant les fonctions de la biblioth\xE8que standard sans n\xE9cessiter de\
+  \ biblioth\xE8ques tierces."
 title: "Mettre en majuscule une cha\xEEne"
 weight: 2
 ---

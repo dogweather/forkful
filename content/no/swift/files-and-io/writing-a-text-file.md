@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:44.260035-07:00
-description: "\xC5 skrive en tekstfil i Swift gj\xF8r at du kan lagre strengdata permanent\
-  \ p\xE5 filsystemet, noe som er avgj\xF8rende for oppgaver som \xE5 lagre\u2026"
+description: 'Hvordan: #.'
 lastmod: '2024-03-13T22:44:41.160210-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive en tekstfil i Swift gj\xF8r at du kan lagre strengdata permanent\
-  \ p\xE5 filsystemet, noe som er avgj\xF8rende for oppgaver som \xE5 lagre konfigurasjonsinnstillinger,\
-  \ brukerdata eller logger."
+summary: '#.'
 title: Skrive en tekstfil
 weight: 24
 ---

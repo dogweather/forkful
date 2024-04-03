@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:00.409067-07:00
-description: "Escrever para o erro padr\xE3o (stderr) na programa\xE7\xE3o Arduino\
-  \ envolve direcionar mensagens de erro e diagn\xF3sticos para um canal separado,\
-  \ garantindo que\u2026"
+description: "Como fazer: O Arduino n\xE3o diferencia nativamente entre a sa\xEDda\
+  \ padr\xE3o e o erro padr\xE3o como os sistemas de computa\xE7\xE3o convencionais.\
+  \ Tanto os m\xE9todos\u2026"
 lastmod: '2024-03-13T22:44:46.855012-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever para o erro padr\xE3o (stderr) na programa\xE7\xE3o Arduino envolve\
-  \ direcionar mensagens de erro e diagn\xF3sticos para um canal separado, garantindo\
-  \ que eles n\xE3o se misturem com a sa\xEDda padr\xE3o (stdout)."
+summary: "O Arduino n\xE3o diferencia nativamente entre a sa\xEDda padr\xE3o e o erro\
+  \ padr\xE3o como os sistemas de computa\xE7\xE3o convencionais."
 title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---

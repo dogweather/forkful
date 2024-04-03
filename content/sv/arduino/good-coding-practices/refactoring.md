@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 01:16:33.640729-07:00
-description: "Refaktorisering \xE4r processen d\xE4r du omarbetar din kod f\xF6r att\
-  \ f\xF6rb\xE4ttra dess struktur och l\xE4sbarhet utan att \xE4ndra det externa beteendet\
-  \ eller\u2026"
+description: "Hur man g\xF6r: L\xE5t oss s\xE4ga att du har en funktion p\xE5 din\
+  \ Arduino som g\xF6r alldeles f\xF6r mycket, s\xE5 h\xE4r."
 lastmod: '2024-03-13T22:44:38.175596-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktorisering \xE4r processen d\xE4r du omarbetar din kod f\xF6r att f\xF6\
-  rb\xE4ttra dess struktur och l\xE4sbarhet utan att \xE4ndra det externa beteendet\
-  \ eller funktionaliteten."
+summary: "L\xE5t oss s\xE4ga att du har en funktion p\xE5 din Arduino som g\xF6r alldeles\
+  \ f\xF6r mycket, s\xE5 h\xE4r."
 title: Refaktorisering
 weight: 19
 ---

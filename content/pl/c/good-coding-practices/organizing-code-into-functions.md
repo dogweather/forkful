@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:17.710850-07:00
-description: "Organizowanie kodu w funkcje w j\u0119zyku C polega na dzieleniu z\u0142\
-  o\u017Conych zada\u0144 na mniejsze, wielokrotnie wykorzystywane bloki kodu. Praktyka\
-  \ ta poprawia\u2026"
+description: "Jak to zrobi\u0107: W C funkcja jest deklarowana z typem zwracanym,\
+  \ nazw\u0105 i parametrami (je\u015Bli s\u0105), po kt\xF3rych nast\u0119puje blok\
+  \ kodu. Zacznijmy od prostego\u2026"
 lastmod: '2024-03-13T22:44:35.892513-06:00'
 model: gpt-4-0125-preview
-summary: "Organizowanie kodu w funkcje w j\u0119zyku C polega na dzieleniu z\u0142\
-  o\u017Conych zada\u0144 na mniejsze, wielokrotnie wykorzystywane bloki kodu."
+summary: "W C funkcja jest deklarowana z typem zwracanym, nazw\u0105 i parametrami\
+  \ (je\u015Bli s\u0105), po kt\xF3rych nast\u0119puje blok kodu."
 title: Organizowanie kodu w funkcje
 weight: 18
 ---

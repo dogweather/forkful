@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:00.424325-07:00
-description: "YAML, co rozszyfrowuje si\u0119 jako YAML Ain't Markup Language, to\
-  \ wysoce czytelny format serializacji danych, cz\u0119sto u\u017Cywany do plik\xF3\
-  w konfiguracyjnych,\u2026"
+description: "Jak to zrobi\u0107: Kotlin nie ma wbudowanego wsparcia dla parsowania\
+  \ i serializacji YAML, ale mo\u017Cna wykorzysta\u0107 popularne biblioteki stron\
+  \ trzecich, takie jak\u2026"
 lastmod: '2024-03-13T22:44:35.385516-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, co rozszyfrowuje si\u0119 jako YAML Ain't Markup Language, to wysoce\
-  \ czytelny format serializacji danych, cz\u0119sto u\u017Cywany do plik\xF3w konfiguracyjnych,\
-  \ przechowywania danych oraz komunikacji mi\u0119dzyprocesowej."
+summary: "Kotlin nie ma wbudowanego wsparcia dla parsowania i serializacji YAML, ale\
+  \ mo\u017Cna wykorzysta\u0107 popularne biblioteki stron trzecich, takie jak `snakeyaml`\
+  \ (do og\xF3lnego parsowania YAML) oraz `kotlinx.serialization` (z rozszerzeniem\
+  \ formatu YAML) do pracy z plikami YAML."
 title: Praca z YAML
 weight: 41
 ---

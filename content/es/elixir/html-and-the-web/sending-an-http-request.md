@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 17:59:21.389005-07:00
-description: "Enviar una solicitud HTTP es el proceso de pedirle al servidor que responda\
-  \ con datos o recursos. Los programadores lo hacemos para interactuar con APIs,\u2026"
+description: "C\xF3mo hacerlo: Elixir tiene una biblioteca llamada HTTPoison que nos\
+  \ facilita enviar solicitudes HTTP. Aqu\xED tienes un ejemplo de c\xF3mo hacer una\
+  \ petici\xF3n\u2026"
 lastmod: '2024-03-13T22:44:58.699261-06:00'
 model: gpt-4-1106-preview
-summary: Enviar una solicitud HTTP es el proceso de pedirle al servidor que responda
-  con datos o recursos.
+summary: Elixir tiene una biblioteca llamada HTTPoison que nos facilita enviar solicitudes
+  HTTP.
 title: Enviando una solicitud http
 weight: 44
 ---

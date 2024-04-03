@@ -2,12 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:00.012768-07:00
-description: "Die Arbeit mit XML in Go umfasst das Parsen (Lesen) und Generieren (Schreiben)\
-  \ von XML-Dokumenten \u2013 ein Standardformat f\xFCr den strukturierten\u2026"
+description: 'Wie man: #.'
 lastmod: '2024-03-13T22:44:53.314310-06:00'
 model: gpt-4-0125-preview
-summary: "Die Arbeit mit XML in Go umfasst das Parsen (Lesen) und Generieren (Schreiben)\
-  \ von XML-Dokumenten \u2013 ein Standardformat f\xFCr den strukturierten Datenaustausch."
+summary: '#.'
 title: Arbeiten mit XML
 weight: 40
 ---

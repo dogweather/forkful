@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:52:32.241728-07:00
-description: "Imprimir mensajes de depuraci\xF3n es como dejar migajas de pan para\
-  \ seguir tu camino en el c\xF3digo. Los programadores lo hacemos para entender qu\xE9\
-  \ est\xE1\u2026"
+description: "C\xF3mo Hacerlo: Con Elm, usamos `Debug.log` para imprimir en la consola\
+  \ del navegador. Aqu\xED te dejo un ejemplo."
 lastmod: '2024-03-13T22:44:58.988358-06:00'
 model: gpt-4-1106-preview
-summary: "Imprimir mensajes de depuraci\xF3n es como dejar migajas de pan para seguir\
-  \ tu camino en el c\xF3digo."
+summary: Con Elm, usamos `Debug.log` para imprimir en la consola del navegador.
 title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---

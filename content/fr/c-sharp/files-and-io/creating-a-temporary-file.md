@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:40:09.649190-07:00
-description: "Cr\xE9er un fichier temporaire, c'est comme prendre des notes sur un\
-  \ bout de papier jetable \u2014 \xE7a sert \xE0 stocker des infos pour un court\
-  \ moment. Les\u2026"
+description: "How to: En C#, cr\xE9er un fichier temporaire est simple. On peut utiliser\
+  \ `Path.GetTempFileName()` pour en g\xE9n\xE9rer un nouveau. Voici un petit exemple\
+  \ en\u2026"
 lastmod: '2024-03-13T22:44:57.808825-06:00'
 model: gpt-4-1106-preview
-summary: "Cr\xE9er un fichier temporaire, c'est comme prendre des notes sur un bout\
-  \ de papier jetable \u2014 \xE7a sert \xE0 stocker des infos pour un court moment."
+summary: "En C#, cr\xE9er un fichier temporaire est simple."
 title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---

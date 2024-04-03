@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:54:34.386436-07:00
-description: "Reading a text file means your program slurps in content from a file\
-  \ as a string. Programmers do this to process or analyze data sitting in files on\
-  \ their\u2026"
+description: 'How to: Reading a file is a breeze in Java, especially with `java.nio.file`.
+  Here''s a quick example.'
 lastmod: '2024-03-13T22:44:59.987516-06:00'
 model: gpt-4-1106-preview
-summary: Reading a text file means your program slurps in content from a file as a
-  string.
+summary: Reading a file is a breeze in Java, especially with `java.nio.file`.
 title: Reading a text file
 weight: 22
 ---

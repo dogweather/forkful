@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 20:32:54.806121-07:00
-description: "\xC5 generere tilfeldige tall i Elixir er en grunnleggende programmeringsoppgave,\
-  \ vital for applikasjoner som trenger uforutsigbare resultater som i\u2026"
+description: "Hvordan: For \xE5 generere tilfeldige tall i Elixir, bruker du prim\xE6\
+  rt `:rand`-modulen som tilbyr flere funksjoner for dette form\xE5let. Her er en\
+  \ rask guide\u2026"
 lastmod: '2024-03-13T22:44:40.439343-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 generere tilfeldige tall i Elixir er en grunnleggende programmeringsoppgave,\
-  \ vital for applikasjoner som trenger uforutsigbare resultater som i generering\
-  \ av sikre tokens, sampling av data, eller i spillalgoritmer."
+summary: "For \xE5 generere tilfeldige tall i Elixir, bruker du prim\xE6rt `:rand`-modulen\
+  \ som tilbyr flere funksjoner for dette form\xE5let."
 title: Generering av tilfeldige tall
 weight: 12
 ---

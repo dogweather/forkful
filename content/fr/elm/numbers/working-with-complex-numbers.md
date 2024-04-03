@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:39:22.981520-07:00
-description: "Les nombres complexes sont une combinaison de nombres r\xE9els et imaginaires,\
-  \ comme `a + bi` o\xF9 `i` est la racine carr\xE9e de -1. Ils sont cl\xE9s dans\
-  \ des\u2026"
+description: "Comment faire : Elm n'a pas de support int\xE9gr\xE9 pour les nombres\
+  \ complexes, donc vous allez cr\xE9er votre propre type et fonctions. Voici une\
+  \ configuration\u2026"
 lastmod: '2024-03-13T22:44:57.682422-06:00'
 model: gpt-4-0125-preview
-summary: "Les nombres complexes sont une combinaison de nombres r\xE9els et imaginaires,\
-  \ comme `a + bi` o\xF9 `i` est la racine carr\xE9e de -1."
+summary: "Elm n'a pas de support int\xE9gr\xE9 pour les nombres complexes, donc vous\
+  \ allez cr\xE9er votre propre type et fonctions."
 title: Manipulation des nombres complexes
 weight: 14
 ---

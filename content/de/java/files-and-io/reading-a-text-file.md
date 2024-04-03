@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:54:38.810478-07:00
-description: "Das Lesen einer Textdatei bedeutet, ihren Inhalt in dein Programm zu\
-  \ laden. Programmierer tun dies, um Daten zu verarbeiten, Konfigurationen zu laden\
-  \ oder\u2026"
+description: 'How to: Java bietet verschiedene Wege, um Textdateien zu lesen. Hier
+  ist ein einfacher Ansatz mit `java.nio.file.Files`.'
 lastmod: '2024-03-13T22:44:53.779768-06:00'
 model: gpt-4-1106-preview
-summary: Das Lesen einer Textdatei bedeutet, ihren Inhalt in dein Programm zu laden.
+summary: Java bietet verschiedene Wege, um Textdateien zu lesen.
 title: Textdatei einlesen
 weight: 22
 ---

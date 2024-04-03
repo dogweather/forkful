@@ -2,15 +2,14 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:52.712770-07:00
-description: "Das Entfernen von Anf\xFChrungszeichen aus einem String in Dart bedeutet,\
-  \ die doppelten (\") oder einfachen (') Anf\xFChrungszeichen am Anfang und Ende\
-  \ eines\u2026"
+description: "Wie: Dart bietet unkomplizierte M\xF6glichkeiten, Anf\xFChrungszeichen\
+  \ aus einem String zu entfernen, indem eingebaute String-Methoden verwendet werden,\
+  \ ohne\u2026"
 lastmod: '2024-03-13T22:44:53.567089-06:00'
 model: gpt-4-0125-preview
-summary: "Das Entfernen von Anf\xFChrungszeichen aus einem String in Dart bedeutet,\
-  \ die doppelten (\") oder einfachen (') Anf\xFChrungszeichen am Anfang und Ende\
-  \ eines Strings zu entfernen, was f\xFCr die Datenbereinigung oder die Vorbereitung\
-  \ von Strings f\xFCr die weitere Verarbeitung n\xFCtzlich ist."
+summary: "Dart bietet unkomplizierte M\xF6glichkeiten, Anf\xFChrungszeichen aus einem\
+  \ String zu entfernen, indem eingebaute String-Methoden verwendet werden, ohne dass\
+  \ Drittanbieter-Bibliotheken erforderlich sind."
 title: "Anf\xFChrungszeichen aus einem String entfernen"
 weight: 9
 ---

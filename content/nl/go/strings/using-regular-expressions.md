@@ -2,12 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:13.924511-07:00
-description: "Reguliere expressies (regex) in programmeren worden gebruikt om te zoeken,\
-  \ overeenkomsten te vinden, en strings te manipuleren op basis van specifieke\u2026"
+description: "Hoe: In Go biedt het `regexp` package regex-functionaliteit. Hier is\
+  \ een stap-voor-stap gids over hoe het te gebruiken: 1. **Een Reguliere Expressie\u2026"
 lastmod: '2024-03-13T22:44:50.276976-06:00'
 model: gpt-4-0125-preview
-summary: Reguliere expressies (regex) in programmeren worden gebruikt om te zoeken,
-  overeenkomsten te vinden, en strings te manipuleren op basis van specifieke patronen.
+summary: In Go biedt het `regexp` package regex-functionaliteit.
 title: Reguliere expressies gebruiken
 weight: 11
 ---

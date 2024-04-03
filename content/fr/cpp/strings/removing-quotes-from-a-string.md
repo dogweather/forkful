@@ -1,13 +1,10 @@
 ---
 date: 2024-01-26 03:37:55.572557-07:00
-description: "Supprimer les guillemets d'une cha\xEEne de caract\xE8res signifie retirer\
-  \ ces nuisibles guillemets doubles ou simples qui encadrent notre texte (' ou \"\
-  ). Les\u2026"
+description: "Comment faire : Voici une mani\xE8re directe d'\xE9liminer ces guillemets\
+  \ en C++ ."
 lastmod: '2024-03-13T22:44:58.148125-06:00'
 model: gpt-4-0125-preview
-summary: "Supprimer les guillemets d'une cha\xEEne de caract\xE8res signifie retirer\
-  \ ces nuisibles guillemets doubles ou simples qui encadrent notre texte (' ou \"\
-  )."
+summary: "Voici une mani\xE8re directe d'\xE9liminer ces guillemets en C++."
 title: "Retirer les guillemets d'une cha\xEEne"
 weight: 9
 ---

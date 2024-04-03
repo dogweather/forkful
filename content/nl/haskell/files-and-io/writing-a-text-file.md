@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:53.692433-07:00
-description: "In Haskell is het schrijven naar een tekstbestand alles over het opslaan\
-  \ van data in een bestand. Programmeurs doen dit om data tussen sessies te bewaren,\u2026"
+description: 'Hoe: Tekstbestanden schrijven in Haskell is vrij eenvoudig. Hier is
+  de kern met het gebruik van `writeFile`.'
 lastmod: '2024-03-13T22:44:50.870886-06:00'
 model: gpt-4-0125-preview
-summary: In Haskell is het schrijven naar een tekstbestand alles over het opslaan
-  van data in een bestand.
+summary: Tekstbestanden schrijven in Haskell is vrij eenvoudig.
 title: Een tekstbestand schrijven
 weight: 24
 ---

@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 17:35:28.360233-07:00
-description: String concatenation is sticking strings end-to-end to make a new one.
-  We do it to construct messages, generate output, or work with text dynamically.
+description: "How to: Rust gives you a few ways to piece texts together. Let\u2019\
+  s dig in. #."
 lastmod: '2024-03-13T22:44:59.888541-06:00'
 model: gpt-4-1106-preview
-summary: String concatenation is sticking strings end-to-end to make a new one.
+summary: Rust gives you a few ways to piece texts together.
 title: Concatenating strings
 weight: 3
 ---

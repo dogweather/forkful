@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:17.932476-07:00
-description: "Escribir en el error est\xE1ndar (stderr) en Go implica dirigir mensajes\
-  \ de error o diagn\xF3sticos que no est\xE1n destinados para el flujo principal\
-  \ de salida.\u2026"
+description: "C\xF3mo hacerlo: En Go, el paquete `os` proporciona el valor `Stderr`,\
+  \ representando el archivo de error est\xE1ndar. Puedes usarlo con las funciones\u2026"
 lastmod: '2024-03-13T22:44:58.486250-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir en el error est\xE1ndar (stderr) en Go implica dirigir mensajes\
-  \ de error o diagn\xF3sticos que no est\xE1n destinados para el flujo principal\
-  \ de salida."
+summary: "En Go, el paquete `os` proporciona el valor `Stderr`, representando el archivo\
+  \ de error est\xE1ndar."
 title: "Escribiendo al error est\xE1ndar"
 weight: 25
 ---

@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:09.771796-07:00
-description: "Code in Funktionen zu organisieren, bedeutet, Ihren Google Apps Script\
-  \ Code zu strukturieren, indem logische Segmente in separate Bl\xF6cke aufgeteilt\u2026"
+description: "Wie: In Google Apps Script, das auf JavaScript basiert, definieren Sie\
+  \ Funktionen mit dem Schl\xFCsselwort `function`, gefolgt von einem einzigartigen\u2026"
 lastmod: '2024-03-13T22:44:53.339964-06:00'
 model: gpt-4-0125-preview
-summary: "Code in Funktionen zu organisieren, bedeutet, Ihren Google Apps Script Code\
-  \ zu strukturieren, indem logische Segmente in separate Bl\xF6cke aufgeteilt werden,\
-  \ wobei jeder Block eine spezifische Aufgabe erf\xFCllt."
+summary: "In Google Apps Script, das auf JavaScript basiert, definieren Sie Funktionen\
+  \ mit dem Schl\xFCsselwort `function`, gefolgt von einem einzigartigen Funktionsnamen,\
+  \ Klammern `()` die Parameter enthalten k\xF6nnen, und geschweiften Klammern `{}`,\
+  \ die den Codeblock der Funktion umschlie\xDFen."
 title: Organisation von Code in Funktionen
 weight: 18
 ---

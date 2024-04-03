@@ -1,11 +1,12 @@
 ---
 date: 2024-02-03 17:50:07.310824-07:00
-description: "Parsing a date from a string in Go involves converting the date represented\
-  \ as text into a more usable format (e.g., `time.Time`). Programmers perform\u2026"
+description: "How to: Go provides robust support for parsing dates and times through\
+  \ the `time` package. The key is understanding Go's reference date format: `Mon\
+  \ Jan 2\u2026"
 lastmod: '2024-03-13T22:44:59.639504-06:00'
 model: gpt-4-0125-preview
-summary: Parsing a date from a string in Go involves converting the date represented
-  as text into a more usable format (e.
+summary: Go provides robust support for parsing dates and times through the `time`
+  package.
 title: Parsing a date from a string
 weight: 30
 ---

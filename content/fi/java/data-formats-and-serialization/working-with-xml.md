@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:32:35.888627-07:00
-description: "XML:n kanssa ty\xF6skentely k\xE4sitt\xE4\xE4 XML-dokumenttien j\xE4\
-  sent\xE4misen, kyselyiden tekemisen ja manipuloinnin Java-kielell\xE4. Ohjelmoijat\
-  \ tekev\xE4t t\xE4t\xE4\u2026"
+description: "Kuinka: Java tarjoaa API:ja kuten DOM (Document Object Model), SAX (Simple\
+  \ API for XML) ja StAX (Streaming API for XML) XML:n k\xE4sittelyyn. T\xE4ss\xE4\
+  \ on DOM-\u2026"
 lastmod: '2024-03-13T22:44:56.470175-06:00'
 model: gpt-4-0125-preview
-summary: "XML:n kanssa ty\xF6skentely k\xE4sitt\xE4\xE4 XML-dokumenttien j\xE4sent\xE4\
-  misen, kyselyiden tekemisen ja manipuloinnin Java-kielell\xE4."
+summary: "Java tarjoaa API:ja kuten DOM (Document Object Model), SAX (Simple API for\
+  \ XML) ja StAX (Streaming API for XML) XML:n k\xE4sittelyyn."
 title: "XML:n k\xE4sittely"
 weight: 40
 ---

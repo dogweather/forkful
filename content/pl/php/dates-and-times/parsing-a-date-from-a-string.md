@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:05.014970-07:00
-description: "Parsowanie daty z ci\u0105gu znak\xF3w w PHP polega na konwersji tekstu,\
-  \ kt\xF3ry przedstawia dat\u0119 i/lub czas, na obiekt `DateTime` PHP lub inne formaty\
-  \ daty/czasu.\u2026"
+description: "Jak to zrobi\u0107: Wbudowana klasa `DateTime` w PHP oferuje pot\u0119\
+  \u017Cny zestaw funkcji do parsowania i pracy z datami. Mo\u017Cna utworzy\u0107\
+  \ instancj\u0119 `DateTime` z ci\u0105gu\u2026"
 lastmod: '2024-03-13T22:44:35.506813-06:00'
 model: gpt-4-0125-preview
-summary: "Parsowanie daty z ci\u0105gu znak\xF3w w PHP polega na konwersji tekstu,\
-  \ kt\xF3ry przedstawia dat\u0119 i/lub czas, na obiekt `DateTime` PHP lub inne formaty\
-  \ daty/czasu."
+summary: "Wbudowana klasa `DateTime` w PHP oferuje pot\u0119\u017Cny zestaw funkcji\
+  \ do parsowania i pracy z datami."
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---

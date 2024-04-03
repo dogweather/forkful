@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:38:26.389268-07:00
-description: "Convertir una cadena a min\xFAsculas significa cambiar todas las letras\
-  \ may\xFAsculas de un texto a su forma min\xFAscula. Los programadores hacen esto\
-  \ para\u2026"
+description: "C\xF3mo Hacerlo: En Clojure, puedes convertir una cadena a min\xFAsculas\
+  \ con la funci\xF3n `clojure.string/lower-case`. Aqu\xED tienes un ejemplo."
 lastmod: '2024-03-13T22:44:58.643729-06:00'
 model: gpt-4-1106-preview
-summary: "Convertir una cadena a min\xFAsculas significa cambiar todas las letras\
-  \ may\xFAsculas de un texto a su forma min\xFAscula."
+summary: "En Clojure, puedes convertir una cadena a min\xFAsculas con la funci\xF3\
+  n `clojure.string/lower-case`."
 title: "Conversi\xF3n de una cadena de texto a min\xFAsculas"
 weight: 4
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:33.107025-07:00
-description: "Het verwijderen van tekens die overeenkomen met een specifiek patroon\
-  \ uit strings in C gaat over het verwijderen van alle instanties van bepaalde tekens\u2026"
+description: "Hoe: C komt niet met een ingebouwde functie voor het direct verwijderen\
+  \ van tekens uit een string op basis van een patroon, in tegenstelling tot sommige\u2026"
 lastmod: '2024-03-13T22:44:51.273414-06:00'
 model: gpt-4-0125-preview
-summary: Het verwijderen van tekens die overeenkomen met een specifiek patroon uit
-  strings in C gaat over het verwijderen van alle instanties van bepaalde tekens die
-  voldoen aan vooraf gedefinieerde criteria.
+summary: C komt niet met een ingebouwde functie voor het direct verwijderen van tekens
+  uit een string op basis van een patroon, in tegenstelling tot sommige hogere programmeertalen.
 title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---

@@ -2,16 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:59.871868-07:00
-description: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\
-  \u1EDDng c\xF3 ngh\u0129a l\xE0 thay \u0111\u1ED5i b\u1EA5t k\u1EF3 ch\u1EEF c\xE1\
-  i vi\u1EBFt hoa n\xE0o th\xE0nh c\xE1c ch\u1EEF c\xE1i vi\u1EBFt th\u01B0\u1EDD\
-  ng t\u01B0\u01A1ng \u1EE9ng. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n\u2026"
+description: "C\xE1ch l\xE0m: Swift l\xE0m \u0111i\u1EC1u n\xE0y tr\u1EDF n\xEAn d\u1EC5\
+  \ d\xE0ng v\u1EDBi m\u1ED9t thu\u1ED9c t\xEDnh g\u1ECDi l\xE0 `lowercased`. D\u01B0\
+  \u1EDBi \u0111\xE2y l\xE0 c\xE1ch b\u1EA1n s\u1EED d\u1EE5ng n\xF3."
 lastmod: '2024-03-13T22:44:37.079532-06:00'
 model: gpt-4-0125-preview
-summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\
-  \u1EDDng c\xF3 ngh\u0129a l\xE0 thay \u0111\u1ED5i b\u1EA5t k\u1EF3 ch\u1EEF c\xE1\
-  i vi\u1EBFt hoa n\xE0o th\xE0nh c\xE1c ch\u1EEF c\xE1i vi\u1EBFt th\u01B0\u1EDD\
-  ng t\u01B0\u01A1ng \u1EE9ng."
+summary: "Swift l\xE0m \u0111i\u1EC1u n\xE0y tr\u1EDF n\xEAn d\u1EC5 d\xE0ng v\u1EDB\
+  i m\u1ED9t thu\u1ED9c t\xEDnh g\u1ECDi l\xE0 `lowercased`."
 title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
 weight: 4
 ---

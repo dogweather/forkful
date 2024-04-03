@@ -1,12 +1,13 @@
 ---
 date: 2024-01-27 20:32:53.995293-07:00
-description: "Att generera slumpm\xE4ssiga tal i programmering inneb\xE4r att skapa\
-  \ sekvenser av tal som saknar f\xF6ruts\xE4gbar ordning eller m\xF6nster. Programmerare\
-  \ anv\xE4nder ofta\u2026"
+description: "Hur man g\xF6r: F\xF6r att generera slumpm\xE4ssiga tal i C++ anv\xE4\
+  nder man sig vanligtvis av `<random>`-headern, som introducerades i C++11, och som\
+  \ erbjuder ett\u2026"
 lastmod: '2024-03-13T22:44:38.205019-06:00'
 model: gpt-4-0125-preview
-summary: "Att generera slumpm\xE4ssiga tal i programmering inneb\xE4r att skapa sekvenser\
-  \ av tal som saknar f\xF6ruts\xE4gbar ordning eller m\xF6nster."
+summary: "F\xF6r att generera slumpm\xE4ssiga tal i C++ anv\xE4nder man sig vanligtvis\
+  \ av `<random>`-headern, som introducerades i C++11, och som erbjuder ett brett\
+  \ utbud av faciliteter f\xF6r att generera slumpm\xE4ssiga tal fr\xE5n olika distributioner."
 title: Generera slumptal
 weight: 12
 ---

@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:36:54.632144-07:00
-description: "Convertire una data in una stringa significa trasformare un formato\
-  \ di data standard in testo. Si fa per facilitare la visualizzazione, il salvataggio\
-  \ o\u2026"
+description: "How to: In Lua, convertire una data in stringa \xE8 semplice. Ecco un\
+  \ esempio con `os.date`."
 lastmod: '2024-03-13T22:44:43.568879-06:00'
 model: gpt-4-1106-preview
-summary: Convertire una data in una stringa significa trasformare un formato di data
-  standard in testo.
+summary: "In Lua, convertire una data in stringa \xE8 semplice."
 title: Conversione di una data in una stringa
 weight: 28
 ---

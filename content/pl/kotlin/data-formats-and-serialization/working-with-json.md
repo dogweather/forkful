@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:10.890579-07:00
-description: "Praca z JSON-em (JavaScript Object Notation) w Kotlinie obejmuje analizowanie\
-  \ i generowanie danych JSON. Programi\u015Bci robi\u0105 to, aby \u0142atwo wymienia\u0107\
-  \ dane\u2026"
+description: "Jak to zrobi\u0107: Kotlin nie zawiera wbudowanego wsparcia dla JSON,\
+  \ ale wykorzystuje pot\u0119\u017Cne funkcje bibliotek stron trzecich, takich jak\
+  \ `Gson` od Google i\u2026"
 lastmod: '2024-03-13T22:44:35.386587-06:00'
 model: gpt-4-0125-preview
-summary: Praca z JSON-em (JavaScript Object Notation) w Kotlinie obejmuje analizowanie
-  i generowanie danych JSON.
+summary: "Kotlin nie zawiera wbudowanego wsparcia dla JSON, ale wykorzystuje pot\u0119\
+  \u017Cne funkcje bibliotek stron trzecich, takich jak `Gson` od Google i `Kotlinx.serialization`\
+  \ od JetBrains."
 title: Praca z JSON
 weight: 38
 ---

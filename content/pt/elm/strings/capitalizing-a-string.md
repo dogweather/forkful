@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:17.789713-07:00
-description: "Capitalizar uma string envolve transformar o caractere inicial de uma\
-  \ dada string para mai\xFAsculo enquanto mant\xE9m o resto em min\xFAsculo, frequentemente\
-  \ para\u2026"
+description: "Como fazer: No Elm, n\xE3o h\xE1 uma fun\xE7\xE3o integrada espec\xED\
+  fica para capitalizar strings. No entanto, voc\xEA pode alcan\xE7ar isso facilmente\
+  \ usando as fun\xE7\xF5es do\u2026"
 lastmod: '2024-03-13T22:44:46.482184-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizar uma string envolve transformar o caractere inicial de uma dada\
-  \ string para mai\xFAsculo enquanto mant\xE9m o resto em min\xFAsculo, frequentemente\
-  \ para fins de formata\xE7\xE3o padronizada ou legibilidade."
+summary: "No Elm, n\xE3o h\xE1 uma fun\xE7\xE3o integrada espec\xEDfica para capitalizar\
+  \ strings."
 title: Capitalizando uma string
 weight: 2
 ---

@@ -2,12 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:22.834645-07:00
-description: "Een datum omzetten naar een string betekent het veranderen van een datumwaarde,\
-  \ die computers begrijpen, naar een voor mensen leesbaar formaat. We doen\u2026"
+description: "Hoe te: In Elm gebruik je de `Date` module om met datums te werken,\
+  \ en het `elm/time` pakket biedt functies om datums naar strings om te zetten. Laten\
+  \ we\u2026"
 lastmod: '2024-03-13T22:44:50.736484-06:00'
 model: gpt-4-0125-preview
-summary: Een datum omzetten naar een string betekent het veranderen van een datumwaarde,
-  die computers begrijpen, naar een voor mensen leesbaar formaat.
+summary: In Elm gebruik je de `Date` module om met datums te werken, en het `elm/time`
+  pakket biedt functies om datums naar strings om te zetten.
 title: Een datum converteren naar een string
 weight: 28
 ---

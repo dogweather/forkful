@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:06.938422-07:00
-description: "JSON (JavaScript Object Notation) is een gegevensformaat dat wordt gebruikt\
-  \ om gegevens op te slaan en te transporteren. Programmeurs gebruiken JSON\u2026"
+description: "Hoe te: Laten we spelen met JSON in Clojure. Je hebt `Cheshire` nodig,\
+  \ een populaire bibliotheek voor JSON-codering/decodering. Voeg eerst Cheshire toe\u2026"
 lastmod: '2024-03-13T22:44:50.441356-06:00'
 model: gpt-4-0125-preview
-summary: JSON (JavaScript Object Notation) is een gegevensformaat dat wordt gebruikt
-  om gegevens op te slaan en te transporteren.
+summary: Laten we spelen met JSON in Clojure.
 title: Werken met JSON
 weight: 38
 ---

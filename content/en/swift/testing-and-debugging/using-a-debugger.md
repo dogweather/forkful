@@ -1,7 +1,7 @@
 ---
 date: 2024-01-25 20:50:18.888596-07:00
-description: "To use the debugger in Xcode (the IDE for Swift), you can set breakpoints,\
-  \ inspect variables, and watch expressions. Here's an example: ```Swift func\u2026"
+description: 'How to: To use the debugger in Xcode (the IDE for Swift), you can set
+  breakpoints, inspect variables, and watch expressions. Here''s an example.'
 lastmod: '2024-03-13T22:45:00.400539-06:00'
 model: gpt-4-1106-preview
 summary: To use the debugger in Xcode (the IDE for Swift), you can set breakpoints,

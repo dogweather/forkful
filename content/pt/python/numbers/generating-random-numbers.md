@@ -1,14 +1,12 @@
 ---
 date: 2024-01-27 20:34:53.990766-07:00
-description: "Gerar n\xFAmeros aleat\xF3rios envolve criar n\xFAmeros que n\xE3o podem\
-  \ ser previstos de maneira razo\xE1vel melhor do que por acaso, o que \xE9 essencial\
-  \ para o\u2026"
+description: "Como fazer: Python oferece o m\xF3dulo `random` que ajuda na gera\xE7\
+  \xE3o de n\xFAmeros aleat\xF3rios para v\xE1rios usos. Veja como come\xE7ar: 1.\
+  \ **Importando o m\xF3dulo**."
 lastmod: '2024-03-13T22:44:46.149606-06:00'
 model: gpt-4-0125-preview
-summary: "Gerar n\xFAmeros aleat\xF3rios envolve criar n\xFAmeros que n\xE3o podem\
-  \ ser previstos de maneira razo\xE1vel melhor do que por acaso, o que \xE9 essencial\
-  \ para o desenvolvimento de simula\xE7\xF5es, jogos e algoritmos de seguran\xE7\
-  a."
+summary: "Python oferece o m\xF3dulo `random` que ajuda na gera\xE7\xE3o de n\xFA\
+  meros aleat\xF3rios para v\xE1rios usos."
 title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
 weight: 12
 ---

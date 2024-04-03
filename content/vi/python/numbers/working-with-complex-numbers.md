@@ -2,15 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:20.424454-07:00
-description: "S\u1ED1 ph\u1EE9c l\xE0 m\u1ED9t t\u1EADp h\u1EE3p c\xE1c s\u1ED1 c\xF3\
-  \ d\u1EA1ng `a + bi`, n\u01A1i `a` v\xE0 `b` l\xE0 c\xE1c s\u1ED1 th\u1EF1c, v\xE0\
-  \ `i` l\xE0 \u0111\u01A1n v\u1ECB \u1EA3o (`i^2 = -1`). Trong l\u1EADp tr\xECnh,\
-  \ ch\xFAng ta s\u1EED d\u1EE5ng ch\xFAng\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Python h\u1ED7 tr\u1EE3 s\u1EB5n s\u1ED1 ph\u1EE9\
+  c. D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch b\u1EA1n c\xF3 th\u1EC3 thao t\xE1c\
+  \ v\u1EDBi ch\xFAng."
 lastmod: '2024-03-13T22:44:36.088639-06:00'
 model: gpt-4-0125-preview
-summary: "S\u1ED1 ph\u1EE9c l\xE0 m\u1ED9t t\u1EADp h\u1EE3p c\xE1c s\u1ED1 c\xF3\
-  \ d\u1EA1ng `a + bi`, n\u01A1i `a` v\xE0 `b` l\xE0 c\xE1c s\u1ED1 th\u1EF1c, v\xE0\
-  \ `i` l\xE0 \u0111\u01A1n v\u1ECB \u1EA3o (`i^2 = -1`)."
+summary: "Python h\u1ED7 tr\u1EE3 s\u1EB5n s\u1ED1 ph\u1EE9c."
 title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 weight: 14
 ---

@@ -2,12 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:33.066708-07:00
-description: "Generare numeri casuali in Dart comporta la creazione di valori numerici\
-  \ imprevedibili e diversi ad ogni esecuzione. I programmatori sfruttano questa\u2026"
+description: "Come fare: La libreria core di Dart include il supporto per la generazione\
+  \ di numeri casuali con la classe `Random` trovata in `dart:math`. Ecco un\u2026"
 lastmod: '2024-03-13T22:44:43.125173-06:00'
 model: gpt-4-0125-preview
-summary: Generare numeri casuali in Dart comporta la creazione di valori numerici
-  imprevedibili e diversi ad ogni esecuzione.
+summary: La libreria core di Dart include il supporto per la generazione di numeri
+  casuali con la classe `Random` trovata in `dart:math`.
 title: Generare numeri casuali
 weight: 12
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:14.805945-07:00
-description: "\xC5 skrive en tekstfil i JavaScript handler ofte om \xE5 opprette og\
-  \ lagre data i et enkelt, lesbart format for logging, eksport av brukerinndata eller\u2026"
+description: "Hvordan: I et Node.js-milj\xF8 kan du bruke den innebygde `fs` (File\
+  \ System) modulen for \xE5 skrive tekstfiler. Dette eksemplet demonstrerer skriving\
+  \ av tekst\u2026"
 lastmod: '2024-03-13T22:44:41.201660-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive en tekstfil i JavaScript handler ofte om \xE5 opprette og lagre\
-  \ data i et enkelt, lesbart format for logging, eksport av brukerinndata eller konfigurasjonsform\xE5\
-  l."
+summary: "I et Node.js-milj\xF8 kan du bruke den innebygde `fs` (File System) modulen\
+  \ for \xE5 skrive tekstfiler."
 title: Skrive en tekstfil
 weight: 24
 ---

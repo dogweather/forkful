@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:18.042571-07:00
-description: "Een nieuw project starten betekent het opzetten van een verse codebasis\
-  \ voor je briljante idee\xEBn. Programmeurs doen dit om concepten om te zetten in\u2026"
+description: "Hoe: Voordat je code schrijft, beslis over tools en structuur. Laten\
+  \ we in dit voorbeeld Node.js en npm (Node Package Manager) gebruiken. 1. Installeer\u2026"
 lastmod: '2024-03-13T22:44:51.202112-06:00'
 model: gpt-4-0125-preview
-summary: "Een nieuw project starten betekent het opzetten van een verse codebasis\
-  \ voor je briljante idee\xEBn."
+summary: Voordat je code schrijft, beslis over tools en structuur.
 title: Een nieuw project starten
 weight: 1
 ---

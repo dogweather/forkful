@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 18:04:14.762933-07:00
-description: "\xC5 starte et nytt prosjekt handler om \xE5 skape en ren skifer for\
-  \ \xE5 utvikle programvare. Programmerere gj\xF8r dette for \xE5 realisere nye ideer,\
-  \ l\xF8se problemer,\u2026"
+description: "Slik gj\xF8r du: For \xE5 sparke i gang et Haskell-prosjekt, starter\
+  \ vi med Stack, et bygge- og prosjektverkt\xF8y som gj\xF8r livet lettere. Installer\
+  \ Stack om du\u2026"
 lastmod: '2024-03-13T22:44:40.842257-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 starte et nytt prosjekt handler om \xE5 skape en ren skifer for \xE5\
-  \ utvikle programvare."
+summary: "For \xE5 sparke i gang et Haskell-prosjekt, starter vi med Stack, et bygge-\
+  \ og prosjektverkt\xF8y som gj\xF8r livet lettere."
 title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---

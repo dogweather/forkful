@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:58:14.910645-07:00
-description: "Buscar y reemplazar texto es el proceso de localizar cadenas espec\xED\
-  ficas en un texto y sustituirlas con otras diferentes. Los programadores lo hacen\
-  \ para\u2026"
+description: "How to: Java hace que buscar y reemplazar sea pan comido con la clase\
+  \ `String` y sus m\xE9todos `replace` y `replaceAll`. Aqu\xED van unos ejemplos."
 lastmod: '2024-03-13T22:44:58.923229-06:00'
 model: gpt-4-1106-preview
-summary: "Buscar y reemplazar texto es el proceso de localizar cadenas espec\xEDficas\
-  \ en un texto y sustituirlas con otras diferentes."
+summary: "Java hace que buscar y reemplazar sea pan comido con la clase `String` y\
+  \ sus m\xE9todos `replace` y `replaceAll`."
 title: Buscando y reemplazando texto
 weight: 10
 ---

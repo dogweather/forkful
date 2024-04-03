@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 18:04:15.224042-07:00
-description: "Starting a new project means setting up a fresh codebase for your brilliant\
-  \ ideas. Programmers do it to turn concepts into real, functioning apps or\u2026"
+description: "How to: Before you write code, decide on tools and structure. Let's\
+  \ use Node.js and npm (Node Package Manager) for this example. 1. Install Node.js\
+  \ from\u2026"
 lastmod: '2024-03-13T22:45:00.434145-06:00'
 model: gpt-4-1106-preview
-summary: Starting a new project means setting up a fresh codebase for your brilliant
-  ideas.
+summary: Before you write code, decide on tools and structure.
 title: Starting a new project
 weight: 1
 ---

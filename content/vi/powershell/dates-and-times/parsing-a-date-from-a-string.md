@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:03.726485-07:00
-description: "Ph\xE2n t\xEDch c\xFA ph\xE1p ng\xE0y th\xE1ng t\u1EEB m\u1ED9t chu\u1ED7\
-  i l\xE0 vi\u1EC7c l\xE0m r\xF5 th\xF4ng tin ng\xE0y th\xE1ng \u0111\u01B0\u1EE3\
-  c ch\u1EE9a trong v\u0103n b\u1EA3n. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7\
-  n vi\u1EC7c n\xE0y \u0111\u1EC3 c\xF3 th\u1EC3 th\u1EF1c\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: PowerShell l\xE0m cho vi\u1EC7c ph\xE2\
+  n t\xEDch c\xFA ph\xE1p ng\xE0y th\xE1ng tr\u1EDF n\xEAn kh\xE1 \u0111\u01A1n gi\u1EA3\
+  n. H\xE3y xem c\xE1ch chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i th\xE0nh \u0111\
+  \u1ED1i t\u01B0\u1EE3ng DateTime."
 lastmod: '2024-03-13T22:44:36.948875-06:00'
 model: gpt-4-0125-preview
-summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p ng\xE0y th\xE1ng t\u1EEB m\u1ED9t chu\u1ED7\
-  i l\xE0 vi\u1EC7c l\xE0m r\xF5 th\xF4ng tin ng\xE0y th\xE1ng \u0111\u01B0\u1EE3\
-  c ch\u1EE9a trong v\u0103n b\u1EA3n."
+summary: "PowerShell l\xE0m cho vi\u1EC7c ph\xE2n t\xEDch c\xFA ph\xE1p ng\xE0y th\xE1\
+  ng tr\u1EDF n\xEAn kh\xE1 \u0111\u01A1n gi\u1EA3n."
 title: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB chu\u1ED7i k\xED t\u1EF1"
 weight: 30
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:31:27.044460-07:00
-description: "Berechnungen von zuk\xFCnftigen oder vergangenen Daten erm\xF6glichen\
-  \ es, Zeitintervalle zu bestimmen. Programmierer nutzen das, um Deadline-Management,\u2026"
+description: "Wie geht das: Um ein Datum in der Zukunft oder Vergangenheit zu berechnen,\
+  \ verwenden wir die `DateTime` und `DateInterval` Klassen. Hier ein paar\u2026"
 lastmod: '2024-03-13T22:44:53.985802-06:00'
 model: gpt-4-1106-preview
-summary: "Berechnungen von zuk\xFCnftigen oder vergangenen Daten erm\xF6glichen es,\
-  \ Zeitintervalle zu bestimmen."
+summary: Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, verwenden wir
+  die `DateTime` und `DateInterval` Klassen.
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---

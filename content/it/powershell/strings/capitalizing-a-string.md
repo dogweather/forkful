@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:04.947604-07:00
-description: "Capitalizzare una stringa in PowerShell comporta la trasformazione del\
-  \ primo carattere di una determinata stringa in maiuscolo, lasciando inalterata\
-  \ il\u2026"
+description: "Come fare: PowerShell, essendo uno strumento versatile, ti consente\
+  \ di capitalizzare una stringa utilizzando metodi semplici senza la necessit\xE0\
+  \ di\u2026"
 lastmod: '2024-03-13T22:44:43.624800-06:00'
 model: gpt-4-0125-preview
-summary: Capitalizzare una stringa in PowerShell comporta la trasformazione del primo
-  carattere di una determinata stringa in maiuscolo, lasciando inalterata il resto
-  della stringa.
+summary: "PowerShell, essendo uno strumento versatile, ti consente di capitalizzare\
+  \ una stringa utilizzando metodi semplici senza la necessit\xE0 di librerie di terze\
+  \ parti."
 title: Capitalizzare una stringa
 weight: 2
 ---

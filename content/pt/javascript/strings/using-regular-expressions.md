@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:00.895562-07:00
-description: "Express\xF5es regulares (regex) em JavaScript s\xE3o padr\xF5es usados\
-  \ para combinar sequ\xEAncias de caracteres em strings. Programadores as usam para\
-  \ buscar,\u2026"
+description: 'Como fazer: #.'
 lastmod: '2024-03-13T22:44:46.952878-06:00'
 model: gpt-4-0125-preview
-summary: "Express\xF5es regulares (regex) em JavaScript s\xE3o padr\xF5es usados para\
-  \ combinar sequ\xEAncias de caracteres em strings."
+summary: '#.'
 title: "Usando express\xF5es regulares"
 weight: 11
 ---

@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:07:50.660039-07:00
-description: "Das Schreiben einer Textdatei in Google Apps Script erm\xF6glicht es\
-  \ Entwicklern, Daten dauerhaft zu speichern, sodass sie f\xFCr zuk\xFCnftige Verwendungen\
-  \ oder\u2026"
+description: "Wie: Das Erstellen und Schreiben einer Textdatei in Google Apps Script\
+  \ kann durch den Google DriveApp-Dienst erreicht werden. Unten finden Sie eine\u2026"
 lastmod: '2024-03-13T22:44:53.354023-06:00'
 model: gpt-4-0125-preview
-summary: "Das Schreiben einer Textdatei in Google Apps Script erm\xF6glicht es Entwicklern,\
-  \ Daten dauerhaft zu speichern, sodass sie f\xFCr zuk\xFCnftige Verwendungen oder\
-  \ Analysen zug\xE4nglich sind."
+summary: Das Erstellen und Schreiben einer Textdatei in Google Apps Script kann durch
+  den Google DriveApp-Dienst erreicht werden.
 title: Eine Textdatei schreiben
 weight: 24
 ---

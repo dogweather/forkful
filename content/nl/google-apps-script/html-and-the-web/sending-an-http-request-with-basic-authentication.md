@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:49.045284-07:00
-description: "Het verzenden van een HTTP-verzoek met basisauthenticatie omvat het\
-  \ coderen van een gebruikersnaam en wachtwoord in een aanvraagheader om toegang\
-  \ te\u2026"
+description: "Hoe te: In Google Apps Script stuur je een HTTP-verzoek met basisauthenticatie\
+  \ door gebruik te maken van de `UrlFetchApp`-service in combinatie met een\u2026"
 lastmod: '2024-03-13T22:44:50.331163-06:00'
 model: gpt-4-0125-preview
-summary: Het verzenden van een HTTP-verzoek met basisauthenticatie omvat het coderen
-  van een gebruikersnaam en wachtwoord in een aanvraagheader om toegang te krijgen
-  tot beschermde bronnen.
+summary: In Google Apps Script stuur je een HTTP-verzoek met basisauthenticatie door
+  gebruik te maken van de `UrlFetchApp`-service in combinatie met een base64-gecodeerde
+  autorisatieheader.
 title: Een HTTP-verzoek verzenden met basisauthenticatie
 weight: 45
 ---

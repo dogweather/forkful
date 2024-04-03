@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 01:16:34.015951-07:00
-description: "Omstrukturering er prosessen med \xE5 restrukturere eksisterende datamaskinkode\
-  \ uten \xE5 endre dens eksterne oppf\xF8rsel. Det er en vital praksis for \xE5 redusere\u2026"
+description: "Hvordan gj\xF8re det: La oss vurdere et enkelt Bash-skript som trenger\
+  \ litt omstrukturering. Det er klumpete, med gjentatt kode og vanskelig \xE5 f\xF8\
+  lge."
 lastmod: '2024-03-13T22:44:40.983155-06:00'
 model: gpt-4-0125-preview
-summary: "Omstrukturering er prosessen med \xE5 restrukturere eksisterende datamaskinkode\
-  \ uten \xE5 endre dens eksterne oppf\xF8rsel."
+summary: La oss vurdere et enkelt Bash-skript som trenger litt omstrukturering.
 title: Refaktorering
 weight: 19
 ---

@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:57:10.953758-07:00
-description: "Text suchen und ersetzen bedeutet, bestimmte Zeichenfolgen in einem\
-  \ Text zu finden und sie durch andere zu ersetzen. Programmierer nutzen es, um Fehler\
-  \ zu\u2026"
+description: "How to: Hier ist ein einfacher Code, der zeigt, wie man Text auf einem\
+  \ Arduino sucht und ersetzt. Wir nehmen an, dass `inputString` der Text ist, den\
+  \ wir\u2026"
 lastmod: '2024-03-13T22:44:54.130661-06:00'
 model: gpt-4-1106-preview
-summary: Text suchen und ersetzen bedeutet, bestimmte Zeichenfolgen in einem Text
-  zu finden und sie durch andere zu ersetzen.
+summary: Hier ist ein einfacher Code, der zeigt, wie man Text auf einem Arduino sucht
+  und ersetzt.
 title: Suchen und Ersetzen von Text
 weight: 10
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:25.428983-07:00
-description: "Pobieranie bie\u017C\u0105cej daty w C++ jest podstawowym zadaniem dla\
-  \ program\xF3w, kt\xF3re musz\u0105 przetwarza\u0107 lub wy\u015Bwietla\u0107 daty\
-  \ w oparciu o zegar systemowy. Jest to\u2026"
+description: "Jak to zrobi\u0107: C++ oferuje kilka sposob\xF3w na uzyskanie bie\u017C\
+  \u0105cej daty, w tym standardow\u0105 bibliotek\u0119 C++ i biblioteki stron trzecich,\
+  \ takie jak Boost.\u2026"
 lastmod: '2024-03-13T22:44:35.723348-06:00'
 model: gpt-4-0125-preview
-summary: "Pobieranie bie\u017C\u0105cej daty w C++ jest podstawowym zadaniem dla program\xF3\
-  w, kt\xF3re musz\u0105 przetwarza\u0107 lub wy\u015Bwietla\u0107 daty w oparciu\
-  \ o zegar systemowy."
+summary: "C++ oferuje kilka sposob\xF3w na uzyskanie bie\u017C\u0105cej daty, w tym\
+  \ standardow\u0105 bibliotek\u0119 C++ i biblioteki stron trzecich, takie jak Boost."
 title: Pobieranie aktualnej daty
 weight: 29
 ---

@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:02.916936-07:00
-description: "\xC5 konvertere en dato til en streng i Visual Basic for Applications\
-  \ (VBA) er en prosess brukt for \xE5 endre datatypen til en dato til et strengformat.\u2026"
+description: "Hvordan: I VBA er `Format`-funksjonen din go-to l\xF8sning for \xE5\
+  \ konvertere datoer til strenger. Den lar deg spesifisere datoformatet n\xF8yaktig\
+  \ som n\xF8dvendig.\u2026"
 lastmod: '2024-03-13T22:44:40.632991-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 konvertere en dato til en streng i Visual Basic for Applications (VBA)\
-  \ er en prosess brukt for \xE5 endre datatypen til en dato til et strengformat."
+summary: "I VBA er `Format`-funksjonen din go-to l\xF8sning for \xE5 konvertere datoer\
+  \ til strenger."
 title: "\xC5 konvertere en dato til en streng"
 weight: 28
 ---

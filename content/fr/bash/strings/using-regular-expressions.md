@@ -2,14 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:52.302471-07:00
-description: "Les expressions r\xE9guli\xE8res (regex) dans Bash vous permettent de\
-  \ rechercher, manipuler et g\xE9rer des cha\xEEnes de caract\xE8res et des fichiers\
-  \ en fonction de\u2026"
+description: 'Comment faire : #.'
 lastmod: '2024-03-13T22:44:57.978651-06:00'
 model: gpt-4-0125-preview
-summary: "Les expressions r\xE9guli\xE8res (regex) dans Bash vous permettent de rechercher,\
-  \ manipuler et g\xE9rer des cha\xEEnes de caract\xE8res et des fichiers en fonction\
-  \ de mod\xE8les sp\xE9cifiques."
+summary: '#.'
 title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---

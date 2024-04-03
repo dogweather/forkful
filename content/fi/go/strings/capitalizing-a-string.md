@@ -2,15 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:56.976210-07:00
-description: "Merkkijonon alkukirjaimen muuttaminen suuraakkoseksi k\xE4sitt\xE4\xE4\
-  \ annetun merkkijonon ensimm\xE4isen merkin muuttamisen suuraakkoseksi, jos se on\
-  \ pienaakkonen,\u2026"
+description: "Kuinka: Go:ssa `strings`-paketti ei tarjoa suoraa funktiota vain merkkijonon\
+  \ ensimm\xE4isen kirjaimen suurentamiseen. Siksi yhdist\xE4mme\u2026"
 lastmod: '2024-03-13T22:44:56.032355-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonon alkukirjaimen muuttaminen suuraakkoseksi k\xE4sitt\xE4\xE4 annetun\
-  \ merkkijonon ensimm\xE4isen merkin muuttamisen suuraakkoseksi, jos se on pienaakkonen,\
-  \ varmistaen n\xE4in merkkijonon erottumisen tai noudattavan tiettyj\xE4 kieliopillisia\
-  \ normeja."
+summary: "Go:ssa `strings`-paketti ei tarjoa suoraa funktiota vain merkkijonon ensimm\xE4\
+  isen kirjaimen suurentamiseen."
 title: Merkkijonon suuraakkostaminen
 weight: 2
 ---

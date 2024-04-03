@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:27.244641-07:00
-description: "Escribir pruebas en Python implica crear scripts automatizados para\
-  \ validar la correcci\xF3n de tu c\xF3digo. Los programadores hacen esto para asegurarse\
-  \ de\u2026"
+description: "C\xF3mo hacerlo: Python viene con un m\xF3dulo incorporado para escribir\
+  \ pruebas llamado `unittest`. As\xED es como puedes usarlo para probar una funci\xF3\
+  n simple."
 lastmod: '2024-03-13T22:44:58.615922-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir pruebas en Python implica crear scripts automatizados para validar\
-  \ la correcci\xF3n de tu c\xF3digo."
+summary: "Python viene con un m\xF3dulo incorporado para escribir pruebas llamado\
+  \ `unittest`."
 title: Escribiendo pruebas
 weight: 36
 ---

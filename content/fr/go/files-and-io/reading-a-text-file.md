@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:37.703598-07:00
-description: "Lire un fichier texte en Go implique d'acc\xE9der et de r\xE9cup\xE9\
-  rer le contenu d'un fichier stock\xE9 sur disque pour le traiter ou l'analyser.\
-  \ Les programmeurs\u2026"
+description: "Comment faire : Lire un fichier texte en Go peut \xEAtre accompli de\
+  \ plusieurs mani\xE8res, mais l'une des m\xE9thodes les plus simples est d'utiliser\
+  \ le paquet\u2026"
 lastmod: '2024-03-13T22:44:57.153744-06:00'
 model: gpt-4-0125-preview
-summary: "Lire un fichier texte en Go implique d'acc\xE9der et de r\xE9cup\xE9rer\
-  \ le contenu d'un fichier stock\xE9 sur disque pour le traiter ou l'analyser."
+summary: "Lire un fichier texte en Go peut \xEAtre accompli de plusieurs mani\xE8\
+  res, mais l'une des m\xE9thodes les plus simples est d'utiliser le paquet `ioutil`."
 title: Lire un fichier texte
 weight: 22
 ---

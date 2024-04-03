@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 00:59:57.140829-07:00
-description: "Das Protokollieren im Kontext der Programmierung ist der Prozess, Ereignisse,\
-  \ Zust\xE4nde und Informationen in einer Datei oder einem anderen Ausgabemedium\u2026"
+description: "Wie man das macht: Angenommen, Sie arbeiten an einem Linux-Computer\
+  \ und m\xF6chten Ihre Protokolle mit gutem alten C++ in eine Datei schreiben. Sie\
+  \ sollten\u2026"
 lastmod: '2024-03-13T22:44:54.191171-06:00'
 model: gpt-4-1106-preview
-summary: "Das Protokollieren im Kontext der Programmierung ist der Prozess, Ereignisse,\
-  \ Zust\xE4nde und Informationen in einer Datei oder einem anderen Ausgabemedium\
-  \ aufzuzeichnen."
+summary: "Angenommen, Sie arbeiten an einem Linux-Computer und m\xF6chten Ihre Protokolle\
+  \ mit gutem alten C++ in eine Datei schreiben."
 title: Protokollierung
 weight: 17
 ---

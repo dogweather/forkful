@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:42:33.321964-07:00
-description: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, bedeutet,\
-  \ bestimmte Segmente aus einem String zu entfernen, die das vorgegebene Muster erf\xFC\
-  llen.\u2026"
+description: "So geht's: In Java nutzen wir die `replaceAll()`-Methode von `String`,\
+  \ um alle Vorkommen, die einem regul\xE4ren Ausdruck (RegEx) entsprechen, zu l\xF6\
+  schen."
 lastmod: '2024-03-13T22:44:53.747771-06:00'
 model: gpt-4-1106-preview
-summary: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, bedeutet, bestimmte\
-  \ Segmente aus einem String zu entfernen, die das vorgegebene Muster erf\xFCllen."
+summary: "In Java nutzen wir die `replaceAll()`-Methode von `String`, um alle Vorkommen,\
+  \ die einem regul\xE4ren Ausdruck (RegEx) entsprechen, zu l\xF6schen."
 title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
 weight: 5
 ---

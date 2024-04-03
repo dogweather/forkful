@@ -2,16 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:22.320565-07:00
-description: "Ghi l\u1EA1i (Logging) c\u01A1 b\u1EA3n l\xE0 qu\xE1 tr\xECnh ghi l\u1EA1\
-  i c\xE1c s\u1EF1 ki\u1EC7n v\xE0 d\u1EEF li\u1EC7u \u0111\u1EA7u ra t\u1EEB m\u1ED9\
-  t ph\u1EA7n m\u1EC1m khi n\xF3 \u0111ang ch\u1EA1y, coi n\xF3 nh\u01B0 nh\u1EAD\
-  t k\xFD c\u1EE7a ph\u1EA7n m\u1EC1m. L\u1EADp tr\xECnh\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Ki\u1EBFn tr\xFAc Elm kh\xF4ng h\u1ED7\
+  \ tr\u1EE3 c\xE1c t\xE1c d\u1EE5ng ph\u1EE5 nh\u01B0 vi\u1EC7c ghi l\u1ECBch s\u1EED\
+  \ ngay t\u1EEB \u0111\u1EA7u - b\u1EA1n x\u1EED l\xFD ch\xFAng qua c\xE1c l\u1EC7\
+  nh, l\xE0 m\u1ED9t ph\u1EA7n c\u1EE7a ki\u1EBFn tr\xFAc \u1EE9ng\u2026"
 lastmod: '2024-03-13T22:44:36.553210-06:00'
 model: gpt-4-0125-preview
-summary: "Ghi l\u1EA1i (Logging) c\u01A1 b\u1EA3n l\xE0 qu\xE1 tr\xECnh ghi l\u1EA1\
-  i c\xE1c s\u1EF1 ki\u1EC7n v\xE0 d\u1EEF li\u1EC7u \u0111\u1EA7u ra t\u1EEB m\u1ED9\
-  t ph\u1EA7n m\u1EC1m khi n\xF3 \u0111ang ch\u1EA1y, coi n\xF3 nh\u01B0 nh\u1EAD\
-  t k\xFD c\u1EE7a ph\u1EA7n m\u1EC1m."
+summary: "Ki\u1EBFn tr\xFAc Elm kh\xF4ng h\u1ED7 tr\u1EE3 c\xE1c t\xE1c d\u1EE5ng\
+  \ ph\u1EE5 nh\u01B0 vi\u1EC7c ghi l\u1ECBch s\u1EED ngay t\u1EEB \u0111\u1EA7u -\
+  \ b\u1EA1n x\u1EED l\xFD ch\xFAng qua c\xE1c l\u1EC7nh, l\xE0 m\u1ED9t ph\u1EA7\
+  n c\u1EE7a ki\u1EBFn tr\xFAc \u1EE9ng d\u1EE5ng c\u1EE7a b\u1EA1n."
 title: Ghi log
 weight: 17
 ---

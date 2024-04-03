@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:37.556752-07:00
-description: "Escrever para o erro padr\xE3o (`stderr`) em C++ envolve a sa\xEDda\
-  \ de mensagens de erro ou diagn\xF3sticos que s\xE3o separados da sa\xEDda principal\
-  \ do programa. Os\u2026"
+description: "Como fazer: Em C++, escrever para o erro padr\xE3o pode ser alcan\xE7\
+  ado usando o fluxo `cerr`, que faz parte da biblioteca padr\xE3o. Aqui est\xE1 um\
+  \ exemplo b\xE1sico."
 lastmod: '2024-03-13T22:44:46.895549-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever para o erro padr\xE3o (`stderr`) em C++ envolve a sa\xEDda de mensagens\
-  \ de erro ou diagn\xF3sticos que s\xE3o separados da sa\xEDda principal do programa."
+summary: "Em C++, escrever para o erro padr\xE3o pode ser alcan\xE7ado usando o fluxo\
+  \ `cerr`, que faz parte da biblioteca padr\xE3o."
 title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---

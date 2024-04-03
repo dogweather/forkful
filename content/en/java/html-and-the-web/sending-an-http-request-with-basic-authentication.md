@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 18:02:01.895683-07:00
-description: "Sending an HTTP request with basic authentication involves adding a\
-  \ header with a username and password to access a protected resource. Programmers\
-  \ use it\u2026"
+description: 'How to: Java makes it pretty straightforward to send HTTP requests with
+  basic authentication using the `HttpURLConnection` class. Here''s a quick example.'
 lastmod: '2024-03-13T22:44:59.972195-06:00'
 model: gpt-4-1106-preview
-summary: Sending an HTTP request with basic authentication involves adding a header
-  with a username and password to access a protected resource.
+summary: Java makes it pretty straightforward to send HTTP requests with basic authentication
+  using the `HttpURLConnection` class.
 title: Sending an HTTP request with basic authentication
 weight: 45
 ---

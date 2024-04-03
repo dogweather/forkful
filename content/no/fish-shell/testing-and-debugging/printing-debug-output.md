@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:52:42.813239-07:00
-description: "Debugging-utskrifter er info vi skriver ut for \xE5 forst\xE5 hva koden\
-  \ v\xE5r egentlig gj\xF8r. Programmerere bruker dette for \xE5 finne bugs eller\
-  \ forst\xE5 flyten\u2026"
+description: "Hvordan: I Fish Shell, bruk `echo` eller `printf` for \xE5 skrive ut\
+  \ debug-informasjon. Legg til `-d` for detaljert output."
 lastmod: '2024-03-13T22:44:41.229511-06:00'
 model: gpt-4-1106-preview
-summary: "Debugging-utskrifter er info vi skriver ut for \xE5 forst\xE5 hva koden\
-  \ v\xE5r egentlig gj\xF8r."
+summary: "I Fish Shell, bruk `echo` eller `printf` for \xE5 skrive ut debug-informasjon."
 title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---

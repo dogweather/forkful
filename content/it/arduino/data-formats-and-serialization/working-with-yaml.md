@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:40.950037-07:00
-description: "YAML (YAML Ain't Markup Language) \xE8 uno standard di serializzazione\
-  \ di dati leggibile dall'uomo che pu\xF2 essere utilizzato per file di configurazione,\u2026"
+description: "Come fare: Lavorare direttamente con YAML su Arduino non \xE8 semplice\
+  \ come negli ambienti di programmazione di livello superiore a causa dei vincoli\
+  \ di\u2026"
 lastmod: '2024-03-13T22:44:43.704202-06:00'
 model: gpt-4-0125-preview
-summary: "YAML (YAML Ain't Markup Language) \xE8 uno standard di serializzazione di\
-  \ dati leggibile dall'uomo che pu\xF2 essere utilizzato per file di configurazione,\
-  \ comunicazione tra programmi e archiviazione di dati."
+summary: "Lavorare direttamente con YAML su Arduino non \xE8 semplice come negli ambienti\
+  \ di programmazione di livello superiore a causa dei vincoli di memoria e dell'assenza\
+  \ di librerie native per l'elaborazione di YAML."
 title: Lavorare con YAML
 weight: 41
 ---

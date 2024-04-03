@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:23.370038-07:00
-description: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh cho ph\xE9\
-  p ch\u01B0\u01A1ng tr\xECnh Swift c\u1EE7a b\u1EA1n nh\u1EADn th\xEAm chi ti\u1EBF\
-  t khi ng\u01B0\u1EDDi d\xF9ng ch\u1EA1y n\xF3. \u0110i\u1EC1u n\xE0y quan tr\u1ECD\
-  ng v\xEC n\xF3 th\xEAm kh\u1EA3 n\u0103ng t\xF9y ch\u1EC9nh\u2026"
+description: "C\xE1ch th\u1EE9c: Swift l\xE0m cho vi\u1EC7c \u0111\u1ECDc c\xE1c \u0111\
+  \u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh c\u1EF1c k\u1EF3 \u0111\u01A1n gi\u1EA3n. Ch\xFA\
+  ng c\xF3 th\u1EC3 truy c\u1EADp th\xF4ng qua c\u1EA5u tr\xFAc `CommandLine`. D\u01B0\
+  \u1EDBi \u0111\xE2y l\xE0 \u0111i\u1EC3m ch\xEDnh."
 lastmod: '2024-03-13T22:44:37.118031-06:00'
 model: gpt-4-0125-preview
-summary: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh cho ph\xE9\
-  p ch\u01B0\u01A1ng tr\xECnh Swift c\u1EE7a b\u1EA1n nh\u1EADn th\xEAm chi ti\u1EBF\
-  t khi ng\u01B0\u1EDDi d\xF9ng ch\u1EA1y n\xF3."
+summary: "Swift l\xE0m cho vi\u1EC7c \u0111\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2\
+  ng l\u1EC7nh c\u1EF1c k\u1EF3 \u0111\u01A1n gi\u1EA3n."
 title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
 weight: 23
 ---

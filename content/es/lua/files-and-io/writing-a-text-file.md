@@ -2,12 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:28.241627-07:00
-description: "Escribir en un archivo de texto en Lua implica crear o abrir un archivo\
-  \ en modo de escritura, utilizando operaciones de archivo para insertar texto. Esta\u2026"
+description: "C\xF3mo hacerlo: En Lua, trabajar con archivos para escribir es sencillo.\
+  \ Normalmente utilizar\xE1s la funci\xF3n `io.open()` para abrir (o crear) un archivo,\u2026"
 lastmod: '2024-03-13T22:44:59.220872-06:00'
 model: gpt-4-0125-preview
-summary: Escribir en un archivo de texto en Lua implica crear o abrir un archivo en
-  modo de escritura, utilizando operaciones de archivo para insertar texto.
+summary: En Lua, trabajar con archivos para escribir es sencillo.
 title: Escribiendo un archivo de texto
 weight: 24
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 03:38:07.787392-07:00
-description: "Stripar aspas de uma string significa remover aquelas inc\xF4modas aspas\
-  \ duplas ou simples que envolvem nosso texto (' ou \"). Programadores frequentemente\u2026"
+description: 'Como fazer: Aqui vai uma maneira direta de se livrar dessas aspas em
+  C++.'
 lastmod: '2024-03-13T22:44:46.867929-06:00'
 model: gpt-4-0125-preview
-summary: "Stripar aspas de uma string significa remover aquelas inc\xF4modas aspas\
-  \ duplas ou simples que envolvem nosso texto (' ou \")."
+summary: Aqui vai uma maneira direta de se livrar dessas aspas em C++.
 title: Removendo aspas de uma string
 weight: 9
 ---

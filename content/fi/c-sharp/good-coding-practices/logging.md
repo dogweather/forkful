@@ -1,10 +1,12 @@
 ---
 date: 2024-01-26 01:01:01.388589-07:00
-description: "Lokitus on sovelluksen tapahtumien ja tiedon tulostuksen tallentamista\
-  \ suoritusaikana. Ohjelmoijat luovat lokeja vikojen diagnostiikkaa, ohjelmiston\u2026"
+description: "Miten: C#:ssa voi k\xE4ytt\xE4\xE4 sis\xE4\xE4nrakennettua `System.Diagnostics`\
+  \ nimiavaruutta tai kolmannen osapuolen kirjastoja kuten NLog tai log4net. T\xE4\
+  ss\xE4 on nopea\u2026"
 lastmod: '2024-03-13T22:44:56.579808-06:00'
 model: gpt-4-1106-preview
-summary: Lokitus on sovelluksen tapahtumien ja tiedon tulostuksen tallentamista suoritusaikana.
+summary: "C#:ssa voi k\xE4ytt\xE4\xE4 sis\xE4\xE4nrakennettua `System.Diagnostics`\
+  \ nimiavaruutta tai kolmannen osapuolen kirjastoja kuten NLog tai log4net."
 title: Lokitus
 weight: 17
 ---

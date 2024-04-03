@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:42.892958-07:00
-description: "Assosiative tabeller, kjent i andre spr\xE5k som kart eller ordb\xF8\
-  ker, er n\xF8kkel-verdi-par som brukes til effektiv dataoppslag og -manipulasjon.\
-  \ I motsetning\u2026"
+description: "Hvordan: C har ikke innebygd st\xF8tte for assosiative tabeller som\
+  \ noen h\xF8yere niv\xE5 spr\xE5k, men du kan simulere dem ved \xE5 bruke strukturer\
+  \ og hashing.\u2026"
 lastmod: '2024-03-13T22:44:41.263702-06:00'
 model: gpt-4-0125-preview
-summary: "Assosiative tabeller, kjent i andre spr\xE5k som kart eller ordb\xF8ker,\
-  \ er n\xF8kkel-verdi-par som brukes til effektiv dataoppslag og -manipulasjon."
+summary: "C har ikke innebygd st\xF8tte for assosiative tabeller som noen h\xF8yere\
+  \ niv\xE5 spr\xE5k, men du kan simulere dem ved \xE5 bruke strukturer og hashing."
 title: Bruke associative tabeller
 weight: 15
 ---

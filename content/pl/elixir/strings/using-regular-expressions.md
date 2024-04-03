@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:35.417054-07:00
-description: "Wyra\u017Cenia regularne (regex) w j\u0119zyku Elixir s\u0105 u\u017C\
-  ywane do wyszukiwania, dopasowywania oraz manipulowania ci\u0105gami znak\xF3w na\
-  \ podstawie okre\u015Blonych wzorc\xF3w.\u2026"
+description: "Jak to zrobi\u0107: Elixir u\u017Cywa modu\u0142u `Regex`, wykorzystuj\u0105\
+  c bibliotek\u0119 regex Erlanga, do operacji z regex. Oto podstawowe zastosowania."
 lastmod: '2024-03-13T22:44:35.030939-06:00'
 model: gpt-4-0125-preview
-summary: "Wyra\u017Cenia regularne (regex) w j\u0119zyku Elixir s\u0105 u\u017Cywane\
-  \ do wyszukiwania, dopasowywania oraz manipulowania ci\u0105gami znak\xF3w na podstawie\
-  \ okre\u015Blonych wzorc\xF3w."
+summary: "Elixir u\u017Cywa modu\u0142u `Regex`, wykorzystuj\u0105c bibliotek\u0119\
+  \ regex Erlanga, do operacji z regex."
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---

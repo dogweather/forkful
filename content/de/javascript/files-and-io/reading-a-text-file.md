@@ -1,8 +1,7 @@
 ---
 date: 2024-01-20 17:54:33.006741-07:00
-description: "Das Einlesen einer Textdatei bedeutet, ihren Inhalt in deine Anwendung\
-  \ zu importieren. Programmierer machen das, um Daten zu verarbeiten, Einstellungen\
-  \ zu\u2026"
+description: "Was & Warum? Das Einlesen einer Textdatei bedeutet, ihren Inhalt in\
+  \ deine Anwendung zu importieren. Programmierer machen das, um Daten zu verarbeiten,\u2026"
 lastmod: '2024-03-13T22:44:54.283835-06:00'
 model: gpt-4-1106-preview
 summary: Das Einlesen einer Textdatei bedeutet, ihren Inhalt in deine Anwendung zu

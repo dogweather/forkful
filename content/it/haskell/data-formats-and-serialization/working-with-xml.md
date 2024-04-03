@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:31:45.867045-07:00
-description: "Lavorare con XML in Haskell coinvolge il parsing, la manipolazione e\
-  \ la generazione di strutture XML. I programmatori gestiscono l'XML per interagire\
-  \ con\u2026"
+description: "Come fare: Haskell offre librerie come `xml-conduit` per gestire XML.\
+  \ Il seguente esempio dimostra il parsing di una stringa XML e l'interrogazione\
+  \ degli\u2026"
 lastmod: '2024-03-13T22:44:43.499738-06:00'
 model: gpt-4-0125-preview
-summary: Lavorare con XML in Haskell coinvolge il parsing, la manipolazione e la generazione
-  di strutture XML.
+summary: Haskell offre librerie come `xml-conduit` per gestire XML.
 title: Lavorare con XML
 weight: 40
 ---

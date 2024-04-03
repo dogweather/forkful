@@ -1,10 +1,9 @@
 ---
 date: 2024-01-20 17:54:21.089500-07:00
-description: "Tekstitiedoston lukeminen tarkoittaa tiedon hakemista tiedostosta ohjelmallasi.\
-  \ Koodarit tekev\xE4t t\xE4t\xE4 datan k\xE4sittelyyn, analyysiin ja tiedonsiirtoon."
+description: "N\xE4in se tehd\xE4\xE4n: ."
 lastmod: '2024-03-13T22:44:56.463043-06:00'
 model: gpt-4-1106-preview
-summary: Tekstitiedoston lukeminen tarkoittaa tiedon hakemista tiedostosta ohjelmallasi.
+summary: .
 title: Tekstitiedoston lukeminen
 weight: 22
 ---

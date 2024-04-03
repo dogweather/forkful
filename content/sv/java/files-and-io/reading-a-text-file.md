@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:54:36.465649-07:00
-description: "Att l\xE4sa en textfil inneb\xE4r att man h\xE4mtar data fr\xE5n en\
-  \ fil som finns lagrad p\xE5 din dator eller server. Programmerare g\xF6r detta\
-  \ f\xF6r att kunna arbeta med\u2026"
+description: "Hur g\xF6r man: L\xE4s en enkel textfil i Java."
 lastmod: '2024-03-13T22:44:37.804362-06:00'
 model: gpt-4-1106-preview
-summary: "Att l\xE4sa en textfil inneb\xE4r att man h\xE4mtar data fr\xE5n en fil\
-  \ som finns lagrad p\xE5 din dator eller server."
+summary: "L\xE4s en enkel textfil i Java."
 title: "L\xE4sa en textfil"
 weight: 22
 ---

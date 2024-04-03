@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 01:01:13.907882-07:00
-description: "Logowanie to proces rejestrowania zdarze\u0144 aplikacji i danych wyj\u015B\
-  ciowych podczas jej dzia\u0142ania. Programi\u015Bci loguj\u0105, aby diagnozowa\u0107\
-  \ b\u0142\u0119dy, monitorowa\u0107\u2026"
+description: "Jak to zrobi\u0107: W C#, mo\u017Cna u\u017Cy\u0107 wbudowanej przestrzeni\
+  \ nazw `System.Diagnostics` lub bibliotek stron trzecich takich jak NLog czy log4net.\
+  \ Oto kr\xF3tki\u2026"
 lastmod: '2024-03-13T22:44:35.414756-06:00'
 model: gpt-4-1106-preview
-summary: "Logowanie to proces rejestrowania zdarze\u0144 aplikacji i danych wyj\u015B\
-  ciowych podczas jej dzia\u0142ania."
+summary: "W C#, mo\u017Cna u\u017Cy\u0107 wbudowanej przestrzeni nazw `System.Diagnostics`\
+  \ lub bibliotek stron trzecich takich jak NLog czy log4net."
 title: "Rejestrowanie zdarze\u0144"
 weight: 17
 ---

@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:33:33.701596-07:00
-description: "Comparar duas datas \xE9 verificar as suas diferen\xE7as, seja em dias,\
-  \ meses, anos ou segundos. Programadores fazem isso para realizar tarefas como validar\u2026"
+description: 'Como Fazer: .'
 lastmod: '2024-03-13T22:44:46.166714-06:00'
 model: gpt-4-1106-preview
-summary: "Comparar duas datas \xE9 verificar as suas diferen\xE7as, seja em dias,\
-  \ meses, anos ou segundos."
+summary: .
 title: Comparando duas datas
 weight: 27
 ---

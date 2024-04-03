@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:04.068587-07:00
-description: "Werken met XML houdt in: het parsen, extraheren en manipuleren van gegevens\
-  \ in het Extensible Markup Language-formaat. Programmeurs worstelen met XML,\u2026"
+description: 'Hoe: Zo parseer je XML in Bash. Gereedschappen? xmllint en xmlstarlet.
+  Door XML-elementen loopen? Absoluut. Voorbeeld met voorbeelduitvoer.'
 lastmod: '2024-03-13T22:44:51.008263-06:00'
 model: gpt-4-0125-preview
-summary: 'Werken met XML houdt in: het parsen, extraheren en manipuleren van gegevens
-  in het Extensible Markup Language-formaat.'
+summary: Zo parseer je XML in Bash.
 title: Werken met XML
 weight: 40
 ---

@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:54:05.962758-07:00
-description: "\"Mik\xE4 ja Miksi?\" Tekstitiedoston lukeminen tarkoittaa tiedon hakemista\
-  \ levylt\xE4 ohjelmaan. Ohjelmoijat tekev\xE4t sen datan k\xE4sittelyyn, analysointiin\
-  \ tai\u2026"
+description: "How to: \"N\xE4in teet:\" Tiedoston lukeminen kokonaisuudessaan."
 lastmod: '2024-03-13T22:44:56.201513-06:00'
 model: gpt-4-1106-preview
-summary: "\"Mik\xE4 ja Miksi."
+summary: "\"N\xE4in teet:\"\n\nTiedoston lukeminen kokonaisuudessaan."
 title: Tekstitiedoston lukeminen
 weight: 22
 ---

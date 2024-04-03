@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:05.466835-07:00
-description: "T\xE1i c\u1EA5u tr\xFAc l\xE0 qu\xE1 tr\xECnh c\u1EA5u tr\xFAc l\u1EA1\
-  i m\xE3 m\xE1y t\xEDnh hi\u1EC7n c\xF3 m\xE0 kh\xF4ng thay \u0111\u1ED5i h\xE0nh\
-  \ vi b\xEAn ngo\xE0i c\u1EE7a n\xF3. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1\
-  u n\xE0y \u0111\u1EC3 d\u1ECDn d\u1EB9p c\u01A1 s\u1EDF m\xE3,\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: H\xE3y b\u1EAFt \u0111\u1EA7u v\u1EDBi m\u1ED9\
+  t v\xED d\u1EE5 c\u01A1 b\u1EA3n trong Swift, n\u01A1i ch\xFAng ta c\xF3 m\u1ED9\
+  t s\u1ED1 m\xE3 l\u1EB7p l\u1EA1i."
 lastmod: '2024-03-13T22:44:37.109057-06:00'
 model: gpt-4-0125-preview
-summary: "T\xE1i c\u1EA5u tr\xFAc l\xE0 qu\xE1 tr\xECnh c\u1EA5u tr\xFAc l\u1EA1i\
-  \ m\xE3 m\xE1y t\xEDnh hi\u1EC7n c\xF3 m\xE0 kh\xF4ng thay \u0111\u1ED5i h\xE0nh\
-  \ vi b\xEAn ngo\xE0i c\u1EE7a n\xF3."
+summary: "H\xE3y b\u1EAFt \u0111\u1EA7u v\u1EDBi m\u1ED9t v\xED d\u1EE5 c\u01A1 b\u1EA3\
+  n trong Swift, n\u01A1i ch\xFAng ta c\xF3 m\u1ED9t s\u1ED1 m\xE3 l\u1EB7p l\u1EA1\
+  i."
 title: "T\xE1i c\u1EA5u tr\xFAc m\xE3"
 weight: 19
 ---

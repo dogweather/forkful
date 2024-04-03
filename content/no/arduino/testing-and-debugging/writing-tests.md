@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:54.903424-07:00
-description: "\xC5 skrive tester i Arduino-milj\xF8et refererer til prosessen med\
-  \ \xE5 lage automatiserte tester som validerer funksjonaliteten til koden din p\xE5\
-  \ Arduino-enheter.\u2026"
+description: "Hvordan: Arduino har ikke et innebygd testrammeverk som noen andre programmeringsmilj\xF8\
+  er. Imidlertid kan du bruke tredjepartsbiblioteker som `AUnit` for\u2026"
 lastmod: '2024-03-13T22:44:41.061278-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive tester i Arduino-milj\xF8et refererer til prosessen med \xE5\
-  \ lage automatiserte tester som validerer funksjonaliteten til koden din p\xE5 Arduino-enheter."
+summary: "Arduino har ikke et innebygd testrammeverk som noen andre programmeringsmilj\xF8\
+  er."
 title: Skrive tester
 weight: 36
 ---

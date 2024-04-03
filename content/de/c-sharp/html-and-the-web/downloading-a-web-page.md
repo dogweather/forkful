@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:43:49.832622-07:00
-description: "Das Herunterladen einer Webseite bedeutet das Abrufen des Inhalts \xFC\
-  ber das Internet auf deinen Computer. Programmierer tun dies, um Daten zu sammeln,\u2026"
+description: "Wie geht das? Mit C# kannst du eine Webseite mit einigen Zeilen Code\
+  \ herunterladen. Hier ist ein einfaches Beispiel mit `HttpClient`, einer Klasse,\
+  \ die in\u2026"
 lastmod: '2024-03-13T22:44:53.887169-06:00'
 model: gpt-4-1106-preview
-summary: "Das Herunterladen einer Webseite bedeutet das Abrufen des Inhalts \xFCber\
-  \ das Internet auf deinen Computer."
+summary: Mit C# kannst du eine Webseite mit einigen Zeilen Code herunterladen.
 title: Webseite herunterladen
 weight: 42
 ---

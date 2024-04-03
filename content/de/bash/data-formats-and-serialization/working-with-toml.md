@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:18:44.284314-07:00
-description: "TOML, kurz f\xFCr Toms Offensichtliche, Minimale Sprache, ist ein Format\
-  \ zur Serialisierung von Daten. Programmierer sch\xE4tzen es wegen seiner Einfachheit\
-  \ und\u2026"
+description: "Wie geht das: Zuerst `toml-cli` installieren, um mit TOML in Bash zu\
+  \ experimentieren. Praktisch f\xFCr das Lesen oder Bearbeiten von TOML-Dateien spontan."
 lastmod: '2024-03-13T22:44:54.083021-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, kurz f\xFCr Toms Offensichtliche, Minimale Sprache, ist ein Format\
-  \ zur Serialisierung von Daten."
+summary: Zuerst `toml-cli` installieren, um mit TOML in Bash zu experimentieren.
 title: Arbeiten mit TOML
 weight: 39
 ---

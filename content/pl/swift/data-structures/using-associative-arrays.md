@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:13:18.512552-07:00
-description: "Tablice asocjacyjne, znane w Swift jako s\u0142owniki, pozwalaj\u0105\
-  \ przechowywa\u0107 i zarz\u0105dza\u0107 danymi w postaci par klucz-warto\u015B\
-  \u0107. Programi\u015Bci u\u017Cywaj\u0105 ich do\u2026"
+description: "Jak to zrobi\u0107: Swift u\u0142atwia prac\u0119 z tablicami asocjacyjnymi.\
+  \ Oto, jak mo\u017Cesz deklarowa\u0107, dodawa\u0107, usuwa\u0107 i uzyskiwa\u0107\
+  \ dost\u0119p do element\xF3w w s\u0142owniku Swift."
 lastmod: '2024-03-13T22:44:35.747785-06:00'
 model: gpt-4-0125-preview
-summary: "Tablice asocjacyjne, znane w Swift jako s\u0142owniki, pozwalaj\u0105 przechowywa\u0107\
-  \ i zarz\u0105dza\u0107 danymi w postaci par klucz-warto\u015B\u0107."
+summary: "Swift u\u0142atwia prac\u0119 z tablicami asocjacyjnymi."
 title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---

@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:31.282845-07:00
-description: "Escrever um arquivo de texto em TypeScript \xE9 uma habilidade crucial\
-  \ para a persist\xEAncia de dados, configura\xE7\xF5es ou gera\xE7\xE3o de logs.\
-  \ Programadores\u2026"
+description: "Como fazer: O TypeScript por si s\xF3 n\xE3o lida diretamente com opera\xE7\
+  \xF5es de arquivo, pois \xE9 compilado para JavaScript, que tradicionalmente \xE9\
+  \ executado no\u2026"
 lastmod: '2024-03-13T22:44:46.344440-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever um arquivo de texto em TypeScript \xE9 uma habilidade crucial para\
-  \ a persist\xEAncia de dados, configura\xE7\xF5es ou gera\xE7\xE3o de logs."
+summary: "O TypeScript por si s\xF3 n\xE3o lida diretamente com opera\xE7\xF5es de\
+  \ arquivo, pois \xE9 compilado para JavaScript, que tradicionalmente \xE9 executado\
+  \ no navegador com acesso limitado ao sistema de arquivos."
 title: Escrevendo um arquivo de texto
 weight: 24
 ---

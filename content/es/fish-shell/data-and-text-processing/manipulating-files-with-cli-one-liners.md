@@ -1,14 +1,11 @@
 ---
 date: 2024-01-27 16:21:07.606182-07:00
-description: "En el \xE1mbito de la programaci\xF3n, especialmente cuando se trata\
-  \ de entornos Linux o Unix, manipular archivos directamente desde la interfaz de\
-  \ l\xEDnea de\u2026"
+description: "C\xF3mo hacerlo: Manipular archivos en Fish Shell es tanto intuitivo\
+  \ como potente. Aqu\xED hay algunos ejemplos para mostrar su capacidad: 1. **Crear\
+  \ un\u2026"
 lastmod: '2024-03-13T22:44:59.496563-06:00'
 model: gpt-4-0125-preview
-summary: "En el \xE1mbito de la programaci\xF3n, especialmente cuando se trata de\
-  \ entornos Linux o Unix, manipular archivos directamente desde la interfaz de l\xED\
-  nea de comandos (CLI) no es solo una cuesti\xF3n de conveniencia\u2014es una herramienta\
-  \ de poder."
+summary: Manipular archivos en Fish Shell es tanto intuitivo como potente.
 title: "Manipulando archivos con comandos de l\xEDnea de una sola l\xEDnea"
 weight: 31
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 00:50:10.744079-07:00
-description: "Gestire gli errori in C# significa gestire l'inaspettato\u2014come inciampare\
-  \ sui propri lacci delle scarpe. I programmi possono inciampare su dati errati o\u2026"
+description: "Come fare: Cominciamo con un blocco try-catch. \xC8 come mettere una\
+  \ rete di sicurezza sotto un funambolo. Se scivola, non precipita\u2014viene catturato."
 lastmod: '2024-03-13T22:44:43.441044-06:00'
 model: gpt-4-1106-preview
-summary: "Gestire gli errori in C# significa gestire l'inaspettato\u2014come inciampare\
-  \ sui propri lacci delle scarpe."
+summary: Cominciamo con un blocco try-catch.
 title: Gestione degli errori
 weight: 16
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:35.633087-07:00
-description: "Express\xF5es regulares, ou regex, s\xE3o uma ferramenta poderosa de\
-  \ correspond\xEAncia de padr\xF5es e busca na programa\xE7\xE3o. Os programadores\
-  \ utilizam regex para\u2026"
+description: "Como fazer: Vamos mergulhar no TypeScript e ver como o regex \xE9 usado\
+  \ para tarefas comuns."
 lastmod: '2024-03-13T22:44:46.316038-06:00'
 model: gpt-4-0125-preview
-summary: "Express\xF5es regulares, ou regex, s\xE3o uma ferramenta poderosa de correspond\xEA\
-  ncia de padr\xF5es e busca na programa\xE7\xE3o."
+summary: "Vamos mergulhar no TypeScript e ver como o regex \xE9 usado para tarefas\
+  \ comuns."
 title: "Usando express\xF5es regulares"
 weight: 11
 ---

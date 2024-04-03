@@ -2,13 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:14.512896-07:00
-description: "Le espressioni regolari (regex) nella programmazione sono utilizzate\
-  \ per cercare, corrispondere e manipolare stringhe basate su specifici modelli.\
-  \ I\u2026"
+description: "Come fare: In Go, il pacchetto `regexp` fornisce funzionalit\xE0 regex.\
+  \ Ecco una guida passo dopo passo su come usarlo: 1. **Compilazione di un'espressione\u2026"
 lastmod: '2024-03-13T22:44:42.896964-06:00'
 model: gpt-4-0125-preview
-summary: Le espressioni regolari (regex) nella programmazione sono utilizzate per
-  cercare, corrispondere e manipolare stringhe basate su specifici modelli.
+summary: "In Go, il pacchetto `regexp` fornisce funzionalit\xE0 regex."
 title: Utilizzo delle espressioni regolari
 weight: 11
 ---

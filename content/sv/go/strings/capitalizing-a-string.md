@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:39.306616-07:00
-description: "Att skriva med stor begynnelsebokstav inneb\xE4r att omvandla det f\xF6\
-  rsta tecknet i en given str\xE4ng till versal om det \xE4r i gemen, vilket s\xE4\
-  kerst\xE4ller att\u2026"
+description: "Hur man g\xF6r: I Go erbjuder inte `strings`-paketet en direkt funktion\
+  \ f\xF6r att endast g\xF6ra f\xF6rsta bokstaven i en str\xE4ng till versal. D\xE4\
+  rf\xF6r kombinerar vi\u2026"
 lastmod: '2024-03-13T22:44:37.373535-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva med stor begynnelsebokstav inneb\xE4r att omvandla det f\xF6\
-  rsta tecknet i en given str\xE4ng till versal om det \xE4r i gemen, vilket s\xE4\
-  kerst\xE4ller att str\xE4ngen sticker ut eller f\xF6ljer vissa grammatiska normer."
+summary: "I Go erbjuder inte `strings`-paketet en direkt funktion f\xF6r att endast\
+  \ g\xF6ra f\xF6rsta bokstaven i en str\xE4ng till versal."
 title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---

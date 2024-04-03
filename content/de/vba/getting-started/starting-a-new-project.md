@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:56.686231-07:00
-description: "Ein neues Projekt in Visual Basic for Applications (VBA) zu starten,\
-  \ bedeutet, eine Umgebung innerhalb einer Host-Anwendung wie Excel einzurichten,\
-  \ um\u2026"
+description: "Wie geht das: Wenn Sie bereit sind, ein neues VBA-Projekt zu beginnen,\
+  \ besteht der Ausgangspunkt \xFCblicherweise darin, den VBA-Editor zu \xF6ffnen\
+  \ und Ihr\u2026"
 lastmod: '2024-03-13T22:44:53.718525-06:00'
 model: gpt-4-0125-preview
-summary: "Ein neues Projekt in Visual Basic for Applications (VBA) zu starten, bedeutet,\
-  \ eine Umgebung innerhalb einer Host-Anwendung wie Excel einzurichten, um Aufgaben\
-  \ zu automatisieren oder die Funktionalit\xE4t zu erweitern."
+summary: "Wenn Sie bereit sind, ein neues VBA-Projekt zu beginnen, besteht der Ausgangspunkt\
+  \ \xFCblicherweise darin, den VBA-Editor zu \xF6ffnen und Ihr Projektger\xFCst zu\
+  \ initialisieren."
 title: Einen neuen Projektstart
 weight: 1
 ---

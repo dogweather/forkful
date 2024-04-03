@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:59:17.887275-07:00
-description: "Enviar uma requisi\xE7\xE3o HTTP significa solicitar dados ou servi\xE7\
-  os atrav\xE9s da internet. Programadores fazem isso para interagir com APIs, servi\xE7\
-  os web, ou\u2026"
+description: "Como Fazer: Para enviar uma requisi\xE7\xE3o HTTP do Bash, voc\xEA pode\
+  \ usar o comando `curl`. Aqui est\xE3o alguns exemplos."
 lastmod: '2024-03-13T22:44:46.749724-06:00'
 model: gpt-4-1106-preview
-summary: "Enviar uma requisi\xE7\xE3o HTTP significa solicitar dados ou servi\xE7\
-  os atrav\xE9s da internet."
+summary: "Para enviar uma requisi\xE7\xE3o HTTP do Bash, voc\xEA pode usar o comando\
+  \ `curl`."
 title: "Enviando uma requisi\xE7\xE3o HTTP"
 weight: 44
 ---

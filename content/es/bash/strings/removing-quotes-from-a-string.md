@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 03:37:24.655752-07:00
-description: "Eliminar las comillas de una cadena implica quitar las marcas de comillas\
-  \ que encierran la cadena. Los programadores a menudo quieren hacer esto para\u2026"
+description: "C\xF3mo hacerlo: Bash tiene varias formas de eliminar comillas de las\
+  \ cadenas. Aqu\xED hay algunos ejemplos r\xE1pidos."
 lastmod: '2024-03-13T22:44:59.232560-06:00'
 model: gpt-4-0125-preview
-summary: Eliminar las comillas de una cadena implica quitar las marcas de comillas
-  que encierran la cadena.
+summary: Bash tiene varias formas de eliminar comillas de las cadenas.
 title: Eliminando comillas de una cadena
 weight: 9
 ---

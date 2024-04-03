@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 18:01:28.229106-07:00
-description: "HTTP-Requests mit Basisauthentifizierung erm\xF6glichen gesicherte Zugriffe\
-  \ auf Webressourcen, indem Benutzername und Passwort \xFCbermittelt werden.\u2026"
+description: "How to: Elixir verwendet das `HTTPoison` Paket, ein beliebter HTTP-Client,\
+  \ um Requests mit Basisauthentifizierung durchzuf\xFChren. Installiere `HTTPoison`\u2026"
 lastmod: '2024-03-13T22:44:53.532385-06:00'
 model: gpt-4-1106-preview
-summary: "HTTP-Requests mit Basisauthentifizierung erm\xF6glichen gesicherte Zugriffe\
-  \ auf Webressourcen, indem Benutzername und Passwort \xFCbermittelt werden."
+summary: "Elixir verwendet das `HTTPoison` Paket, ein beliebter HTTP-Client, um Requests\
+  \ mit Basisauthentifizierung durchzuf\xFChren."
 title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---

@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:55:14.359205-07:00
-description: "Att l\xE4sa en textfil i Python inneb\xE4r att \xF6ppna och extrahera\
-  \ inneh\xE5llet fr\xE5n en fil p\xE5 din dator till ditt program. Programmerare\
-  \ g\xF6r detta f\xF6r att\u2026"
+description: "How to: (Hur man g\xF6r:) ."
 lastmod: '2024-03-13T22:44:37.500192-06:00'
 model: gpt-4-1106-preview
-summary: "Att l\xE4sa en textfil i Python inneb\xE4r att \xF6ppna och extrahera inneh\xE5\
-  llet fr\xE5n en fil p\xE5 din dator till ditt program."
+summary: .
 title: "L\xE4sa en textfil"
 weight: 22
 ---

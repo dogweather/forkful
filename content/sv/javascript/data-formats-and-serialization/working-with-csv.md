@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:21.958692-07:00
-description: "Att arbeta med CSV (Comma-Separated Values, komma-separerade v\xE4rden)\
-  \ i JavaScript inneb\xE4r att tolka eller generera CSV-filer f\xF6r att antingen\
-  \ importera\u2026"
+description: "Hur: JavaScript har inte inbyggd funktionalitet f\xF6r att tolka eller\
+  \ omvandla CSV till str\xE4ngar, som det har med JSON. Dock kan du enkelt hantera\
+  \ CSV-data\u2026"
 lastmod: '2024-03-13T22:44:38.315716-06:00'
 model: gpt-4-0125-preview
-summary: "Att arbeta med CSV (Comma-Separated Values, komma-separerade v\xE4rden)\
-  \ i JavaScript inneb\xE4r att tolka eller generera CSV-filer f\xF6r att antingen\
-  \ importera tabelldata fr\xE5n externa k\xE4llor eller exportera data f\xF6r anv\xE4\
-  ndning i andra program."
+summary: "JavaScript har inte inbyggd funktionalitet f\xF6r att tolka eller omvandla\
+  \ CSV till str\xE4ngar, som det har med JSON."
 title: Arbeta med CSV
 weight: 37
 ---

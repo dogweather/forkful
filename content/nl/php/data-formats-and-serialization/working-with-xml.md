@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:31.716754-07:00
-description: "XML is een opmaaktaal die wordt gebruikt voor het opslaan en transporteren\
-  \ van gegevens. Programmeurs werken met XML om interoperabiliteit tussen\u2026"
+description: 'Hoe: XML lezen met SimpleXML.'
 lastmod: '2024-03-13T22:44:50.919865-06:00'
 model: gpt-4-0125-preview
-summary: XML is een opmaaktaal die wordt gebruikt voor het opslaan en transporteren
-  van gegevens.
+summary: XML lezen met SimpleXML.
 title: Werken met XML
 weight: 40
 ---

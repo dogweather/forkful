@@ -2,18 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:44.437544-07:00
-description: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi l\xE0 t\u1EA1o ra m\u1ED9\
-  t t\u1EC7p \u0111\u01B0\u1EE3c d\u1EF1 \u0111\u1ECBnh s\u1ED1ng ng\u1EAFn h\u1EA1\
-  n tr\xEAn h\u1EC7 th\u1ED1ng t\u1EC7p c\u1EE7a b\u1EA1n, th\u01B0\u1EDDng \u0111\
-  \u01B0\u1EE3c s\u1EED d\u1EE5ng cho nh\u1EEFng vi\u1EC7c nh\u01B0 d\u1EEF li\u1EC7\
-  u trung gian.\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch nhanh\
+  \ ch\xF3ng \u0111\u1EC3 t\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi b\u1EB1ng\
+  \ Kotlin."
 lastmod: '2024-03-13T22:44:36.626981-06:00'
 model: gpt-4-0125-preview
-summary: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi l\xE0 t\u1EA1o ra m\u1ED9\
-  t t\u1EC7p \u0111\u01B0\u1EE3c d\u1EF1 \u0111\u1ECBnh s\u1ED1ng ng\u1EAFn h\u1EA1\
-  n tr\xEAn h\u1EC7 th\u1ED1ng t\u1EC7p c\u1EE7a b\u1EA1n, th\u01B0\u1EDDng \u0111\
-  \u01B0\u1EE3c s\u1EED d\u1EE5ng cho nh\u1EEFng vi\u1EC7c nh\u01B0 d\u1EEF li\u1EC7\
-  u trung gian."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch nhanh ch\xF3ng \u0111\u1EC3 t\u1EA1\
+  o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi b\u1EB1ng Kotlin."
 title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
 weight: 21
 ---

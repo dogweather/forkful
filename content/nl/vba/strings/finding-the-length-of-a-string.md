@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:39.524966-07:00
-description: "Het vinden van de lengte van een string in Visual Basic for Applications\
-  \ (VBA) houdt in dat je bepaalt hoeveel karakters deze bevat. Programmeurs voeren\u2026"
+description: "Hoe doe je dat: In VBA is de `Len` functie jouw hulpmiddel voor het\
+  \ vinden van de lengte van een string. Het retourneert een geheel getal dat het\
+  \ aantal\u2026"
 lastmod: '2024-03-13T22:44:50.627286-06:00'
 model: gpt-4-0125-preview
-summary: Het vinden van de lengte van een string in Visual Basic for Applications
-  (VBA) houdt in dat je bepaalt hoeveel karakters deze bevat.
+summary: In VBA is de `Len` functie jouw hulpmiddel voor het vinden van de lengte
+  van een string.
 title: De lengte van een string vinden
 weight: 7
 ---

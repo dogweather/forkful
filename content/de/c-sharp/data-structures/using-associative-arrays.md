@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:07.903619-07:00
-description: "Assoziative Arrays, oder W\xF6rterb\xFCcher in C#, erm\xF6glichen es\
-  \ Ihnen, Schl\xFCssel-Wert-Paare zu speichern und zu verwalten. Sie sind Ihre erste\
-  \ Wahl, wenn Sie\u2026"
+description: "Wie: In C# arbeiten Sie mit assoziativen Arrays mittels der `Dictionary<TKey,\
+  \ TValue>` Klasse. Hier ist ein schnelles Beispiel, um Ihnen den Einstieg zu\u2026"
 lastmod: '2024-03-13T22:44:53.881232-06:00'
 model: gpt-4-0125-preview
-summary: "Assoziative Arrays, oder W\xF6rterb\xFCcher in C#, erm\xF6glichen es Ihnen,\
-  \ Schl\xFCssel-Wert-Paare zu speichern und zu verwalten."
+summary: In C# arbeiten Sie mit assoziativen Arrays mittels der `Dictionary<TKey,
+  TValue>` Klasse.
 title: Verwendung von assoziativen Arrays
 weight: 15
 ---

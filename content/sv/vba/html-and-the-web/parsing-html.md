@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:00.780914-07:00
-description: "Att tolka (parse:a) HTML i Visual Basic for Applications (VBA) inneb\xE4\
-  r att extrahera specifik information fr\xE5n ett HTML-dokument. Programmerare g\xF6\
-  r det\u2026"
+description: "Hur man g\xF6r: I VBA kan du tolka HTML med hj\xE4lp av `Microsoft HTML\
+  \ Object Library`. L\xE4gg till en referens till detta bibliotek i din VBA-editor\
+  \ genom att\u2026"
 lastmod: '2024-03-13T22:44:37.740583-06:00'
 model: gpt-4-0125-preview
-summary: "Att tolka (parse:a) HTML i Visual Basic for Applications (VBA) inneb\xE4\
-  r att extrahera specifik information fr\xE5n ett HTML-dokument."
+summary: "I VBA kan du tolka HTML med hj\xE4lp av `Microsoft HTML Object Library`."
 title: Att Tolka HTML
 weight: 43
 ---

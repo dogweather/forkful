@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 18:00:46.857406-07:00
-description: "Att skicka en HTTP-beg\xE4ran \xE4r hur din app pratar med en webbserver:\
-  \ att beg\xE4ra data eller skickar information. Programmerare g\xF6r detta f\xF6\
-  r att interagera\u2026"
+description: "How to: Anv\xE4nd `URLSession` f\xF6r att hantera n\xE4tverkskommunikation.\
+  \ H\xE4r \xE4r ett enkelt exempel p\xE5 att g\xF6ra en GET-f\xF6rfr\xE5gan till\
+  \ en JSON-API."
 lastmod: '2024-03-13T22:44:38.247975-06:00'
 model: gpt-4-1106-preview
-summary: "Att skicka en HTTP-beg\xE4ran \xE4r hur din app pratar med en webbserver:\
-  \ att beg\xE4ra data eller skickar information."
+summary: "Anv\xE4nd `URLSession` f\xF6r att hantera n\xE4tverkskommunikation."
 title: "Skicka en http-f\xF6rfr\xE5gan"
 weight: 44
 ---

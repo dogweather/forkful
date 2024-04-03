@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:47.558706-07:00
-description: "W TypeScript piszemy do standardowego b\u0142\u0119du (stderr) w celu\
-  \ wysy\u0142ania komunikat\xF3w b\u0142\u0119d\xF3w lub rejestracji bezpo\u015B\
-  rednio do strumienia wyj\u015Bciowego b\u0142\u0119d\xF3w\u2026"
+description: "Jak to zrobi\u0107: TypeScript, b\u0119d\u0105c nadzbiorem JavaScript,\
+  \ opiera si\u0119 na bazowym \u015Brodowisku wykonawczym JS (jak Node.js) do pisania\
+  \ na stderr. Oto jak mo\u017Cna\u2026"
 lastmod: '2024-03-13T22:44:35.156145-06:00'
 model: gpt-4-0125-preview
-summary: "W TypeScript piszemy do standardowego b\u0142\u0119du (stderr) w celu wysy\u0142\
-  ania komunikat\xF3w b\u0142\u0119d\xF3w lub rejestracji bezpo\u015Brednio do strumienia\
-  \ wyj\u015Bciowego b\u0142\u0119d\xF3w \u015Brodowiska (np."
+summary: "TypeScript, b\u0119d\u0105c nadzbiorem JavaScript, opiera si\u0119 na bazowym\
+  \ \u015Brodowisku wykonawczym JS (jak Node.js) do pisania na stderr."
 title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---

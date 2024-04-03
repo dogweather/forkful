@@ -2,17 +2,16 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:02.522253-07:00
-description: "YAML, vi\u1EBFt t\u1EAFt c\u1EE7a \"YAML Ain't Markup Language,\" l\xE0\
-  \ m\u1ED9t chu\u1EA9n h\xF3a chu\u1ED7i d\u1EEF li\u1EC7u d\u1EC5 \u0111\u1ECDc\
-  \ v\u1EDBi con ng\u01B0\u1EDDi, c\xF3 th\u1EC3 \u0111\u01B0\u1EE3c s\u1EED d\u1EE5\
-  ng cho h\xE0ng lo\u1EA1t \u1EE9ng d\u1EE5ng, t\u1EEB t\u1EC7p\u2026"
+description: "C\xE1ch l\xE0m: \u0110\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi YAML trong C\
+  \ c\u1EA7n c\xF3 m\u1ED9t th\u01B0 vi\u1EC7n, v\xEC th\u01B0 vi\u1EC7n chu\u1EA9\
+  n C kh\xF4ng cung c\u1EA5p h\u1ED7 tr\u1EE3 tr\u1EF1c ti\u1EBFp cho vi\u1EC7c ph\xE2\
+  n t\xEDch c\xFA ph\xE1p ho\u1EB7c chu\u1ED7i h\xF3a\u2026"
 lastmod: '2024-03-13T22:44:37.295823-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, vi\u1EBFt t\u1EAFt c\u1EE7a \"YAML Ain't Markup Language,\" l\xE0\
-  \ m\u1ED9t chu\u1EA9n h\xF3a chu\u1ED7i d\u1EEF li\u1EC7u d\u1EC5 \u0111\u1ECDc\
-  \ v\u1EDBi con ng\u01B0\u1EDDi, c\xF3 th\u1EC3 \u0111\u01B0\u1EE3c s\u1EED d\u1EE5\
-  ng cho h\xE0ng lo\u1EA1t \u1EE9ng d\u1EE5ng, t\u1EEB t\u1EC7p c\u1EA5u h\xECnh \u0111\
-  \u1EBFn l\u01B0u tr\u1EEF d\u1EEF li\u1EC7u."
+summary: "\u0110\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi YAML trong C c\u1EA7n c\xF3 m\u1ED9\
+  t th\u01B0 vi\u1EC7n, v\xEC th\u01B0 vi\u1EC7n chu\u1EA9n C kh\xF4ng cung c\u1EA5\
+  p h\u1ED7 tr\u1EE3 tr\u1EF1c ti\u1EBFp cho vi\u1EC7c ph\xE2n t\xEDch c\xFA ph\xE1\
+  p ho\u1EB7c chu\u1ED7i h\xF3a YAML."
 title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 weight: 41
 ---

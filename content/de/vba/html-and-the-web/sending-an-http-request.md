@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:55.489489-07:00
-description: "Das Senden einer HTTP-Anfrage in Visual Basic for Applications (VBA)\
-  \ beinhaltet den programmatischen Zugriff auf Webressourcen oder Webservices durch\
-  \ das\u2026"
+description: "Wie: Der Schl\xFCssel zum Senden einer HTTP-Anfrage in VBA ist die Nutzung\
+  \ der `Microsoft XML, v6.0` Bibliothek (oder \xE4lterer Versionen, abh\xE4ngig von\
+  \ Ihrem\u2026"
 lastmod: '2024-03-13T22:44:53.714266-06:00'
 model: gpt-4-0125-preview
-summary: "Das Senden einer HTTP-Anfrage in Visual Basic for Applications (VBA) beinhaltet\
-  \ den programmatischen Zugriff auf Webressourcen oder Webservices durch das Stellen\
-  \ von Anfragen \xFCber HTTP."
+summary: "Der Schl\xFCssel zum Senden einer HTTP-Anfrage in VBA ist die Nutzung der\
+  \ `Microsoft XML, v6.0` Bibliothek (oder \xE4lterer Versionen, abh\xE4ngig von Ihrem\
+  \ System)."
 title: Eine HTTP-Anfrage senden
 weight: 44
 ---

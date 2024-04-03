@@ -2,15 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:36.551472-07:00
-description: "Vi\u1EBFt v\xE0o m\u1ED9t t\u1EADp tin v\u0103n b\u1EA3n c\xF3 ngh\u0129\
-  a l\xE0 l\u01B0u tr\u1EEF d\u1EEF li\u1EC7u nh\u01B0 v\u0103n b\u1EA3n ho\u1EB7\
-  c m\xE3 tr\xEAn m\xE1y t\xEDnh c\u1EE7a b\u1EA1n. C\xE1c l\u1EADp tr\xECnh vi\xEA\
-  n l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 l\u01B0u tr\u1EEF c\u1EA5u h\xECnh,\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: \u0110\u1EC3 vi\u1EBFt v\xE0o m\u1ED9t\
+  \ t\u1EADp tin v\u0103n b\u1EA3n trong Fish, s\u1EED d\u1EE5ng `echo` ho\u1EB7c\
+  \ `printf` sau \u0111\xF3 l\xE0 to\xE1n t\u1EED `>` ho\u1EB7c `>>`. `>` t\u1EA1\
+  o m\u1ED9t t\u1EADp tin m\u1EDBi ho\u1EB7c ghi\u2026"
 lastmod: '2024-03-13T22:44:37.235659-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EBFt v\xE0o m\u1ED9t t\u1EADp tin v\u0103n b\u1EA3n c\xF3 ngh\u0129\
-  a l\xE0 l\u01B0u tr\u1EEF d\u1EEF li\u1EC7u nh\u01B0 v\u0103n b\u1EA3n ho\u1EB7\
-  c m\xE3 tr\xEAn m\xE1y t\xEDnh c\u1EE7a b\u1EA1n."
+summary: "\u0110\u1EC3 vi\u1EBFt v\xE0o m\u1ED9t t\u1EADp tin v\u0103n b\u1EA3n trong\
+  \ Fish, s\u1EED d\u1EE5ng `echo` ho\u1EB7c `printf` sau \u0111\xF3 l\xE0 to\xE1\
+  n t\u1EED `>` ho\u1EB7c `>>`."
 title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 24
 ---

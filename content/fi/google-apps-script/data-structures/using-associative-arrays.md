@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:34.848920-07:00
-description: "Assosiatiiviset taulukot, jotka tunnetaan Google Apps Scriptiss\xE4\
-  \ (JavaScriptin muunnelma) objekteina, mahdollistavat ohjelmoijille avain-arvo -parien\u2026"
+description: "Kuinka: Google Apps Scriptiss\xE4 assosiatiivisia taulukoita (objekteja)\
+  \ luodaan ja k\xE4sitell\xE4\xE4n k\xE4ytt\xE4m\xE4ll\xE4 aaltosulkeita `{}`, m\xE4\
+  \xE4rittelem\xE4ll\xE4 avain-arvo\u2026"
 lastmod: '2024-03-13T22:44:56.088733-06:00'
 model: gpt-4-0125-preview
-summary: "Assosiatiiviset taulukot, jotka tunnetaan Google Apps Scriptiss\xE4 (JavaScriptin\
-  \ muunnelma) objekteina, mahdollistavat ohjelmoijille avain-arvo -parien kokoelmien\
-  \ luomisen."
+summary: "Google Apps Scriptiss\xE4 assosiatiivisia taulukoita (objekteja) luodaan\
+  \ ja k\xE4sitell\xE4\xE4n k\xE4ytt\xE4m\xE4ll\xE4 aaltosulkeita `{}`, m\xE4\xE4\
+  rittelem\xE4ll\xE4 avain-arvo -pareja sis\xE4ll\xE4."
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---

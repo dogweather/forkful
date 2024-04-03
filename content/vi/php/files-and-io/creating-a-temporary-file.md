@@ -2,16 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:49.112476-07:00
-description: "Vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi trong PHP c\xF3\
-  \ ngh\u0129a l\xE0 t\u1EA1o ra m\u1ED9t t\u1EC7p s\u1EBD t\u1ED3n t\u1EA1i trong\
-  \ th\u1EDDi gian ng\u1EAFn \u0111\u1EC3 b\u1EA1n s\u1EED d\u1EE5ng, sau \u0111\xF3\
-  , c\xE1i t\u1EC7p \u0111\xF3 s\u1EBD bi\u1EBFn m\u1EA5t. T\u1EA1i sao l\u1EA1i\u2026"
+description: "L\xE0m Th\u1EBF N\xE0o: PHP gi\xFAp b\u1EA1n t\u1EA1o t\u1EC7p t\u1EA1\
+  m th\u1EDDi v\u1EDBi h\xE0m `tmpfile()`, h\xE0m n\xE0y t\u1EA1o m\u1ED9t t\u1EC7\
+  p cho b\u1EA1n trong th\u01B0 m\u1EE5c temp c\u1EE7a h\u1EC7 th\u1ED1ng. D\u01B0\
+  \u1EDBi \u0111\xE2y l\xE0 m\u1ED9t v\xED d\u1EE5 nhanh."
 lastmod: '2024-03-13T22:44:36.792750-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi trong PHP c\xF3\
-  \ ngh\u0129a l\xE0 t\u1EA1o ra m\u1ED9t t\u1EC7p s\u1EBD t\u1ED3n t\u1EA1i trong\
-  \ th\u1EDDi gian ng\u1EAFn \u0111\u1EC3 b\u1EA1n s\u1EED d\u1EE5ng, sau \u0111\xF3\
-  , c\xE1i t\u1EC7p \u0111\xF3 s\u1EBD bi\u1EBFn m\u1EA5t."
+summary: "PHP gi\xFAp b\u1EA1n t\u1EA1o t\u1EC7p t\u1EA1m th\u1EDDi v\u1EDBi h\xE0\
+  m `tmpfile()`, h\xE0m n\xE0y t\u1EA1o m\u1ED9t t\u1EC7p cho b\u1EA1n trong th\u01B0\
+  \ m\u1EE5c temp c\u1EE7a h\u1EC7 th\u1ED1ng."
 title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
 weight: 21
 ---

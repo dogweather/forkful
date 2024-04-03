@@ -1,13 +1,10 @@
 ---
 date: 2024-01-26 01:08:30.522160-07:00
-description: "Loggning \xE4r processen att spela in h\xE4ndelser i en applikation\
-  \ medan ett program k\xF6rs, vilket ger ett sp\xE5r av \"smulor\" f\xF6r analys\
-  \ efter h\xE4ndelsen och f\xF6r\u2026"
+description: "Hur man g\xF6r: Python kommer med en inbyggd modul f\xF6r loggning.\
+  \ H\xE4r \xE4r en grundl\xE4ggande upps\xE4ttning."
 lastmod: '2024-03-13T22:44:37.489478-06:00'
 model: gpt-4-1106-preview
-summary: "Loggning \xE4r processen att spela in h\xE4ndelser i en applikation medan\
-  \ ett program k\xF6rs, vilket ger ett sp\xE5r av \"smulor\" f\xF6r analys efter\
-  \ h\xE4ndelsen och f\xF6r realtids\xF6vervakning."
+summary: "Python kommer med en inbyggd modul f\xF6r loggning."
 title: Loggning
 weight: 17
 ---

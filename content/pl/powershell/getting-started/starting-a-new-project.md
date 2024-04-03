@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 18:04:20.682126-07:00
-description: "Rozpoczynanie nowego projektu to tworzenie fundamentu pod przysz\u0142\
-  e zadania programistyczne. Programi\u015Bci robi\u0105 to, \u017Ceby zorganizowa\u0107\
-  \ kod, \u015Brodowisko pracy\u2026"
+description: "How to: (Jak to zrobi\u0107:) Tworzenie nowego projektu w PowerShellu\
+  \ zaczyna si\u0119 od struktury katalog\xF3w i plik\xF3w. U\u017Cyj `New-Item` do\
+  \ tworzenia\u2026"
 lastmod: '2024-03-13T22:44:35.630480-06:00'
 model: gpt-4-1106-preview
-summary: "Rozpoczynanie nowego projektu to tworzenie fundamentu pod przysz\u0142e\
-  \ zadania programistyczne."
+summary: "Tworzenie nowego projektu w PowerShellu zaczyna si\u0119 od struktury katalog\xF3\
+  w i plik\xF3w."
 title: Rozpoczynanie nowego projektu
 weight: 1
 ---

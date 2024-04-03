@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:21.362678-07:00
-description: "Gerar n\xFAmeros aleat\xF3rios na programa\xE7\xE3o trata de criar uma\
-  \ sequ\xEAncia de n\xFAmeros que n\xE3o possa ser prevista de maneira razo\xE1vel\
-  \ melhor do que por acaso.\u2026"
+description: "Como fazer: Em Go, n\xFAmeros aleat\xF3rios s\xE3o gerados usando o\
+  \ pacote `math/rand` para n\xFAmeros pseudo-aleat\xF3rios ou `crypto/rand` para\
+  \ n\xFAmeros pseudo-\u2026"
 lastmod: '2024-03-13T22:44:46.056049-06:00'
 model: gpt-4-0125-preview
-summary: "Gerar n\xFAmeros aleat\xF3rios na programa\xE7\xE3o trata de criar uma sequ\xEA\
-  ncia de n\xFAmeros que n\xE3o possa ser prevista de maneira razo\xE1vel melhor do\
-  \ que por acaso."
+summary: "Em Go, n\xFAmeros aleat\xF3rios s\xE3o gerados usando o pacote `math/rand`\
+  \ para n\xFAmeros pseudo-aleat\xF3rios ou `crypto/rand` para n\xFAmeros pseudo-aleat\xF3\
+  rios criptograficamente seguros."
 title: "Gerando n\xFAmeros aleat\xF3rios"
 weight: 12
 ---

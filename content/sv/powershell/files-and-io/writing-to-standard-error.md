@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:16.677984-07:00
-description: "Att skriva till standardfel (stderr) i PowerShell inneb\xE4r att skicka\
-  \ felmeddelanden eller diagnostik direkt till stderr-str\xF6mmen, separat fr\xE5\
-  n\u2026"
+description: "Hur man g\xF6r: PowerShell f\xF6renklar processen att skriva till stderr\
+  \ genom anv\xE4ndning av cmdleten `Write-Error` eller genom att rikta utdatan till\
+  \ metoden\u2026"
 lastmod: '2024-03-13T22:44:38.142021-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva till standardfel (stderr) i PowerShell inneb\xE4r att skicka\
-  \ felmeddelanden eller diagnostik direkt till stderr-str\xF6mmen, separat fr\xE5\
-  n standardutdatastr\xF6mmen (stdout)."
+summary: "PowerShell f\xF6renklar processen att skriva till stderr genom anv\xE4ndning\
+  \ av cmdleten `Write-Error` eller genom att rikta utdatan till metoden `$host.ui.WriteErrorLine()`."
 title: Skriva till standardfel
 weight: 25
 ---

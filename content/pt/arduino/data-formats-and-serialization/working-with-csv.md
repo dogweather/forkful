@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:52.425541-07:00
-description: "Trabalhar com arquivos CSV (Comma-Separated Values - Valores Separados\
-  \ por V\xEDrgula) no Arduino envolve ler e escrever em arquivos CSV geralmente\u2026"
+description: "Como fazer: O Arduino n\xE3o possui uma biblioteca integrada especificamente\
+  \ para manipula\xE7\xE3o de arquivos CSV, mas voc\xEA pode usar as bibliotecas `SD`\
+  \ e `SPI`\u2026"
 lastmod: '2024-03-13T22:44:46.861217-06:00'
 model: gpt-4-0125-preview
-summary: "Trabalhar com arquivos CSV (Comma-Separated Values - Valores Separados por\
-  \ V\xEDrgula) no Arduino envolve ler e escrever em arquivos CSV geralmente armazenados\
-  \ em um cart\xE3o SD, possibilitando o registro de dados, configura\xE7\xF5es e\
-  \ muito mais."
+summary: "O Arduino n\xE3o possui uma biblioteca integrada especificamente para manipula\xE7\
+  \xE3o de arquivos CSV, mas voc\xEA pode usar as bibliotecas `SD` e `SPI` para acessar\
+  \ arquivos em um cart\xE3o SD e ent\xE3o analisar ou gerar dados CSV usando t\xE9\
+  cnicas b\xE1sicas de manipula\xE7\xE3o de strings."
 title: Trabalhando com CSV
 weight: 37
 ---

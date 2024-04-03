@@ -2,14 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:47.560720-07:00
-description: "Trovare la lunghezza di una Stringa in Dart equivale a determinare il\
-  \ numero di unit\xE0 di codice (essenzialmente, il numero di caratteri se pensato\
-  \ in modo\u2026"
+description: "Come fare: Dart rende semplice ottenere la lunghezza di una stringa\
+  \ utilizzando la propriet\xE0 `length`. Ecco un esempio base."
 lastmod: '2024-03-13T22:44:43.119389-06:00'
 model: gpt-4-0125-preview
-summary: "Trovare la lunghezza di una Stringa in Dart equivale a determinare il numero\
-  \ di unit\xE0 di codice (essenzialmente, il numero di caratteri se pensato in modo\
-  \ semplificato) in una data Stringa."
+summary: "Dart rende semplice ottenere la lunghezza di una stringa utilizzando la\
+  \ propriet\xE0 `length`."
 title: Trovare la lunghezza di una stringa
 weight: 7
 ---

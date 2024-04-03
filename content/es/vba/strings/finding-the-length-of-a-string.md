@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:51.101160-07:00
-description: "Encontrar la longitud de una cadena en Visual Basic para Aplicaciones\
-  \ (VBA) implica determinar el n\xFAmero de caracteres que contiene. Los programadores\u2026"
+description: "C\xF3mo hacerlo: En VBA, la funci\xF3n `Len` es tu opci\xF3n principal\
+  \ para encontrar la longitud de una cadena. Devuelve un entero que representa el\
+  \ n\xFAmero de\u2026"
 lastmod: '2024-03-13T22:44:58.882704-06:00'
 model: gpt-4-0125-preview
-summary: "Encontrar la longitud de una cadena en Visual Basic para Aplicaciones (VBA)\
-  \ implica determinar el n\xFAmero de caracteres que contiene."
+summary: "En VBA, la funci\xF3n `Len` es tu opci\xF3n principal para encontrar la\
+  \ longitud de una cadena."
 title: Encontrando la longitud de una cadena
 weight: 7
 ---

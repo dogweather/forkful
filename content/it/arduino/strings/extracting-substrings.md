@@ -1,10 +1,9 @@
 ---
 date: 2024-01-20 17:45:08.864089-07:00
-description: "Estrarre sottosequenze significa prendere pezzi di una stringa. Lo facciamo\
-  \ per manipolare dati in ingresso o semplicemente per isolare informazioni utili\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:43.672712-06:00'
 model: gpt-4-1106-preview
-summary: Estrarre sottosequenze significa prendere pezzi di una stringa.
+summary: .
 title: Estrazione di sottostringhe
 weight: 6
 ---

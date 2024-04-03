@@ -2,15 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:14.987291-07:00
-description: "Ph\xE2n t\xEDch c\xFA ph\xE1p m\u1ED9t ng\xE0y t\u1EEB m\u1ED9t chu\u1ED7\
-  i ngh\u0129a l\xE0 chuy\u1EC3n \u0111\u1ED5i v\u0103n b\u1EA3n m\xF4 t\u1EA3 m\u1ED9\
-  t ng\xE0y th\xE0nh m\u1ED9t \u0111\u1ED1i t\u01B0\u1EE3ng `DateTime`. \u0110i\u1EC1\
-  u n\xE0y r\u1EA5t quan tr\u1ECDng \u0111\u1EC3 l\u01B0u v\xE0 di\u1EC5n\u2026"
+description: "C\xE1ch Th\u1EF1c Hi\u1EC7n: ."
 lastmod: '2024-03-13T22:44:36.670079-06:00'
 model: gpt-4-0125-preview
-summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p m\u1ED9t ng\xE0y t\u1EEB m\u1ED9t chu\u1ED7\
-  i ngh\u0129a l\xE0 chuy\u1EC3n \u0111\u1ED5i v\u0103n b\u1EA3n m\xF4 t\u1EA3 m\u1ED9\
-  t ng\xE0y th\xE0nh m\u1ED9t \u0111\u1ED1i t\u01B0\u1EE3ng `DateTime`."
+summary: .
 title: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB chu\u1ED7i k\xED t\u1EF1"
 weight: 30
 ---

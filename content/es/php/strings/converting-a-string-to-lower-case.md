@@ -1,13 +1,11 @@
 ---
 date: 2024-01-20 17:39:13.084824-07:00
-description: "Convertir una cadena a min\xFAsculas es el proceso de transformar todos\
-  \ los caracteres alfab\xE9ticos de una cadena de texto en su versi\xF3n de min\xFA\
-  sculas. Los\u2026"
+description: "C\xF3mo hacerlo: Aqu\xED tienes un ejemplo pr\xE1ctico para convertir\
+  \ una cadena a min\xFAsculas en PHP."
 lastmod: '2024-03-13T22:44:59.147914-06:00'
 model: gpt-4-1106-preview
-summary: "Convertir una cadena a min\xFAsculas es el proceso de transformar todos\
-  \ los caracteres alfab\xE9ticos de una cadena de texto en su versi\xF3n de min\xFA\
-  sculas."
+summary: "Aqu\xED tienes un ejemplo pr\xE1ctico para convertir una cadena a min\xFA\
+  sculas en PHP."
 title: "Conversi\xF3n de una cadena de texto a min\xFAsculas"
 weight: 4
 ---

@@ -1,13 +1,11 @@
 ---
 date: 2024-03-08 21:33:57.864280-07:00
-description: "Removing quotes from a string in Dart involves stripping away the double\
-  \ (\") or single (') quotation marks from the start and end of a string, useful\
-  \ for\u2026"
+description: 'How to: Dart provides straightforward ways to remove quotes from a string
+  using built-in string methods without the need for third-party libraries. #.'
 lastmod: '2024-03-13T22:44:59.809645-06:00'
 model: gpt-4-0125-preview
-summary: Removing quotes from a string in Dart involves stripping away the double
-  (") or single (') quotation marks from the start and end of a string, useful for
-  data cleaning or preparing strings for further processing.
+summary: Dart provides straightforward ways to remove quotes from a string using built-in
+  string methods without the need for third-party libraries.
 title: Removing quotes from a string
 weight: 9
 ---

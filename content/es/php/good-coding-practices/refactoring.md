@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 01:47:49.972137-07:00
-description: "La refactorizaci\xF3n es el proceso de reestructurar el c\xF3digo de\
-  \ un ordenador existente sin cambiar su comportamiento externo. Los programadores\u2026"
+description: "C\xF3mo hacerlo: Tomemos un fragmento cl\xE1sico de PHP y apliquemos\
+  \ un poco de magia de refactorizaci\xF3n. Antes de refactorizar, nuestro c\xF3digo\
+  \ podr\xEDa verse as\xED."
 lastmod: '2024-03-13T22:44:59.169086-06:00'
 model: gpt-4-0125-preview
-summary: "La refactorizaci\xF3n es el proceso de reestructurar el c\xF3digo de un\
-  \ ordenador existente sin cambiar su comportamiento externo."
+summary: "Tomemos un fragmento cl\xE1sico de PHP y apliquemos un poco de magia de\
+  \ refactorizaci\xF3n."
 title: "Refactorizaci\xF3n"
 weight: 19
 ---

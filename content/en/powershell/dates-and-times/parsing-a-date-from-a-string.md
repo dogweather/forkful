@@ -1,12 +1,12 @@
 ---
 date: 2024-02-03 19:02:46.575014-07:00
-description: "Parsing a date from a string is about recognizing and converting written\
-  \ dates in text form into a date data type that PowerShell can understand and work\u2026"
+description: "How to: PowerShell makes parsing dates from strings straightforward\
+  \ with its `Get-Date` cmdlet and `[datetime]` type accelerator, which work well\
+  \ for\u2026"
 lastmod: '2024-03-13T22:45:00.292960-06:00'
 model: gpt-4-0125-preview
-summary: Parsing a date from a string is about recognizing and converting written
-  dates in text form into a date data type that PowerShell can understand and work
-  with.
+summary: PowerShell makes parsing dates from strings straightforward with its `Get-Date`
+  cmdlet and `[datetime]` type accelerator, which work well for standard date formats.
 title: Parsing a date from a string
 weight: 30
 ---

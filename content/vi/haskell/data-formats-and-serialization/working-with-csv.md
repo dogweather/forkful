@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:11.948902-07:00
-description: "L\xE0m vi\u1EC7c v\u1EDBi CSV (Gi\xE1 tr\u1ECB T\xE1ch b\u1EB1ng D\u1EA5\
-  u ph\u1EA9y) c\xF3 ngh\u0129a l\xE0 \u0111\u1ECDc v\xE0 ghi d\u1EEF li\u1EC7u d\u01B0\
-  \u1EDBi d\u1EA1ng b\u1EA3ng. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng CSV do\
-  \ t\xEDnh \u0111\u01A1n gi\u1EA3n v\xE0 s\u1EF1 h\u1ED7 tr\u1EE3 r\u1ED9ng\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EC3 x\u1EED l\xFD CSV trong Haskell,\
+  \ b\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng th\u01B0 vi\u1EC7n `cassava`. C\xE0\
+  i \u0111\u1EB7t n\xF3 b\u1EB1ng c\xE1ch th\xEAm `cassava` v\xE0o t\u1EC7p `.cabal`\
+  \ c\u1EE7a b\u1EA1n ho\u1EB7c s\u1EED d\u1EE5ng\u2026"
 lastmod: '2024-03-13T22:44:36.741185-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m vi\u1EC7c v\u1EDBi CSV (Gi\xE1 tr\u1ECB T\xE1ch b\u1EB1ng D\u1EA5\
-  u ph\u1EA9y) c\xF3 ngh\u0129a l\xE0 \u0111\u1ECDc v\xE0 ghi d\u1EEF li\u1EC7u d\u01B0\
-  \u1EDBi d\u1EA1ng b\u1EA3ng."
+summary: "\u0110\u1EC3 x\u1EED l\xFD CSV trong Haskell, b\u1EA1n c\xF3 th\u1EC3 s\u1EED\
+  \ d\u1EE5ng th\u01B0 vi\u1EC7n `cassava`."
 title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 weight: 37
 ---

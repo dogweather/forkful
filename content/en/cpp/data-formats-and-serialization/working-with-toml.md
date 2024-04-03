@@ -1,11 +1,10 @@
 ---
 date: 2024-01-25 03:39:48.725416-07:00
-description: "TOML (Tom's Obvious, Minimal Language) is a data serialization format\
-  \ easy to read due to its clear semantics. Programmers use TOML for configuration\u2026"
+description: 'How to: To work with TOML in C++, you''ll need a library like `toml++`.
+  Here''s a quick start.'
 lastmod: '2024-03-13T22:45:00.379088-06:00'
 model: gpt-4-1106-preview
-summary: TOML (Tom's Obvious, Minimal Language) is a data serialization format easy
-  to read due to its clear semantics.
+summary: To work with TOML in C++, you'll need a library like `toml++`.
 title: Working with TOML
 weight: 39
 ---

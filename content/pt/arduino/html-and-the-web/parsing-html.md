@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:49.528851-07:00
-description: "Fazer parsing de HTML em projetos Arduino \xE9 sobre extrair informa\xE7\
-  \xF5es de p\xE1ginas web. Programadores fazem isso para permitir que seus dispositivos\
-  \ Arduino\u2026"
+description: "Como fazer: Fazer parsing de HTML no Arduino geralmente exige bibliotecas\
+  \ com um pequeno footprint devido aos recursos limitados do dispositivo. Uma\u2026"
 lastmod: '2024-03-13T22:44:46.837206-06:00'
 model: gpt-4-0125-preview
-summary: "Fazer parsing de HTML em projetos Arduino \xE9 sobre extrair informa\xE7\
-  \xF5es de p\xE1ginas web."
+summary: Fazer parsing de HTML no Arduino geralmente exige bibliotecas com um pequeno
+  footprint devido aos recursos limitados do dispositivo.
 title: Analisando HTML
 weight: 43
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-01-27 16:09:55.739923-07:00
-description: "Manipulating files with CLI one-liners in Ruby is about performing common\
-  \ file operations directly from your terminal using Ruby scripts. It's a powerful\u2026"
+description: "How to: Ruby, with its expressive syntax, allows for succinct and readable\
+  \ one-liners that can handle a variety of file operations. Here are a few\u2026"
 lastmod: '2024-03-13T22:45:00.545992-06:00'
 model: gpt-4-0125-preview
-summary: Manipulating files with CLI one-liners in Ruby is about performing common
-  file operations directly from your terminal using Ruby scripts.
+summary: Ruby, with its expressive syntax, allows for succinct and readable one-liners
+  that can handle a variety of file operations.
 title: Manipulating files with CLI one-liners
 weight: 31
 ---

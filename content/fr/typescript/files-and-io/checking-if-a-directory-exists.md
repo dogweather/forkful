@@ -2,15 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:49.183859-07:00
-description: "V\xE9rifier si un r\xE9pertoire existe en TypeScript est essentiel pour\
-  \ les t\xE2ches de gestion de fichiers, telles que lire ou \xE9crire des donn\xE9\
-  es dans des\u2026"
+description: "Comment faire : TypeScript, lorsqu'ex\xE9cut\xE9 dans un environnement\
+  \ Node.js, vous permet de v\xE9rifier si un r\xE9pertoire existe en utilisant le\
+  \ module `fs`, qui\u2026"
 lastmod: '2024-03-13T22:44:57.452156-06:00'
 model: gpt-4-0125-preview
-summary: "V\xE9rifier si un r\xE9pertoire existe en TypeScript est essentiel pour\
-  \ les t\xE2ches de gestion de fichiers, telles que lire ou \xE9crire des donn\xE9\
-  es dans des fichiers, en s'assurant que les op\xE9rations sont effectu\xE9es uniquement\
-  \ sur des r\xE9pertoires valides."
+summary: "TypeScript, lorsqu'ex\xE9cut\xE9 dans un environnement Node.js, vous permet\
+  \ de v\xE9rifier si un r\xE9pertoire existe en utilisant le module `fs`, qui fournit\
+  \ la fonction `existsSync()` ou la fonction asynchrone `access()` combin\xE9e \xE0\
+  \ `constants.F_OK`."
 title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 17:50:15.883688-07:00
-description: "TOML (Tom's Obvious, Minimal Language) is a configuration file format\
-  \ that's easy to read due to its simple syntax. Programmers use TOML to configure\u2026"
+description: "How to: To start working with TOML in Go, you first need to include\
+  \ a library that can parse TOML files since the Go standard library does not natively\u2026"
 lastmod: '2024-03-13T22:44:59.651948-06:00'
 model: gpt-4-0125-preview
-summary: TOML (Tom's Obvious, Minimal Language) is a configuration file format that's
-  easy to read due to its simple syntax.
+summary: To start working with TOML in Go, you first need to include a library that
+  can parse TOML files since the Go standard library does not natively support TOML.
 title: Working with TOML
 weight: 39
 ---

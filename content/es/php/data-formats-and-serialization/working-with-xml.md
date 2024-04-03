@@ -1,10 +1,9 @@
 ---
 date: 2024-01-26 04:33:38.274788-07:00
-description: "XML es un lenguaje de marcado utilizado para almacenar y transportar\
-  \ datos. Los programadores trabajan con XML para permitir la interoperabilidad entre\u2026"
+description: "C\xF3mo hacerlo: Leer XML con SimpleXML."
 lastmod: '2024-03-13T22:44:59.184781-06:00'
 model: gpt-4-0125-preview
-summary: XML es un lenguaje de marcado utilizado para almacenar y transportar datos.
+summary: Leer XML con SimpleXML.
 title: Trabajando con XML
 weight: 40
 ---

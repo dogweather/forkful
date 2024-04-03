@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:47:05.989001-07:00
-description: "Zaokr\u0105glanie liczb oznacza dostosowanie ich do najbli\u017Cszej\
-  \ liczby ca\u0142kowitej lub u\u0142amka o okre\u015Blonej precyzji. Programi\u015B\
-  ci zaokr\u0105glaj\u0105 liczby, aby\u2026"
+description: "Jak to zrobi\u0107: Rust sprawia, \u017Ce zaokr\u0105glanie jest bardzo\
+  \ proste. Sprawd\u017A te metody dla typ\xF3w `f32` lub `f64`."
 lastmod: '2024-03-13T22:44:35.179298-06:00'
 model: gpt-4-0125-preview
-summary: "Zaokr\u0105glanie liczb oznacza dostosowanie ich do najbli\u017Cszej liczby\
-  \ ca\u0142kowitej lub u\u0142amka o okre\u015Blonej precyzji."
+summary: "Rust sprawia, \u017Ce zaokr\u0105glanie jest bardzo proste."
 title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---

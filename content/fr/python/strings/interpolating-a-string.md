@@ -3,13 +3,12 @@ changelog:
 - 2024-01-28, dogweather, reviewed
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:23:54.078755-07:00
-description: "L'interpolation de cha\xEEnes est la m\xE9thode permettant d'ins\xE9\
-  rer des expressions au sein de litt\xE9raux de cha\xEEne de caract\xE8res. Les programmeurs\
-  \ l'utilisent\u2026"
+description: "Comment faire : Dans Python 3.6 et versions ult\xE9rieures, vous pouvez\
+  \ interpoler des cha\xEEnes en utilisant les f-strings. Voici comment ."
 lastmod: '2024-03-13T22:44:57.220379-06:00'
 model: gpt-4-0125-preview
-summary: "L'interpolation de cha\xEEnes est la m\xE9thode permettant d'ins\xE9rer\
-  \ des expressions au sein de litt\xE9raux de cha\xEEne de caract\xE8res."
+summary: "Dans Python 3.6 et versions ult\xE9rieures, vous pouvez interpoler des cha\xEE\
+  nes en utilisant les f-strings."
 title: "Interpolation d'une cha\xEEne de caract\xE8res"
 weight: 8
 ---

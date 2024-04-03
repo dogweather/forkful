@@ -1,11 +1,9 @@
 ---
 date: 2024-01-26 04:36:47.038685-07:00
-description: "Komplekse tall har en reell del og en imagin\xE6r del, vanligvis skrevet\
-  \ som `a + bi`. De er avgj\xF8rende for noen matte-tunge Arduino-prosjekter som\u2026"
+description: 'Hvordan: .'
 lastmod: '2024-03-13T22:44:41.052707-06:00'
 model: gpt-4-0125-preview
-summary: "Komplekse tall har en reell del og en imagin\xE6r del, vanligvis skrevet\
-  \ som `a + bi`."
+summary: .
 title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---

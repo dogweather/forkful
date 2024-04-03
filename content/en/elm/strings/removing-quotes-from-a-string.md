@@ -1,11 +1,11 @@
 ---
 date: 2024-01-25 20:49:59.692157-07:00
-description: "Removing quotes from a string means stripping away those extra double\
-  \ or single quotation marks that you don't actually need in the processed text.\u2026"
+description: 'How to: In Elm, you can use the `String` functions to manipulate strings,
+  such as removing quotes. Here''s a straightforward way to do it.'
 lastmod: '2024-03-13T22:44:59.998600-06:00'
 model: gpt-4-1106-preview
-summary: Removing quotes from a string means stripping away those extra double or
-  single quotation marks that you don't actually need in the processed text.
+summary: In Elm, you can use the `String` functions to manipulate strings, such as
+  removing quotes.
 title: Removing quotes from a string
 weight: 9
 ---

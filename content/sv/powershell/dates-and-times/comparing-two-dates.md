@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:33:31.466135-07:00
-description: "J\xE4mf\xF6ra tv\xE5 datum handlar om att avg\xF6ra vilket datum som\
-  \ kommer f\xF6rst, eller om de \xE4r samma. Programmerare g\xF6r detta f\xF6r att\
-  \ hantera tidsfrister,\u2026"
+description: "Hur man g\xF6r: PowerShell g\xF6r det enkelt. Anv\xE4nd `Get-Date` f\xF6\
+  r att skapa datumobjekt och j\xE4mf\xF6r dem med `-lt` (mindre \xE4n), `-gt` (st\xF6\
+  rre \xE4n) eller `-eq`\u2026"
 lastmod: '2024-03-13T22:44:38.138199-06:00'
 model: gpt-4-1106-preview
-summary: "J\xE4mf\xF6ra tv\xE5 datum handlar om att avg\xF6ra vilket datum som kommer\
-  \ f\xF6rst, eller om de \xE4r samma."
+summary: "PowerShell g\xF6r det enkelt."
 title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---

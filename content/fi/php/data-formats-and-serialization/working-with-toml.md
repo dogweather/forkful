@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:25:17.645716-07:00
-description: "TOML, lyhenteen\xE4 Tom's Obvious, Minimal Language, on datamuoto, joka\
-  \ muistuttaa JSONia tai YAMLia, mutta on ihmisten luettavissa helpompi. Ohjelmoijat\u2026"
+description: "Kuinka: Ensin varmista, ett\xE4 sinulla on asennettuna TOML-j\xE4sent\xE4\
+  j\xE4kirjasto, kuten `yosymfony/toml`. Aloitetaan TOML-tiedoston j\xE4sent\xE4minen."
 lastmod: '2024-03-13T22:44:56.679371-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, lyhenteen\xE4 Tom's Obvious, Minimal Language, on datamuoto, joka\
-  \ muistuttaa JSONia tai YAMLia, mutta on ihmisten luettavissa helpompi."
+summary: "Ensin varmista, ett\xE4 sinulla on asennettuna TOML-j\xE4sent\xE4j\xE4kirjasto,\
+  \ kuten `yosymfony/toml`."
 title: "Ty\xF6skentely TOML:n kanssa"
 weight: 39
 ---

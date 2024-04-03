@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:44.426738-07:00
-description: "Lavorare con CSV (Valori Separati da Virgola) implica la lettura e la\
-  \ scrittura di dati su file CSV, un formato comune per lo stoccaggio di dati tabellari\u2026"
+description: "Come fare: Kotlin, essendo un linguaggio di programmazione staticamente\
+  \ tipizzato che gira sulla JVM, non include una libreria integrata per la gestione\u2026"
 lastmod: '2024-03-13T22:44:43.413471-06:00'
 model: gpt-4-0125-preview
-summary: Lavorare con CSV (Valori Separati da Virgola) implica la lettura e la scrittura
-  di dati su file CSV, un formato comune per lo stoccaggio di dati tabellari in testo
-  semplice.
+summary: Kotlin, essendo un linguaggio di programmazione staticamente tipizzato che
+  gira sulla JVM, non include una libreria integrata per la gestione dei file CSV.
 title: Lavorare con i CSV
 weight: 37
 ---

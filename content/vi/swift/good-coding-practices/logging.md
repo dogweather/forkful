@@ -2,16 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:11.288769-07:00
-description: "Ghi log l\xE0 qu\xE1 tr\xECnh ghi l\u1EA1i h\xE0nh vi, l\u1ED7i v\xE0\
-  \ c\xE1c th\xF4ng tin quan tr\u1ECDng kh\xE1c c\u1EE7a \u1EE9ng d\u1EE5ng v\xE0\
-  o m\u1ED9t ph\u01B0\u01A1ng ti\u1EC7n l\u01B0u tr\u1EEF l\xE2u d\xE0i, nh\u01B0\
-  \ t\u1EC7p tin ho\u1EB7c c\u01A1 s\u1EDF d\u1EEF\u2026"
+description: "L\xE0m Th\u1EBF N\xE0o: Trong Swift, b\u1EA1n c\xF3 th\u1EC3 vi\u1EBF\
+  t log ra b\u1EA3ng \u0111i\u1EC1u khi\u1EC3n v\u1EDBi c\xE1c c\xE2u l\u1EC7nh in\
+  \ ho\u1EB7c API `os.log` linh ho\u1EA1t h\u01A1n, n\xF3 k\u1EBFt n\u1ED1i v\xE0\
+  o H\u1EC7 th\u1ED1ng Ghi log\u2026"
 lastmod: '2024-03-13T22:44:37.106404-06:00'
 model: gpt-4-0125-preview
-summary: "Ghi log l\xE0 qu\xE1 tr\xECnh ghi l\u1EA1i h\xE0nh vi, l\u1ED7i v\xE0 c\xE1\
-  c th\xF4ng tin quan tr\u1ECDng kh\xE1c c\u1EE7a \u1EE9ng d\u1EE5ng v\xE0o m\u1ED9\
-  t ph\u01B0\u01A1ng ti\u1EC7n l\u01B0u tr\u1EEF l\xE2u d\xE0i, nh\u01B0 t\u1EC7p\
-  \ tin ho\u1EB7c c\u01A1 s\u1EDF d\u1EEF li\u1EC7u."
+summary: "Trong Swift, b\u1EA1n c\xF3 th\u1EC3 vi\u1EBFt log ra b\u1EA3ng \u0111i\u1EC1\
+  u khi\u1EC3n v\u1EDBi c\xE1c c\xE2u l\u1EC7nh in ho\u1EB7c API `os.log` linh ho\u1EA1\
+  t h\u01A1n, n\xF3 k\u1EBFt n\u1ED1i v\xE0o H\u1EC7 th\u1ED1ng Ghi log Th\u1ED1ng\
+  \ nh\u1EA5t tr\xEAn c\xE1c n\u1EC1n t\u1EA3ng c\u1EE7a Apple."
 title: Ghi log
 weight: 17
 ---

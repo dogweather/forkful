@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:52.088591-07:00
-description: "Att tolka HTML i Clojure inneb\xE4r att man programmatiskt extraherar\
-  \ information fr\xE5n HTML-dokument. Programmerare g\xF6r detta f\xF6r att f\xE5\
-  \ \xE5tkomst till,\u2026"
+description: "Hur man g\xF6r: Clojure har inte inbyggd f\xF6rm\xE5ga att tolka HTML,\
+  \ men du kan utnyttja Java-bibliotek eller Clojure-wrapper som `enlive` eller `hickory`.\
+  \ S\xE5\u2026"
 lastmod: '2024-03-13T22:44:37.523266-06:00'
 model: gpt-4-0125-preview
-summary: "Att tolka HTML i Clojure inneb\xE4r att man programmatiskt extraherar information\
-  \ fr\xE5n HTML-dokument."
+summary: "Clojure har inte inbyggd f\xF6rm\xE5ga att tolka HTML, men du kan utnyttja\
+  \ Java-bibliotek eller Clojure-wrapper som `enlive` eller `hickory`."
 title: Tolka HTML
 weight: 43
 ---

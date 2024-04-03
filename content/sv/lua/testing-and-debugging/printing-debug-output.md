@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:52:50.915365-07:00
-description: "Skriva ut fels\xF6kningsmeddelanden i Lua hj\xE4lper dig att f\xF6rst\xE5\
-  \ vad som h\xE4nder i koden. Vi g\xF6r det f\xF6r att snabbt identifiera och \xE5\
-  tg\xE4rda buggar."
+description: "How to: Anv\xE4nd `print()` f\xF6r att visa v\xE4rden. Kolla exemplet."
 lastmod: '2024-03-13T22:44:38.041048-06:00'
 model: gpt-4-1106-preview
-summary: "Skriva ut fels\xF6kningsmeddelanden i Lua hj\xE4lper dig att f\xF6rst\xE5\
-  \ vad som h\xE4nder i koden."
+summary: "Anv\xE4nd `print()` f\xF6r att visa v\xE4rden."
 title: "Skriva ut fels\xF6kningsdata"
 weight: 33
 ---

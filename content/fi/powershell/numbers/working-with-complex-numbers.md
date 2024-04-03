@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:44:03.285383-07:00
-description: "Kompleksiluvut, ne joilla on reaaliosa ja imaginaariosa (kuten 3 + 4i),\
-  \ ovat elint\xE4rkeit\xE4 aloilla kuten insin\xF6\xF6ritiede, fysiikka ja data-analytiikka.\u2026"
+description: "Kuinka: PowerShell ei tue kompleksilukuja suoraan, joten sinun on joko\
+  \ kehitett\xE4v\xE4 oma ratkaisusi tai k\xE4ytett\xE4v\xE4 .NET:n `System.Numerics.Complex`."
 lastmod: '2024-03-13T22:44:56.774164-06:00'
 model: gpt-4-0125-preview
-summary: "Kompleksiluvut, ne joilla on reaaliosa ja imaginaariosa (kuten 3 + 4i),\
-  \ ovat elint\xE4rkeit\xE4 aloilla kuten insin\xF6\xF6ritiede, fysiikka ja data-analytiikka."
+summary: "PowerShell ei tue kompleksilukuja suoraan, joten sinun on joko kehitett\xE4\
+  v\xE4 oma ratkaisusi tai k\xE4ytett\xE4v\xE4 .NET:n `System.Numerics.Complex`."
 title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---

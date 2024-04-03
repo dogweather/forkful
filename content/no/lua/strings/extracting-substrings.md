@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:45:57.320669-07:00
-description: "\xC5 trekke ut substringer betyr \xE5 hente ut bestemte deler av en\
-  \ streng. Programmerere gj\xF8r dette for \xE5 bearbeide, sjekke eller manipulere\
-  \ tekst p\xE5 et mer\u2026"
+description: "Hvordan: Her er noen eksempler p\xE5 hvordan man trekker ut substringer\
+  \ i Lua med funksjonen `string.sub`."
 lastmod: '2024-03-13T22:44:40.919183-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 trekke ut substringer betyr \xE5 hente ut bestemte deler av en streng."
+summary: "Her er noen eksempler p\xE5 hvordan man trekker ut substringer i Lua med\
+  \ funksjonen `string.sub`."
 title: Uthenting av delstrenger
 weight: 6
 ---

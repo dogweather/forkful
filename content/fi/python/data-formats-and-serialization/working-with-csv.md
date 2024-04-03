@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:00.119000-07:00
-description: "Ty\xF6skentely CSV:n (pilkuin erotetut arvot) parissa sis\xE4lt\xE4\xE4\
-  \ lukemista ja kirjoittamista CSV-tiedostoihin, yleinen muoto tabulaarisen datan\
-  \ tallentamiseen.\u2026"
+description: "Kuinka: Python tarjoaa sis\xE4\xE4nrakennetun `csv` moduulin CSV-tiedostojen\
+  \ k\xE4sittelyyn, tehden lukemisesta ja kirjoittamisesta niihin suoraviivaista.\u2026"
 lastmod: '2024-03-13T22:44:56.165889-06:00'
 model: gpt-4-0125-preview
-summary: "Ty\xF6skentely CSV:n (pilkuin erotetut arvot) parissa sis\xE4lt\xE4\xE4\
-  \ lukemista ja kirjoittamista CSV-tiedostoihin, yleinen muoto tabulaarisen datan\
-  \ tallentamiseen."
+summary: "Python tarjoaa sis\xE4\xE4nrakennetun `csv` moduulin CSV-tiedostojen k\xE4\
+  sittelyyn, tehden lukemisesta ja kirjoittamisesta niihin suoraviivaista."
 title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---

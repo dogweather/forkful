@@ -2,12 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:33.257101-07:00
-description: "Twee datums vergelijken betekent uitvogelen of een datum eerder, later\
-  \ of hetzelfde is als een andere. Programmeurs doen dit om gebeurtenissen te volgen,\u2026"
+description: "Hoe te: Lua heeft geen ingebouwde functies voor datumvergelijking, maar\
+  \ we kunnen de functie `os.time()` gebruiken om datums om te zetten naar een\u2026"
 lastmod: '2024-03-13T22:44:50.949750-06:00'
 model: gpt-4-0125-preview
-summary: Twee datums vergelijken betekent uitvogelen of een datum eerder, later of
-  hetzelfde is als een andere.
+summary: Lua heeft geen ingebouwde functies voor datumvergelijking, maar we kunnen
+  de functie `os.time()` gebruiken om datums om te zetten naar een numeriek formaat
+  (epochtijd) en ze dan vergelijken.
 title: Twee datums vergelijken
 weight: 27
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:42.769200-07:00
-description: "Le espressioni regolari (regex) sono sequenze di caratteri che formano\
-  \ un modello di ricerca, utilizzato principalmente per la ricerca e la manipolazione\u2026"
+description: "Come fare: In PowerShell, puoi usare gli operatori `-match`, `-replace`\
+  \ e `-split`, tra gli altri, per eseguire azioni con le espressioni regolari.\u2026"
 lastmod: '2024-03-13T22:44:43.631108-06:00'
 model: gpt-4-0125-preview
-summary: Le espressioni regolari (regex) sono sequenze di caratteri che formano un
-  modello di ricerca, utilizzato principalmente per la ricerca e la manipolazione
-  di stringhe.
+summary: In PowerShell, puoi usare gli operatori `-match`, `-replace` e `-split`,
+  tra gli altri, per eseguire azioni con le espressioni regolari.
 title: Utilizzo delle espressioni regolari
 weight: 11
 ---

@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:58:14.153702-07:00
-description: "Textsuche und -ersatz erm\xF6glichen es, bestimmte Zeichenketten in\
-  \ einem Text zu finden und sie durch andere auszutauschen. Programmierer nutzen\
-  \ diese\u2026"
+description: "Wie geht das: In JavaScript verwendet man `.replace()` f\xFCr Suchen\
+  \ und Ersetzen. Hier ein schnelles Beispiel."
 lastmod: '2024-03-13T22:44:54.251686-06:00'
 model: gpt-4-1106-preview
-summary: "Textsuche und -ersatz erm\xF6glichen es, bestimmte Zeichenketten in einem\
-  \ Text zu finden und sie durch andere auszutauschen."
+summary: "In JavaScript verwendet man `.replace()` f\xFCr Suchen und Ersetzen."
 title: Suchen und Ersetzen von Text
 weight: 10
 ---

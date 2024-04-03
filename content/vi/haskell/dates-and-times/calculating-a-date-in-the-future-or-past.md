@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:53.766452-07:00
-description: "T\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7\
-  c qu\xE1 kh\u1EE9 c\xF3 ngh\u0129a l\xE0 t\xECm ra m\u1ED9t ng\xE0y tr\u01B0\u1EDB\
-  c ho\u1EB7c sau m\u1ED9t s\u1ED1 ng\xE0y, th\xE1ng, ho\u1EB7c n\u0103m nh\u1EA5\
-  t \u0111\u1ECBnh t\u1EEB m\u1ED9t \u0111i\u1EC3m xu\u1EA5t ph\xE1t c\u1EE5\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Haskell s\u1EED d\u1EE5ng c\xE1c th\u01B0\
+  \ vi\u1EC7n nh\u01B0 `time` \u0111\u1EC3 x\u1EED l\xFD v\u1EDBi ng\xE0y th\xE1ng.\
+  \ D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch \u0111\u1EC3 th\xEAm ng\xE0y ho\u1EB7\
+  c th\xE1ng v\xE0o m\u1ED9t ng\xE0y, ho\u1EB7c tr\u1EEB ch\xFAng \u0111\u1EC3\u2026"
 lastmod: '2024-03-13T22:44:36.729677-06:00'
 model: gpt-4-0125-preview
-summary: "T\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1\
-  \ kh\u1EE9 c\xF3 ngh\u0129a l\xE0 t\xECm ra m\u1ED9t ng\xE0y tr\u01B0\u1EDBc ho\u1EB7\
-  c sau m\u1ED9t s\u1ED1 ng\xE0y, th\xE1ng, ho\u1EB7c n\u0103m nh\u1EA5t \u0111\u1ECB\
-  nh t\u1EEB m\u1ED9t \u0111i\u1EC3m xu\u1EA5t ph\xE1t c\u1EE5 th\u1EC3."
+summary: "Haskell s\u1EED d\u1EE5ng c\xE1c th\u01B0 vi\u1EC7n nh\u01B0 `time` \u0111\
+  \u1EC3 x\u1EED l\xFD v\u1EDBi ng\xE0y th\xE1ng."
 title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1EE9"
 weight: 26
 ---

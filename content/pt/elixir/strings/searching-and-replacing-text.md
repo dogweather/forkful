@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:57:29.021612-07:00
-description: "Buscar e substituir texto \xE9 o processo de localizar sequ\xEAncias\
-  \ espec\xEDficas num texto e substitu\xED-las por outras. Programadores fazem isso\
-  \ constantemente\u2026"
+description: 'Como Fazer: .'
 lastmod: '2024-03-13T22:44:46.223687-06:00'
 model: gpt-4-1106-preview
-summary: "Buscar e substituir texto \xE9 o processo de localizar sequ\xEAncias espec\xED\
-  ficas num texto e substitu\xED-las por outras."
+summary: .
 title: Pesquisando e substituindo texto
 weight: 10
 ---

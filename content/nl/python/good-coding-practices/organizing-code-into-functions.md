@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:27.262944-07:00
-description: "Code organiseren in functies gaat over het opsplitsen van je code in\
-  \ herbruikbare delen met specifieke doeleinden. We doen dit om de code schoner,\u2026"
+description: 'Hoe te: Stel je voor dat je een script schrijft om het kwadraat en de
+  kubus van een getal te berekenen. Zonder functies is het een warboel van herhaling.'
 lastmod: '2024-03-13T22:44:50.382188-06:00'
 model: gpt-4-0125-preview
-summary: Code organiseren in functies gaat over het opsplitsen van je code in herbruikbare
-  delen met specifieke doeleinden.
+summary: Stel je voor dat je een script schrijft om het kwadraat en de kubus van een
+  getal te berekenen.
 title: Code organiseren in functies
 weight: 18
 ---

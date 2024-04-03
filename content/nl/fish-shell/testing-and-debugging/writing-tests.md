@@ -2,13 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:21.700379-07:00
-description: "Tests schrijven is kleine controles cre\xEBren om ervoor te zorgen dat\
-  \ je code zich gedraagt zoals verwacht. Programmeurs schrijven tests om bugs vroeg\
-  \ te\u2026"
+description: "Hoe: Fish heeft geen ingebouwd testframework, maar je kunt `fisher`\
+  \ gebruiken om er een te installeren zoals `Fishtape`. Hier is een eenvoudige test\
+  \ met\u2026"
 lastmod: '2024-03-13T22:44:51.250871-06:00'
 model: gpt-4-0125-preview
-summary: "Tests schrijven is kleine controles cre\xEBren om ervoor te zorgen dat je\
-  \ code zich gedraagt zoals verwacht."
+summary: Fish heeft geen ingebouwd testframework, maar je kunt `fisher` gebruiken
+  om er een te installeren zoals `Fishtape`.
 title: Tests Schrijven
 weight: 36
 ---

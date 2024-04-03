@@ -2,16 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:41.418260-07:00
-description: "V\xE4liaikaisen tiedoston luominen Dartissa tarkoittaa sellaisen tiedoston\
-  \ tuottamista, joka on tarkoitettu lyhytaikaiseen k\xE4ytt\xF6\xF6n, p\xE4\xE4asiassa\
-  \ skenaarioihin\u2026"
+description: "Miten: Dartin `dart:io`-kirjasto helpottaa v\xE4liaikaisten tiedostojen\
+  \ luomista `Directory`-luokan kautta. T\xE4ss\xE4 on suoraviivainen tapa luoda v\xE4\
+  liaikainen\u2026"
 lastmod: '2024-03-13T22:44:56.292467-06:00'
 model: gpt-4-0125-preview
-summary: "V\xE4liaikaisen tiedoston luominen Dartissa tarkoittaa sellaisen tiedoston\
-  \ tuottamista, joka on tarkoitettu lyhytaikaiseen k\xE4ytt\xF6\xF6n, p\xE4\xE4asiassa\
-  \ skenaarioihin kuten tietojen v\xE4limuistitus, v\xE4liaikainen tallennustila tiedostonk\xE4\
-  sittely\xE4 varten tai tietojen s\xE4ilytt\xE4minen, jotka ovat liian arkaluontoisia\
-  \ pitk\xE4aikaiseen s\xE4ilytykseen."
+summary: "Dartin `dart:io`-kirjasto helpottaa v\xE4liaikaisten tiedostojen luomista\
+  \ `Directory`-luokan kautta."
 title: "Tilap\xE4isen tiedoston luominen"
 weight: 21
 ---

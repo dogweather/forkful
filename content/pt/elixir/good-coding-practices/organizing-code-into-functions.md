@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 01:09:51.725097-07:00
-description: "Organizar o c\xF3digo em fun\xE7\xF5es significa agrupar opera\xE7\xF5\
-  es relacionadas em blocos reutiliz\xE1veis. Fazemos isso para melhorar a legibilidade\
-  \ e\u2026"
+description: "Como fazer: Vamos criar uma fun\xE7\xE3o simples em Elixir para capitalizar\
+  \ palavras."
 lastmod: '2024-03-13T22:44:46.243553-06:00'
 model: gpt-4-1106-preview
-summary: "Organizar o c\xF3digo em fun\xE7\xF5es significa agrupar opera\xE7\xF5es\
-  \ relacionadas em blocos reutiliz\xE1veis."
+summary: "Vamos criar uma fun\xE7\xE3o simples em Elixir para capitalizar palavras."
 title: "Organizando o c\xF3digo em fun\xE7\xF5es"
 weight: 18
 ---

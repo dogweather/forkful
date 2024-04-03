@@ -1,11 +1,10 @@
 ---
 date: 2024-02-03 19:03:31.655800-07:00
-description: "Writing tests in TypeScript involves creating automated scripts to verify\
-  \ the functionality and correctness of your code. Programmers do it to ensure\u2026"
+description: "How to: TypeScript works harmoniously with most JavaScript testing frameworks.\
+  \ For demonstration purposes, we'll use Jest, a popular testing framework,\u2026"
 lastmod: '2024-03-13T22:44:59.862150-06:00'
 model: gpt-4-0125-preview
-summary: Writing tests in TypeScript involves creating automated scripts to verify
-  the functionality and correctness of your code.
+summary: TypeScript works harmoniously with most JavaScript testing frameworks.
 title: Writing tests
 weight: 36
 ---

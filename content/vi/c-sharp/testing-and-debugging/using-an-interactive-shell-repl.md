@@ -2,15 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:02.622594-07:00
-description: "REPL, hay V\xF2ng L\u1EB7p \u0110\u1ECDc-\u0110\xE1nh gi\xE1-In, cho\
-  \ ph\xE9p b\u1EA1n nh\u1EADp m\xE3 C# v\xE0 ch\u1EA1y n\xF3 m\u1ED9t c\xE1ch t\u01B0\
-  \u01A1ng t\xE1c. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3 \u0111\
-  \u1EC3 th\u1EED nghi\u1EC7m nhanh, g\u1EE1 l\u1ED7i, ho\u1EB7c\u2026"
+description: "C\xE1ch th\u1EE9c: Kh\u1EDFi \u0111\u1ED9ng REPL trong m\xF4i tr\u01B0\
+  \u1EDDng C# c\u1EE7a b\u1EA1n s\u1EED d\u1EE5ng c\u1EEDa s\u1ED5 C# Interactive\
+  \ ho\u1EB7c ch\u1EA1y `dotnet-script` trong terminal c\u1EE7a b\u1EA1n. \u0110\xE2\
+  y l\xE0 m\u1ED9t v\xED d\u1EE5 v\u1EC1\u2026"
 lastmod: '2024-03-13T22:44:36.659756-06:00'
 model: gpt-4-0125-preview
-summary: "REPL, hay V\xF2ng L\u1EB7p \u0110\u1ECDc-\u0110\xE1nh gi\xE1-In, cho ph\xE9\
-  p b\u1EA1n nh\u1EADp m\xE3 C# v\xE0 ch\u1EA1y n\xF3 m\u1ED9t c\xE1ch t\u01B0\u01A1\
-  ng t\xE1c."
+summary: "Kh\u1EDFi \u0111\u1ED9ng REPL trong m\xF4i tr\u01B0\u1EDDng C# c\u1EE7a\
+  \ b\u1EA1n s\u1EED d\u1EE5ng c\u1EEDa s\u1ED5 C# Interactive ho\u1EB7c ch\u1EA1\
+  y `dotnet-script` trong terminal c\u1EE7a b\u1EA1n."
 title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 weight: 34
 ---

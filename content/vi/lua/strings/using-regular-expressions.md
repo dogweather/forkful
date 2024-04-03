@@ -2,15 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:54.397032-07:00
-description: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy, hay c\xF2n g\u1ECDi l\xE0 regex, l\xE0\
-  \ c\xE1c m\u1EABu \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 kh\u1EDBp c\xE1\
-  c k\u1EBFt h\u1EE3p k\xFD t\u1EF1 trong v\u0103n b\u1EA3n. L\u1EADp tr\xECnh vi\xEA\
-  n s\u1EED d\u1EE5ng ch\xFAng \u0111\u1EC3 t\xECm ki\u1EBFm,\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Lua cung c\u1EA5p h\u1ED7 tr\u1EE3 c\u01A1\
+  \ b\u1EA3n cho c\xE1c m\u1EABu (phi\xEAn b\u1EA3n regex c\u1EE7a n\xF3) m\xE0 b\u1EA1\
+  n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng v\u1EDBi c\xE1c h\xE0m so kh\u1EDBp chu\u1ED7\
+  i. D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t v\xED d\u1EE5\u2026"
 lastmod: '2024-03-13T22:44:36.809419-06:00'
 model: gpt-4-0125-preview
-summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy, hay c\xF2n g\u1ECDi l\xE0 regex, l\xE0\
-  \ c\xE1c m\u1EABu \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 kh\u1EDBp c\xE1\
-  c k\u1EBFt h\u1EE3p k\xFD t\u1EF1 trong v\u0103n b\u1EA3n."
+summary: "Lua cung c\u1EA5p h\u1ED7 tr\u1EE3 c\u01A1 b\u1EA3n cho c\xE1c m\u1EABu\
+  \ (phi\xEAn b\u1EA3n regex c\u1EE7a n\xF3) m\xE0 b\u1EA1n c\xF3 th\u1EC3 s\u1EED\
+  \ d\u1EE5ng v\u1EDBi c\xE1c h\xE0m so kh\u1EDBp chu\u1ED7i."
 title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---

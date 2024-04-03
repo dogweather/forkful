@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:14.944408-07:00
-description: "Rozpocz\u0119cie nowego projektu w Google Apps Script (GAS) wi\u0105\
-  \u017Ce si\u0119 z inicjalizacj\u0105 pliku skryptu w ekosystemie Google (Google\
-  \ Drive, Docs, Arkusze itp.) w\u2026"
+description: "Jak to zrobi\u0107: Aby rozpocz\u0105\u0107 nowy projekt w Google Apps\
+  \ Script, masz kilka punkt\xF3w wej\u015Bcia, ale skupmy si\u0119 na najbardziej\
+  \ bezpo\u015Bredniej metodzie:\u2026"
 lastmod: '2024-03-13T22:44:34.903629-06:00'
 model: gpt-4-0125-preview
-summary: "Rozpocz\u0119cie nowego projektu w Google Apps Script (GAS) wi\u0105\u017C\
-  e si\u0119 z inicjalizacj\u0105 pliku skryptu w ekosystemie Google (Google Drive,\
-  \ Docs, Arkusze itp."
+summary: "Aby rozpocz\u0105\u0107 nowy projekt w Google Apps Script, masz kilka punkt\xF3\
+  w wej\u015Bcia, ale skupmy si\u0119 na najbardziej bezpo\u015Bredniej metodzie."
 title: Rozpoczynanie nowego projektu
 weight: 1
 ---

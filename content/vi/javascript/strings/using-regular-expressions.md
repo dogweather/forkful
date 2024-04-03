@@ -2,17 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:59.178138-07:00
-description: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy, th\u01B0\u1EDDng \u0111\u01B0\u1EE3\
-  c bi\u1EBFt \u0111\u1EBFn v\u1EDBi t\xEAn g\u1ECDi regex, l\xE0 c\xE1c m\u1EABu\
-  \ \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 kh\u1EDBp c\xE1c k\u1EBFt h\u1EE3\
-  p k\xFD t\u1EF1 trong chu\u1ED7i. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng ch\xFA\
-  ng\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1\
+  ch s\u1EED d\u1EE5ng regex trong JavaScript."
 lastmod: '2024-03-13T22:44:37.140110-06:00'
 model: gpt-4-0125-preview
-summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy, th\u01B0\u1EDDng \u0111\u01B0\u1EE3c bi\u1EBF\
-  t \u0111\u1EBFn v\u1EDBi t\xEAn g\u1ECDi regex, l\xE0 c\xE1c m\u1EABu \u0111\u01B0\
-  \u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 kh\u1EDBp c\xE1c k\u1EBFt h\u1EE3p k\xFD\
-  \ t\u1EF1 trong chu\u1ED7i."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch s\u1EED d\u1EE5ng regex trong JavaScript."
 title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---

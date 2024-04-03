@@ -2,13 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:41.715386-07:00
-description: "\xC9crire un fichier texte en Go implique de cr\xE9er et d'\xE9crire\
-  \ des cha\xEEnes de donn\xE9es dans un fichier texte nouveau ou existant. Les programmeurs\
-  \ font cela\u2026"
+description: "Comment faire : En Go, l'\xE9criture dans un fichier texte est g\xE9\
+  r\xE9e par les packages `os` et `io/ioutil` (pour les versions de Go <1.16) ou `os`\
+  \ et `io`\u2026"
 lastmod: '2024-03-13T22:44:57.154895-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire un fichier texte en Go implique de cr\xE9er et d'\xE9crire des\
-  \ cha\xEEnes de donn\xE9es dans un fichier texte nouveau ou existant."
+summary: "En Go, l'\xE9criture dans un fichier texte est g\xE9r\xE9e par les packages\
+  \ `os` et `io/ioutil` (pour les versions de Go <1.16) ou `os` et `io` plus `os`\
+  \ pour Go 1.16 et sup\xE9rieur, d\xE9montrant la philosophie de Go en mati\xE8re\
+  \ de simplicit\xE9 et d'efficacit\xE9."
 title: "\xC9crire un fichier texte"
 weight: 24
 ---

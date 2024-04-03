@@ -1,8 +1,8 @@
 ---
 date: 2024-01-26 03:49:42.390443-07:00
-description: "Oletetaan, ett\xE4 sinulla on yksinkertainen Java-ohjelma, joka temppuilee,\
-  \ etk\xE4 voi keksi\xE4 miksi. T\xE4ss\xE4 on, miten k\xE4ynnist\xE4isit debuggerin\
-  \ k\xE4ytt\xE4m\xE4ll\xE4\u2026"
+description: "Miten: Oletetaan, ett\xE4 sinulla on yksinkertainen Java-ohjelma, joka\
+  \ temppuilee, etk\xE4 voi keksi\xE4 miksi. T\xE4ss\xE4 on, miten k\xE4ynnist\xE4\
+  isit debuggerin\u2026"
 lastmod: '2024-03-13T22:44:56.449676-06:00'
 model: gpt-4-0125-preview
 summary: "Oletetaan, ett\xE4 sinulla on yksinkertainen Java-ohjelma, joka temppuilee,\

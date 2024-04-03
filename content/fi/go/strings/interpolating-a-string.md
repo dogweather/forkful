@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:31.160543-07:00
-description: "Merkkijonojen interpolaatio on menetelm\xE4, jolla rakennetaan merkkijonoja,\
-  \ joihin sis\xE4llytet\xE4\xE4n muuttujia, mahdollistaen dynaamisen merkkijonon\
-  \ luomisen.\u2026"
+description: "Miten: Gossa merkkijonojen interpolaatio saavutetaan yleisesti k\xE4\
+  ytt\xE4m\xE4ll\xE4 `fmt`-pakettia, erityisesti `Sprintf`-funktiota, joka antaa sinun\
+  \ sy\xF6tt\xE4\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.035511-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonojen interpolaatio on menetelm\xE4, jolla rakennetaan merkkijonoja,\
-  \ joihin sis\xE4llytet\xE4\xE4n muuttujia, mahdollistaen dynaamisen merkkijonon\
-  \ luomisen."
+summary: "Gossa merkkijonojen interpolaatio saavutetaan yleisesti k\xE4ytt\xE4m\xE4\
+  ll\xE4 `fmt`-pakettia, erityisesti `Sprintf`-funktiota, joka antaa sinun sy\xF6\
+  tt\xE4\xE4 muuttujia merkkijonoon m\xE4\xE4rittelem\xE4ll\xE4 muotoiluverbimerkkej\xE4\
+  ."
 title: Merkkijonon interpolaatio
 weight: 8
 ---

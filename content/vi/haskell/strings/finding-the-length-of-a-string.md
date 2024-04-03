@@ -2,15 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:42.288157-07:00
-description: "Vi\u1EC7c t\xECm \u0111\u1ED9 d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i trong\
-  \ Haskell li\xEAn quan \u0111\u1EBFn vi\u1EC7c x\xE1c \u0111\u1ECBnh xem n\xF3 ch\u1EE9\
-  a bao nhi\xEAu k\xFD t\u1EF1. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u01B0\u1EDDng\
-  \ c\u1EA7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 ki\u1EC3m so\xE1t\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: ."
 lastmod: '2024-03-13T22:44:36.700580-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c t\xECm \u0111\u1ED9 d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i trong\
-  \ Haskell li\xEAn quan \u0111\u1EBFn vi\u1EC7c x\xE1c \u0111\u1ECBnh xem n\xF3 ch\u1EE9\
-  a bao nhi\xEAu k\xFD t\u1EF1."
+summary: .
 title: "T\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
 weight: 7
 ---

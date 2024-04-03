@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:45:31.616300-07:00
-description: "Att avrunda tal inneb\xE4r att justera ett decimaltal till dess n\xE4\
-  rmaste hela v\xE4rde eller till ett angivet antal decimaler. Programmerare avrundar\
-  \ f\xF6r att\u2026"
+description: "Hur man g\xF6r: Elms `Basics`-modul tillhandah\xE5ller finurliga funktioner\
+  \ f\xF6r avrundning: `round`, `floor` och `ceiling`. S\xE5 h\xE4r anv\xE4nder du\
+  \ dem."
 lastmod: '2024-03-13T22:44:37.824121-06:00'
 model: gpt-4-0125-preview
-summary: "Att avrunda tal inneb\xE4r att justera ett decimaltal till dess n\xE4rmaste\
-  \ hela v\xE4rde eller till ett angivet antal decimaler."
+summary: "Elms `Basics`-modul tillhandah\xE5ller finurliga funktioner f\xF6r avrundning."
 title: Avrundning av tal
 weight: 13
 ---

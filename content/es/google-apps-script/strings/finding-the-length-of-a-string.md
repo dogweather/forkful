@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:20.318580-07:00
-description: "Encontrar la longitud de una cadena en Google Apps Script, un lenguaje\
-  \ de scripting en la nube de JavaScript que permite automatizar tareas a trav\xE9\
-  s de\u2026"
+description: "C\xF3mo: En Google Apps Script, puedes encontrar la longitud de una\
+  \ cadena utilizando la propiedad `.length`, similar a JavaScript. Esta propiedad\
+  \ devuelve\u2026"
 lastmod: '2024-03-13T22:44:58.514311-06:00'
 model: gpt-4-0125-preview
-summary: "Encontrar la longitud de una cadena en Google Apps Script, un lenguaje de\
-  \ scripting en la nube de JavaScript que permite automatizar tareas a trav\xE9s\
-  \ de productos de Google, se trata de determinar el n\xFAmero de caracteres que\
-  \ contiene una cadena."
+summary: En Google Apps Script, puedes encontrar la longitud de una cadena utilizando
+  la propiedad `.length`, similar a JavaScript.
 title: Encontrando la longitud de una cadena
 weight: 7
 ---

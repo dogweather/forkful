@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 03:46:12.942714-07:00
-description: "\xC5 runde av tall betyr \xE5 justere dem til \xE5 v\xE6re n\xE6rmere\
-  \ en enklere eller mer signifikant verdi. Programmerere runder av tall for \xE5\
-  \ forenkle resultater,\u2026"
+description: 'Hvordan: Her er det grunnleggende om avrunding av tall i Python.'
 lastmod: '2024-03-13T22:44:40.356064-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 runde av tall betyr \xE5 justere dem til \xE5 v\xE6re n\xE6rmere en\
-  \ enklere eller mer signifikant verdi."
+summary: Her er det grunnleggende om avrunding av tall i Python.
 title: Avrunding av tall
 weight: 13
 ---

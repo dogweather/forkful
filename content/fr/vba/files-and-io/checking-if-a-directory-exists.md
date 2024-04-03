@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:48:53.279595-07:00
-description: "V\xE9rifier si un r\xE9pertoire existe en Visual Basic pour Applications\
-  \ (VBA) consiste \xE0 confirmer la pr\xE9sence d'un dossier dans le syst\xE8me de\
-  \ fichiers avant\u2026"
+description: "Comment faire : En VBA, pour v\xE9rifier si un r\xE9pertoire existe,\
+  \ vous utilisez typiquement la fonction `Dir` combin\xE9e \xE0 l'attribut `vbDirectory`.\
+  \ Cette\u2026"
 lastmod: '2024-03-13T22:44:57.597230-06:00'
 model: gpt-4-0125-preview
-summary: "V\xE9rifier si un r\xE9pertoire existe en Visual Basic pour Applications\
-  \ (VBA) consiste \xE0 confirmer la pr\xE9sence d'un dossier dans le syst\xE8me de\
-  \ fichiers avant d'effectuer des op\xE9rations telles que la sauvegarde de fichiers\
-  \ ou la cr\xE9ation de nouveaux r\xE9pertoires."
+summary: "En VBA, pour v\xE9rifier si un r\xE9pertoire existe, vous utilisez typiquement\
+  \ la fonction `Dir` combin\xE9e \xE0 l'attribut `vbDirectory`."
 title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---

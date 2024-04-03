@@ -2,19 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:01.609498-07:00
-description: "Vi\u1EC7c lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi m\u1ED9\
-  t chu\u1ED7i trong Google Apps Script l\xE0 \u0111\u1EC3 lo\u1EA1i b\u1ECF nh\u1EEF\
-  ng d\u1EA5u ngo\u1EB7c k\xE9p kh\xF4ng c\u1EA7n thi\u1EBFt c\xF3 th\u1EC3 bao quanh\
-  \ d\u1EEF li\u1EC7u chu\u1ED7i c\u1EE7a\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Google Apps Script kh\xF4ng ch\u1EC7ch\
+  \ h\u01B0\u1EDBng xa so v\u1EDBi c\xE1c th\u1EF1c ti\u1EC5n ti\xEAu chu\u1EA9n c\u1EE7\
+  a JavaScript khi n\xF3i \u0111\u1EBFn vi\u1EC7c x\u1EED l\xFD chu\u1ED7i v\xE0 thao\
+  \ t\xE1c v\u1EDBi ch\xFAng.\u2026"
 lastmod: '2024-03-13T22:44:36.023147-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi m\u1ED9\
-  t chu\u1ED7i trong Google Apps Script l\xE0 \u0111\u1EC3 lo\u1EA1i b\u1ECF nh\u1EEF\
-  ng d\u1EA5u ngo\u1EB7c k\xE9p kh\xF4ng c\u1EA7n thi\u1EBFt c\xF3 th\u1EC3 bao quanh\
-  \ d\u1EEF li\u1EC7u chu\u1ED7i c\u1EE7a b\u1EA1n, th\u01B0\u1EDDng xu\u1EA5t ph\xE1\
-  t t\u1EEB c\xE1c \u0111\u1ED1i t\u01B0\u1EE3ng JSON \u0111\xE3 ph\xE2n t\xEDch,\
-  \ nh\u1EADp li\u1EC7u t\u1EEB ng\u01B0\u1EDDi d\xF9ng, ho\u1EB7c tr\xEDch xu\u1EA5\
-  t d\u1EEF li\u1EC7u."
+summary: "Google Apps Script kh\xF4ng ch\u1EC7ch h\u01B0\u1EDBng xa so v\u1EDBi c\xE1\
+  c th\u1EF1c ti\u1EC5n ti\xEAu chu\u1EA9n c\u1EE7a JavaScript khi n\xF3i \u0111\u1EBF\
+  n vi\u1EC7c x\u1EED l\xFD chu\u1ED7i v\xE0 thao t\xE1c v\u1EDBi ch\xFAng."
 title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i k\xFD t\u1EF1"
 weight: 9
 ---

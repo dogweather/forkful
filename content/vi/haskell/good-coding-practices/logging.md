@@ -2,18 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:13.468369-07:00
-description: "Logging trong l\u1EADp tr\xECnh ch\xEDnh l\xE0 \u0111\u1EC3 l\u1EA1\
-  i m\u1ED9t d\u1EA5u v\u1EBFt g\u1ED3m nh\u1EEFng s\u1EF1 ki\u1EC7n ho\u1EB7c th\xF4\
-  ng \u0111i\u1EC7p \u0111\u01B0\u1EE3c ghi l\u1EA1i, c\xF3 th\u1EC3 \u0111\u01B0\u1EE3\
-  c s\u1EED d\u1EE5ng \u0111\u1EC3 theo d\xF5i \u1EE9ng d\u1EE5ng c\u1EE7a b\u1EA1\
-  n \u0111ang\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong Haskell, logging c\xF3 th\u1EC3 \u0111\
+  \u01B0\u1EE3c th\u1EF1c hi\u1EC7n s\u1EED d\u1EE5ng c\xE1c th\u01B0 vi\u1EC7n nh\u01B0\
+  \ `monad-logger` ho\u1EB7c `hslogger`. D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9\
+  t v\xED d\u1EE5 nhanh s\u1EED d\u1EE5ng\u2026"
 lastmod: '2024-03-13T22:44:36.720499-06:00'
 model: gpt-4-0125-preview
-summary: "Logging trong l\u1EADp tr\xECnh ch\xEDnh l\xE0 \u0111\u1EC3 l\u1EA1i m\u1ED9\
-  t d\u1EA5u v\u1EBFt g\u1ED3m nh\u1EEFng s\u1EF1 ki\u1EC7n ho\u1EB7c th\xF4ng \u0111\
-  i\u1EC7p \u0111\u01B0\u1EE3c ghi l\u1EA1i, c\xF3 th\u1EC3 \u0111\u01B0\u1EE3c s\u1EED\
-  \ d\u1EE5ng \u0111\u1EC3 theo d\xF5i \u1EE9ng d\u1EE5ng c\u1EE7a b\u1EA1n \u0111\
-  ang l\xE0m g\xEC v\xE0o b\u1EA5t k\u1EF3 th\u1EDDi \u0111i\u1EC3m n\xE0o."
+summary: "Trong Haskell, logging c\xF3 th\u1EC3 \u0111\u01B0\u1EE3c th\u1EF1c hi\u1EC7\
+  n s\u1EED d\u1EE5ng c\xE1c th\u01B0 vi\u1EC7n nh\u01B0 `monad-logger` ho\u1EB7c\
+  \ `hslogger`."
 title: Ghi log
 weight: 17
 ---

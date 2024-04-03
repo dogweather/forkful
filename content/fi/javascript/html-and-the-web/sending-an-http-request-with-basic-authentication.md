@@ -1,13 +1,11 @@
 ---
 date: 2024-01-20 18:01:59.400463-07:00
-description: "Perustiedot: HTTP-pyynt\xF6 basic-autentikaatiolla tarkoittaa k\xE4\
-  ytt\xE4j\xE4nimen ja salasanan sis\xE4llytt\xE4mist\xE4 HTTP-pyynt\xF6\xF6n tunnistautumista\
-  \ varten. Ohjelmoijat\u2026"
+description: "How to: Javaskriptiss\xE4 basic-autentikaatio HTTP-pyynn\xF6ss\xE4 onnistuu\
+  \ `fetch`-funktiolla tai kirjastojen (esim. Axios) avulla. T\xE4ss\xE4 esimerkki\u2026"
 lastmod: '2024-03-13T22:44:56.949729-06:00'
 model: gpt-4-1106-preview
-summary: "Perustiedot: HTTP-pyynt\xF6 basic-autentikaatiolla tarkoittaa k\xE4ytt\xE4\
-  j\xE4nimen ja salasanan sis\xE4llytt\xE4mist\xE4 HTTP-pyynt\xF6\xF6n tunnistautumista\
-  \ varten."
+summary: "Javaskriptiss\xE4 basic-autentikaatio HTTP-pyynn\xF6ss\xE4 onnistuu `fetch`-funktiolla\
+  \ tai kirjastojen (esim."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---

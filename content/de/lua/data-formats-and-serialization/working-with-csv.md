@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:34.389717-07:00
-description: "Die Arbeit mit CSV-Dateien (Comma-Separated Values, auf Deutsch \u201E\
-  durch Kommas getrennte Werte\u201C) umfasst das Parsen und Generieren von Textdaten,\
-  \ die in\u2026"
+description: "Wie geht das: In Lua kann die Arbeit mit CSV-Dateien durch grundlegende\
+  \ Datei-IO-Operationen, die von der Sprache bereitgestellt werden, ohne die\u2026"
 lastmod: '2024-03-13T22:44:54.037702-06:00'
 model: gpt-4-0125-preview
-summary: "Die Arbeit mit CSV-Dateien (Comma-Separated Values, auf Deutsch \u201Edurch\
-  \ Kommas getrennte Werte\u201C) umfasst das Parsen und Generieren von Textdaten,\
-  \ die in Reihen und Spalten organisiert sind, wobei Kommas verwendet werden, um\
-  \ einzelne Werte zu trennen."
+summary: "In Lua kann die Arbeit mit CSV-Dateien durch grundlegende Datei-IO-Operationen,\
+  \ die von der Sprache bereitgestellt werden, ohne die Notwendigkeit externer Bibliotheken\
+  \ f\xFCr einfache Aufgaben, angegangen werden."
 title: Arbeiten mit CSV
 weight: 37
 ---

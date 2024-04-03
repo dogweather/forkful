@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:45.965929-07:00
-description: "\xC5 jobbe med YAML i Go inneb\xE6rer \xE5 analysere YAML (YAML Ain't\
-  \ Markup Language) filer, en menneskevennlig standard for dataserielisering, inn\
-  \ i Go\u2026"
+description: "Hvordan: For \xE5 jobbe med YAML i Go, m\xE5 du f\xF8rst importere et\
+  \ bibliotek som st\xF8tter YAML analyse og serielisering, siden Gos standard bibliotek\
+  \ ikke\u2026"
 lastmod: '2024-03-13T22:44:40.289929-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 jobbe med YAML i Go inneb\xE6rer \xE5 analysere YAML (YAML Ain't Markup\
-  \ Language) filer, en menneskevennlig standard for dataserielisering, inn i Go datastrukturer\
-  \ og omvendt."
+summary: "For \xE5 jobbe med YAML i Go, m\xE5 du f\xF8rst importere et bibliotek som\
+  \ st\xF8tter YAML analyse og serielisering, siden Gos standard bibliotek ikke inkluderer\
+  \ direkte st\xF8tte for YAML."
 title: "\xC5 Arbeide med YAML"
 weight: 41
 ---

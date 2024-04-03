@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:02.668831-07:00
-description: "Organiser le code en fonctions en C consiste \xE0 d\xE9composer des\
-  \ t\xE2ches complexes en blocs de code plus petits et r\xE9utilisables. Cette pratique\
-  \ am\xE9liore la\u2026"
+description: "Comment faire : En C, une fonction est d\xE9clar\xE9e avec un type de\
+  \ retour, un nom et des param\xE8tres (s'il y en a), suivis d'un bloc de code. Commen\xE7\
+  ons par\u2026"
 lastmod: '2024-03-13T22:44:58.378279-06:00'
 model: gpt-4-0125-preview
-summary: "Organiser le code en fonctions en C consiste \xE0 d\xE9composer des t\xE2\
-  ches complexes en blocs de code plus petits et r\xE9utilisables."
+summary: "En C, une fonction est d\xE9clar\xE9e avec un type de retour, un nom et\
+  \ des param\xE8tres (s'il y en a), suivis d'un bloc de code."
 title: Organiser le code en fonctions
 weight: 18
 ---

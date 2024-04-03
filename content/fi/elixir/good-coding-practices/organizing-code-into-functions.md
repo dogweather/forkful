@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 01:09:53.033984-07:00
-description: "Koodin j\xE4rjest\xE4minen funktioiksi tarkoittaa, ett\xE4 liittyv\xE4\
-  t operaatiot ryhmitell\xE4\xE4n uudelleenk\xE4ytett\xE4viksi lohkoiksi. T\xE4m\xE4\
-  \ tehd\xE4\xE4n luettavuuden ja\u2026"
+description: 'Miten: Luodaan yksinkertainen Elixir-funktio sanojen alkukirjainten
+  suurentamiseen.'
 lastmod: '2024-03-13T22:44:56.232441-06:00'
 model: gpt-4-1106-preview
-summary: "Koodin j\xE4rjest\xE4minen funktioiksi tarkoittaa, ett\xE4 liittyv\xE4t\
-  \ operaatiot ryhmitell\xE4\xE4n uudelleenk\xE4ytett\xE4viksi lohkoiksi."
+summary: Luodaan yksinkertainen Elixir-funktio sanojen alkukirjainten suurentamiseen.
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---

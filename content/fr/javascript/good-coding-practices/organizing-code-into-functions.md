@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 01:11:08.941884-07:00
-description: "Organiser le code en fonctions divise les t\xE2ches en morceaux r\xE9\
-  utilisables, rendant le code plus propre et plus facile \xE0 maintenir. Nous faisons\
-  \ cela pour\u2026"
+description: 'Comment faire : .'
 lastmod: '2024-03-13T22:44:58.281658-06:00'
 model: gpt-4-1106-preview
-summary: "Organiser le code en fonctions divise les t\xE2ches en morceaux r\xE9utilisables,\
-  \ rendant le code plus propre et plus facile \xE0 maintenir."
+summary: .
 title: Organisation du code en fonctions
 weight: 18
 ---

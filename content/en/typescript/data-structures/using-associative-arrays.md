@@ -1,11 +1,10 @@
 ---
 date: 2024-01-30 18:57:12.418860-07:00
-description: "Associative arrays, or objects in TypeScript, let you use strings (or\
-  \ keys) to access value pairs. Programmers use them for more dynamic data access\u2026"
+description: 'How to: Creating and using associative arrays in TypeScript is straightforward.
+  Here''s a basic run-through.'
 lastmod: '2024-03-13T22:44:59.851984-06:00'
 model: gpt-4-0125-preview
-summary: Associative arrays, or objects in TypeScript, let you use strings (or keys)
-  to access value pairs.
+summary: Creating and using associative arrays in TypeScript is straightforward.
 title: Using associative arrays
 weight: 15
 ---

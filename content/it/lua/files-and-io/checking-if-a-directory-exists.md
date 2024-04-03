@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:50.968236-07:00
-description: "Controllare se una directory esiste \xE8 un'operazione fondamentale\
-  \ quando si scrivono script che interagiscono con il filesystem, garantendo che\
-  \ il proprio\u2026"
+description: "Come fare: In Lua, non esiste una funzione integrata per verificare\
+  \ direttamente se una directory esiste, quindi spesso ci si affida alla libreria\
+  \ Lua\u2026"
 lastmod: '2024-03-13T22:44:43.571513-06:00'
 model: gpt-4-0125-preview
-summary: "Controllare se una directory esiste \xE8 un'operazione fondamentale quando\
-  \ si scrivono script che interagiscono con il filesystem, garantendo che il proprio\
-  \ programma operi su percorsi validi e prevenga errori legati a directory inesistenti."
+summary: In Lua, non esiste una funzione integrata per verificare direttamente se
+  una directory esiste, quindi spesso ci si affida alla libreria Lua File System (lfs),
+  una popolare libreria di terze parti per le operazioni sui file.
 title: Verifica se una directory esiste
 weight: 20
 ---

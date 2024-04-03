@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:50.434038-07:00
-description: "Wyodr\u0119bnianie podci\u0105g\xF3w polega na wzi\u0119ciu cz\u0119\
-  \u015Bci ci\u0105gu - w zasadzie tworzeniu nowego ci\u0105gu z cz\u0119\u015Bci\
-  \ istniej\u0105cego. Programi\u015Bci robi\u0105 to z wielu powod\xF3w, w\u2026"
+description: "Jak to zrobi\u0107: W Google Apps Script, kt\xF3re opiera si\u0119 na\
+  \ nowoczesnym JavaScript, wyodr\u0119bnienie podci\u0105g\xF3w mo\u017Cna osi\u0105\
+  gn\u0105\u0107 za pomoc\u0105 kilku metod, w tym\u2026"
 lastmod: '2024-03-13T22:44:34.889766-06:00'
 model: gpt-4-0125-preview
-summary: "Wyodr\u0119bnianie podci\u0105g\xF3w polega na wzi\u0119ciu cz\u0119\u015B\
-  ci ci\u0105gu - w zasadzie tworzeniu nowego ci\u0105gu z cz\u0119\u015Bci istniej\u0105\
-  cego."
+summary: "W Google Apps Script, kt\xF3re opiera si\u0119 na nowoczesnym JavaScript,\
+  \ wyodr\u0119bnienie podci\u0105g\xF3w mo\u017Cna osi\u0105gn\u0105\u0107 za pomoc\u0105\
+  \ kilku metod, w tym `substring()`, `substr()` i `slice()`."
 title: "Wydobywanie podci\u0105g\xF3w"
 weight: 6
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:50:51.017516-07:00
-description: "Mik\xE4 on merkkijonointerpolointi, ja miksi sit\xE4 k\xE4ytet\xE4\xE4\
-  n? Elixiriss\xE4 merkkijonointerpolointi tarkoittaa muuttujan arvon \"liitt\xE4\
-  mist\xE4\" merkkijonoon. Sit\xE4\u2026"
+description: "How to: Interpolointi Elixiriss\xE4 hoituu `#{}` syntaksilla. T\xE4\
+  ss\xE4 pari esimerkki\xE4."
 lastmod: '2024-03-13T22:44:56.212603-06:00'
 model: gpt-4-1106-preview
-summary: "Mik\xE4 on merkkijonointerpolointi, ja miksi sit\xE4 k\xE4ytet\xE4\xE4n."
+summary: "Interpolointi Elixiriss\xE4 hoituu `#{}` syntaksilla."
 title: Merkkijonon interpolointi
 weight: 8
 ---

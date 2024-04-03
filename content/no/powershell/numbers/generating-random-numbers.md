@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 20:35:01.804144-07:00
-description: "Det \xE5 generere tilfeldige tall i PowerShell handler om \xE5 skape\
-  \ uforutsigbare numeriske verdier innenfor et spesifisert omr\xE5de. Programmerere\
-  \ bruker denne\u2026"
+description: "Hvordan: PowerShell tilbyr en enkel tiln\xE6rming for \xE5 generere\
+  \ tilfeldige tall ved bruk av `Get-Random` cmdleten. Denne cmdleten kan produsere\
+  \ tilfeldige\u2026"
 lastmod: '2024-03-13T22:44:41.012051-06:00'
 model: gpt-4-0125-preview
-summary: "Det \xE5 generere tilfeldige tall i PowerShell handler om \xE5 skape uforutsigbare\
-  \ numeriske verdier innenfor et spesifisert omr\xE5de."
+summary: "PowerShell tilbyr en enkel tiln\xE6rming for \xE5 generere tilfeldige tall\
+  \ ved bruk av `Get-Random` cmdleten."
 title: Generering av tilfeldige tall
 weight: 12
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:03:40.371358-07:00
-description: "Testing in Ruby is about verifying that your code behaves as expected\
-  \ under various conditions. Programmers write tests to ensure correctness, prevent\u2026"
+description: "How to: Ruby comes with a built-in library called `Test::Unit` for writing\
+  \ unit tests, encapsulating testing practices within straightforward structures.\u2026"
 lastmod: '2024-03-13T22:45:00.554182-06:00'
 model: gpt-4-0125-preview
-summary: Testing in Ruby is about verifying that your code behaves as expected under
-  various conditions.
+summary: Ruby comes with a built-in library called `Test::Unit` for writing unit tests,
+  encapsulating testing practices within straightforward structures.
 title: Writing tests
 weight: 36
 ---

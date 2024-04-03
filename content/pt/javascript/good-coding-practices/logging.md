@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 01:06:31.454366-07:00
-description: "O log, em resumo, \xE9 como manter um di\xE1rio para sua aplica\xE7\xE3\
-  o \u2014 ele registra eventos, erros e outras a\xE7\xF5es significativas que ocorrem\
-  \ enquanto o software\u2026"
+description: "Como Fazer: Por padr\xE3o, o JavaScript oferece uma maneira simples\
+  \ de registrar mensagens no console."
 lastmod: '2024-03-13T22:44:46.968910-06:00'
 model: gpt-4-1106-preview
-summary: "O log, em resumo, \xE9 como manter um di\xE1rio para sua aplica\xE7\xE3\
-  o \u2014 ele registra eventos, erros e outras a\xE7\xF5es significativas que ocorrem\
-  \ enquanto o software est\xE1 em execu\xE7\xE3o."
+summary: "Por padr\xE3o, o JavaScript oferece uma maneira simples de registrar mensagens\
+  \ no console."
 title: Registro de Logs
 weight: 17
 ---

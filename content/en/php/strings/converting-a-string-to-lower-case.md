@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:38:53.131250-07:00
-description: "In PHP, converting a string to lower case means transforming all alphabetical\
-  \ characters in a string to their lowercase variant. Programmers do this for\u2026"
+description: "How to: PHP uses `strtolower` to make all characters in a string lower\
+  \ case. Here\u2019s how it works."
 lastmod: '2024-03-13T22:45:00.154895-06:00'
 model: gpt-4-1106-preview
-summary: In PHP, converting a string to lower case means transforming all alphabetical
-  characters in a string to their lowercase variant.
+summary: PHP uses `strtolower` to make all characters in a string lower case.
 title: Converting a string to lower case
 weight: 4
 ---

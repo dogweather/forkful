@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:55.603704-07:00
-description: "Capitaliser une cha\xEEne implique de transformer le caract\xE8re initial\
-  \ d'une cha\xEEne donn\xE9e en majuscule tout en gardant le reste en minuscule,\
-  \ souvent pour\u2026"
+description: "Comment faire : Dans Elm, il n'y a pas de fonction int\xE9gr\xE9e sp\xE9\
+  cifiquement pour capitaliser les cha\xEEnes. Cependant, vous pouvez facilement y\
+  \ parvenir en\u2026"
 lastmod: '2024-03-13T22:44:57.670906-06:00'
 model: gpt-4-0125-preview
-summary: "Capitaliser une cha\xEEne implique de transformer le caract\xE8re initial\
-  \ d'une cha\xEEne donn\xE9e en majuscule tout en gardant le reste en minuscule,\
-  \ souvent pour des raisons de formatage standardis\xE9 ou de lisibilit\xE9."
+summary: "Dans Elm, il n'y a pas de fonction int\xE9gr\xE9e sp\xE9cifiquement pour\
+  \ capitaliser les cha\xEEnes."
 title: "Mettre en majuscule une cha\xEEne"
 weight: 2
 ---

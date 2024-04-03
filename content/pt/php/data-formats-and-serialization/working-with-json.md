@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:43.358131-07:00
-description: "JSON, ou JavaScript Object Notation, \xE9 um formato leve de troca de\
-  \ dados f\xE1cil de ler e escrever por humanos, e f\xE1cil de analisar e gerar por\
-  \ m\xE1quinas.\u2026"
+description: "Como Fazer: Trabalhar com JSON em PHP \xE9 direto gra\xE7as \xE0s fun\xE7\
+  \xF5es integradas `json_encode()` e `json_decode()`. Abaixo est\xE3o exemplos mostrando\
+  \ como\u2026"
 lastmod: '2024-03-13T22:44:46.688563-06:00'
 model: gpt-4-0125-preview
-summary: "JSON, ou JavaScript Object Notation, \xE9 um formato leve de troca de dados\
-  \ f\xE1cil de ler e escrever por humanos, e f\xE1cil de analisar e gerar por m\xE1\
-  quinas."
+summary: "Trabalhar com JSON em PHP \xE9 direto gra\xE7as \xE0s fun\xE7\xF5es integradas\
+  \ `json_encode()` e `json_decode()`."
 title: Trabalhando com JSON
 weight: 38
 ---

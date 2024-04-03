@@ -2,14 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:13.090044-07:00
-description: "Ghi nh\u1EADt k\xFD l\xE0 qu\xE1 tr\xECnh ghi l\u1EA1i c\xE1c s\u1EF1\
-  \ ki\u1EC7n x\u1EA3y ra b\xEAn trong \u1EE9ng d\u1EE5ng ph\u1EA7n m\u1EC1m. C\xE1\
-  c l\u1EADp tr\xECnh vi\xEAn ghi l\u1EA1i nh\u1EEFng s\u1EF1 ki\u1EC7n n\xE0y \u0111\
-  \u1EC3 n\u1EAFm b\u1EAFt th\xF4ng tin th\u1EDDi\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1\
+  ch \u0111\u01A1n gi\u1EA3n \u0111\u1EC3 b\u1EAFt \u0111\u1EA7u v\u1EDBi vi\u1EC7\
+  c ghi nh\u1EADt k\xFD trong Java s\u1EED d\u1EE5ng g\xF3i `java.util.logging` c\xF3\
+  \ s\u1EB5n."
 lastmod: '2024-03-13T22:44:36.497899-06:00'
 model: gpt-4-0125-preview
-summary: "Ghi nh\u1EADt k\xFD l\xE0 qu\xE1 tr\xECnh ghi l\u1EA1i c\xE1c s\u1EF1 ki\u1EC7\
-  n x\u1EA3y ra b\xEAn trong \u1EE9ng d\u1EE5ng ph\u1EA7n m\u1EC1m."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch \u0111\u01A1n gi\u1EA3n \u0111\u1EC3\
+  \ b\u1EAFt \u0111\u1EA7u v\u1EDBi vi\u1EC7c ghi nh\u1EADt k\xFD trong Java s\u1EED\
+  \ d\u1EE5ng g\xF3i `java.util.logging` c\xF3 s\u1EB5n."
 title: Ghi log
 weight: 17
 ---

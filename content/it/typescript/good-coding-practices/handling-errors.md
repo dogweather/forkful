@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 00:57:50.564283-07:00
-description: "Gestire gli errori significa aspettarsi l'inaspettato; \xE8 il modo\
-  \ in cui ci comportiamo quando le cose vanno male nel nostro codice. Lo facciamo\
-  \ per\u2026"
+description: 'Come fare: In TypeScript, la gestione degli errori spesso coinvolge
+  blocchi `try`, `catch` e `finally`.'
 lastmod: '2024-03-13T22:44:43.183288-06:00'
 model: gpt-4-1106-preview
-summary: "Gestire gli errori significa aspettarsi l'inaspettato; \xE8 il modo in cui\
-  \ ci comportiamo quando le cose vanno male nel nostro codice."
+summary: In TypeScript, la gestione degli errori spesso coinvolge blocchi `try`, `catch`
+  e `finally`.
 title: Gestione degli errori
 weight: 16
 ---

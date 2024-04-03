@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 03:42:36.246438-07:00
-description: "Arrotondare i numeri significa tagliare un decimale al suo valore intero\
-  \ pi\xF9 vicino o a un numero impostato di cifre decimali. I programmatori arrotondano\u2026"
+description: "Come fare: In Arduino, puoi arrotondare i numeri utilizzando funzioni\
+  \ incorporate. I protagonisti sono `round`, `ceil` e `floor`. Ecco una rapida\u2026"
 lastmod: '2024-03-13T22:44:43.678345-06:00'
 model: gpt-4-0125-preview
-summary: "Arrotondare i numeri significa tagliare un decimale al suo valore intero\
-  \ pi\xF9 vicino o a un numero impostato di cifre decimali."
+summary: In Arduino, puoi arrotondare i numeri utilizzando funzioni incorporate.
 title: Arrotondamento dei numeri
 weight: 13
 ---

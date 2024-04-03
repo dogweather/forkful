@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:43:43.645851-07:00
-description: "Herunterladen einer Webseite bedeutet, deren Inhalte \xFCber das Internet\
-  \ auf dein Ger\xE4t zu laden. Programmierer tun das, um Daten zu sammeln oder Webdienste\u2026"
+description: "Vorgehensweise: Hier ein einfaches Beispiel, mit dem Arduino eine Webseite\
+  \ herunterl\xE4dt. Nutze daf\xFCr das `ESP8266WiFi`-Modul."
 lastmod: '2024-03-13T22:44:54.143651-06:00'
 model: gpt-4-1106-preview
-summary: "Herunterladen einer Webseite bedeutet, deren Inhalte \xFCber das Internet\
-  \ auf dein Ger\xE4t zu laden."
+summary: "Hier ein einfaches Beispiel, mit dem Arduino eine Webseite herunterl\xE4\
+  dt."
 title: Webseite herunterladen
 weight: 42
 ---

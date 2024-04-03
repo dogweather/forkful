@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:44.085157-07:00
-description: "Het verwijderen van tekens die overeenkomen met een specifiek patroon\
-  \ gaat over het verwijderen van bepaalde tekens of reeksen tekens uit strings,\u2026"
+description: "Hoe te: In Go kan het verwijderen van tekens die overeenkomen met een\
+  \ patroon effici\xEBnt worden uitgevoerd met behulp van het `regexp` pakket. Hier\
+  \ laten\u2026"
 lastmod: '2024-03-13T22:44:50.271023-06:00'
 model: gpt-4-0125-preview
-summary: Het verwijderen van tekens die overeenkomen met een specifiek patroon gaat
-  over het verwijderen van bepaalde tekens of reeksen tekens uit strings, gebaseerd
-  op regels die door een patroon zijn gedefinieerd (meestal via reguliere expressies).
+summary: "In Go kan het verwijderen van tekens die overeenkomen met een patroon effici\xEB\
+  nt worden uitgevoerd met behulp van het `regexp` pakket."
 title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---

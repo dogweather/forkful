@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 17:57:16.396277-07:00
-description: "Searching and replacing text lets you find specific characters or strings\
-  \ in a text and switch them out for something else. Programmers do it to modify\u2026"
+description: "How to: Arduino doesn't natively support string search and replace in\
+  \ the way high-level languages do. However, you can work with character arrays or\
+  \ use\u2026"
 lastmod: '2024-03-13T22:45:00.308911-06:00'
 model: gpt-4-1106-preview
-summary: Searching and replacing text lets you find specific characters or strings
-  in a text and switch them out for something else.
+summary: Arduino doesn't natively support string search and replace in the way high-level
+  languages do.
 title: Searching and replacing text
 weight: 10
 ---

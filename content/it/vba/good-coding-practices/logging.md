@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:08.397043-07:00
-description: "Il logging in Visual Basic for Applications (VBA) implica la registrazione\
-  \ di informazioni sul comportamento a runtime di un programma in un file, console\u2026"
+description: "Come fare: In VBA, non esiste un framework di logging integrato come\
+  \ si trova in alcuni altri linguaggi. Tuttavia, implementare un meccanismo di logging\u2026"
 lastmod: '2024-03-13T22:44:43.270266-06:00'
 model: gpt-4-0125-preview
-summary: Il logging in Visual Basic for Applications (VBA) implica la registrazione
-  di informazioni sul comportamento a runtime di un programma in un file, console
-  o database.
+summary: In VBA, non esiste un framework di logging integrato come si trova in alcuni
+  altri linguaggi.
 title: Registrazione
 weight: 17
 ---

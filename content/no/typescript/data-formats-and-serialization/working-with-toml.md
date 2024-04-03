@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:27:09.037599-07:00
-description: "TOML, som st\xE5r for Tom's Obvious, Minimal Language, er et data serialiseringsformat\
-  \ likt JSON eller YAML. Programm\xF8rer bruker det p\xE5 grunn av dets\u2026"
+description: "Hvordan: F\xF8rst trenger du en TOML-parser. `@iarna/toml` er et popul\xE6\
+  rt valg. Installer det med npm: `npm install @iarna/toml --save`. Slik leser du\
+  \ en\u2026"
 lastmod: '2024-03-13T22:44:40.555181-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, som st\xE5r for Tom's Obvious, Minimal Language, er et data serialiseringsformat\
-  \ likt JSON eller YAML."
+summary: "F\xF8rst trenger du en TOML-parser."
 title: Jobbe med TOML
 weight: 39
 ---

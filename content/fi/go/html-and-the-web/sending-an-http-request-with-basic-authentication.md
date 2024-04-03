@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:11.928836-07:00
-description: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla Go-kielell\xE4\
-  \ sis\xE4lt\xE4\xE4 valtuutusotsikon lis\xE4\xE4misen pyynt\xF6\xF6si, joka sis\xE4\
-  lt\xE4\xE4 k\xE4ytt\xE4j\xE4nimen ja salasanan\u2026"
+description: "Kuinka: HTTP-pyynn\xF6n tekemiseksi perusautentikoinnilla Go-kielell\xE4\
+  \ tarvitset muokata pyynt\xF6otsikoitasi sis\xE4lt\xE4m\xE4\xE4n `Authorization`-kent\xE4\
+  n, joka on\u2026"
 lastmod: '2024-03-13T22:44:56.050048-06:00'
 model: gpt-4-0125-preview
-summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla Go-kielell\xE4\
-  \ sis\xE4lt\xE4\xE4 valtuutusotsikon lis\xE4\xE4misen pyynt\xF6\xF6si, joka sis\xE4\
-  lt\xE4\xE4 k\xE4ytt\xE4j\xE4nimen ja salasanan Base64-koodattuna merkkijonona."
+summary: "HTTP-pyynn\xF6n tekemiseksi perusautentikoinnilla Go-kielell\xE4 tarvitset\
+  \ muokata pyynt\xF6otsikoitasi sis\xE4lt\xE4m\xE4\xE4n `Authorization`-kent\xE4\
+  n, joka on t\xE4ytetty tunnustiedoillasi oikeassa muodossa."
 title: "L\xE4hett\xE4minen HTTP-pyynt\xF6 perustodennuksella"
 weight: 45
 ---

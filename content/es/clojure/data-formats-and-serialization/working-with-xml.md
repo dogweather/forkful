@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:29:24.026085-07:00
-description: "XML es un lenguaje de marcado para codificar documentos de una manera\
-  \ que es legible tanto para humanos como para m\xE1quinas. Es clave en servicios\
-  \ web,\u2026"
+description: "C\xF3mo hacerlo: Clojure ofrece la biblioteca `clojure.data.xml` para\
+  \ el an\xE1lisis y emisi\xF3n de XML. Primero, vamos a analizar algo de XML."
 lastmod: '2024-03-13T22:44:58.683297-06:00'
 model: gpt-4-0125-preview
-summary: "XML es un lenguaje de marcado para codificar documentos de una manera que\
-  \ es legible tanto para humanos como para m\xE1quinas."
+summary: "Clojure ofrece la biblioteca `clojure.data.xml` para el an\xE1lisis y emisi\xF3\
+  n de XML."
 title: Trabajando con XML
 weight: 40
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:25.662840-07:00
-description: "Hakemiston olemassaolon tarkistaminen on perusteht\xE4v\xE4 PHP-ohjelmoinnissa,\
-  \ koska se mahdollistaa hakemiston l\xE4sn\xE4olon varmistamisen ennen toimintoja,\
-  \ kuten\u2026"
+description: "Kuinka: PHP:ss\xE4 hakemiston olemassaolon voi tarkistaa natiivisti\
+  \ k\xE4ytt\xE4m\xE4ll\xE4 `is_dir()`-funktiota. T\xE4m\xE4 funktio ottaa argumentiksi\
+  \ tiedostopolkun ja\u2026"
 lastmod: '2024-03-13T22:44:56.670603-06:00'
 model: gpt-4-0125-preview
-summary: "Hakemiston olemassaolon tarkistaminen on perusteht\xE4v\xE4 PHP-ohjelmoinnissa,\
-  \ koska se mahdollistaa hakemiston l\xE4sn\xE4olon varmistamisen ennen toimintoja,\
-  \ kuten tiedostojen lukemista tai niihin kirjoittamista."
+summary: "PHP:ss\xE4 hakemiston olemassaolon voi tarkistaa natiivisti k\xE4ytt\xE4\
+  m\xE4ll\xE4 `is_dir()`-funktiota."
 title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---

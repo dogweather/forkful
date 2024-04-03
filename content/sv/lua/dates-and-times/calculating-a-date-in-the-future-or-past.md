@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:31:28.802374-07:00
-description: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutet inneb\xE4r att man\
-  \ \xE4ndrar ett specifikt datum med ett visst antal dagar, m\xE5nader eller \xE5\
-  r. Programmerare g\xF6r\u2026"
+description: "S\xE5 h\xE4r g\xF6r du: I Lua anv\xE4nder du `os.date` f\xF6r l\xE4\
+  sbarhet och `os.time` f\xF6r aritmetik med tidsst\xE4mplar. H\xE4r \xE4r n\xE5gra\
+  \ enkla exempel."
 lastmod: '2024-03-13T22:44:38.052285-06:00'
 model: gpt-4-1106-preview
-summary: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutet inneb\xE4r att man \xE4\
-  ndrar ett specifikt datum med ett visst antal dagar, m\xE5nader eller \xE5r."
+summary: "I Lua anv\xE4nder du `os.date` f\xF6r l\xE4sbarhet och `os.time` f\xF6r\
+  \ aritmetik med tidsst\xE4mplar."
 title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutenheten"
 weight: 26
 ---

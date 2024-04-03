@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 03:36:43.443808-07:00
-description: "Refactorizaci\xF3n es el proceso de reestructurar c\xF3digo inform\xE1\
-  tico existente sin cambiar su comportamiento externo. Los programadores lo hacen\
-  \ para hacer\u2026"
+description: "C\xF3mo hacerlo: Considera una funci\xF3n de TypeScript que ha visto\
+  \ d\xEDas mejores - est\xE1 algo desordenada y podr\xEDa usar un poco de amor y\
+  \ cuidado."
 lastmod: '2024-03-13T22:44:58.810171-06:00'
 model: gpt-4-0125-preview
-summary: "Refactorizaci\xF3n es el proceso de reestructurar c\xF3digo inform\xE1tico\
-  \ existente sin cambiar su comportamiento externo."
+summary: "Considera una funci\xF3n de TypeScript que ha visto d\xEDas mejores - est\xE1\
+  \ algo desordenada y podr\xEDa usar un poco de amor y cuidado."
 title: "Refactorizaci\xF3n"
 weight: 19
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:02.903772-07:00
-description: "Przetwarzanie (parsing) HTML w Visual Basic for Applications (VBA) polega\
-  \ na ekstrakcji okre\u015Blonych informacji z dokumentu HTML. Programi\u015Bci robi\u0105\
-  \ to, aby\u2026"
+description: "Jak to zrobi\u0107: W VBA mo\u017Cna przetwarza\u0107 HTML za pomoc\u0105\
+  \ `Microsoft HTML Object Library`. Dodaj odniesienie do tej biblioteki w swoim edytorze\
+  \ VBA,\u2026"
 lastmod: '2024-03-13T22:44:35.229287-06:00'
 model: gpt-4-0125-preview
-summary: "Przetwarzanie (parsing) HTML w Visual Basic for Applications (VBA) polega\
-  \ na ekstrakcji okre\u015Blonych informacji z dokumentu HTML."
+summary: "W VBA mo\u017Cna przetwarza\u0107 HTML za pomoc\u0105 `Microsoft HTML Object\
+  \ Library`."
 title: "Analiza Sk\u0142adniowa HTML"
 weight: 43
 ---

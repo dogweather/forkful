@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:54.212486-07:00
-description: "La gestione degli errori in Google Apps Script riguarda la previsione,\
-  \ l'intercettazione e la risposta alle eccezioni o errori che si verificano durante\u2026"
+description: "Come fare: Google Apps Script, essendo basato su JavaScript, ci permette\
+  \ di usare la tradizionale istruzione `try-catch` per la gestione degli errori,\u2026"
 lastmod: '2024-03-13T22:44:42.963811-06:00'
 model: gpt-4-0125-preview
-summary: La gestione degli errori in Google Apps Script riguarda la previsione, l'intercettazione
-  e la risposta alle eccezioni o errori che si verificano durante l'esecuzione dello
-  script.
+summary: "Google Apps Script, essendo basato su JavaScript, ci permette di usare la\
+  \ tradizionale istruzione `try-catch` per la gestione degli errori, insieme a `finally`\
+  \ se \xE8 necessaria una pulizia indipendentemente dal successo o dall'errore."
 title: Gestione degli errori
 weight: 16
 ---

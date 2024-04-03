@@ -2,15 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:41.012108-07:00
-description: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh c\xF3 ngh\u0129\
-  a l\xE0 l\u1EA5y c\xE1c b\u1ED5 sung m\xE0 ng\u01B0\u1EDDi d\xF9ng th\xEAm v\xE0\
-  o c\xE1c l\u1EC7nh khi h\u1ECD ch\u1EA1y script c\u1EE7a b\u1EA1n. L\u1EADp tr\xEC\
-  nh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 cho ph\xE9p\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch th\u1EB3\
+  ng th\u1EAFn \u0111\u1EC3 l\xE0m \u0111i\u1EC1u \u0111\xF3 trong Node.js."
 lastmod: '2024-03-13T22:44:37.173558-06:00'
 model: gpt-4-0125-preview
-summary: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh c\xF3 ngh\u0129\
-  a l\xE0 l\u1EA5y c\xE1c b\u1ED5 sung m\xE0 ng\u01B0\u1EDDi d\xF9ng th\xEAm v\xE0\
-  o c\xE1c l\u1EC7nh khi h\u1ECD ch\u1EA1y script c\u1EE7a b\u1EA1n."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch th\u1EB3ng th\u1EAFn \u0111\u1EC3\
+  \ l\xE0m \u0111i\u1EC1u \u0111\xF3 trong Node.js."
 title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
 weight: 23
 ---

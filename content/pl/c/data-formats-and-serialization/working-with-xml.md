@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:02.919077-07:00
-description: "Praca z XML w j\u0119zyku C wi\u0105\u017Ce si\u0119 z parsowaniem,\
-  \ wyszukiwaniem i manipulowaniem dokumentami XML za pomoc\u0105 r\xF3\u017Cnych\
-  \ bibliotek. Programi\u015Bci anga\u017Cuj\u0105 si\u0119 w\u2026"
+description: "Jak to zrobi\u0107: C nie ma wbudowanego wsparcia dla XML, wi\u0119\
+  c b\u0119dziesz musia\u0142 u\u017Cy\u0107 zewn\u0119trznych bibliotek. Jednym z\
+  \ popularnych wybor\xF3w jest `libxml2`,\u2026"
 lastmod: '2024-03-13T22:44:35.912955-06:00'
 model: gpt-4-0125-preview
-summary: "Praca z XML w j\u0119zyku C wi\u0105\u017Ce si\u0119 z parsowaniem, wyszukiwaniem\
-  \ i manipulowaniem dokumentami XML za pomoc\u0105 r\xF3\u017Cnych bibliotek."
+summary: "C nie ma wbudowanego wsparcia dla XML, wi\u0119c b\u0119dziesz musia\u0142\
+  \ u\u017Cy\u0107 zewn\u0119trznych bibliotek."
 title: Praca z XML
 weight: 40
 ---

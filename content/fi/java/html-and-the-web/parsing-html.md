@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:29.359905-07:00
-description: "HTML:n j\xE4sent\xE4minen tarkoittaa merkint\xE4kielen l\xE4pik\xE4\
-  ynti\xE4 tietojen, kuten tekstin, linkkien tai muiden elementtien, poimimiseksi.\
-  \ Teemme sen\u2026"
+description: "Kuinka: K\xE4ytet\xE4\xE4n Jsoupia, k\xE4tev\xE4\xE4 kirjastoa ty\xF6\
+  skentelyyn todellisen maailman HTML:n kanssa. Lis\xE4t\xE4\xE4n ensin riippuvuus."
 lastmod: '2024-03-13T22:44:56.442812-06:00'
 model: gpt-4-0125-preview
-summary: "HTML:n j\xE4sent\xE4minen tarkoittaa merkint\xE4kielen l\xE4pik\xE4ynti\xE4\
-  \ tietojen, kuten tekstin, linkkien tai muiden elementtien, poimimiseksi."
+summary: "K\xE4ytet\xE4\xE4n Jsoupia, k\xE4tev\xE4\xE4 kirjastoa ty\xF6skentelyyn\
+  \ todellisen maailman HTML:n kanssa."
 title: "HTML:n j\xE4sennys"
 weight: 43
 ---

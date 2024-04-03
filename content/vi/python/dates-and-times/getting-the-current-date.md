@@ -2,15 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:35.591838-07:00
-description: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong Python c\xF3 ngh\u0129a l\xE0\
-  \ truy c\u1EADp ng\xE0y \u0111ang di\u1EC5n ra t\u1EEB h\u1EC7 th\u1ED1ng m\xE0\
-  \ n\xF3 \u0111ang ch\u1EA1y. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1\
-  u n\xE0y \u0111\u1EC3 ghi nh\u1EADt k\xFD, d\u1EA5u\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: S\u1EED d\u1EE5ng m\xF4-\u0111un `datetime`.\
+  \ \u0110\xF3 l\xE0 m\u1ED9t c\xE1ch \u0111\u01A1n gi\u1EA3n."
 lastmod: '2024-03-13T22:44:36.111187-06:00'
 model: gpt-4-0125-preview
-summary: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong Python c\xF3 ngh\u0129a l\xE0\
-  \ truy c\u1EADp ng\xE0y \u0111ang di\u1EC5n ra t\u1EEB h\u1EC7 th\u1ED1ng m\xE0\
-  \ n\xF3 \u0111ang ch\u1EA1y."
+summary: "S\u1EED d\u1EE5ng m\xF4-\u0111un `datetime`."
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 weight: 29
 ---

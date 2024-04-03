@@ -3,16 +3,14 @@ changelog:
 - 2024-01-21, dogweather, Reviewed for accuracy
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:06.431511-07:00
-description: "X\u1EED l\xFD l\u1ED7i ch\xEDnh l\xE0 vi\u1EC7c d\u1EF1 ph\xF2ng nh\u1EEF\
-  ng \u0111i\u1EC1u kh\xF4ng mong \u0111\u1EE3i trong code \u2014 qu\u1EA3n l\xFD\
-  \ l\u1ED7i m\u1ED9t c\xE1ch nh\u1EB9 nh\xE0ng m\xE0 kh\xF4ng l\xE0m s\u1EADp ch\u01B0\
-  \u01A1ng tr\xECnh. L\u1EADp tr\xECnh vi\xEAn l\xE0m\u2026"
+description: "L\xE0m Th\u1EBF N\xE0o: Ruby s\u1EED d\u1EE5ng `begin`, `rescue`, `ensure`,\
+  \ v\xE0 `end` \u0111\u1EC3 x\u1EED l\xFD l\u1ED7i. B\u1EA1n b\u1ECDc \u0111o\u1EA1\
+  n code r\u1EE7i ro trong `begin` v\xE0 `end`. N\u1EBFu x\u1EA3y ra l\u1ED7i, `rescue`\
+  \ s\u1EBD\u2026"
 lastmod: '2024-03-13T22:44:37.351142-06:00'
 model: gpt-4-0125-preview
-summary: "X\u1EED l\xFD l\u1ED7i ch\xEDnh l\xE0 vi\u1EC7c d\u1EF1 ph\xF2ng nh\u1EEF\
-  ng \u0111i\u1EC1u kh\xF4ng mong \u0111\u1EE3i trong code \u2014 qu\u1EA3n l\xFD\
-  \ l\u1ED7i m\u1ED9t c\xE1ch nh\u1EB9 nh\xE0ng m\xE0 kh\xF4ng l\xE0m s\u1EADp ch\u01B0\
-  \u01A1ng tr\xECnh."
+summary: "Ruby s\u1EED d\u1EE5ng `begin`, `rescue`, `ensure`, v\xE0 `end` \u0111\u1EC3\
+  \ x\u1EED l\xFD l\u1ED7i."
 title: "X\u1EED l\xFD l\u1ED7i"
 weight: 16
 ---

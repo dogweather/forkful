@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:54:08.831524-07:00
-description: "Leggere un file di testo significa accedere e lavorare con il contenuto\
-  \ salvato in un file di testo semplice. I programmatori lo fanno per manipolare\u2026"
+description: "How to: In C# leggere un file di testo si pu\xF2 fare in vari modi.\
+  \ Eccone due semplici."
 lastmod: '2024-03-13T22:44:43.450874-06:00'
 model: gpt-4-1106-preview
-summary: Leggere un file di testo significa accedere e lavorare con il contenuto salvato
-  in un file di testo semplice.
+summary: "In C# leggere un file di testo si pu\xF2 fare in vari modi."
 title: Lettura di un file di testo
 weight: 22
 ---

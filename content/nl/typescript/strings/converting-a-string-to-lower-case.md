@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:58.533843-07:00
-description: "Een string omzetten naar kleine letters betekent dat elk teken in de\
-  \ string een kleine letter wordt. Programmeurs doen dit voor consistentie, vooral\
-  \ voor\u2026"
+description: 'Hoe: In TypeScript is het omzetten van een string naar kleine letters
+  appeltje-eitje. Roep gewoon `.toLowerCase()` aan op je string. Zo doe je dat.'
 lastmod: '2024-03-13T22:44:50.536418-06:00'
 model: gpt-4-0125-preview
-summary: Een string omzetten naar kleine letters betekent dat elk teken in de string
-  een kleine letter wordt.
+summary: In TypeScript is het omzetten van een string naar kleine letters appeltje-eitje.
 title: Een string omzetten naar kleine letters
 weight: 4
 ---

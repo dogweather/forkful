@@ -2,13 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:59.549185-07:00
-description: "Extraer subcadenas se trata de recuperar partes espec\xEDficas de una\
-  \ cadena bas\xE1ndose en sus posiciones o patrones. Los programadores hacen esto\
-  \ para tareas\u2026"
+description: "C\xF3mo hacerlo: En Dart, puedes usar varios m\xE9todos para extraer\
+  \ subcadenas, como `substring()`, `split()` y expresiones regulares. Cada m\xE9\
+  todo sirve para\u2026"
 lastmod: '2024-03-13T22:44:58.736489-06:00'
 model: gpt-4-0125-preview
-summary: "Extraer subcadenas se trata de recuperar partes espec\xEDficas de una cadena\
-  \ bas\xE1ndose en sus posiciones o patrones."
+summary: "En Dart, puedes usar varios m\xE9todos para extraer subcadenas, como `substring()`,\
+  \ `split()` y expresiones regulares."
 title: Extrayendo subcadenas
 weight: 6
 ---

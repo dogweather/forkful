@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:25.288240-07:00
-description: "Ty\xF6skentely JSON:n (JavaScript Object Notation) parissa tarkoittaa\
-  \ t\xE4m\xE4n kevyen datanvaihtoformaatista hy\xF6dynt\xE4mist\xE4 Java-sovelluksissasi.\
-  \ Ohjelmoijat\u2026"
+description: "Kuinka: K\xE4\xE4rit\xE4\xE4n hihat ja ryhdyt\xE4\xE4n koodaamaan JSONin\
+  \ kanssa Javassa. Ensimm\xE4iseksi, tarvitset JSON-k\xE4sittelykirjaston kuten `Jackson`\
+  \ tai `Google Gson`.\u2026"
 lastmod: '2024-03-13T22:44:56.467028-06:00'
 model: gpt-4-0125-preview
-summary: "Ty\xF6skentely JSON:n (JavaScript Object Notation) parissa tarkoittaa t\xE4\
-  m\xE4n kevyen datanvaihtoformaatista hy\xF6dynt\xE4mist\xE4 Java-sovelluksissasi."
+summary: "K\xE4\xE4rit\xE4\xE4n hihat ja ryhdyt\xE4\xE4n koodaamaan JSONin kanssa\
+  \ Javassa."
 title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---

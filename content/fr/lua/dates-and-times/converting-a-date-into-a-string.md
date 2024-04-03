@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:36:57.344496-07:00
-description: "Convertir une date en cha\xEEne de caract\xE8res permet de la manipuler\
-  \ comme texte, simplifiant l\u2019affichage et le stockage. Les programmeurs font\
-  \ cette\u2026"
+description: 'How to: Utilisons `os.date` pour formater une date .'
 lastmod: '2024-03-13T22:44:57.949305-06:00'
 model: gpt-4-1106-preview
-summary: "Convertir une date en cha\xEEne de caract\xE8res permet de la manipuler\
-  \ comme texte, simplifiant l\u2019affichage et le stockage."
+summary: Utilisons `os.date` pour formater une date.
 title: "Conversion d'une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---

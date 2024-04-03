@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 18:01:11.226042-07:00
-description: "Envoyer une requ\xEAte HTTP avec une authentification basique transmet\
-  \ des identifiants d\u2019acc\xE8s \xE0 un serveur web s\xE9curis\xE9. Les d\xE9\
-  veloppeurs utilisent cela\u2026"
+description: 'Comment faire : .'
 lastmod: '2024-03-13T22:44:57.281995-06:00'
 model: gpt-4-1106-preview
-summary: "Envoyer une requ\xEAte HTTP avec une authentification basique transmet des\
-  \ identifiants d\u2019acc\xE8s \xE0 un serveur web s\xE9curis\xE9."
+summary: .
 title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
 weight: 45
 ---

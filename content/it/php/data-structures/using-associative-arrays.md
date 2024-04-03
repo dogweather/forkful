@@ -2,14 +2,11 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:37.804080-07:00
-description: "Gli array associativi in PHP sono come liste super-potenziati dove ogni\
-  \ elemento pu\xF2 essere accesso utilizzando una chiave leggibile dall'uomo invece\
-  \ che\u2026"
+description: "Come fare: In PHP, creare e utilizzare array associativi \xE8 semplice.\
+  \ Ecco una breve panoramica."
 lastmod: '2024-03-13T22:44:43.509785-06:00'
 model: gpt-4-0125-preview
-summary: "Gli array associativi in PHP sono come liste super-potenziati dove ogni\
-  \ elemento pu\xF2 essere accesso utilizzando una chiave leggibile dall'uomo invece\
-  \ che semplici numeri."
+summary: "In PHP, creare e utilizzare array associativi \xE8 semplice."
 title: Utilizzo di array associativi
 weight: 15
 ---

@@ -1,11 +1,12 @@
 ---
 date: 2024-01-25 20:50:44.852715-07:00
-description: "To get cracking with a debugger in TypeScript, all you need is a supported\
-  \ IDE (like Visual Studio Code) and a `launch.json` configuration. Here's a quick\u2026"
+description: "How to: To get cracking with a debugger in TypeScript, all you need\
+  \ is a supported IDE (like Visual Studio Code) and a `launch.json` configuration.\
+  \ Here's\u2026"
 lastmod: '2024-03-13T22:44:59.863012-06:00'
 model: gpt-4-1106-preview
 summary: To get cracking with a debugger in TypeScript, all you need is a supported
-  IDE (like Visual Studio Code) and a `launch.
+  IDE (like Visual Studio Code) and a `launch.json` configuration.
 title: Using a debugger
 weight: 35
 ---

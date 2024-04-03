@@ -1,13 +1,11 @@
 ---
 date: 2024-01-20 17:40:24.022202-07:00
-description: "Creare un file temporaneo significa generare un file per uso temporaneo,\
-  \ di solito destinato a contenere dati che servono solo durante l'esecuzione di\
-  \ un\u2026"
+description: "How to: In Haskell, possiamo usare il modulo `System.IO.Temp` per gestire\
+  \ i file temporanei. \xC8 intuitivo e sicuro. Ecco un esempio."
 lastmod: '2024-03-13T22:44:43.494702-06:00'
 model: gpt-4-1106-preview
-summary: Creare un file temporaneo significa generare un file per uso temporaneo,
-  di solito destinato a contenere dati che servono solo durante l'esecuzione di un
-  processo.
+summary: In Haskell, possiamo usare il modulo `System.IO.Temp` per gestire i file
+  temporanei.
 title: Creazione di un file temporaneo
 weight: 21
 ---

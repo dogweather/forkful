@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:56.537442-07:00
-description: "Parsowanie HTML w C polega na analizowaniu dokument\xF3w HTML w celu\
-  \ efektywnego wydobycia danych, struktury lub konkretnych cz\u0119\u015Bci, cz\u0119\
-  sto jako preludium do\u2026"
+description: "Jak to zrobi\u0107: Parsowanie HTML mo\u017Ce wydawa\u0107 si\u0119\
+  \ zniech\u0119caj\u0105ce ze wzgl\u0119du na z\u0142o\u017Cono\u015B\u0107 HTML\
+  \ i jego cz\u0119ste odst\u0119pstwa od czystej, dobrze uformowanej\u2026"
 lastmod: '2024-03-13T22:44:35.884059-06:00'
 model: gpt-4-0125-preview
-summary: "Parsowanie HTML w C polega na analizowaniu dokument\xF3w HTML w celu efektywnego\
-  \ wydobycia danych, struktury lub konkretnych cz\u0119\u015Bci, cz\u0119sto jako\
-  \ preludium do wydobywania danych (data mining) lub web scrapingu."
+summary: "Parsowanie HTML mo\u017Ce wydawa\u0107 si\u0119 zniech\u0119caj\u0105ce\
+  \ ze wzgl\u0119du na z\u0142o\u017Cono\u015B\u0107 HTML i jego cz\u0119ste odst\u0119\
+  pstwa od czystej, dobrze uformowanej struktury."
 title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---

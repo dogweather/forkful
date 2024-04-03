@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:38:41.961889-07:00
-description: "Komplekse tall utvider de reelle tallene med en ekstra del, den imagin\xE6\
-  re enheten 'i'. Programmerere bruker dem i ulike domener, inkludert\u2026"
+description: "Hvordan: Clojure gir innebygd st\xF8tte for komplekse tall gjennom `clojure.lang.Numbers`\
+  \ hjelpeklassen. Bruk `complex` for \xE5 opprette komplekse tall og\u2026"
 lastmod: '2024-03-13T22:44:40.396433-06:00'
 model: gpt-4-0125-preview
-summary: "Komplekse tall utvider de reelle tallene med en ekstra del, den imagin\xE6\
-  re enheten 'i'."
+summary: "Clojure gir innebygd st\xF8tte for komplekse tall gjennom `clojure.lang.Numbers`\
+  \ hjelpeklassen."
 title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---

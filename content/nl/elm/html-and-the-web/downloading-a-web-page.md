@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:32.971871-07:00
-description: "Een webpagina downloaden betekent gegevens van het internet rechtstreeks\
-  \ in je app halen om deze weer te geven of te verwerken. Programmeurs doen dit om\u2026"
+description: "Hoe: Elm vereist dat neveneffecten zoals HTTP-verzoeken worden gestructureerd\
+  \ als commando's. Je gebruikt de `Http` module om te fetchen en de respons te\u2026"
 lastmod: '2024-03-13T22:44:50.723466-06:00'
 model: gpt-4-0125-preview
-summary: Een webpagina downloaden betekent gegevens van het internet rechtstreeks
-  in je app halen om deze weer te geven of te verwerken.
+summary: Elm vereist dat neveneffecten zoals HTTP-verzoeken worden gestructureerd
+  als commando's.
 title: Een webpagina downloaden
 weight: 42
 ---

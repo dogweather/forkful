@@ -1,13 +1,12 @@
 ---
 date: 2024-02-03 19:03:07.378496-07:00
-description: "Working with CSV (Comma-Separated Values) involves reading from and\
-  \ writing to CSV files, a common data exchange format used due to its simplicity\
-  \ and\u2026"
+description: "How to: In TypeScript, you can work with CSV files through native code\
+  \ or by leveraging third-party libraries like `csv-parser` for reading and `csv-\u2026"
 lastmod: '2024-03-13T22:44:59.878411-06:00'
 model: gpt-4-0125-preview
-summary: Working with CSV (Comma-Separated Values) involves reading from and writing
-  to CSV files, a common data exchange format used due to its simplicity and wide
-  support across various platforms and languages.
+summary: In TypeScript, you can work with CSV files through native code or by leveraging
+  third-party libraries like `csv-parser` for reading and `csv-writer` for writing
+  CSV files.
 title: Working with CSV
 weight: 37
 ---

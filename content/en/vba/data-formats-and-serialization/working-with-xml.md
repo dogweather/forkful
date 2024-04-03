@@ -1,11 +1,11 @@
 ---
 date: 2024-02-01 21:30:06.903873-07:00
-description: "Working with XML in Visual Basic for Applications (VBA) involves parsing,\
-  \ creating, and modifying XML documents within the context of Microsoft Office\u2026"
+description: "How to: To start interacting with XML, one usually employs the `MSXML2.DOMDocument`\
+  \ object. This interface enables you to load, parse, and navigate XML\u2026"
 lastmod: '2024-03-13T22:44:59.956483-06:00'
 model: gpt-4-0125-preview
-summary: Working with XML in Visual Basic for Applications (VBA) involves parsing,
-  creating, and modifying XML documents within the context of Microsoft Office applications.
+summary: To start interacting with XML, one usually employs the `MSXML2.DOMDocument`
+  object.
 title: Working with XML
 weight: 40
 ---

@@ -2,17 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:04.610943-07:00
-description: "Vi\u1EC7c in \u1EA5n th\xF4ng tin debug gi\u1ED1ng nh\u01B0 chi\u1EBF\
-  c \u0111\xE8n pin trong ng\xF5 t\u1ED1i c\u1EE7a m\xE3 l\u1EC7nh; n\xF3 gi\xFAp\
-  \ b\u1EA1n ph\xE1t hi\u1EC7n l\u1ED7i b\u1EB1ng c\xE1ch cho ph\xE9p b\u1EA1n nh\xEC\
-  n th\u1EA5u nh\u1EEFng g\xEC m\xE3 l\u1EC7nh\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Mu\u1ED1n in th\xF4ng tin debug trong TypeScript?\
+  \ C\xE1c ph\u01B0\u01A1ng th\u1EE9c c\u1EE7a Console ch\xEDnh l\xE0 l\u1EF1a ch\u1ECD\
+  n c\u1EE7a b\u1EA1n. Xem `console.log`, `console.error`, v\xE0\u2026"
 lastmod: '2024-03-13T22:44:36.322449-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c in \u1EA5n th\xF4ng tin debug gi\u1ED1ng nh\u01B0 chi\u1EBFc \u0111\
-  \xE8n pin trong ng\xF5 t\u1ED1i c\u1EE7a m\xE3 l\u1EC7nh; n\xF3 gi\xFAp b\u1EA1\
-  n ph\xE1t hi\u1EC7n l\u1ED7i b\u1EB1ng c\xE1ch cho ph\xE9p b\u1EA1n nh\xECn th\u1EA5\
-  u nh\u1EEFng g\xEC m\xE3 l\u1EC7nh c\u1EE7a m\xECnh \u0111ang th\u1EF1c hi\u1EC7\
-  n t\u1EA1i th\u1EDDi gian ch\u1EA1y."
+summary: "Mu\u1ED1n in th\xF4ng tin debug trong TypeScript."
 title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 weight: 33
 ---

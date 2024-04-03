@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:30:50.638459-07:00
-description: "Figuring out a future or past date involves computing a date that is\
-  \ so many days, months, or years from a specific point in time. Programmers often\
-  \ need\u2026"
+description: 'How to: Using Elixir''s built-in `Date` module, you can easily play
+  with the timeline.'
 lastmod: '2024-03-13T22:44:59.794379-06:00'
 model: gpt-4-1106-preview
-summary: Figuring out a future or past date involves computing a date that is so many
-  days, months, or years from a specific point in time.
+summary: Using Elixir's built-in `Date` module, you can easily play with the timeline.
 title: Calculating a date in the future or past
 weight: 26
 ---

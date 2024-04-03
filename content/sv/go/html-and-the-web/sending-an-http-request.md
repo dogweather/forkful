@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:38.975129-07:00
-description: "Att skicka en HTTP-beg\xE4ran inneb\xE4r att initiera ett anrop fr\xE5\
-  n din Go-applikation till en webbserver, API eller n\xE5gon annan HTTP-baserad tj\xE4\
-  nst.\u2026"
+description: "Hur: I Go inneb\xE4r att skicka en HTTP-beg\xE4ran och hantera svaret\
+  \ att anv\xE4nda paketet `net/http`. H\xE4r \xE4r ett steg-f\xF6r-steg-exempel p\xE5\
+  \ hur man skickar en\u2026"
 lastmod: '2024-03-13T22:44:37.388634-06:00'
 model: gpt-4-0125-preview
-summary: "Att skicka en HTTP-beg\xE4ran inneb\xE4r att initiera ett anrop fr\xE5n\
-  \ din Go-applikation till en webbserver, API eller n\xE5gon annan HTTP-baserad tj\xE4\
-  nst."
+summary: "I Go inneb\xE4r att skicka en HTTP-beg\xE4ran och hantera svaret att anv\xE4\
+  nda paketet `net/http`."
 title: "Att skicka en HTTP-beg\xE4ran"
 weight: 44
 ---

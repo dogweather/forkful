@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:25.480314-07:00
-description: "\xC5 hente dagens dato i PowerShell handler om \xE5 hente systemets\
-  \ n\xE5v\xE6rende dato og tid. Denne operasjonen er fundamental for oppgaver som\
-  \ logging,\u2026"
+description: "Hvordan: PowerShell tilbyr enkle cmdleter for \xE5 f\xE5 tak i dato\
+  \ og klokkeslett. Cmdleten `Get-Date` er hovedverkt\xF8yet for dette form\xE5let.\
+  \ Den kan returnere\u2026"
 lastmod: '2024-03-13T22:44:41.027716-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 hente dagens dato i PowerShell handler om \xE5 hente systemets n\xE5\
-  v\xE6rende dato og tid."
+summary: "PowerShell tilbyr enkle cmdleter for \xE5 f\xE5 tak i dato og klokkeslett."
 title: "F\xE5 dagens dato"
 weight: 29
 ---

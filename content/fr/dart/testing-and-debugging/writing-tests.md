@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:52.235545-07:00
-description: "\xC9crire des tests en Dart consiste \xE0 cr\xE9er des cas de test pour\
-  \ v\xE9rifier automatiquement que diff\xE9rentes parties de votre programme fonctionnent\
-  \ comme\u2026"
+description: "Comment faire : En Dart, le package `test` est couramment utilis\xE9\
+  \ pour \xE9crire des tests. Tout d'abord, ajoutez le package `test` \xE0 votre `pubspec.yaml`\
+  \ ."
 lastmod: '2024-03-13T22:44:57.393954-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire des tests en Dart consiste \xE0 cr\xE9er des cas de test pour\
-  \ v\xE9rifier automatiquement que diff\xE9rentes parties de votre programme fonctionnent\
-  \ comme pr\xE9vu."
+summary: "En Dart, le package `test` est couramment utilis\xE9 pour \xE9crire des\
+  \ tests."
 title: "R\xE9daction de tests"
 weight: 36
 ---

@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:55:43.214102-07:00
-description: "Att l\xE4sa kommandoradsargument inneb\xE4r att man h\xE4mtar de v\xE4\
-  rden som anv\xE4ndaren har angett n\xE4r de startar programmet. Programmerare anv\xE4\
-  nder det f\xF6r att\u2026"
+description: "S\xE5 h\xE4r g\xF6r du: Anv\xE4nd `args` i din `Main` metod f\xF6r att\
+  \ ta emot argument. H\xE4r \xE4r ett exempel p\xE5 hur det kan se ut."
 lastmod: '2024-03-13T22:44:37.928810-06:00'
 model: gpt-4-1106-preview
-summary: "Att l\xE4sa kommandoradsargument inneb\xE4r att man h\xE4mtar de v\xE4rden\
-  \ som anv\xE4ndaren har angett n\xE4r de startar programmet."
+summary: "Anv\xE4nd `args` i din `Main` metod f\xF6r att ta emot argument."
 title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---

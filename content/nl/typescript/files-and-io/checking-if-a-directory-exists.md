@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:02.549931-07:00
-description: "Controleren of een directory bestaat gaat over zorgen dat een map daadwerkelijk\
-  \ aanwezig is voordat je eruit leest of ernaar schrijft. Programmeurs doen\u2026"
+description: 'Hoe te: In TypeScript gebruik je meestal Node.js''s `fs` module om te
+  controleren op een directory. Hier is de snelle manier om het te doen.'
 lastmod: '2024-03-13T22:44:50.565763-06:00'
 model: gpt-4-0125-preview
-summary: Controleren of een directory bestaat gaat over zorgen dat een map daadwerkelijk
-  aanwezig is voordat je eruit leest of ernaar schrijft.
+summary: In TypeScript gebruik je meestal Node.js's `fs` module om te controleren
+  op een directory.
 title: Controleren of een directory bestaat
 weight: 20
 ---

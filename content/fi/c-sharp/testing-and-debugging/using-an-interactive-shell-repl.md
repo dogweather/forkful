@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:12:22.205288-07:00
-description: "REPL eli Lue-Arvo-Tulosta Silmukka antaa sinun kirjoittaa C#-koodia\
-  \ ja suorittaa sit\xE4 vuorovaikutteisesti. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4\
-  \ nopeisiin\u2026"
+description: "Kuinka: K\xE4ynnist\xE4 REPL C#-ymp\xE4rist\xF6ss\xE4si k\xE4ytt\xE4\
+  m\xE4ll\xE4 C# Interactive -ikkunaa tai suorita `dotnet-script` terminaalissasi.\
+  \ T\xE4ss\xE4 maistiainen sen k\xE4yt\xF6st\xE4."
 lastmod: '2024-03-13T22:44:56.574606-06:00'
 model: gpt-4-0125-preview
-summary: "REPL eli Lue-Arvo-Tulosta Silmukka antaa sinun kirjoittaa C#-koodia ja suorittaa\
-  \ sit\xE4 vuorovaikutteisesti."
+summary: "K\xE4ynnist\xE4 REPL C#-ymp\xE4rist\xF6ss\xE4si k\xE4ytt\xE4m\xE4ll\xE4\
+  \ C# Interactive -ikkunaa tai suorita `dotnet-script` terminaalissasi."
 title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 weight: 34
 ---

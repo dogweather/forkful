@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 01:11:34.374469-07:00
-description: "Koodin j\xE4rjest\xE4minen funktioihin tarkoittaa k\xE4sikirjoituksesi\
-  \ jakamista pieniin palasiin\u2014ajattele funktionaalisia LEGO-palikoita. Teemme\
-  \ n\xE4in selkeyden,\u2026"
+description: 'Kuinka: .'
 lastmod: '2024-03-13T22:44:56.702527-06:00'
 model: gpt-4-1106-preview
-summary: "Koodin j\xE4rjest\xE4minen funktioihin tarkoittaa k\xE4sikirjoituksesi jakamista\
-  \ pieniin palasiin\u2014ajattele funktionaalisia LEGO-palikoita."
+summary: .
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---

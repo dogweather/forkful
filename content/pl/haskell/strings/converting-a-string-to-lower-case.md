@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:38:38.275937-07:00
-description: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery to zamiana wszystkich\
-  \ du\u017Cych liter w tek\u015Bcie na ich ma\u0142e odpowiedniki. Programi\u015B\
-  ci robi\u0105 to aby ujednolici\u0107 dane, na\u2026"
+description: "How to: (Jak to zrobi\u0107?) W Haskellu mo\u017Cesz u\u017Cy\u0107\
+  \ funkcji `toLower` z modu\u0142u `Data.Char`, aby przekszta\u0142ci\u0107 pojedynczy\
+  \ znak na ma\u0142\u0105 liter\u0119. Aby\u2026"
 lastmod: '2024-03-13T22:44:35.438347-06:00'
 model: gpt-4-1106-preview
-summary: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery to zamiana wszystkich\
-  \ du\u017Cych liter w tek\u015Bcie na ich ma\u0142e odpowiedniki."
+summary: "W Haskellu mo\u017Cesz u\u017Cy\u0107 funkcji `toLower` z modu\u0142u `Data.Char`,\
+  \ aby przekszta\u0142ci\u0107 pojedynczy znak na ma\u0142\u0105 liter\u0119."
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---

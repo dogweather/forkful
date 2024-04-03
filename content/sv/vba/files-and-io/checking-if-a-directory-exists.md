@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:55.116090-07:00
-description: "Att kontrollera om en mapp finns i Visual Basic for Applications (VBA)\
-  \ handlar om att verifiera n\xE4rvaron av en mapp i filsystemet innan man utf\xF6\
-  r\u2026"
+description: "Hur man g\xF6r: I VBA, f\xF6r att kontrollera om en mapp finns, anv\xE4\
+  nder du vanligtvis `Dir`-funktionen tillsammans med attributet `vbDirectory`. Denna\
+  \ metod\u2026"
 lastmod: '2024-03-13T22:44:37.758789-06:00'
 model: gpt-4-0125-preview
-summary: "Att kontrollera om en mapp finns i Visual Basic for Applications (VBA) handlar\
-  \ om att verifiera n\xE4rvaron av en mapp i filsystemet innan man utf\xF6r operationer\
-  \ som att spara filer eller skapa nya kataloger."
+summary: "I VBA, f\xF6r att kontrollera om en mapp finns, anv\xE4nder du vanligtvis\
+  \ `Dir`-funktionen tillsammans med attributet `vbDirectory`."
 title: Kontroll om en katalog existerar
 weight: 20
 ---

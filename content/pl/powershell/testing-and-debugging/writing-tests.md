@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:44.241871-07:00
-description: "Pisanie test\xF3w w PowerShellu polega na tworzeniu skrypt\xF3w, kt\xF3\
-  re automatycznie weryfikuj\u0105 funkcjonalno\u015B\u0107 Twojego kodu PowerShell,\
-  \ zapewniaj\u0105c, \u017Ce\u2026"
+description: "Jak to zrobi\u0107: PowerShell nie ma wbudowanego frameworka do testowania,\
+  \ ale szeroko stosowanym, popularnym modu\u0142em zewn\u0119trznym do pisania i\
+  \ uruchamiania\u2026"
 lastmod: '2024-03-13T22:44:35.633463-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie test\xF3w w PowerShellu polega na tworzeniu skrypt\xF3w, kt\xF3\
-  re automatycznie weryfikuj\u0105 funkcjonalno\u015B\u0107 Twojego kodu PowerShell,\
-  \ zapewniaj\u0105c, \u017Ce zachowuje si\u0119 on zgodnie z oczekiwaniami."
+summary: "PowerShell nie ma wbudowanego frameworka do testowania, ale szeroko stosowanym,\
+  \ popularnym modu\u0142em zewn\u0119trznym do pisania i uruchamiania test\xF3w jest\
+  \ Pester."
 title: "Pisanie test\xF3w"
 weight: 36
 ---

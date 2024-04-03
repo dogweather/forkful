@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:51.719481-07:00
-description: "Testning i Ruby handlar om att verifiera att din kod beter sig som f\xF6\
-  rv\xE4ntat under olika f\xF6rh\xE5llanden. Programerare skriver tester f\xF6r att\
-  \ s\xE4kerst\xE4lla\u2026"
+description: "Hur man g\xF6r: Ruby kommer med ett inbyggt bibliotek som heter `Test::Unit`\
+  \ f\xF6r att skriva enhetstester, vilket inkapslar testpraxis inom enkel struktur.\u2026"
 lastmod: '2024-03-13T22:44:38.434492-06:00'
 model: gpt-4-0125-preview
-summary: "Testning i Ruby handlar om att verifiera att din kod beter sig som f\xF6\
-  rv\xE4ntat under olika f\xF6rh\xE5llanden."
+summary: "Ruby kommer med ett inbyggt bibliotek som heter `Test::Unit` f\xF6r att\
+  \ skriva enhetstester, vilket inkapslar testpraxis inom enkel struktur."
 title: Skriva tester
 weight: 36
 ---

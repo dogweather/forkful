@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:49:59.973310-07:00
-description: "String-Interpolation erm\xF6glicht es, Variablenwerte in einen String\
-  \ \"einzubetten\". Das erleichtert die dynamische Erzeugung von Text und die Datenanzeige\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:54.131494-06:00'
 model: gpt-4-1106-preview
-summary: "String-Interpolation erm\xF6glicht es, Variablenwerte in einen String \"\
-  einzubetten\"."
+summary: .
 title: Zeichenketten interpolieren
 weight: 8
 ---

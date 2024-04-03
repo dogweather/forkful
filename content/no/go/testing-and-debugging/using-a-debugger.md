@@ -2,9 +2,9 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:28.864624-07:00
-description: "Go tilbyr en innebygd fasilitet for feils\xF8king kalt `delve`. Det\
-  \ er et fullverdig feils\xF8kingsverkt\xF8y som lar deg utf\xF8re Go-programmer\
-  \ steg for steg,\u2026"
+description: "Hvordan: Go tilbyr en innebygd fasilitet for feils\xF8king kalt `delve`.\
+  \ Det er et fullverdig feils\xF8kingsverkt\xF8y som lar deg utf\xF8re Go-programmer\
+  \ steg for\u2026"
 lastmod: '2024-03-13T22:44:40.271837-06:00'
 model: gpt-4-0125-preview
 summary: "Go tilbyr en innebygd fasilitet for feils\xF8king kalt `delve`."

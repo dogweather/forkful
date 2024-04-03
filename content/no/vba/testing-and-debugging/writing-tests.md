@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:50.167275-07:00
-description: "\xC5 skrive tester i programmering inneb\xE6rer \xE5 lage spesifikke\
-  \ prosedyrer for \xE5 validere funksjonaliteten og ytelsen til kode-segmentene dine,\
-  \ for \xE5 sikre at\u2026"
+description: "Hvordan: Selv om Visual Basic for Applications (VBA) ikke leveres med\
+  \ et innebygd testrammeverk lik de som er tilgjengelige i spr\xE5k som Python eller\u2026"
 lastmod: '2024-03-13T22:44:40.624252-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive tester i programmering inneb\xE6rer \xE5 lage spesifikke prosedyrer\
-  \ for \xE5 validere funksjonaliteten og ytelsen til kode-segmentene dine, for \xE5\
-  \ sikre at de fungerer som forventet under ulike forhold."
+summary: "Selv om Visual Basic for Applications (VBA) ikke leveres med et innebygd\
+  \ testrammeverk lik de som er tilgjengelige i spr\xE5k som Python eller JavaScript,\
+  \ kan du fremdeles implementere enkle testprosedyrer for \xE5 sjekke integriteten\
+  \ til koden din."
 title: Skrive tester
 weight: 36
 ---

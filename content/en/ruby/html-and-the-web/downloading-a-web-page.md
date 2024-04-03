@@ -1,10 +1,11 @@
 ---
 date: 2024-01-20 17:45:05.202346-07:00
-description: "Downloading a web page means grabbing the HTML content from the internet.\
-  \ Programmers do it to parse the data, scrape information, or monitor changes\u2026"
+description: 'How to: Ruby makes downloading a web page straightforward with libraries
+  like `net/http` and gems like `open-uri`. Here''s how to do it using `net/http`.'
 lastmod: '2024-03-13T22:45:00.549724-06:00'
 model: gpt-4-1106-preview
-summary: Downloading a web page means grabbing the HTML content from the internet.
+summary: Ruby makes downloading a web page straightforward with libraries like `net/http`
+  and gems like `open-uri`.
 title: Downloading a web page
 weight: 42
 ---

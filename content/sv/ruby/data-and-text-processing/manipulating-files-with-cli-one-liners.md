@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 16:21:19.241669-07:00
-description: "Att manipulera filer med CLI-enradare i Ruby handlar om att utf\xF6\
-  ra vanliga filoperationer direkt fr\xE5n din terminal med anv\xE4ndning av Ruby-script.\
-  \ Det \xE4r\u2026"
+description: "Hur g\xF6r man: Ruby, med sin uttrycksfulla syntax, till\xE5ter koncisa\
+  \ och l\xE4ttl\xE4sta enradare som kan hantera en m\xE4ngd olika filoperationer.\
+  \ H\xE4r \xE4r n\xE5gra\u2026"
 lastmod: '2024-03-13T22:44:38.425370-06:00'
 model: gpt-4-0125-preview
-summary: "Att manipulera filer med CLI-enradare i Ruby handlar om att utf\xF6ra vanliga\
-  \ filoperationer direkt fr\xE5n din terminal med anv\xE4ndning av Ruby-script."
+summary: "Ruby, med sin uttrycksfulla syntax, till\xE5ter koncisa och l\xE4ttl\xE4\
+  sta enradare som kan hantera en m\xE4ngd olika filoperationer."
 title: Hantera filer med CLI-engreppskommandon
 weight: 31
 ---

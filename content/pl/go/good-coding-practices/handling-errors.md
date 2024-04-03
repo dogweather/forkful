@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:20.765570-07:00
-description: "Obs\u0142uga b\u0142\u0119d\xF3w w Go polega na rozpoznawaniu i reagowaniu\
-  \ na sytuacje wyj\u0105tkowe w programie. Programi\u015Bci zajmuj\u0105 si\u0119\
-  \ obs\u0142ug\u0105 b\u0142\u0119d\xF3w, aby zapewni\u0107, \u017Ce ich\u2026"
+description: "Jak to zrobi\u0107: W Go obs\u0142uga b\u0142\u0119d\xF3w jest zarz\u0105\
+  dzana w spos\xF3b jawny za pomoc\u0105 typu `error`. Funkcje, kt\xF3re mog\u0105\
+  \ zako\u0144czy\u0107 si\u0119 niepowodzeniem, zwracaj\u0105 b\u0142\u0105d\u2026"
 lastmod: '2024-03-13T22:44:34.860260-06:00'
 model: gpt-4-0125-preview
-summary: "Obs\u0142uga b\u0142\u0119d\xF3w w Go polega na rozpoznawaniu i reagowaniu\
-  \ na sytuacje wyj\u0105tkowe w programie."
+summary: "W Go obs\u0142uga b\u0142\u0119d\xF3w jest zarz\u0105dzana w spos\xF3b jawny\
+  \ za pomoc\u0105 typu `error`."
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---

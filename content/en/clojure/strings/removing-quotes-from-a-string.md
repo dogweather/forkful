@@ -1,12 +1,12 @@
 ---
 date: 2024-01-25 20:50:40.718672-07:00
-description: "Removing quotes from a string means getting rid of those pesky double\
-  \ or single quote characters that wrap your text. Programmers do this to cleanse\
-  \ data,\u2026"
+description: "How to: In Clojure, strings are immutable, so when we talk about \"\
+  removing quotes,\" we're really talking about creating a new string sans quotes.\
+  \ Here's\u2026"
 lastmod: '2024-03-13T22:44:59.734684-06:00'
 model: gpt-4-1106-preview
-summary: Removing quotes from a string means getting rid of those pesky double or
-  single quote characters that wrap your text.
+summary: In Clojure, strings are immutable, so when we talk about "removing quotes,"
+  we're really talking about creating a new string sans quotes.
 title: Removing quotes from a string
 weight: 9
 ---

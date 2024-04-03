@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:10.403282-07:00
-description: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n Java m\u1EDBi gi\u1ED1\
-  ng nh\u01B0 vi\u1EC7c thi\u1EBFt l\u1EADp m\u1ED9t b\u1EE9c tranh m\u1EDBi cho ki\u1EC7\
-  t t\xE1c c\u1EE7a b\u1EA1n. L\u1EADp tr\xECnh vi\xEAn kh\u1EDFi \u0111\u1EA7u c\xE1\
-  c d\u1EF1 \xE1n m\u1EDBi \u0111\u1EC3 bi\u1EBFn \xFD t\u01B0\u1EDFng th\xE0nh\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: H\xE3y b\u1EAFt \u0111\u1EA7u th\xF4i.\
+  \ Ch\xFAng t\xF4i s\u1EBD t\u1EA1o m\u1ED9t d\u1EF1 \xE1n Java \u0111\u01A1n gi\u1EA3\
+  n s\u1EED d\u1EE5ng d\xF2ng l\u1EC7nh v\xE0 bi\xEAn d\u1ECBch v\xE0 ch\u1EA1y ch\u01B0\
+  \u01A1ng tr\xECnh \"Hello, World!\" c\u1ED5 \u0111i\u1EC3n.\u2026"
 lastmod: '2024-03-13T22:44:36.490288-06:00'
 model: gpt-4-0125-preview
-summary: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n Java m\u1EDBi gi\u1ED1ng nh\u01B0\
-  \ vi\u1EC7c thi\u1EBFt l\u1EADp m\u1ED9t b\u1EE9c tranh m\u1EDBi cho ki\u1EC7t t\xE1\
-  c c\u1EE7a b\u1EA1n."
+summary: "H\xE3y b\u1EAFt \u0111\u1EA7u th\xF4i."
 title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---

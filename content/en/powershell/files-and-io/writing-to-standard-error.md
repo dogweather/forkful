@@ -1,12 +1,12 @@
 ---
 date: 2024-02-03 19:03:35.565671-07:00
-description: "Writing to standard error (stderr) in PowerShell involves sending error\
-  \ messages or diagnostics directly to the stderr stream, distinct from the standard\u2026"
+description: "How to: PowerShell simplifies the process of writing to stderr through\
+  \ the use of the `Write-Error` cmdlet or by directing output to the\u2026"
 lastmod: '2024-03-13T22:45:00.299261-06:00'
 model: gpt-4-0125-preview
-summary: Writing to standard error (stderr) in PowerShell involves sending error messages
-  or diagnostics directly to the stderr stream, distinct from the standard output
-  (stdout) stream.
+summary: PowerShell simplifies the process of writing to stderr through the use of
+  the `Write-Error` cmdlet or by directing output to the `$host.ui.WriteErrorLine()`
+  method.
 title: Writing to standard error
 weight: 25
 ---

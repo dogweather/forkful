@@ -2,14 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:59.574866-07:00
-description: "YAML l\xE0 \u0111\u1ECBnh d\u1EA1ng h\xF3a d\u1EEF li\u1EC7u d\u1EC5\
-  \ \u0111\u1ECDc v\xE0 vi\u1EBFt cho con ng\u01B0\u1EDDi. L\u1EADp tr\xECnh vi\xEA\
-  n s\u1EED d\u1EE5ng n\xF3 cho c\xE1c file c\u1EA5u h\xECnh, trao \u0111\u1ED5i d\u1EEF\
-  \ li\u1EC7u gi\u1EEFa c\xE1c ng\xF4n ng\u1EEF, v\xE0 l\u01B0u\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Lua kh\xF4ng h\u1ED7 tr\u1EE3 YAML nguy\xEA\
+  n b\u1EA3n, nh\u01B0ng b\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng m\u1ED9t th\u01B0\
+  \ vi\u1EC7n nh\u01B0 `lyaml`. C\xE0i \u0111\u1EB7t n\xF3 b\u1EB1ng c\xE1ch s\u1EED\
+  \ d\u1EE5ng `luarocks install\u2026"
 lastmod: '2024-03-13T22:44:36.848355-06:00'
 model: gpt-4-0125-preview
-summary: "YAML l\xE0 \u0111\u1ECBnh d\u1EA1ng h\xF3a d\u1EEF li\u1EC7u d\u1EC5 \u0111\
-  \u1ECDc v\xE0 vi\u1EBFt cho con ng\u01B0\u1EDDi."
+summary: "Lua kh\xF4ng h\u1ED7 tr\u1EE3 YAML nguy\xEAn b\u1EA3n, nh\u01B0ng b\u1EA1\
+  n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng m\u1ED9t th\u01B0 vi\u1EC7n nh\u01B0 `lyaml`."
 title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 weight: 41
 ---

@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:37:55.078611-07:00
-description: "Convertir un texto a min\xFAsculas es cambiar todas las letras de una\
-  \ cadena a su versi\xF3n en min\xFAscula. Lo hacemos para unificar el texto, facilitando\
-  \ la\u2026"
+description: "C\xF3mo Hacerlo: El siguiente c\xF3digo convierte un `String` en Arduino\
+  \ a min\xFAsculas. Usamos la funci\xF3n `toLowerCase()`, as\xED de simple."
 lastmod: '2024-03-13T22:44:59.321686-06:00'
 model: gpt-4-1106-preview
-summary: "Convertir un texto a min\xFAsculas es cambiar todas las letras de una cadena\
-  \ a su versi\xF3n en min\xFAscula."
+summary: "El siguiente c\xF3digo convierte un `String` en Arduino a min\xFAsculas."
 title: "Conversi\xF3n de una cadena de texto a min\xFAsculas"
 weight: 4
 ---

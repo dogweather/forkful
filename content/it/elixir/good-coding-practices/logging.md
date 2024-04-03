@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 01:02:22.069138-07:00
-description: "Il logging nello sviluppo software \xE8 la tecnica di registrazione\
-  \ degli eventi che si verificano mentre un programma \xE8 in esecuzione, tipicamente\
-  \ su un\u2026"
+description: "Come fare: In Elixir, il modo principale per registrare le informazioni\
+  \ \xE8 attraverso il modulo incorporato `Logger`. Ecco come puoi utilizzarlo."
 lastmod: '2024-03-13T22:44:43.090137-06:00'
 model: gpt-4-1106-preview
-summary: "Il logging nello sviluppo software \xE8 la tecnica di registrazione degli\
-  \ eventi che si verificano mentre un programma \xE8 in esecuzione, tipicamente su\
-  \ un file o un sistema esterno."
+summary: "In Elixir, il modo principale per registrare le informazioni \xE8 attraverso\
+  \ il modulo incorporato `Logger`."
 title: Registrazione Eventi (Logging)
 weight: 17
 ---

@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:59.130046-07:00
-description: "Parsowanie HTML w Elixirze polega na ekstrakcji informacji z dokument\xF3\
-  w HTML. Programi\u015Bci robi\u0105 to, aby programowo wsp\xF3\u0142dzia\u0142a\u0107\
-  \ ze stronami internetowymi,\u2026"
+description: "Jak to zrobi\u0107: Elixir, z jego rozbudowanym modelem wsp\xF3\u0142\
+  bie\u017Cno\u015Bci i paradygmatem programowania funkcyjnego, nie zawiera wbudowanych\
+  \ mo\u017Cliwo\u015Bci parsowania\u2026"
 lastmod: '2024-03-13T22:44:35.039841-06:00'
 model: gpt-4-0125-preview
-summary: "Parsowanie HTML w Elixirze polega na ekstrakcji informacji z dokument\xF3\
-  w HTML."
+summary: "Elixir, z jego rozbudowanym modelem wsp\xF3\u0142bie\u017Cno\u015Bci i paradygmatem\
+  \ programowania funkcyjnego, nie zawiera wbudowanych mo\u017Cliwo\u015Bci parsowania\
+  \ HTML."
 title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---

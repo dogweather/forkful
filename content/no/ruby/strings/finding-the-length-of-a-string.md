@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:47:59.338866-07:00
-description: "Finne lengden til en streng er \xE5 telle antall tegn den inneholder.\
-  \ Programmerere gj\xF8r dette for validering, formatering eller andre logiske form\xE5\
-  l i kode."
+description: "How to: For \xE5 finne lengden av en streng i Ruby, bruk metoden `.length`\
+  \ eller `.size`."
 lastmod: '2024-03-13T22:44:41.306830-06:00'
 model: gpt-4-1106-preview
-summary: "Finne lengden til en streng er \xE5 telle antall tegn den inneholder."
+summary: "For \xE5 finne lengden av en streng i Ruby, bruk metoden `.length` eller\
+  \ `.size`."
 title: "Finn lengden p\xE5 en streng"
 weight: 7
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 01:11:39.969310-07:00
-description: "Organizzare il codice in funzioni significa suddividere il codice in\
-  \ blocchi riutilizzabili con scopi definiti. Lo facciamo per mantenere tutto ordinato,\u2026"
+description: 'Come fare: Immagina di avere del codice ripetitivo per salutare gli
+  utenti. Invece, lo incapsuleremo in una funzione come `greet_user`.'
 lastmod: '2024-03-13T22:44:43.522210-06:00'
 model: gpt-4-1106-preview
-summary: Organizzare il codice in funzioni significa suddividere il codice in blocchi
-  riutilizzabili con scopi definiti.
+summary: Immagina di avere del codice ripetitivo per salutare gli utenti.
 title: Organizzazione del codice in funzioni
 weight: 18
 ---

@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:44.827424-07:00
-description: "Het extraheren van substrings betekent het grijpen van een specifiek\
-  \ deel van een string\u2014zoals het eruit halen van de goede stukjes van een sandwich.\u2026"
+description: 'Hoe te: Clojure maakt het makkelijk om met strings te werken. Voor het
+  extraheren van substrings is `subs` je go-to functie.'
 lastmod: '2024-03-13T22:44:50.407456-06:00'
 model: gpt-4-0125-preview
-summary: "Het extraheren van substrings betekent het grijpen van een specifiek deel\
-  \ van een string\u2014zoals het eruit halen van de goede stukjes van een sandwich."
+summary: Clojure maakt het makkelijk om met strings te werken.
 title: Substrings extraheren
 weight: 6
 ---

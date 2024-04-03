@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:30.887939-07:00
-description: "\xC5 skrive en tekstfil i C inneb\xE6rer \xE5 opprette eller \xE5pne\
-  \ en fil i skrivemodus og deretter bruke Cs fil-I/O-funksjoner for \xE5 lagre tekstdata\
-  \ i den.\u2026"
+description: "Hvordan: For \xE5 skrive tekst til en fil i C, m\xE5 du i hovedsak v\xE6\
+  re kjent med funksjonene `fopen()`, `fprintf()`, `fputs()`, og `fclose()`. Nedenfor\
+  \ f\xF8lger\u2026"
 lastmod: '2024-03-13T22:44:41.291800-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive en tekstfil i C inneb\xE6rer \xE5 opprette eller \xE5pne en\
-  \ fil i skrivemodus og deretter bruke Cs fil-I/O-funksjoner for \xE5 lagre tekstdata\
-  \ i den."
+summary: "For \xE5 skrive tekst til en fil i C, m\xE5 du i hovedsak v\xE6re kjent\
+  \ med funksjonene `fopen()`, `fprintf()`, `fputs()`, og `fclose()`."
 title: Skrive en tekstfil
 weight: 24
 ---

@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 00:54:25.526434-07:00
-description: "O tratamento de erros \xE9 como voc\xEA gerencia quando as coisas n\xE3\
-  o saem como esperado no seu c\xF3digo. \xC9 crucial porque ajuda seus programas\
-  \ a falharem de\u2026"
+description: "Como fazer: Aqui est\xE1 o cl\xE1ssico bloco `try-catch`."
 lastmod: '2024-03-13T22:44:46.969901-06:00'
 model: gpt-4-1106-preview
-summary: "O tratamento de erros \xE9 como voc\xEA gerencia quando as coisas n\xE3\
-  o saem como esperado no seu c\xF3digo."
+summary: "Aqui est\xE1 o cl\xE1ssico bloco `try-catch`."
 title: Tratamento de erros
 weight: 16
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:41:04.099410-07:00
-description: "Skapa en tillf\xE4llig fil inneb\xE4r att du skapar en fil som endast\
-  \ beh\xF6vs under en kort stunds tid. Programmerare g\xF6r detta f\xF6r att hantera\
-  \ data som inte\u2026"
+description: "How to: I Python kan du anv\xE4nda `tempfile`-modulen f\xF6r att skapa\
+  \ tillf\xE4lliga filer. H\xE4r \xE4r ett exempel."
 lastmod: '2024-03-13T22:44:37.502509-06:00'
 model: gpt-4-1106-preview
-summary: "Skapa en tillf\xE4llig fil inneb\xE4r att du skapar en fil som endast beh\xF6\
-  vs under en kort stunds tid."
+summary: "I Python kan du anv\xE4nda `tempfile`-modulen f\xF6r att skapa tillf\xE4\
+  lliga filer."
 title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---

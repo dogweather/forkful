@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:11.308479-07:00
-description: "Merkkijonon muuttaminen alkukirjaimin isoksi C-kieless\xE4 tarkoittaa\
-  \ annetun merkkijonon jokaisen sanan ensimm\xE4isen merkin muuntamista isoksi kirjaimeksi,\u2026"
+description: "Miten: Merkkijonon muuttaminen alkukirjaimin isoksi C-kieless\xE4 vaatii\
+  \ perusymm\xE4rryst\xE4 merkin k\xE4sittelyst\xE4 ja merkkijonon l\xE4pik\xE4ynnist\xE4\
+  . Koska C:ss\xE4 ei ole\u2026"
 lastmod: '2024-03-13T22:44:57.020729-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonon muuttaminen alkukirjaimin isoksi C-kieless\xE4 tarkoittaa annetun\
-  \ merkkijonon jokaisen sanan ensimm\xE4isen merkin muuntamista isoksi kirjaimeksi,\
-  \ jos se on pienaakkonen."
+summary: "Merkkijonon muuttaminen alkukirjaimin isoksi C-kieless\xE4 vaatii perusymm\xE4\
+  rryst\xE4 merkin k\xE4sittelyst\xE4 ja merkkijonon l\xE4pik\xE4ynnist\xE4."
 title: Merkkijonon suuraakkostaminen
 weight: 2
 ---

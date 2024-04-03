@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:44:40.142053-07:00
-description: "Scaricare una pagina web significa portare il contenuto di quella pagina\
-  \ sul tuo computer. I programmatori lo fanno per analizzare i dati, testare la\u2026"
+description: "How to: Usando Ruby, possiamo scaricare una pagina web con gemme come\
+  \ `open-uri` per un approccio semplice o `net/http` per uno pi\xF9 dettagliato."
 lastmod: '2024-03-13T22:44:44.050347-06:00'
 model: gpt-4-1106-preview
-summary: Scaricare una pagina web significa portare il contenuto di quella pagina
-  sul tuo computer.
+summary: "Usando Ruby, possiamo scaricare una pagina web con gemme come `open-uri`\
+  \ per un approccio semplice o `net/http` per uno pi\xF9 dettagliato."
 title: Scaricare una pagina web
 weight: 42
 ---

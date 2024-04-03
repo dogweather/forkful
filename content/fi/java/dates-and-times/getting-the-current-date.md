@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:51.519459-07:00
-description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen Javassa on perustoiminto,\
-  \ jonka avulla ohjelmoijat voivat k\xE4sitell\xE4 p\xE4iv\xE4m\xE4\xE4r\xE4objekteja\
-  \ toiminnoissa, kuten lokitukset,\u2026"
+description: "Miten: Java tarjoaa useita tapoja hankkia nykyinen p\xE4iv\xE4m\xE4\xE4\
+  r\xE4 k\xE4ytt\xE4en sek\xE4 vanhaa `java.util.Date` -luokkaa ett\xE4 uudempaa `java.time`\
+  \ -pakettia\u2026"
 lastmod: '2024-03-13T22:44:56.455743-06:00'
 model: gpt-4-0125-preview
-summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen Javassa on perustoiminto,\
-  \ jonka avulla ohjelmoijat voivat k\xE4sitell\xE4 p\xE4iv\xE4m\xE4\xE4r\xE4objekteja\
-  \ toiminnoissa, kuten lokitukset, p\xE4iv\xE4m\xE4\xE4r\xE4laskelmat ja aikaan perustuvat\
-  \ ehdot."
+summary: "Java tarjoaa useita tapoja hankkia nykyinen p\xE4iv\xE4m\xE4\xE4r\xE4 k\xE4\
+  ytt\xE4en sek\xE4 vanhaa `java.util.Date` -luokkaa ett\xE4 uudempaa `java.time`\
+  \ -pakettia (julkaistu Javassa 8), joka on monipuolisempi ja intuitiivisempi."
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---

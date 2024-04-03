@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 15:34:09.632447-07:00
-description: "Analisar HTML \xE9 o processo de converter string contendo HTML em algo\
-  \ que possamos manipular no c\xF3digo, como um DOM (Document Object Model). Programadores\u2026"
+description: "Como Fazer: Para analisar HTML em TypeScript, voc\xEA pode usar a biblioteca\
+  \ `node-html-parser`. Aqui est\xE1 um exemplo de c\xF3digo simples para come\xE7\
+  ar."
 lastmod: '2024-03-13T22:44:46.323757-06:00'
 model: unknown
-summary: "Analisar HTML \xE9 o processo de converter string contendo HTML em algo\
-  \ que possamos manipular no c\xF3digo, como um DOM (Document Object Model)."
+summary: "Para analisar HTML em TypeScript, voc\xEA pode usar a biblioteca `node-html-parser`."
 title: "An\xE1lise de HTML"
 weight: 43
 ---

@@ -3,12 +3,11 @@ changelog:
 - 2024-01-28, dogweather, reviewed
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 02:05:05.416869-07:00
-description: "Convertir una fecha de un string se trata de tomar texto, como \"2023-04-05\"\
-  , y convertirlo a un formato de fecha que tu programa pueda entender y usar.\u2026"
+description: "C\xF3mo hacerlo: En Elixir, puedes analizar fechas usando el m\xF3dulo\
+  \ `Date`. As\xED se convierte un string en una fecha."
 lastmod: '2024-03-13T22:44:58.711625-06:00'
 model: gpt-4-0125-preview
-summary: Convertir una fecha de un string se trata de tomar texto, como "2023-04-05",
-  y convertirlo a un formato de fecha que tu programa pueda entender y usar.
+summary: "En Elixir, puedes analizar fechas usando el m\xF3dulo `Date`."
 title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:01.333725-07:00
-description: "\xC5 skrive tester i Swift inneb\xE6rer \xE5 lage og utf\xF8re kode\
-  \ som verifiserer korrektheten av andre kodeenheter i applikasjonen din. Programmerere\
-  \ gj\xF8r dette\u2026"
+description: "Hvordan: Swift st\xF8tter testing gjennom sitt XCTest-rammeverk, som\
+  \ er integrert i Xcode. Du kan skrive enhetstester for \xE5 verifisere individuelle\
+  \ deler av\u2026"
 lastmod: '2024-03-13T22:44:41.145465-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive tester i Swift inneb\xE6rer \xE5 lage og utf\xF8re kode som\
-  \ verifiserer korrektheten av andre kodeenheter i applikasjonen din."
+summary: "Swift st\xF8tter testing gjennom sitt XCTest-rammeverk, som er integrert\
+  \ i Xcode."
 title: Skrive tester
 weight: 36
 ---

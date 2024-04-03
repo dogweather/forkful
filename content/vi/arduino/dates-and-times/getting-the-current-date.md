@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:42.886527-07:00
-description: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i tr\xEAn Arduino c\xF3 ngh\u0129\
-  a l\xE0 truy v\u1EA5n m\u1ED9t \u0111\u1ED3ng h\u1ED3 th\u1EDDi gian th\u1EF1c (RTC)\
-  \ ho\u1EB7c d\u1ECBch v\u1EE5 th\u1EDDi gian d\u1EF1a tr\xEAn internet \u0111\u1EC3\
-  \ bi\u1EBFt ng\xE0y hi\u1EC7n t\u1EA1i. T\u1EA1i\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: H\xE3y khi\u1EBFn Arduino c\u1EE7a ch\xFAng\
+  \ ta th\xF4ng minh v\u1EC1 ng\xE0y th\xE1ng. Ch\xFAng ta s\u1EBD s\u1EED d\u1EE5\
+  ng m\u1ED9t m\xF4-\u0111un RTC, nh\u01B0 DS3231, c\xF3 \u0111\u1ED9 ch\xEDnh x\xE1\
+  c cao v\xE0 c\xF3 pin d\u1EF1\u2026"
 lastmod: '2024-03-13T22:44:37.002876-06:00'
 model: gpt-4-0125-preview
-summary: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i tr\xEAn Arduino c\xF3 ngh\u0129a l\xE0\
-  \ truy v\u1EA5n m\u1ED9t \u0111\u1ED3ng h\u1ED3 th\u1EDDi gian th\u1EF1c (RTC) ho\u1EB7\
-  c d\u1ECBch v\u1EE5 th\u1EDDi gian d\u1EF1a tr\xEAn internet \u0111\u1EC3 bi\u1EBF\
-  t ng\xE0y hi\u1EC7n t\u1EA1i."
+summary: "H\xE3y khi\u1EBFn Arduino c\u1EE7a ch\xFAng ta th\xF4ng minh v\u1EC1 ng\xE0\
+  y th\xE1ng."
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 weight: 29
 ---

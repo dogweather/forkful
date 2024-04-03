@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:19.532955-07:00
-description: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla sis\xE4lt\xE4\
-  \xE4 k\xE4ytt\xE4j\xE4nimen ja salasanan liitt\xE4misen pyynt\xF6\xF6n k\xE4ytt\xE4\
-  j\xE4n henkil\xF6llisyyden varmistamiseksi.\u2026"
+description: "Kuinka: Dartissa voit k\xE4ytt\xE4\xE4 `http`-pakettia l\xE4hett\xE4\
+  \xE4ksesi HTTP-pyynt\xF6j\xE4 perusautentikoinnilla. Lis\xE4\xE4 ensin `http`-paketti\
+  \ `pubspec.yaml`-tiedostoosi."
 lastmod: '2024-03-13T22:44:56.270460-06:00'
 model: gpt-4-0125-preview
-summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla sis\xE4lt\xE4\xE4\
-  \ k\xE4ytt\xE4j\xE4nimen ja salasanan liitt\xE4misen pyynt\xF6\xF6n k\xE4ytt\xE4\
-  j\xE4n henkil\xF6llisyyden varmistamiseksi."
+summary: "Dartissa voit k\xE4ytt\xE4\xE4 `http`-pakettia l\xE4hett\xE4\xE4ksesi HTTP-pyynt\xF6\
+  j\xE4 perusautentikoinnilla."
 title: "L\xE4hett\xE4minen HTTP-pyynt\xF6 perustodennuksella"
 weight: 45
 ---

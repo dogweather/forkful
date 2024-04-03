@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:17.584333-07:00
-description: "Att skriva till en textfil i C++ inneb\xE4r att skapa eller \xF6ppna\
-  \ en fil och sedan skriva data till den, vilket \xE4r en grundl\xE4ggande uppgift\
-  \ f\xF6r applikationer\u2026"
+description: "Hur man g\xF6r: C++ erbjuder flera s\xE4tt att skriva till en textfil,\
+  \ men en av de mest raka metoderna \xE4r att anv\xE4nda biblioteket `<fstream>`\
+  \ som\u2026"
 lastmod: '2024-03-13T22:44:38.227699-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva till en textfil i C++ inneb\xE4r att skapa eller \xF6ppna en\
-  \ fil och sedan skriva data till den, vilket \xE4r en grundl\xE4ggande uppgift f\xF6\
-  r applikationer som beh\xF6ver bevara data, s\xE5som loggar, anv\xE4ndargenererat\
-  \ inneh\xE5ll eller konfigurationsinst\xE4llningar."
+summary: "C++ erbjuder flera s\xE4tt att skriva till en textfil, men en av de mest\
+  \ raka metoderna \xE4r att anv\xE4nda biblioteket `<fstream>` som tillhandah\xE5\
+  ller klassen `ofstream` (output file stream) som \xE4r designad f\xF6r filskrivningsoperationer."
 title: Att skriva en textfil
 weight: 24
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:51.586702-07:00
-description: "Das Kapitalisieren eines Strings beinhaltet die Umwandlung des Anfangsbuchstabens\
-  \ eines gegebenen Strings in Gro\xDFbuchstaben, w\xE4hrend der Rest in\u2026"
+description: "Wie geht das: In Elm gibt es keine integrierte Funktion speziell zum\
+  \ Kapitalisieren von Strings. Jedoch k\xF6nnen Sie dies leicht erreichen, indem\
+  \ Sie die\u2026"
 lastmod: '2024-03-13T22:44:53.787591-06:00'
 model: gpt-4-0125-preview
-summary: "Das Kapitalisieren eines Strings beinhaltet die Umwandlung des Anfangsbuchstabens\
-  \ eines gegebenen Strings in Gro\xDFbuchstaben, w\xE4hrend der Rest in Kleinbuchstaben\
-  \ gehalten wird."
+summary: In Elm gibt es keine integrierte Funktion speziell zum Kapitalisieren von
+  Strings.
 title: "Einen String gro\xDFschreiben"
 weight: 2
 ---

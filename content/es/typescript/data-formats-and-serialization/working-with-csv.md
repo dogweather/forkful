@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:19.699380-07:00
-description: "Trabajar con CSV (Valores Separados por Comas) implica la lectura y\
-  \ escritura de archivos CSV, un formato com\xFAn de intercambio de datos utilizado\
-  \ debido a\u2026"
+description: "C\xF3mo hacerlo: En TypeScript, puedes trabajar con archivos CSV mediante\
+  \ c\xF3digo nativo o aprovechando bibliotecas de terceros como `csv-parser` para\
+  \ leer y\u2026"
 lastmod: '2024-03-13T22:44:58.826135-06:00'
 model: gpt-4-0125-preview
-summary: "Trabajar con CSV (Valores Separados por Comas) implica la lectura y escritura\
-  \ de archivos CSV, un formato com\xFAn de intercambio de datos utilizado debido\
-  \ a su simplicidad y amplio soporte a trav\xE9s de diversas plataformas e idiomas."
+summary: "En TypeScript, puedes trabajar con archivos CSV mediante c\xF3digo nativo\
+  \ o aprovechando bibliotecas de terceros como `csv-parser` para leer y `csv-writer`\
+  \ para escribir archivos CSV."
 title: Trabajando con CSV
 weight: 37
 ---

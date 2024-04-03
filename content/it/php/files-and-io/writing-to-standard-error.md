@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:08.705130-07:00
-description: "Scrivere su standard error (stderr) in PHP riguarda l'indirizzare messaggi\
-  \ di errore o diagnostica separatamente dall'output standard (stdout),\u2026"
+description: "Come: In PHP, scrivere su stderr pu\xF2 essere realizzato utilizzando\
+  \ la funzione `fwrite()` insieme alla costante predefinita `STDERR`, che rappresenta\
+  \ il\u2026"
 lastmod: '2024-03-13T22:44:43.533017-06:00'
 model: gpt-4-0125-preview
-summary: Scrivere su standard error (stderr) in PHP riguarda l'indirizzare messaggi
-  di errore o diagnostica separatamente dall'output standard (stdout), consentendo
-  agli sviluppatori di gestire meglio i propri flussi di output per il debugging e
-  il logging.
+summary: "In PHP, scrivere su stderr pu\xF2 essere realizzato utilizzando la funzione\
+  \ `fwrite()` insieme alla costante predefinita `STDERR`, che rappresenta il flusso\
+  \ di output degli errori."
 title: Scrivere sull'errore standard
 weight: 25
 ---

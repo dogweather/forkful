@@ -2,17 +2,14 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:24.730737-07:00
-description: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) trong Dart cung c\u1EA5p m\u1ED9\
-  t c\xE1ch m\u1EA1nh m\u1EBD \u0111\u1EC3 t\xECm ki\u1EBFm v\xE0 thao t\xE1c v\u1EDB\
-  i chu\u1ED7i k\xFD t\u1EF1, cho ph\xE9p l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7\
-  n c\xE1c t\xE1c v\u1EE5 x\u1EED\u2026"
+description: "L\xE0m sao: Dart s\u1EED d\u1EE5ng l\u1EDBp `RegExp` cho bi\u1EC3u th\u1EE9\
+  c ch\xEDnh quy. D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t v\xED d\u1EE5 c\u01A1\
+  \ b\u1EA3n \u0111\u1EC3 t\xECm m\u1ED9t m\u1EABu \u0111\u01A1n gi\u1EA3n trong m\u1ED9\
+  t chu\u1ED7i."
 lastmod: '2024-03-13T22:44:36.249035-06:00'
 model: gpt-4-0125-preview
-summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) trong Dart cung c\u1EA5p m\u1ED9\
-  t c\xE1ch m\u1EA1nh m\u1EBD \u0111\u1EC3 t\xECm ki\u1EBFm v\xE0 thao t\xE1c v\u1EDB\
-  i chu\u1ED7i k\xFD t\u1EF1, cho ph\xE9p l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7\
-  n c\xE1c t\xE1c v\u1EE5 x\u1EED l\xFD v\u0103n b\u1EA3n ph\u1EE9c t\u1EA1p m\u1ED9\
-  t c\xE1ch hi\u1EC7u qu\u1EA3."
+summary: "Dart s\u1EED d\u1EE5ng l\u1EDBp `RegExp` cho bi\u1EC3u th\u1EE9c ch\xED\
+  nh quy."
 title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---

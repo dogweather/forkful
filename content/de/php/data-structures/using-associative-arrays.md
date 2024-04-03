@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:09.784248-07:00
-description: "Assoziative Arrays in PHP sind wie aufgeladene Listen, bei denen jedes\
-  \ Element mit einem lesbaren Schl\xFCssel statt nur mit Nummern zugegriffen werden\
-  \ kann.\u2026"
+description: 'Wie geht das: In PHP ist das Erstellen und Verwenden von assoziativen
+  Arrays unkompliziert. Hier eine schnelle Anleitung.'
 lastmod: '2024-03-13T22:44:53.965515-06:00'
 model: gpt-4-0125-preview
-summary: "Assoziative Arrays in PHP sind wie aufgeladene Listen, bei denen jedes Element\
-  \ mit einem lesbaren Schl\xFCssel statt nur mit Nummern zugegriffen werden kann."
+summary: In PHP ist das Erstellen und Verwenden von assoziativen Arrays unkompliziert.
 title: Verwendung von assoziativen Arrays
 weight: 15
 ---

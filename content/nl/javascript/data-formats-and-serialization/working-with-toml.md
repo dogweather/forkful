@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:58.203200-07:00
-description: "TOML, een afkorting voor Tom's Obvious, Minimal Language, definieert\
-  \ hoe configuratiebestanden moeten worden gestructureerd. Programmeurs werken met\
-  \ TOML\u2026"
+description: "Hoe te: Om met TOML in JavaScript te werken, heb je een parser zoals\
+  \ `@iarna/toml` nodig. Installeer het eerst: `npm install @iarna/toml`. Parse\u2026"
 lastmod: '2024-03-13T22:44:51.226030-06:00'
 model: gpt-4-0125-preview
-summary: TOML, een afkorting voor Tom's Obvious, Minimal Language, definieert hoe
-  configuratiebestanden moeten worden gestructureerd.
+summary: Om met TOML in JavaScript te werken, heb je een parser zoals `@iarna/toml`
+  nodig.
 title: Werken met TOML
 weight: 39
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:15.687788-07:00
-description: "Na programa\xE7\xE3o de computadores, \"Imprimir sa\xEDda de depura\xE7\
-  \xE3o\" envolve produzir mensagens detalhadas de informa\xE7\xE3o que ajudam os\
-  \ desenvolvedores a entender\u2026"
+description: "Como fazer: Em Go, voc\xEA pode usar o pacote padr\xE3o `fmt` para imprimir\
+  \ sa\xEDda de depura\xE7\xE3o no console. O pacote `fmt` oferece uma variedade de\
+  \ fun\xE7\xF5es, como\u2026"
 lastmod: '2024-03-13T22:44:46.063562-06:00'
 model: gpt-4-0125-preview
-summary: "Na programa\xE7\xE3o de computadores, \"Imprimir sa\xEDda de depura\xE7\xE3\
-  o\" envolve produzir mensagens detalhadas de informa\xE7\xE3o que ajudam os desenvolvedores\
-  \ a entender o fluxo de execu\xE7\xE3o de seu programa ou identificar problemas."
+summary: "Em Go, voc\xEA pode usar o pacote padr\xE3o `fmt` para imprimir sa\xEDda\
+  \ de depura\xE7\xE3o no console."
 title: "Imprimindo sa\xEDda de depura\xE7\xE3o"
 weight: 33
 ---

@@ -2,14 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:41.088451-07:00
-description: "\xC9crire sur l'erreur standard (stderr) consiste \xE0 diriger les messages\
-  \ d'erreur et les diagnostics vers le flux stderr, s\xE9par\xE9ment de la sortie\
-  \ standard\u2026"
+description: "Comment faire : En Clojure, vous pouvez \xE9crire sur stderr en utilisant\
+  \ le flux `*err*`. Voici un exemple simple ."
 lastmod: '2024-03-13T22:44:57.299390-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire sur l'erreur standard (stderr) consiste \xE0 diriger les messages\
-  \ d'erreur et les diagnostics vers le flux stderr, s\xE9par\xE9ment de la sortie\
-  \ standard (stdout)."
+summary: "En Clojure, vous pouvez \xE9crire sur stderr en utilisant le flux `*err*`."
 title: "\xC9crire sur l'erreur standard"
 weight: 25
 ---

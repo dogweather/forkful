@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:38.444397-07:00
-description: "S\xF8king og erstatting av tekst i Dart inneb\xE6rer \xE5 unders\xF8\
-  ke strenger for \xE5 finne visse m\xF8nstre eller sekvenser av tegn og erstatte\
-  \ dem med nytt innhold.\u2026"
+description: "Hvordan: Dart tilbyr robuste metoder for s\xF8king og erstatting av\
+  \ tekst direkte gjennom sin `String`-klasse, uten behov for eksterne biblioteker.\
+  \ Slik kan\u2026"
 lastmod: '2024-03-13T22:44:40.470706-06:00'
 model: gpt-4-0125-preview
-summary: "S\xF8king og erstatting av tekst i Dart inneb\xE6rer \xE5 unders\xF8ke strenger\
-  \ for \xE5 finne visse m\xF8nstre eller sekvenser av tegn og erstatte dem med nytt\
-  \ innhold."
+summary: "Dart tilbyr robuste metoder for s\xF8king og erstatting av tekst direkte\
+  \ gjennom sin `String`-klasse, uten behov for eksterne biblioteker."
 title: "S\xF8k og erstatt tekst"
 weight: 10
 ---

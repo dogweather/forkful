@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:33.249923-07:00
-description: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xE1\
-  ch m\u1ED9t kh\u1ED1i m\xE3 HTML \u0111\u1EC3 hi\u1EC3u r\xF5 c\u1EA5u tr\xFAc v\xE0\
-  \ n\u1ED9i dung c\u1EE7a n\xF3. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7\
-  n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 tr\xEDch xu\u1EA5t\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: \u0110\u1EC3 ph\xE2n t\xEDch c\xFA ph\xE1\
+  p HTML trong Ruby, h\xE3y c\xE0i \u0111\u1EB7t gem 'Nokogiri' b\u1EB1ng c\xE2u l\u1EC7\
+  nh `gem install nokogiri`. Nokogiri gi\u1ED1ng nh\u01B0 m\u1ED9t c\xF4ng c\u1EE5\
+  \ \u0111a\u2026"
 lastmod: '2024-03-13T22:44:37.337634-06:00'
 model: gpt-4-0125-preview
-summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xE1\
-  ch m\u1ED9t kh\u1ED1i m\xE3 HTML \u0111\u1EC3 hi\u1EC3u r\xF5 c\u1EA5u tr\xFAc v\xE0\
-  \ n\u1ED9i dung c\u1EE7a n\xF3."
+summary: "\u0110\u1EC3 ph\xE2n t\xEDch c\xFA ph\xE1p HTML trong Ruby, h\xE3y c\xE0\
+  i \u0111\u1EB7t gem 'Nokogiri' b\u1EB1ng c\xE2u l\u1EC7nh `gem install nokogiri`."
 title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---

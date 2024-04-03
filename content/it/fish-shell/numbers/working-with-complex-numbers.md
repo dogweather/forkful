@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:40:05.904963-07:00
-description: "I numeri complessi estendono l'idea delle linee numeriche unidimensionali\
-  \ a un piano complesso bidimensionale. I programmatori li utilizzano in campi come\u2026"
+description: 'Come fare: In Fish, gestiamo i numeri complessi utilizzando `math` con
+  parti reale e immaginaria. Ecco una partenza rapida.'
 lastmod: '2024-03-13T22:44:43.850337-06:00'
 model: gpt-4-0125-preview
-summary: I numeri complessi estendono l'idea delle linee numeriche unidimensionali
-  a un piano complesso bidimensionale.
+summary: In Fish, gestiamo i numeri complessi utilizzando `math` con parti reale e
+  immaginaria.
 title: Lavorare con i numeri complessi
 weight: 14
 ---

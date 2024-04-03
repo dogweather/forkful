@@ -2,16 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:38.535051-07:00
-description: "Vi\u1EC7c t\u1EA1o ra c\xE1c s\u1ED1 ng\u1EABu nhi\xEAn l\xE0 m\u1ED9\
-  t nhi\u1EC7m v\u1EE5 c\u01A1 b\u1EA3n trong l\u1EADp tr\xECnh, \u0111\u01B0\u1EE3\
-  c s\u1EED d\u1EE5ng cho h\xE0ng lo\u1EA1t \u1EE9ng d\u1EE5ng nh\u01B0 m\xF4 ph\u1ECF\
-  ng, tr\xF2 ch\u01A1i v\xE0 h\u1EC7 th\u1ED1ng an ninh. C\xE1c\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Google Apps Script, b\u1EA1n c\xF3 th\u1EC3\
+  \ t\u1EA1o ra s\u1ED1 ng\u1EABu nhi\xEAn s\u1EED d\u1EE5ng h\xE0m `Math.random()`,\
+  \ t\u01B0\u01A1ng t\u1EF1 nh\u01B0 trong JavaScript. H\xE0m n\xE0y tr\u1EA3 v\u1EC1\
+  \ m\u1ED9t s\u1ED1\u2026"
 lastmod: '2024-03-13T22:44:36.034407-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c t\u1EA1o ra c\xE1c s\u1ED1 ng\u1EABu nhi\xEAn l\xE0 m\u1ED9t nhi\u1EC7\
-  m v\u1EE5 c\u01A1 b\u1EA3n trong l\u1EADp tr\xECnh, \u0111\u01B0\u1EE3c s\u1EED\
-  \ d\u1EE5ng cho h\xE0ng lo\u1EA1t \u1EE9ng d\u1EE5ng nh\u01B0 m\xF4 ph\u1ECFng,\
-  \ tr\xF2 ch\u01A1i v\xE0 h\u1EC7 th\u1ED1ng an ninh."
+summary: "Trong Google Apps Script, b\u1EA1n c\xF3 th\u1EC3 t\u1EA1o ra s\u1ED1 ng\u1EAB\
+  u nhi\xEAn s\u1EED d\u1EE5ng h\xE0m `Math.random()`, t\u01B0\u01A1ng t\u1EF1 nh\u01B0\
+  \ trong JavaScript."
 title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 weight: 12
 ---

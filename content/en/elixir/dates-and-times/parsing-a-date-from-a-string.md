@@ -1,12 +1,11 @@
 ---
 date: 2024-02-03 19:02:44.156330-07:00
-description: "Parsing a date from a string in Elixir involves converting text representations\
-  \ of dates and times into Elixir's native date structures, allowing for more\u2026"
+description: "How to: Elixir's standard library, combined with the power of the Erlang\
+  \ `:calendar` module, provides basic support for parsing dates. For more complex\u2026"
 lastmod: '2024-03-13T22:44:59.790626-06:00'
 model: gpt-4-0125-preview
-summary: Parsing a date from a string in Elixir involves converting text representations
-  of dates and times into Elixir's native date structures, allowing for more flexible
-  manipulation, comparison, and formatting of date and time values.
+summary: Elixir's standard library, combined with the power of the Erlang `:calendar`
+  module, provides basic support for parsing dates.
 title: Parsing a date from a string
 weight: 30
 ---

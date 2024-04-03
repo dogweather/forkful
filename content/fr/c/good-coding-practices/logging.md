@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:48.144656-07:00
-description: "La journalisation en C consiste \xE0 enregistrer le flux et les \xE9\
-  v\xE9nements notables d'un programme pendant son ex\xE9cution, fournissant un examen\
-  \ tangible de\u2026"
+description: "Comment faire : En C, la journalisation peut \xEAtre r\xE9alis\xE9e\
+  \ avec des op\xE9rations de fichiers basiques ou en utilisant des biblioth\xE8ques\
+  \ plus sophistiqu\xE9es.\u2026"
 lastmod: '2024-03-13T22:44:58.379342-06:00'
 model: gpt-4-0125-preview
-summary: "La journalisation en C consiste \xE0 enregistrer le flux et les \xE9v\xE9\
-  nements notables d'un programme pendant son ex\xE9cution, fournissant un examen\
-  \ tangible de son comportement et de sa performance."
+summary: "En C, la journalisation peut \xEAtre r\xE9alis\xE9e avec des op\xE9rations\
+  \ de fichiers basiques ou en utilisant des biblioth\xE8ques plus sophistiqu\xE9\
+  es."
 title: Journalisation
 weight: 17
 ---

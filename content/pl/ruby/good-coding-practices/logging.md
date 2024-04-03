@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 01:07:59.699207-07:00
-description: "Logowanie w programowaniu jest jak prowadzenie dziennika dla Twojej\
-  \ aplikacji. Jest to systematyczne rejestrowanie zdarze\u0144, komunikat\xF3w i\
-  \ punkt\xF3w danych,\u2026"
+description: "Jak to zrobi\u0107: Ruby ma wbudowany modu\u0142 do logowania, `Logger`,\
+  \ kt\xF3ry jest bardzo \u0142atwy w u\u017Cyciu. Oto kr\xF3tki przyk\u0142ad, kt\xF3\
+  ry pomo\u017Ce Ci zacz\u0105\u0107."
 lastmod: '2024-03-13T22:44:35.938723-06:00'
 model: gpt-4-1106-preview
-summary: Logowanie w programowaniu jest jak prowadzenie dziennika dla Twojej aplikacji.
+summary: "Ruby ma wbudowany modu\u0142 do logowania, `Logger`, kt\xF3ry jest bardzo\
+  \ \u0142atwy w u\u017Cyciu."
 title: "Rejestrowanie zdarze\u0144"
 weight: 17
 ---

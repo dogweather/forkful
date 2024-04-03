@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:34.408779-07:00
-description: "Scrivere test in PowerShell comporta la creazione di script che validano\
-  \ automaticamente la funzionalit\xE0 del vostro codice PowerShell, garantendo che\
-  \ si\u2026"
+description: "Come fare: PowerShell non ha un framework di test incorporato, ma Pester,\
+  \ un modulo di terze parti popolare, \xE8 ampiamente usato per scrivere ed eseguire\u2026"
 lastmod: '2024-03-13T22:44:43.646129-06:00'
 model: gpt-4-0125-preview
-summary: "Scrivere test in PowerShell comporta la creazione di script che validano\
-  \ automaticamente la funzionalit\xE0 del vostro codice PowerShell, garantendo che\
-  \ si comporti come previsto."
+summary: "PowerShell non ha un framework di test incorporato, ma Pester, un modulo\
+  \ di terze parti popolare, \xE8 ampiamente usato per scrivere ed eseguire test."
 title: Scrivere test
 weight: 36
 ---

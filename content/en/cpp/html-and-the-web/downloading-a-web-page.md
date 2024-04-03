@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:43:28.647391-07:00
-description: "Downloading a web page simply means fetching its content, usually in\
-  \ HTML format, to either view or process locally. Programmers download web pages\
-  \ to\u2026"
+description: 'How to: In the current C++ version, you can use the `CURL` library to
+  download web content. Here''s a basic example.'
 lastmod: '2024-03-13T22:45:00.356429-06:00'
 model: gpt-4-1106-preview
-summary: Downloading a web page simply means fetching its content, usually in HTML
-  format, to either view or process locally.
+summary: In the current C++ version, you can use the `CURL` library to download web
+  content.
 title: Downloading a web page
 weight: 42
 ---

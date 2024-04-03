@@ -2,11 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:09.899253-07:00
-description: "Een tijdelijk bestand maken betekent een bestand maken voor kortdurend\
-  \ gebruik. Programmeurs doen dit om gegevens op te slaan die alleen nodig zijn\u2026"
+description: 'Hoe te: In Fish Shell kun je een tijdelijk bestand maken met `mktemp`.
+  Hier is een snel voorbeeld.'
 lastmod: '2024-03-13T22:44:51.266389-06:00'
 model: gpt-4-0125-preview
-summary: Een tijdelijk bestand maken betekent een bestand maken voor kortdurend gebruik.
+summary: In Fish Shell kun je een tijdelijk bestand maken met `mktemp`.
 title: Een tijdelijk bestand aanmaken
 weight: 21
 ---

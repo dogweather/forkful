@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:53:42.681926-07:00
-description: "Das Berechnen eines Datums in der Zukunft oder Vergangenheit ist eine\
-  \ g\xE4ngige Aufgabe f\xFCr Programmierer, die sich mit Terminplanung, Erinnerungen\
-  \ oder\u2026"
+description: "Wie: Dart bietet robuste Unterst\xFCtzung f\xFCr die Datumsmanipulation\
+  \ durch seine `DateTime` Klasse. So k\xF6nnen Sie zuk\xFCnftige oder vergangene\
+  \ Daten mit\u2026"
 lastmod: '2024-03-13T22:44:53.595763-06:00'
 model: gpt-4-0125-preview
-summary: "Das Berechnen eines Datums in der Zukunft oder Vergangenheit ist eine g\xE4\
-  ngige Aufgabe f\xFCr Programmierer, die sich mit Terminplanung, Erinnerungen oder\
-  \ jeder Funktion befassen, die von Datumsberechnungen abh\xE4ngt."
+summary: "Dart bietet robuste Unterst\xFCtzung f\xFCr die Datumsmanipulation durch\
+  \ seine `DateTime` Klasse."
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---

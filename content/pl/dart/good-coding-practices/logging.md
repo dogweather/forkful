@@ -2,13 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:25.149325-07:00
-description: "Logowanie w Dart odnosi si\u0119 do procesu rejestrowania r\xF3\u017C\
-  nych poziom\xF3w informacji podczas wykonywania programu. Programi\u015Bci robi\u0105\
-  \ to, aby monitorowa\u0107\u2026"
+description: "Jak to zrobi\u0107: Dart zawiera prosty mechanizm logowania poprzez\
+  \ bibliotek\u0119 `dart:developer`. Dla bardziej zaawansowanych potrzeb w zakresie\
+  \ logowania,\u2026"
 lastmod: '2024-03-13T22:44:35.098658-06:00'
 model: gpt-4-0125-preview
-summary: "Logowanie w Dart odnosi si\u0119 do procesu rejestrowania r\xF3\u017Cnych\
-  \ poziom\xF3w informacji podczas wykonywania programu."
+summary: "Dart zawiera prosty mechanizm logowania poprzez bibliotek\u0119 `dart:developer`."
 title: Rejestrowanie
 weight: 17
 ---

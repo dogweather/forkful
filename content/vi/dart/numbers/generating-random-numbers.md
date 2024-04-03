@@ -2,15 +2,15 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:58.661892-07:00
-description: "T\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong Dart li\xEAn quan \u0111\u1EBF\
-  n vi\u1EC7c t\u1EA1o c\xE1c gi\xE1 tr\u1ECB s\u1ED1 m\xE0 kh\xF4ng th\u1EC3 d\u1EF1\
-  \ \u0111o\xE1n tr\u01B0\u1EDBc v\xE0 kh\xE1c nhau m\u1ED7i khi th\u1EF1c thi. L\u1EAD\
-  p tr\xECnh vi\xEAn t\u1EADn d\u1EE5ng ch\u1EE9c\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Th\u01B0 vi\u1EC7n c\u1ED1t l\xF5i c\u1EE7a\
+  \ Dart bao g\u1ED3m h\u1ED7 tr\u1EE3 \u0111\u1EC3 t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEA\
+  n v\u1EDBi l\u1EDBp `Random` \u0111\u01B0\u1EE3c t\xECm th\u1EA5y trong `dart:math`.\
+  \ D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t v\xED d\u1EE5 c\u01A1 b\u1EA3n."
 lastmod: '2024-03-13T22:44:36.257292-06:00'
 model: gpt-4-0125-preview
-summary: "T\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong Dart li\xEAn quan \u0111\u1EBF\
-  n vi\u1EC7c t\u1EA1o c\xE1c gi\xE1 tr\u1ECB s\u1ED1 m\xE0 kh\xF4ng th\u1EC3 d\u1EF1\
-  \ \u0111o\xE1n tr\u01B0\u1EDBc v\xE0 kh\xE1c nhau m\u1ED7i khi th\u1EF1c thi."
+summary: "Th\u01B0 vi\u1EC7n c\u1ED1t l\xF5i c\u1EE7a Dart bao g\u1ED3m h\u1ED7 tr\u1EE3\
+  \ \u0111\u1EC3 t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn v\u1EDBi l\u1EDBp `Random` \u0111\
+  \u01B0\u1EE3c t\xECm th\u1EA5y trong `dart:math`."
 title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 weight: 12
 ---

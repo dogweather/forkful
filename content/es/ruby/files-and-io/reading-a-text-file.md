@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:55:17.330043-07:00
-description: "Leer un archivo de texto en Ruby significa que tu programa carga el\
-  \ contenido del archivo para trabajar con \xE9l. Los programadores hacen esto para\u2026"
+description: "C\xF3mo Hacerlo: Aqu\xED te muestro c\xF3mo leer un archivo."
 lastmod: '2024-03-13T22:44:59.608202-06:00'
 model: gpt-4-1106-preview
-summary: "Leer un archivo de texto en Ruby significa que tu programa carga el contenido\
-  \ del archivo para trabajar con \xE9l."
+summary: "Aqu\xED te muestro c\xF3mo leer un archivo."
 title: Lectura de un archivo de texto
 weight: 22
 ---

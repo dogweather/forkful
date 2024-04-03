@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:03.765315-07:00
-description: "Zapisywanie do pliku tekstowego w Ruby jest podstawow\u0105 operacj\u0105\
-  , kt\xF3ra pozwala na trwa\u0142e przechowywanie wyj\u015Bcia i danych, umo\u017C\
-  liwiaj\u0105c p\xF3\u017Aniejszy dost\u0119p\u2026"
+description: "Jak to zrobi\u0107: Ruby sprawia, \u017Ce operacje na plikach s\u0105\
+  \ proste. Aby zapisa\u0107 do pliku, mo\u017Cna u\u017Cy\u0107 wbudowanej klasy\
+  \ `File` w Ruby. Poni\u017Cszy przyk\u0142ad\u2026"
 lastmod: '2024-03-13T22:44:35.950790-06:00'
 model: gpt-4-0125-preview
-summary: "Zapisywanie do pliku tekstowego w Ruby jest podstawow\u0105 operacj\u0105\
-  , kt\xF3ra pozwala na trwa\u0142e przechowywanie wyj\u015Bcia i danych, umo\u017C\
-  liwiaj\u0105c p\xF3\u017Aniejszy dost\u0119p do danych lub ich modyfikacj\u0119."
+summary: "Ruby sprawia, \u017Ce operacje na plikach s\u0105 proste."
 title: Pisanie pliku tekstowego
 weight: 24
 ---

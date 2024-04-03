@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:56:44.480306-07:00
-description: ''
+description: "\u0429\u043E \u0446\u0435 \u0442\u0430\u043A\u0435 \u0442\u0430 \u043D\
+  \u0430\u0432\u0456\u0449\u043E? Reading command line arguments means grabbing the\
+  \ extra info you pass to your script when you run it. Programmers do this to make\u2026"
 lastmod: '2024-03-13T22:44:48.608495-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Reading command line arguments means grabbing the extra info you pass to
+  your script when you run it.
 title: "\u0427\u0438\u0442\u0430\u043D\u043D\u044F \u0430\u0440\u0433\u0443\u043C\u0435\
   \u043D\u0442\u0456\u0432 \u043A\u043E\u043C\u0430\u043D\u0434\u043D\u043E\u0433\u043E\
   \ \u0440\u044F\u0434\u043A\u0430"

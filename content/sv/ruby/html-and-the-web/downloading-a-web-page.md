@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 17:44:53.028836-07:00
-description: "Att ladda ner en webbsida betyder att h\xE4mta dess HTML-inneh\xE5ll.\
-  \ Programmerare g\xF6r det f\xF6r att analysera sidans struktur, skrapa data eller\
-  \ testa sidans\u2026"
+description: "G\xF6r s\xE5 h\xE4r: Ruby erbjuder m\xE5nga s\xE4tt att ladda ner webbsidor,\
+  \ men h\xE4r anv\xE4nder vi `net/http` biblioteket som \xE4r inbyggt och rakt p\xE5\
+  \ sak."
 lastmod: '2024-03-13T22:44:38.429701-06:00'
 model: gpt-4-1106-preview
-summary: "Att ladda ner en webbsida betyder att h\xE4mta dess HTML-inneh\xE5ll."
+summary: "Ruby erbjuder m\xE5nga s\xE4tt att ladda ner webbsidor, men h\xE4r anv\xE4\
+  nder vi `net/http` biblioteket som \xE4r inbyggt och rakt p\xE5 sak."
 title: "H\xE4mta en webbsida"
 weight: 42
 ---

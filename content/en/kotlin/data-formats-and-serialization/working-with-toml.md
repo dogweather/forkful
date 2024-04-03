@@ -1,10 +1,10 @@
 ---
 date: 2024-01-25 03:39:56.036260-07:00
-description: "TOML stands for Tom's Obvious, Minimal Language. It's used for configuration\
-  \ files because it's easy to read and write for humans, while still being easy\u2026"
+description: 'How to: To handle TOML in Kotlin, you might use a library like `ktoml`.
+  First, let''s add the dependency in your `build.gradle.kts`.'
 lastmod: '2024-03-13T22:45:00.070134-06:00'
 model: gpt-4-1106-preview
-summary: TOML stands for Tom's Obvious, Minimal Language.
+summary: To handle TOML in Kotlin, you might use a library like `ktoml`.
 title: Working with TOML
 weight: 39
 ---

@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:28.287773-07:00
-description: "Het downloaden van een webpagina betekent het binnenhalen van de online\
-  \ inhoud, zodat je deze offline kunt gebruiken of analyseren. Programmeurs doen\
-  \ dit\u2026"
+description: 'Hoe: PHP maakt het downloaden van een webpagina vrij eenvoudig. Hier
+  is een simpel voorbeeld met `file_get_contents()`.'
 lastmod: '2024-03-13T22:44:50.893615-06:00'
 model: gpt-4-0125-preview
-summary: Het downloaden van een webpagina betekent het binnenhalen van de online inhoud,
-  zodat je deze offline kunt gebruiken of analyseren.
+summary: PHP maakt het downloaden van een webpagina vrij eenvoudig.
 title: Een webpagina downloaden
 weight: 42
 ---

@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:24.788809-07:00
-description: "Organizzare il codice in funzioni in Go implica la suddivisione del\
-  \ codice in blocchi riutilizzabili e modulari che eseguono compiti specifici. Questo\u2026"
+description: "Come fare: In Go, si definisce una funzione utilizzando la parola chiave\
+  \ `func`, seguita dal nome della funzione, dai parametri (se presenti) e dal tipo\u2026"
 lastmod: '2024-03-13T22:44:42.914290-06:00'
 model: gpt-4-0125-preview
-summary: Organizzare il codice in funzioni in Go implica la suddivisione del codice
-  in blocchi riutilizzabili e modulari che eseguono compiti specifici.
+summary: In Go, si definisce una funzione utilizzando la parola chiave `func`, seguita
+  dal nome della funzione, dai parametri (se presenti) e dal tipo di ritorno.
 title: Organizzare il codice in funzioni
 weight: 18
 ---

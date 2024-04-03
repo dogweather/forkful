@@ -2,14 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:53:55.580943-07:00
-description: "Att kontrollera om en katalog finns i Dart handlar om att verifiera\
-  \ n\xE4rvaron av en katalog p\xE5 en angiven s\xF6kv\xE4g i filsystemet innan man\
-  \ utf\xF6r operationer\u2026"
+description: "Hur man g\xF6r: Dart anv\xE4nder biblioteket `dart:io` f\xF6r att arbeta\
+  \ med filer och kataloger. H\xE4r \xE4r ett enkelt s\xE4tt att kontrollera om en\
+  \ katalog finns."
 lastmod: '2024-03-13T22:44:37.627753-06:00'
 model: gpt-4-0125-preview
-summary: "Att kontrollera om en katalog finns i Dart handlar om att verifiera n\xE4\
-  rvaron av en katalog p\xE5 en angiven s\xF6kv\xE4g i filsystemet innan man utf\xF6\
-  r operationer som att l\xE4sa eller skriva filer."
+summary: "Dart anv\xE4nder biblioteket `dart:io` f\xF6r att arbeta med filer och kataloger."
 title: Kontrollera om en katalog existerar
 weight: 20
 ---

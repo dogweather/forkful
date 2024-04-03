@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:59.158090-07:00
-description: "Foutafhandeling in Bash-scripting gaat over het anticiperen op momenten\
-  \ waarop dingen mis kunnen gaan en hier sierlijk mee omgaan. Waarom? Nou, het houdt\u2026"
+description: 'Hoe te: .'
 lastmod: '2024-03-13T22:44:50.990564-06:00'
 model: gpt-4-0125-preview
-summary: Foutafhandeling in Bash-scripting gaat over het anticiperen op momenten waarop
-  dingen mis kunnen gaan en hier sierlijk mee omgaan.
+summary: .
 title: Fouten afhandelen
 weight: 16
 ---

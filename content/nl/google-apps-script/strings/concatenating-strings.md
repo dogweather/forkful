@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:09.482019-07:00
-description: "Het aaneenschakelen van strings houdt in dat twee of meer strings worden\
-  \ gecombineerd tot \xE9\xE9n enkele string. Programmeurs doen dit om dynamisch berichten,\u2026"
+description: "Hoe: In Google Apps Script, dat is gebaseerd op JavaScript, zijn er\
+  \ verschillende manieren om strings aan elkaar te schakelen. Hier zijn enkele gangbare\u2026"
 lastmod: '2024-03-13T22:44:50.322553-06:00'
 model: gpt-4-0125-preview
-summary: "Het aaneenschakelen van strings houdt in dat twee of meer strings worden\
-  \ gecombineerd tot \xE9\xE9n enkele string."
+summary: In Google Apps Script, dat is gebaseerd op JavaScript, zijn er verschillende
+  manieren om strings aan elkaar te schakelen.
 title: Strings samenvoegen
 weight: 3
 ---

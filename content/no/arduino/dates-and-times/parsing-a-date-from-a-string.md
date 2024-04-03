@@ -2,15 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:26.960869-07:00
-description: "\xC5 analysere en dato fra en streng i Arduino involverer \xE5 trekke\
-  \ ut og konvertere datokomponentene (\xE5r, m\xE5ned, dag) fra en tekstlig representasjon\
-  \ til et\u2026"
+description: "Hvordan: Direkte tiln\xE6rming uten et tredjepartsbibliotek."
 lastmod: '2024-03-13T22:44:41.067292-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 analysere en dato fra en streng i Arduino involverer \xE5 trekke ut\
-  \ og konvertere datokomponentene (\xE5r, m\xE5ned, dag) fra en tekstlig representasjon\
-  \ til et format som kan brukes for tidsf\xF8ring, sammenligninger eller manipulasjoner\
-  \ innen skisser."
+summary: "Direkte tiln\xE6rming uten et tredjepartsbibliotek."
 title: Analysering av en dato fra en streng
 weight: 30
 ---

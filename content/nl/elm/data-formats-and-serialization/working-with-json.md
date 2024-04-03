@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:28.039311-07:00
-description: "JSON (JavaScript Object Notation) is een tekstopmaak voor gegevensuitwisseling,\
-  \ vergelijkbaar met XML, maar lichter en beter leesbaar. Elm-programmeurs\u2026"
+description: 'Hoe te: Elm handelt JSON af met behulp van de `Json.Decode` en `Json.Encode`
+  modules. Hier is een eenvoudig voorbeeld.'
 lastmod: '2024-03-13T22:44:50.746421-06:00'
 model: gpt-4-0125-preview
-summary: JSON (JavaScript Object Notation) is een tekstopmaak voor gegevensuitwisseling,
-  vergelijkbaar met XML, maar lichter en beter leesbaar.
+summary: Elm handelt JSON af met behulp van de `Json.Decode` en `Json.Encode` modules.
 title: Werken met JSON
 weight: 38
 ---

@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:33:59.721770-07:00
-description: "J\xE4mf\xF6relse av tv\xE5 datum \xE4r processen att se vilket datum\
-  \ som kommer f\xF6rst eller om de \xE4r samma. Programmerare g\xF6r detta f\xF6\
-  r att hantera deadlines,\u2026"
+description: "How to: F\xF6r att j\xE4mf\xF6ra tv\xE5 datum i Swift anv\xE4nder du\
+  \ `Date` objekt och j\xE4mf\xF6r med inbyggda funktioner. H\xE4r \xE4r n\xE5gra\
+  \ exempel."
 lastmod: '2024-03-13T22:44:38.263314-06:00'
 model: gpt-4-1106-preview
-summary: "J\xE4mf\xF6relse av tv\xE5 datum \xE4r processen att se vilket datum som\
-  \ kommer f\xF6rst eller om de \xE4r samma."
+summary: "F\xF6r att j\xE4mf\xF6ra tv\xE5 datum i Swift anv\xE4nder du `Date` objekt\
+  \ och j\xE4mf\xF6r med inbyggda funktioner."
 title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---

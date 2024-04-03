@@ -1,13 +1,9 @@
 ---
 date: 2024-01-20 17:30:51.285777-07:00
-description: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen\
-  \ tarkoittaa p\xE4ivien lis\xE4\xE4mist\xE4 tai v\xE4hent\xE4mist\xE4 nykyisest\xE4\
-  \ p\xE4iv\xE4st\xE4. Ohjelmoijat hy\xF6dynt\xE4v\xE4t t\xE4t\xE4\u2026"
+description: 'Miten: .'
 lastmod: '2024-03-13T22:44:56.752454-06:00'
 model: gpt-4-1106-preview
-summary: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen tarkoittaa\
-  \ p\xE4ivien lis\xE4\xE4mist\xE4 tai v\xE4hent\xE4mist\xE4 nykyisest\xE4 p\xE4iv\xE4\
-  st\xE4."
+summary: .
 title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---

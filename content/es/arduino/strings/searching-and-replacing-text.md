@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:57:10.748664-07:00
-description: "Buscar y reemplazar texto en la programaci\xF3n de Arduino es esencial\
-  \ para editar cadenas, como cambiar una palabra o frase por otra. Esta t\xE9cnica\
-  \ es \xFAtil\u2026"
+description: "C\xF3mo hacerlo: Para buscar y reemplazar texto en Arduino, no hay una\
+  \ funci\xF3n incorporada que lo haga directamente, pero podemos dise\xF1ar una f\xE1\
+  cilmente.\u2026"
 lastmod: '2024-03-13T22:44:59.319860-06:00'
 model: gpt-4-1106-preview
-summary: "Buscar y reemplazar texto en la programaci\xF3n de Arduino es esencial para\
-  \ editar cadenas, como cambiar una palabra o frase por otra."
+summary: "Para buscar y reemplazar texto en Arduino, no hay una funci\xF3n incorporada\
+  \ que lo haga directamente, pero podemos dise\xF1ar una f\xE1cilmente."
 title: Buscando y reemplazando texto
 weight: 10
 ---

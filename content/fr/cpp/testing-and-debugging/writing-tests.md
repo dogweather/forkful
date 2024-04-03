@@ -2,14 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:53.964526-07:00
-description: "\xC9crire des tests en C++ implique de cr\xE9er des programmes petits\
-  \ et autonomes qui v\xE9rifient automatiquement le comportement de sections de votre\
-  \ base de\u2026"
+description: 'Comment faire : #.'
 lastmod: '2024-03-13T22:44:58.165771-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire des tests en C++ implique de cr\xE9er des programmes petits et\
-  \ autonomes qui v\xE9rifient automatiquement le comportement de sections de votre\
-  \ base de code."
+summary: '#.'
 title: "R\xE9daction de tests"
 weight: 36
 ---

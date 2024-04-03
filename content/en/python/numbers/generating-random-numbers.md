@@ -1,12 +1,11 @@
 ---
 date: 2024-01-27 20:26:11.845598-07:00
-description: "Generating random numbers involves creating numbers that cannot be reasonably\
-  \ predicted better than by chance, which is essential for developing\u2026"
+description: "How to: Python provides the `random` module that helps in generating\
+  \ random numbers for various uses. Here's how to get started: 1. **Importing the\u2026"
 lastmod: '2024-03-13T22:44:59.704494-06:00'
 model: gpt-4-0125-preview
-summary: Generating random numbers involves creating numbers that cannot be reasonably
-  predicted better than by chance, which is essential for developing simulations,
-  games, and security algorithms.
+summary: Python provides the `random` module that helps in generating random numbers
+  for various uses.
 title: Generating random numbers
 weight: 12
 ---

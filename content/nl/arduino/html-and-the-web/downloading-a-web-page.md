@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:06.322117-07:00
-description: "Een webpagina downloaden betekent het ophalen van de HTML-inhoud van\
-  \ de URL waar je naar kijkt. Programmeurs doen dit om gegevens te trekken, hun gadgets\u2026"
+description: 'Hoe: Hier is de kern van de zaak: laat je Arduino surfen op het web
+  en pak wat je nodig hebt.'
 lastmod: '2024-03-13T22:44:51.071433-06:00'
 model: gpt-4-0125-preview
-summary: Een webpagina downloaden betekent het ophalen van de HTML-inhoud van de URL
-  waar je naar kijkt.
+summary: Hier is de kern van de zaak.
 title: Een webpagina downloaden
 weight: 42
 ---

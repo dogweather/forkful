@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:31.312136-07:00
-description: "R\xE9cup\xE9rer la date actuelle en Haskell implique d'obtenir le temps\
-  \ syst\xE8me actuel et de le transformer en un format de date lisible. Les programmeurs\
-  \ font\u2026"
+description: "Comment faire : La biblioth\xE8que standard de Haskell, `base`, fournit\
+  \ le module `Data.Time` qui offre des fonctionnalit\xE9s pour travailler avec les\
+  \ dates et\u2026"
 lastmod: '2024-03-13T22:44:57.844871-06:00'
 model: gpt-4-0125-preview
-summary: "R\xE9cup\xE9rer la date actuelle en Haskell implique d'obtenir le temps\
-  \ syst\xE8me actuel et de le transformer en un format de date lisible."
+summary: "La biblioth\xE8que standard de Haskell, `base`, fournit le module `Data.Time`\
+  \ qui offre des fonctionnalit\xE9s pour travailler avec les dates et les heures."
 title: Obtenir la date actuelle
 weight: 29
 ---

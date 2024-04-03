@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:40:13.695742-07:00
-description: "Creating a temporary file means making a file that you only need for\
-  \ a short time, typically for operations like buffering, staging data, or as a scratch\u2026"
+description: "How to: (\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\
+  \u0438:) Here\u2019s how to make a temporary file in C#."
 lastmod: '2024-03-13T22:44:49.319623-06:00'
 model: gpt-4-1106-preview
-summary: Creating a temporary file means making a file that you only need for a short
-  time, typically for operations like buffering, staging data, or as a scratch space.
+summary: "Here\u2019s how to make a temporary file in C#."
 title: "\u0421\u0442\u0432\u043E\u0440\u0435\u043D\u043D\u044F \u0442\u0438\u043C\u0447\
   \u0430\u0441\u043E\u0432\u043E\u0433\u043E \u0444\u0430\u0439\u043B\u0443"
 weight: 21

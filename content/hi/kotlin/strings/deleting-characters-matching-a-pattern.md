@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:42:30.709007-07:00
-description: "Pattern matching se hum kisi string mein se khas characters ya shabdon\
-  \ ko dhundhkar unhe hata sakte hain. Programmers iska use karte hain data ko saf\u2026"
+description: "How to (\u0915\u0948\u0938\u0947 \u0915\u0930\u0947\u0902): ."
 lastmod: '2024-03-13T22:44:52.231208-06:00'
 model: gpt-4-1106-preview
-summary: Pattern matching se hum kisi string mein se khas characters ya shabdon ko
-  dhundhkar unhe hata sakte hain.
+summary: .
 title: "\u092A\u0948\u091F\u0930\u094D\u0928 \u0938\u0947 \u092E\u0947\u0932 \u0916\
   \u093E\u0924\u0947 \u0905\u0915\u094D\u0937\u0930\u094B\u0902 \u0915\u094B \u0939\
   \u091F\u093E\u0928\u093E"

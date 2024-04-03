@@ -1,13 +1,12 @@
 ---
 date: 2024-01-20 17:44:27.587174-07:00
-description: "Pobieranie strony internetowej to proces \u015Bci\u0105gania jej tre\u015B\
-  ci, by m\xF3c z ni\u0105 interaktywnie pracowa\u0107 poza przegl\u0105dark\u0105\
-  . Programi\u015Bci robi\u0105 to, aby analizowa\u0107\u2026"
+description: "How to: (Jak to zrobi\u0107:) JavaScript pozwala na pobieranie stron\
+  \ internetowych za pomoc\u0105 Fetch API, kt\xF3re jest obecnie standardem. Poni\u017C\
+  ej znajduje si\u0119\u2026"
 lastmod: '2024-03-13T22:44:35.795337-06:00'
 model: gpt-4-1106-preview
-summary: "Pobieranie strony internetowej to proces \u015Bci\u0105gania jej tre\u015B\
-  ci, by m\xF3c z ni\u0105 interaktywnie pracowa\u0107 poza przegl\u0105dark\u0105\
-  ."
+summary: "JavaScript pozwala na pobieranie stron internetowych za pomoc\u0105 Fetch\
+  \ API, kt\xF3re jest obecnie standardem."
 title: Pobieranie strony internetowej
 weight: 42
 ---

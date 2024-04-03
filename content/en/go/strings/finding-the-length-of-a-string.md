@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 17:50:05.140580-07:00
-description: "Finding the length of a string in Go is about determining the number\
-  \ of characters it contains. Programmers routinely perform this operation to manipulate\u2026"
+description: "How to: In Go, strings are treated as immutable bytes sequences. You\
+  \ can find the length of a string using the built-in `len()` function which returns\
+  \ the\u2026"
 lastmod: '2024-03-13T22:44:59.622991-06:00'
 model: gpt-4-0125-preview
-summary: Finding the length of a string in Go is about determining the number of characters
-  it contains.
+summary: In Go, strings are treated as immutable bytes sequences.
 title: Finding the length of a string
 weight: 7
 ---

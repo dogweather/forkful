@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:04.445716-07:00
-description: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w w Go polega na okre\u015B\
-  leniu liczby znak\xF3w, kt\xF3re zawiera. Programi\u015Bci regularnie wykonuj\u0105\
-  \ t\u0119 operacj\u0119, aby efektywnie\u2026"
+description: "Jak to zrobi\u0107: W Go, ci\u0105gi znak\xF3w traktowane s\u0105 jako\
+  \ niezmienne sekwencje bajt\xF3w. D\u0142ugo\u015B\u0107 ci\u0105gu znak\xF3w mo\u017C\
+  na znale\u017A\u0107 za pomoc\u0105 wbudowanej funkcji `len()`,\u2026"
 lastmod: '2024-03-13T22:44:34.839194-06:00'
 model: gpt-4-0125-preview
-summary: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w w Go polega na okre\u015B\
-  leniu liczby znak\xF3w, kt\xF3re zawiera."
+summary: "W Go, ci\u0105gi znak\xF3w traktowane s\u0105 jako niezmienne sekwencje\
+  \ bajt\xF3w."
 title: "Znajdowanie d\u0142ugo\u015Bci \u0142a\u0144cucha"
 weight: 7
 ---

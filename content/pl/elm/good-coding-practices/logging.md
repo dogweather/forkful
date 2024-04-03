@@ -1,13 +1,13 @@
 ---
 date: 2024-01-26 01:02:26.774028-07:00
-description: "Logowanie to w zasadzie proces rejestrowania zdarze\u0144 i danych wyj\u015B\
-  ciowych z dzia\u0142aj\u0105cego oprogramowania, mo\u017Cna to potraktowa\u0107\
-  \ jako dziennik\u2026"
+description: "Jak to zrobi\u0107: Architektura Elma nie wspiera efekt\xF3w ubocznych\
+  \ takich jak logowanie \"od r\u0119ki\" \u2014 obs\u0142uguje si\u0119 je za pomoc\u0105\
+  \ komend, kt\xF3re s\u0105 cz\u0119\u015Bci\u0105\u2026"
 lastmod: '2024-03-13T22:44:35.328166-06:00'
 model: gpt-4-1106-preview
-summary: "Logowanie to w zasadzie proces rejestrowania zdarze\u0144 i danych wyj\u015B\
-  ciowych z dzia\u0142aj\u0105cego oprogramowania, mo\u017Cna to potraktowa\u0107\
-  \ jako dziennik oprogramowania."
+summary: "Architektura Elma nie wspiera efekt\xF3w ubocznych takich jak logowanie\
+  \ \"od r\u0119ki\" \u2014 obs\u0142uguje si\u0119 je za pomoc\u0105 komend, kt\xF3\
+  re s\u0105 cz\u0119\u015Bci\u0105 architektury aplikacji."
 title: "Rejestrowanie zdarze\u0144"
 weight: 17
 ---

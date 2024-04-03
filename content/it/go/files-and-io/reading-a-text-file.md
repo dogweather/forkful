@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:50.332933-07:00
-description: "Leggere un file di testo in Go comporta l'accesso e il recupero del\
-  \ contenuto da un file memorizzato su disco per l'elaborazione o l'analisi. I\u2026"
+description: "Come fare: Leggere un file di testo in Go pu\xF2 essere realizzato in\
+  \ diversi modi, ma uno dei metodi pi\xF9 diretti \xE8 utilizzare il pacchetto `ioutil`.\
+  \ Ecco un\u2026"
 lastmod: '2024-03-13T22:44:42.926911-06:00'
 model: gpt-4-0125-preview
-summary: Leggere un file di testo in Go comporta l'accesso e il recupero del contenuto
-  da un file memorizzato su disco per l'elaborazione o l'analisi.
+summary: "Leggere un file di testo in Go pu\xF2 essere realizzato in diversi modi,\
+  \ ma uno dei metodi pi\xF9 diretti \xE8 utilizzare il pacchetto `ioutil`."
 title: Leggere un file di testo
 weight: 22
 ---

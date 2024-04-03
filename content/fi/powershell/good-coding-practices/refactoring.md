@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 03:37:20.375991-07:00
-description: "Refaktorointi on prosessi, jossa olemassa olevaa tietokonekoodia uudelleenj\xE4\
-  rjestet\xE4\xE4n muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4, pyrkimyksen\xE4\
-  \ parantaa\u2026"
+description: "Miten: PowerShell ei sis\xE4ll\xE4 erityist\xE4 refaktorointity\xF6\
+  kalua, mutta voit silti siisti\xE4 koodiasi luettavuuden ja suorituskyvyn parantamiseksi.\
+  \ Harkitse\u2026"
 lastmod: '2024-03-13T22:44:56.790693-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktorointi on prosessi, jossa olemassa olevaa tietokonekoodia uudelleenj\xE4\
-  rjestet\xE4\xE4n muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4, pyrkimyksen\xE4\
-  \ parantaa ohjelmiston ei-toiminnallisia ominaisuuksia."
+summary: "PowerShell ei sis\xE4ll\xE4 erityist\xE4 refaktorointity\xF6kalua, mutta\
+  \ voit silti siisti\xE4 koodiasi luettavuuden ja suorituskyvyn parantamiseksi."
 title: Koodin refaktorointi
 weight: 19
 ---

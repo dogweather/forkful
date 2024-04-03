@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:35:38.349648-07:00
-description: "Concatenating strings is just a fancy way of saying 'sticking them together\
-  \ end-to-end'. Programmers do it to combine words and sentences, to build\u2026"
+description: "How to: In Ruby, you can concatenate strings with the `+` operator or\
+  \ the `<<` method, which modifies the string in place. Here's how to connect the\u2026"
 lastmod: '2024-03-13T22:45:00.541442-06:00'
 model: gpt-4-1106-preview
-summary: Concatenating strings is just a fancy way of saying 'sticking them together
-  end-to-end'.
+summary: In Ruby, you can concatenate strings with the `+` operator or the `<<` method,
+  which modifies the string in place.
 title: Concatenating strings
 weight: 3
 ---

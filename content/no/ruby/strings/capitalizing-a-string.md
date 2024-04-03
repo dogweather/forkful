@@ -3,13 +3,12 @@ changelog:
 - 2024-03-25, dogweather, edited and tested
 - 2024-03-25, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:02:29.358527-07:00
-description: "\xC5 sette stor bokstav i en streng betyr vanligvis \xE5 konvertere\
-  \ det f\xF8rste tegnet i en streng til store bokstaver og resten til sm\xE5 bokstaver.\
-  \ Men noen\u2026"
+description: 'Hvordan: Ruby tilbyr [enkle metoder for manipulasjon av strenger](https://docs.ruby-lang.org/en/3.3/String.html),
+  inkludert kapitalisering.'
 lastmod: '2024-03-25T19:22:00.718759-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 sette stor bokstav i en streng betyr vanligvis \xE5 konvertere det\
-  \ f\xF8rste tegnet i en streng til store bokstaver og resten til sm\xE5 bokstaver."
+summary: Ruby tilbyr [enkle metoder for manipulasjon av strenger](https://docs.ruby-lang.org/en/3.3/String.html),
+  inkludert kapitalisering.
 title: Sette store bokstaver i en streng
 weight: 2
 ---

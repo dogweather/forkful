@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:06.891507-07:00
-description: "Escrever para o erro padr\xE3o (stderr) no PowerShell envolve enviar\
-  \ mensagens de erro ou diagn\xF3sticos diretamente para o stream stderr, distinto\
-  \ do stream\u2026"
+description: "Como Fazer: O PowerShell simplifica o processo de escrever para stderr\
+  \ atrav\xE9s do uso do cmdlet `Write-Error` ou direcionando a sa\xEDda para o m\xE9\
+  todo\u2026"
 lastmod: '2024-03-13T22:44:46.813153-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever para o erro padr\xE3o (stderr) no PowerShell envolve enviar mensagens\
-  \ de erro ou diagn\xF3sticos diretamente para o stream stderr, distinto do stream\
-  \ de sa\xEDda padr\xE3o (stdout)."
+summary: "O PowerShell simplifica o processo de escrever para stderr atrav\xE9s do\
+  \ uso do cmdlet `Write-Error` ou direcionando a sa\xEDda para o m\xE9todo `$host.ui.WriteErrorLine()`."
 title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---

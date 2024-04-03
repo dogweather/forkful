@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:39.111699-07:00
-description: "YAML, forkortet for \"YAML Ain't Markup Language\", er en menneskelesbar\
-  \ standard for data-serialisering som programmerere bruker for konfigurasjonsfiler,\u2026"
+description: "Hvordan: I Java kan du jobbe med YAML-filer ved \xE5 bruke tredjeparts\
+  \ biblioteker siden Java Standard Edition ikke inkluderer innebygd st\xF8tte for\
+  \ YAML. Et\u2026"
 lastmod: '2024-03-13T22:44:40.686718-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, forkortet for \"YAML Ain't Markup Language\", er en menneskelesbar\
-  \ standard for data-serialisering som programmerere bruker for konfigurasjonsfiler,\
-  \ data dumping, og datatransmisjon mellom spr\xE5k."
+summary: "I Java kan du jobbe med YAML-filer ved \xE5 bruke tredjeparts biblioteker\
+  \ siden Java Standard Edition ikke inkluderer innebygd st\xF8tte for YAML."
 title: Arbeider med YAML
 weight: 41
 ---

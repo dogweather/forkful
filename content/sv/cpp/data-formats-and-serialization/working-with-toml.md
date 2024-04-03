@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:19:54.662200-07:00
-description: "TOML (Toms Uppenbara, Minimala Spr\xE5k) \xE4r ett data-serialiseringsformat\
-  \ som \xE4r l\xE4tt att l\xE4sa p\xE5 grund av dess tydliga semantik. Programmerare\
-  \ anv\xE4nder TOML\u2026"
+description: "Hur man g\xF6r: F\xF6r att arbeta med TOML i C++ beh\xF6ver du ett bibliotek\
+  \ som `toml++`. H\xE4r \xE4r en snabbstart."
 lastmod: '2024-03-13T22:44:38.232894-06:00'
 model: gpt-4-0125-preview
-summary: "TOML (Toms Uppenbara, Minimala Spr\xE5k) \xE4r ett data-serialiseringsformat\
-  \ som \xE4r l\xE4tt att l\xE4sa p\xE5 grund av dess tydliga semantik."
+summary: "F\xF6r att arbeta med TOML i C++ beh\xF6ver du ett bibliotek som `toml++`."
 title: Att arbeta med TOML
 weight: 39
 ---

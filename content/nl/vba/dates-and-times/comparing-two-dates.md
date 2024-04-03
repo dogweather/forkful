@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:00.052655-07:00
-description: "Het vergelijken van twee datums in Visual Basic for Applications (VBA)\
-  \ behelst het bepalen van hun chronologische relatie tot elkaar. Programmeurs doen\u2026"
+description: "Hoe: In VBA worden datums vergeleken met behulp van de standaard vergelijkingsoperators\
+  \ (`<`, `>`, `=`, `<=`, `>=`). Voordat je vergelijkt, is het\u2026"
 lastmod: '2024-03-13T22:44:50.649503-06:00'
 model: gpt-4-0125-preview
-summary: Het vergelijken van twee datums in Visual Basic for Applications (VBA) behelst
-  het bepalen van hun chronologische relatie tot elkaar.
+summary: In VBA worden datums vergeleken met behulp van de standaard vergelijkingsoperators
+  (`<`, `>`, `=`, `<=`, `>=`).
 title: Twee datums vergelijken
 weight: 27
 ---

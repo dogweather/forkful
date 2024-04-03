@@ -1,11 +1,10 @@
 ---
 date: 2024-02-03 17:50:03.774840-07:00
-description: "Writing to standard error in C involves directing error messages and\
-  \ diagnostic information to a separate stream from the main program output. Programmers\u2026"
+description: "How to: In C, the `stderr` stream is used to write error messages. Unlike\
+  \ writing to standard output with `printf`, writing to `stderr` can be done using\u2026"
 lastmod: '2024-03-13T22:45:00.525786-06:00'
 model: gpt-4-0125-preview
-summary: Writing to standard error in C involves directing error messages and diagnostic
-  information to a separate stream from the main program output.
+summary: In C, the `stderr` stream is used to write error messages.
 title: Writing to standard error
 weight: 25
 ---

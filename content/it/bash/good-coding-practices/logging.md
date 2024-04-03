@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 00:59:27.816909-07:00
-description: "Il logging \xE8 la pratica di registrare eventi, errori e altre informazioni\
-  \ significative dai processi in esecuzione di un programma su un file o uno stream\u2026"
+description: "Come fare: In Bash, il logging pu\xF2 essere semplice come reindirizzare\
+  \ o aggiungere l'output a un file. Ecco un esempio di base."
 lastmod: '2024-03-13T22:44:43.605926-06:00'
 model: gpt-4-1106-preview
-summary: "Il logging \xE8 la pratica di registrare eventi, errori e altre informazioni\
-  \ significative dai processi in esecuzione di un programma su un file o uno stream\
-  \ di output."
+summary: "In Bash, il logging pu\xF2 essere semplice come reindirizzare o aggiungere\
+  \ l'output a un file."
 title: Registrazione Eventi (Logging)
 weight: 17
 ---

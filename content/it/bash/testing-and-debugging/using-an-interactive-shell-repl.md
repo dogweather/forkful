@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:11:14.709113-07:00
-description: "REPL sta per Read-Eval-Print Loop (Ciclo di Lettura-Valutazione-Stampa),\
-  \ un ambiente di programmazione computerizzato semplice e interattivo. I\u2026"
+description: "Come fare: In Bash, il tuo terminale \xE8 essenzialmente un REPL. Digiti\
+  \ un comando; lo legge, lo valuta, stampa il risultato e torna in attesa del tuo\u2026"
 lastmod: '2024-03-13T22:44:43.601319-06:00'
 model: gpt-4-0125-preview
-summary: REPL sta per Read-Eval-Print Loop (Ciclo di Lettura-Valutazione-Stampa),
-  un ambiente di programmazione computerizzato semplice e interattivo.
+summary: "In Bash, il tuo terminale \xE8 essenzialmente un REPL."
 title: Utilizzo di un interprete interattivo (REPL)
 weight: 34
 ---

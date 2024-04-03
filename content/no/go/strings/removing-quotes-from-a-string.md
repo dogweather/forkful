@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:12.180245-07:00
-description: "\xC5 fjerne anf\xF8rselstegn fra en streng i Go handler om \xE5 eliminere\
-  \ de ledende og avsluttende anf\xF8rselstegnene (`\"` eller `'`) fra en gitt streng.\u2026"
+description: "Hvordan: Go tilbyr flere tiln\xE6rminger for \xE5 fjerne anf\xF8rselstegn\
+  \ fra en streng, men en av de mest direkte metodene er \xE5 bruke `Trim` og\u2026"
 lastmod: '2024-03-13T22:44:40.252728-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 fjerne anf\xF8rselstegn fra en streng i Go handler om \xE5 eliminere\
-  \ de ledende og avsluttende anf\xF8rselstegnene (`\"` eller `'`) fra en gitt streng."
+summary: "Go tilbyr flere tiln\xE6rminger for \xE5 fjerne anf\xF8rselstegn fra en\
+  \ streng, men en av de mest direkte metodene er \xE5 bruke `Trim` og `TrimFunc`-funksjonene\
+  \ som tilbys av `strings`-pakken."
 title: "Fjerner anf\xF8rselstegn fra en streng"
 weight: 9
 ---

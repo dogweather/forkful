@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:30.336201-07:00
-description: "Analiza HTML oznacza roz\u0142o\u017Cenie na czynniki pierwsze kawa\u0142\
-  ka kodu HTML, aby zrozumie\u0107 jego struktur\u0119 i zawarto\u015B\u0107. Programi\u015B\
-  ci robi\u0105 to w celu wydobycia\u2026"
+description: "Jak to zrobi\u0107: Aby przeprowadzi\u0107 analiz\u0119 HTML w Ruby,\
+  \ zainstaluj gem 'Nokogiri' za pomoc\u0105 `gem install nokogiri`. Nokogiri jest\
+  \ jak scyzoryk szwajcarski\u2026"
 lastmod: '2024-03-13T22:44:35.930661-06:00'
 model: gpt-4-0125-preview
-summary: "Analiza HTML oznacza roz\u0142o\u017Cenie na czynniki pierwsze kawa\u0142\
-  ka kodu HTML, aby zrozumie\u0107 jego struktur\u0119 i zawarto\u015B\u0107."
+summary: "Aby przeprowadzi\u0107 analiz\u0119 HTML w Ruby, zainstaluj gem 'Nokogiri'\
+  \ za pomoc\u0105 `gem install nokogiri`."
 title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---

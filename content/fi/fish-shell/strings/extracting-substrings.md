@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:45:48.115249-07:00
-description: "Mik\xE4 se on ja miksi se on tarpeellista? Merkkijonojen osien irrottaminen\
-  \ \u2013 eli substringien erist\xE4minen \u2013 tarkoittaa tietyn merkkijonon aliosan\
-  \ kaivamista\u2026"
+description: "How to: Fish Shellill\xE4 substringien k\xE4sittely onnistuu esimerkiksi\
+  \ `string`-komennon avulla."
 lastmod: '2024-03-13T22:44:56.981151-06:00'
 model: gpt-4-1106-preview
-summary: "Mik\xE4 se on ja miksi se on tarpeellista."
+summary: "Fish Shellill\xE4 substringien k\xE4sittely onnistuu esimerkiksi `string`-komennon\
+  \ avulla."
 title: Merkkijonojen osien poimiminen
 weight: 6
 ---

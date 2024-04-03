@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 17:50:07.908091-07:00
-description: "Checking whether a directory exists in C involves querying the file\
-  \ system to verify if a specific path leads to a directory. Programmers often perform\u2026"
+description: "How to: In C, the existence of a directory can be checked using the\
+  \ `stat` function, which retrieves information about the file or directory at a\u2026"
 lastmod: '2024-03-13T22:45:00.524102-06:00'
 model: gpt-4-0125-preview
-summary: Checking whether a directory exists in C involves querying the file system
-  to verify if a specific path leads to a directory.
+summary: In C, the existence of a directory can be checked using the `stat` function,
+  which retrieves information about the file or directory at a specified path.
 title: Checking if a directory exists
 weight: 20
 ---

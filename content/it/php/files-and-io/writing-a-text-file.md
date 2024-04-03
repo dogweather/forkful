@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:44.247855-07:00
-description: "Scrivere un file di testo in PHP comporta la creazione o l'apertura\
-  \ di un file e l'inserimento di contenuto al suo interno. I programmatori fanno\
-  \ ci\xF2 per\u2026"
+description: "Come fare: PHP supporta nativamente la scrittura su file tramite funzioni\
+  \ come `file_put_contents`, `fopen` insieme a `fwrite` e `fclose`. Ecco come\u2026"
 lastmod: '2024-03-13T22:44:43.534999-06:00'
 model: gpt-4-0125-preview
-summary: Scrivere un file di testo in PHP comporta la creazione o l'apertura di un
-  file e l'inserimento di contenuto al suo interno.
+summary: PHP supporta nativamente la scrittura su file tramite funzioni come `file_put_contents`,
+  `fopen` insieme a `fwrite` e `fclose`.
 title: Scrivere un file di testo
 weight: 24
 ---

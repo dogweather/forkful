@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:50.248374-07:00
-description: "Parsowanie HTML w Clojure wi\u0105\u017Ce si\u0119 z programowym ekstrahowaniem\
-  \ informacji z dokument\xF3w HTML. Programi\u015Bci robi\u0105 to, aby uzyska\u0107\
-  \ dost\u0119p, manipulowa\u0107 lub\u2026"
+description: "Jak to zrobi\u0107: Clojure nie posiada wbudowanych mo\u017Cliwo\u015B\
+  ci parsowania HTML, ale mo\u017Cesz u\u017Cy\u0107 bibliotek Java lub wrapper\xF3\
+  w Clojure, takich jak `enlive` lub\u2026"
 lastmod: '2024-03-13T22:44:34.992401-06:00'
 model: gpt-4-0125-preview
-summary: "Parsowanie HTML w Clojure wi\u0105\u017Ce si\u0119 z programowym ekstrahowaniem\
-  \ informacji z dokument\xF3w HTML."
+summary: "Clojure nie posiada wbudowanych mo\u017Cliwo\u015Bci parsowania HTML, ale\
+  \ mo\u017Cesz u\u017Cy\u0107 bibliotek Java lub wrapper\xF3w Clojure, takich jak\
+  \ `enlive` lub `hickory`."
 title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---

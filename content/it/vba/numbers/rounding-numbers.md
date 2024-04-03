@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:59.927772-07:00
-description: "Nella programmazione, l'arrotondamento dei numeri riguarda l'approssimazione\
-  \ di un numero al suo intero pi\xF9 vicino o a un certo numero di cifre decimali.\u2026"
+description: "Come fare: In Visual Basic for Applications (VBA), l'arrotondamento\
+  \ pu\xF2 essere ottenuto utilizzando diverse funzioni, ognuna adatta a scenari specifici.\u2026"
 lastmod: '2024-03-13T22:44:43.256913-06:00'
 model: gpt-4-0125-preview
-summary: "Nella programmazione, l'arrotondamento dei numeri riguarda l'approssimazione\
-  \ di un numero al suo intero pi\xF9 vicino o a un certo numero di cifre decimali."
+summary: "In Visual Basic for Applications (VBA), l'arrotondamento pu\xF2 essere ottenuto\
+  \ utilizzando diverse funzioni, ognuna adatta a scenari specifici."
 title: Arrotondamento dei numeri
 weight: 13
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:27.531579-07:00
-description: "Regulj\xE4ra uttryck, eller regex, l\xE5ter utvecklare s\xF6ka, matcha\
-  \ och manipulera str\xE4ngar med avancerade m\xF6nsterpassningstekniker. I Rust\
-  \ hj\xE4lper anv\xE4ndning\u2026"
+description: "Hur man g\xF6r: Rusts `regex`-bibliotek \xE4r det givna valet f\xF6\
+  r att arbeta med regulj\xE4ra uttryck. F\xF6r att anv\xE4nda det m\xE5ste du f\xF6\
+  rst l\xE4gga till det i din\u2026"
 lastmod: '2024-03-13T22:44:37.687911-06:00'
 model: gpt-4-0125-preview
-summary: "Regulj\xE4ra uttryck, eller regex, l\xE5ter utvecklare s\xF6ka, matcha och\
-  \ manipulera str\xE4ngar med avancerade m\xF6nsterpassningstekniker."
+summary: "Rusts `regex`-bibliotek \xE4r det givna valet f\xF6r att arbeta med regulj\xE4\
+  ra uttryck."
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---

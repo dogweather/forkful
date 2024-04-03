@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:12:36.154562-07:00
-description: "TOML (Toms Uppenbara, Minimala Spr\xE5k) \xE4r ett konfigurationsfilformat\
-  \ som \xE4r l\xE4tt att l\xE4sa p\xE5 grund av dess tydliga semantik. Programmerare\
-  \ anv\xE4nder det\u2026"
+description: "Hur man g\xF6r: F\xF6r att arbeta med TOML i C beh\xF6ver du f\xF6rst\
+  \ ett bibliotek som kan tolka TOML-filer, eftersom C:s standardbibliotek inte inkluderar\
+  \ denna\u2026"
 lastmod: '2024-03-13T22:44:38.409333-06:00'
 model: gpt-4-0125-preview
-summary: "TOML (Toms Uppenbara, Minimala Spr\xE5k) \xE4r ett konfigurationsfilformat\
-  \ som \xE4r l\xE4tt att l\xE4sa p\xE5 grund av dess tydliga semantik."
+summary: "F\xF6r att arbeta med TOML i C beh\xF6ver du f\xF6rst ett bibliotek som\
+  \ kan tolka TOML-filer, eftersom C:s standardbibliotek inte inkluderar denna funktionalitet."
 title: Att Arbeta med TOML
 weight: 39
 ---

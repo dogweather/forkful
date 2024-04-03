@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:41.210599-07:00
-description: "S\u1ED1 ph\u1EE9c c\xF3 m\u1ED9t ph\u1EA7n th\u1EF1c v\xE0 m\u1ED9t\
-  \ ph\u1EA7n \u1EA3o, \u0111\xF3ng vai tr\xF2 quan tr\u1ECDng trong nhi\u1EC1u l\u0129\
-  nh v\u1EF1c nh\u01B0 k\u1EF9 thu\u1EADt, v\u1EADt l\xFD v\xE0 \u0111\u1ED3 h\u1ECD\
-  a m\xE1y t\xEDnh. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Rust kh\xF4ng c\xF3 h\u1ED7 tr\u1EE3 s\u1ED1\
+  \ ph\u1EE9c s\u1EB5n c\xF3, nh\u01B0ng c\xE1c crate nh\u01B0 `num-complex` s\u1EBD\
+  \ gi\xFAp b\u1EA1n. D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch s\u1EED d\u1EE5ng n\xF3\
+  ."
 lastmod: '2024-03-13T22:44:36.367455-06:00'
 model: gpt-4-0125-preview
-summary: "S\u1ED1 ph\u1EE9c c\xF3 m\u1ED9t ph\u1EA7n th\u1EF1c v\xE0 m\u1ED9t ph\u1EA7\
-  n \u1EA3o, \u0111\xF3ng vai tr\xF2 quan tr\u1ECDng trong nhi\u1EC1u l\u0129nh v\u1EF1\
-  c nh\u01B0 k\u1EF9 thu\u1EADt, v\u1EADt l\xFD v\xE0 \u0111\u1ED3 h\u1ECDa m\xE1\
-  y t\xEDnh."
+summary: "Rust kh\xF4ng c\xF3 h\u1ED7 tr\u1EE3 s\u1ED1 ph\u1EE9c s\u1EB5n c\xF3, nh\u01B0\
+  ng c\xE1c crate nh\u01B0 `num-complex` s\u1EBD gi\xFAp b\u1EA1n."
 title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 weight: 14
 ---

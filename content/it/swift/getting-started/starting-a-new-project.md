@@ -1,10 +1,12 @@
 ---
 date: 2024-01-20 18:04:27.108532-07:00
-description: "Iniziamo un nuovo progetto per dar vita alle nostre idee. Lo facciamo\
-  \ per esplorare possibilit\xE0, risolvere problemi o creare qualcosa di unico."
+description: "Come Fare: Per iniziare un progetto Swift, apri Xcode e seleziona \"\
+  Create a new Xcode project\". Poi, scegli il template adatto come \"App\" e configura\
+  \ il\u2026"
 lastmod: '2024-03-13T22:44:43.770974-06:00'
 model: gpt-4-1106-preview
-summary: Iniziamo un nuovo progetto per dar vita alle nostre idee.
+summary: Per iniziare un progetto Swift, apri Xcode e seleziona "Create a new Xcode
+  project".
 title: Avvio di un nuovo progetto
 weight: 1
 ---

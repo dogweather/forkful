@@ -2,16 +2,18 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:15.901214-07:00
-description: "Vi\u1EBFt test trong C bao g\u1ED3m vi\u1EC7c t\u1EA1o ra c\xE1c ch\u01B0\
-  \u01A1ng tr\xECnh ph\u1EE5 ho\u1EB7c ch\u1EE9c n\u0103ng nh\u1ECF h\u01A1n gi\xFA\
-  p t\u1EF1 \u0111\u1ED9ng ki\u1EC3m tra t\xEDnh n\u0103ng c\u1EE7a m\xE3 l\u1EC7\
-  nh. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: M\u1EB7c d\xF9 C kh\xF4ng c\xF3 b\u1ED9 khung\
+  \ test t\xEDch h\u1EE3p s\u1EB5n nh\u01B0 m\u1ED9t s\u1ED1 ng\xF4n ng\u1EEF kh\xE1\
+  c, b\u1EA1n v\u1EABn c\xF3 th\u1EC3 vi\u1EBFt c\xE1c b\xE0i test hi\u1EC7u qu\u1EA3\
+  \ s\u1EED d\u1EE5ng assert.h cho c\xE1c\u2026"
 lastmod: '2024-03-13T22:44:37.273007-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EBFt test trong C bao g\u1ED3m vi\u1EC7c t\u1EA1o ra c\xE1c ch\u01B0\
-  \u01A1ng tr\xECnh ph\u1EE5 ho\u1EB7c ch\u1EE9c n\u0103ng nh\u1ECF h\u01A1n gi\xFA\
-  p t\u1EF1 \u0111\u1ED9ng ki\u1EC3m tra t\xEDnh n\u0103ng c\u1EE7a m\xE3 l\u1EC7\
-  nh."
+summary: "M\u1EB7c d\xF9 C kh\xF4ng c\xF3 b\u1ED9 khung test t\xEDch h\u1EE3p s\u1EB5\
+  n nh\u01B0 m\u1ED9t s\u1ED1 ng\xF4n ng\u1EEF kh\xE1c, b\u1EA1n v\u1EABn c\xF3 th\u1EC3\
+  \ vi\u1EBFt c\xE1c b\xE0i test hi\u1EC7u qu\u1EA3 s\u1EED d\u1EE5ng assert.h cho\
+  \ c\xE1c ph\xE1t bi\u1EC3u \u0111\u01A1n gi\u1EA3n ho\u1EB7c t\xEDch h\u1EE3p c\xE1\
+  c b\u1ED9 khung b\xEAn th\u1EE9 ba nh\u01B0 CUnit ho\u1EB7c Unity cho vi\u1EC7c\
+  \ test c\xF3 c\u1EA5u tr\xFAc h\u01A1n."
 title: "Vi\u1EBFt ki\u1EC3m th\u1EED"
 weight: 36
 ---

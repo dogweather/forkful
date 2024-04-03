@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:11.536762-07:00
-description: "Escribir un archivo de texto en Kotlin implica crear un archivo e ingresar\
-  \ contenido de texto en \xE9l, una tarea com\xFAn para almacenar datos, registrar\
-  \ o\u2026"
+description: "C\xF3mo hacerlo: Kotlin proporciona un enfoque sencillo para escribir\
+  \ en archivos, aprovechando la biblioteca est\xE1ndar sin necesidad de bibliotecas\
+  \ de\u2026"
 lastmod: '2024-03-13T22:44:59.054280-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir un archivo de texto en Kotlin implica crear un archivo e ingresar\
-  \ contenido de texto en \xE9l, una tarea com\xFAn para almacenar datos, registrar\
-  \ o configurar ajustes."
+summary: "Kotlin proporciona un enfoque sencillo para escribir en archivos, aprovechando\
+  \ la biblioteca est\xE1ndar sin necesidad de bibliotecas de terceros adicionales."
 title: Escribiendo un archivo de texto
 weight: 24
 ---

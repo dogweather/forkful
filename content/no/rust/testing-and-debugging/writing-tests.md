@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:04.838521-07:00
-description: "\xC5 skrive tester i Rust inneb\xE6rer \xE5 lage automatiserte sjekker\
-  \ for \xE5 sikre at koden din fungerer som forventet. Programmerere gj\xF8r dette\
-  \ for \xE5 fange opp\u2026"
+description: "Hvordan: Rusts innebygde testrammeverk st\xF8tter enhets-, integrasjons-\
+  \ og dokumentasjonstester uten behov for eksterne biblioteker. Tester er annotert\
+  \ med\u2026"
 lastmod: '2024-03-13T22:44:40.577395-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive tester i Rust inneb\xE6rer \xE5 lage automatiserte sjekker for\
-  \ \xE5 sikre at koden din fungerer som forventet."
+summary: "Rusts innebygde testrammeverk st\xF8tter enhets-, integrasjons- og dokumentasjonstester\
+  \ uten behov for eksterne biblioteker."
 title: Skrive tester
 weight: 36
 ---

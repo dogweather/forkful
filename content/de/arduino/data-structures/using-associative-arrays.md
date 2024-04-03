@@ -2,13 +2,13 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:13.417490-07:00
-description: "In der Welt von Arduino erm\xF6glichen assoziative Arrays, Schl\xFC\
-  ssel mit Werten zu verkn\xFCpfen, \xE4hnlich wie man Socken ihren Paaren zuordnet.\
-  \ Sie sind eine\u2026"
+description: "Wie: Arduino bietet strikt genommen keine integrierte Unterst\xFCtzung\
+  \ f\xFCr assoziative Arrays, wie man sie in h\xF6heren Programmiersprachen findet.\
+  \ Aber keine\u2026"
 lastmod: '2024-03-13T22:44:54.137899-06:00'
 model: gpt-4-0125-preview
-summary: "In der Welt von Arduino erm\xF6glichen assoziative Arrays, Schl\xFCssel\
-  \ mit Werten zu verkn\xFCpfen, \xE4hnlich wie man Socken ihren Paaren zuordnet."
+summary: "Arduino bietet strikt genommen keine integrierte Unterst\xFCtzung f\xFC\
+  r assoziative Arrays, wie man sie in h\xF6heren Programmiersprachen findet."
 title: Verwendung von assoziativen Arrays
 weight: 15
 ---

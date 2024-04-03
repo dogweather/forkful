@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:38:21.426434-07:00
-description: "Convertir un string a min\xFAsculas significa cambiar todas las letras\
-  \ de may\xFAsculas a min\xFAsculas. Los programadores hacen esto para normalizar\
-  \ texto,\u2026"
+description: "C\xF3mo hacerlo: En Fish Shell, puedes usar `string to-lower` para convertir\
+  \ strings a min\xFAsculas. Aqu\xED tienes un ejemplo sencillo."
 lastmod: '2024-03-13T22:44:59.487382-06:00'
 model: gpt-4-1106-preview
-summary: "Convertir un string a min\xFAsculas significa cambiar todas las letras de\
-  \ may\xFAsculas a min\xFAsculas."
+summary: "En Fish Shell, puedes usar `string to-lower` para convertir strings a min\xFA\
+  sculas."
 title: "Conversi\xF3n de una cadena de texto a min\xFAsculas"
 weight: 4
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:23.304138-07:00
-description: "C#:ssa t\xE4m\xE4nhetkisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen tarkoittaa\
-  \ j\xE4rjestelm\xE4st\xE4 nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n ja ajan tietojen noutamista.\
-  \ Ohjelmoijat tarvitsevat usein p\xE4\xE4sy\xE4\u2026"
+description: "Miten: C# tarjoaa suoraviivaisen tavan saada nykyinen p\xE4iv\xE4m\xE4\
+  \xE4r\xE4 k\xE4ytt\xE4en `DateTime` luokkaa, joka on osa .NET Frameworkin System-nimiavaruutta.\
+  \ Alla\u2026"
 lastmod: '2024-03-13T22:44:56.583820-06:00'
 model: gpt-4-0125-preview
-summary: "C#:ssa t\xE4m\xE4nhetkisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen tarkoittaa\
-  \ j\xE4rjestelm\xE4st\xE4 nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n ja ajan tietojen noutamista."
+summary: "C# tarjoaa suoraviivaisen tavan saada nykyinen p\xE4iv\xE4m\xE4\xE4r\xE4\
+  \ k\xE4ytt\xE4en `DateTime` luokkaa, joka on osa .NET Frameworkin System-nimiavaruutta."
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---

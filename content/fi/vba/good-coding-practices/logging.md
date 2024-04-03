@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:15.127049-07:00
-description: "Logging Visual Basic for Applications (VBA) -ymp\xE4rist\xF6ss\xE4 tarkoittaa\
-  \ ohjelman suoritusk\xE4ytt\xE4ytymisen tallentamista tiedostoon, konsoliin tai\
-  \ tietokantaan.\u2026"
+description: "Kuinka: VBAssa ei ole sis\xE4\xE4nrakennettua lokituskehyst\xE4, kuten\
+  \ joissakin muissa kieliss\xE4. Kuitenkin yksinkertaisen lokitusmekanismin toteuttaminen\
+  \ on\u2026"
 lastmod: '2024-03-13T22:44:56.407802-06:00'
 model: gpt-4-0125-preview
-summary: "Logging Visual Basic for Applications (VBA) -ymp\xE4rist\xF6ss\xE4 tarkoittaa\
-  \ ohjelman suoritusk\xE4ytt\xE4ytymisen tallentamista tiedostoon, konsoliin tai\
-  \ tietokantaan."
+summary: "VBAssa ei ole sis\xE4\xE4nrakennettua lokituskehyst\xE4, kuten joissakin\
+  \ muissa kieliss\xE4."
 title: Lokiointi
 weight: 17
 ---

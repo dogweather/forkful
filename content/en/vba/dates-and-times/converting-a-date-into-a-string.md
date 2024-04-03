@@ -1,11 +1,11 @@
 ---
 date: 2024-02-01 21:30:19.679520-07:00
-description: "Converting a date into a string in Visual Basic for Applications (VBA)\
-  \ is a process used for changing the data type of a date to a string format.\u2026"
+description: "How to: In VBA, the `Format` function is your go-to solution for converting\
+  \ dates to strings. It allows you to specify the date format exactly as needed.\u2026"
 lastmod: '2024-03-13T22:44:59.944661-06:00'
 model: gpt-4-0125-preview
-summary: Converting a date into a string in Visual Basic for Applications (VBA) is
-  a process used for changing the data type of a date to a string format.
+summary: In VBA, the `Format` function is your go-to solution for converting dates
+  to strings.
 title: Converting a date into a string
 weight: 28
 ---

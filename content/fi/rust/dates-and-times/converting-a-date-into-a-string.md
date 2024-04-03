@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:37:40.919848-07:00
-description: "Mik\xE4 & Miksi? P\xE4iv\xE4m\xE4\xE4r\xE4n muunto merkkijonoksi mahdollistaa\
-  \ ajanhetkien tallentamisen tekstipohjaisessa muodossa. Ohjelmoijat tekev\xE4t t\xE4\
-  m\xE4n helpottaakseen\u2026"
+description: 'How to: Miten.'
 lastmod: '2024-03-13T22:44:56.368381-06:00'
 model: gpt-4-1106-preview
-summary: "Mik\xE4 & Miksi."
+summary: Miten.
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---

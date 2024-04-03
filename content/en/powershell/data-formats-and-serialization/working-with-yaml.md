@@ -1,11 +1,13 @@
 ---
 date: 2024-02-03 19:03:26.004811-07:00
-description: "YAML, or YAML Ain't Markup Language, is a human-readable data serialization\
-  \ language. Programmers often use it for configuration files and data\u2026"
+description: "How to: PowerShell, by default, doesn\u2019t come with a built-in cmdlet\
+  \ for parsing YAML, but it works seamlessly with YAML when you leverage the `powershell-\u2026"
 lastmod: '2024-03-13T22:45:00.302722-06:00'
 model: gpt-4-0125-preview
-summary: YAML, or YAML Ain't Markup Language, is a human-readable data serialization
-  language.
+summary: "PowerShell, by default, doesn\u2019t come with a built-in cmdlet for parsing\
+  \ YAML, but it works seamlessly with YAML when you leverage the `powershell-yaml`\
+  \ module or convert YAML into a PowerShell object using `ConvertFrom-Json` in combination\
+  \ with a tool like `yq`."
 title: Working with YAML
 weight: 41
 ---

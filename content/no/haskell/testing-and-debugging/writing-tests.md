@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:29.537183-07:00
-description: "\xC5 skrive tester i Haskell handler om \xE5 sikre at funksjonene dine\
-  \ fungerer som forventet gjennom automatiserte sjekker. Programmerere gj\xF8r det\
-  \ for \xE5 fange\u2026"
+description: "Hvordan: Haskell st\xF8tter forskjellige testrammeverk, men to popul\xE6\
+  re er `Hspec` og `QuickCheck`. Hspec lar deg definere menneskelesbare spesifikasjoner\u2026"
 lastmod: '2024-03-13T22:44:40.845210-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive tester i Haskell handler om \xE5 sikre at funksjonene dine fungerer\
-  \ som forventet gjennom automatiserte sjekker."
+summary: "Haskell st\xF8tter forskjellige testrammeverk, men to popul\xE6re er `Hspec`\
+  \ og `QuickCheck`."
 title: Skrive tester
 weight: 36
 ---

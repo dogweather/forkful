@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:34:29.220521-07:00
-description: "Concatenating strings means sticking them end to end - \"hello\" + \"\
-  world\" becomes \"helloworld\". Programmers do this to build up text, like URLs,\
-  \ messages,\u2026"
+description: 'How to: Clojure makes string concatenation straightforward with the
+  `str` function. Let''s dive right in.'
 lastmod: '2024-03-13T22:44:59.738098-06:00'
 model: gpt-4-1106-preview
-summary: Concatenating strings means sticking them end to end - "hello" + "world"
-  becomes "helloworld".
+summary: Clojure makes string concatenation straightforward with the `str` function.
 title: Concatenating strings
 weight: 3
 ---

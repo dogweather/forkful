@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:47.346598-07:00
-description: "Assoziative Arrays oder, wie Rustaceaner sie nennen, \"Hash Maps\",\
-  \ sind Sammlungen, die Daten in Schl\xFCssel-Wert-Paaren speichern. Programmierer\
-  \ nutzen sie\u2026"
+description: "Wie geht das: In Rust bietet der Typ `HashMap` aus dem Modul `std::collections`\
+  \ die Funktionalit\xE4t von assoziativen Arrays. Hier ist, wie Sie damit\u2026"
 lastmod: '2024-03-13T22:44:53.665881-06:00'
 model: gpt-4-0125-preview
-summary: "Assoziative Arrays oder, wie Rustaceaner sie nennen, \"Hash Maps\", sind\
-  \ Sammlungen, die Daten in Schl\xFCssel-Wert-Paaren speichern."
+summary: "In Rust bietet der Typ `HashMap` aus dem Modul `std::collections` die Funktionalit\xE4\
+  t von assoziativen Arrays."
 title: Verwendung von assoziativen Arrays
 weight: 15
 ---

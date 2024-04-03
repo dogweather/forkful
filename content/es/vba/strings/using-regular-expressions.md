@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:48.877897-07:00
-description: "Las expresiones regulares (regex) en Visual Basic para Aplicaciones\
-  \ (VBA) ofrecen una manera poderosa de buscar, coincidir y manipular cadenas de\
-  \ texto.\u2026"
+description: "C\xF3mo hacerlo: Para usar expresiones regulares en VBA, primero necesitas\
+  \ habilitar la biblioteca de Microsoft VBScript Regular Expressions. En el editor\
+  \ de\u2026"
 lastmod: '2024-03-13T22:44:58.881616-06:00'
 model: gpt-4-0125-preview
-summary: Las expresiones regulares (regex) en Visual Basic para Aplicaciones (VBA)
-  ofrecen una manera poderosa de buscar, coincidir y manipular cadenas de texto.
+summary: Para usar expresiones regulares en VBA, primero necesitas habilitar la biblioteca
+  de Microsoft VBScript Regular Expressions.
 title: Usando expresiones regulares
 weight: 11
 ---

@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 18:02:58.961671-07:00
-description: "N\xE4r du startar ett nytt projekt skapar du en grund f\xF6r din kod.\
-  \ Programmerare g\xF6r detta f\xF6r att organisera och strukturera sitt arbete fr\xE5\
-  n b\xF6rjan."
+description: "Kom ig\xE5ng: S\xE5 h\xE4r s\xE4tter du upp en grundl\xE4ggande projektstruktur."
 lastmod: '2024-03-13T22:44:38.083216-06:00'
 model: gpt-4-1106-preview
-summary: "N\xE4r du startar ett nytt projekt skapar du en grund f\xF6r din kod."
+summary: "S\xE5 h\xE4r s\xE4tter du upp en grundl\xE4ggande projektstruktur."
 title: "Att p\xE5b\xF6rja ett nytt projekt"
 weight: 1
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-01-25 03:00:07.667826-07:00
-description: "Complex numbers extend the real numbers with an additional part, the\
-  \ imaginary unit 'i'. Programmers use them in various domains, including signal\u2026"
+description: "How to: Clojure provides built-in support for complex numbers through\
+  \ the `clojure.lang.Numbers` utility class. Use `complex` to create complex numbers\u2026"
 lastmod: '2024-03-13T22:44:59.739804-06:00'
 model: gpt-4-1106-preview
-summary: Complex numbers extend the real numbers with an additional part, the imaginary
-  unit 'i'.
+summary: Clojure provides built-in support for complex numbers through the `clojure.lang.Numbers`
+  utility class.
 title: Working with complex numbers
 weight: 14
 ---

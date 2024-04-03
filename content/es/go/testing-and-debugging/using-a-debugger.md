@@ -2,9 +2,8 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:55.899156-07:00
-description: "Go proporciona una facilidad incorporada para la depuraci\xF3n llamada\
-  \ `delve`. Es una herramienta de depuraci\xF3n completa que te permite ejecutar\
-  \ programas\u2026"
+description: "C\xF3mo hacerlo: Go proporciona una facilidad incorporada para la depuraci\xF3\
+  n llamada `delve`. Es una herramienta de depuraci\xF3n completa que te permite\u2026"
 lastmod: '2024-03-13T22:44:58.472623-06:00'
 model: gpt-4-0125-preview
 summary: "Go proporciona una facilidad incorporada para la depuraci\xF3n llamada `delve`."

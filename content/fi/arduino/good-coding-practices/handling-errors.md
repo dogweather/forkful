@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 00:50:07.844104-07:00
-description: "Virheiden k\xE4sittely ohjelmissasi nappaa kiinni ne odottamattomat\
-  \ asiat, jotka yritt\xE4v\xE4t kaataa suunnitelmasi. Sen tarkoitus on est\xE4\xE4\
-  \ Arduinoasi\u2026"
+description: "Kuinka: Kuvitellaan, ett\xE4 Arduinosi lukee sensorilta, joka voi ajoittain\
+  \ tuottaa mittausalueen ulkopuolisia arvoja. T\xE4ss\xE4 on tapa, jolla voisit k\xE4\
+  sitell\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.831109-06:00'
 model: gpt-4-1106-preview
-summary: "Virheiden k\xE4sittely ohjelmissasi nappaa kiinni ne odottamattomat asiat,\
-  \ jotka yritt\xE4v\xE4t kaataa suunnitelmasi."
+summary: "Kuvitellaan, ett\xE4 Arduinosi lukee sensorilta, joka voi ajoittain tuottaa\
+  \ mittausalueen ulkopuolisia arvoja."
 title: "Virheiden k\xE4sittely"
 weight: 16
 ---

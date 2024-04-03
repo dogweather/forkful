@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:43:35.444701-07:00
-description: "Py\xF6rist\xE4minen tarkoittaa arvon s\xE4\xE4t\xE4mist\xE4 l\xE4himp\xE4\
-  \xE4n kokonaislukuun tai m\xE4\xE4riteltyyn tarkkuuteen. Kehitt\xE4j\xE4t tekev\xE4\
-  t n\xE4in yksinkertaistaakseen,\u2026"
+description: "Kuinka: C++ tarjoaa useita tapoja py\xF6rist\xE4\xE4 numeroita, kuten\
+  \ `floor()`, `ceil()` ja `round()`."
 lastmod: '2024-03-13T22:44:56.860064-06:00'
 model: gpt-4-0125-preview
-summary: "Py\xF6rist\xE4minen tarkoittaa arvon s\xE4\xE4t\xE4mist\xE4 l\xE4himp\xE4\
-  \xE4n kokonaislukuun tai m\xE4\xE4riteltyyn tarkkuuteen."
+summary: "C++ tarjoaa useita tapoja py\xF6rist\xE4\xE4 numeroita, kuten `floor()`,\
+  \ `ceil()` ja `round()`."
 title: "Numerojen py\xF6rist\xE4minen"
 weight: 13
 ---

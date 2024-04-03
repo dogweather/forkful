@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:54.802832-07:00
-description: "Arrays associativos s\xE3o como apertos de m\xE3o secretos para dados\
-  \ em Lua\u2014em vez de apenas n\xFAmeros se alinhando obedientemente por \xEDndice,\
-  \ suas chaves podem\u2026"
+description: "Como fazer: Em Lua, criar um array associativo (ou uma tabela, em linguagem\
+  \ Lua) \xE9 simples. Voc\xEA abandona os \xEDndices num\xE9ricos usuais por chaves\
+  \ de sua\u2026"
 lastmod: '2024-03-13T22:44:46.702207-06:00'
 model: gpt-4-0125-preview
-summary: "Arrays associativos s\xE3o como apertos de m\xE3o secretos para dados em\
-  \ Lua\u2014em vez de apenas n\xFAmeros se alinhando obedientemente por \xEDndice,\
-  \ suas chaves podem ser o que voc\xEA quiser, tornando a recupera\xE7\xE3o de dados\
-  \ uma brisa."
+summary: "Em Lua, criar um array associativo (ou uma tabela, em linguagem Lua) \xE9\
+  \ simples."
 title: Usando arrays associativos
 weight: 15
 ---

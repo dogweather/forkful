@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:55:08.929178-07:00
-description: "L\xE4sning av en textfil inneb\xE4r att h\xE4mta data fr\xE5n en fil\
-  \ som \xE4r lagrad p\xE5 disken. Programmerare g\xF6r detta f\xF6r att bearbeta,\
-  \ visa eller transformera\u2026"
+description: "Hur man g\xF6r: F\xF6r att l\xE4sa en textfil i TypeScript kan du anv\xE4\
+  nda den inbyggda `fs`-modulen i Node.js. Se exempel nedan."
 lastmod: '2024-03-13T22:44:37.673404-06:00'
 model: gpt-4-1106-preview
-summary: "L\xE4sning av en textfil inneb\xE4r att h\xE4mta data fr\xE5n en fil som\
-  \ \xE4r lagrad p\xE5 disken."
+summary: "F\xF6r att l\xE4sa en textfil i TypeScript kan du anv\xE4nda den inbyggda\
+  \ `fs`-modulen i Node.js."
 title: "L\xE4sa en textfil"
 weight: 22
 ---

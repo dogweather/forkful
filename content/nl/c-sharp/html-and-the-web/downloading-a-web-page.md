@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:09.575384-07:00
-description: "Het downloaden van een webpagina betekent het ophalen van de ruwe HTML-inhoud\
-  \ van het internet met behulp van code. Programmeurs doen dit om gegevens te\u2026"
+description: 'Hoe te: C# maakt het eenvoudig om een webpagina te downloaden met de
+  `HttpClient` klasse. Hier volgt een snel voorbeeld.'
 lastmod: '2024-03-13T22:44:50.808742-06:00'
 model: gpt-4-0125-preview
-summary: Het downloaden van een webpagina betekent het ophalen van de ruwe HTML-inhoud
-  van het internet met behulp van code.
+summary: C# maakt het eenvoudig om een webpagina te downloaden met de `HttpClient`
+  klasse.
 title: Een webpagina downloaden
 weight: 42
 ---

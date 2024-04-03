@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:17.796189-07:00
-description: "Buscar y reemplazar texto en C implica identificar subcadenas espec\xED\
-  ficas dentro de una cadena m\xE1s grande y sustituirlas con diferentes subcadenas.\
-  \ Los\u2026"
+description: "C\xF3mo hacerlo: C no viene con funciones integradas para realizar b\xFA\
+  squeda y reemplazo directamente en cadenas. Sin embargo, puedes lograr esto combinando\u2026"
 lastmod: '2024-03-13T22:44:59.528843-06:00'
 model: gpt-4-0125-preview
-summary: "Buscar y reemplazar texto en C implica identificar subcadenas espec\xED\
-  ficas dentro de una cadena m\xE1s grande y sustituirlas con diferentes subcadenas."
+summary: "C no viene con funciones integradas para realizar b\xFAsqueda y reemplazo\
+  \ directamente en cadenas."
 title: Buscando y reemplazando texto
 weight: 10
 ---

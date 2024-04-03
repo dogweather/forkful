@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:29.826256-07:00
-description: "Att skriva om en str\xE4ng med stora bokst\xE4ver i Visual Basic for\
-  \ Applications (VBA) inneb\xE4r att konvertera det f\xF6rsta tecknet i varje ord\
-  \ i en str\xE4ng till\u2026"
+description: "Hur man g\xF6r: VBA har inte en inbyggd funktion specifikt f\xF6r att\
+  \ skriva om varje ord i en str\xE4ng med stora bokst\xE4ver, som vissa andra programmeringsspr\xE5\
+  k\u2026"
 lastmod: '2024-03-13T22:44:37.724749-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva om en str\xE4ng med stora bokst\xE4ver i Visual Basic for Applications\
-  \ (VBA) inneb\xE4r att konvertera det f\xF6rsta tecknet i varje ord i en str\xE4\
-  ng till versal, samtidigt som man ser till att resten \xE4r i gemen."
+summary: "VBA har inte en inbyggd funktion specifikt f\xF6r att skriva om varje ord\
+  \ i en str\xE4ng med stora bokst\xE4ver, som vissa andra programmeringsspr\xE5k\
+  \ g\xF6r."
 title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---

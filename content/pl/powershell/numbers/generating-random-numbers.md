@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 20:34:55.714227-07:00
-description: "Generowanie losowych liczb w PowerShellu polega na tworzeniu nieprzewidywalnych\
-  \ warto\u015Bci liczbowych w okre\u015Blonym zakresie. Programi\u015Bci wykorzystuj\u0105\
-  \ t\u0119\u2026"
+description: "Jak: PowerShell oferuje prost\u0105 metod\u0119 generowania losowych\
+  \ liczb za pomoc\u0105 cmdletu `Get-Random`. Ten cmdlet mo\u017Ce produkowa\u0107\
+  \ losowe liczby w domy\u015Blnym\u2026"
 lastmod: '2024-03-13T22:44:35.623781-06:00'
 model: gpt-4-0125-preview
-summary: "Generowanie losowych liczb w PowerShellu polega na tworzeniu nieprzewidywalnych\
-  \ warto\u015Bci liczbowych w okre\u015Blonym zakresie."
+summary: "PowerShell oferuje prost\u0105 metod\u0119 generowania losowych liczb za\
+  \ pomoc\u0105 cmdletu `Get-Random`."
 title: Generowanie liczb losowych
 weight: 12
 ---

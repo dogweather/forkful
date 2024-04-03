@@ -1,13 +1,14 @@
 ---
 date: 2024-01-26 01:07:28.410978-07:00
-description: "La journalisation, dans son essence, est la pratique d'enregistrer des\
-  \ \xE9v\xE9nements et des donn\xE9es provenant d'une application logicielle vers\
-  \ une sortie\u2026"
+description: "Comment proc\xE9der : En Kotlin, la journalisation peut \xEAtre r\xE9\
+  alis\xE9e en utilisant la fonction int\xE9gr\xE9e `println()` pour des cas simples,\
+  \ ou avec des\u2026"
 lastmod: '2024-03-13T22:44:57.746757-06:00'
 model: gpt-4-1106-preview
-summary: "La journalisation, dans son essence, est la pratique d'enregistrer des \xE9\
-  v\xE9nements et des donn\xE9es provenant d'une application logicielle vers une sortie\
-  \ externe, comme un fichier ou une console."
+summary: "En Kotlin, la journalisation peut \xEAtre r\xE9alis\xE9e en utilisant la\
+  \ fonction int\xE9gr\xE9e `println()` pour des cas simples, ou avec des biblioth\xE8\
+  ques plus sophistiqu\xE9es comme SLF4J avec Logback ou Log4j pour des besoins avanc\xE9\
+  s."
 title: Journalisation
 weight: 17
 ---

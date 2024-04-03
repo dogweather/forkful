@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:29:59.001384-07:00
-description: "Praca z XML w Elixirze oznacza analizowanie, tworzenie i manipulowanie\
-  \ danymi XML. Programi\u015Bci cz\u0119sto zajmuj\u0105 si\u0119 XML, poniewa\u017C\
-  \ jest on powszechnie\u2026"
+description: "Jak to zrobi\u0107: Elixir standardowo nie zawiera analizy XML w swojej\
+  \ bibliotece standardowej. Popularnym wyborem jest SweetXML. Oto jak z niego korzysta\u0107\
+  ."
 lastmod: '2024-03-13T22:44:35.069695-06:00'
 model: gpt-4-0125-preview
-summary: Praca z XML w Elixirze oznacza analizowanie, tworzenie i manipulowanie danymi
-  XML.
+summary: Elixir standardowo nie zawiera analizy XML w swojej bibliotece standardowej.
 title: Praca z XML
 weight: 40
 ---

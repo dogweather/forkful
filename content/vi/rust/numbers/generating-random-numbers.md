@@ -2,18 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:41.909350-07:00
-description: "Vi\u1EC7c t\u1EA1o ra c\xE1c s\u1ED1 ng\u1EABu nhi\xEAn trong Rust li\xEA\
-  n quan \u0111\u1EBFn vi\u1EC7c s\u1EED d\u1EE5ng c\xE1c th\u01B0 vi\u1EC7n \u0111\
-  \u1EC3 t\u1EA1o ra c\xE1c gi\xE1 tr\u1ECB s\u1ED1 kh\xF4ng d\u1EF1 \u0111o\xE1n\
-  \ tr\u01B0\u1EDBc, \u0111i\u1EC1u n\xE0y l\xE0 kh\xF4ng th\u1EC3 thi\u1EBFu\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Rust d\u1EF1a v\xE0o c\xE1c crates b\xEAn ngo\xE0\
+  i \u0111\u1EC3 t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn, v\u1EDBi `rand` l\xE0 c\xE1\
+  i \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng ph\u1ED5 bi\u1EBFn nh\u1EA5t. \u0110\u1EC3\
+  \ b\u1EAFt \u0111\u1EA7u t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn, b\u1EA1n s\u1EBD\u2026"
 lastmod: '2024-03-13T22:44:36.370016-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c t\u1EA1o ra c\xE1c s\u1ED1 ng\u1EABu nhi\xEAn trong Rust li\xEA\
-  n quan \u0111\u1EBFn vi\u1EC7c s\u1EED d\u1EE5ng c\xE1c th\u01B0 vi\u1EC7n \u0111\
-  \u1EC3 t\u1EA1o ra c\xE1c gi\xE1 tr\u1ECB s\u1ED1 kh\xF4ng d\u1EF1 \u0111o\xE1n\
-  \ tr\u01B0\u1EDBc, \u0111i\u1EC1u n\xE0y l\xE0 kh\xF4ng th\u1EC3 thi\u1EBFu cho\
-  \ c\xE1c nhi\u1EC7m v\u1EE5 t\u1EEB m\xE3 ho\xE1 v\xE0 m\xF4 ph\u1ECFng \u0111\u1EBF\
-  n tr\xF2 ch\u01A1i v\xE0 thu\u1EADt to\xE1n ng\u1EABu nhi\xEAn."
+summary: "Rust d\u1EF1a v\xE0o c\xE1c crates b\xEAn ngo\xE0i \u0111\u1EC3 t\u1EA1\
+  o s\u1ED1 ng\u1EABu nhi\xEAn, v\u1EDBi `rand` l\xE0 c\xE1i \u0111\u01B0\u1EE3c s\u1EED\
+  \ d\u1EE5ng ph\u1ED5 bi\u1EBFn nh\u1EA5t."
 title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 weight: 12
 ---

@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:14.085304-07:00
-description: "V\xE9rifier si un r\xE9pertoire existe dans le Fish Shell permet aux\
-  \ scripts de prendre des d\xE9cisions bas\xE9es sur la pr\xE9sence ou l'absence\
-  \ de structures de\u2026"
+description: "Comment faire : Le Fish Shell utilise la commande `test` pour v\xE9\
+  rifier les types de fichiers et leurs caract\xE9ristiques, y compris si une cible\
+  \ est un\u2026"
 lastmod: '2024-03-13T22:44:58.340004-06:00'
 model: gpt-4-0125-preview
-summary: "V\xE9rifier si un r\xE9pertoire existe dans le Fish Shell permet aux scripts\
-  \ de prendre des d\xE9cisions bas\xE9es sur la pr\xE9sence ou l'absence de structures\
-  \ de r\xE9pertoires, facilitant des t\xE2ches comme les op\xE9rations conditionnelles\
-  \ sur les fichiers, les journaux d'activit\xE9 ou la configuration de l'environnement."
+summary: "Le Fish Shell utilise la commande `test` pour v\xE9rifier les types de fichiers\
+  \ et leurs caract\xE9ristiques, y compris si une cible est un r\xE9pertoire."
 title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---

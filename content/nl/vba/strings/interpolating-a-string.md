@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:33.239657-07:00
-description: "String interpolation in Visual Basic for Applications (VBA) verwijst\
-  \ naar het proces van het inbedden van variabelen of uitdrukkingen binnen een\u2026"
+description: "Hoe: In tegenstelling tot sommige talen die ingebouwde stringinterpolatie\
+  \ hebben, vereist VBA een meer handmatige aanpak die typisch gebruikmaakt van de\u2026"
 lastmod: '2024-03-13T22:44:50.622274-06:00'
 model: gpt-4-0125-preview
-summary: String interpolation in Visual Basic for Applications (VBA) verwijst naar
-  het proces van het inbedden van variabelen of uitdrukkingen binnen een stringliteral,
-  wat dynamische stringvorming mogelijk maakt.
+summary: In tegenstelling tot sommige talen die ingebouwde stringinterpolatie hebben,
+  vereist VBA een meer handmatige aanpak die typisch gebruikmaakt van de `&` operator
+  of de `Format` functie voor het inbedden van variabelen in strings.
 title: Een string interpoleren
 weight: 8
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:53.670203-07:00
-description: "Tablice asocjacyjne, czyli to, co Rustaceanie nazywaj\u0105 \"mapami\
-  \ hash\", to kolekcje przechowuj\u0105ce dane w parach klucz-warto\u015B\u0107.\
-  \ Programi\u015Bci u\u017Cywaj\u0105 ich do\u2026"
+description: "Jak to zrobi\u0107: W Rust, typ `HashMap` z modu\u0142u `std::collections`\
+  \ zapewnia funkcjonalno\u015B\u0107 tablic asocjacyjnych. Oto jak mo\u017Cesz z\
+  \ nich korzysta\u0107."
 lastmod: '2024-03-13T22:44:35.177166-06:00'
 model: gpt-4-0125-preview
-summary: "Tablice asocjacyjne, czyli to, co Rustaceanie nazywaj\u0105 \"mapami hash\"\
-  , to kolekcje przechowuj\u0105ce dane w parach klucz-warto\u015B\u0107."
+summary: "W Rust, typ `HashMap` z modu\u0142u `std::collections` zapewnia funkcjonalno\u015B\
+  \u0107 tablic asocjacyjnych."
 title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---

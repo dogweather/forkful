@@ -3,13 +3,12 @@ changelog:
 - 2024-01-28, dogweather, reviewed and added links
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 23:01:48.206450-07:00
-description: "Code in Funktionen zu organisieren bedeutet, Teile eines Skripts zu\
-  \ b\xFCndeln, um spezifische Aufgaben zu erledigen. Wir tun dies, da es den Code\
-  \ leichter\u2026"
+description: "Wie geht das: In Fish schreibst du eine Funktion mit dem Schl\xFCsselwort\
+  \ `function`, gibst ihr einen Namen und beendest sie mit `end`. Hier ist eine\u2026"
 lastmod: '2024-03-13T22:44:54.314990-06:00'
 model: gpt-4-0125-preview
-summary: "Code in Funktionen zu organisieren bedeutet, Teile eines Skripts zu b\xFC\
-  ndeln, um spezifische Aufgaben zu erledigen."
+summary: "In Fish schreibst du eine Funktion mit dem Schl\xFCsselwort `function`,\
+  \ gibst ihr einen Namen und beendest sie mit `end`."
 title: Organisation von Code in Funktionen
 weight: 18
 ---

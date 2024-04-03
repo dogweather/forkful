@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:26.018827-07:00
-description: "Virheiden k\xE4sittely Go:ssa tarkoittaa virhetilanteiden tunnistamista\
-  \ ja niihin vastaamista ohjelmassasi. Ohjelmoijat k\xE4ytt\xE4v\xE4t virheenk\xE4\
-  sittely\xE4\u2026"
+description: "Kuinka: Go:ssa virheenk\xE4sittely hallitaan nimenomaan `error` -tyypin\
+  \ avulla. Funktiot, jotka voivat ep\xE4onnistua, palauttavat virheen viimeisen\xE4\
+  \u2026"
 lastmod: '2024-03-13T22:44:56.058676-06:00'
 model: gpt-4-0125-preview
-summary: "Virheiden k\xE4sittely Go:ssa tarkoittaa virhetilanteiden tunnistamista\
-  \ ja niihin vastaamista ohjelmassasi."
+summary: "Go:ssa virheenk\xE4sittely hallitaan nimenomaan `error` -tyypin avulla."
 title: "Virheiden k\xE4sittely"
 weight: 16
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:38:50.779159-07:00
-description: "N\xFAmeros complexos ampliam os n\xFAmeros reais com uma parte adicional,\
-  \ a unidade imagin\xE1ria 'i'. Programadores os utilizam em v\xE1rias \xE1reas,\
-  \ incluindo\u2026"
+description: "Como fazer: Clojure oferece suporte embutido para n\xFAmeros complexos\
+  \ atrav\xE9s da classe de utilidade `clojure.lang.Numbers`. Use `complex` para criar\u2026"
 lastmod: '2024-03-13T22:44:46.190881-06:00'
 model: gpt-4-0125-preview
-summary: "N\xFAmeros complexos ampliam os n\xFAmeros reais com uma parte adicional,\
-  \ a unidade imagin\xE1ria 'i'."
+summary: "Clojure oferece suporte embutido para n\xFAmeros complexos atrav\xE9s da\
+  \ classe de utilidade `clojure.lang.Numbers`."
 title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---

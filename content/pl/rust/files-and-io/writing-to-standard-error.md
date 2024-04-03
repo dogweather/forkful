@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:53.367298-07:00
-description: "Pisanie do standardowego b\u0142\u0119du (stderr) w Rust oznacza kierowanie\
-  \ komunikat\xF3w o b\u0142\u0119dach i diagnostyki na konsol\u0119 oddzielnie od\
-  \ standardowego wyj\u015Bcia\u2026"
+description: "Jak to zrobi\u0107: Rust oferuje prosty spos\xF3b na pisanie do stderr\
+  \ za pomoc\u0105 makra `eprintln!`, podobnie jak `println!` jest u\u017Cywane dla\
+  \ stdout. Oto\u2026"
 lastmod: '2024-03-13T22:44:35.202592-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie do standardowego b\u0142\u0119du (stderr) w Rust oznacza kierowanie\
-  \ komunikat\xF3w o b\u0142\u0119dach i diagnostyki na konsol\u0119 oddzielnie od\
-  \ standardowego wyj\u015Bcia (stdout)."
+summary: "Rust oferuje prosty spos\xF3b na pisanie do stderr za pomoc\u0105 makra\
+  \ `eprintln!`, podobnie jak `println!` jest u\u017Cywane dla stdout."
 title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---

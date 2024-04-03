@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:35:53.597743-07:00
-description: "Concatenar strings significa juntar duas ou mais sequ\xEAncias de caracteres\
-  \ para formar uma nova string. Programadores fazem isso para construir mensagens,\u2026"
+description: "Como Fazer: Swift torna a concatena\xE7\xE3o de strings direta e descomplicada.\
+  \ Vamos ver alguns exemplos."
 lastmod: '2024-03-13T22:44:46.912904-06:00'
 model: gpt-4-1106-preview
-summary: "Concatenar strings significa juntar duas ou mais sequ\xEAncias de caracteres\
-  \ para formar uma nova string."
+summary: "Swift torna a concatena\xE7\xE3o de strings direta e descomplicada."
 title: Concatenando strings
 weight: 3
 ---

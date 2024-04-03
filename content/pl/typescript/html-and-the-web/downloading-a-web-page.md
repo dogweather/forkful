@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:44:53.198425-07:00
-description: "Pobieranie strony internetowej to proces \u015Bci\u0105gania jej danych.\
-  \ Programi\u015Bci robi\u0105 to, aby przetworzy\u0107, przeszuka\u0107 lub wyszuka\u0107\
-  \ konkretn\u0105 tre\u015B\u0107."
+description: "How to: (Jak to zrobi\u0107:) Do pobierania stron internetowych w TypeScript\
+  \ u\u017Cyjemy biblioteki `axios`. Oto przyk\u0142ad."
 lastmod: '2024-03-13T22:44:35.137740-06:00'
 model: gpt-4-1106-preview
-summary: "Pobieranie strony internetowej to proces \u015Bci\u0105gania jej danych."
+summary: "Do pobierania stron internetowych w TypeScript u\u017Cyjemy biblioteki `axios`."
 title: Pobieranie strony internetowej
 weight: 42
 ---

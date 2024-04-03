@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 18:03:11.058697-07:00
-description: "Iniziare un nuovo progetto in Elixir significa creare una base da cui\
-  \ far evolvere il tuo codice. I programmatori aprono nuovi progetti per organizzare\u2026"
+description: 'Come Fare: Per iniziare, avrai bisogno di Mix, lo strumento di build
+  che viene con Elixir. Ecco i passaggi chiave.'
 lastmod: '2024-03-13T22:44:43.084287-06:00'
 model: gpt-4-1106-preview
-summary: Iniziare un nuovo progetto in Elixir significa creare una base da cui far
-  evolvere il tuo codice.
+summary: Per iniziare, avrai bisogno di Mix, lo strumento di build che viene con Elixir.
 title: Avvio di un nuovo progetto
 weight: 1
 ---

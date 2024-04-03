@@ -3,14 +3,12 @@ changelog:
 - 2024-03-25, dogweather, edited and tested
 - 2024-03-25, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:02:29.358527-07:00
-description: "Att versalisera en str\xE4ng betyder vanligtvis att omvandla det f\xF6\
-  rsta tecknet i en str\xE4ng till versal (stort bokstav) och resten till gemener\
-  \ (sm\xE5\u2026"
+description: "Hur: Ruby tillhandah\xE5ller [rakv\xE4gade metoder f\xF6r str\xE4ngmanipulering](https://docs.ruby-lang.org/en/3.3/String.html),\
+  \ inklusive kapitalisering."
 lastmod: '2024-03-25T19:21:58.553462-06:00'
 model: gpt-4-0125-preview
-summary: "Att versalisera en str\xE4ng betyder vanligtvis att omvandla det f\xF6rsta\
-  \ tecknet i en str\xE4ng till versal (stort bokstav) och resten till gemener (sm\xE5\
-  \ bokst\xE4ver)."
+summary: "Ruby tillhandah\xE5ller [rakv\xE4gade metoder f\xF6r str\xE4ngmanipulering](https://docs.ruby-lang.org/en/3.3/String.html),\
+  \ inklusive kapitalisering."
 title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---

@@ -1,13 +1,11 @@
 ---
 date: 2024-01-20 18:02:45.037749-07:00
-description: "HTTP-Anfragen mit Basic Authentication erm\xF6glichen den Zugang zu\
-  \ gesicherten Ressourcen, indem sie Benutzername und Passwort in Base64-kodierter\
-  \ Form mit\u2026"
+description: "So geht's: Mit Rust gestaltet sich der Versand von HTTP-Requests mit\
+  \ Basic Authentication mithilfe der `reqwest`-Bibliothek unkompliziert. Hier ein\u2026"
 lastmod: '2024-03-13T22:44:53.672598-06:00'
 model: gpt-4-1106-preview
-summary: "HTTP-Anfragen mit Basic Authentication erm\xF6glichen den Zugang zu gesicherten\
-  \ Ressourcen, indem sie Benutzername und Passwort in Base64-kodierter Form mit der\
-  \ Anfrage mitsenden."
+summary: Mit Rust gestaltet sich der Versand von HTTP-Requests mit Basic Authentication
+  mithilfe der `reqwest`-Bibliothek unkompliziert.
 title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---

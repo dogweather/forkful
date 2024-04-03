@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:18.950037-07:00
-description: "Scrivere test nella programmazione implica la creazione di piccoli pezzi\
-  \ di codice separati per verificare automaticamente che diverse parti della tua\u2026"
+description: "Come fare: Lua, essendo un linguaggio di scripting leggero eppure potente,\
+  \ non include un framework di test incorporato. Tuttavia, librerie di terze parti\u2026"
 lastmod: '2024-03-13T22:44:43.561100-06:00'
 model: gpt-4-0125-preview
-summary: Scrivere test nella programmazione implica la creazione di piccoli pezzi
-  di codice separati per verificare automaticamente che diverse parti della tua applicazione
-  funzionino come previsto.
+summary: Lua, essendo un linguaggio di scripting leggero eppure potente, non include
+  un framework di test incorporato.
 title: Scrivere test
 weight: 36
 ---

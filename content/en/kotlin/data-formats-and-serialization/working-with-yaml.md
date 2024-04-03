@@ -1,12 +1,13 @@
 ---
 date: 2024-02-03 19:03:28.960635-07:00
-description: "YAML, which stands for YAML Ain't Markup Language, is a highly readable\
-  \ data serialization format often used for configuration files, data storage, and\u2026"
+description: "How to: Kotlin does not have built-in support for YAML parsing and serialization,\
+  \ but you can utilize popular third-party libraries such as `snakeyaml`\u2026"
 lastmod: '2024-03-13T22:45:00.067575-06:00'
 model: gpt-4-0125-preview
-summary: YAML, which stands for YAML Ain't Markup Language, is a highly readable data
-  serialization format often used for configuration files, data storage, and inter-process
-  messaging.
+summary: Kotlin does not have built-in support for YAML parsing and serialization,
+  but you can utilize popular third-party libraries such as `snakeyaml` (for general
+  YAML parsing) and `kotlinx.serialization` (with a YAML format extension) to work
+  with YAML files.
 title: Working with YAML
 weight: 41
 ---

@@ -2,18 +2,17 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:07:18.069347-07:00
-description: "YAML, vi\u1EBFt t\u1EAFt c\u1EE7a \"YAML Ain't Markup Language,\" l\xE0\
-  \ m\u1ED9t chu\u1EA9n h\xF3a d\u1EEF li\u1EC7u d\u1EC5 \u0111\u1ECDc cho con ng\u01B0\
-  \u1EDDi, th\u01B0\u1EDDng \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 t\u1EA1\
-  o c\xE1c t\u1EC7p c\u1EA5u h\xECnh v\xE0 trao \u0111\u1ED5i d\u1EEF\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: M\u1EB7c d\xF9 Google Apps Script (GAS) kh\xF4\
+  ng h\u1ED7 tr\u1EE3 tr\u1EF1c ti\u1EBFp vi\u1EC7c ph\xE2n t\xEDch c\xFA ph\xE1p\
+  \ hay chu\u1EA9n h\xF3a YAML, b\u1EA1n c\xF3 th\u1EC3 thao t\xE1c v\u1EDBi d\u1EEF\
+  \ li\u1EC7u YAML b\u1EB1ng\u2026"
 lastmod: '2024-03-13T22:44:36.068049-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, vi\u1EBFt t\u1EAFt c\u1EE7a \"YAML Ain't Markup Language,\" l\xE0\
-  \ m\u1ED9t chu\u1EA9n h\xF3a d\u1EEF li\u1EC7u d\u1EC5 \u0111\u1ECDc cho con ng\u01B0\
-  \u1EDDi, th\u01B0\u1EDDng \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 t\u1EA1\
-  o c\xE1c t\u1EC7p c\u1EA5u h\xECnh v\xE0 trao \u0111\u1ED5i d\u1EEF li\u1EC7u gi\u1EEF\
-  a c\xE1c ng\xF4n ng\u1EEF v\u1EDBi c\xE1c c\u1EA5u tr\xFAc d\u1EEF li\u1EC7u kh\xE1\
-  c nhau."
+summary: "M\u1EB7c d\xF9 Google Apps Script (GAS) kh\xF4ng h\u1ED7 tr\u1EE3 tr\u1EF1\
+  c ti\u1EBFp vi\u1EC7c ph\xE2n t\xEDch c\xFA ph\xE1p hay chu\u1EA9n h\xF3a YAML,\
+  \ b\u1EA1n c\xF3 th\u1EC3 thao t\xE1c v\u1EDBi d\u1EEF li\u1EC7u YAML b\u1EB1ng\
+  \ c\xE1ch s\u1EED d\u1EE5ng th\u01B0 vi\u1EC7n JavaScript ho\u1EB7c vi\u1EBFt c\xE1\
+  c h\xE0m ph\xE2n t\xEDch c\xFA ph\xE1p t\xF9y ch\u1EC9nh."
 title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 weight: 41
 ---

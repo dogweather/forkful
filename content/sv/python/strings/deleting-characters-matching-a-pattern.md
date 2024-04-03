@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:42:48.189724-07:00
-description: "Att radera tecken som matchar ett m\xF6nster inneb\xE4r att man filtrerar\
-  \ bort specifika karakt\xE4rer fr\xE5n en str\xE4ng baserat p\xE5 definierade kriterier.\u2026"
+description: "Hur g\xF6r man: Vi anv\xE4nder Pythons `re`-modul f\xF6r att matcha\
+  \ och ta bort tecken med regulj\xE4ra uttryck."
 lastmod: '2024-03-13T22:44:37.467553-06:00'
 model: gpt-4-1106-preview
-summary: "Att radera tecken som matchar ett m\xF6nster inneb\xE4r att man filtrerar\
-  \ bort specifika karakt\xE4rer fr\xE5n en str\xE4ng baserat p\xE5 definierade kriterier."
+summary: "Vi anv\xE4nder Pythons `re`-modul f\xF6r att matcha och ta bort tecken med\
+  \ regulj\xE4ra uttryck."
 title: "Ta bort tecken som matchar ett m\xF6nster"
 weight: 5
 ---

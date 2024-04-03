@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:18.793089-07:00
-description: "Het berekenen van een datum in de toekomst of het verleden gaat over\
-  \ het vinden van de datum v\xF3\xF3r of na een bepaalde periode. Programmeurs doen\
-  \ dit voor\u2026"
+description: 'Hoe te: In Bash kun je het `date` commando gebruiken samen met de `-d`
+  vlag om datums te manipuleren. Hier is hoe.'
 lastmod: '2024-03-13T22:44:50.997003-06:00'
 model: gpt-4-0125-preview
-summary: "Het berekenen van een datum in de toekomst of het verleden gaat over het\
-  \ vinden van de datum v\xF3\xF3r of na een bepaalde periode."
+summary: In Bash kun je het `date` commando gebruiken samen met de `-d` vlag om datums
+  te manipuleren.
 title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---

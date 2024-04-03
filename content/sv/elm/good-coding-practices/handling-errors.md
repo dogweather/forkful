@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 00:51:36.490459-07:00
-description: "Att hantera fel inneb\xE4r att skriva kod som kan f\xF6rutse och hantera\
-  \ n\xE4r saker g\xE5r fel. Programmerare g\xF6r det f\xF6r att f\xF6rhindra krascher,\
-  \ skydda\u2026"
+description: "Hur man g\xF6r: Elms k\xE4rnfilosofi \xE4r Inga K\xF6rtidsundantag.\
+  \ S\xE5, Elm utnyttjar sitt typsystem med typer som `Maybe` och `Result` f\xF6r\
+  \ att hantera fel. F\xF6r\u2026"
 lastmod: '2024-03-13T22:44:37.836958-06:00'
 model: gpt-4-1106-preview
-summary: "Att hantera fel inneb\xE4r att skriva kod som kan f\xF6rutse och hantera\
-  \ n\xE4r saker g\xE5r fel."
+summary: "Elms k\xE4rnfilosofi \xE4r Inga K\xF6rtidsundantag."
 title: Hantering av fel
 weight: 16
 ---

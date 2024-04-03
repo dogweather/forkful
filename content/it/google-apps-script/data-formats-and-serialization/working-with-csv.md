@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:56.553234-07:00
-description: "Lavorare con file CSV (Comma-Separated Values - Valori Separati da Virgola)\
-  \ in Google Apps Script comporta la lettura, modifica e scrittura di file di\u2026"
+description: 'Come fare: #.'
 lastmod: '2024-03-13T22:44:42.981275-06:00'
 model: gpt-4-0125-preview
-summary: Lavorare con file CSV (Comma-Separated Values - Valori Separati da Virgola)
-  in Google Apps Script comporta la lettura, modifica e scrittura di file di testo
-  semplice dove ogni riga rappresenta un record di dati con valori separati da virgole.
+summary: '#.'
 title: Lavorare con CSV
 weight: 37
 ---

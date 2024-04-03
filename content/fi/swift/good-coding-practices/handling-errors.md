@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 00:58:06.022705-07:00
-description: "Virheenk\xE4sittely Swiftiss\xE4 tarkoittaa ongelmien ennakointia ja\
-  \ ratkaisemista, jotka ilmaantuvat koodisi ajon aikana. Teemme niin kaaoksen\u2026"
+description: "Kuinka toimia: Swift k\xE4ytt\xE4\xE4 virheenk\xE4sittelyyn `do`, `try`\
+  \ ja `catch` -lohkoja. Katsotaanpa esimerkki\xE4."
 lastmod: '2024-03-13T22:44:56.914019-06:00'
 model: gpt-4-1106-preview
-summary: "Virheenk\xE4sittely Swiftiss\xE4 tarkoittaa ongelmien ennakointia ja ratkaisemista,\
-  \ jotka ilmaantuvat koodisi ajon aikana."
+summary: "Swift k\xE4ytt\xE4\xE4 virheenk\xE4sittelyyn `do`, `try` ja `catch` -lohkoja."
 title: "Virheiden k\xE4sittely"
 weight: 16
 ---

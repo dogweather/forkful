@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:24.469038-07:00
-description: "Att skriva en textfil i Rust inneb\xE4r att skapa, skriva till och potentiellt\
-  \ l\xE4gga till data i en fil p\xE5 filsystemet. Programmerare utf\xF6r denna operation\u2026"
+description: "Hur man g\xF6r: Rusts standardbibliotek erbjuder robusta verktyg f\xF6\
+  r filmanipulering, fr\xE4mst inkapslade inom modulerna `std::fs` och `std::io`.\
+  \ H\xE4r \xE4r ett\u2026"
 lastmod: '2024-03-13T22:44:37.717803-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva en textfil i Rust inneb\xE4r att skapa, skriva till och potentiellt\
-  \ l\xE4gga till data i en fil p\xE5 filsystemet."
+summary: "Rusts standardbibliotek erbjuder robusta verktyg f\xF6r filmanipulering,\
+  \ fr\xE4mst inkapslade inom modulerna `std::fs` och `std::io`."
 title: Att skriva en textfil
 weight: 24
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:47.755635-07:00
-description: "Hakemiston olemassaolon tarkistaminen Kotlinissa tarkoittaa hakemiston\
-  \ l\xE4sn\xE4olon varmistamista m\xE4\xE4ritetyss\xE4 polussa. Ohjelmoijat suorittavat\
-  \ t\xE4m\xE4n\u2026"
+description: "Miten: Kotlin, joka toimii JVM:n p\xE4\xE4ll\xE4, hy\xF6dynt\xE4\xE4\
+  \ Java File API:a tiedosto-operaatioihin, tehden hakemiston olemassaolon tarkistuksista\
+  \ suoraviivaisia.\u2026"
 lastmod: '2024-03-13T22:44:56.545820-06:00'
 model: gpt-4-0125-preview
-summary: "Hakemiston olemassaolon tarkistaminen Kotlinissa tarkoittaa hakemiston l\xE4\
-  sn\xE4olon varmistamista m\xE4\xE4ritetyss\xE4 polussa."
+summary: "Kotlin, joka toimii JVM:n p\xE4\xE4ll\xE4, hy\xF6dynt\xE4\xE4 Java File\
+  \ API:a tiedosto-operaatioihin, tehden hakemiston olemassaolon tarkistuksista suoraviivaisia."
 title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---

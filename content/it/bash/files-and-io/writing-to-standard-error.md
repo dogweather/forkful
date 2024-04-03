@@ -2,13 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:14.302404-07:00
-description: "Scrivere su standard error (stderr) in Bash consiste nel dirigere messaggi\
-  \ di errore o qualsiasi output diagnostico importante separatamente dall'output\u2026"
+description: 'Come fare: In Bash, si usa `>&2` per reindirizzare l''output su stderr.
+  Ecco un esempio basilare.'
 lastmod: '2024-03-13T22:44:43.616033-06:00'
 model: gpt-4-0125-preview
-summary: Scrivere su standard error (stderr) in Bash consiste nel dirigere messaggi
-  di errore o qualsiasi output diagnostico importante separatamente dall'output standard
-  (stdout).
+summary: In Bash, si usa `>&2` per reindirizzare l'output su stderr.
 title: Scrivere sull'errore standard
 weight: 25
 ---

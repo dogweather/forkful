@@ -2,14 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:01.330893-07:00
-description: "Het genereren van willekeurige getallen in programmeren gaat over het\
-  \ produceren van onvoorspelbare numerieke waarden die gebruikt kunnen worden voor\
-  \ een\u2026"
+description: "Hoe: Lua biedt ingebouwde ondersteuning voor het genereren van willekeurige\
+  \ getallen via de `math.random` functie. Deze functie kan op meerdere manieren\u2026"
 lastmod: '2024-03-13T22:44:50.933353-06:00'
 model: gpt-4-0125-preview
-summary: Het genereren van willekeurige getallen in programmeren gaat over het produceren
-  van onvoorspelbare numerieke waarden die gebruikt kunnen worden voor een verscheidenheid
-  aan doeleinden zoals simulaties, spellen of beveiligingstoepassingen.
+summary: Lua biedt ingebouwde ondersteuning voor het genereren van willekeurige getallen
+  via de `math.random` functie.
 title: Willekeurige getallen genereren
 weight: 12
 ---

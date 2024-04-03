@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:42.941084-07:00
-description: "Los arreglos asociativos, o lo que los Rust\xE1ceos llaman \"mapas hash\"\
-  , son colecciones que almacenan datos en pares clave-valor. Los programadores los\u2026"
+description: "C\xF3mo hacerlo: En Rust, el tipo `HashMap` del m\xF3dulo `std::collections`\
+  \ proporciona la funcionalidad de los arreglos asociativos. As\xED es c\xF3mo puedes\u2026"
 lastmod: '2024-03-13T22:44:58.839491-06:00'
 model: gpt-4-0125-preview
-summary: "Los arreglos asociativos, o lo que los Rust\xE1ceos llaman \"mapas hash\"\
-  , son colecciones que almacenan datos en pares clave-valor."
+summary: "En Rust, el tipo `HashMap` del m\xF3dulo `std::collections` proporciona\
+  \ la funcionalidad de los arreglos asociativos."
 title: Uso de matrices asociativas
 weight: 15
 ---

@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 01:11:19.459170-07:00
-description: "Code in Funktionen zu organisieren bedeutet, Ihr Skript in mundgerechte\
-  \ St\xFCcke zu zerlegen \u2013 denken Sie an funktionale LEGO-Bl\xF6cke. Wir machen\
-  \ das f\xFCr\u2026"
+description: 'Wie geht das: .'
 lastmod: '2024-03-13T22:44:54.020745-06:00'
 model: gpt-4-1106-preview
-summary: "Code in Funktionen zu organisieren bedeutet, Ihr Skript in mundgerechte\
-  \ St\xFCcke zu zerlegen \u2013 denken Sie an funktionale LEGO-Bl\xF6cke."
+summary: .
 title: Code in Funktionen organisieren
 weight: 18
 ---

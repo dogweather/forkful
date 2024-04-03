@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:32.422500-07:00
-description: "Die Arbeit mit CSV-Dateien (Comma-Separated Values, Werte getrennt durch\
-  \ Kommas) beinhaltet das Parsen und Generieren strukturierter Daten aus\u2026"
+description: "Wie: In Swift gibt es keine native Unterst\xFCtzung f\xFCr das direkte\
+  \ Parsen von CSV-Dateien, aber man kann CSV-Daten verarbeiten, indem man die\u2026"
 lastmod: '2024-03-13T22:44:54.246942-06:00'
 model: gpt-4-0125-preview
-summary: "Die Arbeit mit CSV-Dateien (Comma-Separated Values, Werte getrennt durch\
-  \ Kommas) beinhaltet das Parsen und Generieren strukturierter Daten aus Textdateien,\
-  \ bei denen jede Zeile einen Datensatz repr\xE4sentiert und jeder Datensatz aus\
-  \ durch Kommas getrennten Feldern besteht."
+summary: "In Swift gibt es keine native Unterst\xFCtzung f\xFCr das direkte Parsen\
+  \ von CSV-Dateien, aber man kann CSV-Daten verarbeiten, indem man die `String`-Methoden\
+  \ zum Teilen der Inhalte verwendet oder auf Drittanbieter-Bibliotheken wie SwiftCSV\
+  \ f\xFCr einen einfacheren Ansatz zur\xFCckgreift."
 title: Arbeiten mit CSV
 weight: 37
 ---

@@ -1,11 +1,12 @@
 ---
 date: 2024-02-03 19:02:41.389086-07:00
-description: "Checking if a directory exists in the filesystem is essential for managing\
-  \ file structures from within your Swift applications. This task enables\u2026"
+description: "How to: Swift's Foundation framework provides the `FileManager` class,\
+  \ which has methods to manage the file system. You can use `FileManager` to check\
+  \ if\u2026"
 lastmod: '2024-03-13T22:45:00.408998-06:00'
 model: gpt-4-0125-preview
-summary: Checking if a directory exists in the filesystem is essential for managing
-  file structures from within your Swift applications.
+summary: Swift's Foundation framework provides the `FileManager` class, which has
+  methods to manage the file system.
 title: Checking if a directory exists
 weight: 20
 ---

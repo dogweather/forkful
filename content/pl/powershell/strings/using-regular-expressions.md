@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:50.252319-07:00
-description: "Wyra\u017Cenia regularne (regex) to sekwencje znak\xF3w formuj\u0105\
-  ce wzorzec wyszukiwania, g\u0142\xF3wnie u\u017Cywane do wyszukiwania ci\u0105g\xF3\
-  w znak\xF3w i ich manipulacji.\u2026"
+description: "Jak u\u017Cywa\u0107: W PowerShell mo\u017Cna u\u017Cywa\u0107 operator\xF3\
+  w `-match`, `-replace` i `-split`, mi\u0119dzy innymi, do wykonywania dzia\u0142\
+  a\u0144 z wyra\u017Ceniami regularnymi.\u2026"
 lastmod: '2024-03-13T22:44:35.617748-06:00'
 model: gpt-4-0125-preview
-summary: "Wyra\u017Cenia regularne (regex) to sekwencje znak\xF3w formuj\u0105ce wzorzec\
-  \ wyszukiwania, g\u0142\xF3wnie u\u017Cywane do wyszukiwania ci\u0105g\xF3w znak\xF3\
-  w i ich manipulacji."
+summary: "W PowerShell mo\u017Cna u\u017Cywa\u0107 operator\xF3w `-match`, `-replace`\
+  \ i `-split`, mi\u0119dzy innymi, do wykonywania dzia\u0142a\u0144 z wyra\u017C\
+  eniami regularnymi."
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---

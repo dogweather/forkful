@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:51.702813-07:00
-description: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w w Google Apps Script\
-  \ dotyczy eliminacji niepotrzebnych znak\xF3w cudzys\u0142owia, kt\xF3re mog\u0105\
-  \ otacza\u0107 dane Twojego ci\u0105gu,\u2026"
+description: "Jak to zrobi\u0107: Google Apps Script nie odbiega daleko od standardowych\
+  \ praktyk JavaScript, je\u015Bli chodzi o obs\u0142ug\u0119 ci\u0105g\xF3w znak\xF3\
+  w i ich manipulacj\u0119. Aby\u2026"
 lastmod: '2024-03-13T22:44:34.888566-06:00'
 model: gpt-4-0125-preview
-summary: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w w Google Apps Script\
-  \ dotyczy eliminacji niepotrzebnych znak\xF3w cudzys\u0142owia, kt\xF3re mog\u0105\
-  \ otacza\u0107 dane Twojego ci\u0105gu, zazwyczaj pochodz\u0105cych z parsowanych\
-  \ obiekt\xF3w JSON, wprowadzanych przez u\u017Cytkownika lub wyekstrahowanych danych."
+summary: "Google Apps Script nie odbiega daleko od standardowych praktyk JavaScript,\
+  \ je\u015Bli chodzi o obs\u0142ug\u0119 ci\u0105g\xF3w znak\xF3w i ich manipulacj\u0119\
+  ."
 title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:47.486041-07:00
-description: "Calcolare una data nel futuro o nel passato comporta la determinazione\
-  \ di una data specifica aggiungendo o sottraendo un certo numero di giorni, mesi\
-  \ o\u2026"
+description: "Come fare: Sebbene la libreria standard C non fornisca funzioni dirette\
+  \ per l'aritmetica delle date, \xE8 possibile manipolare le date utilizzando la\u2026"
 lastmod: '2024-03-13T22:44:44.014855-06:00'
 model: gpt-4-0125-preview
-summary: Calcolare una data nel futuro o nel passato comporta la determinazione di
-  una data specifica aggiungendo o sottraendo un certo numero di giorni, mesi o anni
-  da una data data.
+summary: "Sebbene la libreria standard C non fornisca funzioni dirette per l'aritmetica\
+  \ delle date, \xE8 possibile manipolare le date utilizzando la libreria `time.h`,\
+  \ lavorando specificamente con il tipo di dati `time_t` e `struct tm`."
 title: Calcolo di una data futura o passata
 weight: 26
 ---

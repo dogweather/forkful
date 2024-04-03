@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 03:41:31.811737-07:00
-description: "Rimuovere le virgolette da una stringa in Rust significa eliminare caratteri\
-  \ di virgolette extra non necessari che potrebbero essere avvolti attorno ai\u2026"
+description: 'Come fare: .'
 lastmod: '2024-03-13T22:44:43.206168-06:00'
 model: gpt-4-0125-preview
-summary: Rimuovere le virgolette da una stringa in Rust significa eliminare caratteri
-  di virgolette extra non necessari che potrebbero essere avvolti attorno ai tuoi
-  dati di testo.
+summary: .
 title: Rimuovere le virgolette da una stringa
 weight: 9
 ---

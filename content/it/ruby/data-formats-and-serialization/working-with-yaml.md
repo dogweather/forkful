@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:19.122221-07:00
-description: "YAML, che sta per YAML Ain't Markup Language, \xE8 ampiamente utilizzato\
-  \ in Ruby per file di configurazione e serializzazione dei dati grazie al suo formato\u2026"
+description: "Come fare: Ruby include una libreria integrata chiamata Psych per l'analisi\
+  \ e l'emissione di YAML. Per utilizzarla, devi prima richiedere la libreria\u2026"
 lastmod: '2024-03-13T22:44:44.071436-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, che sta per YAML Ain't Markup Language, \xE8 ampiamente utilizzato\
-  \ in Ruby per file di configurazione e serializzazione dei dati grazie al suo formato\
-  \ facilmente leggibile."
+summary: Ruby include una libreria integrata chiamata Psych per l'analisi e l'emissione
+  di YAML.
 title: Lavorare con YAML
 weight: 41
 ---

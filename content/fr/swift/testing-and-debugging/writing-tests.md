@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:12.877505-07:00
-description: "\xC9crire des tests en Swift implique de cr\xE9er et d'ex\xE9cuter du\
-  \ code qui v\xE9rifie la justesse d'autres unit\xE9s de code dans votre application.\
-  \ Les programmeurs\u2026"
+description: "Comment faire : Swift prend en charge les tests via son framework XCTest,\
+  \ qui est int\xE9gr\xE9 dans Xcode. Vous pouvez \xE9crire des tests unitaires pour\
+  \ v\xE9rifier\u2026"
 lastmod: '2024-03-13T22:44:58.226452-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire des tests en Swift implique de cr\xE9er et d'ex\xE9cuter du code\
-  \ qui v\xE9rifie la justesse d'autres unit\xE9s de code dans votre application."
+summary: "Swift prend en charge les tests via son framework XCTest, qui est int\xE9\
+  gr\xE9 dans Xcode."
 title: "R\xE9daction de tests"
 weight: 36
 ---

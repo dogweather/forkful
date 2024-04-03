@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:19.415342-07:00
-description: "Uzyskanie bie\u017C\u0105cej daty w Elm oznacza pobranie bie\u017C\u0105\
-  cej daty kalendarzowej z systemu. Robimy to, aby oznacza\u0107 czas wydarze\u0144\
-  , planowa\u0107 zadania lub \u015Bledzi\u0107\u2026"
+description: "Jak to zrobi\u0107: Elm obs\u0142uguje daty za pomoc\u0105 modu\u0142\
+  u `Time`. Otrzymasz bie\u017C\u0105cy czas jako znacznik czasu POSIX, a nast\u0119\
+  pnie przekonwertujesz go na dat\u0119."
 lastmod: '2024-03-13T22:44:35.332407-06:00'
 model: gpt-4-0125-preview
-summary: "Uzyskanie bie\u017C\u0105cej daty w Elm oznacza pobranie bie\u017C\u0105\
-  cej daty kalendarzowej z systemu."
+summary: "Elm obs\u0142uguje daty za pomoc\u0105 modu\u0142u `Time`."
 title: Pobieranie aktualnej daty
 weight: 29
 ---

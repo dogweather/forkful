@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:38:15.380096-07:00
-description: "Das Umwandeln eines Strings in Kleinbuchstaben bedeutet, jeden Gro\xDF\
-  buchstaben in seinem \xC4quivalent in Kleinbuchstaben zu \xE4ndern. Es wird oft\
-  \ verwendet, um\u2026"
+description: 'How to: Elixir macht die Konvertierung mit der `String.downcase/1` Funktion
+  kinderleicht. Hier ist ein Beispiel.'
 lastmod: '2024-03-13T22:44:53.449882-06:00'
 model: gpt-4-1106-preview
-summary: "Das Umwandeln eines Strings in Kleinbuchstaben bedeutet, jeden Gro\xDFbuchstaben\
-  \ in seinem \xC4quivalent in Kleinbuchstaben zu \xE4ndern."
+summary: Elixir macht die Konvertierung mit der `String.downcase/1` Funktion kinderleicht.
 title: Umformung eines Strings in Kleinbuchstaben
 weight: 4
 ---

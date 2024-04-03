@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 20:33:48.512838-07:00
-description: "Generar n\xFAmeros aleatorios en Haskell implica crear n\xFAmeros que\
-  \ son impredecibles seg\xFAn los est\xE1ndares humanos. Esto es cr\xEDtico en escenarios\
-  \ que van\u2026"
+description: "C\xF3mo hacerlo: Para generar n\xFAmeros aleatorios en Haskell, uno\
+  \ t\xEDpicamente usa el paquete `random`, que es parte de la Plataforma Haskell.\
+  \ Aqu\xED tienes una\u2026"
 lastmod: '2024-03-13T22:44:59.115097-06:00'
 model: gpt-4-0125-preview
-summary: "Generar n\xFAmeros aleatorios en Haskell implica crear n\xFAmeros que son\
-  \ impredecibles seg\xFAn los est\xE1ndares humanos."
+summary: "Para generar n\xFAmeros aleatorios en Haskell, uno t\xEDpicamente usa el\
+  \ paquete `random`, que es parte de la Plataforma Haskell."
 title: "Generaci\xF3n de n\xFAmeros aleatorios"
 weight: 12
 ---

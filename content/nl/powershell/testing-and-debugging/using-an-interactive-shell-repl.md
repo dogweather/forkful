@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:05.383777-07:00
-description: "De interactieve shell, of Lees-Evalueer-Print Lus (REPL), stelt je in\
-  \ staat om PowerShell-commando's te typen en onmiddellijke feedback te krijgen.\u2026"
+description: 'Hoe: Start PowerShell en je bevindt je in de REPL. Probeer de `Get-Date`
+  Cmdlet.'
 lastmod: '2024-03-13T22:44:51.031102-06:00'
 model: gpt-4-0125-preview
-summary: De interactieve shell, of Lees-Evalueer-Print Lus (REPL), stelt je in staat
-  om PowerShell-commando's te typen en onmiddellijke feedback te krijgen.
+summary: Start PowerShell en je bevindt je in de REPL.
 title: Het gebruik van een interactieve shell (REPL)
 weight: 34
 ---

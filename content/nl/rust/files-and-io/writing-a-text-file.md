@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:01.638036-07:00
-description: "Schrijven naar een tekstbestand is het opslaan van gegevens als leesbare\
-  \ tekens in een bestand op uw opslagapparaat. Programmeurs doen dit om gegevens\u2026"
+description: 'Hoe: In Rust gebruik je de modules `std::fs::File` en `std::io::Write`
+  om naar bestanden te schrijven.'
 lastmod: '2024-03-13T22:44:50.612610-06:00'
 model: gpt-4-0125-preview
-summary: Schrijven naar een tekstbestand is het opslaan van gegevens als leesbare
-  tekens in een bestand op uw opslagapparaat.
+summary: In Rust gebruik je de modules `std::fs::File` en `std::io::Write` om naar
+  bestanden te schrijven.
 title: Een tekstbestand schrijven
 weight: 24
 ---

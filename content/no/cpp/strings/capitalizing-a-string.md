@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:10.353005-07:00
-description: "Det \xE5 kapitalisere en tekststreng inneb\xE6rer \xE5 konvertere det\
-  \ f\xF8rste tegnet i hvert ord i strengen til store bokstaver hvis det er i sm\xE5\
-  \ bokstaver,\u2026"
+description: "Hvordan: I C++ kan du kapitalisere en tekststreng ved \xE5 bruke standardbiblioteket\
+  \ uten behov for tredjepartsbiblioteker. Men, for mer komplekse eller\u2026"
 lastmod: '2024-03-13T22:44:41.082810-06:00'
 model: gpt-4-0125-preview
-summary: "Det \xE5 kapitalisere en tekststreng inneb\xE6rer \xE5 konvertere det f\xF8\
-  rste tegnet i hvert ord i strengen til store bokstaver hvis det er i sm\xE5 bokstaver,\
-  \ samtidig som de gjenv\xE6rende tegnene forblir uendret."
+summary: "I C++ kan du kapitalisere en tekststreng ved \xE5 bruke standardbiblioteket\
+  \ uten behov for tredjepartsbiblioteker."
 title: Sette stor bokstav i en streng
 weight: 2
 ---

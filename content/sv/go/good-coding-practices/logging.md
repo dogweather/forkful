@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:54.991907-07:00
-description: "Loggning inom programutveckling \xE4r processen att registrera information\
-  \ om ett programs utf\xF6rande, avsedd att sp\xE5ra dess beteende och diagnostisera\u2026"
+description: "Hur man g\xF6r: I Go kan loggning implementeras med hj\xE4lp av standardbibliotekets\
+  \ paket `log`. Detta paket tillhandah\xE5ller enkla loggningsfunktioner, s\xE5som\u2026"
 lastmod: '2024-03-13T22:44:37.399181-06:00'
 model: gpt-4-0125-preview
-summary: "Loggning inom programutveckling \xE4r processen att registrera information\
-  \ om ett programs utf\xF6rande, avsedd att sp\xE5ra dess beteende och diagnostisera\
-  \ problem."
+summary: "I Go kan loggning implementeras med hj\xE4lp av standardbibliotekets paket\
+  \ `log`."
 title: Loggning
 weight: 17
 ---

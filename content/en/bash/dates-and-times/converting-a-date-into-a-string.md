@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:35:51.086129-07:00
-description: "Converting a date to a string means turning it into text that represents\
-  \ the date. We do this to format dates for humans to read or to prepare them for\u2026"
+description: 'How to: Below are examples of how to convert a date to a string in Bash.'
 lastmod: '2024-03-13T22:45:00.254836-06:00'
 model: gpt-4-1106-preview
-summary: Converting a date to a string means turning it into text that represents
-  the date.
+summary: Below are examples of how to convert a date to a string in Bash.
 title: Converting a date into a string
 weight: 28
 ---

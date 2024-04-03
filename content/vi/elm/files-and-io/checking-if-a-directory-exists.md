@@ -2,16 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:33.292662-07:00
-description: "Ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1\
-  i kh\xF4ng c\xF3 ngh\u0129a l\xE0 x\xE1c nh\u1EADn li\u1EC7u m\u1ED9t \u0111\u01B0\
-  \u1EDDng d\u1EABn th\u01B0 m\u1EE5c c\u1EE5 th\u1EC3 c\xF3 m\u1EB7t trong h\u1EC7\
-  \ th\u1ED1ng t\u1EC7p hay kh\xF4ng. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Elm l\xE0 m\u1ED9t ng\xF4n ng\u1EEF l\u1EAD\
+  p tr\xECnh web front-end, v\xEC v\u1EADy n\xF3 kh\xF4ng c\xF3 quy\u1EC1n truy c\u1EAD\
+  p tr\u1EF1c ti\u1EBFp v\xE0o h\u1EC7 th\u1ED1ng t\u1EC7p. Tuy nhi\xEAn, b\xECnh\
+  \ th\u01B0\u1EDDng b\u1EA1n s\u1EBD\u2026"
 lastmod: '2024-03-13T22:44:36.563751-06:00'
 model: gpt-4-0125-preview
-summary: "Ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4\
-  ng c\xF3 ngh\u0129a l\xE0 x\xE1c nh\u1EADn li\u1EC7u m\u1ED9t \u0111\u01B0\u1EDD\
-  ng d\u1EABn th\u01B0 m\u1EE5c c\u1EE5 th\u1EC3 c\xF3 m\u1EB7t trong h\u1EC7 th\u1ED1\
-  ng t\u1EC7p hay kh\xF4ng."
+summary: "Elm l\xE0 m\u1ED9t ng\xF4n ng\u1EEF l\u1EADp tr\xECnh web front-end, v\xEC\
+  \ v\u1EADy n\xF3 kh\xF4ng c\xF3 quy\u1EC1n truy c\u1EADp tr\u1EF1c ti\u1EBFp v\xE0\
+  o h\u1EC7 th\u1ED1ng t\u1EC7p."
 title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
 weight: 20
 ---

@@ -2,16 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:47.401884-07:00
-description: "S\u1ED1 ph\u1EE9c m\u1EDF r\u1ED9ng h\u1EC7 th\u1ED1ng s\u1ED1 c\u1EE7\
-  a ch\xFAng ta \u0111\u1EC3 bao g\u1ED3m c\u0103n b\u1EADc hai c\u1EE7a c\xE1c s\u1ED1\
-  \ \xE2m, n\u01A1i \u0111\u01A1n v\u1ECB '\u1EA3o' i b\u1EB1ng c\u0103n b\u1EADc\
-  \ hai c\u1EE7a -1. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng ch\xFAng\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: H\xE3y \u0111\u1ECBnh ngh\u0129a m\u1ED9t class\
+  \ s\u1ED1 ph\u1EE9c c\u01A1 b\u1EA3n trong Kotlin."
 lastmod: '2024-03-13T22:44:36.593510-06:00'
 model: gpt-4-0125-preview
-summary: "S\u1ED1 ph\u1EE9c m\u1EDF r\u1ED9ng h\u1EC7 th\u1ED1ng s\u1ED1 c\u1EE7a\
-  \ ch\xFAng ta \u0111\u1EC3 bao g\u1ED3m c\u0103n b\u1EADc hai c\u1EE7a c\xE1c s\u1ED1\
-  \ \xE2m, n\u01A1i \u0111\u01A1n v\u1ECB '\u1EA3o' i b\u1EB1ng c\u0103n b\u1EADc\
-  \ hai c\u1EE7a -1."
+summary: "H\xE3y \u0111\u1ECBnh ngh\u0129a m\u1ED9t class s\u1ED1 ph\u1EE9c c\u01A1\
+  \ b\u1EA3n trong Kotlin."
 title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 weight: 14
 ---

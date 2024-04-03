@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:58:54.933514-07:00
-description: "Rechercher et remplacer du texte, c'est comme jouer \xE0 cache-cache\
-  \ avec des mots pour les transformer ou les corriger. Les programmeurs le font pour\
-  \ mettre\u2026"
+description: "How to: En TypeScript, on utilise souvent `.replace()` pour manipuler\
+  \ les cha\xEEnes de caract\xE8res. Voyons un exemple ."
 lastmod: '2024-03-13T22:44:57.420755-06:00'
 model: gpt-4-1106-preview
-summary: "Rechercher et remplacer du texte, c'est comme jouer \xE0 cache-cache avec\
-  \ des mots pour les transformer ou les corriger."
+summary: "En TypeScript, on utilise souvent `.replace()` pour manipuler les cha\xEE\
+  nes de caract\xE8res."
 title: Recherche et remplacement de texte
 weight: 10
 ---

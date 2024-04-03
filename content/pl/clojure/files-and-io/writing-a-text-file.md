@@ -2,15 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:55.389469-07:00
-description: "Pisanie pliku tekstowego w Clojure polega na tworzeniu lub modyfikowaniu\
-  \ plik\xF3w w celu zapisania danych poza aplikacj\u0105, umo\u017Cliwiaj\u0105c\
-  \ trwa\u0142o\u015B\u0107,\u2026"
+description: "Jak to zrobi\u0107: #."
 lastmod: '2024-03-13T22:44:35.015521-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie pliku tekstowego w Clojure polega na tworzeniu lub modyfikowaniu\
-  \ plik\xF3w w celu zapisania danych poza aplikacj\u0105, umo\u017Cliwiaj\u0105c\
-  \ trwa\u0142o\u015B\u0107, konfiguracj\u0119, logowanie lub komunikacj\u0119 mi\u0119\
-  dzyprocesow\u0105."
+summary: '#.'
 title: Pisanie pliku tekstowego
 weight: 24
 ---

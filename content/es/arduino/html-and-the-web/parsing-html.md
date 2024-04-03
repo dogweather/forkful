@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:30.880280-07:00
-description: "Analizar HTML en proyectos Arduino trata sobre extraer informaci\xF3\
-  n de p\xE1ginas web. Los programadores hacen esto para permitir que sus dispositivos\
-  \ Arduino\u2026"
+description: "C\xF3mo hacerlo: Analizar HTML en Arduino generalmente demanda bibliotecas\
+  \ de huella m\xEDnima debido a los limitados recursos del dispositivo. Una opci\xF3\
+  n\u2026"
 lastmod: '2024-03-13T22:44:59.331956-06:00'
 model: gpt-4-0125-preview
-summary: "Analizar HTML en proyectos Arduino trata sobre extraer informaci\xF3n de\
-  \ p\xE1ginas web."
+summary: "Analizar HTML en Arduino generalmente demanda bibliotecas de huella m\xED\
+  nima debido a los limitados recursos del dispositivo."
 title: Analizando HTML
 weight: 43
 ---

@@ -2,16 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:40.337399-07:00
-description: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong Ruby bao g\u1ED3\
-  m vi\u1EC7c t\u1EA1o ra nh\u1EEFng s\u1ED1 kh\xF4ng th\u1EC3 d\u1EF1 \u0111o\xE1\
-  n m\u1ED9t c\xE1ch logic, \u0111i\u1EC1u n\xE0y r\u1EA5t quan tr\u1ECDng cho c\xE1\
-  c k\u1ECBch b\u1EA3n nh\u01B0 m\xF4 ph\u1ECFng, m\xE3\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Ruby cung c\u1EA5p m\u1ED9t s\u1ED1 ph\u01B0\
+  \u01A1ng ph\xE1p \u0111\u1EC3 t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn, ch\u1EE7 y\u1EBF\
+  u th\xF4ng qua l\u1EDBp `Random`. #."
 lastmod: '2024-03-13T22:44:37.331771-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong Ruby bao g\u1ED3m vi\u1EC7\
-  c t\u1EA1o ra nh\u1EEFng s\u1ED1 kh\xF4ng th\u1EC3 d\u1EF1 \u0111o\xE1n m\u1ED9\
-  t c\xE1ch logic, \u0111i\u1EC1u n\xE0y r\u1EA5t quan tr\u1ECDng cho c\xE1c k\u1ECB\
-  ch b\u1EA3n nh\u01B0 m\xF4 ph\u1ECFng, m\xE3 h\xF3a, v\xE0 tr\xF2 ch\u01A1i."
+summary: "Ruby cung c\u1EA5p m\u1ED9t s\u1ED1 ph\u01B0\u01A1ng ph\xE1p \u0111\u1EC3\
+  \ t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn, ch\u1EE7 y\u1EBFu th\xF4ng qua l\u1EDBp `Random`."
 title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 weight: 12
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:37:01.088210-07:00
-description: "Converting a date into a string means representing a specific moment\
-  \ in a human-readable format. Programmers do it to display dates to users or to\u2026"
+description: 'How to: In Kotlin, you can convert a `Date` to a `String` using the
+  `SimpleDateFormat` class. Let''s roll some code.'
 lastmod: '2024-03-13T22:45:00.059429-06:00'
 model: gpt-4-1106-preview
-summary: Converting a date into a string means representing a specific moment in a
-  human-readable format.
+summary: In Kotlin, you can convert a `Date` to a `String` using the `SimpleDateFormat`
+  class.
 title: Converting a date into a string
 weight: 28
 ---

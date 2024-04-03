@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:21:06.635750-07:00
-description: "TOML, die Abk\xFCrzung f\xFCr Toms Offensichtliche, Minimale Sprache,\
-  \ ist eine Daten-Serialisierungssprache. Elm-Programmierer verwenden sie zur Verwaltung\
-  \ von\u2026"
+description: "Wie: Elm hat keinen eingebauten TOML-Parser, aber Sie k\xF6nnen eine\
+  \ Interoperabilit\xE4t mit JavaScript nutzen oder ein Community-Paket verwenden.\
+  \ So k\xF6nnte\u2026"
 lastmod: '2024-03-13T22:44:53.828868-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, die Abk\xFCrzung f\xFCr Toms Offensichtliche, Minimale Sprache, ist\
-  \ eine Daten-Serialisierungssprache."
+summary: "Elm hat keinen eingebauten TOML-Parser, aber Sie k\xF6nnen eine Interoperabilit\xE4\
+  t mit JavaScript nutzen oder ein Community-Paket verwenden."
 title: Arbeiten mit TOML
 weight: 39
 ---

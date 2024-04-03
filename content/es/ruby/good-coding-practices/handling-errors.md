@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 00:56:21.556543-07:00
-description: "El manejo de errores es esperar lo inesperado en el c\xF3digo \u2014\
-  \ gestionar los errores y problemas con gracia sin que se caiga la aplicaci\xF3\
-  n. Los\u2026"
+description: "C\xF3mo hacerlo: Ruby utiliza `begin`, `rescue`, `ensure` y `end` para\
+  \ manejar errores. Envuelves el c\xF3digo de riesgo entre `begin` y `end`. Si ocurre\
+  \ un\u2026"
 lastmod: '2024-03-13T22:44:59.598722-06:00'
 model: gpt-4-1106-preview
-summary: "El manejo de errores es esperar lo inesperado en el c\xF3digo \u2014 gestionar\
-  \ los errores y problemas con gracia sin que se caiga la aplicaci\xF3n."
+summary: Ruby utiliza `begin`, `rescue`, `ensure` y `end` para manejar errores.
 title: Manejo de errores
 weight: 16
 ---

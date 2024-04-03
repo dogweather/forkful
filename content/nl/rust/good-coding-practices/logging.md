@@ -2,13 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:29.151930-07:00
-description: "Loggen is als het bijhouden van een dagboek voor je applicatie; het\
-  \ is de praktijk van het vastleggen van gebeurtenissen, fouten en andere relevante\u2026"
+description: "Hoe te: Laten we een basis logscenario in Rust opzetten met behulp van\
+  \ de `log` crate, die een logging facade biedt, en `env_logger`, een logimplementatie\u2026"
 lastmod: '2024-03-13T22:44:50.600683-06:00'
 model: gpt-4-0125-preview
-summary: Loggen is als het bijhouden van een dagboek voor je applicatie; het is de
-  praktijk van het vastleggen van gebeurtenissen, fouten en andere relevante gegevens
-  tijdens runtime.
+summary: Laten we een basis logscenario in Rust opzetten met behulp van de `log` crate,
+  die een logging facade biedt, en `env_logger`, een logimplementatie voor de `log`
+  crate.
 title: Logboekregistratie
 weight: 17
 ---

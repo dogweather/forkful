@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:47.976522-07:00
-description: "W rozwoju oprogramowania cz\u0119sto potrzebne jest sprawdzenie, czy\
-  \ katalog istnieje, aby unika\u0107 b\u0142\u0119d\xF3w podczas pr\xF3b dost\u0119\
-  pu, odczytu lub zapisu plik\xF3w. Rust,\u2026"
+description: "Jak to zrobi\u0107: Standardowa biblioteka Rusta (`std`) zawiera funkcjonalno\u015B\
+  \u0107 umo\u017Cliwiaj\u0105c\u0105 sprawdzenie istnienia katalogu za pomoc\u0105\
+  \ modu\u0142\xF3w\u2026"
 lastmod: '2024-03-13T22:44:35.200601-06:00'
 model: gpt-4-0125-preview
-summary: "W rozwoju oprogramowania cz\u0119sto potrzebne jest sprawdzenie, czy katalog\
-  \ istnieje, aby unika\u0107 b\u0142\u0119d\xF3w podczas pr\xF3b dost\u0119pu, odczytu\
-  \ lub zapisu plik\xF3w."
+summary: "Standardowa biblioteka Rusta (`std`) zawiera funkcjonalno\u015B\u0107 umo\u017C\
+  liwiaj\u0105c\u0105 sprawdzenie istnienia katalogu za pomoc\u0105 modu\u0142\xF3\
+  w `std::path::Path` i `std::fs`."
 title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---

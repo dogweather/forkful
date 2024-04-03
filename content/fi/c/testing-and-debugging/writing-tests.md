@@ -2,12 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:46.195393-07:00
-description: "Testien kirjoittaminen C-kielell\xE4 tarkoittaa pienempien, apuohjelmien\
-  \ tai funktioiden luomista, jotka automaattisesti varmistavat koodisi toimivuuden.\u2026"
+description: "Miten: Vaikka C:ss\xE4 ei ole sis\xE4\xE4nrakennettua testauskehyst\xE4\
+  \ kuten joissakin muissa kieliss\xE4, voit silti kirjoittaa tehokkaita testej\xE4\
+  \ k\xE4ytt\xE4en\u2026"
 lastmod: '2024-03-13T22:44:57.044261-06:00'
 model: gpt-4-0125-preview
-summary: "Testien kirjoittaminen C-kielell\xE4 tarkoittaa pienempien, apuohjelmien\
-  \ tai funktioiden luomista, jotka automaattisesti varmistavat koodisi toimivuuden."
+summary: "Vaikka C:ss\xE4 ei ole sis\xE4\xE4nrakennettua testauskehyst\xE4 kuten joissakin\
+  \ muissa kieliss\xE4, voit silti kirjoittaa tehokkaita testej\xE4 k\xE4ytt\xE4en\
+  \ assert.h-tiedostoa yksinkertaisiin v\xE4itt\xE4miin tai integroida kolmannen osapuolen\
+  \ kehyksi\xE4, kuten CUnit tai Unity, rakenteellisempaan testaukseen."
 title: Testien kirjoittaminen
 weight: 36
 ---

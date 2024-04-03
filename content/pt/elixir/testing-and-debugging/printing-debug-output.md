@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:52:25.227074-07:00
-description: "Imprimir sa\xEDdas de depura\xE7\xE3o \xE9 como espiar dentro do seu\
-  \ c\xF3digo enquanto ele executa, para ver o valor das vari\xE1veis e o fluxo do\
-  \ programa. Os\u2026"
+description: "Como Fazer: Para imprimir valores durante a execu\xE7\xE3o de um programa\
+  \ Elixir, voc\xEA pode usar a fun\xE7\xE3o `IO.inspect/2`, que retorna o valor inspecionado,\u2026"
 lastmod: '2024-03-13T22:44:46.240737-06:00'
 model: gpt-4-1106-preview
-summary: "Imprimir sa\xEDdas de depura\xE7\xE3o \xE9 como espiar dentro do seu c\xF3\
-  digo enquanto ele executa, para ver o valor das vari\xE1veis e o fluxo do programa."
+summary: "Para imprimir valores durante a execu\xE7\xE3o de um programa Elixir, voc\xEA\
+  \ pode usar a fun\xE7\xE3o `IO.inspect/2`, que retorna o valor inspecionado, permitindo\
+  \ que a inspe\xE7\xE3o n\xE3o interrompa o fluxo do seu c\xF3digo."
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---

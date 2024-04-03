@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:13:17.962964-07:00
-description: "Gli array associativi, o oggetti in TypeScript, ti permettono di usare\
-  \ stringhe (o chiavi) per accedere a coppie di valori. I programmatori li usano\
-  \ per\u2026"
+description: "Come fare: Creare e usare array associativi in TypeScript \xE8 semplice.\
+  \ Ecco una guida di base."
 lastmod: '2024-03-13T22:44:43.168971-06:00'
 model: gpt-4-0125-preview
-summary: Gli array associativi, o oggetti in TypeScript, ti permettono di usare stringhe
-  (o chiavi) per accedere a coppie di valori.
+summary: "Creare e usare array associativi in TypeScript \xE8 semplice."
 title: Utilizzo di array associativi
 weight: 15
 ---

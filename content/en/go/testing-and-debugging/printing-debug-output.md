@@ -1,13 +1,11 @@
 ---
 date: 2024-02-03 17:50:09.547841-07:00
-description: "In computer programming, \"Printing debug output\" involves producing\
-  \ detailed informational messages that help developers understand the execution\
-  \ flow of\u2026"
+description: "How to: In Go, you can use the standard `fmt` package to print debug\
+  \ output to the console. The `fmt` package offers a variety of functions, like\u2026"
 lastmod: '2024-03-13T22:44:59.633450-06:00'
 model: gpt-4-0125-preview
-summary: In computer programming, "Printing debug output" involves producing detailed
-  informational messages that help developers understand the execution flow of their
-  program or pinpoint issues.
+summary: In Go, you can use the standard `fmt` package to print debug output to the
+  console.
 title: Printing debug output
 weight: 33
 ---

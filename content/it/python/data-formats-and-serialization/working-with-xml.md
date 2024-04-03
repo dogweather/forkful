@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:34:43.300468-07:00
-description: "\"Lavorare con XML\" si riferisce al processo di lettura, creazione\
-  \ e modifica dei file XML (eXtensible Markup Language) utilizzando la programmazione.\
-  \ I\u2026"
+description: 'Come fare: Il modulo `xml.etree.ElementTree` di Python offre strumenti
+  per lavorare con XML. Analizzare un documento XML.'
 lastmod: '2024-03-13T22:44:43.025251-06:00'
 model: gpt-4-0125-preview
-summary: '"Lavorare con XML" si riferisce al processo di lettura, creazione e modifica
-  dei file XML (eXtensible Markup Language) utilizzando la programmazione.'
+summary: Il modulo `xml.etree.ElementTree` di Python offre strumenti per lavorare
+  con XML.
 title: Lavorare con XML
 weight: 40
 ---

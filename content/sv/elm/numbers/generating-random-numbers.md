@@ -3,15 +3,13 @@ changelog:
 - 2024-02-27, dogweather, edited and tested
 - 2024-02-27, gpt-4-0125-preview, translated from English
 date: 2024-02-27 22:50:35.453782-07:00
-description: "Att generera slumpm\xE4ssiga nummer i Elm inneb\xE4r att anv\xE4nda\
-  \ `Random`-modulen f\xF6r att producera pseudo-slumpm\xE4ssiga nummer, vilket \xE4\
-  r anv\xE4ndbart f\xF6r en\u2026"
+description: "Hur man g\xF6r: Elms rena funktionella natur inneb\xE4r att du inte\
+  \ kan generera slumpm\xE4ssiga nummer direkt som du kanske kan i imperativa spr\xE5\
+  k. Ist\xE4llet\u2026"
 lastmod: '2024-03-13T22:44:37.825133-06:00'
 model: gpt-4-0125-preview
-summary: "Att generera slumpm\xE4ssiga nummer i Elm inneb\xE4r att anv\xE4nda `Random`-modulen\
-  \ f\xF6r att producera pseudo-slumpm\xE4ssiga nummer, vilket \xE4r anv\xE4ndbart\
-  \ f\xF6r en m\xE4ngd uppgifter s\xE5som spel, simuleringar och \xE4ven som en del\
-  \ av algoritmer som kr\xE4ver stokastiska processer."
+summary: "Elms rena funktionella natur inneb\xE4r att du inte kan generera slumpm\xE4\
+  ssiga nummer direkt som du kanske kan i imperativa spr\xE5k."
 title: "Generera slumpm\xE4ssiga tal"
 weight: 12
 ---

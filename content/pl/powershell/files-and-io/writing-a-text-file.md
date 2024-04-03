@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:30.659097-07:00
-description: "Tworzenie pliku tekstowego w PowerShell polega na tworzeniu i manipulowaniu\
-  \ plikami opartymi na tek\u015Bcie, co jest fundamentaln\u0105 operacj\u0105 dla\
-  \ logowania,\u2026"
+description: "Jak: PowerShell zapewnia proste polecenia cmdlet do obs\u0142ugi plik\xF3\
+  w. G\u0142\xF3wnie u\u017Cywa si\u0119 cmdletu `Out-File` oraz operator\xF3w przekierowania\
+  \ do tego celu. Oto\u2026"
 lastmod: '2024-03-13T22:44:35.648181-06:00'
 model: gpt-4-0125-preview
-summary: "Tworzenie pliku tekstowego w PowerShell polega na tworzeniu i manipulowaniu\
-  \ plikami opartymi na tek\u015Bcie, co jest fundamentaln\u0105 operacj\u0105 dla\
-  \ logowania, przechowywania danych i pisania skrypt\xF3w konfiguracji."
+summary: "PowerShell zapewnia proste polecenia cmdlet do obs\u0142ugi plik\xF3w."
 title: Pisanie pliku tekstowego
 weight: 24
 ---

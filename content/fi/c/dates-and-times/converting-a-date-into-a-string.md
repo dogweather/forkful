@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:07.537895-07:00
-description: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi C:ss\xE4 tarkoittaa\
-  \ p\xE4iv\xE4m\xE4\xE4r\xE4rakenteen tai aikaleiman k\xE4\xE4nt\xE4mist\xE4 ihmisen\
-  \ luettavaan muotoon. Ohjelmoijat suorittavat\u2026"
+description: "Kuinka: `<time.h>` kirjaston `strftime` funktiota k\xE4ytet\xE4\xE4\
+  n yleisesti t\xE4h\xE4n tarkoitukseen. Se mahdollistaa p\xE4iv\xE4m\xE4\xE4r\xE4\
+  n ja ajan muotoilun monin eri tavoin\u2026"
 lastmod: '2024-03-13T22:44:57.052712-06:00'
 model: gpt-4-0125-preview
-summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi C:ss\xE4 tarkoittaa\
-  \ p\xE4iv\xE4m\xE4\xE4r\xE4rakenteen tai aikaleiman k\xE4\xE4nt\xE4mist\xE4 ihmisen\
-  \ luettavaan muotoon."
+summary: "`<time.h>` kirjaston `strftime` funktiota k\xE4ytet\xE4\xE4n yleisesti t\xE4\
+  h\xE4n tarkoitukseen."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuttaminen merkkijonoksi"
 weight: 28
 ---

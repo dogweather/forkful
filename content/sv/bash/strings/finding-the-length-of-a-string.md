@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:46:49.204189-07:00
-description: "Att hitta l\xE4ngden p\xE5 en str\xE4ng inneb\xE4r att r\xE4kna antalet\
-  \ tecken den inneh\xE5ller. Programmerare g\xF6r det f\xF6r att validera inmatning,\
-  \ hantera textdata eller\u2026"
+description: "Hur g\xF6r man: Du kan anv\xE4nda `${#str\xE4ng}` f\xF6r att f\xE5 en\
+  \ str\xE4ngs l\xE4ngd."
 lastmod: '2024-03-13T22:44:38.071694-06:00'
 model: gpt-4-1106-preview
-summary: "Att hitta l\xE4ngden p\xE5 en str\xE4ng inneb\xE4r att r\xE4kna antalet\
-  \ tecken den inneh\xE5ller."
+summary: "Du kan anv\xE4nda `${#str\xE4ng}` f\xF6r att f\xE5 en str\xE4ngs l\xE4ngd."
 title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---

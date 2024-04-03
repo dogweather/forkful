@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 01:11:38.203546-07:00
-description: "Code in Funktionen zu organisieren bedeutet, Ihren Code in wiederverwendbare\
-  \ Bl\xF6cke mit definierten Zwecken zu unterteilen. Wir tun dies, um Ordnung zu\u2026"
+description: "Wie geht das: Stellen Sie sich vor, wir haben wiederholenden Code zum\
+  \ Begr\xFC\xDFen von Nutzern. Stattdessen werden wir ihn in einer Funktion wie `greet_user`\u2026"
 lastmod: '2024-03-13T22:44:53.977960-06:00'
 model: gpt-4-1106-preview
-summary: "Code in Funktionen zu organisieren bedeutet, Ihren Code in wiederverwendbare\
-  \ Bl\xF6cke mit definierten Zwecken zu unterteilen."
+summary: "Stellen Sie sich vor, wir haben wiederholenden Code zum Begr\xFC\xDFen von\
+  \ Nutzern."
 title: Code in Funktionen organisieren
 weight: 18
 ---

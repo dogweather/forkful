@@ -2,15 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:09.025684-07:00
-description: "Vi\u1EBFt ki\u1EC3m th\u1EED l\xE0 t\u1EA1o ra m\xE3 l\u1EC7nh ki\u1EC3\
-  m tra xem m\xE3 l\u1EC7nh kh\xE1c c\xF3 ho\u1EA1t \u0111\u1ED9ng ch\xEDnh x\xE1\
-  c hay kh\xF4ng. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3\
-  \ b\u1EAFt l\u1ED7i s\u1EDBm, \u0111\u1EA3m b\u1EA3o ph\u1EA7n m\u1EC1m\u2026"
+description: "L\xE0m nh\u01B0 th\u1EBF n\xE0o: H\xE3y vi\u1EBFt m\u1ED9t b\xE0i ki\u1EC3\
+  m th\u1EED \u0111\u01A1n gi\u1EA3n s\u1EED d\u1EE5ng JUnit, m\u1ED9t framework ki\u1EC3\
+  m th\u1EED ph\u1ED5 bi\u1EBFn trong Java. Ch\xFAng ta s\u1EBD ki\u1EC3m th\u1EED\
+  \ m\u1ED9t ph\u01B0\u01A1ng th\u1EE9c c\u1ED9ng\u2026"
 lastmod: '2024-03-13T22:44:36.494137-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EBFt ki\u1EC3m th\u1EED l\xE0 t\u1EA1o ra m\xE3 l\u1EC7nh ki\u1EC3\
-  m tra xem m\xE3 l\u1EC7nh kh\xE1c c\xF3 ho\u1EA1t \u0111\u1ED9ng ch\xEDnh x\xE1\
-  c hay kh\xF4ng."
+summary: "H\xE3y vi\u1EBFt m\u1ED9t b\xE0i ki\u1EC3m th\u1EED \u0111\u01A1n gi\u1EA3\
+  n s\u1EED d\u1EE5ng JUnit, m\u1ED9t framework ki\u1EC3m th\u1EED ph\u1ED5 bi\u1EBF\
+  n trong Java."
 title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
 weight: 36
 ---

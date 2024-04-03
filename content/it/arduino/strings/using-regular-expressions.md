@@ -1,12 +1,9 @@
 ---
 date: 2024-01-19
-description: "Le espressioni regolari consentono di analizzare le stringhe di testo\
-  \ per cercare modelli. I programmatori le utilizzano per validare l\u2019input,\
-  \ estrarre\u2026"
+description: 'Come fare: .'
 lastmod: '2024-03-13T22:44:43.673565-06:00'
 model: unknown
-summary: Le espressioni regolari consentono di analizzare le stringhe di testo per
-  cercare modelli.
+summary: .
 title: Utilizzo delle espressioni regolari
 weight: 11
 ---

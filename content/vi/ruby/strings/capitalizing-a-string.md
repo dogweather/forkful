@@ -3,16 +3,14 @@ changelog:
 - 2024-03-25, dogweather, edited and tested
 - 2024-03-25, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:02:29.358527-07:00
-description: "Vi\u1EC7c vi\u1EBFt hoa m\u1ED9t chu\u1ED7i th\u01B0\u1EDDng c\xF3 ngh\u0129\
-  a l\xE0 chuy\u1EC3n k\xFD t\u1EF1 \u0111\u1EA7u ti\xEAn c\u1EE7a chu\u1ED7i th\xE0\
-  nh ch\u1EEF in hoa v\xE0 ph\u1EA7n c\xF2n l\u1EA1i th\xE0nh ch\u1EEF th\u01B0\u1EDD\
-  ng. Nh\u01B0ng \u0111\xF4i khi, n\xF3 c\xF3 th\u1EC3 ch\u1EC9\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Ruby cung c\u1EA5p [c\xE1c ph\u01B0\u01A1ng\
+  \ th\u1EE9c \u0111\u01A1n gi\u1EA3n cho vi\u1EC7c thao t\xE1c chu\u1ED7i](https://docs.ruby-lang.org/en/3.3/String.html),\
+  \ bao g\u1ED3m c\u1EA3 vi\u1EC7c vi\u1EBFt hoa."
 lastmod: '2024-03-25T19:22:21.215761-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c vi\u1EBFt hoa m\u1ED9t chu\u1ED7i th\u01B0\u1EDDng c\xF3 ngh\u0129\
-  a l\xE0 chuy\u1EC3n k\xFD t\u1EF1 \u0111\u1EA7u ti\xEAn c\u1EE7a chu\u1ED7i th\xE0\
-  nh ch\u1EEF in hoa v\xE0 ph\u1EA7n c\xF2n l\u1EA1i th\xE0nh ch\u1EEF th\u01B0\u1EDD\
-  ng."
+summary: "Ruby cung c\u1EA5p [c\xE1c ph\u01B0\u01A1ng th\u1EE9c \u0111\u01A1n gi\u1EA3\
+  n cho vi\u1EC7c thao t\xE1c chu\u1ED7i](https://docs.ruby-lang.org/en/3.3/String.html),\
+  \ bao g\u1ED3m c\u1EA3 vi\u1EC7c vi\u1EBFt hoa."
 title: "Chuy\u1EC3n ch\u1EEF c\xE1i \u0111\u1EA7u ti\xEAn c\u1EE7a chu\u1ED7i th\xE0\
   nh ch\u1EEF hoa"
 weight: 2

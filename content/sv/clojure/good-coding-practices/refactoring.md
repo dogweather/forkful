@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 01:17:47.351911-07:00
-description: "Refaktorisering \xE4r processen att omstrukturera befintlig dator kod\
-  \ utan att \xE4ndra dess yttre beteende, syftande till att f\xF6rb\xE4ttra icke-funktionella\u2026"
+description: "Hur man g\xF6r: Refaktorisering i Clojure\u2014tack vare dess rena syntax\
+  \ och funktionella paradigm\u2014kan vara otroligt rakt p\xE5 sak. Vi tar oss an\
+  \ ett vanligt\u2026"
 lastmod: '2024-03-13T22:44:37.533529-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktorisering \xE4r processen att omstrukturera befintlig dator kod utan\
-  \ att \xE4ndra dess yttre beteende, syftande till att f\xF6rb\xE4ttra icke-funktionella\
-  \ attribut."
+summary: "Refaktorisering i Clojure\u2014tack vare dess rena syntax och funktionella\
+  \ paradigm\u2014kan vara otroligt rakt p\xE5 sak."
 title: Refaktorisering
 weight: 19
 ---

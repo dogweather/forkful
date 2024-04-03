@@ -3,11 +3,11 @@ changelog:
 - 2024-01-28, dogweather, reviewed
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 03:00:40.575760-07:00
-description: "Analizar HTML significa extraer datos de documentos HTML. Los programadores\
-  \ lo hacen para interactuar con o manipular contenido web, automatizar la\u2026"
+description: "C\xF3mo hacerlo: Vamos a analizar HTML usando la API `DOMParser` en\
+  \ JavaScript."
 lastmod: '2024-03-13T22:44:59.456668-06:00'
 model: gpt-4-0125-preview
-summary: Analizar HTML significa extraer datos de documentos HTML.
+summary: Vamos a analizar HTML usando la API `DOMParser` en JavaScript.
 title: "An\xE1lisis de HTML"
 weight: 43
 ---

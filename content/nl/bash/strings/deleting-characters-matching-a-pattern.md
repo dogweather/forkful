@@ -2,14 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:32.528387-07:00
-description: "Karakters verwijderen die overeenkomen met een patroon in Bash laat\
-  \ je toe om strings te manipuleren naar je behoefte\u2014zoals ongewenste tekens\
-  \ strippen of\u2026"
+description: 'Hoe te: #.'
 lastmod: '2024-03-13T22:44:50.963398-06:00'
 model: gpt-4-0125-preview
-summary: "Karakters verwijderen die overeenkomen met een patroon in Bash laat je toe\
-  \ om strings te manipuleren naar je behoefte\u2014zoals ongewenste tekens strippen\
-  \ of input sanitizen."
+summary: '#.'
 title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---

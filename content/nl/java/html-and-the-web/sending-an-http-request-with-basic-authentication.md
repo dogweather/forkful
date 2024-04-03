@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:10.929078-07:00
-description: "Een HTTP-verzoek versturen met basisauthenticatie houdt in dat er een\
-  \ header met een gebruikersnaam en wachtwoord wordt toegevoegd om toegang te krijgen\u2026"
+description: "Hoe te: Java maakt het vrij eenvoudig om HTTP-verzoeken met basisauthenticatie\
+  \ te sturen met behulp van de `HttpURLConnection` klasse. Hier is een snel\u2026"
 lastmod: '2024-03-13T22:44:50.681549-06:00'
 model: gpt-4-0125-preview
-summary: Een HTTP-verzoek versturen met basisauthenticatie houdt in dat er een header
-  met een gebruikersnaam en wachtwoord wordt toegevoegd om toegang te krijgen tot
-  een beschermd bron.
+summary: Java maakt het vrij eenvoudig om HTTP-verzoeken met basisauthenticatie te
+  sturen met behulp van de `HttpURLConnection` klasse.
 title: Een HTTP-verzoek verzenden met basisauthenticatie
 weight: 45
 ---

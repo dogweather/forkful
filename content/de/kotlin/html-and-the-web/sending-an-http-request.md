@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 18:00:08.705201-07:00
-description: "HTTP-Anfragen sind das Herzst\xFCck der Kommunikation im Web. Programmierer\
-  \ verwenden sie, um Daten von Servern zu holen oder an diese zu senden \u2013\u2026"
+description: "How to: (Wie geht das:) Kotlin bietet mehrere M\xF6glichkeiten, HTTP-Anfragen\
+  \ zu senden. Hier verwenden wir die Bibliothek `khttp`, die einfache und direkte\u2026"
 lastmod: '2024-03-13T22:44:53.843684-06:00'
 model: gpt-4-1106-preview
-summary: "HTTP-Anfragen sind das Herzst\xFCck der Kommunikation im Web."
+summary: "Kotlin bietet mehrere M\xF6glichkeiten, HTTP-Anfragen zu senden."
 title: Einen HTTP-Request senden
 weight: 44
 ---

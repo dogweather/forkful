@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:32:56.677975-07:00
-description: "(Mit\xE4 & Miksi?) Vertaamme kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 tunnistaaksemme\
-  \ niiden eron. Ohjelmoijat tekev\xE4t t\xE4m\xE4n aikataulujen hallintaan, aikaleimojen\
-  \ tarkkailuun tai\u2026"
+description: 'How to: (Miten:).'
 lastmod: '2024-03-13T22:44:57.007584-06:00'
 model: gpt-4-1106-preview
-summary: "(Mit\xE4 & Miksi."
+summary: (Miten:).
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---

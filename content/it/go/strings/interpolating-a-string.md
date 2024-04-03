@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:20.081776-07:00
-description: "L'interpolazione di stringhe \xE8 un metodo per costruire stringhe che\
-  \ incorporano variabili, consentendo la creazione di stringhe dinamiche. I programmatori\u2026"
+description: "Come fare: In Go, l'interpolazione di stringhe si ottiene comunemente\
+  \ utilizzando il pacchetto `fmt`, in particolare con la funzione `Sprintf`, che\
+  \ ti\u2026"
 lastmod: '2024-03-13T22:44:42.892584-06:00'
 model: gpt-4-0125-preview
-summary: "L'interpolazione di stringhe \xE8 un metodo per costruire stringhe che incorporano\
-  \ variabili, consentendo la creazione di stringhe dinamiche."
+summary: In Go, l'interpolazione di stringhe si ottiene comunemente utilizzando il
+  pacchetto `fmt`, in particolare con la funzione `Sprintf`, che ti permette di iniettare
+  variabili in una stringa specificando verbi di formattazione.
 title: Interpolazione di una stringa
 weight: 8
 ---

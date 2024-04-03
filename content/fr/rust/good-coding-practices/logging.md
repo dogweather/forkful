@@ -1,13 +1,13 @@
 ---
 date: 2024-01-26 01:08:40.580902-07:00
-description: "La journalisation est comme tenir un journal pour votre application\
-  \ ; c'est la pratique d'enregistrer des \xE9v\xE9nements, des erreurs et d'autres\
-  \ donn\xE9es\u2026"
+description: "Comment faire : Mettre en place un sc\xE9nario de journalisation de\
+  \ base en Rust en utilisant la crate `log`, qui fournit une fa\xE7ade de journalisation,\
+  \ et\u2026"
 lastmod: '2024-03-13T22:44:57.489060-06:00'
 model: gpt-4-1106-preview
-summary: "La journalisation est comme tenir un journal pour votre application ; c'est\
-  \ la pratique d'enregistrer des \xE9v\xE9nements, des erreurs et d'autres donn\xE9\
-  es pertinentes pendant l'ex\xE9cution."
+summary: "Mettre en place un sc\xE9nario de journalisation de base en Rust en utilisant\
+  \ la crate `log`, qui fournit une fa\xE7ade de journalisation, et `env_logger`,\
+  \ une impl\xE9mentation de journalisation pour la crate `log`."
 title: Journalisation
 weight: 17
 ---

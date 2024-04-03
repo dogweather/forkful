@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:32.533374-07:00
-description: "Testien kirjoittaminen Elm-kielell\xE4 k\xE4sitt\xE4\xE4 testitapausten\
-  \ laatimisen Elm-koodisi oikeellisuuden varmistamiseksi, jotta se toimii odotetusti.\
-  \ Ohjelmoijat\u2026"
+description: "Kuinka: Elm k\xE4ytt\xE4\xE4 `elm-explorations/test`-pakettia yksikk\xF6\
+  - ja sumutestien kirjoittamiseen. Aloita lis\xE4\xE4m\xE4ll\xE4 paketti projektiisi."
 lastmod: '2024-03-13T22:44:56.492123-06:00'
 model: gpt-4-0125-preview
-summary: "Testien kirjoittaminen Elm-kielell\xE4 k\xE4sitt\xE4\xE4 testitapausten\
-  \ laatimisen Elm-koodisi oikeellisuuden varmistamiseksi, jotta se toimii odotetusti."
+summary: "Elm k\xE4ytt\xE4\xE4 `elm-explorations/test`-pakettia yksikk\xF6- ja sumutestien\
+  \ kirjoittamiseen."
 title: Testien kirjoittaminen
 weight: 36
 ---

@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 17:54:16.074143-07:00
-description: "Das Einlesen einer Textdatei erm\xF6glicht es Programmen, Textinformationen\
-  \ zu verarbeiten \u2013 vom simplen Konfigurationsfile bis zur gro\xDFen Datenanalyse.\u2026"
+description: "How to: Elm macht direktes Einlesen von Dateien etwas anders \u2013\
+  \ es verwendet haupts\xE4chlich Ports und Subscriptions, um Dateien \xFCber JavaScript\
+  \ zu\u2026"
 lastmod: '2024-03-13T22:44:53.822758-06:00'
 model: gpt-4-1106-preview
-summary: "Das Einlesen einer Textdatei erm\xF6glicht es Programmen, Textinformationen\
-  \ zu verarbeiten \u2013 vom simplen Konfigurationsfile bis zur gro\xDFen Datenanalyse."
+summary: "Elm macht direktes Einlesen von Dateien etwas anders \u2013 es verwendet\
+  \ haupts\xE4chlich Ports und Subscriptions, um Dateien \xFCber JavaScript zu verarbeiten."
 title: Textdatei einlesen
 weight: 22
 ---

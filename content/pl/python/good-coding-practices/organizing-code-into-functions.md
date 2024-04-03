@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 01:11:37.918310-07:00
-description: "Organizacja kodu w funkcje polega na podziale kodu na wielokrotnie u\u017C\
-  ywalne bloki o okre\u015Blonych celach. Robimy to, aby kod by\u0142 bardziej przejrzysty,\u2026"
+description: "Jak to zrobi\u0107: Za\u0142\xF3\u017Cmy, \u017Ce piszesz skrypt do\
+  \ obliczania kwadratu i sze\u015Bcianu liczby. Bez funkcji to nie\u0142ad powtarzania."
 lastmod: '2024-03-13T22:44:34.955108-06:00'
 model: gpt-4-1106-preview
-summary: "Organizacja kodu w funkcje polega na podziale kodu na wielokrotnie u\u017C\
-  ywalne bloki o okre\u015Blonych celach."
+summary: "Za\u0142\xF3\u017Cmy, \u017Ce piszesz skrypt do obliczania kwadratu i sze\u015B\
+  cianu liczby."
 title: Organizacja kodu w funkcje
 weight: 18
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:55.663560-07:00
-description: "Een tekstbestand lezen is het ophalen van de inhoud van een bestand\
-  \ dat is gestructureerd als leesbare tekst voor mensen. Programmeurs doen dit om\
-  \ de\u2026"
+description: "Hoe te: Laten we een tekstbestand in TypeScript lezen met behulp van\
+  \ Node.js's `fs/promises` module. We houden dit voorbeeld simpel: lees een bestand\
+  \ met\u2026"
 lastmod: '2024-03-13T22:44:50.568664-06:00'
 model: gpt-4-0125-preview
-summary: Een tekstbestand lezen is het ophalen van de inhoud van een bestand dat is
-  gestructureerd als leesbare tekst voor mensen.
+summary: Laten we een tekstbestand in TypeScript lezen met behulp van Node.js's `fs/promises`
+  module.
 title: Een tekstbestand lezen
 weight: 22
 ---

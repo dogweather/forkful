@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 17:44:20.095762-07:00
-description: "Ladataan nettisivu, eli noudetaan webbisivun sis\xE4lt\xF6 ohjelmoitavasti.\
-  \ Ohjelmoijat tekev\xE4t t\xE4m\xE4n datan ker\xE4\xE4miseen, testaukseen tai palvelujen\u2026"
+description: "How to: - Kuinka tehd\xE4\xE4n: Haskellilla webbisivujen lataaminen\
+  \ onnistuu kirjastoilla kuten `http-conduit`. Asentakaa ensin tarvittavat kirjastot."
 lastmod: '2024-03-13T22:44:56.614483-06:00'
 model: gpt-4-1106-preview
-summary: "Ladataan nettisivu, eli noudetaan webbisivun sis\xE4lt\xF6 ohjelmoitavasti."
+summary: Haskellilla webbisivujen lataaminen onnistuu kirjastoilla kuten `http-conduit`.
 title: Verkkosivun lataaminen
 weight: 42
 ---

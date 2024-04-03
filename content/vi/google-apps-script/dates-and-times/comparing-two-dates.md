@@ -2,18 +2,17 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:20.546937-07:00
-description: "So s\xE1nh hai ng\xE0y trong Google Apps Script, m\u1ED9t phi\xEAn b\u1EA3\
-  n \u0111\u01B0\u1EE3c t\xF9y ch\u1EC9nh c\u1EE7a JavaScript d\xE0nh cho b\u1ED9\
-  \ \u1EE9ng d\u1EE5ng c\u1EE7a Google, l\xE0 m\u1ED9t nhi\u1EC7m v\u1EE5 quan tr\u1ECD\
-  ng \u0111\u1ED1i v\u1EDBi\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Google Apps Script, c\xE1c ng\xE0y \u0111\
+  \u01B0\u1EE3c so s\xE1nh s\u1EED d\u1EE5ng c\xE1c \u0111\u1ED1i t\u01B0\u1EE3ng\
+  \ Date c\u1EE7a JavaScript, cho ph\xE9p s\u1EED d\u1EE5ng c\xE1c ph\u01B0\u01A1\
+  ng ph\xE1p ti\xEAu chu\u1EA9n \u0111\u1EC3\u2026"
 lastmod: '2024-03-13T22:44:36.057297-06:00'
 model: gpt-4-0125-preview
-summary: "So s\xE1nh hai ng\xE0y trong Google Apps Script, m\u1ED9t phi\xEAn b\u1EA3\
-  n \u0111\u01B0\u1EE3c t\xF9y ch\u1EC9nh c\u1EE7a JavaScript d\xE0nh cho b\u1ED9\
-  \ \u1EE9ng d\u1EE5ng c\u1EE7a Google, l\xE0 m\u1ED9t nhi\u1EC7m v\u1EE5 quan tr\u1ECD\
-  ng \u0111\u1ED1i v\u1EDBi c\xE1c nh\xE0 ph\xE1t tri\u1EC3n khi x\u1EED l\xFD l\u1ECB\
-  ch tr\xECnh, d\xF2ng th\u1EDDi gian, ho\u1EB7c b\u1EA5t k\u1EF3 d\u1EEF li\u1EC7\
-  u n\xE0o li\xEAn quan \u0111\u1EBFn ng\xE0y th\xE1ng."
+summary: "Trong Google Apps Script, c\xE1c ng\xE0y \u0111\u01B0\u1EE3c so s\xE1nh\
+  \ s\u1EED d\u1EE5ng c\xE1c \u0111\u1ED1i t\u01B0\u1EE3ng Date c\u1EE7a JavaScript,\
+  \ cho ph\xE9p s\u1EED d\u1EE5ng c\xE1c ph\u01B0\u01A1ng ph\xE1p ti\xEAu chu\u1EA9\
+  n \u0111\u1EC3 \u0111\xE1nh gi\xE1 xem ng\xE0y n\xE0o tr\u01B0\u1EDBc, ng\xE0y n\xE0\
+  o sau, ho\u1EB7c n\u1EBFu ch\xFAng gi\u1ED1ng nhau."
 title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---

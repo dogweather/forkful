@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:12:22.043848-07:00
-description: "En REPL, eller Read-Eval-Print Loop, lar deg skrive C#-kode og kj\xF8\
-  re den interaktivt. Programmerere bruker det for raske eksperimenter, feils\xF8\
-  king, eller\u2026"
+description: "Hvordan: Start en REPL i ditt C#-milj\xF8 ved \xE5 bruke C# Interactive-vinduet\
+  \ eller kj\xF8r `dotnet-script` i terminalen din. Her er en smakebit p\xE5 hvordan\
+  \ det\u2026"
 lastmod: '2024-03-13T22:44:40.797356-06:00'
 model: gpt-4-0125-preview
-summary: "En REPL, eller Read-Eval-Print Loop, lar deg skrive C#-kode og kj\xF8re\
-  \ den interaktivt."
+summary: "Start en REPL i ditt C#-milj\xF8 ved \xE5 bruke C# Interactive-vinduet eller\
+  \ kj\xF8r `dotnet-script` i terminalen din."
 title: Bruke et interaktivt skall (REPL)
 weight: 34
 ---

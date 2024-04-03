@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:59.019784-07:00
-description: "Verificar si un directorio existe es una operaci\xF3n fundamental al\
-  \ escribir scripts que interact\xFAan con el sistema de archivos, asegurando que\
-  \ tu programa\u2026"
+description: "C\xF3mo hacerlo: En Lua, no tienes una funci\xF3n incorporada para verificar\
+  \ directamente si un directorio existe, por lo que a menudo dependes de la biblioteca\u2026"
 lastmod: '2024-03-13T22:44:59.216749-06:00'
 model: gpt-4-0125-preview
-summary: "Verificar si un directorio existe es una operaci\xF3n fundamental al escribir\
-  \ scripts que interact\xFAan con el sistema de archivos, asegurando que tu programa\
-  \ opere en rutas v\xE1lidas y prevenga errores relacionados con directorios inexistentes."
+summary: "En Lua, no tienes una funci\xF3n incorporada para verificar directamente\
+  \ si un directorio existe, por lo que a menudo dependes de la biblioteca Lua File\
+  \ System (lfs), una biblioteca de terceros popular para operaciones de archivos."
 title: Comprobando si un directorio existe
 weight: 20
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 00:54:00.536647-07:00
-description: "La gestion des erreurs en programmation consiste \xE0 g\xE9rer l'inattendu\u2014\
-  les choses qui peuvent mal tourner. Les programmeurs le font pour s'assurer que\
-  \ leurs\u2026"
+description: "Comment faire : Haskell g\xE8re les erreurs de mani\xE8re robuste gr\xE2\
+  ce \xE0 des types comme `Maybe` et `Either`. Voici un aper\xE7u rapide ."
 lastmod: '2024-03-13T22:44:57.841616-06:00'
 model: gpt-4-1106-preview
-summary: "La gestion des erreurs en programmation consiste \xE0 g\xE9rer l'inattendu\u2014\
-  les choses qui peuvent mal tourner."
+summary: "Haskell g\xE8re les erreurs de mani\xE8re robuste gr\xE2ce \xE0 des types\
+  \ comme `Maybe` et `Either`."
 title: Gestion des erreurs
 weight: 16
 ---

@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:24.536383-07:00
-description: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgula) \xE9 sobre\
-  \ a leitura e escrita de arquivos de texto simples que armazenam dados tabulares.\u2026"
+description: "Como fazer: Rust, com seu foco em seguran\xE7a e desempenho, oferece\
+  \ excelentes crates (bibliotecas) para lidar com arquivos CSV, sendo `csv` a mais\
+  \ popular.\u2026"
 lastmod: '2024-03-13T22:44:46.390312-06:00'
 model: gpt-4-0125-preview
-summary: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgula) \xE9 sobre\
-  \ a leitura e escrita de arquivos de texto simples que armazenam dados tabulares."
+summary: "Rust, com seu foco em seguran\xE7a e desempenho, oferece excelentes crates\
+  \ (bibliotecas) para lidar com arquivos CSV, sendo `csv` a mais popular."
 title: Trabalhando com CSV
 weight: 37
 ---

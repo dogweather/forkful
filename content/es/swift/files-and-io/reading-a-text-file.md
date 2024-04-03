@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:55:06.662392-07:00
-description: "Leer un archivo de texto en Swift es obtener su contenido para usarlo\
-  \ dentro de tu app o script. Los programadores lo hacen para acceder a datos,\u2026"
+description: "C\xF3mo Hacerlo: Aqu\xED tienes un ejemplo simple para leer el contenido\
+  \ de un archivo de texto."
 lastmod: '2024-03-13T22:44:59.433868-06:00'
 model: gpt-4-1106-preview
-summary: Leer un archivo de texto en Swift es obtener su contenido para usarlo dentro
-  de tu app o script.
+summary: "Aqu\xED tienes un ejemplo simple para leer el contenido de un archivo de\
+  \ texto."
 title: Lectura de un archivo de texto
 weight: 22
 ---

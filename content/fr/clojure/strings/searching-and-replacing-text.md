@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:57:46.519593-07:00
-description: "Rechercher et remplacer du texte, c'est comme jouer \xE0 cache-cache\
-  \ avec des mots pour les troquer contre d'autres. Les programmeurs le font pour\
-  \ corriger\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:57.266182-06:00'
 model: gpt-4-1106-preview
-summary: "Rechercher et remplacer du texte, c'est comme jouer \xE0 cache-cache avec\
-  \ des mots pour les troquer contre d'autres."
+summary: .
 title: Recherche et remplacement de texte
 weight: 10
 ---

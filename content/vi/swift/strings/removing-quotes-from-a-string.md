@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:03.253987-07:00
-description: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c kh\u1ECFi m\u1ED9t chu\u1ED7i\
-  \ c\xF3 ngh\u0129a l\xE0 g\u1EE1 b\u1ECF b\u1EA5t k\u1EF3 d\u1EA5u ngo\u1EB7c k\xE9\
-  p n\xE0o bao quanh n\u1ED9i dung. Ch\xFAng ta l\xE0m \u0111i\u1EC1u n\xE0y \u0111\
-  \u1EC3 l\xE0m s\u1EA1ch d\u1EEF li\u1EC7u \u0111\u1EA7u v\xE0o, chu\u1EA9n\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Swift cho ph\xE9p b\u1EA1n x\u1EED l\xFD\
+  \ vi\u1EC7c lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c m\u1ED9t c\xE1ch kh\xE1 ti\u1EC7\
+  n l\u1EE3i. D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t v\xED d\u1EE5 nhanh s\u1EED\
+  \ d\u1EE5ng\u2026"
 lastmod: '2024-03-13T22:44:37.080881-06:00'
 model: gpt-4-0125-preview
-summary: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c kh\u1ECFi m\u1ED9t chu\u1ED7i c\xF3\
-  \ ngh\u0129a l\xE0 g\u1EE1 b\u1ECF b\u1EA5t k\u1EF3 d\u1EA5u ngo\u1EB7c k\xE9p n\xE0\
-  o bao quanh n\u1ED9i dung."
+summary: "Swift cho ph\xE9p b\u1EA1n x\u1EED l\xFD vi\u1EC7c lo\u1EA1i b\u1ECF d\u1EA5\
+  u ngo\u1EB7c m\u1ED9t c\xE1ch kh\xE1 ti\u1EC7n l\u1EE3i."
 title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i"
 weight: 9
 ---

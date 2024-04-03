@@ -1,13 +1,10 @@
 ---
 date: 2024-01-20 17:55:50.198939-07:00
-description: "Komennoriviparametrien lukeminen on prosessi, jossa ohjelma ottaa sy\xF6\
-  tteen\xE4 argumentteja, jotka on annettu ohjelman k\xE4ynnistyksen yhteydess\xE4\
-  . Syy miksi\u2026"
+description: "How to: K\xE4ynnist\xE4 ohjelma komennolla ja argumenteilla, esim. `myapp.exe\
+  \ -mode console -verbose`. C#:ssa argumentit k\xE4sitell\xE4\xE4n `Main`-metodissa."
 lastmod: '2024-03-13T22:44:56.589362-06:00'
 model: gpt-4-1106-preview
-summary: "Komennoriviparametrien lukeminen on prosessi, jossa ohjelma ottaa sy\xF6\
-  tteen\xE4 argumentteja, jotka on annettu ohjelman k\xE4ynnistyksen yhteydess\xE4\
-  ."
+summary: "K\xE4ynnist\xE4 ohjelma komennolla ja argumenteilla, esim."
 title: Komennoriviparametrien lukeminen
 weight: 23
 ---

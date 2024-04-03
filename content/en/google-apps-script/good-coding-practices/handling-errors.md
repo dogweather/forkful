@@ -1,11 +1,13 @@
 ---
 date: 2024-02-01 21:12:56.065519-07:00
-description: "Error handling in Google Apps Script is about predicting, catching,\
-  \ and responding to exceptions or errors that occur during script execution. Programmers\u2026"
+description: "How to: Google Apps Script, being based on JavaScript, allows us to\
+  \ use the traditional `try-catch` statement for error handling, along with `finally`\
+  \ if\u2026"
 lastmod: '2024-03-13T22:44:59.676596-06:00'
 model: gpt-4-0125-preview
-summary: Error handling in Google Apps Script is about predicting, catching, and responding
-  to exceptions or errors that occur during script execution.
+summary: Google Apps Script, being based on JavaScript, allows us to use the traditional
+  `try-catch` statement for error handling, along with `finally` if cleanup is required
+  regardless of success or error.
 title: Handling errors
 weight: 16
 ---

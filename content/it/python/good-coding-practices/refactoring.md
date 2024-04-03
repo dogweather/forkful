@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:37:10.132426-07:00
-description: "Il refactoring \xE8 il processo di ristrutturazione del codice informatico\
-  \ esistente \u2014 cambiandone il fattorizzamento \u2014 senza alterarne il comportamento\u2026"
+description: "Come fare: Supponiamo di avere un blocco di codice che calcola e stampa\
+  \ l'area e il perimetro di un rettangolo dato il suo lato e larghezza. Fa il suo\u2026"
 lastmod: '2024-03-13T22:44:43.009390-06:00'
 model: gpt-4-0125-preview
-summary: "Il refactoring \xE8 il processo di ristrutturazione del codice informatico\
-  \ esistente \u2014 cambiandone il fattorizzamento \u2014 senza alterarne il comportamento\
-  \ esterno."
+summary: Supponiamo di avere un blocco di codice che calcola e stampa l'area e il
+  perimetro di un rettangolo dato il suo lato e larghezza.
 title: Rifattorizzazione
 weight: 19
 ---

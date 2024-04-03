@@ -2,13 +2,13 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:09:58.986336-07:00
-description: "No mundo do Arduino, arrays associativos permitem que voc\xEA associe\
-  \ chaves a valores, algo como parear meias com seus pares. Eles s\xE3o uma escolha\
-  \ acertada\u2026"
+description: "Como fazer: Estritamente falando, o Arduino n\xE3o possui suporte embutido\
+  \ para arrays associativos como voc\xEA encontraria em linguagens de n\xEDvel mais\
+  \ alto.\u2026"
 lastmod: '2024-03-13T22:44:46.832415-06:00'
 model: gpt-4-0125-preview
-summary: "No mundo do Arduino, arrays associativos permitem que voc\xEA associe chaves\
-  \ a valores, algo como parear meias com seus pares."
+summary: "Estritamente falando, o Arduino n\xE3o possui suporte embutido para arrays\
+  \ associativos como voc\xEA encontraria em linguagens de n\xEDvel mais alto."
 title: Usando arrays associativos
 weight: 15
 ---

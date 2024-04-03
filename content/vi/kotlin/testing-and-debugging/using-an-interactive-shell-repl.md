@@ -2,14 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:28.330461-07:00
-description: "REPL (Read-Eval-Print Loop) l\xE0 m\xF4i tr\u01B0\u1EDDng l\u1EADp tr\xEC\
-  nh m\xE1y t\xEDnh t\u01B0\u01A1ng t\xE1c, \u0111\u01A1n gi\u1EA3n. C\xE1c l\u1EAD\
-  p tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3 \u0111\u1EC3 th\u1EED nghi\u1EC7m m\xE3\
-  \ nhanh ch\xF3ng, ki\u1EC3m tra\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Kh\u1EDFi ch\u1EA1y REPL c\u1EE7a Kotlin\
+  \ r\u1EA5t d\u1EC5 d\xE0ng. M\u1EDF terminal c\u1EE7a b\u1EA1n v\xE0 g\xF5 `kotlinc`.\
+  \ B\u1EA1n s\u1EBD nh\u1EADp v\xE0o shell Kotlin. H\xE3y th\u1EED \u0111\u1ECBnh\
+  \ ngh\u0129a m\u1ED9t bi\u1EBFn v\xE0\u2026"
 lastmod: '2024-03-13T22:44:36.603879-06:00'
 model: gpt-4-0125-preview
-summary: "REPL (Read-Eval-Print Loop) l\xE0 m\xF4i tr\u01B0\u1EDDng l\u1EADp tr\xEC\
-  nh m\xE1y t\xEDnh t\u01B0\u01A1ng t\xE1c, \u0111\u01A1n gi\u1EA3n."
+summary: "Kh\u1EDFi ch\u1EA1y REPL c\u1EE7a Kotlin r\u1EA5t d\u1EC5 d\xE0ng."
 title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 weight: 34
 ---

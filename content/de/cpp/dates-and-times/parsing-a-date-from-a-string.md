@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:33.202127-07:00
-description: "Das Parsen eines Datums aus einem String beinhaltet die Interpretation\
-  \ des Stringformats, um Komponenten wie Tag, Monat und Jahr zu extrahieren.\u2026"
+description: "Wie: In modernem C++ kann man die `<chrono>`-Bibliothek verwenden, um\
+  \ mit Daten und Zeiten nativ umzugehen, aber sie unterst\xFCtzt nicht direkt das\
+  \ Parsen\u2026"
 lastmod: '2024-03-13T22:44:54.194202-06:00'
 model: gpt-4-0125-preview
-summary: Das Parsen eines Datums aus einem String beinhaltet die Interpretation des
-  Stringformats, um Komponenten wie Tag, Monat und Jahr zu extrahieren.
+summary: "In modernem C++ kann man die `<chrono>`-Bibliothek verwenden, um mit Daten\
+  \ und Zeiten nativ umzugehen, aber sie unterst\xFCtzt nicht direkt das Parsen aus\
+  \ Strings ohne manuelles Parsen f\xFCr komplexere Formate."
 title: Einen Datum aus einem String analysieren
 weight: 30
 ---

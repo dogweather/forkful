@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 17:53:43.684854-07:00
-description: "Ler um arquivo de texto consiste em acessar e interpretar os dados contidos\
-  \ em um arquivo no formato texto. Programadores fazem isso para manipular e\u2026"
+description: "Como Fazer: Para ler um arquivo de texto no Arduino, voc\xEA precisar\xE1\
+  \ de um m\xF3dulo SD card para armazenar o arquivo e do c\xF3digo para acess\xE1\
+  -lo. Veja um\u2026"
 lastmod: '2024-03-13T22:44:46.855990-06:00'
 model: gpt-4-1106-preview
-summary: Ler um arquivo de texto consiste em acessar e interpretar os dados contidos
-  em um arquivo no formato texto.
+summary: "Para ler um arquivo de texto no Arduino, voc\xEA precisar\xE1 de um m\xF3\
+  dulo SD card para armazenar o arquivo e do c\xF3digo para acess\xE1-lo."
 title: Lendo um arquivo de texto
 weight: 22
 ---

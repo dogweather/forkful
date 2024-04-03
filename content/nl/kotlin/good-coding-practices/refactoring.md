@@ -2,13 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:12.024104-07:00
-description: "Refactoring is het proces van het aanpassen van bestaande code om de\
-  \ structuur, leesbaarheid, en prestatie te verbeteren zonder het externe gedrag\
-  \ te\u2026"
+description: 'Hoe: Hier is een Kotlin snippet die een veelvoorkomende codegeur laat
+  zien en de gerefactorde versie ervan. We beginnen met een stuk code dat te veel
+  doet.'
 lastmod: '2024-03-13T22:44:50.776315-06:00'
 model: gpt-4-0125-preview
-summary: Refactoring is het proces van het aanpassen van bestaande code om de structuur,
-  leesbaarheid, en prestatie te verbeteren zonder het externe gedrag te veranderen.
+summary: Hier is een Kotlin snippet die een veelvoorkomende codegeur laat zien en
+  de gerefactorde versie ervan.
 title: Refactoring
 weight: 19
 ---

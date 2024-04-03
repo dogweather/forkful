@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:38:01.461622-07:00
-description: "Omforme en streng til sm\xE5 bokstaver handler om \xE5 konvertere alle\
-  \ bokstavene i en gitt streng til deres sm\xE5bokstavversjoner. Programmerere gj\xF8\
-  r dette for \xE5\u2026"
+description: "How to: Clojure gir deg verkt\xF8yene du trenger for \xE5 enkelt gj\xF8\
+  re om strenger til sm\xE5 bokstaver. `clojure.string/lower-case` er din venn her.\
+  \ Her er et\u2026"
 lastmod: '2024-03-13T22:44:40.390052-06:00'
 model: gpt-4-1106-preview
-summary: "Omforme en streng til sm\xE5 bokstaver handler om \xE5 konvertere alle bokstavene\
-  \ i en gitt streng til deres sm\xE5bokstavversjoner."
+summary: "Clojure gir deg verkt\xF8yene du trenger for \xE5 enkelt gj\xF8re om strenger\
+  \ til sm\xE5 bokstaver."
 title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---

@@ -1,11 +1,14 @@
 ---
 date: 2024-02-03 19:02:38.431289-07:00
-description: "Fetching the current date in Python is a staple operation for many applications,\
-  \ such as logging, data analysis, and time-based decision-making. It's\u2026"
+description: "How to: **Using the standard library `datetime`:** The `datetime` module\
+  \ in Python's standard library provides classes for manipulating dates and times.\u2026"
 lastmod: '2024-03-13T22:44:59.717347-06:00'
 model: gpt-4-0125-preview
-summary: Fetching the current date in Python is a staple operation for many applications,
-  such as logging, data analysis, and time-based decision-making.
+summary: '**Using the standard library `datetime`:**
+
+
+  The `datetime` module in Python''s standard library provides classes for manipulating
+  dates and times.'
 title: Getting the current date
 weight: 29
 ---

@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:46:00.669325-07:00
-description: "Arrondir des nombres signifie supprimer les d\xE9cimales pour obtenir\
-  \ une pr\xE9cision d\xE9finie, souvent jusqu'aux nombres entiers. Les programmeurs\
-  \ arrondissent\u2026"
+description: "Comment faire : PHP propose quelques m\xE9thodes pour arrondir les nombres\
+  \ : `round()`, `ceil()` et `floor()`. Voici comment elles fonctionnent ."
 lastmod: '2024-03-13T22:44:57.872712-06:00'
 model: gpt-4-0125-preview
-summary: "Arrondir des nombres signifie supprimer les d\xE9cimales pour obtenir une\
-  \ pr\xE9cision d\xE9finie, souvent jusqu'aux nombres entiers."
+summary: "PHP propose quelques m\xE9thodes pour arrondir les nombres."
 title: Arrondir les nombres
 weight: 13
 ---

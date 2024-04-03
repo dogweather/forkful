@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:03.254487-07:00
-description: "Um shell interativo, ou Loop de Leitura-Avalia\xE7\xE3o-Impress\xE3\
-  o (REPL), permite que os usu\xE1rios insiram comandos, executem-nos e vejam os resultados\
-  \ em tempo\u2026"
+description: "Como fazer: O Visual Basic for Applications (VBA) por si s\xF3 n\xE3\
+  o suporta nativamente um shell interativo ou experi\xEAncia REPL como visto em linguagens\
+  \ como\u2026"
 lastmod: '2024-03-13T22:44:46.413905-06:00'
 model: gpt-4-0125-preview
-summary: "Um shell interativo, ou Loop de Leitura-Avalia\xE7\xE3o-Impress\xE3o (REPL),\
-  \ permite que os usu\xE1rios insiram comandos, executem-nos e vejam os resultados\
-  \ em tempo real."
+summary: "O Visual Basic for Applications (VBA) por si s\xF3 n\xE3o suporta nativamente\
+  \ um shell interativo ou experi\xEAncia REPL como visto em linguagens como Python\
+  \ ou JavaScript."
 title: Usando uma shell interativa (REPL)
 weight: 34
 ---

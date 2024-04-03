@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:12.787007-07:00
-description: "Analizzare una data da una stringa consiste nel riconoscere e convertire\
-  \ date scritte in forma di testo in un tipo di dato data che PowerShell pu\xF2 capire\u2026"
+description: "Come fare: PowerShell semplifica l'analisi delle date da stringhe con\
+  \ il suo cmdlet `Get-Date` e acceleratore di tipo `[datetime]`, che funzionano bene\u2026"
 lastmod: '2024-03-13T22:44:43.651958-06:00'
 model: gpt-4-0125-preview
-summary: "Analizzare una data da una stringa consiste nel riconoscere e convertire\
-  \ date scritte in forma di testo in un tipo di dato data che PowerShell pu\xF2 capire\
-  \ e con cui pu\xF2 lavorare."
+summary: PowerShell semplifica l'analisi delle date da stringhe con il suo cmdlet
+  `Get-Date` e acceleratore di tipo `[datetime]`, che funzionano bene per i formati
+  di data standard.
 title: Analisi di una data da una stringa
 weight: 30
 ---

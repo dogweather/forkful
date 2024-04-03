@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:58.465212-07:00
-description: "Wyra\u017Cenia regularne (regex) w Visual Basic for Applications (VBA)\
-  \ stanowi\u0105 pot\u0119\u017Cne narz\u0119dzie do wyszukiwania, dopasowywania\
-  \ i manipulowania ci\u0105gami\u2026"
+description: "Jak u\u017Cywa\u0107: Aby u\u017Cy\u0107 wyra\u017Ce\u0144 regularnych\
+  \ w VBA, najpierw musisz w\u0142\u0105czy\u0107 bibliotek\u0119 Microsoft VBScript\
+  \ Regular Expressions. W edytorze VBA przejd\u017A do\u2026"
 lastmod: '2024-03-13T22:44:35.219977-06:00'
 model: gpt-4-0125-preview
-summary: "Wyra\u017Cenia regularne (regex) w Visual Basic for Applications (VBA) stanowi\u0105\
-  \ pot\u0119\u017Cne narz\u0119dzie do wyszukiwania, dopasowywania i manipulowania\
-  \ ci\u0105gami znak\xF3w."
+summary: "Aby u\u017Cy\u0107 wyra\u017Ce\u0144 regularnych w VBA, najpierw musisz\
+  \ w\u0142\u0105czy\u0107 bibliotek\u0119 Microsoft VBScript Regular Expressions."
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---

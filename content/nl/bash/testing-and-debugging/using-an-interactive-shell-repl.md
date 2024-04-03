@@ -2,11 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:00.013842-07:00
-description: "REPL staat voor Read-Eval-Print Loop, een eenvoudige, interactieve computerprogrammeeromgeving.\
-  \ Programmeurs gebruiken het om snel code te schrijven en te\u2026"
+description: "Hoe te: In Bash is je terminal in wezen een REPL. Je typt een commando;\
+  \ het leest het, evalueert het, drukt het resultaat af en gaat terug in afwachting\u2026"
 lastmod: '2024-03-13T22:44:50.984183-06:00'
 model: gpt-4-0125-preview
-summary: REPL staat voor Read-Eval-Print Loop, een eenvoudige, interactieve computerprogrammeeromgeving.
+summary: In Bash is je terminal in wezen een REPL.
 title: Het gebruik van een interactieve shell (REPL)
 weight: 34
 ---

@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:49.367949-07:00
-description: "Substrings extraheren betekent het uithalen van specifieke delen uit\
-  \ een string. We doen dit om tekstgegevens te manipuleren of analyseren, zoals het\u2026"
+description: 'Hoe: In Kotlin, gebruik de functies `substring`, `take` en `drop`.'
 lastmod: '2024-03-13T22:44:50.756636-06:00'
 model: gpt-4-0125-preview
-summary: Substrings extraheren betekent het uithalen van specifieke delen uit een
-  string.
+summary: In Kotlin, gebruik de functies `substring`, `take` en `drop`.
 title: Substrings extraheren
 weight: 6
 ---

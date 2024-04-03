@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:26:00.594768-07:00
-description: "TOML on konfiguraatiotiedostomuoto, joka on helppo lukea sen selkeiden\
-  \ semantiikkojen ansiosta. Ohjelmoijat k\xE4ytt\xE4v\xE4t TOML:\xE4\xE4 sovellusten\u2026"
+description: "Kuinka: Asenna ensin `toml-rb`-gem. Se on suosittu valinta TOML-j\xE4\
+  sent\xE4miseen Rubylla."
 lastmod: '2024-03-13T22:44:57.111609-06:00'
 model: gpt-4-0125-preview
-summary: TOML on konfiguraatiotiedostomuoto, joka on helppo lukea sen selkeiden semantiikkojen
-  ansiosta.
+summary: Asenna ensin `toml-rb`-gem.
 title: "Ty\xF6skentely TOML:n kanssa"
 weight: 39
 ---

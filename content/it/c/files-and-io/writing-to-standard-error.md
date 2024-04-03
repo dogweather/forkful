@@ -2,13 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:56.223281-07:00
-description: "La scrittura su standard error in C comporta l'indirizzamento dei messaggi\
-  \ di errore e delle informazioni diagnostiche su un flusso separato rispetto\u2026"
+description: "Come fare: In C, il flusso `stderr` \xE8 utilizzato per scrivere messaggi\
+  \ di errore. A differenza della scrittura sull'output standard con `printf`, la\u2026"
 lastmod: '2024-03-13T22:44:44.018674-06:00'
 model: gpt-4-0125-preview
-summary: La scrittura su standard error in C comporta l'indirizzamento dei messaggi
-  di errore e delle informazioni diagnostiche su un flusso separato rispetto all'output
-  principale del programma.
+summary: "In C, il flusso `stderr` \xE8 utilizzato per scrivere messaggi di errore."
 title: Scrittura su errore standard
 weight: 25
 ---

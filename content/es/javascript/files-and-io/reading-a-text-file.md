@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:54:48.661598-07:00
-description: "Leer un archivo de texto en JavaScript es simplemente acceder al contenido\
-  \ almacenado en un archivo de texto (.txt) y trabajar con \xE9l en tu programa.\
-  \ Los\u2026"
+description: "C\xF3mo hacerlo: JavaScript, especialmente en Node.js, hace que leer\
+  \ archivos de texto sea un juego de ni\xF1os. Aqu\xED hay un ejemplo sencillo usando\
+  \ `fs`, el\u2026"
 lastmod: '2024-03-13T22:44:59.475735-06:00'
 model: gpt-4-1106-preview
-summary: Leer un archivo de texto en JavaScript es simplemente acceder al contenido
-  almacenado en un archivo de texto (.
+summary: "JavaScript, especialmente en Node.js, hace que leer archivos de texto sea\
+  \ un juego de ni\xF1os."
 title: Lectura de un archivo de texto
 weight: 22
 ---

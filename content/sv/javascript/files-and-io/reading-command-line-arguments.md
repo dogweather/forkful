@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:56:32.490887-07:00
-description: "L\xE4sning av kommandoradsargument handlar om att snappa upp de extra\
-  \ inputs som skickas till ditt program n\xE4r det k\xF6rs i terminalen. Programmerare\
-  \ g\xF6r detta\u2026"
+description: "Hur man g\xF6r: L\xE5t oss dyka rakt in i koden. S\xE5 h\xE4r kan du\
+  \ l\xE4sa argument fr\xE5n kommandoraden i Node.js."
 lastmod: '2024-03-13T22:44:38.308752-06:00'
 model: gpt-4-1106-preview
-summary: "L\xE4sning av kommandoradsargument handlar om att snappa upp de extra inputs\
-  \ som skickas till ditt program n\xE4r det k\xF6rs i terminalen."
+summary: "L\xE5t oss dyka rakt in i koden."
 title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---

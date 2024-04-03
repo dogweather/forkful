@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:37:02.938633-07:00
-description: "Convertire una data in una stringa significa trasformare l'oggetto `Date`\
-  \ che rappresenta un momento preciso nel tempo in una sequenza di caratteri\u2026"
+description: 'How to: La classe `LocalDate` e la classe `DateTimeFormatter` sono amici
+  quando si converte una data in una stringa. Vediamo come si usa.'
 lastmod: '2024-03-13T22:44:43.320513-06:00'
 model: gpt-4-1106-preview
-summary: Convertire una data in una stringa significa trasformare l'oggetto `Date`
-  che rappresenta un momento preciso nel tempo in una sequenza di caratteri leggibili
-  (stringa).
+summary: La classe `LocalDate` e la classe `DateTimeFormatter` sono amici quando si
+  converte una data in una stringa.
 title: Conversione di una data in una stringa
 weight: 28
 ---

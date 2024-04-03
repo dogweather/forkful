@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 03:40:21.953470-07:00
-description: "Eliminar comillas de una cadena significa quitar cualquier instancia\
-  \ de caracteres de comillas, ya sean simples (' ') o dobles (\" \"), de los datos\
-  \ de\u2026"
+description: "C\xF3mo hacerlo: Aqu\xED hay una manera simple de eliminar ambos tipos\
+  \ de comillas de una cadena en Kotlin."
 lastmod: '2024-03-13T22:44:59.023909-06:00'
 model: gpt-4-0125-preview
-summary: "Eliminar comillas de una cadena significa quitar cualquier instancia de\
-  \ caracteres de comillas, ya sean simples (' ') o dobles (\" \"), de los datos de\
-  \ texto con los que est\xE1s trabajando."
+summary: "Aqu\xED hay una manera simple de eliminar ambos tipos de comillas de una\
+  \ cadena en Kotlin."
 title: Eliminando comillas de una cadena
 weight: 9
 ---

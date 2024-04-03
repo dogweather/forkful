@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:10.558506-07:00
-description: "Wyra\u017Cenia regularne (regex) s\u0105 wzorcami u\u017Cywanymi do\
-  \ dopasowywania kombinacji znak\xF3w w ci\u0105gach tekstowych. Programi\u015Bci\
-  \ wykorzystuj\u0105 je do wyszukiwania,\u2026"
+description: "Jak to zrobi\u0107: U\u017Cycie wyra\u017Ce\u0144 regularnych w Google\
+  \ Apps Script jest proste dzi\u0119ki sk\u0142adni opartej na JavaScript. Oto jak\
+  \ mo\u017Cesz w\u0142\u0105czy\u0107 regex do swoich\u2026"
 lastmod: '2024-03-13T22:44:34.890887-06:00'
 model: gpt-4-0125-preview
-summary: "Wyra\u017Cenia regularne (regex) s\u0105 wzorcami u\u017Cywanymi do dopasowywania\
-  \ kombinacji znak\xF3w w ci\u0105gach tekstowych."
+summary: "U\u017Cycie wyra\u017Ce\u0144 regularnych w Google Apps Script jest proste\
+  \ dzi\u0119ki sk\u0142adni opartej na JavaScript."
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---

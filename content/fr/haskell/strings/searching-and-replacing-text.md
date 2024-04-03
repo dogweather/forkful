@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:58:06.855582-07:00
-description: "La recherche et le remplacement de texte permettent de localiser des\
-  \ cha\xEEnes sp\xE9cifiques dans du texte et de les \xE9changer avec d'autres. Les\
-  \ programmeurs\u2026"
+description: "Comment faire : Dans Haskell, on utilise g\xE9n\xE9ralement les regex\
+  \ ou les fonctions de manipulation de cha\xEEnes pour chercher et remplacer du texte.\
+  \ Voici\u2026"
 lastmod: '2024-03-13T22:44:57.817855-06:00'
 model: gpt-4-1106-preview
-summary: "La recherche et le remplacement de texte permettent de localiser des cha\xEE\
-  nes sp\xE9cifiques dans du texte et de les \xE9changer avec d'autres."
+summary: "Dans Haskell, on utilise g\xE9n\xE9ralement les regex ou les fonctions de\
+  \ manipulation de cha\xEEnes pour chercher et remplacer du texte."
 title: Recherche et remplacement de texte
 weight: 10
 ---

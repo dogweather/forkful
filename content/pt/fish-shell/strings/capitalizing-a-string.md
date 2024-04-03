@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:25.215597-07:00
-description: "Capitalizar uma string significa modific\xE1-la para que a primeira\
-  \ letra fique em mai\xFAscula e o restante da string em min\xFAscula. Essa \xE9\
-  \ uma tarefa comum no\u2026"
+description: "Como fazer: No Fish Shell, strings podem ser manipuladas diretamente\
+  \ com fun\xE7\xF5es internas, sem a necessidade de ferramentas externas ou bibliotecas.\
+  \ Para\u2026"
 lastmod: '2024-03-13T22:44:46.987476-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizar uma string significa modific\xE1-la para que a primeira letra\
-  \ fique em mai\xFAscula e o restante da string em min\xFAscula."
+summary: "No Fish Shell, strings podem ser manipuladas diretamente com fun\xE7\xF5\
+  es internas, sem a necessidade de ferramentas externas ou bibliotecas."
 title: Capitalizando uma string
 weight: 2
 ---

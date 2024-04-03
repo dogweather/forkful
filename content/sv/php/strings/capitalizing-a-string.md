@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:01.968609-07:00
-description: "Att versalisera en str\xE4ng inneb\xE4r att \xE4ndra det f\xF6rsta tecknet\
-  \ i given text till versal, och s\xE4kerst\xE4ller att meningar, titlar eller egennamn\
-  \ b\xF6rjar\u2026"
+description: "Hur man g\xF6r: PHP st\xF6der medf\xF6tt olika funktioner f\xF6r att\
+  \ versalisera str\xE4ngar, var och en tj\xE4nar ett olika syfte. H\xE4r \xE4r hur\
+  \ du kan anv\xE4nda dem: #."
 lastmod: '2024-03-13T22:44:37.979971-06:00'
 model: gpt-4-0125-preview
-summary: "Att versalisera en str\xE4ng inneb\xE4r att \xE4ndra det f\xF6rsta tecknet\
-  \ i given text till versal, och s\xE4kerst\xE4ller att meningar, titlar eller egennamn\
-  \ b\xF6rjar korrekt i en datam\xE4ngd."
+summary: "PHP st\xF6der medf\xF6tt olika funktioner f\xF6r att versalisera str\xE4\
+  ngar, var och en tj\xE4nar ett olika syfte."
 title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---

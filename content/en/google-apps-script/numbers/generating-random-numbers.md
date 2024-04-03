@@ -1,11 +1,11 @@
 ---
 date: 2024-02-01 21:12:05.345639-07:00
-description: "Generating random numbers is a fundamental task in programming that\u2019\
-  s used for a myriad of applications, such as simulations, games, and security systems.\u2026"
+description: "How to: In Google Apps Script, you can generate random numbers using\
+  \ the `Math.random()` function, similar to JavaScript. This function returns a\u2026"
 lastmod: '2024-03-13T22:44:59.666191-06:00'
 model: gpt-4-0125-preview
-summary: "Generating random numbers is a fundamental task in programming that\u2019\
-  s used for a myriad of applications, such as simulations, games, and security systems."
+summary: In Google Apps Script, you can generate random numbers using the `Math.random()`
+  function, similar to JavaScript.
 title: Generating random numbers
 weight: 12
 ---

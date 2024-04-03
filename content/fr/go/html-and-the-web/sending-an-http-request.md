@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:42.539707-07:00
-description: "Envoyer une requ\xEAte HTTP implique d'initier un appel depuis votre\
-  \ application Go vers un serveur web, une API ou tout autre service bas\xE9 sur\
-  \ HTTP. Les\u2026"
+description: "Comment : Dans Go, envoyer une requ\xEAte HTTP et g\xE9rer la r\xE9\
+  ponse implique l'utilisation du paquet `net/http`. Voici un exemple \xE9tape par\
+  \ \xE9tape montrant\u2026"
 lastmod: '2024-03-13T22:44:57.129814-06:00'
 model: gpt-4-0125-preview
-summary: "Envoyer une requ\xEAte HTTP implique d'initier un appel depuis votre application\
-  \ Go vers un serveur web, une API ou tout autre service bas\xE9 sur HTTP."
+summary: "Dans Go, envoyer une requ\xEAte HTTP et g\xE9rer la r\xE9ponse implique\
+  \ l'utilisation du paquet `net/http`."
 title: "Envoyer une requ\xEAte HTTP"
 weight: 44
 ---

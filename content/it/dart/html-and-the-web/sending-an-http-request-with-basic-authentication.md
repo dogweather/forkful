@@ -2,14 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:19.472860-07:00
-description: "Inviare una richiesta HTTP con autenticazione di base comporta l'aggiunta\
-  \ di un nome utente e di una password a una richiesta per verificare l'identit\xE0\
-  \u2026"
+description: "Come fare: In Dart, puoi utilizzare il pacchetto `http` per inviare\
+  \ richieste HTTP con autenticazione di base. Prima di tutto, aggiungi il pacchetto\u2026"
 lastmod: '2024-03-13T22:44:43.129905-06:00'
 model: gpt-4-0125-preview
-summary: "Inviare una richiesta HTTP con autenticazione di base comporta l'aggiunta\
-  \ di un nome utente e di una password a una richiesta per verificare l'identit\xE0\
-  \ dell'utente."
+summary: In Dart, puoi utilizzare il pacchetto `http` per inviare richieste HTTP con
+  autenticazione di base.
 title: Inviare una richiesta HTTP con autenticazione di base
 weight: 45
 ---

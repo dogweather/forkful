@@ -2,16 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:45.404974-07:00
-description: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi cho ph\xE9p \u1EE9ng d\u1EE5\
-  ng c\u1EE7a b\u1EA1n l\u01B0u tr\u1EEF d\u1EEF li\u1EC7u m\xE0 n\xF3 kh\xF4ng c\u1EA7\
-  n m\xE3i m\xE3i. \u0110i\u1EC1u n\xE0y r\u1EA5t ti\u1EC7n l\u1EE3i khi b\u1EA1n\
-  \ \u0111ang x\u1EED l\xFD d\u1EEF li\u1EC7u l\u1EDBn, b\u1ED9 nh\u1EDB \u0111\u1EC7\
-  m,\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong JavaScript, h\u1EA7u h\u1EBFt c\xE1\
+  c thao t\xE1c t\u1EC7p t\u1EA1m th\u1EDDi \u0111\u1EC1u d\u1EF1a v\xE0o c\xE1c th\u01B0\
+  \ vi\u1EC7n b\xEAn ngo\xE0i. D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t v\xED d\u1EE5\
+  \ nhanh s\u1EED d\u1EE5ng th\u01B0 vi\u1EC7n\u2026"
 lastmod: '2024-03-13T22:44:37.178542-06:00'
 model: gpt-4-0125-preview
-summary: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi cho ph\xE9p \u1EE9ng d\u1EE5\
-  ng c\u1EE7a b\u1EA1n l\u01B0u tr\u1EEF d\u1EEF li\u1EC7u m\xE0 n\xF3 kh\xF4ng c\u1EA7\
-  n m\xE3i m\xE3i."
+summary: "Trong JavaScript, h\u1EA7u h\u1EBFt c\xE1c thao t\xE1c t\u1EC7p t\u1EA1\
+  m th\u1EDDi \u0111\u1EC1u d\u1EF1a v\xE0o c\xE1c th\u01B0 vi\u1EC7n b\xEAn ngo\xE0\
+  i."
 title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
 weight: 21
 ---

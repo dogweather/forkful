@@ -1,11 +1,12 @@
 ---
 date: 2024-02-01 21:30:14.592570-07:00
-description: "An interactive shell, or Read-Eval-Print Loop (REPL), allows users to\
-  \ enter commands, execute them, and see the results in real time. Programmers leverage\u2026"
+description: "How to: Visual Basic for Applications (VBA) itself does not natively\
+  \ support an interactive shell or REPL experience as seen in languages like Python\
+  \ or\u2026"
 lastmod: '2024-03-13T22:44:59.935911-06:00'
 model: gpt-4-0125-preview
-summary: An interactive shell, or Read-Eval-Print Loop (REPL), allows users to enter
-  commands, execute them, and see the results in real time.
+summary: Visual Basic for Applications (VBA) itself does not natively support an interactive
+  shell or REPL experience as seen in languages like Python or JavaScript.
 title: Using an interactive shell (REPL)
 weight: 34
 ---

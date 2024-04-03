@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:07.895198-07:00
-description: "Un shell interactif, ou boucle lire-\xE9valuer-afficher (REPL, de l'anglais\
-  \ Read-Eval-Print Loop), vous permet d'exp\xE9rimenter avec du code Go en temps\
-  \ r\xE9el,\u2026"
+description: "Comment faire : Bien que Go n'inclue pas de REPL int\xE9gr\xE9, la communaut\xE9\
+  \ a cr\xE9\xE9 des outils comme `gore` pour combler cette lacune. D'abord, installez\u2026"
 lastmod: '2024-03-13T22:44:57.135231-06:00'
 model: gpt-4-0125-preview
-summary: "Un shell interactif, ou boucle lire-\xE9valuer-afficher (REPL, de l'anglais\
-  \ Read-Eval-Print Loop), vous permet d'exp\xE9rimenter avec du code Go en temps\
-  \ r\xE9el, ex\xE9cutant des commandes et obtenant des retours imm\xE9diats."
+summary: "Bien que Go n'inclue pas de REPL int\xE9gr\xE9, la communaut\xE9 a cr\xE9\
+  \xE9 des outils comme `gore` pour combler cette lacune."
 title: "Utilisation d'un interpr\xE9teur de commandes interactif (REPL)"
 weight: 34
 ---

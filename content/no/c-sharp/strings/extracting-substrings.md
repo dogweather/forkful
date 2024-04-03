@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:45:29.679321-07:00
-description: "I C# er uttrekk av delstrenger det \xE5 hente ut en spesifikk del av\
-  \ en tekststreng. Vi gj\xF8r det for \xE5 bearbeide eller analysere visse seksjoner\
-  \ av data, som\u2026"
+description: "How to: (Slik gj\xF8r du) ."
 lastmod: '2024-03-13T22:44:40.783993-06:00'
 model: gpt-4-1106-preview
-summary: "I C# er uttrekk av delstrenger det \xE5 hente ut en spesifikk del av en\
-  \ tekststreng."
+summary: .
 title: Uthenting av delstrenger
 weight: 6
 ---

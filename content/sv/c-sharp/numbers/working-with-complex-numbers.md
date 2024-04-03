@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 04:38:30.199614-07:00
-description: "Komplexa tal utvidgar v\xE5rt talsystem f\xF6r att inkludera imagin\xE4\
-  ra tal, vilket m\xF6jligg\xF6r l\xF6sningar p\xE5 ekvationer som inte har reella\
-  \ l\xF6sningar.\u2026"
+description: "Hur man g\xF6r: C# har en inbyggd `System.Numerics.Complex` struktur\
+  \ f\xF6r att bearbeta komplexa tal. H\xE4r \xE4r en snabb genomg\xE5ng."
 lastmod: '2024-03-13T22:44:37.907008-06:00'
 model: gpt-4-0125-preview
-summary: "Komplexa tal utvidgar v\xE5rt talsystem f\xF6r att inkludera imagin\xE4\
-  ra tal, vilket m\xF6jligg\xF6r l\xF6sningar p\xE5 ekvationer som inte har reella\
-  \ l\xF6sningar."
+summary: "C# har en inbyggd `System.Numerics.Complex` struktur f\xF6r att bearbeta\
+  \ komplexa tal."
 title: Att arbeta med komplexa tal
 weight: 14
 ---

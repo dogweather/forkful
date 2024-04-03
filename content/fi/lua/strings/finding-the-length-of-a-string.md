@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:47:39.098598-07:00
-description: "Mittauksella tarkoitetaan merkkijonon pituuden selvitt\xE4mist\xE4.\
-  \ Ohjelmoijat tarvitsevat t\xE4t\xE4 toimintoa, jotta voivat k\xE4sitell\xE4 tekstidataa\
-  \ tehokkaasti ja\u2026"
+description: "How to: Merkkijonon pituuden saat n\xE4in."
 lastmod: '2024-03-13T22:44:56.688966-06:00'
 model: gpt-4-1106-preview
-summary: "Mittauksella tarkoitetaan merkkijonon pituuden selvitt\xE4mist\xE4."
+summary: "Merkkijonon pituuden saat n\xE4in."
 title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---

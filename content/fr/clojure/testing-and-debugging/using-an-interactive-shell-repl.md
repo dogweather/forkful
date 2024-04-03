@@ -1,11 +1,9 @@
 ---
 date: 2024-01-26 04:13:10.485438-07:00
-description: "REPL, ou Boucle Lire-\xC9valuer-Afficher, est un environnement de programmation\
-  \ permettant de tester dynamiquement le code Clojure pi\xE8ce par pi\xE8ce. Les\u2026"
+description: 'Comment faire : Commencez par lancer REPL .'
 lastmod: '2024-03-13T22:44:57.283855-06:00'
 model: gpt-4-0125-preview
-summary: "REPL, ou Boucle Lire-\xC9valuer-Afficher, est un environnement de programmation\
-  \ permettant de tester dynamiquement le code Clojure pi\xE8ce par pi\xE8ce."
+summary: Commencez par lancer REPL.
 title: Utilisation d'une console interactive (REPL)
 weight: 34
 ---

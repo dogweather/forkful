@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:35.887326-07:00
-description: "Los arreglos asociativos, conocidos en otros lenguajes como mapas o\
-  \ diccionarios, son pares clave-valor utilizados para la b\xFAsqueda y manipulaci\xF3\
-  n\u2026"
+description: "C\xF3mo hacerlo: C no tiene soporte integrado para arreglos asociativos\
+  \ como algunos lenguajes de alto nivel, pero puedes simularlos utilizando estructuras\
+  \ y\u2026"
 lastmod: '2024-03-13T22:44:59.537502-06:00'
 model: gpt-4-0125-preview
-summary: "Los arreglos asociativos, conocidos en otros lenguajes como mapas o diccionarios,\
-  \ son pares clave-valor utilizados para la b\xFAsqueda y manipulaci\xF3n eficiente\
-  \ de datos."
+summary: C no tiene soporte integrado para arreglos asociativos como algunos lenguajes
+  de alto nivel, pero puedes simularlos utilizando estructuras y hashing.
 title: Usando arrays asociativos
 weight: 15
 ---

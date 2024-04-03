@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:44:19.501168-07:00
-description: "Pobieranie strony internetowej to proces, dzi\u0119ki kt\xF3remu mo\u017C\
-  emy uzyska\u0107 jej zawarto\u015B\u0107 w formacie tekstowym. Programi\u015Bci\
-  \ robi\u0105 to, by analizowa\u0107 dane,\u2026"
+description: "How to: W Java mo\u017Cna to zrobi\u0107 za pomoc\u0105 `java.net.HttpURLConnection`\
+  \ albo popularnych bibliotek takich jak `Jsoup`. Oto prosty przyk\u0142ad u\u017C\
+  ycia\u2026"
 lastmod: '2024-03-13T22:44:35.276178-06:00'
 model: gpt-4-1106-preview
-summary: "Pobieranie strony internetowej to proces, dzi\u0119ki kt\xF3remu mo\u017C\
-  emy uzyska\u0107 jej zawarto\u015B\u0107 w formacie tekstowym."
+summary: "W Java mo\u017Cna to zrobi\u0107 za pomoc\u0105 `java.net.HttpURLConnection`\
+  \ albo popularnych bibliotek takich jak `Jsoup`."
 title: Pobieranie strony internetowej
 weight: 42
 ---

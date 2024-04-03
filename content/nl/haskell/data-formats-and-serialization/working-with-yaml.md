@@ -2,11 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:44.366180-07:00
-description: "YAML (YAML Ain't Markup Language) is een door mensen leesbaar gegevensserialisatieformaat.\
-  \ Programmeurs gebruiken het voor configuratiebestanden en\u2026"
+description: 'Hoe te: Om met YAML in Haskell te werken, gebruik je het `yaml` pakket.
+  Installeer het eerst.'
 lastmod: '2024-03-13T22:44:50.872852-06:00'
 model: gpt-4-0125-preview
-summary: YAML (YAML Ain't Markup Language) is een door mensen leesbaar gegevensserialisatieformaat.
+summary: Om met YAML in Haskell te werken, gebruik je het `yaml` pakket.
 title: Werken met YAML
 weight: 41
 ---

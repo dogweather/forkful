@@ -2,16 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:42.528476-07:00
-description: "Vi\u1EC7c chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF\
-  \ th\u01B0\u1EDDng bao g\u1ED3m vi\u1EC7c bi\u1EBFn \u0111\u1ED5i t\u1EA5t c\u1EA3\
-  \ c\xE1c k\xFD t\u1EF1 in hoa trong chu\u1ED7i th\xE0nh c\xE1c k\xFD t\u1EF1 ch\u1EEF\
-  \ th\u01B0\u1EDDng t\u01B0\u01A1ng \u0111\u01B0\u01A1ng. Qu\xE1 tr\xECnh n\xE0y\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong Visual Basic for Applications (VBA),\
+  \ vi\u1EC7c chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\
+  \u1EDDng r\u1EA5t \u0111\u01A1n gi\u1EA3n s\u1EED d\u1EE5ng h\xE0m `LCase`. H\xE0\
+  m n\xE0y nh\u1EADn v\xE0o\u2026"
 lastmod: '2024-03-13T22:44:36.415467-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF\
-  \ th\u01B0\u1EDDng bao g\u1ED3m vi\u1EC7c bi\u1EBFn \u0111\u1ED5i t\u1EA5t c\u1EA3\
-  \ c\xE1c k\xFD t\u1EF1 in hoa trong chu\u1ED7i th\xE0nh c\xE1c k\xFD t\u1EF1 ch\u1EEF\
-  \ th\u01B0\u1EDDng t\u01B0\u01A1ng \u0111\u01B0\u01A1ng."
+summary: "Trong Visual Basic for Applications (VBA), vi\u1EC7c chuy\u1EC3n \u0111\u1ED5\
+  i m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng r\u1EA5t \u0111\u01A1n\
+  \ gi\u1EA3n s\u1EED d\u1EE5ng h\xE0m `LCase`."
 title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
 weight: 4
 ---

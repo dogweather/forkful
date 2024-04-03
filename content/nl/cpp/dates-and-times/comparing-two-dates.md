@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:30.610924-07:00
-description: "Het vergelijken van data gaat over het uitvogelen welke van twee data\
-  \ vroeger, later is, of dat ze hetzelfde zijn. Programmeurs doen dit voor het\u2026"
+description: 'Hoe: C++ maakt het leven makkelijk met de `<chrono>` header.'
 lastmod: '2024-03-13T22:44:51.125087-06:00'
 model: gpt-4-0125-preview
-summary: Het vergelijken van data gaat over het uitvogelen welke van twee data vroeger,
-  later is, of dat ze hetzelfde zijn.
+summary: C++ maakt het leven makkelijk met de `<chrono>` header.
 title: Twee datums vergelijken
 weight: 27
 ---

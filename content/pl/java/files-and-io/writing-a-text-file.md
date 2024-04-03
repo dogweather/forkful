@@ -2,14 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:20.611025-07:00
-description: "Zapisywanie pliku tekstowego w Javie dotyczy wykorzystywania mo\u017C\
-  liwo\u015Bci j\u0119zyka do tworzenia plik\xF3w i zapisywania w nich tre\u015Bci\
-  \ na systemie plik\xF3w.\u2026"
+description: "Jak to zrobi\u0107: #."
 lastmod: '2024-03-13T22:44:35.297080-06:00'
 model: gpt-4-0125-preview
-summary: "Zapisywanie pliku tekstowego w Javie dotyczy wykorzystywania mo\u017Cliwo\u015B\
-  ci j\u0119zyka do tworzenia plik\xF3w i zapisywania w nich tre\u015Bci na systemie\
-  \ plik\xF3w."
+summary: '#.'
 title: Pisanie pliku tekstowego
 weight: 24
 ---

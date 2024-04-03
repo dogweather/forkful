@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:19.172452-07:00
-description: "Interaktiivinen kuori eli Lue-Eval-Tulosta -silmukka (REPL) mahdollistaa\
-  \ k\xE4ytt\xE4j\xE4n sy\xF6tt\xE4mien komentojen suorittamisen ja tulosten n\xE4\
-  kemisen reaaliajassa.\u2026"
+description: "Kuinka: Visual Basic for Applications (VBA) itsess\xE4\xE4n ei natiivisti\
+  \ tue interaktiivista kuorta tai REPL-kokemusta kuten kieliss\xE4, kuten Python\
+  \ tai\u2026"
 lastmod: '2024-03-13T22:44:56.402388-06:00'
 model: gpt-4-0125-preview
-summary: "Interaktiivinen kuori eli Lue-Eval-Tulosta -silmukka (REPL) mahdollistaa\
-  \ k\xE4ytt\xE4j\xE4n sy\xF6tt\xE4mien komentojen suorittamisen ja tulosten n\xE4\
-  kemisen reaaliajassa."
+summary: "Visual Basic for Applications (VBA) itsess\xE4\xE4n ei natiivisti tue interaktiivista\
+  \ kuorta tai REPL-kokemusta kuten kieliss\xE4, kuten Python tai JavaScript."
 title: "Interaktiivisen kuoren (REPL) k\xE4ytt\xF6"
 weight: 34
 ---

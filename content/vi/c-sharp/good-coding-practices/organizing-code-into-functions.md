@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:04.883079-07:00
-description: "Chia code th\xE0nh c\xE1c h\xE0m gi\u1ED1ng nh\u01B0 vi\u1EC7c s\u1EAF\
-  p x\u1EBFp c\xE1c vi\xEAn LEGO v\xE0o trong c\xE1c h\u1ED9p \u2014 l\xE0m cho vi\u1EC7\
-  c t\xECm ki\u1EBFm v\xE0 s\u1EED d\u1EE5ng ch\xFAng tr\u1EDF n\xEAn d\u1EC5 d\xE0\
-  ng h\u01A1n. Ch\xFAng ta l\xE0m\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: H\xE3y t\u01B0\u1EDFng t\u01B0\u1EE3ng b\u1EA1\
+  n c\xF3 \u0111o\u1EA1n code in l\u1EDDi ch\xE0o nhi\u1EC1u l\u1EA7n. Kh\xF4ng c\xF3\
+  \ h\xE0m, n\xF3 s\u1EBD l\xE0 m\u1ED9t m\u1EDB h\u1ED7n \u0111\u1ED9n. C\xF3 h\xE0\
+  m, m\u1ECDi th\u1EE9 s\u1EBD g\u1ECDn g\xE0ng."
 lastmod: '2024-03-13T22:44:36.664815-06:00'
 model: gpt-4-0125-preview
-summary: "Chia code th\xE0nh c\xE1c h\xE0m gi\u1ED1ng nh\u01B0 vi\u1EC7c s\u1EAFp\
-  \ x\u1EBFp c\xE1c vi\xEAn LEGO v\xE0o trong c\xE1c h\u1ED9p \u2014 l\xE0m cho vi\u1EC7\
-  c t\xECm ki\u1EBFm v\xE0 s\u1EED d\u1EE5ng ch\xFAng tr\u1EDF n\xEAn d\u1EC5 d\xE0\
-  ng h\u01A1n."
+summary: "H\xE3y t\u01B0\u1EDFng t\u01B0\u1EE3ng b\u1EA1n c\xF3 \u0111o\u1EA1n code\
+  \ in l\u1EDDi ch\xE0o nhi\u1EC1u l\u1EA7n."
 title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
 weight: 18
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:52.671845-07:00
-description: "Die Berechnung eines zuk\xFCnftigen oder vergangenen Datums umfasst\
-  \ das Bestimmen eines spezifischen Datums, indem eine bestimmte Anzahl von Tagen,\
-  \ Monaten\u2026"
+description: "Wie: Obwohl die C-Standardbibliothek keine direkten Funktionen f\xFC\
+  r die Datum-Arithmetik bereitstellt, k\xF6nnen Sie Daten mithilfe der `time.h`-Bibliothek\u2026"
 lastmod: '2024-03-13T22:44:54.367263-06:00'
 model: gpt-4-0125-preview
-summary: "Die Berechnung eines zuk\xFCnftigen oder vergangenen Datums umfasst das\
-  \ Bestimmen eines spezifischen Datums, indem eine bestimmte Anzahl von Tagen, Monaten\
-  \ oder Jahren zu einem gegebenen Datum hinzugef\xFCgt oder davon abgezogen wird."
+summary: "Obwohl die C-Standardbibliothek keine direkten Funktionen f\xFCr die Datum-Arithmetik\
+  \ bereitstellt, k\xF6nnen Sie Daten mithilfe der `time.h`-Bibliothek manipulieren,\
+  \ insbesondere mit dem Datentyp `time_t` und `struct tm`."
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---

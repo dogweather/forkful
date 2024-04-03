@@ -2,13 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:16.339995-07:00
-description: "YAML, eller YAML Ain't Markup Language, \xE4r ett m\xE4nniskol\xE4sbart\
-  \ dataserieringsspr\xE5k. Programmerare anv\xE4nder det ofta f\xF6r konfigurationsfiler\
-  \ och\u2026"
+description: "Hur: PowerShell kommer som standard inte med en inbyggd cmdlet f\xF6\
+  r att tolka YAML, men det fungerar s\xF6ml\xF6st med YAML n\xE4r du anv\xE4nder\
+  \ `powershell-\u2026"
 lastmod: '2024-03-13T22:44:38.146256-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, eller YAML Ain't Markup Language, \xE4r ett m\xE4nniskol\xE4sbart\
-  \ dataserieringsspr\xE5k."
+summary: "PowerShell kommer som standard inte med en inbyggd cmdlet f\xF6r att tolka\
+  \ YAML, men det fungerar s\xF6ml\xF6st med YAML n\xE4r du anv\xE4nder `powershell-yaml`-modulen\
+  \ eller konverterar YAML till ett PowerShell-objekt med `ConvertFrom-Json` i kombination\
+  \ med ett verktyg som `yq`."
 title: Att Arbeta med YAML
 weight: 41
 ---

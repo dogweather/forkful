@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 01:10:24.157999-07:00
-description: "Organizar c\xF3digo em fun\xE7\xF5es em Haskell significa decompor seu\
-  \ c\xF3digo em blocos nomeados reutiliz\xE1veis. Por qu\xEA? Isso mant\xE9m seu\
-  \ c\xF3digo DRY (Don't Repeat\u2026"
+description: "Como Fazer: Eis como voc\xEA pode escrever e usar fun\xE7\xF5es em Haskell."
 lastmod: '2024-03-13T22:44:46.630665-06:00'
 model: gpt-4-1106-preview
-summary: "Organizar c\xF3digo em fun\xE7\xF5es em Haskell significa decompor seu c\xF3\
-  digo em blocos nomeados reutiliz\xE1veis."
+summary: "Eis como voc\xEA pode escrever e usar fun\xE7\xF5es em Haskell."
 title: "Organizando o c\xF3digo em fun\xE7\xF5es"
 weight: 18
 ---

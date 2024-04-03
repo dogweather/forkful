@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:53:41.057593-07:00
-description: "Calcular uma data no futuro ou no passado \xE9 uma tarefa comum para\
-  \ programadores, lidando com agendamentos, lembretes ou qualquer funcionalidade\
-  \ que\u2026"
+description: "Como fazer: Dart oferece suporte robusto para manipula\xE7\xE3o de datas\
+  \ por meio de sua classe `DateTime`. Veja como voc\xEA pode calcular datas futuras\
+  \ ou\u2026"
 lastmod: '2024-03-13T22:44:46.296159-06:00'
 model: gpt-4-0125-preview
-summary: "Calcular uma data no futuro ou no passado \xE9 uma tarefa comum para programadores,\
-  \ lidando com agendamentos, lembretes ou qualquer funcionalidade que dependa de\
-  \ c\xE1lculos de datas."
+summary: "Dart oferece suporte robusto para manipula\xE7\xE3o de datas por meio de\
+  \ sua classe `DateTime`."
 title: Calculando uma data no futuro ou passado
 weight: 26
 ---

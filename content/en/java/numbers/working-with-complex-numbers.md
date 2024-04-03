@@ -1,11 +1,12 @@
 ---
 date: 2024-01-25 03:00:04.580827-07:00
-description: "Complex numbers expand the real number line through the addition of\
-  \ an imaginary unit, `i`, where `i^2 = -1`. They're crucial in fields like engineering,\u2026"
+description: "How to: Java doesn't have built-in support for complex numbers, but\
+  \ we can roll our own class or use a library. Here's a quick example of how to create\
+  \ a\u2026"
 lastmod: '2024-03-13T22:44:59.967108-06:00'
 model: gpt-4-1106-preview
-summary: Complex numbers expand the real number line through the addition of an imaginary
-  unit, `i`, where `i^2 = -1`.
+summary: Java doesn't have built-in support for complex numbers, but we can roll our
+  own class or use a library.
 title: Working with complex numbers
 weight: 14
 ---

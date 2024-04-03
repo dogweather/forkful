@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:44:53.920698-07:00
-description: "T\xE9l\xE9charger une page web, c'est r\xE9cup\xE9rer son contenu via\
-  \ le r\xE9seau. Les programmeurs le font pour traiter des donn\xE9es, afficher des\
-  \ informations \xE0\u2026"
+description: "How to: Swift te permet de r\xE9cup\xE9rer facilement le contenu d'une\
+  \ page web avec URLSession. Voici un exemple simple ."
 lastmod: '2024-03-13T22:44:58.219909-06:00'
 model: gpt-4-1106-preview
-summary: "T\xE9l\xE9charger une page web, c'est r\xE9cup\xE9rer son contenu via le\
-  \ r\xE9seau."
+summary: "Swift te permet de r\xE9cup\xE9rer facilement le contenu d'une page web\
+  \ avec URLSession."
 title: "T\xE9l\xE9chargement d'une page web"
 weight: 42
 ---

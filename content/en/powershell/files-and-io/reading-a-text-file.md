@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:55:00.852821-07:00
-description: "Reading a text file means pulling its content into a form your program\
-  \ can work with. Programmers do it for data processing, configuration, logging \u2013\
-  \u2026"
+description: 'How to: Let''s roll with the basics! Here''s how you read from a text
+  file in PowerShell.'
 lastmod: '2024-03-13T22:45:00.300141-06:00'
 model: gpt-4-1106-preview
-summary: Reading a text file means pulling its content into a form your program can
-  work with.
+summary: Let's roll with the basics.
 title: Reading a text file
 weight: 22
 ---

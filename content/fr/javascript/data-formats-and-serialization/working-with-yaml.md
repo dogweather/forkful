@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:01.609191-07:00
-description: "YAML, abr\xE9viation de YAML Ain't Markup Language, est un format de\
-  \ s\xE9rialisation de donn\xE9es lisible par l'homme. Les programmeurs l'utilisent\
-  \ souvent pour\u2026"
+description: "Comment faire : En JavaScript, travailler avec YAML implique g\xE9n\xE9\
+  ralement l'utilisation d'une biblioth\xE8que tierce puisque le langage n'inclut\
+  \ pas\u2026"
 lastmod: '2024-03-13T22:44:58.299211-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, abr\xE9viation de YAML Ain't Markup Language, est un format de s\xE9\
-  rialisation de donn\xE9es lisible par l'homme."
+summary: "En JavaScript, travailler avec YAML implique g\xE9n\xE9ralement l'utilisation\
+  \ d'une biblioth\xE8que tierce puisque le langage n'inclut pas d'analyseur int\xE9\
+  gr\xE9 pour YAML."
 title: Travailler avec YAML
 weight: 41
 ---

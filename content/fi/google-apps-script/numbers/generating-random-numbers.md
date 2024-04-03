@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:07.531480-07:00
-description: "Satunnaislukujen tuottaminen on ohjelmoinnissa perusteht\xE4v\xE4, jota\
-  \ k\xE4ytet\xE4\xE4n lukuisissa sovelluksissa, kuten simulaatioissa, peleiss\xE4\
-  \ ja\u2026"
+description: "Kuinka: Google Apps Scriptiss\xE4 voit tuottaa satunnaislukuja k\xE4\
+  ytt\xE4m\xE4ll\xE4 `Math.random()`-funktiota, samoin kuin JavaScriptiss\xE4. T\xE4\
+  m\xE4 funktio palauttaa\u2026"
 lastmod: '2024-03-13T22:44:56.091879-06:00'
 model: gpt-4-0125-preview
-summary: "Satunnaislukujen tuottaminen on ohjelmoinnissa perusteht\xE4v\xE4, jota\
-  \ k\xE4ytet\xE4\xE4n lukuisissa sovelluksissa, kuten simulaatioissa, peleiss\xE4\
-  \ ja turvaj\xE4rjestelmiss\xE4."
+summary: "Google Apps Scriptiss\xE4 voit tuottaa satunnaislukuja k\xE4ytt\xE4m\xE4\
+  ll\xE4 `Math.random()`-funktiota, samoin kuin JavaScriptiss\xE4."
 title: Sattumanvaraisten numeroiden generointi
 weight: 12
 ---

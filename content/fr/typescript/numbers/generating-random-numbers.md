@@ -1,13 +1,12 @@
 ---
 date: 2024-01-27 20:35:26.967318-07:00
-description: "La g\xE9n\xE9ration de nombres al\xE9atoires en TypeScript consiste\
-  \ \xE0 cr\xE9er des valeurs num\xE9riques impr\xE9visibles dans une plage sp\xE9\
-  cifi\xE9e. Les programmeurs\u2026"
+description: "Comment : En TypeScript, vous pouvez g\xE9n\xE9rer des nombres al\xE9\
+  atoires en utilisant l'objet global `Math`. Voici quelques exemples pratiques d\xE9\
+  montrant\u2026"
 lastmod: '2024-03-13T22:44:57.432386-06:00'
 model: gpt-4-0125-preview
-summary: "La g\xE9n\xE9ration de nombres al\xE9atoires en TypeScript consiste \xE0\
-  \ cr\xE9er des valeurs num\xE9riques impr\xE9visibles dans une plage sp\xE9cifi\xE9\
-  e."
+summary: "En TypeScript, vous pouvez g\xE9n\xE9rer des nombres al\xE9atoires en utilisant\
+  \ l'objet global `Math`."
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---

@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:24.685030-07:00
-description: "\xC5 skrive en tekstfil i Visual Basic for Applications (VBA) involverer\
-  \ \xE5 opprette, modifisere eller legge til tekstdata i filer, en grunnleggende\
-  \ oppgave\u2026"
+description: "Hvordan: VBA tilbyr flere metoder for \xE5 skrive til en fil, men en\
+  \ av de mest rett frem metodene er \xE5 bruke `FileSystemObject`. Her er en steg-for-steg-\u2026"
 lastmod: '2024-03-13T22:44:40.641426-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive en tekstfil i Visual Basic for Applications (VBA) involverer\
-  \ \xE5 opprette, modifisere eller legge til tekstdata i filer, en grunnleggende\
-  \ oppgave for lagring av utdata, logging eller interaksjon med andre applikasjoner."
+summary: "VBA tilbyr flere metoder for \xE5 skrive til en fil, men en av de mest rett\
+  \ frem metodene er \xE5 bruke `FileSystemObject`."
 title: Skrive en tekstfil
 weight: 24
 ---

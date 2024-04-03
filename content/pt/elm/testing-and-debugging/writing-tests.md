@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:40.983301-07:00
-description: "Escrever testes em Elm envolve a cria\xE7\xE3o de casos de teste para\
-  \ verificar a corre\xE7\xE3o do seu c\xF3digo Elm, garantindo que ele se comporte\
-  \ conforme esperado.\u2026"
+description: "Como fazer: Elm utiliza o pacote `elm-explorations/test` para escrever\
+  \ testes unit\xE1rios e de fuzz. Comece adicionando o pacote ao seu projeto."
 lastmod: '2024-03-13T22:44:46.503744-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever testes em Elm envolve a cria\xE7\xE3o de casos de teste para verificar\
-  \ a corre\xE7\xE3o do seu c\xF3digo Elm, garantindo que ele se comporte conforme\
-  \ esperado."
+summary: "Elm utiliza o pacote `elm-explorations/test` para escrever testes unit\xE1\
+  rios e de fuzz."
 title: Escrevendo testes
 weight: 36
 ---

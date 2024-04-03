@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:45:47.010937-07:00
-description: "Extraer subcadenas significa tomar una porci\xF3n espec\xEDfica de una\
-  \ cadena de texto. Es esencial para manipular datos, limpiar entradas y preparar\
-  \ strings\u2026"
+description: "C\xF3mo hacerlo: ."
 lastmod: '2024-03-13T22:44:59.489161-06:00'
 model: gpt-4-1106-preview
-summary: "Extraer subcadenas significa tomar una porci\xF3n espec\xEDfica de una cadena\
-  \ de texto."
+summary: .
 title: "Extracci\xF3n de subcadenas"
 weight: 6
 ---

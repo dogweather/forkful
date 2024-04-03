@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:47:57.068265-07:00
-description: "Misurare la lunghezza di una stringa significa contare i caratteri che\
-  \ la compongono. I programmatori lo fanno per validare l\u2019input, troncare il\
-  \ testo o\u2026"
+description: 'How to: PHP ti offre `strlen()` per contare i caratteri. Vediamo come.'
 lastmod: '2024-03-13T22:44:43.508005-06:00'
 model: gpt-4-1106-preview
-summary: Misurare la lunghezza di una stringa significa contare i caratteri che la
-  compongono.
+summary: PHP ti offre `strlen()` per contare i caratteri.
 title: Trovare la lunghezza di una stringa
 weight: 7
 ---

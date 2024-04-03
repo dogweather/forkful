@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:58.608216-07:00
-description: "Att kontrollera om en katalog finns i Java \xE4r en grundl\xE4ggande\
-  \ uppgift som inneb\xE4r att man verifierar n\xE4rvaron av en katalog i filsystemet\
-  \ innan man l\xE4ser\u2026"
+description: "Hur man g\xF6r: I Java finns det flera s\xE4tt att kontrollera om en\
+  \ katalog finns, fr\xE4mst genom att anv\xE4nda klasserna `java.nio.file.Files`\
+  \ och `java.io.File`.\u2026"
 lastmod: '2024-03-13T22:44:37.801398-06:00'
 model: gpt-4-0125-preview
-summary: "Att kontrollera om en katalog finns i Java \xE4r en grundl\xE4ggande uppgift\
-  \ som inneb\xE4r att man verifierar n\xE4rvaron av en katalog i filsystemet innan\
-  \ man l\xE4ser fr\xE5n den, skriver till den eller utf\xF6r andra operationer som\
-  \ kr\xE4ver dess existens."
+summary: "I Java finns det flera s\xE4tt att kontrollera om en katalog finns, fr\xE4\
+  mst genom att anv\xE4nda klasserna `java.nio.file.Files` och `java.io.File`."
 title: Kontrollera om en katalog existerar
 weight: 20
 ---

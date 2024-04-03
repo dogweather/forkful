@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 17:50:25.560402-07:00
-description: String interpolation is about inserting variables into strings. We do
-  it to construct messages on the fly, personalize output, or build dynamic queries.
+description: "How to: C++ doesn't have built-in string interpolation like some other\
+  \ languages. You often use `std::ostringstream`, `std::format` (from C++20), or\u2026"
 lastmod: '2024-03-13T22:45:00.345341-06:00'
 model: gpt-4-1106-preview
-summary: String interpolation is about inserting variables into strings.
+summary: C++ doesn't have built-in string interpolation like some other languages.
 title: Interpolating a string
 weight: 8
 ---

@@ -2,12 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:26.808044-07:00
-description: "Arbeid med CSV-filer (Comma Separated Values) inneb\xE6rer analyse og\
-  \ generering av tekstfiler hvor hver linje holder verdier separert av kommaer.\u2026"
+description: "Hvordan: For \xE5 h\xE5ndtere CSV-filer i Dart, behandler du vanligvis\
+  \ teksten manuelt eller bruker tredjepartsbiblioteker for \xE5 forenkle oppgaven.\
+  \ Her vil vi\u2026"
 lastmod: '2024-03-13T22:44:40.512131-06:00'
 model: gpt-4-0125-preview
-summary: "Arbeid med CSV-filer (Comma Separated Values) inneb\xE6rer analyse og generering\
-  \ av tekstfiler hvor hver linje holder verdier separert av kommaer."
+summary: "For \xE5 h\xE5ndtere CSV-filer i Dart, behandler du vanligvis teksten manuelt\
+  \ eller bruker tredjepartsbiblioteker for \xE5 forenkle oppgaven."
 title: Arbeide med CSV
 weight: 37
 ---

@@ -1,11 +1,9 @@
 ---
 date: 2024-02-03 19:02:40.859037-07:00
-description: "Parsing a date from a string involves converting the text representation\
-  \ of a date and time into a `Date` object or a more modern `LocalDateTime` object.\u2026"
+description: 'How to: #.'
 lastmod: '2024-03-13T22:44:59.980654-06:00'
 model: gpt-4-0125-preview
-summary: Parsing a date from a string involves converting the text representation
-  of a date and time into a `Date` object or a more modern `LocalDateTime` object.
+summary: '#.'
 title: Parsing a date from a string
 weight: 30
 ---

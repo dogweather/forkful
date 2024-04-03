@@ -2,13 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:08.816746-07:00
-description: "Zoeken en vervangen van tekst gaat over het vinden van tekenreeksen\
-  \ in een tekstblok en deze veranderen in iets anders. Programmeurs doen dit voor\
-  \ het\u2026"
+description: 'Hoe: .'
 lastmod: '2024-03-13T22:44:50.361127-06:00'
 model: gpt-4-0125-preview
-summary: Zoeken en vervangen van tekst gaat over het vinden van tekenreeksen in een
-  tekstblok en deze veranderen in iets anders.
+summary: .
 title: Tekst zoeken en vervangen
 weight: 10
 ---

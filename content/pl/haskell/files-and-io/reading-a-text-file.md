@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:54:28.202213-07:00
-description: "Czytanie pliku tekstowego to proces pobierania danych z pliku przechowywanego\
-  \ na dysku. Programi\u015Bci robi\u0105 to, by za\u0142adowa\u0107 i przetworzy\u0107\
-  \ informacje,\u2026"
+description: "How to: Czytanie pliku tekstowego w Haskellu jest proste. U\u017Cyjemy\
+  \ funkcji `readFile`, kt\xF3r\u0105 dostarcza standardowa biblioteka."
 lastmod: '2024-03-13T22:44:35.470623-06:00'
 model: gpt-4-1106-preview
-summary: Czytanie pliku tekstowego to proces pobierania danych z pliku przechowywanego
-  na dysku.
+summary: Czytanie pliku tekstowego w Haskellu jest proste.
 title: Odczytywanie pliku tekstowego
 weight: 22
 ---

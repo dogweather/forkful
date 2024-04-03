@@ -2,13 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:16.547052-07:00
-description: "\xC5 analysere en dato fra en streng i Dart inneb\xE6rer konvertering\
-  \ av tekstlig representasjon av datoer og tider til et `DateTime`-objekt. Denne\
-  \ operasjonen\u2026"
+description: "Hvordan: Darts kjernebibliotek forenkler datoparsing gjennom `DateTime`-klassen.\
+  \ For greie tilfeller der du kjenner formatet p\xE5 datostrengen, kan du bruke\u2026"
 lastmod: '2024-03-13T22:44:40.497646-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 analysere en dato fra en streng i Dart inneb\xE6rer konvertering av\
-  \ tekstlig representasjon av datoer og tider til et `DateTime`-objekt."
+summary: Darts kjernebibliotek forenkler datoparsing gjennom `DateTime`-klassen.
 title: Analyserer en dato fra en streng
 weight: 30
 ---

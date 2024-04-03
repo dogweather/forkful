@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 03:45:00.207331-07:00
-description: "\xC5 runde av tall betyr \xE5 justere dem til en spesifisert grad av\
-  \ presisjon. Programmerere gj\xF8r dette for \xE5 forenkle tall for lesbarhet, for\
-  \ \xE5 m\xF8te visse\u2026"
+description: "Hvordan: Java tilbyr flere m\xE5ter \xE5 runde av tall p\xE5. Her er\
+  \ en rask demo med `Math.round()`, `BigDecimal`, og `DecimalFormat`."
 lastmod: '2024-03-13T22:44:40.661402-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 runde av tall betyr \xE5 justere dem til en spesifisert grad av presisjon."
+summary: "Java tilbyr flere m\xE5ter \xE5 runde av tall p\xE5."
 title: Avrunding av tall
 weight: 13
 ---

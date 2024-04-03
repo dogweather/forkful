@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:03.742225-07:00
-description: "Logowanie w C polega na rejestrowaniu przep\u0142ywu i znacz\u0105cych\
-  \ zdarze\u0144 programu podczas jego wykonania, zapewniaj\u0105c namacalny przegl\u0105\
-  d jego zachowania i\u2026"
+description: "Jak to zrobi\u0107: W C logowanie mo\u017Cna osi\u0105gn\u0105\u0107\
+  \ za pomoc\u0105 podstawowych operacji na plikach lub korzystaj\u0105c z bardziej\
+  \ zaawansowanych bibliotek. Dla\u2026"
 lastmod: '2024-03-13T22:44:35.893539-06:00'
 model: gpt-4-0125-preview
-summary: "Logowanie w C polega na rejestrowaniu przep\u0142ywu i znacz\u0105cych zdarze\u0144\
-  \ programu podczas jego wykonania, zapewniaj\u0105c namacalny przegl\u0105d jego\
-  \ zachowania i wydajno\u015Bci."
+summary: "W C logowanie mo\u017Cna osi\u0105gn\u0105\u0107 za pomoc\u0105 podstawowych\
+  \ operacji na plikach lub korzystaj\u0105c z bardziej zaawansowanych bibliotek."
 title: Logowanie
 weight: 17
 ---

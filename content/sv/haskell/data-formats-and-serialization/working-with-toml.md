@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:22:46.427633-07:00
-description: "Att arbeta med TOML inneb\xE4r att tolka och generera TOML-data (Toms\
-  \ Uppenbara, Minimala Spr\xE5k) med Haskell. Programmerare g\xF6r det f\xF6r att\
-  \ enkelt hantera\u2026"
+description: "Hur: F\xF6rst, se till att du har ett TOML-tolkande bibliotek. F\xF6\
+  r Haskell \xE4r `htoml` ett popul\xE4rt val. Du kommer att beh\xF6va l\xE4gga till\
+  \ det i ditt projekts\u2026"
 lastmod: '2024-03-13T22:44:37.978120-06:00'
 model: gpt-4-0125-preview
-summary: "Att arbeta med TOML inneb\xE4r att tolka och generera TOML-data (Toms Uppenbara,\
-  \ Minimala Spr\xE5k) med Haskell."
+summary: "F\xF6rst, se till att du har ett TOML-tolkande bibliotek."
 title: Att arbeta med TOML
 weight: 39
 ---

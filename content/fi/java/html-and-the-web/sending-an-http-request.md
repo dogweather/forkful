@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:59:58.354885-07:00
-description: "L\xE4hett\xE4m\xE4ll\xE4 HTTP-pyynn\xF6n, ohjelmat voivat pyyt\xE4\xE4\
-  \ tietoa tai l\xE4hett\xE4\xE4 dataa web-palvelimelle. Ohjelmoijat tekev\xE4t sen,\
-  \ koska se on netin kanssak\xE4ymisen\u2026"
+description: "How to: (Kuinka tehd\xE4:) Java tarjoaa `java.net.http`-paketin HTTP-pyynt\xF6\
+  jen l\xE4hett\xE4miseen, joka sis\xE4lt\xE4\xE4 `HttpClient`, `HttpRequest` ja `HttpResponse`\u2026"
 lastmod: '2024-03-13T22:44:56.441830-06:00'
 model: gpt-4-1106-preview
-summary: "L\xE4hett\xE4m\xE4ll\xE4 HTTP-pyynn\xF6n, ohjelmat voivat pyyt\xE4\xE4 tietoa\
-  \ tai l\xE4hett\xE4\xE4 dataa web-palvelimelle."
+summary: "Java tarjoaa `java.net.http`-paketin HTTP-pyynt\xF6jen l\xE4hett\xE4miseen,\
+  \ joka sis\xE4lt\xE4\xE4 `HttpClient`, `HttpRequest` ja `HttpResponse` -luokat."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---

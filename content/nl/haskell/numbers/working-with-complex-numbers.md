@@ -2,14 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:35.512437-07:00
-description: "Complexe getallen, bestaande uit een re\xEBel en een imaginair deel,\
-  \ zijn essentieel in verschillende computationele velden zoals engineering, natuurkunde\
-  \ en\u2026"
+description: 'Hoe: Haskell gaat om met complexe getallen met de module `Data.Complex`.
+  Hier is een snelle rondleiding.'
 lastmod: '2024-03-13T22:44:50.846148-06:00'
 model: gpt-4-0125-preview
-summary: "Complexe getallen, bestaande uit een re\xEBel en een imaginair deel, zijn\
-  \ essentieel in verschillende computationele velden zoals engineering, natuurkunde\
-  \ en signaalverwerking."
+summary: Haskell gaat om met complexe getallen met de module `Data.Complex`.
 title: Werken met complexe getallen
 weight: 14
 ---

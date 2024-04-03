@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:08.905973-07:00
-description: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta tarkoittaa\
-  \ tekstuaalisen p\xE4iv\xE4- ja aikatiedon muuntamista datetime-objektiksi tai vastaavaksi\
-  \ rakenteelliseksi\u2026"
+description: "Kuinka: Pythonin vakio-/standardikirjasto tarjoaa `datetime`-moduulin,\
+  \ joka sis\xE4lt\xE4\xE4 `strptime`-metodin t\xE4h\xE4n tarkoitukseen. Metodi vaatii\
+  \ kaksi\u2026"
 lastmod: '2024-03-13T22:44:56.152870-06:00'
 model: gpt-4-0125-preview
-summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta tarkoittaa tekstuaalisen\
-  \ p\xE4iv\xE4- ja aikatiedon muuntamista datetime-objektiksi tai vastaavaksi rakenteelliseksi\
-  \ muodoksi."
+summary: "Pythonin vakio-/standardikirjasto tarjoaa `datetime`-moduulin, joka sis\xE4\
+  lt\xE4\xE4 `strptime`-metodin t\xE4h\xE4n tarkoitukseen."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
 weight: 30
 ---

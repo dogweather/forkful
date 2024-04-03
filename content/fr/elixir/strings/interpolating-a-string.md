@@ -1,10 +1,9 @@
 ---
 date: 2024-01-20 17:50:28.974919-07:00
-description: "On ins\xE8re des donn\xE9es dans une cha\xEEne de caract\xE8res. On\
-  \ fait \xE7a pour dynamiser les messages sans concat\xE9ner \xE0 l'ancienne."
+description: 'How to: | Comment faire : .'
 lastmod: '2024-03-13T22:44:57.312428-06:00'
 model: gpt-4-1106-preview
-summary: "On ins\xE8re des donn\xE9es dans une cha\xEEne de caract\xE8res."
+summary: .
 title: "Interpolation de cha\xEEnes de caract\xE8res"
 weight: 8
 ---

@@ -2,15 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:27.889129-07:00
-description: "Att skapa en tempor\xE4r fil i Dart inneb\xE4r att man genererar en\
-  \ fil som \xE4r avsedd f\xF6r kortsiktig anv\xE4ndning, fr\xE4mst f\xF6r scenarier\
-  \ som cachning av data,\u2026"
+description: "Hur man g\xF6r: Darts `dart:io`-bibliotek underl\xE4ttar skapandet av\
+  \ tempor\xE4ra filer genom `Directory`-klassen. H\xE4r \xE4r ett enkelt s\xE4tt\
+  \ att skapa en tempor\xE4r\u2026"
 lastmod: '2024-03-13T22:44:37.633288-06:00'
 model: gpt-4-0125-preview
-summary: "Att skapa en tempor\xE4r fil i Dart inneb\xE4r att man genererar en fil\
-  \ som \xE4r avsedd f\xF6r kortsiktig anv\xE4ndning, fr\xE4mst f\xF6r scenarier som\
-  \ cachning av data, tillf\xE4llig lagring f\xF6r filbearbetning eller f\xF6rvaring\
-  \ av information som \xE4r f\xF6r k\xE4nslig f\xF6r att beh\xE5lla l\xE4nge."
+summary: "Darts `dart:io`-bibliotek underl\xE4ttar skapandet av tempor\xE4ra filer\
+  \ genom `Directory`-klassen."
 title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---

@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:37.111190-07:00
-description: "TOML, som st\xE5r for Toms Opplagte, Minimale Spr\xE5k, er et data-serieliseringsformat\
-  \ som hovedsakelig brukes for konfigurasjonsfiler. Programmerere benytter\u2026"
+description: "Hvordan: \xC5 jobbe med TOML i VBA involverer parsing av TOML-filen\
+  \ for \xE5 lese konfigurasjoner eller innstillinger inn i ditt VBA-prosjekt. VBA\
+  \ har ikke\u2026"
 lastmod: '2024-03-13T22:44:40.647269-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, som st\xE5r for Toms Opplagte, Minimale Spr\xE5k, er et data-serieliseringsformat\
-  \ som hovedsakelig brukes for konfigurasjonsfiler."
+summary: "\xC5 jobbe med TOML i VBA involverer parsing av TOML-filen for \xE5 lese\
+  \ konfigurasjoner eller innstillinger inn i ditt VBA-prosjekt."
 title: Arbeider med TOML
 weight: 39
 ---

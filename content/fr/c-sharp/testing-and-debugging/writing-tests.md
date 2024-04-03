@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:37.525125-07:00
-description: "\xC9crire des tests en C# implique de cr\xE9er des scripts automatis\xE9\
-  s pour valider la fonctionnalit\xE9 de votre code, s'assurant qu'il se comporte\
-  \ comme pr\xE9vu.\u2026"
+description: "Comment faire : Les d\xE9veloppeurs C# utilisent principalement les\
+  \ cadres NUnit ou xUnit pour \xE9crire des tests en raison de leur flexibilit\xE9\
+  \ et de leur\u2026"
 lastmod: '2024-03-13T22:44:57.791124-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire des tests en C# implique de cr\xE9er des scripts automatis\xE9\
-  s pour valider la fonctionnalit\xE9 de votre code, s'assurant qu'il se comporte\
-  \ comme pr\xE9vu."
+summary: "Les d\xE9veloppeurs C# utilisent principalement les cadres NUnit ou xUnit\
+  \ pour \xE9crire des tests en raison de leur flexibilit\xE9 et de leur ensemble\
+  \ de fonctionnalit\xE9s \xE9tendu."
 title: "R\xE9daction de tests"
 weight: 36
 ---

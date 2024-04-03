@@ -1,8 +1,8 @@
 ---
 date: 2024-01-26 03:47:48.517790-07:00
-description: "Bash nie jest wyposa\u017Cony w wbudowany debugger, tak jak niekt\xF3\
-  re inne j\u0119zyki, ale mo\u017Cna u\u017Cy\u0107 wbudowanych polece\u0144 takich\
-  \ jak `set -x`, aby \u015Bledzi\u0107, co si\u0119\u2026"
+description: "Jak to zrobi\u0107: Bash nie jest wyposa\u017Cony w wbudowany debugger,\
+  \ tak jak niekt\xF3re inne j\u0119zyki, ale mo\u017Cna u\u017Cy\u0107 wbudowanych\
+  \ polece\u0144 takich jak `set -x`, aby\u2026"
 lastmod: '2024-03-13T22:44:35.589547-06:00'
 model: gpt-4-0125-preview
 summary: "Bash nie jest wyposa\u017Cony w wbudowany debugger, tak jak niekt\xF3re\

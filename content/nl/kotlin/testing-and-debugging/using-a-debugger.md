@@ -2,14 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:37.222256-07:00
-description: "Hier is een voorproefje van het debuggen in Kotlin met IntelliJ IDEA\
-  \ - de Sherlock Holmes van IDE's: ```kotlin fun main() { val mysterieNummer = 42\
-  \ var\u2026"
+description: 'Hoe te: Hier is een voorproefje van het debuggen in Kotlin met IntelliJ
+  IDEA - de Sherlock Holmes van IDE''s.'
 lastmod: '2024-03-13T22:44:50.772386-06:00'
 model: gpt-4-0125-preview
-summary: "Hier is een voorproefje van het debuggen in Kotlin met IntelliJ IDEA - de\
-  \ Sherlock Holmes van IDE's:\n\n```kotlin\nfun main() {\n    val mysterieNummer\
-  \ = 42\n    var gok = 0\n\n    while (gok ."
+summary: Hier is een voorproefje van het debuggen in Kotlin met IntelliJ IDEA - de
+  Sherlock Holmes van IDE's.
 title: Een debugger gebruiken
 weight: 35
 ---

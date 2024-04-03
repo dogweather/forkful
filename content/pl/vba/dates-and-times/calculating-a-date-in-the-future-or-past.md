@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:31.039455-07:00
-description: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci polega\
-  \ na okre\u015Bleniu daty, kt\xF3ra jest okre\u015Blon\u0105 liczb\u0119 dni, miesi\u0119\
-  cy lub lat dalej od danej daty.\u2026"
+description: "Jak to zrobi\u0107: W Visual Basic for Applications (VBA) podstawow\u0105\
+  \ funkcj\u0105 u\u017Cywan\u0105 do obliczania dat w przysz\u0142o\u015Bci lub przesz\u0142\
+  o\u015Bci jest `DateAdd()`. Funkcja\u2026"
 lastmod: '2024-03-13T22:44:35.246742-06:00'
 model: gpt-4-0125-preview
-summary: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci polega\
-  \ na okre\u015Bleniu daty, kt\xF3ra jest okre\u015Blon\u0105 liczb\u0119 dni, miesi\u0119\
-  cy lub lat dalej od danej daty."
+summary: "W Visual Basic for Applications (VBA) podstawow\u0105 funkcj\u0105 u\u017C\
+  ywan\u0105 do obliczania dat w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci jest\
+  \ `DateAdd()`."
 title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---

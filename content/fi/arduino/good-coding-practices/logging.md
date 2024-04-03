@@ -1,12 +1,13 @@
 ---
 date: 2024-01-26 00:59:29.100907-07:00
-description: "\"Lokin pit\xE4minen\" tarkoittaa tapahtumien, transaktioiden tai toimintojen\
-  \ kirjaamista, jotka tapahtuvat ajan kuluessa j\xE4rjestelm\xE4ss\xE4. Ohjelmoijat\
-  \ k\xE4ytt\xE4v\xE4t\u2026"
+description: "Kuinka: Arduino ei sis\xE4ll\xE4 sis\xE4\xE4nrakennettua lokikirjaston\
+  \ toimintoa, kuten jotkin muut ymp\xE4rist\xF6t, mutta voit toteuttaa peruslokin\
+  \ Serial-konsoliin\u2026"
 lastmod: '2024-03-13T22:44:56.830178-06:00'
 model: gpt-4-1106-preview
-summary: "\"Lokin pit\xE4minen\" tarkoittaa tapahtumien, transaktioiden tai toimintojen\
-  \ kirjaamista, jotka tapahtuvat ajan kuluessa j\xE4rjestelm\xE4ss\xE4."
+summary: "Arduino ei sis\xE4ll\xE4 sis\xE4\xE4nrakennettua lokikirjaston toimintoa,\
+  \ kuten jotkin muut ymp\xE4rist\xF6t, mutta voit toteuttaa peruslokin Serial-konsoliin\
+  \ v\xE4h\xE4ll\xE4 vaivalla."
 title: Lokitus
 weight: 17
 ---

@@ -1,11 +1,12 @@
 ---
 date: 2024-02-03 19:02:31.376532-07:00
-description: "Retrieving the current date in Haskell involves obtaining the system's\
-  \ current time and transforming it into a readable date format. Programmers do this\u2026"
+description: "How to: Haskell's standard library, `base`, provides the `Data.Time`\
+  \ module which offers functionality to work with dates and times. Here's how to\
+  \ use it\u2026"
 lastmod: '2024-03-13T22:45:00.138036-06:00'
 model: gpt-4-0125-preview
-summary: Retrieving the current date in Haskell involves obtaining the system's current
-  time and transforming it into a readable date format.
+summary: Haskell's standard library, `base`, provides the `Data.Time` module which
+  offers functionality to work with dates and times.
 title: Getting the current date
 weight: 29
 ---

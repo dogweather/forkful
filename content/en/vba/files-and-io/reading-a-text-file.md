@@ -1,12 +1,12 @@
 ---
 date: 2024-02-01 21:30:17.266913-07:00
-description: "Reading a text file in Visual Basic for Applications (VBA) involves\
-  \ programmatically accessing and extracting the contents of a text file from within\
-  \ an\u2026"
+description: "How to: The simplest way to read a text file in VBA is by using the\
+  \ `Open` statement in combination with the `Input` or `Line Input` functions. Here's\
+  \ how\u2026"
 lastmod: '2024-03-13T22:44:59.950047-06:00'
 model: gpt-4-0125-preview
-summary: Reading a text file in Visual Basic for Applications (VBA) involves programmatically
-  accessing and extracting the contents of a text file from within an Office application.
+summary: The simplest way to read a text file in VBA is by using the `Open` statement
+  in combination with the `Input` or `Line Input` functions.
 title: Reading a text file
 weight: 22
 ---

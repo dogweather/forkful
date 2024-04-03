@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:13:19.807711-07:00
-description: "Assosiatiiviset taulukot, tunnetaan Swiftiss\xE4 sanakirjoina, antavat\
-  \ sinun tallentaa ja hallita tietoja avain-arvo -pareina. Ohjelmoijat k\xE4ytt\xE4\
-  v\xE4t niit\xE4\u2026"
+description: "Kuinka: Swift tekee assosiatiivisten taulukoiden k\xE4yt\xF6st\xE4 suoraviivaista.\
+  \ T\xE4ss\xE4 on miten voit julistaa, lis\xE4t\xE4, poistaa ja k\xE4ytt\xE4\xE4\
+  \ kohteita Swiftin\u2026"
 lastmod: '2024-03-13T22:44:56.900319-06:00'
 model: gpt-4-0125-preview
-summary: "Assosiatiiviset taulukot, tunnetaan Swiftiss\xE4 sanakirjoina, antavat sinun\
-  \ tallentaa ja hallita tietoja avain-arvo -pareina."
+summary: "Swift tekee assosiatiivisten taulukoiden k\xE4yt\xF6st\xE4 suoraviivaista."
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---

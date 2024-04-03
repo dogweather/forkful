@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 18:00:00.820896-07:00
-description: "Att skicka en HTTP-beg\xE4ran inneb\xE4r att du som programmerare fr\xE5\
-  gar en server om information eller ber den utf\xF6ra en \xE5tg\xE4rd. Det \xE4r\
-  \ kritiskt f\xF6r\u2026"
+description: "Hur g\xF6r man: Java's `HttpClient` g\xF6r det enkelt att skicka HTTP-beg\xE4\
+  ran. H\xE4r \xE4r ett snabbt exempel f\xF6r att skicka en GET-beg\xE4ran och skriva\
+  \ ut svaret."
 lastmod: '2024-03-13T22:44:37.784339-06:00'
 model: gpt-4-1106-preview
-summary: "Att skicka en HTTP-beg\xE4ran inneb\xE4r att du som programmerare fr\xE5\
-  gar en server om information eller ber den utf\xF6ra en \xE5tg\xE4rd."
+summary: "Java's `HttpClient` g\xF6r det enkelt att skicka HTTP-beg\xE4ran."
 title: "Skicka en http-f\xF6rfr\xE5gan"
 weight: 44
 ---

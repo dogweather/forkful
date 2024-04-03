@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 01:08:27.465647-07:00
-description: "Das Protokollieren in der Programmierung gleicht dem F\xFChren eines\
-  \ Tagebuchs f\xFCr Ihre Anwendung. Es ist die systematische Aufzeichnung von Ereignissen,\u2026"
+description: "Wie man das macht: Ruby verf\xFCgt \xFCber ein eingebautes Modul zum\
+  \ Protokollieren, `Logger`, das super einfach zu verwenden ist. Hier ist ein schnelles\u2026"
 lastmod: '2024-03-13T22:44:54.406826-06:00'
 model: gpt-4-1106-preview
-summary: "Das Protokollieren in der Programmierung gleicht dem F\xFChren eines Tagebuchs\
-  \ f\xFCr Ihre Anwendung."
+summary: "Ruby verf\xFCgt \xFCber ein eingebautes Modul zum Protokollieren, `Logger`,\
+  \ das super einfach zu verwenden ist."
 title: Protokollierung
 weight: 17
 ---

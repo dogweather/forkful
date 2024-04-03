@@ -1,10 +1,11 @@
 ---
 date: 2024-01-20 17:47:17.443264-07:00
-description: Finding the length of a string means counting its characters. Programmers
-  do it to validate inputs, manipulate text, or simply to size up data.
+description: 'How to: In Elm, you use `String.length` to find out how many characters
+  a string contains. Witness.'
 lastmod: '2024-03-13T22:45:00.001268-06:00'
 model: gpt-4-1106-preview
-summary: Finding the length of a string means counting its characters.
+summary: In Elm, you use `String.length` to find out how many characters a string
+  contains.
 title: Finding the length of a string
 weight: 7
 ---

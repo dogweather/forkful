@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:35:56.707211-07:00
-description: "Lavorare con XML significa analizzare e generare dati XML in Swift.\
-  \ I programmatori lo fanno per lo scambio di dati, specialmente quando si integrano\
-  \ con\u2026"
+description: 'Come fare: Swift fornisce `XMLParser` e `XMLDocument` per l''analisi
+  dei dati XML. Ecco un frammento per analizzare una semplice stringa XML.'
 lastmod: '2024-03-13T22:44:43.794270-06:00'
 model: gpt-4-0125-preview
-summary: Lavorare con XML significa analizzare e generare dati XML in Swift.
+summary: Swift fornisce `XMLParser` e `XMLDocument` per l'analisi dei dati XML.
 title: Lavorare con XML
 weight: 40
 ---

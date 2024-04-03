@@ -1,11 +1,13 @@
 ---
 date: 2024-01-26 04:42:23.900526-07:00
-description: "Kompleksiluvut ovat lukuja, joilla on todellinen ja imaginaarinen osa\
-  \ (kuten 3 + 4i). Ne tulevat esiin monissa ohjelmointiongelmissa, erityisesti\u2026"
+description: "Kuinka: JavaScript ei sis\xE4ll\xE4 valmiina tukea kompleksiluvuille,\
+  \ mutta voit k\xE4\xE4ri\xE4 hihasi ja k\xE4sitell\xE4 niit\xE4 itse objektien ja\
+  \ matematiikan avulla. T\xE4ss\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.943825-06:00'
 model: gpt-4-0125-preview
-summary: Kompleksiluvut ovat lukuja, joilla on todellinen ja imaginaarinen osa (kuten
-  3 + 4i).
+summary: "JavaScript ei sis\xE4ll\xE4 valmiina tukea kompleksiluvuille, mutta voit\
+  \ k\xE4\xE4ri\xE4 hihasi ja k\xE4sitell\xE4 niit\xE4 itse objektien ja matematiikan\
+  \ avulla."
 title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---

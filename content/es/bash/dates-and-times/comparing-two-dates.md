@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:32:15.292828-07:00
-description: "Comparar dos fechas significa verificar cu\xE1l es anterior o si son\
-  \ el mismo d\xEDa. Programadores hacen esto para gestionar eventos, vencimientos,\
-  \ y ordenar\u2026"
+description: "C\xF3mo: ."
 lastmod: '2024-03-13T22:44:59.259395-06:00'
 model: gpt-4-1106-preview
-summary: "Comparar dos fechas significa verificar cu\xE1l es anterior o si son el\
-  \ mismo d\xEDa."
+summary: .
 title: "Comparaci\xF3n de dos fechas"
 weight: 27
 ---

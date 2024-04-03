@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:02:39.565422-07:00
-description: "Capitalizing a string involves converting the first character of each\
-  \ word in a string to uppercase while ensuring the rest remain lowercase. This\u2026"
+description: "How to: Arduino, primarily known for interacting with hardware, also\
+  \ includes basic string manipulation capabilities through its `String` object. However,\u2026"
 lastmod: '2024-03-13T22:45:00.307135-06:00'
 model: gpt-4-0125-preview
-summary: Capitalizing a string involves converting the first character of each word
-  in a string to uppercase while ensuring the rest remain lowercase.
+summary: Arduino, primarily known for interacting with hardware, also includes basic
+  string manipulation capabilities through its `String` object.
 title: Capitalizing a string
 weight: 2
 ---

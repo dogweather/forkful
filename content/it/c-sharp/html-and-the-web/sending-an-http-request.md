@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:59:08.646234-07:00
-description: "Mandare una richiesta HTTP significa chiedere dati o servizi a un server\
-  \ web. Programmatori lo fanno per interagire con API, scaricare contenuti o inviare\u2026"
+description: 'How to: (Come fare:) .'
 lastmod: '2024-03-13T22:44:43.430809-06:00'
 model: gpt-4-1106-preview
-summary: Mandare una richiesta HTTP significa chiedere dati o servizi a un server
-  web.
+summary: .
 title: Inviare una richiesta http
 weight: 44
 ---

@@ -2,14 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:06.481668-07:00
-description: "Het cre\xEBren van een tijdelijk bestand is het proces van het maken\
-  \ van een kortstondig bestand om gegevens in op te slaan die alleen nodig zijn tijdens\
-  \ de\u2026"
+description: "Hoe te: Lua heeft geen ingebouwde functionaliteit voor tijdelijke bestanden,\
+  \ maar je kunt je eigen oplossing uitrollen met behulp van de `os` en `io`\u2026"
 lastmod: '2024-03-13T22:44:50.956502-06:00'
 model: gpt-4-0125-preview
-summary: "Het cre\xEBren van een tijdelijk bestand is het proces van het maken van\
-  \ een kortstondig bestand om gegevens in op te slaan die alleen nodig zijn tijdens\
-  \ de uitvoering van een programma."
+summary: Lua heeft geen ingebouwde functionaliteit voor tijdelijke bestanden, maar
+  je kunt je eigen oplossing uitrollen met behulp van de `os` en `io` bibliotheken.
 title: Een tijdelijk bestand aanmaken
 weight: 21
 ---

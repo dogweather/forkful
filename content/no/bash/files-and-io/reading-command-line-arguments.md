@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:55:20.388578-07:00
-description: "\xC5 lese kommandolinjeargumenter betyr ganske enkelt at skriptet ditt\
-  \ plukker opp informasjon direkte fra terminalen. Programmerere bruker dette til\
-  \ \xE5 gj\xF8re\u2026"
+description: 'Hvordan: .'
 lastmod: '2024-03-13T22:44:40.990176-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 lese kommandolinjeargumenter betyr ganske enkelt at skriptet ditt plukker\
-  \ opp informasjon direkte fra terminalen."
+summary: .
 title: Lese kommandolinjeargumenter
 weight: 23
 ---

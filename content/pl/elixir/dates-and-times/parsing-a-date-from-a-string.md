@@ -3,14 +3,11 @@ changelog:
 - 2024-01-28, dogweather, reviewed
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 02:05:16.016190-07:00
-description: "Parsowanie daty z ci\u0105gu znak\xF3w polega na przekszta\u0142ceniu\
-  \ tekstu, takiego jak \"2023-04-05\", na format daty, kt\xF3ry Tw\xF3j program mo\u017C\
-  e zrozumie\u0107 i z kt\xF3rym\u2026"
+description: "Jak to zrobi\u0107: W Elixirze mo\u017Cesz parsowa\u0107 daty przy pomocy\
+  \ modu\u0142u `Date`. Oto jak zamieni\u0107 ci\u0105g znak\xF3w na dat\u0119."
 lastmod: '2024-03-13T22:44:35.053238-06:00'
 model: gpt-4-0125-preview
-summary: "Parsowanie daty z ci\u0105gu znak\xF3w polega na przekszta\u0142ceniu tekstu,\
-  \ takiego jak \"2023-04-05\", na format daty, kt\xF3ry Tw\xF3j program mo\u017C\
-  e zrozumie\u0107 i z kt\xF3rym mo\u017Ce pracowa\u0107."
+summary: "W Elixirze mo\u017Cesz parsowa\u0107 daty przy pomocy modu\u0142u `Date`."
 title: "Analiza sk\u0142adniowa daty z ci\u0105gu znak\xF3w"
 weight: 30
 ---

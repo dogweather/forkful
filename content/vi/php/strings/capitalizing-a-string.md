@@ -2,14 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:04.331367-07:00
-description: "Vi\u1EC7c vi\u1EBFt hoa m\u1ED9t chu\u1ED7i c\xF3 ngh\u0129a l\xE0 vi\u1EBF\
-  t hoa ch\u1EEF c\xE1i \u0111\u1EA7u ti\xEAn c\u1EE7a m\u1ED7i t\u1EEB. C\xE1c l\u1EAD\
-  p tr\xECnh vi\xEAn vi\u1EBFt hoa chu\u1ED7i \u0111\u1EC3 \u0111\u1EA3m b\u1EA3o\
-  \ t\xEDnh nh\u1EA5t qu\xE1n v\u1EC1 m\u1EB7t h\xECnh th\u1EE9c,\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong PHP, ch\xFAng ta vi\u1EBFt hoa chu\u1ED7\
+  i b\u1EB1ng h\xE0m `ucwords()` cho c\xE1c ti\xEAu \u0111\u1EC1 \u0111\u1EA7y \u0111\
+  \u1EE7 ho\u1EB7c `ucfirst()` cho m\u1ED9t d\xF2ng \u0111\u01A1n ho\u1EB7c c\xE2\
+  u."
 lastmod: '2024-03-13T22:44:36.744288-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c vi\u1EBFt hoa m\u1ED9t chu\u1ED7i c\xF3 ngh\u0129a l\xE0 vi\u1EBF\
-  t hoa ch\u1EEF c\xE1i \u0111\u1EA7u ti\xEAn c\u1EE7a m\u1ED7i t\u1EEB."
+summary: "Trong PHP, ch\xFAng ta vi\u1EBFt hoa chu\u1ED7i b\u1EB1ng h\xE0m `ucwords()`\
+  \ cho c\xE1c ti\xEAu \u0111\u1EC1 \u0111\u1EA7y \u0111\u1EE7 ho\u1EB7c `ucfirst()`\
+  \ cho m\u1ED9t d\xF2ng \u0111\u01A1n ho\u1EB7c c\xE2u."
 title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
 weight: 2
 ---

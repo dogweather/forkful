@@ -1,8 +1,8 @@
 ---
 date: 2024-01-26 03:50:11.716359-07:00
-description: "L\xE5t s\xE4ga att du har ett enkelt Java-program som strular, och du\
-  \ kan inte lista ut varf\xF6r. H\xE4r \xE4r hur du skulle starta en debugger med\
-  \ Eclipse, en av de\u2026"
+description: "Hur man g\xF6r: L\xE5t s\xE4ga att du har ett enkelt Java-program som\
+  \ strular, och du kan inte lista ut varf\xF6r. H\xE4r \xE4r hur du skulle starta\
+  \ en debugger med\u2026"
 lastmod: '2024-03-13T22:44:37.791853-06:00'
 model: gpt-4-0125-preview
 summary: "L\xE5t s\xE4ga att du har ett enkelt Java-program som strular, och du kan\

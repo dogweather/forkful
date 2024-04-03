@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:53:37.182179-07:00
-description: "Debug-Output ist wie das Fl\xFCstern deines Codes. Es verr\xE4t dir,\
-  \ was im Code passiert, w\xE4hrend er l\xE4uft. Warum? Weil wir Menschen nicht in\
-  \ Matrix-Code sehen\u2026"
+description: 'How to: (Wie?) .'
 lastmod: '2024-03-13T22:44:53.633719-06:00'
 model: gpt-4-1106-preview
-summary: "Debug-Output ist wie das Fl\xFCstern deines Codes."
+summary: .
 title: Debug-Ausgaben drucken
 weight: 33
 ---

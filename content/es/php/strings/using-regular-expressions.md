@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:31.447971-07:00
-description: "Las expresiones regulares (regex) en PHP son patrones utilizados para\
-  \ coincidir con combinaciones de caracteres en cadenas de texto, permitiendo\u2026"
+description: "C\xF3mo utilizarlas: PHP soporta las expresiones regulares a trav\xE9\
+  s de la biblioteca PCRE (Perl Compatible Regular Expressions), ofreciendo un rico\
+  \ conjunto\u2026"
 lastmod: '2024-03-13T22:44:59.150749-06:00'
 model: gpt-4-0125-preview
-summary: "Las expresiones regulares (regex) en PHP son patrones utilizados para coincidir\
-  \ con combinaciones de caracteres en cadenas de texto, permitiendo operaciones de\
-  \ b\xFAsqueda y reemplazo sofisticadas y validaci\xF3n de datos."
+summary: "PHP soporta las expresiones regulares a trav\xE9s de la biblioteca PCRE\
+  \ (Perl Compatible Regular Expressions), ofreciendo un rico conjunto de funciones."
 title: Usando expresiones regulares
 weight: 11
 ---

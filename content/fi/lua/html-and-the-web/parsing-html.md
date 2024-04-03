@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:46.725841-07:00
-description: "HTML:n j\xE4sennys sis\xE4lt\xE4\xE4 tietojen ja datan poimimisen HTML-dokumenteista,\
-  \ mik\xE4 on ratkaisevan t\xE4rke\xE4\xE4 verkkosivujen kaapauksessa, datan analysoinnissa\
-  \ ja\u2026"
+description: "Kuinka: Lua ei sis\xE4ll\xE4 sis\xE4\xE4nrakennettua kirjastoa HTML:n\
+  \ j\xE4sennykseen, mutta voit hy\xF6dynt\xE4\xE4 kolmannen osapuolen kirjastoja\
+  \ kuten `LuaHTML` tai k\xE4ytt\xE4\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.695199-06:00'
 model: gpt-4-0125-preview
-summary: "HTML:n j\xE4sennys sis\xE4lt\xE4\xE4 tietojen ja datan poimimisen HTML-dokumenteista,\
-  \ mik\xE4 on ratkaisevan t\xE4rke\xE4\xE4 verkkosivujen kaapauksessa, datan analysoinnissa\
-  \ ja automaatioteht\xE4viss\xE4."
+summary: "Lua ei sis\xE4ll\xE4 sis\xE4\xE4nrakennettua kirjastoa HTML:n j\xE4sennykseen,\
+  \ mutta voit hy\xF6dynt\xE4\xE4 kolmannen osapuolen kirjastoja kuten `LuaHTML` tai\
+  \ k\xE4ytt\xE4\xE4 `libxml2`-sidoksia `LuaXML`-kirjaston kautta."
 title: "HTML:n j\xE4sennys"
 weight: 43
 ---

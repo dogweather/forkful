@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:01.704143-07:00
-description: "A an\xE1lise de uma data a partir de uma string consiste em reconhecer\
-  \ e converter datas escritas em forma de texto para um tipo de dado de data que\
-  \ o\u2026"
+description: "Como Fazer: O PowerShell torna a an\xE1lise de datas a partir de strings\
+  \ direta com seu cmdlet `Get-Date` e o acelerador de tipo `[datetime]`, que funcionam\u2026"
 lastmod: '2024-03-13T22:44:46.806270-06:00'
 model: gpt-4-0125-preview
-summary: "A an\xE1lise de uma data a partir de uma string consiste em reconhecer e\
-  \ converter datas escritas em forma de texto para um tipo de dado de data que o\
-  \ PowerShell pode entender e manipular."
+summary: "O PowerShell torna a an\xE1lise de datas a partir de strings direta com\
+  \ seu cmdlet `Get-Date` e o acelerador de tipo `[datetime]`, que funcionam bem para\
+  \ formatos de data padr\xE3o."
 title: Analisando uma data a partir de uma string
 weight: 30
 ---

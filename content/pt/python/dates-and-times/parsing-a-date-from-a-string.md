@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:00.565448-07:00
-description: "Analisar uma data de uma string envolve converter informa\xE7\xF5es\
-  \ textuais de data e hora em um objeto datetime ou formato estruturado equivalente.\
-  \ Isso \xE9\u2026"
+description: "Como fazer: A biblioteca padr\xE3o do Python fornece o m\xF3dulo `datetime`,\
+  \ que inclui o m\xE9todo `strptime` para essa finalidade. O m\xE9todo requer dois\u2026"
 lastmod: '2024-03-13T22:44:46.163726-06:00'
 model: gpt-4-0125-preview
-summary: "Analisar uma data de uma string envolve converter informa\xE7\xF5es textuais\
-  \ de data e hora em um objeto datetime ou formato estruturado equivalente."
+summary: "A biblioteca padr\xE3o do Python fornece o m\xF3dulo `datetime`, que inclui\
+  \ o m\xE9todo `strptime` para essa finalidade."
 title: Analisando uma data a partir de uma string
 weight: 30
 ---

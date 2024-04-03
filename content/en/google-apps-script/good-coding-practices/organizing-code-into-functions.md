@@ -1,13 +1,13 @@
 ---
 date: 2024-02-01 21:12:07.643672-07:00
-description: "Organizing code into functions is about structuring your Google Apps\
-  \ Script code by separating logical segments into distinct blocks, each performing\
-  \ a\u2026"
+description: "How to: In Google Apps Script, which is based on JavaScript, you define\
+  \ functions using the `function` keyword, followed by a unique function name,\u2026"
 lastmod: '2024-03-13T22:44:59.674908-06:00'
 model: gpt-4-0125-preview
-summary: Organizing code into functions is about structuring your Google Apps Script
-  code by separating logical segments into distinct blocks, each performing a specific
-  task.
+summary: In Google Apps Script, which is based on JavaScript, you define functions
+  using the `function` keyword, followed by a unique function name, parentheses `()`
+  which can contain parameters, and curly brackets `{}` that encapsulate the function's
+  code block.
 title: Organizing code into functions
 weight: 18
 ---

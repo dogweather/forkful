@@ -1,10 +1,11 @@
 ---
 date: 2024-02-03 19:02:45.807993-07:00
-description: "Parsing HTML in PHP involves extracting specific information from HTML\
-  \ documents. Programmers perform this task to automate data extraction, web scraping,\u2026"
+description: "How to: For parsing HTML, PHP programmers can utilize built-in functions\
+  \ or lean on robust libraries like Simple HTML DOM Parser. Here, we'll explore\u2026"
 lastmod: '2024-03-13T22:45:00.164685-06:00'
 model: gpt-4-0125-preview
-summary: Parsing HTML in PHP involves extracting specific information from HTML documents.
+summary: For parsing HTML, PHP programmers can utilize built-in functions or lean
+  on robust libraries like Simple HTML DOM Parser.
 title: Parsing HTML
 weight: 43
 ---

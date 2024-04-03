@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:45.330322-07:00
-description: "Zaokr\u0105glanie liczb to proces dostosowywania cyfr liczby w celu\
-  \ zmniejszenia jej precyzji zgodnie z pewnymi zasadami, albo w kierunku najbli\u017C\
-  szej liczby\u2026"
+description: "Jak to zrobi\u0107: Zaokr\u0105glanie liczb w C mo\u017Cna osi\u0105\
+  gn\u0105\u0107 za pomoc\u0105 r\xF3\u017Cnych funkcji, ale najcz\u0119\u015Bciej\
+  \ stosowane s\u0105 funkcje `floor()`, `ceil()`, i `round()`. Te\u2026"
 lastmod: '2024-03-13T22:44:35.880739-06:00'
 model: gpt-4-0125-preview
-summary: "Zaokr\u0105glanie liczb to proces dostosowywania cyfr liczby w celu zmniejszenia\
-  \ jej precyzji zgodnie z pewnymi zasadami, albo w kierunku najbli\u017Cszej liczby\
-  \ ca\u0142kowitej, albo okre\u015Blonej liczby miejsc dziesi\u0119tnych."
+summary: "Zaokr\u0105glanie liczb w C mo\u017Cna osi\u0105gn\u0105\u0107 za pomoc\u0105\
+  \ r\xF3\u017Cnych funkcji, ale najcz\u0119\u015Bciej stosowane s\u0105 funkcje `floor()`,\
+  \ `ceil()`, i `round()`."
 title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---

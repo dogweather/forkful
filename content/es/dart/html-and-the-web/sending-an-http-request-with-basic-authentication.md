@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:15.532259-07:00
-description: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica implica adjuntar\
-  \ un nombre de usuario y contrase\xF1a a una solicitud para verificar la identidad\
-  \ del\u2026"
+description: "C\xF3mo hacerlo: En Dart, puedes usar el paquete `http` para enviar\
+  \ solicitudes HTTP con autenticaci\xF3n b\xE1sica. Primero, agrega el paquete `http`\
+  \ a tu archivo\u2026"
 lastmod: '2024-03-13T22:44:58.750620-06:00'
 model: gpt-4-0125-preview
-summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica implica adjuntar\
-  \ un nombre de usuario y contrase\xF1a a una solicitud para verificar la identidad\
-  \ del usuario."
+summary: "En Dart, puedes usar el paquete `http` para enviar solicitudes HTTP con\
+  \ autenticaci\xF3n b\xE1sica."
 title: "Enviando una solicitud HTTP con autenticaci\xF3n b\xE1sica"
 weight: 45
 ---

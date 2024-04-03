@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:31.079939-07:00
-description: "Capitalizar una cadena implica modificar la primera letra de cada palabra\
-  \ en la cadena a may\xFAsculas, asegurando que el resto permanezcan en min\xFAsculas.\u2026"
+description: "C\xF3mo hacerlo: La biblioteca est\xE1ndar de Java no proporciona un\
+  \ m\xE9todo directo para capitalizar cadenas enteras de una vez, pero puedes lograr\
+  \ esto con una\u2026"
 lastmod: '2024-03-13T22:44:58.921294-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizar una cadena implica modificar la primera letra de cada palabra\
-  \ en la cadena a may\xFAsculas, asegurando que el resto permanezcan en min\xFAsculas."
+summary: "La biblioteca est\xE1ndar de Java no proporciona un m\xE9todo directo para\
+  \ capitalizar cadenas enteras de una vez, pero puedes lograr esto con una combinaci\xF3\
+  n de m\xE9todos integrados."
 title: Capitalizando una cadena de texto
 weight: 2
 ---

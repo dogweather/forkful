@@ -2,15 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:16.869072-07:00
-description: "La recherche et le remplacement de texte en programmation facilitent\
-  \ la modification et la gestion des cha\xEEnes de caract\xE8res, qui constituent\
-  \ une t\xE2che\u2026"
+description: "Comment faire : En Go, le paquet `strings` propose diff\xE9rentes fonctions\
+  \ pour rechercher et remplacer du texte dans des cha\xEEnes de caract\xE8res. Explorons\u2026"
 lastmod: '2024-03-13T22:44:57.116097-06:00'
 model: gpt-4-0125-preview
-summary: "La recherche et le remplacement de texte en programmation facilitent la\
-  \ modification et la gestion des cha\xEEnes de caract\xE8res, qui constituent une\
-  \ t\xE2che fondamentale dans la manipulation des donn\xE9es et le d\xE9veloppement\
-  \ logiciel."
+summary: "En Go, le paquet `strings` propose diff\xE9rentes fonctions pour rechercher\
+  \ et remplacer du texte dans des cha\xEEnes de caract\xE8res."
 title: Rechercher et remplacer du texte
 weight: 10
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:17.357849-07:00
-description: "\xC5 slette tegn som samsvarer med et spesifikt m\xF8nster i strenger\
-  \ er avgj\xF8rende for datakontroll, sanitering eller n\xE5r man forbereder tekst\
-  \ til videre\u2026"
+description: "Hvordan: Dart gj\xF8r det enkelt \xE5 fjerne tegn som matcher et forh\xE5\
+  ndsdefinert m\xF8nster ved bruk av regul\xE6re uttrykk og metoden `replaceAll`.\
+  \ Ingen\u2026"
 lastmod: '2024-03-13T22:44:40.469660-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 slette tegn som samsvarer med et spesifikt m\xF8nster i strenger er\
-  \ avgj\xF8rende for datakontroll, sanitering eller n\xE5r man forbereder tekst til\
-  \ videre behandling."
+summary: "Dart gj\xF8r det enkelt \xE5 fjerne tegn som matcher et forh\xE5ndsdefinert\
+  \ m\xF8nster ved bruk av regul\xE6re uttrykk og metoden `replaceAll`."
 title: "Slette tegn som samsvarer med et m\xF8nster"
 weight: 5
 ---

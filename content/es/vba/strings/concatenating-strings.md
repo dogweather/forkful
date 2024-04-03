@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:25.108008-07:00
-description: "La concatenaci\xF3n en Visual Basic para Aplicaciones (VBA) implica\
-  \ unir dos o m\xE1s cadenas en una \xFAnica entidad. Esta es una tarea fundamental\
-  \ en\u2026"
+description: "C\xF3mo hacerlo: VBA proporciona un m\xE9todo sencillo para concatenar\
+  \ cadenas usando el operador `&` o la funci\xF3n `Concatenate`. Vamos a explorar\
+  \ ambos m\xE9todos\u2026"
 lastmod: '2024-03-13T22:44:58.883841-06:00'
 model: gpt-4-0125-preview
-summary: "La concatenaci\xF3n en Visual Basic para Aplicaciones (VBA) implica unir\
-  \ dos o m\xE1s cadenas en una \xFAnica entidad."
+summary: "VBA proporciona un m\xE9todo sencillo para concatenar cadenas usando el\
+  \ operador `&` o la funci\xF3n `Concatenate`."
 title: Concatenando cadenas de texto
 weight: 3
 ---

@@ -2,15 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:33.801219-07:00
-description: "Vi\u1EC7c vi\u1EBFt hoa m\u1ED9t chu\u1ED7i ngh\u0129a l\xE0 vi\u1EC7\
-  c l\xE0m ch\u1EEF c\xE1i \u0111\u1EA7u ti\xEAn c\u1EE7a m\u1ED7i t\u1EEB tr\u1EDF\
-  \ n\xEAn in hoa. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1\
-  u n\xE0y \u0111\u1EC3 \u0111\u1EA3m b\u1EA3o t\xEDnh nh\u1EA5t qu\xE1n\u2026"
+description: "L\xE0m sao: Lua kh\xF4ng c\xF3 h\xE0m vi\u1EBFt hoa s\u1EB5n, v\xEC\
+  \ v\u1EADy ch\xFAng ta h\xE3y t\u1EA1o m\u1ED9t h\xE0m."
 lastmod: '2024-03-13T22:44:36.800762-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c vi\u1EBFt hoa m\u1ED9t chu\u1ED7i ngh\u0129a l\xE0 vi\u1EC7c l\xE0\
-  m ch\u1EEF c\xE1i \u0111\u1EA7u ti\xEAn c\u1EE7a m\u1ED7i t\u1EEB tr\u1EDF n\xEA\
-  n in hoa."
+summary: "Lua kh\xF4ng c\xF3 h\xE0m vi\u1EBFt hoa s\u1EB5n, v\xEC v\u1EADy ch\xFA\
+  ng ta h\xE3y t\u1EA1o m\u1ED9t h\xE0m."
 title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
 weight: 2
 ---

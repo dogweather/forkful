@@ -1,14 +1,11 @@
 ---
 date: 2024-01-27 16:21:08.488922-07:00
-description: "No mundo da programa\xE7\xE3o, especialmente ao lidar com ambientes\
-  \ Linux ou Unix, manipular arquivos diretamente da interface de linha de comando\
-  \ (CLI) n\xE3o \xE9\u2026"
+description: "Como fazer: Manipular arquivos no Fish Shell \xE9 tanto intuitivo quanto\
+  \ potente. Aqui est\xE3o alguns exemplos para mostrar sua capacidade: 1. **Criar\
+  \ um\u2026"
 lastmod: '2024-03-13T22:44:47.000806-06:00'
 model: gpt-4-0125-preview
-summary: "No mundo da programa\xE7\xE3o, especialmente ao lidar com ambientes Linux\
-  \ ou Unix, manipular arquivos diretamente da interface de linha de comando (CLI)\
-  \ n\xE3o \xE9 apenas uma quest\xE3o de conveni\xEAncia \u2014 \xE9 uma ferramenta\
-  \ de poder."
+summary: "Manipular arquivos no Fish Shell \xE9 tanto intuitivo quanto potente."
 title: Manipulando arquivos com one-liners de CLI
 weight: 31
 ---

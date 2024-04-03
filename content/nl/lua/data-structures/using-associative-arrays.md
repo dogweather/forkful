@@ -2,13 +2,13 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:06.547700-07:00
-description: "Associatieve arrays zijn als geheime handdrukken voor data in Lua\u2014\
-  \ in plaats van alleen nummers die keurig op index in de rij staan, kunnen je sleutels\u2026"
+description: "Hoe te: In Lua is het cre\xEBren van een associatieve array (of een\
+  \ tabel, in Lua-jargon) eenvoudig. Je laat de gebruikelijke numerieke indices vallen\
+  \ voor\u2026"
 lastmod: '2024-03-13T22:44:50.930403-06:00'
 model: gpt-4-0125-preview
-summary: "Associatieve arrays zijn als geheime handdrukken voor data in Lua\u2014\
-  \ in plaats van alleen nummers die keurig op index in de rij staan, kunnen je sleutels\
-  \ zijn wat je maar wilt, waardoor gegevensophaling een fluitje van een cent wordt."
+summary: "In Lua is het cre\xEBren van een associatieve array (of een tabel, in Lua-jargon)\
+  \ eenvoudig."
 title: Gebruik van associatieve arrays
 weight: 15
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:26.134673-07:00
-description: "YAML, was f\xFCr \"YAML Ain't Markup Language\" steht, wird in Ruby\
-  \ umfangreich f\xFCr Konfigurationsdateien und die Serialisierung von Daten verwendet,\
-  \ aufgrund\u2026"
+description: "Wie geht das: Ruby kommt mit einer eingebauten Bibliothek namens Psych\
+  \ zum Parsen und Emittieren von YAML. Um sie zu nutzen, m\xFCssen Sie zuerst die\
+  \ YAML-\u2026"
 lastmod: '2024-03-13T22:44:54.420759-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, was f\xFCr \"YAML Ain't Markup Language\" steht, wird in Ruby umfangreich\
-  \ f\xFCr Konfigurationsdateien und die Serialisierung von Daten verwendet, aufgrund\
-  \ seines menschenlesbaren Formats."
+summary: Ruby kommt mit einer eingebauten Bibliothek namens Psych zum Parsen und Emittieren
+  von YAML.
 title: Arbeiten mit YAML
 weight: 41
 ---

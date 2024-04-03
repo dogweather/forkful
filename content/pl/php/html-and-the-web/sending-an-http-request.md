@@ -1,13 +1,12 @@
 ---
 date: 2024-01-20 18:00:12.160471-07:00
-description: "Wysy\u0142anie \u017C\u0105dania HTTP to spos\xF3b, by twoja aplikacja\
-  \ PHP porozumiewa\u0142a si\u0119 z innymi serwerami \u2013 to jak wys\u0142anie\
-  \ listu w cyfrowym \u015Bwiecie. Programi\u015Bci\u2026"
+description: "How to (Jak to zrobi\u0107): W PHP do wysy\u0142ania \u017C\u0105da\u0144\
+  \ HTTP u\u017Cywamy g\u0142\xF3wnie funkcji `file_get_contents` lub rozszerzenia\
+  \ `cURL`. Oto przyk\u0142ady obu."
 lastmod: '2024-03-13T22:44:35.493997-06:00'
 model: gpt-4-1106-preview
-summary: "Wysy\u0142anie \u017C\u0105dania HTTP to spos\xF3b, by twoja aplikacja PHP\
-  \ porozumiewa\u0142a si\u0119 z innymi serwerami \u2013 to jak wys\u0142anie listu\
-  \ w cyfrowym \u015Bwiecie."
+summary: "W PHP do wysy\u0142ania \u017C\u0105da\u0144 HTTP u\u017Cywamy g\u0142\xF3\
+  wnie funkcji `file_get_contents` lub rozszerzenia `cURL`."
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---

@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:41:34.742692-07:00
-description: "Deleting characters matching a pattern means stripping out specific\
-  \ sequences from a string. Programmers do this for cleanup, data formatting, or\
-  \ to meet\u2026"
+description: 'How to: Let''s rip out characters using `erase` and `remove_if` alongside
+  lambda expressions. Here''s a quick example.'
 lastmod: '2024-03-13T22:45:00.343590-06:00'
 model: gpt-4-1106-preview
-summary: Deleting characters matching a pattern means stripping out specific sequences
-  from a string.
+summary: Let's rip out characters using `erase` and `remove_if` alongside lambda expressions.
 title: Deleting characters matching a pattern
 weight: 5
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:31.624544-07:00
-description: "CSV:n (pilkuilla erotetut arvot) k\xE4sittely JavaScriptill\xE4 tarkoittaa\
-  \ CSV-tiedostojen j\xE4sent\xE4mist\xE4 tai luomista, jotta voidaan joko ottaa vastaan\u2026"
+description: "Miten: JavaScriptiss\xE4 ei ole sis\xE4\xE4nrakennettua CSV:n j\xE4\
+  sent\xE4misen tai merkkijonoksi muuttamisen toiminnallisuutta kuten JSON:ssa. Voit\
+  \ kuitenkin k\xE4sitell\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.972205-06:00'
 model: gpt-4-0125-preview
-summary: "CSV:n (pilkuilla erotetut arvot) k\xE4sittely JavaScriptill\xE4 tarkoittaa\
-  \ CSV-tiedostojen j\xE4sent\xE4mist\xE4 tai luomista, jotta voidaan joko ottaa vastaan\
-  \ taulukkomuotoista dataa ulkoisista l\xE4hteist\xE4 tai vied\xE4 dataa k\xE4ytett\xE4\
-  v\xE4ksi muissa ohjelmissa."
+summary: "JavaScriptiss\xE4 ei ole sis\xE4\xE4nrakennettua CSV:n j\xE4sent\xE4misen\
+  \ tai merkkijonoksi muuttamisen toiminnallisuutta kuten JSON:ssa."
 title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---

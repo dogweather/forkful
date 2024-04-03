@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:13.766586-07:00
-description: "In computerprogrammering betekent \"Debug-output afdrukken\" het produceren\
-  \ van gedetailleerde informatieve berichten die ontwikkelaars helpen de\u2026"
+description: "Hoe te: In Go kun je de standaard `fmt`-package gebruiken om debug-output\
+  \ naar de console te printen. Het `fmt`-package biedt een verscheidenheid aan\u2026"
 lastmod: '2024-03-13T22:44:50.290202-06:00'
 model: gpt-4-0125-preview
-summary: In computerprogrammering betekent "Debug-output afdrukken" het produceren
-  van gedetailleerde informatieve berichten die ontwikkelaars helpen de uitvoeringsstroom
-  van hun programma te begrijpen of problemen op te sporen.
+summary: In Go kun je de standaard `fmt`-package gebruiken om debug-output naar de
+  console te printen.
 title: Afdrukken van debug-uitvoer
 weight: 33
 ---

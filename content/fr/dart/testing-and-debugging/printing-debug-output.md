@@ -2,15 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:52.144816-07:00
-description: "Imprimer le d\xE9bogage dans Dart consiste \xE0 afficher des informations\
-  \ dans la console pendant l'ex\xE9cution, permettant aux d\xE9veloppeurs de suivre\
-  \ le flux\u2026"
+description: "Comment faire : Dans Dart, vous pouvez imprimer la sortie de d\xE9bogage\
+  \ en utilisant la fonction `print()`. Voici comment afficher des messages simples\
+  \ et\u2026"
 lastmod: '2024-03-13T22:44:57.392844-06:00'
 model: gpt-4-0125-preview
-summary: "Imprimer le d\xE9bogage dans Dart consiste \xE0 afficher des informations\
-  \ dans la console pendant l'ex\xE9cution, permettant aux d\xE9veloppeurs de suivre\
-  \ le flux d'ex\xE9cution, d'investiguer l'\xE9tat des variables ou d'identifier\
-  \ la source des erreurs."
+summary: "Dans Dart, vous pouvez imprimer la sortie de d\xE9bogage en utilisant la\
+  \ fonction `print()`."
 title: "Imprimer la sortie de d\xE9bogage"
 weight: 33
 ---

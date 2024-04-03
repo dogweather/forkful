@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:48.747295-07:00
-description: "Das Berechnen eines Datums in der Zukunft oder Vergangenheit in Go beinhaltet\
-  \ das Manipulieren von Datums- und Zeitwerten, um einen spezifischen Zeitpunkt\u2026"
+description: "Wie: Go stellt das `time` Paket zur Verf\xFCgung, um Datums- und Zeitoperationen\
+  \ zu handhaben und bietet einfache Mechanismen zum Hinzuf\xFCgen oder\u2026"
 lastmod: '2024-03-13T22:44:53.302472-06:00'
 model: gpt-4-0125-preview
-summary: Das Berechnen eines Datums in der Zukunft oder Vergangenheit in Go beinhaltet
-  das Manipulieren von Datums- und Zeitwerten, um einen spezifischen Zeitpunkt relativ
-  zu einem gegebenen Datum zu bestimmen.
+summary: "Go stellt das `time` Paket zur Verf\xFCgung, um Datums- und Zeitoperationen\
+  \ zu handhaben und bietet einfache Mechanismen zum Hinzuf\xFCgen oder Subtrahieren\
+  \ von Zeit."
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---

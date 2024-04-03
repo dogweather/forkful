@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:42:51.970216-07:00
-description: "Deleting characters matching a pattern in a string means finding and\
-  \ removing specific sequences of characters. Programmers do it to clean up text,\
-  \ parse\u2026"
+description: 'How to: In Rust, we can use the `replace` method from the `String` type
+  or regex for more complex patterns. Here''s how you do it.'
 lastmod: '2024-03-13T22:44:59.881832-06:00'
 model: gpt-4-1106-preview
-summary: Deleting characters matching a pattern in a string means finding and removing
-  specific sequences of characters.
+summary: In Rust, we can use the `replace` method from the `String` type or regex
+  for more complex patterns.
 title: Deleting characters matching a pattern
 weight: 5
 ---

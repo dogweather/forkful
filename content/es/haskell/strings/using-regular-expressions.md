@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:53.851895-07:00
-description: "Las expresiones regulares en programaci\xF3n son secuencias de caracteres\
-  \ que definen un patr\xF3n de b\xFAsqueda, t\xEDpicamente empleadas para la b\xFA\
-  squeda y\u2026"
+description: "C\xF3mo hacerlo: En Haskell, las funcionalidades de expresiones regulares\
+  \ no son parte de la biblioteca est\xE1ndar, por lo que es necesario utilizar paquetes\u2026"
 lastmod: '2024-03-13T22:44:59.109414-06:00'
 model: gpt-4-0125-preview
-summary: "Las expresiones regulares en programaci\xF3n son secuencias de caracteres\
-  \ que definen un patr\xF3n de b\xFAsqueda, t\xEDpicamente empleadas para la b\xFA\
-  squeda y manipulaci\xF3n de cadenas de texto."
+summary: "En Haskell, las funcionalidades de expresiones regulares no son parte de\
+  \ la biblioteca est\xE1ndar, por lo que es necesario utilizar paquetes de terceros\
+  \ como `regex-base` junto con un backend compatible como `regex-posix` (para soporte\
+  \ de regex POSIX), `regex-pcre` (para regex compatible con Perl), etc."
 title: Usando expresiones regulares
 weight: 11
 ---

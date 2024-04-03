@@ -2,13 +2,10 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:07.105007-07:00
-description: "Code in Funktionen in Dart zu organisieren bedeutet, wiederverwendbare\
-  \ Codebl\xF6cke zu definieren, die spezifische Aufgaben ausf\xFChren, typischerweise\u2026"
+description: 'Wie geht das: #.'
 lastmod: '2024-03-13T22:44:53.587123-06:00'
 model: gpt-4-0125-preview
-summary: "Code in Funktionen in Dart zu organisieren bedeutet, wiederverwendbare Codebl\xF6\
-  cke zu definieren, die spezifische Aufgaben ausf\xFChren, typischerweise Eingaben\
-  \ erhalten, Daten verarbeiten und m\xF6glicherweise Ausgaben zur\xFCckgeben."
+summary: '#.'
 title: Organisation von Code in Funktionen
 weight: 18
 ---

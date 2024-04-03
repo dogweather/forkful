@@ -1,10 +1,11 @@
 ---
 date: 2024-01-20 18:00:07.247634-07:00
-description: "HTTP-Anfragen sind der Weg, \xFCber den Programme im Internet kommunizieren.\
-  \ Programmierer senden sie, um Daten zu holen, zu senden, zu \xE4ndern oder zu\u2026"
+description: 'So geht''s: Hier ist ein einfaches Beispiel, wie man eine GET-Anfrage
+  in Java sendet, um den Inhalt einer Webseite zu holen.'
 lastmod: '2024-03-13T22:44:53.760038-06:00'
 model: gpt-4-1106-preview
-summary: "HTTP-Anfragen sind der Weg, \xFCber den Programme im Internet kommunizieren."
+summary: Hier ist ein einfaches Beispiel, wie man eine GET-Anfrage in Java sendet,
+  um den Inhalt einer Webseite zu holen.
 title: Einen HTTP-Request senden
 weight: 44
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:25.262073-07:00
-description: "Att skriva till standardfel (stderr) i Haskell g\xF6r det m\xF6jligt\
-  \ f\xF6r program att skilja sin utdata mellan normala resultat och felmeddelanden.\
-  \ Detta \xE4r\u2026"
+description: "Hur man g\xF6r: I Haskell \xE4r det enkelt att skriva till stderr med\
+  \ basbibliotekets `System.IO`-modul. Nedan f\xF6ljer ett grundl\xE4ggande exempel\
+  \ f\xF6r att\u2026"
 lastmod: '2024-03-13T22:44:37.971206-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva till standardfel (stderr) i Haskell g\xF6r det m\xF6jligt f\xF6\
-  r program att skilja sin utdata mellan normala resultat och felmeddelanden."
+summary: "I Haskell \xE4r det enkelt att skriva till stderr med basbibliotekets `System.IO`-modul."
 title: Skriva till standardfel
 weight: 25
 ---

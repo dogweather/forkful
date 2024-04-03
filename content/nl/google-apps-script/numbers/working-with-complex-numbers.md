@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:07:38.793153-07:00
-description: "Complexe getallen, gerepresenteerd als een combinatie van re\xEBle en\
-  \ imaginaire eenheden (bijv. 3 + 4i), zijn fundamenteel in verschillende computationele\u2026"
+description: "Hoe te: Google Apps Script heeft geen ingebouwde ondersteuning voor\
+  \ complexe getallen, wat de implementatie van aangepaste functionaliteit noodzakelijk\u2026"
 lastmod: '2024-03-13T22:44:50.324612-06:00'
 model: gpt-4-0125-preview
-summary: "Complexe getallen, gerepresenteerd als een combinatie van re\xEBle en imaginaire\
-  \ eenheden (bijv."
+summary: Google Apps Script heeft geen ingebouwde ondersteuning voor complexe getallen,
+  wat de implementatie van aangepaste functionaliteit noodzakelijk maakt.
 title: Werken met complexe getallen
 weight: 14
 ---

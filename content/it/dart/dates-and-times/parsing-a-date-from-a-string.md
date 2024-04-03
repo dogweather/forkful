@@ -2,12 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:14.431243-07:00
-description: "L'analisi di una data da una stringa in Dart comporta la conversione\
-  \ della rappresentazione testuale di date e orari in un oggetto `DateTime`. Questa\u2026"
+description: "Come: La libreria core di Dart semplifica l'analisi delle date attraverso\
+  \ la classe `DateTime`. Per casi semplici in cui si conosce il formato della\u2026"
 lastmod: '2024-03-13T22:44:43.141374-06:00'
 model: gpt-4-0125-preview
-summary: L'analisi di una data da una stringa in Dart comporta la conversione della
-  rappresentazione testuale di date e orari in un oggetto `DateTime`.
+summary: La libreria core di Dart semplifica l'analisi delle date attraverso la classe
+  `DateTime`.
 title: Analisi di una data da una stringa
 weight: 30
 ---

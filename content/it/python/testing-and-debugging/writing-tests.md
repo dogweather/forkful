@@ -2,12 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:25.413069-07:00
-description: "Scrivere test in Python comporta la creazione di script automatizzati\
-  \ per validare la correttezza del tuo codice. I programmatori lo fanno per assicurarsi\u2026"
+description: 'Come fare: Python include un modulo integrato per scrivere test chiamato
+  `unittest`. Ecco come puoi usarlo per testare una semplice funzione.'
 lastmod: '2024-03-13T22:44:43.004567-06:00'
 model: gpt-4-0125-preview
-summary: Scrivere test in Python comporta la creazione di script automatizzati per
-  validare la correttezza del tuo codice.
+summary: Python include un modulo integrato per scrivere test chiamato `unittest`.
 title: Scrivere test
 weight: 36
 ---

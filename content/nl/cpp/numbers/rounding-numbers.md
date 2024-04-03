@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:53.822099-07:00
-description: "Het afronden van getallen betekent het aanpassen van een waarde naar\
-  \ de dichtstbijzijnde gehele getal of een gespecificeerde precisie. Ontwikkelaars\
-  \ doen\u2026"
+description: 'Hoe te: C++ biedt meerdere manieren om getallen af te ronden, zoals
+  `floor()`, `ceil()`, en `round()`.'
 lastmod: '2024-03-13T22:44:51.107581-06:00'
 model: gpt-4-0125-preview
-summary: Het afronden van getallen betekent het aanpassen van een waarde naar de dichtstbijzijnde
-  gehele getal of een gespecificeerde precisie.
+summary: C++ biedt meerdere manieren om getallen af te ronden, zoals `floor()`, `ceil()`,
+  en `round()`.
 title: Afronden van getallen
 weight: 13
 ---

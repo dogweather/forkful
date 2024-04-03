@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:36.588271-07:00
-description: "Strenginterpolasjon er en metode for \xE5 konstruere strenger som inkorporerer\
-  \ variabler, noe som muliggj\xF8r dynamisk oppretting av strenger. Programmerere\u2026"
+description: "Hvordan: I Go oppn\xE5s strenginterpolasjon vanligvis ved bruk av `fmt`-pakken,\
+  \ spesielt med `Sprintf`-funksjonen, som lar deg injisere variabler i en streng\u2026"
 lastmod: '2024-03-13T22:44:40.250403-06:00'
 model: gpt-4-0125-preview
-summary: "Strenginterpolasjon er en metode for \xE5 konstruere strenger som inkorporerer\
-  \ variabler, noe som muliggj\xF8r dynamisk oppretting av strenger."
+summary: "I Go oppn\xE5s strenginterpolasjon vanligvis ved bruk av `fmt`-pakken, spesielt\
+  \ med `Sprintf`-funksjonen, som lar deg injisere variabler i en streng ved \xE5\
+  \ spesifisere formatteringsverb."
 title: Interpolering av en streng
 weight: 8
 ---

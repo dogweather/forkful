@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 18:01:15.649768-07:00
-description: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering betyr\
-  \ \xE5 inkludere brukernavn og passord i en foresp\xF8rsels header for \xE5 tilgangskontrollere.\u2026"
+description: "Hvordan: I Elixir kan `HTTPoison` benyttes for HTTP-foresp\xF8rsler\
+  \ med grunnleggende autentisering. Her er et eksempel."
 lastmod: '2024-03-13T22:44:40.443299-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering betyr\
-  \ \xE5 inkludere brukernavn og passord i en foresp\xF8rsels header for \xE5 tilgangskontrollere."
+summary: "I Elixir kan `HTTPoison` benyttes for HTTP-foresp\xF8rsler med grunnleggende\
+  \ autentisering."
 title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---

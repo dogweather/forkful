@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:31:30.183884-07:00
-description: "Calcolare una data nel futuro o nel passato significa semplicemente\
-  \ aggiungere o togliere giorni, mesi o anni dalla data corrente. Questo \xE8 fondamentale\u2026"
+description: 'How to: Kotlin rende il calcolo delle date semplice con la libreria
+  `java.time`.'
 lastmod: '2024-03-13T22:44:43.404123-06:00'
 model: gpt-4-1106-preview
-summary: Calcolare una data nel futuro o nel passato significa semplicemente aggiungere
-  o togliere giorni, mesi o anni dalla data corrente.
+summary: Kotlin rende il calcolo delle date semplice con la libreria `java.time`.
 title: Calcolo di una data futura o passata
 weight: 26
 ---

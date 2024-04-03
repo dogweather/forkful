@@ -2,14 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:30.171622-07:00
-description: "In de wereld van het programmeren, vooral wanneer je te maken hebt met\
-  \ Linux- of Unix-omgevingen, is het manipuleren van bestanden rechtstreeks vanuit\
-  \ de\u2026"
+description: "Hoe: Bestanden manipuleren in Fish Shell is zowel intu\xEFtief als krachtig.\
+  \ Hier zijn enkele voorbeelden om de mogelijkheden te tonen: 1. **Een bestand\u2026"
 lastmod: '2024-03-13T22:44:51.241960-06:00'
 model: gpt-4-0125-preview
-summary: In de wereld van het programmeren, vooral wanneer je te maken hebt met Linux-
-  of Unix-omgevingen, is het manipuleren van bestanden rechtstreeks vanuit de command-line
-  interface (CLI) niet alleen een kwestie van gemak - het is een krachtig hulpmiddel.
+summary: "Bestanden manipuleren in Fish Shell is zowel intu\xEFtief als krachtig."
 title: Bestanden manipuleren met CLI one-liners
 weight: 31
 ---

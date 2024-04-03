@@ -2,14 +2,11 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:29.326230-07:00
-description: "Los arrays asociativos, tambi\xE9n conocidos como tablas hash o diccionarios\
-  \ en PowerShell, te permiten almacenar datos en pares clave-valor, haciendo que\
-  \ la\u2026"
+description: "C\xF3mo hacerlo: Crear y usar arrays asociativos en PowerShell es bastante\
+  \ sencillo. Aqu\xED est\xE1 c\xF3mo hacer la magia: **Creando un array asociativo:**."
 lastmod: '2024-03-13T22:44:59.283201-06:00'
 model: gpt-4-0125-preview
-summary: "Los arrays asociativos, tambi\xE9n conocidos como tablas hash o diccionarios\
-  \ en PowerShell, te permiten almacenar datos en pares clave-valor, haciendo que\
-  \ la recuperaci\xF3n de datos sea directa y eficiente."
+summary: Crear y usar arrays asociativos en PowerShell es bastante sencillo.
 title: Uso de matrices asociativas
 weight: 15
 ---

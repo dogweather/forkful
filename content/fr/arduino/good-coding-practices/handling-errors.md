@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 00:37:07.489429-07:00
-description: "La gestion des erreurs dans vos programmes intercepte les impr\xE9vus\
-  \ qui tentent de vous mettre des b\xE2tons dans les roues. Vous le faites pour \xE9\
-  viter \xE0\u2026"
+description: "Comment faire : Disons que votre Arduino lit un capteur qui peut occasionnellement\
+  \ produire des valeurs hors plage. Voici comment vous pourriez g\xE9rer cela\u2026"
 lastmod: '2024-03-13T22:44:58.120849-06:00'
 model: gpt-4-1106-preview
-summary: "La gestion des erreurs dans vos programmes intercepte les impr\xE9vus qui\
-  \ tentent de vous mettre des b\xE2tons dans les roues."
+summary: Disons que votre Arduino lit un capteur qui peut occasionnellement produire
+  des valeurs hors plage.
 title: Gestion des erreurs
 weight: 16
 ---

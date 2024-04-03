@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:10.503262-07:00
-description: "Interactieve shells, of REPLs (Read-Eval-Print Loops), laten je on-the-fly\
-  \ code uitvoeren, functies en algoritmen testen of spelen met idee\xEBn. Ze zijn\
-  \ de\u2026"
+description: 'Hoe te: Node.js wordt geleverd met een REPL die toegankelijk is via
+  de terminal. Open het, en je bent klaar om te beginnen. Hier is een voorproefje.'
 lastmod: '2024-03-13T22:44:51.203102-06:00'
 model: gpt-4-0125-preview
-summary: "Interactieve shells, of REPLs (Read-Eval-Print Loops), laten je on-the-fly\
-  \ code uitvoeren, functies en algoritmen testen of spelen met idee\xEBn."
+summary: Node.js wordt geleverd met een REPL die toegankelijk is via de terminal.
 title: Het gebruik van een interactieve shell (REPL)
 weight: 34
 ---

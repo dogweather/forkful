@@ -2,13 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:25.796801-07:00
-description: "T\xE9l\xE9charger une page web implique de r\xE9cup\xE9rer le contenu\
-  \ d'une page web via son URL pour le traitement ou le stockage. Les programmeurs\
-  \ font cela pour\u2026"
+description: "Comment faire : Dart fournit le package `http`, une biblioth\xE8que\
+  \ tierce populaire pour effectuer des requ\xEAtes HTTP. Voici un exemple basique\
+  \ de comment\u2026"
 lastmod: '2024-03-13T22:44:57.388439-06:00'
 model: gpt-4-0125-preview
-summary: "T\xE9l\xE9charger une page web implique de r\xE9cup\xE9rer le contenu d'une\
-  \ page web via son URL pour le traitement ou le stockage."
+summary: "Dart fournit le package `http`, une biblioth\xE8que tierce populaire pour\
+  \ effectuer des requ\xEAtes HTTP."
 title: "T\xE9l\xE9charger une page web"
 weight: 42
 ---

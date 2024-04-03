@@ -1,13 +1,9 @@
 ---
 date: 2024-01-20 17:43:03.177930-07:00
-description: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to proces filtrowania tekstu\
-  \ wed\u0142ug zdefiniowanych regu\u0142, na przyk\u0142ad za pomoc\u0105 wyra\u017C\
-  e\u0144 regularnych. Robimy to, by\u2026"
+description: "Jak to zrobi\u0107: ."
 lastmod: '2024-03-13T22:44:34.932443-06:00'
 model: gpt-4-1106-preview
-summary: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to proces filtrowania tekstu\
-  \ wed\u0142ug zdefiniowanych regu\u0142, na przyk\u0142ad za pomoc\u0105 wyra\u017C\
-  e\u0144 regularnych."
+summary: .
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---

@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:54.128179-07:00
-description: "Analyser du HTML signifie d\xE9composer le contenu HTML en quelque chose\
-  \ qu'un programme peut comprendre et manipuler. Les programmeurs font cela pour\u2026"
+description: "Comment faire : C++ n'est pas livr\xE9 avec des capacit\xE9s d'analyse\
+  \ HTML int\xE9gr\xE9es. Vous utiliserez souvent une biblioth\xE8que comme Gumbo-parser\
+  \ de Google, ou\u2026"
 lastmod: '2024-03-13T22:44:58.159336-06:00'
 model: gpt-4-0125-preview
-summary: "Analyser du HTML signifie d\xE9composer le contenu HTML en quelque chose\
-  \ qu'un programme peut comprendre et manipuler."
+summary: "C++ n'est pas livr\xE9 avec des capacit\xE9s d'analyse HTML int\xE9gr\xE9\
+  es."
 title: Analyse Syntaxique du HTML
 weight: 43
 ---

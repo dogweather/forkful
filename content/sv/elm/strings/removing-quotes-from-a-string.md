@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 03:39:03.777285-07:00
-description: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att man rensar\
-  \ bort de extra dubbla eller enkla citattecken som du faktiskt inte beh\xF6ver i\
-  \ den bearbetade\u2026"
+description: "Hur man g\xF6r: I Elm kan du anv\xE4nda `String`-funktionerna f\xF6\
+  r att manipulera str\xE4ngar, s\xE5som att ta bort citattecken. H\xE4r \xE4r ett\
+  \ enkelt s\xE4tt att g\xF6ra det p\xE5."
 lastmod: '2024-03-13T22:44:37.817396-06:00'
 model: gpt-4-0125-preview
-summary: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att man rensar bort\
-  \ de extra dubbla eller enkla citattecken som du faktiskt inte beh\xF6ver i den\
-  \ bearbetade texten."
+summary: "I Elm kan du anv\xE4nda `String`-funktionerna f\xF6r att manipulera str\xE4\
+  ngar, s\xE5som att ta bort citattecken."
 title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 weight: 9
 ---

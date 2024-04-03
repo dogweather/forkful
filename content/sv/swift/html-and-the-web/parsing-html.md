@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:36.254656-07:00
-description: "Att tolka HTML inneb\xE4r processen att bryta ner och tolka strukturen\
-  \ av HTML-inneh\xE5ll, typiskt f\xF6r att extrahera specifik data eller hantera\
-  \ detta inneh\xE5ll\u2026"
+description: "Hur man g\xF6r: Swift inkluderar som standard inte ett inbyggt bibliotek\
+  \ f\xF6r HTML-tolkning, vilket kr\xE4ver anv\xE4ndning av tredjepartsbibliotek f\xF6\
+  r att\u2026"
 lastmod: '2024-03-13T22:44:38.248949-06:00'
 model: gpt-4-0125-preview
-summary: "Att tolka HTML inneb\xE4r processen att bryta ner och tolka strukturen av\
-  \ HTML-inneh\xE5ll, typiskt f\xF6r att extrahera specifik data eller hantera detta\
-  \ inneh\xE5ll programmatiskt."
+summary: "Swift inkluderar som standard inte ett inbyggt bibliotek f\xF6r HTML-tolkning,\
+  \ vilket kr\xE4ver anv\xE4ndning av tredjepartsbibliotek f\xF6r att effektivt hantera\
+  \ denna uppgift."
 title: Tolka HTML
 weight: 43
 ---

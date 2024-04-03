@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:02:33.694461-07:00
-description: "Parsing a date from a string involves converting textual date and time\
-  \ information into a datetime object or equivalent structured format. This is\u2026"
+description: "How to: Python's standard library provides the `datetime` module, which\
+  \ includes the `strptime` method for this purpose. The method requires two\u2026"
 lastmod: '2024-03-13T22:44:59.716491-06:00'
 model: gpt-4-0125-preview
-summary: Parsing a date from a string involves converting textual date and time information
-  into a datetime object or equivalent structured format.
+summary: Python's standard library provides the `datetime` module, which includes
+  the `strptime` method for this purpose.
 title: Parsing a date from a string
 weight: 30
 ---

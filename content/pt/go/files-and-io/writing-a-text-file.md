@@ -2,12 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:43.910344-07:00
-description: "Escrever um arquivo de texto em Go envolve criar e escrever strings\
-  \ de dados em um novo ou existente arquivo de texto. Programadores fazem isso para\u2026"
+description: "Como fazer: Em Go, a escrita em um arquivo de texto \xE9 tratada pelos\
+  \ pacotes `os` e `io/ioutil` (para vers\xF5es do Go <1.16) ou `os` e `io` mais o\
+  \ pacote\u2026"
 lastmod: '2024-03-13T22:44:46.080718-06:00'
 model: gpt-4-0125-preview
-summary: Escrever um arquivo de texto em Go envolve criar e escrever strings de dados
-  em um novo ou existente arquivo de texto.
+summary: "Em Go, a escrita em um arquivo de texto \xE9 tratada pelos pacotes `os`\
+  \ e `io/ioutil` (para vers\xF5es do Go <1.16) ou `os` e `io` mais o pacote `os`\
+  \ para Go 1.16 e superior, demonstrando a filosofia do Go de simplicidade e efici\xEA\
+  ncia."
 title: Escrevendo um arquivo de texto
 weight: 24
 ---

@@ -2,15 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:53.576629-07:00
-description: "Trong Swift, vi\u1EC7c l\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i \u0111\xF2\
-  i h\u1ECFi truy c\u1EADp v\xE0o c\xE0i \u0111\u1EB7t th\u1EDDi gian v\xE0 ng\xE0\
-  y c\u1EE7a h\u1EC7 th\u1ED1ng. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111\
-  i\u1EC1u n\xE0y \u0111\u1EC3 ghi th\u1EDDi gian c\u1EE7a s\u1EF1\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Vi\u1EC7c l\u1EA5y ng\xE0y v\xE0 gi\u1EDD\
+  \ hi\u1EC7n t\u1EA1i trong Swift kh\xE1 \u0111\u01A1n gi\u1EA3n."
 lastmod: '2024-03-13T22:44:37.111669-06:00'
 model: gpt-4-0125-preview
-summary: "Trong Swift, vi\u1EC7c l\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i \u0111\xF2i h\u1ECF\
-  i truy c\u1EADp v\xE0o c\xE0i \u0111\u1EB7t th\u1EDDi gian v\xE0 ng\xE0y c\u1EE7\
-  a h\u1EC7 th\u1ED1ng."
+summary: "Vi\u1EC7c l\u1EA5y ng\xE0y v\xE0 gi\u1EDD hi\u1EC7n t\u1EA1i trong Swift\
+  \ kh\xE1 \u0111\u01A1n gi\u1EA3n."
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 weight: 29
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 01:11:49.838528-07:00
-description: "Code in Funktionen zu organisieren, bedeutet, Aufgaben in wiederverwendbare\
-  \ Bl\xF6cke zu zerlegen. Es macht den Code sauberer, weniger fehleranf\xE4llig und\u2026"
+description: "Wie geht das: Stellen Sie sich eine Aufgabe vor: Berechnen Sie den Durchschnitt\
+  \ eines Arrays. Ohne Funktionen w\xFCrden Sie alles im Hauptteil belassen. Mit\u2026"
 lastmod: '2024-03-13T22:44:54.230880-06:00'
 model: gpt-4-1106-preview
-summary: "Code in Funktionen zu organisieren, bedeutet, Aufgaben in wiederverwendbare\
-  \ Bl\xF6cke zu zerlegen."
+summary: Stellen Sie sich eine Aufgabe vor.
 title: Code in Funktionen organisieren
 weight: 18
 ---

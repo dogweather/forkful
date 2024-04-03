@@ -2,15 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:45.810583-07:00
-description: "V\xE9rifier si un r\xE9pertoire existe est une op\xE9ration fondamentale\
-  \ lors de l'\xE9criture de scripts qui interagissent avec le syst\xE8me de fichiers,\
-  \ en s'assurant\u2026"
+description: "Comment faire : En Lua, vous n'avez pas de fonction int\xE9gr\xE9e pour\
+  \ v\xE9rifier directement si un r\xE9pertoire existe, donc vous comptez souvent\
+  \ sur la\u2026"
 lastmod: '2024-03-13T22:44:57.952560-06:00'
 model: gpt-4-0125-preview
-summary: "V\xE9rifier si un r\xE9pertoire existe est une op\xE9ration fondamentale\
-  \ lors de l'\xE9criture de scripts qui interagissent avec le syst\xE8me de fichiers,\
-  \ en s'assurant que votre programme op\xE8re sur des chemins valides et \xE9vite\
-  \ les erreurs li\xE9es aux r\xE9pertoires inexistants."
+summary: "En Lua, vous n'avez pas de fonction int\xE9gr\xE9e pour v\xE9rifier directement\
+  \ si un r\xE9pertoire existe, donc vous comptez souvent sur la biblioth\xE8que Lua\
+  \ File System (lfs), une biblioth\xE8que tierce populaire pour les op\xE9rations\
+  \ sur les fichiers."
 title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---

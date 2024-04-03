@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:42:38.605499-07:00
-description: "Att radera tecken som matchar ett m\xF6nster inneb\xE4r att du filtrerar\
-  \ en str\xE4ng baserat p\xE5 specifika regler eller uttryck. Programmerare g\xF6\
-  r detta f\xF6r att\u2026"
+description: "How to: F\xF6r att ta bort tecken som matchar ett m\xF6nster i JavaScript\
+  \ anv\xE4nder vi oftast `replace()`-metoden tillsammans med regulj\xE4ra uttryck."
 lastmod: '2024-03-13T22:44:38.277710-06:00'
 model: gpt-4-1106-preview
-summary: "Att radera tecken som matchar ett m\xF6nster inneb\xE4r att du filtrerar\
-  \ en str\xE4ng baserat p\xE5 specifika regler eller uttryck."
+summary: "F\xF6r att ta bort tecken som matchar ett m\xF6nster i JavaScript anv\xE4\
+  nder vi oftast `replace()`-metoden tillsammans med regulj\xE4ra uttryck."
 title: "Ta bort tecken som matchar ett m\xF6nster"
 weight: 5
 ---

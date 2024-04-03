@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:52:43.651320-07:00
-description: "A impress\xE3o de sa\xEDdas de depura\xE7\xE3o ajuda a entender o que\
-  \ um script est\xE1 fazendo e onde pode estar o problema. Programadores recorrem\
-  \ a isso quando o\u2026"
+description: "Como Fazer: Vou te mostrar como imprimir mensagens para depurar teu\
+  \ c\xF3digo em Fish. Simples e r\xE1pido."
 lastmod: '2024-03-13T22:44:47.008567-06:00'
 model: gpt-4-1106-preview
-summary: "A impress\xE3o de sa\xEDdas de depura\xE7\xE3o ajuda a entender o que um\
-  \ script est\xE1 fazendo e onde pode estar o problema."
+summary: "Vou te mostrar como imprimir mensagens para depurar teu c\xF3digo em Fish."
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---

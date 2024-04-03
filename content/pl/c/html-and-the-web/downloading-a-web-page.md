@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:03.879370-07:00
-description: "Pobieranie strony internetowej w C polega na programowym uzyskiwaniu\
-  \ dost\u0119pu do zawarto\u015Bci strony internetowej przez internet i zapisywaniu\
-  \ jej lokalnie\u2026"
+description: "Jak to zrobi\u0107: Aby pobra\u0107 stron\u0119 internetow\u0105 w C,\
+  \ jednym z popularnych podej\u015B\u0107 jest u\u017Cycie biblioteki libcurl, czyli\
+  \ efektywnej i przeno\u015Bnej biblioteki do\u2026"
 lastmod: '2024-03-13T22:44:35.885113-06:00'
 model: gpt-4-0125-preview
-summary: "Pobieranie strony internetowej w C polega na programowym uzyskiwaniu dost\u0119\
-  pu do zawarto\u015Bci strony internetowej przez internet i zapisywaniu jej lokalnie\
-  \ do przetworzenia lub u\u017Cytku offline."
+summary: "Aby pobra\u0107 stron\u0119 internetow\u0105 w C, jednym z popularnych podej\u015B\
+  \u0107 jest u\u017Cycie biblioteki libcurl, czyli efektywnej i przeno\u015Bnej biblioteki\
+  \ do transferu URL po stronie klienta."
 title: Pobieranie strony internetowej
 weight: 42
 ---

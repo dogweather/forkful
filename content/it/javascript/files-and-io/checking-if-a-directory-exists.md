@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:01.138034-07:00
-description: "Verificare se una directory esiste in JavaScript \xE8 fondamentale per\
-  \ le operazioni di manipolazione dei file, permettendo agli script di verificare\
-  \ la\u2026"
+description: "Come fare: In Node.js, poich\xE9 JavaScript di per s\xE9 non ha accesso\
+  \ diretto al sistema dei file, si utilizza tipicamente il modulo `fs` per tali operazioni.\u2026"
 lastmod: '2024-03-13T22:44:43.827292-06:00'
 model: gpt-4-0125-preview
-summary: "Verificare se una directory esiste in JavaScript \xE8 fondamentale per le\
-  \ operazioni di manipolazione dei file, permettendo agli script di verificare la\
-  \ presenza della directory prima di leggere o scrivere su di essa."
+summary: "In Node.js, poich\xE9 JavaScript di per s\xE9 non ha accesso diretto al\
+  \ sistema dei file, si utilizza tipicamente il modulo `fs` per tali operazioni."
 title: Verifica se una directory esiste
 weight: 20
 ---

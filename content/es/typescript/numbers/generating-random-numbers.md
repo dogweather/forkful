@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 20:35:34.836982-07:00
-description: "Generar n\xFAmeros aleatorios en TypeScript es acerca de crear valores\
-  \ num\xE9ricos impredecibles dentro de un rango especificado. Los programadores\
-  \ aprovechan\u2026"
+description: "C\xF3mo hacerlo: En TypeScript, puedes generar n\xFAmeros aleatorios\
+  \ utilizando el objeto global `Math`. A continuaci\xF3n se presentan algunos ejemplos\
+  \ pr\xE1cticos\u2026"
 lastmod: '2024-03-13T22:44:58.795945-06:00'
 model: gpt-4-0125-preview
-summary: "Generar n\xFAmeros aleatorios en TypeScript es acerca de crear valores num\xE9\
-  ricos impredecibles dentro de un rango especificado."
+summary: "En TypeScript, puedes generar n\xFAmeros aleatorios utilizando el objeto\
+  \ global `Math`."
 title: "Generaci\xF3n de n\xFAmeros aleatorios"
 weight: 12
 ---

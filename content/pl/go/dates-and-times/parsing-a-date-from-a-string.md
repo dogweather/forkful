@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:20.223489-07:00
-description: "Parsowanie daty ze stringa w Go polega na konwersji daty przedstawionej\
-  \ w formie tekstu na bardziej u\u017Cyteczny format (np. `time.Time`). Programi\u015B\
-  ci\u2026"
+description: "Jak to zrobi\u0107: Go zapewnia solidne wsparcie dla parsowania dat\
+  \ i czas\xF3w poprzez pakiet `time`. Kluczem jest zrozumienie formatu referencyjnego\
+  \ daty w Go:\u2026"
 lastmod: '2024-03-13T22:44:34.862726-06:00'
 model: gpt-4-0125-preview
-summary: "Parsowanie daty ze stringa w Go polega na konwersji daty przedstawionej\
-  \ w formie tekstu na bardziej u\u017Cyteczny format (np."
+summary: "Go zapewnia solidne wsparcie dla parsowania dat i czas\xF3w poprzez pakiet\
+  \ `time`."
 title: "Analiza sk\u0142adniowa daty z ci\u0105gu znak\xF3w"
 weight: 30
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 01:01:01.036047-07:00
-description: "Nel contesto della programmazione, il logging \xE8 il processo di registrazione\
-  \ di eventi, stati e informazioni in un file o in un altro mezzo di output. I\u2026"
+description: "Come fare: Diciamo che stai lavorando su una macchina Linux e vuoi lanciare\
+  \ i tuoi log in un file con il buon vecchio C++. Vorrai includere le librerie\u2026"
 lastmod: '2024-03-13T22:44:43.733227-06:00'
 model: gpt-4-1106-preview
-summary: "Nel contesto della programmazione, il logging \xE8 il processo di registrazione\
-  \ di eventi, stati e informazioni in un file o in un altro mezzo di output."
+summary: Diciamo che stai lavorando su una macchina Linux e vuoi lanciare i tuoi log
+  in un file con il buon vecchio C++.
 title: Registrazione Eventi (Logging)
 weight: 17
 ---

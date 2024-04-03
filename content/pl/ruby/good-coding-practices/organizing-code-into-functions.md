@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:11:37.998037-07:00
-description: "Organizowanie kodu w funkcje dzieli skrypt na wielokrotnie u\u017Cyteczne\
-  \ fragmenty. Chodzi o to, by kod by\u0142 czytelny, \u0142atwy w zarz\u0105dzaniu\
-  \ i mniej podatny na\u2026"
+description: "Jak to zrobi\u0107: Wyobra\u017A sobie, \u017Ce piszesz prosty skrypt,\
+  \ kt\xF3ry wita u\u017Cytkownik\xF3w."
 lastmod: '2024-03-13T22:44:35.937814-06:00'
 model: gpt-4-1106-preview
-summary: "Organizowanie kodu w funkcje dzieli skrypt na wielokrotnie u\u017Cyteczne\
-  \ fragmenty."
+summary: "Wyobra\u017A sobie, \u017Ce piszesz prosty skrypt, kt\xF3ry wita u\u017C\
+  ytkownik\xF3w."
 title: Organizacja kodu w funkcje
 weight: 18
 ---

@@ -1,13 +1,12 @@
 ---
 date: 2024-01-20 17:38:25.736304-07:00
-description: "Converter uma string para letras min\xFAsculas \xE9 o processo de transformar\
-  \ todos os caracteres alfab\xE9ticos de uma cadeia de texto em suas equivalentes\
-  \ em\u2026"
+description: "How to (Como Fazer): Em C#, voc\xEA pode converter uma string para min\xFA\
+  sculas usando o m\xE9todo `.ToLower()` ou `.ToLowerInvariant()`. O primeiro respeita\
+  \ as\u2026"
 lastmod: '2024-03-13T22:44:46.571450-06:00'
 model: gpt-4-1106-preview
-summary: "Converter uma string para letras min\xFAsculas \xE9 o processo de transformar\
-  \ todos os caracteres alfab\xE9ticos de uma cadeia de texto em suas equivalentes\
-  \ em caixa baixa."
+summary: "Em C#, voc\xEA pode converter uma string para min\xFAsculas usando o m\xE9\
+  todo `.ToLower()` ou `.ToLowerInvariant()`."
 title: "Convertendo uma string para min\xFAsculas"
 weight: 4
 ---

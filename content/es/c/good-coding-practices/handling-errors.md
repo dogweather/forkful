@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:00.107013-07:00
-description: "Manejar errores en C involucra detectar y responder a condiciones an\xF3\
-  malas que surgen durante la ejecuci\xF3n del programa. Los programadores hacen esto\
-  \ para\u2026"
+description: "C\xF3mo hacerlo: C no tiene soporte integrado para excepciones como\
+  \ algunos otros lenguajes. En cambio, depende de algunas estrategias convencionales\
+  \ para el\u2026"
 lastmod: '2024-03-13T22:44:59.553726-06:00'
 model: gpt-4-0125-preview
-summary: "Manejar errores en C involucra detectar y responder a condiciones an\xF3\
-  malas que surgen durante la ejecuci\xF3n del programa."
+summary: C no tiene soporte integrado para excepciones como algunos otros lenguajes.
 title: Manejando errores
 weight: 16
 ---

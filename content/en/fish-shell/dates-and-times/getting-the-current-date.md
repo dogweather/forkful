@@ -1,11 +1,12 @@
 ---
 date: 2024-02-03 19:02:33.004483-07:00
-description: "Getting the current date in programming is a fundamental task that allows\
-  \ you to retrieve and manipulate the system's date and time data. In scripting and\u2026"
+description: "How to: Fish Shell utilizes external commands like `date` for getting\
+  \ the current date, offering flexibility to format the output as needed. Here's\
+  \ how to\u2026"
 lastmod: '2024-03-13T22:45:00.483867-06:00'
 model: gpt-4-0125-preview
-summary: Getting the current date in programming is a fundamental task that allows
-  you to retrieve and manipulate the system's date and time data.
+summary: Fish Shell utilizes external commands like `date` for getting the current
+  date, offering flexibility to format the output as needed.
 title: Getting the current date
 weight: 29
 ---

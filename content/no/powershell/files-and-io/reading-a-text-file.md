@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:54:51.774665-07:00
-description: "\xC5 lese en tekstfil betyr \xE5 f\xE5 tilgang til innholdet i filen\
-  \ via et program. Programmerere gj\xF8r dette for \xE5 behandle data, konfigurere\
-  \ programmer, eller\u2026"
+description: "Slik gj\xF8r du det: \xC5 lese fra en fil i PowerShell er enkelt. Her\
+  \ er et grunnleggende eksempel."
 lastmod: '2024-03-13T22:44:41.034431-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 lese en tekstfil betyr \xE5 f\xE5 tilgang til innholdet i filen via\
-  \ et program."
+summary: "\xC5 lese fra en fil i PowerShell er enkelt."
 title: Lese en tekstfil
 weight: 22
 ---

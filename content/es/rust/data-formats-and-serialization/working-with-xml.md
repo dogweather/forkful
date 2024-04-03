@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:35:21.116154-07:00
-description: "XML, siglas de eXtensible Markup Language (Lenguaje de Marcado Extensible),\
-  \ es como el primo verborr\xE1gico de JSON. Luchar\xE1s con XML al tratar con sistemas\u2026"
+description: "C\xF3mo hacerlo: En Rust, puedes manejar XML con crates como `xml-rs`.\
+  \ Instala agregando `xml-rs = \"0.8\"` a tu `Cargo.toml`. Aqu\xED te mostramos c\xF3\
+  mo analizar\u2026"
 lastmod: '2024-03-13T22:44:58.871024-06:00'
 model: gpt-4-0125-preview
-summary: "XML, siglas de eXtensible Markup Language (Lenguaje de Marcado Extensible),\
-  \ es como el primo verborr\xE1gico de JSON."
+summary: En Rust, puedes manejar XML con crates como `xml-rs`.
 title: Trabajando con XML
 weight: 40
 ---

@@ -1,12 +1,9 @@
 ---
 date: 2024-02-03 19:03:37.303108-07:00
-description: "Writing tests in JavaScript refers to the practice of creating automated\
-  \ scripts that run your code to ensure it behaves as expected, which can\u2026"
+description: 'How to: #.'
 lastmod: '2024-03-13T22:45:00.436712-06:00'
 model: gpt-4-0125-preview
-summary: Writing tests in JavaScript refers to the practice of creating automated
-  scripts that run your code to ensure it behaves as expected, which can significantly
-  improve the reliability and maintainability of your applications.
+summary: '#.'
 title: Writing tests
 weight: 36
 ---

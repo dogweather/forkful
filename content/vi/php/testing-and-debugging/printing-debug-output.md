@@ -2,15 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:00.301008-07:00
-description: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i l\xE0 vi\u1EC7c \u0111\u01B0a d\u1EEF\
-  \ li\u1EC7u n\u1ED9i b\u1ED9 c\u1EE7a m\xE3 l\u1EC7nh l\xEAn m\xE0n h\xECnh \u0111\
-  \u1EC3 hi\u1EC3u xem \u0111ang x\u1EA3y ra \u0111i\u1EC1u g\xEC. C\xE1c l\u1EAD\
-  p tr\xECnh vi\xEAn l\xE0m vi\u1EC7c n\xE0y \u0111\u1EC3 ki\u1EC3m tra\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: ."
 lastmod: '2024-03-13T22:44:36.769979-06:00'
 model: gpt-4-0125-preview
-summary: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i l\xE0 vi\u1EC7c \u0111\u01B0a d\u1EEF\
-  \ li\u1EC7u n\u1ED9i b\u1ED9 c\u1EE7a m\xE3 l\u1EC7nh l\xEAn m\xE0n h\xECnh \u0111\
-  \u1EC3 hi\u1EC3u xem \u0111ang x\u1EA3y ra \u0111i\u1EC1u g\xEC."
+summary: .
 title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 weight: 33
 ---

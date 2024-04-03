@@ -1,11 +1,11 @@
 ---
 date: 2024-01-19
-description: "\xC5 skrive en tekstfil er \xE5 lagre tekstdata til en fil p\xE5 disken.\
-  \ Programmerere gj\xF8r dette for \xE5 lagre data som app-innstillinger, logger\
-  \ eller \xE5 eksportere\u2026"
+description: "Hvordan: Elm har ikke direkte filsystem-tilgang, men du kan bruke Elm\
+  \ til \xE5 forberede filinnhold som brukeren kan laste ned. Her er et eksempel."
 lastmod: '2024-03-13T22:44:40.726823-06:00'
 model: unknown
-summary: "\xC5 skrive en tekstfil er \xE5 lagre tekstdata til en fil p\xE5 disken."
+summary: "Elm har ikke direkte filsystem-tilgang, men du kan bruke Elm til \xE5 forberede\
+  \ filinnhold som brukeren kan laste ned."
 title: Skriving av en tekstfil
 weight: 24
 ---

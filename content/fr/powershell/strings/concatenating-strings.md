@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:35:27.607852-07:00
-description: "Concat\xE9ner des cha\xEEnes de caract\xE8res, \xE7a veut dire les coller\
-  \ bout \xE0 bout. Les devs le font tout le temps pour assembler des messages, des\
-  \ chemins de\u2026"
+description: "How to: (Comment faire :) Voil\xE0 quelques fa\xE7ons de concat\xE9\
+  ner des cha\xEEnes dans PowerShell ."
 lastmod: '2024-03-13T22:44:58.035042-06:00'
 model: gpt-4-1106-preview
-summary: "Concat\xE9ner des cha\xEEnes de caract\xE8res, \xE7a veut dire les coller\
-  \ bout \xE0 bout."
+summary: "Voil\xE0 quelques fa\xE7ons de concat\xE9ner des cha\xEEnes dans PowerShell."
 title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 weight: 3
 ---

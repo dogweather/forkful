@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:18:17.467940-07:00
-description: "Bruk av et interaktivt skall, eller en Les-Evaluer-Skriv Ut-l\xF8kke\
-  \ (REPL), lar deg kode interaktivt. Programmerere bruker det til raskt \xE5 teste\
-  \ Swift-\u2026"
+description: "Hvordan: Start REPL ved \xE5 \xE5pne en terminal og kj\xF8re `swift`.\
+  \ Skriv kode direkte og trykk Enter for \xE5 kj\xF8re den. Her er en smakebit."
 lastmod: '2024-03-13T22:44:41.143428-06:00'
 model: gpt-4-0125-preview
-summary: "Bruk av et interaktivt skall, eller en Les-Evaluer-Skriv Ut-l\xF8kke (REPL),\
-  \ lar deg kode interaktivt."
+summary: "Start REPL ved \xE5 \xE5pne en terminal og kj\xF8re `swift`."
 title: Bruke et interaktivt skall (REPL)
 weight: 34
 ---

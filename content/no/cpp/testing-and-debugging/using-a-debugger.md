@@ -1,8 +1,7 @@
 ---
 date: 2024-01-26 03:48:08.619722-07:00
-description: "C++ integreres med debuggere som GDB eller Visual Studio-debuggeren.\
-  \ Her er et lite eksempel med bruk av GDB: ```C++ #include <iostream> int main()\
-  \ { int\u2026"
+description: 'Hvordan: C++ integreres med debuggere som GDB eller Visual Studio-debuggeren.
+  Her er et lite eksempel med bruk av GDB.'
 lastmod: '2024-03-13T22:44:41.104478-06:00'
 model: gpt-4-0125-preview
 summary: C++ integreres med debuggere som GDB eller Visual Studio-debuggeren.

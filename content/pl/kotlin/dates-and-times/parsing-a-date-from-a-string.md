@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:37.263898-07:00
-description: "Parsowanie daty z ci\u0105gu znak\xF3w polega na przekszta\u0142ceniu\
-  \ tekstu na obiekt Daty. Operacja ta jest podstawowa dla aplikacji, kt\xF3re wchodz\u0105\
-  \ w interakcje z\u2026"
+description: "Jak to zrobi\u0107: Kotlin wspiera parsowanie dat za pomoc\u0105 pakietu\
+  \ `java.time`, wprowadzonego w Java 8. Oto prosty spos\xF3b u\u017Cycia `LocalDateTime`\
+  \ i konkretnego\u2026"
 lastmod: '2024-03-13T22:44:35.374388-06:00'
 model: gpt-4-0125-preview
-summary: "Parsowanie daty z ci\u0105gu znak\xF3w polega na przekszta\u0142ceniu tekstu\
-  \ na obiekt Daty."
+summary: "Kotlin wspiera parsowanie dat za pomoc\u0105 pakietu `java.time`, wprowadzonego\
+  \ w Java 8."
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---

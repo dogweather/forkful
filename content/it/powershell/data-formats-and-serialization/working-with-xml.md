@@ -1,11 +1,9 @@
 ---
 date: 2024-01-26 04:34:12.387290-07:00
-description: "Lavorare con XML implica manipolare e accedere a dati strutturati nel\
-  \ linguaggio di markup estensibile (eXtensible Markup Language). I programmatori\u2026"
+description: 'Come fare: .'
 lastmod: '2024-03-13T22:44:43.666471-06:00'
 model: gpt-4-0125-preview
-summary: Lavorare con XML implica manipolare e accedere a dati strutturati nel linguaggio
-  di markup estensibile (eXtensible Markup Language).
+summary: .
 title: Lavorare con XML
 weight: 40
 ---

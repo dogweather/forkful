@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:33.304610-07:00
-description: "Kapitalizacja \u0142a\u0144cucha znak\xF3w polega na przekszta\u0142\
-  ceniu pierwszej litery danego \u0142a\u0144cucha na wielk\u0105 liter\u0119, zachowuj\u0105\
-  c reszt\u0119 liter w formie ma\u0142ych, cz\u0119sto\u2026"
+description: "Jak to zrobi\u0107: W Elm nie ma wbudowanej funkcji specjalnie do kapitalizacji\
+  \ \u0142a\u0144cuch\xF3w znak\xF3w. Jednak mo\u017Cna \u0142atwo osi\u0105gn\u0105\
+  \u0107 ten cel, korzystaj\u0105c z funkcji\u2026"
 lastmod: '2024-03-13T22:44:35.304157-06:00'
 model: gpt-4-0125-preview
-summary: "Kapitalizacja \u0142a\u0144cucha znak\xF3w polega na przekszta\u0142ceniu\
-  \ pierwszej litery danego \u0142a\u0144cucha na wielk\u0105 liter\u0119, zachowuj\u0105\
-  c reszt\u0119 liter w formie ma\u0142ych, cz\u0119sto w celu ujednolicenia formatowania\
-  \ lub czytelno\u015Bci."
+summary: "W Elm nie ma wbudowanej funkcji specjalnie do kapitalizacji \u0142a\u0144\
+  cuch\xF3w znak\xF3w."
 title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---

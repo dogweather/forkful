@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:59.740001-07:00
-description: "Analizzare l'HTML significa smontare un pezzo di codice HTML per comprenderne\
-  \ la struttura e il contenuto. I programmatori lo fanno per estrarre dati,\u2026"
+description: "Come fare: Per analizzare l'HTML in Ruby, installa la gemma 'Nokogiri'\
+  \ con `gem install nokogiri`. Nokogiri \xE8 come un coltellino svizzero per lavorare\
+  \ con\u2026"
 lastmod: '2024-03-13T22:44:44.049295-06:00'
 model: gpt-4-0125-preview
-summary: Analizzare l'HTML significa smontare un pezzo di codice HTML per comprenderne
-  la struttura e il contenuto.
+summary: Per analizzare l'HTML in Ruby, installa la gemma 'Nokogiri' con `gem install
+  nokogiri`.
 title: Analisi del HTML
 weight: 43
 ---

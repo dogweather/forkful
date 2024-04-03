@@ -1,12 +1,12 @@
 ---
 date: 2024-02-03 19:03:30.729590-07:00
-description: "Writing tests in C# involves creating automated scripts to validate\
-  \ the functionality of your code, ensuring it behaves as expected. Programmers do\
-  \ it to\u2026"
+description: "How to: C# developers primarily use the NUnit or xUnit frameworks for\
+  \ writing tests due to their flexibility and extensive feature set. Here\u2019s\
+  \ a basic\u2026"
 lastmod: '2024-03-13T22:45:00.092470-06:00'
 model: gpt-4-0125-preview
-summary: Writing tests in C# involves creating automated scripts to validate the functionality
-  of your code, ensuring it behaves as expected.
+summary: C# developers primarily use the NUnit or xUnit frameworks for writing tests
+  due to their flexibility and extensive feature set.
 title: Writing tests
 weight: 36
 ---

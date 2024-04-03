@@ -1,13 +1,10 @@
 ---
 date: 2024-01-20 18:01:34.905465-07:00
-description: "Das Senden einer HTTP-Anfrage mit Basisauthentifizierung hei\xDFt, dass\
-  \ du deine Anmeldedaten in einer sicheren, codierten Form mitschickst, um Zugriff\
-  \ auf\u2026"
+description: "So geht's: Elm macht HTTP-Anfragen mit Basisauthentifizierung simpel.\
+  \ Du musst nur die `Http`-Bibliothek verwenden und die `Headers` entsprechend setzen.\u2026"
 lastmod: '2024-03-13T22:44:53.804841-06:00'
 model: gpt-4-1106-preview
-summary: "Das Senden einer HTTP-Anfrage mit Basisauthentifizierung hei\xDFt, dass\
-  \ du deine Anmeldedaten in einer sicheren, codierten Form mitschickst, um Zugriff\
-  \ auf gesch\xFCtzte Ressourcen zu bekommen."
+summary: Elm macht HTTP-Anfragen mit Basisauthentifizierung simpel.
 title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---

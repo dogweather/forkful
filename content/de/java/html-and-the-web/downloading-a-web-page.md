@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:44:17.562035-07:00
-description: "Das Herunterladen einer Webseite bedeutet, ihre Daten zu erfassen und\
-  \ lokal zu speichern. Programmierer tun dies, um Inhalte zu analysieren, zu\u2026"
+description: 'How to: Hier ist ein einfacher Weg, um mit Java eine Webseite herunterzuladen.'
 lastmod: '2024-03-13T22:44:53.762027-06:00'
 model: gpt-4-1106-preview
-summary: Das Herunterladen einer Webseite bedeutet, ihre Daten zu erfassen und lokal
-  zu speichern.
+summary: Hier ist ein einfacher Weg, um mit Java eine Webseite herunterzuladen.
 title: Webseite herunterladen
 weight: 42
 ---

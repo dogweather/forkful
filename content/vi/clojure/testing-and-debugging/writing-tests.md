@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:18.016567-07:00
-description: "Vi\u1EBFt test c\xF3 ngh\u0129a l\xE0 t\u1EA1o ra m\xE3 l\u1EC7nh ki\u1EC3\
-  m tra xem m\xE3 l\u1EC7nh kh\xE1c c\xF3 ho\u1EA1t \u0111\u1ED9ng nh\u01B0 mong \u0111\
-  \u1EE3i hay kh\xF4ng. L\u1EADp tr\xECnh vi\xEAn l\xE0m v\u1EADy \u0111\u1EC3 b\u1EAF\
-  t l\u1ED7i, \u0111\u1EA3m b\u1EA3o \u0111\u1ED9 tin c\u1EADy\u2026"
+description: "C\xE1ch th\u1EE9c: Clojure s\u1EED d\u1EE5ng m\u1ED9t th\u01B0 vi\u1EC7\
+  n g\u1ECDi l\xE0 `clojure.test` \u0111\u1EC3 vi\u1EBFt v\xE0 ch\u1EA1y th\u1EED\
+  \ nghi\u1EC7m. D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch s\u1EED d\u1EE5ng n\xF3."
 lastmod: '2024-03-13T22:44:36.157981-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EBFt test c\xF3 ngh\u0129a l\xE0 t\u1EA1o ra m\xE3 l\u1EC7nh ki\u1EC3\
-  m tra xem m\xE3 l\u1EC7nh kh\xE1c c\xF3 ho\u1EA1t \u0111\u1ED9ng nh\u01B0 mong \u0111\
-  \u1EE3i hay kh\xF4ng."
+summary: "Clojure s\u1EED d\u1EE5ng m\u1ED9t th\u01B0 vi\u1EC7n g\u1ECDi l\xE0 `clojure.test`\
+  \ \u0111\u1EC3 vi\u1EBFt v\xE0 ch\u1EA1y th\u1EED nghi\u1EC7m."
 title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
 weight: 36
 ---

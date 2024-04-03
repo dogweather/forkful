@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 15:30:36.963297-07:00
-description: "Parsear HTML es interpretar y transformar el contenido de un documento\
-  \ HTML en algo que tu programa C# puede manejar. Los programadores lo hacen para\u2026"
+description: "C\xF3mo: Para parsear HTML en C#, puedes usar la librer\xEDa HtmlAgilityPack.\
+  \ Aqu\xED te muestro c\xF3mo puedes cargar un documento HTML y seleccionar elementos\u2026"
 lastmod: '2024-03-13T22:44:59.076190-06:00'
 model: unknown
-summary: Parsear HTML es interpretar y transformar el contenido de un documento HTML
-  en algo que tu programa C# puede manejar.
+summary: "Para parsear HTML en C#, puedes usar la librer\xEDa HtmlAgilityPack."
 title: "An\xE1lisis de HTML"
 weight: 43
 ---

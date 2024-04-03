@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:50:32.680269-07:00
-description: "L'interpolation de cha\xEEne permet d'ins\xE9rer des variables ou des\
-  \ expressions dans une cha\xEEne de caract\xE8res. Les programmeurs l'utilisent\
-  \ pour construire\u2026"
+description: 'Comment faire : .'
 lastmod: '2024-03-13T22:44:58.145886-06:00'
 model: gpt-4-1106-preview
-summary: "L'interpolation de cha\xEEne permet d'ins\xE9rer des variables ou des expressions\
-  \ dans une cha\xEEne de caract\xE8res."
+summary: .
 title: "Interpolation de cha\xEEnes de caract\xE8res"
 weight: 8
 ---

@@ -1,10 +1,9 @@
 ---
 date: 2024-01-20 17:45:54.335545-07:00
-description: "Extracting substrings means pulling out specific parts from a string.\
-  \ We do it to manipulate or analyze text data, like grabbing usernames from email\u2026"
+description: 'How to: In Kotlin, use `substring`, `take`, and `drop` functions.'
 lastmod: '2024-03-13T22:45:00.038723-06:00'
 model: gpt-4-1106-preview
-summary: Extracting substrings means pulling out specific parts from a string.
+summary: In Kotlin, use `substring`, `take`, and `drop` functions.
 title: Extracting substrings
 weight: 6
 ---

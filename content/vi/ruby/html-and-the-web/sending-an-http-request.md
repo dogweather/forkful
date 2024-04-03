@@ -2,14 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:03.689637-07:00
-description: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP c\xF3 ngh\u0129a l\xE0 y\xEA\
-  u c\u1EA7u d\u1EEF li\u1EC7u t\u1EEB m\u1ED9t t\xE0i nguy\xEAn tr\xEAn web. C\xE1\
-  c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 t\u01B0\u01A1\
-  ng t\xE1c v\u1EDBi c\xE1c API, l\u1EA5y d\u1EEF li\u1EC7u t\u1EEB web,\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Ruby l\xE0m cho vi\u1EC7c g\u1EEDi y\xEA\
+  u c\u1EA7u HTTP tr\u1EDF n\xEAn kh\xE1 d\u1EC5 d\xE0ng. \u0110\xE2y l\xE0 c\xE1\
+  ch nhanh nh\u1EA5t v\u1EDBi th\u01B0 vi\u1EC7n chu\u1EA9n Net::HTTP."
 lastmod: '2024-03-13T22:44:37.336065-06:00'
 model: gpt-4-0125-preview
-summary: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP c\xF3 ngh\u0129a l\xE0 y\xEAu c\u1EA7\
-  u d\u1EEF li\u1EC7u t\u1EEB m\u1ED9t t\xE0i nguy\xEAn tr\xEAn web."
+summary: "Ruby l\xE0m cho vi\u1EC7c g\u1EEDi y\xEAu c\u1EA7u HTTP tr\u1EDF n\xEAn\
+  \ kh\xE1 d\u1EC5 d\xE0ng."
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
 weight: 44
 ---

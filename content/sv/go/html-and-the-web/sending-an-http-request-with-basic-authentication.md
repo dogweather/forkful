@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:19.956519-07:00
-description: "Att skicka en HTTP-f\xF6rfr\xE5gan med grundl\xE4ggande autentisering\
-  \ i Go inneb\xE4r att l\xE4gga till en auktoriseringsheader till din f\xF6rfr\xE5\
-  gan som inkluderar ett\u2026"
+description: "Hur man g\xF6r: F\xF6r att g\xF6ra en HTTP-f\xF6rfr\xE5gan med grundl\xE4\
+  ggande autentisering i Go, beh\xF6ver du utforma dina f\xF6rfr\xE5gningsheaders\
+  \ f\xF6r att inkludera\u2026"
 lastmod: '2024-03-13T22:44:37.391737-06:00'
 model: gpt-4-0125-preview
-summary: "Att skicka en HTTP-f\xF6rfr\xE5gan med grundl\xE4ggande autentisering i\
-  \ Go inneb\xE4r att l\xE4gga till en auktoriseringsheader till din f\xF6rfr\xE5\
-  gan som inkluderar ett anv\xE4ndarnamn och l\xF6senord i form av en Base64-kodad\
-  \ str\xE4ng."
+summary: "F\xF6r att g\xF6ra en HTTP-f\xF6rfr\xE5gan med grundl\xE4ggande autentisering\
+  \ i Go, beh\xF6ver du utforma dina f\xF6rfr\xE5gningsheaders f\xF6r att inkludera\
+  \ `Authorization`-f\xE4ltet, fyllt med dina inloggningsuppgifter i r\xE4tt format."
 title: "Skicka en HTTP-f\xF6rfr\xE5gan med grundl\xE4ggande autentisering"
 weight: 45
 ---

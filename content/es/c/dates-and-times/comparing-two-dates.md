@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:25.254573-07:00
-description: "Comparar dos fechas en C implica determinar la relaci\xF3n cronol\xF3\
-  gica entre ellas: si una fecha precede a la otra o si son iguales. Esta capacidad\
-  \ es\u2026"
+description: "C\xF3mo hacerlo: C no tiene un tipo integrado para fechas, lo que requiere\
+  \ el uso de la biblioteca `time.h` para trabajar con estructuras de fecha y tiempo.\u2026"
 lastmod: '2024-03-13T22:44:59.559398-06:00'
 model: gpt-4-0125-preview
-summary: "Comparar dos fechas en C implica determinar la relaci\xF3n cronol\xF3gica\
-  \ entre ellas: si una fecha precede a la otra o si son iguales."
+summary: C no tiene un tipo integrado para fechas, lo que requiere el uso de la biblioteca
+  `time.h` para trabajar con estructuras de fecha y tiempo.
 title: Comparando dos fechas
 weight: 27
 ---

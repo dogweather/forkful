@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:14:43.343685-07:00
-description: "Eine interaktive Shell oder REPL (Read-Eval-Print Loop) in Haskell erm\xF6\
-  glicht es Ihnen, Code-Schnipsel live auszuf\xFChren. Es ist ein Spielplatz f\xFC\
-  r\u2026"
+description: 'Wie zu: Um die GHCi (interaktive Umgebung des Glasgow Haskell Compilers)
+  zu starten, tippen Sie einfach `ghci` in Ihre Konsole. So verwenden Sie es.'
 lastmod: '2024-03-13T22:44:53.933086-06:00'
 model: gpt-4-0125-preview
-summary: "Eine interaktive Shell oder REPL (Read-Eval-Print Loop) in Haskell erm\xF6\
-  glicht es Ihnen, Code-Schnipsel live auszuf\xFChren."
+summary: Um die GHCi (interaktive Umgebung des Glasgow Haskell Compilers) zu starten,
+  tippen Sie einfach `ghci` in Ihre Konsole.
 title: Nutzung einer interaktiven Shell (REPL)
 weight: 34
 ---

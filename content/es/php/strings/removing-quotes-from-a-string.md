@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 03:41:00.538400-07:00
-description: "Eliminar comillas de una cadena en PHP significa quitar esos molestos\
-  \ caracteres de comillas dobles (`\"`) o simples (`'`) que pueden interferir con\
-  \ la\u2026"
+description: "C\xF3mo hacerlo: Aqu\xED tienes un ejemplo sencillo utilizando las funciones\
+  \ integradas de PHP."
 lastmod: '2024-03-13T22:44:59.148864-06:00'
 model: gpt-4-0125-preview
-summary: "Eliminar comillas de una cadena en PHP significa quitar esos molestos caracteres\
-  \ de comillas dobles (`\"`) o simples (`'`) que pueden interferir con la l\xF3gica\
-  \ de tu c\xF3digo o consultas de bases de datos."
+summary: "Aqu\xED tienes un ejemplo sencillo utilizando las funciones integradas de\
+  \ PHP."
 title: Eliminando comillas de una cadena
 weight: 9
 ---

@@ -2,14 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:13:08.171943-07:00
-description: "Les tableaux associatifs, connus sous le nom de dictionnaires dans Swift,\
-  \ vous permettent de stocker et de g\xE9rer des donn\xE9es sous forme de paires\
-  \ cl\xE9-\u2026"
+description: "Comment faire : Swift rend le travail avec les tableaux associatifs\
+  \ simple. Voici comment vous pouvez d\xE9clarer, ajouter, supprimer et acc\xE9der\
+  \ aux \xE9l\xE9ments\u2026"
 lastmod: '2024-03-13T22:44:58.210633-06:00'
 model: gpt-4-0125-preview
-summary: "Les tableaux associatifs, connus sous le nom de dictionnaires dans Swift,\
-  \ vous permettent de stocker et de g\xE9rer des donn\xE9es sous forme de paires\
-  \ cl\xE9-valeur."
+summary: Swift rend le travail avec les tableaux associatifs simple.
 title: Utilisation des tableaux associatifs
 weight: 15
 ---

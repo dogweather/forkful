@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:37.378610-07:00
-description: "\xC5 jobbe med CSV-filer (kommaseparerte verdier) inneb\xE6rer parsing\
-  \ og generering av strukturerte data fra tekstfiler der hver linje representerer\
-  \ en post og\u2026"
+description: "Hvordan: I Swift er det ingen innebygd st\xF8tte for direkte parsing\
+  \ av CSV-filer, men du kan h\xE5ndtere CSV-data ved \xE5 bruke `String`-metoder\
+  \ for \xE5 splitte\u2026"
 lastmod: '2024-03-13T22:44:41.164203-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 jobbe med CSV-filer (kommaseparerte verdier) inneb\xE6rer parsing og\
-  \ generering av strukturerte data fra tekstfiler der hver linje representerer en\
-  \ post og hver post best\xE5r av felt adskilt med komma."
+summary: "I Swift er det ingen innebygd st\xF8tte for direkte parsing av CSV-filer,\
+  \ men du kan h\xE5ndtere CSV-data ved \xE5 bruke `String`-metoder for \xE5 splitte\
+  \ innholdet, eller ved \xE5 dra fordel av tredjepartsbiblioteker som SwiftCSV for\
+  \ en mer str\xF8mlinjeformet tiln\xE6rming."
 title: Arbeide med CSV
 weight: 37
 ---

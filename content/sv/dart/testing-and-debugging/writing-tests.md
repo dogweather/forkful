@@ -2,12 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:58:10.651321-07:00
-description: "Att skriva tester i Dart inneb\xE4r att skapa testfall f\xF6r att automatiskt\
-  \ verifiera att olika delar av ditt program fungerar som f\xF6rv\xE4ntat. Programmerare\u2026"
+description: "Hur man g\xF6r: I Dart anv\xE4nds ofta paketet `test` f\xF6r att skriva\
+  \ tester. F\xF6rst, l\xE4gg till paketet `test` i din `pubspec.yaml`."
 lastmod: '2024-03-13T22:44:37.615893-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva tester i Dart inneb\xE4r att skapa testfall f\xF6r att automatiskt\
-  \ verifiera att olika delar av ditt program fungerar som f\xF6rv\xE4ntat."
+summary: "I Dart anv\xE4nds ofta paketet `test` f\xF6r att skriva tester."
 title: Skriva tester
 weight: 36
 ---

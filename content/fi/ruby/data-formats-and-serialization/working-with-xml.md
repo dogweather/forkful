@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:35:21.127588-07:00
-description: "Ty\xF6skentely XML:n parissa tarkoittaa XML-dokumenttien (eXtensible\
-  \ Markup Language) j\xE4sent\xE4mist\xE4, luomista ja manipulointia koodin avulla.\
-  \ Ohjelmoijat\u2026"
+description: "Kuinka: K\xE4ytet\xE4\xE4n REXML:\xE4\xE4, joka sis\xE4ltyy Rubyyn,\
+  \ XML-katkelman j\xE4sent\xE4miseen."
 lastmod: '2024-03-13T22:44:57.112504-06:00'
 model: gpt-4-0125-preview
-summary: "Ty\xF6skentely XML:n parissa tarkoittaa XML-dokumenttien (eXtensible Markup\
-  \ Language) j\xE4sent\xE4mist\xE4, luomista ja manipulointia koodin avulla."
+summary: "K\xE4ytet\xE4\xE4n REXML:\xE4\xE4, joka sis\xE4ltyy Rubyyn, XML-katkelman\
+  \ j\xE4sent\xE4miseen."
 title: "XML:n k\xE4sittely"
 weight: 40
 ---

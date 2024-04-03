@@ -1,11 +1,11 @@
 ---
 date: 2024-01-25 02:59:36.408769-07:00
-description: "Rounding numbers means adjusting them to a nearby value for simplicity\
-  \ or to match a certain precision. It's useful for improving readability, reducing\u2026"
+description: "How to: In Elixir, you can use `Float.round/2` to round a floating-point\
+  \ number. You can specify the number of decimal digits you want to keep. Here's\
+  \ how\u2026"
 lastmod: '2024-03-13T22:44:59.778050-06:00'
 model: gpt-4-1106-preview
-summary: Rounding numbers means adjusting them to a nearby value for simplicity or
-  to match a certain precision.
+summary: In Elixir, you can use `Float.round/2` to round a floating-point number.
 title: Rounding numbers
 weight: 13
 ---

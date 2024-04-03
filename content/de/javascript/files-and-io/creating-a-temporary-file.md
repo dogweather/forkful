@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:40:31.765207-07:00
-description: "Das Erstellen einer tempor\xE4ren Datei bedeutet, eine Datei f\xFCr\
-  \ kurzzeitige Nutzung zu generieren, die typischerweise nach Gebrauch gel\xF6scht\
-  \ wird.\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:54.285746-06:00'
 model: gpt-4-1106-preview
-summary: "Das Erstellen einer tempor\xE4ren Datei bedeutet, eine Datei f\xFCr kurzzeitige\
-  \ Nutzung zu generieren, die typischerweise nach Gebrauch gel\xF6scht wird."
+summary: .
 title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---

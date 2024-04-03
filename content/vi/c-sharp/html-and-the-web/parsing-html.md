@@ -2,14 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:20.003186-07:00
-description: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 tr\xEDch xu\u1EA5\
-  t th\xF4ng tin t\u1EEB c\xE1c t\xE0i li\u1EC7u HTML. C\xE1c l\u1EADp tr\xECnh vi\xEA\
-  n th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 t\u01B0\u01A1ng t\xE1c\
-  \ v\u1EDBi n\u1ED9i dung web m\u1ED9t c\xE1ch\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: H\xE3y b\u1EAFt \u0111\u1EA7u v\u1EDBi\
+  \ m\u1ED9t th\u01B0 vi\u1EC7n ph\u1ED5 bi\u1EBFn c\u1EE7a .NET d\xE0nh cho ph\xE2\
+  n t\xEDch c\xFA ph\xE1p HTML: HtmlAgilityPack. \u0110\u1EA7u ti\xEAn, c\xE0i \u0111\
+  \u1EB7t n\xF3 qua NuGet."
 lastmod: '2024-03-13T22:44:36.654606-06:00'
 model: gpt-4-0125-preview
-summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 tr\xEDch xu\u1EA5\
-  t th\xF4ng tin t\u1EEB c\xE1c t\xE0i li\u1EC7u HTML."
+summary: "H\xE3y b\u1EAFt \u0111\u1EA7u v\u1EDBi m\u1ED9t th\u01B0 vi\u1EC7n ph\u1ED5\
+  \ bi\u1EBFn c\u1EE7a .NET d\xE0nh cho ph\xE2n t\xEDch c\xFA ph\xE1p HTML."
 title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---

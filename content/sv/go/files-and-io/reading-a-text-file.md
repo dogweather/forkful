@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:09.117702-07:00
-description: "Att l\xE4sa en textfil i Go inneb\xE4r att f\xE5 tillg\xE5ng till och\
-  \ h\xE4mta inneh\xE5ll fr\xE5n en fil som \xE4r lagrad p\xE5 disk f\xF6r bearbetning\
-  \ eller analys. Programmerare\u2026"
+description: "Hur man g\xF6r: Att l\xE4sa en textfil i Go kan \xE5stadkommas p\xE5\
+  \ flera s\xE4tt, men en av de mest raka metoderna \xE4r att anv\xE4nda `ioutil`-paketet.\
+  \ H\xE4r \xE4r ett\u2026"
 lastmod: '2024-03-13T22:44:37.410916-06:00'
 model: gpt-4-0125-preview
-summary: "Att l\xE4sa en textfil i Go inneb\xE4r att f\xE5 tillg\xE5ng till och h\xE4\
-  mta inneh\xE5ll fr\xE5n en fil som \xE4r lagrad p\xE5 disk f\xF6r bearbetning eller\
-  \ analys."
+summary: "Att l\xE4sa en textfil i Go kan \xE5stadkommas p\xE5 flera s\xE4tt, men\
+  \ en av de mest raka metoderna \xE4r att anv\xE4nda `ioutil`-paketet."
 title: "L\xE4sa en textfil"
 weight: 22
 ---

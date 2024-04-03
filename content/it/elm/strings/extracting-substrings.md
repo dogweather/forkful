@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:45:22.986945-07:00
-description: "Estrarre sottostringhe significa selezionare parti specifiche di una\
-  \ stringa. I programmatori lo fanno per manipolare o analizzare testi in modo pi\xF9\
-  \u2026"
+description: 'How to: Elm usa funzioni come `String.slice` per estrarre sottostringhe.
+  Ecco come funziona.'
 lastmod: '2024-03-13T22:44:43.339631-06:00'
 model: gpt-4-1106-preview
-summary: Estrarre sottostringhe significa selezionare parti specifiche di una stringa.
+summary: Elm usa funzioni come `String.slice` per estrarre sottostringhe.
 title: Estrazione di sottostringhe
 weight: 6
 ---

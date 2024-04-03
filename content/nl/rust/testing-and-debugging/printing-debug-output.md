@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:36.688891-07:00
-description: "Het afdrukken van debugoutput stelt je in staat om een kijkje te nemen\
-  \ in de staat van je programma zonder een volwaardige debugger. Het is snel,\u2026"
+description: 'Hoe: Om iets eenvoudigs te printen, gebruik `println!`. Als je een waarde
+  voor debugging moet printen, komt `dbg!` goed van pas.'
 lastmod: '2024-03-13T22:44:50.596753-06:00'
 model: gpt-4-0125-preview
-summary: Het afdrukken van debugoutput stelt je in staat om een kijkje te nemen in
-  de staat van je programma zonder een volwaardige debugger.
+summary: Om iets eenvoudigs te printen, gebruik `println!`.
 title: Debug-output afdrukken
 weight: 33
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:38:16.471903-07:00
-description: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr \xE5 skrelle bort disse\
-  \ plagsomme doble eller enkle tegnene som omslutter teksten v\xE5r (' eller \").\
-  \ Programmerere\u2026"
+description: "Hvordan: Her er en grei m\xE5te \xE5 sparke disse anf\xF8rselstegnene\
+  \ til fortauskanten i C++."
 lastmod: '2024-03-13T22:44:41.087401-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr \xE5 skrelle bort disse\
-  \ plagsomme doble eller enkle tegnene som omslutter teksten v\xE5r (' eller \")."
+summary: "Her er en grei m\xE5te \xE5 sparke disse anf\xF8rselstegnene til fortauskanten\
+  \ i C++."
 title: "Fjerne anf\xF8rselstegn fra en streng"
 weight: 9
 ---

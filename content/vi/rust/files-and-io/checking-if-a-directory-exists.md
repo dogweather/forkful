@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:06.602766-07:00
-description: "Vi\u1EC7c ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3\
-  n t\u1EA1i trong Rust l\xE0 \u0111\u1EC3 x\xE1c minh m\u1ED9t th\u01B0 m\u1EE5c\
-  \ c\xF3 m\u1EB7t tr\xEAn h\u1EC7 th\u1ED1ng t\u1EADp tin. L\u1EADp tr\xECnh vi\xEA\
-  n th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 ng\u0103n\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Th\u01B0 vi\u1EC7n chu\u1EA9n c\u1EE7a Rust\
+  \ l\xE0m cho nhi\u1EC7m v\u1EE5 n\xE0y tr\u1EDF n\xEAn \u0111\u01A1n gi\u1EA3n v\u1EDB\
+  i `std::path::Path` v\xE0 `std::fs`."
 lastmod: '2024-03-13T22:44:36.395513-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1\
-  i trong Rust l\xE0 \u0111\u1EC3 x\xE1c minh m\u1ED9t th\u01B0 m\u1EE5c c\xF3 m\u1EB7\
-  t tr\xEAn h\u1EC7 th\u1ED1ng t\u1EADp tin."
+summary: "Th\u01B0 vi\u1EC7n chu\u1EA9n c\u1EE7a Rust l\xE0m cho nhi\u1EC7m v\u1EE5\
+  \ n\xE0y tr\u1EDF n\xEAn \u0111\u01A1n gi\u1EA3n v\u1EDBi `std::path::Path` v\xE0\
+  \ `std::fs`."
 title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
 weight: 20
 ---

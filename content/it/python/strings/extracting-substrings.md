@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:46:25.768488-07:00
-description: "Estraendo sottostringhe si prelevano parti specifiche di una stringa.\
-  \ Programmatori fanno ci\xF2 per analizzare testi, pulire dati, o semplicemente\
-  \ isolare\u2026"
+description: 'How to (Come Fare): Ecco alcuni modi per estrarre sottostringhe in Python.'
 lastmod: '2024-03-13T22:44:42.990451-06:00'
 model: gpt-4-1106-preview
-summary: Estraendo sottostringhe si prelevano parti specifiche di una stringa.
+summary: Ecco alcuni modi per estrarre sottostringhe in Python.
 title: Estrazione di sottostringhe
 weight: 6
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 18:03:52.139592-07:00
-description: "Starte et nytt prosjekt betyr \xE5 sette opp grunnlaget for en ny kodebase.\
-  \ Programmerere gj\xF8r det for \xE5 skape nye applikasjoner, l\xF8se problemer\
-  \ eller\u2026"
+description: "How to: La oss starte et nytt JavaScript-prosjekt. F\xF8rst, installer\
+  \ Node.js og npm (Node package manager). Deretter, opprett prosjektet."
 lastmod: '2024-03-13T22:44:41.184142-06:00'
 model: gpt-4-1106-preview
-summary: "Starte et nytt prosjekt betyr \xE5 sette opp grunnlaget for en ny kodebase."
+summary: La oss starte et nytt JavaScript-prosjekt.
 title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---

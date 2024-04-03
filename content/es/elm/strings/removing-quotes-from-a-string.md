@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 03:38:42.166447-07:00
-description: "Eliminar comillas de una cadena significa quitar esos signos de comillas\
-  \ dobles o simples adicionales que en realidad no necesitas en el texto procesado.\u2026"
+description: "C\xF3mo hacerlo: En Elm, puedes usar las funciones de `String` para\
+  \ manipular cadenas, tales como eliminar comillas. Aqu\xED tienes una manera sencilla\
+  \ de\u2026"
 lastmod: '2024-03-13T22:44:58.967609-06:00'
 model: gpt-4-0125-preview
-summary: Eliminar comillas de una cadena significa quitar esos signos de comillas
-  dobles o simples adicionales que en realidad no necesitas en el texto procesado.
+summary: En Elm, puedes usar las funciones de `String` para manipular cadenas, tales
+  como eliminar comillas.
 title: Eliminando comillas de una cadena
 weight: 9
 ---

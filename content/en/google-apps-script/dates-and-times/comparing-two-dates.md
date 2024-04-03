@@ -1,12 +1,12 @@
 ---
 date: 2024-02-01 21:12:03.086892-07:00
-description: "Comparing two dates in Google Apps Script, a derivative of JavaScript\
-  \ tailored for Google's suite of apps, is an essential task for developers dealing\u2026"
+description: "How to: In Google Apps Script, dates are compared using JavaScript Date\
+  \ objects, enabling the use of standard methods to evaluate which of two dates is\u2026"
 lastmod: '2024-03-13T22:44:59.681013-06:00'
 model: gpt-4-0125-preview
-summary: Comparing two dates in Google Apps Script, a derivative of JavaScript tailored
-  for Google's suite of apps, is an essential task for developers dealing with scheduling,
-  timelines, or any date-related data.
+summary: In Google Apps Script, dates are compared using JavaScript Date objects,
+  enabling the use of standard methods to evaluate which of two dates is earlier,
+  later, or if they are the same.
 title: Comparing two dates
 weight: 27
 ---

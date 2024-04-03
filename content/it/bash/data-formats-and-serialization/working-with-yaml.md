@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:43.068011-07:00
-description: "YAML, acronimo di \"YAML Ain't Markup Language\", \xE8 uno standard\
-  \ di serializzazione dei dati leggibile dall'uomo che pu\xF2 essere utilizzato per\
-  \ i file di\u2026"
+description: "Come: Lavorare direttamente con YAML in Bash richiede un po' di ingegnosit\xE0\
+  \ poich\xE9 Bash non ha supporto integrato per l'analisi di YAML. Tuttavia, puoi\u2026"
 lastmod: '2024-03-13T22:44:43.619866-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, acronimo di \"YAML Ain't Markup Language\", \xE8 uno standard di serializzazione\
-  \ dei dati leggibile dall'uomo che pu\xF2 essere utilizzato per i file di configurazione,\
-  \ cos\xEC come nelle applicazioni in cui i dati vengono memorizzati o trasmessi."
+summary: "Lavorare direttamente con YAML in Bash richiede un po' di ingegnosit\xE0\
+  \ poich\xE9 Bash non ha supporto integrato per l'analisi di YAML."
 title: Lavorare con YAML
 weight: 41
 ---

@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:24.180941-07:00
-description: "Att skriva till standardfel (stderr) i Fish Shell handlar om att rikta\
-  \ felmeddelanden eller diagnostik separat fr\xE5n standardutdata (stdout). Programmerare\u2026"
+description: "Hur man g\xF6r: I Fish Shell kan du skriva till stderr genom att omdirigera\
+  \ din utdata med `>&2`. H\xE4r \xE4r ett grundl\xE4ggande exempel."
 lastmod: '2024-03-13T22:44:38.354602-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva till standardfel (stderr) i Fish Shell handlar om att rikta felmeddelanden\
-  \ eller diagnostik separat fr\xE5n standardutdata (stdout)."
+summary: I Fish Shell kan du skriva till stderr genom att omdirigera din utdata med
+  `>&2`.
 title: Skriva till standardfel
 weight: 25
 ---

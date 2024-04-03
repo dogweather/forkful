@@ -1,13 +1,11 @@
 ---
 date: 2024-01-27 20:35:24.551513-07:00
-description: "Satunnaislukujen tuottaminen tarkoittaa sellaisten lukujen luomista,\
-  \ joita ei voida kohtuullisesti ennakoida paremmin kuin sattuman kautta, mik\xE4\
-  \ on\u2026"
+description: "Kuinka: Python tarjoaa `random`-moduulin, joka auttaa luomaan satunnaislukuja\
+  \ eri k\xE4ytt\xF6tarkoituksiin. N\xE4in p\xE4\xE4set alkuun: 1. **Moduulin tuonti**."
 lastmod: '2024-03-13T22:44:56.139515-06:00'
 model: gpt-4-0125-preview
-summary: "Satunnaislukujen tuottaminen tarkoittaa sellaisten lukujen luomista, joita\
-  \ ei voida kohtuullisesti ennakoida paremmin kuin sattuman kautta, mik\xE4 on oleellista\
-  \ simulaatioiden, pelien ja turva-algoritmien kehitt\xE4misess\xE4."
+summary: "Python tarjoaa `random`-moduulin, joka auttaa luomaan satunnaislukuja eri\
+  \ k\xE4ytt\xF6tarkoituksiin."
 title: Satunnaislukujen generointi
 weight: 12
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:44:48.160787-07:00
-description: "\xC5 runde av tall betyr \xE5 justere dem til n\xE6rmeste heltall eller\
-  \ angitt desimalplass. Programmerere runder av tall for \xE5 kontrollere presisjon,\
-  \ tilpasse\u2026"
+description: 'Hvordan: Haskell bruker funksjonene `round`, `ceiling`, `floor` og `truncate`
+  fra `Prelude` for avrundingsoperasjoner.'
 lastmod: '2024-03-13T22:44:40.836227-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 runde av tall betyr \xE5 justere dem til n\xE6rmeste heltall eller\
-  \ angitt desimalplass."
+summary: Haskell bruker funksjonene `round`, `ceiling`, `floor` og `truncate` fra
+  `Prelude` for avrundingsoperasjoner.
 title: Avrunding av tall
 weight: 13
 ---

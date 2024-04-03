@@ -2,11 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:10.673998-07:00
-description: "Een string interpoleren betekent variabelen of expressies in een string\
-  \ invoegen. Het bespaart tijd en verbetert de leesbaarheid door dynamische inhoud\u2026"
+description: "Hoe doe je dat: In Fish gebruik je dubbele aanhalingstekens en plaats\
+  \ je de variabele of het commando dat je wilt interpoleren met een dollarteken `$`\u2026"
 lastmod: '2024-03-13T22:44:51.231258-06:00'
 model: gpt-4-0125-preview
-summary: Een string interpoleren betekent variabelen of expressies in een string invoegen.
+summary: In Fish gebruik je dubbele aanhalingstekens en plaats je de variabele of
+  het commando dat je wilt interpoleren met een dollarteken `$` rechtstreeks in de
+  string.
 title: Een string interpoleren
 weight: 8
 ---

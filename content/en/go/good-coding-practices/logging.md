@@ -1,13 +1,11 @@
 ---
 date: 2024-02-03 17:50:06.227894-07:00
-description: "Logging in software development is the process of recording information\
-  \ about a program\u2019s execution, designed to track its behavior and diagnose\
-  \ issues.\u2026"
+description: "How to: In Go, logging can be implemented using the standard library\
+  \ package `log`. This package provides simple logging capabilities, such as writing\
+  \ to\u2026"
 lastmod: '2024-03-13T22:44:59.636868-06:00'
 model: gpt-4-0125-preview
-summary: "Logging in software development is the process of recording information\
-  \ about a program\u2019s execution, designed to track its behavior and diagnose\
-  \ issues."
+summary: In Go, logging can be implemented using the standard library package `log`.
 title: Logging
 weight: 17
 ---

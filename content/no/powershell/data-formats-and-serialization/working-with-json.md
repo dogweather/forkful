@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:37.316881-07:00
-description: "PowerShells integrasjon med JSON (JavaScript Object Notation) handler\
-  \ om parsing (lesing) og generering (skriving) av JSON-data, et vanlig format for\u2026"
+description: 'Hvordan: #.'
 lastmod: '2024-03-13T22:44:41.038305-06:00'
 model: gpt-4-0125-preview
-summary: "PowerShells integrasjon med JSON (JavaScript Object Notation) handler om\
-  \ parsing (lesing) og generering (skriving) av JSON-data, et vanlig format for datautveksling\
-  \ p\xE5 nettet."
+summary: '#.'
 title: Arbeider med JSON
 weight: 38
 ---

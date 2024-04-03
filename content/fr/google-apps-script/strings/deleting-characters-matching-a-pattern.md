@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:20.581173-07:00
-description: "La suppression de caract\xE8res correspondant \xE0 un motif sp\xE9cifique\
-  \ est une technique utilis\xE9e pour nettoyer ou formater des cha\xEEnes de caract\xE8\
-  res en\u2026"
+description: "Comment faire : Google Apps Script fournit des m\xE9thodes robustes\
+  \ pour la manipulation de cha\xEEnes de caract\xE8res, en tirant parti des capacit\xE9\
+  s inh\xE9rentes\u2026"
 lastmod: '2024-03-13T22:44:57.164990-06:00'
 model: gpt-4-0125-preview
-summary: "La suppression de caract\xE8res correspondant \xE0 un motif sp\xE9cifique\
-  \ est une technique utilis\xE9e pour nettoyer ou formater des cha\xEEnes de caract\xE8\
-  res en programmation."
+summary: "Google Apps Script fournit des m\xE9thodes robustes pour la manipulation\
+  \ de cha\xEEnes de caract\xE8res, en tirant parti des capacit\xE9s inh\xE9rentes\
+  \ de JavaScript."
 title: "Supprimer des caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---

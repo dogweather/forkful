@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:57:39.428227-07:00
-description: "Searching and replacing text in strings lets you update data without\
-  \ manual edits. Programmers need this to handle user input corrections, data\u2026"
+description: 'How to: C# makes text manipulation pretty straightforward. Below, check
+  out the `string.Replace` method to swap out words.'
 lastmod: '2024-03-13T22:45:00.074041-06:00'
 model: gpt-4-1106-preview
-summary: Searching and replacing text in strings lets you update data without manual
-  edits.
+summary: C# makes text manipulation pretty straightforward.
 title: Searching and replacing text
 weight: 10
 ---

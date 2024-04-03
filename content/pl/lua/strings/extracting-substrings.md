@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:46:09.645550-07:00
-description: "Wyci\u0105ganie podci\u0105g\xF3w to proces wydobywania konkretnych\
-  \ cz\u0119\u015Bci z d\u0142u\u017Cszego ci\u0105gu znak\xF3w. Robimy to, \u017C\
-  eby pracowa\u0107 tylko z istotnymi fragmentami danych, na\u2026"
+description: "How to: (Jak to zrobi\u0107:) ."
 lastmod: '2024-03-13T22:44:35.528993-06:00'
 model: gpt-4-1106-preview
-summary: "Wyci\u0105ganie podci\u0105g\xF3w to proces wydobywania konkretnych cz\u0119\
-  \u015Bci z d\u0142u\u017Cszego ci\u0105gu znak\xF3w."
+summary: .
 title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
 weight: 6
 ---

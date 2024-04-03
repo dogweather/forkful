@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 18:03:15.293824-07:00
-description: "Uuden projektin aloittaminen tarkoittaa tyhj\xE4lt\xE4 p\xF6yd\xE4lt\xE4\
-  \ alkamista, koodipohjan rakentamista. Ohjelmoijat tekev\xE4t t\xE4m\xE4n uusien\
-  \ ideoiden testailuun,\u2026"
+description: "How to: (\"Kuinka se tehd\xE4\xE4n:\") Aloitetaan yksinkertaisella \"\
+  Hello, World!\" esimerkill\xE4 C++:ssa. T\xE4m\xE4 asettaa perustan uudelle projektille."
 lastmod: '2024-03-13T22:44:56.865726-06:00'
 model: gpt-4-1106-preview
-summary: "Uuden projektin aloittaminen tarkoittaa tyhj\xE4lt\xE4 p\xF6yd\xE4lt\xE4\
-  \ alkamista, koodipohjan rakentamista."
+summary: "Aloitetaan yksinkertaisella \"Hello, World!\" esimerkill\xE4 C++:ssa."
 title: Uuden projektin aloittaminen
 weight: 1
 ---

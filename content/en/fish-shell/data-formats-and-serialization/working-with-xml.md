@@ -1,11 +1,11 @@
 ---
 date: 2024-01-25 03:39:27.877405-07:00
-description: "Working with XML means wrangling data in a pervasive, structured format\
-  \ used in configurations, messaging, and more. Programmers manipulate XML to read,\u2026"
+description: "How to: Fish doesn't have built-in XML parsing, so you'll lean on external\
+  \ tools like `xmllint` or `xmlstarlet`. Here\u2019s a snippet to read values."
 lastmod: '2024-03-13T22:45:00.495754-06:00'
 model: gpt-4-1106-preview
-summary: Working with XML means wrangling data in a pervasive, structured format used
-  in configurations, messaging, and more.
+summary: Fish doesn't have built-in XML parsing, so you'll lean on external tools
+  like `xmllint` or `xmlstarlet`.
 title: Working with XML
 weight: 40
 ---

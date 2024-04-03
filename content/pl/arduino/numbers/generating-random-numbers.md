@@ -1,13 +1,11 @@
 ---
 date: 2024-01-27 20:32:36.439018-07:00
-description: "Generowanie losowych liczb w projektach Arduino polega na tworzeniu\
-  \ warto\u015Bci, kt\xF3re z za\u0142o\u017Cenia s\u0105 nieprzewidywalne, co jest\
-  \ kluczowe dla aplikacji takich\u2026"
+description: "Jak to zrobi\u0107: Arduino oferuje proste funkcje do generowania losowych\
+  \ liczb: `randomSeed()` i `random()`. Na pocz\u0105tek zainicjuj generator liczb\
+  \ losowych,\u2026"
 lastmod: '2024-03-13T22:44:35.668283-06:00'
 model: gpt-4-0125-preview
-summary: "Generowanie losowych liczb w projektach Arduino polega na tworzeniu warto\u015B\
-  ci, kt\xF3re z za\u0142o\u017Cenia s\u0105 nieprzewidywalne, co jest kluczowe dla\
-  \ aplikacji takich jak gry, symulacje i systemy bezpiecze\u0144stwa."
+summary: Arduino oferuje proste funkcje do generowania losowych liczb.
 title: Generowanie liczb losowych
 weight: 12
 ---

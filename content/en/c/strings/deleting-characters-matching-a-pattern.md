@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 17:50:02.671575-07:00
-description: "Deleting characters matching a specific pattern from strings in C is\
-  \ about removing all instances of certain characters that fit predefined criteria.\u2026"
+description: "How to: C doesn't come with a built-in function for directly deleting\
+  \ characters from a string based on a pattern, unlike some higher-level languages.\u2026"
 lastmod: '2024-03-13T22:45:00.497503-06:00'
 model: gpt-4-0125-preview
-summary: Deleting characters matching a specific pattern from strings in C is about
-  removing all instances of certain characters that fit predefined criteria.
+summary: C doesn't come with a built-in function for directly deleting characters
+  from a string based on a pattern, unlike some higher-level languages.
 title: Deleting characters matching a pattern
 weight: 5
 ---

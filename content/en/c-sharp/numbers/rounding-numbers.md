@@ -1,12 +1,9 @@
 ---
 date: 2024-01-25 03:00:13.284520-07:00
-description: "Rounding numbers means adjusting them to the nearest specified place\
-  \ value\u2014think buckling them down to a simpler form. Programmers round off to\
-  \ control\u2026"
+description: 'How to: Here''s the round-trip ticket for rounding numbers in C#.'
 lastmod: '2024-03-13T22:45:00.083603-06:00'
 model: gpt-4-1106-preview
-summary: "Rounding numbers means adjusting them to the nearest specified place value\u2014\
-  think buckling them down to a simpler form."
+summary: Here's the round-trip ticket for rounding numbers in C#.
 title: Rounding numbers
 weight: 13
 ---

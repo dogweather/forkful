@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:40:52.000386-07:00
-description: "Crear un archivo temporal significa generar un fichero que solo existe\
-  \ durante la ejecuci\xF3n de un programa. Los programadores lo hacen para gestionar\u2026"
+description: "C\xF3mo hacerlo: En Lua, puedes usar la biblioteca `os` para trabajar\
+  \ con archivos temporales. Aqu\xED te dejo un ejemplo simple."
 lastmod: '2024-03-13T22:44:59.221855-06:00'
 model: gpt-4-1106-preview
-summary: "Crear un archivo temporal significa generar un fichero que solo existe durante\
-  \ la ejecuci\xF3n de un programa."
+summary: En Lua, puedes usar la biblioteca `os` para trabajar con archivos temporales.
 title: Creando un archivo temporal
 weight: 21
 ---

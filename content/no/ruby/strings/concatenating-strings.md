@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:35:46.704887-07:00
-description: "I programmering betyr \xE5 \"konkatenere\" strenger \xE5 sette dem sammen\
-  \ til \xE9n. Programutviklere konkatenere strenger for \xE5 bygge setninger, lage\
-  \ meldinger,\u2026"
+description: "Hvordan: Konkatenere strenger kan gj\xF8res p\xE5 noen m\xE5ter i Ruby.\
+  \ Her er noen eksempler."
 lastmod: '2024-03-13T22:44:41.307690-06:00'
 model: gpt-4-1106-preview
-summary: "I programmering betyr \xE5 \"konkatenere\" strenger \xE5 sette dem sammen\
-  \ til \xE9n."
+summary: "Konkatenere strenger kan gj\xF8res p\xE5 noen m\xE5ter i Ruby."
 title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---

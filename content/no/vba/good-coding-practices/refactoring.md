@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:04.830060-07:00
-description: "Refaktorering i programmering inneb\xE6rer \xE5 endre strukturen p\xE5\
-  \ koden uten \xE5 endre dens oppf\xF8rsel, for \xE5 forbedre aspekter som lesbarhet,\
-  \ vedlikeholdbarhet\u2026"
+description: "Hvordan: Ta i betraktning et grunnleggende eksempel i Visual Basic for\
+  \ Applications (VBA) hvor vi har en subrutine som skriver ut detaljer om en ansatt.\u2026"
 lastmod: '2024-03-13T22:44:40.629769-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktorering i programmering inneb\xE6rer \xE5 endre strukturen p\xE5 koden\
-  \ uten \xE5 endre dens oppf\xF8rsel, for \xE5 forbedre aspekter som lesbarhet, vedlikeholdbarhet\
-  \ eller ytelse."
+summary: Ta i betraktning et grunnleggende eksempel i Visual Basic for Applications
+  (VBA) hvor vi har en subrutine som skriver ut detaljer om en ansatt.
 title: Refaktorering
 weight: 19
 ---

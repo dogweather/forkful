@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:00.465967-07:00
-description: "En PowerShell, comprobar si un directorio existe es una tarea com\xFA\
-  n que ayuda a los scripts a tomar decisiones basadas en la estructura del sistema\
-  \ de\u2026"
+description: "C\xF3mo hacerlo: PowerShell ofrece una manera directa de verificar la\
+  \ presencia de un directorio utilizando el cmdlet `Test-Path`. Este cmdlet devuelve\
+  \ un\u2026"
 lastmod: '2024-03-13T22:44:59.306636-06:00'
 model: gpt-4-0125-preview
-summary: "En PowerShell, comprobar si un directorio existe es una tarea com\xFAn que\
-  \ ayuda a los scripts a tomar decisiones basadas en la estructura del sistema de\
-  \ archivos, como evitar errores confirmando que un directorio objetivo est\xE1 en\
-  \ su lugar antes de intentar leerlo o escribir en \xE9l."
+summary: PowerShell ofrece una manera directa de verificar la presencia de un directorio
+  utilizando el cmdlet `Test-Path`.
 title: Comprobando si un directorio existe
 weight: 20
 ---

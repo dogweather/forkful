@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 01:17:22.183084-07:00
-description: "Refatora\xE7\xE3o \xE9 o processo de reestruturar o c\xF3digo de computador\
-  \ existente sem alterar seu comportamento externo, visando melhorar atributos n\xE3\
-  o\u2026"
+description: "Como Fazer: Refatorar em Clojure\u2014gra\xE7as \xE0 sua sintaxe limpa\
+  \ e ao paradigma funcional\u2014pode ser incrivelmente direto. Vamos abordar um\
+  \ cen\xE1rio comum: iterar\u2026"
 lastmod: '2024-03-13T22:44:46.205046-06:00'
 model: gpt-4-0125-preview
-summary: "Refatora\xE7\xE3o \xE9 o processo de reestruturar o c\xF3digo de computador\
-  \ existente sem alterar seu comportamento externo, visando melhorar atributos n\xE3\
-  o funcionais."
+summary: "Refatorar em Clojure\u2014gra\xE7as \xE0 sua sintaxe limpa e ao paradigma\
+  \ funcional\u2014pode ser incrivelmente direto."
 title: "Refatora\xE7\xE3o"
 weight: 19
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-02-03 19:02:34.881923-07:00
-description: "Parsing a date from a string allows programmers to convert textual date\
-  \ representations into JavaScript `Date` objects, facilitating date manipulations,\u2026"
+description: "How to: JavaScript natively offers the `Date.parse()` method and the\
+  \ `Date` constructor to parse date strings. However, these approaches have limitations\u2026"
 lastmod: '2024-03-13T22:45:00.442487-06:00'
 model: gpt-4-0125-preview
-summary: Parsing a date from a string allows programmers to convert textual date representations
-  into JavaScript `Date` objects, facilitating date manipulations, comparisons, and
-  formatting operations.
+summary: JavaScript natively offers the `Date.parse()` method and the `Date` constructor
+  to parse date strings.
 title: Parsing a date from a string
 weight: 30
 ---

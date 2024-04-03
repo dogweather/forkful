@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:12:03.035885-07:00
-description: "Organiser le code en fonctions signifie d\xE9couper votre code en blocs\
-  \ r\xE9utilisables et modulaires. Nous faisons cela pour respecter le principe DRY\
-  \ (Don't\u2026"
+description: "Comment faire : Imaginez que vous cr\xE9ez une calculatrice de base.\
+  \ Au lieu d'\xE9crire la logique d'addition partout o\xF9 vous en avez besoin, cr\xE9\
+  ez une\u2026"
 lastmod: '2024-03-13T22:44:57.442836-06:00'
 model: gpt-4-1106-preview
-summary: "Organiser le code en fonctions signifie d\xE9couper votre code en blocs\
-  \ r\xE9utilisables et modulaires."
+summary: "Imaginez que vous cr\xE9ez une calculatrice de base."
 title: Organisation du code en fonctions
 weight: 18
 ---

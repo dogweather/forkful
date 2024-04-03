@@ -2,13 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:03.921177-07:00
-description: "Merkkijonon muuttaminen pieniksi kirjaimiksi on perusoperaatio, joka\
-  \ k\xE4sitt\xE4\xE4 kaikkien annetun merkkijonon merkkien muuttamisen niiden pienikirjaimisiin\u2026"
+description: "Kuinka: Dartissa voit muuttaa merkkijonon pieniksi kirjaimiksi k\xE4\
+  ytt\xE4m\xE4ll\xE4 `String`-luokan tarjoamaa `toLowerCase()`-metodia. T\xE4m\xE4\
+  \ metodi palauttaa uuden\u2026"
 lastmod: '2024-03-13T22:44:56.256507-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonon muuttaminen pieniksi kirjaimiksi on perusoperaatio, joka k\xE4\
-  sitt\xE4\xE4 kaikkien annetun merkkijonon merkkien muuttamisen niiden pienikirjaimisiin\
-  \ vastineisiin."
+summary: "Dartissa voit muuttaa merkkijonon pieniksi kirjaimiksi k\xE4ytt\xE4m\xE4\
+  ll\xE4 `String`-luokan tarjoamaa `toLowerCase()`-metodia."
 title: Merkkijonon muuttaminen pieniksi kirjaimiksi
 weight: 4
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:28.428307-07:00
-description: "Analisar uma data de uma string permite que programadores convertam\
-  \ representa\xE7\xF5es textuais de datas em objetos `Date` do JavaScript, facilitando\u2026"
+description: "Como fazer: JavaScript oferece nativamente o m\xE9todo `Date.parse()`\
+  \ e o construtor `Date` para analisar strings de datas. No entanto, essas abordagens\
+  \ t\xEAm\u2026"
 lastmod: '2024-03-13T22:44:46.971834-06:00'
 model: gpt-4-0125-preview
-summary: "Analisar uma data de uma string permite que programadores convertam representa\xE7\
-  \xF5es textuais de datas em objetos `Date` do JavaScript, facilitando manipula\xE7\
-  \xF5es, compara\xE7\xF5es e opera\xE7\xF5es de formata\xE7\xE3o de datas."
+summary: "JavaScript oferece nativamente o m\xE9todo `Date.parse()` e o construtor\
+  \ `Date` para analisar strings de datas."
 title: Analisando uma data a partir de uma string
 weight: 30
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:55.306351-07:00
-description: "La concat\xE9nation de cha\xEEnes implique de joindre deux cha\xEEnes\
-  \ ou plus bout \xE0 bout pour former une nouvelle cha\xEEne. Les programmeurs font\
-  \ cela pour g\xE9n\xE9rer\u2026"
+description: "Comment faire : En Go, il existe plusieurs fa\xE7ons de concat\xE9ner\
+  \ des cha\xEEnes. Voici un aper\xE7u de certaines m\xE9thodes courantes avec des\
+  \ exemples : #."
 lastmod: '2024-03-13T22:44:57.124041-06:00'
 model: gpt-4-0125-preview
-summary: "La concat\xE9nation de cha\xEEnes implique de joindre deux cha\xEEnes ou\
-  \ plus bout \xE0 bout pour former une nouvelle cha\xEEne."
+summary: "En Go, il existe plusieurs fa\xE7ons de concat\xE9ner des cha\xEEnes."
 title: "Concat\xE9nation de cha\xEEnes"
 weight: 3
 ---

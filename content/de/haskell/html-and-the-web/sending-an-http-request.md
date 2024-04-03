@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:59:49.199568-07:00
-description: "HTTP-Anfragen erm\xF6glichen die Kommunikation mit Web-Servern: Daten\
-  \ anfragen oder senden. Programmierer brauchen das f\xFCr Web-Interaktionen, APIs\
-  \ und\u2026"
+description: "So geht's: In Haskell benutzt man oft die Bibliothek `http-client` f\xFC\
+  r HTTP-Anfragen. Hier ein einfaches Beispiel."
 lastmod: '2024-03-13T22:44:53.928181-06:00'
 model: gpt-4-1106-preview
-summary: "HTTP-Anfragen erm\xF6glichen die Kommunikation mit Web-Servern: Daten anfragen\
-  \ oder senden."
+summary: "In Haskell benutzt man oft die Bibliothek `http-client` f\xFCr HTTP-Anfragen."
 title: Einen HTTP-Request senden
 weight: 44
 ---

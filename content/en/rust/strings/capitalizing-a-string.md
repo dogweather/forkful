@@ -1,11 +1,10 @@
 ---
 date: 2024-02-03 19:02:35.615679-07:00
-description: "Capitalizing a string in Rust involves modifying the string so that\
-  \ its first character is uppercase if it's a letter, while leaving the rest of the\u2026"
+description: "How to: To capitalize a string in Rust, you have two primary routes:\
+  \ using standard library functionalities or employing third-party crates for more\u2026"
 lastmod: '2024-03-13T22:44:59.880965-06:00'
 model: gpt-4-0125-preview
-summary: Capitalizing a string in Rust involves modifying the string so that its first
-  character is uppercase if it's a letter, while leaving the rest of the string unchanged.
+summary: To capitalize a string in Rust, you have two primary routes.
 title: Capitalizing a string
 weight: 2
 ---

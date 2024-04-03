@@ -1,11 +1,10 @@
 ---
 date: 2024-02-03 17:50:03.342127-07:00
-description: "Getting the current date in Go is a fundamental task for programmers,\
-  \ akin to \"Hello, World!\" in its ubiquity. It's essential for tasks ranging from\u2026"
+description: "How to: In Go, the `time` package is your gateway to working with dates\
+  \ and times. The `time.Now()` function gives you the current date and time, while\u2026"
 lastmod: '2024-03-13T22:44:59.640390-06:00'
 model: gpt-4-0125-preview
-summary: Getting the current date in Go is a fundamental task for programmers, akin
-  to "Hello, World.
+summary: In Go, the `time` package is your gateway to working with dates and times.
 title: Getting the current date
 weight: 29
 ---

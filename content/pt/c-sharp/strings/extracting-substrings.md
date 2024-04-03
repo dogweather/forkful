@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:45:18.132916-07:00
-description: "Extrair substrings significa pegar peda\xE7os espec\xEDficos de uma\
-  \ string. Programadores fazem isso para manipular, analisar ou validar partes de\
-  \ texto dentro\u2026"
+description: "How to: No C#, voc\xEA pode usar o m\xE9todo `Substring()` da classe\
+  \ `String` para pegar partes de uma string. Aqui est\xE3o alguns exemplos."
 lastmod: '2024-03-13T22:44:46.573317-06:00'
 model: gpt-4-1106-preview
-summary: "Extrair substrings significa pegar peda\xE7os espec\xEDficos de uma string."
+summary: "No C#, voc\xEA pode usar o m\xE9todo `Substring()` da classe `String` para\
+  \ pegar partes de uma string."
 title: Extraindo substrings
 weight: 6
 ---

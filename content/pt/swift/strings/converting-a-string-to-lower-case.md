@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:39:31.410353-07:00
-description: "Converter uma string para min\xFAsculas significa transformar todos\
-  \ os caracteres alfab\xE9ticos do texto para a sua forma min\xFAscula. Programadores\
-  \ fazem isso\u2026"
+description: "Como Fazer: Swift torna o processo de converter strings para min\xFA\
+  sculas muito simples com o uso da propriedade `lowercased`. Aqui tem um exemplo."
 lastmod: '2024-03-13T22:44:46.908289-06:00'
 model: gpt-4-1106-preview
-summary: "Converter uma string para min\xFAsculas significa transformar todos os caracteres\
-  \ alfab\xE9ticos do texto para a sua forma min\xFAscula."
+summary: "Swift torna o processo de converter strings para min\xFAsculas muito simples\
+  \ com o uso da propriedade `lowercased`."
 title: "Convertendo uma string para min\xFAsculas"
 weight: 4
 ---

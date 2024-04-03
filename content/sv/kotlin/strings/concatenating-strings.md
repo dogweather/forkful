@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:35:19.671365-07:00
-description: "Stringkonkatenering inneb\xE4r att s\xE4tta ihop textstr\xE4ngar till\
-  \ en ny, l\xE4ngre str\xE4ng. Vi g\xF6r det f\xF6r att bygga meddelanden, skapa\
-  \ dynamiska texter, eller\u2026"
+description: "Hur g\xF6r man: ."
 lastmod: '2024-03-13T22:44:37.863432-06:00'
 model: gpt-4-1106-preview
-summary: "Stringkonkatenering inneb\xE4r att s\xE4tta ihop textstr\xE4ngar till en\
-  \ ny, l\xE4ngre str\xE4ng."
+summary: .
 title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---

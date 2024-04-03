@@ -2,12 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:09.192811-07:00
-description: "Werken met XML op Arduino omvat het parsen en manipuleren van XML-gegevens,\
-  \ die meestal afkomstig zijn van web-API's of configuratiebestanden.\u2026"
+description: "Hoe te: We gaan de `XMLWriter`-bibliotheek gebruiken om XML te cre\xEB\
+  ren en de `tinyxml2`-bibliotheek om het te parsen. Installeer eerst de bibliotheken\
+  \ via\u2026"
 lastmod: '2024-03-13T22:44:51.095055-06:00'
 model: gpt-4-0125-preview
-summary: Werken met XML op Arduino omvat het parsen en manipuleren van XML-gegevens,
-  die meestal afkomstig zijn van web-API's of configuratiebestanden.
+summary: "We gaan de `XMLWriter`-bibliotheek gebruiken om XML te cre\xEBren en de\
+  \ `tinyxml2`-bibliotheek om het te parsen."
 title: Werken met XML
 weight: 40
 ---

@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:15.527968-07:00
-description: "Het lezen van commandoregelargumenten in Go houdt in dat je de argumenten\
-  \ die aan een programma zijn verstrekt tijdens de aanroeping vanuit de terminal\
-  \ of\u2026"
+description: "Hoe te: Go biedt directe toegang tot commandoregelargumenten via het\
+  \ `os`-pakket, specifiek met behulp van `os.Args`, een reeks strings. Hier is een\u2026"
 lastmod: '2024-03-13T22:44:50.303379-06:00'
 model: gpt-4-0125-preview
-summary: Het lezen van commandoregelargumenten in Go houdt in dat je de argumenten
-  die aan een programma zijn verstrekt tijdens de aanroeping vanuit de terminal of
-  opdrachtprompt haalt.
+summary: Go biedt directe toegang tot commandoregelargumenten via het `os`-pakket,
+  specifiek met behulp van `os.Args`, een reeks strings.
 title: Commandoregelargumenten lezen
 weight: 23
 ---

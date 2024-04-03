@@ -1,11 +1,9 @@
 ---
 date: 2024-01-26 04:34:01.870210-07:00
-description: "XML \xE9 uma linguagem de marca\xE7\xE3o usada para armazenar e transportar\
-  \ dados. Programadores trabalham com XML para permitir a interoperabilidade entre\u2026"
+description: 'Como Fazer: Lendo XML com SimpleXML.'
 lastmod: '2024-03-13T22:44:46.691855-06:00'
 model: gpt-4-0125-preview
-summary: "XML \xE9 uma linguagem de marca\xE7\xE3o usada para armazenar e transportar\
-  \ dados."
+summary: Lendo XML com SimpleXML.
 title: Trabalhando com XML
 weight: 40
 ---

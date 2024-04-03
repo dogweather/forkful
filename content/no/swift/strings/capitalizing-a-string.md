@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:29.518801-07:00
-description: "\xC5 sette stor forbokstav i en streng i Swift endrer den gitte strengen\
-  \ slik at dens f\xF8rste tegn er med stor bokstav, og de gjenv\xE6rende tegnene\
-  \ er med sm\xE5\u2026"
+description: "Hvordan: Swifts `String`-strukturer kommer med et par innebygde metoder\
+  \ for \xE5 manipulere sm\xE5 og store bokstaver i strenger. Her er noen tiln\xE6\
+  rminger for \xE5\u2026"
 lastmod: '2024-03-13T22:44:41.125618-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 sette stor forbokstav i en streng i Swift endrer den gitte strengen\
-  \ slik at dens f\xF8rste tegn er med stor bokstav, og de gjenv\xE6rende tegnene\
-  \ er med sm\xE5 bokstaver."
+summary: "Swifts `String`-strukturer kommer med et par innebygde metoder for \xE5\
+  \ manipulere sm\xE5 og store bokstaver i strenger."
 title: Sette stor bokstav i en streng
 weight: 2
 ---

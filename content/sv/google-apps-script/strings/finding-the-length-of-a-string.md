@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:17.662520-07:00
-description: "Att hitta l\xE4ngden p\xE5 en str\xE4ng i Google Apps Script, ett JavaScript-baserat\
-  \ molnskriptspr\xE5k som l\xE5ter dig automatisera uppgifter \xF6ver Googles produkter,\u2026"
+description: "Hur g\xF6r man: I Google Apps Script kan du hitta l\xE4ngden p\xE5 en\
+  \ str\xE4ng med `.length`-egenskapen, likt i JavaScript. Denna egendom returnerar\
+  \ antalet tecken\u2026"
 lastmod: '2024-03-13T22:44:37.428368-06:00'
 model: gpt-4-0125-preview
-summary: "Att hitta l\xE4ngden p\xE5 en str\xE4ng i Google Apps Script, ett JavaScript-baserat\
-  \ molnskriptspr\xE5k som l\xE5ter dig automatisera uppgifter \xF6ver Googles produkter,\
-  \ handlar om att best\xE4mma antalet tecken en str\xE4ng inneh\xE5ller."
+summary: "I Google Apps Script kan du hitta l\xE4ngden p\xE5 en str\xE4ng med `.length`-egenskapen,\
+  \ likt i JavaScript."
 title: "Att hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---

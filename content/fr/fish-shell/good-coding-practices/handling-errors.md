@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 00:52:14.006850-07:00
-description: "La gestion des erreurs permet \xE0 votre script de faire face de mani\xE8\
-  re \xE9l\xE9gante \xE0 l'inattendu. Nous le faisons pour g\xE9rer les \xE9checs\
-  \ sans donner des\u2026"
+description: "Comment faire : Pour capturer les erreurs dans Fish, appuyez-vous sur\
+  \ la commande `status` et les conditionnels. Disons que la commande `ping` \xE9\
+  choue ;\u2026"
 lastmod: '2024-03-13T22:44:58.332851-06:00'
 model: gpt-4-1106-preview
-summary: "La gestion des erreurs permet \xE0 votre script de faire face de mani\xE8\
-  re \xE9l\xE9gante \xE0 l'inattendu."
+summary: Pour capturer les erreurs dans Fish, appuyez-vous sur la commande `status`
+  et les conditionnels.
 title: Gestion des erreurs
 weight: 16
 ---

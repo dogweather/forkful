@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 01:40:31.201580-07:00
-description: "Le Refactoring est le processus de restructuration du code informatique\
-  \ existant sans en changer le comportement externe. Les programmeurs le font pour\u2026"
+description: "Comment faire : Prenons un exemple simple o\xF9 le refactoring peut\
+  \ rendre votre code plus concis et lisible. Ici, nous refactorisons une fonction\
+  \ qui\u2026"
 lastmod: '2024-03-13T22:44:58.284623-06:00'
 model: gpt-4-0125-preview
-summary: Le Refactoring est le processus de restructuration du code informatique existant
-  sans en changer le comportement externe.
+summary: "Prenons un exemple simple o\xF9 le refactoring peut rendre votre code plus\
+  \ concis et lisible."
 title: "R\xE9usinage"
 weight: 19
 ---

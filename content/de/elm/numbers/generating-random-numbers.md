@@ -3,15 +3,12 @@ changelog:
 - 2024-02-27, dogweather, edited and tested
 - 2024-02-27, gpt-4-0125-preview, translated from English
 date: 2024-02-27 22:50:18.221595-07:00
-description: "Das Generieren von Zufallszahlen in Elm erfordert die Verwendung des\
-  \ `Random`-Moduls, um Pseudozufallszahlen zu erzeugen, die f\xFCr eine Vielzahl\
-  \ von\u2026"
+description: "Wie geht das: Elms reine funktionale Natur bedeutet, dass du nicht direkt\
+  \ Zufallszahlen generieren kannst, wie du es vielleicht in imperativen Sprachen\u2026"
 lastmod: '2024-03-13T22:44:53.800651-06:00'
 model: gpt-4-0125-preview
-summary: "Das Generieren von Zufallszahlen in Elm erfordert die Verwendung des `Random`-Moduls,\
-  \ um Pseudozufallszahlen zu erzeugen, die f\xFCr eine Vielzahl von Aufgaben wie\
-  \ Spiele, Simulationen und sogar als Teil von Algorithmen, die stochastische Prozesse\
-  \ ben\xF6tigen, n\xFCtzlich sind."
+summary: "Elms reine funktionale Natur bedeutet, dass du nicht direkt Zufallszahlen\
+  \ generieren kannst, wie du es vielleicht in imperativen Sprachen tun w\xFCrdest."
 title: Zufallszahlen generieren
 weight: 12
 ---

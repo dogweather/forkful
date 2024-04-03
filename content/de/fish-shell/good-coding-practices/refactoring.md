@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 01:18:05.732178-07:00
-description: "Refactoring ist der Prozess des Umstrukturierens bestehenden Codes,\
-  \ ohne sein externes Verhalten zu \xE4ndern, um nichtfunktionale Attribute zu verbessern.\u2026"
+description: "Wie: Stellen Sie sich vor, Sie haben ein Skript, das mit der Zeit ziemlich\
+  \ gewachsen ist. Es begann einfach, aber jetzt ist es ein Unget\xFCm, das mit\u2026"
 lastmod: '2024-03-13T22:44:54.317696-06:00'
 model: gpt-4-0125-preview
-summary: "Refactoring ist der Prozess des Umstrukturierens bestehenden Codes, ohne\
-  \ sein externes Verhalten zu \xE4ndern, um nichtfunktionale Attribute zu verbessern."
+summary: Stellen Sie sich vor, Sie haben ein Skript, das mit der Zeit ziemlich gewachsen
+  ist.
 title: Refactoring
 weight: 19
 ---

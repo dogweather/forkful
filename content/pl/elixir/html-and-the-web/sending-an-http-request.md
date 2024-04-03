@@ -1,13 +1,12 @@
 ---
 date: 2024-01-20 17:59:34.471348-07:00
-description: "Wysy\u0142anie \u017C\u0105dania HTTP to spos\xF3b, by program m\xF3\
-  g\u0142 komunikowa\u0107 si\u0119 z zewn\u0119trznymi serwerami \u2013 pobiera\u0107\
-  \ dane, wysy\u0142a\u0107 formularze czy autoryzowa\u0107\u2026"
+description: "Jak to zrobi\u0107: Elixir u\u017Cywa r\xF3\u017Cnych pakiet\xF3w do\
+  \ wysy\u0142ania \u017C\u0105da\u0144 HTTP, ale popularnym wyborem jest `HTTPoison`.\
+  \ Oto jak mo\u017Cesz wys\u0142a\u0107 proste \u017C\u0105danie GET."
 lastmod: '2024-03-13T22:44:35.038811-06:00'
 model: gpt-4-1106-preview
-summary: "Wysy\u0142anie \u017C\u0105dania HTTP to spos\xF3b, by program m\xF3g\u0142\
-  \ komunikowa\u0107 si\u0119 z zewn\u0119trznymi serwerami \u2013 pobiera\u0107 dane,\
-  \ wysy\u0142a\u0107 formularze czy autoryzowa\u0107 u\u017Cytkownik\xF3w."
+summary: "Elixir u\u017Cywa r\xF3\u017Cnych pakiet\xF3w do wysy\u0142ania \u017C\u0105\
+  da\u0144 HTTP, ale popularnym wyborem jest `HTTPoison`."
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---

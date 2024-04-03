@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:40.210715-07:00
-description: "Arredondar n\xFAmeros \xE9 ajustar o valor de um n\xFAmero para o inteiro\
-  \ mais pr\xF3ximo ou para um n\xFAmero espec\xEDfico de casas decimais. Programadores\
-  \ fazem isso por\u2026"
+description: "Como fazer: Em Go, n\xE3o h\xE1 uma fun\xE7\xE3o integrada que arredonde\
+  \ n\xFAmeros diretamente para um n\xFAmero espec\xEDfico de casas decimais no pacote\
+  \ math. No entanto,\u2026"
 lastmod: '2024-03-13T22:44:46.054989-06:00'
 model: gpt-4-0125-preview
-summary: "Arredondar n\xFAmeros \xE9 ajustar o valor de um n\xFAmero para o inteiro\
-  \ mais pr\xF3ximo ou para um n\xFAmero espec\xEDfico de casas decimais."
+summary: "Em Go, n\xE3o h\xE1 uma fun\xE7\xE3o integrada que arredonde n\xFAmeros\
+  \ diretamente para um n\xFAmero espec\xEDfico de casas decimais no pacote math."
 title: "Arredondando n\xFAmeros"
 weight: 13
 ---

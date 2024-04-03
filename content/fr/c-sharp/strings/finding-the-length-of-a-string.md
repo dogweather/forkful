@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:46:56.809897-07:00
-description: "La longueur d'une cha\xEEne, c'est combien de caract\xE8res elle contient.\
-  \ On mesure \xE7a pour tout, des mots de passe aux tweets : c'est essentiel pour\
-  \ valider,\u2026"
+description: "How to: En C#, c'est simple. Utilisez la propri\xE9t\xE9 `.Length` sur\
+  \ une cha\xEEne pour obtenir sa longueur. Voici comment ."
 lastmod: '2024-03-13T22:44:57.777100-06:00'
 model: gpt-4-1106-preview
-summary: "La longueur d'une cha\xEEne, c'est combien de caract\xE8res elle contient."
+summary: En C#, c'est simple.
 title: "Trouver la longueur d'une cha\xEEne de caract\xE8res"
 weight: 7
 ---

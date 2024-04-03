@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:48:55.267746-07:00
-description: "Verificar si un directorio existe en Visual Basic para Aplicaciones\
-  \ (VBA) se trata de confirmar la presencia de una carpeta dentro del sistema de\
-  \ archivos\u2026"
+description: "C\xF3mo hacerlo: En VBA, para comprobar si un directorio existe, t\xED\
+  picamente se utiliza la funci\xF3n `Dir` combinada con el atributo `vbDirectory`.\
+  \ Este\u2026"
 lastmod: '2024-03-13T22:44:58.909226-06:00'
 model: gpt-4-0125-preview
-summary: Verificar si un directorio existe en Visual Basic para Aplicaciones (VBA)
-  se trata de confirmar la presencia de una carpeta dentro del sistema de archivos
-  antes de realizar operaciones como guardar archivos o crear nuevos directorios.
+summary: "En VBA, para comprobar si un directorio existe, t\xEDpicamente se utiliza\
+  \ la funci\xF3n `Dir` combinada con el atributo `vbDirectory`."
 title: Verificando si un directorio existe
 weight: 20
 ---

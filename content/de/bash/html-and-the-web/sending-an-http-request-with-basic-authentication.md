@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 18:00:44.724934-07:00
-description: "Beim Senden einer HTTP-Anfrage mit Basic Authentication werden Benutzername\
-  \ und Passwort kodiert und als Teil der Anfrage \xFCbermittelt. Programmierer\u2026"
+description: 'So geht''s: .'
 lastmod: '2024-03-13T22:44:54.059275-06:00'
 model: gpt-4-1106-preview
-summary: "Beim Senden einer HTTP-Anfrage mit Basic Authentication werden Benutzername\
-  \ und Passwort kodiert und als Teil der Anfrage \xFCbermittelt."
+summary: .
 title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---

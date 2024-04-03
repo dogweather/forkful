@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:01.561908-07:00
-description: "X\u1EED l\xFD l\u1ED7i l\xE0 vi\u1EBFt m\xE3 l\u1EADp tr\xECnh nh\u1EB1\
-  m d\u1EF1 \u0111o\xE1n v\xE0 x\u1EED l\xFD c\xE1c v\u1EA5n \u0111\u1EC1 ph\xE1t\
-  \ sinh. L\u1EADp tr\xECnh vi\xEAn l\xE0m vi\u1EC7c n\xE0y \u0111\u1EC3 l\xE0m cho\
-  \ ph\u1EA7n m\u1EC1m m\u1EA1nh m\u1EBD h\u01A1n, ng\u0103n ch\u1EB7n s\u1EF1 c\u1ED1\
-  \ v\xE0\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Java s\u1EED d\u1EE5ng ngo\u1EA1i l\u1EC7 \u0111\
+  \u1EC3 x\u1EED l\xFD l\u1ED7i. B\u1EA1n b\u1ECDc m\xE3 r\u1EE7i ro trong m\u1ED9\
+  t kh\u1ED1i `try` v\xE0 b\u1EAFt ngo\u1EA1i l\u1EC7 b\u1EB1ng `catch`. D\u01B0\u1EDB\
+  i \u0111\xE2y l\xE0 m\u1ED9t v\xED d\u1EE5 \u0111\u01A1n gi\u1EA3n."
 lastmod: '2024-03-13T22:44:36.499180-06:00'
 model: gpt-4-0125-preview
-summary: "X\u1EED l\xFD l\u1ED7i l\xE0 vi\u1EBFt m\xE3 l\u1EADp tr\xECnh nh\u1EB1\
-  m d\u1EF1 \u0111o\xE1n v\xE0 x\u1EED l\xFD c\xE1c v\u1EA5n \u0111\u1EC1 ph\xE1t\
-  \ sinh."
+summary: "Java s\u1EED d\u1EE5ng ngo\u1EA1i l\u1EC7 \u0111\u1EC3 x\u1EED l\xFD l\u1ED7\
+  i."
 title: "X\u1EED l\xFD l\u1ED7i"
 weight: 16
 ---

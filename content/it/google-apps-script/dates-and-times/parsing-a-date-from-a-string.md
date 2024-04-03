@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:16.357183-07:00
-description: "Analizzare una data da una stringa comporta la conversione di testo\
-  \ che rappresenta una data in un oggetto data, consentendo ai programmatori di eseguire\u2026"
+description: "Come fare: In Google Apps Script, che si basa su JavaScript, hai diversi\
+  \ approcci per analizzare una data da una stringa. Di seguito sono riportati esempi\u2026"
 lastmod: '2024-03-13T22:44:42.966030-06:00'
 model: gpt-4-0125-preview
-summary: Analizzare una data da una stringa comporta la conversione di testo che rappresenta
-  una data in un oggetto data, consentendo ai programmatori di eseguire operazioni
-  relative alle date come confronti, operazioni aritmetiche e formattazione.
+summary: In Google Apps Script, che si basa su JavaScript, hai diversi approcci per
+  analizzare una data da una stringa.
 title: Analisi di una data da una stringa
 weight: 30
 ---

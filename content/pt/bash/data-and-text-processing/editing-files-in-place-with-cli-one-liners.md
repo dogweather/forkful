@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 16:20:50.596326-07:00
-description: "Imagine que voc\xEA acabou de descobrir que precisa fazer uma atualiza\xE7\
-  \xE3o em lote em v\xE1rios arquivos de configura\xE7\xE3o no seu servidor. Voc\xEA\
-  \ poderia abrir cada\u2026"
+description: "Como Fazer: Quando se trata de editar arquivos no local usando Bash,\
+  \ duas ferramentas proeminentes entram em jogo: `sed` e `awk`. Vamos explorar como\
+  \ usar\u2026"
 lastmod: '2024-03-13T22:44:46.748620-06:00'
 model: gpt-4-0125-preview
-summary: "Imagine que voc\xEA acabou de descobrir que precisa fazer uma atualiza\xE7\
-  \xE3o em lote em v\xE1rios arquivos de configura\xE7\xE3o no seu servidor."
+summary: Quando se trata de editar arquivos no local usando Bash, duas ferramentas
+  proeminentes entram em jogo.
 title: Editando arquivos in loco com linhas de comando
 weight: 32
 ---

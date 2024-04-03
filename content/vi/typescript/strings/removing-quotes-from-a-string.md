@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:21.654332-07:00
-description: "X\xF3a d\u1EA5u ngo\u1EB7c kh\u1ECFi m\u1ED9t chu\u1ED7i c\xF3 ngh\u0129\
-  a l\xE0 lo\u1EA1i b\u1ECF c\xE1c k\xFD t\u1EF1 d\u1EA5u ngo\u1EB7c \u0111\u01A1\
-  n (`'`) ho\u1EB7c d\u1EA5u ngo\u1EB7c k\xE9p (`\"`) bao quanh \u0111\u1ECBnh ngh\u0129\
-  a chu\u1ED7i trong code. L\u1EADp tr\xECnh\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\xE2y l\xE0 h\u01B0\u1EDBng d\u1EABn kh\xF4\
+  ng lan man v\u1EC1 c\xE1ch c\u1EAFt b\u1ECF nh\u1EEFng d\u1EA5u ngo\u1EB7c phi\u1EC1\
+  n ph\u1EE9c kh\u1ECFi chu\u1ED7i c\u1EE7a b\u1EA1n trong TypeScript."
 lastmod: '2024-03-13T22:44:36.302855-06:00'
 model: gpt-4-0125-preview
-summary: "X\xF3a d\u1EA5u ngo\u1EB7c kh\u1ECFi m\u1ED9t chu\u1ED7i c\xF3 ngh\u0129\
-  a l\xE0 lo\u1EA1i b\u1ECF c\xE1c k\xFD t\u1EF1 d\u1EA5u ngo\u1EB7c \u0111\u01A1\
-  n (`'`) ho\u1EB7c d\u1EA5u ngo\u1EB7c k\xE9p (`\"`) bao quanh \u0111\u1ECBnh ngh\u0129\
-  a chu\u1ED7i trong code."
+summary: "\u0110\xE2y l\xE0 h\u01B0\u1EDBng d\u1EABn kh\xF4ng lan man v\u1EC1 c\xE1\
+  ch c\u1EAFt b\u1ECF nh\u1EEFng d\u1EA5u ngo\u1EB7c phi\u1EC1n ph\u1EE9c kh\u1ECF\
+  i chu\u1ED7i c\u1EE7a b\u1EA1n trong TypeScript."
 title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i"
 weight: 9
 ---

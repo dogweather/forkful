@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 18:04:45.665816-07:00
-description: "D\xE9marrer un nouveau projet, c'est cr\xE9er une base vierge pour traduire\
-  \ des id\xE9es en code. C'est essentiel pour structurer ses pens\xE9es, tester des\
-  \ concepts,\u2026"
+description: "Comment faire : Pour commencer un nouveau projet en Swift, ouvrez Xcode\
+  \ et suivez ces \xE9tapes."
 lastmod: '2024-03-13T22:44:58.223279-06:00'
 model: gpt-4-1106-preview
-summary: "D\xE9marrer un nouveau projet, c'est cr\xE9er une base vierge pour traduire\
-  \ des id\xE9es en code."
+summary: "Pour commencer un nouveau projet en Swift, ouvrez Xcode et suivez ces \xE9\
+  tapes."
 title: Lancement d'un nouveau projet
 weight: 1
 ---

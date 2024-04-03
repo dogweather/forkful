@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 17:50:05.177003-07:00
-description: "Starting a new project in Go involves setting up a workspace and initializing\
-  \ it with the necessary Go modules. Programmers do this to organize code,\u2026"
+description: "How to: First, ensure you have Go installed by running `go version`\
+  \ in your terminal. You should see the version of Go you've installed as output.\
+  \ Next,\u2026"
 lastmod: '2024-03-13T22:44:59.631734-06:00'
 model: gpt-4-0125-preview
-summary: Starting a new project in Go involves setting up a workspace and initializing
-  it with the necessary Go modules.
+summary: First, ensure you have Go installed by running `go version` in your terminal.
 title: Starting a new project
 weight: 1
 ---

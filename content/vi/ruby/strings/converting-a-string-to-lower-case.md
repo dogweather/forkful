@@ -2,16 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:28.223225-07:00
-description: "Trong Ruby, vi\u1EC7c chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i\
-  \ th\xE0nh ch\u1EEF th\u01B0\u1EDDng c\xF3 ngh\u0129a l\xE0 thay \u0111\u1ED5i t\u1EA5\
-  t c\u1EA3 c\xE1c ch\u1EEF c\xE1i vi\u1EBFt hoa trong chu\u1ED7i th\xE0nh c\xE1c\
-  \ ch\u1EEF c\xE1i vi\u1EBFt th\u01B0\u1EDDng t\u01B0\u01A1ng\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: ."
 lastmod: '2024-03-13T22:44:37.315018-06:00'
 model: gpt-4-0125-preview
-summary: "Trong Ruby, vi\u1EC7c chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i th\xE0\
-  nh ch\u1EEF th\u01B0\u1EDDng c\xF3 ngh\u0129a l\xE0 thay \u0111\u1ED5i t\u1EA5t\
-  \ c\u1EA3 c\xE1c ch\u1EEF c\xE1i vi\u1EBFt hoa trong chu\u1ED7i th\xE0nh c\xE1c\
-  \ ch\u1EEF c\xE1i vi\u1EBFt th\u01B0\u1EDDng t\u01B0\u01A1ng \u1EE9ng."
+summary: .
 title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
 weight: 4
 ---

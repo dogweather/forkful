@@ -1,10 +1,11 @@
 ---
 date: 2024-02-03 17:50:07.144392-07:00
-description: "Converting a date into a string in Go involves transforming a `time.Time`\
-  \ object into a readable string format. Programmers often perform this operation\u2026"
+description: "How to: In Go, the `time` package provides functionalities to work with\
+  \ dates and times, including formatting a `time.Time` object into a string. The\u2026"
 lastmod: '2024-03-13T22:44:59.641228-06:00'
 model: gpt-4-0125-preview
-summary: Converting a date into a string in Go involves transforming a `time.
+summary: In Go, the `time` package provides functionalities to work with dates and
+  times, including formatting a `time.Time` object into a string.
 title: Converting a date into a string
 weight: 28
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 01:16:22.474002-07:00
-description: "\xC5 organisere kode i funksjoner betyr \xE5 bryte opp koden din i gjenbrukbare,\
-  \ modul\xE6re blokker. Vi gj\xF8r dette for \xE5 holde ting DRY (Don't Repeat Yourself),\u2026"
+description: "Hvordan: Forestille deg at du lager en grunnleggende kalkulator. I stedet\
+  \ for \xE5 skrive tilleggslogikken overalt hvor du trenger den, opprett en\u2026"
 lastmod: '2024-03-13T22:44:40.537827-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 organisere kode i funksjoner betyr \xE5 bryte opp koden din i gjenbrukbare,\
-  \ modul\xE6re blokker."
+summary: Forestille deg at du lager en grunnleggende kalkulator.
 title: Organisering av kode i funksjoner
 weight: 18
 ---

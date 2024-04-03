@@ -1,13 +1,13 @@
 ---
 date: 2024-01-27 16:20:56.437097-07:00
-description: "Editar arquivos in-loco com linhas de comando \xFAnicas (CLI one-liners)\
-  \ \xE9 sobre fazer mudan\xE7as diretamente nos arquivos a partir da linha de comando,\
-  \ sem\u2026"
+description: "Como fazer: Fish Shell, conhecido por suas caracter\xEDsticas amig\xE1\
+  veis ao usu\xE1rio e poderosas capacidades de script, oferece v\xE1rias maneiras\
+  \ de editar\u2026"
 lastmod: '2024-03-13T22:44:47.001899-06:00'
 model: gpt-4-0125-preview
-summary: "Editar arquivos in-loco com linhas de comando \xFAnicas (CLI one-liners)\
-  \ \xE9 sobre fazer mudan\xE7as diretamente nos arquivos a partir da linha de comando,\
-  \ sem abrir eles em um editor de texto."
+summary: "Fish Shell, conhecido por suas caracter\xEDsticas amig\xE1veis ao usu\xE1\
+  rio e poderosas capacidades de script, oferece v\xE1rias maneiras de editar arquivos\
+  \ in-loco."
 title: Editando arquivos in loco com linhas de comando
 weight: 32
 ---

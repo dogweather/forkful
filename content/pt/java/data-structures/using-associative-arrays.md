@@ -2,12 +2,13 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:42.308637-07:00
-description: "Em Java, arrays associativos, ou mapas, permitem armazenar pares chave-valor\
-  \ para uma busca e manipula\xE7\xE3o de dados eficiente. Programadores os utilizam\u2026"
+description: "Como Fazer: Java n\xE3o possui arrays associativos embutidos como algumas\
+  \ linguagens possuem, mas fornece a interface `Map` e classes como `HashMap` e\u2026"
 lastmod: '2024-03-13T22:44:46.449113-06:00'
 model: gpt-4-0125-preview
-summary: "Em Java, arrays associativos, ou mapas, permitem armazenar pares chave-valor\
-  \ para uma busca e manipula\xE7\xE3o de dados eficiente."
+summary: "Java n\xE3o possui arrays associativos embutidos como algumas linguagens\
+  \ possuem, mas fornece a interface `Map` e classes como `HashMap` e `TreeMap` para\
+  \ preencher esse papel."
 title: Usando arrays associativos
 weight: 15
 ---

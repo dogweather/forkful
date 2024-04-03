@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:16:11.561059-07:00
-description: "Att organisera kod i funktioner inneb\xE4r att dela upp din kod i \xE5\
-  teranv\xE4ndbara, modul\xE4ra block. Vi g\xF6r detta f\xF6r att h\xE5lla saker DRY\
-  \ (Don\u2019t Repeat\u2026"
+description: "Hur man g\xF6r: F\xF6rest\xE4ll dig att du g\xF6r en grundl\xE4ggande\
+  \ kalkylator. Ist\xE4llet f\xF6r att skriva logiken f\xF6r addition \xF6verallt\
+  \ d\xE4r du beh\xF6ver det, skapa en\u2026"
 lastmod: '2024-03-13T22:44:37.661562-06:00'
 model: gpt-4-0125-preview
-summary: "Att organisera kod i funktioner inneb\xE4r att dela upp din kod i \xE5teranv\xE4\
-  ndbara, modul\xE4ra block."
+summary: "F\xF6rest\xE4ll dig att du g\xF6r en grundl\xE4ggande kalkylator."
 title: Organisera kod i funktioner
 weight: 18
 ---

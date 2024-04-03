@@ -1,13 +1,13 @@
 ---
 date: 2024-01-26 01:09:21.008477-07:00
-description: "Lokitus on prosessi, jossa kirjataan tapahtumia, virheit\xE4 ja muita\
-  \ merkitt\xE4vi\xE4 tietoja ohjelman suorituksen aikana ulkoiseen v\xE4lineeseen,\
-  \ usein tiedostoon\u2026"
+description: "Kuinka: TypeScriptiss\xE4 voit toteuttaa peruslokauksen helposti k\xE4\
+  ytt\xE4en konsolin metodeja tai integroida kehittyneemm\xE4n lokauksen kirjastojen,\
+  \ kuten\u2026"
 lastmod: '2024-03-13T22:44:56.321650-06:00'
 model: gpt-4-1106-preview
-summary: "Lokitus on prosessi, jossa kirjataan tapahtumia, virheit\xE4 ja muita merkitt\xE4\
-  vi\xE4 tietoja ohjelman suorituksen aikana ulkoiseen v\xE4lineeseen, usein tiedostoon\
-  \ tai tietokantaan."
+summary: "TypeScriptiss\xE4 voit toteuttaa peruslokauksen helposti k\xE4ytt\xE4en\
+  \ konsolin metodeja tai integroida kehittyneemm\xE4n lokauksen kirjastojen, kuten\
+  \ `winston` tai `pino`, avulla."
 title: Lokitus
 weight: 17
 ---

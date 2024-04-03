@@ -1,10 +1,11 @@
 ---
 date: 2024-01-20 17:45:41.421904-07:00
-description: Extracting substrings means pulling out specific parts of a string. Programmers
-  do it to isolate data, clean it, or work with parts instead of the whole.
+description: 'How to: In Haskell, you can slice and dice strings with built-in functions
+  like `take`, `drop`, and `substring` (from `Data.Text`).'
 lastmod: '2024-03-13T22:45:00.118220-06:00'
 model: gpt-4-1106-preview
-summary: Extracting substrings means pulling out specific parts of a string.
+summary: In Haskell, you can slice and dice strings with built-in functions like `take`,
+  `drop`, and `substring` (from `Data.Text`).
 title: Extracting substrings
 weight: 6
 ---

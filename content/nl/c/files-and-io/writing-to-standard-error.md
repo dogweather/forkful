@@ -2,12 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:01.143013-07:00
-description: "Schrijven naar de standaardfout in C houdt in dat foutmeldingen en diagnostische\
-  \ informatie naar een aparte stroom worden geleid dan de hoofdprogramma-\u2026"
+description: "Hoe te: In C wordt de `stderr`-stroom gebruikt om foutberichten te schrijven.\
+  \ In tegenstelling tot schrijven naar de standaarduitvoer met `printf`, kan\u2026"
 lastmod: '2024-03-13T22:44:51.308072-06:00'
 model: gpt-4-0125-preview
-summary: Schrijven naar de standaardfout in C houdt in dat foutmeldingen en diagnostische
-  informatie naar een aparte stroom worden geleid dan de hoofdprogramma-uitvoer.
+summary: In C wordt de `stderr`-stroom gebruikt om foutberichten te schrijven.
 title: Schrijven naar standaardfout
 weight: 25
 ---

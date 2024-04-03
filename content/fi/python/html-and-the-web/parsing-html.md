@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:55.775292-07:00
-description: "HTML:n j\xE4sennys tarkoittaa verkkosivun HTML-koodin analysointia tiettyjen\
-  \ tietojen tai elementtien erottamiseksi, mik\xE4 on yleinen teht\xE4v\xE4 verkkosivujen\u2026"
+description: "Miten: Python tarjoaa tehokkaita kirjastoja, kuten BeautifulSoup ja\
+  \ requests, verkkosivujen kaapimiseen ja HTML:n j\xE4sennykseen. Aloittaaksesi sinun\
+  \ t\xE4ytyy\u2026"
 lastmod: '2024-03-13T22:44:56.141373-06:00'
 model: gpt-4-0125-preview
-summary: "HTML:n j\xE4sennys tarkoittaa verkkosivun HTML-koodin analysointia tiettyjen\
-  \ tietojen tai elementtien erottamiseksi, mik\xE4 on yleinen teht\xE4v\xE4 verkkosivujen\
-  \ kaapimisessa, datan louhinnassa tai automatisoiduissa vuorovaikutuksissa verkkosivustojen\
-  \ kanssa."
+summary: "Python tarjoaa tehokkaita kirjastoja, kuten BeautifulSoup ja requests, verkkosivujen\
+  \ kaapimiseen ja HTML:n j\xE4sennykseen."
 title: "HTML:n j\xE4sennys"
 weight: 43
 ---

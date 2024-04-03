@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:09:24.306143-07:00
-description: "Att dela upp kod i funktioner \xE4r som att sortera LEGO-bitar i l\xE5\
-  dor \u2013 det g\xF6r det l\xE4ttare att hitta och anv\xE4nda dem. Vi g\xF6r detta\
-  \ f\xF6r att undvika\u2026"
+description: "Hur man g\xF6r: T\xE4nk dig att du har kod som skriver ut en h\xE4lsning\
+  \ flera g\xE5nger. Utan funktioner \xE4r det r\xF6rigt. Med funktioner \xE4r det\
+  \ prydligt."
 lastmod: '2024-03-13T22:44:37.918936-06:00'
 model: gpt-4-1106-preview
-summary: "Att dela upp kod i funktioner \xE4r som att sortera LEGO-bitar i l\xE5dor\
-  \ \u2013 det g\xF6r det l\xE4ttare att hitta och anv\xE4nda dem."
+summary: "T\xE4nk dig att du har kod som skriver ut en h\xE4lsning flera g\xE5nger."
 title: Att organisera kod i funktioner
 weight: 18
 ---

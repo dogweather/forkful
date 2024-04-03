@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 03:41:15.660312-07:00
-description: "Att ta bort citationstecken fr\xE5n en str\xE4ng i PowerShell inneb\xE4\
-  r att man tar bort enkla (`'`) eller dubbla (`\"`) citationstecken som omsluter\
-  \ din text.\u2026"
+description: "Hur: Du kan anv\xE4nda `-replace`-operatorn f\xF6r att ta bort citationstecken\
+  \ fr\xE5n en str\xE4ng. S\xE5 h\xE4r g\xF6r du."
 lastmod: '2024-03-13T22:44:38.112136-06:00'
 model: gpt-4-0125-preview
-summary: "Att ta bort citationstecken fr\xE5n en str\xE4ng i PowerShell inneb\xE4\
-  r att man tar bort enkla (`'`) eller dubbla (`\"`) citationstecken som omsluter\
-  \ din text."
+summary: "Du kan anv\xE4nda `-replace`-operatorn f\xF6r att ta bort citationstecken\
+  \ fr\xE5n en str\xE4ng."
 title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 weight: 9
 ---

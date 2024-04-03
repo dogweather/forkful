@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:05.493844-07:00
-description: "YAML, som st\xE5r f\xF6r YAML Ain't Markup Language, \xE4r ett l\xE4\
-  sbart data-serialiseringsformat. Programmerare anv\xE4nder det ofta f\xF6r konfigurationsfiler,\
-  \ inter-\u2026"
+description: "Hur man g\xF6r: C# har inte inbyggt st\xF6d f\xF6r YAML, men du kan\
+  \ enkelt arbeta med YAML genom att anv\xE4nda tredjepartsbibliotek s\xE5som *YamlDotNet*.\
+  \ F\xF6rst beh\xF6ver\u2026"
 lastmod: '2024-03-13T22:44:37.933771-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, som st\xE5r f\xF6r YAML Ain't Markup Language, \xE4r ett l\xE4sbart\
-  \ data-serialiseringsformat."
+summary: "C# har inte inbyggt st\xF6d f\xF6r YAML, men du kan enkelt arbeta med YAML\
+  \ genom att anv\xE4nda tredjepartsbibliotek s\xE5som *YamlDotNet*."
 title: Att Arbeta med YAML
 weight: 41
 ---

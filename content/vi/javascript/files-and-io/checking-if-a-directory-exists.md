@@ -2,17 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:11.890825-07:00
-description: "Vi\u1EC7c ki\u1EC3m tra s\u1EF1 t\u1ED3n t\u1EA1i c\u1EE7a m\u1ED9t\
-  \ th\u01B0 m\u1EE5c l\xE0 \u0111\u1EC3 x\xE1c nh\u1EADn li\u1EC7u c\xF3 m\u1ED9\
-  t th\u01B0 m\u1EE5c n\xE0o \u0111\xF3 t\u1ED3n t\u1EA1i t\u1EA1i m\u1ED9t \u0111\
-  \u01B0\u1EDDng d\u1EABn c\u1EE5 th\u1EC3 trong h\u1EC7 th\u1ED1ng t\u1EC7p hay kh\xF4\
-  ng. L\u1EADp\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong JavaScript (ch\u1EA1y trong m\xF4i tr\u01B0\
+  \u1EDDng Node.js), c\xF3 m\u1ED9t m\xF4-\u0111un t\xEDch h\u1EE3p g\u1ECDi l\xE0\
+  \ `fs` m\xE0 b\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng \u0111\u1EC3 ki\u1EC3m tra\
+  \ xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i\u2026"
 lastmod: '2024-03-13T22:44:37.172269-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c ki\u1EC3m tra s\u1EF1 t\u1ED3n t\u1EA1i c\u1EE7a m\u1ED9t th\u01B0\
-  \ m\u1EE5c l\xE0 \u0111\u1EC3 x\xE1c nh\u1EADn li\u1EC7u c\xF3 m\u1ED9t th\u01B0\
-  \ m\u1EE5c n\xE0o \u0111\xF3 t\u1ED3n t\u1EA1i t\u1EA1i m\u1ED9t \u0111\u01B0\u1EDD\
-  ng d\u1EABn c\u1EE5 th\u1EC3 trong h\u1EC7 th\u1ED1ng t\u1EC7p hay kh\xF4ng."
+summary: "Trong JavaScript (ch\u1EA1y trong m\xF4i tr\u01B0\u1EDDng Node.js), c\xF3\
+  \ m\u1ED9t m\xF4-\u0111un t\xEDch h\u1EE3p g\u1ECDi l\xE0 `fs` m\xE0 b\u1EA1n c\xF3\
+  \ th\u1EC3 s\u1EED d\u1EE5ng \u0111\u1EC3 ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3\
+  \ t\u1ED3n t\u1EA1i hay kh\xF4ng."
 title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
 weight: 20
 ---

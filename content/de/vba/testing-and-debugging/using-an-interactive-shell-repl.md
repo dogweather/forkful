@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:51.235100-07:00
-description: "Eine interaktive Shell oder Read-Eval-Print-Schleife (REPL) erm\xF6\
-  glicht es Benutzern, Befehle einzugeben, auszuf\xFChren und die Ergebnisse in Echtzeit\
-  \ zu\u2026"
+description: "Wie geht das: Visual Basic for Applications (VBA) unterst\xFCtzt von\
+  \ sich aus keine interaktive Shell oder REPL-Erfahrung, wie sie in Sprachen wie\
+  \ Python\u2026"
 lastmod: '2024-03-13T22:44:53.719592-06:00'
 model: gpt-4-0125-preview
-summary: "Eine interaktive Shell oder Read-Eval-Print-Schleife (REPL) erm\xF6glicht\
-  \ es Benutzern, Befehle einzugeben, auszuf\xFChren und die Ergebnisse in Echtzeit\
-  \ zu sehen."
+summary: "Visual Basic for Applications (VBA) unterst\xFCtzt von sich aus keine interaktive\
+  \ Shell oder REPL-Erfahrung, wie sie in Sprachen wie Python oder JavaScript zu sehen\
+  \ ist."
 title: Verwendung einer interaktiven Shell (REPL)
 weight: 34
 ---

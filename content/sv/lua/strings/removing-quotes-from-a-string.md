@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:40:56.982492-07:00
-description: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att man skalar\
-  \ bort de d\xE4r dubbla eller enkla citattecken som kramar om din text. Koda g\xF6\
-  r detta f\xF6r att\u2026"
+description: "Hur man g\xF6r: S\xE5 h\xE4r sparkar du citattecknen till trottoaren\
+  \ i Lua."
 lastmod: '2024-03-13T22:44:38.026407-06:00'
 model: gpt-4-0125-preview
-summary: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att man skalar bort\
-  \ de d\xE4r dubbla eller enkla citattecken som kramar om din text."
+summary: "S\xE5 h\xE4r sparkar du citattecknen till trottoaren i Lua."
 title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 weight: 9
 ---

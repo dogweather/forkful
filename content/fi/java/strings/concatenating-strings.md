@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:34:54.818501-07:00
-description: "Stringin yhdist\xE4minen eli konkatenointi tarkoittaa useampien tekstip\xE4\
-  tkien yhdist\xE4mist\xE4 yhdeksi. Sit\xE4 k\xE4ytet\xE4\xE4n, koska halutaan rakentaa\
-  \ dynaamisia\u2026"
+description: "How to: (Miten:) Java tarjoaa useita tapoja yhdist\xE4\xE4 merkkijonoja.\
+  \ T\xE4ss\xE4 muutama esimerkki."
 lastmod: '2024-03-13T22:44:56.436734-06:00'
 model: gpt-4-1106-preview
-summary: "Stringin yhdist\xE4minen eli konkatenointi tarkoittaa useampien tekstip\xE4\
-  tkien yhdist\xE4mist\xE4 yhdeksi."
+summary: "Java tarjoaa useita tapoja yhdist\xE4\xE4 merkkijonoja."
 title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---

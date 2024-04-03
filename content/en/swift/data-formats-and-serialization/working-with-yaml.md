@@ -1,12 +1,12 @@
 ---
 date: 2024-02-03 19:03:30.916088-07:00
-description: "YAML, which stands for YAML Ain't Markup Language, is a human-friendly\
-  \ data serialization standard for all programming languages. Programmers use it\
-  \ for\u2026"
+description: "How to: Swift does not include built-in support for YAML parsing and\
+  \ serialization, necessitating the use of third-party libraries. A popular choice\
+  \ is\u2026"
 lastmod: '2024-03-13T22:45:00.414137-06:00'
 model: gpt-4-0125-preview
-summary: YAML, which stands for YAML Ain't Markup Language, is a human-friendly data
-  serialization standard for all programming languages.
+summary: Swift does not include built-in support for YAML parsing and serialization,
+  necessitating the use of third-party libraries.
 title: Working with YAML
 weight: 41
 ---

@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 15:34:13.802519-07:00
-description: "Parsear HTML \xE9 o ato de transformar texto HTML em algo que seu programa\
-  \ entenda e possa manipular. Programadores fazem isso para extrair informa\xE7\xF5\
-  es,\u2026"
+description: "How to: Swift n\xE3o tem suporte nativo para parsear HTML, ent\xE3o\
+  \ vamos usar uma biblioteca chamada SwiftSoup. Instale adicionando `SwiftSoup` ao\
+  \ seu arquivo\u2026"
 lastmod: '2024-03-13T22:44:46.918396-06:00'
 model: unknown
-summary: "Parsear HTML \xE9 o ato de transformar texto HTML em algo que seu programa\
-  \ entenda e possa manipular."
+summary: "Swift n\xE3o tem suporte nativo para parsear HTML, ent\xE3o vamos usar uma\
+  \ biblioteca chamada SwiftSoup."
 title: "An\xE1lise de HTML"
 weight: 43
 ---

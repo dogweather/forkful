@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:20.313360-07:00
-description: "Extraire des sous-cha\xEEnes en C consiste \xE0 cr\xE9er une cha\xEE\
-  ne plus petite (sous-cha\xEEne) \xE0 partir d'une cha\xEEne plus grande en fonction\
-  \ de crit\xE8res sp\xE9cifi\xE9s,\u2026"
+description: "Comment faire : Contrairement \xE0 certains langages de haut niveau\
+  \ qui fournissent des m\xE9thodes int\xE9gr\xE9es pour l'extraction de sous-cha\xEE\
+  nes, C n\xE9cessite une\u2026"
 lastmod: '2024-03-13T22:44:58.359144-06:00'
 model: gpt-4-0125-preview
-summary: "Extraire des sous-cha\xEEnes en C consiste \xE0 cr\xE9er une cha\xEEne plus\
-  \ petite (sous-cha\xEEne) \xE0 partir d'une cha\xEEne plus grande en fonction de\
-  \ crit\xE8res sp\xE9cifi\xE9s, tels que la position et la longueur."
+summary: "Contrairement \xE0 certains langages de haut niveau qui fournissent des\
+  \ m\xE9thodes int\xE9gr\xE9es pour l'extraction de sous-cha\xEEnes, C n\xE9cessite\
+  \ une approche plus manuelle utilisant ses fonctions de manipulation de cha\xEE\
+  nes."
 title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---

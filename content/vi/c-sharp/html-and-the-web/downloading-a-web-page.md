@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:23.929652-07:00
-description: "T\u1EA3i m\u1ED9t trang web ngh\u0129a l\xE0 l\u1EA5y n\u1ED9i dung\
-  \ HTML th\xF4 t\u1EEB internet b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng m\xE3 l\u1EAD\
-  p tr\xECnh. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u\
-  \ n\xE0y \u0111\u1EC3 x\u1EED l\xFD d\u1EEF li\u1EC7u, t\u01B0\u01A1ng\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: C# l\xE0m cho vi\u1EC7c t\u1EA3i m\u1ED9t trang\
+  \ web tr\u1EDF n\xEAn \u0111\u01A1n gi\u1EA3n v\u1EDBi l\u1EDBp `HttpClient`. D\u01B0\
+  \u1EDBi \u0111\xE2y l\xE0 m\u1ED9t v\xED d\u1EE5 nhanh."
 lastmod: '2024-03-13T22:44:36.655835-06:00'
 model: gpt-4-0125-preview
-summary: "T\u1EA3i m\u1ED9t trang web ngh\u0129a l\xE0 l\u1EA5y n\u1ED9i dung HTML\
-  \ th\xF4 t\u1EEB internet b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng m\xE3 l\u1EADp tr\xEC\
-  nh."
+summary: "C# l\xE0m cho vi\u1EC7c t\u1EA3i m\u1ED9t trang web tr\u1EDF n\xEAn \u0111\
+  \u01A1n gi\u1EA3n v\u1EDBi l\u1EDBp `HttpClient`."
 title: "T\u1EA3i trang web"
 weight: 42
 ---

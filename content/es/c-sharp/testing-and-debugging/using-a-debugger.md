@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 03:48:00.764822-07:00
-description: "Imagina que tienes un programa peque\xF1o que no est\xE1 funcionando\
-  \ correctamente: ```C# static void Main() { int resultado = Suma(1, 2);\u2026"
+description: "C\xF3mo: Imagina que tienes un programa peque\xF1o que no est\xE1 funcionando\
+  \ correctamente."
 lastmod: '2024-03-13T22:44:59.082584-06:00'
 model: gpt-4-0125-preview
-summary: "Imagina que tienes un programa peque\xF1o que no est\xE1 funcionando correctamente:\n\
-  \n```C#\nstatic void Main()\n{\n    int resultado = Suma(1, 2);\n    Console."
+summary: "Imagina que tienes un programa peque\xF1o que no est\xE1 funcionando correctamente."
 title: Usando un depurador
 weight: 35
 ---

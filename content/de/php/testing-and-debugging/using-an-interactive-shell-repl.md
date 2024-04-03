@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:16:18.371083-07:00
-description: "Eine interaktive Shell oder REPL (Read-Eval-Print Loop) erm\xF6glicht\
-  \ es Ihnen, PHP-Code spontan zu schreiben und auszuf\xFChren. Sie ist ideal f\xFC\
-  r Experimente,\u2026"
+description: "Wie geht das: Starten Sie die PHP REPL, indem Sie `php -a` in Ihrem\
+  \ Terminal ausf\xFChren. Hier ist ein Vorgeschmack darauf, wie es funktioniert."
 lastmod: '2024-03-13T22:44:53.973979-06:00'
 model: gpt-4-0125-preview
-summary: "Eine interaktive Shell oder REPL (Read-Eval-Print Loop) erm\xF6glicht es\
-  \ Ihnen, PHP-Code spontan zu schreiben und auszuf\xFChren."
+summary: "Starten Sie die PHP REPL, indem Sie `php -a` in Ihrem Terminal ausf\xFC\
+  hren."
 title: Nutzung einer interaktiven Shell (REPL)
 weight: 34
 ---

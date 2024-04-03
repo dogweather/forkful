@@ -2,16 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:02.386410-07:00
-description: "Vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1\
-  c c\u01A1 b\u1EA3n bao g\u1ED3m vi\u1EC7c truy\u1EC1n t\xEAn ng\u01B0\u1EDDi d\xF9\
-  ng v\xE0 m\u1EADt kh\u1EA9u qua m\u1EA1ng \u0111\u1EC3 truy c\u1EADp v\xE0o c\xE1\
-  c t\xE0i nguy\xEAn \u0111\u01B0\u1EE3c b\u1EA3o v\u1EC7. L\u1EADp\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong Fish Shell, s\u1EED d\u1EE5ng `curl`\
+  \ \u0111\u1EC3 th\u1EF1c hi\u1EC7n m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1\
+  c th\u1EF1c c\u01A1 b\u1EA3n. Thay th\u1EBF `username`, `password`, v\xE0 `the_url`."
 lastmod: '2024-03-13T22:44:37.210237-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1\
-  c c\u01A1 b\u1EA3n bao g\u1ED3m vi\u1EC7c truy\u1EC1n t\xEAn ng\u01B0\u1EDDi d\xF9\
-  ng v\xE0 m\u1EADt kh\u1EA9u qua m\u1EA1ng \u0111\u1EC3 truy c\u1EADp v\xE0o c\xE1\
-  c t\xE0i nguy\xEAn \u0111\u01B0\u1EE3c b\u1EA3o v\u1EC7."
+summary: "Trong Fish Shell, s\u1EED d\u1EE5ng `curl` \u0111\u1EC3 th\u1EF1c hi\u1EC7\
+  n m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3n."
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3\
   n"
 weight: 45

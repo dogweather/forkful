@@ -2,16 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:46.216228-07:00
-description: "Vi\u1EBFt ki\u1EC3m th\u1EED l\xE0 t\u1EA1o ra nh\u1EEFng b\xE0i ki\u1EC3\
-  m tra nh\u1ECF \u0111\u1EC3 \u0111\u1EA3m b\u1EA3o r\u1EB1ng m\xE3 c\u1EE7a b\u1EA1\
-  n ho\u1EA1t \u0111\u1ED9ng nh\u01B0 mong \u0111\u1EE3i. L\u1EADp tr\xECnh vi\xEA\
-  n vi\u1EBFt ki\u1EC3m th\u1EED \u0111\u1EC3 b\u1EAFt l\u1ED7i s\u1EDBm, ti\u1EBF\
-  t ki\u1EC7m\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Fish kh\xF4ng c\xF3 m\u1ED9t khung ki\u1EC3\
+  m th\u1EED t\xEDch h\u1EE3p s\u1EB5n, nh\u01B0ng b\u1EA1n c\xF3 th\u1EC3 d\xF9ng\
+  \ `fisher` \u0111\u1EC3 c\xE0i \u0111\u1EB7t m\u1ED9t khung ki\u1EC3m th\u1EED nh\u01B0\
+  \ `Fishtape`. D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t\u2026"
 lastmod: '2024-03-13T22:44:37.215373-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EBFt ki\u1EC3m th\u1EED l\xE0 t\u1EA1o ra nh\u1EEFng b\xE0i ki\u1EC3\
-  m tra nh\u1ECF \u0111\u1EC3 \u0111\u1EA3m b\u1EA3o r\u1EB1ng m\xE3 c\u1EE7a b\u1EA1\
-  n ho\u1EA1t \u0111\u1ED9ng nh\u01B0 mong \u0111\u1EE3i."
+summary: "Fish kh\xF4ng c\xF3 m\u1ED9t khung ki\u1EC3m th\u1EED t\xEDch h\u1EE3p s\u1EB5\
+  n, nh\u01B0ng b\u1EA1n c\xF3 th\u1EC3 d\xF9ng `fisher` \u0111\u1EC3 c\xE0i \u0111\
+  \u1EB7t m\u1ED9t khung ki\u1EC3m th\u1EED nh\u01B0 `Fishtape`."
 title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
 weight: 36
 ---

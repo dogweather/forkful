@@ -2,14 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:07.986917-07:00
-description: "L\xE0m vi\u1EC7c v\u1EDBi XML bao g\u1ED3m vi\u1EC7c ph\xE2n t\xEDch\
-  \ c\xFA ph\xE1p (parsing), truy v\u1EA5n (querying), v\xE0 thao t\xE1c (manipulating)\
-  \ c\xE1c t\xE0i li\u1EC7u XML b\u1EB1ng Java. C\xE1c l\u1EADp tr\xECnh vi\xEAn\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Java cung c\u1EA5p c\xE1c API nh\u01B0 DOM (Document\
+  \ Object Model), SAX (Simple API for XML), v\xE0 StAX (Streaming API for XML) \u0111\
+  \u1EC3 l\xE0m vi\u1EC7c v\u1EDBi XML. D\u01B0\u1EDBi\u2026"
 lastmod: '2024-03-13T22:44:36.520475-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m vi\u1EC7c v\u1EDBi XML bao g\u1ED3m vi\u1EC7c ph\xE2n t\xEDch c\xFA\
-  \ ph\xE1p (parsing), truy v\u1EA5n (querying), v\xE0 thao t\xE1c (manipulating)\
-  \ c\xE1c t\xE0i li\u1EC7u XML b\u1EB1ng Java."
+summary: "Java cung c\u1EA5p c\xE1c API nh\u01B0 DOM (Document Object Model), SAX\
+  \ (Simple API for XML), v\xE0 StAX (Streaming API for XML) \u0111\u1EC3 l\xE0m vi\u1EC7\
+  c v\u1EDBi XML."
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---

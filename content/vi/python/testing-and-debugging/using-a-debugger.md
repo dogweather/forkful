@@ -2,10 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:57.511727-07:00
-description: "H\xE3y c\xF9ng ph\xE2n t\xEDch c\xE1ch s\u1EED d\u1EE5ng `pdb`, debugger\
-  \ c\xF3 s\u1EB5n c\u1EE7a Python. H\xE3y t\u01B0\u1EDFng t\u01B0\u1EE3ng m\u1ED9\
-  t file c\xF3 t\xEAn l\xE0 `buggy.py`, ch\u1EE9a m\u1ED9t l\u1ED7i kh\xF3 t\xECm:\
-  \ ```Python def\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: H\xE3y c\xF9ng ph\xE2n t\xEDch c\xE1ch s\u1EED\
+  \ d\u1EE5ng `pdb`, debugger c\xF3 s\u1EB5n c\u1EE7a Python. H\xE3y t\u01B0\u1EDF\
+  ng t\u01B0\u1EE3ng m\u1ED9t file c\xF3 t\xEAn l\xE0 `buggy.py`, ch\u1EE9a m\u1ED9\
+  t l\u1ED7i kh\xF3 t\xECm."
 lastmod: '2024-03-13T22:44:36.103016-06:00'
 model: gpt-4-0125-preview
 summary: "H\xE3y c\xF9ng ph\xE2n t\xEDch c\xE1ch s\u1EED d\u1EE5ng `pdb`, debugger\

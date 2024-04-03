@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 01:06:49.588013-07:00
-description: "Das Protokollieren ist im Grunde die Praxis, Ereignisse und Daten aus\
-  \ einer Softwareanwendung in eine externe Ausgabe, wie eine Datei oder Konsole,\u2026"
+description: "Wie geht das: In Kotlin kann das Protokollieren mithilfe der eingebauten\
+  \ `println()`-Funktion f\xFCr einfache F\xE4lle erfolgen oder mit ausgefeilteren\u2026"
 lastmod: '2024-03-13T22:44:53.852721-06:00'
 model: gpt-4-1106-preview
-summary: Das Protokollieren ist im Grunde die Praxis, Ereignisse und Daten aus einer
-  Softwareanwendung in eine externe Ausgabe, wie eine Datei oder Konsole, aufzuzeichnen.
+summary: "In Kotlin kann das Protokollieren mithilfe der eingebauten `println()`-Funktion\
+  \ f\xFCr einfache F\xE4lle erfolgen oder mit ausgefeilteren Bibliotheken wie SLF4J\
+  \ mit Logback oder Log4j f\xFCr fortgeschrittene Bed\xFCrfnisse."
 title: Protokollierung
 weight: 17
 ---

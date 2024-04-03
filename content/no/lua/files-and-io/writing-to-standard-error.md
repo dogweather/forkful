@@ -2,12 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:48.257690-07:00
-description: "\xC5 skrive til standardfeil (stderr) handler om \xE5 lede feilmeldinger\
-  \ og diagnostiske utdata til en egen kanal, adskilt fra standard utdata (stdout).\u2026"
+description: "Hvordan: I Lua kan skriving til stderr oppn\xE5s ved \xE5 bruke funksjonen\
+  \ `io.stderr:write()`. Her er hvordan du kan skrive en enkel feilmelding til\u2026"
 lastmod: '2024-03-13T22:44:40.946442-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive til standardfeil (stderr) handler om \xE5 lede feilmeldinger\
-  \ og diagnostiske utdata til en egen kanal, adskilt fra standard utdata (stdout)."
+summary: "I Lua kan skriving til stderr oppn\xE5s ved \xE5 bruke funksjonen `io.stderr:write()`."
 title: Skriving til standardfeil
 weight: 25
 ---

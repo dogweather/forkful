@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:53.716924-07:00
-description: "Das Generieren von Zufallszahlen in Visual Basic for Applications (VBA)\
-  \ erm\xF6glicht es Programmen, Prozesse mit Elementen des Zufalls oder der Variabilit\xE4\
-  t\u2026"
+description: "Wie: In VBA wird die `Rnd`-Funktion verwendet, um Zufallszahlen zu generieren.\
+  \ Standardm\xE4\xDFig erzeugt `Rnd` eine Flie\xDFkommazahl (Single-Precision) gr\xF6\
+  \xDFer\u2026"
 lastmod: '2024-03-13T22:44:53.713194-06:00'
 model: gpt-4-0125-preview
-summary: "Das Generieren von Zufallszahlen in Visual Basic for Applications (VBA)\
-  \ erm\xF6glicht es Programmen, Prozesse mit Elementen des Zufalls oder der Variabilit\xE4\
-  t zu simulieren, wie W\xFCrfelw\xFCrfe oder das Samplen von Daten."
+summary: In VBA wird die `Rnd`-Funktion verwendet, um Zufallszahlen zu generieren.
 title: Zufallszahlen generieren
 weight: 12
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:02.923871-07:00
-description: "Obter a data atual em Dart envolve consultar o sistema para saber a\
-  \ data e a hora atuais. Esta funcionalidade \xE9 comumente usada em aplica\xE7\xF5\
-  es para\u2026"
+description: "Como fazer: A biblioteca central do Dart oferece acesso direto \xE0\
+  \ data e hora atuais por meio da classe `DateTime`. Aqui est\xE1 o exemplo b\xE1\
+  sico para obter a\u2026"
 lastmod: '2024-03-13T22:44:46.292944-06:00'
 model: gpt-4-0125-preview
-summary: Obter a data atual em Dart envolve consultar o sistema para saber a data
-  e a hora atuais.
+summary: "A biblioteca central do Dart oferece acesso direto \xE0 data e hora atuais\
+  \ por meio da classe `DateTime`."
 title: Obtendo a data atual
 weight: 29
 ---

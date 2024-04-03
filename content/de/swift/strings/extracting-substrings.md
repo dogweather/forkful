@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:46:39.785379-07:00
-description: "Das Extrahieren von Teilstrings ist der Vorgang, bei dem spezifische\
-  \ Teile eines Strings abgetrennt und verwendet werden. Programmierer nutzen dies\u2026"
+description: 'So geht''s: .'
 lastmod: '2024-03-13T22:44:54.214936-06:00'
 model: gpt-4-1106-preview
-summary: Das Extrahieren von Teilstrings ist der Vorgang, bei dem spezifische Teile
-  eines Strings abgetrennt und verwendet werden.
+summary: .
 title: Teilstrings extrahieren
 weight: 6
 ---

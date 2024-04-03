@@ -1,7 +1,7 @@
 ---
 date: 2024-02-01 21:11:59.606220-07:00
-description: "Google Apps Script provides a built-in debugger within the Apps Script\
-  \ Editor to help troubleshoot scripts. Here's how to initiate and use the debugger:\u2026"
+description: "How to: Google Apps Script provides a built-in debugger within the Apps\
+  \ Script Editor to help troubleshoot scripts. Here's how to initiate and use the\u2026"
 lastmod: '2024-03-13T22:44:59.674063-06:00'
 model: gpt-4-0125-preview
 summary: Google Apps Script provides a built-in debugger within the Apps Script Editor

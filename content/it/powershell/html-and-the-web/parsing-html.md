@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:42.232453-07:00
-description: "Il parsing di HTML in PowerShell riguarda l'analisi del contenuto HTML\
-  \ per estrarre dati specifici o per automatizzare compiti relativi al web. I\u2026"
+description: "Come fare: PowerShell non ha nativamente un parser HTML dedicato, ma\
+  \ \xE8 possibile utilizzare il cmdlet `Invoke-WebRequest` per accedere e analizzare\
+  \ il\u2026"
 lastmod: '2024-03-13T22:44:43.640663-06:00'
 model: gpt-4-0125-preview
-summary: Il parsing di HTML in PowerShell riguarda l'analisi del contenuto HTML per
-  estrarre dati specifici o per automatizzare compiti relativi al web.
+summary: "PowerShell non ha nativamente un parser HTML dedicato, ma \xE8 possibile\
+  \ utilizzare il cmdlet `Invoke-WebRequest` per accedere e analizzare il contenuto\
+  \ HTML."
 title: Analisi del HTML
 weight: 43
 ---

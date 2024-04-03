@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:37:45.962562-07:00
-description: "Convertir une cha\xEEne en minuscules, c'est transformer tous les caract\xE8\
-  res majuscules en leur \xE9quivalent minuscule. Les programmeurs le font souvent\
-  \ pour\u2026"
+description: "How to: En Arduino, la classe `String` offre la m\xE9thode `toLowerCase()`.\
+  \ Voici comment l'utiliser ."
 lastmod: '2024-03-13T22:44:58.093488-06:00'
 model: gpt-4-1106-preview
-summary: "Convertir une cha\xEEne en minuscules, c'est transformer tous les caract\xE8\
-  res majuscules en leur \xE9quivalent minuscule."
+summary: "En Arduino, la classe `String` offre la m\xE9thode `toLowerCase()`."
 title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
 weight: 4
 ---

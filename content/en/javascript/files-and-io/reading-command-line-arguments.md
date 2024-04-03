@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:56:05.403364-07:00
-description: "Reading command line arguments means grabbing the extras users tack\
-  \ onto commands when they run your script. Programmers do it to let users customize\u2026"
+description: 'How to: Here''s the straight-up way to do it in Node.js.'
 lastmod: '2024-03-13T22:45:00.448115-06:00'
 model: gpt-4-1106-preview
-summary: Reading command line arguments means grabbing the extras users tack onto
-  commands when they run your script.
+summary: Here's the straight-up way to do it in Node.js.
 title: Reading command line arguments
 weight: 23
 ---

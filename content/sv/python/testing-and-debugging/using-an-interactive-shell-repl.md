@@ -1,13 +1,10 @@
 ---
 date: 2024-01-26 04:17:11.879919-07:00
-description: "En REPL, eller L\xE4s-Utv\xE4rdera-Skriv Loop, \xE4r en programmeringsmilj\xF6\
-  \ som tar emot enskilda anv\xE4ndarinput, exekverar dem och returnerar resultatet\
-  \ till\u2026"
+description: "Hur man g\xF6r: Dyk direkt in i Pythons REPL genom att skriva `python`\
+  \ i din kommandotolk. V\xE4l d\xE4r, testa enkla operationer eller flerlinjekod."
 lastmod: '2024-03-13T22:44:37.484751-06:00'
 model: gpt-4-0125-preview
-summary: "En REPL, eller L\xE4s-Utv\xE4rdera-Skriv Loop, \xE4r en programmeringsmilj\xF6\
-  \ som tar emot enskilda anv\xE4ndarinput, exekverar dem och returnerar resultatet\
-  \ till anv\xE4ndaren."
+summary: Dyk direkt in i Pythons REPL genom att skriva `python` i din kommandotolk.
 title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---

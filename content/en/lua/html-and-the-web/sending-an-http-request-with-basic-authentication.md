@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 18:02:10.489879-07:00
-description: "Sending an HTTP request with basic authentication is when you make a\
-  \ call to a web server, including a username and password for access. Programmers\
-  \ do it\u2026"
+description: "How to: Lua doesn't have built-in HTTP support, so you'll need an external\
+  \ library like `socket.http` from LuaSocket or `http.request` from the `http`\u2026"
 lastmod: '2024-03-13T22:45:00.205234-06:00'
 model: gpt-4-1106-preview
-summary: Sending an HTTP request with basic authentication is when you make a call
-  to a web server, including a username and password for access.
+summary: Lua doesn't have built-in HTTP support, so you'll need an external library
+  like `socket.http` from LuaSocket or `http.request` from the `http` library if you're
+  using Lua 5.3+.
 title: Sending an HTTP request with basic authentication
 weight: 45
 ---

@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:17:24.177905-07:00
-description: "Ein REPL, oder Read-Eval-Print-Lopp, ist eine Programmierumgebung, die\
-  \ einzelne Benutzereingaben nimmt, sie ausf\xFChrt und das Ergebnis an den Benutzer\u2026"
+description: "Wie geht das: Spring direkt in Pythons REPL, indem du `python` in deine\
+  \ Kommandozeile eingibst. Sobald du dort bist, teste einfache Operationen oder\u2026"
 lastmod: '2024-03-13T22:44:53.379978-06:00'
 model: gpt-4-0125-preview
-summary: "Ein REPL, oder Read-Eval-Print-Lopp, ist eine Programmierumgebung, die einzelne\
-  \ Benutzereingaben nimmt, sie ausf\xFChrt und das Ergebnis an den Benutzer zur\xFC\
-  ckgibt."
+summary: Spring direkt in Pythons REPL, indem du `python` in deine Kommandozeile eingibst.
 title: Nutzung einer interaktiven Shell (REPL)
 weight: 34
 ---

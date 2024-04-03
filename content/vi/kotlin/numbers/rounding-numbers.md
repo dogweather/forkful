@@ -2,16 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:04.338915-07:00
-description: "L\xE0m tr\xF2n s\u1ED1 c\xF3 ngh\u0129a l\xE0 \u0111i\u1EC1u ch\u1EC9\
-  nh ch\xFAng \u0111\u1EBFn s\u1ED1 nguy\xEAn g\u1EA7n nh\u1EA5t ho\u1EB7c \u0111\u1EBF\
-  n m\u1ED9t m\u1EE9c \u0111\u1ED9 ch\xEDnh x\xE1c nh\u1EA5t \u0111\u1ECBnh. L\u1EAD\
-  p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\u1EC3 c\u1EA3i thi\u1EC7\
-  n\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Kotlin, l\xE0m tr\xF2n c\xF3 th\u1EC3\
+  \ \u0111\u01B0\u1EE3c th\u1EF1c hi\u1EC7n b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng m\u1ED9\
+  t s\u1ED1 h\xE0m nh\u01B0 `roundToInt()`, `roundToDouble()`, v\xE0 s\u1EED d\u1EE5\
+  ng `BigDecimal` \u0111\u1EC3\u2026"
 lastmod: '2024-03-13T22:44:36.594828-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m tr\xF2n s\u1ED1 c\xF3 ngh\u0129a l\xE0 \u0111i\u1EC1u ch\u1EC9nh\
-  \ ch\xFAng \u0111\u1EBFn s\u1ED1 nguy\xEAn g\u1EA7n nh\u1EA5t ho\u1EB7c \u0111\u1EBF\
-  n m\u1ED9t m\u1EE9c \u0111\u1ED9 ch\xEDnh x\xE1c nh\u1EA5t \u0111\u1ECBnh."
+summary: "Trong Kotlin, l\xE0m tr\xF2n c\xF3 th\u1EC3 \u0111\u01B0\u1EE3c th\u1EF1\
+  c hi\u1EC7n b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng m\u1ED9t s\u1ED1 h\xE0m nh\u01B0\
+  \ `roundToInt()`, `roundToDouble()`, v\xE0 s\u1EED d\u1EE5ng `BigDecimal` \u0111\
+  \u1EC3 c\xF3 th\xEAm ki\u1EC3m so\xE1t."
 title: "L\xE0m tr\xF2n s\u1ED1"
 weight: 13
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:09.459898-07:00
-description: "\xC5 opprette en midlertidig fil i Visual Basic for Applications (VBA)\
-  \ inneb\xE6rer \xE5 programmert generere en fil for korttidsbruk, typisk for databehandling\u2026"
+description: "Hvordan: I VBA kan en midlertidig fil opprettes ved \xE5 bruke `FileSystemObject`\
+  \ som er tilgjengelig i Microsoft Scripting Runtime-biblioteket. Dette\u2026"
 lastmod: '2024-03-13T22:44:40.642888-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 opprette en midlertidig fil i Visual Basic for Applications (VBA) inneb\xE6\
-  rer \xE5 programmert generere en fil for korttidsbruk, typisk for databehandling\
-  \ eller som en buffer i automatiseringsoppgaver."
+summary: "I VBA kan en midlertidig fil opprettes ved \xE5 bruke `FileSystemObject`\
+  \ som er tilgjengelig i Microsoft Scripting Runtime-biblioteket."
 title: Opprette en midlertidig fil
 weight: 21
 ---

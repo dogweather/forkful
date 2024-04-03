@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:49.084996-07:00
-description: "Capitalizar una cadena en Bash implica transformar el primer car\xE1\
-  cter de la cadena a may\xFAscula mientras que el resto de la cadena permanece sin\
-  \ cambios.\u2026"
+description: "C\xF3mo hacerlo: Bash no tiene una funci\xF3n integrada espec\xEDficamente\
+  \ para capitalizar cadenas, pero puedes lograr esta tarea usando expansi\xF3n de\
+  \ par\xE1metros o\u2026"
 lastmod: '2024-03-13T22:44:59.227927-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizar una cadena en Bash implica transformar el primer car\xE1cter\
-  \ de la cadena a may\xFAscula mientras que el resto de la cadena permanece sin cambios."
+summary: "Bash no tiene una funci\xF3n integrada espec\xEDficamente para capitalizar\
+  \ cadenas, pero puedes lograr esta tarea usando expansi\xF3n de par\xE1metros o\
+  \ herramientas externas como `awk`."
 title: Capitalizando una cadena de texto
 weight: 2
 ---

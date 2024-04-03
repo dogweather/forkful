@@ -2,14 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:53.839837-07:00
-description: "Arrays associativos, ou como o Elm os chama, Dicion\xE1rios, mapeiam\
-  \ chaves para valores de uma forma que torna a busca, inser\xE7\xE3o e exclus\xE3\
-  o de valores\u2026"
+description: "Como: No Elm, voc\xEA trabalha com Dicion\xE1rios no m\xF3dulo `Dict`,\
+  \ ent\xE3o vamos mergulhar em um exemplo r\xE1pido."
 lastmod: '2024-03-13T22:44:46.492910-06:00'
 model: gpt-4-0125-preview
-summary: "Arrays associativos, ou como o Elm os chama, Dicion\xE1rios, mapeiam chaves\
-  \ para valores de uma forma que torna a busca, inser\xE7\xE3o e exclus\xE3o de valores\
-  \ extremamente r\xE1pidas."
+summary: "No Elm, voc\xEA trabalha com Dicion\xE1rios no m\xF3dulo `Dict`, ent\xE3\
+  o vamos mergulhar em um exemplo r\xE1pido."
 title: Usando arrays associativos
 weight: 15
 ---

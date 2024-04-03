@@ -2,12 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:40.330314-07:00
-description: "Parsing av HTML i programmering inneb\xE6rer \xE5 trekke ut data fra\
-  \ HTML-dokumenter. Programmerere gj\xF8r dette for \xE5 samhandle med eller skrape\
-  \ nettinnhold for\u2026"
+description: "Hvordan gj\xF8re det: Dart tilbyr ikke innebygd st\xF8tte for HTML-parsing\
+  \ i sine kjernelibraryer. Du kan imidlertid bruke en tredjepartspakke som `html`\
+  \ for \xE5\u2026"
 lastmod: '2024-03-13T22:44:40.484755-06:00'
 model: gpt-4-0125-preview
-summary: "Parsing av HTML i programmering inneb\xE6rer \xE5 trekke ut data fra HTML-dokumenter."
+summary: "Dart tilbyr ikke innebygd st\xF8tte for HTML-parsing i sine kjernelibraryer."
 title: Analysering av HTML
 weight: 43
 ---

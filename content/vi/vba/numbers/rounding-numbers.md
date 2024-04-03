@@ -2,17 +2,16 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:01.707208-07:00
-description: "L\xE0m tr\xF2n s\u1ED1 trong l\u1EADp tr\xECnh l\xE0 vi\u1EC7c \u01B0\
-  \u1EDBc l\u01B0\u1EE3ng m\u1ED9t s\u1ED1 v\u1EC1 s\u1ED1 nguy\xEAn g\u1EA7n nh\u1EA5\
-  t ho\u1EB7c \u0111\u1EBFn m\u1ED9t s\u1ED1 l\u01B0\u1EE3ng ch\u1EEF s\u1ED1 th\u1EAD\
-  p ph\xE2n nh\u1EA5t \u0111\u1ECBnh. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m tr\xF2\
-  n\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Visual Basic cho \u1EE8ng d\u1EE5ng (VBA),\
+  \ vi\u1EC7c l\xE0m tr\xF2n c\xF3 th\u1EC3 \u0111\u1EA1t \u0111\u01B0\u1EE3c b\u1EB1\
+  ng c\xE1ch s\u1EED d\u1EE5ng m\u1ED9t s\u1ED1 h\xE0m, m\u1ED7i h\xE0m ph\xF9 h\u1EE3\
+  p v\u1EDBi c\xE1c t\xECnh hu\u1ED1ng c\u1EE5 th\u1EC3.\u2026"
 lastmod: '2024-03-13T22:44:36.425828-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m tr\xF2n s\u1ED1 trong l\u1EADp tr\xECnh l\xE0 vi\u1EC7c \u01B0\u1EDB\
-  c l\u01B0\u1EE3ng m\u1ED9t s\u1ED1 v\u1EC1 s\u1ED1 nguy\xEAn g\u1EA7n nh\u1EA5t\
-  \ ho\u1EB7c \u0111\u1EBFn m\u1ED9t s\u1ED1 l\u01B0\u1EE3ng ch\u1EEF s\u1ED1 th\u1EAD\
-  p ph\xE2n nh\u1EA5t \u0111\u1ECBnh."
+summary: "Trong Visual Basic cho \u1EE8ng d\u1EE5ng (VBA), vi\u1EC7c l\xE0m tr\xF2\
+  n c\xF3 th\u1EC3 \u0111\u1EA1t \u0111\u01B0\u1EE3c b\u1EB1ng c\xE1ch s\u1EED d\u1EE5\
+  ng m\u1ED9t s\u1ED1 h\xE0m, m\u1ED7i h\xE0m ph\xF9 h\u1EE3p v\u1EDBi c\xE1c t\xEC\
+  nh hu\u1ED1ng c\u1EE5 th\u1EC3."
 title: "L\xE0m tr\xF2n s\u1ED1"
 weight: 13
 ---

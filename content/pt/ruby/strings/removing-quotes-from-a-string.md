@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 03:41:24.163245-07:00
-description: "Remover aspas de uma string significa eliminar aquelas marcas de aspas\
-  \ duplas ou simples que envolvem os valores de texto. Programadores frequentemente\u2026"
+description: "Como Fazer: O Ruby tem alguns truques interessantes na manga para cortar\
+  \ fora essas aspas inc\xF4modas. Voc\xEA pode usar os m\xE9todos `gsub` ou `delete`\
+  \ para\u2026"
 lastmod: '2024-03-13T22:44:47.082026-06:00'
 model: gpt-4-0125-preview
-summary: Remover aspas de uma string significa eliminar aquelas marcas de aspas duplas
-  ou simples que envolvem os valores de texto.
+summary: "O Ruby tem alguns truques interessantes na manga para cortar fora essas\
+  \ aspas inc\xF4modas."
 title: Removendo aspas de uma string
 weight: 9
 ---

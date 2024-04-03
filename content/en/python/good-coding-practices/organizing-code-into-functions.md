@@ -1,12 +1,10 @@
 ---
 date: 2024-01-25 02:59:34.177778-07:00
-description: "Organizing code into functions is about breaking down your code into\
-  \ reusable chunks with specific purposes. We do it to make code cleaner, easier\
-  \ to\u2026"
+description: 'How to: Let''s say you''re writing a script to calculate the square
+  and cube of a number. Without functions, it''s a mess of repetition.'
 lastmod: '2024-03-13T22:44:59.713079-06:00'
 model: gpt-4-1106-preview
-summary: Organizing code into functions is about breaking down your code into reusable
-  chunks with specific purposes.
+summary: Let's say you're writing a script to calculate the square and cube of a number.
 title: Organizing code into functions
 weight: 18
 ---

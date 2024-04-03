@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:34.527685-07:00
-description: "Att extrahera delstr\xE4ngar inneb\xE4r att h\xE4mta specifika delar\
-  \ av en str\xE4ng baserat p\xE5 deras positioner. Programmerare utf\xF6r ofta denna\
-  \ operation f\xF6r att\u2026"
+description: "Hur g\xF6r man: I Go \xE4r `string`-typen en skrivskyddad skiva av byte.\
+  \ F\xF6r att extrahera delstr\xE4ngar anv\xE4nder man fr\xE4mst `slice`-syntaxen,\
+  \ tillsammans med den\u2026"
 lastmod: '2024-03-13T22:44:37.380145-06:00'
 model: gpt-4-0125-preview
-summary: "Att extrahera delstr\xE4ngar inneb\xE4r att h\xE4mta specifika delar av\
-  \ en str\xE4ng baserat p\xE5 deras positioner."
+summary: "I Go \xE4r `string`-typen en skrivskyddad skiva av byte."
 title: "Extrahera delstr\xE4ngar"
 weight: 6
 ---

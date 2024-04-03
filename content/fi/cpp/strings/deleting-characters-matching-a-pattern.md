@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:41:58.138876-07:00
-description: "Poistamme merkkej\xE4, jotka vastaavat tietty\xE4 kuviota, puhdistaaksemme\
-  \ sy\xF6tteen tai valmistellaksemme jatkok\xE4sittely\xE4 varten. Liikakirjaimet\
-  \ voivat sotkea\u2026"
+description: "How to: \u2013 N\xE4in toimit: ."
 lastmod: '2024-03-13T22:44:56.849641-06:00'
 model: gpt-4-1106-preview
-summary: "Poistamme merkkej\xE4, jotka vastaavat tietty\xE4 kuviota, puhdistaaksemme\
-  \ sy\xF6tteen tai valmistellaksemme jatkok\xE4sittely\xE4 varten."
+summary: .
 title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---

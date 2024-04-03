@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:54.411229-07:00
-description: "Verificar se um diret\xF3rio existe \xE9 uma opera\xE7\xE3o fundamental\
-  \ ao escrever scripts que interagem com o sistema de arquivos, garantindo que seu\
-  \ programa opere\u2026"
+description: "Como fazer: No Lua, voc\xEA n\xE3o tem uma fun\xE7\xE3o embutida para\
+  \ verificar diretamente se um diret\xF3rio existe, ent\xE3o frequentemente depende\
+  \ da biblioteca Lua\u2026"
 lastmod: '2024-03-13T22:44:46.723338-06:00'
 model: gpt-4-0125-preview
-summary: "Verificar se um diret\xF3rio existe \xE9 uma opera\xE7\xE3o fundamental\
-  \ ao escrever scripts que interagem com o sistema de arquivos, garantindo que seu\
-  \ programa opere em caminhos v\xE1lidos e previna erros relacionados a diret\xF3\
-  rios inexistentes."
+summary: "No Lua, voc\xEA n\xE3o tem uma fun\xE7\xE3o embutida para verificar diretamente\
+  \ se um diret\xF3rio existe, ent\xE3o frequentemente depende da biblioteca Lua File\
+  \ System (lfs), uma biblioteca terceirizada popular para opera\xE7\xF5es de arquivo."
 title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---

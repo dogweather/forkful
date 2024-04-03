@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:39:04.042949-07:00
-description: "Konwersja \u0142a\u0144cucha znak\xF3w do ma\u0142ych liter to proces\
-  \ zmiany wszystkich wielkich liter na ma\u0142e. Robimy to dla uproszczenia por\xF3\
-  wnywania tekstu,\u2026"
+description: "Jak to zrobi\u0107: ."
 lastmod: '2024-03-13T22:44:34.935663-06:00'
 model: gpt-4-1106-preview
-summary: "Konwersja \u0142a\u0144cucha znak\xF3w do ma\u0142ych liter to proces zmiany\
-  \ wszystkich wielkich liter na ma\u0142e."
+summary: .
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---

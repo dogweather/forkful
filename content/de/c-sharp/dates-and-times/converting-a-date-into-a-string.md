@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 17:36:14.305520-07:00
-description: "Das Umwandeln eines Datums in einen String bedeutet, ein Datum von einem\
-  \ Format, das f\xFCr die Datumsverarbeitung optimiert ist, in einen Text umzuwandeln.\u2026"
+description: "How to (Wie man's macht): C# bietet die `ToString`-Methode f\xFCr das\
+  \ `DateTime`-Objekt, um Datumsangaben in Strings umzuwandeln. Sehen wir uns das\
+  \ an."
 lastmod: '2024-03-13T22:44:53.899819-06:00'
 model: gpt-4-1106-preview
-summary: "Das Umwandeln eines Datums in einen String bedeutet, ein Datum von einem\
-  \ Format, das f\xFCr die Datumsverarbeitung optimiert ist, in einen Text umzuwandeln."
+summary: "C# bietet die `ToString`-Methode f\xFCr das `DateTime`-Objekt, um Datumsangaben\
+  \ in Strings umzuwandeln."
 title: Datum in einen String umwandeln
 weight: 28
 ---

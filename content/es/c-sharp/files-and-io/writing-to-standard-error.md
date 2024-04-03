@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:39.996785-07:00
-description: "Escribir en el error est\xE1ndar (stderr) en C# implica dirigir los\
-  \ mensajes de error y los diagn\xF3sticos de forma separada del salida regular (stdout)\
-  \ para\u2026"
+description: "C\xF3mo: En C#, escribir en el error est\xE1ndar se puede lograr utilizando\
+  \ el flujo `Console.Error`. Este flujo se utiliza espec\xEDficamente para mensajes\
+  \ de\u2026"
 lastmod: '2024-03-13T22:44:59.093930-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir en el error est\xE1ndar (stderr) en C# implica dirigir los mensajes\
-  \ de error y los diagn\xF3sticos de forma separada del salida regular (stdout) para\
-  \ ayudar a los usuarios y desarrolladores a distinguir entre la salida normal del\
-  \ programa y las notificaciones de error."
+summary: "En C#, escribir en el error est\xE1ndar se puede lograr utilizando el flujo\
+  \ `Console.Error`."
 title: "Escribiendo en el error est\xE1ndar"
 weight: 25
 ---

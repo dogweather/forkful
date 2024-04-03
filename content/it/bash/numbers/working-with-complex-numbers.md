@@ -1,10 +1,11 @@
 ---
 date: 2024-01-26 04:37:02.945670-07:00
-description: "I numeri complessi sono costituiti da una parte reale e una immaginaria.\
-  \ I programmatori li utilizzano in campi come l'elaborazione dei segnali, la\u2026"
+description: "Come fare: Bash non supporta nativamente i numeri complessi. Spesso\
+  \ si utilizza uno strumento esterno come `bc` con la sua opzione `-l`. Ecco come\
+  \ si\u2026"
 lastmod: '2024-03-13T22:44:43.591595-06:00'
 model: gpt-4-0125-preview
-summary: I numeri complessi sono costituiti da una parte reale e una immaginaria.
+summary: Bash non supporta nativamente i numeri complessi.
 title: Lavorare con i numeri complessi
 weight: 14
 ---

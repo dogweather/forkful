@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 17:30:42.251610-07:00
-description: "Calcular una fecha en el futuro o pasado es simplemente determinar una\
-  \ nueva fecha sumando o restando d\xEDas, meses, o a\xF1os a una fecha dada. Los\u2026"
+description: "C\xF3mo Hacerlo: Elm actualmente no incluye una biblioteca de manejo\
+  \ de tiempo en su n\xFAcleo, por lo que necesitar\xE1s una librer\xEDa externa como\u2026"
 lastmod: '2024-03-13T22:44:59.006872-06:00'
 model: gpt-4-1106-preview
-summary: "Calcular una fecha en el futuro o pasado es simplemente determinar una nueva\
-  \ fecha sumando o restando d\xEDas, meses, o a\xF1os a una fecha dada."
+summary: "Elm actualmente no incluye una biblioteca de manejo de tiempo en su n\xFA\
+  cleo, por lo que necesitar\xE1s una librer\xEDa externa como `justinmimbs/date`\
+  \ para manejar fechas de manera efectiva."
 title: Calcular una fecha en el futuro o pasado
 weight: 26
 ---

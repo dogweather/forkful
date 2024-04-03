@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:37.542117-07:00
-description: "YAML, skr\xF3t od \"YAML Ain't Markup Language\", jest przyjaznym dla\
-  \ cz\u0142owieka standardem serializacji danych, kt\xF3ry mo\u017Ce by\u0107 u\u017C\
-  ywany we wszystkich j\u0119zykach\u2026"
+description: "Jak to zrobi\u0107: Haskell nie posiada wbudowanego wsparcia dla przetwarzania\
+  \ YAML, ale mo\u017Cna u\u017Cywa\u0107 bibliotek stron trzecich, takich jak `yaml`\
+  \ i `aeson`, do\u2026"
 lastmod: '2024-03-13T22:44:35.473872-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, skr\xF3t od \"YAML Ain't Markup Language\", jest przyjaznym dla cz\u0142\
-  owieka standardem serializacji danych, kt\xF3ry mo\u017Ce by\u0107 u\u017Cywany\
-  \ we wszystkich j\u0119zykach programowania."
+summary: "Haskell nie posiada wbudowanego wsparcia dla przetwarzania YAML, ale mo\u017C\
+  na u\u017Cywa\u0107 bibliotek stron trzecich, takich jak `yaml` i `aeson`, do parsowania\
+  \ i generowania danych YAML."
 title: Praca z YAML
 weight: 41
 ---

@@ -2,15 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:45.382082-07:00
-description: "Obs\u0142uga b\u0142\u0119d\xF3w w Dart polega na przewidywaniu i zarz\u0105\
-  dzaniu wyj\u0105tkami, kt\xF3re pojawiaj\u0105 si\u0119 podczas wykonywania programu,\
-  \ aby zwi\u0119kszy\u0107 jego niezawodno\u015B\u0107 i\u2026"
+description: "Jak to zrobi\u0107: Dart obs\u0142uguje dwa typy b\u0142\u0119d\xF3\
+  w: b\u0142\u0119dy *w czasie kompilacji* oraz b\u0142\u0119dy *w czasie wykonania*.\
+  \ B\u0142\u0119dy w czasie kompilacji s\u0105 wykrywane przez\u2026"
 lastmod: '2024-03-13T22:44:35.099751-06:00'
 model: gpt-4-0125-preview
-summary: "Obs\u0142uga b\u0142\u0119d\xF3w w Dart polega na przewidywaniu i zarz\u0105\
-  dzaniu wyj\u0105tkami, kt\xF3re pojawiaj\u0105 si\u0119 podczas wykonywania programu,\
-  \ aby zwi\u0119kszy\u0107 jego niezawodno\u015B\u0107 i u\u017Cyteczno\u015B\u0107\
-  ."
+summary: "Dart obs\u0142uguje dwa typy b\u0142\u0119d\xF3w."
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---

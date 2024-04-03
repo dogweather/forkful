@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:23.453916-07:00
-description: "\xC5 hente den n\xE5v\xE6rende datoen i C inneb\xE6rer \xE5 benytte\
-  \ seg av det standard C-biblioteket for \xE5 hente og formatere systemets n\xE5\
-  v\xE6rende dato og tid.\u2026"
+description: "Hvordan: I C gir `<time.h>`-headeren de n\xF8dvendige funksjonene og\
+  \ typene for \xE5 arbeide med datoer og tider. `time()`-funksjonen henter den n\xE5\
+  v\xE6rende\u2026"
 lastmod: '2024-03-13T22:44:41.283407-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 hente den n\xE5v\xE6rende datoen i C inneb\xE6rer \xE5 benytte seg\
-  \ av det standard C-biblioteket for \xE5 hente og formatere systemets n\xE5v\xE6\
-  rende dato og tid."
+summary: "I C gir `<time.h>`-headeren de n\xF8dvendige funksjonene og typene for \xE5\
+  \ arbeide med datoer og tider."
 title: "F\xE5 dagens dato"
 weight: 29
 ---

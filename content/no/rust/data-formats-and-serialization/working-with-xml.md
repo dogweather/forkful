@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:36:00.017800-07:00
-description: "XML, forkortet for eXtensible Markup Language, er som en ordrik fetter\
-  \ av JSON. Du vil st\xF8te p\xE5 XML n\xE5r du h\xE5ndterer eldre systemer, bedriftsprogramvare,\u2026"
+description: "Hvordan: I Rust kan du h\xE5ndtere XML med crates som `xml-rs`. Installer\
+  \ ved \xE5 legge til `xml-rs = \"0.8\"` i `Cargo.toml`. Her er hvordan du parser\
+  \ en enkel\u2026"
 lastmod: '2024-03-13T22:44:40.598378-06:00'
 model: gpt-4-0125-preview
-summary: XML, forkortet for eXtensible Markup Language, er som en ordrik fetter av
-  JSON.
+summary: "I Rust kan du h\xE5ndtere XML med crates som `xml-rs`."
 title: "\xC5 jobbe med XML"
 weight: 40
 ---

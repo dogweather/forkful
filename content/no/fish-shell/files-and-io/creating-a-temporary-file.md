@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:40:52.183395-07:00
-description: "Temporary files er midlertidige lagringssteder for data som kun trengs\
-  \ under kj\xF8ring av et script eller program. Disse brukes for \xE5 unng\xE5 \xE5\
-  \ forstyrre\u2026"
+description: 'How to: Oppretting av en midlertidig fil i Fish Shell.'
 lastmod: '2024-03-13T22:44:41.246881-06:00'
 model: gpt-4-1106-preview
-summary: "Temporary files er midlertidige lagringssteder for data som kun trengs under\
-  \ kj\xF8ring av et script eller program."
+summary: Oppretting av en midlertidig fil i Fish Shell.
 title: Opprette en midlertidig fil
 weight: 21
 ---

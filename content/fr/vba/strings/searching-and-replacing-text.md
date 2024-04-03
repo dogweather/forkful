@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:16.804335-07:00
-description: "La recherche et le remplacement de texte dans Visual Basic pour Applications\
-  \ (VBA) sont essentiels pour \xE9diter des documents, des feuilles de calcul et\u2026"
+description: "Comment : Dans VBA, la recherche et le remplacement de texte peuvent\
+  \ \xEAtre r\xE9alis\xE9s en utilisant la fonction `Replace` ou \xE0 travers des\
+  \ mod\xE8les d'objets\u2026"
 lastmod: '2024-03-13T22:44:57.534456-06:00'
 model: gpt-4-0125-preview
-summary: "La recherche et le remplacement de texte dans Visual Basic pour Applications\
-  \ (VBA) sont essentiels pour \xE9diter des documents, des feuilles de calcul et\
-  \ des bases de donn\xE9es de mani\xE8re programmatique."
+summary: "Dans VBA, la recherche et le remplacement de texte peuvent \xEAtre r\xE9\
+  alis\xE9s en utilisant la fonction `Replace` ou \xE0 travers des mod\xE8les d'objets\
+  \ sp\xE9cifiques dans des applications telles qu'Excel ou Word."
 title: Recherche et remplacement de texte
 weight: 10
 ---

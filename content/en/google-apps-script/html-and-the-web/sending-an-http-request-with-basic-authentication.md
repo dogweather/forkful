@@ -1,11 +1,12 @@
 ---
 date: 2024-02-01 21:12:38.601621-07:00
-description: "Sending an HTTP request with basic authentication involves encoding\
-  \ a username and password into a request header to access protected resources.\u2026"
+description: "How to: In Google Apps Script, to send an HTTP request with basic authentication,\
+  \ you utilize the `UrlFetchApp` service combined with a base64-encoded\u2026"
 lastmod: '2024-03-13T22:44:59.669728-06:00'
 model: gpt-4-0125-preview
-summary: Sending an HTTP request with basic authentication involves encoding a username
-  and password into a request header to access protected resources.
+summary: In Google Apps Script, to send an HTTP request with basic authentication,
+  you utilize the `UrlFetchApp` service combined with a base64-encoded authorization
+  header.
 title: Sending an HTTP request with basic authentication
 weight: 45
 ---

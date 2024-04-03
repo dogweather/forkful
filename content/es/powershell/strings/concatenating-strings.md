@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 17:35:18.761808-07:00
-description: "Concatenar cadenas significa unirlas para formar una sola. Los programadores\
-  \ lo hacen porque a menudo necesitan combinar informaci\xF3n de manera din\xE1mica\u2026"
+description: "C\xF3mo: PowerShell hace la concatenaci\xF3n de cadenas pan comido.\
+  \ Aqu\xED hay un par de formas de hacerlo, elegantes y sencillas."
 lastmod: '2024-03-13T22:44:59.282223-06:00'
 model: gpt-4-1106-preview
-summary: Concatenar cadenas significa unirlas para formar una sola.
+summary: "PowerShell hace la concatenaci\xF3n de cadenas pan comido."
 title: "Concatenaci\xF3n de cadenas de texto"
 weight: 3
 ---

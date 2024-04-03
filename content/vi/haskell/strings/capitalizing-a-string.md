@@ -2,16 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:16.538421-07:00
-description: "Vi\u1EC7c l\xE0m cho ch\u1EEF c\xE1i \u0111\u1EA7u c\u1EE7a chu\u1ED7\
-  i vi\u1EBFt hoa, v\xE0 ph\u1EA7n c\xF2n l\u1EA1i vi\u1EBFt th\u01B0\u1EDDng \u0111\
-  \u01B0\u1EE3c g\u1ECDi l\xE0 vi\u1EC7c vi\u1EBFt hoa chu\u1ED7i. C\xE1c l\u1EAD\
-  p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 \u0111\
-  \u1EA3m b\u1EA3o\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EC3 vi\u1EBFt hoa c\xE1c chu\u1ED7\
+  i trong Haskell, ng\xF4n ng\u1EEF n\xE0y kh\xF4ng c\xF3 h\xE0m `capitalize` \u0111\
+  \u01B0\u1EE3c x\xE2y d\u1EF1ng s\u1EB5n. V\xEC v\u1EADy, ch\xFAng ta s\u1EBD t\u1EF1\
+  \ t\u1EA1o m\u1ED9t h\xE0m s\u1EED d\u1EE5ng c\xE1c\u2026"
 lastmod: '2024-03-13T22:44:36.690479-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c l\xE0m cho ch\u1EEF c\xE1i \u0111\u1EA7u c\u1EE7a chu\u1ED7i vi\u1EBF\
-  t hoa, v\xE0 ph\u1EA7n c\xF2n l\u1EA1i vi\u1EBFt th\u01B0\u1EDDng \u0111\u01B0\u1EE3\
-  c g\u1ECDi l\xE0 vi\u1EC7c vi\u1EBFt hoa chu\u1ED7i."
+summary: "\u0110\u1EC3 vi\u1EBFt hoa c\xE1c chu\u1ED7i trong Haskell, ng\xF4n ng\u1EEF\
+  \ n\xE0y kh\xF4ng c\xF3 h\xE0m `capitalize` \u0111\u01B0\u1EE3c x\xE2y d\u1EF1ng\
+  \ s\u1EB5n."
 title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
 weight: 2
 ---

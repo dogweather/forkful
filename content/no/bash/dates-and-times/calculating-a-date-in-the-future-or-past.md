@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:28:30.144085-07:00
-description: "Dato-beregning er \xE5 finne en fremtidig eller tidligere dato basert\
-  \ p\xE5 en gitt dato. Programmerere gj\xF8r dette for \xE5 h\xE5ndtere frister,\
-  \ planlegge hendelser\u2026"
+description: "Hvordan gj\xF8r man det: ."
 lastmod: '2024-03-13T22:44:40.988245-06:00'
 model: gpt-4-1106-preview
-summary: "Dato-beregning er \xE5 finne en fremtidig eller tidligere dato basert p\xE5\
-  \ en gitt dato."
+summary: .
 title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---

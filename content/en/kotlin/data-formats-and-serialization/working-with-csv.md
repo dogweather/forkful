@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:03:21.344898-07:00
-description: "Working with CSV (Comma-Separated Values) involves reading from and\
-  \ writing data to CSV files, a common format for storing tabular data in plain text.\u2026"
+description: "How to: Kotlin, being a statically typed programming language that runs\
+  \ on the JVM, does not include a built-in library for handling CSV files. However,\u2026"
 lastmod: '2024-03-13T22:45:00.069279-06:00'
 model: gpt-4-0125-preview
-summary: Working with CSV (Comma-Separated Values) involves reading from and writing
-  data to CSV files, a common format for storing tabular data in plain text.
+summary: Kotlin, being a statically typed programming language that runs on the JVM,
+  does not include a built-in library for handling CSV files.
 title: Working with CSV
 weight: 37
 ---

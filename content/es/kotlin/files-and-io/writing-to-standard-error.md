@@ -2,14 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:41.942388-07:00
-description: "Escribir en el error est\xE1ndar (stderr) se trata de enviar mensajes\
-  \ de error y diagn\xF3sticos a un flujo separado, distinto del salida est\xE1ndar\
-  \ (stdout), lo\u2026"
+description: "C\xF3mo hacerlo: En Kotlin, escribir en stderr se puede lograr utilizando\
+  \ `System.err.println()`. Este m\xE9todo es similar a `System.out.println()`, pero\u2026"
 lastmod: '2024-03-13T22:44:59.052267-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir en el error est\xE1ndar (stderr) se trata de enviar mensajes de\
-  \ error y diagn\xF3sticos a un flujo separado, distinto del salida est\xE1ndar (stdout),\
-  \ lo que permite un mejor manejo de errores y an\xE1lisis de registros."
+summary: En Kotlin, escribir en stderr se puede lograr utilizando `System.err.println()`.
 title: "Escribiendo en el error est\xE1ndar"
 weight: 25
 ---

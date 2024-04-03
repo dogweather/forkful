@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:25.502988-07:00
-description: "REPL vi\u1EBFt t\u1EAFt c\u1EE7a Read-Eval-Print Loop, m\u1ED9t m\xF4\
-  i tr\u01B0\u1EDDng t\u01B0\u01A1ng t\xE1c n\u01A1i b\u1EA1n c\xF3 th\u1EC3 nhanh\
-  \ ch\xF3ng ki\u1EC3m tra m\xE3. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5\
-  ng n\xF3 \u0111\u1EC3 th\u1EED nghi\u1EC7m, g\u1EE1\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: \u0110\u1EC3 v\xE0o REPL c\u1EE7a Lua,\
+  \ ch\u1EC9 c\u1EA7n nh\u1EADp `lua` trong terminal c\u1EE7a b\u1EA1n. D\u01B0\u1EDB\
+  i \u0111\xE2y l\xE0 m\u1ED9t phi\xEAn l\xE0m vi\u1EC7c v\xED d\u1EE5."
 lastmod: '2024-03-13T22:44:36.824074-06:00'
 model: gpt-4-0125-preview
-summary: "REPL vi\u1EBFt t\u1EAFt c\u1EE7a Read-Eval-Print Loop, m\u1ED9t m\xF4i tr\u01B0\
-  \u1EDDng t\u01B0\u01A1ng t\xE1c n\u01A1i b\u1EA1n c\xF3 th\u1EC3 nhanh ch\xF3ng\
-  \ ki\u1EC3m tra m\xE3."
+summary: "\u0110\u1EC3 v\xE0o REPL c\u1EE7a Lua, ch\u1EC9 c\u1EA7n nh\u1EADp `lua`\
+  \ trong terminal c\u1EE7a b\u1EA1n."
 title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 weight: 34
 ---

@@ -2,15 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:45.950309-07:00
-description: "Znalezienie d\u0142ugo\u015Bci \u0142a\u0144cucha znak\xF3w w Google\
-  \ Apps Script, j\u0119zyku skryptowym JavaScript dla chmury, kt\xF3ry pozwala na\
-  \ automatyzacj\u0119 zada\u0144 w produktach\u2026"
+description: "Jak to zrobi\u0107: W Google Apps Script mo\u017Cesz znale\u017A\u0107\
+  \ d\u0142ugo\u015B\u0107 ci\u0105gu znak\xF3w, u\u017Cywaj\u0105c w\u0142a\u015B\
+  ciwo\u015Bci `.length`, podobnie jak w JavaScript. Ta w\u0142a\u015Bciwo\u015B\u0107\
+  \ zwraca\u2026"
 lastmod: '2024-03-13T22:44:34.891991-06:00'
 model: gpt-4-0125-preview
-summary: "Znalezienie d\u0142ugo\u015Bci \u0142a\u0144cucha znak\xF3w w Google Apps\
-  \ Script, j\u0119zyku skryptowym JavaScript dla chmury, kt\xF3ry pozwala na automatyzacj\u0119\
-  \ zada\u0144 w produktach Google, dotyczy okre\u015Blenia liczby znak\xF3w zawartych\
-  \ w ci\u0105gu znak\xF3w."
+summary: "W Google Apps Script mo\u017Cesz znale\u017A\u0107 d\u0142ugo\u015B\u0107\
+  \ ci\u0105gu znak\xF3w, u\u017Cywaj\u0105c w\u0142a\u015Bciwo\u015Bci `.length`,\
+  \ podobnie jak w JavaScript."
 title: "Znajdowanie d\u0142ugo\u015Bci \u0142a\u0144cucha znak\xF3w"
 weight: 7
 ---

@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:31.837424-07:00
-description: "Encontrar o comprimento de uma string em C envolve determinar o n\xFA\
-  mero de caracteres antes do terminador nulo `\\0`. Os programadores fazem isso para\u2026"
+description: "Como Fazer: Em C, a fun\xE7\xE3o da biblioteca padr\xE3o `strlen()`\
+  \ \xE9 comumente usada para encontrar o comprimento de uma string. Aqui est\xE1\
+  \ um exemplo r\xE1pido."
 lastmod: '2024-03-13T22:44:47.039660-06:00'
 model: gpt-4-0125-preview
-summary: "Encontrar o comprimento de uma string em C envolve determinar o n\xFAmero\
-  \ de caracteres antes do terminador nulo `\\0`."
+summary: "Em C, a fun\xE7\xE3o da biblioteca padr\xE3o `strlen()` \xE9 comumente usada\
+  \ para encontrar o comprimento de uma string."
 title: Encontrando o comprimento de uma string
 weight: 7
 ---

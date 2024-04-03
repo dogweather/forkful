@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:21.928942-07:00
-description: "\xC9crire un fichier texte en C implique de cr\xE9er ou d'ouvrir un\
-  \ fichier en mode \xE9criture, puis d'utiliser les fonctions d'E/S de fichier de\
-  \ C pour\u2026"
+description: "Comment : Pour \xE9crire du texte dans un fichier en C, vous devez principalement\
+  \ \xEAtre familiaris\xE9 avec les fonctions `fopen()`, `fprintf()`, `fputs()` et\u2026"
 lastmod: '2024-03-13T22:44:58.392562-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire un fichier texte en C implique de cr\xE9er ou d'ouvrir un fichier\
-  \ en mode \xE9criture, puis d'utiliser les fonctions d'E/S de fichier de C pour\
-  \ enregistrer des donn\xE9es textuelles."
+summary: "Pour \xE9crire du texte dans un fichier en C, vous devez principalement\
+  \ \xEAtre familiaris\xE9 avec les fonctions `fopen()`, `fprintf()`, `fputs()` et\
+  \ `fclose()`."
 title: "\xC9crire un fichier texte"
 weight: 24
 ---

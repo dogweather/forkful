@@ -1,11 +1,13 @@
 ---
 date: 2024-01-26 03:39:01.152430-07:00
-description: "Eliminar las comillas de una cadena significa deshacerse de esos envoltorios\
-  \ extra para obtener el texto limpio dentro. Los programadores hacen esto para\u2026"
+description: "C\xF3mo hacerlo: Elixir no tiene una funci\xF3n integrada para 'eliminar\
+  \ comillas', pero es muy f\xE1cil crear la propia con el emparejamiento de patrones\
+  \ o\u2026"
 lastmod: '2024-03-13T22:44:58.689516-06:00'
 model: gpt-4-0125-preview
-summary: Eliminar las comillas de una cadena significa deshacerse de esos envoltorios
-  extra para obtener el texto limpio dentro.
+summary: "Elixir no tiene una funci\xF3n integrada para 'eliminar comillas', pero\
+  \ es muy f\xE1cil crear la propia con el emparejamiento de patrones o funciones\
+  \ de `String`."
 title: Eliminando comillas de una cadena
 weight: 9
 ---

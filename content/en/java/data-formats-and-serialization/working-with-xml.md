@@ -1,11 +1,11 @@
 ---
 date: 2024-01-25 03:39:39.784719-07:00
-description: "Working with XML entails parsing, querying, and manipulating XML documents\
-  \ with Java. Programmers do it for data interchange, configuration management,\u2026"
+description: "How to: Java provides APIs like DOM (Document Object Model), SAX (Simple\
+  \ API for XML), and StAX (Streaming API for XML) to work with XML. Here's a DOM\u2026"
 lastmod: '2024-03-13T22:44:59.993506-06:00'
 model: gpt-4-1106-preview
-summary: Working with XML entails parsing, querying, and manipulating XML documents
-  with Java.
+summary: Java provides APIs like DOM (Document Object Model), SAX (Simple API for
+  XML), and StAX (Streaming API for XML) to work with XML.
 title: Working with XML
 weight: 40
 ---

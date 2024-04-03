@@ -2,12 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:15.787744-07:00
-description: "Controleren of een directory bestaat betekent bevestigen of een specifiek\
-  \ map pad aanwezig is in het bestandssysteem. Programmeurs doen dit om fouten te\u2026"
+description: "Hoe te: Elm is een front-end web programmeertaal, dus het heeft geen\
+  \ directe toegang tot het bestandssysteem. Echter, je zou typisch een commando naar\
+  \ een\u2026"
 lastmod: '2024-03-13T22:44:50.739779-06:00'
 model: gpt-4-0125-preview
-summary: Controleren of een directory bestaat betekent bevestigen of een specifiek
-  map pad aanwezig is in het bestandssysteem.
+summary: Elm is een front-end web programmeertaal, dus het heeft geen directe toegang
+  tot het bestandssysteem.
 title: Controleren of een directory bestaat
 weight: 20
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:28.358626-07:00
-description: "Das Parsen eines Datums aus einem String beinhaltet die Umwandlung von\
-  \ Text in ein Date-Objekt. Diese Operation ist grundlegend f\xFCr Anwendungen, die\
-  \ mit\u2026"
+description: "Wie geht das: Kotlin unterst\xFCtzt das Parsen von Daten durch das `java.time`-Paket,\
+  \ das in Java 8 eingef\xFChrt wurde. Hier ist ein einfacher Ansatz unter\u2026"
 lastmod: '2024-03-13T22:44:53.855655-06:00'
 model: gpt-4-0125-preview
-summary: Das Parsen eines Datums aus einem String beinhaltet die Umwandlung von Text
-  in ein Date-Objekt.
+summary: "Kotlin unterst\xFCtzt das Parsen von Daten durch das `java.time`-Paket,\
+  \ das in Java 8 eingef\xFChrt wurde."
 title: Einen Datum aus einem String analysieren
 weight: 30
 ---

@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:14.987121-07:00
-description: "\xC5 sjekke om en mappe eksisterer i Python handler om \xE5 verifisere\
-  \ tilstedev\xE6relsen av en mappe i filsystemet f\xF8r man utf\xF8rer operasjoner\
-  \ som \xE5 lese eller\u2026"
+description: "Hvordan: Python gir innebygde m\xE5ter \xE5 sjekke for en katalogs eksistens\
+  \ ved hjelp av `os` og `pathlib` modulene. Her er eksempler for begge: #."
 lastmod: '2024-03-13T22:44:40.375652-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 sjekke om en mappe eksisterer i Python handler om \xE5 verifisere tilstedev\xE6\
-  relsen av en mappe i filsystemet f\xF8r man utf\xF8rer operasjoner som \xE5 lese\
-  \ eller skrive filer."
+summary: "Python gir innebygde m\xE5ter \xE5 sjekke for en katalogs eksistens ved\
+  \ hjelp av `os` og `pathlib` modulene."
 title: Sjekker om en mappe eksisterer
 weight: 20
 ---

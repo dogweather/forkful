@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:45:04.567289-07:00
-description: "Web-sivun lataaminen tarkoittaa sivun datan siirt\xE4mist\xE4 palvelimelta\
-  \ omalle koneelle. Ohjelmoijat tekev\xE4t t\xE4t\xE4 data-analyysin, testauksen\
-  \ tai sis\xE4ll\xF6n\u2026"
+description: "Miten: Voit k\xE4ytt\xE4\xE4 Node.js:n `axios`-kirjastoa web-sivujen\
+  \ lataamiseen TypeScriptiss\xE4. T\xE4ss\xE4 yksinkertainen esimerkki."
 lastmod: '2024-03-13T22:44:56.314207-06:00'
 model: gpt-4-1106-preview
-summary: "Web-sivun lataaminen tarkoittaa sivun datan siirt\xE4mist\xE4 palvelimelta\
-  \ omalle koneelle."
+summary: "Voit k\xE4ytt\xE4\xE4 Node.js:n `axios`-kirjastoa web-sivujen lataamiseen\
+  \ TypeScriptiss\xE4."
 title: Verkkosivun lataaminen
 weight: 42
 ---

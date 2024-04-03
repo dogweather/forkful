@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:35.687116-07:00
-description: "Comparer deux dates en C implique de d\xE9terminer la relation chronologique\
-  \ entre elles - si une date pr\xE9c\xE8de l'autre ou si elles sont identiques. Cette\u2026"
+description: "Comment faire : C n'a pas de type int\xE9gr\xE9 pour les dates, n\xE9\
+  cessitant l'utilisation de la biblioth\xE8que `time.h` pour travailler avec les\
+  \ structures de\u2026"
 lastmod: '2024-03-13T22:44:58.385917-06:00'
 model: gpt-4-0125-preview
-summary: "Comparer deux dates en C implique de d\xE9terminer la relation chronologique\
-  \ entre elles - si une date pr\xE9c\xE8de l'autre ou si elles sont identiques."
+summary: "C n'a pas de type int\xE9gr\xE9 pour les dates, n\xE9cessitant l'utilisation\
+  \ de la biblioth\xE8que `time.h` pour travailler avec les structures de date et\
+  \ de temps."
 title: Comparer deux dates
 weight: 27
 ---

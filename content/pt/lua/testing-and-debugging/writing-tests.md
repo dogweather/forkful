@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:24.067493-07:00
-description: "Escrever testes em programa\xE7\xE3o envolve criar pequenas pe\xE7as\
-  \ separadas de c\xF3digo para verificar automaticamente se diferentes partes da\
-  \ sua aplica\xE7\xE3o\u2026"
+description: "Como fazer: Lua, sendo uma linguagem de script leve, por\xE9m poderosa,\
+  \ n\xE3o inclui um framework de teste integrado. No entanto, bibliotecas de terceiros\
+  \ como\u2026"
 lastmod: '2024-03-13T22:44:46.712417-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever testes em programa\xE7\xE3o envolve criar pequenas pe\xE7as separadas\
-  \ de c\xF3digo para verificar automaticamente se diferentes partes da sua aplica\xE7\
-  \xE3o funcionam conforme esperado."
+summary: "Lua, sendo uma linguagem de script leve, por\xE9m poderosa, n\xE3o inclui\
+  \ um framework de teste integrado."
 title: Escrevendo testes
 weight: 36
 ---

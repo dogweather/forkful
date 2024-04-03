@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:18.589695-07:00
-description: "Capitalizar una cadena implica transformar la primera letra de una cadena\
-  \ dada a may\xFAscula mientras se asegura de que el resto de las letras permanezcan\u2026"
+description: "C\xF3mo hacerlo: En Haskell, puedes capitalizar una cadena usando la\
+  \ biblioteca est\xE1ndar sin necesidad de bibliotecas de terceros."
 lastmod: '2024-03-13T22:44:59.102983-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizar una cadena implica transformar la primera letra de una cadena\
-  \ dada a may\xFAscula mientras se asegura de que el resto de las letras permanezcan\
-  \ en min\xFAscula."
+summary: "En Haskell, puedes capitalizar una cadena usando la biblioteca est\xE1ndar\
+  \ sin necesidad de bibliotecas de terceros."
 title: Capitalizando una cadena de texto
 weight: 2
 ---

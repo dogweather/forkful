@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:54:09.803081-07:00
-description: "Lukemalla tekstitiedostoa ohjelma voi k\xE4sitell\xE4 tiedon sis\xE4\
-  lt\xF6\xE4. T\xE4m\xE4 on peruskauraa, koska tiedot tallennetaan ja jaetaan usein\
-  \ tekstitiedostoina."
+description: "How to: (Kuinka tehd\xE4:) Elixiri\xE4 k\xE4ytt\xE4en tekstitiedoston\
+  \ lukeminen."
 lastmod: '2024-03-13T22:44:56.244339-06:00'
 model: gpt-4-1106-preview
-summary: "Lukemalla tekstitiedostoa ohjelma voi k\xE4sitell\xE4 tiedon sis\xE4lt\xF6\
-  \xE4."
+summary: "Elixiri\xE4 k\xE4ytt\xE4en tekstitiedoston lukeminen."
 title: Tekstitiedoston lukeminen
 weight: 22
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:09:50.086938-07:00
-description: "Att dela upp kod i funktioner inneb\xE4r att man karvar upp sin kod\
-  \ i mindre, \xE5teranv\xE4ndbara bitar. Vi g\xF6r det f\xF6r att undvika upprepning,\
-  \ g\xF6ra v\xE5r kod\u2026"
+description: "Hur man g\xF6r: L\xE5t oss ta en vanlig uppgift: att ber\xE4kna arean\
+  \ av en cirkel. Ist\xE4llet f\xF6r att skriva samma formel varje g\xE5ng, kapslar\
+  \ vi in den i en\u2026"
 lastmod: '2024-03-13T22:44:38.214535-06:00'
 model: gpt-4-1106-preview
-summary: "Att dela upp kod i funktioner inneb\xE4r att man karvar upp sin kod i mindre,\
-  \ \xE5teranv\xE4ndbara bitar."
+summary: "L\xE5t oss ta en vanlig uppgift."
 title: Att organisera kod i funktioner
 weight: 18
 ---

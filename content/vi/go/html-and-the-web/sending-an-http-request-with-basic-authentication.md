@@ -2,17 +2,18 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:43.189384-07:00
-description: "Vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1\
-  c c\u01A1 b\u1EA3n trong Go bao g\u1ED3m vi\u1EC7c th\xEAm m\u1ED9t ti\xEAu \u0111\
-  \u1EC1 \u1EE7y quy\u1EC1n v\xE0o y\xEAu c\u1EA7u c\u1EE7a b\u1EA1n bao g\u1ED3m\
-  \ t\xEAn ng\u01B0\u1EDDi d\xF9ng v\xE0 m\u1EADt kh\u1EA9u d\u01B0\u1EDBi\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: \u0110\u1EC3 th\u1EF1c hi\u1EC7n m\u1ED9\
+  t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3n trong Go, b\u1EA1\
+  n c\u1EA7n ch\u1EBF t\u1EA1o c\xE1c ti\xEAu \u0111\u1EC1 y\xEAu c\u1EA7u c\u1EE7\
+  a m\xECnh \u0111\u1EC3 bao g\u1ED3m tr\u01B0\u1EDDng\u2026"
 lastmod: '2024-03-13T22:44:35.981626-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1\
-  c c\u01A1 b\u1EA3n trong Go bao g\u1ED3m vi\u1EC7c th\xEAm m\u1ED9t ti\xEAu \u0111\
-  \u1EC1 \u1EE7y quy\u1EC1n v\xE0o y\xEAu c\u1EA7u c\u1EE7a b\u1EA1n bao g\u1ED3m\
-  \ t\xEAn ng\u01B0\u1EDDi d\xF9ng v\xE0 m\u1EADt kh\u1EA9u d\u01B0\u1EDBi d\u1EA1\
-  ng m\u1ED9t chu\u1ED7i \u0111\u01B0\u1EE3c m\xE3 h\xF3a Base64."
+summary: "\u0110\u1EC3 th\u1EF1c hi\u1EC7n m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi\
+  \ x\xE1c th\u1EF1c c\u01A1 b\u1EA3n trong Go, b\u1EA1n c\u1EA7n ch\u1EBF t\u1EA1\
+  o c\xE1c ti\xEAu \u0111\u1EC1 y\xEAu c\u1EA7u c\u1EE7a m\xECnh \u0111\u1EC3 bao\
+  \ g\u1ED3m tr\u01B0\u1EDDng `Authorization`, \u0111\u01B0\u1EE3c \u0111i\u1EC1n\
+  \ b\u1EB1ng th\xF4ng tin \u0111\u0103ng nh\u1EADp c\u1EE7a b\u1EA1n \u1EDF \u0111\
+  \u1ECBnh d\u1EA1ng \u0111\xFAng."
 title: "G\u1EEDi y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3n"
 weight: 45
 ---

@@ -2,16 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:17.421899-07:00
-description: "Vi\u1EBFt ki\u1EC3m th\u1EED ngh\u0129a l\xE0 t\u1EA1o ra \u0111o\u1EA1\
-  n m\xE3 t\u1EF1 \u0111\u1ED9ng ki\u1EC3m tra m\xE3 kh\xE1c c\u1EE7a b\u1EA1n \u0111\
-  \u1EC3 t\xECm l\u1ED7i. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\
-  \u1EC3 ph\xE1t hi\u1EC7n l\u1ED7i s\u1EDBm, \u0111\u1EA3m b\u1EA3o m\xE3 ho\u1EA1\
-  t \u0111\u1ED9ng\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: ."
 lastmod: '2024-03-13T22:44:36.826585-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EBFt ki\u1EC3m th\u1EED ngh\u0129a l\xE0 t\u1EA1o ra \u0111o\u1EA1\
-  n m\xE3 t\u1EF1 \u0111\u1ED9ng ki\u1EC3m tra m\xE3 kh\xE1c c\u1EE7a b\u1EA1n \u0111\
-  \u1EC3 t\xECm l\u1ED7i."
+summary: .
 title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
 weight: 36
 ---

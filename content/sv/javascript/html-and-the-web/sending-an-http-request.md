@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:59:52.173820-07:00
-description: "HTTP-beg\xE4ran \xE4r hur din kod fr\xE5gar efter data or skickar information\
-  \ till en server. Programmerare g\xF6r detta f\xF6r att interagera med webbtj\xE4\
-  nster, h\xE4mta\u2026"
+description: "How to: Anv\xE4nd `fetch` f\xF6r att skicka en enkel GET-beg\xE4ran."
 lastmod: '2024-03-13T22:44:38.290273-06:00'
 model: gpt-4-1106-preview
-summary: "HTTP-beg\xE4ran \xE4r hur din kod fr\xE5gar efter data or skickar information\
-  \ till en server."
+summary: "Anv\xE4nd `fetch` f\xF6r att skicka en enkel GET-beg\xE4ran."
 title: "Skicka en http-f\xF6rfr\xE5gan"
 weight: 44
 ---

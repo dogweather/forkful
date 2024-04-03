@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:23.427753-07:00
-description: "Het verzenden van een HTTP-verzoek houdt in dat je een verzoek cre\xEB\
-  ert en verstuurt naar een webserver om gegevens op te halen of in te dienen.\u2026"
+description: "Hoe te: Om een HTTP-verzoek in C te verzenden, vertrouw je doorgaans\
+  \ op bibliotheken zoals libcurl, aangezien C geen ingebouwde ondersteuning heeft\
+  \ voor\u2026"
 lastmod: '2024-03-13T22:44:51.287533-06:00'
 model: gpt-4-0125-preview
-summary: "Het verzenden van een HTTP-verzoek houdt in dat je een verzoek cre\xEBert\
-  \ en verstuurt naar een webserver om gegevens op te halen of in te dienen."
+summary: Om een HTTP-verzoek in C te verzenden, vertrouw je doorgaans op bibliotheken
+  zoals libcurl, aangezien C geen ingebouwde ondersteuning heeft voor webprotocollen.
 title: Een HTTP-verzoek verzenden
 weight: 44
 ---

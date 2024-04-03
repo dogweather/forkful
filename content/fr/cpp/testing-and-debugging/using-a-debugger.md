@@ -1,8 +1,7 @@
 ---
 date: 2024-01-26 03:47:50.117202-07:00
-description: "C++ s'int\xE8gre avec des d\xE9bogueurs tels que GDB ou le d\xE9bogueur\
-  \ de Visual Studio. Voici un petit exemple utilisant GDB : ```C++ #include <iostream>\
-  \ int\u2026"
+description: "Comment faire : C++ s'int\xE8gre avec des d\xE9bogueurs tels que GDB\
+  \ ou le d\xE9bogueur de Visual Studio. Voici un petit exemple utilisant GDB ."
 lastmod: '2024-03-13T22:44:58.167041-06:00'
 model: gpt-4-0125-preview
 summary: "C++ s'int\xE8gre avec des d\xE9bogueurs tels que GDB ou le d\xE9bogueur\

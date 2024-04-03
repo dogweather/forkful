@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 03:37:09.183893-07:00
-description: "Refatora\xE7\xE3o \xE9 o processo de reestruturar c\xF3digo de computador\
-  \ existente\u2014mudando a fatora\xE7\xE3o\u2014sem alterar seu comportamento externo.\
-  \ Programadores fazem\u2026"
+description: "Como fazer: Suponha que voc\xEA tenha um trecho de c\xF3digo que calcula\
+  \ e imprime a \xE1rea e o per\xEDmetro de um ret\xE2ngulo dado seu comprimento e\
+  \ largura. Ele\u2026"
 lastmod: '2024-03-13T22:44:46.162668-06:00'
 model: gpt-4-0125-preview
-summary: "Refatora\xE7\xE3o \xE9 o processo de reestruturar c\xF3digo de computador\
-  \ existente\u2014mudando a fatora\xE7\xE3o\u2014sem alterar seu comportamento externo."
+summary: "Suponha que voc\xEA tenha um trecho de c\xF3digo que calcula e imprime a\
+  \ \xE1rea e o per\xEDmetro de um ret\xE2ngulo dado seu comprimento e largura."
 title: "Refatora\xE7\xE3o"
 weight: 19
 ---

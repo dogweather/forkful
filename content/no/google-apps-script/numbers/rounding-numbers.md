@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:42.422121-07:00
-description: "Avrunding av tall, et grunnleggende konsept innen dataprogrammering,\
-  \ inneb\xE6rer \xE5 justere et tall til n\xE6rmeste heltall eller til et spesifisert\
-  \ antall\u2026"
+description: "Hvordan: Google Apps Script, som er et JavaScript-basert spr\xE5k, tilbyr\
+  \ standardmetoder for \xE5 avrunde tall. Her er en oppdeling av tre ofte brukte\u2026"
 lastmod: '2024-03-13T22:44:40.308431-06:00'
 model: gpt-4-0125-preview
-summary: "Avrunding av tall, et grunnleggende konsept innen dataprogrammering, inneb\xE6\
-  rer \xE5 justere et tall til n\xE6rmeste heltall eller til et spesifisert antall\
-  \ desimaler."
+summary: "Google Apps Script, som er et JavaScript-basert spr\xE5k, tilbyr standardmetoder\
+  \ for \xE5 avrunde tall."
 title: Avrunding av tall
 weight: 13
 ---

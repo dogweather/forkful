@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:46:02.169662-07:00
-description: "Das Extrahieren von Teilstrings bezieht sich darauf, spezifische Segmente\
-  \ eines Strings in Haskell herauszuschneiden. Programmierer nutzen es, um\u2026"
+description: 'So geht''s: Haskell bietet verschiedene Wege, um Teile eines Strings
+  zu extrahieren. Hier sind ein paar schnelle Beispiele.'
 lastmod: '2024-03-13T22:44:53.920233-06:00'
 model: gpt-4-1106-preview
-summary: Das Extrahieren von Teilstrings bezieht sich darauf, spezifische Segmente
-  eines Strings in Haskell herauszuschneiden.
+summary: Haskell bietet verschiedene Wege, um Teile eines Strings zu extrahieren.
 title: Teilstrings extrahieren
 weight: 6
 ---

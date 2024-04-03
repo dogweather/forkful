@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:33.820467-07:00
-description: "Tworzenie tymczasowego pliku w Go pozwala na generowanie pliku nietrwa\u0142\
-  ego przeznaczonego do u\u017Cytku kr\xF3tkoterminowego, g\u0142\xF3wnie do zada\u0144\
-  \ takich jak\u2026"
+description: "Jak to zrobi\u0107: W Go pakiet `ioutil` pierwotnie dostarcza\u0142\
+  \ narz\u0119dzi do tworzenia plik\xF3w tymczasowych. Jednak Go 1.16 promowa\u0142\
+  o u\u017Cycie funkcji pakiet\xF3w `os`\u2026"
 lastmod: '2024-03-13T22:44:34.874559-06:00'
 model: gpt-4-0125-preview
-summary: "Tworzenie tymczasowego pliku w Go pozwala na generowanie pliku nietrwa\u0142\
-  ego przeznaczonego do u\u017Cytku kr\xF3tkoterminowego, g\u0142\xF3wnie do zada\u0144\
-  \ takich jak przechowywanie danych tymczasowych lub pomoc w zadaniach przetwarzania\
-  \ wsadowego."
+summary: "W Go pakiet `ioutil` pierwotnie dostarcza\u0142 narz\u0119dzi do tworzenia\
+  \ plik\xF3w tymczasowych."
 title: Tworzenie tymczasowego pliku
 weight: 21
 ---

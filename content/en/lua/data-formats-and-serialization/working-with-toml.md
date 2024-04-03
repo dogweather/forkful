@@ -1,12 +1,10 @@
 ---
 date: 2024-01-25 03:39:54.987680-07:00
-description: "Working with TOML involves parsing and generating TOML (Tom's Obvious,\
-  \ Minimal Language) data with Lua. Programmers utilize TOML for config files due\
-  \ to\u2026"
+description: 'How to: First, make sure your Lua environment has a TOML parser. We''ll
+  use `lua-toml` for this example.'
 lastmod: '2024-03-13T22:45:00.226366-06:00'
 model: gpt-4-1106-preview
-summary: Working with TOML involves parsing and generating TOML (Tom's Obvious, Minimal
-  Language) data with Lua.
+summary: First, make sure your Lua environment has a TOML parser.
 title: Working with TOML
 weight: 39
 ---

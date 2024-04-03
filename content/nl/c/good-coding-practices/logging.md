@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:53.496563-07:00
-description: "Loggen in C houdt in dat je de stroom en opmerkelijke gebeurtenissen\
-  \ van een programma tijdens de uitvoering registreert, waardoor een tastbare\u2026"
+description: "Hoe te: In C kan loggen worden bereikt met basisbestandsbewerkingen\
+  \ of met behulp van meer geavanceerde bibliotheken. Voor de eenvoud beginnen we\
+  \ met de\u2026"
 lastmod: '2024-03-13T22:44:51.297813-06:00'
 model: gpt-4-0125-preview
-summary: Loggen in C houdt in dat je de stroom en opmerkelijke gebeurtenissen van
-  een programma tijdens de uitvoering registreert, waardoor een tastbare beoordeling
-  van zijn gedrag en prestaties wordt geboden.
+summary: In C kan loggen worden bereikt met basisbestandsbewerkingen of met behulp
+  van meer geavanceerde bibliotheken.
 title: Loggen
 weight: 17
 ---

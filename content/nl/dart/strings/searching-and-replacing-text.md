@@ -2,13 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:27.046954-07:00
-description: "Teksten zoeken en vervangen in Dart omvat het onderzoeken van strings\
-  \ om bepaalde patronen of opeenvolgingen van karakters te vinden en deze te vervangen\u2026"
+description: "Hoe te: Dart biedt robuuste methoden voor het zoeken en vervangen van\
+  \ tekst rechtstreeks via zijn `String` klasse, zonder de noodzaak voor externe\u2026"
 lastmod: '2024-03-13T22:44:50.489101-06:00'
 model: gpt-4-0125-preview
-summary: Teksten zoeken en vervangen in Dart omvat het onderzoeken van strings om
-  bepaalde patronen of opeenvolgingen van karakters te vinden en deze te vervangen
-  door nieuwe inhoud.
+summary: Dart biedt robuuste methoden voor het zoeken en vervangen van tekst rechtstreeks
+  via zijn `String` klasse, zonder de noodzaak voor externe bibliotheken.
 title: Tekst zoeken en vervangen
 weight: 10
 ---

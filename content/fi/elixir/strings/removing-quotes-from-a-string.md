@@ -1,12 +1,13 @@
 ---
 date: 2024-01-26 03:38:44.138035-07:00
-description: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa ylim\xE4\xE4r\xE4\
-  isten \"kuorien\" riisumista saadakseen puhtaan tekstin esiin. Ohjelmoijat tekev\xE4\
-  t t\xE4m\xE4n\u2026"
+description: "Kuinka: Elixiriss\xE4 ei ole sis\xE4\xE4nrakennettua 'lainausmerkkien\
+  \ poisto' -toimintoa, mutta on helppoa luoda oma ratkaisu k\xE4ytt\xE4m\xE4ll\xE4\
+  \ mallin sopivuutta tai\u2026"
 lastmod: '2024-03-13T22:44:56.214501-06:00'
 model: gpt-4-0125-preview
-summary: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa ylim\xE4\xE4r\xE4isten\
-  \ \"kuorien\" riisumista saadakseen puhtaan tekstin esiin."
+summary: "Elixiriss\xE4 ei ole sis\xE4\xE4nrakennettua 'lainausmerkkien poisto' -toimintoa,\
+  \ mutta on helppoa luoda oma ratkaisu k\xE4ytt\xE4m\xE4ll\xE4 mallin sopivuutta\
+  \ tai `String`-funktioita."
 title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---

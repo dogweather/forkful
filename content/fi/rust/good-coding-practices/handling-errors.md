@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 00:59:38.034803-07:00
-description: "Virheenk\xE4sittely on toimien hallintaa, kun asiat eiv\xE4t mene odotetusti.\
-  \ Ohjelmoijat tekev\xE4t sit\xE4 k\xE4sitell\xE4kseen odottamattomia tilanteita,\
-  \ varmistaakseen,\u2026"
+description: "Miten: Rust k\xE4sittelee virheit\xE4 kahdella p\xE4\xE4asiallisella\
+  \ tavalla: palautettavissa olevat ja palautumattomat virheet. Katsoaanpa molempia.\
+  \ Palautettavissa\u2026"
 lastmod: '2024-03-13T22:44:56.364174-06:00'
 model: gpt-4-1106-preview
-summary: "Virheenk\xE4sittely on toimien hallintaa, kun asiat eiv\xE4t mene odotetusti."
+summary: "Rust k\xE4sittelee virheit\xE4 kahdella p\xE4\xE4asiallisella tavalla."
 title: "Virheiden k\xE4sittely"
 weight: 16
 ---

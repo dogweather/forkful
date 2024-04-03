@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:17.966953-07:00
-description: "Parsing av HTML betyr \xE5 rive fra hverandre en bit HTML-kode for \xE5\
-  \ forst\xE5 dens struktur og innhold. Programmerere gj\xF8r dette for \xE5 ekstrahere\
-  \ data,\u2026"
+description: "Hvordan: For \xE5 parse HTML i Ruby, installer 'Nokogiri'-gemmen med\
+  \ `gem install nokogiri`. Nokogiri er som en Sveitsisk lommekniv for \xE5 jobbe\
+  \ med HTML og\u2026"
 lastmod: '2024-03-13T22:44:41.315704-06:00'
 model: gpt-4-0125-preview
-summary: "Parsing av HTML betyr \xE5 rive fra hverandre en bit HTML-kode for \xE5\
-  \ forst\xE5 dens struktur og innhold."
+summary: "For \xE5 parse HTML i Ruby, installer 'Nokogiri'-gemmen med `gem install\
+  \ nokogiri`."
 title: Analysering av HTML
 weight: 43
 ---

@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 03:38:35.026792-07:00
-description: "Eliminar las comillas de una cadena significa deshacerse de esos molestos\
-  \ caracteres de comillas dobles o simples que envuelven tu texto. Los\u2026"
+description: "C\xF3mo hacerlo: En Clojure, las cadenas son inmutables, as\xED que\
+  \ cuando hablamos de \"eliminar comillas\", realmente estamos hablando de crear\
+  \ una nueva cadena\u2026"
 lastmod: '2024-03-13T22:44:58.644657-06:00'
 model: gpt-4-0125-preview
-summary: Eliminar las comillas de una cadena significa deshacerse de esos molestos
-  caracteres de comillas dobles o simples que envuelven tu texto.
+summary: "En Clojure, las cadenas son inmutables, as\xED que cuando hablamos de \"\
+  eliminar comillas\", realmente estamos hablando de crear una nueva cadena sin comillas."
 title: Eliminando comillas de una cadena
 weight: 9
 ---

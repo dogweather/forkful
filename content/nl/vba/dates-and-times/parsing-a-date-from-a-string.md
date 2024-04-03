@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:30.374321-07:00
-description: "Een datum parsen uit een string in Visual Basic for Applications (VBA)\
-  \ gaat over het omzetten van tekst die een datum voorstelt naar een datum\u2026"
+description: "Hoe: VBA biedt een eenvoudige manier om een string naar een datum te\
+  \ parsen met behulp van de `CDate`-functie of de `DateValue`-functie. Het is echter\u2026"
 lastmod: '2024-03-13T22:44:50.646555-06:00'
 model: gpt-4-0125-preview
-summary: Een datum parsen uit een string in Visual Basic for Applications (VBA) gaat
-  over het omzetten van tekst die een datum voorstelt naar een datum gegevenstype.
+summary: VBA biedt een eenvoudige manier om een string naar een datum te parsen met
+  behulp van de `CDate`-functie of de `DateValue`-functie.
 title: Een datum ontleden uit een string
 weight: 30
 ---

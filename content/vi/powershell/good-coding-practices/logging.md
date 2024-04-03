@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:02.806981-07:00
-description: "Logging l\xE0 vi\u1EC7c \u0111\u1EC3 l\u1EA1i d\u1EA5u v\u1EBFt qua\
-  \ code c\u1EE7a b\u1EA1n - \u0111\xF3 l\xE0 c\xE1ch b\u1EA1n theo d\xF5i nh\u1EEF\
-  ng g\xEC \u0111ang x\u1EA3y ra khi script c\u1EE7a b\u1EA1n \u0111\u01B0\u1EE3c\
-  \ th\u1EF1c thi t\u1EF1 do. L\u1EADp tr\xECnh vi\xEAn log\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: D\u01B0\u1EDBi \u0111\xE2y l\xE0 th\xF4\
+  ng tin chi ti\u1EBFt v\u1EC1 c\xE1ch th\xEAm m\u1ED9t s\u1ED1 logging c\u01A1 b\u1EA3\
+  n v\xE0o script c\u1EE7a b\u1EA1n."
 lastmod: '2024-03-13T22:44:36.945070-06:00'
 model: gpt-4-0125-preview
-summary: "Logging l\xE0 vi\u1EC7c \u0111\u1EC3 l\u1EA1i d\u1EA5u v\u1EBFt qua code\
-  \ c\u1EE7a b\u1EA1n - \u0111\xF3 l\xE0 c\xE1ch b\u1EA1n theo d\xF5i nh\u1EEFng g\xEC\
-  \ \u0111ang x\u1EA3y ra khi script c\u1EE7a b\u1EA1n \u0111\u01B0\u1EE3c th\u1EF1\
-  c thi t\u1EF1 do."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 th\xF4ng tin chi ti\u1EBFt v\u1EC1 c\xE1\
+  ch th\xEAm m\u1ED9t s\u1ED1 logging c\u01A1 b\u1EA3n v\xE0o script c\u1EE7a b\u1EA1\
+  n."
 title: Ghi log
 weight: 17
 ---

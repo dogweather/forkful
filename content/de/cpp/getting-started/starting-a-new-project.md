@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 18:02:57.317472-07:00
-description: "Ein neues C++ Projekt beginnen hei\xDFt, die Struktur f\xFCr frischen\
-  \ Code aufzubauen. Programmierer starten neue Projekte, um Ideen umzusetzen, Probleme\
-  \ zu\u2026"
+description: "How to: Wir erstellen ein einfaches \"Hello, World!\" Beispiel. Das\
+  \ ist traditionell der Startpunkt f\xFCr ein neues Projekt."
 lastmod: '2024-03-13T22:44:54.185372-06:00'
 model: gpt-4-1106-preview
-summary: "Ein neues C++ Projekt beginnen hei\xDFt, die Struktur f\xFCr frischen Code\
-  \ aufzubauen."
+summary: Wir erstellen ein einfaches "Hello, World!" Beispiel.
 title: Einen neuen Projekt starten
 weight: 1
 ---

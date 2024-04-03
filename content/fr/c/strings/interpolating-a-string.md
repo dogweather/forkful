@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:19.558373-07:00
-description: "L'interpolation de cha\xEEnes, en programmation, implique la construction\
-  \ de cha\xEEnes de caract\xE8res en int\xE9grant des expressions \xE0 l'int\xE9\
-  rieur de cha\xEEnes\u2026"
+description: "Comment faire : C, contrairement \xE0 certains langages de haut niveau,\
+  \ ne prend pas en charge directement l'interpolation de cha\xEEnes dans sa syntaxe.\
+  \ \xC0 la\u2026"
 lastmod: '2024-03-13T22:44:58.355707-06:00'
 model: gpt-4-0125-preview
-summary: "L'interpolation de cha\xEEnes, en programmation, implique la construction\
-  \ de cha\xEEnes de caract\xE8res en int\xE9grant des expressions \xE0 l'int\xE9\
-  rieur de cha\xEEnes litt\xE9rales."
+summary: "C, contrairement \xE0 certains langages de haut niveau, ne prend pas en\
+  \ charge directement l'interpolation de cha\xEEnes dans sa syntaxe."
 title: "Interpolation d'une cha\xEEne de caract\xE8res"
 weight: 8
 ---

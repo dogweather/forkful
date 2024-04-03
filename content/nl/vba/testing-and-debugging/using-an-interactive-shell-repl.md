@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:48.538506-07:00
-description: "Een interactieve shell, of Read-Eval-Print Loop (REPL), stelt gebruikers\
-  \ in staat om commando's in te voeren, uit te voeren en de resultaten in real-time\u2026"
+description: "Hoe te: Visual Basic for Applications (VBA) ondersteunt vanuit zichzelf\
+  \ niet native een interactieve shell of REPL-ervaring zoals gezien in talen zoals\u2026"
 lastmod: '2024-03-13T22:44:50.638454-06:00'
 model: gpt-4-0125-preview
-summary: Een interactieve shell, of Read-Eval-Print Loop (REPL), stelt gebruikers
-  in staat om commando's in te voeren, uit te voeren en de resultaten in real-time
-  te zien.
+summary: Visual Basic for Applications (VBA) ondersteunt vanuit zichzelf niet native
+  een interactieve shell of REPL-ervaring zoals gezien in talen zoals Python of JavaScript.
 title: Gebruik van een interactieve shell (REPL)
 weight: 34
 ---

@@ -2,14 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:45.721355-07:00
-description: "PowerShellin integraatio JSONiin (JavaScript Object Notation) liittyy\
-  \ JSON-tietojen j\xE4sent\xE4miseen (lukeminen) ja tuottamiseen (kirjoittaminen),\
-  \ mik\xE4 on\u2026"
+description: 'Kuinka: #.'
 lastmod: '2024-03-13T22:44:56.804168-06:00'
 model: gpt-4-0125-preview
-summary: "PowerShellin integraatio JSONiin (JavaScript Object Notation) liittyy JSON-tietojen\
-  \ j\xE4sent\xE4miseen (lukeminen) ja tuottamiseen (kirjoittaminen), mik\xE4 on yleinen\
-  \ muoto tietojen vaihtoon verkossa."
+summary: '#.'
 title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---

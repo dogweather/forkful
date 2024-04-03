@@ -1,13 +1,11 @@
 ---
 date: 2024-01-20 17:51:46.623163-07:00
-description: "Debugar escrevendo sa\xEDdas \xE9 como dar uma espiada no c\xE9rebro\
-  \ do seu Arduino \u2013 voc\xEA usa mensagens para descobrir o que est\xE1 acontecendo\
-  \ dentro do c\xF3digo.\u2026"
+description: "Como Fazer: Para mostrar como isso funciona, vamos usar a fun\xE7\xE3\
+  o `Serial.println()`. N\xE3o esque\xE7a de iniciar a comunica\xE7\xE3o serial no\
+  \ `setup()` com\u2026"
 lastmod: '2024-03-13T22:44:46.841270-06:00'
 model: gpt-4-1106-preview
-summary: "Debugar escrevendo sa\xEDdas \xE9 como dar uma espiada no c\xE9rebro do\
-  \ seu Arduino \u2013 voc\xEA usa mensagens para descobrir o que est\xE1 acontecendo\
-  \ dentro do c\xF3digo."
+summary: "Para mostrar como isso funciona, vamos usar a fun\xE7\xE3o `Serial.println()`."
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---

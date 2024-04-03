@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:55.992414-07:00
-description: "\xC5 starte et nytt prosjekt i Visual Basic for Applications (VBA) inneb\xE6\
-  rer \xE5 sette opp et milj\xF8 innenfor en vertsapplikasjon, som Excel, for \xE5\
-  \ automatisere\u2026"
+description: "Hvordan: N\xE5r du er klar til \xE5 begynne med et nytt VBA-prosjekt,\
+  \ starter du vanligvis med \xE5 f\xE5 tilgang til VBA-editoren og initialisere prosjektrammeverket\u2026"
 lastmod: '2024-03-13T22:44:40.620554-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 starte et nytt prosjekt i Visual Basic for Applications (VBA) inneb\xE6\
-  rer \xE5 sette opp et milj\xF8 innenfor en vertsapplikasjon, som Excel, for \xE5\
-  \ automatisere oppgaver eller utvide funksjonalitet."
+summary: "N\xE5r du er klar til \xE5 begynne med et nytt VBA-prosjekt, starter du\
+  \ vanligvis med \xE5 f\xE5 tilgang til VBA-editoren og initialisere prosjektrammeverket\
+  \ ditt."
 title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---

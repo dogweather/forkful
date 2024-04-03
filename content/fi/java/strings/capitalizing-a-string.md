@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:51.149927-07:00
-description: "Merkkijonon alkukirjaimen suurentaminen tarkoittaa jokaisen sanan ensimm\xE4\
-  isen kirjaimen muuttamista suuraakkoseksi samalla varmistaen, ett\xE4 loput\u2026"
+description: "Kuinka: Javan vakio kirjasto ei tarjoa suoraa metodia koko merkkijonojen\
+  \ alkukirjaimen suurentamiseksi kerralla, mutta t\xE4m\xE4n voi saavuttaa yhdist\xE4\
+  m\xE4ll\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.428173-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonon alkukirjaimen suurentaminen tarkoittaa jokaisen sanan ensimm\xE4\
-  isen kirjaimen muuttamista suuraakkoseksi samalla varmistaen, ett\xE4 loput kirjaimet\
-  \ pysyv\xE4t pienaakkosina."
+summary: "Javan vakio kirjasto ei tarjoa suoraa metodia koko merkkijonojen alkukirjaimen\
+  \ suurentamiseksi kerralla, mutta t\xE4m\xE4n voi saavuttaa yhdist\xE4m\xE4ll\xE4\
+  \ sis\xE4\xE4nrakennettuja metodeja."
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---

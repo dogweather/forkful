@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:14.606008-07:00
-description: "Commandoregelargumenten lezen stelt een programma in staat om direct\
-  \ vanuit de terminal gegevens te grijpen\u2014dingen zoals instellingen of bestandsnamen.\u2026"
+description: "Hoe: In Elixir is het grijpen van commandoregelargumenten een fluitje\
+  \ van een cent. Gebruik `System.argv()` en je zult ze als een lijst van strings\u2026"
 lastmod: '2024-03-13T22:44:50.477501-06:00'
 model: gpt-4-0125-preview
-summary: "Commandoregelargumenten lezen stelt een programma in staat om direct vanuit\
-  \ de terminal gegevens te grijpen\u2014dingen zoals instellingen of bestandsnamen."
+summary: In Elixir is het grijpen van commandoregelargumenten een fluitje van een
+  cent.
 title: Commandoregelargumenten lezen
 weight: 23
 ---

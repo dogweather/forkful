@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:55:41.331480-07:00
-description: "Reading command line arguments lets a program grab info straight from\
-  \ the user's terminal command. Programmers do it to customize a program's behavior\u2026"
+description: 'How to: In Clojure, you snag command line arguments with `*command-line-args*`.
+  Here''s a simple example.'
 lastmod: '2024-03-13T22:44:59.759409-06:00'
 model: gpt-4-1106-preview
-summary: Reading command line arguments lets a program grab info straight from the
-  user's terminal command.
+summary: In Clojure, you snag command line arguments with `*command-line-args*`.
 title: Reading command line arguments
 weight: 23
 ---

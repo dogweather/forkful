@@ -1,8 +1,8 @@
 ---
 date: 2024-01-26 04:09:04.557774-07:00
-description: "Przedstawmy spos\xF3b u\u017Cycia `pdb`, wbudowanego debugera Pythona.\
-  \ Wyobra\u017A sobie plik, `buggy.py`, z trudnym do zauwa\u017Cenia b\u0142\u0119\
-  dem: ```Python def\u2026"
+description: "Jak to zrobi\u0107: Przedstawmy spos\xF3b u\u017Cycia `pdb`, wbudowanego\
+  \ debugera Pythona. Wyobra\u017A sobie plik, `buggy.py`, z trudnym do zauwa\u017C\
+  enia b\u0142\u0119dem."
 lastmod: '2024-03-13T22:44:34.954160-06:00'
 model: gpt-4-0125-preview
 summary: "Przedstawmy spos\xF3b u\u017Cycia `pdb`, wbudowanego debugera Pythona."

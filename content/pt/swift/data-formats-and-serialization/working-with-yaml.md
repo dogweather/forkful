@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:51.980729-07:00
-description: "YAML, que significa YAML Ain't Markup Language (YAML N\xE3o \xE9 uma\
-  \ Linguagem de Marca\xE7\xE3o), \xE9 um padr\xE3o de serializa\xE7\xE3o de dados\
-  \ amig\xE1vel para humanos para\u2026"
+description: "Como fazer: Swift n\xE3o inclui suporte integrado para an\xE1lise (parsing)\
+  \ e serializa\xE7\xE3o de YAML, necessitando o uso de bibliotecas de terceiros.\
+  \ Uma escolha\u2026"
 lastmod: '2024-03-13T22:44:46.941236-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, que significa YAML Ain't Markup Language (YAML N\xE3o \xE9 uma Linguagem\
-  \ de Marca\xE7\xE3o), \xE9 um padr\xE3o de serializa\xE7\xE3o de dados amig\xE1\
-  vel para humanos para todas as linguagens de programa\xE7\xE3o."
+summary: "Swift n\xE3o inclui suporte integrado para an\xE1lise (parsing) e serializa\xE7\
+  \xE3o de YAML, necessitando o uso de bibliotecas de terceiros."
 title: Trabalhando com YAML
 weight: 41
 ---

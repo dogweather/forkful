@@ -2,13 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:28.323824-07:00
-description: "\xC5 skrive tester i Elm involverer \xE5 lage testtilfeller for \xE5\
-  \ verifisere korrektheten av Elm-koden din, og sikre at den oppf\xF8rer seg som\
-  \ forventet.\u2026"
+description: "Hvordan: Elm bruker pakken `elm-explorations/test` for \xE5 skrive enhets-\
+  \ og fuzz-tester. Start med \xE5 legge til pakken i prosjektet ditt."
 lastmod: '2024-03-13T22:44:40.712616-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive tester i Elm involverer \xE5 lage testtilfeller for \xE5 verifisere\
-  \ korrektheten av Elm-koden din, og sikre at den oppf\xF8rer seg som forventet."
+summary: "Elm bruker pakken `elm-explorations/test` for \xE5 skrive enhets- og fuzz-tester."
 title: Skrive tester
 weight: 36
 ---

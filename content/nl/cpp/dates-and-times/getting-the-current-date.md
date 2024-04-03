@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:56.160251-07:00
-description: "Het verkrijgen van de huidige datum in je C++ programma kan handig zijn:\
-  \ denk aan loggen, tijdstempels of planningsfuncties. Het gaat erom relevant te\u2026"
+description: "Hoe te: Hier is hoe je de huidige datum kunt ophalen met `<chrono>`\u2014\
+  modern, schoon, zonder nonsens."
 lastmod: '2024-03-13T22:44:51.123169-06:00'
 model: gpt-4-0125-preview
-summary: 'Het verkrijgen van de huidige datum in je C++ programma kan handig zijn:
-  denk aan loggen, tijdstempels of planningsfuncties.'
+summary: "Hier is hoe je de huidige datum kunt ophalen met `<chrono>`\u2014modern,\
+  \ schoon, zonder nonsens."
 title: Het huidige datum ophalen
 weight: 29
 ---

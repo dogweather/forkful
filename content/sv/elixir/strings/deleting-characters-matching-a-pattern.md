@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:42:13.058642-07:00
-description: "Att ta bort tecken som matchar ett m\xF6nster \xE4r att filtrera bort\
-  \ o\xF6nskade tecken ur en textstr\xE4ng. Programmerare g\xF6r detta f\xF6r datarensning,\u2026"
+description: "Hur man g\xF6r: ."
 lastmod: '2024-03-13T22:44:37.551439-06:00'
 model: gpt-4-1106-preview
-summary: "Att ta bort tecken som matchar ett m\xF6nster \xE4r att filtrera bort o\xF6\
-  nskade tecken ur en textstr\xE4ng."
+summary: .
 title: "Ta bort tecken som matchar ett m\xF6nster"
 weight: 5
 ---

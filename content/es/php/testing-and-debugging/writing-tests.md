@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:17.430741-07:00
-description: "Escribir pruebas en programaci\xF3n implica crear y ejecutar scripts\
-  \ que verifican que el c\xF3digo se comporte como se espera bajo diversas condiciones.\
-  \ Los\u2026"
+description: "C\xF3mo hacerlo: #."
 lastmod: '2024-03-13T22:44:59.164353-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir pruebas en programaci\xF3n implica crear y ejecutar scripts que\
-  \ verifican que el c\xF3digo se comporte como se espera bajo diversas condiciones."
+summary: '#.'
 title: Escribiendo pruebas
 weight: 36
 ---

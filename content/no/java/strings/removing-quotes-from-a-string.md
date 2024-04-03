@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 03:40:56.009629-07:00
-description: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr \xE5 strippe ut eventuelle\
-  \ anf\xF8rselstegn\u2014enten enkle (' '), doble (\" \"), eller begge\u2014fra tekstdatatene.\u2026"
+description: "Hvordan: La oss rive disse irriterende anf\xF8rselstegnene ut av teksten\
+  \ v\xE5r. Vi vil bruke `replace()`-metoden for de raske fiksene og regex for de\
+  \ t\xF8ffe\u2026"
 lastmod: '2024-03-13T22:44:40.654285-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr \xE5 strippe ut eventuelle\
-  \ anf\xF8rselstegn\u2014enten enkle (' '), doble (\" \"), eller begge\u2014fra tekstdatatene."
+summary: "La oss rive disse irriterende anf\xF8rselstegnene ut av teksten v\xE5r."
 title: "Fjerne anf\xF8rselstegn fra en streng"
 weight: 9
 ---

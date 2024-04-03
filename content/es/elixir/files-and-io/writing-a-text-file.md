@@ -2,14 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:32.030416-07:00
-description: "Escribir en un archivo de texto en Elixir es una habilidad esencial\
-  \ para los desarrolladores, permitiendo la persistencia de datos, registro o exportaci\xF3\
-  n\u2026"
+description: "C\xF3mo hacerlo: Elixir facilita el manejo de archivos con m\xF3dulos\
+  \ incorporados. La forma principal de escribir en un archivo es usando las funciones\u2026"
 lastmod: '2024-03-13T22:44:58.721417-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir en un archivo de texto en Elixir es una habilidad esencial para\
-  \ los desarrolladores, permitiendo la persistencia de datos, registro o exportaci\xF3\
-  n de contenido legible por humanos."
+summary: "Elixir facilita el manejo de archivos con m\xF3dulos incorporados."
 title: Escribiendo un archivo de texto
 weight: 24
 ---

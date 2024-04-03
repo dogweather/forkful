@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:00.731732-07:00
-description: "Travailler avec XML en C implique l'analyse, la requ\xEAte et la manipulation\
-  \ de documents XML \xE0 l'aide de diverses biblioth\xE8ques. Les programmeurs se\u2026"
+description: "Comment faire : C ne dispose pas de support int\xE9gr\xE9 pour XML,\
+  \ vous devrez donc utiliser des biblioth\xE8ques externes. Un choix populaire est\
+  \ `libxml2`, une\u2026"
 lastmod: '2024-03-13T22:44:58.399426-06:00'
 model: gpt-4-0125-preview
-summary: "Travailler avec XML en C implique l'analyse, la requ\xEAte et la manipulation\
-  \ de documents XML \xE0 l'aide de diverses biblioth\xE8ques."
+summary: "C ne dispose pas de support int\xE9gr\xE9 pour XML, vous devrez donc utiliser\
+  \ des biblioth\xE8ques externes."
 title: Travailler avec XML
 weight: 40
 ---

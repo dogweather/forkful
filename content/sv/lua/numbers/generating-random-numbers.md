@@ -1,13 +1,12 @@
 ---
 date: 2024-01-27 20:35:01.275542-07:00
-description: "Att generera slumpm\xE4ssiga tal i programmering handlar om att producera\
-  \ of\xF6ruts\xE4gbara numeriska v\xE4rden som kan anv\xE4ndas f\xF6r en m\xE4ngd\
-  \ olika \xE4ndam\xE5l s\xE5som\u2026"
+description: "Hur man g\xF6r: Lua erbjuder inbyggt st\xF6d f\xF6r att generera slumpm\xE4\
+  ssiga tal via funktionen `math.random`. Denna funktion kan anv\xE4ndas p\xE5 flera\
+  \ s\xE4tt, beroende\u2026"
 lastmod: '2024-03-13T22:44:38.034046-06:00'
 model: gpt-4-0125-preview
-summary: "Att generera slumpm\xE4ssiga tal i programmering handlar om att producera\
-  \ of\xF6ruts\xE4gbara numeriska v\xE4rden som kan anv\xE4ndas f\xF6r en m\xE4ngd\
-  \ olika \xE4ndam\xE5l s\xE5som simuleringar, spel eller s\xE4kerhetstill\xE4mpningar."
+summary: "Lua erbjuder inbyggt st\xF6d f\xF6r att generera slumpm\xE4ssiga tal via\
+  \ funktionen `math.random`."
 title: Generera slumptal
 weight: 12
 ---

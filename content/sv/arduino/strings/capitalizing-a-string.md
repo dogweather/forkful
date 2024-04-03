@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:01.148231-07:00
-description: "Att skriva med stor bokstav inneb\xE4r att konvertera det f\xF6rsta\
-  \ tecknet i varje ord i en str\xE4ng till versal samtidigt som resten beh\xE5lls\
-  \ som gemener. Denna\u2026"
+description: "Hur: Arduino, som fr\xE4mst \xE4r k\xE4nt f\xF6r interaktion med h\xE5\
+  rdvara, inkluderar \xE4ven grundl\xE4ggande m\xF6jligheter f\xF6r str\xE4ngmanipulation\
+  \ genom sitt\u2026"
 lastmod: '2024-03-13T22:44:38.151395-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva med stor bokstav inneb\xE4r att konvertera det f\xF6rsta tecknet\
-  \ i varje ord i en str\xE4ng till versal samtidigt som resten beh\xE5lls som gemener."
+summary: "Arduino, som fr\xE4mst \xE4r k\xE4nt f\xF6r interaktion med h\xE5rdvara,\
+  \ inkluderar \xE4ven grundl\xE4ggande m\xF6jligheter f\xF6r str\xE4ngmanipulation\
+  \ genom sitt `String`-objekt."
 title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---

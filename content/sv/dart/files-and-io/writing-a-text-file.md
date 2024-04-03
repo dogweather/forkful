@@ -2,13 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:44.578850-07:00
-description: "Att skriva en textfil i Dart inneb\xE4r att skapa eller \xE4ndra filer\
-  \ p\xE5 disken f\xF6r att lagra data i ett l\xE4sbart format. Programmerare g\xF6\
-  r det f\xF6r att spara\u2026"
+description: "Hur man g\xF6r: Darts k\xE4rnbibliotek erbjuder paketet `dart:io` f\xF6\
+  r filhantering, vilket l\xE5ter dig skriva textfiler utan behov av tredjepartsbibliotek.\
+  \ H\xE4r \xE4r\u2026"
 lastmod: '2024-03-13T22:44:37.632230-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva en textfil i Dart inneb\xE4r att skapa eller \xE4ndra filer p\xE5\
-  \ disken f\xF6r att lagra data i ett l\xE4sbart format."
+summary: "Darts k\xE4rnbibliotek erbjuder paketet `dart:io` f\xF6r filhantering, vilket\
+  \ l\xE5ter dig skriva textfiler utan behov av tredjepartsbibliotek."
 title: Att skriva en textfil
 weight: 24
 ---

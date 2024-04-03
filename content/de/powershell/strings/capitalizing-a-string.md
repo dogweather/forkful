@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:57.057018-07:00
-description: "Das Gro\xDFschreiben eines Strings in PowerShell beinhaltet die Umwandlung\
-  \ des ersten Zeichens eines gegebenen Strings in Gro\xDFbuchstaben, w\xE4hrend der\
-  \ Rest\u2026"
+description: "Wie: PowerShell, als vielseitiges Werkzeug, erm\xF6glicht es Ihnen,\
+  \ einen String auf einfache Weise zu gro\xDFzuschreiben, ohne dass Drittanbieterbibliotheken\u2026"
 lastmod: '2024-03-13T22:44:54.084885-06:00'
 model: gpt-4-0125-preview
-summary: "Das Gro\xDFschreiben eines Strings in PowerShell beinhaltet die Umwandlung\
-  \ des ersten Zeichens eines gegebenen Strings in Gro\xDFbuchstaben, w\xE4hrend der\
-  \ Rest des Strings unver\xE4ndert bleibt."
+summary: "PowerShell, als vielseitiges Werkzeug, erm\xF6glicht es Ihnen, einen String\
+  \ auf einfache Weise zu gro\xDFzuschreiben, ohne dass Drittanbieterbibliotheken\
+  \ ben\xF6tigt werden."
 title: "Einen String gro\xDFschreiben"
 weight: 2
 ---

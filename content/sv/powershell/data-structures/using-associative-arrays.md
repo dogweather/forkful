@@ -2,14 +2,11 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:40.208846-07:00
-description: "Associativa arrayer, \xE4ven k\xE4nda som hashtabeller eller ordb\xF6\
-  cker i PowerShell, l\xE5ter dig lagra data i nyckel-v\xE4rdepar, vilket g\xF6r data\xE5\
-  tertagning enkel\u2026"
+description: "Hur man g\xF6r: Att skapa och anv\xE4nda associativa arrayer i PowerShell\
+  \ \xE4r ganska enkelt. S\xE5 h\xE4r g\xF6r du magin: **Att skapa en associativ array:**."
 lastmod: '2024-03-13T22:44:38.117135-06:00'
 model: gpt-4-0125-preview
-summary: "Associativa arrayer, \xE4ven k\xE4nda som hashtabeller eller ordb\xF6cker\
-  \ i PowerShell, l\xE5ter dig lagra data i nyckel-v\xE4rdepar, vilket g\xF6r data\xE5\
-  tertagning enkel och effektiv."
+summary: "Att skapa och anv\xE4nda associativa arrayer i PowerShell \xE4r ganska enkelt."
 title: "Att anv\xE4nda associativa arrayer"
 weight: 15
 ---

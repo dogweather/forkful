@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:38:29.226472-07:00
-description: "Att konvertera en str\xE4ng till gemener inneb\xE4r att alla versaler\
-  \ (stora bokst\xE4ver) i en text omvandlas till gemener (sm\xE5 bokst\xE4ver). Programmerare\
-  \ g\xF6r\u2026"
+description: "Hur g\xF6r man: I Haskell, anv\xE4nder du `Data.Text` f\xF6r att jobba\
+  \ med textstr\xE4ngar p\xE5 ett effektivt s\xE4tt. I `Data.Text` finns en funktion\
+  \ `toLower` som\u2026"
 lastmod: '2024-03-13T22:44:37.942595-06:00'
 model: gpt-4-1106-preview
-summary: "Att konvertera en str\xE4ng till gemener inneb\xE4r att alla versaler (stora\
-  \ bokst\xE4ver) i en text omvandlas till gemener (sm\xE5 bokst\xE4ver)."
+summary: "I Haskell, anv\xE4nder du `Data.Text` f\xF6r att jobba med textstr\xE4ngar\
+  \ p\xE5 ett effektivt s\xE4tt."
 title: "Konvertera en str\xE4ng till gemener"
 weight: 4
 ---

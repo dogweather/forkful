@@ -2,16 +2,17 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:09.022887-07:00
-description: "JSON (JavaScript Object Notation) l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1\
-  ng trao \u0111\u1ED5i d\u1EEF li\u1EC7u nh\u1EB9, d\u1EC5 \u0111\u1ECDc v\xE0 vi\u1EBF\
-  t \u0111\u1ED1i v\u1EDBi con ng\u01B0\u1EDDi, d\u1EC5 ph\xE2n t\xEDch v\xE0 t\u1EA1\
-  o ra b\u1EDFi m\xE1y. C\xE1c l\u1EADp tr\xECnh\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: VBA kh\xF4ng h\u1ED7 tr\u1EE3 ph\xE2n t\xED\
+  ch c\xFA ph\xE1p JSON m\u1ED9t c\xE1ch t\u1EF1 nhi\xEAn, v\xEC v\u1EADy ch\xFAng\
+  \ ta s\u1EBD s\u1EED d\u1EE5ng ng\xF4n ng\u1EEF k\u1ECBch b\u1EA3n nh\u01B0 JScript\
+  \ (th\xF4ng qua \u0111\u1ED1i t\u01B0\u1EE3ng\u2026"
 lastmod: '2024-03-13T22:44:36.461454-06:00'
 model: gpt-4-0125-preview
-summary: "JSON (JavaScript Object Notation) l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1\
-  ng trao \u0111\u1ED5i d\u1EEF li\u1EC7u nh\u1EB9, d\u1EC5 \u0111\u1ECDc v\xE0 vi\u1EBF\
-  t \u0111\u1ED1i v\u1EDBi con ng\u01B0\u1EDDi, d\u1EC5 ph\xE2n t\xEDch v\xE0 t\u1EA1\
-  o ra b\u1EDFi m\xE1y."
+summary: "VBA kh\xF4ng h\u1ED7 tr\u1EE3 ph\xE2n t\xEDch c\xFA ph\xE1p JSON m\u1ED9\
+  t c\xE1ch t\u1EF1 nhi\xEAn, v\xEC v\u1EADy ch\xFAng ta s\u1EBD s\u1EED d\u1EE5ng\
+  \ ng\xF4n ng\u1EEF k\u1ECBch b\u1EA3n nh\u01B0 JScript (th\xF4ng qua \u0111\u1ED1\
+  i t\u01B0\u1EE3ng ScriptControl) \u0111\u1EC3 ph\xE2n t\xEDch c\xFA ph\xE1p chu\u1ED7\
+  i JSON v\xE0 x\xE2y d\u1EF1ng \u0111\u1ED1i t\u01B0\u1EE3ng JSON."
 title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
 weight: 38
 ---

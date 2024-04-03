@@ -2,12 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:51.711885-07:00
-description: "Het genereren van willekeurige getallen in programmeren gaat over het\
-  \ cre\xEBren van waarden die van tevoren niet logisch voorspeld kunnen worden.\u2026"
+description: "Hoe: In Clojure is het genereren van willekeurige getallen eenvoudig,\
+  \ en er zijn een paar ingebouwde functies die meteen gebruikt kunnen worden. Om\
+  \ een\u2026"
 lastmod: '2024-03-13T22:44:50.415075-06:00'
 model: gpt-4-0125-preview
-summary: "Het genereren van willekeurige getallen in programmeren gaat over het cre\xEB\
-  ren van waarden die van tevoren niet logisch voorspeld kunnen worden."
+summary: In Clojure is het genereren van willekeurige getallen eenvoudig, en er zijn
+  een paar ingebouwde functies die meteen gebruikt kunnen worden.
 title: Willekeurige getallen genereren
 weight: 12
 ---

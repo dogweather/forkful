@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 18:02:51.410489-07:00
-description: "Un nouveau projet Arduino, c'est comme un tableau blanc pour un peintre.\
-  \ On d\xE9marre des projets pour donner vie \xE0 nos id\xE9es, r\xE9soudre des probl\xE8\
-  mes ou\u2026"
+description: "Comment faire : Supposons que vous construisez une station m\xE9t\xE9\
+  o."
 lastmod: '2024-03-13T22:44:58.111447-06:00'
 model: gpt-4-1106-preview
-summary: Un nouveau projet Arduino, c'est comme un tableau blanc pour un peintre.
+summary: "Supposons que vous construisez une station m\xE9t\xE9o."
 title: Lancement d'un nouveau projet
 weight: 1
 ---

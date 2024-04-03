@@ -2,15 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:19.468012-07:00
-description: "Effettuare il parsing di una data da una stringa in Arduino comporta\
-  \ l'estrazione e la conversione delle componenti della data (anno, mese, giorno)\
-  \ da una\u2026"
+description: 'Come fare: Approccio diretto senza una libreria di terze parti.'
 lastmod: '2024-03-13T22:44:43.691804-06:00'
 model: gpt-4-0125-preview
-summary: "Effettuare il parsing di una data da una stringa in Arduino comporta l'estrazione\
-  \ e la conversione delle componenti della data (anno, mese, giorno) da una rappresentazione\
-  \ testuale a un formato che pu\xF2 essere utilizzato per la gestione del tempo,\
-  \ confronti o manipolazioni all'interno degli sketch."
+summary: Approccio diretto senza una libreria di terze parti.
 title: Analisi di una data da una stringa
 weight: 30
 ---

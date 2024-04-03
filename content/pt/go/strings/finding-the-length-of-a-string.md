@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:47.709242-07:00
-description: "Encontrar o comprimento de uma string em Go trata-se de determinar o\
-  \ n\xFAmero de caracteres que ela cont\xE9m. Programadores realizam essa opera\xE7\
-  \xE3o\u2026"
+description: "Como Fazer: Em Go, strings s\xE3o tratadas como sequ\xEAncias imut\xE1\
+  veis de bytes. Voc\xEA pode encontrar o comprimento de uma string usando a fun\xE7\
+  \xE3o embutida\u2026"
 lastmod: '2024-03-13T22:44:46.050858-06:00'
 model: gpt-4-0125-preview
-summary: "Encontrar o comprimento de uma string em Go trata-se de determinar o n\xFA\
-  mero de caracteres que ela cont\xE9m."
+summary: "Em Go, strings s\xE3o tratadas como sequ\xEAncias imut\xE1veis de bytes."
 title: Encontrando o comprimento de uma string
 weight: 7
 ---

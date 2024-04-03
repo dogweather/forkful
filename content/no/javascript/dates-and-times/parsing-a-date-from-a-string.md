@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:24.474645-07:00
-description: "\xC5 parse en dato fra en streng lar programmerere konvertere tekstlige\
-  \ datorepresentasjoner til JavaScript `Date`-objekter. Dette letter manipulering,\u2026"
+description: "Hvordan: JavaScript tilbyr `Date.parse()`-metoden og `Date`-konstrukt\xF8\
+  ren for \xE5 parse datostrenger. Men, disse tiln\xE6rmingene har begrensninger og\u2026"
 lastmod: '2024-03-13T22:44:41.192751-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 parse en dato fra en streng lar programmerere konvertere tekstlige\
-  \ datorepresentasjoner til JavaScript `Date`-objekter."
+summary: "JavaScript tilbyr `Date.parse()`-metoden og `Date`-konstrukt\xF8ren for\
+  \ \xE5 parse datostrenger."
 title: Analysering av en dato fra en streng
 weight: 30
 ---

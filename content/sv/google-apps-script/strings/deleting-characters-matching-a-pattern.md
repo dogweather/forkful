@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:07.705985-07:00
-description: "Att ta bort tecken som matchar ett specifikt m\xF6nster \xE4r en teknik\
-  \ som anv\xE4nds f\xF6r att rensa eller formatera str\xE4ngar i programmering. I\
-  \ sammanhanget av\u2026"
+description: "Hur man g\xF6r: Google Apps Script erbjuder robusta metoder f\xF6r str\xE4\
+  ngmanipulation, som utnyttjar JavaScripts inneboende kapaciteter. F\xF6r att ta\
+  \ bort tecken\u2026"
 lastmod: '2024-03-13T22:44:37.420565-06:00'
 model: gpt-4-0125-preview
-summary: "Att ta bort tecken som matchar ett specifikt m\xF6nster \xE4r en teknik\
-  \ som anv\xE4nds f\xF6r att rensa eller formatera str\xE4ngar i programmering."
+summary: "Google Apps Script erbjuder robusta metoder f\xF6r str\xE4ngmanipulation,\
+  \ som utnyttjar JavaScripts inneboende kapaciteter."
 title: "Ta bort tecken som matchar ett m\xF6nster"
 weight: 5
 ---

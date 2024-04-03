@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:53:16.389298-07:00
-description: "Imprimir salida de depuraci\xF3n es mostrar informaci\xF3n \xFAtil para\
-  \ entender qu\xE9 est\xE1 pasando en tu programa. Los programadores lo hacen para\
-  \ rastrear errores\u2026"
+description: "C\xF3mo Hacerlo: Cuando necesites ver qu\xE9 est\xE1 pasando dentro\
+  \ de tu c\xF3digo, usa `print()` para enviar mensajes a la consola. Aqu\xED tienes\
+  \ un ejemplo simple."
 lastmod: '2024-03-13T22:44:59.204450-06:00'
 model: gpt-4-1106-preview
-summary: "Imprimir salida de depuraci\xF3n es mostrar informaci\xF3n \xFAtil para\
-  \ entender qu\xE9 est\xE1 pasando en tu programa."
+summary: "Cuando necesites ver qu\xE9 est\xE1 pasando dentro de tu c\xF3digo, usa\
+  \ `print()` para enviar mensajes a la consola."
 title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---

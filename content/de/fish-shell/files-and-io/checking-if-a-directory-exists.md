@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:10.074658-07:00
-description: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Fish Shell existiert, erm\xF6\
-  glicht es Skripten, Entscheidungen basierend auf der An- oder Abwesenheit von\u2026"
+description: "Wie geht das: Fish Shell verwendet den `test` Befehl, um Dateitypen\
+  \ und -eigenschaften zu \xFCberpr\xFCfen, einschlie\xDFlich, ob ein Ziel ein Verzeichnis\
+  \ ist.\u2026"
 lastmod: '2024-03-13T22:44:54.323382-06:00'
 model: gpt-4-0125-preview
-summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Fish Shell existiert, erm\xF6\
-  glicht es Skripten, Entscheidungen basierend auf der An- oder Abwesenheit von Verzeichnisstrukturen\
-  \ zu treffen."
+summary: "Fish Shell verwendet den `test` Befehl, um Dateitypen und -eigenschaften\
+  \ zu \xFCberpr\xFCfen, einschlie\xDFlich, ob ein Ziel ein Verzeichnis ist."
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---

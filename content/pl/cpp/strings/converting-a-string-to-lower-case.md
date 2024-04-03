@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:37:54.074998-07:00
-description: "Zmiana napis\xF3w na ma\u0142e litery oznacza przekszta\u0142cenie wszystkich\
-  \ liter w ci\u0105gu znak\xF3w na ich ma\u0142e odpowiedniki. Robimy to dla ujednolicenia\
-  \ danych,\u2026"
+description: "How to (Jak to zrobi\u0107): Chc\u0105c zmieni\u0107 napis na ma\u0142\
+  e litery w C++, u\u017Cywamy standardowej biblioteki `<algorithm>` i funkcji `std::transform`\
+  \ wraz z\u2026"
 lastmod: '2024-03-13T22:44:35.699887-06:00'
 model: gpt-4-1106-preview
-summary: "Zmiana napis\xF3w na ma\u0142e litery oznacza przekszta\u0142cenie wszystkich\
-  \ liter w ci\u0105gu znak\xF3w na ich ma\u0142e odpowiedniki."
+summary: "Chc\u0105c zmieni\u0107 napis na ma\u0142e litery w C++, u\u017Cywamy standardowej\
+  \ biblioteki `<algorithm>` i funkcji `std::transform` wraz z `::tolower`."
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---

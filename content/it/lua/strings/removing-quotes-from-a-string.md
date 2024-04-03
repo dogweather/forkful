@@ -1,11 +1,9 @@
 ---
 date: 2024-01-26 03:40:31.203131-07:00
-description: "Rimuovere le virgolette da una stringa significa spogliare il testo\
-  \ di quei caratteri di virgoletta doppia o singola che lo abbracciano. I programmatori\u2026"
+description: 'Come fare: Ecco come mandare al tappeto quelle virgolette in Lua.'
 lastmod: '2024-03-13T22:44:43.546688-06:00'
 model: gpt-4-0125-preview
-summary: Rimuovere le virgolette da una stringa significa spogliare il testo di quei
-  caratteri di virgoletta doppia o singola che lo abbracciano.
+summary: Ecco come mandare al tappeto quelle virgolette in Lua.
 title: Rimuovere le virgolette da una stringa
 weight: 9
 ---

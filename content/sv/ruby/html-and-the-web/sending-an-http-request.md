@@ -1,13 +1,12 @@
 ---
 date: 2024-01-20 18:00:28.526973-07:00
-description: "Att skicka en HTTP-beg\xE4ran inneb\xE4r att din applikation eller skript\
-  \ g\xF6r en f\xF6rfr\xE5gan till en webbserver f\xF6r att h\xE4mta eller skicka\
-  \ information.\u2026"
+description: "How to: (Hur man g\xF6r:) F\xF6r att skicka en HTTP-f\xF6rfr\xE5gan\
+  \ i Ruby, kan man anv\xE4nda `net/http` biblioteket som \xE4r inbyggt. H\xE4r \xE4\
+  r ett enkelt exempel p\xE5 en\u2026"
 lastmod: '2024-03-13T22:44:38.427322-06:00'
 model: gpt-4-1106-preview
-summary: "Att skicka en HTTP-beg\xE4ran inneb\xE4r att din applikation eller skript\
-  \ g\xF6r en f\xF6rfr\xE5gan till en webbserver f\xF6r att h\xE4mta eller skicka\
-  \ information."
+summary: "F\xF6r att skicka en HTTP-f\xF6rfr\xE5gan i Ruby, kan man anv\xE4nda `net/http`\
+  \ biblioteket som \xE4r inbyggt."
 title: "Skicka en http-f\xF6rfr\xE5gan"
 weight: 44
 ---

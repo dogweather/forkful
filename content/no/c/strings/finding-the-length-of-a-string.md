@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:31.286728-07:00
-description: "\xC5 finne lengden p\xE5 en streng i C inneb\xE6rer \xE5 bestemme antall\
-  \ tegn f\xF8r nullterminatoren `\\0`. Programmerere gj\xF8r dette for \xE5 kunne\
-  \ manipulere strenger\u2026"
+description: "Hvordan: I C brukes standardbibliotekfunksjonen `strlen()` vanligvis\
+  \ for \xE5 finne lengden p\xE5 en streng. Her er et kjapt eksempel."
 lastmod: '2024-03-13T22:44:41.261479-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 finne lengden p\xE5 en streng i C inneb\xE6rer \xE5 bestemme antall\
-  \ tegn f\xF8r nullterminatoren `\\0`."
+summary: "I C brukes standardbibliotekfunksjonen `strlen()` vanligvis for \xE5 finne\
+  \ lengden p\xE5 en streng."
 title: "\xC5 finne lengden p\xE5 en streng"
 weight: 7
 ---

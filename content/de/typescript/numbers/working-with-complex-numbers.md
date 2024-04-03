@@ -1,13 +1,10 @@
 ---
 date: 2024-01-26 04:46:08.755653-07:00
-description: "Komplexe Zahlen, bestehend aus einem Realteil und einem Imagin\xE4rteil\
-  \ (\xFCblicherweise geschrieben als a + bi), erm\xF6glichen Berechnungen, die mit\
-  \ nur reellen\u2026"
+description: "Wie: Die Handhabung komplexer Zahlen in TypeScript erfordert eine dedizierte\
+  \ Klasse. Lassen Sie uns eine erstellen und uns mit Addition und Multiplikation\u2026"
 lastmod: '2024-03-13T22:44:53.625485-06:00'
 model: gpt-4-0125-preview
-summary: "Komplexe Zahlen, bestehend aus einem Realteil und einem Imagin\xE4rteil\
-  \ (\xFCblicherweise geschrieben als a + bi), erm\xF6glichen Berechnungen, die mit\
-  \ nur reellen Zahlen praktisch unm\xF6glich oder nicht durchf\xFChrbar w\xE4ren."
+summary: Die Handhabung komplexer Zahlen in TypeScript erfordert eine dedizierte Klasse.
 title: Umgang mit komplexen Zahlen
 weight: 14
 ---

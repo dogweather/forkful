@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:43:31.196047-07:00
-description: "Baixar uma p\xE1gina da web \xE9 o ato de obter o conte\xFAdo dispon\xED\
-  vel em um endere\xE7o espec\xEDfico da internet. Programadores fazem isso para coletar\
-  \ dados,\u2026"
+description: "How to: Para baixar uma p\xE1gina web, voc\xEA precisa de um m\xF3dulo\
+  \ de WiFi ou Ethernet para conectar seu Arduino \xE0 internet. Abaixo est\xE1 um\
+  \ exemplo\u2026"
 lastmod: '2024-03-13T22:44:46.838218-06:00'
 model: gpt-4-1106-preview
-summary: "Baixar uma p\xE1gina da web \xE9 o ato de obter o conte\xFAdo dispon\xED\
-  vel em um endere\xE7o espec\xEDfico da internet."
+summary: "Para baixar uma p\xE1gina web, voc\xEA precisa de um m\xF3dulo de WiFi ou\
+  \ Ethernet para conectar seu Arduino \xE0 internet."
 title: "Baixando uma p\xE1gina da web"
 weight: 42
 ---

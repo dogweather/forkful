@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:30.755852-07:00
-description: "Een interactieve Rust-shell, of REPL (Read-Eval-Print Loop), laat je\
-  \ Rust-code direct uitvoeren, met onmiddellijke resultaten, perfect voor experimenteren\u2026"
+description: "Hoe te gebruiken: Momenteel heeft Rust geen offici\xEBle REPL die ermee\
+  \ wordt geleverd. Je kunt externe tools gebruiken zoals `evcxr_repl`. Installeer\
+  \ het\u2026"
 lastmod: '2024-03-13T22:44:50.595770-06:00'
 model: gpt-4-0125-preview
-summary: Een interactieve Rust-shell, of REPL (Read-Eval-Print Loop), laat je Rust-code
-  direct uitvoeren, met onmiddellijke resultaten, perfect voor experimenteren of leren.
+summary: "Momenteel heeft Rust geen offici\xEBle REPL die ermee wordt geleverd."
 title: Het gebruik van een interactieve shell (REPL)
 weight: 34
 ---

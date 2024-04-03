@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:49.328780-07:00
-description: "Att erh\xE5lla dagens datum i Java \xE4r en grundl\xE4ggande operation\
-  \ som till\xE5ter programmerare att manipulera datumobjekt f\xF6r operationer s\xE5\
-  som loggning,\u2026"
+description: "Hur man g\xF6r: Java erbjuder flera s\xE4tt att f\xE5 dagens datum,\
+  \ genom att anv\xE4nda b\xE5de den gamla `java.util.Date`-klassen och det nyare\
+  \ `java.time`-paketet\u2026"
 lastmod: '2024-03-13T22:44:37.797509-06:00'
 model: gpt-4-0125-preview
-summary: "Att erh\xE5lla dagens datum i Java \xE4r en grundl\xE4ggande operation som\
-  \ till\xE5ter programmerare att manipulera datumobjekt f\xF6r operationer s\xE5\
-  som loggning, datumber\xE4kningar och tidsbaserade villkor."
+summary: "Java erbjuder flera s\xE4tt att f\xE5 dagens datum, genom att anv\xE4nda\
+  \ b\xE5de den gamla `java.util.Date`-klassen och det nyare `java.time`-paketet (introducerat\
+  \ i Java 8) som \xE4r mer m\xE5ngsidigt och intuitivt."
 title: "F\xE5 det aktuella datumet"
 weight: 29
 ---

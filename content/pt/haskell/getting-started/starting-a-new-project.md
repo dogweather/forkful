@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 18:03:36.552613-07:00
-description: "Come\xE7ar um novo projeto em Haskell envolve criar a estrutura base\
-  \ de um programa, definindo seus m\xF3dulos e depend\xEAncias. Programadores fazem\
-  \ isso para\u2026"
+description: "Como fazer: Para iniciar um projeto Haskell, voc\xEA precisa do Stack,\
+  \ um gerenciador de sistema de compila\xE7\xE3o e projetos. Aqui est\xE1 como voc\xEA\
+  \ configura um\u2026"
 lastmod: '2024-03-13T22:44:46.625989-06:00'
 model: gpt-4-1106-preview
-summary: "Come\xE7ar um novo projeto em Haskell envolve criar a estrutura base de\
-  \ um programa, definindo seus m\xF3dulos e depend\xEAncias."
+summary: "Para iniciar um projeto Haskell, voc\xEA precisa do Stack, um gerenciador\
+  \ de sistema de compila\xE7\xE3o e projetos."
 title: Iniciando um novo projeto
 weight: 1
 ---

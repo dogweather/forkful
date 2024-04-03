@@ -2,18 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:29.783459-07:00
-description: "Vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1\
-  c c\u01A1 b\u1EA3n bao g\u1ED3m vi\u1EC7c \u0111\u01B0a t\xEAn ng\u01B0\u1EDDi d\xF9\
-  ng v\xE0 m\u1EADt kh\u1EA9u v\xE0o m\u1ED9t y\xEAu c\u1EA7u g\u1EEDi \u0111\u1EBF\
-  n m\xE1y ch\u1EE7 \u0111\u1EC3 ch\u1EE9ng minh r\u1EB1ng b\u1EA1n \u0111\u01B0\u1EE3\
-  c ph\xE9p\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1\
+  ch b\u1EA1n y\xEAu c\u1EA7u Python n\xF3i chuy\u1EC7n v\u1EDBi m\xE1y ch\u1EE7 s\u1EED\
+  \ d\u1EE5ng Basic Auth."
 lastmod: '2024-03-13T22:44:36.096455-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1\
-  c c\u01A1 b\u1EA3n bao g\u1ED3m vi\u1EC7c \u0111\u01B0a t\xEAn ng\u01B0\u1EDDi d\xF9\
-  ng v\xE0 m\u1EADt kh\u1EA9u v\xE0o m\u1ED9t y\xEAu c\u1EA7u g\u1EEDi \u0111\u1EBF\
-  n m\xE1y ch\u1EE7 \u0111\u1EC3 ch\u1EE9ng minh r\u1EB1ng b\u1EA1n \u0111\u01B0\u1EE3\
-  c ph\xE9p truy c\u1EADp."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch b\u1EA1n y\xEAu c\u1EA7u Python\
+  \ n\xF3i chuy\u1EC7n v\u1EDBi m\xE1y ch\u1EE7 s\u1EED d\u1EE5ng Basic Auth."
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3\
   n"
 weight: 45

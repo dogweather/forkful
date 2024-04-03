@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:57:56.354089-07:00
-description: "Tekstin etsiminen ja korvaaminen auttaa muuttamaan koodia nopeasti.\
-  \ Se on t\xE4rke\xE4\xE4, kun halutaan p\xE4ivitt\xE4\xE4 muuttujien nimi\xE4 tai\
-  \ korjata virheit\xE4 useissa\u2026"
+description: "How to: - Kuinka Tehd\xE4: Fish Shelliss\xE4 voit etsi\xE4 ja korvata\
+  \ teksti\xE4 `string` komennon avulla. T\xE4ss\xE4 on esimerkit."
 lastmod: '2024-03-13T22:44:56.977106-06:00'
 model: gpt-4-1106-preview
-summary: Tekstin etsiminen ja korvaaminen auttaa muuttamaan koodia nopeasti.
+summary: "Fish Shelliss\xE4 voit etsi\xE4 ja korvata teksti\xE4 `string` komennon\
+  \ avulla."
 title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---

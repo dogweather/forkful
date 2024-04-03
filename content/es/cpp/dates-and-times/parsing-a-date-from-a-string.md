@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:28.747705-07:00
-description: "Analizar una fecha a partir de una cadena implica interpretar el formato\
-  \ de la cadena para extraer componentes de la fecha como el d\xEDa, el mes y el\
-  \ a\xF1o.\u2026"
+description: "C\xF3mo: En C++ moderno, puedes utilizar la biblioteca `<chrono>` para\
+  \ manejar fechas y horas de manera nativa, pero no admite directamente el an\xE1\
+  lisis desde\u2026"
 lastmod: '2024-03-13T22:44:59.384496-06:00'
 model: gpt-4-0125-preview
-summary: "Analizar una fecha a partir de una cadena implica interpretar el formato\
-  \ de la cadena para extraer componentes de la fecha como el d\xEDa, el mes y el\
-  \ a\xF1o."
+summary: "En C++ moderno, puedes utilizar la biblioteca `<chrono>` para manejar fechas\
+  \ y horas de manera nativa, pero no admite directamente el an\xE1lisis desde cadenas\
+  \ sin un an\xE1lisis manual para formatos m\xE1s complejos."
 title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---

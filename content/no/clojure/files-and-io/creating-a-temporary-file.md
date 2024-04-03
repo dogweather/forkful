@@ -1,11 +1,13 @@
 ---
 date: 2024-01-20 17:39:59.150455-07:00
-description: "\xC5 lage en midlertidig fil er som \xE5 opprette et digitalt kritt-tavle;\
-  \ du bruker det for \xE5 skrible ned info som ikke trenger \xE5 bli husket lenge.\u2026"
+description: "How to: Clojure har ikke innebygd st\xF8tte for \xE5 opprette midlertidige\
+  \ filer rett ut av boksen, men Java-biblioteket kan lett brukes takket v\xE6re Clojure\
+  \ sin\u2026"
 lastmod: '2024-03-13T22:44:40.421081-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 lage en midlertidig fil er som \xE5 opprette et digitalt kritt-tavle;\
-  \ du bruker det for \xE5 skrible ned info som ikke trenger \xE5 bli husket lenge."
+summary: "Clojure har ikke innebygd st\xF8tte for \xE5 opprette midlertidige filer\
+  \ rett ut av boksen, men Java-biblioteket kan lett brukes takket v\xE6re Clojure\
+  \ sin interoperabilitet med Java."
 title: Opprette en midlertidig fil
 weight: 21
 ---

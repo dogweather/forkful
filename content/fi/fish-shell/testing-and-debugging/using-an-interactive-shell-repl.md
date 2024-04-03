@@ -1,13 +1,10 @@
 ---
 date: 2024-01-26 04:14:19.111952-07:00
-description: "REPL eli Read-Eval-Print Loop on interaktiivinen ohjelmointiymp\xE4\
-  rist\xF6, joka ottaa vastaan yksitt\xE4isi\xE4 k\xE4ytt\xE4j\xE4n sy\xF6tteit\xE4\
-  , suorittaa ne ja palauttaa\u2026"
+description: "Kuinka: Fishiss\xE4 interaktiivinen kuori on oletustila, kun k\xE4ynnist\xE4\
+  t sen. T\xE4lt\xE4 se n\xE4ytt\xE4\xE4 toiminnassa."
 lastmod: '2024-03-13T22:44:56.996189-06:00'
 model: gpt-4-0125-preview
-summary: "REPL eli Read-Eval-Print Loop on interaktiivinen ohjelmointiymp\xE4rist\xF6\
-  , joka ottaa vastaan yksitt\xE4isi\xE4 k\xE4ytt\xE4j\xE4n sy\xF6tteit\xE4, suorittaa\
-  \ ne ja palauttaa tuloksen."
+summary: "Fishiss\xE4 interaktiivinen kuori on oletustila, kun k\xE4ynnist\xE4t sen."
 title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 weight: 34
 ---

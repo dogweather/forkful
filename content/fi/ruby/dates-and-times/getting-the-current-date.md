@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:41.777200-07:00
-description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen on olennainen teht\xE4\
-  v\xE4 l\xE4hes miss\xE4 tahansa ohjelmointiprojektissa, oli kyse sitten toimintojen\
-  \ lokituksesta sovelluksessa\u2026"
+description: "Kuinka: Rubyn standardikirjasto sis\xE4lt\xE4\xE4 `Date`- ja `Time`-luokat\
+  \ p\xE4iv\xE4m\xE4\xE4rien ja ajan k\xE4sittelyyn. N\xE4in saat nykyisen p\xE4iv\xE4\
+  m\xE4\xE4r\xE4n."
 lastmod: '2024-03-13T22:44:57.097697-06:00'
 model: gpt-4-0125-preview
-summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen on olennainen teht\xE4v\xE4\
-  \ l\xE4hes miss\xE4 tahansa ohjelmointiprojektissa, oli kyse sitten toimintojen\
-  \ lokituksesta sovelluksessa tai p\xE4iv\xE4leimoilla varustettujen raporttien tuottamisesta."
+summary: "Rubyn standardikirjasto sis\xE4lt\xE4\xE4 `Date`- ja `Time`-luokat p\xE4\
+  iv\xE4m\xE4\xE4rien ja ajan k\xE4sittelyyn."
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---

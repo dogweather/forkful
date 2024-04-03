@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:12.556349-07:00
-description: "\xC5 analysere en dato fra en tekststreng handler om \xE5 gjenkjenne\
-  \ og konvertere skrevne datoer i tekstform til en datatype dato som PowerShell kan\
-  \ forst\xE5 og\u2026"
+description: "Hvordan: PowerShell gj\xF8r det enkelt \xE5 analysere datoer fra tekststrenger\
+  \ med sin `Get-Date` cmdlet og `[datetime]` typeakselerator, som fungerer godt for\u2026"
 lastmod: '2024-03-13T22:44:41.026668-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 analysere en dato fra en tekststreng handler om \xE5 gjenkjenne og\
-  \ konvertere skrevne datoer i tekstform til en datatype dato som PowerShell kan\
-  \ forst\xE5 og arbeide med."
+summary: "PowerShell gj\xF8r det enkelt \xE5 analysere datoer fra tekststrenger med\
+  \ sin `Get-Date` cmdlet og `[datetime]` typeakselerator, som fungerer godt for standard\
+  \ datoformater."
 title: Analysering av en dato fra en streng
 weight: 30
 ---

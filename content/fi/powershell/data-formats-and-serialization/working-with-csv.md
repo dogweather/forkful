@@ -2,12 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:59.839026-07:00
-description: "CSV-tiedostojen (pilkulla erotetut arvot) k\xE4sittely on yleinen teht\xE4\
-  v\xE4 datan hallitsemiseksi ja manipuloimiseksi rakenteellisessa, taulukkomuodossa.\u2026"
+description: 'Kuinka: #.'
 lastmod: '2024-03-13T22:44:56.805327-06:00'
 model: gpt-4-0125-preview
-summary: "CSV-tiedostojen (pilkulla erotetut arvot) k\xE4sittely on yleinen teht\xE4\
-  v\xE4 datan hallitsemiseksi ja manipuloimiseksi rakenteellisessa, taulukkomuodossa."
+summary: '#.'
 title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---

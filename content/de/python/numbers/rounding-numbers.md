@@ -1,11 +1,9 @@
 ---
 date: 2024-01-26 03:46:08.581499-07:00
-description: "Zahlen zu runden bedeutet, sie an einen einfacheren oder bedeutenderen\
-  \ Wert anzun\xE4hern. Programmierer runden Zahlen ab, um Ergebnisse zu vereinfachen,\u2026"
+description: 'Wie geht das: Hier ist das Wichtigste zum Runden von Zahlen in Python.'
 lastmod: '2024-03-13T22:44:53.373362-06:00'
 model: gpt-4-0125-preview
-summary: "Zahlen zu runden bedeutet, sie an einen einfacheren oder bedeutenderen Wert\
-  \ anzun\xE4hern."
+summary: Hier ist das Wichtigste zum Runden von Zahlen in Python.
 title: Zahlen runden
 weight: 13
 ---

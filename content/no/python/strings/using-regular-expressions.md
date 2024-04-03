@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:00.323314-07:00
-description: "Regul\xE6re uttrykk (regex) er m\xF8nstre som brukes til \xE5 finne\
-  \ kombinasjoner av tegn i strenger. Programmerere benytter dem for s\xF8k, redigering\
-  \ eller\u2026"
+description: "Hvordan: \xC5 bruke regex i Python involverer `re`-modulen, som tilbyr\
+  \ et sett med funksjoner for \xE5 behandle tekst ved hjelp av regul\xE6re uttrykk.\
+  \ #."
 lastmod: '2024-03-13T22:44:40.351068-06:00'
 model: gpt-4-0125-preview
-summary: "Regul\xE6re uttrykk (regex) er m\xF8nstre som brukes til \xE5 finne kombinasjoner\
-  \ av tegn i strenger."
+summary: "\xC5 bruke regex i Python involverer `re`-modulen, som tilbyr et sett med\
+  \ funksjoner for \xE5 behandle tekst ved hjelp av regul\xE6re uttrykk."
 title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---

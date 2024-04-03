@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:06.850180-07:00
-description: "YAML, som st\xE5r f\xF6r YAML Ain't Markup Language, \xE4r en l\xE4\
-  sbar dataseringsstandard som kan anv\xE4ndas f\xF6r konfigurationsfiler, s\xE5v\xE4\
-  l som i applikationer d\xE4r\u2026"
+description: "Hur man g\xF6r: Att arbeta direkt med YAML i Bash kr\xE4ver lite p\xE5\
+  hittighet eftersom Bash inte har inbyggt st\xF6d f\xF6r att tolka YAML. Du kan dock\
+  \ anv\xE4nda externa\u2026"
 lastmod: '2024-03-13T22:44:38.102372-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, som st\xE5r f\xF6r YAML Ain't Markup Language, \xE4r en l\xE4sbar\
-  \ dataseringsstandard som kan anv\xE4ndas f\xF6r konfigurationsfiler, s\xE5v\xE4\
-  l som i applikationer d\xE4r data lagras eller \xF6verf\xF6rs."
+summary: "Att arbeta direkt med YAML i Bash kr\xE4ver lite p\xE5hittighet eftersom\
+  \ Bash inte har inbyggt st\xF6d f\xF6r att tolka YAML."
 title: Att Arbeta med YAML
 weight: 41
 ---

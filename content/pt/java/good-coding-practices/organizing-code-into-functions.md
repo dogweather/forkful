@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:10:52.237096-07:00
-description: "Organizar o c\xF3digo em fun\xE7\xF5es significa dividir a fera de um\
-  \ programa em peda\xE7os gerenci\xE1veis, cada um realizando uma tarefa distinta.\
-  \ Os programadores\u2026"
+description: "Como fazer: Aqui est\xE1 um exemplo cl\xE1ssico \u2014 uma fun\xE7\xE3\
+  o para calcular o fatorial de um n\xFAmero."
 lastmod: '2024-03-13T22:44:46.461499-06:00'
 model: gpt-4-1106-preview
-summary: "Organizar o c\xF3digo em fun\xE7\xF5es significa dividir a fera de um programa\
-  \ em peda\xE7os gerenci\xE1veis, cada um realizando uma tarefa distinta."
+summary: "Aqui est\xE1 um exemplo cl\xE1ssico \u2014 uma fun\xE7\xE3o para calcular\
+  \ o fatorial de um n\xFAmero."
 title: "Organizando o c\xF3digo em fun\xE7\xF5es"
 weight: 18
 ---

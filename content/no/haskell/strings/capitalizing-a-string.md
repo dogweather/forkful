@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:25.995963-07:00
-description: "Det \xE5 kapitalisere en streng inneb\xE6rer \xE5 transformere den f\xF8\
-  rste bokstaven i en gitt streng til stor bokstav mens resten av bokstavene forblir\
-  \ sm\xE5.\u2026"
+description: "Hvordan: I Haskell kan du kapitalisere en streng ved \xE5 bruke standardbiblioteket\
+  \ uten \xE5 trenge noen tredjepartsbiblioteker."
 lastmod: '2024-03-13T22:44:40.823613-06:00'
 model: gpt-4-0125-preview
-summary: "Det \xE5 kapitalisere en streng inneb\xE6rer \xE5 transformere den f\xF8\
-  rste bokstaven i en gitt streng til stor bokstav mens resten av bokstavene forblir\
-  \ sm\xE5."
+summary: "I Haskell kan du kapitalisere en streng ved \xE5 bruke standardbiblioteket\
+  \ uten \xE5 trenge noen tredjepartsbiblioteker."
 title: Sette stor bokstav i en streng
 weight: 2
 ---

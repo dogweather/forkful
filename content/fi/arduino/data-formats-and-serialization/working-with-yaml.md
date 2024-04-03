@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:49.620194-07:00
-description: "YAML (YAML Ain't Markup Language) on ihmisen luettavissa oleva datan\
-  \ serialisointistandardi, jota voidaan k\xE4ytt\xE4\xE4 m\xE4\xE4ritystiedostoissa,\
-  \ ohjelmien\u2026"
+description: "Kuinka: YAMLin k\xE4ytt\xE4minen suoraan Arduinossa ei ole yht\xE4 suoraviivaista\
+  \ kuin korkeamman tason ohjelmointiymp\xE4rist\xF6iss\xE4 muistirajoitusten ja natiivien\u2026"
 lastmod: '2024-03-13T22:44:56.843562-06:00'
 model: gpt-4-0125-preview
-summary: "YAML (YAML Ain't Markup Language) on ihmisen luettavissa oleva datan serialisointistandardi,\
-  \ jota voidaan k\xE4ytt\xE4\xE4 m\xE4\xE4ritystiedostoissa, ohjelmien v\xE4lisess\xE4\
-  \ viestinn\xE4ss\xE4 ja datan tallennuksessa."
+summary: "YAMLin k\xE4ytt\xE4minen suoraan Arduinossa ei ole yht\xE4 suoraviivaista\
+  \ kuin korkeamman tason ohjelmointiymp\xE4rist\xF6iss\xE4 muistirajoitusten ja natiivien\
+  \ YAML-k\xE4sittelykirjastojen puuttumisen vuoksi."
 title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---

@@ -1,10 +1,10 @@
 ---
 date: 2024-01-26 01:09:54.283376-07:00
-description: "Entasser tout votre code dans un grand tas ? Mauvaise id\xE9e. Le d\xE9\
-  couper en fonctions ? Bonne id\xE9e. Cela permet de garder votre code Elm propre,\u2026"
+description: 'Comment faire : Voici un extrait de code Elm avec une fonction simple
+  pour saluer un utilisateur .'
 lastmod: '2024-03-13T22:44:57.694953-06:00'
 model: gpt-4-1106-preview
-summary: Entasser tout votre code dans un grand tas .
+summary: Voici un extrait de code Elm avec une fonction simple pour saluer un utilisateur.
 title: Organisation du code en fonctions
 weight: 18
 ---

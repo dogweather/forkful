@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:03.664893-07:00
-description: "\xC5 konvertere en dato til en streng i C inneb\xE6rer \xE5 oversette\
-  \ en datostuktur eller tidsstempel til et menneskelesbart format. Programmerere\
-  \ utf\xF8rer ofte\u2026"
+description: "Hvordan: Funksjonen `strftime` fra biblioteket `<time.h>` brukes vanligvis\
+  \ til dette form\xE5let. Den lar deg formatere dato og tid p\xE5 en rekke m\xE5\
+  ter ved \xE5\u2026"
 lastmod: '2024-03-13T22:44:41.284427-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 konvertere en dato til en streng i C inneb\xE6rer \xE5 oversette en\
-  \ datostuktur eller tidsstempel til et menneskelesbart format."
+summary: "Funksjonen `strftime` fra biblioteket `<time.h>` brukes vanligvis til dette\
+  \ form\xE5let."
 title: "Omgj\xF8ring av en dato til en streng"
 weight: 28
 ---

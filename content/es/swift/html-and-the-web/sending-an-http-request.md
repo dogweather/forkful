@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 18:00:50.846860-07:00
-description: "Cuando enviamos una solicitud HTTP, estamos comunic\xE1ndonos con un\
-  \ servidor web para obtener, enviar o modificar datos. Lo hacemos todo el tiempo\
-  \ para\u2026"
+description: "C\xF3mo hacerlo: Swift facilita el trabajo con solicitudes HTTP. Aqu\xED\
+  \ tienes un ejemplo usando `URLSession` para hacer una solicitud GET simple."
 lastmod: '2024-03-13T22:44:59.413417-06:00'
 model: gpt-4-1106-preview
-summary: "Cuando enviamos una solicitud HTTP, estamos comunic\xE1ndonos con un servidor\
-  \ web para obtener, enviar o modificar datos."
+summary: Swift facilita el trabajo con solicitudes HTTP.
 title: Enviando una solicitud http
 weight: 44
 ---

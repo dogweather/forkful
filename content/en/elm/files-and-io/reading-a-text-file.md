@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 17:54:03.419339-07:00
-description: "Reading a text file is pulling content from a file that's structured\
-  \ as readable text, rather than binary data. Programmers read text files to access\u2026"
+description: "How to: Elm is mainly focused on front-end web development, wherein\
+  \ direct file system access is a no-go due to security reasons. Instead, you handle\
+  \ file\u2026"
 lastmod: '2024-03-13T22:45:00.026325-06:00'
 model: gpt-4-1106-preview
-summary: Reading a text file is pulling content from a file that's structured as readable
-  text, rather than binary data.
+summary: Elm is mainly focused on front-end web development, wherein direct file system
+  access is a no-go due to security reasons.
 title: Reading a text file
 weight: 22
 ---

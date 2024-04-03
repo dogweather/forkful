@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:16.752202-07:00
-description: "Logging no desenvolvimento de software \xE9 o processo de registrar\
-  \ informa\xE7\xF5es sobre a execu\xE7\xE3o de um programa, projetado para rastrear\
-  \ seu comportamento e\u2026"
+description: "Como Fazer: Em Go, o logging pode ser implementado usando o pacote da\
+  \ biblioteca padr\xE3o `log`. Este pacote fornece capacidades simples de logging,\
+  \ como\u2026"
 lastmod: '2024-03-13T22:44:46.067919-06:00'
 model: gpt-4-0125-preview
-summary: "Logging no desenvolvimento de software \xE9 o processo de registrar informa\xE7\
-  \xF5es sobre a execu\xE7\xE3o de um programa, projetado para rastrear seu comportamento\
-  \ e diagnosticar problemas."
+summary: "Em Go, o logging pode ser implementado usando o pacote da biblioteca padr\xE3\
+  o `log`."
 title: Registro de Logs
 weight: 17
 ---

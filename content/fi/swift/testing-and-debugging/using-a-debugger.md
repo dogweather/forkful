@@ -1,8 +1,7 @@
 ---
 date: 2024-01-26 04:10:45.257896-07:00
-description: "Xcode-debuggerin (Swiftin IDE) k\xE4ytt\xE4miseen voit asettaa keskeytyskohtia,\
-  \ tarkastaa muuttujia ja seurata lausekkeita. T\xE4ss\xE4 on esimerkki: ```Swift\
-  \ func\u2026"
+description: "Kuinka: Xcode-debuggerin (Swiftin IDE) k\xE4ytt\xE4miseen voit asettaa\
+  \ keskeytyskohtia, tarkastaa muuttujia ja seurata lausekkeita. T\xE4ss\xE4 on esimerkki."
 lastmod: '2024-03-13T22:44:56.911375-06:00'
 model: gpt-4-0125-preview
 summary: "Xcode-debuggerin (Swiftin IDE) k\xE4ytt\xE4miseen voit asettaa keskeytyskohtia,\

@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:42.188267-07:00
-description: "HTTP-pyynn\xF6n l\xE4hett\xE4minen Visual Basic for Applications (VBA)\
-  \ -ohjelmassa tarkoittaa web-resurssien tai -palveluiden ohjelmallista k\xE4ytt\xF6\
-  \xE4 tekem\xE4ll\xE4\u2026"
+description: "Kuinka: HTTP-pyynn\xF6n l\xE4hett\xE4misen avain VBA:ssa on `Microsoft\
+  \ XML, v6.0` -kirjaston (tai vanhempien versioiden, riippuen j\xE4rjestelm\xE4st\xE4\
+  si) k\xE4ytt\xF6.\u2026"
 lastmod: '2024-03-13T22:44:56.396996-06:00'
 model: gpt-4-0125-preview
-summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen Visual Basic for Applications (VBA) -ohjelmassa\
-  \ tarkoittaa web-resurssien tai -palveluiden ohjelmallista k\xE4ytt\xF6\xE4 tekem\xE4\
-  ll\xE4 pyynt\xF6j\xE4 HTTP:n yli."
+summary: "HTTP-pyynn\xF6n l\xE4hett\xE4misen avain VBA:ssa on `Microsoft XML, v6.0`\
+  \ -kirjaston (tai vanhempien versioiden, riippuen j\xE4rjestelm\xE4st\xE4si) k\xE4\
+  ytt\xF6."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---

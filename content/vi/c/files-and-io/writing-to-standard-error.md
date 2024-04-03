@@ -2,16 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:34.659571-07:00
-description: "Vi\u1EC7c ghi v\xE0o l\u1ED7i chu\u1EA9n trong C li\xEAn quan \u0111\
-  \u1EBFn vi\u1EC7c \u0111i\u1EC1u h\u01B0\u1EDBng c\xE1c th\xF4ng b\xE1o l\u1ED7\
-  i v\xE0 th\xF4ng tin ch\u1EA9n \u0111o\xE1n sang m\u1ED9t lu\u1ED3ng ri\xEAng bi\u1EC7\
-  t kh\u1ECFi \u0111\u1EA7u ra ch\xEDnh c\u1EE7a\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong C, lu\u1ED3ng `stderr` \u0111\u01B0\
+  \u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 vi\u1EBFt th\xF4ng b\xE1o l\u1ED7i. Kh\xF4\
+  ng gi\u1ED1ng nh\u01B0 vi\u1EBFt v\xE0o \u0111\u1EA7u ra chu\u1EA9n v\u1EDBi `printf`,\
+  \ vi\u1EBFt v\xE0o `stderr` c\xF3 th\u1EC3\u2026"
 lastmod: '2024-03-13T22:44:37.290193-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c ghi v\xE0o l\u1ED7i chu\u1EA9n trong C li\xEAn quan \u0111\u1EBF\
-  n vi\u1EC7c \u0111i\u1EC1u h\u01B0\u1EDBng c\xE1c th\xF4ng b\xE1o l\u1ED7i v\xE0\
-  \ th\xF4ng tin ch\u1EA9n \u0111o\xE1n sang m\u1ED9t lu\u1ED3ng ri\xEAng bi\u1EC7\
-  t kh\u1ECFi \u0111\u1EA7u ra ch\xEDnh c\u1EE7a ch\u01B0\u01A1ng tr\xECnh."
+summary: "Trong C, lu\u1ED3ng `stderr` \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\
+  \u1EC3 vi\u1EBFt th\xF4ng b\xE1o l\u1ED7i."
 title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---

@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:02.260111-07:00
-description: "Het parsen van HTML is het proces waarbij een string van HTML wordt\
-  \ ontleed en omgezet in een gegevensstructuur die je programma kan begrijpen en\u2026"
+description: 'Hoe doe je dat: Om HTML in Rust te parsen, wil je waarschijnlijk een
+  crate zoals `scraper` of `select` gebruiken. Hier is een snel voorbeeld met `scraper`.'
 lastmod: '2024-03-13T22:44:50.591948-06:00'
 model: gpt-4-0125-preview
-summary: Het parsen van HTML is het proces waarbij een string van HTML wordt ontleed
-  en omgezet in een gegevensstructuur die je programma kan begrijpen en manipuleren.
+summary: Om HTML in Rust te parsen, wil je waarschijnlijk een crate zoals `scraper`
+  of `select` gebruiken.
 title: HTML Parsen
 weight: 43
 ---

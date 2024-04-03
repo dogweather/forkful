@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:36.313872-07:00
-description: "Wysy\u0142anie \u017C\u0105dania HTTP polega na tworzeniu i wysy\u0142\
-  aniu \u017C\u0105dania do serwera WWW w celu pobrania lub przes\u0142ania danych.\
-  \ Programi\u015Bci robi\u0105 to w j\u0119zyku C, aby\u2026"
+description: "Jak to zrobi\u0107: Aby wys\u0142a\u0107 \u017C\u0105danie HTTP w j\u0119\
+  zyku C, zazwyczaj opierasz si\u0119 na bibliotekach takich jak libcurl, poniewa\u017C\
+  \ C nie ma wbudowanego wsparcia dla\u2026"
 lastmod: '2024-03-13T22:44:35.882977-06:00'
 model: gpt-4-0125-preview
-summary: "Wysy\u0142anie \u017C\u0105dania HTTP polega na tworzeniu i wysy\u0142aniu\
-  \ \u017C\u0105dania do serwera WWW w celu pobrania lub przes\u0142ania danych."
+summary: "Aby wys\u0142a\u0107 \u017C\u0105danie HTTP w j\u0119zyku C, zazwyczaj opierasz\
+  \ si\u0119 na bibliotekach takich jak libcurl, poniewa\u017C C nie ma wbudowanego\
+  \ wsparcia dla protoko\u0142\xF3w internetowych."
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---

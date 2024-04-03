@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 18:03:21.486767-07:00
-description: ''
+description: "\u0429\u043E \u0442\u0430 \u0427\u043E\u043C\u0443? Starting a new project\
+  \ in Elm is about laying the foundation. Developers do this to transform ideas into\
+  \ working software that's reliable and\u2026"
 lastmod: '2024-03-13T22:44:49.150731-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Starting a new project in Elm is about laying the foundation.
 title: "\u041F\u043E\u0447\u0438\u043D\u0430\u0454\u043C\u043E \u043D\u043E\u0432\u0438\
   \u0439 \u043F\u0440\u043E\u0435\u043A\u0442"
 weight: 1

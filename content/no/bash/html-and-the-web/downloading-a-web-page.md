@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:43:49.848592-07:00
-description: "Last ned en nettside betyr \xE5 hente HTML-innholdet fra en nettadresse.\
-  \ Programmerere gj\xF8r dette for \xE5 analysere innholdet, teste tilgjengelighet,\
-  \ eller\u2026"
+description: "How to: For \xE5 laste ned en nettside i Bash, kan du bruke `curl` eller\
+  \ `wget`. Her er en rask m\xE5te \xE5 gj\xF8re det p\xE5."
 lastmod: '2024-03-13T22:44:40.973280-06:00'
 model: gpt-4-1106-preview
-summary: "Last ned en nettside betyr \xE5 hente HTML-innholdet fra en nettadresse."
+summary: "For \xE5 laste ned en nettside i Bash, kan du bruke `curl` eller `wget`."
 title: Nedlasting av en nettside
 weight: 42
 ---

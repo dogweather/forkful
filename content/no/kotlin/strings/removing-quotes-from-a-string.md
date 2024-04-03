@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:40:37.499855-07:00
-description: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr \xE5 strippe bort eventuelle\
-  \ forekomster av anf\xF8rselstegn, enten enkle (' ') eller doble (\" \"), fra tekstdataene\u2026"
+description: "Hvordan: Her er en enkel m\xE5te \xE5 fjerne begge typer anf\xF8rselstegn\
+  \ fra en streng i Kotlin."
 lastmod: '2024-03-13T22:44:40.738219-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr \xE5 strippe bort eventuelle\
-  \ forekomster av anf\xF8rselstegn, enten enkle (' ') eller doble (\" \"), fra tekstdataene\
-  \ du jobber med."
+summary: "Her er en enkel m\xE5te \xE5 fjerne begge typer anf\xF8rselstegn fra en\
+  \ streng i Kotlin."
 title: "Fjerne anf\xF8rselstegn fra en streng"
 weight: 9
 ---

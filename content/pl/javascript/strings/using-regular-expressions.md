@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:27.387209-07:00
-description: "Wyra\u017Cenia regularne (regex) w JavaScript s\u0105 wzorcami u\u017C\
-  ywanymi do dopasowywania kombinacji znak\xF3w w ci\u0105gach tekstowych. Programi\u015B\
-  ci u\u017Cywaj\u0105 ich do\u2026"
+description: "Jak to zrobi\u0107: #."
 lastmod: '2024-03-13T22:44:35.786482-06:00'
 model: gpt-4-0125-preview
-summary: "Wyra\u017Cenia regularne (regex) w JavaScript s\u0105 wzorcami u\u017Cywanymi\
-  \ do dopasowywania kombinacji znak\xF3w w ci\u0105gach tekstowych."
+summary: '#.'
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---

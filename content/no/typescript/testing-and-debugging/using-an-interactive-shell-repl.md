@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:18:43.910401-07:00
-description: "En Les-Evaluer-Skriv-L\xF8kke (REPL) er et programmeringsmilj\xF8 som\
-  \ tar enkeltbrukerinput, utf\xF8rer dem og returnerer resultatet til brukeren. Programmerere\u2026"
+description: "Hvordan: TypeScript kommer ikke med sin egen REPL. La oss bruke `ts-node`,\
+  \ et TypeScript kj\xF8remilj\xF8 for Node.js som inkluderer en REPL. F\xF8rst, installer\u2026"
 lastmod: '2024-03-13T22:44:40.533803-06:00'
 model: gpt-4-0125-preview
-summary: "En Les-Evaluer-Skriv-L\xF8kke (REPL) er et programmeringsmilj\xF8 som tar\
-  \ enkeltbrukerinput, utf\xF8rer dem og returnerer resultatet til brukeren."
+summary: TypeScript kommer ikke med sin egen REPL.
 title: Bruke et interaktivt skall (REPL)
 weight: 34
 ---

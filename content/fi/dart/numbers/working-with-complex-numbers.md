@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:58:03.298655-07:00
-description: "Kompleksiluvut, jotka koostuvat reaalisesta ja imaginaarisesta osasta\
-  \ (yleens\xE4 merkitty a + bi), laajentavat ulottuvuudettomien lukujen k\xE4sitett\xE4\
-  \u2026"
+description: "Kuinka: Dart itsess\xE4\xE4n ei sis\xE4ll\xE4 valmista kirjastoa kompleksiluvuille,\
+  \ mik\xE4 edellytt\xE4\xE4 joko oman kompleksilukuluokan toteuttamista tai kolmannen\u2026"
 lastmod: '2024-03-13T22:44:56.264000-06:00'
 model: gpt-4-0125-preview
-summary: "Kompleksiluvut, jotka koostuvat reaalisesta ja imaginaarisesta osasta (yleens\xE4\
-  \ merkitty a + bi), laajentavat ulottuvuudettomien lukujen k\xE4sitett\xE4 kaksiulotteiseen\
-  \ avaruuteen."
+summary: "Dart itsess\xE4\xE4n ei sis\xE4ll\xE4 valmista kirjastoa kompleksiluvuille,\
+  \ mik\xE4 edellytt\xE4\xE4 joko oman kompleksilukuluokan toteuttamista tai kolmannen\
+  \ osapuolen kirjaston k\xE4ytt\xF6\xE4."
 title: "Ty\xF6skentely kompleksilukujen kanssa"
 weight: 14
 ---

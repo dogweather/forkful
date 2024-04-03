@@ -1,8 +1,8 @@
 ---
 date: 2024-01-26 03:49:16.521767-07:00
-description: "Elm nie posiada wbudowanego debugera w tradycyjnym sensie, w jaki ma\
-  \ to miejsce np. w JavaScript z narz\u0119dziami deweloperskimi przegl\u0105darki.\
-  \ Jednak\u017Ce\u2026"
+description: "Jak to zrobi\u0107: Elm nie posiada wbudowanego debugera w tradycyjnym\
+  \ sensie, w jaki ma to miejsce np. w JavaScript z narz\u0119dziami deweloperskimi\
+  \ przegl\u0105darki.\u2026"
 lastmod: '2024-03-13T22:44:35.326244-06:00'
 model: gpt-4-0125-preview
 summary: Elm nie posiada wbudowanego debugera w tradycyjnym sensie, w jaki ma to miejsce

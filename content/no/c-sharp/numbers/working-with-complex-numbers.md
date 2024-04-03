@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 04:38:19.282988-07:00
-description: "Komplekse tall utvider v\xE5rt tallsystem til \xE5 inkludere imagin\xE6\
-  re tall, noe som gj\xF8r det mulig \xE5 l\xF8se ligninger som ikke har reelle l\xF8\
-  sninger.\u2026"
+description: 'Hvordan: C# har en innebygd `System.Numerics.Complex` struktur for behandling
+  av komplekse tall. Her er en rask gjennomgang.'
 lastmod: '2024-03-13T22:44:40.789095-06:00'
 model: gpt-4-0125-preview
-summary: "Komplekse tall utvider v\xE5rt tallsystem til \xE5 inkludere imagin\xE6\
-  re tall, noe som gj\xF8r det mulig \xE5 l\xF8se ligninger som ikke har reelle l\xF8\
-  sninger."
+summary: C# har en innebygd `System.Numerics.Complex` struktur for behandling av komplekse
+  tall.
 title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---

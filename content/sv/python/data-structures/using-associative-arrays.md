@@ -2,14 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:27.711251-07:00
-description: "Associativa arrayer, k\xE4nda i Python som dictionaries, kopplar nycklar\
-  \ till v\xE4rden, vilket g\xF6r det enkelt att h\xE4mta, modifiera eller sp\xE5\
-  ra data med ett\u2026"
+description: "Hur man g\xF6r: Att skapa en dictionary i Python \xE4r rakt p\xE5 sak.\
+  \ Du omsluter nyckel-v\xE4rdepar i m\xE5svingar `{}`, med nycklar och v\xE4rden\
+  \ separerade av ett kolon."
 lastmod: '2024-03-13T22:44:37.476269-06:00'
 model: gpt-4-0125-preview
-summary: "Associativa arrayer, k\xE4nda i Python som dictionaries, kopplar nycklar\
-  \ till v\xE4rden, vilket g\xF6r det enkelt att h\xE4mta, modifiera eller sp\xE5\
-  ra data med ett unikt identifierare."
+summary: "Att skapa en dictionary i Python \xE4r rakt p\xE5 sak."
 title: "Att anv\xE4nda associativa arrayer"
 weight: 15
 ---

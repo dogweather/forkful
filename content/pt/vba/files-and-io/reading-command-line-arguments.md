@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:12.473652-07:00
-description: "Ler argumentos da linha de comando em Visual Basic para Aplica\xE7\xF5\
-  es (VBA) envolve acessar par\xE2metros passados ao seu programa durante a execu\xE7\
-  \xE3o. Esta\u2026"
+description: "Como fazer: Diferentemente de ambientes de programa\xE7\xE3o mais diretos,\
+  \ o VBA n\xE3o possui um recurso embutido para ler diretamente argumentos da linha\
+  \ de\u2026"
 lastmod: '2024-03-13T22:44:46.429053-06:00'
 model: gpt-4-0125-preview
-summary: "Ler argumentos da linha de comando em Visual Basic para Aplica\xE7\xF5es\
-  \ (VBA) envolve acessar par\xE2metros passados ao seu programa durante a execu\xE7\
-  \xE3o."
+summary: "Diferentemente de ambientes de programa\xE7\xE3o mais diretos, o VBA n\xE3\
+  o possui um recurso embutido para ler diretamente argumentos da linha de comando\
+  \ em um sentido convencional porque \xE9 projetado principalmente para ser incorporado\
+  \ nas aplica\xE7\xF5es do Microsoft Office."
 title: Lendo argumentos da linha de comando
 weight: 23
 ---

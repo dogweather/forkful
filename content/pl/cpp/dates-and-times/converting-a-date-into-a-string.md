@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:36:02.997106-07:00
-description: "Konwersja daty na ci\u0105g znak\xF3w (string) to proces przekszta\u0142\
-  cenia formatu daty na tekst, kt\xF3ry \u0142atwo przeczytamy lub wy\u015Bwietlimy.\
-  \ Programi\u015Bci robi\u0105 to, by\u2026"
+description: "Jak to zrobi\u0107: W C++ mamy kilka sposob\xF3w na przekszta\u0142\
+  cenie daty w string - najpro\u015Bciej u\u017Cy\u0107 biblioteki `<chrono>` i `<iomanip>`."
 lastmod: '2024-03-13T22:44:35.724343-06:00'
 model: gpt-4-1106-preview
-summary: "Konwersja daty na ci\u0105g znak\xF3w (string) to proces przekszta\u0142\
-  cenia formatu daty na tekst, kt\xF3ry \u0142atwo przeczytamy lub wy\u015Bwietlimy."
+summary: "W C++ mamy kilka sposob\xF3w na przekszta\u0142cenie daty w string - najpro\u015B\
+  ciej u\u017Cy\u0107 biblioteki `<chrono>` i `<iomanip>`."
 title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---

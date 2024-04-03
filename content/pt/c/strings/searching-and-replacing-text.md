@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:25.026823-07:00
-description: "Pesquisar e substituir texto em C envolve identificar substrings espec\xED\
-  ficas dentro de uma string maior e substitu\xED-las por diferentes substrings.\u2026"
+description: "Como fazer: C n\xE3o vem com fun\xE7\xF5es embutidas para realizar pesquisa\
+  \ e substitui\xE7\xE3o direta em strings. Contudo, voc\xEA pode alcan\xE7ar isso\
+  \ combinando v\xE1rias\u2026"
 lastmod: '2024-03-13T22:44:47.033249-06:00'
 model: gpt-4-0125-preview
-summary: "Pesquisar e substituir texto em C envolve identificar substrings espec\xED\
-  ficas dentro de uma string maior e substitu\xED-las por diferentes substrings."
+summary: "C n\xE3o vem com fun\xE7\xF5es embutidas para realizar pesquisa e substitui\xE7\
+  \xE3o direta em strings."
 title: Pesquisando e substituindo texto
 weight: 10
 ---

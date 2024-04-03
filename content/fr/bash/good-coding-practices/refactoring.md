@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 01:16:29.756507-07:00
-description: "Le refactoring est le processus de restructuration du code informatique\
-  \ existant sans en changer le comportement externe. C'est une pratique essentielle\u2026"
+description: "Comment faire : Consid\xE9rons un script Bash simple qui n\xE9cessite\
+  \ un peu de refactoring. Il est maladroit, avec du code r\xE9p\xE9t\xE9 et il est\
+  \ difficile \xE0 suivre ."
 lastmod: '2024-03-13T22:44:58.006409-06:00'
 model: gpt-4-0125-preview
-summary: Le refactoring est le processus de restructuration du code informatique existant
-  sans en changer le comportement externe.
+summary: "Consid\xE9rons un script Bash simple qui n\xE9cessite un peu de refactoring."
 title: Refactoring
 weight: 19
 ---

@@ -1,12 +1,13 @@
 ---
 date: 2024-01-27 20:33:54.928487-07:00
-description: "La g\xE9n\xE9ration de nombres al\xE9atoires consiste \xE0 produire\
-  \ des s\xE9quences ou des valeurs uniques impr\xE9visibles dans une plage d\xE9\
-  finie. Les programmeurs\u2026"
+description: "Comment faire : En Java, la g\xE9n\xE9ration de nombres al\xE9atoires\
+  \ peut \xEAtre r\xE9alis\xE9e \xE0 l'aide de la classe `Random` du package `java.util`,\
+  \ ou des classes\u2026"
 lastmod: '2024-03-13T22:44:57.634543-06:00'
 model: gpt-4-0125-preview
-summary: "La g\xE9n\xE9ration de nombres al\xE9atoires consiste \xE0 produire des\
-  \ s\xE9quences ou des valeurs uniques impr\xE9visibles dans une plage d\xE9finie."
+summary: "En Java, la g\xE9n\xE9ration de nombres al\xE9atoires peut \xEAtre r\xE9\
+  alis\xE9e \xE0 l'aide de la classe `Random` du package `java.util`, ou des classes\
+  \ `ThreadLocalRandom` et `SecureRandom` pour des cas d'utilisation sp\xE9cifiques."
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---

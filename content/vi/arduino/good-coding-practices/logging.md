@@ -2,15 +2,17 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:32.107661-07:00
-description: "\"Ghi ch\xE9p\" l\xE0 vi\u1EC7c l\u01B0u l\u1EA1i c\xE1c s\u1EF1 ki\u1EC7\
-  n, giao d\u1ECBch, ho\u1EB7c ho\u1EA1t \u0111\u1ED9ng x\u1EA3y ra theo th\u1EDD\
-  i gian trong m\u1ED9t h\u1EC7 th\u1ED1ng. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5\
-  ng n\xF3 \u0111\u1EC3 g\u1EE1 l\u1ED7i, gi\xE1m s\xE1t\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Arduino kh\xF4ng \u0111i k\xE8m v\u1EDB\
+  i m\u1ED9t th\u01B0 vi\u1EC7n ghi ch\xE9p s\u1EB5n c\xF3 nh\u01B0 m\u1ED9t s\u1ED1\
+  \ m\xF4i tr\u01B0\u1EDDng kh\xE1c, nh\u01B0ng b\u1EA1n c\xF3 th\u1EC3 th\u1EF1c\
+  \ hi\u1EC7n vi\u1EC7c ghi ch\xE9p c\u01A1 b\u1EA3n v\xE0o b\u1EA3ng\u2026"
 lastmod: '2024-03-13T22:44:36.997358-06:00'
 model: gpt-4-0125-preview
-summary: "\"Ghi ch\xE9p\" l\xE0 vi\u1EC7c l\u01B0u l\u1EA1i c\xE1c s\u1EF1 ki\u1EC7\
-  n, giao d\u1ECBch, ho\u1EB7c ho\u1EA1t \u0111\u1ED9ng x\u1EA3y ra theo th\u1EDD\
-  i gian trong m\u1ED9t h\u1EC7 th\u1ED1ng."
+summary: "Arduino kh\xF4ng \u0111i k\xE8m v\u1EDBi m\u1ED9t th\u01B0 vi\u1EC7n ghi\
+  \ ch\xE9p s\u1EB5n c\xF3 nh\u01B0 m\u1ED9t s\u1ED1 m\xF4i tr\u01B0\u1EDDng kh\xE1\
+  c, nh\u01B0ng b\u1EA1n c\xF3 th\u1EC3 th\u1EF1c hi\u1EC7n vi\u1EC7c ghi ch\xE9p\
+  \ c\u01A1 b\u1EA3n v\xE0o b\u1EA3ng \u0111i\u1EC1u khi\u1EC3n Serial v\u1EDBi r\u1EA5\
+  t \xEDt r\u1EAFc r\u1ED1i."
 title: Ghi log
 weight: 17
 ---

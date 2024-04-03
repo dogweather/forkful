@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:35.493084-07:00
-description: "YAML, abreviatura de YAML Ain't Markup Language (YAML No es un Lenguaje\
-  \ de Marcado), es un formato de serializaci\xF3n de datos legible por humanos. Los\u2026"
+description: "C\xF3mo hacerlo: En JavaScript, trabajar con YAML implica t\xEDpicamente\
+  \ el uso de una biblioteca de terceros, ya que el lenguaje no incluye un analizador\u2026"
 lastmod: '2024-03-13T22:44:59.478742-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, abreviatura de YAML Ain't Markup Language (YAML No es un Lenguaje\
-  \ de Marcado), es un formato de serializaci\xF3n de datos legible por humanos."
+summary: "En JavaScript, trabajar con YAML implica t\xEDpicamente el uso de una biblioteca\
+  \ de terceros, ya que el lenguaje no incluye un analizador integrado para YAML."
 title: Trabajando con YAML
 weight: 41
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:11.461639-07:00
-description: "La recherche et le remplacement de texte en C consiste \xE0 identifier\
-  \ des sous-cha\xEEnes sp\xE9cifiques au sein d'une cha\xEEne plus grande et \xE0\
-  \ les substituer par\u2026"
+description: "Comment faire : C ne dispose pas de fonctions int\xE9gr\xE9es pour effectuer\
+  \ directement la recherche et le remplacement sur des cha\xEEnes. Cependant, vous\
+  \ pouvez\u2026"
 lastmod: '2024-03-13T22:44:58.354373-06:00'
 model: gpt-4-0125-preview
-summary: "La recherche et le remplacement de texte en C consiste \xE0 identifier des\
-  \ sous-cha\xEEnes sp\xE9cifiques au sein d'une cha\xEEne plus grande et \xE0 les\
-  \ substituer par diff\xE9rentes sous-cha\xEEnes."
+summary: "C ne dispose pas de fonctions int\xE9gr\xE9es pour effectuer directement\
+  \ la recherche et le remplacement sur des cha\xEEnes."
 title: Rechercher et remplacer du texte
 weight: 10
 ---

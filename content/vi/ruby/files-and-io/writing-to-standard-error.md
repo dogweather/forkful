@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:14:06.452399-07:00
-description: "L\u1ED7i chu\u1EA9n (`stderr`) l\xE0 m\u1ED9t lu\u1ED3ng t\xE1ch bi\u1EC7\
-  t kh\u1ECFi \u0111\u1EA7u ra chu\u1EA9n (`stdout`) \u0111\u01B0\u1EE3c s\u1EED d\u1EE5\
-  ng ch\u1EE7 y\u1EBFu \u0111\u1EC3 xu\u1EA5t th\xF4ng b\xE1o l\u1ED7i ho\u1EB7c ch\u1EA9\
-  n \u0111o\xE1n. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Ruby, b\u1EA1n c\xF3 th\u1EC3 ghi v\xE0\
+  o l\u1ED7i chu\u1EA9n s\u1EED d\u1EE5ng `$stderr.puts` ho\u1EB7c phi\xEAn b\u1EA3\
+  n vi\u1EBFt t\u1EAFt `STDERR.puts`. D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t v\xED\
+  \ d\u1EE5 nhanh."
 lastmod: '2024-03-13T22:44:37.363026-06:00'
 model: gpt-4-0125-preview
-summary: "L\u1ED7i chu\u1EA9n (`stderr`) l\xE0 m\u1ED9t lu\u1ED3ng t\xE1ch bi\u1EC7\
-  t kh\u1ECFi \u0111\u1EA7u ra chu\u1EA9n (`stdout`) \u0111\u01B0\u1EE3c s\u1EED d\u1EE5\
-  ng ch\u1EE7 y\u1EBFu \u0111\u1EC3 xu\u1EA5t th\xF4ng b\xE1o l\u1ED7i ho\u1EB7c ch\u1EA9\
-  n \u0111o\xE1n."
+summary: "Trong Ruby, b\u1EA1n c\xF3 th\u1EC3 ghi v\xE0o l\u1ED7i chu\u1EA9n s\u1EED\
+  \ d\u1EE5ng `$stderr.puts` ho\u1EB7c phi\xEAn b\u1EA3n vi\u1EBFt t\u1EAFt `STDERR.puts`."
 title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---

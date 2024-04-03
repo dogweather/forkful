@@ -2,14 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:41.383444-07:00
-description: "TOML, vi\u1EBFt t\u1EAFt c\u1EE7a Tom's Obvious, Minimal Language, \u0111\
-  \u1ECBnh ngh\u0129a c\xE1ch c\u1EA5u tr\xFAc c\xE1c t\u1EC7p c\u1EA5u h\xECnh. L\u1EAD\
-  p tr\xECnh vi\xEAn s\u1EED d\u1EE5ng TOML b\u1EDFi v\xEC n\xF3 d\u1EC5 \u0111\u1ECD\
-  c, d\u1EC5 vi\u1EBFt v\xE0\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: \u0110\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi\
+  \ TOML trong JavaScript, b\u1EA1n s\u1EBD c\u1EA7n m\u1ED9t b\u1ED9 ph\xE2n t\xED\
+  ch c\xFA ph\xE1p nh\u01B0 `@iarna/toml`. \u0110\u1EA7u ti\xEAn, c\xE0i \u0111\u1EB7\
+  t n\xF3: `npm install\u2026"
 lastmod: '2024-03-13T22:44:37.183368-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, vi\u1EBFt t\u1EAFt c\u1EE7a Tom's Obvious, Minimal Language, \u0111\
-  \u1ECBnh ngh\u0129a c\xE1ch c\u1EA5u tr\xFAc c\xE1c t\u1EC7p c\u1EA5u h\xECnh."
+summary: "\u0110\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi TOML trong JavaScript, b\u1EA1n s\u1EBD\
+  \ c\u1EA7n m\u1ED9t b\u1ED9 ph\xE2n t\xEDch c\xFA ph\xE1p nh\u01B0 `@iarna/toml`."
 title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 weight: 39
 ---

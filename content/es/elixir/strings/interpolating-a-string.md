@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:50:51.573034-07:00
-description: "La interpolaci\xF3n de cadenas en programaci\xF3n implica insertar din\xE1\
-  micamente valores dentro de una cadena de texto. Los programadores la utilizan para\u2026"
+description: "C\xF3mo hacerlo: ."
 lastmod: '2024-03-13T22:44:58.687534-06:00'
 model: gpt-4-1106-preview
-summary: "La interpolaci\xF3n de cadenas en programaci\xF3n implica insertar din\xE1\
-  micamente valores dentro de una cadena de texto."
+summary: .
 title: "Interpolaci\xF3n de cadenas de texto"
 weight: 8
 ---

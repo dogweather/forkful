@@ -2,13 +2,14 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:35.996567-07:00
-description: "Wyodr\u0119bnianie podci\u0105g\xF3w dotyczy pozyskiwania okre\u015B\
-  lonych cz\u0119\u015Bci ci\u0105gu na podstawie ich pozycji lub wzorc\xF3w. Programi\u015B\
-  ci robi\u0105 to w celu zada\u0144 takich jak\u2026"
+description: "Jak to zrobi\u0107: W Dart mo\u017Cna u\u017Cywa\u0107 r\xF3\u017Cnych\
+  \ metod do wyodr\u0119bniania podci\u0105g\xF3w, takich jak `substring()`, `split()`,\
+  \ i wyra\u017Cenia regularne. Ka\u017Cda metoda\u2026"
 lastmod: '2024-03-13T22:44:35.078291-06:00'
 model: gpt-4-0125-preview
-summary: "Wyodr\u0119bnianie podci\u0105g\xF3w dotyczy pozyskiwania okre\u015Blonych\
-  \ cz\u0119\u015Bci ci\u0105gu na podstawie ich pozycji lub wzorc\xF3w."
+summary: "W Dart mo\u017Cna u\u017Cywa\u0107 r\xF3\u017Cnych metod do wyodr\u0119\
+  bniania podci\u0105g\xF3w, takich jak `substring()`, `split()`, i wyra\u017Cenia\
+  \ regularne."
 title: "Wydobywanie podci\u0105g\xF3w"
 weight: 6
 ---

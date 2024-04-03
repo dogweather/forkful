@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:44.363836-07:00
-description: "En el contexto de la programaci\xF3n en Arduino, comprobar si un directorio\
-  \ existe en una tarjeta SD o m\xF3dulo de almacenamiento similar te permite leer\
-  \ o\u2026"
+description: "C\xF3mo hacerlo: Arduino no soporta nativamente operaciones complejas\
+  \ del sistema de archivos directamente. Sin embargo, con el uso de la biblioteca\
+  \ SD, que\u2026"
 lastmod: '2024-03-13T22:44:59.347885-06:00'
 model: gpt-4-0125-preview
-summary: "En el contexto de la programaci\xF3n en Arduino, comprobar si un directorio\
-  \ existe en una tarjeta SD o m\xF3dulo de almacenamiento similar te permite leer\
-  \ o escribir archivos sin errores."
+summary: Arduino no soporta nativamente operaciones complejas del sistema de archivos
+  directamente.
 title: Comprobando si un directorio existe
 weight: 20
 ---

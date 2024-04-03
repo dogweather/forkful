@@ -1,11 +1,10 @@
 ---
 date: 2024-01-25 03:39:28.278121-07:00
-description: "TOML, short for Tom's Obvious, Minimal Language, is a data serialization\
-  \ format. Programmers dig it for its simplicity and readability; it's primo for\u2026"
+description: 'How to: First up, install `toml-cli` to play with TOML in Bash. Handy
+  for reading or editing TOML files on the fly.'
 lastmod: '2024-03-13T22:45:00.265119-06:00'
 model: gpt-4-1106-preview
-summary: TOML, short for Tom's Obvious, Minimal Language, is a data serialization
-  format.
+summary: First up, install `toml-cli` to play with TOML in Bash.
 title: Working with TOML
 weight: 39
 ---

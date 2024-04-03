@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 18:03:22.413063-07:00
-description: "Commencer un nouveau projet, c'est cr\xE9er une structure de base pour\
-  \ d\xE9velopper une application. Les programmeurs font \xE7a pour organiser le code,\
-  \ g\xE9rer les\u2026"
+description: "Comment faire : Pour initialiser un nouveau projet Clojure, on utilise\
+  \ Leiningen ou Clojure CLI-tools. Voici la marche \xE0 suivre avec Leiningen ."
 lastmod: '2024-03-13T22:44:57.282950-06:00'
 model: gpt-4-1106-preview
-summary: "Commencer un nouveau projet, c'est cr\xE9er une structure de base pour d\xE9\
-  velopper une application."
+summary: Pour initialiser un nouveau projet Clojure, on utilise Leiningen ou Clojure
+  CLI-tools.
 title: Lancement d'un nouveau projet
 weight: 1
 ---

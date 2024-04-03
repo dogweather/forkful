@@ -1,11 +1,10 @@
 ---
 date: 2024-01-25 02:59:57.763595-07:00
-description: "Rounding numbers is tweaking a decimal to its nearest whole value or\
-  \ to a specified number of fractional digits. Programmers round to reduce complexity,\u2026"
+description: 'How to: Elm''s `Basics` module provides nifty functions for rounding:
+  `round`, `floor`, and `ceiling`. Here''s how to use them.'
 lastmod: '2024-03-13T22:45:00.004668-06:00'
 model: gpt-4-1106-preview
-summary: Rounding numbers is tweaking a decimal to its nearest whole value or to a
-  specified number of fractional digits.
+summary: Elm's `Basics` module provides nifty functions for rounding.
 title: Rounding numbers
 weight: 13
 ---

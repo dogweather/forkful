@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:20.886291-07:00
-description: "Foutafhandeling in Visual Basic for Applications (VBA) verwijst naar\
-  \ het proces van anticiperen, detecteren en oplossen van programmeer-, applicatie-\
-  \ of\u2026"
+description: "Hoe: In VBA wordt foutafhandeling typisch ge\xEFmplementeerd met behulp\
+  \ van de `On Error`-instructie die VBA vertelt hoe verder te gaan wanneer er een\
+  \ fout\u2026"
 lastmod: '2024-03-13T22:44:50.644479-06:00'
 model: gpt-4-0125-preview
-summary: Foutafhandeling in Visual Basic for Applications (VBA) verwijst naar het
-  proces van anticiperen, detecteren en oplossen van programmeer-, applicatie- of
-  communicatiefouten.
+summary: "In VBA wordt foutafhandeling typisch ge\xEFmplementeerd met behulp van de\
+  \ `On Error`-instructie die VBA vertelt hoe verder te gaan wanneer er een fout optreedt."
 title: Fouten afhandelen
 weight: 16
 ---

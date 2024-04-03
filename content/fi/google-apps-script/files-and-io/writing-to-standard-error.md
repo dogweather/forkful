@@ -2,13 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:09:04.414550-07:00
-description: "Standardivirheen (stderr) kirjoittaminen ohjelmointikieliss\xE4 tarkoittaa\
-  \ virheilmoitusten ja diagnostiikkojen ohjaamista erilliseen virtaan, pois\u2026"
+description: "Kuinka: Google Apps Script, ollessaan kevyiden sovellusten kehitykseen\
+  \ tarkoitettu skriptikieli Google Apps -alustalle, ei tarjoa suoraa sis\xE4\xE4\
+  nrakennettua\u2026"
 lastmod: '2024-03-13T22:44:56.116242-06:00'
 model: gpt-4-0125-preview
-summary: "Standardivirheen (stderr) kirjoittaminen ohjelmointikieliss\xE4 tarkoittaa\
-  \ virheilmoitusten ja diagnostiikkojen ohjaamista erilliseen virtaan, pois standarditulosteesta\
-  \ (stdout)."
+summary: "Google Apps Script, ollessaan kevyiden sovellusten kehitykseen tarkoitettu\
+  \ skriptikieli Google Apps -alustalle, ei tarjoa suoraa sis\xE4\xE4nrakennettua\
+  \ funktiota, kuten `console.error()` virheiden kirjoittamiseen stderr:iin, kuten\
+  \ saatat l\xF6yt\xE4\xE4 Node.js:st\xE4 tai Pythonista."
 title: Kirjoittaminen vakiovirheeseen
 weight: 25
 ---

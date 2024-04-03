@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:53:07.984803-07:00
-description: "PHP-koodauksessa debug-tulostus auttaa l\xF6yt\xE4m\xE4\xE4n ja ymm\xE4\
-  rt\xE4m\xE4\xE4n ongelmia. Koodarit k\xE4ytt\xE4v\xE4t sit\xE4, koska n\xE4kee suoraan,\
-  \ mit\xE4 koodi tekee (tai ei tee)."
+description: "How to: - Kuinka: Debug-tulostusta voi tehd\xE4 `echo` ja `print_r`\
+  \ avulla. T\xE4ss\xE4 pari esimerkki\xE4."
 lastmod: '2024-03-13T22:44:56.658469-06:00'
 model: gpt-4-1106-preview
-summary: "PHP-koodauksessa debug-tulostus auttaa l\xF6yt\xE4m\xE4\xE4n ja ymm\xE4\
-  rt\xE4m\xE4\xE4n ongelmia."
+summary: "Debug-tulostusta voi tehd\xE4 `echo` ja `print_r` avulla."
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---

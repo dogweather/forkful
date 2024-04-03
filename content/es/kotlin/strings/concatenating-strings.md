@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:35:08.322731-07:00
-description: "La concatenaci\xF3n de cadenas es unir dos o m\xE1s strings para formar\
-  \ uno nuevo. Los programadores la usan para construir mensajes, combinar datos y\
-  \ generar\u2026"
+description: "C\xF3mo Hacerlo: Concatenar con el operador `+`."
 lastmod: '2024-03-13T22:44:59.027772-06:00'
 model: gpt-4-1106-preview
-summary: "La concatenaci\xF3n de cadenas es unir dos o m\xE1s strings para formar\
-  \ uno nuevo."
+summary: Concatenar con el operador `+`.
 title: "Concatenaci\xF3n de cadenas de texto"
 weight: 3
 ---

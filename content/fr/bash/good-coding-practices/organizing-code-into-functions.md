@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 01:09:02.789254-07:00
-description: "Diviser le code en fonctions signifie d\xE9composer les scripts en blocs\
-  \ plus petits, r\xE9utilisables, qui r\xE9alisent des t\xE2ches sp\xE9cifiques.\
-  \ Cela rend le code\u2026"
+description: "Comment faire : Cr\xE9ez une fonction simple en Bash ."
 lastmod: '2024-03-13T22:44:58.002644-06:00'
 model: gpt-4-1106-preview
-summary: "Diviser le code en fonctions signifie d\xE9composer les scripts en blocs\
-  \ plus petits, r\xE9utilisables, qui r\xE9alisent des t\xE2ches sp\xE9cifiques."
+summary: "Cr\xE9ez une fonction simple en Bash."
 title: Organisation du code en fonctions
 weight: 18
 ---

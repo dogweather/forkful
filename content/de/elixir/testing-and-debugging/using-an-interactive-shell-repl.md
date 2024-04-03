@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:12:55.634469-07:00
-description: "Eine interaktive Shell oder REPL (Read-Eval-Print Loop) erm\xF6glicht\
-  \ es Ihnen, Code-Schnipsel in Echtzeit auszuprobieren. Elixir-Programmierer nutzen\
-  \ die\u2026"
+description: "Wie geht das: Um IEx zu starten, \xF6ffnen Sie Ihr Terminal und geben\
+  \ Sie `iex` ein. Hier ist ein Vorgeschmack."
 lastmod: '2024-03-13T22:44:53.534738-06:00'
 model: gpt-4-0125-preview
-summary: "Eine interaktive Shell oder REPL (Read-Eval-Print Loop) erm\xF6glicht es\
-  \ Ihnen, Code-Schnipsel in Echtzeit auszuprobieren."
+summary: "Um IEx zu starten, \xF6ffnen Sie Ihr Terminal und geben Sie `iex` ein."
 title: Nutzung einer interaktiven Shell (REPL)
 weight: 34
 ---

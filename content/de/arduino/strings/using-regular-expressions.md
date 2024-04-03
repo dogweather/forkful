@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:57.859873-07:00
-description: "Regul\xE4re Ausdr\xFCcke (regex) sind Zeichenfolgen, die Suchmuster\
-  \ definieren, die haupts\xE4chlich f\xFCr die Zeichenkettenabgleichung und -manipulation\
-  \ verwendet\u2026"
+description: "Wie: Arduino hat keine eingebaute Unterst\xFCtzung f\xFCr regex direkt\
+  \ in seiner Standardbibliothek. Sie k\xF6nnen jedoch regex-\xE4hnliche Funktionalit\xE4\
+  ten f\xFCr\u2026"
 lastmod: '2024-03-13T22:44:54.135114-06:00'
 model: gpt-4-0125-preview
-summary: "Regul\xE4re Ausdr\xFCcke (regex) sind Zeichenfolgen, die Suchmuster definieren,\
-  \ die haupts\xE4chlich f\xFCr die Zeichenkettenabgleichung und -manipulation verwendet\
-  \ werden."
+summary: "Arduino hat keine eingebaute Unterst\xFCtzung f\xFCr regex direkt in seiner\
+  \ Standardbibliothek."
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

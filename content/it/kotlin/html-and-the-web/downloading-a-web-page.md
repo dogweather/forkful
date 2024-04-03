@@ -1,10 +1,11 @@
 ---
 date: 2024-01-20 17:44:27.188031-07:00
-description: "Scaricare una pagina web significa prelevare il suo contenuto via Internet.\
-  \ I programmatori lo fanno per accedere ai dati, analizzarli o monitorare\u2026"
+description: 'Come si fa: Utilizziamo `URL` e `HttpURLConnection` di Kotlin per scaricare
+  il contenuto di una pagina web.'
 lastmod: '2024-03-13T22:44:43.390108-06:00'
 model: gpt-4-1106-preview
-summary: Scaricare una pagina web significa prelevare il suo contenuto via Internet.
+summary: Utilizziamo `URL` e `HttpURLConnection` di Kotlin per scaricare il contenuto
+  di una pagina web.
 title: Scaricare una pagina web
 weight: 42
 ---

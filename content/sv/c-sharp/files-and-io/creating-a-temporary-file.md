@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:40:33.541058-07:00
-description: "Skapa en tempor\xE4r fil \xE4r som att hugga ut en tillf\xE4llig hylla\
-  \ i det digitala utrymmet att st\xE4lla saker p\xE5 medan du h\xE5ller p\xE5 med\
-  \ dem. Programmerare g\xF6r\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:37.932787-06:00'
 model: gpt-4-1106-preview
-summary: "Skapa en tempor\xE4r fil \xE4r som att hugga ut en tillf\xE4llig hylla i\
-  \ det digitala utrymmet att st\xE4lla saker p\xE5 medan du h\xE5ller p\xE5 med dem."
+summary: .
 title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---

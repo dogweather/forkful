@@ -2,13 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:43.361993-07:00
-description: "Fouten afhandelen in Dart gaat over het anticiperen op en beheren van\
-  \ uitzonderingen die ontstaan tijdens de uitvoering van het programma om de\u2026"
+description: "Hoe doe je dat: Dart ondersteunt twee soorten fouten: *compileertijd*\
+  \ fouten en *looptijd* fouten. Compileertijd fouten worden gedetecteerd door de\
+  \ Dart-\u2026"
 lastmod: '2024-03-13T22:44:50.513261-06:00'
 model: gpt-4-0125-preview
-summary: Fouten afhandelen in Dart gaat over het anticiperen op en beheren van uitzonderingen
-  die ontstaan tijdens de uitvoering van het programma om de betrouwbaarheid en bruikbaarheid
-  te verbeteren.
+summary: Dart ondersteunt twee soorten fouten.
 title: Fouten afhandelen
 weight: 16
 ---

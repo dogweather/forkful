@@ -1,10 +1,11 @@
 ---
 date: 2024-01-25 02:59:49.632324-07:00
-description: "Complex numbers have a real part and an imaginary part (like `3 + 4i`).\
-  \ They're used in engineering, physics, and certain computing problems. Programmers\u2026"
+description: 'How to: Elixir doesn''t have built-in complex numbers, so we roll our
+  own or use a library, like `ComplexNum`. Here''s a quick example with a lib.'
 lastmod: '2024-03-13T22:44:59.777206-06:00'
 model: gpt-4-1106-preview
-summary: Complex numbers have a real part and an imaginary part (like `3 + 4i`).
+summary: Elixir doesn't have built-in complex numbers, so we roll our own or use a
+  library, like `ComplexNum`.
 title: Working with complex numbers
 weight: 14
 ---

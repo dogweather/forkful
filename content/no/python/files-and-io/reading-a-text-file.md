@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:54:56.129483-07:00
-description: "\xC5 lese en tekstfil i Python betyr \xE5 hente tekstdata fra en fil\
-  \ p\xE5 disken din. Programmerere gj\xF8r dette for \xE5 manipulere data, hente\
-  \ innstillinger, eller\u2026"
+description: "Slik gj\xF8r du: For \xE5 lese en enkel tekstfil, bruk `open()` funksjonen\
+  \ sammen med `read()` metoden."
 lastmod: '2024-03-13T22:44:40.378386-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 lese en tekstfil i Python betyr \xE5 hente tekstdata fra en fil p\xE5\
-  \ disken din."
+summary: "For \xE5 lese en enkel tekstfil, bruk `open()` funksjonen sammen med `read()`\
+  \ metoden."
 title: Lese en tekstfil
 weight: 22
 ---

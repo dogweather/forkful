@@ -2,13 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:06.660482-07:00
-description: "Trabajar con archivos CSV (Valores Separados por Comas) implica analizar\
-  \ y generar archivos de texto donde cada l\xEDnea mantiene valores separados por\u2026"
+description: "C\xF3mo hacerlo: Para manejar archivos CSV en Dart, generalmente se\
+  \ procesa el texto manualmente o se utilizan bibliotecas de terceros para simplificar\
+  \ la\u2026"
 lastmod: '2024-03-13T22:44:58.778691-06:00'
 model: gpt-4-0125-preview
-summary: "Trabajar con archivos CSV (Valores Separados por Comas) implica analizar\
-  \ y generar archivos de texto donde cada l\xEDnea mantiene valores separados por\
-  \ comas."
+summary: Para manejar archivos CSV en Dart, generalmente se procesa el texto manualmente
+  o se utilizan bibliotecas de terceros para simplificar la tarea.
 title: Trabajando con CSV
 weight: 37
 ---

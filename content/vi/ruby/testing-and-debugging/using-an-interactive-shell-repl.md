@@ -2,15 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:22.020106-07:00
-description: "M\u1ED9t shell t\u01B0\u01A1ng t\xE1c, hay REPL (Read-Eval-Print Loop),\
-  \ cho ph\xE9p b\u1EA1n th\u1EED nghi\u1EC7m m\xE3 l\u1EC7nh theo th\u1EDDi gian\
-  \ th\u1EF1c. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3 \u0111\u1EC3\
-  \ th\xED nghi\u1EC7m, g\u1EE1\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: REPL c\u1EE7a Ruby \u0111\u01B0\u1EE3c g\u1ECD\
+  i l\xE0 IRB (Interactive Ruby). H\xE3y nh\u1EA3y v\xE0o v\xE0 th\u1EED Ruby ngay\
+  \ t\u1EEB terminal c\u1EE7a b\u1EA1n."
 lastmod: '2024-03-13T22:44:37.342821-06:00'
 model: gpt-4-0125-preview
-summary: "M\u1ED9t shell t\u01B0\u01A1ng t\xE1c, hay REPL (Read-Eval-Print Loop),\
-  \ cho ph\xE9p b\u1EA1n th\u1EED nghi\u1EC7m m\xE3 l\u1EC7nh theo th\u1EDDi gian\
-  \ th\u1EF1c."
+summary: "REPL c\u1EE7a Ruby \u0111\u01B0\u1EE3c g\u1ECDi l\xE0 IRB (Interactive Ruby)."
 title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 weight: 34
 ---

@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:41:49.084601-07:00
-description: "Les nombres complexes \xE9tendent la ligne des nombres r\xE9els par\
-  \ l'ajout d'une unit\xE9 imaginaire, `i`, o\xF9 `i^2 = -1`. Ils sont cruciaux dans\
-  \ des domaines\u2026"
+description: "Comment faire : Java n'a pas de support int\xE9gr\xE9 pour les nombres\
+  \ complexes, mais nous pouvons cr\xE9er notre propre classe ou utiliser une biblioth\xE8\
+  que.\u2026"
 lastmod: '2024-03-13T22:44:57.632442-06:00'
 model: gpt-4-0125-preview
-summary: "Les nombres complexes \xE9tendent la ligne des nombres r\xE9els par l'ajout\
-  \ d'une unit\xE9 imaginaire, `i`, o\xF9 `i^2 = -1`."
+summary: "Java n'a pas de support int\xE9gr\xE9 pour les nombres complexes, mais nous\
+  \ pouvons cr\xE9er notre propre classe ou utiliser une biblioth\xE8que."
 title: Manipulation des nombres complexes
 weight: 14
 ---

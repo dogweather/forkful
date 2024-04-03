@@ -1,8 +1,8 @@
 ---
 date: 2024-01-26 03:49:36.220852-07:00
-description: "Fish nie ma wbudowanego debugera, tak jak niekt\xF3re inne shelle, ale\
-  \ mo\u017Cna u\u017Cywa\u0107 zewn\u0119trznych narz\u0119dzi takich jak `gdb` do\
-  \ debugowania skompilowanych\u2026"
+description: "Jak to zrobi\u0107: Fish nie ma wbudowanego debugera, tak jak niekt\xF3\
+  re inne shelle, ale mo\u017Cna u\u017Cywa\u0107 zewn\u0119trznych narz\u0119dzi\
+  \ takich jak `gdb` do debugowania\u2026"
 lastmod: '2024-03-13T22:44:35.845993-06:00'
 model: gpt-4-0125-preview
 summary: "Fish nie ma wbudowanego debugera, tak jak niekt\xF3re inne shelle, ale mo\u017C\

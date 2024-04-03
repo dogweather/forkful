@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:23.486510-07:00
-description: "Imprimir la salida de depuraci\xF3n en Visual Basic para Aplicaciones\
-  \ (VBA) implica colocar estrat\xE9gicamente instrucciones de impresi\xF3n dentro\
-  \ de su c\xF3digo\u2026"
+description: "C\xF3mo: En VBA, la instrucci\xF3n `Debug.Print` es la principal herramienta\
+  \ para imprimir informaci\xF3n de depuraci\xF3n en la Ventana Inmediata del Editor\
+  \ de\u2026"
 lastmod: '2024-03-13T22:44:58.896112-06:00'
 model: gpt-4-0125-preview
-summary: "Imprimir la salida de depuraci\xF3n en Visual Basic para Aplicaciones (VBA)\
-  \ implica colocar estrat\xE9gicamente instrucciones de impresi\xF3n dentro de su\
-  \ c\xF3digo para mostrar valores de variables, el flujo de ejecuci\xF3n o mensajes\
-  \ de depuraci\xF3n personalizados."
+summary: "En VBA, la instrucci\xF3n `Debug.Print` es la principal herramienta para\
+  \ imprimir informaci\xF3n de depuraci\xF3n en la Ventana Inmediata del Editor de\
+  \ Visual Basic (VBE)."
 title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---

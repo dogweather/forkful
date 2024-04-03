@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:03:04.206562-07:00
-description: "Working with CSV files in Ruby provides a straightforward approach to\
-  \ handle tabular data. Programmers often engage in this practice for data parsing,\u2026"
+description: "How to: Ruby includes the CSV library by default, which simplifies reading\
+  \ from and writing to CSV files. Here\u2019s how you can leverage this for common\u2026"
 lastmod: '2024-03-13T22:45:00.571473-06:00'
 model: gpt-4-0125-preview
-summary: Working with CSV files in Ruby provides a straightforward approach to handle
-  tabular data.
+summary: Ruby includes the CSV library by default, which simplifies reading from and
+  writing to CSV files.
 title: Working with CSV
 weight: 37
 ---

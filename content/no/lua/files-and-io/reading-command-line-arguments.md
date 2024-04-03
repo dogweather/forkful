@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:56:31.589614-07:00
-description: Lesing av kommandolinjeargumenter lar oss ta imot data fra brukere utenfor
-  et Lua-script. Slik kan programmer bli mer fleksible og brukertilpassede.
+description: "Slik gj\xF8r du: ."
 lastmod: '2024-03-13T22:44:40.945576-06:00'
 model: gpt-4-1106-preview
-summary: Lesing av kommandolinjeargumenter lar oss ta imot data fra brukere utenfor
-  et Lua-script.
+summary: .
 title: Lese kommandolinjeargumenter
 weight: 23
 ---

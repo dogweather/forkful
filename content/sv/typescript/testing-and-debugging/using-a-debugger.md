@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:11:20.937214-07:00
-description: "F\xF6r att komma ig\xE5ng med en debugger i TypeScript beh\xF6ver du\
-  \ bara en st\xF6dd IDE (som Visual Studio Code) och en `launch.json`-konfiguration.\
-  \ H\xE4r \xE4r ett\u2026"
+description: "Hur man g\xF6r: F\xF6r att komma ig\xE5ng med en debugger i TypeScript\
+  \ beh\xF6ver du bara en st\xF6dd IDE (som Visual Studio Code) och en `launch.json`-konfiguration.\u2026"
 lastmod: '2024-03-13T22:44:37.660628-06:00'
 model: gpt-4-0125-preview
 summary: "F\xF6r att komma ig\xE5ng med en debugger i TypeScript beh\xF6ver du bara\
-  \ en st\xF6dd IDE (som Visual Studio Code) och en `launch."
+  \ en st\xF6dd IDE (som Visual Studio Code) och en `launch.json`-konfiguration."
 title: "Att anv\xE4nda en debugger"
 weight: 35
 ---

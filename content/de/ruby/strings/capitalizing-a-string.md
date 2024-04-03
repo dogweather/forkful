@@ -3,12 +3,12 @@ changelog:
 - 2024-03-25, dogweather, edited and tested
 - 2024-03-25, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:02:29.358527-07:00
-description: "Das Gro\xDFschreiben eines Strings bedeutet normalerweise, das erste\
-  \ Zeichen eines Strings in Gro\xDFbuchstaben umzuwandeln und den Rest in Kleinbuchstaben.\u2026"
+description: "Wie man es macht: Ruby bietet [einfache Methoden zur Stringmanipulation](https://docs.ruby-lang.org/en/3.3/String.html),\
+  \ einschlie\xDFlich der Gro\xDFschreibung."
 lastmod: '2024-03-25T19:22:00.225387-06:00'
 model: gpt-4-0125-preview
-summary: "Das Gro\xDFschreiben eines Strings bedeutet normalerweise, das erste Zeichen\
-  \ eines Strings in Gro\xDFbuchstaben umzuwandeln und den Rest in Kleinbuchstaben."
+summary: "Ruby bietet [einfache Methoden zur Stringmanipulation](https://docs.ruby-lang.org/en/3.3/String.html),\
+  \ einschlie\xDFlich der Gro\xDFschreibung."
 title: "Gro\xDFschreibung eines Strings"
 weight: 2
 ---

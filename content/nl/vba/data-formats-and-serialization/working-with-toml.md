@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:34.680083-07:00
-description: "TOML, wat staat voor Tom's Obvious, Minimal Language, is een gegevensserialisatieformaat\
-  \ dat voornamelijk wordt gebruikt voor configuratiebestanden.\u2026"
+description: "Hoe te: Werken met TOML in VBA betreft het parsen van het TOML-bestand\
+  \ om configuraties of instellingen in je VBA-project te lezen. VBA heeft geen\u2026"
 lastmod: '2024-03-13T22:44:50.661556-06:00'
 model: gpt-4-0125-preview
-summary: TOML, wat staat voor Tom's Obvious, Minimal Language, is een gegevensserialisatieformaat
-  dat voornamelijk wordt gebruikt voor configuratiebestanden.
+summary: Werken met TOML in VBA betreft het parsen van het TOML-bestand om configuraties
+  of instellingen in je VBA-project te lezen.
 title: Werken met TOML
 weight: 39
 ---

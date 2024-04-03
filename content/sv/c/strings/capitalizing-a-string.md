@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:58.190284-07:00
-description: "Att g\xF6ra en str\xE4ng versal i C inneb\xE4r att konvertera det f\xF6\
-  rsta tecknet i varje ord i en given str\xE4ng till versal om det \xE4r en gemen\
-  \ bokstav.\u2026"
+description: "Hur man g\xF6r: Att g\xF6ra en str\xE4ng versal i C kr\xE4ver en grundl\xE4\
+  ggande f\xF6rst\xE5else f\xF6r teckenmanipulation och str\xE4ngtraversering. Eftersom\
+  \ C inte har en\u2026"
 lastmod: '2024-03-13T22:44:38.363747-06:00'
 model: gpt-4-0125-preview
-summary: "Att g\xF6ra en str\xE4ng versal i C inneb\xE4r att konvertera det f\xF6\
-  rsta tecknet i varje ord i en given str\xE4ng till versal om det \xE4r en gemen\
-  \ bokstav."
+summary: "Att g\xF6ra en str\xE4ng versal i C kr\xE4ver en grundl\xE4ggande f\xF6\
+  rst\xE5else f\xF6r teckenmanipulation och str\xE4ngtraversering."
 title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---

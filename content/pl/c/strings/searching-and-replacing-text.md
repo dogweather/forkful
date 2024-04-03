@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:37.751488-07:00
-description: "Wyszukiwanie i zamienianie tekstu w C polega na identyfikacji okre\u015B\
-  lonych podci\u0105g\xF3w w obr\u0119bie wi\u0119kszego ci\u0105gu i zast\u0105pieniu\
-  \ ich innymi podci\u0105gami.\u2026"
+description: "Jak to zrobi\u0107: C nie posiada wbudowanych funkcji do bezpo\u015B\
+  redniego wyszukiwania oraz zamiany w ci\u0105gach znak\xF3w. Mo\u017Cna jednak tego\
+  \ dokona\u0107, \u0142\u0105cz\u0105c r\xF3\u017Cne\u2026"
 lastmod: '2024-03-13T22:44:35.869428-06:00'
 model: gpt-4-0125-preview
-summary: "Wyszukiwanie i zamienianie tekstu w C polega na identyfikacji okre\u015B\
-  lonych podci\u0105g\xF3w w obr\u0119bie wi\u0119kszego ci\u0105gu i zast\u0105pieniu\
-  \ ich innymi podci\u0105gami."
+summary: "C nie posiada wbudowanych funkcji do bezpo\u015Bredniego wyszukiwania oraz\
+  \ zamiany w ci\u0105gach znak\xF3w."
 title: Wyszukiwanie i zamienianie tekstu
 weight: 10
 ---

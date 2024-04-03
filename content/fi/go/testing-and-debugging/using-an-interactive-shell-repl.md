@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:35.827365-07:00
-description: "Interaktiivinen komentotulkki, eli Read-Eval-Print Loop (REPL), mahdollistaa\
-  \ Go-koodin kokeilun reaaliajassa, komentojen suorittamisen ja v\xE4litt\xF6m\xE4\
-  n\u2026"
+description: "Kuinka: Vaikka Go ei sis\xE4ll\xE4k\xE4\xE4n sis\xE4\xE4nrakennettua\
+  \ REPL:i\xE4, yhteis\xF6 on luonut ty\xF6kaluja kuten `gore` t\xE4ytt\xE4m\xE4\xE4\
+  n t\xE4m\xE4n aukon. Asenna `gore` suorittamalla\u2026"
 lastmod: '2024-03-13T22:44:56.052331-06:00'
 model: gpt-4-0125-preview
-summary: "Interaktiivinen komentotulkki, eli Read-Eval-Print Loop (REPL), mahdollistaa\
-  \ Go-koodin kokeilun reaaliajassa, komentojen suorittamisen ja v\xE4litt\xF6m\xE4\
-  n palautteen saamisen."
+summary: "Vaikka Go ei sis\xE4ll\xE4k\xE4\xE4n sis\xE4\xE4nrakennettua REPL:i\xE4\
+  , yhteis\xF6 on luonut ty\xF6kaluja kuten `gore` t\xE4ytt\xE4m\xE4\xE4n t\xE4m\xE4\
+  n aukon."
 title: "Interaktiivisen kuoren (REPL) k\xE4ytt\xE4minen"
 weight: 34
 ---

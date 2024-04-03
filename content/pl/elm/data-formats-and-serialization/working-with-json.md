@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:38.698157-07:00
-description: "Praca z JSON w Elm polega na dekodowaniu danych JSON do typ\xF3w Elm\
-  \ i kodowaniu warto\u015Bci Elm z powrotem na JSON. Proces ten jest kluczowy dla\
-  \ aplikacji\u2026"
+description: "Jak to zrobi\u0107: Elm traktuje obs\u0142ug\u0119 JSON z wyra\u017A\
+  no\u015Bci\u0105 i bezpiecze\u0144stwem, g\u0142\xF3wnie za pomoc\u0105 modu\u0142\
+  \xF3w `Json.Decode` i `Json.Encode`. Aby rozpocz\u0105\u0107 prac\u0119 z\u2026"
 lastmod: '2024-03-13T22:44:35.343069-06:00'
 model: gpt-4-0125-preview
-summary: "Praca z JSON w Elm polega na dekodowaniu danych JSON do typ\xF3w Elm i kodowaniu\
-  \ warto\u015Bci Elm z powrotem na JSON."
+summary: "Elm traktuje obs\u0142ug\u0119 JSON z wyra\u017Ano\u015Bci\u0105 i bezpiecze\u0144\
+  stwem, g\u0142\xF3wnie za pomoc\u0105 modu\u0142\xF3w `Json.Decode` i `Json.Encode`."
 title: Praca z JSON
 weight: 38
 ---

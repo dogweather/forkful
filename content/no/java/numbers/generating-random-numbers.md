@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 20:34:06.295851-07:00
-description: "\xC5 generere tilfeldige tall handler om \xE5 produsere uforutsigbare\
-  \ sekvenser eller enkeltverdier innenfor et definert omr\xE5de. Programmerere bruker\
-  \ denne\u2026"
+description: "Hvordan: I Java kan generering av tilfeldige tall oppn\xE5s ved \xE5\
+  \ bruke `Random`-klassen fra `java.util`-pakken, eller `ThreadLocalRandom`- og\u2026"
 lastmod: '2024-03-13T22:44:40.662334-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 generere tilfeldige tall handler om \xE5 produsere uforutsigbare sekvenser\
-  \ eller enkeltverdier innenfor et definert omr\xE5de."
+summary: "I Java kan generering av tilfeldige tall oppn\xE5s ved \xE5 bruke `Random`-klassen\
+  \ fra `java.util`-pakken, eller `ThreadLocalRandom`- og `SecureRandom`-klassene\
+  \ for spesifikke bruksomr\xE5der."
 title: Generering av tilfeldige tall
 weight: 12
 ---

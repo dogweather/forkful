@@ -1,11 +1,11 @@
 ---
 date: 2024-02-01 21:12:23.977224-07:00
-description: "Reading a text file in Google Apps Script (GAS) involves accessing and\
-  \ extracting text data from files stored in Google Drive or other accessible cloud-\u2026"
+description: "How to: To start reading a text file with Google Apps Script, you generally\
+  \ need to use the Google Drive API. Here's a basic example demonstrating how to\u2026"
 lastmod: '2024-03-13T22:44:59.685580-06:00'
 model: gpt-4-0125-preview
-summary: Reading a text file in Google Apps Script (GAS) involves accessing and extracting
-  text data from files stored in Google Drive or other accessible cloud-based storage.
+summary: To start reading a text file with Google Apps Script, you generally need
+  to use the Google Drive API.
 title: Reading a text file
 weight: 22
 ---

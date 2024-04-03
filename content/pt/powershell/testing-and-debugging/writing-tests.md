@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:36.328771-07:00
-description: "Escrever testes em PowerShell envolve criar scripts que validam automaticamente\
-  \ a funcionalidade do seu c\xF3digo PowerShell, garantindo que ele se comporte\u2026"
+description: "Como fazer: O PowerShell n\xE3o possui um framework de teste integrado,\
+  \ mas o Pester, um m\xF3dulo de terceiros popular, \xE9 amplamente utilizado para\
+  \ escrever e\u2026"
 lastmod: '2024-03-13T22:44:46.800500-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever testes em PowerShell envolve criar scripts que validam automaticamente\
-  \ a funcionalidade do seu c\xF3digo PowerShell, garantindo que ele se comporte conforme\
-  \ esperado."
+summary: "O PowerShell n\xE3o possui um framework de teste integrado, mas o Pester,\
+  \ um m\xF3dulo de terceiros popular, \xE9 amplamente utilizado para escrever e executar\
+  \ testes."
 title: Escrevendo testes
 weight: 36
 ---

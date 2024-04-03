@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 20:35:38.644136-07:00
-description: "Att generera slumpm\xE4ssiga tal i TypeScript handlar om att skapa of\xF6\
-  ruts\xE4gbara numeriska v\xE4rden inom ett specificerat intervall. Programmerare\
-  \ utnyttjar\u2026"
+description: "Hur man g\xF6r: I TypeScript kan du generera slumpm\xE4ssiga tal med\
+  \ hj\xE4lp av det globala `Math`-objektet. Nedan f\xF6ljer n\xE5gra praktiska exempel\
+  \ som demonstrerar\u2026"
 lastmod: '2024-03-13T22:44:37.651964-06:00'
 model: gpt-4-0125-preview
-summary: "Att generera slumpm\xE4ssiga tal i TypeScript handlar om att skapa of\xF6\
-  ruts\xE4gbara numeriska v\xE4rden inom ett specificerat intervall."
+summary: "I TypeScript kan du generera slumpm\xE4ssiga tal med hj\xE4lp av det globala\
+  \ `Math`-objektet."
 title: Generera slumptal
 weight: 12
 ---

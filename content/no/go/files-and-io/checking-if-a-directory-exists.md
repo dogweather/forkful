@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:05.667985-07:00
-description: "\xC5 sjekke om en katalog eksisterer i Go er kritisk for applikasjoner\
-  \ som samhandler med filsystemet for \xE5 unng\xE5 feil n\xE5r man fors\xF8ker \xE5\
-  \ f\xE5 tilgang til\u2026"
+description: "Hvordan: I Go, gir `os`-pakken funksjonaliteter for \xE5 samhandle med\
+  \ operativsystemet, inkludert \xE5 sjekke om en katalog eksisterer. Her er hvordan\
+  \ du kan\u2026"
 lastmod: '2024-03-13T22:44:40.283058-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 sjekke om en katalog eksisterer i Go er kritisk for applikasjoner som\
-  \ samhandler med filsystemet for \xE5 unng\xE5 feil n\xE5r man fors\xF8ker \xE5\
-  \ f\xE5 tilgang til eller modifisere kataloger."
+summary: "I Go, gir `os`-pakken funksjonaliteter for \xE5 samhandle med operativsystemet,\
+  \ inkludert \xE5 sjekke om en katalog eksisterer."
 title: Sjekke om en mappe eksisterer
 weight: 20
 ---

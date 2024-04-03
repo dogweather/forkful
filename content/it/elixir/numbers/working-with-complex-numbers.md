@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 04:39:07.211310-07:00
-description: "I numeri complessi hanno una parte reale e una parte immaginaria (come\
-  \ `3 + 4i`). Sono utilizzati in ingegneria, fisica e in certi problemi di\u2026"
+description: "Come fare: Elixir non ha numeri complessi integrati, quindi dobbiamo\
+  \ crearli noi o usare una libreria, come `ComplexNum`. Ecco un esempio rapido con\
+  \ una\u2026"
 lastmod: '2024-03-13T22:44:43.078129-06:00'
 model: gpt-4-0125-preview
-summary: I numeri complessi hanno una parte reale e una parte immaginaria (come `3
-  + 4i`).
+summary: Elixir non ha numeri complessi integrati, quindi dobbiamo crearli noi o usare
+  una libreria, come `ComplexNum`.
 title: Lavorare con i numeri complessi
 weight: 14
 ---

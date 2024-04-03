@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:29.597722-07:00
-description: "Enviar una solicitud HTTP involucra iniciar una llamada desde tu aplicaci\xF3\
-  n Go a un servidor web, API o cualquier otro servicio basado en HTTP. Los\u2026"
+description: "C\xF3mo hacerlo: En Go, enviar una solicitud HTTP y manejar la respuesta\
+  \ implica usar el paquete `net/http`. Aqu\xED tienes un ejemplo paso a paso sobre\
+  \ c\xF3mo\u2026"
 lastmod: '2024-03-13T22:44:58.463776-06:00'
 model: gpt-4-0125-preview
-summary: "Enviar una solicitud HTTP involucra iniciar una llamada desde tu aplicaci\xF3\
-  n Go a un servidor web, API o cualquier otro servicio basado en HTTP."
+summary: En Go, enviar una solicitud HTTP y manejar la respuesta implica usar el paquete
+  `net/http`.
 title: Enviando una solicitud HTTP
 weight: 44
 ---

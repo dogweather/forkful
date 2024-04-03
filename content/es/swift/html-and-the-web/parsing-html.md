@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:19.948999-07:00
-description: "El an\xE1lisis de HTML se refiere al proceso de descomponer e interpretar\
-  \ la estructura del contenido HTML, t\xEDpicamente para extraer datos espec\xED\
-  ficos o\u2026"
+description: "C\xF3mo hacerlo: Swift, por defecto, no incluye una biblioteca integrada\
+  \ para el an\xE1lisis de HTML, lo que hace necesario el uso de bibliotecas de terceros\u2026"
 lastmod: '2024-03-13T22:44:59.414371-06:00'
 model: gpt-4-0125-preview
-summary: "El an\xE1lisis de HTML se refiere al proceso de descomponer e interpretar\
-  \ la estructura del contenido HTML, t\xEDpicamente para extraer datos espec\xED\
-  ficos o manipular este contenido de manera program\xE1tica."
+summary: "Swift, por defecto, no incluye una biblioteca integrada para el an\xE1lisis\
+  \ de HTML, lo que hace necesario el uso de bibliotecas de terceros para manejar\
+  \ esta tarea eficazmente."
 title: Analizando HTML
 weight: 43
 ---

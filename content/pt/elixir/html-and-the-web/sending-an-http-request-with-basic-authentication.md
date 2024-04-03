@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 18:01:32.296895-07:00
-description: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica \xE9\
-  \ passar credenciais de acesso (usu\xE1rio e senha) para um servidor via HTTP. Programadores\
-  \ fazem isso\u2026"
+description: "Como Fazer: Para enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3\
+  o b\xE1sica em Elixir, utilizamos a biblioteca `HTTPoison` para facilitar o processo.\
+  \ Aqui est\xE1 um\u2026"
 lastmod: '2024-03-13T22:44:46.237889-06:00'
 model: gpt-4-1106-preview
-summary: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica \xE9 passar\
-  \ credenciais de acesso (usu\xE1rio e senha) para um servidor via HTTP."
+summary: "Para enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica em\
+  \ Elixir, utilizamos a biblioteca `HTTPoison` para facilitar o processo."
 title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 weight: 45
 ---

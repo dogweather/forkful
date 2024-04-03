@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:44:15.915338-07:00
-description: "\xC5 laste ned en nettside betyr \xE5 hente alt innholdet p\xE5 den\
-  \ - tekst, bilder, stilsett og lignende - gjennom internett. Programmere gj\xF8\
-  r dette for \xE5\u2026"
+description: "Hvordan gj\xF8r man det: Haskell gir deg verkt\xF8yene du trenger for\
+  \ \xE5 laste ned nettsider rett fra koden din: `http-conduit`. La oss ta en kjapp\
+  \ titt p\xE5\u2026"
 lastmod: '2024-03-13T22:44:40.840016-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 laste ned en nettside betyr \xE5 hente alt innholdet p\xE5 den - tekst,\
-  \ bilder, stilsett og lignende - gjennom internett."
+summary: "Haskell gir deg verkt\xF8yene du trenger for \xE5 laste ned nettsider rett\
+  \ fra koden din."
 title: Nedlasting av en nettside
 weight: 42
 ---

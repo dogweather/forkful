@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:47:46.456582-07:00
-description: "Finding the length of a string means determining how many characters\
-  \ it consists of. Programmers often need this information for tasks like validating\u2026"
+description: 'How to: Use the `strlen()` function like this.'
 lastmod: '2024-03-13T22:45:00.158338-06:00'
 model: gpt-4-1106-preview
-summary: Finding the length of a string means determining how many characters it consists
-  of.
+summary: Use the `strlen()` function like this.
 title: Finding the length of a string
 weight: 7
 ---

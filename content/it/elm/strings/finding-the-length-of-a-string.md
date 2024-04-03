@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:47:15.247992-07:00
-description: "(Find out the length) Capire la lunghezza di una stringa significa determinare\
-  \ quanti caratteri contiene. I programmatori lo fanno per validare l'input,\u2026"
+description: 'How to: (Step by step) Elm rende semplice trovare la lunghezza di una
+  stringa. Usa la funzione `String.length`.'
 lastmod: '2024-03-13T22:44:43.341511-06:00'
 model: gpt-4-1106-preview
-summary: '(Find out the length)
+summary: '(Step by step)
 
-  Capire la lunghezza di una stringa significa determinare quanti caratteri contiene.'
+  Elm rende semplice trovare la lunghezza di una stringa.'
 title: Trovare la lunghezza di una stringa
 weight: 7
 ---

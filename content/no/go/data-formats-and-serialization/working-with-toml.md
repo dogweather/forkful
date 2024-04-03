@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:12:37.510676-07:00
-description: "TOML (Tom's Obvious, Minimal Language) er et konfigurasjonsfilformat\
-  \ som er enkelt \xE5 lese p\xE5 grunn av sin enkle syntaks. Programmerere bruker\
-  \ TOML for \xE5\u2026"
+description: "Hvordan: For \xE5 begynne \xE5 jobbe med TOML i Go, m\xE5 du f\xF8rst\
+  \ inkludere et bibliotek som kan parse TOML-filer, siden Go-standardbiblioteket\
+  \ ikke st\xF8tter TOML\u2026"
 lastmod: '2024-03-13T22:44:40.293509-06:00'
 model: gpt-4-0125-preview
-summary: "TOML (Tom's Obvious, Minimal Language) er et konfigurasjonsfilformat som\
-  \ er enkelt \xE5 lese p\xE5 grunn av sin enkle syntaks."
+summary: "For \xE5 begynne \xE5 jobbe med TOML i Go, m\xE5 du f\xF8rst inkludere et\
+  \ bibliotek som kan parse TOML-filer, siden Go-standardbiblioteket ikke st\xF8tter\
+  \ TOML nativt."
 title: "\xC5 jobbe med TOML"
 weight: 39
 ---

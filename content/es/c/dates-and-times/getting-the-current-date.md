@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:09.174957-07:00
-description: "Obtener la fecha actual en C implica acceder a la biblioteca est\xE1\
-  ndar de C para buscar y formatear la fecha y hora actuales del sistema. Los programadores\u2026"
+description: "C\xF3mo hacerlo: En C, el encabezado `<time.h>` proporciona las funciones\
+  \ y tipos necesarios para trabajar con fechas y horas. La funci\xF3n `time()` recupera\u2026"
 lastmod: '2024-03-13T22:44:59.557327-06:00'
 model: gpt-4-0125-preview
-summary: "Obtener la fecha actual en C implica acceder a la biblioteca est\xE1ndar\
-  \ de C para buscar y formatear la fecha y hora actuales del sistema."
+summary: En C, el encabezado `<time.h>` proporciona las funciones y tipos necesarios
+  para trabajar con fechas y horas.
 title: Obteniendo la fecha actual
 weight: 29
 ---

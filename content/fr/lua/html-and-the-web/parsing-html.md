@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:25.055990-07:00
-description: "L'analyse du HTML implique l'extraction de donn\xE9es et d'informations\
-  \ \xE0 partir de documents HTML, ce qui est crucial pour le web scraping, l'analyse\
-  \ de\u2026"
+description: "Comment faire : Lua n'a pas de biblioth\xE8que int\xE9gr\xE9e pour l'analyse\
+  \ du HTML, mais vous pouvez utiliser des biblioth\xE8ques tierces comme `LuaHTML`\
+  \ ou\u2026"
 lastmod: '2024-03-13T22:44:57.930482-06:00'
 model: gpt-4-0125-preview
-summary: "L'analyse du HTML implique l'extraction de donn\xE9es et d'informations\
-  \ \xE0 partir de documents HTML, ce qui est crucial pour le web scraping, l'analyse\
-  \ de donn\xE9es et les t\xE2ches d'automatisation."
+summary: "Lua n'a pas de biblioth\xE8que int\xE9gr\xE9e pour l'analyse du HTML, mais\
+  \ vous pouvez utiliser des biblioth\xE8ques tierces comme `LuaHTML` ou exploiter\
+  \ les bindings pour `libxml2` \xE0 travers `LuaXML`."
 title: Analyse Syntaxique du HTML
 weight: 43
 ---

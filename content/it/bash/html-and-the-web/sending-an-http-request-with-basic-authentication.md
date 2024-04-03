@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 18:00:42.618258-07:00
-description: "Inviare una richiesta HTTP con autenticazione di base significa mandare\
-  \ le credenziali (username e password) in base64 per accedere a risorse protette.\
-  \ I\u2026"
+description: 'How to: Ecco come usare `curl` per inviare una richiesta HTTP con autenticazione
+  di base.'
 lastmod: '2024-03-13T22:44:43.599587-06:00'
 model: gpt-4-1106-preview
-summary: Inviare una richiesta HTTP con autenticazione di base significa mandare le
-  credenziali (username e password) in base64 per accedere a risorse protette.
+summary: Ecco come usare `curl` per inviare una richiesta HTTP con autenticazione
+  di base.
 title: Inviare una richiesta http con autenticazione di base
 weight: 45
 ---

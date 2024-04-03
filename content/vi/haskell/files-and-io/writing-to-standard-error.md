@@ -2,15 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:25.816504-07:00
-description: "Vi\u1EC7c vi\u1EBFt ra l\u1ED7i chu\u1EA9n (stderr) trong Haskell cho\
-  \ ph\xE9p b\u1EA1n b\xE1o c\xE1o l\u1ED7i v\xE0 th\xF4ng tin g\u1EE1 l\u1ED7i m\u1ED9\
-  t c\xE1ch ri\xEAng bi\u1EC7t so v\u1EDBi \u0111\u1EA7u ra chu\u1EA9n (stdout). Vi\u1EC7\
-  c n\xE0y \u0111\u01B0\u1EE3c\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: S\u1EED d\u1EE5ng System.IO \u0111\u1EC3\
+  \ vi\u1EBFt ra stderr. D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t v\xED d\u1EE5 \u0111\
+  \u01A1n gi\u1EA3n."
 lastmod: '2024-03-13T22:44:36.733480-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c vi\u1EBFt ra l\u1ED7i chu\u1EA9n (stderr) trong Haskell cho ph\xE9\
-  p b\u1EA1n b\xE1o c\xE1o l\u1ED7i v\xE0 th\xF4ng tin g\u1EE1 l\u1ED7i m\u1ED9t c\xE1\
-  ch ri\xEAng bi\u1EC7t so v\u1EDBi \u0111\u1EA7u ra chu\u1EA9n (stdout)."
+summary: "S\u1EED d\u1EE5ng System.IO \u0111\u1EC3 vi\u1EBFt ra stderr."
 title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---

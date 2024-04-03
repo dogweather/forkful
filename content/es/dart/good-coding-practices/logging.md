@@ -2,13 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:58.882439-07:00
-description: "El registro en Dart se refiere al proceso de grabaci\xF3n de varios\
-  \ niveles de informaci\xF3n durante la ejecuci\xF3n de un programa. Los programadores\
-  \ lo hacen\u2026"
+description: "C\xF3mo hacerlo: Dart incluye un mecanismo de registro simple a trav\xE9\
+  s de la biblioteca `dart:developer`. Para necesidades de registro m\xE1s sofisticadas,\
+  \ los\u2026"
 lastmod: '2024-03-13T22:44:58.759129-06:00'
 model: gpt-4-0125-preview
-summary: "El registro en Dart se refiere al proceso de grabaci\xF3n de varios niveles\
-  \ de informaci\xF3n durante la ejecuci\xF3n de un programa."
+summary: "Dart incluye un mecanismo de registro simple a trav\xE9s de la biblioteca\
+  \ `dart:developer`."
 title: Registro de Actividades
 weight: 17
 ---

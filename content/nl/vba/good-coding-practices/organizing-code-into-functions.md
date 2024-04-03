@@ -2,13 +2,11 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:03.344277-07:00
-description: "Het organiseren van code in functies in Visual Basic for Applications\
-  \ (VBA) houdt in dat een programma opgedeeld wordt in kleinere, beheersbare stukjes,\u2026"
+description: "Hoe: In VBA worden functies gedefinieerd met de `Function` en `End Function`\
+  \ instructies. Hier is een eenvoudig voorbeeld van hoe je een functie cre\xEBert\u2026"
 lastmod: '2024-03-13T22:44:50.642497-06:00'
 model: gpt-4-0125-preview
-summary: Het organiseren van code in functies in Visual Basic for Applications (VBA)
-  houdt in dat een programma opgedeeld wordt in kleinere, beheersbare stukjes, bekend
-  als functies.
+summary: In VBA worden functies gedefinieerd met de `Function` en `End Function` instructies.
 title: Code organiseren in functies
 weight: 18
 ---

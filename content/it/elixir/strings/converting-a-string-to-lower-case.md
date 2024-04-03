@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:38:02.568509-07:00
-description: "Convertire una stringa in minuscolo significa trasformare tutti i caratteri\
-  \ alfabeticamentici in lettere minuscole, utile per garantire la consistenza dei\u2026"
+description: "How to: In Elixir, downcase una stringa \xE8 un gioco da ragazzi con\
+  \ `String.downcase/1`."
 lastmod: '2024-03-13T22:44:43.071355-06:00'
 model: gpt-4-1106-preview
-summary: Convertire una stringa in minuscolo significa trasformare tutti i caratteri
-  alfabeticamentici in lettere minuscole, utile per garantire la consistenza dei dati
-  e per confronti o ricerche insensibili a maiuscole e minuscole.
+summary: "In Elixir, downcase una stringa \xE8 un gioco da ragazzi con `String.downcase/1`."
 title: Conversione di una stringa in minuscolo
 weight: 4
 ---

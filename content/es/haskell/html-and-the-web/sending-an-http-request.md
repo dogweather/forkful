@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:59:54.985795-07:00
-description: "Enviar una solicitud HTTP significa pedirle a un servidor informaci\xF3\
-  n o enviarle datos. Los programadores lo hacen para interactuar con servicios web,\u2026"
+description: "C\xF3mo Hacerlo: Haskell ofrece varias bibliotecas para gestionar HTTP.\
+  \ Vamos a usar `http-conduit` por su simplicidad y potencia. Primero, inst\xE1lalo\
+  \ con."
 lastmod: '2024-03-13T22:44:59.116008-06:00'
 model: gpt-4-1106-preview
-summary: "Enviar una solicitud HTTP significa pedirle a un servidor informaci\xF3\
-  n o enviarle datos."
+summary: Haskell ofrece varias bibliotecas para gestionar HTTP.
 title: Enviando una solicitud http
 weight: 44
 ---

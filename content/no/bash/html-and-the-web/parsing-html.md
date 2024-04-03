@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:30.519934-07:00
-description: "\xC5 parse HTML betyr \xE5 sile gjennom strukturen og innholdet i en\
-  \ HTML-fil for \xE5 trekke ut informasjon. Programmerere gj\xF8r det for \xE5 f\xE5\
-  \ tilgang til data,\u2026"
+description: "Hvordan: Bash er ikke g\xE5-til for parsing av HTML, men det kan gj\xF8\
+  res med verkt\xF8y som `grep`, `awk`, `sed`, eller eksterne verkt\xF8y som `lynx`.\
+  \ For\u2026"
 lastmod: '2024-03-13T22:44:40.972325-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 parse HTML betyr \xE5 sile gjennom strukturen og innholdet i en HTML-fil\
-  \ for \xE5 trekke ut informasjon."
+summary: "Bash er ikke g\xE5-til for parsing av HTML, men det kan gj\xF8res med verkt\xF8\
+  y som `grep`, `awk`, `sed`, eller eksterne verkt\xF8y som `lynx`."
 title: Analysering av HTML
 weight: 43
 ---

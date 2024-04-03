@@ -1,12 +1,11 @@
 ---
 date: 2024-02-03 19:02:48.448800-07:00
-description: "Regular expressions in C++ are sequences of characters that define a\
-  \ search pattern, used for string matching or manipulation. Programmers use them\
-  \ for\u2026"
+description: "How to: C++11 introduced support for regular expressions in the standard\
+  \ library, `<regex>`, offering a robust framework for string searching and\u2026"
 lastmod: '2024-03-13T22:45:00.348846-06:00'
 model: gpt-4-0125-preview
-summary: Regular expressions in C++ are sequences of characters that define a search
-  pattern, used for string matching or manipulation.
+summary: C++11 introduced support for regular expressions in the standard library,
+  `<regex>`, offering a robust framework for string searching and manipulation.
 title: Using regular expressions
 weight: 11
 ---

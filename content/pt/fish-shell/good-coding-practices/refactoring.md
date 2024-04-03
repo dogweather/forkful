@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:17:59.547396-07:00
-description: "Refatora\xE7\xE3o \xE9 o processo de reestruturar c\xF3digo existente\
-  \ sem alterar seu comportamento externo para melhorar atributos n\xE3o funcionais.\
-  \ Programadores\u2026"
+description: "Como fazer: Imagine que voc\xEA possui um script que cresceu bastante\
+  \ com o tempo. Come\xE7ou simples, mas agora \xE9 uma fera repleta de tent\xE1culos\
+  \ l\xF3gicos. Aqui\u2026"
 lastmod: '2024-03-13T22:44:47.014302-06:00'
 model: gpt-4-0125-preview
-summary: "Refatora\xE7\xE3o \xE9 o processo de reestruturar c\xF3digo existente sem\
-  \ alterar seu comportamento externo para melhorar atributos n\xE3o funcionais."
+summary: "Imagine que voc\xEA possui um script que cresceu bastante com o tempo."
 title: "Refatora\xE7\xE3o"
 weight: 19
 ---

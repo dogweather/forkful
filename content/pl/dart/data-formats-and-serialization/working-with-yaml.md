@@ -2,13 +2,14 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:49.702473-07:00
-description: "YAML, skr\xF3t od YAML Ain't Markup Language, to format serializacji\
-  \ danych, kt\xF3ry jest czytelny dla cz\u0142owieka. Programi\u015Bci u\u017Cywaj\u0105\
-  \ go do plik\xF3w\u2026"
+description: "Jak to zrobi\u0107: W Dart, praca z YAML zazwyczaj wymaga u\u017Cycia\
+  \ biblioteki stron trzecich, poniewa\u017C j\u0119zyk nie zawiera wbudowanych mo\u017C\
+  liwo\u015Bci parsowania YAML.\u2026"
 lastmod: '2024-03-13T22:44:35.115115-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, skr\xF3t od YAML Ain't Markup Language, to format serializacji danych,\
-  \ kt\xF3ry jest czytelny dla cz\u0142owieka."
+summary: "W Dart, praca z YAML zazwyczaj wymaga u\u017Cycia biblioteki stron trzecich,\
+  \ poniewa\u017C j\u0119zyk nie zawiera wbudowanych mo\u017Cliwo\u015Bci parsowania\
+  \ YAML."
 title: Praca z YAML
 weight: 41
 ---

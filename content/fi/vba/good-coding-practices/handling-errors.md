@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:29.651196-07:00
-description: "Virheenk\xE4sittely Visual Basic for Applications (VBA) -ohjelmoinnissa\
-  \ viittaa ohjelmoinnin, sovelluksen tai viestinn\xE4n virheiden ennakointiin,\u2026"
+description: "Kuinka: VBA:ssa virheenk\xE4sittely toteutetaan tyypillisesti k\xE4\
+  ytt\xE4m\xE4ll\xE4 `On Error` -lauseketta, joka ohjeistaa VBA:ta miten edet\xE4\
+  \ kun virhe tapahtuu.\u2026"
 lastmod: '2024-03-13T22:44:56.408776-06:00'
 model: gpt-4-0125-preview
-summary: "Virheenk\xE4sittely Visual Basic for Applications (VBA) -ohjelmoinnissa\
-  \ viittaa ohjelmoinnin, sovelluksen tai viestinn\xE4n virheiden ennakointiin, havaitsemiseen\
-  \ ja ratkaisemiseen."
+summary: "VBA:ssa virheenk\xE4sittely toteutetaan tyypillisesti k\xE4ytt\xE4m\xE4\
+  ll\xE4 `On Error` -lauseketta, joka ohjeistaa VBA:ta miten edet\xE4 kun virhe tapahtuu."
 title: "Virheiden k\xE4sittely"
 weight: 16
 ---

@@ -1,12 +1,13 @@
 ---
 date: 2024-01-20 17:42:42.274560-07:00
-description: "Supprimer des caract\xE8res selon un motif, c'est retirer des parties\
-  \ sp\xE9cifiques d'une cha\xEEne en se basant sur un pattern (motif). Les d\xE9\
-  veloppeurs font \xE7a\u2026"
+description: "How to (Comment faire) : En PHP, on utilise souvent la fonction `preg_replace`\
+  \ pour supprimer des caract\xE8res qui correspondent \xE0 un motif d\xE9fini par\
+  \ une\u2026"
 lastmod: '2024-03-13T22:44:57.861530-06:00'
 model: gpt-4-1106-preview
-summary: "Supprimer des caract\xE8res selon un motif, c'est retirer des parties sp\xE9\
-  cifiques d'une cha\xEEne en se basant sur un pattern (motif)."
+summary: "En PHP, on utilise souvent la fonction `preg_replace` pour supprimer des\
+  \ caract\xE8res qui correspondent \xE0 un motif d\xE9fini par une expression r\xE9\
+  guli\xE8re."
 title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---

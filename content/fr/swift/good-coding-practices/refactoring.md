@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 03:36:51.311926-07:00
-description: "La refactorisation est le processus de restructuration du code informatique\
-  \ existant sans en changer le comportement externe. Les programmeurs le font\u2026"
+description: "Comment faire : Commen\xE7ons par un exemple simple en Swift o\xF9 nous\
+  \ avons du code r\xE9p\xE9titif ."
 lastmod: '2024-03-13T22:44:58.231700-06:00'
 model: gpt-4-0125-preview
-summary: La refactorisation est le processus de restructuration du code informatique
-  existant sans en changer le comportement externe.
+summary: "Commen\xE7ons par un exemple simple en Swift o\xF9 nous avons du code r\xE9\
+  p\xE9titif."
 title: Remaniement de code
 weight: 19
 ---

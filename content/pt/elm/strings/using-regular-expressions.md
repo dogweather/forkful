@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:38.510109-07:00
-description: "Express\xF5es regulares (regex) na programa\xE7\xE3o s\xE3o padr\xF5\
-  es utilizados para combinar sequ\xEAncias de caracteres em strings. No Elm, assim\
-  \ como em outras\u2026"
+description: "Como fazer: Elm n\xE3o possui fun\xE7\xF5es de regex embutidas em sua\
+  \ biblioteca principal, o que requer o uso de bibliotecas de terceiros para essas\
+  \ opera\xE7\xF5es.\u2026"
 lastmod: '2024-03-13T22:44:46.489860-06:00'
 model: gpt-4-0125-preview
-summary: "Express\xF5es regulares (regex) na programa\xE7\xE3o s\xE3o padr\xF5es utilizados\
-  \ para combinar sequ\xEAncias de caracteres em strings."
+summary: "Elm n\xE3o possui fun\xE7\xF5es de regex embutidas em sua biblioteca principal,\
+  \ o que requer o uso de bibliotecas de terceiros para essas opera\xE7\xF5es."
 title: "Usando express\xF5es regulares"
 weight: 11
 ---

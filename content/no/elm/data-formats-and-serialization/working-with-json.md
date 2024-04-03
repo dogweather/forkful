@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:44.871414-07:00
-description: "\xC5 jobbe med JSON i Elm handler om \xE5 dekode JSON-data til Elm-typer\
-  \ og \xE5 kode Elm-verdier tilbake til JSON. Denne prosessen er avgj\xF8rende for\u2026"
+description: "Hvordan: Elm behandler JSON-h\xE5ndtering med tydelighet og sikkerhet,\
+  \ hovedsakelig ved \xE5 bruke modulene `Json.Decode` og `Json.Encode`. For \xE5\
+  \ begynne \xE5\u2026"
 lastmod: '2024-03-13T22:44:40.729689-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 jobbe med JSON i Elm handler om \xE5 dekode JSON-data til Elm-typer\
-  \ og \xE5 kode Elm-verdier tilbake til JSON."
+summary: "Elm behandler JSON-h\xE5ndtering med tydelighet og sikkerhet, hovedsakelig\
+  \ ved \xE5 bruke modulene `Json.Decode` og `Json.Encode`."
 title: Arbeider med JSON
 weight: 38
 ---

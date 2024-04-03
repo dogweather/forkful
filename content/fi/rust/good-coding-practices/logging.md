@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 01:09:36.044457-07:00
-description: "Lokitus on kuin p\xE4iv\xE4kirjan pit\xE4mist\xE4 sovelluksellesi; se\
-  \ on tapa tallentaa tapahtumat, virheet ja muut olennaiset tiedot ohjelman suorituksen\
-  \ aikana.\u2026"
+description: "Miten: Aloitetaan peruslokitus skenaarion pystytt\xE4minen Rustissa\
+  \ k\xE4ytt\xE4en `log`-kirstua, joka tarjoaa lokitusfasaadin, ja `env_logger`,\u2026"
 lastmod: '2024-03-13T22:44:56.363181-06:00'
 model: gpt-4-1106-preview
-summary: "Lokitus on kuin p\xE4iv\xE4kirjan pit\xE4mist\xE4 sovelluksellesi; se on\
-  \ tapa tallentaa tapahtumat, virheet ja muut olennaiset tiedot ohjelman suorituksen\
-  \ aikana."
+summary: "Aloitetaan peruslokitus skenaarion pystytt\xE4minen Rustissa k\xE4ytt\xE4\
+  en `log`-kirstua, joka tarjoaa lokitusfasaadin, ja `env_logger`, lokitusimplementaation\
+  \ `log`-kirstulle."
 title: Lokitus
 weight: 17
 ---

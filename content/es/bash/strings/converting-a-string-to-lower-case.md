@@ -1,13 +1,10 @@
 ---
 date: 2024-01-20 17:37:56.477225-07:00
-description: "Convertir una cadena a min\xFAsculas es el proceso de cambiar todos\
-  \ los caracteres alfab\xE9ticos de una cadena de texto para que est\xE9n en su forma\
-  \ min\xFAscula.\u2026"
+description: "C\xF3mo hacerlo: Aqu\xED tienes ejemplos de c\xF3mo convertir texto\
+  \ a min\xFAsculas en bash."
 lastmod: '2024-03-13T22:44:59.231619-06:00'
 model: gpt-4-1106-preview
-summary: "Convertir una cadena a min\xFAsculas es el proceso de cambiar todos los\
-  \ caracteres alfab\xE9ticos de una cadena de texto para que est\xE9n en su forma\
-  \ min\xFAscula."
+summary: "Aqu\xED tienes ejemplos de c\xF3mo convertir texto a min\xFAsculas en bash."
 title: "Conversi\xF3n de una cadena de texto a min\xFAsculas"
 weight: 4
 ---

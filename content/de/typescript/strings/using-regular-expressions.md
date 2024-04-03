@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:30.997038-07:00
-description: "Regul\xE4re Ausdr\xFCcke, oder Regex, sind ein m\xE4chtiges Werkzeug\
-  \ f\xFCr Mustererkennung und -suche in der Programmierung. Programmierer nutzen\
-  \ Regex f\xFCr Aufgaben\u2026"
+description: "Wie geht das: Lassen Sie uns in TypeScript eintauchen und sehen, wie\
+  \ Regex f\xFCr g\xE4ngige Aufgaben verwendet wird."
 lastmod: '2024-03-13T22:44:53.621708-06:00'
 model: gpt-4-0125-preview
-summary: "Regul\xE4re Ausdr\xFCcke, oder Regex, sind ein m\xE4chtiges Werkzeug f\xFC\
-  r Mustererkennung und -suche in der Programmierung."
+summary: "Lassen Sie uns in TypeScript eintauchen und sehen, wie Regex f\xFCr g\xE4\
+  ngige Aufgaben verwendet wird."
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:02:38.526736-07:00
-description: "Capitalizing a string in Swift modifies the given string so that its\
-  \ first character is uppercase, and the remaining characters are lowercase. Programmers\u2026"
+description: "How to: Swift's `String` structs come with a couple of built-in methods\
+  \ to manipulate the case of strings. Here are a few approaches to capitalize strings\u2026"
 lastmod: '2024-03-13T22:45:00.380840-06:00'
 model: gpt-4-0125-preview
-summary: Capitalizing a string in Swift modifies the given string so that its first
-  character is uppercase, and the remaining characters are lowercase.
+summary: Swift's `String` structs come with a couple of built-in methods to manipulate
+  the case of strings.
 title: Capitalizing a string
 weight: 2
 ---

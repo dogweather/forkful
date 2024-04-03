@@ -2,14 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:47.604989-07:00
-description: "Das Abrufen des aktuellen Datums in Rust ist eine g\xE4ngige Aufgabe\
-  \ f\xFCr Dinge wie das Logging, zeitbasierte Operationen oder einfach nur, um das\
-  \ Datum\u2026"
+description: 'Wie geht das: #.'
 lastmod: '2024-03-13T22:44:53.683292-06:00'
 model: gpt-4-0125-preview
-summary: "Das Abrufen des aktuellen Datums in Rust ist eine g\xE4ngige Aufgabe f\xFC\
-  r Dinge wie das Logging, zeitbasierte Operationen oder einfach nur, um das Datum\
-  \ anzuzeigen."
+summary: '#.'
 title: Den aktuellen Datum abrufen
 weight: 29
 ---

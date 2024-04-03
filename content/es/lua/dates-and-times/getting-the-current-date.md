@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:04.348085-07:00
-description: "Obtener la fecha actual en la programaci\xF3n es una tarea crucial para\
-  \ una multitud de aplicaciones, incluyendo el registro de actividades, la estampaci\xF3\
-  n\u2026"
+description: "C\xF3mo hacerlo: Lua proporciona la funci\xF3n `os.date` para obtener\
+  \ la fecha y hora actuales. La funci\xF3n se puede usar sin argumentos para obtener\
+  \ una cadena\u2026"
 lastmod: '2024-03-13T22:44:59.212371-06:00'
 model: gpt-4-0125-preview
-summary: "Obtener la fecha actual en la programaci\xF3n es una tarea crucial para\
-  \ una multitud de aplicaciones, incluyendo el registro de actividades, la estampaci\xF3\
-  n de tiempo en eventos o la programaci\xF3n de tareas."
+summary: "Lua proporciona la funci\xF3n `os.date` para obtener la fecha y hora actuales."
 title: Obteniendo la fecha actual
 weight: 29
 ---

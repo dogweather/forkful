@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 01:55:11.952605-07:00
-description: "Refaktorisering \xE4r processen att omstrukturera befintlig datorprogramkod\
-  \ utan att \xE4ndra dess externa beteende. Programmerare refaktoriserar f\xF6r att\u2026"
+description: "Hur: L\xE5t oss ta en klassisk PHP-snutt och till\xE4mpa lite refaktoriseringsmagi\
+  \ p\xE5 den. Innan refaktorisering kan v\xE5r kod se ut s\xE5 h\xE4r."
 lastmod: '2024-03-13T22:44:38.004598-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktorisering \xE4r processen att omstrukturera befintlig datorprogramkod\
-  \ utan att \xE4ndra dess externa beteende."
+summary: "L\xE5t oss ta en klassisk PHP-snutt och till\xE4mpa lite refaktoriseringsmagi\
+  \ p\xE5 den."
 title: Refaktorisering
 weight: 19
 ---

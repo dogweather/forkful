@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:32.759360-07:00
-description: "Parsowanie HTML oznacza przekopywanie si\u0119 przez znaczniki w celu\
-  \ wydobycia danych takich jak tekst, linki czy inne elementy. Robimy to, aby interaktywnie\u2026"
+description: "Jak to zrobi\u0107: U\u017Cyjmy Jsoup, przydatnej biblioteki do pracy\
+  \ z HTML-em z prawdziwego \u015Bwiata. Najpierw dodaj zale\u017Cno\u015B\u0107."
 lastmod: '2024-03-13T22:44:35.275198-06:00'
 model: gpt-4-0125-preview
-summary: "Parsowanie HTML oznacza przekopywanie si\u0119 przez znaczniki w celu wydobycia\
-  \ danych takich jak tekst, linki czy inne elementy."
+summary: "U\u017Cyjmy Jsoup, przydatnej biblioteki do pracy z HTML-em z prawdziwego\
+  \ \u015Bwiata."
 title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---

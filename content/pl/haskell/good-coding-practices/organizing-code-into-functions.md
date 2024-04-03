@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 01:10:53.451207-07:00
-description: "Organizowanie kodu w funkcje w Haskellu oznacza rozk\u0142adanie kodu\
-  \ na wielokrotnie u\u017Cywalne, nazwane bloki. Dlaczego? Pozwala to zachowa\u0107\
-  \ zasad\u0119 DRY (Nie\u2026"
+description: "Jak to zrobi\u0107: Oto jak mo\u017Cna pisa\u0107 i u\u017Cywa\u0107\
+  \ funkcji w Haskellu."
 lastmod: '2024-03-13T22:44:35.457444-06:00'
 model: gpt-4-1106-preview
-summary: "Organizowanie kodu w funkcje w Haskellu oznacza rozk\u0142adanie kodu na\
-  \ wielokrotnie u\u017Cywalne, nazwane bloki."
+summary: "Oto jak mo\u017Cna pisa\u0107 i u\u017Cywa\u0107 funkcji w Haskellu."
 title: Organizacja kodu w funkcje
 weight: 18
 ---

@@ -2,15 +2,16 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:44.285680-07:00
-description: "Travailler avec des fichiers CSV (Valeurs S\xE9par\xE9es par des Virgules)\
-  \ dans Arduino consiste \xE0 lire et \xE0 \xE9crire dans des fichiers CSV g\xE9\
-  n\xE9ralement stock\xE9s\u2026"
+description: "Comment faire : Arduino n'a pas de biblioth\xE8que int\xE9gr\xE9e sp\xE9\
+  cifiquement pour la gestion des fichiers CSV, mais vous pouvez utiliser les biblioth\xE8\
+  ques `SD`\u2026"
 lastmod: '2024-03-13T22:44:58.139110-06:00'
 model: gpt-4-0125-preview
-summary: "Travailler avec des fichiers CSV (Valeurs S\xE9par\xE9es par des Virgules)\
-  \ dans Arduino consiste \xE0 lire et \xE0 \xE9crire dans des fichiers CSV g\xE9\
-  n\xE9ralement stock\xE9s sur une carte SD, ce qui permet la journalisation des donn\xE9\
-  es, la configuration des param\xE8tres et plus encore."
+summary: "Arduino n'a pas de biblioth\xE8que int\xE9gr\xE9e sp\xE9cifiquement pour\
+  \ la gestion des fichiers CSV, mais vous pouvez utiliser les biblioth\xE8ques `SD`\
+  \ et `SPI` pour acc\xE9der aux fichiers sur une carte SD, puis analyser ou g\xE9\
+  n\xE9rer des donn\xE9es CSV en utilisant des techniques simples de manipulation\
+  \ de cha\xEEnes de caract\xE8res."
 title: Travailler avec CSV
 weight: 37
 ---

@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:31.699876-07:00
-description: "Het versturen van een HTTP-verzoek is een manier voor programma's om\
-  \ via het web te communiceren, door het vragen om gegevens of het indienen ervan.\u2026"
+description: 'Hoe: C# maakt het versturen van HTTP-verzoeken eenvoudig met `HttpClient`.
+  Hier is het skelet van een GET-verzoek.'
 lastmod: '2024-03-13T22:44:50.806858-06:00'
 model: gpt-4-0125-preview
-summary: Het versturen van een HTTP-verzoek is een manier voor programma's om via
-  het web te communiceren, door het vragen om gegevens of het indienen ervan.
+summary: C# maakt het versturen van HTTP-verzoeken eenvoudig met `HttpClient`.
 title: Een HTTP-verzoek verzenden
 weight: 44
 ---

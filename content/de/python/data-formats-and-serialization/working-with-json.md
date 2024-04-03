@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:58.322411-07:00
-description: "Die Arbeit mit JSON (JavaScript Object Notation) beinhaltet das Parsen\
-  \ von JSON-formatierten Strings in Python-Objekte und umgekehrt. Dies ist\u2026"
+description: "Wie: Die eingebaute `json`-Bibliothek in Python vereinfacht den Prozess\
+  \ der Kodierung (Konvertierung von Python-Objekten zu JSON) und Dekodierung\u2026"
 lastmod: '2024-03-13T22:44:53.399934-06:00'
 model: gpt-4-0125-preview
-summary: Die Arbeit mit JSON (JavaScript Object Notation) beinhaltet das Parsen von
-  JSON-formatierten Strings in Python-Objekte und umgekehrt.
+summary: Die eingebaute `json`-Bibliothek in Python vereinfacht den Prozess der Kodierung
+  (Konvertierung von Python-Objekten zu JSON) und Dekodierung (Konvertierung von JSON
+  in Python-Objekte).
 title: Arbeiten mit JSON
 weight: 38
 ---

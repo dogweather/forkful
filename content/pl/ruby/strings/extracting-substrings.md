@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:46:23.755713-07:00
-description: "Wyci\u0105ganie podci\u0105g\xF3w (substring extraction) polega na wyodr\u0119\
-  bnieniu okre\u015Blonej cz\u0119\u015Bci tekstu ze stringa. Programi\u015Bci robi\u0105\
-  \ to, by manipulowa\u0107 i analizowa\u0107\u2026"
+description: "Jak to zrobi\u0107: ."
 lastmod: '2024-03-13T22:44:35.919834-06:00'
 model: gpt-4-1106-preview
-summary: "Wyci\u0105ganie podci\u0105g\xF3w (substring extraction) polega na wyodr\u0119\
-  bnieniu okre\u015Blonej cz\u0119\u015Bci tekstu ze stringa."
+summary: .
 title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
 weight: 6
 ---

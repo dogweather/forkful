@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:55:11.034768-07:00
-description: "Leggere un file di testo significa accedere e manipolare le informazioni\
-  \ che sono memorizzate in un file sul tuo computer. I programmatori lo fanno perch\xE9\
-  \u2026"
+description: 'How to: In Swift, puoi leggere il contenuto di un file di testo in pochi
+  passi. Ecco un esempio.'
 lastmod: '2024-03-13T22:44:43.787208-06:00'
 model: gpt-4-1106-preview
-summary: Leggere un file di testo significa accedere e manipolare le informazioni
-  che sono memorizzate in un file sul tuo computer.
+summary: In Swift, puoi leggere il contenuto di un file di testo in pochi passi.
 title: Lettura di un file di testo
 weight: 22
 ---

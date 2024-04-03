@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:28:34.860545-07:00
-description: "\xC5 beregne en dato i fremtiden eller fortiden betyr \xE5 finne ut\
-  \ n\xF8yaktig hvilken dato det vil v\xE6re etter eller f\xF8r et visst tidsintervall.\
-  \ Programmerere\u2026"
+description: "How to: Med C++20 kan vi bruke `<chrono>` biblioteket for \xE5 regne\
+  \ ut datoer enkelt. Her er hvordan."
 lastmod: '2024-03-13T22:44:41.113299-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 beregne en dato i fremtiden eller fortiden betyr \xE5 finne ut n\xF8\
-  yaktig hvilken dato det vil v\xE6re etter eller f\xF8r et visst tidsintervall."
+summary: "Med C++20 kan vi bruke `<chrono>` biblioteket for \xE5 regne ut datoer enkelt."
 title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---

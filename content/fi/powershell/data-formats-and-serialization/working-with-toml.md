@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:25:00.336120-07:00
-description: "TOML, lyhenne sanoista Tom's Obvious, Minimal Language, on datan serialisointiformaatti,\
-  \ joka on helppo lukea sen selke\xE4n semantiikan ansiosta.\u2026"
+description: "Miten: PowerShelliss\xE4 ei ole natiivia cmdlet-komentoa TOML:n j\xE4\
+  sennykseen. Tyypillisesti k\xE4ytt\xE4isit moduulia tai muunnat TOML:n JSON:ksi\
+  \ ty\xF6kalulla, kuten\u2026"
 lastmod: '2024-03-13T22:44:56.806423-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, lyhenne sanoista Tom's Obvious, Minimal Language, on datan serialisointiformaatti,\
-  \ joka on helppo lukea sen selke\xE4n semantiikan ansiosta."
+summary: "PowerShelliss\xE4 ei ole natiivia cmdlet-komentoa TOML:n j\xE4sennykseen."
 title: "Ty\xF6skentely TOML:n kanssa"
 weight: 39
 ---

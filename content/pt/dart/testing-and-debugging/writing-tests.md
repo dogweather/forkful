@@ -2,12 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:58:03.479015-07:00
-description: "Escrever testes em Dart envolve criar casos de teste para verificar\
-  \ automaticamente que diferentes partes do seu programa funcionam como esperado.\u2026"
+description: "Como fazer: Em Dart, o pacote `test` \xE9 comumente usado para escrever\
+  \ testes. Primeiro, adicione o pacote `test` ao seu `pubspec.yaml`."
 lastmod: '2024-03-13T22:44:46.285543-06:00'
 model: gpt-4-0125-preview
-summary: Escrever testes em Dart envolve criar casos de teste para verificar automaticamente
-  que diferentes partes do seu programa funcionam como esperado.
+summary: "Em Dart, o pacote `test` \xE9 comumente usado para escrever testes."
 title: Escrevendo testes
 weight: 36
 ---

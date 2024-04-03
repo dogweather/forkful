@@ -1,7 +1,7 @@
 ---
 date: 2024-01-26 04:08:54.836044-07:00
-description: "I PowerShell kan du fels\xF6ka skript med den inbyggda PowerShell Integrated\
-  \ Scripting Environment (ISE) eller Visual Studio Code (VS Code) med PowerShell-\u2026"
+description: "Hur till: I PowerShell kan du fels\xF6ka skript med den inbyggda PowerShell\
+  \ Integrated Scripting Environment (ISE) eller Visual Studio Code (VS Code) med\u2026"
 lastmod: '2024-03-13T22:44:38.130411-06:00'
 model: gpt-4-0125-preview
 summary: "I PowerShell kan du fels\xF6ka skript med den inbyggda PowerShell Integrated\

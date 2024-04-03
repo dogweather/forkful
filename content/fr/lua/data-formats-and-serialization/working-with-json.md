@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:23.127090-07:00
-description: "Travailler avec JSON en Lua implique de parser des cha\xEEnes format\xE9\
-  es en JSON en tables Lua et inversement, permettant un \xE9change de donn\xE9es\
-  \ facile entre\u2026"
+description: "Comment faire : Lua n'inclut pas de biblioth\xE8que int\xE9gr\xE9e pour\
+  \ le traitement de JSON. Par cons\xE9quent, l'une des biblioth\xE8ques tierces populaires\
+  \ est\u2026"
 lastmod: '2024-03-13T22:44:57.961753-06:00'
 model: gpt-4-0125-preview
-summary: "Travailler avec JSON en Lua implique de parser des cha\xEEnes format\xE9\
-  es en JSON en tables Lua et inversement, permettant un \xE9change de donn\xE9es\
-  \ facile entre applications Lua et services web ou APIs externes."
+summary: "Lua n'inclut pas de biblioth\xE8que int\xE9gr\xE9e pour le traitement de\
+  \ JSON."
 title: Travailler avec JSON
 weight: 38
 ---

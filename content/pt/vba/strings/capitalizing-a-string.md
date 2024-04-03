@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:48:58.350388-07:00
-description: "Capitalizar uma string no Visual Basic for Applications (VBA) envolve\
-  \ converter o primeiro caractere de cada palavra em uma string para mai\xFAscula\
-  \ enquanto\u2026"
+description: "Como fazer: O VBA n\xE3o possui uma fun\xE7\xE3o embutida especificamente\
+  \ para capitalizar cada palavra em uma string, como algumas outras linguagens de\u2026"
 lastmod: '2024-03-13T22:44:46.393224-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizar uma string no Visual Basic for Applications (VBA) envolve converter\
-  \ o primeiro caractere de cada palavra em uma string para mai\xFAscula enquanto\
-  \ garante que o restante esteja em min\xFAscula."
+summary: "O VBA n\xE3o possui uma fun\xE7\xE3o embutida especificamente para capitalizar\
+  \ cada palavra em uma string, como algumas outras linguagens de programa\xE7\xE3\
+  o t\xEAm."
 title: Capitalizando uma String
 weight: 2
 ---

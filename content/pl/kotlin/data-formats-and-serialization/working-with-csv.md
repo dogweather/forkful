@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:42.145690-07:00
-description: "Praca z CSV (warto\u015Bci rozdzielone przecinkami) obejmuje odczytywanie\
-  \ z i zapisywanie danych do plik\xF3w CSV, co jest powszechnym formatem przechowywania\u2026"
+description: "Jak to zrobi\u0107: Kotlin, b\u0119d\u0105c statycznie typowanym j\u0119\
+  zykiem programowania dzia\u0142aj\u0105cym na JVM, nie zawiera wbudowanej biblioteki\
+  \ do obs\u0142ugi plik\xF3w CSV.\u2026"
 lastmod: '2024-03-13T22:44:35.387587-06:00'
 model: gpt-4-0125-preview
-summary: "Praca z CSV (warto\u015Bci rozdzielone przecinkami) obejmuje odczytywanie\
-  \ z i zapisywanie danych do plik\xF3w CSV, co jest powszechnym formatem przechowywania\
-  \ tabelarycznych danych w formie tekstowej."
+summary: "Kotlin, b\u0119d\u0105c statycznie typowanym j\u0119zykiem programowania\
+  \ dzia\u0142aj\u0105cym na JVM, nie zawiera wbudowanej biblioteki do obs\u0142ugi\
+  \ plik\xF3w CSV."
 title: Praca z plikami CSV
 weight: 37
 ---

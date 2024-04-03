@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:13.716822-07:00
-description: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) tarjoavat tavan etsi\xE4, vastata\
-  \ ja manipuloida merkkijonoja k\xE4ytt\xE4en m\xE4\xE4riteltyj\xE4 kaavoja. Ohjelmoijat\
-  \ k\xE4ytt\xE4v\xE4t niit\xE4\u2026"
+description: "Kuinka: K\xE4ytt\xE4\xE4ksesi s\xE4\xE4nn\xF6llisi\xE4 lausekkeita C:ss\xE4\
+  , ty\xF6skentelet p\xE4\xE4asiassa POSIX regex -kirjaston kanssa (`<regex.h>`).\
+  \ T\xE4m\xE4 esimerkki esitt\xE4\xE4\u2026"
 lastmod: '2024-03-13T22:44:57.028413-06:00'
 model: gpt-4-0125-preview
-summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) tarjoavat tavan etsi\xE4, vastata\
-  \ ja manipuloida merkkijonoja k\xE4ytt\xE4en m\xE4\xE4riteltyj\xE4 kaavoja."
+summary: "K\xE4ytt\xE4\xE4ksesi s\xE4\xE4nn\xF6llisi\xE4 lausekkeita C:ss\xE4, ty\xF6\
+  skentelet p\xE4\xE4asiassa POSIX regex -kirjaston kanssa (`<regex.h>`)."
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---

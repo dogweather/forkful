@@ -1,12 +1,13 @@
 ---
 date: 2024-01-20 17:47:44.617780-07:00
-description: "Calcular o comprimento de uma string \xE9 simplesmente descobrir quantos\
-  \ caracteres ela possui. Programadores fazem isso para validar entradas, limitar\
-  \ texto\u2026"
+description: "How to: O Haskell possui uma fun\xE7\xE3o integrada chamada `length`\
+  \ que retorna o comprimento de uma lista, incluindo strings que, em Haskell, s\xE3\
+  o listas de\u2026"
 lastmod: '2024-03-13T22:44:46.616589-06:00'
 model: gpt-4-1106-preview
-summary: "Calcular o comprimento de uma string \xE9 simplesmente descobrir quantos\
-  \ caracteres ela possui."
+summary: "O Haskell possui uma fun\xE7\xE3o integrada chamada `length` que retorna\
+  \ o comprimento de uma lista, incluindo strings que, em Haskell, s\xE3o listas de\
+  \ caracteres."
 title: Descobrindo o comprimento de uma string
 weight: 7
 ---

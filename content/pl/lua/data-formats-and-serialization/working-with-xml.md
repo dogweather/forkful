@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:33:40.553697-07:00
-description: "Praca z XML polega na analizie i manipulowaniu dokumentami XML za pomoc\u0105\
-  \ kodu. Programi\u015Bci robi\u0105 to, aby czyta\u0107, pisa\u0107 i modyfikowa\u0107\
-  \ dane w strukturalnym,\u2026"
+description: "Jak to zrobi\u0107: Lua nie zawiera natywnej analizy XML, ale istniej\u0105\
+  \ biblioteki takie jak LuaXML i xml2lua, kt\xF3re wykonuj\u0105 t\u0119 prac\u0119\
+  . Oto szybki przegl\u0105d\u2026"
 lastmod: '2024-03-13T22:44:35.564496-06:00'
 model: gpt-4-0125-preview
-summary: "Praca z XML polega na analizie i manipulowaniu dokumentami XML za pomoc\u0105\
-  \ kodu."
+summary: "Lua nie zawiera natywnej analizy XML, ale istniej\u0105 biblioteki takie\
+  \ jak LuaXML i xml2lua, kt\xF3re wykonuj\u0105 t\u0119 prac\u0119."
 title: Praca z XML
 weight: 40
 ---

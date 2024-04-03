@@ -1,11 +1,10 @@
 ---
 date: 2024-01-25 02:59:41.358296-07:00
-description: "Complex numbers, consisting of a real and imaginary part, are essential\
-  \ in various computational fields like engineering, physics, and signal processing.\u2026"
+description: 'How to: Haskell handles complex numbers with the `Data.Complex` module.
+  Here''s a quick tour.'
 lastmod: '2024-03-13T22:45:00.122536-06:00'
 model: gpt-4-1106-preview
-summary: Complex numbers, consisting of a real and imaginary part, are essential in
-  various computational fields like engineering, physics, and signal processing.
+summary: Haskell handles complex numbers with the `Data.Complex` module.
 title: Working with complex numbers
 weight: 14
 ---

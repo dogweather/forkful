@@ -2,15 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:45.733411-07:00
-description: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) l\xE0 c\xE1c m\u1EABu \u0111\
-  \u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 kh\u1EDBp c\xE1c k\u1EBFt h\u1EE3p\
-  \ k\xFD t\u1EF1 trong v\u0103n b\u1EA3n. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED\
-  \ d\u1EE5ng ch\xFAng cho c\xE1c nhi\u1EC7m v\u1EE5 nh\u01B0 x\xE1c\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Elixir, b\u1EA1n s\u1EED d\u1EE5ng regex\
+  \ v\u1EDBi c\xE1c m\u1EABu c\xF3 s\u1EB5n ho\u1EB7c t\u1EA1o ra ch\xFAng c\u1EE7\
+  a ri\xEAng b\u1EA1n v\u1EDBi module `Regex`. D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9\
+  t v\xED d\u1EE5 nhanh."
 lastmod: '2024-03-13T22:44:36.195191-06:00'
 model: gpt-4-0125-preview
-summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) l\xE0 c\xE1c m\u1EABu \u0111\u01B0\
-  \u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 kh\u1EDBp c\xE1c k\u1EBFt h\u1EE3p k\xFD\
-  \ t\u1EF1 trong v\u0103n b\u1EA3n."
+summary: "Trong Elixir, b\u1EA1n s\u1EED d\u1EE5ng regex v\u1EDBi c\xE1c m\u1EABu\
+  \ c\xF3 s\u1EB5n ho\u1EB7c t\u1EA1o ra ch\xFAng c\u1EE7a ri\xEAng b\u1EA1n v\u1EDB\
+  i module `Regex`."
 title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---

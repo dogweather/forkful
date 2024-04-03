@@ -2,15 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:08.841588-07:00
-description: "T\u1EA3i m\u1ED9t trang web b\u1EB1ng Visual Basic for Applications\
-  \ (VBA) bao g\u1ED3m vi\u1EC7c l\u1EA5y n\u1ED9i dung HTML c\u1EE7a m\u1ED9t trang\
-  \ web t\u1EEB Internet. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u01B0\u1EDDng th\u1EF1\
-  c\u2026"
+description: "L\xE0m Th\u1EBF N\xE0o: \u0110\u1EC3 t\u1EA3i m\u1ED9t trang web trong\
+  \ VBA, b\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng th\u01B0 vi\u1EC7n Microsoft XML,\
+  \ v6.0 (MSXML6), cho ph\xE9p th\u1EF1c hi\u1EC7n c\xE1c y\xEAu c\u1EA7u HTTP \u0111\
+  \u1EBFn m\xE1y ch\u1EE7.\u2026"
 lastmod: '2024-03-13T22:44:36.431108-06:00'
 model: gpt-4-0125-preview
-summary: "T\u1EA3i m\u1ED9t trang web b\u1EB1ng Visual Basic for Applications (VBA)\
-  \ bao g\u1ED3m vi\u1EC7c l\u1EA5y n\u1ED9i dung HTML c\u1EE7a m\u1ED9t trang web\
-  \ t\u1EEB Internet."
+summary: "\u0110\u1EC3 t\u1EA3i m\u1ED9t trang web trong VBA, b\u1EA1n c\xF3 th\u1EC3\
+  \ s\u1EED d\u1EE5ng th\u01B0 vi\u1EC7n Microsoft XML, v6.0 (MSXML6), cho ph\xE9\
+  p th\u1EF1c hi\u1EC7n c\xE1c y\xEAu c\u1EA7u HTTP \u0111\u1EBFn m\xE1y ch\u1EE7."
 title: "T\u1EA3i v\u1EC1 m\u1ED9t trang web"
 weight: 42
 ---

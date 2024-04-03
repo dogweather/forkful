@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:40.806012-07:00
-description: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res implique\
-  \ d'interpr\xE9ter le format de la cha\xEEne pour extraire les composants de la\
-  \ date tels que le\u2026"
+description: "Comment faire : Dans le C++ moderne, vous pouvez utiliser la biblioth\xE8\
+  que `<chrono>` pour manipuler les dates et les heures de mani\xE8re native, mais\
+  \ cela\u2026"
 lastmod: '2024-03-13T22:44:58.173153-06:00'
 model: gpt-4-0125-preview
-summary: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res implique\
-  \ d'interpr\xE9ter le format de la cha\xEEne pour extraire les composants de la\
-  \ date tels que le jour, le mois et l'ann\xE9e."
+summary: "Dans le C++ moderne, vous pouvez utiliser la biblioth\xE8que `<chrono>`\
+  \ pour manipuler les dates et les heures de mani\xE8re native, mais cela ne prend\
+  \ pas directement en charge l'analyse \xE0 partir de cha\xEEnes sans analyse manuelle\
+  \ pour des formats plus complexes."
 title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
 weight: 30
 ---

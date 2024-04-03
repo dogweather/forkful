@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:04.832406-07:00
-description: "Die Arbeit mit komplexen Zahlen in der Programmierung beinhaltet die\
-  \ Manipulation von Zahlen, die sowohl einen Real- als auch einen Imagin\xE4rteil\
-  \ haben,\u2026"
+description: "Wie: In Go werden komplexe Zahlen mit den integrierten Funktionen `complex`,\
+  \ `real` und `imag`, zusammen mit den Typen `complex64` und `complex128` (die\u2026"
 lastmod: '2024-03-13T22:44:53.280975-06:00'
 model: gpt-4-0125-preview
-summary: "Die Arbeit mit komplexen Zahlen in der Programmierung beinhaltet die Manipulation\
-  \ von Zahlen, die sowohl einen Real- als auch einen Imagin\xE4rteil haben, typischerweise\
-  \ ausgedr\xFCckt als `a + bi`."
+summary: In Go werden komplexe Zahlen mit den integrierten Funktionen `complex`, `real`
+  und `imag`, zusammen mit den Typen `complex64` und `complex128` (die jeweils komplexe
+  Zahlen mit 64 Bit und 128 Bit darstellen) behandelt.
 title: Arbeiten mit komplexen Zahlen
 weight: 14
 ---

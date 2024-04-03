@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:46:07.469761-07:00
-description: "Das Runden von Zahlen bedeutet, einen Wert auf die n\xE4chste ganze\
-  \ Zahl oder die angegebene Dezimalstelle zu justieren. Programmierer runden Zahlen,\
-  \ um\u2026"
+description: 'Wie: Sie haben einige praktische Cmdlets und Methoden in PowerShell
+  zum Runden: - `Round()`-Methode aus der Math-Klasse.'
 lastmod: '2024-03-13T22:44:54.096551-06:00'
 model: gpt-4-0125-preview
-summary: "Das Runden von Zahlen bedeutet, einen Wert auf die n\xE4chste ganze Zahl\
-  \ oder die angegebene Dezimalstelle zu justieren."
+summary: Sie haben einige praktische Cmdlets und Methoden in PowerShell zum Runden.
 title: Zahlen runden
 weight: 13
 ---

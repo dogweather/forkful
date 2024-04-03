@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:03.820693-07:00
-description: "Das Schreiben auf den Standardfehler (stderr) in PHP bedeutet, Fehlermeldungen\
-  \ oder Diagnosen getrennt von der Standardausgabe (stdout) zu leiten, was\u2026"
+description: "Wie geht das: In PHP kann das Schreiben auf stderr mit der Funktion\
+  \ `fwrite()` in Verbindung mit der vordefinierten Konstante `STDERR`, die den\u2026"
 lastmod: '2024-03-13T22:44:53.988738-06:00'
 model: gpt-4-0125-preview
-summary: "Das Schreiben auf den Standardfehler (stderr) in PHP bedeutet, Fehlermeldungen\
-  \ oder Diagnosen getrennt von der Standardausgabe (stdout) zu leiten, was Entwicklern\
-  \ hilft, ihre Ausgabestr\xF6me f\xFCr das Debugging und Protokollieren besser zu\
-  \ verwalten."
+summary: "In PHP kann das Schreiben auf stderr mit der Funktion `fwrite()` in Verbindung\
+  \ mit der vordefinierten Konstante `STDERR`, die den Fehlerausgabestrom repr\xE4\
+  sentiert, erreicht werden."
 title: Schreiben auf Standardfehler
 weight: 25
 ---

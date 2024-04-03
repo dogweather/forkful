@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:52.749316-07:00
-description: "Refaktoryzacja w programowaniu polega na restrukturyzacji istniej\u0105\
-  cego kodu bez zmiany jego zewn\u0119trznego zachowania, maj\u0105c na celu popraw\u0119\
-  \ atrybut\xF3w\u2026"
+description: "Jak to zrobi\u0107: Refaktoryzacja mo\u017Ce obejmowa\u0107 szereg dzia\u0142\
+  a\u0144, od zmiany nazw zmiennych dla wi\u0119kszej jasno\u015Bci po zmian\u0119\
+  \ struktury kodu w celu lepszej\u2026"
 lastmod: '2024-03-13T22:44:35.895662-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktoryzacja w programowaniu polega na restrukturyzacji istniej\u0105\
-  cego kodu bez zmiany jego zewn\u0119trznego zachowania, maj\u0105c na celu popraw\u0119\
-  \ atrybut\xF3w niefunkcjonalnych, takich jak czytelno\u015B\u0107, redukcj\u0119\
-  \ z\u0142o\u017Cono\u015Bci i zwi\u0119kszenie utrzymywalno\u015Bci."
+summary: "Refaktoryzacja mo\u017Ce obejmowa\u0107 szereg dzia\u0142a\u0144, od zmiany\
+  \ nazw zmiennych dla wi\u0119kszej jasno\u015Bci po zmian\u0119 struktury kodu w\
+  \ celu lepszej modularizacji."
 title: Refaktoryzacja
 weight: 19
 ---

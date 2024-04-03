@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:51.350289-07:00
-description: "Associativa arrayer, eller kartor, i Kotlin \xE4r samlingar som lagrar\
-  \ nyckel-v\xE4rdepar. Programmerare anv\xE4nder dem f\xF6r att effektivt organisera\
-  \ och h\xE4mta\u2026"
+description: "Hur man g\xF6r: Att skapa och anv\xE4nda en karta i Kotlin \xE4r enkelt.\
+  \ H\xE4r \xE4r en snabbguide om hur du g\xF6r det."
 lastmod: '2024-03-13T22:44:37.864385-06:00'
 model: gpt-4-0125-preview
-summary: "Associativa arrayer, eller kartor, i Kotlin \xE4r samlingar som lagrar nyckel-v\xE4\
-  rdepar."
+summary: "Att skapa och anv\xE4nda en karta i Kotlin \xE4r enkelt."
 title: "Att anv\xE4nda associativa arrayer"
 weight: 15
 ---

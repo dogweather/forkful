@@ -2,12 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:55.953893-07:00
-description: "Het kapitaliseren van een string betekent dat je de eerste letter van\
-  \ elk woord in hoofdletters zet terwijl de rest in kleine letters blijft. Programmeurs\u2026"
+description: "Hoe: Rust bevat geen ingebouwde methode om elk woord in een string te\
+  \ kapitaliseren, maar we kunnen eenvoudig onze eigen methode implementeren met behulp\u2026"
 lastmod: '2024-03-13T22:44:50.576787-06:00'
 model: gpt-4-0125-preview
-summary: Het kapitaliseren van een string betekent dat je de eerste letter van elk
-  woord in hoofdletters zet terwijl de rest in kleine letters blijft.
+summary: Rust bevat geen ingebouwde methode om elk woord in een string te kapitaliseren,
+  maar we kunnen eenvoudig onze eigen methode implementeren met behulp van de `to_ascii_uppercase`
+  methode voor enkele karakters en door de woorden te doorlopen.
 title: Een string met hoofdletters maken
 weight: 2
 ---

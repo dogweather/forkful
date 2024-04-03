@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:49.211927-07:00
-description: "Bestanden in-place bewerken met CLI one-liners gaat over het direct\
-  \ aanbrengen van wijzigingen in bestanden vanaf de opdrachtregel, zonder ze in een\u2026"
+description: "Hoe: Fish Shell, bekend om zijn gebruiksvriendelijke functies en krachtige\
+  \ scriptmogelijkheden, biedt verschillende manieren om bestanden in-place te\u2026"
 lastmod: '2024-03-13T22:44:51.243139-06:00'
 model: gpt-4-0125-preview
-summary: Bestanden in-place bewerken met CLI one-liners gaat over het direct aanbrengen
-  van wijzigingen in bestanden vanaf de opdrachtregel, zonder ze in een teksteditor
-  te openen.
+summary: Fish Shell, bekend om zijn gebruiksvriendelijke functies en krachtige scriptmogelijkheden,
+  biedt verschillende manieren om bestanden in-place te bewerken.
 title: Bestanden ter plekke bewerken met CLI one-liners
 weight: 32
 ---

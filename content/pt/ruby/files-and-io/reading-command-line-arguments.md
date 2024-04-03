@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:57:11.248285-07:00
-description: "Ler argumentos da linha de comando \xE9 simplesmente capturar entradas\
-  \ fornecidas durante a execu\xE7\xE3o de um programa. Programadores fazem isso para\
-  \ permitir\u2026"
+description: "Como Fazer: Para pegar os argumentos, voc\xEA acessa o array `ARGV`\
+  \ que o Ruby fornece. Veja como isso funciona."
 lastmod: '2024-03-13T22:44:47.110436-06:00'
 model: gpt-4-1106-preview
-summary: "Ler argumentos da linha de comando \xE9 simplesmente capturar entradas fornecidas\
-  \ durante a execu\xE7\xE3o de um programa."
+summary: "Para pegar os argumentos, voc\xEA acessa o array `ARGV` que o Ruby fornece."
 title: Lendo argumentos da linha de comando
 weight: 23
 ---

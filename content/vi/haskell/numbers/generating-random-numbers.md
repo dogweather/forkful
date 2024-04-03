@@ -2,15 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:08.213766-07:00
-description: "Vi\u1EC7c sinh s\u1ED1 ng\u1EABu nhi\xEAn trong Haskell bao g\u1ED3\
-  m vi\u1EC7c t\u1EA1o ra nh\u1EEFng con s\u1ED1 kh\xF4ng th\u1EC3 d\u1EF1 \u0111\
-  o\xE1n theo ti\xEAu chu\u1EA9n con ng\u01B0\u1EDDi. \u0110i\u1EC1u n\xE0y c\u1EF1\
-  c k\u1EF3 quan tr\u1ECDng trong c\xE1c\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EC3 sinh s\u1ED1 ng\u1EABu nhi\xEA\
+  n trong Haskell, ng\u01B0\u1EDDi ta th\u01B0\u1EDDng s\u1EED d\u1EE5ng g\xF3i `random`,\
+  \ l\xE0 m\u1ED9t ph\u1EA7n c\u1EE7a Haskell Platform. D\u01B0\u1EDBi \u0111\xE2\
+  y l\xE0 h\u01B0\u1EDBng d\u1EABn t\u1EEBng b\u01B0\u1EDBc:\u2026"
 lastmod: '2024-03-13T22:44:36.707038-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c sinh s\u1ED1 ng\u1EABu nhi\xEAn trong Haskell bao g\u1ED3m vi\u1EC7\
-  c t\u1EA1o ra nh\u1EEFng con s\u1ED1 kh\xF4ng th\u1EC3 d\u1EF1 \u0111o\xE1n theo\
-  \ ti\xEAu chu\u1EA9n con ng\u01B0\u1EDDi."
+summary: "\u0110\u1EC3 sinh s\u1ED1 ng\u1EABu nhi\xEAn trong Haskell, ng\u01B0\u1EDD\
+  i ta th\u01B0\u1EDDng s\u1EED d\u1EE5ng g\xF3i `random`, l\xE0 m\u1ED9t ph\u1EA7\
+  n c\u1EE7a Haskell Platform."
 title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 weight: 12
 ---

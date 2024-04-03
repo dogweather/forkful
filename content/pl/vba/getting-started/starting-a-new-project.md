@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:13.101268-07:00
-description: "Rozpocz\u0119cie nowego projektu w Visual Basic for Applications (VBA)\
-  \ wi\u0105\u017Ce si\u0119 z konfiguracj\u0105 \u015Brodowiska w aplikacji hosta,\
-  \ takiej jak Excel, aby\u2026"
+description: "Jak to zrobi\u0107: Gdy b\u0119dziesz gotowy, aby rozpocz\u0105\u0107\
+  \ nowy projekt VBA, punktem wyj\u015Bcia zazwyczaj jest dost\u0119p do edytora VBA\
+  \ i inicjalizacja ram projektu.\u2026"
 lastmod: '2024-03-13T22:44:35.232731-06:00'
 model: gpt-4-0125-preview
-summary: "Rozpocz\u0119cie nowego projektu w Visual Basic for Applications (VBA) wi\u0105\
-  \u017Ce si\u0119 z konfiguracj\u0105 \u015Brodowiska w aplikacji hosta, takiej jak\
-  \ Excel, aby automatyzowa\u0107 zadania lub rozszerza\u0107 funkcjonalno\u015B\u0107\
-  ."
+summary: "Gdy b\u0119dziesz gotowy, aby rozpocz\u0105\u0107 nowy projekt VBA, punktem\
+  \ wyj\u015Bcia zazwyczaj jest dost\u0119p do edytora VBA i inicjalizacja ram projektu."
 title: Rozpoczynanie nowego projektu
 weight: 1
 ---

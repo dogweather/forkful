@@ -2,16 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:49.527155-07:00
-description: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i thay\
-  \ \u0111\u1ED5i \u0111\u1ED1i t\u01B0\u1EE3ng ng\xE0y th\xE0nh \u0111\u1ECBnh d\u1EA1\
-  ng v\u0103n b\u1EA3n. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\
-  \u1EC3 d\u1EC5 \u0111\u1ECDc h\u01A1n, l\u01B0u tr\u1EEF ho\u1EB7c hi\u1EC3n th\u1ECB\
-  \ ng\xE0y cho\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: ."
 lastmod: '2024-03-13T22:44:36.334583-06:00'
 model: gpt-4-0125-preview
-summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i thay \u0111\
-  \u1ED5i \u0111\u1ED1i t\u01B0\u1EE3ng ng\xE0y th\xE0nh \u0111\u1ECBnh d\u1EA1ng\
-  \ v\u0103n b\u1EA3n."
+summary: .
 title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 weight: 28
 ---

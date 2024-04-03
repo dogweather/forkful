@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:24.413032-07:00
-description: "En interaktiv skal, \xE4ven k\xE4nd som en Read-Eval-Print Loop (REPL),\
-  \ m\xF6jligg\xF6r f\xF6r programmerare att skriva in uttryck eller kod och omedelbart\
-  \ se resultat,\u2026"
+description: "Hur man g\xF6r: Att engagera sig med en C REPL kanske inte \xE4r lika\
+  \ rakt fram som i spr\xE5k som Python eller JavaScript. Verktyg som `Cling`, en\
+  \ C/C++-tolk\u2026"
 lastmod: '2024-03-13T22:44:38.384410-06:00'
 model: gpt-4-0125-preview
-summary: "En interaktiv skal, \xE4ven k\xE4nd som en Read-Eval-Print Loop (REPL),\
-  \ m\xF6jligg\xF6r f\xF6r programmerare att skriva in uttryck eller kod och omedelbart\
-  \ se resultat, vilket f\xF6rb\xE4ttrar inl\xE4rning och fels\xF6kningsprocesser."
+summary: "Att engagera sig med en C REPL kanske inte \xE4r lika rakt fram som i spr\xE5\
+  k som Python eller JavaScript."
 title: "Att anv\xE4nda ett interaktivt skal (REPL)"
 weight: 34
 ---

@@ -2,10 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:51.792830-07:00
-description: ''
+description: "C\xE1i g\xEC & T\u1EA1i sao? YAML l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1\
+  ng tu\u1EA7n t\u1EF1 h\xF3a d\u1EEF li\u1EC7u th\xE2n thi\u1EC7n v\u1EDBi con ng\u01B0\
+  \u1EDDi. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3 cho c\xE1c t\u1EC7\
+  p c\u1EA5u h\xECnh, trao \u0111\u1ED5i d\u1EEF li\u1EC7u\u2026"
 lastmod: '2024-03-13T22:44:36.794108-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "YAML l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1ng tu\u1EA7n t\u1EF1 h\xF3a d\u1EEF\
+  \ li\u1EC7u th\xE2n thi\u1EC7n v\u1EDBi con ng\u01B0\u1EDDi."
 title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 weight: 41
 ---

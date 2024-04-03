@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:12.665243-07:00
-description: "\xC5 fjerne anf\xF8rselstegn fra en streng i C inneb\xE6rer \xE5 trekke\
-  \ ut tekstinnholdet uten de innkapslende enkle (' ') eller doble (\" \") anf\xF8\
-  rselstegnene. Denne\u2026"
+description: "Hvordan: For \xE5 fjerne anf\xF8rselstegn fra en streng i C, traverserer\
+  \ vi strengen og kopierer tegn som ikke er anf\xF8rselstegn inn i en ny streng.\
+  \ Denne\u2026"
 lastmod: '2024-03-13T22:44:41.258303-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 fjerne anf\xF8rselstegn fra en streng i C inneb\xE6rer \xE5 trekke\
-  \ ut tekstinnholdet uten de innkapslende enkle (' ') eller doble (\" \") anf\xF8\
-  rselstegnene."
+summary: "For \xE5 fjerne anf\xF8rselstegn fra en streng i C, traverserer vi strengen\
+  \ og kopierer tegn som ikke er anf\xF8rselstegn inn i en ny streng."
 title: "Fjerne anf\xF8rselstegn fra en streng"
 weight: 9
 ---

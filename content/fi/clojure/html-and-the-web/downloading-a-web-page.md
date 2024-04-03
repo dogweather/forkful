@@ -1,10 +1,12 @@
 ---
 date: 2024-01-20 17:43:52.850732-07:00
-description: "Ladataan nettisivu tarkoittaa sivun sis\xE4ll\xF6n tallentamista paikallisesti.\
-  \ Ohjelmoijat tekev\xE4t sit\xE4 datan analysointia, skrapausta tai varmuuskopiointia\u2026"
+description: "How to: - N\xE4in teet sen: Clojuren avulla voit ladata webbisivun sis\xE4\
+  ll\xF6n k\xE4ytt\xE4m\xE4ll\xE4 `clj-http`-kirjastoa. T\xE4ss\xE4 yksinkertainen\
+  \ esimerkki."
 lastmod: '2024-03-13T22:44:56.183391-06:00'
 model: gpt-4-1106-preview
-summary: "Ladataan nettisivu tarkoittaa sivun sis\xE4ll\xF6n tallentamista paikallisesti."
+summary: "Clojuren avulla voit ladata webbisivun sis\xE4ll\xF6n k\xE4ytt\xE4m\xE4\
+  ll\xE4 `clj-http`-kirjastoa."
 title: Verkkosivun lataaminen
 weight: 42
 ---

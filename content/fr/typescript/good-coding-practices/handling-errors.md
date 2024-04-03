@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 00:57:59.710834-07:00
-description: "G\xE9rer les erreurs consiste \xE0 anticiper l'inattendu ; c'est la\
-  \ fa\xE7on dont nous r\xE9agissons lorsque les choses tournent mal dans notre code.\
-  \ Nous le faisons\u2026"
+description: 'Comment faire : En TypeScript, la gestion des erreurs implique souvent
+  l''utilisation des blocs `try`, `catch` et `finally`.'
 lastmod: '2024-03-13T22:44:57.445031-06:00'
 model: gpt-4-1106-preview
-summary: "G\xE9rer les erreurs consiste \xE0 anticiper l'inattendu ; c'est la fa\xE7\
-  on dont nous r\xE9agissons lorsque les choses tournent mal dans notre code."
+summary: En TypeScript, la gestion des erreurs implique souvent l'utilisation des
+  blocs `try`, `catch` et `finally`.
 title: Gestion des erreurs
 weight: 16
 ---

@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 04:27:47.056171-07:00
-description: "Praca z XML na Arduino polega na analizowaniu (parsowaniu) i manipulowaniu\
-  \ danymi XML, kt\xF3re zwykle pochodz\u0105 z interfejs\xF3w API sieci Web lub plik\xF3\
-  w\u2026"
+description: "Jak to zrobi\u0107: U\u017Cyjemy biblioteki `XMLWriter` do tworzenia\
+  \ dokument\xF3w XML oraz biblioteki `tinyxml2` do ich analizy. Najpierw zainstaluj\
+  \ biblioteki za\u2026"
 lastmod: '2024-03-13T22:44:35.694931-06:00'
 model: gpt-4-0125-preview
-summary: "Praca z XML na Arduino polega na analizowaniu (parsowaniu) i manipulowaniu\
-  \ danymi XML, kt\xF3re zwykle pochodz\u0105 z interfejs\xF3w API sieci Web lub plik\xF3\
-  w konfiguracyjnych."
+summary: "U\u017Cyjemy biblioteki `XMLWriter` do tworzenia dokument\xF3w XML oraz\
+  \ biblioteki `tinyxml2` do ich analizy."
 title: Praca z XML
 weight: 40
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:36:28.029088-07:00
-description: "Eliminar comillas de una cadena significa quitar cualquier instancia\
-  \ de caracteres de comillas simples (`'`) o dobles (`\"`) que envuelven el texto.\
-  \ Los\u2026"
+description: "C\xF3mo hacerlo: Para eliminar las comillas de una cadena en Arduino,\
+  \ puedes recorrer los caracteres y reconstruir la cadena sin los caracteres de comilla.\u2026"
 lastmod: '2024-03-13T22:44:59.322618-06:00'
 model: gpt-4-0125-preview
-summary: Eliminar comillas de una cadena significa quitar cualquier instancia de caracteres
-  de comillas simples (`'`) o dobles (`"`) que envuelven el texto.
+summary: Para eliminar las comillas de una cadena en Arduino, puedes recorrer los
+  caracteres y reconstruir la cadena sin los caracteres de comilla.
 title: Eliminando comillas de una cadena
 weight: 9
 ---

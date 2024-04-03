@@ -1,10 +1,9 @@
 ---
 date: 2024-01-26 04:09:15.778524-07:00
-description: "Python\uC758 \uB0B4\uC7A5 \uB514\uBC84\uAC70\uC778 `pdb` \uC0AC\uC6A9\
-  \uC744 \uC0B4\uD3B4\uBD05\uC2DC\uB2E4. `buggy.py`\uB77C\uB294 \uD30C\uC77C\uC5D0\
-  \ \uAE4C\uB2E4\uB85C\uC6B4 \uBC84\uADF8\uAC00 \uC788\uB294 \uC0C1\uD669\uC744 \uC0C1\
-  \uC0C1\uD574 \uBD05\uC2DC\uB2E4: ```Python def add_one(number): result = number\
-  \ ++ 1 return result\u2026"
+description: "\uBC29\uBC95: Python\uC758 \uB0B4\uC7A5 \uB514\uBC84\uAC70\uC778 `pdb`\
+  \ \uC0AC\uC6A9\uC744 \uC0B4\uD3B4\uBD05\uC2DC\uB2E4. `buggy.py`\uB77C\uB294 \uD30C\
+  \uC77C\uC5D0 \uAE4C\uB2E4\uB85C\uC6B4 \uBC84\uADF8\uAC00 \uC788\uB294 \uC0C1\uD669\
+  \uC744 \uC0C1\uC0C1\uD574 \uBD05\uC2DC\uB2E4."
 lastmod: '2024-03-13T22:44:54.604474-06:00'
 model: gpt-4-0125-preview
 summary: "Python\uC758 \uB0B4\uC7A5 \uB514\uBC84\uAC70\uC778 `pdb` \uC0AC\uC6A9\uC744\

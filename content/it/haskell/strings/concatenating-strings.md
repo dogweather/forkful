@@ -1,10 +1,11 @@
 ---
 date: 2024-01-20 17:34:59.763620-07:00
-description: "Concatenare le stringhe significa unire due o pi\xF9 testi in uno. Lo\
-  \ facciamo per costruire messaggi, visualizzare dati o generare codice in modo dinamico."
+description: 'How to: (Come fare:) In Haskell, puoi unire le stringhe usando l''operatore
+  `(++)` oppure la funzione `concat`.'
 lastmod: '2024-03-13T22:44:43.467236-06:00'
 model: gpt-4-1106-preview
-summary: "Concatenare le stringhe significa unire due o pi\xF9 testi in uno."
+summary: In Haskell, puoi unire le stringhe usando l'operatore `(++)` oppure la funzione
+  `concat`.
 title: Concatenazione di stringhe
 weight: 3
 ---

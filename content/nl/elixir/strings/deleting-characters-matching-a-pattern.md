@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:33.659824-07:00
-description: "Het verwijderen van karakters die overeenkomen met een patroon gaat\
-  \ helemaal om het vinden van specifieke reeksen van karakters en het verwijderen\
-  \ ervan.\u2026"
+description: 'Hoe te: In Elixir, gebruik de `String.replace/4` functie om karakters
+  te verwijderen die overeenkomen met een patroon. Bekijk deze voorbeelden.'
 lastmod: '2024-03-13T22:44:50.446229-06:00'
 model: gpt-4-0125-preview
-summary: Het verwijderen van karakters die overeenkomen met een patroon gaat helemaal
-  om het vinden van specifieke reeksen van karakters en het verwijderen ervan.
+summary: In Elixir, gebruik de `String.replace/4` functie om karakters te verwijderen
+  die overeenkomen met een patroon.
 title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---

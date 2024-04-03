@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:02:49.120272-07:00
-description: "Parsing HTML in Clojure involves programmatically extracting information\
-  \ from HTML documents. Programmers do this to access, manipulate, or monitor web\u2026"
+description: "How to: Clojure does not have built-in HTML parsing capabilities, but\
+  \ you can leverage Java libraries or Clojure wrappers such as `enlive` or `hickory`.\u2026"
 lastmod: '2024-03-13T22:44:59.743143-06:00'
 model: gpt-4-0125-preview
-summary: Parsing HTML in Clojure involves programmatically extracting information
-  from HTML documents.
+summary: Clojure does not have built-in HTML parsing capabilities, but you can leverage
+  Java libraries or Clojure wrappers such as `enlive` or `hickory`.
 title: Parsing HTML
 weight: 43
 ---

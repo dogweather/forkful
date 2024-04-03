@@ -1,11 +1,11 @@
 ---
 date: 2024-01-25 03:40:11.764132-07:00
-description: "TOML, short for Tom's Obvious, Minimal Language, is a data serialization\
-  \ format akin to JSON or YAML. Programmers use it for its human readability and\u2026"
+description: "How to: First, you'll need a TOML parser. `@iarna/toml` is a popular\
+  \ choice. Install it with npm: `npm install @iarna/toml --save`. Here's how you\
+  \ read a\u2026"
 lastmod: '2024-03-13T22:44:59.879296-06:00'
 model: gpt-4-1106-preview
-summary: TOML, short for Tom's Obvious, Minimal Language, is a data serialization
-  format akin to JSON or YAML.
+summary: First, you'll need a TOML parser.
 title: Working with TOML
 weight: 39
 ---

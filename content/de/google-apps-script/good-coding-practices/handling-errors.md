@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:56.139757-07:00
-description: "Fehlerbehandlung in Google Apps Script bedeutet, Ausnahmen oder Fehler,\
-  \ die w\xE4hrend der Ausf\xFChrung des Skripts auftreten, zu vorhersehen, abzufangen\
-  \ und\u2026"
+description: "Wie geht das: Google Apps Script, basierend auf JavaScript, erm\xF6\
+  glicht uns die Verwendung der traditionellen `try-catch`-Anweisung f\xFCr die\u2026"
 lastmod: '2024-03-13T22:44:53.342108-06:00'
 model: gpt-4-0125-preview
-summary: "Fehlerbehandlung in Google Apps Script bedeutet, Ausnahmen oder Fehler,\
-  \ die w\xE4hrend der Ausf\xFChrung des Skripts auftreten, zu vorhersehen, abzufangen\
-  \ und darauf zu reagieren."
+summary: "Google Apps Script, basierend auf JavaScript, erm\xF6glicht uns die Verwendung\
+  \ der traditionellen `try-catch`-Anweisung f\xFCr die Fehlerbehandlung, zusammen\
+  \ mit `finally`, falls eine Bereinigung unabh\xE4ngig von Erfolg oder Fehler erforderlich\
+  \ ist."
 title: Fehlerbehandlung
 weight: 16
 ---

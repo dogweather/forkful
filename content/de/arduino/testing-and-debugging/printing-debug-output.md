@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:51:49.348762-07:00
-description: "Debug-Ausgaben drucken hei\xDFt, Informationen w\xE4hrend der Laufzeit\
-  \ eines Programms zur Problemdiagnose auszugeben. Entwickler nutzen es, um den\u2026"
+description: 'How to: Ein einfaches Beispiel, um Daten auf der seriellen Schnittstelle
+  auszugeben.'
 lastmod: '2024-03-13T22:44:54.146243-06:00'
 model: gpt-4-1106-preview
-summary: "Debug-Ausgaben drucken hei\xDFt, Informationen w\xE4hrend der Laufzeit eines\
-  \ Programms zur Problemdiagnose auszugeben."
+summary: Ein einfaches Beispiel, um Daten auf der seriellen Schnittstelle auszugeben.
 title: Debug-Ausgaben drucken
 weight: 33
 ---

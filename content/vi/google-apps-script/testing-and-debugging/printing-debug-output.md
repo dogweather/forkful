@@ -2,17 +2,16 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:00.754850-07:00
-description: "In th\xF4ng tin l\u1ED7i \u0111\u1EC3 g\u1EE1 r\u1ED1i bao g\u1ED3m\
-  \ vi\u1EC7c \u0111\u1EB7t chi\u1EBFn l\u01B0\u1EE3c c\xE1c c\xE2u l\u1EC7nh ghi\
-  \ nh\u1EADt k\xFD trong m\xE3 c\u1EE7a b\u1EA1n \u0111\u1EC3 hi\u1EC3n th\u1ECB\
-  \ gi\xE1 tr\u1ECB bi\u1EBFn, d\xF2ng th\u1EF1c thi, ho\u1EB7c th\xF4ng b\xE1o\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Google Apps Script cung c\u1EA5p l\u1EDB\
+  p `Logger` cho vi\u1EC7c g\u1EE1 r\u1ED1i c\u01A1 b\u1EA3n, v\xE0 cho nhu c\u1EA7\
+  u n\xE2ng cao h\u01A1n, l\u1EDBp `console` \u0111\u01B0\u1EE3c gi\u1EDBi thi\u1EC7\
+  u trong th\u1EDDi\u2026"
 lastmod: '2024-03-13T22:44:36.043987-06:00'
 model: gpt-4-0125-preview
-summary: "In th\xF4ng tin l\u1ED7i \u0111\u1EC3 g\u1EE1 r\u1ED1i bao g\u1ED3m vi\u1EC7\
-  c \u0111\u1EB7t chi\u1EBFn l\u01B0\u1EE3c c\xE1c c\xE2u l\u1EC7nh ghi nh\u1EADt\
-  \ k\xFD trong m\xE3 c\u1EE7a b\u1EA1n \u0111\u1EC3 hi\u1EC3n th\u1ECB gi\xE1 tr\u1ECB\
-  \ bi\u1EBFn, d\xF2ng th\u1EF1c thi, ho\u1EB7c th\xF4ng b\xE1o l\u1ED7i trong th\u1EDD\
-  i gian ch\u1EA1y."
+summary: "Google Apps Script cung c\u1EA5p l\u1EDBp `Logger` cho vi\u1EC7c g\u1EE1\
+  \ r\u1ED1i c\u01A1 b\u1EA3n, v\xE0 cho nhu c\u1EA7u n\xE2ng cao h\u01A1n, l\u1EDB\
+  p `console` \u0111\u01B0\u1EE3c gi\u1EDBi thi\u1EC7u trong th\u1EDDi gian ch\u1EA1\
+  y V8."
 title: "In ra th\xF4ng tin debug"
 weight: 33
 ---

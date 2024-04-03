@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:38:36.900227-07:00
-description: "Converter uma string para min\xFAsculas \xE9 transformar todos os caracteres\
-  \ alfab\xE9ticos dela em suas vers\xF5es min\xFAsculas. Programadores fazem isso\
-  \ para\u2026"
+description: "Como fazer: Vamos usar a biblioteca `Data.Char` para converter strings\
+  \ para min\xFAsculas em Haskell."
 lastmod: '2024-03-13T22:44:46.612850-06:00'
 model: gpt-4-1106-preview
-summary: "Converter uma string para min\xFAsculas \xE9 transformar todos os caracteres\
-  \ alfab\xE9ticos dela em suas vers\xF5es min\xFAsculas."
+summary: "Vamos usar a biblioteca `Data.Char` para converter strings para min\xFA\
+  sculas em Haskell."
 title: "Convertendo uma string para min\xFAsculas"
 weight: 4
 ---

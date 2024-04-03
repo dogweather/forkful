@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 04:30:50.510130-07:00
-description: "Lavorare con XML significa gestire dati in un formato strutturato e\
-  \ pervasivo, usato in configurazioni, messaggistica e altro. I programmatori manipolano\u2026"
+description: "Come fare: Fish non ha un parsing XML integrato, quindi ti affiderai\
+  \ a strumenti esterni come `xmllint` o `xmlstarlet`. Ecco uno snippet per leggere\
+  \ i\u2026"
 lastmod: '2024-03-13T22:44:43.885246-06:00'
 model: gpt-4-0125-preview
-summary: Lavorare con XML significa gestire dati in un formato strutturato e pervasivo,
-  usato in configurazioni, messaggistica e altro.
+summary: Fish non ha un parsing XML integrato, quindi ti affiderai a strumenti esterni
+  come `xmllint` o `xmlstarlet`.
 title: Lavorare con XML
 weight: 40
 ---

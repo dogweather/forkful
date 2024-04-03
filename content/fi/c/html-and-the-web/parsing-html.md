@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:51.773219-07:00
-description: "HTML:n j\xE4sent\xE4minen C-kielell\xE4 k\xE4sitt\xE4\xE4 HTML-dokumenttien\
-  \ analysoimisen tehokkaasti datan, rakenteen tai tiettyjen osien poimimiseksi, usein\
-  \ datan\u2026"
+description: "Kuinka: HTML:n j\xE4sent\xE4minen voi vaikuttaa pelottavalta HTML:n\
+  \ monimutkaisuuden ja usein siistist\xE4, hyvin muodostetuista rakenteista poikkeavien\
+  \ kohtien\u2026"
 lastmod: '2024-03-13T22:44:57.037534-06:00'
 model: gpt-4-0125-preview
-summary: "HTML:n j\xE4sent\xE4minen C-kielell\xE4 k\xE4sitt\xE4\xE4 HTML-dokumenttien\
-  \ analysoimisen tehokkaasti datan, rakenteen tai tiettyjen osien poimimiseksi, usein\
-  \ datan louhimisen tai verkon kaapimisen esivaiheena."
+summary: "HTML:n j\xE4sent\xE4minen voi vaikuttaa pelottavalta HTML:n monimutkaisuuden\
+  \ ja usein siistist\xE4, hyvin muodostetuista rakenteista poikkeavien kohtien vuoksi."
 title: "HTML:n j\xE4sent\xE4minen"
 weight: 43
 ---

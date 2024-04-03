@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:53.217281-07:00
-description: "L'analisi di HTML in Rust \xE8 il processo di estrazione dati da documenti\
-  \ HTML, essenziale per il web scraping, l'estrazione di dati o la costruzione di\
-  \ web\u2026"
+description: "Come fare: Per analizzare HTML in Rust, si utilizza spesso il crate\
+  \ `scraper`, che fornisce un'interfaccia di alto livello per attraversare e manipolare\u2026"
 lastmod: '2024-03-13T22:44:43.215907-06:00'
 model: gpt-4-0125-preview
-summary: "L'analisi di HTML in Rust \xE8 il processo di estrazione dati da documenti\
-  \ HTML, essenziale per il web scraping, l'estrazione di dati o la costruzione di\
-  \ web crawler."
+summary: Per analizzare HTML in Rust, si utilizza spesso il crate `scraper`, che fornisce
+  un'interfaccia di alto livello per attraversare e manipolare documenti HTML.
 title: Analisi del HTML
 weight: 43
 ---

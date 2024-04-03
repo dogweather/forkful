@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:34:57.608654-07:00
-description: "String concatenation is like making a sandwich, but instead of bread\
-  \ and fillings, you're stacking words together to form a sentence or a phrase.\u2026"
+description: 'How to: Here''s how to make strings stick together in Kotlin - no glue
+  needed.'
 lastmod: '2024-03-13T22:45:00.041245-06:00'
 model: gpt-4-1106-preview
-summary: String concatenation is like making a sandwich, but instead of bread and
-  fillings, you're stacking words together to form a sentence or a phrase.
+summary: Here's how to make strings stick together in Kotlin - no glue needed.
 title: Concatenating strings
 weight: 3
 ---

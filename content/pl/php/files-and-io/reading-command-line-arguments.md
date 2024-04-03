@@ -1,12 +1,13 @@
 ---
 date: 2024-01-20 17:56:28.647491-07:00
-description: "Czytanie argument\xF3w linii polece\u0144 to pobieranie danych wej\u015B\
-  ciowych od u\u017Cytkownika podczas wykonywania skryptu PHP w terminalu. Programi\u015B\
-  ci wykorzystuj\u0105 t\u0119\u2026"
+description: "Jak to zrobi\u0107: Aby odczyta\u0107 argumenty linii polece\u0144 w\
+  \ PHP, korzystamy ze zmiennej globalnej `$argv`, kt\xF3ra zawiera tablic\u0119 argument\xF3\
+  w przekazanych do\u2026"
 lastmod: '2024-03-13T22:44:35.512902-06:00'
 model: gpt-4-1106-preview
-summary: "Czytanie argument\xF3w linii polece\u0144 to pobieranie danych wej\u015B\
-  ciowych od u\u017Cytkownika podczas wykonywania skryptu PHP w terminalu."
+summary: "Aby odczyta\u0107 argumenty linii polece\u0144 w PHP, korzystamy ze zmiennej\
+  \ globalnej `$argv`, kt\xF3ra zawiera tablic\u0119 argument\xF3w przekazanych do\
+  \ skryptu."
 title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---

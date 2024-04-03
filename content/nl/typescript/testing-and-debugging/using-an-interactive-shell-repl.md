@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:37.619017-07:00
-description: "Een Read-Eval-Print-Loop (REPL) is een programmeeromgeving die individuele\
-  \ gebruikersinvoeren neemt, deze uitvoert en het resultaat aan de gebruiker\u2026"
+description: "Hoe te gebruiken: TypeScript komt niet met zijn eigen REPL. Laten we\
+  \ `ts-node` gebruiken, een TypeScript uitvoeromgeving voor Node.js die een REPL\
+  \ bevat.\u2026"
 lastmod: '2024-03-13T22:44:50.552393-06:00'
 model: gpt-4-0125-preview
-summary: Een Read-Eval-Print-Loop (REPL) is een programmeeromgeving die individuele
-  gebruikersinvoeren neemt, deze uitvoert en het resultaat aan de gebruiker teruggeeft.
+summary: TypeScript komt niet met zijn eigen REPL.
 title: Het gebruik van een interactieve shell (REPL)
 weight: 34
 ---

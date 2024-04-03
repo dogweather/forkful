@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:52:21.679613-07:00
-description: "La impresi\xF3n de salidas de depuraci\xF3n (debug output) es un m\xE9\
-  todo para mostrar informaci\xF3n de un programa mientras se ejecuta. Los programadores\
-  \ lo usan\u2026"
+description: "C\xF3mo: Con Clojure, puedes imprimir mensajes usando `println`, `print`,\
+  \ o `prn`. Te dejamos unos ejemplos r\xE1pida y concisos."
 lastmod: '2024-03-13T22:44:58.659283-06:00'
 model: gpt-4-1106-preview
-summary: "La impresi\xF3n de salidas de depuraci\xF3n (debug output) es un m\xE9todo\
-  \ para mostrar informaci\xF3n de un programa mientras se ejecuta."
+summary: Con Clojure, puedes imprimir mensajes usando `println`, `print`, o `prn`.
 title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---

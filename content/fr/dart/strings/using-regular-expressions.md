@@ -2,14 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:05.260213-07:00
-description: "Les expressions r\xE9guli\xE8res (regex) en Dart offrent un moyen puissant\
-  \ de rechercher et de manipuler des cha\xEEnes de caract\xE8res, permettant aux\
-  \ programmeurs\u2026"
+description: "Comment faire : Dart utilise la classe `RegExp` pour les expressions\
+  \ r\xE9guli\xE8res. Voici un exemple de base pour correspondre \xE0 un motif simple\
+  \ au sein\u2026"
 lastmod: '2024-03-13T22:44:57.372418-06:00'
 model: gpt-4-0125-preview
-summary: "Les expressions r\xE9guli\xE8res (regex) en Dart offrent un moyen puissant\
-  \ de rechercher et de manipuler des cha\xEEnes de caract\xE8res, permettant aux\
-  \ programmeurs d'effectuer des t\xE2ches complexes de traitement de texte efficacement."
+summary: "Dart utilise la classe `RegExp` pour les expressions r\xE9guli\xE8res."
 title: "Utiliser des expressions r\xE9guli\xE8res"
 weight: 11
 ---

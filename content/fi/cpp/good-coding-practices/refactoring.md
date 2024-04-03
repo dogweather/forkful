@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 01:17:20.710323-07:00
-description: "Koodin uudelleenj\xE4rjest\xE4minen (refaktorointi) on prosessi, jossa\
-  \ muutetaan tietokoneohjelman sis\xE4ist\xE4 rakennetta muuttamatta sen ulkoista\
-  \ toimintaa.\u2026"
+description: "Kuinka: Kuvittele, ett\xE4 sinulla on funktio, joka tekee hieman liikaa,\
+  \ kuten t\xE4m\xE4 k\xF6mpel\xF6 metodi, joka alustaa olion ja suorittaa my\xF6\
+  s lokitusta."
 lastmod: '2024-03-13T22:44:56.873512-06:00'
 model: gpt-4-0125-preview
-summary: "Koodin uudelleenj\xE4rjest\xE4minen (refaktorointi) on prosessi, jossa muutetaan\
-  \ tietokoneohjelman sis\xE4ist\xE4 rakennetta muuttamatta sen ulkoista toimintaa."
+summary: "Kuvittele, ett\xE4 sinulla on funktio, joka tekee hieman liikaa, kuten t\xE4\
+  m\xE4 k\xF6mpel\xF6 metodi, joka alustaa olion ja suorittaa my\xF6s lokitusta."
 title: Koodin refaktorointi
 weight: 19
 ---

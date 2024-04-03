@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:15.497945-07:00
-description: "Verificare se una directory esiste in Clojure comporta la verifica della\
-  \ presenza di una directory del sistema di file all'interno della tua applicazione\u2026"
+description: "Come fare: Clojure, essendo un linguaggio JVM, pu\xF2 utilizzare la\
+  \ classe `java.io.File` di Java per questo scopo. Non hai bisogno di alcuna libreria\
+  \ di\u2026"
 lastmod: '2024-03-13T22:44:43.056680-06:00'
 model: gpt-4-0125-preview
-summary: Verificare se una directory esiste in Clojure comporta la verifica della
-  presenza di una directory del sistema di file all'interno della tua applicazione
-  Clojure.
+summary: "Clojure, essendo un linguaggio JVM, pu\xF2 utilizzare la classe `java.io.File`\
+  \ di Java per questo scopo."
 title: Verifica se una directory esiste
 weight: 20
 ---

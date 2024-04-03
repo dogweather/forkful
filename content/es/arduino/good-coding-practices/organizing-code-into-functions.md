@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:08:36.963109-07:00
-description: "Organizar el c\xF3digo en funciones significa dividir tu c\xF3digo en\
-  \ bloques reutilizables, cada uno realizando una tarea espec\xEDfica. Los programadores\
-  \ hacen\u2026"
+description: "C\xF3mo hacerlo: Imagina que quieres hacer parpadear un LED. Sin funciones,\
+  \ tu `loop` es una mezcla desordenada. Con funciones, est\xE1 ordenado. As\xED es\
+  \ c\xF3mo."
 lastmod: '2024-03-13T22:44:59.338734-06:00'
 model: gpt-4-1106-preview
-summary: "Organizar el c\xF3digo en funciones significa dividir tu c\xF3digo en bloques\
-  \ reutilizables, cada uno realizando una tarea espec\xEDfica."
+summary: Imagina que quieres hacer parpadear un LED.
 title: "Organizando c\xF3digo en funciones"
 weight: 18
 ---

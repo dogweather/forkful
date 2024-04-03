@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:03.814688-07:00
-description: "Por\xF3wnywanie dw\xF3ch dat w programowaniu to podstawowe zadanie,\
-  \ pozwalaj\u0105ce programistom na ocen\u0119 chronologicznych relacji mi\u0119\
-  dzy datami. Takie por\xF3wnania\u2026"
+description: "Jak to zrobi\u0107: W Go daty obs\u0142uguje si\u0119 g\u0142\xF3wnie\
+  \ za pomoc\u0105 typu `time.Time` z pakietu `time`. Aby por\xF3wna\u0107 dwie daty,\
+  \ mo\u017Cemy u\u017Cy\u0107 metod takich jak\u2026"
 lastmod: '2024-03-13T22:44:34.866263-06:00'
 model: gpt-4-0125-preview
-summary: "Por\xF3wnywanie dw\xF3ch dat w programowaniu to podstawowe zadanie, pozwalaj\u0105\
-  ce programistom na ocen\u0119 chronologicznych relacji mi\u0119dzy datami."
+summary: "W Go daty obs\u0142uguje si\u0119 g\u0142\xF3wnie za pomoc\u0105 typu `time.Time`\
+  \ z pakietu `time`."
 title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---

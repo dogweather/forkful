@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:25.593833-07:00
-description: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res permet\
-  \ aux programmeurs de convertir les repr\xE9sentations textuelles des dates en objets\
-  \ `Date`\u2026"
+description: "Comment : JavaScript propose nativement la m\xE9thode `Date.parse()`\
+  \ et le constructeur `Date` pour analyser les cha\xEEnes de dates. Cependant, ces\
+  \ approches\u2026"
 lastmod: '2024-03-13T22:44:58.285713-06:00'
 model: gpt-4-0125-preview
-summary: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res permet aux\
-  \ programmeurs de convertir les repr\xE9sentations textuelles des dates en objets\
-  \ `Date` JavaScript, facilitant les manipulations, comparaisons et op\xE9rations\
-  \ de formatage des dates."
+summary: "JavaScript propose nativement la m\xE9thode `Date.parse()` et le constructeur\
+  \ `Date` pour analyser les cha\xEEnes de dates."
 title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
 weight: 30
 ---

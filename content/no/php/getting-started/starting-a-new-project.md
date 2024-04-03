@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 18:04:10.370550-07:00
-description: "\xC5 starte et nytt prosjekt er som \xE5 slippe l\xF8s kreativiteten\
-  \ din med kode som lerret. Programmerere gj\xF8r det for \xE5 l\xF8se problemer,\
-  \ utforske nye ideer,\u2026"
+description: 'How to: (Hvordan) La oss lage en enkel PHP-fil som sier "Hei, verden!".
+  Opprett en fil kalt `hello_world.php`.'
 lastmod: '2024-03-13T22:44:40.887108-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 starte et nytt prosjekt er som \xE5 slippe l\xF8s kreativiteten din\
-  \ med kode som lerret."
+summary: La oss lage en enkel PHP-fil som sier "Hei, verden!".
 title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---

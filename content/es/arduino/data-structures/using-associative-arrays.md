@@ -2,13 +2,14 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:09:46.506280-07:00
-description: "En el mundo de Arduino, los arrays asociativos te permiten emparejar\
-  \ claves con valores, algo as\xED como emparejar\xEDas calcetines con sus pares.\
-  \ Son una\u2026"
+description: "C\xF3mo hacerlo: Estrictamente hablando, Arduino no tiene soporte incorporado\
+  \ para arrays asociativos como los encontrar\xEDas en lenguajes de programaci\xF3\
+  n de\u2026"
 lastmod: '2024-03-13T22:44:59.327265-06:00'
 model: gpt-4-0125-preview
-summary: "En el mundo de Arduino, los arrays asociativos te permiten emparejar claves\
-  \ con valores, algo as\xED como emparejar\xEDas calcetines con sus pares."
+summary: "Estrictamente hablando, Arduino no tiene soporte incorporado para arrays\
+  \ asociativos como los encontrar\xEDas en lenguajes de programaci\xF3n de m\xE1\
+  s alto nivel."
 title: Uso de matrices asociativas
 weight: 15
 ---

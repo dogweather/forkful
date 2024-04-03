@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:12.308327-07:00
-description: "Een webpagina downloaden betekent het verzamelen van de gegevens die\
-  \ het bevat. Programmeurs doen dit om informatie te verkrijgen, tests te automatiseren,\u2026"
+description: "Hoe: Laten we een webpagina downloaden met Rust's `reqwest` crate, die\
+  \ een eenvoudige, asynchrone API biedt voor het maken van HTTP-verzoeken. Voeg eerst\u2026"
 lastmod: '2024-03-13T22:44:50.592891-06:00'
 model: gpt-4-0125-preview
-summary: Een webpagina downloaden betekent het verzamelen van de gegevens die het
-  bevat.
+summary: Laten we een webpagina downloaden met Rust's `reqwest` crate, die een eenvoudige,
+  asynchrone API biedt voor het maken van HTTP-verzoeken.
 title: Een webpagina downloaden
 weight: 42
 ---

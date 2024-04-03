@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:05.724680-07:00
-description: "Refactorizar en la programaci\xF3n implica reestructurar el c\xF3digo\
-  \ inform\xE1tico existente\u2014cambiando el factoreo\u2014sin alterar su comportamiento\
-  \ externo. Los\u2026"
+description: "C\xF3mo hacerlo: En Go, la refactorizaci\xF3n puede variar desde ajustes\
+  \ simples en el c\xF3digo hasta cambios m\xE1s complejos. Comencemos con un ejemplo\
+  \ b\xE1sico:\u2026"
 lastmod: '2024-03-13T22:44:58.477155-06:00'
 model: gpt-4-0125-preview
-summary: "Refactorizar en la programaci\xF3n implica reestructurar el c\xF3digo inform\xE1\
-  tico existente\u2014cambiando el factoreo\u2014sin alterar su comportamiento externo."
+summary: "En Go, la refactorizaci\xF3n puede variar desde ajustes simples en el c\xF3\
+  digo hasta cambios m\xE1s complejos."
 title: "Refactorizaci\xF3n"
 weight: 19
 ---

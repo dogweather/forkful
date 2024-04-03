@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:45.939818-07:00
-description: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y sang d\u1EA1ng chu\u1ED7\
-  i trong Rust cho ph\xE9p hi\u1EC3n th\u1ECB ng\xE0y th\xE1ng d\u01B0\u1EDBi d\u1EA1\
-  ng d\u1EC5 \u0111\u1ECDc cho con ng\u01B0\u1EDDi. Ch\xFAng ta l\xE0m \u0111i\u1EC1\
-  u n\xE0y cho giao di\u1EC7n ng\u01B0\u1EDDi d\xF9ng\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Crate `chrono` trong Rust l\xE0 l\u1EF1\
+  a ch\u1ECDn h\xE0ng \u0111\u1EA7u cho vi\u1EC7c x\u1EED l\xFD ng\xE0y v\xE0 gi\u1EDD\
+  . H\xE3y ch\u1EAFc ch\u1EAFn n\xF3 \u0111\xE3 \u0111\u01B0\u1EE3c th\xEAm v\xE0\
+  o `Cargo.toml` c\u1EE7a b\u1EA1n."
 lastmod: '2024-03-13T22:44:36.391710-06:00'
 model: gpt-4-0125-preview
-summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y sang d\u1EA1ng chu\u1ED7i trong\
-  \ Rust cho ph\xE9p hi\u1EC3n th\u1ECB ng\xE0y th\xE1ng d\u01B0\u1EDBi d\u1EA1ng\
-  \ d\u1EC5 \u0111\u1ECDc cho con ng\u01B0\u1EDDi."
+summary: "Crate `chrono` trong Rust l\xE0 l\u1EF1a ch\u1ECDn h\xE0ng \u0111\u1EA7\
+  u cho vi\u1EC7c x\u1EED l\xFD ng\xE0y v\xE0 gi\u1EDD."
 title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 weight: 28
 ---

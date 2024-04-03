@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:20.849523-07:00
-description: "\xC5 gj\xF8re f\xF8rste bokstav i en streng stor i C# inneb\xE6rer \xE5\
-  \ konvertere den f\xF8rste bokstaven i en streng til stor bokstav hvis den ikke\
-  \ allerede er det. Denne\u2026"
+description: "Hvordan: C# tilbyr en enkel tiln\xE6rming til \xE5 gj\xF8re strenger\
+  \ store med innebygde metoder. Den enkleste m\xE5ten \xE5 oppn\xE5 dette p\xE5 er\
+  \ ved \xE5 direkte endre\u2026"
 lastmod: '2024-03-13T22:44:40.777877-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 gj\xF8re f\xF8rste bokstav i en streng stor i C# inneb\xE6rer \xE5\
-  \ konvertere den f\xF8rste bokstaven i en streng til stor bokstav hvis den ikke\
-  \ allerede er det."
+summary: "C# tilbyr en enkel tiln\xE6rming til \xE5 gj\xF8re strenger store med innebygde\
+  \ metoder."
 title: Sette stor bokstav i en streng
 weight: 2
 ---

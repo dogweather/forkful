@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:35.715519-07:00
-description: "Usuwanie znak\xF3w pasuj\u0105cych do okre\u015Blonego wzorca w Visual\
-  \ Basic for Applications (VBA) polega na identyfikowaniu, a nast\u0119pnie usuwaniu\
-  \ znak\xF3w lub ci\u0105g\xF3w,\u2026"
+description: "Jak to zrobi\u0107: W VBA, mo\u017Cesz u\u017Cy\u0107 funkcji `Replace`\
+  \ lub wyra\u017Ce\u0144 regularnych, aby usun\u0105\u0107 znaki pasuj\u0105ce do\
+  \ wzorca. Oto przyk\u0142ady obu metod: #."
 lastmod: '2024-03-13T22:44:35.213004-06:00'
 model: gpt-4-0125-preview
-summary: "Usuwanie znak\xF3w pasuj\u0105cych do okre\u015Blonego wzorca w Visual Basic\
-  \ for Applications (VBA) polega na identyfikowaniu, a nast\u0119pnie usuwaniu znak\xF3\
-  w lub ci\u0105g\xF3w, kt\xF3re spe\u0142niaj\u0105 okre\u015Blone kryteria."
+summary: "W VBA, mo\u017Cesz u\u017Cy\u0107 funkcji `Replace` lub wyra\u017Ce\u0144\
+  \ regularnych, aby usun\u0105\u0107 znaki pasuj\u0105ce do wzorca."
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---

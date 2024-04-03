@@ -1,12 +1,11 @@
 ---
 date: 2024-01-27 20:35:50.828627-07:00
-description: "Satunnaislukujen tuottaminen TypeScriptill\xE4 tarkoittaa ennalta arvaamattomien\
-  \ numeeristen arvojen luomista m\xE4\xE4ritetyll\xE4 v\xE4lill\xE4. Ohjelmoijat\
-  \ hy\xF6dynt\xE4v\xE4t\u2026"
+description: "Kuinka: TypeScriptiss\xE4 voit luoda satunnaislukuja globaalin `Math`-objektin\
+  \ avulla. Alla on joitakin k\xE4yt\xE4nn\xF6n esimerkkej\xE4, jotka osoittavat,\
+  \ kuinka\u2026"
 lastmod: '2024-03-13T22:44:56.311377-06:00'
 model: gpt-4-0125-preview
-summary: "Satunnaislukujen tuottaminen TypeScriptill\xE4 tarkoittaa ennalta arvaamattomien\
-  \ numeeristen arvojen luomista m\xE4\xE4ritetyll\xE4 v\xE4lill\xE4."
+summary: "TypeScriptiss\xE4 voit luoda satunnaislukuja globaalin `Math`-objektin avulla."
 title: Satunnaislukujen generointi
 weight: 12
 ---

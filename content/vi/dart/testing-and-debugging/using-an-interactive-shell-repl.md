@@ -2,16 +2,14 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:56.515646-07:00
-description: "M\u1ED9t shell t\u01B0\u01A1ng t\xE1c (REPL - V\xF2ng l\u1EB7p \u0110\
-  \u1ECDc-\u0110\xE1nh gi\xE1-In) cho Dart cho ph\xE9p l\u1EADp tr\xECnh vi\xEAn \u0111\
-  \xE1nh m\xE1y v\xE0 th\u1EF1c thi m\xE3 Dart t\u1EEBng d\xF2ng m\u1ED9t m\xE0 kh\xF4\
-  ng c\u1EA7n ph\u1EA3i bi\xEAn\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Dart kh\xF4ng \u0111i k\xE8m v\u1EDBi REPL \u0111\
+  \u01B0\u1EE3c t\xEDch h\u1EE3p s\u1EB5n. Tuy nhi\xEAn, b\u1EA1n c\xF3 th\u1EC3 \u0111\
+  \u1EA1t \u0111\u01B0\u1EE3c ch\u1EE9c n\u0103ng t\u01B0\u01A1ng t\u1EF1 REPL b\u1EB1\
+  ng c\xE1ch s\u1EED d\u1EE5ng DartPad (tr\u1EF1c tuy\u1EBFn)\u2026"
 lastmod: '2024-03-13T22:44:36.265097-06:00'
 model: gpt-4-0125-preview
-summary: "M\u1ED9t shell t\u01B0\u01A1ng t\xE1c (REPL - V\xF2ng l\u1EB7p \u0110\u1ECD\
-  c-\u0110\xE1nh gi\xE1-In) cho Dart cho ph\xE9p l\u1EADp tr\xECnh vi\xEAn \u0111\xE1\
-  nh m\xE1y v\xE0 th\u1EF1c thi m\xE3 Dart t\u1EEBng d\xF2ng m\u1ED9t m\xE0 kh\xF4\
-  ng c\u1EA7n ph\u1EA3i bi\xEAn d\u1ECBch to\xE0n b\u1ED9 k\u1ECBch b\u1EA3n."
+summary: "Dart kh\xF4ng \u0111i k\xE8m v\u1EDBi REPL \u0111\u01B0\u1EE3c t\xEDch h\u1EE3\
+  p s\u1EB5n."
 title: "S\u1EED d\u1EE5ng giao di\u1EC7n d\xF2ng l\u1EC7nh t\u01B0\u01A1ng t\xE1c\
   \ (REPL)"
 weight: 34

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:37:19.621612-07:00
-description: "Converting a date to a string means representing a date object as readable\
-  \ text that follows a specific pattern. Programmers do this to display dates to\u2026"
+description: 'How to: Java makes date-to-string conversion straightforward. The `java.time.format.DateTimeFormatter`
+  class is your go-to. Here''s a code example.'
 lastmod: '2024-03-13T22:44:59.982387-06:00'
 model: gpt-4-1106-preview
-summary: Converting a date to a string means representing a date object as readable
-  text that follows a specific pattern.
+summary: Java makes date-to-string conversion straightforward.
 title: Converting a date into a string
 weight: 28
 ---

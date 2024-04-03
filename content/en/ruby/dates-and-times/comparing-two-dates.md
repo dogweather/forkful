@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:34:23.056948-07:00
-description: "Comparing two dates means checking if they're equal, or figuring out\
-  \ which one comes before or after the other. Programmers do this to track events,\u2026"
+description: 'How to: Ruby simplifies our lives with the Date class. Let''s see it
+  in action.'
 lastmod: '2024-03-13T22:45:00.562756-06:00'
 model: gpt-4-1106-preview
-summary: Comparing two dates means checking if they're equal, or figuring out which
-  one comes before or after the other.
+summary: Ruby simplifies our lives with the Date class.
 title: Comparing two dates
 weight: 27
 ---

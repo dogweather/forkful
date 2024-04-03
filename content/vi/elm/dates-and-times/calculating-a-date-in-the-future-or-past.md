@@ -2,16 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:36.403720-07:00
-description: "T\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7\
-  c qu\xE1 kh\u1EE9 ch\u1EC9 \u0111\u01A1n gi\u1EA3n l\xE0 \u0111i\u1EC1u ch\u1EC9\
-  nh m\u1ED9t ng\xE0y \u0111\xE3 cho b\u1EB1ng m\u1ED9t kho\u1EA3n th\u1EDDi gian\
-  \ nh\u1EA5t \u0111\u1ECBnh. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: M\xF4-\u0111un `Time` c\u1EE7a Elm v\xE0 g\xF3\
+  i `justinmimbs/time-extra` cho ph\xE9p ch\xFAng ta d\u1EC5 d\xE0ng thao t\xE1c v\u1EDB\
+  i ng\xE0y."
 lastmod: '2024-03-13T22:44:36.562298-06:00'
 model: gpt-4-0125-preview
-summary: "T\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1\
-  \ kh\u1EE9 ch\u1EC9 \u0111\u01A1n gi\u1EA3n l\xE0 \u0111i\u1EC1u ch\u1EC9nh m\u1ED9\
-  t ng\xE0y \u0111\xE3 cho b\u1EB1ng m\u1ED9t kho\u1EA3n th\u1EDDi gian nh\u1EA5t\
-  \ \u0111\u1ECBnh."
+summary: "M\xF4-\u0111un `Time` c\u1EE7a Elm v\xE0 g\xF3i `justinmimbs/time-extra`\
+  \ cho ph\xE9p ch\xFAng ta d\u1EC5 d\xE0ng thao t\xE1c v\u1EDBi ng\xE0y."
 title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1EE9"
 weight: 26
 ---

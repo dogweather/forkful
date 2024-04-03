@@ -2,13 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:06.215032-07:00
-description: "De huidige datum in PHP verkrijgen draait allemaal om het plukken van\
-  \ de datum en tijd van vandaag direct vanaf de server. Programmeurs doen dit om\
-  \ de\u2026"
+description: 'Hoe: Je roept de huidige datum in PHP op met de `date()` functie. Bijvoorbeeld.'
 lastmod: '2024-03-13T22:44:50.906249-06:00'
 model: gpt-4-0125-preview
-summary: De huidige datum in PHP verkrijgen draait allemaal om het plukken van de
-  datum en tijd van vandaag direct vanaf de server.
+summary: Je roept de huidige datum in PHP op met de `date()` functie.
 title: Het huidige datum ophalen
 weight: 29
 ---

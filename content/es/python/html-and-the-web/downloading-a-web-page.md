@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:44:31.361043-07:00
-description: "Descargar una p\xE1gina web significa traer su contenido HTML a tu disco\
-  \ local. Los programadores lo hacen para analizar la estructura de la p\xE1gina,\
-  \ extraer\u2026"
+description: "How To: Usaremos `requests`, una biblioteca de Python f\xE1cil de usar\
+  \ para solicitudes HTTP."
 lastmod: '2024-03-13T22:44:58.609544-06:00'
 model: gpt-4-1106-preview
-summary: "Descargar una p\xE1gina web significa traer su contenido HTML a tu disco\
-  \ local."
+summary: "Usaremos `requests`, una biblioteca de Python f\xE1cil de usar para solicitudes\
+  \ HTTP."
 title: "Descargando una p\xE1gina web"
 weight: 42
 ---

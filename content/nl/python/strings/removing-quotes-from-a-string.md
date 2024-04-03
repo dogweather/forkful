@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:14.847874-07:00
-description: "Het verwijderen van aanhalingstekens uit een tekenreeks betekent meestal\
-  \ het wegnemen van overbodige dubbele (\") of enkele (') aanhalingstekens.\u2026"
+description: 'Hoe: Python biedt verschillende manieren om ongewenste aanhalingstekens
+  uit tekenreeksen te verwijderen. Laten we enkele voorbeelden doorlopen.'
 lastmod: '2024-03-13T22:44:50.364344-06:00'
 model: gpt-4-0125-preview
-summary: Het verwijderen van aanhalingstekens uit een tekenreeks betekent meestal
-  het wegnemen van overbodige dubbele (") of enkele (') aanhalingstekens.
+summary: Python biedt verschillende manieren om ongewenste aanhalingstekens uit tekenreeksen
+  te verwijderen.
 title: Quotes verwijderen uit een string
 weight: 9
 ---

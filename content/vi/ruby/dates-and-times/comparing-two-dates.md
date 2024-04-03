@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:19.890693-07:00
-description: "So s\xE1nh hai ng\xE0y t\u1EE9c l\xE0 ki\u1EC3m tra xem ch\xFAng c\xF3\
-  \ b\u1EB1ng nhau kh\xF4ng, ho\u1EB7c t\xECm hi\u1EC3u xem c\xE1i n\xE0o \u0111\u1EBF\
-  n tr\u01B0\u1EDBc ho\u1EB7c sau c\xE1i kia. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111\
-  i\u1EC1u n\xE0y \u0111\u1EC3 theo\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Ruby l\xE0m cho cu\u1ED9c s\u1ED1ng c\u1EE7\
+  a ch\xFAng ta tr\u1EDF n\xEAn \u0111\u01A1n gi\u1EA3n h\u01A1n v\u1EDBi l\u1EDB\
+  p Date. H\xE3y xem n\xF3 ho\u1EA1t \u0111\u1ED9ng nh\u01B0 th\u1EBF n\xE0o."
 lastmod: '2024-03-13T22:44:37.357896-06:00'
 model: gpt-4-0125-preview
-summary: "So s\xE1nh hai ng\xE0y t\u1EE9c l\xE0 ki\u1EC3m tra xem ch\xFAng c\xF3 b\u1EB1\
-  ng nhau kh\xF4ng, ho\u1EB7c t\xECm hi\u1EC3u xem c\xE1i n\xE0o \u0111\u1EBFn tr\u01B0\
-  \u1EDBc ho\u1EB7c sau c\xE1i kia."
+summary: "Ruby l\xE0m cho cu\u1ED9c s\u1ED1ng c\u1EE7a ch\xFAng ta tr\u1EDF n\xEA\
+  n \u0111\u01A1n gi\u1EA3n h\u01A1n v\u1EDBi l\u1EDBp Date."
 title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---

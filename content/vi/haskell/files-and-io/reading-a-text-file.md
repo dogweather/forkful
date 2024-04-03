@@ -2,16 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:11.609251-07:00
-description: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong l\u1EADp tr\xEC\
-  nh cho ph\xE9p m\xE3 c\u1EE7a b\u1EA1n h\u1EA5p th\u1EE5 d\u1EEF li\u1EC7u, gi\u1ED1\
-  ng nh\u01B0 vi\u1EC7c \u0111\u1ED5 c\xE0 ph\xEA v\xE0o n\xE3o v\xE0o bu\u1ED5i s\xE1\
-  ng. Ch\xFAng ta l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 cung c\u1EA5p\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1\
+  ch b\u1EA1n khi\u1EBFn Haskell \u0111\u1ECDc t\u1EC7p v\u0103n b\u1EA3n m\xE0 kh\xF4\
+  ng c\u1EA7n ph\u1EA3i v\u1EAFt m\u1ED3 h\xF4i. M\u1EDF tr\xECnh ch\u1EC9nh s\u1EED\
+  a y\xEAu th\xEDch c\u1EE7a b\u1EA1n, v\xE0 h\xE3y b\u1EAFt \u0111\u1EA7u vi\u1EBF\
+  t\u2026"
 lastmod: '2024-03-13T22:44:36.734909-06:00'
 model: gpt-4-0125-preview
-summary: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong l\u1EADp tr\xEC\
-  nh cho ph\xE9p m\xE3 c\u1EE7a b\u1EA1n h\u1EA5p th\u1EE5 d\u1EEF li\u1EC7u, gi\u1ED1\
-  ng nh\u01B0 vi\u1EC7c \u0111\u1ED5 c\xE0 ph\xEA v\xE0o n\xE3o v\xE0o bu\u1ED5i s\xE1\
-  ng."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch b\u1EA1n khi\u1EBFn Haskell \u0111\
+  \u1ECDc t\u1EC7p v\u0103n b\u1EA3n m\xE0 kh\xF4ng c\u1EA7n ph\u1EA3i v\u1EAFt m\u1ED3\
+  \ h\xF4i."
 title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 22
 ---

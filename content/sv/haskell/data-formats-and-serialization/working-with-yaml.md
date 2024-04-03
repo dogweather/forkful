@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:38.672760-07:00
-description: "YAML, en f\xF6rkortning f\xF6r \"YAML Ain't Markup Language\", \xE4\
-  r en m\xE4nniskov\xE4nlig standard f\xF6r dataseriering som kan anv\xE4ndas f\xF6\
-  r alla programmeringsspr\xE5k.\u2026"
+description: "Hur man g\xF6r: Haskell har inte inbyggt st\xF6d f\xF6r bearbetning\
+  \ av YAML, men du kan anv\xE4nda tredjepartsbibliotek s\xE5som `yaml` och `aeson`\
+  \ f\xF6r att tolka och\u2026"
 lastmod: '2024-03-13T22:44:37.975098-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, en f\xF6rkortning f\xF6r \"YAML Ain't Markup Language\", \xE4r en\
-  \ m\xE4nniskov\xE4nlig standard f\xF6r dataseriering som kan anv\xE4ndas f\xF6r\
-  \ alla programmeringsspr\xE5k."
+summary: "Haskell har inte inbyggt st\xF6d f\xF6r bearbetning av YAML, men du kan\
+  \ anv\xE4nda tredjepartsbibliotek s\xE5som `yaml` och `aeson` f\xF6r att tolka och\
+  \ generera YAML-data."
 title: Att Arbeta med YAML
 weight: 41
 ---

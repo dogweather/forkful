@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:05.488051-07:00
-description: "Att arbeta med JSON (JavaScript Object Notation) i Rust handlar om att\
-  \ tolka JSON-data till Rusts datastrukturer och serialisera Rusts datastrukturer\u2026"
+description: "Hur man g\xF6r: F\xF6r att arbeta med JSON i Rust anv\xE4nds `serde`-craten\
+  \ tillsammans med `serde_json` f\xF6r serialisering och deserialisering flitigt.\
+  \ B\xF6rja med\u2026"
 lastmod: '2024-03-13T22:44:37.720841-06:00'
 model: gpt-4-0125-preview
-summary: Att arbeta med JSON (JavaScript Object Notation) i Rust handlar om att tolka
-  JSON-data till Rusts datastrukturer och serialisera Rusts datastrukturer tillbaka
-  till JSON.
+summary: "F\xF6r att arbeta med JSON i Rust anv\xE4nds `serde`-craten tillsammans\
+  \ med `serde_json` f\xF6r serialisering och deserialisering flitigt."
 title: Arbeta med JSON
 weight: 38
 ---

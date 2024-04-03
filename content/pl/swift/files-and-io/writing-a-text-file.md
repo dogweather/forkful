@@ -2,15 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:57.814832-07:00
-description: "Pisanie plik\xF3w tekstowych w j\u0119zyku Swift pozwala na trwa\u0142\
-  e przechowywanie danych tekstowych w systemie plik\xF3w, co jest niezb\u0119dne\
-  \ do zada\u0144 takich jak\u2026"
+description: "Jak to zrobi\u0107: #."
 lastmod: '2024-03-13T22:44:35.772990-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie plik\xF3w tekstowych w j\u0119zyku Swift pozwala na trwa\u0142e\
-  \ przechowywanie danych tekstowych w systemie plik\xF3w, co jest niezb\u0119dne\
-  \ do zada\u0144 takich jak zapisywanie ustawie\u0144 konfiguracyjnych, danych u\u017C\
-  ytkownika czy log\xF3w."
+summary: '#.'
 title: Pisanie pliku tekstowego
 weight: 24
 ---

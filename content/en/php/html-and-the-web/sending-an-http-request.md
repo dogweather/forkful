@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 18:00:24.778839-07:00
-description: "Sending an HTTP request is the process by which a program asks for data\
-  \ from a server. Programmers do it to interact with web services, APIs, or to simply\u2026"
+description: "How to: PHP's got a neat way to handle HTTP requests with the `cURL`\
+  \ library. But the newer kid on the block is using `file_get_contents` for simpler\
+  \ GET\u2026"
 lastmod: '2024-03-13T22:45:00.163772-06:00'
 model: gpt-4-1106-preview
-summary: Sending an HTTP request is the process by which a program asks for data from
-  a server.
+summary: PHP's got a neat way to handle HTTP requests with the `cURL` library.
 title: Sending an HTTP request
 weight: 44
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:01.764260-07:00
-description: "Tarkistaminen, onko kansio olemassa Dartissa, liittyy kansion olemassaolon\
-  \ varmistamiseen m\xE4\xE4ritetyss\xE4 polussa tiedostoj\xE4rjestelm\xE4ss\xE4 ennen\
-  \ tiedostojen\u2026"
+description: "Kuinka tehd\xE4: Dart k\xE4ytt\xE4\xE4 `dart:io` kirjastoa tiedostojen\
+  \ ja hakemistojen k\xE4sittelyyn. T\xE4ss\xE4 on yksinkertainen tapa tarkistaa,\
+  \ onko kansio olemassa."
 lastmod: '2024-03-13T22:44:56.286929-06:00'
 model: gpt-4-0125-preview
-summary: "Tarkistaminen, onko kansio olemassa Dartissa, liittyy kansion olemassaolon\
-  \ varmistamiseen m\xE4\xE4ritetyss\xE4 polussa tiedostoj\xE4rjestelm\xE4ss\xE4 ennen\
-  \ tiedostojen lukemista tai kirjoittamista."
+summary: "Dart k\xE4ytt\xE4\xE4 `dart:io` kirjastoa tiedostojen ja hakemistojen k\xE4\
+  sittelyyn."
 title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---

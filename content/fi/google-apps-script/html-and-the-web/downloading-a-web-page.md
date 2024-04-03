@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:07.454080-07:00
-description: "Web-sivun lataaminen Google Apps Scriptill\xE4 sis\xE4lt\xE4\xE4 sivun\
-  \ sis\xE4ll\xF6n noutamisen HTML:n kautta eri tarkoituksiin, kuten verkon kaavintaan\
-  \ (web scraping),\u2026"
+description: "Kuinka: Google Apps Scriptiss\xE4 `UrlFetchApp`-palvelu on keskeinen\
+  \ web-sis\xE4ll\xF6n lataamisessa. Alla on vaiheittainen opas ja yksinkertainen\
+  \ esimerkki, joka\u2026"
 lastmod: '2024-03-13T22:44:56.095505-06:00'
 model: gpt-4-0125-preview
-summary: "Web-sivun lataaminen Google Apps Scriptill\xE4 sis\xE4lt\xE4\xE4 sivun sis\xE4\
-  ll\xF6n noutamisen HTML:n kautta eri tarkoituksiin, kuten verkon kaavintaan (web\
-  \ scraping), tiedon poimintaan tai muutosten seurantaan."
+summary: "Google Apps Scriptiss\xE4 `UrlFetchApp`-palvelu on keskeinen web-sis\xE4\
+  ll\xF6n lataamisessa."
 title: Verkkosivun lataaminen
 weight: 42
 ---

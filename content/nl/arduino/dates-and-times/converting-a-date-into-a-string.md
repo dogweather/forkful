@@ -2,14 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:32.117058-07:00
-description: "Een datum naar een tekenreeks converteren betekent de weergave van een\
-  \ datum veranderen van een formaat dat programmeren begrijpt, zoals dag-, maand-\
-  \ en\u2026"
+description: 'Hoe: Hier is een eenvoudige voorbeeld van het converteren van een datum
+  naar een tekenreeks op Arduino.'
 lastmod: '2024-03-13T22:44:51.083382-06:00'
 model: gpt-4-0125-preview
-summary: Een datum naar een tekenreeks converteren betekent de weergave van een datum
-  veranderen van een formaat dat programmeren begrijpt, zoals dag-, maand- en jaar
-  integers, naar platte tekst.
+summary: Hier is een eenvoudige voorbeeld van het converteren van een datum naar een
+  tekenreeks op Arduino.
 title: Een datum converteren naar een string
 weight: 28
 ---

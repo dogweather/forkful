@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:45.271779-07:00
-description: "Substrings extraheren is het actie van een specifiek deel van een tekenreeks\
-  \ grijpen \u2014 een beetje zoals het uitscheppen van je favoriete stuk van een\u2026"
+description: "Hoe: C# maakt het trekken van substrings uit een tekenreeks eenvoudig.\
+  \ Hier is een snelle blik op hoe het gedaan wordt met de `Substring` methode en\u2026"
 lastmod: '2024-03-13T22:44:50.799002-06:00'
 model: gpt-4-0125-preview
-summary: "Substrings extraheren is het actie van een specifiek deel van een tekenreeks\
-  \ grijpen \u2014 een beetje zoals het uitscheppen van je favoriete stuk van een\
-  \ taart."
+summary: C# maakt het trekken van substrings uit een tekenreeks eenvoudig.
 title: Substrings extraheren
 weight: 6
 ---

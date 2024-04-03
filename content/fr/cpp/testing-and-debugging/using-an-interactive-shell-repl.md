@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:12:07.822909-07:00
-description: "Un REPL (Read-Eval-Print-Loop, ou Boucle de Lecture, \xC9valuation et\
-  \ Impression en Fran\xE7ais) est un environnement de programmation simple et interactif.\
-  \ Les\u2026"
+description: "Comment faire : C++ ne vient pas avec un REPL int\xE9gr\xE9, mais des\
+  \ outils comme Cling offrent cette capacit\xE9. Voici comment utiliser Cling pour\
+  \ calculer la\u2026"
 lastmod: '2024-03-13T22:44:58.163539-06:00'
 model: gpt-4-0125-preview
-summary: "Un REPL (Read-Eval-Print-Loop, ou Boucle de Lecture, \xC9valuation et Impression\
-  \ en Fran\xE7ais) est un environnement de programmation simple et interactif."
+summary: "C++ ne vient pas avec un REPL int\xE9gr\xE9, mais des outils comme Cling\
+  \ offrent cette capacit\xE9."
 title: Utilisation d'une console interactive (REPL)
 weight: 34
 ---

@@ -1,13 +1,9 @@
 ---
 date: 2024-01-20 17:36:34.698187-07:00
-description: "Converter uma data em uma string \xE9 basicamente transformar o formato\
-  \ de data, normalmente estruturado e reconhecido pelo computador, em texto leg\xED\
-  vel por\u2026"
+description: 'Como Fazer: .'
 lastmod: '2024-03-13T22:44:46.249542-06:00'
 model: gpt-4-1106-preview
-summary: "Converter uma data em uma string \xE9 basicamente transformar o formato\
-  \ de data, normalmente estruturado e reconhecido pelo computador, em texto leg\xED\
-  vel por humanos."
+summary: .
 title: Convertendo uma data em uma string
 weight: 28
 ---

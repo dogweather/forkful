@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:36.287951-07:00
-description: "Vi\u1EC7c ghi v\xE0o l\u1ED7i chu\u1EA9n (stderr) l\xE0 m\u1ED9t c\xE1\
-  ch \u0111\u1EC3 xu\u1EA5t th\xF4ng \u0111i\u1EC7p l\u1ED7i v\xE0 ch\u1EA9n \u0111\
-  o\xE1n ri\xEAng bi\u1EC7t kh\u1ECFi \u0111\u1EA7u ra chu\u1EA9n (stdout). C\xE1\
-  c l\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3 \u0111\u1EC3\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Java l\xE0m cho vi\u1EC7c ghi v\xE0o stderr\
+  \ tr\u1EDF n\xEAn \u0111\u01A1n gi\u1EA3n s\u1EED d\u1EE5ng `System.err`. D\u01B0\
+  \u1EDBi \u0111\xE2y l\xE0 m\u1ED9t c\xE1i nh\xECn nhanh."
 lastmod: '2024-03-13T22:44:36.510717-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c ghi v\xE0o l\u1ED7i chu\u1EA9n (stderr) l\xE0 m\u1ED9t c\xE1ch\
-  \ \u0111\u1EC3 xu\u1EA5t th\xF4ng \u0111i\u1EC7p l\u1ED7i v\xE0 ch\u1EA9n \u0111\
-  o\xE1n ri\xEAng bi\u1EC7t kh\u1ECFi \u0111\u1EA7u ra chu\u1EA9n (stdout)."
+summary: "Java l\xE0m cho vi\u1EC7c ghi v\xE0o stderr tr\u1EDF n\xEAn \u0111\u01A1\
+  n gi\u1EA3n s\u1EED d\u1EE5ng `System.err`."
 title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---

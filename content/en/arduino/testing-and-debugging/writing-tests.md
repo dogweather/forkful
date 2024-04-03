@@ -1,11 +1,12 @@
 ---
 date: 2024-02-03 19:03:20.256456-07:00
-description: "Writing tests in the Arduino environment refers to the process of creating\
-  \ automated tests that validate the functionality of your code on Arduino\u2026"
+description: "How to: Arduino does not have a built-in testing framework like some\
+  \ other programming environments. However, you can use third-party libraries such\
+  \ as\u2026"
 lastmod: '2024-03-13T22:45:00.324402-06:00'
 model: gpt-4-0125-preview
-summary: Writing tests in the Arduino environment refers to the process of creating
-  automated tests that validate the functionality of your code on Arduino devices.
+summary: Arduino does not have a built-in testing framework like some other programming
+  environments.
 title: Writing tests
 weight: 36
 ---

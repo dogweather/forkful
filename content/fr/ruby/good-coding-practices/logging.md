@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 01:08:25.572424-07:00
-description: "La journalisation dans la programmation, c'est comme tenir un journal\
-  \ intime pour votre application. Il s'agit de l'enregistrement syst\xE9matique\u2026"
+description: "Comment faire : Ruby dispose d'un module int\xE9gr\xE9 pour la journalisation,\
+  \ `Logger`, qui est super facile \xE0 utiliser. Voici un exemple rapide pour commencer\u2026"
 lastmod: '2024-03-13T22:44:58.426407-06:00'
 model: gpt-4-1106-preview
-summary: La journalisation dans la programmation, c'est comme tenir un journal intime
-  pour votre application.
+summary: "Ruby dispose d'un module int\xE9gr\xE9 pour la journalisation, `Logger`,\
+  \ qui est super facile \xE0 utiliser."
 title: Journalisation
 weight: 17
 ---

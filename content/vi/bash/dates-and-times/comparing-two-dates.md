@@ -2,15 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:41.934650-07:00
-description: "So s\xE1nh hai ng\xE0y cho ph\xE9p b\u1EA1n x\xE1c \u0111\u1ECBnh ng\xE0\
-  y n\xE0o s\u1EDBm h\u01A1n, mu\u1ED9n h\u01A1n, ho\u1EB7c n\u1EBFu ch\xFAng l\xE0\
-  \ c\xF9ng m\u1ED9t th\u1EDDi \u0111i\u1EC3m. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0\
-  m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 s\u1EAFp x\u1EBFp s\u1EF1\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9\
+  t c\xE1ch nhanh ch\xF3ng \u0111\u1EC3 so s\xE1nh hai ng\xE0y trong Bash."
 lastmod: '2024-03-13T22:44:36.895288-06:00'
 model: gpt-4-0125-preview
-summary: "So s\xE1nh hai ng\xE0y cho ph\xE9p b\u1EA1n x\xE1c \u0111\u1ECBnh ng\xE0\
-  y n\xE0o s\u1EDBm h\u01A1n, mu\u1ED9n h\u01A1n, ho\u1EB7c n\u1EBFu ch\xFAng l\xE0\
-  \ c\xF9ng m\u1ED9t th\u1EDDi \u0111i\u1EC3m."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t c\xE1ch nhanh ch\xF3ng \u0111\u1EC3\
+  \ so s\xE1nh hai ng\xE0y trong Bash."
 title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---

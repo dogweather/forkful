@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:37.824478-07:00
-description: "Het berekenen van een datum in de toekomst of het verleden betekent\
-  \ het vinden van een specifieke datum v\xF3\xF3r of na een bekende datum. Programmeurs\
-  \ doen\u2026"
+description: "Hoe te: Kotlin behandelt datums en tijden met de `java.time` bibliotheek.\
+  \ Om dagen toe te voegen of af te trekken, gebruik je `plusDays()` of\u2026"
 lastmod: '2024-03-13T22:44:50.781311-06:00'
 model: gpt-4-0125-preview
-summary: "Het berekenen van een datum in de toekomst of het verleden betekent het\
-  \ vinden van een specifieke datum v\xF3\xF3r of na een bekende datum."
+summary: Kotlin behandelt datums en tijden met de `java.time` bibliotheek.
 title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---

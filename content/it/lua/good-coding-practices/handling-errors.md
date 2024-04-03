@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 00:55:28.746706-07:00
-description: "La gestione degli errori nella programmazione riguarda l'anticipare\
-  \ l'inaspettato. \xC8 l'arte di pianificare per quando le cose non vanno come previsto\
-  \ cos\xEC\u2026"
+description: 'Come fare: Lua utilizza due funzioni principali per la gestione degli
+  errori: `pcall` e `xpcall`. Ecco come si usano.'
 lastmod: '2024-03-13T22:44:43.564870-06:00'
 model: gpt-4-1106-preview
-summary: La gestione degli errori nella programmazione riguarda l'anticipare l'inaspettato.
+summary: Lua utilizza due funzioni principali per la gestione degli errori.
 title: Gestione degli errori
 weight: 16
 ---

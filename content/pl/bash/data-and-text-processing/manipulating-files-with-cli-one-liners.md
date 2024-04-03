@@ -1,14 +1,11 @@
 ---
 date: 2024-01-27 16:20:58.168067-07:00
-description: "Manipulowanie plikami za pomoc\u0105 jednoliniowych polece\u0144 CLI\
-  \ (Command Line Interface) polega na u\u017Cywaniu skrypt\xF3w Bash lub polece\u0144\
-  \ do wykonywania dzia\u0142a\u0144 na\u2026"
+description: "Jak to zrobi\u0107: Oto kilka pot\u0119\u017Cnych jednoliniowc\xF3w\
+  \ i co mog\u0105 zrobi\u0107: 1. **Tworzenie pliku i wpisywanie do niego tekstu:**."
 lastmod: '2024-03-13T22:44:35.579529-06:00'
 model: gpt-4-0125-preview
-summary: "Manipulowanie plikami za pomoc\u0105 jednoliniowych polece\u0144 CLI (Command\
-  \ Line Interface) polega na u\u017Cywaniu skrypt\xF3w Bash lub polece\u0144 do wykonywania\
-  \ dzia\u0142a\u0144 na plikach, takich jak tworzenie, czytanie, aktualizowanie lub\
-  \ usuwanie ich, wszystko z poziomu terminala."
+summary: "Oto kilka pot\u0119\u017Cnych jednoliniowc\xF3w i co mog\u0105 zrobi\u0107\
+  ."
 title: "Manipulowanie plikami za pomoc\u0105 jednolinijkowc\xF3w CLI"
 weight: 31
 ---

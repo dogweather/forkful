@@ -1,12 +1,11 @@
 ---
 date: 2024-01-25 02:12:11.086953-07:00
-description: "Refactoring is the process of changing a computer program's internal\
-  \ structure without altering its external behavior. Programmers do it to clean up\
-  \ their\u2026"
+description: 'How to: Imagine you''ve got a function that''s doing a bit too much,
+  like this clunky method that initializes an object and also performs logging.'
 lastmod: '2024-03-13T22:45:00.365266-06:00'
 model: gpt-4-1106-preview
-summary: Refactoring is the process of changing a computer program's internal structure
-  without altering its external behavior.
+summary: Imagine you've got a function that's doing a bit too much, like this clunky
+  method that initializes an object and also performs logging.
 title: Refactoring
 weight: 19
 ---

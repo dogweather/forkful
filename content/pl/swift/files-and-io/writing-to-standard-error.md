@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:57.285874-07:00
-description: "Pisanie do standardowego b\u0142\u0119du (stderr) polega na kierowaniu\
-  \ komunikat\xF3w o b\u0142\u0119dach lub wyj\u015Bcia diagnostycznego programu do\
-  \ osobnego strumienia, odr\u0119bnego\u2026"
+description: "Jak to zrobi\u0107: W Swift pisanie do standardowego b\u0142\u0119du\
+  \ mo\u017Cna wykona\u0107 za pomoc\u0105 klasy `FileHandle` do bezpo\u015Bredniego\
+  \ dost\u0119pu do stderr. Oto prosty przyk\u0142ad."
 lastmod: '2024-03-13T22:44:35.771042-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie do standardowego b\u0142\u0119du (stderr) polega na kierowaniu komunikat\xF3\
-  w o b\u0142\u0119dach lub wyj\u015Bcia diagnostycznego programu do osobnego strumienia,\
-  \ odr\u0119bnego od standardowego wyj\u015Bcia (stdout)."
+summary: "W Swift pisanie do standardowego b\u0142\u0119du mo\u017Cna wykona\u0107\
+  \ za pomoc\u0105 klasy `FileHandle` do bezpo\u015Bredniego dost\u0119pu do stderr."
 title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---

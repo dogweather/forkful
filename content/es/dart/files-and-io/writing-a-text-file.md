@@ -2,12 +2,14 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:44.905653-07:00
-description: "Escribir un archivo de texto en Dart implica crear o modificar archivos\
-  \ en el disco para almacenar datos en un formato legible. Los programadores lo hacen\u2026"
+description: "C\xF3mo hacerlo: La biblioteca central de Dart proporciona el paquete\
+  \ `dart:io` para el manejo de archivos, lo que te permite escribir archivos de texto\
+  \ sin\u2026"
 lastmod: '2024-03-13T22:44:58.774171-06:00'
 model: gpt-4-0125-preview
-summary: Escribir un archivo de texto en Dart implica crear o modificar archivos en
-  el disco para almacenar datos en un formato legible.
+summary: La biblioteca central de Dart proporciona el paquete `dart:io` para el manejo
+  de archivos, lo que te permite escribir archivos de texto sin la necesidad de bibliotecas
+  de terceros.
 title: Escribiendo un archivo de texto
 weight: 24
 ---

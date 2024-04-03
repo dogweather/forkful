@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:16:25.458328-07:00
-description: "Um shell interativo, ou REPL (Read-Eval-Print Loop, Ciclo de Leitura-Avalia\xE7\
-  \xE3o-Impress\xE3o), permite escrever e executar c\xF3digo PHP em tempo real. \xC9\
-  \ ideal\u2026"
+description: "Como: Inicie o REPL PHP executando `php -a` no seu terminal. Aqui est\xE1\
+  \ uma amostra de como ele funciona."
 lastmod: '2024-03-13T22:44:46.668944-06:00'
 model: gpt-4-0125-preview
-summary: "Um shell interativo, ou REPL (Read-Eval-Print Loop, Ciclo de Leitura-Avalia\xE7\
-  \xE3o-Impress\xE3o), permite escrever e executar c\xF3digo PHP em tempo real."
+summary: Inicie o REPL PHP executando `php -a` no seu terminal.
 title: Usando um shell interativo (REPL)
 weight: 34
 ---

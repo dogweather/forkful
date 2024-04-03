@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:45.311584-07:00
-description: "Assoziative Arrays, oder Maps, in Kotlin sind Sammlungen, die Schl\xFC\
-  ssel-Wert-Paare speichern. Programmierer nutzen sie, um Daten effizient zu organisieren\u2026"
+description: 'Wie geht das: Eine Map in Kotlin zu erstellen und zu verwenden, ist
+  unkompliziert. Hier ist eine kurze Anleitung dazu.'
 lastmod: '2024-03-13T22:44:53.840023-06:00'
 model: gpt-4-0125-preview
-summary: "Assoziative Arrays, oder Maps, in Kotlin sind Sammlungen, die Schl\xFCssel-Wert-Paare\
-  \ speichern."
+summary: Eine Map in Kotlin zu erstellen und zu verwenden, ist unkompliziert.
 title: Verwendung von assoziativen Arrays
 weight: 15
 ---

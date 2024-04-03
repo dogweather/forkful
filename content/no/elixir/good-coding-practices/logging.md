@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:02:43.657794-07:00
-description: "Logging i programvareutvikling er teknikken for \xE5 registrere hendelser\
-  \ som finner sted mens et program kj\xF8rer, vanligvis til en fil eller et eksternt\u2026"
+description: "Hvordan: I Elixir er den prim\xE6re m\xE5ten \xE5 logge informasjon\
+  \ p\xE5 gjennom det innebygde `Logger`-modulen. Slik kan du bruke den."
 lastmod: '2024-03-13T22:44:40.449655-06:00'
 model: gpt-4-1106-preview
-summary: "Logging i programvareutvikling er teknikken for \xE5 registrere hendelser\
-  \ som finner sted mens et program kj\xF8rer, vanligvis til en fil eller et eksternt\
-  \ system."
+summary: "I Elixir er den prim\xE6re m\xE5ten \xE5 logge informasjon p\xE5 gjennom\
+  \ det innebygde `Logger`-modulen."
 title: "Loggf\xF8ring"
 weight: 17
 ---

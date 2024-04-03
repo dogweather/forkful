@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:45:33.215638-07:00
-description: "Liczby zespolone, sk\u0142adaj\u0105ce si\u0119 z cz\u0119\u015Bci rzeczywistej\
-  \ i urojonej (jak 3+4i), s\u0105 podstaw\u0105 w in\u017Cynierii i fizyce. Programi\u015B\
-  ci pracuj\u0105 z nimi przy\u2026"
+description: "Jak to zrobi\u0107: Ruby umo\u017Cliwia \u0142atw\u0105 prac\u0119 z\
+  \ liczbami zespolonymi. Mo\u017Cesz tworzy\u0107 je i manipulowa\u0107 nimi za pomoc\u0105\
+  \ klasy Complex."
 lastmod: '2024-03-13T22:44:35.924794-06:00'
 model: gpt-4-0125-preview
-summary: "Liczby zespolone, sk\u0142adaj\u0105ce si\u0119 z cz\u0119\u015Bci rzeczywistej\
-  \ i urojonej (jak 3+4i), s\u0105 podstaw\u0105 w in\u017Cynierii i fizyce."
+summary: "Ruby umo\u017Cliwia \u0142atw\u0105 prac\u0119 z liczbami zespolonymi."
 title: Praca z liczbami zespolonymi
 weight: 14
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 18:02:48.404022-07:00
-description: "Le richieste HTTP con autenticazione di base sono una modalit\xE0 standard\
-  \ per accedere a risorse protette da username e password. I programmatori le usano\u2026"
+description: 'Come fare: Ecco un modo semplice per inviare una richiesta HTTP con
+  autenticazione di base in Swift.'
 lastmod: '2024-03-13T22:44:43.769828-06:00'
 model: gpt-4-1106-preview
-summary: "Le richieste HTTP con autenticazione di base sono una modalit\xE0 standard\
-  \ per accedere a risorse protette da username e password."
+summary: Ecco un modo semplice per inviare una richiesta HTTP con autenticazione di
+  base in Swift.
 title: Inviare una richiesta http con autenticazione di base
 weight: 45
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:47:50.925638-07:00
-description: "Mittaa merkkijonon pituus, selvitt\xE4\xE4 sen merkkien m\xE4\xE4r\xE4\
-  n. Miksi? Kontrolloidaksesi sy\xF6tett\xE4, tehd\xE4ksesi tietojenk\xE4sittelyst\xE4\
-  \ tehokkaampaa tai\u2026"
+description: "How to: / Kuinka: PHP:ss\xE4 merkkijonon pituuden saat selvitetty\xE4\
+  \ `strlen`-funktiolla. T\xE4ss\xE4 lyhyt esimerkki."
 lastmod: '2024-03-13T22:44:56.646922-06:00'
 model: gpt-4-1106-preview
-summary: "Mittaa merkkijonon pituus, selvitt\xE4\xE4 sen merkkien m\xE4\xE4r\xE4n."
+summary: "PHP:ss\xE4 merkkijonon pituuden saat selvitetty\xE4 `strlen`-funktiolla."
 title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---

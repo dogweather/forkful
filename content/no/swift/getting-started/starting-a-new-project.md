@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 18:04:49.932823-07:00
-description: "\xC5 starte et nytt prosjekt i Swift handler om \xE5 skape en ren skifer\
-  \ for koden din. Vi gj\xF8r det for \xE5 realisere nye ideer, l\xF8se problemer\
-  \ eller l\xE6re noe\u2026"
+description: 'How to: (Hvordan:) Opprette et nytt prosjekt i Xcode.'
 lastmod: '2024-03-13T22:44:41.142564-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 starte et nytt prosjekt i Swift handler om \xE5 skape en ren skifer\
-  \ for koden din."
+summary: Opprette et nytt prosjekt i Xcode.
 title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:08.534062-07:00
-description: "Escrever testes em TypeScript envolve criar scripts automatizados para\
-  \ verificar a funcionalidade e corretude do seu c\xF3digo. Os programadores fazem\
-  \ isso\u2026"
+description: "Como fazer: O TypeScript funciona em harmonia com a maioria dos frameworks\
+  \ de teste em JavaScript. Para fins de demonstra\xE7\xE3o, usaremos o Jest, um\u2026"
 lastmod: '2024-03-13T22:44:46.329677-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever testes em TypeScript envolve criar scripts automatizados para verificar\
-  \ a funcionalidade e corretude do seu c\xF3digo."
+summary: O TypeScript funciona em harmonia com a maioria dos frameworks de teste em
+  JavaScript.
 title: Escrevendo testes
 weight: 36
 ---

@@ -1,14 +1,12 @@
 ---
 date: 2024-01-27 20:34:48.799899-07:00
-description: "La g\xE9n\xE9ration de nombres al\xE9atoires consiste \xE0 cr\xE9er\
-  \ des nombres qui ne peuvent pas \xEAtre pr\xE9dits de mani\xE8re raisonnable autrement\
-  \ que par hasard, ce qui\u2026"
+description: "Comment faire : Python fournit le module `random` qui aide \xE0 g\xE9\
+  n\xE9rer des nombres al\xE9atoires pour divers usages. Voici comment commencer :\
+  \ 1. **Importer le\u2026"
 lastmod: '2024-03-13T22:44:57.231019-06:00'
 model: gpt-4-0125-preview
-summary: "La g\xE9n\xE9ration de nombres al\xE9atoires consiste \xE0 cr\xE9er des\
-  \ nombres qui ne peuvent pas \xEAtre pr\xE9dits de mani\xE8re raisonnable autrement\
-  \ que par hasard, ce qui est essentiel pour le d\xE9veloppement de simulations,\
-  \ de jeux et d'algorithmes de s\xE9curit\xE9."
+summary: "Python fournit le module `random` qui aide \xE0 g\xE9n\xE9rer des nombres\
+  \ al\xE9atoires pour divers usages."
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---

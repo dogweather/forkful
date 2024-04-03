@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:38:42.079104-07:00
-description: "Ein String in Kleinbuchstaben umzuwandeln bedeutet, alle Gro\xDFbuchstaben\
-  \ in einem Text durch ihre kleingeschriebenen Gegenst\xFCcke zu ersetzen. Wir tun\
-  \ dies,\u2026"
+description: "So geht\u2019s: ."
 lastmod: '2024-03-13T22:44:53.750525-06:00'
 model: gpt-4-1106-preview
-summary: "Ein String in Kleinbuchstaben umzuwandeln bedeutet, alle Gro\xDFbuchstaben\
-  \ in einem Text durch ihre kleingeschriebenen Gegenst\xFCcke zu ersetzen."
+summary: .
 title: Umformung eines Strings in Kleinbuchstaben
 weight: 4
 ---

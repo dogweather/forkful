@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 00:56:13.502573-07:00
-description: "Manejar errores en la programaci\xF3n se trata de esperar lo inesperado.\
-  \ Es el arte de planificar para cuando las cosas no salen como se espera y as\xED\
-  \ poder\u2026"
+description: "C\xF3mo hacerlo: Lua usa dos funciones principales para el manejo de\
+  \ errores: `pcall` y `xpcall`. As\xED es como las utilizas."
 lastmod: '2024-03-13T22:44:59.209332-06:00'
 model: gpt-4-1106-preview
-summary: "Manejar errores en la programaci\xF3n se trata de esperar lo inesperado."
+summary: Lua usa dos funciones principales para el manejo de errores.
 title: Manejo de errores
 weight: 16
 ---

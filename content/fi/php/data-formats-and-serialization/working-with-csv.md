@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:15.706053-07:00
-description: "Ty\xF6skentely CSV:n (pilkuilla erotetut arvot) parissa k\xE4sitt\xE4\
-  \xE4 datan lukemista ja kirjoittamista CSV-tiedostoihin, jotka ovat suosittu formaatti\u2026"
+description: "Kuinka: PHP tarjoaa sis\xE4\xE4nrakennettuja funktioita CSV-tiedostojen\
+  \ k\xE4sittelyyn, tekee lukemisen ja kirjoittamisen n\xE4ihin tiedostoihin suoraviivaiseksi\u2026"
 lastmod: '2024-03-13T22:44:56.678262-06:00'
 model: gpt-4-0125-preview
-summary: "Ty\xF6skentely CSV:n (pilkuilla erotetut arvot) parissa k\xE4sitt\xE4\xE4\
-  \ datan lukemista ja kirjoittamista CSV-tiedostoihin, jotka ovat suosittu formaatti\
-  \ v\xE4litt\xE4m\xE4\xE4n taulukkomuotoista dataa pelk\xE4ss\xE4 tekstiss\xE4."
+summary: "PHP tarjoaa sis\xE4\xE4nrakennettuja funktioita CSV-tiedostojen k\xE4sittelyyn,\
+  \ tekee lukemisen ja kirjoittamisen n\xE4ihin tiedostoihin suoraviivaiseksi ilman\
+  \ kolmannen osapuolen kirjastoja tarvita."
 title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---

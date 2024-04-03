@@ -3,17 +3,17 @@ changelog:
 - 2024-01-30, dogweather, reviewed
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:58.574591-07:00
-description: "M\u1EA3ng k\u1EBFt h\u1EE3p, hay c\xF2n \u0111\u01B0\u1EE3c bi\u1EBF\
-  t \u0111\u1EBFn v\u1EDBi t\xEAn l\xE0 t\u1EEB \u0111i\u1EC3n, trong Haskell l\xE0\
-  \ v\u1EC1 vi\u1EC7c \xE1nh x\u1EA1 c\xE1c kh\xF3a v\u1EDBi c\xE1c gi\xE1 tr\u1ECB\
-  \ \u0111\u1EC3 t\xECm ki\u1EBFm nhanh ch\xF3ng v\xE0 qu\u1EA3n l\xFD d\u1EEF\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Haskell kh\xF4ng c\xF3 m\u1EA3ng k\u1EBFt h\u1EE3\
+  p ngay l\u1EADp t\u1EE9c nh\u01B0 m\u1ED9t s\u1ED1 ng\xF4n ng\u1EEF kh\xE1c, nh\u01B0\
+  ng n\xF3 cung c\u1EA5p m\u1ED9t th\u01B0 vi\u1EC7n ti\xEAu chu\u1EA9n m\u1EA1nh\
+  \ m\u1EBD \u0111\u01B0\u1EE3c g\u1ECDi l\xE0 `Data.Map`\u2026"
 lastmod: '2024-03-13T22:44:36.703205-06:00'
 model: gpt-4-0125-preview
-summary: "M\u1EA3ng k\u1EBFt h\u1EE3p, hay c\xF2n \u0111\u01B0\u1EE3c bi\u1EBFt \u0111\
-  \u1EBFn v\u1EDBi t\xEAn l\xE0 t\u1EEB \u0111i\u1EC3n, trong Haskell l\xE0 v\u1EC1\
-  \ vi\u1EC7c \xE1nh x\u1EA1 c\xE1c kh\xF3a v\u1EDBi c\xE1c gi\xE1 tr\u1ECB \u0111\
-  \u1EC3 t\xECm ki\u1EBFm nhanh ch\xF3ng v\xE0 qu\u1EA3n l\xFD d\u1EEF li\u1EC7u hi\u1EC7\
-  u qu\u1EA3."
+summary: "Haskell kh\xF4ng c\xF3 m\u1EA3ng k\u1EBFt h\u1EE3p ngay l\u1EADp t\u1EE9\
+  c nh\u01B0 m\u1ED9t s\u1ED1 ng\xF4n ng\u1EEF kh\xE1c, nh\u01B0ng n\xF3 cung c\u1EA5\
+  p m\u1ED9t th\u01B0 vi\u1EC7n ti\xEAu chu\u1EA9n m\u1EA1nh m\u1EBD \u0111\u01B0\u1EE3\
+  c g\u1ECDi l\xE0 `Data.Map` \u0111\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi c\xE1c c\u1EB7\
+  p kh\xF3a-gi\xE1 tr\u1ECB."
 title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 weight: 15
 ---

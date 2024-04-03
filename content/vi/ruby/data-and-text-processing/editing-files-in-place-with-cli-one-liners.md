@@ -2,18 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:51.728102-07:00
-description: "Ch\u1EC9nh s\u1EEDa t\u1EADp tin t\u1EA1i ch\u1ED7 v\u1EDBi CLI (Giao\
-  \ di\u1EC7n D\xF2ng L\u1EC7nh) b\u1EB1ng m\u1ED9t d\xF2ng l\u1EC7nh trong Ruby cho\
-  \ ph\xE9p b\u1EA1n s\u1EEDa \u0111\u1ED5i t\u1EADp tin tr\u1EF1c ti\u1EBFp t\u1EEB\
-  \ terminal c\u1EE7a b\u1EA1n, kh\xF4ng\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Ruby cung c\u1EA5p m\u1ED9t c\xE1ch \u0111\u01A1\
+  n gi\u1EA3n \u0111\u1EC3 ch\u1EC9nh s\u1EEDa t\xE0i li\u1EC7u ngay t\u1EA1i ch\u1ED7\
+  \ t\u1EEB d\xF2ng l\u1EC7nh. S\u1EED d\u1EE5ng c\xF4ng t\u1EAFc `-i` c\u1EE7a Ruby,\
+  \ b\u1EA1n c\xF3 th\u1EC3 b\u1EA3o Ruby ho\u1EA1t\u2026"
 lastmod: '2024-03-13T22:44:37.334582-06:00'
 model: gpt-4-0125-preview
-summary: "Ch\u1EC9nh s\u1EEDa t\u1EADp tin t\u1EA1i ch\u1ED7 v\u1EDBi CLI (Giao di\u1EC7\
-  n D\xF2ng L\u1EC7nh) b\u1EB1ng m\u1ED9t d\xF2ng l\u1EC7nh trong Ruby cho ph\xE9\
-  p b\u1EA1n s\u1EEDa \u0111\u1ED5i t\u1EADp tin tr\u1EF1c ti\u1EBFp t\u1EEB terminal\
-  \ c\u1EE7a b\u1EA1n, kh\xF4ng c\u1EA7n m\u1EDF ch\xFAng trong m\u1ED9t tr\xECnh\
-  \ so\u1EA1n th\u1EA3o, th\u1EF1c hi\u1EC7n thay \u0111\u1ED5i v\xE0 l\u01B0u l\u1EA1\
-  i."
+summary: "Ruby cung c\u1EA5p m\u1ED9t c\xE1ch \u0111\u01A1n gi\u1EA3n \u0111\u1EC3\
+  \ ch\u1EC9nh s\u1EEDa t\xE0i li\u1EC7u ngay t\u1EA1i ch\u1ED7 t\u1EEB d\xF2ng l\u1EC7\
+  nh."
 title: "Ch\u1EC9nh s\u1EEDa file t\u1EA1i ch\u1ED7 v\u1EDBi c\xE2u l\u1EC7nh CLI ng\u1EAF\
   n g\u1ECDn"
 weight: 32

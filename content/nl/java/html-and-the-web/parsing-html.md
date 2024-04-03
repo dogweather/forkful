@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:34.572124-07:00
-description: "HTML parsen betekent graven door de opmaak om gegevens zoals tekst,\
-  \ links of andere elementen te extraheren. We doen dit om te interageren met of\u2026"
+description: 'Hoe: Laten we Jsoup gebruiken, een handige bibliotheek voor het werken
+  met echte HTML. Voeg eerst de afhankelijkheid toe.'
 lastmod: '2024-03-13T22:44:50.679471-06:00'
 model: gpt-4-0125-preview
-summary: HTML parsen betekent graven door de opmaak om gegevens zoals tekst, links
-  of andere elementen te extraheren.
+summary: Laten we Jsoup gebruiken, een handige bibliotheek voor het werken met echte
+  HTML.
 title: HTML Parsen
 weight: 43
 ---

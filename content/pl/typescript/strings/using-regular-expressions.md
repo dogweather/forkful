@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:43.028180-07:00
-description: "Wyra\u017Cenia regularne, zwane r\xF3wnie\u017C regex, to pot\u0119\u017C\
-  ne narz\u0119dzie do dopasowywania wzorc\xF3w i wyszukiwania w programowaniu. Programi\u015B\
-  ci u\u017Cywaj\u0105 wyra\u017Ce\u0144\u2026"
+description: "Jak to zrobi\u0107: Przejd\u017Amy do TypeScript i zobaczmy, jak u\u017C\
+  ywa\u0107 regex do typowych zada\u0144."
 lastmod: '2024-03-13T22:44:35.128404-06:00'
 model: gpt-4-0125-preview
-summary: "Wyra\u017Cenia regularne, zwane r\xF3wnie\u017C regex, to pot\u0119\u017C\
-  ne narz\u0119dzie do dopasowywania wzorc\xF3w i wyszukiwania w programowaniu."
+summary: "Przejd\u017Amy do TypeScript i zobaczmy, jak u\u017Cywa\u0107 regex do typowych\
+  \ zada\u0144."
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---

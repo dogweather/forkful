@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:40.607086-07:00
-description: "HTTP-pyynn\xF6n l\xE4hett\xE4minen tarkoittaa pyynn\xF6n luomista ja\
-  \ l\xE4hett\xE4mist\xE4 verkkopalvelimelle tietojen noutamiseksi tai l\xE4hett\xE4\
-  miseksi. Ohjelmoijat tekev\xE4t\u2026"
+description: "Kuinka: L\xE4hett\xE4\xE4ksesi HTTP-pyynn\xF6n C-kielell\xE4, yleens\xE4\
+  \ tukeudutaan kirjastoihin, kuten libcurl, koska C:ss\xE4 ei ole sis\xE4\xE4nrakennettua\
+  \ tukea\u2026"
 lastmod: '2024-03-13T22:44:57.036437-06:00'
 model: gpt-4-0125-preview
-summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen tarkoittaa pyynn\xF6n luomista ja l\xE4\
-  hett\xE4mist\xE4 verkkopalvelimelle tietojen noutamiseksi tai l\xE4hett\xE4miseksi."
+summary: "L\xE4hett\xE4\xE4ksesi HTTP-pyynn\xF6n C-kielell\xE4, yleens\xE4 tukeudutaan\
+  \ kirjastoihin, kuten libcurl, koska C:ss\xE4 ei ole sis\xE4\xE4nrakennettua tukea\
+  \ verkkoprotokollille."
 title: "L\xE4hett\xE4minen HTTP-pyynt\xF6"
 weight: 44
 ---

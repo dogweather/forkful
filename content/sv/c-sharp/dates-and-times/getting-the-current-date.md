@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:25.562023-07:00
-description: "Att f\xE5 det aktuella datumet i C# inneb\xE4r att h\xE4mta aktuella\
-  \ datum- och tidsuppgifter fr\xE5n systemet. Programmerare beh\xF6ver ofta tillg\xE5\
-  ng till denna\u2026"
+description: "Hur man g\xF6r: C# erbjuder ett enkelt s\xE4tt att f\xE5 det aktuella\
+  \ datumet genom att anv\xE4nda `DateTime`-klassen som \xE4r en del av .NET Frameworks\
+  \ System-\u2026"
 lastmod: '2024-03-13T22:44:37.923748-06:00'
 model: gpt-4-0125-preview
-summary: "Att f\xE5 det aktuella datumet i C# inneb\xE4r att h\xE4mta aktuella datum-\
-  \ och tidsuppgifter fr\xE5n systemet."
+summary: "C# erbjuder ett enkelt s\xE4tt att f\xE5 det aktuella datumet genom att\
+  \ anv\xE4nda `DateTime`-klassen som \xE4r en del av .NET Frameworks System-namnrymd."
 title: "F\xE5 det aktuella datumet"
 weight: 29
 ---

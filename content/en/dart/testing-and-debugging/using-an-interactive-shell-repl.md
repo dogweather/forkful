@@ -1,12 +1,10 @@
 ---
 date: 2024-03-08 21:33:23.045462-07:00
-description: "An interactive shell (REPL - Read-Evaluate-Print Loop) for Dart allows\
-  \ programmers to dynamically type and execute Dart code line by line without needing\u2026"
+description: "How to: Dart does not come with an inbuilt REPL. However, you can achieve\
+  \ REPL-like functionality using the DartPad (online) or by utilizing third-party\u2026"
 lastmod: '2024-03-13T22:44:59.822263-06:00'
 model: gpt-4-0125-preview
-summary: An interactive shell (REPL - Read-Evaluate-Print Loop) for Dart allows programmers
-  to dynamically type and execute Dart code line by line without needing to compile
-  entire scripts.
+summary: Dart does not come with an inbuilt REPL.
 title: Using an interactive shell (REPL)
 weight: 34
 ---

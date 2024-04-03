@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:45:06.538224-07:00
-description: "Numeroiden py\xF6rist\xE4minen tarkoittaa niiden s\xE4\xE4t\xE4mist\xE4\
-  \ l\xE4himp\xE4\xE4n kokonaislukuun tai m\xE4\xE4ritettyyn desimaalipaikkaan. Ohjelmoijat\
-  \ py\xF6rist\xE4v\xE4t numeroita\u2026"
+description: "Kuinka: Haskell k\xE4ytt\xE4\xE4 `round`, `ceiling`, `floor` ja `truncate`\
+  \ funktioita `Prelude`sta py\xF6ristysoperaatioihin."
 lastmod: '2024-03-13T22:44:56.610506-06:00'
 model: gpt-4-0125-preview
-summary: "Numeroiden py\xF6rist\xE4minen tarkoittaa niiden s\xE4\xE4t\xE4mist\xE4\
-  \ l\xE4himp\xE4\xE4n kokonaislukuun tai m\xE4\xE4ritettyyn desimaalipaikkaan."
+summary: "Haskell k\xE4ytt\xE4\xE4 `round`, `ceiling`, `floor` ja `truncate` funktioita\
+  \ `Prelude`sta py\xF6ristysoperaatioihin."
 title: "Numerojen py\xF6rist\xE4minen"
 weight: 13
 ---

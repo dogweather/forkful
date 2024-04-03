@@ -1,13 +1,13 @@
 ---
 date: 2024-01-26 01:08:34.282533-07:00
-description: "Logowanie to proces zapisywania zdarze\u0144, b\u0142\u0119d\xF3w i\
-  \ innych istotnych informacji podczas wykonania programu do zewn\u0119trznego medium,\
-  \ cz\u0119sto plik\xF3w lub baz\u2026"
+description: "Jak to zrobi\u0107: W TypeScript mo\u017Cna \u0142atwo zaimplementowa\u0107\
+  \ podstawowe logowanie za pomoc\u0105 metod konsoli lub zintegrowa\u0107 bardziej\
+  \ zaawansowane logowanie z\u2026"
 lastmod: '2024-03-13T22:44:35.145851-06:00'
 model: gpt-4-1106-preview
-summary: "Logowanie to proces zapisywania zdarze\u0144, b\u0142\u0119d\xF3w i innych\
-  \ istotnych informacji podczas wykonania programu do zewn\u0119trznego medium, cz\u0119\
-  sto plik\xF3w lub baz danych."
+summary: "W TypeScript mo\u017Cna \u0142atwo zaimplementowa\u0107 podstawowe logowanie\
+  \ za pomoc\u0105 metod konsoli lub zintegrowa\u0107 bardziej zaawansowane logowanie\
+  \ z bibliotekami takimi jak `winston` czy `pino`."
 title: "Rejestrowanie zdarze\u0144"
 weight: 17
 ---

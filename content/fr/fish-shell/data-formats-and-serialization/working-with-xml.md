@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:30:09.727398-07:00
-description: "Travailler avec XML signifie manipuler des donn\xE9es dans un format\
-  \ structur\xE9 et omnipr\xE9sent, utilis\xE9 dans les configurations, la messagerie\
-  \ et plus encore.\u2026"
+description: "Comment faire : Fish n'a pas d'analyse XML int\xE9gr\xE9e, vous devrez\
+  \ donc vous appuyer sur des outils externes comme `xmllint` ou `xmlstarlet`. Voici\
+  \ un\u2026"
 lastmod: '2024-03-13T22:44:58.350988-06:00'
 model: gpt-4-0125-preview
-summary: "Travailler avec XML signifie manipuler des donn\xE9es dans un format structur\xE9\
-  \ et omnipr\xE9sent, utilis\xE9 dans les configurations, la messagerie et plus encore."
+summary: "Fish n'a pas d'analyse XML int\xE9gr\xE9e, vous devrez donc vous appuyer\
+  \ sur des outils externes comme `xmllint` ou `xmlstarlet`."
 title: Travailler avec XML
 weight: 40
 ---

@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 01:10:47.613607-07:00
-description: "Code in Haskell in Funktionen zu organisieren bedeutet, Ihren Code in\
-  \ wiederverwendbare, benannte Bl\xF6cke aufzubrechen. Warum? Es h\xE4lt Ihren Code\
-  \ DRY\u2026"
+description: "Wie geht das: So k\xF6nnen Sie Funktionen in Haskell schreiben und verwenden."
 lastmod: '2024-03-13T22:44:53.936790-06:00'
 model: gpt-4-1106-preview
-summary: "Code in Haskell in Funktionen zu organisieren bedeutet, Ihren Code in wiederverwendbare,\
-  \ benannte Bl\xF6cke aufzubrechen."
+summary: "So k\xF6nnen Sie Funktionen in Haskell schreiben und verwenden."
 title: Code in Funktionen organisieren
 weight: 18
 ---

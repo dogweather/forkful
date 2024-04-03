@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:53.087265-07:00
-description: "Hakemiston olemassaolon tarkistaminen TypeScriptill\xE4 on oleellinen\
-  \ osa tiedostonhallintateht\xE4vi\xE4, kuten tiedostoista lukemista tai niihin tietojen\u2026"
+description: "Kuinka: TypeScript, kun sit\xE4 ajetaan Node.js-ymp\xE4rist\xF6ss\xE4\
+  , mahdollistaa hakemiston olemassaolon tarkistamisen k\xE4ytt\xE4m\xE4ll\xE4 `fs`-moduulia,\
+  \ joka tarjoaa\u2026"
 lastmod: '2024-03-13T22:44:56.329363-06:00'
 model: gpt-4-0125-preview
-summary: "Hakemiston olemassaolon tarkistaminen TypeScriptill\xE4 on oleellinen osa\
-  \ tiedostonhallintateht\xE4vi\xE4, kuten tiedostoista lukemista tai niihin tietojen\
-  \ kirjoittamista, varmistaen, ett\xE4 toimenpiteet suoritetaan ainoastaan validioiden\
-  \ hakemistojen kanssa."
+summary: "TypeScript, kun sit\xE4 ajetaan Node.js-ymp\xE4rist\xF6ss\xE4, mahdollistaa\
+  \ hakemiston olemassaolon tarkistamisen k\xE4ytt\xE4m\xE4ll\xE4 `fs`-moduulia, joka\
+  \ tarjoaa `existsSync()`-funktion tai asynkronisen `access()`-funktion yhdistettyn\xE4\
+  \ `constants.F_OK`:n kanssa."
 title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---

@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:49.791565-07:00
-description: "L'analyse de HTML en Elixir consiste \xE0 extraire des informations\
-  \ des documents HTML. Les programmeurs font cela pour interagir de mani\xE8re programmatique\u2026"
+description: "Comment faire : Elixir, avec son mod\xE8le robuste de concurrence et\
+  \ son paradigme de programmation fonctionnelle, n'inclut pas de capacit\xE9s d'analyse\
+  \ HTML\u2026"
 lastmod: '2024-03-13T22:44:57.324626-06:00'
 model: gpt-4-0125-preview
-summary: "L'analyse de HTML en Elixir consiste \xE0 extraire des informations des\
-  \ documents HTML."
+summary: "Elixir, avec son mod\xE8le robuste de concurrence et son paradigme de programmation\
+  \ fonctionnelle, n'inclut pas de capacit\xE9s d'analyse HTML int\xE9gr\xE9es."
 title: Analyse Syntaxique du HTML
 weight: 43
 ---

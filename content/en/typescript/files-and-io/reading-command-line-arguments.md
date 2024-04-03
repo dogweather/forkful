@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:57:02.958419-07:00
-description: Command line arguments let users pass data to a program when they run
-  it. Programmers use them to customize a program's behavior without changing the
-  code.
+description: 'How to: In TypeScript, you use Node.js to read command line arguments.
+  Here''s how.'
 lastmod: '2024-03-13T22:44:59.872442-06:00'
 model: gpt-4-1106-preview
-summary: Command line arguments let users pass data to a program when they run it.
+summary: In TypeScript, you use Node.js to read command line arguments.
 title: Reading command line arguments
 weight: 23
 ---

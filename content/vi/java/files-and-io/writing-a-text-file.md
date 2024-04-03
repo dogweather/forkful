@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:33.710991-07:00
-description: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong Java c\xF3 ngh\u0129\
-  a l\xE0 l\u01B0u tr\u1EEF d\u1EEF li\u1EC7u v\u0103n b\u1EA3n v\xE0o m\u1ED9t t\u1EC7\
-  p tr\xEAn \u0111\u0129a. C\xE1c nh\xE0 ph\xE1t tri\u1EC3n th\u1EF1c hi\u1EC7n vi\u1EC7\
-  c n\xE0y cho c\xE1c t\xE1c v\u1EE5 nh\u01B0 ghi\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: V\u1EDBi g\xF3i `java.nio.file` c\u1EE7a Java,\
+  \ vi\u1EBFt v\xE0o m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n r\u1EA5t \u0111\u01A1n gi\u1EA3\
+  n. H\xE3y xem `Files.write()` \u0111\u1EC3 l\u01B0u nhanh."
 lastmod: '2024-03-13T22:44:36.513299-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong Java c\xF3 ngh\u0129\
-  a l\xE0 l\u01B0u tr\u1EEF d\u1EEF li\u1EC7u v\u0103n b\u1EA3n v\xE0o m\u1ED9t t\u1EC7\
-  p tr\xEAn \u0111\u0129a."
+summary: "V\u1EDBi g\xF3i `java.nio.file` c\u1EE7a Java, vi\u1EBFt v\xE0o m\u1ED9\
+  t t\u1EC7p v\u0103n b\u1EA3n r\u1EA5t \u0111\u01A1n gi\u1EA3n."
 title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 24
 ---

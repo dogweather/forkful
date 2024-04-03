@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:56:15.954553-07:00
-description: "Lese kommandolinjeargumenter betyr \xE5 hente inn data som brukeren\
-  \ gir n\xE5r de kj\xF8rer programmet ditt. Det gj\xF8r vi for \xE5 gi fleksibilitet\
-  \ og tilpasse\u2026"
+description: "Hvordan: For \xE5 lese argumenter fra kommandolinjen i Haskell, kan\
+  \ du bruke `getArgs` fra `System.Environment`. Her er et enkelt eksempel."
 lastmod: '2024-03-13T22:44:40.858466-06:00'
 model: gpt-4-1106-preview
-summary: "Lese kommandolinjeargumenter betyr \xE5 hente inn data som brukeren gir\
-  \ n\xE5r de kj\xF8rer programmet ditt."
+summary: "For \xE5 lese argumenter fra kommandolinjen i Haskell, kan du bruke `getArgs`\
+  \ fra `System.Environment`."
 title: Lese kommandolinjeargumenter
 weight: 23
 ---

@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:41.797843-07:00
-description: "Het extraheren van substrings in C omvat het cre\xEBren van een kleinere\
-  \ string (substring) uit een grotere string op basis van gespecificeerde criteria,\u2026"
+description: "Hoe: In tegenstelling tot sommige hogere programmeertalen die ingebouwde\
+  \ methoden bieden voor substringextractie, vereist C een meer handmatige aanpak\
+  \ met\u2026"
 lastmod: '2024-03-13T22:44:51.278986-06:00'
 model: gpt-4-0125-preview
-summary: "Het extraheren van substrings in C omvat het cre\xEBren van een kleinere\
-  \ string (substring) uit een grotere string op basis van gespecificeerde criteria,\
-  \ zoals positie en lengte."
+summary: In tegenstelling tot sommige hogere programmeertalen die ingebouwde methoden
+  bieden voor substringextractie, vereist C een meer handmatige aanpak met behulp
+  van zijn stringmanipulatiefuncties.
 title: Substrings extraheren
 weight: 6
 ---

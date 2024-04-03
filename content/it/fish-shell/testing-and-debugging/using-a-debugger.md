@@ -1,8 +1,7 @@
 ---
 date: 2024-01-26 03:48:55.675291-07:00
-description: "Fish non dispone di un debugger integrato come altre shell, ma puoi\
-  \ utilizzare strumenti esterni come `gdb` per il debug di programmi compilati o\
-  \ `fish\u2026"
+description: "Come fare: Fish non dispone di un debugger integrato come altre shell,\
+  \ ma puoi utilizzare strumenti esterni come `gdb` per il debug di programmi compilati\u2026"
 lastmod: '2024-03-13T22:44:43.863716-06:00'
 model: gpt-4-0125-preview
 summary: Fish non dispone di un debugger integrato come altre shell, ma puoi utilizzare

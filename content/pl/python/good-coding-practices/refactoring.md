@@ -1,12 +1,13 @@
 ---
 date: 2024-01-26 03:37:42.435844-07:00
-description: "Refaktoryzacja to proces restrukturyzacji istniej\u0105cego kodu komputerowego\u2014\
-  zmiana faktoryzacji\u2014bez zmiany jego zewn\u0119trznego zachowania. Programi\u015B\
-  ci robi\u0105\u2026"
+description: "Jak to zrobi\u0107: Za\u0142\xF3\u017Cmy, \u017Ce masz kawa\u0142ek\
+  \ kodu, kt\xF3ry oblicza i drukuje powierzchni\u0119 i obw\xF3d prostok\u0105ta\
+  \ na podstawie jego d\u0142ugo\u015Bci i szeroko\u015Bci. Robi to\u2026"
 lastmod: '2024-03-13T22:44:34.958318-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktoryzacja to proces restrukturyzacji istniej\u0105cego kodu komputerowego\u2014\
-  zmiana faktoryzacji\u2014bez zmiany jego zewn\u0119trznego zachowania."
+summary: "Za\u0142\xF3\u017Cmy, \u017Ce masz kawa\u0142ek kodu, kt\xF3ry oblicza i\
+  \ drukuje powierzchni\u0119 i obw\xF3d prostok\u0105ta na podstawie jego d\u0142\
+  ugo\u015Bci i szeroko\u015Bci."
 title: Refaktoryzacja
 weight: 19
 ---

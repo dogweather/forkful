@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:39:09.654545-07:00
-description: "Kun muunnetaan merkkijono pieniksi kirjaimiksi, tekstiin sovelletaan\
-  \ yhten\xE4ist\xE4 muotoilua, joka on kaikki pienill\xE4 kirjaimilla. Koodarit tekev\xE4\
-  t t\xE4t\xE4\u2026"
+description: "How to: - N\xE4in teet: JavaScript tarjoaa muutaman suoranaisen keinon\
+  \ tehd\xE4 merkkijonon muunnoksen. `toLowerCase()` on suosituin."
 lastmod: '2024-03-13T22:44:56.937141-06:00'
 model: gpt-4-1106-preview
-summary: "Kun muunnetaan merkkijono pieniksi kirjaimiksi, tekstiin sovelletaan yhten\xE4\
-  ist\xE4 muotoilua, joka on kaikki pienill\xE4 kirjaimilla."
+summary: "JavaScript tarjoaa muutaman suoranaisen keinon tehd\xE4 merkkijonon muunnoksen."
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---

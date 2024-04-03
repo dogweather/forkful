@@ -2,13 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:48.335909-07:00
-description: "Werken met XML in Dart omvat het parsen, bevragen en wijzigen van XML-documenten,\
-  \ een proces dat cruciaal is voor applicaties die interageren met\u2026"
+description: "Hoe te: Dart bevat geen ingebouwde ondersteuning voor XML-verwerking\
+  \ in zijn standaardbibliotheek, wat het noodzakelijk maakt om gebruik te maken van\u2026"
 lastmod: '2024-03-13T22:44:50.531355-06:00'
 model: gpt-4-0125-preview
-summary: Werken met XML in Dart omvat het parsen, bevragen en wijzigen van XML-documenten,
-  een proces dat cruciaal is voor applicaties die interageren met webservices, configuratiebestanden
-  of legacy-systemen.
+summary: Dart bevat geen ingebouwde ondersteuning voor XML-verwerking in zijn standaardbibliotheek,
+  wat het noodzakelijk maakt om gebruik te maken van pakketten van derden.
 title: Werken met XML
 weight: 40
 ---

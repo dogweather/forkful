@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:39.772151-07:00
-description: "Schrijven naar standaardfout (`stderr`) betekent het uitvoeren van foutmeldingen\
-  \ en diagnostiek los van de standaarduitvoer (`stdout`). Programmeurs doen\u2026"
+description: 'Hoe te: Je kunt in PHP naar `stderr` schrijven met `fwrite()` of stream
+  wrappers. Zo gaat het in zijn werk.'
 lastmod: '2024-03-13T22:44:50.912268-06:00'
 model: gpt-4-0125-preview
-summary: Schrijven naar standaardfout (`stderr`) betekent het uitvoeren van foutmeldingen
-  en diagnostiek los van de standaarduitvoer (`stdout`).
+summary: Je kunt in PHP naar `stderr` schrijven met `fwrite()` of stream wrappers.
 title: Schrijven naar standaardfout
 weight: 25
 ---

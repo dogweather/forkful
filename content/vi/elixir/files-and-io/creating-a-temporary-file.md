@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:41.538253-07:00
-description: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi c\xF3 ngh\u0129a l\xE0\
-  \ t\u1EA1o m\u1ED9t t\u1EC7p b\u1EA1n s\u1EBD lo\u1EA1i b\u1ECF sau m\u1ED9t th\u1EDD\
-  i gian s\u1EED d\u1EE5ng ng\u1EAFn. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7\
-  n \u0111i\u1EC1u n\xE0y cho vi\u1EC7c l\u01B0u tr\u1EEF t\u1EA1m\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong Elixir, b\u1EA1n c\xF3 th\u1EC3 t\u1EA1\
+  o v\xE0 s\u1EED d\u1EE5ng m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi v\u1EDBi h\xE0m `System.tmp_dir/1`\
+  \ v\xE0 module `File`. D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t v\xED d\u1EE5 nhanh."
 lastmod: '2024-03-13T22:44:36.233552-06:00'
 model: gpt-4-0125-preview
-summary: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi c\xF3 ngh\u0129a l\xE0 t\u1EA1\
-  o m\u1ED9t t\u1EC7p b\u1EA1n s\u1EBD lo\u1EA1i b\u1ECF sau m\u1ED9t th\u1EDDi gian\
-  \ s\u1EED d\u1EE5ng ng\u1EAFn."
+summary: "Trong Elixir, b\u1EA1n c\xF3 th\u1EC3 t\u1EA1o v\xE0 s\u1EED d\u1EE5ng m\u1ED9\
+  t t\u1EC7p t\u1EA1m th\u1EDDi v\u1EDBi h\xE0m `System.tmp_dir/1` v\xE0 module `File`."
 title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
 weight: 21
 ---

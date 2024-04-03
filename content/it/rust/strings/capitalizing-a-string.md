@@ -2,14 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:28.696646-07:00
-description: "Capitalizzare una stringa in Rust comporta la modifica della stringa\
-  \ in modo che il suo primo carattere sia una lettera maiuscola, lasciando inalterata\
-  \ il\u2026"
+description: "Come fare: Per capitalizzare una stringa in Rust, hai due percorsi principali:\
+  \ utilizzare le funzionalit\xE0 della libreria standard o impiegare crate di\u2026"
 lastmod: '2024-03-13T22:44:43.201539-06:00'
 model: gpt-4-0125-preview
-summary: Capitalizzare una stringa in Rust comporta la modifica della stringa in modo
-  che il suo primo carattere sia una lettera maiuscola, lasciando inalterata il resto
-  della stringa.
+summary: Per capitalizzare una stringa in Rust, hai due percorsi principali.
 title: Capitalizzare una stringa
 weight: 2
 ---

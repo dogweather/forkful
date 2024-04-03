@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 18:02:23.628856-07:00
-description: "Sending an HTTP request with basic authentication means stuffing a user\
-  \ and password into a request header to prove you're allowed in. We do this when\u2026"
+description: 'How to: First, add the necessary crate to your `Cargo.toml`.'
 lastmod: '2024-03-13T22:44:59.895481-06:00'
 model: gpt-4-1106-preview
-summary: Sending an HTTP request with basic authentication means stuffing a user and
-  password into a request header to prove you're allowed in.
+summary: First, add the necessary crate to your `Cargo.toml`.
 title: Sending an HTTP request with basic authentication
 weight: 45
 ---

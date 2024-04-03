@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:42:01.243846-07:00
-description: "Los n\xFAmeros complejos son n\xFAmeros con una parte real y una parte\
-  \ imaginaria (como 3 + 4i). Aparecen en varios problemas de programaci\xF3n, especialmente\
-  \ en\u2026"
+description: "C\xF3mo hacerlo: JavaScript no tiene soporte integrado para n\xFAmeros\
+  \ complejos, pero puedes arremangarte y manejarlo con objetos y matem\xE1ticas.\
+  \ Aqu\xED tienes un\u2026"
 lastmod: '2024-03-13T22:44:59.452749-06:00'
 model: gpt-4-0125-preview
-summary: "Los n\xFAmeros complejos son n\xFAmeros con una parte real y una parte imaginaria\
-  \ (como 3 + 4i)."
+summary: "JavaScript no tiene soporte integrado para n\xFAmeros complejos, pero puedes\
+  \ arremangarte y manejarlo con objetos y matem\xE1ticas."
 title: "Trabajando con n\xFAmeros complejos"
 weight: 14
 ---

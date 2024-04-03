@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:26.927554-07:00
-description: "M\u1EA3ng k\u1EBFt h\u1EE3p, hay t\u1EEB \u0111i\u1EC3n trong C#, cho\
-  \ ph\xE9p b\u1EA1n l\u01B0u tr\u1EEF v\xE0 qu\u1EA3n l\xFD c\xE1c c\u1EB7p kho\xE1\
-  \ v\xE0 gi\xE1 tr\u1ECB. Ch\xFAng l\xE0 l\u1EF1a ch\u1ECDn h\xE0ng \u0111\u1EA7\
-  u khi b\u1EA1n c\u1EA7n l\u1EA5y nhanh gi\xE1 tr\u1ECB d\u1EF1a\u2026"
+description: "C\xE1ch th\u1EE9c: Trong C#, b\u1EA1n l\xE0m vi\u1EC7c v\u1EDBi m\u1EA3\
+  ng k\u1EBFt h\u1EE3p s\u1EED d\u1EE5ng l\u1EDBp `Dictionary<TKey, TValue>`. D\u01B0\
+  \u1EDBi \u0111\xE2y l\xE0 m\u1ED9t v\xED d\u1EE5 nhanh \u0111\u1EC3 b\u1EA1n b\u1EAF\
+  t \u0111\u1EA7u."
 lastmod: '2024-03-13T22:44:36.647895-06:00'
 model: gpt-4-0125-preview
-summary: "M\u1EA3ng k\u1EBFt h\u1EE3p, hay t\u1EEB \u0111i\u1EC3n trong C#, cho ph\xE9\
-  p b\u1EA1n l\u01B0u tr\u1EEF v\xE0 qu\u1EA3n l\xFD c\xE1c c\u1EB7p kho\xE1 v\xE0\
-  \ gi\xE1 tr\u1ECB."
+summary: "Trong C#, b\u1EA1n l\xE0m vi\u1EC7c v\u1EDBi m\u1EA3ng k\u1EBFt h\u1EE3\
+  p s\u1EED d\u1EE5ng l\u1EDBp `Dictionary<TKey, TValue>`."
 title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 weight: 15
 ---

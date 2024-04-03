@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 01:07:04.543913-07:00
-description: "Protokollierung in der Programmierung bedeutet im Grunde, eine Spur\
-  \ von Brotkrumen in Form von aufgezeichneten Ereignissen oder Nachrichten zu\u2026"
+description: "Wie geht das: In Haskell kann die Protokollierung unter Verwendung von\
+  \ Bibliotheken wie `monad-logger` oder `hslogger` implementiert werden. Hier ist\
+  \ ein\u2026"
 lastmod: '2024-03-13T22:44:53.937643-06:00'
 model: gpt-4-1106-preview
-summary: "Protokollierung in der Programmierung bedeutet im Grunde, eine Spur von\
-  \ Brotkrumen in Form von aufgezeichneten Ereignissen oder Nachrichten zu hinterlassen,\
-  \ die verwendet werden k\xF6nnen, um zu verfolgen, was Ihre Anwendung zu jedem gegebenen\
-  \ Zeitpunkt tut."
+summary: In Haskell kann die Protokollierung unter Verwendung von Bibliotheken wie
+  `monad-logger` oder `hslogger` implementiert werden.
 title: Protokollierung
 weight: 17
 ---

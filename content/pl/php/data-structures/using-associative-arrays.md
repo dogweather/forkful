@@ -2,14 +2,11 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:55.135152-07:00
-description: "Asocjacyjne tablice w PHP s\u0105 jak na\u0142adowane mo\u017Cliwo\u015B\
-  ciami listy, gdzie ka\u017Cdy element mo\u017Cna uzyska\u0107 przy u\u017Cyciu klucza\
-  \ zrozumia\u0142ego dla cz\u0142owieka zamiast\u2026"
+description: "Jak to zrobi\u0107: W PHP tworzenie i u\u017Cywanie tablic asocjacyjnych\
+  \ jest proste. Oto kr\xF3tki przewodnik."
 lastmod: '2024-03-13T22:44:35.490048-06:00'
 model: gpt-4-0125-preview
-summary: "Asocjacyjne tablice w PHP s\u0105 jak na\u0142adowane mo\u017Cliwo\u015B\
-  ciami listy, gdzie ka\u017Cdy element mo\u017Cna uzyska\u0107 przy u\u017Cyciu klucza\
-  \ zrozumia\u0142ego dla cz\u0142owieka zamiast tylko numer\xF3w."
+summary: "W PHP tworzenie i u\u017Cywanie tablic asocjacyjnych jest proste."
 title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---

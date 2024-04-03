@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:00.344765-07:00
-description: "Envoyer une requ\xEAte HTTP avec une authentification de base en C n\xE9\
-  cessite de cr\xE9er une requ\xEAte HTTP qui inclut un en-t\xEAte d'autorisation\
-  \ avec les\u2026"
+description: "Comment faire : Pour envoyer une requ\xEAte HTTP avec une authentification\
+  \ de base en C, nous aurons besoin d'utiliser la biblioth\xE8que libcurl, une\u2026"
 lastmod: '2024-03-13T22:44:58.371576-06:00'
 model: gpt-4-0125-preview
-summary: "Envoyer une requ\xEAte HTTP avec une authentification de base en C n\xE9\
-  cessite de cr\xE9er une requ\xEAte HTTP qui inclut un en-t\xEAte d'autorisation\
-  \ avec les informations d'identification de l'utilisateur encod\xE9es en Base64."
+summary: "Pour envoyer une requ\xEAte HTTP avec une authentification de base en C,\
+  \ nous aurons besoin d'utiliser la biblioth\xE8que libcurl, une biblioth\xE8que\
+  \ de transfert d'URL c\xF4t\xE9 client populaire, polyvalente et facile \xE0 utiliser."
 title: "Envoyer une requ\xEAte HTTP avec une authentification de base"
 weight: 45
 ---

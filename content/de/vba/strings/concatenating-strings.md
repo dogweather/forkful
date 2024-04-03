@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:00.847827-07:00
-description: "Die Verkettung in Visual Basic for Applications (VBA) beinhaltet das\
-  \ Zusammenf\xFCgen von zwei oder mehr Zeichenketten zu einer einzigen Einheit. Dies\
-  \ ist\u2026"
+description: "Wie: VBA bietet eine unkomplizierte Methode zum Verketten von Zeichenketten\
+  \ mit dem `&`-Operator oder der `Verketten`-Funktion. Lassen Sie uns beide\u2026"
 lastmod: '2024-03-13T22:44:53.708608-06:00'
 model: gpt-4-0125-preview
-summary: "Die Verkettung in Visual Basic for Applications (VBA) beinhaltet das Zusammenf\xFC\
-  gen von zwei oder mehr Zeichenketten zu einer einzigen Einheit."
+summary: VBA bietet eine unkomplizierte Methode zum Verketten von Zeichenketten mit
+  dem `&`-Operator oder der `Verketten`-Funktion.
 title: Strings verketten
 weight: 3
 ---

@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:17.590097-07:00
-description: "Het schrijven van een tekstbestand houdt in dat gegevens worden opgeslagen\
-  \ in een bestand in een door mensen leesbaar formaat. Programmeurs doen dit om\u2026"
+description: 'Hoe te: Elixir maakt het schrijven van tekstbestanden eenvoudig. Hier
+  is een simpel voorbeeld van het schrijven naar een bestand genaamd "hello.txt".'
 lastmod: '2024-03-13T22:44:50.480406-06:00'
 model: gpt-4-0125-preview
-summary: Het schrijven van een tekstbestand houdt in dat gegevens worden opgeslagen
-  in een bestand in een door mensen leesbaar formaat.
+summary: Elixir maakt het schrijven van tekstbestanden eenvoudig.
 title: Een tekstbestand schrijven
 weight: 24
 ---

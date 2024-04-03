@@ -2,11 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:58.397821-07:00
-description: "Fouten verwerken betekent plannen maken voor wanneer dingen verkeerd\
-  \ gaan. Het is essentieel omdat het helpt crashes te voorkomen en je software robuust\u2026"
+description: 'Hoe te: Hier is een basis try-catch blok om een uitzondering te verwerken.'
 lastmod: '2024-03-13T22:44:51.120340-06:00'
 model: gpt-4-0125-preview
-summary: Fouten verwerken betekent plannen maken voor wanneer dingen verkeerd gaan.
+summary: Hier is een basis try-catch blok om een uitzondering te verwerken.
 title: Fouten afhandelen
 weight: 16
 ---

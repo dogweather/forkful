@@ -1,12 +1,11 @@
 ---
 date: 2024-02-03 17:50:01.808204-07:00
-description: "Searching and replacing text in programming facilitates the modification\
-  \ and management of strings, which is a fundamental task in data manipulation and\u2026"
+description: "How to: In Go, the `strings` package offers various functions to search\
+  \ and replace text within strings. Let's explore a couple of common methods. **Using\u2026"
 lastmod: '2024-03-13T22:44:59.617875-06:00'
 model: gpt-4-0125-preview
-summary: Searching and replacing text in programming facilitates the modification
-  and management of strings, which is a fundamental task in data manipulation and
-  software development.
+summary: In Go, the `strings` package offers various functions to search and replace
+  text within strings.
 title: Searching and replacing text
 weight: 10
 ---

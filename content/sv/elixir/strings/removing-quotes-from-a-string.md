@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:39:25.677192-07:00
-description: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att man avl\xE4\
-  gsnar dessa extra omslag f\xF6r att f\xE5 fram den klara texten inuti. Programmerare\
-  \ g\xF6r detta f\xF6r\u2026"
+description: "Hur man g\xF6r: Elixir har ingen inbyggd funktion f\xF6r att ta bort\
+  \ citattecken, men det \xE4r enkelt att skapa din egen med m\xF6nstermatchning eller\u2026"
 lastmod: '2024-03-13T22:44:37.555069-06:00'
 model: gpt-4-0125-preview
-summary: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att man avl\xE4\
-  gsnar dessa extra omslag f\xF6r att f\xE5 fram den klara texten inuti."
+summary: "Elixir har ingen inbyggd funktion f\xF6r att ta bort citattecken, men det\
+  \ \xE4r enkelt att skapa din egen med m\xF6nstermatchning eller `String`-funktioner."
 title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 weight: 9
 ---

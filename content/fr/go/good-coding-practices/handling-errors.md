@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:05.329581-07:00
-description: "G\xE9rer les erreurs en Go implique de reconna\xEEtre et de r\xE9pondre\
-  \ aux conditions d'erreur dans votre programme. Les programmeurs s'engagent dans\
-  \ la gestion\u2026"
+description: "Comment faire : En Go, la gestion des erreurs est explicitement g\xE9\
+  r\xE9e \xE0 l'aide du type `error`. Les fonctions susceptibles d'\xE9chouer retournent\
+  \ une erreur\u2026"
 lastmod: '2024-03-13T22:44:57.142144-06:00'
 model: gpt-4-0125-preview
-summary: "G\xE9rer les erreurs en Go implique de reconna\xEEtre et de r\xE9pondre\
-  \ aux conditions d'erreur dans votre programme."
+summary: "En Go, la gestion des erreurs est explicitement g\xE9r\xE9e \xE0 l'aide\
+  \ du type `error`."
 title: Gestion des erreurs
 weight: 16
 ---

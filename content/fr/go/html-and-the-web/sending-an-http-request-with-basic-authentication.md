@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:02.431175-07:00
-description: "Envoyer une requ\xEAte HTTP avec authentification de base en Go implique\
-  \ d'ajouter un en-t\xEAte d'autorisation \xE0 votre requ\xEAte qui comprend un nom\u2026"
+description: "Comment faire : Pour effectuer une requ\xEAte HTTP avec authentification\
+  \ de base en Go, vous devez pr\xE9parer vos en-t\xEAtes de requ\xEAte pour inclure\
+  \ le champ\u2026"
 lastmod: '2024-03-13T22:44:57.133052-06:00'
 model: gpt-4-0125-preview
-summary: "Envoyer une requ\xEAte HTTP avec authentification de base en Go implique\
-  \ d'ajouter un en-t\xEAte d'autorisation \xE0 votre requ\xEAte qui comprend un nom\
-  \ d'utilisateur et un mot de passe sous forme de cha\xEEne encod\xE9e en Base64."
+summary: "Pour effectuer une requ\xEAte HTTP avec authentification de base en Go,\
+  \ vous devez pr\xE9parer vos en-t\xEAtes de requ\xEAte pour inclure le champ `Authorization`,\
+  \ rempli avec vos identifiants dans le format correct."
 title: "Envoyer une requ\xEAte HTTP avec une authentification de base"
 weight: 45
 ---

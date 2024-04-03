@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:27:25.199448-07:00
-description: "Die Arbeit mit XML umfasst das Parsen, Extrahieren und Manipulieren\
-  \ von Daten im Extensible Markup Language-Format. Programmierer ringen mit XML,\
-  \ da es\u2026"
+description: 'Wie: So parst du XML in Bash. Werkzeuge? xmllint und xmlstarlet. Durch
+  XML-Elemente loopen? Auf jeden Fall. Beispiel mit beispielhafter Ausgabe.'
 lastmod: '2024-03-13T22:44:54.083921-06:00'
 model: gpt-4-0125-preview
-summary: Die Arbeit mit XML umfasst das Parsen, Extrahieren und Manipulieren von Daten
-  im Extensible Markup Language-Format.
+summary: So parst du XML in Bash.
 title: Arbeiten mit XML
 weight: 40
 ---

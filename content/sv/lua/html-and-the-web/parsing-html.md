@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:39.391548-07:00
-description: "Att tolka HTML inneb\xE4r att extrahera data och information fr\xE5\
-  n HTML-dokument, vilket \xE4r avg\xF6rande f\xF6r webskrapning, dataanalys och\u2026"
+description: "Hur man g\xF6r: Lua har inte ett inbyggt bibliotek f\xF6r att tolka\
+  \ HTML, men du kan anv\xE4nda dig av tredjepartsbibliotek som `LuaHTML` eller utnyttja\
+  \ bindningar\u2026"
 lastmod: '2024-03-13T22:44:38.035947-06:00'
 model: gpt-4-0125-preview
-summary: "Att tolka HTML inneb\xE4r att extrahera data och information fr\xE5n HTML-dokument,\
-  \ vilket \xE4r avg\xF6rande f\xF6r webskrapning, dataanalys och automatiseringsuppgifter."
+summary: "Lua har inte ett inbyggt bibliotek f\xF6r att tolka HTML, men du kan anv\xE4\
+  nda dig av tredjepartsbibliotek som `LuaHTML` eller utnyttja bindningar f\xF6r `libxml2`\
+  \ genom `LuaXML`."
 title: Tolka HTML
 weight: 43
 ---

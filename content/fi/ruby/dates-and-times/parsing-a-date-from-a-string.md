@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:24.572929-07:00
-description: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta tarkoittaa\
-  \ tekstin, joka esitt\xE4\xE4 p\xE4iv\xE4m\xE4\xE4r\xE4\xE4, muuntamista `Date`-\
-  \ tai `DateTime`-objektiksi, jonka Ruby ymm\xE4rt\xE4\xE4.\u2026"
+description: "Kuinka: Rubyn vakiokirjasto tarjoaa suorat tavat j\xE4sent\xE4\xE4 p\xE4\
+  iv\xE4m\xE4\xE4r\xE4t merkkijonoista k\xE4ytt\xE4m\xE4ll\xE4 `Date`- ja `DateTime`-luokkia.\
+  \ T\xE4ss\xE4 on miten teet sen\u2026"
 lastmod: '2024-03-13T22:44:57.096587-06:00'
 model: gpt-4-0125-preview
-summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta tarkoittaa tekstin,\
-  \ joka esitt\xE4\xE4 p\xE4iv\xE4m\xE4\xE4r\xE4\xE4, muuntamista `Date`- tai `DateTime`-objektiksi,\
-  \ jonka Ruby ymm\xE4rt\xE4\xE4."
+summary: "Rubyn vakiokirjasto tarjoaa suorat tavat j\xE4sent\xE4\xE4 p\xE4iv\xE4m\xE4\
+  \xE4r\xE4t merkkijonoista k\xE4ytt\xE4m\xE4ll\xE4 `Date`- ja `DateTime`-luokkia."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
 weight: 30
 ---

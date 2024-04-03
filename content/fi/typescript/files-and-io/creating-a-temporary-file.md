@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 17:41:42.172042-07:00
-description: "Tilap\xE4istiedosto on v\xE4liaikainen tallennuspaikka dataa varten.\
-  \ Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4, kun haluavat k\xE4sitell\xE4 tietoa,\
-  \ joka ei vaadi pysyv\xE4\xE4\u2026"
+description: "How to: - N\xE4in tehd\xE4\xE4n: TypeScriptiss\xE4 voit k\xE4ytt\xE4\
+  \xE4 sis\xE4\xE4nrakennettua `fs`-moduulia tai kolmansien osapuolien kirjastoja,\
+  \ kuten `tmp`. T\xE4ss\xE4 on esimerkki\u2026"
 lastmod: '2024-03-13T22:44:56.334165-06:00'
 model: gpt-4-1106-preview
-summary: "Tilap\xE4istiedosto on v\xE4liaikainen tallennuspaikka dataa varten."
+summary: "TypeScriptiss\xE4 voit k\xE4ytt\xE4\xE4 sis\xE4\xE4nrakennettua `fs`-moduulia\
+  \ tai kolmansien osapuolien kirjastoja, kuten `tmp`."
 title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---

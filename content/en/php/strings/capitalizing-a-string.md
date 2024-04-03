@@ -1,12 +1,11 @@
 ---
 date: 2024-02-03 19:02:32.487209-07:00
-description: "Capitalizing a string involves modifying the first character of given\
-  \ text to uppercase, ensuring sentences, titles, or proper names start correctly\
-  \ in a\u2026"
+description: 'How to: PHP natively supports various functions to capitalize strings,
+  each serving a different purpose. Here''s how you can use them: #.'
 lastmod: '2024-03-13T22:45:00.151054-06:00'
 model: gpt-4-0125-preview
-summary: Capitalizing a string involves modifying the first character of given text
-  to uppercase, ensuring sentences, titles, or proper names start correctly in a dataset.
+summary: PHP natively supports various functions to capitalize strings, each serving
+  a different purpose.
 title: Capitalizing a string
 weight: 2
 ---

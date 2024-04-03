@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:48.921006-07:00
-description: "Trabajar con CSVs (Valores Separados por Comas) implica analizar y generar\
-  \ archivos que almacenan datos tabulares en un formato de texto simple. Los\u2026"
+description: "C\xF3mo hacerlo: En Haskell, el manejo de archivos CSV se puede lograr\
+  \ utilizando la biblioteca `cassava`, una de las bibliotecas de terceros m\xE1s\
+  \ populares\u2026"
 lastmod: '2024-03-13T22:44:59.140886-06:00'
 model: gpt-4-0125-preview
-summary: Trabajar con CSVs (Valores Separados por Comas) implica analizar y generar
-  archivos que almacenan datos tabulares en un formato de texto simple.
+summary: "En Haskell, el manejo de archivos CSV se puede lograr utilizando la biblioteca\
+  \ `cassava`, una de las bibliotecas de terceros m\xE1s populares para este prop\xF3\
+  sito."
 title: Trabajando con CSV
 weight: 37
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:54:04.089128-07:00
-description: "Leer un archivo de texto en C++ significa extracci\xF3n de datos desde\
-  \ un archivo en tu disco hacia tu programa. Programadores lo hacen para manejar\u2026"
+description: "C\xF3mo hacerlo: Aqu\xED tienes un ejemplo sencillo de c\xF3mo leer\
+  \ un archivo de texto l\xEDnea por l\xEDnea utilizando `fstream`."
 lastmod: '2024-03-13T22:44:59.392238-06:00'
 model: gpt-4-1106-preview
-summary: "Leer un archivo de texto en C++ significa extracci\xF3n de datos desde un\
-  \ archivo en tu disco hacia tu programa."
+summary: "Aqu\xED tienes un ejemplo sencillo de c\xF3mo leer un archivo de texto l\xED\
+  nea por l\xEDnea utilizando `fstream`."
 title: Lectura de un archivo de texto
 weight: 22
 ---

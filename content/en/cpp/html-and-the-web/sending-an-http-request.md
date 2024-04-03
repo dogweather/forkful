@@ -1,10 +1,9 @@
 ---
 date: 2024-01-20 17:59:22.887557-07:00
-description: Sending an HTTP request fetches data from a web server. Programmers do
-  this to interact with web services, gather info, or communicate between systems.
+description: 'How to: .'
 lastmod: '2024-03-13T22:45:00.354790-06:00'
 model: gpt-4-1106-preview
-summary: Sending an HTTP request fetches data from a web server.
+summary: .
 title: Sending an HTTP request
 weight: 44
 ---

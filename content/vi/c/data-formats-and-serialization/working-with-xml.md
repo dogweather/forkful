@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:37.501179-07:00
-description: "L\xE0m vi\u1EC7c v\u1EDBi XML trong C bao g\u1ED3m vi\u1EC7c ph\xE2\
-  n t\xEDch c\xFA ph\xE1p, truy v\u1EA5n v\xE0 thao t\xE1c v\u1EDBi c\xE1c t\xE0i\
-  \ li\u1EC7u XML s\u1EED d\u1EE5ng c\xE1c th\u01B0 vi\u1EC7n kh\xE1c nhau. C\xE1\
-  c l\u1EADp tr\xECnh vi\xEAn\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: C kh\xF4ng c\xF3 h\u1ED7 tr\u1EE3 s\u1EB5n cho\
+  \ XML, v\xEC v\u1EADy b\u1EA1n s\u1EBD c\u1EA7n s\u1EED d\u1EE5ng c\xE1c th\u01B0\
+  \ vi\u1EC7n b\xEAn ngo\xE0i. M\u1ED9t l\u1EF1a ch\u1ECDn ph\u1ED5 bi\u1EBFn l\xE0\
+  \ `libxml2`, m\u1ED9t th\u01B0 vi\u1EC7n \u1ED5n \u0111\u1ECBnh v\xE0\u2026"
 lastmod: '2024-03-13T22:44:37.300479-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m vi\u1EC7c v\u1EDBi XML trong C bao g\u1ED3m vi\u1EC7c ph\xE2n t\xED\
-  ch c\xFA ph\xE1p, truy v\u1EA5n v\xE0 thao t\xE1c v\u1EDBi c\xE1c t\xE0i li\u1EC7\
-  u XML s\u1EED d\u1EE5ng c\xE1c th\u01B0 vi\u1EC7n kh\xE1c nhau."
+summary: "C kh\xF4ng c\xF3 h\u1ED7 tr\u1EE3 s\u1EB5n cho XML, v\xEC v\u1EADy b\u1EA1\
+  n s\u1EBD c\u1EA7n s\u1EED d\u1EE5ng c\xE1c th\u01B0 vi\u1EC7n b\xEAn ngo\xE0i."
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---

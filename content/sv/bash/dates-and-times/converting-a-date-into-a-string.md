@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:36:00.270443-07:00
-description: "Att omvandla ett datum till en str\xE4ng inneb\xE4r att man formaterar\
-  \ det i en textrepresentation. Programmerare g\xF6r detta f\xF6r l\xE4sbarhet, f\xF6\
-  r att spara datum i\u2026"
+description: "S\xE5 G\xF6r Du: Bash anv\xE4nder `date`-kommandot f\xF6r att omvandla\
+  \ datum till str\xE4ngar. H\xE4r \xE4r n\xE5gra exempel."
 lastmod: '2024-03-13T22:44:38.093714-06:00'
 model: gpt-4-1106-preview
-summary: "Att omvandla ett datum till en str\xE4ng inneb\xE4r att man formaterar det\
-  \ i en textrepresentation."
+summary: "Bash anv\xE4nder `date`-kommandot f\xF6r att omvandla datum till str\xE4\
+  ngar."
 title: "Omvandla ett datum till en str\xE4ng"
 weight: 28
 ---

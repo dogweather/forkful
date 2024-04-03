@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 18:03:31.491218-07:00
-description: "Uuden projektin aloittaminen on tyhj\xE4lt\xE4 p\xF6yd\xE4lt\xE4 alkaminen:\
-  \ uusi hakemisto, uusi Git-repo, uudet tiedostot. Koodarit aloittavat projekteja\
-  \ testatakseen\u2026"
+description: "How to: - N\xE4in teet: ."
 lastmod: '2024-03-13T22:44:56.995164-06:00'
 model: gpt-4-1106-preview
-summary: "Uuden projektin aloittaminen on tyhj\xE4lt\xE4 p\xF6yd\xE4lt\xE4 alkaminen:\
-  \ uusi hakemisto, uusi Git-repo, uudet tiedostot."
+summary: .
 title: Uuden projektin aloittaminen
 weight: 1
 ---

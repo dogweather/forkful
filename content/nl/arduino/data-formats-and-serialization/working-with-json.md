@@ -2,14 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:35.669996-07:00
-description: "Werken met JSON (JavaScript Object Notation) houdt in dat je gegevens\
-  \ manipuleert die zijn gestructureerd in een lichtgewicht, op tekst gebaseerd formaat\u2026"
+description: "Hoe: Om met JSON in Arduino te werken, heb je de ArduinoJson-bibliotheek\
+  \ nodig. Installeer het via Bibliotheekbeheer: Schets > Bibliotheek Includeren >\u2026"
 lastmod: '2024-03-13T22:44:51.093138-06:00'
 model: gpt-4-0125-preview
-summary: Werken met JSON (JavaScript Object Notation) houdt in dat je gegevens manipuleert
-  die zijn gestructureerd in een lichtgewicht, op tekst gebaseerd formaat dat gemakkelijk
-  te lezen en te schrijven is voor mensen, en eenvoudig te ontleden en te genereren
-  voor machines.
+summary: Om met JSON in Arduino te werken, heb je de ArduinoJson-bibliotheek nodig.
 title: Werken met JSON
 weight: 38
 ---

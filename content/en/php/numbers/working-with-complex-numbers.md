@@ -1,11 +1,11 @@
 ---
 date: 2024-01-25 03:00:04.836795-07:00
-description: "Complex numbers have a real part and an imaginary part, usually written\
-  \ as `a + bi`. They're crucial in advanced math, physics, engineering, and certain\u2026"
+description: 'How to: PHP provides built-in support for complex numbers using the
+  `ext-intl` extension with the `NumberFormatter` class. Here''s an example.'
 lastmod: '2024-03-13T22:45:00.160875-06:00'
 model: gpt-4-1106-preview
-summary: Complex numbers have a real part and an imaginary part, usually written as
-  `a + bi`.
+summary: PHP provides built-in support for complex numbers using the `ext-intl` extension
+  with the `NumberFormatter` class.
 title: Working with complex numbers
 weight: 14
 ---

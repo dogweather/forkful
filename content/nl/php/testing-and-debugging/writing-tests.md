@@ -2,11 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:06.039009-07:00
-description: "Testen controleert of je code doet wat het moet doen. Het bespaart tijd\
-  \ door vroegtijdig fouten op te vangen en zorgt ervoor dat code-wijzigingen niets\u2026"
+description: 'Hoe: We duiken in PHPUnit, een populair PHP-testframework. Installeer
+  het eerst met Composer.'
 lastmod: '2024-03-13T22:44:50.899004-06:00'
 model: gpt-4-0125-preview
-summary: Testen controleert of je code doet wat het moet doen.
+summary: We duiken in PHPUnit, een populair PHP-testframework.
 title: Tests Schrijven
 weight: 36
 ---

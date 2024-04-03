@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:07.465236-07:00
-description: "Een interactieve shell gebruiken, of een Read-Eval-Print Loop (REPL),\
-  \ stelt je in staat om interactief te coderen. Programmeurs gebruiken het om snel\u2026"
+description: 'Hoe te: Roep REPL op door een terminal te openen en `swift` te draaien.
+  Typ direct code in en druk op Enter om het uit te voeren. Hier is een voorproefje.'
 lastmod: '2024-03-13T22:44:51.158577-06:00'
 model: gpt-4-0125-preview
-summary: Een interactieve shell gebruiken, of een Read-Eval-Print Loop (REPL), stelt
-  je in staat om interactief te coderen.
+summary: Roep REPL op door een terminal te openen en `swift` te draaien.
 title: Het gebruik van een interactieve shell (REPL)
 weight: 34
 ---

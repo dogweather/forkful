@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:43.888978-07:00
-description: "In Elm is het verzenden van een HTTP-verzoek de manier waarop je app\
-  \ communiceert met andere webservices om gegevens uit te wisselen. Programmeurs\
-  \ doen\u2026"
+description: "Hoe te: Ok\xE9, tijd voor code. Elm maakt HTTP-verzoeken met behulp\
+  \ van de `Http` module. Hier is een snel voorbeeld om wat JSON op te halen."
 lastmod: '2024-03-13T22:44:50.721540-06:00'
 model: gpt-4-0125-preview
-summary: In Elm is het verzenden van een HTTP-verzoek de manier waarop je app communiceert
-  met andere webservices om gegevens uit te wisselen.
+summary: "Ok\xE9, tijd voor code."
 title: Een HTTP-verzoek verzenden
 weight: 44
 ---

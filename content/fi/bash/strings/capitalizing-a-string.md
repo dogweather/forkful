@@ -2,13 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:59.073670-07:00
-description: "Merkkijonon alkukirjaimen muuttaminen isoksi Bashissa tarkoittaa merkkijonon\
-  \ ensimm\xE4isen merkin muuttamista isoksi kirjaimeksi, samalla kun loput\u2026"
+description: "Kuinka: Bash ei sis\xE4ll\xE4 erityist\xE4 sis\xE4\xE4nrakennettua toimintoa\
+  \ merkkijonojen alkukirjaimen muuttamiseen isoksi, mutta t\xE4m\xE4n teht\xE4v\xE4\
+  n voi suorittaa\u2026"
 lastmod: '2024-03-13T22:44:56.721776-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonon alkukirjaimen muuttaminen isoksi Bashissa tarkoittaa merkkijonon\
-  \ ensimm\xE4isen merkin muuttamista isoksi kirjaimeksi, samalla kun loput merkkijonosta\
-  \ j\xE4tet\xE4\xE4n muuttumattomiksi."
+summary: "Bash ei sis\xE4ll\xE4 erityist\xE4 sis\xE4\xE4nrakennettua toimintoa merkkijonojen\
+  \ alkukirjaimen muuttamiseen isoksi, mutta t\xE4m\xE4n teht\xE4v\xE4n voi suorittaa\
+  \ k\xE4ytt\xE4m\xE4ll\xE4 parametrilaajennusta tai ulkoisia ty\xF6kaluja, kuten\
+  \ `awk`."
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---

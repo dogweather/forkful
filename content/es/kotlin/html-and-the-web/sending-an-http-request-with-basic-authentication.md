@@ -1,13 +1,9 @@
 ---
 date: 2024-01-20 18:01:59.630357-07:00
-description: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica implica incluir\
-  \ credenciales de usuario y contrase\xF1a en las cabeceras de una petici\xF3n HTTP\
-  \ para acceder\u2026"
+description: "C\xF3mo Hacerlo: ."
 lastmod: '2024-03-13T22:44:59.035585-06:00'
 model: gpt-4-1106-preview
-summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica implica incluir\
-  \ credenciales de usuario y contrase\xF1a en las cabeceras de una petici\xF3n HTTP\
-  \ para acceder a recursos protegidos."
+summary: .
 title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
 weight: 45
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:51.598935-07:00
-description: "Arrays associativos, mais conhecidos como hashes no Ruby, permitem associar\
-  \ chaves \xFAnicas a valores. Eles s\xE3o indispens\xE1veis quando voc\xEA precisa\
-  \ rastrear\u2026"
+description: "Como fazer: Criar e usar hashes no Ruby \xE9 simples. Voc\xEA pode inicializar\
+  \ um hash vazio, preench\xEA-lo com pares chave-valor, acessar valores por suas\
+  \ chaves\u2026"
 lastmod: '2024-03-13T22:44:47.086648-06:00'
 model: gpt-4-0125-preview
-summary: "Arrays associativos, mais conhecidos como hashes no Ruby, permitem associar\
-  \ chaves \xFAnicas a valores."
+summary: "Criar e usar hashes no Ruby \xE9 simples."
 title: Usando arrays associativos
 weight: 15
 ---

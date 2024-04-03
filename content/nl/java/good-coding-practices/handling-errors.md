@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:40.812406-07:00
-description: "Foutafhandeling betekent code schrijven die anticipeert op en omgaat\
-  \ met dingen die misgaan. Programmeurs doen dit om software robuust te maken, waardoor\u2026"
+description: "Hoe: Java gebruikt uitzonderingen om fouten te behandelen. Je omringt\
+  \ risicovolle code met een `try` blok en vangt uitzonderingen op met `catch`. Hier\
+  \ is\u2026"
 lastmod: '2024-03-13T22:44:50.689845-06:00'
 model: gpt-4-0125-preview
-summary: Foutafhandeling betekent code schrijven die anticipeert op en omgaat met
-  dingen die misgaan.
+summary: Java gebruikt uitzonderingen om fouten te behandelen.
 title: Fouten afhandelen
 weight: 16
 ---

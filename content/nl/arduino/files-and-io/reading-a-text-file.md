@@ -2,14 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:52.626293-07:00
-description: "Een tekstbestand lezen met Arduino stelt je in staat om gegevens op\
-  \ te halen die zijn opgeslagen op een SD-kaart of in het geheugen van het apparaat\
-  \ -\u2026"
+description: 'Hoe te: .'
 lastmod: '2024-03-13T22:44:51.089218-06:00'
 model: gpt-4-0125-preview
-summary: Een tekstbestand lezen met Arduino stelt je in staat om gegevens op te halen
-  die zijn opgeslagen op een SD-kaart of in het geheugen van het apparaat - handig
-  voor instellingen, kalibratiegegevens of logs.
+summary: .
 title: Een tekstbestand lezen
 weight: 22
 ---

@@ -2,16 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:30.606305-07:00
-description: "Ghi nh\u1EADt k\xFD trong ph\xE1t tri\u1EC3n ph\u1EA7n m\u1EC1m l\xE0\
-  \ k\u1EF9 thu\u1EADt ghi l\u1EA1i c\xE1c s\u1EF1 ki\u1EC7n x\u1EA3y ra trong khi\
-  \ m\u1ED9t ch\u01B0\u01A1ng tr\xECnh \u0111ang ch\u1EA1y, th\u01B0\u1EDDng l\xE0\
-  \ v\xE0o m\u1ED9t t\u1EC7p ho\u1EB7c h\u1EC7 th\u1ED1ng b\xEAn\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong Elixir, c\xE1ch ch\xEDnh \u0111\u1EC3\
+  \ ghi nh\u1EADt k\xFD th\xF4ng tin l\xE0 th\xF4ng qua m\xF4-\u0111un `Logger` \u0111\
+  \u01B0\u1EE3c t\xEDch h\u1EE3p s\u1EB5n. D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1\
+  ch b\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng n\xF3."
 lastmod: '2024-03-13T22:44:36.216834-06:00'
 model: gpt-4-0125-preview
-summary: "Ghi nh\u1EADt k\xFD trong ph\xE1t tri\u1EC3n ph\u1EA7n m\u1EC1m l\xE0 k\u1EF9\
-  \ thu\u1EADt ghi l\u1EA1i c\xE1c s\u1EF1 ki\u1EC7n x\u1EA3y ra trong khi m\u1ED9\
-  t ch\u01B0\u01A1ng tr\xECnh \u0111ang ch\u1EA1y, th\u01B0\u1EDDng l\xE0 v\xE0o m\u1ED9\
-  t t\u1EC7p ho\u1EB7c h\u1EC7 th\u1ED1ng b\xEAn ngo\xE0i."
+summary: "Trong Elixir, c\xE1ch ch\xEDnh \u0111\u1EC3 ghi nh\u1EADt k\xFD th\xF4ng\
+  \ tin l\xE0 th\xF4ng qua m\xF4-\u0111un `Logger` \u0111\u01B0\u1EE3c t\xEDch h\u1EE3\
+  p s\u1EB5n."
 title: Ghi log
 weight: 17
 ---

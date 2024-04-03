@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:38.811702-07:00
-description: "Analizzare una data da una stringa comporta la conversione del testo\
-  \ in un oggetto Date. Questa operazione \xE8 fondamentale per le applicazioni che\u2026"
+description: "Come fare: Kotlin supporta l'analisi delle date tramite il pacchetto\
+  \ `java.time`, introdotto in Java 8. Ecco un approccio semplice utilizzando\u2026"
 lastmod: '2024-03-13T22:44:43.400186-06:00'
 model: gpt-4-0125-preview
-summary: Analizzare una data da una stringa comporta la conversione del testo in un
-  oggetto Date.
+summary: Kotlin supporta l'analisi delle date tramite il pacchetto `java.time`, introdotto
+  in Java 8.
 title: Analisi di una data da una stringa
 weight: 30
 ---

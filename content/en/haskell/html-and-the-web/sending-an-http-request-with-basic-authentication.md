@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 18:01:36.556352-07:00
-description: "Sending an HTTP request with basic authentication means your program\
-  \ knocks on a web service's door, passing a username and password for entry.\u2026"
+description: "How to: You\u2019ll need the `http-conduit` package for HTTP actions\
+  \ and `base64-bytestring` for encoding credentials. Import them and use `applyBasicAuth`\
+  \ to\u2026"
 lastmod: '2024-03-13T22:45:00.128155-06:00'
 model: gpt-4-1106-preview
-summary: Sending an HTTP request with basic authentication means your program knocks
-  on a web service's door, passing a username and password for entry.
+summary: "You\u2019ll need the `http-conduit` package for HTTP actions and `base64-bytestring`\
+  \ for encoding credentials."
 title: Sending an HTTP request with basic authentication
 weight: 45
 ---

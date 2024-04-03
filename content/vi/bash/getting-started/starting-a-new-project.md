@@ -2,17 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:48.186954-07:00
-description: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi th\u01B0\u1EDD\
-  ng c\xF3 ngh\u0129a l\xE0 t\u1EA1o ra m\u1ED9t c\u1EA5u tr\xFAc th\u01B0 m\u1EE5\
-  c v\xE0 c\xE1c t\u1EC7p ban \u0111\u1EA7u\u2014gi\u1ED1ng nh\u01B0 vi\u1EC7c x\xE2\
-  y d\u1EF1ng n\u1EC1n m\xF3ng cho m\u1ED9t ng\xF4i nh\xE0. L\u1EADp tr\xECnh vi\xEA\
-  n\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: H\xE3y t\u1EA1o m\u1ED9t script \u0111\u01A1\
+  n gi\u1EA3n \u0111\u1EC3 kh\u1EDFi \u0111\u1ED9ng m\u1ED9t d\u1EF1 \xE1n m\u1EDB\
+  i."
 lastmod: '2024-03-13T22:44:36.880106-06:00'
 model: gpt-4-0125-preview
-summary: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi th\u01B0\u1EDDng\
-  \ c\xF3 ngh\u0129a l\xE0 t\u1EA1o ra m\u1ED9t c\u1EA5u tr\xFAc th\u01B0 m\u1EE5\
-  c v\xE0 c\xE1c t\u1EC7p ban \u0111\u1EA7u\u2014gi\u1ED1ng nh\u01B0 vi\u1EC7c x\xE2\
-  y d\u1EF1ng n\u1EC1n m\xF3ng cho m\u1ED9t ng\xF4i nh\xE0."
+summary: "H\xE3y t\u1EA1o m\u1ED9t script \u0111\u01A1n gi\u1EA3n \u0111\u1EC3 kh\u1EDF\
+  i \u0111\u1ED9ng m\u1ED9t d\u1EF1 \xE1n m\u1EDBi."
 title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---

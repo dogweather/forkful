@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:43.855562-07:00
-description: "Generowanie losowych liczb w Visual Basic for Applications (VBA) umo\u017C\
-  liwia programom symulowanie proces\xF3w z elementami szansy lub zmienno\u015Bci,\
-  \ takimi jak\u2026"
+description: "Jak to zrobi\u0107: W VBA funkcj\u0119 `Rnd` u\u017Cywa si\u0119 do\
+  \ generowania losowych liczb. Domy\u015Blnie `Rnd` generuje pojedyncz\u0105 liczb\u0119\
+  \ zmiennoprzecinkow\u0105 o precyzji\u2026"
 lastmod: '2024-03-13T22:44:35.227144-06:00'
 model: gpt-4-0125-preview
-summary: "Generowanie losowych liczb w Visual Basic for Applications (VBA) umo\u017C\
-  liwia programom symulowanie proces\xF3w z elementami szansy lub zmienno\u015Bci,\
-  \ takimi jak rzuty kostk\u0105 czy pr\xF3bkowanie danych."
+summary: "W VBA funkcj\u0119 `Rnd` u\u017Cywa si\u0119 do generowania losowych liczb."
 title: Generowanie liczb losowych
 weight: 12
 ---

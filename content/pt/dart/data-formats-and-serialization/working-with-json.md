@@ -2,13 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:44.734963-07:00
-description: "Trabalhar com JSON (JavaScript Object Notation) envolve a convers\xE3\
-  o de dados JSON de strings para objetos Dart e vice-versa, uma tarefa comum no\u2026"
+description: "Como fazer: Dart oferece suporte integrado para JSON com a biblioteca\
+  \ `dart:convert`, facilitando a codifica\xE7\xE3o e decodifica\xE7\xE3o de JSON.\
+  \ Abaixo est\xE3o\u2026"
 lastmod: '2024-03-13T22:44:46.304767-06:00'
 model: gpt-4-0125-preview
-summary: "Trabalhar com JSON (JavaScript Object Notation) envolve a convers\xE3o de\
-  \ dados JSON de strings para objetos Dart e vice-versa, uma tarefa comum no desenvolvimento\
-  \ de web e aplicativos para a troca de dados."
+summary: "Dart oferece suporte integrado para JSON com a biblioteca `dart:convert`,\
+  \ facilitando a codifica\xE7\xE3o e decodifica\xE7\xE3o de JSON."
 title: Trabalhando com JSON
 weight: 38
 ---

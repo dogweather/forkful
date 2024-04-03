@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:03.764716-07:00
-description: "Das Extrahieren von Teilzeichenketten in Visual Basic f\xFCr Applikationen\
-  \ (VBA) umfasst das Isolieren spezifischer Teile einer Zeichenkette basierend auf\u2026"
+description: "Wie zu: In VBA verwenden Sie haupts\xE4chlich die Funktionen `Mid`,\
+  \ `Left` und `Right`, um Teilzeichenketten zu extrahieren. Unten erkunden wir diese\u2026"
 lastmod: '2024-03-13T22:44:53.705425-06:00'
 model: gpt-4-0125-preview
-summary: "Das Extrahieren von Teilzeichenketten in Visual Basic f\xFCr Applikationen\
-  \ (VBA) umfasst das Isolieren spezifischer Teile einer Zeichenkette basierend auf\
-  \ gegebenen Kriterien."
+summary: "In VBA verwenden Sie haupts\xE4chlich die Funktionen `Mid`, `Left` und `Right`,\
+  \ um Teilzeichenketten zu extrahieren."
 title: Teilzeichenketten extrahieren
 weight: 6
 ---

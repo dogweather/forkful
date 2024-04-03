@@ -2,16 +2,17 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:07.368728-07:00
-description: "Vi\u1EC7c sinh s\u1ED1 ng\u1EABu nhi\xEAn trong l\u1EADp tr\xECnh li\xEA\
-  n quan \u0111\u1EBFn vi\u1EC7c t\u1EA1o ra c\xE1c chu\u1ED7i s\u1ED1 kh\xF4ng c\xF3\
-  \ th\u1EE9 t\u1EF1 ho\u1EB7c m\u1EABu \u0111o\xE1n tr\u01B0\u1EDBc \u0111\u01B0\u1EE3\
-  c. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u01B0\u1EDDng s\u1EED d\u1EE5ng\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: \u0110\u1EC3 sinh s\u1ED1 ng\u1EABu nhi\xEA\
+  n trong C++, b\u1EA1n th\u01B0\u1EDDng s\u1EBD s\u1EED d\u1EE5ng \u0111\u1EBFn ti\xEA\
+  u \u0111\u1EC1 `<random>`, \u0111\u01B0\u1EE3c gi\u1EDBi thi\u1EC7u trong C++11,\
+  \ cung c\u1EA5p m\u1ED9t lo\u1EA1t c\xE1c ti\u1EC7n \xEDch\u2026"
 lastmod: '2024-03-13T22:44:37.037619-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c sinh s\u1ED1 ng\u1EABu nhi\xEAn trong l\u1EADp tr\xECnh li\xEA\
-  n quan \u0111\u1EBFn vi\u1EC7c t\u1EA1o ra c\xE1c chu\u1ED7i s\u1ED1 kh\xF4ng c\xF3\
-  \ th\u1EE9 t\u1EF1 ho\u1EB7c m\u1EABu \u0111o\xE1n tr\u01B0\u1EDBc \u0111\u01B0\u1EE3\
-  c."
+summary: "\u0110\u1EC3 sinh s\u1ED1 ng\u1EABu nhi\xEAn trong C++, b\u1EA1n th\u01B0\
+  \u1EDDng s\u1EBD s\u1EED d\u1EE5ng \u0111\u1EBFn ti\xEAu \u0111\u1EC1 `<random>`,\
+  \ \u0111\u01B0\u1EE3c gi\u1EDBi thi\u1EC7u trong C++11, cung c\u1EA5p m\u1ED9t lo\u1EA1\
+  t c\xE1c ti\u1EC7n \xEDch \u0111\u1EC3 sinh s\u1ED1 ng\u1EABu nhi\xEAn t\u1EEB nhi\u1EC1\
+  u ph\xE2n ph\u1ED1i kh\xE1c nhau."
 title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 weight: 12
 ---

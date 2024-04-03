@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:00:13.097833-07:00
-description: "Het ontleden van een datum uit een string in C betreft het omzetten\
-  \ van tekstuele voorstellingen van data naar een formaat dat programma's effectiever\u2026"
+description: "Hoe: C biedt geen ingebouwde manier om direct data uit strings te ontleden,\
+  \ dus maken we vaak gebruik van de `strptime` functie die beschikbaar is in de\u2026"
 lastmod: '2024-03-13T22:44:51.300744-06:00'
 model: gpt-4-0125-preview
-summary: Het ontleden van een datum uit een string in C betreft het omzetten van tekstuele
-  voorstellingen van data naar een formaat dat programma's effectiever kunnen manipuleren
-  en analyseren.
+summary: C biedt geen ingebouwde manier om direct data uit strings te ontleden, dus
+  maken we vaak gebruik van de `strptime` functie die beschikbaar is in de `<time.h>`
+  bibliotheek voor POSIX-systemen.
 title: Een datum ontleden uit een string
 weight: 30
 ---

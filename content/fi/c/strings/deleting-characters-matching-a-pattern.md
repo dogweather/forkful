@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:31.327071-07:00
-description: "Merkkijonoista tietty\xE4 mallia vastaavien merkkien poistaminen C-kieless\xE4\
-  \ tarkoittaa kaikkien tiettyihin ennalta m\xE4\xE4riteltyihin kriteereihin sopivien\u2026"
+description: "Miten: C ei sis\xE4ll\xE4 valmista funktiota merkkien suoraan poistamiseksi\
+  \ merkkijonosta mallin perusteella, toisin kuin jotkut korkeamman tason kielet.\
+  \ Voit\u2026"
 lastmod: '2024-03-13T22:44:57.021818-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonoista tietty\xE4 mallia vastaavien merkkien poistaminen C-kieless\xE4\
-  \ tarkoittaa kaikkien tiettyihin ennalta m\xE4\xE4riteltyihin kriteereihin sopivien\
-  \ merkkien poistamista."
+summary: "C ei sis\xE4ll\xE4 valmista funktiota merkkien suoraan poistamiseksi merkkijonosta\
+  \ mallin perusteella, toisin kuin jotkut korkeamman tason kielet."
 title: Merkkien poistaminen vastaavan mallin mukaan
 weight: 5
 ---

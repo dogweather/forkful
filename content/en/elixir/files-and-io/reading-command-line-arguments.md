@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:55:46.387430-07:00
-description: "Reading command line arguments lets a program grab data right from the\
-  \ terminal\u2014stuff like settings or file names. Programmers do it to customize\
-  \ a\u2026"
+description: 'How to: In Elixir, grabbing command line arguments is a no-brainer.
+  Use `System.argv()` and you''ll snag them as a list of strings.'
 lastmod: '2024-03-13T22:44:59.796276-06:00'
 model: gpt-4-1106-preview
-summary: "Reading command line arguments lets a program grab data right from the terminal\u2014\
-  stuff like settings or file names."
+summary: In Elixir, grabbing command line arguments is a no-brainer.
 title: Reading command line arguments
 weight: 23
 ---

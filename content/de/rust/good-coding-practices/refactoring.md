@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 03:36:53.156146-07:00
-description: "Refactoring ist der Prozess der Umstrukturierung vorhandenen Computer-Codes\
-  \ \u2013 also die \xC4nderung der Faktoren \u2013, ohne sein externes Verhalten\
-  \ zu ver\xE4ndern.\u2026"
+description: "Wie: Lassen Sie uns ein einfaches St\xFCck Rust-Code refaktorisieren,\
+  \ um es idiomatischer und wartbarer zu machen. Wir beginnen mit einer Funktion,\
+  \ die die\u2026"
 lastmod: '2024-03-13T22:44:53.680985-06:00'
 model: gpt-4-0125-preview
-summary: "Refactoring ist der Prozess der Umstrukturierung vorhandenen Computer-Codes\
-  \ \u2013 also die \xC4nderung der Faktoren \u2013, ohne sein externes Verhalten\
-  \ zu ver\xE4ndern."
+summary: "Lassen Sie uns ein einfaches St\xFCck Rust-Code refaktorisieren, um es idiomatischer\
+  \ und wartbarer zu machen."
 title: Refactoring
 weight: 19
 ---

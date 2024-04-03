@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:07.847355-07:00
-description: "Das Schreiben einer Textdatei in Rust beinhaltet das Erstellen, Beschreiben\
-  \ und potenziell Anh\xE4ngen von Daten an eine Datei im Dateisystem. Programmierer\u2026"
+description: "Wie geht das: Die Standardbibliothek von Rust bietet robuste Werkzeuge\
+  \ f\xFCr die Dateimanipulation, die haupts\xE4chlich in den Modulen `std::fs` und\
+  \ `std::io`\u2026"
 lastmod: '2024-03-13T22:44:53.691209-06:00'
 model: gpt-4-0125-preview
-summary: "Das Schreiben einer Textdatei in Rust beinhaltet das Erstellen, Beschreiben\
-  \ und potenziell Anh\xE4ngen von Daten an eine Datei im Dateisystem."
+summary: "Die Standardbibliothek von Rust bietet robuste Werkzeuge f\xFCr die Dateimanipulation,\
+  \ die haupts\xE4chlich in den Modulen `std::fs` und `std::io` gekapselt sind."
 title: Eine Textdatei schreiben
 weight: 24
 ---

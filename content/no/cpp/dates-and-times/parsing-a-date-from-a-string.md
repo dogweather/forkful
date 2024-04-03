@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:34.426413-07:00
-description: "\xC5 tolke en dato fra en streng inneb\xE6rer \xE5 forst\xE5 strengformatet\
-  \ for \xE5 trekke ut dato-komponenter som dag, m\xE5ned og \xE5r. Programmerere\
-  \ gj\xF8r dette for \xE5\u2026"
+description: "Hvordan gj\xF8re det: I moderne C++, kan du bruke biblioteket `<chrono>`\
+  \ for \xE5 h\xE5ndtere datoer og tider p\xE5 en nativ m\xE5te, men det st\xF8tter\
+  \ ikke direkte\u2026"
 lastmod: '2024-03-13T22:44:41.109370-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 tolke en dato fra en streng inneb\xE6rer \xE5 forst\xE5 strengformatet\
-  \ for \xE5 trekke ut dato-komponenter som dag, m\xE5ned og \xE5r."
+summary: "I moderne C++, kan du bruke biblioteket `<chrono>` for \xE5 h\xE5ndtere\
+  \ datoer og tider p\xE5 en nativ m\xE5te, men det st\xF8tter ikke direkte tolking\
+  \ fra strenger uten manuell parsing for mer komplekse formater."
 title: Analysering av en dato fra en streng
 weight: 30
 ---

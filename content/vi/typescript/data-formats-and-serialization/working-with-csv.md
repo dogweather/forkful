@@ -2,18 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:38.942403-07:00
-description: "L\xE0m vi\u1EC7c v\u1EDBi CSV (Gi\xE1 tr\u1ECB \u0110\u01B0\u1EE3c Ph\xE2\
-  n C\xE1ch b\u1EDFi D\u1EA5u ph\u1EA9y) c\xF3 ngh\u0129a l\xE0 \u0111\u1ECDc v\xE0\
-  \ vi\u1EBFt d\u1EEF li\u1EC7u d\u01B0\u1EDBi d\u1EA1ng v\u0103n b\u1EA3n, trong\
-  \ \u0111\xF3 m\u1ED7i d\xF2ng l\xE0 m\u1ED9t b\u1EA3n ghi d\u1EEF li\u1EC7u v\xE0\
-  \ d\u1EA5u\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1ECDc CSV trong TypeScript r\u1EA5t\
+  \ \u0111\u01A1n gi\u1EA3n v\u1EDBi c\xE1c th\u01B0 vi\u1EC7n nh\u01B0 `papaparse`.\
+  \ \u0110\u1EC3 x\u1EED l\xFD t\u1EC7p CSV, tr\u01B0\u1EDBc ti\xEAn h\xE3y c\xE0\
+  i \u0111\u1EB7t n\xF3."
 lastmod: '2024-03-13T22:44:36.349185-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m vi\u1EC7c v\u1EDBi CSV (Gi\xE1 tr\u1ECB \u0110\u01B0\u1EE3c Ph\xE2\
-  n C\xE1ch b\u1EDFi D\u1EA5u ph\u1EA9y) c\xF3 ngh\u0129a l\xE0 \u0111\u1ECDc v\xE0\
-  \ vi\u1EBFt d\u1EEF li\u1EC7u d\u01B0\u1EDBi d\u1EA1ng v\u0103n b\u1EA3n, trong\
-  \ \u0111\xF3 m\u1ED7i d\xF2ng l\xE0 m\u1ED9t b\u1EA3n ghi d\u1EEF li\u1EC7u v\xE0\
-  \ d\u1EA5u ph\u1EA9y ph\xE2n chia m\u1ED7i tr\u01B0\u1EDDng."
+summary: "\u0110\u1ECDc CSV trong TypeScript r\u1EA5t \u0111\u01A1n gi\u1EA3n v\u1EDB\
+  i c\xE1c th\u01B0 vi\u1EC7n nh\u01B0 `papaparse`."
 title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 weight: 37
 ---

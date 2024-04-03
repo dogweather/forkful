@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:23.173889-07:00
-description: "Analizar una fecha desde una cadena permite a los programadores convertir\
-  \ representaciones textuales de fechas en objetos `Date` de JavaScript,\u2026"
+description: "C\xF3mo hacerlo: JavaScript ofrece de forma nativa el m\xE9todo `Date.parse()`\
+  \ y el constructor `Date` para analizar cadenas de fechas. Sin embargo, estos\u2026"
 lastmod: '2024-03-13T22:44:59.467977-06:00'
 model: gpt-4-0125-preview
-summary: Analizar una fecha desde una cadena permite a los programadores convertir
-  representaciones textuales de fechas en objetos `Date` de JavaScript, facilitando
-  manipulaciones, comparaciones y operaciones de formato de fechas.
+summary: "JavaScript ofrece de forma nativa el m\xE9todo `Date.parse()` y el constructor\
+  \ `Date` para analizar cadenas de fechas."
 title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---

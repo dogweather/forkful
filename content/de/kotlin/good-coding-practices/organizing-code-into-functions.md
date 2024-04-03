@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 01:11:14.363160-07:00
-description: "Code in Funktionen zu organisieren bedeutet, Ihr Programm in wiederverwendbare\
-  \ Teile zu zerlegen, von denen jeder eine spezifische Aufgabe erledigt. Wir\u2026"
+description: "Wie geht das: Hier ist ein einfaches Beispiel. Anstatt ein langes Skript\
+  \ zu schreiben, um Benutzer zu begr\xFC\xDFen, teilen wir die Aufgabe in Funktionen\
+  \ auf."
 lastmod: '2024-03-13T22:44:53.851788-06:00'
 model: gpt-4-1106-preview
-summary: Code in Funktionen zu organisieren bedeutet, Ihr Programm in wiederverwendbare
-  Teile zu zerlegen, von denen jeder eine spezifische Aufgabe erledigt.
+summary: Hier ist ein einfaches Beispiel.
 title: Code in Funktionen organisieren
 weight: 18
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:44:36.786823-07:00
-description: "Redondear n\xFAmeros significa ajustarlos al entero m\xE1s cercano o\
-  \ a un lugar decimal especificado. Los programadores redondean n\xFAmeros para controlar\
-  \ la\u2026"
+description: "C\xF3mo: Haskell utiliza las funciones `round`, `ceiling`, `floor` y\
+  \ `truncate` de `Prelude` para operaciones de redondeo."
 lastmod: '2024-03-13T22:44:59.114174-06:00'
 model: gpt-4-0125-preview
-summary: "Redondear n\xFAmeros significa ajustarlos al entero m\xE1s cercano o a un\
-  \ lugar decimal especificado."
+summary: Haskell utiliza las funciones `round`, `ceiling`, `floor` y `truncate` de
+  `Prelude` para operaciones de redondeo.
 title: "Redondeo de n\xFAmeros"
 weight: 13
 ---

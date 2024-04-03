@@ -1,13 +1,9 @@
 ---
 date: 2024-01-20 17:31:34.019672-07:00
-description: "Lasketaan tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4:\
-  \ ohjelmoijat tekev\xE4t t\xE4t\xE4, kun tarvitaan erityisp\xE4ivien k\xE4sittely\xE4\
-  \ tai aikajaksojen laskentaa."
+description: "How to: Laske p\xE4iv\xE4 10 p\xE4iv\xE4n p\xE4\xE4h\xE4n."
 lastmod: '2024-03-13T22:44:56.796047-06:00'
 model: gpt-4-1106-preview
-summary: "Lasketaan tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4: ohjelmoijat\
-  \ tekev\xE4t t\xE4t\xE4, kun tarvitaan erityisp\xE4ivien k\xE4sittely\xE4 tai aikajaksojen\
-  \ laskentaa."
+summary: "Laske p\xE4iv\xE4 10 p\xE4iv\xE4n p\xE4\xE4h\xE4n."
 title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---

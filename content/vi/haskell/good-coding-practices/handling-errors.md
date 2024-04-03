@@ -2,16 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:16.764422-07:00
-description: "X\u1EED l\xFD l\u1ED7i trong l\u1EADp tr\xECnh l\xE0 v\u1EC1 vi\u1EC7\
-  c qu\u1EA3n l\xFD nh\u1EEFng \u0111i\u1EC1u kh\xF4ng mong \u0111\u1EE3i\u2014nh\u1EEF\
-  ng \u0111i\u1EC1u c\xF3 th\u1EC3 \u0111i sai. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111\
-  i\u1EC1u n\xE0y \u0111\u1EC3 \u0111\u1EA3m b\u1EA3o r\u1EB1ng ch\u01B0\u01A1ng tr\xEC\
-  nh\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Haskell x\u1EED l\xFD l\u1ED7i m\u1ED9t c\xE1\
+  ch m\u1EA1nh m\u1EBD th\xF4ng qua c\xE1c ki\u1EC3u nh\u01B0 `Maybe` v\xE0 `Either`.\
+  \ D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t c\xE1i nh\xECn nhanh."
 lastmod: '2024-03-13T22:44:36.721834-06:00'
 model: gpt-4-0125-preview
-summary: "X\u1EED l\xFD l\u1ED7i trong l\u1EADp tr\xECnh l\xE0 v\u1EC1 vi\u1EC7c qu\u1EA3\
-  n l\xFD nh\u1EEFng \u0111i\u1EC1u kh\xF4ng mong \u0111\u1EE3i\u2014nh\u1EEFng \u0111\
-  i\u1EC1u c\xF3 th\u1EC3 \u0111i sai."
+summary: "Haskell x\u1EED l\xFD l\u1ED7i m\u1ED9t c\xE1ch m\u1EA1nh m\u1EBD th\xF4\
+  ng qua c\xE1c ki\u1EC3u nh\u01B0 `Maybe` v\xE0 `Either`."
 title: "X\u1EED l\xFD l\u1ED7i"
 weight: 16
 ---

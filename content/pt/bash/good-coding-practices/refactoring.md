@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 01:16:25.257638-07:00
-description: "Refatora\xE7\xE3o \xE9 o processo de reestruturar o c\xF3digo de computador\
-  \ existente sem alterar seu comportamento externo. \xC9 uma pr\xE1tica vital para\
-  \ reduzir a\u2026"
+description: "Como: Vamos considerar um simples script Bash que precisa de alguma\
+  \ refatora\xE7\xE3o. \xC9 desajeitado, com c\xF3digo repetido e \xE9 dif\xEDcil\
+  \ de seguir."
 lastmod: '2024-03-13T22:44:46.761218-06:00'
 model: gpt-4-0125-preview
-summary: "Refatora\xE7\xE3o \xE9 o processo de reestruturar o c\xF3digo de computador\
-  \ existente sem alterar seu comportamento externo."
+summary: "Vamos considerar um simples script Bash que precisa de alguma refatora\xE7\
+  \xE3o."
 title: "Refatora\xE7\xE3o"
 weight: 19
 ---

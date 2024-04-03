@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:32:52.586950-07:00
-description: "Das Vergleichen zweier Daten erm\xF6glicht es uns, ihre chronologische\
-  \ Reihenfolge festzustellen \u2013 herauszufinden, welches fr\xFCher oder sp\xE4\
-  ter ist.\u2026"
+description: 'Vorgehensweise: .'
 lastmod: '2024-03-13T22:44:53.547810-06:00'
 model: gpt-4-1106-preview
-summary: "Das Vergleichen zweier Daten erm\xF6glicht es uns, ihre chronologische Reihenfolge\
-  \ festzustellen \u2013 herauszufinden, welches fr\xFCher oder sp\xE4ter ist."
+summary: .
 title: Vergleich von zwei Daten
 weight: 27
 ---

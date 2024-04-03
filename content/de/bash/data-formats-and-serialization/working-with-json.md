@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:32.672077-07:00
-description: "Mit JSON in Bash-Programmierung zu arbeiten bedeutet, JSON-Daten direkt\
-  \ von der Kommandozeile aus zu parsen, zu extrahieren und zu manipulieren.\u2026"
+description: "Wie geht das: Bash selbst hat keine eingebauten JSON-Parsing-F\xE4higkeiten,\
+  \ aber `jq` ist ein leistungsf\xE4higer Kommandozeilen-JSON-Prozessor, der diese\u2026"
 lastmod: '2024-03-13T22:44:54.080999-06:00'
 model: gpt-4-0125-preview
-summary: Mit JSON in Bash-Programmierung zu arbeiten bedeutet, JSON-Daten direkt von
-  der Kommandozeile aus zu parsen, zu extrahieren und zu manipulieren.
+summary: "Bash selbst hat keine eingebauten JSON-Parsing-F\xE4higkeiten, aber `jq`\
+  \ ist ein leistungsf\xE4higer Kommandozeilen-JSON-Prozessor, der diese L\xFCcke\
+  \ f\xFCllt."
 title: Arbeiten mit JSON
 weight: 38
 ---

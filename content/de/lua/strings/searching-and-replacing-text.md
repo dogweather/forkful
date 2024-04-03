@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:58:09.097304-07:00
-description: "Suchen und Ersetzen sind Kernfunktionen in der Textbearbeitung: Man\
-  \ findet spezifische Textmuster und ersetzt sie durch andere Inhalte. Programmierer\u2026"
+description: 'So geht''s: Hier ist ein einfacher Lua-Code, der zeigt, wie man Text
+  sucht und ersetzt. Die Funktion `string.gsub` ist dein Freund.'
 lastmod: '2024-03-13T22:44:54.000301-06:00'
 model: gpt-4-1106-preview
-summary: 'Suchen und Ersetzen sind Kernfunktionen in der Textbearbeitung: Man findet
-  spezifische Textmuster und ersetzt sie durch andere Inhalte.'
+summary: Hier ist ein einfacher Lua-Code, der zeigt, wie man Text sucht und ersetzt.
 title: Suchen und Ersetzen von Text
 weight: 10
 ---

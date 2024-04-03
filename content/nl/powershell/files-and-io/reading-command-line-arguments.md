@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:12.895532-07:00
-description: "Het lezen van command line argumenten stelt scripts in staat om zich\
-  \ anders te gedragen op basis van invoer van buiten de code. Programmeurs gebruiken\
-  \ ze\u2026"
+description: "Hoe PowerShell leest command line argumenten met de `$args` array of\
+  \ parameters. `$args` is snel voor eenmalige scripts; parameters zijn beter voor\u2026"
 lastmod: '2024-03-13T22:44:51.045654-06:00'
 model: gpt-4-0125-preview
-summary: Het lezen van command line argumenten stelt scripts in staat om zich anders
-  te gedragen op basis van invoer van buiten de code.
+summary: PowerShell leest command line argumenten met de `$args` array of parameters.
 title: Commandoregelargumenten lezen
 weight: 23
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:56.520377-07:00
-description: "Regul\xE6re uttrykk (regex) i Visual Basic for Applications (VBA) tilbyr\
-  \ en kraftfull m\xE5te \xE5 s\xF8ke, matche og manipulere strenger p\xE5. Programmerere\
-  \ bruker dem\u2026"
+description: "Hvordan: For \xE5 bruke regul\xE6re uttrykk i VBA, m\xE5 du f\xF8rst\
+  \ aktivere Microsoft VBScript Regular Expressions-biblioteket. I VBA-editoren, g\xE5\
+  \ til `Verkt\xF8y` ->\u2026"
 lastmod: '2024-03-13T22:44:40.607408-06:00'
 model: gpt-4-0125-preview
-summary: "Regul\xE6re uttrykk (regex) i Visual Basic for Applications (VBA) tilbyr\
-  \ en kraftfull m\xE5te \xE5 s\xF8ke, matche og manipulere strenger p\xE5."
+summary: "For \xE5 bruke regul\xE6re uttrykk i VBA, m\xE5 du f\xF8rst aktivere Microsoft\
+  \ VBScript Regular Expressions-biblioteket."
 title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---

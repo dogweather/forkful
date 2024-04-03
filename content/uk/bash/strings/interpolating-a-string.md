@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 17:50:31.565269-07:00
-description: "Interpolating a string means inserting variables or expressions right\
-  \ into a string. Programmers do it to dynamically build or customize messages,\u2026"
+description: "How to: (\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\
+  \u0438:) In Bash, place the variable name inside `${}` or directly after a `$` within\
+  \ double quotes."
 lastmod: '2024-03-13T22:44:49.547925-06:00'
 model: gpt-4-1106-preview
-summary: Interpolating a string means inserting variables or expressions right into
-  a string.
+summary: In Bash, place the variable name inside `${}` or directly after a `$` within
+  double quotes.
 title: "\u0406\u043D\u0442\u0435\u0440\u043F\u043E\u043B\u044F\u0446\u0456\u044F \u0440\
   \u044F\u0434\u043A\u0456\u0432"
 weight: 8

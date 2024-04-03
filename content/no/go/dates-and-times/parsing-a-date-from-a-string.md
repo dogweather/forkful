@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:11.013444-07:00
-description: "\xC5 parse en dato fra en streng i Go inneb\xE6rer \xE5 konvertere datoen\
-  \ representert som tekst til et mer brukbart format (f.eks. `time.Time`). Programmerere\u2026"
+description: "Hvordan: Go gir robust st\xF8tte for parsing av datoer og tider gjennom\
+  \ `time`-pakken. N\xF8kkelen er \xE5 forst\xE5 Go's referansedatoformat: `Mon Jan\
+  \ 2 15:04:05 MST\u2026"
 lastmod: '2024-03-13T22:44:40.277276-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 parse en dato fra en streng i Go inneb\xE6rer \xE5 konvertere datoen\
-  \ representert som tekst til et mer brukbart format (f."
+summary: "Go gir robust st\xF8tte for parsing av datoer og tider gjennom `time`-pakken."
 title: Analysering av en dato fra en streng
 weight: 30
 ---

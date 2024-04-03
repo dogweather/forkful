@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:36:57.122993-07:00
-description: "Convertire una data in una stringa significa trasformare l'oggetto Data\
-  \ in una sequenza di caratteri leggibile. I programmatori lo fanno per rendere le\u2026"
+description: 'How to: (Come Fare:) .'
 lastmod: '2024-03-13T22:44:43.402152-06:00'
 model: gpt-4-1106-preview
-summary: Convertire una data in una stringa significa trasformare l'oggetto Data in
-  una sequenza di caratteri leggibile.
+summary: .
 title: Conversione di una data in una stringa
 weight: 28
 ---

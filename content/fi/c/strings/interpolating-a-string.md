@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:30.474354-07:00
-description: "Merkkijonon v\xE4limuuttaminen (string interpolation) ohjelmoinnissa\
-  \ tarkoittaa merkkijonojen rakentamista sis\xE4llytt\xE4m\xE4ll\xE4 lausekkeita\
-  \ kirjaimellisiin\u2026"
+description: "Kuinka: Toisin kuin jotkin korkean tason kielet, C ei suoraan tue merkkijonon\
+  \ v\xE4limuuttamista sen syntaksissa. Sen sijaan merkkijonon rakentaminen\u2026"
 lastmod: '2024-03-13T22:44:57.023915-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonon v\xE4limuuttaminen (string interpolation) ohjelmoinnissa tarkoittaa\
-  \ merkkijonojen rakentamista sis\xE4llytt\xE4m\xE4ll\xE4 lausekkeita kirjaimellisiin\
-  \ merkkijonoihin."
+summary: "Toisin kuin jotkin korkean tason kielet, C ei suoraan tue merkkijonon v\xE4\
+  limuuttamista sen syntaksissa."
 title: Merkkijonon interpolaatio
 weight: 8
 ---

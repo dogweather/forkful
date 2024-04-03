@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:15.574406-07:00
-description: "De huidige datum op een Arduino krijgen betekent het bevragen van een\
-  \ realtimeklok (RTC) of een internetgebaseerde tijdsdienst om de datum van dit moment\u2026"
+description: 'Hoe: Laten we onze Arduino slim maken over de datum. We gebruiken een
+  RTC-module, zoals de DS3231, die nauwkeurig is en een backupbatterij heeft.'
 lastmod: '2024-03-13T22:44:51.082348-06:00'
 model: gpt-4-0125-preview
-summary: De huidige datum op een Arduino krijgen betekent het bevragen van een realtimeklok
-  (RTC) of een internetgebaseerde tijdsdienst om de datum van dit moment te achterhalen.
+summary: Laten we onze Arduino slim maken over de datum.
 title: Het huidige datum ophalen
 weight: 29
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:22.308619-07:00
-description: "Tests in Elm zu schreiben, bedeutet, Testf\xE4lle zu erstellen, um die\
-  \ Korrektheit Ihres Elm-Codes zu \xFCberpr\xFCfen und sicherzustellen, dass er sich\
-  \ wie\u2026"
+description: "Wie geht das: Elm verwendet das Paket `elm-explorations/test` f\xFC\
+  r das Schreiben von Einheiten- und Fuzz-Tests. Beginnen Sie damit, das Paket Ihrem\
+  \ Projekt\u2026"
 lastmod: '2024-03-13T22:44:53.808526-06:00'
 model: gpt-4-0125-preview
-summary: "Tests in Elm zu schreiben, bedeutet, Testf\xE4lle zu erstellen, um die Korrektheit\
-  \ Ihres Elm-Codes zu \xFCberpr\xFCfen und sicherzustellen, dass er sich wie erwartet\
-  \ verh\xE4lt."
+summary: "Elm verwendet das Paket `elm-explorations/test` f\xFCr das Schreiben von\
+  \ Einheiten- und Fuzz-Tests."
 title: Tests Schreiben
 weight: 36
 ---

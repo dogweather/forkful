@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:15:48.350784-07:00
-description: "Un REPL (Read-Eval-Print Loop, soit Boucle de Lire-\xC9valuer-Imprimer)\
-  \ est un environnement de programmation informatique simple et interactif. Les\u2026"
+description: "Comment faire : Lancer le REPL de Kotlin est un jeu d'enfant. Ouvrez\
+  \ votre terminal et tapez `kotlinc`. Vous arriverez dans le shell Kotlin. Essayons\
+  \ de\u2026"
 lastmod: '2024-03-13T22:44:57.740607-06:00'
 model: gpt-4-0125-preview
-summary: "Un REPL (Read-Eval-Print Loop, soit Boucle de Lire-\xC9valuer-Imprimer)\
-  \ est un environnement de programmation informatique simple et interactif."
+summary: Lancer le REPL de Kotlin est un jeu d'enfant.
 title: Utilisation d'une console interactive (REPL)
 weight: 34
 ---

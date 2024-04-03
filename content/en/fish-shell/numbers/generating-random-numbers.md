@@ -1,12 +1,11 @@
 ---
 date: 2024-01-27 20:26:06.071881-07:00
-description: "Generating random numbers is a fundamental task in programming, used\
-  \ for everything from data sampling to game development. In Fish Shell, making use\
-  \ of\u2026"
+description: "How to: Generating a random number in Fish can be straightforward, using\
+  \ the combination of system utilities and shell capabilities. Below are some\u2026"
 lastmod: '2024-03-13T22:45:00.468365-06:00'
 model: gpt-4-0125-preview
-summary: Generating random numbers is a fundamental task in programming, used for
-  everything from data sampling to game development.
+summary: Generating a random number in Fish can be straightforward, using the combination
+  of system utilities and shell capabilities.
 title: Generating random numbers
 weight: 12
 ---

@@ -2,14 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:58:06.120246-07:00
-description: "Pisanie do standardowego b\u0142\u0119du (stderr) w Dart polega na wysy\u0142\
-  aniu komunikat\xF3w o b\u0142\u0119dach i diagnostyk do oddzielnego strumienia,\
-  \ r\xF3\u017Cnego od standardowego\u2026"
+description: "Jak to zrobi\u0107: W Dart, pisanie do stderr jest proste za pomoc\u0105\
+  \ obiektu `stderr` dost\u0119pnego w `dart:io`. Oto podstawowy przyk\u0142ad."
 lastmod: '2024-03-13T22:44:35.110253-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie do standardowego b\u0142\u0119du (stderr) w Dart polega na wysy\u0142\
-  aniu komunikat\xF3w o b\u0142\u0119dach i diagnostyk do oddzielnego strumienia,\
-  \ r\xF3\u017Cnego od standardowego wyj\u015Bcia (stdout)."
+summary: "W Dart, pisanie do stderr jest proste za pomoc\u0105 obiektu `stderr` dost\u0119\
+  pnego w `dart:io`."
 title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---

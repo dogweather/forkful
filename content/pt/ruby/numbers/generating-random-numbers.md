@@ -1,13 +1,11 @@
 ---
 date: 2024-01-27 20:34:54.698927-07:00
-description: "Gerar n\xFAmeros aleat\xF3rios em Ruby envolve criar n\xFAmeros que\
-  \ n\xE3o podem ser previstos logicamente, essencial para cen\xE1rios como simula\xE7\
-  \xF5es, criptografia e\u2026"
+description: "Como Fazer: Ruby oferece v\xE1rios m\xE9todos para gerar n\xFAmeros\
+  \ aleat\xF3rios, principalmente atrav\xE9s da classe `Random`. #."
 lastmod: '2024-03-13T22:44:47.089512-06:00'
 model: gpt-4-0125-preview
-summary: "Gerar n\xFAmeros aleat\xF3rios em Ruby envolve criar n\xFAmeros que n\xE3\
-  o podem ser previstos logicamente, essencial para cen\xE1rios como simula\xE7\xF5\
-  es, criptografia e jogos."
+summary: "Ruby oferece v\xE1rios m\xE9todos para gerar n\xFAmeros aleat\xF3rios, principalmente\
+  \ atrav\xE9s da classe `Random`."
 title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
 weight: 12
 ---

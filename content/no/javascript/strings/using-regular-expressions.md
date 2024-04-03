@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:57.152608-07:00
-description: "Regul\xE6re uttrykk (regex) i JavaScript er m\xF8nstre som brukes for\
-  \ \xE5 samsvare med tegnkombinasjoner i strenger. Programmerere bruker dem til \xE5\
-  \ s\xF8ke, utvinne\u2026"
+description: 'Hvordan: #.'
 lastmod: '2024-03-13T22:44:41.174289-06:00'
 model: gpt-4-0125-preview
-summary: "Regul\xE6re uttrykk (regex) i JavaScript er m\xF8nstre som brukes for \xE5\
-  \ samsvare med tegnkombinasjoner i strenger."
+summary: '#.'
 title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---

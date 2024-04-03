@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:30.513813-07:00
-description: "A concatena\xE7\xE3o no Visual Basic for Applications (VBA) envolve\
-  \ a uni\xE3o de duas ou mais strings em uma \xFAnica entidade. Esta \xE9 uma tarefa\
-  \ fundamental na\u2026"
+description: "Como fazer: O VBA oferece um m\xE9todo direto para concatenar strings\
+  \ usando o operador `&` ou a fun\xE7\xE3o `Concatenate`. Vamos explorar ambos os\
+  \ m\xE9todos com\u2026"
 lastmod: '2024-03-13T22:44:46.402726-06:00'
 model: gpt-4-0125-preview
-summary: "A concatena\xE7\xE3o no Visual Basic for Applications (VBA) envolve a uni\xE3\
-  o de duas ou mais strings em uma \xFAnica entidade."
+summary: "O VBA oferece um m\xE9todo direto para concatenar strings usando o operador\
+  \ `&` ou a fun\xE7\xE3o `Concatenate`."
 title: Concatenando strings
 weight: 3
 ---

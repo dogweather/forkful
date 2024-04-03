@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 04:33:36.498239-07:00
-description: "XML ist eine Auszeichnungssprache, die zum Speichern und Transportieren\
-  \ von Daten verwendet wird. Programmierer arbeiten mit XML, um die Interoperabilit\xE4\
-  t\u2026"
+description: 'Wie geht das: XML mit SimpleXML lesen.'
 lastmod: '2024-03-13T22:44:53.997400-06:00'
 model: gpt-4-0125-preview
-summary: XML ist eine Auszeichnungssprache, die zum Speichern und Transportieren von
-  Daten verwendet wird.
+summary: XML mit SimpleXML lesen.
 title: Arbeiten mit XML
 weight: 40
 ---

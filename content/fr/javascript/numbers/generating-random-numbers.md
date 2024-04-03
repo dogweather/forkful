@@ -1,14 +1,9 @@
 ---
 date: 2024-01-27 20:34:14.825848-07:00
-description: "La g\xE9n\xE9ration de nombres al\xE9atoires en JavaScript est une technique\
-  \ utilis\xE9e pour cr\xE9er de l'impr\xE9visibilit\xE9 dans les applications, depuis\
-  \ les jeux qui\u2026"
+description: 'Comment faire : #.'
 lastmod: '2024-03-13T22:44:58.270939-06:00'
 model: gpt-4-0125-preview
-summary: "La g\xE9n\xE9ration de nombres al\xE9atoires en JavaScript est une technique\
-  \ utilis\xE9e pour cr\xE9er de l'impr\xE9visibilit\xE9 dans les applications, depuis\
-  \ les jeux qui n\xE9cessitent un comportement ennemi al\xE9atoire jusqu'aux algorithmes\
-  \ de s\xE9curit\xE9 n\xE9cessitant une al\xE9atoire cryptographique."
+summary: '#.'
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:18.089492-07:00
-description: "Escrever para o erro padr\xE3o (stderr) em Haskell permite que os programas\
-  \ diferenciem sua sa\xEDda entre resultados normais e mensagens de erro. Isso \xE9\
-  \u2026"
+description: "Como fazer: Em Haskell, escrever para stderr \xE9 direto com o m\xF3\
+  dulo `System.IO` da biblioteca base. Abaixo est\xE1 um exemplo b\xE1sico para demonstrar."
 lastmod: '2024-03-13T22:44:46.641696-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever para o erro padr\xE3o (stderr) em Haskell permite que os programas\
-  \ diferenciem sua sa\xEDda entre resultados normais e mensagens de erro."
+summary: "Em Haskell, escrever para stderr \xE9 direto com o m\xF3dulo `System.IO`\
+  \ da biblioteca base."
 title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---

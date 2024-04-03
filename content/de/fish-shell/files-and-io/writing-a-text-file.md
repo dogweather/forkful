@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:47.630930-07:00
-description: "Das Schreiben in eine Textdatei in der Fish Shell erm\xF6glicht es Ihnen,\
-  \ Daten dauerhaft zu speichern. Dies erleichtert die Datenwiederherstellung oder\u2026"
+description: "Wie: Um in Fish in eine Textdatei zu schreiben, k\xF6nnen Sie den Befehl\
+  \ `echo` in Kombination mit Umleitungsoperatoren verwenden. Es gibt keine popul\xE4\
+  ren\u2026"
 lastmod: '2024-03-13T22:44:54.327078-06:00'
 model: gpt-4-0125-preview
-summary: "Das Schreiben in eine Textdatei in der Fish Shell erm\xF6glicht es Ihnen,\
-  \ Daten dauerhaft zu speichern."
+summary: "Um in Fish in eine Textdatei zu schreiben, k\xF6nnen Sie den Befehl `echo`\
+  \ in Kombination mit Umleitungsoperatoren verwenden."
 title: Eine Textdatei schreiben
 weight: 24
 ---

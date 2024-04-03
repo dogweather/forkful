@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:33:42.845353-07:00
-description: "\"Miten & Miksi?\" Tietojen vertailu on ydintoiminto ohjelmoinnissa.\
-  \ Kaksi p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 vertaamalla selvitet\xE4\xE4n niiden v\xE4\
-  linen suhde, esimerkiksi tapahtumien\u2026"
+description: "How to: \"Kuinka tehd\xE4:\"."
 lastmod: '2024-03-13T22:44:56.369302-06:00'
 model: gpt-4-1106-preview
-summary: '"Miten & Miksi.'
+summary: "\"Kuinka tehd\xE4:\"."
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---

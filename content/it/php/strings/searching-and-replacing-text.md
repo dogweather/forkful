@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:58:16.123144-07:00
-description: "Nella programmazione, cercare e sostituire testo significa scansionare\
-  \ delle stringhe per trovarne frammenti e cambiare questi con nuovi contenuti. I\u2026"
+description: 'How to (Come fare): Ecco un esempio semplice in PHP.'
 lastmod: '2024-03-13T22:44:43.502615-06:00'
 model: gpt-4-1106-preview
-summary: Nella programmazione, cercare e sostituire testo significa scansionare delle
-  stringhe per trovarne frammenti e cambiare questi con nuovi contenuti.
+summary: Ecco un esempio semplice in PHP.
 title: Ricerca e sostituzione del testo
 weight: 10
 ---

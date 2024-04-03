@@ -1,13 +1,13 @@
 ---
 date: 2024-01-20 17:33:42.927532-07:00
-description: "(Das Was und das Warum) Datumvergleiche? Das ist einfach das Gegen\xFC\
-  berstellen zweier Zeitpunkte. Wir nutzen das, um Zeitr\xE4ume zu \xFCberpr\xFCfen,\
-  \ Deadlines\u2026"
+description: "How to: (Wie geht das?) Angenommen, wir haben zwei Daten und wollen\
+  \ wissen, ob eines vor oder nach dem anderen liegt. Hier ein schn\xF6rkelloser PHP-\u2026"
 lastmod: '2024-03-13T22:44:53.984929-06:00'
 model: gpt-4-1106-preview
-summary: '(Das Was und das Warum)
+summary: '(Wie geht das?)
 
-  Datumvergleiche.'
+  Angenommen, wir haben zwei Daten und wollen wissen, ob eines vor oder nach dem anderen
+  liegt.'
 title: Vergleich von zwei Daten
 weight: 27
 ---

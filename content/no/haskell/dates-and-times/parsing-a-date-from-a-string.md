@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:35.934828-07:00
-description: "\xC5 analysere en dato fra en streng i Haskell inneb\xE6rer \xE5 konvertere\
-  \ tekstuelle representasjoner av datoer til et strukturert format som programmet\
-  \ kan\u2026"
+description: "Hvordan: Rett ut av boksen tilbyr Haskell grunnleggende verkt\xF8y for\
+  \ \xE5 analysere datoer, men \xE5 dra nytte av biblioteker som `time` for kjernens\u2026"
 lastmod: '2024-03-13T22:44:40.851432-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 analysere en dato fra en streng i Haskell inneb\xE6rer \xE5 konvertere\
-  \ tekstuelle representasjoner av datoer til et strukturert format som programmet\
-  \ kan manipulere."
+summary: "Rett ut av boksen tilbyr Haskell grunnleggende verkt\xF8y for \xE5 analysere\
+  \ datoer, men \xE5 dra nytte av biblioteker som `time` for kjernens funksjonalitet\
+  \ og `date-parse` eller `time-parse` for mer fleksibel parsing kan betydelig forenkle\
+  \ oppgaven."
 title: Analysering av en dato fra en streng
 weight: 30
 ---

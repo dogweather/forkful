@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:16.228291-07:00
-description: "Schrijven naar de standaardfout (`stderr`) betekent het uitvoeren van\
-  \ tekst die geen deel uitmaakt van de hoofdprogrammagegevens, maar die fouten of\u2026"
+description: 'Hoe: Om naar `stderr` te schrijven in Elixir, gebruik `IO.warn/1` of
+  `IO.puts/2`. Zo werkt het.'
 lastmod: '2024-03-13T22:44:50.478478-06:00'
 model: gpt-4-0125-preview
-summary: Schrijven naar de standaardfout (`stderr`) betekent het uitvoeren van tekst
-  die geen deel uitmaakt van de hoofdprogrammagegevens, maar die fouten of diagnostische
-  informatie aangeeft.
+summary: Om naar `stderr` te schrijven in Elixir, gebruik `IO.warn/1` of `IO.puts/2`.
 title: Schrijven naar standaardfout
 weight: 25
 ---

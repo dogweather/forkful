@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:37:37.166560-07:00
-description: "Konwersja daty do ci\u0105gu znak\xF3w pozwala zaprezentowa\u0107 informacje\
-  \ o czasie w zrozumia\u0142ym formacie. Programi\u015Bci robi\u0105 to, by u\u0142\
-  atwi\u0107 u\u017Cytkownikom odczytanie\u2026"
+description: "How to: (Jak to zrobi\u0107?) Na pocz\u0105tek, zaimportuj `chrono`\
+  \ \u2013 popularn\u0105 bibliotek\u0119 do zarz\u0105dzania czasem. Potem u\u017C\
+  yj w\u0142a\u015Bciwej metody do konwersji. Poka\u017C\u0119\u2026"
 lastmod: '2024-03-13T22:44:35.197269-06:00'
 model: gpt-4-1106-preview
-summary: "Konwersja daty do ci\u0105gu znak\xF3w pozwala zaprezentowa\u0107 informacje\
-  \ o czasie w zrozumia\u0142ym formacie."
+summary: "Na pocz\u0105tek, zaimportuj `chrono` \u2013 popularn\u0105 bibliotek\u0119\
+  \ do zarz\u0105dzania czasem."
 title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---

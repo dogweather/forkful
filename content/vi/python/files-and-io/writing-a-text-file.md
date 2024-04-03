@@ -2,15 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:20.981492-07:00
-description: "Vi\u1EC7c vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong Python\
-  \ c\xF3 ngh\u0129a l\xE0 l\u01B0u chu\u1ED7i v\xE0o m\u1ED9t t\u1EC7p tr\xEAn \u1ED5\
-  \ \u0111\u0129a c\u1EE7a b\u1EA1n. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1\
-  u n\xE0y \u0111\u1EC3 gi\u1EEF d\u1EEF li\u1EC7u qua c\xE1c phi\xEAn, ghi\u2026"
+description: "C\xE1ch th\u1EE9c: Vi\u1EBFt v\xE0o t\u1EC7p r\u1EA5t \u0111\u01A1n\
+  \ gi\u1EA3n. S\u1EED d\u1EE5ng c\xE2u l\u1EC7nh `with` \u0111\u1EC3 m\u1EDF t\u1EC7\
+  p, sau \u0111\xF3 g\u1ECDi `write()`."
 lastmod: '2024-03-13T22:44:36.121720-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong Python c\xF3\
-  \ ngh\u0129a l\xE0 l\u01B0u chu\u1ED7i v\xE0o m\u1ED9t t\u1EC7p tr\xEAn \u1ED5 \u0111\
-  \u0129a c\u1EE7a b\u1EA1n."
+summary: "Vi\u1EBFt v\xE0o t\u1EC7p r\u1EA5t \u0111\u01A1n gi\u1EA3n."
 title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 24
 ---

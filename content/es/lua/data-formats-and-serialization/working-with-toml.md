@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:23:57.120965-07:00
-description: "Trabajar con TOML implica analizar y generar datos TOML (Tom's Obvious,\
-  \ Minimal Language) con Lua. Los programadores utilizan TOML para archivos de\u2026"
+description: "C\xF3mo hacerlo: Primero, aseg\xFArate de que tu entorno Lua tenga un\
+  \ analizador de TOML. Utilizaremos `lua-toml` para este ejemplo."
 lastmod: '2024-03-13T22:44:59.226029-06:00'
 model: gpt-4-0125-preview
-summary: Trabajar con TOML implica analizar y generar datos TOML (Tom's Obvious, Minimal
-  Language) con Lua.
+summary: "Primero, aseg\xFArate de que tu entorno Lua tenga un analizador de TOML."
 title: Trabajando con TOML
 weight: 39
 ---

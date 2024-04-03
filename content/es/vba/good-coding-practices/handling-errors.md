@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:02.544800-07:00
-description: "El manejo de errores en Visual Basic para Aplicaciones (VBA) se refiere\
-  \ al proceso de anticipar, detectar y resolver errores de programaci\xF3n, de\u2026"
+description: "C\xF3mo hacerlo: En VBA, el manejo de errores se implementa t\xEDpicamente\
+  \ usando la instrucci\xF3n `On Error` que indica a VBA c\xF3mo proceder cuando ocurre\
+  \ un\u2026"
 lastmod: '2024-03-13T22:44:58.901446-06:00'
 model: gpt-4-0125-preview
-summary: "El manejo de errores en Visual Basic para Aplicaciones (VBA) se refiere\
-  \ al proceso de anticipar, detectar y resolver errores de programaci\xF3n, de aplicaci\xF3\
-  n o de comunicaci\xF3n."
+summary: "En VBA, el manejo de errores se implementa t\xEDpicamente usando la instrucci\xF3\
+  n `On Error` que indica a VBA c\xF3mo proceder cuando ocurre un error."
 title: Manejo de errores
 weight: 16
 ---

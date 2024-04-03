@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:11.307118-07:00
-description: "Tekst zoeken en vervangen stelt je in staat specifieke reeksen in een\
-  \ tekst te vinden en deze te vervangen door iets anders. Programmeurs doen dit voor\u2026"
+description: 'Hoe: In Clojure gebruiken we de functie `clojure.string/replace` om
+  tekst te zoeken en te vervangen. Laten we meteen ter zake komen met wat code.'
 lastmod: '2024-03-13T22:44:50.403565-06:00'
 model: gpt-4-0125-preview
-summary: Tekst zoeken en vervangen stelt je in staat specifieke reeksen in een tekst
-  te vinden en deze te vervangen door iets anders.
+summary: In Clojure gebruiken we de functie `clojure.string/replace` om tekst te zoeken
+  en te vervangen.
 title: Tekst zoeken en vervangen
 weight: 10
 ---

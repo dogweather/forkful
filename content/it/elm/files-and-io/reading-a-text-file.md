@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:54:34.827225-07:00
-description: "Leggere un file di testo significa caricare e interpretare il suo contenuto\
-  \ tramite il nostro codice. Lo facciamo perch\xE9 spesso abbiamo bisogno di\u2026"
+description: "How to: Elm, essendo focalizzato sulla sicurezza, non permette l'accesso\
+  \ diretto ai file del sistema dall'interno del browser. Per leggere un file, devi\u2026"
 lastmod: '2024-03-13T22:44:43.366811-06:00'
 model: gpt-4-1106-preview
-summary: Leggere un file di testo significa caricare e interpretare il suo contenuto
-  tramite il nostro codice.
+summary: Elm, essendo focalizzato sulla sicurezza, non permette l'accesso diretto
+  ai file del sistema dall'interno del browser.
 title: Lettura di un file di testo
 weight: 22
 ---

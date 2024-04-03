@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:46:31.386364-07:00
-description: "Att avrunda tal handlar om att justera ett v\xE4rde till n\xE4rmaste\
-  \ heltal eller angiven decimalplats. Programmerare avrundar tal f\xF6r att f\xF6\
-  renkla data,\u2026"
+description: "Hur man g\xF6r: Du har n\xE5gra praktiska cmdlet:er och metoder i PowerShell\
+  \ f\xF6r avrundning: - `Round()`-metod fr\xE5n Math-klassen."
 lastmod: '2024-03-13T22:44:38.119159-06:00'
 model: gpt-4-0125-preview
-summary: "Att avrunda tal handlar om att justera ett v\xE4rde till n\xE4rmaste heltal\
-  \ eller angiven decimalplats."
+summary: "Du har n\xE5gra praktiska cmdlet:er och metoder i PowerShell f\xF6r avrundning."
 title: Avrundning av tal
 weight: 13
 ---

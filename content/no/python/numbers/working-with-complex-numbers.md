@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:45:31.371734-07:00
-description: "Komplekse tall er en mengde tall i formen `a + bi`, der `a` og `b` er\
-  \ reelle tall, og `i` er den imagin\xE6re enheten (`i^2 = -1`). I programmering\
-  \ bruker vi\u2026"
+description: "Hvordan: Python har innebygd st\xF8tte for komplekse tall. Her er hvordan\
+  \ du kan leke med dem."
 lastmod: '2024-03-13T22:44:40.354931-06:00'
 model: gpt-4-0125-preview
-summary: "Komplekse tall er en mengde tall i formen `a + bi`, der `a` og `b` er reelle\
-  \ tall, og `i` er den imagin\xE6re enheten (`i^2 = -1`)."
+summary: "Python har innebygd st\xF8tte for komplekse tall."
 title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---

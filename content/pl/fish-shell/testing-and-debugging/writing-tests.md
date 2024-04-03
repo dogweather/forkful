@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:00.502856-07:00
-description: "Pisanie test\xF3w w Fish Shell polega na tworzeniu skrypt\xF3w, kt\xF3\
-  re automatycznie uruchamiaj\u0105 Tw\xF3j kod w celu zweryfikowania jego zachowania\
-  \ wzgl\u0119dem\u2026"
+description: "Jak to zrobi\u0107: Fish nie posiada wbudowanego frameworku testowego,\
+  \ jak niekt\xF3re inne \u015Brodowiska programistyczne. Niemniej jednak, mo\u017C\
+  esz pisa\u0107 proste\u2026"
 lastmod: '2024-03-13T22:44:35.844959-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie test\xF3w w Fish Shell polega na tworzeniu skrypt\xF3w, kt\xF3re\
-  \ automatycznie uruchamiaj\u0105 Tw\xF3j kod w celu zweryfikowania jego zachowania\
-  \ wzgl\u0119dem oczekiwanych wynik\xF3w."
+summary: "Fish nie posiada wbudowanego frameworku testowego, jak niekt\xF3re inne\
+  \ \u015Brodowiska programistyczne."
 title: "Pisanie test\xF3w"
 weight: 36
 ---

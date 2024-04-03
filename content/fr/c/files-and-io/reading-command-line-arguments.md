@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:08.160782-07:00
-description: "En programmation C, lire les arguments de la ligne de commande permet\
-  \ aux programmes d'accepter des entr\xE9es directement depuis le terminal, ce qui\u2026"
+description: "Comment faire : En C, la fonction `main` peut \xEAtre con\xE7ue pour\
+  \ accepter des arguments de ligne de commande en utilisant les param\xE8tres `int\
+  \ argc` et `char\u2026"
 lastmod: '2024-03-13T22:44:58.389299-06:00'
 model: gpt-4-0125-preview
-summary: "En programmation C, lire les arguments de la ligne de commande permet aux\
-  \ programmes d'accepter des entr\xE9es directement depuis le terminal, ce qui am\xE9\
-  liore leur flexibilit\xE9 et leur utilisabilit\xE9."
+summary: "En C, la fonction `main` peut \xEAtre con\xE7ue pour accepter des arguments\
+  \ de ligne de commande en utilisant les param\xE8tres `int argc` et `char *argv[]`."
 title: Lecture des arguments de ligne de commande
 weight: 23
 ---

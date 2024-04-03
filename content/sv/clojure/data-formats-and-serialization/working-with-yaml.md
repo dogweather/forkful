@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:57.403889-07:00
-description: "YAML, ett rekursivt akronym f\xF6r \"YAML Ain't Markup Language\", \xE4\
-  r ett m\xE4nniskol\xE4sbart data-serialiseringsformat som anv\xE4nds f\xF6r konfigurationsfiler\
-  \ och\u2026"
+description: "Hur man: Clojure inkluderar inte inbyggt st\xF6d f\xF6r YAML, men du\
+  \ kan anv\xE4nda tredjepartsbibliotek som `clj-yaml` f\xF6r att tolka och generera\
+  \ YAML-data.\u2026"
 lastmod: '2024-03-13T22:44:37.545459-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, ett rekursivt akronym f\xF6r \"YAML Ain't Markup Language\", \xE4\
-  r ett m\xE4nniskol\xE4sbart data-serialiseringsformat som anv\xE4nds f\xF6r konfigurationsfiler\
-  \ och datautbyte mellan spr\xE5k med olika datastrukturer."
+summary: "Clojure inkluderar inte inbyggt st\xF6d f\xF6r YAML, men du kan anv\xE4\
+  nda tredjepartsbibliotek som `clj-yaml` f\xF6r att tolka och generera YAML-data."
 title: Att Arbeta med YAML
 weight: 41
 ---

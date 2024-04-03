@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:36.385050-07:00
-description: "Controleren of een directory bestaat in C betekent het opvragen van\
-  \ het bestandssysteem om te verifi\xEBren of een specifiek pad naar een directory\
-  \ leidt.\u2026"
+description: "Hoe: In C kan de aanwezigheid van een directory worden gecontroleerd\
+  \ met de `stat` functie, die informatie ophaalt over het bestand of de directory\
+  \ op een\u2026"
 lastmod: '2024-03-13T22:44:51.306033-06:00'
 model: gpt-4-0125-preview
-summary: "Controleren of een directory bestaat in C betekent het opvragen van het\
-  \ bestandssysteem om te verifi\xEBren of een specifiek pad naar een directory leidt."
+summary: In C kan de aanwezigheid van een directory worden gecontroleerd met de `stat`
+  functie, die informatie ophaalt over het bestand of de directory op een gespecificeerd
+  pad.
 title: Controleren of een directory bestaat
 weight: 20
 ---

@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 20:26:12.558353-07:00
-description: "Generating random numbers in Rust involves utilizing libraries to produce\
-  \ unpredicted numerical values, which is indispensable for tasks ranging from\u2026"
+description: "How to: Rust relies on external crates for random number generation,\
+  \ with `rand` being the most commonly used. To start generating random numbers,\
+  \ you'll\u2026"
 lastmod: '2024-03-13T22:44:59.891865-06:00'
 model: gpt-4-0125-preview
-summary: Generating random numbers in Rust involves utilizing libraries to produce
-  unpredicted numerical values, which is indispensable for tasks ranging from cryptography
-  and simulations to gaming and randomized algorithms.
+summary: Rust relies on external crates for random number generation, with `rand`
+  being the most commonly used.
 title: Generating random numbers
 weight: 12
 ---

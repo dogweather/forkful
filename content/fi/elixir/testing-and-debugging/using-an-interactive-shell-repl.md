@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:13:31.994173-07:00
-description: "Interaktiivinen komentotulkki eli REPL (Read-Eval-Print Loop, Lue-Arviointi-Tulosta\
-  \ Silmukka) mahdollistaa koodinp\xE4tkien kokeilemisen reaaliajassa.\u2026"
+description: "Kuinka: IEx:n k\xE4ynnist\xE4miseksi avaa terminaali ja kirjoita `iex`.\
+  \ T\xE4ss\xE4 maistiainen."
 lastmod: '2024-03-13T22:44:56.228555-06:00'
 model: gpt-4-0125-preview
-summary: "Interaktiivinen komentotulkki eli REPL (Read-Eval-Print Loop, Lue-Arviointi-Tulosta\
-  \ Silmukka) mahdollistaa koodinp\xE4tkien kokeilemisen reaaliajassa."
+summary: "IEx:n k\xE4ynnist\xE4miseksi avaa terminaali ja kirjoita `iex`."
 title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 weight: 34
 ---

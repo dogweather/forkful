@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:21.817294-07:00
-description: "Inviare una richiesta HTTP con autenticazione di base in Visual Basic\
-  \ for Applications (VBA) si riferisce all'accesso a risorse web protette da\u2026"
+description: "Come fare: In VBA, puoi usare la libreria `Microsoft XML, v6.0` (MSXML2)\
+  \ per inviare richieste HTTP con autenticazione di base. Questo comporta\u2026"
 lastmod: '2024-03-13T22:44:43.262103-06:00'
 model: gpt-4-0125-preview
-summary: Inviare una richiesta HTTP con autenticazione di base in Visual Basic for
-  Applications (VBA) si riferisce all'accesso a risorse web protette da credenziali
-  di username e password.
+summary: In VBA, puoi usare la libreria `Microsoft XML, v6.0` (MSXML2) per inviare
+  richieste HTTP con autenticazione di base.
 title: Inviare una richiesta HTTP con autenticazione di base
 weight: 45
 ---

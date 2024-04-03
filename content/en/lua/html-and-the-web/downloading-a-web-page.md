@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:44:24.301004-07:00
-description: "Downloading a web page means grabbing the HTML content from the internet\
-  \ via its URL. Programmers do it to analyze web content, automate tasks, or\u2026"
+description: "How to: Lua isn't equipped out of the box for web tasks, but with the\
+  \ `socket` library and `http` module, it's a cinch. Here's a quick example using\u2026"
 lastmod: '2024-03-13T22:45:00.204353-06:00'
 model: gpt-4-1106-preview
-summary: Downloading a web page means grabbing the HTML content from the internet
-  via its URL.
+summary: Lua isn't equipped out of the box for web tasks, but with the `socket` library
+  and `http` module, it's a cinch.
 title: Downloading a web page
 weight: 42
 ---

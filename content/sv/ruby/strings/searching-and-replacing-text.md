@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:58:41.697270-07:00
-description: "S\xF6ka och ers\xE4tta text \xE4r tekniken att hitta specifika textstr\xE4\
-  ngar och byta ut dem med n\xE5got annat. Programmerare g\xF6r detta f\xF6r att snabbt\
-  \ uppdatera kod,\u2026"
+description: "How to: (Hur g\xF6r man:) ."
 lastmod: '2024-03-13T22:44:38.413749-06:00'
 model: gpt-4-1106-preview
-summary: "S\xF6ka och ers\xE4tta text \xE4r tekniken att hitta specifika textstr\xE4\
-  ngar och byta ut dem med n\xE5got annat."
+summary: .
 title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---

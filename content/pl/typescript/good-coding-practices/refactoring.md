@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 03:36:38.728545-07:00
-description: "Refaktoryzacja to proces restrukturyzacji istniej\u0105cego kodu komputerowego\
-  \ bez zmiany jego zewn\u0119trznego zachowania. Programi\u015Bci wykonuj\u0105 j\u0105\
-  , aby kod by\u0142\u2026"
+description: "Jak to zrobi\u0107: Rozwa\u017Cmy funkcj\u0119 TypeScript, kt\xF3ra\
+  \ mia\u0142a lepsze dni - jest nieco ba\u0142aganu i potrzebuje troch\u0119 troskliwej\
+  \ opieki."
 lastmod: '2024-03-13T22:44:35.147744-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktoryzacja to proces restrukturyzacji istniej\u0105cego kodu komputerowego\
-  \ bez zmiany jego zewn\u0119trznego zachowania."
+summary: "Rozwa\u017Cmy funkcj\u0119 TypeScript, kt\xF3ra mia\u0142a lepsze dni -\
+  \ jest nieco ba\u0142aganu i potrzebuje troch\u0119 troskliwej opieki."
 title: Refaktoryzacja
 weight: 19
 ---

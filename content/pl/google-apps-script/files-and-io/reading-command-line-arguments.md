@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:32.993768-07:00
-description: "Czytanie argument\xF3w linii polece\u0144 w Google Apps Script to nieco\
-  \ mylne okre\u015Blenie, poniewa\u017C, w przeciwie\u0144stwie do tradycyjnych interfejs\xF3\
-  w linii polece\u0144 w\u2026"
+description: "Jak to zrobi\u0107: Aby na\u015Bladowa\u0107 proces czytania argument\xF3\
+  w linii polece\u0144 w Google Apps Script, szczeg\xF3lnie dla aplikacji internetowych,\
+  \ mo\u017Cna wykorzysta\u0107\u2026"
 lastmod: '2024-03-13T22:44:34.920252-06:00'
 model: gpt-4-0125-preview
-summary: "Czytanie argument\xF3w linii polece\u0144 w Google Apps Script to nieco\
-  \ mylne okre\u015Blenie, poniewa\u017C, w przeciwie\u0144stwie do tradycyjnych interfejs\xF3\
-  w linii polece\u0144 w j\u0119zykach programowania takich jak Python czy Node."
+summary: "Aby na\u015Bladowa\u0107 proces czytania argument\xF3w linii polece\u0144\
+  \ w Google Apps Script, szczeg\xF3lnie dla aplikacji internetowych, mo\u017Cna wykorzysta\u0107\
+  \ parametry ci\u0105gu zapytania."
 title: "Czytanie argument\xF3w z linii polece\u0144"
 weight: 23
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:13.155468-07:00
-description: "Obtenir la date actuelle en C# consiste \xE0 r\xE9cup\xE9rer les d\xE9\
-  tails de la date et de l'heure actuelles du syst\xE8me. Les programmeurs ont souvent\
-  \ besoin\u2026"
+description: "Comment faire : C# offre une mani\xE8re simple d'obtenir la date actuelle\
+  \ en utilisant la classe `DateTime` qui fait partie de l'espace de noms System du\u2026"
 lastmod: '2024-03-13T22:44:57.799096-06:00'
 model: gpt-4-0125-preview
-summary: "Obtenir la date actuelle en C# consiste \xE0 r\xE9cup\xE9rer les d\xE9tails\
-  \ de la date et de l'heure actuelles du syst\xE8me."
+summary: "C# offre une mani\xE8re simple d'obtenir la date actuelle en utilisant la\
+  \ classe `DateTime` qui fait partie de l'espace de noms System du .NET Framework."
 title: Obtenir la date actuelle
 weight: 29
 ---

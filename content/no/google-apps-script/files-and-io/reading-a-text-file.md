@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:29.595616-07:00
-description: "\xC5 lese en tekstfil i Google Apps Script (GAS) inneb\xE6rer \xE5 f\xE5\
-  \ tilgang til og trekke ut tekstdata fra filer lagret i Google Drive eller annen\
-  \ tilgjengelig\u2026"
+description: "Hvordan: For \xE5 begynne \xE5 lese en tekstfil med Google Apps Script,\
+  \ m\xE5 du generelt bruke Google Drive API. Her er et grunnleggende eksempel som\
+  \ demonstrerer\u2026"
 lastmod: '2024-03-13T22:44:40.334876-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 lese en tekstfil i Google Apps Script (GAS) inneb\xE6rer \xE5 f\xE5\
-  \ tilgang til og trekke ut tekstdata fra filer lagret i Google Drive eller annen\
-  \ tilgjengelig skylagring."
+summary: "For \xE5 begynne \xE5 lese en tekstfil med Google Apps Script, m\xE5 du\
+  \ generelt bruke Google Drive API."
 title: Lese en tekstfil
 weight: 22
 ---

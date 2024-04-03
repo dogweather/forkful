@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:40:18.552964-07:00
-description: "Komplexa tal utvidgar id\xE9n om en endimensionell nummerlinje till\
-  \ ett tv\xE5dimensionellt komplext plan. Programmerare anv\xE4nder dem inom omr\xE5\
-  den som\u2026"
+description: "Hur man g\xF6r: I Fish hanterar vi komplexa tal med `math` med verkliga\
+  \ och imagin\xE4ra delar. H\xE4r \xE4r en start."
 lastmod: '2024-03-13T22:44:38.329742-06:00'
 model: gpt-4-0125-preview
-summary: "Komplexa tal utvidgar id\xE9n om en endimensionell nummerlinje till ett\
-  \ tv\xE5dimensionellt komplext plan."
+summary: "I Fish hanterar vi komplexa tal med `math` med verkliga och imagin\xE4ra\
+  \ delar."
 title: Att arbeta med komplexa tal
 weight: 14
 ---

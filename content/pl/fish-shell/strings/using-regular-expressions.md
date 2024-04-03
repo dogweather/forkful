@@ -1,12 +1,10 @@
 ---
 date: 2024-01-19
-description: "Wyra\u017Cenia regularne to wzorce u\u017Cywane do wyszukiwania i manipulowania\
-  \ tekstami. Programi\u015Bci u\u017Cywaj\u0105 ich, bo pozwalaj\u0105 na zaawansowane\
-  \ przetwarzanie tekstu\u2026"
+description: "How to: - Jak to zrobi\u0107: Znajdowanie s\u0142\xF3w zaczynaj\u0105\
+  cych si\u0119 na \"pl\" w pliku `tekst.txt`."
 lastmod: '2024-03-13T22:44:35.828793-06:00'
 model: unknown
-summary: "Wyra\u017Cenia regularne to wzorce u\u017Cywane do wyszukiwania i manipulowania\
-  \ tekstami."
+summary: "Znajdowanie s\u0142\xF3w zaczynaj\u0105cych si\u0119 na \"pl\" w pliku `tekst.txt`."
 title: "Wykorzystanie wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---

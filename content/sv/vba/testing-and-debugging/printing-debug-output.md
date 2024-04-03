@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:26.802178-07:00
-description: "Att skriva ut fels\xF6kning i Visual Basic for Applications (VBA) inneb\xE4\
-  r att man strategiskt placerar utskriftsuttryck inom sin kod f\xF6r att visa\u2026"
+description: "Hur man g\xF6r: I VBA \xE4r `Debug.Print`-uttrycket arbetsh\xE4sten\
+  \ f\xF6r att skriva ut fels\xF6kningsinformation till det Omedelbara F\xF6nstret\
+  \ i Visual Basic Editorn\u2026"
 lastmod: '2024-03-13T22:44:37.745931-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva ut fels\xF6kning i Visual Basic for Applications (VBA) inneb\xE4\
-  r att man strategiskt placerar utskriftsuttryck inom sin kod f\xF6r att visa variabelv\xE4\
-  rden, exekveringsfl\xF6de eller anpassade fels\xF6kningsmeddelanden."
+summary: "I VBA \xE4r `Debug.Print`-uttrycket arbetsh\xE4sten f\xF6r att skriva ut\
+  \ fels\xF6kningsinformation till det Omedelbara F\xF6nstret i Visual Basic Editorn\
+  \ (VBE)."
 title: "Skriva ut fels\xF6kningsdata"
 weight: 33
 ---

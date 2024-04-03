@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:56:14.191718-07:00
-description: "Kommandolinjeargumenter lar deg sende informasjon til programmet ditt\
-  \ ved oppstart, slik at oppf\xF8rselen kan tilpasses p\xE5 fly. Programmerere gj\xF8\
-  r dette for\u2026"
+description: "Hvordan: Her er et eksempel p\xE5 hvordan \xE5 lese kommandolinjeargumenter\
+  \ i Kotlin."
 lastmod: '2024-03-13T22:44:40.766740-06:00'
 model: gpt-4-1106-preview
-summary: "Kommandolinjeargumenter lar deg sende informasjon til programmet ditt ved\
-  \ oppstart, slik at oppf\xF8rselen kan tilpasses p\xE5 fly."
+summary: "Her er et eksempel p\xE5 hvordan \xE5 lese kommandolinjeargumenter i Kotlin."
 title: Lese kommandolinjeargumenter
 weight: 23
 ---

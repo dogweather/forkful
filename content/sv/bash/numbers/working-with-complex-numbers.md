@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:37:10.079707-07:00
-description: "Komplexa tal best\xE5r av en reell del och en imagin\xE4r del. Programmerare\
-  \ anv\xE4nder dem inom omr\xE5den s\xE5som signalbehandling, kvantmekanik och n\xE4\
-  rhelst\u2026"
+description: "Hur: Bash st\xF6djer inte komplexa tal av sig sj\xE4lvt. Du kommer ofta\
+  \ att anv\xE4nda ett externt verktyg som `bc` med dess `-l` alternativ. S\xE5 h\xE4\
+  r kn\xE4cker du\u2026"
 lastmod: '2024-03-13T22:44:38.074515-06:00'
 model: gpt-4-0125-preview
-summary: "Komplexa tal best\xE5r av en reell del och en imagin\xE4r del."
+summary: "Bash st\xF6djer inte komplexa tal av sig sj\xE4lvt."
 title: Att arbeta med komplexa tal
 weight: 14
 ---

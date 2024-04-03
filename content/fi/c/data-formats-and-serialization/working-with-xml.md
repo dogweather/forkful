@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:06.868349-07:00
-description: "XML:n k\xE4sittely C-kieless\xE4 sis\xE4lt\xE4\xE4 XML-dokumenttien\
-  \ j\xE4sent\xE4misen, kyselyiden teon ja manipuloinnin k\xE4ytt\xE4en erilaisia\
-  \ kirjastoja. Ohjelmoijat k\xE4ytt\xE4v\xE4t\u2026"
+description: "Kuinka: C ei sis\xE4ll\xE4 sis\xE4\xE4nrakennettua tukea XML:lle, joten\
+  \ sinun t\xE4ytyy k\xE4ytt\xE4\xE4 ulkoisia kirjastoja. Yksi suosittu vaihtoehto\
+  \ on `libxml2`, joka on vakaa\u2026"
 lastmod: '2024-03-13T22:44:57.067339-06:00'
 model: gpt-4-0125-preview
-summary: "XML:n k\xE4sittely C-kieless\xE4 sis\xE4lt\xE4\xE4 XML-dokumenttien j\xE4\
-  sent\xE4misen, kyselyiden teon ja manipuloinnin k\xE4ytt\xE4en erilaisia kirjastoja."
+summary: "C ei sis\xE4ll\xE4 sis\xE4\xE4nrakennettua tukea XML:lle, joten sinun t\xE4\
+  ytyy k\xE4ytt\xE4\xE4 ulkoisia kirjastoja."
 title: "Ty\xF6skentely XML:n kanssa"
 weight: 40
 ---

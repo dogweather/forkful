@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:40.408627-07:00
-description: "Organizacja kodu w funkcje polega na strukturyzowaniu kodu Google Apps\
-  \ Script poprzez oddzielanie logicznych segment\xF3w w odr\u0119bne bloki, z kt\xF3\
-  rych ka\u017Cdy\u2026"
+description: "Jak to zrobi\u0107: W Google Apps Script, kt\xF3ry opiera si\u0119 na\
+  \ JavaScript, definiujesz funkcje, u\u017Cywaj\u0105c s\u0142owa kluczowego `function`,\
+  \ po kt\xF3rym nast\u0119puje\u2026"
 lastmod: '2024-03-13T22:44:34.909040-06:00'
 model: gpt-4-0125-preview
-summary: "Organizacja kodu w funkcje polega na strukturyzowaniu kodu Google Apps Script\
-  \ poprzez oddzielanie logicznych segment\xF3w w odr\u0119bne bloki, z kt\xF3rych\
-  \ ka\u017Cdy wykonuje okre\u015Blone zadanie."
+summary: "W Google Apps Script, kt\xF3ry opiera si\u0119 na JavaScript, definiujesz\
+  \ funkcje, u\u017Cywaj\u0105c s\u0142owa kluczowego `function`, po kt\xF3rym nast\u0119\
+  puje unikalna nazwa funkcji, nawiasy `()` mog\u0105ce zawiera\u0107 parametry i\
+  \ nawiasy klamrowe `{}`, kt\xF3re zawieraj\u0105 blok kodu funkcji."
 title: Organizacja kodu w funkcje
 weight: 18
 ---

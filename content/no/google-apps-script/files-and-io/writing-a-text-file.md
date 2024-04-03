@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:21.425028-07:00
-description: "\xC5 skrive en tekstfil i Google Apps Script lar utviklere lagre data\
-  \ p\xE5 en vedvarende m\xE5te, noe som gj\xF8r det tilgjengelig for fremtidig bruk\
-  \ eller analyse.\u2026"
+description: "Hvordan: \xC5 lage og skrive til en tekstfil i Google Apps Script kan\
+  \ oppn\xE5s gjennom Google DriveApp-tjenesten. Nedenfor er en steg-for-steg guide\
+  \ med\u2026"
 lastmod: '2024-03-13T22:44:40.335942-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive en tekstfil i Google Apps Script lar utviklere lagre data p\xE5\
-  \ en vedvarende m\xE5te, noe som gj\xF8r det tilgjengelig for fremtidig bruk eller\
-  \ analyse."
+summary: "\xC5 lage og skrive til en tekstfil i Google Apps Script kan oppn\xE5s gjennom\
+  \ Google DriveApp-tjenesten."
 title: Skrive en tekstfil
 weight: 24
 ---

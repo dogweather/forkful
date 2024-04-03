@@ -1,13 +1,11 @@
 ---
 date: 2024-02-03 17:50:13.202592-07:00
-description: "Refactoring in programming involves restructuring existing code without\
-  \ changing its external behavior, aiming to improve nonfunctional attributes such\
-  \ as\u2026"
+description: "How to: Refactoring can involve a range of tactics from renaming variables\
+  \ for clarity to altering the structure of code for better modularization. Here's\u2026"
 lastmod: '2024-03-13T22:45:00.518891-06:00'
 model: gpt-4-0125-preview
-summary: Refactoring in programming involves restructuring existing code without changing
-  its external behavior, aiming to improve nonfunctional attributes such as readability,
-  reduce complexity, and enhance maintainability.
+summary: Refactoring can involve a range of tactics from renaming variables for clarity
+  to altering the structure of code for better modularization.
 title: Refactoring
 weight: 19
 ---

@@ -1,12 +1,13 @@
 ---
 date: 2024-01-26 03:45:43.964278-07:00
-description: "Zaokr\u0105glanie liczb oznacza dostosowywanie ich do najbli\u017Cszej\
-  \ liczby ca\u0142kowitej lub do okre\u015Blonego stopnia precyzji. Programi\u015B\
-  ci robi\u0105 to, aby poprawi\u0107\u2026"
+description: "Jak to zrobi\u0107: W Kotlinie, zaokr\u0105glanie mo\u017Cna wykona\u0107\
+  \ za pomoc\u0105 kilku funkcji, takich jak `roundToInt()`, `roundToDouble()`, oraz\
+  \ u\u017Cywaj\u0105c `BigDecimal`\u2026"
 lastmod: '2024-03-13T22:44:35.359665-06:00'
 model: gpt-4-0125-preview
-summary: "Zaokr\u0105glanie liczb oznacza dostosowywanie ich do najbli\u017Cszej liczby\
-  \ ca\u0142kowitej lub do okre\u015Blonego stopnia precyzji."
+summary: "W Kotlinie, zaokr\u0105glanie mo\u017Cna wykona\u0107 za pomoc\u0105 kilku\
+  \ funkcji, takich jak `roundToInt()`, `roundToDouble()`, oraz u\u017Cywaj\u0105\
+  c `BigDecimal` dla wi\u0119kszej kontroli."
 title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---

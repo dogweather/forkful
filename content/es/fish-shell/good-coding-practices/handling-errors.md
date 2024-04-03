@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 00:51:37.323383-07:00
-description: "El manejo de errores permite que tu script trate lo inesperado de manera\
-  \ elegante. Lo hacemos para gestionar fallos sin hacer que el pelo de nuestros\u2026"
+description: "C\xF3mo hacerlo: Para atrapar errores en Fish, ap\xF3yate en el comando\
+  \ `status` y las condicionales. Supongamos que `ping` falla; aqu\xED te mostramos\
+  \ c\xF3mo\u2026"
 lastmod: '2024-03-13T22:44:59.509128-06:00'
 model: gpt-4-1106-preview
-summary: El manejo de errores permite que tu script trate lo inesperado de manera
-  elegante.
+summary: "Para atrapar errores en Fish, ap\xF3yate en el comando `status` y las condicionales."
 title: Manejo de errores
 weight: 16
 ---

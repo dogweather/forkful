@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:20.661159-07:00
-description: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n trong bash c\xF3\
-  \ ngh\u0129a l\xE0 thay th\u1EBF t\u1EEB ho\u1EB7c m\u1EABu trong m\u1ED9t chu\u1ED7\
-  i ho\u1EB7c t\u1EC7p b\u1EB1ng th\u1EE9 g\xEC \u0111\xF3 kh\xE1c. \u0110\xE2y l\xE0\
-  \ m\u1ED9t nhi\u1EC7m v\u1EE5 h\xE0ng ng\xE0y cho\u2026"
+description: "C\xE1ch l\xE0m: D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch b\u1EA1n s\u1EED\
+  \ d\u1EE5ng s\u1EE9c m\u1EA1nh c\u1EE7a t\xECm ki\u1EBFm v\xE0 thay th\u1EBF trong\
+  \ bash: 1. \u0110\u1ED5i v\u0103n b\u1EA3n trong m\u1ED9t chu\u1ED7i s\u1EED d\u1EE5\
+  ng `sed`."
 lastmod: '2024-03-13T22:44:36.857302-06:00'
 model: gpt-4-0125-preview
-summary: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n trong bash c\xF3\
-  \ ngh\u0129a l\xE0 thay th\u1EBF t\u1EEB ho\u1EB7c m\u1EABu trong m\u1ED9t chu\u1ED7\
-  i ho\u1EB7c t\u1EC7p b\u1EB1ng th\u1EE9 g\xEC \u0111\xF3 kh\xE1c."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch b\u1EA1n s\u1EED d\u1EE5ng s\u1EE9\
+  c m\u1EA1nh c\u1EE7a t\xECm ki\u1EBFm v\xE0 thay th\u1EBF trong bash."
 title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
 weight: 10
 ---

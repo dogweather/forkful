@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:45.603181-07:00
-description: "Analyser une date \xE0 partir d'une cha\xEEne en C# consiste \xE0 convertir\
-  \ des repr\xE9sentations textuelles de dates et d'heures en un objet `DateTime`.\
-  \ Cela est\u2026"
+description: "Comment faire : **Analyse Basique :** Les m\xE9thodes `DateTime.Parse`\
+  \ et `DateTime.TryParse` sont les options privil\xE9gi\xE9es pour convertir une\
+  \ cha\xEEne en\u2026"
 lastmod: '2024-03-13T22:44:57.797937-06:00'
 model: gpt-4-0125-preview
-summary: "Analyser une date \xE0 partir d'une cha\xEEne en C# consiste \xE0 convertir\
-  \ des repr\xE9sentations textuelles de dates et d'heures en un objet `DateTime`."
+summary: "**Analyse Basique :**\n\nLes m\xE9thodes `DateTime.Parse` et `DateTime.TryParse`\
+  \ sont les options privil\xE9gi\xE9es pour convertir une cha\xEEne en `DateTime`."
 title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
 weight: 30
 ---

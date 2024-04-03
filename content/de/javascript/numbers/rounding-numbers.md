@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:45:09.969000-07:00
-description: "Runden ist das Abschneiden von \u201ERauschen\u201C an einer Zahl nach\
-  \ einem bestimmten Punkt. Programmierer runden, um die Genauigkeit zu kontrollieren,\
-  \ Speicher\u2026"
+description: 'Wie geht das: So runden Sie Zahlen in JavaScript unter Verwendung von
+  `Math.round()`, `Math.ceil()` und `Math.floor()`.'
 lastmod: '2024-03-13T22:44:54.261207-06:00'
 model: gpt-4-0125-preview
-summary: "Runden ist das Abschneiden von \u201ERauschen\u201C an einer Zahl nach einem\
-  \ bestimmten Punkt."
+summary: So runden Sie Zahlen in JavaScript unter Verwendung von `Math.round()`, `Math.ceil()`
+  und `Math.floor()`.
 title: Zahlen runden
 weight: 13
 ---

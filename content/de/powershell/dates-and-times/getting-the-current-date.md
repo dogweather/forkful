@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:23.285344-07:00
-description: "Das Abrufen des aktuellen Datums in PowerShell handelt davon, das aktuelle\
-  \ Datum und die Zeit des Systems zu ermitteln. Diese Operation ist grundlegend\u2026"
+description: "Wie geht das: PowerShell bietet unkomplizierte Cmdlets zum Abrufen von\
+  \ Datum und Uhrzeit. Das Cmdlet `Get-Date` ist das prim\xE4re Werkzeug zu diesem\
+  \ Zweck.\u2026"
 lastmod: '2024-03-13T22:44:54.114304-06:00'
 model: gpt-4-0125-preview
-summary: Das Abrufen des aktuellen Datums in PowerShell handelt davon, das aktuelle
-  Datum und die Zeit des Systems zu ermitteln.
+summary: PowerShell bietet unkomplizierte Cmdlets zum Abrufen von Datum und Uhrzeit.
 title: Den aktuellen Datum abrufen
 weight: 29
 ---

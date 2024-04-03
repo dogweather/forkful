@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:58:07.932921-07:00
-description: "Cercare e sostituire testo nel mondo della programmazione \xE8 fondamentale\
-  \ per modificare dati o correggere errori in modo efficiente. I programmatori lo\u2026"
+description: 'Come fare: Ecco un esempio semplice in Java che mostra come cercare
+  e sostituire una stringa.'
 lastmod: '2024-03-13T22:44:43.293994-06:00'
 model: gpt-4-1106-preview
-summary: "Cercare e sostituire testo nel mondo della programmazione \xE8 fondamentale\
-  \ per modificare dati o correggere errori in modo efficiente."
+summary: Ecco un esempio semplice in Java che mostra come cercare e sostituire una
+  stringa.
 title: Ricerca e sostituzione del testo
 weight: 10
 ---

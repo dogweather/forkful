@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:57:30.028883-07:00
-description: "Tekstin hakeminen ja korvaaminen tarkoittaa jonkin tekstin osan etsimist\xE4\
-  \ ja sen vaihtamista toiseen tekstiin. Ohjelmoijat tekev\xE4t sit\xE4 tiedon\u2026"
+description: "How to: Elmiss\xE4 voit k\xE4ytt\xE4\xE4 `String` -moduulia tekstin\
+  \ k\xE4sittelyyn. T\xE4ss\xE4 pikainen esimerkki kuinka teksti\xE4 haetaan ja korvataan."
 lastmod: '2024-03-13T22:44:56.473191-06:00'
 model: gpt-4-1106-preview
-summary: "Tekstin hakeminen ja korvaaminen tarkoittaa jonkin tekstin osan etsimist\xE4\
-  \ ja sen vaihtamista toiseen tekstiin."
+summary: "Elmiss\xE4 voit k\xE4ytt\xE4\xE4 `String` -moduulia tekstin k\xE4sittelyyn."
 title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---

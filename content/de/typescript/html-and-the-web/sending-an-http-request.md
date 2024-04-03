@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 18:00:34.997069-07:00
-description: "HTTP-Anfragen sind das Werkzeug, um mit Servern zu kommunizieren \u2013\
-  \ sie senden Daten und holen Antworten. Programmierer nutzen das, um Webinhalte\
-  \ dynamisch\u2026"
+description: 'How to: TypeScript mit Axios.'
 lastmod: '2024-03-13T22:44:53.628309-06:00'
 model: gpt-4-1106-preview
-summary: "HTTP-Anfragen sind das Werkzeug, um mit Servern zu kommunizieren \u2013\
-  \ sie senden Daten und holen Antworten."
+summary: TypeScript mit Axios.
 title: Einen HTTP-Request senden
 weight: 44
 ---

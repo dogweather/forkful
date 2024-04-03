@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 20:34:57.189304-07:00
-description: "Generar n\xFAmeros aleatorios en PowerShell se trata de crear valores\
-  \ num\xE9ricos impredecibles dentro de un rango especificado. Los programadores\
-  \ utilizan\u2026"
+description: "C\xF3mo hacerlo: PowerShell ofrece un enfoque sencillo para generar\
+  \ n\xFAmeros aleatorios utilizando el cmdlet `Get-Random`. Este cmdlet puede producir\
+  \ n\xFAmeros\u2026"
 lastmod: '2024-03-13T22:44:59.286242-06:00'
 model: gpt-4-0125-preview
-summary: "Generar n\xFAmeros aleatorios en PowerShell se trata de crear valores num\xE9\
-  ricos impredecibles dentro de un rango especificado."
+summary: "PowerShell ofrece un enfoque sencillo para generar n\xFAmeros aleatorios\
+  \ utilizando el cmdlet `Get-Random`."
 title: "Generaci\xF3n de n\xFAmeros aleatorios"
 weight: 12
 ---

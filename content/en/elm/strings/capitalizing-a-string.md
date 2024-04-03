@@ -1,12 +1,10 @@
 ---
 date: 2024-02-03 19:02:35.238375-07:00
-description: "Capitalizing a string involves transforming the initial character of\
-  \ a given string to uppercase while keeping the rest in lowercase, often for\u2026"
+description: "How to: In Elm, there isn't a built-in function specifically for capitalizing\
+  \ strings. However, you can achieve this easily by using the built-in `String`\u2026"
 lastmod: '2024-03-13T22:44:59.994327-06:00'
 model: gpt-4-0125-preview
-summary: Capitalizing a string involves transforming the initial character of a given
-  string to uppercase while keeping the rest in lowercase, often for standardized
-  formatting or readability purposes.
+summary: In Elm, there isn't a built-in function specifically for capitalizing strings.
 title: Capitalizing a string
 weight: 2
 ---

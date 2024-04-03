@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:16.747492-07:00
-description: "A interpola\xE7\xE3o de strings no Google Apps Script permite a incorpora\xE7\
-  \xE3o din\xE2mica de express\xF5es dentro de strings, facilitando a cria\xE7\xE3\
-  o de c\xF3digos mais\u2026"
+description: "Como Fazer: No Google Apps Script, a interpola\xE7\xE3o de strings \xE9\
+  \ alcan\xE7ada atrav\xE9s de literais de template. Estes s\xE3o literais de string\
+  \ que permitem\u2026"
 lastmod: '2024-03-13T22:44:46.091873-06:00'
 model: gpt-4-0125-preview
-summary: "A interpola\xE7\xE3o de strings no Google Apps Script permite a incorpora\xE7\
-  \xE3o din\xE2mica de express\xF5es dentro de strings, facilitando a cria\xE7\xE3\
-  o de c\xF3digos mais leg\xEDveis e f\xE1ceis de manter."
+summary: "No Google Apps Script, a interpola\xE7\xE3o de strings \xE9 alcan\xE7ada\
+  \ atrav\xE9s de literais de template."
 title: Interpolando uma string
 weight: 8
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:56:47.762214-07:00
-description: "Reading command line arguments lets your Swift program grab extra details\
-  \ when users run it. This matters because it adds customizability and control\u2026"
+description: 'How to: Swift makes reading command line arguments super straightforward.
+  They''re accessible through the `CommandLine` structure. Here''s the gist.'
 lastmod: '2024-03-13T22:45:00.409851-06:00'
 model: gpt-4-1106-preview
-summary: Reading command line arguments lets your Swift program grab extra details
-  when users run it.
+summary: Swift makes reading command line arguments super straightforward.
 title: Reading command line arguments
 weight: 23
 ---

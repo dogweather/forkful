@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:27.039199-07:00
-description: "\xC5 skrive ut feils\xF8kingsutdata inneb\xE6rer strategisk plassering\
-  \ av loggutsagn i koden din for \xE5 vise variabelverdier, utf\xF8relsesflyt eller\
-  \ meldingsfeil\u2026"
+description: "Hvordan: Google Apps Script tilbyr `Logger`-klassen for grunnleggende\
+  \ feils\xF8king, og for mer avanserte behov, `console`-klassen introdusert i V8\u2026"
 lastmod: '2024-03-13T22:44:40.316914-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive ut feils\xF8kingsutdata inneb\xE6rer strategisk plassering av\
-  \ loggutsagn i koden din for \xE5 vise variabelverdier, utf\xF8relsesflyt eller\
-  \ meldingsfeil under kj\xF8retid."
+summary: "Google Apps Script tilbyr `Logger`-klassen for grunnleggende feils\xF8king,\
+  \ og for mer avanserte behov, `console`-klassen introdusert i V8 kj\xF8retidsmilj\xF8\
+  et."
 title: "Utskrift av feils\xF8kingsdata"
 weight: 33
 ---

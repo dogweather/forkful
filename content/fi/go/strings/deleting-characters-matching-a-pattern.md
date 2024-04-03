@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:40.472743-07:00
-description: "Merkkien poistaminen, jotka t\xE4sm\xE4\xE4v\xE4t tiettyyn malliin,\
-  \ tarkoittaa tiettyjen merkkien tai merkkijonojen poistamista merkkijonoista, s\xE4\
-  \xE4nt\xF6jen perusteella,\u2026"
+description: "Kuinka: Go-kieless\xE4 merkkien poistaminen, jotka t\xE4sm\xE4\xE4v\xE4\
+  t malliin, voidaan suorittaa tehokkaasti k\xE4ytt\xE4en `regexp`-pakettia. T\xE4\
+  ss\xE4 n\xE4yt\xE4mme, kuinka kaikki\u2026"
 lastmod: '2024-03-13T22:44:56.033444-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkien poistaminen, jotka t\xE4sm\xE4\xE4v\xE4t tiettyyn malliin, tarkoittaa\
-  \ tiettyjen merkkien tai merkkijonojen poistamista merkkijonoista, s\xE4\xE4nt\xF6\
-  jen perusteella, jotka m\xE4\xE4ritell\xE4\xE4n mallilla (yleens\xE4 s\xE4\xE4nn\xF6\
-  llisten lausekkeiden kautta)."
+summary: "Go-kieless\xE4 merkkien poistaminen, jotka t\xE4sm\xE4\xE4v\xE4t malliin,\
+  \ voidaan suorittaa tehokkaasti k\xE4ytt\xE4en `regexp`-pakettia."
 title: Merkkien poistaminen vastaavan mallin mukaan
 weight: 5
 ---

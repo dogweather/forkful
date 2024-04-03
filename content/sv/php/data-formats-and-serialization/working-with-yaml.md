@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:22.892013-07:00
-description: "YAML, som st\xE5r f\xF6r \"YAML Ain't Markup Language\", \xE4r ett l\xE4\
-  sbart data-serialiseringsformat som vanligtvis anv\xE4nds f\xF6r konfigurationsfiler.\
-  \ Programmerare\u2026"
+description: "Hur man g\xF6r: PHP, i sina nuvarande iterationer, st\xF6der inte tolkning\
+  \ av YAML som en del av sitt standardbibliotek. Det enklaste s\xE4ttet att arbeta\
+  \ med YAML\u2026"
 lastmod: '2024-03-13T22:44:38.016475-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, som st\xE5r f\xF6r \"YAML Ain't Markup Language\", \xE4r ett l\xE4\
-  sbart data-serialiseringsformat som vanligtvis anv\xE4nds f\xF6r konfigurationsfiler."
+summary: "PHP, i sina nuvarande iterationer, st\xF6der inte tolkning av YAML som en\
+  \ del av sitt standardbibliotek."
 title: Att Arbeta med YAML
 weight: 41
 ---

@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:00.797049-07:00
-description: "De lengte van een string bepalen betekent het tellen van de karakters.\
-  \ Programmeurs doen dit om invoer te valideren, tekst te manipuleren of simpelweg\
-  \ om\u2026"
+description: 'Hoe doe je dat: In Elm gebruik je `String.length` om te achterhalen
+  hoeveel karakters een string bevat. Kijk maar.'
 lastmod: '2024-03-13T22:44:50.715549-06:00'
 model: gpt-4-0125-preview
-summary: De lengte van een string bepalen betekent het tellen van de karakters.
+summary: In Elm gebruik je `String.length` om te achterhalen hoeveel karakters een
+  string bevat.
 title: De lengte van een string vinden
 weight: 7
 ---

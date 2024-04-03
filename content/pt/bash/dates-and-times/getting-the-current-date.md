@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:47.385974-07:00
-description: "Recuperar a data atual no Bash envolve o uso de comandos internos para\
-  \ exibir a data e a hora em v\xE1rios formatos. Programadores utilizam essa\u2026"
+description: "Como fazer: No Bash, o comando `date` \xE9 sua principal ferramenta\
+  \ para obter a data e a hora atual. Aqui est\xE3o alguns exemplos de como us\xE1\
+  -lo: 1. **Obter a\u2026"
 lastmod: '2024-03-13T22:44:46.763313-06:00'
 model: gpt-4-0125-preview
-summary: "Recuperar a data atual no Bash envolve o uso de comandos internos para exibir\
-  \ a data e a hora em v\xE1rios formatos."
+summary: "No Bash, o comando `date` \xE9 sua principal ferramenta para obter a data\
+  \ e a hora atual."
 title: Obtendo a data atual
 weight: 29
 ---

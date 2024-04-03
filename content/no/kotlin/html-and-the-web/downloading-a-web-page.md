@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:44:24.753677-07:00
-description: "Nedlasting av nettsider er henting av data fra en URL for \xE5 se eller\
-  \ behandle informasjonen. Programmerere gj\xF8r dette for \xE5 trekke ut data, automatisere\u2026"
+description: "How to: Kotlin gj\xF8r det enkelt. Her er en kjapp kode som viser hvordan\
+  \ du laster ned innholdet p\xE5 en nettside."
 lastmod: '2024-03-13T22:44:40.749041-06:00'
 model: gpt-4-1106-preview
-summary: "Nedlasting av nettsider er henting av data fra en URL for \xE5 se eller\
-  \ behandle informasjonen."
+summary: "Kotlin gj\xF8r det enkelt."
 title: Nedlasting av en nettside
 weight: 42
 ---

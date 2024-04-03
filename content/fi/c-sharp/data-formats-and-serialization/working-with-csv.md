@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:48.960918-07:00
-description: "CSV (Comma-Separated Values) tiedostot ovat yleinen datan vaihtoformaatti,\
-  \ joka esitt\xE4\xE4 taulukollista tietoa puhtaana tekstin\xE4 k\xE4ytt\xE4en pilkkuja\
-  \ arvojen\u2026"
+description: "Kuinka: CSV-tiedostojen k\xE4sittely C#:ssa voidaan suorittaa `System.IO`\
+  \ nimiavaruuden avulla perustoimintoja varten, ja monimutkaisempien manipulointien\u2026"
 lastmod: '2024-03-13T22:44:56.596510-06:00'
 model: gpt-4-0125-preview
-summary: "CSV (Comma-Separated Values) tiedostot ovat yleinen datan vaihtoformaatti,\
-  \ joka esitt\xE4\xE4 taulukollista tietoa puhtaana tekstin\xE4 k\xE4ytt\xE4en pilkkuja\
-  \ arvojen erottamiseen."
+summary: "CSV-tiedostojen k\xE4sittely C#:ssa voidaan suorittaa `System.IO` nimiavaruuden\
+  \ avulla perustoimintoja varten, ja monimutkaisempien manipulointien tai suurempien\
+  \ tiedostojen k\xE4sittelyyn sujuvasti voi harkita kolmannen osapuolen kirjastoja,\
+  \ kuten `CsvHelper`."
 title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---

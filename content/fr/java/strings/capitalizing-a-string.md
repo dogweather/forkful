@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:43.567344-07:00
-description: "Capitaliser une cha\xEEne consiste \xE0 modifier en majuscule la premi\xE8\
-  re lettre de chaque mot de la cha\xEEne, tout en veillant \xE0 ce que le reste reste\
-  \ en\u2026"
+description: "Comment faire : La biblioth\xE8que standard de Java ne propose pas de\
+  \ m\xE9thode directe pour capitaliser des cha\xEEnes enti\xE8res en une seule fois,\
+  \ mais vous\u2026"
 lastmod: '2024-03-13T22:44:57.616570-06:00'
 model: gpt-4-0125-preview
-summary: "Capitaliser une cha\xEEne consiste \xE0 modifier en majuscule la premi\xE8\
-  re lettre de chaque mot de la cha\xEEne, tout en veillant \xE0 ce que le reste reste\
-  \ en minuscules."
+summary: "La biblioth\xE8que standard de Java ne propose pas de m\xE9thode directe\
+  \ pour capitaliser des cha\xEEnes enti\xE8res en une seule fois, mais vous pouvez\
+  \ accomplir cela avec une combinaison de m\xE9thodes int\xE9gr\xE9es."
 title: "Mettre en majuscule une cha\xEEne"
 weight: 2
 ---

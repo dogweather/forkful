@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:37:36.027522-07:00
-description: "Zamiana daty na ci\u0105g znak\xF3w to proces przekszta\u0142cania obiekt\xF3\
-  w daty w tekst. Robimy to, by \u0142atwiej by\u0142o przechowywa\u0107, wy\u015B\
-  wietla\u0107 oraz wsp\xF3\u0142dzieli\u0107\u2026"
+description: "How to: (Jak to zrobi\u0107:) ."
 lastmod: '2024-03-13T22:44:35.151193-06:00'
 model: gpt-4-1106-preview
-summary: "Zamiana daty na ci\u0105g znak\xF3w to proces przekszta\u0142cania obiekt\xF3\
-  w daty w tekst."
+summary: .
 title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---

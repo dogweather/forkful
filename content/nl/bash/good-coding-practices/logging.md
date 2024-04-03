@@ -2,14 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:39.138761-07:00
-description: "Loggen is de praktijk van het vastleggen van gebeurtenissen, fouten\
-  \ en andere belangrijke informatie van de draaiende processen van een programma\
-  \ naar een\u2026"
+description: 'Hoe te: In Bash kan loggen zo eenvoudig zijn als het omleiden of toevoegen
+  van uitvoer naar een bestand. Hier is een basisvoorbeeld.'
 lastmod: '2024-03-13T22:44:50.989503-06:00'
 model: gpt-4-0125-preview
-summary: Loggen is de praktijk van het vastleggen van gebeurtenissen, fouten en andere
-  belangrijke informatie van de draaiende processen van een programma naar een bestand
-  of een uitvoerstroom.
+summary: In Bash kan loggen zo eenvoudig zijn als het omleiden of toevoegen van uitvoer
+  naar een bestand.
 title: Logboekregistratie
 weight: 17
 ---

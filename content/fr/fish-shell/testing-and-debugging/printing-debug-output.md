@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:52:19.451321-07:00
-description: "L'affichage de sorties de d\xE9bogage, c'est exposer les entrailles\
-  \ de votre code \u2013 voir ce qu'il se passe en temps r\xE9el. Les d\xE9veloppeurs\
-  \ le font pour\u2026"
+description: "How to: Pour afficher un message de d\xE9bogage dans Fish, utilisez\
+  \ simplement `echo` ou `printf` avec votre message."
 lastmod: '2024-03-13T22:44:58.327296-06:00'
 model: gpt-4-1106-preview
-summary: "L'affichage de sorties de d\xE9bogage, c'est exposer les entrailles de votre\
-  \ code \u2013 voir ce qu'il se passe en temps r\xE9el."
+summary: "Pour afficher un message de d\xE9bogage dans Fish, utilisez simplement `echo`\
+  \ ou `printf` avec votre message."
 title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---

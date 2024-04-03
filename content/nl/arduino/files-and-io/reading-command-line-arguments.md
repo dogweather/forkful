@@ -2,13 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:16.332326-07:00
-description: "Het lezen van command line argumenten betekent het ophalen van de data\
-  \ die naar een programma wordt doorgegeven wanneer je het start vanuit een terminal\u2026"
+description: "Hoe: Arduino doet niet aan command line argumenten zoals traditionele\
+  \ programmeeromgevingen, omdat schetsen worden ge\xFCpload naar microcontrollers\
+  \ zonder\u2026"
 lastmod: '2024-03-13T22:44:51.087318-06:00'
 model: gpt-4-0125-preview
-summary: Het lezen van command line argumenten betekent het ophalen van de data die
-  naar een programma wordt doorgegeven wanneer je het start vanuit een terminal of
-  command prompt.
+summary: "Arduino doet niet aan command line argumenten zoals traditionele programmeeromgevingen,\
+  \ omdat schetsen worden ge\xFCpload naar microcontrollers zonder een toegankelijke\
+  \ OS command line."
 title: Commandoregelargumenten lezen
 weight: 23
 ---

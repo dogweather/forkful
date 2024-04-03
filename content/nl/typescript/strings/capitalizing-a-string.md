@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:33.244840-07:00
-description: "Een string kapitaliseren betekent het transformeren van de eerste letter\
-  \ van elk woord naar een hoofdletter en de rest naar kleine letters. Programmeurs\u2026"
+description: 'Hoe: Hier is wat snelle TypeScript om je strings te kapitaliseren.'
 lastmod: '2024-03-13T22:44:50.532442-06:00'
 model: gpt-4-0125-preview
-summary: Een string kapitaliseren betekent het transformeren van de eerste letter
-  van elk woord naar een hoofdletter en de rest naar kleine letters.
+summary: Hier is wat snelle TypeScript om je strings te kapitaliseren.
 title: Een string met hoofdletters maken
 weight: 2
 ---

@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:44.711928-07:00
-description: "I TypeScript \xE4r skrivning till standardfel (stderr) en process f\xF6\
-  r att skicka felmeddelanden eller loggar direkt till milj\xF6ns felutdatastr\xF6\
-  m (t.ex.\u2026"
+description: "Hur man g\xF6r: TypeScript, som \xE4r ett \xF6vergripande till JavaScript,\
+  \ f\xF6rlitar sig p\xE5 den underliggande JS-k\xF6rmilj\xF6n (som Node.js) f\xF6\
+  r att skriva till stderr.\u2026"
 lastmod: '2024-03-13T22:44:37.672394-06:00'
 model: gpt-4-0125-preview
-summary: "I TypeScript \xE4r skrivning till standardfel (stderr) en process f\xF6\
-  r att skicka felmeddelanden eller loggar direkt till milj\xF6ns felutdatastr\xF6\
-  m (t."
+summary: "TypeScript, som \xE4r ett \xF6vergripande till JavaScript, f\xF6rlitar sig\
+  \ p\xE5 den underliggande JS-k\xF6rmilj\xF6n (som Node.js) f\xF6r att skriva till\
+  \ stderr."
 title: Skriva till standardfel
 weight: 25
 ---

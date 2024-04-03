@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:42:06.420847-07:00
-description: "En programmation, supprimer des caract\xE8res selon un motif, c'est\
-  \ chercher et enlever des s\xE9quences sp\xE9cifiques dans une cha\xEEne de texte.\
-  \ On fait \xE7a\u2026"
+description: "How to: Pour supprimer des caract\xE8res qui correspondent \xE0 un motif\
+  \ en Clojure, utilisez les fonctions `clojure.string/replace` et `re-pattern` ."
 lastmod: '2024-03-13T22:44:57.265241-06:00'
 model: gpt-4-1106-preview
-summary: "En programmation, supprimer des caract\xE8res selon un motif, c'est chercher\
-  \ et enlever des s\xE9quences sp\xE9cifiques dans une cha\xEEne de texte."
+summary: "Pour supprimer des caract\xE8res qui correspondent \xE0 un motif en Clojure,\
+  \ utilisez les fonctions `clojure.string/replace` et `re-pattern`."
 title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---

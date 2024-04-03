@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 15:32:28.787617-07:00
-description: "HTML-tiedostojen j\xE4sent\xE4minen eli parsing tarkoittaa HTML-koodin\
-  \ muuttamista rakenteelliseksi tiedoksi, mit\xE4 ohjelma voi k\xE4ytt\xE4\xE4 hy\xF6\
-  dyksi. Koodaajat\u2026"
+description: "How to: Kotlin-kehitt\xE4j\xE4t k\xE4ytt\xE4v\xE4t usein jsoup-kirjastoa\
+  \ HTML-dokumenttien j\xE4sent\xE4miseen. Alla on yksinkertainen esimerkki."
 lastmod: '2024-03-13T22:44:56.528422-06:00'
 model: unknown
-summary: "HTML-tiedostojen j\xE4sent\xE4minen eli parsing tarkoittaa HTML-koodin muuttamista\
-  \ rakenteelliseksi tiedoksi, mit\xE4 ohjelma voi k\xE4ytt\xE4\xE4 hy\xF6dyksi."
+summary: "Kotlin-kehitt\xE4j\xE4t k\xE4ytt\xE4v\xE4t usein jsoup-kirjastoa HTML-dokumenttien\
+  \ j\xE4sent\xE4miseen."
 title: "HTML:n j\xE4sent\xE4minen"
 weight: 43
 ---

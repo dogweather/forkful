@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:42.443172-07:00
-description: "Het omzetten van een tekenreeks naar kleine letters in C houdt in dat\
-  \ alle hoofdletters in een gegeven tekenreeks worden getransformeerd naar hun\u2026"
+description: "Hoe te: C heeft geen ingebouwde functie voor directe tekenreeksconversie\
+  \ naar kleine letters, in tegenstelling tot sommige hogere programmeertalen. Het\u2026"
 lastmod: '2024-03-13T22:44:51.276566-06:00'
 model: gpt-4-0125-preview
-summary: Het omzetten van een tekenreeks naar kleine letters in C houdt in dat alle
-  hoofdletters in een gegeven tekenreeks worden getransformeerd naar hun overeenkomstige
-  kleine letters.
+summary: C heeft geen ingebouwde functie voor directe tekenreeksconversie naar kleine
+  letters, in tegenstelling tot sommige hogere programmeertalen.
 title: Een string converteren naar kleine letters
 weight: 4
 ---

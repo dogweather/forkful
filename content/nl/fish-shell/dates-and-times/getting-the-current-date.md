@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:21.420874-07:00
-description: "De huidige datum verkrijgen betekent de huidige kalenderdatum van je\
-  \ systeem ophalen. Programmeurs doen dit om gebeurtenissen te timestampen, taken\
-  \ te\u2026"
+description: 'Hoe: In Fish Shell is het een koud kunstje om de huidige datum te pakken
+  te krijgen. Gebruik het `date` commando.'
 lastmod: '2024-03-13T22:44:51.257772-06:00'
 model: gpt-4-0125-preview
-summary: De huidige datum verkrijgen betekent de huidige kalenderdatum van je systeem
-  ophalen.
+summary: In Fish Shell is het een koud kunstje om de huidige datum te pakken te krijgen.
 title: Het huidige datum ophalen
 weight: 29
 ---

@@ -1,12 +1,9 @@
 ---
 date: 2024-02-03 19:03:41.170759-07:00
-description: "Writing to standard error in Python is about directing your program's\
-  \ error messages or diagnostics to the error stream (`stderr`), separate from the\u2026"
+description: 'How to: #.'
 lastmod: '2024-03-13T22:44:59.722573-06:00'
 model: gpt-4-0125-preview
-summary: Writing to standard error in Python is about directing your program's error
-  messages or diagnostics to the error stream (`stderr`), separate from the standard
-  output (`stdout`).
+summary: '#.'
 title: Writing to standard error
 weight: 25
 ---

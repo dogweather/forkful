@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:41.338634-07:00
-description: "Capitalizar uma string envolve modificar o primeiro caractere de uma\
-  \ string dada para mai\xFAsculo se ele estiver em min\xFAsculo, muitas vezes deixando\
-  \ o resto\u2026"
+description: "Como fazer: TypeScript, sendo um superconjunto de JavaScript, permite\
+  \ v\xE1rias maneiras de capitalizar strings, variando de abordagens puras de JavaScript\
+  \ a\u2026"
 lastmod: '2024-03-13T22:44:46.309073-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizar uma string envolve modificar o primeiro caractere de uma string\
-  \ dada para mai\xFAsculo se ele estiver em min\xFAsculo, muitas vezes deixando o\
-  \ resto da string inalterado."
+summary: "TypeScript, sendo um superconjunto de JavaScript, permite v\xE1rias maneiras\
+  \ de capitalizar strings, variando de abordagens puras de JavaScript a utiliza\xE7\
+  \xE3o de bibliotecas de terceiros para casos de uso mais complexos ou espec\xED\
+  ficos."
 title: Capitalizando uma string
 weight: 2
 ---

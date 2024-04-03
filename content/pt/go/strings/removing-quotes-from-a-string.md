@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:17.275975-07:00
-description: "Remover aspas de uma string em Go \xE9 sobre eliminar as aspas de abertura\
-  \ e fechamento (`\"` ou `'`) de uma determinada string. Programadores frequentemente\u2026"
+description: "Como Fazer: Go oferece v\xE1rias abordagens para remover aspas de uma\
+  \ string, mas um dos m\xE9todos mais diretos \xE9 usar as fun\xE7\xF5es `Trim` e\
+  \ `TrimFunc`\u2026"
 lastmod: '2024-03-13T22:44:46.047669-06:00'
 model: gpt-4-0125-preview
-summary: "Remover aspas de uma string em Go \xE9 sobre eliminar as aspas de abertura\
-  \ e fechamento (`\"` ou `'`) de uma determinada string."
+summary: "Go oferece v\xE1rias abordagens para remover aspas de uma string, mas um\
+  \ dos m\xE9todos mais diretos \xE9 usar as fun\xE7\xF5es `Trim` e `TrimFunc` fornecidas\
+  \ pelo pacote `strings`."
 title: Removendo aspas de uma string
 weight: 9
 ---

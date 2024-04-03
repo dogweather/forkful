@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 18:04:37.576833-07:00
-description: "Uuden projektin aloittaminen on tyhj\xE4lt\xE4 p\xF6yd\xE4lt\xE4 alkavan\
-  \ koodiprojektin luomista. Koodarit tekev\xE4t sen aloittaakseen uuden idean kehitt\xE4\
-  misen tai\u2026"
+description: "How to: - Kuinka tehd\xE4\xE4n: Powershellill\xE4 uuden projektin pystytys\
+  \ alkaa usein hakemiston luomisella ja sinne siirtymisell\xE4. Esimerkiksi - alla\
+  \ koodi uuden\u2026"
 lastmod: '2024-03-13T22:44:56.783031-06:00'
 model: gpt-4-1106-preview
-summary: "Uuden projektin aloittaminen on tyhj\xE4lt\xE4 p\xF6yd\xE4lt\xE4 alkavan\
-  \ koodiprojektin luomista."
+summary: "Powershellill\xE4 uuden projektin pystytys alkaa usein hakemiston luomisella\
+  \ ja sinne siirtymisell\xE4."
 title: Uuden projektin aloittaminen
 weight: 1
 ---

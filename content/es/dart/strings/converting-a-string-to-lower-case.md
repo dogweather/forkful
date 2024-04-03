@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:53:53.742658-07:00
-description: "Convertir una cadena a min\xFAsculas es una operaci\xF3n fundamental\
-  \ que implica transformar todos los caracteres de una cadena dada a sus equivalentes\
-  \ en\u2026"
+description: "C\xF3mo hacerlo: En Dart, puedes convertir una cadena a min\xFAsculas\
+  \ utilizando el m\xE9todo `toLowerCase()` proporcionado por la clase `String`. Este\
+  \ m\xE9todo\u2026"
 lastmod: '2024-03-13T22:44:58.734144-06:00'
 model: gpt-4-0125-preview
-summary: "Convertir una cadena a min\xFAsculas es una operaci\xF3n fundamental que\
-  \ implica transformar todos los caracteres de una cadena dada a sus equivalentes\
-  \ en min\xFAsculas."
+summary: "En Dart, puedes convertir una cadena a min\xFAsculas utilizando el m\xE9\
+  todo `toLowerCase()` proporcionado por la clase `String`."
 title: "Convirtiendo una cadena a min\xFAsculas"
 weight: 4
 ---

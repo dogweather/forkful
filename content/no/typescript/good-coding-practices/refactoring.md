@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:36:52.734240-07:00
-description: "Refaktorering er prosessen med \xE5 restrukturere eksisterende datamaskinkode\
-  \ uten \xE5 endre dens eksterne oppf\xF8rsel. Programmerere gj\xF8r dette for \xE5\
-  \ gj\xF8re\u2026"
+description: "Hvordan: Tenk p\xE5 en TypeScript-funksjon som har sett bedre dager\
+  \ - den er litt rotete, og kunne trenge litt kj\xE6rlig omsorg."
 lastmod: '2024-03-13T22:44:40.540566-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktorering er prosessen med \xE5 restrukturere eksisterende datamaskinkode\
-  \ uten \xE5 endre dens eksterne oppf\xF8rsel."
+summary: "Tenk p\xE5 en TypeScript-funksjon som har sett bedre dager - den er litt\
+  \ rotete, og kunne trenge litt kj\xE6rlig omsorg."
 title: Refaktorering
 weight: 19
 ---

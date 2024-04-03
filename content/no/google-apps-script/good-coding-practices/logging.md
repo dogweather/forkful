@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:09.076841-07:00
-description: "Logging i programmering involverer opptak av hendelser, feil eller merkbare\
-  \ forekomster under kj\xF8retid. Programmerere gj\xF8r det for \xE5 feils\xF8ke\
-  \ problemer,\u2026"
+description: "Hvordan: I Google Apps Script kan logging utf\xF8res ved hjelp av ulike\
+  \ metoder, som `Logger`-klassen og `console.log()`. Logger-klassen er den tradisjonelle\u2026"
 lastmod: '2024-03-13T22:44:40.322695-06:00'
 model: gpt-4-0125-preview
-summary: "Logging i programmering involverer opptak av hendelser, feil eller merkbare\
-  \ forekomster under kj\xF8retid."
+summary: "I Google Apps Script kan logging utf\xF8res ved hjelp av ulike metoder,\
+  \ som `Logger`-klassen og `console.log()`."
 title: Logging
 weight: 17
 ---

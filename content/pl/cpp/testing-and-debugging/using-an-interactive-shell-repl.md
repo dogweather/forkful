@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:12:11.188552-07:00
-description: "REPL (Read-Eval-Print-Loop, p\u0119tla czytaj-wykonuj-wypisz) to proste\
-  \ \u015Brodowisko programistyczne interaktywne. Programi\u015Bci u\u017Cywaj\u0105\
-  \ go do eksperymentowania z\u2026"
+description: "Jak to zrobi\u0107: C++ nie posiada wbudowanego REPL, ale narz\u0119\
+  dzia takie jak Cling oferuj\u0105 t\u0119 mo\u017Cliwo\u015B\u0107. Oto jak u\u017C\
+  ywa\u0107 Clinga do obliczenia sumy dw\xF3ch liczb."
 lastmod: '2024-03-13T22:44:35.714397-06:00'
 model: gpt-4-0125-preview
-summary: "REPL (Read-Eval-Print-Loop, p\u0119tla czytaj-wykonuj-wypisz) to proste\
-  \ \u015Brodowisko programistyczne interaktywne."
+summary: "C++ nie posiada wbudowanego REPL, ale narz\u0119dzia takie jak Cling oferuj\u0105\
+  \ t\u0119 mo\u017Cliwo\u015B\u0107."
 title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---

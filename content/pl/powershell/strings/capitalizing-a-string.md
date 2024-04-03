@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:07.094884-07:00
-description: "U\u017Cycie wielkiej litery w ci\u0105gu znak\xF3w w PowerShellu polega\
-  \ na przekszta\u0142ceniu pierwszego znaku danego ci\u0105gu na wielk\u0105 liter\u0119\
-  , pozostawiaj\u0105c reszt\u0119 ci\u0105gu\u2026"
+description: "Jak to zrobi\u0107: PowerShell, b\u0119d\u0105c wszechstronnym narz\u0119\
+  dziem, pozwala na u\u017Cycie wielkiej litery w ci\u0105gu znak\xF3w za pomoc\u0105\
+  \ prostych metod, bez konieczno\u015Bci\u2026"
 lastmod: '2024-03-13T22:44:35.610767-06:00'
 model: gpt-4-0125-preview
-summary: "U\u017Cycie wielkiej litery w ci\u0105gu znak\xF3w w PowerShellu polega\
-  \ na przekszta\u0142ceniu pierwszego znaku danego ci\u0105gu na wielk\u0105 liter\u0119\
-  , pozostawiaj\u0105c reszt\u0119 ci\u0105gu niezmienion\u0105."
+summary: "PowerShell, b\u0119d\u0105c wszechstronnym narz\u0119dziem, pozwala na u\u017C\
+  ycie wielkiej litery w ci\u0105gu znak\xF3w za pomoc\u0105 prostych metod, bez konieczno\u015B\
+  ci korzystania z bibliotek firm trzecich."
 title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---

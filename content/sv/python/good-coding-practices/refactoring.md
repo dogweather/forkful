@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 03:37:03.135660-07:00
-description: "Refaktorisering \xE4r processen att omstrukturera befintlig dator kod\u2014\
-  \xE4ndra faktoriseringen\u2014utan att \xE4ndra dess yttre beteende. Programmerare\
-  \ g\xF6r det f\xF6r att\u2026"
+description: "Hur man g\xF6r: Anta att du har en bit kod som ber\xE4knar och skriver\
+  \ ut arean och omkretsen f\xF6r en rektangel utifr\xE5n dess l\xE4ngd och bredd.\
+  \ Det g\xF6r jobbet, men\u2026"
 lastmod: '2024-03-13T22:44:37.491369-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktorisering \xE4r processen att omstrukturera befintlig dator kod\u2014\
-  \xE4ndra faktoriseringen\u2014utan att \xE4ndra dess yttre beteende."
+summary: "Anta att du har en bit kod som ber\xE4knar och skriver ut arean och omkretsen\
+  \ f\xF6r en rektangel utifr\xE5n dess l\xE4ngd och bredd."
 title: Refaktorisering
 weight: 19
 ---

@@ -2,16 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:26.517713-07:00
-description: "Vi\u1EC7c sinh s\u1ED1 ng\u1EABu nhi\xEAn l\xE0 m\u1ED9t nhi\u1EC7m\
-  \ v\u1EE5 c\u01A1 b\u1EA3n trong l\u1EADp tr\xECnh, \u0111\u01B0\u1EE3c s\u1EED\
-  \ d\u1EE5ng cho m\u1ECDi th\u1EE9 t\u1EEB vi\u1EC7c l\u1EA5y m\u1EABu d\u1EEF li\u1EC7\
-  u \u0111\u1EBFn ph\xE1t tri\u1EC3n tr\xF2 ch\u01A1i. Trong Fish\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Vi\u1EC7c t\u1EA1o m\u1ED9t s\u1ED1 ng\u1EAB\
+  u nhi\xEAn trong Fish c\xF3 th\u1EC3 \u0111\u01B0\u1EE3c th\u1EF1c hi\u1EC7n m\u1ED9\
+  t c\xE1ch d\u1EC5 d\xE0ng, s\u1EED d\u1EE5ng s\u1EF1 k\u1EBFt h\u1EE3p c\u1EE7a\
+  \ c\xE1c ti\u1EC7n \xEDch h\u1EC7 th\u1ED1ng v\xE0 kh\u1EA3 n\u0103ng c\u1EE7a\u2026"
 lastmod: '2024-03-13T22:44:37.202375-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c sinh s\u1ED1 ng\u1EABu nhi\xEAn l\xE0 m\u1ED9t nhi\u1EC7m v\u1EE5\
-  \ c\u01A1 b\u1EA3n trong l\u1EADp tr\xECnh, \u0111\u01B0\u1EE3c s\u1EED d\u1EE5\
-  ng cho m\u1ECDi th\u1EE9 t\u1EEB vi\u1EC7c l\u1EA5y m\u1EABu d\u1EEF li\u1EC7u \u0111\
-  \u1EBFn ph\xE1t tri\u1EC3n tr\xF2 ch\u01A1i."
+summary: "Vi\u1EC7c t\u1EA1o m\u1ED9t s\u1ED1 ng\u1EABu nhi\xEAn trong Fish c\xF3\
+  \ th\u1EC3 \u0111\u01B0\u1EE3c th\u1EF1c hi\u1EC7n m\u1ED9t c\xE1ch d\u1EC5 d\xE0\
+  ng, s\u1EED d\u1EE5ng s\u1EF1 k\u1EBFt h\u1EE3p c\u1EE7a c\xE1c ti\u1EC7n \xEDch\
+  \ h\u1EC7 th\u1ED1ng v\xE0 kh\u1EA3 n\u0103ng c\u1EE7a shell."
 title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 weight: 12
 ---

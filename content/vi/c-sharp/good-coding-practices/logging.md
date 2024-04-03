@@ -2,15 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:59.316679-07:00
-description: "Logging l\xE0 qu\xE1 tr\xECnh ghi ch\xE9p c\xE1c s\u1EF1 ki\u1EC7n v\xE0\
-  \ d\u1EEF li\u1EC7u \u0111\u1EA7u ra c\u1EE7a \u1EE9ng d\u1EE5ng trong qu\xE1 tr\xEC\
-  nh ch\u1EA1y. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n logging \u0111\u1EC3\
-  \ ch\u1EA9n \u0111o\xE1n l\u1ED7i, theo d\xF5i\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong C#, b\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5\
+  ng kh\xF4ng gian t\xEAn `System.Diagnostics` c\xF3 s\u1EB5n ho\u1EB7c c\xE1c th\u01B0\
+  \ vi\u1EC7n b\xEAn th\u1EE9 ba nh\u01B0 NLog ho\u1EB7c log4net. D\u01B0\u1EDBi \u0111\
+  \xE2y l\xE0 m\u1ED9t\u2026"
 lastmod: '2024-03-13T22:44:36.666065-06:00'
 model: gpt-4-0125-preview
-summary: "Logging l\xE0 qu\xE1 tr\xECnh ghi ch\xE9p c\xE1c s\u1EF1 ki\u1EC7n v\xE0\
-  \ d\u1EEF li\u1EC7u \u0111\u1EA7u ra c\u1EE7a \u1EE9ng d\u1EE5ng trong qu\xE1 tr\xEC\
-  nh ch\u1EA1y."
+summary: "Trong C#, b\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng kh\xF4ng gian t\xEA\
+  n `System.Diagnostics` c\xF3 s\u1EB5n ho\u1EB7c c\xE1c th\u01B0 vi\u1EC7n b\xEA\
+  n th\u1EE9 ba nh\u01B0 NLog ho\u1EB7c log4net."
 title: Ghi log
 weight: 17
 ---

@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:42.176575-07:00
-description: "Ohjelmistokehityksess\xE4 on usein tarpeen tarkistaa, olemassaoko hakemisto,\
-  \ v\xE4ltt\xE4\xE4kseen virheit\xE4 yritt\xE4ess\xE4 p\xE4\xE4st\xE4 k\xE4siksi,\
-  \ lukea tai kirjoittaa\u2026"
+description: "Kuinka: Rustin standardikirjasto (`std`) sis\xE4lt\xE4\xE4 toiminnallisuuden\
+  \ hakemiston olemassaolon tarkistamiseksi `std::path::Path` ja `std::fs` moduulien\u2026"
 lastmod: '2024-03-13T22:44:56.371487-06:00'
 model: gpt-4-0125-preview
-summary: "Ohjelmistokehityksess\xE4 on usein tarpeen tarkistaa, olemassaoko hakemisto,\
-  \ v\xE4ltt\xE4\xE4kseen virheit\xE4 yritt\xE4ess\xE4 p\xE4\xE4st\xE4 k\xE4siksi,\
-  \ lukea tai kirjoittaa tiedostoja."
+summary: "Rustin standardikirjasto (`std`) sis\xE4lt\xE4\xE4 toiminnallisuuden hakemiston\
+  \ olemassaolon tarkistamiseksi `std::path::Path` ja `std::fs` moduulien kautta."
 title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:42:06.648614-07:00
-description: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, ist das Entfernen\
-  \ bestimmter Teile eines Strings, die ein definiertes Muster erf\xFCllen.\u2026"
+description: "Vorgehensweise: In Elm gibt es keine eingebaute RegEx-Bibliothek wie\
+  \ in anderen Sprachen. Zum Musterabgleich und L\xF6schen von Zeichen k\xF6nnen wir\
+  \ mit\u2026"
 lastmod: '2024-03-13T22:44:53.788591-06:00'
 model: gpt-4-1106-preview
-summary: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, ist das Entfernen\
-  \ bestimmter Teile eines Strings, die ein definiertes Muster erf\xFCllen."
+summary: In Elm gibt es keine eingebaute RegEx-Bibliothek wie in anderen Sprachen.
 title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
 weight: 5
 ---

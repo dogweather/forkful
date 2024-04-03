@@ -3,15 +3,13 @@ changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 - 2024-02-05, dogweather, reviewed and corrected
 date: 2024-02-03 19:09:27.081064-07:00
-description: "Att f\xE5 det aktuella datumet i Elixir inneb\xE4r att man f\xE5r tillg\xE5\
-  ng till systemets datum- och tidsinformation, en vanlig uppgift f\xF6r loggning,\
-  \ datumm\xE4rkning\u2026"
+description: "Hur: Elixirs standardbibliotek, genom `DateTime`-modulen, till\xE5ter\
+  \ h\xE4mtning av det aktuella datumet och tiden. Eftersom Elixir k\xF6rs p\xE5 Erlang\
+  \ VM (BEAM),\u2026"
 lastmod: '2024-03-13T22:44:37.577967-06:00'
 model: gpt-4-0125-preview
-summary: "Att f\xE5 det aktuella datumet i Elixir inneb\xE4r att man f\xE5r tillg\xE5\
-  ng till systemets datum- och tidsinformation, en vanlig uppgift f\xF6r loggning,\
-  \ datumm\xE4rkning eller vilken funktionalitet som helst som kr\xE4ver kunskap om\
-  \ det aktuella datumet."
+summary: "Elixirs standardbibliotek, genom `DateTime`-modulen, till\xE5ter h\xE4mtning\
+  \ av det aktuella datumet och tiden."
 title: "F\xE5 det aktuella datumet"
 weight: 29
 ---

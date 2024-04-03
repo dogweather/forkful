@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:05.794803-07:00
-description: "Leer un archivo de texto en Go implica acceder y recuperar contenido\
-  \ de un archivo almacenado en disco para su procesamiento o an\xE1lisis. Los programadores\u2026"
+description: "C\xF3mo hacerlo: Leer un archivo de texto en Go se puede lograr de varias\
+  \ maneras, pero uno de los m\xE9todos m\xE1s sencillos es utilizando el paquete\
+  \ `ioutil`.\u2026"
 lastmod: '2024-03-13T22:44:58.487891-06:00'
 model: gpt-4-0125-preview
-summary: "Leer un archivo de texto en Go implica acceder y recuperar contenido de\
-  \ un archivo almacenado en disco para su procesamiento o an\xE1lisis."
+summary: "Leer un archivo de texto en Go se puede lograr de varias maneras, pero uno\
+  \ de los m\xE9todos m\xE1s sencillos es utilizando el paquete `ioutil`."
 title: Leyendo un archivo de texto
 weight: 22
 ---

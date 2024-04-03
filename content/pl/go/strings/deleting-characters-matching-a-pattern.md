@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:40.153644-07:00
-description: "Usuwanie znak\xF3w pasuj\u0105cych do okre\u015Blonego wzorca polega\
-  \ na usuni\u0119ciu pewnych znak\xF3w lub sekwencji znak\xF3w ze \u0142a\u0144cuch\xF3\
-  w tekstowych, na podstawie regu\u0142\u2026"
+description: "Jak to zrobi\u0107: W Go, usuwanie znak\xF3w pasuj\u0105cych do wzorca\
+  \ mo\u017Cna efektywnie wykona\u0107 za pomoc\u0105 pakietu `regexp`. Tutaj poka\u017C\
+  emy, jak usun\u0105\u0107 wszystkie cyfry,\u2026"
 lastmod: '2024-03-13T22:44:34.831221-06:00'
 model: gpt-4-0125-preview
-summary: "Usuwanie znak\xF3w pasuj\u0105cych do okre\u015Blonego wzorca polega na\
-  \ usuni\u0119ciu pewnych znak\xF3w lub sekwencji znak\xF3w ze \u0142a\u0144cuch\xF3\
-  w tekstowych, na podstawie regu\u0142 okre\u015Blonych przez wzorzec (zazwyczaj\
-  \ za pomoc\u0105 wyra\u017Ce\u0144 regularnych)."
+summary: "W Go, usuwanie znak\xF3w pasuj\u0105cych do wzorca mo\u017Cna efektywnie\
+  \ wykona\u0107 za pomoc\u0105 pakietu `regexp`."
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---

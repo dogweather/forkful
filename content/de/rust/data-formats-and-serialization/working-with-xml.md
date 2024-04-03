@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:35:21.198965-07:00
-description: "XML, die Abk\xFCrzung f\xFCr eXtensible Markup Language, ist wie der\
-  \ geschw\xE4tzige Cousin von JSON. Mit XML setzen Sie sich auseinander, wenn es\
-  \ um\u2026"
+description: "Wie geht das: In Rust k\xF6nnen Sie XML mit Crates wie `xml-rs` bearbeiten.\
+  \ Installieren Sie es, indem Sie `xml-rs = \"0.8\"` zu Ihrer `Cargo.toml` hinzuf\xFC\
+  gen.\u2026"
 lastmod: '2024-03-13T22:44:53.697700-06:00'
 model: gpt-4-0125-preview
-summary: "XML, die Abk\xFCrzung f\xFCr eXtensible Markup Language, ist wie der geschw\xE4\
-  tzige Cousin von JSON."
+summary: "In Rust k\xF6nnen Sie XML mit Crates wie `xml-rs` bearbeiten."
 title: Arbeiten mit XML
 weight: 40
 ---

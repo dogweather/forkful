@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:50.255026-07:00
-description: "Das Schreiben von Tests in Java besteht darin, zu \xFCberpr\xFCfen,\
-  \ ob Ihr Code sich unter verschiedenen Bedingungen wie erwartet verh\xE4lt. Programmierer\u2026"
+description: "Wie: Java-Entwickler verwenden haupts\xE4chlich zwei Test-Frameworks:\
+  \ JUnit und TestNG. Hier konzentrieren wir uns auf JUnit, die beliebtere Wahl f\xFC\
+  r das\u2026"
 lastmod: '2024-03-13T22:44:53.766431-06:00'
 model: gpt-4-0125-preview
-summary: "Das Schreiben von Tests in Java besteht darin, zu \xFCberpr\xFCfen, ob Ihr\
-  \ Code sich unter verschiedenen Bedingungen wie erwartet verh\xE4lt."
+summary: "Java-Entwickler verwenden haupts\xE4chlich zwei Test-Frameworks."
 title: Tests Schreiben
 weight: 36
 ---

@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:52:04.615061-07:00
-description: "Skrive ut feils\xF8kingsdata hjelper utviklere \xE5 se hva som foreg\xE5\
-  r under panseret av programmene sine. Vi gj\xF8r det for \xE5 fakke bugs og forst\xE5\
-  \ flyten, uten \xE5\u2026"
+description: 'How to: (Hvordan:) .'
 lastmod: '2024-03-13T22:44:40.798322-06:00'
 model: gpt-4-1106-preview
-summary: "Skrive ut feils\xF8kingsdata hjelper utviklere \xE5 se hva som foreg\xE5\
-  r under panseret av programmene sine."
+summary: .
 title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---

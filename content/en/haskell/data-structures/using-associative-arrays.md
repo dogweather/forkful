@@ -2,13 +2,13 @@
 changelog:
 - 2024-01-30, dogweather, reviewed
 date: 2024-01-30 18:57:14.735713-07:00
-description: "Associative arrays, or dictionaries, in Haskell are all about mapping\
-  \ keys to values for quick lookup and efficient data management. Programmers use\
-  \ them\u2026"
+description: "How to: Haskell doesn't have associative arrays out of the box in the\
+  \ same way as some other languages, but it offers a powerful standard library called\u2026"
 lastmod: '2024-03-13T22:45:00.121643-06:00'
 model: gpt-4-0125-preview
-summary: Associative arrays, or dictionaries, in Haskell are all about mapping keys
-  to values for quick lookup and efficient data management.
+summary: Haskell doesn't have associative arrays out of the box in the same way as
+  some other languages, but it offers a powerful standard library called `Data.Map`
+  for working with key-value pairs.
 title: Using associative arrays
 weight: 15
 ---

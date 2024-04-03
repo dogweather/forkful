@@ -1,11 +1,10 @@
 ---
 date: 2024-01-25 02:59:58.849195-07:00
-description: "Complex numbers extend the idea of one-dimensional number lines to a\
-  \ two-dimensional complex plane. Programmers use them in fields like engineering,\u2026"
+description: "How to: In Fish, we handle complex numbers using `math` with real and\
+  \ imaginary parts. Here\u2019s a kick-off."
 lastmod: '2024-03-13T22:45:00.466699-06:00'
 model: gpt-4-1106-preview
-summary: Complex numbers extend the idea of one-dimensional number lines to a two-dimensional
-  complex plane.
+summary: In Fish, we handle complex numbers using `math` with real and imaginary parts.
 title: Working with complex numbers
 weight: 14
 ---

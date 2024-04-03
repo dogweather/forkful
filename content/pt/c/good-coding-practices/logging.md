@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:51.984481-07:00
-description: "Registrar logs em C envolve documentar o fluxo e eventos not\xE1veis\
-  \ de um programa durante sua execu\xE7\xE3o, fornecendo uma revis\xE3o tang\xED\
-  vel do seu\u2026"
+description: "Como fazer: Em C, o registro de logs pode ser alcan\xE7ado com opera\xE7\
+  \xF5es b\xE1sicas de arquivo ou usando bibliotecas mais sofisticadas. Para simplicidade,\u2026"
 lastmod: '2024-03-13T22:44:47.057271-06:00'
 model: gpt-4-0125-preview
-summary: "Registrar logs em C envolve documentar o fluxo e eventos not\xE1veis de\
-  \ um programa durante sua execu\xE7\xE3o, fornecendo uma revis\xE3o tang\xEDvel\
-  \ do seu comportamento e desempenho."
+summary: "Em C, o registro de logs pode ser alcan\xE7ado com opera\xE7\xF5es b\xE1\
+  sicas de arquivo ou usando bibliotecas mais sofisticadas."
 title: Registro de Logs
 weight: 17
 ---

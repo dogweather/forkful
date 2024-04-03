@@ -2,16 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:35.875869-07:00
-description: "Ph\xE2n t\xEDch c\xFA ph\xE1p ng\xE0y t\u1EEB m\u1ED9t chu\u1ED7i trong\
-  \ Visual Basic for Applications (VBA) \u0111\u1EC1 c\u1EADp \u0111\u1EBFn vi\u1EC7\
-  c chuy\u1EC3n \u0111\u1ED5i v\u0103n b\u1EA3n bi\u1EC3u di\u1EC5n ng\xE0y th\xE0\
-  nh ki\u1EC3u d\u1EEF li\u1EC7u ng\xE0y.\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: VBA cung c\u1EA5p m\u1ED9t c\xE1ch tr\u1EF1\
+  c ti\u1EBFp \u0111\u1EC3 ph\xE2n t\xEDch c\xFA ph\xE1p m\u1ED9t chu\u1ED7i th\xE0\
+  nh ng\xE0y b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng h\xE0m `CDate` ho\u1EB7c h\xE0m `DateValue`.\
+  \ Tuy nhi\xEAn,\u2026"
 lastmod: '2024-03-13T22:44:36.445508-06:00'
 model: gpt-4-0125-preview
-summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p ng\xE0y t\u1EEB m\u1ED9t chu\u1ED7i trong\
-  \ Visual Basic for Applications (VBA) \u0111\u1EC1 c\u1EADp \u0111\u1EBFn vi\u1EC7\
-  c chuy\u1EC3n \u0111\u1ED5i v\u0103n b\u1EA3n bi\u1EC3u di\u1EC5n ng\xE0y th\xE0\
-  nh ki\u1EC3u d\u1EEF li\u1EC7u ng\xE0y."
+summary: "VBA cung c\u1EA5p m\u1ED9t c\xE1ch tr\u1EF1c ti\u1EBFp \u0111\u1EC3 ph\xE2\
+  n t\xEDch c\xFA ph\xE1p m\u1ED9t chu\u1ED7i th\xE0nh ng\xE0y b\u1EB1ng c\xE1ch s\u1EED\
+  \ d\u1EE5ng h\xE0m `CDate` ho\u1EB7c h\xE0m `DateValue`."
 title: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB chu\u1ED7i k\xFD t\u1EF1"
 weight: 30
 ---

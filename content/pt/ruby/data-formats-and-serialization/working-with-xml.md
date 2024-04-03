@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:35:15.556873-07:00
-description: "Trabalhar com XML significa fazer o parsing, gerar e manipular documentos\
-  \ XML (eXtensible Markup Language) usando c\xF3digo. Programadores fazem isso para\u2026"
+description: "Como fazer: Vamos usar o REXML, inclu\xEDdo com Ruby, para fazer o parsing\
+  \ de um snippet XML."
 lastmod: '2024-03-13T22:44:47.119561-06:00'
 model: gpt-4-0125-preview
-summary: "Trabalhar com XML significa fazer o parsing, gerar e manipular documentos\
-  \ XML (eXtensible Markup Language) usando c\xF3digo."
+summary: "Vamos usar o REXML, inclu\xEDdo com Ruby, para fazer o parsing de um snippet\
+  \ XML."
 title: Trabalhando com XML
 weight: 40
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:43.038471-07:00
-description: "Das Erstellen einer tempor\xE4ren Datei in Google Apps Script beinhaltet\
-  \ die Generierung einer Datei, die f\xFCr den kurzfristigen Gebrauch vorgesehen\
-  \ ist,\u2026"
+description: "Wie geht das: In Google Apps Script kann eine tempor\xE4re Datei mithilfe\
+  \ des DriveApp-Dienstes erstellt werden, der eine einfache Methode zum Erstellen,\u2026"
 lastmod: '2024-03-13T22:44:53.355103-06:00'
 model: gpt-4-0125-preview
-summary: "Das Erstellen einer tempor\xE4ren Datei in Google Apps Script beinhaltet\
-  \ die Generierung einer Datei, die f\xFCr den kurzfristigen Gebrauch vorgesehen\
-  \ ist, typischerweise f\xFCr die Zwischenspeicherung von Daten, Debugging oder Cache-Zwecke."
+summary: "In Google Apps Script kann eine tempor\xE4re Datei mithilfe des DriveApp-Dienstes\
+  \ erstellt werden, der eine einfache Methode zum Erstellen, Lesen und L\xF6schen\
+  \ von Dateien in Google Drive bietet."
 title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---

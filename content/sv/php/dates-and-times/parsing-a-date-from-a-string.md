@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:54.977561-07:00
-description: "Att tolka ett datum fr\xE5n en str\xE4ng i PHP inneb\xE4r att konvertera\
-  \ text som representerar ett datum och/eller tid till ett PHP `DateTime`-objekt\
-  \ eller andra\u2026"
+description: "Hur man g\xF6r: PHP:s inbyggda `DateTime`-klass tillhandah\xE5ller en\
+  \ kraftfull upps\xE4ttning funktioner f\xF6r att tolka och arbeta med datum. Du\
+  \ kan skapa en\u2026"
 lastmod: '2024-03-13T22:44:38.005563-06:00'
 model: gpt-4-0125-preview
-summary: "Att tolka ett datum fr\xE5n en str\xE4ng i PHP inneb\xE4r att konvertera\
-  \ text som representerar ett datum och/eller tid till ett PHP `DateTime`-objekt\
-  \ eller andra datum/tid-format."
+summary: "PHP:s inbyggda `DateTime`-klass tillhandah\xE5ller en kraftfull upps\xE4\
+  ttning funktioner f\xF6r att tolka och arbeta med datum."
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---

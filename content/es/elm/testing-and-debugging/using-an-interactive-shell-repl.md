@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 04:13:30.532208-07:00
-description: "El Bucle Leer-Evaluar-Imprimir (REPL, por sus siglas en ingl\xE9s) es\
-  \ un entorno de programaci\xF3n interactivo y sencillo que toma entradas individuales\
-  \ del\u2026"
+description: "C\xF3mo hacerlo: Elm no viene con un REPL integrado. Sin embargo, puedes\
+  \ usar `elm repl` desde tu l\xEDnea de comandos para iniciar una sesi\xF3n de Elm\
+  \ despu\xE9s de\u2026"
 lastmod: '2024-03-13T22:44:58.987210-06:00'
 model: gpt-4-0125-preview
-summary: "El Bucle Leer-Evaluar-Imprimir (REPL, por sus siglas en ingl\xE9s) es un\
-  \ entorno de programaci\xF3n interactivo y sencillo que toma entradas individuales\
-  \ del usuario, las eval\xFAa y devuelve el resultado al usuario."
+summary: Elm no viene con un REPL integrado.
 title: Usando una shell interactiva (REPL)
 weight: 34
 ---

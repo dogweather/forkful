@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:44:34.310436-07:00
-description: "Att ladda ner en webbsida inneb\xE4r att extrahera inneh\xE5llet fr\xE5\
-  n en URL och f\xE5 det i textformat. Programmerare g\xF6r detta f\xF6r att h\xE4\
-  mta data, \xF6vervaka\u2026"
+description: "Hur man g\xF6r: I Kotlin kan du anv\xE4nda `URL.readText()` f\xF6r enkel\
+  \ nedladdning. H\xE4r \xE4r ett exempel."
 lastmod: '2024-03-13T22:44:37.870031-06:00'
 model: gpt-4-1106-preview
-summary: "Att ladda ner en webbsida inneb\xE4r att extrahera inneh\xE5llet fr\xE5\
-  n en URL och f\xE5 det i textformat."
+summary: "I Kotlin kan du anv\xE4nda `URL.readText()` f\xF6r enkel nedladdning."
 title: "H\xE4mta en webbsida"
 weight: 42
 ---

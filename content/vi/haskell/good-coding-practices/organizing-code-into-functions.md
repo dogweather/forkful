@@ -2,16 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:39.487993-07:00
-description: "T\u1ED5 ch\u1EE9c m\xE3 th\xE0nh c\xE1c h\xE0m trong Haskell c\xF3 ngh\u0129\
-  a l\xE0 b\u1EA1n s\u1EBD ph\xE2n chia m\xE3 c\u1EE7a m\xECnh th\xE0nh c\xE1c kh\u1ED1\
-  i \u0111\u01B0\u1EE3c \u0111\u1EB7t t\xEAn, c\xF3 th\u1EC3 t\xE1i s\u1EED d\u1EE5\
-  ng. T\u1EA1i sao l\u1EA1i nh\u01B0 v\u1EADy? \u0110i\u1EC1u\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch b\u1EA1\
+  n c\xF3 th\u1EC3 vi\u1EBFt v\xE0 s\u1EED d\u1EE5ng c\xE1c h\xE0m trong Haskell."
 lastmod: '2024-03-13T22:44:36.719221-06:00'
 model: gpt-4-0125-preview
-summary: "T\u1ED5 ch\u1EE9c m\xE3 th\xE0nh c\xE1c h\xE0m trong Haskell c\xF3 ngh\u0129\
-  a l\xE0 b\u1EA1n s\u1EBD ph\xE2n chia m\xE3 c\u1EE7a m\xECnh th\xE0nh c\xE1c kh\u1ED1\
-  i \u0111\u01B0\u1EE3c \u0111\u1EB7t t\xEAn, c\xF3 th\u1EC3 t\xE1i s\u1EED d\u1EE5\
-  ng."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch b\u1EA1n c\xF3 th\u1EC3 vi\u1EBF\
+  t v\xE0 s\u1EED d\u1EE5ng c\xE1c h\xE0m trong Haskell."
 title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
 weight: 18
 ---

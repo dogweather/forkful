@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:17.211219-07:00
-description: "Het kapitaliseren van een tekenreeks in Visual Basic for Applications\
-  \ (VBA) houdt in dat je de eerste letter van elk woord in een tekenreeks omzet in\
-  \ een\u2026"
+description: "Hoe: VBA heeft geen ingebouwde functie specifiek voor het kapitaliseren\
+  \ van elk woord in een tekenreeks, zoals sommige andere programmeertalen dat wel\u2026"
 lastmod: '2024-03-13T22:44:50.619265-06:00'
 model: gpt-4-0125-preview
-summary: Het kapitaliseren van een tekenreeks in Visual Basic for Applications (VBA)
-  houdt in dat je de eerste letter van elk woord in een tekenreeks omzet in een hoofdletter,
-  terwijl je ervoor zorgt dat de rest in kleine letters staat.
+summary: VBA heeft geen ingebouwde functie specifiek voor het kapitaliseren van elk
+  woord in een tekenreeks, zoals sommige andere programmeertalen dat wel hebben.
 title: Een string met hoofdletters maken
 weight: 2
 ---

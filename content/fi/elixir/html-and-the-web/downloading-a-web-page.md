@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:43:52.714286-07:00
-description: "Web-sivun lataaminen tarkoittaa webbisivun sis\xE4ll\xF6n hakemista\
-  \ internetist\xE4. Ohjelmoijat tekev\xE4t t\xE4m\xE4n datan ker\xE4\xE4miseksi,\
-  \ prosessointia varten ja\u2026"
+description: "How to: (Miten tehd\xE4\xE4n:) Elixirin HTTP-kirjastot, kuten HTTPoison,\
+  \ helpottavat web-sivujen lataamista. T\xE4ss\xE4 yksinkertainen esimerkki."
 lastmod: '2024-03-13T22:44:56.225583-06:00'
 model: gpt-4-1106-preview
-summary: "Web-sivun lataaminen tarkoittaa webbisivun sis\xE4ll\xF6n hakemista internetist\xE4\
-  ."
+summary: Elixirin HTTP-kirjastot, kuten HTTPoison, helpottavat web-sivujen lataamista.
 title: Verkkosivun lataaminen
 weight: 42
 ---

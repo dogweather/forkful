@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:39.786275-07:00
-description: "Foutafhandeling is hoe je beheert wat er gebeurt wanneer er iets misgaat\
-  \ in je code. Het is essentieel omdat het ervoor zorgt dat je programma's op een\u2026"
+description: 'Hoe: Hier is het klassieke `try-catch` blok.'
 lastmod: '2024-03-13T22:44:51.209519-06:00'
 model: gpt-4-0125-preview
-summary: Foutafhandeling is hoe je beheert wat er gebeurt wanneer er iets misgaat
-  in je code.
+summary: Hier is het klassieke `try-catch` blok.
 title: Fouten afhandelen
 weight: 16
 ---

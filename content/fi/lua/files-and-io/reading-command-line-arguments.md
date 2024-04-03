@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:56:36.455037-07:00
-description: "Mit\xE4 & Miksi? Komentoriviparametrien lukeminen mahdollistaa argumenttien\
-  \ vastaanottamisen suoraan ohjelmallesi. K\xE4yt\xE4mme sit\xE4, jotta k\xE4ytt\xE4\
-  j\xE4t voivat\u2026"
+description: "How to: Miten tehd\xE4\xE4n."
 lastmod: '2024-03-13T22:44:56.712127-06:00'
 model: gpt-4-1106-preview
-summary: "Mit\xE4 & Miksi."
+summary: "Miten tehd\xE4\xE4n."
 title: Komennoriviparametrien lukeminen
 weight: 23
 ---

@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:15.227701-07:00
-description: "M\u1ED9t shell t\u01B0\u01A1ng t\xE1c, hay REPL (Read-Eval-Print Loop\
-  \ - V\xF2ng l\u1EB7p \u0110\u1ECDc-\u0110\xE1nh gi\xE1-In), cho ph\xE9p b\u1EA1\
-  n vi\u1EBFt v\xE0 ch\u1EA1y m\xE3 PHP ngay l\u1EADp t\u1EE9c. N\xF3 l\xFD t\u01B0\
-  \u1EDFng cho vi\u1EC7c th\u1EED\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Kh\u1EDFi ch\u1EA1y REPL PHP b\u1EB1ng c\xE1\
+  ch ch\u1EA1y `php -a` trong terminal c\u1EE7a b\u1EA1n. D\u01B0\u1EDBi \u0111\xE2\
+  y l\xE0 m\u1ED9t v\xED d\u1EE5 v\u1EC1 c\xE1ch n\xF3 ho\u1EA1t \u0111\u1ED9ng."
 lastmod: '2024-03-13T22:44:36.768689-06:00'
 model: gpt-4-0125-preview
-summary: "M\u1ED9t shell t\u01B0\u01A1ng t\xE1c, hay REPL (Read-Eval-Print Loop -\
-  \ V\xF2ng l\u1EB7p \u0110\u1ECDc-\u0110\xE1nh gi\xE1-In), cho ph\xE9p b\u1EA1n vi\u1EBF\
-  t v\xE0 ch\u1EA1y m\xE3 PHP ngay l\u1EADp t\u1EE9c."
+summary: "Kh\u1EDFi ch\u1EA1y REPL PHP b\u1EB1ng c\xE1ch ch\u1EA1y `php -a` trong\
+  \ terminal c\u1EE7a b\u1EA1n."
 title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 weight: 34
 ---

@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:38:28.705676-07:00
-description: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery polega na zmianie\
-  \ wszystkich wielkich liter w napisie na ich ma\u0142e odpowiedniki. Programi\u015B\
-  ci robi\u0105 to, by ujednolici\u0107\u2026"
+description: "Jak to zrobi\u0107: W Fish, przekszta\u0142canie tekstu na ma\u0142\
+  e litery jest takie proste, jak u\u017Cycie wbudowanej funkcji `string`. Oto jak\
+  \ to dzia\u0142a."
 lastmod: '2024-03-13T22:44:35.825581-06:00'
 model: gpt-4-1106-preview
-summary: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery polega na zmianie wszystkich\
-  \ wielkich liter w napisie na ich ma\u0142e odpowiedniki."
+summary: "W Fish, przekszta\u0142canie tekstu na ma\u0142e litery jest takie proste,\
+  \ jak u\u017Cycie wbudowanej funkcji `string`."
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---

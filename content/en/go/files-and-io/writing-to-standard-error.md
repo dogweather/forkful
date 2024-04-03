@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 17:50:00.464734-07:00
-description: "Writing to standard error (stderr) in Go involves directing error messages\
-  \ or diagnostics not meant for the main output stream. Programmers use this to\u2026"
+description: "How To: In Go, the `os` package provides the `Stderr` value, representing\
+  \ the standard error file. You can use it with `fmt.Fprint`, `fmt.Fprintf`, or\u2026"
 lastmod: '2024-03-13T22:44:59.645813-06:00'
 model: gpt-4-0125-preview
-summary: Writing to standard error (stderr) in Go involves directing error messages
-  or diagnostics not meant for the main output stream.
+summary: In Go, the `os` package provides the `Stderr` value, representing the standard
+  error file.
 title: Writing to standard error
 weight: 25
 ---

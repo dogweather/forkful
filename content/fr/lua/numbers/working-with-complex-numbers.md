@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:43:19.254417-07:00
-description: "Les nombres complexes \xE9tendent l'id\xE9e de la ligne num\xE9rique\
-  \ unidimensionnelle dans le plan bidimensionnel en incluant un axe imaginaire perpendiculaire.\u2026"
+description: "Comment faire : En Lua, vous pouvez repr\xE9senter les nombres complexes\
+  \ avec des tables. Les op\xE9rations de base impliquent d'ajouter, de soustraire,\
+  \ de\u2026"
 lastmod: '2024-03-13T22:44:57.920281-06:00'
 model: gpt-4-0125-preview
-summary: "Les nombres complexes \xE9tendent l'id\xE9e de la ligne num\xE9rique unidimensionnelle\
-  \ dans le plan bidimensionnel en incluant un axe imaginaire perpendiculaire."
+summary: "En Lua, vous pouvez repr\xE9senter les nombres complexes avec des tables."
 title: Manipulation des nombres complexes
 weight: 14
 ---

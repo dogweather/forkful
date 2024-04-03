@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:14.614052-07:00
-description: "Lire les arguments de ligne de commande en Go implique d'extraire les\
-  \ arguments fournis \xE0 un programme lors de son invocation depuis le terminal\
-  \ ou\u2026"
+description: "Comment faire : Go offre un acc\xE8s direct aux arguments de ligne de\
+  \ commande \xE0 travers le package `os`, sp\xE9cifiquement en utilisant `os.Args`,\
+  \ un tableau\u2026"
 lastmod: '2024-03-13T22:44:57.151610-06:00'
 model: gpt-4-0125-preview
-summary: "Lire les arguments de ligne de commande en Go implique d'extraire les arguments\
-  \ fournis \xE0 un programme lors de son invocation depuis le terminal ou l'invite\
-  \ de commande."
+summary: "Go offre un acc\xE8s direct aux arguments de ligne de commande \xE0 travers\
+  \ le package `os`, sp\xE9cifiquement en utilisant `os.Args`, un tableau de cha\xEE\
+  nes de caract\xE8res."
 title: Lecture des arguments de ligne de commande
 weight: 23
 ---

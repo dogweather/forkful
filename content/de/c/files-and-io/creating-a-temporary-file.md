@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:18.781310-07:00
-description: "Das Erstellen einer tempor\xE4ren Datei in C bedeutet, eine Datei zu\
-  \ generieren, die f\xFCr eine kurze Dauer gedacht ist, \xFCblicherweise als Zwischenspeicher\
-  \ f\xFCr\u2026"
+description: "Wie: Das Erstellen einer tempor\xE4ren Datei in der Programmiersprache\
+  \ C kann Funktionen wie `tmpfile()` und `mkstemp()` nutzen. **Verwendung von\u2026"
 lastmod: '2024-03-13T22:44:54.374262-06:00'
 model: gpt-4-0125-preview
-summary: "Das Erstellen einer tempor\xE4ren Datei in C bedeutet, eine Datei zu generieren,\
-  \ die f\xFCr eine kurze Dauer gedacht ist, \xFCblicherweise als Zwischenspeicher\
-  \ f\xFCr Datenverarbeitung oder -speicherung."
+summary: "Das Erstellen einer tempor\xE4ren Datei in der Programmiersprache C kann\
+  \ Funktionen wie `tmpfile()` und `mkstemp()` nutzen."
 title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---

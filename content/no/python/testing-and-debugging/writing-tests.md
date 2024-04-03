@@ -2,13 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:41.847028-07:00
-description: "\xC5 skrive tester i Python inneb\xE6rer \xE5 lage automatiserte skript\
-  \ for \xE5 validere korrektheten av koden din. Programmerere gj\xF8r dette for \xE5\
-  \ sikre at deres\u2026"
+description: "Hvordan: Python kommer med en innebygd modul for \xE5 skrive tester\
+  \ kalt `unittest`. Slik kan du bruke den til \xE5 teste en enkel funksjon."
 lastmod: '2024-03-13T22:44:40.364876-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive tester i Python inneb\xE6rer \xE5 lage automatiserte skript\
-  \ for \xE5 validere korrektheten av koden din."
+summary: "Python kommer med en innebygd modul for \xE5 skrive tester kalt `unittest`."
 title: Skrive tester
 weight: 36
 ---

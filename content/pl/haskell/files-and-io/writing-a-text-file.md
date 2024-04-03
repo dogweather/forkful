@@ -1,11 +1,9 @@
 ---
 date: 2024-01-19
-description: "(\"Co i Dlaczego?\") Zapisywanie pliku tekstowego to spos\xF3b trwa\u0142\
-  ego przechowywania danych. Programi\u015Bci robi\u0105 to, by zapisywa\u0107 ustawienia,\
-  \ dane u\u017Cytkownika,\u2026"
+description: "How to: (\"Jak to zrobi\u0107:\")."
 lastmod: '2024-03-13T22:44:35.471764-06:00'
 model: unknown
-summary: ("Co i Dlaczego.
+summary: "(\"Jak to zrobi\u0107:\")."
 title: Zapisywanie pliku tekstowego
 weight: 24
 ---

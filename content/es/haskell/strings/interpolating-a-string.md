@@ -1,13 +1,11 @@
 ---
 date: 2024-01-20 17:51:03.445283-07:00
-description: "La interpolaci\xF3n de cadenas permite insertar valores dentro de una\
-  \ cadena de texto, y los programadores la usan para construir strings din\xE1micamente\
-  \ y\u2026"
+description: "C\xF3mo Hacerlo: En Haskell, puedes usar la librer\xEDa `text-format`\
+  \ o `Printf` para la interpolaci\xF3n de cadenas. Aqu\xED tienes algunos ejemplos."
 lastmod: '2024-03-13T22:44:59.105720-06:00'
 model: gpt-4-1106-preview
-summary: "La interpolaci\xF3n de cadenas permite insertar valores dentro de una cadena\
-  \ de texto, y los programadores la usan para construir strings din\xE1micamente\
-  \ y mejorar la legibilidad del c\xF3digo."
+summary: "En Haskell, puedes usar la librer\xEDa `text-format` o `Printf` para la\
+  \ interpolaci\xF3n de cadenas."
 title: "Interpolaci\xF3n de cadenas de texto"
 weight: 8
 ---

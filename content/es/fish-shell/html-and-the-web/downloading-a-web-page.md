@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:43:58.209939-07:00
-description: "Descargar una p\xE1gina web es traer su contenido, usualmente HTML,\
-  \ a tu disco local. Los programadores necesitan hacer esto para an\xE1lisis de datos,\
-  \ pruebas\u2026"
+description: "C\xF3mo hacerlo: Para descargar una p\xE1gina web en Fish Shell, puedes\
+  \ usar herramientas como `curl` o `wget`. Aqu\xED tienes un ejemplo con `curl`."
 lastmod: '2024-03-13T22:44:59.500551-06:00'
 model: gpt-4-1106-preview
-summary: "Descargar una p\xE1gina web es traer su contenido, usualmente HTML, a tu\
-  \ disco local."
+summary: "Para descargar una p\xE1gina web en Fish Shell, puedes usar herramientas\
+  \ como `curl` o `wget`."
 title: "Descargando una p\xE1gina web"
 weight: 42
 ---

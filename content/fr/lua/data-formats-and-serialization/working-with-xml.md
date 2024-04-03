@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:33:30.133890-07:00
-description: "Travailler avec XML implique l'analyse et la manipulation de documents\
-  \ XML \xE0 l'aide de code. Les programmeurs font cela pour lire, \xE9crire et modifier\
-  \ des\u2026"
+description: "Comment faire : Lua n'inclut pas d'analyse XML native, mais il existe\
+  \ des biblioth\xE8ques comme LuaXML et xml2lua qui font le travail. Voici un bref\
+  \ aper\xE7u\u2026"
 lastmod: '2024-03-13T22:44:57.965915-06:00'
 model: gpt-4-0125-preview
-summary: "Travailler avec XML implique l'analyse et la manipulation de documents XML\
-  \ \xE0 l'aide de code."
+summary: "Lua n'inclut pas d'analyse XML native, mais il existe des biblioth\xE8ques\
+  \ comme LuaXML et xml2lua qui font le travail."
 title: Travailler avec XML
 weight: 40
 ---

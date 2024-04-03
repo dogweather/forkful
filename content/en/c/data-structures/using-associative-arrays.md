@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 17:50:13.746655-07:00
-description: "Associative arrays, known in other languages as maps or dictionaries,\
-  \ are key-value pairs used for efficient data lookup and manipulation. Unlike\u2026"
+description: "How to: C does not have built-in support for associative arrays like\
+  \ some higher-level languages, but you can simulate them using structures and hashing.\u2026"
 lastmod: '2024-03-13T22:45:00.505217-06:00'
 model: gpt-4-0125-preview
-summary: Associative arrays, known in other languages as maps or dictionaries, are
-  key-value pairs used for efficient data lookup and manipulation.
+summary: C does not have built-in support for associative arrays like some higher-level
+  languages, but you can simulate them using structures and hashing.
 title: Using associative arrays
 weight: 15
 ---

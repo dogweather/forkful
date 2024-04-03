@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:05.549309-07:00
-description: "Concat\xE9ner des cha\xEEnes implique de combiner deux ou plusieurs\
-  \ cha\xEEnes en une seule. Les programmeurs font cela pour construire dynamiquement\
-  \ des messages,\u2026"
+description: "Comment faire : Dans Google Apps Script, qui est bas\xE9 sur JavaScript,\
+  \ il existe plusieurs fa\xE7ons de concat\xE9ner des cha\xEEnes. Voici quelques\
+  \ m\xE9thodes\u2026"
 lastmod: '2024-03-13T22:44:57.175750-06:00'
 model: gpt-4-0125-preview
-summary: "Concat\xE9ner des cha\xEEnes implique de combiner deux ou plusieurs cha\xEE\
-  nes en une seule."
+summary: "Dans Google Apps Script, qui est bas\xE9 sur JavaScript, il existe plusieurs\
+  \ fa\xE7ons de concat\xE9ner des cha\xEEnes."
 title: "Concat\xE9nation de cha\xEEnes"
 weight: 3
 ---

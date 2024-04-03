@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:22:29.417720-07:00
-description: "Trabajar con TOML implica analizar y generar datos TOML (Tom's Obvious,\
-  \ Minimal Language) con Haskell. Los programadores lo hacen para administrar\u2026"
+description: "C\xF3mo: Primero, aseg\xFArate de tener una biblioteca de an\xE1lisis\
+  \ de TOML. Para Haskell, `htoml` es una elecci\xF3n popular. Necesitar\xE1s agregarla\
+  \ a las\u2026"
 lastmod: '2024-03-13T22:44:59.141822-06:00'
 model: gpt-4-0125-preview
-summary: Trabajar con TOML implica analizar y generar datos TOML (Tom's Obvious, Minimal
-  Language) con Haskell.
+summary: "Primero, aseg\xFArate de tener una biblioteca de an\xE1lisis de TOML."
 title: Trabajando con TOML
 weight: 39
 ---

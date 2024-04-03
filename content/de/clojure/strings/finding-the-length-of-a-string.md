@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:47:10.832223-07:00
-description: "Die L\xE4nge eines Strings zu ermitteln, bedeutet, die Anzahl der Zeichen\
-  \ in diesem String zu z\xE4hlen. Programmierer tun das, um Textverarbeitungsaufgaben\u2026"
+description: "So geht's: Clojure bietet eine einfache Funktion, `count`, um die L\xE4\
+  nge eines Strings zu bekommen."
 lastmod: '2024-03-13T22:44:53.411120-06:00'
 model: gpt-4-1106-preview
-summary: "Die L\xE4nge eines Strings zu ermitteln, bedeutet, die Anzahl der Zeichen\
-  \ in diesem String zu z\xE4hlen."
+summary: "Clojure bietet eine einfache Funktion, `count`, um die L\xE4nge eines Strings\
+  \ zu bekommen."
 title: "Ermittlung der Zeichenkettenl\xE4nge"
 weight: 7
 ---

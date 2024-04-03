@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:48:39.567063-07:00
-description: "Co i dlaczego? Znalezienie d\u0142ugo\u015Bci \u0142a\u0144cucha znak\xF3\
-  w to nic innego, jak ustalenie, ile znak\xF3w zawiera dana fraza lub zdanie. Programi\u015B\
-  ci robi\u0105 to, by\u2026"
+description: "How to: Poni\u017Cej znajdziesz przyk\u0142adowy kod w TypeScript, kt\xF3\
+  ry pokazuje, jak sprawdzi\u0107 d\u0142ugo\u015B\u0107 stringa."
 lastmod: '2024-03-13T22:44:35.129439-06:00'
 model: gpt-4-1106-preview
-summary: Co i dlaczego.
+summary: "Poni\u017Cej znajdziesz przyk\u0142adowy kod w TypeScript, kt\xF3ry pokazuje,\
+  \ jak sprawdzi\u0107 d\u0142ugo\u015B\u0107 stringa."
 title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 weight: 7
 ---

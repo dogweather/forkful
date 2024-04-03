@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:25:38.570581-07:00
-description: "TOML ist ein Konfigurationsdateiformat, das aufgrund seiner klaren Semantik\
-  \ leicht zu lesen ist. Programmierer nutzen TOML, um App-Konfigurationen und\u2026"
+description: "Wie geht das: Zuerst installieren Sie das `toml-rb` Gem. Es ist eine\
+  \ beliebte Wahl f\xFCr das Parsen von TOML in Ruby."
 lastmod: '2024-03-13T22:44:54.423885-06:00'
 model: gpt-4-0125-preview
-summary: TOML ist ein Konfigurationsdateiformat, das aufgrund seiner klaren Semantik
-  leicht zu lesen ist.
+summary: Zuerst installieren Sie das `toml-rb` Gem.
 title: Arbeiten mit TOML
 weight: 39
 ---

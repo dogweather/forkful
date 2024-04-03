@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:51:53.852270-07:00
-description: L'interpolazione di stringhe permette di inserire valori dinamici in
-  una stringa. Programmatori la usano per creare testo flessibile e leggibile.
+description: "How to: Con TypeScript, interpolare \xE8 facile come usare il backtick\
+  \ (\\`) e le espressioni `${}`. Ecco un esempio."
 lastmod: '2024-03-13T22:44:43.162616-06:00'
 model: gpt-4-1106-preview
-summary: L'interpolazione di stringhe permette di inserire valori dinamici in una
-  stringa.
+summary: "Con TypeScript, interpolare \xE8 facile come usare il backtick (\\`) e le\
+  \ espressioni `${}`."
 title: Interpolazione di una stringa
 weight: 8
 ---

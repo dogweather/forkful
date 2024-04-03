@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:59:24.066585-07:00
-description: "Enviar una solicitud HTTP es la forma de pedir datos o realizar una\
-  \ acci\xF3n en un servidor web. Los programadores lo hacen para interactuar con\
-  \ APIs,\u2026"
+description: "C\xF3mo hacerlo: Clojure ofrece varias bibliotecas para realizar solicitudes\
+  \ HTTP. Vamos a usar `clj-http` por su simplicidad y popularidad."
 lastmod: '2024-03-13T22:44:58.653458-06:00'
 model: gpt-4-1106-preview
-summary: "Enviar una solicitud HTTP es la forma de pedir datos o realizar una acci\xF3\
-  n en un servidor web."
+summary: Clojure ofrece varias bibliotecas para realizar solicitudes HTTP.
 title: Enviando una solicitud http
 weight: 44
 ---

@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:07:47.902867-07:00
-description: "Liczby zespolone, przedstawiane jako kombinacja jednostek rzeczywistych\
-  \ i urojonych (np. 3 + 4i), s\u0105 fundamentalne w r\xF3\u017Cnych problemach obliczeniowych,\u2026"
+description: "Jak: Google Apps Script nie ma wbudowanego wsparcia dla liczb zespolonych,\
+  \ co wymusza implementacj\u0119 w\u0142asnej funkcjonalno\u015Bci. Poni\u017Cej\
+  \ znajduje si\u0119\u2026"
 lastmod: '2024-03-13T22:44:34.895817-06:00'
 model: gpt-4-0125-preview
-summary: Liczby zespolone, przedstawiane jako kombinacja jednostek rzeczywistych i
-  urojonych (np.
+summary: "Google Apps Script nie ma wbudowanego wsparcia dla liczb zespolonych, co\
+  \ wymusza implementacj\u0119 w\u0142asnej funkcjonalno\u015Bci."
 title: Praca z liczbami zespolonymi
 weight: 14
 ---

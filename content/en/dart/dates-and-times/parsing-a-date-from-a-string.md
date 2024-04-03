@@ -1,11 +1,10 @@
 ---
 date: 2024-03-08 21:33:23.665778-07:00
-description: "Parsing a date from a string in Dart involves converting textual representation\
-  \ of dates and times into a `DateTime` object. This operation is essential\u2026"
+description: "How to: Dart's core library simplifies date parsing through the `DateTime`\
+  \ class. For straightforward cases where you know the format of the date string,\u2026"
 lastmod: '2024-03-13T22:44:59.829039-06:00'
 model: gpt-4-0125-preview
-summary: Parsing a date from a string in Dart involves converting textual representation
-  of dates and times into a `DateTime` object.
+summary: Dart's core library simplifies date parsing through the `DateTime` class.
 title: Parsing a date from a string
 weight: 30
 ---

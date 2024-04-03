@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:20.239495-07:00
-description: "\xC5 tolke en dato fra en streng i Elm involverer konvertering av tekstlig\
-  \ informasjon som representerer datoer og tider til et format som Elm kan forst\xE5\
-  \ og\u2026"
+description: "Hvordan: Elm har ikke innebygde evner som er like robuste som noen andre\
+  \ spr\xE5k for datotolking, og st\xF8tter seg hovedsakelig p\xE5 Javascript interop\
+  \ eller\u2026"
 lastmod: '2024-03-13T22:44:40.718886-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 tolke en dato fra en streng i Elm involverer konvertering av tekstlig\
-  \ informasjon som representerer datoer og tider til et format som Elm kan forst\xE5\
-  \ og manipulere, spesifikt til `Date`-typen."
+summary: "Elm har ikke innebygde evner som er like robuste som noen andre spr\xE5\
+  k for datotolking, og st\xF8tter seg hovedsakelig p\xE5 Javascript interop eller\
+  \ biblioteker for mer komplekse operasjoner."
 title: Analysering av en dato fra en streng
 weight: 30
 ---

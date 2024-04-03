@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:09:50.937235-07:00
-description: "\xC5 organisere kode i funksjoner handler om \xE5 pakke inn kodeblokker\
-  \ som utf\xF8rer spesifikke oppgaver. Dette gj\xF8r at koden din blir ryddigere,\
-  \ lettere \xE5\u2026"
+description: 'Hvordan: Funksjoner i Clojure defineres med `defn`, etterfulgt av et
+  navn, parametere og kropp. Her er et kjapt eksempel.'
 lastmod: '2024-03-13T22:44:40.407627-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 organisere kode i funksjoner handler om \xE5 pakke inn kodeblokker\
-  \ som utf\xF8rer spesifikke oppgaver."
+summary: Funksjoner i Clojure defineres med `defn`, etterfulgt av et navn, parametere
+  og kropp.
 title: Organisering av kode i funksjoner
 weight: 18
 ---

@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:54:57.368306-07:00
-description: "Czytanie pliku tekstowego to pobieranie danych zapisanych w pliku zapisanego\
-  \ na dysku. Programi\u015Bci robi\u0105 to, by przetwarza\u0107, analizowa\u0107\
-  \ dane, konfigurowa\u0107\u2026"
+description: "How to: (Jak to zrobi\u0107:) ."
 lastmod: '2024-03-13T22:44:35.949736-06:00'
 model: gpt-4-1106-preview
-summary: Czytanie pliku tekstowego to pobieranie danych zapisanych w pliku zapisanego
-  na dysku.
+summary: .
 title: Odczytywanie pliku tekstowego
 weight: 22
 ---

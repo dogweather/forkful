@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 18:00:56.412555-07:00
-description: "Sending an HTTP request with basic authentication involves attaching\
-  \ a username and password to a request for access control. Programmers do it for\
-  \ simple\u2026"
+description: 'How to: Here''s a basic example using the `CURL` library in C++. Before
+  diving in, make sure you''ve got `libcurl` installed.'
 lastmod: '2024-03-13T22:45:00.357299-06:00'
 model: gpt-4-1106-preview
-summary: Sending an HTTP request with basic authentication involves attaching a username
-  and password to a request for access control.
+summary: Here's a basic example using the `CURL` library in C++.
 title: Sending an HTTP request with basic authentication
 weight: 45
 ---

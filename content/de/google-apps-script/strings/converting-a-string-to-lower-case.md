@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:09.049923-07:00
-description: "Die Umwandlung einer Zeichenkette in Kleinbuchstaben in Google Apps\
-  \ Script, einer cloudbasierten Skriptsprache zur Automatisierung von Aufgaben in\
-  \ Google-\u2026"
+description: "Wie: Die Umwandlung einer Zeichenkette in Kleinbuchstaben in Google\
+  \ Apps Script ist dank der integrierten JavaScript-Methoden, die in der Skriptumgebung\u2026"
 lastmod: '2024-03-13T22:44:53.319720-06:00'
 model: gpt-4-0125-preview
-summary: Die Umwandlung einer Zeichenkette in Kleinbuchstaben in Google Apps Script,
-  einer cloudbasierten Skriptsprache zur Automatisierung von Aufgaben in Google-Produkten,
-  ist eine grundlegende Aufgabe, die darauf abzielt, Textdaten zu standardisieren.
+summary: "Die Umwandlung einer Zeichenkette in Kleinbuchstaben in Google Apps Script\
+  \ ist dank der integrierten JavaScript-Methoden, die in der Skriptumgebung verf\xFC\
+  gbar sind, unkompliziert."
 title: Einen String in Kleinbuchstaben umwandeln
 weight: 4
 ---

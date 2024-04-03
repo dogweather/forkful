@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:13.493417-07:00
-description: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n l\xE0 vi\u1EC7\
-  c t\xECm ki\u1EBFm c\xE1c chu\u1ED7i c\u1EE5 th\u1EC3 trong m\u1ED9t chu\u1ED7i\
-  \ l\u1EDBn h\u01A1n v\xE0 thay th\u1EBF ch\xFAng b\u1EB1ng m\u1ED9t c\xE1i g\xEC\
-  \ kh\xE1c. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: C++ cung c\u1EA5p nhi\u1EC1u c\xE1ch \u0111\
+  \u1EC3 t\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n. D\u01B0\u1EDBi \u0111\
+  \xE2y l\xE0 m\u1ED9t v\xED d\u1EE5 s\u1EED d\u1EE5ng `std::string::find` v\xE0 `std::string::replace`."
 lastmod: '2024-03-13T22:44:37.023051-06:00'
 model: gpt-4-0125-preview
-summary: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n l\xE0 vi\u1EC7c t\xEC\
-  m ki\u1EBFm c\xE1c chu\u1ED7i c\u1EE5 th\u1EC3 trong m\u1ED9t chu\u1ED7i l\u1EDB\
-  n h\u01A1n v\xE0 thay th\u1EBF ch\xFAng b\u1EB1ng m\u1ED9t c\xE1i g\xEC kh\xE1c."
+summary: "C++ cung c\u1EA5p nhi\u1EC1u c\xE1ch \u0111\u1EC3 t\xECm ki\u1EBFm v\xE0\
+  \ thay th\u1EBF v\u0103n b\u1EA3n."
 title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
 weight: 10
 ---

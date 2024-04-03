@@ -1,13 +1,12 @@
 ---
 date: 2024-01-20 18:00:25.981787-07:00
-description: "Enviar una solicitud HTTP permite a tu programa hablar con otros sistemas\
-  \ a trav\xE9s de la web; es como enviar un mensaje que pide datos o que ejecute\
-  \ una\u2026"
+description: "C\xF3mo hacerlo: PowerShell facilita el env\xEDo de solicitudes HTTP\
+  \ con los cmdlets `Invoke-WebRequest` e `Invoke-RestMethod`. Aqu\xED te muestro\
+  \ c\xF3mo usarlos."
 lastmod: '2024-03-13T22:44:59.289244-06:00'
 model: gpt-4-1106-preview
-summary: "Enviar una solicitud HTTP permite a tu programa hablar con otros sistemas\
-  \ a trav\xE9s de la web; es como enviar un mensaje que pide datos o que ejecute\
-  \ una acci\xF3n."
+summary: "PowerShell facilita el env\xEDo de solicitudes HTTP con los cmdlets `Invoke-WebRequest`\
+  \ e `Invoke-RestMethod`."
 title: Enviando una solicitud http
 weight: 44
 ---

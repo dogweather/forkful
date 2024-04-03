@@ -2,15 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:10.623201-07:00
-description: "Logging trong l\u1EADp tr\xECnh bao g\u1ED3m vi\u1EC7c ghi l\u1EA1i\
-  \ c\xE1c s\u1EF1 ki\u1EC7n, l\u1ED7i, ho\u1EB7c c\xE1c t\xECnh hu\u1ED1ng \u0111\
-  \xE1ng ch\xFA \xFD trong qu\xE1 tr\xECnh runtime. L\u1EADp tr\xECnh vi\xEAn l\xE0\
-  m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 g\u1EE1\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Google Apps Script, logging c\xF3 th\u1EC3\
+  \ \u0111\u01B0\u1EE3c th\u1EF1c hi\u1EC7n b\u1EB1ng c\xE1c ph\u01B0\u01A1ng ph\xE1\
+  p kh\xE1c nhau, ch\u1EB3ng h\u1EA1n nh\u01B0 l\u1EDBp `Logger` v\xE0 `console.log()`.\
+  \ L\u1EDBp\u2026"
 lastmod: '2024-03-13T22:44:36.049121-06:00'
 model: gpt-4-0125-preview
-summary: "Logging trong l\u1EADp tr\xECnh bao g\u1ED3m vi\u1EC7c ghi l\u1EA1i c\xE1\
-  c s\u1EF1 ki\u1EC7n, l\u1ED7i, ho\u1EB7c c\xE1c t\xECnh hu\u1ED1ng \u0111\xE1ng\
-  \ ch\xFA \xFD trong qu\xE1 tr\xECnh runtime."
+summary: "Trong Google Apps Script, logging c\xF3 th\u1EC3 \u0111\u01B0\u1EE3c th\u1EF1\
+  c hi\u1EC7n b\u1EB1ng c\xE1c ph\u01B0\u01A1ng ph\xE1p kh\xE1c nhau, ch\u1EB3ng h\u1EA1\
+  n nh\u01B0 l\u1EDBp `Logger` v\xE0 `console.log()`."
 title: "Ghi nh\u1EADt k\xFD"
 weight: 17
 ---

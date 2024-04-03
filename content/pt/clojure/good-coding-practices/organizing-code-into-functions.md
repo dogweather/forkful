@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:09:27.644485-07:00
-description: "Organizar c\xF3digo em fun\xE7\xF5es \xE9 sobre empacotar blocos de\
-  \ c\xF3digo que realizam tarefas espec\xEDficas. Fazer isso torna seu c\xF3digo\
-  \ limpo, mais f\xE1cil de manter e\u2026"
+description: "Como fazer: Fun\xE7\xF5es em Clojure s\xE3o definidas com `defn`, seguido\
+  \ por um nome, par\xE2metros e corpo. Aqui est\xE1 um exemplo r\xE1pido."
 lastmod: '2024-03-13T22:44:46.202218-06:00'
 model: gpt-4-1106-preview
-summary: "Organizar c\xF3digo em fun\xE7\xF5es \xE9 sobre empacotar blocos de c\xF3\
-  digo que realizam tarefas espec\xEDficas."
+summary: "Fun\xE7\xF5es em Clojure s\xE3o definidas com `defn`, seguido por um nome,\
+  \ par\xE2metros e corpo."
 title: "Organizando o c\xF3digo em fun\xE7\xF5es"
 weight: 18
 ---

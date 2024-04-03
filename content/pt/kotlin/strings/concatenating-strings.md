@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:35:27.639253-07:00
-description: "Concatenar strings significa juntar duas ou mais sequ\xEAncias de caracteres\
-  \ para formar uma nova string. Programadores fazem isso para construir mensagens,\u2026"
+description: 'Como Fazer: .'
 lastmod: '2024-03-13T22:44:46.533500-06:00'
 model: gpt-4-1106-preview
-summary: "Concatenar strings significa juntar duas ou mais sequ\xEAncias de caracteres\
-  \ para formar uma nova string."
+summary: .
 title: Concatenando strings
 weight: 3
 ---

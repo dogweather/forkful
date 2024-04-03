@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:51.071997-07:00
-description: "Een HTTP-verzoek verzenden betekent dat je data opvraagt van een bron\
-  \ op het web. Programmeurs doen dit om te communiceren met API's, webinhoud te\u2026"
+description: 'Hoe te: Ruby maakt het vrij eenvoudig om HTTP-verzoeken te verzenden.
+  Hier is de snelste manier met de standaardbibliotheek Net::HTTP.'
 lastmod: '2024-03-13T22:44:51.334677-06:00'
 model: gpt-4-0125-preview
-summary: Een HTTP-verzoek verzenden betekent dat je data opvraagt van een bron op
-  het web.
+summary: Ruby maakt het vrij eenvoudig om HTTP-verzoeken te verzenden.
 title: Een HTTP-verzoek verzenden
 weight: 44
 ---

@@ -3,13 +3,14 @@ changelog:
 - 2024-03-25, dogweather, edited and tested
 - 2024-03-25, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:02:29.358527-07:00
-description: "Capitaliser une cha\xEEne de caract\xE8res signifie g\xE9n\xE9ralement\
-  \ convertir le premier caract\xE8re d'une cha\xEEne en majuscule et le reste en\
-  \ minuscule. Mais\u2026"
+description: "Comment faire : Ruby propose [des m\xE9thodes directes pour la manipulation\
+  \ de cha\xEEnes de caract\xE8res](https://docs.ruby-lang.org/en/3.3/String.html),\
+  \ y\u2026"
 lastmod: '2024-03-25T19:21:58.508306-06:00'
 model: gpt-4-0125-preview
-summary: "Capitaliser une cha\xEEne de caract\xE8res signifie g\xE9n\xE9ralement convertir\
-  \ le premier caract\xE8re d'une cha\xEEne en majuscule et le reste en minuscule."
+summary: "Ruby propose [des m\xE9thodes directes pour la manipulation de cha\xEEnes\
+  \ de caract\xE8res](https://docs.ruby-lang.org/en/3.3/String.html), y compris pour\
+  \ la capitalisation."
 title: "Mettre en majuscule une cha\xEEne de caract\xE8res"
 weight: 2
 ---

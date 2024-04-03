@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 03:37:02.980764-07:00
-description: "Refaktorointi on prosessi, jossa olemassa olevaa tietokonekoodia uudelleenj\xE4\
-  rjestet\xE4\xE4n muuttamatta sen ulkoista toimintaa. Ohjelmoijat tekev\xE4t sit\xE4\
-  \u2026"
+description: "Miten: Oletetaan, ett\xE4 sinulla on TypeScript-funktio, joka on n\xE4\
+  hnyt parempia p\xE4ivi\xE4 - se on hieman sekasotku ja kaipaisi hieman hell\xE4\xE4\
+  \ huolenpitoa."
 lastmod: '2024-03-13T22:44:56.323466-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktorointi on prosessi, jossa olemassa olevaa tietokonekoodia uudelleenj\xE4\
-  rjestet\xE4\xE4n muuttamatta sen ulkoista toimintaa."
+summary: "Oletetaan, ett\xE4 sinulla on TypeScript-funktio, joka on n\xE4hnyt parempia\
+  \ p\xE4ivi\xE4 - se on hieman sekasotku ja kaipaisi hieman hell\xE4\xE4 huolenpitoa."
 title: Koodin refaktorointi
 weight: 19
 ---

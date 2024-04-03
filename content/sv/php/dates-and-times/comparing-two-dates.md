@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:33:24.981729-07:00
-description: "J\xE4mf\xF6r tv\xE5 datum inneb\xE4r att avg\xF6ra tidsordningen mellan\
-  \ dem - vilket \xE4r tidigare, senare eller om de \xE4r identiska. Programmerare\
-  \ g\xF6r detta f\xF6r att\u2026"
+description: "S\xE5 h\xE4r g\xF6r du: PHP anv\xE4nder `DateTime` objekt f\xF6r att\
+  \ representera datum och tider. H\xE4r \xE4r ett enkelt s\xE4tt att j\xE4mf\xF6\
+  ra tv\xE5 datum."
 lastmod: '2024-03-13T22:44:38.008529-06:00'
 model: gpt-4-1106-preview
-summary: "J\xE4mf\xF6r tv\xE5 datum inneb\xE4r att avg\xF6ra tidsordningen mellan\
-  \ dem - vilket \xE4r tidigare, senare eller om de \xE4r identiska."
+summary: "PHP anv\xE4nder `DateTime` objekt f\xF6r att representera datum och tider."
 title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---

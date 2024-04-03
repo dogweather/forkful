@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:25:35.149524-07:00
-description: "TOML, lyhenne sanoista Tom's Obvious, Minimal Language, on tiedon serialisointiformaatti,\
-  \ joka muistuttaa JSONia tai YAMLia, mutta pyrkii\u2026"
+description: "Kuinka: Ennen sukeltamista sis\xE4\xE4n, asenna `toml`-paketti komennolla\
+  \ `pip install toml`. K\xE4sitell\xE4\xE4n TOML-tiedosto."
 lastmod: '2024-03-13T22:44:56.166807-06:00'
 model: gpt-4-0125-preview
-summary: TOML, lyhenne sanoista Tom's Obvious, Minimal Language, on tiedon serialisointiformaatti,
-  joka muistuttaa JSONia tai YAMLia, mutta pyrkii yksinkertaisuuteen ja luettavuuteen.
+summary: "Ennen sukeltamista sis\xE4\xE4n, asenna `toml`-paketti komennolla `pip install\
+  \ toml`."
 title: "Ty\xF6skentely TOML:n kanssa"
 weight: 39
 ---

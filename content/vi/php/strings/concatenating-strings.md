@@ -2,14 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:19.680601-07:00
-description: "N\u1ED1i chu\u1ED7i \u0111\u01A1n gi\u1EA3n ch\u1EC9 l\xE0 vi\u1EC7\
-  c gh\xE9p c\xE1c t\u1EEB l\u1EA1i v\u1EDBi nhau. H\xE3y t\u01B0\u1EDFng t\u01B0\u1EE3\
-  ng n\xF3 gi\u1ED1ng nh\u01B0 vi\u1EC7c t\u1EA1o ra m\u1ED9t \u0111o\xE0n t\xE0u\
-  \ t\u1EEB c\xE1c t\u1EEB ch\u1EE9 kh\xF4ng ph\u1EA3i c\xE1c toa t\xE0u. C\xE1c\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong PHP, n\u1ED1i chu\u1ED7i t\u1EA5\
+  t c\u1EA3 \u0111\u1EC1u quanh \u0111i\u1EC3m n\u1ED1i (`.`). L\u1EA5y hai chu\u1ED7\
+  i, \u0111\u1EB7t m\u1ED9t d\u1EA5u ch\u1EA5m \u1EDF gi\u1EEFa ch\xFAng, v\xE0 voila!\
+  \ Ch\xFAng gi\u1EDD \u0111\xE2y \u0111\xE3 tr\u1EDF th\xE0nh\u2026"
 lastmod: '2024-03-13T22:44:36.755460-06:00'
 model: gpt-4-0125-preview
-summary: "N\u1ED1i chu\u1ED7i \u0111\u01A1n gi\u1EA3n ch\u1EC9 l\xE0 vi\u1EC7c gh\xE9\
-  p c\xE1c t\u1EEB l\u1EA1i v\u1EDBi nhau."
+summary: "Trong PHP, n\u1ED1i chu\u1ED7i t\u1EA5t c\u1EA3 \u0111\u1EC1u quanh \u0111\
+  i\u1EC3m n\u1ED1i (`.`)."
 title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 weight: 3
 ---

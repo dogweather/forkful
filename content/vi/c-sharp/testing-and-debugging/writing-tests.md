@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:09.838901-07:00
-description: "Vi\u1EBFt test trong l\u1EADp tr\xECnh ngh\u0129a l\xE0 t\u1EA1o ra\
-  \ c\xE1c mini-ch\u01B0\u01A1ng tr\xECnh \u0111\u1EC3 ki\u1EC3m tra xem m\xE3 c\u1EE7\
-  a b\u1EA1n c\xF3 ho\u1EA1t \u0111\u1ED9ng nh\u01B0 mong \u0111\u1EE3i hay kh\xF4\
-  ng. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: H\xE3y th\u1EA3o lu\u1EADn m\u1ED9t s\u1ED1\
+  \ m\xE3 C# s\u1EED d\u1EE5ng NUnit, m\u1ED9t framework test ph\u1ED5 bi\u1EBFn:\
+  \ 1. Thi\u1EBFt l\u1EADp framework test c\u1EE7a b\u1EA1n - th\u01B0\u1EDDng \u0111\
+  \u01B0\u1EE3c bao g\u1ED3m nh\u01B0 m\u1ED9t g\xF3i\u2026"
 lastmod: '2024-03-13T22:44:36.662313-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EBFt test trong l\u1EADp tr\xECnh ngh\u0129a l\xE0 t\u1EA1o ra c\xE1\
-  c mini-ch\u01B0\u01A1ng tr\xECnh \u0111\u1EC3 ki\u1EC3m tra xem m\xE3 c\u1EE7a b\u1EA1\
-  n c\xF3 ho\u1EA1t \u0111\u1ED9ng nh\u01B0 mong \u0111\u1EE3i hay kh\xF4ng."
+summary: "H\xE3y th\u1EA3o lu\u1EADn m\u1ED9t s\u1ED1 m\xE3 C# s\u1EED d\u1EE5ng NUnit,\
+  \ m\u1ED9t framework test ph\u1ED5 bi\u1EBFn."
 title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
 weight: 36
 ---

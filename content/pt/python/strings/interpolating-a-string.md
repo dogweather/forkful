@@ -3,13 +3,12 @@ changelog:
 - 2024-01-28, dogweather, reviewed
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:24:01.169975-07:00
-description: "A interpola\xE7\xE3o de strings \xE9 o m\xE9todo de embutir express\xF5\
-  es dentro de literais de string. Programadores a utilizam para inserir valores dinamicamente\
-  \ em\u2026"
+description: "Como fazer: No Python 3.6 e vers\xF5es posteriores, voc\xEA pode interpolar\
+  \ strings usando f-strings. Veja como."
 lastmod: '2024-03-13T22:44:46.140016-06:00'
 model: gpt-4-0125-preview
-summary: "A interpola\xE7\xE3o de strings \xE9 o m\xE9todo de embutir express\xF5\
-  es dentro de literais de string."
+summary: "No Python 3.6 e vers\xF5es posteriores, voc\xEA pode interpolar strings\
+  \ usando f-strings."
 title: Interpolando uma string
 weight: 8
 ---

@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:32.747751-07:00
-description: "Scrivere test in Google Apps Script (GAS) consiste nel creare script\
-  \ automatizzati per verificare il comportamento dei propri codici, assicurandosi\
-  \ che\u2026"
+description: "Come fare: Sebbene Google Apps Script non disponga di un framework di\
+  \ testing integrato come alcuni altri ambienti di programmazione, \xE8 comunque\
+  \ possibile\u2026"
 lastmod: '2024-03-13T22:44:42.958983-06:00'
 model: gpt-4-0125-preview
-summary: Scrivere test in Google Apps Script (GAS) consiste nel creare script automatizzati
-  per verificare il comportamento dei propri codici, assicurandosi che funzionino
-  come previsto in varie condizioni.
+summary: "Sebbene Google Apps Script non disponga di un framework di testing integrato\
+  \ come alcuni altri ambienti di programmazione, \xE8 comunque possibile scrivere\
+  \ ed eseguire test utilizzando semplici funzioni GAS o integrando librerie di testing\
+  \ esterne come `QUnit`."
 title: Scrivere test
 weight: 36
 ---

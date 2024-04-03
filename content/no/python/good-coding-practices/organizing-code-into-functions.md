@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:11:59.926827-07:00
-description: "\xC5 organisere kode i funksjoner handler om \xE5 dele opp koden din\
-  \ i gjenbrukbare biter med spesifikke form\xE5l. Vi gj\xF8r det for \xE5 gj\xF8\
-  re koden renere, enklere \xE5\u2026"
+description: "Hvordan: La oss si at du skriver et skript for \xE5 beregne kvadratet\
+  \ og kuben av et tall. Uten funksjoner blir det et rot av gjentakelse."
 lastmod: '2024-03-13T22:44:40.366998-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 organisere kode i funksjoner handler om \xE5 dele opp koden din i gjenbrukbare\
-  \ biter med spesifikke form\xE5l."
+summary: "La oss si at du skriver et skript for \xE5 beregne kvadratet og kuben av\
+  \ et tall."
 title: Organisering av kode i funksjoner
 weight: 18
 ---

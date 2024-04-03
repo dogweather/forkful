@@ -1,11 +1,10 @@
 ---
 date: 2024-02-03 19:03:22.660128-07:00
-description: "Writing to standard error (stderr) in Bash is about directing error\
-  \ messages or any important diagnostic output separate from the standard output\u2026"
+description: 'How to: In Bash, you use `>&2` to redirect output to stderr. Here''s
+  a basic example.'
 lastmod: '2024-03-13T22:45:00.259066-06:00'
 model: gpt-4-0125-preview
-summary: Writing to standard error (stderr) in Bash is about directing error messages
-  or any important diagnostic output separate from the standard output (stdout).
+summary: In Bash, you use `>&2` to redirect output to stderr.
 title: Writing to standard error
 weight: 25
 ---

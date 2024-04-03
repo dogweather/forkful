@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:22.327591-07:00
-description: "Regul\xE6re uttrykk, eller regex, lar utviklere s\xF8ke, matche og manipulere\
-  \ strenger med avanserte m\xF8nsters\xF8kingsteknikker. I Rust bidrar bruk av regex\
-  \ til\u2026"
+description: "Hvordan: Rusts `regex`-bibliotek er det man g\xE5r til for \xE5 jobbe\
+  \ med regul\xE6re uttrykk. For \xE5 bruke det, m\xE5 du f\xF8rst legge det til i\
+  \ din `Cargo.toml`."
 lastmod: '2024-03-13T22:44:40.564038-06:00'
 model: gpt-4-0125-preview
-summary: "Regul\xE6re uttrykk, eller regex, lar utviklere s\xF8ke, matche og manipulere\
-  \ strenger med avanserte m\xF8nsters\xF8kingsteknikker."
+summary: "Rusts `regex`-bibliotek er det man g\xE5r til for \xE5 jobbe med regul\xE6\
+  re uttrykk."
 title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---

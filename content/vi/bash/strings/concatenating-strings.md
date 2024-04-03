@@ -2,14 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:10.382100-07:00
-description: "N\u1ED1i chu\u1ED7i trong Bash c\xF3 ngh\u0129a l\xE0 gh\xE9p hai ho\u1EB7\
-  c nhi\u1EC1u \u0111o\u1EA1n v\u0103n b\u1EA3n l\u1EA1i v\u1EDBi nhau. L\u1EADp tr\xEC\
-  nh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u \u0111\xF3 \u0111\u1EC3 x\xE2y d\u1EF1\
-  ng c\xE1c l\u1EC7nh, t\u1EA1o \u0111\u01B0\u1EDDng d\u1EABn t\u1EC7p,\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1\
+  ch nhanh ch\xF3ng \u0111\u1EC3 n\u1ED1i c\xE1c chu\u1ED7i c\u1EE7a b\u1EA1n trong\
+  \ Bash."
 lastmod: '2024-03-13T22:44:36.865810-06:00'
 model: gpt-4-0125-preview
-summary: "N\u1ED1i chu\u1ED7i trong Bash c\xF3 ngh\u0129a l\xE0 gh\xE9p hai ho\u1EB7\
-  c nhi\u1EC1u \u0111o\u1EA1n v\u0103n b\u1EA3n l\u1EA1i v\u1EDBi nhau."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch nhanh ch\xF3ng \u0111\u1EC3 n\u1ED1\
+  i c\xE1c chu\u1ED7i c\u1EE7a b\u1EA1n trong Bash."
 title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 weight: 3
 ---

@@ -1,13 +1,10 @@
 ---
 date: 2024-01-26 04:25:34.432597-07:00
-description: "TOML, eine Abk\xFCrzung f\xFCr Toms Offensichtliche, Minimale Sprache,\
-  \ ist ein Daten-Serialisierungsformat \xE4hnlich wie JSON oder YAML, zielt jedoch\
-  \ auf\u2026"
+description: 'Wie: Bevor Sie beginnen, installieren Sie das `toml`-Paket mit `pip
+  install toml`. Lassen Sie uns eine TOML-Datei parsen.'
 lastmod: '2024-03-13T22:44:53.401921-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, eine Abk\xFCrzung f\xFCr Toms Offensichtliche, Minimale Sprache, ist\
-  \ ein Daten-Serialisierungsformat \xE4hnlich wie JSON oder YAML, zielt jedoch auf\
-  \ Einfachheit und Lesbarkeit ab."
+summary: Bevor Sie beginnen, installieren Sie das `toml`-Paket mit `pip install toml`.
 title: Arbeiten mit TOML
 weight: 39
 ---

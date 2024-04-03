@@ -2,14 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:11.609208-07:00
-description: "Vi\u1EC7c tr\xEDch xu\u1EA5t c\xE1c chu\u1ED7i con l\xE0 vi\u1EC7c l\u1EA5\
-  y ra nh\u1EEFng ph\u1EA7n c\u1EE5 th\u1EC3 t\u1EEB m\u1ED9t chu\u1ED7i. L\u1EAD\
-  p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\u1EC3 x\u1EED l\xFD\
-  \ ho\u1EB7c thao t\xE1c d\u1EEF li\u1EC7u, nh\u01B0 l\u1EA5y t\xEAn\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: PHP cung c\u1EA5p m\u1ED9t s\u1ED1 h\xE0m \u0111\
+  \u1EC3 tr\xEDch xu\u1EA5t c\xE1c chu\u1ED7i con. H\xE3y xem x\xE9t `substr`, `mb_substr`,\
+  \ v\xE0 `strstr`."
 lastmod: '2024-03-13T22:44:36.751551-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c tr\xEDch xu\u1EA5t c\xE1c chu\u1ED7i con l\xE0 vi\u1EC7c l\u1EA5\
-  y ra nh\u1EEFng ph\u1EA7n c\u1EE5 th\u1EC3 t\u1EEB m\u1ED9t chu\u1ED7i."
+summary: "PHP cung c\u1EA5p m\u1ED9t s\u1ED1 h\xE0m \u0111\u1EC3 tr\xEDch xu\u1EA5\
+  t c\xE1c chu\u1ED7i con."
 title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 weight: 6
 ---

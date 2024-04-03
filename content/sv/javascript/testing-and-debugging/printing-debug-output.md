@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:52:56.723958-07:00
-description: "I JavaScript \xE4r att skriva ut fels\xF6kningsmeddelanden en metod\
-  \ f\xF6r att visa data eller fel under kodens k\xF6rning. Programmerare g\xF6r detta\
-  \ f\xF6r att f\xF6rst\xE5 vad\u2026"
+description: "How to: F\xF6r att skriva ut meddelanden i konsolen anv\xE4nds `console.log()`.\
+  \ Exempel."
 lastmod: '2024-03-13T22:44:38.295944-06:00'
 model: gpt-4-1106-preview
-summary: "I JavaScript \xE4r att skriva ut fels\xF6kningsmeddelanden en metod f\xF6\
-  r att visa data eller fel under kodens k\xF6rning."
+summary: "F\xF6r att skriva ut meddelanden i konsolen anv\xE4nds `console.log()`."
 title: "Skriva ut fels\xF6kningsdata"
 weight: 33
 ---

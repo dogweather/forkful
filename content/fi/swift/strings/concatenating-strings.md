@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:35:41.161529-07:00
-description: "Yhdist\xE4mme merkkijonoja siksikin, ett\xE4 voimme luoda pitki\xE4\
-  \ tekstinp\xE4tki\xE4 pienist\xE4 palasista. T\xE4t\xE4 tekev\xE4t ohjelmoijat everywhere\
-  \ luodaakseen dynaamisia\u2026"
+description: "How to: (Miten tehd\xE4\xE4n:) ."
 lastmod: '2024-03-13T22:44:56.899370-06:00'
 model: gpt-4-1106-preview
-summary: "Yhdist\xE4mme merkkijonoja siksikin, ett\xE4 voimme luoda pitki\xE4 tekstinp\xE4\
-  tki\xE4 pienist\xE4 palasista."
+summary: .
 title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---

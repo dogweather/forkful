@@ -1,8 +1,8 @@
 ---
 date: 2024-01-26 03:48:20.046588-07:00
-description: "Elixir est livr\xE9 avec un d\xE9bogueur graphique int\xE9gr\xE9 appel\xE9\
-  \ `:debugger`. Pour l'utiliser, vous devrez le d\xE9marrer et vous attacher \xE0\
-  \ votre processus en\u2026"
+description: "Comment faire : Elixir est livr\xE9 avec un d\xE9bogueur graphique int\xE9\
+  gr\xE9 appel\xE9 `:debugger`. Pour l'utiliser, vous devrez le d\xE9marrer et vous\
+  \ attacher \xE0 votre\u2026"
 lastmod: '2024-03-13T22:44:57.332030-06:00'
 model: gpt-4-0125-preview
 summary: "Elixir est livr\xE9 avec un d\xE9bogueur graphique int\xE9gr\xE9 appel\xE9\

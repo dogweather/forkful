@@ -2,15 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:24.335405-07:00
-description: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta Elm:ss\xE4\
-  \ tarkoittaa tekstuaalisen tiedon, joka edustaa p\xE4iv\xE4m\xE4\xE4ri\xE4 ja aikoja,\
-  \ muuntamista muotoon, jonka Elm voi\u2026"
+description: "Kuinka: Elm:ll\xE4 ei ole sis\xE4\xE4nrakennettua yht\xE4 vahvaa kyky\xE4\
+  \ p\xE4iv\xE4m\xE4\xE4rien j\xE4sent\xE4miseen kuin joillakin muilla kielill\xE4\
+  , vaan se p\xE4\xE4asiassa tukeutuu\u2026"
 lastmod: '2024-03-13T22:44:56.498079-06:00'
 model: gpt-4-0125-preview
-summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta Elm:ss\xE4 tarkoittaa\
-  \ tekstuaalisen tiedon, joka edustaa p\xE4iv\xE4m\xE4\xE4ri\xE4 ja aikoja, muuntamista\
-  \ muotoon, jonka Elm voi ymm\xE4rt\xE4\xE4 ja k\xE4sitell\xE4, erityisesti `Date`\
-  \ tyyppiin."
+summary: "Elm:ll\xE4 ei ole sis\xE4\xE4nrakennettua yht\xE4 vahvaa kyky\xE4 p\xE4\
+  iv\xE4m\xE4\xE4rien j\xE4sent\xE4miseen kuin joillakin muilla kielill\xE4, vaan\
+  \ se p\xE4\xE4asiassa tukeutuu JavaScript-yhteentoimivuuteen tai kirjastoihin monimutkaisempia\
+  \ operaatioita varten."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
 weight: 30
 ---

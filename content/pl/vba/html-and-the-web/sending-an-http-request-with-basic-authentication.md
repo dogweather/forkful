@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:57.647993-07:00
-description: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawow\u0105 autoryzacj\u0105\
-  \ w Visual Basic for Applications (VBA) dotyczy dost\u0119pu do zasob\xF3w sieciowych\
-  \ chronionych przez dane\u2026"
+description: "Jak to zrobi\u0107: W VBA mo\u017Cna u\u017Cy\u0107 biblioteki `Microsoft\
+  \ XML, v6.0` (MSXML2) do wysy\u0142ania \u017C\u0105da\u0144 HTTP z podstawow\u0105\
+  \ autoryzacj\u0105. Obejmuje to ustawienie\u2026"
 lastmod: '2024-03-13T22:44:35.231414-06:00'
 model: gpt-4-0125-preview
-summary: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawow\u0105 autoryzacj\u0105\
-  \ w Visual Basic for Applications (VBA) dotyczy dost\u0119pu do zasob\xF3w sieciowych\
-  \ chronionych przez dane uwierzytelniaj\u0105ce u\u017Cytkownika i has\u0142o."
+summary: "W VBA mo\u017Cna u\u017Cy\u0107 biblioteki `Microsoft XML, v6.0` (MSXML2)\
+  \ do wysy\u0142ania \u017C\u0105da\u0144 HTTP z podstawow\u0105 autoryzacj\u0105\
+  ."
 title: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnianiem"
 weight: 45
 ---

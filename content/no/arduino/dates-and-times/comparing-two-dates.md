@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:32:15.278550-07:00
-description: "\xC5 sammenligne to datoer inneb\xE6rer \xE5 se p\xE5 om de er like,\
-  \ hvilken som kommer f\xF8r eller tiden mellom dem. Programmerere gj\xF8r dette\
-  \ for \xE5 h\xE5ndtere frister,\u2026"
+description: 'How to: (Hvordan:) .'
 lastmod: '2024-03-13T22:44:41.070593-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 sammenligne to datoer inneb\xE6rer \xE5 se p\xE5 om de er like, hvilken\
-  \ som kommer f\xF8r eller tiden mellom dem."
+summary: .
 title: Sammenlikning av to datoer
 weight: 27
 ---

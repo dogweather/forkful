@@ -2,11 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:54.445466-07:00
-description: "De lengte van een string bepalen betekent het tellen van de karakters.\
-  \ Programmeurs doen dit om invoer te valideren, door karakters te loopen, of\u2026"
+description: 'Hoe doe je dat: Het `#` symbool klaart de klus in bash. Gebruik het
+  met parameterexpansie. Zo werkt het.'
 lastmod: '2024-03-13T22:44:50.970637-06:00'
 model: gpt-4-0125-preview
-summary: De lengte van een string bepalen betekent het tellen van de karakters.
+summary: Het `#` symbool klaart de klus in bash.
 title: De lengte van een string vinden
 weight: 7
 ---

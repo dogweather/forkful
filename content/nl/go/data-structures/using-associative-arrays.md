@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:49.487598-07:00
-description: "Associatieve arrays, bekend als maps in Go, stellen je in staat om sleutel-waardeparen\
-  \ op te slaan waarbij elke unieke sleutel naar een waarde wijst.\u2026"
+description: "Hoe te: Het cre\xEBren en initialiseren van een map in Go kan op verschillende\
+  \ manieren worden gedaan. Hier is een eenvoudig voorbeeld om je op weg te helpen."
 lastmod: '2024-03-13T22:44:50.280017-06:00'
 model: gpt-4-0125-preview
-summary: Associatieve arrays, bekend als maps in Go, stellen je in staat om sleutel-waardeparen
-  op te slaan waarbij elke unieke sleutel naar een waarde wijst.
+summary: "Het cre\xEBren en initialiseren van een map in Go kan op verschillende manieren\
+  \ worden gedaan."
 title: Gebruik van associatieve arrays
 weight: 15
 ---

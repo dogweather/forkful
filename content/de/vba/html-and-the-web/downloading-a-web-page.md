@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:27.711655-07:00
-description: "Das Herunterladen einer Webseite in Visual Basic for Applications (VBA)\
-  \ beinhaltet das Abrufen des HTML-Inhalts einer Webseite aus dem Internet.\u2026"
+description: "Wie geht das: Um eine Webseite in VBA herunterzuladen, k\xF6nnen Sie\
+  \ die Microsoft XML, v6.0 (MSXML6) Bibliothek nutzen, welche Server HTTP-Anfragen\u2026"
 lastmod: '2024-03-13T22:44:53.716399-06:00'
 model: gpt-4-0125-preview
-summary: Das Herunterladen einer Webseite in Visual Basic for Applications (VBA) beinhaltet
-  das Abrufen des HTML-Inhalts einer Webseite aus dem Internet.
+summary: "Um eine Webseite in VBA herunterzuladen, k\xF6nnen Sie die Microsoft XML,\
+  \ v6.0 (MSXML6) Bibliothek nutzen, welche Server HTTP-Anfragen erm\xF6glicht."
 title: Herunterladen einer Webseite
 weight: 42
 ---

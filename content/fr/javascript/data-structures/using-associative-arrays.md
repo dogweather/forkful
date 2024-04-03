@@ -2,14 +2,13 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:53.479595-07:00
-description: "Les tableaux associatifs, ou comme ils sont plus pr\xE9cis\xE9ment connus\
-  \ en JavaScript, les objets, vous permettent d\u2019associer des cl\xE9s \xE0 des\
-  \ valeurs. Ceci est\u2026"
+description: "Comment : Cr\xE9er et utiliser des tableaux associatifs (objets) en\
+  \ JavaScript est simple. Vous d\xE9finissez un objet avec des accolades `{}`, et\
+  \ \xE0 l'int\xE9rieur\u2026"
 lastmod: '2024-03-13T22:44:58.267247-06:00'
 model: gpt-4-0125-preview
-summary: "Les tableaux associatifs, ou comme ils sont plus pr\xE9cis\xE9ment connus\
-  \ en JavaScript, les objets, vous permettent d\u2019associer des cl\xE9s \xE0 des\
-  \ valeurs."
+summary: "Cr\xE9er et utiliser des tableaux associatifs (objets) en JavaScript est\
+  \ simple."
 title: Utilisation des tableaux associatifs
 weight: 15
 ---

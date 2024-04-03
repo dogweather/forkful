@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:58.913386-07:00
-description: "Capitaliser une cha\xEEne en C consiste \xE0 convertir le premier caract\xE8\
-  re de chaque mot dans une cha\xEEne donn\xE9e en majuscule s'il s'agit d'une lettre\u2026"
+description: "Comment faire : Capitaliser une cha\xEEne en C n\xE9cessite une compr\xE9\
+  hension de base de la manipulation de caract\xE8res et du parcours de cha\xEEne.\
+  \ \xC9tant donn\xE9 que\u2026"
 lastmod: '2024-03-13T22:44:58.352038-06:00'
 model: gpt-4-0125-preview
-summary: "Capitaliser une cha\xEEne en C consiste \xE0 convertir le premier caract\xE8\
-  re de chaque mot dans une cha\xEEne donn\xE9e en majuscule s'il s'agit d'une lettre\
-  \ minuscule."
+summary: "Capitaliser une cha\xEEne en C n\xE9cessite une compr\xE9hension de base\
+  \ de la manipulation de caract\xE8res et du parcours de cha\xEEne."
 title: "Mettre une cha\xEEne en majuscules"
 weight: 2
 ---

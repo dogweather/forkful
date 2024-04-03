@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:26.302449-07:00
-description: "Los arreglos asociativos, m\xE1s conocidos como hashes en Ruby, permiten\
-  \ emparejar claves \xFAnicas con valores. Son indispensables cuando necesitas llevar\
-  \ un\u2026"
+description: "C\xF3mo hacerlo: Crear y usar hashes en Ruby es sencillo. Puedes inicializar\
+  \ un hash vac\xEDo, llenarlo con pares clave-valor, acceder a los valores por sus\u2026"
 lastmod: '2024-03-13T22:44:59.582722-06:00'
 model: gpt-4-0125-preview
-summary: "Los arreglos asociativos, m\xE1s conocidos como hashes en Ruby, permiten\
-  \ emparejar claves \xFAnicas con valores."
+summary: Crear y usar hashes en Ruby es sencillo.
 title: Uso de matrices asociativas
 weight: 15
 ---

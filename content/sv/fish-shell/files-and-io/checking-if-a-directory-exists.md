@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:16.544687-07:00
-description: "Att kontrollera om en katalog finns i Fish Shell g\xF6r att skript kan\
-  \ ta beslut baserade p\xE5 n\xE4rvaron eller fr\xE5nvaron av katalogstrukturer,\
-  \ vilket m\xF6jligg\xF6r\u2026"
+description: "Hur g\xF6r man: Fish Shell anv\xE4nder kommandot `test` f\xF6r att kontrollera\
+  \ filtyper och egenskaper, inklusive om ett m\xE5l \xE4r en katalog. H\xE4r \xE4\
+  r ett\u2026"
 lastmod: '2024-03-13T22:44:38.352695-06:00'
 model: gpt-4-0125-preview
-summary: "Att kontrollera om en katalog finns i Fish Shell g\xF6r att skript kan ta\
-  \ beslut baserade p\xE5 n\xE4rvaron eller fr\xE5nvaron av katalogstrukturer, vilket\
-  \ m\xF6jligg\xF6r uppgifter som villkorliga filoperationer, loggning eller milj\xF6\
-  konfigurering."
+summary: "Fish Shell anv\xE4nder kommandot `test` f\xF6r att kontrollera filtyper\
+  \ och egenskaper, inklusive om ett m\xE5l \xE4r en katalog."
 title: Kontrollera om en katalog existerar
 weight: 20
 ---

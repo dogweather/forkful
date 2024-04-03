@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:43:05.715171-07:00
-description: "Cancellare i caratteri che corrispondono a un pattern significa usare\
-  \ espressioni regolari o funzioni per rimuovere specifiche sequenze di caratteri\
-  \ da\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:43.160842-06:00'
 model: gpt-4-1106-preview
-summary: Cancellare i caratteri che corrispondono a un pattern significa usare espressioni
-  regolari o funzioni per rimuovere specifiche sequenze di caratteri da una stringa.
+summary: .
 title: Eliminazione di caratteri che corrispondono a un pattern
 weight: 5
 ---

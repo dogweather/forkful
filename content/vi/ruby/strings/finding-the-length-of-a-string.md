@@ -2,15 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:48.474692-07:00
-description: "T\xECm \u0111\u1ED9 d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i ngh\u0129a l\xE0\
-  \ \u0111\u1EBFm s\u1ED1 k\xFD t\u1EF1 c\u1EE7a n\xF3. \u0110\xE2y l\xE0 m\u1ED9\
-  t c\xF4ng vi\u1EC7c c\u01A1 b\u1EA3n nh\u01B0ng quan tr\u1ECDng cho c\xE1c nhi\u1EC7\
-  m v\u1EE5 nh\u01B0 x\xE1c th\u1EF1c, x\u1EED l\xFD v\u0103n b\u1EA3n v\xE0 x\xE1\
-  c\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Ruby gi\u1EEF n\xF3 \u0111\u01A1n gi\u1EA3n\
+  \ v\u1EDBi ph\u01B0\u01A1ng th\u1EE9c `.length`."
 lastmod: '2024-03-13T22:44:37.325144-06:00'
 model: gpt-4-0125-preview
-summary: "T\xECm \u0111\u1ED9 d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i ngh\u0129a l\xE0\
-  \ \u0111\u1EBFm s\u1ED1 k\xFD t\u1EF1 c\u1EE7a n\xF3."
+summary: "Ruby gi\u1EEF n\xF3 \u0111\u01A1n gi\u1EA3n v\u1EDBi ph\u01B0\u01A1ng th\u1EE9\
+  c `.length`."
 title: "T\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
 weight: 7
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:13.799318-07:00
-description: "Associatieve arrays, bekend als `std::map` of `std::unordered_map` in\
-  \ C++, overbruggen de kloof tussen array-indexen en gegevens uit de echte wereld\
-  \ door\u2026"
+description: "Hoe te: In C++ komen associatieve arrays tot leven met de `<map>` en\
+  \ `<unordered_map>` headers. Laten we enkele voorbeelden doorlopen om beide in actie\
+  \ te\u2026"
 lastmod: '2024-03-13T22:44:51.105544-06:00'
 model: gpt-4-0125-preview
-summary: Associatieve arrays, bekend als `std::map` of `std::unordered_map` in C++,
-  overbruggen de kloof tussen array-indexen en gegevens uit de echte wereld door je
-  in staat te stellen om betekenisvolle sleutels te gebruiken.
+summary: In C++ komen associatieve arrays tot leven met de `<map>` en `<unordered_map>`
+  headers.
 title: Gebruik van associatieve arrays
 weight: 15
 ---

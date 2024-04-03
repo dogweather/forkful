@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 18:00:08.985285-07:00
-description: "Att skicka en HTTP-beg\xE4ran inneb\xE4r att din applikation beg\xE4\
-  r data fr\xE5n eller skickar data till en server \xF6ver internet. Programutvecklare\
-  \ g\xF6r detta f\xF6r\u2026"
+description: "Att g\xF6ra: Kotlin anv\xE4nder bibliotek som `khttp` eller `Fuel` f\xF6\
+  r HTTP-beg\xE4ran, men h\xE4r fokuserar vi p\xE5 Ktor, ett Kotlin-eget s\xE4tt."
 lastmod: '2024-03-13T22:44:37.868107-06:00'
 model: gpt-4-1106-preview
-summary: "Att skicka en HTTP-beg\xE4ran inneb\xE4r att din applikation beg\xE4r data\
-  \ fr\xE5n eller skickar data till en server \xF6ver internet."
+summary: "Kotlin anv\xE4nder bibliotek som `khttp` eller `Fuel` f\xF6r HTTP-beg\xE4\
+  ran, men h\xE4r fokuserar vi p\xE5 Ktor, ett Kotlin-eget s\xE4tt."
 title: "Skicka en http-f\xF6rfr\xE5gan"
 weight: 44
 ---

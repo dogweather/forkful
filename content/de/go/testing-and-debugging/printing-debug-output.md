@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:17.566695-07:00
-description: "In der Computerprogrammierung bezeichnet \"Drucken von Debug-Ausgaben\"\
-  \ das Erzeugen von detaillierten Informationsnachrichten, die Entwicklern helfen,\
-  \ den\u2026"
+description: "Wie geht das: In Go k\xF6nnen Sie das Standardpaket `fmt` verwenden,\
+  \ um Debug-Ausgaben auf der Konsole zu drucken. Das `fmt`-Paket bietet eine Vielzahl\
+  \ von\u2026"
 lastmod: '2024-03-13T22:44:53.290449-06:00'
 model: gpt-4-0125-preview
-summary: "In der Computerprogrammierung bezeichnet \"Drucken von Debug-Ausgaben\"\
-  \ das Erzeugen von detaillierten Informationsnachrichten, die Entwicklern helfen,\
-  \ den Ausf\xFChrungsfluss ihres Programms zu verstehen oder Probleme zu lokalisieren."
+summary: "In Go k\xF6nnen Sie das Standardpaket `fmt` verwenden, um Debug-Ausgaben\
+  \ auf der Konsole zu drucken."
 title: Ausgabe von Debug-Informationen drucken
 weight: 33
 ---

@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 03:42:22.120580-07:00
-description: "Enlever les guillemets d'une cha\xEEne signifie retirer les caract\xE8\
-  res de guillemets simples (`'`) ou doubles (`\"`) qui d\xE9finissent les litt\xE9\
-  raux de cha\xEEne\u2026"
+description: "Comment faire : Voici votre guide direct pour lib\xE9rer ces maudits\
+  \ marqueurs de citation de vos cha\xEEnes dans TypeScript."
 lastmod: '2024-03-13T22:44:57.423900-06:00'
 model: gpt-4-0125-preview
-summary: "Enlever les guillemets d'une cha\xEEne signifie retirer les caract\xE8res\
-  \ de guillemets simples (`'`) ou doubles (`\"`) qui d\xE9finissent les litt\xE9\
-  raux de cha\xEEne dans le code."
+summary: "Voici votre guide direct pour lib\xE9rer ces maudits marqueurs de citation\
+  \ de vos cha\xEEnes dans TypeScript."
 title: "Retirer les guillemets d'une cha\xEEne"
 weight: 9
 ---

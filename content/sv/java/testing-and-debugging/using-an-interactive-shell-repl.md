@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 04:15:25.843954-07:00
-description: "En REPL (Read-Eval-Print Loop) \xE4r ett interaktivt skal som processar\
-  \ enskilda anv\xE4ndarinmatningar, exekverar kod och returnerar resultatet. Programmerare\u2026"
+description: "Hur man g\xF6r: Att starta en REPL i Java \xE4r enkelt med verktyget\
+  \ `jshell` som introducerades i Java 9. S\xE5 h\xE4r f\xE5r du tag p\xE5 det och\
+  \ startar en grundl\xE4ggande\u2026"
 lastmod: '2024-03-13T22:44:37.788989-06:00'
 model: gpt-4-0125-preview
-summary: "En REPL (Read-Eval-Print Loop) \xE4r ett interaktivt skal som processar\
-  \ enskilda anv\xE4ndarinmatningar, exekverar kod och returnerar resultatet."
+summary: "Att starta en REPL i Java \xE4r enkelt med verktyget `jshell` som introducerades\
+  \ i Java 9."
 title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---

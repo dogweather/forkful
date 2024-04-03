@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:46:43.869230-07:00
-description: "Redondear n\xFAmeros significa ajustarlos al n\xFAmero entero m\xE1\
-  s cercano o a una fracci\xF3n con cierta precisi\xF3n. Los programadores redondean\
-  \ n\xFAmeros para\u2026"
+description: "C\xF3mo: Rust hace que redondear sea muy f\xE1cil. Mira estos m\xE9\
+  todos para los tipos `f32` o `f64`."
 lastmod: '2024-03-13T22:44:58.841424-06:00'
 model: gpt-4-0125-preview
-summary: "Redondear n\xFAmeros significa ajustarlos al n\xFAmero entero m\xE1s cercano\
-  \ o a una fracci\xF3n con cierta precisi\xF3n."
+summary: "Rust hace que redondear sea muy f\xE1cil."
 title: "Redondeo de n\xFAmeros"
 weight: 13
 ---

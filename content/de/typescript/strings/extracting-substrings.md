@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:46:55.223349-07:00
-description: "Teilstrings extrahieren bedeutet, bestimmte Abschnitte aus einem l\xE4\
-  ngeren String herauszuschneiden. Programmierer machen das, um Daten zu manipulieren,\
-  \ zu\u2026"
+description: "How to: TypeScript bietet mehrere Methoden, um Teilstrings zu extrahieren:\
+  \ `slice()`, `substring()`, und `substr()` (letztere ist veraltet). Hier sehen\u2026"
 lastmod: '2024-03-13T22:44:53.620752-06:00'
 model: gpt-4-1106-preview
-summary: "Teilstrings extrahieren bedeutet, bestimmte Abschnitte aus einem l\xE4ngeren\
-  \ String herauszuschneiden."
+summary: TypeScript bietet mehrere Methoden, um Teilstrings zu extrahieren.
 title: Teilstrings extrahieren
 weight: 6
 ---

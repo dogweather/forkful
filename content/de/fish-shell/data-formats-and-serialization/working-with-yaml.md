@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:51.884164-07:00
-description: "Die Arbeit mit YAML umfasst das Parsen und Manipulieren von YAML-Dateien\
-  \ (YAML Ain't Markup Language), einem Daten-Serialisierungsformat, das f\xFCr\u2026"
+description: "Wie: Fish Shell hat keine eingebaute Unterst\xFCtzung zum Parsen von\
+  \ YAML, aber man kann Drittanbieter-Tools wie `yq` (einen leichtgewichtigen und\
+  \ tragbaren\u2026"
 lastmod: '2024-03-13T22:44:54.329008-06:00'
 model: gpt-4-0125-preview
-summary: "Die Arbeit mit YAML umfasst das Parsen und Manipulieren von YAML-Dateien\
-  \ (YAML Ain't Markup Language), einem Daten-Serialisierungsformat, das f\xFCr Konfigurationsdateien\
-  \ verwendet wird, in der Fish Shell."
+summary: "Fish Shell hat keine eingebaute Unterst\xFCtzung zum Parsen von YAML, aber\
+  \ man kann Drittanbieter-Tools wie `yq` (einen leichtgewichtigen und tragbaren Befehlszeilen-YAML-Prozessor)\
+  \ nutzen, um YAML-Daten zu verarbeiten."
 title: Arbeiten mit YAML
 weight: 41
 ---

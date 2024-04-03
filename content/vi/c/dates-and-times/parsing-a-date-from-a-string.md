@@ -2,17 +2,17 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:44.325563-07:00
-description: "Ph\xE2n t\xEDch c\xFA ph\xE1p ng\xE0y t\u1EEB chu\u1ED7i trong C li\xEA\
-  n quan \u0111\u1EBFn vi\u1EC7c chuy\u1EC3n \u0111\u1ED5i c\xE1c bi\u1EC3u di\u1EC5\
-  n v\u0103n b\u1EA3n c\u1EE7a ng\xE0y th\xE0nh \u0111\u1ECBnh d\u1EA1ng m\xE0 ch\u01B0\
-  \u01A1ng tr\xECnh c\xF3 th\u1EC3 thao t\xE1c v\xE0\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: C kh\xF4ng cung c\u1EA5p m\u1ED9t c\xE1ch t\xED\
+  ch h\u1EE3p s\u1EB5n \u0111\u1EC3 ph\xE2n t\xEDch c\xFA ph\xE1p ng\xE0y t\u1EEB\
+  \ chu\u1ED7i m\u1ED9t c\xE1ch tr\u1EF1c ti\u1EBFp, v\xEC v\u1EADy ch\xFAng ta th\u01B0\
+  \u1EDDng ph\u1EA3i s\u1EED d\u1EE5ng h\xE0m\u2026"
 lastmod: '2024-03-13T22:44:37.280903-06:00'
 model: gpt-4-0125-preview
-summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p ng\xE0y t\u1EEB chu\u1ED7i trong C li\xEA\
-  n quan \u0111\u1EBFn vi\u1EC7c chuy\u1EC3n \u0111\u1ED5i c\xE1c bi\u1EC3u di\u1EC5\
-  n v\u0103n b\u1EA3n c\u1EE7a ng\xE0y th\xE0nh \u0111\u1ECBnh d\u1EA1ng m\xE0 ch\u01B0\
-  \u01A1ng tr\xECnh c\xF3 th\u1EC3 thao t\xE1c v\xE0 ph\xE2n t\xEDch hi\u1EC7u qu\u1EA3\
-  \ h\u01A1n."
+summary: "C kh\xF4ng cung c\u1EA5p m\u1ED9t c\xE1ch t\xEDch h\u1EE3p s\u1EB5n \u0111\
+  \u1EC3 ph\xE2n t\xEDch c\xFA ph\xE1p ng\xE0y t\u1EEB chu\u1ED7i m\u1ED9t c\xE1ch\
+  \ tr\u1EF1c ti\u1EBFp, v\xEC v\u1EADy ch\xFAng ta th\u01B0\u1EDDng ph\u1EA3i s\u1EED\
+  \ d\u1EE5ng h\xE0m `strptime` c\xF3 trong th\u01B0 vi\u1EC7n `<time.h>` cho c\xE1\
+  c h\u1EC7 th\u1ED1ng POSIX."
 title: "Ph\xE2n t\xEDch ng\xE0y th\xE1ng t\u1EEB m\u1ED9t chu\u1ED7i"
 weight: 30
 ---

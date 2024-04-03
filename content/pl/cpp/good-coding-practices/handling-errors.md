@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 00:49:40.335055-07:00
-description: "Obs\u0142uga b\u0142\u0119d\xF3w to planowanie na wypadek, gdy co\u015B\
-  \ p\xF3jdzie nie tak. Jest to kluczowe, poniewa\u017C pomaga unikn\u0105\u0107 awarii\
-  \ i sprawia, \u017Ce oprogramowanie jest\u2026"
+description: "Jak to zrobi\u0107: Oto podstawowy blok try-catch s\u0142u\u017C\u0105\
+  cy do obs\u0142ugi wyj\u0105tku."
 lastmod: '2024-03-13T22:44:35.720343-06:00'
 model: gpt-4-1106-preview
-summary: "Obs\u0142uga b\u0142\u0119d\xF3w to planowanie na wypadek, gdy co\u015B\
-  \ p\xF3jdzie nie tak."
+summary: "Oto podstawowy blok try-catch s\u0142u\u017C\u0105cy do obs\u0142ugi wyj\u0105\
+  tku."
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---

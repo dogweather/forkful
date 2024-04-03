@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:39:31.135489-07:00
-description: "N\xFAmeros complexos s\xE3o uma combina\xE7\xE3o de n\xFAmeros reais\
-  \ e imagin\xE1rios, como `a + bi`, onde `i` \xE9 a raiz quadrada de -1. Eles s\xE3\
-  o essenciais em campos como\u2026"
+description: "Como: Elm n\xE3o tem suporte interno para n\xFAmeros complexos, ent\xE3\
+  o voc\xEA criar\xE1 seu pr\xF3prio tipo e fun\xE7\xF5es. Aqui est\xE1 uma configura\xE7\
+  \xE3o r\xE1pida."
 lastmod: '2024-03-13T22:44:46.493951-06:00'
 model: gpt-4-0125-preview
-summary: "N\xFAmeros complexos s\xE3o uma combina\xE7\xE3o de n\xFAmeros reais e imagin\xE1\
-  rios, como `a + bi`, onde `i` \xE9 a raiz quadrada de -1."
+summary: "Elm n\xE3o tem suporte interno para n\xFAmeros complexos, ent\xE3o voc\xEA\
+  \ criar\xE1 seu pr\xF3prio tipo e fun\xE7\xF5es."
 title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---

@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:00:17.743137-07:00
-description: "Het parsen van een datum uit een string in Go houdt in dat de als tekst\
-  \ weergegeven datum wordt omgezet naar een bruikbaarder formaat (bijv. `time.Time`).\u2026"
+description: "Hoe te: Go biedt robuuste ondersteuning voor het parsen van datums en\
+  \ tijden door middel van het `time`-pakket. De sleutel is het begrijpen van Go's\u2026"
 lastmod: '2024-03-13T22:44:50.297382-06:00'
 model: gpt-4-0125-preview
-summary: Het parsen van een datum uit een string in Go houdt in dat de als tekst weergegeven
-  datum wordt omgezet naar een bruikbaarder formaat (bijv.
+summary: Go biedt robuuste ondersteuning voor het parsen van datums en tijden door
+  middel van het `time`-pakket.
 title: Een datum ontleden uit een string
 weight: 30
 ---

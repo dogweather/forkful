@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:46:44.439511-07:00
-description: "Extrahering av substr\xE4ngar involverar att plocka specifika delar\
-  \ ur en str\xE4ng, n\xE5got som ofta nyttjas f\xF6r att bearbeta textdata efter\
-  \ behov. Det sparas\u2026"
+description: "Hur g\xF6r man?: Extrahera en substr\xE4ng med hj\xE4lp av Swift kan\
+  \ g\xF6ras enkelt med `String` metoder och `Range` objekt. H\xE4r \xE4r ett snabbt\
+  \ exempel."
 lastmod: '2024-03-13T22:44:38.240412-06:00'
 model: gpt-4-1106-preview
-summary: "Extrahering av substr\xE4ngar involverar att plocka specifika delar ur en\
-  \ str\xE4ng, n\xE5got som ofta nyttjas f\xF6r att bearbeta textdata efter behov."
+summary: "Extrahera en substr\xE4ng med hj\xE4lp av Swift kan g\xF6ras enkelt med\
+  \ `String` metoder och `Range` objekt."
 title: "Extrahera delstr\xE4ngar"
 weight: 6
 ---

@@ -1,14 +1,13 @@
 ---
 date: 2024-01-26 03:40:32.873795-07:00
-description: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w oznacza pozbycie\
-  \ si\u0119 tych irytuj\u0105cych znak\xF3w cudzys\u0142owu, kt\xF3re mog\u0105 namiesza\u0107\
-  \ w twoim kodzie, szczeg\xF3lnie kiedy\u2026"
+description: "Jak to zrobi\u0107: Wyobra\u017A sobie, \u017Ce masz ci\u0105g znak\xF3\
+  w otoczony podw\xF3jnymi cudzys\u0142owami, takimi jak `\"\\\"Hello, World!\\\"\"\
+  ` i chcesz uzyska\u0107 czysty tekst bez\u2026"
 lastmod: '2024-03-13T22:44:35.784517-06:00'
 model: gpt-4-0125-preview
-summary: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w oznacza pozbycie si\u0119\
-  \ tych irytuj\u0105cych znak\xF3w cudzys\u0142owu, kt\xF3re mog\u0105 namiesza\u0107\
-  \ w twoim kodzie, szczeg\xF3lnie kiedy dokonujesz analizy danych lub konstruujesz\
-  \ obiekty JSON."
+summary: "Wyobra\u017A sobie, \u017Ce masz ci\u0105g znak\xF3w otoczony podw\xF3jnymi\
+  \ cudzys\u0142owami, takimi jak `\"\\\"Hello, World!\\\"\"` i chcesz uzyska\u0107\
+  \ czysty tekst bez cudzys\u0142ow\xF3w."
 title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---

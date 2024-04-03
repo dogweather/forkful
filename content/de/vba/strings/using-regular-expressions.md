@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:57.408193-07:00
-description: "Regul\xE4re Ausdr\xFCcke (regex) in Visual Basic for Applications (VBA)\
-  \ bieten eine leistungsstarke M\xF6glichkeit, um Zeichenketten zu durchsuchen, abzugleichen\u2026"
+description: "Wie geht das: Um regul\xE4re Ausdr\xFCcke in VBA zu verwenden, m\xFC\
+  ssen Sie zuerst die Microsoft VBScript Regular Expressions-Bibliothek aktivieren.\
+  \ Gehen Sie im\u2026"
 lastmod: '2024-03-13T22:44:53.706517-06:00'
 model: gpt-4-0125-preview
-summary: "Regul\xE4re Ausdr\xFCcke (regex) in Visual Basic for Applications (VBA)\
-  \ bieten eine leistungsstarke M\xF6glichkeit, um Zeichenketten zu durchsuchen, abzugleichen\
-  \ und zu manipulieren."
+summary: "Um regul\xE4re Ausdr\xFCcke in VBA zu verwenden, m\xFCssen Sie zuerst die\
+  \ Microsoft VBScript Regular Expressions-Bibliothek aktivieren."
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:21.568948-07:00
-description: "Schrijven naar standaard fout (`stderr`) stuurt foutmeldingen en diagnostische\
-  \ berichten apart van standaard uitvoer (`stdout`). Programmeurs doen dit om\u2026"
+description: 'Hoe: In TypeScript kun je naar `stderr` schrijven met behulp van `console.error`
+  of `process.stderr.write`. Hier zijn beide in actie.'
 lastmod: '2024-03-13T22:44:50.567701-06:00'
 model: gpt-4-0125-preview
-summary: Schrijven naar standaard fout (`stderr`) stuurt foutmeldingen en diagnostische
-  berichten apart van standaard uitvoer (`stdout`).
+summary: In TypeScript kun je naar `stderr` schrijven met behulp van `console.error`
+  of `process.stderr.write`.
 title: Schrijven naar standaardfout
 weight: 25
 ---

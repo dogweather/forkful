@@ -1,13 +1,12 @@
 ---
 date: 2024-01-20 18:01:06.660786-07:00
-description: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica es usar un\
-  \ m\xE9todo para acceder a un recurso en l\xEDnea que requiere nombre de usuario\
-  \ y contrase\xF1a. Los\u2026"
+description: "C\xF3mo hacerlo: Para enviar una solicitud HTTP con autenticaci\xF3\
+  n b\xE1sica en Bash, necesitar\xE1s usar `curl` con la bandera `-u` para proporcionar\
+  \ las\u2026"
 lastmod: '2024-03-13T22:44:59.246409-06:00'
 model: gpt-4-1106-preview
-summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica es usar un m\xE9\
-  todo para acceder a un recurso en l\xEDnea que requiere nombre de usuario y contrase\xF1\
-  a."
+summary: "Para enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica en Bash, necesitar\xE1\
+  s usar `curl` con la bandera `-u` para proporcionar las credenciales."
 title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
 weight: 45
 ---

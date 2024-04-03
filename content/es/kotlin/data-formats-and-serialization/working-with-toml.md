@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:23:36.940357-07:00
-description: "TOML significa Tom's Obvious, Minimal Language (Lenguaje M\xEDnimo y\
-  \ Obvio de Tom). Se utiliza para archivos de configuraci\xF3n porque es f\xE1cil\
-  \ de leer y\u2026"
+description: "C\xF3mo hacerlo: Para manejar TOML en Kotlin, podr\xEDas usar una biblioteca\
+  \ como `ktoml`. Primero, vamos a agregar la dependencia en tu `build.gradle.kts`."
 lastmod: '2024-03-13T22:44:59.059860-06:00'
 model: gpt-4-0125-preview
-summary: "TOML significa Tom's Obvious, Minimal Language (Lenguaje M\xEDnimo y Obvio\
-  \ de Tom)."
+summary: "Para manejar TOML en Kotlin, podr\xEDas usar una biblioteca como `ktoml`."
 title: Trabajando con TOML
 weight: 39
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:17.483545-07:00
-description: "Mettre en majuscule une cha\xEEne de caract\xE8res en C# consiste \xE0\
-  \ convertir le premier caract\xE8re d'une cha\xEEne en majuscule s'il ne l'est pas\
-  \ d\xE9j\xE0. Cette\u2026"
+description: "Comment faire : C# propose une approche simple pour mettre en majuscule\
+  \ les cha\xEEnes de caract\xE8res en utilisant des m\xE9thodes int\xE9gr\xE9es.\
+  \ La mani\xE8re la plus\u2026"
 lastmod: '2024-03-13T22:44:57.768605-06:00'
 model: gpt-4-0125-preview
-summary: "Mettre en majuscule une cha\xEEne de caract\xE8res en C# consiste \xE0 convertir\
-  \ le premier caract\xE8re d'une cha\xEEne en majuscule s'il ne l'est pas d\xE9j\xE0\
-  ."
+summary: "C# propose une approche simple pour mettre en majuscule les cha\xEEnes de\
+  \ caract\xE8res en utilisant des m\xE9thodes int\xE9gr\xE9es."
 title: "Mettre en majuscule une cha\xEEne"
 weight: 2
 ---

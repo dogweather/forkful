@@ -2,16 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:46.825293-07:00
-description: "L\xE0m vi\u1EC7c v\u1EDBi CSV (Comma-Separated Values - Gi\xE1 tr\u1ECB\
-  \ t\xE1ch b\u1EB1ng d\u1EA5u ph\u1EA9y) trong JavaScript th\u01B0\u1EDDng c\xF3\
-  \ ngh\u0129a l\xE0 ph\xE2n t\xEDch v\xE0 t\u1EA1o d\u1EEF li\u1EC7u v\u0103n b\u1EA3\
-  n cho b\u1EA3ng t\xEDnh\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: **Ph\xE2n t\xEDch CSV th\xE0nh JSON:**."
 lastmod: '2024-03-13T22:44:37.182171-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m vi\u1EC7c v\u1EDBi CSV (Comma-Separated Values - Gi\xE1 tr\u1ECB\
-  \ t\xE1ch b\u1EB1ng d\u1EA5u ph\u1EA9y) trong JavaScript th\u01B0\u1EDDng c\xF3\
-  \ ngh\u0129a l\xE0 ph\xE2n t\xEDch v\xE0 t\u1EA1o d\u1EEF li\u1EC7u v\u0103n b\u1EA3\
-  n cho b\u1EA3ng t\xEDnh ho\u1EB7c truy\u1EC1n d\u1EEF li\u1EC7u."
+summary: "**Ph\xE2n t\xEDch CSV th\xE0nh JSON:**."
 title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 weight: 37
 ---

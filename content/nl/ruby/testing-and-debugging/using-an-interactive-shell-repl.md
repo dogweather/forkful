@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:20.562018-07:00
-description: "Een interactieve shell, of REPL (Read-Eval-Print Loop), stelt je in\
-  \ staat om in real-time code te testen. Programmeurs gebruiken het om te experimenteren,\u2026"
+description: 'Hoe: Ruby''s REPL heet IRB (Interactive Ruby). Spring erin en probeer
+  Ruby direct vanuit je terminal.'
 lastmod: '2024-03-13T22:44:51.339797-06:00'
 model: gpt-4-0125-preview
-summary: Een interactieve shell, of REPL (Read-Eval-Print Loop), stelt je in staat
-  om in real-time code te testen.
+summary: Ruby's REPL heet IRB (Interactive Ruby).
 title: Het gebruik van een interactieve shell (REPL)
 weight: 34
 ---

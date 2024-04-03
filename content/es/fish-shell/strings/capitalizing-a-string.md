@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:13.861291-07:00
-description: "Capitalizar una cadena significa modificarla de modo que la primera\
-  \ letra est\xE9 en may\xFAscula y el resto de la cadena en min\xFAscula. Esta es\
-  \ una tarea com\xFAn\u2026"
+description: "C\xF3mo hacerlo: En Fish Shell, las cadenas pueden ser manipuladas directamente\
+  \ con funciones integradas, sin la necesidad de herramientas o bibliotecas\u2026"
 lastmod: '2024-03-13T22:44:59.483696-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizar una cadena significa modificarla de modo que la primera letra\
-  \ est\xE9 en may\xFAscula y el resto de la cadena en min\xFAscula."
+summary: En Fish Shell, las cadenas pueden ser manipuladas directamente con funciones
+  integradas, sin la necesidad de herramientas o bibliotecas externas.
 title: Capitalizando una cadena de texto
 weight: 2
 ---

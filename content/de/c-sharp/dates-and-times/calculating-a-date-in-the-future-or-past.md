@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:28:33.483973-07:00
-description: "Berechnungen von zuk\xFCnftigen oder vergangenen Daten erm\xF6glichen\
-  \ es, Zeitabst\xE4nde zu erfassen, wie zum Beispiel Liefertermine oder Jubil\xE4\
-  en. Programmierer\u2026"
+description: "How to: Zuk\xFCnftige und vergangene Daten k\xF6nnen in C# einfach mit\
+  \ der `DateTime`-Klasse berechnet werden. Hier ein paar Beispiele."
 lastmod: '2024-03-13T22:44:53.901649-06:00'
 model: gpt-4-1106-preview
-summary: "Berechnungen von zuk\xFCnftigen oder vergangenen Daten erm\xF6glichen es,\
-  \ Zeitabst\xE4nde zu erfassen, wie zum Beispiel Liefertermine oder Jubil\xE4en."
+summary: "Zuk\xFCnftige und vergangene Daten k\xF6nnen in C# einfach mit der `DateTime`-Klasse\
+  \ berechnet werden."
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---

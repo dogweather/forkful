@@ -2,13 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:01.000644-07:00
-description: "Strenginterpolasjon er prosessen med \xE5 injisere variabelverdier direkte\
-  \ inn i strenger, ofte for \xE5 skape meningsfulle meldinger uten tungvinte\u2026"
+description: "Hvordan: I Dart er strenginterpolasjon grei, ved \xE5 bruke `$`-symbolet\
+  \ for \xE5 interpolere uttrykk direkte innenfor strengliteraler."
 lastmod: '2024-03-13T22:44:40.471747-06:00'
 model: gpt-4-0125-preview
-summary: "Strenginterpolasjon er prosessen med \xE5 injisere variabelverdier direkte\
-  \ inn i strenger, ofte for \xE5 skape meningsfulle meldinger uten tungvinte sammensl\xE5\
-  inger."
+summary: "I Dart er strenginterpolasjon grei, ved \xE5 bruke `$`-symbolet for \xE5\
+  \ interpolere uttrykk direkte innenfor strengliteraler."
 title: Interpolering av en streng
 weight: 8
 ---

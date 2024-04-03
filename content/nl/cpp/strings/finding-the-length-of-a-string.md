@@ -2,11 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:30.418697-07:00
-description: "De lengte van een string vinden betekent bepalen hoeveel karakters deze\
-  \ bevat. Programmeurs doen dit om invoer te valideren, loops op te zetten, of\u2026"
+description: "Hoe te: C++ biedt een eenvoudige manier om de lengte van een string\
+  \ te vinden met de `length()` methode van de `std::string` klasse. Maar als je van\
+  \ de\u2026"
 lastmod: '2024-03-13T22:44:51.103629-06:00'
 model: gpt-4-0125-preview
-summary: De lengte van een string vinden betekent bepalen hoeveel karakters deze bevat.
+summary: C++ biedt een eenvoudige manier om de lengte van een string te vinden met
+  de `length()` methode van de `std::string` klasse.
 title: De lengte van een string vinden
 weight: 7
 ---

@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:34.227193-07:00
-description: "Die Arbeit mit CSV-Dateien (Comma-Separated Values, dt. kommagetrennte\
-  \ Werte) umfasst das Lesen von und das Schreiben in diese Dateien, was eine h\xE4\
-  ufige\u2026"
+description: "Wie geht das: Elixir kann mit seiner leistungsf\xE4higen Mustererkennung\
+  \ und Unterst\xFCtzung f\xFCr Pipelining effizient CSV-Dateien verarbeiten, auch\
+  \ ohne\u2026"
 lastmod: '2024-03-13T22:44:53.558570-06:00'
 model: gpt-4-0125-preview
-summary: Die Arbeit mit CSV-Dateien (Comma-Separated Values, dt.
+summary: "Elixir kann mit seiner leistungsf\xE4higen Mustererkennung und Unterst\xFC\
+  tzung f\xFCr Pipelining effizient CSV-Dateien verarbeiten, auch ohne externe Bibliotheken."
 title: Arbeiten mit CSV
 weight: 37
 ---

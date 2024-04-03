@@ -2,14 +2,16 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:09:28.111324-07:00
-description: "Pisanie do standardowego b\u0142\u0119du w Visual Basic for Applications\
-  \ (VBA) oznacza kierowanie komunikat\xF3w o b\u0142\u0119dach lub diagnostyki niezale\u017C\
-  nie od standardowego\u2026"
+description: "Jak to zrobi\u0107: W VBA, poniewa\u017C nie ma bezpo\u015Bredniej wbudowanej\
+  \ funkcji do zapisywania specyficznie do standardowego b\u0142\u0119du, jak w niekt\xF3\
+  rych innych\u2026"
 lastmod: '2024-03-13T22:44:35.249910-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie do standardowego b\u0142\u0119du w Visual Basic for Applications\
-  \ (VBA) oznacza kierowanie komunikat\xF3w o b\u0142\u0119dach lub diagnostyki niezale\u017C\
-  nie od standardowego wyj\u015Bcia, zazwyczaj do konsoli lub pliku dziennika."
+summary: "W VBA, poniewa\u017C nie ma bezpo\u015Bredniej wbudowanej funkcji do zapisywania\
+  \ specyficznie do standardowego b\u0142\u0119du, jak w niekt\xF3rych innych j\u0119\
+  zykach programowania, powszechnym obej\u015Bciem jest u\u017Cywanie `Debug.Print`\
+  \ do wyprowadzania b\u0142\u0119d\xF3w podczas rozwoju lub tworzenie w\u0142asnej\
+  \ funkcji logowania, kt\xF3ra na\u015Bladuje to zachowanie dla aplikacji produkcyjnych."
 title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---

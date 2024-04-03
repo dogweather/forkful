@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:35.314383-07:00
-description: "Het aanmaken van een tijdelijk bestand in Visual Basic for Applications\
-  \ (VBA) houdt in dat je programmatisch een bestand genereert voor kortstondig\u2026"
+description: "Hoe te: In VBA kan het aanmaken van een tijdelijk bestand worden bereikt\
+  \ met behulp van het `FileSystemObject` dat beschikbaar is in de Microsoft\u2026"
 lastmod: '2024-03-13T22:44:50.656919-06:00'
 model: gpt-4-0125-preview
-summary: Het aanmaken van een tijdelijk bestand in Visual Basic for Applications (VBA)
-  houdt in dat je programmatisch een bestand genereert voor kortstondig gebruik, typisch
-  voor gegevensverwerking of als buffer in automatiseringstaken.
+summary: In VBA kan het aanmaken van een tijdelijk bestand worden bereikt met behulp
+  van het `FileSystemObject` dat beschikbaar is in de Microsoft Scripting Runtime-bibliotheek.
 title: Een tijdelijk bestand aanmaken
 weight: 21
 ---

@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:02.832114-07:00
-description: "Het downloaden van een webpagina gaat over het ophalen van de HTML-inhoud\
-  \ van een webpagina via het HTTP/HTTPS-protocol. Programmeurs doen dit vaak voor\u2026"
+description: "Hoe: In Go biedt de standaardbibliotheek krachtige hulpmiddelen voor\
+  \ webverzoeken, met name het `net/http` pakket. Om een webpagina te downloaden,\u2026"
 lastmod: '2024-03-13T22:44:50.286177-06:00'
 model: gpt-4-0125-preview
-summary: Het downloaden van een webpagina gaat over het ophalen van de HTML-inhoud
-  van een webpagina via het HTTP/HTTPS-protocol.
+summary: In Go biedt de standaardbibliotheek krachtige hulpmiddelen voor webverzoeken,
+  met name het `net/http` pakket.
 title: Een webpagina downloaden
 weight: 42
 ---

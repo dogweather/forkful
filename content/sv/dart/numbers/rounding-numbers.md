@@ -2,13 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:31.750319-07:00
-description: "Att avrunda tal \xE4r processen att justera ett tal till dess n\xE4\
-  rmaste hela tal eller till ett angivet antal decimaler. Programmerare avrundar ofta\
-  \ tal f\xF6r\u2026"
+description: "Hur: Dart tillhandah\xE5ller inf\xF6dda metoder i sin k\xE4rn `num`-typ\
+  \ f\xF6r avrundningsoperationer. H\xE4r ska vi utforska metoder som `round()`, `floor()`,\
+  \ `ceil()`,\u2026"
 lastmod: '2024-03-13T22:44:37.606377-06:00'
 model: gpt-4-0125-preview
-summary: "Att avrunda tal \xE4r processen att justera ett tal till dess n\xE4rmaste\
-  \ hela tal eller till ett angivet antal decimaler."
+summary: "Dart tillhandah\xE5ller inf\xF6dda metoder i sin k\xE4rn `num`-typ f\xF6\
+  r avrundningsoperationer."
 title: Avrundning av nummer
 weight: 13
 ---

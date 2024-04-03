@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:18:07.720114-07:00
-description: "Usar um shell interativo, ou um Loop de Leitura-Avalia\xE7\xE3o-Impress\xE3\
-  o (REPL), permite programar interativamente. Programadores usam isso para testar\
-  \ trechos\u2026"
+description: "Como fazer: Invoke o REPL abrindo um terminal e executando `swift`.\
+  \ Digite c\xF3digo diretamente e pressione Enter para rod\xE1-lo. Aqui vai um gostinho."
 lastmod: '2024-03-13T22:44:46.922027-06:00'
 model: gpt-4-0125-preview
-summary: "Usar um shell interativo, ou um Loop de Leitura-Avalia\xE7\xE3o-Impress\xE3\
-  o (REPL), permite programar interativamente."
+summary: Invoke o REPL abrindo um terminal e executando `swift`.
 title: Usando um shell interativo (REPL)
 weight: 34
 ---

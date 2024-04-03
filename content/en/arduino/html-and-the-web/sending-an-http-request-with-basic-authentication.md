@@ -1,11 +1,13 @@
 ---
 date: 2024-01-20 18:00:50.041796-07:00
-description: "Sending an HTTP request with basic authentication adds a layer of security\
-  \ by requiring a username and password. Programmers use it to access APIs or web\u2026"
+description: "How to: To make this happen on an Arduino, you first need to include\
+  \ the necessary libraries \u2013 typically `<ESP8266WiFi.h>` for ESP8266 or `<WiFi.h>`\
+  \ for\u2026"
 lastmod: '2024-03-13T22:45:00.321840-06:00'
 model: gpt-4-1106-preview
-summary: Sending an HTTP request with basic authentication adds a layer of security
-  by requiring a username and password.
+summary: "To make this happen on an Arduino, you first need to include the necessary\
+  \ libraries \u2013 typically `<ESP8266WiFi.h>` for ESP8266 or `<WiFi.h>` for ESP32,\
+  \ and `<Base64.h>` for encoding authentication details."
 title: Sending an HTTP request with basic authentication
 weight: 45
 ---

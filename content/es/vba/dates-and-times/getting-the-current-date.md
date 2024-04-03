@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:36.505375-07:00
-description: "En Visual Basic para Aplicaciones (VBA), recuperar la fecha actual es\
-  \ una tarea com\xFAn que permite a los programadores trabajar din\xE1micamente con\
-  \ fechas en\u2026"
+description: "C\xF3mo hacerlo: Recuperar la fecha actual en VBA es sencillo, utilizando\
+  \ la funci\xF3n `Date`, mientras que la funci\xF3n `Now` proporciona tanto la fecha\
+  \ como la\u2026"
 lastmod: '2024-03-13T22:44:58.904661-06:00'
 model: gpt-4-0125-preview
-summary: "En Visual Basic para Aplicaciones (VBA), recuperar la fecha actual es una\
-  \ tarea com\xFAn que permite a los programadores trabajar din\xE1micamente con fechas\
-  \ en sus macros o aplicaciones."
+summary: "Recuperar la fecha actual en VBA es sencillo, utilizando la funci\xF3n `Date`,\
+  \ mientras que la funci\xF3n `Now` proporciona tanto la fecha como la hora actuales."
 title: Obteniendo la fecha actual
 weight: 29
 ---

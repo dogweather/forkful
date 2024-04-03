@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:49.550942-07:00
-description: "Een string omzetten naar kleine letters betekent dat elke letter in\
-  \ de string een kleine letter wordt. Programmeurs doen dit om tekst te standaardiseren,\u2026"
+description: 'Hoe: PowerShell is vrij handig met strings. Gebruik de `.ToLower()`
+  methode, zoals dit.'
 lastmod: '2024-03-13T22:44:51.013390-06:00'
 model: gpt-4-0125-preview
-summary: Een string omzetten naar kleine letters betekent dat elke letter in de string
-  een kleine letter wordt.
+summary: PowerShell is vrij handig met strings.
 title: Een string omzetten naar kleine letters
 weight: 4
 ---

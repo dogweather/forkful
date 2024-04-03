@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 00:54:13.994961-07:00
-description: "Tratar erros significa escrever c\xF3digo que antecipa e lida com as\
-  \ coisas dando errado. Programadores fazem isso para tornar o software robusto,\
-  \ evitando\u2026"
+description: "Como Fazer: Java usa exce\xE7\xF5es para tratar erros. Voc\xEA envolve\
+  \ o c\xF3digo de risco com um bloco `try` e captura exce\xE7\xF5es com `catch`.\
+  \ Aqui est\xE1 um exemplo\u2026"
 lastmod: '2024-03-13T22:44:46.463361-06:00'
 model: gpt-4-1106-preview
-summary: "Tratar erros significa escrever c\xF3digo que antecipa e lida com as coisas\
-  \ dando errado."
+summary: "Java usa exce\xE7\xF5es para tratar erros."
 title: Tratamento de erros
 weight: 16
 ---

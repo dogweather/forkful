@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:35.724499-07:00
-description: "Merkkien poistaminen tietyll\xE4 kaavalla Visual Basic for Applications\
-  \ (VBA) -ohjelmassa tarkoittaa tiettyjen ehtojen t\xE4ytt\xE4vien merkkien tai merkkijonojen\u2026"
+description: "Kuinka: VBA:ssa voit k\xE4ytt\xE4\xE4 `Replace`-funktiota tai s\xE4\xE4\
+  nn\xF6llisi\xE4 lausekkeita merkkien poistamiseen kaavan mukaisesti. T\xE4ss\xE4\
+  \ on esimerkit molemmista\u2026"
 lastmod: '2024-03-13T22:44:56.383532-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkien poistaminen tietyll\xE4 kaavalla Visual Basic for Applications\
-  \ (VBA) -ohjelmassa tarkoittaa tiettyjen ehtojen t\xE4ytt\xE4vien merkkien tai merkkijonojen\
-  \ tunnistamista ja poistamista."
+summary: "VBA:ssa voit k\xE4ytt\xE4\xE4 `Replace`-funktiota tai s\xE4\xE4nn\xF6llisi\xE4\
+  \ lausekkeita merkkien poistamiseen kaavan mukaisesti."
 title: Mallin mukaisten merkkien poistaminen
 weight: 5
 ---

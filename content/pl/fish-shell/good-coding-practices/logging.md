@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 01:03:40.767781-07:00
-description: "Logowanie to w zasadzie notowanie tego, co robi Twoja aplikacja \u2013\
-  \ rodzaj dziennika, ale dla kodu. Programi\u015Bci u\u017Cywaj\u0105 go, aby \u015B\
-  ledzi\u0107 detale, takie jak\u2026"
+description: "Jak to zrobi\u0107: W Fish, logowanie mo\u017Ce by\u0107 tak proste,\
+  \ jak przekierowanie standardowego wyj\u015Bcia i strumienia b\u0142\u0119d\xF3\
+  w do pliku. Zr\xF3bmy wpis w logu dla czasu\u2026"
 lastmod: '2024-03-13T22:44:35.848059-06:00'
 model: gpt-4-1106-preview
-summary: "Logowanie to w zasadzie notowanie tego, co robi Twoja aplikacja \u2013 rodzaj\
-  \ dziennika, ale dla kodu."
+summary: "W Fish, logowanie mo\u017Ce by\u0107 tak proste, jak przekierowanie standardowego\
+  \ wyj\u015Bcia i strumienia b\u0142\u0119d\xF3w do pliku."
 title: "Rejestrowanie zdarze\u0144"
 weight: 17
 ---

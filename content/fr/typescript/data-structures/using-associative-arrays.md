@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:13:16.607957-07:00
-description: "Les tableaux associatifs, ou objets en TypeScript, vous permettent d'utiliser\
-  \ des cha\xEEnes de caract\xE8res (ou cl\xE9s) pour acc\xE9der aux paires de valeurs.\
-  \ Les\u2026"
+description: "Comment faire : Cr\xE9er et utiliser des tableaux associatifs en TypeScript\
+  \ est simple. Voici un exemple de base ."
 lastmod: '2024-03-13T22:44:57.429076-06:00'
 model: gpt-4-0125-preview
-summary: "Les tableaux associatifs, ou objets en TypeScript, vous permettent d'utiliser\
-  \ des cha\xEEnes de caract\xE8res (ou cl\xE9s) pour acc\xE9der aux paires de valeurs."
+summary: "Cr\xE9er et utiliser des tableaux associatifs en TypeScript est simple."
 title: Utilisation des tableaux associatifs
 weight: 15
 ---

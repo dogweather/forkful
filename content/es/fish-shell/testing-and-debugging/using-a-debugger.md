@@ -1,8 +1,7 @@
 ---
 date: 2024-01-26 03:48:34.192288-07:00
-description: "Fish no tiene un depurador integrado como otras shells, pero puedes\
-  \ usar herramientas externas como `gdb` para depurar programas compilados o `fish\
-  \ -d`\u2026"
+description: "C\xF3mo hacerlo: Fish no tiene un depurador integrado como otras shells,\
+  \ pero puedes usar herramientas externas como `gdb` para depurar programas compilados\u2026"
 lastmod: '2024-03-13T22:44:59.506121-06:00'
 model: gpt-4-0125-preview
 summary: "Fish no tiene un depurador integrado como otras shells, pero puedes usar\

@@ -2,14 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:27.807210-07:00
-description: "Het vinden van de lengte van een String in Dart gaat over het bepalen\
-  \ van het aantal code-eenheden (in wezen het aantal tekens als je er simplistisch\
-  \ over\u2026"
+description: 'Hoe: Dart maakt het eenvoudig om de lengte van een string te krijgen
+  met behulp van de `length` eigenschap. Hier is een basisvoorbeeld.'
 lastmod: '2024-03-13T22:44:50.495240-06:00'
 model: gpt-4-0125-preview
-summary: Het vinden van de lengte van een String in Dart gaat over het bepalen van
-  het aantal code-eenheden (in wezen het aantal tekens als je er simplistisch over
-  denkt) in een gegeven String.
+summary: Dart maakt het eenvoudig om de lengte van een string te krijgen met behulp
+  van de `length` eigenschap.
 title: De lengte van een string vinden
 weight: 7
 ---

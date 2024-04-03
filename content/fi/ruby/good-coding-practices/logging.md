@@ -1,10 +1,12 @@
 ---
 date: 2024-01-26 01:08:50.605300-07:00
-description: "Lokitus ohjelmoinnissa on kuin p\xE4iv\xE4kirjan pit\xE4mist\xE4 sovelluksellesi.\
-  \ Se on systemaattista tapahtumien, viestien ja datapisteiden tallentamista, jotka\u2026"
+description: "Miten: Ruby sis\xE4lt\xE4\xE4 sis\xE4\xE4nrakennetun moduulin lokitukseen,\
+  \ `Logger`, joka on superhelppo k\xE4ytt\xE4\xE4. T\xE4ss\xE4 on nopea esimerkki,\
+  \ jolla p\xE4\xE4set alkuun."
 lastmod: '2024-03-13T22:44:57.093411-06:00'
 model: gpt-4-1106-preview
-summary: "Lokitus ohjelmoinnissa on kuin p\xE4iv\xE4kirjan pit\xE4mist\xE4 sovelluksellesi."
+summary: "Ruby sis\xE4lt\xE4\xE4 sis\xE4\xE4nrakennetun moduulin lokitukseen, `Logger`,\
+  \ joka on superhelppo k\xE4ytt\xE4\xE4."
 title: Lokitus
 weight: 17
 ---

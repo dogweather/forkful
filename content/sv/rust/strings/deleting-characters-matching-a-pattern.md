@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:43:05.918600-07:00
-description: "Att ta bort tecken utifr\xE5n ett m\xF6nster handlar om att rensa str\xE4\
-  ngar fr\xE5n o\xF6nskade sekvenser. Programmerare g\xF6r detta f\xF6r att sanera\
-  \ data, extrahera\u2026"
+description: "Hur man g\xF6r: ."
 lastmod: '2024-03-13T22:44:37.682330-06:00'
 model: gpt-4-1106-preview
-summary: "Att ta bort tecken utifr\xE5n ett m\xF6nster handlar om att rensa str\xE4\
-  ngar fr\xE5n o\xF6nskade sekvenser."
+summary: .
 title: "Ta bort tecken som matchar ett m\xF6nster"
 weight: 5
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 01:07:28.812419-07:00
-description: "JavaScript bietet direkt nach der Installation eine einfache M\xF6glichkeit,\
-  \ Nachrichten in die Konsole zu loggen: ```javascript console.log('Diese Nachricht\u2026"
+description: "Wie geht das: JavaScript bietet direkt nach der Installation eine einfache\
+  \ M\xF6glichkeit, Nachrichten in die Konsole zu loggen."
 lastmod: '2024-03-13T22:44:54.272356-06:00'
 model: gpt-4-1106-preview
 summary: "JavaScript bietet direkt nach der Installation eine einfache M\xF6glichkeit,\
-  \ Nachrichten in die Konsole zu loggen:\n\n```javascript\nconsole."
+  \ Nachrichten in die Konsole zu loggen."
 title: Protokollierung
 weight: 17
 ---

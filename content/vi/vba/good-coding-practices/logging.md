@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:21.667356-07:00
-description: "Ghi log trong Visual Basic for Applications (VBA) bao g\u1ED3m vi\u1EC7\
-  c ghi l\u1EA1i th\xF4ng tin v\u1EC1 h\xE0nh vi th\u1EF1c thi c\u1EE7a ch\u01B0\u01A1\
-  ng tr\xECnh v\xE0o m\u1ED9t t\u1EC7p, console ho\u1EB7c c\u01A1 s\u1EDF d\u1EEF\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong VBA, kh\xF4ng c\xF3 m\u1ED9t khung ghi\
+  \ log s\u1EB5n c\xF3 nh\u01B0 trong m\u1ED9t s\u1ED1 ng\xF4n ng\u1EEF kh\xE1c. Tuy\
+  \ nhi\xEAn, vi\u1EC7c tri\u1EC3n khai m\u1ED9t c\u01A1 ch\u1EBF ghi log \u0111\u01A1\
+  n gi\u1EA3n l\xE0 kh\xE1\u2026"
 lastmod: '2024-03-13T22:44:36.441643-06:00'
 model: gpt-4-0125-preview
-summary: "Ghi log trong Visual Basic for Applications (VBA) bao g\u1ED3m vi\u1EC7\
-  c ghi l\u1EA1i th\xF4ng tin v\u1EC1 h\xE0nh vi th\u1EF1c thi c\u1EE7a ch\u01B0\u01A1\
-  ng tr\xECnh v\xE0o m\u1ED9t t\u1EC7p, console ho\u1EB7c c\u01A1 s\u1EDF d\u1EEF\
-  \ li\u1EC7u."
+summary: "Trong VBA, kh\xF4ng c\xF3 m\u1ED9t khung ghi log s\u1EB5n c\xF3 nh\u01B0\
+  \ trong m\u1ED9t s\u1ED1 ng\xF4n ng\u1EEF kh\xE1c."
 title: "Ghi nh\u1EADt k\xFD"
 weight: 17
 ---

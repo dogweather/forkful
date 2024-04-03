@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:38.531219-07:00
-description: "Een tekstbestand schrijven in Java betekent tekstgegevens opslaan op\
-  \ een bestand op schijf. Ontwikkelaars doen dit voor taken zoals loggen, configureren,\u2026"
+description: 'Hoe te: Met Java''s `java.nio.file` pakket is schrijven naar een tekstbestand
+  eenvoudig. Bekijk `Files.write()` voor een snelle opslag.'
 lastmod: '2024-03-13T22:44:50.700906-06:00'
 model: gpt-4-0125-preview
-summary: Een tekstbestand schrijven in Java betekent tekstgegevens opslaan op een
-  bestand op schijf.
+summary: Met Java's `java.nio.file` pakket is schrijven naar een tekstbestand eenvoudig.
 title: Een tekstbestand schrijven
 weight: 24
 ---

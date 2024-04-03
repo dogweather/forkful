@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:55.309989-07:00
-description: "\xC5 kapitalisere en streng inneb\xE6rer \xE5 omforme det f\xF8rste\
-  \ tegnet i en gitt streng til stor bokstav mens resten holdes i sm\xE5 bokstaver,\
-  \ ofte for\u2026"
+description: "Hvordan: I Elm finnes det ikke en innebygd funksjon spesifikt for \xE5\
+  \ kapitalisere strenger. Du kan imidlertid enkelt oppn\xE5 dette ved \xE5 bruke\
+  \ innebygde\u2026"
 lastmod: '2024-03-13T22:44:40.691684-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 kapitalisere en streng inneb\xE6rer \xE5 omforme det f\xF8rste tegnet\
-  \ i en gitt streng til stor bokstav mens resten holdes i sm\xE5 bokstaver, ofte\
-  \ for standardisert formatering eller lesbarhetsform\xE5l."
+summary: "I Elm finnes det ikke en innebygd funksjon spesifikt for \xE5 kapitalisere\
+  \ strenger."
 title: Sette stor bokstav i en streng
 weight: 2
 ---

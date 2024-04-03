@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:45:26.748679-07:00
-description: "Avrunding av tall inneb\xE6rer \xE5 justere dem til n\xE6rmeste hele\
-  \ tall eller til en spesifisert grad av presisjon. Programmerere gj\xF8r dette for\
-  \ \xE5 forbedre\u2026"
+description: "Hvordan: I Kotlin kan avrunding gj\xF8res ved hjelp av flere funksjoner\
+  \ som `roundToInt()`, `roundToDouble()`, og ved bruk av `BigDecimal` for mer kontroll."
 lastmod: '2024-03-13T22:44:40.745131-06:00'
 model: gpt-4-0125-preview
-summary: "Avrunding av tall inneb\xE6rer \xE5 justere dem til n\xE6rmeste hele tall\
-  \ eller til en spesifisert grad av presisjon."
+summary: "I Kotlin kan avrunding gj\xF8res ved hjelp av flere funksjoner som `roundToInt()`,\
+  \ `roundToDouble()`, og ved bruk av `BigDecimal` for mer kontroll."
 title: Avrunding av tall
 weight: 13
 ---

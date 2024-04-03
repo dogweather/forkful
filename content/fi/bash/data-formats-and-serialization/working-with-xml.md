@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:27:34.691183-07:00
-description: "XML:n k\xE4sittelyyn kuuluu j\xE4sennys, tietojen poiminta ja manipulointi\
-  \ Laajennettavassa Merkint\xE4kieless\xE4 (Extensible Markup Language). Ohjelmoijat\u2026"
+description: "Miten: N\xE4in j\xE4sennet\xE4\xE4n XML:\xE4\xE4 Bashissa. Ty\xF6kalut?\
+  \ xmllint ja xmlstarlet. Elementtien l\xE4pik\xE4ynti loopilla? Ehdottomasti. Esimerkki\
+  \ ja esimerkkituloste."
 lastmod: '2024-03-13T22:44:56.762909-06:00'
 model: gpt-4-0125-preview
-summary: "XML:n k\xE4sittelyyn kuuluu j\xE4sennys, tietojen poiminta ja manipulointi\
-  \ Laajennettavassa Merkint\xE4kieless\xE4 (Extensible Markup Language)."
+summary: "N\xE4in j\xE4sennet\xE4\xE4n XML:\xE4\xE4 Bashissa."
 title: "XML:n k\xE4sittely"
 weight: 40
 ---

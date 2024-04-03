@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:59.479666-07:00
-description: "Scrivere su un file di testo in Python \xE8 un'operazione fondamentale\
-  \ che implica la creazione o l'apertura di un file e poi l'appendere o sovrascrivere\u2026"
+description: 'Come fare: #.'
 lastmod: '2024-03-13T22:44:43.019386-06:00'
 model: gpt-4-0125-preview
-summary: "Scrivere su un file di testo in Python \xE8 un'operazione fondamentale che\
-  \ implica la creazione o l'apertura di un file e poi l'appendere o sovrascrivere\
-  \ testo."
+summary: '#.'
 title: Scrivere un file di testo
 weight: 24
 ---

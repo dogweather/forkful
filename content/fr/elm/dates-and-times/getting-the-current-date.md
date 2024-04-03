@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 15:14:08.905113-07:00
-description: "En programmation, obtenir la date actuelle c'est r\xE9cup\xE9rer la\
-  \ date et l'heure pr\xE9cises \xE0 l'instant T. Les d\xE9veloppeurs en ont besoin\
-  \ pour tout : des\u2026"
+description: 'Comment faire : .'
 lastmod: '2024-03-13T22:44:57.700927-06:00'
 model: unknown
-summary: "En programmation, obtenir la date actuelle c'est r\xE9cup\xE9rer la date\
-  \ et l'heure pr\xE9cises \xE0 l'instant T."
+summary: .
 title: Obtenir la date actuelle
 weight: 29
 ---

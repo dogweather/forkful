@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:49.186479-07:00
-description: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res consiste\
-  \ \xE0 convertir des repr\xE9sentations textuelles de dates et d'heures en un format\
-  \ qui peut \xEAtre\u2026"
+description: "Comment faire : Lua n'a pas de support int\xE9gr\xE9 pour la manipulation\
+  \ des dates et des heures au-del\xE0 de la fonctionnalit\xE9 limit\xE9e fournie\
+  \ par les fonctions\u2026"
 lastmod: '2024-03-13T22:44:57.946954-06:00'
 model: gpt-4-0125-preview
-summary: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res consiste\
-  \ \xE0 convertir des repr\xE9sentations textuelles de dates et d'heures en un format\
-  \ qui peut \xEAtre facilement manipul\xE9, stock\xE9 ou compar\xE9 au sein d'un\
-  \ programme Lua."
+summary: "Lua n'a pas de support int\xE9gr\xE9 pour la manipulation des dates et des\
+  \ heures au-del\xE0 de la fonctionnalit\xE9 limit\xE9e fournie par les fonctions\
+  \ `os.date` et `os.time`."
 title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
 weight: 30
 ---

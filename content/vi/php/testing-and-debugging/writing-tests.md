@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:18.220904-07:00
-description: "Ki\u1EC3m th\u1EED \u0111\u1EA3m b\u1EA3o m\xE3 c\u1EE7a b\u1EA1n ho\u1EA1\
-  t \u0111\u1ED9ng nh\u01B0 mong \u0111\u1EE3i. N\xF3 gi\xFAp ti\u1EBFt ki\u1EC7m\
-  \ th\u1EDDi gian b\u1EB1ng c\xE1ch ph\xE1t hi\u1EC7n l\u1ED7i s\u1EDBm v\xE0 \u0111\
-  \u1EA3m b\u1EA3o c\xE1c thay \u0111\u1ED5i m\xE3 kh\xF4ng l\xE0m h\u1ECFng m\u1ECD\
-  i\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Ch\xFAng ta s\u1EBD t\xECm hi\u1EC3u PHPUnit,\
+  \ m\u1ED9t framework ki\u1EC3m th\u1EED PHP ph\u1ED5 bi\u1EBFn. \u0110\u1EA7u ti\xEA\
+  n, c\xE0i \u0111\u1EB7t n\xF3 b\u1EB1ng Composer."
 lastmod: '2024-03-13T22:44:36.771270-06:00'
 model: gpt-4-0125-preview
-summary: "Ki\u1EC3m th\u1EED \u0111\u1EA3m b\u1EA3o m\xE3 c\u1EE7a b\u1EA1n ho\u1EA1\
-  t \u0111\u1ED9ng nh\u01B0 mong \u0111\u1EE3i."
+summary: "Ch\xFAng ta s\u1EBD t\xECm hi\u1EC3u PHPUnit, m\u1ED9t framework ki\u1EC3\
+  m th\u1EED PHP ph\u1ED5 bi\u1EBFn."
 title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
 weight: 36
 ---

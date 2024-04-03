@@ -2,13 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:28.114197-07:00
-description: "Substringen extraheren betekent specifieke delen uit strings halen \u2014\
-  \ denk aan het knippen van een stukje draad uit een trui. Programmeurs doen dit\
-  \ om data\u2026"
+description: 'Hoe: Hier is de basis van substring-extractie in Bash.'
 lastmod: '2024-03-13T22:44:50.968625-06:00'
 model: gpt-4-0125-preview
-summary: "Substringen extraheren betekent specifieke delen uit strings halen \u2014\
-  \ denk aan het knippen van een stukje draad uit een trui."
+summary: Hier is de basis van substring-extractie in Bash.
 title: Substrings extraheren
 weight: 6
 ---

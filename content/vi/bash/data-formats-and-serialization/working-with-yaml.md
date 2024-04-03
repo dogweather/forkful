@@ -2,10 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:30.800253-07:00
-description: ''
+description: "C\xE1i g\xEC & T\u1EA1i sao? YAML ain't Markup Language (YAML) l\xE0\
+  \ m\u1ED9t ti\xEAu chu\u1EA9n m\xE3 h\xF3a d\u1EEF li\u1EC7u \u0111\u01B0\u1EE3\
+  c con ng\u01B0\u1EDDi c\xF3 th\u1EC3 \u0111\u1ECDc. L\u1EADp tr\xECnh vi\xEAn s\u1EED\
+  \ d\u1EE5ng n\xF3 cho c\xE1c t\u1EADp tin\u2026"
 lastmod: '2024-03-13T22:44:36.905144-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "YAML ain't Markup Language (YAML) l\xE0 m\u1ED9t ti\xEAu chu\u1EA9n m\xE3\
+  \ h\xF3a d\u1EEF li\u1EC7u \u0111\u01B0\u1EE3c con ng\u01B0\u1EDDi c\xF3 th\u1EC3\
+  \ \u0111\u1ECDc."
 title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 weight: 41
 ---

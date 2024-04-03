@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:42.308597-07:00
-description: "Obtener la fecha actual en Java es una operaci\xF3n fundamental que\
-  \ permite a los programadores manipular objetos de fecha para operaciones tales\
-  \ como\u2026"
+description: "C\xF3mo hacerlo: Java ofrece m\xFAltiples maneras de obtener la fecha\
+  \ actual, usando tanto la antigua clase `java.util.Date` como el m\xE1s nuevo paquete\u2026"
 lastmod: '2024-03-13T22:44:58.947779-06:00'
 model: gpt-4-0125-preview
-summary: "Obtener la fecha actual en Java es una operaci\xF3n fundamental que permite\
-  \ a los programadores manipular objetos de fecha para operaciones tales como registro\
-  \ (logging), c\xE1lculos de fechas y condiciones basadas en tiempo."
+summary: "Java ofrece m\xFAltiples maneras de obtener la fecha actual, usando tanto\
+  \ la antigua clase `java.util.Date` como el m\xE1s nuevo paquete `java.time` (introducido\
+  \ en Java 8), que es m\xE1s vers\xE1til e intuitivo."
 title: Obteniendo la fecha actual
 weight: 29
 ---

@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:40.402980-07:00
-description: "Het berekenen van een toekomstige of verleden datum betekent uitzoeken\
-  \ wat de kalender zal zeggen na of voor een bepaalde hoeveelheid tijd. Programmeurs\u2026"
+description: 'Hoe te: Rust heeft de `chrono` crate voor al je datum- en tijdsbehoeften.
+  Hier is hoe je een datum kunt optellen of aftrekken.'
 lastmod: '2024-03-13T22:44:50.607802-06:00'
 model: gpt-4-0125-preview
-summary: Het berekenen van een toekomstige of verleden datum betekent uitzoeken wat
-  de kalender zal zeggen na of voor een bepaalde hoeveelheid tijd.
+summary: Rust heeft de `chrono` crate voor al je datum- en tijdsbehoeften.
 title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---

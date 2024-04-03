@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:18.444890-07:00
-description: "JSON (Notaci\xF3n de Objeto de JavaScript) es un formato ligero de intercambio\
-  \ de datos, f\xE1cil de leer y escribir para los humanos y de analizar y generar\u2026"
+description: "C\xF3mo hacerlo: #."
 lastmod: '2024-03-13T22:44:59.479778-06:00'
 model: gpt-4-0125-preview
-summary: "JSON (Notaci\xF3n de Objeto de JavaScript) es un formato ligero de intercambio\
-  \ de datos, f\xE1cil de leer y escribir para los humanos y de analizar y generar\
-  \ para las m\xE1quinas."
+summary: '#.'
 title: Trabajando con JSON
 weight: 38
 ---

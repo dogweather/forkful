@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-25, gpt-4-0125-preview, translated from English
 date: 2024-02-25 17:06:50.580373-07:00
-description: "Stringinterpolatie in C# stelt je in staat om een nieuwe string te cre\xEB\
-  ren door expressies binnen een stringliteral op te nemen, waardoor het\u2026"
+description: "Hoe te: In C# wordt stringinterpolatie aangeduid met een dollarteken\
+  \ (`$`) gevolgd door een stringliteral. De variabelenamen of expressies worden tussen\u2026"
 lastmod: '2024-03-13T22:44:50.795991-06:00'
 model: gpt-4-0125-preview
-summary: "Stringinterpolatie in C# stelt je in staat om een nieuwe string te cre\xEB\
-  ren door expressies binnen een stringliteral op te nemen, waardoor het gemakkelijker\
-  \ wordt om strings te formatteren en te concatenaten."
+summary: In C# wordt stringinterpolatie aangeduid met een dollarteken (`$`) gevolgd
+  door een stringliteral.
 title: Een string interpoleren
 weight: 8
 ---

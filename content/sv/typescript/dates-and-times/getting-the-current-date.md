@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:04.644256-07:00
-description: "Att f\xE5 det aktuella datumet i TypeScript, ett spr\xE5k byggt p\xE5\
-  \ JavaScript, g\xF6r det m\xF6jligt f\xF6r dig att komma \xE5t och manipulera nuvarande\
-  \ datum- och\u2026"
+description: "Hur man g\xF6r: I TypeScript kan du anv\xE4nda `Date`-objektet f\xF6\
+  r att f\xE5 det aktuella datumet och tiden. S\xE5 h\xE4r kan du g\xF6ra det."
 lastmod: '2024-03-13T22:44:37.666445-06:00'
 model: gpt-4-0125-preview
-summary: "Att f\xE5 det aktuella datumet i TypeScript, ett spr\xE5k byggt p\xE5 JavaScript,\
-  \ g\xF6r det m\xF6jligt f\xF6r dig att komma \xE5t och manipulera nuvarande datum-\
-  \ och tidsinformation."
+summary: "I TypeScript kan du anv\xE4nda `Date`-objektet f\xF6r att f\xE5 det aktuella\
+  \ datumet och tiden."
 title: "F\xE5 det aktuella datumet"
 weight: 29
 ---

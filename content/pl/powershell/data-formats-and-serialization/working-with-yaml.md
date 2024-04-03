@@ -2,13 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:20.837517-07:00
-description: "YAML, czyli YAML Ain't Markup Language, to j\u0119zyk seryalizacji danych\
-  \ czytelny dla cz\u0142owieka. Programi\u015Bci cz\u0119sto u\u017Cywaj\u0105 go\
-  \ do plik\xF3w konfiguracyjnych i\u2026"
+description: "Jak: PowerShell domy\u015Blnie nie posiada wbudowanego polecenia cmdlet\
+  \ do analizy YAML, ale dzia\u0142a bezproblemowo z YAML, gdy wykorzystuje si\u0119\
+  \ modu\u0142\u2026"
 lastmod: '2024-03-13T22:44:35.650247-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, czyli YAML Ain't Markup Language, to j\u0119zyk seryalizacji danych\
-  \ czytelny dla cz\u0142owieka."
+summary: "PowerShell domy\u015Blnie nie posiada wbudowanego polecenia cmdlet do analizy\
+  \ YAML, ale dzia\u0142a bezproblemowo z YAML, gdy wykorzystuje si\u0119 modu\u0142\
+  \ `powershell-yaml` lub konwertuje YAML na obiekt PowerShell za pomoc\u0105 `ConvertFrom-Json`\
+  \ w po\u0142\u0105czeniu z narz\u0119dziem takim jak `yq`."
 title: Praca z YAML
 weight: 41
 ---

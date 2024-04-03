@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:47:39.764549-07:00
-description: "Att hitta l\xE4ngden p\xE5 en str\xE4ng inneb\xE4r att r\xE4kna antalet\
-  \ tecken i den. Programmerare beh\xF6ver detta f\xF6r att validera indata, manipulera\
-  \ text eller bara f\xF6r\u2026"
+description: "Hur man g\xF6r: ."
 lastmod: '2024-03-13T22:44:38.284412-06:00'
 model: gpt-4-1106-preview
-summary: "Att hitta l\xE4ngden p\xE5 en str\xE4ng inneb\xE4r att r\xE4kna antalet\
-  \ tecken i den."
+summary: .
 title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---

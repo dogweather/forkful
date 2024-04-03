@@ -2,14 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:36.039508-07:00
-description: "Vi\u1EC7c t\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n gi\xFA\
-  p b\u1EA1n t\xECm c\xE1c chu\u1ED7i v\xE0 thay th\u1EBF ch\xFAng. L\u1EADp tr\xEC\
-  nh vi\xEAn s\u1EED d\u1EE5ng n\xF3 \u0111\u1EC3 c\u1EADp nh\u1EADt m\xE3, tinh ch\u1EC9\
-  nh ho\u1EB7c thay \u0111\u1ED5i d\u1EEF li\u1EC7u\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Ch\xFAng ta h\xE3y t\xECm ki\u1EBFm v\xE0 thay\
+  \ th\u1EBF v\u0103n b\u1EA3n b\u1EB1ng Haskell. Ch\xFAng ta s\u1EBD s\u1EED d\u1EE5\
+  ng `Data.Text` cho vi\u1EC7c x\u1EED l\xFD v\u0103n b\u1EA3n Unicode v\xE0 hi\u1EC7\
+  u qu\u1EA3. H\xE3y ch\u1EAFc\u2026"
 lastmod: '2024-03-13T22:44:36.693077-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c t\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n gi\xFA\
-  p b\u1EA1n t\xECm c\xE1c chu\u1ED7i v\xE0 thay th\u1EBF ch\xFAng."
+summary: "Ch\xFAng ta h\xE3y t\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3\
+  n b\u1EB1ng Haskell."
 title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
 weight: 10
 ---

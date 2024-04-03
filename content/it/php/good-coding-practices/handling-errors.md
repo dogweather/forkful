@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 00:55:27.441360-07:00
-description: "La gestione degli errori in PHP riguarda la gestione e la risposta a\
-  \ condizioni che interrompono il flusso normale di un programma, come file mancanti\
-  \ o\u2026"
+description: "Come fare: In PHP, puoi gestire gli errori utilizzando i blocchi `try-catch`\
+  \ e puoi personalizzare il processo con gestori di errori personalizzati ed\u2026"
 lastmod: '2024-03-13T22:44:43.524090-06:00'
 model: gpt-4-1106-preview
-summary: La gestione degli errori in PHP riguarda la gestione e la risposta a condizioni
-  che interrompono il flusso normale di un programma, come file mancanti o input di
-  dati errati.
+summary: In PHP, puoi gestire gli errori utilizzando i blocchi `try-catch` e puoi
+  personalizzare il processo con gestori di errori personalizzati ed eccezioni.
 title: Gestione degli errori
 weight: 16
 ---

@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:22.743644-07:00
-description: "Trabajar con archivos CSV (Valores Separados por Comas) implica analizar\
-  \ y generar datos estructurados a partir de archivos de texto donde cada l\xEDnea\u2026"
+description: "C\xF3mo hacerlo: En Swift, no hay soporte nativo para analizar archivos\
+  \ CSV directamente, pero puedes manejar datos CSV utilizando los m\xE9todos de `String`\u2026"
 lastmod: '2024-03-13T22:44:59.439031-06:00'
 model: gpt-4-0125-preview
-summary: "Trabajar con archivos CSV (Valores Separados por Comas) implica analizar\
-  \ y generar datos estructurados a partir de archivos de texto donde cada l\xEDnea\
-  \ representa un registro y cada registro consiste en campos separados por comas."
+summary: "En Swift, no hay soporte nativo para analizar archivos CSV directamente,\
+  \ pero puedes manejar datos CSV utilizando los m\xE9todos de `String` para dividir\
+  \ los contenidos, o aprovechando bibliotecas de terceros como SwiftCSV para un enfoque\
+  \ m\xE1s simplificado."
 title: Trabajando con CSV
 weight: 37
 ---

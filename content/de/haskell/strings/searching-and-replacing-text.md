@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:57:47.652017-07:00
-description: "Text suchen und ersetzen erm\xF6glicht es, bestimmte Zeichenketten in\
-  \ einem Text zu finden und durch andere zu ersetzen. Programmierer tun das oft,\
-  \ um Fehler\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:53.916419-06:00'
 model: gpt-4-1106-preview
-summary: "Text suchen und ersetzen erm\xF6glicht es, bestimmte Zeichenketten in einem\
-  \ Text zu finden und durch andere zu ersetzen."
+summary: .
 title: Suchen und Ersetzen von Text
 weight: 10
 ---

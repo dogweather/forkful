@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:38:15.675697-07:00
-description: "Att konvertera en str\xE4ng till gemener inneb\xE4r att \xE4ndra alla\
-  \ bokst\xE4ver till sm\xE5 bokst\xE4ver. Programmerare g\xF6r det f\xF6r att f\xF6\
-  renkla j\xE4mf\xF6relser och\u2026"
+description: "How to: F\xF6r att konvertera en str\xE4ng till gemener i Fish Shell\
+  \ kan du anv\xE4nda `string lower`."
 lastmod: '2024-03-13T22:44:38.322642-06:00'
 model: gpt-4-1106-preview
-summary: "Att konvertera en str\xE4ng till gemener inneb\xE4r att \xE4ndra alla bokst\xE4\
-  ver till sm\xE5 bokst\xE4ver."
+summary: "F\xF6r att konvertera en str\xE4ng till gemener i Fish Shell kan du anv\xE4\
+  nda `string lower`."
 title: "Konvertera en str\xE4ng till gemener"
 weight: 4
 ---

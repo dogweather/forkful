@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:34.290973-07:00
-description: "Het omzetten van een string naar kleine letters verandert alle hoofdletters\
-  \ in de tekst in hun kleine tegenhangers. Programmeurs doen dit voor\u2026"
+description: 'Hoe: Het `String` object van Arduino heeft een handige methode `toLowerCase()`.
+  Roep deze op je string aan, en voila, het staat in kleine letters.'
 lastmod: '2024-03-13T22:44:51.059715-06:00'
 model: gpt-4-0125-preview
-summary: Het omzetten van een string naar kleine letters verandert alle hoofdletters
-  in de tekst in hun kleine tegenhangers.
+summary: Het `String` object van Arduino heeft een handige methode `toLowerCase()`.
 title: Een string omzetten naar kleine letters
 weight: 4
 ---

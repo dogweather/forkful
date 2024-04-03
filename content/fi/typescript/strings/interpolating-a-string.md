@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:51:42.701699-07:00
-description: "String-interpolointi on tapa sis\xE4llytt\xE4\xE4 muuttujien arvoja\
-  \ suoraan merkkijonoihin. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4t\xE4 ominaisuutta,\
-  \ koska se tekee koodista\u2026"
+description: "How to: (Kuinka tehd\xE4:) ."
 lastmod: '2024-03-13T22:44:56.301954-06:00'
 model: gpt-4-1106-preview
-summary: "String-interpolointi on tapa sis\xE4llytt\xE4\xE4 muuttujien arvoja suoraan\
-  \ merkkijonoihin."
+summary: .
 title: Merkkijonon interpolointi
 weight: 8
 ---

@@ -2,16 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:11.479201-07:00
-description: "YAML (YAML ain't Markup Language), hay c\xF2n g\u1ECDi l\xE0 YAML, l\xE0\
-  \ m\u1ED9t ti\xEAu chu\u1EA9n h\xF3a d\u1EEF li\u1EC7u th\xE2n thi\u1EC7n v\u1EDB\
-  i con ng\u01B0\u1EDDi d\xE0nh cho t\u1EA5t c\u1EA3 c\xE1c ng\xF4n ng\u1EEF l\u1EAD\
-  p tr\xECnh. L\u1EADp\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Ch\xFAng ta s\u1EBD s\u1EED d\u1EE5ng th\u01B0\
+  \ vi\u1EC7n `js-yaml` ph\u1ED5 bi\u1EBFn \u0111\u1EC3 ph\xE2n t\xEDch YAML th\xE0\
+  nh c\xE1c \u0111\u1ED1i t\u01B0\u1EE3ng JavaScript v\xE0 chuy\u1EC3n \u0111\u1ED5\
+  i c\xE1c \u0111\u1ED1i t\u01B0\u1EE3ng JavaScript\u2026"
 lastmod: '2024-03-13T22:44:37.179741-06:00'
 model: gpt-4-0125-preview
-summary: "YAML (YAML ain't Markup Language), hay c\xF2n g\u1ECDi l\xE0 YAML, l\xE0\
-  \ m\u1ED9t ti\xEAu chu\u1EA9n h\xF3a d\u1EEF li\u1EC7u th\xE2n thi\u1EC7n v\u1EDB\
-  i con ng\u01B0\u1EDDi d\xE0nh cho t\u1EA5t c\u1EA3 c\xE1c ng\xF4n ng\u1EEF l\u1EAD\
-  p tr\xECnh."
+summary: "Ch\xFAng ta s\u1EBD s\u1EED d\u1EE5ng th\u01B0 vi\u1EC7n `js-yaml` ph\u1ED5\
+  \ bi\u1EBFn \u0111\u1EC3 ph\xE2n t\xEDch YAML th\xE0nh c\xE1c \u0111\u1ED1i t\u01B0\
+  \u1EE3ng JavaScript v\xE0 chuy\u1EC3n \u0111\u1ED5i c\xE1c \u0111\u1ED1i t\u01B0\
+  \u1EE3ng JavaScript th\xE0nh YAML."
 title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 weight: 41
 ---

@@ -2,12 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:37.375992-07:00
-description: "Escrever testes em C envolve criar programas ou fun\xE7\xF5es auxiliares\
-  \ menores que verificam automaticamente a funcionalidade do seu c\xF3digo. Os programadores\u2026"
+description: "Como fazer: Embora o C n\xE3o tenha uma framework de testes integrada\
+  \ como algumas outras linguagens, ainda \xE9 poss\xEDvel escrever testes eficazes\
+  \ usando\u2026"
 lastmod: '2024-03-13T22:44:47.053939-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever testes em C envolve criar programas ou fun\xE7\xF5es auxiliares\
-  \ menores que verificam automaticamente a funcionalidade do seu c\xF3digo."
+summary: "Embora o C n\xE3o tenha uma framework de testes integrada como algumas outras\
+  \ linguagens, ainda \xE9 poss\xEDvel escrever testes eficazes usando assert.h para\
+  \ asser\xE7\xF5es simples ou integrar frameworks de terceiros como CUnit ou Unity\
+  \ para testes mais estruturados."
 title: Escrevendo testes
 weight: 36
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:53:45.998674-07:00
-description: "\xC5 sammenligne to datoer i Dart inneb\xE6rer \xE5 evaluere den tempor\xE6\
-  re forskjellen eller rekkef\xF8lgen mellom dem, en essensiell funksjonalitet i applikasjoner\u2026"
+description: "Hvordan: I Dart kan du sammenligne datoer ved \xE5 bruke `DateTime`-klassen,\
+  \ som tilbyr metoder som `isBefore`, `isAfter`, og `isAtSameMomentAs` for direkte\u2026"
 lastmod: '2024-03-13T22:44:40.501109-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 sammenligne to datoer i Dart inneb\xE6rer \xE5 evaluere den tempor\xE6\
-  re forskjellen eller rekkef\xF8lgen mellom dem, en essensiell funksjonalitet i applikasjoner\
-  \ som h\xE5ndterer hendelser, frister eller annen tidsf\xF8lsom data."
+summary: "I Dart kan du sammenligne datoer ved \xE5 bruke `DateTime`-klassen, som\
+  \ tilbyr metoder som `isBefore`, `isAfter`, og `isAtSameMomentAs` for direkte sammenligning."
 title: Sammenligner to datoer
 weight: 27
 ---

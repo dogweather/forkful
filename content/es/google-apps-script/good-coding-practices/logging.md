@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:50.041102-07:00
-description: "El registro (logging) en programaci\xF3n implica grabar eventos, errores\
-  \ u ocurrencias notables durante el tiempo de ejecuci\xF3n. Los programadores lo\
-  \ hacen\u2026"
+description: "C\xF3mo hacerlo: En Google Apps Script, el registro se puede realizar\
+  \ utilizando varios m\xE9todos, como la clase `Logger` y `console.log()`. La clase\
+  \ Logger es\u2026"
 lastmod: '2024-03-13T22:44:58.540807-06:00'
 model: gpt-4-0125-preview
-summary: "El registro (logging) en programaci\xF3n implica grabar eventos, errores\
-  \ u ocurrencias notables durante el tiempo de ejecuci\xF3n."
+summary: "En Google Apps Script, el registro se puede realizar utilizando varios m\xE9\
+  todos, como la clase `Logger` y `console.log()`."
 title: "Registro de Informaci\xF3n"
 weight: 17
 ---

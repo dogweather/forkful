@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:44:40.139740-07:00
-description: "\xC5 laste ned en nettside betyr \xE5 hente ned innholdet fra en URL\
-  \ til din lokale enhet. Programmerere gj\xF8r det for \xE5 analysere innholdet,\
-  \ automatisere\u2026"
+description: "Slik gj\xF8r du: PHP gj\xF8r nedlasting av nettsider enkelt med `file_get_contents()`\
+  \ og cURL-biblioteket. Her er grunnleggende eksempler."
 lastmod: '2024-03-13T22:44:40.885297-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 laste ned en nettside betyr \xE5 hente ned innholdet fra en URL til\
-  \ din lokale enhet."
+summary: "PHP gj\xF8r nedlasting av nettsider enkelt med `file_get_contents()` og\
+  \ cURL-biblioteket."
 title: Nedlasting av en nettside
 weight: 42
 ---

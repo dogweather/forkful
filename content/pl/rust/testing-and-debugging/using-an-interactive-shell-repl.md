@@ -1,14 +1,11 @@
 ---
 date: 2024-01-26 04:18:12.707352-07:00
-description: "Interaktywna pow\u0142oka Rust, czyli REPL (Read-Eval-Print Loop - P\u0119\
-  tla Czytaj-Wykonaj-Wydrukuj), pozwala na uruchamianie kodu Rust na bie\u017C\u0105\
-  co, widz\u0105c\u2026"
+description: "Jak to zrobi\u0107: Na ten moment Rust nie ma oficjalnej REPL do\u0142\
+  \u0105czonej do siebie. Mo\u017Cna u\u017Cywa\u0107 narz\u0119dzi stron trzecich\
+  \ takich jak `evcxr_repl`. Zainstaluj je\u2026"
 lastmod: '2024-03-13T22:44:35.186273-06:00'
 model: gpt-4-0125-preview
-summary: "Interaktywna pow\u0142oka Rust, czyli REPL (Read-Eval-Print Loop - P\u0119\
-  tla Czytaj-Wykonaj-Wydrukuj), pozwala na uruchamianie kodu Rust na bie\u017C\u0105\
-  co, widz\u0105c natychmiastowe rezultaty, idealnie nadaje si\u0119 do eksperymentowania\
-  \ lub nauki."
+summary: "Na ten moment Rust nie ma oficjalnej REPL do\u0142\u0105czonej do siebie."
 title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---

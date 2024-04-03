@@ -1,14 +1,10 @@
 ---
 date: 2024-01-20 17:48:20.987307-07:00
-description: "\uBB38\uC790\uC5F4 \uAE38\uC774 \uCE21\uC815\uC740 \uBB38\uC790\uC758\
-  \ \uAC1C\uC218\uB97C \uC13C\uB2E4. \uC800\uC7A5\uB41C \uB370\uC774\uD130 \uAD00\uB9AC\
-  , \uC785\uB825 \uC720\uD6A8\uC131 \uAC80\uC0AC, UI \uB514\uC790\uC778 \uC870\uC815\
-  \uC5D0 \uD544\uC694\uD558\uB2E4."
+description: "How to: (\uC5B4\uB5BB\uAC8C \uD558\uB098\uC694?) ."
 isCJKLanguage: true
 lastmod: '2024-03-13T22:44:54.840539-06:00'
 model: gpt-4-1106-preview
-summary: "\uBB38\uC790\uC5F4 \uAE38\uC774 \uCE21\uC815\uC740 \uBB38\uC790\uC758 \uAC1C\
-  \uC218\uB97C \uC13C\uB2E4."
+summary: .
 title: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774 \uCC3E\uAE30"
 weight: 7
 ---

@@ -2,12 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:23.433070-07:00
-description: "Parsowanie daty z ci\u0105gu polega na przekszta\u0142ceniu tekstowej\
-  \ reprezentacji daty i czasu na obiekt `Date` lub nowocze\u015Bniejszy obiekt `LocalDateTime`.\u2026"
+description: 'Jak: #.'
 lastmod: '2024-03-13T22:44:35.286933-06:00'
 model: gpt-4-0125-preview
-summary: "Parsowanie daty z ci\u0105gu polega na przekszta\u0142ceniu tekstowej reprezentacji\
-  \ daty i czasu na obiekt `Date` lub nowocze\u015Bniejszy obiekt `LocalDateTime`."
+summary: '#.'
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---

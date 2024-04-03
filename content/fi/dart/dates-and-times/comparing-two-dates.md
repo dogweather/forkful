@@ -2,15 +2,14 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:53:59.628983-07:00
-description: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertaaminen Dartissa sis\xE4lt\xE4\
-  \xE4 niiden ajallisen eron tai j\xE4rjestyksen arvioimisen, mik\xE4 on olennainen\
-  \ toiminnallisuus sovelluksissa,\u2026"
+description: "Miten: Dartissa voit verrata p\xE4iv\xE4m\xE4\xE4ri\xE4 k\xE4ytt\xE4\
+  m\xE4ll\xE4 `DateTime`-luokkaa, joka tarjoaa suoria vertailumetodeja kuten `isBefore`,\
+  \ `isAfter` ja\u2026"
 lastmod: '2024-03-13T22:44:56.284563-06:00'
 model: gpt-4-0125-preview
-summary: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertaaminen Dartissa sis\xE4lt\xE4\xE4\
-  \ niiden ajallisen eron tai j\xE4rjestyksen arvioimisen, mik\xE4 on olennainen toiminnallisuus\
-  \ sovelluksissa, jotka hallinnoivat tapahtumia, m\xE4\xE4r\xE4aikoja tai mit\xE4\
-  \ tahansa aikaan sidottua dataa."
+summary: "Dartissa voit verrata p\xE4iv\xE4m\xE4\xE4ri\xE4 k\xE4ytt\xE4m\xE4ll\xE4\
+  \ `DateTime`-luokkaa, joka tarjoaa suoria vertailumetodeja kuten `isBefore`, `isAfter`\
+  \ ja `isAtSameMomentAs`."
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertaaminen"
 weight: 27
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:51.113839-07:00
-description: "L'analyse du HTML en Go consiste \xE0 examiner le contenu des fichiers\
-  \ HTML pour extraire des donn\xE9es, manipuler la structure, ou convertir le HTML\
-  \ dans\u2026"
+description: "Comment faire : Pour analyser le HTML en Go, vous utilisez g\xE9n\xE9\
+  ralement le package `goquery` ou le package `net/html` de la biblioth\xE8que standard.\
+  \ Voici\u2026"
 lastmod: '2024-03-13T22:44:57.130894-06:00'
 model: gpt-4-0125-preview
-summary: "L'analyse du HTML en Go consiste \xE0 examiner le contenu des fichiers HTML\
-  \ pour extraire des donn\xE9es, manipuler la structure, ou convertir le HTML dans\
-  \ d'autres formats."
+summary: "Pour analyser le HTML en Go, vous utilisez g\xE9n\xE9ralement le package\
+  \ `goquery` ou le package `net/html` de la biblioth\xE8que standard."
 title: Analyse Syntaxique de HTML
 weight: 43
 ---

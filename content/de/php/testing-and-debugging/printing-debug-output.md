@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:52:57.634293-07:00
-description: "Druckausgabe zum Debuggen ist das Anzeigen von Variablenwerten und Programmstatus\
-  \ auf einer Konsole oder Logdatei w\xE4hrend der Entwicklung. Programmierer\u2026"
+description: 'How to: Hier ein einfacher Code zur Verwendung von `echo`.'
 lastmod: '2024-03-13T22:44:53.974909-06:00'
 model: gpt-4-1106-preview
-summary: "Druckausgabe zum Debuggen ist das Anzeigen von Variablenwerten und Programmstatus\
-  \ auf einer Konsole oder Logdatei w\xE4hrend der Entwicklung."
+summary: Hier ein einfacher Code zur Verwendung von `echo`.
 title: Debug-Ausgaben drucken
 weight: 33
 ---

@@ -2,16 +2,16 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:00.545444-07:00
-description: "Trong Java, c\xE1c m\u1EA3ng k\u1EBFt h\u1EE3p, hay b\u1EA3n \u0111\u1ED3\
-  , cho ph\xE9p b\u1EA1n l\u01B0u tr\u1EEF c\xE1c c\u1EB7p kh\xF3a-gi\xE1 tr\u1ECB\
-  \ \u0111\u1EC3 tra c\u1EE9u v\xE0 thao t\xE1c d\u1EEF li\u1EC7u m\u1ED9t c\xE1ch\
-  \ hi\u1EC7u qu\u1EA3. L\u1EADp tr\xECnh vi\xEAn s\u1EED\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Java kh\xF4ng c\xF3 m\u1EA3ng k\u1EBFt\
+  \ h\u1EE3p t\xEDch h\u1EE3p s\u1EB5n nh\u01B0 m\u1ED9t s\u1ED1 ng\xF4n ng\u1EEF\
+  \ kh\xE1c, nh\u01B0ng n\xF3 cung c\u1EA5p giao di\u1EC7n `Map` v\xE0 c\xE1c l\u1EDB\
+  p nh\u01B0 `HashMap` v\xE0 `TreeMap`\u2026"
 lastmod: '2024-03-13T22:44:36.479831-06:00'
 model: gpt-4-0125-preview
-summary: "Trong Java, c\xE1c m\u1EA3ng k\u1EBFt h\u1EE3p, hay b\u1EA3n \u0111\u1ED3\
-  , cho ph\xE9p b\u1EA1n l\u01B0u tr\u1EEF c\xE1c c\u1EB7p kh\xF3a-gi\xE1 tr\u1ECB\
-  \ \u0111\u1EC3 tra c\u1EE9u v\xE0 thao t\xE1c d\u1EEF li\u1EC7u m\u1ED9t c\xE1ch\
-  \ hi\u1EC7u qu\u1EA3."
+summary: "Java kh\xF4ng c\xF3 m\u1EA3ng k\u1EBFt h\u1EE3p t\xEDch h\u1EE3p s\u1EB5\
+  n nh\u01B0 m\u1ED9t s\u1ED1 ng\xF4n ng\u1EEF kh\xE1c, nh\u01B0ng n\xF3 cung c\u1EA5\
+  p giao di\u1EC7n `Map` v\xE0 c\xE1c l\u1EDBp nh\u01B0 `HashMap` v\xE0 `TreeMap`\
+  \ \u0111\u1EC3 \u0111\u1EA3m nh\u1EADn vai tr\xF2 \u0111\xF3."
 title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 weight: 15
 ---

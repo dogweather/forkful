@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:52.642342-07:00
-description: "Koodin j\xE4rjest\xE4minen funktioihin Go:ssa tarkoittaa koodin jakamista\
-  \ uudelleenk\xE4ytett\xE4viksi, modulaarisiksi lohkoiksi, jotka suorittavat tiettyj\xE4\
-  \ teht\xE4vi\xE4.\u2026"
+description: "Kuinka: Go:ssa funktio m\xE4\xE4ritell\xE4\xE4n k\xE4ytt\xE4m\xE4ll\xE4\
+  \ `func`-avainsanaa, jonka j\xE4lkeen tulee funktion nimi, parametrit (jos niit\xE4\
+  \ on) ja palautustyyppi.\u2026"
 lastmod: '2024-03-13T22:44:56.056579-06:00'
 model: gpt-4-0125-preview
-summary: "Koodin j\xE4rjest\xE4minen funktioihin Go:ssa tarkoittaa koodin jakamista\
-  \ uudelleenk\xE4ytett\xE4viksi, modulaarisiksi lohkoiksi, jotka suorittavat tiettyj\xE4\
-  \ teht\xE4vi\xE4."
+summary: "Go:ssa funktio m\xE4\xE4ritell\xE4\xE4n k\xE4ytt\xE4m\xE4ll\xE4 `func`-avainsanaa,\
+  \ jonka j\xE4lkeen tulee funktion nimi, parametrit (jos niit\xE4 on) ja palautustyyppi."
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---

@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:12.132316-07:00
-description: "Arrays associativos em PHP s\xE3o como listas superpoderosas onde cada\
-  \ elemento pode ser acessado usando uma chave leg\xEDvel por humanos em vez de apenas\u2026"
+description: "Como fazer: No PHP, criar e usar arrays associativos \xE9 direto. Aqui\
+  \ est\xE1 um r\xE1pido resumo."
 lastmod: '2024-03-13T22:44:46.660365-06:00'
 model: gpt-4-0125-preview
-summary: "Arrays associativos em PHP s\xE3o como listas superpoderosas onde cada elemento\
-  \ pode ser acessado usando uma chave leg\xEDvel por humanos em vez de apenas n\xFA\
-  meros."
+summary: "No PHP, criar e usar arrays associativos \xE9 direto."
 title: Usando arrays associativos
 weight: 15
 ---

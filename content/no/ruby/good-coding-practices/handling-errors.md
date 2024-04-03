@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 00:56:46.110331-07:00
-description: "Feilh\xE5ndtering g\xE5r ut p\xE5 \xE5 forvente det uventede i koden\
-  \ - \xE5 h\xE5ndtere feil og problemer p\xE5 en smidig m\xE5te uten \xE5 krasje.\
-  \ Programmerere gj\xF8r dette for \xE5\u2026"
+description: "Hvordan gj\xF8re det: Ruby bruker `begin`, `rescue`, `ensure` og `end`\
+  \ for \xE5 h\xE5ndtere feil. Du omslutter risikofylt kode med `begin` og `end`.\
+  \ Hvis en feil\u2026"
 lastmod: '2024-03-13T22:44:41.335845-06:00'
 model: gpt-4-1106-preview
-summary: "Feilh\xE5ndtering g\xE5r ut p\xE5 \xE5 forvente det uventede i koden - \xE5\
-  \ h\xE5ndtere feil og problemer p\xE5 en smidig m\xE5te uten \xE5 krasje."
+summary: "Ruby bruker `begin`, `rescue`, `ensure` og `end` for \xE5 h\xE5ndtere feil."
 title: "Feilh\xE5ndtering"
 weight: 16
 ---

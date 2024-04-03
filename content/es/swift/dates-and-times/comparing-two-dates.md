@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:34:09.427044-07:00
-description: "Comparar dos fechas es chequear c\xF3mo se relacionan en el tiempo:\
-  \ si una es anterior, posterior o si son la misma. Los programadores lo hacen para\
-  \ tareas\u2026"
+description: "C\xF3mo Hacerlo: Swift facilita la comparaci\xF3n de fechas con operadores\
+  \ est\xE1ndar como `==`, `>`, `<`, `>=`, y `<=`. Aqu\xED tienes c\xF3mo."
 lastmod: '2024-03-13T22:44:59.428801-06:00'
 model: gpt-4-1106-preview
-summary: "Comparar dos fechas es chequear c\xF3mo se relacionan en el tiempo: si una\
-  \ es anterior, posterior o si son la misma."
+summary: "Swift facilita la comparaci\xF3n de fechas con operadores est\xE1ndar como\
+  \ `==`, `>`, `<`, `>=`, y `<=`."
 title: "Comparaci\xF3n de dos fechas"
 weight: 27
 ---

@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:54:40.928876-07:00
-description: "Lire un fichier texte en JavaScript, c'est r\xE9cup\xE9rer le contenu\
-  \ d'un fichier pour le manipuler ou l'analyser. On le fait pour traiter des donn\xE9\
-  es,\u2026"
+description: "Comment faire : Pour lire un fichier c\xF4t\xE9 serveur (Node.js), utilisez\
+  \ le module `fs`."
 lastmod: '2024-03-13T22:44:58.295661-06:00'
 model: gpt-4-1106-preview
-summary: "Lire un fichier texte en JavaScript, c'est r\xE9cup\xE9rer le contenu d'un\
-  \ fichier pour le manipuler ou l'analyser."
+summary: "Pour lire un fichier c\xF4t\xE9 serveur (Node.js), utilisez le module `fs`."
 title: Lecture d'un fichier texte
 weight: 22
 ---

@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:20.695576-07:00
-description: "Een nieuw PHP-project starten betekent een basis opzetten om je webapp\
-  \ of script op te bouwen. We doen dit om fris te starten, onze idee\xEBn in code\
-  \ te\u2026"
+description: 'Hoe te: Begin je project door een structuur te kiezen. Composer is hier
+  je vriend. Voer dit uit.'
 lastmod: '2024-03-13T22:44:50.895666-06:00'
 model: gpt-4-0125-preview
-summary: Een nieuw PHP-project starten betekent een basis opzetten om je webapp of
-  script op te bouwen.
+summary: Begin je project door een structuur te kiezen.
 title: Een nieuw project starten
 weight: 1
 ---

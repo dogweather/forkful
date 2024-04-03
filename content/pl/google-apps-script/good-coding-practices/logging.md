@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:15.760202-07:00
-description: "Rejestrowanie (logowanie) w programowaniu polega na zapisywaniu zdarze\u0144\
-  , b\u0142\u0119d\xF3w lub wybitnych wyst\u0105pie\u0144 podczas dzia\u0142ania programu.\
-  \ Programi\u015Bci robi\u0105 to w\u2026"
+description: "Jak to zrobi\u0107: W Google Apps Script logowanie mo\u017Cna wykona\u0107\
+  \ za pomoc\u0105 r\xF3\u017Cnych metod, takich jak klasa `Logger` oraz `console.log()`.\
+  \ Klasa Logger to\u2026"
 lastmod: '2024-03-13T22:44:34.910141-06:00'
 model: gpt-4-0125-preview
-summary: "Rejestrowanie (logowanie) w programowaniu polega na zapisywaniu zdarze\u0144\
-  , b\u0142\u0119d\xF3w lub wybitnych wyst\u0105pie\u0144 podczas dzia\u0142ania programu."
+summary: "W Google Apps Script logowanie mo\u017Cna wykona\u0107 za pomoc\u0105 r\xF3\
+  \u017Cnych metod, takich jak klasa `Logger` oraz `console.log()`."
 title: Rejestrowanie
 weight: 17
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-02-01 21:30:18.778843-07:00
-description: "Working with complex numbers involves performing mathematical operations\
-  \ on numbers that have both a real part and an imaginary part. Programmers often\u2026"
+description: "How to: In Visual Basic for Applications (VBA), handling complex numbers\
+  \ can be somewhat less straightforward compared to languages with native support\u2026"
 lastmod: '2024-03-13T22:44:59.928948-06:00'
 model: gpt-4-0125-preview
-summary: Working with complex numbers involves performing mathematical operations
-  on numbers that have both a real part and an imaginary part.
+summary: In Visual Basic for Applications (VBA), handling complex numbers can be somewhat
+  less straightforward compared to languages with native support for them.
 title: Working with complex numbers
 weight: 14
 ---

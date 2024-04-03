@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:41.469016-07:00
-description: "Lavorare con YAML in Go implica l'analisi di file YAML (YAML Ain't Markup\
-  \ Language), uno standard di serializzazione di dati amichevole per l'utente,\u2026"
+description: "Come fare: Per lavorare con YAML in Go, dovrai prima importare una libreria\
+  \ che supporti l'analisi e la serializzazione di YAML, poich\xE9 la libreria\u2026"
 lastmod: '2024-03-13T22:44:42.930268-06:00'
 model: gpt-4-0125-preview
-summary: Lavorare con YAML in Go implica l'analisi di file YAML (YAML Ain't Markup
-  Language), uno standard di serializzazione di dati amichevole per l'utente, nelle
-  strutture dati di Go e viceversa.
+summary: "Per lavorare con YAML in Go, dovrai prima importare una libreria che supporti\
+  \ l'analisi e la serializzazione di YAML, poich\xE9 la libreria standard di Go non\
+  \ include supporto diretto per YAML."
 title: Lavorare con YAML
 weight: 41
 ---

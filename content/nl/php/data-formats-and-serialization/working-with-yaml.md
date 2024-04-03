@@ -2,11 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:07.694343-07:00
-description: "YAML is een door mensen leesbaar gegevensserialisatieformaat. Programmeurs\
-  \ gebruiken het voor configuratiebestanden, gegevensuitwisseling en opslag\u2026"
+description: "Hoe te: Om met YAML in PHP te werken, heb je de `yaml`-extensie nodig.\
+  \ Hier is een snelle opstart: **Installeer YAML-extensie** (indien niet\u2026"
 lastmod: '2024-03-13T22:44:50.916168-06:00'
 model: gpt-4-0125-preview
-summary: YAML is een door mensen leesbaar gegevensserialisatieformaat.
+summary: Om met YAML in PHP te werken, heb je de `yaml`-extensie nodig.
 title: Werken met YAML
 weight: 41
 ---

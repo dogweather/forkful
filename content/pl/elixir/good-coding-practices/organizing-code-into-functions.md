@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:10:07.693436-07:00
-description: "Organizowanie kodu w funkcje oznacza grupowanie powi\u0105zanych operacji\
-  \ w bloki mo\u017Cliwe do ponownego u\u017Cycia. Robimy to, aby poprawi\u0107 czytelno\u015B\
-  \u0107 i mo\u017Cliwo\u015B\u0107\u2026"
+description: "Jak to zrobi\u0107: Stw\xF3rzmy prost\u0105 funkcj\u0119 w Elixirze\
+  \ do kapitalizacji s\u0142\xF3w."
 lastmod: '2024-03-13T22:44:35.048910-06:00'
 model: gpt-4-1106-preview
-summary: "Organizowanie kodu w funkcje oznacza grupowanie powi\u0105zanych operacji\
-  \ w bloki mo\u017Cliwe do ponownego u\u017Cycia."
+summary: "Stw\xF3rzmy prost\u0105 funkcj\u0119 w Elixirze do kapitalizacji s\u0142\
+  \xF3w."
 title: Organizacja kodu w funkcje
 weight: 18
 ---

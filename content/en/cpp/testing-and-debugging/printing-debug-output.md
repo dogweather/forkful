@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:52:07.355145-07:00
-description: "Printing debug output is like having a conversation with your code;\
-  \ you pepper in print statements to check on its health and what it's thinking.\u2026"
+description: 'How to: Here''s a snippet showing you how to print a simple debug message
+  to the console.'
 lastmod: '2024-03-13T22:45:00.359844-06:00'
 model: gpt-4-1106-preview
-summary: Printing debug output is like having a conversation with your code; you pepper
-  in print statements to check on its health and what it's thinking.
+summary: Here's a snippet showing you how to print a simple debug message to the console.
 title: Printing debug output
 weight: 33
 ---

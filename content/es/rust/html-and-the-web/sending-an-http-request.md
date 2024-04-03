@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 18:00:34.805176-07:00
-description: "Enviar una petici\xF3n HTTP es comunicarte con un servidor para intercambiar\
-  \ datos. Los programadores lo hacen para interactuar con servicios web, como APIs,\u2026"
+description: "C\xF3mo hacerlo: Para enviar una petici\xF3n HTTP en Rust, es com\xFA\
+  n usar la librer\xEDa `reqwest`, la cual permite manejar peticiones de forma sencilla.\
+  \ Aqu\xED un\u2026"
 lastmod: '2024-03-13T22:44:58.843325-06:00'
 model: gpt-4-1106-preview
-summary: "Enviar una petici\xF3n HTTP es comunicarte con un servidor para intercambiar\
-  \ datos."
+summary: "Para enviar una petici\xF3n HTTP en Rust, es com\xFAn usar la librer\xED\
+  a `reqwest`, la cual permite manejar peticiones de forma sencilla."
 title: Enviando una solicitud http
 weight: 44
 ---

@@ -2,13 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:32.947126-07:00
-description: "Escrever testes em programa\xE7\xE3o envolve criar procedimentos espec\xED\
-  ficos para validar a funcionalidade e o desempenho dos seus segmentos de c\xF3digo,\u2026"
+description: "Como Fazer: Embora o Visual Basic for Applications (VBA) n\xE3o venha\
+  \ com uma estrutura de teste integrada semelhante \xE0s dispon\xEDveis em linguagens\
+  \ como\u2026"
 lastmod: '2024-03-13T22:44:46.416297-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever testes em programa\xE7\xE3o envolve criar procedimentos espec\xED\
-  ficos para validar a funcionalidade e o desempenho dos seus segmentos de c\xF3digo,\
-  \ garantindo que eles funcionem conforme esperado sob v\xE1rias condi\xE7\xF5es."
+summary: "Embora o Visual Basic for Applications (VBA) n\xE3o venha com uma estrutura\
+  \ de teste integrada semelhante \xE0s dispon\xEDveis em linguagens como Python ou\
+  \ JavaScript, ainda \xE9 poss\xEDvel implementar procedimentos de teste simples\
+  \ para verificar a integridade do seu c\xF3digo."
 title: Escrevendo testes
 weight: 36
 ---

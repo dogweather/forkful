@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:50.544310-07:00
-description: "Generar n\xFAmeros aleatorios es una tarea fundamental en la programaci\xF3\
-  n que se utiliza para una mir\xEDada de aplicaciones, tales como simulaciones, juegos\
-  \ y\u2026"
+description: "C\xF3mo hacerlo: En Google Apps Script, puedes generar n\xFAmeros aleatorios\
+  \ usando la funci\xF3n `Math.random()`, similar a JavaScript. Esta funci\xF3n devuelve\
+  \ un\u2026"
 lastmod: '2024-03-13T22:44:58.522163-06:00'
 model: gpt-4-0125-preview
-summary: "Generar n\xFAmeros aleatorios es una tarea fundamental en la programaci\xF3\
-  n que se utiliza para una mir\xEDada de aplicaciones, tales como simulaciones, juegos\
-  \ y sistemas de seguridad."
+summary: "En Google Apps Script, puedes generar n\xFAmeros aleatorios usando la funci\xF3\
+  n `Math.random()`, similar a JavaScript."
 title: "Generando n\xFAmeros aleatorios"
 weight: 12
 ---

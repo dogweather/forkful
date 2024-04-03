@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:29.321030-07:00
-description: "En el desarrollo de software, a menudo es necesario verificar si un\
-  \ directorio existe para evitar errores al intentar acceder, leer o escribir archivos.\u2026"
+description: "C\xF3mo: La biblioteca est\xE1ndar de Rust (`std`) incluye funcionalidad\
+  \ para verificar la existencia de un directorio a trav\xE9s de los m\xF3dulos `std::path::Path`\u2026"
 lastmod: '2024-03-13T22:44:58.860838-06:00'
 model: gpt-4-0125-preview
-summary: En el desarrollo de software, a menudo es necesario verificar si un directorio
-  existe para evitar errores al intentar acceder, leer o escribir archivos.
+summary: "La biblioteca est\xE1ndar de Rust (`std`) incluye funcionalidad para verificar\
+  \ la existencia de un directorio a trav\xE9s de los m\xF3dulos `std::path::Path`\
+  \ y `std::fs`."
 title: Comprobando si un directorio existe
 weight: 20
 ---

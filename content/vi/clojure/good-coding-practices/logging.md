@@ -2,16 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:12.210222-07:00
-description: "Ghi ch\xE9p (Logging) qu\u1EA3 th\u1EF1c t\u01B0\u01A1ng \u0111\u01B0\
-  \u01A1ng v\u1EDBi nh\u1EADt k\xFD t\xE0u th\u1EE7y; n\xF3 l\xE0 c\xE1ch \u0111\u1EC3\
-  \ ghi l\u1EA1i c\xE1c s\u1EF1 ki\u1EC7n x\u1EA3y ra khi m\u1ED9t \u1EE9ng d\u1EE5\
-  ng \u0111ang ch\u1EA1y. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Clojure d\u1EF1a v\xE0o c\xE1c ti\u1EC7n \xED\
+  ch ghi ch\xE9p c\u1EE7a Java, nh\u01B0ng b\u1EA1n c\xF3 th\u1EC3 v\u1EADn d\u1EE5\
+  ng ch\xFAng theo c\xE1ch Clojure ti\u1EBFp c\u1EADn h\u1EE3p l\xFD h\u01A1n. H\xE3\
+  y c\xF9ng xem b\u1EA1n c\xF3\u2026"
 lastmod: '2024-03-13T22:44:36.161728-06:00'
 model: gpt-4-0125-preview
-summary: "Ghi ch\xE9p (Logging) qu\u1EA3 th\u1EF1c t\u01B0\u01A1ng \u0111\u01B0\u01A1\
-  ng v\u1EDBi nh\u1EADt k\xFD t\xE0u th\u1EE7y; n\xF3 l\xE0 c\xE1ch \u0111\u1EC3 ghi\
-  \ l\u1EA1i c\xE1c s\u1EF1 ki\u1EC7n x\u1EA3y ra khi m\u1ED9t \u1EE9ng d\u1EE5ng\
-  \ \u0111ang ch\u1EA1y."
+summary: "Clojure d\u1EF1a v\xE0o c\xE1c ti\u1EC7n \xEDch ghi ch\xE9p c\u1EE7a Java,\
+  \ nh\u01B0ng b\u1EA1n c\xF3 th\u1EC3 v\u1EADn d\u1EE5ng ch\xFAng theo c\xE1ch Clojure\
+  \ ti\u1EBFp c\u1EADn h\u1EE3p l\xFD h\u01A1n."
 title: Ghi log
 weight: 17
 ---

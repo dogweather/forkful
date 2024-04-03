@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:24.024513-07:00
-description: "Obtener la fecha actual en Python es una operaci\xF3n b\xE1sica para\
-  \ muchas aplicaciones, tales como el registro de actividades, an\xE1lisis de datos\
-  \ y la toma de\u2026"
+description: "C\xF3mo hacerlo: **Usando la librer\xEDa est\xE1ndar `datetime`:** El\
+  \ m\xF3dulo `datetime` en la librer\xEDa est\xE1ndar de Python provee clases para\
+  \ manipular fechas y\u2026"
 lastmod: '2024-03-13T22:44:58.623434-06:00'
 model: gpt-4-0125-preview
-summary: "Obtener la fecha actual en Python es una operaci\xF3n b\xE1sica para muchas\
-  \ aplicaciones, tales como el registro de actividades, an\xE1lisis de datos y la\
-  \ toma de decisiones basada en tiempo."
+summary: "**Usando la librer\xEDa est\xE1ndar `datetime`:**\n\nEl m\xF3dulo `datetime`\
+  \ en la librer\xEDa est\xE1ndar de Python provee clases para manipular fechas y\
+  \ horas."
 title: Obteniendo la fecha actual
 weight: 29
 ---

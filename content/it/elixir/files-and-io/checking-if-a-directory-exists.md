@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:59.587756-07:00
-description: "Controllare se una directory esiste in Elixir significa verificare la\
-  \ presenza di una directory in un percorso specificato nel file system. I\u2026"
+description: "Come Fare: La libreria standard di Elixir offre un modo semplice per\
+  \ controllare l'esistenza di una directory tramite il modulo `File`. Ecco come puoi\u2026"
 lastmod: '2024-03-13T22:44:43.098557-06:00'
 model: gpt-4-0125-preview
-summary: Controllare se una directory esiste in Elixir significa verificare la presenza
-  di una directory in un percorso specificato nel file system.
+summary: La libreria standard di Elixir offre un modo semplice per controllare l'esistenza
+  di una directory tramite il modulo `File`.
 title: Verifica se una directory esiste
 weight: 20
 ---

@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:57.595230-07:00
-description: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP c\xF3 ngh\u0129a l\xE0 y\xEA\
-  u c\u1EA7u m\u1ED9t m\xE1y ch\u1EE7 t\u1EEB xa v\u1EC1 d\u1EEF li\u1EC7u ho\u1EB7\
-  c h\xE0nh \u0111\u1ED9ng. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0\
-  y \u0111\u1EC3 t\u01B0\u01A1ng t\xE1c v\u1EDBi c\xE1c d\u1ECBch v\u1EE5 web, l\u1EA5\
-  y\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Lua kh\xF4ng h\u1ED7 tr\u1EE3 HTTP m\u1EB7c\
+  \ \u0111\u1ECBnh, v\xEC v\u1EADy ch\xFAng ta s\u1EED d\u1EE5ng c\xE1c th\u01B0 vi\u1EC7\
+  n. M\u1ED9t l\u1EF1a ch\u1ECDn ph\u1ED5 bi\u1EBFn l\xE0 `lua-requests`. D\u01B0\u1EDB\
+  i \u0111\xE2y l\xE0 m\u1ED9t v\xED d\u1EE5 nhanh."
 lastmod: '2024-03-13T22:44:36.818460-06:00'
 model: gpt-4-0125-preview
-summary: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP c\xF3 ngh\u0129a l\xE0 y\xEAu c\u1EA7\
-  u m\u1ED9t m\xE1y ch\u1EE7 t\u1EEB xa v\u1EC1 d\u1EEF li\u1EC7u ho\u1EB7c h\xE0\
-  nh \u0111\u1ED9ng."
+summary: "Lua kh\xF4ng h\u1ED7 tr\u1EE3 HTTP m\u1EB7c \u0111\u1ECBnh, v\xEC v\u1EAD\
+  y ch\xFAng ta s\u1EED d\u1EE5ng c\xE1c th\u01B0 vi\u1EC7n."
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
 weight: 44
 ---

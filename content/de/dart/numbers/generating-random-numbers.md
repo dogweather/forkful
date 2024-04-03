@@ -2,12 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:40.103020-07:00
-description: "Das Generieren von Zufallszahlen in Dart beinhaltet die Erstellung von\
-  \ numerischen Werten, die unvorhersehbar sind und bei jeder Ausf\xFChrung variieren.\u2026"
+description: "Wie geht das: Die Kernbibliothek von Dart unterst\xFCtzt das Generieren\
+  \ von Zufallszahlen mit der `Random`-Klasse, die in `dart:math` gefunden werden\
+  \ kann.\u2026"
 lastmod: '2024-03-13T22:44:53.576067-06:00'
 model: gpt-4-0125-preview
-summary: "Das Generieren von Zufallszahlen in Dart beinhaltet die Erstellung von numerischen\
-  \ Werten, die unvorhersehbar sind und bei jeder Ausf\xFChrung variieren."
+summary: "Die Kernbibliothek von Dart unterst\xFCtzt das Generieren von Zufallszahlen\
+  \ mit der `Random`-Klasse, die in `dart:math` gefunden werden kann."
 title: Zufallszahlen generieren
 weight: 12
 ---

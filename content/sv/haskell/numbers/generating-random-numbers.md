@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 20:34:23.163266-07:00
-description: "Att generera slumpm\xE4ssiga tal i Haskell inneb\xE4r att skapa tal\
-  \ som \xE4r of\xF6ruts\xE4gbara enligt m\xE4nskliga standarder. Detta \xE4r avg\xF6\
-  rande i scenarier som\u2026"
+description: "Hur man g\xF6r: F\xF6r att generera slumpm\xE4ssiga tal i Haskell anv\xE4\
+  nder man vanligtvis `random`-paketet, som \xE4r en del av Haskell-plattformen. H\xE4\
+  r \xE4r en steg-\u2026"
 lastmod: '2024-03-13T22:44:37.951093-06:00'
 model: gpt-4-0125-preview
-summary: "Att generera slumpm\xE4ssiga tal i Haskell inneb\xE4r att skapa tal som\
-  \ \xE4r of\xF6ruts\xE4gbara enligt m\xE4nskliga standarder."
+summary: "F\xF6r att generera slumpm\xE4ssiga tal i Haskell anv\xE4nder man vanligtvis\
+  \ `random`-paketet, som \xE4r en del av Haskell-plattformen."
 title: Generera slumptal
 weight: 12
 ---

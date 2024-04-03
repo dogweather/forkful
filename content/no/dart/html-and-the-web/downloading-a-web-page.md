@@ -2,13 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:32.697106-07:00
-description: "\xC5 laste ned en nettside inneb\xE6rer \xE5 hente innholdet p\xE5 en\
-  \ nettside via dens URL for behandling eller lagring. Programmerere gj\xF8r dette\
-  \ for \xE5 trekke ut\u2026"
+description: "Hvordan: Dart tilbyr `http`-pakken, et popul\xE6rt tredjepartsbibliotek\
+  \ for \xE5 gj\xF8re HTTP-foresp\xF8rsler. Her er et grunnleggende eksempel p\xE5\
+  \ hvordan man bruker\u2026"
 lastmod: '2024-03-13T22:44:40.485980-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 laste ned en nettside inneb\xE6rer \xE5 hente innholdet p\xE5 en nettside\
-  \ via dens URL for behandling eller lagring."
+summary: "Dart tilbyr `http`-pakken, et popul\xE6rt tredjepartsbibliotek for \xE5\
+  \ gj\xF8re HTTP-foresp\xF8rsler."
 title: Nedlasting av en nettside
 weight: 42
 ---

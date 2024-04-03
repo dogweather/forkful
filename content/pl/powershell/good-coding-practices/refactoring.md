@@ -1,13 +1,13 @@
 ---
 date: 2024-01-26 03:37:48.167232-07:00
-description: "Refaktoryzacja to proces restrukturyzacji istniej\u0105cego kodu komputerowego\
-  \ bez zmiany jego zewn\u0119trznych zachowa\u0144, maj\u0105cy na celu popraw\u0119\
-  \ atrybut\xF3w\u2026"
+description: "Jak to zrobi\u0107: PowerShell nie ma wbudowanego, dedykowanego narz\u0119\
+  dzia do refaktoryzacji, ale nadal mo\u017Cesz oczy\u015Bci\u0107 sw\xF3j kod pod\
+  \ k\u0105tem czytelno\u015Bci i\u2026"
 lastmod: '2024-03-13T22:44:35.638206-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktoryzacja to proces restrukturyzacji istniej\u0105cego kodu komputerowego\
-  \ bez zmiany jego zewn\u0119trznych zachowa\u0144, maj\u0105cy na celu popraw\u0119\
-  \ atrybut\xF3w niefunkcjonalnych oprogramowania."
+summary: "PowerShell nie ma wbudowanego, dedykowanego narz\u0119dzia do refaktoryzacji,\
+  \ ale nadal mo\u017Cesz oczy\u015Bci\u0107 sw\xF3j kod pod k\u0105tem czytelno\u015B\
+  ci i wydajno\u015Bci."
 title: Refaktoryzacja
 weight: 19
 ---

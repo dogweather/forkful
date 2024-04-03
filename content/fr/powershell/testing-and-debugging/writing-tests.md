@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:27.888030-07:00
-description: "\xC9crire des tests en PowerShell implique de cr\xE9er des scripts qui\
-  \ valident automatiquement le fonctionnement de votre code PowerShell, en garantissant\u2026"
+description: "Comment faire : PowerShell n'a pas de framework de test int\xE9gr\xE9\
+  , mais Pester, un module tiers populaire, est largement utilis\xE9 pour \xE9crire\
+  \ et ex\xE9cuter des\u2026"
 lastmod: '2024-03-13T22:44:58.052315-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire des tests en PowerShell implique de cr\xE9er des scripts qui valident\
-  \ automatiquement le fonctionnement de votre code PowerShell, en garantissant qu'il\
-  \ se comporte comme pr\xE9vu."
+summary: "PowerShell n'a pas de framework de test int\xE9gr\xE9, mais Pester, un module\
+  \ tiers populaire, est largement utilis\xE9 pour \xE9crire et ex\xE9cuter des tests."
 title: "R\xE9daction de tests"
 weight: 36
 ---

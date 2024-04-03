@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:07.425788-07:00
-description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen C++:lla on perusteht\xE4\
-  v\xE4 ohjelmille, jotka tarvitsevat k\xE4sitell\xE4 tai n\xE4ytt\xE4\xE4 p\xE4iv\xE4\
-  m\xE4\xE4ri\xE4 j\xE4rjestelm\xE4n kellon mukaan. Se on\u2026"
+description: "Miten: C++ tarjoaa useita tapoja saada nykyinen p\xE4iv\xE4m\xE4\xE4\
+  r\xE4, mukaan lukien C++ standardikirjasto ja kolmannen osapuolen kirjastot kuten\
+  \ Boost. Seuraavat\u2026"
 lastmod: '2024-03-13T22:44:56.875682-06:00'
 model: gpt-4-0125-preview
-summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen C++:lla on perusteht\xE4v\xE4\
-  \ ohjelmille, jotka tarvitsevat k\xE4sitell\xE4 tai n\xE4ytt\xE4\xE4 p\xE4iv\xE4\
-  m\xE4\xE4ri\xE4 j\xE4rjestelm\xE4n kellon mukaan."
+summary: "C++ tarjoaa useita tapoja saada nykyinen p\xE4iv\xE4m\xE4\xE4r\xE4, mukaan\
+  \ lukien C++ standardikirjasto ja kolmannen osapuolen kirjastot kuten Boost."
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---

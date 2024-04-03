@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:15.960274-07:00
-description: "La suppression de caract\xE8res correspondant \xE0 un motif sp\xE9cifique\
-  \ dans les cha\xEEnes en C consiste \xE0 retirer toutes les instances de certains\
-  \ caract\xE8res\u2026"
+description: "Comment : C ne dispose pas d'une fonction int\xE9gr\xE9e permettant\
+  \ de supprimer directement des caract\xE8res d'une cha\xEEne bas\xE9e sur un motif,\
+  \ contrairement \xE0\u2026"
 lastmod: '2024-03-13T22:44:58.353183-06:00'
 model: gpt-4-0125-preview
-summary: "La suppression de caract\xE8res correspondant \xE0 un motif sp\xE9cifique\
-  \ dans les cha\xEEnes en C consiste \xE0 retirer toutes les instances de certains\
-  \ caract\xE8res r\xE9pondant \xE0 des crit\xE8res pr\xE9d\xE9finis."
+summary: "C ne dispose pas d'une fonction int\xE9gr\xE9e permettant de supprimer directement\
+  \ des caract\xE8res d'une cha\xEEne bas\xE9e sur un motif, contrairement \xE0 certains\
+  \ langages de plus haut niveau."
 title: "Supprimer des caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---

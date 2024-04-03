@@ -2,16 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:44.259186-07:00
-description: "Thao t\xE1c v\u1EDBi t\u1EC7p b\u1EB1ng d\xF2ng l\u1EC7nh CLI trong\
-  \ Ruby l\xE0 vi\u1EC7c th\u1EF1c hi\u1EC7n c\xE1c thao t\xE1c t\u1EC7p th\xF4ng\
-  \ th\u01B0\u1EDDng tr\u1EF1c ti\u1EBFp t\u1EEB terminal c\u1EE7a b\u1EA1n s\u1EED\
-  \ d\u1EE5ng c\xE1c script Ruby. \u0110\xE2y\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Ruby, v\u1EDBi c\xFA ph\xE1p bi\u1EC3u c\u1EA3\
+  m c\u1EE7a m\xECnh, cho ph\xE9p vi\u1EBFt c\xE1c d\xF2ng l\u1EC7nh ng\u1EAFn g\u1ECD\
+  n v\xE0 d\u1EC5 \u0111\u1ECDc c\xF3 th\u1EC3 x\u1EED l\xFD \u0111a d\u1EA1ng c\xE1\
+  c thao t\xE1c t\u1EC7p. D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t s\u1ED1\u2026"
 lastmod: '2024-03-13T22:44:37.333125-06:00'
 model: gpt-4-0125-preview
-summary: "Thao t\xE1c v\u1EDBi t\u1EC7p b\u1EB1ng d\xF2ng l\u1EC7nh CLI trong Ruby\
-  \ l\xE0 vi\u1EC7c th\u1EF1c hi\u1EC7n c\xE1c thao t\xE1c t\u1EC7p th\xF4ng th\u01B0\
-  \u1EDDng tr\u1EF1c ti\u1EBFp t\u1EEB terminal c\u1EE7a b\u1EA1n s\u1EED d\u1EE5\
-  ng c\xE1c script Ruby."
+summary: "Ruby, v\u1EDBi c\xFA ph\xE1p bi\u1EC3u c\u1EA3m c\u1EE7a m\xECnh, cho ph\xE9\
+  p vi\u1EBFt c\xE1c d\xF2ng l\u1EC7nh ng\u1EAFn g\u1ECDn v\xE0 d\u1EC5 \u0111\u1ECD\
+  c c\xF3 th\u1EC3 x\u1EED l\xFD \u0111a d\u1EA1ng c\xE1c thao t\xE1c t\u1EC7p."
 title: "Thao t\xE1c v\u1EDBi c\xE1c t\u1EC7p tin b\u1EB1ng c\xE1c l\u1EC7nh CLI ch\u1EC9\
   \ m\u1ED9t d\xF2ng"
 weight: 31

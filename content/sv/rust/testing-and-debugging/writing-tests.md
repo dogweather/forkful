@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:49.814664-07:00
-description: "Att skriva tester i Rust inneb\xE4r att skapa automatiserade kontroller\
-  \ f\xF6r att s\xE4kerst\xE4lla att din kod fungerar som f\xF6rv\xE4ntat. Programmerare\
-  \ g\xF6r detta f\xF6r\u2026"
+description: "Hur man g\xF6r: Rusts inbyggda testramverk st\xF6der enhetstester, integrationstester\
+  \ och dokumentationstester utan behov av externa bibliotek. Tester markeras\u2026"
 lastmod: '2024-03-13T22:44:37.701963-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva tester i Rust inneb\xE4r att skapa automatiserade kontroller\
-  \ f\xF6r att s\xE4kerst\xE4lla att din kod fungerar som f\xF6rv\xE4ntat."
+summary: "Rusts inbyggda testramverk st\xF6der enhetstester, integrationstester och\
+  \ dokumentationstester utan behov av externa bibliotek."
 title: Skriva tester
 weight: 36
 ---

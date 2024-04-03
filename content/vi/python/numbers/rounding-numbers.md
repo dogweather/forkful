@@ -2,15 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:57.340341-07:00
-description: "L\xE0m tr\xF2n s\u1ED1 c\xF3 ngh\u0129a l\xE0 \u0111i\u1EC1u ch\u1EC9\
-  nh ch\xFAng \u0111\u1EC3 ch\xFAng g\u1EA7n v\u1EDBi m\u1ED9t gi\xE1 tr\u1ECB \u0111\
-  \u01A1n gi\u1EA3n ho\u1EB7c quan tr\u1ECDng h\u01A1n. C\xE1c l\u1EADp tr\xECnh vi\xEA\
-  n l\xE0m tr\xF2n s\u1ED1 \u0111\u1EC3 \u0111\u01A1n gi\u1EA3n h\xF3a k\u1EBFt\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: D\u01B0\u1EDBi \u0111\xE2y l\xE0 th\xF4\
+  ng tin c\u01A1 b\u1EA3n v\u1EC1 vi\u1EC7c l\xE0m tr\xF2n s\u1ED1 trong Python."
 lastmod: '2024-03-13T22:44:36.089925-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m tr\xF2n s\u1ED1 c\xF3 ngh\u0129a l\xE0 \u0111i\u1EC1u ch\u1EC9nh\
-  \ ch\xFAng \u0111\u1EC3 ch\xFAng g\u1EA7n v\u1EDBi m\u1ED9t gi\xE1 tr\u1ECB \u0111\
-  \u01A1n gi\u1EA3n ho\u1EB7c quan tr\u1ECDng h\u01A1n."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 th\xF4ng tin c\u01A1 b\u1EA3n v\u1EC1 vi\u1EC7\
+  c l\xE0m tr\xF2n s\u1ED1 trong Python."
 title: "L\xE0m tr\xF2n s\u1ED1"
 weight: 13
 ---

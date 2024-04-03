@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:15.826089-07:00
-description: "\xC5 f\xE5 tak i dagens dato i C# inneb\xE6rer \xE5 hente dagens dato-\
-  \ og tidsdetaljer fra systemet. Programmerere trenger ofte \xE5 f\xE5 tilgang til\
-  \ denne informasjonen\u2026"
+description: "Hvordan: C# tilbyr en enkel m\xE5te \xE5 f\xE5 dagens dato p\xE5 ved\
+  \ bruk av `DateTime`-klassen som er en del av .NET Frameworks System-navnerom. Eksemplet\
+  \ nedenfor\u2026"
 lastmod: '2024-03-13T22:44:40.807302-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 f\xE5 tak i dagens dato i C# inneb\xE6rer \xE5 hente dagens dato- og\
-  \ tidsdetaljer fra systemet."
+summary: "C# tilbyr en enkel m\xE5te \xE5 f\xE5 dagens dato p\xE5 ved bruk av `DateTime`-klassen\
+  \ som er en del av .NET Frameworks System-navnerom."
 title: "F\xE5 dagens dato"
 weight: 29
 ---

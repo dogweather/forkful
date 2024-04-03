@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:22.075818-07:00
-description: "Merkkijonojen yhdist\xE4minen tarkoittaa kahden tai useamman merkkijonon\
-  \ yhdist\xE4mist\xE4 yhdeksi merkkijonoksi. Ohjelmoijat tekev\xE4t t\xE4t\xE4 dynaamisten\
-  \ viestien,\u2026"
+description: "Kuinka: Google Apps Scriptiss\xE4, joka perustuu JavaScriptiin, on useita\
+  \ tapoja yhdist\xE4\xE4 merkkijonoja. T\xE4ss\xE4 on joitakin yleisi\xE4 menetelmi\xE4\
+  : #."
 lastmod: '2024-03-13T22:44:56.087752-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonojen yhdist\xE4minen tarkoittaa kahden tai useamman merkkijonon\
-  \ yhdist\xE4mist\xE4 yhdeksi merkkijonoksi."
+summary: "Google Apps Scriptiss\xE4, joka perustuu JavaScriptiin, on useita tapoja\
+  \ yhdist\xE4\xE4 merkkijonoja."
 title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---

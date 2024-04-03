@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:59:56.180525-07:00
-description: "L\xE4hett\xE4m\xE4\xE4n HTTP-pyynn\xF6n tarkoittaa, ett\xE4 pyydet\xE4\
-  \xE4n tietoja verkossa olevasta palvelimesta tai l\xE4hetet\xE4\xE4n dataa sille.\
-  \ Ohjelmoijat tekev\xE4t t\xE4m\xE4n, koska se\u2026"
+description: "How to: - Kuinka: Haskellissa HTTP-pyynt\xF6jen l\xE4hett\xE4miseen\
+  \ k\xE4ytet\xE4\xE4n kirjastoja, kuten `http-conduit`. Esimerkiksi n\xE4in."
 lastmod: '2024-03-13T22:44:56.612528-06:00'
 model: gpt-4-1106-preview
-summary: "L\xE4hett\xE4m\xE4\xE4n HTTP-pyynn\xF6n tarkoittaa, ett\xE4 pyydet\xE4\xE4\
-  n tietoja verkossa olevasta palvelimesta tai l\xE4hetet\xE4\xE4n dataa sille."
+summary: "Haskellissa HTTP-pyynt\xF6jen l\xE4hett\xE4miseen k\xE4ytet\xE4\xE4n kirjastoja,\
+  \ kuten `http-conduit`."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---

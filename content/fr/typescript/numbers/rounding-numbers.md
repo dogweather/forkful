@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:47:17.114965-07:00
-description: "Arrondir les nombres consiste \xE0 r\xE9duire un chiffre \xE0 une pr\xE9\
-  cision sp\xE9cifique. Les programmeurs le font pour contr\xF4ler la sortie num\xE9\
-  rique afin\u2026"
+description: "Comment faire : L'arrondi en TypeScript peut se faire en utilisant plusieurs\
+  \ m\xE9thodes. Voici un rapide aper\xE7u ."
 lastmod: '2024-03-13T22:44:57.431119-06:00'
 model: gpt-4-0125-preview
-summary: "Arrondir les nombres consiste \xE0 r\xE9duire un chiffre \xE0 une pr\xE9\
-  cision sp\xE9cifique."
+summary: "L'arrondi en TypeScript peut se faire en utilisant plusieurs m\xE9thodes."
 title: Arrondir les nombres
 weight: 13
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:23.437775-07:00
-description: "Express\xF5es regulares (regex) na programa\xE7\xE3o s\xE3o usadas para\
-  \ procurar, combinar e manipular strings baseadas em padr\xF5es espec\xEDficos.\
-  \ Programadores as\u2026"
+description: "Como: Em Go, o pacote `regexp` fornece a funcionalidade regex. Aqui\
+  \ est\xE1 um guia passo a passo sobre como us\xE1-lo: 1. **Compilando Uma Express\xE3\
+  o Regular**\u2026"
 lastmod: '2024-03-13T22:44:46.049793-06:00'
 model: gpt-4-0125-preview
-summary: "Express\xF5es regulares (regex) na programa\xE7\xE3o s\xE3o usadas para\
-  \ procurar, combinar e manipular strings baseadas em padr\xF5es espec\xEDficos."
+summary: Em Go, o pacote `regexp` fornece a funcionalidade regex.
 title: "Usando express\xF5es regulares"
 weight: 11
 ---

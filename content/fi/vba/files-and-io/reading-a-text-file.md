@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:51.058893-07:00
-description: "Tekstitiedoston lukeminen Visual Basic for Applications (VBA) -ohjelmalla\
-  \ sis\xE4lt\xE4\xE4 ohjelmakoodin avulla teht\xE4v\xE4n p\xE4\xE4syn ja tiedoston\
-  \ sis\xE4ll\xF6n purkamisen\u2026"
+description: "Miten: Yksinkertaisin tapa lukea tekstitiedosto VBA:ssa on k\xE4ytt\xE4\
+  m\xE4ll\xE4 `Open`-lauseketta yhdess\xE4 `Input`- tai `Line Input` -funktioiden\
+  \ kanssa. T\xE4ss\xE4 on,\u2026"
 lastmod: '2024-03-13T22:44:56.419577-06:00'
 model: gpt-4-0125-preview
-summary: "Tekstitiedoston lukeminen Visual Basic for Applications (VBA) -ohjelmalla\
-  \ sis\xE4lt\xE4\xE4 ohjelmakoodin avulla teht\xE4v\xE4n p\xE4\xE4syn ja tiedoston\
-  \ sis\xE4ll\xF6n purkamisen Office-sovelluksen sis\xE4ll\xE4."
+summary: "Yksinkertaisin tapa lukea tekstitiedosto VBA:ssa on k\xE4ytt\xE4m\xE4ll\xE4\
+  \ `Open`-lauseketta yhdess\xE4 `Input`- tai `Line Input` -funktioiden kanssa."
 title: Tekstitiedoston lukeminen
 weight: 22
 ---

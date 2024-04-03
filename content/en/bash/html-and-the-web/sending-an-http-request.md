@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:58:50.569489-07:00
-description: "Sending an HTTP request is a way to communicate with web servers to\
-  \ retrieve data or submit forms. Programmers do it to interact with web services,\
-  \ APIs\u2026"
+description: "How to: Bash can use tools like `curl` or `wget` for HTTP requests.\
+  \ Here\u2019s a quick example with `curl`."
 lastmod: '2024-03-13T22:45:00.242057-06:00'
 model: gpt-4-1106-preview
-summary: Sending an HTTP request is a way to communicate with web servers to retrieve
-  data or submit forms.
+summary: Bash can use tools like `curl` or `wget` for HTTP requests.
 title: Sending an HTTP request
 weight: 44
 ---

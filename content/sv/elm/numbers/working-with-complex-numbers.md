@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:39:35.364350-07:00
-description: "Komplexa tal \xE4r en kombination av reella och imagin\xE4ra tal, som\
-  \ `a + bi` d\xE4r `i` \xE4r kvadratroten av -1. De \xE4r avg\xF6rande inom omr\xE5\
-  den som\u2026"
+description: "Hur man g\xF6r: Elm har inte inbyggt st\xF6d f\xF6r komplexa tal, s\xE5\
+  \ du kommer att skapa din egen typ och funktioner. H\xE4r \xE4r en snabb upps\xE4\
+  ttning."
 lastmod: '2024-03-13T22:44:37.823224-06:00'
 model: gpt-4-0125-preview
-summary: "Komplexa tal \xE4r en kombination av reella och imagin\xE4ra tal, som `a\
-  \ + bi` d\xE4r `i` \xE4r kvadratroten av -1."
+summary: "Elm har inte inbyggt st\xF6d f\xF6r komplexa tal, s\xE5 du kommer att skapa\
+  \ din egen typ och funktioner."
 title: Att arbeta med komplexa tal
 weight: 14
 ---

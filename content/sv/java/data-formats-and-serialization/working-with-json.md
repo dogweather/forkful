@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:04.571921-07:00
-description: "Att arbeta med JSON (JavaScript Object Notation) inneb\xE4r att hantera\
-  \ detta l\xE4tta datautbytesformat inuti dina Java-applikationer. Programmerare\
-  \ v\xE4ljer\u2026"
+description: "Hur man g\xF6r: L\xE5t oss kavla upp \xE4rmarna och b\xF6rja koda med\
+  \ JSON i Java. F\xF6r det f\xF6rsta, du beh\xF6ver ett JSON-behandlande bibliotek\
+  \ som `Jackson` eller\u2026"
 lastmod: '2024-03-13T22:44:37.808551-06:00'
 model: gpt-4-0125-preview
-summary: "Att arbeta med JSON (JavaScript Object Notation) inneb\xE4r att hantera\
-  \ detta l\xE4tta datautbytesformat inuti dina Java-applikationer."
+summary: "L\xE5t oss kavla upp \xE4rmarna och b\xF6rja koda med JSON i Java."
 title: Arbeta med JSON
 weight: 38
 ---

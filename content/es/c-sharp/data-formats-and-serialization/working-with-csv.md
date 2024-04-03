@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:16.570883-07:00
-description: "Los archivos CSV (Valores Separados por Comas) son un formato com\xFA\
-  n de intercambio de datos que representa datos tabulares en texto plano, utilizando\u2026"
+description: "C\xF3mo hacerlo: Trabajar con archivos CSV en C# se puede lograr a trav\xE9\
+  s del espacio de nombres `System.IO` para operaciones b\xE1sicas, y para manipulaciones\u2026"
 lastmod: '2024-03-13T22:44:59.100020-06:00'
 model: gpt-4-0125-preview
-summary: "Los archivos CSV (Valores Separados por Comas) son un formato com\xFAn de\
-  \ intercambio de datos que representa datos tabulares en texto plano, utilizando\
-  \ comas para separar los valores individuales."
+summary: "Trabajar con archivos CSV en C# se puede lograr a trav\xE9s del espacio\
+  \ de nombres `System.IO` para operaciones b\xE1sicas, y para manipulaciones m\xE1\
+  s complejas o para manejar archivos m\xE1s grandes sin problemas, se podr\xEDa considerar\
+  \ bibliotecas de terceros como `CsvHelper`."
 title: Trabajando con CSV
 weight: 37
 ---

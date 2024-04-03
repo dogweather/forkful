@@ -2,13 +2,14 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:46.687779-07:00
-description: "Assoziative Arrays oder Hash-Maps erm\xF6glichen es Ihnen, Daten als\
-  \ Schl\xFCssel-Wert-Paare zu speichern, was die Organisation und das Abrufen von\u2026"
+description: "Wie zu: Fish unterst\xFCtzt nicht nativ assoziative Arrays wie Bash\
+  \ 4+, aber Sie k\xF6nnen eine \xE4hnliche Funktionalit\xE4t erreichen, indem Sie\
+  \ eine Kombination\u2026"
 lastmod: '2024-03-13T22:44:54.300756-06:00'
 model: gpt-4-0125-preview
-summary: "Assoziative Arrays oder Hash-Maps erm\xF6glichen es Ihnen, Daten als Schl\xFC\
-  ssel-Wert-Paare zu speichern, was die Organisation und das Abrufen von Informationen\
-  \ nach Schl\xFCssel erleichtert."
+summary: "Fish unterst\xFCtzt nicht nativ assoziative Arrays wie Bash 4+, aber Sie\
+  \ k\xF6nnen eine \xE4hnliche Funktionalit\xE4t erreichen, indem Sie eine Kombination\
+  \ aus Listen und String-Manipulation verwenden."
 title: Verwendung von assoziativen Arrays
 weight: 15
 ---

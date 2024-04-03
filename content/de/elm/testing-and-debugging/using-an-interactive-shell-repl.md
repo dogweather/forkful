@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:13:23.772953-07:00
-description: "Die Read-Eval-Print-Schleife (REPL) ist eine einfache, interaktive Programmierumgebung,\
-  \ die einzelne Benutzereingaben annimmt, auswertet und das Ergebnis\u2026"
+description: "Wie geht das: Elm wird nicht mit einem integrierten REPL geliefert.\
+  \ Sie k\xF6nnen jedoch `elm repl` von Ihrer Kommandozeile verwenden, um nach der\u2026"
 lastmod: '2024-03-13T22:44:53.806681-06:00'
 model: gpt-4-0125-preview
-summary: "Die Read-Eval-Print-Schleife (REPL) ist eine einfache, interaktive Programmierumgebung,\
-  \ die einzelne Benutzereingaben annimmt, auswertet und das Ergebnis an den Benutzer\
-  \ zur\xFCckgibt."
+summary: Elm wird nicht mit einem integrierten REPL geliefert.
 title: Nutzung einer interaktiven Shell (REPL)
 weight: 34
 ---

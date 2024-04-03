@@ -3,13 +3,12 @@ changelog:
 - 2024-01-28, dogweather, reviewed and added links
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 23:01:33.081296-07:00
-description: "\xC5 organisere kode i funksjoner handler om \xE5 samle biter av skript\
-  \ for \xE5 utf\xF8re spesifikke oppgaver. Vi gj\xF8r det fordi det gj\xF8r koden\
-  \ lettere \xE5 lese, teste\u2026"
+description: "Hvordan: I Fish skriver du en funksjon med `function`-n\xF8kkelordet,\
+  \ gir den et navn, og avslutter med `end`. Her er en enkel en."
 lastmod: '2024-03-13T22:44:41.232460-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 organisere kode i funksjoner handler om \xE5 samle biter av skript\
-  \ for \xE5 utf\xF8re spesifikke oppgaver."
+summary: "I Fish skriver du en funksjon med `function`-n\xF8kkelordet, gir den et\
+  \ navn, og avslutter med `end`."
 title: Organisering av kode i funksjoner
 weight: 18
 ---

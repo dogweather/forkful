@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:56:59.414019-07:00
-description: "Kommandozeilenargumente erlauben Nutzern, Programme durch zus\xE4tzliche\
-  \ Eingaben zu steuern. Programmierer nutzen sie, um flexiblere und anpassungsf\xE4\
-  higere\u2026"
+description: "So geht\u2019s: Rust stellt die Struktur `std::env::args` zur Verf\xFC\
+  gung, die eine Sammlung der Kommandozeilenargumente bietet. Hier ist ein einfaches\
+  \ Beispiel."
 lastmod: '2024-03-13T22:44:53.688373-06:00'
 model: gpt-4-1106-preview
-summary: "Kommandozeilenargumente erlauben Nutzern, Programme durch zus\xE4tzliche\
-  \ Eingaben zu steuern."
+summary: "Rust stellt die Struktur `std::env::args` zur Verf\xFCgung, die eine Sammlung\
+  \ der Kommandozeilenargumente bietet."
 title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---

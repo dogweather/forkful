@@ -2,12 +2,12 @@
 changelog:
 - 2024-03-25, dogweather, edited and tested
 date: 2024-02-03 19:02:29.358527-07:00
-description: "Capitalizing a string usually means converting the first character of\
-  \ a string to uppercase and the rest to lowercase. But sometimes it can mean just\u2026"
+description: 'How to: Ruby provides [straightforward methods for string manipulation](https://docs.ruby-lang.org/en/3.3/String.html),
+  including capitalization.'
 lastmod: '2024-03-25'
 model: gpt-4-0125-preview
-summary: Capitalizing a string usually means converting the first character of a string
-  to uppercase and the rest to lowercase.
+summary: Ruby provides [straightforward methods for string manipulation](https://docs.ruby-lang.org/en/3.3/String.html),
+  including capitalization.
 title: Capitalizing a string
 weight: 2
 ---

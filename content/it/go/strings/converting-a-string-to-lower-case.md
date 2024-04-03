@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:48.370401-07:00
-description: "Convertire una stringa in minuscolo \xE8 un'operazione fondamentale\
-  \ che permette uniformit\xE0 e coerenza nel trattamento del testo, essenziale per\
-  \ compiti come\u2026"
+description: "Come: In Go, convertire una stringa in minuscolo pu\xF2 essere facilmente\
+  \ realizzato utilizzando il pacchetto `strings`, in particolare la funzione\u2026"
 lastmod: '2024-03-13T22:44:42.893628-06:00'
 model: gpt-4-0125-preview
-summary: "Convertire una stringa in minuscolo \xE8 un'operazione fondamentale che\
-  \ permette uniformit\xE0 e coerenza nel trattamento del testo, essenziale per compiti\
-  \ come comparazioni non sensibili alle maiuscole o la normalizzazione del testo."
+summary: "In Go, convertire una stringa in minuscolo pu\xF2 essere facilmente realizzato\
+  \ utilizzando il pacchetto `strings`, in particolare la funzione `ToLower()`."
 title: Convertire una stringa in minuscolo
 weight: 4
 ---

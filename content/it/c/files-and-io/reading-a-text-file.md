@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:10.596532-07:00
-description: "Leggere un file di testo in C comporta l'apertura di un file sul tuo\
-  \ sistema per estrarne informazioni e manipolarle o visualizzarle secondo necessit\xE0\
-  . I\u2026"
+description: "Come fare: Per iniziare a leggere un file di testo in C, lavori principalmente\
+  \ con le funzioni `fopen()`, `fgets()`, e `fclose()` della libreria standard\u2026"
 lastmod: '2024-03-13T22:44:44.022271-06:00'
 model: gpt-4-0125-preview
-summary: "Leggere un file di testo in C comporta l'apertura di un file sul tuo sistema\
-  \ per estrarne informazioni e manipolarle o visualizzarle secondo necessit\xE0."
+summary: Per iniziare a leggere un file di testo in C, lavori principalmente con le
+  funzioni `fopen()`, `fgets()`, e `fclose()` della libreria standard I/O.
 title: Leggere un file di testo
 weight: 22
 ---

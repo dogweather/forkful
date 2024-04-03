@@ -1,11 +1,13 @@
 ---
 date: 2024-02-03 19:02:42.844039-07:00
-description: "Parsing a date from a string involves interpreting the string format\
-  \ to extract date components like day, month, and year. Programmers do this to handle\u2026"
+description: "How to: In modern C++, you can use the `<chrono>` library to handle\
+  \ dates and times natively, but it doesn't directly support parsing from strings\
+  \ without\u2026"
 lastmod: '2024-03-13T22:45:00.366106-06:00'
 model: gpt-4-0125-preview
-summary: Parsing a date from a string involves interpreting the string format to extract
-  date components like day, month, and year.
+summary: In modern C++, you can use the `<chrono>` library to handle dates and times
+  natively, but it doesn't directly support parsing from strings without manual parsing
+  for more complex formats.
 title: Parsing a date from a string
 weight: 30
 ---

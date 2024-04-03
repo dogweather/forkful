@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:03:39.537072-07:00
-description: "Writing tests in Rust involves creating automated checks to ensure your\
-  \ code performs as expected. Programmers do this to catch bugs early, facilitate\u2026"
+description: "How to: Rust's built-in test framework supports unit, integration, and\
+  \ documentation tests without the need for external libraries. Tests are annotated\u2026"
 lastmod: '2024-03-13T22:44:59.899134-06:00'
 model: gpt-4-0125-preview
-summary: Writing tests in Rust involves creating automated checks to ensure your code
-  performs as expected.
+summary: Rust's built-in test framework supports unit, integration, and documentation
+  tests without the need for external libraries.
 title: Writing tests
 weight: 36
 ---

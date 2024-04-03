@@ -2,18 +2,16 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:44.703115-07:00
-description: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML b\u1EB1ng C li\xEAn quan \u0111\u1EBF\
-  n vi\u1EC7c ph\xE2n t\xEDch c\xE1c t\xE0i li\u1EC7u HTML \u0111\u1EC3 tr\xEDch xu\u1EA5\
-  t d\u1EEF li\u1EC7u, c\u1EA5u tr\xFAc, ho\u1EB7c c\xE1c ph\u1EA7n c\u1EE5 th\u1EC3\
-  \ m\u1ED9t c\xE1ch hi\u1EC7u qu\u1EA3,\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Vi\u1EC7c ph\xE2n t\xEDch c\xFA ph\xE1p HTML\
+  \ c\xF3 th\u1EC3 tr\u1EDF n\xEAn kh\xF3 kh\u0103n do s\u1EF1 ph\u1EE9c t\u1EA1p\
+  \ v\xE0 vi\u1EC7c th\u01B0\u1EDDng xuy\xEAn l\u1EC7ch kh\u1ECFi c\u1EA5u tr\xFA\
+  c s\u1EA1ch, \u0111\xFAng \u0111\u1EAFn c\u1EE7a HTML. Tuy\u2026"
 lastmod: '2024-03-13T22:44:37.264740-06:00'
 model: gpt-4-0125-preview
-summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML b\u1EB1ng C li\xEAn quan \u0111\u1EBF\
-  n vi\u1EC7c ph\xE2n t\xEDch c\xE1c t\xE0i li\u1EC7u HTML \u0111\u1EC3 tr\xEDch xu\u1EA5\
-  t d\u1EEF li\u1EC7u, c\u1EA5u tr\xFAc, ho\u1EB7c c\xE1c ph\u1EA7n c\u1EE5 th\u1EC3\
-  \ m\u1ED9t c\xE1ch hi\u1EC7u qu\u1EA3, th\u01B0\u1EDDng l\xE0 b\u01B0\u1EDBc \u0111\
-  \u1EA7u ti\xEAn cho vi\u1EC7c khai th\xE1c d\u1EEF li\u1EC7u ho\u1EB7c l\u1EA5y\
-  \ d\u1EEF li\u1EC7u tr\u1EF1c tuy\u1EBFn."
+summary: "Vi\u1EC7c ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 th\u1EC3 tr\u1EDF n\xEA\
+  n kh\xF3 kh\u0103n do s\u1EF1 ph\u1EE9c t\u1EA1p v\xE0 vi\u1EC7c th\u01B0\u1EDD\
+  ng xuy\xEAn l\u1EC7ch kh\u1ECFi c\u1EA5u tr\xFAc s\u1EA1ch, \u0111\xFAng \u0111\u1EAF\
+  n c\u1EE7a HTML."
 title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:48:24.964862-07:00
-description: "\xC5 finne lengden av en streng er \xE5 m\xE5le antallet tegn den inneholder.\
-  \ Programmerere gj\xF8r dette for data validering, grensesjekking og n\xE5r man\
-  \ manipulerer\u2026"
+description: "Slik gj\xF8r du: Swift gj\xF8r det enkelt \xE5 finne lengden av en streng.\
+  \ Her er et eksempel."
 lastmod: '2024-03-13T22:44:41.133200-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 finne lengden av en streng er \xE5 m\xE5le antallet tegn den inneholder."
+summary: "Swift gj\xF8r det enkelt \xE5 finne lengden av en streng."
 title: "Finn lengden p\xE5 en streng"
 weight: 7
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:35.473067-07:00
-description: "Escrever testes em Bash envolve criar scripts de casos de teste para\
-  \ validar a funcionalidade dos seus scripts Bash. Os programadores realizam testes\
-  \ para\u2026"
+description: "Como fazer: O Bash n\xE3o possui uma estrutura de testes embutida, mas\
+  \ voc\xEA pode escrever fun\xE7\xF5es de teste simples. Para testes mais sofisticados,\u2026"
 lastmod: '2024-03-13T22:44:46.756221-06:00'
 model: gpt-4-0125-preview
-summary: Escrever testes em Bash envolve criar scripts de casos de teste para validar
-  a funcionalidade dos seus scripts Bash.
+summary: "O Bash n\xE3o possui uma estrutura de testes embutida, mas voc\xEA pode\
+  \ escrever fun\xE7\xF5es de teste simples."
 title: Escrevendo testes
 weight: 36
 ---

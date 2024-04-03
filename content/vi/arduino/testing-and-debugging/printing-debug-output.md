@@ -2,14 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:25.002959-07:00
-description: "In \u0111\u1EA7u ra g\u1EE1 l\u1ED7i v\xE0o m\xE0n h\xECnh n\u1ED1i\
-  \ ti\u1EBFp l\xE0 m\u1ED9t c\xE1ch \u0111\u1EC3 nh\xECn v\xE0o t\xE2m tr\xED c\u1EE7\
-  a Arduino. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3\
-  \ theo d\xF5i c\xE1c l\u1ED7i nh\u1ECF, ki\u1EC3m th\u1EED gi\u1EA3\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: C\xF9ng v\xE0o v\u1EA5n \u0111\u1EC1 ch\xED\
+  nh. Gi\u1EA3 s\u1EED b\u1EA1n mu\u1ED1n in \"Hello, world!\" m\u1ED7i gi\xE2y. D\u01B0\
+  \u1EDBi \u0111\xE2y l\xE0 \u0111o\u1EA1n m\xE3."
 lastmod: '2024-03-13T22:44:36.992262-06:00'
 model: gpt-4-0125-preview
-summary: "In \u0111\u1EA7u ra g\u1EE1 l\u1ED7i v\xE0o m\xE0n h\xECnh n\u1ED1i ti\u1EBF\
-  p l\xE0 m\u1ED9t c\xE1ch \u0111\u1EC3 nh\xECn v\xE0o t\xE2m tr\xED c\u1EE7a Arduino."
+summary: "C\xF9ng v\xE0o v\u1EA5n \u0111\u1EC1 ch\xEDnh."
 title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 weight: 33
 ---

@@ -1,7 +1,7 @@
 ---
 date: 2024-01-26 04:10:40.698006-07:00
-description: "Per utilizzare il debugger in Xcode (l'IDE per Swift), puoi impostare\
-  \ breakpoint, ispezionare variabili ed esaminare espressioni. Eccoti un esempio:\u2026"
+description: "Come fare: Per utilizzare il debugger in Xcode (l'IDE per Swift), puoi\
+  \ impostare breakpoint, ispezionare variabili ed esaminare espressioni. Eccoti un\u2026"
 lastmod: '2024-03-13T22:44:43.774661-06:00'
 model: gpt-4-0125-preview
 summary: Per utilizzare il debugger in Xcode (l'IDE per Swift), puoi impostare breakpoint,

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:45:42.750012-07:00
-description: "Estrarre sottosequenze significa prendere pezzi di stringa, un po' come\
-  \ tagliare una fetta di torta. I programmatori lo fanno per isolare informazioni\u2026"
+description: 'How to: Utilizziamo il comando `string` di Fish per lavorare con le
+  stringhe. Ecco un esempio semplice.'
 lastmod: '2024-03-13T22:44:43.845015-06:00'
 model: gpt-4-1106-preview
-summary: Estrarre sottosequenze significa prendere pezzi di stringa, un po' come tagliare
-  una fetta di torta.
+summary: Utilizziamo il comando `string` di Fish per lavorare con le stringhe.
 title: Estrazione di sottostringhe
 weight: 6
 ---

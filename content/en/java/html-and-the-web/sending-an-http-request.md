@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:59:42.892380-07:00
-description: "Sending an HTTP request means asking a server for data or action, like\
-  \ pulling up a webpage or sending a form. Programmers do it to interact with web\u2026"
+description: 'How to: Let''s roll with Java 11''s `HttpClient`, `HttpRequest`, and
+  `HttpResponse` to shoot a GET request and snag some data.'
 lastmod: '2024-03-13T22:44:59.969671-06:00'
 model: gpt-4-1106-preview
-summary: Sending an HTTP request means asking a server for data or action, like pulling
-  up a webpage or sending a form.
+summary: Let's roll with Java 11's `HttpClient`, `HttpRequest`, and `HttpResponse`
+  to shoot a GET request and snag some data.
 title: Sending an HTTP request
 weight: 44
 ---

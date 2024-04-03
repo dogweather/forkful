@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:29:49.172721-07:00
-description: "Trabalhar com XML em Elixir significa analisar, criar e manipular dados\
-  \ XML. Programadores lidam com XML porque ele \xE9 amplamente utilizado em servi\xE7\
-  os\u2026"
+description: "Como fazer: Elixir n\xE3o inclui an\xE1lise de XML em sua biblioteca\
+  \ padr\xE3o. SweetXML \xE9 uma escolha popular. Aqui est\xE1 como us\xE1-lo."
 lastmod: '2024-03-13T22:44:46.262232-06:00'
 model: gpt-4-0125-preview
-summary: Trabalhar com XML em Elixir significa analisar, criar e manipular dados XML.
+summary: "Elixir n\xE3o inclui an\xE1lise de XML em sua biblioteca padr\xE3o."
 title: Trabalhando com XML
 weight: 40
 ---

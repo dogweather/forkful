@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:53.464772-07:00
-description: "Das Testen in Ruby dient dazu, zu verifizieren, dass Ihr Code unter\
-  \ verschiedenen Bedingungen wie erwartet funktioniert. Programmierer erstellen Tests,\
-  \ um\u2026"
+description: "Wie: Ruby verf\xFCgt \xFCber eine eingebaute Bibliothek namens `Test::Unit`\
+  \ f\xFCr das Schreiben von Unit-Tests, die Testpraktiken in \xFCbersichtlichen Strukturen\u2026"
 lastmod: '2024-03-13T22:44:54.404067-06:00'
 model: gpt-4-0125-preview
-summary: Das Testen in Ruby dient dazu, zu verifizieren, dass Ihr Code unter verschiedenen
-  Bedingungen wie erwartet funktioniert.
+summary: "Ruby verf\xFCgt \xFCber eine eingebaute Bibliothek namens `Test::Unit` f\xFC\
+  r das Schreiben von Unit-Tests, die Testpraktiken in \xFCbersichtlichen Strukturen\
+  \ kapseln."
 title: Tests Schreiben
 weight: 36
 ---

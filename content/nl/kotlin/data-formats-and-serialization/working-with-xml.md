@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:24.169775-07:00
-description: "Werken met XML omvat het parsen, cre\xEBren en manipuleren van XML-documenten\
-  \ - een opmaaktaal voor gegevensopslag en -overdracht. Programmeurs doen dit\u2026"
+description: 'Hoe te: In Kotlin kun je de ingebouwde `javax.xml.parsers` gebruiken
+  voor het parsen.'
 lastmod: '2024-03-13T22:44:50.792058-06:00'
 model: gpt-4-0125-preview
-summary: "Werken met XML omvat het parsen, cre\xEBren en manipuleren van XML-documenten\
-  \ - een opmaaktaal voor gegevensopslag en -overdracht."
+summary: In Kotlin kun je de ingebouwde `javax.xml.parsers` gebruiken voor het parsen.
 title: Werken met XML
 weight: 40
 ---

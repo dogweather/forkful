@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:40:05.191192-07:00
-description: "N\xFAmeros complexos expandem a ideia de linhas num\xE9ricas unidimensionais\
-  \ para um plano complexo bidimensional. Programadores os usam em campos como\u2026"
+description: "Como fazer: No Fish, lidamos com n\xFAmeros complexos usando `math`\
+  \ com partes reais e imagin\xE1rias. Aqui est\xE1 um ponto de partida."
 lastmod: '2024-03-13T22:44:46.997982-06:00'
 model: gpt-4-0125-preview
-summary: "N\xFAmeros complexos expandem a ideia de linhas num\xE9ricas unidimensionais\
-  \ para um plano complexo bidimensional."
+summary: "No Fish, lidamos com n\xFAmeros complexos usando `math` com partes reais\
+  \ e imagin\xE1rias."
 title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---

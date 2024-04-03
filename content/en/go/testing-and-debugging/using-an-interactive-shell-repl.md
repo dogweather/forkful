@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 17:50:12.851556-07:00
-description: "An interactive shell, or Read-Eval-Print Loop (REPL), lets you experiment\
-  \ with Go code in real-time, executing commands and getting immediate feedback.\u2026"
+description: "How to: While Go doesn\u2019t include a built-in REPL, the community\
+  \ has created tools like `gore` to fill the gap. First, install `gore` by running."
 lastmod: '2024-03-13T22:44:59.632592-06:00'
 model: gpt-4-0125-preview
-summary: An interactive shell, or Read-Eval-Print Loop (REPL), lets you experiment
-  with Go code in real-time, executing commands and getting immediate feedback.
+summary: "While Go doesn\u2019t include a built-in REPL, the community has created\
+  \ tools like `gore` to fill the gap."
 title: Using an interactive shell (REPL)
 weight: 34
 ---

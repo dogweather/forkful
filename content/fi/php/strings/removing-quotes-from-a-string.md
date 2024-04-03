@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:40:53.425198-07:00
-description: "Merkkijonosta lainausmerkkien poistaminen PHP:ss\xE4 tarkoittaa niiden\
-  \ kiusallisten kaksinkertaisten (`\"`) tai yksinkertaisten (`'`) lainausmerkkien\u2026"
+description: "Kuinka: T\xE4ss\xE4 on suoraviivainen esimerkki PHP:n sis\xE4\xE4nrakennettuja\
+  \ funktioita k\xE4ytt\xE4en."
 lastmod: '2024-03-13T22:44:56.644035-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonosta lainausmerkkien poistaminen PHP:ss\xE4 tarkoittaa niiden kiusallisten\
-  \ kaksinkertaisten (`\"`) tai yksinkertaisten (`'`) lainausmerkkien poistamista,\
-  \ jotka voivat sotkea koodilogiikkasi tai tietokantakyselyt."
+summary: "T\xE4ss\xE4 on suoraviivainen esimerkki PHP:n sis\xE4\xE4nrakennettuja funktioita\
+  \ k\xE4ytt\xE4en."
 title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---

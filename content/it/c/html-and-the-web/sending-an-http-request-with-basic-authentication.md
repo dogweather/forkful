@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:05.821170-07:00
-description: "Inviare una richiesta HTTP con autenticazione di base in C comporta\
-  \ la creazione di una richiesta HTTP che include un'intestazione di Autorizzazione\
-  \ con\u2026"
+description: "Come fare: Per inviare una richiesta HTTP con autenticazione di base\
+  \ in C, dobbiamo utilizzare la libreria libcurl, una libreria versatiele, popolare\
+  \ e\u2026"
 lastmod: '2024-03-13T22:44:43.997756-06:00'
 model: gpt-4-0125-preview
-summary: Inviare una richiesta HTTP con autenticazione di base in C comporta la creazione
-  di una richiesta HTTP che include un'intestazione di Autorizzazione con le credenziali
-  dell'utente codificate in Base64.
+summary: Per inviare una richiesta HTTP con autenticazione di base in C, dobbiamo
+  utilizzare la libreria libcurl, una libreria versatiele, popolare e facile da usare
+  per il trasferimento di URL lato client.
 title: Inviare una richiesta HTTP con autenticazione di base
 weight: 45
 ---

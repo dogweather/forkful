@@ -2,14 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:44.417085-07:00
-description: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) C#:ssa ovat tehokas ty\xF6\
-  kalu merkkijonojen sis\xE4ll\xE4 tapahtuvaan mallin tunnistamiseen, jonka avulla\
-  \ ohjelmoijat voivat\u2026"
+description: 'Kuinka: #.'
 lastmod: '2024-03-13T22:44:56.563347-06:00'
 model: gpt-4-0125-preview
-summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) C#:ssa ovat tehokas ty\xF6kalu\
-  \ merkkijonojen sis\xE4ll\xE4 tapahtuvaan mallin tunnistamiseen, jonka avulla ohjelmoijat\
-  \ voivat tehokkaasti etsi\xE4, korvata, jakaa tai poimia tietoja."
+summary: '#.'
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---

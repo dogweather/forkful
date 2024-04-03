@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:49.626713-07:00
-description: "Express\xF5es regulares (regex) s\xE3o sequ\xEAncias de caracteres que\
-  \ definem padr\xF5es de pesquisa, usados principalmente para correspond\xEAncia\
-  \ e manipula\xE7\xE3o de\u2026"
+description: "Como fazer: O Arduino n\xE3o tem suporte integrado para regex diretamente\
+  \ em sua biblioteca padr\xE3o. No entanto, voc\xEA pode alcan\xE7ar funcionalidade\
+  \ semelhante\u2026"
 lastmod: '2024-03-13T22:44:46.829405-06:00'
 model: gpt-4-0125-preview
-summary: "Express\xF5es regulares (regex) s\xE3o sequ\xEAncias de caracteres que definem\
-  \ padr\xF5es de pesquisa, usados principalmente para correspond\xEAncia e manipula\xE7\
-  \xE3o de strings."
+summary: "O Arduino n\xE3o tem suporte integrado para regex diretamente em sua biblioteca\
+  \ padr\xE3o."
 title: "Usando express\xF5es regulares"
 weight: 11
 ---

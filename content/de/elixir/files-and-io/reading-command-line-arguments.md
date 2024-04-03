@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:56:12.750245-07:00
-description: "Kommandozeilenargumente sind Infos, die du deinem Elixir-Programm beim\
-  \ Start \xFCbergibst. Wir nutzen sie, um das Verhalten unserer Programme dynamisch\u2026"
+description: 'How to: In Elixir greifst du mit `System.argv()` auf die Argumente zu.
+  Einfaches Beispiel.'
 lastmod: '2024-03-13T22:44:53.550986-06:00'
 model: gpt-4-1106-preview
-summary: "Kommandozeilenargumente sind Infos, die du deinem Elixir-Programm beim Start\
-  \ \xFCbergibst."
+summary: In Elixir greifst du mit `System.argv()` auf die Argumente zu.
 title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---

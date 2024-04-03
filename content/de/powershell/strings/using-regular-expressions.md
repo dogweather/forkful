@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:31.959069-07:00
-description: "Regul\xE4re Ausdr\xFCcke (regex) sind Zeichenfolgen, die ein Suchmuster\
-  \ bilden, das haupts\xE4chlich f\xFCr die Stringsuche und -manipulation verwendet\
-  \ wird.\u2026"
+description: "Wie geht das: In PowerShell k\xF6nnen Sie die Operatoren `-match`, `-replace`\
+  \ und `-split` unter anderen verwenden, um Aktionen mit regul\xE4ren Ausdr\xFCcken\u2026"
 lastmod: '2024-03-13T22:44:54.091625-06:00'
 model: gpt-4-0125-preview
-summary: "Regul\xE4re Ausdr\xFCcke (regex) sind Zeichenfolgen, die ein Suchmuster\
-  \ bilden, das haupts\xE4chlich f\xFCr die Stringsuche und -manipulation verwendet\
-  \ wird."
+summary: "In PowerShell k\xF6nnen Sie die Operatoren `-match`, `-replace` und `-split`\
+  \ unter anderen verwenden, um Aktionen mit regul\xE4ren Ausdr\xFCcken durchzuf\xFC\
+  hren."
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

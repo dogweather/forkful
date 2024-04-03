@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:45:03.924780-07:00
-description: "Zaokr\u0105glanie liczb oznacza dostosowanie ich do najbli\u017Cszej\
-  \ liczby ca\u0142kowitej lub okre\u015Blonego miejsca po przecinku. Programi\u015B\
-  ci zaokr\u0105glaj\u0105 liczby, aby\u2026"
+description: "Jak to zrobi\u0107: Haskell u\u017Cywa funkcji `round`, `ceiling`, `floor`\
+  \ oraz `truncate` z `Prelude` do operacji zaokr\u0105glania."
 lastmod: '2024-03-13T22:44:35.446373-06:00'
 model: gpt-4-0125-preview
-summary: "Zaokr\u0105glanie liczb oznacza dostosowanie ich do najbli\u017Cszej liczby\
-  \ ca\u0142kowitej lub okre\u015Blonego miejsca po przecinku."
+summary: "Haskell u\u017Cywa funkcji `round`, `ceiling`, `floor` oraz `truncate` z\
+  \ `Prelude` do operacji zaokr\u0105glania."
 title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---

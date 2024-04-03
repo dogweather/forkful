@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:02.630943-07:00
-description: "Werken met CSV (Comma-Separated Values), oftewel komma-gescheiden waarden,\
-  \ betekent het verwerken van tabelgegevens opgeslagen in een platte-tekstformaat.\u2026"
+description: Hoe? Laten we onze mouwen opstropen en een CSV-bestand parsen in Clojure.
 lastmod: '2024-03-13T22:44:50.442325-06:00'
 model: gpt-4-0125-preview
-summary: Werken met CSV (Comma-Separated Values), oftewel komma-gescheiden waarden,
-  betekent het verwerken van tabelgegevens opgeslagen in een platte-tekstformaat.
+summary: Laten we onze mouwen opstropen en een CSV-bestand parsen in Clojure.
 title: Werken met CSV
 weight: 37
 ---

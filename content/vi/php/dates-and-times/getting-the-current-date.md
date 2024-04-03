@@ -2,15 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:21.844525-07:00
-description: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong PHP l\xE0 vi\u1EC7c ch\u1EE5\
-  p l\u1EA5y ng\xE0y v\xE0 gi\u1EDD c\u1EE7a h\xF4m nay tr\u1EF1c ti\u1EBFp t\u1EEB\
-  \ m\xE1y ch\u1EE7. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0\
-  y \u0111\u1EC3 theo d\xF5i h\xE0nh \u0111\u1ED9ng c\u1EE7a ng\u01B0\u1EDDi\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: B\u1EA1n tri\u1EC7u h\u1ED3i ng\xE0y hi\u1EC7\
+  n t\u1EA1i trong PHP b\u1EB1ng h\xE0m `date()`. V\xED d\u1EE5."
 lastmod: '2024-03-13T22:44:36.780761-06:00'
 model: gpt-4-0125-preview
-summary: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong PHP l\xE0 vi\u1EC7c ch\u1EE5p\
-  \ l\u1EA5y ng\xE0y v\xE0 gi\u1EDD c\u1EE7a h\xF4m nay tr\u1EF1c ti\u1EBFp t\u1EEB\
-  \ m\xE1y ch\u1EE7."
+summary: "B\u1EA1n tri\u1EC7u h\u1ED3i ng\xE0y hi\u1EC7n t\u1EA1i trong PHP b\u1EB1\
+  ng h\xE0m `date()`."
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 weight: 29
 ---

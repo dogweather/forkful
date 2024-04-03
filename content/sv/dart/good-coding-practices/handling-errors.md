@@ -2,14 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:21.864828-07:00
-description: "Att hantera fel i Dart handlar om att f\xF6rutse och hantera undantag\
-  \ som uppst\xE5r under programk\xF6rning f\xF6r att \xF6ka tillf\xF6rlitligheten\
-  \ och anv\xE4ndbarheten.\u2026"
+description: "Hur g\xF6r man: Dart st\xF6der tv\xE5 typer av fel: *kompileringstidsfel*\
+  \ och *k\xF6rtidsfel*. Kompileringstidsfel uppt\xE4cks av Dart-analysatorn innan\
+  \ koden k\xF6rs,\u2026"
 lastmod: '2024-03-13T22:44:37.620223-06:00'
 model: gpt-4-0125-preview
-summary: "Att hantera fel i Dart handlar om att f\xF6rutse och hantera undantag som\
-  \ uppst\xE5r under programk\xF6rning f\xF6r att \xF6ka tillf\xF6rlitligheten och\
-  \ anv\xE4ndbarheten."
+summary: "Dart st\xF6der tv\xE5 typer av fel."
 title: Hantering av fel
 weight: 16
 ---

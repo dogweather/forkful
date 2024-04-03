@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:53.617213-07:00
-description: "Escribir en el error est\xE1ndar (stderr) en lenguajes de programaci\xF3\
-  n se trata de dirigir mensajes de error y diagn\xF3sticos a un flujo separado, aparte\
-  \ de la\u2026"
+description: "C\xF3mo hacerlo: Google Apps Script, siendo un lenguaje de scripting\
+  \ para el desarrollo de aplicaciones ligeras en la plataforma de Google Apps, no\u2026"
 lastmod: '2024-03-13T22:44:58.581476-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir en el error est\xE1ndar (stderr) en lenguajes de programaci\xF3\
-  n se trata de dirigir mensajes de error y diagn\xF3sticos a un flujo separado, aparte\
-  \ de la salida est\xE1ndar (stdout)."
+summary: "Google Apps Script, siendo un lenguaje de scripting para el desarrollo de\
+  \ aplicaciones ligeras en la plataforma de Google Apps, no proporciona una funci\xF3\
+  n incorporada directa como `console.error()` para escribir en stderr, como podr\xED\
+  as encontrar en Node.js o Python."
 title: "Escribir en el error est\xE1ndar"
 weight: 25
 ---

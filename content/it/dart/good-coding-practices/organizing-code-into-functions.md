@@ -2,14 +2,10 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:35.718335-07:00
-description: "Organizzare il codice in funzioni con Dart significa definire blocchi\
-  \ di codice riutilizzabili che eseguono compiti specifici, ricevendo tipicamente\
-  \ in\u2026"
+description: 'Come fare: #.'
 lastmod: '2024-03-13T22:44:43.136979-06:00'
 model: gpt-4-0125-preview
-summary: Organizzare il codice in funzioni con Dart significa definire blocchi di
-  codice riutilizzabili che eseguono compiti specifici, ricevendo tipicamente in input
-  dei dati, elaborandoli e, eventualmente, restituendo dei risultati.
+summary: '#.'
 title: Organizzare il codice in funzioni
 weight: 18
 ---

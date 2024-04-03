@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:01.337140-07:00
-description: "\xC9crire un fichier texte en Bash vous permet d'automatiser le stockage\
-  \ de donn\xE9es, les logs, les param\xE8tres de configuration, et plus encore. C'est\
-  \ une\u2026"
+description: "Comment faire : Bash fournit des m\xE9thodes simples pour \xE9crire\
+  \ dans un fichier. Les plus courantes sont l\u2019utilisation des op\xE9rateurs\
+  \ de redirection (`>`,\u2026"
 lastmod: '2024-03-13T22:44:58.017065-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire un fichier texte en Bash vous permet d'automatiser le stockage\
-  \ de donn\xE9es, les logs, les param\xE8tres de configuration, et plus encore."
+summary: "Bash fournit des m\xE9thodes simples pour \xE9crire dans un fichier."
 title: "R\xE9diger un fichier texte"
 weight: 24
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 00:52:16.263525-07:00
-description: "Tratar erros significa escrever c\xF3digo que pode lidar com situa\xE7\
-  \xF5es inesperadas. Os programadores fazem isso para evitar falhas e para garantir\
-  \ que seus\u2026"
+description: "Como fazer: No Elixir, frequentemente usamos correspond\xEAncia de padr\xF5\
+  es e a declara\xE7\xE3o `case` para lidar com diferentes resultados, incluindo erros."
 lastmod: '2024-03-13T22:44:46.245458-06:00'
 model: gpt-4-1106-preview
-summary: "Tratar erros significa escrever c\xF3digo que pode lidar com situa\xE7\xF5\
-  es inesperadas."
+summary: "No Elixir, frequentemente usamos correspond\xEAncia de padr\xF5es e a declara\xE7\
+  \xE3o `case` para lidar com diferentes resultados, incluindo erros."
 title: Tratamento de erros
 weight: 16
 ---

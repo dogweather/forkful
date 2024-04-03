@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:27.523475-07:00
-description: "Verificar se um diret\xF3rio existe \xE9 uma opera\xE7\xE3o fundamental\
-  \ em muitas tarefas de programa\xE7\xE3o, permitindo a\xE7\xF5es condicionais com\
-  \ base na presen\xE7a ou\u2026"
+description: "Como fazer: Haskell, atrav\xE9s de sua biblioteca base, oferece maneiras\
+  \ diretas de verificar a exist\xEAncia de diret\xF3rios, principalmente usando o\
+  \ m\xF3dulo\u2026"
 lastmod: '2024-03-13T22:44:46.639478-06:00'
 model: gpt-4-0125-preview
-summary: "Verificar se um diret\xF3rio existe \xE9 uma opera\xE7\xE3o fundamental\
-  \ em muitas tarefas de programa\xE7\xE3o, permitindo a\xE7\xF5es condicionais com\
-  \ base na presen\xE7a ou aus\xEAncia de estruturas de diret\xF3rio."
+summary: "Haskell, atrav\xE9s de sua biblioteca base, oferece maneiras diretas de\
+  \ verificar a exist\xEAncia de diret\xF3rios, principalmente usando o m\xF3dulo\
+  \ `System.Directory`."
 title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---

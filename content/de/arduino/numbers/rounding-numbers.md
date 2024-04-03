@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 03:42:33.761940-07:00
-description: "Das Runden von Zahlen ist das Trimmen einer Dezimalzahl auf den n\xE4\
-  chstgelegenen ganzen Wert oder auf eine festgelegte Anzahl von Dezimalstellen.\u2026"
+description: "Wie geht das: In Arduino k\xF6nnen Sie Zahlen mit eingebauten Funktionen\
+  \ runden. Die Hauptakteure sind `round`, `ceil` und `floor`. Hier ist eine schnelle\u2026"
 lastmod: '2024-03-13T22:44:54.139949-06:00'
 model: gpt-4-0125-preview
-summary: "Das Runden von Zahlen ist das Trimmen einer Dezimalzahl auf den n\xE4chstgelegenen\
-  \ ganzen Wert oder auf eine festgelegte Anzahl von Dezimalstellen."
+summary: "In Arduino k\xF6nnen Sie Zahlen mit eingebauten Funktionen runden."
 title: Zahlen runden
 weight: 13
 ---

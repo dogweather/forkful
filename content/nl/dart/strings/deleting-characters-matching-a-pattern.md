@@ -2,13 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:16.005154-07:00
-description: "Het verwijderen van tekenreeksen die overeenkomen met een specifiek\
-  \ patroon in strings is cruciaal voor gegevensvalidatie, sanering, of bij het\u2026"
+description: "Hoe te: Dart vereenvoudigt het proces om tekens die overeenkomen met\
+  \ een vooraf gedefinieerd patroon te verwijderen met behulp van reguliere expressies\
+  \ en\u2026"
 lastmod: '2024-03-13T22:44:50.488084-06:00'
 model: gpt-4-0125-preview
-summary: Het verwijderen van tekenreeksen die overeenkomen met een specifiek patroon
-  in strings is cruciaal voor gegevensvalidatie, sanering, of bij het voorbereiden
-  van tekst voor verdere verwerking.
+summary: Dart vereenvoudigt het proces om tekens die overeenkomen met een vooraf gedefinieerd
+  patroon te verwijderen met behulp van reguliere expressies en de `replaceAll` methode.
 title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---

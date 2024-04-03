@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:35.476321-07:00
-description: "Les expressions r\xE9guli\xE8res (regex) en programmation sont des motifs\
-  \ utilis\xE9s pour la correspondance de combinaisons de caract\xE8res dans des cha\xEE\
-  nes de\u2026"
+description: "Comment faire : Elm n'a pas de fonctions regex int\xE9gr\xE9es dans\
+  \ sa biblioth\xE8que principale, n\xE9cessitant l'utilisation de biblioth\xE8ques\
+  \ tierces pour ces\u2026"
 lastmod: '2024-03-13T22:44:57.678249-06:00'
 model: gpt-4-0125-preview
-summary: "Les expressions r\xE9guli\xE8res (regex) en programmation sont des motifs\
-  \ utilis\xE9s pour la correspondance de combinaisons de caract\xE8res dans des cha\xEE\
-  nes de caract\xE8res."
+summary: "Elm n'a pas de fonctions regex int\xE9gr\xE9es dans sa biblioth\xE8que principale,\
+  \ n\xE9cessitant l'utilisation de biblioth\xE8ques tierces pour ces op\xE9rations."
 title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---

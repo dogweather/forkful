@@ -1,13 +1,11 @@
 ---
 date: 2024-01-20 18:01:25.080218-07:00
-description: "Inviare una richiesta HTTP con autenticazione di base significa includere\
-  \ le credenziali di accesso (username e password) nell'header HTTP per accedere\
-  \ a\u2026"
+description: "Come fare: Elixir usa la libreria `HTTPoison` per fare richieste HTTP\
+  \ con autenticazione di base in modo semplice. Installa prima la libreria aggiungendo\u2026"
 lastmod: '2024-03-13T22:44:43.083405-06:00'
 model: gpt-4-1106-preview
-summary: Inviare una richiesta HTTP con autenticazione di base significa includere
-  le credenziali di accesso (username e password) nell'header HTTP per accedere a
-  risorse protette.
+summary: Elixir usa la libreria `HTTPoison` per fare richieste HTTP con autenticazione
+  di base in modo semplice.
 title: Inviare una richiesta http con autenticazione di base
 weight: 45
 ---

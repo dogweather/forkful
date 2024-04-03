@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:34.423624-07:00
-description: "Wyra\u017Cenia regularne w C++ to sekwencje znak\xF3w definiuj\u0105\
-  ce wzorzec wyszukiwania, u\u017Cywane do dopasowywania lub manipulacji ci\u0105\
-  gami znak\xF3w. Programi\u015Bci\u2026"
+description: "Jak to zrobi\u0107: C++11 wprowadzi\u0142o wsparcie dla wyra\u017Ce\u0144\
+  \ regularnych w bibliotece standardowej, `<regex>`, oferuj\u0105c solidne ramy do\
+  \ wyszukiwania i\u2026"
 lastmod: '2024-03-13T22:44:35.702832-06:00'
 model: gpt-4-0125-preview
-summary: "Wyra\u017Cenia regularne w C++ to sekwencje znak\xF3w definiuj\u0105ce wzorzec\
-  \ wyszukiwania, u\u017Cywane do dopasowywania lub manipulacji ci\u0105gami znak\xF3\
-  w."
+summary: "C++11 wprowadzi\u0142o wsparcie dla wyra\u017Ce\u0144 regularnych w bibliotece\
+  \ standardowej, `<regex>`, oferuj\u0105c solidne ramy do wyszukiwania i manipulacji\
+  \ ci\u0105gami znak\xF3w."
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---

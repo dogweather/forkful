@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:34.093210-07:00
-description: "Avrunding av tall er prosessen med \xE5 justere sifrene i et tall for\
-  \ \xE5 redusere presisjonen i henhold til visse regler, enten mot n\xE6rmeste hele\
-  \ tall eller\u2026"
+description: "Hvordan: Avrunding av tall i C kan utf\xF8res ved hjelp av ulike funksjoner,\
+  \ men den vanligste tiln\xE6rmingen involverer funksjonene `floor()`, `ceil()`,\
+  \ og\u2026"
 lastmod: '2024-03-13T22:44:41.266023-06:00'
 model: gpt-4-0125-preview
-summary: "Avrunding av tall er prosessen med \xE5 justere sifrene i et tall for \xE5\
-  \ redusere presisjonen i henhold til visse regler, enten mot n\xE6rmeste hele tall\
-  \ eller et spesifikt antall desimalplasser."
+summary: "Avrunding av tall i C kan utf\xF8res ved hjelp av ulike funksjoner, men\
+  \ den vanligste tiln\xE6rmingen involverer funksjonene `floor()`, `ceil()`, og `round()`."
 title: Avrunding av tall
 weight: 13
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:31.909745-07:00
-description: "Att parsa HTML inneb\xE4r att g\xE5 igenom strukturen och inneh\xE5\
-  llet i en HTML-fil f\xF6r att extrahera information. Programmerare g\xF6r det f\xF6\
-  r att komma \xE5t data,\u2026"
+description: "Hur man g\xF6r: Bash \xE4r inte f\xF6rstahandsvalet f\xF6r att parsa\
+  \ HTML, men det kan g\xF6ras med verktyg som `grep`, `awk`, `sed`, eller externa\
+  \ verktyg som `lynx`.\u2026"
 lastmod: '2024-03-13T22:44:38.080453-06:00'
 model: gpt-4-0125-preview
-summary: "Att parsa HTML inneb\xE4r att g\xE5 igenom strukturen och inneh\xE5llet\
-  \ i en HTML-fil f\xF6r att extrahera information."
+summary: "Bash \xE4r inte f\xF6rstahandsvalet f\xF6r att parsa HTML, men det kan g\xF6\
+  ras med verktyg som `grep`, `awk`, `sed`, eller externa verktyg som `lynx`."
 title: Tolka HTML
 weight: 43
 ---

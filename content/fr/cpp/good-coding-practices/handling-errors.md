@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 00:50:03.931001-07:00
-description: "G\xE9rer les erreurs implique de planifier pour les cas o\xF9 les choses\
-  \ tournent mal. C'est essentiel car cela aide \xE0 \xE9viter les plantages et rend\
-  \ votre\u2026"
+description: "Comment faire : Voici un bloc try-catch de base pour g\xE9rer une exception\
+  \ ."
 lastmod: '2024-03-13T22:44:58.170770-06:00'
 model: gpt-4-1106-preview
-summary: "G\xE9rer les erreurs implique de planifier pour les cas o\xF9 les choses\
-  \ tournent mal."
+summary: "Voici un bloc try-catch de base pour g\xE9rer une exception."
 title: Gestion des erreurs
 weight: 16
 ---

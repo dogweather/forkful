@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 03:37:51.337569-07:00
-description: "Usuni\u0119cie cudzys\u0142ow\xF3w z ci\u0105gu polega na usuni\u0119\
-  ciu znak\xF3w cudzys\u0142owu, kt\xF3re otaczaj\u0105 ci\u0105g znak\xF3w. Programi\u015B\
-  ci cz\u0119sto chc\u0105 to robi\u0107, aby oczy\u015Bci\u0107 dane\u2026"
+description: "Jak to zrobi\u0107: Bash oferuje kilka sposob\xF3w na usuni\u0119cie\
+  \ cudzys\u0142ow\xF3w z ci\u0105g\xF3w znak\xF3w. Oto kilka szybkich przyk\u0142\
+  ad\xF3w."
 lastmod: '2024-03-13T22:44:35.570628-06:00'
 model: gpt-4-0125-preview
-summary: "Usuni\u0119cie cudzys\u0142ow\xF3w z ci\u0105gu polega na usuni\u0119ciu\
-  \ znak\xF3w cudzys\u0142owu, kt\xF3re otaczaj\u0105 ci\u0105g znak\xF3w."
+summary: "Bash oferuje kilka sposob\xF3w na usuni\u0119cie cudzys\u0142ow\xF3w z ci\u0105\
+  g\xF3w znak\xF3w."
 title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---

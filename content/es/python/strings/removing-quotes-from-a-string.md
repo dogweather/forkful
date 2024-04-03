@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:41:21.789340-07:00
-description: "Eliminar comillas de una cadena generalmente significa deshacerse de\
-  \ las comillas dobles (\") o simples (') innecesarias. Los programadores hacen esto\
-  \ para\u2026"
+description: "C\xF3mo hacerlo: Python ofrece varias formas de deshacerse de las comillas\
+  \ no deseadas de las cadenas. Veamos algunos ejemplos."
 lastmod: '2024-03-13T22:44:58.598540-06:00'
 model: gpt-4-0125-preview
-summary: Eliminar comillas de una cadena generalmente significa deshacerse de las
-  comillas dobles (") o simples (') innecesarias.
+summary: Python ofrece varias formas de deshacerse de las comillas no deseadas de
+  las cadenas.
 title: Eliminando comillas de una cadena
 weight: 9
 ---

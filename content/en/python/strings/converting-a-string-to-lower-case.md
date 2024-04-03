@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:38:56.705277-07:00
-description: "Converting a string to lowercase means changing all uppercase characters\
-  \ in the text to their lowercase equivalents. Programmers often do this for\u2026"
+description: 'How to: Lowercasing a string in Python is simple with the `.lower()`
+  method.'
 lastmod: '2024-03-13T22:44:59.696671-06:00'
 model: gpt-4-1106-preview
-summary: Converting a string to lowercase means changing all uppercase characters
-  in the text to their lowercase equivalents.
+summary: Lowercasing a string in Python is simple with the `.lower()` method.
 title: Converting a string to lower case
 weight: 4
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:47:17.128551-07:00
-description: "Trouver la longueur d'une cha\xEEne de caract\xE8res, c'est compter\
-  \ le nombre d'\xE9l\xE9ments (caract\xE8res) qui la composent. Les programmeurs\
-  \ le font pour valider\u2026"
+description: "How to: En Clojure, on utilise la fonction `count` pour obtenir la longueur\
+  \ d'une cha\xEEne de caract\xE8res ."
 lastmod: '2024-03-13T22:44:57.272404-06:00'
 model: gpt-4-1106-preview
-summary: "Trouver la longueur d'une cha\xEEne de caract\xE8res, c'est compter le nombre\
-  \ d'\xE9l\xE9ments (caract\xE8res) qui la composent."
+summary: "En Clojure, on utilise la fonction `count` pour obtenir la longueur d'une\
+  \ cha\xEEne de caract\xE8res."
 title: "Trouver la longueur d'une cha\xEEne de caract\xE8res"
 weight: 7
 ---

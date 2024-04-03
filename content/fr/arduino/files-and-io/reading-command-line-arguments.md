@@ -1,12 +1,13 @@
 ---
 date: 2024-01-20 17:55:28.080384-07:00
-description: "Lire des arguments de ligne de commande permet \xE0 un programme Arduino\
-  \ de saisir des donn\xE9es externe d\xE8s son d\xE9marrage. C'est utile pour personnaliser\
-  \ le\u2026"
+description: "Comment faire : Arduino ne traite pas les arguments de ligne de commande\
+  \ de la m\xEAme mani\xE8re que des langages plus traditionnels sur des syst\xE8\
+  mes\u2026"
 lastmod: '2024-03-13T22:44:58.130605-06:00'
 model: gpt-4-1106-preview
-summary: "Lire des arguments de ligne de commande permet \xE0 un programme Arduino\
-  \ de saisir des donn\xE9es externe d\xE8s son d\xE9marrage."
+summary: "Arduino ne traite pas les arguments de ligne de commande de la m\xEAme mani\xE8\
+  re que des langages plus traditionnels sur des syst\xE8mes d'exploitation comme\
+  \ Windows, Linux ou macOS."
 title: Lecture des arguments de ligne de commande
 weight: 23
 ---

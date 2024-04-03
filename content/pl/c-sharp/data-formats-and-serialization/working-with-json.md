@@ -2,14 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:46.747087-07:00
-description: "Praca z JSON (JavaScript Object Notation) obejmuje parsowanie, generowanie\
-  \ oraz zapytania o dane JSON, co czyni j\u0105 kluczow\u0105 umiej\u0119tno\u015B\
-  ci\u0105 we wsp\xF3\u0142czesnym\u2026"
+description: "Jak to zrobi\u0107: #."
 lastmod: '2024-03-13T22:44:35.430321-06:00'
 model: gpt-4-0125-preview
-summary: "Praca z JSON (JavaScript Object Notation) obejmuje parsowanie, generowanie\
-  \ oraz zapytania o dane JSON, co czyni j\u0105 kluczow\u0105 umiej\u0119tno\u015B\
-  ci\u0105 we wsp\xF3\u0142czesnym programowaniu."
+summary: '#.'
 title: Praca z JSON
 weight: 38
 ---

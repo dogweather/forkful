@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:00.123405-07:00
-description: "Att skriva tester i Java handlar om att verifiera att din kod beter\
-  \ sig som f\xF6rv\xE4ntat under olika f\xF6rh\xE5llanden. Programmerare skriver\
-  \ tester f\xF6r att\u2026"
+description: "Hur: Java-utvecklare anv\xE4nder fr\xE4mst tv\xE5 testramverk: JUnit\
+  \ och TestNG. H\xE4r kommer vi att fokusera p\xE5 JUnit, det popul\xE4rare valet\
+  \ f\xF6r att skriva tester p\xE5\u2026"
 lastmod: '2024-03-13T22:44:37.790867-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva tester i Java handlar om att verifiera att din kod beter sig\
-  \ som f\xF6rv\xE4ntat under olika f\xF6rh\xE5llanden."
+summary: "Java-utvecklare anv\xE4nder fr\xE4mst tv\xE5 testramverk."
 title: Skriva tester
 weight: 36
 ---

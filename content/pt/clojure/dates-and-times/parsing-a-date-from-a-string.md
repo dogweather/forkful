@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:01.702362-07:00
-description: "Analisar uma data a partir de uma string em Clojure trata-se de converter\
-  \ representa\xE7\xF5es textuais de datas e horas em uma forma mais utiliz\xE1vel\
-  \ (por\u2026"
+description: "Como Fazer: Clojure, sendo uma linguagem JVM, permite que voc\xEA use\
+  \ diretamente as bibliotecas de data e hora do Java. Vamos come\xE7ar com a\u2026"
 lastmod: '2024-03-13T22:44:46.206053-06:00'
 model: gpt-4-0125-preview
-summary: "Analisar uma data a partir de uma string em Clojure trata-se de converter\
-  \ representa\xE7\xF5es textuais de datas e horas em uma forma mais utiliz\xE1vel\
-  \ (por exemplo, o objeto DateTime do Clojure)."
+summary: "Clojure, sendo uma linguagem JVM, permite que voc\xEA use diretamente as\
+  \ bibliotecas de data e hora do Java."
 title: Analisando uma data a partir de uma string
 weight: 30
 ---

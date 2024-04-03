@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:32.516530-07:00
-description: "Escrever testes em Fish Shell envolve criar scripts que executam automaticamente\
-  \ o seu c\xF3digo para validar seu comportamento em rela\xE7\xE3o aos resultados\u2026"
+description: "Como: Fish n\xE3o possui uma estrutura de teste integrada como alguns\
+  \ outros ambientes de programa\xE7\xE3o. No entanto, voc\xEA pode escrever scripts\
+  \ de teste\u2026"
 lastmod: '2024-03-13T22:44:47.009519-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever testes em Fish Shell envolve criar scripts que executam automaticamente\
-  \ o seu c\xF3digo para validar seu comportamento em rela\xE7\xE3o aos resultados\
-  \ esperados."
+summary: "Fish n\xE3o possui uma estrutura de teste integrada como alguns outros ambientes\
+  \ de programa\xE7\xE3o."
 title: Escrevendo testes
 weight: 36
 ---

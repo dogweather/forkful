@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:28.666190-07:00
-description: "Het verkrijgen van de huidige datum in de programmering stelt ons in\
-  \ staat om bij te houden wanneer dingen gebeuren. We hebben tijdstempels nodig voor\u2026"
+description: 'Hoe te: In Lua, het grijpen van de huidige datum en tijd is een fluitje
+  van een cent met de `os.date` functie. Bekijk het.'
 lastmod: '2024-03-13T22:44:50.947834-06:00'
 model: gpt-4-0125-preview
-summary: Het verkrijgen van de huidige datum in de programmering stelt ons in staat
-  om bij te houden wanneer dingen gebeuren.
+summary: In Lua, het grijpen van de huidige datum en tijd is een fluitje van een cent
+  met de `os.date` functie.
 title: Het huidige datum ophalen
 weight: 29
 ---

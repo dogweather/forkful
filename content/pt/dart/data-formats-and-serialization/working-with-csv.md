@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:46.330008-07:00
-description: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgula) envolve\
-  \ analisar e gerar arquivos de texto onde cada linha cont\xE9m valores separados\
-  \ por\u2026"
+description: "Como Fazer: Para manipular arquivos CSV em Dart, voc\xEA geralmente\
+  \ processa o texto manualmente ou usa bibliotecas de terceiros para simplificar\
+  \ a tarefa.\u2026"
 lastmod: '2024-03-13T22:44:46.305831-06:00'
 model: gpt-4-0125-preview
-summary: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgula) envolve analisar\
-  \ e gerar arquivos de texto onde cada linha cont\xE9m valores separados por v\xED\
-  rgulas."
+summary: "Para manipular arquivos CSV em Dart, voc\xEA geralmente processa o texto\
+  \ manualmente ou usa bibliotecas de terceiros para simplificar a tarefa."
 title: Trabalhando com CSV
 weight: 37
 ---

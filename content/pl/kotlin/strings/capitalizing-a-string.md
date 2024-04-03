@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:49.515398-07:00
-description: "Zamiana pierwszej litery ci\u0105gu znak\xF3w na wielk\u0105 (kapitalizacja)\
-  \ w programowaniu polega na konwersji pierwszego znaku ci\u0105gu na wielk\u0105\
-  \ liter\u0119, je\u015Bli ju\u017C\u2026"
+description: "Jak to zrobi\u0107: W Kotlinie napisy mog\u0105 by\u0107 zamieniane\
+  \ na wielkie litery za pomoc\u0105 standardowych funkcji biblioteki, bez potrzeby\
+  \ korzystania z bibliotek\u2026"
 lastmod: '2024-03-13T22:44:35.347360-06:00'
 model: gpt-4-0125-preview
-summary: "Zamiana pierwszej litery ci\u0105gu znak\xF3w na wielk\u0105 (kapitalizacja)\
-  \ w programowaniu polega na konwersji pierwszego znaku ci\u0105gu na wielk\u0105\
-  \ liter\u0119, je\u015Bli ju\u017C taka nie jest."
+summary: "W Kotlinie napisy mog\u0105 by\u0107 zamieniane na wielkie litery za pomoc\u0105\
+  \ standardowych funkcji biblioteki, bez potrzeby korzystania z bibliotek firm trzecich."
 title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---

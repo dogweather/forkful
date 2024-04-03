@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:55.115619-07:00
-description: "Arduino-ohjelmoinnin kontekstissa kansion olemassaolon tarkistus SD-kortilla\
-  \ tai vastaavassa tallennusmoduulissa mahdollistaa tiedostojen lukemisen tai\u2026"
+description: "Kuinka: Arduino ei natiivisti tue monimutkaisia tiedostoj\xE4rjestelm\xE4\
+  operaatioita suoraan paketista. Kuitenkin k\xE4ytt\xE4m\xE4ll\xE4 SD-kirjastoa,\
+  \ joka on osa\u2026"
 lastmod: '2024-03-13T22:44:56.837885-06:00'
 model: gpt-4-0125-preview
-summary: "Arduino-ohjelmoinnin kontekstissa kansion olemassaolon tarkistus SD-kortilla\
-  \ tai vastaavassa tallennusmoduulissa mahdollistaa tiedostojen lukemisen tai kirjoittamisen\
-  \ ilman virheit\xE4."
+summary: "Arduino ei natiivisti tue monimutkaisia tiedostoj\xE4rjestelm\xE4operaatioita\
+  \ suoraan paketista."
 title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---

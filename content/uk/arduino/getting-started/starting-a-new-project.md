@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 18:02:38.416096-07:00
-description: "Starting a new Arduino project means initializing a fresh sketch to\
-  \ build your unique idea. Programmers kick off new projects to solve problems, learn,\
-  \ or\u2026"
+description: "How to: (\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\
+  \u0438:) ."
 lastmod: '2024-03-13T22:44:49.720778-06:00'
 model: gpt-4-1106-preview
-summary: Starting a new Arduino project means initializing a fresh sketch to build
-  your unique idea.
+summary: .
 title: "\u041F\u043E\u0447\u0438\u043D\u0430\u0454\u043C\u043E \u043D\u043E\u0432\u0438\
   \u0439 \u043F\u0440\u043E\u0435\u043A\u0442"
 weight: 1

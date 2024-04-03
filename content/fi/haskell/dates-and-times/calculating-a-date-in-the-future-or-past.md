@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:31:38.235458-07:00
-description: "Menneisyyden tai tulevaisuuden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen\
-  \ tarkoittaa p\xE4iv\xE4m\xE4\xE4r\xE4n siirt\xE4mist\xE4 taakse- tai eteenp\xE4\
-  in kalenterissa. Ohjelmoijat tekev\xE4t t\xE4t\xE4 mm.\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:56.628111-06:00'
 model: gpt-4-1106-preview
-summary: "Menneisyyden tai tulevaisuuden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen tarkoittaa\
-  \ p\xE4iv\xE4m\xE4\xE4r\xE4n siirt\xE4mist\xE4 taakse- tai eteenp\xE4in kalenterissa."
+summary: .
 title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---

@@ -1,11 +1,12 @@
 ---
 date: 2024-03-08 21:33:26.393542-07:00
-description: "Reading a text file in Dart involves accessing and retrieving data from\
-  \ files stored on the file system. Programmers do this to handle input data,\u2026"
+description: "How to: Dart\u2019s core library, `dart:io`, provides the necessary\
+  \ functionalities to read text files synchronously or asynchronously. Here's how\
+  \ to approach\u2026"
 lastmod: '2024-03-13T22:44:59.836166-06:00'
 model: gpt-4-0125-preview
-summary: Reading a text file in Dart involves accessing and retrieving data from files
-  stored on the file system.
+summary: "Dart\u2019s core library, `dart:io`, provides the necessary functionalities\
+  \ to read text files synchronously or asynchronously."
 title: Reading a text file
 weight: 22
 ---

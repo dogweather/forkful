@@ -2,15 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:36.265343-07:00
-description: "Imprimir sa\xEDdas de depura\xE7\xE3o em Dart consiste em exibir informa\xE7\
-  \xF5es no console durante a execu\xE7\xE3o, permitindo que os desenvolvedores acompanhem\
-  \ o fluxo da\u2026"
+description: "Como fazer: Em Dart, voc\xEA pode imprimir sa\xEDdas de depura\xE7\xE3\
+  o usando a fun\xE7\xE3o `print()`. Veja como exibir mensagens simples e valores\
+  \ de vari\xE1veis."
 lastmod: '2024-03-13T22:44:46.284476-06:00'
 model: gpt-4-0125-preview
-summary: "Imprimir sa\xEDdas de depura\xE7\xE3o em Dart consiste em exibir informa\xE7\
-  \xF5es no console durante a execu\xE7\xE3o, permitindo que os desenvolvedores acompanhem\
-  \ o fluxo da execu\xE7\xE3o, investiguem o estado das vari\xE1veis ou identifiquem\
-  \ a fonte dos erros."
+summary: "Em Dart, voc\xEA pode imprimir sa\xEDdas de depura\xE7\xE3o usando a fun\xE7\
+  \xE3o `print()`."
 title: "Imprimindo a sa\xEDda de depura\xE7\xE3o"
 weight: 33
 ---

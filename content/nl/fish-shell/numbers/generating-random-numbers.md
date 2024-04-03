@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:56.730143-07:00
-description: "Het genereren van willekeurige getallen is een fundamentele taak in\
-  \ programmeren, gebruikt voor alles van gegevenssampling tot spelontwikkeling. In\
-  \ Fish\u2026"
+description: "Hoe: Het genereren van een willekeurig getal in Fish kan eenvoudig zijn,\
+  \ door het combineren van systeemhulpprogramma's en shell-mogelijkheden. Hieronder\u2026"
 lastmod: '2024-03-13T22:44:51.240964-06:00'
 model: gpt-4-0125-preview
-summary: Het genereren van willekeurige getallen is een fundamentele taak in programmeren,
-  gebruikt voor alles van gegevenssampling tot spelontwikkeling.
+summary: Het genereren van een willekeurig getal in Fish kan eenvoudig zijn, door
+  het combineren van systeemhulpprogramma's en shell-mogelijkheden.
 title: Willekeurige getallen genereren
 weight: 12
 ---

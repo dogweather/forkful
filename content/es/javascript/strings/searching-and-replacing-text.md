@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 17:58:24.696525-07:00
-description: "Buscar y reemplazar texto implica hallar ciertos caracteres o cadenas\
-  \ dentro de un texto y sustituirlos por otros. Los programadores lo hacen para\u2026"
+description: "C\xF3mo Hacerlo: Buscar y reemplazar texto en JavaScript puede hacerse\
+  \ f\xE1cilmente con `String.replace()` o expresiones regulares. Mira estos ejemplos\
+  \ b\xE1sicos."
 lastmod: '2024-03-13T22:44:59.443900-06:00'
 model: gpt-4-1106-preview
-summary: Buscar y reemplazar texto implica hallar ciertos caracteres o cadenas dentro
-  de un texto y sustituirlos por otros.
+summary: "Buscar y reemplazar texto en JavaScript puede hacerse f\xE1cilmente con\
+  \ `String.replace()` o expresiones regulares."
 title: Buscando y reemplazando texto
 weight: 10
 ---

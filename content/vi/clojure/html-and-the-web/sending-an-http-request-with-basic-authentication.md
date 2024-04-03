@@ -2,16 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:13.084190-07:00
-description: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1\
-  \ b\u1EA3n bao g\u1ED3m vi\u1EC7c th\xEAm t\xEAn ng\u01B0\u1EDDi d\xF9ng v\xE0 m\u1EAD\
-  t kh\u1EA9u v\xE0o m\u1ED9t y\xEAu c\u1EA7u \u0111\u1EC3 truy c\u1EADp v\xE0o c\xE1\
-  c t\xE0i nguy\xEAn b\u1ECB h\u1EA1n ch\u1EBF. C\xE1c l\u1EADp\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong Clojure, b\u1EA1n s\u1EBD th\u01B0\
+  \u1EDDng s\u1EED d\u1EE5ng th\u01B0 vi\u1EC7n `clj-http` cho c\xE1c y\xEAu c\u1EA7\
+  u HTTP, bao g\u1ED3m c\u1EA3 nh\u1EEFng y\xEAu c\u1EA7u v\u1EDBi x\xE1c th\u1EF1\
+  c c\u01A1 b\u1EA3n. H\xE3y b\u1EAFt \u0111\u1EA7u\u2026"
 lastmod: '2024-03-13T22:44:36.152756-06:00'
 model: gpt-4-0125-preview
-summary: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1\
-  \ b\u1EA3n bao g\u1ED3m vi\u1EC7c th\xEAm t\xEAn ng\u01B0\u1EDDi d\xF9ng v\xE0 m\u1EAD\
-  t kh\u1EA9u v\xE0o m\u1ED9t y\xEAu c\u1EA7u \u0111\u1EC3 truy c\u1EADp v\xE0o c\xE1\
-  c t\xE0i nguy\xEAn b\u1ECB h\u1EA1n ch\u1EBF."
+summary: "Trong Clojure, b\u1EA1n s\u1EBD th\u01B0\u1EDDng s\u1EED d\u1EE5ng th\u01B0\
+  \ vi\u1EC7n `clj-http` cho c\xE1c y\xEAu c\u1EA7u HTTP, bao g\u1ED3m c\u1EA3 nh\u1EEF\
+  ng y\xEAu c\u1EA7u v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3n."
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3\
   n"
 weight: 45

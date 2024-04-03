@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 01:11:17.874879-07:00
-description: "Organizowanie kodu w funkcje dzieli zadania na wielokrotnie u\u017C\
-  yteczne cz\u0119\u015Bci, co sprawia, \u017Ce kod jest czystszy i \u0142atwiejszy\
-  \ w utrzymaniu. Robimy to, aby\u2026"
+description: "Jak to zrobi\u0107: ."
 lastmod: '2024-03-13T22:44:35.802074-06:00'
 model: gpt-4-1106-preview
-summary: "Organizowanie kodu w funkcje dzieli zadania na wielokrotnie u\u017Cyteczne\
-  \ cz\u0119\u015Bci, co sprawia, \u017Ce kod jest czystszy i \u0142atwiejszy w utrzymaniu."
+summary: .
 title: Organizacja kodu w funkcje
 weight: 18
 ---

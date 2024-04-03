@@ -2,17 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:01.622719-07:00
-description: "Ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1\
-  i kh\xF4ng c\xF3 ngh\u0129a l\xE0 x\xE1c nh\u1EADn li\u1EC7u m\u1ED9t \u0111\u01B0\
-  \u1EDDng d\u1EABn c\xF3 tr\u1ECF \u0111\u1EBFn m\u1ED9t th\u01B0 m\u1EE5c tr\xEA\
-  n h\u1EC7 th\u1ED1ng t\u1EC7p c\u1EE7a b\u1EA1n kh\xF4ng. L\u1EADp tr\xECnh vi\xEA\
-  n\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: S\u1EED d\u1EE5ng `clojure.java.io/file` \u0111\
+  \u1EC3 t\u1EA1o m\u1ED9t \u0111\u1ED1i t\u01B0\u1EE3ng File v\xE0 `.exists` \u0111\
+  \u1EC3 ki\u1EC3m tra xem n\xF3 c\xF3 t\u1ED3n t\u1EA1i hay kh\xF4ng. Ph\u01B0\u01A1\
+  ng th\u1EE9c `isDirectory` x\xE1c\u2026"
 lastmod: '2024-03-13T22:44:36.171967-06:00'
 model: gpt-4-0125-preview
-summary: "Ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4\
-  ng c\xF3 ngh\u0129a l\xE0 x\xE1c nh\u1EADn li\u1EC7u m\u1ED9t \u0111\u01B0\u1EDD\
-  ng d\u1EABn c\xF3 tr\u1ECF \u0111\u1EBFn m\u1ED9t th\u01B0 m\u1EE5c tr\xEAn h\u1EC7\
-  \ th\u1ED1ng t\u1EC7p c\u1EE7a b\u1EA1n kh\xF4ng."
+summary: "S\u1EED d\u1EE5ng `clojure.java.io/file` \u0111\u1EC3 t\u1EA1o m\u1ED9t\
+  \ \u0111\u1ED1i t\u01B0\u1EE3ng File v\xE0 `.exists` \u0111\u1EC3 ki\u1EC3m tra\
+  \ xem n\xF3 c\xF3 t\u1ED3n t\u1EA1i hay kh\xF4ng."
 title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
 weight: 20
 ---

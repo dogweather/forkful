@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 01:09:04.694547-07:00
-description: "Dividir c\xF3digo em fun\xE7\xF5es significa decompor scripts em blocos\
-  \ menores e reutiliz\xE1veis que realizam tarefas espec\xEDficas. Isso torna o c\xF3\
-  digo mais limpo,\u2026"
+description: "Como fazer: Crie uma fun\xE7\xE3o simples em Bash."
 lastmod: '2024-03-13T22:44:46.758109-06:00'
 model: gpt-4-1106-preview
-summary: "Dividir c\xF3digo em fun\xE7\xF5es significa decompor scripts em blocos\
-  \ menores e reutiliz\xE1veis que realizam tarefas espec\xEDficas."
+summary: "Crie uma fun\xE7\xE3o simples em Bash."
 title: "Organizando o c\xF3digo em fun\xE7\xF5es"
 weight: 18
 ---

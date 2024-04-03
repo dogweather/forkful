@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:47:16.973667-07:00
-description: "Finding the length of a string in Clojure returns the number of characters\
-  \ in that string. Programmers often need this info to validate input, loop\u2026"
+description: 'How to: To get a string''s length in Clojure, use the `count` function.'
 lastmod: '2024-03-13T22:44:59.737267-06:00'
 model: gpt-4-1106-preview
-summary: Finding the length of a string in Clojure returns the number of characters
-  in that string.
+summary: To get a string's length in Clojure, use the `count` function.
 title: Finding the length of a string
 weight: 7
 ---

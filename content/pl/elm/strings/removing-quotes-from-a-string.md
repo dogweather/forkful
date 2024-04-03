@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 03:39:00.255315-07:00
-description: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w oznacza usuni\u0119\
-  cie tych dodatkowych podw\xF3jnych lub pojedynczych znak\xF3w cytatu, kt\xF3re faktycznie\
-  \ nie s\u0105 potrzebne w\u2026"
+description: "Jak to zrobi\u0107: W Elm, mo\u017Cna u\u017Cy\u0107 funkcji `String`,\
+  \ aby manipulowa\u0107 ci\u0105gami znak\xF3w, takimi jak usuwanie cudzys\u0142\
+  ow\xF3w. Oto prosty spos\xF3b, aby to zrobi\u0107."
 lastmod: '2024-03-13T22:44:35.309009-06:00'
 model: gpt-4-0125-preview
-summary: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w oznacza usuni\u0119\
-  cie tych dodatkowych podw\xF3jnych lub pojedynczych znak\xF3w cytatu, kt\xF3re faktycznie\
-  \ nie s\u0105 potrzebne w przetwarzanym tek\u015Bcie."
+summary: "W Elm, mo\u017Cna u\u017Cy\u0107 funkcji `String`, aby manipulowa\u0107\
+  \ ci\u0105gami znak\xF3w, takimi jak usuwanie cudzys\u0142ow\xF3w."
 title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---

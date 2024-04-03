@@ -2,14 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:32.989217-07:00
-description: "Express\xF5es regulares (regex) s\xE3o uma ferramenta poderosa para\
-  \ o processamento de texto, permitindo que programadores busquem, correspondam e\
-  \ manipulem\u2026"
+description: 'Como Fazer: #.'
 lastmod: '2024-03-13T22:44:46.531453-06:00'
 model: gpt-4-0125-preview
-summary: "Express\xF5es regulares (regex) s\xE3o uma ferramenta poderosa para o processamento\
-  \ de texto, permitindo que programadores busquem, correspondam e manipulem strings\
-  \ com t\xE9cnicas avan\xE7adas de correspond\xEAncia de padr\xF5es."
+summary: '#.'
 title: "Usando express\xF5es regulares"
 weight: 11
 ---

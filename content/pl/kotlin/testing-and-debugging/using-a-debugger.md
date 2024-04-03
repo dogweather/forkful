@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 03:50:12.306170-07:00
-description: "Oto ma\u0142a pr\xF3bka debugowania w Kotlinie z IntelliJ IDEA - Sherlocku\
-  \ Holmesie w\u015Br\xF3d IDE: ```kotlin fun main() { val tajemniczaLiczba = 42 var\
-  \ zgadnij = 0\u2026"
+description: "Jak to zrobi\u0107: Oto ma\u0142a pr\xF3bka debugowania w Kotlinie z\
+  \ IntelliJ IDEA - Sherlocku Holmesie w\u015Br\xF3d IDE."
 lastmod: '2024-03-13T22:44:35.369484-06:00'
 model: gpt-4-0125-preview
 summary: "Oto ma\u0142a pr\xF3bka debugowania w Kotlinie z IntelliJ IDEA - Sherlocku\
-  \ Holmesie w\u015Br\xF3d IDE:\n\n```kotlin\nfun main() {\n    val tajemniczaLiczba\
-  \ = 42\n    var zgadnij = 0\n\n    while (zgadnij ."
+  \ Holmesie w\u015Br\xF3d IDE."
 title: Korzystanie z debugera
 weight: 35
 ---

@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 03:46:46.704963-07:00
-description: "Arredondar n\xFAmeros significa ajust\xE1-los ao n\xFAmero inteiro mais\
-  \ pr\xF3ximo ou a um grau de precis\xE3o especificado. Programadores arredondam\
-  \ n\xFAmeros para\u2026"
+description: 'Como Fazer: .'
 lastmod: '2024-03-13T22:44:47.088554-06:00'
 model: gpt-4-0125-preview
-summary: "Arredondar n\xFAmeros significa ajust\xE1-los ao n\xFAmero inteiro mais\
-  \ pr\xF3ximo ou a um grau de precis\xE3o especificado."
+summary: .
 title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---

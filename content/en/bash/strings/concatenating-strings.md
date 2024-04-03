@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 17:34:16.150796-07:00
-description: "Concatenating strings in Bash means sticking two or more pieces of text\
-  \ together. Programmers do it to build up commands, create file paths, or simply\u2026"
+description: 'How to: Here''s the fast track to giving your strings a snug hug in
+  Bash.'
 lastmod: '2024-03-13T22:45:00.235771-06:00'
 model: gpt-4-1106-preview
-summary: Concatenating strings in Bash means sticking two or more pieces of text together.
+summary: Here's the fast track to giving your strings a snug hug in Bash.
 title: Concatenating strings
 weight: 3
 ---

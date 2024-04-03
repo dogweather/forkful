@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:55:05.030177-07:00
-description: "Das Lesen einer Textdatei in PHP bedeutet, den Inhalt der Datei Zeile\
-  \ f\xFCr Zeile oder als Ganzes in deinem Skript verf\xFCgbar zu machen. Programmierer\
-  \ m\xFCssen\u2026"
+description: 'Anleitung: Ein einfaches Skript, um eine Datei namens "beispiel.txt"
+  zu lesen.'
 lastmod: '2024-03-13T22:44:53.989748-06:00'
 model: gpt-4-1106-preview
-summary: "Das Lesen einer Textdatei in PHP bedeutet, den Inhalt der Datei Zeile f\xFC\
-  r Zeile oder als Ganzes in deinem Skript verf\xFCgbar zu machen."
+summary: Ein einfaches Skript, um eine Datei namens "beispiel.txt" zu lesen.
 title: Textdatei einlesen
 weight: 22
 ---

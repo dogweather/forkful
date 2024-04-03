@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:30.319519-07:00
-description: "Het kapitaliseren van een string betekent het corrigeren van de hoofdletters\
-  \ zodanig dat de eerste letter een hoofdletter is en de rest kleine letters\u2026"
+description: "Hoe: Om strings in Haskell te kapitaliseren, heeft de taal zelf geen\
+  \ ingebouwde `capitalize` functie. Daarom maken we er zelf een met behulp van de\u2026"
 lastmod: '2024-03-13T22:44:50.835475-06:00'
 model: gpt-4-0125-preview
-summary: Het kapitaliseren van een string betekent het corrigeren van de hoofdletters
-  zodanig dat de eerste letter een hoofdletter is en de rest kleine letters zijn.
+summary: Om strings in Haskell te kapitaliseren, heeft de taal zelf geen ingebouwde
+  `capitalize` functie.
 title: Een string met hoofdletters maken
 weight: 2
 ---

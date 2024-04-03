@@ -2,15 +2,16 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:47.804240-07:00
-description: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh m\u1ED9t chu\u1ED7\
-  i trong Go bao g\u1ED3m vi\u1EC7c bi\u1EBFn m\u1ED9t \u0111\u1ED1i t\u01B0\u1EE3\
-  ng `time.Time` th\xE0nh \u0111\u1ECBnh d\u1EA1ng chu\u1ED7i d\u1EC5 \u0111\u1ECD\
-  c. L\u1EADp tr\xECnh vi\xEAn th\u01B0\u1EDDng th\u1EF1c hi\u1EC7n\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Go, g\xF3i `time` cung c\u1EA5p c\xE1\
+  c ch\u1EE9c n\u0103ng \u0111\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi ng\xE0y v\xE0 gi\u1EDD\
+  , bao g\u1ED3m \u0111\u1ECBnh d\u1EA1ng m\u1ED9t \u0111\u1ED1i t\u01B0\u1EE3ng `time.Time`\
+  \ th\xE0nh m\u1ED9t chu\u1ED7i. Ph\u01B0\u01A1ng\u2026"
 lastmod: '2024-03-13T22:44:35.997850-06:00'
 model: gpt-4-0125-preview
-summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh m\u1ED9t chu\u1ED7i\
-  \ trong Go bao g\u1ED3m vi\u1EC7c bi\u1EBFn m\u1ED9t \u0111\u1ED1i t\u01B0\u1EE3\
-  ng `time."
+summary: "Trong Go, g\xF3i `time` cung c\u1EA5p c\xE1c ch\u1EE9c n\u0103ng \u0111\u1EC3\
+  \ l\xE0m vi\u1EC7c v\u1EDBi ng\xE0y v\xE0 gi\u1EDD, bao g\u1ED3m \u0111\u1ECBnh\
+  \ d\u1EA1ng m\u1ED9t \u0111\u1ED1i t\u01B0\u1EE3ng `time.Time` th\xE0nh m\u1ED9\
+  t chu\u1ED7i."
 title: "Chuy\u1EC3n \u0111\u1ED5i ng\xE0y th\xE0nh chu\u1ED7i"
 weight: 28
 ---

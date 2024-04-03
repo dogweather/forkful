@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 03:37:05.556687-07:00
-description: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa yksitt\xE4isten\
-  \ (`'`) tai kaksinkertaisten (`\"`) lainausmerkkien poistamista tekstin ymp\xE4\
-  rilt\xE4.\u2026"
+description: "Miten: Voit poistaa lainausmerkit merkkijonosta Arduinolla k\xE4ym\xE4\
+  ll\xE4 merkkijonon merkit l\xE4pi ja rakentamalla merkkijonon uudelleen ilman lainausmerkkej\xE4\
+  .\u2026"
 lastmod: '2024-03-13T22:44:56.813152-06:00'
 model: gpt-4-0125-preview
-summary: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa yksitt\xE4isten (`'`)\
-  \ tai kaksinkertaisten (`\"`) lainausmerkkien poistamista tekstin ymp\xE4rilt\xE4\
-  ."
+summary: "Voit poistaa lainausmerkit merkkijonosta Arduinolla k\xE4ym\xE4ll\xE4 merkkijonon\
+  \ merkit l\xE4pi ja rakentamalla merkkijonon uudelleen ilman lainausmerkkej\xE4."
 title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---

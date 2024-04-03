@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 20:34:09.917010-07:00
-description: "Generowanie liczb losowych w Haskellu polega na tworzeniu liczb, kt\xF3\
-  re s\u0105 nieprzewidywalne wed\u0142ug ludzkich standard\xF3w. Jest to kluczowe\
-  \ w scenariuszach\u2026"
+description: "Jak to zrobi\u0107: Aby generowa\u0107 liczby losowe w Haskellu, zwykle\
+  \ u\u017Cywa si\u0119 pakietu `random`, kt\xF3ry jest cz\u0119\u015Bci\u0105 platformy\
+  \ Haskell. Oto przewodnik krok po\u2026"
 lastmod: '2024-03-13T22:44:35.447334-06:00'
 model: gpt-4-0125-preview
-summary: "Generowanie liczb losowych w Haskellu polega na tworzeniu liczb, kt\xF3\
-  re s\u0105 nieprzewidywalne wed\u0142ug ludzkich standard\xF3w."
+summary: "Aby generowa\u0107 liczby losowe w Haskellu, zwykle u\u017Cywa si\u0119\
+  \ pakietu `random`, kt\xF3ry jest cz\u0119\u015Bci\u0105 platformy Haskell."
 title: Generowanie liczb losowych
 weight: 12
 ---

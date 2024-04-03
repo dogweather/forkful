@@ -2,14 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:57.921589-07:00
-description: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy, hay c\xF2n g\u1ECDi l\xE0 regex, l\xE0\
-  \ c\xE1c m\u1EABu m\xF4 t\u1EA3 c\xE1c t\u1EADp h\u1EE3p chu\u1ED7i. L\u1EADp tr\xEC\
-  nh vi\xEAn s\u1EED d\u1EE5ng ch\xFAng \u0111\u1EC3 t\xECm ki\u1EBFm, kh\u1EDBp,\
-  \ v\xE0 thao t\xE1c v\u1EDBi v\u0103n b\u1EA3n \u2014\u2026"
+description: "L\xE0m Th\u1EBF N\xE0o: Fish Shell c\xF3 h\u1ED7 tr\u1EE3 regex t\xED\
+  ch h\u1EE3p trong c\xE1c l\u1EC7nh nh\u01B0 `string`. H\xE3y c\xF9ng t\xECm hi\u1EC3\
+  u qua m\u1ED9t s\u1ED1 v\xED d\u1EE5: **T\xECm Ki\u1EBFm C\u01A1 B\u1EA3n:** T\xEC\
+  m xem t\u1EEB \"fish\"\u2026"
 lastmod: '2024-03-13T22:44:37.194748-06:00'
 model: gpt-4-0125-preview
-summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy, hay c\xF2n g\u1ECDi l\xE0 regex, l\xE0\
-  \ c\xE1c m\u1EABu m\xF4 t\u1EA3 c\xE1c t\u1EADp h\u1EE3p chu\u1ED7i."
+summary: "Fish Shell c\xF3 h\u1ED7 tr\u1EE3 regex t\xEDch h\u1EE3p trong c\xE1c l\u1EC7\
+  nh nh\u01B0 `string`."
 title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---

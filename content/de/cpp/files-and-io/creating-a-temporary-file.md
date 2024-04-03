@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:39:46.700926-07:00
-description: "Ein tempor\xE4res File ist eine kurzlebige Datei, die w\xE4hrend der\
-  \ Ausf\xFChrung eines Programms erstellt und oft danach gel\xF6scht wird. Programmierer\
-  \ nutzen sie\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:54.203714-06:00'
 model: gpt-4-1106-preview
-summary: "Ein tempor\xE4res File ist eine kurzlebige Datei, die w\xE4hrend der Ausf\xFC\
-  hrung eines Programms erstellt und oft danach gel\xF6scht wird."
+summary: .
 title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---

@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:10.722410-07:00
-description: "Complexe getallen breiden ons getallenstelsel uit met de vierkantswortels\
-  \ van negatieve getallen, waarbij de 'imaginaire' eenheid i gelijk staat aan de\u2026"
+description: "Hoe te: Laten we een eenvoudige complexe getallenklasse in Kotlin defini\xEB\
+  ren."
 lastmod: '2024-03-13T22:44:50.761518-06:00'
 model: gpt-4-0125-preview
-summary: Complexe getallen breiden ons getallenstelsel uit met de vierkantswortels
-  van negatieve getallen, waarbij de 'imaginaire' eenheid i gelijk staat aan de vierkantswortel
-  van -1.
+summary: "Laten we een eenvoudige complexe getallenklasse in Kotlin defini\xEBren."
 title: Werken met complexe getallen
 weight: 14
 ---

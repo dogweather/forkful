@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 03:42:48.912838-07:00
-description: "Avrundning av tal inneb\xE4r att man klipper av decimalerna till ett\
-  \ enklare v\xE4rde som \xE4r tillr\xE4ckligt bra f\xF6r ett givet sammanhang. Programmerare\
-  \ avrundar\u2026"
+description: "Hur man g\xF6r: H\xE4r \xE4r det l\xE5ga ner p\xE5 avrundning i Bash."
 lastmod: '2024-03-13T22:44:38.075419-06:00'
 model: gpt-4-0125-preview
-summary: "Avrundning av tal inneb\xE4r att man klipper av decimalerna till ett enklare\
-  \ v\xE4rde som \xE4r tillr\xE4ckligt bra f\xF6r ett givet sammanhang."
+summary: "H\xE4r \xE4r det l\xE5ga ner p\xE5 avrundning i Bash."
 title: Avrundning av tal
 weight: 13
 ---

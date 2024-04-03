@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:40:48.816606-07:00
-description: "Eliminar las comillas de una cadena en PowerShell elimina las marcas\
-  \ de comillas simples (`'`) o dobles (`\"`) que envuelven tu texto. Los programadores\
-  \ a\u2026"
+description: "C\xF3mo hacerlo: Puedes usar el operador `-replace` para quitar las\
+  \ comillas de una cadena. As\xED es como."
 lastmod: '2024-03-13T22:44:59.278383-06:00'
 model: gpt-4-0125-preview
-summary: Eliminar las comillas de una cadena en PowerShell elimina las marcas de comillas
-  simples (`'`) o dobles (`"`) que envuelven tu texto.
+summary: Puedes usar el operador `-replace` para quitar las comillas de una cadena.
 title: Eliminando comillas de una cadena
 weight: 9
 ---

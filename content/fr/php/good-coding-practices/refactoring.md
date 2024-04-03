@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 01:47:50.361082-07:00
-description: "La refactorisation est le processus de restructuration du code informatique\
-  \ existant sans en modifier le comportement externe. Les programmeurs\u2026"
+description: "Comment faire : Prenons un extrait classique de PHP et appliquons-lui\
+  \ de la magie de refactorisation. Avant la refactorisation, notre code pourrait\u2026"
 lastmod: '2024-03-13T22:44:57.888052-06:00'
 model: gpt-4-0125-preview
-summary: La refactorisation est le processus de restructuration du code informatique
-  existant sans en modifier le comportement externe.
+summary: Prenons un extrait classique de PHP et appliquons-lui de la magie de refactorisation.
 title: 'Refactoring : Mode d''emploi'
 weight: 19
 ---

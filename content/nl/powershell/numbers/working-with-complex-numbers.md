@@ -2,12 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:29.314281-07:00
-description: "Complexe getallen, die een re\xEBel deel en een imaginair deel hebben\
-  \ (zoals 3 + 4i), zijn essentieel in vakgebieden zoals techniek, natuurkunde en\u2026"
+description: "Hoe te: PowerShell heeft geen ingebouwde ondersteuning voor complexe\
+  \ getallen, dus je moet ofwel je eigen oplossing ontwikkelen of .NET's\u2026"
 lastmod: '2024-03-13T22:44:51.020857-06:00'
 model: gpt-4-0125-preview
-summary: "Complexe getallen, die een re\xEBel deel en een imaginair deel hebben (zoals\
-  \ 3 + 4i), zijn essentieel in vakgebieden zoals techniek, natuurkunde en datawetenschap."
+summary: PowerShell heeft geen ingebouwde ondersteuning voor complexe getallen, dus
+  je moet ofwel je eigen oplossing ontwikkelen of .NET's `System.Numerics.Complex`
+  gebruiken.
 title: Werken met complexe getallen
 weight: 14
 ---

@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:38:13.861824-07:00
-description: "Convertissez une cha\xEEne de caract\xE8res en minuscules pour unifier\
-  \ le format des donn\xE9es textuelles. Les programmeurs le font souvent pour comparer\
-  \ des\u2026"
+description: 'How to: Elixir rend la conversion en minuscules simple avec la fonction
+  `String.downcase/1`.'
 lastmod: '2024-03-13T22:44:57.313354-06:00'
 model: gpt-4-1106-preview
-summary: "Convertissez une cha\xEEne de caract\xE8res en minuscules pour unifier le\
-  \ format des donn\xE9es textuelles."
+summary: Elixir rend la conversion en minuscules simple avec la fonction `String.downcase/1`.
 title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
 weight: 4
 ---

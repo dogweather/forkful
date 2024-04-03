@@ -1,10 +1,9 @@
 ---
 date: 2024-01-20 17:34:38.305832-07:00
-description: "Concatenar strings es unir dos o m\xE1s cadenas de texto en una sola.\
-  \ Los programadores lo hacen para combinar datos o crear mensajes din\xE1micos."
+description: "C\xF3mo: ."
 lastmod: '2024-03-13T22:44:58.971359-06:00'
 model: gpt-4-1106-preview
-summary: "Concatenar strings es unir dos o m\xE1s cadenas de texto en una sola."
+summary: .
 title: "Concatenaci\xF3n de cadenas de texto"
 weight: 3
 ---

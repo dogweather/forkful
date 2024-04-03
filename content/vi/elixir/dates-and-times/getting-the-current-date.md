@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:04.111514-07:00
-description: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong m\u1ED9t ch\u01B0\u01A1ng\
-  \ tr\xECnh gi\u1ED1ng nh\u01B0 vi\u1EC7c h\u1ECFi, \"H\xF4m nay l\xE0 ng\xE0y bao\
-  \ nhi\xEAu?\" Ch\xFAng ta l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 ghi d\u1EA5\
-  u th\u1EDDi gian c\xE1c s\u1EF1 ki\u1EC7n, x\u1EED l\xFD\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Elixir l\xE0m cho vi\u1EC7c l\u1EA5y ng\xE0\
+  y hi\u1EC7n t\u1EA1i tr\u1EDF n\xEAn \u0111\u01A1n gi\u1EA3n s\u1EED d\u1EE5ng m\xF4\
+  -\u0111un `Date`."
 lastmod: '2024-03-13T22:44:36.222055-06:00'
 model: gpt-4-0125-preview
-summary: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong m\u1ED9t ch\u01B0\u01A1ng tr\xEC\
-  nh gi\u1ED1ng nh\u01B0 vi\u1EC7c h\u1ECFi, \"H\xF4m nay l\xE0 ng\xE0y bao nhi\xEA\
-  u."
+summary: "Elixir l\xE0m cho vi\u1EC7c l\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i tr\u1EDF\
+  \ n\xEAn \u0111\u01A1n gi\u1EA3n s\u1EED d\u1EE5ng m\xF4-\u0111un `Date`."
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 weight: 29
 ---

@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 20:33:56.363464-07:00
-description: "Generowanie losowych liczb jest podstawowym zadaniem w programowaniu,\
-  \ u\u017Cywanym do wszystkiego - od pr\xF3bkowania danych po rozw\xF3j gier. W Fish\
-  \ Shell u\u017Cycie\u2026"
+description: "Jak to zrobi\u0107: Generowanie losowej liczby w Fish mo\u017Ce by\u0107\
+  \ proste, przy u\u017Cyciu kombinacji narz\u0119dzi systemowych i mo\u017Cliwo\u015B\
+  ci pow\u0142oki. Poni\u017Cej znajduj\u0105 si\u0119\u2026"
 lastmod: '2024-03-13T22:44:35.834760-06:00'
 model: gpt-4-0125-preview
-summary: "Generowanie losowych liczb jest podstawowym zadaniem w programowaniu, u\u017C\
-  ywanym do wszystkiego - od pr\xF3bkowania danych po rozw\xF3j gier."
+summary: "Generowanie losowej liczby w Fish mo\u017Ce by\u0107 proste, przy u\u017C\
+  yciu kombinacji narz\u0119dzi systemowych i mo\u017Cliwo\u015Bci pow\u0142oki."
 title: Generowanie liczb losowych
 weight: 12
 ---

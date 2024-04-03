@@ -1,11 +1,11 @@
 ---
 date: 2024-01-25 03:00:05.161534-07:00
-description: "Rounding numbers means adjusting them to the nearest integer or specified\
-  \ decimal place. Programmers round numbers to control precision, tailor outputs\u2026"
+description: 'How to: Haskell uses the `round`, `ceiling`, `floor`, and `truncate`
+  functions from the `Prelude` for rounding operations.'
 lastmod: '2024-03-13T22:45:00.123372-06:00'
 model: gpt-4-1106-preview
-summary: Rounding numbers means adjusting them to the nearest integer or specified
-  decimal place.
+summary: Haskell uses the `round`, `ceiling`, `floor`, and `truncate` functions from
+  the `Prelude` for rounding operations.
 title: Rounding numbers
 weight: 13
 ---

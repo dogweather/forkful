@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 00:53:27.481693-07:00
-description: "Virheiden k\xE4sittely tarkoittaa sellaisen koodin kirjoittamista, joka\
-  \ ennakoi ja k\xE4sittelee virhetilanteita. Ohjelmoijat tekev\xE4t sit\xE4 tehd\xE4\
-  kseen\u2026"
+description: "Kuinka: Java k\xE4ytt\xE4\xE4 poikkeuksia virheiden k\xE4sittelyyn.\
+  \ Sijoitat riskialttiin koodin `try`-lohkon sis\xE4\xE4n ja otat kiinni poikkeukset\
+  \ `catch`-avainsanalla.\u2026"
 lastmod: '2024-03-13T22:44:56.452388-06:00'
 model: gpt-4-1106-preview
-summary: "Virheiden k\xE4sittely tarkoittaa sellaisen koodin kirjoittamista, joka\
-  \ ennakoi ja k\xE4sittelee virhetilanteita."
+summary: "Java k\xE4ytt\xE4\xE4 poikkeuksia virheiden k\xE4sittelyyn."
 title: "Virheiden k\xE4sittely"
 weight: 16
 ---

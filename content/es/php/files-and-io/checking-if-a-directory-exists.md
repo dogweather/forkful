@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:23.286826-07:00
-description: "Comprobar si un directorio existe es una tarea fundamental en la programaci\xF3\
-  n PHP, ya que te permite verificar la presencia de un directorio antes de\u2026"
+description: "C\xF3mo hacerlo: La forma nativa de comprobar si un directorio existe\
+  \ en PHP es utilizando la funci\xF3n `is_dir()`. Esta funci\xF3n toma una ruta de\
+  \ archivo como\u2026"
 lastmod: '2024-03-13T22:44:59.174803-06:00'
 model: gpt-4-0125-preview
-summary: "Comprobar si un directorio existe es una tarea fundamental en la programaci\xF3\
-  n PHP, ya que te permite verificar la presencia de un directorio antes de realizar\
-  \ operaciones como leer o escribir archivos dentro de \xE9l."
+summary: "La forma nativa de comprobar si un directorio existe en PHP es utilizando\
+  \ la funci\xF3n `is_dir()`."
 title: Comprobando si un directorio existe
 weight: 20
 ---

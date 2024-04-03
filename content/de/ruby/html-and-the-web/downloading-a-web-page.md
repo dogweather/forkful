@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:44:48.997964-07:00
-description: "Das Herunterladen einer Webseite bedeutet, ihren Inhalt \xFCber das\
-  \ Internet abzurufen. Programmierer tun dies, um Daten zu sammeln, automatisiert\
-  \ Inhalte zu\u2026"
+description: "How-to: Zum Herunterladen einer Webseite in Ruby nutzen wir die Bibliothek\
+  \ \u2018net/http\u2019. Hier ist ein einfaches Beispiel."
 lastmod: '2024-03-13T22:44:54.399334-06:00'
 model: gpt-4-1106-preview
-summary: "Das Herunterladen einer Webseite bedeutet, ihren Inhalt \xFCber das Internet\
-  \ abzurufen."
+summary: "Zum Herunterladen einer Webseite in Ruby nutzen wir die Bibliothek \u2018\
+  net/http\u2019."
 title: Webseite herunterladen
 weight: 42
 ---

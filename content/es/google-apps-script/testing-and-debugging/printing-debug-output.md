@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:41.238678-07:00
-description: "Imprimir salida de depuraci\xF3n implica colocar estrat\xE9gicamente\
-  \ declaraciones de registro en su c\xF3digo para mostrar los valores de las variables,\
-  \ el flujo\u2026"
+description: "C\xF3mo hacerlo: Google Apps Script proporciona la clase `Logger` para\
+  \ la depuraci\xF3n b\xE1sica, y para necesidades m\xE1s avanzadas, la clase `console`\
+  \ introducida\u2026"
 lastmod: '2024-03-13T22:44:58.534008-06:00'
 model: gpt-4-0125-preview
-summary: "Imprimir salida de depuraci\xF3n implica colocar estrat\xE9gicamente declaraciones\
-  \ de registro en su c\xF3digo para mostrar los valores de las variables, el flujo\
-  \ de ejecuci\xF3n o mensajes de error durante el tiempo de ejecuci\xF3n."
+summary: "Google Apps Script proporciona la clase `Logger` para la depuraci\xF3n b\xE1\
+  sica, y para necesidades m\xE1s avanzadas, la clase `console` introducida en el\
+  \ entorno de ejecuci\xF3n V8."
 title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---

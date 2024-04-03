@@ -1,12 +1,12 @@
 ---
 date: 2024-02-03 19:02:29.514784-07:00
-description: "Checking if a directory exists is a fundamental operation in many programming\
-  \ tasks, allowing for conditional actions based on the presence or absence of\u2026"
+description: "How to: Haskell, through its base library, offers straightforward ways\
+  \ to check for directory existence, mainly using the `System.Directory` module.\
+  \ Let's\u2026"
 lastmod: '2024-03-13T22:45:00.141503-06:00'
 model: gpt-4-0125-preview
-summary: Checking if a directory exists is a fundamental operation in many programming
-  tasks, allowing for conditional actions based on the presence or absence of directory
-  structures.
+summary: Haskell, through its base library, offers straightforward ways to check for
+  directory existence, mainly using the `System.Directory` module.
 title: Checking if a directory exists
 weight: 20
 ---

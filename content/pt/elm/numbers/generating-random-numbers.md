@@ -3,15 +3,13 @@ changelog:
 - 2024-02-27, dogweather, edited and tested
 - 2024-02-27, gpt-4-0125-preview, translated from English
 date: 2024-02-27 22:50:10.574192-07:00
-description: "Gerar n\xFAmeros aleat\xF3rios em Elm envolve o uso do m\xF3dulo `Random`\
-  \ para produzir n\xFAmeros pseudoaleat\xF3rios, que s\xE3o \xFAteis para uma variedade\
-  \ de tarefas, como\u2026"
+description: "Como fazer: A natureza puramente funcional de Elm significa que voc\xEA\
+  \ n\xE3o pode gerar n\xFAmeros aleat\xF3rios diretamente como faria em linguagens\
+  \ imperativas.\u2026"
 lastmod: '2024-03-13T22:44:46.495942-06:00'
 model: gpt-4-0125-preview
-summary: "Gerar n\xFAmeros aleat\xF3rios em Elm envolve o uso do m\xF3dulo `Random`\
-  \ para produzir n\xFAmeros pseudoaleat\xF3rios, que s\xE3o \xFAteis para uma variedade\
-  \ de tarefas, como jogos, simula\xE7\xF5es e at\xE9 como parte de algoritmos que\
-  \ exigem processos estoc\xE1sticos."
+summary: "A natureza puramente funcional de Elm significa que voc\xEA n\xE3o pode\
+  \ gerar n\xFAmeros aleat\xF3rios diretamente como faria em linguagens imperativas."
 title: "Gerando n\xFAmeros aleat\xF3rios"
 weight: 12
 ---

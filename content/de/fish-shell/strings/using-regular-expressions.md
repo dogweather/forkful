@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:40.686838-07:00
-description: "Regul\xE4re Ausdr\xFCcke (regex) in der Fish Shell erm\xF6glichen es\
-  \ Ihnen, Zeichenketten basierend auf bestimmten Mustern zu suchen, zu vergleichen\
-  \ und zu\u2026"
+description: "Wie: Obwohl die Fish Shell selbst keinen eingebauten Befehl f\xFCr regex\
+  \ hat, nutzt sie effektiv externe Befehle wie `grep`, `sed` und `awk`, die regex\u2026"
 lastmod: '2024-03-13T22:44:54.297983-06:00'
 model: gpt-4-0125-preview
-summary: "Regul\xE4re Ausdr\xFCcke (regex) in der Fish Shell erm\xF6glichen es Ihnen,\
-  \ Zeichenketten basierend auf bestimmten Mustern zu suchen, zu vergleichen und zu\
-  \ manipulieren."
+summary: "Obwohl die Fish Shell selbst keinen eingebauten Befehl f\xFCr regex hat,\
+  \ nutzt sie effektiv externe Befehle wie `grep`, `sed` und `awk`, die regex unterst\xFC\
+  tzen und Ihnen erlauben, regex-Operationen in Ihre Skripte zu integrieren."
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

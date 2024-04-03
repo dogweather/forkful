@@ -2,13 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:03.073034-07:00
-description: "Pobieranie aktualnej daty w Darciu wi\u0105\u017Ce si\u0119 z zapytaniem\
-  \ systemu o aktualn\u0105 dat\u0119 i czas. Ta funkcjonalno\u015B\u0107 jest powszechnie\
-  \ u\u017Cywana w aplikacjach do\u2026"
+description: "Jak to zrobi\u0107: Podstawowa biblioteka Darta zapewnia prosty dost\u0119\
+  p do aktualnej daty i czasu poprzez klas\u0119 `DateTime`. Oto podstawowy przyk\u0142\
+  ad, jak pobra\u0107\u2026"
 lastmod: '2024-03-13T22:44:35.103012-06:00'
 model: gpt-4-0125-preview
-summary: "Pobieranie aktualnej daty w Darciu wi\u0105\u017Ce si\u0119 z zapytaniem\
-  \ systemu o aktualn\u0105 dat\u0119 i czas."
+summary: "Podstawowa biblioteka Darta zapewnia prosty dost\u0119p do aktualnej daty\
+  \ i czasu poprzez klas\u0119 `DateTime`."
 title: "Pobieranie bie\u017C\u0105cej daty"
 weight: 29
 ---

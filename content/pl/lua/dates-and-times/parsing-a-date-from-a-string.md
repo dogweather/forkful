@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:54.155607-07:00
-description: "Przetwarzanie daty z ci\u0105gu znak\xF3w polega na konwertowaniu tekstowych\
-  \ reprezentacji dat i czasu na format, kt\xF3ry mo\u017Cna \u0142atwo manipulowa\u0107\
-  , przechowywa\u0107 lub\u2026"
+description: "Jak to zrobi\u0107: Lua nie ma wbudowanego wsparcia dla manipulacji\
+  \ dat\u0105 i czasem poza ograniczon\u0105 funkcjonalno\u015Bci\u0105, jak\u0105\
+  \ zapewniaj\u0105 funkcje `os.date` i\u2026"
 lastmod: '2024-03-13T22:44:35.549468-06:00'
 model: gpt-4-0125-preview
-summary: "Przetwarzanie daty z ci\u0105gu znak\xF3w polega na konwertowaniu tekstowych\
-  \ reprezentacji dat i czasu na format, kt\xF3ry mo\u017Cna \u0142atwo manipulowa\u0107\
-  , przechowywa\u0107 lub por\xF3wnywa\u0107 w programie Lua."
+summary: "Lua nie ma wbudowanego wsparcia dla manipulacji dat\u0105 i czasem poza\
+  \ ograniczon\u0105 funkcjonalno\u015Bci\u0105, jak\u0105 zapewniaj\u0105 funkcje\
+  \ `os.date` i `os.time`."
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---

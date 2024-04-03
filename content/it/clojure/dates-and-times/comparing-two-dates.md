@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:32:48.829064-07:00
-description: "Comparare due date significa verificare se sono uguali, quale precede\
-  \ l'altra o quanti giorni ci sono tra di loro. I programmatori fanno questo per\u2026"
+description: 'Come Fare: .'
 lastmod: '2024-03-13T22:44:43.054810-06:00'
 model: gpt-4-1106-preview
-summary: Comparare due date significa verificare se sono uguali, quale precede l'altra
-  o quanti giorni ci sono tra di loro.
+summary: .
 title: Confronto tra due date
 weight: 27
 ---

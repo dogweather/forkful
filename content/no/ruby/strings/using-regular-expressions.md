@@ -2,14 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:18.139022-07:00
-description: "Regul\xE6re uttrykk (regex) i Ruby er m\xF8nstre som brukes til \xE5\
-  \ matche tegnkombinasjoner i strenger, noe som gj\xF8r det mulig for utviklere \xE5\
-  \ s\xF8ke etter, matche\u2026"
+description: 'Hvordan: #.'
 lastmod: '2024-03-13T22:44:41.305851-06:00'
 model: gpt-4-0125-preview
-summary: "Regul\xE6re uttrykk (regex) i Ruby er m\xF8nstre som brukes til \xE5 matche\
-  \ tegnkombinasjoner i strenger, noe som gj\xF8r det mulig for utviklere \xE5 s\xF8\
-  ke etter, matche og manipulere tekst effektivt."
+summary: '#.'
 title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---

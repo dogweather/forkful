@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 00:58:42.649490-07:00
-description: "\"Logging\" er \xE5 f\xF8re en registrering av hendelser, transaksjoner\
-  \ eller aktiviteter som skjer over tid i et system. Programmerere bruker det for\
-  \ \xE5 feils\xF8ke,\u2026"
+description: "Hvordan gj\xF8re det: Arduino kommer ikke med et innebygget logging-bibliotek\
+  \ som noen andre milj\xF8er, men du kan implementere enkel logging til Serial-\u2026"
 lastmod: '2024-03-13T22:44:41.064176-06:00'
 model: gpt-4-1106-preview
-summary: "\"Logging\" er \xE5 f\xF8re en registrering av hendelser, transaksjoner\
-  \ eller aktiviteter som skjer over tid i et system."
+summary: "Arduino kommer ikke med et innebygget logging-bibliotek som noen andre milj\xF8\
+  er, men du kan implementere enkel logging til Serial-konsollen med minimalt bryderi."
 title: "Loggf\xF8ring"
 weight: 17
 ---

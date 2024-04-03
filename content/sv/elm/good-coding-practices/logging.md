@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 01:02:39.024845-07:00
-description: "Loggning \xE4r i grund och botten processen att spela in h\xE4ndelser\
-  \ och datautg\xE5ngar fr\xE5n en mjukvara n\xE4r den k\xF6rs, t\xE4nk p\xE5 det\
-  \ som mjukvarans dagbok.\u2026"
+description: "Hur man g\xF6r: Elms arkitektur st\xF6der inte sidoeffekter som loggning\
+  \ direkt ur l\xE5dan - du hanterar dem genom kommandon, som \xE4r en del av din\
+  \ applikations\u2026"
 lastmod: '2024-03-13T22:44:37.835988-06:00'
 model: gpt-4-1106-preview
-summary: "Loggning \xE4r i grund och botten processen att spela in h\xE4ndelser och\
-  \ datautg\xE5ngar fr\xE5n en mjukvara n\xE4r den k\xF6rs, t\xE4nk p\xE5 det som\
-  \ mjukvarans dagbok."
+summary: "Elms arkitektur st\xF6der inte sidoeffekter som loggning direkt ur l\xE5\
+  dan - du hanterar dem genom kommandon, som \xE4r en del av din applikations arkitektur."
 title: Loggning
 weight: 17
 ---

@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:45:01.362519-07:00
-description: "Redondear n\xFAmeros significa ajustarlos a un grado espec\xEDfico de\
-  \ precisi\xF3n. Los programadores lo hacen para simplificar los n\xFAmeros para\
-  \ su legibilidad,\u2026"
+description: "C\xF3mo: Java ofrece m\xFAltiples formas de redondear n\xFAmeros. Aqu\xED\
+  \ hay una demostraci\xF3n r\xE1pida con `Math.round()`, `BigDecimal` y `DecimalFormat`."
 lastmod: '2024-03-13T22:44:58.932753-06:00'
 model: gpt-4-0125-preview
-summary: "Redondear n\xFAmeros significa ajustarlos a un grado espec\xEDfico de precisi\xF3\
-  n."
+summary: "Java ofrece m\xFAltiples formas de redondear n\xFAmeros."
 title: "Redondeo de n\xFAmeros"
 weight: 13
 ---

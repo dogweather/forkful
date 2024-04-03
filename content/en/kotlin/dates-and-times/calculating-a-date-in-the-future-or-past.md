@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:31:20.478869-07:00
-description: "Calculating a date in the future or past means finding a specific date\
-  \ before or after a known one. Programmers do this for features like reminders,\u2026"
+description: 'How to: Kotlin handles dates and times with the `java.time` library.
+  To add or subtract days, use `plusDays()` or `minusDays()`. Here''s the skinny.'
 lastmod: '2024-03-13T22:45:00.061211-06:00'
 model: gpt-4-1106-preview
-summary: Calculating a date in the future or past means finding a specific date before
-  or after a known one.
+summary: Kotlin handles dates and times with the `java.time` library.
 title: Calculating a date in the future or past
 weight: 26
 ---

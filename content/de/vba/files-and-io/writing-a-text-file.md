@@ -2,15 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:45.987220-07:00
-description: "Das Schreiben einer Textdatei in Visual Basic for Applications (VBA)\
-  \ umfasst das Erstellen, Modifizieren oder Anh\xE4ngen von Textdaten an Dateien,\
-  \ eine\u2026"
+description: "Wie geht das: VBA bietet mehrere Methoden, um in eine Datei zu schreiben,\
+  \ aber einer der einfachsten Wege ist die Verwendung des `FileSystemObject`. Hier\u2026"
 lastmod: '2024-03-13T22:44:53.738818-06:00'
 model: gpt-4-0125-preview
-summary: "Das Schreiben einer Textdatei in Visual Basic for Applications (VBA) umfasst\
-  \ das Erstellen, Modifizieren oder Anh\xE4ngen von Textdaten an Dateien, eine grundlegende\
-  \ Aufgabe f\xFCr die Speicherung von Ausgaben, Logging oder die Interaktion mit\
-  \ anderen Anwendungen."
+summary: VBA bietet mehrere Methoden, um in eine Datei zu schreiben, aber einer der
+  einfachsten Wege ist die Verwendung des `FileSystemObject`.
 title: Eine Textdatei schreiben
 weight: 24
 ---

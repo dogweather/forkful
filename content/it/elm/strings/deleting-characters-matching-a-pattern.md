@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:42:03.375026-07:00
-description: "Eliminare i caratteri che corrispondono a un pattern significa scovare\
-  \ sequenze specifiche di testo e rimuoverle. I programmatori lo fanno per pulire\
-  \ i\u2026"
+description: 'How to: Elm utilizza il modulo `Regex` per lavorare con le espressioni
+  regolari, che permettono di identificare i pattern nei testi. Ecco un esempio.'
 lastmod: '2024-03-13T22:44:43.335309-06:00'
 model: gpt-4-1106-preview
-summary: Eliminare i caratteri che corrispondono a un pattern significa scovare sequenze
-  specifiche di testo e rimuoverle.
+summary: Elm utilizza il modulo `Regex` per lavorare con le espressioni regolari,
+  che permettono di identificare i pattern nei testi.
 title: Eliminazione di caratteri che corrispondono a un pattern
 weight: 5
 ---

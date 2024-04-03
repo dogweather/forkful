@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:25.520436-07:00
-description: "Die Suche und das Ersetzen von Text in der Programmierung erleichtert\
-  \ die Modifikation und Verwaltung von Zeichenketten, was eine grundlegende Aufgabe\
-  \ bei\u2026"
+description: "Wie: In Go bietet das `strings`-Paket verschiedene Funktionen zum Suchen\
+  \ und Ersetzen von Text innerhalb von Zeichenketten. Lassen Sie uns ein paar\u2026"
 lastmod: '2024-03-13T22:44:53.270912-06:00'
 model: gpt-4-0125-preview
-summary: Die Suche und das Ersetzen von Text in der Programmierung erleichtert die
-  Modifikation und Verwaltung von Zeichenketten, was eine grundlegende Aufgabe bei
-  der Datenmanipulation und Softwareentwicklung ist.
+summary: In Go bietet das `strings`-Paket verschiedene Funktionen zum Suchen und Ersetzen
+  von Text innerhalb von Zeichenketten.
 title: Suchen und Ersetzen von Text
 weight: 10
 ---

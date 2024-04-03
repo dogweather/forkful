@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:36:33.977152-07:00
-description: "Converter uma data em uma string permite que voc\xEA a formate para\
-  \ visualiza\xE7\xE3o ou armazenamento. Os programadores frequentemente fazem isso\
-  \ para padronizar\u2026"
+description: "Como fazer: **Convers\xE3o b\xE1sica de data para string:**."
 lastmod: '2024-03-13T22:44:46.208140-06:00'
 model: gpt-4-1106-preview
-summary: "Converter uma data em uma string permite que voc\xEA a formate para visualiza\xE7\
-  \xE3o ou armazenamento."
+summary: "**Convers\xE3o b\xE1sica de data para string:**."
 title: Convertendo uma data em uma string
 weight: 28
 ---

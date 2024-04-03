@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:32:39.029052-07:00
-description: "Por\xF3wnywanie dw\xF3ch dat w C# to sprawdzanie, kt\xF3ra z dw\xF3\
-  ch dat jest wcze\u015Bniejsza, p\xF3\u017Aniejsza lub czy s\u0105 identyczne. Programi\u015B\
-  ci robi\u0105 to, aby obs\u0142ugiwa\u0107\u2026"
+description: "How to: (Jak to zrobi\u0107:) ."
 lastmod: '2024-03-13T22:44:35.420776-06:00'
 model: gpt-4-1106-preview
-summary: "Por\xF3wnywanie dw\xF3ch dat w C# to sprawdzanie, kt\xF3ra z dw\xF3ch dat\
-  \ jest wcze\u015Bniejsza, p\xF3\u017Aniejsza lub czy s\u0105 identyczne."
+summary: .
 title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---

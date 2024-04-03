@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:41:06.147900-07:00
-description: "Tempor\xE4re Dateien sind kurzlebige Speicherbestandteile, die w\xE4\
-  hrend der Laufzeit eines Programms f\xFCr Datenverarbeitung genutzt werden. Programmierer\u2026"
+description: "How to: In Ruby kannst du unkompliziert tempor\xE4re Dateien erstellen\
+  \ und verwenden. Hier ist, wie's geht."
 lastmod: '2024-03-13T22:44:54.419774-06:00'
 model: gpt-4-1106-preview
-summary: "Tempor\xE4re Dateien sind kurzlebige Speicherbestandteile, die w\xE4hrend\
-  \ der Laufzeit eines Programms f\xFCr Datenverarbeitung genutzt werden."
+summary: "In Ruby kannst du unkompliziert tempor\xE4re Dateien erstellen und verwenden."
 title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---

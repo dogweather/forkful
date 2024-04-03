@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:47.699405-07:00
-description: "Att skriva till en textfil i Elixir \xE4r en viktig f\xE4rdighet f\xF6\
-  r utvecklare, vilket m\xF6jligg\xF6r datalagring, loggning eller exportering av\
-  \ m\xE4nniskol\xE4sbar\u2026"
+description: "Hur man g\xF6r: Elixir g\xF6r filhantering okomplicerad med inbyggda\
+  \ moduler. Det prim\xE4ra s\xE4ttet att skriva till en fil \xE4r att anv\xE4nda\
+  \ funktionerna\u2026"
 lastmod: '2024-03-13T22:44:37.585889-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva till en textfil i Elixir \xE4r en viktig f\xE4rdighet f\xF6r\
-  \ utvecklare, vilket m\xF6jligg\xF6r datalagring, loggning eller exportering av\
-  \ m\xE4nniskol\xE4sbar inneh\xE5ll."
+summary: "Elixir g\xF6r filhantering okomplicerad med inbyggda moduler."
 title: Att skriva en textfil
 weight: 24
 ---

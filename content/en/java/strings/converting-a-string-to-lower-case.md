@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:38:38.900362-07:00
-description: "Converting a string to lower case means transforming all the letters\
-  \ in a string to their lower-case form. Programmers do this to standardize data,\u2026"
+description: 'How to: The `String` class in Java has a nifty `toLowerCase()` method
+  that does the hard work for you. Check out this simple usage.'
 lastmod: '2024-03-13T22:44:59.960884-06:00'
 model: gpt-4-1106-preview
-summary: Converting a string to lower case means transforming all the letters in a
-  string to their lower-case form.
+summary: The `String` class in Java has a nifty `toLowerCase()` method that does the
+  hard work for you.
 title: Converting a string to lower case
 weight: 4
 ---

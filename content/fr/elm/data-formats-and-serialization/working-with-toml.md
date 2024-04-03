@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:21:09.614536-07:00
-description: "TOML, abr\xE9viation de Tom's Obvious, Minimal Language, est un langage\
-  \ de s\xE9rialisation de donn\xE9es. Les programmeurs Elm l'utilisent pour g\xE9\
-  rer les donn\xE9es\u2026"
+description: "Comment faire : Elm n'a pas de parser TOML int\xE9gr\xE9, mais vous\
+  \ pouvez interagir avec JavaScript ou utiliser un package de la communaut\xE9. Voici\
+  \ comment vous\u2026"
 lastmod: '2024-03-13T22:44:57.715440-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, abr\xE9viation de Tom's Obvious, Minimal Language, est un langage\
-  \ de s\xE9rialisation de donn\xE9es."
+summary: "Elm n'a pas de parser TOML int\xE9gr\xE9, mais vous pouvez interagir avec\
+  \ JavaScript ou utiliser un package de la communaut\xE9."
 title: Travailler avec TOML
 weight: 39
 ---

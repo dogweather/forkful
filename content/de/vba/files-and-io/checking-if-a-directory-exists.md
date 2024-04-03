@@ -2,15 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:48:56.708620-07:00
-description: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Visual Basic f\xFCr Anwendungen\
-  \ (VBA) existiert, bedeutet, die Anwesenheit eines Ordners innerhalb des Dateisystems\
-  \ zu\u2026"
+description: "Wie: In VBA benutzt man zur \xDCberpr\xFCfung der Existenz eines Verzeichnisses\
+  \ typischerweise die `Dir`-Funktion in Kombination mit dem Attribut `vbDirectory`.\u2026"
 lastmod: '2024-03-13T22:44:53.734340-06:00'
 model: gpt-4-0125-preview
-summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Visual Basic f\xFCr Anwendungen\
-  \ (VBA) existiert, bedeutet, die Anwesenheit eines Ordners innerhalb des Dateisystems\
-  \ zu verifizieren, bevor Operationen wie das Speichern von Dateien oder das Erstellen\
-  \ neuer Verzeichnisse durchgef\xFChrt werden."
+summary: "In VBA benutzt man zur \xDCberpr\xFCfung der Existenz eines Verzeichnisses\
+  \ typischerweise die `Dir`-Funktion in Kombination mit dem Attribut `vbDirectory`."
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---

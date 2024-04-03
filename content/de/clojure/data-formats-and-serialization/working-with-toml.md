@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 04:20:20.001987-07:00
-description: "Mit TOML zu arbeiten bedeutet, dass man Daten in einem Minimalformat\
-  \ \"Tom's Obvious, Minimal Language\" handhabt, das f\xFCr Konfigurationsdateien\
-  \ wegen\u2026"
+description: "Wie geht das: Um mit TOML in Clojure zu arbeiten, ben\xF6tigen Sie eine\
+  \ Bibliothek wie `clj-toml`. F\xFCgen Sie diese zuerst Ihrer `deps.edn` hinzu."
 lastmod: '2024-03-13T22:44:53.443641-06:00'
 model: gpt-4-0125-preview
-summary: "Mit TOML zu arbeiten bedeutet, dass man Daten in einem Minimalformat \"\
-  Tom's Obvious, Minimal Language\" handhabt, das f\xFCr Konfigurationsdateien wegen\
-  \ seiner leichten Lesbarkeit beliebt ist."
+summary: "Um mit TOML in Clojure zu arbeiten, ben\xF6tigen Sie eine Bibliothek wie\
+  \ `clj-toml`."
 title: Arbeiten mit TOML
 weight: 39
 ---

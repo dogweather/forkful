@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 18:03:10.369678-07:00
-description: "Iniziamo un nuovo progetto per trasformare le idee in codice funzionante.\
-  \ I programmatori lo fanno per risolvere problemi, esplorare nuove tecnologie o\u2026"
+description: 'Come fare: Creare un nuovo progetto in C++ con CMake, uno strumento
+  di build standard. Immaginiamo di voler creare un''app "Hello, World!".'
 lastmod: '2024-03-13T22:44:43.727053-06:00'
 model: gpt-4-1106-preview
-summary: Iniziamo un nuovo progetto per trasformare le idee in codice funzionante.
+summary: Creare un nuovo progetto in C++ con CMake, uno strumento di build standard.
 title: Avvio di un nuovo progetto
 weight: 1
 ---

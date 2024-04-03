@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 18:04:08.160687-07:00
-description: "\xC5 starte et nytt prosjekt inneb\xE6rer \xE5 opprette en grunnleggende\
-  \ ramme for kode du skal skrive. Programmerere gj\xF8r dette for \xE5 organisere\
-  \ og strukturere\u2026"
+description: "How to: For \xE5 sette i gang et nytt Kotlin-prosjekt, kan du bruke\
+  \ IntelliJ IDEA eller et annet verkt\xF8y som st\xF8tter Kotlin. Her er de grunnleggende\
+  \ stegene."
 lastmod: '2024-03-13T22:44:40.750940-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 starte et nytt prosjekt inneb\xE6rer \xE5 opprette en grunnleggende\
-  \ ramme for kode du skal skrive."
+summary: "For \xE5 sette i gang et nytt Kotlin-prosjekt, kan du bruke IntelliJ IDEA\
+  \ eller et annet verkt\xF8y som st\xF8tter Kotlin."
 title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---

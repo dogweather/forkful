@@ -2,15 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:34.722114-07:00
-description: "L\xE0m vi\u1EC7c v\u1EDBi XML bao g\u1ED3m vi\u1EC7c ph\xE2n t\xEDch\
-  \ c\xFA ph\xE1p, bi\u1EBFn \u0111\u1ED5i, v\xE0 t\u1EA1o ra c\xE1c t\xE0i li\u1EC7\
-  u XML trong Elm. Vi\u1EC7c n\xE0y \u0111\u01B0\u1EE3c th\u1EF1c hi\u1EC7n \u0111\
-  \u1EC3 t\u01B0\u01A1ng t\xE1c v\u1EDBi nhi\u1EC1u d\u1ECBch v\u1EE5\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Elm, b\u1EA1n x\u1EED l\xFD XML s\u1EED\
+  \ d\u1EE5ng g\xF3i `elm/xml`. D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1i nh\xECn nhanh\
+  \ v\u1EC1 c\xE1ch ph\xE2n t\xEDch c\xFA ph\xE1p m\u1ED9t \u0111o\u1EA1n XML."
 lastmod: '2024-03-13T22:44:36.576899-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m vi\u1EC7c v\u1EDBi XML bao g\u1ED3m vi\u1EC7c ph\xE2n t\xEDch c\xFA\
-  \ ph\xE1p, bi\u1EBFn \u0111\u1ED5i, v\xE0 t\u1EA1o ra c\xE1c t\xE0i li\u1EC7u XML\
-  \ trong Elm."
+summary: "Trong Elm, b\u1EA1n x\u1EED l\xFD XML s\u1EED d\u1EE5ng g\xF3i `elm/xml`."
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---

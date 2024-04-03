@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:06.434955-07:00
-description: "Calculer une date dans le futur ou le pass\xE9 consiste \xE0 d\xE9terminer\
-  \ une date sp\xE9cifique en ajoutant ou en soustrayant un certain nombre de jours,\
-  \ de mois ou\u2026"
+description: "Comment faire : Bien que la biblioth\xE8que standard du C ne fournisse\
+  \ pas de fonctions directes pour l'arithm\xE9tique des dates, vous pouvez manipuler\
+  \ les\u2026"
 lastmod: '2024-03-13T22:44:58.387022-06:00'
 model: gpt-4-0125-preview
-summary: "Calculer une date dans le futur ou le pass\xE9 consiste \xE0 d\xE9terminer\
-  \ une date sp\xE9cifique en ajoutant ou en soustrayant un certain nombre de jours,\
-  \ de mois ou d'ann\xE9es \xE0 une date donn\xE9e."
+summary: "Bien que la biblioth\xE8que standard du C ne fournisse pas de fonctions\
+  \ directes pour l'arithm\xE9tique des dates, vous pouvez manipuler les dates en\
+  \ utilisant la biblioth\xE8que `time.h`, en travaillant sp\xE9cifiquement avec le\
+  \ type de donn\xE9es `time_t` et `struct tm`."
 title: "Calculer une date dans le futur ou le pass\xE9"
 weight: 26
 ---

@@ -2,16 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:34.775866-07:00
-description: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i trong\
-  \ Visual Basic for Applications (VBA) l\xE0 qu\xE1 tr\xECnh \u0111\u01B0\u1EE3c\
-  \ s\u1EED d\u1EE5ng \u0111\u1EC3 thay \u0111\u1ED5i ki\u1EC3u d\u1EEF li\u1EC7u\
-  \ c\u1EE7a m\u1ED9t ng\xE0y sang \u0111\u1ECBnh d\u1EA1ng\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong VBA, h\xE0m `Format` l\xE0 gi\u1EA3\
+  i ph\xE1p \u01B0u ti\xEAn c\u1EE7a b\u1EA1n \u0111\u1EC3 chuy\u1EC3n \u0111\u1ED5\
+  i ng\xE0y th\xE0nh chu\u1ED7i. N\xF3 cho ph\xE9p b\u1EA1n ch\u1EC9 \u0111\u1ECB\
+  nh \u0111\u1ECBnh d\u1EA1ng ng\xE0y ch\xEDnh x\xE1c\u2026"
 lastmod: '2024-03-13T22:44:36.448062-06:00'
 model: gpt-4-0125-preview
-summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i trong Visual\
-  \ Basic for Applications (VBA) l\xE0 qu\xE1 tr\xECnh \u0111\u01B0\u1EE3c s\u1EED\
-  \ d\u1EE5ng \u0111\u1EC3 thay \u0111\u1ED5i ki\u1EC3u d\u1EEF li\u1EC7u c\u1EE7\
-  a m\u1ED9t ng\xE0y sang \u0111\u1ECBnh d\u1EA1ng chu\u1ED7i."
+summary: "Trong VBA, h\xE0m `Format` l\xE0 gi\u1EA3i ph\xE1p \u01B0u ti\xEAn c\u1EE7\
+  a b\u1EA1n \u0111\u1EC3 chuy\u1EC3n \u0111\u1ED5i ng\xE0y th\xE0nh chu\u1ED7i."
 title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 weight: 28
 ---

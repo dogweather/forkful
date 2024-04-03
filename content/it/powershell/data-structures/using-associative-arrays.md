@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:32.706927-07:00
-description: "Gli array associativi, noti anche come tabelle hash o dizionari in PowerShell,\
-  \ consentono di memorizzare i dati in coppie chiave-valore, rendendo il\u2026"
+description: "Come fare: Creare e utilizzare array associativi in PowerShell \xE8\
+  \ abbastanza semplice. Ecco come si fa la magia: **Creare un array associativo:**."
 lastmod: '2024-03-13T22:44:43.633975-06:00'
 model: gpt-4-0125-preview
-summary: Gli array associativi, noti anche come tabelle hash o dizionari in PowerShell,
-  consentono di memorizzare i dati in coppie chiave-valore, rendendo il recupero dei
-  dati semplice ed efficiente.
+summary: "Creare e utilizzare array associativi in PowerShell \xE8 abbastanza semplice."
 title: Utilizzo di array associativi
 weight: 15
 ---

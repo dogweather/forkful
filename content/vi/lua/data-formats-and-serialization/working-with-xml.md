@@ -2,15 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:18.913976-07:00
-description: "L\xE0m vi\u1EC7c v\u1EDBi XML bao g\u1ED3m vi\u1EC7c ph\xE2n t\xEDch\
-  \ c\xFA ph\xE1p v\xE0 thao t\xE1c v\u1EDBi t\xE0i li\u1EC7u XML s\u1EED d\u1EE5\
-  ng m\xE3 l\u1EADp tr\xECnh. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m vi\u1EC7c n\xE0\
-  y \u0111\u1EC3 \u0111\u1ECDc, vi\u1EBFt v\xE0 s\u1EEDa \u0111\u1ED5i\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Lua kh\xF4ng bao g\u1ED3m ph\xE2n t\xEDch c\xFA\
+  \ ph\xE1p XML g\u1ED1c, nh\u01B0ng c\xF3 c\xE1c th\u01B0 vi\u1EC7n nh\u01B0 LuaXML\
+  \ v\xE0 xml2lua l\xE0m \u0111\u01B0\u1EE3c c\xF4ng vi\u1EC7c \u0111\xF3. D\u01B0\
+  \u1EDBi \u0111\xE2y l\xE0 c\xE1i nh\xECn nhanh v\u1EC1\u2026"
 lastmod: '2024-03-13T22:44:36.853484-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m vi\u1EC7c v\u1EDBi XML bao g\u1ED3m vi\u1EC7c ph\xE2n t\xEDch c\xFA\
-  \ ph\xE1p v\xE0 thao t\xE1c v\u1EDBi t\xE0i li\u1EC7u XML s\u1EED d\u1EE5ng m\xE3\
-  \ l\u1EADp tr\xECnh."
+summary: "Lua kh\xF4ng bao g\u1ED3m ph\xE2n t\xEDch c\xFA ph\xE1p XML g\u1ED1c, nh\u01B0\
+  ng c\xF3 c\xE1c th\u01B0 vi\u1EC7n nh\u01B0 LuaXML v\xE0 xml2lua l\xE0m \u0111\u01B0\
+  \u1EE3c c\xF4ng vi\u1EC7c \u0111\xF3."
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---

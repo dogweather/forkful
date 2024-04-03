@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:47.990254-07:00
-description: "Att arbeta med CSV (Comma-Separated Values) filer inneb\xE4r att tolka\
-  \ och generera textdata organiserad i rader och kolumner, d\xE4r komman anv\xE4\
-  nds f\xF6r att\u2026"
+description: "Hur man g\xF6r: I Lua kan arbete med CSV-filer n\xE4rmas genom grundl\xE4\
+  ggande fil-IO-operationer som spr\xE5ket tillhandah\xE5ller, utan behov av externa\
+  \ bibliotek f\xF6r\u2026"
 lastmod: '2024-03-13T22:44:38.061208-06:00'
 model: gpt-4-0125-preview
-summary: "Att arbeta med CSV (Comma-Separated Values) filer inneb\xE4r att tolka och\
-  \ generera textdata organiserad i rader och kolumner, d\xE4r komman anv\xE4nds f\xF6\
-  r att separera enskilda v\xE4rden."
+summary: "I Lua kan arbete med CSV-filer n\xE4rmas genom grundl\xE4ggande fil-IO-operationer\
+  \ som spr\xE5ket tillhandah\xE5ller, utan behov av externa bibliotek f\xF6r enkla\
+  \ uppgifter."
 title: Arbeta med CSV
 weight: 37
 ---

@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:35:49.050839-07:00
-description: "\u0141\u0105czenie ci\u0105g\xF3w znak\xF3w (string\xF3w) to proces\
-  \ tworzenia jednego ci\u0105gu ze dwojga lub wi\u0119cej. Programi\u015Bci u\u017C\
-  ywaj\u0105 tej techniki do budowania komunikat\xF3w,\u2026"
+description: "How to: (Jak to zrobi\u0107?) \u0141\u0105czenie string\xF3w w Pythonie\
+  \ mo\u017Cemy zrealizowa\u0107 na r\xF3\u017Cne sposoby. Tutaj kilka przyk\u0142\
+  ad\xF3w."
 lastmod: '2024-03-13T22:44:34.940774-06:00'
 model: gpt-4-1106-preview
-summary: "\u0141\u0105czenie ci\u0105g\xF3w znak\xF3w (string\xF3w) to proces tworzenia\
-  \ jednego ci\u0105gu ze dwojga lub wi\u0119cej."
+summary: "\u0141\u0105czenie string\xF3w w Pythonie mo\u017Cemy zrealizowa\u0107 na\
+  \ r\xF3\u017Cne sposoby."
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---

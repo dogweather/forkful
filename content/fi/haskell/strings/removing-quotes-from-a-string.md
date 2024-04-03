@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 03:40:02.380159-07:00
-description: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa yksitt\xE4isten\
-  \ (' ') tai kaksinkertaisten (\" \") lainausmerkkien karsimista osana merkkijonotietoa.\u2026"
+description: "Kuinka: Haskellissa voimme luoda funktion, joka poistaa kaikki lainausmerkit\
+  \ annetusta merkkijonosta. Se on kuin sanoisimme lainausmerkeille, ett\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.603897-06:00'
 model: gpt-4-0125-preview
-summary: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa yksitt\xE4isten ('\
-  \ ') tai kaksinkertaisten (\" \") lainausmerkkien karsimista osana merkkijonotietoa."
+summary: Haskellissa voimme luoda funktion, joka poistaa kaikki lainausmerkit annetusta
+  merkkijonosta.
 title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---

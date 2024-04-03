@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 00:51:15.300791-07:00
-description: "Obs\u0142uga b\u0142\u0119d\xF3w oznacza pisanie kodu, kt\xF3ry mo\u017C\
-  e poradzi\u0107 sobie z sytuacjami, kiedy co\u015B p\xF3jdzie nie tak. Programi\u015B\
-  ci robi\u0105 to, aby zapobiec awariom i aby\u2026"
+description: "Jak to zrobi\u0107: W Elixirze cz\u0119sto u\u017Cywamy dopasowania\
+  \ wzorc\xF3w i instrukcji `case` do obs\u0142ugi r\xF3\u017Cnych wynik\xF3w, w tym\
+  \ b\u0142\u0119d\xF3w."
 lastmod: '2024-03-13T22:44:35.050835-06:00'
 model: gpt-4-1106-preview
-summary: "Obs\u0142uga b\u0142\u0119d\xF3w oznacza pisanie kodu, kt\xF3ry mo\u017C\
-  e poradzi\u0107 sobie z sytuacjami, kiedy co\u015B p\xF3jdzie nie tak."
+summary: "W Elixirze cz\u0119sto u\u017Cywamy dopasowania wzorc\xF3w i instrukcji\
+  \ `case` do obs\u0142ugi r\xF3\u017Cnych wynik\xF3w, w tym b\u0142\u0119d\xF3w."
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---

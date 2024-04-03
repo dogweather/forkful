@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:12:00.184335-07:00
-description: "En REPL (Read-Eval-Print-Loop) \xE4r en enkel, interaktiv programmeringsmilj\xF6\
-  . Programmerare anv\xE4nder den f\xF6r experiment med programmering i realtid, snabba\u2026"
+description: "Hur man g\xF6r: C++ kommer inte med en inbyggd REPL, men verktyg som\
+  \ Cling erbjuder den kapaciteten. S\xE5 h\xE4r anv\xE4nder du Cling f\xF6r att ber\xE4\
+  kna summan av tv\xE5\u2026"
 lastmod: '2024-03-13T22:44:38.210690-06:00'
 model: gpt-4-0125-preview
-summary: "En REPL (Read-Eval-Print-Loop) \xE4r en enkel, interaktiv programmeringsmilj\xF6\
-  ."
+summary: C++ kommer inte med en inbyggd REPL, men verktyg som Cling erbjuder den kapaciteten.
 title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---

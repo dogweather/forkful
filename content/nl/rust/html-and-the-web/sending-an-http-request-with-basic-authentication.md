@@ -2,13 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:26.012978-07:00
-description: "Het versturen van een HTTP-verzoek met basisauthenticatie betekent dat\
-  \ er een gebruikersnaam en wachtwoord in de aanvraagheader worden gestopt om te\u2026"
+description: 'Hoe: Voeg eerst de benodigde crate toe aan je `Cargo.toml`.'
 lastmod: '2024-03-13T22:44:50.593839-06:00'
 model: gpt-4-0125-preview
-summary: Het versturen van een HTTP-verzoek met basisauthenticatie betekent dat er
-  een gebruikersnaam en wachtwoord in de aanvraagheader worden gestopt om te bewijzen
-  dat je toegang moet krijgen.
+summary: Voeg eerst de benodigde crate toe aan je `Cargo.toml`.
 title: Een HTTP-verzoek verzenden met basisauthenticatie
 weight: 45
 ---

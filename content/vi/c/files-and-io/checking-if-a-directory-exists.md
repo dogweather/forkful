@@ -2,17 +2,17 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:54.196459-07:00
-description: "Vi\u1EC7c ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3\
-  n t\u1EA1i trong C hay kh\xF4ng bao g\u1ED3m vi\u1EC7c truy v\u1EA5n v\xE0o h\u1EC7\
-  \ th\u1ED1ng t\u1EADp tin \u0111\u1EC3 x\xE1c minh li\u1EC7u m\u1ED9t \u0111\u01B0\
-  \u1EDDng d\u1EABn c\u1EE5 th\u1EC3 c\xF3 d\u1EABn \u0111\u1EBFn m\u1ED9t\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong C, s\u1EF1 t\u1ED3n t\u1EA1i c\u1EE7a\
+  \ m\u1ED9t th\u01B0 m\u1EE5c c\xF3 th\u1EC3 \u0111\u01B0\u1EE3c ki\u1EC3m tra s\u1EED\
+  \ d\u1EE5ng h\xE0m `stat`, n\xF3 l\u1EA5y th\xF4ng tin v\u1EC1 t\u1EADp tin ho\u1EB7\
+  c th\u01B0 m\u1EE5c \u1EDF m\u1ED9t \u0111\u01B0\u1EDDng d\u1EABn c\u1EE5 th\u1EC3\
+  .\u2026"
 lastmod: '2024-03-13T22:44:37.287541-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1\
-  i trong C hay kh\xF4ng bao g\u1ED3m vi\u1EC7c truy v\u1EA5n v\xE0o h\u1EC7 th\u1ED1\
-  ng t\u1EADp tin \u0111\u1EC3 x\xE1c minh li\u1EC7u m\u1ED9t \u0111\u01B0\u1EDDng\
-  \ d\u1EABn c\u1EE5 th\u1EC3 c\xF3 d\u1EABn \u0111\u1EBFn m\u1ED9t th\u01B0 m\u1EE5\
-  c hay kh\xF4ng."
+summary: "Trong C, s\u1EF1 t\u1ED3n t\u1EA1i c\u1EE7a m\u1ED9t th\u01B0 m\u1EE5c c\xF3\
+  \ th\u1EC3 \u0111\u01B0\u1EE3c ki\u1EC3m tra s\u1EED d\u1EE5ng h\xE0m `stat`, n\xF3\
+  \ l\u1EA5y th\xF4ng tin v\u1EC1 t\u1EADp tin ho\u1EB7c th\u01B0 m\u1EE5c \u1EDF\
+  \ m\u1ED9t \u0111\u01B0\u1EDDng d\u1EABn c\u1EE5 th\u1EC3."
 title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
 weight: 20
 ---

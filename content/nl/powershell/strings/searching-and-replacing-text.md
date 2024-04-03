@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:14.191039-07:00
-description: "Zoeken en vervangen van tekst in bestanden: het is het verwisselen van\
-  \ woorden of zinsdelen door anderen. Programmeurs gebruiken het om code bij te\u2026"
+description: 'Hoe: PowerShell maakt zoeken en vervangen vrij eenvoudig. Bekijk `-replace`
+  voor strings en `Get-Content` met `Set-Content` voor bestanden. #.'
 lastmod: '2024-03-13T22:44:51.011449-06:00'
 model: gpt-4-0125-preview
-summary: 'Zoeken en vervangen van tekst in bestanden: het is het verwisselen van woorden
-  of zinsdelen door anderen.'
+summary: PowerShell maakt zoeken en vervangen vrij eenvoudig.
 title: Tekst zoeken en vervangen
 weight: 10
 ---

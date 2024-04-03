@@ -2,16 +2,17 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:09:14.371973-07:00
-description: "Vi\u1EBFt l\u1ED7i chu\u1EA9n (stderr) trong ng\xF4n ng\u1EEF l\u1EAD\
-  p tr\xECnh l\xE0 v\u1EC1 h\u01B0\u1EDBng c\xE1c th\xF4ng b\xE1o l\u1ED7i v\xE0 ch\u1EA9\
-  n \u0111o\xE1n sang m\u1ED9t lu\u1ED3ng ri\xEAng, t\xE1ch bi\u1EC7t kh\u1ECFi \u0111\
-  \u1EA7u ra chu\u1EA9n (stdout).\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Google Apps Script, v\u1EDBi t\u01B0 c\xE1ch\
+  \ l\xE0 ng\xF4n ng\u1EEF k\u1ECBch b\u1EA3n cho ph\xE1t tri\u1EC3n \u1EE9ng d\u1EE5\
+  ng nh\u1EB9 tr\xEAn n\u1EC1n t\u1EA3ng Google Apps, kh\xF4ng cung c\u1EA5p m\u1ED9\
+  t h\xE0m t\xEDch h\u1EE3p\u2026"
 lastmod: '2024-03-13T22:44:36.062818-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EBFt l\u1ED7i chu\u1EA9n (stderr) trong ng\xF4n ng\u1EEF l\u1EADp tr\xEC\
-  nh l\xE0 v\u1EC1 h\u01B0\u1EDBng c\xE1c th\xF4ng b\xE1o l\u1ED7i v\xE0 ch\u1EA9\
-  n \u0111o\xE1n sang m\u1ED9t lu\u1ED3ng ri\xEAng, t\xE1ch bi\u1EC7t kh\u1ECFi \u0111\
-  \u1EA7u ra chu\u1EA9n (stdout)."
+summary: "Google Apps Script, v\u1EDBi t\u01B0 c\xE1ch l\xE0 ng\xF4n ng\u1EEF k\u1ECB\
+  ch b\u1EA3n cho ph\xE1t tri\u1EC3n \u1EE9ng d\u1EE5ng nh\u1EB9 tr\xEAn n\u1EC1n\
+  \ t\u1EA3ng Google Apps, kh\xF4ng cung c\u1EA5p m\u1ED9t h\xE0m t\xEDch h\u1EE3\
+  p tr\u1EF1c ti\u1EBFp nh\u01B0 `console.error()` \u0111\u1EC3 vi\u1EBFt v\xE0o stderr,\
+  \ nh\u01B0 b\u1EA1n c\xF3 th\u1EC3 t\xECm th\u1EA5y trong Node.js hay Python."
 title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---

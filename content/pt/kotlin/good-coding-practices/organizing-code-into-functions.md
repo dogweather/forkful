@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 01:11:28.897653-07:00
-description: "Organizar o c\xF3digo em fun\xE7\xF5es significa dividir seu programa\
-  \ em partes reutiliz\xE1veis, cada uma lidando com uma tarefa espec\xEDfica. Fazemos\
-  \ isso para tornar\u2026"
+description: "Como fazer: Aqui est\xE1 um exemplo simples. Em vez de escrever um script\
+  \ longo para cumprimentar os usu\xE1rios, dividimos a tarefa em fun\xE7\xF5es."
 lastmod: '2024-03-13T22:44:46.547512-06:00'
 model: gpt-4-1106-preview
-summary: "Organizar o c\xF3digo em fun\xE7\xF5es significa dividir seu programa em\
-  \ partes reutiliz\xE1veis, cada uma lidando com uma tarefa espec\xEDfica."
+summary: "Aqui est\xE1 um exemplo simples."
 title: "Organizando o c\xF3digo em fun\xE7\xF5es"
 weight: 18
 ---

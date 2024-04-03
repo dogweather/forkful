@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:55:55.048803-07:00
-description: "Reading command line arguments in Haskell lets you snatch user inputs\
-  \ when they run your program. Why? To customize program behavior on the fly, without\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:45:00.142391-06:00'
 model: gpt-4-1106-preview
-summary: Reading command line arguments in Haskell lets you snatch user inputs when
-  they run your program.
+summary: .
 title: Reading command line arguments
 weight: 23
 ---

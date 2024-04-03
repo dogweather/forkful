@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:22.512990-07:00
-description: "Lire un fichier texte en Visual Basic pour Applications (VBA) implique\
-  \ d'acc\xE9der programmatiquement et d'extraire le contenu d'un fichier texte depuis\
-  \ une\u2026"
+description: "Comment faire : La mani\xE8re la plus simple de lire un fichier texte\
+  \ en VBA est d'utiliser l'instruction `Open` en combinaison avec les fonctions `Input`\
+  \ ou\u2026"
 lastmod: '2024-03-13T22:44:57.600921-06:00'
 model: gpt-4-0125-preview
-summary: "Lire un fichier texte en Visual Basic pour Applications (VBA) implique d'acc\xE9\
-  der programmatiquement et d'extraire le contenu d'un fichier texte depuis une application\
-  \ Office."
+summary: "La mani\xE8re la plus simple de lire un fichier texte en VBA est d'utiliser\
+  \ l'instruction `Open` en combinaison avec les fonctions `Input` ou `Line Input`."
 title: Lecture d'un fichier texte
 weight: 22
 ---

@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:53.962698-07:00
-description: "Envoyer une requ\xEAte HTTP en Visual Basic pour Applications (VBA)\
-  \ implique un acc\xE8s programmatique aux ressources Web ou aux services Web en\
-  \ effectuant des\u2026"
+description: "Comment faire : La cl\xE9 pour envoyer une requ\xEAte HTTP en VBA est\
+  \ d'utiliser la biblioth\xE8que `Microsoft XML, v6.0` (ou des versions ant\xE9rieures,\
+  \ selon votre\u2026"
 lastmod: '2024-03-13T22:44:57.554419-06:00'
 model: gpt-4-0125-preview
-summary: "Envoyer une requ\xEAte HTTP en Visual Basic pour Applications (VBA) implique\
-  \ un acc\xE8s programmatique aux ressources Web ou aux services Web en effectuant\
-  \ des demandes via HTTP."
+summary: "La cl\xE9 pour envoyer une requ\xEAte HTTP en VBA est d'utiliser la biblioth\xE8\
+  que `Microsoft XML, v6.0` (ou des versions ant\xE9rieures, selon votre syst\xE8\
+  me)."
 title: "Envoi d'une requ\xEAte HTTP"
 weight: 44
 ---

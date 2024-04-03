@@ -1,12 +1,13 @@
 ---
 date: 2024-03-08 21:33:35.026149-07:00
-description: "Complex numbers, consisting of a real and an imaginary part (usually\
-  \ denoted as a + bi), extend the concept of the dimensionless numbers to a two-\u2026"
+description: "How to: Dart itself does not include a built-in library for complex\
+  \ numbers, necessitating either the implementation of a custom complex number class\
+  \ or\u2026"
 lastmod: '2024-03-13T22:44:59.815325-06:00'
 model: gpt-4-0125-preview
-summary: Complex numbers, consisting of a real and an imaginary part (usually denoted
-  as a + bi), extend the concept of the dimensionless numbers to a two-dimensional
-  space.
+summary: Dart itself does not include a built-in library for complex numbers, necessitating
+  either the implementation of a custom complex number class or the use of a third-party
+  library.
 title: Working with complex numbers
 weight: 14
 ---

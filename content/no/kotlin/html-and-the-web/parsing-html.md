@@ -2,13 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:26.740663-07:00
-description: "\xC5 parse HTML betyr \xE5 dissekere en nettsides oppmerking til noe\
-  \ et program kan forst\xE5 og manipulere. Programutviklere parser HTML for \xE5\
-  \ ekstrahere data,\u2026"
+description: "Hvordan: Kotlin gj\xF8r det enkelt \xE5 parse HTML med biblioteker som\
+  \ Jsoup. Slik gj\xF8r du det."
 lastmod: '2024-03-13T22:44:40.748093-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 parse HTML betyr \xE5 dissekere en nettsides oppmerking til noe et\
-  \ program kan forst\xE5 og manipulere."
+summary: "Kotlin gj\xF8r det enkelt \xE5 parse HTML med biblioteker som Jsoup."
 title: Analysering av HTML
 weight: 43
 ---

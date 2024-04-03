@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:49.682790-07:00
-description: "Afronden van getallen betekent het aanpassen ervan naar de dichtstbijzijnde\
-  \ gespecificeerde plaatswaarde - denk aan het terugbrengen tot een eenvoudigere\u2026"
+description: 'Hoe te: Hier is je retourticket voor het afronden van getallen in C#.'
 lastmod: '2024-03-13T22:44:50.804957-06:00'
 model: gpt-4-0125-preview
-summary: Afronden van getallen betekent het aanpassen ervan naar de dichtstbijzijnde
-  gespecificeerde plaatswaarde - denk aan het terugbrengen tot een eenvoudigere vorm.
+summary: Hier is je retourticket voor het afronden van getallen in C#.
 title: Afronden van getallen
 weight: 13
 ---

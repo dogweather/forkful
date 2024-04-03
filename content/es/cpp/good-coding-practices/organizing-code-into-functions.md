@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:09:15.746846-07:00
-description: "Dividir el c\xF3digo en funciones significa trocear tu c\xF3digo en\
-  \ fragmentos m\xE1s peque\xF1os y reutilizables. Lo hacemos para evitar la repetici\xF3\
-  n, hacer nuestro\u2026"
+description: "C\xF3mo hacerlo: Tomemos una tarea com\xFAn: calcular el \xE1rea de\
+  \ un c\xEDrculo. En lugar de escribir la misma f\xF3rmula cada vez, la encapsulamos\
+  \ en una funci\xF3n."
 lastmod: '2024-03-13T22:44:59.380763-06:00'
 model: gpt-4-1106-preview
-summary: "Dividir el c\xF3digo en funciones significa trocear tu c\xF3digo en fragmentos\
-  \ m\xE1s peque\xF1os y reutilizables."
+summary: "Tomemos una tarea com\xFAn."
 title: "Organizando c\xF3digo en funciones"
 weight: 18
 ---

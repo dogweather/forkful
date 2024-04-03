@@ -2,16 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:14:03.898232-07:00
-description: "Vi\u1EC7c ghi v\xE0o l\u1ED7i chu\u1EA9n (`stderr`) l\xE0 vi\u1EC7c\
-  \ xu\u1EA5t b\u1EA3n v\u0103n b\u1EA3n kh\xF4ng ph\u1EA3i l\xE0 m\u1ED9t ph\u1EA7\
-  n c\u1EE7a d\u1EEF li\u1EC7u ch\xEDnh c\u1EE7a ch\u01B0\u01A1ng tr\xECnh nh\u01B0\
-  ng ch\u1EC9 ra l\u1ED7i ho\u1EB7c ch\u1EA9n \u0111o\xE1n. C\xE1c\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: \u0110\u1EC3 ghi v\xE0o `stderr` trong\
+  \ Elixir, s\u1EED d\u1EE5ng `IO.warn/1` ho\u1EB7c `IO.puts/2`. D\u01B0\u1EDBi \u0111\
+  \xE2y l\xE0 c\xE1ch."
 lastmod: '2024-03-13T22:44:36.229679-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c ghi v\xE0o l\u1ED7i chu\u1EA9n (`stderr`) l\xE0 vi\u1EC7c xu\u1EA5\
-  t b\u1EA3n v\u0103n b\u1EA3n kh\xF4ng ph\u1EA3i l\xE0 m\u1ED9t ph\u1EA7n c\u1EE7\
-  a d\u1EEF li\u1EC7u ch\xEDnh c\u1EE7a ch\u01B0\u01A1ng tr\xECnh nh\u01B0ng ch\u1EC9\
-  \ ra l\u1ED7i ho\u1EB7c ch\u1EA9n \u0111o\xE1n."
+summary: "\u0110\u1EC3 ghi v\xE0o `stderr` trong Elixir, s\u1EED d\u1EE5ng `IO.warn/1`\
+  \ ho\u1EB7c `IO.puts/2`."
 title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---

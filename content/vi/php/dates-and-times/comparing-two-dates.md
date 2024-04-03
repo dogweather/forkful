@@ -2,15 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:57.082895-07:00
-description: "So s\xE1nh hai ng\xE0y ngh\u0129a l\xE0 ki\u1EC3m tra xem ch\xFAng c\xF3\
-  \ gi\u1ED1ng nhau kh\xF4ng, ho\u1EB7c t\xECm ra c\xE1i n\xE0o s\u1EDBm h\u01A1n\
-  \ ho\u1EB7c mu\u1ED9n h\u01A1n. L\u1EADp tr\xECnh vi\xEAn l\xE0m vi\u1EC7c n\xE0\
-  y \u0111\u1EC3 x\u1EED l\xFD l\u1ECBch\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1ED1i t\u01B0\u1EE3ng `DateTime` v\xE0\
+  \ c\xE1c to\xE1n t\u1EED so s\xE1nh c\u1EE7a PHP l\xE0m cho vi\u1EC7c n\xE0y tr\u1EDF\
+  \ n\xEAn \u0111\u01A1n gi\u1EA3n. D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t v\xED\
+  \ d\u1EE5 \u0111\u01A1n gi\u1EA3n."
 lastmod: '2024-03-13T22:44:36.783288-06:00'
 model: gpt-4-0125-preview
-summary: "So s\xE1nh hai ng\xE0y ngh\u0129a l\xE0 ki\u1EC3m tra xem ch\xFAng c\xF3\
-  \ gi\u1ED1ng nhau kh\xF4ng, ho\u1EB7c t\xECm ra c\xE1i n\xE0o s\u1EDBm h\u01A1n\
-  \ ho\u1EB7c mu\u1ED9n h\u01A1n."
+summary: "\u0110\u1ED1i t\u01B0\u1EE3ng `DateTime` v\xE0 c\xE1c to\xE1n t\u1EED so\
+  \ s\xE1nh c\u1EE7a PHP l\xE0m cho vi\u1EC7c n\xE0y tr\u1EDF n\xEAn \u0111\u01A1\
+  n gi\u1EA3n."
 title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---

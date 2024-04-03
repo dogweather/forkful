@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:35.055810-07:00
-description: "In Visual Basic for Applications (VBA) ist das Abrufen des aktuellen\
-  \ Datums eine g\xE4ngige Aufgabe, die es Programmierern erm\xF6glicht, dynamisch\
-  \ mit Daten in\u2026"
+description: "Wie: Das Abrufen des aktuellen Datums in VBA ist unkompliziert und erfolgt\
+  \ mittels der `Date`-Funktion, w\xE4hrend die `Now`-Funktion sowohl das aktuelle\u2026"
 lastmod: '2024-03-13T22:44:53.729893-06:00'
 model: gpt-4-0125-preview
-summary: "In Visual Basic for Applications (VBA) ist das Abrufen des aktuellen Datums\
-  \ eine g\xE4ngige Aufgabe, die es Programmierern erm\xF6glicht, dynamisch mit Daten\
-  \ in ihren Makros oder Anwendungen zu arbeiten."
+summary: "Das Abrufen des aktuellen Datums in VBA ist unkompliziert und erfolgt mittels\
+  \ der `Date`-Funktion, w\xE4hrend die `Now`-Funktion sowohl das aktuelle Datum als\
+  \ auch die Uhrzeit liefert."
 title: Das aktuelle Datum abrufen
 weight: 29
 ---

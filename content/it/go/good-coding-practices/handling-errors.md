@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:02.140640-07:00
-description: "La gestione degli errori in Go implica il riconoscimento e la risposta\
-  \ alle condizioni di errore nel tuo programma. I programmatori si impegnano nella\u2026"
+description: "Come fare: In Go, la gestione degli errori \xE8 gestita esplicitamente\
+  \ utilizzando il tipo `error`. Le funzioni che possono fallire restituiscono un\
+  \ errore\u2026"
 lastmod: '2024-03-13T22:44:42.916452-06:00'
 model: gpt-4-0125-preview
-summary: La gestione degli errori in Go implica il riconoscimento e la risposta alle
-  condizioni di errore nel tuo programma.
+summary: "In Go, la gestione degli errori \xE8 gestita esplicitamente utilizzando\
+  \ il tipo `error`."
 title: Gestione degli errori
 weight: 16
 ---

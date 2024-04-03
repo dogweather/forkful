@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:31:53.464183-07:00
-description: "Mit\xE4 ja miksi? Lasketaan tulevaisuuden tai menneisyyden p\xE4iv\xE4\
-  m\xE4\xE4ri\xE4, koska el\xE4mme kalentereissa ja aikatauluissa. Ohjelmoijina tarvitsemme\
-  \ t\xE4t\xE4 toimintoa\u2026"
+description: "How to: Miten: Kotlinissa p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen tehd\xE4\
+  \xE4n `LocalDate`-luokan avulla. Seuraavilla esimerkeill\xE4 n\xE4ytet\xE4\xE4n,\
+  \ kuinka lis\xE4t\xE4 ja v\xE4hent\xE4\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.544807-06:00'
 model: gpt-4-1106-preview
-summary: "Mit\xE4 ja miksi."
+summary: Miten.
 title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---

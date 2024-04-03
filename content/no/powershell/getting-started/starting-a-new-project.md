@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 18:04:05.072650-07:00
-description: "\xC5 starte et nytt prosjekt betyr \xE5 opprette grunnlaget for kodearbeidet\
-  \ ditt. Programmerere gj\xF8r dette for \xE5 organisere kode, dele arbeidet i h\xE5\
-  ndterbare\u2026"
+description: "Slik gj\xF8r du: Koden nedenfor viser hvordan du kan sette opp et nytt\
+  \ prosjekt ved hjelp av PowerShell: Opprett en ny mappe."
 lastmod: '2024-03-13T22:44:41.018608-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 starte et nytt prosjekt betyr \xE5 opprette grunnlaget for kodearbeidet\
-  \ ditt."
+summary: Koden nedenfor viser hvordan du kan sette opp et nytt prosjekt ved hjelp
+  av PowerShell.
 title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---

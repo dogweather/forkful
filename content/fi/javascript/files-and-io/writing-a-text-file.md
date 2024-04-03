@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:30.211979-07:00
-description: "Tekstitiedoston kirjoittaminen JavaScriptill\xE4 liittyy usein datan\
-  \ luomiseen ja tallentamiseen yksinkertaisessa, luettavassa muodossa lokitusta,\u2026"
+description: "Kuinka: Node.js-ymp\xE4rist\xF6ss\xE4 voit k\xE4ytt\xE4\xE4 sis\xE4\xE4\
+  nrakennettua `fs` (File System) moduulia tekstitiedostojen kirjoittamiseen. T\xE4\
+  m\xE4 esimerkki demonstroi\u2026"
 lastmod: '2024-03-13T22:44:56.968191-06:00'
 model: gpt-4-0125-preview
-summary: "Tekstitiedoston kirjoittaminen JavaScriptill\xE4 liittyy usein datan luomiseen\
-  \ ja tallentamiseen yksinkertaisessa, luettavassa muodossa lokitusta, k\xE4ytt\xE4\
-  j\xE4sy\xF6tteen viemist\xE4 tai konfiguraatiotarkoituksia varten."
+summary: "Node.js-ymp\xE4rist\xF6ss\xE4 voit k\xE4ytt\xE4\xE4 sis\xE4\xE4nrakennettua\
+  \ `fs` (File System) moduulia tekstitiedostojen kirjoittamiseen."
 title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---

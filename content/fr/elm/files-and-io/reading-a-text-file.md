@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:54:43.380497-07:00
-description: "Lire un fichier texte, c'est r\xE9cup\xE9rer les donn\xE9es \xE9crites\
-  \ dedans. On le fait pour acc\xE9der et manipuler ces donn\xE9es, comme charger\
-  \ des configurations,\u2026"
+description: "Comment faire : Elm fonctionne sur le web, alors pour lire un fichier\
+  \ texte, on interagit avec des APIs de navigateur. Voici un exemple avec\u2026"
 lastmod: '2024-03-13T22:44:57.708503-06:00'
 model: gpt-4-1106-preview
-summary: "Lire un fichier texte, c'est r\xE9cup\xE9rer les donn\xE9es \xE9crites dedans."
+summary: Elm fonctionne sur le web, alors pour lire un fichier texte, on interagit
+  avec des APIs de navigateur.
 title: Lecture d'un fichier texte
 weight: 22
 ---

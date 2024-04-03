@@ -2,10 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:12:43.995380-07:00
-description: '#'
+description: "L\xFD do & T\u1EA1i sao? L\xE0m vi\u1EC7c v\u1EDBi JSON (JavaScript\
+  \ Object Notation) trong C bao g\u1ED3m vi\u1EC7c ph\xE2n t\xEDch c\xFA ph\xE1p,\
+  \ t\u1EA1o v\xE0 thao t\xE1c v\u1EDBi c\u1EA5u tr\xFAc d\u1EEF li\u1EC7u JSON. L\u1EAD\
+  p\u2026"
 lastmod: '2024-03-13T22:44:37.296805-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "L\xE0m vi\u1EC7c v\u1EDBi JSON (JavaScript Object Notation) trong C bao\
+  \ g\u1ED3m vi\u1EC7c ph\xE2n t\xEDch c\xFA ph\xE1p, t\u1EA1o v\xE0 thao t\xE1c v\u1EDB\
+  i c\u1EA5u tr\xFAc d\u1EEF li\u1EC7u JSON."
 title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
 weight: 38
 ---

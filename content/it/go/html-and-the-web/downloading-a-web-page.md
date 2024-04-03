@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:16.033920-07:00
-description: "Scaricare una pagina web consiste nel recuperare il contenuto HTML di\
-  \ una pagina web tramite il protocollo HTTP/HTTPS. I programmatori spesso fanno\
-  \ ci\xF2\u2026"
+description: "Come fare: In Go, la libreria standard offre potenti strumenti per le\
+  \ richieste web, in particolare il pacchetto `net/http`. Per scaricare una pagina\
+  \ web,\u2026"
 lastmod: '2024-03-13T22:44:42.906755-06:00'
 model: gpt-4-0125-preview
-summary: Scaricare una pagina web consiste nel recuperare il contenuto HTML di una
-  pagina web tramite il protocollo HTTP/HTTPS.
+summary: In Go, la libreria standard offre potenti strumenti per le richieste web,
+  in particolare il pacchetto `net/http`.
 title: Scaricare una pagina web
 weight: 42
 ---

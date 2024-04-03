@@ -1,10 +1,11 @@
 ---
 date: 2024-01-25 02:04:02.274630-07:00
-description: "Logging in programming is like keeping a diary for your application.\
-  \ It's the systematic recording of events, messages, and data points that give you\u2026"
+description: "How to: Ruby comes with a built-in module for logging, `Logger`, that\u2019\
+  s super easy to use. Here's a quick example to get you started."
 lastmod: '2024-03-13T22:45:00.556959-06:00'
 model: gpt-4-1106-preview
-summary: Logging in programming is like keeping a diary for your application.
+summary: "Ruby comes with a built-in module for logging, `Logger`, that\u2019s super\
+  \ easy to use."
 title: Logging
 weight: 17
 ---

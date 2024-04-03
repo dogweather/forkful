@@ -1,11 +1,11 @@
 ---
 date: 2024-02-01 21:30:17.351363-07:00
-description: "Logging in Visual Basic for Applications (VBA) involves recording information\
-  \ about a program's runtime behavior to a file, console, or database.\u2026"
+description: "How to: In VBA, there isn\u2019t a built-in logging framework as found\
+  \ in some other languages. However, implementing a simple logging mechanism is\u2026"
 lastmod: '2024-03-13T22:44:59.940170-06:00'
 model: gpt-4-0125-preview
-summary: Logging in Visual Basic for Applications (VBA) involves recording information
-  about a program's runtime behavior to a file, console, or database.
+summary: "In VBA, there isn\u2019t a built-in logging framework as found in some other\
+  \ languages."
 title: Logging
 weight: 17
 ---

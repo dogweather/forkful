@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:43.714356-07:00
-description: "In der Bash-Programmierung ist die \xDCberpr\xFCfung, ob ein Verzeichnis\
-  \ existiert, ein wesentlicher Kontrollmechanismus, der dazu dient, die Existenz\
-  \ eines\u2026"
+description: "Wie: Im Kern erm\xF6glicht es Bash, mit bedingten Anweisungen und dem\
+  \ Operator `-d` zu \xFCberpr\xFCfen, ob ein Verzeichnis existiert. Im Folgenden\
+  \ ist ein\u2026"
 lastmod: '2024-03-13T22:44:54.073821-06:00'
 model: gpt-4-0125-preview
-summary: "In der Bash-Programmierung ist die \xDCberpr\xFCfung, ob ein Verzeichnis\
-  \ existiert, ein wesentlicher Kontrollmechanismus, der dazu dient, die Existenz\
-  \ eines Verzeichnisses zu best\xE4tigen, bevor Dateioperationen durchgef\xFChrt\
-  \ werden."
+summary: "Im Kern erm\xF6glicht es Bash, mit bedingten Anweisungen und dem Operator\
+  \ `-d` zu \xFCberpr\xFCfen, ob ein Verzeichnis existiert."
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---

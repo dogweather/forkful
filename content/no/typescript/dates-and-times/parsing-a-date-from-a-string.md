@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:38.169299-07:00
-description: "\xC5 analysere en dato fra en tekststreng inneb\xE6rer \xE5 konvertere\
-  \ tekstlige representasjoner av datoer og tider til et format som kan manipuleres\
-  \ og\u2026"
+description: "Hvordan: TypeScript, som er en utvidelse av JavaScript, er avhengig\
+  \ av Date-objektet for \xE5 analysere datoer fra strenger. Imidlertid kan arbeid\
+  \ med datoer\u2026"
 lastmod: '2024-03-13T22:44:40.541542-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 analysere en dato fra en tekststreng inneb\xE6rer \xE5 konvertere tekstlige\
-  \ representasjoner av datoer og tider til et format som kan manipuleres og analyseres\
-  \ av programmet."
+summary: "TypeScript, som er en utvidelse av JavaScript, er avhengig av Date-objektet\
+  \ for \xE5 analysere datoer fra strenger."
 title: Analysering av en dato fra en streng
 weight: 30
 ---

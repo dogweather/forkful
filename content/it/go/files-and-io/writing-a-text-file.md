@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:34.345743-07:00
-description: "Scrivere un file di testo in Go comporta la creazione e la scrittura\
-  \ di stringhe di dati in un file di testo nuovo o esistente. I programmatori fanno\
-  \ ci\xF2\u2026"
+description: "Come fare: In Go, scrivere in un file di testo \xE8 gestito dai pacchetti\
+  \ `os` e `io/ioutil` (per le versioni di Go <1.16) o `os` e `io` pi\xF9 il pacchetto\u2026"
 lastmod: '2024-03-13T22:44:42.927906-06:00'
 model: gpt-4-0125-preview
-summary: Scrivere un file di testo in Go comporta la creazione e la scrittura di stringhe
-  di dati in un file di testo nuovo o esistente.
+summary: "In Go, scrivere in un file di testo \xE8 gestito dai pacchetti `os` e `io/ioutil`\
+  \ (per le versioni di Go <1.16) o `os` e `io` pi\xF9 il pacchetto `os` per Go 1.16\
+  \ e versioni successive, dimostrando la filosofia di semplicit\xE0 ed efficienza\
+  \ di Go."
 title: Scrivere un file di testo
 weight: 24
 ---

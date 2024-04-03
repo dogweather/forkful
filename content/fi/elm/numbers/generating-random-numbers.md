@@ -3,15 +3,13 @@ changelog:
 - 2024-02-27, dogweather, edited and tested
 - 2024-02-27, gpt-4-0125-preview, translated from English
 date: 2024-02-27 22:50:15.929283-07:00
-description: "Satunnaislukujen generointi Elm-kieless\xE4 vaatii `Random`-moduulin\
-  \ k\xE4ytt\xF6\xE4 pseudo-satunnaislukujen tuottamiseen, jotka ovat hy\xF6dyllisi\xE4\
-  \ monenlaisissa\u2026"
+description: "Kuinka: Elmin puhtaasti funktionaalinen luonne tarkoittaa, ett\xE4 et\
+  \ voi generoida satunnaislukuja suoraan kuten imperatiivisissa kieliss\xE4. Sen\
+  \ sijaan\u2026"
 lastmod: '2024-03-13T22:44:56.484378-06:00'
 model: gpt-4-0125-preview
-summary: "Satunnaislukujen generointi Elm-kieless\xE4 vaatii `Random`-moduulin k\xE4\
-  ytt\xF6\xE4 pseudo-satunnaislukujen tuottamiseen, jotka ovat hy\xF6dyllisi\xE4 monenlaisissa\
-  \ teht\xE4viss\xE4 kuten peleiss\xE4, simulaatioissa ja jopa algoritmeiss\xE4, jotka\
-  \ vaativat stokastisia prosesseja."
+summary: "Elmin puhtaasti funktionaalinen luonne tarkoittaa, ett\xE4 et voi generoida\
+  \ satunnaislukuja suoraan kuten imperatiivisissa kieliss\xE4."
 title: Sattumanvaraisten numeroiden generointi
 weight: 12
 ---

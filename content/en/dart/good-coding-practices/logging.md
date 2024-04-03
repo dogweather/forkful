@@ -1,11 +1,10 @@
 ---
 date: 2024-03-08 21:33:24.985073-07:00
-description: "Logging in Dart refers to the process of recording various levels of\
-  \ information during the execution of a program. Programmers do it to monitor the\u2026"
+description: "How to: Dart includes a simple logging mechanism through the `dart:developer`\
+  \ library. For more sophisticated logging needs, programmers often turn to\u2026"
 lastmod: '2024-03-13T22:44:59.826530-06:00'
 model: gpt-4-0125-preview
-summary: Logging in Dart refers to the process of recording various levels of information
-  during the execution of a program.
+summary: Dart includes a simple logging mechanism through the `dart:developer` library.
 title: Logging
 weight: 17
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:48:41.513791-07:00
-description: "Calcular uma data no futuro ou passado envolve determinar uma data que\
-  \ est\xE1 um n\xFAmero especificado de dias, meses ou anos distante de uma data\
-  \ dada.\u2026"
+description: "Como fazer: Em Visual Basic for Applications (VBA), a fun\xE7\xE3o prim\xE1\
+  ria usada para calcular datas futuras ou passadas \xE9 `DateAdd()`. Esta fun\xE7\
+  \xE3o adiciona um\u2026"
 lastmod: '2024-03-13T22:44:46.426928-06:00'
 model: gpt-4-0125-preview
-summary: "Calcular uma data no futuro ou passado envolve determinar uma data que est\xE1\
-  \ um n\xFAmero especificado de dias, meses ou anos distante de uma data dada."
+summary: "Em Visual Basic for Applications (VBA), a fun\xE7\xE3o prim\xE1ria usada\
+  \ para calcular datas futuras ou passadas \xE9 `DateAdd()`."
 title: Calculando uma data no futuro ou no passado
 weight: 26
 ---

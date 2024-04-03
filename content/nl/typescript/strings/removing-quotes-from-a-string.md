@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:51.349323-07:00
-description: "Het verwijderen van aanhalingstekens uit een tekenreeks betekent het\
-  \ weghalen van de omringende enkele (`'`) of dubbele (`\"`) aanhalingstekens die\u2026"
+description: 'Hoe te: Hier is je nuchtere gids om die lastige aanhalingstekens los
+  te snijden van je tekenreeksen in TypeScript.'
 lastmod: '2024-03-13T22:44:50.537556-06:00'
 model: gpt-4-0125-preview
-summary: "Het verwijderen van aanhalingstekens uit een tekenreeks betekent het weghalen\
-  \ van de omringende enkele (`'`) of dubbele (`\"`) aanhalingstekens die tekenreeksliteralen\
-  \ in code defini\xEBren."
+summary: Hier is je nuchtere gids om die lastige aanhalingstekens los te snijden van
+  je tekenreeksen in TypeScript.
 title: Quotes verwijderen uit een string
 weight: 9
 ---

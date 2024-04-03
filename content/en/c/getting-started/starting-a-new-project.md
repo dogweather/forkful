@@ -1,12 +1,11 @@
 ---
 date: 2024-02-03 17:50:02.320628-07:00
-description: "Starting a new project in C involves setting up a foundational code\
-  \ structure and environment to efficiently manage development tasks. Programmers\
-  \ do it\u2026"
+description: "How to: At the heart of any C project is the source code. A typical\
+  \ starting point involves creating a main file, often named `main.c`, which houses\
+  \ the\u2026"
 lastmod: '2024-03-13T22:45:00.512167-06:00'
 model: gpt-4-0125-preview
-summary: Starting a new project in C involves setting up a foundational code structure
-  and environment to efficiently manage development tasks.
+summary: At the heart of any C project is the source code.
 title: Starting a new project
 weight: 1
 ---

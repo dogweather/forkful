@@ -2,14 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:10.596502-07:00
-description: "Trabalhar com JSON (JavaScript Object Notation) envolve analisar, gerar\
-  \ e consultar dados JSON, tornando-se uma habilidade cr\xEDtica para a programa\xE7\
-  \xE3o\u2026"
+description: 'Como Fazer: #.'
 lastmod: '2024-03-13T22:44:46.605143-06:00'
 model: gpt-4-0125-preview
-summary: "Trabalhar com JSON (JavaScript Object Notation) envolve analisar, gerar\
-  \ e consultar dados JSON, tornando-se uma habilidade cr\xEDtica para a programa\xE7\
-  \xE3o moderna."
+summary: '#.'
 title: Trabalhando com JSON
 weight: 38
 ---

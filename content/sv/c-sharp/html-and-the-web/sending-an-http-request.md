@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:59:33.444796-07:00
-description: "HTTP-request \xE4r hur dina appar pratar med omv\xE4rlden \u2013 de\
-  \ skickar och tar emot data via internet. Programmerare anv\xE4nder dem f\xF6r att\
-  \ interagera med webb-\u2026"
+description: "How to: C# g\xF6r det enkelt att skicka HTTP-requests. Med `HttpClient`\
+  \ kan vi h\xE4mta en webbsida med bara n\xE5gra rader kod."
 lastmod: '2024-03-13T22:44:37.909947-06:00'
 model: gpt-4-1106-preview
-summary: "HTTP-request \xE4r hur dina appar pratar med omv\xE4rlden \u2013 de skickar\
-  \ och tar emot data via internet."
+summary: "C# g\xF6r det enkelt att skicka HTTP-requests."
 title: "Skicka en http-f\xF6rfr\xE5gan"
 weight: 44
 ---

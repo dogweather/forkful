@@ -1,11 +1,11 @@
 ---
 date: 2024-01-27 16:14:16.677583-07:00
-description: "Editing files in-place with CLI one-liners is about making changes directly\
-  \ to files from the command line, without opening them in a text editor.\u2026"
+description: "How to: Fish Shell, known for its user-friendly features and powerful\
+  \ scripting capabilities, offers several ways to edit files in-place. However, unlike\u2026"
 lastmod: '2024-03-13T22:45:00.470529-06:00'
 model: gpt-4-0125-preview
-summary: Editing files in-place with CLI one-liners is about making changes directly
-  to files from the command line, without opening them in a text editor.
+summary: Fish Shell, known for its user-friendly features and powerful scripting capabilities,
+  offers several ways to edit files in-place.
 title: Editing files in-place with CLI one-liners
 weight: 32
 ---

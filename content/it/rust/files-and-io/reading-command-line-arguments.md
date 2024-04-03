@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:56:56.793539-07:00
-description: "Leggere gli argomenti della riga di comando significa raccogliere input\
-  \ dall'esterno quando il programma viene eseguito. I programmatori lo fanno per\u2026"
+description: 'How to: Ecco come leggere gli argomenti della riga di comando in Rust.'
 lastmod: '2024-03-13T22:44:43.233773-06:00'
 model: gpt-4-1106-preview
-summary: Leggere gli argomenti della riga di comando significa raccogliere input dall'esterno
-  quando il programma viene eseguito.
+summary: Ecco come leggere gli argomenti della riga di comando in Rust.
 title: Lettura degli argomenti della riga di comando
 weight: 23
 ---

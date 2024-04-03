@@ -1,12 +1,10 @@
 ---
 date: 2024-01-25 03:39:57.074924-07:00
-description: "TOML is an acronym for Tom's Obvious, Minimal Language, a configuration\
-  \ file format that's easy to read due to its clear semantics. Programmers use it\
-  \ for\u2026"
+description: 'How to: First, install a TOML parser like `Tomlyn`. Use your package
+  manager.'
 lastmod: '2024-03-13T22:45:00.110621-06:00'
 model: gpt-4-1106-preview
-summary: TOML is an acronym for Tom's Obvious, Minimal Language, a configuration file
-  format that's easy to read due to its clear semantics.
+summary: First, install a TOML parser like `Tomlyn`.
 title: Working with TOML
 weight: 39
 ---

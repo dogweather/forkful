@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:57.286320-07:00
-description: "Nedladdning av en webbsida i Visual Basic for Applications (VBA) inneb\xE4\
-  r att h\xE4mta HTML-inneh\xE5llet p\xE5 en webbsida fr\xE5n internet. Programmerare\
-  \ utf\xF6r ofta\u2026"
+description: "Hur man g\xF6r: F\xF6r att ladda ner en webbsida i VBA kan du anv\xE4\
+  nda Microsoft XML, v6.0 (MSXML6)-biblioteket, som m\xF6jligg\xF6r server HTTP-f\xF6\
+  rfr\xE5gningar. Innan\u2026"
 lastmod: '2024-03-13T22:44:37.741661-06:00'
 model: gpt-4-0125-preview
-summary: "Nedladdning av en webbsida i Visual Basic for Applications (VBA) inneb\xE4\
-  r att h\xE4mta HTML-inneh\xE5llet p\xE5 en webbsida fr\xE5n internet."
+summary: "F\xF6r att ladda ner en webbsida i VBA kan du anv\xE4nda Microsoft XML,\
+  \ v6.0 (MSXML6)-biblioteket, som m\xF6jligg\xF6r server HTTP-f\xF6rfr\xE5gningar."
 title: "H\xE4mta en webbsida"
 weight: 42
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:57.774564-07:00
-description: "Le refactoring en programmation implique de restructurer le code informatique\
-  \ existant \u2014 changer le fa\xE7onnage \u2014 sans modifier son comportement\
-  \ externe.\u2026"
+description: "Comment faire : En Go, le refactoring peut aller de simples ajustements\
+  \ de code \xE0 des changements plus complexes. Commen\xE7ons par un exemple de base\
+  \ :\u2026"
 lastmod: '2024-03-13T22:44:57.143188-06:00'
 model: gpt-4-0125-preview
-summary: "Le refactoring en programmation implique de restructurer le code informatique\
-  \ existant \u2014 changer le fa\xE7onnage \u2014 sans modifier son comportement\
-  \ externe."
+summary: "En Go, le refactoring peut aller de simples ajustements de code \xE0 des\
+  \ changements plus complexes."
 title: Refonte de Code
 weight: 19
 ---

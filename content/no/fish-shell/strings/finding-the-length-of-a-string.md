@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:47:20.963008-07:00
-description: "\xC5 finne lengden p\xE5 en streng betyr \xE5 telle antall tegn den\
-  \ inneholder. Programmerere gj\xF8r dette for \xE5 validere inndata, skj\xE6re strenger\
-  \ eller for \xE5\u2026"
+description: "Slik gj\xF8r du: I Fish Shell, bruk `string length` for \xE5 f\xE5 lengden\
+  \ p\xE5 en streng."
 lastmod: '2024-03-13T22:44:41.216066-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 finne lengden p\xE5 en streng betyr \xE5 telle antall tegn den inneholder."
+summary: "I Fish Shell, bruk `string length` for \xE5 f\xE5 lengden p\xE5 en streng."
 title: "Finn lengden p\xE5 en streng"
 weight: 7
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:18:16.182954-07:00
-description: "Refaktorisering er prosessen med \xE5 restrukturere eksisterende kode\
-  \ uten \xE5 endre dens eksterne oppf\xF8rsel for \xE5 forbedre ikke-funksjonelle\
-  \ attributter.\u2026"
+description: "Hvordan: Forestille deg at du har et skript som har vokst ganske mye\
+  \ over tid. Det startet enkelt, men n\xE5 er det et beist som sprer seg med tentakler\
+  \ av\u2026"
 lastmod: '2024-03-13T22:44:41.236121-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktorisering er prosessen med \xE5 restrukturere eksisterende kode uten\
-  \ \xE5 endre dens eksterne oppf\xF8rsel for \xE5 forbedre ikke-funksjonelle attributter."
+summary: Forestille deg at du har et skript som har vokst ganske mye over tid.
 title: Refaktorering
 weight: 19
 ---

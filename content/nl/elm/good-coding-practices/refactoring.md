@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:54.207773-07:00
-description: "Refactoring is in wezen het grote schoonmaak houden van je codebasis\
-  \ - het gaat over het herstructureren van bestaande code zonder het externe gedrag\u2026"
+description: "Hoe: Stel je hebt een Elm-functie die te veel doet, zoals het mixen\
+  \ van UI-logica met statusupdates. Het is een perfecte kandidaat voor refactoring.\u2026"
 lastmod: '2024-03-13T22:44:50.733526-06:00'
 model: gpt-4-0125-preview
-summary: Refactoring is in wezen het grote schoonmaak houden van je codebasis - het
-  gaat over het herstructureren van bestaande code zonder het externe gedrag ervan
-  te veranderen.
+summary: Stel je hebt een Elm-functie die te veel doet, zoals het mixen van UI-logica
+  met statusupdates.
 title: Refactoring
 weight: 19
 ---

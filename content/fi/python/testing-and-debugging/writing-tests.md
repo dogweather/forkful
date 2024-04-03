@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:35.869506-07:00
-description: "Testien kirjoittaminen Pythonilla tarkoittaa automatisoitujen skriptien\
-  \ luomista koodisi oikeellisuuden varmistamiseksi. Ohjelmoijat tekev\xE4t t\xE4\
-  m\xE4n\u2026"
+description: "Kuinka: Python sis\xE4lt\xE4\xE4 sis\xE4\xE4nrakennetun moduulin testeille\
+  \ nimelt\xE4 `unittest`. N\xE4in voit k\xE4ytt\xE4\xE4 sit\xE4 yksinkertaisen funktion\
+  \ testaamiseen."
 lastmod: '2024-03-13T22:44:56.147222-06:00'
 model: gpt-4-0125-preview
-summary: Testien kirjoittaminen Pythonilla tarkoittaa automatisoitujen skriptien luomista
-  koodisi oikeellisuuden varmistamiseksi.
+summary: "Python sis\xE4lt\xE4\xE4 sis\xE4\xE4nrakennetun moduulin testeille nimelt\xE4\
+  \ `unittest`."
 title: Testien kirjoittaminen
 weight: 36
 ---

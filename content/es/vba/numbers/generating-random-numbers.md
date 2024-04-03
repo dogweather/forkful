@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:51.549680-07:00
-description: "Generar n\xFAmeros aleatorios en Visual Basic para Aplicaciones (VBA)\
-  \ permite a los programas simular procesos con elementos de azar o variabilidad,\
-  \ como\u2026"
+description: "C\xF3mo hacerlo: En VBA, la funci\xF3n `Rnd` se utiliza para generar\
+  \ n\xFAmeros aleatorios. Por defecto, `Rnd` genera un n\xFAmero de punto flotante\
+  \ de precisi\xF3n\u2026"
 lastmod: '2024-03-13T22:44:58.888387-06:00'
 model: gpt-4-0125-preview
-summary: "Generar n\xFAmeros aleatorios en Visual Basic para Aplicaciones (VBA) permite\
-  \ a los programas simular procesos con elementos de azar o variabilidad, como lanzamientos\
-  \ de dados o muestreo de datos."
+summary: "En VBA, la funci\xF3n `Rnd` se utiliza para generar n\xFAmeros aleatorios."
 title: "Generando n\xFAmeros aleatorios"
 weight: 12
 ---

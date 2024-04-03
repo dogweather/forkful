@@ -2,10 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:45.057558-07:00
-description: "Bash kh\xF4ng c\xF3 tr\xECnh g\u1EE1 l\u1ED7i t\xEDch h\u1EE3p s\u1EB5\
-  n gi\u1ED1ng nh\u01B0 m\u1ED9t s\u1ED1 ng\xF4n ng\u1EEF kh\xE1c, nh\u01B0ng b\u1EA1\
-  n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng c\xE1c l\u1EC7nh t\xEDch h\u1EE3p nh\u01B0 `set\
-  \ -x` \u0111\u1EC3 theo d\xF5i nh\u1EEFng g\xEC \u0111ang\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Bash kh\xF4ng c\xF3 tr\xECnh g\u1EE1 l\u1ED7\
+  i t\xEDch h\u1EE3p s\u1EB5n gi\u1ED1ng nh\u01B0 m\u1ED9t s\u1ED1 ng\xF4n ng\u1EEF\
+  \ kh\xE1c, nh\u01B0ng b\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng c\xE1c l\u1EC7nh\
+  \ t\xEDch h\u1EE3p nh\u01B0 `set -x` \u0111\u1EC3 theo\u2026"
 lastmod: '2024-03-13T22:44:36.885093-06:00'
 model: gpt-4-0125-preview
 summary: "Bash kh\xF4ng c\xF3 tr\xECnh g\u1EE1 l\u1ED7i t\xEDch h\u1EE3p s\u1EB5n\

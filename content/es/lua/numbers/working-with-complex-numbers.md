@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:43:19.175257-07:00
-description: "Los n\xFAmeros complejos extienden la idea de la l\xEDnea num\xE9rica\
-  \ unidimensional al plano bidimensional incluyendo un eje imaginario perpendicular.\
-  \ Los\u2026"
+description: "C\xF3mo: En Lua, puedes representar n\xFAmeros complejos con tablas.\
+  \ Las operaciones b\xE1sicas involucran sumar, restar, multiplicar y dividir estas\
+  \ tablas. Aqu\xED\u2026"
 lastmod: '2024-03-13T22:44:59.195895-06:00'
 model: gpt-4-0125-preview
-summary: "Los n\xFAmeros complejos extienden la idea de la l\xEDnea num\xE9rica unidimensional\
-  \ al plano bidimensional incluyendo un eje imaginario perpendicular."
+summary: "En Lua, puedes representar n\xFAmeros complejos con tablas."
 title: "Trabajando con n\xFAmeros complejos"
 weight: 14
 ---

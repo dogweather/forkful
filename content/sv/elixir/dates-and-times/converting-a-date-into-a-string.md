@@ -1,13 +1,11 @@
 ---
 date: 2024-01-20 17:36:30.743919-07:00
-description: "Omvandling av datum till str\xE4ng inneb\xE4r att f\xF6r\xE4ndra ett\
-  \ datumobjekt s\xE5 det representeras som text, vilket g\xF6r det l\xE4ttare att\
-  \ l\xE4sa och anv\xE4nda i\u2026"
+description: "Hur g\xF6r man: Elixir anv\xE4nder `DateTime` modulen f\xF6r hantering\
+  \ av datum. F\xF6ljande \xE4r exempel p\xE5 hur du kan konvertera ett datum till\
+  \ en str\xE4ng."
 lastmod: '2024-03-13T22:44:37.579025-06:00'
 model: gpt-4-1106-preview
-summary: "Omvandling av datum till str\xE4ng inneb\xE4r att f\xF6r\xE4ndra ett datumobjekt\
-  \ s\xE5 det representeras som text, vilket g\xF6r det l\xE4ttare att l\xE4sa och\
-  \ anv\xE4nda i gr\xE4nssnitt eller rapporter."
+summary: "Elixir anv\xE4nder `DateTime` modulen f\xF6r hantering av datum."
 title: "Omvandla ett datum till en str\xE4ng"
 weight: 28
 ---

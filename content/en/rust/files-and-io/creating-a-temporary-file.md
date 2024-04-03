@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:41:12.818907-07:00
-description: "Creating a temporary file means making a short-lived file for intermediate\
-  \ processing. Programmers do it to stash data without cluttering the user's file\u2026"
+description: 'How to: In Rust, the `tempfile` crate is a good friend for temp file
+  shenanigans. Add it to your `Cargo.toml`.'
 lastmod: '2024-03-13T22:44:59.913705-06:00'
 model: gpt-4-1106-preview
-summary: Creating a temporary file means making a short-lived file for intermediate
-  processing.
+summary: In Rust, the `tempfile` crate is a good friend for temp file shenanigans.
 title: Creating a temporary file
 weight: 21
 ---

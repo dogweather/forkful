@@ -2,12 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:34.739794-07:00
-description: "YAML, acr\xF3nimo de \"YAML Ain't Markup Language\" (YAML no es un lenguaje\
-  \ de marcado), es un formato de serializaci\xF3n de datos legible por humanos. Los\u2026"
+description: "C\xF3mo hacerlo: En Dart, trabajar con YAML generalmente involucra el\
+  \ uso de una biblioteca de terceros, ya que el lenguaje no incluye capacidades de\u2026"
 lastmod: '2024-03-13T22:44:58.776458-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, acr\xF3nimo de \"YAML Ain't Markup Language\" (YAML no es un lenguaje\
-  \ de marcado), es un formato de serializaci\xF3n de datos legible por humanos."
+summary: "En Dart, trabajar con YAML generalmente involucra el uso de una biblioteca\
+  \ de terceros, ya que el lenguaje no incluye capacidades de an\xE1lisis de YAML\
+  \ incorporadas."
 title: Trabajando con YAML
 weight: 41
 ---

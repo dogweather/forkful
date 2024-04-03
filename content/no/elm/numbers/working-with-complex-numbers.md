@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:39:23.662224-07:00
-description: "Komplekse tall er en kombinasjon av reelle tall og imagin\xE6re tall,\
-  \ som `a + bi`, der `i` er kvadratroten av -1. De er n\xF8kkelen i felt som\u2026"
+description: "Hvordan: Elm har ikke innebygd st\xF8tte for komplekse tall, s\xE5 du\
+  \ m\xE5 opprette din egen type og funksjoner. Her er en rask oppsett."
 lastmod: '2024-03-13T22:44:40.702420-06:00'
 model: gpt-4-0125-preview
-summary: "Komplekse tall er en kombinasjon av reelle tall og imagin\xE6re tall, som\
-  \ `a + bi`, der `i` er kvadratroten av -1."
+summary: "Elm har ikke innebygd st\xF8tte for komplekse tall, s\xE5 du m\xE5 opprette\
+  \ din egen type og funksjoner."
 title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---

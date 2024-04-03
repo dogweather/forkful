@@ -2,17 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:58.077370-07:00
-description: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\
-  \u1EDDng c\xF3 ngh\u0129a l\xE0 bi\u1EBFn \u0111\u1ED5i t\u1EA5t c\u1EA3 c\xE1c\
-  \ k\xFD t\u1EF1 in hoa trong v\u0103n b\u1EA3n th\xE0nh c\xE1c k\xFD t\u1EF1 t\u01B0\
-  \u01A1ng \u0111\u01B0\u01A1ng \u1EDF d\u1EA1ng ch\u1EEF th\u01B0\u1EDDng. L\u1EAD\
-  p tr\xECnh\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong C#, b\u1EA1n c\xF3 th\u1EC3 chuy\u1EC3\
+  n \u0111\u1ED5i m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng s\u1EED d\u1EE5\
+  ng c\xE1c ph\u01B0\u01A1ng th\u1EE9c `ToLower()` ho\u1EB7c `ToLowerInvariant()`.\
+  \ D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch\u2026"
 lastmod: '2024-03-13T22:44:36.639859-06:00'
 model: gpt-4-0125-preview
-summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\
-  \u1EDDng c\xF3 ngh\u0129a l\xE0 bi\u1EBFn \u0111\u1ED5i t\u1EA5t c\u1EA3 c\xE1c\
-  \ k\xFD t\u1EF1 in hoa trong v\u0103n b\u1EA3n th\xE0nh c\xE1c k\xFD t\u1EF1 t\u01B0\
-  \u01A1ng \u0111\u01B0\u01A1ng \u1EDF d\u1EA1ng ch\u1EEF th\u01B0\u1EDDng."
+summary: "Trong C#, b\u1EA1n c\xF3 th\u1EC3 chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7\
+  i th\xE0nh ch\u1EEF th\u01B0\u1EDDng s\u1EED d\u1EE5ng c\xE1c ph\u01B0\u01A1ng th\u1EE9\
+  c `ToLower()` ho\u1EB7c `ToLowerInvariant()`."
 title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
 weight: 4
 ---

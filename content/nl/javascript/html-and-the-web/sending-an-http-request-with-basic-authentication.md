@@ -2,16 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:07.396267-07:00
-description: "Hier is een snel voorbeeld met behulp van JavaScript's Fetch API: ```javascript\
-  \ const url = 'https://some-protected-resource.com/data'; const username =\u2026"
+description: 'Hoe: Hier is een snel voorbeeld met behulp van JavaScript''s Fetch API.'
 lastmod: '2024-03-13T22:44:51.201037-06:00'
 model: gpt-4-0125-preview
-summary: 'Hier is een snel voorbeeld met behulp van JavaScript''s Fetch API:
-
-
-  ```javascript
-
-  const url = ''https://some-protected-resource.'
+summary: Hier is een snel voorbeeld met behulp van JavaScript's Fetch API.
 title: Een HTTP-verzoek verzenden met basisauthenticatie
 weight: 45
 ---

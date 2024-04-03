@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:39:26.918818-07:00
-description: "Kompleksiluvut ovat reaalilukujen ja imaginaarilukujen yhdistelmi\xE4\
-  , kuten `a + bi`, miss\xE4 `i` on -1:n neli\xF6juuri. Ne ovat avainasemassa aloilla\
-  \ kuten\u2026"
+description: "Kuinka: Elm ei sis\xE4ll\xE4 valmista tukea kompleksiluvuille, joten\
+  \ sinun t\xE4ytyy luoda oma tyyppisi ja funktiosi. T\xE4ss\xE4 on nopea asennus."
 lastmod: '2024-03-13T22:44:56.482440-06:00'
 model: gpt-4-0125-preview
-summary: "Kompleksiluvut ovat reaalilukujen ja imaginaarilukujen yhdistelmi\xE4, kuten\
-  \ `a + bi`, miss\xE4 `i` on -1:n neli\xF6juuri."
+summary: "Elm ei sis\xE4ll\xE4 valmista tukea kompleksiluvuille, joten sinun t\xE4\
+  ytyy luoda oma tyyppisi ja funktiosi."
 title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---

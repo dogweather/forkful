@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:03.211545-07:00
-description: "Le journalisation dans le d\xE9veloppement logiciel est le processus\
-  \ d'enregistrement d'informations sur l'ex\xE9cution d'un programme, con\xE7u pour\
-  \ suivre son\u2026"
+description: "Comment : En Go, la journalisation peut \xEAtre mise en \u0153uvre en\
+  \ utilisant le package de la biblioth\xE8que standard `log`. Ce package fournit\
+  \ des capacit\xE9s de\u2026"
 lastmod: '2024-03-13T22:44:57.141030-06:00'
 model: gpt-4-0125-preview
-summary: "Le journalisation dans le d\xE9veloppement logiciel est le processus d'enregistrement\
-  \ d'informations sur l'ex\xE9cution d'un programme, con\xE7u pour suivre son comportement\
-  \ et diagnostiquer les probl\xE8mes."
+summary: "En Go, la journalisation peut \xEAtre mise en \u0153uvre en utilisant le\
+  \ package de la biblioth\xE8que standard `log`."
 title: Journalisation
 weight: 17
 ---

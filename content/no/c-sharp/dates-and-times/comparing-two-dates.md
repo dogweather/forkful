@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:32:34.069538-07:00
-description: "Comparing two dates means figuring out their relationship\u2014are they\
-  \ the same, is one earlier, or is one later? Programmers need to do this to sort\
-  \ events,\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:40.809479-06:00'
 model: gpt-4-1106-preview
-summary: "Comparing two dates means figuring out their relationship\u2014are they\
-  \ the same, is one earlier, or is one later."
+summary: .
 title: Sammenlikning av to datoer
 weight: 27
 ---

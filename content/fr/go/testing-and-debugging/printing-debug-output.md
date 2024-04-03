@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:09.294631-07:00
-description: "En programmation informatique, \"Imprimer les sorties de d\xE9bogage\"\
-  \ consiste \xE0 produire des messages d'information d\xE9taill\xE9s qui aident les\
-  \ d\xE9veloppeurs \xE0\u2026"
+description: "Comment faire : En Go, vous pouvez utiliser le paquet standard `fmt`\
+  \ pour imprimer les sorties de d\xE9bogage dans la console. Le paquet `fmt` offre\
+  \ une\u2026"
 lastmod: '2024-03-13T22:44:57.136353-06:00'
 model: gpt-4-0125-preview
-summary: "En programmation informatique, \"Imprimer les sorties de d\xE9bogage\" consiste\
-  \ \xE0 produire des messages d'information d\xE9taill\xE9s qui aident les d\xE9\
-  veloppeurs \xE0 comprendre le flux d'ex\xE9cution de leur programme ou \xE0 identifier\
-  \ les probl\xE8mes."
+summary: "En Go, vous pouvez utiliser le paquet standard `fmt` pour imprimer les sorties\
+  \ de d\xE9bogage dans la console."
 title: "Impression de sortie de d\xE9bogage"
 weight: 33
 ---

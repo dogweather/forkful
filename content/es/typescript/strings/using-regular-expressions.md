@@ -2,12 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:31.146428-07:00
-description: "Las expresiones regulares, o regex, son una herramienta poderosa para\
-  \ coincidencia de patrones y b\xFAsqueda en programaci\xF3n. Los programadores utilizan\u2026"
+description: "C\xF3mo hacerlo: Saltemos a TypeScript y veamos c\xF3mo se utiliza regex\
+  \ para tareas comunes."
 lastmod: '2024-03-13T22:44:58.789523-06:00'
 model: gpt-4-0125-preview
-summary: "Las expresiones regulares, o regex, son una herramienta poderosa para coincidencia\
-  \ de patrones y b\xFAsqueda en programaci\xF3n."
+summary: "Saltemos a TypeScript y veamos c\xF3mo se utiliza regex para tareas comunes."
 title: Usando expresiones regulares
 weight: 11
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:09.011324-07:00
-description: "Testien kirjoittaminen Clojurella, kuten muillakin ohjelmointikielill\xE4\
-  , sis\xE4lt\xE4\xE4 omistautuneen koodin luomisen p\xE4\xE4koodikannan toimivuuden\
-  \ varmistamiseksi.\u2026"
+description: "Kuinka: Clojure, hy\xF6dynt\xE4en JVM:\xE4\xE4, tukee erilaisia testauskehyksi\xE4\
+  . Kuitenkin yleisesti k\xE4ytetty sis\xE4\xE4nrakennettu kirjasto on `clojure.test`.\
+  \ T\xE4ss\xE4 on\u2026"
 lastmod: '2024-03-13T22:44:56.187884-06:00'
 model: gpt-4-0125-preview
-summary: "Testien kirjoittaminen Clojurella, kuten muillakin ohjelmointikielill\xE4\
-  , sis\xE4lt\xE4\xE4 omistautuneen koodin luomisen p\xE4\xE4koodikannan toimivuuden\
-  \ varmistamiseksi."
+summary: "Clojure, hy\xF6dynt\xE4en JVM:\xE4\xE4, tukee erilaisia testauskehyksi\xE4\
+  ."
 title: Testien kirjoittaminen
 weight: 36
 ---

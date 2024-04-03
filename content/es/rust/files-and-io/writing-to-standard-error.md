@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:26.755889-07:00
-description: "Escribir en el error est\xE1ndar (stderr) en Rust consiste en dirigir\
-  \ mensajes de error y diagn\xF3sticos a la consola por separado de la salida est\xE1\
-  ndar\u2026"
+description: "C\xF3mo hacerlo: Rust proporciona una manera sencilla de escribir en\
+  \ stderr utilizando la macro `eprintln!`, similar a c\xF3mo `println!` se usa para\
+  \ stdout.\u2026"
 lastmod: '2024-03-13T22:44:58.862868-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir en el error est\xE1ndar (stderr) en Rust consiste en dirigir mensajes\
-  \ de error y diagn\xF3sticos a la consola por separado de la salida est\xE1ndar\
-  \ (stdout)."
+summary: "Rust proporciona una manera sencilla de escribir en stderr utilizando la\
+  \ macro `eprintln!`, similar a c\xF3mo `println!` se usa para stdout."
 title: "Escribiendo en el error est\xE1ndar"
 weight: 25
 ---

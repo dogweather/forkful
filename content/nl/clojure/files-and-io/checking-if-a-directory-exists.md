@@ -2,13 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:35.738580-07:00
-description: "Controleren of een directory bestaat betekent bevestigen of een pad\
-  \ naar een directory op je bestandssysteem wijst. Programmeurs doen dit om fouten\
-  \ te\u2026"
+description: "Hoe: Gebruik `clojure.java.io/file` om een File-object te cre\xEBren\
+  \ en `.exists` om te controleren of het bestaat. De `isDirectory` methode bevestigt\
+  \ of het\u2026"
 lastmod: '2024-03-13T22:44:50.434639-06:00'
 model: gpt-4-0125-preview
-summary: Controleren of een directory bestaat betekent bevestigen of een pad naar
-  een directory op je bestandssysteem wijst.
+summary: "Gebruik `clojure.java.io/file` om een File-object te cre\xEBren en `.exists`\
+  \ om te controleren of het bestaat."
 title: Controleren of een directory bestaat
 weight: 20
 ---

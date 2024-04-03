@@ -2,11 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:55.267511-07:00
-description: "TOML staat voor Tom's Obvious, Minimal Language. Het is een gegevensserialisatieformaat\
-  \ dat wordt gebruikt voor configuratiebestanden. Programmeurs\u2026"
+description: 'Hoe te: Je hebt een TOML-verwerkingsbibliotheek nodig. Ik raad `toml4j`
+  aan. Voeg dit toe aan je project als volgt.'
 lastmod: '2024-03-13T22:44:50.705794-06:00'
 model: gpt-4-0125-preview
-summary: TOML staat voor Tom's Obvious, Minimal Language.
+summary: Je hebt een TOML-verwerkingsbibliotheek nodig.
 title: Werken met TOML
 weight: 39
 ---

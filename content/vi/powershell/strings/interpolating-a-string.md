@@ -2,16 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:25.547212-07:00
-description: "N\u1ED9i suy chu\u1ED7i cho ph\xE9p ch\xE8n gi\xE1 tr\u1ECB v\xE0o m\u1ED9\
-  t m\u1EABu chu\u1ED7i gi\u1ED1ng nh\u01B0 t\u1EEBng m\u1EA3nh gh\xE9p c\u1EE7a m\u1ED9\
-  t c\xE2u \u0111\u1ED1, khi\u1EBFn chu\u1ED7i tr\u1EDF n\xEAn \u0111\u1ED9ng v\xE0\
-  \ m\xE3 s\u1EA1ch h\u01A1n. L\u1EADp tr\xECnh vi\xEAn s\u1EED\u2026"
+description: "L\xE0m Th\u1EBF N\xE0o: Trong PowerShell, b\u1EA1n n\u1ED9i suy b\u1EB1\
+  ng c\xE1ch s\u1EED d\u1EE5ng chu\u1ED7i trong d\u1EA5u ngo\u1EB7c k\xE9p v\xE0 k\xFD\
+  \ t\u1EF1 `$` tr\u01B0\u1EDBc t\xEAn bi\u1EBFn. \u0110\xF3ng g\xF3i bi\u1EC3u th\u1EE9\
+  c trong `$()` \u0111\u1EC3 \u0111\xE1nh\u2026"
 lastmod: '2024-03-13T22:44:36.914783-06:00'
 model: gpt-4-0125-preview
-summary: "N\u1ED9i suy chu\u1ED7i cho ph\xE9p ch\xE8n gi\xE1 tr\u1ECB v\xE0o m\u1ED9\
-  t m\u1EABu chu\u1ED7i gi\u1ED1ng nh\u01B0 t\u1EEBng m\u1EA3nh gh\xE9p c\u1EE7a m\u1ED9\
-  t c\xE2u \u0111\u1ED1, khi\u1EBFn chu\u1ED7i tr\u1EDF n\xEAn \u0111\u1ED9ng v\xE0\
-  \ m\xE3 s\u1EA1ch h\u01A1n."
+summary: "Trong PowerShell, b\u1EA1n n\u1ED9i suy b\u1EB1ng c\xE1ch s\u1EED d\u1EE5\
+  ng chu\u1ED7i trong d\u1EA5u ngo\u1EB7c k\xE9p v\xE0 k\xFD t\u1EF1 `$` tr\u01B0\u1EDB\
+  c t\xEAn bi\u1EBFn."
 title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
 weight: 8
 ---

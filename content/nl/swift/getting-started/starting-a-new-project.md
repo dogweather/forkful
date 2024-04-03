@@ -2,13 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:00.132208-07:00
-description: "Een nieuw project starten is gewoon je mouwen oprollen en de initi\xEB\
-  le omgeving en bestanden voor je codeeravontuur opzetten. Programmeurs beginnen\
-  \ nieuwe\u2026"
+description: 'Hoe te: .'
 lastmod: '2024-03-13T22:44:51.157561-06:00'
 model: gpt-4-0125-preview
-summary: "Een nieuw project starten is gewoon je mouwen oprollen en de initi\xEBle\
-  \ omgeving en bestanden voor je codeeravontuur opzetten."
+summary: .
 title: Een nieuw project starten
 weight: 1
 ---

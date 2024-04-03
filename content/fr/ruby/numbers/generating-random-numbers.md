@@ -1,13 +1,11 @@
 ---
 date: 2024-01-27 20:34:51.392934-07:00
-description: "G\xE9n\xE9rer des nombres al\xE9atoires en Ruby implique la cr\xE9ation\
-  \ de nombres qui ne peuvent pas \xEAtre pr\xE9dits logiquement, essentiel pour des\
-  \ sc\xE9narios tels que\u2026"
+description: "Comment faire : Ruby fournit plusieurs m\xE9thodes pour g\xE9n\xE9rer\
+  \ des nombres al\xE9atoires, principalement via la classe `Random`. #."
 lastmod: '2024-03-13T22:44:58.413392-06:00'
 model: gpt-4-0125-preview
-summary: "G\xE9n\xE9rer des nombres al\xE9atoires en Ruby implique la cr\xE9ation\
-  \ de nombres qui ne peuvent pas \xEAtre pr\xE9dits logiquement, essentiel pour des\
-  \ sc\xE9narios tels que les simulations, la cryptographie, et les jeux."
+summary: "Ruby fournit plusieurs m\xE9thodes pour g\xE9n\xE9rer des nombres al\xE9\
+  atoires, principalement via la classe `Random`."
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---

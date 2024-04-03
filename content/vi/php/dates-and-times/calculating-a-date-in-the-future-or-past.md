@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:05.941217-07:00
-description: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1EE9\
-  \ c\xF3 ngh\u0129a l\xE0 t\xECm ki\u1EBFm m\u1ED9t ng\xE0y tr\u01B0\u1EDBc ho\u1EB7\
-  c sau m\u1ED9t th\u1EDDi \u0111i\u1EC3m c\u1EE5 th\u1EC3. C\xE1c l\u1EADp tr\xEC\
-  nh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y cho c\xE1c\u2026"
+description: "L\xE0m Th\u1EBF N\xE0o: PHP l\xE0m cho ph\xE9p t\xEDnh ng\xE0y tr\u1EDF\
+  \ n\xEAn \u0111\u01A1n gi\u1EA3n v\u1EDBi `DateTime` v\xE0 `DateInterval`. H\xE3\
+  y xem x\xE9t \u0111i\u1EC1u n\xE0y."
 lastmod: '2024-03-13T22:44:36.784545-06:00'
 model: gpt-4-0125-preview
-summary: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1EE9\
-  \ c\xF3 ngh\u0129a l\xE0 t\xECm ki\u1EBFm m\u1ED9t ng\xE0y tr\u01B0\u1EDBc ho\u1EB7\
-  c sau m\u1ED9t th\u1EDDi \u0111i\u1EC3m c\u1EE5 th\u1EC3."
+summary: "PHP l\xE0m cho ph\xE9p t\xEDnh ng\xE0y tr\u1EDF n\xEAn \u0111\u01A1n gi\u1EA3\
+  n v\u1EDBi `DateTime` v\xE0 `DateInterval`."
 title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1EE9"
 weight: 26
 ---

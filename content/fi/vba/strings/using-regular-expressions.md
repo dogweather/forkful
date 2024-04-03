@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:53.760117-07:00
-description: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) Visual Basic for Applicationsissa\
-  \ (VBA) tarjoavat voimakkaan tavan etsi\xE4, vastata ja manipuloida merkkijonoja.\
-  \ Ohjelmoijat\u2026"
+description: "Kuinka: Jotta voisit k\xE4ytt\xE4\xE4 s\xE4\xE4nn\xF6llisi\xE4 lausekkeita\
+  \ VBAssa, sinun t\xE4ytyy ensin ottaa k\xE4ytt\xF6\xF6n Microsoft VBScript Regular\
+  \ Expressions -kirjasto. VBA-\u2026"
 lastmod: '2024-03-13T22:44:56.389677-06:00'
 model: gpt-4-0125-preview
-summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) Visual Basic for Applicationsissa\
-  \ (VBA) tarjoavat voimakkaan tavan etsi\xE4, vastata ja manipuloida merkkijonoja."
+summary: "Jotta voisit k\xE4ytt\xE4\xE4 s\xE4\xE4nn\xF6llisi\xE4 lausekkeita VBAssa,\
+  \ sinun t\xE4ytyy ensin ottaa k\xE4ytt\xF6\xF6n Microsoft VBScript Regular Expressions\
+  \ -kirjasto."
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---

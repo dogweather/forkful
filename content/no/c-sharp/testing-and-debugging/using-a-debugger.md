@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:48:24.443494-07:00
-description: "Forestil deg at du har et lite program som ikke oppf\xF8rer seg riktig:\
-  \ ```C# static void Main() { int resultat = Sum(1, 2); Console.WriteLine(resultat);\
-  \ }\u2026"
+description: "Hvordan: Forestil deg at du har et lite program som ikke oppf\xF8rer\
+  \ seg riktig."
 lastmod: '2024-03-13T22:44:40.800345-06:00'
 model: gpt-4-0125-preview
-summary: "Forestil deg at du har et lite program som ikke oppf\xF8rer seg riktig:\n\
-  \n```C#\nstatic void Main()\n{\n    int resultat = Sum(1, 2);\n    Console."
+summary: "Forestil deg at du har et lite program som ikke oppf\xF8rer seg riktig."
 title: "\xC5 bruke en feils\xF8ker"
 weight: 35
 ---

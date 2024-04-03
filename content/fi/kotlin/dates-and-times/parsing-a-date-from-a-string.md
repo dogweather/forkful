@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:33.369339-07:00
-description: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta tarkoittaa\
-  \ tekstist\xE4 Date-objektiksi muuntamista. T\xE4m\xE4 toiminto on olennainen sovelluksille,\
-  \ jotka k\xE4sittelev\xE4t\u2026"
+description: "Kuinka: Kotlin tukee p\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4mist\xE4\
+  \ `java.time`-paketin avulla, joka otettiin k\xE4ytt\xF6\xF6n Java 8:ssa. T\xE4\
+  ss\xE4 on yksinkertainen l\xE4hestymistapa\u2026"
 lastmod: '2024-03-13T22:44:56.540333-06:00'
 model: gpt-4-0125-preview
-summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta tarkoittaa tekstist\xE4\
-  \ Date-objektiksi muuntamista."
+summary: "Kotlin tukee p\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4mist\xE4 `java.time`-paketin\
+  \ avulla, joka otettiin k\xE4ytt\xF6\xF6n Java 8:ssa."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
 weight: 30
 ---

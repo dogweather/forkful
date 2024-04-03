@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:11.647091-07:00
-description: "Praca z JSON (JavaScript Object Notation) w Clojure polega na parsowaniu\
-  \ ci\u0105g\xF3w JSON do struktur danych Clojure (mapy, wektory) i odwrotnie. To\
-  \ zadanie\u2026"
+description: "Jak to zrobi\u0107: Clojure nie zawiera wbudowanych funkcji do pracy\
+  \ z JSON, wi\u0119c typowo u\u017Cywa si\u0119 bibliotek firm trzecich. `cheshire`\
+  \ i `jsonista` to\u2026"
 lastmod: '2024-03-13T22:44:35.018632-06:00'
 model: gpt-4-0125-preview
-summary: "Praca z JSON (JavaScript Object Notation) w Clojure polega na parsowaniu\
-  \ ci\u0105g\xF3w JSON do struktur danych Clojure (mapy, wektory) i odwrotnie."
+summary: "Clojure nie zawiera wbudowanych funkcji do pracy z JSON, wi\u0119c typowo\
+  \ u\u017Cywa si\u0119 bibliotek firm trzecich."
 title: Praca z JSON
 weight: 38
 ---

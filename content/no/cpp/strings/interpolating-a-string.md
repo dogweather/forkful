@@ -1,10 +1,11 @@
 ---
 date: 2024-01-20 17:50:49.396969-07:00
-description: "Strenginterpolasjon betyr \xE5 stikke variabler eller uttrykk inn i\
-  \ en streng. Det gj\xF8r koden mer lesbar og lar oss lett bygge dynamiske meldinger."
+description: "How to: I C++20 har vi `std::format`, som lar oss formatere og interpolere\
+  \ strenger p\xE5 en lignende m\xE5te som i Python."
 lastmod: '2024-03-13T22:44:41.085625-06:00'
 model: gpt-4-1106-preview
-summary: "Strenginterpolasjon betyr \xE5 stikke variabler eller uttrykk inn i en streng."
+summary: "I C++20 har vi `std::format`, som lar oss formatere og interpolere strenger\
+  \ p\xE5 en lignende m\xE5te som i Python."
 title: Interpolering av en streng
 weight: 8
 ---

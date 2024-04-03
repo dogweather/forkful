@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 04:15:21.513685-07:00
-description: "Um REPL (Read-Eval-Print Loop, ou La\xE7o de Leitura-Avalia\xE7\xE3\
-  o-Impress\xE3o) \xE9 um shell interativo que processa entradas individuais do usu\xE1\
-  rio, executa c\xF3digo\u2026"
+description: "Como fazer: Iniciar um REPL em Java \xE9 simples com a ferramenta `jshell`\
+  \ introduzida no Java 9. Veja como colocar as m\xE3os nele e iniciar uma sess\xE3\
+  o b\xE1sica."
 lastmod: '2024-03-13T22:44:46.457691-06:00'
 model: gpt-4-0125-preview
-summary: "Um REPL (Read-Eval-Print Loop, ou La\xE7o de Leitura-Avalia\xE7\xE3o-Impress\xE3\
-  o) \xE9 um shell interativo que processa entradas individuais do usu\xE1rio, executa\
-  \ c\xF3digo e retorna o resultado."
+summary: "Iniciar um REPL em Java \xE9 simples com a ferramenta `jshell` introduzida\
+  \ no Java 9."
 title: Usando um shell interativo (REPL)
 weight: 34
 ---

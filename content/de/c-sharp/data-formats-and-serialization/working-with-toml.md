@@ -1,13 +1,10 @@
 ---
 date: 2024-01-26 04:20:04.751331-07:00
-description: "TOML ist ein Akronym f\xFCr Toms Offensichtliche, Minimale Sprache,\
-  \ ein Konfigurationsdateiformat, das aufgrund seiner klaren Semantik leicht zu lesen\
-  \ ist.\u2026"
+description: 'Wie geht das: Zuerst installiere einen TOML-Parser wie `Tomlyn`. Benutze
+  deinen Paketmanager.'
 lastmod: '2024-03-13T22:44:53.912494-06:00'
 model: gpt-4-0125-preview
-summary: "TOML ist ein Akronym f\xFCr Toms Offensichtliche, Minimale Sprache, ein\
-  \ Konfigurationsdateiformat, das aufgrund seiner klaren Semantik leicht zu lesen\
-  \ ist."
+summary: Zuerst installiere einen TOML-Parser wie `Tomlyn`.
 title: Arbeiten mit TOML
 weight: 39
 ---

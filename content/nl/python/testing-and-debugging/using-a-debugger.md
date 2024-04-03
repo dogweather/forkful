@@ -2,8 +2,8 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:44.760902-07:00
-description: "Laten we het gebruik van `pdb`, Python's ingebouwde debugger, uiteenzetten.\
-  \ Stel je een bestand voor, `buggy.py`, met een stiekeme bug: ```Python def\u2026"
+description: 'Hoe: Laten we het gebruik van `pdb`, Python''s ingebouwde debugger,
+  uiteenzetten. Stel je een bestand voor, `buggy.py`, met een stiekeme bug.'
 lastmod: '2024-03-13T22:44:50.381209-06:00'
 model: gpt-4-0125-preview
 summary: Laten we het gebruik van `pdb`, Python's ingebouwde debugger, uiteenzetten.

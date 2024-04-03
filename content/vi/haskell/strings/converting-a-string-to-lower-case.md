@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:13.790843-07:00
-description: "Vi\u1EC7c chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF\
-  \ th\u01B0\u1EDDng bao g\u1ED3m vi\u1EC7c bi\u1EBFn \u0111\u1ED5i t\u1EA5t c\u1EA3\
-  \ c\xE1c ch\u1EEF c\xE1i trong v\u0103n b\u1EA3n th\xE0nh d\u1EA1ng ch\u1EEF th\u01B0\
-  \u1EDDng c\u1EE7a ch\xFAng. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Haskell s\u1EED d\u1EE5ng module `Data.Char`\
+  \ \u0111\u1EC3 thao t\xE1c v\u1EDBi c\xE1c k\xFD t\u1EF1. H\xE0m `toLower` c\u1EE5\
+  \ th\u1EC3 l\xE0m thay \u0111\u1ED5i m\u1ED9t k\xFD t\u1EF1 \u0111\u01A1n l\u1EBB\
+  \ th\xE0nh ch\u1EEF th\u01B0\u1EDDng. B\u1EA1n s\u1EBD\u2026"
 lastmod: '2024-03-13T22:44:36.695533-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF\
-  \ th\u01B0\u1EDDng bao g\u1ED3m vi\u1EC7c bi\u1EBFn \u0111\u1ED5i t\u1EA5t c\u1EA3\
-  \ c\xE1c ch\u1EEF c\xE1i trong v\u0103n b\u1EA3n th\xE0nh d\u1EA1ng ch\u1EEF th\u01B0\
-  \u1EDDng c\u1EE7a ch\xFAng."
+summary: "Haskell s\u1EED d\u1EE5ng module `Data.Char` \u0111\u1EC3 thao t\xE1c v\u1EDB\
+  i c\xE1c k\xFD t\u1EF1."
 title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
 weight: 4
 ---

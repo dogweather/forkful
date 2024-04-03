@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:33:27.267805-07:00
-description: "Trabalhar com XML envolve analisar e manipular documentos XML usando\
-  \ c\xF3digo. Programadores fazem isso para ler, escrever e modificar dados em um\
-  \ formato\u2026"
+description: "Como: Lua n\xE3o inclui an\xE1lise de XML nativa, mas existem bibliotecas\
+  \ como LuaXML e xml2lua que realizam o trabalho. Aqui est\xE1 uma r\xE1pida olhada\
+  \ na an\xE1lise\u2026"
 lastmod: '2024-03-13T22:44:46.733243-06:00'
 model: gpt-4-0125-preview
-summary: "Trabalhar com XML envolve analisar e manipular documentos XML usando c\xF3\
-  digo."
+summary: "Lua n\xE3o inclui an\xE1lise de XML nativa, mas existem bibliotecas como\
+  \ LuaXML e xml2lua que realizam o trabalho."
 title: Trabalhando com XML
 weight: 40
 ---

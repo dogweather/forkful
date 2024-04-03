@@ -1,12 +1,11 @@
 ---
 date: 2024-02-01 21:12:12.931066-07:00
-description: "Refactoring in the programming lexicon refers to the process of restructuring\
-  \ existing computer code\u2014changing the factoring without changing its external\u2026"
+description: "How to: In Google Apps Script, a common scenario that benefits from\
+  \ refactoring is the simplification of cumbersome scripts that interact with Google\u2026"
 lastmod: '2024-03-13T22:44:59.677436-06:00'
 model: gpt-4-0125-preview
-summary: "Refactoring in the programming lexicon refers to the process of restructuring\
-  \ existing computer code\u2014changing the factoring without changing its external\
-  \ behavior\u2014to improve non-functional attributes."
+summary: In Google Apps Script, a common scenario that benefits from refactoring is
+  the simplification of cumbersome scripts that interact with Google Sheets or Docs.
 title: Refactoring
 weight: 19
 ---

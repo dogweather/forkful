@@ -4,12 +4,11 @@ changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 - "2024-01-29, dogweather, nochmal \xFCberpr\xFCft"
 date: 2024-01-28 21:23:41.871760-07:00
-description: "String-Interpolation ist die Methode, Ausdr\xFCcke in String-Literale\
-  \ einzubetten. Programmierer verwenden sie, um dynamisch Werte in Strings einzuf\xFC\
-  gen, was\u2026"
+description: "Wie geht das: In Python 3.6 und h\xF6her k\xF6nnen Sie Strings mit f-Strings\
+  \ interpolieren. So geht's."
 lastmod: '2024-03-13T22:44:53.364403-06:00'
 model: gpt-4-0125-preview
-summary: "String-Interpolation ist die Methode, Ausdr\xFCcke in String-Literale einzubetten."
+summary: "In Python 3.6 und h\xF6her k\xF6nnen Sie Strings mit f-Strings interpolieren."
 title: Interpolation eines Strings
 weight: 8
 ---

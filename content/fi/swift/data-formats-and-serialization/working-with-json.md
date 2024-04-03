@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:14.636963-07:00
-description: "JSON:n k\xE4ytt\xE4minen Swiftiss\xE4 tarkoittaa kevyen datanvaihtoformaatin\
-  \ k\xE4sittely\xE4. Ohjelmoijat k\xE4ytt\xE4v\xE4t JSONia datan siirt\xE4miseen\
-  \ palvelimen ja web-\u2026"
+description: "Kuinka: Swift tekee JSONin j\xE4sent\xE4misest\xE4 suoraviivaista `Codable`-protokollan\
+  \ avulla. T\xE4ss\xE4 on, kuinka dekoodaat JSONin Swift-objektiksi."
 lastmod: '2024-03-13T22:44:56.928421-06:00'
 model: gpt-4-0125-preview
-summary: "JSON:n k\xE4ytt\xE4minen Swiftiss\xE4 tarkoittaa kevyen datanvaihtoformaatin\
-  \ k\xE4sittely\xE4."
+summary: "Swift tekee JSONin j\xE4sent\xE4misest\xE4 suoraviivaista `Codable`-protokollan\
+  \ avulla."
 title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---

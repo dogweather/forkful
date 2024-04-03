@@ -1,10 +1,10 @@
 ---
 date: 2024-01-25 02:59:42.587583-07:00
-description: "Rounding numbers is trimming a number to a specific precision. Programmers\
-  \ do it to control numerical output for readability, display purposes, or when\u2026"
+description: 'How to: Rounding in TypeScript can be done using several methods. Here''s
+  a quick run-through.'
 lastmod: '2024-03-13T22:44:59.854041-06:00'
 model: gpt-4-1106-preview
-summary: Rounding numbers is trimming a number to a specific precision.
+summary: Rounding in TypeScript can be done using several methods.
 title: Rounding numbers
 weight: 13
 ---

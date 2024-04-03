@@ -1,8 +1,8 @@
 ---
 date: 2024-01-26 04:10:21.316599-07:00
-description: "Rust wspiera r\xF3\u017Cne debugery, ale popularnym jest `gdb` dla GNU/Linuxa\
-  \ lub `lldb` dla macOS. Mo\u017Cna tak\u017Ce u\u017Cy\u0107 `rust-gdb` lub `rust-lldb`,\
-  \ kt\xF3re s\u0105\u2026"
+description: "Jak to zrobi\u0107: Rust wspiera r\xF3\u017Cne debugery, ale popularnym\
+  \ jest `gdb` dla GNU/Linuxa lub `lldb` dla macOS. Mo\u017Cna tak\u017Ce u\u017C\
+  y\u0107 `rust-gdb` lub `rust-lldb`,\u2026"
 lastmod: '2024-03-13T22:44:35.189496-06:00'
 model: gpt-4-0125-preview
 summary: "Rust wspiera r\xF3\u017Cne debugery, ale popularnym jest `gdb` dla GNU/Linuxa\

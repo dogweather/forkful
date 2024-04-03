@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 17:59:17.918755-07:00
-description: HTTP-Anfragen sind der Weg, wie deine Anwendung mit dem Web spricht.
-  Programmierer nutzen sie, um Daten zu holen, zu sendeln, und mit APIs zu interagieren.
+description: 'How to: Clojure macht HTTP-Anfragen einfach mit der `clj-http`bibliothek.
+  Installation: Leinigen `project.clj`.'
 lastmod: '2024-03-13T22:44:53.416629-06:00'
 model: gpt-4-1106-preview
-summary: HTTP-Anfragen sind der Weg, wie deine Anwendung mit dem Web spricht.
+summary: Clojure macht HTTP-Anfragen einfach mit der `clj-http`bibliothek.
 title: Einen HTTP-Request senden
 weight: 44
 ---

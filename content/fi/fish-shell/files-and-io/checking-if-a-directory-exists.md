@@ -2,15 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:18.852533-07:00
-description: "Hakemiston olemassaolon tarkistaminen Fish Shelliss\xE4 mahdollistaa\
-  \ skriptien tehd\xE4 p\xE4\xE4t\xF6ksi\xE4 perustuen hakemistorakenteiden l\xE4\
-  sn\xE4oloon tai puuttumiseen,\u2026"
+description: "Miten: Fish Shell k\xE4ytt\xE4\xE4 `test`-komentoa tarkistaakseen tiedostotyypit\
+  \ ja -ominaisuudet, mukaan lukien onko kohde hakemisto. T\xE4ss\xE4 on perusmalli\u2026"
 lastmod: '2024-03-13T22:44:57.009464-06:00'
 model: gpt-4-0125-preview
-summary: "Hakemiston olemassaolon tarkistaminen Fish Shelliss\xE4 mahdollistaa skriptien\
-  \ tehd\xE4 p\xE4\xE4t\xF6ksi\xE4 perustuen hakemistorakenteiden l\xE4sn\xE4oloon\
-  \ tai puuttumiseen, mahdollistaen teht\xE4vi\xE4 kuten ehdolliset tiedosto-operaatiot,\
-  \ lokitiedot tai ymp\xE4rist\xF6n asetukset."
+summary: "Fish Shell k\xE4ytt\xE4\xE4 `test`-komentoa tarkistaakseen tiedostotyypit\
+  \ ja -ominaisuudet, mukaan lukien onko kohde hakemisto."
 title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:35.103944-07:00
-description: "\xC5 lese en tekstfil i Visual Basic for Applications (VBA) inneb\xE6\
-  rer \xE5 programmere tilgang og ekstrahering av innholdet i en tekstfil fra innenfor\
-  \ en\u2026"
+description: "Hvordan: Den enkleste m\xE5ten \xE5 lese en tekstfil i VBA p\xE5 er\
+  \ ved \xE5 bruke `Open`-setningen i kombinasjon med funksjonene `Input` eller `Line\
+  \ Input`. Slik kan\u2026"
 lastmod: '2024-03-13T22:44:40.640314-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 lese en tekstfil i Visual Basic for Applications (VBA) inneb\xE6rer\
-  \ \xE5 programmere tilgang og ekstrahering av innholdet i en tekstfil fra innenfor\
-  \ en Office-applikasjon."
+summary: "Den enkleste m\xE5ten \xE5 lese en tekstfil i VBA p\xE5 er ved \xE5 bruke\
+  \ `Open`-setningen i kombinasjon med funksjonene `Input` eller `Line Input`."
 title: Lese en tekstfil
 weight: 22
 ---

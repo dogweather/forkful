@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 03:37:46.189108-07:00
-description: "Rimuovere le virgolette da una stringa comporta l'eliminazione dei segni\
-  \ di citazione che racchiudono la stringa. I programmatori spesso desiderano farlo\u2026"
+description: 'Come fare: Bash offre diversi modi per rimuovere le virgolette dalle
+  stringhe. Ecco alcuni esempi rapidi.'
 lastmod: '2024-03-13T22:44:43.586464-06:00'
 model: gpt-4-0125-preview
-summary: Rimuovere le virgolette da una stringa comporta l'eliminazione dei segni
-  di citazione che racchiudono la stringa.
+summary: Bash offre diversi modi per rimuovere le virgolette dalle stringhe.
 title: Rimuovere le virgolette da una stringa
 weight: 9
 ---

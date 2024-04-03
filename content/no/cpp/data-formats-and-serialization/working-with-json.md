@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:54.271567-07:00
-description: "JSON (JavaScript Object Notation) er et lettvektsformat for lagring\
-  \ og transport av data, noe som gj\xF8r det til et utmerket medium for datautveksling\u2026"
+description: "Hvordan: I C++ er det ingen innebygd st\xF8tte for JSON, men tredjepartsbiblioteker\
+  \ som nlohmann/json gj\xF8r det enkelt. Slik bruker du det for grunnleggende\u2026"
 lastmod: '2024-03-13T22:44:41.121673-06:00'
 model: gpt-4-0125-preview
-summary: "JSON (JavaScript Object Notation) er et lettvektsformat for lagring og transport\
-  \ av data, noe som gj\xF8r det til et utmerket medium for datautveksling mellom\
-  \ servere og webapplikasjoner."
+summary: "I C++ er det ingen innebygd st\xF8tte for JSON, men tredjepartsbiblioteker\
+  \ som nlohmann/json gj\xF8r det enkelt."
 title: Arbeider med JSON
 weight: 38
 ---

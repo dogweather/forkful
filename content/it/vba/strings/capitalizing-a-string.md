@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:30.516454-07:00
-description: "Capitalizzare una stringa in Visual Basic for Applications (VBA) significa\
-  \ convertire il primo carattere di ogni parola in una stringa in maiuscolo,\u2026"
+description: "Come fare: VBA non dispone di una funzione integrata specifica per capitalizzare\
+  \ ogni parola in una stringa, come fanno alcuni altri linguaggi di\u2026"
 lastmod: '2024-03-13T22:44:43.243813-06:00'
 model: gpt-4-0125-preview
-summary: Capitalizzare una stringa in Visual Basic for Applications (VBA) significa
-  convertire il primo carattere di ogni parola in una stringa in maiuscolo, assicurandosi
-  che il resto sia in minuscolo.
+summary: VBA non dispone di una funzione integrata specifica per capitalizzare ogni
+  parola in una stringa, come fanno alcuni altri linguaggi di programmazione.
 title: Mettere in Maiuscolo una Stringa
 weight: 2
 ---

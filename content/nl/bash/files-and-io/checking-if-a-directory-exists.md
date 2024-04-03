@@ -2,14 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:36.294188-07:00
-description: "Controleren of een directory bestaat is belangrijk om zeker te weten\
-  \ dat een map er is voordat je probeert er iets mee te doen, zoals bestanden lezen\
-  \ of\u2026"
+description: 'Hoe: Zo controleer je of een directory bestaat in Bash.'
 lastmod: '2024-03-13T22:44:50.998161-06:00'
 model: gpt-4-0125-preview
-summary: Controleren of een directory bestaat is belangrijk om zeker te weten dat
-  een map er is voordat je probeert er iets mee te doen, zoals bestanden lezen of
-  nieuwe opslaan.
+summary: Zo controleer je of een directory bestaat in Bash.
 title: Controleren of een directory bestaat
 weight: 20
 ---

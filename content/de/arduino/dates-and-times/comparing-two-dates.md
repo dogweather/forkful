@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:32:16.945534-07:00
-description: "Daten zu vergleichen bedeutet, zwei Zeitpunkte miteinander in Relation\
-  \ zu setzen, um herauszufinden, welches Datum fr\xFCher oder sp\xE4ter ist. Programmierer\u2026"
+description: Wie geht das? .
 lastmod: '2024-03-13T22:44:54.155756-06:00'
 model: gpt-4-1106-preview
-summary: "Daten zu vergleichen bedeutet, zwei Zeitpunkte miteinander in Relation zu\
-  \ setzen, um herauszufinden, welches Datum fr\xFCher oder sp\xE4ter ist."
+summary: .
 title: Vergleich von zwei Daten
 weight: 27
 ---

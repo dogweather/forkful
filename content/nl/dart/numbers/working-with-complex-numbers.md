@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:44.375687-07:00
-description: "Complexe getallen, bestaande uit een re\xEBel en een imaginair deel\
-  \ (gewoonlijk aangeduid als a + bi), breiden het concept van de dimensieloze getallen\
-  \ uit\u2026"
+description: "Hoe: Dart zelf bevat geen ingebouwde bibliotheek voor complexe getallen,\
+  \ wat noodzaakt tot het implementeren van een aangepaste klasse voor complexe\u2026"
 lastmod: '2024-03-13T22:44:50.498323-06:00'
 model: gpt-4-0125-preview
-summary: "Complexe getallen, bestaande uit een re\xEBel en een imaginair deel (gewoonlijk\
-  \ aangeduid als a + bi), breiden het concept van de dimensieloze getallen uit naar\
-  \ een tweedimensionale ruimte."
+summary: Dart zelf bevat geen ingebouwde bibliotheek voor complexe getallen, wat noodzaakt
+  tot het implementeren van een aangepaste klasse voor complexe getallen of het gebruik
+  van een bibliotheek van derden.
 title: Werken met complexe getallen
 weight: 14
 ---

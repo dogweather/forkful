@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:38.684936-07:00
-description: "In Visual Basic for Applications (VBA), recuperare la data corrente\
-  \ \xE8 un compito comune che permette ai programmatori di lavorare dinamicamente\
-  \ con le\u2026"
+description: "Come fare: Recuperare la data corrente in VBA \xE8 semplice, utilizzando\
+  \ la funzione `Date`, mentre la funzione `Now` fornisce sia la data corrente che\u2026"
 lastmod: '2024-03-13T22:44:43.274636-06:00'
 model: gpt-4-0125-preview
-summary: "In Visual Basic for Applications (VBA), recuperare la data corrente \xE8\
-  \ un compito comune che permette ai programmatori di lavorare dinamicamente con\
-  \ le date nei loro macro o applicazioni."
+summary: "Recuperare la data corrente in VBA \xE8 semplice, utilizzando la funzione\
+  \ `Date`, mentre la funzione `Now` fornisce sia la data corrente che l'ora."
 title: Ottenere la data corrente
 weight: 29
 ---

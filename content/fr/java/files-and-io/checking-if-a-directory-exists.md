@@ -2,15 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:12.395238-07:00
-description: "V\xE9rifier si un r\xE9pertoire existe en Java est une t\xE2che fondamentale\
-  \ qui implique de v\xE9rifier la pr\xE9sence d'un r\xE9pertoire du syst\xE8me de\
-  \ fichiers avant de\u2026"
+description: "Comment faire : En Java, il existe plusieurs mani\xE8res de v\xE9rifier\
+  \ si un r\xE9pertoire existe, principalement en utilisant les classes `java.nio.file.Files`\u2026"
 lastmod: '2024-03-13T22:44:57.657562-06:00'
 model: gpt-4-0125-preview
-summary: "V\xE9rifier si un r\xE9pertoire existe en Java est une t\xE2che fondamentale\
-  \ qui implique de v\xE9rifier la pr\xE9sence d'un r\xE9pertoire du syst\xE8me de\
-  \ fichiers avant de le lire, d'\xE9crire dedans ou d'effectuer toute op\xE9ration\
-  \ n\xE9cessitant son existence."
+summary: "En Java, il existe plusieurs mani\xE8res de v\xE9rifier si un r\xE9pertoire\
+  \ existe, principalement en utilisant les classes `java.nio.file.Files` et `java.io.File`."
 title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---

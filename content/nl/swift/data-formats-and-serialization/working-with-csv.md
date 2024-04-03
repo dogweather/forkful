@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:22.102900-07:00
-description: "CSV (Comma-Separated Values) bestanden zijn eenvoudige tekstbestanden\
-  \ voor het opslaan van tabelgegevens. Programmeurs gebruiken ze omdat ze gemakkelijk\u2026"
+description: 'Hoe: Laten we een CSV-bestand lezen en de inhoud ervan parseren in Swift.
+  Eerst gaan we ervan uit dat we een `data.csv` bestand hebben met deze inhoud.'
 lastmod: '2024-03-13T22:44:51.180351-06:00'
 model: gpt-4-0125-preview
-summary: CSV (Comma-Separated Values) bestanden zijn eenvoudige tekstbestanden voor
-  het opslaan van tabelgegevens.
+summary: Laten we een CSV-bestand lezen en de inhoud ervan parseren in Swift.
 title: Werken met CSV
 weight: 37
 ---

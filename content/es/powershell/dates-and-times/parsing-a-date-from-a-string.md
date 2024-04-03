@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:00.886331-07:00
-description: "Analizar una fecha de una cadena se trata de reconocer y convertir fechas\
-  \ escritas en forma de texto a un tipo de datos de fecha que PowerShell pueda\u2026"
+description: "C\xF3mo hacerlo: PowerShell hace que el an\xE1lisis de fechas desde\
+  \ cadenas sea directo con su cmdlet `Get-Date` y el acelerador de tipo `[datetime]`,\
+  \ que\u2026"
 lastmod: '2024-03-13T22:44:59.301518-06:00'
 model: gpt-4-0125-preview
-summary: Analizar una fecha de una cadena se trata de reconocer y convertir fechas
-  escritas en forma de texto a un tipo de datos de fecha que PowerShell pueda entender
-  y con el que pueda trabajar.
+summary: "PowerShell hace que el an\xE1lisis de fechas desde cadenas sea directo con\
+  \ su cmdlet `Get-Date` y el acelerador de tipo `[datetime]`, que funcionan bien\
+  \ para formatos de fecha est\xE1ndar."
 title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---

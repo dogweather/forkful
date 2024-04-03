@@ -1,11 +1,10 @@
 ---
 date: 2024-01-25 03:00:38.019002-07:00
-description: "Splitting code into functions means carving your code into smaller,\
-  \ reusable chunks. We do it to avoid repetition, make our code readable, and simplify\u2026"
+description: 'How to: Let''s take a common task: calculating the area of a circle.
+  Instead of writing the same formula every time, we encapsulate it into a function.'
 lastmod: '2024-03-13T22:45:00.362749-06:00'
 model: gpt-4-1106-preview
-summary: Splitting code into functions means carving your code into smaller, reusable
-  chunks.
+summary: Let's take a common task.
 title: Organizing code into functions
 weight: 18
 ---

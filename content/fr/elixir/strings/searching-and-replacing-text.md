@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:57:26.684591-07:00
-description: "Chercher et remplacer du texte, c'est update un morceau de texte par\
-  \ un autre. Les devs font \xE7a pour corriger des erreurs, mettre \xE0 jour des\
-  \ donn\xE9es ou\u2026"
+description: "How to (Comment faire ?) Elixir utilise les Regex (expressions r\xE9\
+  guli\xE8res) pour la recherche, avec `String.replace/3` pour le remplacement."
 lastmod: '2024-03-13T22:44:57.311250-06:00'
 model: gpt-4-1106-preview
-summary: Chercher et remplacer du texte, c'est update un morceau de texte par un autre.
+summary: "Elixir utilise les Regex (expressions r\xE9guli\xE8res) pour la recherche,\
+  \ avec `String.replace/3` pour le remplacement."
 title: Recherche et remplacement de texte
 weight: 10
 ---

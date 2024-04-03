@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 17:51:40.447837-07:00
-description: String interpolation lets you plug values into a string. It's handy to
-  avoid messy concatenation and make code more readable.
+description: "How to: (\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\
+  \u0438:) ."
 lastmod: '2024-03-13T22:44:50.199265-06:00'
 model: gpt-4-1106-preview
-summary: String interpolation lets you plug values into a string.
+summary: .
 title: "\u0406\u043D\u0442\u0435\u0440\u043F\u043E\u043B\u044F\u0446\u0456\u044F \u0440\
   \u044F\u0434\u043A\u0456\u0432"
 weight: 8

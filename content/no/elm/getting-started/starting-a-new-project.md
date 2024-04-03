@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 18:03:21.406676-07:00
-description: "Et nytt prosjekt er starten p\xE5 en frisk kodebase, og programmerere\
-  \ starter nye prosjekter for \xE5 realisere unike ideer eller l\xF8se spesifikke\
-  \ problemer. Det\u2026"
+description: "How to: Installer f\xF8rst `elm` p\xE5 systemet ditt. Bruk `elm init`\
+  \ for \xE5 sette opp et nytt prosjekt."
 lastmod: '2024-03-13T22:44:40.709376-06:00'
 model: gpt-4-1106-preview
-summary: "Et nytt prosjekt er starten p\xE5 en frisk kodebase, og programmerere starter\
-  \ nye prosjekter for \xE5 realisere unike ideer eller l\xF8se spesifikke problemer."
+summary: "Installer f\xF8rst `elm` p\xE5 systemet ditt."
 title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---

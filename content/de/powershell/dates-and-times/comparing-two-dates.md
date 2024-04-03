@@ -1,10 +1,11 @@
 ---
 date: 2024-01-20 17:33:56.027406-07:00
-description: "Datum-Vergleiche erlauben uns, zwei Zeitpunkte zu vergleichen. Sie sind\
-  \ wichtig, um Zeitabschnitte zu \xFCberwachen, Abl\xE4ufe zu steuern und Deadlines\u2026"
+description: 'How to: In PowerShell kannst du zwei Datumsobjekte ganz einfach mit
+  Vergleichsoperatoren vergleichen. Hier sind einige Beispiele.'
 lastmod: '2024-03-13T22:44:54.116170-06:00'
 model: gpt-4-1106-preview
-summary: Datum-Vergleiche erlauben uns, zwei Zeitpunkte zu vergleichen.
+summary: In PowerShell kannst du zwei Datumsobjekte ganz einfach mit Vergleichsoperatoren
+  vergleichen.
 title: Vergleich von zwei Daten
 weight: 27
 ---

@@ -2,13 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:22.944482-07:00
-description: "Een tekstbestand schrijven is het proces van het opslaan van gegevens\
-  \ in een bestand in tekstformaat. Programmeurs doen dit om configuraties, logs,\
-  \ code\u2026"
+description: 'Hoe: .'
 lastmod: '2024-03-13T22:44:51.002163-06:00'
 model: gpt-4-0125-preview
-summary: Een tekstbestand schrijven is het proces van het opslaan van gegevens in
-  een bestand in tekstformaat.
+summary: .
 title: Een tekstbestand schrijven
 weight: 24
 ---

@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:37.997085-07:00
-description: "Le espressioni regolari (regex) nella programmazione sono schemi utilizzati\
-  \ per corrispondere combinazioni di caratteri nelle stringhe. In Elm, come in\u2026"
+description: "Come fare: Elm non possiede funzioni regex integrate nella sua libreria\
+  \ di base, richiedendo l'uso di librerie di terze parti per queste operazioni. Una\u2026"
 lastmod: '2024-03-13T22:44:43.340543-06:00'
 model: gpt-4-0125-preview
-summary: Le espressioni regolari (regex) nella programmazione sono schemi utilizzati
-  per corrispondere combinazioni di caratteri nelle stringhe.
+summary: Elm non possiede funzioni regex integrate nella sua libreria di base, richiedendo
+  l'uso di librerie di terze parti per queste operazioni.
 title: Utilizzo delle espressioni regolari
 weight: 11
 ---

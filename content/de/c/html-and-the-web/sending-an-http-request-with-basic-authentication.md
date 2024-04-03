@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:00.064764-07:00
-description: "Das Senden einer HTTP-Anfrage mit Basisauthentifizierung in C erfordert\
-  \ das Erstellen einer HTTP-Anfrage, die einen Autorisierungsheader mit in Base64\u2026"
+description: "Wie man es macht: Um eine HTTP-Anfrage mit Basisauthentifizierung in\
+  \ C zu senden, m\xFCssen wir die libcurl-Bibliothek verwenden, eine beliebte, vielseitige\u2026"
 lastmod: '2024-03-13T22:44:54.352080-06:00'
 model: gpt-4-0125-preview
-summary: "Das Senden einer HTTP-Anfrage mit Basisauthentifizierung in C erfordert\
-  \ das Erstellen einer HTTP-Anfrage, die einen Autorisierungsheader mit in Base64\
-  \ kodierten Benutzerdaten enth\xE4lt."
+summary: "Um eine HTTP-Anfrage mit Basisauthentifizierung in C zu senden, m\xFCssen\
+  \ wir die libcurl-Bibliothek verwenden, eine beliebte, vielseitige und einfach zu\
+  \ bedienende Client-seitige URL-\xDCbertragungsbibliothek."
 title: Eine HTTP-Anfrage mit Basisauthentifizierung senden
 weight: 45
 ---

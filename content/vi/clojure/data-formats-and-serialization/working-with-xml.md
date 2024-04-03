@@ -2,17 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:27.423702-07:00
-description: "XML l\xE0 m\u1ED9t ng\xF4n ng\u1EEF \u0111\xE1nh d\u1EA5u \u0111\u01B0\
-  \u1EE3c thi\u1EBFt k\u1EBF \u0111\u1EC3 m\xE3 h\xF3a t\xE0i li\u1EC7u m\u1ED9t c\xE1\
-  ch c\xF3 th\u1EC3 \u0111\u1ECDc \u0111\u01B0\u1EE3c b\u1EDFi c\u1EA3 con ng\u01B0\
-  \u1EDDi v\xE0 m\xE1y m\xF3c. N\xF3 \u0111\xF3ng m\u1ED9t vai tr\xF2 ch\xEDnh trong\
-  \ c\xE1c\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Clojure cung c\u1EA5p th\u01B0 vi\u1EC7\
+  n `clojure.data.xml` cho vi\u1EC7c ph\xE2n t\xEDch c\xFA ph\xE1p v\xE0 ph\xE1t sinh\
+  \ XML. \u0110\u1EA7u ti\xEAn, h\xE3y ph\xE2n t\xEDch c\xFA ph\xE1p m\u1ED9t s\u1ED1\
+  \ XML."
 lastmod: '2024-03-13T22:44:36.184950-06:00'
 model: gpt-4-0125-preview
-summary: "XML l\xE0 m\u1ED9t ng\xF4n ng\u1EEF \u0111\xE1nh d\u1EA5u \u0111\u01B0\u1EE3\
-  c thi\u1EBFt k\u1EBF \u0111\u1EC3 m\xE3 h\xF3a t\xE0i li\u1EC7u m\u1ED9t c\xE1ch\
-  \ c\xF3 th\u1EC3 \u0111\u1ECDc \u0111\u01B0\u1EE3c b\u1EDFi c\u1EA3 con ng\u01B0\
-  \u1EDDi v\xE0 m\xE1y m\xF3c."
+summary: "Clojure cung c\u1EA5p th\u01B0 vi\u1EC7n `clojure.data.xml` cho vi\u1EC7\
+  c ph\xE2n t\xEDch c\xFA ph\xE1p v\xE0 ph\xE1t sinh XML."
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---

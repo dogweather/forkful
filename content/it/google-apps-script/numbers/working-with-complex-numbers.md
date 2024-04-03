@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:07:39.634245-07:00
-description: "I numeri complessi, rappresentati come una combinazione di unit\xE0\
-  \ reali e immaginarie (ad es., 3 + 4i), sono fondamentali in vari problemi computazionali,\u2026"
+description: "Come fare: Google Apps Script non ha un supporto integrato per i numeri\
+  \ complessi, rendendo necessaria l'implementazione di funzionalit\xE0 personalizzate.\u2026"
 lastmod: '2024-03-13T22:44:42.947935-06:00'
 model: gpt-4-0125-preview
-summary: "I numeri complessi, rappresentati come una combinazione di unit\xE0 reali\
-  \ e immaginarie (ad es."
+summary: "Google Apps Script non ha un supporto integrato per i numeri complessi,\
+  \ rendendo necessaria l'implementazione di funzionalit\xE0 personalizzate."
 title: Lavorare con i numeri complessi
 weight: 14
 ---

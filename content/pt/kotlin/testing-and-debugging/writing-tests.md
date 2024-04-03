@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:08.635411-07:00
-description: "Escrever testes em Kotlin envolve a cria\xE7\xE3o de trechos de c\xF3\
-  digo que validam automaticamente a corre\xE7\xE3o funcional dos seus m\xF3dulos\
-  \ de software, garantindo\u2026"
+description: "Como Fazer: O Kotlin suporta o desenvolvimento guiado por testes com\
+  \ v\xE1rios frameworks, sendo os mais populares o JUnit, o Kotest e o MockK para\
+  \ mock\u2026"
 lastmod: '2024-03-13T22:44:46.545496-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever testes em Kotlin envolve a cria\xE7\xE3o de trechos de c\xF3digo\
-  \ que validam automaticamente a corre\xE7\xE3o funcional dos seus m\xF3dulos de\
-  \ software, garantindo que eles funcionem conforme esperado."
+summary: "O Kotlin suporta o desenvolvimento guiado por testes com v\xE1rios frameworks,\
+  \ sendo os mais populares o JUnit, o Kotest e o MockK para mock (simula\xE7\xE3\
+  o)."
 title: Escrevendo testes
 weight: 36
 ---

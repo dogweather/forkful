@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:59.542366-07:00
-description: "Werken met CSV (Comma-Separated Values) in Arduino stelt je in staat\
-  \ om gegevens als tekst op te slaan en te beheren. Het is goedkoop, eenvoudig en\u2026"
+description: 'Hoe: Hier leest u hoe u sensordata kunt opslaan in een CSV-bestand op
+  een SD-kaart.'
 lastmod: '2024-03-13T22:44:51.094128-06:00'
 model: gpt-4-0125-preview
-summary: Werken met CSV (Comma-Separated Values) in Arduino stelt je in staat om gegevens
-  als tekst op te slaan en te beheren.
+summary: Hier leest u hoe u sensordata kunt opslaan in een CSV-bestand op een SD-kaart.
 title: Werken met CSV
 weight: 37
 ---

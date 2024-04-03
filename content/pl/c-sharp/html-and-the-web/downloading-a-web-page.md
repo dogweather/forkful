@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:43:31.177875-07:00
-description: "Pobieranie strony internetowej to proces zapisywania jej zawarto\u015B\
-  ci na dysku twardym. Programi\u015Bci robi\u0105 to, aby przetworzy\u0107 dane,\
-  \ przeprowadzi\u0107 analiz\u0119\u2026"
+description: "Jak to zrobi\u0107: W C# pobranie strony webowej jest proste. U\u017C\
+  ywamy `HttpClient`, a oto przyk\u0142ad."
 lastmod: '2024-03-13T22:44:35.407235-06:00'
 model: gpt-4-1106-preview
-summary: "Pobieranie strony internetowej to proces zapisywania jej zawarto\u015Bci\
-  \ na dysku twardym."
+summary: W C# pobranie strony webowej jest proste.
 title: Pobieranie strony internetowej
 weight: 42
 ---

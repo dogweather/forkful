@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:50:19.840685-07:00
-description: "Stringinterpolation inneb\xE4r att blanda in variabler i en textstr\xE4\
-  ng. Det g\xF6r kod l\xE4sbar och flexibel \u2013 vi slipper klumpigt plus-tecken\
-  \ (+) f\xF6r att bygga\u2026"
+description: "S\xE5 h\xE4r g\xF6r du: ."
 lastmod: '2024-03-13T22:44:38.195446-06:00'
 model: gpt-4-1106-preview
-summary: "Stringinterpolation inneb\xE4r att blanda in variabler i en textstr\xE4\
-  ng."
+summary: .
 title: "Interpolera en str\xE4ng"
 weight: 8
 ---

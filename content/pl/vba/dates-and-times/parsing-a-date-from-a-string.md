@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:54.739159-07:00
-description: "Parsowanie daty z ci\u0105gu znak\xF3w w Visual Basic for Applications\
-  \ (VBA) polega na konwersji tekstu, kt\xF3ry reprezentuje dat\u0119, na typ danych\
-  \ daty. Programi\u015Bci\u2026"
+description: "Jak to zrobi\u0107: VBA oferuje prosty spos\xF3b na przekszta\u0142\
+  cenie ci\u0105gu znak\xF3w na dat\u0119 za pomoc\u0105 funkcji `CDate` lub funkcji\
+  \ `DateValue`. Jednak kluczowe jest,\u2026"
 lastmod: '2024-03-13T22:44:35.242407-06:00'
 model: gpt-4-0125-preview
-summary: "Parsowanie daty z ci\u0105gu znak\xF3w w Visual Basic for Applications (VBA)\
-  \ polega na konwersji tekstu, kt\xF3ry reprezentuje dat\u0119, na typ danych daty."
+summary: "VBA oferuje prosty spos\xF3b na przekszta\u0142cenie ci\u0105gu znak\xF3\
+  w na dat\u0119 za pomoc\u0105 funkcji `CDate` lub funkcji `DateValue`."
 title: "Analiza sk\u0142adniowa daty z ci\u0105gu znak\xF3w"
 weight: 30
 ---

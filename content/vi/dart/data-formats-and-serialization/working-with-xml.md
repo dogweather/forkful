@@ -2,18 +2,15 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:32.220843-07:00
-description: "Vi\u1EC7c l\xE0m vi\u1EC7c v\u1EDBi XML trong Dart bao g\u1ED3m vi\u1EC7\
-  c ph\xE2n t\xEDch c\xFA ph\xE1p, truy v\u1EA5n v\xE0 ch\u1EC9nh s\u1EEDa c\xE1c\
-  \ t\xE0i li\u1EC7u XML, m\u1ED9t qu\xE1 tr\xECnh r\u1EA5t quan tr\u1ECDng \u0111\
-  \u1ED1i v\u1EDBi c\xE1c \u1EE9ng d\u1EE5ng\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Dart kh\xF4ng bao g\u1ED3m h\u1ED7 tr\u1EE3\
+  \ s\u1EB5n c\xF3 cho vi\u1EC7c x\u1EED l\xFD XML trong th\u01B0 vi\u1EC7n chu\u1EA9\
+  n c\u1EE7a n\xF3, y\xEAu c\u1EA7u s\u1EED d\u1EE5ng c\xE1c g\xF3i ph\u1EA7n m\u1EC1\
+  m c\u1EE7a b\xEAn th\u1EE9 ba. M\u1ED9t g\xF3i ph\u1ED5\u2026"
 lastmod: '2024-03-13T22:44:36.295076-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c l\xE0m vi\u1EC7c v\u1EDBi XML trong Dart bao g\u1ED3m vi\u1EC7\
-  c ph\xE2n t\xEDch c\xFA ph\xE1p, truy v\u1EA5n v\xE0 ch\u1EC9nh s\u1EEDa c\xE1c\
-  \ t\xE0i li\u1EC7u XML, m\u1ED9t qu\xE1 tr\xECnh r\u1EA5t quan tr\u1ECDng \u0111\
-  \u1ED1i v\u1EDBi c\xE1c \u1EE9ng d\u1EE5ng t\u01B0\u01A1ng t\xE1c v\u1EDBi c\xE1\
-  c d\u1ECBch v\u1EE5 web, c\xE1c t\u1EC7p c\u1EA5u h\xECnh ho\u1EB7c c\xE1c h\u1EC7\
-  \ th\u1ED1ng c\u0169."
+summary: "Dart kh\xF4ng bao g\u1ED3m h\u1ED7 tr\u1EE3 s\u1EB5n c\xF3 cho vi\u1EC7\
+  c x\u1EED l\xFD XML trong th\u01B0 vi\u1EC7n chu\u1EA9n c\u1EE7a n\xF3, y\xEAu c\u1EA7\
+  u s\u1EED d\u1EE5ng c\xE1c g\xF3i ph\u1EA7n m\u1EC1m c\u1EE7a b\xEAn th\u1EE9 ba."
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---

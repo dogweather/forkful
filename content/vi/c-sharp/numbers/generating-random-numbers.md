@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:18.961038-07:00
-description: "Vi\u1EC7c t\u1EA1o ra c\xE1c s\u1ED1 ng\u1EABu nhi\xEAn trong C# bao\
-  \ g\u1ED3m vi\u1EC7c t\u1EA1o ra c\xE1c gi\xE1 tr\u1ECB s\u1ED1 kh\xF4ng th\u1EC3\
-  \ \u0111o\xE1n tr\u01B0\u1EDBc trong m\u1ED9t ph\u1EA1m vi \u0111\xE3 x\xE1c \u0111\
-  \u1ECBnh. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng c\xE1c\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: C\xE1ch ph\u1ED5 bi\u1EBFn nh\u1EA5t \u0111\u1EC3\
+  \ t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong C# l\xE0 s\u1EED d\u1EE5ng l\u1EDBp\
+  \ `System.Random`. D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t v\xED d\u1EE5 \u0111\
+  \u01A1n gi\u1EA3n minh h\u1ECDa c\xE1ch s\u1EED d\u1EE5ng."
 lastmod: '2024-03-13T22:44:36.652015-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c t\u1EA1o ra c\xE1c s\u1ED1 ng\u1EABu nhi\xEAn trong C# bao g\u1ED3\
-  m vi\u1EC7c t\u1EA1o ra c\xE1c gi\xE1 tr\u1ECB s\u1ED1 kh\xF4ng th\u1EC3 \u0111\
-  o\xE1n tr\u01B0\u1EDBc trong m\u1ED9t ph\u1EA1m vi \u0111\xE3 x\xE1c \u0111\u1ECB\
-  nh."
+summary: "C\xE1ch ph\u1ED5 bi\u1EBFn nh\u1EA5t \u0111\u1EC3 t\u1EA1o s\u1ED1 ng\u1EAB\
+  u nhi\xEAn trong C# l\xE0 s\u1EED d\u1EE5ng l\u1EDBp `System.Random`."
 title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 weight: 12
 ---

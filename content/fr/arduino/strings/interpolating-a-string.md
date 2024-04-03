@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:50:11.539298-07:00
-description: "L'interpolation de cha\xEEnes permet d'ins\xE9rer des valeurs de variables\
-  \ directement dans une cha\xEEne de caract\xE8res. Les programmeurs l'utilisent\
-  \ pour\u2026"
+description: "How to: L'Arduino n'a pas d'interpolation de cha\xEEnes int\xE9gr\xE9\
+  e comme dans d'autres langages, mais on peut concat\xE9ner et utiliser `sprintf`.\
+  \ Voici un\u2026"
 lastmod: '2024-03-13T22:44:58.092320-06:00'
 model: gpt-4-1106-preview
-summary: "L'interpolation de cha\xEEnes permet d'ins\xE9rer des valeurs de variables\
-  \ directement dans une cha\xEEne de caract\xE8res."
+summary: "L'Arduino n'a pas d'interpolation de cha\xEEnes int\xE9gr\xE9e comme dans\
+  \ d'autres langages, mais on peut concat\xE9ner et utiliser `sprintf`."
 title: "Interpolation de cha\xEEnes de caract\xE8res"
 weight: 8
 ---

@@ -3,13 +3,12 @@ changelog:
 - 2024-01-28, dogweather, reviewed and added links
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 23:01:28.693984-07:00
-description: "Att organisera kod i funktioner handlar om att bunta ihop bitar av skript\
-  \ f\xF6r att g\xF6ra specifika uppgifter. Vi g\xF6r det eftersom det g\xF6r koden\
-  \ enklare att\u2026"
+description: "Hur man g\xF6r: I Fish skriver du en funktion med `function`-nyckelordet,\
+  \ ger den ett namn, och avslutar med `end`. H\xE4r \xE4r en enkel."
 lastmod: '2024-03-13T22:44:38.343903-06:00'
 model: gpt-4-0125-preview
-summary: "Att organisera kod i funktioner handlar om att bunta ihop bitar av skript\
-  \ f\xF6r att g\xF6ra specifika uppgifter."
+summary: I Fish skriver du en funktion med `function`-nyckelordet, ger den ett namn,
+  och avslutar med `end`.
 title: Organisera kod i funktioner
 weight: 18
 ---

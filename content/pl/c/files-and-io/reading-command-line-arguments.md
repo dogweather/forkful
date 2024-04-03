@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:18.699318-07:00
-description: "W programowaniu w j\u0119zyku C, odczytywanie argument\xF3w linii polece\u0144\
-  \ pozwala programom na przyjmowanie danych wej\u015Bciowych bezpo\u015Brednio z\
-  \ terminala,\u2026"
+description: "Jak to zrobi\u0107: W C, funkcja `main` mo\u017Ce by\u0107 zaprojektowana\
+  \ do akceptowania argument\xF3w linii polece\u0144 przy u\u017Cyciu parametr\xF3\
+  w `int argc` i `char *argv[]`.\u2026"
 lastmod: '2024-03-13T22:44:35.903285-06:00'
 model: gpt-4-0125-preview
-summary: "W programowaniu w j\u0119zyku C, odczytywanie argument\xF3w linii polece\u0144\
-  \ pozwala programom na przyjmowanie danych wej\u015Bciowych bezpo\u015Brednio z\
-  \ terminala, zwi\u0119kszaj\u0105c elastyczno\u015B\u0107 i u\u017Cyteczno\u015B\
-  \u0107."
+summary: "W C, funkcja `main` mo\u017Ce by\u0107 zaprojektowana do akceptowania argument\xF3\
+  w linii polece\u0144 przy u\u017Cyciu parametr\xF3w `int argc` i `char *argv[]`."
 title: "Czytanie argument\xF3w z linii polece\u0144"
 weight: 23
 ---

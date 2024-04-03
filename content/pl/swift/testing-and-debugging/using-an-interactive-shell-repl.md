@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:18:19.854126-07:00
-description: "Korzystanie z interaktywnej pow\u0142oki, czyli p\u0119tli czytaj-wykonaj-drukuj\
-  \ (REPL), pozwala na interaktywne programowanie. Programi\u015Bci u\u017Cywaj\u0105\
-  \ jej do szybkiego\u2026"
+description: "Jak to zrobi\u0107: Wywo\u0142aj REPL, otwieraj\u0105c terminal i uruchamiaj\u0105\
+  c `swift`. Wpisz kod bezpo\u015Brednio i naci\u015Bnij Enter, aby go uruchomi\u0107\
+  . Oto przedsmak."
 lastmod: '2024-03-13T22:44:35.756654-06:00'
 model: gpt-4-0125-preview
-summary: "Korzystanie z interaktywnej pow\u0142oki, czyli p\u0119tli czytaj-wykonaj-drukuj\
-  \ (REPL), pozwala na interaktywne programowanie."
+summary: "Wywo\u0142aj REPL, otwieraj\u0105c terminal i uruchamiaj\u0105c `swift`."
 title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---

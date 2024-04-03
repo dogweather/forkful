@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:50.859456-07:00
-description: "Att skriva till standardfel (stderr) i C# inneb\xE4r att rikta felmeddelanden\
-  \ och diagnostik separat fr\xE5n regulj\xE4r utdata (stdout) f\xF6r att hj\xE4lpa\
-  \ anv\xE4ndare\u2026"
+description: "Hur man g\xF6r: I C# kan skrivning till standardfel uppn\xE5s genom\
+  \ att anv\xE4nda str\xF6mmen `Console.Error`. Denna str\xF6m anv\xE4nds specifikt\
+  \ f\xF6r felmeddelanden och\u2026"
 lastmod: '2024-03-13T22:44:37.929801-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva till standardfel (stderr) i C# inneb\xE4r att rikta felmeddelanden\
-  \ och diagnostik separat fr\xE5n regulj\xE4r utdata (stdout) f\xF6r att hj\xE4lpa\
-  \ anv\xE4ndare och utvecklare att skilja mellan normal programutdata och felnotifikationer."
+summary: "I C# kan skrivning till standardfel uppn\xE5s genom att anv\xE4nda str\xF6\
+  mmen `Console.Error`."
 title: Skriva till standardfel
 weight: 25
 ---

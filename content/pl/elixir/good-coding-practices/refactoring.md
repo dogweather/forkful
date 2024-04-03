@@ -1,14 +1,11 @@
 ---
 date: 2024-01-26 01:18:37.714491-07:00
-description: "Refaktoryzacja to proces restrukturyzacji istniej\u0105cego kodu bez\
-  \ zmiany jego zewn\u0119trznego zachowania, maj\u0105cy na celu popraw\u0119 atrybut\xF3\
-  w niefunkcjonalnych,\u2026"
+description: "Jak to zrobi\u0107: Uporz\u0105dkujmy wsp\xF3lny wzorzec Elixira. Zrefaktoryzujemy\
+  \ funkcj\u0119 `calculate_stats`, kt\xF3ra robi wi\u0119cej ni\u017C powinna, dziel\u0105\
+  c j\u0105 na mniejsze,\u2026"
 lastmod: '2024-03-13T22:44:35.052130-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktoryzacja to proces restrukturyzacji istniej\u0105cego kodu bez zmiany\
-  \ jego zewn\u0119trznego zachowania, maj\u0105cy na celu popraw\u0119 atrybut\xF3\
-  w niefunkcjonalnych, takich jak czytelno\u015B\u0107 i mo\u017Cliwo\u015B\u0107\
-  \ utrzymania."
+summary: "Uporz\u0105dkujmy wsp\xF3lny wzorzec Elixira."
 title: Refaktoryzacja
 weight: 19
 ---

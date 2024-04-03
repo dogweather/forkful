@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:49.696908-07:00
-description: "Att f\xE5 det aktuella datumet i Arduino-projekt inneb\xE4r att erh\xE5\
-  lla realtidsinformation som kan vara avg\xF6rande f\xF6r loggning, tidsst\xE4mpling\
-  \ eller\u2026"
+description: "Hur man g\xF6r: Arduino i sig har ingen inbyggd metod f\xF6r att direkt\
+  \ h\xE4mta det aktuella datumet, eftersom den saknar en realtidsklocka (RTC). Detta\
+  \ kan dock\u2026"
 lastmod: '2024-03-13T22:44:38.177737-06:00'
 model: gpt-4-0125-preview
-summary: "Att f\xE5 det aktuella datumet i Arduino-projekt inneb\xE4r att erh\xE5\
-  lla realtidsinformation som kan vara avg\xF6rande f\xF6r loggning, tidsst\xE4mpling\
-  \ eller schemal\xE4ggning av uppgifter."
+summary: "Arduino i sig har ingen inbyggd metod f\xF6r att direkt h\xE4mta det aktuella\
+  \ datumet, eftersom den saknar en realtidsklocka (RTC)."
 title: "F\xE5 det aktuella datumet"
 weight: 29
 ---

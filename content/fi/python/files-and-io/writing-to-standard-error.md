@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:29.743769-07:00
-description: "Kirjoittaminen standardivirheeseen Pythonilla tarkoittaa ohjelmasi virheilmoitusten\
-  \ tai diagnostiikkatietojen suuntaamista virrasta (`stderr`), erilleen\u2026"
+description: 'Kuinka: #.'
 lastmod: '2024-03-13T22:44:56.159988-06:00'
 model: gpt-4-0125-preview
-summary: Kirjoittaminen standardivirheeseen Pythonilla tarkoittaa ohjelmasi virheilmoitusten
-  tai diagnostiikkatietojen suuntaamista virrasta (`stderr`), erilleen tavallisesta
-  tulosteesta (`stdout`).
+summary: '#.'
 title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---

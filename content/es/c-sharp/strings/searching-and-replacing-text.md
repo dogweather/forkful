@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:57:36.001656-07:00
-description: "Buscar y reemplazar texto es una operaci\xF3n com\xFAn que intercambia\
-  \ un fragmento de texto por otro. Los programadores lo hacen para corregir errores,\u2026"
+description: "C\xF3mo: Aqu\xED tienes un ejemplo b\xE1sico en C#. Vamos a buscar y\
+  \ reemplazar texto en una cadena."
 lastmod: '2024-03-13T22:44:59.063731-06:00'
 model: gpt-4-1106-preview
-summary: "Buscar y reemplazar texto es una operaci\xF3n com\xFAn que intercambia un\
-  \ fragmento de texto por otro."
+summary: "Aqu\xED tienes un ejemplo b\xE1sico en C#."
 title: Buscando y reemplazando texto
 weight: 10
 ---

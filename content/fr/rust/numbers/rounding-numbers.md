@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:46:39.596407-07:00
-description: "Arrondir des nombres signifie les ajuster au nombre entier le plus proche\
-  \ ou \xE0 une fraction avec une certaine pr\xE9cision. Les programmeurs arrondissent\
-  \ les\u2026"
+description: "Comment faire : Rust rend l'arrondi tr\xE8s simple. D\xE9couvrez ces\
+  \ m\xE9thodes pour les types `f32` ou `f64` ."
 lastmod: '2024-03-13T22:44:57.476720-06:00'
 model: gpt-4-0125-preview
-summary: "Arrondir des nombres signifie les ajuster au nombre entier le plus proche\
-  \ ou \xE0 une fraction avec une certaine pr\xE9cision."
+summary: "Rust rend l'arrondi tr\xE8s simple."
 title: Arrondir les nombres
 weight: 13
 ---

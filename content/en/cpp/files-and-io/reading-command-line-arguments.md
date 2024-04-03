@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:55:31.779657-07:00
-description: "Command line arguments let users influence a program's behavior without\
-  \ changing the code. Programs use them to get input params, filepath, or operation\u2026"
+description: 'How to: In C++, command-line arguments are received in `main()` as an
+  array of character pointers. Here''s how you grab them.'
 lastmod: '2024-03-13T22:45:00.371443-06:00'
 model: gpt-4-1106-preview
-summary: Command line arguments let users influence a program's behavior without changing
-  the code.
+summary: In C++, command-line arguments are received in `main()` as an array of character
+  pointers.
 title: Reading command line arguments
 weight: 23
 ---

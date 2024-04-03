@@ -2,14 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:30.433254-07:00
-description: "Att skriva ut fels\xF6kningsutdata i Dart handlar om att visa information\
-  \ i konsolen under k\xF6rning, vilket till\xE5ter utvecklare att f\xF6lja exekveringsfl\xF6\
-  det,\u2026"
+description: "Hur man g\xF6r: I Dart kan du skriva ut fels\xF6kningsutdata med `print()`-funktionen.\
+  \ S\xE5 h\xE4r skriver du ut enkla meddelanden och variabelv\xE4rden."
 lastmod: '2024-03-13T22:44:37.614785-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva ut fels\xF6kningsutdata i Dart handlar om att visa information\
-  \ i konsolen under k\xF6rning, vilket till\xE5ter utvecklare att f\xF6lja exekveringsfl\xF6\
-  det, unders\xF6ka variablernas tillst\xE5nd eller identifiera k\xE4llan till fel."
+summary: "I Dart kan du skriva ut fels\xF6kningsutdata med `print()`-funktionen."
 title: "Skriva ut fels\xF6kningsdata"
 weight: 33
 ---

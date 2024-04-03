@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:56:50.111510-07:00
-description: "Kommandozeilenargumente zu lesen hei\xDFt, Eingaben von Benutzern zu\
-  \ verarbeiten, die ein Skript ausgef\xFChrt haben. Programmierer nutzen das, um\
-  \ Skripts\u2026"
+description: 'How to: Mit PowerShell Argumente zu lesen, ist super einfach. Benutze
+  die automatische Variable `$args`. Hier ein Beispiel.'
 lastmod: '2024-03-13T22:44:54.119062-06:00'
 model: gpt-4-1106-preview
-summary: "Kommandozeilenargumente zu lesen hei\xDFt, Eingaben von Benutzern zu verarbeiten,\
-  \ die ein Skript ausgef\xFChrt haben."
+summary: Mit PowerShell Argumente zu lesen, ist super einfach.
 title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---

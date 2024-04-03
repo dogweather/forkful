@@ -2,15 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:49.883478-07:00
-description: "N\u1ED9i suy chu\u1ED7i, trong l\u1EADp tr\xECnh, bao g\u1ED3m vi\u1EC7\
-  c x\xE2y d\u1EF1ng chu\u1ED7i b\u1EB1ng c\xE1ch nh\xFAng bi\u1EC3u th\u1EE9c v\xE0\
-  o trong chu\u1ED7i k\xFD t\u1EF1 literal. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0\
-  m \u0111i\u1EC1u n\xE0y \u0111\u1EC3\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: C, kh\xF4ng gi\u1ED1ng nh\u01B0 m\u1ED9t s\u1ED1\
+  \ ng\xF4n ng\u1EEF c\u1EA5p cao, kh\xF4ng h\u1ED7 tr\u1EE3 n\u1ED9i suy chu\u1ED7\
+  i m\u1ED9t c\xE1ch tr\u1EF1c ti\u1EBFp trong c\xFA ph\xE1p c\u1EE7a n\xF3. Thay\
+  \ v\xE0o \u0111\xF3, vi\u1EC7c x\xE2y d\u1EF1ng\u2026"
 lastmod: '2024-03-13T22:44:37.248618-06:00'
 model: gpt-4-0125-preview
-summary: "N\u1ED9i suy chu\u1ED7i, trong l\u1EADp tr\xECnh, bao g\u1ED3m vi\u1EC7\
-  c x\xE2y d\u1EF1ng chu\u1ED7i b\u1EB1ng c\xE1ch nh\xFAng bi\u1EC3u th\u1EE9c v\xE0\
-  o trong chu\u1ED7i k\xFD t\u1EF1 literal."
+summary: "C, kh\xF4ng gi\u1ED1ng nh\u01B0 m\u1ED9t s\u1ED1 ng\xF4n ng\u1EEF c\u1EA5\
+  p cao, kh\xF4ng h\u1ED7 tr\u1EE3 n\u1ED9i suy chu\u1ED7i m\u1ED9t c\xE1ch tr\u1EF1\
+  c ti\u1EBFp trong c\xFA ph\xE1p c\u1EE7a n\xF3."
 title: "N\u1ED9i suy m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
 weight: 8
 ---

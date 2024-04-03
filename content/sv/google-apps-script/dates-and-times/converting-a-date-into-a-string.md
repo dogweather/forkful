@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:06.698934-07:00
-description: "Att konvertera datum till str\xE4ngar \xE4r en grundl\xE4ggande uppgift\
-  \ som m\xF6jligg\xF6r f\xF6r programmerare att manipulera och visa datuminformation\
-  \ i ett l\xE4sbart\u2026"
+description: "Hur: Google Apps Script, som \xE4r baserat p\xE5 JavaScript, till\xE5\
+  ter flera metoder f\xF6r att uppn\xE5 konverteringen av datum till str\xE4ngar.\
+  \ Nedan f\xF6ljer n\xE5gra\u2026"
 lastmod: '2024-03-13T22:44:37.451283-06:00'
 model: gpt-4-0125-preview
-summary: "Att konvertera datum till str\xE4ngar \xE4r en grundl\xE4ggande uppgift\
-  \ som m\xF6jligg\xF6r f\xF6r programmerare att manipulera och visa datuminformation\
-  \ i ett l\xE4sbart format."
+summary: "Google Apps Script, som \xE4r baserat p\xE5 JavaScript, till\xE5ter flera\
+  \ metoder f\xF6r att uppn\xE5 konverteringen av datum till str\xE4ngar."
 title: "Omvandla ett datum till en str\xE4ng"
 weight: 28
 ---

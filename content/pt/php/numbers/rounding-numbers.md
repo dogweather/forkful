@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:46:07.410917-07:00
-description: "Arredondar n\xFAmeros significa cortar os decimais at\xE9 uma precis\xE3\
-  o definida, frequentemente para n\xFAmeros inteiros. Programadores arredondam para\
-  \ simplificar\u2026"
+description: "Como fazer: O PHP oferece algumas maneiras de arredondar n\xFAmeros:\
+  \ `round()`, `ceil()` e `floor()`. Veja como eles funcionam."
 lastmod: '2024-03-13T22:44:46.662313-06:00'
 model: gpt-4-0125-preview
-summary: "Arredondar n\xFAmeros significa cortar os decimais at\xE9 uma precis\xE3\
-  o definida, frequentemente para n\xFAmeros inteiros."
+summary: "O PHP oferece algumas maneiras de arredondar n\xFAmeros."
 title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:37.247519-07:00
-description: "Trabajar con n\xFAmeros complejos en programaci\xF3n implica manipular\
-  \ n\xFAmeros que tienen tanto una parte real como una imaginaria, t\xEDpicamente\
-  \ expresados como\u2026"
+description: "C\xF3mo: En Go, los n\xFAmeros complejos se manejan utilizando las funciones\
+  \ integradas `complex`, `real` e `imag`, junto con los tipos `complex64` y\u2026"
 lastmod: '2024-03-13T22:44:58.460488-06:00'
 model: gpt-4-0125-preview
-summary: "Trabajar con n\xFAmeros complejos en programaci\xF3n implica manipular n\xFA\
-  meros que tienen tanto una parte real como una imaginaria, t\xEDpicamente expresados\
-  \ como `a + bi`."
+summary: "En Go, los n\xFAmeros complejos se manejan utilizando las funciones integradas\
+  \ `complex`, `real` e `imag`, junto con los tipos `complex64` y `complex128` (que\
+  \ representan n\xFAmeros complejos de 64 bits y 128 bits respectivamente)."
 title: "Trabajando con n\xFAmeros complejos"
 weight: 14
 ---

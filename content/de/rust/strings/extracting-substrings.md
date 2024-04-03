@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:46:25.015258-07:00
-description: "Das Extrahieren von Teilzeichenketten ist der Prozess, spezifische Teile\
-  \ aus einem String herauszuschneiden. Programmierer nutzen dies f\xFCr Aufgaben\
-  \ wie\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:53.661718-06:00'
 model: gpt-4-1106-preview
-summary: Das Extrahieren von Teilzeichenketten ist der Prozess, spezifische Teile
-  aus einem String herauszuschneiden.
+summary: .
 title: Teilstrings extrahieren
 weight: 6
 ---

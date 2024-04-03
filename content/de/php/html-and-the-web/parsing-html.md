@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:34.273976-07:00
-description: "HTML in PHP zu parsen, bedeutet, spezifische Informationen aus HTML-Dokumenten\
-  \ zu extrahieren. Programmierer f\xFChren diese Aufgabe aus, um die\u2026"
+description: "Wie geht das: Zum Parsen von HTML k\xF6nnen PHP-Programmierer eingebaute\
+  \ Funktionen nutzen oder sich auf robuste Bibliotheken wie Simple HTML DOM Parser\u2026"
 lastmod: '2024-03-13T22:44:53.970064-06:00'
 model: gpt-4-0125-preview
-summary: HTML in PHP zu parsen, bedeutet, spezifische Informationen aus HTML-Dokumenten
-  zu extrahieren.
+summary: "Zum Parsen von HTML k\xF6nnen PHP-Programmierer eingebaute Funktionen nutzen\
+  \ oder sich auf robuste Bibliotheken wie Simple HTML DOM Parser st\xFCtzen."
 title: HTML parsen
 weight: 43
 ---

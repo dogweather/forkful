@@ -2,16 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:18.600887-07:00
-description: "T\u1ED5 ch\u1EE9c m\xE3 l\u1EC7nh th\xE0nh c\xE1c h\xE0m l\xE0 vi\u1EC7\
-  c ph\xE2n chia k\u1ECBch b\u1EA3n c\u1EE7a b\u1EA1n th\xE0nh c\xE1c kh\u1ED1i nh\u1ECF\
-  \ - h\xE3y ngh\u0129 \u0111\u1EBFn ch\xFAng nh\u01B0 c\xE1c kh\u1ED1i LEGO ch\u1EE9\
-  c n\u0103ng. Ch\xFAng ta l\xE0m \u0111i\u1EC1u\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: ."
 lastmod: '2024-03-13T22:44:36.829096-06:00'
 model: gpt-4-0125-preview
-summary: "T\u1ED5 ch\u1EE9c m\xE3 l\u1EC7nh th\xE0nh c\xE1c h\xE0m l\xE0 vi\u1EC7\
-  c ph\xE2n chia k\u1ECBch b\u1EA3n c\u1EE7a b\u1EA1n th\xE0nh c\xE1c kh\u1ED1i nh\u1ECF\
-  \ - h\xE3y ngh\u0129 \u0111\u1EBFn ch\xFAng nh\u01B0 c\xE1c kh\u1ED1i LEGO ch\u1EE9\
-  c n\u0103ng."
+summary: .
 title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
 weight: 18
 ---

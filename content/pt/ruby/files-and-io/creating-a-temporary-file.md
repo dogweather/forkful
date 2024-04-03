@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:41:06.378496-07:00
-description: "Criar um arquivo tempor\xE1rio \xE9 criar um arquivo que \xE9 necess\xE1\
-  rio apenas enquanto seu programa est\xE1 rodando. Programadores fazem isso para\
-  \ n\xE3o correr o\u2026"
+description: "Como Fazer: O Ruby possui uma biblioteca padr\xE3o chamada `Tempfile`\
+  \ que simplifica a cria\xE7\xE3o de arquivos tempor\xE1rios. Veja como usar."
 lastmod: '2024-03-13T22:44:47.114558-06:00'
 model: gpt-4-1106-preview
-summary: "Criar um arquivo tempor\xE1rio \xE9 criar um arquivo que \xE9 necess\xE1\
-  rio apenas enquanto seu programa est\xE1 rodando."
+summary: "O Ruby possui uma biblioteca padr\xE3o chamada `Tempfile` que simplifica\
+  \ a cria\xE7\xE3o de arquivos tempor\xE1rios."
 title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---

@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 01:18:45.956466-07:00
-description: "Refaktoryzacja to proces modyfikowania kodu bez zmiany jego zewn\u0119\
-  trznego zachowania. Chodzi o uporz\u0105dkowanie i oczyszczenie kodu, aby sta\u0142\
-  \ si\u0119 \u0142atwiejszy\u2026"
+description: "Jak to zrobi\u0107: Za\u0142\xF3\u017Cmy, \u017Ce masz fragment kodu\
+  \ w Haskellu, kt\xF3ry powtarza si\u0119 cz\u0119\u015Bciej ni\u017C twoja ulubiona\
+  \ piosenka. Oto kr\xF3tkie spojrzenie na to, jak mo\u017Cna\u2026"
 lastmod: '2024-03-13T22:44:35.460675-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktoryzacja to proces modyfikowania kodu bez zmiany jego zewn\u0119trznego\
-  \ zachowania."
+summary: "Za\u0142\xF3\u017Cmy, \u017Ce masz fragment kodu w Haskellu, kt\xF3ry powtarza\
+  \ si\u0119 cz\u0119\u015Bciej ni\u017C twoja ulubiona piosenka."
 title: Refaktoryzacja
 weight: 19
 ---

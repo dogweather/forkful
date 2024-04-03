@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:05.386295-07:00
-description: "Das Suchen und Ersetzen von Text in Google Apps Script beinhaltet das\
-  \ programmatische Identifizieren spezifischer Zeichenketten in einem Dokument, einer\u2026"
+description: "Wie geht das: Google Apps Script bietet eine unkomplizierte M\xF6glichkeit,\
+  \ Text zu suchen und zu ersetzen, insbesondere in Google Docs und Sheets. Im\u2026"
 lastmod: '2024-03-13T22:44:53.317524-06:00'
 model: gpt-4-0125-preview
-summary: Das Suchen und Ersetzen von Text in Google Apps Script beinhaltet das programmatische
-  Identifizieren spezifischer Zeichenketten in einem Dokument, einer Tabelle oder
-  einem anderen Typ von Google-Apps-Inhalten und das Austauschen dieser mit anderen
-  Textwerten.
+summary: "Google Apps Script bietet eine unkomplizierte M\xF6glichkeit, Text zu suchen\
+  \ und zu ersetzen, insbesondere in Google Docs und Sheets."
 title: Suchen und Ersetzen von Text
 weight: 10
 ---

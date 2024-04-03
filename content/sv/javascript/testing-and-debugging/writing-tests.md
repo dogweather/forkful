@@ -2,15 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:17.969039-07:00
-description: "Att skriva tester i JavaScript avser praktiken att skapa automatiserade\
-  \ skript som k\xF6r din kod f\xF6r att s\xE4kerst\xE4lla att den fungerar som f\xF6\
-  rv\xE4ntat, vilket\u2026"
+description: "Hur man g\xF6r: #."
 lastmod: '2024-03-13T22:44:38.296931-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva tester i JavaScript avser praktiken att skapa automatiserade\
-  \ skript som k\xF6r din kod f\xF6r att s\xE4kerst\xE4lla att den fungerar som f\xF6\
-  rv\xE4ntat, vilket kan f\xF6rb\xE4ttra tillf\xF6rlitligheten och underh\xE5llet\
-  \ av dina applikationer avsev\xE4rt."
+summary: '#.'
 title: Skriva tester
 weight: 36
 ---

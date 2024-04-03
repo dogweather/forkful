@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:29.698784-07:00
-description: "Ohjelmoinnissa refaktorointi tarkoittaa olemassa olevan koodin uudelleenrakentamista\
-  \ muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4. Tavoitteena on parantaa ei-\u2026"
+description: "Kuinka: Refaktorointi voi sis\xE4lt\xE4\xE4 toimenpiteit\xE4 muuttujien\
+  \ nime\xE4misen selkeytt\xE4misest\xE4 koodin rakenteen muuttamiseen paremman modulaarisuuden\u2026"
 lastmod: '2024-03-13T22:44:57.049259-06:00'
 model: gpt-4-0125-preview
-summary: "Ohjelmoinnissa refaktorointi tarkoittaa olemassa olevan koodin uudelleenrakentamista\
-  \ muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4."
+summary: "Refaktorointi voi sis\xE4lt\xE4\xE4 toimenpiteit\xE4 muuttujien nime\xE4\
+  misen selkeytt\xE4misest\xE4 koodin rakenteen muuttamiseen paremman modulaarisuuden\
+  \ saavuttamiseksi."
 title: Koodin uudelleenkirjoitus
 weight: 19
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:54:42.987996-07:00
-description: "Leer un archivo de texto en Java significa extraer la informaci\xF3\
-  n contenida en \xE9l. Los programadores lo hacen para trabajar con datos, configuraciones\
-  \ o\u2026"
+description: "C\xF3mo hacerlo: Empezamos con un ejemplo b\xE1sico usando `java.nio.file.Files`\
+  \ para leer todas las l\xEDneas de un archivo."
 lastmod: '2024-03-13T22:44:58.954678-06:00'
 model: gpt-4-1106-preview
-summary: "Leer un archivo de texto en Java significa extraer la informaci\xF3n contenida\
-  \ en \xE9l."
+summary: "Empezamos con un ejemplo b\xE1sico usando `java.nio.file.Files` para leer\
+  \ todas las l\xEDneas de un archivo."
 title: Lectura de un archivo de texto
 weight: 22
 ---

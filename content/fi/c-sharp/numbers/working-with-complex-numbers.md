@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 04:38:50.740778-07:00
-description: "Kompleksiluvut laajentavat lukuj\xE4rjestelm\xE4\xE4mme sis\xE4lt\xE4\
-  m\xE4\xE4n imaginaarisia lukuja, mik\xE4 mahdollistaa yht\xE4l\xF6iden ratkaisun,\
-  \ kun todellisia ratkaisuja ei ole.\u2026"
+description: "Kuinka: C# sis\xE4lt\xE4\xE4 valmiina `System.Numerics.Complex` rakenteen\
+  \ kompleksilukujen k\xE4sittelyyn. T\xE4ss\xE4 nopea l\xE4pik\xE4ynti."
 lastmod: '2024-03-13T22:44:56.567194-06:00'
 model: gpt-4-0125-preview
-summary: "Kompleksiluvut laajentavat lukuj\xE4rjestelm\xE4\xE4mme sis\xE4lt\xE4m\xE4\
-  \xE4n imaginaarisia lukuja, mik\xE4 mahdollistaa yht\xE4l\xF6iden ratkaisun, kun\
-  \ todellisia ratkaisuja ei ole."
+summary: "C# sis\xE4lt\xE4\xE4 valmiina `System.Numerics.Complex` rakenteen kompleksilukujen\
+  \ k\xE4sittelyyn."
 title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---

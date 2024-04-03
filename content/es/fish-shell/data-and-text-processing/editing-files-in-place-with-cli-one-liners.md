@@ -1,13 +1,13 @@
 ---
 date: 2024-01-27 16:20:40.463361-07:00
-description: "Editar archivos directamente con l\xEDneas de comando (CLI one-liners)\
-  \ se trata de hacer cambios directamente en los archivos desde la l\xEDnea de comando,\
-  \ sin\u2026"
+description: "C\xF3mo: Fish Shell, conocido por sus caracter\xEDsticas amigables para\
+  \ el usuario y sus poderosas capacidades de scripting, ofrece varias maneras de\
+  \ editar\u2026"
 lastmod: '2024-03-13T22:44:59.497635-06:00'
 model: gpt-4-0125-preview
-summary: "Editar archivos directamente con l\xEDneas de comando (CLI one-liners) se\
-  \ trata de hacer cambios directamente en los archivos desde la l\xEDnea de comando,\
-  \ sin abrirlos en un editor de texto."
+summary: "Fish Shell, conocido por sus caracter\xEDsticas amigables para el usuario\
+  \ y sus poderosas capacidades de scripting, ofrece varias maneras de editar archivos\
+  \ directamente."
 title: "Editando archivos directamente con l\xEDneas de comandos"
 weight: 32
 ---

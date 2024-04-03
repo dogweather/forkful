@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:19.871187-07:00
-description: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML l\xE0 h\xE0nh \u0111\u1ED9ng l\u1EA5\
-  y m\u1ED9t chu\u1ED7i HTML v\xE0 ph\xE2n t\xE1ch n\xF3 th\xE0nh m\u1ED9t c\u1EA5\
-  u tr\xFAc d\u1EEF li\u1EC7u m\xE0 ch\u01B0\u01A1ng tr\xECnh c\u1EE7a b\u1EA1n c\xF3\
-  \ th\u1EC3 hi\u1EC3u v\xE0 thao t\xE1c. L\u1EADp\u2026"
+description: "L\xE0m Th\u1EBF N\xE0o: \u0110\u1EC3 ph\xE2n t\xEDch c\xFA ph\xE1p HTML\
+  \ trong Rust, b\u1EA1n s\u1EBD mu\u1ED1n s\u1EED d\u1EE5ng m\u1ED9t crate nh\u01B0\
+  \ `scraper` ho\u1EB7c `select`. Sau \u0111\xE2y l\xE0 m\u1ED9t v\xED d\u1EE5 nhanh\
+  \ s\u1EED d\u1EE5ng `scraper`."
 lastmod: '2024-03-13T22:44:36.372735-06:00'
 model: gpt-4-0125-preview
-summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML l\xE0 h\xE0nh \u0111\u1ED9ng l\u1EA5\
-  y m\u1ED9t chu\u1ED7i HTML v\xE0 ph\xE2n t\xE1ch n\xF3 th\xE0nh m\u1ED9t c\u1EA5\
-  u tr\xFAc d\u1EEF li\u1EC7u m\xE0 ch\u01B0\u01A1ng tr\xECnh c\u1EE7a b\u1EA1n c\xF3\
-  \ th\u1EC3 hi\u1EC3u v\xE0 thao t\xE1c."
+summary: "\u0110\u1EC3 ph\xE2n t\xEDch c\xFA ph\xE1p HTML trong Rust, b\u1EA1n s\u1EBD\
+  \ mu\u1ED1n s\u1EED d\u1EE5ng m\u1ED9t crate nh\u01B0 `scraper` ho\u1EB7c `select`."
 title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---

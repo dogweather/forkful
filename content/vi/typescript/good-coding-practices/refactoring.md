@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:52.878848-07:00
-description: "T\xE1i c\u1EA5u tr\xFAc l\xE0 qu\xE1 tr\xECnh c\u1EA5u tr\xFAc l\u1EA1\
-  i m\xE3 m\xE1y t\xEDnh hi\u1EC7n c\xF3 m\xE0 kh\xF4ng thay \u0111\u1ED5i h\xE0nh\
-  \ vi b\xEAn ngo\xE0i c\u1EE7a n\xF3. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7\
-  n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 l\xE0m cho m\xE3\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Xem x\xE9t m\u1ED9t h\xE0m TypeScript \u0111\
+  \xE3 qua th\u1EDDi ho\xE0ng kim - n\xF3 h\u01A1i b\u1EEBa b\u1ED9n v\xE0 c\u1EA7\
+  n \u0111\u01B0\u1EE3c ch\u0103m s\xF3c m\u1ED9t c\xE1ch t\u1EC9 m\u1EC9."
 lastmod: '2024-03-13T22:44:36.330580-06:00'
 model: gpt-4-0125-preview
-summary: "T\xE1i c\u1EA5u tr\xFAc l\xE0 qu\xE1 tr\xECnh c\u1EA5u tr\xFAc l\u1EA1i\
-  \ m\xE3 m\xE1y t\xEDnh hi\u1EC7n c\xF3 m\xE0 kh\xF4ng thay \u0111\u1ED5i h\xE0nh\
-  \ vi b\xEAn ngo\xE0i c\u1EE7a n\xF3."
+summary: "Xem x\xE9t m\u1ED9t h\xE0m TypeScript \u0111\xE3 qua th\u1EDDi ho\xE0ng\
+  \ kim - n\xF3 h\u01A1i b\u1EEBa b\u1ED9n v\xE0 c\u1EA7n \u0111\u01B0\u1EE3c ch\u0103\
+  m s\xF3c m\u1ED9t c\xE1ch t\u1EC9 m\u1EC9."
 title: "T\xE1i c\u1EA5u tr\xFAc m\xE3"
 weight: 19
 ---

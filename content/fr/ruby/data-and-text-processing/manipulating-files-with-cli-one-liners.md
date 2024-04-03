@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 16:21:33.298146-07:00
-description: "Manipuler des fichiers avec des lignes de commande (CLI) one-liners\
-  \ en Ruby consiste \xE0 effectuer des op\xE9rations courantes sur des fichiers directement\u2026"
+description: "Comment faire : Ruby, avec sa syntaxe expressive, permet d'\xE9crire\
+  \ des one-liners concis et lisibles qui peuvent g\xE9rer une vari\xE9t\xE9 d'op\xE9\
+  rations sur les\u2026"
 lastmod: '2024-03-13T22:44:58.414399-06:00'
 model: gpt-4-0125-preview
-summary: "Manipuler des fichiers avec des lignes de commande (CLI) one-liners en Ruby\
-  \ consiste \xE0 effectuer des op\xE9rations courantes sur des fichiers directement\
-  \ depuis votre terminal en utilisant des scripts Ruby."
+summary: "Ruby, avec sa syntaxe expressive, permet d'\xE9crire des one-liners concis\
+  \ et lisibles qui peuvent g\xE9rer une vari\xE9t\xE9 d'op\xE9rations sur les fichiers."
 title: Manipulation de fichiers avec des commandes en une ligne en CLI
 weight: 31
 ---

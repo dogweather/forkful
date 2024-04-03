@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:39.973175-07:00
-description: "Assosiatiiviset taulukot, jotka tunnetaan yleisemmin hasheina Rubyn\
-  \ kieless\xE4, mahdollistavat ainutlaatuisten avainten parittamisen arvoihin. Ne\
-  \ ovat\u2026"
+description: "Miten: Hashien luominen ja k\xE4ytt\xF6 Rubyn kieless\xE4 on suoraviivaista.\
+  \ Voit alustaa tyhj\xE4n hashin, t\xE4ytt\xE4\xE4 sen avain-arvo -pareilla, p\xE4\
+  \xE4st\xE4 k\xE4siksi arvoihin\u2026"
 lastmod: '2024-03-13T22:44:57.077755-06:00'
 model: gpt-4-0125-preview
-summary: "Assosiatiiviset taulukot, jotka tunnetaan yleisemmin hasheina Rubyn kieless\xE4\
-  , mahdollistavat ainutlaatuisten avainten parittamisen arvoihin."
+summary: "Hashien luominen ja k\xE4ytt\xF6 Rubyn kieless\xE4 on suoraviivaista."
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---

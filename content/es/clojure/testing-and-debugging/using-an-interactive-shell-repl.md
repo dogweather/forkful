@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 04:12:44.751038-07:00
-description: "REPL, o Bucle Leer-Evaluar-Imprimir, es un entorno de programaci\xF3\
-  n para probar din\xE1micamente c\xF3digo Clojure pieza por pieza. Los programadores\
-  \ lo utilizan\u2026"
+description: "C\xF3mo: Comienza lanzando REPL."
 lastmod: '2024-03-13T22:44:58.658275-06:00'
 model: gpt-4-0125-preview
-summary: "REPL, o Bucle Leer-Evaluar-Imprimir, es un entorno de programaci\xF3n para\
-  \ probar din\xE1micamente c\xF3digo Clojure pieza por pieza."
+summary: Comienza lanzando REPL.
 title: Usando una shell interactiva (REPL)
 weight: 34
 ---

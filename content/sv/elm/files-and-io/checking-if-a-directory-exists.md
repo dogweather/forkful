@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 14:56:20.679011-07:00
-description: "Att kontrollera om en katalog finns \xE4r processen att verifiera en\
-  \ s\xF6kv\xE4gs existens i filsystemet. Programmerare g\xF6r detta f\xF6r att f\xF6\
-  rs\xE4kra sig om att\u2026"
+description: "Hur man g\xF6r: Eftersom Elm \xE4r inriktad p\xE5 front-end utveckling\
+  \ och k\xF6rs i webbl\xE4sare, hanterar det inte direkt \xE5tkomst till filsystemet.\
+  \ Du kan dock\u2026"
 lastmod: '2024-03-13T22:44:37.843742-06:00'
 model: unknown
-summary: "Att kontrollera om en katalog finns \xE4r processen att verifiera en s\xF6\
-  kv\xE4gs existens i filsystemet."
+summary: "Eftersom Elm \xE4r inriktad p\xE5 front-end utveckling och k\xF6rs i webbl\xE4\
+  sare, hanterar det inte direkt \xE5tkomst till filsystemet."
 title: Kontrollera om en katalog finns
 weight: 20
 ---

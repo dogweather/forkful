@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 15:32:16.739950-07:00
-description: "Parsing HTML means digging through the markup to extract data like text,\
-  \ links, or other elements. We do it to interact with or scrape web content,\u2026"
+description: 'How to: Let''s use Jsoup, a handy library for working with real-world
+  HTML. First, add the dependency.'
 lastmod: '2024-03-13T22:44:59.970511-06:00'
 model: unknown
-summary: Parsing HTML means digging through the markup to extract data like text,
-  links, or other elements.
+summary: Let's use Jsoup, a handy library for working with real-world HTML.
 title: Parsing HTML
 weight: 43
 ---

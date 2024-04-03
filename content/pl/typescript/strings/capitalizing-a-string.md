@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:56.043300-07:00
-description: "Kapitalizacja \u0142a\u0144cucha znak\xF3w polega na zmodyfikowaniu\
-  \ pierwszego znaku danego ci\u0105gu na du\u017C\u0105 liter\u0119, je\u015Bli jest\
-  \ on w ma\u0142ej literze, cz\u0119sto pozostawiaj\u0105c\u2026"
+description: "Jak to zrobi\u0107: TypeScript, b\u0119d\u0105c nadzbiorem JavaScript,\
+  \ umo\u017Cliwia r\xF3\u017Cne metody kapitalizacji \u0142a\u0144cuch\xF3w, od czystych\
+  \ podej\u015B\u0107 w JavaScript po wykorzystanie\u2026"
 lastmod: '2024-03-13T22:44:35.120983-06:00'
 model: gpt-4-0125-preview
-summary: "Kapitalizacja \u0142a\u0144cucha znak\xF3w polega na zmodyfikowaniu pierwszego\
-  \ znaku danego ci\u0105gu na du\u017C\u0105 liter\u0119, je\u015Bli jest on w ma\u0142\
-  ej literze, cz\u0119sto pozostawiaj\u0105c reszt\u0119 ci\u0105gu bez zmian."
+summary: "TypeScript, b\u0119d\u0105c nadzbiorem JavaScript, umo\u017Cliwia r\xF3\u017C\
+  ne metody kapitalizacji \u0142a\u0144cuch\xF3w, od czystych podej\u015B\u0107 w\
+  \ JavaScript po wykorzystanie bibliotek stron trzecich do bardziej z\u0142o\u017C\
+  onych lub specyficznych przypadk\xF3w u\u017Cycia."
 title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---

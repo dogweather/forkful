@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:51:53.424787-07:00
-description: "La interpolaci\xF3n de cadenas en Ruby permite incrustar el valor de\
-  \ cualquier expresi\xF3n dentro de una cadena de texto. Los programadores lo hacen\
-  \ para\u2026"
+description: "C\xF3mo hacerlo: Aqu\xED tienes algunos ejemplos de c\xF3mo interpolamos\
+  \ cadenas en Ruby. Recuerda, todo lo que est\xE1 dentro de `#{}` se eval\xFAa y\
+  \ se convierte a una\u2026"
 lastmod: '2024-03-13T22:44:59.576306-06:00'
 model: gpt-4-1106-preview
-summary: "La interpolaci\xF3n de cadenas en Ruby permite incrustar el valor de cualquier\
-  \ expresi\xF3n dentro de una cadena de texto."
+summary: "Aqu\xED tienes algunos ejemplos de c\xF3mo interpolamos cadenas en Ruby."
 title: "Interpolaci\xF3n de cadenas de texto"
 weight: 8
 ---

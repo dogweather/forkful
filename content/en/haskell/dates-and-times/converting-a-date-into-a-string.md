@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:36:55.678499-07:00
-description: "Converting a date to a string means taking a date object and turning\
-  \ it into readable text. Programmers do this to display dates to users or to format\u2026"
+description: 'How to: In Haskell, you use the `formatTime` function from the `Data.Time.Format`
+  module for this job. Let''s dive right into some code.'
 lastmod: '2024-03-13T22:45:00.138919-06:00'
 model: gpt-4-1106-preview
-summary: Converting a date to a string means taking a date object and turning it into
-  readable text.
+summary: In Haskell, you use the `formatTime` function from the `Data.Time.Format`
+  module for this job.
 title: Converting a date into a string
 weight: 28
 ---

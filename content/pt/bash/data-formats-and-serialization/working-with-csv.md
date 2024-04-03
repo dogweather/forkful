@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:40.153847-07:00
-description: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgula) no Bash\
-  \ \xE9 sobre processar e manipular dados tabulares armazenados em formato de texto\
-  \ simples.\u2026"
+description: 'Como fazer: **Lendo um Arquivo CSV Linha por Linha**.'
 lastmod: '2024-03-13T22:44:46.775668-06:00'
 model: gpt-4-0125-preview
-summary: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgula) no Bash \xE9\
-  \ sobre processar e manipular dados tabulares armazenados em formato de texto simples."
+summary: '**Lendo um Arquivo CSV Linha por Linha**.'
 title: Trabalhando com CSV
 weight: 37
 ---

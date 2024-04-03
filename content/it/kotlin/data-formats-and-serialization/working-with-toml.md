@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:23:54.531560-07:00
-description: "TOML sta per Tom's Obvious, Minimal Language (Linguaggio Minimo e Ovvio\
-  \ di Tom). Viene utilizzato per i file di configurazione perch\xE9 \xE8 facile da\
-  \ leggere\u2026"
+description: 'Come fare: Per gestire TOML in Kotlin, potresti usare una libreria come
+  `ktoml`. Prima, aggiungiamo la dipendenza nel tuo `build.gradle.kts`.'
 lastmod: '2024-03-13T22:44:43.414685-06:00'
 model: gpt-4-0125-preview
-summary: TOML sta per Tom's Obvious, Minimal Language (Linguaggio Minimo e Ovvio di
-  Tom).
+summary: Per gestire TOML in Kotlin, potresti usare una libreria come `ktoml`.
 title: Lavorare con TOML
 weight: 39
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 03:44:34.470558-07:00
-description: "Arrotondare i numeri significa aggiustarli a un valore vicino per semplicit\xE0\
-  \ o per corrispondere a una certa precisione. \xC8 utile per migliorare la\u2026"
+description: "Come fare: In Elixir, puoi usare `Float.round/2` per arrotondare un\
+  \ numero in virgola mobile. Puoi specificare il numero di cifre decimali che vuoi\u2026"
 lastmod: '2024-03-13T22:44:43.078987-06:00'
 model: gpt-4-0125-preview
-summary: "Arrotondare i numeri significa aggiustarli a un valore vicino per semplicit\xE0\
-  \ o per corrispondere a una certa precisione."
+summary: In Elixir, puoi usare `Float.round/2` per arrotondare un numero in virgola
+  mobile.
 title: Arrotondamento dei numeri
 weight: 13
 ---

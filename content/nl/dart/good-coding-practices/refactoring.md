@@ -2,14 +2,10 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:29.023166-07:00
-description: "Refactoring in Dart is het proces van het herstructureren van bestaande\
-  \ code zonder het externe gedrag ervan te veranderen, gericht op het verbeteren\
-  \ van\u2026"
+description: 'Hoe te: #.'
 lastmod: '2024-03-13T22:44:50.514250-06:00'
 model: gpt-4-0125-preview
-summary: Refactoring in Dart is het proces van het herstructureren van bestaande code
-  zonder het externe gedrag ervan te veranderen, gericht op het verbeteren van de
-  interne structuur, leesbaarheid en onderhoudbaarheid.
+summary: '#.'
 title: Refactoring
 weight: 19
 ---

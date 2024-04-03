@@ -1,11 +1,14 @@
 ---
 date: 2024-01-19
-description: "JSON, ou JavaScript Object Notation, \xE9 um formato leve de troca de\
-  \ dados. Programadores utilizam JSON para transferir e armazenar dados de maneira\
-  \ simples\u2026"
+description: "Como fazer: Para lidar com JSON no JavaScript, voc\xEA geralmente vai\
+  \ ler um string JSON de alguma fonte e convert\xEA-lo num objeto JavaScript para\
+  \ usar no seu\u2026"
 lastmod: '2024-03-13T22:44:46.983523-06:00'
 model: unknown
-summary: "JSON, ou JavaScript Object Notation, \xE9 um formato leve de troca de dados."
+summary: "Para lidar com JSON no JavaScript, voc\xEA geralmente vai ler um string\
+  \ JSON de alguma fonte e convert\xEA-lo num objeto JavaScript para usar no seu c\xF3\
+  digo, ou ent\xE3o pegar um objeto JavaScript e convert\xEA-lo numa string JSON para\
+  \ enviar para um servidor."
 title: Trabalhando com JSON
 weight: 38
 ---

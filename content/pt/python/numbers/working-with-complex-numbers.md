@@ -1,13 +1,10 @@
 ---
 date: 2024-01-26 04:44:51.443482-07:00
-description: "N\xFAmeros complexos s\xE3o um conjunto de n\xFAmeros do tipo `a + bi`,\
-  \ onde `a` e `b` s\xE3o n\xFAmeros reais, e `i` \xE9 a unidade imagin\xE1ria (`i^2\
-  \ = -1`). Na\u2026"
+description: "Como fazer: Python tem suporte incorporado para n\xFAmeros complexos.\
+  \ Veja como voc\xEA pode brincar com eles."
 lastmod: '2024-03-13T22:44:46.147741-06:00'
 model: gpt-4-0125-preview
-summary: "N\xFAmeros complexos s\xE3o um conjunto de n\xFAmeros do tipo `a + bi`,\
-  \ onde `a` e `b` s\xE3o n\xFAmeros reais, e `i` \xE9 a unidade imagin\xE1ria (`i^2\
-  \ = -1`)."
+summary: "Python tem suporte incorporado para n\xFAmeros complexos."
 title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---

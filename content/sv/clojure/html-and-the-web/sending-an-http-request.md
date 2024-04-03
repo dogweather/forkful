@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:59:14.491633-07:00
-description: "Att skicka en HTTP-beg\xE4ran \xE4r hur en dator eller app fr\xE5gar\
-  \ efter data fr\xE5n en server eller en tj\xE4nst p\xE5 n\xE4tet. Programmerare\
-  \ g\xF6r detta f\xF6r att interagera\u2026"
+description: "Hur g\xF6r man: F\xF6r att skicka en HTTP-f\xF6rfr\xE5gan i Clojure,\
+  \ kan du anv\xE4nda `clj-http` biblioteket. Installera det f\xF6rst med Leiningen\
+  \ eller Boot i ditt\u2026"
 lastmod: '2024-03-13T22:44:37.522274-06:00'
 model: gpt-4-1106-preview
-summary: "Att skicka en HTTP-beg\xE4ran \xE4r hur en dator eller app fr\xE5gar efter\
-  \ data fr\xE5n en server eller en tj\xE4nst p\xE5 n\xE4tet."
+summary: "F\xF6r att skicka en HTTP-f\xF6rfr\xE5gan i Clojure, kan du anv\xE4nda `clj-http`\
+  \ biblioteket."
 title: "Skicka en http-f\xF6rfr\xE5gan"
 weight: 44
 ---

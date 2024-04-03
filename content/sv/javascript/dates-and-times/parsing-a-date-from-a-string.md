@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:29.993585-07:00
-description: "Att tolka ett datum fr\xE5n en str\xE4ng g\xF6r det m\xF6jligt f\xF6\
-  r programmerare att konvertera textuella datumrepresentationer till JavaScript `Date`-objekt,\
-  \ vilket\u2026"
+description: "Hur g\xF6r man: JavaScript erbjuder inbyggt `Date.parse()`-metoden och\
+  \ `Date`-konstrukt\xF6ren f\xF6r att tolka datumstr\xE4ngar. Dock har dessa tillv\xE4\
+  gag\xE5ngss\xE4tt\u2026"
 lastmod: '2024-03-13T22:44:38.302665-06:00'
 model: gpt-4-0125-preview
-summary: "Att tolka ett datum fr\xE5n en str\xE4ng g\xF6r det m\xF6jligt f\xF6r programmerare\
-  \ att konvertera textuella datumrepresentationer till JavaScript `Date`-objekt,\
-  \ vilket underl\xE4ttar datummanipulationer, j\xE4mf\xF6relser och formateringsoperationer."
+summary: "JavaScript erbjuder inbyggt `Date.parse()`-metoden och `Date`-konstrukt\xF6\
+  ren f\xF6r att tolka datumstr\xE4ngar."
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:32:10.482594-07:00
-description: "Calcular uma data no futuro ou passado \xE9 simplesmente descobrir qual\
-  \ ser\xE1 ou qual foi a data ap\xF3s ou antes de um certo per\xEDodo de tempo. Programadores\u2026"
+description: "Como Fazer: Vamos direto ao ponto. Aqui est\xE3o alguns exemplos usando\
+  \ PowerShell para calcular datas no futuro e no passado."
 lastmod: '2024-03-13T22:44:46.810188-06:00'
 model: gpt-4-1106-preview
-summary: "Calcular uma data no futuro ou passado \xE9 simplesmente descobrir qual\
-  \ ser\xE1 ou qual foi a data ap\xF3s ou antes de um certo per\xEDodo de tempo."
+summary: Vamos direto ao ponto.
 title: Calculando uma data no futuro ou passado
 weight: 26
 ---

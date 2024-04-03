@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:58:50.903872-07:00
-description: "\xC5 s\xF8ke og erstatte tekst betyr \xE5 finne spesifikke ord eller\
-  \ strenger og bytte dem ut med noe annet. Programmerere bruker dette for \xE5 oppdatere\
-  \ kode,\u2026"
+description: "How to: Lua gj\xF8r s\xF8k og erstatt enkelt med `string.gsub`. Her\
+  \ er hvordan du gj\xF8r det."
 lastmod: '2024-03-13T22:44:40.914655-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 s\xF8ke og erstatte tekst betyr \xE5 finne spesifikke ord eller strenger\
-  \ og bytte dem ut med noe annet."
+summary: "Lua gj\xF8r s\xF8k og erstatt enkelt med `string.gsub`."
 title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---

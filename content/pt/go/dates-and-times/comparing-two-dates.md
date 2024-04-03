@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:39.650917-07:00
-description: "Comparar duas datas na programa\xE7\xE3o \xE9 uma tarefa fundamental\
-  \ que permite aos desenvolvedores avaliar a rela\xE7\xE3o cronol\xF3gica entre datas.\
-  \ Tais compara\xE7\xF5es\u2026"
+description: "Como fazer: Em Go, datas s\xE3o primariamente manipuladas com o tipo\
+  \ `time.Time` do pacote `time`. Para comparar duas datas, podemos usar m\xE9todos\
+  \ como\u2026"
 lastmod: '2024-03-13T22:44:46.074450-06:00'
 model: gpt-4-0125-preview
-summary: "Comparar duas datas na programa\xE7\xE3o \xE9 uma tarefa fundamental que\
-  \ permite aos desenvolvedores avaliar a rela\xE7\xE3o cronol\xF3gica entre datas."
+summary: "Em Go, datas s\xE3o primariamente manipuladas com o tipo `time.Time` do\
+  \ pacote `time`."
 title: Comparando duas datas
 weight: 27
 ---

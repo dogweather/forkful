@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:27.253492-07:00
-description: "TOML, som st\xE5r f\xF6r Toms uppenbara, minimala spr\xE5k, \xE4r ett\
-  \ data-serialiseringsformat som fr\xE4mst anv\xE4nds f\xF6r konfigurationsfiler.\
-  \ Programmerare utnyttjar\u2026"
+description: "S\xE5 h\xE4r g\xF6r du: Att arbeta med TOML i VBA inneb\xE4r att tolka\
+  \ TOML-filen f\xF6r att l\xE4sa in konfigurationer eller inst\xE4llningar till ditt\
+  \ VBA-projekt. VBA har\u2026"
 lastmod: '2024-03-13T22:44:37.768849-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, som st\xE5r f\xF6r Toms uppenbara, minimala spr\xE5k, \xE4r ett data-serialiseringsformat\
-  \ som fr\xE4mst anv\xE4nds f\xF6r konfigurationsfiler."
+summary: "Att arbeta med TOML i VBA inneb\xE4r att tolka TOML-filen f\xF6r att l\xE4\
+  sa in konfigurationer eller inst\xE4llningar till ditt VBA-projekt."
 title: Arbeta med TOML
 weight: 39
 ---

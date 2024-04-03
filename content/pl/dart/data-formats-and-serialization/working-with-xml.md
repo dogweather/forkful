@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:30.493145-07:00
-description: "Praca z XML w Dart polega na analizowaniu, kwerendowaniu i modyfikowaniu\
-  \ dokument\xF3w XML, co jest kluczowe dla aplikacji wchodz\u0105cych w interakcje\
-  \ z\u2026"
+description: "Jak to zrobi\u0107: Dart nie zawiera wbudowanego wsparcia dla obs\u0142\
+  ugi XML w swojej bibliotece standardowej, co wymusza korzystanie z pakiet\xF3w stron\
+  \ trzecich.\u2026"
 lastmod: '2024-03-13T22:44:35.119803-06:00'
 model: gpt-4-0125-preview
-summary: "Praca z XML w Dart polega na analizowaniu, kwerendowaniu i modyfikowaniu\
-  \ dokument\xF3w XML, co jest kluczowe dla aplikacji wchodz\u0105cych w interakcje\
-  \ z us\u0142ugami internetowymi, plikami konfiguracyjnymi lub systemami dziedzicznymi."
+summary: "Dart nie zawiera wbudowanego wsparcia dla obs\u0142ugi XML w swojej bibliotece\
+  \ standardowej, co wymusza korzystanie z pakiet\xF3w stron trzecich."
 title: Praca z XML
 weight: 40
 ---

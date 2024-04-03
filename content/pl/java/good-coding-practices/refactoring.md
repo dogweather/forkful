@@ -1,12 +1,13 @@
 ---
 date: 2024-01-26 01:40:14.416400-07:00
-description: "Refaktoryzacja to proces restrukturyzacji istniej\u0105cego kodu komputerowego\u2014\
-  zmiany faktoryzacji\u2014bez zmiany jego zewn\u0119trznego zachowania. Programi\u015B\
-  ci robi\u0105\u2026"
+description: "Jak to zrobi\u0107: We\u017Amy prost\u0105 klas\u0119 Java, kt\xF3ra\
+  \ wr\u0119cz wo\u0142a o refaktoryzacj\u0119 z powodu swojej z\u0142ej organizacji\
+  \ i braku klarowno\u015Bci."
 lastmod: '2024-03-13T22:44:35.285705-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktoryzacja to proces restrukturyzacji istniej\u0105cego kodu komputerowego\u2014\
-  zmiany faktoryzacji\u2014bez zmiany jego zewn\u0119trznego zachowania."
+summary: "We\u017Amy prost\u0105 klas\u0119 Java, kt\xF3ra wr\u0119cz wo\u0142a o\
+  \ refaktoryzacj\u0119 z powodu swojej z\u0142ej organizacji i braku klarowno\u015B\
+  ci."
 title: Refaktoryzacja
 weight: 19
 ---

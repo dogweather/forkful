@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:02.806820-07:00
-description: "L'eliminazione di caratteri che corrispondono a un pattern specifico\
-  \ in Visual Basic for Applications (VBA) implica l'identificazione e successiva\u2026"
+description: "Come fare: In VBA, \xE8 possibile utilizzare la funzione `Replace` o\
+  \ le espressioni regolari per eliminare caratteri che corrispondono a un pattern.\
+  \ Ecco\u2026"
 lastmod: '2024-03-13T22:44:43.245005-06:00'
 model: gpt-4-0125-preview
-summary: L'eliminazione di caratteri che corrispondono a un pattern specifico in Visual
-  Basic for Applications (VBA) implica l'identificazione e successiva rimozione di
-  caratteri o stringhe che soddisfano determinati criteri.
+summary: "In VBA, \xE8 possibile utilizzare la funzione `Replace` o le espressioni\
+  \ regolari per eliminare caratteri che corrispondono a un pattern."
 title: Eliminare i caratteri corrispondenti a un modello
 weight: 5
 ---

@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:56.663855-07:00
-description: "Een tekstbestand lezen betekent de inhoud ervan ophalen in een vorm\
-  \ waar je programma mee kan werken. Programmeurs doen dit voor gegevensverwerking,\u2026"
+description: 'Hoe: Laten we beginnen met de basis! Zo lees je uit een tekstbestand
+  in PowerShell.'
 lastmod: '2024-03-13T22:44:51.047541-06:00'
 model: gpt-4-0125-preview
-summary: Een tekstbestand lezen betekent de inhoud ervan ophalen in een vorm waar
-  je programma mee kan werken.
+summary: Laten we beginnen met de basis.
 title: Een tekstbestand lezen
 weight: 22
 ---

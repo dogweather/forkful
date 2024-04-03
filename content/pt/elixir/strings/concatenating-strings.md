@@ -1,12 +1,11 @@
 ---
 date: 2024-01-27 10:43:11.660520-07:00
-description: "Concatenar strings \xE9 sobre juntar duas ou mais cadeias de caracteres\
-  \ para formar um \xFAnico texto. Voc\xEA pode precisar mesclar textos para gerar\
-  \ mensagens de\u2026"
+description: "Como fazer: No Elixir, voc\xEA pode concatenar strings de algumas maneiras\
+  \ diretas. Vamos explorar os m\xE9todos mais comuns: 1. Usando o operador `<>`,\
+  \ que \xE9 a\u2026"
 lastmod: '2024-03-13T22:44:46.230223-06:00'
 model: gpt-4-0125-preview
-summary: "Concatenar strings \xE9 sobre juntar duas ou mais cadeias de caracteres\
-  \ para formar um \xFAnico texto."
+summary: "No Elixir, voc\xEA pode concatenar strings de algumas maneiras diretas."
 title: Concatenando strings
 weight: 3
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:31.931752-07:00
-description: "Lire un fichier texte en Dart implique l'acc\xE8s et la r\xE9cup\xE9\
-  ration de donn\xE9es \xE0 partir de fichiers stock\xE9s sur le syst\xE8me de fichiers.\
-  \ Les programmeurs\u2026"
+description: "Comment faire : La biblioth\xE8que principale de Dart, `dart:io`, fournit\
+  \ les fonctionnalit\xE9s n\xE9cessaires pour lire des fichiers texte de mani\xE8\
+  re synchrone\u2026"
 lastmod: '2024-03-13T22:44:57.409802-06:00'
 model: gpt-4-0125-preview
-summary: "Lire un fichier texte en Dart implique l'acc\xE8s et la r\xE9cup\xE9ration\
-  \ de donn\xE9es \xE0 partir de fichiers stock\xE9s sur le syst\xE8me de fichiers."
+summary: "La biblioth\xE8que principale de Dart, `dart:io`, fournit les fonctionnalit\xE9\
+  s n\xE9cessaires pour lire des fichiers texte de mani\xE8re synchrone ou asynchrone."
 title: Lecture d'un fichier texte
 weight: 22
 ---

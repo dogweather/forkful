@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:40:25.472025-07:00
-description: "Creare file temporanei significa generare file destinati a essere utilizzati\
-  \ solo per la durata di una sessione o di una specifica operazione. I\u2026"
+description: 'How to: Per creare un file temporaneo in C#, puoi usare la classe `Path`
+  per generare un nome di file univoco e la classe `File` per scrivere sul file.'
 lastmod: '2024-03-13T22:44:43.452728-06:00'
 model: gpt-4-1106-preview
-summary: Creare file temporanei significa generare file destinati a essere utilizzati
-  solo per la durata di una sessione o di una specifica operazione.
+summary: Per creare un file temporaneo in C#, puoi usare la classe `Path` per generare
+  un nome di file univoco e la classe `File` per scrivere sul file.
 title: Creazione di un file temporaneo
 weight: 21
 ---

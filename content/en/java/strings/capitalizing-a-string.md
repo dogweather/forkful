@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:02:44.302416-07:00
-description: "Capitalizing a string involves modifying the first letter of each word\
-  \ in the string to uppercase while ensuring the rest remain lowercase. This common\u2026"
+description: "How to: Java's standard library doesn't provide a direct method to capitalize\
+  \ entire strings in one go, but you can accomplish this with a combination of\u2026"
 lastmod: '2024-03-13T22:44:59.957392-06:00'
 model: gpt-4-0125-preview
-summary: Capitalizing a string involves modifying the first letter of each word in
-  the string to uppercase while ensuring the rest remain lowercase.
+summary: Java's standard library doesn't provide a direct method to capitalize entire
+  strings in one go, but you can accomplish this with a combination of built-in methods.
 title: Capitalizing a string
 weight: 2
 ---

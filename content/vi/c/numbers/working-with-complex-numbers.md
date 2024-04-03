@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:09.033437-07:00
-description: "S\u1ED1 ph\u1EE9c bao g\u1ED3m m\u1ED9t ph\u1EA7n th\u1EF1c v\xE0 m\u1ED9\
-  t ph\u1EA7n \u1EA3o, \u0111\u01B0\u1EE3c bi\u1EC3u di\u1EC5n d\u01B0\u1EDBi d\u1EA1\
-  ng `a + bi` trong \u0111\xF3 `i` l\xE0 c\u0103n b\u1EADc hai c\u1EE7a `-1`. C\xE1\
-  c l\u1EADp tr\xECnh vi\xEAn l\xE0m vi\u1EC7c v\u1EDBi s\u1ED1\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong C, s\u1ED1 ph\u1EE9c \u0111\u01B0\u1EE3\
+  c h\u1ED7 tr\u1EE3 b\u1EDFi Th\u01B0 vi\u1EC7n Ti\xEAu chu\u1EA9n, c\u1EE5 th\u1EC3\
+  \ l\xE0 `<complex.h>`. \u0110\u1EC3 s\u1EED d\u1EE5ng ch\xFAng, khai b\xE1o c\xE1\
+  c bi\u1EBFn v\u1EDBi ki\u1EC3u `double complex`\u2026"
 lastmod: '2024-03-13T22:44:37.259379-06:00'
 model: gpt-4-0125-preview
-summary: "S\u1ED1 ph\u1EE9c bao g\u1ED3m m\u1ED9t ph\u1EA7n th\u1EF1c v\xE0 m\u1ED9\
-  t ph\u1EA7n \u1EA3o, \u0111\u01B0\u1EE3c bi\u1EC3u di\u1EC5n d\u01B0\u1EDBi d\u1EA1\
-  ng `a + bi` trong \u0111\xF3 `i` l\xE0 c\u0103n b\u1EADc hai c\u1EE7a `-1`."
+summary: "Trong C, s\u1ED1 ph\u1EE9c \u0111\u01B0\u1EE3c h\u1ED7 tr\u1EE3 b\u1EDF\
+  i Th\u01B0 vi\u1EC7n Ti\xEAu chu\u1EA9n, c\u1EE5 th\u1EC3 l\xE0 `<complex.h>`."
 title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 weight: 14
 ---

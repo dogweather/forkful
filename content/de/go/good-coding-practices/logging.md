@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:02.880278-07:00
-description: "Das Protokollieren in der Softwareentwicklung ist der Prozess der Aufzeichnung\
-  \ von Informationen \xFCber die Ausf\xFChrung eines Programms, um sein Verhalten\
-  \ zu\u2026"
+description: "Wie geht das: In Go kann das Protokollieren mithilfe des Standardbibliothekspakets\
+  \ `log` implementiert werden. Dieses Paket bietet einfache\u2026"
 lastmod: '2024-03-13T22:44:53.295036-06:00'
 model: gpt-4-0125-preview
-summary: "Das Protokollieren in der Softwareentwicklung ist der Prozess der Aufzeichnung\
-  \ von Informationen \xFCber die Ausf\xFChrung eines Programms, um sein Verhalten\
-  \ zu verfolgen und Probleme zu diagnostizieren."
+summary: In Go kann das Protokollieren mithilfe des Standardbibliothekspakets `log`
+  implementiert werden.
 title: Protokollierung
 weight: 17
 ---

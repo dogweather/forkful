@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:03.767104-07:00
-description: "Praca z plikami CSV (Comma-Separated Values), czyli z warto\u015Bciami\
-  \ rozdzielanymi przecinkami, polega na odczycie z plik\xF3w CSV oraz zapisywaniu\
-  \ do nich\u2026"
+description: "Jak to robi\u0107: Python oferuje wbudowany modu\u0142 `csv`, kt\xF3\
+  ry pozwala na obs\u0142ug\u0119 plik\xF3w CSV, co sprawia, \u017Ce odczyt z nich\
+  \ i zapisywanie do nich jest prostsze.\u2026"
 lastmod: '2024-03-13T22:44:34.973637-06:00'
 model: gpt-4-0125-preview
-summary: "Praca z plikami CSV (Comma-Separated Values), czyli z warto\u015Bciami rozdzielanymi\
-  \ przecinkami, polega na odczycie z plik\xF3w CSV oraz zapisywaniu do nich danych,\
-  \ co jest powszechnym formatem przechowywania danych tabelarycznych."
+summary: "Python oferuje wbudowany modu\u0142 `csv`, kt\xF3ry pozwala na obs\u0142\
+  ug\u0119 plik\xF3w CSV, co sprawia, \u017Ce odczyt z nich i zapisywanie do nich\
+  \ jest prostsze."
 title: Praca z plikami CSV
 weight: 37
 ---

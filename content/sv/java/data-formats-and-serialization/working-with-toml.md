@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:23:21.874473-07:00
-description: "TOML st\xE5r f\xF6r Toms Uppebara, Minimala Spr\xE5k. Det \xE4r ett\
-  \ data-serialiseringsformat som anv\xE4nds f\xF6r konfigurationsfiler. Programmerare\
-  \ anv\xE4nder det eftersom\u2026"
+description: "Hur man g\xF6r: Du beh\xF6ver ett TOML-parserbibliotek. Jag rekommenderar\
+  \ `toml4j`. L\xE4gg till det i ditt projekt s\xE5 h\xE4r."
 lastmod: '2024-03-13T22:44:37.810683-06:00'
 model: gpt-4-0125-preview
-summary: "TOML st\xE5r f\xF6r Toms Uppebara, Minimala Spr\xE5k."
+summary: "Du beh\xF6ver ett TOML-parserbibliotek."
 title: Att arbeta med TOML
 weight: 39
 ---

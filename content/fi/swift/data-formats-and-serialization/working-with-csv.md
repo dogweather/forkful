@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:05.648349-07:00
-description: "CSV-tiedostoilla (Comma-Separated Values, pilkulla erotetut arvot) ty\xF6\
-  skentely sis\xE4lt\xE4\xE4 rakenteellisen datan j\xE4sennyksen ja tuottamisen teksti-\u2026"
+description: "Kuinka: Swiftiss\xE4 ei ole natiivia tukea CSV-tiedostojen suoraan j\xE4\
+  sent\xE4miseen, mutta voit k\xE4sitell\xE4 CSV-dataa k\xE4ytt\xE4m\xE4ll\xE4 `String`-metodeja\
+  \ sis\xE4ll\xF6n\u2026"
 lastmod: '2024-03-13T22:44:56.929511-06:00'
 model: gpt-4-0125-preview
-summary: "CSV-tiedostoilla (Comma-Separated Values, pilkulla erotetut arvot) ty\xF6\
-  skentely sis\xE4lt\xE4\xE4 rakenteellisen datan j\xE4sennyksen ja tuottamisen teksti-tiedostoista,\
-  \ joissa jokainen rivi edustaa merkint\xE4\xE4 ja jokainen merkint\xE4 koostuu pilkuilla\
-  \ erotetuista kentist\xE4."
+summary: "Swiftiss\xE4 ei ole natiivia tukea CSV-tiedostojen suoraan j\xE4sent\xE4\
+  miseen, mutta voit k\xE4sitell\xE4 CSV-dataa k\xE4ytt\xE4m\xE4ll\xE4 `String`-metodeja\
+  \ sis\xE4ll\xF6n jakamiseen, tai hy\xF6dynt\xE4m\xE4ll\xE4 kolmansien osapuolien\
+  \ kirjastoja, kuten SwiftCSV, saadaksesi sujuvamman l\xE4hestymistavan."
 title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---

@@ -2,12 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:38.046617-07:00
-description: "YAML, som st\xE5r for YAML Ain't Markup Language, er et menneskelesbart\
-  \ data serialiseringsformat. Programmerere bruker det for konfigurasjonsfiler,\u2026"
+description: "Hvordan: For \xE5 jobbe med YAML i C++, er et popul\xE6rt valg `yaml-cpp`-biblioteket.\
+  \ F\xF8rst, s\xF8rg for at du har `yaml-cpp` installert og korrekt koblet til\u2026"
 lastmod: '2024-03-13T22:44:41.120499-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, som st\xE5r for YAML Ain't Markup Language, er et menneskelesbart\
-  \ data serialiseringsformat."
+summary: "For \xE5 jobbe med YAML i C++, er et popul\xE6rt valg `yaml-cpp`-biblioteket."
 title: Arbeider med YAML
 weight: 41
 ---

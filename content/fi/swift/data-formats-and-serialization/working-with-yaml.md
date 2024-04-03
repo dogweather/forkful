@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:54.766068-07:00
-description: "YAML, joka tulee sanoista YAML Ain't Markup Language, on ihmisl\xE4\
-  heinen tiedon sarjallistamisstandardi kaikille ohjelmointikielille. Ohjelmoijat\
-  \ k\xE4ytt\xE4v\xE4t\u2026"
+description: "Kuinka: Swift ei sis\xE4ll\xE4 sis\xE4\xE4nrakennettua tukea YAML:n\
+  \ j\xE4sennykseen ja sarjallistamiseen, joten on tarpeen k\xE4ytt\xE4\xE4 kolmannen\
+  \ osapuolen kirjastoja.\u2026"
 lastmod: '2024-03-13T22:44:56.926936-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, joka tulee sanoista YAML Ain't Markup Language, on ihmisl\xE4heinen\
-  \ tiedon sarjallistamisstandardi kaikille ohjelmointikielille."
+summary: "Swift ei sis\xE4ll\xE4 sis\xE4\xE4nrakennettua tukea YAML:n j\xE4sennykseen\
+  \ ja sarjallistamiseen, joten on tarpeen k\xE4ytt\xE4\xE4 kolmannen osapuolen kirjastoja."
 title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:39.820232-07:00
-description: "L'analyse HTML en programmation consiste \xE0 extraire des donn\xE9\
-  es de documents HTML. Les programmeurs font cela pour interagir avec ou gratter\
-  \ le contenu\u2026"
+description: "Comment faire : Dart ne fournit pas de support int\xE9gr\xE9 pour l'analyse\
+  \ HTML dans ses biblioth\xE8ques de base. Cependant, vous pouvez utiliser un package\u2026"
 lastmod: '2024-03-13T22:44:57.387323-06:00'
 model: gpt-4-0125-preview
-summary: "L'analyse HTML en programmation consiste \xE0 extraire des donn\xE9es de\
-  \ documents HTML."
+summary: "Dart ne fournit pas de support int\xE9gr\xE9 pour l'analyse HTML dans ses\
+  \ biblioth\xE8ques de base."
 title: Analyse Syntaxique de HTML
 weight: 43
 ---

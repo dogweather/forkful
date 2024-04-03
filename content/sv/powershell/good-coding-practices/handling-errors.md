@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 00:56:01.079417-07:00
-description: "Att hantera fel i PowerShell inneb\xE4r att f\xF6rutse miss\xF6den och\
-  \ hantera dem smidigt. Programmerare g\xF6r detta f\xF6r att f\xF6rhindra krascher\
-  \ och f\xF6rse anv\xE4ndare\u2026"
+description: "Hur man g\xF6r: ."
 lastmod: '2024-03-13T22:44:38.133271-06:00'
 model: gpt-4-1106-preview
-summary: "Att hantera fel i PowerShell inneb\xE4r att f\xF6rutse miss\xF6den och hantera\
-  \ dem smidigt."
+summary: .
 title: Hantering av fel
 weight: 16
 ---

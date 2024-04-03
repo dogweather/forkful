@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:56:42.038014-07:00
-description: "Att l\xE4sa kommandoradsargument \xE4r processen att f\xE5nga data som\
-  \ anv\xE4ndaren skickar in till ditt program fr\xE5n terminalen. Vi g\xF6r det f\xF6\
-  r att till\xE5ta\u2026"
+description: "Hur g\xF6r man: Ruby har en enkel och r\xE4ttfram syn p\xE5 kommandoradsargument\
+  \ genom att anv\xE4nda den globala arrayen `ARGV`. H\xE4r \xE4r ett grundl\xE4ggande\
+  \ exempel."
 lastmod: '2024-03-13T22:44:38.447112-06:00'
 model: gpt-4-1106-preview
-summary: "Att l\xE4sa kommandoradsargument \xE4r processen att f\xE5nga data som anv\xE4\
-  ndaren skickar in till ditt program fr\xE5n terminalen."
+summary: "Ruby har en enkel och r\xE4ttfram syn p\xE5 kommandoradsargument genom att\
+  \ anv\xE4nda den globala arrayen `ARGV`."
 title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---

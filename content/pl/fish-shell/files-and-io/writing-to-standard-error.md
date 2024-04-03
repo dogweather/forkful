@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:20.020414-07:00
-description: "Pisanie do standardowego b\u0142\u0119du (stderr) w Fish Shell polega\
-  \ na kierowaniu komunikat\xF3w o b\u0142\u0119dach lub diagnostyki osobno od standardowego\
-  \ wyj\u015Bcia (stdout).\u2026"
+description: "Jak to zrobi\u0107: W Fish Shell mo\u017Cesz pisa\u0107 do stderr, przekierowuj\u0105\
+  c swoje wyj\u015Bcie za pomoc\u0105 `>&2`. Oto podstawowy przyk\u0142ad."
 lastmod: '2024-03-13T22:44:35.858206-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie do standardowego b\u0142\u0119du (stderr) w Fish Shell polega na\
-  \ kierowaniu komunikat\xF3w o b\u0142\u0119dach lub diagnostyki osobno od standardowego\
-  \ wyj\u015Bcia (stdout)."
+summary: "W Fish Shell mo\u017Cesz pisa\u0107 do stderr, przekierowuj\u0105c swoje\
+  \ wyj\u015Bcie za pomoc\u0105 `>&2`."
 title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---

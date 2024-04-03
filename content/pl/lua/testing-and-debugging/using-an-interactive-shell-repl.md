@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:16:12.385001-07:00
-description: "REPL oznacza Read-Eval-Print Loop (P\u0119tla Czytaj-Wykonaj-Wydrukuj),\
-  \ interaktywne \u015Brodowisko, gdzie mo\u017Cna szybko testowa\u0107 kod. Programi\u015B\
-  ci u\u017Cywaj\u0105 go do\u2026"
+description: "Jak to zrobi\u0107: Aby wej\u015B\u0107 do REPL Lua, wystarczy wpisa\u0107\
+  \ `lua` w terminalu. Oto przyk\u0142adowa sesja."
 lastmod: '2024-03-13T22:44:35.541579-06:00'
 model: gpt-4-0125-preview
-summary: "REPL oznacza Read-Eval-Print Loop (P\u0119tla Czytaj-Wykonaj-Wydrukuj),\
-  \ interaktywne \u015Brodowisko, gdzie mo\u017Cna szybko testowa\u0107 kod."
+summary: "Aby wej\u015B\u0107 do REPL Lua, wystarczy wpisa\u0107 `lua` w terminalu."
 title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---

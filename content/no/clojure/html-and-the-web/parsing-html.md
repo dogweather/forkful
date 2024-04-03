@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:14.751264-07:00
-description: "\xC5 tolke HTML i Clojure inneb\xE6rer \xE5 programmelt trekke ut informasjon\
-  \ fra HTML-dokumenter. Programmerere gj\xF8r dette for \xE5 f\xE5 tilgang til, manipulere\
-  \ eller\u2026"
+description: "Hvordan: Clojure har ikke innebygd evne til \xE5 tolke HTML, men du\
+  \ kan utnytte Java-biblioteker eller Clojure-wrappere som `enlive` eller `hickory`.\
+  \ Her er\u2026"
 lastmod: '2024-03-13T22:44:40.400311-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 tolke HTML i Clojure inneb\xE6rer \xE5 programmelt trekke ut informasjon\
-  \ fra HTML-dokumenter."
+summary: "Clojure har ikke innebygd evne til \xE5 tolke HTML, men du kan utnytte Java-biblioteker\
+  \ eller Clojure-wrappere som `enlive` eller `hickory`."
 title: Analysering av HTML
 weight: 43
 ---

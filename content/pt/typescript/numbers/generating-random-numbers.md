@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 20:35:28.258848-07:00
-description: "Gerar n\xFAmeros aleat\xF3rios em TypeScript trata de criar valores\
-  \ num\xE9ricos imprevis\xEDveis dentro de um intervalo especificado. Programadores\
-  \ utilizam esses\u2026"
+description: "Como fazer: Em TypeScript, voc\xEA pode gerar n\xFAmeros aleat\xF3rios\
+  \ usando o objeto global `Math`. Abaixo est\xE3o alguns exemplos pr\xE1ticos demonstrando\
+  \ como\u2026"
 lastmod: '2024-03-13T22:44:46.321778-06:00'
 model: gpt-4-0125-preview
-summary: "Gerar n\xFAmeros aleat\xF3rios em TypeScript trata de criar valores num\xE9\
-  ricos imprevis\xEDveis dentro de um intervalo especificado."
+summary: "Em TypeScript, voc\xEA pode gerar n\xFAmeros aleat\xF3rios usando o objeto\
+  \ global `Math`."
 title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
 weight: 12
 ---

@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:29:53.369643-07:00
-description: "XML:n k\xE4sittely Elixiriss\xE4 tarkoittaa XML-tietojen j\xE4sent\xE4\
-  mist\xE4, luomista ja manipulointia. Ohjelmoijat k\xE4sittelev\xE4t XML:\xE4\xE4\
-  , koska se on laajalti k\xE4yt\xF6ss\xE4\u2026"
+description: "Kuinka: Elixir ei sis\xE4ll\xE4 XML-j\xE4sent\xE4mist\xE4 vakio kirjastossaan.\
+  \ SweetXML on suosittu valinta. N\xE4in sit\xE4 k\xE4ytet\xE4\xE4n."
 lastmod: '2024-03-13T22:44:56.251126-06:00'
 model: gpt-4-0125-preview
-summary: "XML:n k\xE4sittely Elixiriss\xE4 tarkoittaa XML-tietojen j\xE4sent\xE4mist\xE4\
-  , luomista ja manipulointia."
+summary: "Elixir ei sis\xE4ll\xE4 XML-j\xE4sent\xE4mist\xE4 vakio kirjastossaan."
 title: "XML:n k\xE4sittely"
 weight: 40
 ---

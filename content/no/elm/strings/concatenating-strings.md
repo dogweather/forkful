@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:34:36.708009-07:00
-description: "I Elm handler sammensl\xE5ing av strenger om \xE5 sette sammen to eller\
-  \ flere tekstfragmenter til en lengre tekst. Vi gj\xF8r dette for \xE5 bygge dynamisk\
-  \ innhold,\u2026"
+description: "How to: Elm gj\xF8r det lett \xE5 sl\xE5 sammen strenger med `++` operatoren.\
+  \ Her er et eksempel."
 lastmod: '2024-03-13T22:44:40.700457-06:00'
 model: gpt-4-1106-preview
-summary: "I Elm handler sammensl\xE5ing av strenger om \xE5 sette sammen to eller\
-  \ flere tekstfragmenter til en lengre tekst."
+summary: "Elm gj\xF8r det lett \xE5 sl\xE5 sammen strenger med `++` operatoren."
 title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---

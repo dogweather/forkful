@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:50.637153-07:00
-description: "Att hitta l\xE4ngden p\xE5 en str\xE4ng i Visual Basic for Applications\
-  \ (VBA) handlar om att best\xE4mma antalet tecken den inneh\xE5ller. Programmerare\
-  \ utf\xF6r ofta denna\u2026"
+description: "Hur: I VBA \xE4r funktionen `Len` din tillg\xE5ng f\xF6r att hitta l\xE4\
+  ngden p\xE5 en str\xE4ng. Den returnerar ett heltal som representerar antalet tecken\
+  \ i en angiven\u2026"
 lastmod: '2024-03-13T22:44:37.733235-06:00'
 model: gpt-4-0125-preview
-summary: "Att hitta l\xE4ngden p\xE5 en str\xE4ng i Visual Basic for Applications\
-  \ (VBA) handlar om att best\xE4mma antalet tecken den inneh\xE5ller."
+summary: "I VBA \xE4r funktionen `Len` din tillg\xE5ng f\xF6r att hitta l\xE4ngden\
+  \ p\xE5 en str\xE4ng."
 title: "Att hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---

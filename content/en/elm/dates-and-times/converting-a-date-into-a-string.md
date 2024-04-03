@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 17:36:25.018272-07:00
-description: "Converting a date into a string means turning a date value, which computers\
-  \ understand, into a human-readable format. We do this so users can see dates in\u2026"
+description: "How to: In Elm, you use the `Date` module to work with dates, and the\
+  \ `elm/time` package provides functions to convert dates to strings. Let's dive\
+  \ in\u2026"
 lastmod: '2024-03-13T22:45:00.021162-06:00'
 model: gpt-4-1106-preview
-summary: Converting a date into a string means turning a date value, which computers
-  understand, into a human-readable format.
+summary: In Elm, you use the `Date` module to work with dates, and the `elm/time`
+  package provides functions to convert dates to strings.
 title: Converting a date into a string
 weight: 28
 ---

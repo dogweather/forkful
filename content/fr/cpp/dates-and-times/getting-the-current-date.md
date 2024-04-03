@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:07.117094-07:00
-description: "La r\xE9cup\xE9ration de la date actuelle en C++ est une t\xE2che fondamentale\
-  \ pour les programmes qui doivent traiter ou afficher des dates bas\xE9es sur l'horloge\u2026"
+description: "Comment faire : C++ propose plusieurs moyens d'obtenir la date actuelle,\
+  \ y compris la biblioth\xE8que standard C++ et des biblioth\xE8ques tierces comme\
+  \ Boost.\u2026"
 lastmod: '2024-03-13T22:44:58.174757-06:00'
 model: gpt-4-0125-preview
-summary: "La r\xE9cup\xE9ration de la date actuelle en C++ est une t\xE2che fondamentale\
-  \ pour les programmes qui doivent traiter ou afficher des dates bas\xE9es sur l'horloge\
-  \ du syst\xE8me."
+summary: "C++ propose plusieurs moyens d'obtenir la date actuelle, y compris la biblioth\xE8\
+  que standard C++ et des biblioth\xE8ques tierces comme Boost."
 title: Obtenir la date actuelle
 weight: 29
 ---

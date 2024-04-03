@@ -2,14 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:12.478008-07:00
-description: "O tratamento de erros em Dart consiste em antecipar e gerir exce\xE7\
-  \xF5es que surgem durante a execu\xE7\xE3o do programa para aumentar a confiabilidade\
-  \ e\u2026"
+description: "Como Fazer: O Dart suporta dois tipos de erros: erros em *tempo de compila\xE7\
+  \xE3o* e erros em *tempo de execu\xE7\xE3o*. Os erros de tempo de compila\xE7\xE3\
+  o s\xE3o\u2026"
 lastmod: '2024-03-13T22:44:46.289763-06:00'
 model: gpt-4-0125-preview
-summary: "O tratamento de erros em Dart consiste em antecipar e gerir exce\xE7\xF5\
-  es que surgem durante a execu\xE7\xE3o do programa para aumentar a confiabilidade\
-  \ e usabilidade."
+summary: O Dart suporta dois tipos de erros.
 title: Gerenciando erros
 weight: 16
 ---

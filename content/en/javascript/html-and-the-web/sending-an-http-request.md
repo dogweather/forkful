@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 17:59:48.745761-07:00
-description: "Sending an HTTP request is how your JavaScript code talks to a server.\
-  \ It's done to exchange data, fetch resources, or send data to the server for\u2026"
+description: "How to: JavaScript uses the `fetch` API for sending requests. Here\u2019\
+  s how to do a simple GET request."
 lastmod: '2024-03-13T22:45:00.430643-06:00'
 model: gpt-4-1106-preview
-summary: Sending an HTTP request is how your JavaScript code talks to a server.
+summary: JavaScript uses the `fetch` API for sending requests.
 title: Sending an HTTP request
 weight: 44
 ---

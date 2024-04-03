@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:22.190550-07:00
-description: "Concatenatie in Visual Basic for Applications (VBA) houdt in dat twee\
-  \ of meer strings worden samengevoegd tot een enkele entiteit. Dit is een fundamentele\u2026"
+description: "Hoe: VBA biedt een eenvoudige methode voor het samenvoegen van strings\
+  \ met behulp van de `&` operator of de `Concatenate` functie. Laten we beide methoden\u2026"
 lastmod: '2024-03-13T22:44:50.628304-06:00'
 model: gpt-4-0125-preview
-summary: Concatenatie in Visual Basic for Applications (VBA) houdt in dat twee of
-  meer strings worden samengevoegd tot een enkele entiteit.
+summary: VBA biedt een eenvoudige methode voor het samenvoegen van strings met behulp
+  van de `&` operator of de `Concatenate` functie.
 title: Strings samenvoegen
 weight: 3
 ---

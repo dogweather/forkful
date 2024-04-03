@@ -1,12 +1,12 @@
 ---
 date: 2024-02-01 21:12:08.411965-07:00
-description: "An interactive shell, or Read-Eval-Print Loop (REPL), is a simple, interactive\
-  \ programming environment that takes single user inputs (expressions),\u2026"
+description: "How to: Google Apps Script, a cloud-based scripting language for automating\
+  \ tasks across Google products, doesn't have a built-in REPL tool similar to\u2026"
 lastmod: '2024-03-13T22:44:59.671464-06:00'
 model: gpt-4-0125-preview
-summary: An interactive shell, or Read-Eval-Print Loop (REPL), is a simple, interactive
-  programming environment that takes single user inputs (expressions), evaluates them,
-  and returns the result to the user.
+summary: Google Apps Script, a cloud-based scripting language for automating tasks
+  across Google products, doesn't have a built-in REPL tool similar to those in languages
+  like Python or JavaScript's Node.js.
 title: Using an interactive shell (REPL)
 weight: 34
 ---

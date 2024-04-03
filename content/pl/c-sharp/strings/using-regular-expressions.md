@@ -2,14 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:39.477283-07:00
-description: "Wyra\u017Cenia regularne (regex) w C# s\u0105 pot\u0119\u017Cnym narz\u0119\
-  dziem do dopasowywania wzorc\xF3w w ci\u0105gach znak\xF3w, co pozwala programistom\
-  \ na efektywne wyszukiwanie,\u2026"
+description: "Jak to zrobi\u0107: #."
 lastmod: '2024-03-13T22:44:35.397799-06:00'
 model: gpt-4-0125-preview
-summary: "Wyra\u017Cenia regularne (regex) w C# s\u0105 pot\u0119\u017Cnym narz\u0119\
-  dziem do dopasowywania wzorc\xF3w w ci\u0105gach znak\xF3w, co pozwala programistom\
-  \ na efektywne wyszukiwanie, zast\u0119powanie, dzielenie lub ekstrakcj\u0119 danych."
+summary: '#.'
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---

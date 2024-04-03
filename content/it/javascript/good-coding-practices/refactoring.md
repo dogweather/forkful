@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 01:41:34.491469-07:00
-description: "Il Refactoring \xE8 il processo di ristrutturazione del codice informatico\
-  \ esistente senza modificarne il comportamento esterno. I programmatori lo fanno\
-  \ per\u2026"
+description: "Come fare: Vediamo un semplice esempio in cui il refactoring pu\xF2\
+  \ rendere il tuo codice pi\xF9 conciso e leggibile. Qui, rifattorizziamo una funzione\
+  \ che\u2026"
 lastmod: '2024-03-13T22:44:43.821027-06:00'
 model: gpt-4-0125-preview
-summary: "Il Refactoring \xE8 il processo di ristrutturazione del codice informatico\
-  \ esistente senza modificarne il comportamento esterno."
+summary: "Vediamo un semplice esempio in cui il refactoring pu\xF2 rendere il tuo\
+  \ codice pi\xF9 conciso e leggibile."
 title: Rifattorizzazione
 weight: 19
 ---

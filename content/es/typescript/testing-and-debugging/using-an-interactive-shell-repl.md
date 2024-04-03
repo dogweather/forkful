@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 04:18:22.962589-07:00
-description: "Un Bucle de Leer-Evaluar-Imprimir (REPL, por sus siglas en ingl\xE9\
-  s) es un entorno de programaci\xF3n que toma entradas individuales del usuario,\
-  \ las ejecuta y\u2026"
+description: "C\xF3mo hacerlo: TypeScript no viene con su propio REPL. Vamos a usar\
+  \ `ts-node`, un entorno de ejecuci\xF3n de TypeScript para Node.js que incluye un\
+  \ REPL.\u2026"
 lastmod: '2024-03-13T22:44:58.802265-06:00'
 model: gpt-4-0125-preview
-summary: "Un Bucle de Leer-Evaluar-Imprimir (REPL, por sus siglas en ingl\xE9s) es\
-  \ un entorno de programaci\xF3n que toma entradas individuales del usuario, las\
-  \ ejecuta y devuelve el resultado al usuario."
+summary: TypeScript no viene con su propio REPL.
 title: Usando una shell interactiva (REPL)
 weight: 34
 ---

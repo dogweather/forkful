@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 18:01:50.556483-07:00
-description: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnieniem\
-  \ umo\u017Cliwia dost\u0119p do zabezpieczonych zasob\xF3w sieciowych. Programi\u015B\
-  ci korzystaj\u0105 z tego mechanizmu,\u2026"
+description: "Jak to zrobi\u0107: ."
 lastmod: '2024-03-13T22:44:35.841193-06:00'
 model: gpt-4-1106-preview
-summary: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnieniem umo\u017C\
-  liwia dost\u0119p do zabezpieczonych zasob\xF3w sieciowych."
+summary: .
 title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
 weight: 45
 ---

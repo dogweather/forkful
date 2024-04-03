@@ -1,7 +1,7 @@
 ---
 date: 2024-01-25 20:50:25.605338-07:00
-description: "Rust supports various debuggers, but a common one is `gdb` for GNU/Linux\
-  \ or `lldb` for macOS. You might also use `rust-gdb` or `rust-lldb` which are\u2026"
+description: "How to: Rust supports various debuggers, but a common one is `gdb` for\
+  \ GNU/Linux or `lldb` for macOS. You might also use `rust-gdb` or `rust-lldb` which\u2026"
 lastmod: '2024-03-13T22:44:59.899975-06:00'
 model: gpt-4-1106-preview
 summary: Rust supports various debuggers, but a common one is `gdb` for GNU/Linux

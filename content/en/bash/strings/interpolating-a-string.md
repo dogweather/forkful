@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 17:50:08.463610-07:00
-description: String interpolation lets you insert values into a string. It's handy
-  for creating custom messages, automating commands, and scripting like a boss.
+description: 'How to: Bash strings play nice with variables. Drop a variable into
+  a string with some curly braces, and you''re golden.'
 lastmod: '2024-03-13T22:45:00.230677-06:00'
 model: gpt-4-1106-preview
-summary: String interpolation lets you insert values into a string.
+summary: Bash strings play nice with variables.
 title: Interpolating a string
 weight: 8
 ---

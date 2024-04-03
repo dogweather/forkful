@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:46.924887-07:00
-description: "TypeScriptiss\xE4 standardivirheeseen (stderr) kirjoittaminen tarkoittaa\
-  \ virheviestien tai lokien suoraan l\xE4hett\xE4mist\xE4 ymp\xE4rist\xF6n virhetulostevirtaan\
-  \ (esim.\u2026"
+description: "Kuinka: TypeScript, ollessaan JavaScriptin yl\xE4joukko, nojautuu alla\
+  \ olevaan JS-ajoaikaymp\xE4rist\xF6\xF6n (kuten Node.js) kirjoittaessaan stderr:iin.\
+  \ T\xE4ss\xE4 on\u2026"
 lastmod: '2024-03-13T22:44:56.331273-06:00'
 model: gpt-4-0125-preview
-summary: "TypeScriptiss\xE4 standardivirheeseen (stderr) kirjoittaminen tarkoittaa\
-  \ virheviestien tai lokien suoraan l\xE4hett\xE4mist\xE4 ymp\xE4rist\xF6n virhetulostevirtaan\
-  \ (esim."
+summary: "TypeScript, ollessaan JavaScriptin yl\xE4joukko, nojautuu alla olevaan JS-ajoaikaymp\xE4\
+  rist\xF6\xF6n (kuten Node.js) kirjoittaessaan stderr:iin."
 title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---

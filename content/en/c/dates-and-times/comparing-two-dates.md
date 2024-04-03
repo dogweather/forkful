@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 17:50:07.787303-07:00
-description: "Comparing two dates in C involves determining the chronological relationship\
-  \ between them -- whether one date precedes the other or if they are the same.\u2026"
+description: "How to: C doesn't have a built-in type for dates, necessitating the\
+  \ use of the `time.h` library to work with date and time structures. The `tm` structure\u2026"
 lastmod: '2024-03-13T22:45:00.522323-06:00'
 model: gpt-4-0125-preview
-summary: Comparing two dates in C involves determining the chronological relationship
-  between them -- whether one date precedes the other or if they are the same.
+summary: C doesn't have a built-in type for dates, necessitating the use of the `time.h`
+  library to work with date and time structures.
 title: Comparing two dates
 weight: 27
 ---

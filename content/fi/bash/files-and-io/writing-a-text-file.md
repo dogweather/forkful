@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:08.128092-07:00
-description: "Tekstitiedoston kirjoittaminen Bashissa mahdollistaa datan tallennuksen,\
-  \ lokitiedostojen kirjoittamisen, asetusten m\xE4\xE4rittelyn ja paljon muuta\u2026"
+description: "Kuinka: Bash tarjoaa suoraviivaisia menetelmi\xE4 tiedostoon kirjoittamiseen.\
+  \ Yleisimpi\xE4 ovat uudelleenohjausoperaattorit (`>`, `>>`) ja `tee`-komento. T\xE4\
+  ss\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.757082-06:00'
 model: gpt-4-0125-preview
-summary: "Tekstitiedoston kirjoittaminen Bashissa mahdollistaa datan tallennuksen,\
-  \ lokitiedostojen kirjoittamisen, asetusten m\xE4\xE4rittelyn ja paljon muuta automatisoidusti."
+summary: "Bash tarjoaa suoraviivaisia menetelmi\xE4 tiedostoon kirjoittamiseen."
 title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---

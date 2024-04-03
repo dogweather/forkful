@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:51.855289-07:00
-description: "I numeri complessi sono costituiti da una parte reale e una immaginaria,\
-  \ rappresentati come `a + bi` dove `i` \xE8 la radice quadrata di `-1`. I\u2026"
+description: "Come fare: In C, i numeri complessi sono supportati dalla Libreria Standard,\
+  \ specificamente `<complex.h>`. Per utilizzarli, dichiara variabili con il tipo\u2026"
 lastmod: '2024-03-13T22:44:43.906257-06:00'
 model: gpt-4-0125-preview
-summary: "I numeri complessi sono costituiti da una parte reale e una immaginaria,\
-  \ rappresentati come `a + bi` dove `i` \xE8 la radice quadrata di `-1`."
+summary: In C, i numeri complessi sono supportati dalla Libreria Standard, specificamente
+  `<complex.h>`.
 title: Lavorare con i numeri complessi
 weight: 14
 ---

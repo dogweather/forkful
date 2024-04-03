@@ -2,13 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:03.817842-07:00
-description: "Registrar (logging) em Dart refere-se ao processo de grava\xE7\xE3o\
-  \ de v\xE1rios n\xEDveis de informa\xE7\xF5es durante a execu\xE7\xE3o de um programa.\
-  \ Programadores fazem isso\u2026"
+description: "Como fazer: Dart inclui um mecanismo de registro simples atrav\xE9s\
+  \ da biblioteca `dart:developer`. Para necessidades de registro mais sofisticadas,\u2026"
 lastmod: '2024-03-13T22:44:46.288718-06:00'
 model: gpt-4-0125-preview
-summary: "Registrar (logging) em Dart refere-se ao processo de grava\xE7\xE3o de v\xE1\
-  rios n\xEDveis de informa\xE7\xF5es durante a execu\xE7\xE3o de um programa."
+summary: "Dart inclui um mecanismo de registro simples atrav\xE9s da biblioteca `dart:developer`."
 title: Registro
 weight: 17
 ---

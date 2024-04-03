@@ -2,16 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:59.170029-07:00
-description: "S\u1ED1 ph\u1EE9c, bao g\u1ED3m m\u1ED9t ph\u1EA7n th\u1EF1c v\xE0 m\u1ED9\
-  t ph\u1EA7n \u1EA3o, l\xE0 c\u1EA7n thi\u1EBFt trong c\xE1c l\u0129nh v\u1EF1c t\xED\
-  nh to\xE1n kh\xE1c nhau nh\u01B0 k\u1EF9 thu\u1EADt, v\u1EADt l\xFD, v\xE0 x\u1EED\
-  \ l\xFD t\xEDn hi\u1EC7u. L\u1EADp tr\xECnh vi\xEAn\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Haskell x\u1EED l\xFD s\u1ED1 ph\u1EE9c v\u1EDB\
+  i module `Data.Complex`. D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t h\u01B0\u1EDB\
+  ng d\u1EABn nhanh."
 lastmod: '2024-03-13T22:44:36.704549-06:00'
 model: gpt-4-0125-preview
-summary: "S\u1ED1 ph\u1EE9c, bao g\u1ED3m m\u1ED9t ph\u1EA7n th\u1EF1c v\xE0 m\u1ED9\
-  t ph\u1EA7n \u1EA3o, l\xE0 c\u1EA7n thi\u1EBFt trong c\xE1c l\u0129nh v\u1EF1c t\xED\
-  nh to\xE1n kh\xE1c nhau nh\u01B0 k\u1EF9 thu\u1EADt, v\u1EADt l\xFD, v\xE0 x\u1EED\
-  \ l\xFD t\xEDn hi\u1EC7u."
+summary: "Haskell x\u1EED l\xFD s\u1ED1 ph\u1EE9c v\u1EDBi module `Data.Complex`."
 title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 weight: 14
 ---

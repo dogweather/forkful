@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:02:48.155349-07:00
-description: "Regular expressions (regex) in Elixir are used for searching, matching,\
-  \ and manipulating strings based on specific patterns. Programmers leverage regex\u2026"
+description: 'How to: Elixir uses the `Regex` module, leveraging Erlang''s regex library,
+  for regex operations. Here are basic uses.'
 lastmod: '2024-03-13T22:44:59.773761-06:00'
 model: gpt-4-0125-preview
-summary: Regular expressions (regex) in Elixir are used for searching, matching, and
-  manipulating strings based on specific patterns.
+summary: Elixir uses the `Regex` module, leveraging Erlang's regex library, for regex
+  operations.
 title: Using regular expressions
 weight: 11
 ---

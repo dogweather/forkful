@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:51.022036-07:00
-description: "Praca z CSV (Comma-Separated Values, warto\u015Bci rozdzielone przecinkami)\
-  \ polega na parsowaniu oraz generowaniu plik\xF3w, kt\xF3re przechowuj\u0105 dane\
-  \ tabelaryczne w\u2026"
+description: "Jak to zrobi\u0107: W Haskellu obs\u0142ug\u0119 plik\xF3w CSV mo\u017C\
+  na osi\u0105gn\u0105\u0107 za pomoc\u0105 biblioteki `cassava`, jednej z popularnych\
+  \ bibliotek stron trzecich do tego celu.\u2026"
 lastmod: '2024-03-13T22:44:35.476175-06:00'
 model: gpt-4-0125-preview
-summary: "Praca z CSV (Comma-Separated Values, warto\u015Bci rozdzielone przecinkami)\
-  \ polega na parsowaniu oraz generowaniu plik\xF3w, kt\xF3re przechowuj\u0105 dane\
-  \ tabelaryczne w prostym, tekstowym formacie."
+summary: "W Haskellu obs\u0142ug\u0119 plik\xF3w CSV mo\u017Cna osi\u0105gn\u0105\u0107\
+  \ za pomoc\u0105 biblioteki `cassava`, jednej z popularnych bibliotek stron trzecich\
+  \ do tego celu."
 title: Praca z plikami CSV
 weight: 37
 ---

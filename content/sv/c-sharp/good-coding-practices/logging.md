@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:01:18.530477-07:00
-description: "Loggning \xE4r processen att registrera applikationsh\xE4ndelser och\
-  \ datautskrift under k\xF6rning. Programmerare loggar f\xF6r att diagnostisera buggar,\
-  \ \xF6vervaka\u2026"
+description: "Hur man g\xF6r: I C# kan du anv\xE4nda det inbyggda namnrymdet `System.Diagnostics`\
+  \ eller tredjepartskomponenter som NLog eller log4net. H\xE4r \xE4r ett snabbt\u2026"
 lastmod: '2024-03-13T22:44:37.919850-06:00'
 model: gpt-4-1106-preview
-summary: "Loggning \xE4r processen att registrera applikationsh\xE4ndelser och datautskrift\
-  \ under k\xF6rning."
+summary: "I C# kan du anv\xE4nda det inbyggda namnrymdet `System.Diagnostics` eller\
+  \ tredjepartskomponenter som NLog eller log4net."
 title: Loggning
 weight: 17
 ---

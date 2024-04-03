@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:34.692445-07:00
-description: "Att g\xF6ra f\xF6rsta bokstaven i en str\xE4ng stor i Swift inneb\xE4\
-  r att man modifierar den givna str\xE4ngen s\xE5 att dess f\xF6rsta tecken \xE4\
-  r versalt, och de \xE5terst\xE5ende\u2026"
+description: "Hur man g\xF6r: Swifts `String`-strukturer kommer med ett par inbyggda\
+  \ metoder f\xF6r att manipulera str\xE4ngars versalisering. H\xE4r \xE4r n\xE5gra\
+  \ tillv\xE4gag\xE5ngss\xE4tt f\xF6r\u2026"
 lastmod: '2024-03-13T22:44:38.234796-06:00'
 model: gpt-4-0125-preview
-summary: "Att g\xF6ra f\xF6rsta bokstaven i en str\xE4ng stor i Swift inneb\xE4r att\
-  \ man modifierar den givna str\xE4ngen s\xE5 att dess f\xF6rsta tecken \xE4r versalt,\
-  \ och de \xE5terst\xE5ende tecknen \xE4r gemener."
+summary: "Swifts `String`-strukturer kommer med ett par inbyggda metoder f\xF6r att\
+  \ manipulera str\xE4ngars versalisering."
 title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---

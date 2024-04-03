@@ -1,11 +1,12 @@
 ---
 date: 2024-02-03 17:50:03.745077-07:00
-description: "Parsing a date from a string in C involves converting textual representations\
-  \ of dates into a format that programs can more effectively manipulate and\u2026"
+description: "How to: C doesn't provide a built-in way to parse dates from strings\
+  \ directly, so we often resort to the `strptime` function available in the `<time.h>`\u2026"
 lastmod: '2024-03-13T22:45:00.519751-06:00'
 model: gpt-4-0125-preview
-summary: Parsing a date from a string in C involves converting textual representations
-  of dates into a format that programs can more effectively manipulate and analyze.
+summary: C doesn't provide a built-in way to parse dates from strings directly, so
+  we often resort to the `strptime` function available in the `<time.h>` library for
+  POSIX systems.
 title: Parsing a date from a string
 weight: 30
 ---

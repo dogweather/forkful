@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:32:41.270301-07:00
-description: "Comparer deux dates, c'est mesurer la diff\xE9rence de temps entre elles.\
-  \ Les programmeurs le font pour organiser des \xE9v\xE9nements, filtrer des donn\xE9\
-  es ou tout\u2026"
+description: 'How to: Comparons deux dates en Elm. Utilisons le module `Date` fourni
+  par `elm/time`.'
 lastmod: '2024-03-13T22:44:57.703264-06:00'
 model: gpt-4-1106-preview
-summary: "Comparer deux dates, c'est mesurer la diff\xE9rence de temps entre elles."
+summary: Comparons deux dates en Elm.
 title: Comparer deux dates
 weight: 27
 ---

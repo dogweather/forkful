@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:01.803816-07:00
-description: "Felhantering i Google Apps Script handlar om att f\xF6rutse, f\xE5nga\
-  \ och svara p\xE5 undantag eller fel som uppst\xE5r under skriptets k\xF6rning.\
-  \ Programmerare\u2026"
+description: "Hur man g\xF6r: Google Apps Script, som \xE4r baserat p\xE5 JavaScript,\
+  \ till\xE5ter oss att anv\xE4nda det traditionella `try-catch`-uttrycket f\xF6r\
+  \ felhantering,\u2026"
 lastmod: '2024-03-13T22:44:37.446933-06:00'
 model: gpt-4-0125-preview
-summary: "Felhantering i Google Apps Script handlar om att f\xF6rutse, f\xE5nga och\
-  \ svara p\xE5 undantag eller fel som uppst\xE5r under skriptets k\xF6rning."
+summary: "Google Apps Script, som \xE4r baserat p\xE5 JavaScript, till\xE5ter oss\
+  \ att anv\xE4nda det traditionella `try-catch`-uttrycket f\xF6r felhantering, tillsammans\
+  \ med `finally` om st\xE4dning kr\xE4vs oavsett framg\xE5ng eller fel."
 title: Hantera fel
 weight: 16
 ---

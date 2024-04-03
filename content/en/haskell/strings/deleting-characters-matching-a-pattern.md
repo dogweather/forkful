@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:42:30.351248-07:00
-description: "Deleting characters that match a specific pattern is about sifting through\
-  \ text and removing bits you don't need. Programmers do this to cleanse data,\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:45:00.113324-06:00'
 model: gpt-4-1106-preview
-summary: Deleting characters that match a specific pattern is about sifting through
-  text and removing bits you don't need.
+summary: .
 title: Deleting characters matching a pattern
 weight: 5
 ---

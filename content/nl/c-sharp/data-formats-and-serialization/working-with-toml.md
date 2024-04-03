@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:50.247459-07:00
-description: "TOML is een acroniem voor Tom's Obvious, Minimal Language, een configuratiebestandsformaat\
-  \ dat gemakkelijk te lezen is vanwege de duidelijke semantiek.\u2026"
+description: 'Hoe: Installeer eerst een TOML-parser zoals `Tomlyn`. Gebruik je pakketbeheerder.'
 lastmod: '2024-03-13T22:44:50.833500-06:00'
 model: gpt-4-0125-preview
-summary: TOML is een acroniem voor Tom's Obvious, Minimal Language, een configuratiebestandsformaat
-  dat gemakkelijk te lezen is vanwege de duidelijke semantiek.
+summary: Installeer eerst een TOML-parser zoals `Tomlyn`.
 title: Werken met TOML
 weight: 39
 ---

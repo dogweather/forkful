@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:56:59.743955-07:00
-description: "Argumenty linii polece\u0144 to parametry przekazywane do programu,\
-  \ kiedy jest on uruchamiany z terminala. Programi\u015Bci korzystaj\u0105 z nich,\
-  \ by wp\u0142ywa\u0107 na\u2026"
+description: "How to: Odczytujemy argumenty z tablicy `CommandLine.arguments`. Przyk\u0142\
+  adowy kod."
 lastmod: '2024-03-13T22:44:35.770081-06:00'
 model: gpt-4-1106-preview
-summary: "Argumenty linii polece\u0144 to parametry przekazywane do programu, kiedy\
-  \ jest on uruchamiany z terminala."
+summary: Odczytujemy argumenty z tablicy `CommandLine.arguments`.
 title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---

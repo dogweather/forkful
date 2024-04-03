@@ -1,11 +1,12 @@
 ---
 date: 2024-02-03 17:50:11.733208-07:00
-description: "TOML (Tom's Obvious, Minimal Language) is a configuration file format\
-  \ that is easy to read due to its clear semantics. Programmers use it for\u2026"
+description: "How to: To work with TOML in C, you first need a library capable of\
+  \ parsing TOML files, as the C standard library does not include this functionality.\
+  \ A\u2026"
 lastmod: '2024-03-13T22:45:00.531897-06:00'
 model: gpt-4-0125-preview
-summary: TOML (Tom's Obvious, Minimal Language) is a configuration file format that
-  is easy to read due to its clear semantics.
+summary: To work with TOML in C, you first need a library capable of parsing TOML
+  files, as the C standard library does not include this functionality.
 title: Working with TOML
 weight: 39
 ---

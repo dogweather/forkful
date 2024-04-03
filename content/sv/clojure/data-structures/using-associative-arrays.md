@@ -2,13 +2,13 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:49.449509-07:00
-description: "Associativa arrayer, eller hashkartor, i Clojure l\xE5ter dig lagra\
-  \ och h\xE4mta data med nyckel-v\xE4rde-par. De \xE4r en g\xE5-till-l\xF6sning f\xF6\
-  r att hantera\u2026"
+description: "Hur man g\xF6r: I Clojure \xE4r det enkelt att skapa och manipulera\
+  \ associativa arrayer (hashkartor). L\xE5t oss dyka in med exempel. F\xF6r att skapa\
+  \ en hashkarta."
 lastmod: '2024-03-13T22:44:37.518469-06:00'
 model: gpt-4-0125-preview
-summary: "Associativa arrayer, eller hashkartor, i Clojure l\xE5ter dig lagra och\
-  \ h\xE4mta data med nyckel-v\xE4rde-par."
+summary: "I Clojure \xE4r det enkelt att skapa och manipulera associativa arrayer\
+  \ (hashkartor)."
 title: "Att anv\xE4nda associativa arrayer"
 weight: 15
 ---

@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:17:10.237006-07:00
-description: "Un REPL, ou Boucle Lire-\xC9valuer-Afficher (Read-Eval-Print Loop),\
-  \ est un environnement de programmation qui prend des entr\xE9es utilisateur individuelles,\u2026"
+description: "Comment faire : Plongez directement dans le REPL de Python en tapant\
+  \ `python` dans votre ligne de commande. Une fois l\xE0, testez des op\xE9rations\
+  \ simples ou\u2026"
 lastmod: '2024-03-13T22:44:57.237909-06:00'
 model: gpt-4-0125-preview
-summary: "Un REPL, ou Boucle Lire-\xC9valuer-Afficher (Read-Eval-Print Loop), est\
-  \ un environnement de programmation qui prend des entr\xE9es utilisateur individuelles,\
-  \ les ex\xE9cute et retourne le r\xE9sultat \xE0 l'utilisateur."
+summary: Plongez directement dans le REPL de Python en tapant `python` dans votre
+  ligne de commande.
 title: Utilisation d'une console interactive (REPL)
 weight: 34
 ---

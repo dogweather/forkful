@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:18.306171-07:00
-description: "Het parsen van een datum uit een string betekent het converteren van\
-  \ tekst die een datum en tijd vertegenwoordigt naar een programmeerbaar formaat.\u2026"
+description: 'Hoe te: PHP maakt het parsen van datums uit strings vrij eenvoudig met
+  de `DateTime` klasse. Hier is een snel voorbeeld.'
 lastmod: '2024-03-13T22:44:50.905231-06:00'
 model: gpt-4-0125-preview
-summary: Het parsen van een datum uit een string betekent het converteren van tekst
-  die een datum en tijd vertegenwoordigt naar een programmeerbaar formaat.
+summary: PHP maakt het parsen van datums uit strings vrij eenvoudig met de `DateTime`
+  klasse.
 title: Een datum uit een string parsen
 weight: 30
 ---

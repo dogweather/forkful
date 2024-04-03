@@ -2,13 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:10.075877-07:00
-description: "Calculer une date dans le futur ou dans le pass\xE9 est une t\xE2che\
-  \ courante pour les programmeurs, concernant la planification, les rappels, ou toute\u2026"
+description: "Comment faire : Dart offre un soutien robuste pour la manipulation des\
+  \ dates \xE0 travers sa classe `DateTime`. Voici comment vous pouvez calculer des\
+  \ dates\u2026"
 lastmod: '2024-03-13T22:44:57.405297-06:00'
 model: gpt-4-0125-preview
-summary: "Calculer une date dans le futur ou dans le pass\xE9 est une t\xE2che courante\
-  \ pour les programmeurs, concernant la planification, les rappels, ou toute fonctionnalit\xE9\
-  \ d\xE9pendant des calculs de dates."
+summary: "Dart offre un soutien robuste pour la manipulation des dates \xE0 travers\
+  \ sa classe `DateTime`."
 title: "Calculer une date dans le futur ou le pass\xE9"
 weight: 26
 ---

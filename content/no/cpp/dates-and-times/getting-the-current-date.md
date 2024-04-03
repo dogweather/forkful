@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:58.270575-07:00
-description: "\xC5 hente den n\xE5v\xE6rende datoen i C++ er en grunnleggende oppgave\
-  \ for programmer som trenger \xE5 behandle eller vise datoer basert p\xE5 systemets\
-  \ klokke. Det er\u2026"
+description: "Hvordan: C++ tilbyr flere m\xE5ter \xE5 f\xE5 tak i den n\xE5v\xE6rende\
+  \ datoen p\xE5, inkludert C++ standardbiblioteket og tredjeparts biblioteker som\
+  \ Boost. F\xF8lgende\u2026"
 lastmod: '2024-03-13T22:44:41.110448-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 hente den n\xE5v\xE6rende datoen i C++ er en grunnleggende oppgave\
-  \ for programmer som trenger \xE5 behandle eller vise datoer basert p\xE5 systemets\
-  \ klokke."
+summary: "C++ tilbyr flere m\xE5ter \xE5 f\xE5 tak i den n\xE5v\xE6rende datoen p\xE5\
+  , inkludert C++ standardbiblioteket og tredjeparts biblioteker som Boost."
 title: "F\xE5 dagens dato"
 weight: 29
 ---

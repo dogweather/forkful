@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:47.144020-07:00
-description: "Wyodr\u0119bnianie podci\u0105g\xF3w polega na pobieraniu okre\u015B\
-  lonych fragment\xF3w ci\u0105gu na podstawie ich pozycji. Programi\u015Bci cz\u0119\
-  sto wykonuj\u0105 t\u0119 operacj\u0119, aby\u2026"
+description: "Jak to zrobi\u0107: W Go typ `string` jest tylko do odczytu wycinkiem\
+  \ (slice) bajt\xF3w. Aby wyodr\u0119bni\u0107 podci\u0105gi, g\u0142\xF3wnie u\u017C\
+  ywa si\u0119 sk\u0142adni `slice` wraz z\u2026"
 lastmod: '2024-03-13T22:44:34.837004-06:00'
 model: gpt-4-0125-preview
-summary: "Wyodr\u0119bnianie podci\u0105g\xF3w polega na pobieraniu okre\u015Blonych\
-  \ fragment\xF3w ci\u0105gu na podstawie ich pozycji."
+summary: "W Go typ `string` jest tylko do odczytu wycinkiem (slice) bajt\xF3w."
 title: "Wydobywanie podci\u0105g\xF3w"
 weight: 6
 ---

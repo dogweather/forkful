@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:33:43.001779-07:00
-description: "XML:n kanssa ty\xF6skentelyn yhteydess\xE4 k\xE4sitell\xE4\xE4n XML-dokumentteja\
-  \ koodin avulla. Ohjelmoijat tekev\xE4t t\xE4m\xE4n lukeakseen, kirjoittaakseen\
-  \ ja muokatakseen\u2026"
+description: "Kuinka: Lua ei sis\xE4ll\xE4 natiivia XML-j\xE4sennyst\xE4, mutta on\
+  \ olemassa kirjastoja, kuten LuaXML ja xml2lua, jotka suorittavat teht\xE4v\xE4\
+  n. T\xE4ss\xE4 on nopea katsaus\u2026"
 lastmod: '2024-03-13T22:44:56.720844-06:00'
 model: gpt-4-0125-preview
-summary: "XML:n kanssa ty\xF6skentelyn yhteydess\xE4 k\xE4sitell\xE4\xE4n XML-dokumentteja\
-  \ koodin avulla."
+summary: "Lua ei sis\xE4ll\xE4 natiivia XML-j\xE4sennyst\xE4, mutta on olemassa kirjastoja,\
+  \ kuten LuaXML ja xml2lua, jotka suorittavat teht\xE4v\xE4n."
 title: "XML:n k\xE4sittely"
 weight: 40
 ---

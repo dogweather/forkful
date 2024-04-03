@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:35:46.343141-07:00
-description: "La concatenazione di stringhe \xE8 il processo di unione di due o pi\xF9\
-  \ stringhe in un'unica stringa. I programmatori la utilizzano per creare messaggi\u2026"
+description: 'Come fare: Ecco alcune vie per concatenare stringhe in Rust.'
 lastmod: '2024-03-13T22:44:43.209882-06:00'
 model: gpt-4-1106-preview
-summary: "La concatenazione di stringhe \xE8 il processo di unione di due o pi\xF9\
-  \ stringhe in un'unica stringa."
+summary: Ecco alcune vie per concatenare stringhe in Rust.
 title: Concatenazione di stringhe
 weight: 3
 ---

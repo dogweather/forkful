@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 00:53:19.778134-07:00
-description: "Fehlerbehandlung bedeutet, Code zu schreiben, der Fehler erwartet und\
-  \ damit umgeht. Programmierer tun dies, um Software robust zu machen und Abst\xFC\
-  rze\u2026"
+description: "Wie geht das: Java verwendet Ausnahmen (Exceptions) zur Fehlerbehandlung.\
+  \ Sie umgeben riskanten Code mit einem `try`-Block und fangen Ausnahmen mit\u2026"
 lastmod: '2024-03-13T22:44:53.770005-06:00'
 model: gpt-4-1106-preview
-summary: Fehlerbehandlung bedeutet, Code zu schreiben, der Fehler erwartet und damit
-  umgeht.
+summary: Java verwendet Ausnahmen (Exceptions) zur Fehlerbehandlung.
 title: Fehlerbehandlung
 weight: 16
 ---

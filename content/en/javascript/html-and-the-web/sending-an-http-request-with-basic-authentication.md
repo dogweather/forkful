@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 18:01:57.938512-07:00
-description: "Sending an HTTP request with basic authentication involves including\
-  \ a username and password encoded in base64 within the request header. Programmers\
-  \ do\u2026"
+description: 'How to: Here''s a quick example using JavaScript''s Fetch API.'
 lastmod: '2024-03-13T22:45:00.433280-06:00'
 model: gpt-4-1106-preview
-summary: Sending an HTTP request with basic authentication involves including a username
-  and password encoded in base64 within the request header.
+summary: Here's a quick example using JavaScript's Fetch API.
 title: Sending an HTTP request with basic authentication
 weight: 45
 ---

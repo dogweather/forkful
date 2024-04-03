@@ -1,13 +1,10 @@
 ---
 date: 2024-02-03 19:03:45.561841-07:00
-description: "Writing to standard error (stderr) is about outputting error messages\
-  \ and diagnostics to a separate stream, distinct from standard output (stdout),\
-  \ which\u2026"
+description: "How to: In Kotlin, writing to stderr can be achieved using `System.err.println()`.\
+  \ This method is similar to `System.out.println()` but directs the output\u2026"
 lastmod: '2024-03-13T22:45:00.064132-06:00'
 model: gpt-4-0125-preview
-summary: Writing to standard error (stderr) is about outputting error messages and
-  diagnostics to a separate stream, distinct from standard output (stdout), which
-  allows for better error handling and log parsing.
+summary: In Kotlin, writing to stderr can be achieved using `System.err.println()`.
 title: Writing to standard error
 weight: 25
 ---

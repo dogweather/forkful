@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:09.826289-07:00
-description: "Att hantera fel i Go inneb\xE4r att k\xE4nna igen och svara p\xE5 felvillkor\
-  \ i ditt program. Programmerare \xE4gnar sig \xE5t felhantering f\xF6r att s\xE4\
-  kerst\xE4lla att deras\u2026"
+description: "Hur: I Go hanteras fel explicit med hj\xE4lp av `error`-typen. Funktioner\
+  \ som kan misslyckas returnerar ett fel som sitt sista returv\xE4rde. Att kontrollera\
+  \ om\u2026"
 lastmod: '2024-03-13T22:44:37.400249-06:00'
 model: gpt-4-0125-preview
-summary: "Att hantera fel i Go inneb\xE4r att k\xE4nna igen och svara p\xE5 felvillkor\
-  \ i ditt program."
+summary: "I Go hanteras fel explicit med hj\xE4lp av `error`-typen."
 title: Hantera fel
 weight: 16
 ---

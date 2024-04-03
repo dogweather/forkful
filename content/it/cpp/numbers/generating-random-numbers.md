@@ -1,11 +1,13 @@
 ---
 date: 2024-01-27 20:33:27.611396-07:00
-description: "La generazione di numeri casuali nella programmazione comporta la creazione\
-  \ di sequenze di numeri che non presentano un ordine o un modello prevedibile. I\u2026"
+description: "Come fare: Per generare numeri casuali in C++, di solito si utilizza\
+  \ l'intestazione `<random>`, che \xE8 stata introdotta in C++11, offrendo un'ampia\
+  \ gamma\u2026"
 lastmod: '2024-03-13T22:44:43.722532-06:00'
 model: gpt-4-0125-preview
-summary: La generazione di numeri casuali nella programmazione comporta la creazione
-  di sequenze di numeri che non presentano un ordine o un modello prevedibile.
+summary: "Per generare numeri casuali in C++, di solito si utilizza l'intestazione\
+  \ `<random>`, che \xE8 stata introdotta in C++11, offrendo un'ampia gamma di servizi\
+  \ per generare numeri casuali da varie distribuzioni."
 title: Generazione di numeri casuali
 weight: 12
 ---

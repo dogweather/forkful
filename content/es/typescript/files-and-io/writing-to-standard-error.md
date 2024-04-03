@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:29.624815-07:00
-description: "En TypeScript, escribir en el error est\xE1ndar (stderr) es un proceso\
-  \ de enviar mensajes de error o registros directamente al flujo de salida de error\
-  \ del\u2026"
+description: "C\xF3mo hacerlo: TypeScript, al ser un superconjunto de JavaScript,\
+  \ depende del entorno de ejecuci\xF3n subyacente de JS (como Node.js) para escribir\
+  \ en stderr.\u2026"
 lastmod: '2024-03-13T22:44:58.819027-06:00'
 model: gpt-4-0125-preview
-summary: "En TypeScript, escribir en el error est\xE1ndar (stderr) es un proceso de\
-  \ enviar mensajes de error o registros directamente al flujo de salida de error\
-  \ del entorno (por ejemplo, la consola en node."
+summary: "TypeScript, al ser un superconjunto de JavaScript, depende del entorno de\
+  \ ejecuci\xF3n subyacente de JS (como Node.js) para escribir en stderr."
 title: "Escribiendo en el error est\xE1ndar"
 weight: 25
 ---

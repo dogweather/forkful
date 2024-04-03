@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:10.574590-07:00
-description: "JSONin k\xE4sittelyyn kuuluu JSON-muotoiltujen merkkijonojen j\xE4sent\xE4\
-  minen tietorakenteiksi, joita Elixir voi k\xE4sitell\xE4, ja Elixir-tietorakenteiden\u2026"
+description: "Kuinka: Elixiriss\xE4 voit k\xE4ytt\xE4\xE4 `Jason`-kirjastoa, joka\
+  \ on suosittu valinta JSONin j\xE4sent\xE4miseen ja tuottamiseen. Lis\xE4\xE4 ensin\
+  \ `Jason` projektisi\u2026"
 lastmod: '2024-03-13T22:44:56.248147-06:00'
 model: gpt-4-0125-preview
-summary: "JSONin k\xE4sittelyyn kuuluu JSON-muotoiltujen merkkijonojen j\xE4sent\xE4\
-  minen tietorakenteiksi, joita Elixir voi k\xE4sitell\xE4, ja Elixir-tietorakenteiden\
-  \ serialisointi takaisin JSON-merkkijonoiksi."
+summary: "Elixiriss\xE4 voit k\xE4ytt\xE4\xE4 `Jason`-kirjastoa, joka on suosittu\
+  \ valinta JSONin j\xE4sent\xE4miseen ja tuottamiseen."
 title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:36.074554-07:00
-description: "Een tekstbestand lezen met Google Apps Script (GAS) omvat het toegang\
-  \ krijgen tot en het extraheren van tekstgegevens uit bestanden opgeslagen in Google\u2026"
+description: "Hoe te: Om te beginnen met het lezen van een tekstbestand met Google\
+  \ Apps Script, moet je over het algemeen de Google Drive API gebruiken. Hier is\
+  \ een\u2026"
 lastmod: '2024-03-13T22:44:50.350611-06:00'
 model: gpt-4-0125-preview
-summary: Een tekstbestand lezen met Google Apps Script (GAS) omvat het toegang krijgen
-  tot en het extraheren van tekstgegevens uit bestanden opgeslagen in Google Drive
-  of andere toegankelijke cloudgebaseerde opslag.
+summary: Om te beginnen met het lezen van een tekstbestand met Google Apps Script,
+  moet je over het algemeen de Google Drive API gebruiken.
 title: Een tekstbestand lezen
 weight: 22
 ---

@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:19.432774-07:00
-description: "\xC5 skrive tester i C inneb\xE6rer \xE5 lage mindre, hjelpeprogrammer\
-  \ eller funksjoner som automatisk verifiserer funksjonaliteten til koden din. Programmerere\u2026"
+description: "Hvordan: Selv om C ikke har et innebygget testrammeverk som noen andre\
+  \ spr\xE5k, kan du fortsatt skrive effektive tester ved hjelp av assert.h for enkle\u2026"
 lastmod: '2024-03-13T22:44:41.275955-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive tester i C inneb\xE6rer \xE5 lage mindre, hjelpeprogrammer eller\
-  \ funksjoner som automatisk verifiserer funksjonaliteten til koden din."
+summary: "Selv om C ikke har et innebygget testrammeverk som noen andre spr\xE5k,\
+  \ kan du fortsatt skrive effektive tester ved hjelp av assert.h for enkle p\xE5\
+  stander eller integrere tredjepartsrammeverk som CUnit eller Unity for mer strukturert\
+  \ testing."
 title: Skrive tester
 weight: 36
 ---

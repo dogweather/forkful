@@ -2,18 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:10.149319-07:00
-description: "M\u1EA3ng k\u1EBFt h\u1EE3p, \u0111\u01B0\u1EE3c bi\u1EBFt \u0111\u1EBF\
-  n nh\u01B0 l\xE0 b\u1EA3n \u0111\u1ED3 (maps) trong Go, cho ph\xE9p b\u1EA1n l\u01B0\
-  u tr\u1EEF c\xE1c c\u1EB7p kh\xF3a-gi\xE1 tr\u1ECB n\u01A1i m\u1ED7i kh\xF3a duy\
-  \ nh\u1EA5t \u0111\u01B0\u1EE3c \xE1nh x\u1EA1 \u0111\u1EBFn m\u1ED9t gi\xE1 tr\u1ECB\
-  .\u2026"
+description: "L\xE0m Th\u1EBF N\xE0o: Vi\u1EC7c t\u1EA1o v\xE0 kh\u1EDFi t\u1EA1o\
+  \ m\u1ED9t b\u1EA3n \u0111\u1ED3 trong Go c\xF3 th\u1EC3 \u0111\u01B0\u1EE3c th\u1EF1\
+  c hi\u1EC7n b\u1EB1ng nhi\u1EC1u c\xE1ch. D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9\
+  t v\xED d\u1EE5 c\u01A1 b\u1EA3n \u0111\u1EC3 b\u1EAFt \u0111\u1EA7u."
 lastmod: '2024-03-13T22:44:35.971847-06:00'
 model: gpt-4-0125-preview
-summary: "M\u1EA3ng k\u1EBFt h\u1EE3p, \u0111\u01B0\u1EE3c bi\u1EBFt \u0111\u1EBF\
-  n nh\u01B0 l\xE0 b\u1EA3n \u0111\u1ED3 (maps) trong Go, cho ph\xE9p b\u1EA1n l\u01B0\
-  u tr\u1EEF c\xE1c c\u1EB7p kh\xF3a-gi\xE1 tr\u1ECB n\u01A1i m\u1ED7i kh\xF3a duy\
-  \ nh\u1EA5t \u0111\u01B0\u1EE3c \xE1nh x\u1EA1 \u0111\u1EBFn m\u1ED9t gi\xE1 tr\u1ECB\
-  ."
+summary: "Vi\u1EC7c t\u1EA1o v\xE0 kh\u1EDFi t\u1EA1o m\u1ED9t b\u1EA3n \u0111\u1ED3\
+  \ trong Go c\xF3 th\u1EC3 \u0111\u01B0\u1EE3c th\u1EF1c hi\u1EC7n b\u1EB1ng nhi\u1EC1\
+  u c\xE1ch."
 title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 weight: 15
 ---

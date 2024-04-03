@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:46:42.829111-07:00
-description: "Extraer subcadenas es como recortar una parte de una cadena para usarla\
-  \ en tu c\xF3digo. Los programadores lo hacen para manipular y trabajar con datos\
-  \ de\u2026"
+description: "C\xF3mo hacerlo: ."
 lastmod: '2024-03-13T22:44:59.405866-06:00'
 model: gpt-4-1106-preview
-summary: "Extraer subcadenas es como recortar una parte de una cadena para usarla\
-  \ en tu c\xF3digo."
+summary: .
 title: "Extracci\xF3n de subcadenas"
 weight: 6
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:00.512782-07:00
-description: "Tekstin etsiminen ja korvaaminen C-kieless\xE4 tarkoittaa tiettyjen\
-  \ alimerkkijonojen tunnistamista suuremmasta merkkijonosta ja niiden korvaamista\
-  \ eri\u2026"
+description: "Kuinka: C ei tule sis\xE4\xE4nrakennettujen funktioiden kanssa, jotka\
+  \ suorittaisivat etsimisen ja korvaamisen merkkijonoissa suoraan. Voit kuitenkin\
+  \ saavuttaa\u2026"
 lastmod: '2024-03-13T22:44:57.022893-06:00'
 model: gpt-4-0125-preview
-summary: "Tekstin etsiminen ja korvaaminen C-kieless\xE4 tarkoittaa tiettyjen alimerkkijonojen\
-  \ tunnistamista suuremmasta merkkijonosta ja niiden korvaamista eri alimerkkijonoilla."
+summary: "C ei tule sis\xE4\xE4nrakennettujen funktioiden kanssa, jotka suorittaisivat\
+  \ etsimisen ja korvaamisen merkkijonoissa suoraan."
 title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---

@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:50.205821-07:00
-description: "Obtener la fecha actual en Swift implica el uso de la clase `Date` para\
-  \ acceder a la fecha y la hora en que se est\xE1 ejecutando la aplicaci\xF3n. Los\u2026"
+description: "C\xF3mo hacerlo: El framework `Foundation` de Swift proporciona la clase\
+  \ `Date`, lo que facilita obtener la fecha y hora actuales. Aqu\xED hay un ejemplo\
+  \ b\xE1sico\u2026"
 lastmod: '2024-03-13T22:44:59.426853-06:00'
 model: gpt-4-0125-preview
-summary: "Obtener la fecha actual en Swift implica el uso de la clase `Date` para\
-  \ acceder a la fecha y la hora en que se est\xE1 ejecutando la aplicaci\xF3n."
+summary: El framework `Foundation` de Swift proporciona la clase `Date`, lo que facilita
+  obtener la fecha y hora actuales.
 title: Obteniendo la fecha actual
 weight: 29
 ---

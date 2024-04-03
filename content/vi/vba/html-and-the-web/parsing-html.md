@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:31.632145-07:00
-description: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML trong Visual Basic for Applications\
-  \ (VBA) bao g\u1ED3m vi\u1EC7c tr\xEDch xu\u1EA5t th\xF4ng tin c\u1EE5 th\u1EC3\
-  \ t\u1EEB m\u1ED9t t\xE0i li\u1EC7u HTML. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0\
-  m\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong VBA, b\u1EA1n c\xF3 th\u1EC3 ph\xE2\
+  n t\xEDch c\xFA ph\xE1p HTML s\u1EED d\u1EE5ng `Th\u01B0 vi\u1EC7n \u0110\u1ED1\
+  i t\u01B0\u1EE3ng HTML c\u1EE7a Microsoft`. Th\xEAm m\u1ED9t tham kh\u1EA3o \u0111\
+  \u1EBFn th\u01B0 vi\u1EC7n n\xE0y trong\u2026"
 lastmod: '2024-03-13T22:44:36.429872-06:00'
 model: gpt-4-0125-preview
-summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML trong Visual Basic for Applications (VBA)\
-  \ bao g\u1ED3m vi\u1EC7c tr\xEDch xu\u1EA5t th\xF4ng tin c\u1EE5 th\u1EC3 t\u1EEB\
-  \ m\u1ED9t t\xE0i li\u1EC7u HTML."
+summary: "Trong VBA, b\u1EA1n c\xF3 th\u1EC3 ph\xE2n t\xEDch c\xFA ph\xE1p HTML s\u1EED\
+  \ d\u1EE5ng `Th\u01B0 vi\u1EC7n \u0110\u1ED1i t\u01B0\u1EE3ng HTML c\u1EE7a Microsoft`."
 title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---

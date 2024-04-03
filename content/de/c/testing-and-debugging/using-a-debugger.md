@@ -2,9 +2,9 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:40.975270-07:00
-description: "GDB (GNU Debugger) ist der am h\xE4ufigsten verwendete Debugger f\xFC\
-  r die C-Programmierung. Hier ist eine kurze Anleitung zur Verwendung von GDB zum\
-  \ Debuggen\u2026"
+description: "Wie geht das: GDB (GNU Debugger) ist der am h\xE4ufigsten verwendete\
+  \ Debugger f\xFCr die C-Programmierung. Hier ist eine kurze Anleitung zur Verwendung\
+  \ von GDB\u2026"
 lastmod: '2024-03-13T22:44:54.357324-06:00'
 model: gpt-4-0125-preview
 summary: "GDB (GNU Debugger) ist der am h\xE4ufigsten verwendete Debugger f\xFCr die\

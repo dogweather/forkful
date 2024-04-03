@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:25:14.981918-07:00
-description: "TOML, skr\xF3t od Tom's Obvious, Minimal Language, to format serializacji\
-  \ danych, kt\xF3ry jest \u0142atwy do odczytania dzi\u0119ki swojej jasnej semantyce.\
-  \ Programi\u015Bci\u2026"
+description: "Jak to zrobi\u0107: W PowerShellu nie ma natywnej cmdlet do parsowania\
+  \ TOML. Zwykle u\u017Cywa si\u0119 modu\u0142u lub konwertuje TOML na JSON za pomoc\u0105\
+  \ narz\u0119dzia takiego\u2026"
 lastmod: '2024-03-13T22:44:35.653356-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, skr\xF3t od Tom's Obvious, Minimal Language, to format serializacji\
-  \ danych, kt\xF3ry jest \u0142atwy do odczytania dzi\u0119ki swojej jasnej semantyce."
+summary: W PowerShellu nie ma natywnej cmdlet do parsowania TOML.
 title: Praca z TOML
 weight: 39
 ---

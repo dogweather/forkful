@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:10.069478-07:00
-description: "REPL staat voor Read-Eval-Print Loop, een interactieve omgeving waar\
-  \ je snel code kunt testen. Programmeurs gebruiken het om te experimenteren, te\u2026"
+description: 'Hoe: Om in Lua''s REPL te springen, voer je gewoon `lua` in je terminal
+  in. Hier volgt een voorbeeldsessie.'
 lastmod: '2024-03-13T22:44:50.939051-06:00'
 model: gpt-4-0125-preview
-summary: REPL staat voor Read-Eval-Print Loop, een interactieve omgeving waar je snel
-  code kunt testen.
+summary: Om in Lua's REPL te springen, voer je gewoon `lua` in je terminal in.
 title: Het gebruik van een interactieve shell (REPL)
 weight: 34
 ---

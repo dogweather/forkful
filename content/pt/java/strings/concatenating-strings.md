@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:35:05.297050-07:00
-description: "Concatenar strings \xE9 juntar duas ou mais sequ\xEAncias de caracteres.\
-  \ Programadores fazem isso para montar mensagens, unir dados e gerar sa\xEDdas din\xE2\
-  micas."
+description: "How to: Em Java, voc\xEA pode concatenar strings de v\xE1rias formas.\
+  \ Aqui est\xE3o dois jeitos populares."
 lastmod: '2024-03-13T22:44:46.448201-06:00'
 model: gpt-4-1106-preview
-summary: "Concatenar strings \xE9 juntar duas ou mais sequ\xEAncias de caracteres."
+summary: "Em Java, voc\xEA pode concatenar strings de v\xE1rias formas."
 title: Concatenando strings
 weight: 3
 ---

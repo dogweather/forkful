@@ -2,14 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:16.775074-07:00
-description: "Das Parsen eines Datums aus einem String in Arduino umfasst das Extrahieren\
-  \ und Konvertieren der Datumsbestandteile (Jahr, Monat, Tag) aus einer\u2026"
+description: 'Wie: Direkter Ansatz ohne Drittanbieter-Bibliothek.'
 lastmod: '2024-03-13T22:44:54.152852-06:00'
 model: gpt-4-0125-preview
-summary: "Das Parsen eines Datums aus einem String in Arduino umfasst das Extrahieren\
-  \ und Konvertieren der Datumsbestandteile (Jahr, Monat, Tag) aus einer textuellen\
-  \ Darstellung in ein Format, das f\xFCr die Zeitmessung, Vergleiche oder Manipulationen\
-  \ innerhalb von Skizzen genutzt werden kann."
+summary: Direkter Ansatz ohne Drittanbieter-Bibliothek.
 title: Einen Datum aus einem String analysieren
 weight: 30
 ---

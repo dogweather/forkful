@@ -2,13 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:53.245946-07:00
-description: "\xC5 skrive tester i Dart involverer oppretting av testtilfeller for\
-  \ automatisk \xE5 verifisere at forskjellige deler av programmet ditt fungerer som\
-  \ forventet.\u2026"
+description: "Hvordan: I Dart er `test`-pakken vanligvis brukt for \xE5 skrive tester.\
+  \ F\xF8rst, legg til `test`-pakken i din `pubspec.yaml`."
 lastmod: '2024-03-13T22:44:40.491212-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive tester i Dart involverer oppretting av testtilfeller for automatisk\
-  \ \xE5 verifisere at forskjellige deler av programmet ditt fungerer som forventet."
+summary: "I Dart er `test`-pakken vanligvis brukt for \xE5 skrive tester."
 title: Skrive tester
 weight: 36
 ---

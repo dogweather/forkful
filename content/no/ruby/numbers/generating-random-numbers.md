@@ -1,13 +1,11 @@
 ---
 date: 2024-01-27 20:35:17.135400-07:00
-description: "\xC5 generere tilfeldige tall i Ruby inneb\xE6rer \xE5 skape tall som\
-  \ ikke kan forutsies logisk, noe som er essensielt for scenarioer som simuleringer,\
-  \ kryptografi\u2026"
+description: "Hvordan: Ruby tilbyr flere metoder for \xE5 generere tilfeldige tall,\
+  \ hovedsakelig gjennom `Random`-klassen. #."
 lastmod: '2024-03-13T22:44:41.311757-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 generere tilfeldige tall i Ruby inneb\xE6rer \xE5 skape tall som ikke\
-  \ kan forutsies logisk, noe som er essensielt for scenarioer som simuleringer, kryptografi\
-  \ og spill."
+summary: "Ruby tilbyr flere metoder for \xE5 generere tilfeldige tall, hovedsakelig\
+  \ gjennom `Random`-klassen."
 title: Generering av tilfeldige tall
 weight: 12
 ---

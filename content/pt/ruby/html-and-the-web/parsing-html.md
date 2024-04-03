@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:58.854865-07:00
-description: "Analisar HTML significa desmembrar um peda\xE7o de c\xF3digo HTML para\
-  \ compreender sua estrutura e conte\xFAdo. Os programadores fazem isso para extrair\
-  \ dados,\u2026"
+description: "Como fazer: Para analisar HTML em Ruby, instale a 'gema' Nokogiri com\
+  \ `gem install nokogiri`. Nokogiri \xE9 como um canivete su\xED\xE7o para trabalhar\
+  \ com HTML e\u2026"
 lastmod: '2024-03-13T22:44:47.093316-06:00'
 model: gpt-4-0125-preview
-summary: "Analisar HTML significa desmembrar um peda\xE7o de c\xF3digo HTML para compreender\
-  \ sua estrutura e conte\xFAdo."
+summary: Para analisar HTML em Ruby, instale a 'gema' Nokogiri com `gem install nokogiri`.
 title: Analisando HTML
 weight: 43
 ---

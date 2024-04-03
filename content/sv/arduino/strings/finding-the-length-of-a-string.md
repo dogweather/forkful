@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:47:02.956104-07:00
-description: "Att hitta str\xE4ngl\xE4ngden inneb\xE4r att ta reda p\xE5 hur m\xE5\
-  nga tecken som finns i en textsnutt. Programmerare g\xF6r detta f\xF6r att hantera\
-  \ text effektivt, till\u2026"
+description: "Hur g\xF6r man: F\xF6r Arduino finns funktionen `strlen()` f\xF6r C-stilens\
+  \ str\xE4ngar (char arrays) och metoden `length()` f\xF6r String-objekt. H\xE4r\
+  \ \xE4r exempel p\xE5 b\xE5da."
 lastmod: '2024-03-13T22:44:38.159276-06:00'
 model: gpt-4-1106-preview
-summary: "Att hitta str\xE4ngl\xE4ngden inneb\xE4r att ta reda p\xE5 hur m\xE5nga\
-  \ tecken som finns i en textsnutt."
+summary: "F\xF6r Arduino finns funktionen `strlen()` f\xF6r C-stilens str\xE4ngar\
+  \ (char arrays) och metoden `length()` f\xF6r String-objekt."
 title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---

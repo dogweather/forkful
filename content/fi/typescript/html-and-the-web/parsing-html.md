@@ -2,13 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:15.123430-07:00
-description: "HTML:n j\xE4sent\xE4minen tarkoittaa HTML-koodin l\xE4pik\xE4ymist\xE4\
-  \ l\xF6yt\xE4\xE4kseen, poimiakseen tai manipuloidakseen tietoa. Ohjelmoijat tekev\xE4\
-  t sit\xE4 vuorovaikuttaakseen\u2026"
+description: "Kuinka: Aloittaaksesi, asenna kirjasto kuten `node-html-parser`. T\xE4\
+  ss\xE4 on terminaalikomento."
 lastmod: '2024-03-13T22:44:56.313264-06:00'
 model: gpt-4-0125-preview
-summary: "HTML:n j\xE4sent\xE4minen tarkoittaa HTML-koodin l\xE4pik\xE4ymist\xE4 l\xF6\
-  yt\xE4\xE4kseen, poimiakseen tai manipuloidakseen tietoa."
+summary: Aloittaaksesi, asenna kirjasto kuten `node-html-parser`.
 title: "HTML:n j\xE4sennys"
 weight: 43
 ---

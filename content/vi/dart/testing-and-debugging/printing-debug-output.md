@@ -2,18 +2,14 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:03.774161-07:00
-description: "Vi\u1EC7c in th\xF4ng b\xE1o g\u1EE1 r\u1ED1i trong Dart li\xEAn quan\
-  \ \u0111\u1EBFn vi\u1EC7c hi\u1EC3n th\u1ECB th\xF4ng tin l\xEAn b\u1EA3ng \u0111\
-  i\u1EC1u khi\u1EC3n trong qu\xE1 tr\xECnh th\u1EF1c thi, cho ph\xE9p c\xE1c nh\xE0\
-  \ ph\xE1t tri\u1EC3n theo\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong Dart, b\u1EA1n c\xF3 th\u1EC3 in\
+  \ th\xF4ng b\xE1o g\u1EE1 r\u1ED1i b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng h\xE0m `print()`.\
+  \ D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch xu\u1EA5t th\xF4ng \u0111i\u1EC7p \u0111\
+  \u01A1n gi\u1EA3n v\xE0 gi\xE1 tr\u1ECB c\u1EE7a bi\u1EBFn."
 lastmod: '2024-03-13T22:44:36.266374-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c in th\xF4ng b\xE1o g\u1EE1 r\u1ED1i trong Dart li\xEAn quan \u0111\
-  \u1EBFn vi\u1EC7c hi\u1EC3n th\u1ECB th\xF4ng tin l\xEAn b\u1EA3ng \u0111i\u1EC1\
-  u khi\u1EC3n trong qu\xE1 tr\xECnh th\u1EF1c thi, cho ph\xE9p c\xE1c nh\xE0 ph\xE1\
-  t tri\u1EC3n theo d\xF5i lu\u1ED3ng th\u1EF1c thi, \u0111i\u1EC1u tra tr\u1EA1ng\
-  \ th\xE1i c\u1EE7a c\xE1c bi\u1EBFn, ho\u1EB7c x\xE1c \u0111\u1ECBnh ngu\u1ED3n\
-  \ g\u1ED1c c\u1EE7a l\u1ED7i."
+summary: "Trong Dart, b\u1EA1n c\xF3 th\u1EC3 in th\xF4ng b\xE1o g\u1EE1 r\u1ED1i\
+  \ b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng h\xE0m `print()`."
 title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 weight: 33
 ---

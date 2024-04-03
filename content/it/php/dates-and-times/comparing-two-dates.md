@@ -1,10 +1,9 @@
 ---
 date: 2024-01-20 17:33:23.914324-07:00
-description: "Confrontare due date in PHP significa stabilire quale viene prima o\
-  \ se coincidono. I programmatori fanno questo per gestire eventi, scadenze, e verificare\u2026"
+description: 'How to: (Come Fare:) .'
 lastmod: '2024-03-13T22:44:43.528879-06:00'
 model: gpt-4-1106-preview
-summary: Confrontare due date in PHP significa stabilire quale viene prima o se coincidono.
+summary: .
 title: Confronto tra due date
 weight: 27
 ---

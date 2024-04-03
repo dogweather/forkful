@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:35:49.791070-07:00
-description: "Konvertering av en dato til en streng betyr \xE5 omforme datoen fra\
-  \ et format som datamaskinen forst\xE5r til tekst som mennesker kan lese. Vi gj\xF8\
-  r dette fordi\u2026"
+description: 'Hvordan: .'
 lastmod: '2024-03-13T22:44:41.069658-06:00'
 model: gpt-4-1106-preview
-summary: "Konvertering av en dato til en streng betyr \xE5 omforme datoen fra et format\
-  \ som datamaskinen forst\xE5r til tekst som mennesker kan lese."
+summary: .
 title: Konvertere en dato til en streng
 weight: 28
 ---

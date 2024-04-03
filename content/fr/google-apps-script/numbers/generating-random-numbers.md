@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:47.167664-07:00
-description: "La g\xE9n\xE9ration de nombres al\xE9atoires est une t\xE2che fondamentale\
-  \ en programmation utilis\xE9e pour une multitude d'applications, telles que les\
-  \ simulations,\u2026"
+description: "Comment faire : Dans Google Apps Script, vous pouvez g\xE9n\xE9rer des\
+  \ nombres al\xE9atoires \xE0 l'aide de la fonction `Math.random()`, similaire \xE0\
+  \ JavaScript. Cette\u2026"
 lastmod: '2024-03-13T22:44:57.180732-06:00'
 model: gpt-4-0125-preview
-summary: "La g\xE9n\xE9ration de nombres al\xE9atoires est une t\xE2che fondamentale\
-  \ en programmation utilis\xE9e pour une multitude d'applications, telles que les\
-  \ simulations, les jeux et les syst\xE8mes de s\xE9curit\xE9."
+summary: "Dans Google Apps Script, vous pouvez g\xE9n\xE9rer des nombres al\xE9atoires\
+  \ \xE0 l'aide de la fonction `Math.random()`, similaire \xE0 JavaScript."
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---

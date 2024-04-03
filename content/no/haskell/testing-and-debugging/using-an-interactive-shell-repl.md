@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:14:50.571429-07:00
-description: "Et interaktivt skall, eller REPL (Read-Eval-Print Loop), i Haskell lar\
-  \ deg kj\xF8re kodefragmenter live. Det er en lekeplass for rask tilbakemelding,\
-  \ testing\u2026"
+description: "Hvordan: For \xE5 starte GHCi (Glasgow Haskell Compiler's interaktive\
+  \ milj\xF8), skriv ganske enkelt `ghci` i terminalen din. Her er hvordan du bruker\
+  \ det."
 lastmod: '2024-03-13T22:44:40.843333-06:00'
 model: gpt-4-0125-preview
-summary: "Et interaktivt skall, eller REPL (Read-Eval-Print Loop), i Haskell lar deg\
-  \ kj\xF8re kodefragmenter live."
+summary: "For \xE5 starte GHCi (Glasgow Haskell Compiler's interaktive milj\xF8),\
+  \ skriv ganske enkelt `ghci` i terminalen din."
 title: Bruke et interaktivt skall (REPL)
 weight: 34
 ---

@@ -2,16 +2,18 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:19.708845-07:00
-description: "Vi\u1EC7c vi\u1EBFt hoa m\u1ED9t chu\u1ED7i ngh\u0129a l\xE0 l\xE0m\
-  \ cho ch\u1EEF c\xE1i \u0111\u1EA7u ti\xEAn c\u1EE7a m\u1ED7i t\u1EEB tr\u1EDF n\xEA\
-  n in hoa trong khi nh\u1EEFng ch\u1EEF c\xF2n l\u1EA1i gi\u1EEF nguy\xEAn d\u1EA1\
-  ng ch\u1EEF th\u01B0\u1EDDng. L\u1EADp tr\xECnh vi\xEAn\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Rust kh\xF4ng bao g\u1ED3m m\u1ED9t ph\u01B0\
+  \u01A1ng th\u1EE9c s\u1EB5n c\xF3 \u0111\u1EC3 vi\u1EBFt hoa t\u1EEBng t\u1EEB trong\
+  \ m\u1ED9t chu\u1ED7i, nh\u01B0ng ch\xFAng ta c\xF3 th\u1EC3 d\u1EC5 d\xE0ng tri\u1EC3\
+  n khai ph\u01B0\u01A1ng ph\xE1p c\u1EE7a ri\xEAng\u2026"
 lastmod: '2024-03-13T22:44:36.353110-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c vi\u1EBFt hoa m\u1ED9t chu\u1ED7i ngh\u0129a l\xE0 l\xE0m cho\
-  \ ch\u1EEF c\xE1i \u0111\u1EA7u ti\xEAn c\u1EE7a m\u1ED7i t\u1EEB tr\u1EDF n\xEA\
-  n in hoa trong khi nh\u1EEFng ch\u1EEF c\xF2n l\u1EA1i gi\u1EEF nguy\xEAn d\u1EA1\
-  ng ch\u1EEF th\u01B0\u1EDDng."
+summary: "Rust kh\xF4ng bao g\u1ED3m m\u1ED9t ph\u01B0\u01A1ng th\u1EE9c s\u1EB5n\
+  \ c\xF3 \u0111\u1EC3 vi\u1EBFt hoa t\u1EEBng t\u1EEB trong m\u1ED9t chu\u1ED7i,\
+  \ nh\u01B0ng ch\xFAng ta c\xF3 th\u1EC3 d\u1EC5 d\xE0ng tri\u1EC3n khai ph\u01B0\
+  \u01A1ng ph\xE1p c\u1EE7a ri\xEAng m\xECnh b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng ph\u01B0\
+  \u01A1ng th\u1EE9c `to_ascii_uppercase` cho c\xE1c k\xFD t\u1EF1 \u0111\u01A1n v\xE0\
+  \ l\u1EB7p qua c\xE1c t\u1EEB."
 title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
 weight: 2
 ---

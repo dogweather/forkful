@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:36:56.802495-07:00
-description: "Refaktorering er prosessen med \xE5 restrukturere eksisterende datamaskinkode\
-  \ uten \xE5 endre dens eksterne oppf\xF8rsel, med m\xE5l om \xE5 forbedre de ikke-\u2026"
+description: "Hvordan: PowerShell har ikke et dedikert refaktoreringsverkt\xF8y innebygd,\
+  \ men du kan fortsatt rydde opp i koden din for lesbarhet og ytelse. Vurder en\u2026"
 lastmod: '2024-03-13T22:44:41.025625-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktorering er prosessen med \xE5 restrukturere eksisterende datamaskinkode\
-  \ uten \xE5 endre dens eksterne oppf\xF8rsel, med m\xE5l om \xE5 forbedre de ikke-funksjonelle\
-  \ attributtene til programvaren."
+summary: "PowerShell har ikke et dedikert refaktoreringsverkt\xF8y innebygd, men du\
+  \ kan fortsatt rydde opp i koden din for lesbarhet og ytelse."
 title: Refaktorering
 weight: 19
 ---

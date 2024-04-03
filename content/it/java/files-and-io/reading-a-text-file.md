@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:54:37.860452-07:00
-description: "Leggere un file di testo in Java significa estrarre dati salvati in\
-  \ un file sul tuo computer. I programmatori lo fanno per manipolare, visualizzare\
-  \ o\u2026"
+description: 'How to: Usiamo `Files.readAllLines` per leggere velocemente tutte le
+  linee da un file.'
 lastmod: '2024-03-13T22:44:43.326434-06:00'
 model: gpt-4-1106-preview
-summary: Leggere un file di testo in Java significa estrarre dati salvati in un file
-  sul tuo computer.
+summary: Usiamo `Files.readAllLines` per leggere velocemente tutte le linee da un
+  file.
 title: Lettura di un file di testo
 weight: 22
 ---

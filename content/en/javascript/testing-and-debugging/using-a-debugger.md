@@ -1,11 +1,9 @@
 ---
 date: 2024-01-25 20:50:24.840902-07:00
-description: "Here's a bit of JavaScript code that's not behaving as expected: ```javascript\
-  \ function buggyMultiply(a, b) { return a + b; // Oops! This should be a\u2026"
+description: 'How to: Here''s a bit of JavaScript code that''s not behaving as expected.'
 lastmod: '2024-03-13T22:45:00.437597-06:00'
 model: gpt-4-1106-preview
-summary: "Here's a bit of JavaScript code that's not behaving as expected:\n\n```javascript\n\
-  function buggyMultiply(a, b) {\n    return a + b; // Oops."
+summary: Here's a bit of JavaScript code that's not behaving as expected.
 title: Using a debugger
 weight: 35
 ---

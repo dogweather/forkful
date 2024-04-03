@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 16:21:57.611676-07:00
-description: "F\xF6rest\xE4ll dig att du precis har uppt\xE4ckt att du beh\xF6ver\
-  \ g\xF6ra en massuppdatering av flera konfigurationsfiler som ligger p\xE5 din server.\
-  \ Du skulle kunna\u2026"
+description: "Hur: N\xE4r det g\xE4ller att redigera filer p\xE5 plats med Bash, kommer\
+  \ tv\xE5 framst\xE5ende verktyg i spel: `sed` och `awk`. L\xE5t oss utforska hur\
+  \ man anv\xE4nder dessa\u2026"
 lastmod: '2024-03-13T22:44:38.078362-06:00'
 model: gpt-4-0125-preview
-summary: "F\xF6rest\xE4ll dig att du precis har uppt\xE4ckt att du beh\xF6ver g\xF6\
-  ra en massuppdatering av flera konfigurationsfiler som ligger p\xE5 din server."
+summary: "N\xE4r det g\xE4ller att redigera filer p\xE5 plats med Bash, kommer tv\xE5\
+  \ framst\xE5ende verktyg i spel."
 title: "Redigera filer p\xE5 plats med kommandoradsenradare"
 weight: 32
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:06:56.981155-07:00
-description: "Il logging nella programmazione \xE8 sostanzialmente come lasciare una\
-  \ traccia di briciole sotto forma di eventi o messaggi registrati, che possono essere\u2026"
+description: "Come fare: In Haskell, il logging pu\xF2 essere implementato utilizzando\
+  \ librerie come `monad-logger` o `hslogger`. Ecco un esempio rapido usando `monad-\u2026"
 lastmod: '2024-03-13T22:44:43.481647-06:00'
 model: gpt-4-1106-preview
-summary: "Il logging nella programmazione \xE8 sostanzialmente come lasciare una traccia\
-  \ di briciole sotto forma di eventi o messaggi registrati, che possono essere utilizzati\
-  \ per monitorare cosa sta facendo la tua applicazione in ogni momento."
+summary: "In Haskell, il logging pu\xF2 essere implementato utilizzando librerie come\
+  \ `monad-logger` o `hslogger`."
 title: "Registrazione delle Attivit\xE0 (Logging)"
 weight: 17
 ---

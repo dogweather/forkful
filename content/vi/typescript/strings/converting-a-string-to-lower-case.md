@@ -2,15 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:14.136575-07:00
-description: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i sang ch\u1EEF th\u01B0\
-  \u1EDDng c\xF3 ngh\u0129a l\xE0 l\xE0m cho m\u1ED7i k\xFD t\u1EF1 trong chu\u1ED7\
-  i tr\u1EDF th\xE0nh ch\u1EEF c\xE1i nh\u1ECF. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1\
-  c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 \u0111\u1EA3m b\u1EA3o\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong TypeScript, vi\u1EC7c chuy\u1EC3\
+  n \u0111\u1ED5i m\u1ED9t chu\u1ED7i sang ch\u1EEF th\u01B0\u1EDDng l\xE0 vi\u1EC7\
+  c r\u1EA5t \u0111\u01A1n gi\u1EA3n. Ch\u1EC9 c\u1EA7n g\u1ECDi `.toLowerCase()`\
+  \ cho chu\u1ED7i c\u1EE7a b\u1EA1n. D\u01B0\u1EDBi \u0111\xE2y\u2026"
 lastmod: '2024-03-13T22:44:36.301564-06:00'
 model: gpt-4-0125-preview
-summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i sang ch\u1EEF th\u01B0\u1EDD\
-  ng c\xF3 ngh\u0129a l\xE0 l\xE0m cho m\u1ED7i k\xFD t\u1EF1 trong chu\u1ED7i tr\u1EDF\
-  \ th\xE0nh ch\u1EEF c\xE1i nh\u1ECF."
+summary: "Trong TypeScript, vi\u1EC7c chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7\
+  i sang ch\u1EEF th\u01B0\u1EDDng l\xE0 vi\u1EC7c r\u1EA5t \u0111\u01A1n gi\u1EA3\
+  n."
 title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
 weight: 4
 ---

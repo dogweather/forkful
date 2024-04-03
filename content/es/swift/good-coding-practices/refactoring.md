@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:36:37.413994-07:00
-description: "La refactorizaci\xF3n es el proceso de reestructurar c\xF3digo inform\xE1\
-  tico existente sin cambiar su comportamiento externo. Los programadores lo hacen\
-  \ para\u2026"
+description: "C\xF3mo hacerlo: Comencemos con un ejemplo b\xE1sico de Swift donde\
+  \ tenemos alg\xFAn c\xF3digo repetitivo."
 lastmod: '2024-03-13T22:44:59.424771-06:00'
 model: gpt-4-0125-preview
-summary: "La refactorizaci\xF3n es el proceso de reestructurar c\xF3digo inform\xE1\
-  tico existente sin cambiar su comportamiento externo."
+summary: "Comencemos con un ejemplo b\xE1sico de Swift donde tenemos alg\xFAn c\xF3\
+  digo repetitivo."
 title: "Refactorizaci\xF3n"
 weight: 19
 ---

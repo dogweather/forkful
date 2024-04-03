@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:56.272841-07:00
-description: "Pisanie test\xF3w w Google Apps Script (GAS) polega na tworzeniu automatycznych\
-  \ skrypt\xF3w, kt\xF3re weryfikuj\u0105 zachowanie Twoich kod\xF3w, zapewniaj\u0105\
-  c ich\u2026"
+description: "Jak to zrobi\u0107: Chocia\u017C Google Apps Script nie posiada wbudowanego\
+  \ frameworka do testowania, tak jak niekt\xF3re inne \u015Brodowiska programistyczne,\
+  \ nadal mo\u017Cesz\u2026"
 lastmod: '2024-03-13T22:44:34.906909-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie test\xF3w w Google Apps Script (GAS) polega na tworzeniu automatycznych\
-  \ skrypt\xF3w, kt\xF3re weryfikuj\u0105 zachowanie Twoich kod\xF3w, zapewniaj\u0105\
-  c ich prawid\u0142owe dzia\u0142anie w r\xF3\u017Cnych warunkach."
+summary: "Chocia\u017C Google Apps Script nie posiada wbudowanego frameworka do testowania,\
+  \ tak jak niekt\xF3re inne \u015Brodowiska programistyczne, nadal mo\u017Cesz pisa\u0107\
+  \ i uruchamia\u0107 testy, wykorzystuj\u0105c proste funkcje GAS lub integruj\u0105\
+  c zewn\u0119trzne biblioteki do testowania, takie jak `QUnit`."
 title: "Pisanie test\xF3w"
 weight: 36
 ---

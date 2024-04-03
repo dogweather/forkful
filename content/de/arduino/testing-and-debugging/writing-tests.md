@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:28.240710-07:00
-description: "Tests im Arduino-Umfeld zu schreiben, bezieht sich auf den Prozess des\
-  \ Erstellens von automatisierten Tests, die die Funktionalit\xE4t Ihres Codes auf\u2026"
+description: "Wie: Arduino verf\xFCgt nicht \xFCber ein eingebautes Test-Framework\
+  \ wie einige andere Programmierumgebungen. Sie k\xF6nnen jedoch Drittanbieter-Bibliotheken\
+  \ wie\u2026"
 lastmod: '2024-03-13T22:44:54.147147-06:00'
 model: gpt-4-0125-preview
-summary: "Tests im Arduino-Umfeld zu schreiben, bezieht sich auf den Prozess des Erstellens\
-  \ von automatisierten Tests, die die Funktionalit\xE4t Ihres Codes auf Arduino-Ger\xE4\
-  ten validieren."
+summary: "Arduino verf\xFCgt nicht \xFCber ein eingebautes Test-Framework wie einige\
+  \ andere Programmierumgebungen."
 title: Tests Schreiben
 weight: 36
 ---

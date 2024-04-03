@@ -2,15 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:40.295460-07:00
-description: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi b\u1EB1ng TypeScript\
-  \ ch\xEDnh l\xE0 vi\u1EC7c thi\u1EBFt l\u1EADp m\u1ED9t n\u1EC1n t\u1EA3ng v\u1EEF\
-  ng ch\u1EAFc \u0111\u1EC3 l\u1EADp tr\xECnh. C\xE1c l\u1EADp tr\xECnh vi\xEAn kh\u1EDF\
-  i x\u01B0\u1EDBng d\u1EF1 \xE1n m\u1EDBi \u0111\u1EC3 bi\u1EBFn nh\u1EEFng \xFD\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: ."
 lastmod: '2024-03-13T22:44:36.319903-06:00'
 model: gpt-4-0125-preview
-summary: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi b\u1EB1ng TypeScript\
-  \ ch\xEDnh l\xE0 vi\u1EC7c thi\u1EBFt l\u1EADp m\u1ED9t n\u1EC1n t\u1EA3ng v\u1EEF\
-  ng ch\u1EAFc \u0111\u1EC3 l\u1EADp tr\xECnh."
+summary: .
 title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---

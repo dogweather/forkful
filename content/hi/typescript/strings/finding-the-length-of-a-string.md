@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 17:48:33.976788-07:00
-description: "String ki length jaanna matlab ye pata karna ki string me kitne characters\
-  \ hain. Programmers isse isliye karte hain taaki text data ko process ya validate\u2026"
+description: "How to: (\u0915\u0948\u0938\u0947 \u0915\u0930\u0947\u0902:) TypeScript\
+  \ me string ki length nikalne ke liye `.length` property ka istemaal hota hai. Simple\
+  \ hai, dekho."
 lastmod: '2024-03-13T22:44:51.873143-06:00'
 model: gpt-4-1106-preview
-summary: String ki length jaanna matlab ye pata karna ki string me kitne characters
-  hain.
+summary: TypeScript me string ki length nikalne ke liye `.length` property ka istemaal
+  hota hai.
 title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0915\u0940 \u0932\u0902\
   \u092C\u093E\u0908 \u091C\u094D\u091E\u093E\u0924 \u0915\u0930\u0928\u093E"
 weight: 7

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 03:45:39.791884-07:00
-description: "Das Runden von Zahlen bedeutet, die Dezimalstellen auf eine festgelegte\
-  \ Genauigkeit abzuschneiden, oft auf ganze Zahlen. Programmierer runden, um\u2026"
+description: "Wie geht das: PHP bietet einige M\xF6glichkeiten, Zahlen zu runden:\
+  \ `round()`, `ceil()` und `floor()`. So funktionieren sie."
 lastmod: '2024-03-13T22:44:53.967373-06:00'
 model: gpt-4-0125-preview
-summary: Das Runden von Zahlen bedeutet, die Dezimalstellen auf eine festgelegte Genauigkeit
-  abzuschneiden, oft auf ganze Zahlen.
+summary: "PHP bietet einige M\xF6glichkeiten, Zahlen zu runden."
 title: Zahlen runden
 weight: 13
 ---

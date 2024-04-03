@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:36.667599-07:00
-description: "Str\xE4nginterpolering \xE4r en metod f\xF6r att konstruera str\xE4\
-  ngar som inkorporerar variabler, vilket m\xF6jligg\xF6r dynamisk skapande av str\xE4\
-  ngar. Programmerare g\xF6r\u2026"
+description: "Hur man g\xF6r: I Go uppn\xE5s str\xE4nginterpolering vanligtvis med\
+  \ hj\xE4lp av `fmt`-paketet, s\xE4rskilt med funktionen `Sprintf`, som l\xE5ter\
+  \ dig injicera variabler i\u2026"
 lastmod: '2024-03-13T22:44:37.376954-06:00'
 model: gpt-4-0125-preview
-summary: "Str\xE4nginterpolering \xE4r en metod f\xF6r att konstruera str\xE4ngar\
-  \ som inkorporerar variabler, vilket m\xF6jligg\xF6r dynamisk skapande av str\xE4\
-  ngar."
+summary: "I Go uppn\xE5s str\xE4nginterpolering vanligtvis med hj\xE4lp av `fmt`-paketet,\
+  \ s\xE4rskilt med funktionen `Sprintf`, som l\xE5ter dig injicera variabler i en\
+  \ str\xE4ng genom att specificera formatteringsverb."
 title: "Interpolera en str\xE4ng"
 weight: 8
 ---

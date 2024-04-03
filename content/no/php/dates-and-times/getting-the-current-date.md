@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:22.443214-07:00
-description: "\xC5 hente den gjeldende datoen i PHP er en grunnleggende oppgave som\
-  \ lar deg hente og manipulere systemets dato og klokkeslett. Dette er avgj\xF8rende\
-  \ for\u2026"
+description: 'Hvordan: #.'
 lastmod: '2024-03-13T22:44:40.896999-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 hente den gjeldende datoen i PHP er en grunnleggende oppgave som lar\
-  \ deg hente og manipulere systemets dato og klokkeslett."
+summary: '#.'
 title: "F\xE5 dagens dato"
 weight: 29
 ---

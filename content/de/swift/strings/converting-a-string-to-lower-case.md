@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:39:08.481933-07:00
-description: "Das Umwandeln einer Zeichenkette in Kleinbuchstaben bedeutet, jeden\
-  \ Gro\xDFbuchstaben in seinen entsprechenden Kleinbuchstaben zu \xFCberf\xFChren.\
-  \ Das sorgt f\xFCr\u2026"
+description: 'So geht''s: Swift macht die Konvertierung von Zeichenketten in Kleinbuchstaben
+  einfach mit der `lowercased()` Methode.'
 lastmod: '2024-03-13T22:44:54.213119-06:00'
 model: gpt-4-1106-preview
-summary: "Das Umwandeln einer Zeichenkette in Kleinbuchstaben bedeutet, jeden Gro\xDF\
-  buchstaben in seinen entsprechenden Kleinbuchstaben zu \xFCberf\xFChren."
+summary: Swift macht die Konvertierung von Zeichenketten in Kleinbuchstaben einfach
+  mit der `lowercased()` Methode.
 title: Umformung eines Strings in Kleinbuchstaben
 weight: 4
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:00.527069-07:00
-description: "Logging i C inneb\xE6rer \xE5 registrere flyten og merkbare hendelser\
-  \ av et program under kj\xF8retiden, som gir en konkret gjennomgang av dets oppf\xF8\
-  rsel og\u2026"
+description: "Hvordan: I C kan logging oppn\xE5s med grunnleggende filoperasjoner\
+  \ eller ved \xE5 bruke mer sofistikerte biblioteker. For enkelhets skyld, starter\
+  \ vi med\u2026"
 lastmod: '2024-03-13T22:44:41.279173-06:00'
 model: gpt-4-0125-preview
-summary: "Logging i C inneb\xE6rer \xE5 registrere flyten og merkbare hendelser av\
-  \ et program under kj\xF8retiden, som gir en konkret gjennomgang av dets oppf\xF8\
-  rsel og ytelse."
+summary: "I C kan logging oppn\xE5s med grunnleggende filoperasjoner eller ved \xE5\
+  \ bruke mer sofistikerte biblioteker."
 title: Logging
 weight: 17
 ---

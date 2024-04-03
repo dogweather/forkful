@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:08.242879-07:00
-description: "Regul\xE4re Ausdr\xFCcke in C++ sind Zeichenfolgen, die ein Suchmuster\
-  \ definieren, genutzt f\xFCr Zeichenkettenabgleiche oder -manipulation. Programmierer\u2026"
+description: "Wie geht das: C++11 f\xFChrte Unterst\xFCtzung f\xFCr regul\xE4re Ausdr\xFC\
+  cke in der Standardbibliothek `<regex>` ein und bietet ein robustes Framework f\xFC\
+  r die Suche\u2026"
 lastmod: '2024-03-13T22:44:54.174619-06:00'
 model: gpt-4-0125-preview
-summary: "Regul\xE4re Ausdr\xFCcke in C++ sind Zeichenfolgen, die ein Suchmuster definieren,\
-  \ genutzt f\xFCr Zeichenkettenabgleiche oder -manipulation."
+summary: "C++11 f\xFChrte Unterst\xFCtzung f\xFCr regul\xE4re Ausdr\xFCcke in der\
+  \ Standardbibliothek `<regex>` ein und bietet ein robustes Framework f\xFCr die\
+  \ Suche und Manipulation von Zeichenketten."
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

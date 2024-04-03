@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:51:35.087329-07:00
-description: "Interpola\xE7\xE3o de string \xE9 o processo de inserir valores de vari\xE1\
-  veis dentro de uma string. Programadores fazem isso para construir strings din\xE2\
-  micas que\u2026"
+description: "Como Fazer: Em Rust, interpola\xE7\xE3o de string \xE9 comumente feita\
+  \ com a macro `format!` ou com a macro `println!` para imprimir diretamente no console.\
+  \ Veja\u2026"
 lastmod: '2024-03-13T22:44:46.354327-06:00'
 model: gpt-4-1106-preview
-summary: "Interpola\xE7\xE3o de string \xE9 o processo de inserir valores de vari\xE1\
-  veis dentro de uma string."
+summary: "Em Rust, interpola\xE7\xE3o de string \xE9 comumente feita com a macro `format!`\
+  \ ou com a macro `println!` para imprimir diretamente no console."
 title: Interpolando uma string
 weight: 8
 ---

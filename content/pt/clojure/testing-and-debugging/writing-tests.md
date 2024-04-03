@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:07.422099-07:00
-description: "Escrever testes em Clojure, assim como em outras linguagens de programa\xE7\
-  \xE3o, envolve a cria\xE7\xE3o de c\xF3digo dedicado para verificar se sua base\
-  \ de c\xF3digo\u2026"
+description: "Como fazer: Clojure, aproveitando o JVM, suporta v\xE1rios frameworks\
+  \ de teste. No entanto, uma biblioteca integrada comumente usada \xE9 a `clojure.test`.\
+  \ Aqui\u2026"
 lastmod: '2024-03-13T22:44:46.200324-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever testes em Clojure, assim como em outras linguagens de programa\xE7\
-  \xE3o, envolve a cria\xE7\xE3o de c\xF3digo dedicado para verificar se sua base\
-  \ de c\xF3digo principal funciona conforme o esperado."
+summary: "Clojure, aproveitando o JVM, suporta v\xE1rios frameworks de teste."
 title: Escrevendo testes
 weight: 36
 ---

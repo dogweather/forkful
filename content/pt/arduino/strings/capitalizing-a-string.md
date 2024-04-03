@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:55.868709-07:00
-description: "Capitalizar uma string envolve converter o primeiro caractere de cada\
-  \ palavra em uma string para mai\xFAscula enquanto garante que o restante permane\xE7\
-  a em\u2026"
+description: "Como fazer: O Arduino, conhecido principalmente por interagir com hardware,\
+  \ tamb\xE9m inclui capacidades b\xE1sicas de manipula\xE7\xE3o de strings atrav\xE9\
+  s do seu\u2026"
 lastmod: '2024-03-13T22:44:46.822448-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizar uma string envolve converter o primeiro caractere de cada palavra\
-  \ em uma string para mai\xFAscula enquanto garante que o restante permane\xE7a em\
-  \ min\xFAsculas."
+summary: "O Arduino, conhecido principalmente por interagir com hardware, tamb\xE9\
+  m inclui capacidades b\xE1sicas de manipula\xE7\xE3o de strings atrav\xE9s do seu\
+  \ objeto `String`."
 title: Capitalizando uma string
 weight: 2
 ---

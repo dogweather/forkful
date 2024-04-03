@@ -1,13 +1,11 @@
 ---
 date: 2024-01-20 17:41:12.377061-07:00
-description: "Luodaan tilap\xE4isi\xE4 tiedostoja, kun tarvitsemme v\xE4liaikaisen\
-  \ s\xE4ilytyspaikan datalle, joka h\xE4vi\xE4\xE4 ohjelman suorituksen p\xE4\xE4\
-  tytty\xE4. T\xE4m\xE4 on k\xE4tev\xE4\xE4, koska\u2026"
+description: "How to: Rubyssa tilap\xE4isen tiedoston luonti on suoraviivaista k\xE4\
+  ytt\xE4m\xE4ll\xE4 `Tempfile`-kirjastoa."
 lastmod: '2024-03-13T22:44:57.107208-06:00'
 model: gpt-4-1106-preview
-summary: "Luodaan tilap\xE4isi\xE4 tiedostoja, kun tarvitsemme v\xE4liaikaisen s\xE4\
-  ilytyspaikan datalle, joka h\xE4vi\xE4\xE4 ohjelman suorituksen p\xE4\xE4tytty\xE4\
-  ."
+summary: "Rubyssa tilap\xE4isen tiedoston luonti on suoraviivaista k\xE4ytt\xE4m\xE4\
+  ll\xE4 `Tempfile`-kirjastoa."
 title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---

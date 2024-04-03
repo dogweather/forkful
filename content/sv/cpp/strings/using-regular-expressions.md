@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:10.945573-07:00
-description: "Regulj\xE4ra uttryck i C++ \xE4r teckenf\xF6ljder som definierar ett\
-  \ s\xF6km\xF6nster, anv\xE4nt f\xF6r att matcha eller manipulera str\xE4ngar. Programmerare\
-  \ anv\xE4nder dem f\xF6r\u2026"
+description: "Hur man g\xF6r: C++11 introducerade st\xF6d f\xF6r regulj\xE4ra uttryck\
+  \ i standardbiblioteket, `<regex>`, vilket erbjuder ett robust ramverk f\xF6r str\xE4\
+  ngs\xF6kning och\u2026"
 lastmod: '2024-03-13T22:44:38.199198-06:00'
 model: gpt-4-0125-preview
-summary: "Regulj\xE4ra uttryck i C++ \xE4r teckenf\xF6ljder som definierar ett s\xF6\
-  km\xF6nster, anv\xE4nt f\xF6r att matcha eller manipulera str\xE4ngar."
+summary: "C++11 introducerade st\xF6d f\xF6r regulj\xE4ra uttryck i standardbiblioteket,\
+  \ `<regex>`, vilket erbjuder ett robust ramverk f\xF6r str\xE4ngs\xF6kning och manipulation."
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---

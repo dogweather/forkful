@@ -2,16 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:13.137785-07:00
-description: "W PowerShellu sprawdzanie, czy katalog istnieje, jest cz\u0119stym zadaniem,\
-  \ kt\xF3re pomaga skryptom podejmowa\u0107 decyzje na podstawie struktury systemu\
-  \ plik\xF3w -\u2026"
+description: "Jak to zrobi\u0107: PowerShell oferuje prosty spos\xF3b na sprawdzenie\
+  \ obecno\u015Bci katalogu za pomoc\u0105 polecenia `Test-Path`. To polecenie zwraca\
+  \ warto\u015B\u0107 logiczn\u0105\u2026"
 lastmod: '2024-03-13T22:44:35.644380-06:00'
 model: gpt-4-0125-preview
-summary: "W PowerShellu sprawdzanie, czy katalog istnieje, jest cz\u0119stym zadaniem,\
-  \ kt\xF3re pomaga skryptom podejmowa\u0107 decyzje na podstawie struktury systemu\
-  \ plik\xF3w - na przyk\u0142ad unikaj\u0105c b\u0142\u0119d\xF3w przez potwierdzenie,\
-  \ \u017Ce docelowy katalog jest na miejscu przed pr\xF3b\u0105 czytania z niego\
-  \ lub zapisywania do niego."
+summary: "PowerShell oferuje prosty spos\xF3b na sprawdzenie obecno\u015Bci katalogu\
+  \ za pomoc\u0105 polecenia `Test-Path`."
 title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---

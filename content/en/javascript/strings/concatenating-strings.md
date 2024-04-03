@@ -1,10 +1,11 @@
 ---
 date: 2024-01-20 17:35:06.473846-07:00
-description: Concatenating strings means sticking them together end-to-end. We do
-  it to create messages, URLs, or any text with bits & pieces from different sources.
+description: "How to: In JavaScript, you've got a few ways to concat strings. Old\
+  \ school: `+`. Modern: template literals. Here\u2019s how they look. **Using the\
+  \ +\u2026"
 lastmod: '2024-03-13T22:45:00.426002-06:00'
 model: gpt-4-1106-preview
-summary: Concatenating strings means sticking them together end-to-end.
+summary: In JavaScript, you've got a few ways to concat strings.
 title: Concatenating strings
 weight: 3
 ---

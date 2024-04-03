@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:31.455171-07:00
-description: "Foutafhandeling in je programma's vangt de onvoorziene dingen op die\
-  \ je proberen te laten struikelen. Je doet het om te voorkomen dat je Arduino een\u2026"
+description: 'Hoe: Stel je voor dat je Arduino een sensor leest die mogelijk af en
+  toe waarden buiten het bereik produceert. Hier is hoe je dat zou kunnen aanpakken.'
 lastmod: '2024-03-13T22:44:51.079355-06:00'
 model: gpt-4-0125-preview
-summary: Foutafhandeling in je programma's vangt de onvoorziene dingen op die je proberen
-  te laten struikelen.
+summary: Stel je voor dat je Arduino een sensor leest die mogelijk af en toe waarden
+  buiten het bereik produceert.
 title: Fouten afhandelen
 weight: 16
 ---

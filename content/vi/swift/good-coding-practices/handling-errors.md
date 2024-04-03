@@ -2,15 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:43.638429-07:00
-description: "X\u1EED l\xFD l\u1ED7i trong Swift c\xF3 ngh\u0129a l\xE0 d\u1EF1 \u0111\
-  o\xE1n v\xE0 ph\u1EA3n \u1EE9ng v\u1EDBi nh\u1EEFng v\u1EA5n \u0111\u1EC1 ph\xE1\
-  t sinh khi m\xE3 c\u1EE7a b\u1EA1n \u0111\u01B0\u1EE3c ch\u1EA1y. Ch\xFAng ta l\xE0\
-  m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 ki\u1EC3m so\xE1t s\u1EF1 h\u1ED7n\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Swift s\u1EED d\u1EE5ng x\u1EED l\xFD l\u1ED7\
+  i v\u1EDBi c\xE1c kh\u1ED1i `do`, `try`, v\xE0 `catch`. H\xE3y xem x\xE9t."
 lastmod: '2024-03-13T22:44:37.107770-06:00'
 model: gpt-4-0125-preview
-summary: "X\u1EED l\xFD l\u1ED7i trong Swift c\xF3 ngh\u0129a l\xE0 d\u1EF1 \u0111\
-  o\xE1n v\xE0 ph\u1EA3n \u1EE9ng v\u1EDBi nh\u1EEFng v\u1EA5n \u0111\u1EC1 ph\xE1\
-  t sinh khi m\xE3 c\u1EE7a b\u1EA1n \u0111\u01B0\u1EE3c ch\u1EA1y."
+summary: "Swift s\u1EED d\u1EE5ng x\u1EED l\xFD l\u1ED7i v\u1EDBi c\xE1c kh\u1ED1\
+  i `do`, `try`, v\xE0 `catch`."
 title: "X\u1EED l\xFD l\u1ED7i"
 weight: 16
 ---

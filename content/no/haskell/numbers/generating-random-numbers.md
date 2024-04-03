@@ -1,12 +1,11 @@
 ---
 date: 2024-01-27 20:34:17.777838-07:00
-description: "\xC5 generere tilfeldige tall i Haskell inneb\xE6rer \xE5 skape tall\
-  \ som er uforutsigbare etter menneskelige standarder. Dette er avgj\xF8rende i scenarier\
-  \ som\u2026"
+description: "Hvordan: For \xE5 generere tilfeldige tall i Haskell, bruker man typisk\
+  \ `random`-pakken, som er en del av Haskell Platform. Her er en steg-for-steg-guide:\u2026"
 lastmod: '2024-03-13T22:44:40.837139-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 generere tilfeldige tall i Haskell inneb\xE6rer \xE5 skape tall som\
-  \ er uforutsigbare etter menneskelige standarder."
+summary: "For \xE5 generere tilfeldige tall i Haskell, bruker man typisk `random`-pakken,\
+  \ som er en del av Haskell Platform."
 title: Generering av tilfeldige tall
 weight: 12
 ---

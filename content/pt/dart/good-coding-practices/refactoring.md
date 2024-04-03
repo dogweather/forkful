@@ -2,14 +2,10 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:35.672200-07:00
-description: "Refatora\xE7\xE3o em Dart \xE9 o processo de reestruturar o c\xF3digo\
-  \ existente sem alterar seu comportamento externo, visando melhorar sua estrutura\
-  \ interna,\u2026"
+description: 'Como Fazer: #.'
 lastmod: '2024-03-13T22:44:46.290791-06:00'
 model: gpt-4-0125-preview
-summary: "Refatora\xE7\xE3o em Dart \xE9 o processo de reestruturar o c\xF3digo existente\
-  \ sem alterar seu comportamento externo, visando melhorar sua estrutura interna,\
-  \ legibilidade e manutenibilidade."
+summary: '#.'
 title: "Refatora\xE7\xE3o"
 weight: 19
 ---

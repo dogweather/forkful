@@ -3,13 +3,12 @@ changelog:
 - 2024-01-28, dogweather, reviewed and added links
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 23:01:35.003642-07:00
-description: "Organizowanie kodu w funkcje polega na grupowaniu fragment\xF3w skryptu\
-  \ do realizacji konkretnych zada\u0144. Robimy to, poniewa\u017C sprawia to, \u017C\
-  e kod jest\u2026"
+description: "Jak to zrobi\u0107: W Fish piszesz funkcj\u0119 s\u0142owem kluczowym\
+  \ `function`, nadajesz jej nazw\u0119 i ko\u0144czysz `end`. Oto prosta funkcja."
 lastmod: '2024-03-13T22:44:35.847047-06:00'
 model: gpt-4-0125-preview
-summary: "Organizowanie kodu w funkcje polega na grupowaniu fragment\xF3w skryptu\
-  \ do realizacji konkretnych zada\u0144."
+summary: "W Fish piszesz funkcj\u0119 s\u0142owem kluczowym `function`, nadajesz jej\
+  \ nazw\u0119 i ko\u0144czysz `end`."
 title: Organizacja kodu w funkcje
 weight: 18
 ---

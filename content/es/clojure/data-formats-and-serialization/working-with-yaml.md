@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:55.185611-07:00
-description: "YAML, un acr\xF3nimo recursivo de \"YAML Ain't Markup Language\" (YAML\
-  \ no es un lenguaje de marcado), es un formato de serializaci\xF3n de datos legible\
-  \ por\u2026"
+description: "C\xF3mo hacerlo: Clojure no incluye soporte incorporado para YAML, pero\
+  \ puedes utilizar bibliotecas de terceros como `clj-yaml` para analizar y generar\
+  \ datos\u2026"
 lastmod: '2024-03-13T22:44:58.678852-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, un acr\xF3nimo recursivo de \"YAML Ain't Markup Language\" (YAML no\
-  \ es un lenguaje de marcado), es un formato de serializaci\xF3n de datos legible\
-  \ por humanos utilizado para archivos de configuraci\xF3n e intercambio de datos\
-  \ entre lenguajes con estructuras de datos diferentes."
+summary: Clojure no incluye soporte incorporado para YAML, pero puedes utilizar bibliotecas
+  de terceros como `clj-yaml` para analizar y generar datos en YAML.
 title: Trabajando con YAML
 weight: 41
 ---

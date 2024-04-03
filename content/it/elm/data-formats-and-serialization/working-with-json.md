@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:44.281865-07:00
-description: "Lavorare con JSON in Elm riguarda la decodifica dei dati JSON in tipi\
-  \ Elm e la codifica di valori Elm di nuovo in JSON. Questo processo \xE8 cruciale\
-  \ per le\u2026"
+description: "Come fare: Elm tratta la gestione JSON con esplicitezza e sicurezza,\
+  \ utilizzando principalmente i moduli `Json.Decode` e `Json.Encode`. Per iniziare\
+  \ a\u2026"
 lastmod: '2024-03-13T22:44:43.371242-06:00'
 model: gpt-4-0125-preview
-summary: Lavorare con JSON in Elm riguarda la decodifica dei dati JSON in tipi Elm
-  e la codifica di valori Elm di nuovo in JSON.
+summary: Elm tratta la gestione JSON con esplicitezza e sicurezza, utilizzando principalmente
+  i moduli `Json.Decode` e `Json.Encode`.
 title: Lavorare con JSON
 weight: 38
 ---

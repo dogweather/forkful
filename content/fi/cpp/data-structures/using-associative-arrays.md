@@ -2,14 +2,13 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:36.867731-07:00
-description: "Assosiatiiviset taulukot, tunnetaan my\xF6s nimell\xE4 `std::map` tai\
-  \ `std::unordered_map` C++:ssa, kuvaavat sillan taulukon indeksien ja todellisen\
-  \ datan\u2026"
+description: "Kuinka: C++:ssa assosiatiiviset taulukot her\xE4\xE4v\xE4t eloon `<map>`\
+  \ ja `<unordered_map>` otsikoiden kanssa. Katsotaan esimerkkej\xE4 n\xE4iden k\xE4\
+  yt\xF6st\xE4. #."
 lastmod: '2024-03-13T22:44:56.858070-06:00'
 model: gpt-4-0125-preview
-summary: "Assosiatiiviset taulukot, tunnetaan my\xF6s nimell\xE4 `std::map` tai `std::unordered_map`\
-  \ C++:ssa, kuvaavat sillan taulukon indeksien ja todellisen datan v\xE4lille, antaen\
-  \ sinun k\xE4ytt\xE4\xE4 merkityksellisi\xE4 avaimia."
+summary: "C++:ssa assosiatiiviset taulukot her\xE4\xE4v\xE4t eloon `<map>` ja `<unordered_map>`\
+  \ otsikoiden kanssa."
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---

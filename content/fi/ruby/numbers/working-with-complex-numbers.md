@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:45:14.499712-07:00
-description: "Kompleksiluvut, jotka koostuvat reaali- ja imaginaariosasta (kuten 3+4i),\
-  \ ovat vakiovaruste insin\xF6\xF6reill\xE4 ja fyysikoilla. Ohjelmoijat ty\xF6skentelev\xE4\
-  t\u2026"
+description: "Miten: Ruby tekee kompleksilukujen k\xE4sittelyst\xE4 tuulen. Voit luoda\
+  \ ja manipuloida niit\xE4 Complex-luokan avulla."
 lastmod: '2024-03-13T22:44:57.078711-06:00'
 model: gpt-4-0125-preview
-summary: "Kompleksiluvut, jotka koostuvat reaali- ja imaginaariosasta (kuten 3+4i),\
-  \ ovat vakiovaruste insin\xF6\xF6reill\xE4 ja fyysikoilla."
+summary: "Ruby tekee kompleksilukujen k\xE4sittelyst\xE4 tuulen."
 title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---

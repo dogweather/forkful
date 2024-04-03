@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:03.889028-07:00
-description: "Mettre en majuscule une cha\xEEne dans PowerShell consiste \xE0 transformer\
-  \ le premier caract\xE8re d'une cha\xEEne donn\xE9e en majuscule tout en laissant\
-  \ le reste de\u2026"
+description: "Comment faire : PowerShell, \xE9tant un outil polyvalent, vous permet\
+  \ de mettre en majuscule une cha\xEEne en utilisant des m\xE9thodes simples sans\
+  \ avoir besoin\u2026"
 lastmod: '2024-03-13T22:44:58.024854-06:00'
 model: gpt-4-0125-preview
-summary: "Mettre en majuscule une cha\xEEne dans PowerShell consiste \xE0 transformer\
-  \ le premier caract\xE8re d'une cha\xEEne donn\xE9e en majuscule tout en laissant\
-  \ le reste de la cha\xEEne inchang\xE9."
+summary: "PowerShell, \xE9tant un outil polyvalent, vous permet de mettre en majuscule\
+  \ une cha\xEEne en utilisant des m\xE9thodes simples sans avoir besoin de biblioth\xE8\
+  ques tierces."
 title: "Mettre en majuscule une cha\xEEne"
 weight: 2
 ---

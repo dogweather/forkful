@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:11.410012-07:00
-description: "YAML, o YAML Ain't Markup Language, \xE8 un linguaggio di serializzazione\
-  \ dei dati leggibile dall'uomo. Gli sviluppatori lo usano spesso per file di\u2026"
+description: "Come fare: PowerShell, di default, non viene fornito con un cmdlet integrato\
+  \ per l'analisi di YAML, ma funziona senza problemi con YAML quando si sfrutta\u2026"
 lastmod: '2024-03-13T22:44:43.662520-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, o YAML Ain't Markup Language, \xE8 un linguaggio di serializzazione\
-  \ dei dati leggibile dall'uomo."
+summary: PowerShell, di default, non viene fornito con un cmdlet integrato per l'analisi
+  di YAML, ma funziona senza problemi con YAML quando si sfrutta il modulo `powershell-yaml`
+  o si converte YAML in un oggetto PowerShell usando `ConvertFrom-Json` in combinazione
+  con uno strumento come `yq`.
 title: Lavorare con YAML
 weight: 41
 ---

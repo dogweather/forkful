@@ -2,14 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:06.639520-07:00
-description: "YAML l\xE0 m\u1ED9t chu\u1EA9n h\xF3a d\u1EEF li\u1EC7u d\u1EC5 \u0111\
-  \u1ECDc v\u1EDBi con ng\u01B0\u1EDDi. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5\
-  ng n\xF3 cho c\xE1c t\u1EC7p c\u1EA5u h\xECnh, trao \u0111\u1ED5i d\u1EEF li\u1EC7\
-  u gi\u1EEFa c\xE1c ng\xF4n ng\u1EEF, v\xE0 h\u01A1n n\u1EEFa b\u1EDFi v\xEC\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: \u0110\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi\
+  \ YAML trong TypeScript, b\u1EA1n s\u1EBD c\u1EA7n m\u1ED9t th\u01B0 vi\u1EC7n nh\u01B0\
+  \ `js-yaml`. Tr\u01B0\u1EDBc ti\xEAn, h\xE3y c\xE0i \u0111\u1EB7t n\xF3."
 lastmod: '2024-03-13T22:44:36.346641-06:00'
 model: gpt-4-0125-preview
-summary: "YAML l\xE0 m\u1ED9t chu\u1EA9n h\xF3a d\u1EEF li\u1EC7u d\u1EC5 \u0111\u1ECD\
-  c v\u1EDBi con ng\u01B0\u1EDDi."
+summary: "\u0110\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi YAML trong TypeScript, b\u1EA1n s\u1EBD\
+  \ c\u1EA7n m\u1ED9t th\u01B0 vi\u1EC7n nh\u01B0 `js-yaml`."
 title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 weight: 41
 ---

@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:18.620679-07:00
-description: "Das Parsen von HTML bezieht sich auf den Prozess des Aufbrechens und\
-  \ Interpretierens der Struktur von HTML-Inhalten, typischerweise um spezifische\
-  \ Daten\u2026"
+description: "Wie: Swift enth\xE4lt standardm\xE4\xDFig keine integrierte Bibliothek\
+  \ f\xFCr das HTML-Parsing, weshalb die Verwendung von Drittanbieter-Bibliotheken\
+  \ notwendig ist,\u2026"
 lastmod: '2024-03-13T22:44:54.223269-06:00'
 model: gpt-4-0125-preview
-summary: Das Parsen von HTML bezieht sich auf den Prozess des Aufbrechens und Interpretierens
-  der Struktur von HTML-Inhalten, typischerweise um spezifische Daten zu extrahieren
-  oder diesen Inhalt programmatisch zu manipulieren.
+summary: "Swift enth\xE4lt standardm\xE4\xDFig keine integrierte Bibliothek f\xFC\
+  r das HTML-Parsing, weshalb die Verwendung von Drittanbieter-Bibliotheken notwendig\
+  \ ist, um diese Aufgabe effektiv zu bew\xE4ltigen."
 title: HTML parsen
 weight: 43
 ---

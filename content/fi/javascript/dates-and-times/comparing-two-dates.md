@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:33:11.981800-07:00
-description: "Vertaamme kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 selvitt\xE4\xE4ksemme\
-  \ niiden v\xE4lisen suhteen. Ohjelmoijat tarvitsevat t\xE4t\xE4 toimintoa esimerkiksi\
-  \ aikarajojen tarkistamiseen ja\u2026"
+description: 'How to: (Kuinka:) .'
 lastmod: '2024-03-13T22:44:56.962345-06:00'
 model: gpt-4-1106-preview
-summary: "Vertaamme kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 selvitt\xE4\xE4ksemme niiden\
-  \ v\xE4lisen suhteen."
+summary: .
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---

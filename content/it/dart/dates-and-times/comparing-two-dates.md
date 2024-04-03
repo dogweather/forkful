@@ -2,13 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:53:36.648595-07:00
-description: "Confrontare due date in Dart comporta la valutazione della differenza\
-  \ temporale o dell'ordine tra di esse, una funzionalit\xE0 essenziale nelle applicazioni\u2026"
+description: "Come fare: In Dart, puoi confrontare le date usando la classe `DateTime`,\
+  \ che offre metodi come `isBefore`, `isAfter` e `isAtSameMomentAs` per un\u2026"
 lastmod: '2024-03-13T22:44:43.145331-06:00'
 model: gpt-4-0125-preview
-summary: "Confrontare due date in Dart comporta la valutazione della differenza temporale\
-  \ o dell'ordine tra di esse, una funzionalit\xE0 essenziale nelle applicazioni che\
-  \ gestiscono eventi, scadenze o qualsiasi dato sensibile al tempo."
+summary: In Dart, puoi confrontare le date usando la classe `DateTime`, che offre
+  metodi come `isBefore`, `isAfter` e `isAtSameMomentAs` per un confronto diretto.
 title: Confronto tra due date
 weight: 27
 ---

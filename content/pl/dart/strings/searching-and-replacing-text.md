@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:31.476213-07:00
-description: "Wyszukiwanie i zamiana tekstu w j\u0119zyku Dart polega na badaniu ci\u0105\
-  g\xF3w znak\xF3w w celu znalezienia okre\u015Blonych wzorc\xF3w lub sekwencji znak\xF3\
-  w i zast\u0105pieniu ich\u2026"
+description: "Jak to zrobi\u0107: Dart dostarcza wytrzyma\u0142e metody do wyszukiwania\
+  \ i zamiany tekstu bezpo\u015Brednio przez klas\u0119 `String`, bez potrzeby korzystania\
+  \ z\u2026"
 lastmod: '2024-03-13T22:44:35.073448-06:00'
 model: gpt-4-0125-preview
-summary: "Wyszukiwanie i zamiana tekstu w j\u0119zyku Dart polega na badaniu ci\u0105\
-  g\xF3w znak\xF3w w celu znalezienia okre\u015Blonych wzorc\xF3w lub sekwencji znak\xF3\
-  w i zast\u0105pieniu ich now\u0105 zawarto\u015Bci\u0105."
+summary: "Dart dostarcza wytrzyma\u0142e metody do wyszukiwania i zamiany tekstu bezpo\u015B\
+  rednio przez klas\u0119 `String`, bez potrzeby korzystania z zewn\u0119trznych bibliotek."
 title: "Wyszukiwanie i zast\u0119powanie tekstu"
 weight: 10
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:56:54.404931-07:00
-description: "Mit\xE4 ja miksi? Komentoriviparametrien lukeminen mahdollistaa k\xE4\
-  ytt\xE4j\xE4n antamien arvojen vastaanottamisen suoraan ohjelmaasi. T\xE4t\xE4 tehd\xE4\
-  \xE4n, koska se\u2026"
+description: "How to: Kuinka se tehd\xE4\xE4n: Pythonissa komentoriviparametrit luetaan\
+  \ `sys.argv` listan avulla. T\xE4ss\xE4 yksinkertainen esimerkki."
 lastmod: '2024-03-13T22:44:56.158909-06:00'
 model: gpt-4-1106-preview
-summary: "Mit\xE4 ja miksi."
+summary: "Kuinka se tehd\xE4\xE4n."
 title: Komennoriviparametrien lukeminen
 weight: 23
 ---

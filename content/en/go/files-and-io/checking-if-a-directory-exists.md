@@ -1,11 +1,12 @@
 ---
 date: 2024-02-03 17:49:56.356235-07:00
-description: "Checking if a directory exists in Go is critical for applications that\
-  \ interact with the file system, to avoid errors when attempting to access or modify\u2026"
+description: "How to: In Go, the `os` package provides functionalities for interacting\
+  \ with the operating system, including checking if a directory exists. Here\u2019\
+  s how\u2026"
 lastmod: '2024-03-13T22:44:59.643818-06:00'
 model: gpt-4-0125-preview
-summary: Checking if a directory exists in Go is critical for applications that interact
-  with the file system, to avoid errors when attempting to access or modify directories.
+summary: In Go, the `os` package provides functionalities for interacting with the
+  operating system, including checking if a directory exists.
 title: Checking if a directory exists
 weight: 20
 ---

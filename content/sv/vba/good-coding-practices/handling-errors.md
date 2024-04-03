@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:13.374719-07:00
-description: "Felhantering i Visual Basic for Applications (VBA) syftar till processen\
-  \ att f\xF6rutse, uppt\xE4cka och l\xF6sa programmerings-, applikations- eller\u2026"
+description: "Hur: I VBA implementeras felhantering vanligtvis med hj\xE4lp av uttalandet\
+  \ `On Error` som instruerar VBA hur man ska forts\xE4tta n\xE4r ett fel uppst\xE5\
+  r. De\u2026"
 lastmod: '2024-03-13T22:44:37.751109-06:00'
 model: gpt-4-0125-preview
-summary: "Felhantering i Visual Basic for Applications (VBA) syftar till processen\
-  \ att f\xF6rutse, uppt\xE4cka och l\xF6sa programmerings-, applikations- eller kommunikationsfel."
+summary: "I VBA implementeras felhantering vanligtvis med hj\xE4lp av uttalandet `On\
+  \ Error` som instruerar VBA hur man ska forts\xE4tta n\xE4r ett fel uppst\xE5r."
 title: Hantera fel
 weight: 16
 ---

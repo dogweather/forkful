@@ -2,17 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:10.974573-07:00
-description: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong Bash mang l\u1EA1\
-  i c\xE1ch th\u1EE9c \u0111\u1EC3 b\u1ED5 sung t\xEDnh kh\xF4ng d\u1EF1 \u0111o\xE1\
-  n tr\u01B0\u1EDBc v\xE0o c\xE1c script, \u0111i\u1EC1u n\xE0y r\u1EA5t c\u1EA7n\
-  \ thi\u1EBFt cho c\xE1c t\xE1c v\u1EE5 nh\u01B0 t\u1EA1o m\u1EADt\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong Bash, bi\u1EBFn `$RANDOM` l\xE0 l\u1EF1\
+  a ch\u1ECDn h\xE0ng \u0111\u1EA7u \u0111\u1EC3 t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEA\
+  n. M\u1ED7i l\u1EA7n b\u1EA1n tham chi\u1EBFu \u0111\u1EBFn n\xF3, Bash cung c\u1EA5\
+  p m\u1ED9t s\u1ED1 nguy\xEAn gi\u1EA3 ng\u1EABu\u2026"
 lastmod: '2024-03-13T22:44:36.870898-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong Bash mang l\u1EA1i c\xE1\
-  ch th\u1EE9c \u0111\u1EC3 b\u1ED5 sung t\xEDnh kh\xF4ng d\u1EF1 \u0111o\xE1n tr\u01B0\
-  \u1EDBc v\xE0o c\xE1c script, \u0111i\u1EC1u n\xE0y r\u1EA5t c\u1EA7n thi\u1EBF\
-  t cho c\xE1c t\xE1c v\u1EE5 nh\u01B0 t\u1EA1o m\u1EADt kh\u1EA9u an to\xE0n, m\xF4\
-  \ ph\u1ECFng d\u1EEF li\u1EC7u, ho\u1EB7c cho l\u1EADp tr\xECnh game."
+summary: "Trong Bash, bi\u1EBFn `$RANDOM` l\xE0 l\u1EF1a ch\u1ECDn h\xE0ng \u0111\u1EA7\
+  u \u0111\u1EC3 t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn."
 title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 weight: 12
 ---

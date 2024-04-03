@@ -2,10 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:23.963742-07:00
-description: "H\xE3y c\xF9ng kh\xE1m ph\xE1 GHCi, m\xF4i tr\u01B0\u1EDDng t\u01B0\u01A1\
-  ng t\xE1c c\u1EE7a Haskell c\xF3 th\u1EC3 ho\u1EA1t \u0111\u1ED9ng nh\u01B0 m\u1ED9\
-  t tr\xECnh g\u1EE1 r\u1ED1i c\u01A1 b\u1EA3n. B\u1EA1n kh\u1EDFi \u0111\u1ED9ng\
-  \ n\xF3 v\u1EDBi m\xE3 Haskell c\u1EE7a m\xECnh v\xE0 b\u1EAFt \u0111\u1EA7u\u2026"
+description: "L\xE0m Th\u1EBF N\xE0o: H\xE3y c\xF9ng kh\xE1m ph\xE1 GHCi, m\xF4i tr\u01B0\
+  \u1EDDng t\u01B0\u01A1ng t\xE1c c\u1EE7a Haskell c\xF3 th\u1EC3 ho\u1EA1t \u0111\
+  \u1ED9ng nh\u01B0 m\u1ED9t tr\xECnh g\u1EE1 r\u1ED1i c\u01A1 b\u1EA3n. B\u1EA1n\
+  \ kh\u1EDFi \u0111\u1ED9ng n\xF3 v\u1EDBi m\xE3 Haskell c\u1EE7a\u2026"
 lastmod: '2024-03-13T22:44:36.717892-06:00'
 model: gpt-4-0125-preview
 summary: "H\xE3y c\xF9ng kh\xE1m ph\xE1 GHCi, m\xF4i tr\u01B0\u1EDDng t\u01B0\u01A1\

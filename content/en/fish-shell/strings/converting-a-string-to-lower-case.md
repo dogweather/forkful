@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:38:08.868799-07:00
-description: "Converting a string to lower case changes all the letters in that string\
-  \ to their lower case form. Programmers do it for consistency, comparison, sorting,\u2026"
+description: 'How to: Using the `string` command, converting text to lower case is
+  straightforward. Just do.'
 lastmod: '2024-03-13T22:45:00.460383-06:00'
 model: gpt-4-1106-preview
-summary: Converting a string to lower case changes all the letters in that string
-  to their lower case form.
+summary: Using the `string` command, converting text to lower case is straightforward.
 title: Converting a string to lower case
 weight: 4
 ---

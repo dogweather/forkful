@@ -2,17 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:59.326658-07:00
-description: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n l\xE0 l\u1EA5y n\u1ED9\
-  i dung t\u1EEB m\u1ED9t t\u1EC7p \u0111\u01B0\u1EE3c c\u1EA5u tr\xFAc d\u01B0\u1EDB\
-  i d\u1EA1ng v\u0103n b\u1EA3n \u0111\u1ECDc \u0111\u01B0\u1EE3c, thay v\xEC d\u1EEF\
-  \ li\u1EC7u nh\u1ECB ph\xE2n. C\xE1c l\u1EADp tr\xECnh vi\xEAn \u0111\u1ECDc t\u1EC7\
-  p v\u0103n b\u1EA3n \u0111\u1EC3\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Elm ch\u1EE7 y\u1EBFu t\u1EADp trung v\xE0o\
+  \ ph\xE1t tri\u1EC3n web front-end, n\u01A1i m\xE0 truy c\u1EADp tr\u1EF1c ti\u1EBF\
+  p v\xE0o h\u1EC7 th\u1ED1ng t\u1EC7p l\xE0 kh\xF4ng th\u1EC3 v\xEC l\xFD do an ninh.\
+  \ Thay v\xE0o \u0111\xF3,\u2026"
 lastmod: '2024-03-13T22:44:36.567632-06:00'
 model: gpt-4-0125-preview
-summary: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n l\xE0 l\u1EA5y n\u1ED9\
-  i dung t\u1EEB m\u1ED9t t\u1EC7p \u0111\u01B0\u1EE3c c\u1EA5u tr\xFAc d\u01B0\u1EDB\
-  i d\u1EA1ng v\u0103n b\u1EA3n \u0111\u1ECDc \u0111\u01B0\u1EE3c, thay v\xEC d\u1EEF\
-  \ li\u1EC7u nh\u1ECB ph\xE2n."
+summary: "Elm ch\u1EE7 y\u1EBFu t\u1EADp trung v\xE0o ph\xE1t tri\u1EC3n web front-end,\
+  \ n\u01A1i m\xE0 truy c\u1EADp tr\u1EF1c ti\u1EBFp v\xE0o h\u1EC7 th\u1ED1ng t\u1EC7\
+  p l\xE0 kh\xF4ng th\u1EC3 v\xEC l\xFD do an ninh."
 title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 22
 ---

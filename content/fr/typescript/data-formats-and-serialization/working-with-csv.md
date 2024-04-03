@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:24.853526-07:00
-description: "Travailler avec des fichiers CSV (Valeurs S\xE9par\xE9es par des Virgules)\
-  \ implique la lecture et l'\xE9criture de fichiers CSV, un format d'\xE9change de\
-  \ donn\xE9es\u2026"
+description: "Comment faire : En TypeScript, vous pouvez travailler avec des fichiers\
+  \ CSV soit par du code natif, soit en utilisant des biblioth\xE8ques tierces comme\u2026"
 lastmod: '2024-03-13T22:44:57.461288-06:00'
 model: gpt-4-0125-preview
-summary: "Travailler avec des fichiers CSV (Valeurs S\xE9par\xE9es par des Virgules)\
-  \ implique la lecture et l'\xE9criture de fichiers CSV, un format d'\xE9change de\
-  \ donn\xE9es courant utilis\xE9 en raison de sa simplicit\xE9 et de son large support\
-  \ \xE0 travers diverses plateformes et langages."
+summary: "En TypeScript, vous pouvez travailler avec des fichiers CSV soit par du\
+  \ code natif, soit en utilisant des biblioth\xE8ques tierces comme `csv-parser`\
+  \ pour la lecture et `csv-writer` pour l'\xE9criture de fichiers CSV."
 title: Travailler avec CSV
 weight: 37
 ---

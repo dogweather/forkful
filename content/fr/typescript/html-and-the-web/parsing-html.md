@@ -2,12 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:11.716447-07:00
-description: "Parser du HTML signifie fouiller dans le code HTML pour trouver, extraire\
-  \ ou manipuler des informations. Les programmeurs le font pour interagir avec le\u2026"
+description: "Comment faire : Pour commencer, installez une biblioth\xE8que comme\
+  \ `node-html-parser`. Voici la commande de terminal ."
 lastmod: '2024-03-13T22:44:57.434518-06:00'
 model: gpt-4-0125-preview
-summary: Parser du HTML signifie fouiller dans le code HTML pour trouver, extraire
-  ou manipuler des informations.
+summary: "Pour commencer, installez une biblioth\xE8que comme `node-html-parser`."
 title: Analyse Syntaxique du HTML
 weight: 43
 ---

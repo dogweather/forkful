@@ -2,13 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:29.859211-07:00
-description: "\xC5 parse HTML betyr \xE5 bryte ned HTML-innhold til noe et program\
-  \ kan forst\xE5 og manipulere. Utviklere gj\xF8r dette for \xE5 trekke ut data,\
-  \ manipulere innhold\u2026"
+description: "Hvordan: C++ kommer ikke med innebygd funksjonalitet for parsing av\
+  \ HTML. Du vil ofte bruke et bibliotek som Gumbo-parser fra Google, eller noe lignende.\u2026"
 lastmod: '2024-03-13T22:44:41.097389-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 parse HTML betyr \xE5 bryte ned HTML-innhold til noe et program kan\
-  \ forst\xE5 og manipulere."
+summary: C++ kommer ikke med innebygd funksjonalitet for parsing av HTML.
 title: Analysering av HTML
 weight: 43
 ---

@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 18:02:56.304409-07:00
-description: "HTTP-pyynt\xF6 perusautentikaatiolla on tapa l\xE4hett\xE4\xE4 k\xE4\
-  ytt\xE4j\xE4nimi ja salasana verkon yli turvallisesti. Ohjelmoijat k\xE4ytt\xE4\
-  v\xE4t t\xE4t\xE4 tapaa, kun heid\xE4n t\xE4ytyy\u2026"
+description: "How to: (Kuinka tehd\xE4:) Swiftiss\xE4 perusautentikaatio tapahtuu\
+  \ lis\xE4\xE4m\xE4ll\xE4 base64-koodattu \"Authorization\" header HTTP-pyynt\xF6\
+  \xF6n. T\xE4ss\xE4 yksinkertainen\u2026"
 lastmod: '2024-03-13T22:44:56.906790-06:00'
 model: gpt-4-1106-preview
-summary: "HTTP-pyynt\xF6 perusautentikaatiolla on tapa l\xE4hett\xE4\xE4 k\xE4ytt\xE4\
-  j\xE4nimi ja salasana verkon yli turvallisesti."
+summary: "Swiftiss\xE4 perusautentikaatio tapahtuu lis\xE4\xE4m\xE4ll\xE4 base64-koodattu\
+  \ \"Authorization\" header HTTP-pyynt\xF6\xF6n."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---

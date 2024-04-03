@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:48:14.619650-07:00
-description: "Encontrar o comprimento de uma string significa determinar a quantidade\
-  \ de caracteres que ela cont\xE9m. Programadores fazem isso para validar entradas,\u2026"
+description: "How to: Em TypeScript, a propriedade `length` \xE9 a forma padr\xE3\
+  o de obter o comprimento de uma string. Aqui est\xE3o alguns exemplos."
 lastmod: '2024-03-13T22:44:46.317004-06:00'
 model: gpt-4-1106-preview
-summary: "Encontrar o comprimento de uma string significa determinar a quantidade\
-  \ de caracteres que ela cont\xE9m."
+summary: "Em TypeScript, a propriedade `length` \xE9 a forma padr\xE3o de obter o\
+  \ comprimento de uma string."
 title: Descobrindo o comprimento de uma string
 weight: 7
 ---

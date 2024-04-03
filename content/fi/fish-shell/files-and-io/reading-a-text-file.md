@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:54:22.624348-07:00
-description: "Tekstitiedoston lukeminen tarkoittaa tiedoston sis\xE4ll\xF6n hakemista\
-  \ ohjelmallisesti. Ohjelmoijat tekev\xE4t sit\xE4 datan prosessoimiseen, konfiguraatioiden\u2026"
+description: 'How to: - Kuinka: .'
 lastmod: '2024-03-13T22:44:57.012514-06:00'
 model: gpt-4-1106-preview
-summary: "Tekstitiedoston lukeminen tarkoittaa tiedoston sis\xE4ll\xF6n hakemista\
-  \ ohjelmallisesti."
+summary: .
 title: Tekstitiedoston lukeminen
 weight: 22
 ---

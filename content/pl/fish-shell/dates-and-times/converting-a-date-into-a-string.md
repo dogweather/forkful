@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:36:37.551587-07:00
-description: "Przekszta\u0142canie daty w ci\u0105g znak\xF3w to proces zamiany reprezentacji\
-  \ daty na tekst. Programi\u015Bci to robi\u0105, by \u0142atwo zapisa\u0107 lub\
-  \ wy\u015Bwietli\u0107 dat\u0119 w czytelnej\u2026"
+description: "How to: (Jak to zrobi\u0107:) ."
 lastmod: '2024-03-13T22:44:35.853257-06:00'
 model: gpt-4-1106-preview
-summary: "Przekszta\u0142canie daty w ci\u0105g znak\xF3w to proces zamiany reprezentacji\
-  \ daty na tekst."
+summary: .
 title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---

@@ -1,7 +1,8 @@
 ---
 date: 2024-01-26 03:50:37.599592-07:00
-description: "PHP include un debugger interattivo chiamato Xdebug. Ecco come usarlo.\
-  \ Prima, assicurati di avere Xdebug installato e configurato nel tuo file `php.ini`:\u2026"
+description: "Come fare: PHP include un debugger interattivo chiamato Xdebug. Ecco\
+  \ come usarlo. Prima, assicurati di avere Xdebug installato e configurato nel tuo\
+  \ file\u2026"
 lastmod: '2024-03-13T22:44:43.521233-06:00'
 model: gpt-4-0125-preview
 summary: PHP include un debugger interattivo chiamato Xdebug.

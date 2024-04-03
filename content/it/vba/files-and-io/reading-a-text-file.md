@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:56.701694-07:00
-description: "Leggere un file di testo in Visual Basic for Applications (VBA) implica\
-  \ l'accesso programmatico ed estrazione del contenuto di un file di testo\u2026"
+description: "Come fare: Il modo pi\xF9 semplice per leggere un file di testo in VBA\
+  \ \xE8 utilizzare l'istruzione `Open` in combinazione con le funzioni `Input` o\
+  \ `Line\u2026"
 lastmod: '2024-03-13T22:44:43.282559-06:00'
 model: gpt-4-0125-preview
-summary: Leggere un file di testo in Visual Basic for Applications (VBA) implica l'accesso
-  programmatico ed estrazione del contenuto di un file di testo dall'interno di un'applicazione
-  Office.
+summary: "Il modo pi\xF9 semplice per leggere un file di testo in VBA \xE8 utilizzare\
+  \ l'istruzione `Open` in combinazione con le funzioni `Input` o `Line Input`."
 title: Leggere un file di testo
 weight: 22
 ---

@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:51.565220-07:00
-description: "Code in functies opdelen is als LEGO-stenen sorteren in bakken\u2014\
-  het maakt het vinden en gebruiken ervan gemakkelijker. We doen dit om herhaling\
-  \ te\u2026"
+description: 'Hoe te: Stel je voor dat je code hebt die meerdere keren een begroeting
+  afdrukt. Zonder functies is het een rommeltje. Met functies is het netjes.'
 lastmod: '2024-03-13T22:44:50.815749-06:00'
 model: gpt-4-0125-preview
-summary: "Code in functies opdelen is als LEGO-stenen sorteren in bakken\u2014het\
-  \ maakt het vinden en gebruiken ervan gemakkelijker."
+summary: Stel je voor dat je code hebt die meerdere keren een begroeting afdrukt.
 title: Code organiseren in functies
 weight: 18
 ---

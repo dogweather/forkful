@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:50:47.284316-07:00
-description: "String interpolation lets you embed variables directly in strings. It's\
-  \ done for convenience and readability\u2014no plus signs or function calls needed\
-  \ to\u2026"
+description: 'How to: In Haskell, string interpolation isn''t baked in, but with the
+  `interpolate` package, you can get pretty close. First, ensure you have the package.'
 lastmod: '2024-03-13T22:45:00.115064-06:00'
 model: gpt-4-1106-preview
-summary: String interpolation lets you embed variables directly in strings.
+summary: In Haskell, string interpolation isn't baked in, but with the `interpolate`
+  package, you can get pretty close.
 title: Interpolating a string
 weight: 8
 ---

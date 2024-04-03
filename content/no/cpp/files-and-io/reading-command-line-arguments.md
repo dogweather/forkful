@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:55:29.219355-07:00
-description: "\xC5 lese kommandolinjeargumenter betyr \xE5 fange opp data gitt direkte\
-  \ n\xE5r du kj\xF8rer programmet ditt. Programmere gj\xF8r dette for \xE5 tillate\
-  \ dynamiske\u2026"
+description: "How to (Slik gj\xF8r du det) ."
 lastmod: '2024-03-13T22:44:41.115521-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 lese kommandolinjeargumenter betyr \xE5 fange opp data gitt direkte\
-  \ n\xE5r du kj\xF8rer programmet ditt."
+summary: .
 title: Lese kommandolinjeargumenter
 weight: 23
 ---

@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:18.831743-07:00
-description: "Merkkijonosta p\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys Haskellissa tarkoittaa\
-  \ tekstiesitysten muuntamista ohjelman k\xE4sitelt\xE4viss\xE4 olevaan rakenteelliseen\
-  \ muotoon. T\xE4m\xE4\u2026"
+description: "Kuinka: Oletuksena Haskell tarjoaa perusty\xF6kalut p\xE4iv\xE4m\xE4\
+  \xE4rien j\xE4sent\xE4miseen, mutta kirjastojen kuten `time` k\xE4ytt\xE4minen ydintoiminnallisuuteen\
+  \ ja `date-\u2026"
 lastmod: '2024-03-13T22:44:56.624167-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonosta p\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys Haskellissa tarkoittaa\
-  \ tekstiesitysten muuntamista ohjelman k\xE4sitelt\xE4viss\xE4 olevaan rakenteelliseen\
-  \ muotoon."
+summary: "Oletuksena Haskell tarjoaa perusty\xF6kalut p\xE4iv\xE4m\xE4\xE4rien j\xE4\
+  sent\xE4miseen, mutta kirjastojen kuten `time` k\xE4ytt\xE4minen ydintoiminnallisuuteen\
+  \ ja `date-parse` tai `time-parse` joustavampaan j\xE4sent\xE4miseen voi merkitt\xE4\
+  v\xE4sti yksinkertaistaa teht\xE4v\xE4\xE4."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
 weight: 30
 ---

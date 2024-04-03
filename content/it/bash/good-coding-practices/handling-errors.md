@@ -1,11 +1,9 @@
 ---
 date: 2024-01-26 00:50:08.644299-07:00
-description: "Gestire gli errori nella scrittura di script Bash significa anticipare\
-  \ dove le cose potrebbero andare storte e affrontare la situazione con grazia.\u2026"
+description: 'Come fare: .'
 lastmod: '2024-03-13T22:44:43.606867-06:00'
 model: gpt-4-1106-preview
-summary: Gestire gli errori nella scrittura di script Bash significa anticipare dove
-  le cose potrebbero andare storte e affrontare la situazione con grazia.
+summary: .
 title: Gestione degli errori
 weight: 16
 ---

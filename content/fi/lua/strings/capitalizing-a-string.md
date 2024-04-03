@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:54.861204-07:00
-description: "Merkkijonon alkukirjaimen muuttaminen isoksi tarkoittaa jokaisen lauseen\
-  \ sanan ensimm\xE4isen merkin muuttamista isoksi kirjaimeksi, samalla varmistaen,\
-  \ ett\xE4\u2026"
+description: "Kuinka: Lua ei sis\xE4ll\xE4 valmista funktiota merkkijonojen alkukirjaimen\
+  \ muuttamiseksi isoksi, mutta voit helposti saavuttaa t\xE4m\xE4n teht\xE4v\xE4\
+  n k\xE4ytt\xE4m\xE4ll\xE4 perus\u2026"
 lastmod: '2024-03-13T22:44:56.681264-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonon alkukirjaimen muuttaminen isoksi tarkoittaa jokaisen lauseen\
-  \ sanan ensimm\xE4isen merkin muuttamista isoksi kirjaimeksi, samalla varmistaen,\
-  \ ett\xE4 loput merkit ovat pieni\xE4 kirjaimia."
+summary: "Lua ei sis\xE4ll\xE4 valmista funktiota merkkijonojen alkukirjaimen muuttamiseksi\
+  \ isoksi, mutta voit helposti saavuttaa t\xE4m\xE4n teht\xE4v\xE4n k\xE4ytt\xE4\
+  m\xE4ll\xE4 perus merkkijonon k\xE4sittelyn funktioita."
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---

@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:33.401052-07:00
-description: "Scrivere test in Elixir comporta la creazione di script automatizzati\
-  \ per convalidare il comportamento del tuo codice. I programmatori lo fanno per\u2026"
+description: "Come fare: Elixir utilizza ExUnit come framework di test incorporato,\
+  \ che \xE8 estremamente potente e facile da usare. Ecco un esempio di base: 1. Crea\
+  \ un\u2026"
 lastmod: '2024-03-13T22:44:43.086948-06:00'
 model: gpt-4-0125-preview
-summary: Scrivere test in Elixir comporta la creazione di script automatizzati per
-  convalidare il comportamento del tuo codice.
+summary: "Elixir utilizza ExUnit come framework di test incorporato, che \xE8 estremamente\
+  \ potente e facile da usare."
 title: Scrivere test
 weight: 36
 ---

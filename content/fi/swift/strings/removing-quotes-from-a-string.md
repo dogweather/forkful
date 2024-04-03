@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 03:42:08.885110-07:00
-description: "Merkkijonosta lainausmerkkien poistaminen tarkoittaa sis\xE4lt\xF6\xE4\
-  \ ymp\xE4r\xF6ivien lainausmerkkien poistamista. T\xE4m\xE4 tehd\xE4\xE4n sy\xF6\
-  tteiden puhdistamiseksi, datan\u2026"
+description: "Kuinka: Swift antaa sinun k\xE4sitell\xE4 lainausmerkkien poistoteht\xE4\
+  v\xE4n aika n\xE4pp\xE4r\xE4sti. T\xE4ss\xE4 nopea esimerkki k\xE4ytt\xE4en `replacingOccurrences(of:with:)`,\
+  \ joka\u2026"
 lastmod: '2024-03-13T22:44:56.895517-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonosta lainausmerkkien poistaminen tarkoittaa sis\xE4lt\xF6\xE4 ymp\xE4\
-  r\xF6ivien lainausmerkkien poistamista."
+summary: "Swift antaa sinun k\xE4sitell\xE4 lainausmerkkien poistoteht\xE4v\xE4n aika\
+  \ n\xE4pp\xE4r\xE4sti."
 title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---

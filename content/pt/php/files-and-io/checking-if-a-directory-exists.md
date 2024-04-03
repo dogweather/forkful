@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:15.413836-07:00
-description: "Verificar se um diret\xF3rio existe \xE9 uma tarefa fundamental na programa\xE7\
-  \xE3o PHP, pois permite que voc\xEA verifique a presen\xE7a de um diret\xF3rio antes\
-  \ de realizar\u2026"
+description: "Como fazer: A maneira nativa de verificar se um diret\xF3rio existe\
+  \ em PHP \xE9 usando a fun\xE7\xE3o `is_dir()`. Esta fun\xE7\xE3o recebe um caminho\
+  \ de arquivo como\u2026"
 lastmod: '2024-03-13T22:44:46.681453-06:00'
 model: gpt-4-0125-preview
-summary: "Verificar se um diret\xF3rio existe \xE9 uma tarefa fundamental na programa\xE7\
-  \xE3o PHP, pois permite que voc\xEA verifique a presen\xE7a de um diret\xF3rio antes\
-  \ de realizar opera\xE7\xF5es como ler ou escrever arquivos dentro dele."
+summary: "A maneira nativa de verificar se um diret\xF3rio existe em PHP \xE9 usando\
+  \ a fun\xE7\xE3o `is_dir()`."
 title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---

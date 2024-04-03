@@ -3,14 +3,13 @@ changelog:
 - 2024-01-28, dogweather, reviewed
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:23.369031-07:00
-description: "N\u1ED9i suy chu\u1ED7i l\xE0 ph\u01B0\u01A1ng ph\xE1p nh\xFAng c\xE1\
-  c bi\u1EC3u th\u1EE9c v\xE0o b\xEAn trong c\xE1c chu\u1ED7i literan. L\u1EADp tr\xEC\
-  nh vi\xEAn s\u1EED d\u1EE5ng n\xF3 \u0111\u1EC3 ch\xE8n \u0111\u1ED9ng c\xE1c gi\xE1\
-  \ tr\u1ECB v\xE0o chu\u1ED7i, l\xE0m cho m\xE3\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Python 3.6 tr\u1EDF l\xEAn, b\u1EA1n c\xF3\
+  \ th\u1EC3 n\u1ED9i suy chu\u1ED7i s\u1EED d\u1EE5ng f-strings. D\u01B0\u1EDBi \u0111\
+  \xE2y l\xE0 c\xE1ch."
 lastmod: '2024-03-13T22:44:36.078422-06:00'
 model: gpt-4-0125-preview
-summary: "N\u1ED9i suy chu\u1ED7i l\xE0 ph\u01B0\u01A1ng ph\xE1p nh\xFAng c\xE1c bi\u1EC3\
-  u th\u1EE9c v\xE0o b\xEAn trong c\xE1c chu\u1ED7i literan."
+summary: "Trong Python 3.6 tr\u1EDF l\xEAn, b\u1EA1n c\xF3 th\u1EC3 n\u1ED9i suy chu\u1ED7\
+  i s\u1EED d\u1EE5ng f-strings."
 title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
 weight: 8
 ---

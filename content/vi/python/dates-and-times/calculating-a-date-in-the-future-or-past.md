@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:31.705717-07:00
-description: "T\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7\
-  c qu\xE1 kh\u1EE9 ngh\u0129a l\xE0 t\xECm m\u1ED9t ng\xE0y tr\u01B0\u1EDBc ho\u1EB7\
-  c sau m\u1ED9t kho\u1EA3ng th\u1EDDi gian \u0111\u01B0\u1EE3c x\xE1c \u0111\u1ECB\
-  nh. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: M\xF4-\u0111un `datetime` c\u1EE7a Python gi\xFA\
+  p vi\u1EC7c l\xE0m vi\u1EC7c v\u1EDBi ng\xE0y v\xE0 gi\u1EDD tr\u1EDF n\xEAn d\u1EC5\
+  \ d\xE0ng. H\xE3y xem qua."
 lastmod: '2024-03-13T22:44:36.115221-06:00'
 model: gpt-4-0125-preview
-summary: "T\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1\
-  \ kh\u1EE9 ngh\u0129a l\xE0 t\xECm m\u1ED9t ng\xE0y tr\u01B0\u1EDBc ho\u1EB7c sau\
-  \ m\u1ED9t kho\u1EA3ng th\u1EDDi gian \u0111\u01B0\u1EE3c x\xE1c \u0111\u1ECBnh."
+summary: "M\xF4-\u0111un `datetime` c\u1EE7a Python gi\xFAp vi\u1EC7c l\xE0m vi\u1EC7\
+  c v\u1EDBi ng\xE0y v\xE0 gi\u1EDD tr\u1EDF n\xEAn d\u1EC5 d\xE0ng."
 title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1EE9"
 weight: 26
 ---

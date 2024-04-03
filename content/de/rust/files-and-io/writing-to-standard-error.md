@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:26.156115-07:00
-description: "Das Schreiben auf den Standardfehler (stderr) in Rust bedeutet, Fehlermeldungen\
-  \ und Diagnosen getrennt vom Standardausgang (stdout) auf die Konsole zu\u2026"
+description: "Wie: Rust bietet eine unkomplizierte M\xF6glichkeit, mit dem Makro `eprintln!`\
+  \ auf stderr zu schreiben, \xE4hnlich wie `println!` f\xFCr stdout verwendet wird.\u2026"
 lastmod: '2024-03-13T22:44:53.689342-06:00'
 model: gpt-4-0125-preview
-summary: Das Schreiben auf den Standardfehler (stderr) in Rust bedeutet, Fehlermeldungen
-  und Diagnosen getrennt vom Standardausgang (stdout) auf die Konsole zu leiten.
+summary: "Rust bietet eine unkomplizierte M\xF6glichkeit, mit dem Makro `eprintln!`\
+  \ auf stderr zu schreiben, \xE4hnlich wie `println!` f\xFCr stdout verwendet wird."
 title: Schreiben auf Standardfehler
 weight: 25
 ---

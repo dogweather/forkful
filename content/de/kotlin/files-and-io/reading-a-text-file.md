@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:54:51.447948-07:00
-description: "Textdateien lesen hei\xDFt, Daten aus einer Datei mit Textinhalt in\
-  \ dein Programm zu laden. Programmierer machen das h\xE4ufig, um Konfigurationen\
-  \ auszulesen,\u2026"
+description: "How to: So liest du eine Textdatei in Kotlin \u2013 einfach und schmerzlos."
 lastmod: '2024-03-13T22:44:53.863542-06:00'
 model: gpt-4-1106-preview
-summary: "Textdateien lesen hei\xDFt, Daten aus einer Datei mit Textinhalt in dein\
-  \ Programm zu laden."
+summary: "So liest du eine Textdatei in Kotlin \u2013 einfach und schmerzlos."
 title: Textdatei einlesen
 weight: 22
 ---

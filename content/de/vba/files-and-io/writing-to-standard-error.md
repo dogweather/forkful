@@ -2,13 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:09:20.938951-07:00
-description: "Das Schreiben auf Standardfehler in Visual Basic for Applications (VBA)\
-  \ bedeutet, Fehlermeldungen oder Diagnostiken getrennt von der Standardausgabe zu\u2026"
+description: "Wie geht das: In VBA gibt es, da keine direkte integrierte Funktion\
+  \ vorhanden ist, um speziell auf Standardfehler zu schreiben, wie in einigen anderen\u2026"
 lastmod: '2024-03-13T22:44:53.736472-06:00'
 model: gpt-4-0125-preview
-summary: "Das Schreiben auf Standardfehler in Visual Basic for Applications (VBA)\
-  \ bedeutet, Fehlermeldungen oder Diagnostiken getrennt von der Standardausgabe zu\
-  \ leiten, \xFCblicherweise zur Konsole oder einer Protokolldatei."
+summary: "In VBA gibt es, da keine direkte integrierte Funktion vorhanden ist, um\
+  \ speziell auf Standardfehler zu schreiben, wie in einigen anderen Programmiersprachen,\
+  \ eine g\xE4ngige L\xF6sung, die `Debug.Print` f\xFCr die Entwicklungsausgabe von\
+  \ Fehlern verwendet oder eine benutzerdefinierte Protokollierungsfunktion erstellt,\
+  \ die dieses Verhalten f\xFCr Produktionsanwendungen nachahmt."
 title: Ausgabe auf Standardfehler
 weight: 25
 ---

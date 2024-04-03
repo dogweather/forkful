@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:11.732888-07:00
-description: "Een HTTP-verzoek verzenden gaat over het aankloppen bij de deur van\
-  \ een webserver, om gegevens te vragen of aan te bieden. Programmeurs doen dit om\
-  \ te\u2026"
+description: 'Hoe: Swift maakt het eenvoudig om HTTP-verzoeken te verzenden met behulp
+  van de `URLSession` klasse. Hier is een eenvoudig voorbeeld van een GET-verzoek.'
 lastmod: '2024-03-13T22:44:51.153519-06:00'
 model: gpt-4-0125-preview
-summary: Een HTTP-verzoek verzenden gaat over het aankloppen bij de deur van een webserver,
-  om gegevens te vragen of aan te bieden.
+summary: Swift maakt het eenvoudig om HTTP-verzoeken te verzenden met behulp van de
+  `URLSession` klasse.
 title: Een HTTP-verzoek verzenden
 weight: 44
 ---

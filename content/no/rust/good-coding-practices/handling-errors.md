@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 00:57:14.324645-07:00
-description: "Feilh\xE5ndtering handler om \xE5 takle ting n\xE5r de skj\xE6rer seg.\
-  \ Programmerere gj\xF8r dette for \xE5 h\xE5ndtere det uventede, slik at deres Rust-programmer\
-  \ er robuste\u2026"
+description: "Hvordan: Rust h\xE5ndterer feil p\xE5 to hovedm\xE5ter: gjenvinnbare\
+  \ og ugjenkallelige feil. La oss se p\xE5 begge. For gjenvinnbare feil bruker vi\
+  \ `Result<T, E>`."
 lastmod: '2024-03-13T22:44:40.581238-06:00'
 model: gpt-4-1106-preview
-summary: "Feilh\xE5ndtering handler om \xE5 takle ting n\xE5r de skj\xE6rer seg."
+summary: "Rust h\xE5ndterer feil p\xE5 to hovedm\xE5ter."
 title: "Feilh\xE5ndtering"
 weight: 16
 ---

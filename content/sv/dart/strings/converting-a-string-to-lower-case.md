@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:53:57.389020-07:00
-description: "Att konvertera en str\xE4ng till gemener \xE4r en grundl\xE4ggande operation\
-  \ som inneb\xE4r att man transformerar alla tecken i en given str\xE4ng till deras\
-  \ gemena\u2026"
+description: "Hur man g\xF6r: I Dart kan du konvertera en str\xE4ng till gemener genom\
+  \ att anv\xE4nda metoden `toLowerCase()` som tillhandah\xE5lls av `String`-klassen.\
+  \ Denna metod\u2026"
 lastmod: '2024-03-13T22:44:37.597147-06:00'
 model: gpt-4-0125-preview
-summary: "Att konvertera en str\xE4ng till gemener \xE4r en grundl\xE4ggande operation\
-  \ som inneb\xE4r att man transformerar alla tecken i en given str\xE4ng till deras\
-  \ gemena motsvarigheter."
+summary: "I Dart kan du konvertera en str\xE4ng till gemener genom att anv\xE4nda\
+  \ metoden `toLowerCase()` som tillhandah\xE5lls av `String`-klassen."
 title: "Konvertera en str\xE4ng till gemener"
 weight: 4
 ---

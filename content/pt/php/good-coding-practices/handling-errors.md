@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 00:55:35.416869-07:00
-description: "O tratamento de erros em PHP \xE9 sobre gerenciar e responder a condi\xE7\
-  \xF5es que interrompem o fluxo normal de um programa, como arquivos ausentes ou\
-  \ entrada de\u2026"
+description: "Como fazer: No PHP, voc\xEA pode gerenciar erros usando blocos `try-catch`\
+  \ e pode personalizar o processo com manipuladores de erro e exce\xE7\xF5es personalizados."
 lastmod: '2024-03-13T22:44:46.674793-06:00'
 model: gpt-4-1106-preview
-summary: "O tratamento de erros em PHP \xE9 sobre gerenciar e responder a condi\xE7\
-  \xF5es que interrompem o fluxo normal de um programa, como arquivos ausentes ou\
-  \ entrada de dados incorreta."
+summary: "No PHP, voc\xEA pode gerenciar erros usando blocos `try-catch` e pode personalizar\
+  \ o processo com manipuladores de erro e exce\xE7\xF5es personalizados."
 title: Tratamento de erros
 weight: 16
 ---

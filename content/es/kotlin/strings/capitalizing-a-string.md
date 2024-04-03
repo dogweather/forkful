@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:35.098660-07:00
-description: "Capitalizar una cadena en programaci\xF3n implica convertir el primer\
-  \ car\xE1cter de la cadena a may\xFAsculas si a\xFAn no lo est\xE1, lo cual es \xFA\
-  til para formatear\u2026"
+description: "C\xF3mo: En Kotlin, las cadenas pueden capitalizarse utilizando las\
+  \ funciones de la biblioteca est\xE1ndar sin la necesidad de librer\xEDas de terceros.\
+  \ El enfoque\u2026"
 lastmod: '2024-03-13T22:44:59.018895-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizar una cadena en programaci\xF3n implica convertir el primer car\xE1\
-  cter de la cadena a may\xFAsculas si a\xFAn no lo est\xE1, lo cual es \xFAtil para\
-  \ formatear entradas de usuarios o mostrar texto en una interfaz de usuario de una\
-  \ manera m\xE1s estandarizada o amigable para el humano."
+summary: "En Kotlin, las cadenas pueden capitalizarse utilizando las funciones de\
+  \ la biblioteca est\xE1ndar sin la necesidad de librer\xEDas de terceros."
 title: Capitalizando una cadena de texto
 weight: 2
 ---

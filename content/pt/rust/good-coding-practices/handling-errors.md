@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 00:57:51.279238-07:00
-description: "Tratamento de erros \xE9 sobre lidar com as coisas quando elas n\xE3\
-  o seguem conforme o planejado. Programadores fazem isso para lidar com o inesperado,\u2026"
+description: "Como fazer: Rust lida com erros de duas formas principais: erros recuper\xE1\
+  veis e irrecuper\xE1veis. Vamos ver ambos. Erros recuper\xE1veis usam `Result<T,\
+  \ E>`."
 lastmod: '2024-03-13T22:44:46.375001-06:00'
 model: gpt-4-1106-preview
-summary: "Tratamento de erros \xE9 sobre lidar com as coisas quando elas n\xE3o seguem\
-  \ conforme o planejado."
+summary: Rust lida com erros de duas formas principais.
 title: Tratamento de erros
 weight: 16
 ---

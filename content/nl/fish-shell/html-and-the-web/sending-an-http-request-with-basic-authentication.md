@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:54.550349-07:00
-description: "Het versturen van een HTTP-verzoek met basisauthenticatie houdt in dat\
-  \ een gebruikersnaam en wachtwoord over het web worden verzonden om toegang te\u2026"
+description: 'Hoe te: In Fish Shell gebruik je `curl` om een HTTP-verzoek met basisauthenticatie
+  te maken. Vervang `username`, `password` en `the_url`.'
 lastmod: '2024-03-13T22:44:51.247028-06:00'
 model: gpt-4-0125-preview
-summary: Het versturen van een HTTP-verzoek met basisauthenticatie houdt in dat een
-  gebruikersnaam en wachtwoord over het web worden verzonden om toegang te krijgen
-  tot beschermde bronnen.
+summary: In Fish Shell gebruik je `curl` om een HTTP-verzoek met basisauthenticatie
+  te maken.
 title: Een HTTP-verzoek verzenden met basisauthenticatie
 weight: 45
 ---

@@ -2,14 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:39.349340-07:00
-description: "I programmeringsverdenen inneb\xE6rer arbeid med CSV-filer (kommaseparerte\
-  \ verdier) \xE5 lese fra og skrive data til tekstfiler organisert i rader, der hver\
-  \ rad\u2026"
+description: 'Hvordan: #.'
 lastmod: '2024-03-13T22:44:41.296186-06:00'
 model: gpt-4-0125-preview
-summary: "I programmeringsverdenen inneb\xE6rer arbeid med CSV-filer (kommaseparerte\
-  \ verdier) \xE5 lese fra og skrive data til tekstfiler organisert i rader, der hver\
-  \ rad representerer en post og hvert posts felt er adskilt med kommaer."
+summary: '#.'
 title: Arbeide med CSV
 weight: 37
 ---

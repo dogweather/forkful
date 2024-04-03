@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:44:02.586424-07:00
-description: "Refaktorering er prosessen med \xE5 justere eksisterende kode for \xE5\
-  \ forbedre dens struktur, lesbarhet og ytelse uten \xE5 endre dens eksterne oppf\xF8\
-  rsel.\u2026"
+description: "Hvordan: Her er et Kotlin-utdrag som viser et vanlig kodeproblem og\
+  \ den refaktorerte versjonen. Vi starter med en kodebit som gj\xF8r for mye."
 lastmod: '2024-03-13T22:44:40.759254-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktorering er prosessen med \xE5 justere eksisterende kode for \xE5 forbedre\
-  \ dens struktur, lesbarhet og ytelse uten \xE5 endre dens eksterne oppf\xF8rsel."
+summary: Her er et Kotlin-utdrag som viser et vanlig kodeproblem og den refaktorerte
+  versjonen.
 title: Refaktorering
 weight: 19
 ---

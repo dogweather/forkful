@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:41.589733-07:00
-description: "Att arbeta med XML i Google Apps Script l\xE5ter programmerare tolka,\
-  \ manipulera och generera XML-data, vilket \xE4r avg\xF6rande f\xF6r webbtj\xE4\
-  nster och\u2026"
+description: "Hur: Google Apps Script tillhandah\xE5ller `XmlService` f\xF6r att arbeta\
+  \ med XML-data. Nedan demonstrerar vi hur man tolkar en XML-str\xE4ng, modifierar\
+  \ dess\u2026"
 lastmod: '2024-03-13T22:44:37.465432-06:00'
 model: gpt-4-0125-preview
-summary: "Att arbeta med XML i Google Apps Script l\xE5ter programmerare tolka, manipulera\
-  \ och generera XML-data, vilket \xE4r avg\xF6rande f\xF6r webbtj\xE4nster och konfigurationer."
+summary: "Google Apps Script tillhandah\xE5ller `XmlService` f\xF6r att arbeta med\
+  \ XML-data."
 title: Arbeta med XML
 weight: 40
 ---

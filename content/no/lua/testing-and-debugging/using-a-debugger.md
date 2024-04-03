@@ -1,8 +1,8 @@
 ---
 date: 2024-01-26 03:50:18.805776-07:00
-description: "Lua kommer ikke med en innebygd feils\xF8ker, men du kan bruke eksterne\
-  \ feils\xF8kere, som ZeroBrane Studio. Her er en smakebit p\xE5 hvordan du ville\
-  \ jobbet med\u2026"
+description: "Hvordan: Lua kommer ikke med en innebygd feils\xF8ker, men du kan bruke\
+  \ eksterne feils\xF8kere, som ZeroBrane Studio. Her er en smakebit p\xE5 hvordan\
+  \ du ville\u2026"
 lastmod: '2024-03-13T22:44:40.934705-06:00'
 model: gpt-4-0125-preview
 summary: "Lua kommer ikke med en innebygd feils\xF8ker, men du kan bruke eksterne\

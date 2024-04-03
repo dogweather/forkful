@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:22.258942-07:00
-description: "Remover caracteres que correspondem a um padr\xE3o espec\xEDfico de\
-  \ strings em C trata-se de eliminar todas as inst\xE2ncias de certos caracteres\
-  \ que se encaixam\u2026"
+description: "Como fazer: C n\xE3o possui uma fun\xE7\xE3o embutida para deletar diretamente\
+  \ caracteres de uma string baseado em um padr\xE3o, ao contr\xE1rio de algumas linguagens\
+  \ de\u2026"
 lastmod: '2024-03-13T22:44:47.032161-06:00'
 model: gpt-4-0125-preview
-summary: "Remover caracteres que correspondem a um padr\xE3o espec\xEDfico de strings\
-  \ em C trata-se de eliminar todas as inst\xE2ncias de certos caracteres que se encaixam\
-  \ em crit\xE9rios pr\xE9-definidos."
+summary: "C n\xE3o possui uma fun\xE7\xE3o embutida para deletar diretamente caracteres\
+  \ de uma string baseado em um padr\xE3o, ao contr\xE1rio de algumas linguagens de\
+  \ n\xEDvel mais alto."
 title: "Deletando caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---

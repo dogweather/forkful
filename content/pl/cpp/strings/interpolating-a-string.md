@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:50:17.479268-07:00
-description: "Interpolacja string\xF3w pozwala na wstawienie warto\u015Bci zmiennych\
-  \ bezpo\u015Brednio w ci\u0105g tekstowy. Programi\u015Bci u\u017Cywaj\u0105 jej,\
-  \ aby \u0142atwiej formatowa\u0107 wiadomo\u015Bci i\u2026"
+description: "How to (Jak to zrobi\u0107): Od C++20 mamy dost\u0119pne formatowanie\
+  \ stylu `{fmt}`. Sprawd\u017A."
 lastmod: '2024-03-13T22:44:35.698959-06:00'
 model: gpt-4-1106-preview
-summary: "Interpolacja string\xF3w pozwala na wstawienie warto\u015Bci zmiennych bezpo\u015B\
-  rednio w ci\u0105g tekstowy."
+summary: "Od C++20 mamy dost\u0119pne formatowanie stylu `{fmt}`."
 title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 8
 ---

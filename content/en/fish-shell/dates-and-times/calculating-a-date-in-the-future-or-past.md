@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:30:42.415931-07:00
-description: "Calculating a future or past date involves manipulating dates to find\
-  \ out what day it was or will be. Programmers do this for scheduling, reminders,\
-  \ or\u2026"
+description: 'How to: Here''s a cool way of rolling with dates in Fish Shell.'
 lastmod: '2024-03-13T22:45:00.486441-06:00'
 model: gpt-4-1106-preview
-summary: Calculating a future or past date involves manipulating dates to find out
-  what day it was or will be.
+summary: Here's a cool way of rolling with dates in Fish Shell.
 title: Calculating a date in the future or past
 weight: 26
 ---

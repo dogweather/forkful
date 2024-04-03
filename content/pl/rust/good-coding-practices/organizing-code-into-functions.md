@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 01:16:15.506147-07:00
-description: "Organizowanie kodu w funkcje polega na rozbijaniu programu na wielokrotnie\
-  \ u\u017Cywane, modu\u0142owe kawa\u0142ki identyfikowane przez nazw\u0119. Robimy\
-  \ to, aby nasz kod\u2026"
+description: "Jak to zrobi\u0107: Wyobra\u017A sobie, \u017Ce masz kod, kt\xF3ry kilka\
+  \ razy oblicza powierzchni\u0119 ko\u0142a. Zamiast powtarza\u0107 formu\u0142\u0119\
+  , zamykasz j\u0105 w funkcji."
 lastmod: '2024-03-13T22:44:35.190698-06:00'
 model: gpt-4-0125-preview
-summary: "Organizowanie kodu w funkcje polega na rozbijaniu programu na wielokrotnie\
-  \ u\u017Cywane, modu\u0142owe kawa\u0142ki identyfikowane przez nazw\u0119."
+summary: "Wyobra\u017A sobie, \u017Ce masz kod, kt\xF3ry kilka razy oblicza powierzchni\u0119\
+  \ ko\u0142a."
 title: Organizowanie kodu w funkcje
 weight: 18
 ---

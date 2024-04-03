@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:24.626092-07:00
-description: "Het verkrijgen van de huidige datum in C houdt in dat je toegang krijgt\
-  \ tot de standaard C-bibliotheek om de huidige datum en tijd van het systeem op\
-  \ te\u2026"
+description: "Hoe te: In C biedt de `<time.h>` header de nodige functies en typen\
+  \ om met datums en tijden te werken. De functie `time()` haalt de huidige tijd op,\u2026"
 lastmod: '2024-03-13T22:44:51.301757-06:00'
 model: gpt-4-0125-preview
-summary: Het verkrijgen van de huidige datum in C houdt in dat je toegang krijgt tot
-  de standaard C-bibliotheek om de huidige datum en tijd van het systeem op te halen
-  en te formatteren.
+summary: In C biedt de `<time.h>` header de nodige functies en typen om met datums
+  en tijden te werken.
 title: De huidige datum krijgen
 weight: 29
 ---

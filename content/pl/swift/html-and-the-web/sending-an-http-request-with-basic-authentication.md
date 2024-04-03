@@ -1,13 +1,9 @@
 ---
 date: 2024-01-20 18:03:26.817411-07:00
-description: "Wys\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnieniem\
-  \ to proces dodania nag\u0142\xF3wka uwierzytelniaj\u0105cego do \u017C\u0105dania\
-  \ HTTP. Programi\u015Bci to robi\u0105, by uzyska\u0107\u2026"
+description: "How to: (Jak to zrobi\u0107:) ."
 lastmod: '2024-03-13T22:44:35.754794-06:00'
 model: gpt-4-1106-preview
-summary: "Wys\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnieniem to\
-  \ proces dodania nag\u0142\xF3wka uwierzytelniaj\u0105cego do \u017C\u0105dania\
-  \ HTTP."
+summary: .
 title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
 weight: 45
 ---

@@ -2,16 +2,16 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:25.179189-07:00
-description: "Vi\u1EC7c \u0111\u1ECDc c\xE1c d\xF2ng l\u1EC7nh trong Google Apps Script\
-  \ ph\u1EA7n n\xE0o kh\xF4ng ch\xEDnh x\xE1c v\xEC, kh\xF4ng gi\u1ED1ng nh\u01B0\
-  \ c\xE1c giao di\u1EC7n d\xF2ng l\u1EC7nh truy\u1EC1n th\u1ED1ng trong c\xE1c ng\xF4\
-  n ng\u1EEF l\u1EADp\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EC3 m\xF4 ph\u1ECFng qu\xE1 tr\xEC\
+  nh \u0111\u1ECDc c\xE1c d\xF2ng l\u1EC7nh trong Google Apps Script, \u0111\u1EB7\
+  c bi\u1EC7t l\xE0 cho c\xE1c \u1EE9ng d\u1EE5ng web, b\u1EA1n c\xF3 th\u1EC3 s\u1EED\
+  \ d\u1EE5ng c\xE1c tham s\u1ED1 chu\u1ED7i truy\u2026"
 lastmod: '2024-03-13T22:44:36.061452-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c \u0111\u1ECDc c\xE1c d\xF2ng l\u1EC7nh trong Google Apps Script\
-  \ ph\u1EA7n n\xE0o kh\xF4ng ch\xEDnh x\xE1c v\xEC, kh\xF4ng gi\u1ED1ng nh\u01B0\
-  \ c\xE1c giao di\u1EC7n d\xF2ng l\u1EC7nh truy\u1EC1n th\u1ED1ng trong c\xE1c ng\xF4\
-  n ng\u1EEF l\u1EADp tr\xECnh nh\u01B0 Python hay Node."
+summary: "\u0110\u1EC3 m\xF4 ph\u1ECFng qu\xE1 tr\xECnh \u0111\u1ECDc c\xE1c d\xF2\
+  ng l\u1EC7nh trong Google Apps Script, \u0111\u1EB7c bi\u1EC7t l\xE0 cho c\xE1c\
+  \ \u1EE9ng d\u1EE5ng web, b\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng c\xE1c tham\
+  \ s\u1ED1 chu\u1ED7i truy v\u1EA5n."
 title: "\u0110\u1ECDc \u0111\u1ED1i s\u1ED1 t\u1EEB d\xF2ng l\u1EC7nh"
 weight: 23
 ---

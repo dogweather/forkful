@@ -2,16 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:21.491190-07:00
-description: "T\u1EC7p CSV (Comma-Separated Values - Gi\xE1 tr\u1ECB \u0111\u01B0\u1EE3\
-  c ph\xE2n t\xE1ch b\u1EB1ng d\u1EA5u ph\u1EA9y) l\xE0 c\xE1c t\u1EC7p v\u0103n b\u1EA3\
-  n \u0111\u01A1n gi\u1EA3n \u0111\u1EC3 l\u01B0u tr\u1EEF d\u1EEF li\u1EC7u d\u1EA1\
-  ng b\u1EA3ng. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: H\xE3y \u0111\u1ECDc v\xE0 ph\xE2n t\xEDch n\u1ED9\
+  i dung m\u1ED9t t\u1EC7p CSV trong Swift. \u0110\u1EA7u ti\xEAn, gi\u1EA3 s\u1EED\
+  \ ch\xFAng ta c\xF3 m\u1ED9t t\u1EC7p `data.csv` v\u1EDBi n\u1ED9i dung sau."
 lastmod: '2024-03-13T22:44:37.127191-06:00'
 model: gpt-4-0125-preview
-summary: "T\u1EC7p CSV (Comma-Separated Values - Gi\xE1 tr\u1ECB \u0111\u01B0\u1EE3\
-  c ph\xE2n t\xE1ch b\u1EB1ng d\u1EA5u ph\u1EA9y) l\xE0 c\xE1c t\u1EC7p v\u0103n b\u1EA3\
-  n \u0111\u01A1n gi\u1EA3n \u0111\u1EC3 l\u01B0u tr\u1EEF d\u1EEF li\u1EC7u d\u1EA1\
-  ng b\u1EA3ng."
+summary: "H\xE3y \u0111\u1ECDc v\xE0 ph\xE2n t\xEDch n\u1ED9i dung m\u1ED9t t\u1EC7\
+  p CSV trong Swift."
 title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 weight: 37
 ---

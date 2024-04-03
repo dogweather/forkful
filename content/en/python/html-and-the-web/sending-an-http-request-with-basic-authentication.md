@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 18:02:30.095261-07:00
-description: "Sending an HTTP request with basic authentication involves tossing a\
-  \ username and password into a request to a server to prove you're allowed in.\u2026"
+description: 'How to: Here''s how you get Python to chat with a server using Basic
+  Auth.'
 lastmod: '2024-03-13T22:44:59.707883-06:00'
 model: gpt-4-1106-preview
-summary: Sending an HTTP request with basic authentication involves tossing a username
-  and password into a request to a server to prove you're allowed in.
+summary: Here's how you get Python to chat with a server using Basic Auth.
 title: Sending an HTTP request with basic authentication
 weight: 45
 ---

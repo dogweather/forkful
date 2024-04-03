@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:05.694101-07:00
-description: "Het samenvoegen van strings betekent dat je ze achter elkaar plakt om\
-  \ een nieuwe te maken. Programmeurs doen dit om dynamisch tekst op te bouwen, zoals\u2026"
+description: 'Hoe te: In Lua voeg je strings samen met de `..` operator. Laten we
+  het in actie zien.'
 lastmod: '2024-03-13T22:44:50.929416-06:00'
 model: gpt-4-0125-preview
-summary: Het samenvoegen van strings betekent dat je ze achter elkaar plakt om een
-  nieuwe te maken.
+summary: In Lua voeg je strings samen met de `..` operator.
 title: Samenvoegen van strings
 weight: 3
 ---

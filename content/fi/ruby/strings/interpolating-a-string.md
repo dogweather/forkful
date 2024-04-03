@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:51:28.257230-07:00
-description: "Stringin interpolointi tarkoittaa muuttujien tai lausekkeiden arvojen\
-  \ sy\xF6tt\xE4mist\xE4 suoraan merkkijonoon. Koodaajat tekev\xE4t t\xE4t\xE4, koska\
-  \ se tekee koodista\u2026"
+description: "How to (Kuinka tehd\xE4): ."
 lastmod: '2024-03-13T22:44:57.071269-06:00'
 model: gpt-4-1106-preview
-summary: "Stringin interpolointi tarkoittaa muuttujien tai lausekkeiden arvojen sy\xF6\
-  tt\xE4mist\xE4 suoraan merkkijonoon."
+summary: .
 title: Merkkijonon interpolointi
 weight: 8
 ---

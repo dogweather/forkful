@@ -2,8 +2,9 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:59.994039-07:00
-description: "In VBA ist der Debugger ein integraler Bestandteil des Visual Basic\
-  \ Editors (VBE). Hier erfahren Sie, wie Sie ihn nutzen k\xF6nnen: 1. **Setzen von\u2026"
+description: "Wie geht das: In VBA ist der Debugger ein integraler Bestandteil des\
+  \ Visual Basic Editors (VBE). Hier erfahren Sie, wie Sie ihn nutzen k\xF6nnen: 1.\
+  \ **Setzen\u2026"
 lastmod: '2024-03-13T22:44:53.723101-06:00'
 model: gpt-4-0125-preview
 summary: In VBA ist der Debugger ein integraler Bestandteil des Visual Basic Editors

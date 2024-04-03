@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:39:23.866101-07:00
-description: "\xC5 konvertere en streng til sm\xE5 bokstaver inneb\xE6rer \xE5 endre\
-  \ alle bokstaver i teksten til deres lavere kasse ekvivalent. Programmerere gj\xF8\
-  r dette for data-\u2026"
+description: "Hvordan gj\xF8re det: Bruk `ToLower()` metoden for \xE5 konvertere strenger."
 lastmod: '2024-03-13T22:44:41.003673-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 konvertere en streng til sm\xE5 bokstaver inneb\xE6rer \xE5 endre alle\
-  \ bokstaver i teksten til deres lavere kasse ekvivalent."
+summary: "Bruk `ToLower()` metoden for \xE5 konvertere strenger."
 title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---

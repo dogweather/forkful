@@ -2,15 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:58.843349-07:00
-description: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) l\xE0 c\xE1c m\u1EABu \u0111\
-  \u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 so kh\u1EDBp c\xE1c t\u1ED5 h\u1EE3\
-  p k\xFD t\u1EF1 trong chu\u1ED7i. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng ch\xFA\
-  ng \u0111\u1EC3 t\xECm ki\u1EBFm, ch\u1EC9nh s\u1EEDa ho\u1EB7c x\xE1c\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: H\xE3y c\xF9ng t\xECm hi\u1EC3u m\u1ED9t s\u1ED1\
+  \ c\u01A1 b\u1EA3n v\u1EC1 regex trong Ruby."
 lastmod: '2024-03-13T22:44:37.323749-06:00'
 model: gpt-4-0125-preview
-summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) l\xE0 c\xE1c m\u1EABu \u0111\u01B0\
-  \u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 so kh\u1EDBp c\xE1c t\u1ED5 h\u1EE3p k\xFD\
-  \ t\u1EF1 trong chu\u1ED7i."
+summary: "H\xE3y c\xF9ng t\xECm hi\u1EC3u m\u1ED9t s\u1ED1 c\u01A1 b\u1EA3n v\u1EC1\
+  \ regex trong Ruby."
 title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---

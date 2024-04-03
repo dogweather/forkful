@@ -2,13 +2,14 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:59.564994-07:00
-description: "Zapisywanie pliku tekstowego w Dart polega na tworzeniu lub modyfikowaniu\
-  \ plik\xF3w na dysku w celu przechowywania danych w formacie czytelnym. Programi\u015B\
-  ci\u2026"
+description: "Jak to zrobi\u0107: Biblioteka podstawowa Darta oferuje pakiet `dart:io`\
+  \ do obs\u0142ugi plik\xF3w, co pozwala na pisanie plik\xF3w tekstowych bez potrzeby\
+  \ korzystania z\u2026"
 lastmod: '2024-03-13T22:44:35.112675-06:00'
 model: gpt-4-0125-preview
-summary: "Zapisywanie pliku tekstowego w Dart polega na tworzeniu lub modyfikowaniu\
-  \ plik\xF3w na dysku w celu przechowywania danych w formacie czytelnym."
+summary: "Biblioteka podstawowa Darta oferuje pakiet `dart:io` do obs\u0142ugi plik\xF3\
+  w, co pozwala na pisanie plik\xF3w tekstowych bez potrzeby korzystania z bibliotek\
+  \ stron trzecich."
 title: Pisanie pliku tekstowego
 weight: 24
 ---

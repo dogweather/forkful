@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:57:16.709512-07:00
-description: "S\xF6k och ers\xE4tt inneb\xE4r att hitta specifik text och byta ut\
-  \ den mot n\xE5got annat. Programmerare anv\xE4nder det f\xF6r att snabbt \xE4ndra\
-  \ kod, data eller dokument,\u2026"
+description: "Hur man g\xF6r: S\xF6k och ers\xE4tt i C++ kan g\xF6ras med hj\xE4lp\
+  \ av standardbiblioteket `<algorithm>` och `<string>`. H\xE4r \xE4r ett exempel."
 lastmod: '2024-03-13T22:44:38.194522-06:00'
 model: gpt-4-1106-preview
-summary: "S\xF6k och ers\xE4tt inneb\xE4r att hitta specifik text och byta ut den\
-  \ mot n\xE5got annat."
+summary: "S\xF6k och ers\xE4tt i C++ kan g\xF6ras med hj\xE4lp av standardbiblioteket\
+  \ `<algorithm>` och `<string>`."
 title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---

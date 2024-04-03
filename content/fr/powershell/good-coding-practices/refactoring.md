@@ -1,12 +1,13 @@
 ---
 date: 2024-01-26 03:37:28.774572-07:00
-description: "La refactorisation est le processus de restructuration du code informatique\
-  \ existant sans en changer le comportement externe, dans le but d'am\xE9liorer les\u2026"
+description: "Comment faire : PowerShell ne dispose pas d'un outil de refactorisation\
+  \ d\xE9di\xE9 int\xE9gr\xE9, mais vous pouvez toujours nettoyer votre code pour\
+  \ am\xE9liorer la\u2026"
 lastmod: '2024-03-13T22:44:58.059683-06:00'
 model: gpt-4-0125-preview
-summary: "La refactorisation est le processus de restructuration du code informatique\
-  \ existant sans en changer le comportement externe, dans le but d'am\xE9liorer les\
-  \ attributs non fonctionnels du logiciel."
+summary: "PowerShell ne dispose pas d'un outil de refactorisation d\xE9di\xE9 int\xE9\
+  gr\xE9, mais vous pouvez toujours nettoyer votre code pour am\xE9liorer la lisibilit\xE9\
+  \ et la performance."
 title: Remaniement de code
 weight: 19
 ---

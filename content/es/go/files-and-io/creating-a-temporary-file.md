@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:03.749342-07:00
-description: "Crear un archivo temporal en Go permite generar un archivo no persistente\
-  \ dise\xF1ado para uso a corto plazo, principalmente para tareas como almacenar\
-  \ datos\u2026"
+description: "C\xF3mo hacerlo: En Go, el paquete `ioutil` originalmente proporcionaba\
+  \ utilidades para la creaci\xF3n de archivos temporales. Sin embargo, Go 1.16 promovi\xF3\
+  \ el\u2026"
 lastmod: '2024-03-13T22:44:58.490851-06:00'
 model: gpt-4-0125-preview
-summary: "Crear un archivo temporal en Go permite generar un archivo no persistente\
-  \ dise\xF1ado para uso a corto plazo, principalmente para tareas como almacenar\
-  \ datos intermedios o asistir en trabajos de procesamiento por lotes."
+summary: "En Go, el paquete `ioutil` originalmente proporcionaba utilidades para la\
+  \ creaci\xF3n de archivos temporales."
 title: Creando un archivo temporal
 weight: 21
 ---

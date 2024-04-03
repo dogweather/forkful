@@ -2,13 +2,10 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:09:56.818043-07:00
-description: "Los arreglos asociativos son como arreglos s\xFAper cargados que te\
-  \ permiten usar cadenas como \xEDndices en lugar de solo enteros. Los programadores\
-  \ los\u2026"
+description: "C\xF3mo hacerlo: Primero, declare un arreglo asociativo en Bash."
 lastmod: '2024-03-13T22:44:59.237430-06:00'
 model: gpt-4-0125-preview
-summary: "Los arreglos asociativos son como arreglos s\xFAper cargados que te permiten\
-  \ usar cadenas como \xEDndices en lugar de solo enteros."
+summary: Primero, declare un arreglo asociativo en Bash.
 title: Uso de matrices asociativas
 weight: 15
 ---

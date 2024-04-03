@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:34.968805-07:00
-description: "Vi\u1EC7c t\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n cho\
-  \ ph\xE9p b\u1EA1n t\xECm c\xE1c chu\u1ED7i c\u1EE5 th\u1EC3 trong m\u1ED9t kh\u1ED1\
-  i v\u0103n b\u1EA3n v\xE0 thay th\u1EBF ch\xFAng b\u1EB1ng c\xE1i kh\xE1c. L\u1EAD\
-  p tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Clojure, ch\xFAng ta s\u1EED d\u1EE5ng\
+  \ h\xE0m `clojure.string/replace` \u0111\u1EC3 t\xECm ki\u1EBFm v\xE0 thay th\u1EBF\
+  \ v\u0103n b\u1EA3n. Ch\xFAng ta h\xE3y \u0111i th\u1EB3ng v\xE0o m\u1ED9t s\u1ED1\
+  \ m\xE3."
 lastmod: '2024-03-13T22:44:36.132971-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c t\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n cho ph\xE9\
-  p b\u1EA1n t\xECm c\xE1c chu\u1ED7i c\u1EE5 th\u1EC3 trong m\u1ED9t kh\u1ED1i v\u0103\
-  n b\u1EA3n v\xE0 thay th\u1EBF ch\xFAng b\u1EB1ng c\xE1i kh\xE1c."
+summary: "Trong Clojure, ch\xFAng ta s\u1EED d\u1EE5ng h\xE0m `clojure.string/replace`\
+  \ \u0111\u1EC3 t\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n."
 title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
 weight: 10
 ---

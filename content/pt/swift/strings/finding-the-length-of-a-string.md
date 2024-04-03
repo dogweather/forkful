@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:48:25.782262-07:00
-description: "Saber o comprimento de uma string \xE9 descobrir quantos caracteres\
-  \ ela cont\xE9m. Programadores fazem isso para validar entradas, manipular textos\
-  \ ou at\xE9 mesmo\u2026"
+description: 'Como fazer: .'
 lastmod: '2024-03-13T22:44:46.912043-06:00'
 model: gpt-4-1106-preview
-summary: "Saber o comprimento de uma string \xE9 descobrir quantos caracteres ela\
-  \ cont\xE9m."
+summary: .
 title: Descobrindo o comprimento de uma string
 weight: 7
 ---

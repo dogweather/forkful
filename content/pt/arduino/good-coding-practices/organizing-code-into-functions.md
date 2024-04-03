@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:08:58.918846-07:00
-description: "Organizar o c\xF3digo em fun\xE7\xF5es significa dividir seu c\xF3digo\
-  \ em blocos reutiliz\xE1veis, cada um realizando um trabalho espec\xEDfico. Os programadores\
-  \ fazem isso\u2026"
+description: "Como fazer: Imagine que voc\xEA queira fazer um LED piscar. Sem fun\xE7\
+  \xF5es, seu `loop` \xE9 uma confus\xE3o desordenada. Com fun\xE7\xF5es, \xE9 organizado.\
+  \ Veja como."
 lastmod: '2024-03-13T22:44:46.844236-06:00'
 model: gpt-4-1106-preview
-summary: "Organizar o c\xF3digo em fun\xE7\xF5es significa dividir seu c\xF3digo em\
-  \ blocos reutiliz\xE1veis, cada um realizando um trabalho espec\xEDfico."
+summary: "Imagine que voc\xEA queira fazer um LED piscar."
 title: "Organizando o c\xF3digo em fun\xE7\xF5es"
 weight: 18
 ---

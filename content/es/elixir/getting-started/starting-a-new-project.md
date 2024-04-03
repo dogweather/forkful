@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 18:03:11.466768-07:00
-description: "Iniciar un nuevo proyecto en Elixir es como abrir un lienzo en blanco\
-  \ para pintar tu obra maestra con c\xF3digo. Los programadores lo hacen para resolver\u2026"
+description: "C\xF3mo Iniciar: Primero, aseg\xFArate que tienes Elixir y Mix, su herramienta\
+  \ de construcci\xF3n, instalados. Para empezar un proyecto, abre tu terminal y ejecuta."
 lastmod: '2024-03-13T22:44:58.703193-06:00'
 model: gpt-4-1106-preview
-summary: "Iniciar un nuevo proyecto en Elixir es como abrir un lienzo en blanco para\
-  \ pintar tu obra maestra con c\xF3digo."
+summary: "Primero, aseg\xFArate que tienes Elixir y Mix, su herramienta de construcci\xF3\
+  n, instalados."
 title: Iniciando un nuevo proyecto
 weight: 1
 ---

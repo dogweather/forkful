@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 01:07:18.264099-07:00
-description: "Logging er i bunn og grunn \xE5 etterlate et spor av br\xF8dsmuler gjennom\
-  \ koden din - det er hvordan du holder oversikten over hva som skjer n\xE5r skriptet\u2026"
+description: "Hvordan gj\xF8re det: Her er det grunnleggende for \xE5 krydre skriptene\
+  \ dine med enkel logging."
 lastmod: '2024-03-13T22:44:41.023837-06:00'
 model: gpt-4-1106-preview
-summary: "Logging er i bunn og grunn \xE5 etterlate et spor av br\xF8dsmuler gjennom\
-  \ koden din - det er hvordan du holder oversikten over hva som skjer n\xE5r skriptet\
-  \ kj\xF8rer i det fri."
+summary: "Her er det grunnleggende for \xE5 krydre skriptene dine med enkel logging."
 title: "Loggf\xF8ring"
 weight: 17
 ---

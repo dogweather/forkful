@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:47.213583-07:00
-description: "We sturen een HTTP-verzoek met basisauthenticatie om toegang te krijgen\
-  \ tot beschermde bronnen door gebruikersgegevens in de aanvraagheader op te nemen.\u2026"
+description: "Hoe te: Laten we direct duiken in wat code. Hieronder vind je een minimale\
+  \ voorbeeldcode die C# gebruikt om een HTTP-verzoek met basisauthenticatie te\u2026"
 lastmod: '2024-03-13T22:44:50.809703-06:00'
 model: gpt-4-0125-preview
-summary: We sturen een HTTP-verzoek met basisauthenticatie om toegang te krijgen tot
-  beschermde bronnen door gebruikersgegevens in de aanvraagheader op te nemen.
+summary: Laten we direct duiken in wat code.
 title: Een HTTP-verzoek verzenden met basisauthenticatie
 weight: 45
 ---

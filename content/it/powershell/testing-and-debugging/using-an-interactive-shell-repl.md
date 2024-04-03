@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:17:04.412781-07:00
-description: "La shell interattiva, o Ciclo Leggi-Valuta-Stampa (REPL, dall'inglese\
-  \ Read-Eval-Print Loop), ti consente di digitare comandi PowerShell e ottenere un\u2026"
+description: 'Come fare: Avvia PowerShell e ti troverai nella REPL. Prova il Cmdlet
+  `Get-Date`.'
 lastmod: '2024-03-13T22:44:43.644139-06:00'
 model: gpt-4-0125-preview
-summary: La shell interattiva, o Ciclo Leggi-Valuta-Stampa (REPL, dall'inglese Read-Eval-Print
-  Loop), ti consente di digitare comandi PowerShell e ottenere un feedback immediato.
+summary: Avvia PowerShell e ti troverai nella REPL.
 title: Utilizzo di un interprete interattivo (REPL)
 weight: 34
 ---

@@ -1,11 +1,9 @@
 ---
 date: 2024-01-26 03:42:19.545967-07:00
-description: "Eliminar comillas de una cadena en Rust consiste en deshacerse de caracteres\
-  \ de comillas innecesarios que podr\xEDan estar envolviendo tus datos de texto.\u2026"
+description: "C\xF3mo hacerlo: ."
 lastmod: '2024-03-13T22:44:58.834674-06:00'
 model: gpt-4-0125-preview
-summary: "Eliminar comillas de una cadena en Rust consiste en deshacerse de caracteres\
-  \ de comillas innecesarios que podr\xEDan estar envolviendo tus datos de texto."
+summary: .
 title: Eliminando comillas de una cadena
 weight: 9
 ---

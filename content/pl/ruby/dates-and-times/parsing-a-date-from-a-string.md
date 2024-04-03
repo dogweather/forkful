@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:14.329153-07:00
-description: "Przetwarzanie daty z ci\u0105gu znak\xF3w polega na konwersji tekstu,\
-  \ kt\xF3ry reprezentuje dat\u0119, na obiekt `Date` lub `DateTime`, kt\xF3ry jest\
-  \ zrozumia\u0142y dla Ruby.\u2026"
+description: "Jak to zrobi\u0107: W Ruby standardowa biblioteka zapewnia bezpo\u015B\
+  rednie sposoby na przetwarzanie dat z ci\u0105g\xF3w znak\xF3w przy u\u017Cyciu\
+  \ klas `Date` i `DateTime`. Oto\u2026"
 lastmod: '2024-03-13T22:44:35.941771-06:00'
 model: gpt-4-0125-preview
-summary: "Przetwarzanie daty z ci\u0105gu znak\xF3w polega na konwersji tekstu, kt\xF3\
-  ry reprezentuje dat\u0119, na obiekt `Date` lub `DateTime`, kt\xF3ry jest zrozumia\u0142\
-  y dla Ruby."
+summary: "W Ruby standardowa biblioteka zapewnia bezpo\u015Brednie sposoby na przetwarzanie\
+  \ dat z ci\u0105g\xF3w znak\xF3w przy u\u017Cyciu klas `Date` i `DateTime`."
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---

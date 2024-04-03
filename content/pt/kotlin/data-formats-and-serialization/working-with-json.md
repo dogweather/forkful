@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:03.945968-07:00
-description: "Trabalhar com JSON (JavaScript Object Notation) em Kotlin envolve a\
-  \ an\xE1lise e gera\xE7\xE3o de dados JSON. Programadores fazem isso para trocar\
-  \ dados facilmente\u2026"
+description: "Como fazer: Kotlin n\xE3o inclui suporte embutido para JSON, mas aproveita\
+  \ os recursos poderosos de bibliotecas de terceiros como `Gson`, do Google, e\u2026"
 lastmod: '2024-03-13T22:44:46.563445-06:00'
 model: gpt-4-0125-preview
-summary: "Trabalhar com JSON (JavaScript Object Notation) em Kotlin envolve a an\xE1\
-  lise e gera\xE7\xE3o de dados JSON."
+summary: "Kotlin n\xE3o inclui suporte embutido para JSON, mas aproveita os recursos\
+  \ poderosos de bibliotecas de terceiros como `Gson`, do Google, e `Kotlinx.serialization`,\
+  \ da JetBrains."
 title: Trabalhando com JSON
 weight: 38
 ---

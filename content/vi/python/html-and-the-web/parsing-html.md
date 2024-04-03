@@ -2,17 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:25.047008-07:00
-description: "Vi\u1EC7c ph\xE2n t\xEDch c\xFA ph\xE1p HTML l\xE0 qu\xE1 tr\xECnh l\u1EA5\
-  y m\xE3 HTML v\xE0 tr\xEDch xu\u1EA5t th\xF4ng tin t\u1EEB n\xF3, gi\u1ED1ng nh\u01B0\
-  \ vi\u1EC7c t\xECm kim trong \u0111\u1ED1ng r\u01A1m\u2014n\u1EBFu nh\u01B0 \u0111\
-  \u1ED1ng r\u01A1m \u0111\u01B0\u1EE3c l\xE0m t\u1EEB c\xE1c\u2026"
+description: "L\xE0m Th\u1EBF N\xE0o: H\xE3y s\u1EED d\u1EE5ng Python \u0111\u1EC3\
+  \ \"c\u01B0\u1EDBp\" m\u1ED9t s\u1ED1 d\u1EEF li\u1EC7u t\u1EEB m\u1ED9t m\u1EAB\
+  u HTML b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng th\u01B0 vi\u1EC7n `BeautifulSoup`, l\xE0\
+  m cho vi\u1EC7c ph\xE2n t\xEDch c\xFA ph\xE1p tr\u1EDF\u2026"
 lastmod: '2024-03-13T22:44:36.093793-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c ph\xE2n t\xEDch c\xFA ph\xE1p HTML l\xE0 qu\xE1 tr\xECnh l\u1EA5\
-  y m\xE3 HTML v\xE0 tr\xEDch xu\u1EA5t th\xF4ng tin t\u1EEB n\xF3, gi\u1ED1ng nh\u01B0\
-  \ vi\u1EC7c t\xECm kim trong \u0111\u1ED1ng r\u01A1m\u2014n\u1EBFu nh\u01B0 \u0111\
-  \u1ED1ng r\u01A1m \u0111\u01B0\u1EE3c l\xE0m t\u1EEB c\xE1c th\u1EBB v\xE0 kim l\xE0\
-  \ d\u1EEF li\u1EC7u b\u1EA1n mu\u1ED1n."
+summary: "H\xE3y s\u1EED d\u1EE5ng Python \u0111\u1EC3 \"c\u01B0\u1EDBp\" m\u1ED9\
+  t s\u1ED1 d\u1EEF li\u1EC7u t\u1EEB m\u1ED9t m\u1EABu HTML b\u1EB1ng c\xE1ch s\u1EED\
+  \ d\u1EE5ng th\u01B0 vi\u1EC7n `BeautifulSoup`, l\xE0m cho vi\u1EC7c ph\xE2n t\xED\
+  ch c\xFA ph\xE1p tr\u1EDF n\xEAn d\u1EC5 d\xE0ng."
 title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---

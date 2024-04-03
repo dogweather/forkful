@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 03:44:15.371988-07:00
-description: "Arrotondare i numeri significa aggiustare un valore alla sua interezza\
-  \ pi\xF9 vicina o alla precisione specificata. Gli sviluppatori lo fanno per\u2026"
+description: "Come fare: C++ offre diverse modalit\xE0 per arrotondare i numeri, come\
+  \ `floor()`, `ceil()`, e `round()`."
 lastmod: '2024-03-13T22:44:43.721606-06:00'
 model: gpt-4-0125-preview
-summary: "Arrotondare i numeri significa aggiustare un valore alla sua interezza pi\xF9\
-  \ vicina o alla precisione specificata."
+summary: "C++ offre diverse modalit\xE0 per arrotondare i numeri, come `floor()`,\
+  \ `ceil()`, e `round()`."
 title: Arrotondamento dei numeri
 weight: 13
 ---

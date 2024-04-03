@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:57.014944-07:00
-description: "Arredondar n\xFAmeros em programa\xE7\xE3o \xE9 sobre aproximar um n\xFA\
-  mero ao seu n\xFAmero inteiro mais pr\xF3ximo ou a um certo n\xFAmero de casas decimais.\
-  \ Programadores\u2026"
+description: "Como Fazer: No Visual Basic for Applications (VBA), o arredondamento\
+  \ pode ser alcan\xE7ado usando v\xE1rias fun\xE7\xF5es, cada uma adequada para cen\xE1\
+  rios\u2026"
 lastmod: '2024-03-13T22:44:46.406247-06:00'
 model: gpt-4-0125-preview
-summary: "Arredondar n\xFAmeros em programa\xE7\xE3o \xE9 sobre aproximar um n\xFA\
-  mero ao seu n\xFAmero inteiro mais pr\xF3ximo ou a um certo n\xFAmero de casas decimais."
+summary: "No Visual Basic for Applications (VBA), o arredondamento pode ser alcan\xE7\
+  ado usando v\xE1rias fun\xE7\xF5es, cada uma adequada para cen\xE1rios espec\xED\
+  ficos."
 title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---

@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:33:10.490206-07:00
-description: "Lavorare con XML comporta l'analisi, la creazione e la manipolazione\
-  \ di documenti XML, un linguaggio di markup per la memorizzazione e il trasferimento\
-  \ di\u2026"
+description: 'Come fare: In Kotlin, puoi usare il built-in `javax.xml.parsers` per
+  l''analisi.'
 lastmod: '2024-03-13T22:44:43.415737-06:00'
 model: gpt-4-0125-preview
-summary: Lavorare con XML comporta l'analisi, la creazione e la manipolazione di documenti
-  XML, un linguaggio di markup per la memorizzazione e il trasferimento di dati.
+summary: In Kotlin, puoi usare il built-in `javax.xml.parsers` per l'analisi.
 title: Lavorare con XML
 weight: 40
 ---

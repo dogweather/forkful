@@ -1,13 +1,12 @@
 ---
 date: 2024-02-03 17:50:04.807127-07:00
-description: "Printing debug output is about generating temporary, informative log\
-  \ messages that can help programmers understand the flow and state of a program\
-  \ during\u2026"
+description: "How to: In C, the most common way to print debug output is by using\
+  \ the `printf` function from the standard I/O library. The `printf` function allows\
+  \ for\u2026"
 lastmod: '2024-03-13T22:45:00.513874-06:00'
 model: gpt-4-0125-preview
-summary: Printing debug output is about generating temporary, informative log messages
-  that can help programmers understand the flow and state of a program during its
-  execution.
+summary: In C, the most common way to print debug output is by using the `printf`
+  function from the standard I/O library.
 title: Printing debug output
 weight: 33
 ---

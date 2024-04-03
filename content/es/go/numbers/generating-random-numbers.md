@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:12.289093-07:00
-description: "Generar n\xFAmeros aleatorios en programaci\xF3n se trata de crear una\
-  \ secuencia de n\xFAmeros que no se pueden predecir razonablemente mejor que por\
-  \ casualidad.\u2026"
+description: "C\xF3mo hacerlo: En Go, los n\xFAmeros aleatorios se generan utilizando\
+  \ el paquete `math/rand` para n\xFAmeros pseudoaleatorios o `crypto/rand` para n\xFA\
+  meros\u2026"
 lastmod: '2024-03-13T22:44:58.462664-06:00'
 model: gpt-4-0125-preview
-summary: "Generar n\xFAmeros aleatorios en programaci\xF3n se trata de crear una secuencia\
-  \ de n\xFAmeros que no se pueden predecir razonablemente mejor que por casualidad."
+summary: "En Go, los n\xFAmeros aleatorios se generan utilizando el paquete `math/rand`\
+  \ para n\xFAmeros pseudoaleatorios o `crypto/rand` para n\xFAmeros pseudoaleatorios\
+  \ criptogr\xE1ficamente seguros."
 title: "Generando n\xFAmeros aleatorios"
 weight: 12
 ---

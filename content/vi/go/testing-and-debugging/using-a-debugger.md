@@ -2,10 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:47.833278-07:00
-description: "Go cung c\u1EA5p m\u1ED9t ti\u1EC7n \xEDch t\xEDch h\u1EE3p cho vi\u1EC7\
-  c g\u1EE1 l\u1ED7i g\u1ECDi l\xE0 `delve`. \u0110\xE2y l\xE0 m\u1ED9t c\xF4ng c\u1EE5\
-  \ g\u1EE1 l\u1ED7i \u0111\u1EA7y \u0111\u1EE7 t\xEDnh n\u0103ng cho ph\xE9p b\u1EA1\
-  n th\u1EF1c hi\u1EC7n ch\u01B0\u01A1ng tr\xECnh Go t\u1EEBng\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Go cung c\u1EA5p m\u1ED9t ti\u1EC7n \xEDch t\xED\
+  ch h\u1EE3p cho vi\u1EC7c g\u1EE1 l\u1ED7i g\u1ECDi l\xE0 `delve`. \u0110\xE2y l\xE0\
+  \ m\u1ED9t c\xF4ng c\u1EE5 g\u1EE1 l\u1ED7i \u0111\u1EA7y \u0111\u1EE7 t\xEDnh n\u0103\
+  ng cho ph\xE9p b\u1EA1n th\u1EF1c hi\u1EC7n ch\u01B0\u01A1ng\u2026"
 lastmod: '2024-03-13T22:44:35.988288-06:00'
 model: gpt-4-0125-preview
 summary: "Go cung c\u1EA5p m\u1ED9t ti\u1EC7n \xEDch t\xEDch h\u1EE3p cho vi\u1EC7\

@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 20:32:55.756952-07:00
-description: "G\xE9n\xE9rer des nombres al\xE9atoires en C# implique la cr\xE9ation\
-  \ de valeurs num\xE9riques impr\xE9visibles dans une plage sp\xE9cifi\xE9e. Les\
-  \ programmeurs utilisent ces\u2026"
+description: "Comment faire : La mani\xE8re la plus courante de g\xE9n\xE9rer des\
+  \ nombres al\xE9atoires en C# est d'utiliser la classe `System.Random`. Voici un\
+  \ exemple simple\u2026"
 lastmod: '2024-03-13T22:44:57.782571-06:00'
 model: gpt-4-0125-preview
-summary: "G\xE9n\xE9rer des nombres al\xE9atoires en C# implique la cr\xE9ation de\
-  \ valeurs num\xE9riques impr\xE9visibles dans une plage sp\xE9cifi\xE9e."
+summary: "La mani\xE8re la plus courante de g\xE9n\xE9rer des nombres al\xE9atoires\
+  \ en C# est d'utiliser la classe `System.Random`."
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---

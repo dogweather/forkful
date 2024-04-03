@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 17:45:49.829968-07:00
-description: "Substringien irrottaminen tarkoittaa merkkijonon osien poimimista. Ohjelmoijat\
-  \ tekev\xE4t t\xE4t\xE4 tietojen j\xE4sentelyyn, tietokantojen k\xE4sittelyyn ja\u2026"
+description: "How to: Elixiriss\xE4 substringien k\xE4sittely voi tapahtua useilla\
+  \ tavoilla. T\xE4ss\xE4 muutama esimerkki: 1. `String.slice/3` k\xE4ytt\xF6 leikkaukseen."
 lastmod: '2024-03-13T22:44:56.215417-06:00'
 model: gpt-4-1106-preview
-summary: Substringien irrottaminen tarkoittaa merkkijonon osien poimimista.
+summary: "Elixiriss\xE4 substringien k\xE4sittely voi tapahtua useilla tavoilla."
 title: Merkkijonojen osien poimiminen
 weight: 6
 ---

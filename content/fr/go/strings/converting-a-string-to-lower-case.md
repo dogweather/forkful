@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:38.097415-07:00
-description: "Convertir une cha\xEEne en minuscules est une op\xE9ration fondamentale\
-  \ qui permet l'uniformit\xE9 et la coh\xE9rence dans le traitement du texte, essentielle\
-  \ pour\u2026"
+description: "Comment faire : En Go, convertir une cha\xEEne en minuscules peut \xEA\
+  tre facilement r\xE9alis\xE9 en utilisant le paquet `strings`, sp\xE9cifiquement\
+  \ la fonction\u2026"
 lastmod: '2024-03-13T22:44:57.118305-06:00'
 model: gpt-4-0125-preview
-summary: "Convertir une cha\xEEne en minuscules est une op\xE9ration fondamentale\
-  \ qui permet l'uniformit\xE9 et la coh\xE9rence dans le traitement du texte, essentielle\
-  \ pour des t\xE2ches telles que les comparaisons insensibles \xE0 la casse ou la\
-  \ normalisation du texte."
+summary: "En Go, convertir une cha\xEEne en minuscules peut \xEAtre facilement r\xE9\
+  alis\xE9 en utilisant le paquet `strings`, sp\xE9cifiquement la fonction `ToLower()`."
 title: "Convertir une cha\xEEne en minuscules"
 weight: 4
 ---

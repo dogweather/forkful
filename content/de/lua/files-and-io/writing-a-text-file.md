@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:48.775396-07:00
-description: "Das Schreiben in eine Textdatei in Lua beinhaltet das Erstellen oder\
-  \ \xD6ffnen einer Datei im Schreibmodus und anschlie\xDFend die Verwendung von\u2026"
+description: "Wie: In Lua ist das Arbeiten mit Dateien zum Schreiben unkompliziert.\
+  \ Typischerweise verwendet man die Funktion `io.open()`, um eine Datei zu \xF6ffnen\
+  \ (oder\u2026"
 lastmod: '2024-03-13T22:44:54.033543-06:00'
 model: gpt-4-0125-preview
-summary: "Das Schreiben in eine Textdatei in Lua beinhaltet das Erstellen oder \xD6\
-  ffnen einer Datei im Schreibmodus und anschlie\xDFend die Verwendung von Dateioperationen,\
-  \ um Text einzuf\xFCgen."
+summary: In Lua ist das Arbeiten mit Dateien zum Schreiben unkompliziert.
 title: Eine Textdatei schreiben
 weight: 24
 ---

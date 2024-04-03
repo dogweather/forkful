@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:03:19.813824-07:00
-description: "Working with JSON in Elm is about decoding JSON data into Elm types\
-  \ and encoding Elm values back into JSON. This process is crucial for web applications\u2026"
+description: "How to: Elm treats JSON handling with explicitness and safety, primarily\
+  \ using the `Json.Decode` and `Json.Encode` modules. To start working with JSON,\u2026"
 lastmod: '2024-03-13T22:45:00.029610-06:00'
 model: gpt-4-0125-preview
-summary: Working with JSON in Elm is about decoding JSON data into Elm types and encoding
-  Elm values back into JSON.
+summary: Elm treats JSON handling with explicitness and safety, primarily using the
+  `Json.Decode` and `Json.Encode` modules.
 title: Working with JSON
 weight: 38
 ---

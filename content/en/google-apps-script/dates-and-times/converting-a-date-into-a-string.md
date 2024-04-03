@@ -1,11 +1,11 @@
 ---
 date: 2024-02-01 21:12:12.817086-07:00
-description: "Converting dates into strings is a fundamental task that enables programmers\
-  \ to manipulate and display date information in a human-readable format. This\u2026"
+description: "How to: Google Apps Script, being based on JavaScript, allows for multiple\
+  \ methods to achieve the conversion of dates to strings. Below are some examples\u2026"
 lastmod: '2024-03-13T22:44:59.680153-06:00'
 model: gpt-4-0125-preview
-summary: Converting dates into strings is a fundamental task that enables programmers
-  to manipulate and display date information in a human-readable format.
+summary: Google Apps Script, being based on JavaScript, allows for multiple methods
+  to achieve the conversion of dates to strings.
 title: Converting a date into a string
 weight: 28
 ---

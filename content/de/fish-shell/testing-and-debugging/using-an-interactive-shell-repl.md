@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:14:19.636100-07:00
-description: "REPL, oder Read-Eval-Print Loop (Lese-Auswerte-Drucke Schleife), ist\
-  \ eine interaktive Programmierumgebung, die einzelne Benutzereingaben entgegennimmt,\u2026"
+description: 'Wie: In Fish ist die interaktive Shell der Standardmodus beim Start.
+  So sieht das in Aktion aus.'
 lastmod: '2024-03-13T22:44:54.311113-06:00'
 model: gpt-4-0125-preview
-summary: "REPL, oder Read-Eval-Print Loop (Lese-Auswerte-Drucke Schleife), ist eine\
-  \ interaktive Programmierumgebung, die einzelne Benutzereingaben entgegennimmt,\
-  \ ausf\xFChrt und das Ergebnis zur\xFCckgibt."
+summary: In Fish ist die interaktive Shell der Standardmodus beim Start.
 title: Nutzung einer interaktiven Shell (REPL)
 weight: 34
 ---

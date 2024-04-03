@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:52.623620-07:00
-description: "Wysy\u0142anie \u017C\u0105dania HTTP z uwierzytelnianiem podstawowym\
-  \ polega na zakodowaniu nazwy u\u017Cytkownika i has\u0142a w nag\u0142\xF3wku \u017C\
-  \u0105dania, aby uzyska\u0107 dost\u0119p do\u2026"
+description: "Jak to zrobi\u0107: W Google Apps Script, aby wys\u0142a\u0107 \u017C\
+  \u0105danie HTTP z uwierzytelnieniem podstawowym, wykorzystuje si\u0119 us\u0142\
+  ug\u0119 `UrlFetchApp` w po\u0142\u0105czeniu z\u2026"
 lastmod: '2024-03-13T22:44:34.902499-06:00'
 model: gpt-4-0125-preview
-summary: "Wysy\u0142anie \u017C\u0105dania HTTP z uwierzytelnianiem podstawowym polega\
-  \ na zakodowaniu nazwy u\u017Cytkownika i has\u0142a w nag\u0142\xF3wku \u017C\u0105\
-  dania, aby uzyska\u0107 dost\u0119p do chronionych zasob\xF3w."
+summary: "W Google Apps Script, aby wys\u0142a\u0107 \u017C\u0105danie HTTP z uwierzytelnieniem\
+  \ podstawowym, wykorzystuje si\u0119 us\u0142ug\u0119 `UrlFetchApp` w po\u0142\u0105\
+  czeniu z nag\u0142\xF3wkiem autoryzacji zakodowanym w base64."
 title: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnianiem"
 weight: 45
 ---

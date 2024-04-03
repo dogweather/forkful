@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:26.182753-07:00
-description: "Comparare due date in C comporta la determinazione della relazione cronologica\
-  \ tra di loro - se una data precede l'altra o se sono uguali. Questa capacit\xE0\
-  \u2026"
+description: "Come fare: C non dispone di un tipo integrato per le date, rendendo\
+  \ necessario l'utilizzo della libreria `time.h` per lavorare con le strutture di\
+  \ data e\u2026"
 lastmod: '2024-03-13T22:44:44.013704-06:00'
 model: gpt-4-0125-preview
-summary: Comparare due date in C comporta la determinazione della relazione cronologica
-  tra di loro - se una data precede l'altra o se sono uguali.
+summary: C non dispone di un tipo integrato per le date, rendendo necessario l'utilizzo
+  della libreria `time.h` per lavorare con le strutture di data e ora.
 title: Confrontare due date
 weight: 27
 ---

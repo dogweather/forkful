@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:56.919248-07:00
-description: "XML, de afkorting voor eXtensible Markup Language, is zoals de breedsprakige\
-  \ neef van JSON. Je zult met XML worstelen wanneer je te maken hebt met legacy\u2026"
+description: "Hoe te: In Rust kun je met XML omgaan met crates zoals `xml-rs`. Installeer\
+  \ door `xml-rs = \"0.8\"` toe te voegen aan je `Cargo.toml`. Hier is hoe je een\u2026"
 lastmod: '2024-03-13T22:44:50.618277-06:00'
 model: gpt-4-0125-preview
-summary: XML, de afkorting voor eXtensible Markup Language, is zoals de breedsprakige
-  neef van JSON.
+summary: In Rust kun je met XML omgaan met crates zoals `xml-rs`.
 title: Werken met XML
 weight: 40
 ---

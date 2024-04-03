@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:34:00.218205-07:00
-description: "Concat\xE9ner des cha\xEEnes, c'est les coller bout \xE0 bout. Les programmeurs\
-  \ le font pour assembler des textes dynamiques, comme cr\xE9er des messages ou g\xE9\
-  rer des\u2026"
+description: "How to: (Comment faire :) Concat\xE9ner en Bash est simple. Utilisez\
+  \ des guillemets, des accolades ou mettez juste les cha\xEEnes c\xF4te \xE0 c\xF4\
+  te. Voici des\u2026"
 lastmod: '2024-03-13T22:44:57.980963-06:00'
 model: gpt-4-1106-preview
-summary: "Concat\xE9ner des cha\xEEnes, c'est les coller bout \xE0 bout."
+summary: "Concat\xE9ner en Bash est simple."
 title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 weight: 3
 ---

@@ -2,16 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:27.817523-07:00
-description: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1\
-  \ b\u1EA3n c\xF3 ngh\u0129a l\xE0 nh\xFAng m\u1ED9t ng\u01B0\u1EDDi d\xF9ng v\xE0\
-  \ m\u1EADt kh\u1EA9u v\xE0o ti\xEAu \u0111\u1EC1 y\xEAu c\u1EA7u \u0111\u1EC3 ch\u1EE9\
-  ng minh b\u1EA1n \u0111\u01B0\u1EE3c ph\xE9p truy c\u1EADp. Ch\xFAng ta\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EA7u ti\xEAn, th\xEAm crate c\u1EA7\
+  n thi\u1EBFt v\xE0o `Cargo.toml` c\u1EE7a b\u1EA1n."
 lastmod: '2024-03-13T22:44:36.375678-06:00'
 model: gpt-4-0125-preview
-summary: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1\
-  \ b\u1EA3n c\xF3 ngh\u0129a l\xE0 nh\xFAng m\u1ED9t ng\u01B0\u1EDDi d\xF9ng v\xE0\
-  \ m\u1EADt kh\u1EA9u v\xE0o ti\xEAu \u0111\u1EC1 y\xEAu c\u1EA7u \u0111\u1EC3 ch\u1EE9\
-  ng minh b\u1EA1n \u0111\u01B0\u1EE3c ph\xE9p truy c\u1EADp."
+summary: "\u0110\u1EA7u ti\xEAn, th\xEAm crate c\u1EA7n thi\u1EBFt v\xE0o `Cargo.toml`\
+  \ c\u1EE7a b\u1EA1n."
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3\
   n"
 weight: 45

@@ -2,9 +2,9 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:20.480102-07:00
-description: "Dans VBA, le d\xE9bogueur est int\xE9gr\xE9 \xE0 l'\xE9diteur Visual\
-  \ Basic (VBE). Voici comment vous pouvez l'utiliser : 1. **D\xE9finir des points\
-  \ d'arr\xEAt** : Cliquez dans\u2026"
+description: "Comment faire : Dans VBA, le d\xE9bogueur est int\xE9gr\xE9 \xE0 l'\xE9\
+  diteur Visual Basic (VBE). Voici comment vous pouvez l'utiliser : 1. **D\xE9finir\
+  \ des points\u2026"
 lastmod: '2024-03-13T22:44:57.584028-06:00'
 model: gpt-4-0125-preview
 summary: "Dans VBA, le d\xE9bogueur est int\xE9gr\xE9 \xE0 l'\xE9diteur Visual Basic\

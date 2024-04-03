@@ -1,13 +1,12 @@
 ---
 date: 2024-01-27 16:21:50.076982-07:00
-description: "Tiedostojen k\xE4sittely Ruby-yksirivisill\xE4 CLI-komennoilla on kyse\
-  \ yleisten tiedosto-operaatioiden suorittamisesta suoraan terminaalista k\xE4ytt\xE4\
-  en Ruby-\u2026"
+description: "Miten: Rubyn ilmaisuvoimainen syntaksi mahdollistaa ytimekk\xE4iden\
+  \ ja luettavien yksirivisten kirjoittamisen, jotka voivat k\xE4sitell\xE4 monenlaisia\
+  \ tiedosto-\u2026"
 lastmod: '2024-03-13T22:44:57.081454-06:00'
 model: gpt-4-0125-preview
-summary: "Tiedostojen k\xE4sittely Ruby-yksirivisill\xE4 CLI-komennoilla on kyse yleisten\
-  \ tiedosto-operaatioiden suorittamisesta suoraan terminaalista k\xE4ytt\xE4en Ruby-skriptej\xE4\
-  ."
+summary: "Rubyn ilmaisuvoimainen syntaksi mahdollistaa ytimekk\xE4iden ja luettavien\
+  \ yksirivisten kirjoittamisen, jotka voivat k\xE4sitell\xE4 monenlaisia tiedosto-operaatioita."
 title: "Tiedostojen k\xE4sittely yhden rivin komentorivikomennoilla"
 weight: 31
 ---

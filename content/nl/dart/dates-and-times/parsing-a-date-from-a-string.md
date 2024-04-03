@@ -2,13 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:27.664930-07:00
-description: "Een datum parseren vanuit een string in Dart houdt in dat je tekstuele\
-  \ weergaven van datums en tijden omzet naar een `DateTime` object. Deze bewerking\
-  \ is\u2026"
+description: "Hoe te: De kernbibliotheek van Dart vereenvoudigt het parseren van datums\
+  \ door de `DateTime` klasse. Voor eenvoudige gevallen waarin je het formaat van\
+  \ de\u2026"
 lastmod: '2024-03-13T22:44:50.515317-06:00'
 model: gpt-4-0125-preview
-summary: Een datum parseren vanuit een string in Dart houdt in dat je tekstuele weergaven
-  van datums en tijden omzet naar een `DateTime` object.
+summary: De kernbibliotheek van Dart vereenvoudigt het parseren van datums door de
+  `DateTime` klasse.
 title: Een datum ontleden uit een string
 weight: 30
 ---

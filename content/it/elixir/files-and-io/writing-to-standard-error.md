@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:58.527585-07:00
-description: "Scrivere su standard error (stderr) in Elixir \xE8 un metodo per indirizzare\
-  \ messaggi di errore e diagnostica separatamente dall'output principale (stdout).\u2026"
+description: 'Come fare: In Elixir, puoi utilizzare funzioni del modulo `IO` come
+  `IO.puts/2` e `IO.warn/2` per scrivere messaggi su standard error.'
 lastmod: '2024-03-13T22:44:43.100426-06:00'
 model: gpt-4-0125-preview
-summary: "Scrivere su standard error (stderr) in Elixir \xE8 un metodo per indirizzare\
-  \ messaggi di errore e diagnostica separatamente dall'output principale (stdout)."
+summary: In Elixir, puoi utilizzare funzioni del modulo `IO` come `IO.puts/2` e `IO.warn/2`
+  per scrivere messaggi su standard error.
 title: Scrivere sull'errore standard
 weight: 25
 ---

@@ -2,17 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:58.815004-07:00
-description: "Vi\u1EC7c in th\xF4ng tin g\u1EE1 l\u1ED7i trong JavaScript li\xEAn\
-  \ quan \u0111\u1EBFn vi\u1EC7c hi\u1EC3n th\u1ECB c\xE1c bi\u1EBFn, l\u1ED7i, ho\u1EB7\
-  c b\u1EA5t k\u1EF3 th\xF4ng tin n\xE0o kh\xE1c gi\xFAp hi\u1EC3u r\xF5 nh\u1EEF\
-  ng g\xEC m\xE3 c\u1EE7a b\u1EA1n \u0111ang\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: JavaScript l\xE0m cho vi\u1EC7c in th\xF4ng\
+  \ tin g\u1EE1 l\u1ED7i tr\u1EDF n\xEAn c\u1EF1c k\u1EF3 d\u1EC5 d\xE0ng s\u1EED\
+  \ d\u1EE5ng `console.log()`. D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch."
 lastmod: '2024-03-13T22:44:37.156721-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c in th\xF4ng tin g\u1EE1 l\u1ED7i trong JavaScript li\xEAn quan\
-  \ \u0111\u1EBFn vi\u1EC7c hi\u1EC3n th\u1ECB c\xE1c bi\u1EBFn, l\u1ED7i, ho\u1EB7\
-  c b\u1EA5t k\u1EF3 th\xF4ng tin n\xE0o kh\xE1c gi\xFAp hi\u1EC3u r\xF5 nh\u1EEF\
-  ng g\xEC m\xE3 c\u1EE7a b\u1EA1n \u0111ang l\xE0m ch\u1EC9 qua m\u1ED9t c\xE1i nh\xEC\
-  n."
+summary: "JavaScript l\xE0m cho vi\u1EC7c in th\xF4ng tin g\u1EE1 l\u1ED7i tr\u1EDF\
+  \ n\xEAn c\u1EF1c k\u1EF3 d\u1EC5 d\xE0ng s\u1EED d\u1EE5ng `console.log()`."
 title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 weight: 33
 ---

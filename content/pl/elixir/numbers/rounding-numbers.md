@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 03:44:09.426663-07:00
-description: "Zaokr\u0105glanie liczb oznacza dostosowanie ich do bliskiej warto\u015B\
-  ci dla uproszczenia lub aby dopasowa\u0107 je do okre\u015Blonej precyzji. Jest\
-  \ to przydatne do\u2026"
+description: "Jak to zrobi\u0107: W Elixirze mo\u017Cesz u\u017Cy\u0107 `Float.round/2`,\
+  \ aby zaokr\u0105gli\u0107 liczb\u0119 zmiennoprzecinkow\u0105. Mo\u017Cesz okre\u015B\
+  li\u0107 liczb\u0119 cyfr po przecinku, kt\xF3re chcesz\u2026"
 lastmod: '2024-03-13T22:44:35.036625-06:00'
 model: gpt-4-0125-preview
-summary: "Zaokr\u0105glanie liczb oznacza dostosowanie ich do bliskiej warto\u015B\
-  ci dla uproszczenia lub aby dopasowa\u0107 je do okre\u015Blonej precyzji."
+summary: "W Elixirze mo\u017Cesz u\u017Cy\u0107 `Float.round/2`, aby zaokr\u0105gli\u0107\
+  \ liczb\u0119 zmiennoprzecinkow\u0105."
 title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---

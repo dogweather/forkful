@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:25.884646-07:00
-description: "Att skicka en HTTP-f\xF6rfr\xE5gan med grundl\xE4ggande autentisering\
-  \ inneb\xE4r att bifoga ett anv\xE4ndarnamn och l\xF6senord till en f\xF6rfr\xE5\
-  gan f\xF6r att verifiera\u2026"
+description: "Hur g\xF6r man: I Dart kan du anv\xE4nda `http`-paketet f\xF6r att skicka\
+  \ HTTP-f\xF6rfr\xE5gningar med grundl\xE4ggande autentisering. F\xF6rst, l\xE4gg\
+  \ till `http`-paketet i din\u2026"
 lastmod: '2024-03-13T22:44:37.611630-06:00'
 model: gpt-4-0125-preview
-summary: "Att skicka en HTTP-f\xF6rfr\xE5gan med grundl\xE4ggande autentisering inneb\xE4\
-  r att bifoga ett anv\xE4ndarnamn och l\xF6senord till en f\xF6rfr\xE5gan f\xF6r\
-  \ att verifiera anv\xE4ndarens identitet."
+summary: "I Dart kan du anv\xE4nda `http`-paketet f\xF6r att skicka HTTP-f\xF6rfr\xE5\
+  gningar med grundl\xE4ggande autentisering."
 title: "S\xE4nda en HTTP-f\xF6rfr\xE5gan med grundl\xE4ggande autentisering"
 weight: 45
 ---

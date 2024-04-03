@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:27:49.112675-07:00
-description: "Praca z XML polega na parsowaniu, ekstrakcji i manipulowaniu danymi\
-  \ w formacie j\u0119zyka znacznik\xF3w rozszerzalnych (XML). Programi\u015Bci borykaj\u0105\
-  \ si\u0119 z XML,\u2026"
+description: "Jak to zrobi\u0107: Oto, jak parsowa\u0107 XML w Bashu. Narz\u0119dzia?\
+  \ xmllint i xmlstarlet. Iteracja przez elementy XML? Zdecydowanie. Przyk\u0142ad\
+  \ z przyk\u0142adowym wynikiem."
 lastmod: '2024-03-13T22:44:35.609742-06:00'
 model: gpt-4-0125-preview
-summary: "Praca z XML polega na parsowaniu, ekstrakcji i manipulowaniu danymi w formacie\
-  \ j\u0119zyka znacznik\xF3w rozszerzalnych (XML)."
+summary: "Oto, jak parsowa\u0107 XML w Bashu."
 title: Praca z XML
 weight: 40
 ---

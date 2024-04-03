@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:03.789409-07:00
-description: "Att ber\xE4kna ett datum i framtiden eller det f\xF6rflutna handlar\
-  \ om att manipulera datumobjekt f\xF6r att hitta datum bortom eller f\xF6re nuvarande\
-  \ datum,\u2026"
+description: "Hur man g\xF6r: I Google Apps Script, som \xE4r baserat p\xE5 JavaScript,\
+  \ kan du manipulera datum med hj\xE4lp av `Date`-objektet. S\xE5 h\xE4r ber\xE4\
+  knar du datum i\u2026"
 lastmod: '2024-03-13T22:44:37.453464-06:00'
 model: gpt-4-0125-preview
-summary: "Att ber\xE4kna ett datum i framtiden eller det f\xF6rflutna handlar om att\
-  \ manipulera datumobjekt f\xF6r att hitta datum bortom eller f\xF6re nuvarande datum,\
-  \ respektive."
+summary: "I Google Apps Script, som \xE4r baserat p\xE5 JavaScript, kan du manipulera\
+  \ datum med hj\xE4lp av `Date`-objektet."
 title: "Ber\xE4kning av ett datum i framtiden eller f\xF6rflutet"
 weight: 26
 ---

@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:53:36.912117-07:00
-description: "Imprimir sa\xEDdas de debug \xE9 escrever no console aquilo que o seu\
-  \ c\xF3digo est\xE1 fazendo, para que voc\xEA possa entender melhor e corrigir o\
-  \ comportamento.\u2026"
+description: 'Como Fazer: .'
 lastmod: '2024-03-13T22:44:47.097914-06:00'
 model: gpt-4-1106-preview
-summary: "Imprimir sa\xEDdas de debug \xE9 escrever no console aquilo que o seu c\xF3\
-  digo est\xE1 fazendo, para que voc\xEA possa entender melhor e corrigir o comportamento."
+summary: .
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---

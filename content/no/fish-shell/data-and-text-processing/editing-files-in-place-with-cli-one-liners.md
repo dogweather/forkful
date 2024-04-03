@@ -1,13 +1,12 @@
 ---
 date: 2024-01-27 16:21:06.558328-07:00
-description: "\xC5 redigere filer p\xE5 stedet med kommandolinje-enlinjere handler\
-  \ om \xE5 gj\xF8re endringer direkte i filer fra kommandolinjen, uten \xE5 \xE5\
-  pne dem i en\u2026"
+description: "Hvordan: Fish Shell, kjent for sine brukervennlige funksjoner og kraftfulle\
+  \ skriptingsmuligheter, tilbyr flere m\xE5ter \xE5 redigere filer p\xE5 stedet p\xE5\
+  . Men, i\u2026"
 lastmod: '2024-03-13T22:44:41.222824-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 redigere filer p\xE5 stedet med kommandolinje-enlinjere handler om\
-  \ \xE5 gj\xF8re endringer direkte i filer fra kommandolinjen, uten \xE5 \xE5pne\
-  \ dem i en tekstredigerer."
+summary: "Fish Shell, kjent for sine brukervennlige funksjoner og kraftfulle skriptingsmuligheter,\
+  \ tilbyr flere m\xE5ter \xE5 redigere filer p\xE5 stedet p\xE5."
 title: "Redigering av filer p\xE5 stedet med CLI-enlinjerskommandoer"
 weight: 32
 ---

@@ -2,17 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:26.991365-07:00
-description: "X\u1EED l\xFD l\u1ED7i trong PHP l\xE0 v\u1EC1 qu\u1EA3n l\xFD v\xE0\
-  \ ph\u1EA3n \u1EE9ng v\u1EDBi c\xE1c \u0111i\u1EC1u ki\u1EC7n l\xE0m gi\xE1n \u0111\
-  o\u1EA1n d\xF2ng ch\u1EA3y b\xECnh th\u01B0\u1EDDng c\u1EE7a ch\u01B0\u01A1ng tr\xEC\
-  nh, nh\u01B0 t\u1EC7p tin b\u1ECB thi\u1EBFu ho\u1EB7c d\u1EEF li\u1EC7u\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong PHP, b\u1EA1n c\xF3 th\u1EC3 qu\u1EA3\
+  n l\xFD l\u1ED7i b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng c\xE1c kh\u1ED1i `try-catch`,\
+  \ v\xE0 b\u1EA1n c\xF3 th\u1EC3 t\xF9y ch\u1EC9nh quy tr\xECnh v\u1EDBi c\xE1c tr\xEC\
+  nh x\u1EED l\xFD l\u1ED7i t\xF9y\u2026"
 lastmod: '2024-03-13T22:44:36.776970-06:00'
 model: gpt-4-0125-preview
-summary: "X\u1EED l\xFD l\u1ED7i trong PHP l\xE0 v\u1EC1 qu\u1EA3n l\xFD v\xE0 ph\u1EA3\
-  n \u1EE9ng v\u1EDBi c\xE1c \u0111i\u1EC1u ki\u1EC7n l\xE0m gi\xE1n \u0111o\u1EA1\
-  n d\xF2ng ch\u1EA3y b\xECnh th\u01B0\u1EDDng c\u1EE7a ch\u01B0\u01A1ng tr\xECnh,\
-  \ nh\u01B0 t\u1EC7p tin b\u1ECB thi\u1EBFu ho\u1EB7c d\u1EEF li\u1EC7u nh\u1EAD\
-  p kh\xF4ng \u0111\xFAng."
+summary: "Trong PHP, b\u1EA1n c\xF3 th\u1EC3 qu\u1EA3n l\xFD l\u1ED7i b\u1EB1ng c\xE1\
+  ch s\u1EED d\u1EE5ng c\xE1c kh\u1ED1i `try-catch`, v\xE0 b\u1EA1n c\xF3 th\u1EC3\
+  \ t\xF9y ch\u1EC9nh quy tr\xECnh v\u1EDBi c\xE1c tr\xECnh x\u1EED l\xFD l\u1ED7\
+  i t\xF9y ch\u1EC9nh v\xE0 ngo\u1EA1i l\u1EC7."
 title: "X\u1EED l\xFD l\u1ED7i"
 weight: 16
 ---

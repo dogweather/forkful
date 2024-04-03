@@ -1,13 +1,13 @@
 ---
 date: 2024-01-26 04:11:08.800109-07:00
-description: "Para come\xE7ar a usar um depurador em TypeScript, tudo o que voc\xEA\
-  \ precisa \xE9 de uma IDE suportada (como o Visual Studio Code) e uma configura\xE7\
-  \xE3o\u2026"
+description: "Como Fazer: Para come\xE7ar a usar um depurador em TypeScript, tudo\
+  \ o que voc\xEA precisa \xE9 de uma IDE suportada (como o Visual Studio Code) e\
+  \ uma configura\xE7\xE3o\u2026"
 lastmod: '2024-03-13T22:44:46.330660-06:00'
 model: gpt-4-0125-preview
 summary: "Para come\xE7ar a usar um depurador em TypeScript, tudo o que voc\xEA precisa\
   \ \xE9 de uma IDE suportada (como o Visual Studio Code) e uma configura\xE7\xE3\
-  o `launch."
+  o `launch.json`."
 title: Usando um depurador
 weight: 35
 ---

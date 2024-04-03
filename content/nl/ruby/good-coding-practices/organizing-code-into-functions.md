@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:14.619305-07:00
-description: "Je code organiseren in functies splitst je script in herbruikbare delen.\
-  \ Het gaat allemaal om het schoon, beheersbaar en minder foutgevoelig maken van\
-  \ je\u2026"
+description: 'Hoe te: Stel je voor dat je een snel script schrijft om gebruikers te
+  begroeten.'
 lastmod: '2024-03-13T22:44:51.343980-06:00'
 model: gpt-4-0125-preview
-summary: Je code organiseren in functies splitst je script in herbruikbare delen.
+summary: Stel je voor dat je een snel script schrijft om gebruikers te begroeten.
 title: Code organiseren in functies
 weight: 18
 ---

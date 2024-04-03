@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:13.471868-07:00
-description: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t v\xE0i v\xED d\u1EE5 v\u1EC1\
-  \ vi\u1EC7c debug trong Kotlin v\u1EDBi IntelliJ IDEA - Sherlock Holmes c\u1EE7\
-  a c\xE1c IDE: ```kotlin fun main() { val mysteryNumber = 42 var\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9\
+  t v\xE0i v\xED d\u1EE5 v\u1EC1 vi\u1EC7c debug trong Kotlin v\u1EDBi IntelliJ IDEA\
+  \ - Sherlock Holmes c\u1EE7a c\xE1c IDE."
 lastmod: '2024-03-13T22:44:36.607628-06:00'
 model: gpt-4-0125-preview
 summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t v\xE0i v\xED d\u1EE5 v\u1EC1 vi\u1EC7\
-  c debug trong Kotlin v\u1EDBi IntelliJ IDEA - Sherlock Holmes c\u1EE7a c\xE1c IDE:\n\
-  \n```kotlin\nfun main() {\n    val mysteryNumber = 42\n    var guess = 0\n\n   \
-  \ while (guess ."
+  c debug trong Kotlin v\u1EDBi IntelliJ IDEA - Sherlock Holmes c\u1EE7a c\xE1c IDE."
 title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
 weight: 35
 ---

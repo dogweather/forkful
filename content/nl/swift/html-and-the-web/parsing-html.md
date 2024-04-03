@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:49.408510-07:00
-description: "HTML parsen betekent het filteren door de soep van code van een website\
-  \ om nuttige brokjes te vinden \u2014 tekst, links, afbeeldingen, etc. Programmeurs\
-  \ doen\u2026"
+description: "Hoe: Swift heeft geen ingebouwde HTML-parsing; we hebben een hulpje\
+  \ nodig. Laten we SwiftSoup gebruiken, een Swift-library die doet denken aan Python's\u2026"
 lastmod: '2024-03-13T22:44:51.154594-06:00'
 model: gpt-4-0125-preview
-summary: "HTML parsen betekent het filteren door de soep van code van een website\
-  \ om nuttige brokjes te vinden \u2014 tekst, links, afbeeldingen, etc."
+summary: Swift heeft geen ingebouwde HTML-parsing; we hebben een hulpje nodig.
 title: HTML Parsen
 weight: 43
 ---

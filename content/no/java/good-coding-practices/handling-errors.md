@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 00:53:30.636622-07:00
-description: "Feilh\xE5ndtering betyr \xE5 skrive kode som forventer og h\xE5ndterer\
-  \ at ting g\xE5r galt. Programm\xF8rer gj\xF8r dette for \xE5 gj\xF8re programvaren\
-  \ robust, for \xE5 forhindre\u2026"
+description: "Hvordan: Java bruker unntak (exceptions) til \xE5 h\xE5ndtere feil.\
+  \ Du omslutter risikofylt kode med en `try`-blokk og fanger unntak med `catch`.\
+  \ Her er et\u2026"
 lastmod: '2024-03-13T22:44:40.673954-06:00'
 model: gpt-4-1106-preview
-summary: "Feilh\xE5ndtering betyr \xE5 skrive kode som forventer og h\xE5ndterer at\
-  \ ting g\xE5r galt."
+summary: "Java bruker unntak (exceptions) til \xE5 h\xE5ndtere feil."
 title: "Feilh\xE5ndtering"
 weight: 16
 ---

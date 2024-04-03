@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 18:02:15.519500-07:00
-description: "Inviare una richiesta HTTP con autenticazione di base \xE8 uno dei metodi\
-  \ per proteggere l'accesso alle risorse web. I programmatori lo utilizzano per\u2026"
+description: 'Come Fare: .'
 lastmod: '2024-03-13T22:44:43.308559-06:00'
 model: gpt-4-1106-preview
-summary: "Inviare una richiesta HTTP con autenticazione di base \xE8 uno dei metodi\
-  \ per proteggere l'accesso alle risorse web."
+summary: .
 title: Inviare una richiesta http con autenticazione di base
 weight: 45
 ---

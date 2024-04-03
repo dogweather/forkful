@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:00.015896-07:00
-description: "Att skriva tester i C++ inneb\xE4r att skapa sm\xE5, sj\xE4lvst\xE4\
-  ndiga program som automatiskt verifierar beteendet hos delar av din kodbas. Programmerare\
-  \ g\xF6r detta\u2026"
+description: "Hur man g\xF6r: #."
 lastmod: '2024-03-13T22:44:38.212574-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva tester i C++ inneb\xE4r att skapa sm\xE5, sj\xE4lvst\xE4ndiga\
-  \ program som automatiskt verifierar beteendet hos delar av din kodbas."
+summary: '#.'
 title: Skriva tester
 weight: 36
 ---

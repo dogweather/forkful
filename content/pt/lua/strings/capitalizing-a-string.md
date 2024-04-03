@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:48.766397-07:00
-description: "Capitalizar uma string envolve modificar o primeiro caractere de cada\
-  \ palavra em uma frase para mai\xFAscula, garantindo que o restante esteja em min\xFA\
-  scula.\u2026"
+description: "Como Fazer: Lua n\xE3o possui uma fun\xE7\xE3o embutida para capitalizar\
+  \ strings, mas voc\xEA pode facilmente realizar essa tarefa usando fun\xE7\xF5es\
+  \ b\xE1sicas de\u2026"
 lastmod: '2024-03-13T22:44:46.692842-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizar uma string envolve modificar o primeiro caractere de cada palavra\
-  \ em uma frase para mai\xFAscula, garantindo que o restante esteja em min\xFAscula."
+summary: "Lua n\xE3o possui uma fun\xE7\xE3o embutida para capitalizar strings, mas\
+  \ voc\xEA pode facilmente realizar essa tarefa usando fun\xE7\xF5es b\xE1sicas de\
+  \ manipula\xE7\xE3o de strings."
 title: Capitalizando uma string
 weight: 2
 ---

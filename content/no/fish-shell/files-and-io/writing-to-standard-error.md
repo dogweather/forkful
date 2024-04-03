@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:25.164157-07:00
-description: "\xC5 skrive til standard feil (stderr) i Fish Shell handler om \xE5\
-  \ dirigere feilmeldinger eller diagnostikk separat fra standard utdata (stdout).\
-  \ Programm\xF8rer\u2026"
+description: "Hvordan: I Fish Shell kan du skrive til stderr ved \xE5 omdirigere din\
+  \ utdata ved bruk av `>&2`. Her er et enkelt eksempel."
 lastmod: '2024-03-13T22:44:41.243828-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive til standard feil (stderr) i Fish Shell handler om \xE5 dirigere\
-  \ feilmeldinger eller diagnostikk separat fra standard utdata (stdout)."
+summary: "I Fish Shell kan du skrive til stderr ved \xE5 omdirigere din utdata ved\
+  \ bruk av `>&2`."
 title: Skriving til standardfeil
 weight: 25
 ---

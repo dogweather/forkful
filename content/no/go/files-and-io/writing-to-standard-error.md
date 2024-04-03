@@ -2,12 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:20.598906-07:00
-description: "\xC5 skrive til standardfeil (stderr) i Go involverer omdirigering av\
-  \ feilmeldinger eller diagnostikk som ikke er ment for hovedutstr\xF8mmen. Programmerere\u2026"
+description: "Hvordan: I Go gir `os`-pakken verdien `Stderr`, som representerer filen\
+  \ for standardfeil. Du kan bruke den med `fmt.Fprint`, `fmt.Fprintf`, eller\u2026"
 lastmod: '2024-03-13T22:44:40.285401-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive til standardfeil (stderr) i Go involverer omdirigering av feilmeldinger\
-  \ eller diagnostikk som ikke er ment for hovedutstr\xF8mmen."
+summary: I Go gir `os`-pakken verdien `Stderr`, som representerer filen for standardfeil.
 title: Skrive til standard feil
 weight: 25
 ---

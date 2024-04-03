@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:25.082124-07:00
-description: "Odczytywanie argument\xF3w linii komend w Visual Basic for Applications\
-  \ (VBA) polega na dost\u0119pie do parametr\xF3w przekazanych do programu podczas\
-  \ jego\u2026"
+description: "Jak to zrobi\u0107: W przeciwie\u0144stwie do bardziej prostych \u015B\
+  rodowisk programistycznych, VBA nie posiada wbudowanej funkcji bezpo\u015Bredniego\
+  \ odczytu argument\xF3w\u2026"
 lastmod: '2024-03-13T22:44:35.248838-06:00'
 model: gpt-4-0125-preview
-summary: "Odczytywanie argument\xF3w linii komend w Visual Basic for Applications\
-  \ (VBA) polega na dost\u0119pie do parametr\xF3w przekazanych do programu podczas\
-  \ jego wykonania."
+summary: "W przeciwie\u0144stwie do bardziej prostych \u015Brodowisk programistycznych,\
+  \ VBA nie posiada wbudowanej funkcji bezpo\u015Bredniego odczytu argument\xF3w linii\
+  \ komend w tradycyjnym sensie, poniewa\u017C jest przede wszystkim przeznaczony\
+  \ do wbudowania w aplikacje Microsoft Office."
 title: "Czytanie argument\xF3w z linii polece\u0144"
 weight: 23
 ---

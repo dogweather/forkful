@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:39:54.059651-07:00
-description: "Att skapa en tempor\xE4r fil betyder att du tillf\xE4lligt lagrar data\
-  \ p\xE5 disken. Programmerare g\xF6r detta f\xF6r att hantera data som inte beh\xF6\
-  ver vara permanent\u2026"
+description: "Hur g\xF6r man: ."
 lastmod: '2024-03-13T22:44:37.544501-06:00'
 model: gpt-4-1106-preview
-summary: "Att skapa en tempor\xE4r fil betyder att du tillf\xE4lligt lagrar data p\xE5\
-  \ disken."
+summary: .
 title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---

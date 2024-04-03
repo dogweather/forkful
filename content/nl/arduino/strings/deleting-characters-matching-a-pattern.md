@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:35.047113-07:00
-description: "Het verwijderen van karakters die overeenkomen met een patroon betekent\
-  \ het wegdoen van specifieke volgordes van karakters uit strings\u2014denk aan het\u2026"
+description: "Hoe: Stel, we willen alle numerieke cijfers uit onze string laten vallen.\
+  \ We hebben een string met enkele willekeurige nummers, en we gaan voor een\u2026"
 lastmod: '2024-03-13T22:44:51.056702-06:00'
 model: gpt-4-0125-preview
-summary: "Het verwijderen van karakters die overeenkomen met een patroon betekent\
-  \ het wegdoen van specifieke volgordes van karakters uit strings\u2014denk aan het\
-  \ opschonen van data of invoer."
+summary: Stel, we willen alle numerieke cijfers uit onze string laten vallen.
 title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---

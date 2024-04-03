@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:58:31.216170-07:00
-description: "Tekstin etsiminen ja korvaaminen tarkoittaa jonkin merkkijonon l\xF6\
-  yt\xE4mist\xE4 ja muuttamista toiseksi. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4t\xE4\
-  \ toimintoa p\xE4ivitt\xE4ess\xE4\xE4n\u2026"
+description: "How to: (Kuinka tehd\xE4\xE4n:) Ruby tekee etsimisest\xE4 ja korvaamisesta\
+  \ helppoa. T\xE4ss\xE4 on pari esimerkki\xE4."
 lastmod: '2024-03-13T22:44:57.070382-06:00'
 model: gpt-4-1106-preview
-summary: "Tekstin etsiminen ja korvaaminen tarkoittaa jonkin merkkijonon l\xF6yt\xE4\
-  mist\xE4 ja muuttamista toiseksi."
+summary: "Ruby tekee etsimisest\xE4 ja korvaamisesta helppoa."
 title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---

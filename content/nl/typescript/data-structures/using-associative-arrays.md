@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:13:16.380287-07:00
-description: "Associatieve arrays, of objecten in TypeScript, laten je strings (of\
-  \ sleutels) gebruiken om toegang te krijgen tot waardeparen. Programmeurs gebruiken\
-  \ ze\u2026"
+description: 'Hoe te: Associatieve arrays maken en gebruiken in TypeScript is eenvoudig.
+  Hier is een basishandleiding.'
 lastmod: '2024-03-13T22:44:50.542938-06:00'
 model: gpt-4-0125-preview
-summary: Associatieve arrays, of objecten in TypeScript, laten je strings (of sleutels)
-  gebruiken om toegang te krijgen tot waardeparen.
+summary: Associatieve arrays maken en gebruiken in TypeScript is eenvoudig.
 title: Gebruik van associatieve arrays
 weight: 15
 ---

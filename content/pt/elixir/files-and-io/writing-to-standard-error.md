@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:59.824597-07:00
-description: "Escrever no erro padr\xE3o (stderr) em Elixir \xE9 um m\xE9todo de direcionar\
-  \ mensagens de erro e diagn\xF3sticos separadamente do output principal (stdout).\
-  \ Os\u2026"
+description: "Como fazer: Em Elixir, voc\xEA pode usar fun\xE7\xF5es do m\xF3dulo\
+  \ `IO` como `IO.puts/2` e `IO.warn/2` para escrever mensagens no erro padr\xE3o."
 lastmod: '2024-03-13T22:44:46.254340-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever no erro padr\xE3o (stderr) em Elixir \xE9 um m\xE9todo de direcionar\
-  \ mensagens de erro e diagn\xF3sticos separadamente do output principal (stdout)."
+summary: "Em Elixir, voc\xEA pode usar fun\xE7\xF5es do m\xF3dulo `IO` como `IO.puts/2`\
+  \ e `IO.warn/2` para escrever mensagens no erro padr\xE3o."
 title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---

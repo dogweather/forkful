@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:00.308660-07:00
-description: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta merkitsee\
-  \ tekstiesitysten muuntamista p\xE4iv\xE4m\xE4\xE4rist\xE4 ja ajoista sellaiseen\
-  \ formaattiin, jota on helppo k\xE4sitell\xE4,\u2026"
+description: "Kuinka: Lua ei tarjoa sis\xE4\xE4nrakennettua tukea p\xE4iv\xE4m\xE4\
+  \xE4r\xE4n ja ajan k\xE4sittelyyn sen rajatun toiminnallisuuden yli, jota `os.date`\
+  \ ja `os.time` funktiot\u2026"
 lastmod: '2024-03-13T22:44:56.706232-06:00'
 model: gpt-4-0125-preview
-summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta merkitsee tekstiesitysten\
-  \ muuntamista p\xE4iv\xE4m\xE4\xE4rist\xE4 ja ajoista sellaiseen formaattiin, jota\
-  \ on helppo k\xE4sitell\xE4, tallentaa tai verrata Lua-ohjelmassa."
+summary: "Lua ei tarjoa sis\xE4\xE4nrakennettua tukea p\xE4iv\xE4m\xE4\xE4r\xE4n ja\
+  \ ajan k\xE4sittelyyn sen rajatun toiminnallisuuden yli, jota `os.date` ja `os.time`\
+  \ funktiot tarjoavat."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
 weight: 30
 ---

@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:45.267398-07:00
-description: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP l\xE0 h\xE0nh \u0111\u1ED9ng\
-  \ y\xEAu c\u1EA7u m\u1ED9t m\xE1y ch\u1EE7 web v\u1EC1 d\u1EEF li\u1EC7u ho\u1EB7\
-  c h\xE0nh \u0111\u1ED9ng. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1\
-  u n\xE0y \u0111\u1EC3 t\u01B0\u01A1ng t\xE1c v\u1EDBi API, l\u1EA5y n\u1ED9i dung\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Ch\xFAng ta h\xE3y b\u1EAFt \u0111\u1EA7u v\u1EDB\
+  i nh\u1EEFng vi\u1EC7c th\xFA v\u1ECB. B\u1EA1n c\u1EA7n c\xE1c g\xF3i `http-client`\
+  \ v\xE0 `http-client-tls`. Thi\u1EBFt l\u1EADp stack c\u1EE7a b\u1EA1n v\xE0 th\xEA\
+  m ch\xFAng v\xE0o\u2026"
 lastmod: '2024-03-13T22:44:36.708393-06:00'
 model: gpt-4-0125-preview
-summary: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP l\xE0 h\xE0nh \u0111\u1ED9ng y\xEA\
-  u c\u1EA7u m\u1ED9t m\xE1y ch\u1EE7 web v\u1EC1 d\u1EEF li\u1EC7u ho\u1EB7c h\xE0\
-  nh \u0111\u1ED9ng."
+summary: "Ch\xFAng ta h\xE3y b\u1EAFt \u0111\u1EA7u v\u1EDBi nh\u1EEFng vi\u1EC7c\
+  \ th\xFA v\u1ECB."
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
 weight: 44
 ---

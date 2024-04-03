@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:44.835765-07:00
-description: "Pobieranie strony internetowej w Google Apps Script polega na pobieraniu\
-  \ tre\u015Bci strony internetowej za pomoc\u0105 HTML do r\xF3\u017Cnych cel\xF3\
-  w, takich jak web\u2026"
+description: "Jak to zrobi\u0107: W Google Apps Script, us\u0142uga `UrlFetchApp`\
+  \ jest kluczowa do pobierania tre\u015Bci internetowych. Poni\u017Cej znajduje si\u0119\
+  \ przewodnik krok po kroku\u2026"
 lastmod: '2024-03-13T22:44:34.901355-06:00'
 model: gpt-4-0125-preview
-summary: "Pobieranie strony internetowej w Google Apps Script polega na pobieraniu\
-  \ tre\u015Bci strony internetowej za pomoc\u0105 HTML do r\xF3\u017Cnych cel\xF3\
-  w, takich jak web scraping, ekstrakcja danych lub monitorowanie zmian."
+summary: "W Google Apps Script, us\u0142uga `UrlFetchApp` jest kluczowa do pobierania\
+  \ tre\u015Bci internetowych."
 title: Pobieranie strony internetowej
 weight: 42
 ---

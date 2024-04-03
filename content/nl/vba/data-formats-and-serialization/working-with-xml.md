@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:47.430484-07:00
-description: "Werken met XML in Visual Basic for Applications (VBA) houdt in het parsen,\
-  \ cre\xEBren en wijzigen van XML-documenten binnen de context van Microsoft Office-\u2026"
+description: "Hoe: Om te beginnen met het interageren met XML, gebruikt men meestal\
+  \ het `MSXML2.DOMDocument` object. Deze interface stelt u in staat om XML-documenten\u2026"
 lastmod: '2024-03-13T22:44:50.662622-06:00'
 model: gpt-4-0125-preview
-summary: "Werken met XML in Visual Basic for Applications (VBA) houdt in het parsen,\
-  \ cre\xEBren en wijzigen van XML-documenten binnen de context van Microsoft Office-applicaties."
+summary: Om te beginnen met het interageren met XML, gebruikt men meestal het `MSXML2.DOMDocument`
+  object.
 title: Werken met XML
 weight: 40
 ---

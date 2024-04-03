@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:58:09.251172-07:00
-description: "Wyszukiwanie i zamiana tekstu to podstawa edycji: zmieniasz jedno przez\
-  \ drugie, proste. Programi\u015Bci to robi\u0105, by szybko poprawia\u0107 kody\
-  \ i aktualizowa\u0107 dane."
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:35.436496-06:00'
 model: gpt-4-1106-preview
-summary: 'Wyszukiwanie i zamiana tekstu to podstawa edycji: zmieniasz jedno przez
-  drugie, proste.'
+summary: .
 title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---

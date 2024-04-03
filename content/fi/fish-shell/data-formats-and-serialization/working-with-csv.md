@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:55.508402-07:00
-description: "CSV-tiedostojen (pilkuilla erotetut arvot) k\xE4sittely sis\xE4lt\xE4\
-  \xE4 j\xE4sent\xE4misen, manipuloinnin ja datan tuottamisen taulukkomuodossa, jota\
-  \ laajasti k\xE4ytet\xE4\xE4n\u2026"
+description: "Kuinka: Fish Shellill\xE4 itsell\xE4\xE4n ei ole sis\xE4\xE4nrakennettuja\
+  \ funktioita nimenomaan CSV-manipulointiin suunniteltuna. Voit kuitenkin hy\xF6\
+  dynt\xE4\xE4 Unix-ty\xF6kaluja\u2026"
 lastmod: '2024-03-13T22:44:57.017531-06:00'
 model: gpt-4-0125-preview
-summary: "CSV-tiedostojen (pilkuilla erotetut arvot) k\xE4sittely sis\xE4lt\xE4\xE4\
-  \ j\xE4sent\xE4misen, manipuloinnin ja datan tuottamisen taulukkomuodossa, jota\
-  \ laajasti k\xE4ytet\xE4\xE4n datan vaihtoon sovellusten v\xE4lill\xE4."
+summary: "Fish Shellill\xE4 itsell\xE4\xE4n ei ole sis\xE4\xE4nrakennettuja funktioita\
+  \ nimenomaan CSV-manipulointiin suunniteltuna."
 title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---

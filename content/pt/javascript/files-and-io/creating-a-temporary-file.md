@@ -1,13 +1,11 @@
 ---
 date: 2024-01-20 17:41:07.192914-07:00
-description: "Criar um arquivo tempor\xE1rio significa gerar um arquivo que s\xF3\
-  \ existe enquanto \xE9 necess\xE1rio, geralmente durante a execu\xE7\xE3o de um\
-  \ programa ou processo.\u2026"
+description: "Como Fazer: Para criar um arquivo tempor\xE1rio em JavaScript, vamos\
+  \ precisar do pacote `fs` do Node.js para interagir com o sistema de arquivos."
 lastmod: '2024-03-13T22:44:46.981505-06:00'
 model: gpt-4-1106-preview
-summary: "Criar um arquivo tempor\xE1rio significa gerar um arquivo que s\xF3 existe\
-  \ enquanto \xE9 necess\xE1rio, geralmente durante a execu\xE7\xE3o de um programa\
-  \ ou processo."
+summary: "Para criar um arquivo tempor\xE1rio em JavaScript, vamos precisar do pacote\
+  \ `fs` do Node.js para interagir com o sistema de arquivos."
 title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---

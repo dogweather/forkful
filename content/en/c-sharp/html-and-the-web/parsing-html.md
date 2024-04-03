@@ -1,11 +1,12 @@
 ---
 date: 2024-02-03 19:02:47.855631-07:00
-description: "Parsing HTML in programming involves analyzing the structure of an HTML\
-  \ document, allowing you to extract, manipulate, and interact with its content\u2026"
+description: "How to: While .NET provides basic support for working with HTML, such\
+  \ as the `HttpClient` for fetching web pages, it lacks a built-in, comprehensive\
+  \ HTML\u2026"
 lastmod: '2024-03-13T22:45:00.086607-06:00'
 model: gpt-4-0125-preview
-summary: Parsing HTML in programming involves analyzing the structure of an HTML document,
-  allowing you to extract, manipulate, and interact with its content programmatically.
+summary: While .NET provides basic support for working with HTML, such as the `HttpClient`
+  for fetching web pages, it lacks a built-in, comprehensive HTML parser.
 title: Parsing HTML
 weight: 43
 ---

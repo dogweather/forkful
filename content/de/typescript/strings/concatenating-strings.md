@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:35:48.610543-07:00
-description: "String-Konkatenation ist das Zusammenf\xFCgen von zwei oder mehreren\
-  \ Textst\xFCcken. Das ist n\xF6tig, um dynamische Texte zu erstellen oder unterschiedliche\u2026"
+description: 'How to: Mit TypeScript geht das so.'
 lastmod: '2024-03-13T22:44:53.623558-06:00'
 model: gpt-4-1106-preview
-summary: "String-Konkatenation ist das Zusammenf\xFCgen von zwei oder mehreren Textst\xFC\
-  cken."
+summary: Mit TypeScript geht das so.
 title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---

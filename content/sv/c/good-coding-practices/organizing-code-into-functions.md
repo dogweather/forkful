@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:09.286763-07:00
-description: "Att organisera kod i funktioner i C inneb\xE4r att bryta ner komplexa\
-  \ uppgifter i mindre, \xE5teranv\xE4ndbara kodblock. Denna praxis f\xF6rb\xE4ttrar\
-  \ l\xE4sbarheten,\u2026"
+description: "Hur man g\xF6r: I C deklareras en funktion med en returtyp, ett namn\
+  \ och parametrar (om n\xE5gra), f\xF6ljt av en block kod. L\xE5t oss b\xF6rja med\
+  \ ett enkelt exempel:\u2026"
 lastmod: '2024-03-13T22:44:38.388560-06:00'
 model: gpt-4-0125-preview
-summary: "Att organisera kod i funktioner i C inneb\xE4r att bryta ner komplexa uppgifter\
-  \ i mindre, \xE5teranv\xE4ndbara kodblock."
+summary: "I C deklareras en funktion med en returtyp, ett namn och parametrar (om\
+  \ n\xE5gra), f\xF6ljt av en block kod."
 title: Organisering av kod i funktioner
 weight: 18
 ---

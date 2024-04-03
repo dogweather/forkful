@@ -2,13 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:04.528550-07:00
-description: "\xC5 konvertere en streng til sm\xE5 bokstaver er en grunnleggende operasjon\
-  \ som involverer \xE5 transformere alle tegnene i en gitt streng til deres\u2026"
+description: "Hvordan: I Dart kan du konvertere en streng til sm\xE5bokstaver ved\
+  \ \xE5 bruke `toLowerCase()`-metoden som tilbys av `String`-klassen. Denne metoden\
+  \ returnerer\u2026"
 lastmod: '2024-03-13T22:44:40.472782-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 konvertere en streng til sm\xE5 bokstaver er en grunnleggende operasjon\
-  \ som involverer \xE5 transformere alle tegnene i en gitt streng til deres sm\xE5\
-  bokstavtilsvarende."
+summary: "I Dart kan du konvertere en streng til sm\xE5bokstaver ved \xE5 bruke `toLowerCase()`-metoden\
+  \ som tilbys av `String`-klassen."
 title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---

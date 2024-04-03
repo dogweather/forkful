@@ -2,19 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:34.414430-07:00
-description: "PowerShell\uC774 JSON(JavaScript Object Notation)\uACFC \uD1B5\uD569\
-  \uB418\uB294 \uAC83\uC740 JSON \uB370\uC774\uD130\uB97C \uD30C\uC2F1(\uC77D\uAE30\
-  )\uD558\uACE0 \uC0DD\uC131(\uC4F0\uAE30)\uD558\uB294 \uAC83\uACFC \uAD00\uB828\uC774\
-  \ \uC788\uC2B5\uB2C8\uB2E4. \uC774\uB294 \uC6F9\uC0C1\uC758 \uB370\uC774\uD130 \uAD50\
-  \uD658\uC744 \uC704\uD55C \uC77C\uBC18\uC801\uC778 \uD615\uC2DD\uC785\uB2C8\uB2E4\
-  . \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uAC00\uBCBC\uC6B4 \uD2B9\uC131\uACFC\
-  \ \uC5B8\uC5B4 \uB3C5\uB9BD\uC801\uC778 \uC131\uACA9\u2026"
+description: "\uBC29\uBC95: #."
 lastmod: '2024-03-13T22:44:55.577918-06:00'
 model: gpt-4-0125-preview
-summary: "PowerShell\uC774 JSON(JavaScript Object Notation)\uACFC \uD1B5\uD569\uB418\
-  \uB294 \uAC83\uC740 JSON \uB370\uC774\uD130\uB97C \uD30C\uC2F1(\uC77D\uAE30)\uD558\
-  \uACE0 \uC0DD\uC131(\uC4F0\uAE30)\uD558\uB294 \uAC83\uACFC \uAD00\uB828\uC774 \uC788\
-  \uC2B5\uB2C8\uB2E4."
+summary: '#.'
 title: "JSON\uACFC \uD568\uAED8 \uC77C\uD558\uAE30"
 weight: 38
 ---

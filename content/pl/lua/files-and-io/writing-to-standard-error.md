@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:48.261756-07:00
-description: "Pisanie do standardowego b\u0142\u0119du (stderr) polega na kierowaniu\
-  \ komunikat\xF3w o b\u0142\u0119dach oraz wyj\u015B\u0107 diagnostycznych do osobnego\
-  \ kana\u0142u, r\xF3\u017Cnego od standardowego\u2026"
+description: "Jak to zrobi\u0107: W Lua, pisanie do stderr mo\u017Cna osi\u0105gn\u0105\
+  \u0107 za pomoc\u0105 funkcji `io.stderr:write()`. Oto jak mo\u017Cna napisa\u0107\
+  \ prosty komunikat o b\u0142\u0119dzie do\u2026"
 lastmod: '2024-03-13T22:44:35.556455-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie do standardowego b\u0142\u0119du (stderr) polega na kierowaniu komunikat\xF3\
-  w o b\u0142\u0119dach oraz wyj\u015B\u0107 diagnostycznych do osobnego kana\u0142\
-  u, r\xF3\u017Cnego od standardowego wyj\u015Bcia (stdout)."
+summary: "W Lua, pisanie do stderr mo\u017Cna osi\u0105gn\u0105\u0107 za pomoc\u0105\
+  \ funkcji `io.stderr:write()`."
 title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---

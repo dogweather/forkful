@@ -2,16 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:27.453997-07:00
-description: "L'analyse (parsing) d'une date \xE0 partir d'une cha\xEEne de caract\xE8\
-  res dans Arduino consiste \xE0 extraire et \xE0 convertir les composants de la date\
-  \ (ann\xE9e, mois,\u2026"
+description: "Comment faire : Approche directe sans biblioth\xE8que tierce ."
 lastmod: '2024-03-13T22:44:58.123144-06:00'
 model: gpt-4-0125-preview
-summary: "L'analyse (parsing) d'une date \xE0 partir d'une cha\xEEne de caract\xE8\
-  res dans Arduino consiste \xE0 extraire et \xE0 convertir les composants de la date\
-  \ (ann\xE9e, mois, jour) d'une repr\xE9sentation textuelle en un format qui peut\
-  \ \xEAtre utilis\xE9 pour la tenue du temps, les comparaisons ou les manipulations\
-  \ dans les sketches."
+summary: "Approche directe sans biblioth\xE8que tierce."
 title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
 weight: 30
 ---

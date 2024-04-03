@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 18:03:49.861096-07:00
-description: "Avviare un nuovo progetto Kotlin significa preparare l'ambiente per\
-  \ scrivere codice. Lo facciamo perch\xE9 abbiamo un'idea da trasformare in un'app\u2026"
+description: "How to - Come Fare: Inizia installando l'IDE IntelliJ IDEA, che ha un\
+  \ supporto eccellente per Kotlin. Apri IntelliJ, scegli \"Create New Project\",\
+  \ poi\u2026"
 lastmod: '2024-03-13T22:44:43.391815-06:00'
 model: gpt-4-1106-preview
-summary: Avviare un nuovo progetto Kotlin significa preparare l'ambiente per scrivere
-  codice.
+summary: Inizia installando l'IDE IntelliJ IDEA, che ha un supporto eccellente per
+  Kotlin.
 title: Avvio di un nuovo progetto
 weight: 1
 ---

@@ -1,10 +1,11 @@
 ---
 date: 2024-01-20 17:50:35.921519-07:00
-description: "Interpolating a string means blending variables or expressions within\
-  \ a string. It saves time and enhances readability by allowing dynamic content without\u2026"
+description: 'How to: In Fish, you use double quotes and place the variable or command
+  you want to interpolate with a dollar sign `$` straight in the string.'
 lastmod: '2024-03-13T22:45:00.459541-06:00'
 model: gpt-4-1106-preview
-summary: Interpolating a string means blending variables or expressions within a string.
+summary: In Fish, you use double quotes and place the variable or command you want
+  to interpolate with a dollar sign `$` straight in the string.
 title: Interpolating a string
 weight: 8
 ---

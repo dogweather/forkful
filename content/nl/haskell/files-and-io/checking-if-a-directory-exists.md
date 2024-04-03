@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:07.358924-07:00
-description: "Controleren of een directory bestaat betekent bevestigen of een map\
-  \ daadwerkelijk is waar je denkt dat deze is in het bestandssysteem. Programmeurs\
-  \ doen\u2026"
+description: "Hoe te: Haskell gebruikt het `directory`-pakket voor interacties met\
+  \ het bestandssysteem. Installeer het met het commando `cabal install directory`\
+  \ als je\u2026"
 lastmod: '2024-03-13T22:44:50.866948-06:00'
 model: gpt-4-0125-preview
-summary: Controleren of een directory bestaat betekent bevestigen of een map daadwerkelijk
-  is waar je denkt dat deze is in het bestandssysteem.
+summary: Haskell gebruikt het `directory`-pakket voor interacties met het bestandssysteem.
 title: Controleren of een directory bestaat
 weight: 20
 ---

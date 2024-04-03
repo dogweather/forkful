@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 00:51:04.460534-07:00
-description: "Fehler zu behandeln bedeutet, Code zu schreiben, der damit umgehen kann,\
-  \ wenn etwas schiefgeht. Programmierer tun das, um Abst\xFCrze zu verhindern und\
-  \ um\u2026"
+description: "Wie geht das: In Elixir verwenden wir oft Pattern Matching und die `case`-Anweisung,\
+  \ um verschiedene Ergebnisse zu behandeln, einschlie\xDFlich Fehler."
 lastmod: '2024-03-13T22:44:53.541537-06:00'
 model: gpt-4-1106-preview
-summary: Fehler zu behandeln bedeutet, Code zu schreiben, der damit umgehen kann,
-  wenn etwas schiefgeht.
+summary: "In Elixir verwenden wir oft Pattern Matching und die `case`-Anweisung, um\
+  \ verschiedene Ergebnisse zu behandeln, einschlie\xDFlich Fehler."
 title: Fehlerbehandlung
 weight: 16
 ---

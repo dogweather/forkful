@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:36.393245-07:00
-description: "YAML, kurz f\xFCr \"YAML Ain't Markup Language\", ist ein f\xFCr Menschen\
-  \ lesbarer Daten-Serialisierungsstandard, den Programmierer f\xFCr Konfigurationsdateien,\
-  \ das\u2026"
+description: "Wie geht das: In Java k\xF6nnen Sie mit YAML-Dateien arbeiten, indem\
+  \ Sie Drittanbieter-Bibliotheken verwenden, da die Java Standard Edition keine integrierte\u2026"
 lastmod: '2024-03-13T22:44:53.782638-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, kurz f\xFCr \"YAML Ain't Markup Language\", ist ein f\xFCr Menschen\
-  \ lesbarer Daten-Serialisierungsstandard, den Programmierer f\xFCr Konfigurationsdateien,\
-  \ das Dumpen von Daten und den Datenaustausch zwischen Sprachen verwenden."
+summary: "In Java k\xF6nnen Sie mit YAML-Dateien arbeiten, indem Sie Drittanbieter-Bibliotheken\
+  \ verwenden, da die Java Standard Edition keine integrierte Unterst\xFCtzung f\xFC\
+  r YAML bietet."
 title: Arbeiten mit YAML
 weight: 41
 ---

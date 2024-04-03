@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:52:21.095552-07:00
-description: "La stampa del debug output \xE8 mostrare i valori delle variabili o\
-  \ messaggi su console per capire meglio cosa sta facendo il codice. I programmatori\
-  \ lo\u2026"
+description: 'How to: Elm usa `Debug.log` per stampare i messaggi di debug. Ecco un
+  esempio base.'
 lastmod: '2024-03-13T22:44:43.352347-06:00'
 model: gpt-4-1106-preview
-summary: "La stampa del debug output \xE8 mostrare i valori delle variabili o messaggi\
-  \ su console per capire meglio cosa sta facendo il codice."
+summary: Elm usa `Debug.log` per stampare i messaggi di debug.
 title: Stampa dell'output di debug
 weight: 33
 ---

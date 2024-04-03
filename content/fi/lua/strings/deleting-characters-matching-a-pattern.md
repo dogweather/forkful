@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:42:45.307494-07:00
-description: "Mit\xE4 & Miksi? Lua:ssa merkkien poistaminen kuvion mukaan on tapa\
-  \ siivota merkkijonoja \u2013 otetaan pois mit\xE4 ei tarvita. Koodarit k\xE4ytt\xE4\
-  v\xE4t t\xE4t\xE4 esimerkiksi\u2026"
+description: 'How to: Miten.'
 lastmod: '2024-03-13T22:44:56.682296-06:00'
 model: gpt-4-1106-preview
-summary: "Mit\xE4 & Miksi."
+summary: Miten.
 title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---

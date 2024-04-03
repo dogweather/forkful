@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:42.698844-07:00
-description: "Schrijven naar standaardfout (stderr) is het uitvoeren van foutmeldingen\
-  \ en diagnostiek gescheiden van reguliere output. Programmeurs doen dit om\u2026"
+description: "Hoe: Elm draait op het web, en browsers maken geen onderscheid tussen\
+  \ stdout en stderr zoals command-line interfaces dat doen. Je kunt echter stderr\u2026"
 lastmod: '2024-03-13T22:44:50.741675-06:00'
 model: gpt-4-0125-preview
-summary: Schrijven naar standaardfout (stderr) is het uitvoeren van foutmeldingen
-  en diagnostiek gescheiden van reguliere output.
+summary: Elm draait op het web, en browsers maken geen onderscheid tussen stdout en
+  stderr zoals command-line interfaces dat doen.
 title: Schrijven naar standaardfout
 weight: 25
 ---

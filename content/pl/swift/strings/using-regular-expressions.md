@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:30.430938-07:00
-description: "Wyra\u017Cenia regularne, czyli regex, to sekwencje znak\xF3w, kt\xF3\
-  re tworz\u0105 wzorzec wyszukiwania, cz\u0119sto u\u017Cywane do zada\u0144 dopasowywania\
-  \ lub manipulacji ci\u0105gami\u2026"
+description: "Jak to zrobi\u0107: Natywne wsparcie Swifta dla regex wykorzystuje klas\u0119\
+  \ `NSRegularExpression`, razem z metodami zakresu i zast\u0105pienia klasy String.\
+  \ Poni\u017Cej\u2026"
 lastmod: '2024-03-13T22:44:35.744849-06:00'
 model: gpt-4-0125-preview
-summary: "Wyra\u017Cenia regularne, czyli regex, to sekwencje znak\xF3w, kt\xF3re\
-  \ tworz\u0105 wzorzec wyszukiwania, cz\u0119sto u\u017Cywane do zada\u0144 dopasowywania\
-  \ lub manipulacji ci\u0105gami znak\xF3w."
+summary: "Natywne wsparcie Swifta dla regex wykorzystuje klas\u0119 `NSRegularExpression`,\
+  \ razem z metodami zakresu i zast\u0105pienia klasy String."
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---

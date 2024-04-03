@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:36:38.613492-07:00
-description: "Muunnamme p\xE4iv\xE4m\xE4\xE4r\xE4n merkkijonoksi, koska ihmissilm\xE4\
-  lle ymm\xE4rrett\xE4v\xE4 muoto on helpompi k\xE4sitell\xE4. Ohjelmoinnissa se on\
-  \ hy\xF6dyllist\xE4 lokitusta,\u2026"
+description: "How to: (Kuinka tehd\xE4:) ."
 lastmod: '2024-03-13T22:44:56.456752-06:00'
 model: gpt-4-1106-preview
-summary: "Muunnamme p\xE4iv\xE4m\xE4\xE4r\xE4n merkkijonoksi, koska ihmissilm\xE4\
-  lle ymm\xE4rrett\xE4v\xE4 muoto on helpompi k\xE4sitell\xE4."
+summary: .
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---

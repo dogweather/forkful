@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:54.690064-07:00
-description: "JSON (JavaScript Object Notation) est un format l\xE9ger pour stocker\
-  \ et transporter des donn\xE9es, ce qui en fait un excellent moyen d'\xE9change\
-  \ de donn\xE9es\u2026"
+description: "Comment faire : En C++, il n'y a pas de support natif pour JSON, mais\
+  \ des biblioth\xE8ques tierces comme nlohmann/json rendent cela simple. Voici comment\u2026"
 lastmod: '2024-03-13T22:44:58.191200-06:00'
 model: gpt-4-0125-preview
-summary: "JSON (JavaScript Object Notation) est un format l\xE9ger pour stocker et\
-  \ transporter des donn\xE9es, ce qui en fait un excellent moyen d'\xE9change de\
-  \ donn\xE9es entre les serveurs et les applications web."
+summary: "En C++, il n'y a pas de support natif pour JSON, mais des biblioth\xE8ques\
+  \ tierces comme nlohmann/json rendent cela simple."
 title: Travailler avec JSON
 weight: 38
 ---

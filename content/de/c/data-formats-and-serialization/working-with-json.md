@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:49.247478-07:00
-description: "Die Arbeit mit JSON (JavaScript Object Notation) in C umfasst das Parsen,\
-  \ Generieren und Manipulieren von JSON-Datenstrukturen. Programmierer tun dies,\
-  \ um\u2026"
+description: "Wie: Um mit JSON in C zu arbeiten, verwenden Sie typischerweise eine\
+  \ Bibliothek wie `jansson` oder `json-c`, da C keine integrierte Unterst\xFCtzung\
+  \ f\xFCr JSON\u2026"
 lastmod: '2024-03-13T22:44:54.376538-06:00'
 model: gpt-4-0125-preview
-summary: Die Arbeit mit JSON (JavaScript Object Notation) in C umfasst das Parsen,
-  Generieren und Manipulieren von JSON-Datenstrukturen.
+summary: "Um mit JSON in C zu arbeiten, verwenden Sie typischerweise eine Bibliothek\
+  \ wie `jansson` oder `json-c`, da C keine integrierte Unterst\xFCtzung f\xFCr JSON\
+  \ bietet."
 title: Arbeiten mit JSON
 weight: 38
 ---

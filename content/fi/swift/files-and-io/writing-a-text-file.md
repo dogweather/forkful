@@ -2,15 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:36.460168-07:00
-description: "Tekstitiedoston kirjoittaminen Swift-ohjelmointikielell\xE4 mahdollistaa\
-  \ merkkijonotietojen pysyv\xE4n tallentamisen tiedostoj\xE4rjestelm\xE4\xE4n, mik\xE4\
-  \ on olennaista\u2026"
+description: 'Miten: #.'
 lastmod: '2024-03-13T22:44:56.924810-06:00'
 model: gpt-4-0125-preview
-summary: "Tekstitiedoston kirjoittaminen Swift-ohjelmointikielell\xE4 mahdollistaa\
-  \ merkkijonotietojen pysyv\xE4n tallentamisen tiedostoj\xE4rjestelm\xE4\xE4n, mik\xE4\
-  \ on olennaista teht\xE4viss\xE4, kuten asetusten tallennuksessa, k\xE4ytt\xE4j\xE4\
-  tietojen tallentamisessa tai lokien tallennuksessa."
+summary: '#.'
 title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---

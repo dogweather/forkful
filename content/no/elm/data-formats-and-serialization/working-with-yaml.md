@@ -1,10 +1,11 @@
 ---
 date: 2024-01-19
-description: "YAML er et dataformat for \xE5 skrive konfigurasjoner lett leslig for\
-  \ mennesker. Programmerere bruker det for \xE5 h\xE5ndtere konfigurasjoner og datautveksling."
+description: "How to: Elm har ingen innebygd st\xF8tte for YAML. Men du kan bruke\
+  \ JavaScript-biblioteker med `ports` for parsing. Her er et eksempel som bruker\
+  \ `js-yaml`."
 lastmod: '2024-03-13T22:44:40.728621-06:00'
 model: unknown
-summary: "YAML er et dataformat for \xE5 skrive konfigurasjoner lett leslig for mennesker."
+summary: "Elm har ingen innebygd st\xF8tte for YAML."
 title: Arbeid med YAML
 weight: 41
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:31.379839-07:00
-description: "Att arbeta med CSV (Comma-Separated Values)-filer inneb\xE4r att l\xE4\
-  sa fr\xE5n och skriva data till dessa filer, vilket \xE4r ett vanligt behov f\xF6\
-  r uppgifter som\u2026"
+description: "Hur man g\xF6r: Elixir, med sin kraftfulla m\xF6nstermatchning och st\xF6\
+  d f\xF6r pipelining, kan hantera CSV-filer effektivt, \xE4ven utan tredjepartsbibliotek.\
+  \ Dock,\u2026"
 lastmod: '2024-03-13T22:44:37.589978-06:00'
 model: gpt-4-0125-preview
-summary: "Att arbeta med CSV (Comma-Separated Values)-filer inneb\xE4r att l\xE4sa\
-  \ fr\xE5n och skriva data till dessa filer, vilket \xE4r ett vanligt behov f\xF6\
-  r uppgifter som kr\xE4ver dataimport/export eller enkla lagringsl\xF6sningar."
+summary: "Elixir, med sin kraftfulla m\xF6nstermatchning och st\xF6d f\xF6r pipelining,\
+  \ kan hantera CSV-filer effektivt, \xE4ven utan tredjepartsbibliotek."
 title: Arbeta med CSV
 weight: 37
 ---

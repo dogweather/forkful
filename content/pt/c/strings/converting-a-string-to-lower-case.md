@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:33.361642-07:00
-description: "Converter uma string para min\xFAsculas em C envolve transformar todas\
-  \ as letras mai\xFAsculas de uma string dada em suas correspondentes min\xFAsculas.\u2026"
+description: "Como fazer: C n\xE3o possui uma fun\xE7\xE3o embutida para convers\xE3\
+  o de string para min\xFAsculas diretamente, ao contr\xE1rio de algumas linguagens\
+  \ de alto n\xEDvel. No\u2026"
 lastmod: '2024-03-13T22:44:47.035387-06:00'
 model: gpt-4-0125-preview
-summary: "Converter uma string para min\xFAsculas em C envolve transformar todas as\
-  \ letras mai\xFAsculas de uma string dada em suas correspondentes min\xFAsculas."
+summary: "C n\xE3o possui uma fun\xE7\xE3o embutida para convers\xE3o de string para\
+  \ min\xFAsculas diretamente, ao contr\xE1rio de algumas linguagens de alto n\xED\
+  vel."
 title: "Convertendo uma string para letras min\xFAsculas"
 weight: 4
 ---

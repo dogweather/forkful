@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:50:34.812343-07:00
-description: "Interpolar uma string significa enfiar valores de vari\xE1veis dentro\
-  \ de uma string, criando assim uma nova string 'personalizada'. Programadores fazem\
-  \ isso\u2026"
+description: "Como Fazer: Vamos l\xE1, em Elm n\xE3o temos a tradicional interpola\xE7\
+  \xE3o presente em outras linguagens. Em vez disso, usamos o bom e velho `++` para\
+  \ juntar\u2026"
 lastmod: '2024-03-13T22:44:46.485684-06:00'
 model: gpt-4-1106-preview
-summary: "Interpolar uma string significa enfiar valores de vari\xE1veis dentro de\
-  \ uma string, criando assim uma nova string 'personalizada'."
+summary: "Vamos l\xE1, em Elm n\xE3o temos a tradicional interpola\xE7\xE3o presente\
+  \ em outras linguagens."
 title: Interpolando uma string
 weight: 8
 ---

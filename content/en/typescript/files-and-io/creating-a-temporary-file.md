@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:41:27.110215-07:00
-description: "Creating a temporary file means making a file that's only needed for\
-  \ a short while, usually during a program's execution. Programmers do it for tasks\
-  \ like\u2026"
+description: "How to: Creating a temporary file in TypeScript isn't baked in, but\
+  \ you can use the `fs` module in Node.js to do the job. Here's a simple way to create\u2026"
 lastmod: '2024-03-13T22:44:59.875862-06:00'
 model: gpt-4-1106-preview
-summary: Creating a temporary file means making a file that's only needed for a short
-  while, usually during a program's execution.
+summary: Creating a temporary file in TypeScript isn't baked in, but you can use the
+  `fs` module in Node.js to do the job.
 title: Creating a temporary file
 weight: 21
 ---

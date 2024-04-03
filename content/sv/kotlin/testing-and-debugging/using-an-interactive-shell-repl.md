@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:15:46.863850-07:00
-description: "En REPL (Read-Eval-Print Loop) \xE4r en enkel, interaktiv programmeringsmilj\xF6\
-  . Programmerare anv\xE4nder den f\xF6r snabba kodf\xF6rs\xF6k, testa kodsnuttar,\
-  \ eller att\u2026"
+description: "Hur man g\xF6r: Att starta Kotlin's REPL \xE4r enkelt. \xD6ppna din\
+  \ terminal och skriv `kotlinc`. Du landar d\xE5 i Kotlin-skalen. L\xE5t oss f\xF6\
+  rs\xF6ka definiera en\u2026"
 lastmod: '2024-03-13T22:44:37.872765-06:00'
 model: gpt-4-0125-preview
-summary: "En REPL (Read-Eval-Print Loop) \xE4r en enkel, interaktiv programmeringsmilj\xF6\
-  ."
+summary: "Att starta Kotlin's REPL \xE4r enkelt."
 title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---

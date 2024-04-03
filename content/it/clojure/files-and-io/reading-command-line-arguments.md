@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:55:46.982449-07:00
-description: "Leggere gli argomenti della riga di comando permette di passare informazioni\
-  \ a un programma all'avvio. I programmatori lo fanno per rendere i loro script\u2026"
+description: 'How to: Clojure fornisce un modo semplice per accedere agli argomenti
+  della riga di comando tramite la var `*command-line-args*`. Ecco un esempio.'
 lastmod: '2024-03-13T22:44:43.057706-06:00'
 model: gpt-4-1106-preview
-summary: Leggere gli argomenti della riga di comando permette di passare informazioni
-  a un programma all'avvio.
+summary: Clojure fornisce un modo semplice per accedere agli argomenti della riga
+  di comando tramite la var `*command-line-args*`.
 title: Lettura degli argomenti della riga di comando
 weight: 23
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:26:47.984840-07:00
-description: "TOML (Tom's Obvious, Minimal Language) to format serializacji danych,\
-  \ kt\xF3ry jest \u0142atwy do odczytania dzi\u0119ki swoim jasnym semantykom. Programi\u015B\
-  ci u\u017Cywaj\u0105\u2026"
+description: "Jak to zrobi\u0107: Na pocz\u0105tek potrzebujesz parsera TOML. Swift\
+  \ nie ma wbudowanego, wi\u0119c u\u017Cyjmy `TOMLDecoder`. Zainstaluj go przez Swift\
+  \ Package Manager, a\u2026"
 lastmod: '2024-03-13T22:44:35.777957-06:00'
 model: gpt-4-0125-preview
-summary: "TOML (Tom's Obvious, Minimal Language) to format serializacji danych, kt\xF3\
-  ry jest \u0142atwy do odczytania dzi\u0119ki swoim jasnym semantykom."
+summary: "Na pocz\u0105tek potrzebujesz parsera TOML."
 title: Praca z TOML
 weight: 39
 ---

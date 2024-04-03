@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-30, dogweather, reviewed and added links
 date: 2024-01-25 03:39:46.253437-07:00
-description: "REPL stands for Read-Eval-Print Loop, an interactive environment where\
-  \ you quickly test code. Programmers use it for experimenting, debugging, and\u2026"
+description: 'How to: To hop into Lua''s REPL, just enter `lua` in your terminal.
+  Here''s an example session.'
 lastmod: '2024-03-13T22:45:00.207069-06:00'
 model: gpt-4-1106-preview
-summary: REPL stands for Read-Eval-Print Loop, an interactive environment where you
-  quickly test code.
+summary: To hop into Lua's REPL, just enter `lua` in your terminal.
 title: Using an interactive shell (REPL)
 weight: 34
 ---

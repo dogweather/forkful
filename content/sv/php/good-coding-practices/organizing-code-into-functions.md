@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 01:11:40.201558-07:00
-description: "Att organisera kod i funktioner handlar om att dela upp din kod i \xE5\
-  teranv\xE4ndbara block med definierade syften. Vi g\xF6r det f\xF6r att h\xE5lla\
-  \ saker och ting\u2026"
+description: "Hur man g\xF6r: F\xF6rest\xE4ll dig att vi har upprepande kod f\xF6\
+  r att h\xE4lsa p\xE5 anv\xE4ndare. Ist\xE4llet kommer vi att kapsla in den i en\
+  \ funktion som `greet_user`."
 lastmod: '2024-03-13T22:44:38.001904-06:00'
 model: gpt-4-1106-preview
-summary: "Att organisera kod i funktioner handlar om att dela upp din kod i \xE5teranv\xE4\
-  ndbara block med definierade syften."
+summary: "F\xF6rest\xE4ll dig att vi har upprepande kod f\xF6r att h\xE4lsa p\xE5\
+  \ anv\xE4ndare."
 title: Att organisera kod i funktioner
 weight: 18
 ---

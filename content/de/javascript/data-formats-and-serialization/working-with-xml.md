@@ -1,11 +1,9 @@
 ---
 date: 2024-01-26 04:32:30.144854-07:00
-description: "Mit XML zu arbeiten bedeutet, XML-Inhalte mit Code zu parsen, zu manipulieren\
-  \ und zu erzeugen. Programmierer tun dies, weil XML aufgrund seiner\u2026"
+description: 'Wie geht das: So parsen Sie XML.'
 lastmod: '2024-03-13T22:44:54.290618-06:00'
 model: gpt-4-0125-preview
-summary: Mit XML zu arbeiten bedeutet, XML-Inhalte mit Code zu parsen, zu manipulieren
-  und zu erzeugen.
+summary: So parsen Sie XML.
 title: Arbeiten mit XML
 weight: 40
 ---

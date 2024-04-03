@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:53:04.363386-07:00
-description: "Stampare output di debug significa mostrare in tempo reale ci\xF2 che\
-  \ sta succedendo nel tuo codice. I programmatori lo fanno per capire meglio gli\
-  \ errori,\u2026"
+description: 'Come fare: .'
 lastmod: '2024-03-13T22:44:43.560174-06:00'
 model: gpt-4-1106-preview
-summary: "Stampare output di debug significa mostrare in tempo reale ci\xF2 che sta\
-  \ succedendo nel tuo codice."
+summary: .
 title: Stampa dell'output di debug
 weight: 33
 ---

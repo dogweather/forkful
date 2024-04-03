@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 00:57:58.471263-07:00
-description: "Gestire gli errori in Swift significa anticipare e rispondere ai problemi\
-  \ che emergono quando il codice \xE8 in esecuzione. Lo facciamo per controllare\
-  \ il\u2026"
+description: 'Come fare: Swift utilizza la gestione degli errori con i blocchi `do`,
+  `try` e `catch`. Diamo un''occhiata.'
 lastmod: '2024-03-13T22:44:43.777402-06:00'
 model: gpt-4-1106-preview
-summary: "Gestire gli errori in Swift significa anticipare e rispondere ai problemi\
-  \ che emergono quando il codice \xE8 in esecuzione."
+summary: Swift utilizza la gestione degli errori con i blocchi `do`, `try` e `catch`.
 title: Gestione degli errori
 weight: 16
 ---

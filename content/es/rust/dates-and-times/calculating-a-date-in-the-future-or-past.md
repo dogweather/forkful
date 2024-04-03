@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:32:11.621731-07:00
-description: "Calcular una fecha en el futuro o pasado significa encontrar una fecha\
-  \ espec\xEDfica antes o despu\xE9s de otra conocida. Los programadores lo hacen\
-  \ para\u2026"
+description: "C\xF3mo Hacerlo: Para calcular fechas en Rust, puedes usar la crate\
+  \ `chrono`. Primero, agregamos `chrono` a nuestro `Cargo.toml`."
 lastmod: '2024-03-13T22:44:58.859870-06:00'
 model: gpt-4-1106-preview
-summary: "Calcular una fecha en el futuro o pasado significa encontrar una fecha espec\xED\
-  fica antes o despu\xE9s de otra conocida."
+summary: Para calcular fechas en Rust, puedes usar la crate `chrono`.
 title: Calcular una fecha en el futuro o pasado
 weight: 26
 ---

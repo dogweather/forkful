@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:00.955395-07:00
-description: "Att tolka ett datum fr\xE5n en str\xE4ng i C# inneb\xE4r att omvandla\
-  \ textuella representationer av datum och tider till ett `DateTime`-objekt. Detta\
-  \ \xE4r avg\xF6rande\u2026"
+description: "Hur man g\xF6r: **Grundl\xE4ggande tolkning:** Metoderna `DateTime.Parse`\
+  \ och `DateTime.TryParse` \xE4r de fr\xE4msta alternativen f\xF6r att omvandla en\
+  \ str\xE4ng till ett\u2026"
 lastmod: '2024-03-13T22:44:37.922668-06:00'
 model: gpt-4-0125-preview
-summary: "Att tolka ett datum fr\xE5n en str\xE4ng i C# inneb\xE4r att omvandla textuella\
-  \ representationer av datum och tider till ett `DateTime`-objekt."
+summary: "**Grundl\xE4ggande tolkning:**\n\nMetoderna `DateTime.Parse` och `DateTime.TryParse`\
+  \ \xE4r de fr\xE4msta alternativen f\xF6r att omvandla en str\xE4ng till ett `DateTime`."
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---

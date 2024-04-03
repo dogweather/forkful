@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:57.236021-07:00
-description: "Wysy\u0142anie zapytania HTTP w Visual Basic for Applications (VBA)\
-  \ polega na programistycznym dost\u0119pie do zasob\xF3w sieciowych lub us\u0142\
-  ug sieciowych poprzez\u2026"
+description: "Jak to zrobi\u0107: Kluczem do wysy\u0142ania zapytania HTTP w VBA jest\
+  \ wykorzystanie biblioteki `Microsoft XML, w wersji 6.0` (lub starszych wersji,\
+  \ w zale\u017Cno\u015Bci\u2026"
 lastmod: '2024-03-13T22:44:35.228204-06:00'
 model: gpt-4-0125-preview
-summary: "Wysy\u0142anie zapytania HTTP w Visual Basic for Applications (VBA) polega\
-  \ na programistycznym dost\u0119pie do zasob\xF3w sieciowych lub us\u0142ug sieciowych\
-  \ poprzez wysy\u0142anie zapyta\u0144 za pomoc\u0105 HTTP."
+summary: "Kluczem do wysy\u0142ania zapytania HTTP w VBA jest wykorzystanie biblioteki\
+  \ `Microsoft XML, w wersji 6.0` (lub starszych wersji, w zale\u017Cno\u015Bci od\
+  \ systemu)."
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---

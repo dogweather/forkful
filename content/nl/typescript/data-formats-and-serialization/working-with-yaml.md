@@ -2,11 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:49.071826-07:00
-description: "YAML is een gebruikersvriendelijke data-serialisatiestandaard. Programmeurs\
-  \ gebruiken het voor configuratiebestanden, gegevensuitwisseling tussen talen en\u2026"
+description: 'Hoe: Om met YAML in TypeScript te werken, heb je een bibliotheek zoals
+  `js-yaml` nodig. Installeer het eerst.'
 lastmod: '2024-03-13T22:44:50.571981-06:00'
 model: gpt-4-0125-preview
-summary: YAML is een gebruikersvriendelijke data-serialisatiestandaard.
+summary: Om met YAML in TypeScript te werken, heb je een bibliotheek zoals `js-yaml`
+  nodig.
 title: Werken met YAML
 weight: 41
 ---

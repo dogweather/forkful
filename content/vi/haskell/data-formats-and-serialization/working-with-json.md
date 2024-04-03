@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:58.293213-07:00
-description: "JSON (JavaScript Object Notation) l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1\
-  ng d\u1EEF li\u1EC7u d\u1EF1a tr\xEAn v\u0103n b\u1EA3n \u0111\u1EC3 l\u01B0u tr\u1EEF\
-  \ v\xE0 truy\u1EC1n t\u1EA3i d\u1EEF li\u1EC7u. L\u1EADp tr\xECnh vi\xEAn s\u1EED\
-  \ d\u1EE5ng n\xF3 v\xEC n\xF3 nh\u1EB9, d\u1EC5\u2026"
+description: "L\xE0m Th\u1EBF N\xE0o: Trong Haskell, ch\xFAng ta x\u1EED l\xFD JSON\
+  \ s\u1EED d\u1EE5ng th\u01B0 vi\u1EC7n `aeson`. \u0110\u1EC3 b\u1EAFt \u0111\u1EA7\
+  u, b\u1EA1n nh\u1EADp kh\u1EA9u n\xF3 v\xE0 \u0111\u1ECBnh ngh\u0129a m\u1ED9t ki\u1EC3\
+  u d\u1EEF li\u1EC7u t\u01B0\u01A1ng \u1EE9ng v\u1EDBi c\u1EA5u\u2026"
 lastmod: '2024-03-13T22:44:36.739956-06:00'
 model: gpt-4-0125-preview
-summary: "JSON (JavaScript Object Notation) l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1\
-  ng d\u1EEF li\u1EC7u d\u1EF1a tr\xEAn v\u0103n b\u1EA3n \u0111\u1EC3 l\u01B0u tr\u1EEF\
-  \ v\xE0 truy\u1EC1n t\u1EA3i d\u1EEF li\u1EC7u."
+summary: "Trong Haskell, ch\xFAng ta x\u1EED l\xFD JSON s\u1EED d\u1EE5ng th\u01B0\
+  \ vi\u1EC7n `aeson`."
 title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
 weight: 38
 ---

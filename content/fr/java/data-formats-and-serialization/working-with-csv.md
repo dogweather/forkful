@@ -2,15 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:20.716569-07:00
-description: "Travailler avec des fichiers CSV implique la lecture et l'\xE9criture\
-  \ de donn\xE9es dans des fichiers aux valeurs s\xE9par\xE9es par des virgules (CSV),\
-  \ un format\u2026"
+description: 'Comment faire : #.'
 lastmod: '2024-03-13T22:44:57.667805-06:00'
 model: gpt-4-0125-preview
-summary: "Travailler avec des fichiers CSV implique la lecture et l'\xE9criture de\
-  \ donn\xE9es dans des fichiers aux valeurs s\xE9par\xE9es par des virgules (CSV),\
-  \ un format populaire pour l'\xE9change de donn\xE9es car il est simple et largement\
-  \ pris en charge."
+summary: '#.'
 title: Travailler avec CSV
 weight: 37
 ---

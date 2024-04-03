@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 18:01:55.842721-07:00
-description: "L'autenticazione di base HTTP \xE8 un metodo per inviare le credenziali\
-  \ (username e password) in un'intestazione HTTP. I programmatori la utilizzano per\u2026"
+description: "How to: Per eseguire una richiesta HTTP con autenticazione di base in\
+  \ Haskell, utilizziamo la libreria `http-conduit`. Installala con `cabal install\
+  \ http-\u2026"
 lastmod: '2024-03-13T22:44:43.474785-06:00'
 model: gpt-4-1106-preview
-summary: "L'autenticazione di base HTTP \xE8 un metodo per inviare le credenziali\
-  \ (username e password) in un'intestazione HTTP."
+summary: Per eseguire una richiesta HTTP con autenticazione di base in Haskell, utilizziamo
+  la libreria `http-conduit`.
 title: Inviare una richiesta http con autenticazione di base
 weight: 45
 ---

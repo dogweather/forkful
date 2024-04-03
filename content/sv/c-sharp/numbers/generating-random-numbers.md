@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 20:33:08.568637-07:00
-description: "Att generera slumptal i C# inneb\xE4r skapandet av of\xF6ruts\xE4gbara\
-  \ numeriska v\xE4rden inom ett angivet intervall. Programmerare anv\xE4nder dessa\
-  \ metoder f\xF6r att\u2026"
+description: "Hur man g\xF6r: Det vanligaste s\xE4ttet att generera slumptal i C#\
+  \ \xE4r att anv\xE4nda klassen `System.Random`. H\xE4r \xE4r ett enkelt exempel\
+  \ som demonstrerar dess\u2026"
 lastmod: '2024-03-13T22:44:37.909002-06:00'
 model: gpt-4-0125-preview
-summary: "Att generera slumptal i C# inneb\xE4r skapandet av of\xF6ruts\xE4gbara numeriska\
-  \ v\xE4rden inom ett angivet intervall."
+summary: "Det vanligaste s\xE4ttet att generera slumptal i C# \xE4r att anv\xE4nda\
+  \ klassen `System.Random`."
 title: Generera slumptal
 weight: 12
 ---

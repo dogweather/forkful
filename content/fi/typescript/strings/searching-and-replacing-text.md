@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:58:57.089494-07:00
-description: "Tekstin hakeminen ja korvaaminen tarkoittaa merkkijonojen etsimist\xE4\
-  \ ja niiden muuttamista toisiksi merkkijonoiksi. Ohjelmoijat k\xE4ytt\xE4v\xE4t\
-  \ sit\xE4 datan\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:56.301058-06:00'
 model: gpt-4-1106-preview
-summary: "Tekstin hakeminen ja korvaaminen tarkoittaa merkkijonojen etsimist\xE4 ja\
-  \ niiden muuttamista toisiksi merkkijonoiksi."
+summary: .
 title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---

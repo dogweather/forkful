@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:52.926442-07:00
-description: "Escribir en un archivo de texto en Haskell se trata de crear o actualizar\
-  \ archivos con contenido textual de manera program\xE1tica. Los programadores hacen\u2026"
+description: "C\xF3mo hacerlo: El Prelude est\xE1ndar de Haskell proporciona soporte\
+  \ elemental para escribir en archivos usando las funciones `writeFile` y `appendFile`\
+  \ del\u2026"
 lastmod: '2024-03-13T22:44:59.136809-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir en un archivo de texto en Haskell se trata de crear o actualizar\
-  \ archivos con contenido textual de manera program\xE1tica."
+summary: "El Prelude est\xE1ndar de Haskell proporciona soporte elemental para escribir\
+  \ en archivos usando las funciones `writeFile` y `appendFile` del m\xF3dulo `System.IO`."
 title: Escribiendo un archivo de texto
 weight: 24
 ---

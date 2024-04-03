@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:12.801023-07:00
-description: "\xC5 analysere HTML i Visual Basic for Applications (VBA) inneb\xE6\
-  rer \xE5 trekke ut spesifikk informasjon fra et HTML-dokument. Programmerere gj\xF8\
-  r dette for \xE5\u2026"
+description: "Hvordan: I VBA kan du analysere HTML ved \xE5 bruke `Microsoft HTML\
+  \ Object Library`. Legg til en referanse til dette biblioteket i VBA-editoren din\
+  \ ved \xE5 g\xE5\u2026"
 lastmod: '2024-03-13T22:44:40.617062-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 analysere HTML i Visual Basic for Applications (VBA) inneb\xE6rer \xE5\
-  \ trekke ut spesifikk informasjon fra et HTML-dokument."
+summary: "I VBA kan du analysere HTML ved \xE5 bruke `Microsoft HTML Object Library`."
 title: Analysering av HTML
 weight: 43
 ---

@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:35.073632-07:00
-description: "Capitalisatie betekent het veranderen van de eerste letter van woorden\
-  \ naar hoofdletters; in strings gaat het vaak om het opmaken of gebruiksvriendelijk\u2026"
+description: 'Hoe te: Swift maakt het capitaliseren van strings eenvoudig. Hier is
+  een snelle rondleiding.'
 lastmod: '2024-03-13T22:44:51.138903-06:00'
 model: gpt-4-0125-preview
-summary: Capitalisatie betekent het veranderen van de eerste letter van woorden naar
-  hoofdletters; in strings gaat het vaak om het opmaken of gebruiksvriendelijk maken
-  van tekst.
+summary: Swift maakt het capitaliseren van strings eenvoudig.
 title: Een string met hoofdletters maken
 weight: 2
 ---

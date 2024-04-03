@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:24.396673-07:00
-description: "Zaokr\u0105glanie liczb w programowaniu polega na przybli\u017Ceniu\
-  \ liczby do najbli\u017Cszej liczby ca\u0142kowitej lub do okre\u015Blonej liczby\
-  \ miejsc dziesi\u0119tnych.\u2026"
+description: "Jak to zrobi\u0107: W Visual Basic for Applications (VBA) zaokr\u0105\
+  glenie mo\u017Cna osi\u0105gn\u0105\u0107 za pomoc\u0105 kilku funkcji, z kt\xF3\
+  rych ka\u017Cda jest odpowiednia do konkretnych\u2026"
 lastmod: '2024-03-13T22:44:35.225897-06:00'
 model: gpt-4-0125-preview
-summary: "Zaokr\u0105glanie liczb w programowaniu polega na przybli\u017Ceniu liczby\
-  \ do najbli\u017Cszej liczby ca\u0142kowitej lub do okre\u015Blonej liczby miejsc\
-  \ dziesi\u0119tnych."
+summary: "W Visual Basic for Applications (VBA) zaokr\u0105glenie mo\u017Cna osi\u0105\
+  gn\u0105\u0107 za pomoc\u0105 kilku funkcji, z kt\xF3rych ka\u017Cda jest odpowiednia\
+  \ do konkretnych scenariuszy."
 title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---

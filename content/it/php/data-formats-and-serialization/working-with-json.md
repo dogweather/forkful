@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:36.914908-07:00
-description: "JSON, acronimo di JavaScript Object Notation, \xE8 un formato di scambio\
-  \ dati leggero facile da leggere e scrivere per gli esseri umani e da analizzare\
-  \ e\u2026"
+description: "Come fare: Lavorare con JSON in PHP \xE8 semplice grazie alle funzioni\
+  \ incorporate `json_encode()` e `json_decode()`. Di seguito sono riportati esempi\
+  \ che\u2026"
 lastmod: '2024-03-13T22:44:43.538130-06:00'
 model: gpt-4-0125-preview
-summary: "JSON, acronimo di JavaScript Object Notation, \xE8 un formato di scambio\
-  \ dati leggero facile da leggere e scrivere per gli esseri umani e da analizzare\
-  \ e generare per le macchine."
+summary: "Lavorare con JSON in PHP \xE8 semplice grazie alle funzioni incorporate\
+  \ `json_encode()` e `json_decode()`."
 title: Lavorare con JSON
 weight: 38
 ---

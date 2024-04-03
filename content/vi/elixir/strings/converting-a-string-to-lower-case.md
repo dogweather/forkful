@@ -2,16 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:01.096200-07:00
-description: "Chuy\u1EC3n m\u1ED9t chu\u1ED7i v\u0103n b\u1EA3n th\xE0nh ch\u1EEF\
-  \ th\u01B0\u1EDDng l\xE0 vi\u1EC7c thay \u0111\u1ED5i t\u1EA5t c\u1EA3 c\xE1c ch\u1EEF\
-  \ c\xE1i trong chu\u1ED7i v\u1EC1 d\u1EA1ng ch\u1EEF th\u01B0\u1EDDng. L\u1EADp\
-  \ tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 \u0111\
-  \u1EA3m b\u1EA3o\u2026"
+description: "L\xE0m Th\u1EBF N\xE0o: Elixir l\xE0m \u0111i\u1EC1u n\xE0y r\u1EA5\
+  t d\u1EC5 d\xE0ng. S\u1EED d\u1EE5ng h\xE0m `String.downcase/1`."
 lastmod: '2024-03-13T22:44:36.191334-06:00'
 model: gpt-4-0125-preview
-summary: "Chuy\u1EC3n m\u1ED9t chu\u1ED7i v\u0103n b\u1EA3n th\xE0nh ch\u1EEF th\u01B0\
-  \u1EDDng l\xE0 vi\u1EC7c thay \u0111\u1ED5i t\u1EA5t c\u1EA3 c\xE1c ch\u1EEF c\xE1\
-  i trong chu\u1ED7i v\u1EC1 d\u1EA1ng ch\u1EEF th\u01B0\u1EDDng."
+summary: "Elixir l\xE0m \u0111i\u1EC1u n\xE0y r\u1EA5t d\u1EC5 d\xE0ng."
 title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
 weight: 4
 ---

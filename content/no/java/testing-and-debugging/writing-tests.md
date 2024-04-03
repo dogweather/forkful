@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:06.303098-07:00
-description: "\xC5 skrive tester i Java handler om \xE5 verifisere at koden din oppf\xF8\
-  rer seg som forventet under forskjellige forhold. Programmerere skriver tester for\
-  \ \xE5\u2026"
+description: "Hvordan: Java-utviklere bruker prim\xE6rt to rammeverk for testing:\
+  \ JUnit og TestNG. Her vil vi fokusere p\xE5 JUnit, det mer popul\xE6re valget for\
+  \ \xE5 skrive\u2026"
 lastmod: '2024-03-13T22:44:40.670214-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive tester i Java handler om \xE5 verifisere at koden din oppf\xF8\
-  rer seg som forventet under forskjellige forhold."
+summary: "Java-utviklere bruker prim\xE6rt to rammeverk for testing."
 title: Skrive tester
 weight: 36
 ---

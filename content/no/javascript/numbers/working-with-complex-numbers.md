@@ -1,10 +1,12 @@
 ---
 date: 2024-01-26 04:42:54.264007-07:00
-description: "Komplekse tall er tall med en reel og en imagin\xE6r del (som 3 + 4i).\
-  \ De dukker opp i ulike programmeringsproblemer, spesielt i signalbehandling,\u2026"
+description: "Hvordan: JavaScript har ikke innebygd st\xF8tte for komplekse tall,\
+  \ men du kan ta saken i egne hender og h\xE5ndtere det med objekter og matte. Her\
+  \ er en kjapp\u2026"
 lastmod: '2024-03-13T22:44:41.178074-06:00'
 model: gpt-4-0125-preview
-summary: "Komplekse tall er tall med en reel og en imagin\xE6r del (som 3 + 4i)."
+summary: "JavaScript har ikke innebygd st\xF8tte for komplekse tall, men du kan ta\
+  \ saken i egne hender og h\xE5ndtere det med objekter og matte."
 title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---

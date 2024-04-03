@@ -2,13 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:48.094529-07:00
-description: "Att skicka en HTTP-f\xF6rfr\xE5gan i Dart \xE4r processen att initiera\
-  \ kommunikation med en webbserver eller API fr\xE5n en Dart-applikation. Programmerare\
-  \ g\xF6r detta\u2026"
+description: "Hur man g\xF6r: Dart inkluderar `http`-paketet, ett kraftfullt och bekv\xE4\
+  mt s\xE4tt att arbeta med HTTP-resurser. F\xF6rst inkluderar du det i din pubspec.yaml-fil."
 lastmod: '2024-03-13T22:44:37.608481-06:00'
 model: gpt-4-0125-preview
-summary: "Att skicka en HTTP-f\xF6rfr\xE5gan i Dart \xE4r processen att initiera kommunikation\
-  \ med en webbserver eller API fr\xE5n en Dart-applikation."
+summary: "Dart inkluderar `http`-paketet, ett kraftfullt och bekv\xE4mt s\xE4tt att\
+  \ arbeta med HTTP-resurser."
 title: "Skicka en HTTP-beg\xE4ran"
 weight: 44
 ---

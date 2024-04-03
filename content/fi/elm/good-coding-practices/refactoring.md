@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 01:18:42.817301-07:00
-description: "Refaktorointi on k\xE4yt\xE4nn\xF6ss\xE4 koodikannan kev\xE4tsiivous\
-  \ \u2013 siin\xE4 uudelleenj\xE4rjestet\xE4\xE4n olemassa olevaa koodia muuttamatta\
-  \ sen ulkoista toimintaa. Ohjelmoijat\u2026"
+description: "Kuinka: Kuvittele, ett\xE4 sinulla on Elm-funktio, joka tekee liikaa,\
+  \ kuten sekoittaa k\xE4ytt\xF6liittym\xE4logiikkaa tilan p\xE4ivityksiin. Se on\
+  \ t\xE4ydellinen\u2026"
 lastmod: '2024-03-13T22:44:56.497022-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktorointi on k\xE4yt\xE4nn\xF6ss\xE4 koodikannan kev\xE4tsiivous \u2013\
-  \ siin\xE4 uudelleenj\xE4rjestet\xE4\xE4n olemassa olevaa koodia muuttamatta sen\
-  \ ulkoista toimintaa."
+summary: "Kuvittele, ett\xE4 sinulla on Elm-funktio, joka tekee liikaa, kuten sekoittaa\
+  \ k\xE4ytt\xF6liittym\xE4logiikkaa tilan p\xE4ivityksiin."
 title: Koodin refaktorointi
 weight: 19
 ---

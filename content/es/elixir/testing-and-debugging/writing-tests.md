@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:13.266890-07:00
-description: "Escribir pruebas en Elixir implica crear scripts automatizados para\
-  \ validar el comportamiento de tu c\xF3digo. Los programadores hacen esto para asegurar\
-  \ la\u2026"
+description: "C\xF3mo: Elixir utiliza ExUnit como su marco de pruebas integrado, el\
+  \ cual es extremadamente poderoso y f\xE1cil de usar. Aqu\xED hay un ejemplo b\xE1\
+  sico: 1. Crea un\u2026"
 lastmod: '2024-03-13T22:44:58.706342-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir pruebas en Elixir implica crear scripts automatizados para validar\
-  \ el comportamiento de tu c\xF3digo."
+summary: "Elixir utiliza ExUnit como su marco de pruebas integrado, el cual es extremadamente\
+  \ poderoso y f\xE1cil de usar."
 title: Escribiendo pruebas
 weight: 36
 ---

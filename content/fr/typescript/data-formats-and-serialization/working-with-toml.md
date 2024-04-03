@@ -1,13 +1,10 @@
 ---
 date: 2024-01-26 04:27:05.157728-07:00
-description: "TOML, abr\xE9viation de Tom's Obvious, Minimal Language (langage minimal\
-  \ et \xE9vident de Tom), est un format de s\xE9rialisation de donn\xE9es semblable\
-  \ \xE0 JSON ou\u2026"
+description: "Comment faire : Tout d'abord, vous aurez besoin d'un analyseur TOML.\
+  \ `@iarna/toml` est un choix populaire. Installez-le avec npm : `npm install\u2026"
 lastmod: '2024-03-13T22:44:57.462589-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, abr\xE9viation de Tom's Obvious, Minimal Language (langage minimal\
-  \ et \xE9vident de Tom), est un format de s\xE9rialisation de donn\xE9es semblable\
-  \ \xE0 JSON ou YAML."
+summary: Tout d'abord, vous aurez besoin d'un analyseur TOML.
 title: Travailler avec TOML
 weight: 39
 ---

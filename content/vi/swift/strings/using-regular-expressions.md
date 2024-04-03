@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:04.076707-07:00
-description: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy, ho\u1EB7c regex, l\xE0 nh\u1EEFng\
-  \ m\u1EABu \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 t\xECm k\u1EBFt h\u1EE3\
-  p c\xE1c k\xFD t\u1EF1 trong chu\u1ED7i. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED\
-  \ d\u1EE5ng ch\xFAng \u0111\u1EC3 t\xECm ki\u1EBFm, ch\u1EC9nh s\u1EEDa,\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Swift, b\u1EA1n s\u1EED d\u1EE5ng l\u1EDB\
+  p `NSRegularExpression` \u0111\u1EC3 x\u1EED l\xFD regex. B\u1EA1n x\xE1c \u0111\
+  \u1ECBnh m\u1ED9t m\u1EABu, t\u1EA1o m\u1ED9t \u0111\u1ED1i t\u01B0\u1EE3ng regex,\
+  \ v\xE0 sau \u0111\xF3 s\u1EED d\u1EE5ng n\xF3 \u0111\u1EC3 t\xECm\u2026"
 lastmod: '2024-03-13T22:44:37.083551-06:00'
 model: gpt-4-0125-preview
-summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy, ho\u1EB7c regex, l\xE0 nh\u1EEFng m\u1EAB\
-  u \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 t\xECm k\u1EBFt h\u1EE3p c\xE1\
-  c k\xFD t\u1EF1 trong chu\u1ED7i."
+summary: "Trong Swift, b\u1EA1n s\u1EED d\u1EE5ng l\u1EDBp `NSRegularExpression` \u0111\
+  \u1EC3 x\u1EED l\xFD regex."
 title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---

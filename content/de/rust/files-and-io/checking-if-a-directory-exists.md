@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:35.680358-07:00
-description: "In der Softwareentwicklung ist es oft notwendig zu \xFCberpr\xFCfen,\
-  \ ob ein Verzeichnis existiert, um Fehler zu vermeiden, wenn versucht wird, Dateien\
-  \ zu\u2026"
+description: "Wie: Die Standardbibliothek von Rust (`std`) enth\xE4lt Funktionen,\
+  \ um die Existenz eines Verzeichnisses \xFCber die Module `std::path::Path` und\
+  \ `std::fs` zu\u2026"
 lastmod: '2024-03-13T22:44:53.687360-06:00'
 model: gpt-4-0125-preview
-summary: "In der Softwareentwicklung ist es oft notwendig zu \xFCberpr\xFCfen, ob\
-  \ ein Verzeichnis existiert, um Fehler zu vermeiden, wenn versucht wird, Dateien\
-  \ zu \xF6ffnen, zu lesen oder zu schreiben."
+summary: "Die Standardbibliothek von Rust (`std`) enth\xE4lt Funktionen, um die Existenz\
+  \ eines Verzeichnisses \xFCber die Module `std::path::Path` und `std::fs` zu \xFC\
+  berpr\xFCfen."
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---

@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 01:10:44.152654-07:00
-description: "Organiser le code en fonctions dans Haskell signifie d\xE9composer votre\
-  \ code en blocs nomm\xE9s r\xE9utilisables. Pourquoi ? Cela permet de garder votre\
-  \ code DRY\u2026"
+description: "Comment faire : Voici comment vous pouvez \xE9crire et utiliser des\
+  \ fonctions dans Haskell ."
 lastmod: '2024-03-13T22:44:57.839647-06:00'
 model: gpt-4-1106-preview
-summary: "Organiser le code en fonctions dans Haskell signifie d\xE9composer votre\
-  \ code en blocs nomm\xE9s r\xE9utilisables."
+summary: "Voici comment vous pouvez \xE9crire et utiliser des fonctions dans Haskell."
 title: Organisation du code en fonctions
 weight: 18
 ---

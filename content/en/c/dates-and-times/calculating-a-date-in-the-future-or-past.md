@@ -1,13 +1,12 @@
 ---
 date: 2024-02-03 17:50:20.086094-07:00
-description: "Calculating a date in the future or past involves determining a specific\
-  \ date by adding or subtracting a certain number of days, months, or years from\
-  \ a\u2026"
+description: "How to: While the C standard library does not provide direct functions\
+  \ for date arithmetic, you can manipulate dates using the `time.h` library,\u2026"
 lastmod: '2024-03-13T22:45:00.523212-06:00'
 model: gpt-4-0125-preview
-summary: Calculating a date in the future or past involves determining a specific
-  date by adding or subtracting a certain number of days, months, or years from a
-  given date.
+summary: While the C standard library does not provide direct functions for date arithmetic,
+  you can manipulate dates using the `time.h` library, specifically working with the
+  `time_t` data type and `struct tm`.
 title: Calculating a date in the future or past
 weight: 26
 ---

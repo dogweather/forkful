@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 00:54:03.199861-07:00
-description: "H\xE5ndtering av feil i programmering handler om \xE5 styre det uventede\u2014\
-  ting som kan g\xE5 galt. Programmerere gj\xF8r dette for \xE5 sikre at deres programmer\
-  \ kan\u2026"
+description: "Hvordan: Haskell h\xE5ndterer feil robust gjennom typer som `Maybe`\
+  \ og `Either`. Her er et raskt blikk."
 lastmod: '2024-03-13T22:44:40.849354-06:00'
 model: gpt-4-1106-preview
-summary: "H\xE5ndtering av feil i programmering handler om \xE5 styre det uventede\u2014\
-  ting som kan g\xE5 galt."
+summary: "Haskell h\xE5ndterer feil robust gjennom typer som `Maybe` og `Either`."
 title: "Feilh\xE5ndtering"
 weight: 16
 ---

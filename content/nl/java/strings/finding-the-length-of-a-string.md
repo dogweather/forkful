@@ -2,11 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:05.201440-07:00
-description: "De lengte van een string vinden betekent uitzoeken hoeveel tekens deze\
-  \ bevat. Programmeurs doen dit vaak om invoer te valideren, door karakters te lussen,\u2026"
+description: 'Hoe: Java-strings hebben een `length()` methode. Roep het aan, en je
+  krijgt het aantal tekens. Eenvoudig.'
 lastmod: '2024-03-13T22:44:50.672186-06:00'
 model: gpt-4-0125-preview
-summary: De lengte van een string vinden betekent uitzoeken hoeveel tekens deze bevat.
+summary: Java-strings hebben een `length()` methode.
 title: De lengte van een string vinden
 weight: 7
 ---

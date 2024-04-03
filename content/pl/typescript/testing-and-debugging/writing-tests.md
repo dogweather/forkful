@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:20.514203-07:00
-description: "Pisanie test\xF3w w TypeScript polega na tworzeniu automatycznych skrypt\xF3\
-  w sprawdzaj\u0105cych funkcjonalno\u015B\u0107 i poprawno\u015B\u0107 Twojego kodu.\
-  \ Programi\u015Bci robi\u0105 to, aby\u2026"
+description: "Jak to zrobi\u0107: TypeScript doskonale wsp\xF3\u0142pracuje z wi\u0119\
+  kszo\u015Bci\u0105 framework\xF3w do testowania JavaScript. Dla cel\xF3w demonstracyjnych\
+  \ u\u017Cyjemy Jest, popularnego\u2026"
 lastmod: '2024-03-13T22:44:35.142439-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie test\xF3w w TypeScript polega na tworzeniu automatycznych skrypt\xF3\
-  w sprawdzaj\u0105cych funkcjonalno\u015B\u0107 i poprawno\u015B\u0107 Twojego kodu."
+summary: "TypeScript doskonale wsp\xF3\u0142pracuje z wi\u0119kszo\u015Bci\u0105 framework\xF3\
+  w do testowania JavaScript."
 title: "Pisanie test\xF3w"
 weight: 36
 ---

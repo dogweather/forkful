@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:48.395236-07:00
-description: "Capitalizar una cadena implica transformar el car\xE1cter inicial de\
-  \ una cadena dada a may\xFAsculas mientras se mantienen el resto en min\xFAsculas,\
-  \ a menudo por\u2026"
+description: "C\xF3mo hacerlo: En Elm, no hay una funci\xF3n integrada espec\xEDficamente\
+  \ para capitalizar cadenas. Sin embargo, puedes lograr esto f\xE1cilmente utilizando\u2026"
 lastmod: '2024-03-13T22:44:58.962766-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizar una cadena implica transformar el car\xE1cter inicial de una\
-  \ cadena dada a may\xFAsculas mientras se mantienen el resto en min\xFAsculas, a\
-  \ menudo por motivos de formato estandarizado o legibilidad."
+summary: "En Elm, no hay una funci\xF3n integrada espec\xEDficamente para capitalizar\
+  \ cadenas."
 title: Capitalizando una cadena de texto
 weight: 2
 ---

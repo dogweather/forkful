@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:41:18.857704-07:00
-description: "Deleting characters matching a pattern means getting rid of specific\
-  \ sequences of characters from strings\u2014think cleaning up data or inputs. Programmers\
-  \ do\u2026"
+description: "How to: Let's say we want to drop all numeric digits from our string.\
+  \ We've got a string with some random numbers, and we're going after a clean, letters-\u2026"
 lastmod: '2024-03-13T22:45:00.308003-06:00'
 model: gpt-4-1106-preview
-summary: "Deleting characters matching a pattern means getting rid of specific sequences\
-  \ of characters from strings\u2014think cleaning up data or inputs."
+summary: Let's say we want to drop all numeric digits from our string.
 title: Deleting characters matching a pattern
 weight: 5
 ---

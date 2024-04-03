@@ -1,10 +1,9 @@
 ---
 date: 2024-01-20 17:35:42.391730-07:00
-description: "Combining strings, or concatenation, is like making a train of words.\
-  \ We do it to stitch together text values, creating phrases, sentences, or anything\u2026"
+description: 'How to: Let''s get straight to it.'
 lastmod: '2024-03-13T22:45:00.274885-06:00'
 model: gpt-4-1106-preview
-summary: Combining strings, or concatenation, is like making a train of words.
+summary: Let's get straight to it.
 title: Concatenating strings
 weight: 3
 ---

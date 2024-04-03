@@ -1,12 +1,9 @@
 ---
 date: 2024-01-27 16:14:27.151355-07:00
-description: "Editing files in-place with CLI one-liners in PowerShell is about making\
-  \ direct modifications to files from the command line, without the need to open\u2026"
+description: 'How to: #.'
 lastmod: '2024-03-13T22:45:00.280321-06:00'
 model: gpt-4-0125-preview
-summary: Editing files in-place with CLI one-liners in PowerShell is about making
-  direct modifications to files from the command line, without the need to open them
-  in an editor.
+summary: '#.'
 title: Editing files in-place with CLI one-liners
 weight: 32
 ---

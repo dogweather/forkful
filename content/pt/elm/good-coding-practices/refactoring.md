@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 01:18:18.802559-07:00
-description: "Refatora\xE7\xE3o \xE9 essencialmente uma limpeza de primavera no seu\
-  \ c\xF3digo \u2014 trata-se de reestruturar o c\xF3digo existente sem alterar seu\
-  \ comportamento externo.\u2026"
+description: "Como Fazer: Considere que voc\xEA tem uma fun\xE7\xE3o Elm que est\xE1\
+  \ fazendo demais, como misturar l\xF3gica de UI com atualiza\xE7\xF5es de estado.\
+  \ \xC9 um candidato perfeito\u2026"
 lastmod: '2024-03-13T22:44:46.508661-06:00'
 model: gpt-4-0125-preview
-summary: "Refatora\xE7\xE3o \xE9 essencialmente uma limpeza de primavera no seu c\xF3\
-  digo \u2014 trata-se de reestruturar o c\xF3digo existente sem alterar seu comportamento\
-  \ externo."
+summary: "Considere que voc\xEA tem uma fun\xE7\xE3o Elm que est\xE1 fazendo demais,\
+  \ como misturar l\xF3gica de UI com atualiza\xE7\xF5es de estado."
 title: "Refatora\xE7\xE3o"
 weight: 19
 ---

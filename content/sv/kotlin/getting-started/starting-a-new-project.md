@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 18:04:09.417130-07:00
-description: "Att starta ett nytt projekt inneb\xE4r att s\xE4tta upp en fr\xE4sch\
-  \ kodbas f\xF6r att utveckla en applikation eller ett tj\xE4nst. Programmerare g\xF6\
-  r detta f\xF6r att\u2026"
+description: "Hur man g\xF6r: F\xF6r att kickstarta ett Kotlin-projekt, kan vi anv\xE4\
+  nda IntelliJ IDEA eller n\xE5got annat integrerat utvecklingsmilj\xF6 (IDE) som\
+  \ st\xF6djer Kotlin.\u2026"
 lastmod: '2024-03-13T22:44:37.871863-06:00'
 model: gpt-4-1106-preview
-summary: "Att starta ett nytt projekt inneb\xE4r att s\xE4tta upp en fr\xE4sch kodbas\
-  \ f\xF6r att utveckla en applikation eller ett tj\xE4nst."
+summary: "F\xF6r att kickstarta ett Kotlin-projekt, kan vi anv\xE4nda IntelliJ IDEA\
+  \ eller n\xE5got annat integrerat utvecklingsmilj\xF6 (IDE) som st\xF6djer Kotlin."
 title: "Att p\xE5b\xF6rja ett nytt projekt"
 weight: 1
 ---

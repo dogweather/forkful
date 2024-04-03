@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:52:37.287113-07:00
-description: "(\u0429\u043E \u0456 \u0427\u043E\u043C\u0443?) String interpolation\
-  \ allows embedding expressions within string literals. Programmers use it to concatenate\
-  \ strings and expressions neatly\u2026"
+description: "How to: (\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\
+  \u0438:)."
 lastmod: '2024-03-13T22:44:48.847008-06:00'
 model: gpt-4-1106-preview
-summary: "(\u0429\u043E \u0456 \u0427\u043E\u043C\u0443."
+summary: "(\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\u0438:)."
 title: "\u0406\u043D\u0442\u0435\u0440\u043F\u043E\u043B\u044F\u0446\u0456\u044F \u0440\
   \u044F\u0434\u043A\u0456\u0432"
 weight: 8

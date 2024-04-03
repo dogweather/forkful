@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 17:34:52.497455-07:00
-description: "Concatenare le stringhe significa unire due o pi\xF9 sequenze di caratteri.\
-  \ I programmatori lo fanno per costruire messaggi, combinare dati o semplicemente\u2026"
+description: 'Come Fare: La funzione `str` in Clojure combina stringhe. Ecco un esempio
+  semplice.'
 lastmod: '2024-03-13T22:44:43.034094-06:00'
 model: gpt-4-1106-preview
-summary: "Concatenare le stringhe significa unire due o pi\xF9 sequenze di caratteri."
+summary: La funzione `str` in Clojure combina stringhe.
 title: Concatenazione di stringhe
 weight: 3
 ---

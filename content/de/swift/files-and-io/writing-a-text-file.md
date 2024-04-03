@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:47.767691-07:00
-description: "Das Schreiben einer Textdatei in Swift erm\xF6glicht es Ihnen, Zeichenketten-Daten\
-  \ dauerhaft auf dem Dateisystem zu speichern, was f\xFCr Aufgaben wie das\u2026"
+description: 'Wie zu: #.'
 lastmod: '2024-03-13T22:44:54.243202-06:00'
 model: gpt-4-0125-preview
-summary: "Das Schreiben einer Textdatei in Swift erm\xF6glicht es Ihnen, Zeichenketten-Daten\
-  \ dauerhaft auf dem Dateisystem zu speichern, was f\xFCr Aufgaben wie das Speichern\
-  \ von Konfigurationseinstellungen, Benutzerdaten oder Protokollen wesentlich ist."
+summary: '#.'
 title: Eine Textdatei schreiben
 weight: 24
 ---

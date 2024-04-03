@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:08.025145-07:00
-description: "\xC9crire dans l'erreur standard (stderr) avec Fish Shell consiste \xE0\
-  \ diriger les messages d'erreur ou les diagnostics s\xE9par\xE9ment de la sortie\
-  \ standard\u2026"
+description: "Comment faire : Dans Fish Shell, vous pouvez \xE9crire dans stderr en\
+  \ redirigeant votre sortie en utilisant `>&2`. Voici un exemple simple ."
 lastmod: '2024-03-13T22:44:58.342123-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire dans l'erreur standard (stderr) avec Fish Shell consiste \xE0\
-  \ diriger les messages d'erreur ou les diagnostics s\xE9par\xE9ment de la sortie\
-  \ standard (stdout)."
+summary: "Dans Fish Shell, vous pouvez \xE9crire dans stderr en redirigeant votre\
+  \ sortie en utilisant `>&2`."
 title: "\xC9crire sur l'erreur standard"
 weight: 25
 ---

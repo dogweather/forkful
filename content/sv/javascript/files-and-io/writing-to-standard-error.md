@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:39.107706-07:00
-description: "Att skriva till standardfel (stderr) i JavaScript handlar om att dirigera\
-  \ felmeddelanden eller kritisk information till en specifik, separat str\xF6m, vilket\u2026"
+description: "Hur: I Node.js kan skrivning till stderr utf\xF6ras med metoden `console.error()`\
+  \ eller genom att skriva direkt till `process.stderr`. H\xE4r \xE4r exempel som\u2026"
 lastmod: '2024-03-13T22:44:38.309712-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva till standardfel (stderr) i JavaScript handlar om att dirigera\
-  \ felmeddelanden eller kritisk information till en specifik, separat str\xF6m, vilket\
-  \ \xE4r s\xE4rskilt anv\xE4ndbart i Unix-lika milj\xF6er f\xF6r loggning och fels\xF6\
-  kning."
+summary: "I Node.js kan skrivning till stderr utf\xF6ras med metoden `console.error()`\
+  \ eller genom att skriva direkt till `process.stderr`."
 title: Skriva till standardfel
 weight: 25
 ---

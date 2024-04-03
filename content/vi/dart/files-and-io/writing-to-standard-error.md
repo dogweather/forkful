@@ -2,16 +2,14 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:58:27.720708-07:00
-description: "Vi\u1EBFt v\xE0o l\u1ED7i chu\u1EA9n (stderr) trong Dart l\xE0 v\u1EC1\
-  \ vi\u1EC7c g\u1EEDi th\xF4ng \u0111i\u1EC7p l\u1ED7i v\xE0 ch\u1EA9n \u0111o\xE1\
-  n \u0111\u1EBFn m\u1ED9t lu\u1ED3ng ri\xEAng bi\u1EC7t, kh\xE1c bi\u1EC7t so v\u1EDB\
-  i \u0111\u1EA7u ra chu\u1EA9n (stdout). C\xE1c\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Dart, vi\u1EBFt v\xE0o stderr r\u1EA5\
+  t \u0111\u01A1n gi\u1EA3n s\u1EED d\u1EE5ng \u0111\u1ED1i t\u01B0\u1EE3ng `stderr`\
+  \ c\xF3 s\u1EB5n trong `dart:io`. D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t v\xED\
+  \ d\u1EE5 c\u01A1 b\u1EA3n."
 lastmod: '2024-03-13T22:44:36.284868-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EBFt v\xE0o l\u1ED7i chu\u1EA9n (stderr) trong Dart l\xE0 v\u1EC1 vi\u1EC7\
-  c g\u1EEDi th\xF4ng \u0111i\u1EC7p l\u1ED7i v\xE0 ch\u1EA9n \u0111o\xE1n \u0111\u1EBF\
-  n m\u1ED9t lu\u1ED3ng ri\xEAng bi\u1EC7t, kh\xE1c bi\u1EC7t so v\u1EDBi \u0111\u1EA7\
-  u ra chu\u1EA9n (stdout)."
+summary: "Trong Dart, vi\u1EBFt v\xE0o stderr r\u1EA5t \u0111\u01A1n gi\u1EA3n s\u1EED\
+  \ d\u1EE5ng \u0111\u1ED1i t\u01B0\u1EE3ng `stderr` c\xF3 s\u1EB5n trong `dart:io`."
 title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---

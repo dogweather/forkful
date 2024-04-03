@@ -2,14 +2,11 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:24.640678-07:00
-description: "Lainausmerkkien poistaminen merkkijonosta VBA:ssa tarkoittaa yksitt\xE4\
-  isten (`'`) tai kaksinkertaisten (`\"`) lainausmerkkien poistamista, jotka voivat\
-  \ olla\u2026"
+description: "Kuinka: VBA:ssa on useita l\xE4hestymistapoja lainausmerkkien poistamiseen\
+  \ merkkijonosta. T\xE4ss\xE4 on suoraviivainen esimerkki k\xE4ytt\xE4en `Replace`-funktiota,\u2026"
 lastmod: '2024-03-13T22:44:56.387606-06:00'
 model: gpt-4-0125-preview
-summary: "Lainausmerkkien poistaminen merkkijonosta VBA:ssa tarkoittaa yksitt\xE4\
-  isten (`'`) tai kaksinkertaisten (`\"`) lainausmerkkien poistamista, jotka voivat\
-  \ olla merkkijonon ymp\xE4rill\xE4 tai sis\xE4ll\xE4."
+summary: "VBA:ssa on useita l\xE4hestymistapoja lainausmerkkien poistamiseen merkkijonosta."
 title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---

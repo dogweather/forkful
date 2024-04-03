@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:21.651043-07:00
-description: "Obtener la fecha actual en programaci\xF3n es una tarea fundamental\
-  \ que te permite recuperar y manipular los datos de fecha y hora del sistema. En\
-  \ tareas de\u2026"
+description: "C\xF3mo hacerlo: Fish Shell utiliza comandos externos como `date` para\
+  \ obtener la fecha actual, ofreciendo flexibilidad para formatear la salida seg\xFA\
+  n sea\u2026"
 lastmod: '2024-03-13T22:44:59.512043-06:00'
 model: gpt-4-0125-preview
-summary: "Obtener la fecha actual en programaci\xF3n es una tarea fundamental que\
-  \ te permite recuperar y manipular los datos de fecha y hora del sistema."
+summary: "Fish Shell utiliza comandos externos como `date` para obtener la fecha actual,\
+  \ ofreciendo flexibilidad para formatear la salida seg\xFAn sea necesario."
 title: Obteniendo la fecha actual
 weight: 29
 ---

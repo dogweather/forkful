@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 01:09:29.131365-07:00
-description: "Code in Funktionen zu unterteilen, bedeutet, den Code in kleinere, wiederverwendbare\
-  \ St\xFCcke zu zerlegen. Wir tun dies, um Wiederholungen zu vermeiden,\u2026"
+description: "Wie geht das: Nehmen wir eine allt\xE4gliche Aufgabe: die Berechnung\
+  \ der Fl\xE4che eines Kreises. Anstatt jedes Mal die gleiche Formel zu schreiben,\
+  \ kapseln wir\u2026"
 lastmod: '2024-03-13T22:44:54.190224-06:00'
 model: gpt-4-1106-preview
-summary: "Code in Funktionen zu unterteilen, bedeutet, den Code in kleinere, wiederverwendbare\
-  \ St\xFCcke zu zerlegen."
+summary: "Nehmen wir eine allt\xE4gliche Aufgabe."
 title: Code in Funktionen organisieren
 weight: 18
 ---

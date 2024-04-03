@@ -2,16 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:25.320789-07:00
-description: "Trong PHP, vi\u1EC7c chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i th\xE0\
-  nh ch\u1EEF th\u01B0\u1EDDng c\xF3 ngh\u0129a l\xE0 bi\u1EBFn \u0111\u1ED5i t\u1EA5\
-  t c\u1EA3 c\xE1c k\xFD t\u1EF1 ch\u1EEF c\xE1i trong chu\u1ED7i th\xE0nh bi\u1EBF\
-  n th\u1EC3 ch\u1EEF th\u01B0\u1EDDng c\u1EE7a ch\xFAng. C\xE1c\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: PHP s\u1EED d\u1EE5ng `strtolower` \u0111\u1EC3\
+  \ chuy\u1EC3n t\u1EA5t c\u1EA3 c\xE1c k\xFD t\u1EF1 trong m\u1ED9t chu\u1ED7i th\xE0\
+  nh ch\u1EEF th\u01B0\u1EDDng. D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch n\xF3 ho\u1EA1\
+  t \u0111\u1ED9ng."
 lastmod: '2024-03-13T22:44:36.748799-06:00'
 model: gpt-4-0125-preview
-summary: "Trong PHP, vi\u1EC7c chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i th\xE0\
-  nh ch\u1EEF th\u01B0\u1EDDng c\xF3 ngh\u0129a l\xE0 bi\u1EBFn \u0111\u1ED5i t\u1EA5\
-  t c\u1EA3 c\xE1c k\xFD t\u1EF1 ch\u1EEF c\xE1i trong chu\u1ED7i th\xE0nh bi\u1EBF\
-  n th\u1EC3 ch\u1EEF th\u01B0\u1EDDng c\u1EE7a ch\xFAng."
+summary: "PHP s\u1EED d\u1EE5ng `strtolower` \u0111\u1EC3 chuy\u1EC3n t\u1EA5t c\u1EA3\
+  \ c\xE1c k\xFD t\u1EF1 trong m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDD\
+  ng."
 title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
 weight: 4
 ---

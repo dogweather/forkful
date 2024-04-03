@@ -3,13 +3,12 @@ changelog:
 - 2024-01-28, dogweather, reviewed
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:24:07.519332-07:00
-description: "Merkkijonon interpolaatio on menetelm\xE4, jossa lausekkeita sis\xE4\
-  llytet\xE4\xE4n osaksi merkkijonoliteraaleja. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4\
-  \ dynaamisesti arvojen\u2026"
+description: "Miten: Python 3.6:ssa ja sit\xE4 uudemmissa versioissa voit interpoloida\
+  \ merkkijonoja k\xE4ytt\xE4m\xE4ll\xE4 f-merkkijonoja. N\xE4in se tehd\xE4\xE4n."
 lastmod: '2024-03-13T22:44:56.129418-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonon interpolaatio on menetelm\xE4, jossa lausekkeita sis\xE4llytet\xE4\
-  \xE4n osaksi merkkijonoliteraaleja."
+summary: "Python 3.6:ssa ja sit\xE4 uudemmissa versioissa voit interpoloida merkkijonoja\
+  \ k\xE4ytt\xE4m\xE4ll\xE4 f-merkkijonoja."
 title: Merkkijonon interpolointi
 weight: 8
 ---

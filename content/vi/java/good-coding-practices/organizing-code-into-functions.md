@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:05.660892-07:00
-description: "T\u1ED5 ch\u1EE9c code th\xE0nh c\xE1c h\xE0m ngh\u0129a l\xE0 ph\xE2\
-  n r\xE3 m\u1ED9t ch\u01B0\u01A1ng tr\xECnh kh\u1ED5ng l\u1ED3 th\xE0nh c\xE1c ph\u1EA7\
-  n nh\u1ECF qu\u1EA3n l\xFD \u0111\u01B0\u1EE3c, m\u1ED7i ph\u1EA7n th\u1EF1c hi\u1EC7\
-  n m\u1ED9t t\xE1c v\u1EE5 r\xF5 r\xE0ng. L\u1EADp tr\xECnh\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t v\xED\
+  \ d\u1EE5 \u0111i\u1EC3n h\xECnh - m\u1ED9t h\xE0m \u0111\u1EC3 t\xEDnh giai th\u1EEB\
+  a c\u1EE7a m\u1ED9t s\u1ED1."
 lastmod: '2024-03-13T22:44:36.496678-06:00'
 model: gpt-4-0125-preview
-summary: "T\u1ED5 ch\u1EE9c code th\xE0nh c\xE1c h\xE0m ngh\u0129a l\xE0 ph\xE2n r\xE3\
-  \ m\u1ED9t ch\u01B0\u01A1ng tr\xECnh kh\u1ED5ng l\u1ED3 th\xE0nh c\xE1c ph\u1EA7\
-  n nh\u1ECF qu\u1EA3n l\xFD \u0111\u01B0\u1EE3c, m\u1ED7i ph\u1EA7n th\u1EF1c hi\u1EC7\
-  n m\u1ED9t t\xE1c v\u1EE5 r\xF5 r\xE0ng."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t v\xED d\u1EE5 \u0111i\u1EC3n h\xEC\
+  nh - m\u1ED9t h\xE0m \u0111\u1EC3 t\xEDnh giai th\u1EEBa c\u1EE7a m\u1ED9t s\u1ED1\
+  ."
 title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
 weight: 18
 ---

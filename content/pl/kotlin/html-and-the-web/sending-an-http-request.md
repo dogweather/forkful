@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:59:55.549167-07:00
-description: "Wysy\u0142anie \u017C\u0105dania HTTP to proces komunikacji z serwerem\
-  \ \u2013 pytasz, serwer odpowiada. Programi\u015Bci robi\u0105 to, aby pobiera\u0107\
-  \ dane, wysy\u0142a\u0107 informacje lub\u2026"
+description: "How to: (Jak to zrobi\u0107:) W Kotlinie najlepiej u\u017Cy\u0107 biblioteki\
+  \ `khttp` do prostych \u017C\u0105da\u0144 HTTP. Dajmy na to tak."
 lastmod: '2024-03-13T22:44:35.361809-06:00'
 model: gpt-4-1106-preview
-summary: "Wysy\u0142anie \u017C\u0105dania HTTP to proces komunikacji z serwerem \u2013\
-  \ pytasz, serwer odpowiada."
+summary: "W Kotlinie najlepiej u\u017Cy\u0107 biblioteki `khttp` do prostych \u017C\
+  \u0105da\u0144 HTTP."
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---

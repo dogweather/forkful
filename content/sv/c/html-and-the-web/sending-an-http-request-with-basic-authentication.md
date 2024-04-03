@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:19.741445-07:00
-description: "Att skicka en HTTP-beg\xE4ran med grundl\xE4ggande autentisering i C\
-  \ inneb\xE4r att man skapar en HTTP-beg\xE4ran som inkluderar en autentiseringsheader\
-  \ med\u2026"
+description: "Hur: F\xF6r att skicka en HTTP-beg\xE4ran med grundl\xE4ggande autentisering\
+  \ i C beh\xF6ver vi anv\xE4nda libcurl-biblioteket, ett popul\xE4rt, m\xE5ngsidigt\
+  \ och l\xE4ttanv\xE4nt\u2026"
 lastmod: '2024-03-13T22:44:38.382265-06:00'
 model: gpt-4-0125-preview
-summary: "Att skicka en HTTP-beg\xE4ran med grundl\xE4ggande autentisering i C inneb\xE4\
-  r att man skapar en HTTP-beg\xE4ran som inkluderar en autentiseringsheader med anv\xE4\
-  ndaruppgifter kodade i Base64."
+summary: "F\xF6r att skicka en HTTP-beg\xE4ran med grundl\xE4ggande autentisering\
+  \ i C beh\xF6ver vi anv\xE4nda libcurl-biblioteket, ett popul\xE4rt, m\xE5ngsidigt\
+  \ och l\xE4ttanv\xE4nt klient-sida URL-\xF6verf\xF6ringsbibliotek."
 title: "S\xE4nda en HTTP-f\xF6rfr\xE5gan med grundl\xE4ggande autentisering"
 weight: 45
 ---

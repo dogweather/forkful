@@ -2,15 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:25.230841-07:00
-description: "T\xE1i c\u1EA5u tr\xFAc l\xE0 qu\xE1 tr\xECnh ch\u1EC9nh s\u1EEDa m\xE3\
-  \ ngu\u1ED3n c\u1EE7a b\u1EA1n m\xE0 kh\xF4ng thay \u0111\u1ED5i h\xE0nh vi b\xEA\
-  n ngo\xE0i c\u1EE7a n\xF3. \u0110\xF3 t\u1EA5t c\u1EA3 l\xE0 v\u1EC1 vi\u1EC7c d\u1ECD\
-  n d\u1EB9p v\xE0 t\u1ED5 ch\u1EE9c l\u1EA1i c\xF4ng vi\u1EC7c c\u1EE7a\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Gi\u1EA3 s\u1EED b\u1EA1n c\xF3 m\u1ED9t kh\u1ED1\
+  i m\xE3 Haskell \u0111ang l\u1EB7p l\u1EA1i nhi\u1EC1u h\u01A1n b\xE0i h\xE1t y\xEA\
+  u th\xEDch c\u1EE7a b\u1EA1n. D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1i nh\xECn nhanh\
+  \ v\u1EC1 c\xE1ch b\u1EA1n c\xF3 th\u1EC3 t\xE1i c\u1EA5u\u2026"
 lastmod: '2024-03-13T22:44:36.723284-06:00'
 model: gpt-4-0125-preview
-summary: "T\xE1i c\u1EA5u tr\xFAc l\xE0 qu\xE1 tr\xECnh ch\u1EC9nh s\u1EEDa m\xE3\
-  \ ngu\u1ED3n c\u1EE7a b\u1EA1n m\xE0 kh\xF4ng thay \u0111\u1ED5i h\xE0nh vi b\xEA\
-  n ngo\xE0i c\u1EE7a n\xF3."
+summary: "Gi\u1EA3 s\u1EED b\u1EA1n c\xF3 m\u1ED9t kh\u1ED1i m\xE3 Haskell \u0111\
+  ang l\u1EB7p l\u1EA1i nhi\u1EC1u h\u01A1n b\xE0i h\xE1t y\xEAu th\xEDch c\u1EE7\
+  a b\u1EA1n."
 title: "T\xE1i c\u1EA5u tr\xFAc m\xE3"
 weight: 19
 ---

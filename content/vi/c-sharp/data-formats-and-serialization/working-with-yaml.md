@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:55.728932-07:00
-description: "YAML l\xE0 m\u1ED9t ti\xEAu chu\u1EA9n serial h\xF3a d\u1EEF li\u1EC7\
-  u th\xE2n thi\u1EC7n v\u1EDBi ng\u01B0\u1EDDi d\xF9ng \u0111\u01B0\u1EE3c s\u1EED\
-  \ d\u1EE5ng trong l\u1EADp tr\xECnh cho c\xE1c t\u1EC7p c\u1EA5u h\xECnh, l\u01B0\
-  u tr\u1EEF d\u1EEF li\u1EC7u v\xE0 h\u01A1n th\u1EBF n\u1EEFa. L\u1EADp\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi YAML\
+  \ trong C#, b\u1EA1n c\u1EA7n th\u01B0 vi\u1EC7n YamlDotNet. B\u1EA1n c\xF3 th\u1EC3\
+  \ c\xE0i \u0111\u1EB7t n\xF3 qua NuGet: `Install-Package YamlDotNet`. Tr\u01B0\u1EDB\
+  c h\u1EBFt, h\xE3y\u2026"
 lastmod: '2024-03-13T22:44:36.684175-06:00'
 model: gpt-4-0125-preview
-summary: "YAML l\xE0 m\u1ED9t ti\xEAu chu\u1EA9n serial h\xF3a d\u1EEF li\u1EC7u th\xE2\
-  n thi\u1EC7n v\u1EDBi ng\u01B0\u1EDDi d\xF9ng \u0111\u01B0\u1EE3c s\u1EED d\u1EE5\
-  ng trong l\u1EADp tr\xECnh cho c\xE1c t\u1EC7p c\u1EA5u h\xECnh, l\u01B0u tr\u1EEF\
-  \ d\u1EEF li\u1EC7u v\xE0 h\u01A1n th\u1EBF n\u1EEFa."
+summary: "\u0110\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi YAML trong C#, b\u1EA1n c\u1EA7n\
+  \ th\u01B0 vi\u1EC7n YamlDotNet."
 title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 weight: 41
 ---

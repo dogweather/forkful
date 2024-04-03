@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:14.282105-07:00
-description: "Konkatenacja \u0142a\u0144cuch\xF3w znak\xF3w polega na po\u0142\u0105\
-  czeniu dw\xF3ch lub wi\u0119cej \u0142a\u0144cuch\xF3w znak\xF3w koniec-ko\u0144\
-  cem, aby utworzy\u0107 nowy \u0142a\u0144cuch. Programi\u015Bci robi\u0105 to, aby\u2026"
+description: "Jak to zrobi\u0107: W j\u0119zyku Go istnieje kilka sposob\xF3w na konkatenacj\u0119\
+  \ \u0142a\u0144cuch\xF3w znak\xF3w. Oto przyk\u0142ady niekt\xF3rych popularnych\
+  \ metod: #."
 lastmod: '2024-03-13T22:44:34.840348-06:00'
 model: gpt-4-0125-preview
-summary: "Konkatenacja \u0142a\u0144cuch\xF3w znak\xF3w polega na po\u0142\u0105czeniu\
-  \ dw\xF3ch lub wi\u0119cej \u0142a\u0144cuch\xF3w znak\xF3w koniec-ko\u0144cem,\
-  \ aby utworzy\u0107 nowy \u0142a\u0144cuch."
+summary: "W j\u0119zyku Go istnieje kilka sposob\xF3w na konkatenacj\u0119 \u0142\
+  a\u0144cuch\xF3w znak\xF3w."
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---

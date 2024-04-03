@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:43:21.325677-07:00
-description: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to operacja, kt\xF3ra filtruje\
-  \ nasz ci\u0105g znak\xF3w (string), usuwaj\u0105c okre\u015Blone elementy. Programi\u015B\
-  ci wykonuj\u0105 t\u0119 operacj\u0119,\u2026"
+description: "How to (Jak to zrobi\u0107): W Rust u\u017Cywamy biblioteki standardowej\
+  \ lub zewn\u0119trznych crate\u2019\xF3w (pakiet\xF3w) do manipulacji ci\u0105gami\
+  \ znak\xF3w. Oto przyk\u0142ad, jak\u2026"
 lastmod: '2024-03-13T22:44:35.167628-06:00'
 model: gpt-4-1106-preview
-summary: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to operacja, kt\xF3ra filtruje\
-  \ nasz ci\u0105g znak\xF3w (string), usuwaj\u0105c okre\u015Blone elementy."
+summary: "W Rust u\u017Cywamy biblioteki standardowej lub zewn\u0119trznych crate\u2019\
+  \xF3w (pakiet\xF3w) do manipulacji ci\u0105gami znak\xF3w."
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---

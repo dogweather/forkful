@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:59:10.683913-07:00
-description: "La ricerca e la sostituzione di testo consentono di trovare specifiche\
-  \ stringhe e modificarle con altre. I programmatori lo fanno per aggiornare dati,\u2026"
+description: 'How to: Swift offre metodi semplici per ricercare e sostituire testo.
+  Ecco un esempio base.'
 lastmod: '2024-03-13T22:44:43.755723-06:00'
 model: gpt-4-1106-preview
-summary: La ricerca e la sostituzione di testo consentono di trovare specifiche stringhe
-  e modificarle con altre.
+summary: Swift offre metodi semplici per ricercare e sostituire testo.
 title: Ricerca e sostituzione del testo
 weight: 10
 ---

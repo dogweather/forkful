@@ -2,17 +2,17 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:27.058242-07:00
-description: "Vi\u1EC7c x\xF3a c\xE1c k\xFD t\u1EF1 kh\u1EDBp v\u1EDBi m\u1ED9t m\u1EAB\
-  u c\u1EE5 th\u1EC3 trong chu\u1ED7i l\xE0 r\u1EA5t quan tr\u1ECDng cho vi\u1EC7\
-  c ki\u1EC3m tra d\u1EEF li\u1EC7u, l\xE0m s\u1EA1ch d\u1EEF li\u1EC7u, ho\u1EB7\
-  c khi chu\u1EA9n b\u1ECB v\u0103n b\u1EA3n cho vi\u1EC7c\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Dart gi\xFAp vi\u1EC7c x\xF3a k\xFD t\u1EF1\
+  \ kh\u1EDBp v\u1EDBi m\u1ED9t m\u1EABu \u0111\u01B0\u1EE3c x\xE1c \u0111\u1ECBnh\
+  \ tr\u01B0\u1EDBc s\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy v\xE0 ph\u01B0\
+  \u01A1ng th\u1EE9c `replaceAll` tr\u1EDF n\xEAn \u0111\u01A1n gi\u1EA3n. Kh\xF4\
+  ng\u2026"
 lastmod: '2024-03-13T22:44:36.241631-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c x\xF3a c\xE1c k\xFD t\u1EF1 kh\u1EDBp v\u1EDBi m\u1ED9t m\u1EAB\
-  u c\u1EE5 th\u1EC3 trong chu\u1ED7i l\xE0 r\u1EA5t quan tr\u1ECDng cho vi\u1EC7\
-  c ki\u1EC3m tra d\u1EEF li\u1EC7u, l\xE0m s\u1EA1ch d\u1EEF li\u1EC7u, ho\u1EB7\
-  c khi chu\u1EA9n b\u1ECB v\u0103n b\u1EA3n cho vi\u1EC7c x\u1EED l\xFD ti\u1EBF\
-  p theo."
+summary: "Dart gi\xFAp vi\u1EC7c x\xF3a k\xFD t\u1EF1 kh\u1EDBp v\u1EDBi m\u1ED9t\
+  \ m\u1EABu \u0111\u01B0\u1EE3c x\xE1c \u0111\u1ECBnh tr\u01B0\u1EDBc s\u1EED d\u1EE5\
+  ng bi\u1EC3u th\u1EE9c ch\xEDnh quy v\xE0 ph\u01B0\u01A1ng th\u1EE9c `replaceAll`\
+  \ tr\u1EDF n\xEAn \u0111\u01A1n gi\u1EA3n."
 title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
 weight: 5
 ---

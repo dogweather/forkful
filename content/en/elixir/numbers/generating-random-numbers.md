@@ -1,12 +1,11 @@
 ---
 date: 2024-01-27 20:26:18.067755-07:00
-description: "Generating random numbers in Elixir is a fundamental programming task,\
-  \ vital for applications needing unpredictable results such as in generating secure\u2026"
+description: "How to: To generate random numbers in Elixir, you primarily use the\
+  \ `:rand` module which provides several functions for this purpose. Here is a quick\u2026"
 lastmod: '2024-03-13T22:44:59.778876-06:00'
 model: gpt-4-0125-preview
-summary: Generating random numbers in Elixir is a fundamental programming task, vital
-  for applications needing unpredictable results such as in generating secure tokens,
-  sampling data, or in gaming algorithms.
+summary: To generate random numbers in Elixir, you primarily use the `:rand` module
+  which provides several functions for this purpose.
 title: Generating random numbers
 weight: 12
 ---

@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:18.228086-07:00
-description: "Pisanie test\xF3w w C# polega na tworzeniu zautomatyzowanych skrypt\xF3\
-  w w celu weryfikacji funkcjonalno\u015Bci kodu, gwarantuj\u0105c, \u017Ce dzia\u0142\
-  a on zgodnie z\u2026"
+description: "Jak to zrobi\u0107: Deweloperzy C# g\u0142\xF3wnie u\u017Cywaj\u0105\
+  \ framework\xF3w NUnit lub xUnit do pisania test\xF3w ze wzgl\u0119du na ich elastyczno\u015B\
+  \u0107 i obszerny zestaw\u2026"
 lastmod: '2024-03-13T22:44:35.411896-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie test\xF3w w C# polega na tworzeniu zautomatyzowanych skrypt\xF3\
-  w w celu weryfikacji funkcjonalno\u015Bci kodu, gwarantuj\u0105c, \u017Ce dzia\u0142\
-  a on zgodnie z oczekiwaniami."
+summary: "Deweloperzy C# g\u0142\xF3wnie u\u017Cywaj\u0105 framework\xF3w NUnit lub\
+  \ xUnit do pisania test\xF3w ze wzgl\u0119du na ich elastyczno\u015B\u0107 i obszerny\
+  \ zestaw funkcjonalno\u015Bci."
 title: "Pisanie test\xF3w"
 weight: 36
 ---

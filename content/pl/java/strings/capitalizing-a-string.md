@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:50.938122-07:00
-description: "Wielk\u0105 liter\u0105 nazywamy zmodyfikowanie pierwszej litery ka\u017C\
-  dego s\u0142owa w ci\u0105gu na wielk\u0105 liter\u0119, zapewniaj\u0105c jednocze\u015B\
-  nie, \u017Ce reszta liter pozostaje ma\u0142a.\u2026"
+description: "Jak to zrobi\u0107: Standardowa biblioteka Java nie oferuje bezpo\u015B\
+  redniej metody na kapitalizacj\u0119 ca\u0142ych ci\u0105g\xF3w za jednym razem,\
+  \ ale mo\u017Cna to osi\u0105gn\u0105\u0107, \u0142\u0105cz\u0105c\u2026"
 lastmod: '2024-03-13T22:44:35.260105-06:00'
 model: gpt-4-0125-preview
-summary: "Wielk\u0105 liter\u0105 nazywamy zmodyfikowanie pierwszej litery ka\u017C\
-  dego s\u0142owa w ci\u0105gu na wielk\u0105 liter\u0119, zapewniaj\u0105c jednocze\u015B\
-  nie, \u017Ce reszta liter pozostaje ma\u0142a."
+summary: "Standardowa biblioteka Java nie oferuje bezpo\u015Bredniej metody na kapitalizacj\u0119\
+  \ ca\u0142ych ci\u0105g\xF3w za jednym razem, ale mo\u017Cna to osi\u0105gn\u0105\
+  \u0107, \u0142\u0105cz\u0105c wbudowane metody."
 title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---

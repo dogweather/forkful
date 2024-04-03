@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:36:29.612545-07:00
-description: "Konvertering av en dato til en streng betyr \xE5 endre datotypen `Date`\
-  \ til lesbar tekst. Programmerere gj\xF8r dette for \xE5 vise datoer p\xE5 brukervennlige\
-  \ m\xE5ter\u2026"
+description: "How to: (Hvordan:) Elm gir ikke innebygd datoformatering, s\xE5 vi bruker\
+  \ ofte `justinmimbs/date` pakken. Her er et grunnleggende eksempel."
 lastmod: '2024-03-13T22:44:40.720857-06:00'
 model: gpt-4-1106-preview
-summary: "Konvertering av en dato til en streng betyr \xE5 endre datotypen `Date`\
-  \ til lesbar tekst."
+summary: "Elm gir ikke innebygd datoformatering, s\xE5 vi bruker ofte `justinmimbs/date`\
+  \ pakken."
 title: Konvertere en dato til en streng
 weight: 28
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:47.821006-07:00
-description: "Een datum naar een string converteren betekent het omzetten van een\
-  \ datumobject naar leesbare tekst. Programmeurs doen dit om datums aan gebruikers\
-  \ te\u2026"
+description: 'Hoe: In Haskell gebruik je de `formatTime` functie uit de module `Data.Time.Format`
+  voor deze taak. Laten we direct duiken in wat code.'
 lastmod: '2024-03-13T22:44:50.864002-06:00'
 model: gpt-4-0125-preview
-summary: Een datum naar een string converteren betekent het omzetten van een datumobject
-  naar leesbare tekst.
+summary: In Haskell gebruik je de `formatTime` functie uit de module `Data.Time.Format`
+  voor deze taak.
 title: Een datum converteren naar een string
 weight: 28
 ---

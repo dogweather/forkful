@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 03:41:09.482167-07:00
-description: "Supprimer les guillemets d'une cha\xEEne signifie g\xE9n\xE9ralement\
-  \ se d\xE9barrasser des guillemets doubles (\") ou simples (') superflus. Les programmeurs\
-  \ font cela\u2026"
+description: "Comment faire : Python offre plusieurs moyens de se d\xE9barrasser des\
+  \ guillemets ind\xE9sirables dans les cha\xEEnes de caract\xE8res. Passons en revue\
+  \ quelques\u2026"
 lastmod: '2024-03-13T22:44:57.222440-06:00'
 model: gpt-4-0125-preview
-summary: "Supprimer les guillemets d'une cha\xEEne signifie g\xE9n\xE9ralement se\
-  \ d\xE9barrasser des guillemets doubles (\") ou simples (') superflus."
+summary: "Python offre plusieurs moyens de se d\xE9barrasser des guillemets ind\xE9\
+  sirables dans les cha\xEEnes de caract\xE8res."
 title: "Retirer les guillemets d'une cha\xEEne"
 weight: 9
 ---

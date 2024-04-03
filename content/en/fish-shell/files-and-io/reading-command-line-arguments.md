@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:56:02.966338-07:00
-description: "Reading command line arguments is grabbing the extra bits you type after\
-  \ your script's name, like secret handshakes to customize a script's behavior.\u2026"
+description: 'How to: Let''s say `greet.fish` is your script. You want it to take
+  a name and spit out a greeting.'
 lastmod: '2024-03-13T22:45:00.488139-06:00'
 model: gpt-4-1106-preview
-summary: Reading command line arguments is grabbing the extra bits you type after
-  your script's name, like secret handshakes to customize a script's behavior.
+summary: Let's say `greet.fish` is your script.
 title: Reading command line arguments
 weight: 23
 ---

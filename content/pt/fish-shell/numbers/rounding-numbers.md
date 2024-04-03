@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:44:06.987667-07:00
-description: "Arredondar n\xFAmeros consiste em eliminar casas decimais para simplificar\
-  \ seus dados ou adequ\xE1-los a formatos espec\xEDficos. Programadores fazem isso\
-  \ para\u2026"
+description: "Como fazer: No Fish, o arredondamento de n\xFAmeros depende do comando\
+  \ `math`. Use `math -s0` para arredondar para o inteiro mais pr\xF3ximo."
 lastmod: '2024-03-13T22:44:46.998899-06:00'
 model: gpt-4-0125-preview
-summary: "Arredondar n\xFAmeros consiste em eliminar casas decimais para simplificar\
-  \ seus dados ou adequ\xE1-los a formatos espec\xEDficos."
+summary: "No Fish, o arredondamento de n\xFAmeros depende do comando `math`."
 title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---

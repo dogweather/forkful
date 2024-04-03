@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:49.504421-07:00
-description: "Express\xF5es Regulares (regex) s\xE3o padr\xF5es utilizados para combinar\
-  \ sequ\xEAncias de caracteres em strings. Os programadores as utilizam para buscar,\
-  \ editar ou\u2026"
+description: "Como: Usar express\xF5es regulares no Google Apps Script \xE9 simples,\
+  \ gra\xE7as \xE0 sintaxe baseada em JavaScript. Aqui est\xE1 como voc\xEA pode incorporar\
+  \ regex em seus\u2026"
 lastmod: '2024-03-13T22:44:46.096305-06:00'
 model: gpt-4-0125-preview
-summary: "Express\xF5es Regulares (regex) s\xE3o padr\xF5es utilizados para combinar\
-  \ sequ\xEAncias de caracteres em strings."
+summary: "Usar express\xF5es regulares no Google Apps Script \xE9 simples, gra\xE7\
+  as \xE0 sintaxe baseada em JavaScript."
 title: "Usando express\xF5es regulares"
 weight: 11
 ---

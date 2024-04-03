@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:27.304585-07:00
-description: "Zmiana pierwszej litery \u0142a\u0144cucha na wielk\u0105, a reszty\
-  \ na ma\u0142e litery, oznacza modyfikacj\u0119 tekstu w taki spos\xF3b, by pierwsza\
-  \ litera by\u0142a wielka, a pozosta\u0142a\u2026"
+description: "Jak to zrobi\u0107: W Fish Shell, ci\u0105gi znak\xF3w mog\u0105 by\u0107\
+  \ manipulowane bezpo\u015Brednio za pomoc\u0105 wbudowanych funkcji, bez potrzeby\
+  \ u\u017Cywania zewn\u0119trznych narz\u0119dzi\u2026"
 lastmod: '2024-03-13T22:44:35.821689-06:00'
 model: gpt-4-0125-preview
-summary: "Zmiana pierwszej litery \u0142a\u0144cucha na wielk\u0105, a reszty na ma\u0142\
-  e litery, oznacza modyfikacj\u0119 tekstu w taki spos\xF3b, by pierwsza litera by\u0142\
-  a wielka, a pozosta\u0142a cz\u0119\u015B\u0107 \u0142a\u0144cucha by\u0142a pisana\
-  \ ma\u0142ymi literami."
+summary: "W Fish Shell, ci\u0105gi znak\xF3w mog\u0105 by\u0107 manipulowane bezpo\u015B\
+  rednio za pomoc\u0105 wbudowanych funkcji, bez potrzeby u\u017Cywania zewn\u0119\
+  trznych narz\u0119dzi czy bibliotek."
 title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---

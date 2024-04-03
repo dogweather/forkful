@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:07.117359-07:00
-description: "\xC5 jobbe med CSV (kommaseparerte verdier) inneb\xE6rer lesing fra\
-  \ og skriving til CSV-filer, et vanlig format for lagring av tabul\xE6re data. Programmerere\
-  \ gj\xF8r\u2026"
+description: "Hvordan: Python tilbyr den innebygde `csv`-modulen for \xE5 h\xE5ndtere\
+  \ CSV-filer, noe som gj\xF8r det enkelt \xE5 lese fra og skrive til dem. For mer\
+  \ robuste og\u2026"
 lastmod: '2024-03-13T22:44:40.383329-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 jobbe med CSV (kommaseparerte verdier) inneb\xE6rer lesing fra og skriving\
-  \ til CSV-filer, et vanlig format for lagring av tabul\xE6re data."
+summary: "Python tilbyr den innebygde `csv`-modulen for \xE5 h\xE5ndtere CSV-filer,\
+  \ noe som gj\xF8r det enkelt \xE5 lese fra og skrive til dem."
 title: Arbeide med CSV
 weight: 37
 ---

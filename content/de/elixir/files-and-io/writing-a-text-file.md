@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:36.379597-07:00
-description: "Das Schreiben in eine Textdatei in Elixir ist eine wesentliche F\xE4\
-  higkeit f\xFCr Entwickler, die es erm\xF6glicht, Daten zu persistieren, zu protokollieren\
-  \ oder\u2026"
+description: "Wie geht das: Elixir macht die Dateiverarbeitung mit eingebauten Modulen\
+  \ unkompliziert. Die prim\xE4re Methode, um in eine Datei zu schreiben, verwendet\
+  \ die\u2026"
 lastmod: '2024-03-13T22:44:53.554096-06:00'
 model: gpt-4-0125-preview
-summary: "Das Schreiben in eine Textdatei in Elixir ist eine wesentliche F\xE4higkeit\
-  \ f\xFCr Entwickler, die es erm\xF6glicht, Daten zu persistieren, zu protokollieren\
-  \ oder menschenlesbare Inhalte zu exportieren."
+summary: Elixir macht die Dateiverarbeitung mit eingebauten Modulen unkompliziert.
 title: Eine Textdatei schreiben
 weight: 24
 ---

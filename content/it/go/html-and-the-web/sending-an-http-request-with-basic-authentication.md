@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:06.848360-07:00
-description: "Inviare una richiesta HTTP con autenticazione di base in Go comporta\
-  \ l'aggiunta di un'intestazione di autorizzazione alla tua richiesta che include\
-  \ un\u2026"
+description: "Come fare: Per effettuare una richiesta HTTP con autenticazione di base\
+  \ in Go, \xE8 necessario creare le intestazioni della tua richiesta per includere\
+  \ il\u2026"
 lastmod: '2024-03-13T22:44:42.907975-06:00'
 model: gpt-4-0125-preview
-summary: Inviare una richiesta HTTP con autenticazione di base in Go comporta l'aggiunta
-  di un'intestazione di autorizzazione alla tua richiesta che include un nome utente
-  e una password sotto forma di stringa codificata in Base64.
+summary: "Per effettuare una richiesta HTTP con autenticazione di base in Go, \xE8\
+  \ necessario creare le intestazioni della tua richiesta per includere il campo `Authorization`,\
+  \ popolato con le tue credenziali nel formato corretto."
 title: Inviare una richiesta HTTP con autenticazione di base
 weight: 45
 ---

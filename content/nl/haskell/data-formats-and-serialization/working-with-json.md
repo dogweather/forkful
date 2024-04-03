@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:24.960978-07:00
-description: "JSON (JavaScript Object Notation) is een tekstgebaseerd gegevensformaat\
-  \ voor het opslaan en transporteren van data. Programmeurs gebruiken het omdat het\u2026"
+description: "Hoe te: In Haskell, gaan we om met JSON gebruikmakend van de `aeson`\
+  \ bibliotheek. Om te beginnen, importeer deze en definieer een type dat overeenkomt\
+  \ met\u2026"
 lastmod: '2024-03-13T22:44:50.873766-06:00'
 model: gpt-4-0125-preview
-summary: JSON (JavaScript Object Notation) is een tekstgebaseerd gegevensformaat voor
-  het opslaan en transporteren van data.
+summary: In Haskell, gaan we om met JSON gebruikmakend van de `aeson` bibliotheek.
 title: Werken met JSON
 weight: 38
 ---

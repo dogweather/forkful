@@ -2,14 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:34.667076-07:00
-description: "Lavorare con file CSV comporta la lettura da e la scrittura su file\
-  \ di Valori Separati da Virgola (CSV), un formato popolare per lo scambio di dati\
-  \ perch\xE9\u2026"
+description: 'Come fare: #.'
 lastmod: '2024-03-13T22:44:43.331370-06:00'
 model: gpt-4-0125-preview
-summary: "Lavorare con file CSV comporta la lettura da e la scrittura su file di Valori\
-  \ Separati da Virgola (CSV), un formato popolare per lo scambio di dati perch\xE9\
-  \ \xE8 semplice e ampiamente supportato."
+summary: '#.'
 title: Lavorare con i CSV
 weight: 37
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:03.996018-07:00
-description: "Il logging nello sviluppo software \xE8 il processo di registrazione\
-  \ di informazioni sull'esecuzione di un programma, progettato per tracciare il suo\u2026"
+description: "Come fare: In Go, il logging pu\xF2 essere implementato utilizzando\
+  \ il pacchetto della libreria standard `log`. Questo pacchetto fornisce capacit\xE0\
+  \ di logging\u2026"
 lastmod: '2024-03-13T22:44:42.915365-06:00'
 model: gpt-4-0125-preview
-summary: "Il logging nello sviluppo software \xE8 il processo di registrazione di\
-  \ informazioni sull'esecuzione di un programma, progettato per tracciare il suo\
-  \ comportamento e diagnosticare problemi."
+summary: "In Go, il logging pu\xF2 essere implementato utilizzando il pacchetto della\
+  \ libreria standard `log`."
 title: Registro degli Eventi
 weight: 17
 ---

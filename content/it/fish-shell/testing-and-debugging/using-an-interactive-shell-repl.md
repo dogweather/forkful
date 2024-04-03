@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:14:04.461405-07:00
-description: "REPL, o Ciclo Leggi-Valuta-Stampa, \xE8 un ambiente di programmazione\
-  \ interattivo che prende singoli input dell'utente, li esegue e restituisce il risultato.\u2026"
+description: "Come fare: In Fish, la shell interattiva \xE8 la modalit\xE0 predefinita\
+  \ all'avvio. Ecco come appare in azione."
 lastmod: '2024-03-13T22:44:43.860345-06:00'
 model: gpt-4-0125-preview
-summary: "REPL, o Ciclo Leggi-Valuta-Stampa, \xE8 un ambiente di programmazione interattivo\
-  \ che prende singoli input dell'utente, li esegue e restituisce il risultato."
+summary: "In Fish, la shell interattiva \xE8 la modalit\xE0 predefinita all'avvio."
 title: Utilizzo di un interprete interattivo (REPL)
 weight: 34
 ---

@@ -2,18 +2,16 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:53:59.874950-07:00
-description: "So s\xE1nh hai ng\xE0y trong Dart bao g\u1ED3m vi\u1EC7c \u0111\xE1\
-  nh gi\xE1 s\u1EF1 kh\xE1c bi\u1EC7t v\u1EC1 th\u1EDDi gian ho\u1EB7c th\u1EE9 t\u1EF1\
-  \ gi\u1EEFa ch\xFAng, l\xE0 m\u1ED9t ch\u1EE9c n\u0103ng thi\u1EBFt y\u1EBFu trong\
-  \ c\xE1c \u1EE9ng d\u1EE5ng qu\u1EA3n l\xFD\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Dart, b\u1EA1n c\xF3 th\u1EC3 so s\xE1\
+  nh c\xE1c ng\xE0y s\u1EED d\u1EE5ng l\u1EDBp `DateTime`, c\xF3 c\xE1c ph\u01B0\u01A1\
+  ng th\u1EE9c nh\u01B0 `isBefore`, `isAfter`, v\xE0 `isAtSameMomentAs` \u0111\u1EC3\
+  \ so\u2026"
 lastmod: '2024-03-13T22:44:36.279574-06:00'
 model: gpt-4-0125-preview
-summary: "So s\xE1nh hai ng\xE0y trong Dart bao g\u1ED3m vi\u1EC7c \u0111\xE1nh gi\xE1\
-  \ s\u1EF1 kh\xE1c bi\u1EC7t v\u1EC1 th\u1EDDi gian ho\u1EB7c th\u1EE9 t\u1EF1 gi\u1EEF\
-  a ch\xFAng, l\xE0 m\u1ED9t ch\u1EE9c n\u0103ng thi\u1EBFt y\u1EBFu trong c\xE1c\
-  \ \u1EE9ng d\u1EE5ng qu\u1EA3n l\xFD s\u1EF1 ki\u1EC7n, h\u1EA1n ch\xF3t ho\u1EB7\
-  c b\u1EA5t k\u1EF3 d\u1EEF li\u1EC7u nh\u1EA1y c\u1EA3m v\u1EDBi th\u1EDDi gian\
-  \ n\xE0o."
+summary: "Trong Dart, b\u1EA1n c\xF3 th\u1EC3 so s\xE1nh c\xE1c ng\xE0y s\u1EED d\u1EE5\
+  ng l\u1EDBp `DateTime`, c\xF3 c\xE1c ph\u01B0\u01A1ng th\u1EE9c nh\u01B0 `isBefore`,\
+  \ `isAfter`, v\xE0 `isAtSameMomentAs` \u0111\u1EC3 so s\xE1nh tr\u1EF1c ti\u1EBF\
+  p."
 title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---

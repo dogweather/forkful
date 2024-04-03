@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:36:44.206828-07:00
-description: "Convertir une date en cha\xEEne de caract\xE8res permet d'en afficher\
-  \ la repr\xE9sentation lisible par un humain. Les programmeurs le font pour afficher\
-  \ des dates\u2026"
+description: "How to: JavaScript simplifie la conversion des dates en cha\xEEnes.\
+  \ Voyez vous-m\xEAme ."
 lastmod: '2024-03-13T22:44:58.288263-06:00'
 model: gpt-4-1106-preview
-summary: "Convertir une date en cha\xEEne de caract\xE8res permet d'en afficher la\
-  \ repr\xE9sentation lisible par un humain."
+summary: "JavaScript simplifie la conversion des dates en cha\xEEnes."
 title: "Conversion d'une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---

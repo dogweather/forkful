@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:45:46.817922-07:00
-description: "Extracting substrings means pulling out a specific part of a string\u2014\
-  a sequence of characters inside a bigger string. Programmers slice and dice strings\
-  \ to\u2026"
+description: 'How to: Extracting a substring in Java is straightforward using the
+  `substring` method. Here''s how you do it.'
 lastmod: '2024-03-13T22:44:59.962663-06:00'
 model: gpt-4-1106-preview
-summary: "Extracting substrings means pulling out a specific part of a string\u2014\
-  a sequence of characters inside a bigger string."
+summary: Extracting a substring in Java is straightforward using the `substring` method.
 title: Extracting substrings
 weight: 6
 ---

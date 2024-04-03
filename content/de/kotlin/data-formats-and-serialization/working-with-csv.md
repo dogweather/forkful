@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:40.788875-07:00
-description: "Die Arbeit mit CSV (Comma-Separated Values, kommagetrennte Werte) umfasst\
-  \ das Lesen von und das Schreiben in CSV-Dateien, ein g\xE4ngiges Format zum\u2026"
+description: "Wie: Kotlin, eine statisch typisierte Programmiersprache, die auf der\
+  \ JVM l\xE4uft, enth\xE4lt keine integrierte Bibliothek zur Verarbeitung von CSV-Dateien.\u2026"
 lastmod: '2024-03-13T22:44:53.868540-06:00'
 model: gpt-4-0125-preview
-summary: "Die Arbeit mit CSV (Comma-Separated Values, kommagetrennte Werte) umfasst\
-  \ das Lesen von und das Schreiben in CSV-Dateien, ein g\xE4ngiges Format zum Speichern\
-  \ von tabellarischen Daten in Klartext."
+summary: "Kotlin, eine statisch typisierte Programmiersprache, die auf der JVM l\xE4\
+  uft, enth\xE4lt keine integrierte Bibliothek zur Verarbeitung von CSV-Dateien."
 title: Arbeiten mit CSV
 weight: 37
 ---

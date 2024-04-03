@@ -1,11 +1,9 @@
 ---
 date: 2024-01-26 03:42:59.130157-07:00
-description: "\xC5 runde av tall betyr \xE5 kutte av desimalene til en enklere verdi\
-  \ som er god nok for en gitt kontekst. Programmerere runder av tall for \xE5 forenkle\u2026"
+description: 'Hvordan: Her er det grunnleggende om avrunding i Bash.'
 lastmod: '2024-03-13T22:44:40.967274-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 runde av tall betyr \xE5 kutte av desimalene til en enklere verdi som\
-  \ er god nok for en gitt kontekst."
+summary: Her er det grunnleggende om avrunding i Bash.
 title: Avrunding av tall
 weight: 13
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:41:55.769499-07:00
-description: "Deletar caracteres que combinam com um padr\xE3o \xE9 basicamente filtrar\
-  \ a nossa string, tirando tudo que n\xE3o queremos. Programadores fazem isso pra\
-  \ limpar\u2026"
+description: "How to: (Como Fazer:) Vamos l\xE1! No Arduino, n\xE3o temos uma fun\xE7\
+  \xE3o pronta pra isso, ent\xE3o vamos criar uma. Olha s\xF3 este exemplo, que remove\
+  \ todos os d\xEDgitos\u2026"
 lastmod: '2024-03-13T22:44:46.823451-06:00'
 model: gpt-4-1106-preview
-summary: "Deletar caracteres que combinam com um padr\xE3o \xE9 basicamente filtrar\
-  \ a nossa string, tirando tudo que n\xE3o queremos."
+summary: "Vamos l\xE1."
 title: "Excluindo caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---

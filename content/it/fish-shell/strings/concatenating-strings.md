@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 17:34:54.029043-07:00
-description: "Concatenare le stringhe significa unirle fine a fine. I programmatori\
-  \ lo fanno per creare messaggi, comandi, o per manipolare dati che devono essere\u2026"
+description: 'How to: (Come fare:) Per concatenare stringhe in Fish, puoi semplicemente
+  scrivere una dopo l''altra.'
 lastmod: '2024-03-13T22:44:43.848246-06:00'
 model: gpt-4-1106-preview
-summary: Concatenare le stringhe significa unirle fine a fine.
+summary: Per concatenare stringhe in Fish, puoi semplicemente scrivere una dopo l'altra.
 title: Concatenazione di stringhe
 weight: 3
 ---

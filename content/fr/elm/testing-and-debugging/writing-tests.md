@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:24.784643-07:00
-description: "\xC9crire des tests en Elm consiste \xE0 cr\xE9er des cas de test pour\
-  \ v\xE9rifier la justesse de votre code Elm, en s'assurant qu'il se comporte comme\
-  \ pr\xE9vu. Les\u2026"
+description: "Comment faire : Elm utilise le paquet `elm-explorations/test` pour \xE9\
+  crire des tests unitaires et de fuzz. Commencez par ajouter le paquet \xE0 votre\
+  \ projet ."
 lastmod: '2024-03-13T22:44:57.692884-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire des tests en Elm consiste \xE0 cr\xE9er des cas de test pour v\xE9\
-  rifier la justesse de votre code Elm, en s'assurant qu'il se comporte comme pr\xE9\
-  vu."
+summary: "Elm utilise le paquet `elm-explorations/test` pour \xE9crire des tests unitaires\
+  \ et de fuzz."
 title: "R\xE9daction de tests"
 weight: 36
 ---

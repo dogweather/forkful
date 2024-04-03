@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:48.974513-07:00
-description: "Les expressions r\xE9guli\xE8res (regex) dans Fish Shell permettent\
-  \ de rechercher, d'apparier et de manipuler des cha\xEEnes de caract\xE8res bas\xE9\
-  es sur des motifs\u2026"
+description: "Comment faire : Bien que Fish Shell lui-m\xEAme ne dispose pas d'une\
+  \ commande int\xE9gr\xE9e pour les regex, il utilise efficacement des commandes\
+  \ externes comme\u2026"
 lastmod: '2024-03-13T22:44:58.311501-06:00'
 model: gpt-4-0125-preview
-summary: "Les expressions r\xE9guli\xE8res (regex) dans Fish Shell permettent de rechercher,\
-  \ d'apparier et de manipuler des cha\xEEnes de caract\xE8res bas\xE9es sur des motifs\
-  \ sp\xE9cifiques."
+summary: "Bien que Fish Shell lui-m\xEAme ne dispose pas d'une commande int\xE9gr\xE9\
+  e pour les regex, il utilise efficacement des commandes externes comme `grep`, `sed`\
+  \ et `awk` qui prennent en charge les regex, vous permettant d'incorporer des op\xE9\
+  rations regex dans vos scripts."
 title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---

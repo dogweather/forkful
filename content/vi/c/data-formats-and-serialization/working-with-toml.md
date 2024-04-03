@@ -2,15 +2,16 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:12:45.320918-07:00
-description: "TOML (Tom's Obvious, Minimal Language) l\xE0 m\u1ED9t \u0111\u1ECBnh\
-  \ d\u1EA1ng file c\u1EA5u h\xECnh d\u1EC5 \u0111\u1ECDc do ng\u1EEF ngh\u0129a r\xF5\
-  \ r\xE0ng c\u1EE7a n\xF3. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3\
-  \ cho c\xE1c file c\u1EA5u\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi TOML\
+  \ trong C, b\u1EA1n \u0111\u1EA7u ti\xEAn c\u1EA7n m\u1ED9t th\u01B0 vi\u1EC7n c\xF3\
+  \ kh\u1EA3 n\u0103ng ph\xE2n t\xEDch c\xFA ph\xE1p c\xE1c file TOML, v\xEC th\u01B0\
+  \ vi\u1EC7n chu\u1EA9n C kh\xF4ng bao g\u1ED3m\u2026"
 lastmod: '2024-03-13T22:44:37.299187-06:00'
 model: gpt-4-0125-preview
-summary: "TOML (Tom's Obvious, Minimal Language) l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1\
-  ng file c\u1EA5u h\xECnh d\u1EC5 \u0111\u1ECDc do ng\u1EEF ngh\u0129a r\xF5 r\xE0\
-  ng c\u1EE7a n\xF3."
+summary: "\u0110\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi TOML trong C, b\u1EA1n \u0111\u1EA7\
+  u ti\xEAn c\u1EA7n m\u1ED9t th\u01B0 vi\u1EC7n c\xF3 kh\u1EA3 n\u0103ng ph\xE2n\
+  \ t\xEDch c\xFA ph\xE1p c\xE1c file TOML, v\xEC th\u01B0 vi\u1EC7n chu\u1EA9n C\
+  \ kh\xF4ng bao g\u1ED3m ch\u1EE9c n\u0103ng n\xE0y."
 title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 weight: 39
 ---

@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:47.544593-07:00
-description: "Pisanie do standardowego b\u0142\u0119du (stderr) w JavaScript polega\
-  \ na kierowaniu komunikat\xF3w o b\u0142\u0119dach lub jakichkolwiek wa\u017Cnych\
-  \ informacji do specyficznego,\u2026"
+description: "Jak: W Node.js, pisanie do stderr mo\u017Cna zrealizowa\u0107 za pomoc\u0105\
+  \ metody `console.error()` lub poprzez bezpo\u015Brednie pisanie do `process.stderr`.\
+  \ Oto przyk\u0142ady\u2026"
 lastmod: '2024-03-13T22:44:35.812752-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie do standardowego b\u0142\u0119du (stderr) w JavaScript polega na\
-  \ kierowaniu komunikat\xF3w o b\u0142\u0119dach lub jakichkolwiek wa\u017Cnych informacji\
-  \ do specyficznego, oddzielnego strumienia, co jest szczeg\xF3lnie przydatne w \u015B\
-  rodowiskach podobnych do Unix w celach logowania i debugowania."
+summary: "W Node.js, pisanie do stderr mo\u017Cna zrealizowa\u0107 za pomoc\u0105\
+  \ metody `console.error()` lub poprzez bezpo\u015Brednie pisanie do `process.stderr`."
 title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---

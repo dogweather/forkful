@@ -2,13 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:53:39.701703-07:00
-description: "La concat\xE9nation de cha\xEEnes de caract\xE8res en programmation\
-  \ consiste \xE0 combiner deux cha\xEEnes ou plus en une seule. Les programmeurs\
-  \ font cela pour\u2026"
+description: "Comment faire : Dart offre plusieurs moyens simples pour concat\xE9\
+  ner des cha\xEEnes. Voici les m\xE9thodes les plus courantes : #."
 lastmod: '2024-03-13T22:44:57.375048-06:00'
 model: gpt-4-0125-preview
-summary: "La concat\xE9nation de cha\xEEnes de caract\xE8res en programmation consiste\
-  \ \xE0 combiner deux cha\xEEnes ou plus en une seule."
+summary: "Dart offre plusieurs moyens simples pour concat\xE9ner des cha\xEEnes."
 title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 weight: 3
 ---

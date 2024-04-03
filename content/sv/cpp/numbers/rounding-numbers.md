@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:43:34.234392-07:00
-description: "Att avrunda tal inneb\xE4r att justera ett v\xE4rde till n\xE4rmaste\
-  \ heltal eller angiven precision. Utvecklare g\xF6r detta f\xF6r att f\xF6renkla,\
-  \ anpassa sig till\u2026"
+description: "Hur man g\xF6r: C++ erbjuder flera s\xE4tt att avrunda tal, som `floor()`,\
+  \ `ceil()`, och `round()`."
 lastmod: '2024-03-13T22:44:38.203959-06:00'
 model: gpt-4-0125-preview
-summary: "Att avrunda tal inneb\xE4r att justera ett v\xE4rde till n\xE4rmaste heltal\
-  \ eller angiven precision."
+summary: "C++ erbjuder flera s\xE4tt att avrunda tal, som `floor()`, `ceil()`, och\
+  \ `round()`."
 title: Avrundning av tal
 weight: 13
 ---

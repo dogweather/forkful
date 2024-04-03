@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:04.966750-07:00
-description: "Werken met complexe getallen in programmeren betreft het manipuleren\
-  \ van getallen die zowel een re\xEBel als een imaginair deel hebben, doorgaans uitgedrukt\u2026"
+description: "Hoe: In Go worden complexe getallen behandeld met behulp van de ingebouwde\
+  \ functies `complex`, `real`, en `imag`, samen met de types `complex64` en\u2026"
 lastmod: '2024-03-13T22:44:50.281067-06:00'
 model: gpt-4-0125-preview
-summary: "Werken met complexe getallen in programmeren betreft het manipuleren van\
-  \ getallen die zowel een re\xEBel als een imaginair deel hebben, doorgaans uitgedrukt\
-  \ als `a + bi`."
+summary: In Go worden complexe getallen behandeld met behulp van de ingebouwde functies
+  `complex`, `real`, en `imag`, samen met de types `complex64` en `complex128` (die
+  respectievelijk 64-bits en 128-bits complexe getallen vertegenwoordigen).
 title: Werken met complexe getallen
 weight: 14
 ---

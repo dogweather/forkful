@@ -2,19 +2,17 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:24.168361-07:00
-description: "Giao di\u1EC7n l\u1EADp tr\xECnh t\u01B0\u01A1ng t\xE1c, hay v\xF2ng\
-  \ l\u1EB7p \u0110\u1ECDc-\u0110\xE1nh gi\xE1-In (REPL), l\xE0 m\u1ED9t m\xF4i tr\u01B0\
-  \u1EDDng l\u1EADp tr\xECnh t\u01B0\u01A1ng t\xE1c \u0111\u01A1n gi\u1EA3n, l\u1EA5\
-  y \u0111\u1EA7u v\xE0o \u0111\u01A1n l\u1EBB t\u1EEB ng\u01B0\u1EDDi d\xF9ng (bi\u1EC3\
-  u\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Google Apps Script, m\u1ED9t ng\xF4n ng\u1EEF\
+  \ l\u1EADp tr\xECnh d\u1EF1a tr\xEAn \u0111\xE1m m\xE2y \u0111\u1EC3 t\u1EF1 \u0111\
+  \u1ED9ng h\xF3a c\xE1c nhi\u1EC7m v\u1EE5 qua c\xE1c s\u1EA3n ph\u1EA9m c\u1EE7\
+  a Google, kh\xF4ng c\xF3 c\xF4ng c\u1EE5 REPL\u2026"
 lastmod: '2024-03-13T22:44:36.042639-06:00'
 model: gpt-4-0125-preview
-summary: "Giao di\u1EC7n l\u1EADp tr\xECnh t\u01B0\u01A1ng t\xE1c, hay v\xF2ng l\u1EB7\
-  p \u0110\u1ECDc-\u0110\xE1nh gi\xE1-In (REPL), l\xE0 m\u1ED9t m\xF4i tr\u01B0\u1EDD\
-  ng l\u1EADp tr\xECnh t\u01B0\u01A1ng t\xE1c \u0111\u01A1n gi\u1EA3n, l\u1EA5y \u0111\
-  \u1EA7u v\xE0o \u0111\u01A1n l\u1EBB t\u1EEB ng\u01B0\u1EDDi d\xF9ng (bi\u1EC3u\
-  \ th\u1EE9c), \u0111\xE1nh gi\xE1 ch\xFAng v\xE0 tr\u1EA3 k\u1EBFt qu\u1EA3 l\u1EA1\
-  i cho ng\u01B0\u1EDDi d\xF9ng."
+summary: "Google Apps Script, m\u1ED9t ng\xF4n ng\u1EEF l\u1EADp tr\xECnh d\u1EF1\
+  a tr\xEAn \u0111\xE1m m\xE2y \u0111\u1EC3 t\u1EF1 \u0111\u1ED9ng h\xF3a c\xE1c nhi\u1EC7\
+  m v\u1EE5 qua c\xE1c s\u1EA3n ph\u1EA9m c\u1EE7a Google, kh\xF4ng c\xF3 c\xF4ng\
+  \ c\u1EE5 REPL t\xEDch h\u1EE3p gi\u1ED1ng nh\u01B0 c\xE1c ng\xF4n ng\u1EEF kh\xE1\
+  c nh\u01B0 Python hay Node.js c\u1EE7a JavaScript."
 title: "S\u1EED d\u1EE5ng giao di\u1EC7n d\xF2ng l\u1EC7nh t\u01B0\u01A1ng t\xE1c\
   \ (REPL)"
 weight: 34

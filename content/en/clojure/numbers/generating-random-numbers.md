@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 20:26:17.584635-07:00
-description: "Generating random numbers in programming is about creating values that\
-  \ cannot be predicted logically ahead of time. Programmers do this for a variety\
-  \ of\u2026"
+description: "How to: In Clojure, random number generation is straightforward, and\
+  \ there are a couple of built-in functions that can be used right away. To generate\
+  \ a\u2026"
 lastmod: '2024-03-13T22:44:59.741466-06:00'
 model: gpt-4-0125-preview
-summary: Generating random numbers in programming is about creating values that cannot
-  be predicted logically ahead of time.
+summary: In Clojure, random number generation is straightforward, and there are a
+  couple of built-in functions that can be used right away.
 title: Generating random numbers
 weight: 12
 ---

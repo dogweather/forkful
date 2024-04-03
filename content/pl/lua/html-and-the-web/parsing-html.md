@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:46.917383-07:00
-description: "Przetwarzanie HTML polega na wydobywaniu danych i informacji z dokument\xF3\
-  w HTML, co jest kluczowe dla takich zada\u0144 jak scraping internetowy, analiza\
-  \ danych\u2026"
+description: "Jak to zrobi\u0107: Lua nie posiada wbudowanej biblioteki do przetwarzania\
+  \ HTML, ale mo\u017Cna wykorzysta\u0107 biblioteki stron trzecich takie jak `LuaHTML`\
+  \ lub\u2026"
 lastmod: '2024-03-13T22:44:35.537782-06:00'
 model: gpt-4-0125-preview
-summary: "Przetwarzanie HTML polega na wydobywaniu danych i informacji z dokument\xF3\
-  w HTML, co jest kluczowe dla takich zada\u0144 jak scraping internetowy, analiza\
-  \ danych oraz automatyzacja."
+summary: "Lua nie posiada wbudowanej biblioteki do przetwarzania HTML, ale mo\u017C\
+  na wykorzysta\u0107 biblioteki stron trzecich takie jak `LuaHTML` lub korzysta\u0107\
+  \ z powi\u0105za\u0144 z `libxml2` przez `LuaXML`."
 title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---

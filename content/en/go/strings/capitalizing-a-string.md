@@ -1,13 +1,11 @@
 ---
 date: 2024-02-03 17:50:01.738907-07:00
-description: "Capitalizing a string involves transforming the first character of a\
-  \ given string to uppercase if it is in lowercase, making sure the string stands\
-  \ out or\u2026"
+description: "How to: In Go, the `strings` package does not provide a direct function\
+  \ to capitalize only the first letter of a string. Hence, we combine the\u2026"
 lastmod: '2024-03-13T22:44:59.616122-06:00'
 model: gpt-4-0125-preview
-summary: Capitalizing a string involves transforming the first character of a given
-  string to uppercase if it is in lowercase, making sure the string stands out or
-  adheres to specific grammatical norms.
+summary: In Go, the `strings` package does not provide a direct function to capitalize
+  only the first letter of a string.
 title: Capitalizing a string
 weight: 2
 ---

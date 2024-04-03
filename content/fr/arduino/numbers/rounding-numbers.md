@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:43:01.150933-07:00
-description: "Arrondir des nombres consiste \xE0 r\xE9duire un d\xE9cimal \xE0 sa\
-  \ valeur enti\xE8re la plus proche ou \xE0 un nombre d\xE9fini de d\xE9cimales.\
-  \ Les programmeurs arrondissent\u2026"
+description: "Comment faire : Avec Arduino, vous pouvez arrondir les nombres en utilisant\
+  \ des fonctions int\xE9gr\xE9es. Les principaux acteurs sont `round`, `ceil` et\u2026"
 lastmod: '2024-03-13T22:44:58.103721-06:00'
 model: gpt-4-0125-preview
-summary: "Arrondir des nombres consiste \xE0 r\xE9duire un d\xE9cimal \xE0 sa valeur\
-  \ enti\xE8re la plus proche ou \xE0 un nombre d\xE9fini de d\xE9cimales."
+summary: "Avec Arduino, vous pouvez arrondir les nombres en utilisant des fonctions\
+  \ int\xE9gr\xE9es."
 title: Arrondir les nombres
 weight: 13
 ---

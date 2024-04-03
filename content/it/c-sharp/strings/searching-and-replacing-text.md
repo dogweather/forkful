@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:57:39.956262-07:00
-description: "Cercare e sostituire testo \xE8 un'operazione che ti permette di trovare\
-  \ stringhe specifiche in un flusso di testo e cambiarle con altre. Programmatori\
-  \ la\u2026"
+description: How to (Come Fare) Ecco un esempio semplice in C# per cercare e sostituire
+  testo.
 lastmod: '2024-03-13T22:44:43.418796-06:00'
 model: gpt-4-1106-preview
-summary: "Cercare e sostituire testo \xE8 un'operazione che ti permette di trovare\
-  \ stringhe specifiche in un flusso di testo e cambiarle con altre."
+summary: Ecco un esempio semplice in C# per cercare e sostituire testo.
 title: Ricerca e sostituzione del testo
 weight: 10
 ---

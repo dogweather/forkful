@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:48.947086-07:00
-description: "Las expresiones regulares (regex) son secuencias de caracteres que definen\
-  \ patrones de b\xFAsqueda, principalmente utilizados para la coincidencia y\u2026"
+description: "C\xF3mo: Arduino no tiene soporte incorporado para regex directamente\
+  \ en su biblioteca est\xE1ndar. Sin embargo, puedes lograr una funcionalidad similar\
+  \ a regex\u2026"
 lastmod: '2024-03-13T22:44:59.324476-06:00'
 model: gpt-4-0125-preview
-summary: "Las expresiones regulares (regex) son secuencias de caracteres que definen\
-  \ patrones de b\xFAsqueda, principalmente utilizados para la coincidencia y manipulaci\xF3\
-  n de cadenas de texto."
+summary: "Arduino no tiene soporte incorporado para regex directamente en su biblioteca\
+  \ est\xE1ndar."
 title: Usando expresiones regulares
 weight: 11
 ---

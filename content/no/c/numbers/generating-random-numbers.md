@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:29.467098-07:00
-description: "\xC5 generere tilfeldige tall i C inneb\xE6rer \xE5 skape verdier som\
-  \ er uforutsigbare og f\xF8lger en spesifikk fordeling, som uniform eller normal.\
-  \ Denne evnen er\u2026"
+description: "Hvordan: I C kan tilfeldige tall genereres ved \xE5 bruke `rand()`-funksjonen,\
+  \ som er en del av C-standardbiblioteket `<stdlib.h>`. Som standard produserer\u2026"
 lastmod: '2024-03-13T22:44:41.267159-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 generere tilfeldige tall i C inneb\xE6rer \xE5 skape verdier som er\
-  \ uforutsigbare og f\xF8lger en spesifikk fordeling, som uniform eller normal."
+summary: "I C kan tilfeldige tall genereres ved \xE5 bruke `rand()`-funksjonen, som\
+  \ er en del av C-standardbiblioteket `<stdlib.h>`."
 title: Genererer tilfeldige tall
 weight: 12
 ---

@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:57:10.180624-07:00
-description: "Procurar e substituir texto \xE9 um processo b\xE1sico para trocar uma\
-  \ sequ\xEAncia de caracteres por outra num bloco de texto. Programadores fazem isso\
-  \ para\u2026"
+description: 'Como Fazer: .'
 lastmod: '2024-03-13T22:44:46.824359-06:00'
 model: gpt-4-1106-preview
-summary: "Procurar e substituir texto \xE9 um processo b\xE1sico para trocar uma sequ\xEA\
-  ncia de caracteres por outra num bloco de texto."
+summary: .
 title: Pesquisando e substituindo texto
 weight: 10
 ---

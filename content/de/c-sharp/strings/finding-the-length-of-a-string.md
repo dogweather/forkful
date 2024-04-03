@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:47:03.985386-07:00
-description: "Die L\xE4nge eines Strings zu bestimmen bedeutet, die Anzahl der Zeichen\
-  \ zu z\xE4hlen, die er enth\xE4lt. Das ist n\xFCtzlich, um Text zu verarbeiten,\
-  \ Grenzen zu\u2026"
+description: "Anleitung: Um die L\xE4nge eines Strings in C# zu bekommen, verwenden\
+  \ wir die `Length`-Eigenschaft. Sieh dir das Beispiel an."
 lastmod: '2024-03-13T22:44:53.879375-06:00'
 model: gpt-4-1106-preview
-summary: "Die L\xE4nge eines Strings zu bestimmen bedeutet, die Anzahl der Zeichen\
-  \ zu z\xE4hlen, die er enth\xE4lt."
+summary: "Um die L\xE4nge eines Strings in C# zu bekommen, verwenden wir die `Length`-Eigenschaft."
 title: "Ermittlung der Zeichenkettenl\xE4nge"
 weight: 7
 ---

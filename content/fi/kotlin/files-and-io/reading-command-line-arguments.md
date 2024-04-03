@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:56:17.180147-07:00
-description: "Komennon riviargumentit ovat komentorivilt\xE4 ohjelmiin sy\xF6tett\xE4\
-  vi\xE4 tiedonpaloja. Niit\xE4 k\xE4ytet\xE4\xE4n, koska ne mahdollistavat k\xE4\
-  ytt\xE4j\xE4n tarpeisiin mukautuvat\u2026"
+description: "How to: Kotlinissa komennon riviargumentit luetaan `Array<String>`-tyyppisen\xE4\
+  \ `args`-parametrina p\xE4\xE4funktiolle. T\xE4ss\xE4 esimerkki."
 lastmod: '2024-03-13T22:44:56.546799-06:00'
 model: gpt-4-1106-preview
-summary: "Komennon riviargumentit ovat komentorivilt\xE4 ohjelmiin sy\xF6tett\xE4\
-  vi\xE4 tiedonpaloja."
+summary: "Kotlinissa komennon riviargumentit luetaan `Array<String>`-tyyppisen\xE4\
+  \ `args`-parametrina p\xE4\xE4funktiolle."
 title: Komennoriviparametrien lukeminen
 weight: 23
 ---

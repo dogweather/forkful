@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:58:03.877086-07:00
-description: "Searching and replacing text in Java scribbles over original strings\
-  \ with new characters - think of it as digital white-out. Programmers often use\
-  \ this to\u2026"
+description: 'How to: Searching and replacing in Java is a breeze thanks to the `String`
+  class and its `replace()` method. Here''s how you do it.'
 lastmod: '2024-03-13T22:44:59.959184-06:00'
 model: gpt-4-1106-preview
-summary: Searching and replacing text in Java scribbles over original strings with
-  new characters - think of it as digital white-out.
+summary: Searching and replacing in Java is a breeze thanks to the `String` class
+  and its `replace()` method.
 title: Searching and replacing text
 weight: 10
 ---

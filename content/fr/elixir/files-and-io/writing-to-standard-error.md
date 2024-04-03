@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:51.573339-07:00
-description: "\xC9crire sur l'erreur standard (stderr) en Elixir est une m\xE9thode\
-  \ permettant de diriger les messages d'erreur et les diagnostics \xE0 part de la\
-  \ sortie\u2026"
+description: "Comment faire : En Elixir, vous pouvez utiliser des fonctions du module\
+  \ `IO` telles que `IO.puts/2` et `IO.warn/2` pour \xE9crire des messages sur l'erreur\u2026"
 lastmod: '2024-03-13T22:44:57.345085-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire sur l'erreur standard (stderr) en Elixir est une m\xE9thode permettant\
-  \ de diriger les messages d'erreur et les diagnostics \xE0 part de la sortie principale\
-  \ (stdout)."
+summary: "En Elixir, vous pouvez utiliser des fonctions du module `IO` telles que\
+  \ `IO.puts/2` et `IO.warn/2` pour \xE9crire des messages sur l'erreur standard."
 title: "\xC9crire sur l'erreur standard"
 weight: 25
 ---

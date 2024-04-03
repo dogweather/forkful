@@ -3,12 +3,12 @@ changelog:
 - 2024-01-28, dogweather, reviewed
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:24:04.242459-07:00
-description: "L'interpolazione di stringhe \xE8 il metodo di incorporamento di espressioni\
-  \ all'interno di letterali di stringa. I programmatori lo usano per inserire\u2026"
+description: 'Come fare: In Python 3.6 e versioni successive, puoi interpolare le
+  stringhe utilizzando le f-string. Ecco come.'
 lastmod: '2024-03-13T22:44:42.987506-06:00'
 model: gpt-4-0125-preview
-summary: "L'interpolazione di stringhe \xE8 il metodo di incorporamento di espressioni\
-  \ all'interno di letterali di stringa."
+summary: In Python 3.6 e versioni successive, puoi interpolare le stringhe utilizzando
+  le f-string.
 title: Interpolazione di una stringa
 weight: 8
 ---

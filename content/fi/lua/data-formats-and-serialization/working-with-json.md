@@ -2,15 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:26.897980-07:00
-description: "JSONin k\xE4sittely Luassa k\xE4sitt\xE4\xE4 JSON-muotoiltujen merkkijonojen\
-  \ j\xE4sent\xE4misen Lua-taulukoihin ja p\xE4invastoin, mik\xE4 mahdollistaa helpon\
-  \ datan vaihdon\u2026"
+description: "Kuinka: Lua ei sis\xE4ll\xE4 valmiiksi tehty\xE4 kirjastoa JSON-k\xE4\
+  sittelyyn. Siksi yhten\xE4 suosittuna kolmannen osapuolen kirjastona on `dkjson`,\
+  \ jota voit helposti\u2026"
 lastmod: '2024-03-13T22:44:56.717862-06:00'
 model: gpt-4-0125-preview
-summary: "JSONin k\xE4sittely Luassa k\xE4sitt\xE4\xE4 JSON-muotoiltujen merkkijonojen\
-  \ j\xE4sent\xE4misen Lua-taulukoihin ja p\xE4invastoin, mik\xE4 mahdollistaa helpon\
-  \ datan vaihdon Lualla tehtyjen sovellusten ja verkkopalveluiden tai ulkoisten APIen\
-  \ v\xE4lill\xE4."
+summary: "Lua ei sis\xE4ll\xE4 valmiiksi tehty\xE4 kirjastoa JSON-k\xE4sittelyyn."
 title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---

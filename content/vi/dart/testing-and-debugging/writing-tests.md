@@ -2,17 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:58:02.116928-07:00
-description: "Vi\u1EC7c vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra trong Dart bao g\u1ED3\
-  m vi\u1EC7c t\u1EA1o ra c\xE1c tr\u01B0\u1EDDng h\u1EE3p ki\u1EC3m tra \u0111\u1EC3\
-  \ t\u1EF1 \u0111\u1ED9ng x\xE1c minh r\u1EB1ng c\xE1c ph\u1EA7n kh\xE1c nhau c\u1EE7\
-  a ch\u01B0\u01A1ng tr\xECnh ho\u1EA1t \u0111\u1ED9ng\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Dart, g\xF3i `test` th\u01B0\u1EDDng \u0111\
+  \u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 vi\u1EBFt ki\u1EC3m tra. \u0110\u1EA7\
+  u ti\xEAn, th\xEAm g\xF3i `test` v\xE0o `pubspec.yaml` c\u1EE7a b\u1EA1n."
 lastmod: '2024-03-13T22:44:36.267675-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra trong Dart bao g\u1ED3m\
-  \ vi\u1EC7c t\u1EA1o ra c\xE1c tr\u01B0\u1EDDng h\u1EE3p ki\u1EC3m tra \u0111\u1EC3\
-  \ t\u1EF1 \u0111\u1ED9ng x\xE1c minh r\u1EB1ng c\xE1c ph\u1EA7n kh\xE1c nhau c\u1EE7\
-  a ch\u01B0\u01A1ng tr\xECnh ho\u1EA1t \u0111\u1ED9ng nh\u01B0 mong \u0111\u1EE3\
-  i."
+summary: "Trong Dart, g\xF3i `test` th\u01B0\u1EDDng \u0111\u01B0\u1EE3c s\u1EED d\u1EE5\
+  ng \u0111\u1EC3 vi\u1EBFt ki\u1EC3m tra."
 title: "Vi\u1EBFt b\xE0i ki\u1EC3m tra"
 weight: 36
 ---

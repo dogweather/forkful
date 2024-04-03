@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:23.439501-07:00
-description: "En interaktiv skal, eller Read-Eval-Print Loop (REPL), l\xE5ter dig\
-  \ experimentera med Go-kod i realtid, genom att k\xF6ra kommandon och f\xE5 omedelbar\u2026"
+description: "Hur man g\xF6r: \xC4ven om Go inte inkluderar en inbyggd REPL, har gemenskapen\
+  \ skapat verktyg som `gore` f\xF6r att fylla detta gap. F\xF6rst, installera `gore`\
+  \ genom\u2026"
 lastmod: '2024-03-13T22:44:37.393862-06:00'
 model: gpt-4-0125-preview
-summary: "En interaktiv skal, eller Read-Eval-Print Loop (REPL), l\xE5ter dig experimentera\
-  \ med Go-kod i realtid, genom att k\xF6ra kommandon och f\xE5 omedelbar \xE5terkoppling."
+summary: "\xC4ven om Go inte inkluderar en inbyggd REPL, har gemenskapen skapat verktyg\
+  \ som `gore` f\xF6r att fylla detta gap."
 title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---

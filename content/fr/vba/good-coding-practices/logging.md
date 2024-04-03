@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:48.461722-07:00
-description: "La journalisation dans Visual Basic pour Applications (VBA) implique\
-  \ l'enregistrement d'informations sur le comportement d'un programme lors de son\u2026"
+description: "Comment faire : Dans VBA, il n'existe pas de cadre de journalisation\
+  \ int\xE9gr\xE9 comme dans certains autres langages. Cependant, la mise en \u0153\
+  uvre d'un\u2026"
 lastmod: '2024-03-13T22:44:57.587134-06:00'
 model: gpt-4-0125-preview
-summary: "La journalisation dans Visual Basic pour Applications (VBA) implique l'enregistrement\
-  \ d'informations sur le comportement d'un programme lors de son ex\xE9cution dans\
-  \ un fichier, une console ou une base de donn\xE9es."
+summary: "Dans VBA, il n'existe pas de cadre de journalisation int\xE9gr\xE9 comme\
+  \ dans certains autres langages."
 title: Journalisation
 weight: 17
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:29:04.694659-07:00
-description: "XML \xE8 un linguaggio di marcatura per codificare documenti in un modo\
-  \ che sia leggibile sia dall'uomo che dalla macchina. \xC8 fondamentale nei servizi\
-  \ web,\u2026"
+description: 'Come fare: Clojure offre la libreria `clojure.data.xml` per il parsing
+  e l''emissione di XML. Prima, analizziamo un po'' di XML.'
 lastmod: '2024-03-13T22:44:43.066793-06:00'
 model: gpt-4-0125-preview
-summary: "XML \xE8 un linguaggio di marcatura per codificare documenti in un modo\
-  \ che sia leggibile sia dall'uomo che dalla macchina."
+summary: Clojure offre la libreria `clojure.data.xml` per il parsing e l'emissione
+  di XML.
 title: Lavorare con XML
 weight: 40
 ---

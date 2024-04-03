@@ -2,13 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:25.270391-07:00
-description: "TOML l\xE0 vi\u1EBFt t\u1EAFt c\u1EE7a Tom's Obvious, Minimal Language.\
-  \ Ng\xF4n ng\u1EEF n\xE0y \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng cho c\xE1c t\u1EAD\
-  p tin c\u1EA5u h\xECnh v\xEC n\xF3 d\u1EC5 \u0111\u1ECDc v\xE0 vi\u1EBFt \u0111\u1ED1\
-  i v\u1EDBi con ng\u01B0\u1EDDi, \u0111\u1ED3ng th\u1EDDi\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EC3 x\u1EED l\xFD TOML trong Kotlin,\
+  \ b\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng m\u1ED9t th\u01B0 vi\u1EC7n nh\u01B0\
+  \ `ktoml`. \u0110\u1EA7u ti\xEAn, h\xE3y th\xEAm ph\u1EE5 thu\u1ED9c v\xE0o `build.gradle.kts`\
+  \ c\u1EE7a b\u1EA1n."
 lastmod: '2024-03-13T22:44:36.631975-06:00'
 model: gpt-4-0125-preview
-summary: "TOML l\xE0 vi\u1EBFt t\u1EAFt c\u1EE7a Tom's Obvious, Minimal Language."
+summary: "\u0110\u1EC3 x\u1EED l\xFD TOML trong Kotlin, b\u1EA1n c\xF3 th\u1EC3 s\u1EED\
+  \ d\u1EE5ng m\u1ED9t th\u01B0 vi\u1EC7n nh\u01B0 `ktoml`."
 title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 weight: 39
 ---

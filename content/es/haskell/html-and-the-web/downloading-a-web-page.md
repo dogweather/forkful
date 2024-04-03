@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:44:29.824908-07:00
-description: "Descargar una p\xE1gina web significa traer el contenido de dicha p\xE1\
-  gina a tu ordenador o servidor. Los programadores hacen esto para analizar datos,\u2026"
+description: "C\xF3mo hacerlo: Vamos a usar Haskell junto con algunas librer\xEDas\
+  \ pr\xE1cticas. Aseg\xFArate de tener instalados `stack` y `http-conduit`. Si no\
+  \ los tienes,\u2026"
 lastmod: '2024-03-13T22:44:59.117782-06:00'
 model: gpt-4-1106-preview
-summary: "Descargar una p\xE1gina web significa traer el contenido de dicha p\xE1\
-  gina a tu ordenador o servidor."
+summary: "Vamos a usar Haskell junto con algunas librer\xEDas pr\xE1cticas."
 title: "Descargando una p\xE1gina web"
 weight: 42
 ---

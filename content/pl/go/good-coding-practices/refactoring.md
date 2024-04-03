@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:29.251877-07:00
-description: "Refaktoryzacja w programowaniu polega na restrukturyzacji istniej\u0105\
-  cego kodu komputerowego \u2014 zmianie faktoringu \u2014 bez zmiany jego zewn\u0119\
-  trznego zachowania.\u2026"
+description: "Jak to zrobi\u0107: W Go refaktoryzacja mo\u017Ce obejmowa\u0107 od\
+  \ prostych poprawek kodu po bardziej z\u0142o\u017Cone zmiany. Zaczynaj\u0105c od\
+  \ podstawowego przyk\u0142adu: uproszczenie\u2026"
 lastmod: '2024-03-13T22:44:34.861320-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktoryzacja w programowaniu polega na restrukturyzacji istniej\u0105\
-  cego kodu komputerowego \u2014 zmianie faktoringu \u2014 bez zmiany jego zewn\u0119\
-  trznego zachowania."
+summary: "W Go refaktoryzacja mo\u017Ce obejmowa\u0107 od prostych poprawek kodu po\
+  \ bardziej z\u0142o\u017Cone zmiany."
 title: Refaktoryzacja
 weight: 19
 ---

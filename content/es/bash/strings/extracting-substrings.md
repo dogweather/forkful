@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:45:10.137751-07:00
-description: "Extraer subcadenas significa obtener partes espec\xEDficas de una cadena\
-  \ de texto. Los programadores lo hacen para filtrar datos, manejar entradas del\u2026"
+description: "C\xF3mo hacerlo: Extraer subcadenas es simple. Bash utiliza \xEDndices\
+  \ para obtener los fragmentos que necesitas. Aqu\xED hay un par de ejemplos."
 lastmod: '2024-03-13T22:44:59.233465-06:00'
 model: gpt-4-1106-preview
-summary: "Extraer subcadenas significa obtener partes espec\xEDficas de una cadena\
-  \ de texto."
+summary: Extraer subcadenas es simple.
 title: "Extracci\xF3n de subcadenas"
 weight: 6
 ---

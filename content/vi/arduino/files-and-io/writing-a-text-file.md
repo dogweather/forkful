@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:36.634230-07:00
-description: "Vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n tr\xEAn Arduino\
-  \ c\xF3 ngh\u0129a l\xE0 l\u01B0u tr\u1EEF d\u1EEF li\u1EC7u d\u01B0\u1EDBi d\u1EA1\
-  ng v\u0103n b\u1EA3n trong m\u1ED9t t\u1EC7p, th\u01B0\u1EDDng l\xE0 tr\xEAn th\u1EBB\
-  \ SD. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Tr\u01B0\u1EDBc ti\xEAn, k\u1EBFt n\u1ED1\
+  i \u0111\u1EA7u \u0111\u1ECDc th\u1EBB SD v\u1EDBi Arduino c\u1EE7a b\u1EA1n. Sau\
+  \ \u0111\xF3 b\u1EA1n s\u1EBD c\u1EA7n th\u01B0 vi\u1EC7n SD. D\u01B0\u1EDBi \u0111\
+  \xE2y l\xE0 m\u1ED9t \u0111o\u1EA1n m\xE3 nhanh."
 lastmod: '2024-03-13T22:44:37.013511-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n tr\xEAn Arduino c\xF3\
-  \ ngh\u0129a l\xE0 l\u01B0u tr\u1EEF d\u1EEF li\u1EC7u d\u01B0\u1EDBi d\u1EA1ng\
-  \ v\u0103n b\u1EA3n trong m\u1ED9t t\u1EC7p, th\u01B0\u1EDDng l\xE0 tr\xEAn th\u1EBB\
-  \ SD."
+summary: "Tr\u01B0\u1EDBc ti\xEAn, k\u1EBFt n\u1ED1i \u0111\u1EA7u \u0111\u1ECDc th\u1EBB\
+  \ SD v\u1EDBi Arduino c\u1EE7a b\u1EA1n."
 title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 24
 ---

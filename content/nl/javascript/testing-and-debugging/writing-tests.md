@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:58.054077-07:00
-description: "Tests schrijven in programmering controleert of code zich gedraagt zoals\
-  \ verwacht\u2014als een quiz voor je functies. Programmeurs schrijven tests om bugs\u2026"
+description: 'Hoe: Stel je een eenvoudige functie voor om twee getallen op te tellen
+  in JavaScript.'
 lastmod: '2024-03-13T22:44:51.205360-06:00'
 model: gpt-4-0125-preview
-summary: "Tests schrijven in programmering controleert of code zich gedraagt zoals\
-  \ verwacht\u2014als een quiz voor je functies."
+summary: Stel je een eenvoudige functie voor om twee getallen op te tellen in JavaScript.
 title: Tests Schrijven
 weight: 36
 ---

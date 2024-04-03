@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:35.460269-07:00
-description: "Complexe getallen zijn een set van getallen in de vorm `a + bi`, waar\
-  \ `a` en `b` re\xEBle getallen zijn, en `i` de imaginaire eenheid is (`i^2 = -1`).\
-  \ In\u2026"
+description: 'Hoe te: Python heeft ingebouwde ondersteuning voor complexe getallen.
+  Hier is hoe je ermee kunt spelen.'
 lastmod: '2024-03-13T22:44:50.370366-06:00'
 model: gpt-4-0125-preview
-summary: "Complexe getallen zijn een set van getallen in de vorm `a + bi`, waar `a`\
-  \ en `b` re\xEBle getallen zijn, en `i` de imaginaire eenheid is (`i^2 = -1`)."
+summary: Python heeft ingebouwde ondersteuning voor complexe getallen.
 title: Werken met complexe getallen
 weight: 14
 ---

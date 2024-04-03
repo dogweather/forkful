@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:31:21.252897-07:00
-description: "Calcolare una data nel futuro o nel passato \xE8 una pratica comune\
-  \ in programmazione, utile per gestire eventi, scadenze e funzionalit\xE0 legate\
-  \ al tempo. I\u2026"
+description: "How to: In Haskell, si pu\xF2 usare la libreria `time` per maneggiare\
+  \ date. Ecco un esempio per calcolare una data 10 giorni nel futuro dalla data corrente."
 lastmod: '2024-03-13T22:44:43.488654-06:00'
 model: gpt-4-1106-preview
-summary: "Calcolare una data nel futuro o nel passato \xE8 una pratica comune in programmazione,\
-  \ utile per gestire eventi, scadenze e funzionalit\xE0 legate al tempo."
+summary: "In Haskell, si pu\xF2 usare la libreria `time` per maneggiare date."
 title: Calcolo di una data futura o passata
 weight: 26
 ---

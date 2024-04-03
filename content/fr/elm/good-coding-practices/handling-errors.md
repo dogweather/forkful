@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 00:51:45.810407-07:00
-description: "G\xE9rer les erreurs signifie \xE9crire du code qui peut anticiper et\
-  \ traiter les probl\xE8mes qui surviennent. Les programmeurs le font pour \xE9viter\
-  \ les plantages,\u2026"
+description: "Comment faire : La philosophie centrale d'Elm est Pas d'Exceptions \xE0\
+  \ l'Ex\xE9cution. Donc, Elm tire parti de son syst\xE8me de types avec des types\
+  \ tels que\u2026"
 lastmod: '2024-03-13T22:44:57.697126-06:00'
 model: gpt-4-1106-preview
-summary: "G\xE9rer les erreurs signifie \xE9crire du code qui peut anticiper et traiter\
-  \ les probl\xE8mes qui surviennent."
+summary: "La philosophie centrale d'Elm est Pas d'Exceptions \xE0 l'Ex\xE9cution."
 title: Gestion des erreurs
 weight: 16
 ---

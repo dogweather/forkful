@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:15.417735-07:00
-description: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n trong chu\u1ED7\
-  i gi\xFAp b\u1EA1n c\u1EADp nh\u1EADt d\u1EEF li\u1EC7u m\xE0 kh\xF4ng c\u1EA7n\
-  \ ch\u1EC9nh s\u1EEDa th\u1EE7 c\xF4ng. L\u1EADp tr\xECnh vi\xEAn c\u1EA7n \u0111\
-  i\u1EC1u n\xE0y \u0111\u1EC3 x\u1EED l\xFD s\u1EEDa \u0111\u1ED5i \u0111\u1EA7u\
-  \ v\xE0o\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: C# l\xE0m cho vi\u1EC7c thao t\xE1c v\u0103\
+  n b\u1EA3n tr\u1EDF n\xEAn kh\xE1 \u0111\u01A1n gi\u1EA3n. D\u01B0\u1EDBi \u0111\
+  \xE2y, h\xE3y xem ph\u01B0\u01A1ng th\u1EE9c `string.Replace` \u0111\u1EC3 ho\xE1\
+  n \u0111\u1ED5i t\u1EEB."
 lastmod: '2024-03-13T22:44:36.637288-06:00'
 model: gpt-4-0125-preview
-summary: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n trong chu\u1ED7i\
-  \ gi\xFAp b\u1EA1n c\u1EADp nh\u1EADt d\u1EEF li\u1EC7u m\xE0 kh\xF4ng c\u1EA7n\
-  \ ch\u1EC9nh s\u1EEDa th\u1EE7 c\xF4ng."
+summary: "C# l\xE0m cho vi\u1EC7c thao t\xE1c v\u0103n b\u1EA3n tr\u1EDF n\xEAn kh\xE1\
+  \ \u0111\u01A1n gi\u1EA3n."
 title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
 weight: 10
 ---

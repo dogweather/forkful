@@ -2,15 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:36.838710-07:00
-description: "XML (eXtensible Markup Language) chuy\xEAn v\u1EC1 vi\u1EC7c c\u1EA5\
-  u tr\xFAc h\xF3a d\u1EEF li\u1EC7u theo m\u1ED9t \u0111\u1ECBnh d\u1EA1ng d\u1EC5\
-  \ \u0111\u1ECDc. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng XML cho c\u1EA5\
-  u h\xECnh, trao \u0111\u1ED5i d\u1EEF\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: ."
 lastmod: '2024-03-13T22:44:36.689172-06:00'
 model: gpt-4-0125-preview
-summary: "XML (eXtensible Markup Language) chuy\xEAn v\u1EC1 vi\u1EC7c c\u1EA5u tr\xFA\
-  c h\xF3a d\u1EEF li\u1EC7u theo m\u1ED9t \u0111\u1ECBnh d\u1EA1ng d\u1EC5 \u0111\
-  \u1ECDc."
+summary: .
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---

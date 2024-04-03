@@ -2,13 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:59.920298-07:00
-description: "Le espressioni regolari (regex) in Dart offrono un modo potente per\
-  \ cercare e manipolare le stringhe, consentendo ai programmatori di eseguire operazioni\u2026"
+description: 'Come fare: Dart utilizza la classe `RegExp` per le espressioni regolari.
+  Ecco un esempio base per trovare un semplice modello all''interno di una stringa.'
 lastmod: '2024-03-13T22:44:43.118239-06:00'
 model: gpt-4-0125-preview
-summary: Le espressioni regolari (regex) in Dart offrono un modo potente per cercare
-  e manipolare le stringhe, consentendo ai programmatori di eseguire operazioni complesse
-  di elaborazione del testo in modo efficiente.
+summary: Dart utilizza la classe `RegExp` per le espressioni regolari.
 title: Utilizzo di espressioni regolari
 weight: 11
 ---

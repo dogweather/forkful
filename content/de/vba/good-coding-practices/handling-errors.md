@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:15.211507-07:00
-description: "Fehlerbehandlung in Visual Basic f\xFCr Anwendungen (VBA) bezieht sich\
-  \ auf den Prozess der Vorwegnahme, Erkennung und Behebung von Programmier-, Anwendungs-\u2026"
+description: "Wie: In VBA wird die Fehlerbehandlung typischerweise mit der Anweisung\
+  \ `On Error` implementiert, die VBA anweist, wie weiter verfahren wird, wenn ein\u2026"
 lastmod: '2024-03-13T22:44:53.726337-06:00'
 model: gpt-4-0125-preview
-summary: "Fehlerbehandlung in Visual Basic f\xFCr Anwendungen (VBA) bezieht sich auf\
-  \ den Prozess der Vorwegnahme, Erkennung und Behebung von Programmier-, Anwendungs-\
-  \ oder Kommunikationsfehlern."
+summary: In VBA wird die Fehlerbehandlung typischerweise mit der Anweisung `On Error`
+  implementiert, die VBA anweist, wie weiter verfahren wird, wenn ein Fehler auftritt.
 title: Fehlerbehandlung
 weight: 16
 ---

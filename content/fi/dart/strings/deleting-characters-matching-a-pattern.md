@@ -2,13 +2,14 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:06.745853-07:00
-description: "Merkkijonoista tietyn kuvion mukaisesti vastaavien merkkien poistaminen\
-  \ on olennaista datan validoinnissa, sanitoinnissa tai kun teksti\xE4 valmistellaan\u2026"
+description: "Kuinka: Dart tekee merkkien, jotka vastaavat ennalta m\xE4\xE4ritetty\xE4\
+  \ kuviota, poistamisen suoraviivaiseksi k\xE4ytt\xE4m\xE4ll\xE4 s\xE4\xE4nn\xF6\
+  llisi\xE4 lausekkeita ja\u2026"
 lastmod: '2024-03-13T22:44:56.253099-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonoista tietyn kuvion mukaisesti vastaavien merkkien poistaminen\
-  \ on olennaista datan validoinnissa, sanitoinnissa tai kun teksti\xE4 valmistellaan\
-  \ edelleen k\xE4sitelt\xE4v\xE4ksi."
+summary: "Dart tekee merkkien, jotka vastaavat ennalta m\xE4\xE4ritetty\xE4 kuviota,\
+  \ poistamisen suoraviivaiseksi k\xE4ytt\xE4m\xE4ll\xE4 s\xE4\xE4nn\xF6llisi\xE4\
+  \ lausekkeita ja `replaceAll`-metodia."
 title: Mallin mukaisten merkkien poistaminen
 weight: 5
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:43:09.880899-07:00
-description: "Komplekse tall utvider ideen om den \xE9ndimensjonale tallinjen til\
-  \ det todimensjonale planet ved \xE5 inkludere en vinkelrett imagin\xE6r akse. Programmerere\u2026"
+description: "Hvordan: I Lua kan du representere komplekse tall med tabeller. De grunnleggende\
+  \ operasjonene involverer \xE5 legge til, trekke fra, multiplisere og dele\u2026"
 lastmod: '2024-03-13T22:44:40.924097-06:00'
 model: gpt-4-0125-preview
-summary: "Komplekse tall utvider ideen om den \xE9ndimensjonale tallinjen til det\
-  \ todimensjonale planet ved \xE5 inkludere en vinkelrett imagin\xE6r akse."
+summary: I Lua kan du representere komplekse tall med tabeller.
 title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---

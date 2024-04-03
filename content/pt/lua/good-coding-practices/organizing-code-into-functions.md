@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 01:11:29.392040-07:00
-description: "Organizar o c\xF3digo em fun\xE7\xF5es significa dividir a sua programa\xE7\
-  \xE3o em partes diger\xEDveis\u2014pense em blocos de LEGO funcionais. Fazemos isso\
-  \ por clareza,\u2026"
+description: 'Como fazer: .'
 lastmod: '2024-03-13T22:44:46.714521-06:00'
 model: gpt-4-1106-preview
-summary: "Organizar o c\xF3digo em fun\xE7\xF5es significa dividir a sua programa\xE7\
-  \xE3o em partes diger\xEDveis\u2014pense em blocos de LEGO funcionais."
+summary: .
 title: "Organizando o c\xF3digo em fun\xE7\xF5es"
 weight: 18
 ---

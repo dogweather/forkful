@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:52:52.113471-07:00
-description: "Das Drucken von Debug-Informationen hilft beim Aufsp\xFCren von Fehlern\
-  \ im Code, indem es erlaubt, Werte und den Zustand des Programms zur Laufzeit zu\u2026"
+description: 'So geht''s: Das Drucken von Debug-Infos kann einfach mit `console.log()`
+  gemacht werden. Hier ein Beispiel.'
 lastmod: '2024-03-13T22:44:54.268690-06:00'
 model: gpt-4-1106-preview
-summary: "Das Drucken von Debug-Informationen hilft beim Aufsp\xFCren von Fehlern\
-  \ im Code, indem es erlaubt, Werte und den Zustand des Programms zur Laufzeit zu\
-  \ \xFCberwachen."
+summary: Das Drucken von Debug-Infos kann einfach mit `console.log()` gemacht werden.
 title: Debug-Ausgaben drucken
 weight: 33
 ---

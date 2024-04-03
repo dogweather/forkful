@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:00.346637-07:00
-description: "Du\u017Ca litera na pocz\u0105tku ci\u0105gu znak\xF3w polega na zmodyfikowaniu\
-  \ pierwszego znaku danego tekstu na wielk\u0105 liter\u0119, zapewniaj\u0105c, \u017C\
-  e zdania, tytu\u0142y lub nazwy\u2026"
+description: "Jak to zrobi\u0107: PHP natywnie obs\u0142uguje r\xF3\u017Cne funkcje\
+  \ do kapitalizacji ci\u0105g\xF3w znak\xF3w, z kt\xF3rych ka\u017Cda s\u0142u\u017C\
+  y innemu celowi. Oto jak mo\u017Cesz ich u\u017Cywa\u0107: #."
 lastmod: '2024-03-13T22:44:35.479304-06:00'
 model: gpt-4-0125-preview
-summary: "Du\u017Ca litera na pocz\u0105tku ci\u0105gu znak\xF3w polega na zmodyfikowaniu\
-  \ pierwszego znaku danego tekstu na wielk\u0105 liter\u0119, zapewniaj\u0105c, \u017C\
-  e zdania, tytu\u0142y lub nazwy w\u0142asne zaczynaj\u0105 si\u0119 poprawnie w\
-  \ zbiorze danych."
+summary: "PHP natywnie obs\u0142uguje r\xF3\u017Cne funkcje do kapitalizacji ci\u0105\
+  g\xF3w znak\xF3w, z kt\xF3rych ka\u017Cda s\u0142u\u017Cy innemu celowi."
 title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:47.675787-07:00
-description: "Satunnaislukujen generointi C-kieless\xE4 tarkoittaa arvojen luomista,\
-  \ jotka ovat ennalta arvaamattomia ja noudattavat tietty\xE4 jakaumaa, kuten tasajakaumaa\u2026"
+description: "Kuinka: C-kieless\xE4 satunnaislukuja voidaan generoida k\xE4ytt\xE4\
+  m\xE4ll\xE4 `rand()`-funktiota, joka on osa C-standardikirjastoa `<stdlib.h>`. Oletuksena\
+  \ `rand()`\u2026"
 lastmod: '2024-03-13T22:44:57.035202-06:00'
 model: gpt-4-0125-preview
-summary: "Satunnaislukujen generointi C-kieless\xE4 tarkoittaa arvojen luomista, jotka\
-  \ ovat ennalta arvaamattomia ja noudattavat tietty\xE4 jakaumaa, kuten tasajakaumaa\
-  \ tai normaalijakaumaa."
+summary: "C-kieless\xE4 satunnaislukuja voidaan generoida k\xE4ytt\xE4m\xE4ll\xE4\
+  \ `rand()`-funktiota, joka on osa C-standardikirjastoa `<stdlib.h>`."
 title: Satunnaisten numeroiden generointi
 weight: 12
 ---

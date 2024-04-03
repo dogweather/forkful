@@ -1,11 +1,12 @@
 ---
 date: 2024-01-25 02:03:14.629198-07:00
-description: "Logging in the context of programming is the process of recording events,\
-  \ states, and information to a file or another output medium. Programmers log to\u2026"
+description: "How to: Let's say you're working on a Linux box and you want to chuck\
+  \ your logs into a file with good 'ol C++. You'll want to include the `<iostream>`\
+  \ and\u2026"
 lastmod: '2024-03-13T22:45:00.363601-06:00'
 model: gpt-4-1106-preview
-summary: Logging in the context of programming is the process of recording events,
-  states, and information to a file or another output medium.
+summary: Let's say you're working on a Linux box and you want to chuck your logs into
+  a file with good 'ol C++.
 title: Logging
 weight: 17
 ---

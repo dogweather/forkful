@@ -3,12 +3,10 @@ changelog:
 - 2024-02-22, dogweather, reviewed
 - 2024-02-22, gpt-4-0125-preview, translated from English
 date: 2024-02-22 17:30:10.233314-07:00
-description: "Iniciar un nuevo proyecto en Python se trata de establecer un marco\
-  \ estructurado y mantenido desde el principio. Los programadores hacen esto para\u2026"
+description: "C\xF3mo hacerlo: #."
 lastmod: '2024-03-13T22:44:58.612199-06:00'
 model: gpt-4-0125-preview
-summary: Iniciar un nuevo proyecto en Python se trata de establecer un marco estructurado
-  y mantenido desde el principio.
+summary: '#.'
 title: Iniciando un nuevo proyecto
 weight: 1
 ---

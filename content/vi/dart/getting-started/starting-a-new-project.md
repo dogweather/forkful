@@ -2,16 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:05.790403-07:00
-description: "Kh\u1EDFi \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi v\u1EDBi Dart\
-  \ bao g\u1ED3m vi\u1EC7c thi\u1EBFt l\u1EADp m\u1ED9t m\xF4i tr\u01B0\u1EDDng thu\u1EAD\
-  n l\u1EE3i cho vi\u1EC7c ph\xE1t tri\u1EC3n, ki\u1EC3m th\u1EED v\xE0 tri\u1EC3\
-  n khai hi\u1EC7u qu\u1EA3. C\xE1c l\u1EADp tr\xECnh vi\xEAn\u2026"
+description: "C\xE1ch th\u1EE9c: 1. **C\xE0i \u0111\u1EB7t Dart**: \u0110\u1EA3m b\u1EA3\
+  o Dart \u0111\xE3 \u0111\u01B0\u1EE3c c\xE0i \u0111\u1EB7t tr\xEAn h\u1EC7 th\u1ED1\
+  ng c\u1EE7a b\u1EA1n. N\u1EBFu kh\xF4ng, b\u1EA1n c\xF3 th\u1EC3 t\u1EA3i v\u1EC1\
+  \ t\u1EEB [https://dart.dev/get-\u2026"
 lastmod: '2024-03-13T22:44:36.263791-06:00'
 model: gpt-4-0125-preview
-summary: "Kh\u1EDFi \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi v\u1EDBi Dart bao\
-  \ g\u1ED3m vi\u1EC7c thi\u1EBFt l\u1EADp m\u1ED9t m\xF4i tr\u01B0\u1EDDng thu\u1EAD\
-  n l\u1EE3i cho vi\u1EC7c ph\xE1t tri\u1EC3n, ki\u1EC3m th\u1EED v\xE0 tri\u1EC3\
-  n khai hi\u1EC7u qu\u1EA3."
+summary: '1.'
 title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---

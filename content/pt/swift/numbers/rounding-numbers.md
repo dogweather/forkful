@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 03:46:41.341480-07:00
-description: "Arredondar n\xFAmeros significa aproximar um valor num\xE9rico a uma\
-  \ precis\xE3o espec\xEDfica, tipicamente para remover decimais indesejados. Programadores\u2026"
+description: "Como fazer: Swift oferece v\xE1rias maneiras de arredondar n\xFAmeros.\
+  \ Aqui est\xE1 um exemplo."
 lastmod: '2024-03-13T22:44:46.915628-06:00'
 model: gpt-4-0125-preview
-summary: "Arredondar n\xFAmeros significa aproximar um valor num\xE9rico a uma precis\xE3\
-  o espec\xEDfica, tipicamente para remover decimais indesejados."
+summary: "Swift oferece v\xE1rias maneiras de arredondar n\xFAmeros."
 title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---

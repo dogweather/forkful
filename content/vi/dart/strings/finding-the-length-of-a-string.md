@@ -2,18 +2,15 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:06.013299-07:00
-description: "Vi\u1EC7c t\xECm \u0111\u1ED9 d\xE0i c\u1EE7a m\u1ED9t Chu\u1ED7i trong\
-  \ Dart l\xE0 vi\u1EC7c x\xE1c \u0111\u1ECBnh s\u1ED1 \u0111\u01A1n v\u1ECB m\xE3\
-  \ h\xF3a (th\u1EF1c ch\u1EA5t l\xE0 s\u1ED1 l\u01B0\u1EE3ng k\xFD t\u1EF1 n\u1EBF\
-  u suy ngh\u0129 m\u1ED9t c\xE1ch \u0111\u01A1n gi\u1EA3n) trong m\u1ED9t Chu\u1ED7\
-  i \u0111\xE3\u2026"
+description: "N\xEAn l\xE0m th\u1EBF n\xE0o: Dart l\xE0m cho vi\u1EC7c l\u1EA5y \u0111\
+  \u1ED9 d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i tr\u1EDF n\xEAn r\u1EA5t \u0111\u01A1\
+  n gi\u1EA3n b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng thu\u1ED9c t\xEDnh `length`. D\u01B0\
+  \u1EDBi \u0111\xE2y l\xE0 m\u1ED9t v\xED d\u1EE5 c\u01A1 b\u1EA3n."
 lastmod: '2024-03-13T22:44:36.250460-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c t\xECm \u0111\u1ED9 d\xE0i c\u1EE7a m\u1ED9t Chu\u1ED7i trong\
-  \ Dart l\xE0 vi\u1EC7c x\xE1c \u0111\u1ECBnh s\u1ED1 \u0111\u01A1n v\u1ECB m\xE3\
-  \ h\xF3a (th\u1EF1c ch\u1EA5t l\xE0 s\u1ED1 l\u01B0\u1EE3ng k\xFD t\u1EF1 n\u1EBF\
-  u suy ngh\u0129 m\u1ED9t c\xE1ch \u0111\u01A1n gi\u1EA3n) trong m\u1ED9t Chu\u1ED7\
-  i \u0111\xE3 cho."
+summary: "Dart l\xE0m cho vi\u1EC7c l\u1EA5y \u0111\u1ED9 d\xE0i c\u1EE7a m\u1ED9\
+  t chu\u1ED7i tr\u1EDF n\xEAn r\u1EA5t \u0111\u01A1n gi\u1EA3n b\u1EB1ng c\xE1ch\
+  \ s\u1EED d\u1EE5ng thu\u1ED9c t\xEDnh `length`."
 title: "T\xECm \u0111\u1ED9 d\xE0i c\u1EE7a chu\u1ED7i"
 weight: 7
 ---

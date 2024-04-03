@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:42:06.431703-07:00
-description: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, bedeutet,\
-  \ bestimmte Zeichen aus einem String zu entfernen, die einer spezifischen Regel\
-  \ folgen.\u2026"
+description: "So geht's: Stellen wir uns vor, wir m\xF6chten alle Ziffern aus einem\
+  \ String entfernen. Wir verwenden `<regex>` f\xFCr Musterabgleich und `<algorithm>`\
+  \ f\xFCr\u2026"
 lastmod: '2024-03-13T22:44:54.168926-06:00'
 model: gpt-4-1106-preview
-summary: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, bedeutet, bestimmte\
-  \ Zeichen aus einem String zu entfernen, die einer spezifischen Regel folgen."
+summary: "Stellen wir uns vor, wir m\xF6chten alle Ziffern aus einem String entfernen."
 title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
 weight: 5
 ---

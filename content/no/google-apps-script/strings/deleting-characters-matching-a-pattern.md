@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:07.408735-07:00
-description: "\xC5 slette tegn som samsvarer med et spesifikt m\xF8nster er en teknikk\
-  \ brukt for \xE5 rense eller formatere strenger i programmering. I konteksten til\
-  \ Google\u2026"
+description: "Hvordan gj\xF8re det: Google Apps Script tilbyr robuste metoder for\
+  \ strengmanipulasjon, ved \xE5 utnytte JavaScripts iboende egenskaper. For \xE5\
+  \ slette tegn som\u2026"
 lastmod: '2024-03-13T22:44:40.296660-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 slette tegn som samsvarer med et spesifikt m\xF8nster er en teknikk\
-  \ brukt for \xE5 rense eller formatere strenger i programmering."
+summary: "Google Apps Script tilbyr robuste metoder for strengmanipulasjon, ved \xE5\
+  \ utnytte JavaScripts iboende egenskaper."
 title: "Slette tegn som samsvarer med et m\xF8nster"
 weight: 5
 ---

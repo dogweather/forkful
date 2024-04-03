@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:25.425553-07:00
-description: "Tekstitiedoston kirjoittaminen Kotlinilla sis\xE4lt\xE4\xE4 tiedoston\
-  \ luomisen ja tekstisis\xE4ll\xF6n sy\xF6tt\xE4misen siihen, mik\xE4 on yleinen\
-  \ teht\xE4v\xE4 datan tallentamiseksi,\u2026"
+description: "Kuinka: Kotlin tarjoaa suoraviivaisen tavan tiedostoihin kirjoittamiseen,\
+  \ hy\xF6dynt\xE4en standardikirjastoa ilman, ett\xE4 tarvitaan lis\xE4kolmannen\
+  \ osapuolen\u2026"
 lastmod: '2024-03-13T22:44:56.549658-06:00'
 model: gpt-4-0125-preview
-summary: "Tekstitiedoston kirjoittaminen Kotlinilla sis\xE4lt\xE4\xE4 tiedoston luomisen\
-  \ ja tekstisis\xE4ll\xF6n sy\xF6tt\xE4misen siihen, mik\xE4 on yleinen teht\xE4\
-  v\xE4 datan tallentamiseksi, lokitiedostojen kirjaamiseksi tai asetusten m\xE4\xE4\
-  ritt\xE4miseksi."
+summary: "Kotlin tarjoaa suoraviivaisen tavan tiedostoihin kirjoittamiseen, hy\xF6\
+  dynt\xE4en standardikirjastoa ilman, ett\xE4 tarvitaan lis\xE4kolmannen osapuolen\
+  \ kirjastoja."
 title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---

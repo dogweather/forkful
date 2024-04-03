@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:44:44.795003-07:00
-description: "Das Herunterladen einer Webseite bedeutet, ihren Inhalt \xFCber das\
-  \ Internet zu beziehen. Programmierer machen das, um Daten zu sammeln, inhaltliche\
-  \ Analysen\u2026"
+description: "So geht's: Um eine Webseite herunterzuladen, nutzen wir `HttpURLConnection`\
+  \ oder Bibliotheken wie `Ktor`. Hier ein einfaches Beispiel mit\u2026"
 lastmod: '2024-03-13T22:44:53.845504-06:00'
 model: gpt-4-1106-preview
-summary: "Das Herunterladen einer Webseite bedeutet, ihren Inhalt \xFCber das Internet\
-  \ zu beziehen."
+summary: Um eine Webseite herunterzuladen, nutzen wir `HttpURLConnection` oder Bibliotheken
+  wie `Ktor`.
 title: Webseite herunterladen
 weight: 42
 ---

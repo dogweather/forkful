@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:12:16.280405-07:00
-description: "En REPL (Read-Eval-Print-Loop) er et enkelt, interaktivt programmeringsmilj\xF8\
-  . Programm\xF8rer bruker det for \xE5 eksperimentere med et spr\xE5k i sanntid,\
-  \ for \xE5\u2026"
+description: "Hvordan: C++ kommer ikke med innebygd REPL, men verkt\xF8y som Cling\
+  \ tilbyr denne muligheten. Her er hvordan du bruker Cling for \xE5 beregne summen\
+  \ av to tall."
 lastmod: '2024-03-13T22:44:41.101550-06:00'
 model: gpt-4-0125-preview
-summary: "En REPL (Read-Eval-Print-Loop) er et enkelt, interaktivt programmeringsmilj\xF8\
-  ."
+summary: "C++ kommer ikke med innebygd REPL, men verkt\xF8y som Cling tilbyr denne\
+  \ muligheten."
 title: Bruke et interaktivt skall (REPL)
 weight: 34
 ---

@@ -1,11 +1,9 @@
 ---
 date: 2024-01-27 16:10:03.494906-07:00
-description: "Manipulating files with CLI one-liners in PowerShell is about swiftly\
-  \ altering, moving, or obtaining file data directly from the command line. Programmers\u2026"
+description: 'How to: #.'
 lastmod: '2024-03-13T22:45:00.279446-06:00'
 model: gpt-4-0125-preview
-summary: Manipulating files with CLI one-liners in PowerShell is about swiftly altering,
-  moving, or obtaining file data directly from the command line.
+summary: '#.'
 title: Manipulating files with CLI one-liners
 weight: 31
 ---

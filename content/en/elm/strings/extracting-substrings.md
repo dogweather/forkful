@@ -1,10 +1,9 @@
 ---
 date: 2024-01-20 17:45:34.263238-07:00
-description: Extracting substrings means pulling specific parts out of a string. Programmers
-  do it to isolate, manipulate, or analyze pieces of text data.
+description: 'How to: Elm makes it easy. For a start, let''s use `String.slice`.'
 lastmod: '2024-03-13T22:44:59.999603-06:00'
 model: gpt-4-1106-preview
-summary: Extracting substrings means pulling specific parts out of a string.
+summary: Elm makes it easy.
 title: Extracting substrings
 weight: 6
 ---

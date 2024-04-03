@@ -1,12 +1,11 @@
 ---
 date: 2024-02-03 19:03:04.210805-07:00
-description: "Working with JSON in Bash programming involves parsing, extracting,\
-  \ and manipulating JSON data directly from the command line. Programmers often do\
-  \ this\u2026"
+description: "How to: Bash itself lacks built-in JSON parsing capabilities, but `jq`\
+  \ is a powerful command-line JSON processor that fills this gap. Here's how to use\u2026"
 lastmod: '2024-03-13T22:45:00.263329-06:00'
 model: gpt-4-0125-preview
-summary: Working with JSON in Bash programming involves parsing, extracting, and manipulating
-  JSON data directly from the command line.
+summary: Bash itself lacks built-in JSON parsing capabilities, but `jq` is a powerful
+  command-line JSON processor that fills this gap.
 title: Working with JSON
 weight: 38
 ---

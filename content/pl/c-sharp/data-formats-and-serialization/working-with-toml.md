@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:20:31.338600-07:00
-description: "TOML to akronim od Tom's Obvious, Minimal Language, format pliku konfiguracyjnego,\
-  \ kt\xF3ry jest \u0142atwy do odczytu dzi\u0119ki swojej przejrzystej semantyce.\u2026"
+description: "Jak to zrobi\u0107: Najpierw zainstaluj parser TOML, na przyk\u0142\
+  ad `Tomlyn`. U\u017Cyj swojego mened\u017Cera pakiet\xF3w."
 lastmod: '2024-03-13T22:44:35.432639-06:00'
 model: gpt-4-0125-preview
-summary: "TOML to akronim od Tom's Obvious, Minimal Language, format pliku konfiguracyjnego,\
-  \ kt\xF3ry jest \u0142atwy do odczytu dzi\u0119ki swojej przejrzystej semantyce."
+summary: "Najpierw zainstaluj parser TOML, na przyk\u0142ad `Tomlyn`."
 title: Praca z TOML
 weight: 39
 ---

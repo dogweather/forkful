@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:00.926835-07:00
-description: "Parsowanie daty z ci\u0105gu znak\xF3w polega na konwertowaniu tekstowych\
-  \ reprezentacji dat i czas\xF3w na format, kt\xF3ry mo\u017Ce by\u0107 przetwarzany\
-  \ i analizowany przez\u2026"
+description: "Jak to zrobi\u0107: TypeScript, b\u0119d\u0105c nadzbiorem JavaScript,\
+  \ polega na obiekcie Date do parsowania dat z ci\u0105g\xF3w znak\xF3w. Jednak praca\
+  \ z datami w JS/TS mo\u017Ce sta\u0107\u2026"
 lastmod: '2024-03-13T22:44:35.148793-06:00'
 model: gpt-4-0125-preview
-summary: "Parsowanie daty z ci\u0105gu znak\xF3w polega na konwertowaniu tekstowych\
-  \ reprezentacji dat i czas\xF3w na format, kt\xF3ry mo\u017Ce by\u0107 przetwarzany\
-  \ i analizowany przez program."
+summary: "TypeScript, b\u0119d\u0105c nadzbiorem JavaScript, polega na obiekcie Date\
+  \ do parsowania dat z ci\u0105g\xF3w znak\xF3w."
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---

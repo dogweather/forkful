@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:44:36.309734-07:00
-description: "T\xE9l\xE9charger une page web, c'est r\xE9cup\xE9rer son contenu via\
-  \ le net. Les programmeurs font \xE7a pour analyser les donn\xE9es, automatiser\
-  \ des t\xE2ches, ou\u2026"
+description: "How to: PowerShell rend le t\xE9l\xE9chargement simple. La commande\
+  \ `Invoke-WebRequest` est votre outil. Voici un exemple ."
 lastmod: '2024-03-13T22:44:58.046241-06:00'
 model: gpt-4-1106-preview
-summary: "T\xE9l\xE9charger une page web, c'est r\xE9cup\xE9rer son contenu via le\
-  \ net."
+summary: "PowerShell rend le t\xE9l\xE9chargement simple."
 title: "T\xE9l\xE9chargement d'une page web"
 weight: 42
 ---

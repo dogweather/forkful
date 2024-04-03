@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 01:07:52.374532-07:00
-description: "Lokit ovat k\xE4yt\xE4nn\xF6ss\xE4 murupolkuja koodisi l\xE4pi - ne\
-  \ kertovat, mit\xE4 skriptillesi tapahtuu, kun se on \"villiss\xE4 luonnossa\" suorituksessa.\
-  \ Ohjelmoijat\u2026"
+description: "Kuinka: T\xE4ss\xE4 vinkkej\xE4 peruslokituksen sis\xE4llytt\xE4miseksi\
+  \ skripteihisi."
 lastmod: '2024-03-13T22:44:56.788911-06:00'
 model: gpt-4-1106-preview
-summary: "Lokit ovat k\xE4yt\xE4nn\xF6ss\xE4 murupolkuja koodisi l\xE4pi - ne kertovat,\
-  \ mit\xE4 skriptillesi tapahtuu, kun se on \"villiss\xE4 luonnossa\" suorituksessa."
+summary: "T\xE4ss\xE4 vinkkej\xE4 peruslokituksen sis\xE4llytt\xE4miseksi skripteihisi."
 title: Lokitus
 weight: 17
 ---

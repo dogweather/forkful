@@ -2,17 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:18.118935-07:00
-description: "L\xE0m tr\xF2n s\u1ED1 l\xE0 vi\u1EC7c \u0111i\u1EC1u ch\u1EC9nh gi\xE1\
-  \ tr\u1ECB c\u1EE7a m\u1ED9t s\u1ED1 \u0111\u1EBFn s\u1ED1 nguy\xEAn g\u1EA7n nh\u1EA5\
-  t ho\u1EB7c \u0111\u1EBFn m\u1ED9t s\u1ED1 l\u01B0\u1EE3ng ch\u1EEF s\u1ED1 th\u1EAD\
-  p ph\xE2n c\u1EE5 th\u1EC3. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111\
-  i\u1EC1u n\xE0y\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Go, kh\xF4ng c\xF3 h\xE0m \u0111\xE3 x\xE2\
+  y d\u1EF1ng s\u1EB5n n\xE0o \u0111\u1EC3 l\xE0m tr\xF2n s\u1ED1 \u0111\u1EBFn m\u1ED9\
+  t s\u1ED1 l\u01B0\u1EE3ng ch\u1EEF s\u1ED1 th\u1EADp ph\xE2n c\u1EE5 th\u1EC3 trong\
+  \ g\xF3i math. Tuy nhi\xEAn, b\u1EA1n c\xF3 th\u1EC3 \u0111\u1EA1t\u2026"
 lastmod: '2024-03-13T22:44:35.975115-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m tr\xF2n s\u1ED1 l\xE0 vi\u1EC7c \u0111i\u1EC1u ch\u1EC9nh gi\xE1\
-  \ tr\u1ECB c\u1EE7a m\u1ED9t s\u1ED1 \u0111\u1EBFn s\u1ED1 nguy\xEAn g\u1EA7n nh\u1EA5\
-  t ho\u1EB7c \u0111\u1EBFn m\u1ED9t s\u1ED1 l\u01B0\u1EE3ng ch\u1EEF s\u1ED1 th\u1EAD\
-  p ph\xE2n c\u1EE5 th\u1EC3."
+summary: "Trong Go, kh\xF4ng c\xF3 h\xE0m \u0111\xE3 x\xE2y d\u1EF1ng s\u1EB5n n\xE0\
+  o \u0111\u1EC3 l\xE0m tr\xF2n s\u1ED1 \u0111\u1EBFn m\u1ED9t s\u1ED1 l\u01B0\u1EE3\
+  ng ch\u1EEF s\u1ED1 th\u1EADp ph\xE2n c\u1EE5 th\u1EC3 trong g\xF3i math."
 title: "L\xE0m tr\xF2n s\u1ED1"
 weight: 13
 ---

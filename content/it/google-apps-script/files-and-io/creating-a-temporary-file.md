@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:44.854679-07:00
-description: "Creare un file temporaneo in Google Apps Script implica la generazione\
-  \ di un file destinato a un uso a breve termine, tipicamente per l'elaborazione\u2026"
+description: "Come fare: In Google Apps Script, la creazione di un file temporaneo\
+  \ pu\xF2 essere realizzata utilizzando il servizio DriveApp, che fornisce un metodo\u2026"
 lastmod: '2024-03-13T22:44:42.977525-06:00'
 model: gpt-4-0125-preview
-summary: Creare un file temporaneo in Google Apps Script implica la generazione di
-  un file destinato a un uso a breve termine, tipicamente per l'elaborazione intermedia
-  dei dati, il debug, o scopi di cache.
+summary: "In Google Apps Script, la creazione di un file temporaneo pu\xF2 essere\
+  \ realizzata utilizzando il servizio DriveApp, che fornisce un metodo semplice per\
+  \ creare, leggere ed eliminare file in Google Drive."
 title: Creazione di un file temporaneo
 weight: 21
 ---

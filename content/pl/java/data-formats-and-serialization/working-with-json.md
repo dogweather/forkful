@@ -1,11 +1,10 @@
 ---
 date: 2024-01-19
-description: "JSON (JavaScript Object Notation) to format wymiany danych. Programi\u015B\
-  ci u\u017Cywaj\u0105 go, bo jest lekki i \u0142atwy do czytania dla ludzi, a tak\u017C\
-  e \u0142atwy do\u2026"
+description: "How to: U\u017Cyjemy biblioteki `Jackson` do obs\u0142ugi JSON w Java.\
+  \ Najpierw dodaj zale\u017Cno\u015B\u0107 do `pom.xml`."
 lastmod: '2024-03-13T22:44:35.300242-06:00'
 model: unknown
-summary: JSON (JavaScript Object Notation) to format wymiany danych.
+summary: "U\u017Cyjemy biblioteki `Jackson` do obs\u0142ugi JSON w Java."
 title: Praca z JSON
 weight: 38
 ---

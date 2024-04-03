@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:46:23.874533-07:00
-description: "Extrair substrings \xE9 o processo de selecionar partes espec\xEDficas\
-  \ de uma string. Programadores fazem isso para manipular, analisar ou validar informa\xE7\
-  \xF5es\u2026"
+description: "Como Fazer: No PHP, a fun\xE7\xE3o `substr()` te deixa pegar um peda\xE7\
+  o da string. Aqui est\xE1 um exemplo r\xE1pido."
 lastmod: '2024-03-13T22:44:46.656552-06:00'
 model: gpt-4-1106-preview
-summary: "Extrair substrings \xE9 o processo de selecionar partes espec\xEDficas de\
-  \ uma string."
+summary: "No PHP, a fun\xE7\xE3o `substr()` te deixa pegar um peda\xE7o da string."
 title: Extraindo substrings
 weight: 6
 ---

@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 18:02:52.887132-07:00
-description: "Iniciar un proyecto nuevo significa crear la base desde la que crecer\xE1\
-  \ tu aplicaci\xF3n o script. Los programadores lo hacen para organizar sus ideas\
-  \ y\u2026"
+description: "C\xF3mo hacerlo: Vamos a configurar un proyecto b\xE1sico de Bash."
 lastmod: '2024-03-13T22:44:59.247342-06:00'
 model: gpt-4-1106-preview
-summary: "Iniciar un proyecto nuevo significa crear la base desde la que crecer\xE1\
-  \ tu aplicaci\xF3n o script."
+summary: "Vamos a configurar un proyecto b\xE1sico de Bash."
 title: Iniciando un nuevo proyecto
 weight: 1
 ---

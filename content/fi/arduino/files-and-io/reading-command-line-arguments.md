@@ -1,12 +1,13 @@
 ---
 date: 2024-01-20 17:55:53.843687-07:00
-description: "Komennon riviargumentit mahdollistavat erilaisten arvojen sy\xF6tt\xE4\
-  misen ohjelmallesi sen k\xE4ynnistyess\xE4. T\xE4m\xE4 auttaa tekem\xE4\xE4n ohjelmasta\
-  \ joustavamman, sill\xE4\u2026"
+description: "How to: (Kuinka tehd\xE4\xE4n:) Arduino-ymp\xE4rist\xF6ss\xE4 ei k\xE4\
+  ytet\xE4 perinteisi\xE4 komentoriviargumentteja kuten tietokoneen ohjelmissa, koska\
+  \ Arduino koodi ladataan\u2026"
 lastmod: '2024-03-13T22:44:56.838880-06:00'
 model: gpt-4-1106-preview
-summary: "Komennon riviargumentit mahdollistavat erilaisten arvojen sy\xF6tt\xE4misen\
-  \ ohjelmallesi sen k\xE4ynnistyess\xE4."
+summary: "Arduino-ymp\xE4rist\xF6ss\xE4 ei k\xE4ytet\xE4 perinteisi\xE4 komentoriviargumentteja\
+  \ kuten tietokoneen ohjelmissa, koska Arduino koodi ladataan mikrokontrollerille,\
+  \ ja se ei k\xE4ynnisty komentorivilt\xE4."
 title: Komennoriviparametrien lukeminen
 weight: 23
 ---

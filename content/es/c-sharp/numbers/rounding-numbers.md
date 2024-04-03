@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 03:43:32.278305-07:00
-description: "Redondear n\xFAmeros significa ajustarlos al lugar de valor especificado\
-  \ m\xE1s cercano\u2014piensa en simplificarlos a una forma m\xE1s simple. Los programadores\u2026"
+description: "C\xF3mo: Aqu\xED est\xE1 el boleto de ida y vuelta para redondear n\xFA\
+  meros en C#."
 lastmod: '2024-03-13T22:44:59.073451-06:00'
 model: gpt-4-0125-preview
-summary: "Redondear n\xFAmeros significa ajustarlos al lugar de valor especificado\
-  \ m\xE1s cercano\u2014piensa en simplificarlos a una forma m\xE1s simple."
+summary: "Aqu\xED est\xE1 el boleto de ida y vuelta para redondear n\xFAmeros en C#."
 title: "Redondeo de n\xFAmeros"
 weight: 13
 ---

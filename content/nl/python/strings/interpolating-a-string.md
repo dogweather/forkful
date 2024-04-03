@@ -3,13 +3,11 @@ changelog:
 - 2024-01-28, dogweather, reviewed
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:10.265074-07:00
-description: "String interpolatie is de methode van het invoegen van expressies binnen\
-  \ string literals. Programmeurs gebruiken het om dynamisch waarden in strings in\
-  \ te\u2026"
+description: 'Hoe: In Python 3.6 en hoger, kun je strings interpoleren met f-strings.
+  Zo werkt het.'
 lastmod: '2024-03-13T22:44:50.362337-06:00'
 model: gpt-4-0125-preview
-summary: String interpolatie is de methode van het invoegen van expressies binnen
-  string literals.
+summary: In Python 3.6 en hoger, kun je strings interpoleren met f-strings.
 title: Een string interpoleren
 weight: 8
 ---

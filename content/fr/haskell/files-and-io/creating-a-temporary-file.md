@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:40:18.832847-07:00
-description: "Cr\xE9er un fichier temporaire, c'est comme \xE9crire une note qu'on\
-  \ jette apr\xE8s usage. Les programmeurs le font pour stocker des donn\xE9es de\
-  \ mani\xE8re transitoire\u2026"
+description: "How to: Haskell rend la gestion des fichiers temporaires \xE9l\xE9gante\
+  \ avec la biblioth\xE8que `temporary`. Voici comment faire ."
 lastmod: '2024-03-13T22:44:57.854032-06:00'
 model: gpt-4-1106-preview
-summary: "Cr\xE9er un fichier temporaire, c'est comme \xE9crire une note qu'on jette\
-  \ apr\xE8s usage."
+summary: "Haskell rend la gestion des fichiers temporaires \xE9l\xE9gante avec la\
+  \ biblioth\xE8que `temporary`."
 title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---

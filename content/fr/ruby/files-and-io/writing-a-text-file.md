@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:04.067481-07:00
-description: "\xC9crire dans un fichier texte en Ruby est une op\xE9ration fondamentale\
-  \ qui vous permet de stocker des sorties et des donn\xE9es de mani\xE8re persistante,\u2026"
+description: "Comment faire : Ruby rend les op\xE9rations sur les fichiers simples.\
+  \ Pour \xE9crire dans un fichier, vous pouvez utiliser la classe `File` int\xE9\
+  gr\xE9e \xE0 Ruby.\u2026"
 lastmod: '2024-03-13T22:44:58.440323-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire dans un fichier texte en Ruby est une op\xE9ration fondamentale\
-  \ qui vous permet de stocker des sorties et des donn\xE9es de mani\xE8re persistante,\
-  \ permettant ainsi aux donn\xE9es d'\xEAtre consult\xE9es ou modifi\xE9es ult\xE9\
-  rieurement."
+summary: "Ruby rend les op\xE9rations sur les fichiers simples."
 title: "R\xE9diger un fichier texte"
 weight: 24
 ---

@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:03.951636-07:00
-description: "Escrever em um arquivo de texto em Python \xE9 uma tarefa fundamental\
-  \ que envolve criar ou abrir um arquivo e, em seguida, anexar ou sobrescrever texto.\
-  \ Essa\u2026"
+description: 'Como Fazer: #.'
 lastmod: '2024-03-13T22:44:46.173414-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever em um arquivo de texto em Python \xE9 uma tarefa fundamental que\
-  \ envolve criar ou abrir um arquivo e, em seguida, anexar ou sobrescrever texto."
+summary: '#.'
 title: Escrevendo um arquivo de texto
 weight: 24
 ---

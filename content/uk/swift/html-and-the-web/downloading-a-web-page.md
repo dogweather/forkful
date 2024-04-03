@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:45:04.756297-07:00
-description: ''
+description: "\u0429\u043E \u0456 \u0427\u043E\u043C\u0443? Downloading a web page\
+  \ means fetching the HTML content of a web page from the Internet. Programmers do\
+  \ it to extract data, interact with web\u2026"
 lastmod: '2024-03-13T22:44:49.916647-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Downloading a web page means fetching the HTML content of a web page from
+  the Internet.
 title: "\u0417\u0430\u0432\u0430\u043D\u0442\u0430\u0436\u0435\u043D\u043D\u044F \u0432\
   \u0435\u0431-\u0441\u0442\u043E\u0440\u0456\u043D\u043A\u0438"
 weight: 42

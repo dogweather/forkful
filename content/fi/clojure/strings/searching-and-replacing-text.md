@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:57:56.274103-07:00
-description: "Tekstin etsiminen ja korvaaminen on prosessi, jossa l\xF6ydet\xE4\xE4\
-  n tietyt merkkijonot ja korvataan ne toisilla. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4\
-  t\xE4 tekstin\u2026"
+description: "How to: Clojurissa k\xE4ytet\xE4\xE4n `clojure.string/replace` funktiota\
+  \ tekstinkorjaukseen. T\xE4ss\xE4 pari esimerkki\xE4."
 lastmod: '2024-03-13T22:44:56.170487-06:00'
 model: gpt-4-1106-preview
-summary: "Tekstin etsiminen ja korvaaminen on prosessi, jossa l\xF6ydet\xE4\xE4n tietyt\
-  \ merkkijonot ja korvataan ne toisilla."
+summary: "Clojurissa k\xE4ytet\xE4\xE4n `clojure.string/replace` funktiota tekstinkorjaukseen."
 title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---

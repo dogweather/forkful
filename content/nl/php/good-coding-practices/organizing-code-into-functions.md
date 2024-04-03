@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:16.203847-07:00
-description: "Het organiseren van code in functies gaat over het opsplitsen van je\
-  \ code in herbruikbare blokken met gedefinieerde doeleinden. We doen dit om dingen\u2026"
+description: "Hoe: Stel je voor dat we herhalende code hebben voor het begroeten van\
+  \ gebruikers. In plaats daarvan zullen we het inpakken in een functie zoals\u2026"
 lastmod: '2024-03-13T22:44:50.901030-06:00'
 model: gpt-4-0125-preview
-summary: Het organiseren van code in functies gaat over het opsplitsen van je code
-  in herbruikbare blokken met gedefinieerde doeleinden.
+summary: Stel je voor dat we herhalende code hebben voor het begroeten van gebruikers.
 title: Code organiseren in functies
 weight: 18
 ---

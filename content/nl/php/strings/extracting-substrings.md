@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:51.683853-07:00
-description: "Het extraheren van substrings betekent het trekken van specifieke delen\
-  \ uit een string. Programmeurs doen dit om gegevens te verwerken of te manipuleren,\u2026"
+description: 'Hoe: PHP biedt verschillende functies om substrings te extraheren. Laten
+  we `substr`, `mb_substr` en `strstr` bekijken.'
 lastmod: '2024-03-13T22:44:50.883462-06:00'
 model: gpt-4-0125-preview
-summary: Het extraheren van substrings betekent het trekken van specifieke delen uit
-  een string.
+summary: PHP biedt verschillende functies om substrings te extraheren.
 title: Substrings extraheren
 weight: 6
 ---

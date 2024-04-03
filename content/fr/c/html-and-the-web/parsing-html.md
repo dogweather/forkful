@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:30.939798-07:00
-description: "Analyser le HTML en C implique d'examiner les documents HTML pour en\
-  \ extraire efficacement des donn\xE9es, une structure ou des parties sp\xE9cifiques,\
-  \ souvent\u2026"
+description: "Comment faire : Analyser le HTML peut sembler intimidant en raison de\
+  \ la complexit\xE9 du HTML et de ses fr\xE9quentes d\xE9viations de structures propres\
+  \ et bien\u2026"
 lastmod: '2024-03-13T22:44:58.369368-06:00'
 model: gpt-4-0125-preview
-summary: "Analyser le HTML en C implique d'examiner les documents HTML pour en extraire\
-  \ efficacement des donn\xE9es, une structure ou des parties sp\xE9cifiques, souvent\
-  \ en pr\xE9paration au datamining ou au web scraping."
+summary: "Analyser le HTML peut sembler intimidant en raison de la complexit\xE9 du\
+  \ HTML et de ses fr\xE9quentes d\xE9viations de structures propres et bien form\xE9\
+  es."
 title: Analyse Syntaxique de HTML
 weight: 43
 ---

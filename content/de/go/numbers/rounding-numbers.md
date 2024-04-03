@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:43.280775-07:00
-description: "Das Runden von Zahlen geht darum, den Wert einer Zahl auf die n\xE4\
-  chste ganze Zahl oder auf eine bestimmte Anzahl von Dezimalstellen anzupassen.\u2026"
+description: "Wie geht das: In Go gibt es keine eingebaute Funktion, die Zahlen direkt\
+  \ auf eine bestimmte Anzahl von Dezimalstellen im Mathematikpaket rundet. Sie\u2026"
 lastmod: '2024-03-13T22:44:53.282053-06:00'
 model: gpt-4-0125-preview
-summary: "Das Runden von Zahlen geht darum, den Wert einer Zahl auf die n\xE4chste\
-  \ ganze Zahl oder auf eine bestimmte Anzahl von Dezimalstellen anzupassen."
+summary: In Go gibt es keine eingebaute Funktion, die Zahlen direkt auf eine bestimmte
+  Anzahl von Dezimalstellen im Mathematikpaket rundet.
 title: Zahlen runden
 weight: 13
 ---

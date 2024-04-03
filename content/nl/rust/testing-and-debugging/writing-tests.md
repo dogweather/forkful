@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:42.288523-07:00
-description: "Tests schrijven betekent codefragmenten maken die controleren of andere\
-  \ stukjes code goed werken. Programmeurs doen dit om bugs vroeg te vinden,\u2026"
+description: 'Hoe: Rust maakt testen eenvoudig. Laten we een functie en een test ervoor
+  schrijven. De functie.'
 lastmod: '2024-03-13T22:44:50.597685-06:00'
 model: gpt-4-0125-preview
-summary: Tests schrijven betekent codefragmenten maken die controleren of andere stukjes
-  code goed werken.
+summary: Rust maakt testen eenvoudig.
 title: Tests Schrijven
 weight: 36
 ---

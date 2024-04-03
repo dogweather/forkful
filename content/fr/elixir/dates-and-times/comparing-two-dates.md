@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:32:36.906136-07:00
-description: "Comparer deux dates, c'est mesurer leur \xE9cart ou v\xE9rifier leur\
-  \ ordre chronologique. On fait \xE7a pour planifier des \xE9v\xE9nements, calculer\
-  \ des d\xE9lais ou\u2026"
+description: 'Comment faire : .'
 lastmod: '2024-03-13T22:44:57.340932-06:00'
 model: gpt-4-1106-preview
-summary: "Comparer deux dates, c'est mesurer leur \xE9cart ou v\xE9rifier leur ordre\
-  \ chronologique."
+summary: .
 title: Comparer deux dates
 weight: 27
 ---

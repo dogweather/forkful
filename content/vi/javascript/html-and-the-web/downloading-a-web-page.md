@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:13.690397-07:00
-description: "T\u1EA3i xu\u1ED1ng m\u1ED9t trang web c\xF3 ngh\u0129a l\xE0 l\u1EA5\
-  y HTML, CSS, JavaScript, v\xE0 b\u1EA5t k\u1EF3 d\u1EEF li\u1EC7u n\xE0o kh\xE1\
-  c t\u1EA1o n\xEAn trang t\u1EEB m\xE1y ch\u1EE7. L\u1EADp tr\xECnh vi\xEAn th\u1EF1\
-  c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\u1EC3\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1\
+  ch nhanh ch\xF3ng \u0111\u1EC3 t\u1EA3i m\u1ED9t trang s\u1EED d\u1EE5ng Node.js\
+  \ v\u1EDBi `node-fetch`."
 lastmod: '2024-03-13T22:44:37.151657-06:00'
 model: gpt-4-0125-preview
-summary: "T\u1EA3i xu\u1ED1ng m\u1ED9t trang web c\xF3 ngh\u0129a l\xE0 l\u1EA5y HTML,\
-  \ CSS, JavaScript, v\xE0 b\u1EA5t k\u1EF3 d\u1EEF li\u1EC7u n\xE0o kh\xE1c t\u1EA1\
-  o n\xEAn trang t\u1EEB m\xE1y ch\u1EE7."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch nhanh ch\xF3ng \u0111\u1EC3 t\u1EA3\
+  i m\u1ED9t trang s\u1EED d\u1EE5ng Node.js v\u1EDBi `node-fetch`."
 title: "T\u1EA3i trang web"
 weight: 42
 ---

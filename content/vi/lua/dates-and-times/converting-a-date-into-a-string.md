@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:43.057128-07:00
-description: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i l\xE0\
-  \ v\u1EC1 thay \u0111\u1ED5i c\xE1ch hi\u1EC3n th\u1ECB d\u1EEF li\u1EC7u ng\xE0\
-  y/gi\u1EDD. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3\
-  \ t\u0103ng t\xEDnh \u0111\u1ECDc \u0111\u01B0\u1EE3c, \u0111\u1ECBa ph\u01B0\u01A1\
-  ng h\xF3a, ho\u1EB7c s\u1EF1\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Lua, ch\xFAng ta s\u1EED d\u1EE5ng `os.date`\
+  \ \u0111\u1EC3 \u0111\u1ECBnh d\u1EA1ng ng\xE0y th\xE0nh chu\u1ED7i. D\u01B0\u1EDB\
+  i \u0111\xE2y l\xE0 m\u1ED9t \u0111o\u1EA1n m\xE3 \u0111\u1EC3 b\u1EA1n tham kh\u1EA3\
+  o."
 lastmod: '2024-03-13T22:44:36.836907-06:00'
 model: gpt-4-0125-preview
-summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i l\xE0 v\u1EC1\
-  \ thay \u0111\u1ED5i c\xE1ch hi\u1EC3n th\u1ECB d\u1EEF li\u1EC7u ng\xE0y/gi\u1EDD\
-  ."
+summary: "Trong Lua, ch\xFAng ta s\u1EED d\u1EE5ng `os.date` \u0111\u1EC3 \u0111\u1ECB\
+  nh d\u1EA1ng ng\xE0y th\xE0nh chu\u1ED7i."
 title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 weight: 28
 ---

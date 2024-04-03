@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:33.425761-07:00
-description: "CSV (Valores Separados por V\xEDrgula) s\xE3o arquivos de um formato\
-  \ comum de troca de dados que representam dados tabulares em texto simples, usando\
-  \ v\xEDrgulas\u2026"
+description: "Como fazer: Trabalhar com arquivos CSV em C# pode ser realizado atrav\xE9\
+  s do namespace `System.IO` para opera\xE7\xF5es b\xE1sicas, e para manipula\xE7\xF5\
+  es mais\u2026"
 lastmod: '2024-03-13T22:44:46.606215-06:00'
 model: gpt-4-0125-preview
-summary: "CSV (Valores Separados por V\xEDrgula) s\xE3o arquivos de um formato comum\
-  \ de troca de dados que representam dados tabulares em texto simples, usando v\xED\
-  rgulas para separar os valores individuais."
+summary: "Trabalhar com arquivos CSV em C# pode ser realizado atrav\xE9s do namespace\
+  \ `System.IO` para opera\xE7\xF5es b\xE1sicas, e para manipula\xE7\xF5es mais complexas\
+  \ ou para lidar com arquivos maiores de forma fluente, pode-se considerar bibliotecas\
+  \ de terceiros como `CsvHelper`."
 title: Trabalhando com CSV
 weight: 37
 ---

@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:35.468155-07:00
-description: "X\xF3a c\xE1c k\xFD t\u1EF1 kh\u1EDBp v\u1EDBi m\u1ED9t m\u1EABu c\xF3\
-  \ ngh\u0129a l\xE0 g\u1EE1 b\u1ECF c\xE1c t\u1EADp h\u1EE3p k\xFD t\u1EF1 c\u1EE5\
-  \ th\u1EC3 kh\u1ECFi v\u0103n b\u1EA3n, d\u1EF1a tr\xEAn c\xE1c quy t\u1EAFc (m\u1EAB\
-  u). C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 l\xE0\
-  m\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Elm kh\xF4ng h\u1ED7 tr\u1EE3 regex m\u1ED9\
+  t c\xE1ch t\u1EF1 nhi\xEAn, nh\u01B0ng b\u1EA1n c\xF3 th\u1EC3 m\xF4 ph\u1ECFng\
+  \ vi\u1EC7c x\xF3a k\xFD t\u1EF1. D\u01B0\u1EDBi \u0111\xE2y l\xE0 v\xED d\u1EE5\
+  \ s\u1EED d\u1EE5ng `String.filter` \u0111\u1EC3 lo\u1EA1i b\u1ECF c\xE1c\u2026"
 lastmod: '2024-03-13T22:44:36.523082-06:00'
 model: gpt-4-0125-preview
-summary: "X\xF3a c\xE1c k\xFD t\u1EF1 kh\u1EDBp v\u1EDBi m\u1ED9t m\u1EABu c\xF3 ngh\u0129\
-  a l\xE0 g\u1EE1 b\u1ECF c\xE1c t\u1EADp h\u1EE3p k\xFD t\u1EF1 c\u1EE5 th\u1EC3\
-  \ kh\u1ECFi v\u0103n b\u1EA3n, d\u1EF1a tr\xEAn c\xE1c quy t\u1EAFc (m\u1EABu)."
+summary: "Elm kh\xF4ng h\u1ED7 tr\u1EE3 regex m\u1ED9t c\xE1ch t\u1EF1 nhi\xEAn, nh\u01B0\
+  ng b\u1EA1n c\xF3 th\u1EC3 m\xF4 ph\u1ECFng vi\u1EC7c x\xF3a k\xFD t\u1EF1."
 title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
 weight: 5
 ---

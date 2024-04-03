@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:38.884079-07:00
-description: "En programmation Bash, v\xE9rifier si un r\xE9pertoire existe est un\
-  \ m\xE9canisme de contr\xF4le essentiel utilis\xE9 pour v\xE9rifier la pr\xE9sence\
-  \ d'un r\xE9pertoire avant\u2026"
+description: "Comment faire : Au c\u0153ur de Bash, vous pouvez v\xE9rifier l'existence\
+  \ d'un r\xE9pertoire en utilisant des instructions conditionnelles et l'op\xE9rateur\
+  \ `-d`. Voici\u2026"
 lastmod: '2024-03-13T22:44:58.012847-06:00'
 model: gpt-4-0125-preview
-summary: "En programmation Bash, v\xE9rifier si un r\xE9pertoire existe est un m\xE9\
-  canisme de contr\xF4le essentiel utilis\xE9 pour v\xE9rifier la pr\xE9sence d'un\
-  \ r\xE9pertoire avant d'effectuer des op\xE9rations sur des fichiers."
+summary: "Au c\u0153ur de Bash, vous pouvez v\xE9rifier l'existence d'un r\xE9pertoire\
+  \ en utilisant des instructions conditionnelles et l'op\xE9rateur `-d`."
 title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---

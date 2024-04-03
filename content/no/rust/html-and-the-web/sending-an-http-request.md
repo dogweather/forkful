@@ -1,10 +1,11 @@
 ---
 date: 2024-01-20 18:00:47.775010-07:00
-description: "En HTTP-foresp\xF8rsel lar oss snakke med en webserver. Vi gj\xF8r dette\
-  \ for \xE5 hente data, sende informasjon, eller starte handlinger p\xE5 nett."
+description: "Slik gj\xF8r du: Rust har ikke innebygget st\xF8tte for \xE5 sende HTTP-foresp\xF8\
+  rsler, men `reqwest`-biblioteket gj\xF8r jobben enkel. F\xF8rst, inkluder det i\u2026"
 lastmod: '2024-03-13T22:44:40.570842-06:00'
 model: gpt-4-1106-preview
-summary: "En HTTP-foresp\xF8rsel lar oss snakke med en webserver."
+summary: "Rust har ikke innebygget st\xF8tte for \xE5 sende HTTP-foresp\xF8rsler,\
+  \ men `reqwest`-biblioteket gj\xF8r jobben enkel."
 title: "\xC5 sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---

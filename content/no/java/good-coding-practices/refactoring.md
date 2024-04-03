@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 01:18:50.944324-07:00
-description: "Omstrukturering er prosessen med \xE5 restrukturere eksisterende dataprogramkode\u2014\
-  endre faktoriseringen\u2014uten \xE5 endre dens eksterne oppf\xF8rsel. Programmerere\u2026"
+description: "Hvordan: La oss ta en enkel Java-klasse som skriker etter omstrukturering\
+  \ p\xE5 grunn av d\xE5rlig organisering og mangel p\xE5 klarhet."
 lastmod: '2024-03-13T22:44:40.674819-06:00'
 model: gpt-4-0125-preview
-summary: "Omstrukturering er prosessen med \xE5 restrukturere eksisterende dataprogramkode\u2014\
-  endre faktoriseringen\u2014uten \xE5 endre dens eksterne oppf\xF8rsel."
+summary: "La oss ta en enkel Java-klasse som skriker etter omstrukturering p\xE5 grunn\
+  \ av d\xE5rlig organisering og mangel p\xE5 klarhet."
 title: Refaktorering
 weight: 19
 ---

@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:10.912667-07:00
-description: "Associatieve arrays, of hashmap's, in Clojure stellen je in staat om\
-  \ data op te slaan en op te halen met sleutel-waardeparen. Ze zijn een voor de hand\u2026"
+description: "Hoe: In Clojure is het aanmaken en manipuleren van associatieve arrays\
+  \ (hashmap's) eenvoudig. Laten we beginnen met wat voorbeelden. Om een hashmap te\u2026"
 lastmod: '2024-03-13T22:44:50.411888-06:00'
 model: gpt-4-0125-preview
-summary: Associatieve arrays, of hashmap's, in Clojure stellen je in staat om data
-  op te slaan en op te halen met sleutel-waardeparen.
+summary: In Clojure is het aanmaken en manipuleren van associatieve arrays (hashmap's)
+  eenvoudig.
 title: Gebruik van associatieve arrays
 weight: 15
 ---

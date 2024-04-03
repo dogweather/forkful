@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:08.203794-07:00
-description: "Die Arbeit mit JSON umfasst das Parsen von JSON-formatierten Strings\
-  \ in Datenstrukturen, die Elixir manipulieren kann, und das Serialisieren von Elixir-\u2026"
+description: "Wie: In Elixir kann man die `Jason` Bibliothek verwenden, eine beliebte\
+  \ Wahl f\xFCr JSON-Parsing und -Generierung. F\xFCgen Sie zuerst `Jason` zu den\u2026"
 lastmod: '2024-03-13T22:44:53.557424-06:00'
 model: gpt-4-0125-preview
-summary: "Die Arbeit mit JSON umfasst das Parsen von JSON-formatierten Strings in\
-  \ Datenstrukturen, die Elixir manipulieren kann, und das Serialisieren von Elixir-Datenstrukturen\
-  \ zur\xFCck in JSON-Strings."
+summary: "In Elixir kann man die `Jason` Bibliothek verwenden, eine beliebte Wahl\
+  \ f\xFCr JSON-Parsing und -Generierung."
 title: Arbeiten mit JSON
 weight: 38
 ---

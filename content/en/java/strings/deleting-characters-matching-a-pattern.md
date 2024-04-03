@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:42:38.562001-07:00
-description: "Deleting characters matching a pattern is about finding specific sequences\
-  \ of characters in a string and getting rid of them. Programmers do it to clean\u2026"
+description: 'How to: In Java, we often use the `String.replaceAll()` method with
+  a regex pattern to delete characters. Here''s a quick example.'
 lastmod: '2024-03-13T22:44:59.958301-06:00'
 model: gpt-4-1106-preview
-summary: Deleting characters matching a pattern is about finding specific sequences
-  of characters in a string and getting rid of them.
+summary: In Java, we often use the `String.replaceAll()` method with a regex pattern
+  to delete characters.
 title: Deleting characters matching a pattern
 weight: 5
 ---

@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:44.446058-07:00
-description: "JSON (JavaScript Object Notation) er et lettvekts datautvekslingsformat\
-  \ som er lett for mennesker \xE5 lese og skrive, og for maskiner \xE5 analysere\
-  \ og\u2026"
+description: "Hvordan: VBA st\xF8tter ikke JSON-analyse eller generering som standard,\
+  \ s\xE5 vi vil bruke et skriptspr\xE5k som JScript (via ScriptControl-objektet)\
+  \ for \xE5\u2026"
 lastmod: '2024-03-13T22:44:40.645212-06:00'
 model: gpt-4-0125-preview
-summary: "JSON (JavaScript Object Notation) er et lettvekts datautvekslingsformat\
-  \ som er lett for mennesker \xE5 lese og skrive, og for maskiner \xE5 analysere\
-  \ og generere."
+summary: "VBA st\xF8tter ikke JSON-analyse eller generering som standard, s\xE5 vi\
+  \ vil bruke et skriptspr\xE5k som JScript (via ScriptControl-objektet) for \xE5\
+  \ analysere JSON-strenger og bygge JSON-objekter."
 title: "\xC5 Arbeide med JSON"
 weight: 38
 ---

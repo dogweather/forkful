@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 18:03:04.612154-07:00
-description: "Iniciar un proyecto nuevo en C++ es establecer la base del c\xF3digo\
-  \ desde donde todo crece. Programadores lo hacen para transformar ideas en software\u2026"
+description: "C\xF3mo hacerlo: Para empezar un proyecto simple, necesitas al menos\
+  \ un archivo fuente. Aqu\xED tienes un \"Hola, mundo\" en C++."
 lastmod: '2024-03-13T22:44:59.375983-06:00'
 model: gpt-4-1106-preview
-summary: "Iniciar un proyecto nuevo en C++ es establecer la base del c\xF3digo desde\
-  \ donde todo crece."
+summary: Para empezar un proyecto simple, necesitas al menos un archivo fuente.
 title: Iniciando un nuevo proyecto
 weight: 1
 ---

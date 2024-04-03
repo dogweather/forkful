@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:33:25.243945-07:00
-description: "\xC5 sammenligne to datoer betyr enkelt og greit \xE5 finne ut hvilken\
-  \ som er tidligst, senest eller om de er like. Det gj\xF8r programmerere for \xE5\
-  \ kontrollere\u2026"
+description: 'Hvordan: .'
 lastmod: '2024-03-13T22:44:41.195793-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 sammenligne to datoer betyr enkelt og greit \xE5 finne ut hvilken som\
-  \ er tidligst, senest eller om de er like."
+summary: .
 title: Sammenlikning av to datoer
 weight: 27
 ---

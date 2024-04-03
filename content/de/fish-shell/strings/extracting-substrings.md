@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:45:45.370030-07:00
-description: "Das Extrahieren von Teilstrings ist das Herausl\xF6sen bestimmter Zeichen\
-  \ oder Zeichenfolgen aus einem l\xE4ngeren String. Programmierer machen das h\xE4\
-  ufig, um\u2026"
+description: 'How to: In Fish Shell kannst du Teilstrings extrahieren, indem du `string`
+  Befehle und Indexierung verwendest. Hier ein paar Beispiele.'
 lastmod: '2024-03-13T22:44:54.297035-06:00'
 model: gpt-4-1106-preview
-summary: "Das Extrahieren von Teilstrings ist das Herausl\xF6sen bestimmter Zeichen\
-  \ oder Zeichenfolgen aus einem l\xE4ngeren String."
+summary: In Fish Shell kannst du Teilstrings extrahieren, indem du `string` Befehle
+  und Indexierung verwendest.
 title: Teilstrings extrahieren
 weight: 6
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-02-01 21:12:04.520351-07:00
-description: "Downloading a web page in Google Apps Script involves fetching the content\
-  \ of a web page via HTML for various purposes, such as web scraping, data\u2026"
+description: "How to: In Google Apps Script, the `UrlFetchApp` service is pivotal\
+  \ for downloading web content. Below is a step-by-step guide and a simple example\u2026"
 lastmod: '2024-03-13T22:44:59.668866-06:00'
 model: gpt-4-0125-preview
-summary: Downloading a web page in Google Apps Script involves fetching the content
-  of a web page via HTML for various purposes, such as web scraping, data extraction,
-  or monitoring changes.
+summary: In Google Apps Script, the `UrlFetchApp` service is pivotal for downloading
+  web content.
 title: Downloading a web page
 weight: 42
 ---

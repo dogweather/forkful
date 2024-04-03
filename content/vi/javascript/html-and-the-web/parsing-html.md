@@ -3,14 +3,12 @@ changelog:
 - 2024-01-28, dogweather, reviewed
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:02.179399-07:00
-description: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 tr\xEDch xu\u1EA5\
-  t d\u1EEF li\u1EC7u t\u1EEB t\xE0i li\u1EC7u HTML. C\xE1c l\u1EADp tr\xECnh vi\xEA\
-  n th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 t\u01B0\u01A1ng t\xE1c\
-  \ v\u1EDBi ho\u1EB7c thao t\xE1c n\u1ED9i dung web,\u2026"
+description: "L\xE0m Th\u1EBF N\xE0o: H\xE3y ph\xE2n t\xEDch c\xFA ph\xE1p HTML s\u1EED\
+  \ d\u1EE5ng API `DOMParser` trong JavaScript."
 lastmod: '2024-03-13T22:44:37.150431-06:00'
 model: gpt-4-0125-preview
-summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 tr\xEDch xu\u1EA5\
-  t d\u1EEF li\u1EC7u t\u1EEB t\xE0i li\u1EC7u HTML."
+summary: "H\xE3y ph\xE2n t\xEDch c\xFA ph\xE1p HTML s\u1EED d\u1EE5ng API `DOMParser`\
+  \ trong JavaScript."
 title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---

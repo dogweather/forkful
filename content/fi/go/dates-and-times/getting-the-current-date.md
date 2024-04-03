@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:47.832364-07:00
-description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen Go-kieless\xE4 on ohjelmoijille\
-  \ perusteht\xE4v\xE4, joka on moninaisuudessaan verrattavissa \"Hello, World!\"\
-  \ -esimerkkiin. Se on\u2026"
+description: "Kuinka: Go-kieless\xE4 `time`-paketti on porttisi ty\xF6skennelless\xE4\
+  si p\xE4iv\xE4m\xE4\xE4rien ja aikojen kanssa. `time.Now()`-funktio antaa sinulle\
+  \ nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n\u2026"
 lastmod: '2024-03-13T22:44:56.061882-06:00'
 model: gpt-4-0125-preview
-summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen Go-kieless\xE4 on ohjelmoijille\
-  \ perusteht\xE4v\xE4, joka on moninaisuudessaan verrattavissa \"Hello, World."
+summary: "Go-kieless\xE4 `time`-paketti on porttisi ty\xF6skennelless\xE4si p\xE4\
+  iv\xE4m\xE4\xE4rien ja aikojen kanssa."
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---

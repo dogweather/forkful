@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:01.327141-07:00
-description: "Het ontleden van een datum uit een string betekent het omzetten van\
-  \ geschreven tekst naar een Date-object dat een programma kan gebruiken. Programmeurs\u2026"
+description: 'Hoe: Java heeft een klasse `java.time.format.DateTimeFormatter` voor
+  dit soort werk. Hier is hoe je ermee omgaat.'
 lastmod: '2024-03-13T22:44:50.692014-06:00'
 model: gpt-4-0125-preview
-summary: Het ontleden van een datum uit een string betekent het omzetten van geschreven
-  tekst naar een Date-object dat een programma kan gebruiken.
+summary: Java heeft een klasse `java.time.format.DateTimeFormatter` voor dit soort
+  werk.
 title: Een datum uit een string parsen
 weight: 30
 ---

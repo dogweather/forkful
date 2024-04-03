@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:57.965311-07:00
-description: "Regulj\xE4ra uttryck i programmering \xE4r sekvenser av tecken som definierar\
-  \ ett s\xF6km\xF6nster, typiskt anv\xE4nda f\xF6r att s\xF6ka och manipulera str\xE4\
-  ngar. Haskell-\u2026"
+description: "Hur: I Haskell \xE4r regex-funktionalitet inte en del av standardbiblioteket,\
+  \ vilket kr\xE4ver anv\xE4ndning av tredjeparts paket s\xE5som `regex-base` tillsammans\u2026"
 lastmod: '2024-03-13T22:44:37.945451-06:00'
 model: gpt-4-0125-preview
-summary: "Regulj\xE4ra uttryck i programmering \xE4r sekvenser av tecken som definierar\
-  \ ett s\xF6km\xF6nster, typiskt anv\xE4nda f\xF6r att s\xF6ka och manipulera str\xE4\
-  ngar."
+summary: "I Haskell \xE4r regex-funktionalitet inte en del av standardbiblioteket,\
+  \ vilket kr\xE4ver anv\xE4ndning av tredjeparts paket s\xE5som `regex-base` tillsammans\
+  \ med ett kompatibelt backend som `regex-posix` (f\xF6r POSIX regex-st\xF6d), `regex-pcre`\
+  \ (f\xF6r Perl-kompatibelt regex), osv."
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---

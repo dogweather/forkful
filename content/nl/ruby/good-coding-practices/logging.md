@@ -2,11 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:02.684434-07:00
-description: "Loggen in programmeren is als het bijhouden van een dagboek voor je\
-  \ applicatie. Het is het systematisch vastleggen van gebeurtenissen, berichten en\u2026"
+description: 'Hoe te: Ruby komt met een ingebouwde module voor loggen, `Logger`, die
+  super eenvoudig te gebruiken is. Hier is een snel voorbeeld om je op weg te helpen.'
 lastmod: '2024-03-13T22:44:51.345147-06:00'
 model: gpt-4-0125-preview
-summary: Loggen in programmeren is als het bijhouden van een dagboek voor je applicatie.
+summary: Ruby komt met een ingebouwde module voor loggen, `Logger`, die super eenvoudig
+  te gebruiken is.
 title: Logboekregistratie
 weight: 17
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:28.599203-07:00
-description: "Analizzare una data da una stringa permette ai programmatori di convertire\
-  \ rappresentazioni testuali di date in oggetti `Date` di JavaScript, facilitando\u2026"
+description: "Come Fare: JavaScript offre nativamente il metodo `Date.parse()` e il\
+  \ costruttore `Date` per analizzare le stringhe di date. Tuttavia, questi approcci\u2026"
 lastmod: '2024-03-13T22:44:43.822145-06:00'
 model: gpt-4-0125-preview
-summary: Analizzare una data da una stringa permette ai programmatori di convertire
-  rappresentazioni testuali di date in oggetti `Date` di JavaScript, facilitando operazioni
-  di manipolazione, confronto e formattazione delle date.
+summary: JavaScript offre nativamente il metodo `Date.parse()` e il costruttore `Date`
+  per analizzare le stringhe di date.
 title: Analisi di una data da una stringa
 weight: 30
 ---

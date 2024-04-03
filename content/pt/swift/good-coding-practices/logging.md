@@ -1,13 +1,13 @@
 ---
 date: 2024-01-26 01:09:09.404601-07:00
-description: "O registro de logs \xE9 o processo de gravar comportamentos, erros e\
-  \ outras informa\xE7\xF5es importantes de uma aplica\xE7\xE3o em um meio persistente,\
-  \ como um arquivo\u2026"
+description: "Como fazer: Em Swift, voc\xEA pode escrever logs no console com instru\xE7\
+  \xF5es de impress\xE3o ou com a API `os.log`, mais flex\xEDvel, que se integra ao\
+  \ Unified\u2026"
 lastmod: '2024-03-13T22:44:46.926728-06:00'
 model: gpt-4-1106-preview
-summary: "O registro de logs \xE9 o processo de gravar comportamentos, erros e outras\
-  \ informa\xE7\xF5es importantes de uma aplica\xE7\xE3o em um meio persistente, como\
-  \ um arquivo ou banco de dados."
+summary: "Em Swift, voc\xEA pode escrever logs no console com instru\xE7\xF5es de\
+  \ impress\xE3o ou com a API `os.log`, mais flex\xEDvel, que se integra ao Unified\
+  \ Logging System nas plataformas da Apple."
 title: Registro de Logs
 weight: 17
 ---

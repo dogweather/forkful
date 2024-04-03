@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:36:56.295531-07:00
-description: "Refaktorointi on prosessi, jossa olemassa olevaa tietokonekoodia uudelleenrakennetaan\
-  \ muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4. Ohjelmoijat tekev\xE4t sit\xE4\
-  \u2026"
+description: "Kuinka: Aloitetaan perus Swift-esimerkill\xE4, jossa meill\xE4 on toistuvaa\
+  \ koodia."
 lastmod: '2024-03-13T22:44:56.914884-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktorointi on prosessi, jossa olemassa olevaa tietokonekoodia uudelleenrakennetaan\
-  \ muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4."
+summary: "Aloitetaan perus Swift-esimerkill\xE4, jossa meill\xE4 on toistuvaa koodia."
 title: Koodin refaktorointi
 weight: 19
 ---

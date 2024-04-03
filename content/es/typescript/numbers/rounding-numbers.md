@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:46:56.869208-07:00
-description: "Redondear n\xFAmeros implica ajustar un n\xFAmero a una precisi\xF3\
-  n espec\xEDfica. Los programadores lo hacen para controlar la salida num\xE9rica\
-  \ para mejorar la\u2026"
+description: "C\xF3mo hacerlo: El redondeo en TypeScript se puede hacer utilizando\
+  \ varios m\xE9todos. Aqu\xED hay un r\xE1pido repaso."
 lastmod: '2024-03-13T22:44:58.794829-06:00'
 model: gpt-4-0125-preview
-summary: "Redondear n\xFAmeros implica ajustar un n\xFAmero a una precisi\xF3n espec\xED\
-  fica."
+summary: "El redondeo en TypeScript se puede hacer utilizando varios m\xE9todos."
 title: "Redondeo de n\xFAmeros"
 weight: 13
 ---

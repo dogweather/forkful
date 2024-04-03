@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:37.051940-07:00
-description: "Das Schreiben einer Textdatei in PHP umfasst das Erstellen oder \xD6\
-  ffnen einer Datei und das Einf\xFCgen von Inhalten. Programmierer tun dies, um Daten\
-  \ wie von\u2026"
+description: "Wie: PHP unterst\xFCtzt das Schreiben von Dateien nativ durch Funktionen\
+  \ wie `file_put_contents`, `fopen` zusammen mit `fwrite` und `fclose`. Hier ist\
+  \ die\u2026"
 lastmod: '2024-03-13T22:44:53.990899-06:00'
 model: gpt-4-0125-preview
-summary: "Das Schreiben einer Textdatei in PHP umfasst das Erstellen oder \xD6ffnen\
-  \ einer Datei und das Einf\xFCgen von Inhalten."
+summary: "PHP unterst\xFCtzt das Schreiben von Dateien nativ durch Funktionen wie\
+  \ `file_put_contents`, `fopen` zusammen mit `fwrite` und `fclose`."
 title: Eine Textdatei schreiben
 weight: 24
 ---

@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:12.920059-07:00
-description: "C++:n s\xE4\xE4nn\xF6lliset lausekkeet ovat merkkijonoja, jotka m\xE4\
-  \xE4rittelev\xE4t hakukaavan, ja niit\xE4 k\xE4ytet\xE4\xE4n merkkijonojen vastaavuuksien\
-  \ etsint\xE4\xE4n tai\u2026"
+description: "Kuinka: C++11 toi tuen s\xE4\xE4nn\xF6llisille lausekkeille standardikirjastoon,\
+  \ `<regex>`, tarjoten robustin kehyksen merkkijonojen etsint\xE4\xE4n ja manipulointiin.\u2026"
 lastmod: '2024-03-13T22:44:56.855209-06:00'
 model: gpt-4-0125-preview
-summary: "C++:n s\xE4\xE4nn\xF6lliset lausekkeet ovat merkkijonoja, jotka m\xE4\xE4\
-  rittelev\xE4t hakukaavan, ja niit\xE4 k\xE4ytet\xE4\xE4n merkkijonojen vastaavuuksien\
-  \ etsint\xE4\xE4n tai manipulointiin."
+summary: "C++11 toi tuen s\xE4\xE4nn\xF6llisille lausekkeille standardikirjastoon,\
+  \ `<regex>`, tarjoten robustin kehyksen merkkijonojen etsint\xE4\xE4n ja manipulointiin."
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---

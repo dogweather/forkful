@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:46:34.288823-07:00
-description: "Das Runden von Zahlen bedeutet, einen numerischen Wert auf eine spezifische\
-  \ Genauigkeit zu approximieren, typischerweise, um unerw\xFCnschte Dezimalstellen\u2026"
+description: "Wie zu: Swift bietet mehrere M\xF6glichkeiten, Zahlen zu runden. Hier\
+  \ ein Vorgeschmack."
 lastmod: '2024-03-13T22:44:54.220539-06:00'
 model: gpt-4-0125-preview
-summary: "Das Runden von Zahlen bedeutet, einen numerischen Wert auf eine spezifische\
-  \ Genauigkeit zu approximieren, typischerweise, um unerw\xFCnschte Dezimalstellen\
-  \ zu entfernen."
+summary: "Swift bietet mehrere M\xF6glichkeiten, Zahlen zu runden."
 title: Zahlen runden
 weight: 13
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:45:42.849436-07:00
-description: "Avrundning inneb\xE4r att sk\xE4ra av \"bruset\" efter en viss punkt\
-  \ i ett tal. Programmerare avrundar f\xF6r att kontrollera precision, hantera minne\
-  \ eller g\xF6ra\u2026"
+description: "Hur man g\xF6r: S\xE5 h\xE4r avrundar du tal i JavaScript med `Math.round()`,\
+  \ `Math.ceil()`, och `Math.floor()`."
 lastmod: '2024-03-13T22:44:38.288377-06:00'
 model: gpt-4-0125-preview
-summary: "Avrundning inneb\xE4r att sk\xE4ra av \"bruset\" efter en viss punkt i ett\
-  \ tal."
+summary: "S\xE5 h\xE4r avrundar du tal i JavaScript med `Math.round()`, `Math.ceil()`,\
+  \ och `Math.floor()`."
 title: Avrundning av tal
 weight: 13
 ---

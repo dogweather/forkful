@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:34.052072-07:00
-description: "So s\xE1nh hai ng\xE0y ngh\u0129a l\xE0 ki\u1EC3m tra xem m\u1ED9t ng\xE0\
-  y c\xF3 s\u1EDBm h\u01A1n, gi\u1ED1ng h\u1EC7t, hay mu\u1ED9n h\u01A1n ng\xE0y kia\
-  \ hay kh\xF4ng. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\
-  \u1EC3 t\u1ED5 ch\u1EE9c s\u1EF1\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: V\u1EDBi Fish Shell, ch\xFAng ta c\xF3 th\u1EC3\
+  \ so s\xE1nh hai ng\xE0y s\u1EED d\u1EE5ng l\u1EC7nh `date`. D\u01B0\u1EDBi \u0111\
+  \xE2y l\xE0 c\xE1c v\xED d\u1EE5."
 lastmod: '2024-03-13T22:44:37.227525-06:00'
 model: gpt-4-0125-preview
-summary: "So s\xE1nh hai ng\xE0y ngh\u0129a l\xE0 ki\u1EC3m tra xem m\u1ED9t ng\xE0\
-  y c\xF3 s\u1EDBm h\u01A1n, gi\u1ED1ng h\u1EC7t, hay mu\u1ED9n h\u01A1n ng\xE0y kia\
-  \ hay kh\xF4ng."
+summary: "V\u1EDBi Fish Shell, ch\xFAng ta c\xF3 th\u1EC3 so s\xE1nh hai ng\xE0y s\u1EED\
+  \ d\u1EE5ng l\u1EC7nh `date`."
 title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---

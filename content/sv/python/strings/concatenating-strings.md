@@ -1,13 +1,11 @@
 ---
 date: 2024-01-20 17:35:41.330369-07:00
-description: "Sammanfogning av str\xE4ngar, eller \"concatenation\" som det ofta kallas,\
-  \ inneb\xE4r att du kopplar ihop tv\xE5 eller flera textstycken till en enda str\xE4\
-  ng.\u2026"
+description: "Hur man g\xF6r: F\xF6r att sammanfoga str\xE4ngar i Python anv\xE4nds\
+  \ plus-tecknet (+) eller `join()`-metoden. Kika p\xE5 exemplen nedan."
 lastmod: '2024-03-13T22:44:37.475297-06:00'
 model: gpt-4-1106-preview
-summary: "Sammanfogning av str\xE4ngar, eller \"concatenation\" som det ofta kallas,\
-  \ inneb\xE4r att du kopplar ihop tv\xE5 eller flera textstycken till en enda str\xE4\
-  ng."
+summary: "F\xF6r att sammanfoga str\xE4ngar i Python anv\xE4nds plus-tecknet (+) eller\
+  \ `join()`-metoden."
 title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---

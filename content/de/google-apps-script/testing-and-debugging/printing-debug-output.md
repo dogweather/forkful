@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:17.600768-07:00
-description: "Das Drucken von Debug-Ausgaben beinhaltet das strategische Platzieren\
-  \ von Protokollaussagen in Ihrem Code, um Variablenwerte, Ausf\xFChrungsfluss oder\u2026"
+description: "Wie: Google Apps Script bietet die `Logger`-Klasse f\xFCr grundlegendes\
+  \ Debugging und f\xFCr fortgeschrittenere Bed\xFCrfnisse die `console`-Klasse, die\
+  \ in der\u2026"
 lastmod: '2024-03-13T22:44:53.336861-06:00'
 model: gpt-4-0125-preview
-summary: "Das Drucken von Debug-Ausgaben beinhaltet das strategische Platzieren von\
-  \ Protokollaussagen in Ihrem Code, um Variablenwerte, Ausf\xFChrungsfluss oder Fehlermeldungen\
-  \ w\xE4hrend der Laufzeit anzuzeigen."
+summary: "Google Apps Script bietet die `Logger`-Klasse f\xFCr grundlegendes Debugging\
+  \ und f\xFCr fortgeschrittenere Bed\xFCrfnisse die `console`-Klasse, die in der\
+  \ V8-Laufzeit eingef\xFChrt wurde."
 title: Debug-Ausgabe drucken
 weight: 33
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:38.430370-07:00
-description: "\xC5 arbeide med CSV (kommaseparerte verdier) filer inneb\xE6rer parsing\
-  \ og generering av tekstdata organisert i rader og kolonner, ved bruk av komma for\
-  \ \xE5\u2026"
+description: "Hvordan: I Lua kan man jobbe med CSV-filer ved \xE5 bruke grunnleggende\
+  \ fil I/O-operasjoner som spr\xE5ket tilbyr, uten behov for eksterne biblioteker\
+  \ for enkle\u2026"
 lastmod: '2024-03-13T22:44:40.952948-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 arbeide med CSV (kommaseparerte verdier) filer inneb\xE6rer parsing\
-  \ og generering av tekstdata organisert i rader og kolonner, ved bruk av komma for\
-  \ \xE5 separere individuelle verdier."
+summary: "I Lua kan man jobbe med CSV-filer ved \xE5 bruke grunnleggende fil I/O-operasjoner\
+  \ som spr\xE5ket tilbyr, uten behov for eksterne biblioteker for enkle oppgaver."
 title: Arbeide med CSV
 weight: 37
 ---

@@ -1,13 +1,13 @@
 ---
 date: 2024-01-26 01:08:57.899332-07:00
-description: "Logging \xE9 o processo de registrar eventos, erros e outras informa\xE7\
-  \xF5es significativas durante a execu\xE7\xE3o de um programa em um meio externo,\
-  \ frequentemente\u2026"
+description: "Como Fazer: Em TypeScript, voc\xEA pode facilmente implementar um logging\
+  \ b\xE1sico usando os m\xE9todos do console ou integrar um logging mais avan\xE7\
+  ado com\u2026"
 lastmod: '2024-03-13T22:44:46.332529-06:00'
 model: gpt-4-1106-preview
-summary: "Logging \xE9 o processo de registrar eventos, erros e outras informa\xE7\
-  \xF5es significativas durante a execu\xE7\xE3o de um programa em um meio externo,\
-  \ frequentemente arquivos ou bancos de dados."
+summary: "Em TypeScript, voc\xEA pode facilmente implementar um logging b\xE1sico\
+  \ usando os m\xE9todos do console ou integrar um logging mais avan\xE7ado com bibliotecas\
+  \ como `winston` ou `pino`."
 title: Registro de Logs
 weight: 17
 ---

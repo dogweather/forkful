@@ -2,15 +2,17 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:16.912452-07:00
-description: "Vi\u1EC7c vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong Go bao\
-  \ g\u1ED3m vi\u1EC7c t\u1EA1o ra v\xE0 ghi c\xE1c chu\u1ED7i d\u1EEF li\u1EC7u v\xE0\
-  o m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n m\u1EDBi ho\u1EB7c \u0111\xE3 t\u1ED3n t\u1EA1\
-  i. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong Go, vi\u1EC7c vi\u1EBFt v\xE0o m\u1ED9\
+  t t\u1EC7p v\u0103n b\u1EA3n \u0111\u01B0\u1EE3c x\u1EED l\xFD b\u1EDFi g\xF3i `os`\
+  \ v\xE0 `io/ioutil` (cho c\xE1c phi\xEAn b\u1EA3n Go <1.16) ho\u1EB7c `os` v\xE0\
+  \ `io` c\xF9ng v\u1EDBi g\xF3i\u2026"
 lastmod: '2024-03-13T22:44:36.007297-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong Go bao g\u1ED3\
-  m vi\u1EC7c t\u1EA1o ra v\xE0 ghi c\xE1c chu\u1ED7i d\u1EEF li\u1EC7u v\xE0o m\u1ED9\
-  t t\u1EC7p v\u0103n b\u1EA3n m\u1EDBi ho\u1EB7c \u0111\xE3 t\u1ED3n t\u1EA1i."
+summary: "Trong Go, vi\u1EC7c vi\u1EBFt v\xE0o m\u1ED9t t\u1EC7p v\u0103n b\u1EA3\
+  n \u0111\u01B0\u1EE3c x\u1EED l\xFD b\u1EDFi g\xF3i `os` v\xE0 `io/ioutil` (cho\
+  \ c\xE1c phi\xEAn b\u1EA3n Go <1.16) ho\u1EB7c `os` v\xE0 `io` c\xF9ng v\u1EDBi\
+  \ g\xF3i `os` cho Go 1.16 tr\u1EDF l\xEAn, th\u1EC3 hi\u1EC7n tri\u1EBFt l\xFD v\u1EC1\
+  \ s\u1EF1 \u0111\u01A1n gi\u1EA3n v\xE0 hi\u1EC7u qu\u1EA3 c\u1EE7a Go."
 title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 24
 ---

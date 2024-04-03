@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:41:00.642193-07:00
-description: "Tempor\xE4re Dateien sind fl\xFCchtige Speicherst\xFCcke, die Daten\
-  \ w\xE4hrend der Ausf\xFChrung eines Programms aufnehmen. Sie werden oft genutzt,\
-  \ um Zwischenergebnisse\u2026"
+description: "How to: Kotlin bietet einen simplen Weg, tempor\xE4re Dateien zu erstellen.\
+  \ Hier siehst du, wie's geht."
 lastmod: '2024-03-13T22:44:53.865626-06:00'
 model: gpt-4-1106-preview
-summary: "Tempor\xE4re Dateien sind fl\xFCchtige Speicherst\xFCcke, die Daten w\xE4\
-  hrend der Ausf\xFChrung eines Programms aufnehmen."
+summary: "Kotlin bietet einen simplen Weg, tempor\xE4re Dateien zu erstellen."
 title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---

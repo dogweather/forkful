@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 03:46:38.372831-07:00
-description: "Att avrunda tal inneb\xE4r att approximera ett numeriskt v\xE4rde till\
-  \ en specifik precision, vanligtvis f\xF6r att ta bort o\xF6nskade decimaler. Programmerare\u2026"
+description: "Hur man g\xF6r: Swift erbjuder flera s\xE4tt att avrunda tal. H\xE4\
+  r \xE4r ett smakprov."
 lastmod: '2024-03-13T22:44:38.246142-06:00'
 model: gpt-4-0125-preview
-summary: "Att avrunda tal inneb\xE4r att approximera ett numeriskt v\xE4rde till en\
-  \ specifik precision, vanligtvis f\xF6r att ta bort o\xF6nskade decimaler."
+summary: "Swift erbjuder flera s\xE4tt att avrunda tal."
 title: Avrundning av tal
 weight: 13
 ---

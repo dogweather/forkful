@@ -2,18 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:29.986468-07:00
-description: "L\xE0m tr\xF2n s\u1ED1, m\u1ED9t kh\xE1i ni\u1EC7m c\u01A1 b\u1EA3n\
-  \ trong l\u1EADp tr\xECnh m\xE1y t\xEDnh, bao g\u1ED3m vi\u1EC7c \u0111i\u1EC1u\
-  \ ch\u1EC9nh m\u1ED9t s\u1ED1 \u0111\u1EC3 g\u1EA7n v\u1EDBi s\u1ED1 nguy\xEAn ho\u1EB7\
-  c \u0111\u1EBFn m\u1ED9t s\u1ED1 l\u01B0\u1EE3ng ch\u1ED7 th\u1EADp ph\xE2n c\u1EE5\
-  \u2026"
+description: "C\xE1ch th\u1EE9c: Google Apps Script, v\u1EDBi t\u01B0 c\xE1ch l\xE0\
+  \ ng\xF4n ng\u1EEF d\u1EF1a tr\xEAn JavaScript, cung c\u1EA5p c\xE1c ph\u01B0\u01A1\
+  ng th\u1EE9c ti\xEAu chu\u1EA9n \u0111\u1EC3 l\xE0m tr\xF2n s\u1ED1. D\u01B0\u1EDB\
+  i \u0111\xE2y l\xE0 c\xE1ch ph\xE2n t\xEDch\u2026"
 lastmod: '2024-03-13T22:44:36.033075-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m tr\xF2n s\u1ED1, m\u1ED9t kh\xE1i ni\u1EC7m c\u01A1 b\u1EA3n trong\
-  \ l\u1EADp tr\xECnh m\xE1y t\xEDnh, bao g\u1ED3m vi\u1EC7c \u0111i\u1EC1u ch\u1EC9\
-  nh m\u1ED9t s\u1ED1 \u0111\u1EC3 g\u1EA7n v\u1EDBi s\u1ED1 nguy\xEAn ho\u1EB7c \u0111\
-  \u1EBFn m\u1ED9t s\u1ED1 l\u01B0\u1EE3ng ch\u1ED7 th\u1EADp ph\xE2n c\u1EE5 th\u1EC3\
-  ."
+summary: "Google Apps Script, v\u1EDBi t\u01B0 c\xE1ch l\xE0 ng\xF4n ng\u1EEF d\u1EF1\
+  a tr\xEAn JavaScript, cung c\u1EA5p c\xE1c ph\u01B0\u01A1ng th\u1EE9c ti\xEAu chu\u1EA9\
+  n \u0111\u1EC3 l\xE0m tr\xF2n s\u1ED1."
 title: "L\xE0m tr\xF2n s\u1ED1"
 weight: 13
 ---

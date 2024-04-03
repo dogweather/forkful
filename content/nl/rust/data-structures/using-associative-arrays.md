@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:53.579865-07:00
-description: "Associatieve arrays, of wat Rustaceans \"hash maps\" noemen, zijn collecties\
-  \ die gegevens opslaan in sleutel-waardeparen. Programmeurs gebruiken ze voor\u2026"
+description: 'Hoe te: In Rust biedt het type `HashMap` uit de module `std::collections`
+  de functionaliteit van associatieve arrays. Hier is hoe je ermee kunt werken.'
 lastmod: '2024-03-13T22:44:50.587006-06:00'
 model: gpt-4-0125-preview
-summary: Associatieve arrays, of wat Rustaceans "hash maps" noemen, zijn collecties
-  die gegevens opslaan in sleutel-waardeparen.
+summary: In Rust biedt het type `HashMap` uit de module `std::collections` de functionaliteit
+  van associatieve arrays.
 title: Gebruik van associatieve arrays
 weight: 15
 ---

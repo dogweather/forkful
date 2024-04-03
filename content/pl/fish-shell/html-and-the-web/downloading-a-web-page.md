@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:44:05.141254-07:00
-description: "\u015Aci\u0105ganie strony internetowej to proces zapisywania zawarto\u015B\
-  ci z internetu na lokalnym dysku. Programi\u015Bci to robi\u0105, by analizowa\u0107\
-  \ dane, testowa\u0107 aplikacje\u2026"
+description: "How to: (Jak to zrobi\u0107:) ."
 lastmod: '2024-03-13T22:44:35.840228-06:00'
 model: gpt-4-1106-preview
-summary: "\u015Aci\u0105ganie strony internetowej to proces zapisywania zawarto\u015B\
-  ci z internetu na lokalnym dysku."
+summary: .
 title: Pobieranie strony internetowej
 weight: 42
 ---

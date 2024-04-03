@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:15:51.596097-07:00
-description: "REPL (Read-Eval-Print Loop - P\u0119tla Czytaj-Wykonaj-Wypisz) to proste,\
-  \ interaktywne \u015Brodowisko programistyczne. Programi\u015Bci u\u017Cywaj\u0105\
-  \ go do szybkich pr\xF3b\u2026"
+description: "Jak to zrobi\u0107: Uruchomienie REPL Kotlin jest bardzo proste. Otw\xF3\
+  rz terminal i wpisz `kotlinc`. Trafi\u0107 powiniene\u015B do pow\u0142oki Kotlin.\
+  \ Spr\xF3bujmy zdefiniowa\u0107\u2026"
 lastmod: '2024-03-13T22:44:35.366549-06:00'
 model: gpt-4-0125-preview
-summary: "REPL (Read-Eval-Print Loop - P\u0119tla Czytaj-Wykonaj-Wypisz) to proste,\
-  \ interaktywne \u015Brodowisko programistyczne."
+summary: Uruchomienie REPL Kotlin jest bardzo proste.
 title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---

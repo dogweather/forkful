@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:40:10.029389-07:00
-description: "Tworzenie tymczasowego pliku to proces generowania pliku, kt\xF3ry zostanie\
-  \ u\u017Cyty kr\xF3tkotrwale, a potem usuni\u0119ty. Programi\u015Bci tworz\u0105\
-  \ je do przechowywania\u2026"
+description: "Jak to zrobi\u0107: ."
 lastmod: '2024-03-13T22:44:35.016532-06:00'
 model: gpt-4-1106-preview
-summary: "Tworzenie tymczasowego pliku to proces generowania pliku, kt\xF3ry zostanie\
-  \ u\u017Cyty kr\xF3tkotrwale, a potem usuni\u0119ty."
+summary: .
 title: Tworzenie pliku tymczasowego
 weight: 21
 ---

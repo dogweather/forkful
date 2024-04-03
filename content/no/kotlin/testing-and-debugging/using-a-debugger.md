@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 03:49:55.933864-07:00
-description: "Her er en liten smakebit p\xE5 feils\xF8king i Kotlin med IntelliJ IDEA\
-  \ - Sherlock Holmes av IDEer: ```kotlin fun main() { val mysteryNumber = 42 var\
-  \ guess = 0\u2026"
+description: "Hvordan: Her er en liten smakebit p\xE5 feils\xF8king i Kotlin med IntelliJ\
+  \ IDEA - Sherlock Holmes av IDEer."
 lastmod: '2024-03-13T22:44:40.755210-06:00'
 model: gpt-4-0125-preview
 summary: "Her er en liten smakebit p\xE5 feils\xF8king i Kotlin med IntelliJ IDEA\
-  \ - Sherlock Holmes av IDEer:\n\n```kotlin\nfun main() {\n    val mysteryNumber\
-  \ = 42\n    var guess = 0\n\n    while (guess ."
+  \ - Sherlock Holmes av IDEer."
 title: "\xC5 bruke en feils\xF8ker"
 weight: 35
 ---

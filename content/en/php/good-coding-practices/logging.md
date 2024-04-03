@@ -1,13 +1,11 @@
 ---
 date: 2024-01-25 02:03:11.630198-07:00
-description: "Logging is basically akin to keeping a diary for your code; it's the\
-  \ act of recording events, errors, and other significant data points that happen\
-  \ when\u2026"
+description: "How to: PHP comes with a built-in error logging function that's easy\
+  \ to use. Just pop `error_log()` into your code to send a message to your server\
+  \ logs.\u2026"
 lastmod: '2024-03-13T22:45:00.172979-06:00'
 model: gpt-4-1106-preview
-summary: Logging is basically akin to keeping a diary for your code; it's the act
-  of recording events, errors, and other significant data points that happen when
-  your application runs.
+summary: PHP comes with a built-in error logging function that's easy to use.
 title: Logging
 weight: 17
 ---

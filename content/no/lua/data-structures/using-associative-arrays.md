@@ -2,14 +2,13 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:05.402289-07:00
-description: "Assosiative tabeller er som hemmelige h\xE5ndtrykk for data i Lua\u2014\
-  istedenfor bare tall som f\xF8lger trofast etter indeks, kan n\xF8klene dine v\xE6\
-  re hva som helst,\u2026"
+description: "Hvordan: I Lua er det enkelt \xE5 opprette en assosiativ tabell (eller\
+  \ et bord, i Lua-spr\xE5ket). Du dropper de vanlige numeriske indeksene til fordel\
+  \ for\u2026"
 lastmod: '2024-03-13T22:44:40.923120-06:00'
 model: gpt-4-0125-preview
-summary: "Assosiative tabeller er som hemmelige h\xE5ndtrykk for data i Lua\u2014\
-  istedenfor bare tall som f\xF8lger trofast etter indeks, kan n\xF8klene dine v\xE6\
-  re hva som helst, noe som gj\xF8r datahenting til en lek."
+summary: "I Lua er det enkelt \xE5 opprette en assosiativ tabell (eller et bord, i\
+  \ Lua-spr\xE5ket)."
 title: Bruke associative tabeller
 weight: 15
 ---

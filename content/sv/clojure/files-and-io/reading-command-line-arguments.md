@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:55:54.398186-07:00
-description: "Att l\xE4sa kommandoradsargument inneb\xE4r att man h\xE4mtar och anv\xE4\
-  nder de v\xE4rden som skickas till ett program vid start. Programmerare g\xF6r detta\
-  \ f\xF6r att\u2026"
+description: "Hur g\xF6r man: ."
 lastmod: '2024-03-13T22:44:37.540444-06:00'
 model: gpt-4-1106-preview
-summary: "Att l\xE4sa kommandoradsargument inneb\xE4r att man h\xE4mtar och anv\xE4\
-  nder de v\xE4rden som skickas till ett program vid start."
+summary: .
 title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---

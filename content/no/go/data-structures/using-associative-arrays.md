@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:51.250459-07:00
-description: "Assosiative tabeller, kjent som maps i Go, lar deg lagre n\xF8kkel-verdi-par\
-  \ der hver unike n\xF8kkel kartlegger til en verdi. Programmerere bruker maps for\u2026"
+description: "Hvordan: \xC5 opprette og initialisere en map i Go kan gj\xF8res p\xE5\
+  \ forskjellige m\xE5ter. Her er et grunnleggende eksempel for \xE5 komme i gang."
 lastmod: '2024-03-13T22:44:40.259096-06:00'
 model: gpt-4-0125-preview
-summary: "Assosiative tabeller, kjent som maps i Go, lar deg lagre n\xF8kkel-verdi-par\
-  \ der hver unike n\xF8kkel kartlegger til en verdi."
+summary: "\xC5 opprette og initialisere en map i Go kan gj\xF8res p\xE5 forskjellige\
+  \ m\xE5ter."
 title: Bruke associative tabeller
 weight: 15
 ---

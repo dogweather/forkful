@@ -2,15 +2,14 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:32.457392-07:00
-description: "La suppression de caract\xE8res correspondant \xE0 un motif sp\xE9cifique\
-  \ dans les cha\xEEnes de caract\xE8res est crucial pour la validation des donn\xE9\
-  es, leur\u2026"
+description: "Comment faire : Dart simplifie la suppression des caract\xE8res qui\
+  \ correspondent \xE0 un motif pr\xE9d\xE9fini en utilisant des expressions r\xE9\
+  guli\xE8res et la m\xE9thode\u2026"
 lastmod: '2024-03-13T22:44:57.356167-06:00'
 model: gpt-4-0125-preview
-summary: "La suppression de caract\xE8res correspondant \xE0 un motif sp\xE9cifique\
-  \ dans les cha\xEEnes de caract\xE8res est crucial pour la validation des donn\xE9\
-  es, leur assainissement ou lors de la pr\xE9paration du texte pour un traitement\
-  \ ult\xE9rieur."
+summary: "Dart simplifie la suppression des caract\xE8res qui correspondent \xE0 un\
+  \ motif pr\xE9d\xE9fini en utilisant des expressions r\xE9guli\xE8res et la m\xE9\
+  thode `replaceAll`."
 title: "Supprimer les caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---

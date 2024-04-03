@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:21.181022-07:00
-description: "Werken met XML betekent het omgaan met gegevens in een alomtegenwoordig,\
-  \ gestructureerd formaat dat wordt gebruikt in configuraties, berichtgeving en\u2026"
+description: "Hoe: Fish heeft geen ingebouwde XML-parser, dus je zult externe hulpmiddelen\
+  \ zoals `xmllint` of `xmlstarlet` gebruiken. Hier is een fragment om waarden te\u2026"
 lastmod: '2024-03-13T22:44:51.271352-06:00'
 model: gpt-4-0125-preview
-summary: Werken met XML betekent het omgaan met gegevens in een alomtegenwoordig,
-  gestructureerd formaat dat wordt gebruikt in configuraties, berichtgeving en meer.
+summary: Fish heeft geen ingebouwde XML-parser, dus je zult externe hulpmiddelen zoals
+  `xmllint` of `xmlstarlet` gebruiken.
 title: Werken met XML
 weight: 40
 ---

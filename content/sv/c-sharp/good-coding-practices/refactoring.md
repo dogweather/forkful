@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:17:55.774090-07:00
-description: "Refaktorering \xE4r processen att omstrukturera befintlig datorprogramkod\
-  \ utan att \xE4ndra dess yttre beteende. Programmerare g\xF6r det f\xF6r att rensa\
-  \ upp kod,\u2026"
+description: "Hur: L\xE5t oss refaktorera en enkel C#-metod som ber\xE4knar och skriver\
+  \ ut summan av en array av nummer: F\xF6re refaktorering."
 lastmod: '2024-03-13T22:44:37.921688-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktorering \xE4r processen att omstrukturera befintlig datorprogramkod\
-  \ utan att \xE4ndra dess yttre beteende."
+summary: "L\xE5t oss refaktorera en enkel C#-metod som ber\xE4knar och skriver ut\
+  \ summan av en array av nummer."
 title: Refaktorisering
 weight: 19
 ---

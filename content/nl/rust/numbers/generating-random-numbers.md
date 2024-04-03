@@ -2,14 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:50.754124-07:00
-description: "Het genereren van willekeurige getallen in Rust omvat het gebruik van\
-  \ bibliotheken om onvoorspelde numerieke waarden te produceren, wat onmisbaar is\
-  \ voor\u2026"
+description: "Hoe te: Rust is afhankelijk van externe crates voor het genereren van\
+  \ willekeurige getallen, waarbij `rand` het meest gebruikt wordt. Om te beginnen\
+  \ met\u2026"
 lastmod: '2024-03-13T22:44:50.589977-06:00'
 model: gpt-4-0125-preview
-summary: "Het genereren van willekeurige getallen in Rust omvat het gebruik van bibliotheken\
-  \ om onvoorspelde numerieke waarden te produceren, wat onmisbaar is voor taken vari\xEB\
-  rend van cryptografie en simulaties tot gaming en gerandomiseerde algoritmes."
+summary: Rust is afhankelijk van externe crates voor het genereren van willekeurige
+  getallen, waarbij `rand` het meest gebruikt wordt.
 title: Willekeurige getallen genereren
 weight: 12
 ---

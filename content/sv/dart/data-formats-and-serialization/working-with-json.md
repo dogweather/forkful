@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:58:01.687998-07:00
-description: "Att arbeta med JSON (JavaScript Object Notation) inneb\xE4r att tolka\
-  \ JSON-data fr\xE5n str\xE4ngar till Dart-objekt och tv\xE4rtom, en vanlig uppgift\
-  \ i webb- och\u2026"
+description: "Hur man g\xF6r: Dart erbjuder inbyggt st\xF6d f\xF6r JSON med biblioteket\
+  \ `dart:convert`, vilket g\xF6r det enkelt att koda och avkoda JSON. Nedan f\xF6\
+  ljer exempel som\u2026"
 lastmod: '2024-03-13T22:44:37.635368-06:00'
 model: gpt-4-0125-preview
-summary: "Att arbeta med JSON (JavaScript Object Notation) inneb\xE4r att tolka JSON-data\
-  \ fr\xE5n str\xE4ngar till Dart-objekt och tv\xE4rtom, en vanlig uppgift i webb-\
-  \ och apputveckling f\xF6r datautbyte."
+summary: "Dart erbjuder inbyggt st\xF6d f\xF6r JSON med biblioteket `dart:convert`,\
+  \ vilket g\xF6r det enkelt att koda och avkoda JSON."
 title: Att Arbeta med JSON
 weight: 38
 ---

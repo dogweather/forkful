@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:48:46.266950-07:00
-description: "\xC5 h\xE5ndtere en streng inneb\xE6rer \xE5 endre inndata slik at det\
-  \ f\xF8rste tegnet er stor bokstav mens resten er sm\xE5 bokstaver, ofte brukt for\
-  \ formatering av navn\u2026"
+description: "Hvordan: Google Apps Script, som er basert p\xE5 JavaScript, tillater\
+  \ flere metoder for \xE5 h\xE5ndtere en streng, selv uten en innebygd funksjon.\
+  \ Her er et par\u2026"
 lastmod: '2024-03-13T22:44:40.295617-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 h\xE5ndtere en streng inneb\xE6rer \xE5 endre inndata slik at det f\xF8\
-  rste tegnet er stor bokstav mens resten er sm\xE5 bokstaver, ofte brukt for formatering\
-  \ av navn eller titler."
+summary: "Google Apps Script, som er basert p\xE5 JavaScript, tillater flere metoder\
+  \ for \xE5 h\xE5ndtere en streng, selv uten en innebygd funksjon."
 title: "\xC5 gj\xF8re om en streng til store bokstaver"
 weight: 2
 ---

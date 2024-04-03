@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:20.964565-07:00
-description: "\xC5 jobbe med CSV (kommaseparerte verdier) i JavaScript inneb\xE6rer\
-  \ parsing eller generering av CSV-filer for enten \xE5 ta inn tabul\xE6re data fra\
-  \ eksterne kilder\u2026"
+description: "Hvordan: JavaScript har ikke innebygd CSV-parsing eller strengifisering\
+  \ funksjonalitet slik det har med JSON. Men, du kan enkelt h\xE5ndtere CSV data\
+  \ ved \xE5\u2026"
 lastmod: '2024-03-13T22:44:41.205636-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 jobbe med CSV (kommaseparerte verdier) i JavaScript inneb\xE6rer parsing\
-  \ eller generering av CSV-filer for enten \xE5 ta inn tabul\xE6re data fra eksterne\
-  \ kilder eller eksportere data for bruk i andre programmer."
+summary: JavaScript har ikke innebygd CSV-parsing eller strengifisering funksjonalitet
+  slik det har med JSON.
 title: Arbeide med CSV
 weight: 37
 ---

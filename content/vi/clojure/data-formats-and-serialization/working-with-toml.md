@@ -2,17 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:58.030787-07:00
-description: "L\xE0m vi\u1EC7c v\u1EDBi TOML c\xF3 ngh\u0129a l\xE0 b\u1EA1n \u0111\
-  ang x\u1EED l\xFD d\u1EEF li\u1EC7u theo \u0111\u1ECBnh d\u1EA1ng \"Ng\xF4n ng\u1EEF\
-  \ T\u1ED1i thi\u1EC3u Hi\u1EC3n nhi\xEAn c\u1EE7a Tom\" (Tom's Obvious, Minimal\
-  \ Language), ph\u1ED5 bi\u1EBFn\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi TOML\
+  \ trong Clojure, b\u1EA1n c\u1EA7n m\u1ED9t th\u01B0 vi\u1EC7n nh\u01B0 `clj-toml`.\
+  \ \u0110\u1EA7u ti\xEAn, th\xEAm n\xF3 v\xE0o `deps.edn` c\u1EE7a b\u1EA1n."
 lastmod: '2024-03-13T22:44:36.183642-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m vi\u1EC7c v\u1EDBi TOML c\xF3 ngh\u0129a l\xE0 b\u1EA1n \u0111ang\
-  \ x\u1EED l\xFD d\u1EEF li\u1EC7u theo \u0111\u1ECBnh d\u1EA1ng \"Ng\xF4n ng\u1EEF\
-  \ T\u1ED1i thi\u1EC3u Hi\u1EC3n nhi\xEAn c\u1EE7a Tom\" (Tom's Obvious, Minimal\
-  \ Language), ph\u1ED5 bi\u1EBFn cho c\xE1c t\u1EADp tin c\u1EA5u h\xECnh do d\u1EC5\
-  \ \u0111\u1ECDc."
+summary: "\u0110\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi TOML trong Clojure, b\u1EA1n c\u1EA7\
+  n m\u1ED9t th\u01B0 vi\u1EC7n nh\u01B0 `clj-toml`."
 title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 weight: 39
 ---

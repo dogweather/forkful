@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:59.079491-07:00
-description: "Refactoring is het proces van het herstructureren van bestaande computercodes\
-  \ zonder het externe gedrag ervan te wijzigen. Programmeurs doen dit om code\u2026"
+description: 'Hoe te: Laten we een eenvoudige C# methode refactoren die de som van
+  een reeks getallen berekent en afdrukt: Voor Refactoring.'
 lastmod: '2024-03-13T22:44:50.818632-06:00'
 model: gpt-4-0125-preview
-summary: Refactoring is het proces van het herstructureren van bestaande computercodes
-  zonder het externe gedrag ervan te wijzigen.
+summary: Laten we een eenvoudige C# methode refactoren die de som van een reeks getallen
+  berekent en afdrukt.
 title: Refactoring
 weight: 19
 ---

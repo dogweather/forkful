@@ -2,14 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:18.587367-07:00
-description: "W programowaniu, uzyskanie aktualnej daty to podstawowe zadanie, kt\xF3\
-  re umo\u017Cliwia programistom dost\u0119p, wy\u015Bwietlanie lub manipulowanie\
-  \ bie\u017C\u0105c\u0105 dat\u0105 w ich\u2026"
+description: "Jak to zrobi\u0107: #."
 lastmod: '2024-03-13T22:44:35.375655-06:00'
 model: gpt-4-0125-preview
-summary: "W programowaniu, uzyskanie aktualnej daty to podstawowe zadanie, kt\xF3\
-  re umo\u017Cliwia programistom dost\u0119p, wy\u015Bwietlanie lub manipulowanie\
-  \ bie\u017C\u0105c\u0105 dat\u0105 w ich aplikacjach."
+summary: '#.'
 title: Pobieranie aktualnej daty
 weight: 29
 ---

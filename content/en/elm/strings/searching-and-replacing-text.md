@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:57:40.115318-07:00
-description: "Searching and replacing text lets you find specific strings and swap\
-  \ them out for something else. Programmers use it for everything from fixing typos\
-  \ to\u2026"
+description: 'How to: In Elm, you can use the `String` module to replace parts of
+  a string. Let''s see it in action.'
 lastmod: '2024-03-13T22:44:59.996109-06:00'
 model: gpt-4-1106-preview
-summary: Searching and replacing text lets you find specific strings and swap them
-  out for something else.
+summary: In Elm, you can use the `String` module to replace parts of a string.
 title: Searching and replacing text
 weight: 10
 ---

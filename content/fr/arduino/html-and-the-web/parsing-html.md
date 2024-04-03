@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:37.913460-07:00
-description: "L'analyse du HTML dans les projets Arduino consiste \xE0 extraire des\
-  \ informations des pages Web. Les programmeurs font cela pour permettre \xE0 leurs\u2026"
+description: "Comment faire : L'analyse du HTML sur Arduino exige g\xE9n\xE9ralement\
+  \ des biblioth\xE8ques \xE0 empreinte minimale en raison des ressources limit\xE9\
+  es de l'appareil.\u2026"
 lastmod: '2024-03-13T22:44:58.107167-06:00'
 model: gpt-4-0125-preview
-summary: "L'analyse du HTML dans les projets Arduino consiste \xE0 extraire des informations\
-  \ des pages Web."
+summary: "L'analyse du HTML sur Arduino exige g\xE9n\xE9ralement des biblioth\xE8\
+  ques \xE0 empreinte minimale en raison des ressources limit\xE9es de l'appareil."
 title: Analyse Syntaxique du HTML
 weight: 43
 ---

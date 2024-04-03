@@ -2,13 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:53:40.914376-07:00
-description: "Concatenar cadenas en la programaci\xF3n implica combinar dos o m\xE1\
-  s cadenas en una. Los programadores hacen esto para manipular datos de texto f\xE1\
-  cilmente,\u2026"
+description: "C\xF3mo hacerlo: Dart ofrece varias formas sencillas de concatenar cadenas.\
+  \ A continuaci\xF3n, se muestran los m\xE9todos m\xE1s comunes: #."
 lastmod: '2024-03-13T22:44:58.740154-06:00'
 model: gpt-4-0125-preview
-summary: "Concatenar cadenas en la programaci\xF3n implica combinar dos o m\xE1s cadenas\
-  \ en una."
+summary: Dart ofrece varias formas sencillas de concatenar cadenas.
 title: Concatenando cadenas de texto
 weight: 3
 ---

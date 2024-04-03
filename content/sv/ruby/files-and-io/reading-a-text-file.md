@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:55:11.157626-07:00
-description: "L\xE4sa en textfil? Det handlar om att f\xE5 fram informationen skriven\
-  \ i filen och anv\xE4nda den i ditt program. Utvecklare g\xF6r det f\xF6r att ladda\
-  \ data,\u2026"
+description: "How to: Anv\xE4nd `File`-klassen f\xF6r att l\xE4sa filer. H\xE4r \xE4\
+  r enkla exempel."
 lastmod: '2024-03-13T22:44:38.449137-06:00'
 model: gpt-4-1106-preview
-summary: "L\xE4sa en textfil."
+summary: "Anv\xE4nd `File`-klassen f\xF6r att l\xE4sa filer."
 title: "L\xE4sa en textfil"
 weight: 22
 ---

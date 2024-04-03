@@ -1,11 +1,11 @@
 ---
 date: 2024-01-27 20:32:57.551325-07:00
-description: "Das Generieren von Zufallszahlen in C# umfasst die Erstellung von unvorhersehbaren\
-  \ numerischen Werten innerhalb eines spezifizierten Bereichs.\u2026"
+description: "Wie geht das: Die gebr\xE4uchlichste Methode, um Zufallszahlen in C#\
+  \ zu generieren, ist die Verwendung der `System.Random` Klasse. Hier ist ein einfaches\u2026"
 lastmod: '2024-03-13T22:44:53.884014-06:00'
 model: gpt-4-0125-preview
-summary: Das Generieren von Zufallszahlen in C# umfasst die Erstellung von unvorhersehbaren
-  numerischen Werten innerhalb eines spezifizierten Bereichs.
+summary: "Die gebr\xE4uchlichste Methode, um Zufallszahlen in C# zu generieren, ist\
+  \ die Verwendung der `System.Random` Klasse."
 title: Generierung von Zufallszahlen
 weight: 12
 ---

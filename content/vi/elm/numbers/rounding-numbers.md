@@ -2,17 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:18.069462-07:00
-description: "L\xE0m tr\xF2n s\u1ED1 l\xE0 vi\u1EC7c ch\u1EC9nh s\u1EEDa m\u1ED9t\
-  \ s\u1ED1 th\u1EADp ph\xE2n v\u1EC1 gi\xE1 tr\u1ECB nguy\xEAn g\u1EA7n nh\u1EA5\
-  t ho\u1EB7c v\u1EC1 m\u1ED9t s\u1ED1 l\u01B0\u1EE3ng ch\u1EEF s\u1ED1 ph\xE2n s\u1ED1\
-  \ c\u1EE5 th\u1EC3. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m tr\xF2n s\u1ED1 \u0111\
-  \u1EC3\u2026"
+description: "C\xE1ch l\xE0m: M\xF4-\u0111un `Basics` c\u1EE7a Elm cung c\u1EA5p nh\u1EEF\
+  ng h\xE0m ti\u1EC7n \xEDch cho vi\u1EC7c l\xE0m tr\xF2n: `round`, `floor`, v\xE0\
+  \ `ceiling`. D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch s\u1EED d\u1EE5ng ch\xFAng."
 lastmod: '2024-03-13T22:44:36.537234-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m tr\xF2n s\u1ED1 l\xE0 vi\u1EC7c ch\u1EC9nh s\u1EEDa m\u1ED9t s\u1ED1\
-  \ th\u1EADp ph\xE2n v\u1EC1 gi\xE1 tr\u1ECB nguy\xEAn g\u1EA7n nh\u1EA5t ho\u1EB7\
-  c v\u1EC1 m\u1ED9t s\u1ED1 l\u01B0\u1EE3ng ch\u1EEF s\u1ED1 ph\xE2n s\u1ED1 c\u1EE5\
-  \ th\u1EC3."
+summary: "M\xF4-\u0111un `Basics` c\u1EE7a Elm cung c\u1EA5p nh\u1EEFng h\xE0m ti\u1EC7\
+  n \xEDch cho vi\u1EC7c l\xE0m tr\xF2n."
 title: "L\xE0m tr\xF2n s\u1ED1"
 weight: 13
 ---

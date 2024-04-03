@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 01:11:59.399504-07:00
-description: "Att organisera kod i funktioner handlar om att bryta ner din kod i \xE5\
-  teranv\xE4ndbara delar med specifika syften. Vi g\xF6r det f\xF6r att g\xF6ra koden\
-  \ renare,\u2026"
+description: "Hur g\xF6r man: L\xE5t s\xE4ga att du skriver ett skript f\xF6r att\
+  \ ber\xE4kna kvadraten och kuben av ett tal. Utan funktioner \xE4r det ett virrvarr\
+  \ av upprepning."
 lastmod: '2024-03-13T22:44:37.488576-06:00'
 model: gpt-4-1106-preview
-summary: "Att organisera kod i funktioner handlar om att bryta ner din kod i \xE5\
-  teranv\xE4ndbara delar med specifika syften."
+summary: "L\xE5t s\xE4ga att du skriver ett skript f\xF6r att ber\xE4kna kvadraten\
+  \ och kuben av ett tal."
 title: Att organisera kod i funktioner
 weight: 18
 ---

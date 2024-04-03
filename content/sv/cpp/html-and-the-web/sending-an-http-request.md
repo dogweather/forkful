@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:59:34.488873-07:00
-description: "Att skicka en HTTP-beg\xE4ran inneb\xE4r att din applikation kommunicerar\
-  \ med en webbserver, vanligtvis f\xF6r att h\xE4mta eller skicka data. Programmerare\
-  \ g\xF6r det\u2026"
+description: "How to: C++20 introducerade `<chrono>` och `<format>` biblioteken som\
+  \ ger en modern touch till hantering av tid och str\xE4ngformatering."
 lastmod: '2024-03-13T22:44:38.205966-06:00'
 model: gpt-4-1106-preview
-summary: "Att skicka en HTTP-beg\xE4ran inneb\xE4r att din applikation kommunicerar\
-  \ med en webbserver, vanligtvis f\xF6r att h\xE4mta eller skicka data."
+summary: "C++20 introducerade `<chrono>` och `<format>` biblioteken som ger en modern\
+  \ touch till hantering av tid och str\xE4ngformatering."
 title: "Skicka en http-f\xF6rfr\xE5gan"
 weight: 44
 ---

@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:40.363062-07:00
-description: "HTTP-pyynn\xF6n l\xE4hett\xE4minen merkitsee puhelun aloittamista Go-sovelluksestasi\
-  \ web-palvelimeen, API:in tai mihin tahansa muuhun HTTP-pohjaiseen palveluun.\u2026"
+description: "Kuinka: Go:ssa HTTP-pyynn\xF6n l\xE4hett\xE4minen ja vastauksen k\xE4\
+  sittely vaatii `net/http` -paketin k\xE4ytt\xF6\xE4. T\xE4ss\xE4 on askel askeleelta\
+  \ esimerkki, joka n\xE4ytt\xE4\xE4,\u2026"
 lastmod: '2024-03-13T22:44:56.046904-06:00'
 model: gpt-4-0125-preview
-summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen merkitsee puhelun aloittamista Go-sovelluksestasi\
-  \ web-palvelimeen, API:in tai mihin tahansa muuhun HTTP-pohjaiseen palveluun."
+summary: "Go:ssa HTTP-pyynn\xF6n l\xE4hett\xE4minen ja vastauksen k\xE4sittely vaatii\
+  \ `net/http` -paketin k\xE4ytt\xF6\xE4."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---

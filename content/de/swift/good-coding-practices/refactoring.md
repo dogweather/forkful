@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 03:36:37.835050-07:00
-description: "Refactoring ist der Prozess des Umstrukturierens vorhandenen Computer-Codes,\
-  \ ohne dessen externes Verhalten zu \xE4ndern. Programmierer machen dies, um den\u2026"
+description: 'Wie geht das: Beginnen wir mit einem einfachen Swift-Beispiel, in dem
+  wir etwas wiederholenden Code haben.'
 lastmod: '2024-03-13T22:44:54.233547-06:00'
 model: gpt-4-0125-preview
-summary: "Refactoring ist der Prozess des Umstrukturierens vorhandenen Computer-Codes,\
-  \ ohne dessen externes Verhalten zu \xE4ndern."
+summary: Beginnen wir mit einem einfachen Swift-Beispiel, in dem wir etwas wiederholenden
+  Code haben.
 title: Refactoring
 weight: 19
 ---

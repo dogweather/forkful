@@ -2,18 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:31.422852-07:00
-description: "V\xF2ng l\u1EB7p \u0110\u1ECDc-\u0110\xE1nh gi\xE1-In (REPL) l\xE0 m\u1ED9\
-  t m\xF4i tr\u01B0\u1EDDng l\u1EADp tr\xECnh t\u01B0\u01A1ng t\xE1c \u0111\u01A1\
-  n gi\u1EA3n, x\u1EED l\xFD t\u1EEBng \u0111\u1EA7u v\xE0o c\u1EE7a ng\u01B0\u1EDD\
-  i d\xF9ng, \u0111\xE1nh gi\xE1 ch\xFAng, v\xE0 tr\u1EA3 k\u1EBFt qu\u1EA3 v\u1EC1\
-  \ cho\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Elm kh\xF4ng \u0111i k\xE8m v\u1EDBi REPL\
+  \ t\xEDch h\u1EE3p. Tuy nhi\xEAn, b\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng `elm\
+  \ repl` t\u1EEB d\xF2ng l\u1EC7nh c\u1EE7a m\xECnh \u0111\u1EC3 b\u1EAFt \u0111\u1EA7\
+  u m\u1ED9t phi\xEAn Elm sau khi \u0111\xE3 c\xE0i\u2026"
 lastmod: '2024-03-13T22:44:36.546440-06:00'
 model: gpt-4-0125-preview
-summary: "V\xF2ng l\u1EB7p \u0110\u1ECDc-\u0110\xE1nh gi\xE1-In (REPL) l\xE0 m\u1ED9\
-  t m\xF4i tr\u01B0\u1EDDng l\u1EADp tr\xECnh t\u01B0\u01A1ng t\xE1c \u0111\u01A1\
-  n gi\u1EA3n, x\u1EED l\xFD t\u1EEBng \u0111\u1EA7u v\xE0o c\u1EE7a ng\u01B0\u1EDD\
-  i d\xF9ng, \u0111\xE1nh gi\xE1 ch\xFAng, v\xE0 tr\u1EA3 k\u1EBFt qu\u1EA3 v\u1EC1\
-  \ cho ng\u01B0\u1EDDi d\xF9ng."
+summary: "Elm kh\xF4ng \u0111i k\xE8m v\u1EDBi REPL t\xEDch h\u1EE3p."
 title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 weight: 34
 ---

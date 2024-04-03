@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:48.940000-07:00
-description: "Les expressions r\xE9guli\xE8res en programmation sont des s\xE9quences\
-  \ de caract\xE8res qui d\xE9finissent un motif de recherche, g\xE9n\xE9ralement\
-  \ employ\xE9 pour la recherche\u2026"
+description: "Comment : En Haskell, les fonctionnalit\xE9s regex ne font pas partie\
+  \ de la biblioth\xE8que standard, n\xE9cessitant l'utilisation de paquets tiers\
+  \ comme `regex-\u2026"
 lastmod: '2024-03-13T22:44:57.823236-06:00'
 model: gpt-4-0125-preview
-summary: "Les expressions r\xE9guli\xE8res en programmation sont des s\xE9quences\
-  \ de caract\xE8res qui d\xE9finissent un motif de recherche, g\xE9n\xE9ralement\
-  \ employ\xE9 pour la recherche et la manipulation de cha\xEEnes de caract\xE8res."
+summary: "En Haskell, les fonctionnalit\xE9s regex ne font pas partie de la biblioth\xE8\
+  que standard, n\xE9cessitant l'utilisation de paquets tiers comme `regex-base` accompagn\xE9\
+  \ d'un backend compatible tel que `regex-posix` (pour le support des regex POSIX),\
+  \ `regex-pcre` (pour les regex compatibles Perl), etc."
 title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---

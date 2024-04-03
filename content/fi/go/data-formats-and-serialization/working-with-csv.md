@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:52.730906-07:00
-description: "Pilkuin erotetut arvot (CSV, Comma-Separated Values) ovat kaikkialla\
-  \ k\xE4ytetty tietojen vaihdon muoto yksinkertaisuutensa ja helpon ohjelmointikielten,\u2026"
+description: "Kuinka: CSV-tiedostojen k\xE4sittely Go:ssa on suoraviivaista sen standardikirjaston,\
+  \ `encoding/csv`, ansiosta. Alla on perusteet CSV-tiedostojen lukemisesta\u2026"
 lastmod: '2024-03-13T22:44:56.074658-06:00'
 model: gpt-4-0125-preview
-summary: "Pilkuin erotetut arvot (CSV, Comma-Separated Values) ovat kaikkialla k\xE4\
-  ytetty tietojen vaihdon muoto yksinkertaisuutensa ja helpon ohjelmointikielten,\
-  \ kuten Go:n, integraation ansiosta."
+summary: "CSV-tiedostojen k\xE4sittely Go:ssa on suoraviivaista sen standardikirjaston,\
+  \ `encoding/csv`, ansiosta."
 title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---

@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:20.221296-07:00
-description: "Het omzetten van een datum naar een tekenreeks in C# houdt in dat het\
-  \ formaat van een DateTime-object wordt veranderd naar een tekstweergave. Programmeurs\u2026"
+description: 'Hoe te: In C# heb je het `DateTime`-object en een heleboel manieren
+  om het om te zetten in een tekenreeks. Hier zijn er een paar.'
 lastmod: '2024-03-13T22:44:50.821479-06:00'
 model: gpt-4-0125-preview
-summary: Het omzetten van een datum naar een tekenreeks in C# houdt in dat het formaat
-  van een DateTime-object wordt veranderd naar een tekstweergave.
+summary: In C# heb je het `DateTime`-object en een heleboel manieren om het om te
+  zetten in een tekenreeks.
 title: Een datum converteren naar een string
 weight: 28
 ---

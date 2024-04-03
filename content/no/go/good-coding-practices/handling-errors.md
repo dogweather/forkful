@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:01.950141-07:00
-description: "\xC5 h\xE5ndtere feil i Go inneb\xE6rer \xE5 gjenkjenne og reagere p\xE5\
-  \ feilsituasjoner i programmet ditt. Programmere engasjerer seg i feilh\xE5ndtering\
-  \ for \xE5 sikre at\u2026"
+description: "Hvordan: I Go h\xE5ndteres feil eksplisitt ved bruk av `error`-typen.\
+  \ Funksjoner som kan feile returnerer en feil som sin siste returverdi. \xC5 sjekke\
+  \ om denne\u2026"
 lastmod: '2024-03-13T22:44:40.275043-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 h\xE5ndtere feil i Go inneb\xE6rer \xE5 gjenkjenne og reagere p\xE5\
-  \ feilsituasjoner i programmet ditt."
+summary: "I Go h\xE5ndteres feil eksplisitt ved bruk av `error`-typen."
 title: "H\xE5ndtering av feil"
 weight: 16
 ---

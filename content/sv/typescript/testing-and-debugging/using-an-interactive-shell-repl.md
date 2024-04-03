@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 04:18:45.538609-07:00
-description: "En Read-Eval-Print-Loop (REPL) \xE4r en programmeringsmilj\xF6 som tar\
-  \ emot enskilda anv\xE4ndarinmatningar, exekverar dem och returnerar resultatet\
-  \ till\u2026"
+description: "Hur g\xF6r man: TypeScript kommer inte med sin egen REPL. L\xE5t oss\
+  \ anv\xE4nda `ts-node`, en TypeScript-exekveringsmilj\xF6 f\xF6r Node.js som inkluderar\
+  \ en REPL.\u2026"
 lastmod: '2024-03-13T22:44:37.657708-06:00'
 model: gpt-4-0125-preview
-summary: "En Read-Eval-Print-Loop (REPL) \xE4r en programmeringsmilj\xF6 som tar emot\
-  \ enskilda anv\xE4ndarinmatningar, exekverar dem och returnerar resultatet till\
-  \ anv\xE4ndaren."
+summary: TypeScript kommer inte med sin egen REPL.
 title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---

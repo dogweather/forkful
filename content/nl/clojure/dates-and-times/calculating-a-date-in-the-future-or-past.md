@@ -2,14 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:16.808680-07:00
-description: "Het berekenen van toekomstige of verleden datums betreft het manipuleren\
-  \ van datums om erachter te komen wat ze zullen zijn na een bepaalde periode of\
-  \ wat\u2026"
+description: 'Hoe: In Clojure gebruik je voornamelijk de `clj-time` bibliotheek voor
+  datumoperaties. Hier is een snelle demonstratie.'
 lastmod: '2024-03-13T22:44:50.433663-06:00'
 model: gpt-4-0125-preview
-summary: Het berekenen van toekomstige of verleden datums betreft het manipuleren
-  van datums om erachter te komen wat ze zullen zijn na een bepaalde periode of wat
-  ze waren.
+summary: In Clojure gebruik je voornamelijk de `clj-time` bibliotheek voor datumoperaties.
 title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---

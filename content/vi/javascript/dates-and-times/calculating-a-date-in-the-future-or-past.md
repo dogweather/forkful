@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:11.657481-07:00
-description: "T\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7\
-  c qu\xE1 kh\u1EE9 c\xF3 ngh\u0129a l\xE0 t\xECm m\u1ED9t ng\xE0y c\xE1ch m\u1ED9\
-  t s\u1ED1 ng\xE0y, tu\u1EA7n, th\xE1ng, ho\u1EB7c n\u0103m t\u1EEB m\u1ED9t \u0111\
-  i\u1EC3m nh\u1EA5t \u0111\u1ECBnh. C\xE1c l\u1EADp tr\xECnh vi\xEAn\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: \u0110\u1ED1i t\u01B0\u1EE3ng `Date` trong\
+  \ JavaScript l\xE0 c\xF4ng c\u1EE5 b\u1EA1n c\u1EA7n \u0111\u1EC3 l\xE0m \"gymnastics\"\
+  \ v\u1EDBi ng\xE0y th\xE1ng. H\xE3y th\u1EED v\u1EDBi m\u1ED9t s\u1ED1 v\xED d\u1EE5\
+  ."
 lastmod: '2024-03-13T22:44:37.170951-06:00'
 model: gpt-4-0125-preview
-summary: "T\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1\
-  \ kh\u1EE9 c\xF3 ngh\u0129a l\xE0 t\xECm m\u1ED9t ng\xE0y c\xE1ch m\u1ED9t s\u1ED1\
-  \ ng\xE0y, tu\u1EA7n, th\xE1ng, ho\u1EB7c n\u0103m t\u1EEB m\u1ED9t \u0111i\u1EC3\
-  m nh\u1EA5t \u0111\u1ECBnh."
+summary: "\u0110\u1ED1i t\u01B0\u1EE3ng `Date` trong JavaScript l\xE0 c\xF4ng c\u1EE5\
+  \ b\u1EA1n c\u1EA7n \u0111\u1EC3 l\xE0m \"gymnastics\" v\u1EDBi ng\xE0y th\xE1ng."
 title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1EE9"
 weight: 26
 ---

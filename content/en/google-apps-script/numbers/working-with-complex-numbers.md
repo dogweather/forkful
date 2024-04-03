@@ -1,12 +1,12 @@
 ---
 date: 2024-02-01 21:12:06.181398-07:00
-description: "Complex numbers, represented as a combination of real and imaginary\
-  \ units (e.g., 3 + 4i), are fundamental in various computational problems, especially\
-  \ in\u2026"
+description: "How to: Google Apps Script does not have built-in support for complex\
+  \ numbers, necessitating the implementation of custom functionality. Below is a\
+  \ basic\u2026"
 lastmod: '2024-03-13T22:44:59.664457-06:00'
 model: gpt-4-0125-preview
-summary: Complex numbers, represented as a combination of real and imaginary units
-  (e.
+summary: Google Apps Script does not have built-in support for complex numbers, necessitating
+  the implementation of custom functionality.
 title: Working with complex numbers
 weight: 14
 ---

@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:04.349248-07:00
-description: "Tilap\xE4isen tiedoston luominen Google Apps Scriptill\xE4 tarkoittaa\
-  \ lyhytaikaiseen k\xE4ytt\xF6\xF6n tarkoitetun tiedoston generoimista, yleens\xE4\
-  \ v\xE4liaikaista datan\u2026"
+description: "Kuinka: Google Apps Scriptiss\xE4 tilap\xE4isen tiedoston luominen onnistuu\
+  \ k\xE4ytt\xE4m\xE4ll\xE4 DriveApp-palvelua, joka tarjoaa suoraviivaisen menetelm\xE4\
+  n luoda, lukea\u2026"
 lastmod: '2024-03-13T22:44:56.119376-06:00'
 model: gpt-4-0125-preview
-summary: "Tilap\xE4isen tiedoston luominen Google Apps Scriptill\xE4 tarkoittaa lyhytaikaiseen\
-  \ k\xE4ytt\xF6\xF6n tarkoitetun tiedoston generoimista, yleens\xE4 v\xE4liaikaista\
-  \ datan k\xE4sittely\xE4, debuggausta tai v\xE4limuistin tarkoituksiin."
+summary: "Google Apps Scriptiss\xE4 tilap\xE4isen tiedoston luominen onnistuu k\xE4\
+  ytt\xE4m\xE4ll\xE4 DriveApp-palvelua, joka tarjoaa suoraviivaisen menetelm\xE4n\
+  \ luoda, lukea ja poistaa tiedostoja Google Drivessa."
 title: "Tilap\xE4isen tiedoston luominen"
 weight: 21
 ---

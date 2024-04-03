@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:48.075967-07:00
-description: "A interpola\xE7\xE3o de strings \xE9 o processo de injetar valores de\
-  \ vari\xE1veis diretamente em strings, muitas vezes para criar mensagens significativas\
-  \ sem\u2026"
+description: "Como Fazer: No Dart, a interpola\xE7\xE3o de strings \xE9 direta, utilizando\
+  \ o s\xEDmbolo `$` para interpolar express\xF5es diretamente dentro de literais\
+  \ de string."
 lastmod: '2024-03-13T22:44:46.266375-06:00'
 model: gpt-4-0125-preview
-summary: "A interpola\xE7\xE3o de strings \xE9 o processo de injetar valores de vari\xE1\
-  veis diretamente em strings, muitas vezes para criar mensagens significativas sem\
-  \ concatena\xE7\xF5es complicadas."
+summary: "No Dart, a interpola\xE7\xE3o de strings \xE9 direta, utilizando o s\xED\
+  mbolo `$` para interpolar express\xF5es diretamente dentro de literais de string."
 title: Interpolando uma string
 weight: 8
 ---

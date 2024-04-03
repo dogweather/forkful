@@ -1,11 +1,10 @@
 ---
 date: 2024-01-25 02:59:33.441599-07:00
-description: "Rounding numbers is about chopping off decimal places to simplify your\
-  \ data or fit specific formats. Programmers do it for user-friendly display,\u2026"
+description: 'How to: In Fish, rounding numbers hinges on the `math` command. Use
+  `math -s0` to round to the nearest integer.'
 lastmod: '2024-03-13T22:45:00.467528-06:00'
 model: gpt-4-1106-preview
-summary: Rounding numbers is about chopping off decimal places to simplify your data
-  or fit specific formats.
+summary: In Fish, rounding numbers hinges on the `math` command.
 title: Rounding numbers
 weight: 13
 ---

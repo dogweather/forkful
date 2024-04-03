@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:12.320242-07:00
-description: "Le espressioni regolari (regex) in JavaScript sono pattern utilizzati\
-  \ per abbinare combinazioni di caratteri nelle stringhe. I programmatori le usano\
-  \ per\u2026"
+description: 'Come fare: #.'
 lastmod: '2024-03-13T22:44:43.801877-06:00'
 model: gpt-4-0125-preview
-summary: Le espressioni regolari (regex) in JavaScript sono pattern utilizzati per
-  abbinare combinazioni di caratteri nelle stringhe.
+summary: '#.'
 title: Utilizzo delle espressioni regolari
 weight: 11
 ---

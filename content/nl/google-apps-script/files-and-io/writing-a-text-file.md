@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:18.769653-07:00
-description: "Het schrijven van een tekstbestand in Google Apps Script stelt ontwikkelaars\
-  \ in staat om gegevens blijvend op te slaan, waardoor deze toegankelijk zijn\u2026"
+description: "Hoe: Het cre\xEBren en schrijven naar een tekstbestand in Google Apps\
+  \ Script kan worden bereikt via de Google DriveApp-service. Hieronder volgt een\u2026"
 lastmod: '2024-03-13T22:44:50.351625-06:00'
 model: gpt-4-0125-preview
-summary: Het schrijven van een tekstbestand in Google Apps Script stelt ontwikkelaars
-  in staat om gegevens blijvend op te slaan, waardoor deze toegankelijk zijn voor
-  toekomstig gebruik of analyse.
+summary: "Het cre\xEBren en schrijven naar een tekstbestand in Google Apps Script\
+  \ kan worden bereikt via de Google DriveApp-service."
 title: Een tekstbestand schrijven
 weight: 24
 ---

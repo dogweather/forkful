@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:57.339456-07:00
-description: "\xC5 skrive tester i Google Apps Script (GAS) handler om \xE5 lage automatiserte\
-  \ skript for \xE5 verifisere oppf\xF8rselen til kodene dine, og sikre at de fungerer\u2026"
+description: "Hvordan: Selv om Google Apps Script ikke har et innebygd testrammeverk\
+  \ som noen andre programmeringsmilj\xF8er, kan du fortsatt skrive og kj\xF8re tester\
+  \ ved \xE5\u2026"
 lastmod: '2024-03-13T22:44:40.317949-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive tester i Google Apps Script (GAS) handler om \xE5 lage automatiserte\
-  \ skript for \xE5 verifisere oppf\xF8rselen til kodene dine, og sikre at de fungerer\
-  \ som forventet under forskjellige forhold."
+summary: "Selv om Google Apps Script ikke har et innebygd testrammeverk som noen andre\
+  \ programmeringsmilj\xF8er, kan du fortsatt skrive og kj\xF8re tester ved \xE5 utnytte\
+  \ enkle GAS-funksjoner eller integrere eksterne testbiblioteker som `QUnit`."
 title: Skrive tester
 weight: 36
 ---

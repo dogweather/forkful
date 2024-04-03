@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:58.896473-07:00
-description: "La capitalisation d'une cha\xEEne implique de modifier la cha\xEEne\
-  \ afin que son premier caract\xE8re soit en majuscule, tandis que le reste de la\
-  \ cha\xEEne demeure\u2026"
+description: "Comment faire : Clojure, \xE9tant un langage JVM, vous permet d'utiliser\
+  \ directement les m\xE9thodes Java String. Voici un exemple de base de comment\u2026"
 lastmod: '2024-03-13T22:44:57.264135-06:00'
 model: gpt-4-0125-preview
-summary: "La capitalisation d'une cha\xEEne implique de modifier la cha\xEEne afin\
-  \ que son premier caract\xE8re soit en majuscule, tandis que le reste de la cha\xEE\
-  ne demeure inchang\xE9."
+summary: "Clojure, \xE9tant un langage JVM, vous permet d'utiliser directement les\
+  \ m\xE9thodes Java String."
 title: "Mettre en majuscule une cha\xEEne"
 weight: 2
 ---

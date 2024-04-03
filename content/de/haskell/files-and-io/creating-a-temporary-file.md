@@ -1,13 +1,11 @@
 ---
 date: 2024-01-20 17:40:32.770787-07:00
-description: "Tempor\xE4re Dateien sind kurzlebige Dateien f\xFCr Daten, die w\xE4\
-  hrend der Laufzeit eines Programms ben\xF6tigt, aber nicht dauerhaft gespeichert\
-  \ werden sollen.\u2026"
+description: "So geht's: Mit der Haskell-Bibliothek `temporary` kann man leicht tempor\xE4\
+  re Dateien erstellen und verwalten. Hier ein Beispiel."
 lastmod: '2024-03-13T22:44:53.950178-06:00'
 model: gpt-4-1106-preview
-summary: "Tempor\xE4re Dateien sind kurzlebige Dateien f\xFCr Daten, die w\xE4hrend\
-  \ der Laufzeit eines Programms ben\xF6tigt, aber nicht dauerhaft gespeichert werden\
-  \ sollen."
+summary: "Mit der Haskell-Bibliothek `temporary` kann man leicht tempor\xE4re Dateien\
+  \ erstellen und verwalten."
 title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---

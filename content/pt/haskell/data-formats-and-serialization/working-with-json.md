@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:48.248286-07:00
-description: "Trabalhar com JSON (JavaScript Object Notation) em Haskell envolve analisar\
-  \ dados JSON em tipos Haskell e converter tipos Haskell de volta para JSON.\u2026"
+description: "Como: Haskell n\xE3o possui suporte embutido para JSON como JavaScript,\
+  \ mas com a ajuda de bibliotecas de terceiros como **Aeson**, manipular JSON se\
+  \ torna\u2026"
 lastmod: '2024-03-13T22:44:46.646706-06:00'
 model: gpt-4-0125-preview
-summary: Trabalhar com JSON (JavaScript Object Notation) em Haskell envolve analisar
-  dados JSON em tipos Haskell e converter tipos Haskell de volta para JSON.
+summary: "Haskell n\xE3o possui suporte embutido para JSON como JavaScript, mas com\
+  \ a ajuda de bibliotecas de terceiros como **Aeson**, manipular JSON se torna simples."
 title: Trabalhando com JSON
 weight: 38
 ---

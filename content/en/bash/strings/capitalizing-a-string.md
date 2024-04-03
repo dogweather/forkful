@@ -1,11 +1,12 @@
 ---
 date: 2024-02-03 19:02:33.737797-07:00
-description: "Capitalizing a string in Bash involves transforming the first character\
-  \ of the string to uppercase while leaving the rest of the string unchanged. This\u2026"
+description: "How to: Bash does not have a built-in function specifically for capitalizing\
+  \ strings, but you can accomplish this task using parameter expansion or\u2026"
 lastmod: '2024-03-13T22:45:00.228086-06:00'
 model: gpt-4-0125-preview
-summary: Capitalizing a string in Bash involves transforming the first character of
-  the string to uppercase while leaving the rest of the string unchanged.
+summary: Bash does not have a built-in function specifically for capitalizing strings,
+  but you can accomplish this task using parameter expansion or external tools like
+  `awk`.
 title: Capitalizing a string
 weight: 2
 ---

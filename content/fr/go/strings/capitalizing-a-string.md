@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:37.674346-07:00
-description: "Capitaliser une cha\xEEne de caract\xE8res consiste \xE0 transformer\
-  \ en majuscule le premier caract\xE8re d'une cha\xEEne donn\xE9e s'il est en minuscule,\
-  \ pour s'assurer\u2026"
+description: "Comment faire : En Go, le package `strings` ne fournit pas de fonction\
+  \ directe pour capitaliser uniquement la premi\xE8re lettre d'une cha\xEEne. Par\u2026"
 lastmod: '2024-03-13T22:44:57.113526-06:00'
 model: gpt-4-0125-preview
-summary: "Capitaliser une cha\xEEne de caract\xE8res consiste \xE0 transformer en\
-  \ majuscule le premier caract\xE8re d'une cha\xEEne donn\xE9e s'il est en minuscule,\
-  \ pour s'assurer que la cha\xEEne se d\xE9marque ou respecte certaines normes grammaticales."
+summary: "En Go, le package `strings` ne fournit pas de fonction directe pour capitaliser\
+  \ uniquement la premi\xE8re lettre d'une cha\xEEne."
 title: "Mettre une cha\xEEne en majuscules"
 weight: 2
 ---

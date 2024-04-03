@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:06.082414-07:00
-description: "Arrondir les nombres en programmation consiste \xE0 approximer un nombre\
-  \ \xE0 son entier le plus proche ou \xE0 un certain nombre de d\xE9cimales. Les\
-  \ programmeurs\u2026"
+description: "Comment : Dans Visual Basic pour Applications (VBA), l'arrondi peut\
+  \ \xEAtre r\xE9alis\xE9 en utilisant plusieurs fonctions, chacune \xE9tant adapt\xE9\
+  e \xE0 des sc\xE9narios\u2026"
 lastmod: '2024-03-13T22:44:57.551570-06:00'
 model: gpt-4-0125-preview
-summary: "Arrondir les nombres en programmation consiste \xE0 approximer un nombre\
-  \ \xE0 son entier le plus proche ou \xE0 un certain nombre de d\xE9cimales."
+summary: "Dans Visual Basic pour Applications (VBA), l'arrondi peut \xEAtre r\xE9\
+  alis\xE9 en utilisant plusieurs fonctions, chacune \xE9tant adapt\xE9e \xE0 des\
+  \ sc\xE9narios sp\xE9cifiques."
 title: Arrondissement des nombres
 weight: 13
 ---

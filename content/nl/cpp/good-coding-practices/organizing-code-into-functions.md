@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:55.836549-07:00
-description: "Code opsplitsen in functies betekent het verdelen van je code in kleinere,\
-  \ herbruikbare stukken. We doen dit om herhaling te voorkomen, onze code leesbaar\u2026"
+description: "Hoe te: Laten we een veelvoorkomende taak nemen: het berekenen van de\
+  \ oppervlakte van een cirkel. In plaats van elke keer dezelfde formule te schrijven,\u2026"
 lastmod: '2024-03-13T22:44:51.118412-06:00'
 model: gpt-4-0125-preview
-summary: Code opsplitsen in functies betekent het verdelen van je code in kleinere,
-  herbruikbare stukken.
+summary: Laten we een veelvoorkomende taak nemen.
 title: Code organiseren in functies
 weight: 18
 ---

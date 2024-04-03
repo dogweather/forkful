@@ -3,12 +3,14 @@ changelog:
 - 2024-01-30, dogweather, reviewed
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:16.726260-07:00
-description: "Associerande arrayer, eller ordb\xF6cker, i Haskell handlar om att mappa\
-  \ nycklar till v\xE4rden f\xF6r snabb uppslagning och effektiv datahantering. Programmerare\u2026"
+description: "Hur g\xF6r man: Haskell har inte associerande arrayer direkt ur l\xE5\
+  dan p\xE5 samma s\xE4tt som vissa andra spr\xE5k, men det erbjuder ett kraftfullt\
+  \ standardbibliotek\u2026"
 lastmod: '2024-03-13T22:44:37.948319-06:00'
 model: gpt-4-0125-preview
-summary: "Associerande arrayer, eller ordb\xF6cker, i Haskell handlar om att mappa\
-  \ nycklar till v\xE4rden f\xF6r snabb uppslagning och effektiv datahantering."
+summary: "Haskell har inte associerande arrayer direkt ur l\xE5dan p\xE5 samma s\xE4\
+  tt som vissa andra spr\xE5k, men det erbjuder ett kraftfullt standardbibliotek kallat\
+  \ `Data.Map` f\xF6r att arbeta med nyckel-v\xE4rde-par."
 title: "Att anv\xE4nda associativa arrayer"
 weight: 15
 ---

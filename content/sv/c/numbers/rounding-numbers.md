@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:52.650120-07:00
-description: "Avrundning av tal \xE4r processen att justera siffrorna i ett tal f\xF6\
-  r att minska dess precision enligt vissa regler, antingen mot det n\xE4rmaste hela\
-  \ talet\u2026"
+description: "Hur man g\xF6r: Att avrunda tal i C kan \xE5stadkommas med olika funktioner,\
+  \ men det vanligaste tillv\xE4gag\xE5ngss\xE4ttet involverar funktionerna `floor()`,\
+  \ `ceil()`,\u2026"
 lastmod: '2024-03-13T22:44:38.376723-06:00'
 model: gpt-4-0125-preview
-summary: "Avrundning av tal \xE4r processen att justera siffrorna i ett tal f\xF6\
-  r att minska dess precision enligt vissa regler, antingen mot det n\xE4rmaste hela\
-  \ talet eller ett specificerat antal decimaler."
+summary: "Att avrunda tal i C kan \xE5stadkommas med olika funktioner, men det vanligaste\
+  \ tillv\xE4gag\xE5ngss\xE4ttet involverar funktionerna `floor()`, `ceil()`, och\
+  \ `round()`."
 title: Avrundning av nummer
 weight: 13
 ---

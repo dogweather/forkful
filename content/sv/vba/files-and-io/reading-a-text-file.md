@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:37.430639-07:00
-description: "Att l\xE4sa en textfil i Visual Basic for Applications (VBA) involverar\
-  \ att programm\xE4ssigt komma \xE5t och extrahera inneh\xE5llet i en textfil fr\xE5\
-  n inom en\u2026"
+description: "Hur man g\xF6r: Det enklaste s\xE4ttet att l\xE4sa en textfil i VBA\
+  \ \xE4r att anv\xE4nda `Open`-satsen i kombination med `Input`- eller `Line Input`-funktionerna.\
+  \ S\xE5 h\xE4r\u2026"
 lastmod: '2024-03-13T22:44:37.761909-06:00'
 model: gpt-4-0125-preview
-summary: "Att l\xE4sa en textfil i Visual Basic for Applications (VBA) involverar\
-  \ att programm\xE4ssigt komma \xE5t och extrahera inneh\xE5llet i en textfil fr\xE5\
-  n inom en Office-applikation."
+summary: "Det enklaste s\xE4ttet att l\xE4sa en textfil i VBA \xE4r att anv\xE4nda\
+  \ `Open`-satsen i kombination med `Input`- eller `Line Input`-funktionerna."
 title: "L\xE4sa en textfil"
 weight: 22
 ---

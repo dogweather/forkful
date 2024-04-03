@@ -1,12 +1,10 @@
 ---
 date: 2024-02-01 21:30:20.300431-07:00
-description: "Removing quotes from a string in VBA involves stripping out instances\
-  \ of single (`'`) or double (`\"`) quotation marks that may encapsulate or be embedded\u2026"
+description: "How to: In VBA, there are multiple approaches to removing quotes from\
+  \ a string. Here's a straightforward example using the `Replace` function, which\u2026"
 lastmod: '2024-03-13T22:44:59.923757-06:00'
 model: gpt-4-0125-preview
-summary: Removing quotes from a string in VBA involves stripping out instances of
-  single (`'`) or double (`"`) quotation marks that may encapsulate or be embedded
-  within the string.
+summary: In VBA, there are multiple approaches to removing quotes from a string.
 title: Removing quotes from a string
 weight: 9
 ---

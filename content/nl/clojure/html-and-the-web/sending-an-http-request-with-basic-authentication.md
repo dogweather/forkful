@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:54.684564-07:00
-description: "Het verzenden van een HTTP-verzoek met basisauthenticatie omvat het\
-  \ toevoegen van een gebruikersnaam en wachtwoord aan een verzoek voor beperkte bronnen.\u2026"
+description: "Hoe te: In Clojure gebruik je doorgaans de `clj-http` bibliotheek voor\
+  \ HTTP-verzoeken, inclusief die met basisauthenticatie. Laten we beginnen met het\u2026"
 lastmod: '2024-03-13T22:44:50.419035-06:00'
 model: gpt-4-0125-preview
-summary: Het verzenden van een HTTP-verzoek met basisauthenticatie omvat het toevoegen
-  van een gebruikersnaam en wachtwoord aan een verzoek voor beperkte bronnen.
+summary: In Clojure gebruik je doorgaans de `clj-http` bibliotheek voor HTTP-verzoeken,
+  inclusief die met basisauthenticatie.
 title: Een HTTP-verzoek verzenden met basisauthenticatie
 weight: 45
 ---

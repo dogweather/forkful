@@ -2,17 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:26.158045-07:00
-description: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi c\xF3 ngh\u0129a l\xE0\
-  \ t\u1EA1o ra m\u1ED9t t\u1EC7p \u0111\u01B0\u1EE3c thi\u1EBFt k\u1EBF \u0111\u1EC3\
-  \ l\u01B0u tr\u1EEF d\u1EEF li\u1EC7u m\u1ED9t c\xE1ch t\u1EA1m th\u1EDDi v\xE0\
-  \ s\u1EBD b\u1ECB x\xF3a sau khi s\u1EED d\u1EE5ng. L\u1EADp tr\xECnh vi\xEAn l\xE0\
-  m \u0111i\u1EC1u\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1\
+  ch \u0111\u1EC3 t\u1EA1o v\xE0 s\u1EED d\u1EE5ng m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDD\
+  i trong C++ hi\u1EC7n t\u1EA1i."
 lastmod: '2024-03-13T22:44:37.067529-06:00'
 model: gpt-4-0125-preview
-summary: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi c\xF3 ngh\u0129a l\xE0 t\u1EA1\
-  o ra m\u1ED9t t\u1EC7p \u0111\u01B0\u1EE3c thi\u1EBFt k\u1EBF \u0111\u1EC3 l\u01B0\
-  u tr\u1EEF d\u1EEF li\u1EC7u m\u1ED9t c\xE1ch t\u1EA1m th\u1EDDi v\xE0 s\u1EBD b\u1ECB\
-  \ x\xF3a sau khi s\u1EED d\u1EE5ng."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch \u0111\u1EC3 t\u1EA1o v\xE0 s\u1EED\
+  \ d\u1EE5ng m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi trong C++ hi\u1EC7n t\u1EA1i."
 title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
 weight: 21
 ---

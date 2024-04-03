@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:47:01.045782-07:00
-description: "Contar caracteres de un texto es \xFAtil para validar entradas y manejar\
-  \ datos precisamente. Los programadores lo hacen todo el tiempo para delimitar,\u2026"
+description: "C\xF3mo hacerlo: Para obtener la longitud de una cadena en Clojure,\
+  \ usamos la funci\xF3n `count`. Aqu\xED tienes unos ejemplos."
 lastmod: '2024-03-13T22:44:58.647601-06:00'
 model: gpt-4-1106-preview
-summary: "Contar caracteres de un texto es \xFAtil para validar entradas y manejar\
-  \ datos precisamente."
+summary: "Para obtener la longitud de una cadena en Clojure, usamos la funci\xF3n\
+  \ `count`."
 title: Calculando la longitud de una cadena
 weight: 7
 ---

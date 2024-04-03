@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:48:00.096380-07:00
-description: "Hitta str\xE4ngl\xE4ngd inneb\xE4r att r\xE4kna antalet tecken i en\
-  \ str\xE4ng. Programmerare g\xF6r detta f\xF6r att validera indata, hantera textdata\
-  \ och optimera prestanda."
+description: "S\xE5 h\xE4r g\xF6r du: H\xE4r \xE4r ett enkelt exempel p\xE5 hur du\
+  \ hittar en str\xE4ngs l\xE4ngd i PowerShell."
 lastmod: '2024-03-13T22:44:38.115187-06:00'
 model: gpt-4-1106-preview
-summary: "Hitta str\xE4ngl\xE4ngd inneb\xE4r att r\xE4kna antalet tecken i en str\xE4\
-  ng."
+summary: "H\xE4r \xE4r ett enkelt exempel p\xE5 hur du hittar en str\xE4ngs l\xE4\
+  ngd i PowerShell."
 title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---

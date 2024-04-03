@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:43.986461-07:00
-description: "Die Arbeit mit CSV-Dateien (Comma Separated Values) umfasst das Parsen,\
-  \ Manipulieren und Generieren von Daten in einem tabellarischen Format, das weit\u2026"
+description: "Wie: Fish Shell verf\xFCgt von sich aus nicht \xFCber speziell f\xFC\
+  r die CSV-Manipulation entwickelte Funktionen. Allerdings k\xF6nnen Sie Unix-Dienstprogramme\
+  \ wie\u2026"
 lastmod: '2024-03-13T22:44:54.331116-06:00'
 model: gpt-4-0125-preview
-summary: "Die Arbeit mit CSV-Dateien (Comma Separated Values) umfasst das Parsen,\
-  \ Manipulieren und Generieren von Daten in einem tabellarischen Format, das weit\
-  \ verbreitet f\xFCr den Datenaustausch zwischen Anwendungen genutzt wird."
+summary: "Fish Shell verf\xFCgt von sich aus nicht \xFCber speziell f\xFCr die CSV-Manipulation\
+  \ entwickelte Funktionen."
 title: Arbeiten mit CSV
 weight: 37
 ---

@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:13.191332-07:00
-description: "I PowerShell \xE4r kontrollen om en katalog finns en vanlig uppgift\
-  \ som hj\xE4lper skript att fatta beslut baserat p\xE5 filsystemets struktur\u2014\
-  till exempel f\xF6r att\u2026"
+description: "Hur man g\xF6r: PowerShell erbjuder ett enkelt s\xE4tt att kontrollera\
+  \ n\xE4rvaron av en katalog med hj\xE4lp av cmdleten `Test-Path`. Denna cmdlet returnerar\
+  \ ett\u2026"
 lastmod: '2024-03-13T22:44:38.140085-06:00'
 model: gpt-4-0125-preview
-summary: "I PowerShell \xE4r kontrollen om en katalog finns en vanlig uppgift som\
-  \ hj\xE4lper skript att fatta beslut baserat p\xE5 filsystemets struktur\u2014till\
-  \ exempel f\xF6r att undvika fel genom att bekr\xE4fta att en m\xE5lkatalog finns\
-  \ p\xE5 plats innan man f\xF6rs\xF6ker l\xE4sa fr\xE5n eller skriva till den."
+summary: "PowerShell erbjuder ett enkelt s\xE4tt att kontrollera n\xE4rvaron av en\
+  \ katalog med hj\xE4lp av cmdleten `Test-Path`."
 title: Kontrollera om en katalog existerar
 weight: 20
 ---

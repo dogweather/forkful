@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 03:47:18.135346-07:00
-description: "Avrundning av tal inneb\xE4r att trimma ett nummer till en specifik\
-  \ precision. Programmerare g\xF6r detta f\xF6r att kontrollera numerisk utdata f\xF6\
-  r l\xE4sbarhet,\u2026"
+description: "Hur man g\xF6r: Avrundning i TypeScript kan g\xF6ras med flera metoder.\
+  \ H\xE4r \xE4r en snabb genomg\xE5ng."
 lastmod: '2024-03-13T22:44:37.651078-06:00'
 model: gpt-4-0125-preview
-summary: "Avrundning av tal inneb\xE4r att trimma ett nummer till en specifik precision."
+summary: "Avrundning i TypeScript kan g\xF6ras med flera metoder."
 title: Avrundning av tal
 weight: 13
 ---

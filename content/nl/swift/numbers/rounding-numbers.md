@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:46.943051-07:00
-description: "Getallen afronden betekent het benaderen van een numerieke waarde tot\
-  \ een specifieke precisie, typisch om ongewenste decimalen te verwijderen.\u2026"
+description: 'Hoe te: Swift biedt verschillende manieren om getallen af te ronden.
+  Hier is een voorproefje.'
 lastmod: '2024-03-13T22:44:51.151320-06:00'
 model: gpt-4-0125-preview
-summary: Getallen afronden betekent het benaderen van een numerieke waarde tot een
-  specifieke precisie, typisch om ongewenste decimalen te verwijderen.
+summary: Swift biedt verschillende manieren om getallen af te ronden.
 title: Afronden van getallen
 weight: 13
 ---

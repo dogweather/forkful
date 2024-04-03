@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:11:24.597455-07:00
-description: "REPL st\xE5r f\xF6r Read-Eval-Print Loop, en enkel, interaktiv programmeringsmilj\xF6\
-  . Programmerare anv\xE4nder den f\xF6r att snabbt skriva och testa kod,\u2026"
+description: "Hur man g\xF6r: I Bash \xE4r din terminal i princip en REPL. Du skriver\
+  \ ett kommando; den l\xE4ser det, utv\xE4rderar det, skriver ut resultatet och loopar\
+  \ tillbaka\u2026"
 lastmod: '2024-03-13T22:44:38.084077-06:00'
 model: gpt-4-0125-preview
-summary: "REPL st\xE5r f\xF6r Read-Eval-Print Loop, en enkel, interaktiv programmeringsmilj\xF6\
-  ."
+summary: "I Bash \xE4r din terminal i princip en REPL."
 title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---

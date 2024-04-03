@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:19.603019-07:00
-description: "Reguliere expressies zijn patronen die worden gebruikt om karaktercombinaties\
-  \ in tekst te matchen. Programmeurs gebruiken ze voor taken zoals validatie,\u2026"
+description: 'Hoe te: Om reguliere expressies in C++ te gebruiken, moet je de `<regex>`
+  bibliotheek includeren. Hier is hoe je tekst matcht, zoekt en vervangt.'
 lastmod: '2024-03-13T22:44:51.102682-06:00'
 model: gpt-4-0125-preview
-summary: Reguliere expressies zijn patronen die worden gebruikt om karaktercombinaties
-  in tekst te matchen.
+summary: Om reguliere expressies in C++ te gebruiken, moet je de `<regex>` bibliotheek
+  includeren.
 title: Reguliere expressies gebruiken
 weight: 11
 ---

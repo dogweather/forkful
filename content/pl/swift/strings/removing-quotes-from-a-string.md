@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 03:42:33.974419-07:00
-description: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w oznacza wyci\u0119\
-  cie wszystkich znak\xF3w cudzys\u0142owu, kt\xF3re otaczaj\u0105 tre\u015B\u0107\
-  . Robimy to, aby oczy\u015Bci\u0107 dane wej\u015Bciowe,\u2026"
+description: "Jak to zrobi\u0107: Swift pozwala w do\u015B\u0107 wygodny spos\xF3\
+  b poradzi\u0107 sobie z zadaniem usuwania cudzys\u0142ow\xF3w. Oto szybki przyk\u0142\
+  ad u\u017Cycia\u2026"
 lastmod: '2024-03-13T22:44:35.742909-06:00'
 model: gpt-4-0125-preview
-summary: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w oznacza wyci\u0119cie\
-  \ wszystkich znak\xF3w cudzys\u0142owu, kt\xF3re otaczaj\u0105 tre\u015B\u0107."
+summary: "Swift pozwala w do\u015B\u0107 wygodny spos\xF3b poradzi\u0107 sobie z zadaniem\
+  \ usuwania cudzys\u0142ow\xF3w."
 title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---

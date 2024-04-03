@@ -2,13 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:32.185232-07:00
-description: "I file CSV (Comma-Separated Values, Valori Separati da Virgola) sono\
-  \ un formato comune di scambio dati che rappresenta dati tabellari in testo semplice,\u2026"
+description: "Come fare: Lavorare con i file CSV in C# pu\xF2 essere realizzato attraverso\
+  \ lo spazio dei nomi `System.IO` per operazioni di base, e per manipolazioni pi\xF9\
+  \u2026"
 lastmod: '2024-03-13T22:44:43.455715-06:00'
 model: gpt-4-0125-preview
-summary: I file CSV (Comma-Separated Values, Valori Separati da Virgola) sono un formato
-  comune di scambio dati che rappresenta dati tabellari in testo semplice, utilizzando
-  virgole per separare i valori individuali.
+summary: "Lavorare con i file CSV in C# pu\xF2 essere realizzato attraverso lo spazio\
+  \ dei nomi `System.IO` per operazioni di base, e per manipolazioni pi\xF9 complesse\
+  \ o per gestire file di grandi dimensioni senza interruzioni, si potrebbe considerare\
+  \ l'utilizzo di librerie di terze parti come `CsvHelper`."
 title: Lavorare con i CSV
 weight: 37
 ---

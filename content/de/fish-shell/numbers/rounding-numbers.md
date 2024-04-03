@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:43:56.513453-07:00
-description: "Das Runden von Zahlen besteht darin, Dezimalstellen abzuschneiden, um\
-  \ Ihre Daten zu vereinfachen oder spezifischen Formaten anzupassen. Programmierer\
-  \ tun\u2026"
+description: "Wie: In Fish h\xE4ngt das Runden von Zahlen vom Befehl `math` ab. Verwenden\
+  \ Sie `math -s0`, um auf die n\xE4chste ganze Zahl zu runden."
 lastmod: '2024-03-13T22:44:54.302579-06:00'
 model: gpt-4-0125-preview
-summary: Das Runden von Zahlen besteht darin, Dezimalstellen abzuschneiden, um Ihre
-  Daten zu vereinfachen oder spezifischen Formaten anzupassen.
+summary: "In Fish h\xE4ngt das Runden von Zahlen vom Befehl `math` ab."
 title: Zahlen runden
 weight: 13
 ---

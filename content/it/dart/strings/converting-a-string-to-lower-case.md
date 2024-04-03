@@ -2,13 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:08.240473-07:00
-description: "Convertire una stringa in minuscolo \xE8 un'operazione fondamentale\
-  \ che consiste nel trasformare tutti i caratteri di una stringa data nei loro equivalenti\u2026"
+description: "Come fare: In Dart, puoi convertire una stringa in minuscolo utilizzando\
+  \ il metodo `toLowerCase()` fornito dalla classe `String`. Questo metodo\u2026"
 lastmod: '2024-03-13T22:44:43.114759-06:00'
 model: gpt-4-0125-preview
-summary: "Convertire una stringa in minuscolo \xE8 un'operazione fondamentale che\
-  \ consiste nel trasformare tutti i caratteri di una stringa data nei loro equivalenti\
-  \ minuscoli."
+summary: In Dart, puoi convertire una stringa in minuscolo utilizzando il metodo `toLowerCase()`
+  fornito dalla classe `String`.
 title: Convertire una stringa in minuscolo
 weight: 4
 ---

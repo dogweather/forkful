@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:20.328046-07:00
-description: "Sprawdzanie, czy katalog istnieje w pow\u0142oce Fish, pozwala skryptom\
-  \ na podejmowanie decyzji w oparciu o obecno\u015B\u0107 lub brak struktur katalog\xF3\
-  w, umo\u017Cliwiaj\u0105c\u2026"
+description: "Jak to zrobi\u0107: Pow\u0142oka Fish u\u017Cywa komendy `test` do sprawdzania\
+  \ typ\xF3w plik\xF3w i ich cech, w tym tego, czy cel jest katalogiem. Oto podstawowy\
+  \ wzorzec\u2026"
 lastmod: '2024-03-13T22:44:35.856171-06:00'
 model: gpt-4-0125-preview
-summary: "Sprawdzanie, czy katalog istnieje w pow\u0142oce Fish, pozwala skryptom\
-  \ na podejmowanie decyzji w oparciu o obecno\u015B\u0107 lub brak struktur katalog\xF3\
-  w, umo\u017Cliwiaj\u0105c zadania takie jak warunkowe operacje na plikach, logowanie\
-  \ czy konfiguracja \u015Brodowiska."
+summary: "Pow\u0142oka Fish u\u017Cywa komendy `test` do sprawdzania typ\xF3w plik\xF3\
+  w i ich cech, w tym tego, czy cel jest katalogiem."
 title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---

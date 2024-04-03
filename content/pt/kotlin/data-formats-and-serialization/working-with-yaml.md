@@ -2,15 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:06.249025-07:00
-description: "YAML, que significa YAML Ain't Markup Language (YAML N\xE3o \xE9 Uma\
-  \ Linguagem de Marca\xE7\xE3o), \xE9 um formato de serializa\xE7\xE3o de dados altamente\
-  \ leg\xEDvel,\u2026"
+description: "Como Fazer: Kotlin n\xE3o possui suporte nativo para an\xE1lise (parsing)\
+  \ e serializa\xE7\xE3o de YAML, mas voc\xEA pode utilizar bibliotecas de terceiros\
+  \ populares como\u2026"
 lastmod: '2024-03-13T22:44:46.562352-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, que significa YAML Ain't Markup Language (YAML N\xE3o \xE9 Uma Linguagem\
-  \ de Marca\xE7\xE3o), \xE9 um formato de serializa\xE7\xE3o de dados altamente leg\xED\
-  vel, frequentemente utilizado para arquivos de configura\xE7\xE3o, armazenamento\
-  \ de dados e mensagens entre processos."
+summary: "Kotlin n\xE3o possui suporte nativo para an\xE1lise (parsing) e serializa\xE7\
+  \xE3o de YAML, mas voc\xEA pode utilizar bibliotecas de terceiros populares como\
+  \ `snakeyaml` (para an\xE1lise de YAML em geral) e `kotlinx.serialization` (com\
+  \ uma extens\xE3o de formato YAML) para trabalhar com arquivos YAML."
 title: Trabalhando com YAML
 weight: 41
 ---

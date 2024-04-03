@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 03:43:21.079956-07:00
-description: "Zaokr\u0105glanie liczb to redukcja liczby dziesi\u0119tnej do najbli\u017C\
-  szej warto\u015Bci ca\u0142kowitej lub do okre\u015Blonej liczby miejsc po przecinku.\
-  \ Programi\u015Bci zaokr\u0105glaj\u0105\u2026"
+description: "Jak to zrobi\u0107: W Arduino mo\u017Cesz zaokr\u0105gla\u0107 liczby\
+  \ u\u017Cywaj\u0105c wbudowanych funkcji. Kluczowe s\u0105 `round`, `ceil` i `floor`.\
+  \ Oto kr\xF3tka demonstracja."
 lastmod: '2024-03-13T22:44:35.667346-06:00'
 model: gpt-4-0125-preview
-summary: "Zaokr\u0105glanie liczb to redukcja liczby dziesi\u0119tnej do najbli\u017C\
-  szej warto\u015Bci ca\u0142kowitej lub do okre\u015Blonej liczby miejsc po przecinku."
+summary: "W Arduino mo\u017Cesz zaokr\u0105gla\u0107 liczby u\u017Cywaj\u0105c wbudowanych\
+  \ funkcji."
 title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---

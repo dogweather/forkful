@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:40.661751-07:00
-description: "Trabalhar com YAML em Go envolve analisar arquivos YAML (YAML Ain't\
-  \ Markup Language), um padr\xE3o de serializa\xE7\xE3o de dados amig\xE1vel para\
-  \ humanos, em\u2026"
+description: "Como: Para trabalhar com YAML em Go, voc\xEA precisar\xE1 primeiro importar\
+  \ uma biblioteca que suporte an\xE1lise e serializa\xE7\xE3o de YAML, j\xE1 que\
+  \ a biblioteca\u2026"
 lastmod: '2024-03-13T22:44:46.082871-06:00'
 model: gpt-4-0125-preview
-summary: "Trabalhar com YAML em Go envolve analisar arquivos YAML (YAML Ain't Markup\
-  \ Language), um padr\xE3o de serializa\xE7\xE3o de dados amig\xE1vel para humanos,\
-  \ em estruturas de dados Go e vice-versa."
+summary: "Para trabalhar com YAML em Go, voc\xEA precisar\xE1 primeiro importar uma\
+  \ biblioteca que suporte an\xE1lise e serializa\xE7\xE3o de YAML, j\xE1 que a biblioteca\
+  \ padr\xE3o do Go n\xE3o inclui suporte direto para YAML."
 title: Trabalhando com YAML
 weight: 41
 ---

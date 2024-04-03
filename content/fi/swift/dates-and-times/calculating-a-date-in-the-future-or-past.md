@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:32:24.159803-07:00
-description: "Laskemme tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4ri\xE4 ohjelmoinnissa\
-  \ usein. Syyt voivat olla k\xE4ytt\xE4j\xE4n muistuttaminen, ajan kulumisen seuranta,\
-  \ tai\u2026"
+description: "How to: (Kuinka tehd\xE4:) ."
 lastmod: '2024-03-13T22:44:56.920079-06:00'
 model: gpt-4-1106-preview
-summary: "Laskemme tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4ri\xE4 ohjelmoinnissa\
-  \ usein."
+summary: .
 title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---

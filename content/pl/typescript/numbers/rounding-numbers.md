@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 03:47:11.275604-07:00
-description: "Zaokr\u0105glanie liczb to redukowanie liczby do okre\u015Blonej precyzji.\
-  \ Programi\u015Bci robi\u0105 to, aby kontrolowa\u0107 numeryczne wyj\u015Bcie dla\
-  \ czytelno\u015Bci, cel\xF3w\u2026"
+description: "Jak to zrobi\u0107: Zaokr\u0105glanie w TypeScript mo\u017Cna wykona\u0107\
+  \ przy u\u017Cyciu kilku metod. Oto szybki przegl\u0105d."
 lastmod: '2024-03-13T22:44:35.133840-06:00'
 model: gpt-4-0125-preview
-summary: "Zaokr\u0105glanie liczb to redukowanie liczby do okre\u015Blonej precyzji."
+summary: "Zaokr\u0105glanie w TypeScript mo\u017Cna wykona\u0107 przy u\u017Cyciu\
+  \ kilku metod."
 title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---

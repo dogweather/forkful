@@ -1,13 +1,12 @@
 ---
 date: 2024-01-27 16:21:14.423327-07:00
-description: "Tiedostojen muokkaaminen paikan p\xE4\xE4ll\xE4 CLI:n (Command Line\
-  \ Interface) yksirivikomennolla Rubyssa mahdollistaa tiedostojen suoran muokkaamisen\u2026"
+description: "Miten: Ruby tarjoaa suoraviivaisen tavan muokata tiedostoja paikan p\xE4\
+  \xE4ll\xE4 suoraan komentorivilt\xE4. K\xE4ytt\xE4m\xE4ll\xE4 Rubyn `-i` vipua,\
+  \ voit kertoa Rubylle\u2026"
 lastmod: '2024-03-13T22:44:57.082600-06:00'
 model: gpt-4-0125-preview
-summary: "Tiedostojen muokkaaminen paikan p\xE4\xE4ll\xE4 CLI:n (Command Line Interface)\
-  \ yksirivikomennolla Rubyssa mahdollistaa tiedostojen suoran muokkaamisen terminaalista,\
-  \ ilman ett\xE4 niit\xE4 t\xE4ytyy avata editorissa, tehd\xE4 muutokset ja tallentaa\
-  \ takaisin."
+summary: "Ruby tarjoaa suoraviivaisen tavan muokata tiedostoja paikan p\xE4\xE4ll\xE4\
+  \ suoraan komentorivilt\xE4."
 title: "Tiedostojen muokkaaminen paikan p\xE4\xE4ll\xE4 komentorivin yhden rivin komennoilla"
 weight: 32
 ---

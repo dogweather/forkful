@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:37.831684-07:00
-description: "Het verzenden van HTTP-verzoeken is een manier om met web servers te\
-  \ communiceren door gegevens op te halen of te verzenden naar behoefte. Programmeurs\u2026"
+description: 'Hoe: Fish heeft geen ingebouwde commando''s voor het verzenden van HTTP-verzoeken,
+  maar je kunt `curl` rechtstreeks vanuit de shell gebruiken.'
 lastmod: '2024-03-13T22:44:51.244206-06:00'
 model: gpt-4-0125-preview
-summary: Het verzenden van HTTP-verzoeken is een manier om met web servers te communiceren
-  door gegevens op te halen of te verzenden naar behoefte.
+summary: Fish heeft geen ingebouwde commando's voor het verzenden van HTTP-verzoeken,
+  maar je kunt `curl` rechtstreeks vanuit de shell gebruiken.
 title: Een HTTP-verzoek verzenden
 weight: 44
 ---

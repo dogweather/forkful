@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:40.410848-07:00
-description: "Encontrar o comprimento de uma string em Visual Basic para Aplica\xE7\
-  \xF5es (VBA) envolve determinar o n\xFAmero de caracteres que ela cont\xE9m. Programadores\u2026"
+description: "Como fazer: No VBA, a fun\xE7\xE3o `Len` \xE9 a sua principal escolha\
+  \ para encontrar o comprimento de uma string. Ela retorna um inteiro representando\
+  \ o n\xFAmero de\u2026"
 lastmod: '2024-03-13T22:44:46.401624-06:00'
 model: gpt-4-0125-preview
-summary: "Encontrar o comprimento de uma string em Visual Basic para Aplica\xE7\xF5\
-  es (VBA) envolve determinar o n\xFAmero de caracteres que ela cont\xE9m."
+summary: "No VBA, a fun\xE7\xE3o `Len` \xE9 a sua principal escolha para encontrar\
+  \ o comprimento de uma string."
 title: Encontrando o comprimento de uma string
 weight: 7
 ---

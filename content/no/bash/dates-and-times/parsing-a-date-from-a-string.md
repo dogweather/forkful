@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:41.965206-07:00
-description: "\xC5 tolke en dato fra en tekststreng i Bash inneb\xE6rer \xE5 ekstrahere\
-  \ og konvertere datoinformasjon fra tekstuelle data til et format som Bash kan manipulere\u2026"
+description: "Hvordan: Bash i seg selv er ganske begrenset i direkte datotolkningsmuligheter,\
+  \ ofte avhenger den av eksterne verkt\xF8y som `date` og `awk` for mer\u2026"
 lastmod: '2024-03-13T22:44:40.984329-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 tolke en dato fra en tekststreng i Bash inneb\xE6rer \xE5 ekstrahere\
-  \ og konvertere datoinformasjon fra tekstuelle data til et format som Bash kan manipulere\
-  \ eller bruke til videre prosesser."
+summary: "Bash i seg selv er ganske begrenset i direkte datotolkningsmuligheter, ofte\
+  \ avhenger den av eksterne verkt\xF8y som `date` og `awk` for mer sofistikert manipulasjon."
 title: Analysering av en dato fra en streng
 weight: 30
 ---

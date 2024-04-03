@@ -2,15 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:05.835365-07:00
-description: "Het verwijderen van aanhalingstekens uit een tekenreeks in Google Apps\
-  \ Script gaat over het elimineren van onnodige aanhalingstekens die mogelijk rond\
-  \ uw\u2026"
+description: "Hoe: Google Apps Script wijkt niet ver af van de standaard JavaScript-praktijken\
+  \ als het gaat om het omgaan met tekenreeksen en hun manipulatie. Om\u2026"
 lastmod: '2024-03-13T22:44:50.318408-06:00'
 model: gpt-4-0125-preview
-summary: Het verwijderen van aanhalingstekens uit een tekenreeks in Google Apps Script
-  gaat over het elimineren van onnodige aanhalingstekens die mogelijk rond uw tekenreeksgegevens
-  staan, meestal voortkomend uit geanalyseerde JSON-objecten, gebruikersinvoer of
-  gegevensextractie.
+summary: Google Apps Script wijkt niet ver af van de standaard JavaScript-praktijken
+  als het gaat om het omgaan met tekenreeksen en hun manipulatie.
 title: Quotes uit een string verwijderen
 weight: 9
 ---

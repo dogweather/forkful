@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:01.685275-07:00
-description: "X\u1EED l\xFD l\u1ED7i cho ph\xE9p k\u1ECBch b\u1EA3n c\u1EE7a b\u1EA1\
-  n gi\u1EA3i quy\u1EBFt nh\u1EEFng t\xECnh hu\u1ED1ng kh\xF4ng mong \u0111\u1EE3\
-  i m\u1ED9t c\xE1ch nh\u1EB9 nh\xE0ng. Ch\xFAng ta l\xE0m \u0111i\u1EC1u n\xE0y \u0111\
-  \u1EC3 qu\u1EA3n l\xFD s\u1EF1 c\u1ED1 m\xE0 kh\xF4ng l\xE0m\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: \u0110\u1EC3 b\u1EAFt l\u1ED7i trong Fish,\
+  \ h\xE3y d\u1EF1a v\xE0o l\u1EC7nh `status` v\xE0 c\xE1c \u0111i\u1EC1u ki\u1EC7\
+  n. Gi\u1EA3 s\u1EED `ping` th\u1EA5t b\u1EA1i; \u0111\xE2y l\xE0 c\xE1ch \u0111\u1EC3\
+  \ ph\xE1t hi\u1EC7n \u0111i\u1EC1u \u0111\xF3."
 lastmod: '2024-03-13T22:44:37.220924-06:00'
 model: gpt-4-0125-preview
-summary: "X\u1EED l\xFD l\u1ED7i cho ph\xE9p k\u1ECBch b\u1EA3n c\u1EE7a b\u1EA1n\
-  \ gi\u1EA3i quy\u1EBFt nh\u1EEFng t\xECnh hu\u1ED1ng kh\xF4ng mong \u0111\u1EE3\
-  i m\u1ED9t c\xE1ch nh\u1EB9 nh\xE0ng."
+summary: "\u0110\u1EC3 b\u1EAFt l\u1ED7i trong Fish, h\xE3y d\u1EF1a v\xE0o l\u1EC7\
+  nh `status` v\xE0 c\xE1c \u0111i\u1EC1u ki\u1EC7n."
 title: "X\u1EED l\xFD l\u1ED7i"
 weight: 16
 ---

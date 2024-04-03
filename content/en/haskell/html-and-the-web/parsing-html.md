@@ -1,12 +1,12 @@
 ---
 date: 2024-02-03 19:02:38.300946-07:00
-description: "Parsing HTML in Haskell allows you to extract data, manipulate HTML\
-  \ content, or interact with web pages programmatically. This operation is essential\
-  \ for\u2026"
+description: "How to: For parsing HTML in Haskell, we'll use the `tagsoup` library\
+  \ for its simplicity and flexibility. First, make sure to install the library by\
+  \ adding\u2026"
 lastmod: '2024-03-13T22:45:00.126286-06:00'
 model: gpt-4-0125-preview
-summary: Parsing HTML in Haskell allows you to extract data, manipulate HTML content,
-  or interact with web pages programmatically.
+summary: For parsing HTML in Haskell, we'll use the `tagsoup` library for its simplicity
+  and flexibility.
 title: Parsing HTML
 weight: 43
 ---

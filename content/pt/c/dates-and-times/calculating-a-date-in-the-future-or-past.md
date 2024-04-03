@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:47.088080-07:00
-description: "Calcular uma data no futuro ou passado envolve determinar uma data espec\xED\
-  fica adicionando ou subtraindo um certo n\xFAmero de dias, meses ou anos de uma\
-  \ data\u2026"
+description: "Como fazer: Embora a biblioteca padr\xE3o do C n\xE3o ofere\xE7a fun\xE7\
+  \xF5es diretas para a aritm\xE9tica de datas, voc\xEA pode manipular datas usando\
+  \ a biblioteca\u2026"
 lastmod: '2024-03-13T22:44:47.064578-06:00'
 model: gpt-4-0125-preview
-summary: "Calcular uma data no futuro ou passado envolve determinar uma data espec\xED\
-  fica adicionando ou subtraindo um certo n\xFAmero de dias, meses ou anos de uma\
-  \ data fornecida."
+summary: "Embora a biblioteca padr\xE3o do C n\xE3o ofere\xE7a fun\xE7\xF5es diretas\
+  \ para a aritm\xE9tica de datas, voc\xEA pode manipular datas usando a biblioteca\
+  \ `time.h`, especificamente trabalhando com o tipo de dados `time_t` e `struct tm`."
 title: Calculando uma data no futuro ou passado
 weight: 26
 ---

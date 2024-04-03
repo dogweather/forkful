@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:27.545091-07:00
-description: "Envoyer une requ\xEAte HTTP avec Google Apps Script consiste \xE0 effectuer\
-  \ programmatiquement un appel \xE0 un serveur web externe ou une API. Les programmeurs\u2026"
+description: "Comment faire : Dans Google Apps Script, le moyen principal d'envoyer\
+  \ une requ\xEAte HTTP est d'utiliser le service `UrlFetchApp`. Ce service fournit\
+  \ des\u2026"
 lastmod: '2024-03-13T22:44:57.181838-06:00'
 model: gpt-4-0125-preview
-summary: "Envoyer une requ\xEAte HTTP avec Google Apps Script consiste \xE0 effectuer\
-  \ programmatiquement un appel \xE0 un serveur web externe ou une API."
+summary: "Dans Google Apps Script, le moyen principal d'envoyer une requ\xEAte HTTP\
+  \ est d'utiliser le service `UrlFetchApp`."
 title: "Envoi d'une requ\xEAte HTTP"
 weight: 44
 ---

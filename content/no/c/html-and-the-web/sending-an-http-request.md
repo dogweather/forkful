@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:41.655399-07:00
-description: "\xC5 sende en HTTP-foresp\xF8rsel inneb\xE6rer \xE5 opprette og sende\
-  \ en foresp\xF8rsel til en webserver for \xE5 hente eller sende inn data. Programmerere\
-  \ gj\xF8r dette i C\u2026"
+description: "Hvordan: For \xE5 sende en HTTP-foresp\xF8rsel i C, vil du vanligvis\
+  \ stole p\xE5 biblioteker som libcurl, siden C ikke har innebygd st\xF8tte for webprotokoller.\
+  \ Her\u2026"
 lastmod: '2024-03-13T22:44:41.268360-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 sende en HTTP-foresp\xF8rsel inneb\xE6rer \xE5 opprette og sende en\
-  \ foresp\xF8rsel til en webserver for \xE5 hente eller sende inn data."
+summary: "For \xE5 sende en HTTP-foresp\xF8rsel i C, vil du vanligvis stole p\xE5\
+  \ biblioteker som libcurl, siden C ikke har innebygd st\xF8tte for webprotokoller."
 title: "Sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---

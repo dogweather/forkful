@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:30.821288-07:00
-description: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgula) envolve\
-  \ ler e escrever dados nesses arquivos, uma necessidade comum para tarefas que requerem\u2026"
+description: "Como Fazer: Elixir, com sua poderosa correspond\xEAncia de padr\xF5\
+  es e suporte para encadeamento (pipelining), pode manejar arquivos CSV de forma\
+  \ eficiente,\u2026"
 lastmod: '2024-03-13T22:44:46.260351-06:00'
 model: gpt-4-0125-preview
-summary: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgula) envolve ler\
-  \ e escrever dados nesses arquivos, uma necessidade comum para tarefas que requerem\
-  \ importa\xE7\xE3o/exporta\xE7\xE3o de dados ou solu\xE7\xF5es simples de armazenamento."
+summary: "Elixir, com sua poderosa correspond\xEAncia de padr\xF5es e suporte para\
+  \ encadeamento (pipelining), pode manejar arquivos CSV de forma eficiente, mesmo\
+  \ sem bibliotecas de terceiros."
 title: Trabalhando com CSV
 weight: 37
 ---

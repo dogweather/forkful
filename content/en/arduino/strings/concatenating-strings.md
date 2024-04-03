@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:33:50.055851-07:00
-description: "Concatenating strings means squishing them together end-to-end to make\
-  \ a new one. Programmers do it to merge messages, build commands, or just to display\u2026"
+description: "How to: Let's do some string-joining! All within setup because we just\
+  \ want a quick look\u2014no need for a repeat loop."
 lastmod: '2024-03-13T22:45:00.314967-06:00'
 model: gpt-4-1106-preview
-summary: Concatenating strings means squishing them together end-to-end to make a
-  new one.
+summary: Let's do some string-joining.
 title: Concatenating strings
 weight: 3
 ---

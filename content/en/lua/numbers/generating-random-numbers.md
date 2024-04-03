@@ -1,12 +1,11 @@
 ---
 date: 2024-01-27 20:26:07.386846-07:00
-description: "Generating random numbers in programming is about producing unpredictable\
-  \ numerical values that can be used for a variety of purposes such as simulations,\u2026"
+description: "How to: Lua provides built-in support for generating random numbers\
+  \ via the `math.random` function. This function can be used in multiple ways, depending\u2026"
 lastmod: '2024-03-13T22:45:00.201811-06:00'
 model: gpt-4-0125-preview
-summary: Generating random numbers in programming is about producing unpredictable
-  numerical values that can be used for a variety of purposes such as simulations,
-  games, or security applications.
+summary: Lua provides built-in support for generating random numbers via the `math.random`
+  function.
 title: Generating random numbers
 weight: 12
 ---

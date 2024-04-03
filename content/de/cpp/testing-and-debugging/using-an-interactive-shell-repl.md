@@ -1,10 +1,12 @@
 ---
 date: 2024-01-26 04:12:02.092219-07:00
-description: "Ein REPL (Read-Eval-Print-Loop) ist eine einfache, interaktive Programmierumgebung.\
-  \ Programmierer nutzen es f\xFCr Echtzeit-Sprachexperimente, schnelle\u2026"
+description: "Wie: C++ verf\xFCgt nicht \xFCber eine integrierte REPL, aber Werkzeuge\
+  \ wie Cling bieten diese M\xF6glichkeit. So verwenden Sie Cling, um die Summe zweier\
+  \ Zahlen\u2026"
 lastmod: '2024-03-13T22:44:54.186225-06:00'
 model: gpt-4-0125-preview
-summary: Ein REPL (Read-Eval-Print-Loop) ist eine einfache, interaktive Programmierumgebung.
+summary: "C++ verf\xFCgt nicht \xFCber eine integrierte REPL, aber Werkzeuge wie Cling\
+  \ bieten diese M\xF6glichkeit."
 title: Nutzung einer interaktiven Shell (REPL)
 weight: 34
 ---

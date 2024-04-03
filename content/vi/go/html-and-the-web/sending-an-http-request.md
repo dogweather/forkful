@@ -2,16 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:15.936698-07:00
-description: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP \u0111\u1EC1 c\u1EADp \u0111\u1EBF\
-  n vi\u1EC7c kh\u1EDFi t\u1EA1o m\u1ED9t cu\u1ED9c g\u1ECDi t\u1EEB \u1EE9ng d\u1EE5\
-  ng Go c\u1EE7a b\u1EA1n t\u1EDBi m\u1ED9t web server, API, ho\u1EB7c b\u1EA5t k\u1EF3\
-  \ d\u1ECBch v\u1EE5 d\u1EF1a tr\xEAn HTTP n\xE0o kh\xE1c. L\u1EADp\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Go, vi\u1EC7c g\u1EEDi m\u1ED9t y\xEA\
+  u c\u1EA7u HTTP v\xE0 x\u1EED l\xFD ph\u1EA3n h\u1ED3i li\xEAn quan \u0111\u1EBF\
+  n vi\u1EC7c s\u1EED d\u1EE5ng g\xF3i `net/http`. D\u01B0\u1EDBi \u0111\xE2y l\xE0\
+  \ m\u1ED9t v\xED d\u1EE5 t\u1EEBng b\u01B0\u1EDBc cho th\u1EA5y\u2026"
 lastmod: '2024-03-13T22:44:35.977773-06:00'
 model: gpt-4-0125-preview
-summary: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP \u0111\u1EC1 c\u1EADp \u0111\u1EBF\
-  n vi\u1EC7c kh\u1EDFi t\u1EA1o m\u1ED9t cu\u1ED9c g\u1ECDi t\u1EEB \u1EE9ng d\u1EE5\
-  ng Go c\u1EE7a b\u1EA1n t\u1EDBi m\u1ED9t web server, API, ho\u1EB7c b\u1EA5t k\u1EF3\
-  \ d\u1ECBch v\u1EE5 d\u1EF1a tr\xEAn HTTP n\xE0o kh\xE1c."
+summary: "Trong Go, vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\xE0 x\u1EED\
+  \ l\xFD ph\u1EA3n h\u1ED3i li\xEAn quan \u0111\u1EBFn vi\u1EC7c s\u1EED d\u1EE5\
+  ng g\xF3i `net/http`."
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
 weight: 44
 ---

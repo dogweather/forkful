@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:59.747038-07:00
-description: "Vi\u1EC7c ghi v\xE0o l\u1ED7i chu\u1EA9n (`stderr`) c\xF3 ngh\u0129\
-  a l\xE0 xu\u1EA5t th\xF4ng \u0111i\u1EC7p l\u1ED7i v\xE0 ch\u1EA9n \u0111o\xE1n\
-  \ ri\xEAng bi\u1EC7t v\u1EDBi \u0111\u1EA7u ra chu\u1EA9n (`stdout`). C\xE1c l\u1EAD\
-  p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: B\u1EA1n c\xF3 th\u1EC3 ghi v\xE0o `stderr`\
+  \ trong PHP v\u1EDBi `fwrite()` ho\u1EB7c b\u1ED9 \u0111i\u1EC1u khi\u1EC3n lu\u1ED3\
+  ng. D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch l\xE0m."
 lastmod: '2024-03-13T22:44:36.788349-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c ghi v\xE0o l\u1ED7i chu\u1EA9n (`stderr`) c\xF3 ngh\u0129a l\xE0\
-  \ xu\u1EA5t th\xF4ng \u0111i\u1EC7p l\u1ED7i v\xE0 ch\u1EA9n \u0111o\xE1n ri\xEA\
-  ng bi\u1EC7t v\u1EDBi \u0111\u1EA7u ra chu\u1EA9n (`stdout`)."
+summary: "B\u1EA1n c\xF3 th\u1EC3 ghi v\xE0o `stderr` trong PHP v\u1EDBi `fwrite()`\
+  \ ho\u1EB7c b\u1ED9 \u0111i\u1EC1u khi\u1EC3n lu\u1ED3ng."
 title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---

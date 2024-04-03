@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:50.273069-07:00
-description: "Merkkijonojen osien erottaminen C:ss\xE4 tarkoittaa pienen merkkijono-osan\
-  \ (substring) luomista suuremmasta merkkijonosta tietyin kriteerein, kuten sijainnin\u2026"
+description: "Kuinka: Toisin kuin jotkin korkeamman tason kielet, jotka tarjoavat\
+  \ valmiita metodeja merkkijonojen osien poimimiseen, C vaatii manuaalisemman\u2026"
 lastmod: '2024-03-13T22:44:57.027091-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonojen osien erottaminen C:ss\xE4 tarkoittaa pienen merkkijono-osan\
-  \ (substring) luomista suuremmasta merkkijonosta tietyin kriteerein, kuten sijainnin\
-  \ ja pituuden perusteella."
+summary: "Toisin kuin jotkin korkeamman tason kielet, jotka tarjoavat valmiita metodeja\
+  \ merkkijonojen osien poimimiseen, C vaatii manuaalisemman l\xE4hestymistavan k\xE4\
+  ytt\xE4en sen merkkijonon k\xE4sittelyfunktioita."
 title: Alimerkkijonojen erottaminen
 weight: 6
 ---

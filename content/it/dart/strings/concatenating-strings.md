@@ -2,13 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:02.608059-07:00
-description: "La concatenazione di stringhe nella programmazione implica l'unione\
-  \ di due o pi\xF9 stringhe in una sola. I programmatori fanno ci\xF2 per manipolare\
-  \ facilmente\u2026"
+description: "Come fare: Dart offre diversi modi diretti per concatenare le stringhe.\
+  \ Di seguito sono riportati i metodi pi\xF9 comuni: #."
 lastmod: '2024-03-13T22:44:43.120519-06:00'
 model: gpt-4-0125-preview
-summary: "La concatenazione di stringhe nella programmazione implica l'unione di due\
-  \ o pi\xF9 stringhe in una sola."
+summary: Dart offre diversi modi diretti per concatenare le stringhe.
 title: Concatenazione di stringhe
 weight: 3
 ---

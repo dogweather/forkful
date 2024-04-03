@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:28.662984-07:00
-description: "Att extrahera delstr\xE4ngar i C inneb\xE4r att skapa en mindre str\xE4\
-  ng (delstr\xE4ng) fr\xE5n en st\xF6rre str\xE4ng baserat p\xE5 specificerade kriterier,\
-  \ s\xE5som position och\u2026"
+description: "Hur man g\xF6r: Till skillnad fr\xE5n vissa h\xF6gre programmeringsspr\xE5\
+  k som erbjuder inbyggda metoder f\xF6r extraktion av delstr\xE4ngar, kr\xE4ver C\
+  \ en mer manuell\u2026"
 lastmod: '2024-03-13T22:44:38.370316-06:00'
 model: gpt-4-0125-preview
-summary: "Att extrahera delstr\xE4ngar i C inneb\xE4r att skapa en mindre str\xE4\
-  ng (delstr\xE4ng) fr\xE5n en st\xF6rre str\xE4ng baserat p\xE5 specificerade kriterier,\
-  \ s\xE5som position och l\xE4ngd."
+summary: "Till skillnad fr\xE5n vissa h\xF6gre programmeringsspr\xE5k som erbjuder\
+  \ inbyggda metoder f\xF6r extraktion av delstr\xE4ngar, kr\xE4ver C en mer manuell\
+  \ metodik med anv\xE4ndning av dess str\xE4ngmanipuleringsfunktioner."
 title: "Extrahera delstr\xE4ngar"
 weight: 6
 ---

@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:59.505873-07:00
-description: "Een tekstbestand schrijven betekent data opslaan in een bestand op de\
-  \ schijf in tekstformaat. Programmeurs doen dit voor data-opslag, configuratie,\u2026"
+description: "Hoe: Elm is een front-end webtaal, dus het kan niet rechtstreeks bestanden\
+  \ naar een schijf schrijven. Maar het kan wel een download activeren met de\u2026"
 lastmod: '2024-03-13T22:44:50.743632-06:00'
 model: gpt-4-0125-preview
-summary: Een tekstbestand schrijven betekent data opslaan in een bestand op de schijf
-  in tekstformaat.
+summary: Elm is een front-end webtaal, dus het kan niet rechtstreeks bestanden naar
+  een schijf schrijven.
 title: Een tekstbestand schrijven
 weight: 24
 ---

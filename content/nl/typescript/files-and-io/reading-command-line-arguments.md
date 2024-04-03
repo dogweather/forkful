@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:25.508968-07:00
-description: "Opdrachtregelargumenten stellen gebruikers in staat om gegevens door\
-  \ te geven aan een programma wanneer ze het uitvoeren. Programmeurs gebruiken ze\
-  \ om het\u2026"
+description: 'Hoe: In TypeScript gebruik je Node.js om opdrachtregelargumenten te
+  lezen. Hier is hoe.'
 lastmod: '2024-03-13T22:44:50.566745-06:00'
 model: gpt-4-0125-preview
-summary: Opdrachtregelargumenten stellen gebruikers in staat om gegevens door te geven
-  aan een programma wanneer ze het uitvoeren.
+summary: In TypeScript gebruik je Node.js om opdrachtregelargumenten te lezen.
 title: Commandoregelargumenten lezen
 weight: 23
 ---

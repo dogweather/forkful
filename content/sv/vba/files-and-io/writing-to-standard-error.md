@@ -2,13 +2,16 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:09:21.716832-07:00
-description: "Att skriva till standardfel i Visual Basic for Applications (VBA) inneb\xE4\
-  r att dirigera felmeddelanden eller diagnostik bort fr\xE5n standardutmatningen,\u2026"
+description: "Hur man g\xF6r: I VBA, eftersom det inte finns n\xE5gon direkt inbyggd\
+  \ funktion f\xF6r att specifikt skriva till standardfel som i vissa andra programmeringsspr\xE5\
+  k,\u2026"
 lastmod: '2024-03-13T22:44:37.760851-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva till standardfel i Visual Basic for Applications (VBA) inneb\xE4\
-  r att dirigera felmeddelanden eller diagnostik bort fr\xE5n standardutmatningen,\
-  \ vanligtvis till konsolen eller en loggfil."
+summary: "I VBA, eftersom det inte finns n\xE5gon direkt inbyggd funktion f\xF6r att\
+  \ specifikt skriva till standardfel som i vissa andra programmeringsspr\xE5k, inneb\xE4\
+  r en vanlig l\xF6sning att anv\xE4nda `Debug.Print` f\xF6r utmatning av fel vid\
+  \ utveckling eller att skapa en anpassad loggningsfunktion som efterliknar detta\
+  \ beteende f\xF6r produktionsapplikationer."
 title: Skriva till standardfel
 weight: 25
 ---

@@ -1,13 +1,13 @@
 ---
 date: 2024-01-26 01:07:52.139055-07:00
-description: "Logging, eller loggf\xF8ring, er i sin kjerne praksisen med \xE5 registrere\
-  \ hendelser og data fra en programvareapplikasjon til en ekstern utgang, som en\
-  \ fil\u2026"
+description: "Hvordan: I Kotlin kan loggf\xF8ring gj\xF8res ved hjelp av den innebygde\
+  \ funksjonen `println()` for enkle tilfeller, eller med mer sofistikerte biblioteker\
+  \ som\u2026"
 lastmod: '2024-03-13T22:44:40.757310-06:00'
 model: gpt-4-1106-preview
-summary: "Logging, eller loggf\xF8ring, er i sin kjerne praksisen med \xE5 registrere\
-  \ hendelser og data fra en programvareapplikasjon til en ekstern utgang, som en\
-  \ fil eller konsoll."
+summary: "I Kotlin kan loggf\xF8ring gj\xF8res ved hjelp av den innebygde funksjonen\
+  \ `println()` for enkle tilfeller, eller med mer sofistikerte biblioteker som SLF4J\
+  \ med Logback eller Log4j for avanserte behov."
 title: "Loggf\xF8ring"
 weight: 17
 ---

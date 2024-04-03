@@ -1,11 +1,13 @@
 ---
 date: 2024-01-19
-description: "\"Co i dlaczego?\" Sprawdzanie istnienia katalogu pozwala potwierdzi\u0107\
-  , czy dany folder jest dost\u0119pny w systemie plik\xF3w. Programi\u015Bci robi\u0105\
-  \ to, aby unikn\u0105\u0107\u2026"
+description: "How to: \"Jak to zrobi\u0107:\" Elm nie zapewnia natywnej mo\u017Cliwo\u015B\
+  ci sprawdzania istnienia katalog\xF3w, poniewa\u017C dzia\u0142a w przegl\u0105\
+  darce i nie ma bezpo\u015Bredniego\u2026"
 lastmod: '2024-03-13T22:44:35.336277-06:00'
 model: unknown
-summary: '"Co i dlaczego.'
+summary: "\"Jak to zrobi\u0107:\"\n\nElm nie zapewnia natywnej mo\u017Cliwo\u015B\
+  ci sprawdzania istnienia katalog\xF3w, poniewa\u017C dzia\u0142a w przegl\u0105\
+  darce i nie ma bezpo\u015Bredniego dost\u0119pu do systemu plik\xF3w."
 title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---

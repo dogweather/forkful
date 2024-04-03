@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:09.928779-07:00
-description: "Het verzenden van een HTTP-verzoek met basisauthenticatie houdt in dat\
-  \ je een gebruikersnaam en wachtwoord toevoegt aan je verzoek om toegang te krijgen\u2026"
+description: 'Hoe te: Om een HTTP-verzoek met basisauthenticatie in Elixir te versturen,
+  kun je de `HTTPoison` bibliotheek gebruiken.'
 lastmod: '2024-03-13T22:44:50.461798-06:00'
 model: gpt-4-0125-preview
-summary: Het verzenden van een HTTP-verzoek met basisauthenticatie houdt in dat je
-  een gebruikersnaam en wachtwoord toevoegt aan je verzoek om toegang te krijgen tot
-  een beveiligde bron.
+summary: Om een HTTP-verzoek met basisauthenticatie in Elixir te versturen, kun je
+  de `HTTPoison` bibliotheek gebruiken.
 title: Een HTTP-verzoek verzenden met basisauthenticatie
 weight: 45
 ---

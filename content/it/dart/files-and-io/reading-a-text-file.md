@@ -2,12 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:30.132624-07:00
-description: "Leggere un file di testo in Dart comporta l'accesso e il recupero di\
-  \ dati da file memorizzati sul file system. I programmatori effettuano questa\u2026"
+description: "Come fare: La libreria core di Dart, `dart:io`, fornisce le funzionalit\xE0\
+  \ necessarie per leggere file di testo sincronamente o asincronamente. Ecco come\u2026"
 lastmod: '2024-03-13T22:44:43.151090-06:00'
 model: gpt-4-0125-preview
-summary: Leggere un file di testo in Dart comporta l'accesso e il recupero di dati
-  da file memorizzati sul file system.
+summary: "La libreria core di Dart, `dart:io`, fornisce le funzionalit\xE0 necessarie\
+  \ per leggere file di testo sincronamente o asincronamente."
 title: Lettura di un file di testo
 weight: 22
 ---

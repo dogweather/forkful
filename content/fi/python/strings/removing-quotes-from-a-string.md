@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 03:41:57.440509-07:00
-description: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa yleens\xE4 ylim\xE4\
-  \xE4r\xE4isten kaksois- (\") tai yksitt\xE4isten (') lainausmerkkien karsimista.\
-  \ Ohjelmoijat\u2026"
+description: "Kuinka: Python tarjoaa useita tapoja p\xE4\xE4st\xE4 eroon ei-toivotuista\
+  \ lainausmerkeist\xE4 merkkijonoista. K\xE4yd\xE4\xE4n l\xE4pi joitakin esimerkkej\xE4\
+  ."
 lastmod: '2024-03-13T22:44:56.131341-06:00'
 model: gpt-4-0125-preview
-summary: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa yleens\xE4 ylim\xE4\
-  \xE4r\xE4isten kaksois- (\") tai yksitt\xE4isten (') lainausmerkkien karsimista."
+summary: "Python tarjoaa useita tapoja p\xE4\xE4st\xE4 eroon ei-toivotuista lainausmerkeist\xE4\
+  \ merkkijonoista."
 title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---

@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:21:20.097088-07:00
-description: "TOML, abrevia\xE7\xE3o de Tom's Obvious, Minimal Language (Linguagem\
-  \ M\xEDnima e \xD3bvia do Tom), \xE9 uma linguagem de serializa\xE7\xE3o de dados.\
-  \ Programadores Elm a usam\u2026"
+description: "Como Fazer: Elm n\xE3o possui um analisador de TOML embutido, mas voc\xEA\
+  \ pode interagir com JavaScript ou usar um pacote da comunidade. Aqui est\xE1 como\
+  \ voc\xEA\u2026"
 lastmod: '2024-03-13T22:44:46.522923-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, abrevia\xE7\xE3o de Tom's Obvious, Minimal Language (Linguagem M\xED\
-  nima e \xD3bvia do Tom), \xE9 uma linguagem de serializa\xE7\xE3o de dados."
+summary: "Elm n\xE3o possui um analisador de TOML embutido, mas voc\xEA pode interagir\
+  \ com JavaScript ou usar um pacote da comunidade."
 title: Trabalhando com TOML
 weight: 39
 ---

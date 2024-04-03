@@ -2,13 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:38.535061-07:00
-description: "HTML-parseren is het proces van het omzetten van een HTML-string naar\
-  \ een datastructuur die je programma kan begrijpen en manipuleren. Programmeurs\
-  \ doen\u2026"
+description: "Hoe: Om HTML in Clojure te parsen, gebruiken we de `clj-tagsoup` bibliotheek,\
+  \ een wrapper voor de Tagsoup Java-bibliotheek die handig is voor het parsen\u2026"
 lastmod: '2024-03-13T22:44:50.417126-06:00'
 model: gpt-4-0125-preview
-summary: HTML-parseren is het proces van het omzetten van een HTML-string naar een
-  datastructuur die je programma kan begrijpen en manipuleren.
+summary: Om HTML in Clojure te parsen, gebruiken we de `clj-tagsoup` bibliotheek,
+  een wrapper voor de Tagsoup Java-bibliotheek die handig is voor het parsen van real-world
+  HTML.
 title: HTML Parsen
 weight: 43
 ---

@@ -1,13 +1,10 @@
 ---
 date: 2024-01-26 00:55:09.012855-07:00
-description: "Virheiden k\xE4sittely on tapa, jolla koodisi k\xE4sittelee ongelmia,\
-  \ jotka ilmenev\xE4t suorituksen aikana - kuin ottaisi vastaan \xE4killisen sy\xF6\
-  t\xF6n pudottamatta\u2026"
+description: "Kuinka: Kotlin tarjoaa `try`, `catch`, `finally` ja `throw` virheiden\
+  \ hallintaan. T\xE4ss\xE4 on kuinka k\xE4yt\xE4t niit\xE4."
 lastmod: '2024-03-13T22:44:56.538388-06:00'
 model: gpt-4-1106-preview
-summary: "Virheiden k\xE4sittely on tapa, jolla koodisi k\xE4sittelee ongelmia, jotka\
-  \ ilmenev\xE4t suorituksen aikana - kuin ottaisi vastaan \xE4killisen sy\xF6t\xF6\
-  n pudottamatta sit\xE4."
+summary: Kotlin tarjoaa `try`, `catch`, `finally` ja `throw` virheiden hallintaan.
 title: "Virheiden k\xE4sittely"
 weight: 16
 ---

@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:04.589535-07:00
-description: "M\u1EA3ng k\u1EBFt h\u1EE3p, hay b\u1EA3n \u0111\u1ED3 b\u0103m, trong\
-  \ Clojure cho ph\xE9p b\u1EA1n l\u01B0u tr\u1EEF v\xE0 truy xu\u1EA5t d\u1EEF li\u1EC7\
-  u b\u1EB1ng c\u1EB7p kh\xF3a-gi\xE1 tr\u1ECB. Ch\xFAng l\xE0 gi\u1EA3i ph\xE1p l\xFD\
-  \ t\u01B0\u1EDFng \u0111\u1EC3 qu\u1EA3n l\xFD d\u1EEF\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong Clojure, vi\u1EC7c t\u1EA1o v\xE0\
+  \ thao t\xE1c v\u1EDBi m\u1EA3ng k\u1EBFt h\u1EE3p (b\u1EA3n \u0111\u1ED3 b\u0103\
+  m) r\u1EA5t \u0111\u01A1n gi\u1EA3n. H\xE3y c\xF9ng t\xECm hi\u1EC3u v\u1EDBi c\xE1\
+  c v\xED d\u1EE5. \u0110\u1EC3 t\u1EA1o m\u1ED9t b\u1EA3n \u0111\u1ED3 b\u0103m."
 lastmod: '2024-03-13T22:44:36.143395-06:00'
 model: gpt-4-0125-preview
-summary: "M\u1EA3ng k\u1EBFt h\u1EE3p, hay b\u1EA3n \u0111\u1ED3 b\u0103m, trong Clojure\
-  \ cho ph\xE9p b\u1EA1n l\u01B0u tr\u1EEF v\xE0 truy xu\u1EA5t d\u1EEF li\u1EC7u\
-  \ b\u1EB1ng c\u1EB7p kh\xF3a-gi\xE1 tr\u1ECB."
+summary: "Trong Clojure, vi\u1EC7c t\u1EA1o v\xE0 thao t\xE1c v\u1EDBi m\u1EA3ng k\u1EBF\
+  t h\u1EE3p (b\u1EA3n \u0111\u1ED3 b\u0103m) r\u1EA5t \u0111\u01A1n gi\u1EA3n."
 title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 weight: 15
 ---

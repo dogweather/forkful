@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:09.841480-07:00
-description: "Eine interaktive Shell oder eine Read-Eval-Print-Schleife (REPL) erm\xF6\
-  glicht es Ihnen, in Echtzeit mit Go-Code zu experimentieren, Befehle auszuf\xFC\
-  hren und\u2026"
+description: "Wie geht das: Obwohl Go keine eingebaute REPL enth\xE4lt, hat die Community\
+  \ Tools wie `gore` entwickelt, um diese L\xFCcke zu schlie\xDFen. Installieren Sie\
+  \ zuerst\u2026"
 lastmod: '2024-03-13T22:44:53.289403-06:00'
 model: gpt-4-0125-preview
-summary: "Eine interaktive Shell oder eine Read-Eval-Print-Schleife (REPL) erm\xF6\
-  glicht es Ihnen, in Echtzeit mit Go-Code zu experimentieren, Befehle auszuf\xFC\
-  hren und sofortiges Feedback zu erhalten."
+summary: "Obwohl Go keine eingebaute REPL enth\xE4lt, hat die Community Tools wie\
+  \ `gore` entwickelt, um diese L\xFCcke zu schlie\xDFen."
 title: Verwendung einer interaktiven Shell (REPL)
 weight: 34
 ---

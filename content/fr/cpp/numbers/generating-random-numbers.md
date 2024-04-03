@@ -1,13 +1,14 @@
 ---
 date: 2024-01-27 20:32:47.162565-07:00
-description: "La g\xE9n\xE9ration de nombres al\xE9atoires en programmation consiste\
-  \ \xE0 cr\xE9er des s\xE9quences de nombres qui ne pr\xE9sentent aucun ordre ou\
-  \ motif pr\xE9visible. Les\u2026"
+description: "Comment faire : Pour g\xE9n\xE9rer des nombres al\xE9atoires en C++,\
+  \ vous utiliseriez typiquement l'en-t\xEAte `<random>`, qui a \xE9t\xE9 introduit\
+  \ dans C++11, offrant une\u2026"
 lastmod: '2024-03-13T22:44:58.157407-06:00'
 model: gpt-4-0125-preview
-summary: "La g\xE9n\xE9ration de nombres al\xE9atoires en programmation consiste \xE0\
-  \ cr\xE9er des s\xE9quences de nombres qui ne pr\xE9sentent aucun ordre ou motif\
-  \ pr\xE9visible."
+summary: "Pour g\xE9n\xE9rer des nombres al\xE9atoires en C++, vous utiliseriez typiquement\
+  \ l'en-t\xEAte `<random>`, qui a \xE9t\xE9 introduit dans C++11, offrant une large\
+  \ gamme de facilit\xE9s pour g\xE9n\xE9rer des nombres al\xE9atoires \xE0 partir\
+  \ de diverses distributions."
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---

@@ -1,8 +1,8 @@
 ---
 date: 2024-01-26 04:08:55.437362-07:00
-description: "D\xE9cortiquons l\u2019utilisation de `pdb`, le d\xE9bogueur int\xE9\
-  gr\xE9 de Python. Imaginez un fichier, `buggy.py`, avec un bug sournois : ```Python\
-  \ def\u2026"
+description: "Comment faire : D\xE9cortiquons l\u2019utilisation de `pdb`, le d\xE9\
+  bogueur int\xE9gr\xE9 de Python. Imaginez un fichier, `buggy.py`, avec un bug sournois\
+  \ ."
 lastmod: '2024-03-13T22:44:57.241300-06:00'
 model: gpt-4-0125-preview
 summary: "D\xE9cortiquons l\u2019utilisation de `pdb`, le d\xE9bogueur int\xE9gr\xE9\

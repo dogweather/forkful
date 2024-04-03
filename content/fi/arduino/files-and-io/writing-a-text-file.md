@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:01.373528-07:00
-description: "Tekstitiedoston kirjoittaminen Arduinolla tarkoittaa datan tallentamista\
-  \ tiedostoon SD-kortilla tai vastaavalla tallennusmoduulilla, usein datan\u2026"
+description: "Kuinka: Kirjoittaaksesi tekstitiedostoon SD-kortilla k\xE4ytt\xE4en\
+  \ Arduinoa, sinun t\xE4ytyy ensin sis\xE4llytt\xE4\xE4 `SD.h` kirjasto, joka tarjoaa\
+  \ tarvittavat toiminnot\u2026"
 lastmod: '2024-03-13T22:44:56.841636-06:00'
 model: gpt-4-0125-preview
-summary: Tekstitiedoston kirjoittaminen Arduinolla tarkoittaa datan tallentamista
-  tiedostoon SD-kortilla tai vastaavalla tallennusmoduulilla, usein datan loggauksen
-  tarpeisiin.
+summary: "Kirjoittaaksesi tekstitiedostoon SD-kortilla k\xE4ytt\xE4en Arduinoa, sinun\
+  \ t\xE4ytyy ensin sis\xE4llytt\xE4\xE4 `SD.h` kirjasto, joka tarjoaa tarvittavat\
+  \ toiminnot vuorovaikutuksessa SD-korttien kanssa."
 title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---

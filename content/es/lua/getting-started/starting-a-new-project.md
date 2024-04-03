@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 18:04:02.150977-07:00
-description: "Iniciar un nuevo proyecto es crear la base sobre la cual construir\xE1\
-  s tu aplicaci\xF3n. Los programadores comienzan nuevos proyectos para transformar\
-  \ ideas en\u2026"
+description: "C\xF3mo: Para empezar con Lua, instala la \xFAltima versi\xF3n y luego\
+  \ crea un archivo `main.lua`. Aqu\xED un \"Hola, mundo!\" b\xE1sico."
 lastmod: '2024-03-13T22:44:59.202372-06:00'
 model: gpt-4-1106-preview
-summary: "Iniciar un nuevo proyecto es crear la base sobre la cual construir\xE1s\
-  \ tu aplicaci\xF3n."
+summary: "Para empezar con Lua, instala la \xFAltima versi\xF3n y luego crea un archivo\
+  \ `main.lua`."
 title: Iniciando un nuevo proyecto
 weight: 1
 ---

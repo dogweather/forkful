@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:29.284726-07:00
-description: "Verificare se una directory esiste in Go \xE8 fondamentale per le applicazioni\
-  \ che interagiscono con il file system, per evitare errori quando si tenta di\u2026"
+description: "Come fare: In Go, il pacchetto `os` fornisce funzionalit\xE0 per interagire\
+  \ con il sistema operativo, incluso il controllo dell'esistenza di una directory.\u2026"
 lastmod: '2024-03-13T22:44:42.923758-06:00'
 model: gpt-4-0125-preview
-summary: "Verificare se una directory esiste in Go \xE8 fondamentale per le applicazioni\
-  \ che interagiscono con il file system, per evitare errori quando si tenta di accedere\
-  \ o modificare directory."
+summary: "In Go, il pacchetto `os` fornisce funzionalit\xE0 per interagire con il\
+  \ sistema operativo, incluso il controllo dell'esistenza di una directory."
 title: Verificare se una directory esiste
 weight: 20
 ---

@@ -2,12 +2,11 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:36.459597-07:00
-description: "HTML in Visual Basic for Applications (VBA) zu parsen, bedeutet, spezifische\
-  \ Informationen aus einem HTML-Dokument zu extrahieren. Programmierer tun dies,\u2026"
+description: "Wie geht das: In VBA k\xF6nnen Sie HTML mit der `Microsoft HTML Object\
+  \ Library` parsen. F\xFCgen Sie in Ihrem VBA-Editor eine Referenz auf diese Bibliothek\u2026"
 lastmod: '2024-03-13T22:44:53.715361-06:00'
 model: gpt-4-0125-preview
-summary: HTML in Visual Basic for Applications (VBA) zu parsen, bedeutet, spezifische
-  Informationen aus einem HTML-Dokument zu extrahieren.
+summary: "In VBA k\xF6nnen Sie HTML mit der `Microsoft HTML Object Library` parsen."
 title: HTML analysieren
 weight: 43
 ---

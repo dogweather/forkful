@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:54:00.454383-07:00
-description: "Dateien lesen bedeutet, Daten aus einer Textdatei in den Speicher zu\
-  \ laden, damit Code sie verarbeiten kann. Programmierer machen das, um Inhalte zu\u2026"
+description: 'How to: Bist du bereit, eine Textdatei in C# zu lesen? Hier sind ein
+  paar schlanke Beispiele: #.'
 lastmod: '2024-03-13T22:44:53.905844-06:00'
 model: gpt-4-1106-preview
-summary: Dateien lesen bedeutet, Daten aus einer Textdatei in den Speicher zu laden,
-  damit Code sie verarbeiten kann.
+summary: Bist du bereit, eine Textdatei in C# zu lesen.
 title: Textdatei einlesen
 weight: 22
 ---

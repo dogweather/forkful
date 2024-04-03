@@ -2,14 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:47.086903-07:00
-description: "String-Interpolation ist der Prozess, Variablenwerte direkt in Strings\
-  \ einzuf\xFCgen, oft um aussagekr\xE4ftige Nachrichten ohne umst\xE4ndliche Verkettungen\
-  \ zu\u2026"
+description: "Wie geht das: In Dart ist die String-Interpolation unkompliziert, wobei\
+  \ das `$`-Symbol genutzt wird, um Ausdr\xFCcke direkt in String-Literalen zu\u2026"
 lastmod: '2024-03-13T22:44:53.564888-06:00'
 model: gpt-4-0125-preview
-summary: "String-Interpolation ist der Prozess, Variablenwerte direkt in Strings einzuf\xFC\
-  gen, oft um aussagekr\xE4ftige Nachrichten ohne umst\xE4ndliche Verkettungen zu\
-  \ erstellen."
+summary: "In Dart ist die String-Interpolation unkompliziert, wobei das `$`-Symbol\
+  \ genutzt wird, um Ausdr\xFCcke direkt in String-Literalen zu interpolieren."
 title: Interpolation eines Strings
 weight: 8
 ---

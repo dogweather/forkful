@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:46:28.602465-07:00
-description: "Utdrag av understrenger betyr \xE5 velge spesifikke deler av en streng.\
-  \ Programmerere gj\xF8r dette for \xE5 manipulere, analysere eller formatere tekstdata\
-  \ mer\u2026"
+description: "Slik gj\xF8r du: For \xE5 ekstrahere understrenger i Swift, bruk `String`-indekser\
+  \ og substring-metoder som `prefix`, `suffix`, `split`, eller\u2026"
 lastmod: '2024-03-13T22:44:41.131273-06:00'
 model: gpt-4-1106-preview
-summary: "Utdrag av understrenger betyr \xE5 velge spesifikke deler av en streng."
+summary: "For \xE5 ekstrahere understrenger i Swift, bruk `String`-indekser og substring-metoder\
+  \ som `prefix`, `suffix`, `split`, eller `subscript`-omr\xE5det."
 title: Uthenting av delstrenger
 weight: 6
 ---

@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:54:12.313032-07:00
-description: "Att l\xE4sa en textfil inneb\xE4r att man h\xE4mtar data fr\xE5n en\
-  \ fil som \xE4r lagrad p\xE5 disk i textformat. Programmerare g\xF6r detta f\xF6\
-  r att till exempel ladda\u2026"
+description: "Hur g\xF6r man: ."
 lastmod: '2024-03-13T22:44:37.930811-06:00'
 model: gpt-4-1106-preview
-summary: "Att l\xE4sa en textfil inneb\xE4r att man h\xE4mtar data fr\xE5n en fil\
-  \ som \xE4r lagrad p\xE5 disk i textformat."
+summary: .
 title: "L\xE4sa en textfil"
 weight: 22
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:50:05.803938-07:00
-description: "Interpolar uma string \xE9 encaixar valores de vari\xE1veis dentro dela.\
-  \ Programadores usam isso para facilitar a montagem de mensagens din\xE2micas ou\
-  \ para exibir\u2026"
+description: "How to: Em Arduino, usamos a fun\xE7\xE3o `sprintf` para interpolar\
+  \ strings. Veja o c\xF3digo e sua sa\xEDda."
 lastmod: '2024-03-13T22:44:46.825275-06:00'
 model: gpt-4-1106-preview
-summary: "Interpolar uma string \xE9 encaixar valores de vari\xE1veis dentro dela."
+summary: "Em Arduino, usamos a fun\xE7\xE3o `sprintf` para interpolar strings."
 title: Interpolando uma string
 weight: 8
 ---

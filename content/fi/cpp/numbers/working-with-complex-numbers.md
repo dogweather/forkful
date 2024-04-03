@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:38:05.270263-07:00
-description: "Kompleksiluvut laajentavat reaalilukuja lis\xE4\xE4m\xE4ll\xE4 imaginaariyksik\xF6\
-  n, joka esitet\xE4\xE4n 'i':n\xE4, miss\xE4 i^2 = -1. Ohjelmoijat k\xE4ytt\xE4v\xE4\
-  t niit\xE4 simulaatioissa,\u2026"
+description: "Kuinka: C++:ssa on valmiiksi sis\xE4\xE4nrakennettu kirjasto `<complex>`,\
+  \ joka helpottaa kompleksilukujen k\xE4sittely\xE4. T\xE4ss\xE4 nopea katsaus."
 lastmod: '2024-03-13T22:44:56.859088-06:00'
 model: gpt-4-0125-preview
-summary: "Kompleksiluvut laajentavat reaalilukuja lis\xE4\xE4m\xE4ll\xE4 imaginaariyksik\xF6\
-  n, joka esitet\xE4\xE4n 'i':n\xE4, miss\xE4 i^2 = -1."
+summary: "C++:ssa on valmiiksi sis\xE4\xE4nrakennettu kirjasto `<complex>`, joka helpottaa\
+  \ kompleksilukujen k\xE4sittely\xE4."
 title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 01:16:45.741107-07:00
-description: "*Refactoring* er prosessen med \xE5 omarbeide koden din for \xE5 forbedre\
-  \ strukturen og lesbarheten uten \xE5 endre den eksterne oppf\xF8rselen eller\u2026"
+description: "Hvordan: La oss si du har en funksjon p\xE5 din Arduino som gj\xF8r\
+  \ altfor mye, slik som dette."
 lastmod: '2024-03-13T22:44:41.066218-06:00'
 model: gpt-4-0125-preview
-summary: "*Refactoring* er prosessen med \xE5 omarbeide koden din for \xE5 forbedre\
-  \ strukturen og lesbarheten uten \xE5 endre den eksterne oppf\xF8rselen eller funksjonaliteten."
+summary: "La oss si du har en funksjon p\xE5 din Arduino som gj\xF8r altfor mye, slik\
+  \ som dette."
 title: Refaktorering
 weight: 19
 ---

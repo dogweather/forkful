@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:30:55.966440-07:00
-description: "Calcular una fecha en el futuro o pasado es simplemente modificar una\
-  \ fecha para obtener otra diferente, antes o despu\xE9s. Los programadores lo hacen\
-  \ para\u2026"
+description: "C\xF3mo: Para calcular fechas en Fish, puedes usar el comando `date`.\
+  \ Aqu\xED unos ejemplos: Sumar d\xEDas a la fecha actual."
 lastmod: '2024-03-13T22:44:59.514731-06:00'
 model: gpt-4-1106-preview
-summary: "Calcular una fecha en el futuro o pasado es simplemente modificar una fecha\
-  \ para obtener otra diferente, antes o despu\xE9s."
+summary: Para calcular fechas en Fish, puedes usar el comando `date`.
 title: Calcular una fecha en el futuro o pasado
 weight: 26
 ---

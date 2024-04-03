@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:42:58.409165-07:00
-description: "Eliminar caracteres que coinciden con un patr\xF3n permite limpiar y\
-  \ normalizar datos en tus scripts. Programadores lo hacen para simplificar el an\xE1\
-  lisis de\u2026"
+description: "C\xF3mo Hacerlo: A continuaci\xF3n, unos ejemplos pr\xE1cticos de c\xF3\
+  mo eliminar caracteres usando patrones en PowerShell."
 lastmod: '2024-03-13T22:44:59.274279-06:00'
 model: gpt-4-1106-preview
-summary: "Eliminar caracteres que coinciden con un patr\xF3n permite limpiar y normalizar\
-  \ datos en tus scripts."
+summary: "A continuaci\xF3n, unos ejemplos pr\xE1cticos de c\xF3mo eliminar caracteres\
+  \ usando patrones en PowerShell."
 title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---

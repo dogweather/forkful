@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:44:10.859646-07:00
-description: "Liczby zespolone maj\u0105 cz\u0119\u015B\u0107 rzeczywist\u0105 i cz\u0119\
-  \u015B\u0107 urojon\u0105, zazwyczaj zapisywane jako `a + bi`. S\u0105 kluczowe\
-  \ w zaawansowanej matematyce, fizyce, in\u017Cynierii\u2026"
+description: "Jak? PHP oferuje wbudowane wsparcie dla liczb zespolonych za pomoc\u0105\
+  \ rozszerzenia `ext-intl` z klas\u0105 `NumberFormatter`. Oto przyk\u0142ad."
 lastmod: '2024-03-13T22:44:35.491091-06:00'
 model: gpt-4-0125-preview
-summary: "Liczby zespolone maj\u0105 cz\u0119\u015B\u0107 rzeczywist\u0105 i cz\u0119\
-  \u015B\u0107 urojon\u0105, zazwyczaj zapisywane jako `a + bi`."
+summary: "PHP oferuje wbudowane wsparcie dla liczb zespolonych za pomoc\u0105 rozszerzenia\
+  \ `ext-intl` z klas\u0105 `NumberFormatter`."
 title: Praca z liczbami zespolonymi
 weight: 14
 ---

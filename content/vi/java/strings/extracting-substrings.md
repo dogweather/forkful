@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:44.952495-07:00
-description: "Vi\u1EC7c tr\xEDch xu\u1EA5t c\xE1c chu\u1ED7i con c\xF3 ngh\u0129a\
-  \ l\xE0 l\u1EA5y ra m\u1ED9t ph\u1EA7n c\u1EE5 th\u1EC3 t\u1EEB m\u1ED9t chu\u1ED7\
-  i - m\u1ED9t chu\u1ED7i c\xE1c k\xFD t\u1EF1 n\u1EB1m trong m\u1ED9t chu\u1ED7i\
-  \ l\u1EDBn h\u01A1n. C\xE1c l\u1EADp tr\xECnh vi\xEAn c\u1EAFt v\xE0\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Vi\u1EC7c tr\xEDch xu\u1EA5t m\u1ED9t chu\u1ED7\
+  i con trong Java kh\xE1 \u0111\u01A1n gi\u1EA3n s\u1EED d\u1EE5ng ph\u01B0\u01A1\
+  ng th\u1EE9c `substring`. D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch b\u1EA1n th\u1EF1\
+  c hi\u1EC7n."
 lastmod: '2024-03-13T22:44:36.474731-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c tr\xEDch xu\u1EA5t c\xE1c chu\u1ED7i con c\xF3 ngh\u0129a l\xE0\
-  \ l\u1EA5y ra m\u1ED9t ph\u1EA7n c\u1EE5 th\u1EC3 t\u1EEB m\u1ED9t chu\u1ED7i -\
-  \ m\u1ED9t chu\u1ED7i c\xE1c k\xFD t\u1EF1 n\u1EB1m trong m\u1ED9t chu\u1ED7i l\u1EDB\
-  n h\u01A1n."
+summary: "Vi\u1EC7c tr\xEDch xu\u1EA5t m\u1ED9t chu\u1ED7i con trong Java kh\xE1 \u0111\
+  \u01A1n gi\u1EA3n s\u1EED d\u1EE5ng ph\u01B0\u01A1ng th\u1EE9c `substring`."
 title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 weight: 6
 ---

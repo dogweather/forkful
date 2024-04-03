@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:07.839559-07:00
-description: "Das Abrufen des aktuellen Datums in TypeScript, einer auf JavaScript\
-  \ aufbauenden Sprache, erm\xF6glicht den Zugriff auf und die Manipulation von aktuellen\u2026"
+description: "Wie geht das: In TypeScript k\xF6nnen Sie das `Date`-Objekt verwenden,\
+  \ um das aktuelle Datum und die aktuelle Zeit zu erhalten. So k\xF6nnen Sie das\
+  \ machen."
 lastmod: '2024-03-13T22:44:53.641273-06:00'
 model: gpt-4-0125-preview
-summary: "Das Abrufen des aktuellen Datums in TypeScript, einer auf JavaScript aufbauenden\
-  \ Sprache, erm\xF6glicht den Zugriff auf und die Manipulation von aktuellen Datums-\
-  \ und Zeitinformationen."
+summary: "In TypeScript k\xF6nnen Sie das `Date`-Objekt verwenden, um das aktuelle\
+  \ Datum und die aktuelle Zeit zu erhalten."
 title: Den aktuellen Datum abrufen
 weight: 29
 ---

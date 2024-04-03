@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:21.689540-07:00
-description: "Regul\xE6re uttrykk (regex) i Java lar deg definere spesifikke m\xF8\
-  nstre for \xE5 s\xF8ke, manipulere eller validere strenger i koden din. Programmerere\
-  \ bruker dem\u2026"
+description: "Hvordan: Java sin innebygde st\xF8tte for regex er hovedsakelig gjennom\
+  \ `Pattern` og `Matcher` klassene i `java.util.regex` pakken. Her er et enkelt eksempel\u2026"
 lastmod: '2024-03-13T22:44:40.656335-06:00'
 model: gpt-4-0125-preview
-summary: "Regul\xE6re uttrykk (regex) i Java lar deg definere spesifikke m\xF8nstre\
-  \ for \xE5 s\xF8ke, manipulere eller validere strenger i koden din."
+summary: "Java sin innebygde st\xF8tte for regex er hovedsakelig gjennom `Pattern`\
+  \ og `Matcher` klassene i `java.util.regex` pakken."
 title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---

@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 00:23:44.186505-07:00
-description: "El manejo de errores en tus programas detecta los problemas imprevistos\
-  \ que intentar\xE1n hacerte tropezar. Lo haces para evitar que tu Arduino tenga\
-  \ un\u2026"
+description: "C\xF3mo hacerlo: Digamos que tu Arduino est\xE1 leyendo un sensor que\
+  \ ocasionalmente puede producir valores fuera del rango. As\xED es c\xF3mo podr\xED\
+  as manejarlo."
 lastmod: '2024-03-13T22:44:59.340631-06:00'
 model: gpt-4-1106-preview
-summary: "El manejo de errores en tus programas detecta los problemas imprevistos\
-  \ que intentar\xE1n hacerte tropezar."
+summary: "Digamos que tu Arduino est\xE1 leyendo un sensor que ocasionalmente puede\
+  \ producir valores fuera del rango."
 title: Manejo de errores
 weight: 16
 ---

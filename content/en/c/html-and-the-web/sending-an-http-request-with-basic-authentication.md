@@ -1,12 +1,12 @@
 ---
 date: 2024-02-03 17:50:08.997620-07:00
-description: "Sending an HTTP request with basic authentication in C involves crafting\
-  \ an HTTP request that includes an Authorization header with user credentials\u2026"
+description: "How to: To send an HTTP request with basic authentication in C, we'll\
+  \ need to use the libcurl library, a popular, versatile, and easy-to-use client-side\u2026"
 lastmod: '2024-03-13T22:45:00.511284-06:00'
 model: gpt-4-0125-preview
-summary: Sending an HTTP request with basic authentication in C involves crafting
-  an HTTP request that includes an Authorization header with user credentials encoded
-  in Base64.
+summary: To send an HTTP request with basic authentication in C, we'll need to use
+  the libcurl library, a popular, versatile, and easy-to-use client-side URL transfer
+  library.
 title: Sending an HTTP request with basic authentication
 weight: 45
 ---

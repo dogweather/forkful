@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:03.916053-07:00
-description: "Escribir en el error est\xE1ndar (stderr) en PowerShell implica enviar\
-  \ mensajes de error o diagn\xF3sticos directamente al flujo de stderr, distinto\
-  \ del flujo\u2026"
+description: "C\xF3mo hacerlo: PowerShell simplifica el proceso de escribir en stderr\
+  \ mediante el uso del cmdlet `Write-Error` o dirigiendo la salida al m\xE9todo\u2026"
 lastmod: '2024-03-13T22:44:59.308657-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir en el error est\xE1ndar (stderr) en PowerShell implica enviar mensajes\
-  \ de error o diagn\xF3sticos directamente al flujo de stderr, distinto del flujo\
-  \ de salida est\xE1ndar (stdout)."
+summary: "PowerShell simplifica el proceso de escribir en stderr mediante el uso del\
+  \ cmdlet `Write-Error` o dirigiendo la salida al m\xE9todo `$host.ui.WriteErrorLine()`."
 title: "Escribiendo en el error est\xE1ndar"
 weight: 25
 ---

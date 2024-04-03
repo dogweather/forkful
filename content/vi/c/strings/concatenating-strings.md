@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:16.050761-07:00
-description: "N\u1ED1i chu\u1ED7i trong C bao g\u1ED3m vi\u1EC7c gh\xE9p hai ho\u1EB7\
-  c nhi\u1EC1u chu\u1ED7i l\u1EA1i v\u1EDBi nhau \u0111\u1EC3 t\u1EA1o th\xE0nh m\u1ED9\
-  t chu\u1ED7i m\u1EDBi. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n thao\
-  \ t\xE1c n\xE0y \u0111\u1EC3 x\xE2y d\u1EF1ng\u2026"
+description: "C\xE1ch th\u1EF1c Hi\u1EC7n: Trong C, chu\u1ED7i l\xE0 m\u1EA3ng c\u1EE7\
+  a c\xE1c k\xFD t\u1EF1 k\u1EBFt th\xFAc b\u1EB1ng k\xFD t\u1EF1 null (`\\0`). Kh\xF4\
+  ng gi\u1ED1ng nh\u01B0 trong c\xE1c ng\xF4n ng\u1EEF c\u1EA5p cao h\u01A1n, C kh\xF4\
+  ng cung c\u1EA5p m\u1ED9t\u2026"
 lastmod: '2024-03-13T22:44:37.256659-06:00'
 model: gpt-4-0125-preview
-summary: "N\u1ED1i chu\u1ED7i trong C bao g\u1ED3m vi\u1EC7c gh\xE9p hai ho\u1EB7\
-  c nhi\u1EC1u chu\u1ED7i l\u1EA1i v\u1EDBi nhau \u0111\u1EC3 t\u1EA1o th\xE0nh m\u1ED9\
-  t chu\u1ED7i m\u1EDBi."
+summary: "Trong C, chu\u1ED7i l\xE0 m\u1EA3ng c\u1EE7a c\xE1c k\xFD t\u1EF1 k\u1EBF\
+  t th\xFAc b\u1EB1ng k\xFD t\u1EF1 null (`\\0`)."
 title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 weight: 3
 ---

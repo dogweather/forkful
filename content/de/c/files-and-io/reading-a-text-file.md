@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:21.964052-07:00
-description: "Das Lesen einer Textdatei in C beinhaltet das \xD6ffnen einer Datei\
-  \ auf Ihrem System, um Informationen zu extrahieren und diese nach Bedarf zu manipulieren\u2026"
+description: "Wie: Um mit dem Lesen einer Textdatei in C zu beginnen, arbeiten Sie\
+  \ haupts\xE4chlich mit den Funktionen `fopen()`, `fgets()` und `fclose()` aus der\u2026"
 lastmod: '2024-03-13T22:44:54.371676-06:00'
 model: gpt-4-0125-preview
-summary: "Das Lesen einer Textdatei in C beinhaltet das \xD6ffnen einer Datei auf\
-  \ Ihrem System, um Informationen zu extrahieren und diese nach Bedarf zu manipulieren\
-  \ oder anzuzeigen."
+summary: "Um mit dem Lesen einer Textdatei in C zu beginnen, arbeiten Sie haupts\xE4\
+  chlich mit den Funktionen `fopen()`, `fgets()` und `fclose()` aus der Standard-I/O-Bibliothek."
 title: Eine Textdatei lesen
 weight: 22
 ---

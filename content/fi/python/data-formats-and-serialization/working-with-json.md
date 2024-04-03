@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:11.790279-07:00
-description: "Ty\xF6skentely JSON-muotoisten merkkijonojen (JavaScript Object Notation)\
-  \ kanssa sis\xE4lt\xE4\xE4 JSON-muotoisten merkkijonojen j\xE4sent\xE4misen Python-objekteiksi\
-  \ ja\u2026"
+description: "Kuinka: Pythonin sis\xE4\xE4nrakennettu `json`-kirjasto yksinkertaistaa\
+  \ enkoodausprosessia (Python-objektien muuntaminen JSON-muotoon) ja dekoodausta\
+  \ (JSONin\u2026"
 lastmod: '2024-03-13T22:44:56.164875-06:00'
 model: gpt-4-0125-preview
-summary: "Ty\xF6skentely JSON-muotoisten merkkijonojen (JavaScript Object Notation)\
-  \ kanssa sis\xE4lt\xE4\xE4 JSON-muotoisten merkkijonojen j\xE4sent\xE4misen Python-objekteiksi\
-  \ ja p\xE4invastoin."
+summary: "Pythonin sis\xE4\xE4nrakennettu `json`-kirjasto yksinkertaistaa enkoodausprosessia\
+  \ (Python-objektien muuntaminen JSON-muotoon) ja dekoodausta (JSONin muuntaminen\
+  \ Python-objekteiksi)."
 title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---

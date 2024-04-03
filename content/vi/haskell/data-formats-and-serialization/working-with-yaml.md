@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:54.369769-07:00
-description: "YAML (YAML Ai c\u0169ng bi\u1EBFt kh\xF4ng ph\u1EA3i l\xE0 Ng\xF4n ng\u1EEF\
-  \ \u0110\xE1nh d\u1EA5u) l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1ng h\xF3a d\u1EEF\
-  \ li\u1EC7u th\xE2n thi\u1EC7n v\u1EDBi con ng\u01B0\u1EDDi. L\u1EADp tr\xECnh vi\xEA\
-  n s\u1EED d\u1EE5ng n\xF3 cho c\xE1c t\u1EC7p c\u1EA5u\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi YAML\
+  \ trong Haskell, s\u1EED d\u1EE5ng g\xF3i `yaml`. \u0110\u1EA7u ti\xEAn, c\xE0i\
+  \ \u0111\u1EB7t n\xF3."
 lastmod: '2024-03-13T22:44:36.738746-06:00'
 model: gpt-4-0125-preview
-summary: "YAML (YAML Ai c\u0169ng bi\u1EBFt kh\xF4ng ph\u1EA3i l\xE0 Ng\xF4n ng\u1EEF\
-  \ \u0110\xE1nh d\u1EA5u) l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1ng h\xF3a d\u1EEF\
-  \ li\u1EC7u th\xE2n thi\u1EC7n v\u1EDBi con ng\u01B0\u1EDDi."
+summary: "\u0110\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi YAML trong Haskell, s\u1EED d\u1EE5\
+  ng g\xF3i `yaml`."
 title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 weight: 41
 ---

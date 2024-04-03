@@ -2,18 +2,18 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:09:21.835147-07:00
-description: "Vi\u1EC7c vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra trong l\u1EADp tr\xEC\
-  nh bao g\u1ED3m vi\u1EC7c t\u1EA1o ra c\xE1c th\u1EE7 t\u1EE5c c\u1EE5 th\u1EC3\
-  \ \u0111\u1EC3 x\xE1c th\u1EF1c t\xEDnh n\u0103ng v\xE0 hi\u1EC7u su\u1EA5t c\u1EE7\
-  a c\xE1c \u0111o\u1EA1n m\xE3 c\u1EE7a b\u1EA1n, \u0111\u1EA3m b\u1EA3o\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: D\xF9 Visual Basic for Applications (VBA) kh\xF4\
+  ng \u0111i k\xE8m v\u1EDBi m\u1ED9t khu\xF4n kh\u1ED5 ki\u1EC3m th\u1EED t\xEDch\
+  \ h\u1EE3p gi\u1ED1ng nh\u01B0 nh\u1EEFng g\xEC c\xF3 s\u1EB5n trong c\xE1c ng\xF4\
+  n ng\u1EEF nh\u01B0\u2026"
 lastmod: '2024-03-13T22:44:36.437674-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra trong l\u1EADp tr\xECnh\
-  \ bao g\u1ED3m vi\u1EC7c t\u1EA1o ra c\xE1c th\u1EE7 t\u1EE5c c\u1EE5 th\u1EC3 \u0111\
-  \u1EC3 x\xE1c th\u1EF1c t\xEDnh n\u0103ng v\xE0 hi\u1EC7u su\u1EA5t c\u1EE7a c\xE1\
-  c \u0111o\u1EA1n m\xE3 c\u1EE7a b\u1EA1n, \u0111\u1EA3m b\u1EA3o ch\xFAng ho\u1EA1\
-  t \u0111\u1ED9ng nh\u01B0 mong \u0111\u1EE3i d\u01B0\u1EDBi c\xE1c \u0111i\u1EC1\
-  u ki\u1EC7n kh\xE1c nhau."
+summary: "D\xF9 Visual Basic for Applications (VBA) kh\xF4ng \u0111i k\xE8m v\u1EDB\
+  i m\u1ED9t khu\xF4n kh\u1ED5 ki\u1EC3m th\u1EED t\xEDch h\u1EE3p gi\u1ED1ng nh\u01B0\
+  \ nh\u1EEFng g\xEC c\xF3 s\u1EB5n trong c\xE1c ng\xF4n ng\u1EEF nh\u01B0 Python\
+  \ hay JavaScript, b\u1EA1n v\u1EABn c\xF3 th\u1EC3 th\u1EF1c hi\u1EC7n c\xE1c th\u1EE7\
+  \ t\u1EE5c ki\u1EC3m tra \u0111\u01A1n gi\u1EA3n \u0111\u1EC3 ki\u1EC3m tra t\xED\
+  nh to\xE0n v\u1EB9n c\u1EE7a m\xE3 c\u1EE7a b\u1EA1n."
 title: "Vi\u1EBFt ki\u1EC3m th\u1EED"
 weight: 36
 ---

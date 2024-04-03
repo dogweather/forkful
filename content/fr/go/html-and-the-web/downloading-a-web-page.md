@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:12.557861-07:00
-description: "T\xE9l\xE9charger une page web consiste \xE0 r\xE9cup\xE9rer le contenu\
-  \ HTML d'une page web via le protocole HTTP/HTTPS. Les programmeurs font souvent\
-  \ cela pour le\u2026"
+description: "Comment faire : En Go, la biblioth\xE8que standard fournit des outils\
+  \ puissants pour les requ\xEAtes web, notamment le paquet `net/http`. Pour t\xE9\
+  l\xE9charger une\u2026"
 lastmod: '2024-03-13T22:44:57.131999-06:00'
 model: gpt-4-0125-preview
-summary: "T\xE9l\xE9charger une page web consiste \xE0 r\xE9cup\xE9rer le contenu\
-  \ HTML d'une page web via le protocole HTTP/HTTPS."
+summary: "En Go, la biblioth\xE8que standard fournit des outils puissants pour les\
+  \ requ\xEAtes web, notamment le paquet `net/http`."
 title: "T\xE9l\xE9chargement d'une page web"
 weight: 42
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-02-03 19:02:28.432475-07:00
-description: "Fetching the current date is an essential task in almost any programming\
-  \ endeavor, from logging activities in an application to generating reports with\u2026"
+description: 'How to: Ruby''s standard library includes the `Date` and `Time` classes
+  for handling dates and time. Here''s how to get the current date.'
 lastmod: '2024-03-13T22:45:00.560630-06:00'
 model: gpt-4-0125-preview
-summary: Fetching the current date is an essential task in almost any programming
-  endeavor, from logging activities in an application to generating reports with date
-  stamps.
+summary: Ruby's standard library includes the `Date` and `Time` classes for handling
+  dates and time.
 title: Getting the current date
 weight: 29
 ---

@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:27.572730-07:00
-description: "Att ladda ner en webbsida i C inneb\xE4r att programmatiskt f\xE5 tillg\xE5\
-  ng till inneh\xE5llet p\xE5 en webbsida \xF6ver internet och spara det lokalt f\xF6\
-  r bearbetning\u2026"
+description: "Hur man g\xF6r: F\xF6r att ladda ner en webbsida i C \xE4r en popul\xE4\
+  r metod att anv\xE4nda libcurl-biblioteket, ett effektivt och portabelt klient-sida\
+  \ URL\u2026"
 lastmod: '2024-03-13T22:44:38.381202-06:00'
 model: gpt-4-0125-preview
-summary: "Att ladda ner en webbsida i C inneb\xE4r att programmatiskt f\xE5 tillg\xE5\
-  ng till inneh\xE5llet p\xE5 en webbsida \xF6ver internet och spara det lokalt f\xF6\
-  r bearbetning eller offlineanv\xE4ndning."
+summary: "F\xF6r att ladda ner en webbsida i C \xE4r en popul\xE4r metod att anv\xE4\
+  nda libcurl-biblioteket, ett effektivt och portabelt klient-sida URL \xF6verf\xF6\
+  ringsbibliotek."
 title: Ladda ner en webbsida
 weight: 42
 ---

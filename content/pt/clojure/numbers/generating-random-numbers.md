@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 20:32:41.713822-07:00
-description: "Gerar n\xFAmeros aleat\xF3rios na programa\xE7\xE3o \xE9 sobre criar\
-  \ valores que n\xE3o podem ser previstos logicamente antes do tempo. Programadores\
-  \ fazem isso por uma\u2026"
+description: "Como fazer: Em Clojure, a gera\xE7\xE3o de n\xFAmeros aleat\xF3rios\
+  \ \xE9 direta, e existem algumas fun\xE7\xF5es integradas que podem ser usadas imediatamente.\
+  \ Para gerar um\u2026"
 lastmod: '2024-03-13T22:44:46.192750-06:00'
 model: gpt-4-0125-preview
-summary: "Gerar n\xFAmeros aleat\xF3rios na programa\xE7\xE3o \xE9 sobre criar valores\
-  \ que n\xE3o podem ser previstos logicamente antes do tempo."
+summary: "Em Clojure, a gera\xE7\xE3o de n\xFAmeros aleat\xF3rios \xE9 direta, e existem\
+  \ algumas fun\xE7\xF5es integradas que podem ser usadas imediatamente."
 title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
 weight: 12
 ---

@@ -2,13 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:52.857588-07:00
-description: "Een datum uit een string parsen betekent het extraheren van de datumgegevens\
-  \ zoals dag, maand en jaar, en deze converteren naar een formaat dat een\u2026"
+description: 'Hoe: Laten we een string omzetten in een datum.'
 lastmod: '2024-03-13T22:44:51.081366-06:00'
 model: gpt-4-0125-preview
-summary: Een datum uit een string parsen betekent het extraheren van de datumgegevens
-  zoals dag, maand en jaar, en deze converteren naar een formaat dat een computer
-  kan begrijpen.
+summary: Laten we een string omzetten in een datum.
 title: Een datum uit een string parsen
 weight: 30
 ---

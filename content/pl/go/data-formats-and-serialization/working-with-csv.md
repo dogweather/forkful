@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:51.342769-07:00
-description: "Format warto\u015Bci rozdzielanych przecinkami (CSV) jest wszechobecny\
-  \ w wymianie danych ze wzgl\u0119du na swoj\u0105 prostot\u0119 i \u0142atwo\u015B\
-  \u0107 integracji z wi\u0119kszo\u015Bci\u0105\u2026"
+description: "Jak to zrobi\u0107: Praca z plikami CSV w Go jest prosta, dzi\u0119\
+  ki jego standardowej bibliotece, `encoding/csv`. Poni\u017Cej znajduje si\u0119\
+  \ wprowadzenie do czytania i\u2026"
 lastmod: '2024-03-13T22:44:34.877882-06:00'
 model: gpt-4-0125-preview
-summary: "Format warto\u015Bci rozdzielanych przecinkami (CSV) jest wszechobecny w\
-  \ wymianie danych ze wzgl\u0119du na swoj\u0105 prostot\u0119 i \u0142atwo\u015B\
-  \u0107 integracji z wi\u0119kszo\u015Bci\u0105 j\u0119zyk\xF3w programowania, w\
-  \ tym Go."
+summary: "Praca z plikami CSV w Go jest prosta, dzi\u0119ki jego standardowej bibliotece,\
+  \ `encoding/csv`."
 title: Praca z plikami CSV
 weight: 37
 ---

@@ -2,15 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:38.765589-07:00
-description: "Lavorare con file CSV (Comma-Separated Values, ovvero Valori Separati\
-  \ da Virgola) comporta l'analisi e la generazione di dati strutturati da file di\
-  \ testo\u2026"
+description: "Come fare: In Swift, non c'\xE8 un supporto nativo per l'analisi dei\
+  \ file CSV direttamente, ma \xE8 possibile gestire i dati CSV utilizzando i metodi\
+  \ di\u2026"
 lastmod: '2024-03-13T22:44:43.792297-06:00'
 model: gpt-4-0125-preview
-summary: "Lavorare con file CSV (Comma-Separated Values, ovvero Valori Separati da\
-  \ Virgola) comporta l'analisi e la generazione di dati strutturati da file di testo\
-  \ dove ogni riga rappresenta un record e ogni record \xE8 costituito da campi separati\
-  \ da virgole."
+summary: "In Swift, non c'\xE8 un supporto nativo per l'analisi dei file CSV direttamente,\
+  \ ma \xE8 possibile gestire i dati CSV utilizzando i metodi di `String` per dividere\
+  \ i contenuti, o sfruttando librerie di terze parti come SwiftCSV per un approccio\
+  \ pi\xF9 semplificato."
 title: Lavorare con i CSV
 weight: 37
 ---

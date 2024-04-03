@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:24:19.405818-07:00
-description: "Att arbeta med TOML inneb\xE4r att tolka och generera TOML-data (Tom's\
-  \ Obvious, Minimal Language) med Lua. Programmerare anv\xE4nder TOML f\xF6r\u2026"
+description: "Hur man g\xF6r: F\xF6rst, se till att din Lua-milj\xF6 har en TOML-tolkare.\
+  \ Vi anv\xE4nder `lua-toml` f\xF6r det h\xE4r exemplet."
 lastmod: '2024-03-13T22:44:38.062197-06:00'
 model: gpt-4-0125-preview
-summary: "Att arbeta med TOML inneb\xE4r att tolka och generera TOML-data (Tom's Obvious,\
-  \ Minimal Language) med Lua."
+summary: "F\xF6rst, se till att din Lua-milj\xF6 har en TOML-tolkare."
 title: Att arbeta med TOML
 weight: 39
 ---

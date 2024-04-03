@@ -2,12 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:19.755766-07:00
-description: "Schrijven naar standaardfout (stderr) rapporteert fouten en diagnostiek\
-  \ gescheiden van standaarduitvoer (stdout). Het is cruciaal voor het debuggen en\u2026"
+description: "Hoe te: Arduino ondersteunt van nature geen stderr, maar we kunnen dit\
+  \ nabootsen door naar Serial te schrijven. Stel je een LED-knipperprogramma voor\
+  \ met\u2026"
 lastmod: '2024-03-13T22:44:51.088262-06:00'
 model: gpt-4-0125-preview
-summary: Schrijven naar standaardfout (stderr) rapporteert fouten en diagnostiek gescheiden
-  van standaarduitvoer (stdout).
+summary: Arduino ondersteunt van nature geen stderr, maar we kunnen dit nabootsen
+  door naar Serial te schrijven.
 title: Schrijven naar standaardfout
 weight: 25
 ---

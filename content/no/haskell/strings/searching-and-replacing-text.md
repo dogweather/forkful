@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:57:52.464949-07:00
-description: "Teksts\xF8king og -erstatning lar oss finne og bytte ut spesifikt innhold\
-  \ i strenger. Programmerere bruker dette for \xE5 manipulere data, rette feil eller\u2026"
+description: "Hvordan: I Haskell kan tekst s\xF8kes og erstattes ved hjelp av funksjoner\
+  \ fra standardbiblioteket, for eksempel `Data.Text` som h\xE5ndterer strengdata\u2026"
 lastmod: '2024-03-13T22:44:40.825803-06:00'
 model: gpt-4-1106-preview
-summary: "Teksts\xF8king og -erstatning lar oss finne og bytte ut spesifikt innhold\
-  \ i strenger."
+summary: "I Haskell kan tekst s\xF8kes og erstattes ved hjelp av funksjoner fra standardbiblioteket,\
+  \ for eksempel `Data.Text` som h\xE5ndterer strengdata effektivt."
 title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---

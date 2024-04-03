@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:47.943399-07:00
-description: "\xC5 kapitalisere en streng involverer \xE5 konvertere den f\xF8rste\
-  \ bokstaven i strengen til stor bokstav, mens man s\xF8rger for at resten av bokstavene\
-  \ er i sm\xE5\u2026"
+description: "Hvordan: Elixir tilbyr en enkel m\xE5te \xE5 kapitalisere strenger p\xE5\
+  \ ved hjelp av sine innebygde funksjoner uten behov for tredjepartsbibliotek. Her\
+  \ er et\u2026"
 lastmod: '2024-03-13T22:44:40.427042-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 kapitalisere en streng involverer \xE5 konvertere den f\xF8rste bokstaven\
-  \ i strengen til stor bokstav, mens man s\xF8rger for at resten av bokstavene er\
-  \ i sm\xE5 bokstaver."
+summary: "Elixir tilbyr en enkel m\xE5te \xE5 kapitalisere strenger p\xE5 ved hjelp\
+  \ av sine innebygde funksjoner uten behov for tredjepartsbibliotek."
 title: Sette stor bokstav i en streng
 weight: 2
 ---

@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:33.980320-07:00
-description: "Het converteren van data naar tekstreeksen is een fundamentele taak\
-  \ die programmeurs in staat stelt om datumgegevens te manipuleren en weer te geven\
-  \ in\u2026"
+description: "Hoe: Google Apps Script, gebaseerd op JavaScript, biedt meerdere methoden\
+  \ om de conversie van data naar tekstreeksen te realiseren. Hieronder zijn enkele\u2026"
 lastmod: '2024-03-13T22:44:50.344054-06:00'
 model: gpt-4-0125-preview
-summary: Het converteren van data naar tekstreeksen is een fundamentele taak die programmeurs
-  in staat stelt om datumgegevens te manipuleren en weer te geven in een voor mensen
-  leesbaar formaat.
+summary: Google Apps Script, gebaseerd op JavaScript, biedt meerdere methoden om de
+  conversie van data naar tekstreeksen te realiseren.
 title: Een datum omzetten naar een string
 weight: 28
 ---

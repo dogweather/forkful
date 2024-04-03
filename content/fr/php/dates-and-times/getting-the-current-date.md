@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:12.960837-07:00
-description: "Obtenir la date actuelle en PHP est une t\xE2che fondamentale qui vous\
-  \ permet de r\xE9cup\xE9rer et de manipuler la date et l'heure du syst\xE8me. Cela\
-  \ est crucial\u2026"
+description: 'Comment faire : #.'
 lastmod: '2024-03-13T22:44:57.890174-06:00'
 model: gpt-4-0125-preview
-summary: "Obtenir la date actuelle en PHP est une t\xE2che fondamentale qui vous permet\
-  \ de r\xE9cup\xE9rer et de manipuler la date et l'heure du syst\xE8me."
+summary: '#.'
 title: Obtenir la date actuelle
 weight: 29
 ---

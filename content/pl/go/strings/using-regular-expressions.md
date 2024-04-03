@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:35.218322-07:00
-description: "Wyra\u017Cenia regularne (regex) w programowaniu s\u0105 u\u017Cywane\
-  \ do wyszukiwania, dopasowywania i manipulowania ci\u0105gami znak\xF3w na podstawie\
-  \ okre\u015Blonych wzorc\xF3w.\u2026"
+description: "Jak to zrobi\u0107: W Go pakiet `regexp` zapewnia funkcjonalno\u015B\
+  \u0107 wyra\u017Ce\u0144 regularnych. Oto krok po kroku, jak go u\u017Cywa\u0107\
+  : 1. **Kompilowanie wyra\u017Cenia\u2026"
 lastmod: '2024-03-13T22:44:34.838075-06:00'
 model: gpt-4-0125-preview
-summary: "Wyra\u017Cenia regularne (regex) w programowaniu s\u0105 u\u017Cywane do\
-  \ wyszukiwania, dopasowywania i manipulowania ci\u0105gami znak\xF3w na podstawie\
-  \ okre\u015Blonych wzorc\xF3w."
+summary: "W Go pakiet `regexp` zapewnia funkcjonalno\u015B\u0107 wyra\u017Ce\u0144\
+  \ regularnych."
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---

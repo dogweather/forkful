@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:01.272690-07:00
-description: "JSON (JavaScript Object Notation) \xE4r ett l\xE4tt format f\xF6r att\
-  \ lagra och transportera data, vilket g\xF6r det till ett utm\xE4rkt medium f\xF6\
-  r datatransport mellan\u2026"
+description: "Hur man g\xF6r: I C++ finns inget inbyggt st\xF6d f\xF6r JSON, men tredjepartsbibliotek\
+  \ som nlohmann/json g\xF6r det enkelt. S\xE5 h\xE4r anv\xE4nder du det f\xF6r grundl\xE4\
+  ggande\u2026"
 lastmod: '2024-03-13T22:44:38.230780-06:00'
 model: gpt-4-0125-preview
-summary: "JSON (JavaScript Object Notation) \xE4r ett l\xE4tt format f\xF6r att lagra\
-  \ och transportera data, vilket g\xF6r det till ett utm\xE4rkt medium f\xF6r datatransport\
-  \ mellan servrar och webbapplikationer."
+summary: "I C++ finns inget inbyggt st\xF6d f\xF6r JSON, men tredjepartsbibliotek\
+  \ som nlohmann/json g\xF6r det enkelt."
 title: Arbeta med JSON
 weight: 38
 ---

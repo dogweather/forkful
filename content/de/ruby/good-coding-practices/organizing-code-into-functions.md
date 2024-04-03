@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 01:11:54.403673-07:00
-description: "Code in Funktionen zu organisieren teilt Ihr Skript in wiederverwendbare\
-  \ Bl\xF6cke auf. Es geht darum, Ihren Code sauber, handhabbar und weniger\u2026"
+description: "Wie geht das: Stellen Sie sich vor, Sie schreiben ein schnelles Skript,\
+  \ um Benutzer zu begr\xFC\xDFen."
 lastmod: '2024-03-13T22:44:54.405917-06:00'
 model: gpt-4-1106-preview
-summary: "Code in Funktionen zu organisieren teilt Ihr Skript in wiederverwendbare\
-  \ Bl\xF6cke auf."
+summary: "Stellen Sie sich vor, Sie schreiben ein schnelles Skript, um Benutzer zu\
+  \ begr\xFC\xDFen."
 title: Code in Funktionen organisieren
 weight: 18
 ---

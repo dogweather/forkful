@@ -2,14 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:23.837602-07:00
-description: "Wyra\u017Cenia regularne (regex) w Ruby to wzorce u\u017Cywane do dopasowywania\
-  \ kombinacji znak\xF3w w ci\u0105gach tekstowych, co umo\u017Cliwia programistom\
-  \ efektywne\u2026"
+description: "Jak to zrobi\u0107: #."
 lastmod: '2024-03-13T22:44:35.920814-06:00'
 model: gpt-4-0125-preview
-summary: "Wyra\u017Cenia regularne (regex) w Ruby to wzorce u\u017Cywane do dopasowywania\
-  \ kombinacji znak\xF3w w ci\u0105gach tekstowych, co umo\u017Cliwia programistom\
-  \ efektywne wyszukiwanie, dopasowywanie i manipulowanie tekstem."
+summary: '#.'
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---

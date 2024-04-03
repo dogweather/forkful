@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:16:05.712166-07:00
-description: "REPL significa Read-Eval-Print Loop (La\xE7o de Ler-Avaliar-Imprimir),\
-  \ um ambiente interativo onde voc\xEA pode testar c\xF3digo rapidamente. Programadores\
-  \ o\u2026"
+description: "Como Fazer: Para entrar no REPL do Lua, basta digitar `lua` no seu terminal.\
+  \ Aqui est\xE1 um exemplo de sess\xE3o."
 lastmod: '2024-03-13T22:44:46.710537-06:00'
 model: gpt-4-0125-preview
-summary: "REPL significa Read-Eval-Print Loop (La\xE7o de Ler-Avaliar-Imprimir), um\
-  \ ambiente interativo onde voc\xEA pode testar c\xF3digo rapidamente."
+summary: Para entrar no REPL do Lua, basta digitar `lua` no seu terminal.
 title: Usando um shell interativo (REPL)
 weight: 34
 ---

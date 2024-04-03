@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:01.727992-07:00
-description: "Converter uma data em uma string em C envolve traduzir uma estrutura\
-  \ de data ou carimbo de tempo para um formato leg\xEDvel por humanos. Programadores\u2026"
+description: "Como Fazer: A fun\xE7\xE3o `strftime` da biblioteca `<time.h>` \xE9\
+  \ comumente usada para esse prop\xF3sito. Ela permite que voc\xEA formate a data\
+  \ e a hora de v\xE1rias\u2026"
 lastmod: '2024-03-13T22:44:47.062503-06:00'
 model: gpt-4-0125-preview
-summary: "Converter uma data em uma string em C envolve traduzir uma estrutura de\
-  \ data ou carimbo de tempo para um formato leg\xEDvel por humanos."
+summary: "A fun\xE7\xE3o `strftime` da biblioteca `<time.h>` \xE9 comumente usada\
+  \ para esse prop\xF3sito."
 title: Convertendo uma data em uma string
 weight: 28
 ---

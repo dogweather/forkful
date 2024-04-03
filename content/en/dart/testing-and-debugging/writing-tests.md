@@ -1,12 +1,10 @@
 ---
 date: 2024-03-08 21:33:44.626135-07:00
-description: "Writing tests in Dart involves creating test cases to automatically\
-  \ verify that different parts of your program work as expected. Programmers do this\
-  \ to\u2026"
+description: 'How to: In Dart, the `test` package is commonly used for writing tests.
+  First, add the `test` package to your `pubspec.yaml`.'
 lastmod: '2024-03-13T22:44:59.823981-06:00'
 model: gpt-4-0125-preview
-summary: Writing tests in Dart involves creating test cases to automatically verify
-  that different parts of your program work as expected.
+summary: In Dart, the `test` package is commonly used for writing tests.
 title: Writing tests
 weight: 36
 ---

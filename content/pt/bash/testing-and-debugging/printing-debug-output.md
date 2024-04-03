@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:51:53.599532-07:00
-description: "Imprimir sa\xEDdas de debug \xE9 basicamente escrever informa\xE7\xF5\
-  es sobre o que est\xE1 acontecendo dentro do c\xF3digo enquanto ele \xE9 executado.\
-  \ Programadores fazem\u2026"
+description: "Como Fazer: Para imprimir algo na tela, use `echo` ou `printf`. O `echo`\
+  \ \xE9 simples e direto, enquanto `printf` \xE9 mais flex\xEDvel para formatar a\
+  \ sa\xEDda."
 lastmod: '2024-03-13T22:44:46.755257-06:00'
 model: gpt-4-1106-preview
-summary: "Imprimir sa\xEDdas de debug \xE9 basicamente escrever informa\xE7\xF5es\
-  \ sobre o que est\xE1 acontecendo dentro do c\xF3digo enquanto ele \xE9 executado."
+summary: Para imprimir algo na tela, use `echo` ou `printf`.
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---

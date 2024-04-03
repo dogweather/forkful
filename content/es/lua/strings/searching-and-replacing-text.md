@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:58:16.555034-07:00
-description: "Buscar y reemplazar texto es una t\xE9cnica para identificar cadenas\
-  \ de caracteres y sustituirlas por otras. Los programadores la usan para modificar\
-  \ c\xF3digo,\u2026"
+description: "C\xF3mo Hacerlo: Vamos a realizar una b\xFAsqueda y reemplazo con un\
+  \ ejemplo en Lua. Imagina que queremos cambiar todas las apariciones de \"hola\"\
+  \ por \"adi\xF3s\"."
 lastmod: '2024-03-13T22:44:59.187647-06:00'
 model: gpt-4-1106-preview
-summary: "Buscar y reemplazar texto es una t\xE9cnica para identificar cadenas de\
-  \ caracteres y sustituirlas por otras."
+summary: "Vamos a realizar una b\xFAsqueda y reemplazo con un ejemplo en Lua."
 title: Buscando y reemplazando texto
 weight: 10
 ---

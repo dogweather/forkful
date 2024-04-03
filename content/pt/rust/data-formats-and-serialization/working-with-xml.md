@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:35:59.971439-07:00
-description: "XML, abrevia\xE7\xE3o para eXtensible Markup Language, \xE9 como o primo\
-  \ verborr\xE1gico do JSON. Voc\xEA ter\xE1 que lidar com XML ao trabalhar com sistemas\
-  \ legados,\u2026"
+description: "Como fazer: Em Rust, voc\xEA pode manipular XML com crates como `xml-rs`.\
+  \ Instale adicionando `xml-rs = \"0.8\"` ao seu `Cargo.toml`. Aqui est\xE1 como\
+  \ analisar\u2026"
 lastmod: '2024-03-13T22:44:46.392233-06:00'
 model: gpt-4-0125-preview
-summary: "XML, abrevia\xE7\xE3o para eXtensible Markup Language, \xE9 como o primo\
-  \ verborr\xE1gico do JSON."
+summary: "Em Rust, voc\xEA pode manipular XML com crates como `xml-rs`."
 title: Trabalhando com XML
 weight: 40
 ---

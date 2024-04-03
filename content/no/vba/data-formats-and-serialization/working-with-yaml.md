@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:07:27.050005-07:00
-description: "YAML, som st\xE5r for \"YAML Ain't Markup Language\", er et menneskelesbart\
-  \ data serialiseringsspr\xE5k som ofte brukes for konfigurasjonsfiler. Programmerere\u2026"
+description: "Hvordan: \xC5 jobbe med YAML i VBA krever forst\xE5else for hvordan\
+  \ man analyserer og konverterer YAML til et format som VBA kan manipulere enkelt,\
+  \ vanligvis\u2026"
 lastmod: '2024-03-13T22:44:40.643963-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, som st\xE5r for \"YAML Ain't Markup Language\", er et menneskelesbart\
-  \ data serialiseringsspr\xE5k som ofte brukes for konfigurasjonsfiler."
+summary: "\xC5 jobbe med YAML i VBA krever forst\xE5else for hvordan man analyserer\
+  \ og konverterer YAML til et format som VBA kan manipulere enkelt, vanligvis ordb\xF8\
+  ker eller samlinger."
 title: Arbeider med YAML
 weight: 41
 ---

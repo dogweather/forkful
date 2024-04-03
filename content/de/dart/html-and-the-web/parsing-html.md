@@ -2,12 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:55.445469-07:00
-description: "Das Parsen von HTML in der Programmierung beinhaltet das Extrahieren\
-  \ von Daten aus HTML-Dokumenten. Programmierer tun dies, um mit Webinhalten zu\u2026"
+description: "Wie geht das: Dart bietet in seinen Kernbibliotheken keine integrierte\
+  \ Unterst\xFCtzung f\xFCr das Parsen von HTML. Sie k\xF6nnen jedoch ein Drittanbieter-Paket\u2026"
 lastmod: '2024-03-13T22:44:53.578144-06:00'
 model: gpt-4-0125-preview
-summary: Das Parsen von HTML in der Programmierung beinhaltet das Extrahieren von
-  Daten aus HTML-Dokumenten.
+summary: "Dart bietet in seinen Kernbibliotheken keine integrierte Unterst\xFCtzung\
+  \ f\xFCr das Parsen von HTML."
 title: HTML Parsen
 weight: 43
 ---

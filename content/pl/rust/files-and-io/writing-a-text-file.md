@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:19.767781-07:00
-description: "Pisanie plik\xF3w tekstowych w Rust polega na tworzeniu, zapisywaniu\
-  \ i potencjalnie dodawaniu danych do pliku w systemie plik\xF3w. Programi\u015B\
-  ci wykonuj\u0105 t\u0119\u2026"
+description: "Jak to zrobi\u0107: Standardowa biblioteka Rusta oferuje solidne narz\u0119\
+  dzia do manipulacji plikami, g\u0142\xF3wnie zawarte w modu\u0142ach `std::fs` i\
+  \ `std::io`. Oto\u2026"
 lastmod: '2024-03-13T22:44:35.204525-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie plik\xF3w tekstowych w Rust polega na tworzeniu, zapisywaniu i potencjalnie\
-  \ dodawaniu danych do pliku w systemie plik\xF3w."
+summary: "Standardowa biblioteka Rusta oferuje solidne narz\u0119dzia do manipulacji\
+  \ plikami, g\u0142\xF3wnie zawarte w modu\u0142ach `std::fs` i `std::io`."
 title: Pisanie pliku tekstowego
 weight: 24
 ---

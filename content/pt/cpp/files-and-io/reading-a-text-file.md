@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:54:01.905559-07:00
-description: "Ler um arquivo de texto em C++ \xE9 o processo de acessar e extrair\
-  \ informa\xE7\xF5es de um arquivo armazenado no seu computador. Programadores fazem\
-  \ isso para\u2026"
+description: "How to: Para ler um arquivo, voc\xEA vai precisar usar a biblioteca\
+  \ `<fstream>`. Aqui est\xE1 um exemplo b\xE1sico."
 lastmod: '2024-03-13T22:44:46.896532-06:00'
 model: gpt-4-1106-preview
-summary: "Ler um arquivo de texto em C++ \xE9 o processo de acessar e extrair informa\xE7\
-  \xF5es de um arquivo armazenado no seu computador."
+summary: "Para ler um arquivo, voc\xEA vai precisar usar a biblioteca `<fstream>`."
 title: Lendo um arquivo de texto
 weight: 22
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:13.323209-07:00
-description: "Praca z JSON (JavaScript Object Notation) w Rust polega na parsowaniu\
-  \ danych JSON do struktur danych Rust oraz serializowaniu struktur danych Rust z\u2026"
+description: "Jak to zrobi\u0107: Aby pracowa\u0107 z JSON w Rust, intensywnie u\u017C\
+  ywa si\u0119 skrzynki `serde` wraz z `serde_json` do serializacji i deserializacji.\
+  \ Najpierw upewnij\u2026"
 lastmod: '2024-03-13T22:44:35.207777-06:00'
 model: gpt-4-0125-preview
-summary: Praca z JSON (JavaScript Object Notation) w Rust polega na parsowaniu danych
-  JSON do struktur danych Rust oraz serializowaniu struktur danych Rust z powrotem
-  do JSON.
+summary: "Aby pracowa\u0107 z JSON w Rust, intensywnie u\u017Cywa si\u0119 skrzynki\
+  \ `serde` wraz z `serde_json` do serializacji i deserializacji."
 title: Praca z JSON
 weight: 38
 ---

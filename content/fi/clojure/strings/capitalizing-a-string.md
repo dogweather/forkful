@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:02.466354-07:00
-description: "Merkkijonon alkukirjaimen muuttaminen isoksi muuttaa merkkijonon niin,\
-  \ ett\xE4 sen ensimm\xE4inen merkki on isolla ja loput merkkijonosta pysyv\xE4t\u2026"
+description: "Kuinka: Clojure, ollessaan JVM-kieli, mahdollistaa Java String -metodien\
+  \ suoran k\xE4yt\xF6n. T\xE4ss\xE4 on perusesimerkki kuinka muuttaa merkkijonon\
+  \ alkukirjaimen\u2026"
 lastmod: '2024-03-13T22:44:56.168640-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonon alkukirjaimen muuttaminen isoksi muuttaa merkkijonon niin, ett\xE4\
-  \ sen ensimm\xE4inen merkki on isolla ja loput merkkijonosta pysyv\xE4t muuttumattomina."
+summary: "Clojure, ollessaan JVM-kieli, mahdollistaa Java String -metodien suoran\
+  \ k\xE4yt\xF6n."
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---

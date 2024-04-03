@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:36:20.953632-07:00
-description: "Konwersja daty na ci\u0105g znak\xF3w to spos\xF3b na zmian\u0119 formatu\
-  \ `DateTime` na tekst. Programi\u015Bci robi\u0105 to, by \u0142atwo wy\u015Bwietla\u0107\
-  \ i przechowywa\u0107 informacje o dacie\u2026"
+description: "How to: (Jak to zrobi\u0107:) Wykorzystaj `ToString` z formatowaniem\
+  \ lub bez. Przyk\u0142ady poni\u017Cej."
 lastmod: '2024-03-13T22:44:35.419833-06:00'
 model: gpt-4-1106-preview
-summary: "Konwersja daty na ci\u0105g znak\xF3w to spos\xF3b na zmian\u0119 formatu\
-  \ `DateTime` na tekst."
+summary: Wykorzystaj `ToString` z formatowaniem lub bez.
 title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---

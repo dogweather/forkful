@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:54:35.492674-07:00
-description: "Das Einlesen einer Textdatei bedeutet, Daten vom Datentr\xE4ger in den\
-  \ Arbeitsspeicher zu laden, um sie mit einem Programm zu verarbeiten. Programmierer\u2026"
+description: 'So geht''s: Um eine Textdatei in Haskell zu lesen, nutzen wir die Standardbibliothek.
+  Hier ein kurzes Beispiel.'
 lastmod: '2024-03-13T22:44:53.948240-06:00'
 model: gpt-4-1106-preview
-summary: "Das Einlesen einer Textdatei bedeutet, Daten vom Datentr\xE4ger in den Arbeitsspeicher\
-  \ zu laden, um sie mit einem Programm zu verarbeiten."
+summary: Um eine Textdatei in Haskell zu lesen, nutzen wir die Standardbibliothek.
 title: Textdatei einlesen
 weight: 22
 ---

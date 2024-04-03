@@ -2,15 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:58.968444-07:00
-description: "Vi\u1EC7c n\u1ED1i chu\u1ED7i trong Visual Basic for Applications (VBA)\
-  \ li\xEAn quan \u0111\u1EBFn vi\u1EC7c g\u1ED9p hai ho\u1EB7c nhi\u1EC1u chu\u1ED7\
-  i th\xE0nh m\u1ED9t th\u1EF1c th\u1EC3 duy nh\u1EA5t. \u0110\xE2y l\xE0 m\u1ED9\
-  t nhi\u1EC7m v\u1EE5 c\u01A1\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: VBA cung c\u1EA5p m\u1ED9t ph\u01B0\u01A1ng\
+  \ ph\xE1p \u0111\u01A1n gi\u1EA3n cho vi\u1EC7c n\u1ED1i chu\u1ED7i s\u1EED d\u1EE5\
+  ng to\xE1n t\u1EED `&` ho\u1EB7c h\xE0m `Concatenate`. H\xE3y kh\xE1m ph\xE1 c\u1EA3\
+  \ hai ph\u01B0\u01A1ng ph\xE1p v\u1EDBi c\xE1c\u2026"
 lastmod: '2024-03-13T22:44:36.421862-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c n\u1ED1i chu\u1ED7i trong Visual Basic for Applications (VBA)\
-  \ li\xEAn quan \u0111\u1EBFn vi\u1EC7c g\u1ED9p hai ho\u1EB7c nhi\u1EC1u chu\u1ED7\
-  i th\xE0nh m\u1ED9t th\u1EF1c th\u1EC3 duy nh\u1EA5t."
+summary: "VBA cung c\u1EA5p m\u1ED9t ph\u01B0\u01A1ng ph\xE1p \u0111\u01A1n gi\u1EA3\
+  n cho vi\u1EC7c n\u1ED1i chu\u1ED7i s\u1EED d\u1EE5ng to\xE1n t\u1EED `&` ho\u1EB7\
+  c h\xE0m `Concatenate`."
 title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 weight: 3
 ---

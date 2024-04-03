@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:03:27.415894-07:00
-description: "Working with CSV (Comma-Separated Values) files involves parsing and\
-  \ generating text data organized into rows and columns, using commas to separate\u2026"
+description: "How to: In Lua, working with CSV files can be approached using basic\
+  \ file IO operations provided by the language, without the need for external libraries\u2026"
 lastmod: '2024-03-13T22:45:00.225473-06:00'
 model: gpt-4-0125-preview
-summary: Working with CSV (Comma-Separated Values) files involves parsing and generating
-  text data organized into rows and columns, using commas to separate individual values.
+summary: In Lua, working with CSV files can be approached using basic file IO operations
+  provided by the language, without the need for external libraries for simple tasks.
 title: Working with CSV
 weight: 37
 ---

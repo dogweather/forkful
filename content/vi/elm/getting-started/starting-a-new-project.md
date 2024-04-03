@@ -2,17 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:31.270733-07:00
-description: "Vi\u1EC7c b\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi b\u1EB1\
-  ng Elm l\xE0 vi\u1EC7c thi\u1EBFt l\u1EADp m\u1ED9t t\u1EA5m b\u1EA3ng m\u1EDBi\
-  \ \u0111\u1EC3 x\xE2y d\u1EF1ng c\xE1c \u1EE9ng d\u1EE5ng web \u0111\xE1ng tin c\u1EAD\
-  y. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 t\u1EAD\
-  n\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Elm, b\u1EAFt \u0111\u1EA7u m\u1ECDi th\u1EE9\
+  \ v\u1EDBi l\u1EC7nh `elm init`. \u0110i\u1EC1u h\u01B0\u1EDBng \u0111\u1EBFn th\u01B0\
+  \ m\u1EE5c d\u1EF1 \xE1n c\u1EE7a b\u1EA1n v\xE0 kh\u1EDFi \u0111\u1ED9ng terminal."
 lastmod: '2024-03-13T22:44:36.545142-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c b\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi b\u1EB1\
-  ng Elm l\xE0 vi\u1EC7c thi\u1EBFt l\u1EADp m\u1ED9t t\u1EA5m b\u1EA3ng m\u1EDBi\
-  \ \u0111\u1EC3 x\xE2y d\u1EF1ng c\xE1c \u1EE9ng d\u1EE5ng web \u0111\xE1ng tin c\u1EAD\
-  y."
+summary: "Trong Elm, b\u1EAFt \u0111\u1EA7u m\u1ECDi th\u1EE9 v\u1EDBi l\u1EC7nh `elm\
+  \ init`."
 title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---

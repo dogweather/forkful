@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:40:33.186684-07:00
-description: "Crear un archivo temporal significa hacer un archivo que se espera que\
-  \ sea utilizado durante una operaci\xF3n y luego descartado. Los programadores los\
-  \ usan\u2026"
+description: "C\xF3mo hacerlo: En Elixir, puedes usar la biblioteca `:file` para manejar\
+  \ archivos temporales. Aqu\xED te muestro un ejemplo."
 lastmod: '2024-03-13T22:44:58.722504-06:00'
 model: gpt-4-1106-preview
-summary: "Crear un archivo temporal significa hacer un archivo que se espera que sea\
-  \ utilizado durante una operaci\xF3n y luego descartado."
+summary: En Elixir, puedes usar la biblioteca `:file` para manejar archivos temporales.
 title: Creando un archivo temporal
 weight: 21
 ---

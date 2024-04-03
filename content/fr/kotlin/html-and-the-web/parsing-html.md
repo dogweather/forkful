@@ -2,13 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:19.244408-07:00
-description: "Parser du HTML signifie diss\xE9quer le balisage d'une page web en quelque\
-  \ chose qu'un programme peut comprendre et manipuler. Les programmeurs analysent\
-  \ le\u2026"
+description: "Comment faire : Kotlin rend le parsing HTML simple avec des biblioth\xE8\
+  ques comme Jsoup. Voici comment proc\xE9der ."
 lastmod: '2024-03-13T22:44:57.736432-06:00'
 model: gpt-4-0125-preview
-summary: "Parser du HTML signifie diss\xE9quer le balisage d'une page web en quelque\
-  \ chose qu'un programme peut comprendre et manipuler."
+summary: "Kotlin rend le parsing HTML simple avec des biblioth\xE8ques comme Jsoup."
 title: Analyse Syntaxique du HTML
 weight: 43
 ---

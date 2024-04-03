@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:22.048273-07:00
-description: "HTML:n j\xE4sent\xE4minen on tietojen tai datan poimimista HTML-sis\xE4\
-  ll\xF6st\xE4, yleinen teht\xE4v\xE4 ty\xF6skennelt\xE4ess\xE4 web-datan kanssa.\
-  \ Ohjelmoijat tekev\xE4t t\xE4m\xE4n\u2026"
+description: "Kuinka: Fish shell ei p\xE4\xE4asiassa ole suunniteltu suoraan HTML:n\
+  \ j\xE4sent\xE4miseen. Kuitenkin, se loistaa yhdist\xE4m\xE4ll\xE4 yhteen Unix-ty\xF6\
+  kaluja kuten `curl`,\u2026"
 lastmod: '2024-03-13T22:44:56.992274-06:00'
 model: gpt-4-0125-preview
-summary: "HTML:n j\xE4sent\xE4minen on tietojen tai datan poimimista HTML-sis\xE4\
-  ll\xF6st\xE4, yleinen teht\xE4v\xE4 ty\xF6skennelt\xE4ess\xE4 web-datan kanssa."
+summary: "Fish shell ei p\xE4\xE4asiassa ole suunniteltu suoraan HTML:n j\xE4sent\xE4\
+  miseen."
 title: "HTML:n j\xE4sennys"
 weight: 43
 ---

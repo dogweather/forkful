@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:57.870387-07:00
-description: "Analyser du HTML signifie d\xE9composer un bloc de code HTML pour en\
-  \ saisir la structure et le contenu. Les programmeurs le font pour extraire des\
-  \ donn\xE9es,\u2026"
+description: "Comment faire : Pour analyser du HTML en Ruby, installez le gem 'Nokogiri'\
+  \ avec `gem install nokogiri`. Nokogiri est comme un couteau suisse pour\u2026"
 lastmod: '2024-03-13T22:44:58.417566-06:00'
 model: gpt-4-0125-preview
-summary: "Analyser du HTML signifie d\xE9composer un bloc de code HTML pour en saisir\
-  \ la structure et le contenu."
+summary: Pour analyser du HTML en Ruby, installez le gem 'Nokogiri' avec `gem install
+  nokogiri`.
 title: Analyse Syntaxique du HTML
 weight: 43
 ---

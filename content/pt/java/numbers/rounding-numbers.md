@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:45:34.935448-07:00
-description: "Arredondar n\xFAmeros significa ajust\xE1-los a um determinado grau\
-  \ de precis\xE3o. Programadores fazem isso para simplificar n\xFAmeros para legibilidade,\
-  \ cumprir\u2026"
+description: "Como fazer: Java oferece v\xE1rias maneiras de arredondar n\xFAmeros.\
+  \ Aqui est\xE1 uma demonstra\xE7\xE3o r\xE1pida com `Math.round()`, `BigDecimal`\
+  \ e `DecimalFormat`."
 lastmod: '2024-03-13T22:44:46.451047-06:00'
 model: gpt-4-0125-preview
-summary: "Arredondar n\xFAmeros significa ajust\xE1-los a um determinado grau de precis\xE3\
-  o."
+summary: "Java oferece v\xE1rias maneiras de arredondar n\xFAmeros."
 title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---

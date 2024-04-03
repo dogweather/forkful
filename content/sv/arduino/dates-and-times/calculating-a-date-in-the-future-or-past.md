@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:28:40.163650-07:00
-description: "Ber\xE4kning av ett framtida eller f\xF6rflutet datum inneb\xE4r att\
-  \ man r\xE4knar ut ett datum utifr\xE5n ett givet startdatum och en tidsspann. Programmerare\
-  \ g\xF6r detta\u2026"
+description: "Hur man g\xF6r: Med Arduino kan du inte direkt hantera datum utan hj\xE4\
+  lp fr\xE5n externa bibliotek. RTC (real-time clock) moduler och bibliotek som `RTClib`\
+  \ \xE4r\u2026"
 lastmod: '2024-03-13T22:44:38.180888-06:00'
 model: gpt-4-1106-preview
-summary: "Ber\xE4kning av ett framtida eller f\xF6rflutet datum inneb\xE4r att man\
-  \ r\xE4knar ut ett datum utifr\xE5n ett givet startdatum och en tidsspann."
+summary: "Med Arduino kan du inte direkt hantera datum utan hj\xE4lp fr\xE5n externa\
+  \ bibliotek."
 title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutet"
 weight: 26
 ---

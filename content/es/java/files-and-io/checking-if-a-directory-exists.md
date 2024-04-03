@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:55.126755-07:00
-description: "Comprobar si un directorio existe en Java es una tarea fundamental que\
-  \ implica verificar la presencia de un directorio en el sistema de archivos antes\
-  \ de\u2026"
+description: "C\xF3mo hacerlo: En Java, hay varias formas de comprobar si un directorio\
+  \ existe, principalmente utilizando las clases `java.nio.file.Files` y\u2026"
 lastmod: '2024-03-13T22:44:58.951639-06:00'
 model: gpt-4-0125-preview
-summary: "Comprobar si un directorio existe en Java es una tarea fundamental que implica\
-  \ verificar la presencia de un directorio en el sistema de archivos antes de leerlo,\
-  \ escribir en \xE9l o realizar cualquier operaci\xF3n que requiera su existencia."
+summary: En Java, hay varias formas de comprobar si un directorio existe, principalmente
+  utilizando las clases `java.nio.file.Files` y `java.io.File`.
 title: Comprobando si un directorio existe
 weight: 20
 ---

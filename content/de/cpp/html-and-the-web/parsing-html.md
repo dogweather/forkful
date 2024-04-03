@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:24.329034-07:00
-description: "HTML zu parsen bedeutet, HTML-Inhalte so aufzubrechen, dass ein Programm\
-  \ sie verstehen und manipulieren kann. Programmierer tun dies, um Daten zu\u2026"
+description: "Wie geht das: C++ verf\xFCgt nicht \xFCber integrierte F\xE4higkeiten\
+  \ zum Parsen von HTML. Sie werden oft eine Bibliothek wie Gumbo-parser von Google\
+  \ oder\u2026"
 lastmod: '2024-03-13T22:44:54.182620-06:00'
 model: gpt-4-0125-preview
-summary: HTML zu parsen bedeutet, HTML-Inhalte so aufzubrechen, dass ein Programm
-  sie verstehen und manipulieren kann.
+summary: "C++ verf\xFCgt nicht \xFCber integrierte F\xE4higkeiten zum Parsen von HTML."
 title: HTML parsen
 weight: 43
 ---

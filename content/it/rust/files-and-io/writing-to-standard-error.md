@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:24.480567-07:00
-description: "Scrivere su standard error (stderr) in Rust significa indirizzare messaggi\
-  \ di errore e diagnostica alla console separatamente dall'output standard\u2026"
+description: "Come fare: Rust offre un modo diretto per scrivere su stderr utilizzando\
+  \ la macro `eprintln!`, simile a come `println!` viene usata per stdout. Ecco un\u2026"
 lastmod: '2024-03-13T22:44:43.234682-06:00'
 model: gpt-4-0125-preview
-summary: Scrivere su standard error (stderr) in Rust significa indirizzare messaggi
-  di errore e diagnostica alla console separatamente dall'output standard (stdout).
+summary: Rust offre un modo diretto per scrivere su stderr utilizzando la macro `eprintln!`,
+  simile a come `println!` viene usata per stdout.
 title: Scrivere sull'errore standard
 weight: 25
 ---

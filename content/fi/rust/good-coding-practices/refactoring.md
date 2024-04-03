@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 03:36:56.872175-07:00
-description: "Refaktorointi on olemassa olevan tietokonekoodin uudelleenrakentamisen\
-  \ prosessi\u2014muuttamalla faktorointia\u2014muuttamatta sen ulkoista k\xE4ytt\xE4\
-  ytymist\xE4.\u2026"
+description: "Kuinka: Menn\xE4\xE4n refaktoroimaan yksinkertainen Rust-koodinp\xE4\
+  tk\xE4, jotta se olisi idiomaattisempi ja yll\xE4pidett\xE4v\xE4mpi. Aloiteamme\
+  \ funktiolla, joka laskee\u2026"
 lastmod: '2024-03-13T22:44:56.365080-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktorointi on olemassa olevan tietokonekoodin uudelleenrakentamisen prosessi\u2014\
-  muuttamalla faktorointia\u2014muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4."
+summary: "Menn\xE4\xE4n refaktoroimaan yksinkertainen Rust-koodinp\xE4tk\xE4, jotta\
+  \ se olisi idiomaattisempi ja yll\xE4pidett\xE4v\xE4mpi."
 title: Koodin refaktorointi
 weight: 19
 ---

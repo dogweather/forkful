@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:38.053732-07:00
-description: "Koodin j\xE4rjest\xE4minen funktioihin tarkoittaa Google Apps Script\
-  \ -koodisi rakenteen j\xE4rjest\xE4mist\xE4 erottamalla loogiset osat toisistaan\
-  \ selv\xE4sti erottuviksi\u2026"
+description: "Kuinka: Google Apps Scriptiss\xE4, joka perustuu JavaScriptiin, funktiot\
+  \ m\xE4\xE4ritell\xE4\xE4n k\xE4ytt\xE4m\xE4ll\xE4 `function`-avainsanaa, jonka\
+  \ j\xE4lkeen tulee uniikki funktion\u2026"
 lastmod: '2024-03-13T22:44:56.103526-06:00'
 model: gpt-4-0125-preview
-summary: "Koodin j\xE4rjest\xE4minen funktioihin tarkoittaa Google Apps Script -koodisi\
-  \ rakenteen j\xE4rjest\xE4mist\xE4 erottamalla loogiset osat toisistaan selv\xE4\
-  sti erottuviksi lohkoiksi, joista jokainen suorittaa tietyn teht\xE4v\xE4n."
+summary: "Google Apps Scriptiss\xE4, joka perustuu JavaScriptiin, funktiot m\xE4\xE4\
+  ritell\xE4\xE4n k\xE4ytt\xE4m\xE4ll\xE4 `function`-avainsanaa, jonka j\xE4lkeen\
+  \ tulee uniikki funktion nimi, sulkumerkit `()` jotka voivat sis\xE4lt\xE4\xE4 parametreja,\
+  \ ja aaltosulkeet `{}` jotka kapseloivat funktion koodilohkon."
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---

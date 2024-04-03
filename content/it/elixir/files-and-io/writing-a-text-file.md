@@ -2,13 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:37.760458-07:00
-description: "Scrivere su un file di testo in Elixir \xE8 una competenza essenziale\
-  \ per gli sviluppatori, che permette la persistenza dei dati, il logging o l'esportazione\u2026"
+description: "Come fare: Elixir rende la gestione dei file semplice con moduli incorporati.\
+  \ Il modo principale per scrivere su un file \xE8 utilizzando le funzioni\u2026"
 lastmod: '2024-03-13T22:44:43.102508-06:00'
 model: gpt-4-0125-preview
-summary: "Scrivere su un file di testo in Elixir \xE8 una competenza essenziale per\
-  \ gli sviluppatori, che permette la persistenza dei dati, il logging o l'esportazione\
-  \ di contenuti in formato leggibile dall'uomo."
+summary: Elixir rende la gestione dei file semplice con moduli incorporati.
 title: Scrivere un file di testo
 weight: 24
 ---

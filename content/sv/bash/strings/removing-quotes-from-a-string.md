@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:37:48.360979-07:00
-description: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att man avl\xE4\
-  gsnar de citationstecken som omsluter str\xE4ngen. Programmerare vill ofta g\xF6\
-  ra detta f\xF6r att\u2026"
+description: "Hur man g\xF6r: Bash har flera s\xE4tt att ta bort citattecken fr\xE5\
+  n str\xE4ngar. H\xE4r \xE4r n\xE5gra snabba exempel."
 lastmod: '2024-03-13T22:44:38.068769-06:00'
 model: gpt-4-0125-preview
-summary: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att man avl\xE4\
-  gsnar de citationstecken som omsluter str\xE4ngen."
+summary: "Bash har flera s\xE4tt att ta bort citattecken fr\xE5n str\xE4ngar."
 title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 weight: 9
 ---

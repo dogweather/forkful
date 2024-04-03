@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:37:45.872161-07:00
-description: "Endre tekststrenger til sm\xE5 bokstaver, fordi det sikrer konsistent\
-  \ datah\xE5ndtering. Enten for \xE5 sammenligne tekster eller for estetikkens skyld,\
-  \ kommer du\u2026"
+description: "How to: Bruk `tr`, `awk`, eller shell parameter expansion til \xE5 gj\xF8\
+  re om store bokstaver til sm\xE5. Her er noen eksempler."
 lastmod: '2024-03-13T22:44:40.959553-06:00'
 model: gpt-4-1106-preview
-summary: "Endre tekststrenger til sm\xE5 bokstaver, fordi det sikrer konsistent datah\xE5\
-  ndtering."
+summary: "Bruk `tr`, `awk`, eller shell parameter expansion til \xE5 gj\xF8re om store\
+  \ bokstaver til sm\xE5."
 title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---

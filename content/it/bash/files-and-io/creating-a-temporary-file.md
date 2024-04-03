@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:39:27.124025-07:00
-description: "Creare un file temporaneo in Bash significa avere un luogo dove scrivere\
-  \ dati senza preoccuparsi che rimangano in giro dopo. I programmatori lo fanno per\u2026"
+description: 'How to: Creare un file temporaneo.'
 lastmod: '2024-03-13T22:44:43.618931-06:00'
 model: gpt-4-1106-preview
-summary: Creare un file temporaneo in Bash significa avere un luogo dove scrivere
-  dati senza preoccuparsi che rimangano in giro dopo.
+summary: Creare un file temporaneo.
 title: Creazione di un file temporaneo
 weight: 21
 ---

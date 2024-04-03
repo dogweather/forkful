@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:45.475627-07:00
-description: "Le espressioni regolari (regex) in PHP sono modelli usati per corrispondere\
-  \ combinazioni di caratteri nelle stringhe, consentendo operazioni sofisticate\u2026"
+description: "Come fare: PHP supporta le espressioni regolari attraverso la libreria\
+  \ PCRE (Perl Compatible Regular Expressions), offrendo un ricco set di funzioni.\
+  \ Ecco\u2026"
 lastmod: '2024-03-13T22:44:43.506990-06:00'
 model: gpt-4-0125-preview
-summary: Le espressioni regolari (regex) in PHP sono modelli usati per corrispondere
-  combinazioni di caratteri nelle stringhe, consentendo operazioni sofisticate di
-  ricerca-e-sostituzione e validazione di dati.
+summary: PHP supporta le espressioni regolari attraverso la libreria PCRE (Perl Compatible
+  Regular Expressions), offrendo un ricco set di funzioni.
 title: Utilizzo delle espressioni regolari
 weight: 11
 ---

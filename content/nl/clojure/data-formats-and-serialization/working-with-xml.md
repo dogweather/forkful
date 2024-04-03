@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:10.439480-07:00
-description: "XML is een opmaaktaal voor het coderen van documenten op een wijze die\
-  \ zowel door mensen als machines gelezen kan worden. Het is cruciaal in webservices,\u2026"
+description: 'Hoe: Clojure biedt de `clojure.data.xml` bibliotheek voor XML-parsing
+  en -generatie. Laten we eerst wat XML parsen.'
 lastmod: '2024-03-13T22:44:50.444259-06:00'
 model: gpt-4-0125-preview
-summary: XML is een opmaaktaal voor het coderen van documenten op een wijze die zowel
-  door mensen als machines gelezen kan worden.
+summary: Clojure biedt de `clojure.data.xml` bibliotheek voor XML-parsing en -generatie.
 title: Werken met XML
 weight: 40
 ---

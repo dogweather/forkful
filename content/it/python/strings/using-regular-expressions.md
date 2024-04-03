@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:51.552559-07:00
-description: "Le espressioni regolari (regex) sono modelli utilizzati per individuare\
-  \ combinazioni di caratteri nelle stringhe. I programmatori le utilizzano per\u2026"
+description: "Come fare: Utilizzare le regex in Python comporta l'uso del modulo `re`,\
+  \ che fornisce un insieme di funzioni per elaborare testo utilizzando espressioni\u2026"
 lastmod: '2024-03-13T22:44:42.991373-06:00'
 model: gpt-4-0125-preview
-summary: Le espressioni regolari (regex) sono modelli utilizzati per individuare combinazioni
-  di caratteri nelle stringhe.
+summary: Utilizzare le regex in Python comporta l'uso del modulo `re`, che fornisce
+  un insieme di funzioni per elaborare testo utilizzando espressioni regolari.
 title: Utilizzo delle espressioni regolari
 weight: 11
 ---

@@ -1,11 +1,9 @@
 ---
 date: 2024-01-30 18:57:32.659467-07:00
-description: "Associative arrays are like super-charged arrays that let you use strings\
-  \ as indexes instead of just integers. Programmers use them for more complex data\u2026"
+description: 'How to: First off, declare an associative array in Bash.'
 lastmod: '2024-03-13T22:45:00.236595-06:00'
 model: gpt-4-0125-preview
-summary: Associative arrays are like super-charged arrays that let you use strings
-  as indexes instead of just integers.
+summary: First off, declare an associative array in Bash.
 title: Using associative arrays
 weight: 15
 ---

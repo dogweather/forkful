@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 03:42:30.128781-07:00
-description: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att man tar\
-  \ bort de omgivande enkla (`'`) eller dubbla (`\"`) citattecknen som definierar\
-  \ str\xE4nglitteraler i\u2026"
+description: "Hur man g\xF6r: H\xE4r \xE4r din rak-p\xE5-sak-guide f\xF6r att klippa\
+  \ loss de irriterande citattecknen fr\xE5n dina str\xE4ngar i TypeScript."
 lastmod: '2024-03-13T22:44:37.644301-06:00'
 model: gpt-4-0125-preview
-summary: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att man tar bort\
-  \ de omgivande enkla (`'`) eller dubbla (`\"`) citattecknen som definierar str\xE4\
-  nglitteraler i kod."
+summary: "H\xE4r \xE4r din rak-p\xE5-sak-guide f\xF6r att klippa loss de irriterande\
+  \ citattecknen fr\xE5n dina str\xE4ngar i TypeScript."
 title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 weight: 9
 ---

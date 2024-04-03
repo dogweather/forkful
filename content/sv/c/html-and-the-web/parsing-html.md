@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:49.273955-07:00
-description: "Att tolka HTML i C inneb\xE4r att analysera HTML-dokument f\xF6r att\
-  \ effektivt extrahera data, struktur eller specifika delar, ofta som ett f\xF6rsteg\
-  \ till\u2026"
+description: "Hur man g\xF6r: Att tolka HTML kan verka avskr\xE4ckande p\xE5 grund\
+  \ av HTML:s komplexitet och dess frekventa avvikelser fr\xE5n rena, v\xE4ldigt strukturerade\
+  \ former.\u2026"
 lastmod: '2024-03-13T22:44:38.379969-06:00'
 model: gpt-4-0125-preview
-summary: "Att tolka HTML i C inneb\xE4r att analysera HTML-dokument f\xF6r att effektivt\
-  \ extrahera data, struktur eller specifika delar, ofta som ett f\xF6rsteg till datamining\
-  \ eller webbskrapning."
+summary: "Att tolka HTML kan verka avskr\xE4ckande p\xE5 grund av HTML:s komplexitet\
+  \ och dess frekventa avvikelser fr\xE5n rena, v\xE4ldigt strukturerade former."
 title: Tolka HTML
 weight: 43
 ---

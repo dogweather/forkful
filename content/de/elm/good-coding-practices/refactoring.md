@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 01:17:58.158354-07:00
-description: "Refactoring ist im Grunde genommen wie ein Fr\xFChjahrsputz f\xFCr Ihre\
-  \ Codebasis \u2013 es geht darum, bestehenden Code umzustrukturieren, ohne sein\
-  \ externes\u2026"
+description: "Wie geht das: Angenommen, Sie haben eine Elm-Funktion, die zu viel macht,\
+  \ wie zum Beispiel UI-Logik mit Statusaktualisierungen zu vermischen. Sie ist ein\u2026"
 lastmod: '2024-03-13T22:44:53.813720-06:00'
 model: gpt-4-0125-preview
-summary: "Refactoring ist im Grunde genommen wie ein Fr\xFChjahrsputz f\xFCr Ihre\
-  \ Codebasis \u2013 es geht darum, bestehenden Code umzustrukturieren, ohne sein\
-  \ externes Verhalten zu \xE4ndern."
+summary: Angenommen, Sie haben eine Elm-Funktion, die zu viel macht, wie zum Beispiel
+  UI-Logik mit Statusaktualisierungen zu vermischen.
 title: Refactoring
 weight: 19
 ---

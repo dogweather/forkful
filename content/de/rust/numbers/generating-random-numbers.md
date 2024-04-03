@@ -1,14 +1,11 @@
 ---
 date: 2024-01-27 20:35:04.953061-07:00
-description: "Die Generierung von Zufallszahlen in Rust erfolgt durch die Verwendung\
-  \ von Bibliotheken, um unvorhergesehene numerische Werte zu produzieren, was f\xFC\
-  r\u2026"
+description: "Wie geht das: Rust st\xFCtzt sich auf externe Crates f\xFCr die Generierung\
+  \ von Zufallszahlen, wobei `rand` am h\xE4ufigsten verwendet wird. Um mit der Generierung\u2026"
 lastmod: '2024-03-13T22:44:53.668614-06:00'
 model: gpt-4-0125-preview
-summary: "Die Generierung von Zufallszahlen in Rust erfolgt durch die Verwendung von\
-  \ Bibliotheken, um unvorhergesehene numerische Werte zu produzieren, was f\xFCr\
-  \ Aufgaben von der Kryptografie und Simulationen bis hin zu Spielen und randomisierten\
-  \ Algorithmen unerl\xE4sslich ist."
+summary: "Rust st\xFCtzt sich auf externe Crates f\xFCr die Generierung von Zufallszahlen,\
+  \ wobei `rand` am h\xE4ufigsten verwendet wird."
 title: Generierung von Zufallszahlen
 weight: 12
 ---

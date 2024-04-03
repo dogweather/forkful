@@ -2,13 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:43.162345-07:00
-description: "CSV-filer (Comma-Separated Values, verdier skilt med komma) er et vanlig\
-  \ datautvekslingsformat som representerer tabelldata i ren tekst ved \xE5 bruke\u2026"
+description: "Hvordan: Arbeid med CSV-filer i C# kan gj\xF8res gjennom `System.IO`\
+  \ navneomr\xE5det for grunnleggende operasjoner, og for mer komplekse manipulasjoner\
+  \ eller\u2026"
 lastmod: '2024-03-13T22:44:40.820617-06:00'
 model: gpt-4-0125-preview
-summary: "CSV-filer (Comma-Separated Values, verdier skilt med komma) er et vanlig\
-  \ datautvekslingsformat som representerer tabelldata i ren tekst ved \xE5 bruke\
-  \ kommaer for \xE5 skille individuelle verdier."
+summary: "Arbeid med CSV-filer i C# kan gj\xF8res gjennom `System.IO` navneomr\xE5\
+  det for grunnleggende operasjoner, og for mer komplekse manipulasjoner eller for\
+  \ \xE5 h\xE5ndtere st\xF8rre filer s\xF8ml\xF8st, kan man vurdere tredjepartsbiblioteker\
+  \ som `CsvHelper`."
 title: Arbeide med CSV
 weight: 37
 ---

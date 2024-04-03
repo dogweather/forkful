@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:44.754851-07:00
-description: "Att arbeta med JSON i Fish Shell inneb\xE4r att tolka och generera JSON-data,\
-  \ en vanlig uppgift f\xF6r att konfigurera applikationer, API-interaktion och\u2026"
+description: "Hur man g\xF6r: Fish Shell har i sig inte inbyggda verktyg f\xF6r att\
+  \ tolka och generera JSON. Dock integreras den s\xF6ml\xF6st med tredjepartsverktyg\
+  \ som `jq` f\xF6r\u2026"
 lastmod: '2024-03-13T22:44:38.359577-06:00'
 model: gpt-4-0125-preview
-summary: "Att arbeta med JSON i Fish Shell inneb\xE4r att tolka och generera JSON-data,\
-  \ en vanlig uppgift f\xF6r att konfigurera applikationer, API-interaktion och effektivisering\
-  \ av arbetsfl\xF6den i kommandotolken."
+summary: "Fish Shell har i sig inte inbyggda verktyg f\xF6r att tolka och generera\
+  \ JSON."
 title: Arbeta med JSON
 weight: 38
 ---

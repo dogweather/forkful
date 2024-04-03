@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:32:19.187930-07:00
-description: "Comparing two dates means figuring out which one is earlier, later,\
-  \ or if they're the same. Programmers do it to track time-based events, like scheduling\u2026"
+description: 'How to: In Arduino, you can compare dates using the `TimeLib.h` library.
+  Install it first. Then, check out this snippet.'
 lastmod: '2024-03-13T22:45:00.332253-06:00'
 model: gpt-4-1106-preview
-summary: Comparing two dates means figuring out which one is earlier, later, or if
-  they're the same.
+summary: In Arduino, you can compare dates using the `TimeLib.h` library.
 title: Comparing two dates
 weight: 27
 ---

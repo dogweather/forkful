@@ -2,16 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:05.653539-07:00
-description: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p ra kh\u1ECFi m\u1ED9t chu\u1ED7\
-  i c\xF3 ngh\u0129a l\xE0 lo\u1EA1i b\u1ECF nh\u1EEFng k\xFD t\u1EF1 d\u1EA5u ngo\u1EB7\
-  c k\xE9p ho\u1EB7c d\u1EA5u ngo\u1EB7c \u0111\u01A1n g\xE2y phi\u1EC1n ph\u1EE9\
-  c bao quanh v\u0103n b\u1EA3n c\u1EE7a b\u1EA1n. L\u1EADp\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong Clojure, chu\u1ED7i l\xE0 b\u1EA5\
+  t bi\u1EBFn, v\xEC v\u1EADy khi ch\xFAng ta n\xF3i v\u1EC1 \"lo\u1EA1i b\u1ECF d\u1EA5\
+  u ngo\u1EB7c\", ch\xFAng ta th\u1EF1c s\u1EF1 \u0111ang n\xF3i v\u1EC1 vi\u1EC7\
+  c t\u1EA1o ra m\u1ED9t chu\u1ED7i m\u1EDBi\u2026"
 lastmod: '2024-03-13T22:44:36.137017-06:00'
 model: gpt-4-0125-preview
-summary: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p ra kh\u1ECFi m\u1ED9t chu\u1ED7\
-  i c\xF3 ngh\u0129a l\xE0 lo\u1EA1i b\u1ECF nh\u1EEFng k\xFD t\u1EF1 d\u1EA5u ngo\u1EB7\
-  c k\xE9p ho\u1EB7c d\u1EA5u ngo\u1EB7c \u0111\u01A1n g\xE2y phi\u1EC1n ph\u1EE9\
-  c bao quanh v\u0103n b\u1EA3n c\u1EE7a b\u1EA1n."
+summary: "Trong Clojure, chu\u1ED7i l\xE0 b\u1EA5t bi\u1EBFn, v\xEC v\u1EADy khi ch\xFA\
+  ng ta n\xF3i v\u1EC1 \"lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c\", ch\xFAng ta th\u1EF1\
+  c s\u1EF1 \u0111ang n\xF3i v\u1EC1 vi\u1EC7c t\u1EA1o ra m\u1ED9t chu\u1ED7i m\u1EDB\
+  i kh\xF4ng c\xF3 d\u1EA5u ngo\u1EB7c."
 title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i"
 weight: 9
 ---

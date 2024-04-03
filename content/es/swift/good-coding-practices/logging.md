@@ -1,13 +1,13 @@
 ---
 date: 2024-01-26 01:08:31.659203-07:00
-description: "El registro (logging) es el proceso de grabar los comportamientos, errores\
-  \ y otra informaci\xF3n importante de una aplicaci\xF3n en un medio persistente,\
-  \ como\u2026"
+description: "C\xF3mo hacerlo: En Swift, puedes escribir registros en la consola con\
+  \ instrucciones `print` o con la API `os.log`, m\xE1s flexible, que se conecta con\
+  \ el\u2026"
 lastmod: '2024-03-13T22:44:59.422875-06:00'
 model: gpt-4-1106-preview
-summary: "El registro (logging) es el proceso de grabar los comportamientos, errores\
-  \ y otra informaci\xF3n importante de una aplicaci\xF3n en un medio persistente,\
-  \ como un archivo o base de datos."
+summary: "En Swift, puedes escribir registros en la consola con instrucciones `print`\
+  \ o con la API `os.log`, m\xE1s flexible, que se conecta con el Sistema de Registro\
+  \ Unificado en las plataformas de Apple."
 title: Registro de Actividades
 weight: 17
 ---

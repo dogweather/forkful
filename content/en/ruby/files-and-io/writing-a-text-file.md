@@ -1,12 +1,10 @@
 ---
 date: 2024-02-03 19:03:14.348240-07:00
-description: "Writing to a text file in Ruby is a fundamental operation that allows\
-  \ you to store output and data persistently, enabling data to be accessed or modified\u2026"
+description: "How to: Ruby makes file operations straightforward. To write to a file,\
+  \ you can use Ruby's built-in `File` class. The following example demonstrates how\u2026"
 lastmod: '2024-03-13T22:45:00.568026-06:00'
 model: gpt-4-0125-preview
-summary: Writing to a text file in Ruby is a fundamental operation that allows you
-  to store output and data persistently, enabling data to be accessed or modified
-  later.
+summary: Ruby makes file operations straightforward.
 title: Writing a text file
 weight: 24
 ---

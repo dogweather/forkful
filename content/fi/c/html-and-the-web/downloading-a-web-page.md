@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:00.601234-07:00
-description: "Web-sivun lataaminen C-kielell\xE4 sis\xE4lt\xE4\xE4 ohjelmallisesti\
-  \ internetsivun sis\xE4ll\xF6n k\xE4sittelemisen ja paikallisesti tallentamisen\
-  \ k\xE4sittely\xE4 tai offline-\u2026"
+description: "Miten: Web-sivun lataamiseksi C-kielell\xE4 yksi suosittu l\xE4hestymistapa\
+  \ on k\xE4ytt\xE4\xE4 libcurl-kirjastoa, joka on tehokas ja siirrett\xE4v\xE4 asiakaspuolen\
+  \ URL-\u2026"
 lastmod: '2024-03-13T22:44:57.038680-06:00'
 model: gpt-4-0125-preview
-summary: "Web-sivun lataaminen C-kielell\xE4 sis\xE4lt\xE4\xE4 ohjelmallisesti internetsivun\
-  \ sis\xE4ll\xF6n k\xE4sittelemisen ja paikallisesti tallentamisen k\xE4sittely\xE4\
-  \ tai offline-k\xE4ytt\xF6\xE4 varten."
+summary: "Web-sivun lataamiseksi C-kielell\xE4 yksi suosittu l\xE4hestymistapa on\
+  \ k\xE4ytt\xE4\xE4 libcurl-kirjastoa, joka on tehokas ja siirrett\xE4v\xE4 asiakaspuolen\
+  \ URL-siirtojen kirjasto."
 title: Web-sivun lataaminen
 weight: 42
 ---

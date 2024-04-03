@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:40.600164-07:00
-description: "Travailler avec des fichiers CSV (Comma Separated Values ou Valeurs\
-  \ S\xE9par\xE9es par des Virgules) implique l'analyse, la manipulation et la g\xE9\
-  n\xE9ration de\u2026"
+description: "Comment : Fish Shell, en lui-m\xEAme, n'a pas de fonctions int\xE9gr\xE9\
+  es sp\xE9cifiquement con\xE7ues pour la manipulation de CSV. Cependant, vous pouvez\
+  \ tirer parti\u2026"
 lastmod: '2024-03-13T22:44:58.348932-06:00'
 model: gpt-4-0125-preview
-summary: "Travailler avec des fichiers CSV (Comma Separated Values ou Valeurs S\xE9\
-  par\xE9es par des Virgules) implique l'analyse, la manipulation et la g\xE9n\xE9\
-  ration de donn\xE9es dans un format tabulaire largement utilis\xE9 pour l'\xE9change\
-  \ de donn\xE9es entre applications."
+summary: "Fish Shell, en lui-m\xEAme, n'a pas de fonctions int\xE9gr\xE9es sp\xE9\
+  cifiquement con\xE7ues pour la manipulation de CSV."
 title: Travailler avec CSV
 weight: 37
 ---

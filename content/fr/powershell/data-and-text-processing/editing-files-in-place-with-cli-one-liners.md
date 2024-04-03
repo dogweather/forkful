@@ -1,14 +1,9 @@
 ---
 date: 2024-01-27 16:20:35.926975-07:00
-description: "L'\xE9dition de fichiers directement avec des lignes de commande (CLI)\
-  \ en une ligne avec PowerShell consiste \xE0 effectuer des modifications directes\
-  \ sur les\u2026"
+description: 'Comment faire : #.'
 lastmod: '2024-03-13T22:44:58.042168-06:00'
 model: gpt-4-0125-preview
-summary: "L'\xE9dition de fichiers directement avec des lignes de commande (CLI) en\
-  \ une ligne avec PowerShell consiste \xE0 effectuer des modifications directes sur\
-  \ les fichiers depuis la ligne de commande, sans avoir besoin de les ouvrir dans\
-  \ un \xE9diteur."
+summary: '#.'
 title: "Modification de fichiers sur place avec des lignes de commande en une seule\
   \ \xE9tape"
 weight: 32

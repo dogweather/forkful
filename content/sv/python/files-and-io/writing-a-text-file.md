@@ -2,14 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:04.693224-07:00
-description: "Att skriva till en textfil i Python \xE4r en grundl\xE4ggande uppgift\
-  \ som inneb\xE4r att skapa eller \xF6ppna en fil f\xF6r att sedan l\xE4gga till\
-  \ eller skriva \xF6ver text.\u2026"
+description: "Hur man g\xF6r: #."
 lastmod: '2024-03-13T22:44:37.501401-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva till en textfil i Python \xE4r en grundl\xE4ggande uppgift som\
-  \ inneb\xE4r att skapa eller \xF6ppna en fil f\xF6r att sedan l\xE4gga till eller\
-  \ skriva \xF6ver text."
+summary: '#.'
 title: Att skriva en textfil
 weight: 24
 ---

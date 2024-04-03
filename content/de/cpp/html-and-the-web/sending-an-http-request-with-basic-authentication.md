@@ -1,13 +1,9 @@
 ---
 date: 2024-01-20 18:01:01.526459-07:00
-description: "Das Senden einer HTTP-Anfrage mit Basis-Authentifizierung bedeutet,\
-  \ dass der Client seine Anmeldeinformationen (Benutzername und Passwort) kodiert\
-  \ im\u2026"
+description: 'Vorgehensweise: .'
 lastmod: '2024-03-13T22:44:54.184446-06:00'
 model: gpt-4-1106-preview
-summary: Das Senden einer HTTP-Anfrage mit Basis-Authentifizierung bedeutet, dass
-  der Client seine Anmeldeinformationen (Benutzername und Passwort) kodiert im HTTP-Header
-  mitschickt.
+summary: .
 title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---

@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:56.967506-07:00
-description: "Un shell interattivo, o Ciclo Leggi-Valuta-Stampa (REPL), permette agli\
-  \ utenti di inserire comandi, eseguirli e vedere i risultati in tempo reale. I\u2026"
+description: "Come fare: Visual Basic for Applications (VBA) di per s\xE9 non supporta\
+  \ nativamente un shell interattivo o un'esperienza REPL come si vede in linguaggi\
+  \ come\u2026"
 lastmod: '2024-03-13T22:44:43.264435-06:00'
 model: gpt-4-0125-preview
-summary: Un shell interattivo, o Ciclo Leggi-Valuta-Stampa (REPL), permette agli utenti
-  di inserire comandi, eseguirli e vedere i risultati in tempo reale.
+summary: "Visual Basic for Applications (VBA) di per s\xE9 non supporta nativamente\
+  \ un shell interattivo o un'esperienza REPL come si vede in linguaggi come Python\
+  \ o JavaScript."
 title: Utilizzare un shell interattivo (REPL)
 weight: 34
 ---

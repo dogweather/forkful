@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:53:30.417519-07:00
-description: "L'impression du d\xE9bogage, c'est afficher des infos pour comprendre\
-  \ ce qui se passe dans le code. On le fait parce que \xE7a aide \xE0 rep\xE9rer\
-  \ les bugs\u2026"
+description: 'How to: Imaginons que vous vouliez suivre la valeur de `x` dans une
+  boucle. Voici comment vous pourriez faire .'
 lastmod: '2024-03-13T22:44:58.422551-06:00'
 model: gpt-4-1106-preview
-summary: "L'impression du d\xE9bogage, c'est afficher des infos pour comprendre ce\
-  \ qui se passe dans le code."
+summary: Imaginons que vous vouliez suivre la valeur de `x` dans une boucle.
 title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---

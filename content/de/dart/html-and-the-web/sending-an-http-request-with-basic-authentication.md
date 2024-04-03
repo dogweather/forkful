@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:34.464910-07:00
-description: "Das Senden einer HTTP-Anfrage mit Basisauthentifizierung beinhaltet\
-  \ das Anh\xE4ngen eines Benutzernamens und Passworts an eine Anfrage, um die Identit\xE4\
-  t des\u2026"
+description: "Wie: In Dart k\xF6nnen Sie das `http`-Paket verwenden, um HTTP-Anfragen\
+  \ mit Basisauthentifizierung zu senden. F\xFCgen Sie zun\xE4chst das `http`-Paket\
+  \ zu Ihrer\u2026"
 lastmod: '2024-03-13T22:44:53.580243-06:00'
 model: gpt-4-0125-preview
-summary: "Das Senden einer HTTP-Anfrage mit Basisauthentifizierung beinhaltet das\
-  \ Anh\xE4ngen eines Benutzernamens und Passworts an eine Anfrage, um die Identit\xE4\
-  t des Benutzers zu \xFCberpr\xFCfen."
+summary: "In Dart k\xF6nnen Sie das `http`-Paket verwenden, um HTTP-Anfragen mit Basisauthentifizierung\
+  \ zu senden."
 title: Eine HTTP-Anfrage mit Basisauthentifizierung senden
 weight: 45
 ---

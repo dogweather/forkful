@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:47.465212-07:00
-description: "Praca z JSON (JavaScript Object Notation) w Haskellu polega na parsowaniu\
-  \ danych JSON do typ\xF3w Haskell oraz konwertowaniu typ\xF3w Haskell z powrotem\
-  \ na\u2026"
+description: "Jak: Haskell nie ma wbudowanego wsparcia dla JSON, tak jak JavaScript,\
+  \ ale z pomoc\u0105 bibliotek stron trzecich, takich jak **Aeson**, obs\u0142uga\
+  \ JSON staje si\u0119\u2026"
 lastmod: '2024-03-13T22:44:35.475047-06:00'
 model: gpt-4-0125-preview
-summary: "Praca z JSON (JavaScript Object Notation) w Haskellu polega na parsowaniu\
-  \ danych JSON do typ\xF3w Haskell oraz konwertowaniu typ\xF3w Haskell z powrotem\
-  \ na JSON."
+summary: "Haskell nie ma wbudowanego wsparcia dla JSON, tak jak JavaScript, ale z\
+  \ pomoc\u0105 bibliotek stron trzecich, takich jak **Aeson**, obs\u0142uga JSON\
+  \ staje si\u0119 prosta."
 title: Praca z JSON
 weight: 38
 ---

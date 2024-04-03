@@ -1,8 +1,8 @@
 ---
 date: 2024-01-26 03:50:28.100090-07:00
-description: "L\xE5t oss ta en promenad med GHCi, Haskell's interaktiva milj\xF6 som\
-  \ kan fungera som en grundl\xE4ggande fels\xF6kare. Du startar den med din Haskell-kod\
-  \ och b\xF6rjar\u2026"
+description: "Hur g\xF6r man: L\xE5t oss ta en promenad med GHCi, Haskell's interaktiva\
+  \ milj\xF6 som kan fungera som en grundl\xE4ggande fels\xF6kare. Du startar den\
+  \ med din Haskell-\u2026"
 lastmod: '2024-03-13T22:44:37.959491-06:00'
 model: gpt-4-0125-preview
 summary: "L\xE5t oss ta en promenad med GHCi, Haskell's interaktiva milj\xF6 som kan\

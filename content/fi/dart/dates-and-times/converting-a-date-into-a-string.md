@@ -2,15 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:53:58.234697-07:00
-description: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi Dart-kieless\xE4\
-  \ on yleinen teht\xE4v\xE4, kun tarvitsee n\xE4ytt\xE4\xE4 p\xE4iv\xE4m\xE4\xE4\
-  r\xE4- ja aikatietoja ihmisluettavassa muodossa tai kun\u2026"
+description: "Kuinka: Dart tarjoaa `DateTime`-luokan p\xE4iv\xE4m\xE4\xE4rien ja aikojen\
+  \ k\xE4sittelyyn sek\xE4 `intl`-paketin muotoiluun. Varmista ensin, ett\xE4 sinulla\
+  \ on `intl`-paketti\u2026"
 lastmod: '2024-03-13T22:44:56.283456-06:00'
 model: gpt-4-0125-preview
-summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi Dart-kieless\xE4 on\
-  \ yleinen teht\xE4v\xE4, kun tarvitsee n\xE4ytt\xE4\xE4 p\xE4iv\xE4m\xE4\xE4r\xE4\
-  - ja aikatietoja ihmisluettavassa muodossa tai kun aikoo sarjoittaa tietoja tallennusta\
-  \ tai siirtoa varten."
+summary: "Dart tarjoaa `DateTime`-luokan p\xE4iv\xE4m\xE4\xE4rien ja aikojen k\xE4\
+  sittelyyn sek\xE4 `intl`-paketin muotoiluun."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuttaminen merkkijonoksi"
 weight: 28
 ---

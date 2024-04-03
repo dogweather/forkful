@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:00.585671-07:00
-description: "Vi\u1EC7c tr\xEDch xu\u1EA5t c\xE1c chu\u1ED7i con bao g\u1ED3m vi\u1EC7\
-  c l\u1EA5y ra c\xE1c ph\u1EA7n c\u1EE5 th\u1EC3 c\u1EE7a m\u1ED9t chu\u1ED7i d\u1EF1\
-  a tr\xEAn v\u1ECB tr\xED c\u1EE7a ch\xFAng. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u01B0\
-  \u1EDDng xuy\xEAn th\u1EF1c hi\u1EC7n thao\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Go, ki\u1EC3u `string` l\xE0 m\u1ED9t\
+  \ m\u1EA3ng byte ch\u1EC9 \u0111\u1ECDc. \u0110\u1EC3 tr\xEDch xu\u1EA5t c\xE1c\
+  \ chu\u1ED7i con, ng\u01B0\u1EDDi ta ch\u1EE7 y\u1EBFu s\u1EED d\u1EE5ng c\xFA ph\xE1\
+  p `slice`, c\xF9ng v\u1EDBi h\xE0m `len()`\u2026"
 lastmod: '2024-03-13T22:44:35.966421-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c tr\xEDch xu\u1EA5t c\xE1c chu\u1ED7i con bao g\u1ED3m vi\u1EC7\
-  c l\u1EA5y ra c\xE1c ph\u1EA7n c\u1EE5 th\u1EC3 c\u1EE7a m\u1ED9t chu\u1ED7i d\u1EF1\
-  a tr\xEAn v\u1ECB tr\xED c\u1EE7a ch\xFAng."
+summary: "Trong Go, ki\u1EC3u `string` l\xE0 m\u1ED9t m\u1EA3ng byte ch\u1EC9 \u0111\
+  \u1ECDc."
 title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 weight: 6
 ---

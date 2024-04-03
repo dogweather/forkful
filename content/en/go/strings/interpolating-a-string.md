@@ -1,11 +1,12 @@
 ---
 date: 2024-02-03 17:50:05.456347-07:00
-description: "String interpolation is a method to construct strings that incorporate\
-  \ variables, enabling dynamic string creation. Programmers do this to customize\u2026"
+description: "How to: In Go, string interpolation is commonly achieved using the `fmt`\
+  \ package, particularly with the `Sprintf` function, which lets you inject\u2026"
 lastmod: '2024-03-13T22:44:59.618702-06:00'
 model: gpt-4-0125-preview
-summary: String interpolation is a method to construct strings that incorporate variables,
-  enabling dynamic string creation.
+summary: In Go, string interpolation is commonly achieved using the `fmt` package,
+  particularly with the `Sprintf` function, which lets you inject variables into a
+  string by specifying formatting verbs.
 title: Interpolating a string
 weight: 8
 ---

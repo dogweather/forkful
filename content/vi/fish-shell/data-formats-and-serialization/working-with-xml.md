@@ -2,16 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:25.993575-07:00
-description: "L\xE0m vi\u1EC7c v\u1EDBi XML c\xF3 ngh\u0129a l\xE0 thao t\xE1c d\u1EEF\
-  \ li\u1EC7u trong m\u1ED9t \u0111\u1ECBnh d\u1EA1ng c\xF3 c\u1EA5u tr\xFAc, ph\u1ED5\
-  \ bi\u1EBFn \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng trong c\u1EA5u h\xECnh, giao ti\u1EBF\
-  p v\xE0 nhi\u1EC1u h\u01A1n n\u1EEFa. L\u1EADp tr\xECnh\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Fish kh\xF4ng c\xF3 t\xEDnh n\u0103ng ph\xE2\
+  n t\xEDch c\xFA ph\xE1p XML t\xEDch h\u1EE3p, v\xEC v\u1EADy b\u1EA1n s\u1EBD ph\u1EA3\
+  i d\u1EF1a v\xE0o c\xE1c c\xF4ng c\u1EE5 b\xEAn ngo\xE0i nh\u01B0 `xmllint` ho\u1EB7\
+  c `xmlstarlet`. \u0110\xE2y\u2026"
 lastmod: '2024-03-13T22:44:37.243195-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m vi\u1EC7c v\u1EDBi XML c\xF3 ngh\u0129a l\xE0 thao t\xE1c d\u1EEF\
-  \ li\u1EC7u trong m\u1ED9t \u0111\u1ECBnh d\u1EA1ng c\xF3 c\u1EA5u tr\xFAc, ph\u1ED5\
-  \ bi\u1EBFn \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng trong c\u1EA5u h\xECnh, giao ti\u1EBF\
-  p v\xE0 nhi\u1EC1u h\u01A1n n\u1EEFa."
+summary: "Fish kh\xF4ng c\xF3 t\xEDnh n\u0103ng ph\xE2n t\xEDch c\xFA ph\xE1p XML\
+  \ t\xEDch h\u1EE3p, v\xEC v\u1EADy b\u1EA1n s\u1EBD ph\u1EA3i d\u1EF1a v\xE0o c\xE1\
+  c c\xF4ng c\u1EE5 b\xEAn ngo\xE0i nh\u01B0 `xmllint` ho\u1EB7c `xmlstarlet`."
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---

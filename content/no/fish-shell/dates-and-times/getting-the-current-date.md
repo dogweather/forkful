@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:27.383635-07:00
-description: "\xC5 hente den n\xE5v\xE6rende datoen i programmering er en grunnleggende\
-  \ oppgave som lar deg hente og manipulere systemets dato- og tidsdata. I scripting\
-  \ og\u2026"
+description: "Hvordan: Fish Shell bruker eksterne kommandoer som `date` for \xE5 f\xE5\
+  \ den n\xE5v\xE6rende datoen, noe som gir fleksibilitet til \xE5 formatere utdataen\
+  \ etter behov.\u2026"
 lastmod: '2024-03-13T22:44:41.238167-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 hente den n\xE5v\xE6rende datoen i programmering er en grunnleggende\
-  \ oppgave som lar deg hente og manipulere systemets dato- og tidsdata."
+summary: "Fish Shell bruker eksterne kommandoer som `date` for \xE5 f\xE5 den n\xE5\
+  v\xE6rende datoen, noe som gir fleksibilitet til \xE5 formatere utdataen etter behov."
 title: "F\xE5 dagens dato"
 weight: 29
 ---

@@ -1,13 +1,9 @@
 ---
 date: 2024-01-20 18:02:26.935957-07:00
-description: "Enviar uma solicita\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica \xE9\
-  \ essencialmente fornecer nome de usu\xE1rio e senha para acessar recursos protegidos\
-  \ em um servidor.\u2026"
+description: 'Como Fazer: .'
 lastmod: '2024-03-13T22:44:46.796785-06:00'
 model: gpt-4-1106-preview
-summary: "Enviar uma solicita\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica \xE9\
-  \ essencialmente fornecer nome de usu\xE1rio e senha para acessar recursos protegidos\
-  \ em um servidor."
+summary: .
 title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 weight: 45
 ---

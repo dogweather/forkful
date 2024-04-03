@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:37.154585-07:00
-description: "So s\xE1nh hai ng\xE0y c\xF3 ngh\u0129a l\xE0 x\xE1c \u0111\u1ECBnh\
-  \ xem ng\xE0y n\xE0o tr\u01B0\u1EDBc, ng\xE0y n\xE0o sau, ho\u1EB7c n\u1EBFu ch\xFA\
-  ng gi\u1ED1ng nhau. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7\
-  c n\xE0y \u0111\u1EC3 theo d\xF5i c\xE1c\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong Arduino, b\u1EA1n c\xF3 th\u1EC3\
+  \ so s\xE1nh c\xE1c ng\xE0y s\u1EED d\u1EE5ng th\u01B0 vi\u1EC7n `TimeLib.h`. Tr\u01B0\
+  \u1EDBc ti\xEAn, h\xE3y c\xE0i \u0111\u1EB7t n\xF3. Sau \u0111\xF3, h\xE3y xem \u0111\
+  o\u1EA1n m\xE3 sau."
 lastmod: '2024-03-13T22:44:37.005513-06:00'
 model: gpt-4-0125-preview
-summary: "So s\xE1nh hai ng\xE0y c\xF3 ngh\u0129a l\xE0 x\xE1c \u0111\u1ECBnh xem\
-  \ ng\xE0y n\xE0o tr\u01B0\u1EDBc, ng\xE0y n\xE0o sau, ho\u1EB7c n\u1EBFu ch\xFA\
-  ng gi\u1ED1ng nhau."
+summary: "Trong Arduino, b\u1EA1n c\xF3 th\u1EC3 so s\xE1nh c\xE1c ng\xE0y s\u1EED\
+  \ d\u1EE5ng th\u01B0 vi\u1EC7n `TimeLib.h`."
 title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---

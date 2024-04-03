@@ -2,12 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:58.917894-07:00
-description: "Scrivere test in C++ implica creare piccoli programmi autocontenuti\
-  \ che verificano automaticamente il comportamento di sezioni del tuo codice. I\u2026"
+description: 'Come fare: #.'
 lastmod: '2024-03-13T22:44:43.729823-06:00'
 model: gpt-4-0125-preview
-summary: Scrivere test in C++ implica creare piccoli programmi autocontenuti che verificano
-  automaticamente il comportamento di sezioni del tuo codice.
+summary: '#.'
 title: Scrivere test
 weight: 36
 ---

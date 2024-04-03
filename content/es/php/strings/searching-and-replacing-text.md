@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:58:25.229043-07:00
-description: "Buscar y reemplazar texto es b\xE1sicamente cuando encuentras una cadena\
-  \ de texto y la cambias por otra. Los programadores lo hacen para actualizar datos,\u2026"
+description: "C\xF3mo: Para buscar y reemplazar en PHP, utilizas `str_replace`. Aqu\xED\
+  \ va un ejemplo simple."
 lastmod: '2024-03-13T22:44:59.146014-06:00'
 model: gpt-4-1106-preview
-summary: "Buscar y reemplazar texto es b\xE1sicamente cuando encuentras una cadena\
-  \ de texto y la cambias por otra."
+summary: Para buscar y reemplazar en PHP, utilizas `str_replace`.
 title: Buscando y reemplazando texto
 weight: 10
 ---

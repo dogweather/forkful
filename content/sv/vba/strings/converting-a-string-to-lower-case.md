@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:37.882662-07:00
-description: "Att konvertera en str\xE4ng till gemener inneb\xE4r att omvandla alla\
-  \ versaler i en str\xE4ng till deras motsvarigheter i gemener. Denna process \xE4\
-  r avg\xF6rande f\xF6r\u2026"
+description: "Hur: I Visual Basic f\xF6r Applikationer (VBA) \xE4r det enkelt att\
+  \ konvertera en str\xE4ng till gemener med hj\xE4lp av funktionen `LCase`. Denna\
+  \ funktion tar en\u2026"
 lastmod: '2024-03-13T22:44:37.729025-06:00'
 model: gpt-4-0125-preview
-summary: "Att konvertera en str\xE4ng till gemener inneb\xE4r att omvandla alla versaler\
-  \ i en str\xE4ng till deras motsvarigheter i gemener."
+summary: "I Visual Basic f\xF6r Applikationer (VBA) \xE4r det enkelt att konvertera\
+  \ en str\xE4ng till gemener med hj\xE4lp av funktionen `LCase`."
 title: "Omvandla en str\xE4ng till gemener"
 weight: 4
 ---

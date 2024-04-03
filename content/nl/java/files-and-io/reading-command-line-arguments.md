@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:21.938959-07:00
-description: "Command line argumenten lezen in Java is het binnenhalen van input die\
-  \ door gebruikers wordt gegeven wanneer ze jouw programma vanaf een console starten.\u2026"
+description: 'Hoe: Java pikt de command line argumenten die je geeft op met de `main`
+  methode. Kijk naar dit hapklare voorbeeld.'
 lastmod: '2024-03-13T22:44:50.698034-06:00'
 model: gpt-4-0125-preview
-summary: Command line argumenten lezen in Java is het binnenhalen van input die door
-  gebruikers wordt gegeven wanneer ze jouw programma vanaf een console starten.
+summary: Java pikt de command line argumenten die je geeft op met de `main` methode.
 title: Commandoregelargumenten lezen
 weight: 23
 ---

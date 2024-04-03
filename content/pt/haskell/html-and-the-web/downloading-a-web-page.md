@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:44:02.204631-07:00
-description: "Fazer download de uma p\xE1gina web \xE9 o processo de puxar os dados\
-  \ brutos de um site para ver ou processar localmente. Programadores fazem isso para\
-  \ coletar\u2026"
+description: 'Como Fazer: Instale a biblioteca `http-conduit` com `cabal install http-conduit`
+  e use o seguinte exemplo.'
 lastmod: '2024-03-13T22:44:46.624151-06:00'
 model: gpt-4-1106-preview
-summary: "Fazer download de uma p\xE1gina web \xE9 o processo de puxar os dados brutos\
-  \ de um site para ver ou processar localmente."
+summary: Instale a biblioteca `http-conduit` com `cabal install http-conduit` e use
+  o seguinte exemplo.
 title: "Baixando uma p\xE1gina da web"
 weight: 42
 ---

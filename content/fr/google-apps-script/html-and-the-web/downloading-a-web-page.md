@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:34.001905-07:00
-description: "T\xE9l\xE9charger une page web avec Google Apps Script implique de r\xE9\
-  cup\xE9rer le contenu d'une page web via HTML pour diverses raisons, telles que\
-  \ le web\u2026"
+description: "Comment faire : Dans Google Apps Script, le service `UrlFetchApp` est\
+  \ essentiel pour t\xE9l\xE9charger le contenu web. Voici un guide \xE9tape par \xE9\
+  tape et un\u2026"
 lastmod: '2024-03-13T22:44:57.184013-06:00'
 model: gpt-4-0125-preview
-summary: "T\xE9l\xE9charger une page web avec Google Apps Script implique de r\xE9\
-  cup\xE9rer le contenu d'une page web via HTML pour diverses raisons, telles que\
-  \ le web scraping, l'extraction de donn\xE9es ou la surveillance des changements."
+summary: "Dans Google Apps Script, le service `UrlFetchApp` est essentiel pour t\xE9\
+  l\xE9charger le contenu web."
 title: "T\xE9l\xE9charger une page web"
 weight: 42
 ---

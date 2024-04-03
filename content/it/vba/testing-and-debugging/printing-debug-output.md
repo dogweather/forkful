@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:11.957240-07:00
-description: "Stampare l'output di debug in Visual Basic for Applications (VBA) implica\
-  \ posizionare strategicamente istruzioni di stampa all'interno del codice per\u2026"
+description: "Come fare: In VBA, l'istruzione `Debug.Print` \xE8 il fulcro per stampare\
+  \ le informazioni di debug nella Finestra Immediata nell'Editor di Visual Basic\u2026"
 lastmod: '2024-03-13T22:44:43.265488-06:00'
 model: gpt-4-0125-preview
-summary: Stampare l'output di debug in Visual Basic for Applications (VBA) implica
-  posizionare strategicamente istruzioni di stampa all'interno del codice per visualizzare
-  i valori delle variabili, il flusso di esecuzione o messaggi di debug personalizzati.
+summary: "In VBA, l'istruzione `Debug.Print` \xE8 il fulcro per stampare le informazioni\
+  \ di debug nella Finestra Immediata nell'Editor di Visual Basic (VBE)."
 title: Stampa dell'output di debug
 weight: 33
 ---

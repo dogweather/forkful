@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:08.698753-07:00
-description: "V\xE9rifier si un r\xE9pertoire existe en Ruby permet aux programmeurs\
-  \ de confirmer la pr\xE9sence d'un r\xE9pertoire avant d'effectuer des op\xE9rations\
-  \ comme la\u2026"
+description: "Comment faire : La biblioth\xE8que standard de Ruby fournit des m\xE9\
+  thodes simples pour v\xE9rifier l'existence d'un r\xE9pertoire. Voici comment le\
+  \ faire avec Ruby\u2026"
 lastmod: '2024-03-13T22:44:58.435032-06:00'
 model: gpt-4-0125-preview
-summary: "V\xE9rifier si un r\xE9pertoire existe en Ruby permet aux programmeurs de\
-  \ confirmer la pr\xE9sence d'un r\xE9pertoire avant d'effectuer des op\xE9rations\
-  \ comme la lecture de fichiers ou la cr\xE9ation de nouveaux r\xE9pertoires."
+summary: "La biblioth\xE8que standard de Ruby fournit des m\xE9thodes simples pour\
+  \ v\xE9rifier l'existence d'un r\xE9pertoire."
 title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---

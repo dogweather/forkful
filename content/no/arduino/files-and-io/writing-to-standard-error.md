@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:31.047837-07:00
-description: "\xC5 skrive til standard feil (stderr) i Arduino-programmering inneb\xE6\
-  rer \xE5 dirigere feilmeldinger og diagnostikk til en separat kanal, slik at de\
-  \ ikke\u2026"
+description: "Hvordan: Arduino skiller ikke innebygd mellom standard utdata og standard\
+  \ feil slik konvensjonelle databehandlingssystemer gj\xF8r. B\xE5de `Serial.print()`\
+  \ og\u2026"
 lastmod: '2024-03-13T22:44:41.074598-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive til standard feil (stderr) i Arduino-programmering inneb\xE6\
-  rer \xE5 dirigere feilmeldinger og diagnostikk til en separat kanal, slik at de\
-  \ ikke blandes med standard utdata (stdout)."
+summary: "Arduino skiller ikke innebygd mellom standard utdata og standard feil slik\
+  \ konvensjonelle databehandlingssystemer gj\xF8r."
 title: Skriving til standardfeil
 weight: 25
 ---

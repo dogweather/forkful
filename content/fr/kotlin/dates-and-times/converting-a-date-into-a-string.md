@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:36:45.683321-07:00
-description: "Convertir une date en cha\xEEne de caract\xE8res permet de la formater\
-  \ pour l'affichage. Les programmeurs le font pour rendre les dates lisibles par\
-  \ les humains\u2026"
+description: "How to: En Kotlin, on utilise la classe `SimpleDateFormat` pour transformer\
+  \ une date en cha\xEEne de caract\xE8res. Voici comment faire ."
 lastmod: '2024-03-13T22:44:57.752135-06:00'
 model: gpt-4-1106-preview
-summary: "Convertir une date en cha\xEEne de caract\xE8res permet de la formater pour\
-  \ l'affichage."
+summary: "En Kotlin, on utilise la classe `SimpleDateFormat` pour transformer une\
+  \ date en cha\xEEne de caract\xE8res."
 title: "Conversion d'une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---

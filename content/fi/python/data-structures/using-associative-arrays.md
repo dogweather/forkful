@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:51.863109-07:00
-description: "Associatiiviset taulukot, Pythonissa tunnettu nimell\xE4 sanakirjat,\
-  \ map-paavat avaimet arvoihin, mik\xE4 tekee datan hakemisesta, muokkaamisesta tai\u2026"
+description: "Miten: Sanakirjan luominen Pythonissa on suoraviivaista. Sijoitat avain-arvo\
+  \ -pareja aaltosulkuihin `{}`, avainten ja arvojen ollessa erotettu\u2026"
 lastmod: '2024-03-13T22:44:56.136548-06:00'
 model: gpt-4-0125-preview
-summary: "Associatiiviset taulukot, Pythonissa tunnettu nimell\xE4 sanakirjat, map-paavat\
-  \ avaimet arvoihin, mik\xE4 tekee datan hakemisesta, muokkaamisesta tai seuraamisesta\
-  \ uniikin tunnisteen avulla helppoa."
+summary: Sanakirjan luominen Pythonissa on suoraviivaista.
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---

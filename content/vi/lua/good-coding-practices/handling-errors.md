@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:29.838643-07:00
-description: "X\u1EED l\xFD l\u1ED7i trong l\u1EADp tr\xECnh l\xE0 mong \u0111\u1EE3\
-  i nh\u1EEFng \u0111i\u1EC1u kh\xF4ng mong \u0111\u1EE3i. \u0110\xF3 l\xE0 ngh\u1EC7\
-  \ thu\u1EADt l\u1EADp k\u1EBF ho\u1EA1ch cho nh\u1EEFng l\xFAc m\u1ECDi th\u1EE9\
-  \ \u0111i ch\u1EC7ch h\u01B0\u1EDBng \u0111\u1EC3 b\u1EA1n c\xF3 th\u1EC3 gi\u1EEF\
-  \ cho\u2026"
+description: "L\xE0m Th\u1EBF N\xE0o: Lua s\u1EED d\u1EE5ng hai h\xE0m ch\xEDnh \u0111\
+  \u1EC3 x\u1EED l\xFD l\u1ED7i: `pcall` v\xE0 `xpcall`. D\u01B0\u1EDBi \u0111\xE2\
+  y l\xE0 c\xE1ch b\u1EA1n s\u1EED d\u1EE5ng ch\xFAng."
 lastmod: '2024-03-13T22:44:36.831675-06:00'
 model: gpt-4-0125-preview
-summary: "X\u1EED l\xFD l\u1ED7i trong l\u1EADp tr\xECnh l\xE0 mong \u0111\u1EE3i\
-  \ nh\u1EEFng \u0111i\u1EC1u kh\xF4ng mong \u0111\u1EE3i."
+summary: "Lua s\u1EED d\u1EE5ng hai h\xE0m ch\xEDnh \u0111\u1EC3 x\u1EED l\xFD l\u1ED7\
+  i."
 title: "X\u1EED l\xFD l\u1ED7i"
 weight: 16
 ---

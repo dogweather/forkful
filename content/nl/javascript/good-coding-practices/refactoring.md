@@ -2,12 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:13.048722-07:00
-description: "Refactoring is het proces van het herstructureren van bestaande computercode\
-  \ zonder het externe gedrag ervan te veranderen. Programmeurs doen dit om de\u2026"
+description: "Hoe te: Laten we kijken naar een eenvoudig voorbeeld waar refactoring\
+  \ uw code beknopter en leesbaarder kan maken. Hier, herstructureren we een functie\
+  \ die\u2026"
 lastmod: '2024-03-13T22:44:51.210494-06:00'
 model: gpt-4-0125-preview
-summary: Refactoring is het proces van het herstructureren van bestaande computercode
-  zonder het externe gedrag ervan te veranderen.
+summary: Laten we kijken naar een eenvoudig voorbeeld waar refactoring uw code beknopter
+  en leesbaarder kan maken.
 title: Refactoring
 weight: 19
 ---

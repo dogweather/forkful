@@ -2,14 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:53.866147-07:00
-description: "Een interactieve shell (REPL - Read-Evaluate-Print Loop) voor Dart stelt\
-  \ programmeurs in staat om Dart code regel voor regel dynamisch te typen en uit\
-  \ te\u2026"
+description: "Hoe te: Dart wordt niet geleverd met een ingebouwde REPL. Echter, je\
+  \ kunt REPL-achtige functionaliteit bereiken door gebruik te maken van DartPad (online)\u2026"
 lastmod: '2024-03-13T22:44:50.506587-06:00'
 model: gpt-4-0125-preview
-summary: Een interactieve shell (REPL - Read-Evaluate-Print Loop) voor Dart stelt
-  programmeurs in staat om Dart code regel voor regel dynamisch te typen en uit te
-  voeren zonder hele scripts te hoeven compileren.
+summary: Dart wordt niet geleverd met een ingebouwde REPL.
 title: Het Gebruik van een Interactieve Shell (REPL)
 weight: 34
 ---

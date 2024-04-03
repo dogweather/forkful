@@ -1,8 +1,8 @@
 ---
 date: 2024-01-26 03:47:18.044249-07:00
-description: "Mit der Arduino-IDE k\xF6nnen Sie Serial-Prints zum Debuggen verwenden,\
+description: "Wie: Mit der Arduino-IDE k\xF6nnen Sie Serial-Prints zum Debuggen verwenden,\
   \ aber das ist ein bisschen so, als w\xFCrde man eine Taschenlampe benutzen, um\
-  \ eine H\xF6hle\u2026"
+  \ eine\u2026"
 lastmod: '2024-03-13T22:44:54.148135-06:00'
 model: gpt-4-0125-preview
 summary: "Mit der Arduino-IDE k\xF6nnen Sie Serial-Prints zum Debuggen verwenden,\

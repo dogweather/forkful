@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 01:11:47.603171-07:00
-description: "Code in Funktionen zu organisieren bedeutet, Codeabschnitte, die spezifische\
-  \ Aufgaben erf\xFCllen, zusammenzufassen und ihnen einen Namen zu geben. Dies wird\u2026"
+description: 'Wie geht das: Lassen Sie uns eine Funktion schreiben, um die Summe von
+  zwei Zahlen zu berechnen. Einfach, aber es veranschaulicht den Punkt.'
 lastmod: '2024-03-13T22:44:54.109471-06:00'
 model: gpt-4-1106-preview
-summary: "Code in Funktionen zu organisieren bedeutet, Codeabschnitte, die spezifische\
-  \ Aufgaben erf\xFCllen, zusammenzufassen und ihnen einen Namen zu geben."
+summary: Lassen Sie uns eine Funktion schreiben, um die Summe von zwei Zahlen zu berechnen.
 title: Code in Funktionen organisieren
 weight: 18
 ---

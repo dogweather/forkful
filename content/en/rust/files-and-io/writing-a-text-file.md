@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:03:20.005037-07:00
-description: "Writing a text file in Rust involves creating, writing to, and potentially\
-  \ appending data to a file on the file system. Programmers perform this operation\u2026"
+description: "How to: Rust's standard library provides robust tools for file manipulation,\
+  \ encapsulated primarily within the `std::fs` and `std::io` modules. Here's a\u2026"
 lastmod: '2024-03-13T22:44:59.912846-06:00'
 model: gpt-4-0125-preview
-summary: Writing a text file in Rust involves creating, writing to, and potentially
-  appending data to a file on the file system.
+summary: Rust's standard library provides robust tools for file manipulation, encapsulated
+  primarily within the `std::fs` and `std::io` modules.
 title: Writing a text file
 weight: 24
 ---

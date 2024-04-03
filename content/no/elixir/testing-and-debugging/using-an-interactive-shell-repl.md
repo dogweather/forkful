@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:13:25.883401-07:00
-description: "En interaktiv skall, eller REPL (Read-Eval-Print Loop), lar deg pr\xF8\
-  ve ut kodebiter i sanntid. Elixir-programmerere bruker REPL, kalt IEx (Interaktiv\u2026"
+description: "Hvordan: For \xE5 starte IEx, \xE5pne terminalen din og skriv `iex`.\
+  \ Her er en smakebit."
 lastmod: '2024-03-13T22:44:40.445075-06:00'
 model: gpt-4-0125-preview
-summary: "En interaktiv skall, eller REPL (Read-Eval-Print Loop), lar deg pr\xF8ve\
-  \ ut kodebiter i sanntid."
+summary: "For \xE5 starte IEx, \xE5pne terminalen din og skriv `iex`."
 title: Bruke et interaktivt skall (REPL)
 weight: 34
 ---

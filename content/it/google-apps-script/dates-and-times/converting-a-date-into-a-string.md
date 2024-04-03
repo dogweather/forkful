@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:56.455155-07:00
-description: "Convertire le date in stringhe \xE8 un compito fondamentale che consente\
-  \ ai programmatori di manipolare e visualizzare le informazioni relative alle date\
-  \ in\u2026"
+description: "Come fare: Google Apps Script, essendo basato su JavaScript, consente\
+  \ diversi metodi per realizzare la conversione delle date in stringhe. Di seguito\
+  \ sono\u2026"
 lastmod: '2024-03-13T22:44:42.968342-06:00'
 model: gpt-4-0125-preview
-summary: "Convertire le date in stringhe \xE8 un compito fondamentale che consente\
-  \ ai programmatori di manipolare e visualizzare le informazioni relative alle date\
-  \ in un formato leggibile dall'uomo."
+summary: Google Apps Script, essendo basato su JavaScript, consente diversi metodi
+  per realizzare la conversione delle date in stringhe.
 title: Convertire una data in una stringa
 weight: 28
 ---

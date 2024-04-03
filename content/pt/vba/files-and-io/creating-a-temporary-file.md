@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:02.205436-07:00
-description: "Criar um arquivo tempor\xE1rio em Visual Basic for Applications (VBA)\
-  \ envolve gerar programaticamente um arquivo para uso de curto prazo, tipicamente\
-  \ para\u2026"
+description: "Como Fazer: No VBA, criar um arquivo tempor\xE1rio pode ser alcan\xE7\
+  ado usando o `FileSystemObject` dispon\xEDvel na biblioteca Microsoft Scripting\
+  \ Runtime. Este\u2026"
 lastmod: '2024-03-13T22:44:46.433301-06:00'
 model: gpt-4-0125-preview
-summary: "Criar um arquivo tempor\xE1rio em Visual Basic for Applications (VBA) envolve\
-  \ gerar programaticamente um arquivo para uso de curto prazo, tipicamente para processamento\
-  \ de dados ou como um buffer em tarefas de automa\xE7\xE3o."
+summary: "No VBA, criar um arquivo tempor\xE1rio pode ser alcan\xE7ado usando o `FileSystemObject`\
+  \ dispon\xEDvel na biblioteca Microsoft Scripting Runtime."
 title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---

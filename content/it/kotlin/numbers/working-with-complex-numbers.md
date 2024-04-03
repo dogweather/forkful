@@ -1,13 +1,9 @@
 ---
 date: 2024-01-26 04:42:44.039296-07:00
-description: "I numeri complessi ampliano il nostro sistema numerico per includere\
-  \ le radici quadrate dei numeri negativi, dove l'unit\xE0 'immaginaria' i equivale\
-  \ alla\u2026"
+description: 'Come fare: Definiamo una classe di base per un numero complesso in Kotlin.'
 lastmod: '2024-03-13T22:44:43.385533-06:00'
 model: gpt-4-0125-preview
-summary: "I numeri complessi ampliano il nostro sistema numerico per includere le\
-  \ radici quadrate dei numeri negativi, dove l'unit\xE0 'immaginaria' i equivale\
-  \ alla radice quadrata di -1."
+summary: Definiamo una classe di base per un numero complesso in Kotlin.
 title: Lavorare con i numeri complessi
 weight: 14
 ---

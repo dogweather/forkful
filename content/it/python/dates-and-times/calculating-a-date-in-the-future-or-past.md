@@ -1,13 +1,11 @@
 ---
 date: 2024-01-20 17:31:40.256246-07:00
-description: "Calcolare una data nel futuro o nel passato significa semplicemente\
-  \ determinare una data specifica aggiungendo o sottraendo un certo periodo di tempo\
-  \ a\u2026"
+description: 'Come fare: Per calcolare date nel futuro o nel passato in Python, possiamo
+  usare il modulo `datetime`. Ecco alcuni esempi.'
 lastmod: '2024-03-13T22:44:43.014590-06:00'
 model: gpt-4-1106-preview
-summary: Calcolare una data nel futuro o nel passato significa semplicemente determinare
-  una data specifica aggiungendo o sottraendo un certo periodo di tempo a una data
-  di partenza.
+summary: Per calcolare date nel futuro o nel passato in Python, possiamo usare il
+  modulo `datetime`.
 title: Calcolo di una data futura o passata
 weight: 26
 ---

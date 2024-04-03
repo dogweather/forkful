@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 18:00:41.773374-07:00
-description: "Enviar una solicitud HTTP es el proceso de solicitar datos o enviar\
-  \ datos a un servidor utilizando el protocolo HTTP. Los programadores lo hacen para\u2026"
+description: "C\xF3mo hacerlo: En Ruby, puedes utilizar la gema 'net/http' para enviar\
+  \ solicitudes HTTP. Aqu\xED hay un ejemplo simple de c\xF3mo realizar una solicitud\
+  \ GET."
 lastmod: '2024-03-13T22:44:59.588545-06:00'
 model: gpt-4-1106-preview
-summary: Enviar una solicitud HTTP es el proceso de solicitar datos o enviar datos
-  a un servidor utilizando el protocolo HTTP.
+summary: En Ruby, puedes utilizar la gema 'net/http' para enviar solicitudes HTTP.
 title: Enviando una solicitud http
 weight: 44
 ---

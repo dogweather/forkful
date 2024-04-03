@@ -2,13 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:07.472373-07:00
-description: "Att sammanfoga str\xE4ngar inneb\xE4r att man sammanfogar tv\xE5 eller\
-  \ flera str\xE4ngar fr\xE5n slut till slut f\xF6r att bilda en ny str\xE4ng. Programmerare\
-  \ g\xF6r detta f\xF6r\u2026"
+description: "Hur man g\xF6r: I Go finns det flera s\xE4tt att sammanfoga str\xE4\
+  ngar. H\xE4r \xE4r en titt p\xE5 n\xE5gra vanliga metoder med exempel: #."
 lastmod: '2024-03-13T22:44:37.383332-06:00'
 model: gpt-4-0125-preview
-summary: "Att sammanfoga str\xE4ngar inneb\xE4r att man sammanfogar tv\xE5 eller flera\
-  \ str\xE4ngar fr\xE5n slut till slut f\xF6r att bilda en ny str\xE4ng."
+summary: "I Go finns det flera s\xE4tt att sammanfoga str\xE4ngar."
 title: "Sammanfoga str\xE4ngar"
 weight: 3
 ---

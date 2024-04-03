@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:51.312064-07:00
-description: "Att h\xE4mta det aktuella datumet i JavaScript \xE4r en grundl\xE4ggande\
-  \ uppgift som inneb\xE4r att h\xE4mta och m\xF6jligen manipulera dagens datum och\
-  \ tid. Programmerare\u2026"
+description: "Hur: I ren JavaScript anv\xE4nder man `Date`-objektet f\xF6r att arbeta\
+  \ med datum och tider. S\xE5 h\xE4r kan du f\xE5 det aktuella datumet och tiden."
 lastmod: '2024-03-13T22:44:38.303747-06:00'
 model: gpt-4-0125-preview
-summary: "Att h\xE4mta det aktuella datumet i JavaScript \xE4r en grundl\xE4ggande\
-  \ uppgift som inneb\xE4r att h\xE4mta och m\xF6jligen manipulera dagens datum och\
-  \ tid."
+summary: "I ren JavaScript anv\xE4nder man `Date`-objektet f\xF6r att arbeta med datum\
+  \ och tider."
 title: "F\xE5 det aktuella datumet"
 weight: 29
 ---

@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:00.169789-07:00
-description: "Trong Elm, vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP l\xE0 c\xE1\
-  ch \u1EE9ng d\u1EE5ng c\u1EE7a b\u1EA1n giao ti\u1EBFp v\u1EDBi c\xE1c d\u1ECBch\
-  \ v\u1EE5 web kh\xE1c \u0111\u1EC3 trao \u0111\u1ED5i d\u1EEF li\u1EC7u. L\u1EAD\
-  p tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 t\u1EA3i\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\u01B0\u1EE3c r\u1ED3i, \u0111\u1EBFn\
+  \ l\xFAc vi\u1EBFt code. Elm th\u1EF1c hi\u1EC7n y\xEAu c\u1EA7u HTTP s\u1EED d\u1EE5\
+  ng m\xF4-\u0111un `Http`. D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t v\xED d\u1EE5\
+  \ nhanh \u0111\u1EC3 t\u1EA3i xu\u1ED1ng m\u1ED9t s\u1ED1 JSON."
 lastmod: '2024-03-13T22:44:36.539879-06:00'
 model: gpt-4-0125-preview
-summary: "Trong Elm, vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP l\xE0 c\xE1\
-  ch \u1EE9ng d\u1EE5ng c\u1EE7a b\u1EA1n giao ti\u1EBFp v\u1EDBi c\xE1c d\u1ECBch\
-  \ v\u1EE5 web kh\xE1c \u0111\u1EC3 trao \u0111\u1ED5i d\u1EEF li\u1EC7u."
+summary: "\u0110\u01B0\u1EE3c r\u1ED3i, \u0111\u1EBFn l\xFAc vi\u1EBFt code."
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
 weight: 44
 ---

@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 16:20:42.495855-07:00
-description: "Att redigera filer direkt med CLI-engreppsrader handlar om att g\xF6\
-  ra \xE4ndringar direkt i filer fr\xE5n kommandoraden, utan att \xF6ppna dem i en\
-  \ textredigerare.\u2026"
+description: "Hur man g\xF6r: Fish Shell, k\xE4nt f\xF6r sina anv\xE4ndarv\xE4nliga\
+  \ funktioner och kraftfulla skriptm\xF6jligheter, erbjuder flera s\xE4tt att redigera\
+  \ filer direkt. Dock,\u2026"
 lastmod: '2024-03-13T22:44:38.333642-06:00'
 model: gpt-4-0125-preview
-summary: "Att redigera filer direkt med CLI-engreppsrader handlar om att g\xF6ra \xE4\
-  ndringar direkt i filer fr\xE5n kommandoraden, utan att \xF6ppna dem i en textredigerare."
+summary: "Fish Shell, k\xE4nt f\xF6r sina anv\xE4ndarv\xE4nliga funktioner och kraftfulla\
+  \ skriptm\xF6jligheter, erbjuder flera s\xE4tt att redigera filer direkt."
 title: "Redigera filer p\xE5 plats med kommandoradsenradare"
 weight: 32
 ---

@@ -1,13 +1,10 @@
 ---
 date: 2024-01-20 17:53:02.557226-07:00
-description: "Mostrar outputs de debug \xE9 basicamente imprimir mensagens no console\
-  \ do seu programa para entender o que est\xE1 acontecendo durante a execu\xE7\xE3\
-  o.\u2026"
+description: "Como Fazer: Em Kotlin, voc\xEA pode utilizar `println()` para mostrar\
+  \ mensagens de debug."
 lastmod: '2024-03-13T22:44:46.544143-06:00'
 model: gpt-4-1106-preview
-summary: "Mostrar outputs de debug \xE9 basicamente imprimir mensagens no console\
-  \ do seu programa para entender o que est\xE1 acontecendo durante a execu\xE7\xE3\
-  o."
+summary: "Em Kotlin, voc\xEA pode utilizar `println()` para mostrar mensagens de debug."
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---

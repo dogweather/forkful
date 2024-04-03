@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 01:00:56.433147-07:00
-description: "El registro de eventos (logging) es esencialmente el equivalente en\
-  \ software de un diario de navegaci\xF3n; es una forma de registrar eventos que\
-  \ ocurren\u2026"
+description: "C\xF3mo hacerlo: Clojure se apoya en las facilidades de registro de\
+  \ Java, pero puedes acceder a ellas de una manera m\xE1s idiom\xE1tica de Clojure.\
+  \ Veamos c\xF3mo\u2026"
 lastmod: '2024-03-13T22:44:58.663249-06:00'
 model: gpt-4-1106-preview
-summary: "El registro de eventos (logging) es esencialmente el equivalente en software\
-  \ de un diario de navegaci\xF3n; es una forma de registrar eventos que ocurren mientras\
-  \ una aplicaci\xF3n se est\xE1 ejecutando."
+summary: "Clojure se apoya en las facilidades de registro de Java, pero puedes acceder\
+  \ a ellas de una manera m\xE1s idiom\xE1tica de Clojure."
 title: "Registro de Actividades en Programaci\xF3n"
 weight: 17
 ---

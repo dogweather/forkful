@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:40:37.168662-07:00
-description: "Crear un archivo temporal es como anotar algo r\xE1pido en una servilleta:\
-  \ es \xFAtil para guardar datos que solo necesitas durante un rato. Los programadores\u2026"
+description: "How to: En Node.js, puedes usar el m\xF3dulo 'fs' para manejar archivos,\
+  \ incluidos los temporales."
 lastmod: '2024-03-13T22:44:59.477768-06:00'
 model: gpt-4-1106-preview
-summary: "Crear un archivo temporal es como anotar algo r\xE1pido en una servilleta:\
-  \ es \xFAtil para guardar datos que solo necesitas durante un rato."
+summary: "En Node.js, puedes usar el m\xF3dulo 'fs' para manejar archivos, incluidos\
+  \ los temporales."
 title: Creando un archivo temporal
 weight: 21
 ---

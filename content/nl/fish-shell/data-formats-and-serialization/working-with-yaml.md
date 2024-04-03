@@ -2,13 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:44.293893-07:00
-description: "YAML, \"YAML Ain't Markup Language\", is een gebruiksvriendelijke data-serialisatiestandaard\
-  \ die notatieel superieur is aan tabel- en opmaaktalen voor\u2026"
+description: 'Hoe: #.'
 lastmod: '2024-03-13T22:44:51.267343-06:00'
 model: gpt-4-0125-preview
-summary: YAML, "YAML Ain't Markup Language", is een gebruiksvriendelijke data-serialisatiestandaard
-  die notatieel superieur is aan tabel- en opmaaktalen voor configuratiebestanden
-  en gegevensuitwisseling.
+summary: '#.'
 title: Werken met YAML
 weight: 41
 ---

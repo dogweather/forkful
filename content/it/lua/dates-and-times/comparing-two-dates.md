@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:33:46.797489-07:00
-description: "Confrontare due date significa stabilire qual \xE8 la pi\xF9 recente\
-  \ o se sono uguali. I programmatori fanno ci\xF2 per validare scadenze, calcolare\
-  \ differenze\u2026"
+description: 'How to: (Come fare:) .'
 lastmod: '2024-03-13T22:44:43.569735-06:00'
 model: gpt-4-1106-preview
-summary: "Confrontare due date significa stabilire qual \xE8 la pi\xF9 recente o se\
-  \ sono uguali."
+summary: .
 title: Confronto tra due date
 weight: 27
 ---

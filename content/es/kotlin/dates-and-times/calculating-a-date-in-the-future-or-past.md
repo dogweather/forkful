@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:31:36.982723-07:00
-description: "Calcular una fecha futura o pasada significa simplemente sumar o restar\
-  \ d\xEDas, meses o a\xF1os a una fecha dada. Los programadores lo hacen para manejar\u2026"
+description: "C\xF3mo Hacerlo: Kotlin maneja fechas de una manera bastante directa.\
+  \ Aqu\xED tienes algunos ejemplos con `LocalDate`."
 lastmod: '2024-03-13T22:44:59.049346-06:00'
 model: gpt-4-1106-preview
-summary: "Calcular una fecha futura o pasada significa simplemente sumar o restar\
-  \ d\xEDas, meses o a\xF1os a una fecha dada."
+summary: Kotlin maneja fechas de una manera bastante directa.
 title: Calcular una fecha en el futuro o pasado
 weight: 26
 ---

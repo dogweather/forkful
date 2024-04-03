@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:32.061017-07:00
-description: "\xC9crire dans un fichier texte avec Lua implique la cr\xE9ation ou\
-  \ l'ouverture d'un fichier en mode \xE9criture, puis l'utilisation d'op\xE9rations\
-  \ sur le fichier\u2026"
+description: "Comment faire : Travailler avec des fichiers pour l'\xE9criture est\
+  \ simple en Lua. Vous utiliserez typiquement la fonction `io.open()` pour ouvrir\
+  \ (ou cr\xE9er)\u2026"
 lastmod: '2024-03-13T22:44:57.957655-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire dans un fichier texte avec Lua implique la cr\xE9ation ou l'ouverture\
-  \ d'un fichier en mode \xE9criture, puis l'utilisation d'op\xE9rations sur le fichier\
-  \ pour ins\xE9rer du texte."
+summary: "Travailler avec des fichiers pour l'\xE9criture est simple en Lua."
 title: "R\xE9diger un fichier texte"
 weight: 24
 ---

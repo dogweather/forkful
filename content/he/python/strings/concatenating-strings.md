@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:35:37.660765-07:00
-description: "Concatenating strings means sticking them together end-to-end to form\
-  \ a new string. Programmers do it to combine text in a flexible and dynamic way,\
-  \ like\u2026"
+description: "How to: \u05D0\u05D9\u05DA \u05DC\u05E2\u05E9\u05D5\u05EA \u05D6\u05D0\
+  \u05EA In Python, concatenating strings can be done in several ways: 1. Using the\
+  \ `+` operator."
 lastmod: '2024-03-13T22:44:38.622645-06:00'
 model: gpt-4-1106-preview
-summary: Concatenating strings means sticking them together end-to-end to form a new
-  string.
+summary: In Python, concatenating strings can be done in several ways.
 title: "\u05E9\u05E8\u05E9\u05D5\u05E8 \u05DE\u05D7\u05E8\u05D5\u05D6\u05D5\u05EA"
 weight: 3
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:02.752208-07:00
-description: "HTML:n j\xE4sent\xE4minen Visual Basic for Applications (VBA) -ohjelmoinnissa\
-  \ tarkoittaa tiettyjen tietojen poimimista HTML-dokumentista. Ohjelmoijat tekev\xE4\
-  t\u2026"
+description: "Kuinka: VBA:ssa voit j\xE4sent\xE4\xE4 HTML:\xE4\xE4 k\xE4ytt\xE4m\xE4\
+  ll\xE4 `Microsoft HTML Object Library` -kirjastoa. Lis\xE4\xE4 viittaus t\xE4h\xE4\
+  n kirjastoon VBA-editorissasi siirtym\xE4ll\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.398051-06:00'
 model: gpt-4-0125-preview
-summary: "HTML:n j\xE4sent\xE4minen Visual Basic for Applications (VBA) -ohjelmoinnissa\
-  \ tarkoittaa tiettyjen tietojen poimimista HTML-dokumentista."
+summary: "VBA:ssa voit j\xE4sent\xE4\xE4 HTML:\xE4\xE4 k\xE4ytt\xE4m\xE4ll\xE4 `Microsoft\
+  \ HTML Object Library` -kirjastoa."
 title: "HTML:n j\xE4sent\xE4minen"
 weight: 43
 ---

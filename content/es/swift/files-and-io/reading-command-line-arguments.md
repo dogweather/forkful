@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:57:05.564595-07:00
-description: "Leer argumentos de la l\xEDnea de comandos permite que tus programas\
-  \ de Swift acepten datos de entrada al ejecutarse, d\xE1ndoles flexibilidad y adaptabilidad.\u2026"
+description: "C\xF3mo Hacerlo: Swift ofrece el arreglo `CommandLine.arguments` para\
+  \ acceder a los argumentos de la l\xEDnea de comandos. Vamos a ver c\xF3mo usarlo."
 lastmod: '2024-03-13T22:44:59.431651-06:00'
 model: gpt-4-1106-preview
-summary: "Leer argumentos de la l\xEDnea de comandos permite que tus programas de\
-  \ Swift acepten datos de entrada al ejecutarse, d\xE1ndoles flexibilidad y adaptabilidad."
+summary: "Swift ofrece el arreglo `CommandLine.arguments` para acceder a los argumentos\
+  \ de la l\xEDnea de comandos."
 title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---

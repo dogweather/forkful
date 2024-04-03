@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:18.232717-07:00
-description: "Les expressions r\xE9guli\xE8res en C++ sont des s\xE9quences de caract\xE8\
-  res qui d\xE9finissent un motif de recherche, utilis\xE9 pour la correspondance\
-  \ ou la\u2026"
+description: "Comment faire : C++11 a introduit le support des expressions r\xE9guli\xE8\
+  res dans la biblioth\xE8que standard, `<regex>`, offrant un cadre robuste pour la\u2026"
 lastmod: '2024-03-13T22:44:58.150651-06:00'
 model: gpt-4-0125-preview
-summary: "Les expressions r\xE9guli\xE8res en C++ sont des s\xE9quences de caract\xE8\
-  res qui d\xE9finissent un motif de recherche, utilis\xE9 pour la correspondance\
-  \ ou la manipulation de cha\xEEnes de caract\xE8res."
+summary: "C++11 a introduit le support des expressions r\xE9guli\xE8res dans la biblioth\xE8\
+  que standard, `<regex>`, offrant un cadre robuste pour la recherche et la manipulation\
+  \ de cha\xEEnes de caract\xE8res."
 title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---

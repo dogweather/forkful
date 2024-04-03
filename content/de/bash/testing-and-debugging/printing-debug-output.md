@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:52:05.021967-07:00
-description: "Das Ausgeben von Debug-Informationen hilft, Probleme zu erkennen, indem\
-  \ Abl\xE4ufe im Code erkl\xE4rt werden. Programmierer nutzen dies, um Funktionen\
-  \ und ihre\u2026"
+description: "How to (Wie geht das?) In Bash, benutze `echo` oder `printf` f\xFCr\
+  \ Debug-Output. Hier ein paar Beispiele."
 lastmod: '2024-03-13T22:44:54.062185-06:00'
 model: gpt-4-1106-preview
-summary: "Das Ausgeben von Debug-Informationen hilft, Probleme zu erkennen, indem\
-  \ Abl\xE4ufe im Code erkl\xE4rt werden."
+summary: "In Bash, benutze `echo` oder `printf` f\xFCr Debug-Output."
 title: Debug-Ausgaben drucken
 weight: 33
 ---

@@ -2,15 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:17.861084-07:00
-description: "Tr\xEDch xu\u1EA5t c\xE1c chu\u1ED7i con c\xF3 ngh\u0129a l\xE0 l\u1EA5\
-  y ra c\xE1c ph\u1EA7n nh\u1ECF h\u01A1n t\u1EEB m\u1ED9t chu\u1ED7i d\u1EF1a tr\xEA\
-  n m\u1ED9t s\u1ED1 ti\xEAu ch\xED nh\u1EA5t \u0111\u1ECBnh. C\xE1c l\u1EADp tr\xEC\
-  nh vi\xEAn tr\xEDch xu\u1EA5t chu\u1ED7i con \u0111\u1EC3\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1\
+  ch \u0111\u1EC3 c\u1EAFt v\xE0 chia c\xE1c chu\u1ED7i trong PowerShell."
 lastmod: '2024-03-13T22:44:36.918658-06:00'
 model: gpt-4-0125-preview
-summary: "Tr\xEDch xu\u1EA5t c\xE1c chu\u1ED7i con c\xF3 ngh\u0129a l\xE0 l\u1EA5\
-  y ra c\xE1c ph\u1EA7n nh\u1ECF h\u01A1n t\u1EEB m\u1ED9t chu\u1ED7i d\u1EF1a tr\xEA\
-  n m\u1ED9t s\u1ED1 ti\xEAu ch\xED nh\u1EA5t \u0111\u1ECBnh."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch \u0111\u1EC3 c\u1EAFt v\xE0 chia\
+  \ c\xE1c chu\u1ED7i trong PowerShell."
 title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 weight: 6
 ---

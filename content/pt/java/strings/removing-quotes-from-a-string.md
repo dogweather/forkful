@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:39:54.009709-07:00
-description: "Remover aspas de uma string significa eliminar quaisquer marcas de cita\xE7\
-  \xE3o\u2014simples (' '), duplas (\" \") ou ambas\u2014dos dados de texto. Programadores\
-  \ fazem\u2026"
+description: "Como fazer: Vamos arrancar essas aspas chatas do nosso texto. Usaremos\
+  \ o m\xE9todo `replace()` para os consertos r\xE1pidos e regex para os casos mais\u2026"
 lastmod: '2024-03-13T22:44:46.444544-06:00'
 model: gpt-4-0125-preview
-summary: "Remover aspas de uma string significa eliminar quaisquer marcas de cita\xE7\
-  \xE3o\u2014simples (' '), duplas (\" \") ou ambas\u2014dos dados de texto."
+summary: Vamos arrancar essas aspas chatas do nosso texto.
 title: Removendo aspas de uma string
 weight: 9
 ---

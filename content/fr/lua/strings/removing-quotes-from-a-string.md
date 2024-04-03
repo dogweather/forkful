@@ -1,11 +1,9 @@
 ---
 date: 2024-01-26 03:40:29.117268-07:00
-description: "Retirer les guillemets d'une cha\xEEne de caract\xE8res signifie enlever\
-  \ ces caract\xE8res de guillemets doubles ou simples qui enlacent votre texte. Les\u2026"
+description: "Comment faire : Voici comment \xE9liminer ces guillemets dans Lua ."
 lastmod: '2024-03-13T22:44:57.912516-06:00'
 model: gpt-4-0125-preview
-summary: "Retirer les guillemets d'une cha\xEEne de caract\xE8res signifie enlever\
-  \ ces caract\xE8res de guillemets doubles ou simples qui enlacent votre texte."
+summary: "Voici comment \xE9liminer ces guillemets dans Lua."
 title: "Retirer les guillemets d'une cha\xEEne"
 weight: 9
 ---

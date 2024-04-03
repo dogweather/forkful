@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:46.598586-07:00
-description: "Een tekstbestand lezen betekent het verkrijgen van de inhoud van een\
-  \ bestand in je script. Programmeurs doen dit om met gegevens, configuratie te werken\u2026"
+description: 'Hoe: Hier is de eenvoudigste manier om een bestand regel-voor-regel
+  te lezen.'
 lastmod: '2024-03-13T22:44:51.001210-06:00'
 model: gpt-4-0125-preview
-summary: Een tekstbestand lezen betekent het verkrijgen van de inhoud van een bestand
-  in je script.
+summary: Hier is de eenvoudigste manier om een bestand regel-voor-regel te lezen.
 title: Een tekstbestand lezen
 weight: 22
 ---

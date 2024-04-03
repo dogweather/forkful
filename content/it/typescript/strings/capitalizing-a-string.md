@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:40.794443-07:00
-description: "Capitalizzare una stringa comporta modificare il primo carattere di\
-  \ una data stringa in maiuscolo se \xE8 in minuscolo, lasciando spesso inalterata\
-  \ la\u2026"
+description: "Come fare: TypeScript, essendo un superset di JavaScript, permette vari\
+  \ metodi per capitalizzare le stringhe, che vanno dagli approcci puramente\u2026"
 lastmod: '2024-03-13T22:44:43.159817-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizzare una stringa comporta modificare il primo carattere di una\
-  \ data stringa in maiuscolo se \xE8 in minuscolo, lasciando spesso inalterata la\
-  \ restante parte della stringa."
+summary: "TypeScript, essendo un superset di JavaScript, permette vari metodi per\
+  \ capitalizzare le stringhe, che vanno dagli approcci puramente JavaScript all'utilizzo\
+  \ di librerie di terze parti per casi d'uso pi\xF9 complessi o specifici."
 title: Capitalizzare una stringa
 weight: 2
 ---

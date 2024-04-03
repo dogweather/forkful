@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:08.282100-07:00
-description: "\xC5 sammenligne to datoer i Google Apps Script, en avledning av JavaScript\
-  \ tilpasset for Googles apppakke, er en vesentlig oppgave for utviklere som\u2026"
+description: "Hvordan: I Google Apps Script sammenlignes datoer ved bruk av JavaScript\
+  \ Date-objekter, som muliggj\xF8r bruk av standardmetoder for \xE5 evaluere hvilken\
+  \ av to\u2026"
 lastmod: '2024-03-13T22:44:40.329058-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 sammenligne to datoer i Google Apps Script, en avledning av JavaScript\
-  \ tilpasset for Googles apppakke, er en vesentlig oppgave for utviklere som h\xE5\
-  ndterer planlegging, tidslinjer eller andre datorelaterte data."
+summary: "I Google Apps Script sammenlignes datoer ved bruk av JavaScript Date-objekter,\
+  \ som muliggj\xF8r bruk av standardmetoder for \xE5 evaluere hvilken av to datoer\
+  \ som er tidligere, senere, eller om de er de samme."
 title: Sammenligning av to datoer
 weight: 27
 ---

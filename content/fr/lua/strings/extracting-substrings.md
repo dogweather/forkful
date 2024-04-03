@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:46:16.710501-07:00
-description: "Extraire des sous-cha\xEEnes, c'est prendre des petits bouts de texte\
-  \ d'une cha\xEEne plus grande. On fait \xE7a pour manipuler, chercher ou analyser\
-  \ uniquement\u2026"
+description: "How to: En Lua, pour extraire des sous-cha\xEEnes, on utilise `string.sub`.\
+  \ Voici comment \xE7a marche ."
 lastmod: '2024-03-13T22:44:57.913504-06:00'
 model: gpt-4-1106-preview
-summary: "Extraire des sous-cha\xEEnes, c'est prendre des petits bouts de texte d'une\
-  \ cha\xEEne plus grande."
+summary: "En Lua, pour extraire des sous-cha\xEEnes, on utilise `string.sub`."
 title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---

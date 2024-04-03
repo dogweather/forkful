@@ -1,11 +1,11 @@
 ---
 date: 2024-02-01 21:12:05.342598-07:00
-description: "Printing debug output involves strategically placing log statements\
-  \ in your code to display variable values, execution flow, or message errors during\u2026"
+description: "How to: Google Apps Script provides the `Logger` class for basic debugging,\
+  \ and for more advanced needs, the `console` class introduced in the V8 runtime.\u2026"
 lastmod: '2024-03-13T22:44:59.672355-06:00'
 model: gpt-4-0125-preview
-summary: Printing debug output involves strategically placing log statements in your
-  code to display variable values, execution flow, or message errors during runtime.
+summary: Google Apps Script provides the `Logger` class for basic debugging, and for
+  more advanced needs, the `console` class introduced in the V8 runtime.
 title: Printing debug output
 weight: 33
 ---

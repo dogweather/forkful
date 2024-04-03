@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:12:07.576123-07:00
-description: "Un REPL, ou Boucle Lire-\xC9valuer-Afficher, vous permet de taper du\
-  \ code C# et de l'ex\xE9cuter interactivement. Les programmeurs l'utilisent pour\
-  \ des\u2026"
+description: "Comment faire : D\xE9marrez un REPL dans votre environnement C# en utilisant\
+  \ la fen\xEAtre C# Interactive ou ex\xE9cutez `dotnet-script` dans votre terminal.\
+  \ Voici\u2026"
 lastmod: '2024-03-13T22:44:57.789078-06:00'
 model: gpt-4-0125-preview
-summary: "Un REPL, ou Boucle Lire-\xC9valuer-Afficher, vous permet de taper du code\
-  \ C# et de l'ex\xE9cuter interactivement."
+summary: "D\xE9marrez un REPL dans votre environnement C# en utilisant la fen\xEA\
+  tre C# Interactive ou ex\xE9cutez `dotnet-script` dans votre terminal."
 title: Utilisation d'une console interactive (REPL)
 weight: 34
 ---

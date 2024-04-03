@@ -2,16 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:47.944017-07:00
-description: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i trong\
-  \ C++ bi\u1EBFn \u0111\u1ED1i t\u01B0\u1EE3ng ng\xE0y th\xE0nh \u0111\u1ECBnh d\u1EA1\
-  ng v\u0103n b\u1EA3n d\u1EC5 \u0111\u1ECDc. \u0110i\u1EC1u n\xE0y r\u1EA5t quan\
-  \ tr\u1ECDng \u0111\u1EC3 hi\u1EC3n th\u1ECB ng\xE0y cho ng\u01B0\u1EDDi d\xF9ng\
-  \ v\xE0\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong C++ hi\u1EC7n \u0111\u1EA1i, th\u01B0\
+  \ vi\u1EC7n `<chrono>` v\xE0 `<iomanip>` l\xE0 ng\u01B0\u1EDDi b\u1EA1n \u0111\u1ED3\
+  ng h\xE0nh c\u1EE7a b\u1EA1n cho c\xE1c thao t\xE1c ng\xE0y-gi\u1EDD. D\u01B0\u1EDB\
+  i \u0111\xE2y l\xE0 m\u1ED9t ph\u01B0\u01A1ng\u2026"
 lastmod: '2024-03-13T22:44:37.057692-06:00'
 model: gpt-4-0125-preview
-summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i trong C++\
-  \ bi\u1EBFn \u0111\u1ED1i t\u01B0\u1EE3ng ng\xE0y th\xE0nh \u0111\u1ECBnh d\u1EA1\
-  ng v\u0103n b\u1EA3n d\u1EC5 \u0111\u1ECDc."
+summary: "Trong C++ hi\u1EC7n \u0111\u1EA1i, th\u01B0 vi\u1EC7n `<chrono>` v\xE0 `<iomanip>`\
+  \ l\xE0 ng\u01B0\u1EDDi b\u1EA1n \u0111\u1ED3ng h\xE0nh c\u1EE7a b\u1EA1n cho c\xE1\
+  c thao t\xE1c ng\xE0y-gi\u1EDD."
 title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 weight: 28
 ---

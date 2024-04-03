@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:16.263902-07:00
-description: "Scrivere in un file di testo in C++ comporta la creazione o l'apertura\
-  \ di un file e poi la scrittura di dati in esso, che \xE8 un compito fondamentale\
-  \ per le\u2026"
+description: "Come fare: C++ offre diversi modi per scrivere su un file di testo,\
+  \ ma uno dei metodi pi\xF9 diretti \xE8 l'uso della libreria `<fstream>` che fornisce\
+  \ la\u2026"
 lastmod: '2024-03-13T22:44:43.746583-06:00'
 model: gpt-4-0125-preview
-summary: "Scrivere in un file di testo in C++ comporta la creazione o l'apertura di\
-  \ un file e poi la scrittura di dati in esso, che \xE8 un compito fondamentale per\
-  \ le applicazioni che hanno bisogno di mantenere dati, come log, contenuti generati\
-  \ dall'utente o impostazioni di configurazione."
+summary: "C++ offre diversi modi per scrivere su un file di testo, ma uno dei metodi\
+  \ pi\xF9 diretti \xE8 l'uso della libreria `<fstream>` che fornisce la classe `ofstream`\
+  \ (output file stream) progettata per operazioni di scrittura su file."
 title: Scrivere un file di testo
 weight: 24
 ---

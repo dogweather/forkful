@@ -1,7 +1,7 @@
 ---
 date: 2024-01-26 03:47:41.210291-07:00
-description: "C++ integriert sich mit Debuggern wie GDB oder dem Visual Studio Debugger.\
-  \ Hier ist ein kurzes Beispiel mit GDB: ```C++ #include <iostream> int main() {\u2026"
+description: 'Wie geht das: C++ integriert sich mit Debuggern wie GDB oder dem Visual
+  Studio Debugger. Hier ist ein kurzes Beispiel mit GDB.'
 lastmod: '2024-03-13T22:44:54.189294-06:00'
 model: gpt-4-0125-preview
 summary: C++ integriert sich mit Debuggern wie GDB oder dem Visual Studio Debugger.

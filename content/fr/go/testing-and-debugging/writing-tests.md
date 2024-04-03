@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:07.495181-07:00
-description: "\xC9crire des tests en Go consiste \xE0 cr\xE9er de petits morceaux\
-  \ de code g\xE9rables qui valident la fonctionnalit\xE9 et le comportement de votre\
-  \ application. Les\u2026"
+description: "Comment faire : En Go, les tests sont g\xE9n\xE9ralement \xE9crits dans\
+  \ le m\xEAme paquet que le code qu'ils testent. Les fichiers contenant des tests\
+  \ sont nomm\xE9s\u2026"
 lastmod: '2024-03-13T22:44:57.137759-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire des tests en Go consiste \xE0 cr\xE9er de petits morceaux de code\
-  \ g\xE9rables qui valident la fonctionnalit\xE9 et le comportement de votre application."
+summary: "En Go, les tests sont g\xE9n\xE9ralement \xE9crits dans le m\xEAme paquet\
+  \ que le code qu'ils testent."
 title: "R\xE9daction de tests"
 weight: 36
 ---

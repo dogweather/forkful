@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:17.757912-07:00
-description: "Att kontrollera om en katalog finns i Ruby l\xE5ter programmerare verifiera\
-  \ n\xE4rvaron av en katalog innan de utf\xF6r operationer som att l\xE4sa filer\
-  \ eller skapa\u2026"
+description: "Hur g\xF6r man: Rubys standardbibliotek erbjuder enkla metoder f\xF6\
+  r att kontrollera om en katalog finns. S\xE5 h\xE4r g\xF6r du det med ren Ruby,\
+  \ utan att beh\xF6va n\xE5gra\u2026"
 lastmod: '2024-03-13T22:44:38.446035-06:00'
 model: gpt-4-0125-preview
-summary: "Att kontrollera om en katalog finns i Ruby l\xE5ter programmerare verifiera\
-  \ n\xE4rvaron av en katalog innan de utf\xF6r operationer som att l\xE4sa filer\
-  \ eller skapa nya kataloger."
+summary: "Rubys standardbibliotek erbjuder enkla metoder f\xF6r att kontrollera om\
+  \ en katalog finns."
 title: Kontrollera om en katalog existerar
 weight: 20
 ---

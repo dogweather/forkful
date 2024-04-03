@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 03:38:51.425517-07:00
-description: "Rimuovere le virgolette da una stringa significa liberarsi di quei fastidiosi\
-  \ caratteri di virgolette doppie o singole che avvolgono il tuo testo. I\u2026"
+description: "Come fare: In Clojure, le stringhe sono immutabili, quindi quando parliamo\
+  \ di \"rimuovere le virgolette\", stiamo realmente parlando di creare una nuova\u2026"
 lastmod: '2024-03-13T22:44:43.030699-06:00'
 model: gpt-4-0125-preview
-summary: Rimuovere le virgolette da una stringa significa liberarsi di quei fastidiosi
-  caratteri di virgolette doppie o singole che avvolgono il tuo testo.
+summary: In Clojure, le stringhe sono immutabili, quindi quando parliamo di "rimuovere
+  le virgolette", stiamo realmente parlando di creare una nuova stringa senza virgolette.
 title: Rimuovere le virgolette da una stringa
 weight: 9
 ---

@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:55.822608-07:00
-description: "Tests schrijven in Go betekent kleine, beheersbare stukken code cre\xEB\
-  ren die de functionaliteit en het gedrag van je applicatie valideren. Programmeurs\u2026"
+description: "Hoe te: In Go worden tests doorgaans geschreven in hetzelfde pakket\
+  \ als de code die ze testen. Bestanden met tests krijgen de `_test.go` suffix. Tests\u2026"
 lastmod: '2024-03-13T22:44:50.291220-06:00'
 model: gpt-4-0125-preview
-summary: "Tests schrijven in Go betekent kleine, beheersbare stukken code cre\xEB\
-  ren die de functionaliteit en het gedrag van je applicatie valideren."
+summary: In Go worden tests doorgaans geschreven in hetzelfde pakket als de code die
+  ze testen.
 title: Tests Schrijven
 weight: 36
 ---

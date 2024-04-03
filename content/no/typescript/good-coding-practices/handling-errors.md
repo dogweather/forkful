@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 00:58:37.145866-07:00
-description: "\xC5 h\xE5ndtere feil handler om \xE5 forvente det uforventede; det\
-  \ er hvordan vi tar oss av situasjoner n\xE5r ting g\xE5r galt i koden v\xE5r. Vi\
-  \ gj\xF8r det for \xE5 unng\xE5\u2026"
+description: "Hvordan: I TypeScript inneb\xE6rer feilh\xE5ndtering ofte bruk av `try`,\
+  \ `catch`, og `finally` blokker."
 lastmod: '2024-03-13T22:44:40.539668-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 h\xE5ndtere feil handler om \xE5 forvente det uforventede; det er hvordan\
-  \ vi tar oss av situasjoner n\xE5r ting g\xE5r galt i koden v\xE5r."
+summary: "I TypeScript inneb\xE6rer feilh\xE5ndtering ofte bruk av `try`, `catch`,\
+  \ og `finally` blokker."
 title: "Feilh\xE5ndtering"
 weight: 16
 ---

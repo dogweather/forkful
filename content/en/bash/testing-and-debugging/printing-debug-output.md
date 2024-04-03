@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:51:53.543395-07:00
-description: "Printing debug output is all about echoing data to the console to check\
-  \ what's going on in your script. Programmers do it to track variables, follow logic\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:45:00.247182-06:00'
 model: gpt-4-1106-preview
-summary: Printing debug output is all about echoing data to the console to check what's
-  going on in your script.
+summary: .
 title: Printing debug output
 weight: 33
 ---

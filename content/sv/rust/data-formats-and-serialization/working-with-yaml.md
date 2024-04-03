@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:41.207630-07:00
-description: "I Rust-programmering inneb\xE4r arbete med YAML (YAML Ain't Markup Language)\
-  \ att tolka och generera data i YAML-format, en m\xE4nniskov\xE4nlig standard f\xF6\
-  r data-\u2026"
+description: "Hur man g\xF6r: Rust st\xF6der inte YAML i sitt standardbibliotek, s\xE5\
+  \ vi anv\xE4nder vanligtvis tredjeparts l\xE5dor som `serde` (f\xF6r serialisering\
+  \ och\u2026"
 lastmod: '2024-03-13T22:44:37.719785-06:00'
 model: gpt-4-0125-preview
-summary: "I Rust-programmering inneb\xE4r arbete med YAML (YAML Ain't Markup Language)\
-  \ att tolka och generera data i YAML-format, en m\xE4nniskov\xE4nlig standard f\xF6\
-  r data-serialisering."
+summary: "Rust st\xF6der inte YAML i sitt standardbibliotek, s\xE5 vi anv\xE4nder\
+  \ vanligtvis tredjeparts l\xE5dor som `serde` (f\xF6r serialisering och deserialisering\
+  \ av data) i kombination med `serde_yaml`."
 title: Att Arbeta med YAML
 weight: 41
 ---

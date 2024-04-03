@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:59:11.451435-07:00
-description: "Wyszukiwanie i zamiana tekstu to podstawa przetwarzania ci\u0105g\xF3\
-  w znak\xF3w, umo\u017Cliwiaj\u0105ca podmian\u0119 okre\u015Blonych fragment\xF3\
-  w na nowe. Programi\u015Bci korzystaj\u0105 z\u2026"
+description: "How to: (Jak to zrobi\u0107?) ."
 lastmod: '2024-03-13T22:44:35.123042-06:00'
 model: gpt-4-1106-preview
-summary: "Wyszukiwanie i zamiana tekstu to podstawa przetwarzania ci\u0105g\xF3w znak\xF3\
-  w, umo\u017Cliwiaj\u0105ca podmian\u0119 okre\u015Blonych fragment\xF3w na nowe."
+summary: .
 title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---

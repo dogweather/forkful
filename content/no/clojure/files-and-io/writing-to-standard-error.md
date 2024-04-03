@@ -2,12 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:47.330594-07:00
-description: "\xC5 skrive til standardfeil (stderr) handler om \xE5 styre feilmeldinger\
-  \ og diagnostikk til stderr-str\xF8mmen, separat fra standard utgang (stdout).\u2026"
+description: "Hvordan: I Clojure kan du skrive til stderr ved \xE5 bruke `*err*`-str\xF8\
+  mmen. Her er et grunnleggende eksempel."
 lastmod: '2024-03-13T22:44:40.417972-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive til standardfeil (stderr) handler om \xE5 styre feilmeldinger\
-  \ og diagnostikk til stderr-str\xF8mmen, separat fra standard utgang (stdout)."
+summary: "I Clojure kan du skrive til stderr ved \xE5 bruke `*err*`-str\xF8mmen."
 title: Skriving til standardfeil
 weight: 25
 ---

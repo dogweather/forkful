@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:30.332553-07:00
-description: "Het genereren van willekeurige getallen in Arduino-projecten houdt in\
-  \ dat waarden worden geproduceerd die ontworpen zijn om onvoorspelbaar te zijn,\u2026"
+description: "Hoe te: Arduino biedt eenvoudige functies voor het genereren van willekeurige\
+  \ getallen: `randomSeed()` en `random()`. Om te beginnen, initialiseer je de\u2026"
 lastmod: '2024-03-13T22:44:51.068546-06:00'
 model: gpt-4-0125-preview
-summary: Het genereren van willekeurige getallen in Arduino-projecten houdt in dat
-  waarden worden geproduceerd die ontworpen zijn om onvoorspelbaar te zijn, cruciaal
-  voor toepassingen zoals games, simulaties en beveiligingssystemen.
+summary: Arduino biedt eenvoudige functies voor het genereren van willekeurige getallen.
 title: Willekeurige getallen genereren
 weight: 12
 ---

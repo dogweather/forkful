@@ -1,11 +1,11 @@
 ---
 date: 2024-03-08 21:33:41.071470-07:00
-description: "Generating random numbers in Dart involves creating numerical values\
-  \ that are unpredictable and differ on each execution. Programmers leverage this\u2026"
+description: 'How to: Dart''s core library includes support for generating random
+  numbers with the `Random` class found in `dart:math`. Here''s a basic example.'
 lastmod: '2024-03-13T22:44:59.817093-06:00'
 model: gpt-4-0125-preview
-summary: Generating random numbers in Dart involves creating numerical values that
-  are unpredictable and differ on each execution.
+summary: Dart's core library includes support for generating random numbers with the
+  `Random` class found in `dart:math`.
 title: Generating random numbers
 weight: 12
 ---

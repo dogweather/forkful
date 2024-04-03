@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:42.362962-07:00
-description: "Analisar uma data de uma string em Bash envolve extrair e converter\
-  \ informa\xE7\xF5es de data de dados textuais para um formato que o Bash pode manipular\
-  \ ou\u2026"
+description: "Como fazer: O pr\xF3prio Bash \xE9 bastante limitado na capacidade direta\
+  \ de an\xE1lise de datas, muitas vezes dependendo de ferramentas externas como `date`\
+  \ e\u2026"
 lastmod: '2024-03-13T22:44:46.762235-06:00'
 model: gpt-4-0125-preview
-summary: "Analisar uma data de uma string em Bash envolve extrair e converter informa\xE7\
-  \xF5es de data de dados textuais para um formato que o Bash pode manipular ou usar\
-  \ para processos posteriores."
+summary: "O pr\xF3prio Bash \xE9 bastante limitado na capacidade direta de an\xE1\
+  lise de datas, muitas vezes dependendo de ferramentas externas como `date` e `awk`\
+  \ para manipula\xE7\xF5es mais sofisticadas."
 title: Analisando uma data a partir de uma string
 weight: 30
 ---

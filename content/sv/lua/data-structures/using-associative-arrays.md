@@ -2,14 +2,13 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:23.113379-07:00
-description: "Associerade arrayer \xE4r som hemliga handslag f\xF6r data i Lua\u2014\
-  ist\xE4llet f\xF6r bara siffror som lydigt st\xE4ller upp efter index, kan dina\
-  \ nycklar vara vad du\u2026"
+description: "Hur man g\xF6r: I Lua \xE4r det rakt p\xE5 sak att skapa en associerad\
+  \ array (eller en tabell, p\xE5 Lua-spr\xE5k) . Du skippar de vanliga numeriska\
+  \ indexerna f\xF6r\u2026"
 lastmod: '2024-03-13T22:44:38.031168-06:00'
 model: gpt-4-0125-preview
-summary: "Associerade arrayer \xE4r som hemliga handslag f\xF6r data i Lua\u2014ist\xE4\
-  llet f\xF6r bara siffror som lydigt st\xE4ller upp efter index, kan dina nycklar\
-  \ vara vad du vill, vilket g\xF6r data\xE5terkallning till en barnlek."
+summary: "I Lua \xE4r det rakt p\xE5 sak att skapa en associerad array (eller en tabell,\
+  \ p\xE5 Lua-spr\xE5k)."
 title: "Att anv\xE4nda associativa arrayer"
 weight: 15
 ---

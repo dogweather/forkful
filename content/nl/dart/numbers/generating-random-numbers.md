@@ -2,12 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:54.439984-07:00
-description: "Het genereren van willekeurige getallen in Dart omvat het cre\xEBren\
-  \ van numerieke waarden die onvoorspelbaar zijn en bij elke uitvoering verschillen.\u2026"
+description: "Hoe te: De kernbibliotheek van Dart bevat ondersteuning voor het genereren\
+  \ van willekeurige getallen met de `Random` klasse, te vinden in `dart:math`.\u2026"
 lastmod: '2024-03-13T22:44:50.500378-06:00'
 model: gpt-4-0125-preview
-summary: "Het genereren van willekeurige getallen in Dart omvat het cre\xEBren van\
-  \ numerieke waarden die onvoorspelbaar zijn en bij elke uitvoering verschillen."
+summary: De kernbibliotheek van Dart bevat ondersteuning voor het genereren van willekeurige
+  getallen met de `Random` klasse, te vinden in `dart:math`.
 title: Genereren van willekeurige getallen
 weight: 12
 ---

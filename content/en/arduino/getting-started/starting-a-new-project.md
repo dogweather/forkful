@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 18:02:33.167744-07:00
-description: "Starting a new project on Arduino means initializing a fresh sketch,\
-  \ the canvas for your code. Programmers do this to breathe life into new gadgets,\
-  \ from\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:45:00.322711-06:00'
 model: gpt-4-1106-preview
-summary: Starting a new project on Arduino means initializing a fresh sketch, the
-  canvas for your code.
+summary: .
 title: Starting a new project
 weight: 1
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-01-27 16:20:58.296820-07:00
-description: "Imagina que acabas de descubrir que necesitas hacer una actualizaci\xF3\
-  n por lotes a varios archivos de configuraci\xF3n que se encuentran en tu servidor.\u2026"
+description: "C\xF3mo hacerlo: Cuando se trata de editar archivos en el lugar usando\
+  \ Bash, dos herramientas prominentes entran en juego: `sed` y `awk`. Vamos a explorar\u2026"
 lastmod: '2024-03-13T22:44:59.242228-06:00'
 model: gpt-4-0125-preview
-summary: "Imagina que acabas de descubrir que necesitas hacer una actualizaci\xF3\
-  n por lotes a varios archivos de configuraci\xF3n que se encuentran en tu servidor."
+summary: Cuando se trata de editar archivos en el lugar usando Bash, dos herramientas
+  prominentes entran en juego.
 title: "Editando archivos directamente con l\xEDneas de comandos"
 weight: 32
 ---

@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:35:17.906022-07:00
-description: "Yhdist\xE4mme merkkijonoja luodaksemme uusia, kokonaisia tekstej\xE4\
-  . T\xE4m\xE4 on tarpeen, kun ker\xE4\xE4mme eri l\xE4hteist\xE4 tulevia tietoja\
-  \ tai haluamme muodostaa\u2026"
+description: 'Kuinka: .'
 lastmod: '2024-03-13T22:44:56.772296-06:00'
 model: gpt-4-1106-preview
-summary: "Yhdist\xE4mme merkkijonoja luodaksemme uusia, kokonaisia tekstej\xE4."
+summary: .
 title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---

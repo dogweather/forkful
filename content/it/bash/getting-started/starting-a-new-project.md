@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 18:03:06.133718-07:00
-description: "Iniziare un nuovo progetto significa creare una base da cui partire\
-  \ a programmare. I programmatori lo fanno per organizzare e strutturare il codice\
-  \ da\u2026"
+description: 'How to: (Come fare:) Iniziamo creando una cartella per il progetto e
+  poi generiamo un file script Bash di base.'
 lastmod: '2024-03-13T22:44:43.600477-06:00'
 model: gpt-4-1106-preview
-summary: Iniziare un nuovo progetto significa creare una base da cui partire a programmare.
+summary: Iniziamo creando una cartella per il progetto e poi generiamo un file script
+  Bash di base.
 title: Avvio di un nuovo progetto
 weight: 1
 ---

@@ -2,14 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:09.302892-07:00
-description: "Avviare un nuovo progetto in C comporta la configurazione di una struttura\
-  \ di codice di base e un ambiente per gestire in modo efficiente le attivit\xE0\
-  \ di\u2026"
+description: "Come fare: Al cuore di qualsiasi progetto C vi \xE8 il codice sorgente.\
+  \ Un punto di partenza tipico prevede la creazione di un file principale, spesso\u2026"
 lastmod: '2024-03-13T22:44:43.998946-06:00'
 model: gpt-4-0125-preview
-summary: "Avviare un nuovo progetto in C comporta la configurazione di una struttura\
-  \ di codice di base e un ambiente per gestire in modo efficiente le attivit\xE0\
-  \ di sviluppo."
+summary: "Al cuore di qualsiasi progetto C vi \xE8 il codice sorgente."
 title: Iniziare un nuovo progetto
 weight: 1
 ---

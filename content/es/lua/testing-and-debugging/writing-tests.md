@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:42.995104-07:00
-description: "Escribir pruebas en programaci\xF3n implica crear peque\xF1as piezas\
-  \ de c\xF3digo separadas para verificar autom\xE1ticamente que diferentes partes\
-  \ de tu aplicaci\xF3n\u2026"
+description: "C\xF3mo: Lua, al ser un lenguaje de scripting ligero pero poderoso,\
+  \ no incluye un marco de pruebas incorporado. Sin embargo, bibliotecas de terceros\
+  \ como\u2026"
 lastmod: '2024-03-13T22:44:59.205451-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir pruebas en programaci\xF3n implica crear peque\xF1as piezas de\
-  \ c\xF3digo separadas para verificar autom\xE1ticamente que diferentes partes de\
-  \ tu aplicaci\xF3n funcionen como se espera."
+summary: Lua, al ser un lenguaje de scripting ligero pero poderoso, no incluye un
+  marco de pruebas incorporado.
 title: Escribiendo pruebas
 weight: 36
 ---

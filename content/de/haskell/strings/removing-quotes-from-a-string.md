@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 03:39:47.934905-07:00
-description: "Anf\xFChrungszeichen aus einem String zu entfernen bedeutet, jegliche\
-  \ Anf\xFChrungszeichen\u2014einfache (' ') oder doppelte (\" \")\u2014, die Teil\
-  \ der Stringdaten sind,\u2026"
+description: "Wie zu: In Haskell k\xF6nnen wir eine Funktion erstellen, die alle Anf\xFC\
+  hrungszeichen aus einem gegebenen String entfernt. Es ist, als w\xFCrde man den\u2026"
 lastmod: '2024-03-13T22:44:53.919290-06:00'
 model: gpt-4-0125-preview
-summary: "Anf\xFChrungszeichen aus einem String zu entfernen bedeutet, jegliche Anf\xFC\
-  hrungszeichen\u2014einfache (' ') oder doppelte (\" \")\u2014, die Teil der Stringdaten\
-  \ sind, herauszufiltern."
+summary: "In Haskell k\xF6nnen wir eine Funktion erstellen, die alle Anf\xFChrungszeichen\
+  \ aus einem gegebenen String entfernt."
 title: "Anf\xFChrungszeichen aus einem String entfernen"
 weight: 9
 ---

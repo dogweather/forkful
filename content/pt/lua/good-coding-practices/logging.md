@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 01:06:58.864720-07:00
-description: "Logging \xE9 a pr\xE1tica de registrar eventos, erros e outros pontos\
-  \ de dados significativos que ocorrem no ciclo de vida de uma aplica\xE7\xE3o de\
-  \ software.\u2026"
+description: "Como Fazer: Lua n\xE3o tem um framework de logging integrado, mas implementar\
+  \ uma fun\xE7\xE3o simples de logging \xE9 direto. Abaixo est\xE1 um exemplo b\xE1\
+  sico de tal\u2026"
 lastmod: '2024-03-13T22:44:46.715593-06:00'
 model: gpt-4-1106-preview
-summary: "Logging \xE9 a pr\xE1tica de registrar eventos, erros e outros pontos de\
-  \ dados significativos que ocorrem no ciclo de vida de uma aplica\xE7\xE3o de software."
+summary: "Lua n\xE3o tem um framework de logging integrado, mas implementar uma fun\xE7\
+  \xE3o simples de logging \xE9 direto."
 title: Registro de Logs
 weight: 17
 ---

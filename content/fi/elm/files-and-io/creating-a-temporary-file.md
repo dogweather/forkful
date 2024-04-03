@@ -1,12 +1,13 @@
 ---
 date: 2024-01-20 17:40:13.191330-07:00
-description: "Luodaan v\xE4liaikainen tiedosto: se on tilap\xE4inen s\xE4ilytyspaikka\
-  \ datalle. K\xE4yt\xE4mme sit\xE4, kun haluamme k\xE4sitell\xE4 tietoa, jota ei\
-  \ tarvitse s\xE4ilytt\xE4\xE4\u2026"
+description: "How to: (Miten Tehd\xE4\xE4n:) Elmiss\xE4 ei ole suoraa tapaa luoda\
+  \ v\xE4liaikaisia tiedostoja, koska se keskittyy puhtaasti frontend-kehitykseen\
+  \ ja py\xF6rii\u2026"
 lastmod: '2024-03-13T22:44:56.508186-06:00'
 model: gpt-4-1106-preview
-summary: "Luodaan v\xE4liaikainen tiedosto: se on tilap\xE4inen s\xE4ilytyspaikka\
-  \ datalle."
+summary: "Elmiss\xE4 ei ole suoraa tapaa luoda v\xE4liaikaisia tiedostoja, koska se\
+  \ keskittyy puhtaasti frontend-kehitykseen ja py\xF6rii selainymp\xE4rist\xF6ss\xE4\
+  , miss\xE4 p\xE4\xE4sy tiedostoj\xE4rjestelm\xE4\xE4n on eritt\xE4in rajoitettua."
 title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---

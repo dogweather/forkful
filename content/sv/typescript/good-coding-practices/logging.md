@@ -1,13 +1,13 @@
 ---
 date: 2024-01-26 01:09:28.099358-07:00
-description: "Loggning \xE4r processen att registrera h\xE4ndelser, fel och annan\
-  \ viktig information under ett programs utf\xF6rande till ett externt medium, ofta\
-  \ filer eller\u2026"
+description: "Hur man g\xF6r: I TypeScript kan du enkelt implementera grundl\xE4ggande\
+  \ loggning med hj\xE4lp av konsolmetoder eller integrera mer avancerad loggning\
+  \ med\u2026"
 lastmod: '2024-03-13T22:44:37.662453-06:00'
 model: gpt-4-1106-preview
-summary: "Loggning \xE4r processen att registrera h\xE4ndelser, fel och annan viktig\
-  \ information under ett programs utf\xF6rande till ett externt medium, ofta filer\
-  \ eller databaser."
+summary: "I TypeScript kan du enkelt implementera grundl\xE4ggande loggning med hj\xE4\
+  lp av konsolmetoder eller integrera mer avancerad loggning med bibliotek som `winston`\
+  \ eller `pino`."
 title: Loggning
 weight: 17
 ---

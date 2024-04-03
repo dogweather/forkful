@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:27:23.179307-07:00
-description: "Arbeid med XML p\xE5 Arduino inneb\xE6rer parsing og manipulering av\
-  \ XML-data, som vanligvis kommer fra web-APIer eller konfigurasjonsfiler. Programmerere\
-  \ gj\xF8r\u2026"
+description: "Hvordan: Vi vil bruke `XMLWriter`-biblioteket til \xE5 opprette XML\
+  \ og `tinyxml2`-biblioteket for \xE5 parse det. Installer f\xF8rst bibliotekene\
+  \ via\u2026"
 lastmod: '2024-03-13T22:44:41.081774-06:00'
 model: gpt-4-0125-preview
-summary: "Arbeid med XML p\xE5 Arduino inneb\xE6rer parsing og manipulering av XML-data,\
-  \ som vanligvis kommer fra web-APIer eller konfigurasjonsfiler."
+summary: "Vi vil bruke `XMLWriter`-biblioteket til \xE5 opprette XML og `tinyxml2`-biblioteket\
+  \ for \xE5 parse det."
 title: "\xC5 jobbe med XML"
 weight: 40
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:40.394195-07:00
-description: "HTML parsen betekent gegevens uit HTML-documenten extraheren - HTML\
-  \ is tenslotte de steiger van het web. Programmeurs parsen HTML om gegevensschrapen\
-  \ te\u2026"
+description: "Hoe: Laten we onze handen vuil maken met wat code, door de `tagsoup`\
+  \ bibliotheek te gebruiken om een eenvoudig HTML-snippet te parsen. Zorg er eerst\
+  \ voor\u2026"
 lastmod: '2024-03-13T22:44:50.850080-06:00'
 model: gpt-4-0125-preview
-summary: HTML parsen betekent gegevens uit HTML-documenten extraheren - HTML is tenslotte
-  de steiger van het web.
+summary: Laten we onze handen vuil maken met wat code, door de `tagsoup` bibliotheek
+  te gebruiken om een eenvoudig HTML-snippet te parsen.
 title: HTML Parsen
 weight: 43
 ---

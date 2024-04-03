@@ -1,14 +1,13 @@
 ---
 date: 2024-01-27 20:34:51.317962-07:00
-description: "Gerar n\xFAmeros aleat\xF3rios em PHP est\xE1 relacionado a produzir\
-  \ valores imprevis\xEDveis dentro de uma faixa especificada, o que \xE9 essencial\
-  \ para tarefas como\u2026"
+description: "Como: O PHP oferece v\xE1rias fun\xE7\xF5es para gerar n\xFAmeros aleat\xF3\
+  rios, mas as mais usadas s\xE3o `rand()`, `mt_rand()`, e para prop\xF3sitos criptogr\xE1\
+  ficos,\u2026"
 lastmod: '2024-03-13T22:44:46.663228-06:00'
 model: gpt-4-0125-preview
-summary: "Gerar n\xFAmeros aleat\xF3rios em PHP est\xE1 relacionado a produzir valores\
-  \ imprevis\xEDveis dentro de uma faixa especificada, o que \xE9 essencial para tarefas\
-  \ como criar IDs de usu\xE1rio \xFAnicos, gerar senhas ou para uso em simula\xE7\
-  \xF5es e jogos."
+summary: "O PHP oferece v\xE1rias fun\xE7\xF5es para gerar n\xFAmeros aleat\xF3rios,\
+  \ mas as mais usadas s\xE3o `rand()`, `mt_rand()`, e para prop\xF3sitos criptogr\xE1\
+  ficos, `random_int()`."
 title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
 weight: 12
 ---

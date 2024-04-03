@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:29.496116-07:00
-description: "\"Werken met XML\" verwijst naar het proces van het lezen, cre\xEBren\
-  \ en wijzigen van XML (eXtensible Markup Language)-bestanden met behulp van programmering.\u2026"
+description: 'Hoe: Pythons `xml.etree.ElementTree` module biedt hulpmiddelen om met
+  XML te werken. Een XML-document parseren.'
 lastmod: '2024-03-13T22:44:50.400448-06:00'
 model: gpt-4-0125-preview
-summary: "\"Werken met XML\" verwijst naar het proces van het lezen, cre\xEBren en\
-  \ wijzigen van XML (eXtensible Markup Language)-bestanden met behulp van programmering."
+summary: Pythons `xml.etree.ElementTree` module biedt hulpmiddelen om met XML te werken.
 title: Werken met XML
 weight: 40
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:38.132051-07:00
-description: "Merkkijonon muuttaminen isokirjaimiseksi Swiftiss\xE4 muokkaa annettua\
-  \ merkkijonoa siten, ett\xE4 sen ensimm\xE4inen merkki on isokirjain ja loput merkit\
-  \ ovat\u2026"
+description: "Kuinka: Swiftin `String`-rakenteet sis\xE4lt\xE4v\xE4t muutamia sis\xE4\
+  \xE4nrakennettuja metodeja merkkijonojen kirjainkoon manipuloimiseksi. T\xE4ss\xE4\
+  \ on muutama\u2026"
 lastmod: '2024-03-13T22:44:56.890961-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonon muuttaminen isokirjaimiseksi Swiftiss\xE4 muokkaa annettua merkkijonoa\
-  \ siten, ett\xE4 sen ensimm\xE4inen merkki on isokirjain ja loput merkit ovat pieni\xE4\
-  \ kirjaimia."
+summary: "Swiftin `String`-rakenteet sis\xE4lt\xE4v\xE4t muutamia sis\xE4\xE4nrakennettuja\
+  \ metodeja merkkijonojen kirjainkoon manipuloimiseksi."
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:53.200638-07:00
-description: "Analisar (ou \"parsear\") HTML na programa\xE7\xE3o envolve extrair\
-  \ dados de documentos HTML. Os programadores fazem isso para interagir com ou raspar\
-  \ conte\xFAdo da\u2026"
+description: "Como fazer: Dart n\xE3o oferece suporte integrado para an\xE1lise de\
+  \ HTML em suas bibliotecas principais. No entanto, voc\xEA pode usar um pacote de\
+  \ terceiros como\u2026"
 lastmod: '2024-03-13T22:44:46.279188-06:00'
 model: gpt-4-0125-preview
-summary: "Analisar (ou \"parsear\") HTML na programa\xE7\xE3o envolve extrair dados\
-  \ de documentos HTML."
+summary: "Dart n\xE3o oferece suporte integrado para an\xE1lise de HTML em suas bibliotecas\
+  \ principais."
 title: Analisando HTML
 weight: 43
 ---

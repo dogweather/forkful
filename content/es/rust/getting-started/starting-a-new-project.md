@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 18:04:27.648649-07:00
-description: "Iniciar un proyecto nuevo en Rust significa crear una estructura b\xE1\
-  sica de archivos y c\xF3digo; es el punto de partida para toda aplicaci\xF3n. Los\u2026"
+description: "C\xF3mo Hacerlo: Para empezar un nuevo proyecto en Rust, primero necesitas\
+  \ tener Cargo, el sistema de gesti\xF3n de paquetes y proyectos de Rust. Aqu\xED\
+  \ est\xE1n los\u2026"
 lastmod: '2024-03-13T22:44:58.847291-06:00'
 model: gpt-4-1106-preview
-summary: "Iniciar un proyecto nuevo en Rust significa crear una estructura b\xE1sica\
-  \ de archivos y c\xF3digo; es el punto de partida para toda aplicaci\xF3n."
+summary: "Para empezar un nuevo proyecto en Rust, primero necesitas tener Cargo, el\
+  \ sistema de gesti\xF3n de paquetes y proyectos de Rust."
 title: Iniciando un nuevo proyecto
 weight: 1
 ---

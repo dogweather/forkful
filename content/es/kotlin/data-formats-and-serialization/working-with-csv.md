@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:24.200008-07:00
-description: "Trabajar con CSV (Valores Separados por Comas) implica leer y escribir\
-  \ datos en archivos CSV, un formato com\xFAn para almacenar datos tabulares en texto\u2026"
+description: "C\xF3mo: Kotlin, siendo un lenguaje de programaci\xF3n de tipos est\xE1\
+  ticos que se ejecuta en la JVM, no incluye una biblioteca integrada para manejar\
+  \ archivos\u2026"
 lastmod: '2024-03-13T22:44:59.058822-06:00'
 model: gpt-4-0125-preview
-summary: "Trabajar con CSV (Valores Separados por Comas) implica leer y escribir datos\
-  \ en archivos CSV, un formato com\xFAn para almacenar datos tabulares en texto plano."
+summary: "Kotlin, siendo un lenguaje de programaci\xF3n de tipos est\xE1ticos que\
+  \ se ejecuta en la JVM, no incluye una biblioteca integrada para manejar archivos\
+  \ CSV."
 title: Trabajando con CSV
 weight: 37
 ---

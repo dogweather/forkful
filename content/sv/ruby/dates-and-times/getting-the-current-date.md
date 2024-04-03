@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:39.283869-07:00
-description: "Att h\xE4mta det aktuella datumet \xE4r en v\xE4sentlig uppgift i n\xE4\
-  stan alla programmeringsprojekt, fr\xE5n att logga aktiviteter i en applikation\
-  \ till att generera\u2026"
+description: "Hur man g\xF6r: Rubys standardbibliotek inkluderar klasserna `Date`\
+  \ och `Time` f\xF6r att hantera datum och tid. S\xE5 h\xE4r f\xE5r du det aktuella\
+  \ datumet."
 lastmod: '2024-03-13T22:44:38.441818-06:00'
 model: gpt-4-0125-preview
-summary: "Att h\xE4mta det aktuella datumet \xE4r en v\xE4sentlig uppgift i n\xE4\
-  stan alla programmeringsprojekt, fr\xE5n att logga aktiviteter i en applikation\
-  \ till att generera rapporter med datumst\xE4mplar."
+summary: "Rubys standardbibliotek inkluderar klasserna `Date` och `Time` f\xF6r att\
+  \ hantera datum och tid."
 title: "F\xE5 det aktuella datumet"
 weight: 29
 ---

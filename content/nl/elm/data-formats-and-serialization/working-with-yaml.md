@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:04.386386-07:00
-description: "YAML, een voor mensen begrijpelijke data-serialisatiestandaard, wordt\
-  \ gebruikt voor configuratiebestanden en gegevensuitwisseling. Programmeurs zijn\
-  \ er\u2026"
+description: "Hoe te: Elm heeft geen ingebouwde YAML-parser, dus meestal zet je YAML\
+  \ om naar JSON met een extern hulpprogramma en werk je vervolgens in Elm met de\u2026"
 lastmod: '2024-03-13T22:44:50.745374-06:00'
 model: gpt-4-0125-preview
-summary: YAML, een voor mensen begrijpelijke data-serialisatiestandaard, wordt gebruikt
-  voor configuratiebestanden en gegevensuitwisseling.
+summary: Elm heeft geen ingebouwde YAML-parser, dus meestal zet je YAML om naar JSON
+  met een extern hulpprogramma en werk je vervolgens in Elm met de `elm/json` bibliotheek.
 title: Werken met YAML
 weight: 41
 ---

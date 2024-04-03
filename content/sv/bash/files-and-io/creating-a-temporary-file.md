@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:39:46.650442-07:00
-description: "Skapa en tempor\xE4r fil inneb\xE4r att du tillf\xE4lligt lagrar data\
-  \ som beh\xF6vs under programmets k\xF6rning. Programmerare anv\xE4nder detta f\xF6\
-  r att hantera\u2026"
+description: "S\xE5 h\xE4r g\xF6r du: Anv\xE4nd `mktemp` f\xF6r att skapa en s\xE4\
+  ker tempor\xE4r fil. Nedan \xE4r ett enkelt skript och exempelutdata."
 lastmod: '2024-03-13T22:44:38.101382-06:00'
 model: gpt-4-1106-preview
-summary: "Skapa en tempor\xE4r fil inneb\xE4r att du tillf\xE4lligt lagrar data som\
-  \ beh\xF6vs under programmets k\xF6rning."
+summary: "Anv\xE4nd `mktemp` f\xF6r att skapa en s\xE4ker tempor\xE4r fil."
 title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---

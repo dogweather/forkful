@@ -2,12 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:01.340309-07:00
-description: "Concatenar cadenas implica unir dos o m\xE1s cadenas de extremo a extremo\
-  \ para formar una nueva cadena. Los programadores hacen esto para generar texto\u2026"
+description: "C\xF3mo hacerlo: En Go, hay varias formas de concatenar cadenas. Aqu\xED\
+  \ hay un vistazo a algunos m\xE9todos comunes con ejemplos: #."
 lastmod: '2024-03-13T22:44:58.458227-06:00'
 model: gpt-4-0125-preview
-summary: "Concatenar cadenas implica unir dos o m\xE1s cadenas de extremo a extremo\
-  \ para formar una nueva cadena."
+summary: En Go, hay varias formas de concatenar cadenas.
 title: Concatenando cadenas de texto
 weight: 3
 ---

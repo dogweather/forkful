@@ -2,12 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:11.251125-07:00
-description: "Complexe getallen breiden de re\xEBle getallen uit met een extra deel,\
-  \ de imaginaire eenheid 'i'. Programmeurs gebruiken ze in verschillende domeinen,\u2026"
+description: "Hoe: Clojure biedt ingebouwde ondersteuning voor complexe getallen via\
+  \ de utility-klasse `clojure.lang.Numbers`. Gebruik `complex` om complexe getallen\
+  \ te\u2026"
 lastmod: '2024-03-13T22:44:50.413037-06:00'
 model: gpt-4-0125-preview
-summary: "Complexe getallen breiden de re\xEBle getallen uit met een extra deel, de\
-  \ imaginaire eenheid 'i'."
+summary: Clojure biedt ingebouwde ondersteuning voor complexe getallen via de utility-klasse
+  `clojure.lang.Numbers`.
 title: Werken met complexe getallen
 weight: 14
 ---

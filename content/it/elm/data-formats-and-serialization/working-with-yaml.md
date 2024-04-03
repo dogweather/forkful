@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:17.972536-07:00
-description: "Elm non supporta nativamente YAML, un formato di serializzazione dei\
-  \ dati spesso utilizzato per file di configurazione o condivisione di dati, a causa\
-  \ del\u2026"
+description: "Come fare: Per gestire YAML in Elm, \xE8 tipicamente necessario convertire\
+  \ YAML in JSON al di fuori di Elm e poi utilizzare la funzionalit\xE0 di decodifica\u2026"
 lastmod: '2024-03-13T22:44:43.369882-06:00'
 model: gpt-4-0125-preview
-summary: Elm non supporta nativamente YAML, un formato di serializzazione dei dati
-  spesso utilizzato per file di configurazione o condivisione di dati, a causa del
-  suo forte enfasi sulla sicurezza dei tipi e risultati prevedibili.
+summary: "Per gestire YAML in Elm, \xE8 tipicamente necessario convertire YAML in\
+  \ JSON al di fuori di Elm e poi utilizzare la funzionalit\xE0 di decodifica JSON\
+  \ integrata in Elm per lavorare con i dati."
 title: Lavorare con YAML
 weight: 41
 ---

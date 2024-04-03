@@ -2,13 +2,10 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:43.361766-07:00
-description: "Associativa arrayer \xE4r som superladdade arrayer som l\xE5ter dig\
-  \ anv\xE4nda str\xE4ngar som index ist\xE4llet f\xF6r enbart heltal. Programmerare\
-  \ anv\xE4nder dem f\xF6r mer\u2026"
+description: "Hur g\xF6r man: B\xF6rja med att deklarera en associativ array i Bash."
 lastmod: '2024-03-13T22:44:38.073543-06:00'
 model: gpt-4-0125-preview
-summary: "Associativa arrayer \xE4r som superladdade arrayer som l\xE5ter dig anv\xE4\
-  nda str\xE4ngar som index ist\xE4llet f\xF6r enbart heltal."
+summary: "B\xF6rja med att deklarera en associativ array i Bash."
 title: "Att anv\xE4nda associativa arrayer"
 weight: 15
 ---

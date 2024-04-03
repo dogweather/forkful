@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:58.414702-07:00
-description: "Het afhandelen van fouten is hoe je code omgaat met problemen die opduiken\
-  \ tijdens de uitvoering - zoals een onverwachte wending zonder deze te laten\u2026"
+description: 'Hoe: Kotlin biedt `try`, `catch`, `finally`, en `throw` om fouten te
+  beheren. Hier is hoe je ze gebruikt.'
 lastmod: '2024-03-13T22:44:50.775367-06:00'
 model: gpt-4-0125-preview
-summary: Het afhandelen van fouten is hoe je code omgaat met problemen die opduiken
-  tijdens de uitvoering - zoals een onverwachte wending zonder deze te laten vallen.
+summary: Kotlin biedt `try`, `catch`, `finally`, en `throw` om fouten te beheren.
 title: Fouten afhandelen
 weight: 16
 ---

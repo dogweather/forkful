@@ -1,11 +1,10 @@
 ---
 date: 2024-01-25 03:39:47.117770-07:00
-description: "Working with XML in Elixir means parsing, creating, and manipulating\
-  \ XML data. Programmers tackle XML because it's widespread in web services, config\u2026"
+description: 'How to: Elixir doesn''t include XML parsing in its standard library.
+  SweetXML is a popular choice. Here''s how to use it.'
 lastmod: '2024-03-13T22:44:59.804108-06:00'
 model: gpt-4-1106-preview
-summary: Working with XML in Elixir means parsing, creating, and manipulating XML
-  data.
+summary: Elixir doesn't include XML parsing in its standard library.
 title: Working with XML
 weight: 40
 ---

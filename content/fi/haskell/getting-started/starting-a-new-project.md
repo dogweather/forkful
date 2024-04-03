@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 18:03:57.146098-07:00
-description: "Aloitamme uuden projektin luomisen, koska meill\xE4 on visio tai ongelma,\
-  \ johon etsimme ratkaisua. Haskellissa projekti tarkoittaa yleens\xE4 uuden paketin\
-  \ tai\u2026"
+description: "How to: \u2013 Kuinka tehd\xE4\xE4n: Aloita Stack-ty\xF6kalulla. Se\
+  \ luo projektipohjan sinulle automaattisesti."
 lastmod: '2024-03-13T22:44:56.615895-06:00'
 model: gpt-4-1106-preview
-summary: "Aloitamme uuden projektin luomisen, koska meill\xE4 on visio tai ongelma,\
-  \ johon etsimme ratkaisua."
+summary: "Aloita Stack-ty\xF6kalulla."
 title: Uuden projektin aloittaminen
 weight: 1
 ---

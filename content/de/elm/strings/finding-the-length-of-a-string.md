@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:47:16.838925-07:00
-description: "\"Was & Warum?\" - Die L\xE4nge eines Strings festzustellen bedeutet,\
-  \ die Anzahl der Zeichen zu ermitteln. Programmierer machen das oft, um die Eingabe\
-  \ zu\u2026"
+description: "How to: \"So geht's\" - Hier ein paar Elm-Beispiele, wie du die L\xE4\
+  nge eines Strings herausfindest."
 lastmod: '2024-03-13T22:44:53.795905-06:00'
 model: gpt-4-1106-preview
-summary: '"Was & Warum.'
+summary: "\"So geht's\" - Hier ein paar Elm-Beispiele, wie du die L\xE4nge eines Strings\
+  \ herausfindest."
 title: "Ermittlung der Zeichenkettenl\xE4nge"
 weight: 7
 ---

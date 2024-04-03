@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 17:41:27.816931-07:00
-description: "Att radera tecken som matchar ett m\xF6nster inneb\xE4r att vi aktivt\
-  \ letar efter specifika sekvenser av tecken i en str\xE4ng och tar bort dessa. Programmerare\u2026"
+description: "S\xE5 h\xE4r g\xF6r du: I Arduino-milj\xF6n kan du anv\xE4nda `String`-klassens\
+  \ `replace()`-metod f\xF6r att ta bort tecken som matchar ett specifikt m\xF6nster.\
+  \ Nedan \xE4r ett\u2026"
 lastmod: '2024-03-13T22:44:38.152395-06:00'
 model: gpt-4-1106-preview
-summary: "Att radera tecken som matchar ett m\xF6nster inneb\xE4r att vi aktivt letar\
-  \ efter specifika sekvenser av tecken i en str\xE4ng och tar bort dessa."
+summary: "I Arduino-milj\xF6n kan du anv\xE4nda `String`-klassens `replace()`-metod\
+  \ f\xF6r att ta bort tecken som matchar ett specifikt m\xF6nster."
 title: "Ta bort tecken som matchar ett m\xF6nster"
 weight: 5
 ---

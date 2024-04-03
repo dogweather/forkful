@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:28:31.987934-07:00
-description: "Calculating a date in the future or past means figuring out what date\
-  \ it'll be after or before a certain time span. It's useful for creating reminders,\u2026"
+description: "How to: C++20 introduced the `<chrono>` library upgrades, so dealing\
+  \ with time is less of a hassle. Here's a quick example of adding days to the current\u2026"
 lastmod: '2024-03-13T22:45:00.369613-06:00'
 model: gpt-4-1106-preview
-summary: Calculating a date in the future or past means figuring out what date it'll
-  be after or before a certain time span.
+summary: C++20 introduced the `<chrono>` library upgrades, so dealing with time is
+  less of a hassle.
 title: Calculating a date in the future or past
 weight: 26
 ---

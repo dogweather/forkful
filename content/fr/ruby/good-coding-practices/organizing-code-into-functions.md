@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 01:11:29.912702-07:00
-description: "Organiser le code en fonctions divise votre script en blocs r\xE9utilisables.\
-  \ Il s'agit de rendre votre code propre, g\xE9rable et moins sujet aux bugs. Le\
-  \ code\u2026"
+description: "Comment faire : Imaginez que vous \xE9crivez un script rapide pour saluer\
+  \ les utilisateurs ."
 lastmod: '2024-03-13T22:44:58.425470-06:00'
 model: gpt-4-1106-preview
-summary: "Organiser le code en fonctions divise votre script en blocs r\xE9utilisables."
+summary: "Imaginez que vous \xE9crivez un script rapide pour saluer les utilisateurs."
 title: Organisation du code en fonctions
 weight: 18
 ---

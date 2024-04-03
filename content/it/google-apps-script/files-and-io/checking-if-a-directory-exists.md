@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:48:48.475052-07:00
-description: "Verificare se una directory esiste in Google Apps Script implica la\
-  \ verifica della presenza di una cartella all'interno di Google Drive. Gli sviluppatori\u2026"
+description: "Come fare: Google Apps Script non offre un metodo diretto \"exists\"\
+  \ per le cartelle. Invece, utilizziamo le capacit\xE0 di ricerca di Google Drive\
+  \ per\u2026"
 lastmod: '2024-03-13T22:44:42.971966-06:00'
 model: gpt-4-0125-preview
-summary: Verificare se una directory esiste in Google Apps Script implica la verifica
-  della presenza di una cartella all'interno di Google Drive.
+summary: Google Apps Script non offre un metodo diretto "exists" per le cartelle.
 title: Verifica se una directory esiste
 weight: 20
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:34:55.212749-07:00
-description: "Concatenar strings \xE9 juntar duas ou mais sequ\xEAncias de caracteres\
-  \ para formar uma nova string. Programadores fazem isso para manipular texto, construir\u2026"
+description: "Como Fazer: Concatenar strings em Haskell \xE9 simples. Voc\xEA pode\
+  \ usar o operador `++` ou a fun\xE7\xE3o `concat`. Aqui est\xE3o alguns exemplos."
 lastmod: '2024-03-13T22:44:46.617455-06:00'
 model: gpt-4-1106-preview
-summary: "Concatenar strings \xE9 juntar duas ou mais sequ\xEAncias de caracteres\
-  \ para formar uma nova string."
+summary: "Concatenar strings em Haskell \xE9 simples."
 title: Concatenando strings
 weight: 3
 ---

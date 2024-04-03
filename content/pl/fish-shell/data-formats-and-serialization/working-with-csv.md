@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:44.756348-07:00
-description: "Praca z plikami CSV (Comma Separated Values), czyli warto\u015Bciami\
-  \ rozdzielanymi przecinkami, wi\u0105\u017Ce si\u0119 z parsowaniem, manipulowaniem\
-  \ i generowaniem danych w\u2026"
+description: "Jak to zrobi\u0107: Sam Fish Shell nie ma wbudowanych funkcji specjalnie\
+  \ przeznaczonych do manipulacji plikami CSV. Jednak\u017Ce mo\u017Cna wykorzysta\u0107\
+  \ narz\u0119dzia\u2026"
 lastmod: '2024-03-13T22:44:35.864186-06:00'
 model: gpt-4-0125-preview
-summary: "Praca z plikami CSV (Comma Separated Values), czyli warto\u015Bciami rozdzielanymi\
-  \ przecinkami, wi\u0105\u017Ce si\u0119 z parsowaniem, manipulowaniem i generowaniem\
-  \ danych w formacie tabelarycznym, kt\xF3ry jest szeroko stosowany do wymiany danych\
-  \ mi\u0119dzy aplikacjami."
+summary: Sam Fish Shell nie ma wbudowanych funkcji specjalnie przeznaczonych do manipulacji
+  plikami CSV.
 title: Praca z plikami CSV
 weight: 37
 ---

@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:51.388379-07:00
-description: "Das Schreiben auf Standardfehler (stderr) in Elixir ist eine Methode,\
-  \ Fehlermeldungen und Diagnosen getrennt von der Hauptausgabe (stdout) zu lenken.\u2026"
+description: "Wie geht das: In Elixir k\xF6nnen Sie Funktionen des `IO`-Moduls wie\
+  \ `IO.puts/2` und `IO.warn/2` verwenden, um Nachrichten an den Standardfehler zu\
+  \ schreiben."
 lastmod: '2024-03-13T22:44:53.551988-06:00'
 model: gpt-4-0125-preview
-summary: Das Schreiben auf Standardfehler (stderr) in Elixir ist eine Methode, Fehlermeldungen
-  und Diagnosen getrennt von der Hauptausgabe (stdout) zu lenken.
+summary: "In Elixir k\xF6nnen Sie Funktionen des `IO`-Moduls wie `IO.puts/2` und `IO.warn/2`\
+  \ verwenden, um Nachrichten an den Standardfehler zu schreiben."
 title: Schreiben auf Standardfehler
 weight: 25
 ---

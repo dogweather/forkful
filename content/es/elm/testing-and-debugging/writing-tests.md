@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:26.385044-07:00
-description: "Escribir pruebas en Elm implica crear casos de prueba para verificar\
-  \ la correcci\xF3n de tu c\xF3digo Elm, asegurando que se comporte como se espera.\
-  \ Los\u2026"
+description: "C\xF3mo hacerlo: Elm utiliza el paquete `elm-explorations/test` para\
+  \ escribir pruebas unitarias y pruebas de fuzz. Comienza a\xF1adiendo el paquete\
+  \ a tu\u2026"
 lastmod: '2024-03-13T22:44:58.996358-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir pruebas en Elm implica crear casos de prueba para verificar la\
-  \ correcci\xF3n de tu c\xF3digo Elm, asegurando que se comporte como se espera."
+summary: Elm utiliza el paquete `elm-explorations/test` para escribir pruebas unitarias
+  y pruebas de fuzz.
 title: Escribiendo pruebas
 weight: 36
 ---

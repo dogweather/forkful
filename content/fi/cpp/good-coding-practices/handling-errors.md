@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 00:50:13.044951-07:00
-description: "Virheiden k\xE4sittely tarkoittaa suunnitelmien tekemist\xE4 silloin,\
-  \ kun asiat menev\xE4t pieleen. Se on t\xE4rke\xE4\xE4, koska se auttaa v\xE4ltt\xE4\
-  m\xE4\xE4n kaatumisia ja tekee\u2026"
+description: "Miten: T\xE4ss\xE4 on perustason try-catch-lohko poikkeuksen k\xE4sittelyyn."
 lastmod: '2024-03-13T22:44:56.872627-06:00'
 model: gpt-4-1106-preview
-summary: "Virheiden k\xE4sittely tarkoittaa suunnitelmien tekemist\xE4 silloin, kun\
-  \ asiat menev\xE4t pieleen."
+summary: "T\xE4ss\xE4 on perustason try-catch-lohko poikkeuksen k\xE4sittelyyn."
 title: "Virheiden k\xE4sittely"
 weight: 16
 ---

@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 17:45:32.722945-07:00
-description: "Substringit ovat jonoista poimittuja osia. K\xE4ytt\xE4m\xE4ll\xE4 niit\xE4\
-  , voidaan prosessoida, analysoida tai muokata tekstidataa tarpeen mukaan."
+description: "How to: (Kuinka tehd\xE4:) C# tarjoaa useita tapoja ty\xF6st\xE4\xE4\
+  \ substringeja. Tutkitaanpa muutama esimerkki. 1. `Substring`-metodi."
 lastmod: '2024-03-13T22:44:56.562428-06:00'
 model: gpt-4-1106-preview
-summary: Substringit ovat jonoista poimittuja osia.
+summary: "C# tarjoaa useita tapoja ty\xF6st\xE4\xE4 substringeja."
 title: Merkkijonojen osien poimiminen
 weight: 6
 ---

@@ -1,13 +1,11 @@
 ---
 date: 2024-02-03 19:03:12.830996-07:00
-description: "YAML, short for \"YAML Ain't Markup Language,\" is a human-readable\
-  \ data serialization standard that programmers use for configuration files, data\
-  \ dumping,\u2026"
+description: "How to: In Java, you can work with YAML files using third-party libraries\
+  \ since the Java Standard Edition does not include built-in support for YAML. One\u2026"
 lastmod: '2024-03-13T22:44:59.990103-06:00'
 model: gpt-4-0125-preview
-summary: YAML, short for "YAML Ain't Markup Language," is a human-readable data serialization
-  standard that programmers use for configuration files, data dumping, and data transmission
-  between languages.
+summary: In Java, you can work with YAML files using third-party libraries since the
+  Java Standard Edition does not include built-in support for YAML.
 title: Working with YAML
 weight: 41
 ---

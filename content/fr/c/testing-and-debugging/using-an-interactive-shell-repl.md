@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:03.556129-07:00
-description: "Une coquille interactive, \xE9galement connue sous le nom de boucle\
-  \ de lecture-\xE9valuation-affichage (REPL, pour Read-Eval-Print Loop), permet aux\u2026"
+description: "Comment faire : Pour interagir avec un REPL C, vous pourriez ne pas\
+  \ trouver un chemin aussi direct que dans des langues comme Python ou JavaScript.\u2026"
 lastmod: '2024-03-13T22:44:58.373809-06:00'
 model: gpt-4-0125-preview
-summary: "Une coquille interactive, \xE9galement connue sous le nom de boucle de lecture-\xE9\
-  valuation-affichage (REPL, pour Read-Eval-Print Loop), permet aux programmeurs de\
-  \ taper des expressions ou du code et de voir imm\xE9diatement les r\xE9sultats,\
-  \ am\xE9liorant ainsi les processus d'apprentissage et de d\xE9bogage."
+summary: Pour interagir avec un REPL C, vous pourriez ne pas trouver un chemin aussi
+  direct que dans des langues comme Python ou JavaScript.
 title: "Utilisation d'un interpr\xE9teur de commandes interactif (REPL)"
 weight: 34
 ---

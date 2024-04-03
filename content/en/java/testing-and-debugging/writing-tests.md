@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:03:32.538932-07:00
-description: "Writing tests in Java is about verifying that your code behaves as expected\
-  \ under various conditions. Programmers write tests to prevent bugs, ensure\u2026"
+description: "How to: Java developers primarily use two testing frameworks: JUnit\
+  \ and TestNG. Here, we'll focus on JUnit, the more popular choice for writing tests\
+  \ due\u2026"
 lastmod: '2024-03-13T22:44:59.975583-06:00'
 model: gpt-4-0125-preview
-summary: Writing tests in Java is about verifying that your code behaves as expected
-  under various conditions.
+summary: Java developers primarily use two testing frameworks.
 title: Writing tests
 weight: 36
 ---

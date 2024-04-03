@@ -1,10 +1,9 @@
 ---
 date: 2024-01-21 21:20:11.687655-07:00
-description: "Error handling is how you manage when things go sideways in your code.\
-  \ It's key because it helps your programs fail gracefully and instructs users\u2026"
+description: 'How to: Here''s the classic `try-catch` block.'
 lastmod: '2024-03-13T22:45:00.440765-06:00'
 model: gpt-4-1106-preview
-summary: Error handling is how you manage when things go sideways in your code.
+summary: Here's the classic `try-catch` block.
 title: Handling errors
 weight: 16
 ---

@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 18:03:07.866589-07:00
-description: "Starting a new project often means creating a directory structure and\
-  \ initial files\u2014kinda like laying the foundation of a house. Programmers do\
-  \ it to\u2026"
+description: 'How to: Let''s create a simple script to bootstrap a new project.'
 lastmod: '2024-03-13T22:45:00.245427-06:00'
 model: gpt-4-1106-preview
-summary: "Starting a new project often means creating a directory structure and initial\
-  \ files\u2014kinda like laying the foundation of a house."
+summary: Let's create a simple script to bootstrap a new project.
 title: Starting a new project
 weight: 1
 ---

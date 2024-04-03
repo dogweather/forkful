@@ -2,17 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:43.817358-07:00
-description: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi b\u1EB1ng C bao\
-  \ g\u1ED3m vi\u1EC7c thi\u1EBFt l\u1EADp c\u1EA5u tr\xFAc v\xE0 m\xF4i tr\u01B0\u1EDD\
-  ng m\xE3 ngu\u1ED3n c\u01A1 b\u1EA3n \u0111\u1EC3 qu\u1EA3n l\xFD c\xE1c t\xE1c\
-  \ v\u1EE5 ph\xE1t tri\u1EC3n m\u1ED9t c\xE1ch hi\u1EC7u qu\u1EA3. L\u1EADp tr\xEC\
-  nh\u2026"
+description: "C\xE1ch l\xE0m: Tr\xE1i tim c\u1EE7a b\u1EA5t k\u1EF3 d\u1EF1 \xE1n\
+  \ C n\xE0o l\xE0 m\xE3 ngu\u1ED3n. M\u1ED9t \u0111i\u1EC3m b\u1EAFt \u0111\u1EA7\
+  u \u0111i\u1EC3n h\xECnh bao g\u1ED3m vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EC7p ch\xED\
+  nh, th\u01B0\u1EDDng \u0111\u01B0\u1EE3c \u0111\u1EB7t t\xEAn l\xE0 `main.c`, ch\u1EE9\
+  a\u2026"
 lastmod: '2024-03-13T22:44:37.268808-06:00'
 model: gpt-4-0125-preview
-summary: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi b\u1EB1ng C bao g\u1ED3\
-  m vi\u1EC7c thi\u1EBFt l\u1EADp c\u1EA5u tr\xFAc v\xE0 m\xF4i tr\u01B0\u1EDDng m\xE3\
-  \ ngu\u1ED3n c\u01A1 b\u1EA3n \u0111\u1EC3 qu\u1EA3n l\xFD c\xE1c t\xE1c v\u1EE5\
-  \ ph\xE1t tri\u1EC3n m\u1ED9t c\xE1ch hi\u1EC7u qu\u1EA3."
+summary: "Tr\xE1i tim c\u1EE7a b\u1EA5t k\u1EF3 d\u1EF1 \xE1n C n\xE0o l\xE0 m\xE3\
+  \ ngu\u1ED3n."
 title: "Kh\u1EDFi \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---

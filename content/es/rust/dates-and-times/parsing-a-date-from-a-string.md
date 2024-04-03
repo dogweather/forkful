@@ -2,14 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:13.071685-07:00
-description: "Analizar una fecha desde una cadena es una tarea com\xFAn al tratar\
-  \ con entradas de usuario o al leer datos de archivos, lo cual implica convertir\
-  \ datos en\u2026"
+description: "C\xF3mo hacerlo: #."
 lastmod: '2024-03-13T22:44:58.856000-06:00'
 model: gpt-4-0125-preview
-summary: "Analizar una fecha desde una cadena es una tarea com\xFAn al tratar con\
-  \ entradas de usuario o al leer datos de archivos, lo cual implica convertir datos\
-  \ en cadena a un formato de fecha reconocido por el lenguaje de programaci\xF3n."
+summary: '#.'
 title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---

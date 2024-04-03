@@ -2,13 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:13.315803-07:00
-description: "Een datum omzetten naar een tekenreeks betekent het wijzigen van het\
-  \ datumformaat van de ruwe of timestampvorm naar een voor mensen leesbare reeks\
-  \ tekens.\u2026"
+description: 'Hoe: Fish shell houdt het eenvoudig. Laten we de huidige datum formatteren.'
 lastmod: '2024-03-13T22:44:51.258735-06:00'
 model: gpt-4-0125-preview
-summary: Een datum omzetten naar een tekenreeks betekent het wijzigen van het datumformaat
-  van de ruwe of timestampvorm naar een voor mensen leesbare reeks tekens.
+summary: Fish shell houdt het eenvoudig.
 title: Een datum converteren naar een string
 weight: 28
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:13.737190-07:00
-description: "Verkkosivun lataaminen tarkoittaa web-sivun HTML-sis\xE4ll\xF6n noutamista\
-  \ HTTP/HTTPS-protokollaa k\xE4ytt\xE4en. Ohjelmoijat tekev\xE4t t\xE4t\xE4 usein\
-  \ web-scrapingin, datan\u2026"
+description: "Kuinka: Go-kieless\xE4, standardikirjasto tarjoaa tehokkaita ty\xF6\
+  kaluja web-pyynt\xF6ihin, erityisesti `net/http` -paketin. Verkkosivun lataamiseksi\
+  \ k\xE4yt\xE4mme\u2026"
 lastmod: '2024-03-13T22:44:56.048999-06:00'
 model: gpt-4-0125-preview
-summary: "Verkkosivun lataaminen tarkoittaa web-sivun HTML-sis\xE4ll\xF6n noutamista\
-  \ HTTP/HTTPS-protokollaa k\xE4ytt\xE4en."
+summary: "Go-kieless\xE4, standardikirjasto tarjoaa tehokkaita ty\xF6kaluja web-pyynt\xF6\
+  ihin, erityisesti `net/http` -paketin."
 title: Web-sivun lataaminen
 weight: 42
 ---

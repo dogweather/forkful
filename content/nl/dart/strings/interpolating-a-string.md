@@ -2,12 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:49.446402-07:00
-description: "Stringinterpolatie is het proces van het direct invoegen van variabele\
-  \ waarden in strings, vaak om betekenisvolle berichten te cre\xEBren zonder lastige\u2026"
+description: 'Hoe te: In Dart is stringinterpolatie eenvoudig, met behulp van het
+  `$`-symbool om uitdrukkingen direct in string literals te interpoleren.'
 lastmod: '2024-03-13T22:44:50.490151-06:00'
 model: gpt-4-0125-preview
-summary: "Stringinterpolatie is het proces van het direct invoegen van variabele waarden\
-  \ in strings, vaak om betekenisvolle berichten te cre\xEBren zonder lastige aaneenschakelingen."
+summary: In Dart is stringinterpolatie eenvoudig, met behulp van het `$`-symbool om
+  uitdrukkingen direct in string literals te interpoleren.
 title: Een string interpoleren
 weight: 8
 ---

@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:33:52.760012-07:00
-description: "Yhdist\xE4mme merkkijonoja, jotta saamme yksitt\xE4iset sanat tai palaset\
-  \ muodostamaan j\xE4rkevi\xE4 lauseita tai viestej\xE4. T\xE4m\xE4 on hy\xF6dyllist\xE4\
-  \ dataa v\xE4litett\xE4ess\xE4\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:56.817164-06:00'
 model: gpt-4-1106-preview
-summary: "Yhdist\xE4mme merkkijonoja, jotta saamme yksitt\xE4iset sanat tai palaset\
-  \ muodostamaan j\xE4rkevi\xE4 lauseita tai viestej\xE4."
+summary: .
 title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---

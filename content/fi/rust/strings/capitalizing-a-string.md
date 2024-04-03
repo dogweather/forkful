@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:33.208382-07:00
-description: "Merkkijonon ensimm\xE4isen kirjaimen muuttaminen suuraakkoseksi Rustissa\
-  \ tarkoittaa merkkijonon muokkaamista siten, ett\xE4 sen ensimm\xE4inen merkki muutetaan\u2026"
+description: "Kuinka: Merkkijonon ensimm\xE4isen kirjaimen muuttamiseksi suuraakkoseksi\
+  \ Rustissa on kaksi p\xE4\xE4reitti\xE4: standardikirjaston toiminnallisuuksien\
+  \ k\xE4ytt\xF6 tai\u2026"
 lastmod: '2024-03-13T22:44:56.340317-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonon ensimm\xE4isen kirjaimen muuttaminen suuraakkoseksi Rustissa\
-  \ tarkoittaa merkkijonon muokkaamista siten, ett\xE4 sen ensimm\xE4inen merkki muutetaan\
-  \ suuraakkoseksi, jos se on kirjain, samalla kun loput merkkijonosta j\xE4tet\xE4\
-  \xE4n muuttumattomiksi."
+summary: "Merkkijonon ensimm\xE4isen kirjaimen muuttamiseksi suuraakkoseksi Rustissa\
+  \ on kaksi p\xE4\xE4reitti\xE4."
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---

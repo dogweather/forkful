@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:57.350233-07:00
-description: "Wielk\u0105 liter\u0105 zaczyna si\u0119 ka\u017Cde s\u0142owo w zdaniu,\
-  \ modyfikuj\u0105c pierwszy znak ka\u017Cdego s\u0142owa na wielk\u0105 liter\u0119\
-  , jednocze\u015Bnie zapewniaj\u0105c, \u017Ce pozosta\u0142e s\u0105 ma\u0142e.\u2026"
+description: "Jak to zrobi\u0107: Lua nie posiada wbudowanej funkcji do zmiany wielko\u015B\
+  ci liter w ci\u0105gu, ale mo\u017Cesz \u0142atwo osi\u0105gn\u0105\u0107 ten cel,\
+  \ u\u017Cywaj\u0105c podstawowych funkcji\u2026"
 lastmod: '2024-03-13T22:44:35.522987-06:00'
 model: gpt-4-0125-preview
-summary: "Wielk\u0105 liter\u0105 zaczyna si\u0119 ka\u017Cde s\u0142owo w zdaniu,\
-  \ modyfikuj\u0105c pierwszy znak ka\u017Cdego s\u0142owa na wielk\u0105 liter\u0119\
-  , jednocze\u015Bnie zapewniaj\u0105c, \u017Ce pozosta\u0142e s\u0105 ma\u0142e."
+summary: "Lua nie posiada wbudowanej funkcji do zmiany wielko\u015Bci liter w ci\u0105\
+  gu, ale mo\u017Cesz \u0142atwo osi\u0105gn\u0105\u0107 ten cel, u\u017Cywaj\u0105\
+  c podstawowych funkcji manipulacji ci\u0105gami."
 title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---

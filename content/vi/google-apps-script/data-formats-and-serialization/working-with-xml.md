@@ -2,16 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:07:01.552507-07:00
-description: "Vi\u1EC7c l\xE0m vi\u1EC7c v\u1EDBi XML trong Google Apps Script cho\
-  \ ph\xE9p l\u1EADp tr\xECnh vi\xEAn ph\xE2n t\xEDch c\xFA ph\xE1p, ch\u1EC9nh s\u1EED\
-  a, v\xE0 t\u1EA1o d\u1EEF li\u1EC7u XML, \u0111\xE2y l\xE0 \u0111i\u1EC1u c\u1EA7\
-  n thi\u1EBFt cho c\xE1c\u2026"
+description: "L\xE0m Th\u1EBF N\xE0o: Google Apps Script cung c\u1EA5p `XmlService`\
+  \ \u0111\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi d\u1EEF li\u1EC7u XML. D\u01B0\u1EDBi \u0111\
+  \xE2y ch\xFAng t\xF4i tr\xECnh b\xE0y c\xE1ch ph\xE2n t\xEDch c\xFA ph\xE1p m\u1ED9\
+  t chu\u1ED7i XML,\u2026"
 lastmod: '2024-03-13T22:44:36.073217-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c l\xE0m vi\u1EC7c v\u1EDBi XML trong Google Apps Script cho ph\xE9\
-  p l\u1EADp tr\xECnh vi\xEAn ph\xE2n t\xEDch c\xFA ph\xE1p, ch\u1EC9nh s\u1EEDa,\
-  \ v\xE0 t\u1EA1o d\u1EEF li\u1EC7u XML, \u0111\xE2y l\xE0 \u0111i\u1EC1u c\u1EA7\
-  n thi\u1EBFt cho c\xE1c d\u1ECBch v\u1EE5 web v\xE0 c\u1EA5u h\xECnh."
+summary: "Google Apps Script cung c\u1EA5p `XmlService` \u0111\u1EC3 l\xE0m vi\u1EC7\
+  c v\u1EDBi d\u1EEF li\u1EC7u XML."
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---

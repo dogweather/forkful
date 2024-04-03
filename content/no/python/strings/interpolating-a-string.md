@@ -3,11 +3,11 @@ changelog:
 - 2024-01-28, dogweather, reviewed
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:23:40.105231-07:00
-description: "Strenginterpolasjon er metoden for \xE5 bygge inn uttrykk i strenglitteraler.\
-  \ Programmerere bruker det for \xE5 dynamisk sette inn verdier i strenger, noe som\u2026"
+description: "Hvordan: I Python 3.6 og nyere, kan du interpolere strenger ved \xE5\
+  \ bruke f-strenger. Slik gj\xF8r du."
 lastmod: '2024-03-13T22:44:40.347029-06:00'
 model: gpt-4-0125-preview
-summary: "Strenginterpolasjon er metoden for \xE5 bygge inn uttrykk i strenglitteraler."
+summary: "I Python 3.6 og nyere, kan du interpolere strenger ved \xE5 bruke f-strenger."
 title: Interpolering av en streng
 weight: 8
 ---

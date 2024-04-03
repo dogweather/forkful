@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:03.516256-07:00
-description: "Das Kapitalisieren eines Strings beinhaltet das Umwandeln des Anfangsbuchstabens\
-  \ jedes Wortes im String in Gro\xDFbuchstaben, falls dieser in Kleinbuchstaben\u2026"
+description: "Wie geht das: In C++ k\xF6nnen Sie einen String unter Verwendung der\
+  \ Standardbibliothek kapitalisieren, ohne dass Bibliotheken von Drittanbietern ben\xF6\
+  tigt\u2026"
 lastmod: '2024-03-13T22:44:54.167891-06:00'
 model: gpt-4-0125-preview
-summary: "Das Kapitalisieren eines Strings beinhaltet das Umwandeln des Anfangsbuchstabens\
-  \ jedes Wortes im String in Gro\xDFbuchstaben, falls dieser in Kleinbuchstaben ist,\
-  \ w\xE4hrend die restlichen Zeichen unver\xE4ndert bleiben."
+summary: "In C++ k\xF6nnen Sie einen String unter Verwendung der Standardbibliothek\
+  \ kapitalisieren, ohne dass Bibliotheken von Drittanbietern ben\xF6tigt werden."
 title: "Einen String gro\xDFschreiben"
 weight: 2
 ---

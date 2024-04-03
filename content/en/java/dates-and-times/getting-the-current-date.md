@@ -1,12 +1,13 @@
 ---
 date: 2024-02-03 19:03:03.288829-07:00
-description: "Obtaining the current date in Java is a fundamental operation that allows\
-  \ programmers to manipulate date objects for operations such as logging, date\u2026"
+description: "How to: Java offers multiple ways to get the current date, using both\
+  \ the old `java.util.Date` class and the newer `java.time` package (introduced in\
+  \ Java\u2026"
 lastmod: '2024-03-13T22:44:59.981524-06:00'
 model: gpt-4-0125-preview
-summary: Obtaining the current date in Java is a fundamental operation that allows
-  programmers to manipulate date objects for operations such as logging, date calculations,
-  and time-based conditions.
+summary: Java offers multiple ways to get the current date, using both the old `java.util.Date`
+  class and the newer `java.time` package (introduced in Java 8) which is more versatile
+  and intuitive.
 title: Getting the current date
 weight: 29
 ---

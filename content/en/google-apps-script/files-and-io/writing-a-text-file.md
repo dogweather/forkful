@@ -1,12 +1,11 @@
 ---
 date: 2024-02-01 21:12:38.265516-07:00
-description: "Writing a text file in Google Apps Script allows developers to store\
-  \ data persistently, making it accessible for future use or analysis. This operation\
-  \ is\u2026"
+description: "How to: Creating and writing to a text file in Google Apps Script can\
+  \ be accomplished through the Google DriveApp service. Below is a step-by-step guide\u2026"
 lastmod: '2024-03-13T22:44:59.686456-06:00'
 model: gpt-4-0125-preview
-summary: Writing a text file in Google Apps Script allows developers to store data
-  persistently, making it accessible for future use or analysis.
+summary: Creating and writing to a text file in Google Apps Script can be accomplished
+  through the Google DriveApp service.
 title: Writing a text file
 weight: 24
 ---

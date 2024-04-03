@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 01:07:26.904384-07:00
-description: "El registro (logging) es b\xE1sicamente como mantener un diario para\
-  \ tu c\xF3digo; es la acci\xF3n de registrar eventos, errores y otros puntos de\
-  \ datos\u2026"
+description: "C\xF3mo hacerlo: PHP viene con una funci\xF3n de registro de errores\
+  \ incorporada que es f\xE1cil de usar. Simplemente coloca `error_log()` en tu c\xF3\
+  digo para enviar\u2026"
 lastmod: '2024-03-13T22:44:59.167250-06:00'
 model: gpt-4-1106-preview
-summary: "El registro (logging) es b\xE1sicamente como mantener un diario para tu\
-  \ c\xF3digo; es la acci\xF3n de registrar eventos, errores y otros puntos de datos\
-  \ significativos que suceden cuando tu aplicaci\xF3n se ejecuta."
+summary: "PHP viene con una funci\xF3n de registro de errores incorporada que es f\xE1\
+  cil de usar."
 title: Registro de Actividades
 weight: 17
 ---

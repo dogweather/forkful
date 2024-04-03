@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:40.452854-07:00
-description: "Zoeken en vervangen in Java overschrijft originele strings met nieuwe\
-  \ karakters - zie het als een digitale correctievloeistof. Programmeurs gebruiken\
-  \ dit\u2026"
+description: 'Hoe te: Zoeken en vervangen in Java is een fluitje van een cent dankzij
+  de `String` klasse en zijn `replace()` methode. Zo doe je het.'
 lastmod: '2024-03-13T22:44:50.665688-06:00'
 model: gpt-4-0125-preview
-summary: Zoeken en vervangen in Java overschrijft originele strings met nieuwe karakters
-  - zie het als een digitale correctievloeistof.
+summary: Zoeken en vervangen in Java is een fluitje van een cent dankzij de `String`
+  klasse en zijn `replace()` methode.
 title: Tekst zoeken en vervangen
 weight: 10
 ---

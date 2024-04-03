@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:58:03.253255-07:00
-description: "\xC5 s\xF8ke og erstatte tekst g\xE5r ut p\xE5 \xE5 finne spesifikke\
-  \ strenger i data og bytte dem ut med noe annet. Programmerere bruker dette for\
-  \ \xE5 masseendre kode,\u2026"
+description: 'Hvordan: .'
 lastmod: '2024-03-13T22:44:40.388077-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 s\xF8ke og erstatte tekst g\xE5r ut p\xE5 \xE5 finne spesifikke strenger\
-  \ i data og bytte dem ut med noe annet."
+summary: .
 title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---

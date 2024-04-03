@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:34.966212-07:00
-description: "Criar um arquivo tempor\xE1rio em Dart envolve gerar um arquivo destinado\
-  \ ao uso de curto prazo, principalmente para cen\xE1rios como cache de dados,\u2026"
+description: "Como: A biblioteca `dart:io` do Dart facilita a cria\xE7\xE3o de arquivos\
+  \ tempor\xE1rios por meio da classe `Directory`. Aqui est\xE1 uma maneira direta\
+  \ de criar um\u2026"
 lastmod: '2024-03-13T22:44:46.302446-06:00'
 model: gpt-4-0125-preview
-summary: "Criar um arquivo tempor\xE1rio em Dart envolve gerar um arquivo destinado\
-  \ ao uso de curto prazo, principalmente para cen\xE1rios como cache de dados, armazenamento\
-  \ tempor\xE1rio para processamento de arquivos ou reten\xE7\xE3o de informa\xE7\xF5\
-  es que s\xE3o sens\xEDveis demais para serem mantidas por muito tempo."
+summary: "A biblioteca `dart:io` do Dart facilita a cria\xE7\xE3o de arquivos tempor\xE1\
+  rios por meio da classe `Directory`."
 title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---

@@ -2,11 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:14.277339-07:00
-description: "Een string kapitaliseren betekent elk karakter veranderen in een hoofdletter.\
-  \ Programmeurs doen dit voor consistentie, met name in gebruikersinterfaces of\u2026"
+description: "Hoe te: In de Arduino-omgeving is er geen ingebouwde functie om een\
+  \ hele string te kapitaliseren, dus we zullen een eenvoudige functie schrijven om\
+  \ dit te\u2026"
 lastmod: '2024-03-13T22:44:51.055689-06:00'
 model: gpt-4-0125-preview
-summary: Een string kapitaliseren betekent elk karakter veranderen in een hoofdletter.
+summary: In de Arduino-omgeving is er geen ingebouwde functie om een hele string te
+  kapitaliseren, dus we zullen een eenvoudige functie schrijven om dit te doen.
 title: Een string met hoofdletters maken
 weight: 2
 ---

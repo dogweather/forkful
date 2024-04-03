@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:27.873137-07:00
-description: "Een webpagina downloaden haalt de inhoud ervan van het web naar je lokale\
-  \ machine. Programmeurs doen dit voor automatisering, data scraping, offline\u2026"
+description: 'Hoe te: Hier is de snelle en vuile manier om een webpagina te downloaden
+  met Fish Shell met het `curl` commando.'
 lastmod: '2024-03-13T22:44:51.246103-06:00'
 model: gpt-4-0125-preview
-summary: Een webpagina downloaden haalt de inhoud ervan van het web naar je lokale
-  machine.
+summary: Hier is de snelle en vuile manier om een webpagina te downloaden met Fish
+  Shell met het `curl` commando.
 title: Een webpagina downloaden
 weight: 42
 ---

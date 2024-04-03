@@ -1,11 +1,10 @@
 ---
 date: 2024-02-01 21:12:04.833629-07:00
-description: "Working with XML in Google Apps Script allows programmers to parse,\
-  \ manipulate, and generate XML data, essential for web services and configurations.\u2026"
+description: "How to: Google Apps Script provides the `XmlService` to work with XML\
+  \ data. Below we demonstrate how to parse an XML string, modify its contents, and\u2026"
 lastmod: '2024-03-13T22:44:59.692170-06:00'
 model: gpt-4-0125-preview
-summary: Working with XML in Google Apps Script allows programmers to parse, manipulate,
-  and generate XML data, essential for web services and configurations.
+summary: Google Apps Script provides the `XmlService` to work with XML data.
 title: Working with XML
 weight: 40
 ---

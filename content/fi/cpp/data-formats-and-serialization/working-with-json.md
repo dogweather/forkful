@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:59.772358-07:00
-description: "JSON (JavaScript Object Notation) on kevyt muoto datan tallentamiseen\
-  \ ja siirt\xE4miseen, mik\xE4 tekee siit\xE4 erinomaisen v\xE4lineen datan vaihtoon\
-  \ palvelimien ja\u2026"
+description: "Miten: C++:ssa ei ole natiivia tukea JSONille, mutta kolmannen osapuolen\
+  \ kirjastot, kuten nlohmann/json, tekev\xE4t siit\xE4 suoraviivaista. N\xE4in voit\
+  \ k\xE4ytt\xE4\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.886795-06:00'
 model: gpt-4-0125-preview
-summary: "JSON (JavaScript Object Notation) on kevyt muoto datan tallentamiseen ja\
-  \ siirt\xE4miseen, mik\xE4 tekee siit\xE4 erinomaisen v\xE4lineen datan vaihtoon\
-  \ palvelimien ja web-sovellusten v\xE4lill\xE4."
+summary: "C++:ssa ei ole natiivia tukea JSONille, mutta kolmannen osapuolen kirjastot,\
+  \ kuten nlohmann/json, tekev\xE4t siit\xE4 suoraviivaista."
 title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---

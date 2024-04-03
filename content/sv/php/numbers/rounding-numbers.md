@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:46:02.082417-07:00
-description: "Att avrunda tal inneb\xE4r att klippa av decimalerna till en inst\xE4\
-  lld precision, ofta till hela tal. Programmerare avrundar f\xF6r att f\xF6renkla\
-  \ ber\xE4kningar,\u2026"
+description: "Hur man g\xF6r: PHP erbjuder n\xE5gra s\xE4tt att avrunda tal: `round()`,\
+  \ `ceil()` och `floor()`. H\xE4r \xE4r hur de fungerar."
 lastmod: '2024-03-13T22:44:37.991342-06:00'
 model: gpt-4-0125-preview
-summary: "Att avrunda tal inneb\xE4r att klippa av decimalerna till en inst\xE4lld\
-  \ precision, ofta till hela tal."
+summary: "PHP erbjuder n\xE5gra s\xE4tt att avrunda tal."
 title: Avrundning av tal
 weight: 13
 ---

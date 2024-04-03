@@ -2,13 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:16.642557-07:00
-description: "Een datum in de toekomst of het verleden berekenen is een veelvoorkomende\
-  \ taak voor programmeurs die bezig zijn met planning, herinneringen of elke\u2026"
+description: "Hoe: Dart biedt robuuste ondersteuning voor datummanipulatie door middel\
+  \ van zijn `DateTime` klasse. Hier is hoe je toekomstige of verleden data kunt\u2026"
 lastmod: '2024-03-13T22:44:50.519432-06:00'
 model: gpt-4-0125-preview
-summary: Een datum in de toekomst of het verleden berekenen is een veelvoorkomende
-  taak voor programmeurs die bezig zijn met planning, herinneringen of elke functie
-  die afhankelijk is van datumcalculaties.
+summary: Dart biedt robuuste ondersteuning voor datummanipulatie door middel van zijn
+  `DateTime` klasse.
 title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---

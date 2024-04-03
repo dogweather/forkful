@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:56:55.154514-07:00
-description: "Ler argumentos da linha de comando permite que programas Swift recebam\
-  \ inputs externos ao serem executados. Programadores fazem isso para personalizar\
-  \ a\u2026"
+description: "How to: Ler argumentos em Swift \xE9 simples. A propriedade `CommandLine.arguments`\
+  \ retorna um array de strings com os argumentos passados. Veja o exemplo."
 lastmod: '2024-03-13T22:44:46.936149-06:00'
 model: gpt-4-1106-preview
-summary: Ler argumentos da linha de comando permite que programas Swift recebam inputs
-  externos ao serem executados.
+summary: "Ler argumentos em Swift \xE9 simples."
 title: Lendo argumentos da linha de comando
 weight: 23
 ---

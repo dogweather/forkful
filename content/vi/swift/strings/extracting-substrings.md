@@ -2,17 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:53.966960-07:00
-description: "Tr\xEDch xu\u1EA5t c\xE1c chu\u1ED7i con c\xF3 ngh\u0129a l\xE0 ch\u1EC9\
-  \ l\u1EA5y m\u1ED9t ph\u1EA7n c\u1EE7a chu\u1ED7i\u2014gi\u1ED1ng nh\u01B0 c\u1EAF\
-  t m\u1ED9t d\u1EA3i ruy b\u0103ng v\u1EDBi \u0111\u1ED9 d\xE0i b\u1EA1n c\u1EA7\
-  n. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 t\xE1\
-  ch\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Swift l\xE0m cho vi\u1EC7c l\xE0m vi\u1EC7c\
+  \ v\u1EDBi c\xE1c chu\u1ED7i con kh\xE1 \u0111\u01A1n gi\u1EA3n. H\xE3y nh\u1EA3\
+  y v\xE0o ngay v\u1EDBi m\u1ED9t s\u1ED1 v\xED d\u1EE5."
 lastmod: '2024-03-13T22:44:37.082232-06:00'
 model: gpt-4-0125-preview
-summary: "Tr\xEDch xu\u1EA5t c\xE1c chu\u1ED7i con c\xF3 ngh\u0129a l\xE0 ch\u1EC9\
-  \ l\u1EA5y m\u1ED9t ph\u1EA7n c\u1EE7a chu\u1ED7i\u2014gi\u1ED1ng nh\u01B0 c\u1EAF\
-  t m\u1ED9t d\u1EA3i ruy b\u0103ng v\u1EDBi \u0111\u1ED9 d\xE0i b\u1EA1n c\u1EA7\
-  n."
+summary: "Swift l\xE0m cho vi\u1EC7c l\xE0m vi\u1EC7c v\u1EDBi c\xE1c chu\u1ED7i con\
+  \ kh\xE1 \u0111\u01A1n gi\u1EA3n."
 title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 weight: 6
 ---

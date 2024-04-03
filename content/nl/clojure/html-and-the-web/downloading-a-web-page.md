@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:08.468900-07:00
-description: "Een webpagina downloaden betekent het HTML van een URL ophalen, zodat\
-  \ je programma ermee kan werken. Programmeurs doen dit om gegevens te schrapen,\u2026"
+description: 'Hoe te: In Clojure kun je `clj-http` gebruiken om snel een webpagina
+  te downloaden. Hier is een eenvoudig voorbeeld.'
 lastmod: '2024-03-13T22:44:50.418080-06:00'
 model: gpt-4-0125-preview
-summary: Een webpagina downloaden betekent het HTML van een URL ophalen, zodat je
-  programma ermee kan werken.
+summary: In Clojure kun je `clj-http` gebruiken om snel een webpagina te downloaden.
 title: Een webpagina downloaden
 weight: 42
 ---

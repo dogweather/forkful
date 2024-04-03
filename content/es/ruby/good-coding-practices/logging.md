@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 01:08:19.601292-07:00
-description: "La creaci\xF3n de registros (logging) en programaci\xF3n es como mantener\
-  \ un diario para tu aplicaci\xF3n. Es el registro sistem\xE1tico de eventos, mensajes\
-  \ y puntos\u2026"
+description: "C\xF3mo hacerlo: Ruby viene con un m\xF3dulo integrado para la creaci\xF3\
+  n de registros, `Logger`, que es super f\xE1cil de usar. Aqu\xED tienes un ejemplo\
+  \ r\xE1pido para\u2026"
 lastmod: '2024-03-13T22:44:59.597732-06:00'
 model: gpt-4-1106-preview
-summary: "La creaci\xF3n de registros (logging) en programaci\xF3n es como mantener\
-  \ un diario para tu aplicaci\xF3n."
+summary: "Ruby viene con un m\xF3dulo integrado para la creaci\xF3n de registros,\
+  \ `Logger`, que es super f\xE1cil de usar."
 title: Registro de Actividades
 weight: 17
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:43:07.499235-07:00
-description: "\xC5 avrunde tall betyr \xE5 justere en verdi til n\xE6rmeste heltall\
-  \ eller spesifisert presisjon. Utviklere gj\xF8r dette for \xE5 forenkle, tilpasse\
-  \ seg virkelighetens\u2026"
+description: "Hvordan: C++ tilbyr flere m\xE5ter \xE5 avrunde tall p\xE5, som `floor()`,\
+  \ `ceil()`, og `round()`."
 lastmod: '2024-03-13T22:44:41.094170-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 avrunde tall betyr \xE5 justere en verdi til n\xE6rmeste heltall eller\
-  \ spesifisert presisjon."
+summary: "C++ tilbyr flere m\xE5ter \xE5 avrunde tall p\xE5, som `floor()`, `ceil()`,\
+  \ og `round()`."
 title: Avrunding av tall
 weight: 13
 ---

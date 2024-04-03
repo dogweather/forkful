@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 03:38:39.543946-07:00
-description: "\xC5 strippe anf\xF8rselstegn fra en streng inneb\xE6rer \xE5 fjerne\
-  \ de ekstra innpakningene for \xE5 f\xE5 tak i den rene teksten inni. Programmerere\
-  \ gj\xF8r dette for \xE5\u2026"
+description: "Hvordan: Elixir har ingen innebygd 'fjern anf\xF8rselstegn'-funksjon,\
+  \ men det er enkelt \xE5 rulle din egen med m\xF8nsterpassing eller `String`-funksjoner.\
+  \ Se\u2026"
 lastmod: '2024-03-13T22:44:40.431593-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 strippe anf\xF8rselstegn fra en streng inneb\xE6rer \xE5 fjerne de\
-  \ ekstra innpakningene for \xE5 f\xE5 tak i den rene teksten inni."
+summary: "Elixir har ingen innebygd 'fjern anf\xF8rselstegn'-funksjon, men det er\
+  \ enkelt \xE5 rulle din egen med m\xF8nsterpassing eller `String`-funksjoner."
 title: "Fjerne anf\xF8rselstegn fra en streng"
 weight: 9
 ---

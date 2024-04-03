@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:51.705003-07:00
-description: "\xC5 hente den gjeldende datoen i JavaScript er en grunnleggende oppgave\
-  \ som involverer \xE5 hente og muligens manipulere dagens dato og tid. Programmerere\u2026"
+description: "Hvordan: I vanilla JavaScript brukes `Date`-objektet for \xE5 jobbe\
+  \ med datoer og tider. Slik kan du hente den gjeldende datoen og tiden."
 lastmod: '2024-03-13T22:44:41.193944-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 hente den gjeldende datoen i JavaScript er en grunnleggende oppgave\
-  \ som involverer \xE5 hente og muligens manipulere dagens dato og tid."
+summary: "I vanilla JavaScript brukes `Date`-objektet for \xE5 jobbe med datoer og\
+  \ tider."
 title: "F\xE5 dagens dato"
 weight: 29
 ---

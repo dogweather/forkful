@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 17:42:42.361483-07:00
-description: "Deleting characters matching a pattern in Lua is about using patterns\
-  \ to identify and remove specific sequences of characters from a string. Programmers\u2026"
+description: "How to: In Lua, we can use the `gsub` function to replace occurrences\
+  \ of a pattern with another string \u2013 an empty string when we want to delete\
+  \ them."
 lastmod: '2024-03-13T22:45:00.191112-06:00'
 model: gpt-4-1106-preview
-summary: Deleting characters matching a pattern in Lua is about using patterns to
-  identify and remove specific sequences of characters from a string.
+summary: "In Lua, we can use the `gsub` function to replace occurrences of a pattern\
+  \ with another string \u2013 an empty string when we want to delete them."
 title: Deleting characters matching a pattern
 weight: 5
 ---

@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 00:59:09.677598-07:00
-description: "La journalisation est une pratique qui consiste \xE0 enregistrer les\
-  \ \xE9v\xE9nements, les erreurs et d'autres informations significatives issues des\
-  \ processus en\u2026"
+description: "Comment faire : En Bash, la journalisation peut se r\xE9sumer \xE0 rediriger\
+  \ ou ajouter la sortie vers un fichier. Voici un exemple de base ."
 lastmod: '2024-03-13T22:44:58.003990-06:00'
 model: gpt-4-1106-preview
-summary: "La journalisation est une pratique qui consiste \xE0 enregistrer les \xE9\
-  v\xE9nements, les erreurs et d'autres informations significatives issues des processus\
-  \ en cours d'ex\xE9cution d'un programme dans un fichier ou un flux de sortie."
+summary: "En Bash, la journalisation peut se r\xE9sumer \xE0 rediriger ou ajouter\
+  \ la sortie vers un fichier."
 title: Journalisation
 weight: 17
 ---

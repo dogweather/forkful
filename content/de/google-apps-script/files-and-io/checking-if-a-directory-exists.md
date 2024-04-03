@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:48:56.631355-07:00
-description: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Google Apps Script existiert,\
-  \ beinhaltet die Verifizierung der Pr\xE4senz eines Ordners innerhalb von Google\
-  \ Drive.\u2026"
+description: "Wie: Google Apps Script bietet keine direkte \"exists\"-Methode f\xFC\
+  r Ordner. Stattdessen verwenden wir die Suchfunktionen von Google Drive, um zu \xFC\
+  berpr\xFCfen,\u2026"
 lastmod: '2024-03-13T22:44:53.349795-06:00'
 model: gpt-4-0125-preview
-summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Google Apps Script existiert,\
-  \ beinhaltet die Verifizierung der Pr\xE4senz eines Ordners innerhalb von Google\
-  \ Drive."
+summary: "Google Apps Script bietet keine direkte \"exists\"-Methode f\xFCr Ordner."
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---

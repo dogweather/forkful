@@ -2,17 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:09.151181-07:00
-description: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi b\u1EB1ng Rust\
-  \ c\xF3 ngh\u0129a l\xE0 thi\u1EBFt l\u1EADp m\u1ED9t c\u1EA5u tr\xFAc c\u01A1 b\u1EA3\
-  n \u0111\u1EC3 m\xE3 c\u1EE7a b\u1EA1n c\xF3 m\u1ED9t n\u01A1i \u0111\u1EC3 \"s\u1ED1\
-  ng\". C\xE1c l\u1EADp tr\xECnh vi\xEAn kh\u1EDFi \u0111\u1EA7u c\xE1c d\u1EF1 \xE1\
-  n m\u1EDBi \u0111\u1EC3\u2026"
+description: "C\xE1ch th\u1EE9c: \u0110\u1EC3 b\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1\
+  \ \xE1n Rust m\u1EDBi, b\u1EA1n c\u1EA7n Cargo\u2014qu\u1EA3n l\xFD g\xF3i Rust.\
+  \ C\xE0i \u0111\u1EB7t Rust v\xE0 Cargo th\xF4ng qua tr\xECnh c\xE0i \u0111\u1EB7\
+  t ch\xEDnh th\u1EE9c, rustup."
 lastmod: '2024-03-13T22:44:36.377032-06:00'
 model: gpt-4-0125-preview
-summary: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi b\u1EB1ng Rust c\xF3\
-  \ ngh\u0129a l\xE0 thi\u1EBFt l\u1EADp m\u1ED9t c\u1EA5u tr\xFAc c\u01A1 b\u1EA3\
-  n \u0111\u1EC3 m\xE3 c\u1EE7a b\u1EA1n c\xF3 m\u1ED9t n\u01A1i \u0111\u1EC3 \"s\u1ED1\
-  ng\"."
+summary: "\u0110\u1EC3 b\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n Rust m\u1EDB\
+  i, b\u1EA1n c\u1EA7n Cargo\u2014qu\u1EA3n l\xFD g\xF3i Rust."
 title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:00.408037-07:00
-description: "Pobieranie aktualnej daty w Bashu polega na u\u017Cywaniu wbudowanych\
-  \ polece\u0144 do wy\u015Bwietlania daty i czasu w r\xF3\u017Cnych formatach. Programi\u015B\
-  ci u\u017Cywaj\u0105 tej\u2026"
+description: "Jak to zrobi\u0107: W Bashu polecenie `date` jest twoim g\u0142\xF3\
+  wnym narz\u0119dziem do pobierania aktualnej daty i czasu. Oto kilka przyk\u0142\
+  ad\xF3w, jak mo\u017Cna go u\u017Cywa\u0107: 1.\u2026"
 lastmod: '2024-03-13T22:44:35.595713-06:00'
 model: gpt-4-0125-preview
-summary: "Pobieranie aktualnej daty w Bashu polega na u\u017Cywaniu wbudowanych polece\u0144\
-  \ do wy\u015Bwietlania daty i czasu w r\xF3\u017Cnych formatach."
+summary: "W Bashu polecenie `date` jest twoim g\u0142\xF3wnym narz\u0119dziem do pobierania\
+  \ aktualnej daty i czasu."
 title: Pobieranie aktualnej daty
 weight: 29
 ---

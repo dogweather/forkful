@@ -2,16 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:28.844264-07:00
-description: "Vi\u1EC7c g\u1EEDi c\xE1c th\xF4ng b\xE1o l\u1ED7i t\u1EDBi standard\
-  \ error (stderr) c\xF3 ngh\u0129a l\xE0 b\u1EA1n \u0111ang chuy\u1EC3n th\xF4ng\
-  \ \u0111i\u1EC7p l\u1ED7i c\u1EE7a m\xECnh ra kh\u1ECFi \u0111\u1EA7u ra th\xF4\
-  ng th\u01B0\u1EDDng (stdout). C\xE1c l\u1EADp\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong C#, vi\u1EBFt v\xE0o stderr b\u1EB1ng\
+  \ c\xE1ch s\u1EED d\u1EE5ng `Console.Error.WriteLine()`. N\xF3 t\u01B0\u01A1ng t\u1EF1\
+  \ nh\u01B0 `Console.WriteLine()`, ch\u1EC9 l\xE0 nh\u1EAFm v\xE0o lu\u1ED3ng l\u1ED7\
+  i."
 lastmod: '2024-03-13T22:44:36.679030-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c g\u1EEDi c\xE1c th\xF4ng b\xE1o l\u1ED7i t\u1EDBi standard error\
-  \ (stderr) c\xF3 ngh\u0129a l\xE0 b\u1EA1n \u0111ang chuy\u1EC3n th\xF4ng \u0111\
-  i\u1EC7p l\u1ED7i c\u1EE7a m\xECnh ra kh\u1ECFi \u0111\u1EA7u ra th\xF4ng th\u01B0\
-  \u1EDDng (stdout)."
+summary: "Trong C#, vi\u1EBFt v\xE0o stderr b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng `Console.Error.WriteLine()`."
 title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---

@@ -1,10 +1,10 @@
 ---
 date: 2024-01-26 03:45:36.345651-07:00
-description: "Arrotondare i numeri significa adeguarli a un determinato grado di precisione.\
-  \ I programmatori lo fanno per semplificare i numeri per leggibilit\xE0, per\u2026"
+description: 'Come fare: Java offre molteplici modi per arrotondare i numeri. Ecco
+  una dimostrazione rapida con `Math.round()`, `BigDecimal` e `DecimalFormat`.'
 lastmod: '2024-03-13T22:44:43.304139-06:00'
 model: gpt-4-0125-preview
-summary: Arrotondare i numeri significa adeguarli a un determinato grado di precisione.
+summary: Java offre molteplici modi per arrotondare i numeri.
 title: Arrotondamento dei numeri
 weight: 13
 ---

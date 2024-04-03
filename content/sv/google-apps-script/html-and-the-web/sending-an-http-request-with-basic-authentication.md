@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:25.718611-07:00
-description: "Att skicka en HTTP-f\xF6rfr\xE5gan med grundl\xE4ggande autentisering\
-  \ inneb\xE4r att koda ett anv\xE4ndarnamn och l\xF6senord i en f\xF6rfr\xE5gningsheader\
-  \ f\xF6r att f\xE5 tillg\xE5ng\u2026"
+description: "Hur g\xF6r man: I Google Apps Script anv\xE4nder du tj\xE4nsten `UrlFetchApp`\
+  \ tillsammans med en base64-kodad autentiseringsheader f\xF6r att skicka en HTTP-f\xF6\
+  rfr\xE5gan\u2026"
 lastmod: '2024-03-13T22:44:37.438277-06:00'
 model: gpt-4-0125-preview
-summary: "Att skicka en HTTP-f\xF6rfr\xE5gan med grundl\xE4ggande autentisering inneb\xE4\
-  r att koda ett anv\xE4ndarnamn och l\xF6senord i en f\xF6rfr\xE5gningsheader f\xF6\
-  r att f\xE5 tillg\xE5ng till skyddade resurser."
+summary: "I Google Apps Script anv\xE4nder du tj\xE4nsten `UrlFetchApp` tillsammans\
+  \ med en base64-kodad autentiseringsheader f\xF6r att skicka en HTTP-f\xF6rfr\xE5\
+  gan med grundl\xE4ggande autentisering."
 title: "Skicka en HTTP-beg\xE4ran med grundl\xE4ggande autentisering"
 weight: 45
 ---

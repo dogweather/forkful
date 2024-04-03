@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:52:02.358908-07:00
-description: "La impresi\xF3n de salida de depuraci\xF3n es mostrar mensajes en la\
-  \ consola para entender qu\xE9 est\xE1 pasando en el programa. Los programadores\
-  \ lo hacen para\u2026"
+description: "C\xF3mo: ."
 lastmod: '2024-03-13T22:44:59.080688-06:00'
 model: gpt-4-1106-preview
-summary: "La impresi\xF3n de salida de depuraci\xF3n es mostrar mensajes en la consola\
-  \ para entender qu\xE9 est\xE1 pasando en el programa."
+summary: .
 title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---

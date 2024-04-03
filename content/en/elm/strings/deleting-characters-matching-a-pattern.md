@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:41:49.379883-07:00
-description: "Deleting characters matching a pattern means to wipe out specific sets\
-  \ of characters from text, based on rules (patterns). Programmers do this for text\u2026"
+description: "How to: Elm doesn't natively support regex, but you can simulate character\
+  \ deletion. Here's an example using `String.filter` to remove digits from a\u2026"
 lastmod: '2024-03-13T22:44:59.995223-06:00'
 model: gpt-4-1106-preview
-summary: Deleting characters matching a pattern means to wipe out specific sets of
-  characters from text, based on rules (patterns).
+summary: Elm doesn't natively support regex, but you can simulate character deletion.
 title: Deleting characters matching a pattern
 weight: 5
 ---

@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:33:46.561444-07:00
-description: "Das Vergleichen von zwei Daten bedeutet, zu \xFCberpr\xFCfen, welches\
-  \ Datum fr\xFCher ist, sp\xE4ter oder ob sie identisch sind. Programmierer machen\
-  \ das, um Termine\u2026"
+description: 'How to: (Wie geht das?) Hier ist ein einfaches Beispiel, wie du zwei
+  Daten in Python vergleichst.'
 lastmod: '2024-03-13T22:44:53.391315-06:00'
 model: gpt-4-1106-preview
-summary: "Das Vergleichen von zwei Daten bedeutet, zu \xFCberpr\xFCfen, welches Datum\
-  \ fr\xFCher ist, sp\xE4ter oder ob sie identisch sind."
+summary: Hier ist ein einfaches Beispiel, wie du zwei Daten in Python vergleichst.
 title: Vergleich von zwei Daten
 weight: 27
 ---

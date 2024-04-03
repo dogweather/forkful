@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:17.334981-07:00
-description: "Att skriva till standardfel (stderr) i PHP handlar om att styra felmeddelanden\
-  \ eller diagnostik separat fr\xE5n standardutdata (stdout), vilket g\xF6r det\u2026"
+description: "Hur man g\xF6r: I PHP kan man skriva till stderr genom att anv\xE4nda\
+  \ funktionen `fwrite()` tillsammans med den f\xF6rdefinierade konstanten `STDERR`,\
+  \ som\u2026"
 lastmod: '2024-03-13T22:44:38.012546-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva till standardfel (stderr) i PHP handlar om att styra felmeddelanden\
-  \ eller diagnostik separat fr\xE5n standardutdata (stdout), vilket g\xF6r det m\xF6\
-  jligt f\xF6r utvecklare att b\xE4ttre hantera sina utdatastr\xF6mmar f\xF6r fels\xF6\
-  kning och loggning."
+summary: "I PHP kan man skriva till stderr genom att anv\xE4nda funktionen `fwrite()`\
+  \ tillsammans med den f\xF6rdefinierade konstanten `STDERR`, som representerar str\xF6\
+  mmen f\xF6r felutdata."
 title: Skriva till standardfel
 weight: 25
 ---

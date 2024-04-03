@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:25.699625-07:00
-description: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res consiste\
-  \ \xE0 reconna\xEEtre et \xE0 convertir des dates \xE9crites sous forme de texte\
-  \ en un type de donn\xE9es\u2026"
+description: "Comment faire : PowerShell rend l'analyse des dates \xE0 partir de cha\xEE\
+  nes de caract\xE8res simple avec son applet de commande `Get-Date` et l'acc\xE9\
+  l\xE9rateur de\u2026"
 lastmod: '2024-03-13T22:44:58.062359-06:00'
 model: gpt-4-0125-preview
-summary: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res consiste\
-  \ \xE0 reconna\xEEtre et \xE0 convertir des dates \xE9crites sous forme de texte\
-  \ en un type de donn\xE9es date que PowerShell peut comprendre et traiter."
+summary: "PowerShell rend l'analyse des dates \xE0 partir de cha\xEEnes de caract\xE8\
+  res simple avec son applet de commande `Get-Date` et l'acc\xE9l\xE9rateur de type\
+  \ `[datetime]`, qui fonctionnent bien pour les formats de date standard."
 title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
 weight: 30
 ---

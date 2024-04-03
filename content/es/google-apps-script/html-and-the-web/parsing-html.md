@@ -2,14 +2,11 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:42.943524-07:00
-description: "Analizar HTML en Google Apps Script implica extraer datos de contenido\
-  \ HTML, lo cual es especialmente \xFAtil al interactuar con p\xE1ginas web o fuentes\
-  \ de\u2026"
+description: "C\xF3mo: Google Apps Script no tiene un m\xE9todo integrado para analizar\
+  \ HTML. Sin embargo, puedes aprovechar el servicio `UrlFetchApp` para recuperar\u2026"
 lastmod: '2024-03-13T22:44:58.525081-06:00'
 model: gpt-4-0125-preview
-summary: "Analizar HTML en Google Apps Script implica extraer datos de contenido HTML,\
-  \ lo cual es especialmente \xFAtil al interactuar con p\xE1ginas web o fuentes de\
-  \ datos basadas en la web."
+summary: "Google Apps Script no tiene un m\xE9todo integrado para analizar HTML."
 title: Analizando HTML
 weight: 43
 ---

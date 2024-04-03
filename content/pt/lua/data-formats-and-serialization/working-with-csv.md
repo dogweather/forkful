@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:29.529406-07:00
-description: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgula) envolve\
-  \ analisar e gerar dados de texto organizados em linhas e colunas, usando v\xED\
-  rgulas para\u2026"
+description: "Como fazer: Em Lua, trabalhar com arquivos CSV pode ser abordado usando\
+  \ opera\xE7\xF5es b\xE1sicas de IO (Entrada/Sa\xEDda) de arquivos fornecidas pela\
+  \ linguagem, sem\u2026"
 lastmod: '2024-03-13T22:44:46.731395-06:00'
 model: gpt-4-0125-preview
-summary: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgula) envolve analisar\
-  \ e gerar dados de texto organizados em linhas e colunas, usando v\xEDrgulas para\
-  \ separar valores individuais."
+summary: "Em Lua, trabalhar com arquivos CSV pode ser abordado usando opera\xE7\xF5\
+  es b\xE1sicas de IO (Entrada/Sa\xEDda) de arquivos fornecidas pela linguagem, sem\
+  \ a necessidade de bibliotecas externas para tarefas simples."
 title: Trabalhando com CSV
 weight: 37
 ---

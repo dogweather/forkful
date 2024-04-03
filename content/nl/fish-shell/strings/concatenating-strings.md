@@ -2,11 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:42.154829-07:00
-description: "Het aaneenschakelen van strings betekent dat ze achter elkaar worden\
-  \ geplakt. Programmeurs doen dit om tekst te combineren, zoals het bouwen van een\u2026"
+description: 'Hoe: In Fish plakt u strings aan elkaar met spaties ertussen of gebruikt
+  u `string join`.'
 lastmod: '2024-03-13T22:44:51.237060-06:00'
 model: gpt-4-0125-preview
-summary: Het aaneenschakelen van strings betekent dat ze achter elkaar worden geplakt.
+summary: In Fish plakt u strings aan elkaar met spaties ertussen of gebruikt u `string
+  join`.
 title: Samenvoegen van strings
 weight: 3
 ---

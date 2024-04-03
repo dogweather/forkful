@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:21.770445-07:00
-description: "Het omzetten van een tekenreeks naar kleine letters omvat het transformeren\
-  \ van alle hoofdletters in een tekenreeks naar hun kleine letter equivalenten.\u2026"
+description: "Hoe: In Visual Basic for Applications (VBA) is het omzetten van een\
+  \ tekenreeks naar kleine letters eenvoudig met behulp van de `LCase`-functie. Deze\u2026"
 lastmod: '2024-03-13T22:44:50.623302-06:00'
 model: gpt-4-0125-preview
-summary: Het omzetten van een tekenreeks naar kleine letters omvat het transformeren
-  van alle hoofdletters in een tekenreeks naar hun kleine letter equivalenten.
+summary: In Visual Basic for Applications (VBA) is het omzetten van een tekenreeks
+  naar kleine letters eenvoudig met behulp van de `LCase`-functie.
 title: Een string omzetten naar kleine letters
 weight: 4
 ---

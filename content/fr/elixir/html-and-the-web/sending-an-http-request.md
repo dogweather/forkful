@@ -1,13 +1,12 @@
 ---
 date: 2024-01-20 17:59:18.647136-07:00
-description: "Envoyer une requ\xEAte HTTP permet \xE0 votre application de communiquer\
-  \ avec le monde ext\xE9rieur : r\xE9cup\xE9rer des donn\xE9es, interagir avec des\
-  \ API, etc. Les\u2026"
+description: "How to: (Comment faire : ) Pour envoyer une requ\xEAte HTTP en Elixir,\
+  \ on utilise souvent la biblioth\xE8que HTTPoison. Assurez-vous de l'avoir ajout\xE9\
+  e \xE0 votre\u2026"
 lastmod: '2024-03-13T22:44:57.323639-06:00'
 model: gpt-4-1106-preview
-summary: "Envoyer une requ\xEAte HTTP permet \xE0 votre application de communiquer\
-  \ avec le monde ext\xE9rieur : r\xE9cup\xE9rer des donn\xE9es, interagir avec des\
-  \ API, etc."
+summary: "Pour envoyer une requ\xEAte HTTP en Elixir, on utilise souvent la biblioth\xE8\
+  que HTTPoison."
 title: "Envoi d'une requ\xEAte HTTP"
 weight: 44
 ---

@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:46:32.890975-07:00
-description: "Extrair substrings \xE9 o ato de pegar peda\xE7os espec\xEDficos de\
-  \ uma string maior. Programadores fazem isso para manipular, analisar, e processar\
-  \ dados de texto\u2026"
+description: "How to: Swift tem um jeito direto de lidar com substrings. Aqui est\xE3\
+  o alguns exemplos."
 lastmod: '2024-03-13T22:44:46.910072-06:00'
 model: gpt-4-1106-preview
-summary: "Extrair substrings \xE9 o ato de pegar peda\xE7os espec\xEDficos de uma\
-  \ string maior."
+summary: Swift tem um jeito direto de lidar com substrings.
 title: Extraindo substrings
 weight: 6
 ---

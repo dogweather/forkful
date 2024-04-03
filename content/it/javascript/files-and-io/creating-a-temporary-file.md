@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:40:28.607857-07:00
-description: "Creare un file temporaneo significa realizzare un documento destinato\
-  \ a una breve esistenza. I programmatori ne fanno uso per diversi motivi: per\u2026"
+description: 'How to: JavaScript non gestisce direttamente la creazione di file temporanei,
+  ma possiamo usare il pacchetto `tmp` di Node.js.'
 lastmod: '2024-03-13T22:44:43.832977-06:00'
 model: gpt-4-1106-preview
-summary: Creare un file temporaneo significa realizzare un documento destinato a una
-  breve esistenza.
+summary: JavaScript non gestisce direttamente la creazione di file temporanei, ma
+  possiamo usare il pacchetto `tmp` di Node.js.
 title: Creazione di un file temporaneo
 weight: 21
 ---

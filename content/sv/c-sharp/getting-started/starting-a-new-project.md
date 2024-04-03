@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 18:03:17.790824-07:00
-description: "Att starta ett nytt projekt i C# inneb\xE4r skapandet av en grundl\xE4\
-  ggande struktur f\xF6r din kod d\xE4r allt det roliga kan h\xE4nda. Programmerare\
-  \ g\xF6r detta f\xF6r att\u2026"
+description: "Hur man g\xF6r: F\xF6r att kickstarta ett nytt C#-projekt, anv\xE4nd\
+  \ dotnet CLI (Command Line Interface). H\xE4r \xE4r grunderna."
 lastmod: '2024-03-13T22:44:37.913949-06:00'
 model: gpt-4-1106-preview
-summary: "Att starta ett nytt projekt i C# inneb\xE4r skapandet av en grundl\xE4ggande\
-  \ struktur f\xF6r din kod d\xE4r allt det roliga kan h\xE4nda."
+summary: "F\xF6r att kickstarta ett nytt C#-projekt, anv\xE4nd dotnet CLI (Command\
+  \ Line Interface)."
 title: "Att p\xE5b\xF6rja ett nytt projekt"
 weight: 1
 ---

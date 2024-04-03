@@ -3,14 +3,13 @@ changelog:
 - 2024-01-28, dogweather, reviewed
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 02:05:14.592460-07:00
-description: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta tarkoittaa tekstin,\
-  \ kuten \"2023-04-05\", muuntamista p\xE4iv\xE4m\xE4\xE4r\xE4muotoon, jonka ohjelmasi\
-  \ voi ymm\xE4rt\xE4\xE4 ja k\xE4sitell\xE4.\u2026"
+description: "Kuinka: Elixiriss\xE4 voit j\xE4sent\xE4\xE4 p\xE4iv\xE4m\xE4\xE4ri\xE4\
+  \ k\xE4ytt\xE4en `Date`-moduulia. N\xE4in muunnat merkkijonon p\xE4iv\xE4m\xE4\xE4\
+  r\xE4ksi."
 lastmod: '2024-03-13T22:44:56.236440-06:00'
 model: gpt-4-0125-preview
-summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta tarkoittaa tekstin,\
-  \ kuten \"2023-04-05\", muuntamista p\xE4iv\xE4m\xE4\xE4r\xE4muotoon, jonka ohjelmasi\
-  \ voi ymm\xE4rt\xE4\xE4 ja k\xE4sitell\xE4."
+summary: "Elixiriss\xE4 voit j\xE4sent\xE4\xE4 p\xE4iv\xE4m\xE4\xE4ri\xE4 k\xE4ytt\xE4\
+  en `Date`-moduulia."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta"
 weight: 30
 ---

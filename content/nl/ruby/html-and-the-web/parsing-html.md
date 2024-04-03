@@ -2,12 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:52.125030-07:00
-description: "HTML parsen betekent het ontleden van een stuk HTML-code om de structuur\
-  \ en inhoud ervan te begrijpen. Programmeurs doen dit om gegevens te extraheren,\u2026"
+description: "Hoe: Om in Ruby HTML te parsen, installeer je de 'Nokogiri' gem met\
+  \ `gem install nokogiri`. Nokogiri is als een Zwitsers zakmes voor het werken met\
+  \ HTML\u2026"
 lastmod: '2024-03-13T22:44:51.335640-06:00'
 model: gpt-4-0125-preview
-summary: HTML parsen betekent het ontleden van een stuk HTML-code om de structuur
-  en inhoud ervan te begrijpen.
+summary: Om in Ruby HTML te parsen, installeer je de 'Nokogiri' gem met `gem install
+  nokogiri`.
 title: HTML Parsen
 weight: 43
 ---

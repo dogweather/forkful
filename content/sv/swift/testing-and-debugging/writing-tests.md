@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:04.622849-07:00
-description: "Att skriva tester i Swift inneb\xE4r att skapa och k\xF6ra kod som verifierar\
-  \ riktigheten hos andra kodenheter i din applikation. Programmerare g\xF6r detta\
-  \ f\xF6r\u2026"
+description: "Hur: Swift st\xF6der testning genom sitt XCTest-ramverk, som \xE4r integrerat\
+  \ i Xcode. Du kan skriva enhetstester f\xF6r att verifiera individuella delar av\
+  \ din\u2026"
 lastmod: '2024-03-13T22:44:38.254640-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva tester i Swift inneb\xE4r att skapa och k\xF6ra kod som verifierar\
-  \ riktigheten hos andra kodenheter i din applikation."
+summary: "Swift st\xF6der testning genom sitt XCTest-ramverk, som \xE4r integrerat\
+  \ i Xcode."
 title: Skriva tester
 weight: 36
 ---

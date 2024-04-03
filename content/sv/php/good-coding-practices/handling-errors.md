@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 00:55:36.541894-07:00
-description: "Felhantering i PHP handlar om att hantera och svara p\xE5 tillst\xE5\
-  nd som st\xF6r det normala programfl\xF6det, som till exempel saknade filer eller\
-  \ felaktig\u2026"
+description: "Hur g\xF6r man: I PHP kan du hantera fel med hj\xE4lp av `try-catch`-block,\
+  \ och du kan anpassa processen med egna felhanterare och undantag."
 lastmod: '2024-03-13T22:44:38.003732-06:00'
 model: gpt-4-1106-preview
-summary: "Felhantering i PHP handlar om att hantera och svara p\xE5 tillst\xE5nd som\
-  \ st\xF6r det normala programfl\xF6det, som till exempel saknade filer eller felaktig\
-  \ datainmatning."
+summary: "I PHP kan du hantera fel med hj\xE4lp av `try-catch`-block, och du kan anpassa\
+  \ processen med egna felhanterare och undantag."
 title: Hantering av fel
 weight: 16
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:25:05.427429-07:00
-description: "Praca z TOML polega na analizowaniu i generowaniu danych TOML (Tom's\
-  \ Obvious, Minimal Language - Oczywisty, Minimalny J\u0119zyk Toma) za pomoc\u0105\
-  \ Lua.\u2026"
+description: "Jak to zrobi\u0107: Po pierwsze, upewnij si\u0119, \u017Ce Twoje \u015B\
+  rodowisko Lua ma parser TOML. U\u017Cyjemy w tym przyk\u0142adzie `lua-toml`."
 lastmod: '2024-03-13T22:44:35.563568-06:00'
 model: gpt-4-0125-preview
-summary: "Praca z TOML polega na analizowaniu i generowaniu danych TOML (Tom's Obvious,\
-  \ Minimal Language - Oczywisty, Minimalny J\u0119zyk Toma) za pomoc\u0105 Lua."
+summary: "Po pierwsze, upewnij si\u0119, \u017Ce Twoje \u015Brodowisko Lua ma parser\
+  \ TOML."
 title: Praca z TOML
 weight: 39
 ---

@@ -2,14 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:08.147127-07:00
-description: "En programmation, obtenir la date actuelle est une t\xE2che fondamentale\
-  \ qui permet aux d\xE9veloppeurs d'acc\xE9der, d'afficher ou de manipuler la date\
-  \ actuelle\u2026"
+description: 'Comment faire : #.'
 lastmod: '2024-03-13T22:44:57.751101-06:00'
 model: gpt-4-0125-preview
-summary: "En programmation, obtenir la date actuelle est une t\xE2che fondamentale\
-  \ qui permet aux d\xE9veloppeurs d'acc\xE9der, d'afficher ou de manipuler la date\
-  \ actuelle au sein de leurs applications."
+summary: '#.'
 title: Obtenir la date actuelle
 weight: 29
 ---

@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:56.378902-07:00
-description: "Capitalizzare una stringa implica convertire il primo carattere di ogni\
-  \ parola in una stringa in maiuscolo, assicurando che il resto rimanga in minuscolo.\u2026"
+description: "Come fare: Arduino, principalmente noto per l'interazione con l'hardware,\
+  \ include anche capacit\xE0 di base di manipolazione delle stringhe attraverso il\
+  \ suo\u2026"
 lastmod: '2024-03-13T22:44:43.667451-06:00'
 model: gpt-4-0125-preview
-summary: Capitalizzare una stringa implica convertire il primo carattere di ogni parola
-  in una stringa in maiuscolo, assicurando che il resto rimanga in minuscolo.
+summary: "Arduino, principalmente noto per l'interazione con l'hardware, include anche\
+  \ capacit\xE0 di base di manipolazione delle stringhe attraverso il suo oggetto\
+  \ `String`."
 title: Capitalizzare una stringa
 weight: 2
 ---

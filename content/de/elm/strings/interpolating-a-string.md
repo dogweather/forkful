@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:50:33.702713-07:00
-description: "String-Interpolation bedeutet, Variable-Werte direkt in Zeichenketten\
-  \ einzuf\xFCgen. Das ist praktisch, um dynamische Texte wie Benutzereingaben oder\u2026"
+description: "How to: Elm hat keine eingebaute String-Interpolation wie du es von\
+  \ JavaScript vielleicht kennst. Stattdessen nutzt man Funktionen wie `String.concat`\u2026"
 lastmod: '2024-03-13T22:44:53.790589-06:00'
 model: gpt-4-1106-preview
-summary: "String-Interpolation bedeutet, Variable-Werte direkt in Zeichenketten einzuf\xFC\
-  gen."
+summary: Elm hat keine eingebaute String-Interpolation wie du es von JavaScript vielleicht
+  kennst.
 title: Zeichenketten interpolieren
 weight: 8
 ---

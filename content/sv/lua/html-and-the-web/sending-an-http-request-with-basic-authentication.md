@@ -1,13 +1,9 @@
 ---
 date: 2024-01-20 18:02:00.107207-07:00
-description: "Att skicka en HTTP-beg\xE4ran med grundl\xE4ggande autentisering inneb\xE4\
-  r att du inkluderar anv\xE4ndarnamn och l\xF6senord i din f\xF6rfr\xE5gan f\xF6\
-  r att f\xE5 \xE5tkomst till\u2026"
+description: "Hur g\xF6r man: ."
 lastmod: '2024-03-13T22:44:38.038142-06:00'
 model: gpt-4-1106-preview
-summary: "Att skicka en HTTP-beg\xE4ran med grundl\xE4ggande autentisering inneb\xE4\
-  r att du inkluderar anv\xE4ndarnamn och l\xF6senord i din f\xF6rfr\xE5gan f\xF6\
-  r att f\xE5 \xE5tkomst till skyddade resurser."
+summary: .
 title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
 weight: 45
 ---

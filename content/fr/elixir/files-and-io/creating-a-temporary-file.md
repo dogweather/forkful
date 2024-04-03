@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:39:56.412545-07:00
-description: "Cr\xE9er un fichier temporaire, c'est g\xE9n\xE9rer un fichier destin\xE9\
-  \ \xE0 un usage court terme, souvent pour manipuler des donn\xE9es transitoires.\
-  \ Les programmeurs le\u2026"
+description: "How to: En Elixir, la cr\xE9ation d'un fichier temporaire n'est pas\
+  \ directement int\xE9gr\xE9e dans la biblioth\xE8que standard. On utilise g\xE9\
+  n\xE9ralement `:os.cmd`\u2026"
 lastmod: '2024-03-13T22:44:57.348501-06:00'
 model: gpt-4-1106-preview
-summary: "Cr\xE9er un fichier temporaire, c'est g\xE9n\xE9rer un fichier destin\xE9\
-  \ \xE0 un usage court terme, souvent pour manipuler des donn\xE9es transitoires."
+summary: "En Elixir, la cr\xE9ation d'un fichier temporaire n'est pas directement\
+  \ int\xE9gr\xE9e dans la biblioth\xE8que standard."
 title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---

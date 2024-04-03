@@ -1,12 +1,13 @@
 ---
 date: 2024-01-20 17:40:06.788192-07:00
-description: "Tworzenie tymczasowego pliku to proces generowania pliku, kt\xF3ry istnieje\
-  \ tylko na czas dzia\u0142ania aplikacji. Programi\u015Bci u\u017Cywaj\u0105 tej\
-  \ techniki, aby\u2026"
+description: "Jak to zrobi\u0107: W Elm, bezpo\u015Brednie tworzenie plik\xF3w tymczasowych\
+  \ nie jest mo\u017Cliwe, poniewa\u017C j\u0119zyk ten dzia\u0142a w przegl\u0105\
+  darce i nie ma dost\u0119pu do systemu\u2026"
 lastmod: '2024-03-13T22:44:35.341251-06:00'
 model: gpt-4-1106-preview
-summary: "Tworzenie tymczasowego pliku to proces generowania pliku, kt\xF3ry istnieje\
-  \ tylko na czas dzia\u0142ania aplikacji."
+summary: "W Elm, bezpo\u015Brednie tworzenie plik\xF3w tymczasowych nie jest mo\u017C\
+  liwe, poniewa\u017C j\u0119zyk ten dzia\u0142a w przegl\u0105darce i nie ma dost\u0119\
+  pu do systemu plik\xF3w."
 title: Tworzenie pliku tymczasowego
 weight: 21
 ---

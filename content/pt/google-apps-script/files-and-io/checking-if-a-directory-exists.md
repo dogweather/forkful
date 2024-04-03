@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:48:46.037737-07:00
-description: "Verificar se um diret\xF3rio existe no Google Apps Script envolve confirmar\
-  \ a presen\xE7a de uma pasta dentro do Google Drive. Programadores frequentemente\u2026"
+description: "Como fazer: O Google Apps Script n\xE3o oferece um m\xE9todo direto\
+  \ \"exists\" para pastas. Em vez disso, usamos as capacidades de busca do Google\
+  \ Drive para\u2026"
 lastmod: '2024-03-13T22:44:46.124604-06:00'
 model: gpt-4-0125-preview
-summary: "Verificar se um diret\xF3rio existe no Google Apps Script envolve confirmar\
-  \ a presen\xE7a de uma pasta dentro do Google Drive."
+summary: "O Google Apps Script n\xE3o oferece um m\xE9todo direto \"exists\" para\
+  \ pastas."
 title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---

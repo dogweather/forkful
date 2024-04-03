@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:51:29.281309-07:00
-description: "Interpolacja string\xF3w to wstawianie zmiennych do napis\xF3w w kodzie,\
-  \ aby dynamicznie budowa\u0107 tekst. Programi\u015Bci u\u017Cywaj\u0105 jej, by\
-  \ kod by\u0142 bardziej elastyczny\u2026"
+description: "Jak to zrobi\u0107: Interpolowa\u0107 stringi mo\u017Cemy za pomoc\u0105\
+  \ podw\xF3jnych cudzys\u0142ow\xF3w lub heredoc. Oto przyk\u0142ady."
 lastmod: '2024-03-13T22:44:35.482473-06:00'
 model: gpt-4-1106-preview
-summary: "Interpolacja string\xF3w to wstawianie zmiennych do napis\xF3w w kodzie,\
-  \ aby dynamicznie budowa\u0107 tekst."
+summary: "Interpolowa\u0107 stringi mo\u017Cemy za pomoc\u0105 podw\xF3jnych cudzys\u0142\
+  ow\xF3w lub heredoc."
 title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 8
 ---

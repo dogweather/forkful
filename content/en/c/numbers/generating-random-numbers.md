@@ -1,11 +1,12 @@
 ---
 date: 2024-02-03 17:50:18.648341-07:00
-description: "Generating random numbers in C involves creating values that are unpredictable\
-  \ and follow a specific distribution, such as uniform or normal. This\u2026"
+description: "How to: In C, random numbers can be generated using the `rand()` function,\
+  \ which is part of the C standard library `<stdlib.h>.` By default, `rand()`\u2026"
 lastmod: '2024-03-13T22:45:00.507840-06:00'
 model: gpt-4-0125-preview
-summary: Generating random numbers in C involves creating values that are unpredictable
-  and follow a specific distribution, such as uniform or normal.
+summary: In C, random numbers can be generated using the `rand()` function, which
+  is part of the C standard library `<stdlib.h>.` By default, `rand()` produces pseudo-random
+  numbers in the range from 0 to `RAND_MAX` (a constant defined in `<stdlib.h>`).
 title: Generating random numbers
 weight: 12
 ---

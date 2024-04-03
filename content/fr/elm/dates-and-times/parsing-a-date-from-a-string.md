@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:59.988722-07:00
-description: "L'analyse d'une date \xE0 partir d'une cha\xEEne de caract\xE8res en\
-  \ Elm consiste \xE0 convertir des informations textuelles repr\xE9sentant des dates\
-  \ et des heures en\u2026"
+description: "Comment faire : Elm n'a pas de capacit\xE9s int\xE9gr\xE9es aussi robustes\
+  \ que certains autres langages pour l'analyse des dates, s'appuyant principalement\
+  \ sur\u2026"
 lastmod: '2024-03-13T22:44:57.699661-06:00'
 model: gpt-4-0125-preview
-summary: "L'analyse d'une date \xE0 partir d'une cha\xEEne de caract\xE8res en Elm\
-  \ consiste \xE0 convertir des informations textuelles repr\xE9sentant des dates\
-  \ et des heures en un format qu'Elm peut comprendre et manipuler, sp\xE9cifiquement\
-  \ en le type `Date`."
+summary: "Elm n'a pas de capacit\xE9s int\xE9gr\xE9es aussi robustes que certains\
+  \ autres langages pour l'analyse des dates, s'appuyant principalement sur l'interop\
+  \ Javascript ou les biblioth\xE8ques pour des op\xE9rations plus complexes."
 title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
 weight: 30
 ---

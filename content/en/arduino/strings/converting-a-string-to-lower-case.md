@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:37:34.108743-07:00
-description: "Converting a string to lower case changes all uppercase letters in the\
-  \ text to their lowercase counterparts. Programmers do this for consistency,\u2026"
+description: 'How to: Arduino''s `String` object has a handy `toLowerCase()` method.
+  Call it on your string, and just like that, it''s in lowercase.'
 lastmod: '2024-03-13T22:45:00.310535-06:00'
 model: gpt-4-1106-preview
-summary: Converting a string to lower case changes all uppercase letters in the text
-  to their lowercase counterparts.
+summary: Arduino's `String` object has a handy `toLowerCase()` method.
 title: Converting a string to lower case
 weight: 4
 ---

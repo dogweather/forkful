@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:08:39.068763-07:00
-description: "Organizacja kodu w funkcje oznacza podzielenie kodu na wielokrotnie\
-  \ u\u017Cywalne bloki, z kt\xF3rych ka\u017Cdy wykonuje okre\u015Blone zadanie.\
-  \ Programi\u015Bci robi\u0105 to, aby\u2026"
+description: "Jak to zrobi\u0107: Wyobra\u017A sobie, \u017Ce chcesz mruga\u0107 diod\u0105\
+  \ LED. Bez funkcji, twoja `p\u0119tla` to ba\u0142agan. Z funkcjami jest uporz\u0105\
+  dkowana. Oto jak."
 lastmod: '2024-03-13T22:44:35.676827-06:00'
 model: gpt-4-1106-preview
-summary: "Organizacja kodu w funkcje oznacza podzielenie kodu na wielokrotnie u\u017C\
-  ywalne bloki, z kt\xF3rych ka\u017Cdy wykonuje okre\u015Blone zadanie."
+summary: "Wyobra\u017A sobie, \u017Ce chcesz mruga\u0107 diod\u0105 LED."
 title: Organizacja kodu w funkcje
 weight: 18
 ---

@@ -1,13 +1,9 @@
 ---
 date: 2024-01-20 18:00:57.211237-07:00
-description: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica es el proceso\
-  \ de mandar una petici\xF3n a un servidor que requiere un nombre de usuario y contrase\xF1\
-  a\u2026"
+description: "C\xF3mo se hace: ."
 lastmod: '2024-03-13T22:44:59.334033-06:00'
 model: gpt-4-1106-preview
-summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica es el proceso de\
-  \ mandar una petici\xF3n a un servidor que requiere un nombre de usuario y contrase\xF1\
-  a codificados en base64."
+summary: .
 title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
 weight: 45
 ---

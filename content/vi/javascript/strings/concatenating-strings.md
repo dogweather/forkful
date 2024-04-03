@@ -2,14 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:37.374698-07:00
-description: "N\u1ED1i chu\u1ED7i c\xF3 ngh\u0129a l\xE0 gh\xE9p ch\xFAng l\u1EA1\
-  i v\u1EDBi nhau t\u1EEB \u0111\u1EA7u \u0111\u1EBFn cu\u1ED1i. Ch\xFAng ta l\xE0\
-  m v\u1EADy \u0111\u1EC3 t\u1EA1o ra c\xE1c th\xF4ng \u0111i\u1EC7p, URL, ho\u1EB7\
-  c b\u1EA5t k\u1EF3 v\u0103n b\u1EA3n n\xE0o v\u1EDBi c\xE1c ph\u1EA7n t\u1EEB\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong JavaScript, b\u1EA1n c\xF3 m\u1ED9t v\xE0\
+  i c\xE1ch \u0111\u1EC3 n\u1ED1i chu\u1ED7i. Ki\u1EC3u c\u1ED5 \u0111i\u1EC3n: `+`.\
+  \ Ki\u1EC3u hi\u1EC7n \u0111\u1EA1i: template literals. D\u01B0\u1EDBi \u0111\xE2\
+  y l\xE0 c\xE1ch ch\xFAng tr\xF4ng nh\u01B0 th\u1EBF\u2026"
 lastmod: '2024-03-13T22:44:37.142685-06:00'
 model: gpt-4-0125-preview
-summary: "N\u1ED1i chu\u1ED7i c\xF3 ngh\u0129a l\xE0 gh\xE9p ch\xFAng l\u1EA1i v\u1EDB\
-  i nhau t\u1EEB \u0111\u1EA7u \u0111\u1EBFn cu\u1ED1i."
+summary: "Trong JavaScript, b\u1EA1n c\xF3 m\u1ED9t v\xE0i c\xE1ch \u0111\u1EC3 n\u1ED1\
+  i chu\u1ED7i."
 title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 weight: 3
 ---

@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 20:26:26.170970-07:00
-description: "Generating random numbers is about producing unpredictable sequences\
-  \ or single values within a defined range. Programmers use this technique for a\
-  \ variety\u2026"
+description: "How to: In Java, generating random numbers can be achieved using the\
+  \ `Random` class from the `java.util` package, or the `ThreadLocalRandom` and\u2026"
 lastmod: '2024-03-13T22:44:59.968795-06:00'
 model: gpt-4-0125-preview
-summary: Generating random numbers is about producing unpredictable sequences or single
-  values within a defined range.
+summary: In Java, generating random numbers can be achieved using the `Random` class
+  from the `java.util` package, or the `ThreadLocalRandom` and `SecureRandom` classes
+  for specific use cases.
 title: Generating random numbers
 weight: 12
 ---

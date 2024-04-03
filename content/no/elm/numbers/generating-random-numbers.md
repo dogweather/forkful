@@ -3,15 +3,13 @@ changelog:
 - 2024-02-27, dogweather, edited and tested
 - 2024-02-27, gpt-4-0125-preview, translated from English
 date: 2024-02-27 22:50:34.412858-07:00
-description: "\xC5 generere tilfeldige tall i Elm inneb\xE6rer \xE5 bruke `Random`-modulen\
-  \ for \xE5 produsere pseudo-tilfeldige tall, som er hendige for en rekke oppgaver\
-  \ som\u2026"
+description: "Hvordan: Elms rene funksjonelle natur betyr at du ikke kan generere\
+  \ tilfeldige tall direkte som du kanskje ville gjort i imperativ spr\xE5k. I stedet\
+  \ bruker\u2026"
 lastmod: '2024-03-13T22:44:40.704665-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 generere tilfeldige tall i Elm inneb\xE6rer \xE5 bruke `Random`-modulen\
-  \ for \xE5 produsere pseudo-tilfeldige tall, som er hendige for en rekke oppgaver\
-  \ som spill, simuleringer og selv som en del av algoritmer som krever stokastiske\
-  \ prosesser."
+summary: "Elms rene funksjonelle natur betyr at du ikke kan generere tilfeldige tall\
+  \ direkte som du kanskje ville gjort i imperativ spr\xE5k."
 title: Generere tilfeldige tall
 weight: 12
 ---

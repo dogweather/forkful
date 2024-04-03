@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:46:16.805106-07:00
-description: "Wyci\u0105ganie pod\u0142a\u0144cuch\xF3w, czyli ekstrakcja konkretnych\
-  \ cz\u0119\u015Bci z tekstu, to chleb powszedni w programowaniu. Robimy to, by manipulowa\u0107\
-  \ danymi, walidowa\u0107\u2026"
+description: "How to: JavaScript posiada kilka metod do wydobywania pod\u0142a\u0144\
+  cuch\xF3w: `slice()`, `substring()`, i `substr()` (ale uwaga, `substr()` jest przestarza\u0142\
+  a!). Oto\u2026"
 lastmod: '2024-03-13T22:44:35.785503-06:00'
 model: gpt-4-1106-preview
-summary: "Wyci\u0105ganie pod\u0142a\u0144cuch\xF3w, czyli ekstrakcja konkretnych\
-  \ cz\u0119\u015Bci z tekstu, to chleb powszedni w programowaniu."
+summary: "JavaScript posiada kilka metod do wydobywania pod\u0142a\u0144cuch\xF3w."
 title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
 weight: 6
 ---

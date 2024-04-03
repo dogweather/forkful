@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:14.807790-07:00
-description: "Tekst zoeken en vervangen betekent specifieke tekenreeksen in een tekstblok\
-  \ omwisselen met andere. Programmeurs doen dit voor taken zoals het herstellen\u2026"
+description: 'Hoe: De `string.gsub` functie van Lua is je eerste keuze voor zoeken
+  en vervangen. Het werkt als volgt.'
 lastmod: '2024-03-13T22:44:50.922754-06:00'
 model: gpt-4-0125-preview
-summary: Tekst zoeken en vervangen betekent specifieke tekenreeksen in een tekstblok
-  omwisselen met andere.
+summary: De `string.gsub` functie van Lua is je eerste keuze voor zoeken en vervangen.
 title: Tekst zoeken en vervangen
 weight: 10
 ---

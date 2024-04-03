@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:49.491836-07:00
-description: "In Elixir, gli array associativi, chiamati Mappe, sono collezioni di\
-  \ coppie chiave-valore dove una chiave unica punta a un valore. Sono estremamente\
-  \ utili\u2026"
+description: "Come fare: Creare una Mappa \xE8 semplice. Si usa la sintassi `%{}`,\
+  \ cos\xEC."
 lastmod: '2024-03-13T22:44:43.077169-06:00'
 model: gpt-4-0125-preview
-summary: In Elixir, gli array associativi, chiamati Mappe, sono collezioni di coppie
-  chiave-valore dove una chiave unica punta a un valore.
+summary: "Creare una Mappa \xE8 semplice."
 title: Utilizzo di array associativi
 weight: 15
 ---

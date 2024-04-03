@@ -2,17 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:10.777126-07:00
-description: "L\xE0m tr\xF2n s\u1ED1 c\xF3 ngh\u0129a l\xE0 \u0111i\u1EC1u ch\u1EC9\
-  nh ch\xFAng \u0111\u1EBFn s\u1ED1 nguy\xEAn g\u1EA7n nh\u1EA5t ho\u1EB7c m\u1ED9\
-  t ph\u1EA7n s\u1ED1 v\u1EDBi \u0111\u1ED9 ch\xEDnh x\xE1c nh\u1EA5t \u0111\u1ECB\
-  nh. L\u1EADp tr\xECnh vi\xEAn l\xE0m tr\xF2n s\u1ED1 \u0111\u1EC3 \u0111\u01A1n\
-  \ gi\u1EA3n h\xF3a\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Rust khi\u1EBFn vi\u1EC7c l\xE0m tr\xF2n tr\u1EDF\
+  \ n\xEAn d\u1EC5 d\xE0ng. H\xE3y th\u1EED nh\u1EEFng ph\u01B0\u01A1ng ph\xE1p n\xE0\
+  y cho c\xE1c ki\u1EC3u `f32` ho\u1EB7c `f64`."
 lastmod: '2024-03-13T22:44:36.368727-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m tr\xF2n s\u1ED1 c\xF3 ngh\u0129a l\xE0 \u0111i\u1EC1u ch\u1EC9nh\
-  \ ch\xFAng \u0111\u1EBFn s\u1ED1 nguy\xEAn g\u1EA7n nh\u1EA5t ho\u1EB7c m\u1ED9\
-  t ph\u1EA7n s\u1ED1 v\u1EDBi \u0111\u1ED9 ch\xEDnh x\xE1c nh\u1EA5t \u0111\u1ECB\
-  nh."
+summary: "Rust khi\u1EBFn vi\u1EC7c l\xE0m tr\xF2n tr\u1EDF n\xEAn d\u1EC5 d\xE0ng."
 title: "L\xE0m tr\xF2n s\u1ED1"
 weight: 13
 ---

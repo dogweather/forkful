@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:40.363259-07:00
-description: "Wyra\u017Cenia regularne (regex) w PHP to wzorce u\u017Cywane do dopasowywania\
-  \ kombinacji znak\xF3w w ci\u0105gach, co pozwala na zaawansowane operacje wyszukiwania\
-  \ i\u2026"
+description: "Jak to zrobi\u0107: PHP obs\u0142uguje wyra\u017Cenia regularne za po\u015B\
+  rednictwem biblioteki PCRE (Perl Compatible Regular Expressions), oferuj\u0105c\
+  \ bogaty zestaw funkcji.\u2026"
 lastmod: '2024-03-13T22:44:35.486606-06:00'
 model: gpt-4-0125-preview
-summary: "Wyra\u017Cenia regularne (regex) w PHP to wzorce u\u017Cywane do dopasowywania\
-  \ kombinacji znak\xF3w w ci\u0105gach, co pozwala na zaawansowane operacje wyszukiwania\
-  \ i zamiany oraz walidacj\u0119 danych."
+summary: "PHP obs\u0142uguje wyra\u017Cenia regularne za po\u015Brednictwem biblioteki\
+  \ PCRE (Perl Compatible Regular Expressions), oferuj\u0105c bogaty zestaw funkcji."
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---

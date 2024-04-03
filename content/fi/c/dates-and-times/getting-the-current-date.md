@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:38.810480-07:00
-description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen C-kieless\xE4 tarkoittaa\
-  \ standardin C-kirjaston hy\xF6dynt\xE4mist\xE4 j\xE4rjestelm\xE4n nykyisen ajan\
-  \ ja p\xE4iv\xE4m\xE4\xE4r\xE4n noutamiseen ja\u2026"
+description: "Kuinka: C-kieless\xE4 otsikkotiedosto `<time.h>` tarjoaa tarvittavat\
+  \ funktiot ja tyypit p\xE4iv\xE4m\xE4\xE4rien ja aikojen k\xE4sittelyyn. `time()`-funktio\
+  \ hakee nykyisen\u2026"
 lastmod: '2024-03-13T22:44:57.051469-06:00'
 model: gpt-4-0125-preview
-summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen C-kieless\xE4 tarkoittaa standardin\
-  \ C-kirjaston hy\xF6dynt\xE4mist\xE4 j\xE4rjestelm\xE4n nykyisen ajan ja p\xE4iv\xE4\
-  m\xE4\xE4r\xE4n noutamiseen ja muotoilemiseen."
+summary: "C-kieless\xE4 otsikkotiedosto `<time.h>` tarjoaa tarvittavat funktiot ja\
+  \ tyypit p\xE4iv\xE4m\xE4\xE4rien ja aikojen k\xE4sittelyyn."
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---

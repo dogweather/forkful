@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:45:22.383256-07:00
-description: "L'arrondi consiste \xE0 couper le bruit apr\xE8s un certain point dans\
-  \ un nombre. Les programmeurs arrondissent pour contr\xF4ler la pr\xE9cision, g\xE9\
-  rer la m\xE9moire,\u2026"
+description: 'Comment faire : Voici comment vous arrondissez les nombres en JavaScript
+  en utilisant `Math.round()`, `Math.ceil()`, et `Math.floor()` .'
 lastmod: '2024-03-13T22:44:58.269620-06:00'
 model: gpt-4-0125-preview
-summary: "L'arrondi consiste \xE0 couper le bruit apr\xE8s un certain point dans un\
-  \ nombre."
+summary: Voici comment vous arrondissez les nombres en JavaScript en utilisant `Math.round()`,
+  `Math.ceil()`, et `Math.floor()`.
 title: Arrondir les nombres
 weight: 13
 ---

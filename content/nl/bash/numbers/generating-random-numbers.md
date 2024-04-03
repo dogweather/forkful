@@ -2,14 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:57.834208-07:00
-description: "Het genereren van willekeurige getallen in Bash biedt een manier om\
-  \ onvoorspelbaarheid in scripts te introduceren, wat essentieel is voor taken zoals\
-  \ het\u2026"
+description: "Hoe: In Bash is de `$RANDOM` variabele de go-to voor het genereren van\
+  \ willekeurige getallen. Elke keer dat je het referereert, biedt Bash een pseudo-\u2026"
 lastmod: '2024-03-13T22:44:50.975528-06:00'
 model: gpt-4-0125-preview
-summary: Het genereren van willekeurige getallen in Bash biedt een manier om onvoorspelbaarheid
-  in scripts te introduceren, wat essentieel is voor taken zoals het genereren van
-  veilige wachtwoorden, het simuleren van gegevens of voor het programmeren van spellen.
+summary: In Bash is de `$RANDOM` variabele de go-to voor het genereren van willekeurige
+  getallen.
 title: Willekeurige getallen genereren
 weight: 12
 ---

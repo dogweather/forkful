@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:35:18.132221-07:00
-description: "La concatenazione di stringhe \xE8 la pratica di unire due o pi\xF9\
-  \ stringhe di testo in una sola. I programmatori la utilizzano per costruire messaggi,\u2026"
+description: 'How to: In JavaScript, si concatena con l''operatore `+` o con i template
+  literals.'
 lastmod: '2024-03-13T22:44:43.803681-06:00'
 model: gpt-4-1106-preview
-summary: "La concatenazione di stringhe \xE8 la pratica di unire due o pi\xF9 stringhe\
-  \ di testo in una sola."
+summary: In JavaScript, si concatena con l'operatore `+` o con i template literals.
 title: Concatenazione di stringhe
 weight: 3
 ---

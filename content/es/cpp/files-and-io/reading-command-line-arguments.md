@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:55:39.200202-07:00
-description: "Leer argumentos de la l\xEDnea de comandos permite que tu programa en\
-  \ C++ sea flexible y reciba datos externos al iniciarse. Los programamos as\xED\
-  \ para\u2026"
+description: "C\xF3mo: Aqu\xED tienes c\xF3mo capturar argumentos de la l\xEDnea de\
+  \ comandos en C++."
 lastmod: '2024-03-13T22:44:59.390278-06:00'
 model: gpt-4-1106-preview
-summary: "Leer argumentos de la l\xEDnea de comandos permite que tu programa en C++\
-  \ sea flexible y reciba datos externos al iniciarse."
+summary: "Aqu\xED tienes c\xF3mo capturar argumentos de la l\xEDnea de comandos en\
+  \ C++."
 title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---

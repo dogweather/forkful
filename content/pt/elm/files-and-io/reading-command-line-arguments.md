@@ -1,11 +1,13 @@
 ---
 date: 2024-01-20 17:55:59.018003-07:00
-description: "Ler argumentos da linha de comando \xE9 o processo de capturar dados\
-  \ passados ao executar um programa. Programadores fazem isso para permitir que seus\u2026"
+description: "Como fazer: Agora, o Elm \xE9 focado em web frontend, ent\xE3o ele naturalmente\
+  \ n\xE3o tem acesso direto a argumentos da linha de comando como voc\xEA teria em\
+  \ outras\u2026"
 lastmod: '2024-03-13T22:44:46.515086-06:00'
 model: gpt-4-1106-preview
-summary: "Ler argumentos da linha de comando \xE9 o processo de capturar dados passados\
-  \ ao executar um programa."
+summary: "Agora, o Elm \xE9 focado em web frontend, ent\xE3o ele naturalmente n\xE3\
+  o tem acesso direto a argumentos da linha de comando como voc\xEA teria em outras\
+  \ linguagens mais 'backend'."
 title: Lendo argumentos da linha de comando
 weight: 23
 ---

@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:48:23.395302-07:00
-description: "Die L\xE4nge eines Strings in TypeScript zu finden, bedeutet, zu ermitteln,\
-  \ wie viele Zeichen der String enth\xE4lt. Programmierer m\xFCssen das h\xE4ufig\
-  \ tun, um\u2026"
+description: "So geht's: Um die L\xE4nge eines Strings zu bekommen, nutzt du die `.length`\
+  \ Eigenschaft. Hier ein schnelles Beispiel."
 lastmod: '2024-03-13T22:44:53.622679-06:00'
 model: gpt-4-1106-preview
-summary: "Die L\xE4nge eines Strings in TypeScript zu finden, bedeutet, zu ermitteln,\
-  \ wie viele Zeichen der String enth\xE4lt."
+summary: "Um die L\xE4nge eines Strings zu bekommen, nutzt du die `.length` Eigenschaft."
 title: "Ermittlung der Zeichenkettenl\xE4nge"
 weight: 7
 ---

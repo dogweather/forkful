@@ -2,12 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:09.109330-07:00
-description: "Analizar una fecha a partir de un string en Haskell implica convertir\
-  \ representaciones textuales de fechas en un formato estructurado que el programa\u2026"
+description: "C\xF3mo hacerlo: De entrada, Haskell ofrece herramientas b\xE1sicas\
+  \ para analizar fechas, pero aprovechar bibliotecas como `time` para funcionalidades\
+  \ b\xE1sicas y\u2026"
 lastmod: '2024-03-13T22:44:59.127933-06:00'
 model: gpt-4-0125-preview
-summary: Analizar una fecha a partir de un string en Haskell implica convertir representaciones
-  textuales de fechas en un formato estructurado que el programa pueda manipular.
+summary: "De entrada, Haskell ofrece herramientas b\xE1sicas para analizar fechas,\
+  \ pero aprovechar bibliotecas como `time` para funcionalidades b\xE1sicas y `date-parse`\
+  \ o `time-parse` para un an\xE1lisis m\xE1s flexible puede simplificar significativamente\
+  \ la tarea."
 title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---

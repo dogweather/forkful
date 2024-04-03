@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:10.206674-07:00
-description: "X\u1EED l\xFD l\u1ED7i trong Go bao g\u1ED3m vi\u1EC7c nh\u1EADn bi\u1EBF\
-  t v\xE0 ph\u1EA3n h\u1ED3i tr\u1EA1ng th\xE1i l\u1ED7i trong ch\u01B0\u01A1ng tr\xEC\
-  nh c\u1EE7a b\u1EA1n. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n x\u1EED l\xFD\
-  \ l\u1ED7i \u0111\u1EC3 \u0111\u1EA3m b\u1EA3o \u1EE9ng d\u1EE5ng\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Go, vi\u1EC7c x\u1EED l\xFD l\u1ED7i \u0111\
+  \u01B0\u1EE3c qu\u1EA3n l\xFD m\u1ED9t c\xE1ch r\xF5 r\xE0ng s\u1EED d\u1EE5ng ki\u1EC3\
+  u `error`. C\xE1c h\xE0m c\xF3 th\u1EC3 th\u1EA5t b\u1EA1i s\u1EBD tr\u1EA3 v\u1EC1\
+  \ m\u1ED9t l\u1ED7i nh\u01B0 gi\xE1 tr\u1ECB tr\u1EA3 v\u1EC1\u2026"
 lastmod: '2024-03-13T22:44:35.992424-06:00'
 model: gpt-4-0125-preview
-summary: "X\u1EED l\xFD l\u1ED7i trong Go bao g\u1ED3m vi\u1EC7c nh\u1EADn bi\u1EBF\
-  t v\xE0 ph\u1EA3n h\u1ED3i tr\u1EA1ng th\xE1i l\u1ED7i trong ch\u01B0\u01A1ng tr\xEC\
-  nh c\u1EE7a b\u1EA1n."
+summary: "Trong Go, vi\u1EC7c x\u1EED l\xFD l\u1ED7i \u0111\u01B0\u1EE3c qu\u1EA3\
+  n l\xFD m\u1ED9t c\xE1ch r\xF5 r\xE0ng s\u1EED d\u1EE5ng ki\u1EC3u `error`."
 title: "X\u1EED l\xFD l\u1ED7i"
 weight: 16
 ---

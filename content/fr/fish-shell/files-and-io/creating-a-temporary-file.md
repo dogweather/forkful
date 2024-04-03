@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:40:21.176089-07:00
-description: "Cr\xE9er un fichier temporaire c'est un peu comme prendre des notes\
-  \ sur une napkin; \xE7a sert \xE0 stocker des infos de fa\xE7on \xE9ph\xE9m\xE8\
-  re. Les d\xE9veloppeurs font \xE7a\u2026"
+description: 'Comment faire : .'
 lastmod: '2024-03-13T22:44:58.345565-06:00'
 model: gpt-4-1106-preview
-summary: "Cr\xE9er un fichier temporaire c'est un peu comme prendre des notes sur\
-  \ une napkin; \xE7a sert \xE0 stocker des infos de fa\xE7on \xE9ph\xE9m\xE8re."
+summary: .
 title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---

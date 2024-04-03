@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:38.218821-07:00
-description: "Associativa arrayer, ofta k\xE4nda som ordb\xF6cker i Visual Basic for\
-  \ Applications (VBA), g\xF6r det m\xF6jligt f\xF6r programmerare att skapa samlingar\
-  \ av nyckel-\u2026"
+description: "Hur man g\xF6r: I VBA tillhandah\xE5ller `Dictionary`-objektet en funktionalitet\
+  \ som liknar associativa arrayer. Du m\xE5ste f\xF6rst l\xE4gga till en referens\
+  \ till\u2026"
 lastmod: '2024-03-13T22:44:37.735328-06:00'
 model: gpt-4-0125-preview
-summary: "Associativa arrayer, ofta k\xE4nda som ordb\xF6cker i Visual Basic for Applications\
-  \ (VBA), g\xF6r det m\xF6jligt f\xF6r programmerare att skapa samlingar av nyckel-v\xE4\
-  rde-par."
+summary: "I VBA tillhandah\xE5ller `Dictionary`-objektet en funktionalitet som liknar\
+  \ associativa arrayer."
 title: "Anv\xE4nda associativa arrayer"
 weight: 15
 ---

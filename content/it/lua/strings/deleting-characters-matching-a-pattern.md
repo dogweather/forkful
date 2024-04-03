@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:43:16.686809-07:00
-description: "Cancellare caratteri corrispondenti a un pattern significa rimuovere\
-  \ sequenze specifiche di testo da una stringa. Lo facciamo per pulire i dati, validare\u2026"
+description: 'How to: In Lua, puoi usare la funzione `string.gsub` per eliminare caratteri
+  o pattern. Ecco un esempio pratico.'
 lastmod: '2024-03-13T22:44:43.543480-06:00'
 model: gpt-4-1106-preview
-summary: Cancellare caratteri corrispondenti a un pattern significa rimuovere sequenze
-  specifiche di testo da una stringa.
+summary: In Lua, puoi usare la funzione `string.gsub` per eliminare caratteri o pattern.
 title: Eliminazione di caratteri che corrispondono a un pattern
 weight: 5
 ---

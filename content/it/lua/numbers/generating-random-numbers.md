@@ -1,13 +1,11 @@
 ---
 date: 2024-01-27 20:34:40.838596-07:00
-description: "Generare numeri casuali nella programmazione riguarda la produzione\
-  \ di valori numerici imprevedibili che possono essere utilizzati per una variet\xE0\
-  \ di\u2026"
+description: "Come fare: Lua offre un supporto integrato per la generazione di numeri\
+  \ casuali tramite la funzione `math.random`. Questa funzione pu\xF2 essere utilizzata\u2026"
 lastmod: '2024-03-13T22:44:43.553844-06:00'
 model: gpt-4-0125-preview
-summary: "Generare numeri casuali nella programmazione riguarda la produzione di valori\
-  \ numerici imprevedibili che possono essere utilizzati per una variet\xE0 di scopi\
-  \ come simulazioni, giochi o applicazioni di sicurezza."
+summary: Lua offre un supporto integrato per la generazione di numeri casuali tramite
+  la funzione `math.random`.
 title: Generazione di numeri casuali
 weight: 12
 ---

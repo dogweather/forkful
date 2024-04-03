@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:57.944350-07:00
-description: "YAML, et data serialiseringsspr\xE5k designet for \xE5 v\xE6re brukervennlig,\
-  \ brukes ofte til konfigurasjonsfiler, mellomprosessmeldinger og datalagring.\u2026"
+description: "Hvordan: \xC5 arbeide med YAML i TypeScript inneb\xE6rer vanligvis \xE5\
+  \ parse YAML-innhold til JavaScript-objekter og muligens konvertere JavaScript-objekter\u2026"
 lastmod: '2024-03-13T22:44:40.551966-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, et data serialiseringsspr\xE5k designet for \xE5 v\xE6re brukervennlig,\
-  \ brukes ofte til konfigurasjonsfiler, mellomprosessmeldinger og datalagring."
+summary: "\xC5 arbeide med YAML i TypeScript inneb\xE6rer vanligvis \xE5 parse YAML-innhold\
+  \ til JavaScript-objekter og muligens konvertere JavaScript-objekter tilbake til\
+  \ YAML."
 title: Arbeider med YAML
 weight: 41
 ---

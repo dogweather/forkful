@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:54.500519-07:00
-description: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgula) envolve\
-  \ analisar, manipular e gerar dados em um formato tabular que \xE9 amplamente utilizado\
-  \ para\u2026"
+description: "Como fazer: O Fish Shell, por si s\xF3, n\xE3o possui fun\xE7\xF5es\
+  \ embutidas especificamente projetadas para a manipula\xE7\xE3o de CSV. No entanto,\
+  \ voc\xEA pode aproveitar\u2026"
 lastmod: '2024-03-13T22:44:47.028048-06:00'
 model: gpt-4-0125-preview
-summary: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgula) envolve analisar,\
-  \ manipular e gerar dados em um formato tabular que \xE9 amplamente utilizado para\
-  \ a troca de dados entre aplica\xE7\xF5es."
+summary: "O Fish Shell, por si s\xF3, n\xE3o possui fun\xE7\xF5es embutidas especificamente\
+  \ projetadas para a manipula\xE7\xE3o de CSV."
 title: Trabalhando com CSV
 weight: 37
 ---

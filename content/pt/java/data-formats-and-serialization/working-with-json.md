@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:16.540777-07:00
-description: "Trabalhar com JSON (Nota\xE7\xE3o de Objeto JavaScript) significa manipular\
-  \ esse formato leve de interc\xE2mbio de dados dentro de suas aplica\xE7\xF5es Java.\u2026"
+description: "Como fazer: Vamos arrega\xE7ar as mangas e come\xE7ar a codificar com\
+  \ JSON em Java. Primeira coisa, voc\xEA precisar\xE1 de uma biblioteca de processamento\
+  \ JSON como\u2026"
 lastmod: '2024-03-13T22:44:46.478032-06:00'
 model: gpt-4-0125-preview
-summary: "Trabalhar com JSON (Nota\xE7\xE3o de Objeto JavaScript) significa manipular\
-  \ esse formato leve de interc\xE2mbio de dados dentro de suas aplica\xE7\xF5es Java."
+summary: "Vamos arrega\xE7ar as mangas e come\xE7ar a codificar com JSON em Java."
 title: Trabalhando com JSON
 weight: 38
 ---

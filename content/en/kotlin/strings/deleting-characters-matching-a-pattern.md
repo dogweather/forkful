@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:42:39.996968-07:00
-description: "Deleting characters that match a pattern is about finding and removing\
-  \ specific sequences of characters in a string based on rules (the pattern).\u2026"
+description: 'How to: Here''s how you can delete characters matching a pattern in
+  Kotlin, using a simple regex pattern.'
 lastmod: '2024-03-13T22:45:00.034427-06:00'
 model: gpt-4-1106-preview
-summary: Deleting characters that match a pattern is about finding and removing specific
-  sequences of characters in a string based on rules (the pattern).
+summary: Here's how you can delete characters matching a pattern in Kotlin, using
+  a simple regex pattern.
 title: Deleting characters matching a pattern
 weight: 5
 ---

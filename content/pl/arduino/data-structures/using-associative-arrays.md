@@ -2,13 +2,13 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:05.922025-07:00
-description: "W \u015Bwiecie Arduino, tablice asocjacyjne pozwalaj\u0105 na parowanie\
-  \ kluczy z warto\u015Bciami, mniej wi\u0119cej jak dobieranie skarpetek w pary.\
-  \ S\u0105 wyborem numer jeden,\u2026"
+description: "Jak to zrobi\u0107: Arduino, m\xF3wi\u0105c \u015Bci\u015Ble, nie posiada\
+  \ wbudowanego wsparcia dla tablic asocjacyjnych, jakie znajdziesz w j\u0119zykach\
+  \ wy\u017Cszego poziomu. Ale, nie\u2026"
 lastmod: '2024-03-13T22:44:35.665345-06:00'
 model: gpt-4-0125-preview
-summary: "W \u015Bwiecie Arduino, tablice asocjacyjne pozwalaj\u0105 na parowanie\
-  \ kluczy z warto\u015Bciami, mniej wi\u0119cej jak dobieranie skarpetek w pary."
+summary: "Arduino, m\xF3wi\u0105c \u015Bci\u015Ble, nie posiada wbudowanego wsparcia\
+  \ dla tablic asocjacyjnych, jakie znajdziesz w j\u0119zykach wy\u017Cszego poziomu."
 title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---

@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:33.361324-07:00
-description: "YAML, que significa \"YAML Ain't Markup Language\" (YAML no es un lenguaje\
-  \ de marcado), es un formato de serializaci\xF3n de datos legible por humanos. Los\u2026"
+description: "C\xF3mo hacerlo: Leer y escribir YAML en Python generalmente implica\
+  \ el uso de una biblioteca de terceros, siendo `PyYAML` la m\xE1s popular. Para\
+  \ comenzar,\u2026"
 lastmod: '2024-03-13T22:44:58.634573-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, que significa \"YAML Ain't Markup Language\" (YAML no es un lenguaje\
-  \ de marcado), es un formato de serializaci\xF3n de datos legible por humanos."
+summary: "Leer y escribir YAML en Python generalmente implica el uso de una biblioteca\
+  \ de terceros, siendo `PyYAML` la m\xE1s popular."
 title: Trabajando con YAML
 weight: 41
 ---

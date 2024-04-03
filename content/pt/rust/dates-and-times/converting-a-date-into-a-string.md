@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:37:30.711334-07:00
-description: "Converter uma data em uma string em Rust \xE9 transformar um valor de\
-  \ data/hora em um formato de texto leg\xEDvel. Fazemos isso principalmente para\
-  \ mostrar\u2026"
+description: "How to: Vamos usar a biblioteca `chrono` porque a Rust Standard Library\
+  \ n\xE3o trata diretamente de convers\xE3o de datas. Adicione no seu `Cargo.toml`."
 lastmod: '2024-03-13T22:44:46.379248-06:00'
 model: gpt-4-1106-preview
-summary: "Converter uma data em uma string em Rust \xE9 transformar um valor de data/hora\
-  \ em um formato de texto leg\xEDvel."
+summary: "Vamos usar a biblioteca `chrono` porque a Rust Standard Library n\xE3o trata\
+  \ diretamente de convers\xE3o de datas."
 title: Convertendo uma data em uma string
 weight: 28
 ---

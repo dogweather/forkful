@@ -1,10 +1,13 @@
 ---
 date: 2024-01-19
-description: "Escrever um arquivo de texto permite salvar dados de forma persistente.\
-  \ Programadores fazem isso para manter registros, configura\xE7\xF5es ou compartilhar\u2026"
+description: "How to: Elm \xE9 uma linguagem para criar aplicativos web e, por si\
+  \ s\xF3, n\xE3o tem capacidade para escrever arquivos diretamente devido a restri\xE7\
+  \xF5es do\u2026"
 lastmod: '2024-03-13T22:44:46.517906-06:00'
 model: unknown
-summary: Escrever um arquivo de texto permite salvar dados de forma persistente.
+summary: "Elm \xE9 uma linguagem para criar aplicativos web e, por si s\xF3, n\xE3\
+  o tem capacidade para escrever arquivos diretamente devido a restri\xE7\xF5es do\
+  \ navegador."
 title: Escrevendo um arquivo de texto
 weight: 24
 ---

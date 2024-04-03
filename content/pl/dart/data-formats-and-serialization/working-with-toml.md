@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:32.925437-07:00
-description: "TOML, czyli Tom's Obvious, Minimal Language (J\u0119zyk Oczywisty i\
-  \ Minimalny Toma), to format pliku konfiguracyjnego, kt\xF3ry jest \u0142atwy do\
-  \ odczytu dzi\u0119ki\u2026"
+description: "Jak to zrobi\u0107: Dart nie zawiera wbudowanego wsparcia dla TOML,\
+  \ ale mo\u017Cesz pracowa\u0107 z plikami TOML, u\u017Cywaj\u0105c pakiet\xF3w stron\
+  \ trzecich, takich jak `toml`.\u2026"
 lastmod: '2024-03-13T22:44:35.118672-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, czyli Tom's Obvious, Minimal Language (J\u0119zyk Oczywisty i Minimalny\
-  \ Toma), to format pliku konfiguracyjnego, kt\xF3ry jest \u0142atwy do odczytu dzi\u0119\
-  ki jasnej semantyce."
+summary: "Dart nie zawiera wbudowanego wsparcia dla TOML, ale mo\u017Cesz pracowa\u0107\
+  \ z plikami TOML, u\u017Cywaj\u0105c pakiet\xF3w stron trzecich, takich jak `toml`."
 title: Praca z TOML
 weight: 39
 ---

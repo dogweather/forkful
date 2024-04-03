@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:13.857282-07:00
-description: "La interpolaci\xF3n de cadenas en Google Apps Script permite la incrustaci\xF3\
-  n din\xE1mica de expresiones dentro de las cadenas, facilitando la creaci\xF3n de\
-  \ c\xF3digo\u2026"
+description: "C\xF3mo hacerlo: En Google Apps Script, la interpolaci\xF3n de cadenas\
+  \ se logra a trav\xE9s de literales de plantilla. Estos son literales de cadena\
+  \ que permiten\u2026"
 lastmod: '2024-03-13T22:44:58.506242-06:00'
 model: gpt-4-0125-preview
-summary: "La interpolaci\xF3n de cadenas en Google Apps Script permite la incrustaci\xF3\
-  n din\xE1mica de expresiones dentro de las cadenas, facilitando la creaci\xF3n de\
-  \ c\xF3digo m\xE1s legible y mantenible."
+summary: "En Google Apps Script, la interpolaci\xF3n de cadenas se logra a trav\xE9\
+  s de literales de plantilla."
 title: Interpolando una cadena de texto
 weight: 8
 ---

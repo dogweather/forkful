@@ -1,13 +1,9 @@
 ---
 date: 2024-01-19
-description: "W PowerShellu zapis do strumienia b\u0142\u0119d\xF3w (standard error)\
-  \ pozwala odseparowa\u0107 normalne wyniki dzia\u0142ania skryptu od komunikat\xF3\
-  w o b\u0142\u0119dach. Programi\u015Bci\u2026"
+description: "Jak to zrobi\u0107? ."
 lastmod: '2024-03-13T22:44:35.646320-06:00'
 model: unknown
-summary: "W PowerShellu zapis do strumienia b\u0142\u0119d\xF3w (standard error) pozwala\
-  \ odseparowa\u0107 normalne wyniki dzia\u0142ania skryptu od komunikat\xF3w o b\u0142\
-  \u0119dach."
+summary: .
 title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---

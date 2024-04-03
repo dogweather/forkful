@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:45.795609-07:00
-description: "Att g\xF6ra f\xF6rsta bokstaven i varje ord i en str\xE4ng till versal\
-  \ inneb\xE4r att man modifierar f\xF6rsta bokstaven till att vara stor bokstav medan\
-  \ resten g\xF6r man\u2026"
+description: "Hur: Javas standardbibliotek erbjuder inte en direkt metod f\xF6r att\
+  \ g\xF6ra hela str\xE4ngar versaler p\xE5 en g\xE5ng, men detta kan \xE5stadkommas\
+  \ med en kombination av\u2026"
 lastmod: '2024-03-13T22:44:37.770988-06:00'
 model: gpt-4-0125-preview
-summary: "Att g\xF6ra f\xF6rsta bokstaven i varje ord i en str\xE4ng till versal inneb\xE4\
-  r att man modifierar f\xF6rsta bokstaven till att vara stor bokstav medan resten\
-  \ g\xF6r man till gemener."
+summary: "Javas standardbibliotek erbjuder inte en direkt metod f\xF6r att g\xF6ra\
+  \ hela str\xE4ngar versaler p\xE5 en g\xE5ng, men detta kan \xE5stadkommas med en\
+  \ kombination av inbyggda metoder."
 title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---

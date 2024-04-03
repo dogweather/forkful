@@ -2,14 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:11.142020-07:00
-description: "N\u1ED9i suy chu\u1ED7i c\xF3 ngh\u0129a l\xE0 k\u1EBFt h\u1EE3p c\xE1\
-  c bi\u1EBFn ho\u1EB7c bi\u1EC3u th\u1EE9c v\xE0o trong m\u1ED9t chu\u1ED7i. \u0110\
-  i\u1EC1u n\xE0y gi\xFAp ti\u1EBFt ki\u1EC7m th\u1EDDi gian v\xE0 n\xE2ng cao t\xED\
-  nh d\u1EC5 \u0111\u1ECDc b\u1EB1ng c\xE1ch cho\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Fish, b\u1EA1n s\u1EED d\u1EE5ng d\u1EA5\
+  u ngo\u1EB7c k\xE9p v\xE0 \u0111\u1EB7t bi\u1EBFn ho\u1EB7c l\u1EC7nh m\xE0 b\u1EA1\
+  n mu\u1ED1n n\u1ED9i suy v\u1EDBi d\u1EA5u \u0111\xF4 la `$` ngay trong chu\u1ED7\
+  i."
 lastmod: '2024-03-13T22:44:37.189676-06:00'
 model: gpt-4-0125-preview
-summary: "N\u1ED9i suy chu\u1ED7i c\xF3 ngh\u0129a l\xE0 k\u1EBFt h\u1EE3p c\xE1c\
-  \ bi\u1EBFn ho\u1EB7c bi\u1EC3u th\u1EE9c v\xE0o trong m\u1ED9t chu\u1ED7i."
+summary: "Trong Fish, b\u1EA1n s\u1EED d\u1EE5ng d\u1EA5u ngo\u1EB7c k\xE9p v\xE0\
+  \ \u0111\u1EB7t bi\u1EBFn ho\u1EB7c l\u1EC7nh m\xE0 b\u1EA1n mu\u1ED1n n\u1ED9i\
+  \ suy v\u1EDBi d\u1EA5u \u0111\xF4 la `$` ngay trong chu\u1ED7i."
 title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
 weight: 8
 ---

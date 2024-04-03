@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 00:56:59.700648-07:00
-description: "El manejo de errores es lidiar con las cosas cuando se tuercen. Los\
-  \ programadores lo hacen para manejar lo inesperado, asegurando que sus programas\
-  \ en\u2026"
+description: "C\xF3mo hacerlo: Rust maneja los errores de dos maneras principales:\
+  \ errores recuperables e irrecuperables. Vamos a ver ambos. Los errores recuperables\u2026"
 lastmod: '2024-03-13T22:44:58.854035-06:00'
 model: gpt-4-1106-preview
-summary: El manejo de errores es lidiar con las cosas cuando se tuercen.
+summary: Rust maneja los errores de dos maneras principales.
 title: Manejo de errores
 weight: 16
 ---

@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:35.000398-07:00
-description: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in C existiert, beinhaltet\
-  \ die Abfrage des Dateisystems, um zu verifizieren, ob ein spezifischer Pfad zu\
-  \ einem\u2026"
+description: "Wie: In C kann die Existenz eines Verzeichnisses mit der `stat` Funktion\
+  \ \xFCberpr\xFCft werden, welche Informationen \xFCber die Datei oder das Verzeichnis\
+  \ an\u2026"
 lastmod: '2024-03-13T22:44:54.368438-06:00'
 model: gpt-4-0125-preview
-summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in C existiert, beinhaltet die\
-  \ Abfrage des Dateisystems, um zu verifizieren, ob ein spezifischer Pfad zu einem\
-  \ Verzeichnis f\xFChrt."
+summary: "In C kann die Existenz eines Verzeichnisses mit der `stat` Funktion \xFC\
+  berpr\xFCft werden, welche Informationen \xFCber die Datei oder das Verzeichnis\
+  \ an einem bestimmten Pfad abruft."
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---

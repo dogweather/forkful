@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:06.302738-07:00
-description: "\xC5 laste ned en nettside handler om \xE5 hente HTML-innholdet p\xE5\
-  \ en nettside via HTTP/HTTPS-protokollen. Programmerere gj\xF8r ofte dette for web\
-  \ scraping,\u2026"
+description: "Hvordan: I Go gir standardbiblioteket kraftige verkt\xF8y for webforesp\xF8\
+  rsler, spesielt `net/http`-pakken. For \xE5 laste ned en nettside, bruker vi prim\xE6\
+  rt\u2026"
 lastmod: '2024-03-13T22:44:40.265345-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 laste ned en nettside handler om \xE5 hente HTML-innholdet p\xE5 en\
-  \ nettside via HTTP/HTTPS-protokollen."
+summary: "I Go gir standardbiblioteket kraftige verkt\xF8y for webforesp\xF8rsler,\
+  \ spesielt `net/http`-pakken."
 title: Laste ned en nettside
 weight: 42
 ---

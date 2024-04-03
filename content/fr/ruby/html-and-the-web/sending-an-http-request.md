@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 18:00:38.666488-07:00
-description: "Envoyer une requ\xEAte HTTP, c'est demander des donn\xE9es \xE0 un serveur\
-  \ web. Les d\xE9veloppeurs s'en servent pour interagir avec des services web, r\xE9\
-  cup\xE9rer des\u2026"
+description: "How to: (Comment faire :) Ruby facilite l'envoi de requ\xEAtes HTTP\
+  \ avec des biblioth\xE8ques comme Net::HTTP, qui vient int\xE9gr\xE9e, ou des gemmes\
+  \ externes comme\u2026"
 lastmod: '2024-03-13T22:44:58.416563-06:00'
 model: gpt-4-1106-preview
-summary: "Envoyer une requ\xEAte HTTP, c'est demander des donn\xE9es \xE0 un serveur\
-  \ web."
+summary: "Ruby facilite l'envoi de requ\xEAtes HTTP avec des biblioth\xE8ques comme\
+  \ Net::HTTP, qui vient int\xE9gr\xE9e, ou des gemmes externes comme `httparty`."
 title: "Envoi d'une requ\xEAte HTTP"
 weight: 44
 ---

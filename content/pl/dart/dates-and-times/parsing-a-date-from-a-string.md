@@ -2,13 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:21.066965-07:00
-description: "Parsowanie daty z ci\u0105gu znak\xF3w w Dart polega na konwertowaniu\
-  \ tekstowego przedstawienia dat i czas\xF3w na obiekt `DateTime`. Operacja ta jest\
-  \ niezb\u0119dna dla\u2026"
+description: "Jak to zrobi\u0107: Podstawowa biblioteka Dart u\u0142atwia parsowanie\
+  \ dat za pomoc\u0105 klasy `DateTime`. W prostych przypadkach, gdy znasz format\
+  \ ci\u0105gu daty, mo\u017Cesz\u2026"
 lastmod: '2024-03-13T22:44:35.101924-06:00'
 model: gpt-4-0125-preview
-summary: "Parsowanie daty z ci\u0105gu znak\xF3w w Dart polega na konwertowaniu tekstowego\
-  \ przedstawienia dat i czas\xF3w na obiekt `DateTime`."
+summary: "Podstawowa biblioteka Dart u\u0142atwia parsowanie dat za pomoc\u0105 klasy\
+  \ `DateTime`."
 title: "Analiza sk\u0142adniowa daty z ci\u0105gu znak\xF3w"
 weight: 30
 ---

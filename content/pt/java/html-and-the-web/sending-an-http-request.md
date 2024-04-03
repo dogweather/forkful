@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:59:58.337241-07:00
-description: "Enviar uma requisi\xE7\xE3o HTTP \xE9 o processo de solicitar dados\
-  \ ou a\xE7\xE3o de outro servidor atrav\xE9s da internet. Programadores fazem isso\
-  \ para interagir com\u2026"
+description: "How to: O Java oferece v\xE1rias maneiras de enviar requisi\xE7\xF5\
+  es HTTP. Desde o Java 11, a classe `HttpClient` tornou o processo mais simples e\
+  \ direto. Aqui\u2026"
 lastmod: '2024-03-13T22:44:46.452961-06:00'
 model: gpt-4-1106-preview
-summary: "Enviar uma requisi\xE7\xE3o HTTP \xE9 o processo de solicitar dados ou a\xE7\
-  \xE3o de outro servidor atrav\xE9s da internet."
+summary: "O Java oferece v\xE1rias maneiras de enviar requisi\xE7\xF5es HTTP."
 title: "Enviando uma requisi\xE7\xE3o HTTP"
 weight: 44
 ---

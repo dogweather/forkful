@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:53:10.068881-07:00
-description: "Printing debug output in Ruby is like leaving breadcrumb trails in your\
-  \ code to track variable values and program flow. Programmers do it to catch bugs\
-  \ by\u2026"
+description: 'How to: In Ruby, `puts` and `p` are your go-to methods for quick output
+  to the console.'
 lastmod: '2024-03-13T22:45:00.553308-06:00'
 model: gpt-4-1106-preview
-summary: Printing debug output in Ruby is like leaving breadcrumb trails in your code
-  to track variable values and program flow.
+summary: In Ruby, `puts` and `p` are your go-to methods for quick output to the console.
 title: Printing debug output
 weight: 33
 ---

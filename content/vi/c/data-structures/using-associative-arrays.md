@@ -2,18 +2,16 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:06.177835-07:00
-description: "M\u1EA3ng li\xEAn k\u1EBFt, \u0111\u01B0\u1EE3c bi\u1EBFt \u0111\u1EBF\
-  n trong c\xE1c ng\xF4n ng\u1EEF kh\xE1c nh\u01B0 b\u1EA3n \u0111\u1ED3 ho\u1EB7\
-  c t\u1EEB \u0111i\u1EC3n, l\xE0 c\xE1c c\u1EB7p kh\xF3a-gi\xE1 tr\u1ECB \u0111\u01B0\
-  \u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 tra c\u1EE9u v\xE0 thao t\xE1c d\u1EEF li\u1EC7\
-  u m\u1ED9t c\xE1ch\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: C kh\xF4ng c\xF3 h\u1ED7 tr\u1EE3 t\xEDch h\u1EE3\
+  p s\u1EB5n cho m\u1EA3ng li\xEAn k\u1EBFt nh\u01B0 m\u1ED9t s\u1ED1 ng\xF4n ng\u1EEF\
+  \ c\u1EA5p cao, nh\u01B0ng b\u1EA1n c\xF3 th\u1EC3 m\xF4 ph\u1ECFng ch\xFAng s\u1EED\
+  \ d\u1EE5ng c\u1EA5u tr\xFAc v\xE0 b\u0103m. D\u01B0\u1EDBi\u2026"
 lastmod: '2024-03-13T22:44:37.258031-06:00'
 model: gpt-4-0125-preview
-summary: "M\u1EA3ng li\xEAn k\u1EBFt, \u0111\u01B0\u1EE3c bi\u1EBFt \u0111\u1EBFn\
-  \ trong c\xE1c ng\xF4n ng\u1EEF kh\xE1c nh\u01B0 b\u1EA3n \u0111\u1ED3 ho\u1EB7\
-  c t\u1EEB \u0111i\u1EC3n, l\xE0 c\xE1c c\u1EB7p kh\xF3a-gi\xE1 tr\u1ECB \u0111\u01B0\
-  \u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 tra c\u1EE9u v\xE0 thao t\xE1c d\u1EEF li\u1EC7\
-  u m\u1ED9t c\xE1ch hi\u1EC7u qu\u1EA3."
+summary: "C kh\xF4ng c\xF3 h\u1ED7 tr\u1EE3 t\xEDch h\u1EE3p s\u1EB5n cho m\u1EA3\
+  ng li\xEAn k\u1EBFt nh\u01B0 m\u1ED9t s\u1ED1 ng\xF4n ng\u1EEF c\u1EA5p cao, nh\u01B0\
+  ng b\u1EA1n c\xF3 th\u1EC3 m\xF4 ph\u1ECFng ch\xFAng s\u1EED d\u1EE5ng c\u1EA5u\
+  \ tr\xFAc v\xE0 b\u0103m."
 title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 weight: 15
 ---

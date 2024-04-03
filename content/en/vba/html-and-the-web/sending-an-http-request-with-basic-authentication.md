@@ -1,12 +1,11 @@
 ---
 date: 2024-02-01 21:31:06.379954-07:00
-description: "Sending an HTTP request with basic authentication in Visual Basic for\
-  \ Applications (VBA) is about accessing web resources that are protected by username\u2026"
+description: "How to: In VBA, you can use the `Microsoft XML, v6.0` (MSXML2) library\
+  \ to send HTTP requests with basic authentication. This involves setting the\u2026"
 lastmod: '2024-03-13T22:44:59.934099-06:00'
 model: gpt-4-0125-preview
-summary: Sending an HTTP request with basic authentication in Visual Basic for Applications
-  (VBA) is about accessing web resources that are protected by username and password
-  credentials.
+summary: In VBA, you can use the `Microsoft XML, v6.0` (MSXML2) library to send HTTP
+  requests with basic authentication.
 title: Sending an HTTP request with basic authentication
 weight: 45
 ---

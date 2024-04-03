@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:32.557068-07:00
-description: "Schrijven naar standaardfout (stderr) laat je programma praten over\
-  \ fouten zonder de standaarduitvoer (stdout) te verstoppen. Het is een duidelijk\
-  \ signaal\u2026"
+description: 'Hoe te: Lua communiceert met stderr via `io.stderr`. Zo print je een
+  eenvoudige foutmelding.'
 lastmod: '2024-03-13T22:44:50.953664-06:00'
 model: gpt-4-0125-preview
-summary: Schrijven naar standaardfout (stderr) laat je programma praten over fouten
-  zonder de standaarduitvoer (stdout) te verstoppen.
+summary: Lua communiceert met stderr via `io.stderr`.
 title: Schrijven naar standaardfout
 weight: 25
 ---

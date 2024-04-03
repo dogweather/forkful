@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:58:39.769067-07:00
-description: "Att s\xF6ka och ers\xE4tta text \xE4r en grundsten i programmering;\
-  \ det handlar om att finna specifika str\xE4ngar och byta ut dem mot andra. Anledningen?\u2026"
+description: "Hur man g\xF6r: L\xE5t oss dyka rakt in i n\xE5gra PowerShell-kommandon."
 lastmod: '2024-03-13T22:44:38.109427-06:00'
 model: gpt-4-1106-preview
-summary: "Att s\xF6ka och ers\xE4tta text \xE4r en grundsten i programmering; det\
-  \ handlar om att finna specifika str\xE4ngar och byta ut dem mot andra."
+summary: "L\xE5t oss dyka rakt in i n\xE5gra PowerShell-kommandon."
 title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---

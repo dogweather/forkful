@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:58:59.742030-07:00
-description: "Textsuche und -ersatz erm\xF6glicht uns, Muster oder spezifische Zeichenketten\
-  \ in einem Text zu finden und durch andere zu ersetzen. Programmierer nutzen\u2026"
+description: 'So geht''s: Hier ist ein einfaches Beispiel, wie du in TypeScript Text
+  suchen und ersetzen kannst.'
 lastmod: '2024-03-13T22:44:53.617127-06:00'
 model: gpt-4-1106-preview
-summary: "Textsuche und -ersatz erm\xF6glicht uns, Muster oder spezifische Zeichenketten\
-  \ in einem Text zu finden und durch andere zu ersetzen."
+summary: Hier ist ein einfaches Beispiel, wie du in TypeScript Text suchen und ersetzen
+  kannst.
 title: Suchen und Ersetzen von Text
 weight: 10
 ---

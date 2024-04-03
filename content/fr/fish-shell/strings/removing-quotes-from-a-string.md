@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:38:43.233353-07:00
-description: "Retirer les guillemets d'une cha\xEEne de caract\xE8res consiste \xE0\
-  \ enlever ces fameux guillemets simples (' ') ou doubles (\" \") de vos donn\xE9\
-  es textuelles. Les\u2026"
+description: "Comment faire : Fish poss\xE8de une magie int\xE9gr\xE9e pour ce type\
+  \ de t\xE2che. Utilisez la fonction `string` sans vous casser la t\xEAte. Voici\
+  \ quelques sortil\xE8ges ."
 lastmod: '2024-03-13T22:44:58.309508-06:00'
 model: gpt-4-0125-preview
-summary: "Retirer les guillemets d'une cha\xEEne de caract\xE8res consiste \xE0 enlever\
-  \ ces fameux guillemets simples (' ') ou doubles (\" \") de vos donn\xE9es textuelles."
+summary: "Fish poss\xE8de une magie int\xE9gr\xE9e pour ce type de t\xE2che."
 title: "Retirer les guillemets d'une cha\xEEne"
 weight: 9
 ---

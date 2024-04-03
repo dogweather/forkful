@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 17:50:04.231953-07:00
-description: "Reading a text file in C involves opening a file on your system to extract\
-  \ information and manipulate or display it as needed. Programmers often do this\u2026"
+description: "How to: To start reading a text file in C, you primarily work with the\
+  \ `fopen()`, `fgets()`, and `fclose()` functions from the standard I/O library.\u2026"
 lastmod: '2024-03-13T22:45:00.526661-06:00'
 model: gpt-4-0125-preview
-summary: Reading a text file in C involves opening a file on your system to extract
-  information and manipulate or display it as needed.
+summary: To start reading a text file in C, you primarily work with the `fopen()`,
+  `fgets()`, and `fclose()` functions from the standard I/O library.
 title: Reading a text file
 weight: 22
 ---

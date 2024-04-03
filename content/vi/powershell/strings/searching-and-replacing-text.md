@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:45.936174-07:00
-description: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n trong c\xE1c\
-  \ t\u1EC7p: n\xF3 l\xE0 ho\xE1n \u0111\u1ED5i t\u1EEB ho\u1EB7c c\u1EE5m t\u1EEB\
-  \ n\xE0y b\u1EB1ng t\u1EEB ho\u1EB7c c\u1EE5m t\u1EEB kh\xE1c. L\u1EADp tr\xECnh\
-  \ vi\xEAn s\u1EED d\u1EE5ng n\xF3 \u0111\u1EC3 c\u1EADp nh\u1EADt m\xE3, s\u1EED\
-  a l\u1ED7i,\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: PowerShell l\xE0m cho vi\u1EC7c t\xECm ki\u1EBF\
+  m v\xE0 thay th\u1EBF tr\u1EDF n\xEAn kh\xE1 \u0111\u01A1n gi\u1EA3n. H\xE3y xem\
+  \ `-replace` cho chu\u1ED7i, v\xE0 `Get-Content` c\xF9ng v\u1EDBi `Set-Content`\
+  \ cho\u2026"
 lastmod: '2024-03-13T22:44:36.913440-06:00'
 model: gpt-4-0125-preview
-summary: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n trong c\xE1c t\u1EC7\
-  p: n\xF3 l\xE0 ho\xE1n \u0111\u1ED5i t\u1EEB ho\u1EB7c c\u1EE5m t\u1EEB n\xE0y b\u1EB1\
-  ng t\u1EEB ho\u1EB7c c\u1EE5m t\u1EEB kh\xE1c."
+summary: "PowerShell l\xE0m cho vi\u1EC7c t\xECm ki\u1EBFm v\xE0 thay th\u1EBF tr\u1EDF\
+  \ n\xEAn kh\xE1 \u0111\u01A1n gi\u1EA3n."
 title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
 weight: 10
 ---

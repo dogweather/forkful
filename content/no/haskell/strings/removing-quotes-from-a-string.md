@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 03:39:51.475870-07:00
-description: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr \xE5 stripe ut eventuelle\
-  \ sitattegn\u2014enten enkle (' ') eller doble (\" \")\u2014som er en del av strengdataene.\u2026"
+description: "Hvordan: I Haskell kan vi lage en funksjon som fjerner alle anf\xF8\
+  rselstegn fra en gitt streng. Det er som \xE5 fortelle anf\xF8rselstegnene \xE5\
+  \ stikke av, og s\xF8rge\u2026"
 lastmod: '2024-03-13T22:44:40.828925-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr \xE5 stripe ut eventuelle\
-  \ sitattegn\u2014enten enkle (' ') eller doble (\" \")\u2014som er en del av strengdataene."
+summary: "I Haskell kan vi lage en funksjon som fjerner alle anf\xF8rselstegn fra\
+  \ en gitt streng."
 title: "Fjerne anf\xF8rselstegn fra en streng"
 weight: 9
 ---

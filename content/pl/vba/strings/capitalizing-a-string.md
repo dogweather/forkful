@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:44.044363-07:00
-description: "Zamiana pierwszej litery ka\u017Cdego wyrazu w ci\u0105gu znak\xF3w\
-  \ na wielk\u0105 (capitalization) w Visual Basic for Applications (VBA) polega na\
-  \ przekszta\u0142ceniu\u2026"
+description: "Jak to zrobi\u0107: VBA nie posiada wbudowanej funkcji specjalnie do\
+  \ zamiany liter na wielkie w ka\u017Cdym s\u0142owie ci\u0105gu znak\xF3w, w przeciwie\u0144\
+  stwie do niekt\xF3rych\u2026"
 lastmod: '2024-03-13T22:44:35.211882-06:00'
 model: gpt-4-0125-preview
-summary: "Zamiana pierwszej litery ka\u017Cdego wyrazu w ci\u0105gu znak\xF3w na wielk\u0105\
-  \ (capitalization) w Visual Basic for Applications (VBA) polega na przekszta\u0142\
-  ceniu pierwszego znaku ka\u017Cdego s\u0142owa w danej frazie na wielk\u0105 liter\u0119\
-  , przy czym reszta liter jest zamieniana na ma\u0142e."
+summary: "VBA nie posiada wbudowanej funkcji specjalnie do zamiany liter na wielkie\
+  \ w ka\u017Cdym s\u0142owie ci\u0105gu znak\xF3w, w przeciwie\u0144stwie do niekt\xF3\
+  rych innych j\u0119zyk\xF3w programowania."
 title: "Zamiana liter w ci\u0105gu na wielkie"
 weight: 2
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 03:41:36.744547-07:00
-description: "Rimuovere le virgolette da una stringa significa togliere quei segni\
-  \ di virgolette doppie o singole che circondano i valori di testo. Gli sviluppatori\u2026"
+description: "Come fare: Ruby ha alcuni trucchi interessanti per tagliare via quelle\
+  \ fastidiose virgolette. Puoi usare i metodi `gsub` o `delete` per svolgere il\u2026"
 lastmod: '2024-03-13T22:44:44.037750-06:00'
 model: gpt-4-0125-preview
-summary: Rimuovere le virgolette da una stringa significa togliere quei segni di virgolette
-  doppie o singole che circondano i valori di testo.
+summary: Ruby ha alcuni trucchi interessanti per tagliare via quelle fastidiose virgolette.
 title: Rimuovere le virgolette da una stringa
 weight: 9
 ---

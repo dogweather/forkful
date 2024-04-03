@@ -1,12 +1,9 @@
 ---
 date: 2024-02-03 19:03:12.778784-07:00
-description: "Writing a text file in Clojure involves creating or modifying files\
-  \ to save data outside your application, enabling persistence, configuration, logging,\u2026"
+description: 'How to: #.'
 lastmod: '2024-03-13T22:44:59.761934-06:00'
 model: gpt-4-0125-preview
-summary: Writing a text file in Clojure involves creating or modifying files to save
-  data outside your application, enabling persistence, configuration, logging, or
-  inter-process communication.
+summary: '#.'
 title: Writing a text file
 weight: 24
 ---

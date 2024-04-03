@@ -2,12 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:08.923417-07:00
-description: "\xC5 jobbe med XML i Go inneb\xE6rer parsing (lesing) og generering\
-  \ (skriving) av XML-dokumenter \u2013 et standardformat for strukturert datautveksling.\u2026"
+description: 'Hvordan: #.'
 lastmod: '2024-03-13T22:44:40.294554-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 jobbe med XML i Go inneb\xE6rer parsing (lesing) og generering (skriving)\
-  \ av XML-dokumenter \u2013 et standardformat for strukturert datautveksling."
+summary: '#.'
 title: Arbeider med XML
 weight: 40
 ---

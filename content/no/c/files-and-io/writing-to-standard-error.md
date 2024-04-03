@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:07.493051-07:00
-description: "\xC5 skrive til standardfeil i C inneb\xE6rer \xE5 dirigere feilmeldinger\
-  \ og diagnostisk informasjon til en separat str\xF8m fra hovedprogramutdataen. Programmerere\u2026"
+description: "Hvordan: I C brukes `stderr`-str\xF8mmen til \xE5 skrive feilmeldinger.\
+  \ I motsetning til \xE5 skrive til standard utdata med `printf`, kan skriving til\
+  \ `stderr`\u2026"
 lastmod: '2024-03-13T22:44:41.289695-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive til standardfeil i C inneb\xE6rer \xE5 dirigere feilmeldinger\
-  \ og diagnostisk informasjon til en separat str\xF8m fra hovedprogramutdataen."
+summary: "I C brukes `stderr`-str\xF8mmen til \xE5 skrive feilmeldinger."
 title: Skrive til standard feil
 weight: 25
 ---

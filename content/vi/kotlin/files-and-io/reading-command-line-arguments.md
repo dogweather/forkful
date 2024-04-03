@@ -2,16 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:33.007358-07:00
-description: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh c\xF3 ngh\u0129\
-  a l\xE0 l\u1EA5y d\u1EEF li\u1EC7u \u0111\u01B0\u1EE3c truy\u1EC1n t\u1EDBi ch\u01B0\
-  \u01A1ng tr\xECnh c\u1EE7a b\u1EA1n khi n\xF3 kh\u1EDFi \u0111\u1ED9ng. C\xE1c l\u1EAD\
-  p tr\xECnh vi\xEAn c\u1EA7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 cho ph\xE9p ng\u01B0\
-  \u1EDDi\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: ."
 lastmod: '2024-03-13T22:44:36.621886-06:00'
 model: gpt-4-0125-preview
-summary: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh c\xF3 ngh\u0129\
-  a l\xE0 l\u1EA5y d\u1EEF li\u1EC7u \u0111\u01B0\u1EE3c truy\u1EC1n t\u1EDBi ch\u01B0\
-  \u01A1ng tr\xECnh c\u1EE7a b\u1EA1n khi n\xF3 kh\u1EDFi \u0111\u1ED9ng."
+summary: .
 title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
 weight: 23
 ---

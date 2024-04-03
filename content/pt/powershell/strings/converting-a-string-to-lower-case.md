@@ -1,13 +1,11 @@
 ---
 date: 2024-01-20 17:39:31.716543-07:00
-description: "Converter uma string para min\xFAsculas \xE9 o processo de transformar\
-  \ todos os caracteres alfab\xE9ticos numa string de forma a que todos eles sejam\
-  \ min\xFAsculos.\u2026"
+description: "Como Fazer: Para converter uma string para min\xFAsculas no PowerShell,\
+  \ voc\xEA pode usar o m\xE9todo `.ToLower()`. Veja como \xE9 simples."
 lastmod: '2024-03-13T22:44:46.782581-06:00'
 model: gpt-4-1106-preview
-summary: "Converter uma string para min\xFAsculas \xE9 o processo de transformar todos\
-  \ os caracteres alfab\xE9ticos numa string de forma a que todos eles sejam min\xFA\
-  sculos."
+summary: "Para converter uma string para min\xFAsculas no PowerShell, voc\xEA pode\
+  \ usar o m\xE9todo `.ToLower()`."
 title: "Convertendo uma string para min\xFAsculas"
 weight: 4
 ---

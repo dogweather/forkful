@@ -2,14 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:29.682090-07:00
-description: "Een toekomstige of verleden datum berekenen betekent het vinden van\
-  \ een datum v\xF3\xF3r of na een gegeven aantal dagen, maanden of jaren vanaf een\
-  \ specifiek\u2026"
+description: "Hoe te: Haskell gebruikt bibliotheken zoals `time` om met datums om\
+  \ te gaan. Hier is hoe je dagen of maanden aan een datum toevoegt, of ze aftrekt\
+  \ om een\u2026"
 lastmod: '2024-03-13T22:44:50.865926-06:00'
 model: gpt-4-0125-preview
-summary: "Een toekomstige of verleden datum berekenen betekent het vinden van een\
-  \ datum v\xF3\xF3r of na een gegeven aantal dagen, maanden of jaren vanaf een specifiek\
-  \ startpunt."
+summary: Haskell gebruikt bibliotheken zoals `time` om met datums om te gaan.
 title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---

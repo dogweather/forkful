@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:26.741548-07:00
-description: "Trovare la lunghezza di una stringa in C comporta determinare il numero\
-  \ di caratteri prima del terminatore nullo `\\0`. I programmatori fanno ci\xF2 per\u2026"
+description: "Come fare: In C, la funzione di libreria standard `strlen()` \xE8 comunemente\
+  \ usata per trovare la lunghezza di una stringa. Ecco un esempio veloce."
 lastmod: '2024-03-13T22:44:43.896685-06:00'
 model: gpt-4-0125-preview
-summary: Trovare la lunghezza di una stringa in C comporta determinare il numero di
-  caratteri prima del terminatore nullo `\0`.
+summary: "In C, la funzione di libreria standard `strlen()` \xE8 comunemente usata\
+  \ per trovare la lunghezza di una stringa."
 title: Trovare la lunghezza di una stringa
 weight: 7
 ---

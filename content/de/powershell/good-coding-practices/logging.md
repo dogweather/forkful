@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:07:06.225155-07:00
-description: "Logging ist im Grunde das Hinterlassen einer Spur innerhalb Ihres Codes\
-  \ - es ist die Art und Weise, wie Sie verfolgen, was passiert, wenn Ihr Skript in\u2026"
+description: "Wie man es macht: Hier sind einige grundlegende Informationen dar\xFC\
+  ber, wie Sie einfaches Logging in Ihre Skripte einbauen."
 lastmod: '2024-03-13T22:44:54.110448-06:00'
 model: gpt-4-1106-preview
-summary: "Logging ist im Grunde das Hinterlassen einer Spur innerhalb Ihres Codes\
-  \ - es ist die Art und Weise, wie Sie verfolgen, was passiert, wenn Ihr Skript in\
-  \ der Praxis l\xE4uft."
+summary: "Hier sind einige grundlegende Informationen dar\xFCber, wie Sie einfaches\
+  \ Logging in Ihre Skripte einbauen."
 title: Protokollierung
 weight: 17
 ---

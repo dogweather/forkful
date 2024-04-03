@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 18:04:00.011521-07:00
-description: "D\xE9marrer un nouveau projet, c'est cr\xE9er un espace de travail vide\
-  \ pour vos id\xE9es de code. Les programmeurs font \xE7a pour organiser et isoler\
-  \ le boulot sur\u2026"
+description: 'How to: (Comment faire :) .'
 lastmod: '2024-03-13T22:44:58.048376-06:00'
 model: gpt-4-1106-preview
-summary: "D\xE9marrer un nouveau projet, c'est cr\xE9er un espace de travail vide\
-  \ pour vos id\xE9es de code."
+summary: .
 title: Lancement d'un nouveau projet
 weight: 1
 ---

@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 01:07:14.755801-07:00
-description: "Logging, kort fortalt, er som \xE5 f\xF8re en dagbok for din applikasjon\
-  \ \u2013 det registrerer hendelser, feil og andre vesentlige handlinger som finner\
-  \ sted mens\u2026"
+description: "Hvordan gj\xF8re det: Rett ut av boksen, tilbyr JavaScript en enkel\
+  \ m\xE5te \xE5 logge meldinger til konsollen p\xE5."
 lastmod: '2024-03-13T22:44:41.189914-06:00'
 model: gpt-4-1106-preview
-summary: "Logging, kort fortalt, er som \xE5 f\xF8re en dagbok for din applikasjon\
-  \ \u2013 det registrerer hendelser, feil og andre vesentlige handlinger som finner\
-  \ sted mens programvaren kj\xF8rer."
+summary: "Rett ut av boksen, tilbyr JavaScript en enkel m\xE5te \xE5 logge meldinger\
+  \ til konsollen p\xE5."
 title: "Loggf\xF8ring"
 weight: 17
 ---

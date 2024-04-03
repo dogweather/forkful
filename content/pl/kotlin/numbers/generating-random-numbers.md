@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 20:34:17.772647-07:00
-description: "Generowanie losowych liczb w programowaniu polega na tworzeniu liczb,\
-  \ kt\xF3re nie wykazuj\u0105 \u017Cadnego przewidywalnego wzorca. Programi\u015B\
-  ci robi\u0105 to z r\xF3\u017Cnych\u2026"
+description: "Jak to zrobi\u0107: Kotlin zapewnia prost\u0105 metod\u0119 generowania\
+  \ losowych liczb za pomoc\u0105 swojej biblioteki standardowej. Oto jak mo\u017C\
+  esz generowa\u0107 r\xF3\u017Cne typy\u2026"
 lastmod: '2024-03-13T22:44:35.360791-06:00'
 model: gpt-4-0125-preview
-summary: "Generowanie losowych liczb w programowaniu polega na tworzeniu liczb, kt\xF3\
-  re nie wykazuj\u0105 \u017Cadnego przewidywalnego wzorca."
+summary: "Kotlin zapewnia prost\u0105 metod\u0119 generowania losowych liczb za pomoc\u0105\
+  \ swojej biblioteki standardowej."
 title: Generowanie liczb losowych
 weight: 12
 ---

@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:58:05.626221-07:00
-description: "Att s\xF6ka och ers\xE4tta text \xE4r grundprocessen att hitta specifika\
-  \ str\xE4ngar i data och byta ut dem mot andra str\xE4ngar. Programmerare g\xF6\
-  r det f\xF6r att\u2026"
+description: "Hur man g\xF6r: I Fish Shell \xE4r det smidigt att s\xF6ka och ers\xE4\
+  tta text med hj\xE4lp av inbyggda funktioner som `string`. H\xE4r \xE4r ett par\
+  \ exempel."
 lastmod: '2024-03-13T22:44:38.320740-06:00'
 model: gpt-4-1106-preview
-summary: "Att s\xF6ka och ers\xE4tta text \xE4r grundprocessen att hitta specifika\
-  \ str\xE4ngar i data och byta ut dem mot andra str\xE4ngar."
+summary: "I Fish Shell \xE4r det smidigt att s\xF6ka och ers\xE4tta text med hj\xE4\
+  lp av inbyggda funktioner som `string`."
 title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---

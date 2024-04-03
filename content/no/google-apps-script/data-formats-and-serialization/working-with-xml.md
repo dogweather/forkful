@@ -2,12 +2,11 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:49.162853-07:00
-description: "\xC5 jobbe med XML i Google Apps Script lar programmerere parse, manipulere\
-  \ og generere XML-data, som er essensielt for webtjenester og konfigurasjoner.\u2026"
+description: "Hvordan: Google Apps Script tilbyr `XmlService` for \xE5 jobbe med XML-data.\
+  \ Nedenfor demonstrerer vi hvordan du parser en XML-streng, modifiserer innholdet\u2026"
 lastmod: '2024-03-13T22:44:40.342503-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 jobbe med XML i Google Apps Script lar programmerere parse, manipulere\
-  \ og generere XML-data, som er essensielt for webtjenester og konfigurasjoner."
+summary: "Google Apps Script tilbyr `XmlService` for \xE5 jobbe med XML-data."
 title: Arbeide med XML
 weight: 40
 ---

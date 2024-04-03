@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 17:34:09.900750-07:00
-description: "String concatenation is stitching together two or more strings end-to-end.\
-  \ Programmers do it to build sentences, create messages, or combine input data\u2026"
+description: "How to: In C++, we\u2019ve got a few ways to concatenate strings. Here's\
+  \ a taste using `std::string` and the plus (`+`) operator."
 lastmod: '2024-03-13T22:45:00.350554-06:00'
 model: gpt-4-1106-preview
-summary: String concatenation is stitching together two or more strings end-to-end.
+summary: "In C++, we\u2019ve got a few ways to concatenate strings."
 title: Concatenating strings
 weight: 3
 ---

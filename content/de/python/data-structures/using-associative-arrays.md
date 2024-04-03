@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:39.460256-07:00
-description: "Assoziative Arrays, in Python als Dictionaries bekannt, ordnen Schl\xFC\
-  ssel Werten zu, was das Abrufen, Modifizieren oder Nachverfolgen von Daten anhand\u2026"
+description: "Wie geht das: Ein Dictionary in Python zu erstellen, ist unkompliziert.\
+  \ Man schlie\xDFt Schl\xFCssel-Wert-Paare in geschweifte Klammern `{}`, wobei Schl\xFC\
+  ssel\u2026"
 lastmod: '2024-03-13T22:44:53.371300-06:00'
 model: gpt-4-0125-preview
-summary: "Assoziative Arrays, in Python als Dictionaries bekannt, ordnen Schl\xFC\
-  ssel Werten zu, was das Abrufen, Modifizieren oder Nachverfolgen von Daten anhand\
-  \ einer eindeutigen Kennung erleichtert."
+summary: Ein Dictionary in Python zu erstellen, ist unkompliziert.
 title: Verwendung von assoziativen Arrays
 weight: 15
 ---

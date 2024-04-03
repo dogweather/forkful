@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:13.782899-07:00
-description: "\xC9crire sur l'erreur standard (stderr) en Go implique de diriger les\
-  \ messages d'erreur ou les diagnostics qui ne sont pas destin\xE9s au flux de sortie\u2026"
+description: "Comment faire : En Go, le package `os` fournit la valeur `Stderr`, repr\xE9\
+  sentant le fichier d'erreur standard. Vous pouvez l'utiliser avec les fonctions\u2026"
 lastmod: '2024-03-13T22:44:57.152687-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire sur l'erreur standard (stderr) en Go implique de diriger les messages\
-  \ d'erreur ou les diagnostics qui ne sont pas destin\xE9s au flux de sortie principal."
+summary: "En Go, le package `os` fournit la valeur `Stderr`, repr\xE9sentant le fichier\
+  \ d'erreur standard."
 title: "\xC9criture sur l'erreur standard"
 weight: 25
 ---

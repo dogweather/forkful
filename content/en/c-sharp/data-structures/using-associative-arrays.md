@@ -1,11 +1,11 @@
 ---
 date: 2024-01-30 18:57:11.420009-07:00
-description: "Associative arrays, or dictionaries in C#, let you store and manage\
-  \ pairs of keys and values. They're your go-to when you need to fetch values quickly\u2026"
+description: 'How to: In C#, you work with associative arrays using the `Dictionary<TKey,
+  TValue>` class. Here''s a quick example to get you started.'
 lastmod: '2024-03-13T22:45:00.081621-06:00'
 model: gpt-4-0125-preview
-summary: Associative arrays, or dictionaries in C#, let you store and manage pairs
-  of keys and values.
+summary: In C#, you work with associative arrays using the `Dictionary<TKey, TValue>`
+  class.
 title: Using associative arrays
 weight: 15
 ---

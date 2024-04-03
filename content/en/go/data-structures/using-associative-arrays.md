@@ -1,11 +1,10 @@
 ---
 date: 2024-02-03 17:50:04.917595-07:00
-description: "Associative arrays, known as maps in Go, enable you to store key-value\
-  \ pairs where each unique key maps to a value. Programmers use maps for efficient\u2026"
+description: 'How to: Creating and initializing a map in Go can be done in various
+  ways. Here''s a basic example to get you started.'
 lastmod: '2024-03-13T22:44:59.624677-06:00'
 model: gpt-4-0125-preview
-summary: Associative arrays, known as maps in Go, enable you to store key-value pairs
-  where each unique key maps to a value.
+summary: Creating and initializing a map in Go can be done in various ways.
 title: Using associative arrays
 weight: 15
 ---

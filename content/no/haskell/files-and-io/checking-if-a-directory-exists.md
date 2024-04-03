@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:26.455493-07:00
-description: "\xC5 sjekke om en mappe eksisterer er en grunnleggende operasjon i mange\
-  \ programmeringsoppgaver, som tillater betingede handlinger basert p\xE5 tilstedev\xE6\
-  relsen\u2026"
+description: "Hvordan: Haskell, gjennom sitt basebibliotek, tilbyr enkle m\xE5ter\
+  \ \xE5 sjekke for eksistensen av mapper, hovedsakelig ved \xE5 bruke `System.Directory`-modulen.\u2026"
 lastmod: '2024-03-13T22:44:40.857246-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 sjekke om en mappe eksisterer er en grunnleggende operasjon i mange\
-  \ programmeringsoppgaver, som tillater betingede handlinger basert p\xE5 tilstedev\xE6\
-  relsen eller frav\xE6ret av katalogstrukturer."
+summary: "Haskell, gjennom sitt basebibliotek, tilbyr enkle m\xE5ter \xE5 sjekke for\
+  \ eksistensen av mapper, hovedsakelig ved \xE5 bruke `System.Directory`-modulen."
 title: Sjekker om en mappe eksisterer
 weight: 20
 ---

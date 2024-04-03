@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:38:15.389607-07:00
-description: "Converting a string to lower case means transforming all uppercase letters\
-  \ to their lowercase equivalents. Programmers do this for consistency in user\u2026"
+description: 'How to: Here''s how you smash case differences in C++, capital letters
+  bowing down to the little ones.'
 lastmod: '2024-03-13T22:45:00.346240-06:00'
 model: gpt-4-1106-preview
-summary: Converting a string to lower case means transforming all uppercase letters
-  to their lowercase equivalents.
+summary: Here's how you smash case differences in C++, capital letters bowing down
+  to the little ones.
 title: Converting a string to lower case
 weight: 4
 ---

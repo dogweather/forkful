@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:41.991815-07:00
-description: "Cercare e sostituire testo in Visual Basic for Applications (VBA) \xE8\
-  \ essenziale per la modifica di documenti, fogli di calcolo e database in modo\u2026"
+description: "Come fare: In VBA, cercare e sostituire il testo pu\xF2 essere realizzato\
+  \ utilizzando la funzione `Replace` o tramite modelli di oggetti specifici in\u2026"
 lastmod: '2024-03-13T22:44:43.246190-06:00'
 model: gpt-4-0125-preview
-summary: "Cercare e sostituire testo in Visual Basic for Applications (VBA) \xE8 essenziale\
-  \ per la modifica di documenti, fogli di calcolo e database in modo programmato."
+summary: "In VBA, cercare e sostituire il testo pu\xF2 essere realizzato utilizzando\
+  \ la funzione `Replace` o tramite modelli di oggetti specifici in applicazioni come\
+  \ Excel o Word."
 title: Ricerca e sostituzione del testo
 weight: 10
 ---

@@ -1,12 +1,12 @@
 ---
 date: 2024-01-25 02:04:08.781778-07:00
-description: "Logging is essentially the software equivalent of a ship's log; it's\
-  \ a way to record events that happen while an application is running. Programmers\
-  \ do it\u2026"
+description: "How to: Clojure leans on Java's logging facilities, but you can tap\
+  \ into them in a more idiomatic Clojure way. Let's take a look at how you might\
+  \ use\u2026"
 lastmod: '2024-03-13T22:44:59.751456-06:00'
 model: gpt-4-1106-preview
-summary: Logging is essentially the software equivalent of a ship's log; it's a way
-  to record events that happen while an application is running.
+summary: Clojure leans on Java's logging facilities, but you can tap into them in
+  a more idiomatic Clojure way.
 title: Logging
 weight: 17
 ---

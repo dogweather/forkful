@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:28:32.227483-07:00
-description: "Calcolare una data nel futuro o nel passato significa computare una\
-  \ data specifica aggiungendo o sottraendo giorni, mesi, anni, eccetera. I programmatori\u2026"
+description: "Come fare: Ecco un esempio su come aggiungere giorni a una data o sottrarli\
+  \ usando le funzionalit\xE0 della libreria `<chrono>` di C++20."
 lastmod: '2024-03-13T22:44:43.740792-06:00'
 model: gpt-4-1106-preview
-summary: Calcolare una data nel futuro o nel passato significa computare una data
-  specifica aggiungendo o sottraendo giorni, mesi, anni, eccetera.
+summary: "Ecco un esempio su come aggiungere giorni a una data o sottrarli usando\
+  \ le funzionalit\xE0 della libreria `<chrono>` di C++20."
 title: Calcolo di una data futura o passata
 weight: 26
 ---

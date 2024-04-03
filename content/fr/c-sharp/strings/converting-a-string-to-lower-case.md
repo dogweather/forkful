@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:38:00.054838-07:00
-description: "Transformer une cha\xEEne en minuscules, c'est passer tous ses caract\xE8\
-  res en minuscules. Les d\xE9veloppeurs le font pour standardiser les entr\xE9es\
-  \ et faciliter\u2026"
+description: "How to: (Comment faire :) En C#, convertir une cha\xEEne en minuscules\
+  \ est simple avec la m\xE9thode `ToLower()`."
 lastmod: '2024-03-13T22:44:57.772999-06:00'
 model: gpt-4-1106-preview
-summary: "Transformer une cha\xEEne en minuscules, c'est passer tous ses caract\xE8\
-  res en minuscules."
+summary: "En C#, convertir une cha\xEEne en minuscules est simple avec la m\xE9thode\
+  \ `ToLower()`."
 title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
 weight: 4
 ---

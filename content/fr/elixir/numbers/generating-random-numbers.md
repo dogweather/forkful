@@ -1,14 +1,12 @@
 ---
 date: 2024-01-27 20:33:30.222539-07:00
-description: "La g\xE9n\xE9ration de nombres al\xE9atoires en Elixir est une t\xE2\
-  che de programmation fondamentale, essentielle pour les applications n\xE9cessitant\
-  \ des r\xE9sultats\u2026"
+description: "Comment faire : Pour g\xE9n\xE9rer des nombres al\xE9atoires en Elixir,\
+  \ vous utilisez principalement le module `:rand` qui fournit plusieurs fonctions\
+  \ \xE0 cet effet.\u2026"
 lastmod: '2024-03-13T22:44:57.322600-06:00'
 model: gpt-4-0125-preview
-summary: "La g\xE9n\xE9ration de nombres al\xE9atoires en Elixir est une t\xE2che\
-  \ de programmation fondamentale, essentielle pour les applications n\xE9cessitant\
-  \ des r\xE9sultats impr\xE9visibles tels que la g\xE9n\xE9ration de jetons s\xE9\
-  curis\xE9s, l'\xE9chantillonnage de donn\xE9es ou dans les algorithmes de jeux."
+summary: "Pour g\xE9n\xE9rer des nombres al\xE9atoires en Elixir, vous utilisez principalement\
+  \ le module `:rand` qui fournit plusieurs fonctions \xE0 cet effet."
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---

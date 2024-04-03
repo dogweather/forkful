@@ -2,14 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:57.639297-07:00
-description: "Loggen in softwareontwikkeling is de techniek van het vastleggen van\
-  \ gebeurtenissen die plaatsvinden terwijl een programma wordt uitgevoerd, meestal\
-  \ naar\u2026"
+description: 'Hoe te: In Elixir is de primaire manier om informatie te loggen via
+  de ingebouwde `Logger` module. Zo kun je het gebruiken.'
 lastmod: '2024-03-13T22:44:50.468552-06:00'
 model: gpt-4-0125-preview
-summary: Loggen in softwareontwikkeling is de techniek van het vastleggen van gebeurtenissen
-  die plaatsvinden terwijl een programma wordt uitgevoerd, meestal naar een bestand
-  of extern systeem.
+summary: In Elixir is de primaire manier om informatie te loggen via de ingebouwde
+  `Logger` module.
 title: Logboekregistratie
 weight: 17
 ---

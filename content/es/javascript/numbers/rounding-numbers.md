@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:46:00.448057-07:00
-description: "Redondear es eliminar el ruido despu\xE9s de un cierto punto en un n\xFA\
-  mero. Los programadores redondean para controlar la precisi\xF3n, gestionar la memoria\
-  \ o\u2026"
+description: "C\xF3mo hacerlo: Aqu\xED te mostramos c\xF3mo redondear n\xFAmeros en\
+  \ JavaScript usando `Math.round()`, `Math.ceil()`, y `Math.floor()`."
 lastmod: '2024-03-13T22:44:59.453725-06:00'
 model: gpt-4-0125-preview
-summary: "Redondear es eliminar el ruido despu\xE9s de un cierto punto en un n\xFA\
-  mero."
+summary: "Aqu\xED te mostramos c\xF3mo redondear n\xFAmeros en JavaScript usando `Math.round()`,\
+  \ `Math.ceil()`, y `Math.floor()`."
 title: "Redondeo de n\xFAmeros"
 weight: 13
 ---

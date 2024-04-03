@@ -2,16 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:31.448356-07:00
-description: "Vi\u1EC7c t\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai\
-  \ ho\u1EB7c qu\xE1 kh\u1EE9 li\xEAn quan \u0111\u1EBFn vi\u1EC7c x\xE1c \u0111\u1ECB\
-  nh m\u1ED9t ng\xE0y c\xE1ch m\u1ED9t ng\xE0y cho tr\u01B0\u1EDBc m\u1ED9t s\u1ED1\
-  \ ng\xE0y, th\xE1ng, ho\u1EB7c n\u0103m nh\u1EA5t \u0111\u1ECBnh.\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Visual Basic for Applications (VBA), h\xE0\
+  m ch\xEDnh \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 t\xEDnh to\xE1n ng\xE0\
+  y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1EE9 l\xE0 `DateAdd()`. H\xE0m\
+  \ n\xE0y th\xEAm\u2026"
 lastmod: '2024-03-13T22:44:36.450872-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c t\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7\
-  c qu\xE1 kh\u1EE9 li\xEAn quan \u0111\u1EBFn vi\u1EC7c x\xE1c \u0111\u1ECBnh m\u1ED9\
-  t ng\xE0y c\xE1ch m\u1ED9t ng\xE0y cho tr\u01B0\u1EDBc m\u1ED9t s\u1ED1 ng\xE0y,\
-  \ th\xE1ng, ho\u1EB7c n\u0103m nh\u1EA5t \u0111\u1ECBnh."
+summary: "Trong Visual Basic for Applications (VBA), h\xE0m ch\xEDnh \u0111\u01B0\u1EE3\
+  c s\u1EED d\u1EE5ng \u0111\u1EC3 t\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai\
+  \ ho\u1EB7c qu\xE1 kh\u1EE9 l\xE0 `DateAdd()`."
 title: "T\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1\
   \ kh\u1EE9"
 weight: 26

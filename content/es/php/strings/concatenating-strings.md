@@ -1,10 +1,9 @@
 ---
 date: 2024-01-20 17:35:18.330087-07:00
-description: "Concatenar cadenas significa unirlas para formar una sola. Los programadores\
-  \ concatenan para combinar textos, como nombres y apellidos, o para construir\u2026"
+description: "C\xF3mo: ."
 lastmod: '2024-03-13T22:44:59.152698-06:00'
 model: gpt-4-1106-preview
-summary: Concatenar cadenas significa unirlas para formar una sola.
+summary: .
 title: "Concatenaci\xF3n de cadenas de texto"
 weight: 3
 ---

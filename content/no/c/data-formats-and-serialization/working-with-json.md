@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:12:06.159840-07:00
-description: "\xC5 jobbe med JSON (JavaScript Object Notation) i C inneb\xE6rer \xE5\
-  \ parsing, generere og manipulere JSON datastrukturer. Programmerere gj\xF8r dette\
-  \ for \xE5\u2026"
+description: "Hvordan: For \xE5 jobbe med JSON i C, vil du vanligvis bruke et bibliotek\
+  \ som `jansson` eller `json-c` p\xE5 grunn av Cs mangel p\xE5 innebygd st\xF8tte\
+  \ for JSON. Her\u2026"
 lastmod: '2024-03-13T22:44:41.295196-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 jobbe med JSON (JavaScript Object Notation) i C inneb\xE6rer \xE5 parsing,\
-  \ generere og manipulere JSON datastrukturer."
+summary: "For \xE5 jobbe med JSON i C, vil du vanligvis bruke et bibliotek som `jansson`\
+  \ eller `json-c` p\xE5 grunn av Cs mangel p\xE5 innebygd st\xF8tte for JSON."
 title: Arbeide med JSON
 weight: 38
 ---

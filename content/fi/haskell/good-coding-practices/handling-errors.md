@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 00:53:41.238366-07:00
-description: "Virheiden k\xE4sittely ohjelmoinnissa tarkoittaa odottamattomien tilanteiden\
-  \ hallintaa\u2014asioita, jotka voivat menn\xE4 pieleen. Ohjelmoijat tekev\xE4t\
-  \ sit\xE4\u2026"
+description: "Miten: Haskell k\xE4sittelee virheit\xE4 luotettavasti tyyppien kuten\
+  \ `Maybe` ja `Either` avulla. T\xE4ss\xE4 nopea katsaus."
 lastmod: '2024-03-13T22:44:56.622270-06:00'
 model: gpt-4-1106-preview
-summary: "Virheiden k\xE4sittely ohjelmoinnissa tarkoittaa odottamattomien tilanteiden\
-  \ hallintaa\u2014asioita, jotka voivat menn\xE4 pieleen."
+summary: "Haskell k\xE4sittelee virheit\xE4 luotettavasti tyyppien kuten `Maybe` ja\
+  \ `Either` avulla."
 title: "Virheiden k\xE4sittely"
 weight: 16
 ---

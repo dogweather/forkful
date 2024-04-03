@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:15.984431-07:00
-description: "Logowanie w rozwoju oprogramowania to proces rejestrowania informacji\
-  \ o wykonaniu programu, zaprojektowany w celu \u015Bledzenia jego zachowania i\u2026"
+description: "Jak to zrobi\u0107: W Go, logowanie mo\u017Ce by\u0107 zaimplementowane\
+  \ za pomoc\u0105 standardowego pakietu biblioteki `log`. Ten pakiet oferuje proste\
+  \ mo\u017Cliwo\u015Bci logowania,\u2026"
 lastmod: '2024-03-13T22:44:34.859120-06:00'
 model: gpt-4-0125-preview
-summary: "Logowanie w rozwoju oprogramowania to proces rejestrowania informacji o\
-  \ wykonaniu programu, zaprojektowany w celu \u015Bledzenia jego zachowania i diagnozowania\
-  \ problem\xF3w."
+summary: "W Go, logowanie mo\u017Ce by\u0107 zaimplementowane za pomoc\u0105 standardowego\
+  \ pakietu biblioteki `log`."
 title: Logowanie
 weight: 17
 ---

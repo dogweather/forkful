@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 18:03:25.691789-07:00
-description: "Starta ett nytt projekt inneb\xE4r att skapa en ren arbetsyta f\xF6\
-  r att utveckla dina id\xE9er. Programmerare g\xF6r detta f\xF6r att organisera,\
-  \ f\xF6renkla och\u2026"
+description: "Hur g\xF6r man: H\xE4r \xE4r ett grundl\xE4ggande exempel f\xF6r att\
+  \ starta ett nytt projekt i Fish Shell."
 lastmod: '2024-03-13T22:44:38.338782-06:00'
 model: gpt-4-1106-preview
-summary: "Starta ett nytt projekt inneb\xE4r att skapa en ren arbetsyta f\xF6r att\
-  \ utveckla dina id\xE9er."
+summary: "H\xE4r \xE4r ett grundl\xE4ggande exempel f\xF6r att starta ett nytt projekt\
+  \ i Fish Shell."
 title: "Att p\xE5b\xF6rja ett nytt projekt"
 weight: 1
 ---

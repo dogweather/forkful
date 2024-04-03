@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:01.040249-07:00
-description: "\xC9crire dans un fichier texte en Haskell consiste \xE0 cr\xE9er ou\
-  \ mettre \xE0 jour des fichiers avec du contenu textuel de mani\xE8re programmatique.\
-  \ Les programmeurs\u2026"
+description: "Comment faire : Le Prelude standard d'Haskell fournit un support \xE9\
+  l\xE9mentaire pour l'\xE9criture dans des fichiers en utilisant les fonctions `writeFile`\
+  \ et\u2026"
 lastmod: '2024-03-13T22:44:57.852963-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire dans un fichier texte en Haskell consiste \xE0 cr\xE9er ou mettre\
-  \ \xE0 jour des fichiers avec du contenu textuel de mani\xE8re programmatique."
+summary: "Le Prelude standard d'Haskell fournit un support \xE9l\xE9mentaire pour\
+  \ l'\xE9criture dans des fichiers en utilisant les fonctions `writeFile` et `appendFile`\
+  \ du module `System.IO`."
 title: "R\xE9diger un fichier texte"
 weight: 24
 ---

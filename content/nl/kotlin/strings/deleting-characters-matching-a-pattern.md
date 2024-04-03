@@ -2,14 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:56.185111-07:00
-description: "Karakters verwijderen die overeenkomen met een patroon gaat over het\
-  \ vinden en verwijderen van specifieke reeksen karakters in een string op basis\
-  \ van\u2026"
+description: 'Hoe: Zo kun je in Kotlin karakters verwijderen die overeenkomen met
+  een patroon, met behulp van een eenvoudig regex-patroon.'
 lastmod: '2024-03-13T22:44:50.751568-06:00'
 model: gpt-4-0125-preview
-summary: Karakters verwijderen die overeenkomen met een patroon gaat over het vinden
-  en verwijderen van specifieke reeksen karakters in een string op basis van regels
-  (het patroon).
+summary: Zo kun je in Kotlin karakters verwijderen die overeenkomen met een patroon,
+  met behulp van een eenvoudig regex-patroon.
 title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---

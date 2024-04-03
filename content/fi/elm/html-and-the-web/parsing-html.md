@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:08.672307-07:00
-description: "HTML:n j\xE4sent\xE4minen Elm-kieless\xE4 tarkoittaa tietojen poimimista\
-  \ HTML-dokumenteista. Ohjelmoijat tekev\xE4t n\xE4in, jotta he voivat k\xE4ytt\xE4\
-  \xE4 web-sis\xE4lt\xF6\xE4 tai\u2026"
+description: "Kuinka tehd\xE4\xE4n: Elmiss\xE4 ei ole suoraan HTML:n j\xE4sent\xE4\
+  miseen sis\xE4\xE4nrakennettua kirjastoa samalla tavalla kuin JavaScriptiss\xE4\
+  \ tai Pythonissa, johtuen sen\u2026"
 lastmod: '2024-03-13T22:44:56.486389-06:00'
 model: gpt-4-0125-preview
-summary: "HTML:n j\xE4sent\xE4minen Elm-kieless\xE4 tarkoittaa tietojen poimimista\
-  \ HTML-dokumenteista."
+summary: "Elmiss\xE4 ei ole suoraan HTML:n j\xE4sent\xE4miseen sis\xE4\xE4nrakennettua\
+  \ kirjastoa samalla tavalla kuin JavaScriptiss\xE4 tai Pythonissa, johtuen sen korostuksesta\
+  \ tyypiturvallisuudesta ja ajonaikaisten virheiden v\xE4ltt\xE4misest\xE4."
 title: "HTML:n j\xE4sennys"
 weight: 43
 ---

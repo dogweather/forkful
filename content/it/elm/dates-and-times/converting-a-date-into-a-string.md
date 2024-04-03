@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:36:22.651966-07:00
-description: "Trasformare una data in stringa significa convertire il formato data\
-  \ in testo leggibile. I programmatori lo fanno per mostrare date in formati diversi\
-  \ o\u2026"
+description: 'How to: In Elm, usiamo il modulo `Date` per gestire le date e `elm/time`
+  per la formattazione. Ecco un esempio.'
 lastmod: '2024-03-13T22:44:43.360937-06:00'
 model: gpt-4-1106-preview
-summary: Trasformare una data in stringa significa convertire il formato data in testo
-  leggibile.
+summary: In Elm, usiamo il modulo `Date` per gestire le date e `elm/time` per la formattazione.
 title: Conversione di una data in una stringa
 weight: 28
 ---

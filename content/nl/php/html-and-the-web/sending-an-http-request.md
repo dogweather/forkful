@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:39.295246-07:00
-description: "Een HTTP-verzoek versturen is het proces waarbij een programma om gegevens\
-  \ van een server vraagt. Programmeurs doen dit om te interageren met webservices,\u2026"
+description: "Hoe: PHP heeft een nette manier om HTTP-verzoeken te behandelen met\
+  \ de `cURL` bibliotheek. Maar de nieuwere methode is het gebruik van `file_get_contents`\u2026"
 lastmod: '2024-03-13T22:44:50.891721-06:00'
 model: gpt-4-0125-preview
-summary: Een HTTP-verzoek versturen is het proces waarbij een programma om gegevens
-  van een server vraagt.
+summary: PHP heeft een nette manier om HTTP-verzoeken te behandelen met de `cURL`
+  bibliotheek.
 title: Een HTTP-verzoek verzenden
 weight: 44
 ---

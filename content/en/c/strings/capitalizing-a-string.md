@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 17:50:09.051331-07:00
-description: "Capitalizing a string in C involves converting the first character of\
-  \ each word in a given string to uppercase if it is a lowercase letter. Programmers\u2026"
+description: "How to: Capitalizing a string in C requires a basic understanding of\
+  \ character manipulation and string traversal. Since C does not have a built-in\u2026"
 lastmod: '2024-03-13T22:45:00.496644-06:00'
 model: gpt-4-0125-preview
-summary: Capitalizing a string in C involves converting the first character of each
-  word in a given string to uppercase if it is a lowercase letter.
+summary: Capitalizing a string in C requires a basic understanding of character manipulation
+  and string traversal.
 title: Capitalizing a string
 weight: 2
 ---

@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 01:07:41.341271-07:00
-description: "Registrar es b\xE1sicamente dejar un rastro de migajas a trav\xE9s de\
-  \ tu c\xF3digo - es la forma de mantener un control de lo que est\xE1 sucediendo\
-  \ cuando tu script\u2026"
+description: "C\xF3mo hacerlo: Aqu\xED tienes la esencia de c\xF3mo esparcir algo\
+  \ de registro b\xE1sico en tus scripts."
 lastmod: '2024-03-13T22:44:59.298679-06:00'
 model: gpt-4-1106-preview
-summary: "Registrar es b\xE1sicamente dejar un rastro de migajas a trav\xE9s de tu\
-  \ c\xF3digo - es la forma de mantener un control de lo que est\xE1 sucediendo cuando\
-  \ tu script se est\xE1 ejecutando en la libertad."
+summary: "Aqu\xED tienes la esencia de c\xF3mo esparcir algo de registro b\xE1sico\
+  \ en tus scripts."
 title: Registro de Actividades
 weight: 17
 ---

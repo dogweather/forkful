@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:37.683391-07:00
-description: "Comprobar si un directorio existe en Kotlin implica verificar la presencia\
-  \ de un directorio en una ruta especificada. Los programadores realizan esta\u2026"
+description: "C\xF3mo hacerlo: Kotlin, al ejecutarse en la JVM, aprovecha la API de\
+  \ archivo de Java para operaciones de archivos, haciendo que la verificaci\xF3n\
+  \ de la\u2026"
 lastmod: '2024-03-13T22:44:59.050314-06:00'
 model: gpt-4-0125-preview
-summary: Comprobar si un directorio existe en Kotlin implica verificar la presencia
-  de un directorio en una ruta especificada.
+summary: "Kotlin, al ejecutarse en la JVM, aprovecha la API de archivo de Java para\
+  \ operaciones de archivos, haciendo que la verificaci\xF3n de la existencia de directorios\
+  \ sea directa."
 title: Comprobando si un directorio existe
 weight: 20
 ---

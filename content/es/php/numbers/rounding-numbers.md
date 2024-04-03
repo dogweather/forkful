@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 03:45:54.905166-07:00
-description: "Redondear n\xFAmeros significa eliminar los decimales hasta una precisi\xF3\
-  n determinada, a menudo hasta n\xFAmeros enteros. Los programadores redondean para\u2026"
+description: "C\xF3mo hacerlo: PHP ofrece varias maneras de redondear n\xFAmeros:\
+  \ `round()`, `ceil()` y `floor()`. As\xED es como funcionan."
 lastmod: '2024-03-13T22:44:59.155779-06:00'
 model: gpt-4-0125-preview
-summary: "Redondear n\xFAmeros significa eliminar los decimales hasta una precisi\xF3\
-  n determinada, a menudo hasta n\xFAmeros enteros."
+summary: "PHP ofrece varias maneras de redondear n\xFAmeros."
 title: "Redondeo de n\xFAmeros"
 weight: 13
 ---

@@ -1,11 +1,12 @@
 ---
 date: 2024-01-27 20:33:10.348859-07:00
-description: "Die Generierung von Zufallszahlen in der Programmierung dreht sich darum,\
-  \ Werte zu erstellen, die im Voraus logisch nicht vorhergesagt werden k\xF6nnen.\u2026"
+description: "Wie: In Clojure ist die Generierung von Zufallszahlen unkompliziert,\
+  \ und es gibt ein paar integrierte Funktionen, die sofort verwendet werden k\xF6\
+  nnen. Um\u2026"
 lastmod: '2024-03-13T22:44:53.415686-06:00'
 model: gpt-4-0125-preview
-summary: "Die Generierung von Zufallszahlen in der Programmierung dreht sich darum,\
-  \ Werte zu erstellen, die im Voraus logisch nicht vorhergesagt werden k\xF6nnen."
+summary: "In Clojure ist die Generierung von Zufallszahlen unkompliziert, und es gibt\
+  \ ein paar integrierte Funktionen, die sofort verwendet werden k\xF6nnen."
 title: Generierung von Zufallszahlen
 weight: 12
 ---

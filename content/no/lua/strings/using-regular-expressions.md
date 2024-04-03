@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:33.872899-07:00
-description: "Regul\xE6re uttrykk i programmering tillater samsvarss\xF8king og manipulasjon\
-  \ av strenger basert p\xE5 spesifikke m\xF8nstre. Programmerere bruker dem til oppgaver\u2026"
+description: "Hvordan: Lua st\xF8tter ikke regul\xE6re uttrykk p\xE5 samme m\xE5te\
+  \ som spr\xE5k som Perl eller Python. Isteden tilbyr det m\xF8nstersamsvarskapasiteter\
+  \ som dekker mange\u2026"
 lastmod: '2024-03-13T22:44:40.920114-06:00'
 model: gpt-4-0125-preview
-summary: "Regul\xE6re uttrykk i programmering tillater samsvarss\xF8king og manipulasjon\
-  \ av strenger basert p\xE5 spesifikke m\xF8nstre."
+summary: "Lua st\xF8tter ikke regul\xE6re uttrykk p\xE5 samme m\xE5te som spr\xE5\
+  k som Perl eller Python."
 title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---

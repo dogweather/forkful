@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:36.661036-07:00
-description: "L'analyse d'une date \xE0 partir d'une cha\xEEne en Visual Basic pour\
-  \ Applications (VBA) consiste \xE0 convertir un texte qui repr\xE9sente une date\
-  \ en un type de\u2026"
+description: "Comment faire : VBA offre une m\xE9thode directe pour analyser une cha\xEE\
+  ne en une date \xE0 l'aide de la fonction `CDate` ou de la fonction `DateValue`.\u2026"
 lastmod: '2024-03-13T22:44:57.591130-06:00'
 model: gpt-4-0125-preview
-summary: "L'analyse d'une date \xE0 partir d'une cha\xEEne en Visual Basic pour Applications\
-  \ (VBA) consiste \xE0 convertir un texte qui repr\xE9sente une date en un type de\
-  \ donn\xE9es date."
+summary: "VBA offre une m\xE9thode directe pour analyser une cha\xEEne en une date\
+  \ \xE0 l'aide de la fonction `CDate` ou de la fonction `DateValue`."
 title: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res"
 weight: 30
 ---

@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:26.957715-07:00
-description: "CSV:n (pilkuilla erotetut arvot) k\xE4sittelyyn kuuluu tiedostojen j\xE4\
-  sent\xE4minen ja tuottaminen, jotka tallentavat taulukollisia tietoja yksinkertaisessa,\u2026"
+description: "Kuinka: Elm ei sis\xE4ll\xE4 sis\xE4\xE4nrakennettua tukea CSV:n j\xE4\
+  sent\xE4miselle tai tuottamiselle; sen sijaan usein k\xE4ytet\xE4\xE4n kolmannen\
+  \ osapuolen paketteja, kuten\u2026"
 lastmod: '2024-03-13T22:44:56.511438-06:00'
 model: gpt-4-0125-preview
-summary: "CSV:n (pilkuilla erotetut arvot) k\xE4sittelyyn kuuluu tiedostojen j\xE4\
-  sent\xE4minen ja tuottaminen, jotka tallentavat taulukollisia tietoja yksinkertaisessa,\
-  \ tekstimuotoisessa muodossa."
+summary: "Elm ei sis\xE4ll\xE4 sis\xE4\xE4nrakennettua tukea CSV:n j\xE4sent\xE4miselle\
+  \ tai tuottamiselle; sen sijaan usein k\xE4ytet\xE4\xE4n kolmannen osapuolen paketteja,\
+  \ kuten `panosoft/elm-csv`."
 title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---

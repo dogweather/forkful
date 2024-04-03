@@ -2,16 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:00.685277-07:00
-description: "L\xE0m tr\xF2n s\u1ED1 c\xF3 ngh\u0129a l\xE0 \u01B0\u1EDBc l\u01B0\u1EE3\
-  ng m\u1ED9t gi\xE1 tr\u1ECB s\u1ED1 v\u1EDBi \u0111\u1ED9 ch\xEDnh x\xE1c nh\u1EA5\
-  t \u0111\u1ECBnh, th\u01B0\u1EDDng nh\u1EB1m lo\u1EA1i b\u1ECF c\xE1c s\u1ED1 th\u1EAD\
-  p ph\xE2n kh\xF4ng mong mu\u1ED1n. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Swift cung c\u1EA5p m\u1ED9t s\u1ED1 c\xE1ch\
+  \ \u0111\u1EC3 l\xE0m tr\xF2n s\u1ED1. D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9\
+  t s\u1ED1 v\xED d\u1EE5."
 lastmod: '2024-03-13T22:44:37.089936-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m tr\xF2n s\u1ED1 c\xF3 ngh\u0129a l\xE0 \u01B0\u1EDBc l\u01B0\u1EE3\
-  ng m\u1ED9t gi\xE1 tr\u1ECB s\u1ED1 v\u1EDBi \u0111\u1ED9 ch\xEDnh x\xE1c nh\u1EA5\
-  t \u0111\u1ECBnh, th\u01B0\u1EDDng nh\u1EB1m lo\u1EA1i b\u1ECF c\xE1c s\u1ED1 th\u1EAD\
-  p ph\xE2n kh\xF4ng mong mu\u1ED1n."
+summary: "Swift cung c\u1EA5p m\u1ED9t s\u1ED1 c\xE1ch \u0111\u1EC3 l\xE0m tr\xF2\
+  n s\u1ED1."
 title: "L\xE0m tr\xF2n s\u1ED1"
 weight: 13
 ---

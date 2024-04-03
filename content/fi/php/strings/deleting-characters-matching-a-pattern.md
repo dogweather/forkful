@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:42:48.527320-07:00
-description: "Merkkien poistaminen kuvion mukaan tarkoittaa sellaisten merkkijonojen\
-  \ osien h\xE4vitt\xE4mist\xE4, jotka vastaavat tietty\xE4 kaavaa. Ohjelmoijat tekev\xE4\
-  t t\xE4t\xE4\u2026"
+description: "How to: - Kuinka: PHP:ss\xE4 `preg_replace`-funktio on yleisin tapa\
+  \ poistaa merkkej\xE4, jotka vastaavat tietty\xE4 mallia. Katsotaanpa miten."
 lastmod: '2024-03-13T22:44:56.640573-06:00'
 model: gpt-4-1106-preview
-summary: "Merkkien poistaminen kuvion mukaan tarkoittaa sellaisten merkkijonojen osien\
-  \ h\xE4vitt\xE4mist\xE4, jotka vastaavat tietty\xE4 kaavaa."
+summary: "PHP:ss\xE4 `preg_replace`-funktio on yleisin tapa poistaa merkkej\xE4, jotka\
+  \ vastaavat tietty\xE4 mallia."
 title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---

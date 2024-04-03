@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:34:12.320453-07:00
-description: "Comparer deux dates, c'est voir la diff\xE9rence ou la similarit\xE9\
-  \ entre elles. Les programmeurs le font pour trier des \xE9v\xE9nements, valider\
-  \ des p\xE9riodes, ou\u2026"
+description: 'How to: | Comment faire : .'
 lastmod: '2024-03-13T22:44:57.249784-06:00'
 model: gpt-4-1106-preview
-summary: "Comparer deux dates, c'est voir la diff\xE9rence ou la similarit\xE9 entre\
-  \ elles."
+summary: .
 title: Comparer deux dates
 weight: 27
 ---

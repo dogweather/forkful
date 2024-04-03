@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:33:39.091355-07:00
-description: "Datumvergleich bedeutet, zwei Zeitpunkte hinsichtlich ihrer chronologischen\
-  \ Reihenfolge zu vergleichen. Programmierer nutzen dies, um Zeitabl\xE4ufe zu\u2026"
+description: 'Anleitung: .'
 lastmod: '2024-03-13T22:44:54.027363-06:00'
 model: gpt-4-1106-preview
-summary: Datumvergleich bedeutet, zwei Zeitpunkte hinsichtlich ihrer chronologischen
-  Reihenfolge zu vergleichen.
+summary: .
 title: Vergleich von zwei Daten
 weight: 27
 ---

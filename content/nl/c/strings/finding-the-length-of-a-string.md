@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:43.211143-07:00
-description: "Het vinden van de lengte van een reeks in C houdt in dat wordt bepaald\
-  \ hoeveel tekens er zijn voor de null-terminator `\\0`. Programmeurs doen dit om\u2026"
+description: 'Hoe te: In C wordt de standaard bibliotheekfunctie `strlen()` vaak gebruikt
+  om de lengte van een reeks te vinden. Hier is een snel voorbeeld.'
 lastmod: '2024-03-13T22:44:51.281112-06:00'
 model: gpt-4-0125-preview
-summary: Het vinden van de lengte van een reeks in C houdt in dat wordt bepaald hoeveel
-  tekens er zijn voor de null-terminator `\0`.
+summary: In C wordt de standaard bibliotheekfunctie `strlen()` vaak gebruikt om de
+  lengte van een reeks te vinden.
 title: De lengte van een string vinden
 weight: 7
 ---

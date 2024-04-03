@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:34.296956-07:00
-description: "L\xE0m vi\u1EC7c v\u1EDBi YAML \u0111\u1EC1 c\u1EADp \u0111\u1EBFn vi\u1EC7\
-  c ph\xE2n t\xEDch v\xE0 t\u1EA1o d\u1EEF li\u1EC7u trong ng\xF4n ng\u1EEF YAML Ain't\
-  \ Markup Language th\xE2n thi\u1EC7n v\u1EDBi con ng\u01B0\u1EDDi. L\u1EADp tr\xEC\
-  nh vi\xEAn s\u1EED d\u1EE5ng n\xF3\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: YAML kh\xF4ng \u0111\u01B0\u1EE3c t\xEDch h\u1EE3\
+  p s\u1EB5n trong C++. B\u1EA1n s\u1EBD c\u1EA7n m\u1ED9t th\u01B0 vi\u1EC7n nh\u01B0\
+  \ `yaml-cpp`. D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch ph\xE2n t\xEDch m\u1ED9t\
+  \ t\u1EC7p YAML \u0111\u01A1n gi\u1EA3n."
 lastmod: '2024-03-13T22:44:37.068766-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m vi\u1EC7c v\u1EDBi YAML \u0111\u1EC1 c\u1EADp \u0111\u1EBFn vi\u1EC7\
-  c ph\xE2n t\xEDch v\xE0 t\u1EA1o d\u1EEF li\u1EC7u trong ng\xF4n ng\u1EEF YAML Ain't\
-  \ Markup Language th\xE2n thi\u1EC7n v\u1EDBi con ng\u01B0\u1EDDi."
+summary: "YAML kh\xF4ng \u0111\u01B0\u1EE3c t\xEDch h\u1EE3p s\u1EB5n trong C++."
 title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 weight: 41
 ---

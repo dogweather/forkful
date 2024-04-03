@@ -2,14 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:19.351279-07:00
-description: "Pisanie do standardowego b\u0142\u0119du w Pythonie dotyczy przekierowania\
-  \ komunikat\xF3w o b\u0142\u0119dach lub diagnostyki programu do strumienia b\u0142\
-  \u0119d\xF3w (`stderr`),\u2026"
+description: "Jak to zrobi\u0107: #."
 lastmod: '2024-03-13T22:44:34.967044-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie do standardowego b\u0142\u0119du w Pythonie dotyczy przekierowania\
-  \ komunikat\xF3w o b\u0142\u0119dach lub diagnostyki programu do strumienia b\u0142\
-  \u0119d\xF3w (`stderr`), oddzielnie od standardowego wyj\u015Bcia (`stdout`)."
+summary: '#.'
 title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---

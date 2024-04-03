@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:57.459625-07:00
-description: "Tablice asocjacyjne, znane w Go jako mapy, pozwalaj\u0105 przechowywa\u0107\
-  \ pary klucz-warto\u015B\u0107, gdzie ka\u017Cdy unikalny klucz odpowiada warto\u015B\
-  ci. Programi\u015Bci u\u017Cywaj\u0105\u2026"
+description: "Jak to zrobi\u0107: Tworzenie i inicjalizowanie mapy w Go mo\u017Cna\
+  \ zrealizowa\u0107 na r\xF3\u017Cne sposoby. Oto podstawowy przyk\u0142ad, aby zacz\u0105\
+  \u0107."
 lastmod: '2024-03-13T22:44:34.841686-06:00'
 model: gpt-4-0125-preview
-summary: "Tablice asocjacyjne, znane w Go jako mapy, pozwalaj\u0105 przechowywa\u0107\
-  \ pary klucz-warto\u015B\u0107, gdzie ka\u017Cdy unikalny klucz odpowiada warto\u015B\
-  ci."
+summary: "Tworzenie i inicjalizowanie mapy w Go mo\u017Cna zrealizowa\u0107 na r\xF3\
+  \u017Cne sposoby."
 title: "U\u017Cywanie tablic asocjacyjnych"
 weight: 15
 ---

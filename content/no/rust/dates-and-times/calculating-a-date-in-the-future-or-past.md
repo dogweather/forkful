@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:32:08.700915-07:00
-description: "\xC5 regne ut en dato i fremtiden eller fortiden handler om \xE5 finne\
-  \ en spesifikk dato f\xF8r eller etter et kjent tidspunkt. Programeiere gj\xF8r\
-  \ dette for \xE5\u2026"
+description: "Hvordan Gj\xF8re Det: Rust bruker `chrono` biblioteket for dato-aritmetikk.\
+  \ La oss se p\xE5 et eksempel."
 lastmod: '2024-03-13T22:44:40.587233-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 regne ut en dato i fremtiden eller fortiden handler om \xE5 finne en\
-  \ spesifikk dato f\xF8r eller etter et kjent tidspunkt."
+summary: Rust bruker `chrono` biblioteket for dato-aritmetikk.
 title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---

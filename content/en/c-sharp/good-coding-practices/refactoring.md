@@ -1,11 +1,11 @@
 ---
 date: 2024-01-25 02:12:43.594010-07:00
-description: "Refactoring is the process of restructuring existing computer code without\
-  \ changing its external behavior. Programmers do it to clean up code, enhance\u2026"
+description: 'How to: Let''s refactor a simple C# method that calculates and prints
+  the sum of an array of numbers: Before Refactoring.'
 lastmod: '2024-03-13T22:45:00.097010-06:00'
 model: gpt-4-1106-preview
-summary: Refactoring is the process of restructuring existing computer code without
-  changing its external behavior.
+summary: Let's refactor a simple C# method that calculates and prints the sum of an
+  array of numbers.
 title: Refactoring
 weight: 19
 ---

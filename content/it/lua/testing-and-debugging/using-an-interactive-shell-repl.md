@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:16:28.635415-07:00
-description: "REPL sta per Read-Eval-Print Loop (Ciclo Leggi-Valuta-Stampa), un ambiente\
-  \ interattivo dove si pu\xF2 testare rapidamente del codice. I programmatori lo\u2026"
+description: 'Come fare: Per accedere al REPL di Lua, basta inserire `lua` nel proprio
+  terminale. Ecco un esempio di sessione.'
 lastmod: '2024-03-13T22:44:43.559268-06:00'
 model: gpt-4-0125-preview
-summary: "REPL sta per Read-Eval-Print Loop (Ciclo Leggi-Valuta-Stampa), un ambiente\
-  \ interattivo dove si pu\xF2 testare rapidamente del codice."
+summary: Per accedere al REPL di Lua, basta inserire `lua` nel proprio terminale.
 title: Utilizzo di un interprete interattivo (REPL)
 weight: 34
 ---

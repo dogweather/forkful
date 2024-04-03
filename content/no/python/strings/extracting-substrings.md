@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:46:12.556831-07:00
-description: "Utdrag av delstrenger er \xE5 ta ut spesifikke deler av en tekststreng.\
-  \ Vi gj\xF8r dette for \xE5 analysere, transformere, eller bruke deler av dataene\
-  \ uten \xE5\u2026"
+description: "How to: Python gj\xF8r det enkelt \xE5 hente ut delstrenger. Se p\xE5\
+  \ slice-syntaksen."
 lastmod: '2024-03-13T22:44:40.350070-06:00'
 model: gpt-4-1106-preview
-summary: "Utdrag av delstrenger er \xE5 ta ut spesifikke deler av en tekststreng."
+summary: "Python gj\xF8r det enkelt \xE5 hente ut delstrenger."
 title: Uthenting av delstrenger
 weight: 6
 ---

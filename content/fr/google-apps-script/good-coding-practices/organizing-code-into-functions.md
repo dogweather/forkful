@@ -2,13 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:13.064109-07:00
-description: "Organiser le code en fonctions consiste \xE0 structurer votre code Google\
-  \ Apps Script en s\xE9parant les segments logiques en blocs distincts, chacun effectuant\u2026"
+description: "Comment faire : Dans Google Apps Script, qui est bas\xE9 sur JavaScript,\
+  \ vous d\xE9finissez des fonctions en utilisant le mot-cl\xE9 `function`, suivi\
+  \ d'un nom de\u2026"
 lastmod: '2024-03-13T22:44:57.192341-06:00'
 model: gpt-4-0125-preview
-summary: "Organiser le code en fonctions consiste \xE0 structurer votre code Google\
-  \ Apps Script en s\xE9parant les segments logiques en blocs distincts, chacun effectuant\
-  \ une t\xE2che sp\xE9cifique."
+summary: "Dans Google Apps Script, qui est bas\xE9 sur JavaScript, vous d\xE9finissez\
+  \ des fonctions en utilisant le mot-cl\xE9 `function`, suivi d'un nom de fonction\
+  \ unique, de parenth\xE8ses `()` qui peuvent contenir des param\xE8tres, et d'accolades\
+  \ `{}` qui encapsulent le bloc de code de la fonction."
 title: Organiser le code en fonctions
 weight: 18
 ---

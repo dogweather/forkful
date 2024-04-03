@@ -1,12 +1,11 @@
 ---
 date: 2024-01-27 20:32:47.358841-07:00
-description: "Generare numeri casuali in Bash offre un modo per introdurre imprevedibilit\xE0\
-  \ negli script, fondamentale per compiti come generare password sicure,\u2026"
+description: "Come fare: In Bash, la variabile `$RANDOM` \xE8 la soluzione prediletta\
+  \ per generare numeri casuali. Ogni volta che la si richiama, Bash fornisce un intero\u2026"
 lastmod: '2024-03-13T22:44:43.593432-06:00'
 model: gpt-4-0125-preview
-summary: "Generare numeri casuali in Bash offre un modo per introdurre imprevedibilit\xE0\
-  \ negli script, fondamentale per compiti come generare password sicure, simulare\
-  \ dati, o per la programmazione di giochi."
+summary: "In Bash, la variabile `$RANDOM` \xE8 la soluzione prediletta per generare\
+  \ numeri casuali."
 title: Generazione di numeri casuali
 weight: 12
 ---

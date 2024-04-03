@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:41.609255-07:00
-description: "Travailler avec des fichiers CSV (Valeurs S\xE9par\xE9es par des Virgules)\
-  \ implique d'analyser et de g\xE9n\xE9rer des fichiers qui stockent des donn\xE9\
-  es tabulaires\u2026"
+description: "Comment faire : En Haskell, la gestion des fichiers CSV peut \xEAtre\
+  \ r\xE9alis\xE9e en utilisant la biblioth\xE8que `cassava`, l'une des biblioth\xE8\
+  ques tierces\u2026"
 lastmod: '2024-03-13T22:44:57.857254-06:00'
 model: gpt-4-0125-preview
-summary: "Travailler avec des fichiers CSV (Valeurs S\xE9par\xE9es par des Virgules)\
-  \ implique d'analyser et de g\xE9n\xE9rer des fichiers qui stockent des donn\xE9\
-  es tabulaires dans un format texte simple."
+summary: "En Haskell, la gestion des fichiers CSV peut \xEAtre r\xE9alis\xE9e en utilisant\
+  \ la biblioth\xE8que `cassava`, l'une des biblioth\xE8ques tierces populaires \xE0\
+  \ cette fin."
 title: Travailler avec CSV
 weight: 37
 ---

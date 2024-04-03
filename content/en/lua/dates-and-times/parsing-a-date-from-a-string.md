@@ -1,12 +1,11 @@
 ---
 date: 2024-02-03 19:02:42.879082-07:00
-description: "Parsing a date from a string involves converting textual representations\
-  \ of dates and times into a format that can be easily manipulated, stored, or\u2026"
+description: "How to: Lua does not have built-in support for date and time manipulation\
+  \ beyond the limited functionality provided by the `os.date` and `os.time`\u2026"
 lastmod: '2024-03-13T22:45:00.214082-06:00'
 model: gpt-4-0125-preview
-summary: Parsing a date from a string involves converting textual representations
-  of dates and times into a format that can be easily manipulated, stored, or compared
-  within a Lua program.
+summary: Lua does not have built-in support for date and time manipulation beyond
+  the limited functionality provided by the `os.date` and `os.time` functions.
 title: Parsing a date from a string
 weight: 30
 ---

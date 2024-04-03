@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:31.347116-07:00
-description: "Pisanie test\xF3w w Elixirze polega na tworzeniu zautomatyzowanych skrypt\xF3\
-  w w celu weryfikacji zachowania Twojego kodu. Programi\u015Bci robi\u0105 to, aby\
-  \ zapewni\u0107\u2026"
+description: "Jak to zrobi\u0107: Elixir u\u017Cywa ExUnit jako wbudowanego frameworka\
+  \ do test\xF3w, kt\xF3ry jest niezwykle pot\u0119\u017Cny i \u0142atwy w u\u017C\
+  yciu. Oto podstawowy przyk\u0142ad: 1.\u2026"
 lastmod: '2024-03-13T22:44:35.046553-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie test\xF3w w Elixirze polega na tworzeniu zautomatyzowanych skrypt\xF3\
-  w w celu weryfikacji zachowania Twojego kodu."
+summary: "Elixir u\u017Cywa ExUnit jako wbudowanego frameworka do test\xF3w, kt\xF3\
+  ry jest niezwykle pot\u0119\u017Cny i \u0142atwy w u\u017Cyciu."
 title: "Pisanie test\xF3w"
 weight: 36
 ---

@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:41.316934-07:00
-description: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta k\xE4sitt\xE4\
-  \xE4 tekstuaalisten p\xE4iv\xE4m\xE4\xE4r\xE4- ja aikamuotojen muuntamisen `Date`-olioksi.\
-  \ T\xE4m\xE4 prosessi on olennainen\u2026"
+description: 'Kuinka: #.'
 lastmod: '2024-03-13T22:44:56.915933-06:00'
 model: gpt-4-0125-preview
-summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta k\xE4sitt\xE4\
-  \xE4 tekstuaalisten p\xE4iv\xE4m\xE4\xE4r\xE4- ja aikamuotojen muuntamisen `Date`-olioksi."
+summary: '#.'
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
 weight: 30
 ---

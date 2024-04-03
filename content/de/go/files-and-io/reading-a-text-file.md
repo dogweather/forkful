@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:10.339057-07:00
-description: "Das Lesen einer Textdatei in Go beinhaltet den Zugriff auf und das Abrufen\
-  \ von Inhalten aus einer auf dem Datentr\xE4ger gespeicherten Datei zur Verarbeitung\u2026"
+description: "Wie geht das: Das Lesen einer Textdatei in Go kann auf mehrere Arten\
+  \ durchgef\xFChrt werden, aber eine der einfachsten Methoden ist die Verwendung\
+  \ des\u2026"
 lastmod: '2024-03-13T22:44:53.306858-06:00'
 model: gpt-4-0125-preview
-summary: "Das Lesen einer Textdatei in Go beinhaltet den Zugriff auf und das Abrufen\
-  \ von Inhalten aus einer auf dem Datentr\xE4ger gespeicherten Datei zur Verarbeitung\
-  \ oder Analyse."
+summary: "Das Lesen einer Textdatei in Go kann auf mehrere Arten durchgef\xFChrt werden,\
+  \ aber eine der einfachsten Methoden ist die Verwendung des `ioutil`-Pakets."
 title: Eine Textdatei lesen
 weight: 22
 ---

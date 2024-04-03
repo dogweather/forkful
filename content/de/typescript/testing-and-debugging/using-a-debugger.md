@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:10:51.168303-07:00
-description: "Um mit einem Debugger in TypeScript durchzustarten, ben\xF6tigen Sie\
-  \ lediglich eine unterst\xFCtzte IDE (wie Visual Studio Code) und eine\u2026"
+description: "Wie geht das: Um mit einem Debugger in TypeScript durchzustarten, ben\xF6\
+  tigen Sie lediglich eine unterst\xFCtzte IDE (wie Visual Studio Code) und eine\u2026"
 lastmod: '2024-03-13T22:44:53.635670-06:00'
 model: gpt-4-0125-preview
 summary: "Um mit einem Debugger in TypeScript durchzustarten, ben\xF6tigen Sie lediglich\
-  \ eine unterst\xFCtzte IDE (wie Visual Studio Code) und eine `launch."
+  \ eine unterst\xFCtzte IDE (wie Visual Studio Code) und eine `launch.json`-Konfiguration."
 title: Einsatz eines Debuggers
 weight: 35
 ---

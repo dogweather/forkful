@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:41:10.956152-07:00
-description: "Remover aspas de uma string geralmente significa descartar marcas de\
-  \ aspas duplas (\") ou simples (') desnecess\xE1rias. Os programadores fazem isso\
-  \ para\u2026"
+description: "Como fazer: O Python oferece v\xE1rias maneiras de se livrar de aspas\
+  \ indesejadas em strings. Vamos passar por alguns exemplos."
 lastmod: '2024-03-13T22:44:46.141914-06:00'
 model: gpt-4-0125-preview
-summary: "Remover aspas de uma string geralmente significa descartar marcas de aspas\
-  \ duplas (\") ou simples (') desnecess\xE1rias."
+summary: "O Python oferece v\xE1rias maneiras de se livrar de aspas indesejadas em\
+  \ strings."
 title: Removendo aspas de uma string
 weight: 9
 ---

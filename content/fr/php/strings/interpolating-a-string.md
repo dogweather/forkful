@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:51:12.090083-07:00
-description: "Interpoler une cha\xEEne de caract\xE8res, c'est y ins\xE9rer des variables\
-  \ directement. On le fait pour simplifier la concat\xE9nation et rendre le code\
-  \ plus lisible."
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:57.863603-06:00'
 model: gpt-4-1106-preview
-summary: "Interpoler une cha\xEEne de caract\xE8res, c'est y ins\xE9rer des variables\
-  \ directement."
+summary: .
 title: "Interpolation de cha\xEEnes de caract\xE8res"
 weight: 8
 ---

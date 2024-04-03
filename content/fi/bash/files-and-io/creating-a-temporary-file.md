@@ -1,13 +1,9 @@
 ---
 date: 2024-01-20 17:39:30.395676-07:00
-description: "Luodaan tilap\xE4isi\xE4 tiedostoja v\xE4liaikaisen datan s\xE4ilytt\xE4\
-  miseen ja sen varmistamiseen, ett\xE4 sovelluksen k\xE4ytt\xE4m\xE4 ymp\xE4rist\xF6\
-  \ pysyy siistin\xE4. Ohjelmoijat\u2026"
+description: "How to: (Kuinka tehd\xE4\xE4n:) ."
 lastmod: '2024-03-13T22:44:56.758061-06:00'
 model: gpt-4-1106-preview
-summary: "Luodaan tilap\xE4isi\xE4 tiedostoja v\xE4liaikaisen datan s\xE4ilytt\xE4\
-  miseen ja sen varmistamiseen, ett\xE4 sovelluksen k\xE4ytt\xE4m\xE4 ymp\xE4rist\xF6\
-  \ pysyy siistin\xE4."
+summary: .
 title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---

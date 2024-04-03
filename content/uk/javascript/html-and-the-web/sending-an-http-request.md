@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 18:00:09.933363-07:00
-description: "Sending an HTTP request is how your JavaScript code asks the internet\
-  \ for data or sends data to a server. We do it to interact with web services, grab\u2026"
+description: "How to: (\u042F\u043A \u0437\u0440\u043E\u0431\u0438\u0442\u0438:) Here's\
+  \ how to send a GET request using the `fetch` API to grab some JSON data and then\
+  \ post data using `fetch`."
 lastmod: '2024-03-13T22:44:49.987942-06:00'
 model: gpt-4-1106-preview
-summary: Sending an HTTP request is how your JavaScript code asks the internet for
-  data or sends data to a server.
+summary: Here's how to send a GET request using the `fetch` API to grab some JSON
+  data and then post data using `fetch`.
 title: "\u041D\u0430\u0434\u0441\u0438\u043B\u0430\u043D\u043D\u044F HTTP-\u0437\u0430\
   \u043F\u0438\u0442\u0443"
 weight: 44

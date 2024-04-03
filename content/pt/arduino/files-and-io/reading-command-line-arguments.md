@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:55:26.040114-07:00
-description: "Ler argumentos da linha de comando \xE9 pegar informa\xE7\xF5es diretamente\
-  \ quando iniciamos um programa. Programadores fazem isso para customizar a execu\xE7\
-  \xE3o do\u2026"
+description: "Como Fazer: Arduino n\xE3o l\xEA argumentos da linha de comando diretamente,\
+  \ pois n\xE3o tem um ambiente de terminal tradicional. Mas podemos simular algo\
+  \ parecido\u2026"
 lastmod: '2024-03-13T22:44:46.854039-06:00'
 model: gpt-4-1106-preview
-summary: "Ler argumentos da linha de comando \xE9 pegar informa\xE7\xF5es diretamente\
-  \ quando iniciamos um programa."
+summary: "Arduino n\xE3o l\xEA argumentos da linha de comando diretamente, pois n\xE3\
+  o tem um ambiente de terminal tradicional."
 title: Lendo argumentos da linha de comando
 weight: 23
 ---

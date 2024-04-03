@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:35.251687-07:00
-description: "Associatieve arrays, vaak bekend als woordenboeken in Visual Basic for\
-  \ Applications (VBA), stellen programmeurs in staat om collecties van sleutel-\u2026"
+description: "Hoe doe je het: In VBA biedt het `Dictionary`-object functionaliteit\
+  \ die vergelijkbaar is met associatieve arrays. Eerst moet je een verwijzing naar\
+  \ de\u2026"
 lastmod: '2024-03-13T22:44:50.629310-06:00'
 model: gpt-4-0125-preview
-summary: "Associatieve arrays, vaak bekend als woordenboeken in Visual Basic for Applications\
-  \ (VBA), stellen programmeurs in staat om collecties van sleutel-waardeparen te\
-  \ cre\xEBren."
+summary: In VBA biedt het `Dictionary`-object functionaliteit die vergelijkbaar is
+  met associatieve arrays.
 title: Gebruik van associatieve arrays
 weight: 15
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:43.003009-07:00
-description: "Il formato Valori Separati da Virgola (CSV) \xE8 ubiquitario per lo\
-  \ scambio di dati a causa della sua semplicit\xE0 e facilit\xE0 di integrazione\
-  \ con la maggior\u2026"
+description: "Come fare: Lavorare con file CSV in Go \xE8 semplice, grazie alla sua\
+  \ libreria standard, `encoding/csv`. Di seguito \xE8 presentato un primo approccio\
+  \ alla\u2026"
 lastmod: '2024-03-13T22:44:42.932426-06:00'
 model: gpt-4-0125-preview
-summary: "Il formato Valori Separati da Virgola (CSV) \xE8 ubiquitario per lo scambio\
-  \ di dati a causa della sua semplicit\xE0 e facilit\xE0 di integrazione con la maggior\
-  \ parte dei linguaggi di programmazione, inclusi Go."
+summary: "Lavorare con file CSV in Go \xE8 semplice, grazie alla sua libreria standard,\
+  \ `encoding/csv`."
 title: Lavorare con CSV
 weight: 37
 ---

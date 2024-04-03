@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:55:49.759452-07:00
-description: "Lire les arguments de la ligne de commande, \xE7a consiste \xE0 r\xE9\
-  cup\xE9rer ce que l'utilisateur tape apr\xE8s le nom de ton script. On fait \xE7\
-  a pour rendre nos\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:58.341127-06:00'
 model: gpt-4-1106-preview
-summary: "Lire les arguments de la ligne de commande, \xE7a consiste \xE0 r\xE9cup\xE9\
-  rer ce que l'utilisateur tape apr\xE8s le nom de ton script."
+summary: .
 title: Lecture des arguments de ligne de commande
 weight: 23
 ---

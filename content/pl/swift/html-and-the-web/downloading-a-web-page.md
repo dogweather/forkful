@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:45:12.233185-07:00
-description: "Pobieranie strony internetowej to proces \u015Bci\u0105gania jej zawarto\u015B\
-  ci do u\u017Cycia po stronie klienta - programu lub aplikacji. Programi\u015Bci\
-  \ robi\u0105 to, aby\u2026"
+description: "Jak to zrobi\u0107: Aby pobra\u0107 stron\u0119 internetow\u0105 w Swift,\
+  \ u\u017Cyjemy URLSession, kt\xF3ry jest cz\u0119\u015Bci\u0105 standardowej biblioteki\
+  \ Foundation. Poni\u017Cej znajdziesz\u2026"
 lastmod: '2024-03-13T22:44:35.753847-06:00'
 model: gpt-4-1106-preview
-summary: "Pobieranie strony internetowej to proces \u015Bci\u0105gania jej zawarto\u015B\
-  ci do u\u017Cycia po stronie klienta - programu lub aplikacji."
+summary: "Aby pobra\u0107 stron\u0119 internetow\u0105 w Swift, u\u017Cyjemy URLSession,\
+  \ kt\xF3ry jest cz\u0119\u015Bci\u0105 standardowej biblioteki Foundation."
 title: Pobieranie strony internetowej
 weight: 42
 ---

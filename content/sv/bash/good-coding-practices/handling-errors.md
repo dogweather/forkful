@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 00:49:33.730980-07:00
-description: "Att hantera fel i Bash-scripting handlar om att f\xF6rutse var saker\
-  \ kan g\xE5 fel och hantera det p\xE5 ett smidigt s\xE4tt. Varf\xF6r? Jo, det h\xE5\
-  ller ditt skript\u2026"
+description: "S\xE5 h\xE4r g\xF6r man: ."
 lastmod: '2024-03-13T22:44:38.089715-06:00'
 model: gpt-4-1106-preview
-summary: "Att hantera fel i Bash-scripting handlar om att f\xF6rutse var saker kan\
-  \ g\xE5 fel och hantera det p\xE5 ett smidigt s\xE4tt."
+summary: .
 title: Hantering av fel
 weight: 16
 ---

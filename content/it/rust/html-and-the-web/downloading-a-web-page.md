@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:44:40.119153-07:00
-description: "Scaricare una pagina web significa prelevare il contenuto che normalmente\
-  \ vediamo nel browser e salvarlo localmente. I programmatori fanno questo per\u2026"
+description: "How to: Per scaricare una pagina web in Rust, useremo il pacchetto `reqwest`,\
+  \ molto popolare e con molte funzionalit\xE0. Prima di tutto, includi `reqwest`\u2026"
 lastmod: '2024-03-13T22:44:43.216907-06:00'
 model: gpt-4-1106-preview
-summary: Scaricare una pagina web significa prelevare il contenuto che normalmente
-  vediamo nel browser e salvarlo localmente.
+summary: "Per scaricare una pagina web in Rust, useremo il pacchetto `reqwest`, molto\
+  \ popolare e con molte funzionalit\xE0."
 title: Scaricare una pagina web
 weight: 42
 ---

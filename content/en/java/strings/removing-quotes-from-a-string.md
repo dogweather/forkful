@@ -1,12 +1,10 @@
 ---
 date: 2024-01-25 20:49:58.976094-07:00
-description: "Removing quotes from a string means stripping out any quotation marks\u2014\
-  single (' '), double (\" \"), or both\u2014from the text data. Programmers do it\
-  \ to\u2026"
+description: 'How to: Let''s yank those pesky quotes out of our text. We''ll use `replace()`
+  method for the quick fixes and regex for the tough nuts to crack.'
 lastmod: '2024-03-13T22:44:59.961748-06:00'
 model: gpt-4-1106-preview
-summary: "Removing quotes from a string means stripping out any quotation marks\u2014\
-  single (' '), double (\" \"), or both\u2014from the text data."
+summary: Let's yank those pesky quotes out of our text.
 title: Removing quotes from a string
 weight: 9
 ---

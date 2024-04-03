@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:52.263272-07:00
-description: "Verificare l'esistenza di una directory significa determinare la presenza\
-  \ di una directory in un percorso specificato prima di eseguire operazioni come\u2026"
+description: "Come fare: Nel C++ moderno (C++17 e versioni successive), puoi utilizzare\
+  \ la libreria filesystem per verificare se una directory esiste. Fornisce un modo\u2026"
 lastmod: '2024-03-13T22:44:43.742110-06:00'
 model: gpt-4-0125-preview
-summary: Verificare l'esistenza di una directory significa determinare la presenza
-  di una directory in un percorso specificato prima di eseguire operazioni come leggere
-  o scrivere file al suo interno.
+summary: Nel C++ moderno (C++17 e versioni successive), puoi utilizzare la libreria
+  filesystem per verificare se una directory esiste.
 title: Verifica se una directory esiste
 weight: 20
 ---

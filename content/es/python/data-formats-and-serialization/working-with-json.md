@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:00.539955-07:00
-description: "Trabajar con JSON (Notaci\xF3n de Objetos de JavaScript) implica parsear\
-  \ cadenas formateadas en JSON a objetos de Python y viceversa. Esto es crucial para\
-  \ el\u2026"
+description: "C\xF3mo hacerlo: La biblioteca integrada `json` de Python simplifica\
+  \ el proceso de codificaci\xF3n (convertir objetos de Python a JSON) y decodificaci\xF3\
+  n\u2026"
 lastmod: '2024-03-13T22:44:58.635687-06:00'
 model: gpt-4-0125-preview
-summary: "Trabajar con JSON (Notaci\xF3n de Objetos de JavaScript) implica parsear\
-  \ cadenas formateadas en JSON a objetos de Python y viceversa."
+summary: "La biblioteca integrada `json` de Python simplifica el proceso de codificaci\xF3\
+  n (convertir objetos de Python a JSON) y decodificaci\xF3n (convertir JSON a objetos\
+  \ de Python)."
 title: Trabajando con JSON
 weight: 38
 ---

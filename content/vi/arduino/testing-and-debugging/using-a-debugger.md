@@ -2,10 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:29.661836-07:00
-description: "V\u1EDBi Arduino IDE, b\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng in ra\
-  \ Serial \u0111\u1EC3 debug, nh\u01B0ng n\xF3 gi\u1ED1ng nh\u01B0 s\u1EED d\u1EE5\
-  ng m\u1ED9t chi\u1EBFc \u0111\xE8n pin \u0111\u1EC3 kh\xE1m ph\xE1 m\u1ED9t hang\
-  \ \u0111\u1ED9ng. \u0110\u1EC3 debug th\u1EF1c s\u1EF1, b\u1EA1n\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: V\u1EDBi Arduino IDE, b\u1EA1n c\xF3 th\u1EC3\
+  \ s\u1EED d\u1EE5ng in ra Serial \u0111\u1EC3 debug, nh\u01B0ng n\xF3 gi\u1ED1ng\
+  \ nh\u01B0 s\u1EED d\u1EE5ng m\u1ED9t chi\u1EBFc \u0111\xE8n pin \u0111\u1EC3 kh\xE1\
+  m ph\xE1 m\u1ED9t hang \u0111\u1ED9ng. \u0110\u1EC3 debug\u2026"
 lastmod: '2024-03-13T22:44:36.994790-06:00'
 model: gpt-4-0125-preview
 summary: "V\u1EDBi Arduino IDE, b\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng in ra Serial\

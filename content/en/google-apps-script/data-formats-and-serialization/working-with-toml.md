@@ -1,11 +1,12 @@
 ---
 date: 2024-02-01 21:12:09.128320-07:00
-description: "TOML, which stands for Tom's Obvious, Minimal Language, is a configuration\
-  \ file format that's easy to read due to its clear semantics. Programmers often\u2026"
+description: "How to: Since Google Apps Script is essentially JavaScript with access\
+  \ to Google's suite of apps, working with TOML directly within Google Apps Script\u2026"
 lastmod: '2024-03-13T22:44:59.691290-06:00'
 model: gpt-4-0125-preview
-summary: TOML, which stands for Tom's Obvious, Minimal Language, is a configuration
-  file format that's easy to read due to its clear semantics.
+summary: Since Google Apps Script is essentially JavaScript with access to Google's
+  suite of apps, working with TOML directly within Google Apps Script requires a bit
+  of ingenuity.
 title: Working with TOML
 weight: 39
 ---

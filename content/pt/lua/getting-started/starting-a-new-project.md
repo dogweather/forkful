@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 18:04:07.457618-07:00
-description: "Iniciar um novo projeto \xE9 como abrir um livro em branco, pronto para\
-  \ ser preenchido com c\xF3digo. Programadores embarcam nessa jornada para resolver\u2026"
+description: "Como Fazer: Primeiro, crie um arquivo chamado `main.lua`. Este \xE9\
+  \ um ponto de partida padr\xE3o para muitos projetos Lua. Veja um exemplo b\xE1\
+  sico de como dar\u2026"
 lastmod: '2024-03-13T22:44:46.709667-06:00'
 model: gpt-4-1106-preview
-summary: "Iniciar um novo projeto \xE9 como abrir um livro em branco, pronto para\
-  \ ser preenchido com c\xF3digo."
+summary: Primeiro, crie um arquivo chamado `main.lua`.
 title: Iniciando um novo projeto
 weight: 1
 ---

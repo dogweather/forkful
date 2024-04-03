@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:52:36.874403-07:00
-description: "Debug-Ausgaben zu drucken ist, als w\xFCrde man unter die Motorhaube\
-  \ des Codes schauen. Entwickler tun dies, um zu verstehen, was w\xE4hrend der Ausf\xFC\
-  hrung\u2026"
+description: "How to: In Fish l\xE4sst sich mit `echo` und `printf` leicht Debug-Output\
+  \ erzeugen. Schnell und schmutzig, hier ein paar Beispiele."
 lastmod: '2024-03-13T22:44:54.312060-06:00'
 model: gpt-4-1106-preview
-summary: "Debug-Ausgaben zu drucken ist, als w\xFCrde man unter die Motorhaube des\
-  \ Codes schauen."
+summary: "In Fish l\xE4sst sich mit `echo` und `printf` leicht Debug-Output erzeugen."
 title: Debug-Ausgaben drucken
 weight: 33
 ---

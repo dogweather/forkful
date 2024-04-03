@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:06.928922-07:00
-description: "Att arbeta med JSON inneb\xE4r att tolka JSON-formaterade str\xE4ngar\
-  \ till datastrukturer som Elixir kan manipulera, och serialisera Elixir datastrukturer\u2026"
+description: "Hur man g\xF6r: I Elixir kan du anv\xE4nda biblioteket `Jason`, ett\
+  \ popul\xE4rt val f\xF6r JSON-tolkning och generering. L\xE4gg f\xF6rst till `Jason`\
+  \ i ditt projekts\u2026"
 lastmod: '2024-03-13T22:44:37.588921-06:00'
 model: gpt-4-0125-preview
-summary: "Att arbeta med JSON inneb\xE4r att tolka JSON-formaterade str\xE4ngar till\
-  \ datastrukturer som Elixir kan manipulera, och serialisera Elixir datastrukturer\
-  \ tillbaka till JSON-str\xE4ngar."
+summary: "I Elixir kan du anv\xE4nda biblioteket `Jason`, ett popul\xE4rt val f\xF6\
+  r JSON-tolkning och generering."
 title: Arbeta med JSON
 weight: 38
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:57:37.860953-07:00
-description: "Searching and replacing text are bread-and-butter for programming; they're\
-  \ essentially finding strings and swapping them out. Programmers do this all the\u2026"
+description: 'How to: In Elixir, you can use the `String` module for quick search-and-replace
+  operations. Here''s how you do it.'
 lastmod: '2024-03-13T22:44:59.769622-06:00'
 model: gpt-4-1106-preview
-summary: Searching and replacing text are bread-and-butter for programming; they're
-  essentially finding strings and swapping them out.
+summary: In Elixir, you can use the `String` module for quick search-and-replace operations.
 title: Searching and replacing text
 weight: 10
 ---

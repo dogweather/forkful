@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:52.501639-07:00
-description: "CSV, de afkorting voor Comma-Separated Values (komma-gescheiden waarden),\
-  \ is een bestandsformaat dat wordt gebruikt om tabelgegevens op te slaan.\u2026"
+description: 'Hoe te: Voeg eerst de benodigde crate toe aan `Cargo.toml`.'
 lastmod: '2024-03-13T22:44:50.616404-06:00'
 model: gpt-4-0125-preview
-summary: CSV, de afkorting voor Comma-Separated Values (komma-gescheiden waarden),
-  is een bestandsformaat dat wordt gebruikt om tabelgegevens op te slaan.
+summary: Voeg eerst de benodigde crate toe aan `Cargo.toml`.
 title: Werken met CSV
 weight: 37
 ---

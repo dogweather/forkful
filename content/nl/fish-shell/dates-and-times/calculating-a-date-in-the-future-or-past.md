@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:28.935075-07:00
-description: "Het berekenen van een toekomstige of verleden datum houdt in dat je\
-  \ met datums speelt om erachter te komen welke dag het was of zal zijn. Programmeurs\u2026"
+description: 'Hoe te: Hier is een coole manier om met datums om te gaan in Fish Shell.'
 lastmod: '2024-03-13T22:44:51.260689-06:00'
 model: gpt-4-0125-preview
-summary: Het berekenen van een toekomstige of verleden datum houdt in dat je met datums
-  speelt om erachter te komen welke dag het was of zal zijn.
+summary: Hier is een coole manier om met datums om te gaan in Fish Shell.
 title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---

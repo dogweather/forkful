@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 18:04:36.633085-07:00
-description: "Rozpocz\u0119cie nowego projektu oznacza stworzenie podstawy kodu, od\
-  \ kt\xF3rego zaczniemy budowa\u0107 nasze aplikacje. Programi\u015Bci robi\u0105\
-  \ to, aby dopracowa\u0107 pomys\u0142 od\u2026"
+description: "How to (Jak to zrobi\u0107): Tworzenie nowego projektu w Lua jest proste.\
+  \ Za\u0142\xF3\u017Cmy, \u017Ce nasz projekt to gra \"Zgadnij Liczb\u0119\". Zacznij\
+  \ od podstawowego pliku\u2026"
 lastmod: '2024-03-13T22:44:35.540670-06:00'
 model: gpt-4-1106-preview
-summary: "Rozpocz\u0119cie nowego projektu oznacza stworzenie podstawy kodu, od kt\xF3\
-  rego zaczniemy budowa\u0107 nasze aplikacje."
+summary: Tworzenie nowego projektu w Lua jest proste.
 title: Rozpoczynanie nowego projektu
 weight: 1
 ---

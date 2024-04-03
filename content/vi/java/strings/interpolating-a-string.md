@@ -2,14 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:29.822816-07:00
-description: "N\u1ED9i suy chu\u1ED7i cho ph\xE9p b\u1EA1n ch\xE8n tr\u1EF1c ti\u1EBF\
-  p c\xE1c bi\u1EBFn v\xE0o trong chu\u1ED7i. \u0110i\u1EC1u n\xE0y l\xE0m cho m\xE3\
-  \ l\u1EC7nh tr\u1EDF n\xEAn g\u1ECDn g\xE0ng v\xE0 d\u1EC5 \u0111\u1ECDc h\u01A1\
-  n b\u1EB1ng c\xE1ch tr\xE1nh vi\u1EC7c n\u1ED1i chu\u1ED7i\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Java gi\u1EDBi thi\u1EC7u `String.format()`\
+  \ cho vi\u1EC7c n\u1ED9i suy."
 lastmod: '2024-03-13T22:44:36.470873-06:00'
 model: gpt-4-0125-preview
-summary: "N\u1ED9i suy chu\u1ED7i cho ph\xE9p b\u1EA1n ch\xE8n tr\u1EF1c ti\u1EBF\
-  p c\xE1c bi\u1EBFn v\xE0o trong chu\u1ED7i."
+summary: "Java gi\u1EDBi thi\u1EC7u `String.format()` cho vi\u1EC7c n\u1ED9i suy."
 title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
 weight: 8
 ---

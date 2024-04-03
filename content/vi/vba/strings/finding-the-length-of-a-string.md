@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:25.245050-07:00
-description: "Vi\u1EC7c t\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i trong\
-  \ Visual Basic for Applications (VBA) li\xEAn quan \u0111\u1EBFn vi\u1EC7c x\xE1\
-  c \u0111\u1ECBnh s\u1ED1 l\u01B0\u1EE3ng k\xFD t\u1EF1 m\xE0 n\xF3 ch\u1EE9a. C\xE1\
-  c l\u1EADp tr\xECnh vi\xEAn\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong VBA, h\xE0m `Len` l\xE0 c\xF4ng c\u1EE5\
+  \ c\u1EE7a b\u1EA1n \u0111\u1EC3 t\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7\
+  i. N\xF3 tr\u1EA3 v\u1EC1 m\u1ED9t s\u1ED1 nguy\xEAn \u0111\u1EA1i di\u1EC7n cho\
+  \ s\u1ED1 l\u01B0\u1EE3ng k\xFD t\u1EF1 trong m\u1ED9t chu\u1ED7i\u2026"
 lastmod: '2024-03-13T22:44:36.420605-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c t\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i trong Visual\
-  \ Basic for Applications (VBA) li\xEAn quan \u0111\u1EBFn vi\u1EC7c x\xE1c \u0111\
-  \u1ECBnh s\u1ED1 l\u01B0\u1EE3ng k\xFD t\u1EF1 m\xE0 n\xF3 ch\u1EE9a."
+summary: "Trong VBA, h\xE0m `Len` l\xE0 c\xF4ng c\u1EE5 c\u1EE7a b\u1EA1n \u0111\u1EC3\
+  \ t\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i."
 title: "T\xECm \u0111\u1ED9 d\xE0i c\u1EE7a chu\u1ED7i"
 weight: 7
 ---

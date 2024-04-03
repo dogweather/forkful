@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:50:35.027186-07:00
-description: "L'interpolation de cha\xEEnes c'est ins\xE9rer des variables ou des\
-  \ expressions dans une cha\xEEne de caract\xE8res. On le fait pour dynamiser les\
-  \ textes et les\u2026"
+description: "How to: En Fish, l'interpolation est simple et directe. Voici comment\
+  \ \xE7a marche."
 lastmod: '2024-03-13T22:44:58.307585-06:00'
 model: gpt-4-1106-preview
-summary: "L'interpolation de cha\xEEnes c'est ins\xE9rer des variables ou des expressions\
-  \ dans une cha\xEEne de caract\xE8res."
+summary: En Fish, l'interpolation est simple et directe.
 title: "Interpolation de cha\xEEnes de caract\xE8res"
 weight: 8
 ---

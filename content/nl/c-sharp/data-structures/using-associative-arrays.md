@@ -2,12 +2,13 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:09.070086-07:00
-description: "Associatieve arrays, of woordenboeken in C#, laten je paren van sleutels\
-  \ en waarden opslaan en beheren. Ze zijn je beste keuze wanneer je snel waarden\u2026"
+description: "Hoe te: In C# werk je met associatieve arrays door gebruik te maken\
+  \ van de `Dictionary<TKey, TValue>` klasse. Hier is een snel voorbeeld om je op\
+  \ weg te\u2026"
 lastmod: '2024-03-13T22:44:50.803014-06:00'
 model: gpt-4-0125-preview
-summary: Associatieve arrays, of woordenboeken in C#, laten je paren van sleutels
-  en waarden opslaan en beheren.
+summary: In C# werk je met associatieve arrays door gebruik te maken van de `Dictionary<TKey,
+  TValue>` klasse.
 title: Gebruik van associatieve arrays
 weight: 15
 ---

@@ -2,17 +2,15 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:23.961653-07:00
-description: "L\xE0m vi\u1EC7c v\u1EDBi JSON (JavaScript Object Notation) bao g\u1ED3\
-  m vi\u1EC7c ph\xE2n t\xEDch c\xFA ph\xE1p d\u1EEF li\u1EC7u JSON t\u1EEB chu\u1ED7\
-  i th\xE0nh c\xE1c \u0111\u1ED1i t\u01B0\u1EE3ng Dart v\xE0 ng\u01B0\u1EE3c l\u1EA1\
-  i, m\u1ED9t nhi\u1EC7m v\u1EE5\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Dart cung c\u1EA5p h\u1ED7 tr\u1EE3 s\u1EB5\
+  n c\xF3 cho JSON v\u1EDBi th\u01B0 vi\u1EC7n `dart:convert`, l\xE0m cho vi\u1EC7\
+  c m\xE3 h\xF3a v\xE0 gi\u1EA3i m\xE3 JSON tr\u1EDF n\xEAn d\u1EC5 d\xE0ng. D\u01B0\
+  \u1EDBi \u0111\xE2y l\xE0 c\xE1c v\xED d\u1EE5\u2026"
 lastmod: '2024-03-13T22:44:36.291280-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m vi\u1EC7c v\u1EDBi JSON (JavaScript Object Notation) bao g\u1ED3\
-  m vi\u1EC7c ph\xE2n t\xEDch c\xFA ph\xE1p d\u1EEF li\u1EC7u JSON t\u1EEB chu\u1ED7\
-  i th\xE0nh c\xE1c \u0111\u1ED1i t\u01B0\u1EE3ng Dart v\xE0 ng\u01B0\u1EE3c l\u1EA1\
-  i, m\u1ED9t nhi\u1EC7m v\u1EE5 ph\u1ED5 bi\u1EBFn trong ph\xE1t tri\u1EC3n web v\xE0\
-  \ \u1EE9ng d\u1EE5ng \u0111\u1EC3 trao \u0111\u1ED5i d\u1EEF li\u1EC7u."
+summary: "Dart cung c\u1EA5p h\u1ED7 tr\u1EE3 s\u1EB5n c\xF3 cho JSON v\u1EDBi th\u01B0\
+  \ vi\u1EC7n `dart:convert`, l\xE0m cho vi\u1EC7c m\xE3 h\xF3a v\xE0 gi\u1EA3i m\xE3\
+  \ JSON tr\u1EDF n\xEAn d\u1EC5 d\xE0ng."
 title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
 weight: 38
 ---

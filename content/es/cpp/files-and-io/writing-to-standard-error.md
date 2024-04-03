@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:34.625519-07:00
-description: "Escribir en el error est\xE1ndar (`stderr`) en C++ implica sacar mensajes\
-  \ de error o diagn\xF3sticos que est\xE1n separados de la salida principal del programa.\u2026"
+description: "C\xF3mo hacerlo: En C++, escribir en el error est\xE1ndar se puede lograr\
+  \ utilizando el flujo `cerr`, que es parte de la biblioteca est\xE1ndar. Aqu\xED\
+  \ hay un\u2026"
 lastmod: '2024-03-13T22:44:59.391256-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir en el error est\xE1ndar (`stderr`) en C++ implica sacar mensajes\
-  \ de error o diagn\xF3sticos que est\xE1n separados de la salida principal del programa."
+summary: "En C++, escribir en el error est\xE1ndar se puede lograr utilizando el flujo\
+  \ `cerr`, que es parte de la biblioteca est\xE1ndar."
 title: "Escribiendo en el error est\xE1ndar"
 weight: 25
 ---

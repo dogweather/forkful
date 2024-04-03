@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:03.591246-07:00
-description: "Att arbeta med komplexa tal i programmering inneb\xE4r att man hanterar\
-  \ tal som har b\xE5de en reell och en imagin\xE4r del, vanligtvis uttryckta som\
-  \ `a + bi`.\u2026"
+description: "Hur: I Go hanteras komplexa tal med hj\xE4lp av de inbyggda funktionerna\
+  \ `complex`, `real`, och `imag`, tillsammans med typerna `complex64` och `complex128`\u2026"
 lastmod: '2024-03-13T22:44:37.385477-06:00'
 model: gpt-4-0125-preview
-summary: "Att arbeta med komplexa tal i programmering inneb\xE4r att man hanterar\
-  \ tal som har b\xE5de en reell och en imagin\xE4r del, vanligtvis uttryckta som\
-  \ `a + bi`."
+summary: "I Go hanteras komplexa tal med hj\xE4lp av de inbyggda funktionerna `complex`,\
+  \ `real`, och `imag`, tillsammans med typerna `complex64` och `complex128` (som\
+  \ representerar 64-bitars och 128-bitars komplexa tal respektive)."
 title: Att arbeta med komplexa tal
 weight: 14
 ---

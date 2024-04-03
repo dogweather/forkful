@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 15:32:56.837266-07:00
-description: "Analisar (parsear) HTML \xE9 o processo de converter c\xF3digo HTML\
-  \ em uma estrutura de dados compreens\xEDvel para a sua aplica\xE7\xE3o. Programadores\
-  \ fazem isso para\u2026"
+description: "Como Fazer: Voc\xEA pode usar a biblioteca `jsoup` para parsear HTML\
+  \ em Kotlin. \xC9 simples e direto ao ponto. Aqui est\xE1 um exemplo."
 lastmod: '2024-03-13T22:44:46.539426-06:00'
 model: unknown
-summary: "Analisar (parsear) HTML \xE9 o processo de converter c\xF3digo HTML em uma\
-  \ estrutura de dados compreens\xEDvel para a sua aplica\xE7\xE3o."
+summary: "Voc\xEA pode usar a biblioteca `jsoup` para parsear HTML em Kotlin."
 title: "An\xE1lise de HTML"
 weight: 43
 ---

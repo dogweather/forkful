@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:41:13.078262-07:00
-description: "Creare un file temporaneo significa generare un file che \xE8 destinato\
-  \ ad essere usato per un breve periodo. I programmatori lo fanno per manipolare\
-  \ dati\u2026"
+description: 'How to: (Come Fare:) Ruby rende semplice la creazione di file temporanei
+  con la libreria `Tempfile`. Ecco un esempio base.'
 lastmod: '2024-03-13T22:44:44.070221-06:00'
 model: gpt-4-1106-preview
-summary: "Creare un file temporaneo significa generare un file che \xE8 destinato\
-  \ ad essere usato per un breve periodo."
+summary: Ruby rende semplice la creazione di file temporanei con la libreria `Tempfile`.
 title: Creazione di un file temporaneo
 weight: 21
 ---

@@ -2,15 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:56.704966-07:00
-description: "T\u1ED5 ch\u1EE9c code th\xE0nh c\xE1c h\xE0m (functions) c\xF3 ngh\u0129\
-  a l\xE0 gom c\xE1c thao t\xE1c li\xEAn quan v\xE0o nh\u1EEFng kh\u1ED1i c\xF3 th\u1EC3\
-  \ t\xE1i s\u1EED d\u1EE5ng. Ch\xFAng ta l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3\
-  \ c\u1EA3i thi\u1EC7n kh\u1EA3\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: H\xE3y c\xF9ng t\u1EA1o m\u1ED9t h\xE0m Elixir\
+  \ \u0111\u01A1n gi\u1EA3n \u0111\u1EC3 vi\u1EBFt hoa c\xE1c t\u1EEB."
 lastmod: '2024-03-13T22:44:36.215582-06:00'
 model: gpt-4-0125-preview
-summary: "T\u1ED5 ch\u1EE9c code th\xE0nh c\xE1c h\xE0m (functions) c\xF3 ngh\u0129\
-  a l\xE0 gom c\xE1c thao t\xE1c li\xEAn quan v\xE0o nh\u1EEFng kh\u1ED1i c\xF3 th\u1EC3\
-  \ t\xE1i s\u1EED d\u1EE5ng."
+summary: "H\xE3y c\xF9ng t\u1EA1o m\u1ED9t h\xE0m Elixir \u0111\u01A1n gi\u1EA3n \u0111\
+  \u1EC3 vi\u1EBFt hoa c\xE1c t\u1EEB."
 title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
 weight: 18
 ---

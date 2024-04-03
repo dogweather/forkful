@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 10:42:57.388533-07:00
-description: "Konkatenacja ci\u0105g\xF3w polega na \u0142\u0105czeniu dw\xF3ch lub\
-  \ wi\u0119cej ci\u0105g\xF3w znak\xF3w, aby utworzy\u0107 jednolity tekst. Mo\u017C\
-  esz potrzebowa\u0107 \u0142\u0105czy\u0107 teksty, generuj\u0105c\u2026"
+description: "Jak to zrobi\u0107: W Elixirze mo\u017Cna \u0142\u0105czy\u0107 ci\u0105\
+  gi znak\xF3w na kilka prostych sposob\xF3w. Oto najcz\u0119stsze metody: 1. U\u017C\
+  ywaj\u0105c operatora `<>`, kt\xF3ry jest najprostsz\u0105\u2026"
 lastmod: '2024-03-13T22:44:35.033511-06:00'
 model: gpt-4-0125-preview
-summary: "Konkatenacja ci\u0105g\xF3w polega na \u0142\u0105czeniu dw\xF3ch lub wi\u0119\
-  cej ci\u0105g\xF3w znak\xF3w, aby utworzy\u0107 jednolity tekst."
+summary: "W Elixirze mo\u017Cna \u0142\u0105czy\u0107 ci\u0105gi znak\xF3w na kilka\
+  \ prostych sposob\xF3w."
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---

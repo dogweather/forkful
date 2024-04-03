@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 03:38:48.693893-07:00
-description: "Remover aspas de uma string significa se livrar daqueles caracteres\
-  \ de aspas duplas ou simples que englobam seu texto. Programadores fazem isso para\u2026"
+description: "Como fazer: Em Clojure, strings s\xE3o imut\xE1veis, ent\xE3o quando\
+  \ falamos sobre \"remover aspas\", estamos realmente falando sobre criar uma nova\
+  \ string sem\u2026"
 lastmod: '2024-03-13T22:44:46.185255-06:00'
 model: gpt-4-0125-preview
-summary: Remover aspas de uma string significa se livrar daqueles caracteres de aspas
-  duplas ou simples que englobam seu texto.
+summary: "Em Clojure, strings s\xE3o imut\xE1veis, ent\xE3o quando falamos sobre \"\
+  remover aspas\", estamos realmente falando sobre criar uma nova string sem aspas."
 title: Removendo aspas de uma string
 weight: 9
 ---

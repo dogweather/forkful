@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 17:51:07.727684-07:00
-description: "String interpolation is a way to embed variables directly within a string.\
-  \ Programmers use it to concatenate variables and strings efficiently, making\u2026"
+description: "How to: In JavaScript, string interpolation is often done using template\
+  \ literals. Here\u2019s how you can do it."
 lastmod: '2024-03-13T22:45:00.420943-06:00'
 model: gpt-4-1106-preview
-summary: String interpolation is a way to embed variables directly within a string.
+summary: In JavaScript, string interpolation is often done using template literals.
 title: Interpolating a string
 weight: 8
 ---

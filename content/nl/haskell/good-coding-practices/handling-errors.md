@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:57.797759-07:00
-description: "Foutenafhandeling in programmeren gaat over het beheren van het onverwachte\u2014\
-  zaken die mis kunnen gaan. Programmeurs doen dit om ervoor te zorgen dat hun\u2026"
+description: 'Hoe: Haskell handelt fouten robuust af door middel van typen zoals `Maybe`
+  en `Either`. Hier is een snelle blik.'
 lastmod: '2024-03-13T22:44:50.859758-06:00'
 model: gpt-4-0125-preview
-summary: "Foutenafhandeling in programmeren gaat over het beheren van het onverwachte\u2014\
-  zaken die mis kunnen gaan."
+summary: Haskell handelt fouten robuust af door middel van typen zoals `Maybe` en
+  `Either`.
 title: Fouten afhandelen
 weight: 16
 ---

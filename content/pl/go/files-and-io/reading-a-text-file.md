@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:11.113478-07:00
-description: "Czytanie pliku tekstowego w Go polega na dost\u0119pie i pobieraniu\
-  \ tre\u015Bci z pliku zapisanego na dysku w celu przetworzenia lub analizy. Programi\u015B\
-  ci cz\u0119sto\u2026"
+description: "Jak to zrobi\u0107: Czytanie pliku tekstowego w Go mo\u017Cna zrealizowa\u0107\
+  \ na kilka sposob\xF3w, ale jedn\u0105 z najprostszych metod jest u\u017Cycie pakietu\
+  \ `ioutil`. Oto\u2026"
 lastmod: '2024-03-13T22:44:34.872299-06:00'
 model: gpt-4-0125-preview
-summary: "Czytanie pliku tekstowego w Go polega na dost\u0119pie i pobieraniu tre\u015B\
-  ci z pliku zapisanego na dysku w celu przetworzenia lub analizy."
+summary: "Czytanie pliku tekstowego w Go mo\u017Cna zrealizowa\u0107 na kilka sposob\xF3\
+  w, ale jedn\u0105 z najprostszych metod jest u\u017Cycie pakietu `ioutil`."
 title: Czytanie pliku tekstowego
 weight: 22
 ---

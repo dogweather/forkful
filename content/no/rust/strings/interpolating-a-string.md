@@ -1,10 +1,9 @@
 ---
 date: 2024-01-20 17:51:31.230358-07:00
-description: "Stringinterpolasjon lar oss flette inn verdier i en streng. Det gj\xF8\
-  r koden mer lesbar og dynamisk, og sparer oss for maset med konstant plussing av\u2026"
+description: "How to: (Slik gj\xF8r du det:) ."
 lastmod: '2024-03-13T22:44:40.560060-06:00'
 model: gpt-4-1106-preview
-summary: Stringinterpolasjon lar oss flette inn verdier i en streng.
+summary: .
 title: Interpolering av en streng
 weight: 8
 ---

@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 03:40:11.030429-07:00
-description: "Att ta bort citationstecken fr\xE5n en str\xE4ng inneb\xE4r att strippa\
-  \ bort alla citattecken\u2014enkla (' '), dubbla (\" \") eller b\xE5da\u2014fr\xE5\
-  n textdata. Programmerare g\xF6r\u2026"
+description: "Hur man g\xF6r: L\xE5t oss rycka bort dessa irriterande citationstecken\
+  \ fr\xE5n v\xE5r text. Vi kommer att anv\xE4nda `replace()`-metoden f\xF6r de snabba\
+  \ \xE5tg\xE4rderna och\u2026"
 lastmod: '2024-03-13T22:44:37.775746-06:00'
 model: gpt-4-0125-preview
-summary: "Att ta bort citationstecken fr\xE5n en str\xE4ng inneb\xE4r att strippa\
-  \ bort alla citattecken\u2014enkla (' '), dubbla (\" \") eller b\xE5da\u2014fr\xE5\
-  n textdata."
+summary: "L\xE5t oss rycka bort dessa irriterande citationstecken fr\xE5n v\xE5r text."
 title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 weight: 9
 ---

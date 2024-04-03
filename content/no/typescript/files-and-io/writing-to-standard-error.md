@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:39.513912-07:00
-description: "I TypeScript er skriving til standardfeil (stderr) en prosess for \xE5\
-  \ sende feilmeldinger eller logger direkte til milj\xF8ets feilutdatastr\xF8m (for\
-  \ eksempel\u2026"
+description: "Hvordan: TypeScript, som er et superset av JavaScript, stoler p\xE5\
+  \ den underliggende JS-runtime-milj\xF8et (som Node.js) for \xE5 skrive til stderr.\
+  \ Slik kan du\u2026"
 lastmod: '2024-03-13T22:44:40.548467-06:00'
 model: gpt-4-0125-preview
-summary: "I TypeScript er skriving til standardfeil (stderr) en prosess for \xE5 sende\
-  \ feilmeldinger eller logger direkte til milj\xF8ets feilutdatastr\xF8m (for eksempel\
-  \ konsollen i node."
+summary: "TypeScript, som er et superset av JavaScript, stoler p\xE5 den underliggende\
+  \ JS-runtime-milj\xF8et (som Node.js) for \xE5 skrive til stderr."
 title: Skriving til standardfeil
 weight: 25
 ---

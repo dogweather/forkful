@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 01:02:00.076068-07:00
-description: "Protokollierung ist im Wesentlichen der Prozess der Aufzeichnung von\
-  \ Ereignissen und Datenausgaben einer Software w\xE4hrend ihres Betriebs \u2013\
-  \ man kann sie\u2026"
+description: "Wie geht das: Elms Architektur unterst\xFCtzt Seiteneffekte wie Protokollierung\
+  \ nicht direkt \u2013 diese werden durch Befehle gehandhabt, die ein Teil der\u2026"
 lastmod: '2024-03-13T22:44:53.811401-06:00'
 model: gpt-4-1106-preview
-summary: "Protokollierung ist im Wesentlichen der Prozess der Aufzeichnung von Ereignissen\
-  \ und Datenausgaben einer Software w\xE4hrend ihres Betriebs \u2013 man kann sie\
-  \ sich wie das Tagebuch der Software vorstellen."
+summary: "Elms Architektur unterst\xFCtzt Seiteneffekte wie Protokollierung nicht\
+  \ direkt \u2013 diese werden durch Befehle gehandhabt, die ein Teil der Architektur\
+  \ Ihrer Anwendung sind."
 title: Protokollierung
 weight: 17
 ---

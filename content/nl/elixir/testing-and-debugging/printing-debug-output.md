@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:31.776699-07:00
-description: "Het afdrukken van debugoutput in Elixir omvat het weergeven van tussentijdse\
-  \ resultaten of variabele waarden in de console. Programmeurs doen dit om\u2026"
+description: 'Hoe doe je dat: .'
 lastmod: '2024-03-13T22:44:50.464734-06:00'
 model: gpt-4-0125-preview
-summary: Het afdrukken van debugoutput in Elixir omvat het weergeven van tussentijdse
-  resultaten of variabele waarden in de console.
+summary: .
 title: Debug-output afdrukken
 weight: 33
 ---

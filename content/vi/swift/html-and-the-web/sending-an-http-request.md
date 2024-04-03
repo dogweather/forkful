@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:30.989014-07:00
-description: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP gi\u1ED1ng nh\u01B0 g\xF5 c\u1EED\
-  a m\u1ED9t m\xE1y ch\u1EE7 web, y\xEAu c\u1EA7u d\u1EEF li\u1EC7u ho\u1EB7c ph\u1EE5\
-  c v\u1EE5 m\u1ED9t s\u1ED1 d\u1EEF li\u1EC7u. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111\
-  i\u1EC1u n\xE0y \u0111\u1EC3 t\u01B0\u01A1ng t\xE1c v\u1EDBi c\xE1c API,\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Swift gi\xFAp vi\u1EC7c g\u1EEDi y\xEA\
+  u c\u1EA7u HTTP tr\u1EDF n\xEAn d\u1EC5 d\xE0ng th\xF4ng qua l\u1EDBp `URLSession`.\
+  \ D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t v\xED d\u1EE5 \u0111\u01A1n gi\u1EA3\
+  n v\u1EC1 y\xEAu c\u1EA7u GET."
 lastmod: '2024-03-13T22:44:37.092522-06:00'
 model: gpt-4-0125-preview
-summary: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP gi\u1ED1ng nh\u01B0 g\xF5 c\u1EED\
-  a m\u1ED9t m\xE1y ch\u1EE7 web, y\xEAu c\u1EA7u d\u1EEF li\u1EC7u ho\u1EB7c ph\u1EE5\
-  c v\u1EE5 m\u1ED9t s\u1ED1 d\u1EEF li\u1EC7u."
+summary: "Swift gi\xFAp vi\u1EC7c g\u1EEDi y\xEAu c\u1EA7u HTTP tr\u1EDF n\xEAn d\u1EC5\
+  \ d\xE0ng th\xF4ng qua l\u1EDBp `URLSession`."
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
 weight: 44
 ---

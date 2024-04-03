@@ -1,10 +1,12 @@
 ---
 date: 2024-01-26 04:42:27.788166-07:00
-description: "Komplexa tal \xE4r tal med en reell och en imagin\xE4r del (som 3 +\
-  \ 4i). De dyker upp i olika programmeringsproblem, s\xE4rskilt inom signalbehandling,\u2026"
+description: "Hur man g\xF6r: JavaScript har inte inbyggt st\xF6d f\xF6r komplexa\
+  \ tal, men du kan kavla upp \xE4rmarna och hantera det med objekt och matematik.\
+  \ H\xE4r \xE4r en\u2026"
 lastmod: '2024-03-13T22:44:38.287437-06:00'
 model: gpt-4-0125-preview
-summary: "Komplexa tal \xE4r tal med en reell och en imagin\xE4r del (som 3 + 4i)."
+summary: "JavaScript har inte inbyggt st\xF6d f\xF6r komplexa tal, men du kan kavla\
+  \ upp \xE4rmarna och hantera det med objekt och matematik."
 title: Att arbeta med komplexa tal
 weight: 14
 ---

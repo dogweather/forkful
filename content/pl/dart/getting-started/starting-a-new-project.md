@@ -2,13 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:36.738915-07:00
-description: "Rozpocz\u0119cie nowego projektu w Dart wymaga przygotowania \u015B\
-  rodowiska sprzyjaj\u0105cego efektywnej pracy, testowaniu i wdra\u017Caniu. Programi\u015B\
-  ci inicjuj\u0105 nowe\u2026"
+description: "Jak to zrobi\u0107: 1. **Zainstaluj Dart**: Upewnij si\u0119, \u017C\
+  e Dart jest zainstalowany na Twoim systemie. Je\u015Bli nie, mo\u017Cesz go pobra\u0107\
+  \ z [https://dart.dev/get-\u2026"
 lastmod: '2024-03-13T22:44:35.092180-06:00'
 model: gpt-4-0125-preview
-summary: "Rozpocz\u0119cie nowego projektu w Dart wymaga przygotowania \u015Brodowiska\
-  \ sprzyjaj\u0105cego efektywnej pracy, testowaniu i wdra\u017Caniu."
+summary: '1.'
 title: "Rozpocz\u0119cie nowego projektu"
 weight: 1
 ---

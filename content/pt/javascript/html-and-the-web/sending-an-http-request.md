@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 18:00:15.021493-07:00
-description: "Enviar uma requisi\xE7\xE3o HTTP \xE9 o processo de solicitar ou enviar\
-  \ dados a um servidor web. Programadores fazem isso para interagir com APIs, recuperar\
-  \ dados\u2026"
+description: "Como Fazer: Vamos usar o `fetch`, que \xE9 uma forma moderna e f\xE1\
+  cil de enviar requisi\xE7\xF5es HTTP em JavaScript."
 lastmod: '2024-03-13T22:44:46.959494-06:00'
 model: gpt-4-1106-preview
-summary: "Enviar uma requisi\xE7\xE3o HTTP \xE9 o processo de solicitar ou enviar\
-  \ dados a um servidor web."
+summary: "Vamos usar o `fetch`, que \xE9 uma forma moderna e f\xE1cil de enviar requisi\xE7\
+  \xF5es HTTP em JavaScript."
 title: "Enviando uma requisi\xE7\xE3o HTTP"
 weight: 44
 ---

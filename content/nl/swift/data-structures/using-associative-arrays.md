@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:13:53.493137-07:00
-description: "Associatieve arrays, bekend als woordenboeken in Swift, laten je gegevens\
-  \ opslaan en beheren als sleutel-waarde paren. Programmeurs gebruiken ze om\u2026"
+description: "Hoe te: Swift maakt werken met associatieve arrays eenvoudig. Hier is\
+  \ hoe je items kunt declareren, toevoegen, verwijderen en toegang krijgen in een\u2026"
 lastmod: '2024-03-13T22:44:51.149314-06:00'
 model: gpt-4-0125-preview
-summary: Associatieve arrays, bekend als woordenboeken in Swift, laten je gegevens
-  opslaan en beheren als sleutel-waarde paren.
+summary: Swift maakt werken met associatieve arrays eenvoudig.
 title: Gebruik van associatieve arrays
 weight: 15
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:46:04.790649-07:00
-description: "\xC5 hente ut delstrenger betyr \xE5 plukke ut spesifikke deler av en\
-  \ tekststreng. Programmerere gj\xF8r dette for \xE5 manipulere, analysere eller\
-  \ transformere data\u2026"
+description: "Slik gj\xF8r du: I Haskell, brukes ofte `take`, `drop`, og `substring`\
+  \ funksjoner fra `Data.Text` biblioteket for \xE5 h\xE5ndtere strenger."
 lastmod: '2024-03-13T22:44:40.829861-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 hente ut delstrenger betyr \xE5 plukke ut spesifikke deler av en tekststreng."
+summary: "I Haskell, brukes ofte `take`, `drop`, og `substring` funksjoner fra `Data.Text`\
+  \ biblioteket for \xE5 h\xE5ndtere strenger."
 title: Uthenting av delstrenger
 weight: 6
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 15:34:10.927158-07:00
-description: "Parsear HTML es el proceso de convertir texto HTML en una estructura\
-  \ de datos comprensible y manipulable por programas. Los programadores lo hacen\
+description: "C\xF3mo Hacerlo: Digamos que quieres extraer todos los enlaces de una\
+  \ p\xE1gina web. Usando TypeScript, puedes emplear librer\xEDas como `node-html-parser`\
   \ para\u2026"
 lastmod: '2024-03-13T22:44:58.798217-06:00'
 model: unknown
-summary: Parsear HTML es el proceso de convertir texto HTML en una estructura de datos
-  comprensible y manipulable por programas.
+summary: "Digamos que quieres extraer todos los enlaces de una p\xE1gina web."
 title: "An\xE1lisis de HTML"
 weight: 43
 ---

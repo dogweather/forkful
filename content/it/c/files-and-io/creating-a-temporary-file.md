@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:08.867665-07:00
-description: "Creare un file temporaneo in C comporta la generazione di un file destinato\
-  \ a essere utilizzato per una breve durata, solitamente come spazio temporaneo\u2026"
+description: "Come fare: Creare un file temporaneo nel linguaggio di programmazione\
+  \ C pu\xF2 sfruttare funzioni come `tmpfile()` e `mkstemp()`. **Usare `tmpfile()`**:\u2026"
 lastmod: '2024-03-13T22:44:44.025154-06:00'
 model: gpt-4-0125-preview
-summary: Creare un file temporaneo in C comporta la generazione di un file destinato
-  a essere utilizzato per una breve durata, solitamente come spazio temporaneo per
-  l'elaborazione o la memorizzazione dei dati.
+summary: "Creare un file temporaneo nel linguaggio di programmazione C pu\xF2 sfruttare\
+  \ funzioni come `tmpfile()` e `mkstemp()`."
 title: Creazione di un file temporaneo
 weight: 21
 ---

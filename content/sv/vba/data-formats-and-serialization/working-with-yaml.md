@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:07:10.416028-07:00
-description: "YAML, som st\xE5r f\xF6r \"YAML Ain't Markup Language\", \xE4r ett l\xE4\
-  sligt dataserialiseringspr\xE5k som ofta anv\xE4nds f\xF6r konfigurationsfiler.\
-  \ Programmerare anv\xE4nder\u2026"
+description: "Hur man g\xF6r: Att arbeta med YAML i VBA kr\xE4ver f\xF6rst\xE5else\
+  \ f\xF6r hur man tolkar och konverterar YAML till ett format som VBA l\xE4tt kan\
+  \ hantera, vanligtvis\u2026"
 lastmod: '2024-03-13T22:44:37.765377-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, som st\xE5r f\xF6r \"YAML Ain't Markup Language\", \xE4r ett l\xE4\
-  sligt dataserialiseringspr\xE5k som ofta anv\xE4nds f\xF6r konfigurationsfiler."
+summary: "Att arbeta med YAML i VBA kr\xE4ver f\xF6rst\xE5else f\xF6r hur man tolkar\
+  \ och konverterar YAML till ett format som VBA l\xE4tt kan hantera, vanligtvis dictionaries\
+  \ eller samlingar."
 title: Att Arbeta med YAML
 weight: 41
 ---

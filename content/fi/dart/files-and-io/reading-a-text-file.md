@@ -2,13 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:33.570475-07:00
-description: "Tekstitiedoston lukeminen Dartilla tarkoittaa tiedostojen tietojen k\xE4\
-  ytt\xE4mist\xE4 ja hakemista tiedostoj\xE4rjestelm\xE4st\xE4. Ohjelmoijat tekev\xE4\
-  t t\xE4m\xE4n\u2026"
+description: "Kuinka: Dartin ydinkirjasto, `dart:io`, tarjoaa tarvittavat toiminnot\
+  \ tekstitiedostojen lukemiseen synkronisesti tai asynkronisesti. T\xE4ss\xE4 on,\
+  \ miten\u2026"
 lastmod: '2024-03-13T22:44:56.290332-06:00'
 model: gpt-4-0125-preview
-summary: "Tekstitiedoston lukeminen Dartilla tarkoittaa tiedostojen tietojen k\xE4\
-  ytt\xE4mist\xE4 ja hakemista tiedostoj\xE4rjestelm\xE4st\xE4."
+summary: Dartin ydinkirjasto, `dart:io`, tarjoaa tarvittavat toiminnot tekstitiedostojen
+  lukemiseen synkronisesti tai asynkronisesti.
 title: Tekstitiedoston lukeminen
 weight: 22
 ---

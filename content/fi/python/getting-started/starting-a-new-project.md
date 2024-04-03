@@ -3,13 +3,10 @@ changelog:
 - 2024-02-22, dogweather, reviewed
 - 2024-02-22, gpt-4-0125-preview, translated from English
 date: 2024-02-22 17:30:29.394060-07:00
-description: "Uuden projektin aloittaminen Pythonilla tarkoittaa rakenteellisen, yll\xE4\
-  pidett\xE4v\xE4n kehyksen pystytt\xE4mist\xE4 alusta alkaen. Ohjelmoijat tekev\xE4\
-  t n\xE4in\u2026"
+description: 'Kuinka: #.'
 lastmod: '2024-03-13T22:44:56.144296-06:00'
 model: gpt-4-0125-preview
-summary: "Uuden projektin aloittaminen Pythonilla tarkoittaa rakenteellisen, yll\xE4\
-  pidett\xE4v\xE4n kehyksen pystytt\xE4mist\xE4 alusta alkaen."
+summary: '#.'
 title: Uuden projektin aloittaminen
 weight: 1
 ---

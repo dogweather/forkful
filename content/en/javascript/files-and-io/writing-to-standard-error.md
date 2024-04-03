@@ -1,13 +1,12 @@
 ---
 date: 2024-02-03 19:03:32.441454-07:00
-description: "Writing to standard error (stderr) in JavaScript is about directing\
-  \ error messages or any critical information to a specific, separate stream, which\
-  \ is\u2026"
+description: "How to: In Node.js, writing to stderr can be accomplished using the\
+  \ `console.error()` method or by writing directly to `process.stderr`. Here are\
+  \ examples\u2026"
 lastmod: '2024-03-13T22:45:00.449112-06:00'
 model: gpt-4-0125-preview
-summary: Writing to standard error (stderr) in JavaScript is about directing error
-  messages or any critical information to a specific, separate stream, which is especially
-  useful in Unix-like environments for logging and debugging purposes.
+summary: In Node.js, writing to stderr can be accomplished using the `console.error()`
+  method or by writing directly to `process.stderr`.
 title: Writing to standard error
 weight: 25
 ---

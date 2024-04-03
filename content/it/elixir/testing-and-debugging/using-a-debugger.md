@@ -1,7 +1,7 @@
 ---
 date: 2024-01-26 03:48:21.142169-07:00
-description: "Elixir viene fornito con un debugger grafico integrato chiamato `:debugger`.\
-  \ Per usarlo, \xE8 necessario avviarlo e collegarsi al processo in esecuzione.\u2026"
+description: "Come fare: Elixir viene fornito con un debugger grafico integrato chiamato\
+  \ `:debugger`. Per usarlo, \xE8 necessario avviarlo e collegarsi al processo in\u2026"
 lastmod: '2024-03-13T22:44:43.087889-06:00'
 model: gpt-4-0125-preview
 summary: Elixir viene fornito con un debugger grafico integrato chiamato `:debugger`.

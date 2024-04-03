@@ -1,12 +1,10 @@
 ---
 date: 2024-03-08 21:33:21.816762-07:00
-description: "Checking if a directory exists in Dart is about verifying the presence\
-  \ of a directory at a specified path on the file system before performing operations\u2026"
+description: 'How to: Dart uses the `dart:io` library to work with files and directories.
+  Here is a simple way to check if a directory exists.'
 lastmod: '2024-03-13T22:44:59.833602-06:00'
 model: gpt-4-0125-preview
-summary: Checking if a directory exists in Dart is about verifying the presence of
-  a directory at a specified path on the file system before performing operations
-  like reading or writing files.
+summary: Dart uses the `dart:io` library to work with files and directories.
 title: Checking if a directory exists
 weight: 20
 ---

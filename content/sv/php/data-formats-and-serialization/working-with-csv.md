@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:10.995563-07:00
-description: "Att arbeta med CSV (Comma-Separated Values - kommaavgr\xE4nsade v\xE4\
-  rden) inneb\xE4r att l\xE4sa fr\xE5n och skriva data till CSV-filer, ett popul\xE4\
-  rt format f\xF6r att\u2026"
+description: "Hur g\xF6r man: PHP erbjuder inbyggda funktioner f\xF6r att hantera\
+  \ CSV-filer, vilket g\xF6r det enkelt att l\xE4sa fr\xE5n och skriva till dessa\
+  \ filer utan att beh\xF6va\u2026"
 lastmod: '2024-03-13T22:44:38.018776-06:00'
 model: gpt-4-0125-preview
-summary: "Att arbeta med CSV (Comma-Separated Values - kommaavgr\xE4nsade v\xE4rden)\
-  \ inneb\xE4r att l\xE4sa fr\xE5n och skriva data till CSV-filer, ett popul\xE4rt\
-  \ format f\xF6r att representera tabelldata i klartext."
+summary: "PHP erbjuder inbyggda funktioner f\xF6r att hantera CSV-filer, vilket g\xF6\
+  r det enkelt att l\xE4sa fr\xE5n och skriva till dessa filer utan att beh\xF6va\
+  \ tredjepartsbibliotek."
 title: Arbeta med CSV
 weight: 37
 ---

@@ -1,11 +1,9 @@
 ---
 date: 2024-01-25 02:59:53.827268-07:00
-description: "Splitting code into functions means breaking down scripts into smaller,\
-  \ reusable blocks that do specific tasks. It makes the code cleaner, more\u2026"
+description: 'How to: Create a simple function in Bash.'
 lastmod: '2024-03-13T22:45:00.249723-06:00'
 model: gpt-4-1106-preview
-summary: Splitting code into functions means breaking down scripts into smaller, reusable
-  blocks that do specific tasks.
+summary: Create a simple function in Bash.
 title: Organizing code into functions
 weight: 18
 ---

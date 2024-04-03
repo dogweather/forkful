@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:30.233986-07:00
-description: "Een string kapitaliseren betekent het wijzigen van de eerste letter\
-  \ van elk woord naar een hoofdletter. Programmeurs doen dit voor opmaak, consistentie\
-  \ en\u2026"
+description: 'Hoe te: In Bash kun je strings op verschillende manieren kapitaliseren.
+  Hier is een klassieke aanpak met `awk`.'
 lastmod: '2024-03-13T22:44:50.962414-06:00'
 model: gpt-4-0125-preview
-summary: Een string kapitaliseren betekent het wijzigen van de eerste letter van elk
-  woord naar een hoofdletter.
+summary: In Bash kun je strings op verschillende manieren kapitaliseren.
 title: Een string met hoofdletters maken
 weight: 2
 ---

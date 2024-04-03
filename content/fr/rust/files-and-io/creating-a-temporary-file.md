@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:41:18.659281-07:00
-description: "Cr\xE9er un fichier temporaire, c'est une fa\xE7on d'avoir un stockage\
-  \ \xE9ph\xE9m\xE8re pendant l'ex\xE9cution d'un programme. Les programmeurs le font\
-  \ pour manipuler des\u2026"
+description: "How to: Rust a le crate `tempfile` pour simplifier la cr\xE9ation de\
+  \ fichiers temporaires. Voici comment l'utiliser ."
 lastmod: '2024-03-13T22:44:57.513515-06:00'
 model: gpt-4-1106-preview
-summary: "Cr\xE9er un fichier temporaire, c'est une fa\xE7on d'avoir un stockage \xE9\
-  ph\xE9m\xE8re pendant l'ex\xE9cution d'un programme."
+summary: "Rust a le crate `tempfile` pour simplifier la cr\xE9ation de fichiers temporaires."
 title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---

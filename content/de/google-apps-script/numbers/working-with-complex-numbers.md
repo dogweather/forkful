@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:07:32.608222-07:00
-description: "Komplexe Zahlen, die als Kombination aus reellen und imagin\xE4ren Einheiten\
-  \ dargestellt werden (z.B. 3 + 4i), sind grundlegend f\xFCr verschiedene\u2026"
+description: "Wie: Google Apps Script bietet keine integrierte Unterst\xFCtzung f\xFC\
+  r komplexe Zahlen, was die Implementierung von benutzerdefinierten Funktionalit\xE4\
+  ten\u2026"
 lastmod: '2024-03-13T22:44:53.327236-06:00'
 model: gpt-4-0125-preview
-summary: "Komplexe Zahlen, die als Kombination aus reellen und imagin\xE4ren Einheiten\
-  \ dargestellt werden (z."
+summary: "Google Apps Script bietet keine integrierte Unterst\xFCtzung f\xFCr komplexe\
+  \ Zahlen, was die Implementierung von benutzerdefinierten Funktionalit\xE4ten erforderlich\
+  \ macht."
 title: Arbeiten mit komplexen Zahlen
 weight: 14
 ---

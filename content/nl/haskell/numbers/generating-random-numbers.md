@@ -2,12 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:06.560271-07:00
-description: "Het genereren van willekeurige getallen in Haskell houdt in dat er getallen\
-  \ worden gecre\xEBerd die onvoorspelbaar zijn volgens menselijke normen. Dit is\u2026"
+description: "Hoe: Om willekeurige getallen te genereren in Haskell, gebruikt men\
+  \ typisch het `random` pakket, dat deel uitmaakt van het Haskell Platform. Hier\
+  \ is een\u2026"
 lastmod: '2024-03-13T22:44:50.848132-06:00'
 model: gpt-4-0125-preview
-summary: "Het genereren van willekeurige getallen in Haskell houdt in dat er getallen\
-  \ worden gecre\xEBerd die onvoorspelbaar zijn volgens menselijke normen."
+summary: Om willekeurige getallen te genereren in Haskell, gebruikt men typisch het
+  `random` pakket, dat deel uitmaakt van het Haskell Platform.
 title: Willekeurige getallen genereren
 weight: 12
 ---

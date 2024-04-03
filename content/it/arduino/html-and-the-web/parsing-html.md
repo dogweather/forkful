@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:28.327330-07:00
-description: "L'analisi di HTML nei progetti Arduino riguarda l'estrazione di informazioni\
-  \ dalle pagine web. I programmatori fanno ci\xF2 per consentire ai loro\u2026"
+description: "Come fare: L'analisi di HTML su Arduino di solito richiede librerie\
+  \ di piccole dimensioni a causa delle limitate risorse del dispositivo. Una scelta\u2026"
 lastmod: '2024-03-13T22:44:43.681527-06:00'
 model: gpt-4-0125-preview
-summary: L'analisi di HTML nei progetti Arduino riguarda l'estrazione di informazioni
-  dalle pagine web.
+summary: L'analisi di HTML su Arduino di solito richiede librerie di piccole dimensioni
+  a causa delle limitate risorse del dispositivo.
 title: Analisi del HTML
 weight: 43
 ---

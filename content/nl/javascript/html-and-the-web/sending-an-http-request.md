@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:34.109744-07:00
-description: "Het verzenden van een HTTP-verzoek is hoe je JavaScript-code met een\
-  \ server communiceert. Dit wordt gedaan om gegevens uit te wisselen, bronnen op\
-  \ te\u2026"
+description: 'Hoe: JavaScript gebruikt de `fetch` API voor het verzenden van verzoeken.
+  Hier is hoe je een eenvoudig GET-verzoek doet.'
 lastmod: '2024-03-13T22:44:51.198117-06:00'
 model: gpt-4-0125-preview
-summary: Het verzenden van een HTTP-verzoek is hoe je JavaScript-code met een server
-  communiceert.
+summary: JavaScript gebruikt de `fetch` API voor het verzenden van verzoeken.
 title: Een HTTP-verzoek verzenden
 weight: 44
 ---

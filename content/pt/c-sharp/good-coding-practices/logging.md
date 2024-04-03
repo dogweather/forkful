@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:01:19.142651-07:00
-description: "Logging (registro de logs) \xE9 o processo de gravar os eventos da aplica\xE7\
-  \xE3o e a sa\xEDda de dados durante a execu\xE7\xE3o. Programadores realizam registros\
-  \ de logs\u2026"
+description: "Como fazer: Em C#, voc\xEA pode usar o espa\xE7o de nome integrado `System.Diagnostics`\
+  \ ou bibliotecas de terceiros como NLog ou log4net. Aqui est\xE1 um exemplo\u2026"
 lastmod: '2024-03-13T22:44:46.590419-06:00'
 model: gpt-4-1106-preview
-summary: "Logging (registro de logs) \xE9 o processo de gravar os eventos da aplica\xE7\
-  \xE3o e a sa\xEDda de dados durante a execu\xE7\xE3o."
+summary: "Em C#, voc\xEA pode usar o espa\xE7o de nome integrado `System.Diagnostics`\
+  \ ou bibliotecas de terceiros como NLog ou log4net."
 title: Registro de Logs
 weight: 17
 ---

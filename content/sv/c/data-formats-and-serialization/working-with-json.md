@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:59.592673-07:00
-description: "Att arbeta med JSON (JavaScript Object Notation) i C inneb\xE4r att\
-  \ tolka, generera och hantera JSON-datatstrukturer. Programmerare g\xF6r detta f\xF6\
-  r att\u2026"
+description: "Hur man g\xF6r: F\xF6r att arbeta med JSON i C kommer du vanligen att\
+  \ anv\xE4nda ett bibliotek som `jansson` eller `json-c` p\xE5 grund av C:s brist\
+  \ p\xE5 inbyggt st\xF6d\u2026"
 lastmod: '2024-03-13T22:44:38.406956-06:00'
 model: gpt-4-0125-preview
-summary: "Att arbeta med JSON (JavaScript Object Notation) i C inneb\xE4r att tolka,\
-  \ generera och hantera JSON-datatstrukturer."
+summary: "F\xF6r att arbeta med JSON i C kommer du vanligen att anv\xE4nda ett bibliotek\
+  \ som `jansson` eller `json-c` p\xE5 grund av C:s brist p\xE5 inbyggt st\xF6d f\xF6\
+  r JSON."
 title: Att Arbeta med JSON
 weight: 38
 ---

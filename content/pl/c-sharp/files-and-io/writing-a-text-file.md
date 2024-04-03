@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:39.528908-07:00
-description: "Pisanie pliku tekstowego w C# wi\u0105\u017Ce si\u0119 z programowym\
-  \ tworzeniem lub modyfikowaniem plik\xF3w tekstowych w systemie plik\xF3w - podstawowym\
-  \ zadaniem dla wielu\u2026"
+description: "Jak to zrobi\u0107: C# u\u0142atwia operacje na plikach dzi\u0119ki\
+  \ przestrzeni nazw `System.IO`, oferuj\u0105cej proste metody do pisania plik\xF3\
+  w tekstowych. Oto jak napisa\u0107\u2026"
 lastmod: '2024-03-13T22:44:35.427183-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie pliku tekstowego w C# wi\u0105\u017Ce si\u0119 z programowym tworzeniem\
-  \ lub modyfikowaniem plik\xF3w tekstowych w systemie plik\xF3w - podstawowym zadaniem\
-  \ dla wielu aplikacji, takich jak logowanie, eksport danych czy zarz\u0105dzanie\
-  \ konfiguracj\u0105."
+summary: "C# u\u0142atwia operacje na plikach dzi\u0119ki przestrzeni nazw `System.IO`,\
+  \ oferuj\u0105cej proste metody do pisania plik\xF3w tekstowych."
 title: Pisanie pliku tekstowego
 weight: 24
 ---

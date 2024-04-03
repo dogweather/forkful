@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:57.759704-07:00
-description: "Het CSV-formaat (Comma-Separated Values) is alomtegenwoordig voor gegevensuitwisseling\
-  \ vanwege zijn eenvoud en gemak van integratie met de meeste\u2026"
+description: "Hoe: Werken met CSV-bestanden in Go is eenvoudig, dankzij de standaardbibliotheek,\
+  \ `encoding/csv`. Hieronder volgt een inleiding over het lezen en\u2026"
 lastmod: '2024-03-13T22:44:50.310299-06:00'
 model: gpt-4-0125-preview
-summary: Het CSV-formaat (Comma-Separated Values) is alomtegenwoordig voor gegevensuitwisseling
-  vanwege zijn eenvoud en gemak van integratie met de meeste programmeertalen, inclusief
-  Go.
+summary: Werken met CSV-bestanden in Go is eenvoudig, dankzij de standaardbibliotheek,
+  `encoding/csv`.
 title: Werken met CSV
 weight: 37
 ---

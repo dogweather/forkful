@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:39:41.315361-07:00
-description: "Convertire una stringa in minuscolo significa semplicemente trasformare\
-  \ tutti i caratteri di una stringa in lettere minuscole. I programmatori lo fanno\u2026"
+description: 'How to: Ecco come si fa in Swift.'
 lastmod: '2024-03-13T22:44:43.757630-06:00'
 model: gpt-4-1106-preview
-summary: Convertire una stringa in minuscolo significa semplicemente trasformare tutti
-  i caratteri di una stringa in lettere minuscole.
+summary: Ecco come si fa in Swift.
 title: Conversione di una stringa in minuscolo
 weight: 4
 ---

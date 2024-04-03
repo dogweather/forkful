@@ -2,15 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:59.620711-07:00
-description: "\u0110\u1ECDc HTML l\xE0 h\xE0nh \u0111\u1ED9ng bi\u1EBFn m\u1ED9t chu\u1ED7\
-  i HTML th\xE0nh m\u1ED9t c\u1EA5u tr\xFAc d\u1EEF li\u1EC7u m\xE0 ch\u01B0\u01A1\
-  ng tr\xECnh c\u1EE7a b\u1EA1n c\xF3 th\u1EC3 hi\u1EC3u v\xE0 thao t\xE1c. L\u1EAD\
-  p tr\xECnh vi\xEAn l\xE0m vi\u1EC7c n\xE0y \u0111\u1EC3 t\u01B0\u01A1ng\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EC3 \u0111\u1ECDc HTML trong Clojure,\
+  \ ch\xFAng t\xF4i s\u1EED d\u1EE5ng th\u01B0 vi\u1EC7n `clj-tagsoup`, m\u1ED9t b\u1ED9\
+  \ b\u1ECDc cho th\u01B0 vi\u1EC7n Tagsoup Java r\u1EA5t ti\u1EC7n l\u1EE3i \u0111\
+  \u1EC3 \u0111\u1ECDc HTML th\u1EF1c t\u1EBF.\u2026"
 lastmod: '2024-03-13T22:44:36.150135-06:00'
 model: gpt-4-0125-preview
-summary: "\u0110\u1ECDc HTML l\xE0 h\xE0nh \u0111\u1ED9ng bi\u1EBFn m\u1ED9t chu\u1ED7\
-  i HTML th\xE0nh m\u1ED9t c\u1EA5u tr\xFAc d\u1EEF li\u1EC7u m\xE0 ch\u01B0\u01A1\
-  ng tr\xECnh c\u1EE7a b\u1EA1n c\xF3 th\u1EC3 hi\u1EC3u v\xE0 thao t\xE1c."
+summary: "\u0110\u1EC3 \u0111\u1ECDc HTML trong Clojure, ch\xFAng t\xF4i s\u1EED d\u1EE5\
+  ng th\u01B0 vi\u1EC7n `clj-tagsoup`, m\u1ED9t b\u1ED9 b\u1ECDc cho th\u01B0 vi\u1EC7\
+  n Tagsoup Java r\u1EA5t ti\u1EC7n l\u1EE3i \u0111\u1EC3 \u0111\u1ECDc HTML th\u1EF1\
+  c t\u1EBF."
 title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---

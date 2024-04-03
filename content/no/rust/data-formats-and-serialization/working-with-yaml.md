@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:54.461809-07:00
-description: "I Rust-programmering handler det \xE5 arbeide med YAML (YAML Ain't Markup\
-  \ Language) om \xE5 analysere og generere data i YAML-format, en menneskevennlig\u2026"
+description: "Hvordan: Rust st\xF8tter ikke YAML i sitt standardbibliotek, s\xE5 vi\
+  \ bruker vanligvis tredjepartsbiblioteker som `serde` (for serialisering og deserialisering\u2026"
 lastmod: '2024-03-13T22:44:40.594313-06:00'
 model: gpt-4-0125-preview
-summary: "I Rust-programmering handler det \xE5 arbeide med YAML (YAML Ain't Markup\
-  \ Language) om \xE5 analysere og generere data i YAML-format, en menneskevennlig\
-  \ standard for dataserielisering."
+summary: "Rust st\xF8tter ikke YAML i sitt standardbibliotek, s\xE5 vi bruker vanligvis\
+  \ tredjepartsbiblioteker som `serde` (for serialisering og deserialisering av data)\
+  \ i kombinasjon med `serde_yaml`."
 title: Arbeider med YAML
 weight: 41
 ---

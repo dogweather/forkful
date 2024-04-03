@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 01:10:10.997260-07:00
-description: "\xC5 dele opp koden i funksjoner betyr at du hugger koden din opp i\
-  \ mindre, gjenbrukbare deler. Vi gj\xF8r det for \xE5 unng\xE5 gjentagelser, gj\xF8\
-  re koden v\xE5r lesbar,\u2026"
+description: "Hvordan: La oss ta en vanlig oppgave: \xE5 beregne arealet av en sirkel.\
+  \ I stedet for \xE5 skrive samme formel hver gang, kapsler vi den inn i en funksjon."
 lastmod: '2024-03-13T22:44:41.105450-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 dele opp koden i funksjoner betyr at du hugger koden din opp i mindre,\
-  \ gjenbrukbare deler."
+summary: La oss ta en vanlig oppgave.
 title: Organisering av kode i funksjoner
 weight: 18
 ---

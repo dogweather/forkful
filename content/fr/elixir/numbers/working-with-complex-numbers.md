@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 04:39:06.475238-07:00
-description: "Les nombres complexes ont une partie r\xE9elle et une partie imaginaire\
-  \ (comme `3 + 4i`). Ils sont utilis\xE9s en ing\xE9nierie, en physique et pour certains\u2026"
+description: "Comment faire : Elixir n'a pas de nombres complexes int\xE9gr\xE9s,\
+  \ donc nous devons cr\xE9er les n\xF4tres ou utiliser une biblioth\xE8que, comme\
+  \ `ComplexNum`. Voici un\u2026"
 lastmod: '2024-03-13T22:44:57.320422-06:00'
 model: gpt-4-0125-preview
-summary: "Les nombres complexes ont une partie r\xE9elle et une partie imaginaire\
-  \ (comme `3 + 4i`)."
+summary: "Elixir n'a pas de nombres complexes int\xE9gr\xE9s, donc nous devons cr\xE9\
+  er les n\xF4tres ou utiliser une biblioth\xE8que, comme `ComplexNum`."
 title: Manipulation des nombres complexes
 weight: 14
 ---

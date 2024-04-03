@@ -2,12 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:36.678485-07:00
-description: "\"Loggen\" is het bijhouden van een register van gebeurtenissen, transacties\
-  \ of activiteiten die over tijd plaatsvinden in een systeem. Programmeurs\u2026"
+description: "Hoe: Arduino wordt niet geleverd met een ingebouwde logbibliotheek zoals\
+  \ sommige andere omgevingen, maar je kunt basaal loggen naar de seri\xEBle console\u2026"
 lastmod: '2024-03-13T22:44:51.078367-06:00'
 model: gpt-4-0125-preview
-summary: '"Loggen" is het bijhouden van een register van gebeurtenissen, transacties
-  of activiteiten die over tijd plaatsvinden in een systeem.'
+summary: "Arduino wordt niet geleverd met een ingebouwde logbibliotheek zoals sommige\
+  \ andere omgevingen, maar je kunt basaal loggen naar de seri\xEBle console implementeren\
+  \ met minimale moeite."
 title: Logboekregistratie
 weight: 17
 ---

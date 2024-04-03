@@ -2,7 +2,8 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:52.347606-07:00
-description: '#'
+description: "\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\u0438\
+  : #."
 lastmod: '2024-03-13T22:44:48.806013-06:00'
 model: gpt-4-0125-preview
 summary: '#.'

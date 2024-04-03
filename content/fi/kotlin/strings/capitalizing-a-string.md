@@ -2,16 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:48.804351-07:00
-description: "Merkkijonon alkukirjaimen muuttaminen suureksi ohjelmoinnissa tarkoittaa\
-  \ merkkijonon ensimm\xE4isen merkin muuttamista suuraakkoseksi, jos se ei jo ole,\
-  \ mik\xE4\u2026"
+description: "Kuinka: Kotlinissa merkkijonoja voidaan muuttaa alkamaan suuraakkosella\
+  \ k\xE4ytt\xE4m\xE4ll\xE4 standardikirjaston funktioita ilman kolmannen osapuolen\
+  \ kirjastoja.\u2026"
 lastmod: '2024-03-13T22:44:56.514422-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonon alkukirjaimen muuttaminen suureksi ohjelmoinnissa tarkoittaa\
-  \ merkkijonon ensimm\xE4isen merkin muuttamista suuraakkoseksi, jos se ei jo ole,\
-  \ mik\xE4 on hy\xF6dyllist\xE4 k\xE4ytt\xE4j\xE4sy\xF6tteiden muotoilussa tai tekstin\
-  \ n\xE4ytt\xE4misess\xE4 k\xE4ytt\xF6liittym\xE4ss\xE4 standardoidummalla tai ihmisl\xE4\
-  heisemm\xE4ll\xE4 tavalla."
+summary: "Kotlinissa merkkijonoja voidaan muuttaa alkamaan suuraakkosella k\xE4ytt\xE4\
+  m\xE4ll\xE4 standardikirjaston funktioita ilman kolmannen osapuolen kirjastoja."
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---

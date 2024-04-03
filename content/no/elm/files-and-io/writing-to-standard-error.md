@@ -1,12 +1,11 @@
 ---
 date: 2024-01-19
-description: "Skriving til standard feil (stderr) lar deg rapportere feil uten \xE5\
-  \ blande det med hovedutdata. Programmerere bruker det til \xE5 skille normal output\
-  \ fra\u2026"
+description: "How to: Elm har ikke direkte tilgang til stderr som ren funksjonell\
+  \ spr\xE5k. Du kan utf\xF8re sideeffekter som loggf\xF8ring via ports sammen med\
+  \ JavaScript."
 lastmod: '2024-03-13T22:44:40.725097-06:00'
 model: unknown
-summary: "Skriving til standard feil (stderr) lar deg rapportere feil uten \xE5 blande\
-  \ det med hovedutdata."
+summary: "Elm har ikke direkte tilgang til stderr som ren funksjonell spr\xE5k."
 title: Skrive til standardfeil
 weight: 25
 ---

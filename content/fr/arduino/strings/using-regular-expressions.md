@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:56.125232-07:00
-description: "Les expressions r\xE9guli\xE8res (regex) sont des s\xE9quences de caract\xE8\
-  res qui d\xE9finissent des mod\xE8les de recherche, principalement utilis\xE9es\
-  \ pour la\u2026"
+description: "Comment : Arduino n\u2019a pas de support int\xE9gr\xE9 pour les regex\
+  \ directement dans sa biblioth\xE8que standard. Cependant, vous pouvez obtenir une\
+  \ fonctionnalit\xE9\u2026"
 lastmod: '2024-03-13T22:44:58.098183-06:00'
 model: gpt-4-0125-preview
-summary: "Les expressions r\xE9guli\xE8res (regex) sont des s\xE9quences de caract\xE8\
-  res qui d\xE9finissent des mod\xE8les de recherche, principalement utilis\xE9es\
-  \ pour la correspondance et la manipulation de cha\xEEnes de caract\xE8res."
+summary: "Arduino n\u2019a pas de support int\xE9gr\xE9 pour les regex directement\
+  \ dans sa biblioth\xE8que standard."
 title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---

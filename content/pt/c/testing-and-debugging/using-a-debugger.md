@@ -2,8 +2,9 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:52.101052-07:00
-description: "GDB (GNU Debugger) \xE9 o depurador mais comumente usado para a programa\xE7\
-  \xE3o em C. Aqui est\xE1 um guia breve sobre como usar o GDB para depurar um programa\u2026"
+description: "Como fazer: GDB (GNU Debugger) \xE9 o depurador mais comumente usado\
+  \ para a programa\xE7\xE3o em C. Aqui est\xE1 um guia breve sobre como usar o GDB\
+  \ para depurar um\u2026"
 lastmod: '2024-03-13T22:44:47.055160-06:00'
 model: gpt-4-0125-preview
 summary: "GDB (GNU Debugger) \xE9 o depurador mais comumente usado para a programa\xE7\

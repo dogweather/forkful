@@ -2,15 +2,16 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:47.055452-07:00
-description: "Praca z plikami CSV (warto\u015Bci oddzielone przecinkami) polega na\
-  \ parsowaniu i generowaniu strukturalnych danych z plik\xF3w tekstowych, gdzie ka\u017C\
-  da linia\u2026"
+description: "Jak to zrobi\u0107: W j\u0119zyku Swift nie ma natywnej obs\u0142ugi\
+  \ bezpo\u015Bredniego parsowania plik\xF3w CSV, ale mo\u017Cesz obs\u0142ugiwa\u0107\
+  \ dane CSV, u\u017Cywaj\u0105c metod `String`, aby\u2026"
 lastmod: '2024-03-13T22:44:35.776917-06:00'
 model: gpt-4-0125-preview
-summary: "Praca z plikami CSV (warto\u015Bci oddzielone przecinkami) polega na parsowaniu\
-  \ i generowaniu strukturalnych danych z plik\xF3w tekstowych, gdzie ka\u017Cda linia\
-  \ reprezentuje rekord, a ka\u017Cdy rekord sk\u0142ada si\u0119 z p\xF3l rozdzielonych\
-  \ przecinkami."
+summary: "W j\u0119zyku Swift nie ma natywnej obs\u0142ugi bezpo\u015Bredniego parsowania\
+  \ plik\xF3w CSV, ale mo\u017Cesz obs\u0142ugiwa\u0107 dane CSV, u\u017Cywaj\u0105\
+  c metod `String`, aby rozdzieli\u0107 zawarto\u015B\u0107, lub korzystaj\u0105c\
+  \ z bibliotek stron trzecich, takich jak SwiftCSV, dla bardziej uproszczonego podej\u015B\
+  cia."
 title: Praca z plikami CSV
 weight: 37
 ---

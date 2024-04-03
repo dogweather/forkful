@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:22.866362-07:00
-description: "Trabalhar com arquivos CSV envolve ler e escrever dados para arquivos\
-  \ de Valores Separados por V\xEDrgula (CSV), um formato popular para troca de dados\u2026"
+description: 'Como Fazer: #.'
 lastmod: '2024-03-13T22:44:46.479091-06:00'
 model: gpt-4-0125-preview
-summary: "Trabalhar com arquivos CSV envolve ler e escrever dados para arquivos de\
-  \ Valores Separados por V\xEDrgula (CSV), um formato popular para troca de dados\
-  \ porque \xE9 simples e amplamente suportado."
+summary: '#.'
 title: Trabalhando com CSV
 weight: 37
 ---

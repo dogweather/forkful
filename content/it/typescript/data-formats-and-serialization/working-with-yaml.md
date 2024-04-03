@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:49.797191-07:00
-description: "YAML, un linguaggio di serializzazione dati progettato per essere amichevole\
-  \ per l'utente, \xE8 spesso utilizzato per file di configurazione, messaggistica\u2026"
+description: "Come fare: Lavorare con YAML in TypeScript tipicamente comporta l'analisi\
+  \ del contenuto YAML in oggetti JavaScript e, possibilmente, la conversione di\u2026"
 lastmod: '2024-03-13T22:44:43.196300-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, un linguaggio di serializzazione dati progettato per essere amichevole\
-  \ per l'utente, \xE8 spesso utilizzato per file di configurazione, messaggistica\
-  \ tra processi e memorizzazione dati."
+summary: Lavorare con YAML in TypeScript tipicamente comporta l'analisi del contenuto
+  YAML in oggetti JavaScript e, possibilmente, la conversione di oggetti JavaScript
+  di nuovo in YAML.
 title: Lavorare con YAML
 weight: 41
 ---

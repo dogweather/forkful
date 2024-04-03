@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 03:44:05.968619-07:00
-description: "\xC5 avrunde tall handler om \xE5 kutte av desimalplasser for \xE5 forenkle\
-  \ dataene dine eller passe spesifikke formater. Programmerere gj\xF8r det for brukervennlig\u2026"
+description: "Hvordan: I Fish avhenger avrunding av tall av `math`-kommandoen. Bruk\
+  \ `math -s0` for \xE5 avrunde til n\xE6rmeste heltall."
 lastmod: '2024-03-13T22:44:41.219777-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 avrunde tall handler om \xE5 kutte av desimalplasser for \xE5 forenkle\
-  \ dataene dine eller passe spesifikke formater."
+summary: I Fish avhenger avrunding av tall av `math`-kommandoen.
 title: Avrunding av tall
 weight: 13
 ---

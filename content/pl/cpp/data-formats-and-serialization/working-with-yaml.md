@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:49.006159-07:00
-description: "YAML, co oznacza YAML Ain't Markup Language, jest czytelnym dla cz\u0142\
-  owieka formatem serializacji danych. Programi\u015Bci u\u017Cywaj\u0105 go do plik\xF3\
-  w konfiguracyjnych,\u2026"
+description: "Jak to zrobi\u0107: Pracuj\u0105c z YAML w C++, popularnym wyborem jest\
+  \ biblioteka `yaml-cpp`. Najpierw upewnij si\u0119, \u017Ce masz zainstalowan\u0105\
+  \ `yaml-cpp` i odpowiednio\u2026"
 lastmod: '2024-03-13T22:44:35.733120-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, co oznacza YAML Ain't Markup Language, jest czytelnym dla cz\u0142\
-  owieka formatem serializacji danych."
+summary: "Pracuj\u0105c z YAML w C++, popularnym wyborem jest biblioteka `yaml-cpp`."
 title: Praca z YAML
 weight: 41
 ---

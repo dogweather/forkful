@@ -3,15 +3,14 @@ changelog:
 - 2024-01-28, dogweather, reviewed and added links
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 23:01:43.161824-07:00
-description: "Vi\u1EC7c t\u1ED5 ch\u1EE9c m\xE3 l\u1EC7nh th\xE0nh c\xE1c h\xE0m l\xE0\
-  \ vi\u1EC7c g\xF3i nh\u1EEFng \u0111o\u1EA1n m\xE3 nh\u1ECF l\u1EA1i \u0111\u1EC3\
-  \ th\u1EF1c hi\u1EC7n nh\u1EEFng nhi\u1EC7m v\u1EE5 c\u1EE5 th\u1EC3. Ch\xFAng ta\
-  \ l\xE0m \u0111i\u1EC1u n\xE0y b\u1EDFi v\xEC n\xF3 l\xE0m cho m\xE3 l\u1EC7nh\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong Fish, b\u1EA1n vi\u1EBFt m\u1ED9\
+  t h\xE0m v\u1EDBi t\u1EEB kh\xF3a `function`, \u0111\u1EB7t t\xEAn cho n\xF3 v\xE0\
+  \ k\u1EBFt th\xFAc b\u1EB1ng `end`. D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t v\xED\
+  \ d\u1EE5 \u0111\u01A1n gi\u1EA3n."
 lastmod: '2024-03-13T22:44:37.218141-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c t\u1ED5 ch\u1EE9c m\xE3 l\u1EC7nh th\xE0nh c\xE1c h\xE0m l\xE0\
-  \ vi\u1EC7c g\xF3i nh\u1EEFng \u0111o\u1EA1n m\xE3 nh\u1ECF l\u1EA1i \u0111\u1EC3\
-  \ th\u1EF1c hi\u1EC7n nh\u1EEFng nhi\u1EC7m v\u1EE5 c\u1EE5 th\u1EC3."
+summary: "Trong Fish, b\u1EA1n vi\u1EBFt m\u1ED9t h\xE0m v\u1EDBi t\u1EEB kh\xF3a\
+  \ `function`, \u0111\u1EB7t t\xEAn cho n\xF3 v\xE0 k\u1EBFt th\xFAc b\u1EB1ng `end`."
 title: "S\u1EAFp x\u1EBFp m\xE3 l\u1EADp tr\xECnh v\xE0o trong h\xE0m"
 weight: 18
 ---

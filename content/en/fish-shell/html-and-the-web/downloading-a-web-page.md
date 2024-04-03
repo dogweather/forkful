@@ -1,10 +1,11 @@
 ---
 date: 2024-01-20 17:44:11.399176-07:00
-description: Downloading a webpage pulls its content from the web to your local machine.
-  Programmers do it for automation, data scraping, offline access, or testing.
+description: 'How to: Here''s the quick and dirty way to download a web page using
+  Fish Shell with the `curl` command.'
 lastmod: '2024-03-13T22:45:00.473188-06:00'
 model: gpt-4-1106-preview
-summary: Downloading a webpage pulls its content from the web to your local machine.
+summary: Here's the quick and dirty way to download a web page using Fish Shell with
+  the `curl` command.
 title: Downloading a web page
 weight: 42
 ---

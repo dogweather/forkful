@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:52.239083-07:00
-description: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi l\xE0 \u0111\u1EC3 t\u1EA1\
-  o ra m\u1ED9t t\u1EC7p ch\u1EC9 t\u1ED3n t\u1EA1i trong th\u1EDDi gian ng\u1EAF\
-  n \u0111\u1EC3 l\u01B0u tr\u1EEF d\u1EEF li\u1EC7u m\xE0 kh\xF4ng c\u1EA7n gi\u1EEF\
-  \ l\xE2u d\xE0i. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Swift l\xE0m cho vi\u1EC7c t\u1EA1o t\u1EC7\
+  p t\u1EA1m th\u1EDDi tr\u1EDF n\xEAn kh\xE1 d\u1EC5 d\xE0ng, s\u1EED d\u1EE5ng l\u1EDB\
+  p `FileManager`. D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch b\u1EA1n t\u1EA1o m\u1ED9\
+  t t\u1EC7p t\u1EA1m th\u1EDDi v\xE0 vi\u1EBFt m\u1ED9t s\u1ED1\u2026"
 lastmod: '2024-03-13T22:44:37.123335-06:00'
 model: gpt-4-0125-preview
-summary: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi l\xE0 \u0111\u1EC3 t\u1EA1\
-  o ra m\u1ED9t t\u1EC7p ch\u1EC9 t\u1ED3n t\u1EA1i trong th\u1EDDi gian ng\u1EAF\
-  n \u0111\u1EC3 l\u01B0u tr\u1EEF d\u1EEF li\u1EC7u m\xE0 kh\xF4ng c\u1EA7n gi\u1EEF\
-  \ l\xE2u d\xE0i."
+summary: "Swift l\xE0m cho vi\u1EC7c t\u1EA1o t\u1EC7p t\u1EA1m th\u1EDDi tr\u1EDF\
+  \ n\xEAn kh\xE1 d\u1EC5 d\xE0ng, s\u1EED d\u1EE5ng l\u1EDBp `FileManager`."
 title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
 weight: 21
 ---

@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:48.769084-07:00
-description: "De huidige datum in je code vastleggen stelt je in staat om gebeurtenissen\
-  \ te markeren op het moment dat ze plaatsvinden. Het is essentieel voor logging,\u2026"
+description: 'Hoe doe je het: In Haskell krijg je de huidige datum met behulp van
+  de `Data.Time` bibliotheek. Eerst importeer je wat je nodig hebt.'
 lastmod: '2024-03-13T22:44:50.863037-06:00'
 model: gpt-4-0125-preview
-summary: De huidige datum in je code vastleggen stelt je in staat om gebeurtenissen
-  te markeren op het moment dat ze plaatsvinden.
+summary: In Haskell krijg je de huidige datum met behulp van de `Data.Time` bibliotheek.
 title: Het huidige datum ophalen
 weight: 29
 ---

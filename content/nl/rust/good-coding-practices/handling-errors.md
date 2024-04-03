@@ -2,11 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:17.426859-07:00
-description: "Foutafhandeling gaat over omgaan met dingen wanneer ze mis gaan. Programmeren\
-  \ doen we om het onverwachte aan te kunnen, door ervoor te zorgen dat hun\u2026"
+description: "Hoe te: Rust gaat op twee belangrijke manieren om met fouten: herstelbare\
+  \ en onherstelbare fouten. Laten we beide bekijken. Herstelbare fouten gebruiken\u2026"
 lastmod: '2024-03-13T22:44:50.601704-06:00'
 model: gpt-4-0125-preview
-summary: Foutafhandeling gaat over omgaan met dingen wanneer ze mis gaan.
+summary: Rust gaat op twee belangrijke manieren om met fouten.
 title: Fouten afhandelen
 weight: 16
 ---

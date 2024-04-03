@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:44:09.636982-07:00
-description: "Komplexa tal, de med en reell del och en imagin\xE4r del (som 3 + 4i),\
-  \ \xE4r avg\xF6rande inom omr\xE5den som ingenj\xF6rsvetenskap, fysik och data vetenskap.\u2026"
+description: "Hur: PowerShell har inte inbyggt st\xF6d f\xF6r komplexa tal, s\xE5\
+  \ du m\xE5ste antingen skapa din egen l\xF6sning eller anv\xE4nda .NET's `System.Numerics.Complex`."
 lastmod: '2024-03-13T22:44:38.118219-06:00'
 model: gpt-4-0125-preview
-summary: "Komplexa tal, de med en reell del och en imagin\xE4r del (som 3 + 4i), \xE4\
-  r avg\xF6rande inom omr\xE5den som ingenj\xF6rsvetenskap, fysik och data vetenskap."
+summary: "PowerShell har inte inbyggt st\xF6d f\xF6r komplexa tal, s\xE5 du m\xE5\
+  ste antingen skapa din egen l\xF6sning eller anv\xE4nda .NET's `System.Numerics.Complex`."
 title: Att arbeta med komplexa tal
 weight: 14
 ---

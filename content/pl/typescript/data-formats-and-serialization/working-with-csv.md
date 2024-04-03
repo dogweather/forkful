@@ -2,16 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:31.509667-07:00
-description: "Praca z CSV (Comma-Separated Values, czyli warto\u015Bciami oddzielonymi\
-  \ przecinkami) obejmuje odczytywanie z plik\xF3w CSV oraz zapisywanie do nich, co\
-  \ jest\u2026"
+description: "Jak to zrobi\u0107: W TypeScript mo\u017Cesz pracowa\u0107 z plikami\
+  \ CSV za pomoc\u0105 kodu natywnego lub wykorzystuj\u0105c biblioteki stron trzecich,\
+  \ takie jak `csv-parser` do\u2026"
 lastmod: '2024-03-13T22:44:35.162985-06:00'
 model: gpt-4-0125-preview
-summary: "Praca z CSV (Comma-Separated Values, czyli warto\u015Bciami oddzielonymi\
-  \ przecinkami) obejmuje odczytywanie z plik\xF3w CSV oraz zapisywanie do nich, co\
-  \ jest powszechnym formatem wymiany danych u\u017Cywanym ze wzgl\u0119du na jego\
-  \ prostot\u0119 i szerokie wsparcie na r\xF3\u017Cnych platformach i w r\xF3\u017C\
-  nych j\u0119zykach."
+summary: "W TypeScript mo\u017Cesz pracowa\u0107 z plikami CSV za pomoc\u0105 kodu\
+  \ natywnego lub wykorzystuj\u0105c biblioteki stron trzecich, takie jak `csv-parser`\
+  \ do odczytu i `csv-writer` do zapisu plik\xF3w CSV."
 title: Praca z plikami CSV
 weight: 37
 ---

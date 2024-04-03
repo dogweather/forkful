@@ -2,15 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:40.654561-07:00
-description: "Ler argumentos de linha de comando em Dart permite que programadores\
-  \ insiram dados diretamente no console ao executar um programa Dart, aumentando\
-  \ sua\u2026"
+description: "Como fazer: Dart oferece uma abordagem direta para acessar argumentos\
+  \ de linha de comando via a `List<String> args` no m\xE9todo main. Abaixo est\xE1\
+  \ um exemplo\u2026"
 lastmod: '2024-03-13T22:44:46.298285-06:00'
 model: gpt-4-0125-preview
-summary: "Ler argumentos de linha de comando em Dart permite que programadores insiram\
-  \ dados diretamente no console ao executar um programa Dart, aumentando sua interatividade\
-  \ e flexibilidade para v\xE1rios casos de uso, incluindo scripts de automa\xE7\xE3\
-  o, ferramentas CLI ou processamento em lote."
+summary: "Dart oferece uma abordagem direta para acessar argumentos de linha de comando\
+  \ via a `List<String> args` no m\xE9todo main."
 title: Lendo argumentos de linha de comando
 weight: 23
 ---

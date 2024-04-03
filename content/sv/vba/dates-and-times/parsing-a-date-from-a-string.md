@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:43.165925-07:00
-description: "Att tolka ett datum fr\xE5n en str\xE4ng i Visual Basic for Applications\
-  \ (VBA) handlar om att konvertera text som representerar ett datum till en datumdatatyp.\u2026"
+description: "Hur: VBA erbjuder ett enkelt s\xE4tt att tolka en str\xE4ng till ett\
+  \ datum med hj\xE4lp av funktionen `CDate` eller `DateValue`. Det \xE4r dock avg\xF6\
+  rande att str\xE4ngen\u2026"
 lastmod: '2024-03-13T22:44:37.753236-06:00'
 model: gpt-4-0125-preview
-summary: "Att tolka ett datum fr\xE5n en str\xE4ng i Visual Basic for Applications\
-  \ (VBA) handlar om att konvertera text som representerar ett datum till en datumdatatyp."
+summary: "VBA erbjuder ett enkelt s\xE4tt att tolka en str\xE4ng till ett datum med\
+  \ hj\xE4lp av funktionen `CDate` eller `DateValue`."
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---

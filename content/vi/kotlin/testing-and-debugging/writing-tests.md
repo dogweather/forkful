@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:59.139631-07:00
-description: "Vi\u1EBFt test ngh\u0129a l\xE0 l\u1EADp tr\xECnh c\xE1c \u0111o\u1EA1\
-  n m\xE3 \u0111\u1EC3 ki\u1EC3m tra xem m\xE3 kh\xE1c ho\u1EA1t \u0111\u1ED9ng \u0111\
-  \xFAng hay kh\xF4ng. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7\
-  c n\xE0y \u0111\u1EC3 b\u1EAFt l\u1ED7i s\u1EDBm, ti\u1EBFt ki\u1EC7m\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Kotlin s\u1EED d\u1EE5ng JUnit \u0111\u1EC3\
+  \ th\u1EF1c hi\u1EC7n ki\u1EC3m tra. D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch vi\u1EBF\
+  t v\xE0 ch\u1EA1y m\u1ED9t b\xE0i ki\u1EC3m tra \u0111\u01A1n gi\u1EA3n."
 lastmod: '2024-03-13T22:44:36.606379-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EBFt test ngh\u0129a l\xE0 l\u1EADp tr\xECnh c\xE1c \u0111o\u1EA1n\
-  \ m\xE3 \u0111\u1EC3 ki\u1EC3m tra xem m\xE3 kh\xE1c ho\u1EA1t \u0111\u1ED9ng \u0111\
-  \xFAng hay kh\xF4ng."
+summary: "Kotlin s\u1EED d\u1EE5ng JUnit \u0111\u1EC3 th\u1EF1c hi\u1EC7n ki\u1EC3\
+  m tra."
 title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
 weight: 36
 ---

@@ -2,12 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:52.141548-07:00
-description: "Scrivere test in Java consiste nel verificare che il proprio codice\
-  \ si comporti come previsto in varie condizioni. I programmatori scrivono test per\u2026"
+description: "Come fare: Gli sviluppatori Java utilizzano principalmente due framework\
+  \ di test: JUnit e TestNG. Qui, ci concentreremo su JUnit, la scelta pi\xF9 popolare\u2026"
 lastmod: '2024-03-13T22:44:43.312462-06:00'
 model: gpt-4-0125-preview
-summary: Scrivere test in Java consiste nel verificare che il proprio codice si comporti
-  come previsto in varie condizioni.
+summary: Gli sviluppatori Java utilizzano principalmente due framework di test.
 title: Scrivere test
 weight: 36
 ---

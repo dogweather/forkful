@@ -2,15 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:23.190674-07:00
-description: "M\u1EA3ng li\xEAn k\u1EBFt l\xE0 nh\u01B0 nh\u1EEFng m\u1EA3ng t\u0103\
-  ng c\u01B0\u1EDDng, cho ph\xE9p b\u1EA1n s\u1EED d\u1EE5ng chu\u1ED7i l\xE0m ch\u1EC9\
-  \ m\u1EE5c thay v\xEC ch\u1EC9 c\xF3 s\u1ED1 nguy\xEAn. L\u1EADp tr\xECnh vi\xEA\
-  n s\u1EED d\u1EE5ng ch\xFAng cho c\u1EA5u tr\xFAc d\u1EEF\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EA7u ti\xEAn, khai b\xE1o m\u1ED9t\
+  \ m\u1EA3ng li\xEAn k\u1EBFt trong Bash."
 lastmod: '2024-03-13T22:44:36.867046-06:00'
 model: gpt-4-0125-preview
-summary: "M\u1EA3ng li\xEAn k\u1EBFt l\xE0 nh\u01B0 nh\u1EEFng m\u1EA3ng t\u0103ng\
-  \ c\u01B0\u1EDDng, cho ph\xE9p b\u1EA1n s\u1EED d\u1EE5ng chu\u1ED7i l\xE0m ch\u1EC9\
-  \ m\u1EE5c thay v\xEC ch\u1EC9 c\xF3 s\u1ED1 nguy\xEAn."
+summary: "\u0110\u1EA7u ti\xEAn, khai b\xE1o m\u1ED9t m\u1EA3ng li\xEAn k\u1EBFt trong\
+  \ Bash."
 title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 weight: 15
 ---

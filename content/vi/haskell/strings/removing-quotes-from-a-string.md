@@ -2,16 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:43.053660-07:00
-description: "X\xF3a d\u1EA5u ngo\u1EB7c kh\u1ECFi m\u1ED9t chu\u1ED7i c\xF3 ngh\u0129\
-  a l\xE0 lo\u1EA1i b\u1ECF b\u1EA5t k\u1EF3 d\u1EA5u ngo\u1EB7c \u0111\u01A1n ('\
-  \ ') ho\u1EB7c d\u1EA5u ngo\u1EB7c k\xE9p (\" \") n\xE0o l\xE0 m\u1ED9t ph\u1EA7\
-  n c\u1EE7a d\u1EEF li\u1EC7u chu\u1ED7i. L\u1EADp tr\xECnh vi\xEAn\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong Haskell, ch\xFAng ta c\xF3 th\u1EC3\
+  \ t\u1EA1o ra m\u1ED9t h\xE0m x\xF3a t\u1EA5t c\u1EA3 d\u1EA5u ngo\u1EB7c kh\u1ECF\
+  i m\u1ED9t chu\u1ED7i \u0111\xE3 cho. \u0110\xF3 gi\u1ED1ng nh\u01B0 vi\u1EC7c b\u1EA3\
+  o c\xE1c d\u1EA5u ngo\u1EB7c \u0111i ch\u1ED7 kh\xE1c,\u2026"
 lastmod: '2024-03-13T22:44:36.696808-06:00'
 model: gpt-4-0125-preview
-summary: "X\xF3a d\u1EA5u ngo\u1EB7c kh\u1ECFi m\u1ED9t chu\u1ED7i c\xF3 ngh\u0129\
-  a l\xE0 lo\u1EA1i b\u1ECF b\u1EA5t k\u1EF3 d\u1EA5u ngo\u1EB7c \u0111\u01A1n ('\
-  \ ') ho\u1EB7c d\u1EA5u ngo\u1EB7c k\xE9p (\" \") n\xE0o l\xE0 m\u1ED9t ph\u1EA7\
-  n c\u1EE7a d\u1EEF li\u1EC7u chu\u1ED7i."
+summary: "Trong Haskell, ch\xFAng ta c\xF3 th\u1EC3 t\u1EA1o ra m\u1ED9t h\xE0m x\xF3\
+  a t\u1EA5t c\u1EA3 d\u1EA5u ngo\u1EB7c kh\u1ECFi m\u1ED9t chu\u1ED7i \u0111\xE3\
+  \ cho."
 title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i"
 weight: 9
 ---

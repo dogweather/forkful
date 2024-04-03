@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:36.148989-07:00
-description: "El formato de Valores Separados por Comas (CSV) es omnipresente para\
-  \ el intercambio de datos debido a su simplicidad y facilidad de integraci\xF3n\
-  \ con la\u2026"
+description: "C\xF3mo: Trabajar con archivos CSV en Go es sencillo, gracias a su librer\xED\
+  a est\xE1ndar, `encoding/csv`. A continuaci\xF3n, se presenta una introducci\xF3\
+  n a la\u2026"
 lastmod: '2024-03-13T22:44:58.494651-06:00'
 model: gpt-4-0125-preview
-summary: "El formato de Valores Separados por Comas (CSV) es omnipresente para el\
-  \ intercambio de datos debido a su simplicidad y facilidad de integraci\xF3n con\
-  \ la mayor\xEDa de los lenguajes de programaci\xF3n, incluido Go."
+summary: "Trabajar con archivos CSV en Go es sencillo, gracias a su librer\xEDa est\xE1\
+  ndar, `encoding/csv`."
 title: Trabajando con CSV
 weight: 37
 ---

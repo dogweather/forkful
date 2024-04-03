@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:07:27.182287-07:00
-description: "Logging ist im Grunde genommen wie das F\xFChren eines Tagebuchs f\xFC\
-  r Ihren Code; es ist der Akt des Aufzeichnens von Ereignissen, Fehlern und anderen\u2026"
+description: "Wie geht das: PHP verf\xFCgt \xFCber eine integrierte Fehlerprotokollierungsfunktion,\
+  \ die einfach zu verwenden ist. F\xFCgen Sie einfach `error_log()` in Ihren\u2026"
 lastmod: '2024-03-13T22:44:53.978932-06:00'
 model: gpt-4-1106-preview
-summary: "Logging ist im Grunde genommen wie das F\xFChren eines Tagebuchs f\xFCr\
-  \ Ihren Code; es ist der Akt des Aufzeichnens von Ereignissen, Fehlern und anderen\
-  \ bedeutsamen Datenpunkten, die auftreten, wenn Ihre Anwendung l\xE4uft."
+summary: "PHP verf\xFCgt \xFCber eine integrierte Fehlerprotokollierungsfunktion,\
+  \ die einfach zu verwenden ist."
 title: Protokollierung
 weight: 17
 ---

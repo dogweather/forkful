@@ -1,13 +1,10 @@
 ---
 date: 2024-01-26 03:47:08.243908-07:00
-description: "Numeroiden py\xF6rist\xE4minen tarkoittaa numeerisen arvon likim\xE4\
-  \xE4r\xE4ist\xE4mist\xE4 tiettyyn tarkkuuteen, tyypillisesti ei-toivottujen desimaalien\
-  \ poistamiseksi.\u2026"
+description: "Kuinka: Swift tarjoaa useita tapoja numeroiden py\xF6rist\xE4miseen.\
+  \ T\xE4ss\xE4 maistiainen."
 lastmod: '2024-03-13T22:44:56.902172-06:00'
 model: gpt-4-0125-preview
-summary: "Numeroiden py\xF6rist\xE4minen tarkoittaa numeerisen arvon likim\xE4\xE4\
-  r\xE4ist\xE4mist\xE4 tiettyyn tarkkuuteen, tyypillisesti ei-toivottujen desimaalien\
-  \ poistamiseksi."
+summary: "Swift tarjoaa useita tapoja numeroiden py\xF6rist\xE4miseen."
 title: "Numerojen py\xF6rist\xE4minen"
 weight: 13
 ---

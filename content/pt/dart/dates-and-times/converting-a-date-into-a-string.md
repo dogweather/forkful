@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:53:57.127309-07:00
-description: "Converter uma data em uma string em Dart \xE9 uma tarefa comum quando\
-  \ voc\xEA precisa exibir informa\xE7\xF5es de data e hora em um formato leg\xED\
-  vel por humanos, ou\u2026"
+description: "Como fazer: Dart fornece a classe `DateTime` para lidar com datas e\
+  \ horas, e o pacote `intl` para formata\xE7\xE3o. Primeiramente, assegure-se de\
+  \ ter o pacote\u2026"
 lastmod: '2024-03-13T22:44:46.294039-06:00'
 model: gpt-4-0125-preview
-summary: "Converter uma data em uma string em Dart \xE9 uma tarefa comum quando voc\xEA\
-  \ precisa exibir informa\xE7\xF5es de data e hora em um formato leg\xEDvel por humanos,\
-  \ ou quando pretende serializar dados para armazenamento ou transmiss\xE3o."
+summary: "Dart fornece a classe `DateTime` para lidar com datas e horas, e o pacote\
+  \ `intl` para formata\xE7\xE3o."
 title: Convertendo uma data em uma string
 weight: 28
 ---

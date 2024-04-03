@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:41:52.447367-07:00
-description: "Deleting characters matching a pattern means scrubbing specific sequences\
-  \ from a string. Programmers do it to clean data, enforce formats, or remove\u2026"
+description: "How to: To remove characters using a pattern in Clojure, you employ\
+  \ regular expressions with the `re-seq`, `re-find`, or `re-matches` functions paired\u2026"
 lastmod: '2024-03-13T22:44:59.731091-06:00'
 model: gpt-4-1106-preview
-summary: Deleting characters matching a pattern means scrubbing specific sequences
-  from a string.
+summary: To remove characters using a pattern in Clojure, you employ regular expressions
+  with the `re-seq`, `re-find`, or `re-matches` functions paired with `clojure.string/replace`.
 title: Deleting characters matching a pattern
 weight: 5
 ---

@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:51:58.591684-07:00
-description: "La stampa dei messaggi di debug serve per monitorare cosa sta succedendo\
-  \ nel tuo script. Programmatori lo fanno per trovare e risolvere i bug pi\xF9\u2026"
+description: 'How to: Ecco alcuni modi per stampare debug output in Bash.'
 lastmod: '2024-03-13T22:44:43.602205-06:00'
 model: gpt-4-1106-preview
-summary: La stampa dei messaggi di debug serve per monitorare cosa sta succedendo
-  nel tuo script.
+summary: Ecco alcuni modi per stampare debug output in Bash.
 title: Stampa dell'output di debug
 weight: 33
 ---

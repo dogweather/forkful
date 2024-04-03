@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:36:39.816396-07:00
-description: "Les nombres complexes se composent d'une partie r\xE9elle et d'une partie\
-  \ imaginaire. Les programmeurs les utilisent dans des domaines comme le traitement\u2026"
+description: "Comment faire : Bash ne prend pas en charge les nombres complexes de\
+  \ mani\xE8re native. Vous utiliserez souvent un outil externe comme `bc` avec son\
+  \ option\u2026"
 lastmod: '2024-03-13T22:44:57.983042-06:00'
 model: gpt-4-0125-preview
-summary: "Les nombres complexes se composent d'une partie r\xE9elle et d'une partie\
-  \ imaginaire."
+summary: "Bash ne prend pas en charge les nombres complexes de mani\xE8re native."
 title: Manipulation des nombres complexes
 weight: 14
 ---

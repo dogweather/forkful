@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:02.615556-07:00
-description: "Regul\xE4re Ausdr\xFCcke (regex) in Ruby sind Muster, die verwendet\
-  \ werden, um Zeichenkombinationen in Strings zu finden. Sie erm\xF6glichen es Entwicklern,\
-  \ Text\u2026"
+description: 'Wie geht das: #.'
 lastmod: '2024-03-13T22:44:54.388161-06:00'
 model: gpt-4-0125-preview
-summary: "Regul\xE4re Ausdr\xFCcke (regex) in Ruby sind Muster, die verwendet werden,\
-  \ um Zeichenkombinationen in Strings zu finden."
+summary: '#.'
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

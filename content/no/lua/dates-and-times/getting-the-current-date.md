@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:11.836815-07:00
-description: "\xC5 hente den aktuelle datoen i programmering er en avgj\xF8rende oppgave\
-  \ for en rekke applikasjoner, inkludert logging, tidsstempelhendelser, eller\u2026"
+description: "Hvordan: Lua tilbyr `os.date`-funksjonen for \xE5 f\xE5 den aktuelle\
+  \ datoen og tiden. Funksjonen kan brukes uten argumenter for \xE5 f\xE5 en formatert\
+  \ streng, eller\u2026"
 lastmod: '2024-03-13T22:44:40.940687-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 hente den aktuelle datoen i programmering er en avgj\xF8rende oppgave\
-  \ for en rekke applikasjoner, inkludert logging, tidsstempelhendelser, eller planlegging\
-  \ av oppgaver."
+summary: "Lua tilbyr `os.date`-funksjonen for \xE5 f\xE5 den aktuelle datoen og tiden."
 title: "F\xE5 dagens dato"
 weight: 29
 ---

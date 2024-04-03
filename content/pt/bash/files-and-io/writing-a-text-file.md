@@ -2,13 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:08.193191-07:00
-description: "Escrever um arquivo de texto em Bash permite automatizar o armazenamento\
-  \ de dados, registro, configura\xE7\xF5es e muito mais. \xC9 uma habilidade fundamental\
-  \ para\u2026"
+description: "Como fazer: O Bash oferece m\xE9todos simples para escrever em um arquivo.\
+  \ Os mais comuns s\xE3o usar operadores de redirecionamento (`>`, `>>`) e o comando\u2026"
 lastmod: '2024-03-13T22:44:46.771462-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever um arquivo de texto em Bash permite automatizar o armazenamento\
-  \ de dados, registro, configura\xE7\xF5es e muito mais."
+summary: "O Bash oferece m\xE9todos simples para escrever em um arquivo."
 title: Escrevendo um arquivo de texto
 weight: 24
 ---

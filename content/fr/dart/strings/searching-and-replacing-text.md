@@ -2,14 +2,14 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:02.487502-07:00
-description: "Chercher et remplacer du texte en Dart consiste \xE0 examiner des cha\xEE\
-  nes de caract\xE8res pour trouver certains motifs ou s\xE9quences de caract\xE8\
-  res et les\u2026"
+description: "Comment faire : Dart fournit des m\xE9thodes robustes pour chercher\
+  \ et remplacer du texte directement \xE0 travers sa classe `String`, sans n\xE9\
+  cessiter de\u2026"
 lastmod: '2024-03-13T22:44:57.357324-06:00'
 model: gpt-4-0125-preview
-summary: "Chercher et remplacer du texte en Dart consiste \xE0 examiner des cha\xEE\
-  nes de caract\xE8res pour trouver certains motifs ou s\xE9quences de caract\xE8\
-  res et les substituer par un nouveau contenu."
+summary: "Dart fournit des m\xE9thodes robustes pour chercher et remplacer du texte\
+  \ directement \xE0 travers sa classe `String`, sans n\xE9cessiter de biblioth\xE8\
+  ques externes."
 title: Recherche et remplacement de texte
 weight: 10
 ---

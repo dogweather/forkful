@@ -2,12 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:27.762491-07:00
-description: "\xC5 skrive til standard feil (stderr) i Bash handler om \xE5 dirigere\
-  \ feilmeldinger eller viktig diagnostisk utdata separat fra standard utdata (stdout).\u2026"
+description: "Hvordan gj\xF8re det: I Bash bruker du `>&2` for \xE5 omdirigere utdata\
+  \ til stderr. Her er et grunnleggende eksempel."
 lastmod: '2024-03-13T22:44:40.991126-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive til standard feil (stderr) i Bash handler om \xE5 dirigere feilmeldinger\
-  \ eller viktig diagnostisk utdata separat fra standard utdata (stdout)."
+summary: "I Bash bruker du `>&2` for \xE5 omdirigere utdata til stderr."
 title: Skriving til standardfeil
 weight: 25
 ---

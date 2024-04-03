@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:43.132448-07:00
-description: "Les tableaux associatifs, connus dans d'autres langues sous le nom de\
-  \ cartes ou dictionnaires, sont des paires cl\xE9-valeur utilis\xE9es pour la recherche\
-  \ et\u2026"
+description: "Comment faire : Le langage C ne dispose pas d'un support int\xE9gr\xE9\
+  \ pour les tableaux associatifs comme certains langages de plus haut niveau, mais\
+  \ vous\u2026"
 lastmod: '2024-03-13T22:44:58.363684-06:00'
 model: gpt-4-0125-preview
-summary: "Les tableaux associatifs, connus dans d'autres langues sous le nom de cartes\
-  \ ou dictionnaires, sont des paires cl\xE9-valeur utilis\xE9es pour la recherche\
-  \ et la manipulation efficaces des donn\xE9es."
+summary: "Le langage C ne dispose pas d'un support int\xE9gr\xE9 pour les tableaux\
+  \ associatifs comme certains langages de plus haut niveau, mais vous pouvez les\
+  \ simuler \xE0 l'aide de structures et de hachage."
 title: Utilisation des tableaux associatifs
 weight: 15
 ---

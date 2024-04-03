@@ -1,13 +1,13 @@
 ---
 date: 2024-01-20 17:37:27.556243-07:00
-description: "Att konvertera ett datum till en str\xE4ng inneb\xE4r att omvandla datum\
-  \ data fr\xE5n ett format som datorer f\xF6rst\xE5r till text som \xE4r l\xE4sbart\
-  \ f\xF6r m\xE4nniskor.\u2026"
+description: "S\xE5 h\xE4r g\xF6r du: Konvertering av datum till str\xE4ng i JavaScript\
+  \ kan g\xF6ras smidigt med metoder som `toString()`, `toLocaleString()`, eller med\
+  \ `Date`\u2026"
 lastmod: '2024-03-13T22:44:38.304742-06:00'
 model: gpt-4-1106-preview
-summary: "Att konvertera ett datum till en str\xE4ng inneb\xE4r att omvandla datum\
-  \ data fr\xE5n ett format som datorer f\xF6rst\xE5r till text som \xE4r l\xE4sbart\
-  \ f\xF6r m\xE4nniskor."
+summary: "Konvertering av datum till str\xE4ng i JavaScript kan g\xF6ras smidigt med\
+  \ metoder som `toString()`, `toLocaleString()`, eller med `Date` objektets internationella\
+  \ formateringsm\xF6jligheter."
 title: "Omvandla ett datum till en str\xE4ng"
 weight: 28
 ---

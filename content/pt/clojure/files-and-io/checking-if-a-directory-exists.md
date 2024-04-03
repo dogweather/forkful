@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:46.318612-07:00
-description: "Verificar se um diret\xF3rio existe em Clojure envolve verificar a presen\xE7\
-  a de um diret\xF3rio no sistema de arquivos a partir de sua aplica\xE7\xE3o Clojure.\
-  \ Esta\u2026"
+description: "Como fazer: Clojure, sendo uma linguagem JVM, pode utilizar a classe\
+  \ `java.io.File` do Java para esse prop\xF3sito. Voc\xEA n\xE3o precisa de nenhuma\
+  \ biblioteca de\u2026"
 lastmod: '2024-03-13T22:44:46.210931-06:00'
 model: gpt-4-0125-preview
-summary: "Verificar se um diret\xF3rio existe em Clojure envolve verificar a presen\xE7\
-  a de um diret\xF3rio no sistema de arquivos a partir de sua aplica\xE7\xE3o Clojure."
+summary: "Clojure, sendo uma linguagem JVM, pode utilizar a classe `java.io.File`\
+  \ do Java para esse prop\xF3sito."
 title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---

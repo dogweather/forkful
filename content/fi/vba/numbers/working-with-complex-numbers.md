@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:07.871410-07:00
-description: "Kompleksilukujen k\xE4sittelyyn sis\xE4ltyy matemaattisten toimenpiteiden\
-  \ suorittaminen lukuihin, joilla on sek\xE4 reaaliosa ett\xE4 imagin\xE4\xE4riosa.\
-  \ Ohjelmoijat\u2026"
+description: "Kuinka: Visual Basic for Applications (VBA) -ohjelmoinnissa kompleksilukujen\
+  \ k\xE4sittely voi olla hieman v\xE4hemm\xE4n suoraviivaista verrattuna kieliin,\
+  \ joissa\u2026"
 lastmod: '2024-03-13T22:44:56.393856-06:00'
 model: gpt-4-0125-preview
-summary: "Kompleksilukujen k\xE4sittelyyn sis\xE4ltyy matemaattisten toimenpiteiden\
-  \ suorittaminen lukuihin, joilla on sek\xE4 reaaliosa ett\xE4 imagin\xE4\xE4riosa."
+summary: "Visual Basic for Applications (VBA) -ohjelmoinnissa kompleksilukujen k\xE4\
+  sittely voi olla hieman v\xE4hemm\xE4n suoraviivaista verrattuna kieliin, joissa\
+  \ on natiivi tuki niille."
 title: "Ty\xF6skentely kompleksilukujen kanssa"
 weight: 14
 ---

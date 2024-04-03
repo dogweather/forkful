@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:37:34.769468-07:00
-description: "Convertire una data in una stringa significa trasformare un dato temporale\
-  \ (giorno, mese, anno) in una sequenza di caratteri leggibili. I programmatori lo\u2026"
+description: 'Come fare: Ecco come convertire una data in stringa in Python usando
+  il modulo `datetime`.'
 lastmod: '2024-03-13T22:44:43.012778-06:00'
 model: gpt-4-1106-preview
-summary: Convertire una data in una stringa significa trasformare un dato temporale
-  (giorno, mese, anno) in una sequenza di caratteri leggibili.
+summary: Ecco come convertire una data in stringa in Python usando il modulo `datetime`.
 title: Conversione di una data in una stringa
 weight: 28
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:24.544712-07:00
-description: "Estrarre sottostringhe in C comporta la creazione di una stringa pi\xF9\
-  \ piccola (sottostringa) da una stringa pi\xF9 grande basandosi su criteri specificati,\u2026"
+description: "Come fare: A differenza di alcuni linguaggi di livello superiore che\
+  \ forniscono metodi integrati per l'estrazione di sottostringhe, C richiede un\u2026"
 lastmod: '2024-03-13T22:44:43.894170-06:00'
 model: gpt-4-0125-preview
-summary: "Estrarre sottostringhe in C comporta la creazione di una stringa pi\xF9\
-  \ piccola (sottostringa) da una stringa pi\xF9 grande basandosi su criteri specificati,\
-  \ come la posizione e la lunghezza."
+summary: "A differenza di alcuni linguaggi di livello superiore che forniscono metodi\
+  \ integrati per l'estrazione di sottostringhe, C richiede un approccio pi\xF9 manuale\
+  \ utilizzando le sue funzioni di manipolazione delle stringhe."
 title: Estrazione di sottosequenze
 weight: 6
 ---

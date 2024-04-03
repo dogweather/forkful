@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:33:25.831356-07:00
-description: "Sammenligne to datoer betyr \xE5 sjekke om de er identiske, hvilken\
-  \ som kommer f\xF8rst, eller hvor lang tid det er mellom dem. Programmerere gj\xF8\
-  r dette for \xE5\u2026"
+description: 'How to: Sammenligne dager direkte.'
 lastmod: '2024-03-13T22:44:41.029629-06:00'
 model: gpt-4-1106-preview
-summary: "Sammenligne to datoer betyr \xE5 sjekke om de er identiske, hvilken som\
-  \ kommer f\xF8rst, eller hvor lang tid det er mellom dem."
+summary: Sammenligne dager direkte.
 title: Sammenlikning av to datoer
 weight: 27
 ---

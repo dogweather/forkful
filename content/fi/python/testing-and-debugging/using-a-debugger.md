@@ -1,8 +1,7 @@
 ---
 date: 2024-01-26 04:09:00.655890-07:00
-description: "K\xE4yd\xE4\xE4n l\xE4pi `pdb`:n, Pythonin sis\xE4\xE4nrakennetun debuggerin,\
-  \ k\xE4ytt\xF6. Kuvittele tiedosto, `buggy.py`, jossa on ovela bugi: ```Python def\
-  \ add_one(number):\u2026"
+description: "Kuinka: K\xE4yd\xE4\xE4n l\xE4pi `pdb`:n, Pythonin sis\xE4\xE4nrakennetun\
+  \ debuggerin, k\xE4ytt\xF6. Kuvittele tiedosto, `buggy.py`, jossa on ovela bugi."
 lastmod: '2024-03-13T22:44:56.148212-06:00'
 model: gpt-4-0125-preview
 summary: "K\xE4yd\xE4\xE4n l\xE4pi `pdb`:n, Pythonin sis\xE4\xE4nrakennetun debuggerin,\

@@ -2,13 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:53:31.462000-07:00
-description: "Concatenar strings na programa\xE7\xE3o envolve combinar duas ou mais\
-  \ strings em uma. Os programadores fazem isso para manipular dados de texto com\
-  \ facilidade,\u2026"
+description: "Como fazer: O Dart oferece v\xE1rias maneiras simples de concatenar\
+  \ strings. Abaixo est\xE3o os m\xE9todos mais comuns: #."
 lastmod: '2024-03-13T22:44:46.272813-06:00'
 model: gpt-4-0125-preview
-summary: "Concatenar strings na programa\xE7\xE3o envolve combinar duas ou mais strings\
-  \ em uma."
+summary: "O Dart oferece v\xE1rias maneiras simples de concatenar strings."
 title: Concatenando strings
 weight: 3
 ---

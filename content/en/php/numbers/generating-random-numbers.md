@@ -1,12 +1,11 @@
 ---
 date: 2024-01-27 20:26:30.387709-07:00
-description: "Generating random numbers in PHP is about producing unpredictable values\
-  \ within a specified range, which is essential for tasks like creating unique user\u2026"
+description: "How to: PHP offers several functions for generating random numbers,\
+  \ but the most commonly used are `rand()`, `mt_rand()`, and for cryptographic purposes,\u2026"
 lastmod: '2024-03-13T22:45:00.162531-06:00'
 model: gpt-4-0125-preview
-summary: Generating random numbers in PHP is about producing unpredictable values
-  within a specified range, which is essential for tasks like creating unique user
-  IDs, generating passwords, or for use in simulations and games.
+summary: PHP offers several functions for generating random numbers, but the most
+  commonly used are `rand()`, `mt_rand()`, and for cryptographic purposes, `random_int()`.
 title: Generating random numbers
 weight: 12
 ---

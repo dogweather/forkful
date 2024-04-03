@@ -2,13 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:39.565548-07:00
-description: "Att extrahera delstr\xE4ngar handlar om att h\xE4mta specifika delar\
-  \ av en str\xE4ng baserat p\xE5 deras positioner eller m\xF6nster. Programmerare\
-  \ g\xF6r detta f\xF6r\u2026"
+description: "Hur man g\xF6r: I Dart kan du anv\xE4nda olika metoder f\xF6r att extrahera\
+  \ delstr\xE4ngar, s\xE5som `substring()`, `split()` och regulj\xE4ra uttryck. Varje\
+  \ metod tj\xE4nar\u2026"
 lastmod: '2024-03-13T22:44:37.599640-06:00'
 model: gpt-4-0125-preview
-summary: "Att extrahera delstr\xE4ngar handlar om att h\xE4mta specifika delar av\
-  \ en str\xE4ng baserat p\xE5 deras positioner eller m\xF6nster."
+summary: "I Dart kan du anv\xE4nda olika metoder f\xF6r att extrahera delstr\xE4ngar,\
+  \ s\xE5som `substring()`, `split()` och regulj\xE4ra uttryck."
 title: "Extrahera delstr\xE4ngar"
 weight: 6
 ---

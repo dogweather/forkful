@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:22.880405-07:00
-description: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) Javassa mahdollistavat tiettyjen\
-  \ mallien m\xE4\xE4ritt\xE4misen haettavaksi, manipuloitavaksi tai merkkijonojen\
-  \ validointiin\u2026"
+description: "Kuinka: Javan sis\xE4\xE4nrakennettu tuki regexille tapahtuu p\xE4\xE4\
+  asiassa `Pattern`- ja `Matcher`-luokkien kautta `java.util.regex`-paketissa. T\xE4\
+  ss\xE4 on\u2026"
 lastmod: '2024-03-13T22:44:56.434617-06:00'
 model: gpt-4-0125-preview
-summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) Javassa mahdollistavat tiettyjen\
-  \ mallien m\xE4\xE4ritt\xE4misen haettavaksi, manipuloitavaksi tai merkkijonojen\
-  \ validointiin koodissasi."
+summary: "Javan sis\xE4\xE4nrakennettu tuki regexille tapahtuu p\xE4\xE4asiassa `Pattern`-\
+  \ ja `Matcher`-luokkien kautta `java.util.regex`-paketissa."
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---

@@ -2,15 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:14.242754-07:00
-description: "\xC5 skrive tester i JavaScript refererer til praksisen med \xE5 lage\
-  \ automatiserte skript som kj\xF8rer koden din for \xE5 sikre at den oppf\xF8rer\
-  \ seg som forventet,\u2026"
+description: 'Hvordan: #.'
 lastmod: '2024-03-13T22:44:41.187066-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive tester i JavaScript refererer til praksisen med \xE5 lage automatiserte\
-  \ skript som kj\xF8rer koden din for \xE5 sikre at den oppf\xF8rer seg som forventet,\
-  \ noe som kan forbedre p\xE5liteligheten og vedlikeholdbarheten til applikasjonene\
-  \ dine betydelig."
+summary: '#.'
 title: Skrive tester
 weight: 36
 ---

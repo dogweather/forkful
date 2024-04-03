@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:47:28.715522-07:00
-description: "Okre\u015Blenie d\u0142ugo\u015Bci stringa to po prostu zliczenie ilo\u015B\
-  ci znak\xF3w w nim zawartych. Programi\u015Bci robi\u0105 to, by walidowa\u0107\
-  \ dane, manipulowa\u0107 tekstami czy po\u2026"
+description: "How to: | Jak to zrobi\u0107: W Fish Shell mierzenie d\u0142ugo\u015B\
+  ci stringa jest banalnie proste."
 lastmod: '2024-03-13T22:44:35.829810-06:00'
 model: gpt-4-1106-preview
-summary: "Okre\u015Blenie d\u0142ugo\u015Bci stringa to po prostu zliczenie ilo\u015B\
-  ci znak\xF3w w nim zawartych."
+summary: "W Fish Shell mierzenie d\u0142ugo\u015Bci stringa jest banalnie proste."
 title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 weight: 7
 ---

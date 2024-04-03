@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:57.402354-07:00
-description: "Pisanie do standardowego b\u0142\u0119du (stderr) w j\u0119zykach programowania\
-  \ dotyczy kierowania komunikat\xF3w o b\u0142\u0119dach i diagnostyki do oddzielnego\
-  \ strumienia,\u2026"
+description: "Jak to zrobi\u0107: Google Apps Script, b\u0119d\u0105c j\u0119zykiem\
+  \ skryptowym do lekkiego rozwoju aplikacji na platformie Google Apps, nie zapewnia\
+  \ bezpo\u015Bredniej\u2026"
 lastmod: '2024-03-13T22:44:34.921438-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie do standardowego b\u0142\u0119du (stderr) w j\u0119zykach programowania\
-  \ dotyczy kierowania komunikat\xF3w o b\u0142\u0119dach i diagnostyki do oddzielnego\
-  \ strumienia, odseparowanego od standardowego wyj\u015Bcia (stdout)."
+summary: "Google Apps Script, b\u0119d\u0105c j\u0119zykiem skryptowym do lekkiego\
+  \ rozwoju aplikacji na platformie Google Apps, nie zapewnia bezpo\u015Bredniej wbudowanej\
+  \ funkcji takiej jak `console.error()` do pisania do stderr, jak mo\u017Cna znale\u017A\
+  \u0107 w Node.js czy Pythonie."
 title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---

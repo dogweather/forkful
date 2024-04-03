@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:47.035062-07:00
-description: "Gli array associativi, o come li chiamano i Rustaceans \"hash map\"\
-  , sono collezioni che memorizzano dati in coppie chiave-valore. I programmatori\
-  \ li\u2026"
+description: "Come fare: In Rust, il tipo `HashMap` dal modulo `std::collections`\
+  \ fornisce la funzionalit\xE0 degli array associativi. Ecco come puoi lavorarci."
 lastmod: '2024-03-13T22:44:43.210844-06:00'
 model: gpt-4-0125-preview
-summary: Gli array associativi, o come li chiamano i Rustaceans "hash map", sono collezioni
-  che memorizzano dati in coppie chiave-valore.
+summary: "In Rust, il tipo `HashMap` dal modulo `std::collections` fornisce la funzionalit\xE0\
+  \ degli array associativi."
 title: Utilizzo di array associativi
 weight: 15
 ---

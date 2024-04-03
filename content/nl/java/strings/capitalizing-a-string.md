@@ -2,12 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:16.578357-07:00
-description: "Een string met hoofdletters maken betekent de eerste letter in hoofdletters\
-  \ zetten en de rest van de letters in kleine letters. Programmeurs gebruiken dit\u2026"
+description: "Hoe: In Java is er geen ingebouwde methode om een string volledig met\
+  \ hoofdletters te maken (eerste letter in hoofdletter, rest in kleine letters),\
+  \ maar\u2026"
 lastmod: '2024-03-13T22:44:50.663707-06:00'
 model: gpt-4-0125-preview
-summary: Een string met hoofdletters maken betekent de eerste letter in hoofdletters
-  zetten en de rest van de letters in kleine letters.
+summary: In Java is er geen ingebouwde methode om een string volledig met hoofdletters
+  te maken (eerste letter in hoofdletter, rest in kleine letters), maar hier is een
+  snelle functie om precies dat te doen.
 title: Een string met hoofdletters maken
 weight: 2
 ---

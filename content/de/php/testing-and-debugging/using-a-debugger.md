@@ -1,8 +1,7 @@
 ---
 date: 2024-01-26 03:50:39.876341-07:00
-description: "PHP wird mit einem interaktiven Debugger namens Xdebug geliefert. So\
-  \ verwenden Sie ihn. Zuerst stellen Sie sicher, dass Sie Xdebug installiert und\
-  \ in\u2026"
+description: "Wie geht das: PHP wird mit einem interaktiven Debugger namens Xdebug\
+  \ geliefert. So verwenden Sie ihn. Zuerst stellen Sie sicher, dass Sie Xdebug\u2026"
 lastmod: '2024-03-13T22:44:53.976934-06:00'
 model: gpt-4-0125-preview
 summary: PHP wird mit einem interaktiven Debugger namens Xdebug geliefert.

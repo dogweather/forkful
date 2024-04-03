@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:13.807649-07:00
-description: "\xC5 arbeide med CSV-filer i Ruby gir en grei tiln\xE6rming for \xE5\
-  \ h\xE5ndtere tabelldata. Programmerere engasjerer seg ofte i denne praksisen for\
-  \ dataparsing,\u2026"
+description: "Hvordan: Ruby inkluderer CSV-biblioteket som standard, noe som forenkler\
+  \ lesing fra og skriving til CSV-filer. Her er hvordan du kan utnytte dette for\u2026"
 lastmod: '2024-03-13T22:44:41.356142-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 arbeide med CSV-filer i Ruby gir en grei tiln\xE6rming for \xE5 h\xE5\
-  ndtere tabelldata."
+summary: Ruby inkluderer CSV-biblioteket som standard, noe som forenkler lesing fra
+  og skriving til CSV-filer.
 title: Arbeide med CSV
 weight: 37
 ---

@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 03:37:23.855789-07:00
-description: "Remover aspas de uma string significa eliminar todas as inst\xE2ncias\
-  \ de caracteres de aspas simples (`'`) ou duplas (`\"`) que envolvem o texto.\u2026"
+description: "Como Fazer: Para remover aspas de uma string no Arduino, voc\xEA pode\
+  \ iterar sobre os caracteres e reconstruir a string sem os caracteres de aspas.\
+  \ Por\u2026"
 lastmod: '2024-03-13T22:44:46.827421-06:00'
 model: gpt-4-0125-preview
-summary: "Remover aspas de uma string significa eliminar todas as inst\xE2ncias de\
-  \ caracteres de aspas simples (`'`) ou duplas (`\"`) que envolvem o texto."
+summary: "Para remover aspas de uma string no Arduino, voc\xEA pode iterar sobre os\
+  \ caracteres e reconstruir a string sem os caracteres de aspas."
 title: Removendo aspas de uma string
 weight: 9
 ---

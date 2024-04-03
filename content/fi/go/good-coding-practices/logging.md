@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:12.197401-07:00
-description: "Lokitus ohjelmistokehityksess\xE4 on prosessi, jossa kirjataan tietoa\
-  \ ohjelman suorituksesta, jonka tarkoituksena on seurata sen k\xE4ytt\xE4ytymist\xE4\
-  \ ja\u2026"
+description: "Miten: Gossa lokitusta voidaan toteuttaa k\xE4ytt\xE4en standardikirjaston\
+  \ pakettia `log`. T\xE4m\xE4 paketti tarjoaa yksinkertaisia lokitusominaisuuksia,\
+  \ kuten\u2026"
 lastmod: '2024-03-13T22:44:56.057643-06:00'
 model: gpt-4-0125-preview
-summary: "Lokitus ohjelmistokehityksess\xE4 on prosessi, jossa kirjataan tietoa ohjelman\
-  \ suorituksesta, jonka tarkoituksena on seurata sen k\xE4ytt\xE4ytymist\xE4 ja diagnosoida\
-  \ ongelmia."
+summary: "Gossa lokitusta voidaan toteuttaa k\xE4ytt\xE4en standardikirjaston pakettia\
+  \ `log`."
 title: Lokitiedostot
 weight: 17
 ---

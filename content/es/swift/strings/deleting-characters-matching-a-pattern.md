@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:43:04.530127-07:00
-description: "Eliminar caracteres que coinciden con un patr\xF3n implica buscar secuencias\
-  \ espec\xEDficas de texto y quitarlas de una cadena de caracteres. Los programadores\u2026"
+description: "C\xF3mo hacerlo: Veamos c\xF3mo puedes eliminar caracteres utilizando\
+  \ expresiones regulares en Swift."
 lastmod: '2024-03-13T22:44:59.401307-06:00'
 model: gpt-4-1106-preview
-summary: "Eliminar caracteres que coinciden con un patr\xF3n implica buscar secuencias\
-  \ espec\xEDficas de texto y quitarlas de una cadena de caracteres."
+summary: "Veamos c\xF3mo puedes eliminar caracteres utilizando expresiones regulares\
+  \ en Swift."
 title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---

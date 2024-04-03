@@ -2,15 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:24.092708-07:00
-description: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) cung c\u1EA5p m\u1ED9t c\xE1\
-  ch \u0111\u1EC3 t\xECm ki\u1EBFm, kh\u1EDBp v\xE0 thao t\xE1c v\u1EDBi c\xE1c chu\u1ED7\
-  i s\u1EED d\u1EE5ng c\xE1c m\u1EABu \u0111\xE3 \u0111\u1ECBnh ngh\u0129a. L\u1EAD\
-  p tr\xECnh vi\xEAn s\u1EED d\u1EE5ng ch\xFAng m\u1ED9t\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EC3 s\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9\
+  c ch\xEDnh quy trong C, b\u1EA1n ch\u1EE7 y\u1EBFu s\u1EBD l\xE0m vi\u1EC7c v\u1EDB\
+  i th\u01B0 vi\u1EC7n regex POSIX (`<regex.h>`). V\xED d\u1EE5 sau \u0111\xE2y minh\
+  \ h\u1ECDa kh\u1EDBp m\u1EABu c\u01A1\u2026"
 lastmod: '2024-03-13T22:44:37.254033-06:00'
 model: gpt-4-0125-preview
-summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) cung c\u1EA5p m\u1ED9t c\xE1ch\
-  \ \u0111\u1EC3 t\xECm ki\u1EBFm, kh\u1EDBp v\xE0 thao t\xE1c v\u1EDBi c\xE1c chu\u1ED7\
-  i s\u1EED d\u1EE5ng c\xE1c m\u1EABu \u0111\xE3 \u0111\u1ECBnh ngh\u0129a."
+summary: "\u0110\u1EC3 s\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy trong C,\
+  \ b\u1EA1n ch\u1EE7 y\u1EBFu s\u1EBD l\xE0m vi\u1EC7c v\u1EDBi th\u01B0 vi\u1EC7\
+  n regex POSIX (`<regex.h>`)."
 title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:38.766158-07:00
-description: "Att h\xE4mta aktuellt datum i Python \xE4r en grundl\xE4ggande operation\
-  \ f\xF6r m\xE5nga applikationer, s\xE5som loggning, dataanalys och tidsbaserat beslutsfattande.\
-  \ Det\u2026"
+description: "Hur: **Anv\xE4nda standardbiblioteket `datetime`:** `datetime`-modulen\
+  \ i Pythons standardbibliotek tillhandah\xE5ller klasser f\xF6r att manipulera datum\
+  \ och\u2026"
 lastmod: '2024-03-13T22:44:37.493441-06:00'
 model: gpt-4-0125-preview
-summary: "Att h\xE4mta aktuellt datum i Python \xE4r en grundl\xE4ggande operation\
-  \ f\xF6r m\xE5nga applikationer, s\xE5som loggning, dataanalys och tidsbaserat beslutsfattande."
+summary: "**Anv\xE4nda standardbiblioteket `datetime`:**\n\n`datetime`-modulen i Pythons\
+  \ standardbibliotek tillhandah\xE5ller klasser f\xF6r att manipulera datum och tider."
 title: "F\xE5 det aktuella datumet"
 weight: 29
 ---

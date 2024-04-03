@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:15.888586-07:00
-description: "Hakemiston olemassaolon tarkistaminen Pythonissa merkitsee kansion l\xE4\
-  sn\xE4olon varmistamista tiedostoj\xE4rjestelm\xE4ss\xE4 ennen sellaisia toimintoja\
-  \ kuin\u2026"
+description: "Miten: Python tarjoaa natiiveja tapoja tarkistaa hakemiston olemassaolo\
+  \ k\xE4ytt\xE4en `os` ja `pathlib` -moduuleita. T\xE4ss\xE4 ovat esimerkit molemmille:\
+  \ #."
 lastmod: '2024-03-13T22:44:56.157932-06:00'
 model: gpt-4-0125-preview
-summary: "Hakemiston olemassaolon tarkistaminen Pythonissa merkitsee kansion l\xE4\
-  sn\xE4olon varmistamista tiedostoj\xE4rjestelm\xE4ss\xE4 ennen sellaisia toimintoja\
-  \ kuin tiedostojen lukeminen tai kirjoittaminen."
+summary: "Python tarjoaa natiiveja tapoja tarkistaa hakemiston olemassaolo k\xE4ytt\xE4\
+  en `os` ja `pathlib` -moduuleita."
 title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---

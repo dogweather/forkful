@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 01:18:04.666224-07:00
-description: "La refactorisation est le processus de restructuration du code existant\
-  \ sans changer son comportement externe afin d'am\xE9liorer les attributs non\u2026"
+description: "Comment faire : Imaginez que vous avez un script qui a beaucoup grandi\
+  \ avec le temps. Il a commenc\xE9 simplement, mais maintenant, c'est une b\xEAte\u2026"
 lastmod: '2024-03-13T22:44:58.333834-06:00'
 model: gpt-4-0125-preview
-summary: "La refactorisation est le processus de restructuration du code existant\
-  \ sans changer son comportement externe afin d'am\xE9liorer les attributs non fonctionnels."
+summary: Imaginez que vous avez un script qui a beaucoup grandi avec le temps.
 title: Refactoring
 weight: 19
 ---

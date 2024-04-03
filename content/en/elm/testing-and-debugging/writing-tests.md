@@ -1,11 +1,10 @@
 ---
 date: 2024-02-03 19:03:37.283138-07:00
-description: "Writing tests in Elm involves crafting test cases to verify the correctness\
-  \ of your Elm code, ensuring it behaves as expected. Programmers do it to catch\u2026"
+description: 'How to: Elm uses the `elm-explorations/test` package for writing unit
+  and fuzz tests. Start by adding the package to your project.'
 lastmod: '2024-03-13T22:45:00.013866-06:00'
 model: gpt-4-0125-preview
-summary: Writing tests in Elm involves crafting test cases to verify the correctness
-  of your Elm code, ensuring it behaves as expected.
+summary: Elm uses the `elm-explorations/test` package for writing unit and fuzz tests.
 title: Writing tests
 weight: 36
 ---

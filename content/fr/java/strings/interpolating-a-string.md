@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 17:51:11.019923-07:00
-description: "(L'interpolation de cha\xEEnes : Quoi et Pourquoi ?) L'interpolation\
-  \ de cha\xEEnes permet d'ins\xE9rer des valeurs variables dans des textes fixes.\
-  \ C'est pratique\u2026"
+description: "How to: (Comment faire :) En Java, depuis les versions pr\xE9c\xE9dentes,\
+  \ on utilisait `String.format`. Avec Java 13, l'interpolation de cha\xEEnes a \xE9\
+  t\xE9\u2026"
 lastmod: '2024-03-13T22:44:57.620885-06:00'
 model: gpt-4-1106-preview
-summary: "(L'interpolation de cha\xEEnes : Quoi et Pourquoi ."
+summary: "(Comment faire :)\n\nEn Java, depuis les versions pr\xE9c\xE9dentes, on\
+  \ utilisait `String.format`."
 title: "Interpolation de cha\xEEnes de caract\xE8res"
 weight: 8
 ---

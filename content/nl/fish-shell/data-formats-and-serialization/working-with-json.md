@@ -2,13 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:17.994422-07:00
-description: "JSON (JavaScript Object Notation) is een gegevensindeling die wordt\
-  \ gebruikt voor het representeren van gestructureerde data. Programmeurs gebruiken\
-  \ JSON\u2026"
+description: 'Hoe te: .'
 lastmod: '2024-03-13T22:44:51.268462-06:00'
 model: gpt-4-0125-preview
-summary: JSON (JavaScript Object Notation) is een gegevensindeling die wordt gebruikt
-  voor het representeren van gestructureerde data.
+summary: .
 title: Werken met JSON
 weight: 38
 ---

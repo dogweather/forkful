@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:31.280862-07:00
-description: "Travailler avec JSON en programmation Bash implique d'analyser, d'extraire\
-  \ et de manipuler des donn\xE9es JSON directement depuis la ligne de commande. Les\u2026"
+description: "Comment faire : Bash lui-m\xEAme manque de capacit\xE9s int\xE9gr\xE9\
+  es d'analyse JSON, mais `jq` est un processeur JSON en ligne de commande puissant\
+  \ qui comble\u2026"
 lastmod: '2024-03-13T22:44:58.020727-06:00'
 model: gpt-4-0125-preview
-summary: "Travailler avec JSON en programmation Bash implique d'analyser, d'extraire\
-  \ et de manipuler des donn\xE9es JSON directement depuis la ligne de commande."
+summary: "Bash lui-m\xEAme manque de capacit\xE9s int\xE9gr\xE9es d'analyse JSON,\
+  \ mais `jq` est un processeur JSON en ligne de commande puissant qui comble cette\
+  \ lacune."
 title: Travailler avec JSON
 weight: 38
 ---

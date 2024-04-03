@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:54:00.831350-07:00
-description: "(Co i dlaczego?) Czytanie pliku tekstowego to pobieranie jego zawarto\u015B\
-  ci do pami\u0119ci programu. Programi\u015Bci robi\u0105 to, by manipulowa\u0107\
-  \ danymi, wy\u015Bwietli\u0107 je\u2026"
+description: "How to: (Jak to zrobi\u0107:) Czytanie pliku w Clojure mo\u017Ce by\u0107\
+  \ proste jak bu\u0142ka z mas\u0142em. Oto przyk\u0142ady."
 lastmod: '2024-03-13T22:44:35.014544-06:00'
 model: gpt-4-1106-preview
-summary: (Co i dlaczego.
+summary: "(Jak to zrobi\u0107:)\n\nCzytanie pliku w Clojure mo\u017Ce by\u0107 proste\
+  \ jak bu\u0142ka z mas\u0142em."
 title: Odczytywanie pliku tekstowego
 weight: 22
 ---

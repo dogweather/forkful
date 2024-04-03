@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:42:28.484005-07:00
-description: "Redondear n\xFAmeros es recortar un decimal a su valor entero m\xE1\
-  s cercano o a un n\xFAmero establecido de decimales. Los programadores redondean\
-  \ los n\xFAmeros\u2026"
+description: "C\xF3mo hacerlo: En Arduino, puedes redondear n\xFAmeros usando funciones\
+  \ incorporadas. Los jugadores clave son `round`, `ceil`, y `floor`. Aqu\xED hay\
+  \ una\u2026"
 lastmod: '2024-03-13T22:44:59.329192-06:00'
 model: gpt-4-0125-preview
-summary: "Redondear n\xFAmeros es recortar un decimal a su valor entero m\xE1s cercano\
-  \ o a un n\xFAmero establecido de decimales."
+summary: "En Arduino, puedes redondear n\xFAmeros usando funciones incorporadas."
 title: "Redondeo de n\xFAmeros"
 weight: 13
 ---

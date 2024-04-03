@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 20:33:11.371038-07:00
-description: "\xC5 generere tilfeldige tall i programmering handler om \xE5 skape\
-  \ verdier som ikke kan forutses logisk p\xE5 forh\xE5nd. Programmerere gj\xF8r dette\
-  \ av en rekke\u2026"
+description: "Hvordan: I Clojure er generering av tilfeldige tall rett frem, og det\
+  \ finnes et par innebygde funksjoner som kan brukes med en gang. For \xE5 generere\
+  \ et\u2026"
 lastmod: '2024-03-13T22:44:40.398416-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 generere tilfeldige tall i programmering handler om \xE5 skape verdier\
-  \ som ikke kan forutses logisk p\xE5 forh\xE5nd."
+summary: I Clojure er generering av tilfeldige tall rett frem, og det finnes et par
+  innebygde funksjoner som kan brukes med en gang.
 title: Generering av tilfeldige tall
 weight: 12
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:56.382687-07:00
-description: "Los arreglos asociativos en Dart, com\xFAnmente conocidos como Mapas,\
-  \ son estructuras de datos que almacenan datos en pares clave-valor. Permiten a\
-  \ los\u2026"
+description: "C\xF3mo hacerlo: Dart ofrece una sintaxis sencilla para crear y manipular\
+  \ Mapas. A continuaci\xF3n, se muestran ejemplos que demuestran operaciones b\xE1\
+  sicas como\u2026"
 lastmod: '2024-03-13T22:44:58.741223-06:00'
 model: gpt-4-0125-preview
-summary: "Los arreglos asociativos en Dart, com\xFAnmente conocidos como Mapas, son\
-  \ estructuras de datos que almacenan datos en pares clave-valor."
+summary: Dart ofrece una sintaxis sencilla para crear y manipular Mapas.
 title: Usando arrays asociativos
 weight: 15
 ---

@@ -1,14 +1,11 @@
 ---
 date: 2024-01-27 16:21:04.985539-07:00
-description: "I programmeringsv\xE4rlden, s\xE4rskilt n\xE4r man hanterar Linux- eller\
-  \ Unix-milj\xF6er, \xE4r manipulation av filer direkt fr\xE5n kommandoradsgr\xE4\
-  nssnittet (CLI) inte\u2026"
+description: "Hur: Att manipulera filer i Fish Shell \xE4r b\xE5de intuitivt och kraftfullt.\
+  \ H\xE4r \xE4r n\xE5gra exempel som visar dess f\xF6rm\xE5ga: 1. **Att skapa en\
+  \ fil** \xE4r s\xE5 enkelt\u2026"
 lastmod: '2024-03-13T22:44:38.332559-06:00'
 model: gpt-4-0125-preview
-summary: "I programmeringsv\xE4rlden, s\xE4rskilt n\xE4r man hanterar Linux- eller\
-  \ Unix-milj\xF6er, \xE4r manipulation av filer direkt fr\xE5n kommandoradsgr\xE4\
-  nssnittet (CLI) inte bara en fr\xE5ga om bekv\xE4mlighet \u2013 det \xE4r ett kraftfullt\
-  \ verktyg."
+summary: "Att manipulera filer i Fish Shell \xE4r b\xE5de intuitivt och kraftfullt."
 title: Hantera filer med CLI-engreppskommandon
 weight: 31
 ---

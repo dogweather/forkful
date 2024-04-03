@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:39:42.119694-07:00
-description: "Liczby zespolone to po\u0142\u0105czenie liczb rzeczywistych i urojonych,\
-  \ jak `a + bi`, gdzie `i` jest pierwiastkiem kwadratowym z -1. S\u0105 kluczowe\
-  \ w dziedzinach\u2026"
+description: "Jak to zrobi\u0107: Elm nie ma wbudowanego wsparcia dla liczb zespolonych,\
+  \ wi\u0119c stworzysz w\u0142asny typ i funkcje. Oto szybka konfiguracja."
 lastmod: '2024-03-13T22:44:35.315249-06:00'
 model: gpt-4-0125-preview
-summary: "Liczby zespolone to po\u0142\u0105czenie liczb rzeczywistych i urojonych,\
-  \ jak `a + bi`, gdzie `i` jest pierwiastkiem kwadratowym z -1."
+summary: "Elm nie ma wbudowanego wsparcia dla liczb zespolonych, wi\u0119c stworzysz\
+  \ w\u0142asny typ i funkcje."
 title: Praca z liczbami zespolonymi
 weight: 14
 ---

@@ -1,11 +1,12 @@
 ---
 date: 2024-02-01 21:12:11.382059-07:00
-description: "Calculating a date in the future or the past is about manipulating date\
-  \ objects to find dates beyond or before the present date, respectively. Programmers\u2026"
+description: "How to: In Google Apps Script, which is based on JavaScript, you can\
+  \ manipulate dates using the `Date` object. Here\u2019s how to calculate dates in\
+  \ the future\u2026"
 lastmod: '2024-03-13T22:44:59.681903-06:00'
 model: gpt-4-0125-preview
-summary: Calculating a date in the future or the past is about manipulating date objects
-  to find dates beyond or before the present date, respectively.
+summary: In Google Apps Script, which is based on JavaScript, you can manipulate dates
+  using the `Date` object.
 title: Calculating a date in the future or past
 weight: 26
 ---

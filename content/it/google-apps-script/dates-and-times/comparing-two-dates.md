@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:46.612589-07:00
-description: "Confrontare due date in Google Apps Script, un derivato di JavaScript\
-  \ su misura per la suite di app di Google, \xE8 un compito essenziale per gli\u2026"
+description: "Come fare: In Google Apps Script, le date vengono confrontate utilizzando\
+  \ oggetti Date di JavaScript, permettendo cos\xEC l'uso di metodi standard per\u2026"
 lastmod: '2024-03-13T22:44:42.969487-06:00'
 model: gpt-4-0125-preview
-summary: "Confrontare due date in Google Apps Script, un derivato di JavaScript su\
-  \ misura per la suite di app di Google, \xE8 un compito essenziale per gli sviluppatori\
-  \ che si occupano di pianificazione, cronologie o qualsiasi dato relativo alle date."
+summary: "In Google Apps Script, le date vengono confrontate utilizzando oggetti Date\
+  \ di JavaScript, permettendo cos\xEC l'uso di metodi standard per valutare quale\
+  \ delle due date sia precedente, successiva, o se sono uguali."
 title: Confrontare due date
 weight: 27
 ---

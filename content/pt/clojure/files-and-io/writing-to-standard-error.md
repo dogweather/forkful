@@ -2,14 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:50.328758-07:00
-description: "Escrever para o erro padr\xE3o (stderr) consiste em direcionar mensagens\
-  \ de erro e diagn\xF3sticos para o stream stderr, separando-os da sa\xEDda padr\xE3\
-  o (stdout).\u2026"
+description: "Como fazer: Em Clojure, voc\xEA pode escrever no stderr usando o stream\
+  \ `*err*`. Aqui est\xE1 um exemplo b\xE1sico."
 lastmod: '2024-03-13T22:44:46.212865-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever para o erro padr\xE3o (stderr) consiste em direcionar mensagens\
-  \ de erro e diagn\xF3sticos para o stream stderr, separando-os da sa\xEDda padr\xE3\
-  o (stdout)."
+summary: "Em Clojure, voc\xEA pode escrever no stderr usando o stream `*err*`."
 title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---

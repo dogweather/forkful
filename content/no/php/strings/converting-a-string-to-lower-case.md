@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:38:55.294913-07:00
-description: "\xC5 konvertere en streng til sm\xE5 bokstaver betyr \xE5 endre alle\
-  \ store bokstaver i en tekststreng til tilsvarende sm\xE5 bokstaver. Programmerere\
-  \ gj\xF8r dette for\u2026"
+description: "Hvordan: Med PHP kan du bruke `strtolower()` funksjonen for \xE5 konvertere\
+  \ en streng til sm\xE5 bokstaver. Slik gj\xF8r du det."
 lastmod: '2024-03-13T22:44:40.872761-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 konvertere en streng til sm\xE5 bokstaver betyr \xE5 endre alle store\
-  \ bokstaver i en tekststreng til tilsvarende sm\xE5 bokstaver."
+summary: "Med PHP kan du bruke `strtolower()` funksjonen for \xE5 konvertere en streng\
+  \ til sm\xE5 bokstaver."
 title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---

@@ -1,8 +1,8 @@
 ---
 date: 2024-01-20 17:42:16.710962-07:00
-description: "Att ta bort tecken som matchar ett m\xF6nster \xE4r en process d\xE4\
-  r vissa teckenstr\xE4ngar rensas bort fr\xE5n data baserat p\xE5 specifika kriterier.\
-  \ Programmerare g\xF6r\u2026"
+description: "Vad & Varf\xF6r? Att ta bort tecken som matchar ett m\xF6nster \xE4\
+  r en process d\xE4r vissa teckenstr\xE4ngar rensas bort fr\xE5n data baserat p\xE5\
+  \ specifika kriterier.\u2026"
 lastmod: '2024-03-13T22:44:37.813604-06:00'
 model: gpt-4-1106-preview
 summary: "Att ta bort tecken som matchar ett m\xF6nster \xE4r en process d\xE4r vissa\

@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:42:32.151190-07:00
-description: "Liczby zespolone rozszerzaj\u0105 lini\u0119 liczb rzeczywistych przez\
-  \ dodanie jednostki urojonej, `i`, gdzie `i^2 = -1`. S\u0105 one kluczowe w takich\
-  \ dziedzinach jak\u2026"
+description: "Jak to zrobi\u0107: Java nie posiada wbudowanego wsparcia dla liczb\
+  \ zespolonych, ale mo\u017Cemy stworzy\u0107 w\u0142asn\u0105 klas\u0119 lub u\u017C\
+  y\u0107 biblioteki. Oto kr\xF3tki przyk\u0142ad, jak\u2026"
 lastmod: '2024-03-13T22:44:35.271224-06:00'
 model: gpt-4-0125-preview
-summary: "Liczby zespolone rozszerzaj\u0105 lini\u0119 liczb rzeczywistych przez dodanie\
-  \ jednostki urojonej, `i`, gdzie `i^2 = -1`."
+summary: "Java nie posiada wbudowanego wsparcia dla liczb zespolonych, ale mo\u017C\
+  emy stworzy\u0107 w\u0142asn\u0105 klas\u0119 lub u\u017Cy\u0107 biblioteki."
 title: Praca z liczbami zespolonymi
 weight: 14
 ---

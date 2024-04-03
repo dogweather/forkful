@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:47.483863-07:00
-description: "Werken met JSON (JavaScript Object Notation) betekent het hanteren van\
-  \ dit lichtgewicht gegevensuitwisselingsformaat binnen uw Java-applicaties.\u2026"
+description: "Hoe te: Laten we onze mouwen oprollen en beginnen met coderen met JSON\
+  \ in Java. Allereerst hebt u een JSON-verwerkingsbibliotheek nodig zoals `Jackson`\
+  \ of\u2026"
 lastmod: '2024-03-13T22:44:50.703834-06:00'
 model: gpt-4-0125-preview
-summary: Werken met JSON (JavaScript Object Notation) betekent het hanteren van dit
-  lichtgewicht gegevensuitwisselingsformaat binnen uw Java-applicaties.
+summary: Laten we onze mouwen oprollen en beginnen met coderen met JSON in Java.
 title: Werken met JSON
 weight: 38
 ---

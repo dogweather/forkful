@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:37.492190-07:00
-description: "YAML, joka tulee sanoista YAML Ain't Markup Language, on ihmisen luettavissa\
-  \ oleva tiedon sarjallistamismuoto. Ohjelmoijat k\xE4ytt\xE4v\xE4t YAMLia\u2026"
+description: "Kuinka: YAMLin lukeminen ja kirjoittaminen Pythonissa tyypillisesti\
+  \ sis\xE4lt\xE4\xE4 kolmannen osapuolen kirjaston k\xE4yt\xF6n, `PyYAML` ollessa\
+  \ suosituin.\u2026"
 lastmod: '2024-03-13T22:44:56.163860-06:00'
 model: gpt-4-0125-preview
-summary: YAML, joka tulee sanoista YAML Ain't Markup Language, on ihmisen luettavissa
-  oleva tiedon sarjallistamismuoto.
+summary: "YAMLin lukeminen ja kirjoittaminen Pythonissa tyypillisesti sis\xE4lt\xE4\
+  \xE4 kolmannen osapuolen kirjaston k\xE4yt\xF6n, `PyYAML` ollessa suosituin."
 title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---

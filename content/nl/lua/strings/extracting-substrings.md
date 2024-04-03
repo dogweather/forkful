@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:57.097674-07:00
-description: "Het extraheren van deelreeksen betekent het uithalen van een specifiek\
-  \ stukje uit een reeks tekens. Programmeurs doen dit om specifieke gegevens binnen\u2026"
+description: 'Hoe: In Lua, gebruik de functie `string.sub`.'
 lastmod: '2024-03-13T22:44:50.926562-06:00'
 model: gpt-4-0125-preview
-summary: Het extraheren van deelreeksen betekent het uithalen van een specifiek stukje
-  uit een reeks tekens.
+summary: In Lua, gebruik de functie `string.sub`.
 title: Substrings extraheren
 weight: 6
 ---

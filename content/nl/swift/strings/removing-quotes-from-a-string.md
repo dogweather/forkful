@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:17.348434-07:00
-description: "Het verwijderen van aanhalingstekens uit een string betekent het wegstrepen\
-  \ van alle aanhalingstekens die de inhoud omsluiten. We doen dit om invoer te\u2026"
+description: "Hoe: Swift laat je de klus van het verwijderen van aanhalingstekens\
+  \ vrij handig aanpakken. Hier is een snel voorbeeld met\u2026"
 lastmod: '2024-03-13T22:44:51.143888-06:00'
 model: gpt-4-0125-preview
-summary: Het verwijderen van aanhalingstekens uit een string betekent het wegstrepen
-  van alle aanhalingstekens die de inhoud omsluiten.
+summary: Swift laat je de klus van het verwijderen van aanhalingstekens vrij handig
+  aanpakken.
 title: Quotes verwijderen uit een string
 weight: 9
 ---

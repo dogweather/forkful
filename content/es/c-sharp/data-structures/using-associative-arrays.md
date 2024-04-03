@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:09:51.806101-07:00
-description: "Los arrays asociativos, o diccionarios en C#, te permiten almacenar\
-  \ y administrar pares de claves y valores. Son tu opci\xF3n predilecta cuando necesitas\u2026"
+description: "C\xF3mo hacerlo: En C#, trabajas con arrays asociativos utilizando la\
+  \ clase `Dictionary<TKey, TValue>`. Aqu\xED tienes un ejemplo r\xE1pido para empezar."
 lastmod: '2024-03-13T22:44:59.071405-06:00'
 model: gpt-4-0125-preview
-summary: Los arrays asociativos, o diccionarios en C#, te permiten almacenar y administrar
-  pares de claves y valores.
+summary: En C#, trabajas con arrays asociativos utilizando la clase `Dictionary<TKey,
+  TValue>`.
 title: Uso de matrices asociativas
 weight: 15
 ---

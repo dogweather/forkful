@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:55:04.530214-07:00
-description: "Leer un archivo de texto en Python es b\xE1sicamente acceder y obtener\
-  \ el contenido de un archivo `.txt` en tu c\xF3digo. Los programadores lo hacen\
-  \ para\u2026"
+description: "C\xF3mo: Leer un archivo es simple. Usa `open()` con un `with` statement\
+  \ para manejar el archivo de manera segura. Aqu\xED tienes un c\xF3digo de ejemplo\
+  \ y el\u2026"
 lastmod: '2024-03-13T22:44:58.631386-06:00'
 model: gpt-4-1106-preview
-summary: "Leer un archivo de texto en Python es b\xE1sicamente acceder y obtener el\
-  \ contenido de un archivo `."
+summary: Leer un archivo es simple.
 title: Lectura de un archivo de texto
 weight: 22
 ---

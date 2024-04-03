@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 04:26:21.103201-07:00
-description: "TOML \xE9 uma linguagem de serializa\xE7\xE3o de dados leg\xEDvel por\
-  \ humanos, frequentemente utilizada para configura\xE7\xF5es. Programadores usam\
-  \ TOML pela sua\u2026"
+description: 'Como fazer: .'
 lastmod: '2024-03-13T22:44:46.391313-06:00'
 model: gpt-4-0125-preview
-summary: "TOML \xE9 uma linguagem de serializa\xE7\xE3o de dados leg\xEDvel por humanos,\
-  \ frequentemente utilizada para configura\xE7\xF5es."
+summary: .
 title: Trabalhando com TOML
 weight: 39
 ---

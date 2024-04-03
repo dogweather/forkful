@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 03:50:10.781579-07:00
-description: "Aqui vai uma pequena amostra de depura\xE7\xE3o em Kotlin com IntelliJ\
-  \ IDEA - o Sherlock Holmes dos IDEs: ```kotlin fun main() { val mysteryNumber =\
-  \ 42 var\u2026"
+description: "Como Fazer: Aqui vai uma pequena amostra de depura\xE7\xE3o em Kotlin\
+  \ com IntelliJ IDEA - o Sherlock Holmes dos IDEs."
 lastmod: '2024-03-13T22:44:46.546545-06:00'
 model: gpt-4-0125-preview
 summary: "Aqui vai uma pequena amostra de depura\xE7\xE3o em Kotlin com IntelliJ IDEA\
-  \ - o Sherlock Holmes dos IDEs:\n\n```kotlin\nfun main() {\n    val mysteryNumber\
-  \ = 42\n    var guess = 0\n\n    while (guess ."
+  \ - o Sherlock Holmes dos IDEs."
 title: Usando um depurador
 weight: 35
 ---

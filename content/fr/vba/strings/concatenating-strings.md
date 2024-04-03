@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:18.947942-07:00
-description: "La concat\xE9nation dans Visual Basic pour Applications (VBA) consiste\
-  \ \xE0 joindre deux ou plusieurs cha\xEEnes de caract\xE8res en une seule entit\xE9\
-  . Ceci est une\u2026"
+description: "Comment faire : VBA propose une m\xE9thode simple pour concat\xE9ner\
+  \ des cha\xEEnes en utilisant l'op\xE9rateur `&` ou la fonction `Concatenate`. Explorons\
+  \ les deux\u2026"
 lastmod: '2024-03-13T22:44:57.547580-06:00'
 model: gpt-4-0125-preview
-summary: "La concat\xE9nation dans Visual Basic pour Applications (VBA) consiste \xE0\
-  \ joindre deux ou plusieurs cha\xEEnes de caract\xE8res en une seule entit\xE9."
+summary: "VBA propose une m\xE9thode simple pour concat\xE9ner des cha\xEEnes en utilisant\
+  \ l'op\xE9rateur `&` ou la fonction `Concatenate`."
 title: "Concat\xE9nation de cha\xEEnes"
 weight: 3
 ---

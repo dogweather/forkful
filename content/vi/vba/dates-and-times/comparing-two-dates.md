@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:33.987024-07:00
-description: "Vi\u1EC7c so s\xE1nh hai ng\xE0y trong Visual Basic cho \u1EE8ng d\u1EE5\
-  ng (VBA) bao g\u1ED3m vi\u1EC7c x\xE1c \u0111\u1ECBnh m\u1ED1i quan h\u1EC7 theo\
-  \ th\u1EE9 t\u1EF1 th\u1EDDi gian gi\u1EEFa ch\xFAng. C\xE1c l\u1EADp tr\xECnh vi\xEA\
-  n th\u1EF1c\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong VBA, ng\xE0y \u0111\u01B0\u1EE3c so s\xE1\
+  nh s\u1EED d\u1EE5ng c\xE1c to\xE1n t\u1EED so s\xE1nh ti\xEAu chu\u1EA9n (`<`,\
+  \ `>`, `=`, `<=`, `>=`). Tr\u01B0\u1EDBc khi so s\xE1nh, \u0111i\u1EC1u quan tr\u1ECD\
+  ng l\xE0 ph\u1EA3i\u2026"
 lastmod: '2024-03-13T22:44:36.449407-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c so s\xE1nh hai ng\xE0y trong Visual Basic cho \u1EE8ng d\u1EE5\
-  ng (VBA) bao g\u1ED3m vi\u1EC7c x\xE1c \u0111\u1ECBnh m\u1ED1i quan h\u1EC7 theo\
-  \ th\u1EE9 t\u1EF1 th\u1EDDi gian gi\u1EEFa ch\xFAng."
+summary: "Trong VBA, ng\xE0y \u0111\u01B0\u1EE3c so s\xE1nh s\u1EED d\u1EE5ng c\xE1\
+  c to\xE1n t\u1EED so s\xE1nh ti\xEAu chu\u1EA9n (`<`, `>`, `=`, `<=`, `>=`)."
 title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---

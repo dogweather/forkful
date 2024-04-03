@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:23.207611-07:00
-description: "Chuy\u1EC3n \u0111\u1ED5i ng\xE0y th\xE1ng th\xE0nh chu\u1ED7i trong\
-  \ C# l\xE0 qu\xE1 tr\xECnh thay \u0111\u1ED5i \u0111\u1ECBnh d\u1EA1ng t\u1EEB \u0111\
-  \u1ED1i t\u01B0\u1EE3ng DateTime sang bi\u1EC3u di\u1EC5n v\u0103n b\u1EA3n. L\u1EAD\
-  p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong C#, b\u1EA1n c\xF3 \u0111\u1ED1i t\u01B0\
+  \u1EE3ng `DateTime` v\xE0 nhi\u1EC1u c\xE1ch \u0111\u1EC3 chuy\u1EC3n n\xF3 th\xE0\
+  nh chu\u1ED7i. D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t s\u1ED1 v\xED d\u1EE5."
 lastmod: '2024-03-13T22:44:36.672591-06:00'
 model: gpt-4-0125-preview
-summary: "Chuy\u1EC3n \u0111\u1ED5i ng\xE0y th\xE1ng th\xE0nh chu\u1ED7i trong C#\
-  \ l\xE0 qu\xE1 tr\xECnh thay \u0111\u1ED5i \u0111\u1ECBnh d\u1EA1ng t\u1EEB \u0111\
-  \u1ED1i t\u01B0\u1EE3ng DateTime sang bi\u1EC3u di\u1EC5n v\u0103n b\u1EA3n."
+summary: "Trong C#, b\u1EA1n c\xF3 \u0111\u1ED1i t\u01B0\u1EE3ng `DateTime` v\xE0\
+  \ nhi\u1EC1u c\xE1ch \u0111\u1EC3 chuy\u1EC3n n\xF3 th\xE0nh chu\u1ED7i."
 title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 weight: 28
 ---

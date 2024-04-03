@@ -1,10 +1,12 @@
 ---
 date: 2024-01-20 17:46:47.340647-07:00
-description: "Extrair substrings \xE9 pegar peda\xE7os espec\xEDficos de uma string.\
-  \ Fazemos isso para manipular, analisar ou alterar dados de forma eficiente e direcionada."
+description: "How to: Para extrair substrings em Ruby, voc\xEA pode usar os m\xE9\
+  todos `slice`, `[]` e `slice!`. Aqui v\xE3o alguns exemplos pr\xE1ticos para voc\xEA\
+  \ testar."
 lastmod: '2024-03-13T22:44:47.082944-06:00'
 model: gpt-4-1106-preview
-summary: "Extrair substrings \xE9 pegar peda\xE7os espec\xEDficos de uma string."
+summary: "Para extrair substrings em Ruby, voc\xEA pode usar os m\xE9todos `slice`,\
+  \ `[]` e `slice!`."
 title: Extraindo substrings
 weight: 6
 ---

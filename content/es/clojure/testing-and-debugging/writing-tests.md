@@ -2,13 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:57.963990-07:00
-description: "Escribir pruebas en Clojure, al igual que en otros lenguajes de programaci\xF3\
-  n, implica crear c\xF3digo dedicado para verificar que tu c\xF3digo principal\u2026"
+description: "C\xF3mo hacerlo: Clojure, aprovechando la JVM, soporta varios marcos\
+  \ de pruebas. Sin embargo, una biblioteca integrada com\xFAnmente utilizada es\u2026"
 lastmod: '2024-03-13T22:44:58.660314-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir pruebas en Clojure, al igual que en otros lenguajes de programaci\xF3\
-  n, implica crear c\xF3digo dedicado para verificar que tu c\xF3digo principal funciona\
-  \ como se espera."
+summary: Clojure, aprovechando la JVM, soporta varios marcos de pruebas.
 title: Escribiendo pruebas
 weight: 36
 ---

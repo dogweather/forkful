@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:52:48.943296-07:00
-description: "No mundo da programa\xE7\xE3o, imprimir sa\xEDdas de depura\xE7\xE3\
-  o \xE9 o equivalente a uma l\xE2mpada que piscar quando algo errado acontece. \xC9\
-  \ extremamente \xFAtil: ajuda a\u2026"
+description: "How to: Vamos partir para o c\xF3digo. Aqui est\xE3o alguns exemplos\
+  \ de como exibir mensagens de depura\xE7\xE3o em Java."
 lastmod: '2024-03-13T22:44:46.458662-06:00'
 model: gpt-4-1106-preview
-summary: "No mundo da programa\xE7\xE3o, imprimir sa\xEDdas de depura\xE7\xE3o \xE9\
-  \ o equivalente a uma l\xE2mpada que piscar quando algo errado acontece."
+summary: "Vamos partir para o c\xF3digo."
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---

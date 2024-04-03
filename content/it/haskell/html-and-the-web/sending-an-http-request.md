@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:59:38.970846-07:00
-description: "Mandare una richiesta HTTP significa ordinare al tuo programma di chiacchierare\
-  \ con un server web. Questo lo fanno i programmatori per scambiare dati -\u2026"
+description: 'How to: In Haskell, usiamo librerie come `http-conduit` per mandare
+  richieste HTTP. Ecco un esempio veloce.'
 lastmod: '2024-03-13T22:44:43.472003-06:00'
 model: gpt-4-1106-preview
-summary: Mandare una richiesta HTTP significa ordinare al tuo programma di chiacchierare
-  con un server web.
+summary: In Haskell, usiamo librerie come `http-conduit` per mandare richieste HTTP.
 title: Inviare una richiesta http
 weight: 44
 ---

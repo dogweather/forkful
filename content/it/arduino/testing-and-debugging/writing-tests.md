@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:32.962186-07:00
-description: "Scrivere test nell'ambiente Arduino si riferisce al processo di creazione\
-  \ di test automatizzati che validano la funzionalit\xE0 del tuo codice su dispositivi\u2026"
+description: "Come fare: Arduino non dispone di un framework di testing integrato\
+  \ come alcuni altri ambienti di programmazione. Tuttavia, \xE8 possibile utilizzare\u2026"
 lastmod: '2024-03-13T22:44:43.686056-06:00'
 model: gpt-4-0125-preview
-summary: "Scrivere test nell'ambiente Arduino si riferisce al processo di creazione\
-  \ di test automatizzati che validano la funzionalit\xE0 del tuo codice su dispositivi\
-  \ Arduino."
+summary: Arduino non dispone di un framework di testing integrato come alcuni altri
+  ambienti di programmazione.
 title: Scrivere test
 weight: 36
 ---

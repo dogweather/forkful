@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:43:37.177840-07:00
-description: "Pobieranie strony internetowej to proces \u015Bci\u0105gania jej danych\
-  \ na nasze urz\u0105dzenie. Programi\u015Bci robi\u0105 to, by pozyskiwa\u0107 informacje\
-  \ w czasie rzeczywistym\u2026"
+description: "How to: Do pobierania stron potrzebujesz modu\u0142u sieciowego, np.\
+  \ ESP8266. Poni\u017Cej znajdziesz prosty kod, kt\xF3ry \u0142\u0105czy si\u0119\
+  \ z Wi-Fi, pobiera dane ze strony i\u2026"
 lastmod: '2024-03-13T22:44:35.671169-06:00'
 model: gpt-4-1106-preview
-summary: "Pobieranie strony internetowej to proces \u015Bci\u0105gania jej danych\
-  \ na nasze urz\u0105dzenie."
+summary: "Do pobierania stron potrzebujesz modu\u0142u sieciowego, np."
 title: Pobieranie strony internetowej
 weight: 42
 ---

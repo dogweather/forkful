@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:33.094944-07:00
-description: "Sprawdzanie, czy katalog istnieje w Google Apps Script, polega na weryfikacji\
-  \ obecno\u015Bci folderu w Google Drive. Programi\u015Bci cz\u0119sto wykonuj\u0105\
-  \ to\u2026"
+description: "Jak to zrobi\u0107: Google Apps Script nie oferuje bezpo\u015Bredniej\
+  \ metody \"exists\" dla folder\xF3w. Zamiast tego, u\u017Cywamy mo\u017Cliwo\u015B\
+  ci wyszukiwania Google Drive, aby\u2026"
 lastmod: '2024-03-13T22:44:34.919188-06:00'
 model: gpt-4-0125-preview
-summary: "Sprawdzanie, czy katalog istnieje w Google Apps Script, polega na weryfikacji\
-  \ obecno\u015Bci folderu w Google Drive."
+summary: "Google Apps Script nie oferuje bezpo\u015Bredniej metody \"exists\" dla\
+  \ folder\xF3w."
 title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---

@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:38:42.083039-07:00
-description: "Convertir una cadena de texto a min\xFAsculas es tomar cada letra en\
-  \ may\xFAscula y cambiarla por su equivalente en min\xFAscula. Los programadores\
-  \ hacen esto para\u2026"
+description: "C\xF3mo hacerlo: Haskell simplifica el proceso de cambiar a min\xFA\
+  sculas con la funci\xF3n `toLower` del m\xF3dulo `Data.Char`. Abajo, un ejemplo\
+  \ de c\xF3mo usarla."
 lastmod: '2024-03-13T22:44:59.106620-06:00'
 model: gpt-4-1106-preview
-summary: "Convertir una cadena de texto a min\xFAsculas es tomar cada letra en may\xFA\
-  scula y cambiarla por su equivalente en min\xFAscula."
+summary: "Haskell simplifica el proceso de cambiar a min\xFAsculas con la funci\xF3\
+  n `toLower` del m\xF3dulo `Data.Char`."
 title: "Conversi\xF3n de una cadena de texto a min\xFAsculas"
 weight: 4
 ---

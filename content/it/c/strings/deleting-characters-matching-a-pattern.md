@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:16.354024-07:00
-description: "Eliminare i caratteri che corrispondono a uno specifico pattern dalle\
-  \ stringhe in C consiste nel rimuovere tutte le istanze di certi caratteri che\u2026"
+description: "Come fare: C non dispone di una funzione integrata per eliminare direttamente\
+  \ i caratteri da una stringa in base a un pattern, a differenza di alcuni\u2026"
 lastmod: '2024-03-13T22:44:43.887851-06:00'
 model: gpt-4-0125-preview
-summary: Eliminare i caratteri che corrispondono a uno specifico pattern dalle stringhe
-  in C consiste nel rimuovere tutte le istanze di certi caratteri che soddisfano criteri
-  predefiniti.
+summary: C non dispone di una funzione integrata per eliminare direttamente i caratteri
+  da una stringa in base a un pattern, a differenza di alcuni linguaggi di livello
+  superiore.
 title: Eliminazione dei caratteri corrispondenti a un pattern
 weight: 5
 ---

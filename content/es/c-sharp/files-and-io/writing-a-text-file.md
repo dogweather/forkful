@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:29.591536-07:00
-description: "Escribir un archivo de texto en C# implica crear o modificar program\xE1\
-  ticamente archivos de texto en el sistema de archivos - una tarea fundamental para\u2026"
+description: "C\xF3mo hacerlo: C# simplifica las operaciones de archivos con su espacio\
+  \ de nombres `System.IO`, proporcionando m\xE9todos sencillos para escribir archivos\
+  \ de\u2026"
 lastmod: '2024-03-13T22:44:59.095938-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir un archivo de texto en C# implica crear o modificar program\xE1\
-  ticamente archivos de texto en el sistema de archivos - una tarea fundamental para\
-  \ muchas aplicaciones, tales como el registro de actividades, exportaci\xF3n de\
-  \ datos o gesti\xF3n de configuraciones."
+summary: "C# simplifica las operaciones de archivos con su espacio de nombres `System.IO`,\
+  \ proporcionando m\xE9todos sencillos para escribir archivos de texto."
 title: Escribiendo un archivo de texto
 weight: 24
 ---

@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:12:00.926256-07:00
-description: "Werken met JSON (JavaScript Object Notation) in Go houdt in dat er gegevens\
-  \ worden gecodeerd en gedecodeerd tussen Go datastructuren en het JSON-formaat.\u2026"
+description: "Hoe: In Go is het `encoding/json` pakket jouw toegangspoort tot JSON-manipulatie,\
+  \ en biedt mechanismen om Go datastructuren naar JSON (marshalen) en terug\u2026"
 lastmod: '2024-03-13T22:44:50.309341-06:00'
 model: gpt-4-0125-preview
-summary: Werken met JSON (JavaScript Object Notation) in Go houdt in dat er gegevens
-  worden gecodeerd en gedecodeerd tussen Go datastructuren en het JSON-formaat.
+summary: In Go is het `encoding/json` pakket jouw toegangspoort tot JSON-manipulatie,
+  en biedt mechanismen om Go datastructuren naar JSON (marshalen) en terug (unmarshalen)
+  te converteren.
 title: Werken met JSON
 weight: 38
 ---

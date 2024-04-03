@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:55.431163-07:00
-description: "Usuwanie znak\xF3w pasuj\u0105cych do okre\u015Blonego wzorca to technika\
-  \ u\u017Cywana do oczyszczania lub formatowania ci\u0105g\xF3w znak\xF3w w programowaniu.\
-  \ W kontek\u015Bcie Google\u2026"
+description: "Jak to zrobi\u0107: Google Apps Script oferuje solidne metody manipulacji\
+  \ ci\u0105gami znak\xF3w, wykorzystuj\u0105c wrodzone mo\u017Cliwo\u015Bci JavaScriptu.\
+  \ Aby usun\u0105\u0107 znaki\u2026"
 lastmod: '2024-03-13T22:44:34.883775-06:00'
 model: gpt-4-0125-preview
-summary: "Usuwanie znak\xF3w pasuj\u0105cych do okre\u015Blonego wzorca to technika\
-  \ u\u017Cywana do oczyszczania lub formatowania ci\u0105g\xF3w znak\xF3w w programowaniu."
+summary: "Google Apps Script oferuje solidne metody manipulacji ci\u0105gami znak\xF3\
+  w, wykorzystuj\u0105c wrodzone mo\u017Cliwo\u015Bci JavaScriptu."
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---

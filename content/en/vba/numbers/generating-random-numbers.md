@@ -1,12 +1,10 @@
 ---
 date: 2024-02-01 21:30:24.808919-07:00
-description: "Generating random numbers in Visual Basic for Applications (VBA) allows\
-  \ programs to simulate processes with elements of chance or variability, such as\u2026"
+description: "How to: In VBA, the `Rnd` function is used to generate random numbers.\
+  \ By default, `Rnd` generates a single-precision floating-point number greater than\u2026"
 lastmod: '2024-03-13T22:44:59.930640-06:00'
 model: gpt-4-0125-preview
-summary: Generating random numbers in Visual Basic for Applications (VBA) allows programs
-  to simulate processes with elements of chance or variability, such as dice rolls
-  or sampling data.
+summary: In VBA, the `Rnd` function is used to generate random numbers.
 title: Generating random numbers
 weight: 12
 ---

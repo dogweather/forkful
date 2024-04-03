@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:06.288146-07:00
-description: "Att ladda ner en webbsida i Google Apps Script inneb\xE4r att h\xE4\
-  mta inneh\xE5llet p\xE5 en webbsida via HTML f\xF6r olika \xE4ndam\xE5l, s\xE5som\
-  \ webbskrapning, dataextraktion\u2026"
+description: "Hur man g\xF6r: I Google Apps Script \xE4r `UrlFetchApp`-tj\xE4nsten\
+  \ avg\xF6rande f\xF6r att ladda ner webbinneh\xE5ll. Nedan f\xF6ljer en steg-f\xF6\
+  r-steg-guide och ett enkelt\u2026"
 lastmod: '2024-03-13T22:44:37.437157-06:00'
 model: gpt-4-0125-preview
-summary: "Att ladda ner en webbsida i Google Apps Script inneb\xE4r att h\xE4mta inneh\xE5\
-  llet p\xE5 en webbsida via HTML f\xF6r olika \xE4ndam\xE5l, s\xE5som webbskrapning,\
-  \ dataextraktion eller \xF6vervakning av f\xF6r\xE4ndringar."
+summary: "I Google Apps Script \xE4r `UrlFetchApp`-tj\xE4nsten avg\xF6rande f\xF6\
+  r att ladda ner webbinneh\xE5ll."
 title: "H\xE4mta en webbsida"
 weight: 42
 ---

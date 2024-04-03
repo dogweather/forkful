@@ -1,13 +1,9 @@
 ---
 date: 2024-01-20 18:02:19.860910-07:00
-description: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica significa\
-  \ que voc\xEA fornece um nome de usu\xE1rio e senha para acessar um recurso protegido\
-  \ online.\u2026"
+description: 'Como fazer: .'
 lastmod: '2024-03-13T22:44:46.667075-06:00'
 model: gpt-4-1106-preview
-summary: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica significa\
-  \ que voc\xEA fornece um nome de usu\xE1rio e senha para acessar um recurso protegido\
-  \ online."
+summary: .
 title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 weight: 45
 ---

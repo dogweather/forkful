@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:50:39.852104-07:00
-description: "Interpolointi yhdist\xE4\xE4 muuttujat ja teksti\xE4 yhdeksi merkkijonoksi.\
-  \ Koodarit hy\xF6dynt\xE4v\xE4t t\xE4t\xE4 luodakseen dynaamista dataa tai viestej\xE4\
-  \ k\xE4ytt\xE4jille."
+description: "How to: (Kuinka tehd\xE4:) ."
 lastmod: '2024-03-13T22:44:56.978297-06:00'
 model: gpt-4-1106-preview
-summary: "Interpolointi yhdist\xE4\xE4 muuttujat ja teksti\xE4 yhdeksi merkkijonoksi."
+summary: .
 title: Merkkijonon interpolointi
 weight: 8
 ---

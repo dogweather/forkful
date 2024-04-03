@@ -1,13 +1,10 @@
 ---
 date: 2024-01-26 01:07:43.561422-07:00
-description: "O logging \xE9 o processo de registrar eventos da aplica\xE7\xE3o enquanto\
-  \ um programa est\xE1 em execu\xE7\xE3o, fornecendo um rastro de migalhas para an\xE1\
-  lise post-mortem\u2026"
+description: "Como Fazer: O Python vem com um m\xF3dulo embutido para logging. Aqui\
+  \ est\xE1 uma configura\xE7\xE3o b\xE1sica."
 lastmod: '2024-03-13T22:44:46.160678-06:00'
 model: gpt-4-1106-preview
-summary: "O logging \xE9 o processo de registrar eventos da aplica\xE7\xE3o enquanto\
-  \ um programa est\xE1 em execu\xE7\xE3o, fornecendo um rastro de migalhas para an\xE1\
-  lise post-mortem e monitoramento em tempo real."
+summary: "O Python vem com um m\xF3dulo embutido para logging."
 title: Registro de Logs
 weight: 17
 ---

@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:36.255126-07:00
-description: "Het converteren van een string naar kleine letters betekent dat elk\
-  \ teken in de string een kleine letter wordt. Programmeurs doen dit voor consistentie\u2026"
+description: 'Hoe: Kotlin''s `toLowerCase()` functie zet alle tekens in een string
+  snel om naar kleine letters. Hier is hoe je het gebruikt.'
 lastmod: '2024-03-13T22:44:50.754588-06:00'
 model: gpt-4-0125-preview
-summary: Het converteren van een string naar kleine letters betekent dat elk teken
-  in de string een kleine letter wordt.
+summary: Kotlin's `toLowerCase()` functie zet alle tekens in een string snel om naar
+  kleine letters.
 title: Een string omzetten naar kleine letters
 weight: 4
 ---

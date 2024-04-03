@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:15.608836-07:00
-description: "\xC5 parse HTML i Haskell gir deg muligheten til \xE5 trekke ut data,\
-  \ manipulere HTML-innhold eller interagere med nettsider programmatisk. Denne operasjonen\
-  \ er\u2026"
+description: "Hvordan: For \xE5 parse HTML i Haskell, vil vi bruke `tagsoup`-biblioteket\
+  \ for dets enkelhet og fleksibilitet. F\xF8rst, s\xF8rg for \xE5 installere biblioteket\
+  \ ved \xE5\u2026"
 lastmod: '2024-03-13T22:44:40.839011-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 parse HTML i Haskell gir deg muligheten til \xE5 trekke ut data, manipulere\
-  \ HTML-innhold eller interagere med nettsider programmatisk."
+summary: "For \xE5 parse HTML i Haskell, vil vi bruke `tagsoup`-biblioteket for dets\
+  \ enkelhet og fleksibilitet."
 title: Analysering av HTML
 weight: 43
 ---

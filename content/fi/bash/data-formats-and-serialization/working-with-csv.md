@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:10.063566-07:00
-description: "CSV-tiedostojen (pilkuin erotetut arvot) k\xE4sittely Bashissa koskee\
-  \ tekstimuodossa tallennettujen taulukkomuotoisten tietojen k\xE4sittely\xE4 ja\
-  \ manipulointia.\u2026"
+description: "Kuinka: **CSV-tiedoston lukeminen rivi rivilt\xE4**."
 lastmod: '2024-03-13T22:44:56.761096-06:00'
 model: gpt-4-0125-preview
-summary: "CSV-tiedostojen (pilkuin erotetut arvot) k\xE4sittely Bashissa koskee tekstimuodossa\
-  \ tallennettujen taulukkomuotoisten tietojen k\xE4sittely\xE4 ja manipulointia."
+summary: "**CSV-tiedoston lukeminen rivi rivilt\xE4**."
 title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---

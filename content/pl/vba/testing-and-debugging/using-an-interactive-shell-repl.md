@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:10.508690-07:00
-description: "Interaktywna pow\u0142oka, czyli p\u0119tla czytaj-wykonaj-drukuj (REPL),\
-  \ pozwala u\u017Cytkownikom wprowadza\u0107 komendy, wykonywa\u0107 je i widzie\u0107\
-  \ wyniki w czasie\u2026"
+description: "Jak to zrobi\u0107: Visual Basic dla Aplikacji (VBA) sam w sobie nie\
+  \ oferuje natywnie wsparcia dla interaktywnej pow\u0142oki lub do\u015Bwiadczenia\
+  \ REPL, tak jak w\u2026"
 lastmod: '2024-03-13T22:44:35.233800-06:00'
 model: gpt-4-0125-preview
-summary: "Interaktywna pow\u0142oka, czyli p\u0119tla czytaj-wykonaj-drukuj (REPL),\
-  \ pozwala u\u017Cytkownikom wprowadza\u0107 komendy, wykonywa\u0107 je i widzie\u0107\
-  \ wyniki w czasie rzeczywistym."
+summary: "Visual Basic dla Aplikacji (VBA) sam w sobie nie oferuje natywnie wsparcia\
+  \ dla interaktywnej pow\u0142oki lub do\u015Bwiadczenia REPL, tak jak w j\u0119\
+  zykach takich jak Python czy JavaScript."
 title: "Korzystanie z interaktywnej pow\u0142oki (REPL)"
 weight: 34
 ---

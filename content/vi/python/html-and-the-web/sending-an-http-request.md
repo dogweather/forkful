@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:03.100853-07:00
-description: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP l\xE0 c\xE1ch m\xE3 c\u1EE7a\
-  \ b\u1EA1n y\xEAu c\u1EA7u m\u1ED9t h\u1EC7 th\u1ED1ng kh\xE1c cung c\u1EA5p d\u1EEF\
-  \ li\u1EC7u ho\u1EB7c d\u1ECBch v\u1EE5 qua m\u1EA1ng. L\u1EADp tr\xECnh vi\xEA\
-  n th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 t\u01B0\u01A1ng t\xE1c\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Th\u01B0 vi\u1EC7n `requests` b\xEAn th\u1EE9\
+  \ ba c\u1EE7a Python l\xE0m vi\u1EC7c g\u1ECDi HTTP tr\u1EDF n\xEAn d\u1EC5 d\xE0\
+  ng. D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u GET\
+  \ \u0111\u01A1n gi\u1EA3n."
 lastmod: '2024-03-13T22:44:36.092519-06:00'
 model: gpt-4-0125-preview
-summary: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP l\xE0 c\xE1ch m\xE3 c\u1EE7a b\u1EA1\
-  n y\xEAu c\u1EA7u m\u1ED9t h\u1EC7 th\u1ED1ng kh\xE1c cung c\u1EA5p d\u1EEF li\u1EC7\
-  u ho\u1EB7c d\u1ECBch v\u1EE5 qua m\u1EA1ng."
+summary: "Th\u01B0 vi\u1EC7n `requests` b\xEAn th\u1EE9 ba c\u1EE7a Python l\xE0m\
+  \ vi\u1EC7c g\u1ECDi HTTP tr\u1EDF n\xEAn d\u1EC5 d\xE0ng."
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
 weight: 44
 ---

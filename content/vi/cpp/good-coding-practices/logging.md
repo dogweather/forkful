@@ -2,16 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:36.925220-07:00
-description: "Trong b\u1ED1i c\u1EA3nh l\u1EADp tr\xECnh, vi\u1EC7c ghi log l\xE0\
-  \ qu\xE1 tr\xECnh ghi l\u1EA1i c\xE1c s\u1EF1 ki\u1EC7n, tr\u1EA1ng th\xE1i v\xE0\
-  \ th\xF4ng tin v\xE0o m\u1ED9t t\u1EADp tin ho\u1EB7c m\u1ED9t ph\u01B0\u01A1ng\
-  \ ti\u1EC7n xu\u1EA5t kh\xE1c. L\u1EADp tr\xECnh\u2026"
+description: "L\xE0m Th\u1EBF N\xE0o: Gi\u1EA3 s\u1EED b\u1EA1n \u0111ang l\xE0m vi\u1EC7\
+  c tr\xEAn m\u1ED9t h\u1EC7 th\u1ED1ng Linux v\xE0 b\u1EA1n mu\u1ED1n \u0111\u01B0\
+  a c\xE1c file log c\u1EE7a m\xECnh v\xE0o m\u1ED9t t\u1EADp tin b\u1EB1ng c\xE1\
+  ch s\u1EED d\u1EE5ng C++ c\u1ED5 \u0111i\u1EC3n. B\u1EA1n s\u1EBD\u2026"
 lastmod: '2024-03-13T22:44:37.051067-06:00'
 model: gpt-4-0125-preview
-summary: "Trong b\u1ED1i c\u1EA3nh l\u1EADp tr\xECnh, vi\u1EC7c ghi log l\xE0 qu\xE1\
-  \ tr\xECnh ghi l\u1EA1i c\xE1c s\u1EF1 ki\u1EC7n, tr\u1EA1ng th\xE1i v\xE0 th\xF4\
-  ng tin v\xE0o m\u1ED9t t\u1EADp tin ho\u1EB7c m\u1ED9t ph\u01B0\u01A1ng ti\u1EC7\
-  n xu\u1EA5t kh\xE1c."
+summary: "Gi\u1EA3 s\u1EED b\u1EA1n \u0111ang l\xE0m vi\u1EC7c tr\xEAn m\u1ED9t h\u1EC7\
+  \ th\u1ED1ng Linux v\xE0 b\u1EA1n mu\u1ED1n \u0111\u01B0a c\xE1c file log c\u1EE7\
+  a m\xECnh v\xE0o m\u1ED9t t\u1EADp tin b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng C++ c\u1ED5\
+  \ \u0111i\u1EC3n."
 title: Ghi log
 weight: 17
 ---

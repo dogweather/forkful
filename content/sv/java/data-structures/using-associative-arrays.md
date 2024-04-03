@@ -2,13 +2,14 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:38.984965-07:00
-description: "I Java l\xE5ter associativa arrayer, eller map, dig lagra nyckel-v\xE4\
-  rde-par f\xF6r effektiv datauppslagning och manipulation. Programmerare anv\xE4\
-  nder dem f\xF6r\u2026"
+description: "Hur man g\xF6r: Java har inte inbyggda associativa arrayer som vissa\
+  \ spr\xE5k g\xF6r, men det tillhandah\xE5ller `Map`-interfacet och klasser som `HashMap`\
+  \ och\u2026"
 lastmod: '2024-03-13T22:44:37.780508-06:00'
 model: gpt-4-0125-preview
-summary: "I Java l\xE5ter associativa arrayer, eller map, dig lagra nyckel-v\xE4rde-par\
-  \ f\xF6r effektiv datauppslagning och manipulation."
+summary: "Java har inte inbyggda associativa arrayer som vissa spr\xE5k g\xF6r, men\
+  \ det tillhandah\xE5ller `Map`-interfacet och klasser som `HashMap` och `TreeMap`\
+  \ f\xF6r att fylla den rollen."
 title: "Att anv\xE4nda associativa arrayer"
 weight: 15
 ---

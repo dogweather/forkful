@@ -1,12 +1,11 @@
 ---
 date: 2024-02-03 19:03:36.286422-07:00
-description: "Writing to standard error (stderr) in PHP is about directing error messages\
-  \ or diagnostics separately from standard output (stdout), allowing developers\u2026"
+description: "How to: In PHP, writing to stderr can be achieved using the `fwrite()`\
+  \ function alongside the predefined constant `STDERR`, which represents the error\u2026"
 lastmod: '2024-03-13T22:45:00.181954-06:00'
 model: gpt-4-0125-preview
-summary: Writing to standard error (stderr) in PHP is about directing error messages
-  or diagnostics separately from standard output (stdout), allowing developers to
-  better manage their output streams for debugging and logging purposes.
+summary: In PHP, writing to stderr can be achieved using the `fwrite()` function alongside
+  the predefined constant `STDERR`, which represents the error output stream.
 title: Writing to standard error
 weight: 25
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:21.163475-07:00
-description: "Il refactoring nella programmazione comporta la ristrutturazione di\
-  \ codice informatico esistente\u2014cambiando la sua strutturazione\u2014senza alterarne\
-  \ il\u2026"
+description: "Come fare: In Go, il refactoring pu\xF2 spaziare da semplici regolazioni\
+  \ del codice a modifiche pi\xF9 complesse. Iniziamo con un esempio base: semplificare\
+  \ una\u2026"
 lastmod: '2024-03-13T22:44:42.917472-06:00'
 model: gpt-4-0125-preview
-summary: "Il refactoring nella programmazione comporta la ristrutturazione di codice\
-  \ informatico esistente\u2014cambiando la sua strutturazione\u2014senza alterarne\
-  \ il comportamento esterno."
+summary: "In Go, il refactoring pu\xF2 spaziare da semplici regolazioni del codice\
+  \ a modifiche pi\xF9 complesse."
 title: Rifattorizzazione
 weight: 19
 ---

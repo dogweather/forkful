@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:06.467235-07:00
-description: "YAML, das f\xFCr \"YAML Ain't Markup Language\" steht, ist ein f\xFC\
-  r Menschen lesbares Daten-Serialisierungsformat, das h\xE4ufig f\xFCr Konfigurationsdateien\u2026"
+description: "Wie geht das: PHP unterst\xFCtzt in seinen aktuellen Iterationen das\
+  \ Parsen von YAML nicht als Teil seiner Standardbibliothek. Die einfachste M\xF6\
+  glichkeit,\u2026"
 lastmod: '2024-03-13T22:44:53.992950-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, das f\xFCr \"YAML Ain't Markup Language\" steht, ist ein f\xFCr Menschen\
-  \ lesbares Daten-Serialisierungsformat, das h\xE4ufig f\xFCr Konfigurationsdateien\
-  \ verwendet wird."
+summary: "PHP unterst\xFCtzt in seinen aktuellen Iterationen das Parsen von YAML nicht\
+  \ als Teil seiner Standardbibliothek."
 title: Arbeiten mit YAML
 weight: 41
 ---

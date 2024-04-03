@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:37.950076-07:00
-description: "Hakemiston olemassaolon tarkistaminen on perustoiminto monissa ohjelmointiteht\xE4\
-  viss\xE4, mik\xE4 mahdollistaa ehdolliset toimenpiteet hakemistorakenteiden\u2026"
+description: "Kuinka: Haskell tarjoaa peruskirjastonsa kautta suoraviivaisia tapoja\
+  \ tarkistaa hakemiston olemassaolo, p\xE4\xE4asiassa k\xE4ytt\xE4m\xE4ll\xE4 `System.Directory`\u2026"
 lastmod: '2024-03-13T22:44:56.629073-06:00'
 model: gpt-4-0125-preview
-summary: "Hakemiston olemassaolon tarkistaminen on perustoiminto monissa ohjelmointiteht\xE4\
-  viss\xE4, mik\xE4 mahdollistaa ehdolliset toimenpiteet hakemistorakenteiden l\xE4\
-  sn\xE4olon tai puuttumisen perusteella."
+summary: "Haskell tarjoaa peruskirjastonsa kautta suoraviivaisia tapoja tarkistaa\
+  \ hakemiston olemassaolo, p\xE4\xE4asiassa k\xE4ytt\xE4m\xE4ll\xE4 `System.Directory`\
+  \ -moduulia."
 title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---

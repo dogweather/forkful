@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:19.925987-07:00
-description: "Att tolka (parse:a) HTML handlar om att extrahera data eller information\
-  \ fr\xE5n HTML-inneh\xE5ll, en vanlig uppgift n\xE4r man arbetar med webbdata. Programmerare\u2026"
+description: "Hur: Fish shell \xE4r huvudsakligen inte designat f\xF6r att direkt\
+  \ parse:a HTML. D\xE4remot \xE4r det utm\xE4rkt p\xE5 att sammanfoga Unix-verktyg\
+  \ som `curl`, `grep`,\u2026"
 lastmod: '2024-03-13T22:44:38.335557-06:00'
 model: gpt-4-0125-preview
-summary: "Att tolka (parse:a) HTML handlar om att extrahera data eller information\
-  \ fr\xE5n HTML-inneh\xE5ll, en vanlig uppgift n\xE4r man arbetar med webbdata."
+summary: "Fish shell \xE4r huvudsakligen inte designat f\xF6r att direkt parse:a HTML."
 title: Tolka HTML
 weight: 43
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:50:13.981080-07:00
-description: "La interpolaci\xF3n de cadenas es insertar valores de variables en medio\
-  \ de una cadena de texto. En Bash, los programamos para ahorrar tiempo y evitar\u2026"
+description: "C\xF3mo hacerlo: A continuaci\xF3n, unos ejemplos de c\xF3mo interpolamos\
+  \ cadenas en Bash."
 lastmod: '2024-03-13T22:44:59.230703-06:00'
 model: gpt-4-1106-preview
-summary: "La interpolaci\xF3n de cadenas es insertar valores de variables en medio\
-  \ de una cadena de texto."
+summary: "A continuaci\xF3n, unos ejemplos de c\xF3mo interpolamos cadenas en Bash."
 title: "Interpolaci\xF3n de cadenas de texto"
 weight: 8
 ---

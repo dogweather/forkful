@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:34:24.380582-07:00
-description: "I programmering inneb\xE4r 'konkatenering av str\xE4ngar' att sm\xE4\
-  lta samman tv\xE5 eller fler textstycken. Vi g\xF6r det f\xF6r att skapa meningsfulla\
-  \ meddelanden, bygga\u2026"
+description: "S\xE5 h\xE4r g\xF6r du: I Clojure kan du konkatenera str\xE4ngar med\
+  \ `str` funktionen. H\xE4r \xE4r ett enkelt exempel."
 lastmod: '2024-03-13T22:44:37.517413-06:00'
 model: gpt-4-1106-preview
-summary: "I programmering inneb\xE4r 'konkatenering av str\xE4ngar' att sm\xE4lta\
-  \ samman tv\xE5 eller fler textstycken."
+summary: "I Clojure kan du konkatenera str\xE4ngar med `str` funktionen."
 title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---

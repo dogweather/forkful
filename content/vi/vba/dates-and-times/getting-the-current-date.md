@@ -2,17 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:58.223770-07:00
-description: "Trong Visual Basic for Applications (VBA), vi\u1EC7c l\u1EA5y ng\xE0\
-  y hi\u1EC7n t\u1EA1i l\xE0 m\u1ED9t nhi\u1EC7m v\u1EE5 ph\u1ED5 bi\u1EBFn gi\xFA\
-  p c\xE1c l\u1EADp tr\xECnh vi\xEAn c\xF3 th\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi ng\xE0\
-  y m\u1ED9t c\xE1ch linh\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Vi\u1EC7c l\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1\
+  i trong VBA l\xE0 kh\xE1 d\u1EC5 d\xE0ng, s\u1EED d\u1EE5ng h\xE0m `Date`, trong\
+  \ khi h\xE0m `Now` cung c\u1EA5p c\u1EA3 ng\xE0y v\xE0 gi\u1EDD hi\u1EC7n t\u1EA1\
+  i. D\u01B0\u1EDBi \u0111\xE2y l\xE0\u2026"
 lastmod: '2024-03-13T22:44:36.446775-06:00'
 model: gpt-4-0125-preview
-summary: "Trong Visual Basic for Applications (VBA), vi\u1EC7c l\u1EA5y ng\xE0y hi\u1EC7\
-  n t\u1EA1i l\xE0 m\u1ED9t nhi\u1EC7m v\u1EE5 ph\u1ED5 bi\u1EBFn gi\xFAp c\xE1c l\u1EAD\
-  p tr\xECnh vi\xEAn c\xF3 th\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi ng\xE0y m\u1ED9t c\xE1\
-  ch linh ho\u1EA1t trong c\xE1c macro ho\u1EB7c \u1EE9ng d\u1EE5ng c\u1EE7a h\u1ECD\
-  ."
+summary: "Vi\u1EC7c l\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong VBA l\xE0 kh\xE1 d\u1EC5\
+  \ d\xE0ng, s\u1EED d\u1EE5ng h\xE0m `Date`, trong khi h\xE0m `Now` cung c\u1EA5\
+  p c\u1EA3 ng\xE0y v\xE0 gi\u1EDD hi\u1EC7n t\u1EA1i."
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 weight: 29
 ---

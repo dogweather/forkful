@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 01:00:15.712620-07:00
-description: "Logowanie to praktyka rejestrowania zdarze\u0144, b\u0142\u0119d\xF3\
-  w i innych istotnych informacji z dzia\u0142aj\u0105cych proces\xF3w programu do\
-  \ pliku lub strumienia wyj\u015Bciowego.\u2026"
+description: "Jak to zrobi\u0107: W Bashu, logowanie mo\u017Ce by\u0107 tak proste,\
+  \ jak przekierowanie lub dodawanie wyj\u015Bcia do pliku. Oto podstawowy przyk\u0142\
+  ad."
 lastmod: '2024-03-13T22:44:35.591706-06:00'
 model: gpt-4-1106-preview
-summary: "Logowanie to praktyka rejestrowania zdarze\u0144, b\u0142\u0119d\xF3w i\
-  \ innych istotnych informacji z dzia\u0142aj\u0105cych proces\xF3w programu do pliku\
-  \ lub strumienia wyj\u015Bciowego."
+summary: "W Bashu, logowanie mo\u017Ce by\u0107 tak proste, jak przekierowanie lub\
+  \ dodawanie wyj\u015Bcia do pliku."
 title: "Rejestrowanie zdarze\u0144"
 weight: 17
 ---

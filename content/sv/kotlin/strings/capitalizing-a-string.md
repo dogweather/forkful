@@ -2,16 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:41.449257-07:00
-description: "Att kapitalisera en str\xE4ng i programmering inneb\xE4r att konvertera\
-  \ det f\xF6rsta tecknet i str\xE4ngen till versal om det inte redan \xE4r det, vilket\
-  \ \xE4r anv\xE4ndbart\u2026"
+description: "Hur man g\xF6r: I Kotlin kan str\xE4ngar kapitaliseras med hj\xE4lp\
+  \ av standardbiblioteksfunktioner utan behov av tredjepartbibliotek. Kotlins tillv\xE4\
+  gag\xE5ngss\xE4tt\u2026"
 lastmod: '2024-03-13T22:44:37.854825-06:00'
 model: gpt-4-0125-preview
-summary: "Att kapitalisera en str\xE4ng i programmering inneb\xE4r att konvertera\
-  \ det f\xF6rsta tecknet i str\xE4ngen till versal om det inte redan \xE4r det, vilket\
-  \ \xE4r anv\xE4ndbart f\xF6r att formatera anv\xE4ndarinmatningar eller visa text\
-  \ i ett anv\xE4ndargr\xE4nssnitt p\xE5 ett mer standardiserat eller anv\xE4ndarv\xE4\
-  nligt s\xE4tt."
+summary: "I Kotlin kan str\xE4ngar kapitaliseras med hj\xE4lp av standardbiblioteksfunktioner\
+  \ utan behov av tredjepartbibliotek."
 title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---

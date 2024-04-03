@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:32.213536-07:00
-description: "Das Parsen von HTML in Arduino-Projekten bedeutet, Informationen von\
-  \ Webseiten zu extrahieren. Programmierer tun dies, um ihre Arduino-Ger\xE4te zur\u2026"
+description: "Wie geht das: Das Parsen von HTML auf Arduino verlangt in der Regel\
+  \ nach Bibliotheken mit geringem Speicherbedarf aufgrund der begrenzten Ressourcen\
+  \ des\u2026"
 lastmod: '2024-03-13T22:44:54.142701-06:00'
 model: gpt-4-0125-preview
-summary: Das Parsen von HTML in Arduino-Projekten bedeutet, Informationen von Webseiten
-  zu extrahieren.
+summary: "Das Parsen von HTML auf Arduino verlangt in der Regel nach Bibliotheken\
+  \ mit geringem Speicherbedarf aufgrund der begrenzten Ressourcen des Ger\xE4ts."
 title: HTML parsen
 weight: 43
 ---

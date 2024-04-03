@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:53:28.788973-07:00
-description: "Wypisywanie informacji debuguj\u0105cych to wy\u015Bwietlanie danych,\
-  \ kt\xF3re pomagaj\u0105 programi\u015Bcie zrozumie\u0107, co si\u0119 dzieje w\
-  \ kodzie. Programi\u015Bci robi\u0105 to, by szybko\u2026"
+description: "How to: (Jak to zrobi\u0107?) W TypeScript mo\u017Cesz wykorzysta\u0107\
+  \ `console.log` do pokazywania debug info. Sp\xF3jrz jak to dzia\u0142a."
 lastmod: '2024-03-13T22:44:35.141461-06:00'
 model: gpt-4-1106-preview
-summary: "Wypisywanie informacji debuguj\u0105cych to wy\u015Bwietlanie danych, kt\xF3\
-  re pomagaj\u0105 programi\u015Bcie zrozumie\u0107, co si\u0119 dzieje w kodzie."
+summary: "W TypeScript mo\u017Cesz wykorzysta\u0107 `console.log` do pokazywania debug\
+  \ info."
 title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---

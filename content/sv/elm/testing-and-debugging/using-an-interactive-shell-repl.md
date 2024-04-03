@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:13:46.325975-07:00
-description: "Read-Eval-Print Loppen (REPL) \xE4r en enkel, interaktiv programmeringsmilj\xF6\
-  \ som tar emot enskilda anv\xE4ndarinput, utv\xE4rderar dem och returnerar resultatet\u2026"
+description: "Hur man g\xF6r: Elm levereras inte med en integrerad REPL. Du kan dock\
+  \ anv\xE4nda `elm repl` fr\xE5n din kommandorad f\xF6r att starta en Elm-session\
+  \ efter att ha\u2026"
 lastmod: '2024-03-13T22:44:37.830938-06:00'
 model: gpt-4-0125-preview
-summary: "Read-Eval-Print Loppen (REPL) \xE4r en enkel, interaktiv programmeringsmilj\xF6\
-  \ som tar emot enskilda anv\xE4ndarinput, utv\xE4rderar dem och returnerar resultatet\
-  \ till anv\xE4ndaren."
+summary: Elm levereras inte med en integrerad REPL.
 title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---

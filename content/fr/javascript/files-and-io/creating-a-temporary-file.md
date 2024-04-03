@@ -1,13 +1,10 @@
 ---
 date: 2024-01-20 17:40:49.703368-07:00
-description: "Cr\xE9er un fichier temporaire, c'est comme griffonner une note sur\
-  \ un bout de papier pour ne pas oublier quelque chose d'important - sauf qu'on le\
-  \ fait sur\u2026"
+description: "How to (Comment faire) : En JavaScript, cr\xE9ons un fichier temporaire\
+  \ sur un serveur Node.js ."
 lastmod: '2024-03-13T22:44:58.298035-06:00'
 model: gpt-4-1106-preview
-summary: "Cr\xE9er un fichier temporaire, c'est comme griffonner une note sur un bout\
-  \ de papier pour ne pas oublier quelque chose d'important - sauf qu'on le fait sur\
-  \ l'ordinateur."
+summary: "En JavaScript, cr\xE9ons un fichier temporaire sur un serveur Node.js."
 title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---

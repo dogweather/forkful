@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:31.753821-07:00
-description: "Verificar si un directorio existe en C implica consultar el sistema\
-  \ de archivos para verificar si una ruta espec\xEDfica conduce a un directorio.\
-  \ Los\u2026"
+description: "C\xF3mo hacerlo: En C, la existencia de un directorio se puede comprobar\
+  \ utilizando la funci\xF3n `stat`, que recupera informaci\xF3n sobre el archivo\
+  \ o directorio\u2026"
 lastmod: '2024-03-13T22:44:59.561602-06:00'
 model: gpt-4-0125-preview
-summary: "Verificar si un directorio existe en C implica consultar el sistema de archivos\
-  \ para verificar si una ruta espec\xEDfica conduce a un directorio."
+summary: "En C, la existencia de un directorio se puede comprobar utilizando la funci\xF3\
+  n `stat`, que recupera informaci\xF3n sobre el archivo o directorio en una ruta\
+  \ especificada."
 title: Verificando si un directorio existe
 weight: 20
 ---

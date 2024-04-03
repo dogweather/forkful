@@ -1,13 +1,10 @@
 ---
 date: 2024-01-26 01:08:10.869886-07:00
-description: "Logging ist der Prozess der Aufzeichnung von Anwendungsereignissen,\
-  \ w\xE4hrend ein Programm l\xE4uft, und bietet eine Art Spur f\xFCr die Analyse\
-  \ nach dem Versagen\u2026"
+description: "Wie: Python kommt mit einem integrierten Modul f\xFCr das Logging. Hier\
+  \ ist eine Basis-Konfiguration."
 lastmod: '2024-03-13T22:44:53.385331-06:00'
 model: gpt-4-1106-preview
-summary: "Logging ist der Prozess der Aufzeichnung von Anwendungsereignissen, w\xE4\
-  hrend ein Programm l\xE4uft, und bietet eine Art Spur f\xFCr die Analyse nach dem\
-  \ Versagen und f\xFCr die Echtzeit\xFCberwachung."
+summary: "Python kommt mit einem integrierten Modul f\xFCr das Logging."
 title: Protokollierung
 weight: 17
 ---

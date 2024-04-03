@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:41.643128-07:00
-description: "T\xE9l\xE9charger une page web en Visual Basic pour Applications (VBA)\
-  \ consiste \xE0 r\xE9cup\xE9rer le contenu HTML d'une page web depuis Internet.\
-  \ Les programmeurs\u2026"
+description: "Comment faire : Pour t\xE9l\xE9charger une page web en VBA, vous pouvez\
+  \ utiliser la biblioth\xE8que Microsoft XML, v6.0 (MSXML6), qui permet les requ\xEA\
+  tes HTTP\u2026"
 lastmod: '2024-03-13T22:44:57.559452-06:00'
 model: gpt-4-0125-preview
-summary: "T\xE9l\xE9charger une page web en Visual Basic pour Applications (VBA) consiste\
-  \ \xE0 r\xE9cup\xE9rer le contenu HTML d'une page web depuis Internet."
+summary: "Pour t\xE9l\xE9charger une page web en VBA, vous pouvez utiliser la biblioth\xE8\
+  que Microsoft XML, v6.0 (MSXML6), qui permet les requ\xEAtes HTTP serveur."
 title: "T\xE9l\xE9charger une page web"
 weight: 42
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:28.787194-07:00
-description: "\xC5 sende en HTTP-foresp\xF8rsel i Dart er prosessen med \xE5 starte\
-  \ kommunikasjon med en webserver eller API fra en Dart-applikasjon. Programmerere\
-  \ gj\xF8r dette\u2026"
+description: "Hvordan: Dart inkluderer `http`-pakken, en kraftig og praktisk m\xE5\
+  te \xE5 arbeide med HTTP-ressurser. F\xF8rst inkluderer du den i din pubspec.yaml-fil."
 lastmod: '2024-03-13T22:44:40.483702-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 sende en HTTP-foresp\xF8rsel i Dart er prosessen med \xE5 starte kommunikasjon\
-  \ med en webserver eller API fra en Dart-applikasjon."
+summary: "Dart inkluderer `http`-pakken, en kraftig og praktisk m\xE5te \xE5 arbeide\
+  \ med HTTP-ressurser."
 title: "Sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---

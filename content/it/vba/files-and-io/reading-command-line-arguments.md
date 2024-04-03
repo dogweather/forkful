@@ -2,12 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:24.044188-07:00
-description: "Leggere gli argomenti della riga di comando in Visual Basic for Applications\
-  \ (VBA) comporta l'accesso ai parametri passati al tuo programma\u2026"
+description: "Come fare: A differenza di ambienti di programmazione pi\xF9 diretti,\
+  \ VBA non ha una funzionalit\xE0 integrata per leggere direttamente gli argomenti\
+  \ della riga\u2026"
 lastmod: '2024-03-13T22:44:43.280436-06:00'
 model: gpt-4-0125-preview
-summary: Leggere gli argomenti della riga di comando in Visual Basic for Applications
-  (VBA) comporta l'accesso ai parametri passati al tuo programma all'esecuzione.
+summary: "A differenza di ambienti di programmazione pi\xF9 diretti, VBA non ha una\
+  \ funzionalit\xE0 integrata per leggere direttamente gli argomenti della riga di\
+  \ comando in senso convenzionale perch\xE9 \xE8 principalmente progettato per essere\
+  \ incorporato all'interno delle applicazioni Microsoft Office."
 title: Leggere gli argomenti della riga di comando
 weight: 23
 ---

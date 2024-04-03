@@ -1,7 +1,7 @@
 ---
 date: 2024-01-26 03:50:57.351341-07:00
-description: "Desglosemos el uso de `pdb`, el depurador integrado de Python. Imagina\
-  \ un archivo, `buggy.py`, con un error dif\xEDcil de encontrar: ```Python def\u2026"
+description: "C\xF3mo hacerlo: Desglosemos el uso de `pdb`, el depurador integrado\
+  \ de Python. Imagina un archivo, `buggy.py`, con un error dif\xEDcil de encontrar."
 lastmod: '2024-03-13T22:44:58.616981-06:00'
 model: gpt-4-0125-preview
 summary: Desglosemos el uso de `pdb`, el depurador integrado de Python.

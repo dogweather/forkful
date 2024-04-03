@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:39:15.254339-07:00
-description: "Konwersja stringa do ma\u0142ych liter polega na zmianie ka\u017Cdej\
-  \ wielkiej litery na odpowiadaj\u0105c\u0105 jej ma\u0142\u0105. Programi\u015B\
-  ci robi\u0105 to, by ujednolici\u0107 dane \u2013 na\u2026"
+description: "How to: Aby przekszta\u0142ci\u0107 string do ma\u0142ych liter w PowerShell,\
+  \ u\u017Cywamy metody `.ToLower()`. Oto jak to dzia\u0142a."
 lastmod: '2024-03-13T22:44:35.614810-06:00'
 model: gpt-4-1106-preview
-summary: "Konwersja stringa do ma\u0142ych liter polega na zmianie ka\u017Cdej wielkiej\
-  \ litery na odpowiadaj\u0105c\u0105 jej ma\u0142\u0105."
+summary: "Aby przekszta\u0142ci\u0107 string do ma\u0142ych liter w PowerShell, u\u017C\
+  ywamy metody `.ToLower()`."
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---

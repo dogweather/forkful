@@ -1,12 +1,12 @@
 ---
 date: 2024-02-01 21:12:05.531485-07:00
-description: "Writing to standard error (stderr) in programming languages is about\
-  \ directing error messages and diagnostics to a separate stream, apart from the\u2026"
+description: "How to: Google Apps Script, being a scripting language for light-weight\
+  \ application development in the Google Apps platform, does not provide a direct\u2026"
 lastmod: '2024-03-13T22:44:59.684716-06:00'
 model: gpt-4-0125-preview
-summary: Writing to standard error (stderr) in programming languages is about directing
-  error messages and diagnostics to a separate stream, apart from the standard output
-  (stdout).
+summary: Google Apps Script, being a scripting language for light-weight application
+  development in the Google Apps platform, does not provide a direct built-in function
+  like `console.error()` for writing to stderr, as you might find in Node.js or Python.
 title: Writing to standard error
 weight: 25
 ---

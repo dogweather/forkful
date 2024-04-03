@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:44:29.272431-07:00
-description: "Att ladda ner en webbsida betyder att man h\xE4mtar dess HTML, CSS och\
-  \ eventuellt JavaScript och annat inneh\xE5ll. Programmerare g\xF6r detta f\xF6\
-  r att analysera\u2026"
+description: "Hur man g\xF6r: ."
 lastmod: '2024-03-13T22:44:38.292196-06:00'
 model: gpt-4-1106-preview
-summary: "Att ladda ner en webbsida betyder att man h\xE4mtar dess HTML, CSS och eventuellt\
-  \ JavaScript och annat inneh\xE5ll."
+summary: .
 title: "H\xE4mta en webbsida"
 weight: 42
 ---

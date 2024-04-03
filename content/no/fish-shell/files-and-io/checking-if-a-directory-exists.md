@@ -2,15 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:21.172837-07:00
-description: "\xC5 sjekke om en katalog eksisterer i Fish Shell gj\xF8r det mulig\
-  \ for skript \xE5 ta beslutninger basert p\xE5 tilstedev\xE6relsen eller frav\xE6\
-  ret av katalogstrukturer,\u2026"
+description: "Hvordan gj\xF8re det: Fish Shell bruker `test`-kommandoen til \xE5 sjekke\
+  \ filtyper og karakteristikker, inkludert om et m\xE5l er en katalog. Her er et\u2026"
 lastmod: '2024-03-13T22:44:41.241881-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 sjekke om en katalog eksisterer i Fish Shell gj\xF8r det mulig for\
-  \ skript \xE5 ta beslutninger basert p\xE5 tilstedev\xE6relsen eller frav\xE6ret\
-  \ av katalogstrukturer, noe som muliggj\xF8r oppgaver som betingede filoperasjoner,\
-  \ logging eller oppsett av milj\xF8."
+summary: "Fish Shell bruker `test`-kommandoen til \xE5 sjekke filtyper og karakteristikker,\
+  \ inkludert om et m\xE5l er en katalog."
 title: Sjekker om en mappe eksisterer
 weight: 20
 ---

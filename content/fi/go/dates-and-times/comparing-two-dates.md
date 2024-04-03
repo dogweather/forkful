@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:50.147260-07:00
-description: "P\xE4iv\xE4m\xE4\xE4rien vertailu ohjelmoinnissa on perustavaa laatua\
-  \ oleva teht\xE4v\xE4, joka mahdollistaa kehitt\xE4jien aikasuhteiden arvioinnin\
-  \ p\xE4iv\xE4m\xE4\xE4rien v\xE4lill\xE4.\u2026"
+description: "Kuinka: Go:ssa p\xE4iv\xE4m\xE4\xE4ri\xE4 k\xE4sitell\xE4\xE4n ensisijaisesti\
+  \ `time.Time` tyypin avulla `time` paketista. Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n\
+  \ vertaamiseen voimme k\xE4ytt\xE4\xE4 metodeja\u2026"
 lastmod: '2024-03-13T22:44:56.063984-06:00'
 model: gpt-4-0125-preview
-summary: "P\xE4iv\xE4m\xE4\xE4rien vertailu ohjelmoinnissa on perustavaa laatua oleva\
-  \ teht\xE4v\xE4, joka mahdollistaa kehitt\xE4jien aikasuhteiden arvioinnin p\xE4\
-  iv\xE4m\xE4\xE4rien v\xE4lill\xE4."
+summary: "Go:ssa p\xE4iv\xE4m\xE4\xE4ri\xE4 k\xE4sitell\xE4\xE4n ensisijaisesti `time.Time`\
+  \ tyypin avulla `time` paketista."
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---

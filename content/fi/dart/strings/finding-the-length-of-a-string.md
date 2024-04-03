@@ -2,14 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:04.115942-07:00
-description: "Merkkijonon pituuden selvitt\xE4minen Dartissa tarkoittaa annetun merkkijonon\
-  \ koodiyksik\xF6iden (k\xE4yt\xE4nn\xF6ss\xE4 merkkien m\xE4\xE4r\xE4 yksinkertaistettuna)\
-  \ m\xE4\xE4r\xE4n\u2026"
+description: "Kuinka: Dart tekee merkkijonon pituuden saamisesta suoraviivaista k\xE4\
+  ytt\xE4en `length` -ominaisuutta. T\xE4ss\xE4 on perusesimerkki."
 lastmod: '2024-03-13T22:44:56.260784-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonon pituuden selvitt\xE4minen Dartissa tarkoittaa annetun merkkijonon\
-  \ koodiyksik\xF6iden (k\xE4yt\xE4nn\xF6ss\xE4 merkkien m\xE4\xE4r\xE4 yksinkertaistettuna)\
-  \ m\xE4\xE4r\xE4n m\xE4\xE4ritt\xE4mist\xE4."
+summary: "Dart tekee merkkijonon pituuden saamisesta suoraviivaista k\xE4ytt\xE4en\
+  \ `length` -ominaisuutta."
 title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---

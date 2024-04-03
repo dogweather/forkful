@@ -2,16 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:46.268832-07:00
-description: "Vi\u1EC7c t\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai\
-  \ ho\u1EB7c qu\xE1 kh\u1EE9 li\xEAn quan \u0111\u1EBFn vi\u1EC7c \u0111i\u1EC1u\
-  \ ch\u1EC9nh m\u1ED9t ng\xE0y \u0111\xE3 bi\u1EBFt theo m\u1ED9t s\u1ED1 l\u01B0\
-  \u1EE3ng ng\xE0y, th\xE1ng ho\u1EB7c n\u0103m nh\u1EA5t \u0111\u1ECBnh. C\xE1c\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: ."
 lastmod: '2024-03-13T22:44:36.506888-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c t\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7\
-  c qu\xE1 kh\u1EE9 li\xEAn quan \u0111\u1EBFn vi\u1EC7c \u0111i\u1EC1u ch\u1EC9nh\
-  \ m\u1ED9t ng\xE0y \u0111\xE3 bi\u1EBFt theo m\u1ED9t s\u1ED1 l\u01B0\u1EE3ng ng\xE0\
-  y, th\xE1ng ho\u1EB7c n\u0103m nh\u1EA5t \u0111\u1ECBnh."
+summary: .
 title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1EE9"
 weight: 26
 ---

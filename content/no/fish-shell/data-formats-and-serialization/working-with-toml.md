@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:21:33.734363-07:00
-description: "TOML er et config-filformat, lett for mennesker \xE5 lese og skrive,\
-  \ og lett for maskiner \xE5 analysere og generere. Programmerere jobber med TOML\
-  \ for klare,\u2026"
+description: "Hvordan: For \xE5 lese og manipulere TOML i Fish kan du bruke et verkt\xF8\
+  y som `yj`, som kan konvertere TOML til JSON. Slik gj\xF8r du det."
 lastmod: '2024-03-13T22:44:41.250853-06:00'
 model: gpt-4-0125-preview
-summary: "TOML er et config-filformat, lett for mennesker \xE5 lese og skrive, og\
-  \ lett for maskiner \xE5 analysere og generere."
+summary: "For \xE5 lese og manipulere TOML i Fish kan du bruke et verkt\xF8y som `yj`,\
+  \ som kan konvertere TOML til JSON."
 title: Jobbe med TOML
 weight: 39
 ---

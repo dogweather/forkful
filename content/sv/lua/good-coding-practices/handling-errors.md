@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 00:56:50.823597-07:00
-description: "Att hantera fel i kodning \xE4r att v\xE4nta sig det ov\xE4ntade. Det\
-  \ \xE4r konsten att planera f\xF6r n\xE4r saker och ting g\xE5r snett s\xE5 att\
-  \ du kan h\xE5lla ditt program\u2026"
+description: "Hur g\xF6r man: Lua anv\xE4nder tv\xE5 huvudfunktioner f\xF6r felhantering:\
+  \ `pcall` och `xpcall`. S\xE5 h\xE4r anv\xE4nder du dem."
 lastmod: '2024-03-13T22:44:38.045823-06:00'
 model: gpt-4-1106-preview
-summary: "Att hantera fel i kodning \xE4r att v\xE4nta sig det ov\xE4ntade."
+summary: "Lua anv\xE4nder tv\xE5 huvudfunktioner f\xF6r felhantering."
 title: Hantering av fel
 weight: 16
 ---

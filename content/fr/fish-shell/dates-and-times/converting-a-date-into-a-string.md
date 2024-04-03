@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:36:11.451936-07:00
-description: "\"Quoi et pourquoi ?\" Transformer une date en cha\xEEne de caract\xE8\
-  res, c'est convertir l'information temporelle en texte. On le fait pour l'afficher,\
-  \ la\u2026"
+description: "How to: \"Comment faire :\" Pour convertir une date en cha\xEEne dans\
+  \ Fish, on utilise souvent `date`. Exemple simple ."
 lastmod: '2024-03-13T22:44:58.337117-06:00'
 model: gpt-4-1106-preview
-summary: '"Quoi et pourquoi .'
+summary: "\"Comment faire :\" Pour convertir une date en cha\xEEne dans Fish, on utilise\
+  \ souvent `date`."
 title: "Conversion d'une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---

@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:33.771904-07:00
-description: "Verificare se una directory esiste in Java \xE8 un'operazione fondamentale\
-  \ che comporta la verifica della presenza di una directory nel file system prima\
-  \ di\u2026"
+description: "Come fare: In Java, ci sono diversi modi per verificare se una directory\
+  \ esiste, principalmente utilizzando le classi `java.nio.file.Files` e\u2026"
 lastmod: '2024-03-13T22:44:43.323294-06:00'
 model: gpt-4-0125-preview
-summary: "Verificare se una directory esiste in Java \xE8 un'operazione fondamentale\
-  \ che comporta la verifica della presenza di una directory nel file system prima\
-  \ di leggerla, scriverci o eseguire qualsiasi operazione che richieda la sua esistenza."
+summary: In Java, ci sono diversi modi per verificare se una directory esiste, principalmente
+  utilizzando le classi `java.nio.file.Files` e `java.io.File`.
 title: Verifica se una directory esiste
 weight: 20
 ---

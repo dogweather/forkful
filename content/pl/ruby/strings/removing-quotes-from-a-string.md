@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 03:42:31.372712-07:00
-description: "Usuwanie cudzys\u0142ow\xF3w ze stringa oznacza pozbycie si\u0119 tych\
-  \ podw\xF3jnych lub pojedynczych znak\xF3w cudzys\u0142owu, kt\xF3re otaczaj\u0105\
-  \ warto\u015Bci tekstowe. Programi\u015Bci\u2026"
+description: "Jak to zrobi\u0107: Ruby ma kilka sprytnych sztuczek do wy\u0142uskania\
+  \ tych denerwuj\u0105cych znak\xF3w cudzys\u0142owia. Mo\u017Cesz u\u017Cy\u0107\
+  \ metod `gsub` lub `delete`, aby wykona\u0107\u2026"
 lastmod: '2024-03-13T22:44:35.918838-06:00'
 model: gpt-4-0125-preview
-summary: "Usuwanie cudzys\u0142ow\xF3w ze stringa oznacza pozbycie si\u0119 tych podw\xF3\
-  jnych lub pojedynczych znak\xF3w cudzys\u0142owu, kt\xF3re otaczaj\u0105 warto\u015B\
-  ci tekstowe."
+summary: "Ruby ma kilka sprytnych sztuczek do wy\u0142uskania tych denerwuj\u0105\
+  cych znak\xF3w cudzys\u0142owia."
 title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---

@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 00:58:40.900052-07:00
-description: "El registro (logging) es la pr\xE1ctica de documentar eventos, errores\
-  \ y otra informaci\xF3n significativa de los procesos en ejecuci\xF3n de un programa\
-  \ en un\u2026"
+description: "C\xF3mo hacerlo: En Bash, registrar puede ser tan simple como redirigir\
+  \ o anexar la salida a un archivo. Aqu\xED hay un ejemplo b\xE1sico."
 lastmod: '2024-03-13T22:44:59.252913-06:00'
 model: gpt-4-1106-preview
-summary: "El registro (logging) es la pr\xE1ctica de documentar eventos, errores y\
-  \ otra informaci\xF3n significativa de los procesos en ejecuci\xF3n de un programa\
-  \ en un archivo o una corriente de salida."
+summary: En Bash, registrar puede ser tan simple como redirigir o anexar la salida
+  a un archivo.
 title: "Registro de Actividades en Programaci\xF3n"
 weight: 17
 ---

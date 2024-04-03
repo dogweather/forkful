@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:30.196058-07:00
-description: "Przetwarzanie daty z ci\u0105gu znak\xF3w w Haskellu polega na przekszta\u0142\
-  ceniu tekstowych reprezentacji dat na strukturalny format, kt\xF3ry program mo\u017C\
-  e\u2026"
+description: "Jak to zrobi\u0107: Od samego pocz\u0105tku, Haskell oferuje podstawowe\
+  \ narz\u0119dzia do przetwarzania dat, ale wykorzystanie bibliotek takich jak `time`\
+  \ dla\u2026"
 lastmod: '2024-03-13T22:44:35.461718-06:00'
 model: gpt-4-0125-preview
-summary: "Przetwarzanie daty z ci\u0105gu znak\xF3w w Haskellu polega na przekszta\u0142\
-  ceniu tekstowych reprezentacji dat na strukturalny format, kt\xF3ry program mo\u017C\
-  e manipulowa\u0107."
+summary: "Od samego pocz\u0105tku, Haskell oferuje podstawowe narz\u0119dzia do przetwarzania\
+  \ dat, ale wykorzystanie bibliotek takich jak `time` dla podstawowej funkcjonalno\u015B\
+  ci oraz `date-parse` lub `time-parse` dla bardziej elastycznego przetwarzania mo\u017C\
+  e znacz\u0105co upro\u015Bci\u0107 zadanie."
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---

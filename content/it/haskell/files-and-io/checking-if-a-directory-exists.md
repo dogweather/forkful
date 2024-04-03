@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:24.925853-07:00
-description: "Controllare se una directory esiste \xE8 un'operazione fondamentale\
-  \ in molti compiti di programmazione, permettendo di eseguire azioni condizionali\
-  \ basate\u2026"
+description: "Come fare: Haskell, attraverso la sua libreria di base, offre modi semplici\
+  \ per verificare l'esistenza di directory, principalmente utilizzando il modulo\u2026"
 lastmod: '2024-03-13T22:44:43.489646-06:00'
 model: gpt-4-0125-preview
-summary: "Controllare se una directory esiste \xE8 un'operazione fondamentale in molti\
-  \ compiti di programmazione, permettendo di eseguire azioni condizionali basate\
-  \ sulla presenza o assenza di strutture di directory."
+summary: Haskell, attraverso la sua libreria di base, offre modi semplici per verificare
+  l'esistenza di directory, principalmente utilizzando il modulo `System.Directory`.
 title: Verifica se una directory esiste
 weight: 20
 ---

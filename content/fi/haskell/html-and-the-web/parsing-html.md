@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:24.243055-07:00
-description: "HTML:n j\xE4sent\xE4minen Haskellissa mahdollistaa datan poiminnan,\
-  \ HTML-sis\xE4ll\xF6n manipuloinnin tai ohjelmallisesti verkkosivujen kanssa vuorovaikuttamisen.\u2026"
+description: "Miten: HTML:n j\xE4sent\xE4miseen Haskellissa k\xE4yt\xE4mme `tagsoup`-kirjastoa\
+  \ sen yksinkertaisuuden ja joustavuuden vuoksi. Varmista ensin, ett\xE4 asennat\
+  \ kirjaston\u2026"
 lastmod: '2024-03-13T22:44:56.613479-06:00'
 model: gpt-4-0125-preview
-summary: "HTML:n j\xE4sent\xE4minen Haskellissa mahdollistaa datan poiminnan, HTML-sis\xE4\
-  ll\xF6n manipuloinnin tai ohjelmallisesti verkkosivujen kanssa vuorovaikuttamisen."
+summary: "HTML:n j\xE4sent\xE4miseen Haskellissa k\xE4yt\xE4mme `tagsoup`-kirjastoa\
+  \ sen yksinkertaisuuden ja joustavuuden vuoksi."
 title: "HTML:n j\xE4sennys"
 weight: 43
 ---

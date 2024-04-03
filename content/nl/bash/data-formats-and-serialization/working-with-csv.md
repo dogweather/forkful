@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:34.292090-07:00
-description: "Werken met CSV, wat staat voor \"Comma-Separated Values\" (komma-gescheiden\
-  \ waarden), omvat het parsen en manipuleren van gegevens in een tabulair\u2026"
+description: 'Hoe te: #.'
 lastmod: '2024-03-13T22:44:51.006250-06:00'
 model: gpt-4-0125-preview
-summary: Werken met CSV, wat staat voor "Comma-Separated Values" (komma-gescheiden
-  waarden), omvat het parsen en manipuleren van gegevens in een tabulair tekstformaat.
+summary: '#.'
 title: Werken met CSV
 weight: 37
 ---

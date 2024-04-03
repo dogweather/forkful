@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:43.217252-07:00
-description: "Das Parsen von HTML in Clojure umfasst das programmgesteuerte Extrahieren\
-  \ von Informationen aus HTML-Dokumenten. Programmierer tun dies, um auf Webinhalte\u2026"
+description: "Wie geht das: Clojure verf\xFCgt nicht \xFCber eingebaute F\xE4higkeiten\
+  \ zum Parsen von HTML, aber Sie k\xF6nnen Java-Bibliotheken oder Clojure-Wrapper\
+  \ wie `enlive`\u2026"
 lastmod: '2024-03-13T22:44:53.417506-06:00'
 model: gpt-4-0125-preview
-summary: Das Parsen von HTML in Clojure umfasst das programmgesteuerte Extrahieren
-  von Informationen aus HTML-Dokumenten.
+summary: "Clojure verf\xFCgt nicht \xFCber eingebaute F\xE4higkeiten zum Parsen von\
+  \ HTML, aber Sie k\xF6nnen Java-Bibliotheken oder Clojure-Wrapper wie `enlive` oder\
+  \ `hickory` nutzen."
 title: HTML parsen
 weight: 43
 ---

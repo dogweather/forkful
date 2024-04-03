@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:43.733575-07:00
-description: "Analisar HTML na programa\xE7\xE3o envolve analisar a estrutura de um\
-  \ documento HTML, permitindo extrair, manipular e interagir com seu conte\xFAdo\
-  \ de forma\u2026"
+description: "Como Fazer: Embora o .NET forne\xE7a suporte b\xE1sico para trabalhar\
+  \ com HTML, como o `HttpClient` para buscar p\xE1ginas web, ele carece de um analisador\
+  \ HTML\u2026"
 lastmod: '2024-03-13T22:44:46.581890-06:00'
 model: gpt-4-0125-preview
-summary: "Analisar HTML na programa\xE7\xE3o envolve analisar a estrutura de um documento\
-  \ HTML, permitindo extrair, manipular e interagir com seu conte\xFAdo de forma program\xE1\
-  tica."
+summary: "Embora o .NET forne\xE7a suporte b\xE1sico para trabalhar com HTML, como\
+  \ o `HttpClient` para buscar p\xE1ginas web, ele carece de um analisador HTML abrangente\
+  \ e integrado."
 title: Analisando HTML
 weight: 43
 ---

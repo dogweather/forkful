@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:38:08.021323-07:00
-description: "Konvertering av en streng til sm\xE5 bokstaver endrer alle bokstavene\
-  \ i strengen til deres sm\xE5bokstav motstykke. Dette gj\xF8res for konsistens i\u2026"
+description: "Hvordan gj\xF8re det: C# har innebygget st\xF8tte for \xE5 endre store\
+  \ bokstaver til sm\xE5 bokstaver. Her er et raskt eksempel."
 lastmod: '2024-03-13T22:44:40.782095-06:00'
 model: gpt-4-1106-preview
-summary: "Konvertering av en streng til sm\xE5 bokstaver endrer alle bokstavene i\
-  \ strengen til deres sm\xE5bokstav motstykke."
+summary: "C# har innebygget st\xF8tte for \xE5 endre store bokstaver til sm\xE5 bokstaver."
 title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---

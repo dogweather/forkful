@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:58:18.107817-07:00
-description: "Chercher et remplacer du texte, c'est trouver des bouts de cha\xEEnes\
-  \ et les transformer. Les programmeurs le font pour corriger des donn\xE9es, formater\
-  \ ou\u2026"
+description: 'How to: "Comment faire :" .'
 lastmod: '2024-03-13T22:44:57.619440-06:00'
 model: gpt-4-1106-preview
-summary: "Chercher et remplacer du texte, c'est trouver des bouts de cha\xEEnes et\
-  \ les transformer."
+summary: .
 title: Recherche et remplacement de texte
 weight: 10
 ---

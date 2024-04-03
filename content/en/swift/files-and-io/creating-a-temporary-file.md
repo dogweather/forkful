@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:41:10.668868-07:00
-description: "Creating a temporary file is making a short-lived file for storing data\
-  \ that\u2019s not needed long-term. Programmers do this to handle data that\u2019\
-  s only\u2026"
+description: "How to: Swift makes creating temporary files pretty easy, using the\
+  \ `FileManager` class. Here\u2019s how you whip up a temp file and write some text\
+  \ into it."
 lastmod: '2024-03-13T22:45:00.413252-06:00'
 model: gpt-4-1106-preview
-summary: "Creating a temporary file is making a short-lived file for storing data\
-  \ that\u2019s not needed long-term."
+summary: Swift makes creating temporary files pretty easy, using the `FileManager`
+  class.
 title: Creating a temporary file
 weight: 21
 ---

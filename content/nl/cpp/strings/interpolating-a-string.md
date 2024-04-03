@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:03.501681-07:00
-description: "Stringinterpolatie gaat over het invoegen van variabelen in strings.\
-  \ We doen dit om ter plekke berichten samen te stellen, output te personaliseren\
-  \ of\u2026"
+description: "Hoe: C++ heeft geen ingebouwde stringinterpolatie zoals sommige andere\
+  \ talen. Je gebruikt vaak `std::ostringstream`, `std::format` (vanaf C++20), of\u2026"
 lastmod: '2024-03-13T22:44:51.098868-06:00'
 model: gpt-4-0125-preview
-summary: Stringinterpolatie gaat over het invoegen van variabelen in strings.
+summary: C++ heeft geen ingebouwde stringinterpolatie zoals sommige andere talen.
 title: Een string interpoleren
 weight: 8
 ---

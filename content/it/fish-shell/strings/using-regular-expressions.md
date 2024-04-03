@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:47.108031-07:00
-description: "Le espressioni regolari (regex) in Fish Shell ti permettono di cercare,\
-  \ correlare e manipolare stringhe basate su schemi specifici. I programmatori\u2026"
+description: "Come fare: Sebbene Fish Shell stesso non abbia un comando integrato\
+  \ per le regex, utilizza efficacemente comandi esterni come `grep`, `sed` e `awk`\
+  \ che\u2026"
 lastmod: '2024-03-13T22:44:43.846005-06:00'
 model: gpt-4-0125-preview
-summary: Le espressioni regolari (regex) in Fish Shell ti permettono di cercare, correlare
-  e manipolare stringhe basate su schemi specifici.
+summary: Sebbene Fish Shell stesso non abbia un comando integrato per le regex, utilizza
+  efficacemente comandi esterni come `grep`, `sed` e `awk` che supportano le regex,
+  permettendoti di incorporare operazioni regex nei tuoi script.
 title: Utilizzo delle espressioni regolari
 weight: 11
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:18.806236-07:00
-description: "I datorprogrammering inneb\xE4r \"Utskrift av fels\xF6kningsutdata\"\
-  \ att producera detaljerade informationsmeddelanden som hj\xE4lper utvecklare att\
-  \ f\xF6rst\xE5\u2026"
+description: "Hur: I Go kan du anv\xE4nda det standarda `fmt`-paketet f\xF6r att skriva\
+  \ ut fels\xF6kningsutdata till konsolen. `fmt`-paketet erbjuder en m\xE4ngd funktioner,\
+  \ s\xE5som\u2026"
 lastmod: '2024-03-13T22:44:37.394901-06:00'
 model: gpt-4-0125-preview
-summary: "I datorprogrammering inneb\xE4r \"Utskrift av fels\xF6kningsutdata\" att\
-  \ producera detaljerade informationsmeddelanden som hj\xE4lper utvecklare att f\xF6\
-  rst\xE5 exekveringsfl\xF6det i deras program eller lokalisera problem."
+summary: "I Go kan du anv\xE4nda det standarda `fmt`-paketet f\xF6r att skriva ut\
+  \ fels\xF6kningsutdata till konsolen."
 title: "Skriva ut fels\xF6kningsutdata"
 weight: 33
 ---

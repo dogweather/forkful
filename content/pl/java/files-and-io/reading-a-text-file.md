@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:54:29.807549-07:00
-description: "Czytanie pliku tekstowego to proces pozyskiwania danych z zapisanego\
-  \ tekstu. Programi\u015Bci robi\u0105 to, by obs\u0142u\u017Cy\u0107 informacje\
-  \ \u2013 konfigurowa\u0107 aplikacje,\u2026"
+description: "Jak to zrobi\u0107: Do wczytywania plik\xF3w tekstowych w Javie wykorzystujemy\
+  \ klas\u0119 `Files` z pakietu `java.nio.file`, kt\xF3ra oferuje metod\u0119 `readAllLines`.\u2026"
 lastmod: '2024-03-13T22:44:35.295616-06:00'
 model: gpt-4-1106-preview
-summary: Czytanie pliku tekstowego to proces pozyskiwania danych z zapisanego tekstu.
+summary: "Do wczytywania plik\xF3w tekstowych w Javie wykorzystujemy klas\u0119 `Files`\
+  \ z pakietu `java.nio.file`, kt\xF3ra oferuje metod\u0119 `readAllLines`."
 title: Odczytywanie pliku tekstowego
 weight: 22
 ---

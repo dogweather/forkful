@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:31.051461-07:00
-description: "YAML, que significa \"YAML Ain't Markup Language\" (YAML no es un lenguaje\
-  \ de marcado), es un formato de serializaci\xF3n de datos legible por humanos. Los\u2026"
+description: "C\xF3mo hacerlo: Para trabajar con YAML en C++, una opci\xF3n popular\
+  \ es la biblioteca `yaml-cpp`. Primero, aseg\xFArate de tener `yaml-cpp` instalado\
+  \ y\u2026"
 lastmod: '2024-03-13T22:44:59.395233-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, que significa \"YAML Ain't Markup Language\" (YAML no es un lenguaje\
-  \ de marcado), es un formato de serializaci\xF3n de datos legible por humanos."
+summary: "Para trabajar con YAML en C++, una opci\xF3n popular es la biblioteca `yaml-cpp`."
 title: Trabajando con YAML
 weight: 41
 ---

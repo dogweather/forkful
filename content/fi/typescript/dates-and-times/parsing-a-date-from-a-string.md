@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:54.585869-07:00
-description: "Merkkijonosta p\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen tarkoittaa\
-  \ p\xE4iv\xE4m\xE4\xE4rien ja aikojen tekstiesitysten muuntamista muotoon, jota\
-  \ ohjelma voi k\xE4sitell\xE4 ja analysoida.\u2026"
+description: "Kuinka: TypeScript, ollessaan JavaScriptin yliluokka, nojaa Date-objektiin\
+  \ merkkijonoista p\xE4iv\xE4m\xE4\xE4rien j\xE4sent\xE4miseksi. Kuitenkin p\xE4\
+  iv\xE4m\xE4\xE4rien k\xE4sittely\u2026"
 lastmod: '2024-03-13T22:44:56.324490-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonosta p\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen tarkoittaa p\xE4\
-  iv\xE4m\xE4\xE4rien ja aikojen tekstiesitysten muuntamista muotoon, jota ohjelma\
-  \ voi k\xE4sitell\xE4 ja analysoida."
+summary: "TypeScript, ollessaan JavaScriptin yliluokka, nojaa Date-objektiin merkkijonoista\
+  \ p\xE4iv\xE4m\xE4\xE4rien j\xE4sent\xE4miseksi."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
 weight: 30
 ---

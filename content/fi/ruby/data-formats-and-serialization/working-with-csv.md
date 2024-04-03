@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:24.006792-07:00
-description: "CSV-tiedostojen k\xE4sittely Rubyssa tarjoaa yksinkertaisen tavan k\xE4\
-  sitell\xE4 taulukkomuotoista tietoa. Ohjelmoijat harjoittavat t\xE4t\xE4 k\xE4yt\xE4\
-  nt\xF6\xE4 usein datan\u2026"
+description: "Kuinka: Ruby sis\xE4lt\xE4\xE4 oletuksena CSV-kirjaston, joka yksinkertaistaa\
+  \ lukemista ja kirjoittamista CSV-tiedostoihin. T\xE4ss\xE4 on, miten voit hy\xF6\
+  dynt\xE4\xE4 t\xE4t\xE4\u2026"
 lastmod: '2024-03-13T22:44:57.110459-06:00'
 model: gpt-4-0125-preview
-summary: "CSV-tiedostojen k\xE4sittely Rubyssa tarjoaa yksinkertaisen tavan k\xE4\
-  sitell\xE4 taulukkomuotoista tietoa."
+summary: "Ruby sis\xE4lt\xE4\xE4 oletuksena CSV-kirjaston, joka yksinkertaistaa lukemista\
+  \ ja kirjoittamista CSV-tiedostoihin."
 title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---

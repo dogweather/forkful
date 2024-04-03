@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:07.605776-07:00
-description: "Zoeken en vervangen van tekst in Google Apps Script houdt in het programmatisch\
-  \ identificeren van specifieke strings in een document, spreadsheet of elk\u2026"
+description: "Hoe te: Google Apps Script biedt een eenvoudige manier om tekst te zoeken\
+  \ en te vervangen, vooral binnen Google Documenten en Spreadsheets. Hieronder\u2026"
 lastmod: '2024-03-13T22:44:50.315298-06:00'
 model: gpt-4-0125-preview
-summary: Zoeken en vervangen van tekst in Google Apps Script houdt in het programmatisch
-  identificeren van specifieke strings in een document, spreadsheet of elk ander type
-  Google Apps-content, en deze te vervangen door andere tekstwaarden.
+summary: Google Apps Script biedt een eenvoudige manier om tekst te zoeken en te vervangen,
+  vooral binnen Google Documenten en Spreadsheets.
 title: Zoeken en vervangen van tekst
 weight: 10
 ---

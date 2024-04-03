@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:38.145076-07:00
-description: "Een nieuw project starten betekent het opzetten van een frisse programmeeromgeving\
-  \ voor je code. Programmeurs doen dit om de ontwikkeling te beginnen met\u2026"
+description: 'Hoe te: Om een Clojure-project op te starten, gebruiken we Leiningen,
+  een populair bouwhulpmiddel voor Clojure.'
 lastmod: '2024-03-13T22:44:50.420242-06:00'
 model: gpt-4-0125-preview
-summary: Een nieuw project starten betekent het opzetten van een frisse programmeeromgeving
-  voor je code.
+summary: Om een Clojure-project op te starten, gebruiken we Leiningen, een populair
+  bouwhulpmiddel voor Clojure.
 title: Een nieuw project starten
 weight: 1
 ---

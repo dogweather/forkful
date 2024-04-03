@@ -1,10 +1,11 @@
 ---
 date: 2024-01-26 04:45:43.380668-07:00
-description: "Komplexa tal har en reell del och en imagin\xE4r del (som 3 + 4i). Programmerare\
-  \ anv\xE4nder dem i Swift f\xF6r uppgifter som signalbehandling, att l\xF6sa vissa\u2026"
+description: "Hur man g\xF6r: Swift har inte inbyggt st\xF6d f\xF6r komplexa tal,\
+  \ men vi kan skapa v\xE5rt eget."
 lastmod: '2024-03-13T22:44:38.245281-06:00'
 model: gpt-4-0125-preview
-summary: "Komplexa tal har en reell del och en imagin\xE4r del (som 3 + 4i)."
+summary: "Swift har inte inbyggt st\xF6d f\xF6r komplexa tal, men vi kan skapa v\xE5\
+  rt eget."
 title: Att arbeta med komplexa tal
 weight: 14
 ---

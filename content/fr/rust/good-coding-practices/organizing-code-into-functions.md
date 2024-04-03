@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:16:04.627935-07:00
-description: "Organiser le code en fonctions consiste \xE0 d\xE9composer votre programme\
-  \ en morceaux modulaires r\xE9utilisables identifi\xE9s par un nom. Nous le faisons\
-  \ pour\u2026"
+description: "Comment faire : Disons que vous avez du code qui calcule l'aire d'un\
+  \ cercle plusieurs fois. Au lieu de r\xE9p\xE9ter la formule, vous l'enveloppez\
+  \ dans une\u2026"
 lastmod: '2024-03-13T22:44:57.487726-06:00'
 model: gpt-4-0125-preview
-summary: "Organiser le code en fonctions consiste \xE0 d\xE9composer votre programme\
-  \ en morceaux modulaires r\xE9utilisables identifi\xE9s par un nom."
+summary: Disons que vous avez du code qui calcule l'aire d'un cercle plusieurs fois.
 title: Organiser le code en fonctions
 weight: 18
 ---

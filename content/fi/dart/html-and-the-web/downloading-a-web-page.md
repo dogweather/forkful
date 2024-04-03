@@ -2,13 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:23.808748-07:00
-description: "Web-sivun lataaminen tarkoittaa web-sivun sis\xE4ll\xF6n noutamista\
-  \ sen URL-osoitteen kautta k\xE4sittely\xE4 tai tallennusta varten. Ohjelmoijat\
-  \ tekev\xE4t t\xE4m\xE4n tiedon\u2026"
+description: "Kuinka: Dart tarjoaa `http`-paketin, joka on suosittu kolmannen osapuolen\
+  \ kirjasto HTTP-pyynt\xF6jen tekemiseen. T\xE4ss\xE4 on perusesimerkki siit\xE4\
+  , kuinka sit\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.269385-06:00'
 model: gpt-4-0125-preview
-summary: "Web-sivun lataaminen tarkoittaa web-sivun sis\xE4ll\xF6n noutamista sen\
-  \ URL-osoitteen kautta k\xE4sittely\xE4 tai tallennusta varten."
+summary: "Dart tarjoaa `http`-paketin, joka on suosittu kolmannen osapuolen kirjasto\
+  \ HTTP-pyynt\xF6jen tekemiseen."
 title: Web-sivun lataaminen
 weight: 42
 ---

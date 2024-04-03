@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:33.674532-07:00
-description: "Analisar uma data a partir de uma string envolve interpretar o formato\
-  \ da string para extrair componentes da data como dia, m\xEAs e ano. Programadores\
-  \ fazem\u2026"
+description: "Como Fazer: No C++ moderno, voc\xEA pode usar a biblioteca `<chrono>`\
+  \ para manipular datas e horas nativamente, mas ela n\xE3o suporta diretamente a\
+  \ an\xE1lise de\u2026"
 lastmod: '2024-03-13T22:44:46.888729-06:00'
 model: gpt-4-0125-preview
-summary: "Analisar uma data a partir de uma string envolve interpretar o formato da\
-  \ string para extrair componentes da data como dia, m\xEAs e ano."
+summary: "No C++ moderno, voc\xEA pode usar a biblioteca `<chrono>` para manipular\
+  \ datas e horas nativamente, mas ela n\xE3o suporta diretamente a an\xE1lise de\
+  \ strings sem um parsing manual para formatos mais complexos."
 title: Analisando uma data a partir de uma string
 weight: 30
 ---

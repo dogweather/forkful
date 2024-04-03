@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:56:29.101576-07:00
-description: "Das Lesen von Kommandozeilenargumenten erlaubt deinen PHP-Skripten,\
-  \ Eingaben direkt aus der Befehlszeile zu erhalten. Wir nutzen es, um Skripte flexibler\u2026"
+description: 'So geht''s: Mit `$argv` und `$argc` kannst du auf die Argumente zugreifen.'
 lastmod: '2024-03-13T22:44:53.987801-06:00'
 model: gpt-4-1106-preview
-summary: Das Lesen von Kommandozeilenargumenten erlaubt deinen PHP-Skripten, Eingaben
-  direkt aus der Befehlszeile zu erhalten.
+summary: Mit `$argv` und `$argc` kannst du auf die Argumente zugreifen.
 title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---

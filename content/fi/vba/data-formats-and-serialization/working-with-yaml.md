@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:07:41.327534-07:00
-description: "YAML, joka tarkoittaa \"YAML Ain't Markup Language\" (YAML ei ole merkkauskieli),\
-  \ on ihmisen luettavissa oleva datan serialisointikieli, jota k\xE4ytet\xE4\xE4\
-  n\u2026"
+description: "Miten: YAML:n k\xE4ytt\xF6 VBA:ssa vaatii ymm\xE4rryst\xE4 siit\xE4\
+  , miten YAML j\xE4sennet\xE4\xE4n ja muunnetaan muotoon, jonka VBA voi helposti\
+  \ k\xE4sitell\xE4, yleens\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.422717-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, joka tarkoittaa \"YAML Ain't Markup Language\" (YAML ei ole merkkauskieli),\
-  \ on ihmisen luettavissa oleva datan serialisointikieli, jota k\xE4ytet\xE4\xE4\
-  n yleisesti konfiguraatiotiedostoissa."
+summary: "YAML:n k\xE4ytt\xF6 VBA:ssa vaatii ymm\xE4rryst\xE4 siit\xE4, miten YAML\
+  \ j\xE4sennet\xE4\xE4n ja muunnetaan muotoon, jonka VBA voi helposti k\xE4sitell\xE4\
+  , yleens\xE4 sanakirjoihin tai kokoelmiin."
 title: "Ty\xF6skentely YAML:n parissa"
 weight: 41
 ---

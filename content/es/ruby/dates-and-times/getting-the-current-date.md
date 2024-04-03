@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:27.089663-07:00
-description: "Obtener la fecha actual es una tarea esencial en casi cualquier esfuerzo\
-  \ de programaci\xF3n, desde registrar actividades en una aplicaci\xF3n hasta generar\u2026"
+description: "C\xF3mo hacerlo: La biblioteca est\xE1ndar de Ruby incluye las clases\
+  \ `Date` y `Time` para manejar fechas y horas. As\xED es como se obtiene la fecha\
+  \ actual."
 lastmod: '2024-03-13T22:44:59.601629-06:00'
 model: gpt-4-0125-preview
-summary: "Obtener la fecha actual es una tarea esencial en casi cualquier esfuerzo\
-  \ de programaci\xF3n, desde registrar actividades en una aplicaci\xF3n hasta generar\
-  \ informes con sellos de fecha."
+summary: "La biblioteca est\xE1ndar de Ruby incluye las clases `Date` y `Time` para\
+  \ manejar fechas y horas."
 title: Obteniendo la fecha actual
 weight: 29
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:13.475439-07:00
-description: "Het afdrukken van debuginformatie gaat over het genereren van tijdelijke,\
-  \ informatieve logberichten die programmeurs kunnen helpen om de stroom en staat\u2026"
+description: "Hoe: In C is de meest voorkomende manier om debuginformatie af te drukken\
+  \ het gebruik van de `printf` functie uit de standaard I/O-bibliotheek. De\u2026"
 lastmod: '2024-03-13T22:44:51.293892-06:00'
 model: gpt-4-0125-preview
-summary: Het afdrukken van debuginformatie gaat over het genereren van tijdelijke,
-  informatieve logberichten die programmeurs kunnen helpen om de stroom en staat van
-  een programma tijdens de uitvoering ervan te begrijpen.
+summary: In C is de meest voorkomende manier om debuginformatie af te drukken het
+  gebruik van de `printf` functie uit de standaard I/O-bibliotheek.
 title: Debug output afdrukken
 weight: 33
 ---

@@ -2,16 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:57.060537-07:00
-description: "Chuy\u1EC3n m\u1ED9t chu\u1ED7i v\u0103n b\u1EA3n th\xE0nh ch\u1EEF\
-  \ th\u01B0\u1EDDng c\xF3 ngh\u0129a l\xE0 bi\u1EBFn \u0111\u1ED5i t\u1EA5t c\u1EA3\
-  \ c\xE1c k\xFD t\u1EF1 trong v\u0103n b\u1EA3n th\xE0nh c\xE1c bi\u1EBFn th\u1EC3\
-  \ ch\u1EEF th\u01B0\u1EDDng c\u1EE7a ch\xFAng, nh\u01B0 chuy\u1EC3n \"Hello,\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong Clojure, \u0111\u1EC3 chuy\u1EC3\
+  n m\u1ED9t chu\u1ED7i v\u0103n b\u1EA3n th\xE0nh ch\u1EEF th\u01B0\u1EDDng, b\u1EA1\
+  n s\u1EBD s\u1EED d\u1EE5ng h\xE0m `clojure.string/lower-case`. H\xE3y xem n\xF3\
+  \ \u0111\u01A1n gi\u1EA3n nh\u01B0 th\u1EBF\u2026"
 lastmod: '2024-03-13T22:44:36.135476-06:00'
 model: gpt-4-0125-preview
-summary: "Chuy\u1EC3n m\u1ED9t chu\u1ED7i v\u0103n b\u1EA3n th\xE0nh ch\u1EEF th\u01B0\
-  \u1EDDng c\xF3 ngh\u0129a l\xE0 bi\u1EBFn \u0111\u1ED5i t\u1EA5t c\u1EA3 c\xE1c\
-  \ k\xFD t\u1EF1 trong v\u0103n b\u1EA3n th\xE0nh c\xE1c bi\u1EBFn th\u1EC3 ch\u1EEF\
-  \ th\u01B0\u1EDDng c\u1EE7a ch\xFAng, nh\u01B0 chuy\u1EC3n \"Hello, World."
+summary: "Trong Clojure, \u0111\u1EC3 chuy\u1EC3n m\u1ED9t chu\u1ED7i v\u0103n b\u1EA3\
+  n th\xE0nh ch\u1EEF th\u01B0\u1EDDng, b\u1EA1n s\u1EBD s\u1EED d\u1EE5ng h\xE0m\
+  \ `clojure.string/lower-case`."
 title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
 weight: 4
 ---

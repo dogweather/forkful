@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:59.557022-07:00
-description: "\xC5 h\xE5ndtere feil i C inneb\xE6rer \xE5 oppdage og respondere p\xE5\
-  \ unormale tilstander som oppst\xE5r under kj\xF8ring av programmet. Programmerere\
-  \ gj\xF8r dette for \xE5\u2026"
+description: "Hvordan: C har ikke innebygd st\xF8tte for unntak slik som noen andre\
+  \ spr\xE5k. I stedet st\xF8tter det seg p\xE5 noen konvensjonelle feilh\xE5ndteringsstrategier,\
+  \ som \xE5\u2026"
 lastmod: '2024-03-13T22:44:41.280231-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 h\xE5ndtere feil i C inneb\xE6rer \xE5 oppdage og respondere p\xE5\
-  \ unormale tilstander som oppst\xE5r under kj\xF8ring av programmet."
+summary: "C har ikke innebygd st\xF8tte for unntak slik som noen andre spr\xE5k."
 title: "H\xE5ndtering av feil"
 weight: 16
 ---

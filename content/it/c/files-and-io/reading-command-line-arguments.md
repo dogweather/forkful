@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:11.033995-07:00
-description: "Nella programmazione C, leggere gli argomenti della riga di comando\
-  \ permette ai programmi di accettare input direttamente dal terminale, migliorando\u2026"
+description: "Come fare: In C, la funzione `main` pu\xF2 essere progettata per accettare\
+  \ argomenti della riga di comando usando i parametri `int argc` e `char *argv[]`.\u2026"
 lastmod: '2024-03-13T22:44:44.017214-06:00'
 model: gpt-4-0125-preview
-summary: "Nella programmazione C, leggere gli argomenti della riga di comando permette\
-  \ ai programmi di accettare input direttamente dal terminale, migliorando flessibilit\xE0\
-  \ e usabilit\xE0."
+summary: "In C, la funzione `main` pu\xF2 essere progettata per accettare argomenti\
+  \ della riga di comando usando i parametri `int argc` e `char *argv[]`."
 title: Lettura degli argomenti da linea di comando
 weight: 23
 ---

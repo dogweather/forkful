@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:56:46.481415-07:00
-description: "Kommandolinjeargumenter lar deg sende data direkte til et Ruby-program\
-  \ n\xE5r du kj\xF8rer det. Programmere bruker dette for \xE5 gj\xF8re programmene\
-  \ fleksible og\u2026"
+description: 'Hvordan: Her er et enkelt Ruby-script som leser argumenter fra kommandolinjen.'
 lastmod: '2024-03-13T22:44:41.348665-06:00'
 model: gpt-4-1106-preview
-summary: "Kommandolinjeargumenter lar deg sende data direkte til et Ruby-program n\xE5\
-  r du kj\xF8rer det."
+summary: Her er et enkelt Ruby-script som leser argumenter fra kommandolinjen.
 title: Lese kommandolinjeargumenter
 weight: 23
 ---

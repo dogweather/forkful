@@ -1,14 +1,10 @@
 ---
 date: 2024-01-26 01:07:57.752789-07:00
-description: "La generaci\xF3n de registros (logging) es el proceso de grabar eventos\
-  \ de una aplicaci\xF3n mientras un programa se ejecuta, proporcionando un rastro\
-  \ que puede\u2026"
+description: "C\xF3mo hacerlo: Python viene con un m\xF3dulo incorporado para la generaci\xF3\
+  n de registros. Aqu\xED tienes una configuraci\xF3n b\xE1sica."
 lastmod: '2024-03-13T22:44:58.618990-06:00'
 model: gpt-4-1106-preview
-summary: "La generaci\xF3n de registros (logging) es el proceso de grabar eventos\
-  \ de una aplicaci\xF3n mientras un programa se ejecuta, proporcionando un rastro\
-  \ que puede ser analizado despu\xE9s de la ejecuci\xF3n y monitoreado en tiempo\
-  \ real."
+summary: "Python viene con un m\xF3dulo incorporado para la generaci\xF3n de registros."
 title: Registro de Actividades
 weight: 17
 ---

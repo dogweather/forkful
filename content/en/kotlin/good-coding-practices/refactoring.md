@@ -1,11 +1,10 @@
 ---
 date: 2024-01-25 02:11:55.064319-07:00
-description: "Refactoring is the process of tweaking existing code to improve its\
-  \ structure, readability, and performance without changing its external behavior.\u2026"
+description: 'How to: Here''s a Kotlin snippet showing a common code smell and its
+  refactored version. We start with a chunk of code that''s doing too much.'
 lastmod: '2024-03-13T22:45:00.056810-06:00'
 model: gpt-4-1106-preview
-summary: Refactoring is the process of tweaking existing code to improve its structure,
-  readability, and performance without changing its external behavior.
+summary: Here's a Kotlin snippet showing a common code smell and its refactored version.
 title: Refactoring
 weight: 19
 ---

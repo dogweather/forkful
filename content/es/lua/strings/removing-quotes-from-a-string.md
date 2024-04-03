@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 03:40:18.628987-07:00
-description: "Quitar las comillas de una cadena significa deshacerse de esos caracteres\
-  \ de comillas dobles o simples que abrazan tu texto. Los programadores hacen esto\u2026"
+description: "C\xF3mo hacerlo: Aqu\xED te mostramos c\xF3mo enviar esas comillas a\
+  \ volar en Lua."
 lastmod: '2024-03-13T22:44:59.190338-06:00'
 model: gpt-4-0125-preview
-summary: Quitar las comillas de una cadena significa deshacerse de esos caracteres
-  de comillas dobles o simples que abrazan tu texto.
+summary: "Aqu\xED te mostramos c\xF3mo enviar esas comillas a volar en Lua."
 title: Eliminando comillas de una cadena
 weight: 9
 ---

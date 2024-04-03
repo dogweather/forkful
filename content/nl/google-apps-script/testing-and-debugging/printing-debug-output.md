@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:05.628152-07:00
-description: "Debuguitvoer printen omvat het strategisch plaatsen van logverklaringen\
-  \ in je code om variabele waarden, uitvoeringsstroom of foutmeldingen tijdens\u2026"
+description: "Hoe: Google Apps Script biedt de `Logger` klasse voor basisdebugging,\
+  \ en voor meer geavanceerde behoeften, de `console` klasse ge\xEFntroduceerd in\
+  \ de\u2026"
 lastmod: '2024-03-13T22:44:50.334368-06:00'
 model: gpt-4-0125-preview
-summary: Debuguitvoer printen omvat het strategisch plaatsen van logverklaringen in
-  je code om variabele waarden, uitvoeringsstroom of foutmeldingen tijdens runtime
-  weer te geven.
+summary: "Google Apps Script biedt de `Logger` klasse voor basisdebugging, en voor\
+  \ meer geavanceerde behoeften, de `console` klasse ge\xEFntroduceerd in de V8-runtime."
 title: Afdrukken van debug output
 weight: 33
 ---

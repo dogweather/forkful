@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:20.015855-07:00
-description: "Gli array associativi, o mappe hash, in Clojure consentono di memorizzare\
-  \ e recuperare dati tramite coppie chiave-valore. Sono la scelta preferita per la\u2026"
+description: "Come fare: In Clojure, creare e manipolare array associativi (mappe\
+  \ hash) \xE8 semplice. Vediamo alcuni esempi. Per creare una mappa hash."
 lastmod: '2024-03-13T22:44:43.035038-06:00'
 model: gpt-4-0125-preview
-summary: Gli array associativi, o mappe hash, in Clojure consentono di memorizzare
-  e recuperare dati tramite coppie chiave-valore.
+summary: "In Clojure, creare e manipolare array associativi (mappe hash) \xE8 semplice."
 title: Utilizzo di array associativi
 weight: 15
 ---

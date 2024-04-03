@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:42.511386-07:00
-description: "In th\xF4ng tin g\u1EE1 l\u1ED7i l\xE0 v\u1EC1 vi\u1EC7c xu\u1EA5t th\xF4\
-  ng tin quan tr\u1ECDng \u0111\u1EC3 hi\u1EC3u \u0111\u01B0\u1EE3c nh\u1EEFng g\xEC\
-  \ \u0111ang di\u1EC5n ra b\xEAn d\u01B0\u1EDBi c\u1EE7a m\xE3 l\u1EC7nh. C\xE1c\
-  \ l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 theo\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Vi\u1EC7c n\xE0y kh\xE1 \u0111\u01A1n gi\u1EA3\
+  n: s\u1EED d\u1EE5ng `Console.WriteLine()` \u0111\u1EC3 in ra b\u1EA3ng \u0111i\u1EC1\
+  u khi\u1EC3n xu\u1EA5t. \u0110\u1EB7c bi\u1EC7t cho m\u1EE5c \u0111\xEDch g\u1EE1\
+  \ l\u1ED7i, `Debug.WriteLine()` c\xF3\u2026"
 lastmod: '2024-03-13T22:44:36.661027-06:00'
 model: gpt-4-0125-preview
-summary: "In th\xF4ng tin g\u1EE1 l\u1ED7i l\xE0 v\u1EC1 vi\u1EC7c xu\u1EA5t th\xF4\
-  ng tin quan tr\u1ECDng \u0111\u1EC3 hi\u1EC3u \u0111\u01B0\u1EE3c nh\u1EEFng g\xEC\
-  \ \u0111ang di\u1EC5n ra b\xEAn d\u01B0\u1EDBi c\u1EE7a m\xE3 l\u1EC7nh."
+summary: "Vi\u1EC7c n\xE0y kh\xE1 \u0111\u01A1n gi\u1EA3n."
 title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 weight: 33
 ---

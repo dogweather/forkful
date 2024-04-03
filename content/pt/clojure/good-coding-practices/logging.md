@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 01:02:30.966188-07:00
-description: "O log \xE9 essencialmente o equivalente de software ao di\xE1rio de\
-  \ bordo de um navio; \xE9 uma maneira de registrar eventos que acontecem enquanto\
-  \ uma aplica\xE7\xE3o\u2026"
+description: "Como fazer: Clojure se apoia nas facilidades de log do Java, mas voc\xEA\
+  \ pode acess\xE1-las de uma maneira mais idiom\xE1tica de Clojure. Vamos dar uma\
+  \ olhada em\u2026"
 lastmod: '2024-03-13T22:44:46.203139-06:00'
 model: gpt-4-1106-preview
-summary: "O log \xE9 essencialmente o equivalente de software ao di\xE1rio de bordo\
-  \ de um navio; \xE9 uma maneira de registrar eventos que acontecem enquanto uma\
-  \ aplica\xE7\xE3o est\xE1 em execu\xE7\xE3o."
+summary: "Clojure se apoia nas facilidades de log do Java, mas voc\xEA pode acess\xE1\
+  -las de uma maneira mais idiom\xE1tica de Clojure."
 title: Registro de Logs
 weight: 17
 ---

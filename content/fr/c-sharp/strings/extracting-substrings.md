@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:45:13.701015-07:00
-description: "Extraire des sous-cha\xEEnes, c'est d\xE9couper une partie d'une cha\xEE\
-  ne de caract\xE8res. On fait \xE7a pour analyser, manipuler ou valider des morceaux\
-  \ sp\xE9cifiques\u2026"
+description: "Comment faire : Voici un peu de code C# pour montrer comment extraire\
+  \ des substrings. C'est simple, mate \xE7a ."
 lastmod: '2024-03-13T22:44:57.774944-06:00'
 model: gpt-4-1106-preview
-summary: "Extraire des sous-cha\xEEnes, c'est d\xE9couper une partie d'une cha\xEE\
-  ne de caract\xE8res."
+summary: Voici un peu de code C# pour montrer comment extraire des substrings.
 title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---

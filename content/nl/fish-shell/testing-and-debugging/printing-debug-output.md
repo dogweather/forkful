@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:24.862576-07:00
-description: "Debug-output afdrukken betekent extra informatie uitspugen om je te\
-  \ helpen begrijpen wat je code doet. Programmeurs doen dit om bugs gemakkelijker\
-  \ te\u2026"
+description: 'Hoe te: Maak jezelf vertrouwd met `echo` - het Zwitserse zakmes voor
+  output in Fish. Hier is hoe je wat debug-prints kunt toevoegen aan je shellscripts.'
 lastmod: '2024-03-13T22:44:51.249938-06:00'
 model: gpt-4-0125-preview
-summary: Debug-output afdrukken betekent extra informatie uitspugen om je te helpen
-  begrijpen wat je code doet.
+summary: Maak jezelf vertrouwd met `echo` - het Zwitserse zakmes voor output in Fish.
 title: Debug-output afdrukken
 weight: 33
 ---

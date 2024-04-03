@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:29.172102-07:00
-description: "Redondear n\xFAmeros, un concepto fundamental en la programaci\xF3n\
-  \ de computadoras, involucra ajustar un n\xFAmero a su entero m\xE1s cercano o a\
-  \ un n\xFAmero\u2026"
+description: "C\xF3mo: Google Apps Script, al ser un lenguaje basado en JavaScript,\
+  \ ofrece m\xE9todos est\xE1ndar para redondear n\xFAmeros. Aqu\xED hay una desglose\
+  \ de tres t\xE9cnicas\u2026"
 lastmod: '2024-03-13T22:44:58.519593-06:00'
 model: gpt-4-0125-preview
-summary: "Redondear n\xFAmeros, un concepto fundamental en la programaci\xF3n de computadoras,\
-  \ involucra ajustar un n\xFAmero a su entero m\xE1s cercano o a un n\xFAmero especificado\
-  \ de decimales."
+summary: "Google Apps Script, al ser un lenguaje basado en JavaScript, ofrece m\xE9\
+  todos est\xE1ndar para redondear n\xFAmeros."
 title: "Redondeo de n\xFAmeros"
 weight: 13
 ---

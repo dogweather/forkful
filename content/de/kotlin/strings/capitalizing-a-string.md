@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:36.179992-07:00
-description: "Das Gro\xDFschreiben eines Strings in der Programmierung beinhaltet\
-  \ das Umwandeln des ersten Zeichens des Strings in Gro\xDFbuchstaben, sofern dies\
-  \ noch nicht\u2026"
+description: "Wie: In Kotlin k\xF6nnen Strings mit den Standardbibliotheksfunktionen\
+  \ ohne die Notwendigkeit von Drittanbieterbibliotheken gro\xDFgeschrieben werden.\
+  \ Koltins\u2026"
 lastmod: '2024-03-13T22:44:53.830730-06:00'
 model: gpt-4-0125-preview
-summary: "Das Gro\xDFschreiben eines Strings in der Programmierung beinhaltet das\
-  \ Umwandeln des ersten Zeichens des Strings in Gro\xDFbuchstaben, sofern dies noch\
-  \ nicht der Fall ist."
+summary: "In Kotlin k\xF6nnen Strings mit den Standardbibliotheksfunktionen ohne die\
+  \ Notwendigkeit von Drittanbieterbibliotheken gro\xDFgeschrieben werden."
 title: "Einen String gro\xDFschreiben"
 weight: 2
 ---

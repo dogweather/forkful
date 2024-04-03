@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:28.687588-07:00
-description: "Att arbeta med JSON i Lua inneb\xE4r att tolka JSON-formaterade str\xE4\
-  ngar till Lua-tabeller och tv\xE4rtom, vilket m\xF6jligg\xF6r enkel data\xF6verf\xF6\
-  ring mellan Lua-\u2026"
+description: "Hur man g\xF6r: Lua inkluderar inte ett inbyggt bibliotek f\xF6r JSON-bearbetning.\
+  \ D\xE4rf\xF6r \xE4r ett av de popul\xE4ra tredjepartsbiblioteken `dkjson`, som\
+  \ du enkelt\u2026"
 lastmod: '2024-03-13T22:44:38.060162-06:00'
 model: gpt-4-0125-preview
-summary: "Att arbeta med JSON i Lua inneb\xE4r att tolka JSON-formaterade str\xE4\
-  ngar till Lua-tabeller och tv\xE4rtom, vilket m\xF6jligg\xF6r enkel data\xF6verf\xF6\
-  ring mellan Lua-applikationer och webbtj\xE4nster eller externa API:er."
+summary: "Lua inkluderar inte ett inbyggt bibliotek f\xF6r JSON-bearbetning."
 title: Arbeta med JSON
 weight: 38
 ---

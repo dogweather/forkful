@@ -2,12 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:38.163569-07:00
-description: "Das Runden von Zahlen ist der Vorgang, eine Zahl auf die n\xE4chstgelegene\
-  \ ganze Zahl oder auf eine bestimmte Anzahl von Dezimalstellen anzupassen.\u2026"
+description: "Wie geht das: Dart stellt native Methoden in seinem Kern `num` Typ f\xFC\
+  r Rundungsoperationen zur Verf\xFCgung. Hier werden wir Methoden wie `round()`,\u2026"
 lastmod: '2024-03-13T22:44:53.575040-06:00'
 model: gpt-4-0125-preview
-summary: "Das Runden von Zahlen ist der Vorgang, eine Zahl auf die n\xE4chstgelegene\
-  \ ganze Zahl oder auf eine bestimmte Anzahl von Dezimalstellen anzupassen."
+summary: "Dart stellt native Methoden in seinem Kern `num` Typ f\xFCr Rundungsoperationen\
+  \ zur Verf\xFCgung."
 title: Zahlen runden
 weight: 13
 ---

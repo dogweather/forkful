@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:32:32.610973-07:00
-description: "Vertaillaan kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 tiet\xE4\xE4ksemme,\
-  \ kumpi on ensin tai paljonko aikaa on kulunut niiden v\xE4lill\xE4. Ohjelmoijat\
-  \ tekev\xE4t t\xE4m\xE4n hallitakseen\u2026"
+description: "How to: (Kuinka tehd\xE4\xE4n:) ."
 lastmod: '2024-03-13T22:44:56.585819-06:00'
 model: gpt-4-1106-preview
-summary: "Vertaillaan kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 tiet\xE4\xE4ksemme, kumpi\
-  \ on ensin tai paljonko aikaa on kulunut niiden v\xE4lill\xE4."
+summary: .
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---

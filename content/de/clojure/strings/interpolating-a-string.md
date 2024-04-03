@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:50:42.707262-07:00
-description: "String-Interpolation erm\xF6glicht es, Variablen oder Ausdr\xFCcke in\
-  \ einem String einzubetten, sodass der String deren Werte enth\xE4lt. Programmierer\
-  \ nutzen dies\u2026"
+description: "How to: Mit Clojure k\xF6nnen wir keine direkte String-Interpolation\
+  \ wie in einigen anderen Sprachen verwenden, aber wir haben m\xE4chtige Alternativen."
 lastmod: '2024-03-13T22:44:53.406519-06:00'
 model: gpt-4-1106-preview
-summary: "String-Interpolation erm\xF6glicht es, Variablen oder Ausdr\xFCcke in einem\
-  \ String einzubetten, sodass der String deren Werte enth\xE4lt."
+summary: "Mit Clojure k\xF6nnen wir keine direkte String-Interpolation wie in einigen\
+  \ anderen Sprachen verwenden, aber wir haben m\xE4chtige Alternativen."
 title: Zeichenketten interpolieren
 weight: 8
 ---

@@ -3,13 +3,13 @@ changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 - 2024-02-05, dogweather, reviewed and corrected
 date: 2024-02-03 19:09:22.201377-07:00
-description: "Ottenere la data corrente in Elixir implica l'accesso alle informazioni\
-  \ di data e ora del sistema, un compito comune per log, marcature di dati o\u2026"
+description: "Come fare: La libreria standard di Elixir, tramite il modulo `DateTime`,\
+  \ consente di recuperare la data e l'ora correnti. Poich\xE9 Elixir \xE8 eseguito\
+  \ sulla\u2026"
 lastmod: '2024-03-13T22:44:43.094145-06:00'
 model: gpt-4-0125-preview
-summary: "Ottenere la data corrente in Elixir implica l'accesso alle informazioni\
-  \ di data e ora del sistema, un compito comune per log, marcature di dati o qualsiasi\
-  \ funzionalit\xE0 che richieda la conoscenza della data corrente."
+summary: La libreria standard di Elixir, tramite il modulo `DateTime`, consente di
+  recuperare la data e l'ora correnti.
 title: Ottenere la data corrente
 weight: 29
 ---

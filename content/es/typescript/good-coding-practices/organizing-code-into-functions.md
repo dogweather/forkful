@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:16:08.012505-07:00
-description: "Organizar el c\xF3digo en funciones significa dividir tu c\xF3digo en\
-  \ bloques modulares reutilizables. Hacemos esto para mantener las cosas DRY (Don't\
-  \ Repeat\u2026"
+description: "C\xF3mo hacerlo: Imagina que est\xE1s haciendo una calculadora b\xE1\
+  sica. En lugar de escribir la l\xF3gica de adici\xF3n en todos los lugares que la\
+  \ necesites, crea una\u2026"
 lastmod: '2024-03-13T22:44:58.807060-06:00'
 model: gpt-4-0125-preview
-summary: "Organizar el c\xF3digo en funciones significa dividir tu c\xF3digo en bloques\
-  \ modulares reutilizables."
+summary: "Imagina que est\xE1s haciendo una calculadora b\xE1sica."
 title: "Organizando el c\xF3digo en funciones"
 weight: 18
 ---

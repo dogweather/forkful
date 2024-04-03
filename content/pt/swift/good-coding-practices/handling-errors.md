@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 00:57:35.390988-07:00
-description: "Tratar erros em Swift significa antecipar e responder a problemas que\
-  \ surgem quando seu c\xF3digo \xE9 executado. Fazemos isso para controlar o caos\u2014\
-  evitando\u2026"
+description: 'Como fazer: Swift utiliza o tratamento de erros com os blocos `do`,
+  `try` e `catch`. Vamos dar uma olhada.'
 lastmod: '2024-03-13T22:44:46.927683-06:00'
 model: gpt-4-1106-preview
-summary: "Tratar erros em Swift significa antecipar e responder a problemas que surgem\
-  \ quando seu c\xF3digo \xE9 executado."
+summary: Swift utiliza o tratamento de erros com os blocos `do`, `try` e `catch`.
 title: Tratamento de erros
 weight: 16
 ---

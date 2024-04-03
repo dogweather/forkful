@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:01.392250-07:00
-description: "Fouten afhandelen betekent code schrijven die kan omgaan met situaties\
-  \ die fout lopen. Programmeurs doen dit om crashes te voorkomen en om ervoor te\u2026"
+description: 'Hoe te: In Elixir gebruiken we vaak pattern matching en de `case` statement
+  om verschillende uitkomsten, inclusief fouten, te behandelen.'
 lastmod: '2024-03-13T22:44:50.469576-06:00'
 model: gpt-4-0125-preview
-summary: Fouten afhandelen betekent code schrijven die kan omgaan met situaties die
-  fout lopen.
+summary: In Elixir gebruiken we vaak pattern matching en de `case` statement om verschillende
+  uitkomsten, inclusief fouten, te behandelen.
 title: Fouten afhandelen
 weight: 16
 ---

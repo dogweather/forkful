@@ -2,13 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:43.690219-07:00
-description: "Virheiden k\xE4sittely Dartissa tarkoittaa ohjelman suorituksen aikana\
-  \ ilmenevien poikkeusten ennakointia ja hallintaa luotettavuuden ja k\xE4ytett\xE4\
-  vyyden\u2026"
+description: "Kuinka: Dart tukee kahta virhetyyppi\xE4: *k\xE4\xE4nn\xF6saikaiset*\
+  \ virheet ja *suoritusaikaiset* virheet. K\xE4\xE4nn\xF6saikaiset virheet havaitsee\
+  \ Dart-analysaattori ennen\u2026"
 lastmod: '2024-03-13T22:44:56.278911-06:00'
 model: gpt-4-0125-preview
-summary: "Virheiden k\xE4sittely Dartissa tarkoittaa ohjelman suorituksen aikana ilmenevien\
-  \ poikkeusten ennakointia ja hallintaa luotettavuuden ja k\xE4ytett\xE4vyyden parantamiseksi."
+summary: "Dart tukee kahta virhetyyppi\xE4."
 title: "Virheiden k\xE4sittely"
 weight: 16
 ---

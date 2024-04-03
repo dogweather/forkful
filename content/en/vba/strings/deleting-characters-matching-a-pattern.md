@@ -1,12 +1,11 @@
 ---
 date: 2024-02-01 21:30:25.216747-07:00
-description: "Deleting characters matching a specific pattern in Visual Basic for\
-  \ Applications (VBA) involves identifying and subsequently removing characters or\u2026"
+description: 'How to: In VBA, you can use the `Replace` function or regular expressions
+  to delete characters matching a pattern. Here are examples of both methods: #.'
 lastmod: '2024-03-13T22:44:59.920246-06:00'
 model: gpt-4-0125-preview
-summary: Deleting characters matching a specific pattern in Visual Basic for Applications
-  (VBA) involves identifying and subsequently removing characters or strings that
-  meet certain criteria.
+summary: In VBA, you can use the `Replace` function or regular expressions to delete
+  characters matching a pattern.
 title: Deleting characters matching a pattern
 weight: 5
 ---

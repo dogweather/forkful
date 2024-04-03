@@ -2,15 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:59.160555-07:00
-description: "TOML l\xE0 \u0111\u1ECBnh d\u1EA1ng t\u1EC7p c\u1EA5u h\xECnh, d\u1EC5\
-  \ \u0111\u1ECDc v\xE0 vi\u1EBFt b\u1EDFi con ng\u01B0\u1EDDi, c\u0169ng nh\u01B0\
-  \ d\u1EC5 d\xE0ng ph\xE2n t\xEDch v\xE0 t\u1EA1o ra b\u1EDFi m\xE1y m\xF3c. L\u1EAD\
-  p tr\xECnh vi\xEAn s\u1EED d\u1EE5ng TOML cho c\xE1c t\u1EC7p\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EC3 \u0111\u1ECDc v\xE0 thao t\xE1\
+  c v\u1EDBi TOML trong Fish, b\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng m\u1ED9t c\xF4\
+  ng c\u1EE5 nh\u01B0 `yj`, c\xF3 th\u1EC3 chuy\u1EC3n \u0111\u1ED5i TOML sang JSON.\
+  \ D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch l\xE0m."
 lastmod: '2024-03-13T22:44:37.241961-06:00'
 model: gpt-4-0125-preview
-summary: "TOML l\xE0 \u0111\u1ECBnh d\u1EA1ng t\u1EC7p c\u1EA5u h\xECnh, d\u1EC5 \u0111\
-  \u1ECDc v\xE0 vi\u1EBFt b\u1EDFi con ng\u01B0\u1EDDi, c\u0169ng nh\u01B0 d\u1EC5\
-  \ d\xE0ng ph\xE2n t\xEDch v\xE0 t\u1EA1o ra b\u1EDFi m\xE1y m\xF3c."
+summary: "\u0110\u1EC3 \u0111\u1ECDc v\xE0 thao t\xE1c v\u1EDBi TOML trong Fish, b\u1EA1\
+  n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng m\u1ED9t c\xF4ng c\u1EE5 nh\u01B0 `yj`, c\xF3\
+  \ th\u1EC3 chuy\u1EC3n \u0111\u1ED5i TOML sang JSON."
 title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 weight: 39
 ---

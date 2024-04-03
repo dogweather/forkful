@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:30.099619-07:00
-description: "Les expressions r\xE9guli\xE8res, un outil puissant pour la correspondance\
-  \ de motifs et la manipulation de donn\xE9es, sont essentielles dans les t\xE2ches\
-  \ de\u2026"
+description: "Comment faire : Clojure, restant fid\xE8le \xE0 ses racines dans la\
+  \ famille Lisp, offre un riche ensemble de fonctions qui s'interface de mani\xE8\
+  re transparente\u2026"
 lastmod: '2024-03-13T22:44:57.271297-06:00'
 model: gpt-4-0125-preview
-summary: "Les expressions r\xE9guli\xE8res, un outil puissant pour la correspondance\
-  \ de motifs et la manipulation de donn\xE9es, sont essentielles dans les t\xE2ches\
-  \ de traitement de texte telles que la validation d'entr\xE9e, la recherche et le\
-  \ remplacement de texte."
+summary: "Clojure, restant fid\xE8le \xE0 ses racines dans la famille Lisp, offre\
+  \ un riche ensemble de fonctions qui s'interface de mani\xE8re transparente avec\
+  \ les capacit\xE9s des expressions r\xE9guli\xE8res de Java."
 title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:40:16.048506-07:00
-description: "V\xE4liaikainen tiedosto on tilap\xE4inen, usein automaattisesti poistettava\
-  \ tiedosto, jota k\xE4ytet\xE4\xE4n datan v\xE4liaikaiseen tallentamiseen. Ohjelmoijat\
-  \ luovat\u2026"
+description: "How to: (Kuinka tehd\xE4\xE4n:) C++17 toi mukanaan `<filesystem>` kirjaston,\
+  \ mik\xE4 helpottaa v\xE4liaikaisten tiedostojen k\xE4sittely\xE4."
 lastmod: '2024-03-13T22:44:56.884768-06:00'
 model: gpt-4-1106-preview
-summary: "V\xE4liaikainen tiedosto on tilap\xE4inen, usein automaattisesti poistettava\
-  \ tiedosto, jota k\xE4ytet\xE4\xE4n datan v\xE4liaikaiseen tallentamiseen."
+summary: "C++17 toi mukanaan `<filesystem>` kirjaston, mik\xE4 helpottaa v\xE4liaikaisten\
+  \ tiedostojen k\xE4sittely\xE4."
 title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---

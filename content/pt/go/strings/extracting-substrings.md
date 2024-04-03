@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:27.899929-07:00
-description: "Extrair substrings envolve recuperar por\xE7\xF5es espec\xEDficas de\
-  \ uma string com base em suas posi\xE7\xF5es. Programadores frequentemente realizam\
-  \ essa opera\xE7\xE3o para\u2026"
+description: "Como fazer: Em Go, o tipo `string` \xE9 um slice somente leitura de\
+  \ bytes. Para extrair substrings, utiliza-se primariamente a sintaxe de `slice`,\
+  \ juntamente\u2026"
 lastmod: '2024-03-13T22:44:46.048751-06:00'
 model: gpt-4-0125-preview
-summary: "Extrair substrings envolve recuperar por\xE7\xF5es espec\xEDficas de uma\
-  \ string com base em suas posi\xE7\xF5es."
+summary: "Em Go, o tipo `string` \xE9 um slice somente leitura de bytes."
 title: Extraindo substrings
 weight: 6
 ---

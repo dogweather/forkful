@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:44.245813-07:00
-description: "Zapisywanie do pliku tekstowego w Elixirze to podstawowa umiej\u0119\
-  tno\u015B\u0107 dla programist\xF3w, pozwalaj\u0105ca na trwa\u0142o\u015B\u0107\
-  \ danych, logowanie lub eksportowanie tre\u015Bci\u2026"
+description: "Jak to zrobi\u0107: Elixir u\u0142atwia prac\u0119 z plikami dzi\u0119\
+  ki wbudowanym modu\u0142om. Podstawowym sposobem na zapis do pliku jest u\u017C\
+  ycie funkcji `File.write/2` lub\u2026"
 lastmod: '2024-03-13T22:44:35.062990-06:00'
 model: gpt-4-0125-preview
-summary: "Zapisywanie do pliku tekstowego w Elixirze to podstawowa umiej\u0119tno\u015B\
-  \u0107 dla programist\xF3w, pozwalaj\u0105ca na trwa\u0142o\u015B\u0107 danych,\
-  \ logowanie lub eksportowanie tre\u015Bci czytelnych dla cz\u0142owieka."
+summary: "Elixir u\u0142atwia prac\u0119 z plikami dzi\u0119ki wbudowanym modu\u0142\
+  om."
 title: Pisanie pliku tekstowego
 weight: 24
 ---

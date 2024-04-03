@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:02:37.703546-07:00
-description: "Parsing HTML in Rust is about extracting data from HTML documents, which\
-  \ is essential for web scraping, data extraction, or building web crawlers.\u2026"
+description: "How to: To parse HTML in Rust, you'll often use the `scraper` crate,\
+  \ which provides a high-level interface to traverse and manipulate HTML documents.\u2026"
 lastmod: '2024-03-13T22:44:59.893584-06:00'
 model: gpt-4-0125-preview
-summary: Parsing HTML in Rust is about extracting data from HTML documents, which
-  is essential for web scraping, data extraction, or building web crawlers.
+summary: To parse HTML in Rust, you'll often use the `scraper` crate, which provides
+  a high-level interface to traverse and manipulate HTML documents.
 title: Parsing HTML
 weight: 43
 ---

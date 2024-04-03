@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:57.659603-07:00
-description: "Het lezen van commandoregelargumenten laat een programma informatie\
-  \ rechtstreeks uit de terminalopdracht van de gebruiker halen. Programmeurs doen\
-  \ dit om\u2026"
+description: 'Hoe: In Clojure, pak je commandoregelargumenten met `*command-line-args*`.
+  Hier is een eenvoudig voorbeeld.'
 lastmod: '2024-03-13T22:44:50.435601-06:00'
 model: gpt-4-0125-preview
-summary: Het lezen van commandoregelargumenten laat een programma informatie rechtstreeks
-  uit de terminalopdracht van de gebruiker halen.
+summary: In Clojure, pak je commandoregelargumenten met `*command-line-args*`.
 title: Commandoregelargumenten lezen
 weight: 23
 ---

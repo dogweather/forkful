@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:07.588375-07:00
-description: "\xC5 beregne en dato i fremtiden eller fortiden handler om \xE5 manipulere\
-  \ datoomr\xE5der for \xE5 finne datoer utover eller f\xF8r den n\xE5v\xE6rende datoen,\
-  \ henholdsvis.\u2026"
+description: "Hvordan: I Google Apps Script, som er basert p\xE5 JavaScript, kan du\
+  \ manipulere datoer ved hjelp av `Date`-objektet. Her er hvordan du kan beregne\
+  \ datoer i\u2026"
 lastmod: '2024-03-13T22:44:40.330130-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 beregne en dato i fremtiden eller fortiden handler om \xE5 manipulere\
-  \ datoomr\xE5der for \xE5 finne datoer utover eller f\xF8r den n\xE5v\xE6rende datoen,\
-  \ henholdsvis."
+summary: "I Google Apps Script, som er basert p\xE5 JavaScript, kan du manipulere\
+  \ datoer ved hjelp av `Date`-objektet."
 title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---

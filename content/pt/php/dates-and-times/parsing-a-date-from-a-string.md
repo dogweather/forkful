@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:51.193404-07:00
-description: "Analisar uma data a partir de uma string em PHP envolve converter um\
-  \ texto que representa uma data e/ou hora em um objeto `DateTime` do PHP ou outros\u2026"
+description: "Como fazer: A classe integrada `DateTime` do PHP fornece um conjunto\
+  \ poderoso de fun\xE7\xF5es para analisar e trabalhar com datas. Voc\xEA pode criar\
+  \ uma\u2026"
 lastmod: '2024-03-13T22:44:46.676679-06:00'
 model: gpt-4-0125-preview
-summary: Analisar uma data a partir de uma string em PHP envolve converter um texto
-  que representa uma data e/ou hora em um objeto `DateTime` do PHP ou outros formatos
-  de data/hora.
+summary: "A classe integrada `DateTime` do PHP fornece um conjunto poderoso de fun\xE7\
+  \xF5es para analisar e trabalhar com datas."
 title: Analisando uma data a partir de uma string
 weight: 30
 ---

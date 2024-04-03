@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 18:00:47.344770-07:00
-description: "Enviar uma requisi\xE7\xE3o HTTP \xE9 fundamentalmente o ato de solicitar\
-  \ dados de um servidor remoto. Programadores fazem isso para interagir com APIs,\
-  \ recuperar\u2026"
+description: "How to: Para enviar uma requisi\xE7\xE3o HTTP em TypeScript, voc\xEA\
+  \ pode usar a API `fetch` nativa ou bibliotecas como Axios. Vamos ver um exemplo\
+  \ simples com\u2026"
 lastmod: '2024-03-13T22:44:46.322753-06:00'
 model: gpt-4-1106-preview
-summary: "Enviar uma requisi\xE7\xE3o HTTP \xE9 fundamentalmente o ato de solicitar\
-  \ dados de um servidor remoto."
+summary: "Para enviar uma requisi\xE7\xE3o HTTP em TypeScript, voc\xEA pode usar a\
+  \ API `fetch` nativa ou bibliotecas como Axios."
 title: "Enviando uma requisi\xE7\xE3o HTTP"
 weight: 44
 ---

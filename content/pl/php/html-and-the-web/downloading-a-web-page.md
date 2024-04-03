@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:44:28.395010-07:00
-description: "(Po co i dlaczego?) Pobieranie strony internetowej to proces \u015B\
-  ci\u0105gania jej zawarto\u015Bci, by przetworzy\u0107 je lokalnie. Programi\u015B\
-  ci robi\u0105 to, aby odczyta\u0107\u2026"
+description: "How to: (Jak to zrobi\u0107:) U\u017Cyjmy PHP i cURL, aby \u015Bci\u0105\
+  gn\u0105\u0107 zawarto\u015B\u0107 strony. Oto przyk\u0142adowy kod."
 lastmod: '2024-03-13T22:44:35.495987-06:00'
 model: gpt-4-1106-preview
-summary: (Po co i dlaczego.
+summary: "(Jak to zrobi\u0107:)\n\nU\u017Cyjmy PHP i cURL, aby \u015Bci\u0105gn\u0105\
+  \u0107 zawarto\u015B\u0107 strony."
 title: Pobieranie strony internetowej
 weight: 42
 ---

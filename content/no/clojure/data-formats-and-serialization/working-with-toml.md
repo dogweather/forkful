@@ -1,13 +1,10 @@
 ---
 date: 2024-01-26 04:20:37.681644-07:00
-description: "\xC5 jobbe med TOML betyr at du h\xE5ndterer data i et minimalt format\
-  \ kalt \"Tom's Obvious, Minimal Language\", som er popul\xE6rt for konfigurasjonsfiler\
-  \ p\xE5 grunn\u2026"
+description: "Hvordan: For \xE5 jobbe med TOML i Clojure, trenger du et bibliotek\
+  \ som `clj-toml`. F\xF8rst legger du det til i din `deps.edn`."
 lastmod: '2024-03-13T22:44:40.425119-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 jobbe med TOML betyr at du h\xE5ndterer data i et minimalt format kalt\
-  \ \"Tom's Obvious, Minimal Language\", som er popul\xE6rt for konfigurasjonsfiler\
-  \ p\xE5 grunn av dets enkle lesbarhet."
+summary: "For \xE5 jobbe med TOML i Clojure, trenger du et bibliotek som `clj-toml`."
 title: Jobbe med TOML
 weight: 39
 ---

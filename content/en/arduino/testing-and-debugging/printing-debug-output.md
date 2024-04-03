@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:52:05.086257-07:00
-description: "Printing debug output to the serial monitor is a way to peek into an\
-  \ Arduino's mind. Programmers do it to track down gremlins, test assumptions, and\u2026"
+description: 'How to: Let''s get down to brass tacks. Say you want to print "Hello,
+  world!" every second. Here''s the code snippet.'
 lastmod: '2024-03-13T22:45:00.323552-06:00'
 model: gpt-4-1106-preview
-summary: Printing debug output to the serial monitor is a way to peek into an Arduino's
-  mind.
+summary: Let's get down to brass tacks.
 title: Printing debug output
 weight: 33
 ---

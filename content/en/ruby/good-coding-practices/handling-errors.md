@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-21, dogweather, Reviewed for accuracy
 date: 2024-01-21 21:19:07.187007-07:00
-description: "Error handling is about expecting the unexpected in code \u2014 managing\
-  \ mistakes and problems gracefully without crashing. Programmers do it to control\
-  \ the\u2026"
+description: "How to: Ruby uses `begin`, `rescue`, `ensure`, and `end` to handle errors.\
+  \ You wrap the risky code in `begin` and `end`. If an error occurs, `rescue`\u2026"
 lastmod: '2024-03-13T22:45:00.557945-06:00'
 model: gpt-4-1106-preview
-summary: "Error handling is about expecting the unexpected in code \u2014 managing\
-  \ mistakes and problems gracefully without crashing."
+summary: Ruby uses `begin`, `rescue`, `ensure`, and `end` to handle errors.
 title: Handling errors
 weight: 16
 ---

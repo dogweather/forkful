@@ -1,12 +1,11 @@
 ---
 date: 2024-01-25 02:12:08.742512-07:00
-description: "Refactoring is the process of restructuring existing computer code\u2014\
-  changing the factoring\u2014without changing its external behavior. Programmers\
-  \ do it to\u2026"
+description: "How to: Let\u2019s take a simple Java class that\u2019s screaming for\
+  \ refactoring due to its poor organization and lack of clarity."
 lastmod: '2024-03-13T22:44:59.979732-06:00'
 model: gpt-4-1106-preview
-summary: "Refactoring is the process of restructuring existing computer code\u2014\
-  changing the factoring\u2014without changing its external behavior."
+summary: "Let\u2019s take a simple Java class that\u2019s screaming for refactoring\
+  \ due to its poor organization and lack of clarity."
 title: Refactoring
 weight: 19
 ---

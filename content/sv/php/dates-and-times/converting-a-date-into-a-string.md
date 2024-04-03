@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:37:08.333479-07:00
-description: "Omformningen av ett datum till en textstr\xE4ng m\xF6jligg\xF6r smidig\
-  \ presentation och lagring. Programmerare g\xF6r detta f\xF6r att f\xF6rb\xE4ttra\
-  \ anv\xE4ndarupplevelse eller\u2026"
+description: "How to: PHP anv\xE4nder `date()`-funktionen f\xF6r att omvandla datum\
+  \ till textstr\xE4ngar. H\xE4r \xE4r exempel p\xE5 hur du anv\xE4nder den."
 lastmod: '2024-03-13T22:44:38.007621-06:00'
 model: gpt-4-1106-preview
-summary: "Omformningen av ett datum till en textstr\xE4ng m\xF6jligg\xF6r smidig presentation\
-  \ och lagring."
+summary: "PHP anv\xE4nder `date()`-funktionen f\xF6r att omvandla datum till textstr\xE4\
+  ngar."
 title: "Omvandla ett datum till en str\xE4ng"
 weight: 28
 ---

@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:34.947548-07:00
-description: "Capitalizzare una stringa comporta trasformare il primo carattere di\
-  \ una data stringa in maiuscolo se \xE8 in minuscolo, assicurando cos\xEC che la\
-  \ stringa si\u2026"
+description: "Come fare: In Go, il pacchetto `strings` non fornisce una funzione diretta\
+  \ per capitalizzare solo la prima lettera di una stringa. Pertanto, combiniamo la\u2026"
 lastmod: '2024-03-13T22:44:42.889476-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizzare una stringa comporta trasformare il primo carattere di una\
-  \ data stringa in maiuscolo se \xE8 in minuscolo, assicurando cos\xEC che la stringa\
-  \ si distingua o aderisca a specifiche norme grammaticali."
+summary: In Go, il pacchetto `strings` non fornisce una funzione diretta per capitalizzare
+  solo la prima lettera di una stringa.
 title: Capitalizzare una stringa
 weight: 2
 ---

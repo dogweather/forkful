@@ -2,18 +2,16 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:34.445603-07:00
-description: "Vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi trong Visual\
-  \ Basic for Applications (VBA) bao g\u1ED3m vi\u1EC7c t\u1EA1o ra m\u1ED9t t\u1EC7\
-  p th\xF4ng qua l\u1EADp tr\xECnh d\xF9ng cho m\u1EE5c \u0111\xEDch ng\u1EAFn h\u1EA1\
-  n, th\u01B0\u1EDDng l\xE0\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong VBA, vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EC7\
+  p t\u1EA1m th\u1EDDi c\xF3 th\u1EC3 th\u1EF1c hi\u1EC7n \u0111\u01B0\u1EE3c th\xF4\
+  ng qua vi\u1EC7c s\u1EED d\u1EE5ng `FileSystemObject`, c\xF3 s\u1EB5n trong th\u01B0\
+  \ vi\u1EC7n Microsoft\u2026"
 lastmod: '2024-03-13T22:44:36.458802-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi trong Visual Basic\
-  \ for Applications (VBA) bao g\u1ED3m vi\u1EC7c t\u1EA1o ra m\u1ED9t t\u1EC7p th\xF4\
-  ng qua l\u1EADp tr\xECnh d\xF9ng cho m\u1EE5c \u0111\xEDch ng\u1EAFn h\u1EA1n, th\u01B0\
-  \u1EDDng l\xE0 cho vi\u1EC7c x\u1EED l\xFD d\u1EEF li\u1EC7u ho\u1EB7c nh\u01B0\
-  \ m\u1ED9t b\u1ED9 \u0111\u1EC7m trong c\xE1c t\xE1c v\u1EE5 t\u1EF1 \u0111\u1ED9\
-  ng h\xF3a."
+summary: "Trong VBA, vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi c\xF3\
+  \ th\u1EC3 th\u1EF1c hi\u1EC7n \u0111\u01B0\u1EE3c th\xF4ng qua vi\u1EC7c s\u1EED\
+  \ d\u1EE5ng `FileSystemObject`, c\xF3 s\u1EB5n trong th\u01B0 vi\u1EC7n Microsoft\
+  \ Scripting Runtime."
 title: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi"
 weight: 21
 ---

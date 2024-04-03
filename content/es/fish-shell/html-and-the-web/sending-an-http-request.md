@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:59:43.511164-07:00
-description: "Enviar una solicitud HTTP significa pedirle a un servidor web que te\
-  \ brinde algo, como una p\xE1gina web o datos de una API. Los programadores lo hacen\
-  \ para\u2026"
+description: "C\xF3mo hacerlo: En Fish, puedes usar `curl` o `wget` para enviar solicitudes\
+  \ HTTP. Aqu\xED hay ejemplos r\xE1pidos para obtener el contenido de example.com."
 lastmod: '2024-03-13T22:44:59.498618-06:00'
 model: gpt-4-1106-preview
-summary: "Enviar una solicitud HTTP significa pedirle a un servidor web que te brinde\
-  \ algo, como una p\xE1gina web o datos de una API."
+summary: En Fish, puedes usar `curl` o `wget` para enviar solicitudes HTTP.
 title: Enviando una solicitud http
 weight: 44
 ---

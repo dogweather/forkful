@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:50.247898-07:00
-description: "Das Kapitalisieren eines Strings beinhaltet die Modifikation des Strings,\
-  \ sodass sein erstes Zeichen gro\xDFgeschrieben wird, w\xE4hrend der Rest des Strings\u2026"
+description: "Wie: Clojure, als eine JVM-Sprache, erm\xF6glicht es Ihnen, Java-String-Methoden\
+  \ direkt zu nutzen. Hier ist ein grundlegendes Beispiel, wie man einen String\u2026"
 lastmod: '2024-03-13T22:44:53.403799-06:00'
 model: gpt-4-0125-preview
-summary: "Das Kapitalisieren eines Strings beinhaltet die Modifikation des Strings,\
-  \ sodass sein erstes Zeichen gro\xDFgeschrieben wird, w\xE4hrend der Rest des Strings\
-  \ unver\xE4ndert bleibt."
+summary: "Clojure, als eine JVM-Sprache, erm\xF6glicht es Ihnen, Java-String-Methoden\
+  \ direkt zu nutzen."
 title: "Einen String gro\xDFschreiben"
 weight: 2
 ---

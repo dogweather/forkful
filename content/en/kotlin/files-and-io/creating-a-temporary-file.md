@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:40:42.355551-07:00
-description: "Creating a temporary file is crafting a file that's meant to live short-term\
-  \ on your filesystem, often for stuff like intermediary data. Programmers do it\u2026"
+description: 'How to: Here''s a quick way to make a temp file in Kotlin.'
 lastmod: '2024-03-13T22:45:00.066713-06:00'
 model: gpt-4-1106-preview
-summary: Creating a temporary file is crafting a file that's meant to live short-term
-  on your filesystem, often for stuff like intermediary data.
+summary: Here's a quick way to make a temp file in Kotlin.
 title: Creating a temporary file
 weight: 21
 ---

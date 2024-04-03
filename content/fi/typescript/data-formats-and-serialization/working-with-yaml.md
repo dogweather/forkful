@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:18.898952-07:00
-description: "YAML, ihmisl\xE4heisesti suunniteltu tietojen serialisointikieli, on\
-  \ usein k\xE4yt\xF6ss\xE4 konfiguraatiotiedostoissa, prosessien v\xE4lisess\xE4\
-  \ viestinn\xE4ss\xE4 ja tietojen\u2026"
+description: "Kuinka: YAMLin k\xE4sittely TypeScriptiss\xE4 sis\xE4lt\xE4\xE4 tyypillisesti\
+  \ YAML-sis\xE4ll\xF6n j\xE4sent\xE4misen JavaScript-objekteiksi ja mahdollisesti\
+  \ JavaScript-objektien\u2026"
 lastmod: '2024-03-13T22:44:56.335129-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, ihmisl\xE4heisesti suunniteltu tietojen serialisointikieli, on usein\
-  \ k\xE4yt\xF6ss\xE4 konfiguraatiotiedostoissa, prosessien v\xE4lisess\xE4 viestinn\xE4\
-  ss\xE4 ja tietojen tallennuksessa."
+summary: "YAMLin k\xE4sittely TypeScriptiss\xE4 sis\xE4lt\xE4\xE4 tyypillisesti YAML-sis\xE4\
+  ll\xF6n j\xE4sent\xE4misen JavaScript-objekteiksi ja mahdollisesti JavaScript-objektien\
+  \ muuntamisen takaisin YAMLiksi."
 title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:42:52.970110-07:00
-description: "Komplekse tall utvider v\xE5rt tallsystem til \xE5 inkludere kvadratroten\
-  \ av negative tall, hvor den 'imagin\xE6re' enheten i er lik kvadratroten av -1.\u2026"
+description: 'Hvordan: La oss definere en grunnleggende klasse for komplekse tall
+  i Kotlin.'
 lastmod: '2024-03-13T22:44:40.743975-06:00'
 model: gpt-4-0125-preview
-summary: "Komplekse tall utvider v\xE5rt tallsystem til \xE5 inkludere kvadratroten\
-  \ av negative tall, hvor den 'imagin\xE6re' enheten i er lik kvadratroten av -1."
+summary: La oss definere en grunnleggende klasse for komplekse tall i Kotlin.
 title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---

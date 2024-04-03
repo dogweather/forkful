@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:32.763992-07:00
-description: "Scrivere un file di testo in TypeScript \xE8 un'abilit\xE0 critica per\
-  \ la persistenza dei dati, le configurazioni o la generazione di log. I programmatori\u2026"
+description: "Come fare: TypeScript di per s\xE9 non gestisce direttamente le operazioni\
+  \ sui file poich\xE9 viene compilato in JavaScript, che tradizionalmente viene eseguito\u2026"
 lastmod: '2024-03-13T22:44:43.194347-06:00'
 model: gpt-4-0125-preview
-summary: "Scrivere un file di testo in TypeScript \xE8 un'abilit\xE0 critica per la\
-  \ persistenza dei dati, le configurazioni o la generazione di log."
+summary: "TypeScript di per s\xE9 non gestisce direttamente le operazioni sui file\
+  \ poich\xE9 viene compilato in JavaScript, che tradizionalmente viene eseguito nel\
+  \ browser con accesso limitato al sistema di file."
 title: Scrivere un file di testo
 weight: 24
 ---

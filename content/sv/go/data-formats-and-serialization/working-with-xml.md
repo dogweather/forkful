@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:15.274995-07:00
-description: "Att arbeta med XML i Go inneb\xE4r att tolka (l\xE4sa) och generera\
-  \ (skriva) XML-dokument \u2013 ett standardformat f\xF6r utbyte av strukturerad\
-  \ data. Programmerare\u2026"
+description: "Hur man g\xF6r: #."
 lastmod: '2024-03-13T22:44:37.418348-06:00'
 model: gpt-4-0125-preview
-summary: "Att arbeta med XML i Go inneb\xE4r att tolka (l\xE4sa) och generera (skriva)\
-  \ XML-dokument \u2013 ett standardformat f\xF6r utbyte av strukturerad data."
+summary: '#.'
 title: Att arbeta med XML
 weight: 40
 ---

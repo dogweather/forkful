@@ -3,11 +3,10 @@ changelog:
 - 2024-01-28, dogweather, reviewed
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 03:00:44.896374-07:00
-description: "\xC5 parse HTML betyr \xE5 trekke ut data fra HTML-dokumenter. Programmerere\
-  \ gj\xF8r dette for \xE5 samhandle med eller manipulere webinnhold, automatisere\u2026"
+description: 'Hvordan: La oss parse HTML ved hjelp av `DOMParser`-APIen i JavaScript.'
 lastmod: '2024-03-13T22:44:41.181773-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 parse HTML betyr \xE5 trekke ut data fra HTML-dokumenter."
+summary: La oss parse HTML ved hjelp av `DOMParser`-APIen i JavaScript.
 title: Analysering av HTML
 weight: 43
 ---

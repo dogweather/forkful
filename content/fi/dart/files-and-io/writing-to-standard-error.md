@@ -2,13 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:58:02.037450-07:00
-description: "Virheilmoitusten kirjoittaminen standardivirhevirtaan (stderr) Dart-kieless\xE4\
-  \ tarkoittaa virheviestien ja diagnostiikkatietojen l\xE4hett\xE4mist\xE4 erilliseen\u2026"
+description: "Miten: Dart-kieless\xE4 stderr-virtaan kirjoittaminen on suoraviivaista\
+  \ k\xE4ytt\xE4m\xE4ll\xE4 `dart:io`:ssa saatavilla olevaa `stderr`-objektia. T\xE4\
+  ss\xE4 on\u2026"
 lastmod: '2024-03-13T22:44:56.289207-06:00'
 model: gpt-4-0125-preview
-summary: "Virheilmoitusten kirjoittaminen standardivirhevirtaan (stderr) Dart-kieless\xE4\
-  \ tarkoittaa virheviestien ja diagnostiikkatietojen l\xE4hett\xE4mist\xE4 erilliseen\
-  \ virtaan, joka eroaa tavallisesta tulostevirrasta (stdout)."
+summary: "Dart-kieless\xE4 stderr-virtaan kirjoittaminen on suoraviivaista k\xE4ytt\xE4\
+  m\xE4ll\xE4 `dart:io`:ssa saatavilla olevaa `stderr`-objektia."
 title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---

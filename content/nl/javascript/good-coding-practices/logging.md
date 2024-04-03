@@ -2,14 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:59.716826-07:00
-description: "Loggen is in een notendop als het bijhouden van een dagboek voor je\
-  \ applicatie - het registreert gebeurtenissen, fouten en andere belangrijke acties\
-  \ die\u2026"
+description: 'Hoe te: Uit de doos biedt JavaScript een eenvoudige manier om berichten
+  naar de console te loggen.'
 lastmod: '2024-03-13T22:44:51.208495-06:00'
 model: gpt-4-0125-preview
-summary: Loggen is in een notendop als het bijhouden van een dagboek voor je applicatie
-  - het registreert gebeurtenissen, fouten en andere belangrijke acties die plaatsvinden
-  terwijl de software draait.
+summary: Uit de doos biedt JavaScript een eenvoudige manier om berichten naar de console
+  te loggen.
 title: Logboekregistratie
 weight: 17
 ---

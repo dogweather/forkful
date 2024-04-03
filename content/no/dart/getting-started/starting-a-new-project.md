@@ -2,13 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:51.554502-07:00
-description: "\xC5 starte et nytt prosjekt i Dart inneb\xE6rer \xE5 sette opp et milj\xF8\
-  \ som fremmer effektiv utvikling, testing og utrulling. Programmerere initierer\
-  \ nye Dart-\u2026"
+description: "Hvordan: 1. **Installer Dart**: S\xF8rg for at Dart er installert p\xE5\
+  \ systemet ditt. Hvis ikke, kan du laste det ned fra [https://dart.dev/get-\u2026"
 lastmod: '2024-03-13T22:44:40.488082-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 starte et nytt prosjekt i Dart inneb\xE6rer \xE5 sette opp et milj\xF8\
-  \ som fremmer effektiv utvikling, testing og utrulling."
+summary: '1.'
 title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---

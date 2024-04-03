@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:48.777950-07:00
-description: "Express\xF5es regulares (regex) no Fish Shell permitem buscar, combinar\
-  \ e manipular strings com base em padr\xF5es espec\xEDficos. Programadores utilizam\
-  \ regex\u2026"
+description: "Como fazer: Embora o pr\xF3prio Fish Shell n\xE3o tenha um comando interno\
+  \ para regex, ele usa efetivamente comandos externos como `grep`, `sed` e `awk`\
+  \ que\u2026"
 lastmod: '2024-03-13T22:44:46.994222-06:00'
 model: gpt-4-0125-preview
-summary: "Express\xF5es regulares (regex) no Fish Shell permitem buscar, combinar\
-  \ e manipular strings com base em padr\xF5es espec\xEDficos."
+summary: "Embora o pr\xF3prio Fish Shell n\xE3o tenha um comando interno para regex,\
+  \ ele usa efetivamente comandos externos como `grep`, `sed` e `awk` que suportam\
+  \ regex, permitindo incorporar opera\xE7\xF5es de regex nos seus scripts."
 title: "Usando express\xF5es regulares"
 weight: 11
 ---

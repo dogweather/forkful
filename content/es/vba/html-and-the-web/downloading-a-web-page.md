@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:24.618519-07:00
-description: "Descargar una p\xE1gina web en Visual Basic for Applications (VBA) implica\
-  \ obtener el contenido HTML de una p\xE1gina web desde Internet. Los programadores\
-  \ a\u2026"
+description: "C\xF3mo hacerlo: Para descargar una p\xE1gina web en VBA, puedes utilizar\
+  \ la biblioteca Microsoft XML, v6.0 (MSXML6), que permite solicitudes HTTP de servidor.\u2026"
 lastmod: '2024-03-13T22:44:58.891714-06:00'
 model: gpt-4-0125-preview
-summary: "Descargar una p\xE1gina web en Visual Basic for Applications (VBA) implica\
-  \ obtener el contenido HTML de una p\xE1gina web desde Internet."
+summary: "Para descargar una p\xE1gina web en VBA, puedes utilizar la biblioteca Microsoft\
+  \ XML, v6.0 (MSXML6), que permite solicitudes HTTP de servidor."
 title: "Descargando una p\xE1gina web"
 weight: 42
 ---

@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:36.191596-07:00
-description: "Descargar una p\xE1gina web en C implica acceder program\xE1ticamente\
-  \ al contenido de una p\xE1gina web a trav\xE9s de internet y guardarla localmente\
-  \ para su\u2026"
+description: "C\xF3mo hacerlo: Para descargar una p\xE1gina web en C, un enfoque popular\
+  \ es usar la biblioteca libcurl, una biblioteca de transferencia de URL del lado\
+  \ del\u2026"
 lastmod: '2024-03-13T22:44:59.543930-06:00'
 model: gpt-4-0125-preview
-summary: "Descargar una p\xE1gina web en C implica acceder program\xE1ticamente al\
-  \ contenido de una p\xE1gina web a trav\xE9s de internet y guardarla localmente\
-  \ para su procesamiento o uso sin conexi\xF3n."
+summary: "Para descargar una p\xE1gina web en C, un enfoque popular es usar la biblioteca\
+  \ libcurl, una biblioteca de transferencia de URL del lado del cliente eficiente\
+  \ y port\xE1til."
 title: "Descargando una p\xE1gina web"
 weight: 42
 ---

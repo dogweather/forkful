@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:40:53.662578-07:00
-description: "Tworzenie pliku tymczasowego pozwala na przechowywanie danych, kt\xF3\
-  rych nie potrzebujemy d\u0142ugo. Programi\u015Bci u\u017Cywaj\u0105 ich do przechowywania\
-  \ danych\u2026"
+description: "How to: (Jak to zrobi\u0107?) U\u017Cyjemy modu\u0142u `fs` w Node.js\
+  \ do pracy z plikami, a `os` do uzyskania \u015Bcie\u017Cki tymczasowego folderu."
 lastmod: '2024-03-13T22:44:35.815649-06:00'
 model: gpt-4-1106-preview
-summary: "Tworzenie pliku tymczasowego pozwala na przechowywanie danych, kt\xF3rych\
-  \ nie potrzebujemy d\u0142ugo."
+summary: "U\u017Cyjemy modu\u0142u `fs` w Node.js do pracy z plikami, a `os` do uzyskania\
+  \ \u015Bcie\u017Cki tymczasowego folderu."
 title: Tworzenie pliku tymczasowego
 weight: 21
 ---

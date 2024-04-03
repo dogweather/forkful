@@ -1,12 +1,12 @@
 ---
 date: 2024-03-08 21:33:34.209785-07:00
-description: "Sending an HTTP request with basic authentication involves attaching\
-  \ a username and password to a request to verify the user's identity. Programmers\
-  \ use\u2026"
+description: 'How to: In Dart, you can use the `http` package to send HTTP requests
+  with basic authentication. First, add the `http` package to your `pubspec.yaml`
+  file.'
 lastmod: '2024-03-13T22:44:59.820560-06:00'
 model: gpt-4-0125-preview
-summary: Sending an HTTP request with basic authentication involves attaching a username
-  and password to a request to verify the user's identity.
+summary: In Dart, you can use the `http` package to send HTTP requests with basic
+  authentication.
 title: Sending an HTTP request with basic authentication
 weight: 45
 ---

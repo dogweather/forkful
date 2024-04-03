@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:38:02.441241-07:00
-description: "Das Umwandeln einer Zeichenfolge in Kleinbuchstaben bedeutet, alle Gro\xDF\
-  buchstaben darin in ihre entsprechenden Kleinbuchstaben zu konvertieren.\u2026"
+description: "So geht's: Mit C++ kannst du die Standardbibliothek `<algorithm>` und\
+  \ die Funktion `std::transform()` nutzen, um eine Zeichenfolge effektiv in\u2026"
 lastmod: '2024-03-13T22:44:54.171932-06:00'
 model: gpt-4-1106-preview
-summary: "Das Umwandeln einer Zeichenfolge in Kleinbuchstaben bedeutet, alle Gro\xDF\
-  buchstaben darin in ihre entsprechenden Kleinbuchstaben zu konvertieren."
+summary: Mit C++ kannst du die Standardbibliothek `<algorithm>` und die Funktion `std::transform()`
+  nutzen, um eine Zeichenfolge effektiv in Kleinbuchstaben umzuwandeln.
 title: Umformung eines Strings in Kleinbuchstaben
 weight: 4
 ---

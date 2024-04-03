@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:55.375759-07:00
-description: "Werken met XML betekent het parseren, transformeren en genereren van\
-  \ XML-documenten in Elm. Dit wordt gedaan om te interageren met veel webdiensten\
-  \ en\u2026"
+description: 'Hoe: In Elm ga je om met XML met behulp van het `elm/xml` pakket. Hier
+  is een snelle blik op het parseren van een XML-snippet.'
 lastmod: '2024-03-13T22:44:50.749558-06:00'
 model: gpt-4-0125-preview
-summary: Werken met XML betekent het parseren, transformeren en genereren van XML-documenten
-  in Elm.
+summary: In Elm ga je om met XML met behulp van het `elm/xml` pakket.
 title: Werken met XML
 weight: 40
 ---

@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 20:32:33.969953-07:00
-description: "Generar n\xFAmeros aleatorios en Bash proporciona una forma de introducir\
-  \ imprevisibilidad en los scripts, lo cual es esencial para tareas como generar\u2026"
+description: "C\xF3mo hacerlo: En Bash, la variable `$RANDOM` es la opci\xF3n predilecta\
+  \ para generar n\xFAmeros aleatorios. Cada vez que la refieres, Bash proporciona\
+  \ un entero\u2026"
 lastmod: '2024-03-13T22:44:59.240226-06:00'
 model: gpt-4-0125-preview
-summary: "Generar n\xFAmeros aleatorios en Bash proporciona una forma de introducir\
-  \ imprevisibilidad en los scripts, lo cual es esencial para tareas como generar\
-  \ contrase\xF1as seguras, simular datos o para la programaci\xF3n de juegos."
+summary: "En Bash, la variable `$RANDOM` es la opci\xF3n predilecta para generar n\xFA\
+  meros aleatorios."
 title: "Generaci\xF3n de n\xFAmeros aleatorios"
 weight: 12
 ---

@@ -1,14 +1,11 @@
 ---
 date: 2024-01-27 20:35:04.950920-07:00
-description: "Das Generieren von Zufallszahlen beinhaltet das Erstellen von Zahlen,\
-  \ die nicht vern\xFCnftigerweise besser als durch Zufall vorhergesagt werden k\xF6\
-  nnen, was\u2026"
+description: "Wie: Python bietet das `random`-Modul, das beim Generieren von Zufallszahlen\
+  \ f\xFCr verschiedene Verwendungen hilft. So f\xE4ngst du an: 1. **Importieren des\u2026"
 lastmod: '2024-03-13T22:44:53.374255-06:00'
 model: gpt-4-0125-preview
-summary: "Das Generieren von Zufallszahlen beinhaltet das Erstellen von Zahlen, die\
-  \ nicht vern\xFCnftigerweise besser als durch Zufall vorhergesagt werden k\xF6nnen,\
-  \ was f\xFCr die Entwicklung von Simulationen, Spielen und Sicherheitsalgorithmen\
-  \ unerl\xE4sslich ist."
+summary: "Python bietet das `random`-Modul, das beim Generieren von Zufallszahlen\
+  \ f\xFCr verschiedene Verwendungen hilft."
 title: Generierung von Zufallszahlen
 weight: 12
 ---

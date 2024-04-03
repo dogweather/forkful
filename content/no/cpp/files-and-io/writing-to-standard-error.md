@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:40.280168-07:00
-description: "\xC5 skrive til standard feil (`stderr`) i C++ inneb\xE6rer \xE5 utgi\
-  \ feilmeldinger eller diagnostikk som er adskilt fra hovedprogrammets utdata. Programmerere\u2026"
+description: "Hvordan: I C++ kan man skrive til standard feil ved \xE5 bruke `cerr`-str\xF8\
+  mmen, som er en del av standardbiblioteket. Her er et grunnleggende eksempel."
 lastmod: '2024-03-13T22:44:41.116467-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive til standard feil (`stderr`) i C++ inneb\xE6rer \xE5 utgi feilmeldinger\
-  \ eller diagnostikk som er adskilt fra hovedprogrammets utdata."
+summary: "I C++ kan man skrive til standard feil ved \xE5 bruke `cerr`-str\xF8mmen,\
+  \ som er en del av standardbiblioteket."
 title: Skriving til standardfeil
 weight: 25
 ---

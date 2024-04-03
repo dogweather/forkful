@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:33.942683-07:00
-description: "Lavorare con i file CSV (Valori Separati da Virgola) implica la lettura\
-  \ e la scrittura di file CSV, un formato comune di scambio dati utilizzato per la\u2026"
+description: "Come fare: In TypeScript, puoi lavorare con i file CSV tramite codice\
+  \ nativo o sfruttando librerie di terze parti come `csv-parser` per la lettura e\
+  \ `csv-\u2026"
 lastmod: '2024-03-13T22:44:43.198648-06:00'
 model: gpt-4-0125-preview
-summary: "Lavorare con i file CSV (Valori Separati da Virgola) implica la lettura\
-  \ e la scrittura di file CSV, un formato comune di scambio dati utilizzato per la\
-  \ sua semplicit\xE0 e ampia compatibilit\xE0 attraverso varie piattaforme e linguaggi."
+summary: In TypeScript, puoi lavorare con i file CSV tramite codice nativo o sfruttando
+  librerie di terze parti come `csv-parser` per la lettura e `csv-writer` per la scrittura
+  di file CSV.
 title: Lavorare con i CSV
 weight: 37
 ---

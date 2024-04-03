@@ -1,13 +1,10 @@
 ---
 date: 2024-01-27 16:20:32.344618-07:00
-description: "Manipuler des fichiers avec des lignes de commande CLI (Interface de\
-  \ Ligne de Commande) implique l'utilisation de scripts Bash ou de commandes pour\u2026"
+description: "Comment faire : Voici quelques lignes de commande puissantes et ce qu'elles\
+  \ peuvent accomplir : 1. **Cr\xE9er un fichier et y \xE9crire du texte :**."
 lastmod: '2024-03-13T22:44:57.988856-06:00'
 model: gpt-4-0125-preview
-summary: "Manipuler des fichiers avec des lignes de commande CLI (Interface de Ligne\
-  \ de Commande) implique l'utilisation de scripts Bash ou de commandes pour effectuer\
-  \ des actions sur les fichiers, comme les cr\xE9er, les lire, les mettre \xE0 jour\
-  \ ou les supprimer, le tout depuis le terminal."
+summary: Voici quelques lignes de commande puissantes et ce qu'elles peuvent accomplir.
 title: Manipulation de fichiers avec des commandes en une ligne en CLI
 weight: 31
 ---

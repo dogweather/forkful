@@ -2,16 +2,16 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:58:13.700765-07:00
-description: "S\u1ED1 ph\u1EE9c, g\u1ED3m m\u1ED9t ph\u1EA7n th\u1EF1c v\xE0 m\u1ED9\
-  t ph\u1EA7n \u1EA3o (th\u01B0\u1EDDng \u0111\u01B0\u1EE3c k\xFD hi\u1EC7u l\xE0\
-  \ a + bi), m\u1EDF r\u1ED9ng kh\xE1i ni\u1EC7m c\u1EE7a c\xE1c s\u1ED1 kh\xF4ng\
-  \ chi\u1EC1u sang kh\xF4ng gian hai chi\u1EC1u. L\u1EADp tr\xECnh\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Ch\xEDnh Dart kh\xF4ng bao g\u1ED3m m\u1ED9\
+  t th\u01B0 vi\u1EC7n t\xEDch h\u1EE3p s\u1EB5n cho s\u1ED1 ph\u1EE9c, \u0111\xF2\
+  i h\u1ECFi vi\u1EC7c tri\u1EC3n khai m\u1ED9t l\u1EDBp s\u1ED1 ph\u1EE9c t\xF9y\
+  \ ch\u1EC9nh ho\u1EB7c s\u1EED d\u1EE5ng m\u1ED9t th\u01B0 vi\u1EC7n\u2026"
 lastmod: '2024-03-13T22:44:36.254626-06:00'
 model: gpt-4-0125-preview
-summary: "S\u1ED1 ph\u1EE9c, g\u1ED3m m\u1ED9t ph\u1EA7n th\u1EF1c v\xE0 m\u1ED9t\
-  \ ph\u1EA7n \u1EA3o (th\u01B0\u1EDDng \u0111\u01B0\u1EE3c k\xFD hi\u1EC7u l\xE0\
-  \ a + bi), m\u1EDF r\u1ED9ng kh\xE1i ni\u1EC7m c\u1EE7a c\xE1c s\u1ED1 kh\xF4ng\
-  \ chi\u1EC1u sang kh\xF4ng gian hai chi\u1EC1u."
+summary: "Ch\xEDnh Dart kh\xF4ng bao g\u1ED3m m\u1ED9t th\u01B0 vi\u1EC7n t\xEDch\
+  \ h\u1EE3p s\u1EB5n cho s\u1ED1 ph\u1EE9c, \u0111\xF2i h\u1ECFi vi\u1EC7c tri\u1EC3\
+  n khai m\u1ED9t l\u1EDBp s\u1ED1 ph\u1EE9c t\xF9y ch\u1EC9nh ho\u1EB7c s\u1EED d\u1EE5\
+  ng m\u1ED9t th\u01B0 vi\u1EC7n b\xEAn th\u1EE9 ba."
 title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 weight: 14
 ---

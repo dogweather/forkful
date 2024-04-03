@@ -2,14 +2,16 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:09:50.002797-07:00
-description: "Escrever para o erro padr\xE3o em Visual Basic for Applications (VBA)\
-  \ envolve direcionar mensagens de erro ou diagn\xF3sticos \xE0 parte da sa\xEDda\
-  \ padr\xE3o,\u2026"
+description: "Como Fazer: No VBA, visto que n\xE3o existe uma fun\xE7\xE3o integrada\
+  \ direta para escrever especificamente para o erro padr\xE3o como em algumas outras\
+  \ linguagens de\u2026"
 lastmod: '2024-03-13T22:44:46.430124-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever para o erro padr\xE3o em Visual Basic for Applications (VBA) envolve\
-  \ direcionar mensagens de erro ou diagn\xF3sticos \xE0 parte da sa\xEDda padr\xE3\
-  o, geralmente para o console ou um arquivo de log."
+summary: "No VBA, visto que n\xE3o existe uma fun\xE7\xE3o integrada direta para escrever\
+  \ especificamente para o erro padr\xE3o como em algumas outras linguagens de programa\xE7\
+  \xE3o, um m\xE9todo comum envolve o uso de `Debug.Print` para sa\xEDda de erro de\
+  \ desenvolvimento ou a cria\xE7\xE3o de uma fun\xE7\xE3o de registro personalizada\
+  \ que simula esse comportamento para aplica\xE7\xF5es de produ\xE7\xE3o."
 title: "Escrevendo no erro padr\xE3o"
 weight: 25
 ---

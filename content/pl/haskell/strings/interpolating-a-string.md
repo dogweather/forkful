@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:50:52.523618-07:00
-description: "Interpolacja ci\u0105gu znak\xF3w polega na wstawianiu warto\u015Bci\
-  \ zmiennych bezpo\u015Brednio w stringu. Programi\u015Bci robi\u0105 to, aby generowa\u0107\
-  \ dynamiczne teksty z danych,\u2026"
+description: "Jak to zrobi\u0107: W Haskellu, interpolacja nie jest wbudowana jak\
+  \ w innych j\u0119zykach. Musimy u\u017Cy\u0107 biblioteki, takiej jak `text` i\
+  \ jej quasi-quoter\xF3w. Oto jak."
 lastmod: '2024-03-13T22:44:35.437397-06:00'
 model: gpt-4-1106-preview
-summary: "Interpolacja ci\u0105gu znak\xF3w polega na wstawianiu warto\u015Bci zmiennych\
-  \ bezpo\u015Brednio w stringu."
+summary: "W Haskellu, interpolacja nie jest wbudowana jak w innych j\u0119zykach."
 title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 8
 ---

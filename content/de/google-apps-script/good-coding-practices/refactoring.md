@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:33.060270-07:00
-description: "Refactoring im Programmierlexikon bezieht sich auf den Prozess des Umstrukturierens\
-  \ bestehenden Computer-Codes \u2013 das \xC4ndern der Faktorierung ohne \xC4nderung\u2026"
+description: "Wie: In Google Apps Script ist ein h\xE4ufiges Szenario, das vom Refactoring\
+  \ profitiert, die Vereinfachung von umst\xE4ndlichen Skripten, die mit Google Sheets\u2026"
 lastmod: '2024-03-13T22:44:53.343207-06:00'
 model: gpt-4-0125-preview
-summary: "Refactoring im Programmierlexikon bezieht sich auf den Prozess des Umstrukturierens\
-  \ bestehenden Computer-Codes \u2013 das \xC4ndern der Faktorierung ohne \xC4nderung\
-  \ seines externen Verhaltens \u2013 um nicht-funktionale Attribute zu verbessern."
+summary: "In Google Apps Script ist ein h\xE4ufiges Szenario, das vom Refactoring\
+  \ profitiert, die Vereinfachung von umst\xE4ndlichen Skripten, die mit Google Sheets\
+  \ oder Docs interagieren."
 title: Refactoring
 weight: 19
 ---

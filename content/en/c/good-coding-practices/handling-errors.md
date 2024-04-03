@@ -1,12 +1,11 @@
 ---
 date: 2024-02-03 17:50:05.622207-07:00
-description: "Handling errors in C involves detecting and responding to anomalous\
-  \ conditions that arise during program execution. Programmers do this to prevent\
-  \ bugs,\u2026"
+description: "How to: C does not have built-in support for exceptions like some other\
+  \ languages. Instead, it relies on a few conventional error-handing strategies,\
+  \ such\u2026"
 lastmod: '2024-03-13T22:45:00.518058-06:00'
 model: gpt-4-0125-preview
-summary: Handling errors in C involves detecting and responding to anomalous conditions
-  that arise during program execution.
+summary: C does not have built-in support for exceptions like some other languages.
 title: Handling errors
 weight: 16
 ---

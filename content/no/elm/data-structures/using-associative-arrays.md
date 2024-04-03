@@ -2,14 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:52.532928-07:00
-description: "Assosiative tabeller, eller som Elm kaller dem, Ordb\xF8ker, kobler\
-  \ n\xF8kler til verdier p\xE5 en m\xE5te som gj\xF8r oppslag, innsetting og sletting\
-  \ av verdier super\u2026"
+description: "Hvordan: I Elm jobber du med Ordb\xF8ker i `Dict`-modulen, s\xE5 la\
+  \ oss dykke inn i et raskt eksempel."
 lastmod: '2024-03-13T22:44:40.701435-06:00'
 model: gpt-4-0125-preview
-summary: "Assosiative tabeller, eller som Elm kaller dem, Ordb\xF8ker, kobler n\xF8\
-  kler til verdier p\xE5 en m\xE5te som gj\xF8r oppslag, innsetting og sletting av\
-  \ verdier super kjappe."
+summary: "I Elm jobber du med Ordb\xF8ker i `Dict`-modulen, s\xE5 la oss dykke inn\
+  \ i et raskt eksempel."
 title: Bruke associative tabeller
 weight: 15
 ---

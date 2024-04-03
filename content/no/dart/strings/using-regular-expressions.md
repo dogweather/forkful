@@ -2,14 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:58.312478-07:00
-description: "Regul\xE6re uttrykk (regex) i Dart tilbyr en kraftfull m\xE5te \xE5\
-  \ s\xF8ke og manipulere strenger p\xE5, som gj\xF8r det mulig for programmerere\
-  \ \xE5 utf\xF8re komplekse\u2026"
+description: "Hvordan: Dart bruker `RegExp`-klassen for regul\xE6re uttrykk. Her er\
+  \ et grunnleggende eksempel for \xE5 matche et enkelt m\xF8nster i en streng."
 lastmod: '2024-03-13T22:44:40.476279-06:00'
 model: gpt-4-0125-preview
-summary: "Regul\xE6re uttrykk (regex) i Dart tilbyr en kraftfull m\xE5te \xE5 s\xF8\
-  ke og manipulere strenger p\xE5, som gj\xF8r det mulig for programmerere \xE5 utf\xF8\
-  re komplekse tekstbehandlingsoppgaver effektivt."
+summary: "Dart bruker `RegExp`-klassen for regul\xE6re uttrykk."
 title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---

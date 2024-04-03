@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:47:57.610845-07:00
-description: "Att hitta l\xE4ngden p\xE5 en str\xE4ng inneb\xE4r att r\xE4kna antalet\
-  \ tecken den inneh\xE5ller. Programmerare g\xF6r detta f\xF6r att validera input,\
-  \ skapa loopar, eller\u2026"
+description: "Hur g\xF6r man: Kotlin g\xF6r det enkelt med `length`-egenskapen. H\xE4\
+  r \xE4r ett exempel."
 lastmod: '2024-03-13T22:44:37.862547-06:00'
 model: gpt-4-1106-preview
-summary: "Att hitta l\xE4ngden p\xE5 en str\xE4ng inneb\xE4r att r\xE4kna antalet\
-  \ tecken den inneh\xE5ller."
+summary: "Kotlin g\xF6r det enkelt med `length`-egenskapen."
 title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:41:11.141568-07:00
-description: "Midlertidige filer er filer som styres av systemet, og som slettes automatisk\
-  \ n\xE5r de ikke lenger er n\xF8dvendige. Programmerere bruker dem for \xE5 h\xE5\
-  ndtere\u2026"
+description: "How to: I Ruby kan du bruke `Tempfile` biblioteket for \xE5 lage og\
+  \ h\xE5ndtere midlertidige filer."
 lastmod: '2024-03-13T22:44:41.352763-06:00'
 model: gpt-4-1106-preview
-summary: "Midlertidige filer er filer som styres av systemet, og som slettes automatisk\
-  \ n\xE5r de ikke lenger er n\xF8dvendige."
+summary: "I Ruby kan du bruke `Tempfile` biblioteket for \xE5 lage og h\xE5ndtere\
+  \ midlertidige filer."
 title: Opprette en midlertidig fil
 weight: 21
 ---

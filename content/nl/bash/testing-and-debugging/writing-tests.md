@@ -2,11 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:45.097598-07:00
-description: "Het schrijven van tests verifieert dat code zich gedraagt zoals verwacht.\
-  \ Programmeurs testen om bugs vroegtijdig te ontdekken, betrouwbaarheid te\u2026"
+description: "Hoe: Bash heeft geen ingebouwd testframework, maar je kunt eenvoudige\
+  \ testcommando's en beweringen gebruiken. Laten we een functie schrijven en deze\u2026"
 lastmod: '2024-03-13T22:44:50.986174-06:00'
 model: gpt-4-0125-preview
-summary: Het schrijven van tests verifieert dat code zich gedraagt zoals verwacht.
+summary: Bash heeft geen ingebouwd testframework, maar je kunt eenvoudige testcommando's
+  en beweringen gebruiken.
 title: Tests Schrijven
 weight: 36
 ---

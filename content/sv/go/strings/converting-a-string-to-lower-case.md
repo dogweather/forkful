@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:54.150774-07:00
-description: "Att konvertera en str\xE4ng till gemener \xE4r en grundl\xE4ggande operation\
-  \ som m\xF6jligg\xF6r enhetlighet och konsekvens i textbehandling, viktigt f\xF6\
-  r uppgifter som\u2026"
+description: "Hur g\xF6r man: I Go kan konvertering av en str\xE4ng till gemener enkelt\
+  \ uppn\xE5s med hj\xE4lp av `strings`-paketet, specifikt funktionen `ToLower()`.\
+  \ Denna\u2026"
 lastmod: '2024-03-13T22:44:37.377996-06:00'
 model: gpt-4-0125-preview
-summary: "Att konvertera en str\xE4ng till gemener \xE4r en grundl\xE4ggande operation\
-  \ som m\xF6jligg\xF6r enhetlighet och konsekvens i textbehandling, viktigt f\xF6\
-  r uppgifter som skiftl\xE4gesok\xE4nsliga j\xE4mf\xF6relser eller textnormalisering."
+summary: "I Go kan konvertering av en str\xE4ng till gemener enkelt uppn\xE5s med\
+  \ hj\xE4lp av `strings`-paketet, specifikt funktionen `ToLower()`."
 title: "Omvandla en str\xE4ng till gemener"
 weight: 4
 ---

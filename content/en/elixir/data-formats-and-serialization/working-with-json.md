@@ -1,13 +1,12 @@
 ---
 date: 2024-02-03 19:03:07.967968-07:00
-description: "Working with JSON involves parsing JSON-formatted strings into data\
-  \ structures that Elixir can manipulate, and serializing Elixir data structures\
-  \ back\u2026"
+description: "How to: In Elixir, you can use the `Jason` library, a popular choice\
+  \ for JSON parsing and generation. First, add `Jason` to your project's dependencies\
+  \ in\u2026"
 lastmod: '2024-03-13T22:44:59.801441-06:00'
 model: gpt-4-0125-preview
-summary: Working with JSON involves parsing JSON-formatted strings into data structures
-  that Elixir can manipulate, and serializing Elixir data structures back into JSON
-  strings.
+summary: In Elixir, you can use the `Jason` library, a popular choice for JSON parsing
+  and generation.
 title: Working with JSON
 weight: 38
 ---

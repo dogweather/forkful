@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:13.889275-07:00
-description: "Een nieuw project starten betekent het opzetten van de basis voor je\
-  \ codebase. Programmeurs doen dit om het ontwikkelingsproces op gang te brengen,\
-  \ de\u2026"
+description: "Hoe: Bij het beginnen, kies je bouwsysteem of IDE. Voor eenvoud gebruiken\
+  \ we een eenvoudige teksteditor en g++. Maak twee bestanden: `main.cpp` en een\u2026"
 lastmod: '2024-03-13T22:44:51.113309-06:00'
 model: gpt-4-0125-preview
-summary: Een nieuw project starten betekent het opzetten van de basis voor je codebase.
+summary: Bij het beginnen, kies je bouwsysteem of IDE.
 title: Een nieuw project starten
 weight: 1
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:14:12.058858-07:00
-description: "REPL, eller Les-Evaluer-Skriv-L\xF8kke, er et interaktivt programmeringsmilj\xF8\
-  \ som tar enkelt brukerinput, utf\xF8rer dem, og returnerer resultatet.\u2026"
+description: "Hvordan: I Fish er den interaktive skallet standardmodus n\xE5r du starter\
+  \ det. Slik ser det ut i aksjon."
 lastmod: '2024-03-13T22:44:41.228415-06:00'
 model: gpt-4-0125-preview
-summary: "REPL, eller Les-Evaluer-Skriv-L\xF8kke, er et interaktivt programmeringsmilj\xF8\
-  \ som tar enkelt brukerinput, utf\xF8rer dem, og returnerer resultatet."
+summary: "I Fish er den interaktive skallet standardmodus n\xE5r du starter det."
 title: Bruke et interaktivt skall (REPL)
 weight: 34
 ---

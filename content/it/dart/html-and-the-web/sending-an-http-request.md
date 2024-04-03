@@ -2,13 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:13.023254-07:00
-description: "Inviare una richiesta HTTP in Dart \xE8 il processo di iniziazione delle\
-  \ comunicazioni con un server web o API da un'applicazione Dart. I programmatori\
-  \ lo\u2026"
+description: "Come fare: Dart include il pacchetto `http`, un modo potente e conveniente\
+  \ per lavorare con le risorse HTTP. Prima cosa, includilo nel tuo file\u2026"
 lastmod: '2024-03-13T22:44:43.126281-06:00'
 model: gpt-4-0125-preview
-summary: "Inviare una richiesta HTTP in Dart \xE8 il processo di iniziazione delle\
-  \ comunicazioni con un server web o API da un'applicazione Dart."
+summary: Dart include il pacchetto `http`, un modo potente e conveniente per lavorare
+  con le risorse HTTP.
 title: Inviare una richiesta HTTP
 weight: 44
 ---

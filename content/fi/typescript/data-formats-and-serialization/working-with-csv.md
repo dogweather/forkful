@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:32.185715-07:00
-description: "CSV:n (pilkulla erotetut arvot) k\xE4sittelyyn kuuluu CSV-tiedostojen\
-  \ lukemista ja niihin kirjoittamista, mik\xE4 on yleinen tiedonvaihtomuoto sen\u2026"
+description: "Kuinka: TypeScriptiss\xE4 voit ty\xF6skennell\xE4 CSV-tiedostojen kanssa\
+  \ natiivikoodin tai kolmansien osapuolten kirjastojen, kuten `csv-parser` lukemiseen\
+  \ ja\u2026"
 lastmod: '2024-03-13T22:44:56.337448-06:00'
 model: gpt-4-0125-preview
-summary: "CSV:n (pilkulla erotetut arvot) k\xE4sittelyyn kuuluu CSV-tiedostojen lukemista\
-  \ ja niihin kirjoittamista, mik\xE4 on yleinen tiedonvaihtomuoto sen yksinkertaisuuden\
-  \ ja laajan tuen ansiosta eri alustoilla ja kielill\xE4."
+summary: "TypeScriptiss\xE4 voit ty\xF6skennell\xE4 CSV-tiedostojen kanssa natiivikoodin\
+  \ tai kolmansien osapuolten kirjastojen, kuten `csv-parser` lukemiseen ja `csv-writer`\
+  \ kirjoittamiseen, avulla."
 title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---

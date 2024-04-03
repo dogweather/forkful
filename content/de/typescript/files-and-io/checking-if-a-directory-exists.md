@@ -2,15 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:43.908869-07:00
-description: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in TypeScript existiert, ist\
-  \ f\xFCr Dateiverwaltungsaufgaben essentiell, wie zum Beispiel das Lesen aus oder\
-  \ das Schreiben\u2026"
+description: "Wie geht das: TypeScript, ausgef\xFChrt in einer Node.js-Umgebung, erm\xF6\
+  glicht es Ihnen zu \xFCberpr\xFCfen, ob ein Verzeichnis existiert, indem Sie das\
+  \ `fs` Modul\u2026"
 lastmod: '2024-03-13T22:44:53.644906-06:00'
 model: gpt-4-0125-preview
-summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in TypeScript existiert, ist f\xFC\
-  r Dateiverwaltungsaufgaben essentiell, wie zum Beispiel das Lesen aus oder das Schreiben\
-  \ von Daten in Dateien, um sicherzustellen, dass Operationen nur auf g\xFCltigen\
-  \ Verzeichnissen ausgef\xFChrt werden."
+summary: "TypeScript, ausgef\xFChrt in einer Node.js-Umgebung, erm\xF6glicht es Ihnen\
+  \ zu \xFCberpr\xFCfen, ob ein Verzeichnis existiert, indem Sie das `fs` Modul verwenden,\
+  \ welches die Funktion `existsSync()` oder die asynchrone Funktion `access()` in\
+  \ Verbindung mit `constants.F_OK` bereitstellt."
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---

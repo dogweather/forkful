@@ -2,13 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:53:55.379387-07:00
-description: "Controleren of een map bestaat in Dart gaat over het verifi\xEBren van\
-  \ de aanwezigheid van een map op een gespecificeerd pad op het bestandssysteem voordat\u2026"
+description: "Hoe doe je dat: Dart gebruikt de `dart:io` bibliotheek om met bestanden\
+  \ en mappen te werken. Hier is een simpele manier om te controleren of een map\u2026"
 lastmod: '2024-03-13T22:44:50.520872-06:00'
 model: gpt-4-0125-preview
-summary: "Controleren of een map bestaat in Dart gaat over het verifi\xEBren van de\
-  \ aanwezigheid van een map op een gespecificeerd pad op het bestandssysteem voordat\
-  \ operaties zoals het lezen of schrijven van bestanden worden uitgevoerd."
+summary: Dart gebruikt de `dart:io` bibliotheek om met bestanden en mappen te werken.
 title: Controleren of een map bestaat
 weight: 20
 ---

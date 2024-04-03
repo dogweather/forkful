@@ -1,11 +1,12 @@
 ---
 date: 2024-01-30 18:57:17.219485-07:00
-description: "Associative arrays, or what Rustaceans call \"hash maps,\" are collections\
-  \ that store data in key-value pairs. Programmers use them for quick data lookup,\u2026"
+description: 'How to: In Rust, the `HashMap` type from the `std::collections` module
+  provides the functionality of associative arrays. Here''s how you can work with
+  them.'
 lastmod: '2024-03-13T22:44:59.889352-06:00'
 model: gpt-4-0125-preview
-summary: Associative arrays, or what Rustaceans call "hash maps," are collections
-  that store data in key-value pairs.
+summary: In Rust, the `HashMap` type from the `std::collections` module provides the
+  functionality of associative arrays.
 title: Using associative arrays
 weight: 15
 ---

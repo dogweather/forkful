@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 03:42:18.277085-07:00
-description: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr \xE5 skrelle bort de\
-  \ doble eller enkle anf\xF8rselstegnene som omslutter tekstverdier. Programmerere\
-  \ gj\xF8r dette ofte\u2026"
+description: "Hvordan: Ruby har noen smarte triks i ermet for \xE5 klippe ut de irriterende\
+  \ anf\xF8rselstegnene. Du kan bruke `gsub` eller `delete` metodene for \xE5 f\xE5\
+  \ jobben\u2026"
 lastmod: '2024-03-13T22:44:41.303932-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr \xE5 skrelle bort de doble\
-  \ eller enkle anf\xF8rselstegnene som omslutter tekstverdier."
+summary: "Ruby har noen smarte triks i ermet for \xE5 klippe ut de irriterende anf\xF8\
+  rselstegnene."
 title: "Fjerne anf\xF8rselstegn fra en streng"
 weight: 9
 ---

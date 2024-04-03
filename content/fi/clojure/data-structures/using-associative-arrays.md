@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:27.080917-07:00
-description: "Assosiatiiviset taulukot eli hajautustaulut Clojuressa mahdollistavat\
-  \ tietojen tallentamisen ja hakemisen avain-arvo -pareina. Ne ovat avainratkaisu\u2026"
+description: "Kuinka: Clojuressa assosiatiivisten taulukoiden (hajautustaulujen) luominen\
+  \ ja k\xE4sittely on suoraviivaista. Sukelletaan sis\xE4\xE4n esimerkkien kautta.\u2026"
 lastmod: '2024-03-13T22:44:56.177566-06:00'
 model: gpt-4-0125-preview
-summary: Assosiatiiviset taulukot eli hajautustaulut Clojuressa mahdollistavat tietojen
-  tallentamisen ja hakemisen avain-arvo -pareina.
+summary: "Clojuressa assosiatiivisten taulukoiden (hajautustaulujen) luominen ja k\xE4\
+  sittely on suoraviivaista."
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---

@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:06.052192-07:00
-description: "De huidige datum in JavaScript verkrijgen, is het vastleggen van de\
-  \ datum en tijd van de huidige dag. Programmeurs doen dit voor zaken zoals tijdstempels,\u2026"
+description: 'Hoe te: .'
 lastmod: '2024-03-13T22:44:51.212782-06:00'
 model: gpt-4-0125-preview
-summary: De huidige datum in JavaScript verkrijgen, is het vastleggen van de datum
-  en tijd van de huidige dag.
+summary: .
 title: Het huidige datum ophalen
 weight: 29
 ---

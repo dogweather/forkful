@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:38.931659-07:00
-description: "Escrever testes em C++ envolve criar pequenos programas autossuficientes\
-  \ que verificam automaticamente o comportamento de se\xE7\xF5es do seu c\xF3digo.\
-  \ Os\u2026"
+description: 'Como Fazer: #.'
 lastmod: '2024-03-13T22:44:46.883077-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever testes em C++ envolve criar pequenos programas autossuficientes\
-  \ que verificam automaticamente o comportamento de se\xE7\xF5es do seu c\xF3digo."
+summary: '#.'
 title: Escrevendo testes
 weight: 36
 ---

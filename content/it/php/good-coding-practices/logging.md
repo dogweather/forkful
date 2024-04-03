@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 01:06:31.626052-07:00
-description: "Il logging \xE8 sostanzialmente paragonabile al mantenere un diario\
-  \ per il proprio codice; \xE8 l'atto di registrare eventi, errori e altri punti\
-  \ dati\u2026"
+description: "Come fare: PHP offre una funzione integrata di registrazione degli errori\
+  \ che \xE8 facile da usare. Basta inserire `error_log()` nel tuo codice per inviare\u2026"
 lastmod: '2024-03-13T22:44:43.523098-06:00'
 model: gpt-4-1106-preview
-summary: "Il logging \xE8 sostanzialmente paragonabile al mantenere un diario per\
-  \ il proprio codice; \xE8 l'atto di registrare eventi, errori e altri punti dati\
-  \ significativi che si verificano quando l'applicazione viene eseguita."
+summary: "PHP offre una funzione integrata di registrazione degli errori che \xE8\
+  \ facile da usare."
 title: "Registrazione delle Attivit\xE0 (Logging)"
 weight: 17
 ---

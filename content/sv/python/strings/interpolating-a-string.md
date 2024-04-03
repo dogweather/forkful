@@ -3,13 +3,12 @@ changelog:
 - 2024-01-28, dogweather, reviewed
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:23:40.973933-07:00
-description: "Str\xE4nginterpolering \xE4r metoden att b\xE4dda in uttryck inom str\xE4\
-  ngliteraler. Programmerare anv\xE4nder det f\xF6r att dynamiskt infoga v\xE4rden\
-  \ i str\xE4ngar, vilket\u2026"
+description: "Hur: I Python 3.6 och senare kan du interpolera str\xE4ngar genom att\
+  \ anv\xE4nda f-str\xE4ngar. S\xE5 h\xE4r g\xF6r du."
 lastmod: '2024-03-13T22:44:37.469542-06:00'
 model: gpt-4-0125-preview
-summary: "Str\xE4nginterpolering \xE4r metoden att b\xE4dda in uttryck inom str\xE4\
-  ngliteraler."
+summary: "I Python 3.6 och senare kan du interpolera str\xE4ngar genom att anv\xE4\
+  nda f-str\xE4ngar."
 title: "Interpolering av en str\xE4ng"
 weight: 8
 ---

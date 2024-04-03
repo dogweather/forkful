@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:05.406878-07:00
-description: "Att kontrollera om en katalog finns i Elixir handlar om att verifiera\
-  \ n\xE4rvaron av en katalog p\xE5 en angiven s\xF6kv\xE4g i filsystemet. Programmerare\
-  \ g\xF6r detta\u2026"
+description: "Hur man g\xF6r: Elixirs standardbibliotek erbjuder ett enkelt s\xE4\
+  tt att kontrollera existensen av en katalog genom `File`-modulen. S\xE5 h\xE4r kan\
+  \ du anv\xE4nda den."
 lastmod: '2024-03-13T22:44:37.581957-06:00'
 model: gpt-4-0125-preview
-summary: "Att kontrollera om en katalog finns i Elixir handlar om att verifiera n\xE4\
-  rvaron av en katalog p\xE5 en angiven s\xF6kv\xE4g i filsystemet."
+summary: "Elixirs standardbibliotek erbjuder ett enkelt s\xE4tt att kontrollera existensen\
+  \ av en katalog genom `File`-modulen."
 title: Kontrollera om en katalog existerar
 weight: 20
 ---

@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:32.615746-07:00
-description: "Tekst zoeken en vervangen is hoe je specifieke stringen in inhoud vindt\
-  \ en ze omwisselt voor iets anders. Programmeurs doen dit om gegevens bij te werken,\u2026"
+description: 'Hoe: Hier is een snelle manier om ''kat'' door ''hond'' te vervangen
+  in een zin met PHP.'
 lastmod: '2024-03-13T22:44:50.879623-06:00'
 model: gpt-4-0125-preview
-summary: Tekst zoeken en vervangen is hoe je specifieke stringen in inhoud vindt en
-  ze omwisselt voor iets anders.
+summary: Hier is een snelle manier om 'kat' door 'hond' te vervangen in een zin met
+  PHP.
 title: Tekst zoeken en vervangen
 weight: 10
 ---

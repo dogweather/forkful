@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:07.599494-07:00
-description: "Complexe getallen bestaan uit een re\xEBel deel en een imaginair deel.\
-  \ Programmeurs gebruiken ze in velden zoals signaalverwerking, kwantummechanica,\
-  \ en\u2026"
+description: "Hoe te: Bash ondersteunt van nature geen complexe getallen. Je gebruikt\
+  \ vaak een extern hulpmiddel zoals `bc` met zijn `-l` optie. Hier is hoe je complexe\u2026"
 lastmod: '2024-03-13T22:44:50.973514-06:00'
 model: gpt-4-0125-preview
-summary: "Complexe getallen bestaan uit een re\xEBel deel en een imaginair deel."
+summary: Bash ondersteunt van nature geen complexe getallen.
 title: Werken met complexe getallen
 weight: 14
 ---

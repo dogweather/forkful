@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 01:08:22.551238-07:00
-description: "Il logging \xE8 il processo di registrazione degli eventi di un'applicazione\
-  \ mentre questa \xE8 in esecuzione, fornendo una traccia di briciole per analisi\u2026"
+description: 'Come fare: Python include un modulo integrato per il logging. Ecco una
+  configurazione di base.'
 lastmod: '2024-03-13T22:44:43.007460-06:00'
 model: gpt-4-1106-preview
-summary: "Il logging \xE8 il processo di registrazione degli eventi di un'applicazione\
-  \ mentre questa \xE8 in esecuzione, fornendo una traccia di briciole per analisi\
-  \ post-mortem e monitoraggio in tempo reale."
+summary: Python include un modulo integrato per il logging.
 title: "Registrazione delle Attivit\xE0 (Logging)"
 weight: 17
 ---

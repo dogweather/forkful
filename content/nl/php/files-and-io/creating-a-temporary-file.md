@@ -2,14 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:32.575950-07:00
-description: "Het aanmaken van een tijdelijk bestand in PHP betekent dat je een bestand\
-  \ maakt dat net lang genoeg blijft bestaan om te gebruiken, en dan poef\u2014het\
-  \ is\u2026"
+description: "Hoe: PHP helpt je bij het aanmaken van tijdelijke bestanden met de `tmpfile()`\
+  \ functie, die voor jou een bestand maakt in de tijdelijke directory van je\u2026"
 lastmod: '2024-03-13T22:44:50.915134-06:00'
 model: gpt-4-0125-preview
-summary: "Het aanmaken van een tijdelijk bestand in PHP betekent dat je een bestand\
-  \ maakt dat net lang genoeg blijft bestaan om te gebruiken, en dan poef\u2014het\
-  \ is weg."
+summary: PHP helpt je bij het aanmaken van tijdelijke bestanden met de `tmpfile()`
+  functie, die voor jou een bestand maakt in de tijdelijke directory van je systeem.
 title: Een tijdelijk bestand aanmaken
 weight: 21
 ---

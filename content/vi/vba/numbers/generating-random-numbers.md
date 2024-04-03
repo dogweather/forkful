@@ -2,17 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:44.695399-07:00
-description: "Vi\u1EC7c t\u1EA1o ra c\xE1c s\u1ED1 ng\u1EABu nhi\xEAn trong Visual\
-  \ Basic for Applications (VBA) cho ph\xE9p c\xE1c ch\u01B0\u01A1ng tr\xECnh m\xF4\
-  \ ph\u1ECFng c\xE1c quy tr\xECnh v\u1EDBi c\xE1c y\u1EBFu t\u1ED1 may r\u1EE7i ho\u1EB7\
-  c bi\u1EBFn\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong VBA, h\xE0m `Rnd` \u0111\u01B0\u1EE3c\
+  \ s\u1EED d\u1EE5ng \u0111\u1EC3 t\u1EA1o ra s\u1ED1 ng\u1EABu nhi\xEAn. Theo m\u1EB7\
+  c \u0111\u1ECBnh, `Rnd` t\u1EA1o ra m\u1ED9t s\u1ED1 \u0111i\u1EC3m d\u1EA5u ch\u1EA5\
+  m n\u1ED5i \u0111\u01A1n ch\xEDnh x\xE1c l\u1EDBn h\u01A1n ho\u1EB7c\u2026"
 lastmod: '2024-03-13T22:44:36.427127-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c t\u1EA1o ra c\xE1c s\u1ED1 ng\u1EABu nhi\xEAn trong Visual Basic\
-  \ for Applications (VBA) cho ph\xE9p c\xE1c ch\u01B0\u01A1ng tr\xECnh m\xF4 ph\u1ECF\
-  ng c\xE1c quy tr\xECnh v\u1EDBi c\xE1c y\u1EBFu t\u1ED1 may r\u1EE7i ho\u1EB7c bi\u1EBF\
-  n \u0111\u1ED5i, nh\u01B0 l\u0103n x\xFAc x\u1EAFc hay l\u1EA5y m\u1EABu d\u1EEF\
-  \ li\u1EC7u."
+summary: "Trong VBA, h\xE0m `Rnd` \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3\
+  \ t\u1EA1o ra s\u1ED1 ng\u1EABu nhi\xEAn."
 title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 weight: 12
 ---

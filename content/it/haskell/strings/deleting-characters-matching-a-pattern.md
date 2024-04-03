@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:42:49.423628-07:00
-description: "In Haskell, eliminare caratteri che corrispondono a un pattern significa\
-  \ rimuovere specifici elementi da una stringa, basandosi su regole definite. I\u2026"
+description: "How to: Haskell non ha una standard library per regex come altri linguaggi,\
+  \ ma possiamo usare funzioni come `filter` e list comprehension per ottenere\u2026"
 lastmod: '2024-03-13T22:44:43.459969-06:00'
 model: gpt-4-1106-preview
-summary: In Haskell, eliminare caratteri che corrispondono a un pattern significa
-  rimuovere specifici elementi da una stringa, basandosi su regole definite.
+summary: Haskell non ha una standard library per regex come altri linguaggi, ma possiamo
+  usare funzioni come `filter` e list comprehension per ottenere risultati simili.
 title: Eliminazione di caratteri che corrispondono a un pattern
 weight: 5
 ---

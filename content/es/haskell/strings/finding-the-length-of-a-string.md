@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:47:36.641919-07:00
-description: "Encontrar la longitud de una cadena significa saber cu\xE1ntos caracteres\
-  \ contiene. Los programadores lo hacen para validar entradas, controlar bucles,\
-  \ o\u2026"
+description: "C\xF3mo hacerlo: En Haskell, usamos la funci\xF3n `length` para obtener\
+  \ la longitud de una cadena. Aqu\xED tienes un ejemplo sencillo."
 lastmod: '2024-03-13T22:44:59.110412-06:00'
 model: gpt-4-1106-preview
-summary: "Encontrar la longitud de una cadena significa saber cu\xE1ntos caracteres\
-  \ contiene."
+summary: "En Haskell, usamos la funci\xF3n `length` para obtener la longitud de una\
+  \ cadena."
 title: Calculando la longitud de una cadena
 weight: 7
 ---

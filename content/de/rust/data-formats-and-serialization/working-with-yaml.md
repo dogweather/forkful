@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:38.985009-07:00
-description: "In der Rust-Programmierung dreht sich die Arbeit mit YAML (YAML Ain't\
-  \ Markup Language) um das Parsen und Generieren von Daten im YAML-Format, einem\u2026"
+description: "Wie: Rust unterst\xFCtzt YAML nicht in seiner Standardbibliothek, daher\
+  \ verwenden wir h\xE4ufig Drittanbieter-Crates wie `serde` (zum Serialisieren und\u2026"
 lastmod: '2024-03-13T22:44:53.693201-06:00'
 model: gpt-4-0125-preview
-summary: "In der Rust-Programmierung dreht sich die Arbeit mit YAML (YAML Ain't Markup\
-  \ Language) um das Parsen und Generieren von Daten im YAML-Format, einem menschenfreundlichen\
-  \ Standard f\xFCr die Serialisierung von Daten."
+summary: "Rust unterst\xFCtzt YAML nicht in seiner Standardbibliothek, daher verwenden\
+  \ wir h\xE4ufig Drittanbieter-Crates wie `serde` (zum Serialisieren und Deserialisieren\
+  \ von Daten) in Kombination mit `serde_yaml`."
 title: Arbeiten mit YAML
 weight: 41
 ---

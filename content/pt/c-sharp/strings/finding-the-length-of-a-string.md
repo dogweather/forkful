@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:47:19.241124-07:00
-description: "Saber o comprimento de uma string \xE9 descobrir o n\xFAmero de caracteres\
-  \ que ela cont\xE9m. Programadores fazem isso para validar entradas, limitar conte\xFA\
-  do, ou\u2026"
+description: "How to: Em C#, voc\xEA consegue o tamanho de uma string usando a propriedade\
+  \ `Length`. Veja alguns exemplos."
 lastmod: '2024-03-13T22:44:46.575309-06:00'
 model: gpt-4-1106-preview
-summary: "Saber o comprimento de uma string \xE9 descobrir o n\xFAmero de caracteres\
-  \ que ela cont\xE9m."
+summary: "Em C#, voc\xEA consegue o tamanho de uma string usando a propriedade `Length`."
 title: Descobrindo o comprimento de uma string
 weight: 7
 ---

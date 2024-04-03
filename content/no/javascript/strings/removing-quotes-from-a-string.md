@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 03:40:20.768954-07:00
-description: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr \xE5 bli kvitt de irriterende\
-  \ anf\xF8rselstegnene som kan rote til koden din, spesielt n\xE5r du analyserer\
-  \ data eller\u2026"
+description: "Hvordan: Forestille deg at du har en streng som er innpakket i doble\
+  \ anf\xF8rselstegn, som `\"\\\"Hei, verden!\\\"\"` og du \xF8nsker den rene, uten\
+  \ anf\xF8rselstegn-\u2026"
 lastmod: '2024-03-13T22:44:41.172362-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr \xE5 bli kvitt de irriterende\
-  \ anf\xF8rselstegnene som kan rote til koden din, spesielt n\xE5r du analyserer\
-  \ data eller konstruerer JSON-objekter."
+summary: "Forestille deg at du har en streng som er innpakket i doble anf\xF8rselstegn,\
+  \ som `\"\\\"Hei, verden!\\\"\"` og du \xF8nsker den rene, uten anf\xF8rselstegn-teksten."
 title: "Fjerne anf\xF8rselstegn fra en streng"
 weight: 9
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:38.060045-07:00
-description: "YAML, czyli YAML Ain't Markup Language, to format serializacji danych\
-  \ czytelny dla cz\u0142owieka. Programi\u015Bci u\u017Cywaj\u0105 YAML dla plik\xF3\
-  w konfiguracyjnych,\u2026"
+description: "Jak to zrobi\u0107: Odczyt i zapis w YAML w Pythonie zazwyczaj wymaga\
+  \ u\u017Cycia zewn\u0119trznej biblioteki, przy czym `PyYAML` jest najbardziej popularny.\
+  \ Aby\u2026"
 lastmod: '2024-03-13T22:44:34.971474-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, czyli YAML Ain't Markup Language, to format serializacji danych czytelny\
-  \ dla cz\u0142owieka."
+summary: "Odczyt i zapis w YAML w Pythonie zazwyczaj wymaga u\u017Cycia zewn\u0119\
+  trznej biblioteki, przy czym `PyYAML` jest najbardziej popularny."
 title: Praca z YAML
 weight: 41
 ---

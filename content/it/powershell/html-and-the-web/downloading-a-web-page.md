@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:44:23.682755-07:00
-description: "Scaricare una pagina web significa prendere il suo contenuto da internet\
-  \ e salvarlo localmente. I programmatori lo fanno per analizzare dati, testare\u2026"
+description: "How to: In PowerShell, `Invoke-WebRequest` \xE8 il tuo amico. Ecco come\
+  \ si usa."
 lastmod: '2024-03-13T22:44:43.641594-06:00'
 model: gpt-4-1106-preview
-summary: Scaricare una pagina web significa prendere il suo contenuto da internet
-  e salvarlo localmente.
+summary: "In PowerShell, `Invoke-WebRequest` \xE8 il tuo amico."
 title: Scaricare una pagina web
 weight: 42
 ---

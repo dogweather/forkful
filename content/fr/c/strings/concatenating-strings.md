@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:42.557057-07:00
-description: "La concat\xE9nation de cha\xEEnes en C consiste \xE0 joindre deux cha\xEE\
-  nes ou plus bout \xE0 bout pour former une nouvelle cha\xEEne. Les programmeurs\
-  \ effectuent cette\u2026"
+description: "Comment proc\xE9der : En C, les cha\xEEnes sont des tableaux de caract\xE8\
+  res se terminant par un caract\xE8re nul (`\\0`). Contrairement aux langues de plus\
+  \ haut\u2026"
 lastmod: '2024-03-13T22:44:58.362565-06:00'
 model: gpt-4-0125-preview
-summary: "La concat\xE9nation de cha\xEEnes en C consiste \xE0 joindre deux cha\xEE\
-  nes ou plus bout \xE0 bout pour former une nouvelle cha\xEEne."
+summary: "En C, les cha\xEEnes sont des tableaux de caract\xE8res se terminant par\
+  \ un caract\xE8re nul (`\\0`)."
 title: "Concat\xE9nation de cha\xEEnes"
 weight: 3
 ---

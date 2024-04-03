@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:13.418154-07:00
-description: "Das Umwandeln eines Strings in Kleinbuchstaben beinhaltet die Transformation\
-  \ aller Gro\xDFbuchstaben in einem String in ihre Kleinbuchstaben-\xC4quivalente.\u2026"
+description: "Wie: In Visual Basic for Applications (VBA) ist das Umwandeln eines\
+  \ Strings in Kleinbuchstaben unkompliziert mit der Funktion `LCase`. Diese Funktion\u2026"
 lastmod: '2024-03-13T22:44:53.703253-06:00'
 model: gpt-4-0125-preview
-summary: "Das Umwandeln eines Strings in Kleinbuchstaben beinhaltet die Transformation\
-  \ aller Gro\xDFbuchstaben in einem String in ihre Kleinbuchstaben-\xC4quivalente."
+summary: In Visual Basic for Applications (VBA) ist das Umwandeln eines Strings in
+  Kleinbuchstaben unkompliziert mit der Funktion `LCase`.
 title: Einen String in Kleinbuchstaben umwandeln
 weight: 4
 ---

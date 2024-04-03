@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:47.546781-07:00
-description: "Hakemiston olemassaolon tarkistaminen C:ss\xE4 tarkoittaa tiedostoj\xE4\
-  rjestelm\xE4n kysely\xE4 erityisen polun johtamisesta hakemistoon. Ohjelmoijat suorittavat\u2026"
+description: "Kuinka: C:ss\xE4 hakemiston olemassaolon voi tarkistaa k\xE4ytt\xE4\
+  m\xE4ll\xE4 `stat`-funktiota, joka hakee tietoja tiedostosta tai hakemistosta tietyss\xE4\
+  \ polussa. Sen\u2026"
 lastmod: '2024-03-13T22:44:57.056250-06:00'
 model: gpt-4-0125-preview
-summary: "Hakemiston olemassaolon tarkistaminen C:ss\xE4 tarkoittaa tiedostoj\xE4\
-  rjestelm\xE4n kysely\xE4 erityisen polun johtamisesta hakemistoon."
+summary: "C:ss\xE4 hakemiston olemassaolon voi tarkistaa k\xE4ytt\xE4m\xE4ll\xE4 `stat`-funktiota,\
+  \ joka hakee tietoja tiedostosta tai hakemistosta tietyss\xE4 polussa."
 title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---

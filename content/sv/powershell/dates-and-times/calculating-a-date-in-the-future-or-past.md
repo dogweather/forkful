@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:31:55.303881-07:00
-description: "Ber\xE4kning av ett framtida eller f\xF6rflutet datum inneb\xE4r att\
-  \ addera eller subtrahera tid fr\xE5n en specifik datumtidpunkt. Programmerare g\xF6\
-  r detta f\xF6r att\u2026"
+description: "Hur g\xF6r man: ."
 lastmod: '2024-03-13T22:44:38.139104-06:00'
 model: gpt-4-1106-preview
-summary: "Ber\xE4kning av ett framtida eller f\xF6rflutet datum inneb\xE4r att addera\
-  \ eller subtrahera tid fr\xE5n en specifik datumtidpunkt."
+summary: .
 title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutenheten"
 weight: 26
 ---

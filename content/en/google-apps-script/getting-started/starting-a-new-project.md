@@ -1,11 +1,12 @@
 ---
 date: 2024-02-01 21:12:08.207343-07:00
-description: "Starting a new project in Google Apps Script (GAS) entails initializing\
-  \ a script file within the Google ecosystem (Google Drive, Docs, Sheets, etc.) to\u2026"
+description: "How to: To kick off a new project in Google Apps Script, you have a\
+  \ couple of entry points, but let's focus on the most direct method: creating a\
+  \ script\u2026"
 lastmod: '2024-03-13T22:44:59.670589-06:00'
 model: gpt-4-0125-preview
-summary: Starting a new project in Google Apps Script (GAS) entails initializing a
-  script file within the Google ecosystem (Google Drive, Docs, Sheets, etc.
+summary: To kick off a new project in Google Apps Script, you have a couple of entry
+  points, but let's focus on the most direct method.
 title: Starting a new project
 weight: 1
 ---

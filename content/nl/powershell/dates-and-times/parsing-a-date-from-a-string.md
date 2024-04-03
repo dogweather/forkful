@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:49.555678-07:00
-description: "Het parsen van een datum uit een string gaat over het begrijpelijk maken\
-  \ van datuminformatie die binnen een tekst is opgenomen. Programmeurs doen dit om\u2026"
+description: 'Hoe te: PowerShell maakt het parsen van datums vrij eenvoudig. Laten
+  we eens kijken hoe we een string kunnen omzetten in een DateTime-object.'
 lastmod: '2024-03-13T22:44:51.039323-06:00'
 model: gpt-4-0125-preview
-summary: Het parsen van een datum uit een string gaat over het begrijpelijk maken
-  van datuminformatie die binnen een tekst is opgenomen.
+summary: PowerShell maakt het parsen van datums vrij eenvoudig.
 title: Een datum uit een string parsen
 weight: 30
 ---

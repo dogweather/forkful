@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:46.286154-07:00
-description: "Uuden projektin aloittaminen Go:ssa sis\xE4lt\xE4\xE4 ty\xF6tilan pystytt\xE4\
-  misen ja sen alustamisen tarvittavilla Go-moduuleilla. Ohjelmoijat tekev\xE4t t\xE4\
-  m\xE4n koodin\u2026"
+description: "Kuinka: Aloita varmistamalla, ett\xE4 Go on asennettu suorittamalla\
+  \ `go version` komentorivill\xE4. Sinun pit\xE4isi n\xE4hd\xE4 asentamasi Go-version\
+  \ tulosteena.\u2026"
 lastmod: '2024-03-13T22:44:56.051310-06:00'
 model: gpt-4-0125-preview
-summary: "Uuden projektin aloittaminen Go:ssa sis\xE4lt\xE4\xE4 ty\xF6tilan pystytt\xE4\
-  misen ja sen alustamisen tarvittavilla Go-moduuleilla."
+summary: "Aloita varmistamalla, ett\xE4 Go on asennettu suorittamalla `go version`\
+  \ komentorivill\xE4."
 title: Uuden projektin aloittaminen
 weight: 1
 ---

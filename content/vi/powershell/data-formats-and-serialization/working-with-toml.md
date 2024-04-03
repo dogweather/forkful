@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:44.033420-07:00
-description: "TOML, vi\u1EBFt t\u1EAFt c\u1EE7a Tom's Obvious, Minimal Language, l\xE0\
-  \ m\u1ED9t \u0111\u1ECBnh d\u1EA1ng t\u1EA1o chu\u1ED7i d\u1EEF li\u1EC7u d\u1EC5\
-  \ \u0111\u1ECDc do ng\u1EEF ngh\u0129a r\xF5 r\xE0ng c\u1EE7a n\xF3. C\xE1c l\u1EAD\
-  p tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong PowerShell, kh\xF4ng c\xF3 cmdlet d\xE0\
+  nh ri\xEAng \u0111\u1EC3 ph\xE2n t\xEDch c\xFA ph\xE1p TOML. B\u1EA1n th\u01B0\u1EDD\
+  ng s\u1EED d\u1EE5ng m\u1ED9t module ho\u1EB7c chuy\u1EC3n \u0111\u1ED5i TOML sang\
+  \ JSON b\u1EB1ng\u2026"
 lastmod: '2024-03-13T22:44:36.965946-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, vi\u1EBFt t\u1EAFt c\u1EE7a Tom's Obvious, Minimal Language, l\xE0\
-  \ m\u1ED9t \u0111\u1ECBnh d\u1EA1ng t\u1EA1o chu\u1ED7i d\u1EEF li\u1EC7u d\u1EC5\
-  \ \u0111\u1ECDc do ng\u1EEF ngh\u0129a r\xF5 r\xE0ng c\u1EE7a n\xF3."
+summary: "Trong PowerShell, kh\xF4ng c\xF3 cmdlet d\xE0nh ri\xEAng \u0111\u1EC3 ph\xE2\
+  n t\xEDch c\xFA ph\xE1p TOML."
 title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 weight: 39
 ---

@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:47.329796-07:00
-description: "\xC5 skrive en tekstfil i TypeScript er en kritisk ferdighet for datalagring,\
-  \ konfigurasjoner eller logggenerering. Programmerere utf\xF8rer ofte denne oppgaven\u2026"
+description: "Hvordan: TypeScript h\xE5ndterer ikke direkte filoperasjoner da det\
+  \ kompileres til JavaScript, som tradisjonelt kj\xF8res i nettleseren med begrenset\
+  \ tilgang\u2026"
 lastmod: '2024-03-13T22:44:40.550037-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive en tekstfil i TypeScript er en kritisk ferdighet for datalagring,\
-  \ konfigurasjoner eller logggenerering."
+summary: "TypeScript h\xE5ndterer ikke direkte filoperasjoner da det kompileres til\
+  \ JavaScript, som tradisjonelt kj\xF8res i nettleseren med begrenset tilgang til\
+  \ filsystemet."
 title: Skrive en tekstfil
 weight: 24
 ---

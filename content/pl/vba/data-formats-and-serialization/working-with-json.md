@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:57.870114-07:00
-description: "JSON (JavaScript Object Notation) to lekki format wymiany danych, kt\xF3\
-  ry jest \u0142atwy do odczytu i zapisu dla ludzi oraz do parsowania i generowania\
-  \ przez\u2026"
+description: "Jak to zrobi\u0107: VBA natywnie nie obs\u0142uguje parsowania ani generowania\
+  \ JSON, wi\u0119c u\u017Cyjemy j\u0119zyka skryptowego, takiego jak JScript (za\
+  \ po\u015Brednictwem obiektu\u2026"
 lastmod: '2024-03-13T22:44:35.255381-06:00'
 model: gpt-4-0125-preview
-summary: "JSON (JavaScript Object Notation) to lekki format wymiany danych, kt\xF3\
-  ry jest \u0142atwy do odczytu i zapisu dla ludzi oraz do parsowania i generowania\
-  \ przez maszyny."
+summary: "VBA natywnie nie obs\u0142uguje parsowania ani generowania JSON, wi\u0119\
+  c u\u017Cyjemy j\u0119zyka skryptowego, takiego jak JScript (za po\u015Brednictwem\
+  \ obiektu ScriptControl), do parsowania ci\u0105g\xF3w JSON i budowania obiekt\xF3\
+  w JSON."
 title: Praca z JSON
 weight: 38
 ---

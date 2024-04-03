@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:38:26.948599-07:00
-description: "Convertir un `string` a min\xFAsculas significa cambiar todas las letras\
-  \ may\xFAsculas de una cadena de texto a su versi\xF3n en min\xFAsculas. Esto se\
-  \ hace a menudo\u2026"
+description: "C\xF3mo hacerlo: Usando C#, convierte un `string` a min\xFAsculas con\
+  \ el m\xE9todo `.ToLower()` o `.ToLowerInvariant()`. Aqu\xED van ejemplos."
 lastmod: '2024-03-13T22:44:59.065743-06:00'
 model: gpt-4-1106-preview
-summary: "Convertir un `string` a min\xFAsculas significa cambiar todas las letras\
-  \ may\xFAsculas de una cadena de texto a su versi\xF3n en min\xFAsculas."
+summary: "Usando C#, convierte un `string` a min\xFAsculas con el m\xE9todo `.ToLower()`\
+  \ o `.ToLowerInvariant()`."
 title: "Conversi\xF3n de una cadena de texto a min\xFAsculas"
 weight: 4
 ---

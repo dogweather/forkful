@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 03:38:53.995088-07:00
-description: "Merkkijonosta lainausmerkkien poistaminen tarkoittaa ylim\xE4\xE4r\xE4\
-  isten kaksois- tai yksitt\xE4isten lainausmerkkien karsimista, joita et todellisuudessa\
-  \ tarvitse\u2026"
+description: "Miten: Elmiss\xE4 voit k\xE4ytt\xE4\xE4 `String`-funktioita merkkijonojen\
+  \ manipulointiin, kuten lainausmerkkien poistamiseen. T\xE4ss\xE4 on suoraviivainen\
+  \ tapa tehd\xE4 se."
 lastmod: '2024-03-13T22:44:56.476353-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonosta lainausmerkkien poistaminen tarkoittaa ylim\xE4\xE4r\xE4isten\
-  \ kaksois- tai yksitt\xE4isten lainausmerkkien karsimista, joita et todellisuudessa\
-  \ tarvitse k\xE4sitellyss\xE4 tekstiss\xE4."
+summary: "Elmiss\xE4 voit k\xE4ytt\xE4\xE4 `String`-funktioita merkkijonojen manipulointiin,\
+  \ kuten lainausmerkkien poistamiseen."
 title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---

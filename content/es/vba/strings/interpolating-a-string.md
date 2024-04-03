@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:22.074337-07:00
-description: "La interpolaci\xF3n de cadenas en Visual Basic para Aplicaciones (VBA)\
-  \ se refiere al proceso de incrustar variables o expresiones dentro de un literal\
-  \ de\u2026"
+description: "C\xF3mo hacerlo: A diferencia de algunos lenguajes que tienen interpolaci\xF3\
+  n de cadenas incorporada, VBA requiere un enfoque m\xE1s manual, utilizando\u2026"
 lastmod: '2024-03-13T22:44:58.875329-06:00'
 model: gpt-4-0125-preview
-summary: "La interpolaci\xF3n de cadenas en Visual Basic para Aplicaciones (VBA) se\
-  \ refiere al proceso de incrustar variables o expresiones dentro de un literal de\
-  \ cadena, permitiendo la formaci\xF3n din\xE1mica de cadenas."
+summary: "A diferencia de algunos lenguajes que tienen interpolaci\xF3n de cadenas\
+  \ incorporada, VBA requiere un enfoque m\xE1s manual, utilizando t\xEDpicamente\
+  \ el operador `&` o la funci\xF3n `Format` para incrustar variables en las cadenas."
 title: Interpolando una cadena de texto
 weight: 8
 ---

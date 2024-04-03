@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:59:42.427244-07:00
-description: "\xC5 sende en HTTP-foresp\xF8rsel inneb\xE6rer \xE5 kommunisere med\
-  \ en webserver for \xE5 hente eller sende data. Programmerere gj\xF8r dette for\
-  \ \xE5 integrere tjenester,\u2026"
+description: 'Hvordan: Her er et eksempel med `clj-http` biblioteket.'
 lastmod: '2024-03-13T22:44:40.399359-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 sende en HTTP-foresp\xF8rsel inneb\xE6rer \xE5 kommunisere med en webserver\
-  \ for \xE5 hente eller sende data."
+summary: Her er et eksempel med `clj-http` biblioteket.
 title: "\xC5 sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---

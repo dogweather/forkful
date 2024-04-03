@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:32:04.402602-07:00
-description: "Calculating a future or past date means finding out what the date will\
-  \ be, or was, after or before a specified time interval. Programmers do this for\u2026"
+description: 'How to: Ruby makes playing with dates a breeze using its built-in `Date`
+  class and the `active_support` gem for some extra sugar. Here''s how it''s done.'
 lastmod: '2024-03-13T22:45:00.563662-06:00'
 model: gpt-4-1106-preview
-summary: Calculating a future or past date means finding out what the date will be,
-  or was, after or before a specified time interval.
+summary: Ruby makes playing with dates a breeze using its built-in `Date` class and
+  the `active_support` gem for some extra sugar.
 title: Calculating a date in the future or past
 weight: 26
 ---

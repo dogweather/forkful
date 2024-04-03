@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:56.147417-07:00
-description: "Refactoring is het proces van het herstructureren van bestaande computercode\
-  \ zonder het externe gedrag ervan te veranderen. Programmeurs doen dit om de\u2026"
+description: 'Hoe te: Beschouw een TypeScript-functie die betere tijden heeft gekend
+  - het is een beetje een rommeltje en kan wat liefde en zorg gebruiken.'
 lastmod: '2024-03-13T22:44:50.559523-06:00'
 model: gpt-4-0125-preview
-summary: Refactoring is het proces van het herstructureren van bestaande computercode
-  zonder het externe gedrag ervan te veranderen.
+summary: Beschouw een TypeScript-functie die betere tijden heeft gekend - het is een
+  beetje een rommeltje en kan wat liefde en zorg gebruiken.
 title: Refactoring
 weight: 19
 ---

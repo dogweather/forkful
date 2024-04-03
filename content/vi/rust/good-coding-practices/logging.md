@@ -2,16 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:55.496197-07:00
-description: "Ghi log gi\u1ED1ng nh\u01B0 vi\u1EC7c gi\u1EEF m\u1ED9t nh\u1EADt k\xFD\
-  \ cho \u1EE9ng d\u1EE5ng c\u1EE7a b\u1EA1n; \u0111\xF3 l\xE0 th\u1EF1c h\xE0nh ghi\
-  \ l\u1EA1i c\xE1c s\u1EF1 ki\u1EC7n, l\u1ED7i v\xE0 c\xE1c d\u1EEF li\u1EC7u li\xEA\
-  n quan kh\xE1c trong qu\xE1 tr\xECnh ch\u1EA1y.\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: H\xE3y thi\u1EBFt l\u1EADp m\u1ED9t k\u1ECB\
+  ch b\u1EA3n ghi log c\u01A1 b\u1EA3n trong Rust s\u1EED d\u1EE5ng crate `log`, n\u01A1\
+  i cung c\u1EA5p m\u1ED9t facade log, v\xE0 `env_logger`, m\u1ED9t tri\u1EC3n khai\
+  \ log\u2026"
 lastmod: '2024-03-13T22:44:36.385190-06:00'
 model: gpt-4-0125-preview
-summary: "Ghi log gi\u1ED1ng nh\u01B0 vi\u1EC7c gi\u1EEF m\u1ED9t nh\u1EADt k\xFD\
-  \ cho \u1EE9ng d\u1EE5ng c\u1EE7a b\u1EA1n; \u0111\xF3 l\xE0 th\u1EF1c h\xE0nh ghi\
-  \ l\u1EA1i c\xE1c s\u1EF1 ki\u1EC7n, l\u1ED7i v\xE0 c\xE1c d\u1EEF li\u1EC7u li\xEA\
-  n quan kh\xE1c trong qu\xE1 tr\xECnh ch\u1EA1y."
+summary: "H\xE3y thi\u1EBFt l\u1EADp m\u1ED9t k\u1ECBch b\u1EA3n ghi log c\u01A1 b\u1EA3\
+  n trong Rust s\u1EED d\u1EE5ng crate `log`, n\u01A1i cung c\u1EA5p m\u1ED9t facade\
+  \ log, v\xE0 `env_logger`, m\u1ED9t tri\u1EC3n khai log cho crate `log`."
 title: Ghi log
 weight: 17
 ---

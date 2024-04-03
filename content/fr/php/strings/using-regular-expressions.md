@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:31.244579-07:00
-description: "Les expressions r\xE9guli\xE8res (regex) en PHP sont des motifs utilis\xE9\
-  s pour rechercher des combinaisons de caract\xE8res dans des cha\xEEnes de texte,\
-  \ permettant\u2026"
+description: "Comment utiliser : PHP prend en charge les expressions r\xE9guli\xE8\
+  res via la biblioth\xE8que PCRE (Perl Compatible Regular Expressions), offrant un\
+  \ riche\u2026"
 lastmod: '2024-03-13T22:44:57.867539-06:00'
 model: gpt-4-0125-preview
-summary: "Les expressions r\xE9guli\xE8res (regex) en PHP sont des motifs utilis\xE9\
-  s pour rechercher des combinaisons de caract\xE8res dans des cha\xEEnes de texte,\
-  \ permettant des op\xE9rations de recherche et de remplacement sophistiqu\xE9es\
-  \ ainsi que la validation de donn\xE9es."
+summary: "PHP prend en charge les expressions r\xE9guli\xE8res via la biblioth\xE8\
+  que PCRE (Perl Compatible Regular Expressions), offrant un riche ensemble de fonctions."
 title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---

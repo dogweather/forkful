@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:38:46.715421-07:00
-description: "Convertir una cadena a min\xFAsculas es cambiar todos los caracteres\
-  \ alfab\xE9ticos de una cadena a su forma en min\xFAscula. Los programadores lo\
-  \ hacen para\u2026"
+description: "C\xF3mo hacerlo: Lua hace que convertir a min\xFAsculas sea coser y\
+  \ cantar. Usamos la funci\xF3n `string.lower()`. Aqu\xED un par de ejemplos."
 lastmod: '2024-03-13T22:44:59.189450-06:00'
 model: gpt-4-1106-preview
-summary: "Convertir una cadena a min\xFAsculas es cambiar todos los caracteres alfab\xE9\
-  ticos de una cadena a su forma en min\xFAscula."
+summary: "Lua hace que convertir a min\xFAsculas sea coser y cantar."
 title: "Conversi\xF3n de una cadena de texto a min\xFAsculas"
 weight: 4
 ---

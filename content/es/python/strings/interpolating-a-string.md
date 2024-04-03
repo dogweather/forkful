@@ -3,12 +3,12 @@ changelog:
 - 2024-01-28, dogweather, reviewed
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:23:50.789079-07:00
-description: "La interpolaci\xF3n de cadenas es el m\xE9todo de incrustar expresiones\
-  \ dentro de literales de cadena. Los programadores lo utilizan para insertar valores\u2026"
+description: "C\xF3mo hacerlo: En Python 3.6 y versiones superiores, puedes interpolar\
+  \ cadenas utilizando f-strings. As\xED es como se hace."
 lastmod: '2024-03-13T22:44:58.596503-06:00'
 model: gpt-4-0125-preview
-summary: "La interpolaci\xF3n de cadenas es el m\xE9todo de incrustar expresiones\
-  \ dentro de literales de cadena."
+summary: En Python 3.6 y versiones superiores, puedes interpolar cadenas utilizando
+  f-strings.
 title: Interpolando una cadena de caracteres
 weight: 8
 ---

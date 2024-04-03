@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:41.870104-07:00
-description: "Das Herunterladen einer Webseite in C beinhaltet den programmatischen\
-  \ Zugriff auf den Inhalt einer Webseite \xFCber das Internet und das lokale Speichern\
-  \ zur\u2026"
+description: "Wie geht das: Um eine Webseite in C herunterzuladen, ist ein beliebter\
+  \ Ansatz die Verwendung der libcurl-Bibliothek, eine effiziente und portable Client-\u2026"
 lastmod: '2024-03-13T22:44:54.350889-06:00'
 model: gpt-4-0125-preview
-summary: "Das Herunterladen einer Webseite in C beinhaltet den programmatischen Zugriff\
-  \ auf den Inhalt einer Webseite \xFCber das Internet und das lokale Speichern zur\
-  \ Verarbeitung oder zur Offline-Nutzung."
+summary: "Um eine Webseite in C herunterzuladen, ist ein beliebter Ansatz die Verwendung\
+  \ der libcurl-Bibliothek, eine effiziente und portable Client-seitige URL-\xDCbertragungsbibliothek."
 title: Herunterladen einer Webseite
 weight: 42
 ---

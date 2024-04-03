@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:11:30.109259-07:00
-description: "REPL to skr\xF3t od Read-Eval-Print Loop, prostego, interaktywnego \u015B\
-  rodowiska programistycznego. Programi\u015Bci u\u017Cywaj\u0105 go do szybkiego\
-  \ pisania i testowania\u2026"
+description: "Jak to zrobi\u0107: W Bashu, twoje terminal to w zasadzie REPL. Wpisujesz\
+  \ polecenie; czyta je, ocenia, wypisuje wynik, i zaczyna od nowa czekaj\u0105c na\
+  \ twoje\u2026"
 lastmod: '2024-03-13T22:44:35.586540-06:00'
 model: gpt-4-0125-preview
-summary: "REPL to skr\xF3t od Read-Eval-Print Loop, prostego, interaktywnego \u015B\
-  rodowiska programistycznego."
+summary: W Bashu, twoje terminal to w zasadzie REPL.
 title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---

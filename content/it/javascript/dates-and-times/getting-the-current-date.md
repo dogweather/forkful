@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:01.646444-07:00
-description: "Ottenere la data corrente in JavaScript \xE8 un compito fondamentale,\
-  \ che comporta il recupero e, eventualmente, la manipolazione della data e dell'ora\
-  \ di\u2026"
+description: "Come fare: In JavaScript \"vanilla\", l'oggetto `Date` viene utilizzato\
+  \ per lavorare con date e orari. Ecco come si pu\xF2 ottenere la data e l'ora corrente."
 lastmod: '2024-03-13T22:44:43.823256-06:00'
 model: gpt-4-0125-preview
-summary: "Ottenere la data corrente in JavaScript \xE8 un compito fondamentale, che\
-  \ comporta il recupero e, eventualmente, la manipolazione della data e dell'ora\
-  \ di oggi."
+summary: In JavaScript "vanilla", l'oggetto `Date` viene utilizzato per lavorare con
+  date e orari.
 title: Ottenere la data corrente
 weight: 29
 ---

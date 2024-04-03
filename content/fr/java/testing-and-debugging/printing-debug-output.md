@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:52:38.818610-07:00
-description: "Le d\xE9bogage, on conna\xEEt : imprimer des sorties dans la console\
-  \ pour comprendre ce qui se passe dans le code. Pourquoi ? Pour traquer les bugs\
-  \ plus vite et\u2026"
+description: "How to (Comment faire) : En Java, `System.out.println()` est notre ami\
+  \ pour afficher des messages de d\xE9bogage."
 lastmod: '2024-03-13T22:44:57.642880-06:00'
 model: gpt-4-1106-preview
-summary: "Le d\xE9bogage, on conna\xEEt : imprimer des sorties dans la console pour\
-  \ comprendre ce qui se passe dans le code."
+summary: "En Java, `System.out.println()` est notre ami pour afficher des messages\
+  \ de d\xE9bogage."
 title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---

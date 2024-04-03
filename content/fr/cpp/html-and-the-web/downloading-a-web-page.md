@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 17:43:34.454595-07:00
-description: "T\xE9l\xE9charger une page web, c'est r\xE9cup\xE9rer son contenu via\
-  \ internet. Les programmeurs le font pour automatiser la collecte d'informations,\
-  \ tester la\u2026"
+description: "How to: En C++, on peut utiliser la biblioth\xE8que `libcurl` pour t\xE9\
+  l\xE9charger une page web. Installez `libcurl` si ce n'est pas d\xE9j\xE0 fait.\
+  \ Voici un exemple\u2026"
 lastmod: '2024-03-13T22:44:58.160274-06:00'
 model: gpt-4-1106-preview
-summary: "T\xE9l\xE9charger une page web, c'est r\xE9cup\xE9rer son contenu via internet."
+summary: "En C++, on peut utiliser la biblioth\xE8que `libcurl` pour t\xE9l\xE9charger\
+  \ une page web."
 title: "T\xE9l\xE9chargement d'une page web"
 weight: 42
 ---

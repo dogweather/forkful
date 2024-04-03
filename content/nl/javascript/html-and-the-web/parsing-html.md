@@ -3,11 +3,10 @@ changelog:
 - 2024-01-28, dogweather, reviewed
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:01.587235-07:00
-description: "HTML parseren betekent gegevens extraheren uit HTML-documenten. Programmeurs\
-  \ doen dit om te interageren met of webinhoud te manipuleren, gegevensextractie\u2026"
+description: 'Hoe: Laten we HTML parseren met de `DOMParser` API in JavaScript.'
 lastmod: '2024-03-13T22:44:51.199123-06:00'
 model: gpt-4-0125-preview
-summary: HTML parseren betekent gegevens extraheren uit HTML-documenten.
+summary: Laten we HTML parseren met de `DOMParser` API in JavaScript.
 title: HTML Parsen
 weight: 43
 ---

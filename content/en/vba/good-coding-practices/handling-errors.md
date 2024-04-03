@@ -1,12 +1,12 @@
 ---
 date: 2024-02-01 21:30:53.785212-07:00
-description: "Error handling in Visual Basic for Applications (VBA) refers to the\
-  \ process of anticipating, detecting, and resolving programming, application, or\u2026"
+description: "How to: In VBA, error handling is typically implemented using the `On\
+  \ Error` statement which instructs VBA how to proceed when an error occurs. The\
+  \ most\u2026"
 lastmod: '2024-03-13T22:44:59.940996-06:00'
 model: gpt-4-0125-preview
-summary: Error handling in Visual Basic for Applications (VBA) refers to the process
-  of anticipating, detecting, and resolving programming, application, or communication
-  errors.
+summary: In VBA, error handling is typically implemented using the `On Error` statement
+  which instructs VBA how to proceed when an error occurs.
 title: Handling errors
 weight: 16
 ---

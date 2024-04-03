@@ -1,11 +1,12 @@
 ---
 date: 2024-02-03 19:03:16.078931-07:00
-description: "Working with JSON (JavaScript Object Notation) in Kotlin involves parsing\
-  \ and generating JSON data. Programmers do this to easily exchange data between\u2026"
+description: "How to: Kotlin does not include built-in support for JSON but leverages\
+  \ the powerful features of third-party libraries such as `Gson` by Google and\u2026"
 lastmod: '2024-03-13T22:45:00.068438-06:00'
 model: gpt-4-0125-preview
-summary: Working with JSON (JavaScript Object Notation) in Kotlin involves parsing
-  and generating JSON data.
+summary: Kotlin does not include built-in support for JSON but leverages the powerful
+  features of third-party libraries such as `Gson` by Google and `Kotlinx.serialization`
+  by JetBrains.
 title: Working with JSON
 weight: 38
 ---

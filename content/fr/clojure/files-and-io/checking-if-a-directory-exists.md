@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:02.483152-07:00
-description: "V\xE9rifier si un r\xE9pertoire existe en Clojure consiste \xE0 confirmer\
-  \ la pr\xE9sence d'un r\xE9pertoire dans le syst\xE8me de fichiers depuis votre\
-  \ application Clojure.\u2026"
+description: "Comment : Clojure, \xE9tant un langage JVM, peut utiliser la classe\
+  \ `java.io.File` de Java \xE0 cette fin. Vous n'avez pas besoin de biblioth\xE8\
+  que tierce pour\u2026"
 lastmod: '2024-03-13T22:44:57.297323-06:00'
 model: gpt-4-0125-preview
-summary: "V\xE9rifier si un r\xE9pertoire existe en Clojure consiste \xE0 confirmer\
-  \ la pr\xE9sence d'un r\xE9pertoire dans le syst\xE8me de fichiers depuis votre\
-  \ application Clojure."
+summary: "Clojure, \xE9tant un langage JVM, peut utiliser la classe `java.io.File`\
+  \ de Java \xE0 cette fin."
 title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---

@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:36:01.119861-07:00
-description: "Praca z XML w kontek\u015Bcie Swift oznacza analiz\u0119 i generowanie\
-  \ danych XML. Programi\u015Bci robi\u0105 to dla wymiany danych, zw\u0142aszcza\
-  \ podczas integracji z\u2026"
+description: "Jak to zrobi\u0107: Swift zapewnia `XMLParser` oraz `XMLDocument` do\
+  \ analizy danych XML. Oto fragment kodu do analizy prostego ci\u0105gu XML."
 lastmod: '2024-03-13T22:44:35.778860-06:00'
 model: gpt-4-0125-preview
-summary: "Praca z XML w kontek\u015Bcie Swift oznacza analiz\u0119 i generowanie danych\
-  \ XML."
+summary: Swift zapewnia `XMLParser` oraz `XMLDocument` do analizy danych XML.
 title: Praca z XML
 weight: 40
 ---

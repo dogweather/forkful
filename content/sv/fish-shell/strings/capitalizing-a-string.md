@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:24.459065-07:00
-description: "Att skriva med stor bokstav inneb\xE4r att man \xE4ndrar den s\xE5 att\
-  \ den f\xF6rsta bokstaven \xE4r versal och resten av str\xE4ngen \xE4r gemener.\
-  \ Detta \xE4r en vanlig uppgift\u2026"
+description: "Hur man g\xF6r: I Fish Shell kan str\xE4ngar manipuleras direkt med\
+  \ inbyggda funktioner, utan behov av externa verktyg eller bibliotek. F\xF6r att\
+  \ g\xF6ra en str\xE4ng\u2026"
 lastmod: '2024-03-13T22:44:38.318818-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva med stor bokstav inneb\xE4r att man \xE4ndrar den s\xE5 att den\
-  \ f\xF6rsta bokstaven \xE4r versal och resten av str\xE4ngen \xE4r gemener."
+summary: "I Fish Shell kan str\xE4ngar manipuleras direkt med inbyggda funktioner,\
+  \ utan behov av externa verktyg eller bibliotek."
 title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---

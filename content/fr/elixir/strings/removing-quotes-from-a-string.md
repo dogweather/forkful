@@ -1,13 +1,13 @@
 ---
 date: 2024-01-26 03:38:27.481072-07:00
-description: "Enlever les guillemets d'une cha\xEEne de caract\xE8res signifie se\
-  \ d\xE9faire de ces enveloppes suppl\xE9mentaires pour obtenir le texte pur \xE0\
-  \ l'int\xE9rieur. Les\u2026"
+description: "Comment faire : Elixir n'a pas de fonction int\xE9gr\xE9e pour 'enlever\
+  \ les guillemets', mais c'est un jeu d'enfant de cr\xE9er la v\xF4tre avec la correspondance\
+  \ de\u2026"
 lastmod: '2024-03-13T22:44:57.314320-06:00'
 model: gpt-4-0125-preview
-summary: "Enlever les guillemets d'une cha\xEEne de caract\xE8res signifie se d\xE9\
-  faire de ces enveloppes suppl\xE9mentaires pour obtenir le texte pur \xE0 l'int\xE9\
-  rieur."
+summary: "Elixir n'a pas de fonction int\xE9gr\xE9e pour 'enlever les guillemets',\
+  \ mais c'est un jeu d'enfant de cr\xE9er la v\xF4tre avec la correspondance de motifs\
+  \ ou les fonctions `String`."
 title: "Retirer les guillemets d'une cha\xEEne"
 weight: 9
 ---

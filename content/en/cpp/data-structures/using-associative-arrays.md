@@ -1,11 +1,11 @@
 ---
 date: 2024-01-30 18:57:27.463113-07:00
-description: "Associative arrays, known as `std::map` or `std::unordered_map` in C++,\
-  \ bridge the gap between array indices and real-world data, letting you use\u2026"
+description: 'How to: In C++, associative arrays come to life with the `<map>` and
+  `<unordered_map>` headers. Let''s break into examples to see both in action. #.'
 lastmod: '2024-03-13T22:45:00.351368-06:00'
 model: gpt-4-0125-preview
-summary: Associative arrays, known as `std::map` or `std::unordered_map` in C++, bridge
-  the gap between array indices and real-world data, letting you use meaningful keys.
+summary: In C++, associative arrays come to life with the `<map>` and `<unordered_map>`
+  headers.
 title: Using associative arrays
 weight: 15
 ---

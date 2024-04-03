@@ -1,12 +1,10 @@
 ---
 date: 2024-01-21 21:19:08.961743-07:00
-description: "Handling errors is how your code deals with problems that pop up during\
-  \ execution\u2014like handling a curveball without dropping it. Programmers do it\
-  \ to\u2026"
+description: 'How to: Kotlin provides `try`, `catch`, `finally`, and `throw` to manage
+  errors. Here''s how you use them.'
 lastmod: '2024-03-13T22:45:00.055903-06:00'
 model: gpt-4-1106-preview
-summary: "Handling errors is how your code deals with problems that pop up during\
-  \ execution\u2014like handling a curveball without dropping it."
+summary: Kotlin provides `try`, `catch`, `finally`, and `throw` to manage errors.
 title: Handling errors
 weight: 16
 ---

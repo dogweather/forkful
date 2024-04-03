@@ -2,17 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:23.960228-07:00
-description: "T\xE1i c\u1EA5u tr\xFAc l\xE0 qu\xE1 tr\xECnh t\xE1i c\u1EA5u tr\xFA\
-  c l\u1EA1i code hi\u1EC7n t\u1EA1i m\xE0 kh\xF4ng thay \u0111\u1ED5i h\xE0nh vi\
-  \ b\xEAn ngo\xE0i c\u1EE7a n\xF3, nh\u1EB1m m\u1EE5c \u0111\xEDch c\u1EA3i thi\u1EC7\
-  n c\xE1c thu\u1ED9c t\xEDnh phi ch\u1EE9c n\u0103ng\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: H\xE3y s\u1EAFp x\u1EBFp l\u1EA1i m\u1ED9t m\u1EAB\
+  u ph\u1ED5 bi\u1EBFn trong Elixir. Ch\xFAng ta s\u1EBD t\xE1i c\u1EA5u tr\xFAc h\xE0\
+  m `calculate_stats` l\xE0m nhi\u1EC1u h\u01A1n n\xF3 n\xEAn l\xE0m b\u1EB1ng c\xE1\
+  ch chia n\xF3\u2026"
 lastmod: '2024-03-13T22:44:36.219416-06:00'
 model: gpt-4-0125-preview
-summary: "T\xE1i c\u1EA5u tr\xFAc l\xE0 qu\xE1 tr\xECnh t\xE1i c\u1EA5u tr\xFAc l\u1EA1\
-  i code hi\u1EC7n t\u1EA1i m\xE0 kh\xF4ng thay \u0111\u1ED5i h\xE0nh vi b\xEAn ngo\xE0\
-  i c\u1EE7a n\xF3, nh\u1EB1m m\u1EE5c \u0111\xEDch c\u1EA3i thi\u1EC7n c\xE1c thu\u1ED9\
-  c t\xEDnh phi ch\u1EE9c n\u0103ng nh\u01B0 t\xEDnh d\u1EC5 \u0111\u1ECDc v\xE0 kh\u1EA3\
-  \ n\u0103ng b\u1EA3o tr\xEC."
+summary: "H\xE3y s\u1EAFp x\u1EBFp l\u1EA1i m\u1ED9t m\u1EABu ph\u1ED5 bi\u1EBFn trong\
+  \ Elixir."
 title: "T\xE1i c\u1EA5u tr\xFAc m\xE3"
 weight: 19
 ---

@@ -2,16 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:21.315141-07:00
-description: "Vi\u1EC7c lo\u1EA1i b\u1ECF d\u1EA5u nh\xE1y kh\u1ECFi m\u1ED9t chu\u1ED7\
-  i trong PowerShell gi\xFAp lo\u1EA1i b\u1ECF d\u1EA5u nh\xE1y \u0111\u01A1n (`'`)\
-  \ ho\u1EB7c d\u1EA5u nh\xE1y k\xE9p (`\"`) bao quanh v\u0103n b\u1EA3n c\u1EE7a\
-  \ b\u1EA1n. L\u1EADp tr\xECnh vi\xEAn\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: B\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng to\xE1\
+  n t\u1EED `-replace` \u0111\u1EC3 lo\u1EA1i b\u1ECF d\u1EA5u nh\xE1y kh\u1ECFi chu\u1ED7\
+  i. D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch l\xE0m."
 lastmod: '2024-03-13T22:44:36.917377-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c lo\u1EA1i b\u1ECF d\u1EA5u nh\xE1y kh\u1ECFi m\u1ED9t chu\u1ED7\
-  i trong PowerShell gi\xFAp lo\u1EA1i b\u1ECF d\u1EA5u nh\xE1y \u0111\u01A1n (`'`)\
-  \ ho\u1EB7c d\u1EA5u nh\xE1y k\xE9p (`\"`) bao quanh v\u0103n b\u1EA3n c\u1EE7a\
-  \ b\u1EA1n."
+summary: "B\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng to\xE1n t\u1EED `-replace` \u0111\
+  \u1EC3 lo\u1EA1i b\u1ECF d\u1EA5u nh\xE1y kh\u1ECFi chu\u1ED7i."
 title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i"
 weight: 9
 ---

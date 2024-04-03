@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 03:42:25.830087-07:00
-description: "Rimuovere le virgolette da una stringa significa togliere i caratteri\
-  \ di virgoletta singola (`'`) o doppia (`\"`) che definiscono le stringhe letterali\
-  \ nel\u2026"
+description: 'Come fare: Ecco una guida diretta per liberare le tue stringhe da quei
+  fastidiosi segni di virgoletta in TypeScript.'
 lastmod: '2024-03-13T22:44:43.164357-06:00'
 model: gpt-4-0125-preview
-summary: Rimuovere le virgolette da una stringa significa togliere i caratteri di
-  virgoletta singola (`'`) o doppia (`"`) che definiscono le stringhe letterali nel
-  codice.
+summary: Ecco una guida diretta per liberare le tue stringhe da quei fastidiosi segni
+  di virgoletta in TypeScript.
 title: Rimuovere le virgolette da una stringa
 weight: 9
 ---

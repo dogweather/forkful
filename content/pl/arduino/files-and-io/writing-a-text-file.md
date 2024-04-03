@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:04.902029-07:00
-description: "Zapisywanie pliku tekstowego w Arduino polega na zapisywaniu danych\
-  \ na karcie SD lub podobnym module pami\u0119ci, cz\u0119sto w celach rejestracji\
-  \ danych.\u2026"
+description: "Jak to zrobi\u0107: Aby zapisa\u0107 plik tekstowy na karcie SD za pomoc\u0105\
+  \ Arduino, nale\u017Cy najpierw do\u0142\u0105czy\u0107 bibliotek\u0119 `SD.h`,\
+  \ kt\xF3ra zapewnia niezb\u0119dne funkcje do\u2026"
 lastmod: '2024-03-13T22:44:35.689789-06:00'
 model: gpt-4-0125-preview
-summary: "Zapisywanie pliku tekstowego w Arduino polega na zapisywaniu danych na karcie\
-  \ SD lub podobnym module pami\u0119ci, cz\u0119sto w celach rejestracji danych."
+summary: "Aby zapisa\u0107 plik tekstowy na karcie SD za pomoc\u0105 Arduino, nale\u017C\
+  y najpierw do\u0142\u0105czy\u0107 bibliotek\u0119 `SD.h`, kt\xF3ra zapewnia niezb\u0119\
+  dne funkcje do interakcji z kartami SD."
 title: Pisanie pliku tekstowego
 weight: 24
 ---

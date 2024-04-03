@@ -3,13 +3,12 @@ changelog:
 - 2024-01-28, dogweather, reviewed and added links
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 23:01:33.191826-07:00
-description: "Organiser le code en fonctions consiste \xE0 regrouper des morceaux\
-  \ de script pour r\xE9aliser des t\xE2ches sp\xE9cifiques. Nous le faisons parce\
-  \ que cela rend le\u2026"
+description: "Comment faire : Dans Fish, vous \xE9crivez une fonction avec le mot-cl\xE9\
+  \ `function`, vous lui donnez un nom, et vous terminez par `end`. Voici un exemple\u2026"
 lastmod: '2024-03-13T22:44:58.330710-06:00'
 model: gpt-4-0125-preview
-summary: "Organiser le code en fonctions consiste \xE0 regrouper des morceaux de script\
-  \ pour r\xE9aliser des t\xE2ches sp\xE9cifiques."
+summary: "Dans Fish, vous \xE9crivez une fonction avec le mot-cl\xE9 `function`, vous\
+  \ lui donnez un nom, et vous terminez par `end`."
 title: Organiser le code en fonctions
 weight: 18
 ---

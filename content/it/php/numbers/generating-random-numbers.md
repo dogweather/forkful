@@ -1,12 +1,11 @@
 ---
 date: 2024-01-27 20:34:27.455166-07:00
-description: "Generare numeri casuali in PHP riguarda la produzione di valori imprevedibili\
-  \ all'interno di un intervallo specificato, essenziale per compiti come la\u2026"
+description: "Come fare: PHP offre diverse funzioni per generare numeri casuali, ma\
+  \ le pi\xF9 comunemente usate sono `rand()`, `mt_rand()` e, per scopi crittografici,\u2026"
 lastmod: '2024-03-13T22:44:43.512510-06:00'
 model: gpt-4-0125-preview
-summary: Generare numeri casuali in PHP riguarda la produzione di valori imprevedibili
-  all'interno di un intervallo specificato, essenziale per compiti come la creazione
-  di ID utente unici, la generazione di password o per l'uso in simulazioni e giochi.
+summary: "PHP offre diverse funzioni per generare numeri casuali, ma le pi\xF9 comunemente\
+  \ usate sono `rand()`, `mt_rand()` e, per scopi crittografici, `random_int()`."
 title: Generazione di numeri casuali
 weight: 12
 ---

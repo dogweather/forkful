@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:37.210856-07:00
-description: "Tests in Haskell zu schreiben, dient dazu, sicherzustellen, dass Ihre\
-  \ Funktionen wie erwartet durch automatisierte \xDCberpr\xFCfungen arbeiten. Entwickler\
-  \ tun\u2026"
+description: "Wie: Haskell unterst\xFCtzt verschiedene Test-Frameworks, aber zwei\
+  \ beliebte sind `Hspec` und `QuickCheck`. Hspec erm\xF6glicht es Ihnen, menschenlesbare\u2026"
 lastmod: '2024-03-13T22:44:53.934885-06:00'
 model: gpt-4-0125-preview
-summary: "Tests in Haskell zu schreiben, dient dazu, sicherzustellen, dass Ihre Funktionen\
-  \ wie erwartet durch automatisierte \xDCberpr\xFCfungen arbeiten."
+summary: "Haskell unterst\xFCtzt verschiedene Test-Frameworks, aber zwei beliebte\
+  \ sind `Hspec` und `QuickCheck`."
 title: Tests Schreiben
 weight: 36
 ---

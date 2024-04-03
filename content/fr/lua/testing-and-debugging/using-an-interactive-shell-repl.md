@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:16:03.964951-07:00
-description: "REPL signifie Read-Eval-Print Loop (Boucle de Lecture-\xC9valuation-Affichage),\
-  \ un environnement interactif o\xF9 vous pouvez rapidement tester du code. Les\u2026"
+description: 'Comment faire : Pour entrer dans le REPL de Lua, saisissez simplement
+  `lua` dans votre terminal. Voici un exemple de session .'
 lastmod: '2024-03-13T22:44:57.937986-06:00'
 model: gpt-4-0125-preview
-summary: "REPL signifie Read-Eval-Print Loop (Boucle de Lecture-\xC9valuation-Affichage),\
-  \ un environnement interactif o\xF9 vous pouvez rapidement tester du code."
+summary: Pour entrer dans le REPL de Lua, saisissez simplement `lua` dans votre terminal.
 title: Utilisation d'une console interactive (REPL)
 weight: 34
 ---

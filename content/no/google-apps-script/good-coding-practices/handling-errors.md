@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:02.798996-07:00
-description: "Feilh\xE5ndtering i Google Apps Script handler om \xE5 forutse, fange\
-  \ opp, og svare p\xE5 unntak eller feil som oppst\xE5r under kj\xF8ring av skriptet.\
-  \ Programmerere\u2026"
+description: "Hvordan: Google Apps Script, som er basert p\xE5 JavaScript, lar oss\
+  \ bruke den tradisjonelle `try-catch`-setningen for feilh\xE5ndtering, sammen med\
+  \ `finally`\u2026"
 lastmod: '2024-03-13T22:44:40.323758-06:00'
 model: gpt-4-0125-preview
-summary: "Feilh\xE5ndtering i Google Apps Script handler om \xE5 forutse, fange opp,\
-  \ og svare p\xE5 unntak eller feil som oppst\xE5r under kj\xF8ring av skriptet."
+summary: "Google Apps Script, som er basert p\xE5 JavaScript, lar oss bruke den tradisjonelle\
+  \ `try-catch`-setningen for feilh\xE5ndtering, sammen med `finally` hvis opprydding\
+  \ er n\xF8dvendig uavhengig av suksess eller feil."
 title: "H\xE5ndtering av feil"
 weight: 16
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:25.104872-07:00
-description: "Les expressions r\xE9guli\xE8res en programmation permettent de rechercher\
-  \ et de manipuler des cha\xEEnes de caract\xE8res bas\xE9es sur des motifs sp\xE9\
-  cifiques. Les\u2026"
+description: "Comment faire : Lua ne prend pas en charge les expressions r\xE9guli\xE8\
+  res nativement de la m\xEAme mani\xE8re que des langages comme Perl ou Python. Au\
+  \ lieu de\u2026"
 lastmod: '2024-03-13T22:44:57.914519-06:00'
 model: gpt-4-0125-preview
-summary: "Les expressions r\xE9guli\xE8res en programmation permettent de rechercher\
-  \ et de manipuler des cha\xEEnes de caract\xE8res bas\xE9es sur des motifs sp\xE9\
-  cifiques."
+summary: "Lua ne prend pas en charge les expressions r\xE9guli\xE8res nativement de\
+  \ la m\xEAme mani\xE8re que des langages comme Perl ou Python."
 title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---

@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:40.942793-07:00
-description: "\"L\xE0m vi\u1EC7c v\u1EDBi XML\" ch\u1EC9 qu\xE1 tr\xECnh \u0111\u1ECD\
-  c, t\u1EA1o v\xE0 s\u1EEDa \u0111\u1ED5i c\xE1c t\u1EC7p XML (eXtensible Markup\
-  \ Language) b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng l\u1EADp tr\xECnh. C\xE1c l\u1EAD\
-  p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n\u2026"
+description: "L\xE0m Th\u1EBF N\xE0o: M\xF4-\u0111un `xml.etree.ElementTree` c\u1EE7\
+  a Python cung c\u1EA5p c\xF4ng c\u1EE5 \u0111\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi XML.\
+  \ Ph\xE2n t\xEDch t\xE0i li\u1EC7u XML."
 lastmod: '2024-03-13T22:44:36.129133-06:00'
 model: gpt-4-0125-preview
-summary: "\"L\xE0m vi\u1EC7c v\u1EDBi XML\" ch\u1EC9 qu\xE1 tr\xECnh \u0111\u1ECD\
-  c, t\u1EA1o v\xE0 s\u1EEDa \u0111\u1ED5i c\xE1c t\u1EC7p XML (eXtensible Markup\
-  \ Language) b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng l\u1EADp tr\xECnh."
+summary: "M\xF4-\u0111un `xml.etree.ElementTree` c\u1EE7a Python cung c\u1EA5p c\xF4\
+  ng c\u1EE5 \u0111\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi XML."
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---

@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:37.304676-07:00
-description: "In \u0111\u1EA7u ra \u0111\u1EC3 g\u1EE1 l\u1ED7i trong Ruby gi\u1ED1\
-  ng nh\u01B0 vi\u1EC7c \u0111\u1EC3 l\u1EA1i d\u1EA5u v\u1EBFt trong m\xE3 c\u1EE7\
-  a b\u1EA1n \u0111\u1EC3 theo d\xF5i gi\xE1 tr\u1ECB c\u1EE7a bi\u1EBFn v\xE0 d\xF2\
-  ng ch\u1EA3y c\u1EE7a ch\u01B0\u01A1ng tr\xECnh. C\xE1c l\u1EADp tr\xECnh\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong Ruby, `puts` v\xE0 `p` l\xE0 c\xE1\
+  c ph\u01B0\u01A1ng th\u1EE9c b\u1EA1n n\xEAn s\u1EED d\u1EE5ng khi mu\u1ED1n xu\u1EA5\
+  t \u0111\u1EA7u ra nhanh ch\xF3ng l\xEAn console."
 lastmod: '2024-03-13T22:44:37.344083-06:00'
 model: gpt-4-0125-preview
-summary: "In \u0111\u1EA7u ra \u0111\u1EC3 g\u1EE1 l\u1ED7i trong Ruby gi\u1ED1ng\
-  \ nh\u01B0 vi\u1EC7c \u0111\u1EC3 l\u1EA1i d\u1EA5u v\u1EBFt trong m\xE3 c\u1EE7\
-  a b\u1EA1n \u0111\u1EC3 theo d\xF5i gi\xE1 tr\u1ECB c\u1EE7a bi\u1EBFn v\xE0 d\xF2\
-  ng ch\u1EA3y c\u1EE7a ch\u01B0\u01A1ng tr\xECnh."
+summary: "Trong Ruby, `puts` v\xE0 `p` l\xE0 c\xE1c ph\u01B0\u01A1ng th\u1EE9c b\u1EA1\
+  n n\xEAn s\u1EED d\u1EE5ng khi mu\u1ED1n xu\u1EA5t \u0111\u1EA7u ra nhanh ch\xF3\
+  ng l\xEAn console."
 title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 weight: 33
 ---

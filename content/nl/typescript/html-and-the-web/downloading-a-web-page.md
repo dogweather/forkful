@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:36.364606-07:00
-description: "Een webpagina downloaden betekent het binnenhalen van de HTML, CSS en\
-  \ mogelijk andere bronnen van de URL die je bezoekt. Programmeurs doen dit om inhoud\u2026"
+description: 'Hoe: Je kunt een webpagina downloaden in TypeScript met behulp van Node.js
+  en de `node-fetch` bibliotheek. Zo doe je dat.'
 lastmod: '2024-03-13T22:44:50.549394-06:00'
 model: gpt-4-0125-preview
-summary: Een webpagina downloaden betekent het binnenhalen van de HTML, CSS en mogelijk
-  andere bronnen van de URL die je bezoekt.
+summary: Je kunt een webpagina downloaden in TypeScript met behulp van Node.js en
+  de `node-fetch` bibliotheek.
 title: Een webpagina downloaden
 weight: 42
 ---

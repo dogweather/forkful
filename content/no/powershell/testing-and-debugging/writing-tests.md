@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:45.511524-07:00
-description: "\xC5 skrive tester i PowerShell involverer \xE5 lage skript som automatisk\
-  \ validerer funksjonaliteten til PowerShell-koden din, for \xE5 sikre at den oppf\xF8\
-  rer seg\u2026"
+description: "Hvordan: PowerShell har ikke et innebygd testrammeverk, men Pester,\
+  \ en popul\xE6r tredjepartsmodul, brukes mye til \xE5 skrive og kj\xF8re tester.\
+  \ Her er hvordan\u2026"
 lastmod: '2024-03-13T22:44:41.020972-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive tester i PowerShell involverer \xE5 lage skript som automatisk\
-  \ validerer funksjonaliteten til PowerShell-koden din, for \xE5 sikre at den oppf\xF8\
-  rer seg som forventet."
+summary: "PowerShell har ikke et innebygd testrammeverk, men Pester, en popul\xE6\
+  r tredjepartsmodul, brukes mye til \xE5 skrive og kj\xF8re tester."
 title: Skrive tester
 weight: 36
 ---

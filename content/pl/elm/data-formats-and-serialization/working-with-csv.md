@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:25.982824-07:00
-description: "Praca z CSV (ang. Comma Separated Values - warto\u015Bci oddzielone\
-  \ przecinkami) obejmuje analizowanie i generowanie plik\xF3w, kt\xF3re przechowuj\u0105\
-  \ dane\u2026"
+description: "Jak to zrobi\u0107: Elm nie ma wbudowanego wsparcia dla analizowania\
+  \ ani generowania CSV; zamiast tego cz\u0119sto wykorzystywane s\u0105 pakiety stron\
+  \ trzecich, takie\u2026"
 lastmod: '2024-03-13T22:44:35.344414-06:00'
 model: gpt-4-0125-preview
-summary: Praca z CSV (ang.
+summary: "Elm nie ma wbudowanego wsparcia dla analizowania ani generowania CSV; zamiast\
+  \ tego cz\u0119sto wykorzystywane s\u0105 pakiety stron trzecich, takie jak `panosoft/elm-csv`."
 title: Praca z plikami CSV
 weight: 37
 ---

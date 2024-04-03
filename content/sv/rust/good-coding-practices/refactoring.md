@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 03:37:17.978527-07:00
-description: "Refaktorisering \xE4r processen att omstrukturera befintlig dator-kod\u2014\
-  \xE4ndra faktoriseringen\u2014utan att f\xF6r\xE4ndra dess externa beteende. Programmerare\
-  \ g\xF6r det\u2026"
+description: "Hur: L\xE5t oss refaktorisera en enkel bit Rust-kod f\xF6r att g\xF6\
+  ra den mer idiomatisk och underh\xE5llsv\xE4nlig. Vi b\xF6rjar med en funktion som\
+  \ ber\xE4knar summan av en\u2026"
 lastmod: '2024-03-13T22:44:37.707236-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktorisering \xE4r processen att omstrukturera befintlig dator-kod\u2014\
-  \xE4ndra faktoriseringen\u2014utan att f\xF6r\xE4ndra dess externa beteende."
+summary: "L\xE5t oss refaktorisera en enkel bit Rust-kod f\xF6r att g\xF6ra den mer\
+  \ idiomatisk och underh\xE5llsv\xE4nlig."
 title: Refaktorisering
 weight: 19
 ---

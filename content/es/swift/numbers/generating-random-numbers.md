@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 20:35:13.338643-07:00
-description: "Generar n\xFAmeros aleatorios en programaci\xF3n se trata de crear valores\
-  \ num\xE9ricos no deterministas o impredecibles. Los programadores utilizan n\xFA\
-  meros\u2026"
+description: "C\xF3mo hacerlo: Swift proporciona una manera directa de generar n\xFA\
+  meros aleatorios a trav\xE9s de su biblioteca est\xE1ndar. A continuaci\xF3n, se\
+  \ muestra c\xF3mo\u2026"
 lastmod: '2024-03-13T22:44:59.412460-06:00'
 model: gpt-4-0125-preview
-summary: "Generar n\xFAmeros aleatorios en programaci\xF3n se trata de crear valores\
-  \ num\xE9ricos no deterministas o impredecibles."
+summary: "Swift proporciona una manera directa de generar n\xFAmeros aleatorios a\
+  \ trav\xE9s de su biblioteca est\xE1ndar."
 title: "Generaci\xF3n de n\xFAmeros aleatorios"
 weight: 12
 ---

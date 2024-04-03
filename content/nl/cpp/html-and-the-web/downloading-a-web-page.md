@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:19.028817-07:00
-description: "Een webpagina downloaden betekent simpelweg de inhoud ervan ophalen,\
-  \ gewoonlijk in HTML-formaat, om lokaal te bekijken of te verwerken. Programmeurs\u2026"
+description: 'Hoe: In de huidige C++ versie kunt u de `CURL` bibliotheek gebruiken
+  om webinhoud te downloaden. Hier is een basisvoorbeeld.'
 lastmod: '2024-03-13T22:44:51.111421-06:00'
 model: gpt-4-0125-preview
-summary: Een webpagina downloaden betekent simpelweg de inhoud ervan ophalen, gewoonlijk
-  in HTML-formaat, om lokaal te bekijken of te verwerken.
+summary: In de huidige C++ versie kunt u de `CURL` bibliotheek gebruiken om webinhoud
+  te downloaden.
 title: Een webpagina downloaden
 weight: 42
 ---

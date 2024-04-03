@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:43:16.533112-07:00
-description: "Descargar una p\xE1gina web es b\xE1sicamente pedirle a un servidor\
-  \ de internet que nos mande los datos de una p\xE1gina. Los programadores hacen\
-  \ esto para obtener\u2026"
+description: "C\xF3mo hacerlo: Para descargar una p\xE1gina web con Arduino, necesitas\
+  \ un m\xF3dulo de red como el Ethernet Shield o un m\xF3dulo WiFi. Ac\xE1 un c\xF3\
+  digo de ejemplo\u2026"
 lastmod: '2024-03-13T22:44:59.333089-06:00'
 model: gpt-4-1106-preview
-summary: "Descargar una p\xE1gina web es b\xE1sicamente pedirle a un servidor de internet\
-  \ que nos mande los datos de una p\xE1gina."
+summary: "Para descargar una p\xE1gina web con Arduino, necesitas un m\xF3dulo de\
+  \ red como el Ethernet Shield o un m\xF3dulo WiFi."
 title: "Descargando una p\xE1gina web"
 weight: 42
 ---

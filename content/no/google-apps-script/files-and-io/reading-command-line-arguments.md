@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:22.623263-07:00
-description: "\xC5 lese kommandolinjeargumenter i Google Apps Script er litt av en\
-  \ misvisende betegnelse fordi, i motsetning til tradisjonelle kommandolinjegrensesnitt\
-  \ i\u2026"
+description: "Hvordan: For \xE5 etterligne prosessen med \xE5 lese kommandolinjeargumenter\
+  \ i Google Apps Script, spesielt for webapplikasjoner, kan du bruke\u2026"
 lastmod: '2024-03-13T22:44:40.332395-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 lese kommandolinjeargumenter i Google Apps Script er litt av en misvisende\
-  \ betegnelse fordi, i motsetning til tradisjonelle kommandolinjegrensesnitt i programmeringsspr\xE5\
-  k som Python eller Node."
+summary: "For \xE5 etterligne prosessen med \xE5 lese kommandolinjeargumenter i Google\
+  \ Apps Script, spesielt for webapplikasjoner, kan du bruke sp\xF8rringsstrengparametere."
 title: Lese kommandolinje-argumenter
 weight: 23
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:13:22.575513-07:00
-description: "Assosiatiiviset taulukot eli oliot TypeScriptiss\xE4 mahdollistavat\
-  \ merkkijonojen (avainten) k\xE4yt\xF6n arvoparien k\xE4sittelyss\xE4. Ohjelmoijat\
-  \ k\xE4ytt\xE4v\xE4t niit\xE4\u2026"
+description: "Kuinka: Assosiatiivisten taulukoiden luominen ja k\xE4ytt\xE4minen TypeScriptiss\xE4\
+  \ on suoraviivaista. T\xE4ss\xE4 perusohjeet."
 lastmod: '2024-03-13T22:44:56.308558-06:00'
 model: gpt-4-0125-preview
-summary: "Assosiatiiviset taulukot eli oliot TypeScriptiss\xE4 mahdollistavat merkkijonojen\
-  \ (avainten) k\xE4yt\xF6n arvoparien k\xE4sittelyss\xE4."
+summary: "Assosiatiivisten taulukoiden luominen ja k\xE4ytt\xE4minen TypeScriptiss\xE4\
+  \ on suoraviivaista."
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---

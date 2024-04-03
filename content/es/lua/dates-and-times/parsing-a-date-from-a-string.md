@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:43.850039-07:00
-description: "Analizar una fecha de una cadena implica convertir representaciones\
-  \ textuales de fechas y horas en un formato que se pueda manipular, almacenar o\
-  \ comparar\u2026"
+description: "C\xF3mo hacerlo: Lua no tiene soporte integrado para la manipulaci\xF3\
+  n de fecha y hora m\xE1s all\xE1 de la funcionalidad limitada proporcionada por\
+  \ las funciones\u2026"
 lastmod: '2024-03-13T22:44:59.211245-06:00'
 model: gpt-4-0125-preview
-summary: "Analizar una fecha de una cadena implica convertir representaciones textuales\
-  \ de fechas y horas en un formato que se pueda manipular, almacenar o comparar f\xE1\
-  cilmente dentro de un programa Lua."
+summary: "Lua no tiene soporte integrado para la manipulaci\xF3n de fecha y hora m\xE1\
+  s all\xE1 de la funcionalidad limitada proporcionada por las funciones `os.date`\
+  \ y `os.time`."
 title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:25.591683-07:00
-description: "Parsowanie daty ze stringa polega na ekstrahowaniu informacji o dacie\
-  \ zakodowanej w ci\u0105gach znak\xF3w i konwersji jej na strukturyzowany format,\
-  \ kt\xF3ry\u2026"
+description: "Jak to zrobi\u0107: W Fish Shell nie masz wbudowanych polece\u0144 specjalnie\
+  \ zaprojektowanych do parsowania dat z ci\u0105g\xF3w znak\xF3w. Zamiast tego, polegasz\
+  \ na\u2026"
 lastmod: '2024-03-13T22:44:35.851091-06:00'
 model: gpt-4-0125-preview
-summary: "Parsowanie daty ze stringa polega na ekstrahowaniu informacji o dacie zakodowanej\
-  \ w ci\u0105gach znak\xF3w i konwersji jej na strukturyzowany format, kt\xF3ry \u015B\
-  rodowiska programistyczne mog\u0105 rozpoznawa\u0107 i manipulowa\u0107."
+summary: "W Fish Shell nie masz wbudowanych polece\u0144 specjalnie zaprojektowanych\
+  \ do parsowania dat z ci\u0105g\xF3w znak\xF3w."
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---

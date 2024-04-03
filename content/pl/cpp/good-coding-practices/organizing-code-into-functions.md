@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:10:04.986266-07:00
-description: "Podzia\u0142 kodu na funkcje oznacza, \u017Ce rozdzielamy nasz kod na\
-  \ mniejsze, wielokrotnego u\u017Cytku cz\u0119\u015Bci. Robimy to, aby unika\u0107\
-  \ powt\xF3rze\u0144, uczyni\u0107 nasz kod\u2026"
+description: "Jak to zrobi\u0107: We\u017Amy za przyk\u0142ad wsp\xF3lne zadanie:\
+  \ obliczanie pola ko\u0142a. Zamiast pisa\u0107 ten sam wz\xF3r za ka\u017Cdym razem,\
+  \ umieszczamy go w funkcji."
 lastmod: '2024-03-13T22:44:35.718437-06:00'
 model: gpt-4-1106-preview
-summary: "Podzia\u0142 kodu na funkcje oznacza, \u017Ce rozdzielamy nasz kod na mniejsze,\
-  \ wielokrotnego u\u017Cytku cz\u0119\u015Bci."
+summary: "We\u017Amy za przyk\u0142ad wsp\xF3lne zadanie."
 title: Organizacja kodu w funkcje
 weight: 18
 ---

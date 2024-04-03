@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:43:42.854802-07:00
-description: "Pobieranie strony internetowej to proces \u015Bci\u0105gania danych\
-  \ z sieci - jakby\u015B kopiowa\u0142 tekst ze stronki internetowej prosto do swojego\
-  \ programu. Programi\u015Bci\u2026"
+description: "How to: (Jak to zrobi\u0107:) ."
 lastmod: '2024-03-13T22:44:35.711606-06:00'
 model: gpt-4-1106-preview
-summary: "Pobieranie strony internetowej to proces \u015Bci\u0105gania danych z sieci\
-  \ - jakby\u015B kopiowa\u0142 tekst ze stronki internetowej prosto do swojego programu."
+summary: .
 title: Pobieranie strony internetowej
 weight: 42
 ---

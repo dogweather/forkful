@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:59.309568-07:00
-description: "L\xE0m vi\u1EC7c v\u1EDBi TOML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xED\
-  ch v\xE0 t\u1EA1o d\u1EEF li\u1EC7u TOML (Tom's Obvious, Minimal Language - Ng\xF4\
-  n ng\u1EEF T\u1ED1i gi\u1EA3n, Hi\u1EC3n nhi\xEAn c\u1EE7a Tom) b\u1EB1ng Elixir.\
-  \ L\u1EADp\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EA7u ti\xEAn, th\xEAm m\u1ED9t b\u1ED9\
+  \ ph\xE2n t\xEDch TOML v\xE0o c\xE1c ph\u1EE5 thu\u1ED9c mix c\u1EE7a b\u1EA1n.\
+  \ V\xED d\u1EE5 n\xE0y s\u1EED d\u1EE5ng `toml-elixir`."
 lastmod: '2024-03-13T22:44:36.238434-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m vi\u1EC7c v\u1EDBi TOML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xEDch v\xE0\
-  \ t\u1EA1o d\u1EEF li\u1EC7u TOML (Tom's Obvious, Minimal Language - Ng\xF4n ng\u1EEF\
-  \ T\u1ED1i gi\u1EA3n, Hi\u1EC3n nhi\xEAn c\u1EE7a Tom) b\u1EB1ng Elixir."
+summary: "\u0110\u1EA7u ti\xEAn, th\xEAm m\u1ED9t b\u1ED9 ph\xE2n t\xEDch TOML v\xE0\
+  o c\xE1c ph\u1EE5 thu\u1ED9c mix c\u1EE7a b\u1EA1n."
 title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 weight: 39
 ---

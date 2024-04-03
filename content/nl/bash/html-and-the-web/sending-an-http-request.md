@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:04.920468-07:00
-description: "Een HTTP-verzoek versturen is een manier om te communiceren met web\
-  \ servers om data op te halen of formulieren in te dienen. Programmeurs doen dit\
-  \ om te\u2026"
+description: 'Hoe te: Bash kan tools zoals `curl` of `wget` gebruiken voor HTTP-verzoeken.
+  Hier is een snel voorbeeld met `curl`.'
 lastmod: '2024-03-13T22:44:50.979257-06:00'
 model: gpt-4-0125-preview
-summary: Een HTTP-verzoek versturen is een manier om te communiceren met web servers
-  om data op te halen of formulieren in te dienen.
+summary: Bash kan tools zoals `curl` of `wget` gebruiken voor HTTP-verzoeken.
 title: Een HTTP-verzoek verzenden
 weight: 44
 ---

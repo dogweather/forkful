@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:17:18.189518-07:00
-description: "Interaktiivinen kuori, tai REPL (Read-Eval-Print Loop, lue-arvioi-tulosta\
-  \ -silmukka), mahdollistaa koodin testaamisen reaaliajassa. Ohjelmoijat k\xE4ytt\xE4\
-  v\xE4t\u2026"
+description: "Kuinka: Rubyn REPL on nimelt\xE4\xE4n IRB (Interactive Ruby). Hypp\xE4\
+  \xE4 sis\xE4\xE4n ja kokeile Ruby\xE4 suoraan terminaalistasi."
 lastmod: '2024-03-13T22:44:57.088122-06:00'
 model: gpt-4-0125-preview
-summary: Interaktiivinen kuori, tai REPL (Read-Eval-Print Loop, lue-arvioi-tulosta
-  -silmukka), mahdollistaa koodin testaamisen reaaliajassa.
+summary: "Rubyn REPL on nimelt\xE4\xE4n IRB (Interactive Ruby)."
 title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 weight: 34
 ---

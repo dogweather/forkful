@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:45.468259-07:00
-description: "Att kontrollera om en mapp finns i TypeScript \xE4r n\xF6dv\xE4ndigt\
-  \ f\xF6r filhanteringsuppgifter, s\xE5som att l\xE4sa fr\xE5n eller skriva data\
-  \ till filer, f\xF6r att\u2026"
+description: "Hur: TypeScript, n\xE4r det k\xF6rs i en Node.js-milj\xF6, till\xE5\
+  ter dig att kontrollera om en mapp finns genom att anv\xE4nda `fs`-modulen, som\
+  \ erbjuder funktionen\u2026"
 lastmod: '2024-03-13T22:44:37.670418-06:00'
 model: gpt-4-0125-preview
-summary: "Att kontrollera om en mapp finns i TypeScript \xE4r n\xF6dv\xE4ndigt f\xF6\
-  r filhanteringsuppgifter, s\xE5som att l\xE4sa fr\xE5n eller skriva data till filer,\
-  \ f\xF6r att s\xE4kerst\xE4lla att operationer endast utf\xF6rs p\xE5 giltiga mappar."
+summary: "TypeScript, n\xE4r det k\xF6rs i en Node.js-milj\xF6, till\xE5ter dig att\
+  \ kontrollera om en mapp finns genom att anv\xE4nda `fs`-modulen, som erbjuder funktionen\
+  \ `existsSync()` eller den asynkrona funktionen `access()` kombinerat med `constants.F_OK`."
 title: Kontrollera om en katalog existerar
 weight: 20
 ---

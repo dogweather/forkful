@@ -1,12 +1,13 @@
 ---
 date: 2024-01-26 00:58:53.400892-07:00
-description: "\"Loggning\" inneb\xE4r att man f\xF6r en journal \xF6ver h\xE4ndelser,\
-  \ transaktioner eller aktiviteter som sker \xF6ver tid i ett system. Programmerare\
-  \ anv\xE4nder det f\xF6r\u2026"
+description: "Hur g\xF6r man: Arduino kommer inte med ett inbyggt loggningsbibliotek\
+  \ som vissa andra milj\xF6er, men du kan implementera grundl\xE4ggande loggning\
+  \ till Seriell-\u2026"
 lastmod: '2024-03-13T22:44:38.173624-06:00'
 model: gpt-4-1106-preview
-summary: "\"Loggning\" inneb\xE4r att man f\xF6r en journal \xF6ver h\xE4ndelser,\
-  \ transaktioner eller aktiviteter som sker \xF6ver tid i ett system."
+summary: "Arduino kommer inte med ett inbyggt loggningsbibliotek som vissa andra milj\xF6\
+  er, men du kan implementera grundl\xE4ggande loggning till Seriell-konsolen med\
+  \ minimal anstr\xE4ngning."
 title: Loggning
 weight: 17
 ---

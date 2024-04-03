@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:39.277239-07:00
-description: "Tekens verwijderen die overeenkomen met een specifiek patroon in Visual\
-  \ Basic for Applications (VBA) omvat het identificeren en vervolgens verwijderen\
-  \ van\u2026"
+description: "Hoe te: In VBA kunt u functie `Replace` of reguliere expressies gebruiken\
+  \ om tekens die met een patroon overeenkomen te verwijderen. Hier zijn voorbeelden\u2026"
 lastmod: '2024-03-13T22:44:50.620270-06:00'
 model: gpt-4-0125-preview
-summary: Tekens verwijderen die overeenkomen met een specifiek patroon in Visual Basic
-  for Applications (VBA) omvat het identificeren en vervolgens verwijderen van tekens
-  of strings die aan bepaalde criteria voldoen.
+summary: In VBA kunt u functie `Replace` of reguliere expressies gebruiken om tekens
+  die met een patroon overeenkomen te verwijderen.
 title: Karakters Verwijderen die Overeenkomen met een Patroon
 weight: 5
 ---

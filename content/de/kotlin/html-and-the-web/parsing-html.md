@@ -2,12 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:18.603364-07:00
-description: "HTML zu parsen bedeutet, das Markup einer Webseite so zu zergliedern,\
-  \ dass es von einem Programm verstanden und manipuliert werden kann. Programmierer\u2026"
+description: 'Wie geht das: Kotlin macht das Parsen von HTML mit Bibliotheken wie
+  Jsoup unkompliziert. So geht''s.'
 lastmod: '2024-03-13T22:44:53.844619-06:00'
 model: gpt-4-0125-preview
-summary: HTML zu parsen bedeutet, das Markup einer Webseite so zu zergliedern, dass
-  es von einem Programm verstanden und manipuliert werden kann.
+summary: Kotlin macht das Parsen von HTML mit Bibliotheken wie Jsoup unkompliziert.
 title: HTML parsen
 weight: 43
 ---

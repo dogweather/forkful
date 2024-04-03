@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:34:20.437638-07:00
-description: "Concatenar strings significa juntar duas ou mais sequ\xEAncias de caracteres\
-  \ para formar uma nova. Programadores fazem isso para construir mensagens,\u2026"
+description: "Como fazer: Concatenar strings no Clojure \xE9 direto, gra\xE7as \xE0\
+  \ fun\xE7\xE3o `str`. Veja s\xF3."
 lastmod: '2024-03-13T22:44:46.188965-06:00'
 model: gpt-4-1106-preview
-summary: "Concatenar strings significa juntar duas ou mais sequ\xEAncias de caracteres\
-  \ para formar uma nova."
+summary: "Concatenar strings no Clojure \xE9 direto, gra\xE7as \xE0 fun\xE7\xE3o `str`."
 title: Concatenando strings
 weight: 3
 ---

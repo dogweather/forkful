@@ -2,13 +2,10 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:53:39.753046-07:00
-description: "Capitalizar una cadena implica modificar la primera letra de una palabra\
-  \ o toda una oraci\xF3n a may\xFAsculas, mientras se mantienen el resto de los caracteres\u2026"
+description: "C\xF3mo: #."
 lastmod: '2024-03-13T22:44:58.729020-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizar una cadena implica modificar la primera letra de una palabra\
-  \ o toda una oraci\xF3n a may\xFAsculas, mientras se mantienen el resto de los caracteres\
-  \ tal como est\xE1n."
+summary: '#.'
 title: Capitalizando una cadena de texto
 weight: 2
 ---

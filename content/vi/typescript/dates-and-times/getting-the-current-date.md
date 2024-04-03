@@ -2,15 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:37.810866-07:00
-description: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong m\xE3 l\u1EC7nh c\u1EE7a b\u1EA1\
-  n c\xF3 ngh\u0129a l\xE0 n\u1EAFm b\u1EAFt kho\u1EA3nh kh\u1EAFc hi\u1EC7n t\u1EA1\
-  i \u0111\u1EBFn t\u1EEBng ng\xE0y. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1\
-  u n\xE0y \u0111\u1EC3 \u0111\xE1nh d\u1EA5u th\u1EDDi gian cho c\xE1c\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch b\u1EA1\
+  n l\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong TypeScript."
 lastmod: '2024-03-13T22:44:36.333290-06:00'
 model: gpt-4-0125-preview
-summary: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong m\xE3 l\u1EC7nh c\u1EE7a b\u1EA1\
-  n c\xF3 ngh\u0129a l\xE0 n\u1EAFm b\u1EAFt kho\u1EA3nh kh\u1EAFc hi\u1EC7n t\u1EA1\
-  i \u0111\u1EBFn t\u1EEBng ng\xE0y."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch b\u1EA1n l\u1EA5y ng\xE0y hi\u1EC7\
+  n t\u1EA1i trong TypeScript."
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 weight: 29
 ---

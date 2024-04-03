@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 01:17:40.552037-07:00
-description: "Refactorizar es b\xE1sicamente hacer limpieza de primavera en tu base\
-  \ de c\xF3digo\u2014se trata de reestructurar el c\xF3digo existente sin cambiar\
-  \ su comportamiento\u2026"
+description: "C\xF3mo hacerlo: Considera que tienes una funci\xF3n en Elm que est\xE1\
+  \ haciendo demasiado, como mezclar la l\xF3gica de la interfaz de usuario con las\u2026"
 lastmod: '2024-03-13T22:44:59.001414-06:00'
 model: gpt-4-0125-preview
-summary: "Refactorizar es b\xE1sicamente hacer limpieza de primavera en tu base de\
-  \ c\xF3digo\u2014se trata de reestructurar el c\xF3digo existente sin cambiar su\
-  \ comportamiento externo."
+summary: "Considera que tienes una funci\xF3n en Elm que est\xE1 haciendo demasiado,\
+  \ como mezclar la l\xF3gica de la interfaz de usuario con las actualizaciones de\
+  \ estado."
 title: "Refactorizaci\xF3n"
 weight: 19
 ---

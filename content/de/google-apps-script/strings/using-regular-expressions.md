@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:32.744356-07:00
-description: "Regul\xE4re Ausdr\xFCcke (regex) sind Muster, die verwendet werden,\
-  \ um Zeichenkombinationen in Zeichenketten zu finden. Programmierer nutzen sie zum\
-  \ Suchen,\u2026"
+description: "Wie: Die Verwendung regul\xE4rer Ausdr\xFCcke in Google Apps Script\
+  \ ist dank der JavaScript-basierten Syntax unkompliziert. Hier ist, wie Sie regex\
+  \ in Ihren\u2026"
 lastmod: '2024-03-13T22:44:53.323051-06:00'
 model: gpt-4-0125-preview
-summary: "Regul\xE4re Ausdr\xFCcke (regex) sind Muster, die verwendet werden, um Zeichenkombinationen\
-  \ in Zeichenketten zu finden."
+summary: "Die Verwendung regul\xE4rer Ausdr\xFCcke in Google Apps Script ist dank\
+  \ der JavaScript-basierten Syntax unkompliziert."
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

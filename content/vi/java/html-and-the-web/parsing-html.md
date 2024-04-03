@@ -2,17 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:03.942357-07:00
-description: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML ngh\u0129a l\xE0 \u0111\xE0o s\xE2\
-  u v\xE0o \u0111\xE1nh d\u1EA5u \u0111\u1EC3 tr\xEDch xu\u1EA5t d\u1EEF li\u1EC7\
-  u nh\u01B0 v\u0103n b\u1EA3n, li\xEAn k\u1EBFt ho\u1EB7c c\xE1c ph\u1EA7n t\u1EED\
-  \ kh\xE1c. Ch\xFAng ta l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 t\u01B0\u01A1ng\
-  \ t\xE1c\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: H\xE3y s\u1EED d\u1EE5ng Jsoup, m\u1ED9t th\u01B0\
+  \ vi\u1EC7n ti\u1EC7n \xEDch khi l\xE0m vi\u1EC7c v\u1EDBi HTML th\u1EBF gi\u1EDB\
+  i th\u1EF1c. \u0110\u1EA7u ti\xEAn, th\xEAm ph\u1EE5 thu\u1ED9c."
 lastmod: '2024-03-13T22:44:36.486443-06:00'
 model: gpt-4-0125-preview
-summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML ngh\u0129a l\xE0 \u0111\xE0o s\xE2u v\xE0\
-  o \u0111\xE1nh d\u1EA5u \u0111\u1EC3 tr\xEDch xu\u1EA5t d\u1EEF li\u1EC7u nh\u01B0\
-  \ v\u0103n b\u1EA3n, li\xEAn k\u1EBFt ho\u1EB7c c\xE1c ph\u1EA7n t\u1EED kh\xE1\
-  c."
+summary: "H\xE3y s\u1EED d\u1EE5ng Jsoup, m\u1ED9t th\u01B0 vi\u1EC7n ti\u1EC7n \xED\
+  ch khi l\xE0m vi\u1EC7c v\u1EDBi HTML th\u1EBF gi\u1EDBi th\u1EF1c."
 title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---

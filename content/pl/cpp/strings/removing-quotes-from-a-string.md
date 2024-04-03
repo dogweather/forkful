@@ -1,13 +1,10 @@
 ---
 date: 2024-01-26 03:38:11.998793-07:00
-description: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w oznacza pozbycie\
-  \ si\u0119 tych irytuj\u0105cych podw\xF3jnych lub pojedynczych znak\xF3w, kt\xF3\
-  re otaczaj\u0105 nasz tekst (' lub \").\u2026"
+description: "Jak to zrobi\u0107: Oto prosty spos\xF3b, aby pozby\u0107 si\u0119 cudzys\u0142\
+  ow\xF3w w C++."
 lastmod: '2024-03-13T22:44:35.700857-06:00'
 model: gpt-4-0125-preview
-summary: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w oznacza pozbycie si\u0119\
-  \ tych irytuj\u0105cych podw\xF3jnych lub pojedynczych znak\xF3w, kt\xF3re otaczaj\u0105\
-  \ nasz tekst (' lub \")."
+summary: "Oto prosty spos\xF3b, aby pozby\u0107 si\u0119 cudzys\u0142ow\xF3w w C++."
 title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---

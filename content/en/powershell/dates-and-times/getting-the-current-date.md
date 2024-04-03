@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:02:40.928755-07:00
-description: "Retrieving the current date in PowerShell is about fetching the system\u2019\
-  s current date and time. This operation is fundamental for tasks such as logging,\u2026"
+description: "How to: PowerShell provides straightforward cmdlets for getting the\
+  \ date and time. The `Get-Date` cmdlet is the primary tool for this purpose. It\
+  \ can\u2026"
 lastmod: '2024-03-13T22:45:00.293854-06:00'
 model: gpt-4-0125-preview
-summary: "Retrieving the current date in PowerShell is about fetching the system\u2019\
-  s current date and time."
+summary: PowerShell provides straightforward cmdlets for getting the date and time.
 title: Getting the current date
 weight: 29
 ---

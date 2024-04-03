@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:02.263834-07:00
-description: "Scrivere test in Kotlin implica la creazione di frammenti di codice\
-  \ che validano automaticamente la correttezza funzionale dei moduli software,\u2026"
+description: "Come fare: Kotlin supporta lo sviluppo guidato dai test con vari framework,\
+  \ i pi\xF9 popolari sono JUnit, Kotest e MockK per il mocking. Ecco un semplice\u2026"
 lastmod: '2024-03-13T22:44:43.394452-06:00'
 model: gpt-4-0125-preview
-summary: Scrivere test in Kotlin implica la creazione di frammenti di codice che validano
-  automaticamente la correttezza funzionale dei moduli software, assicurando che funzionino
-  come previsto.
+summary: "Kotlin supporta lo sviluppo guidato dai test con vari framework, i pi\xF9\
+  \ popolari sono JUnit, Kotest e MockK per il mocking."
 title: Scrivere test
 weight: 36
 ---

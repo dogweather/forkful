@@ -1,10 +1,11 @@
 ---
 date: 2024-03-08 21:33:35.846788-07:00
-description: "Parsing HTML in programming involves extracting data from HTML documents.\
-  \ Programmers do this to interact with or scrape web content for information\u2026"
+description: "How to: Dart does not provide built-in support for HTML parsing in its\
+  \ core libraries. However, you can use a third-party package like `html` to parse\
+  \ and\u2026"
 lastmod: '2024-03-13T22:44:59.818836-06:00'
 model: gpt-4-0125-preview
-summary: Parsing HTML in programming involves extracting data from HTML documents.
+summary: Dart does not provide built-in support for HTML parsing in its core libraries.
 title: Parsing HTML
 weight: 43
 ---

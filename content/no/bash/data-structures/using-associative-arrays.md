@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:06.852293-07:00
-description: "Assosiative tabeller er som superladde tabeller som lar deg bruke strenger\
-  \ som indekser i stedet for bare heltall. Programmerere bruker dem til mer\u2026"
+description: "Hvordan: F\xF8rst, erkl\xE6r en assosiativ tabell i Bash."
 lastmod: '2024-03-13T22:44:40.965275-06:00'
 model: gpt-4-0125-preview
-summary: Assosiative tabeller er som superladde tabeller som lar deg bruke strenger
-  som indekser i stedet for bare heltall.
+summary: "F\xF8rst, erkl\xE6r en assosiativ tabell i Bash."
 title: Bruke associative tabeller
 weight: 15
 ---

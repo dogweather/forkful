@@ -1,13 +1,13 @@
 ---
 date: 2024-02-01 21:30:11.390251-07:00
-description: "Writing tests in programming involves creating specific procedures to\
-  \ validate the functionality and performance of your code segments, ensuring they\
-  \ work\u2026"
+description: "How to: While Visual Basic for Applications (VBA) doesn't come with\
+  \ a built-in testing framework akin to those available in languages like Python\
+  \ or\u2026"
 lastmod: '2024-03-13T22:44:59.937624-06:00'
 model: gpt-4-0125-preview
-summary: Writing tests in programming involves creating specific procedures to validate
-  the functionality and performance of your code segments, ensuring they work as expected
-  under various conditions.
+summary: While Visual Basic for Applications (VBA) doesn't come with a built-in testing
+  framework akin to those available in languages like Python or JavaScript, you can
+  still implement simple test procedures to check the integrity of your code.
 title: Writing tests
 weight: 36
 ---

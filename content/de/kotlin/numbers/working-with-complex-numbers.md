@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:42:36.965924-07:00
-description: "Komplexe Zahlen erweitern unser Zahlensystem um die Quadratwurzeln negativer\
-  \ Zahlen, wobei die 'imagin\xE4re' Einheit i gleich der Quadratwurzel von -1 ist.\u2026"
+description: "Wie geht das: Definieren wir eine grundlegende Klasse f\xFCr komplexe\
+  \ Zahlen in Kotlin."
 lastmod: '2024-03-13T22:44:53.840952-06:00'
 model: gpt-4-0125-preview
-summary: "Komplexe Zahlen erweitern unser Zahlensystem um die Quadratwurzeln negativer\
-  \ Zahlen, wobei die 'imagin\xE4re' Einheit i gleich der Quadratwurzel von -1 ist."
+summary: "Definieren wir eine grundlegende Klasse f\xFCr komplexe Zahlen in Kotlin."
 title: Umgang mit komplexen Zahlen
 weight: 14
 ---

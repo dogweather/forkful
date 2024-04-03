@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:13.160140-07:00
-description: "Les expressions r\xE9guli\xE8res (regex) en Java vous permettent de\
-  \ d\xE9finir des motifs sp\xE9cifiques pour rechercher, manipuler ou valider des\
-  \ cha\xEEnes de\u2026"
+description: "Comment : Le support int\xE9gr\xE9 de Java pour les regex se fait principalement\
+  \ \xE0 travers les classes `Pattern` et `Matcher` dans le package `java.util.regex`.\u2026"
 lastmod: '2024-03-13T22:44:57.627339-06:00'
 model: gpt-4-0125-preview
-summary: "Les expressions r\xE9guli\xE8res (regex) en Java vous permettent de d\xE9\
-  finir des motifs sp\xE9cifiques pour rechercher, manipuler ou valider des cha\xEE\
-  nes de caract\xE8res dans votre code."
+summary: "Le support int\xE9gr\xE9 de Java pour les regex se fait principalement \xE0\
+  \ travers les classes `Pattern` et `Matcher` dans le package `java.util.regex`."
 title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---

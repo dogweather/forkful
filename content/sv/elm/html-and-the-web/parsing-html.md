@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 15:31:08.369871-07:00
-description: "Parsing HTML handlar om att tolka och omvandla HTML-kod till n\xE5got\
-  \ som programmets logik kan hantera. Vi g\xF6r det f\xF6r att kunna manipulera,\
-  \ analysera och\u2026"
+description: "How to: (Hur man g\xF6r:) I Elm anv\xE4nder vi paketet `html-parser`\
+  \ f\xF6r att parsa HTML. Dina Elm-modeller blir en representation av det parsade\
+  \ inneh\xE5llet."
 lastmod: '2024-03-13T22:44:37.827117-06:00'
 model: unknown
-summary: "Parsing HTML handlar om att tolka och omvandla HTML-kod till n\xE5got som\
-  \ programmets logik kan hantera."
+summary: "I Elm anv\xE4nder vi paketet `html-parser` f\xF6r att parsa HTML."
 title: Tolka HTML
 weight: 43
 ---

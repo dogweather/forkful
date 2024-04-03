@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:08.046152-07:00
-description: "Eliminar caracteres que coinciden con un patr\xF3n espec\xEDfico de\
-  \ cadenas en C se trata de remover todas las instancias de ciertos caracteres que\
-  \ cumplen con\u2026"
+description: "C\xF3mo hacerlo: C no viene con una funci\xF3n integrada para eliminar\
+  \ directamente caracteres de una cadena basado en un patr\xF3n, a diferencia de\
+  \ algunos\u2026"
 lastmod: '2024-03-13T22:44:59.527713-06:00'
 model: gpt-4-0125-preview
-summary: "Eliminar caracteres que coinciden con un patr\xF3n espec\xEDfico de cadenas\
-  \ en C se trata de remover todas las instancias de ciertos caracteres que cumplen\
-  \ con criterios predefinidos."
+summary: "C no viene con una funci\xF3n integrada para eliminar directamente caracteres\
+  \ de una cadena basado en un patr\xF3n, a diferencia de algunos lenguajes de alto\
+  \ nivel."
 title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---

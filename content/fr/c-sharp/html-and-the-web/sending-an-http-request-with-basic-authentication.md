@@ -1,13 +1,9 @@
 ---
 date: 2024-01-20 18:01:13.989585-07:00
-description: "Envoyer une requ\xEAte HTTP avec une authentification de base, c'est\
-  \ envoyer un nom d'utilisateur et un mot de passe cod\xE9s en base-64 dans l'en-t\xEA\
-  te de la\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:57.786908-06:00'
 model: gpt-4-1106-preview
-summary: "Envoyer une requ\xEAte HTTP avec une authentification de base, c'est envoyer\
-  \ un nom d'utilisateur et un mot de passe cod\xE9s en base-64 dans l'en-t\xEAte\
-  \ de la requ\xEAte."
+summary: .
 title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
 weight: 45
 ---

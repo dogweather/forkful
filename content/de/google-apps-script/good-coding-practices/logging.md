@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:03.803271-07:00
-description: "Das Logging in der Programmierung beinhaltet das Erfassen von Ereignissen,\
-  \ Fehlern oder bemerkenswerten Vorkommnissen w\xE4hrend der Laufzeit. Programmierer\u2026"
+description: "Wie zu: In Google Apps Script kann das Logging mit verschiedenen Methoden\
+  \ durchgef\xFChrt werden, wie der `Logger`-Klasse und `console.log()`. Die Logger-\u2026"
 lastmod: '2024-03-13T22:44:53.341041-06:00'
 model: gpt-4-0125-preview
-summary: "Das Logging in der Programmierung beinhaltet das Erfassen von Ereignissen,\
-  \ Fehlern oder bemerkenswerten Vorkommnissen w\xE4hrend der Laufzeit."
+summary: "In Google Apps Script kann das Logging mit verschiedenen Methoden durchgef\xFC\
+  hrt werden, wie der `Logger`-Klasse und `console.log()`."
 title: Protokollierung
 weight: 17
 ---

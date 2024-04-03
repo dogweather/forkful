@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:26.296088-07:00
-description: "A interpola\xE7\xE3o de strings \xE9 um m\xE9todo para construir strings\
-  \ que incorporam vari\xE1veis, permitindo a cria\xE7\xE3o din\xE2mica de strings.\
-  \ Programadores fazem isso\u2026"
+description: "Como fazer: No Go, a interpola\xE7\xE3o de strings \xE9 comumente alcan\xE7\
+  ada usando o pacote `fmt`, particularmente com a fun\xE7\xE3o `Sprintf`, que permite\
+  \ injetar\u2026"
 lastmod: '2024-03-13T22:44:46.045541-06:00'
 model: gpt-4-0125-preview
-summary: "A interpola\xE7\xE3o de strings \xE9 um m\xE9todo para construir strings\
-  \ que incorporam vari\xE1veis, permitindo a cria\xE7\xE3o din\xE2mica de strings."
+summary: "No Go, a interpola\xE7\xE3o de strings \xE9 comumente alcan\xE7ada usando\
+  \ o pacote `fmt`, particularmente com a fun\xE7\xE3o `Sprintf`, que permite injetar\
+  \ vari\xE1veis em uma string especificando verbos de formata\xE7\xE3o."
 title: Interpolando uma String
 weight: 8
 ---

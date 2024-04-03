@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 18:00:41.912840-07:00
-description: "HTTP-Anfragen sind der Austausch von Daten \xFCber das Internet nach\
-  \ dem Client-Server-Modell. Programmierer verwenden sie, um mit Webdiensten zu\u2026"
+description: 'How to: Um in Rust eine HTTP-Anfrage zu senden, nutzen wir die `reqwest`-Bibliothek.
+  Hier ist ein einfaches Beispiel, wie man eine GET-Anfrage absendet.'
 lastmod: '2024-03-13T22:44:53.669506-06:00'
 model: gpt-4-1106-preview
-summary: "HTTP-Anfragen sind der Austausch von Daten \xFCber das Internet nach dem\
-  \ Client-Server-Modell."
+summary: Um in Rust eine HTTP-Anfrage zu senden, nutzen wir die `reqwest`-Bibliothek.
 title: Einen HTTP-Request senden
 weight: 44
 ---

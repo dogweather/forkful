@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 01:08:31.288961-07:00
-description: "Logging i programmering er som \xE5 holde en dagbok for applikasjonen\
-  \ din. Det er den systematiske opptegnelsen av hendelser, meldinger og datapunkter\
-  \ som\u2026"
+description: "Hvordan gj\xF8re det: Ruby leveres med en innebygd modul for logging,\
+  \ `Logger`, som er superenkel \xE5 bruke. Her er et kjapt eksempel for \xE5 komme\
+  \ i gang."
 lastmod: '2024-03-13T22:44:41.334800-06:00'
 model: gpt-4-1106-preview
-summary: "Logging i programmering er som \xE5 holde en dagbok for applikasjonen din."
+summary: "Ruby leveres med en innebygd modul for logging, `Logger`, som er superenkel\
+  \ \xE5 bruke."
 title: "Loggf\xF8ring"
 weight: 17
 ---

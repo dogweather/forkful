@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:52:19.930933-07:00
-description: "Imprimir sa\xEDda de debug \xE9 como espiar no funcionamento do seu\
-  \ c\xF3digo. Programadores fazem isso para entender o que est\xE1 acontecendo, encontrar\
-  \ bugs e\u2026"
+description: "Como Fazer: Vamos ver como isso funciona em Elm. Para imprimir algo\
+  \ para o console e ajudar no debug, voc\xEA pode usar a fun\xE7\xE3o `Debug.log`.\
+  \ O seu programa\u2026"
 lastmod: '2024-03-13T22:44:46.502605-06:00'
 model: gpt-4-1106-preview
-summary: "Imprimir sa\xEDda de debug \xE9 como espiar no funcionamento do seu c\xF3\
-  digo."
+summary: Vamos ver como isso funciona em Elm.
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---

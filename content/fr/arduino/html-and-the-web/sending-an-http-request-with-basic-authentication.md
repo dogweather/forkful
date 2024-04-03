@@ -1,14 +1,9 @@
 ---
 date: 2024-01-20 18:00:46.377056-07:00
-description: "Envoyer une requ\xEAte HTTP avec une authentification de base consiste\
-  \ \xE0 transmettre des informations d'identification (nom d'utilisateur et mot de\
-  \ passe)\u2026"
+description: 'Comment faire: .'
 lastmod: '2024-03-13T22:44:58.110145-06:00'
 model: gpt-4-1106-preview
-summary: "Envoyer une requ\xEAte HTTP avec une authentification de base consiste \xE0\
-  \ transmettre des informations d'identification (nom d'utilisateur et mot de passe)\
-  \ dans l\u2019en-t\xEAte de la requ\xEAte pour acc\xE9der \xE0 une ressource prot\xE9\
-  g\xE9e sur un serveur."
+summary: .
 title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
 weight: 45
 ---

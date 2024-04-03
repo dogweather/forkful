@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:59.194242-07:00
-description: "Comparer deux dates en Visual Basic pour Applications (VBA) consiste\
-  \ \xE0 d\xE9terminer leur relation chronologique l'une par rapport \xE0 l'autre.\
-  \ Les\u2026"
+description: "Comment faire : Dans VBA, les dates sont compar\xE9es en utilisant les\
+  \ op\xE9rateurs de comparaison standards (`<`, `>`, `=`, `<=`, `>=`). Avant de comparer,\
+  \ il\u2026"
 lastmod: '2024-03-13T22:44:57.594636-06:00'
 model: gpt-4-0125-preview
-summary: "Comparer deux dates en Visual Basic pour Applications (VBA) consiste \xE0\
-  \ d\xE9terminer leur relation chronologique l'une par rapport \xE0 l'autre."
+summary: "Dans VBA, les dates sont compar\xE9es en utilisant les op\xE9rateurs de\
+  \ comparaison standards (`<`, `>`, `=`, `<=`, `>=`)."
 title: Comparer deux dates
 weight: 27
 ---

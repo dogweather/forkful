@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:58.148648-07:00
-description: "Testing i Ruby handler om \xE5 verifisere at koden din oppf\xF8rer seg\
-  \ som forventet under ulike forhold. Programmerere skriver tester for \xE5 sikre\
-  \ korrekthet,\u2026"
+description: "Hvordan: Ruby kommer med et innebygget bibliotek kalt `Test::Unit` for\
+  \ \xE5 skrive enhetstester, som inkapsulerer testingpraksiser innenfor greie strukturer.\u2026"
 lastmod: '2024-03-13T22:44:41.331866-06:00'
 model: gpt-4-0125-preview
-summary: "Testing i Ruby handler om \xE5 verifisere at koden din oppf\xF8rer seg som\
-  \ forventet under ulike forhold."
+summary: "Ruby kommer med et innebygget bibliotek kalt `Test::Unit` for \xE5 skrive\
+  \ enhetstester, som inkapsulerer testingpraksiser innenfor greie strukturer."
 title: Skrive tester
 weight: 36
 ---

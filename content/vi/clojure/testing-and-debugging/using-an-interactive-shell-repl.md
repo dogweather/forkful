@@ -2,16 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:33.866291-07:00
-description: "REPL, hay V\xF2ng l\u1EB7p \u0110\u1ECDc-\u0110\xE1nh gi\xE1-In, l\xE0\
-  \ m\u1ED9t m\xF4i tr\u01B0\u1EDDng l\u1EADp tr\xECnh cho ph\xE9p th\u1EED nghi\u1EC7\
-  m \u0111\u1ED9ng t\u1EEBng \u0111o\u1EA1n m\xE3 Clojure m\u1ED9t c\xE1ch \u0111\u01A1\
-  n l\u1EBB. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: B\u1EAFt \u0111\u1EA7u b\u1EB1ng c\xE1\
+  ch kh\u1EDFi ch\u1EA1y REPL."
 lastmod: '2024-03-13T22:44:36.155374-06:00'
 model: gpt-4-0125-preview
-summary: "REPL, hay V\xF2ng l\u1EB7p \u0110\u1ECDc-\u0110\xE1nh gi\xE1-In, l\xE0 m\u1ED9\
-  t m\xF4i tr\u01B0\u1EDDng l\u1EADp tr\xECnh cho ph\xE9p th\u1EED nghi\u1EC7m \u0111\
-  \u1ED9ng t\u1EEBng \u0111o\u1EA1n m\xE3 Clojure m\u1ED9t c\xE1ch \u0111\u01A1n l\u1EBB\
-  ."
+summary: "B\u1EAFt \u0111\u1EA7u b\u1EB1ng c\xE1ch kh\u1EDFi ch\u1EA1y REPL."
 title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 weight: 34
 ---

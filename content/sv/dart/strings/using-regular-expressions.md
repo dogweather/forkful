@@ -2,14 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:06.117248-07:00
-description: "Regulj\xE4ra uttryck (regex) i Dart erbjuder ett kraftfullt s\xE4tt\
-  \ att s\xF6ka och manipulera str\xE4ngar, vilket m\xF6jligg\xF6r f\xF6r programmerare\
-  \ att utf\xF6ra komplex\u2026"
+description: "Hur: Dart anv\xE4nder klassen `RegExp` f\xF6r regulj\xE4ra uttryck.\
+  \ H\xE4r \xE4r ett grundl\xE4ggande exempel f\xF6r att matcha ett enkelt m\xF6nster\
+  \ inom en str\xE4ng."
 lastmod: '2024-03-13T22:44:37.600711-06:00'
 model: gpt-4-0125-preview
-summary: "Regulj\xE4ra uttryck (regex) i Dart erbjuder ett kraftfullt s\xE4tt att\
-  \ s\xF6ka och manipulera str\xE4ngar, vilket m\xF6jligg\xF6r f\xF6r programmerare\
-  \ att utf\xF6ra komplex textbearbetning effektivt."
+summary: "Dart anv\xE4nder klassen `RegExp` f\xF6r regulj\xE4ra uttryck."
 title: "Anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---

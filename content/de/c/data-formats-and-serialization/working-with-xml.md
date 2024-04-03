@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:02.771376-07:00
-description: "Die Arbeit mit XML in C umfasst das Parsen, Abfragen und Manipulieren\
-  \ von XML-Dokumenten unter Verwendung verschiedener Bibliotheken. Programmierer\u2026"
+description: "Wie: C unterst\xFCtzt XML nicht eingebaut, daher m\xFCssen externe Bibliotheken\
+  \ verwendet werden. Eine beliebte Wahl ist `libxml2`, eine stabile und\u2026"
 lastmod: '2024-03-13T22:44:54.380082-06:00'
 model: gpt-4-0125-preview
-summary: Die Arbeit mit XML in C umfasst das Parsen, Abfragen und Manipulieren von
-  XML-Dokumenten unter Verwendung verschiedener Bibliotheken.
+summary: "C unterst\xFCtzt XML nicht eingebaut, daher m\xFCssen externe Bibliotheken\
+  \ verwendet werden."
 title: Arbeiten mit XML
 weight: 40
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:21.512292-07:00
-description: "Inviare una richiesta HTTP con autenticazione di base comporta la codifica\
-  \ di un nome utente e di una password in un'intestazione di richiesta per\u2026"
+description: "Come fare: In Google Apps Script, per inviare una richiesta HTTP con\
+  \ autenticazione di base, si utilizza il servizio `UrlFetchApp` combinato con\u2026"
 lastmod: '2024-03-13T22:44:42.954702-06:00'
 model: gpt-4-0125-preview
-summary: Inviare una richiesta HTTP con autenticazione di base comporta la codifica
-  di un nome utente e di una password in un'intestazione di richiesta per accedere
-  a risorse protette.
+summary: In Google Apps Script, per inviare una richiesta HTTP con autenticazione
+  di base, si utilizza il servizio `UrlFetchApp` combinato con un'intestazione di
+  autorizzazione codificata in base64.
 title: Inviare una richiesta HTTP con autenticazione di base
 weight: 45
 ---

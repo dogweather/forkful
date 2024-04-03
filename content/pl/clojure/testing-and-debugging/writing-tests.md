@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:02.336315-07:00
-description: "Pisanie test\xF3w w Clojure, podobnie jak w innych j\u0119zykach programowania,\
-  \ polega na tworzeniu dedykowanego kodu, kt\xF3ry weryfikuje, czy g\u0142\xF3wna\
-  \ baza kodu\u2026"
+description: "Jak to zrobi\u0107: Clojure, wykorzystuj\u0105c JVM, obs\u0142uguje\
+  \ r\xF3\u017Cne frameworki do testowania. Jednak powszechnie u\u017Cywan\u0105 wbudowan\u0105\
+  \ bibliotek\u0105 jest `clojure.test`.\u2026"
 lastmod: '2024-03-13T22:44:34.999149-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie test\xF3w w Clojure, podobnie jak w innych j\u0119zykach programowania,\
-  \ polega na tworzeniu dedykowanego kodu, kt\xF3ry weryfikuje, czy g\u0142\xF3wna\
-  \ baza kodu dzia\u0142a zgodnie z oczekiwaniami."
+summary: "Clojure, wykorzystuj\u0105c JVM, obs\u0142uguje r\xF3\u017Cne frameworki\
+  \ do testowania."
 title: "Pisanie test\xF3w"
 weight: 36
 ---

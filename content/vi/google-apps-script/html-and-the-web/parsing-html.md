@@ -2,17 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:26.125573-07:00
-description: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML trong Google Apps Script bao g\u1ED3\
-  m vi\u1EC7c tr\xEDch xu\u1EA5t d\u1EEF li\u1EC7u t\u1EEB n\u1ED9i dung HTML, \u0111\
-  i\u1EC1u n\xE0y \u0111\u1EB7c bi\u1EC7t h\u1EEFu \xEDch khi t\u01B0\u01A1ng t\xE1\
-  c v\u1EDBi c\xE1c trang\u2026"
+description: "L\xE0m sao: Google Apps Script kh\xF4ng c\xF3 ph\u01B0\u01A1ng th\u1EE9\
+  c s\u1EB5n c\xF3 \u0111\u1EC3 ph\xE2n t\xEDch c\xFA ph\xE1p HTML. Tuy nhi\xEAn,\
+  \ b\u1EA1n c\xF3 th\u1EC3 t\u1EADn d\u1EE5ng d\u1ECBch v\u1EE5 `UrlFetchApp` \u0111\
+  \u1EC3 l\u1EA5y n\u1ED9i dung\u2026"
 lastmod: '2024-03-13T22:44:36.036979-06:00'
 model: gpt-4-0125-preview
-summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML trong Google Apps Script bao g\u1ED3\
-  m vi\u1EC7c tr\xEDch xu\u1EA5t d\u1EEF li\u1EC7u t\u1EEB n\u1ED9i dung HTML, \u0111\
-  i\u1EC1u n\xE0y \u0111\u1EB7c bi\u1EC7t h\u1EEFu \xEDch khi t\u01B0\u01A1ng t\xE1\
-  c v\u1EDBi c\xE1c trang web ho\u1EB7c ngu\u1ED3n d\u1EEF li\u1EC7u d\u1EF1a tr\xEA\
-  n web."
+summary: "Google Apps Script kh\xF4ng c\xF3 ph\u01B0\u01A1ng th\u1EE9c s\u1EB5n c\xF3\
+  \ \u0111\u1EC3 ph\xE2n t\xEDch c\xFA ph\xE1p HTML."
 title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---

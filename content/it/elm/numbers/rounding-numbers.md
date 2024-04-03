@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 03:44:00.434283-07:00
-description: "Arrotondare i numeri significa modificare un decimale al valore intero\
-  \ pi\xF9 vicino o ad un numero specificato di cifre decimali. I programmatori\u2026"
+description: 'Come fare: Il modulo `Basics` di Elm fornisce funzioni utili per l''arrotondamento:
+  `round`, `floor` e `ceiling`. Ecco come utilizzarle.'
 lastmod: '2024-03-13T22:44:43.345067-06:00'
 model: gpt-4-0125-preview
-summary: "Arrotondare i numeri significa modificare un decimale al valore intero pi\xF9\
-  \ vicino o ad un numero specificato di cifre decimali."
+summary: Il modulo `Basics` di Elm fornisce funzioni utili per l'arrotondamento.
 title: Arrotondamento dei numeri
 weight: 13
 ---

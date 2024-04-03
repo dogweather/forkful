@@ -2,14 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:39.849102-07:00
-description: "Das Ausgeben von Debug-Informationen in Dart bezieht sich darauf, Informationen\
-  \ w\xE4hrend der Laufzeit in der Konsole anzuzeigen, was Entwicklern\u2026"
+description: "Wie: In Dart k\xF6nnen Sie Debug-Ausgaben mit der `print()`-Funktion\
+  \ ausgeben. Hier erfahren Sie, wie Sie einfache Nachrichten und Variablenwerte ausgeben."
 lastmod: '2024-03-13T22:44:53.583890-06:00'
 model: gpt-4-0125-preview
-summary: "Das Ausgeben von Debug-Informationen in Dart bezieht sich darauf, Informationen\
-  \ w\xE4hrend der Laufzeit in der Konsole anzuzeigen, was Entwicklern erm\xF6glicht,\
-  \ den Ablauf der Ausf\xFChrung zu verfolgen, den Zustand von Variablen zu untersuchen\
-  \ oder die Quelle von Fehlern zu identifizieren."
+summary: "In Dart k\xF6nnen Sie Debug-Ausgaben mit der `print()`-Funktion ausgeben."
 title: Debug-Ausgabe drucken
 weight: 33
 ---

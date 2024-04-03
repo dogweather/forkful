@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:50.370614-07:00
-description: "Parsowanie HTML-a polega na analizowaniu kodu HTML strony internetowej\
-  \ w celu wyodr\u0119bnienia okre\u015Blonych informacji lub element\xF3w, co jest\
-  \ powszechnym\u2026"
+description: "Jak to zrobi\u0107: Python oferuje pot\u0119\u017Cne biblioteki takie\
+  \ jak BeautifulSoup i requests do web scrapingu i parsowania HTML-a. Aby zacz\u0105\
+  \u0107, musisz zainstalowa\u0107\u2026"
 lastmod: '2024-03-13T22:44:34.947229-06:00'
 model: gpt-4-0125-preview
-summary: "Parsowanie HTML-a polega na analizowaniu kodu HTML strony internetowej w\
-  \ celu wyodr\u0119bnienia okre\u015Blonych informacji lub element\xF3w, co jest\
-  \ powszechnym zadaniem przy web scrapingu, wydobywaniu danych lub automatyzowaniu\
-  \ interakcji ze stronami internetowymi."
+summary: "Python oferuje pot\u0119\u017Cne biblioteki takie jak BeautifulSoup i requests\
+  \ do web scrapingu i parsowania HTML-a."
 title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---

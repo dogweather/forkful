@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:44.356476-07:00
-description: "Reguliere expressies, of regex, zijn patronen die gebruikt worden om\
-  \ combinaties van karakters in strings te matchen. Programmeurs gebruiken ze voor\
+description: "Hoe? In Swift gebruik je de `NSRegularExpression` klasse om met regex\
+  \ om te gaan. Je definieert een patroon, maakt een regex-object aan en gebruikt\
   \ het\u2026"
 lastmod: '2024-03-13T22:44:51.146289-06:00'
 model: gpt-4-0125-preview
-summary: Reguliere expressies, of regex, zijn patronen die gebruikt worden om combinaties
-  van karakters in strings te matchen.
+summary: In Swift gebruik je de `NSRegularExpression` klasse om met regex om te gaan.
 title: Reguliere expressies gebruiken
 weight: 11
 ---

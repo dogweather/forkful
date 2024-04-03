@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:48.311137-07:00
-description: "Escrever no erro padr\xE3o (stderr) trata de enviar mensagens de erro\
-  \ e diagn\xF3sticos para um fluxo separado, distinto da sa\xEDda padr\xE3o (stdout),\
-  \ o que permite\u2026"
+description: "Como fazer: Em Kotlin, escrever no stderr pode ser alcan\xE7ado usando\
+  \ `System.err.println()`. Este m\xE9todo \xE9 similar a `System.out.println()`,\
+  \ mas direciona\u2026"
 lastmod: '2024-03-13T22:44:46.558378-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever no erro padr\xE3o (stderr) trata de enviar mensagens de erro e\
-  \ diagn\xF3sticos para um fluxo separado, distinto da sa\xEDda padr\xE3o (stdout),\
-  \ o que permite um melhor manejo de erros e an\xE1lise de logs."
+summary: "Em Kotlin, escrever no stderr pode ser alcan\xE7ado usando `System.err.println()`."
 title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---

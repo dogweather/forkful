@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:17.848297-07:00
-description: "\xC5 konvertere en streng til sm\xE5 bokstaver inneb\xE6rer \xE5 transformere\
-  \ alle store bokstaver i en streng til deres sm\xE5 bokstav-ekvivalenter. Denne\
-  \ prosessen er\u2026"
+description: "Hvordan: I Visual Basic for Applications (VBA) er konvertering av en\
+  \ streng til sm\xE5 bokstaver enkel ved bruk av `LCase`-funksjonen. Denne funksjonen\
+  \ tar\u2026"
 lastmod: '2024-03-13T22:44:40.604007-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 konvertere en streng til sm\xE5 bokstaver inneb\xE6rer \xE5 transformere\
-  \ alle store bokstaver i en streng til deres sm\xE5 bokstav-ekvivalenter."
+summary: "I Visual Basic for Applications (VBA) er konvertering av en streng til sm\xE5\
+  \ bokstaver enkel ved bruk av `LCase`-funksjonen."
 title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---

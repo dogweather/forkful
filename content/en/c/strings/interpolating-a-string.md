@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 17:50:04.452212-07:00
-description: "String interpolation, in programming, involves the construction of strings\
-  \ by embedding expressions within literal strings. Programmers do this to create\u2026"
+description: "How to: C, unlike some high-level languages, does not support string\
+  \ interpolation directly in its syntax. Instead, string construction with variable\u2026"
 lastmod: '2024-03-13T22:45:00.499238-06:00'
 model: gpt-4-0125-preview
-summary: String interpolation, in programming, involves the construction of strings
-  by embedding expressions within literal strings.
+summary: C, unlike some high-level languages, does not support string interpolation
+  directly in its syntax.
 title: Interpolating a string
 weight: 8
 ---

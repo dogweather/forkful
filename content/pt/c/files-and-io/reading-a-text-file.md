@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:09.066272-07:00
-description: "Ler um arquivo de texto em C envolve abrir um arquivo no seu sistema\
-  \ para extrair informa\xE7\xF5es e manipul\xE1-las ou exibi-las conforme necess\xE1\
-  rio.\u2026"
+description: "Como: Para come\xE7ar a ler um arquivo de texto em C, voc\xEA trabalha\
+  \ principalmente com as fun\xE7\xF5es `fopen()`, `fgets()`, e `fclose()` da biblioteca\
+  \ padr\xE3o de\u2026"
 lastmod: '2024-03-13T22:44:47.068827-06:00'
 model: gpt-4-0125-preview
-summary: "Ler um arquivo de texto em C envolve abrir um arquivo no seu sistema para\
-  \ extrair informa\xE7\xF5es e manipul\xE1-las ou exibi-las conforme necess\xE1rio."
+summary: "Para come\xE7ar a ler um arquivo de texto em C, voc\xEA trabalha principalmente\
+  \ com as fun\xE7\xF5es `fopen()`, `fgets()`, e `fclose()` da biblioteca padr\xE3\
+  o de E/S."
 title: Lendo um arquivo de texto
 weight: 22
 ---

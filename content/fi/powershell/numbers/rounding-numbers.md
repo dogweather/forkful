@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:46:20.050592-07:00
-description: "Numeroiden py\xF6rist\xE4minen tarkoittaa arvon s\xE4\xE4t\xE4mist\xE4\
-  \ l\xE4himp\xE4\xE4n kokonaislukuun tai m\xE4\xE4riteltyyn desimaalipaikkaan. Ohjelmoijat\
-  \ py\xF6rist\xE4v\xE4t numeroita\u2026"
+description: "Kuinka: PowerShellissa on muutama k\xE4tev\xE4 cmdlet ja menetelm\xE4\
+  \ numeroiden py\xF6rist\xE4miseen: - `Round()` -metodi Math-luokasta."
 lastmod: '2024-03-13T22:44:56.775075-06:00'
 model: gpt-4-0125-preview
-summary: "Numeroiden py\xF6rist\xE4minen tarkoittaa arvon s\xE4\xE4t\xE4mist\xE4 l\xE4\
-  himp\xE4\xE4n kokonaislukuun tai m\xE4\xE4riteltyyn desimaalipaikkaan."
+summary: "PowerShellissa on muutama k\xE4tev\xE4 cmdlet ja menetelm\xE4 numeroiden\
+  \ py\xF6rist\xE4miseen."
 title: "Numerojen py\xF6rist\xE4minen"
 weight: 13
 ---

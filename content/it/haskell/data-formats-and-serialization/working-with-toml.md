@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:23:01.378838-07:00
-description: "Lavorare con TOML comporta l'analisi e la generazione di dati TOML (Tom's\
-  \ Obvious, Minimal Language) con Haskell. I programmatori lo fanno per gestire\u2026"
+description: "Come fare: Prima di tutto, assicurati di avere una libreria per l'analisi\
+  \ TOML. Per Haskell, `htoml` \xE8 una scelta popolare. Dovrai aggiungerla alle\u2026"
 lastmod: '2024-03-13T22:44:43.498874-06:00'
 model: gpt-4-0125-preview
-summary: Lavorare con TOML comporta l'analisi e la generazione di dati TOML (Tom's
-  Obvious, Minimal Language) con Haskell.
+summary: Prima di tutto, assicurati di avere una libreria per l'analisi TOML.
 title: Lavorare con TOML
 weight: 39
 ---

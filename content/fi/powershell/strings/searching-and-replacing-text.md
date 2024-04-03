@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:58:21.589017-07:00
-description: "Tekstin etsiminen ja korvaaminen on tapa bongata tietyt merkkijonot\
-  \ ja vaihtaa ne toisiin. Koodarit tekev\xE4t t\xE4t\xE4 automatisoidakseen tyls\xE4\
-  t ja virhealttiit\u2026"
+description: "How to - N\xE4in se tehd\xE4\xE4n Voit etsi\xE4 ja korvata teksti\xE4\
+  \ PowerShellissa k\xE4ytt\xE4m\xE4ll\xE4 `-replace` operaattoria."
 lastmod: '2024-03-13T22:44:56.765875-06:00'
 model: gpt-4-1106-preview
-summary: Tekstin etsiminen ja korvaaminen on tapa bongata tietyt merkkijonot ja vaihtaa
-  ne toisiin.
+summary: "Voit etsi\xE4 ja korvata teksti\xE4 PowerShellissa k\xE4ytt\xE4m\xE4ll\xE4\
+  \ `-replace` operaattoria."
 title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---

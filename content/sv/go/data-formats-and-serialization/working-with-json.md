@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:12:11.366892-07:00
-description: "Att arbeta med JSON (JavaScript Object Notation) i Go inneb\xE4r att\
-  \ koda om och avkoda data mellan Go datastrukturer och JSON-format. Denna uppgift\
-  \ \xE4r\u2026"
+description: "Hur man g\xF6r: I Go \xE4r paketet `encoding/json` din ing\xE5ng till\
+  \ manipulation av JSON, och tillhandah\xE5ller mekanismer f\xF6r att konvertera\
+  \ Go-datastrukturer\u2026"
 lastmod: '2024-03-13T22:44:37.415150-06:00'
 model: gpt-4-0125-preview
-summary: "Att arbeta med JSON (JavaScript Object Notation) i Go inneb\xE4r att koda\
-  \ om och avkoda data mellan Go datastrukturer och JSON-format."
+summary: "I Go \xE4r paketet `encoding/json` din ing\xE5ng till manipulation av JSON,\
+  \ och tillhandah\xE5ller mekanismer f\xF6r att konvertera Go-datastrukturer till\
+  \ JSON (marshalling) och tillbaka (unmarshalling)."
 title: Att Arbeta med JSON
 weight: 38
 ---

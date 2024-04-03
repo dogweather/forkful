@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:39.842263-07:00
-description: "Comparer deux dates en programmation est une t\xE2che fondamentale permettant\
-  \ aux d\xE9veloppeurs d'\xE9valuer la relation chronologique entre les dates. Ces\u2026"
+description: "Comment faire : En Go, les dates sont principalement manipul\xE9es avec\
+  \ le type `time.Time` du package `time`. Pour comparer deux dates, nous pouvons\u2026"
 lastmod: '2024-03-13T22:44:57.147884-06:00'
 model: gpt-4-0125-preview
-summary: "Comparer deux dates en programmation est une t\xE2che fondamentale permettant\
-  \ aux d\xE9veloppeurs d'\xE9valuer la relation chronologique entre les dates."
+summary: "En Go, les dates sont principalement manipul\xE9es avec le type `time.Time`\
+  \ du package `time`."
 title: Comparer deux dates
 weight: 27
 ---

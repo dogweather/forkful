@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:25.576066-07:00
-description: "Att skriva tester i TypeScript inneb\xE4r att man skapar automatiska\
-  \ skript f\xF6r att verifiera funktionaliteten och korrektheten i koden. Programmerare\
-  \ g\xF6r\u2026"
+description: "Hur man g\xF6r: TypeScript fungerar harmoniskt med de flesta JavaScript-testningsramverk.\
+  \ F\xF6r demonstrations\xE4ndam\xE5l kommer vi att anv\xE4nda Jest, ett popul\xE4\
+  rt\u2026"
 lastmod: '2024-03-13T22:44:37.659615-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva tester i TypeScript inneb\xE4r att man skapar automatiska skript\
-  \ f\xF6r att verifiera funktionaliteten och korrektheten i koden."
+summary: TypeScript fungerar harmoniskt med de flesta JavaScript-testningsramverk.
 title: Skriva tester
 weight: 36
 ---

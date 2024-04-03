@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:00.046372-07:00
-description: "\xC5 fjerne anf\xF8rselstegn fra en streng i VBA involverer \xE5 strippe\
-  \ ut forekomster av enkle (`'`) eller doble (`\"`) anf\xF8rselstegn som kan innkapsle\
-  \ eller v\xE6re\u2026"
+description: "Hvordan: I VBA er det flere tiln\xE6rminger for \xE5 fjerne anf\xF8\
+  rselstegn fra en streng. Her er et enkelt eksempel ved bruk av `Replace`-funksjonen,\
+  \ som s\xF8ker\u2026"
 lastmod: '2024-03-13T22:44:40.605078-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 fjerne anf\xF8rselstegn fra en streng i VBA involverer \xE5 strippe\
-  \ ut forekomster av enkle (`'`) eller doble (`\"`) anf\xF8rselstegn som kan innkapsle\
-  \ eller v\xE6re innebygd i strengen."
+summary: "I VBA er det flere tiln\xE6rminger for \xE5 fjerne anf\xF8rselstegn fra\
+  \ en streng."
 title: Fjerne sitatmerker fra en streng
 weight: 9
 ---

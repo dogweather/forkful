@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:58:38.523987-07:00
-description: "Suchen und Ersetzen von Text ist ein Standardvorgang, bei dem Zeichenfolgen\
-  \ in Daten durch andere ersetzt werden. Programmierer greifen darauf zur\xFCck,\
-  \ um\u2026"
+description: 'So geht''s: Hier sind einfache Beispiele, wie Sie Text in Python suchen
+  und ersetzen.'
 lastmod: '2024-03-13T22:44:53.363390-06:00'
 model: gpt-4-1106-preview
-summary: Suchen und Ersetzen von Text ist ein Standardvorgang, bei dem Zeichenfolgen
-  in Daten durch andere ersetzt werden.
+summary: Hier sind einfache Beispiele, wie Sie Text in Python suchen und ersetzen.
 title: Suchen und Ersetzen von Text
 weight: 10
 ---

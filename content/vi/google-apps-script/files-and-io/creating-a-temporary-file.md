@@ -2,17 +2,17 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:23.587696-07:00
-description: "Vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi trong Google\
-  \ Apps Script bao g\u1ED3m vi\u1EC7c sinh ra m\u1ED9t t\u1EC7p d\u1EF1 \u0111\u1ECB\
-  nh cho vi\u1EC7c s\u1EED d\u1EE5ng trong ng\u1EAFn h\u1EA1n, th\u01B0\u1EDDng l\xE0\
-  \ cho vi\u1EC7c x\u1EED l\xFD d\u1EEF li\u1EC7u\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong Google Apps Script, vi\u1EC7c t\u1EA1\
+  o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi c\xF3 th\u1EC3 \u0111\u01B0\u1EE3c th\u1EF1\
+  c hi\u1EC7n s\u1EED d\u1EE5ng d\u1ECBch v\u1EE5 DriveApp, n\xF3 cung c\u1EA5p m\u1ED9\
+  t ph\u01B0\u01A1ng ph\xE1p tr\u1EF1c ti\u1EBFp\u2026"
 lastmod: '2024-03-13T22:44:36.066712-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi trong Google Apps\
-  \ Script bao g\u1ED3m vi\u1EC7c sinh ra m\u1ED9t t\u1EC7p d\u1EF1 \u0111\u1ECBnh\
-  \ cho vi\u1EC7c s\u1EED d\u1EE5ng trong ng\u1EAFn h\u1EA1n, th\u01B0\u1EDDng l\xE0\
-  \ cho vi\u1EC7c x\u1EED l\xFD d\u1EEF li\u1EC7u trung gian, g\u1EE1 l\u1ED7i, ho\u1EB7\
-  c m\u1EE5c \u0111\xEDch cache."
+summary: "Trong Google Apps Script, vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m\
+  \ th\u1EDDi c\xF3 th\u1EC3 \u0111\u01B0\u1EE3c th\u1EF1c hi\u1EC7n s\u1EED d\u1EE5\
+  ng d\u1ECBch v\u1EE5 DriveApp, n\xF3 cung c\u1EA5p m\u1ED9t ph\u01B0\u01A1ng ph\xE1\
+  p tr\u1EF1c ti\u1EBFp \u0111\u1EC3 t\u1EA1o, \u0111\u1ECDc v\xE0 x\xF3a t\u1EC7\
+  p trong Google Drive."
 title: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi"
 weight: 21
 ---

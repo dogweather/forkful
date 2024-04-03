@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:56.221120-07:00
-description: "Vi\u1EC7c vi\u1EBFt v\xE0o l\u1ED7i chu\u1EA9n (`stderr`) g\u1EEDi th\xF4\
-  ng \u0111i\u1EC7p l\u1ED7i v\xE0 ch\u1EA9n \u0111o\xE1n ri\xEAng bi\u1EC7t kh\u1ECF\
-  i \u0111\u1EA7u ra chu\u1EA9n (`stdout`). L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111\
-  i\u1EC1u n\xE0y \u0111\u1EC3 g\u1EE1 l\u1ED7i v\xE0 ghi\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong TypeScript, b\u1EA1n c\xF3 th\u1EC3 vi\u1EBF\
+  t v\xE0o `stderr` s\u1EED d\u1EE5ng `console.error` ho\u1EB7c `process.stderr.write`.\
+  \ D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\u1EA3 hai \u0111ang ho\u1EA1t \u0111\u1ED9\
+  ng."
 lastmod: '2024-03-13T22:44:36.341111-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c vi\u1EBFt v\xE0o l\u1ED7i chu\u1EA9n (`stderr`) g\u1EEDi th\xF4\
-  ng \u0111i\u1EC7p l\u1ED7i v\xE0 ch\u1EA9n \u0111o\xE1n ri\xEAng bi\u1EC7t kh\u1ECF\
-  i \u0111\u1EA7u ra chu\u1EA9n (`stdout`)."
+summary: "Trong TypeScript, b\u1EA1n c\xF3 th\u1EC3 vi\u1EBFt v\xE0o `stderr` s\u1EED\
+  \ d\u1EE5ng `console.error` ho\u1EB7c `process.stderr.write`."
 title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---

@@ -1,8 +1,7 @@
 ---
 date: 2024-01-26 04:10:01.993126-07:00
-description: "Rust prend en charge divers d\xE9bogueurs, mais un courant est `gdb`\
-  \ pour GNU/Linux ou `lldb` pour macOS. Vous pourriez \xE9galement utiliser `rust-gdb`\
-  \ ou\u2026"
+description: "Comment faire : Rust prend en charge divers d\xE9bogueurs, mais un courant\
+  \ est `gdb` pour GNU/Linux ou `lldb` pour macOS. Vous pourriez \xE9galement utiliser\u2026"
 lastmod: '2024-03-13T22:44:57.486607-06:00'
 model: gpt-4-0125-preview
 summary: "Rust prend en charge divers d\xE9bogueurs, mais un courant est `gdb` pour\

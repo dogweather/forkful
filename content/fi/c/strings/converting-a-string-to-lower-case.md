@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:37.060230-07:00
-description: "Merkkijonon muuntaminen pieniksi kirjaimiksi C-kieless\xE4 sis\xE4lt\xE4\
-  \xE4 sen, ett\xE4 kaikki annetun merkkijonon isot kirjaimet muunnetaan vastaaviksi\
-  \ pieniksi\u2026"
+description: "Kuinka: C:ss\xE4 ei ole sis\xE4\xE4nrakennettua funktiota merkkijonon\
+  \ muuntamiseksi suoraan pieniksi kirjaimiksi, toisin kuin jotkut korkean tason kielet.\
+  \ T\xE4m\xE4\u2026"
 lastmod: '2024-03-13T22:44:57.024975-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonon muuntaminen pieniksi kirjaimiksi C-kieless\xE4 sis\xE4lt\xE4\
-  \xE4 sen, ett\xE4 kaikki annetun merkkijonon isot kirjaimet muunnetaan vastaaviksi\
-  \ pieniksi kirjaimiksi."
+summary: "C:ss\xE4 ei ole sis\xE4\xE4nrakennettua funktiota merkkijonon muuntamiseksi\
+  \ suoraan pieniksi kirjaimiksi, toisin kuin jotkut korkean tason kielet."
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---

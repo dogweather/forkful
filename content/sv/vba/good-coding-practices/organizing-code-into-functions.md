@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:41.696549-07:00
-description: "Att organisera kod i funktioner i Visual Basic for Applications (VBA)\
-  \ inneb\xE4r att man bryter ner ett program i mindre, hanterbara delar k\xE4nda\
-  \ som\u2026"
+description: "Hur man g\xF6r: I VBA definieras funktioner med hj\xE4lp av uttrycken\
+  \ `Function` och `End Function`. H\xE4r \xE4r ett enkelt exempel p\xE5 hur man skapar\
+  \ en funktion som\u2026"
 lastmod: '2024-03-13T22:44:37.749139-06:00'
 model: gpt-4-0125-preview
-summary: "Att organisera kod i funktioner i Visual Basic for Applications (VBA) inneb\xE4\
-  r att man bryter ner ett program i mindre, hanterbara delar k\xE4nda som funktioner."
+summary: "I VBA definieras funktioner med hj\xE4lp av uttrycken `Function` och `End\
+  \ Function`."
 title: Att organisera kod i funktioner
 weight: 18
 ---

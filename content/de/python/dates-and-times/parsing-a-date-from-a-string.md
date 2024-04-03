@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:52.591364-07:00
-description: "Das Parsen eines Datums aus einem String beinhaltet das Umwandeln von\
-  \ textuellen Datum- und Zeitinformationen in ein datetime-Objekt oder ein \xE4quivalentes\u2026"
+description: "Wie geht das: Die Standardbibliothek von Python stellt das `datetime`\
+  \ Modul bereit, welches die `strptime` Methode f\xFCr diesen Zweck beinhaltet. Die\u2026"
 lastmod: '2024-03-13T22:44:53.388320-06:00'
 model: gpt-4-0125-preview
-summary: "Das Parsen eines Datums aus einem String beinhaltet das Umwandeln von textuellen\
-  \ Datum- und Zeitinformationen in ein datetime-Objekt oder ein \xE4quivalentes strukturiertes\
-  \ Format."
+summary: "Die Standardbibliothek von Python stellt das `datetime` Modul bereit, welches\
+  \ die `strptime` Methode f\xFCr diesen Zweck beinhaltet."
 title: Einen Datum aus einem String analysieren
 weight: 30
 ---

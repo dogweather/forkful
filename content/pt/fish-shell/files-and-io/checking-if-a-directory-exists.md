@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:14.988558-07:00
-description: "Verificar se um diret\xF3rio existe no Fish Shell permite que scripts\
-  \ tomem decis\xF5es com base na presen\xE7a ou aus\xEAncia de estruturas de diret\xF3\
-  rios,\u2026"
+description: "Como fazer: O Fish Shell utiliza o comando `test` para verificar tipos\
+  \ de arquivos e caracter\xEDsticas, incluindo se um alvo \xE9 um diret\xF3rio. Aqui\
+  \ est\xE1 um\u2026"
 lastmod: '2024-03-13T22:44:47.020101-06:00'
 model: gpt-4-0125-preview
-summary: "Verificar se um diret\xF3rio existe no Fish Shell permite que scripts tomem\
-  \ decis\xF5es com base na presen\xE7a ou aus\xEAncia de estruturas de diret\xF3\
-  rios, possibilitando tarefas como opera\xE7\xF5es condicionais de arquivos, registro\
-  \ em logs ou configura\xE7\xE3o do ambiente."
+summary: "O Fish Shell utiliza o comando `test` para verificar tipos de arquivos e\
+  \ caracter\xEDsticas, incluindo se um alvo \xE9 um diret\xF3rio."
 title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:03:32.163002-07:00
-description: "Writing tests in PowerShell involves creating scripts that automatically\
-  \ validate the functionality of your PowerShell code, ensuring it behaves as\u2026"
+description: "How to: PowerShell does not have a built-in testing framework, but Pester,\
+  \ a popular third-party module, is widely used for writing and running tests.\u2026"
 lastmod: '2024-03-13T22:45:00.287251-06:00'
 model: gpt-4-0125-preview
-summary: Writing tests in PowerShell involves creating scripts that automatically
-  validate the functionality of your PowerShell code, ensuring it behaves as expected.
+summary: PowerShell does not have a built-in testing framework, but Pester, a popular
+  third-party module, is widely used for writing and running tests.
 title: Writing tests
 weight: 36
 ---

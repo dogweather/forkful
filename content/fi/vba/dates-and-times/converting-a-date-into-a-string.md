@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:17.894171-07:00
-description: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi Visual Basic for\
-  \ Applications (VBA) -ohjelmointikieless\xE4 on prosessi, jossa p\xE4iv\xE4m\xE4\
-  \xE4r\xE4n datatyyppi muutetaan\u2026"
+description: "Kuinka: VBA:ssa `Format`-funktio on go-to-ratkaisusi p\xE4iv\xE4m\xE4\
+  \xE4rien muuntamiseksi merkkijonoiksi. Se mahdollistaa tarkan p\xE4iv\xE4m\xE4\xE4\
+  r\xE4muodon m\xE4\xE4ritt\xE4misen\u2026"
 lastmod: '2024-03-13T22:44:56.413165-06:00'
 model: gpt-4-0125-preview
-summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi Visual Basic for Applications\
-  \ (VBA) -ohjelmointikieless\xE4 on prosessi, jossa p\xE4iv\xE4m\xE4\xE4r\xE4n datatyyppi\
-  \ muutetaan merkkijonomuotoon."
+summary: "VBA:ssa `Format`-funktio on go-to-ratkaisusi p\xE4iv\xE4m\xE4\xE4rien muuntamiseksi\
+  \ merkkijonoiksi."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---

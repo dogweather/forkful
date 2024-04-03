@@ -3,15 +3,13 @@ changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 - 2024-02-05, dogweather, reviewed and corrected
 date: 2024-02-03 19:09:30.203696-07:00
-description: "Pobieranie bie\u017C\u0105cej daty w Elixirze wi\u0105\u017Ce si\u0119\
-  \ z dost\u0119pem do informacji o dacie i czasie systemu, co jest cz\u0119stym zadaniem\
-  \ przy logowaniu, znakowaniu\u2026"
+description: "Jak to zrobi\u0107: Standardowa biblioteka Elixira, poprzez modu\u0142\
+  \ `DateTime`, umo\u017Cliwia pobieranie bie\u017C\u0105cej daty i czasu. Poniewa\u017C\
+  \ Elixir dzia\u0142a na maszynie\u2026"
 lastmod: '2024-03-13T22:44:35.054609-06:00'
 model: gpt-4-0125-preview
-summary: "Pobieranie bie\u017C\u0105cej daty w Elixirze wi\u0105\u017Ce si\u0119 z\
-  \ dost\u0119pem do informacji o dacie i czasie systemu, co jest cz\u0119stym zadaniem\
-  \ przy logowaniu, znakowaniu danych lub w dowolnej funkcji, kt\xF3ra wymaga wiedzy\
-  \ o bie\u017C\u0105cej dacie."
+summary: "Standardowa biblioteka Elixira, poprzez modu\u0142 `DateTime`, umo\u017C\
+  liwia pobieranie bie\u017C\u0105cej daty i czasu."
 title: Pobieranie aktualnej daty
 weight: 29
 ---

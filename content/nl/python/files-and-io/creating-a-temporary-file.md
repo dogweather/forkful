@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:38.671149-07:00
-description: "Het cre\xEBren van een tijdelijk bestand betekent het maken van een\
-  \ bestand dat niet hoeft te blijven bestaan nadat je klaar bent met het gebruiken\
-  \ ervan.\u2026"
+description: 'Hoe: De `tempfile` module van Python is hier speciaal voor ontworpen.
+  Kijk hoe het werkt.'
 lastmod: '2024-03-13T22:44:50.395688-06:00'
 model: gpt-4-0125-preview
-summary: "Het cre\xEBren van een tijdelijk bestand betekent het maken van een bestand\
-  \ dat niet hoeft te blijven bestaan nadat je klaar bent met het gebruiken ervan."
+summary: De `tempfile` module van Python is hier speciaal voor ontworpen.
 title: Een tijdelijk bestand aanmaken
 weight: 21
 ---

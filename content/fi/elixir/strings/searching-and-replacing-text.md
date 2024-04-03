@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:57:31.203811-07:00
-description: "Tekstin etsiminen ja korvaaminen tarkoittaa merkkijonojen vaihtamista\
-  \ toisiksi. Ohjelmoijat tekev\xE4t sit\xE4, koska se on nopea keino muuttaa dataa,\
-  \ korjata\u2026"
+description: "How to: (Kuinka tehd\xE4:) Elixiriss\xE4 tekstin etsiminen ja korvaaminen\
+  \ onnistuu `String`-moduulin avulla. Alapuolella pari esimerkki\xE4."
 lastmod: '2024-03-13T22:44:56.211356-06:00'
 model: gpt-4-1106-preview
-summary: Tekstin etsiminen ja korvaaminen tarkoittaa merkkijonojen vaihtamista toisiksi.
+summary: "Elixiriss\xE4 tekstin etsiminen ja korvaaminen onnistuu `String`-moduulin\
+  \ avulla."
 title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---

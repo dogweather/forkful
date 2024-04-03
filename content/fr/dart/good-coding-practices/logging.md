@@ -2,14 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:22.428065-07:00
-description: "Le journalisation dans Dart fait r\xE9f\xE9rence au processus d\u2019\
-  enregistrement de diff\xE9rents niveaux d\u2019information pendant l\u2019ex\xE9\
-  cution d\u2019un programme. Les\u2026"
+description: "Comment faire : Dart comprend un m\xE9canisme de journalisation simple\
+  \ via la biblioth\xE8que `dart:developer`. Pour des besoins de journalisation plus\u2026"
 lastmod: '2024-03-13T22:44:57.397406-06:00'
 model: gpt-4-0125-preview
-summary: "Le journalisation dans Dart fait r\xE9f\xE9rence au processus d\u2019enregistrement\
-  \ de diff\xE9rents niveaux d\u2019information pendant l\u2019ex\xE9cution d\u2019\
-  un programme."
+summary: "Dart comprend un m\xE9canisme de journalisation simple via la biblioth\xE8\
+  que `dart:developer`."
 title: Journalisation
 weight: 17
 ---

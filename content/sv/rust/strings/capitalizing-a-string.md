@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:36.443516-07:00
-description: "Att g\xF6ra f\xF6rsta bokstaven i en str\xE4ng stor i Rust inneb\xE4\
-  r att modifiera str\xE4ngen s\xE5 att dess f\xF6rsta tecken blir en stor bokstav\
-  \ om det \xE4r en bokstav,\u2026"
+description: "Hur man g\xF6r: F\xF6r att g\xF6ra f\xF6rsta bokstaven i en str\xE4\
+  ng stor i Rust har du tv\xE5 huvudv\xE4gar: anv\xE4nda standardbibliotekets funktionaliteter\
+  \ eller anv\xE4nda\u2026"
 lastmod: '2024-03-13T22:44:37.681306-06:00'
 model: gpt-4-0125-preview
-summary: "Att g\xF6ra f\xF6rsta bokstaven i en str\xE4ng stor i Rust inneb\xE4r att\
-  \ modifiera str\xE4ngen s\xE5 att dess f\xF6rsta tecken blir en stor bokstav om\
-  \ det \xE4r en bokstav, medan resten av str\xE4ngen l\xE4mnas of\xF6r\xE4ndrad."
+summary: "F\xF6r att g\xF6ra f\xF6rsta bokstaven i en str\xE4ng stor i Rust har du\
+  \ tv\xE5 huvudv\xE4gar."
 title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---

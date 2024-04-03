@@ -1,12 +1,13 @@
 ---
 date: 2024-02-01 21:30:22.654809-07:00
-description: "Writing to standard error in Visual Basic for Applications (VBA) involves\
-  \ directing error messages or diagnostics apart from standard output, usually to\u2026"
+description: "How to: In VBA, since there's no direct built-in function to write specifically\
+  \ to standard error like in some other programming languages, a common\u2026"
 lastmod: '2024-03-13T22:44:59.949160-06:00'
 model: gpt-4-0125-preview
-summary: Writing to standard error in Visual Basic for Applications (VBA) involves
-  directing error messages or diagnostics apart from standard output, usually to the
-  console or a log file.
+summary: In VBA, since there's no direct built-in function to write specifically to
+  standard error like in some other programming languages, a common workaround involves
+  using `Debug.Print` for development error output or creating a custom logging function
+  that mimics this behavior for production applications.
 title: Writing to standard error
 weight: 25
 ---

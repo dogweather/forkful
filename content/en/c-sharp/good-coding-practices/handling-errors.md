@@ -1,12 +1,11 @@
 ---
 date: 2024-01-21 21:19:09.226800-07:00
-description: "Handling errors in C# is about managing the unexpected\u2014like tripping\
-  \ over your shoelaces. Programs can trip over bad data or wonky connections. We\
-  \ handle\u2026"
+description: "How to: Let's start with a try-catch block. It's like putting a safety\
+  \ net under a tightrope walker. If they slip, they don\u2019t plummet\u2014they're\
+  \ caught."
 lastmod: '2024-03-13T22:45:00.096148-06:00'
 model: gpt-4-1106-preview
-summary: "Handling errors in C# is about managing the unexpected\u2014like tripping\
-  \ over your shoelaces."
+summary: Let's start with a try-catch block.
 title: Handling errors
 weight: 16
 ---

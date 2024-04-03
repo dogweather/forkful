@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:24.412933-07:00
-description: "Commandoregelargumenten lezen betekent het grijpen van de extra's die\
-  \ gebruikers toevoegen aan commando's wanneer ze je script uitvoeren. Programmeurs\u2026"
+description: 'Hoe: Hier is de directe manier om het in Node.js te doen.'
 lastmod: '2024-03-13T22:44:51.217704-06:00'
 model: gpt-4-0125-preview
-summary: Commandoregelargumenten lezen betekent het grijpen van de extra's die gebruikers
-  toevoegen aan commando's wanneer ze je script uitvoeren.
+summary: Hier is de directe manier om het in Node.js te doen.
 title: Commandoregelargumenten lezen
 weight: 23
 ---

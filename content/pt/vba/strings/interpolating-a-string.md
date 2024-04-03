@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:40.129537-07:00
-description: "Interpola\xE7\xE3o de string em Visual Basic for Applications (VBA)\
-  \ refere-se ao processo de embutir vari\xE1veis ou express\xF5es dentro de uma literal\
-  \ de string,\u2026"
+description: "Como fazer: Ao contr\xE1rio de algumas linguagens que possuem interpola\xE7\
+  \xE3o de string embutida, VBA requer uma abordagem mais manual tipicamente usando\
+  \ o\u2026"
 lastmod: '2024-03-13T22:44:46.396411-06:00'
 model: gpt-4-0125-preview
-summary: "Interpola\xE7\xE3o de string em Visual Basic for Applications (VBA) refere-se\
-  \ ao processo de embutir vari\xE1veis ou express\xF5es dentro de uma literal de\
-  \ string, permitindo a forma\xE7\xE3o din\xE2mica de strings."
+summary: "Ao contr\xE1rio de algumas linguagens que possuem interpola\xE7\xE3o de\
+  \ string embutida, VBA requer uma abordagem mais manual tipicamente usando o operador\
+  \ `&` ou a fun\xE7\xE3o `Format` para embutir vari\xE1veis em strings."
 title: Interpolando uma string
 weight: 8
 ---

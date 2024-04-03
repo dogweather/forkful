@@ -2,13 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:15.284290-07:00
-description: "La gestione degli errori in Dart riguarda l'anticipazione e la gestione\
-  \ delle eccezioni che si verificano durante l'esecuzione del programma per\u2026"
+description: "Come fare: Dart supporta due tipi di errori: errori *al momento della\
+  \ compilazione* ed errori *al momento dell'esecuzione*. Gli errori al momento della\u2026"
 lastmod: '2024-03-13T22:44:43.139187-06:00'
 model: gpt-4-0125-preview
-summary: "La gestione degli errori in Dart riguarda l'anticipazione e la gestione\
-  \ delle eccezioni che si verificano durante l'esecuzione del programma per migliorarne\
-  \ l'affidabilit\xE0 e l'usabilit\xE0."
+summary: Dart supporta due tipi di errori.
 title: Gestione degli errori
 weight: 16
 ---

@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:33.720196-07:00
-description: "La cr\xE9ation d'un fichier temporaire dans Google Apps Script consiste\
-  \ \xE0 g\xE9n\xE9rer un fichier destin\xE9 \xE0 un usage \xE0 court terme, typiquement\
-  \ pour le traitement\u2026"
+description: "Comment faire : Dans Google Apps Script, cr\xE9er un fichier temporaire\
+  \ peut \xEAtre r\xE9alis\xE9 en utilisant le service DriveApp, qui fournit une m\xE9\
+  thode simple\u2026"
 lastmod: '2024-03-13T22:44:57.209462-06:00'
 model: gpt-4-0125-preview
-summary: "La cr\xE9ation d'un fichier temporaire dans Google Apps Script consiste\
-  \ \xE0 g\xE9n\xE9rer un fichier destin\xE9 \xE0 un usage \xE0 court terme, typiquement\
-  \ pour le traitement interm\xE9diaire des donn\xE9es, le d\xE9bogage ou des fins\
-  \ de cache."
+summary: "Dans Google Apps Script, cr\xE9er un fichier temporaire peut \xEAtre r\xE9\
+  alis\xE9 en utilisant le service DriveApp, qui fournit une m\xE9thode simple pour\
+  \ cr\xE9er, lire et supprimer des fichiers dans Google Drive."
 title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---

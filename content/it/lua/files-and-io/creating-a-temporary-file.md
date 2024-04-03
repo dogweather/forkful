@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:40:59.326149-07:00
-description: "Creare un file temporaneo significa realizzare un file destinato alla\
-  \ cancellazione dopo il suo uso. Programmatori fanno ci\xF2 per manipolare dati\u2026"
+description: "How to: In Lua, possiamo usare `os.tmpname()` per ottenere un nome univoco\
+  \ di file temporaneo, poi aprire e operare su di esso con le funzioni standard\u2026"
 lastmod: '2024-03-13T22:44:43.576317-06:00'
 model: gpt-4-1106-preview
-summary: Creare un file temporaneo significa realizzare un file destinato alla cancellazione
-  dopo il suo uso.
+summary: In Lua, possiamo usare `os.tmpname()` per ottenere un nome univoco di file
+  temporaneo, poi aprire e operare su di esso con le funzioni standard `io`.
 title: Creazione di un file temporaneo
 weight: 21
 ---

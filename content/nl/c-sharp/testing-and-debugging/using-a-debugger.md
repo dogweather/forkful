@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:40.808448-07:00
-description: "Stel je voor dat je een klein programma hebt dat zich niet goed gedraagt:\
-  \ ```C# static void Main() { int resultaat = Som(1, 2);\u2026"
+description: 'Hoe te: Stel je voor dat je een klein programma hebt dat zich niet goed
+  gedraagt.'
 lastmod: '2024-03-13T22:44:50.814773-06:00'
 model: gpt-4-0125-preview
-summary: "Stel je voor dat je een klein programma hebt dat zich niet goed gedraagt:\n\
-  \n```C#\nstatic void Main()\n{\n    int resultaat = Som(1, 2);\n    Console."
+summary: Stel je voor dat je een klein programma hebt dat zich niet goed gedraagt.
 title: Een debugger gebruiken
 weight: 35
 ---

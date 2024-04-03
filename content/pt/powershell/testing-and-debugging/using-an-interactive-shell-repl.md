@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:16:54.292771-07:00
-description: "O shell interativo, ou Loop de Ler-Avaliar-Imprimir (REPL), permite\
-  \ que voc\xEA digite comandos PowerShell e obtenha feedback imediato. Programadores\
-  \ o usam\u2026"
+description: "Como: Inicie o PowerShell e voc\xEA estar\xE1 no REPL. Experimente o\
+  \ Cmdlet `Get-Date`."
 lastmod: '2024-03-13T22:44:46.798623-06:00'
 model: gpt-4-0125-preview
-summary: "O shell interativo, ou Loop de Ler-Avaliar-Imprimir (REPL), permite que\
-  \ voc\xEA digite comandos PowerShell e obtenha feedback imediato."
+summary: "Inicie o PowerShell e voc\xEA estar\xE1 no REPL."
 title: Usando um shell interativo (REPL)
 weight: 34
 ---

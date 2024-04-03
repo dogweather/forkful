@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:12.852469-07:00
-description: "Vi\u1EC7c ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3\
-  n t\u1EA1i kh\xF4ng c\xF3 ngh\u0129a l\xE0 x\xE1c nh\u1EADn li\u1EC7u th\u01B0 m\u1EE5\
-  c \u0111\xF3 c\xF3 th\u1EF1c s\u1EF1 n\u1EB1m \u1EDF v\u1ECB tr\xED b\u1EA1n ngh\u0129\
-  \ trong h\u1EC7 th\u1ED1ng t\u1EC7p hay kh\xF4ng. C\xE1c l\u1EADp\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Haskell s\u1EED d\u1EE5ng g\xF3i `directory`\
+  \ cho c\xE1c t\u01B0\u01A1ng t\xE1c h\u1EC7 th\u1ED1ng t\u1EC7p. C\xE0i \u0111\u1EB7\
+  t n\xF3 b\u1EB1ng l\u1EC7nh `cabal install directory` n\u1EBFu b\u1EA1n ch\u01B0\
+  a c\xE0i \u0111\u1EB7t. D\u01B0\u1EDBi \u0111\xE2y\u2026"
 lastmod: '2024-03-13T22:44:36.730999-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1\
-  i kh\xF4ng c\xF3 ngh\u0129a l\xE0 x\xE1c nh\u1EADn li\u1EC7u th\u01B0 m\u1EE5c \u0111\
-  \xF3 c\xF3 th\u1EF1c s\u1EF1 n\u1EB1m \u1EDF v\u1ECB tr\xED b\u1EA1n ngh\u0129 trong\
-  \ h\u1EC7 th\u1ED1ng t\u1EC7p hay kh\xF4ng."
+summary: "Haskell s\u1EED d\u1EE5ng g\xF3i `directory` cho c\xE1c t\u01B0\u01A1ng\
+  \ t\xE1c h\u1EC7 th\u1ED1ng t\u1EC7p."
 title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
 weight: 20
 ---

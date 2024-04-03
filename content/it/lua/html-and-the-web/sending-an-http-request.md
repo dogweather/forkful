@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 18:00:02.414069-07:00
-description: "Inviare una richiesta HTTP significa chiedere dati o servizi da un server\
-  \ web. I programmatori lo fanno per scaricare pagine, interagire con API o inviare\u2026"
+description: "Come fare: Per inviare una richiesta HTTP in Lua, useremo `socket.http`\
+  \ proveniente dalla libreria `LuaSocket`. Prima, installa la libreria con `luarocks\u2026"
 lastmod: '2024-03-13T22:44:43.554784-06:00'
 model: gpt-4-1106-preview
-summary: Inviare una richiesta HTTP significa chiedere dati o servizi da un server
-  web.
+summary: Per inviare una richiesta HTTP in Lua, useremo `socket.http` proveniente
+  dalla libreria `LuaSocket`.
 title: Inviare una richiesta http
 weight: 44
 ---

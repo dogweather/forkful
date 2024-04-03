@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:55.049121-07:00
-description: "Analizzare HTML in Elm implica l'estrazione di informazioni da documenti\
-  \ HTML. I programmatori lo fanno per interfacciarsi con contenuti web o API che\u2026"
+description: "Come Fare: Elm non ha una libreria integrata per l'analisi diretta dell'HTML\
+  \ simile a quelle in JavaScript o Python a causa del suo enfasi sulla sicurezza\u2026"
 lastmod: '2024-03-13T22:44:43.347932-06:00'
 model: gpt-4-0125-preview
-summary: Analizzare HTML in Elm implica l'estrazione di informazioni da documenti
-  HTML.
+summary: Elm non ha una libreria integrata per l'analisi diretta dell'HTML simile
+  a quelle in JavaScript o Python a causa del suo enfasi sulla sicurezza del tipo
+  e sull'evitare errori di runtime.
 title: Analisi del HTML
 weight: 43
 ---

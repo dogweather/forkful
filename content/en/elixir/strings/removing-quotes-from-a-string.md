@@ -1,11 +1,12 @@
 ---
 date: 2024-01-25 20:50:15.047489-07:00
-description: "Stripping quotes from a string means shedding off those extra wrappers\
-  \ to get the clean text inside. Programmers do this to sanitize input, avoid errors,\u2026"
+description: 'How to: Elixir has no built-in ''remove quotes'' function, but it''s
+  a cinch to roll your own with pattern matching or `String` functions. See these
+  snippets.'
 lastmod: '2024-03-13T22:44:59.772107-06:00'
 model: gpt-4-1106-preview
-summary: Stripping quotes from a string means shedding off those extra wrappers to
-  get the clean text inside.
+summary: Elixir has no built-in 'remove quotes' function, but it's a cinch to roll
+  your own with pattern matching or `String` functions.
 title: Removing quotes from a string
 weight: 9
 ---

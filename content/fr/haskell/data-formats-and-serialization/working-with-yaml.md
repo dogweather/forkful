@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:31.811991-07:00
-description: "YAML, abr\xE9viation de \"YAML Ain't Markup Language\" (YAML n'est pas\
-  \ un langage de balisage), est une norme de s\xE9rialisation de donn\xE9es conviviale\
-  \ pour les\u2026"
+description: "Comment : Haskell n'a pas de support int\xE9gr\xE9 pour le traitement\
+  \ de YAML, mais vous pouvez utiliser des biblioth\xE8ques tierces comme `yaml` et\
+  \ `aeson` pour\u2026"
 lastmod: '2024-03-13T22:44:57.855035-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, abr\xE9viation de \"YAML Ain't Markup Language\" (YAML n'est pas un\
-  \ langage de balisage), est une norme de s\xE9rialisation de donn\xE9es conviviale\
-  \ pour les humains, qui peut \xEAtre utilis\xE9e pour tous les langages de programmation."
+summary: "Haskell n'a pas de support int\xE9gr\xE9 pour le traitement de YAML, mais\
+  \ vous pouvez utiliser des biblioth\xE8ques tierces comme `yaml` et `aeson` pour\
+  \ analyser et g\xE9n\xE9rer des donn\xE9es YAML."
 title: Travailler avec YAML
 weight: 41
 ---

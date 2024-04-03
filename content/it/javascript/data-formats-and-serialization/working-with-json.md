@@ -2,14 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:57.287210-07:00
-description: "JSON (JavaScript Object Notation) \xE8 un formato leggero per lo scambio\
-  \ di dati, facile da leggere e scrivere per gli umani e da analizzare e generare\
-  \ per\u2026"
+description: 'Come fare: #.'
 lastmod: '2024-03-13T22:44:43.834981-06:00'
 model: gpt-4-0125-preview
-summary: "JSON (JavaScript Object Notation) \xE8 un formato leggero per lo scambio\
-  \ di dati, facile da leggere e scrivere per gli umani e da analizzare e generare\
-  \ per le macchine."
+summary: '#.'
 title: Lavorare con JSON
 weight: 38
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:42:00.446043-07:00
-description: "Eliminar caracteres que coinciden con un patr\xF3n es b\xE1sicamente\
-  \ filtrar tu texto, quitando piezas espec\xEDficas que no quieres. Los programadores\
-  \ hacen esto\u2026"
+description: "C\xF3mo hacerlo: Considera que tienes un string con n\xFAmeros y letras\
+  \ y quieres eliminar todos los d\xEDgitos. En C#, podr\xEDas usar `Regex.Replace`."
 lastmod: '2024-03-13T22:44:59.062818-06:00'
 model: gpt-4-1106-preview
-summary: "Eliminar caracteres que coinciden con un patr\xF3n es b\xE1sicamente filtrar\
-  \ tu texto, quitando piezas espec\xEDficas que no quieres."
+summary: "Considera que tienes un string con n\xFAmeros y letras y quieres eliminar\
+  \ todos los d\xEDgitos."
 title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---

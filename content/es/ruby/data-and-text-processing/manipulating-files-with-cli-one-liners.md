@@ -1,13 +1,12 @@
 ---
 date: 2024-01-27 16:21:21.760885-07:00
-description: "Manipular archivos con l\xEDneas de comando en una sola l\xEDnea en\
-  \ Ruby se trata de realizar operaciones comunes con archivos directamente desde\
-  \ tu terminal\u2026"
+description: "C\xF3mo hacerlo: Ruby, con su sintaxis expresiva, permite l\xEDneas\
+  \ de comando sucintas y legibles que pueden manejar una variedad de operaciones\
+  \ con archivos.\u2026"
 lastmod: '2024-03-13T22:44:59.586561-06:00'
 model: gpt-4-0125-preview
-summary: "Manipular archivos con l\xEDneas de comando en una sola l\xEDnea en Ruby\
-  \ se trata de realizar operaciones comunes con archivos directamente desde tu terminal\
-  \ utilizando scripts de Ruby."
+summary: "Ruby, con su sintaxis expresiva, permite l\xEDneas de comando sucintas y\
+  \ legibles que pueden manejar una variedad de operaciones con archivos."
 title: "Manipulando archivos con comandos de l\xEDnea de una sola l\xEDnea"
 weight: 31
 ---

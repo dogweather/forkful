@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 04:12:14.262463-07:00
-description: "Un REPL (Read-Eval-Print-Loop, Ciclo Leggi-Valuta-Stampa) \xE8 un ambiente\
-  \ di programmazione semplice e interattivo. I programmatori lo utilizzano per\u2026"
+description: "Come fare: C++ non viene fornito con un REPL integrato, ma strumenti\
+  \ come Cling offrono questa capacit\xE0. Ecco come utilizzare Cling per calcolare\
+  \ la somma\u2026"
 lastmod: '2024-03-13T22:44:43.727894-06:00'
 model: gpt-4-0125-preview
-summary: "Un REPL (Read-Eval-Print-Loop, Ciclo Leggi-Valuta-Stampa) \xE8 un ambiente\
-  \ di programmazione semplice e interattivo."
+summary: "C++ non viene fornito con un REPL integrato, ma strumenti come Cling offrono\
+  \ questa capacit\xE0."
 title: Utilizzo di un interprete interattivo (REPL)
 weight: 34
 ---

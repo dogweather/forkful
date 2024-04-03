@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:13.433636-07:00
-description: "Wyra\u017Cenia regularne (regex) to wzorce s\u0142u\u017C\u0105ce do\
-  \ wyszukiwania kombinacji znak\xF3w w ci\u0105gach tekstowych. Programi\u015Bci\
-  \ wykorzystuj\u0105 je do wyszukiwania, edycji\u2026"
+description: "Jak u\u017Cywa\u0107: U\u017Cycie regex w Pythonie wi\u0105\u017Ce si\u0119\
+  \ z modu\u0142em `re`, kt\xF3ry dostarcza zestaw funkcji do przetwarzania tekstu\
+  \ przy u\u017Cyciu wyra\u017Ce\u0144 regularnych. #."
 lastmod: '2024-03-13T22:44:34.938694-06:00'
 model: gpt-4-0125-preview
-summary: "Wyra\u017Cenia regularne (regex) to wzorce s\u0142u\u017C\u0105ce do wyszukiwania\
-  \ kombinacji znak\xF3w w ci\u0105gach tekstowych."
+summary: "U\u017Cycie regex w Pythonie wi\u0105\u017Ce si\u0119 z modu\u0142em `re`,\
+  \ kt\xF3ry dostarcza zestaw funkcji do przetwarzania tekstu przy u\u017Cyciu wyra\u017C\
+  e\u0144 regularnych."
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---

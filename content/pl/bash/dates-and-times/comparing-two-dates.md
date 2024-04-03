@@ -1,13 +1,9 @@
 ---
 date: 2024-01-20 17:32:38.785647-07:00
-description: "Por\xF3wnywanie dw\xF3ch dat pozwala zrozumie\u0107, kt\xF3ra z nich\
-  \ wyst\u0105pi\u0142a wcze\u015Bniej, czy s\u0105 identyczne, albo ile czasu min\u0119\
-  \u0142o mi\u0119dzy nimi. Programi\u015Bci robi\u0105 to do\u2026"
+description: "How to: - Jak to zrobi\u0107: ."
 lastmod: '2024-03-13T22:44:35.597619-06:00'
 model: gpt-4-1106-preview
-summary: "Por\xF3wnywanie dw\xF3ch dat pozwala zrozumie\u0107, kt\xF3ra z nich wyst\u0105\
-  pi\u0142a wcze\u015Bniej, czy s\u0105 identyczne, albo ile czasu min\u0119\u0142\
-  o mi\u0119dzy nimi."
+summary: .
 title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---

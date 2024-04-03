@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:39.581886-07:00
-description: "Das Parsen von HTML beinhaltet die Analyse des HTML-Codes einer Webseite,\
-  \ um spezifische Informationen oder Elemente zu extrahieren. Es ist eine g\xE4ngige\u2026"
+description: "Wie geht das: Python bietet leistungsstarke Bibliotheken wie BeautifulSoup\
+  \ und requests f\xFCr Web Scraping und HTML-Parsing. Um zu beginnen, m\xFCssen Sie\u2026"
 lastmod: '2024-03-13T22:44:53.376119-06:00'
 model: gpt-4-0125-preview
-summary: Das Parsen von HTML beinhaltet die Analyse des HTML-Codes einer Webseite,
-  um spezifische Informationen oder Elemente zu extrahieren.
+summary: "Python bietet leistungsstarke Bibliotheken wie BeautifulSoup und requests\
+  \ f\xFCr Web Scraping und HTML-Parsing."
 title: HTML parsen
 weight: 43
 ---

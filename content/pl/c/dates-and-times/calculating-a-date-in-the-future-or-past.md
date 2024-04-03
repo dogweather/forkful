@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:55.605303-07:00
-description: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci polega\
-  \ na okre\u015Bleniu konkretnej daty poprzez dodanie lub odj\u0119cie pewnej liczby\
-  \ dni, miesi\u0119cy lub lat od\u2026"
+description: "Jak to zrobi\u0107: Chocia\u017C standardowa biblioteka j\u0119zyka\
+  \ C nie zapewnia bezpo\u015Brednich funkcji do arytmetyki dat, mo\u017Cna manipulowa\u0107\
+  \ datami za pomoc\u0105 biblioteki\u2026"
 lastmod: '2024-03-13T22:44:35.901083-06:00'
 model: gpt-4-0125-preview
-summary: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci polega\
-  \ na okre\u015Bleniu konkretnej daty poprzez dodanie lub odj\u0119cie pewnej liczby\
-  \ dni, miesi\u0119cy lub lat od danej daty."
+summary: "Chocia\u017C standardowa biblioteka j\u0119zyka C nie zapewnia bezpo\u015B\
+  rednich funkcji do arytmetyki dat, mo\u017Cna manipulowa\u0107 datami za pomoc\u0105\
+  \ biblioteki `time.h`, konkretnie pracuj\u0105c z typem danych `time_t` i struktur\u0105\
+  \ `struct tm`."
 title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---

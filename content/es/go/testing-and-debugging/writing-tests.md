@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:32.977797-07:00
-description: "Escribir pruebas en Go implica crear peque\xF1as piezas de c\xF3digo\
-  \ manejables que validan la funcionalidad y el comportamiento de tu aplicaci\xF3\
-  n. Los\u2026"
+description: "C\xF3mo hacerlo: En Go, las pruebas se escriben t\xEDpicamente en el\
+  \ mismo paquete que el c\xF3digo que prueban. Los archivos que contienen las pruebas\
+  \ tienen el\u2026"
 lastmod: '2024-03-13T22:44:58.471508-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir pruebas en Go implica crear peque\xF1as piezas de c\xF3digo manejables\
-  \ que validan la funcionalidad y el comportamiento de tu aplicaci\xF3n."
+summary: "En Go, las pruebas se escriben t\xEDpicamente en el mismo paquete que el\
+  \ c\xF3digo que prueban."
 title: Escribir pruebas
 weight: 36
 ---

@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:44.475412-07:00
-description: "JSON, eller JavaScript Object Notation, er et lettvektig datautvekslingsformat,\
-  \ noe som gj\xF8r det perfekt for datalagring eller konfigurasjonsfiler i\u2026"
+description: "Hvordan: For \xE5 jobbe med JSON i Arduino, er `ArduinoJson`-biblioteket\
+  \ et popul\xE6rt valg p\xE5 grunn av dets brukervennlighet og effektivitet. Det\
+  \ tillater\u2026"
 lastmod: '2024-03-13T22:44:41.079546-06:00'
 model: gpt-4-0125-preview
-summary: "JSON, eller JavaScript Object Notation, er et lettvektig datautvekslingsformat,\
-  \ noe som gj\xF8r det perfekt for datalagring eller konfigurasjonsfiler i Arduino-prosjekter."
+summary: "For \xE5 jobbe med JSON i Arduino, er `ArduinoJson`-biblioteket et popul\xE6\
+  rt valg p\xE5 grunn av dets brukervennlighet og effektivitet."
 title: Arbeider med JSON
 weight: 38
 ---

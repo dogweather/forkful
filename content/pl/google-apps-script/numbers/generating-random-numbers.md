@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:47.713194-07:00
-description: "Generowanie losowych liczb to podstawowe zadanie w programowaniu, u\u017C\
-  ywane w wielu aplikacjach, takich jak symulacje, gry i systemy bezpiecze\u0144stwa.\u2026"
+description: "Jak to zrobi\u0107: W Google Apps Script mo\u017Cesz generowa\u0107\
+  \ losowe liczby za pomoc\u0105 funkcji `Math.random()`, podobnie jak w JavaScript.\
+  \ Funkcja ta zwraca\u2026"
 lastmod: '2024-03-13T22:44:34.897998-06:00'
 model: gpt-4-0125-preview
-summary: "Generowanie losowych liczb to podstawowe zadanie w programowaniu, u\u017C\
-  ywane w wielu aplikacjach, takich jak symulacje, gry i systemy bezpiecze\u0144stwa."
+summary: "W Google Apps Script mo\u017Cesz generowa\u0107 losowe liczby za pomoc\u0105\
+  \ funkcji `Math.random()`, podobnie jak w JavaScript."
 title: Generowanie liczb losowych
 weight: 12
 ---

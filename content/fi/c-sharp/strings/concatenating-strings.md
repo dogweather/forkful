@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:35:20.082417-07:00
-description: "Yhdist\xE4mme merkkijonoja luodaaksemme uusia isompia tekstej\xE4. T\xE4\
-  m\xE4 on t\xE4rke\xE4\xE4, kun haluamme n\xE4ytt\xE4\xE4 k\xE4ytt\xE4jille dynaamisia\
-  \ viestej\xE4 tai rakennamme\u2026"
+description: "How to (Kuinka): C#:ssa merkkijonojen yhdist\xE4minen onnistuu muutamalla\
+  \ eri tavalla. Katsotaan pari esimerkki\xE4. #."
 lastmod: '2024-03-13T22:44:56.565292-06:00'
 model: gpt-4-1106-preview
-summary: "Yhdist\xE4mme merkkijonoja luodaaksemme uusia isompia tekstej\xE4."
+summary: "C#:ssa merkkijonojen yhdist\xE4minen onnistuu muutamalla eri tavalla."
 title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---

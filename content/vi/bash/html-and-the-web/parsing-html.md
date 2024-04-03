@@ -2,15 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:55.996913-07:00
-description: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 lo\u1EA1i\
-  \ b\u1ECF c\u1EA5u tr\xFAc v\xE0 n\u1ED9i dung c\u1EE7a m\u1ED9t t\u1EC7p HTML \u0111\
-  \u1EC3 tr\xEDch xu\u1EA5t th\xF4ng tin. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111\
-  i\u1EC1u n\xE0y \u0111\u1EC3 truy c\u1EADp d\u1EEF li\u1EC7u,\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Bash kh\xF4ng ph\u1EA3i l\xE0 c\xF4ng c\u1EE5\
+  \ \u0111i \u0111\u1EA7u \u0111\u1EC3 ph\xE2n t\xEDch c\xFA ph\xE1p HTML, nh\u01B0\
+  ng c\xF3 th\u1EC3 th\u1EF1c hi\u1EC7n \u0111\u01B0\u1EE3c b\u1EB1ng c\xE1c c\xF4\
+  ng c\u1EE5 nh\u01B0 `grep`, `awk`, `sed` ho\u1EB7c\u2026"
 lastmod: '2024-03-13T22:44:36.876335-06:00'
 model: gpt-4-0125-preview
-summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 lo\u1EA1i b\u1ECF\
-  \ c\u1EA5u tr\xFAc v\xE0 n\u1ED9i dung c\u1EE7a m\u1ED9t t\u1EC7p HTML \u0111\u1EC3\
-  \ tr\xEDch xu\u1EA5t th\xF4ng tin."
+summary: "Bash kh\xF4ng ph\u1EA3i l\xE0 c\xF4ng c\u1EE5 \u0111i \u0111\u1EA7u \u0111\
+  \u1EC3 ph\xE2n t\xEDch c\xFA ph\xE1p HTML, nh\u01B0ng c\xF3 th\u1EC3 th\u1EF1c hi\u1EC7\
+  n \u0111\u01B0\u1EE3c b\u1EB1ng c\xE1c c\xF4ng c\u1EE5 nh\u01B0 `grep`, `awk`, `sed`\
+  \ ho\u1EB7c c\xE1c ti\u1EC7n \xEDch b\xEAn ngo\xE0i nh\u01B0 `lynx`."
 title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---

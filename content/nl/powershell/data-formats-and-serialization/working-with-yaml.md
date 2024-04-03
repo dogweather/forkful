@@ -2,11 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:50.051203-07:00
-description: "YAML is een gebruiksvriendelijk data serialisatieformaat. Programmeurs\
-  \ gebruiken het voor configuratiebestanden, gegevensuitwisseling tussen talen en\u2026"
+description: 'Hoe te: Om met YAML in PowerShell te werken, moet je een module zoals
+  `powershell-yaml` gebruiken. Installeer het eerst.'
 lastmod: '2024-03-13T22:44:51.050528-06:00'
 model: gpt-4-0125-preview
-summary: YAML is een gebruiksvriendelijk data serialisatieformaat.
+summary: Om met YAML in PowerShell te werken, moet je een module zoals `powershell-yaml`
+  gebruiken.
 title: Werken met YAML
 weight: 41
 ---

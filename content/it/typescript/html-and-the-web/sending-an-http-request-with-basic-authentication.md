@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 18:02:41.955121-07:00
-description: "L'autenticazione base HTTP serve per accedere a risorse protette via\
-  \ web usando username e password. I programmatori la usano per una semplice e diretta\u2026"
+description: 'How to: Ecco un esempio rapido di come inviare una richiesta HTTP con
+  autenticazione base in TypeScript usando `fetch`.'
 lastmod: '2024-03-13T22:44:43.175841-06:00'
 model: gpt-4-1106-preview
-summary: L'autenticazione base HTTP serve per accedere a risorse protette via web
-  usando username e password.
+summary: Ecco un esempio rapido di come inviare una richiesta HTTP con autenticazione
+  base in TypeScript usando `fetch`.
 title: Inviare una richiesta http con autenticazione di base
 weight: 45
 ---

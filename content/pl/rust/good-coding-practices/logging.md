@@ -1,13 +1,13 @@
 ---
 date: 2024-01-26 01:09:19.899500-07:00
-description: "Logowanie jest jak prowadzenie dziennika dla twojej aplikacji; to praktyka\
-  \ rejestrowania zdarze\u0144, b\u0142\u0119d\xF3w i innych istotnych danych podczas\
-  \ dzia\u0142ania\u2026"
+description: "Jak to zrobi\u0107: Za\u0142\xF3\u017Cmy podstawowe logowanie w Rust\
+  \ przy u\u017Cyciu skrzynki (crate) `log`, kt\xF3ra dostarcza fasad\u0119 logowania,\
+  \ oraz `env_logger`, implementacj\u0119\u2026"
 lastmod: '2024-03-13T22:44:35.191627-06:00'
 model: gpt-4-1106-preview
-summary: "Logowanie jest jak prowadzenie dziennika dla twojej aplikacji; to praktyka\
-  \ rejestrowania zdarze\u0144, b\u0142\u0119d\xF3w i innych istotnych danych podczas\
-  \ dzia\u0142ania programu."
+summary: "Za\u0142\xF3\u017Cmy podstawowe logowanie w Rust przy u\u017Cyciu skrzynki\
+  \ (crate) `log`, kt\xF3ra dostarcza fasad\u0119 logowania, oraz `env_logger`, implementacj\u0119\
+  \ logowania dla skrzynki `log`."
 title: "Rejestrowanie zdarze\u0144"
 weight: 17
 ---

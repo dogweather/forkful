@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:42.001160-07:00
-description: "Escrever no erro padr\xE3o (stderr) em C# envolve direcionar mensagens\
-  \ de erro e diagn\xF3sticos separadamente da sa\xEDda regular (stdout) para ajudar\
-  \ usu\xE1rios e\u2026"
+description: "Como fazer: Em C#, escrever no erro padr\xE3o pode ser alcan\xE7ado\
+  \ usando o stream `Console.Error`. Este stream \xE9 usado especificamente para mensagens\
+  \ de erro\u2026"
 lastmod: '2024-03-13T22:44:46.600111-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever no erro padr\xE3o (stderr) em C# envolve direcionar mensagens de\
-  \ erro e diagn\xF3sticos separadamente da sa\xEDda regular (stdout) para ajudar\
-  \ usu\xE1rios e desenvolvedores a distinguir entre a sa\xEDda normal do programa\
-  \ e notifica\xE7\xF5es de erro."
+summary: "Em C#, escrever no erro padr\xE3o pode ser alcan\xE7ado usando o stream\
+  \ `Console.Error`."
 title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---

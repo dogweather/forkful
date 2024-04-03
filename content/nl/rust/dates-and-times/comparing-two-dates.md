@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:30.294194-07:00
-description: "Het vergelijken van twee datums betekent controleren of ze gelijk zijn,\
-  \ of dat de ene voor of na de andere komt. Programmeurs gebruiken dit voor het\u2026"
+description: "Hoe te: Rust gebruikt `chrono` om eenvoudig met datums om te gaan. Eerst\
+  \ moet `cargo.toml` `chrono = \"0.4\"` bevatten. Daarna kun je datums als volgt\u2026"
 lastmod: '2024-03-13T22:44:50.606831-06:00'
 model: gpt-4-0125-preview
-summary: Het vergelijken van twee datums betekent controleren of ze gelijk zijn, of
-  dat de ene voor of na de andere komt.
+summary: Rust gebruikt `chrono` om eenvoudig met datums om te gaan.
 title: Twee datums vergelijken
 weight: 27
 ---

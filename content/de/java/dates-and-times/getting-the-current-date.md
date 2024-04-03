@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:41.826776-07:00
-description: "Das Abrufen des aktuellen Datums in Java ist eine grundlegende Operation,\
-  \ die es Programmierern erm\xF6glicht, Datum-Objekte f\xFCr Operationen wie\u2026"
+description: "Wie: Java bietet mehrere M\xF6glichkeiten, das aktuelle Datum abzurufen,\
+  \ sowohl mit der alten `java.util.Date`-Klasse als auch mit dem neueren\u2026"
 lastmod: '2024-03-13T22:44:53.772974-06:00'
 model: gpt-4-0125-preview
-summary: "Das Abrufen des aktuellen Datums in Java ist eine grundlegende Operation,\
-  \ die es Programmierern erm\xF6glicht, Datum-Objekte f\xFCr Operationen wie Protokollierung,\
-  \ Datumsberechnungen und zeitbasierte Bedingungen zu manipulieren."
+summary: "Java bietet mehrere M\xF6glichkeiten, das aktuelle Datum abzurufen, sowohl\
+  \ mit der alten `java.util.Date`-Klasse als auch mit dem neueren `java.time`-Paket\
+  \ (eingef\xFChrt in Java 8), das vielseitiger und intuitiver ist."
 title: Den aktuellen Datum abrufen
 weight: 29
 ---

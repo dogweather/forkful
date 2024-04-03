@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:15.896313-07:00
-description: "Parsowanie HTML polega na wydobywaniu danych lub informacji z tre\u015B\
-  ci HTML, co jest powszechnym zadaniem podczas pracy z danymi internetowymi. Programi\u015B\
-  ci\u2026"
+description: "Jak to zrobi\u0107: Shell Fish, przede wszystkim, nie jest zaprojektowany\
+  \ do bezpo\u015Bredniego parsowania HTML. Jednak \u015Bwietnie sprawdza si\u0119\
+  \ w \u0142\u0105czeniu narz\u0119dzi\u2026"
 lastmod: '2024-03-13T22:44:35.838978-06:00'
 model: gpt-4-0125-preview
-summary: "Parsowanie HTML polega na wydobywaniu danych lub informacji z tre\u015B\
-  ci HTML, co jest powszechnym zadaniem podczas pracy z danymi internetowymi."
+summary: "Shell Fish, przede wszystkim, nie jest zaprojektowany do bezpo\u015Bredniego\
+  \ parsowania HTML."
 title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---

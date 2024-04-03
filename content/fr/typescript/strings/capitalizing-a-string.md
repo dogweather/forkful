@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:39.020300-07:00
-description: "Mettre en majuscule une cha\xEEne de caract\xE8res consiste \xE0 modifier\
-  \ le premier caract\xE8re d'une cha\xEEne donn\xE9e en majuscule s'il est en minuscule,\
-  \ laissant\u2026"
+description: "Comment faire : TypeScript, \xE9tant un sur-ensemble de JavaScript,\
+  \ permet diverses m\xE9thodes pour mettre des cha\xEEnes en majuscule, allant des\
+  \ approches\u2026"
 lastmod: '2024-03-13T22:44:57.418796-06:00'
 model: gpt-4-0125-preview
-summary: "Mettre en majuscule une cha\xEEne de caract\xE8res consiste \xE0 modifier\
-  \ le premier caract\xE8re d'une cha\xEEne donn\xE9e en majuscule s'il est en minuscule,\
-  \ laissant souvent le reste de la cha\xEEne inchang\xE9."
+summary: "TypeScript, \xE9tant un sur-ensemble de JavaScript, permet diverses m\xE9\
+  thodes pour mettre des cha\xEEnes en majuscule, allant des approches purement JavaScript\
+  \ \xE0 l'utilisation de biblioth\xE8ques tierces pour des cas d'utilisation plus\
+  \ complexes ou sp\xE9cifiques."
 title: "Mettre en majuscule une cha\xEEne"
 weight: 2
 ---

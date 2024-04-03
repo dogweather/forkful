@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:39.512332-07:00
-description: "Att tolka ett datum fr\xE5n en str\xE4ng inneb\xE4r att man tolkar str\xE4\
-  ngformatet f\xF6r att extrahera datumkomponenter som dag, m\xE5nad och \xE5r. Programmerare\
-  \ g\xF6r detta\u2026"
+description: "Hur man g\xF6r: I modern C++ kan du anv\xE4nda biblioteket `<chrono>`\
+  \ f\xF6r att hantera datum och tider p\xE5 ett inbyggt s\xE4tt, men det st\xF6der\
+  \ inte direkt tolkning\u2026"
 lastmod: '2024-03-13T22:44:38.218558-06:00'
 model: gpt-4-0125-preview
-summary: "Att tolka ett datum fr\xE5n en str\xE4ng inneb\xE4r att man tolkar str\xE4\
-  ngformatet f\xF6r att extrahera datumkomponenter som dag, m\xE5nad och \xE5r."
+summary: "I modern C++ kan du anv\xE4nda biblioteket `<chrono>` f\xF6r att hantera\
+  \ datum och tider p\xE5 ett inbyggt s\xE4tt, men det st\xF6der inte direkt tolkning\
+  \ fr\xE5n str\xE4ngar utan manuell bearbetning f\xF6r mer komplexa format."
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---

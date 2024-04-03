@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:30.100266-07:00
-description: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w w Go polega na eliminacji\
-  \ pocz\u0105tkowych i ko\u0144cowych znak\xF3w cudzys\u0142owu (`\"` lub `'`) z\
-  \ danego ci\u0105gu znak\xF3w. Programi\u015Bci\u2026"
+description: "Jak to zrobi\u0107: Go oferuje kilka podej\u015B\u0107 do usuni\u0119\
+  cia cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w, ale jedn\u0105 z najprostszych metod\
+  \ jest u\u017Cycie funkcji `Trim` i `TrimFunc`\u2026"
 lastmod: '2024-03-13T22:44:34.835870-06:00'
 model: gpt-4-0125-preview
-summary: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w w Go polega na eliminacji\
-  \ pocz\u0105tkowych i ko\u0144cowych znak\xF3w cudzys\u0142owu (`\"` lub `'`) z\
-  \ danego ci\u0105gu znak\xF3w."
+summary: "Go oferuje kilka podej\u015B\u0107 do usuni\u0119cia cudzys\u0142ow\xF3\
+  w z ci\u0105gu znak\xF3w, ale jedn\u0105 z najprostszych metod jest u\u017Cycie\
+  \ funkcji `Trim` i `TrimFunc` dostarczanych przez pakiet `strings`."
 title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---

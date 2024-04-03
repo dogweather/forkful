@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 03:39:54.534616-07:00
-description: "Att ta bort citationstecken fr\xE5n en str\xE4ng inneb\xE4r att strippa\
-  \ bort alla citattecken\u2014enkla (' ') eller dubbla (\" \")\u2014som \xE4r en\
-  \ del av str\xE4ngdatan.\u2026"
+description: "Hur man g\xF6r: I Haskell kan vi snabbt skapa en funktion som tar bort\
+  \ alla citattecken fr\xE5n en given str\xE4ng. Det \xE4r som att s\xE4ga \xE5t citattecknen\
+  \ att dra \xE5t\u2026"
 lastmod: '2024-03-13T22:44:37.943545-06:00'
 model: gpt-4-0125-preview
-summary: "Att ta bort citationstecken fr\xE5n en str\xE4ng inneb\xE4r att strippa\
-  \ bort alla citattecken\u2014enkla (' ') eller dubbla (\" \")\u2014som \xE4r en\
-  \ del av str\xE4ngdatan."
+summary: "I Haskell kan vi snabbt skapa en funktion som tar bort alla citattecken\
+  \ fr\xE5n en given str\xE4ng."
 title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 weight: 9
 ---

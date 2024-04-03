@@ -1,12 +1,11 @@
 ---
 date: 2024-01-27 16:21:24.978556-07:00
-description: "Kuvittele, ett\xE4 olet juuri saanut selville, ett\xE4 sinun tarvitsee\
-  \ tehd\xE4 er\xE4n p\xE4ivitys useisiin konfiguraatiotiedostoihin palvelimellasi.\
-  \ Voisit avata\u2026"
+description: "Miten: Kun on kyse tiedostojen paikan p\xE4\xE4ll\xE4 tapahtuvasta muokkaamisesta\
+  \ Bashin avulla, kaksi merkitt\xE4v\xE4\xE4 ty\xF6kalua nousee esiin: `sed` ja `awk`.\u2026"
 lastmod: '2024-03-13T22:44:56.735472-06:00'
 model: gpt-4-0125-preview
-summary: "Kuvittele, ett\xE4 olet juuri saanut selville, ett\xE4 sinun tarvitsee tehd\xE4\
-  \ er\xE4n p\xE4ivitys useisiin konfiguraatiotiedostoihin palvelimellasi."
+summary: "Kun on kyse tiedostojen paikan p\xE4\xE4ll\xE4 tapahtuvasta muokkaamisesta\
+  \ Bashin avulla, kaksi merkitt\xE4v\xE4\xE4 ty\xF6kalua nousee esiin."
 title: "Tiedostojen muokkaaminen paikan p\xE4\xE4ll\xE4 komentorivin yhden rivin komennoilla"
 weight: 32
 ---

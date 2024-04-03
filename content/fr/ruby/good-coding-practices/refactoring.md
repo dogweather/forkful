@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 03:36:35.637450-07:00
-description: "Le refactorisage est le processus de restructuration du code informatique\
-  \ existant sans en changer le comportement externe. Les programmeurs refactorisent\u2026"
+description: "Comment faire : Passons \xE0 travers un exemple de refactorisage d'une\
+  \ m\xE9thode Ruby qui calcule la somme des carr\xE9s. **Avant le refactorisage :**."
 lastmod: '2024-03-13T22:44:58.428636-06:00'
 model: gpt-4-0125-preview
-summary: Le refactorisage est le processus de restructuration du code informatique
-  existant sans en changer le comportement externe.
+summary: "Passons \xE0 travers un exemple de refactorisage d'une m\xE9thode Ruby qui\
+  \ calcule la somme des carr\xE9s."
 title: Remaniement de code
 weight: 19
 ---

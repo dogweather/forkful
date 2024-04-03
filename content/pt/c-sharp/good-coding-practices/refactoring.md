@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:17:14.841084-07:00
-description: "Refatora\xE7\xE3o \xE9 o processo de reestrutura\xE7\xE3o de c\xF3digo\
-  \ de computador existente sem alterar seu comportamento externo. Programadores fazem\
-  \ isso para limpar o\u2026"
+description: "Como fazer: Vamos refatorar um simples m\xE9todo C# que calcula e imprime\
+  \ a soma de um array de n\xFAmeros: Antes da Refatora\xE7\xE3o."
 lastmod: '2024-03-13T22:44:46.592465-06:00'
 model: gpt-4-0125-preview
-summary: "Refatora\xE7\xE3o \xE9 o processo de reestrutura\xE7\xE3o de c\xF3digo de\
-  \ computador existente sem alterar seu comportamento externo."
+summary: "Vamos refatorar um simples m\xE9todo C# que calcula e imprime a soma de\
+  \ um array de n\xFAmeros."
 title: "Refatora\xE7\xE3o"
 weight: 19
 ---

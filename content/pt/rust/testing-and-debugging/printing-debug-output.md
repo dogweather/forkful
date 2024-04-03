@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:53:20.529372-07:00
-description: "Imprimir sa\xEDdas de debug \xE9 simplesmente mostrar na tela o estado\
-  \ de vari\xE1veis ou o fluxo do c\xF3digo. Programadores fazem isso para entender\
-  \ e corrigir\u2026"
+description: 'How to: Rust tem macros legais pra isso: `println!` para exibir textos
+  e `dbg!` para detalhes de debug.'
 lastmod: '2024-03-13T22:44:46.370232-06:00'
 model: gpt-4-1106-preview
-summary: "Imprimir sa\xEDdas de debug \xE9 simplesmente mostrar na tela o estado de\
-  \ vari\xE1veis ou o fluxo do c\xF3digo."
+summary: Rust tem macros legais pra isso.
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---

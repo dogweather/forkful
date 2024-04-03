@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:00.794947-07:00
-description: "Das L\xF6schen von Zeichen, die einem bestimmten Muster entsprechen,\
-  \ ist eine Technik, die verwendet wird, um Zeichenketten in der Programmierung zu\u2026"
+description: "Wie: Google Apps Script bietet robuste Methoden zur Zeichenkettenmanipulation,\
+  \ indem es die inh\xE4renten F\xE4higkeiten von JavaScript nutzt. Um Zeichen zu\u2026"
 lastmod: '2024-03-13T22:44:53.316455-06:00'
 model: gpt-4-0125-preview
-summary: "Das L\xF6schen von Zeichen, die einem bestimmten Muster entsprechen, ist\
-  \ eine Technik, die verwendet wird, um Zeichenketten in der Programmierung zu bereinigen\
-  \ oder zu formatieren."
+summary: "Google Apps Script bietet robuste Methoden zur Zeichenkettenmanipulation,\
+  \ indem es die inh\xE4renten F\xE4higkeiten von JavaScript nutzt."
 title: "Zeichen, die einem Muster entsprechen, l\xF6schen"
 weight: 5
 ---

@@ -2,14 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:27.551915-07:00
-description: "Regul\xE4re Ausdr\xFCcke (regex) in C# sind ein m\xE4chtiges Werkzeug\
-  \ f\xFCr das Musterabgleichen innerhalb von Zeichenketten, das es Programmierern\
-  \ erm\xF6glicht,\u2026"
+description: 'Wie: #.'
 lastmod: '2024-03-13T22:44:53.878274-06:00'
 model: gpt-4-0125-preview
-summary: "Regul\xE4re Ausdr\xFCcke (regex) in C# sind ein m\xE4chtiges Werkzeug f\xFC\
-  r das Musterabgleichen innerhalb von Zeichenketten, das es Programmierern erm\xF6\
-  glicht, effizient nach Daten zu suchen, diese zu ersetzen, aufzuteilen oder zu extrahieren."
+summary: '#.'
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

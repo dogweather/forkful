@@ -2,12 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:32.250543-07:00
-description: "Estrarre sottosequenze implica il recupero di porzioni specifiche di\
-  \ una stringa basate sulle loro posizioni. I programmatori eseguono frequentemente\u2026"
+description: "Come fare: In Go, il tipo `string` \xE8 uno slice di byte in sola lettura.\
+  \ Per estrarre sottosequenze, si fa principalmente uso della sintassi `slice`,\u2026"
 lastmod: '2024-03-13T22:44:42.895922-06:00'
 model: gpt-4-0125-preview
-summary: Estrarre sottosequenze implica il recupero di porzioni specifiche di una
-  stringa basate sulle loro posizioni.
+summary: "In Go, il tipo `string` \xE8 uno slice di byte in sola lettura."
 title: Estrazione di sottosequenze
 weight: 6
 ---

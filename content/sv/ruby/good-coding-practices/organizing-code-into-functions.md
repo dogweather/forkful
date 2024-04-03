@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:11:38.584754-07:00
-description: "Att organisera kod i funktioner delar upp ditt script i \xE5teranv\xE4\
-  ndbara delar. Det handlar allt om att g\xF6ra din kod ren, hanterbar och mindre\
-  \ buggig.\u2026"
+description: "Hur man g\xF6r: T\xE4nk dig att du skriver ett snabbt script f\xF6r\
+  \ att h\xE4lsa p\xE5 anv\xE4ndare."
 lastmod: '2024-03-13T22:44:38.436415-06:00'
 model: gpt-4-1106-preview
-summary: "Att organisera kod i funktioner delar upp ditt script i \xE5teranv\xE4ndbara\
-  \ delar."
+summary: "T\xE4nk dig att du skriver ett snabbt script f\xF6r att h\xE4lsa p\xE5 anv\xE4\
+  ndare."
 title: Att organisera kod i funktioner
 weight: 18
 ---

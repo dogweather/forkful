@@ -2,14 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:26.600595-07:00
-description: "A integra\xE7\xE3o do PowerShell com JSON (JavaScript Object Notation)\
-  \ trata da an\xE1lise (leitura) e gera\xE7\xE3o (escrita) de dados JSON, um formato\
-  \ comum para troca\u2026"
+description: 'Como fazer: #.'
 lastmod: '2024-03-13T22:44:46.818169-06:00'
 model: gpt-4-0125-preview
-summary: "A integra\xE7\xE3o do PowerShell com JSON (JavaScript Object Notation) trata\
-  \ da an\xE1lise (leitura) e gera\xE7\xE3o (escrita) de dados JSON, um formato comum\
-  \ para troca de dados na web."
+summary: '#.'
 title: Trabalhando com JSON
 weight: 38
 ---

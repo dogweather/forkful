@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 03:43:43.275396-07:00
-description: "Arrotondare i numeri consiste nel modificare un numero per approssimarlo\
-  \ all'intero pi\xF9 vicino, o a una certa precisione decimale. Arrotondiamo i numeri\u2026"
+description: 'Come fare: In Clojure, utilizziamo principalmente `Math/round`, `Math/floor`
+  e `Math/ceil`.'
 lastmod: '2024-03-13T22:44:43.037195-06:00'
 model: gpt-4-0125-preview
-summary: "Arrotondare i numeri consiste nel modificare un numero per approssimarlo\
-  \ all'intero pi\xF9 vicino, o a una certa precisione decimale."
+summary: In Clojure, utilizziamo principalmente `Math/round`, `Math/floor` e `Math/ceil`.
 title: Arrotondamento dei numeri
 weight: 13
 ---

@@ -3,12 +3,12 @@ changelog:
 - 2024-03-25, dogweather, edited and tested
 - 2024-03-25, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:02:29.358527-07:00
-description: "Capitalizzare una stringa di solito significa convertire il primo carattere\
-  \ di una stringa in maiuscolo e il resto in minuscolo. Ma a volte pu\xF2\u2026"
+description: 'Come fare: Ruby fornisce [metodi diretti per la manipolazione delle
+  stringhe](https://docs.ruby-lang.org/en/3.3/String.html), inclusa la capitalizzazione.'
 lastmod: '2024-03-25T19:21:57.962401-06:00'
 model: gpt-4-0125-preview
-summary: Capitalizzare una stringa di solito significa convertire il primo carattere
-  di una stringa in maiuscolo e il resto in minuscolo.
+summary: Ruby fornisce [metodi diretti per la manipolazione delle stringhe](https://docs.ruby-lang.org/en/3.3/String.html),
+  inclusa la capitalizzazione.
 title: Capitalizzare una stringa
 weight: 2
 ---

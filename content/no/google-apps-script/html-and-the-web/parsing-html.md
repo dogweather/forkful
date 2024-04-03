@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:44.287959-07:00
-description: "Parsing av HTML i Google Apps Script inneb\xE6rer \xE5 ekstrahere data\
-  \ fra HTML-innhold, som er spesielt nyttig n\xE5r man interagerer med nettsider\
-  \ eller\u2026"
+description: "Hvordan: Google Apps Script har ikke en innebygd metode for parsing\
+  \ av HTML. Derimot kan du utnytte `UrlFetchApp`-tjenesten for \xE5 hente HTML-innhold\
+  \ og\u2026"
 lastmod: '2024-03-13T22:44:40.311516-06:00'
 model: gpt-4-0125-preview
-summary: "Parsing av HTML i Google Apps Script inneb\xE6rer \xE5 ekstrahere data fra\
-  \ HTML-innhold, som er spesielt nyttig n\xE5r man interagerer med nettsider eller\
-  \ webbaserte datakilder."
+summary: Google Apps Script har ikke en innebygd metode for parsing av HTML.
 title: Analysering av HTML
 weight: 43
 ---

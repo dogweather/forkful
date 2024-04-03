@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:14.382896-07:00
-description: "Das Lesen von Befehlszeilenargumenten in Go beinhaltet das Extrahieren\
-  \ der Argumente, die einem Programm w\xE4hrend seiner Aufrufung aus dem Terminal\
-  \ oder\u2026"
+description: "Wie: Go bietet direkten Zugriff auf Befehlszeilenargumente \xFCber das\
+  \ `os`-Paket, speziell mit `os.Args`, einem Array aus Zeichenketten. Hier ist ein\u2026"
 lastmod: '2024-03-13T22:44:53.304827-06:00'
 model: gpt-4-0125-preview
-summary: "Das Lesen von Befehlszeilenargumenten in Go beinhaltet das Extrahieren der\
-  \ Argumente, die einem Programm w\xE4hrend seiner Aufrufung aus dem Terminal oder\
-  \ der Befehlsaufforderung bereitgestellt wurden."
+summary: "Go bietet direkten Zugriff auf Befehlszeilenargumente \xFCber das `os`-Paket,\
+  \ speziell mit `os.Args`, einem Array aus Zeichenketten."
 title: Kommandozeilenargumente lesen
 weight: 23
 ---

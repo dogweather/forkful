@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:38:29.851051-07:00
-description: "\xC5 konvertere en streng til sm\xE5 bokstaver betyr \xE5 endre alle\
-  \ store bokstaver i teksten til sine tilsvarende sm\xE5 bokstav-versjoner. Programmerere\
-  \ gj\xF8r dette\u2026"
+description: "Hvordan: Elm gj\xF8r dette enkelt med `String.toLower` funksjonen. Her\
+  \ er et eksempel p\xE5 bruk."
 lastmod: '2024-03-13T22:44:40.695619-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 konvertere en streng til sm\xE5 bokstaver betyr \xE5 endre alle store\
-  \ bokstaver i teksten til sine tilsvarende sm\xE5 bokstav-versjoner."
+summary: "Elm gj\xF8r dette enkelt med `String.toLower` funksjonen."
 title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---

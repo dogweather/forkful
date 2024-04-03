@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:37.537744-07:00
-description: "Interaktiivinen komentotulkki, joka on tunnettu my\xF6s nimityksell\xE4\
-  \ Lue-Arvo-Tulosta-Silmukka (REPL), mahdollistaa ohjelmoijille ilmaisujen tai koodin\u2026"
+description: "Kuinka: C-REPL:n kanssa ty\xF6skentely ei ehk\xE4 ole yht\xE4 suoraviivaista\
+  \ kuin esimerkiksi Pythonin tai JavaScriptin kanssa. Tools like `Cling`, C/C++-tulkkia,\u2026"
 lastmod: '2024-03-13T22:44:57.042175-06:00'
 model: gpt-4-0125-preview
-summary: "Interaktiivinen komentotulkki, joka on tunnettu my\xF6s nimityksell\xE4\
-  \ Lue-Arvo-Tulosta-Silmukka (REPL), mahdollistaa ohjelmoijille ilmaisujen tai koodin\
-  \ kirjoittamisen ja v\xE4litt\xF6mien tulosten n\xE4kemisen, mik\xE4 parantaa oppimista\
-  \ ja virheenkorjausta."
+summary: "C-REPL:n kanssa ty\xF6skentely ei ehk\xE4 ole yht\xE4 suoraviivaista kuin\
+  \ esimerkiksi Pythonin tai JavaScriptin kanssa."
 title: "Interaktiivisen kuoren (REPL) k\xE4ytt\xE4minen"
 weight: 34
 ---

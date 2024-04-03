@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 00:56:09.831006-07:00
-description: "Virheiden k\xE4sittely ohjelmoinnissa on odottamattoman odottamista.\
-  \ Se on suunnittelutaidetta silt\xE4 varalta, ett\xE4 asiat menev\xE4t pieleen,\
-  \ jotta voit pit\xE4\xE4\u2026"
+description: "Miten: Lua k\xE4ytt\xE4\xE4 kahta p\xE4\xE4funktiota virheiden k\xE4\
+  sittelyyn: `pcall` ja `xpcall`. N\xE4in k\xE4yt\xE4t niit\xE4."
 lastmod: '2024-03-13T22:44:56.704358-06:00'
 model: gpt-4-1106-preview
-summary: "Virheiden k\xE4sittely ohjelmoinnissa on odottamattoman odottamista."
+summary: "Lua k\xE4ytt\xE4\xE4 kahta p\xE4\xE4funktiota virheiden k\xE4sittelyyn."
 title: "Virheiden k\xE4sittely"
 weight: 16
 ---

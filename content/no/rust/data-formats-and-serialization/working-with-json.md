@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:09.788065-07:00
-description: "\xC5 jobbe med JSON (JavaScript Object Notation) i Rust handler om \xE5\
-  \ parse JSON-data til Rusts datastrukturer og serialisere Rusts datastrukturer tilbake\
-  \ til\u2026"
+description: "Hvordan: For \xE5 arbeide med JSON i Rust, er `serde`-craten sammen\
+  \ med `serde_json` for serialisering og deserialisering omfattende brukt. F\xF8\
+  rst, s\xF8rg for \xE5\u2026"
 lastmod: '2024-03-13T22:44:40.595381-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 jobbe med JSON (JavaScript Object Notation) i Rust handler om \xE5\
-  \ parse JSON-data til Rusts datastrukturer og serialisere Rusts datastrukturer tilbake\
-  \ til JSON."
+summary: "For \xE5 arbeide med JSON i Rust, er `serde`-craten sammen med `serde_json`\
+  \ for serialisering og deserialisering omfattende brukt."
 title: Arbeider med JSON
 weight: 38
 ---

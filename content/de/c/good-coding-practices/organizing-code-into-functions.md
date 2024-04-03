@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:10.686488-07:00
-description: "Code in Funktionen in C zu organisieren, bedeutet komplexe Aufgaben\
-  \ in kleinere, wiederverwendbare Codebl\xF6cke zu unterteilen. Diese Praxis verbessert\
-  \ die\u2026"
+description: "Wie geht das: In C wird eine Funktion mit einem R\xFCckgabetyp, einem\
+  \ Namen und Parametern (falls vorhanden) deklariert, gefolgt von einem Block aus\
+  \ Code.\u2026"
 lastmod: '2024-03-13T22:44:54.358398-06:00'
 model: gpt-4-0125-preview
-summary: "Code in Funktionen in C zu organisieren, bedeutet komplexe Aufgaben in kleinere,\
-  \ wiederverwendbare Codebl\xF6cke zu unterteilen."
+summary: "In C wird eine Funktion mit einem R\xFCckgabetyp, einem Namen und Parametern\
+  \ (falls vorhanden) deklariert, gefolgt von einem Block aus Code."
 title: Organisation von Code in Funktionen
 weight: 18
 ---

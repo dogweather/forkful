@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:41:08.926298-07:00
-description: "Tworzenie tymczasowych plik\xF3w to kwestia zapisywania danych, kt\xF3\
-  re nie musz\u0105 pozosta\u0107 w systemie na sta\u0142e. Programi\u015Bci wykorzystuj\u0105\
-  \ je, aby przechowywa\u0107\u2026"
+description: "Jak to zrobi\u0107: ."
 lastmod: '2024-03-13T22:44:34.970082-06:00'
 model: gpt-4-1106-preview
-summary: "Tworzenie tymczasowych plik\xF3w to kwestia zapisywania danych, kt\xF3re\
-  \ nie musz\u0105 pozosta\u0107 w systemie na sta\u0142e."
+summary: .
 title: Tworzenie pliku tymczasowego
 weight: 21
 ---

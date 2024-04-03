@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:02.633189-07:00
-description: "La journalisation en programmation consiste \xE0 enregistrer des \xE9\
-  v\xE9nements, des erreurs ou des occurrences notables pendant l'ex\xE9cution. Les\
-  \ programmeurs le\u2026"
+description: "Comment faire : Dans Google Apps Script, la journalisation peut \xEA\
+  tre effectu\xE9e en utilisant diverses m\xE9thodes, telles que la classe `Logger`\
+  \ et\u2026"
 lastmod: '2024-03-13T22:44:57.193421-06:00'
 model: gpt-4-0125-preview
-summary: "La journalisation en programmation consiste \xE0 enregistrer des \xE9v\xE9\
-  nements, des erreurs ou des occurrences notables pendant l'ex\xE9cution."
+summary: "Dans Google Apps Script, la journalisation peut \xEAtre effectu\xE9e en\
+  \ utilisant diverses m\xE9thodes, telles que la classe `Logger` et `console.log()`."
 title: Journalisation
 weight: 17
 ---

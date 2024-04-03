@@ -1,13 +1,12 @@
 ---
 date: 2024-01-19
-description: "Trabalhar com JSON (JavaScript Object Notation) significa manipular\
-  \ dados no formato leve de interc\xE2mbio que \xE9 f\xE1cil de ler para humanos\
-  \ e simples para\u2026"
+description: "Como Fazer: Em Swift, voc\xEA usa `JSONDecoder` para converter JSON\
+  \ em modelos Swift e `JSONEncoder` para fazer o contr\xE1rio. Suponhamos que voc\xEA\
+  \ tem um JSON\u2026"
 lastmod: '2024-03-13T22:44:46.942260-06:00'
 model: unknown
-summary: "Trabalhar com JSON (JavaScript Object Notation) significa manipular dados\
-  \ no formato leve de interc\xE2mbio que \xE9 f\xE1cil de ler para humanos e simples\
-  \ para m\xE1quinas processarem."
+summary: "Em Swift, voc\xEA usa `JSONDecoder` para converter JSON em modelos Swift\
+  \ e `JSONEncoder` para fazer o contr\xE1rio."
 title: Trabalhando com JSON
 weight: 38
 ---

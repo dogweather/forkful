@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:41:34.124319-07:00
-description: "Midlertidige filer er som engangsbestikk for data \u2013 de brukes litt,\
-  \ og s\xE5 forsvinner de. Programmerere bruker dem for \xE5 lagre midlertidig data\
-  \ som ikke\u2026"
+description: 'How to: Lag en midlertidig fil med Swift slik.'
 lastmod: '2024-03-13T22:44:41.161189-06:00'
 model: gpt-4-1106-preview
-summary: "Midlertidige filer er som engangsbestikk for data \u2013 de brukes litt,\
-  \ og s\xE5 forsvinner de."
+summary: Lag en midlertidig fil med Swift slik.
 title: Opprette en midlertidig fil
 weight: 21
 ---

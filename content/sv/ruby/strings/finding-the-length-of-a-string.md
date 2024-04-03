@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:48:21.535961-07:00
-description: "Att hitta l\xE4ngden p\xE5 en str\xE4ng inneb\xE4r att r\xE4kna antalet\
-  \ tecken den inneh\xE5ller. Programmerare g\xF6r detta f\xF6r att validera indata,\
-  \ formatera utdata eller\u2026"
+description: "Hur g\xF6r man: I Ruby, anv\xE4nd `.length` eller `.size` p\xE5 en str\xE4\
+  ng f\xF6r att f\xE5 dess l\xE4ngd."
 lastmod: '2024-03-13T22:44:38.419686-06:00'
 model: gpt-4-1106-preview
-summary: "Att hitta l\xE4ngden p\xE5 en str\xE4ng inneb\xE4r att r\xE4kna antalet\
-  \ tecken den inneh\xE5ller."
+summary: "I Ruby, anv\xE4nd `.length` eller `.size` p\xE5 en str\xE4ng f\xF6r att\
+  \ f\xE5 dess l\xE4ngd."
 title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:53.673028-07:00
-description: "Merkkijonon pituuden selvitt\xE4minen Go:ssa tarkoittaa sen sis\xE4\
-  lt\xE4mien merkkien lukum\xE4\xE4r\xE4n m\xE4\xE4ritt\xE4mist\xE4. Ohjelmoijat suorittavat\
-  \ t\xE4t\xE4 toimintoa\u2026"
+description: "Miten: Go:ssa merkkijonoja kohdellaan muuttumattomina tavujonoina. Voit\
+  \ selvitt\xE4\xE4 merkkijonon pituuden k\xE4ytt\xE4m\xE4ll\xE4 sis\xE4\xE4nrakennettua\
+  \ `len()`-funktiota,\u2026"
 lastmod: '2024-03-13T22:44:56.040705-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonon pituuden selvitt\xE4minen Go:ssa tarkoittaa sen sis\xE4lt\xE4\
-  mien merkkien lukum\xE4\xE4r\xE4n m\xE4\xE4ritt\xE4mist\xE4."
+summary: Go:ssa merkkijonoja kohdellaan muuttumattomina tavujonoina.
 title: "Merkkijonon pituuden m\xE4\xE4ritt\xE4minen"
 weight: 7
 ---

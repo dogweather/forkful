@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:39:13.877799-07:00
-description: "Convertire una stringa in minuscolo significa cambiare tutti i caratteri\
-  \ dalla forma maiuscola alla forma minuscola. I programmatori lo fanno per\u2026"
+description: 'How to: (Come fare:) .'
 lastmod: '2024-03-13T22:44:44.036832-06:00'
 model: gpt-4-1106-preview
-summary: Convertire una stringa in minuscolo significa cambiare tutti i caratteri
-  dalla forma maiuscola alla forma minuscola.
+summary: .
 title: Conversione di una stringa in minuscolo
 weight: 4
 ---

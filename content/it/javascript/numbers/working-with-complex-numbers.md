@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:42:38.272858-07:00
-description: "I numeri complessi sono numeri con una parte reale e una immaginaria\
-  \ (come 3 + 4i). Emergono in vari problemi di programmazione, specialmente nel\u2026"
+description: "Come fare: JavaScript non offre un supporto nativo per i numeri complessi,\
+  \ ma puoi rimboccarti le maniche e gestirli con oggetti e matematica. Ecco una\u2026"
 lastmod: '2024-03-13T22:44:43.805931-06:00'
 model: gpt-4-0125-preview
-summary: I numeri complessi sono numeri con una parte reale e una immaginaria (come
-  3 + 4i).
+summary: JavaScript non offre un supporto nativo per i numeri complessi, ma puoi rimboccarti
+  le maniche e gestirli con oggetti e matematica.
 title: Lavorare con i numeri complessi
 weight: 14
 ---

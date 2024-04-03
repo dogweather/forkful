@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:26:29.948785-07:00
-description: "TOML (Tom's Obvious, Minimal Language) \xE8 un formato di serializzazione\
-  \ dei dati che \xE8 facile da leggere grazie alla sua chiara semantica. I programmatori\u2026"
+description: "Come fare: Per iniziare, hai bisogno di un analizzatore TOML. Swift\
+  \ non ne ha uno incorporato, quindi usiamo `TOMLDecoder`. Installalo tramite Swift\u2026"
 lastmod: '2024-03-13T22:44:43.793350-06:00'
 model: gpt-4-0125-preview
-summary: "TOML (Tom's Obvious, Minimal Language) \xE8 un formato di serializzazione\
-  \ dei dati che \xE8 facile da leggere grazie alla sua chiara semantica."
+summary: Per iniziare, hai bisogno di un analizzatore TOML.
 title: Lavorare con TOML
 weight: 39
 ---

@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:46:13.974366-07:00
-description: "Extraire des sous-cha\xEEnes, c'est simplement r\xE9cup\xE9rer une partie\
-  \ d'une cha\xEEne de caract\xE8res. Les programmeurs le font pour analyser, manipuler\
-  \ ou tester\u2026"
+description: "How to: Kotlin offre plusieurs fa\xE7ons d'extraire des sous-cha\xEE\
+  nes. Voici des exemples simples ."
 lastmod: '2024-03-13T22:44:57.725137-06:00'
 model: gpt-4-1106-preview
-summary: "Extraire des sous-cha\xEEnes, c'est simplement r\xE9cup\xE9rer une partie\
-  \ d'une cha\xEEne de caract\xE8res."
+summary: "Kotlin offre plusieurs fa\xE7ons d'extraire des sous-cha\xEEnes."
 title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---

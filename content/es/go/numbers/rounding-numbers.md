@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:34.066458-07:00
-description: "Redondear n\xFAmeros consiste en ajustar el valor de un n\xFAmero al\
-  \ entero m\xE1s cercano o a un n\xFAmero espec\xEDfico de decimales. Los programadores\
-  \ hacen esto por\u2026"
+description: "C\xF3mo hacerlo: En Go, no hay una funci\xF3n integrada que redondee\
+  \ directamente los n\xFAmeros a un n\xFAmero espec\xEDfico de decimales en el paquete\
+  \ de matem\xE1ticas.\u2026"
 lastmod: '2024-03-13T22:44:58.461611-06:00'
 model: gpt-4-0125-preview
-summary: "Redondear n\xFAmeros consiste en ajustar el valor de un n\xFAmero al entero\
-  \ m\xE1s cercano o a un n\xFAmero espec\xEDfico de decimales."
+summary: "En Go, no hay una funci\xF3n integrada que redondee directamente los n\xFA\
+  meros a un n\xFAmero espec\xEDfico de decimales en el paquete de matem\xE1ticas."
 title: "Redondeo de n\xFAmeros"
 weight: 13
 ---

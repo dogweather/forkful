@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-25, gpt-4-0125-preview, translated from English
 date: 2024-02-25 17:06:53.132911-07:00
-description: "L'interpolation de cha\xEEnes en C# vous permet de cr\xE9er une nouvelle\
-  \ cha\xEEne en incluant des expressions \xE0 l'int\xE9rieur d'un litt\xE9ral de\
-  \ cha\xEEne, facilitant\u2026"
+description: "Comment faire : En C#, l'interpolation de cha\xEEnes est indiqu\xE9\
+  e par un signe dollar (`$`) suivi d'un litt\xE9ral de cha\xEEne. Les noms de variables\
+  \ ou les\u2026"
 lastmod: '2024-03-13T22:44:57.771945-06:00'
 model: gpt-4-0125-preview
-summary: "L'interpolation de cha\xEEnes en C# vous permet de cr\xE9er une nouvelle\
-  \ cha\xEEne en incluant des expressions \xE0 l'int\xE9rieur d'un litt\xE9ral de\
-  \ cha\xEEne, facilitant ainsi le formatage et la concat\xE9nation des cha\xEEnes."
+summary: "En C#, l'interpolation de cha\xEEnes est indiqu\xE9e par un signe dollar\
+  \ (`$`) suivi d'un litt\xE9ral de cha\xEEne."
 title: "Interpolation d'une cha\xEEne de caract\xE8res"
 weight: 8
 ---

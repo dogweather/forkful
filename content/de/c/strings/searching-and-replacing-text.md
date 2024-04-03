@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:17.276500-07:00
-description: "Das Suchen und Ersetzen von Text in C beinhaltet das Identifizieren\
-  \ spezifischer Teilstrings innerhalb eines gr\xF6\xDFeren Strings und deren Substituierung\u2026"
+description: "Wie geht das: C bietet keine integrierten Funktionen f\xFCr das direkte\
+  \ Suchen und Ersetzen von Strings. Sie k\xF6nnen dies jedoch erreichen, indem Sie\u2026"
 lastmod: '2024-03-13T22:44:54.336151-06:00'
 model: gpt-4-0125-preview
-summary: "Das Suchen und Ersetzen von Text in C beinhaltet das Identifizieren spezifischer\
-  \ Teilstrings innerhalb eines gr\xF6\xDFeren Strings und deren Substituierung durch\
-  \ verschiedene Teilstrings."
+summary: "C bietet keine integrierten Funktionen f\xFCr das direkte Suchen und Ersetzen\
+  \ von Strings."
 title: Suchen und Ersetzen von Text
 weight: 10
 ---

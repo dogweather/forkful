@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:43.569620-07:00
-description: "Verificar se um diret\xF3rio existe em JavaScript \xE9 essencial para\
-  \ tarefas de manipula\xE7\xE3o de arquivos, permitindo que scripts verifiquem a\
-  \ presen\xE7a do\u2026"
+description: "Como fazer: No Node.js, como o pr\xF3prio JavaScript n\xE3o tem acesso\
+  \ direto ao sistema de arquivos, o m\xF3dulo `fs` \xE9 tipicamente usado para essas\
+  \ opera\xE7\xF5es.\u2026"
 lastmod: '2024-03-13T22:44:46.976583-06:00'
 model: gpt-4-0125-preview
-summary: "Verificar se um diret\xF3rio existe em JavaScript \xE9 essencial para tarefas\
-  \ de manipula\xE7\xE3o de arquivos, permitindo que scripts verifiquem a presen\xE7\
-  a do diret\xF3rio antes de ler ou escrever nele."
+summary: "No Node.js, como o pr\xF3prio JavaScript n\xE3o tem acesso direto ao sistema\
+  \ de arquivos, o m\xF3dulo `fs` \xE9 tipicamente usado para essas opera\xE7\xF5\
+  es."
 title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---

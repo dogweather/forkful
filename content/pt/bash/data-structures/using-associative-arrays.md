@@ -2,13 +2,10 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:09:58.147811-07:00
-description: "Arrays associativos s\xE3o como arrays superpotentes que permitem o\
-  \ uso de strings como \xEDndices, ao inv\xE9s de apenas inteiros. Programadores\
-  \ os utilizam para\u2026"
+description: 'Como Fazer: Primeiro, declare um array associativo no Bash.'
 lastmod: '2024-03-13T22:44:46.743836-06:00'
 model: gpt-4-0125-preview
-summary: "Arrays associativos s\xE3o como arrays superpotentes que permitem o uso\
-  \ de strings como \xEDndices, ao inv\xE9s de apenas inteiros."
+summary: Primeiro, declare um array associativo no Bash.
 title: Usando arrays associativos
 weight: 15
 ---

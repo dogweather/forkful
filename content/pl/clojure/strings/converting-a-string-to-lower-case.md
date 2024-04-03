@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:38:17.463377-07:00
-description: "Konwertowanie ci\u0105gu znak\xF3w na ma\u0142e litery oznacza zmian\u0119\
-  \ wszystkich liter w tek\u015Bcie na ich ma\u0142e odpowiedniki. W programowaniu\
-  \ robimy to dla jednolito\u015Bci\u2026"
+description: "How to: W Clojure, u\u017Cyj `clojure.string/lower-case` do konwertowania\
+  \ string\xF3w na ma\u0142e litery. Proste jak paszczaka ciastko."
 lastmod: '2024-03-13T22:44:34.980966-06:00'
 model: gpt-4-1106-preview
-summary: "Konwertowanie ci\u0105gu znak\xF3w na ma\u0142e litery oznacza zmian\u0119\
-  \ wszystkich liter w tek\u015Bcie na ich ma\u0142e odpowiedniki."
+summary: "W Clojure, u\u017Cyj `clojure.string/lower-case` do konwertowania string\xF3\
+  w na ma\u0142e litery."
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-03-08 21:33:26.327165-07:00
-description: "Regular expressions (regex) in Dart offer a powerful way to search and\
-  \ manipulate strings, enabling programmers to perform complex text processing tasks\u2026"
+description: 'How to: Dart uses the `RegExp` class for regular expressions. Here''s
+  a basic example to match a simple pattern within a string.'
 lastmod: '2024-03-13T22:44:59.811370-06:00'
 model: gpt-4-0125-preview
-summary: Regular expressions (regex) in Dart offer a powerful way to search and manipulate
-  strings, enabling programmers to perform complex text processing tasks efficiently.
+summary: Dart uses the `RegExp` class for regular expressions.
 title: Using regular expressions
 weight: 11
 ---

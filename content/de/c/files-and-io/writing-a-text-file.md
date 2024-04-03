@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:17.849098-07:00
-description: "Das Schreiben einer Textdatei in C beinhaltet das Erstellen oder \xD6\
-  ffnen einer Datei im Schreibmodus und dann die Verwendung von Cs Datei-I/O-Funktionen,\u2026"
+description: "Wie: Um Text in eine Datei in C zu schreiben, m\xFCssen Sie vor allem\
+  \ mit den Funktionen `fopen()`, `fprintf()`, `fputs()` und `fclose()` vertraut sein.\u2026"
 lastmod: '2024-03-13T22:44:54.373025-06:00'
 model: gpt-4-0125-preview
-summary: "Das Schreiben einer Textdatei in C beinhaltet das Erstellen oder \xD6ffnen\
-  \ einer Datei im Schreibmodus und dann die Verwendung von Cs Datei-I/O-Funktionen,\
-  \ um Textdaten darin zu speichern."
+summary: "Um Text in eine Datei in C zu schreiben, m\xFCssen Sie vor allem mit den\
+  \ Funktionen `fopen()`, `fprintf()`, `fputs()` und `fclose()` vertraut sein."
 title: Eine Textdatei schreiben
 weight: 24
 ---

@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:50:49.614551-07:00
-description: "Interpolera en str\xE4ng inneb\xE4r att infoga variabler eller uttryck\
-  \ i en st\xE5ende textstr\xE4ng. Programmerare g\xF6r detta f\xF6r att enkelt skapa\
-  \ dynamiska\u2026"
+description: "S\xE5 h\xE4r g\xF6r du: Elm har ingen inbyggd str\xE4nginterpolering\
+  \ som man kanske \xE4r van vid fr\xE5n andra spr\xE5k. Ist\xE4llet anv\xE4nder man\
+  \ funktioner som `String.concat`\u2026"
 lastmod: '2024-03-13T22:44:37.815450-06:00'
 model: gpt-4-1106-preview
-summary: "Interpolera en str\xE4ng inneb\xE4r att infoga variabler eller uttryck i\
-  \ en st\xE5ende textstr\xE4ng."
+summary: "Elm har ingen inbyggd str\xE4nginterpolering som man kanske \xE4r van vid\
+  \ fr\xE5n andra spr\xE5k."
 title: "Interpolera en str\xE4ng"
 weight: 8
 ---

@@ -1,8 +1,7 @@
 ---
 date: 2024-01-26 03:50:20.013557-07:00
-description: "Lua non \xE8 dotato di un debugger integrato, ma \xE8 possibile utilizzare\
-  \ debugger esterni, come ZeroBrane Studio. Ecco un assaggio di come si lavora con\
-  \ esso:\u2026"
+description: "Come fare: Lua non \xE8 dotato di un debugger integrato, ma \xE8 possibile\
+  \ utilizzare debugger esterni, come ZeroBrane Studio. Ecco un assaggio di come si\u2026"
 lastmod: '2024-03-13T22:44:43.562097-06:00'
 model: gpt-4-0125-preview
 summary: "Lua non \xE8 dotato di un debugger integrato, ma \xE8 possibile utilizzare\

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:20.594718-07:00
-description: "Converter uma string para min\xFAsculas envolve transformar todos os\
-  \ caracteres mai\xFAsculos de uma string em seus equivalentes min\xFAsculos. Esse\
-  \ processo \xE9\u2026"
+description: "Como: No Visual Basic for Applications (VBA), converter uma string para\
+  \ min\xFAsculas \xE9 direto usando a fun\xE7\xE3o `LCase`. Esta fun\xE7\xE3o recebe\
+  \ uma string como\u2026"
 lastmod: '2024-03-13T22:44:46.397463-06:00'
 model: gpt-4-0125-preview
-summary: "Converter uma string para min\xFAsculas envolve transformar todos os caracteres\
-  \ mai\xFAsculos de uma string em seus equivalentes min\xFAsculos."
+summary: "No Visual Basic for Applications (VBA), converter uma string para min\xFA\
+  sculas \xE9 direto usando a fun\xE7\xE3o `LCase`."
 title: "Convertendo uma string para min\xFAsculas"
 weight: 4
 ---

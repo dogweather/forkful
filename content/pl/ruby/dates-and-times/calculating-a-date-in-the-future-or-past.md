@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:31:49.011035-07:00
-description: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci to\
-  \ wyznaczanie konkretnych punkt\xF3w czasowych przed lub po danej dacie. Programi\u015B\
-  ci robi\u0105 to, by zarz\u0105dza\u0107\u2026"
+description: "Jak to zrobi\u0107: Ruby \u015Bmiga z datami jak \u0142y\u017Cwiarz\
+  \ na lodzie. U\u017Cyj `Date` i `Time`, plus troch\u0119 matematyki. Zobacz na przyk\u0142\
+  ady."
 lastmod: '2024-03-13T22:44:35.945725-06:00'
 model: gpt-4-1106-preview
-summary: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci to wyznaczanie\
-  \ konkretnych punkt\xF3w czasowych przed lub po danej dacie."
+summary: "Ruby \u015Bmiga z datami jak \u0142y\u017Cwiarz na lodzie."
 title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---

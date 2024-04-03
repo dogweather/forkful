@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:27.563476-07:00
-description: "Stringinterpolatie is een methode om strings te construeren die variabelen\
-  \ bevatten, waardoor dynamische stringcreatie mogelijk is. Programmeurs doen dit\u2026"
+description: "Hoe te: In Go wordt stringinterpolatie vaak bereikt met behulp van het\
+  \ `fmt`-pakket, met name met de functie `Sprintf`, waarmee je variabelen in een\u2026"
 lastmod: '2024-03-13T22:44:50.273023-06:00'
 model: gpt-4-0125-preview
-summary: Stringinterpolatie is een methode om strings te construeren die variabelen
-  bevatten, waardoor dynamische stringcreatie mogelijk is.
+summary: In Go wordt stringinterpolatie vaak bereikt met behulp van het `fmt`-pakket,
+  met name met de functie `Sprintf`, waarmee je variabelen in een string kunt injecteren
+  door opmaakvervoegwoorden te specificeren.
 title: Een string interpoleren
 weight: 8
 ---

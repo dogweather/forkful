@@ -2,13 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:52.554308-07:00
-description: "Escribir un archivo de texto en PowerShell implica crear y manipular\
-  \ archivos basados en texto, lo cual es una operaci\xF3n fundamental para el registro,\u2026"
+description: "C\xF3mo hacerlo: PowerShell proporciona cmdlets sencillos para manejar\
+  \ archivos. El cmdlet `Out-File` y los operadores de redirecci\xF3n se usan principalmente\u2026"
 lastmod: '2024-03-13T22:44:59.310612-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir un archivo de texto en PowerShell implica crear y manipular archivos\
-  \ basados en texto, lo cual es una operaci\xF3n fundamental para el registro, almacenamiento\
-  \ de datos y scripting de configuraci\xF3n."
+summary: PowerShell proporciona cmdlets sencillos para manejar archivos.
 title: Escribiendo un archivo de texto
 weight: 24
 ---

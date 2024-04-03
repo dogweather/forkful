@@ -2,14 +2,10 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:14.007126-07:00
-description: "Het kapitaliseren van een string houdt in dat je de eerste letter van\
-  \ een woord of een hele zin wijzigt naar een hoofdletter, terwijl je de rest van\
-  \ de\u2026"
+description: 'Hoe te: #.'
 lastmod: '2024-03-13T22:44:50.487062-06:00'
 model: gpt-4-0125-preview
-summary: Het kapitaliseren van een string houdt in dat je de eerste letter van een
-  woord of een hele zin wijzigt naar een hoofdletter, terwijl je de rest van de karakters
-  laat zoals ze zijn.
+summary: '#.'
 title: Een string met hoofdletters
 weight: 2
 ---

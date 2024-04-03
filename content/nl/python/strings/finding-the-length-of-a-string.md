@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:20.368435-07:00
-description: "De lengte van een string vinden betekent het tellen van de karakters.\
-  \ Programmeurs doen dit om invoer te valideren, door strings te loopen, bronnen\
-  \ toe te\u2026"
+description: 'Hoe te: .'
 lastmod: '2024-03-13T22:44:50.367386-06:00'
 model: gpt-4-0125-preview
-summary: De lengte van een string vinden betekent het tellen van de karakters.
+summary: .
 title: De lengte van een string vinden
 weight: 7
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:38:45.725613-07:00
-description: "Converter uma string para min\xFAsculas \xE9 o processo de transformar\
-  \ todas as letras mai\xFAsculas de uma dada string em min\xFAsculas. Programadores\
-  \ fazem isso\u2026"
+description: "Como Fazer: Em Lua, a convers\xE3o de strings para min\xFAsculas \xE9\
+  \ feita com a fun\xE7\xE3o `string.lower()`. Aqui est\xE1 um exemplo simples."
 lastmod: '2024-03-13T22:44:46.696601-06:00'
 model: gpt-4-1106-preview
-summary: "Converter uma string para min\xFAsculas \xE9 o processo de transformar todas\
-  \ as letras mai\xFAsculas de uma dada string em min\xFAsculas."
+summary: "Em Lua, a convers\xE3o de strings para min\xFAsculas \xE9 feita com a fun\xE7\
+  \xE3o `string.lower()`."
 title: "Convertendo uma string para min\xFAsculas"
 weight: 4
 ---

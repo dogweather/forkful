@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:03:33.912340-07:00
-description: "Writing to standard error (`stderr`) in C++ involves outputting error\
-  \ messages or diagnostics that are separate from the main program output. Programmers\u2026"
+description: 'How to: In C++, writing to standard error can be achieved using the
+  `cerr` stream, which is part of the standard library. Here''s a basic example.'
 lastmod: '2024-03-13T22:45:00.372463-06:00'
 model: gpt-4-0125-preview
-summary: Writing to standard error (`stderr`) in C++ involves outputting error messages
-  or diagnostics that are separate from the main program output.
+summary: In C++, writing to standard error can be achieved using the `cerr` stream,
+  which is part of the standard library.
 title: Writing to standard error
 weight: 25
 ---

@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:48:05.160031-07:00
-description: "Die L\xE4nge eines Strings zu finden bedeutet, herauszufinden, wie viele\
-  \ Zeichen er beinhaltet. Programmierer brauchen diese Information, um Textdaten\
-  \ zu\u2026"
+description: "So geht\u2019s: ."
 lastmod: '2024-03-13T22:44:53.963705-06:00'
 model: gpt-4-1106-preview
-summary: "Die L\xE4nge eines Strings zu finden bedeutet, herauszufinden, wie viele\
-  \ Zeichen er beinhaltet."
+summary: .
 title: "Ermittlung der Zeichenkettenl\xE4nge"
 weight: 7
 ---

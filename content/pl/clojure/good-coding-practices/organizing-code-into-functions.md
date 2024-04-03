@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 01:09:29.458108-07:00
-description: "Grupowanie kodu w funkcje polega na pakowaniu blok\xF3w kodu, kt\xF3\
-  re realizuj\u0105 konkretne zadania. Dzi\u0119ki temu kod staje si\u0119 przejrzysty,\
-  \ \u0142atwiejszy w\u2026"
+description: "Jak to zrobi\u0107: Funkcje w Clojure definiujemy za pomoc\u0105 `defn`,\
+  \ po kt\xF3rym nast\u0119puje nazwa, parametry i cia\u0142o funkcji. Oto szybki\
+  \ przyk\u0142ad."
 lastmod: '2024-03-13T22:44:35.001597-06:00'
 model: gpt-4-1106-preview
-summary: "Grupowanie kodu w funkcje polega na pakowaniu blok\xF3w kodu, kt\xF3re realizuj\u0105\
-  \ konkretne zadania."
+summary: "Funkcje w Clojure definiujemy za pomoc\u0105 `defn`, po kt\xF3rym nast\u0119\
+  puje nazwa, parametry i cia\u0142o funkcji."
 title: Organizacja kodu w funkcje
 weight: 18
 ---

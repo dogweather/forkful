@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:17.385278-07:00
-description: "TOML, vi\u1EBFt t\u1EAFt c\u1EE7a Tom's Obvious, Minimal Language, l\xE0\
-  \ m\u1ED9t \u0111\u1ECBnh d\u1EA1ng d\u1EEF li\u1EC7u t\u01B0\u01A1ng t\u1EF1 nh\u01B0\
-  \ JSON ho\u1EB7c YAML, nh\u01B0ng d\u1EC5 \u0111\u1ECDc h\u01A1n \u0111\u1ED1i v\u1EDB\
-  i con ng\u01B0\u1EDDi. C\xE1c l\u1EADp\u2026"
+description: "C\xE1ch th\u1EE9c: \u0110\u1EA7u ti\xEAn, h\xE3y \u0111\u1EA3m b\u1EA3\
+  o b\u1EA1n \u0111\xE3 c\xE0i \u0111\u1EB7t th\u01B0 vi\u1EC7n ph\xE2n t\xEDch TOML,\
+  \ nh\u01B0 `yosymfony/toml`. Ch\xFAng ta h\xE3y ph\xE2n t\xEDch m\u1ED9t t\u1EC7\
+  p TOML."
 lastmod: '2024-03-13T22:44:36.798222-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, vi\u1EBFt t\u1EAFt c\u1EE7a Tom's Obvious, Minimal Language, l\xE0\
-  \ m\u1ED9t \u0111\u1ECBnh d\u1EA1ng d\u1EEF li\u1EC7u t\u01B0\u01A1ng t\u1EF1 nh\u01B0\
-  \ JSON ho\u1EB7c YAML, nh\u01B0ng d\u1EC5 \u0111\u1ECDc h\u01A1n \u0111\u1ED1i v\u1EDB\
-  i con ng\u01B0\u1EDDi."
+summary: "\u0110\u1EA7u ti\xEAn, h\xE3y \u0111\u1EA3m b\u1EA3o b\u1EA1n \u0111\xE3\
+  \ c\xE0i \u0111\u1EB7t th\u01B0 vi\u1EC7n ph\xE2n t\xEDch TOML, nh\u01B0 `yosymfony/toml`."
 title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 weight: 39
 ---

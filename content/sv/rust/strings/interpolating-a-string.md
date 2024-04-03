@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:51:30.648021-07:00
-description: "Str\xE4nginterpolering inneb\xE4r att man blandar variabler med vanlig\
-  \ text. Programmerare g\xF6r detta f\xF6r att skapa dynamiska meddelanden, d\xE4\
-  r inneh\xE5llet kan\u2026"
+description: "Hur man g\xF6r: ."
 lastmod: '2024-03-13T22:44:37.684150-06:00'
 model: gpt-4-1106-preview
-summary: "Str\xE4nginterpolering inneb\xE4r att man blandar variabler med vanlig text."
+summary: .
 title: "Interpolera en str\xE4ng"
 weight: 8
 ---

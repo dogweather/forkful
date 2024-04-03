@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:53.740793-07:00
-description: "N\xFAmeros complexos consistem em uma parte real e uma parte imagin\xE1\
-  ria, representados como `a + bi`, onde `i` \xE9 a raiz quadrada de `-1`. Programadores\u2026"
+description: "Como Fazer: Em C, os n\xFAmeros complexos s\xE3o suportados pela Biblioteca\
+  \ Padr\xE3o, especificamente `<complex.h>`. Para utiliz\xE1-los, declare vari\xE1\
+  veis com o\u2026"
 lastmod: '2024-03-13T22:44:47.043058-06:00'
 model: gpt-4-0125-preview
-summary: "N\xFAmeros complexos consistem em uma parte real e uma parte imagin\xE1\
-  ria, representados como `a + bi`, onde `i` \xE9 a raiz quadrada de `-1`."
+summary: "Em C, os n\xFAmeros complexos s\xE3o suportados pela Biblioteca Padr\xE3\
+  o, especificamente `<complex.h>`."
 title: "Trabalhando com N\xFAmeros Complexos"
 weight: 14
 ---

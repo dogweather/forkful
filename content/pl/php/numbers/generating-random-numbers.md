@@ -1,14 +1,13 @@
 ---
 date: 2024-01-27 20:35:05.004318-07:00
-description: "Generowanie losowych liczb w PHP dotyczy produkcji nieprzewidywalnych\
-  \ warto\u015Bci w okre\u015Blonym zakresie, co jest niezb\u0119dne do zada\u0144\
-  \ takich jak tworzenie\u2026"
+description: "Jak to zrobi\u0107: PHP oferuje kilka funkcji do generowania losowych\
+  \ liczb, ale najcz\u0119\u015Bciej u\u017Cywane to `rand()`, `mt_rand()` i, do cel\xF3\
+  w kryptograficznych,\u2026"
 lastmod: '2024-03-13T22:44:35.492972-06:00'
 model: gpt-4-0125-preview
-summary: "Generowanie losowych liczb w PHP dotyczy produkcji nieprzewidywalnych warto\u015B\
-  ci w okre\u015Blonym zakresie, co jest niezb\u0119dne do zada\u0144 takich jak tworzenie\
-  \ unikalnych identyfikator\xF3w u\u017Cytkownik\xF3w, generowanie hase\u0142 czy\
-  \ do u\u017Cytku w symulacjach i grach."
+summary: "PHP oferuje kilka funkcji do generowania losowych liczb, ale najcz\u0119\
+  \u015Bciej u\u017Cywane to `rand()`, `mt_rand()` i, do cel\xF3w kryptograficznych,\
+  \ `random_int()`."
 title: Generowanie liczb losowych
 weight: 12
 ---

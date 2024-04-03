@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 03:36:47.775602-07:00
-description: "Le remaniement de code (ou refactoring) est le processus de restructuration\
-  \ du code informatique existant\u2014changer la facturation\u2014sans modifier son\u2026"
+description: "Comment faire : Refactorisons un simple morceau de code Rust pour le\
+  \ rendre plus idiomatique et maintenable. Nous commen\xE7ons avec une fonction qui\
+  \ calcule\u2026"
 lastmod: '2024-03-13T22:44:57.491002-06:00'
 model: gpt-4-0125-preview
-summary: "Le remaniement de code (ou refactoring) est le processus de restructuration\
-  \ du code informatique existant\u2014changer la facturation\u2014sans modifier son\
-  \ comportement externe."
+summary: Refactorisons un simple morceau de code Rust pour le rendre plus idiomatique
+  et maintenable.
 title: Remaniement de code
 weight: 19
 ---

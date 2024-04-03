@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:19.255255-07:00
-description: "De huidige datum in je code krijgen betekent het vastleggen van het\
-  \ huidige moment tot op de dag. Programmeurs doen dit om gebeurtenissen te\u2026"
+description: 'Hoe: Hier is hoe je de huidige datum in TypeScript vastlegt.'
 lastmod: '2024-03-13T22:44:50.561490-06:00'
 model: gpt-4-0125-preview
-summary: De huidige datum in je code krijgen betekent het vastleggen van het huidige
-  moment tot op de dag.
+summary: Hier is hoe je de huidige datum in TypeScript vastlegt.
 title: Het huidige datum ophalen
 weight: 29
 ---

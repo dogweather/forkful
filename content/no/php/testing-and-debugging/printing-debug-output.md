@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:53:00.335081-07:00
-description: "Utskrift for feils\xF8king er som \xE5 droppe br\xF8dsmuler for \xE5\
-  \ finne veien hjem; det hjelper utviklere \xE5 spore appens flyt og finne bugs.\
-  \ Vi gj\xF8r det fordi det\u2026"
+description: 'How to: La oss raskt skrive ut variabelverdier med enkle PHP-funksjoner.'
 lastmod: '2024-03-13T22:44:40.888911-06:00'
 model: gpt-4-1106-preview
-summary: "Utskrift for feils\xF8king er som \xE5 droppe br\xF8dsmuler for \xE5 finne\
-  \ veien hjem; det hjelper utviklere \xE5 spore appens flyt og finne bugs."
+summary: La oss raskt skrive ut variabelverdier med enkle PHP-funksjoner.
 title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---

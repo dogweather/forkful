@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 03:36:57.429410-07:00
-description: "Refaktorisering \xE4r processen att omstrukturera befintlig datorprogramkod\
-  \ utan att \xE4ndra dess yttre beteende. Programmerare refaktoriserar f\xF6r att\u2026"
+description: "Hur man g\xF6r: L\xE5t oss g\xE5 igenom ett exempel p\xE5 refaktorisering\
+  \ av en Ruby-metod som ber\xE4knar summan av kvadrater. **F\xF6re refaktorisering:**."
 lastmod: '2024-03-13T22:44:38.439607-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktorisering \xE4r processen att omstrukturera befintlig datorprogramkod\
-  \ utan att \xE4ndra dess yttre beteende."
+summary: "L\xE5t oss g\xE5 igenom ett exempel p\xE5 refaktorisering av en Ruby-metod\
+  \ som ber\xE4knar summan av kvadrater."
 title: Refaktorisering
 weight: 19
 ---

@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:21.711300-07:00
-description: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n l\xE0 vi\u1EC7c l\u1EA5\
-  y n\u1ED9i dung t\u1EEB m\u1ED9t t\u1EC7p \u0111\u01B0\u1EE3c c\u1EA5u tr\xFAc nh\u01B0\
-  \ v\u0103n b\u1EA3n d\u1EC5 \u0111\u1ECDc cho con ng\u01B0\u1EDDi. L\u1EADp tr\xEC\
-  nh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 x\u1EED l\xFD\
-  \ ho\u1EB7c ph\xE2n\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: H\xE3y \u0111\u1ECDc m\u1ED9t t\u1EC7p v\u0103\
+  n b\u1EA3n trong TypeScript s\u1EED d\u1EE5ng module `fs/promises` c\u1EE7a Node.js.\
+  \ Ch\xFAng t\xF4i s\u1EBD gi\u1EEF v\xED d\u1EE5 n\xE0y \u0111\u01B0\u1EE3c \u0111\
+  \u01A1n gi\u1EA3n: \u0111\u1ECDc m\u1ED9t t\u1EC7p c\xF3\u2026"
 lastmod: '2024-03-13T22:44:36.342403-06:00'
 model: gpt-4-0125-preview
-summary: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n l\xE0 vi\u1EC7c l\u1EA5\
-  y n\u1ED9i dung t\u1EEB m\u1ED9t t\u1EC7p \u0111\u01B0\u1EE3c c\u1EA5u tr\xFAc nh\u01B0\
-  \ v\u0103n b\u1EA3n d\u1EC5 \u0111\u1ECDc cho con ng\u01B0\u1EDDi."
+summary: "H\xE3y \u0111\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong TypeScript\
+  \ s\u1EED d\u1EE5ng module `fs/promises` c\u1EE7a Node.js."
 title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 22
 ---

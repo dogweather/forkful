@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:39:52.033081-07:00
-description: "Creating a temporary file means making a file that's only needed for\
-  \ a short time or for the current session. Programmers do it to store intermediate\
-  \ data\u2026"
+description: "How to: Arduino typically interacts with microcontrollers that don't\
+  \ have a traditional filesystem\u2014so \"files\" aren't managed the same way they\
+  \ are on a\u2026"
 lastmod: '2024-03-13T22:45:00.338353-06:00'
 model: gpt-4-1106-preview
-summary: Creating a temporary file means making a file that's only needed for a short
-  time or for the current session.
+summary: "Arduino typically interacts with microcontrollers that don't have a traditional\
+  \ filesystem\u2014so \"files\" aren't managed the same way they are on a PC."
 title: Creating a temporary file
 weight: 21
 ---

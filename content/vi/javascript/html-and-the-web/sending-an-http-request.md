@@ -2,14 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:00.157698-07:00
-description: "Vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP l\xE0 c\xE1ch m\xE3\
-  \ JavaScript c\u1EE7a b\u1EA1n giao ti\u1EBFp v\u1EDBi m\xE1y ch\u1EE7. Vi\u1EC7\
-  c n\xE0y \u0111\u01B0\u1EE3c th\u1EF1c hi\u1EC7n \u0111\u1EC3 trao \u0111\u1ED5\
-  i d\u1EEF li\u1EC7u, t\u1EA3i ngu\u1ED3n, ho\u1EB7c g\u1EEDi d\u1EEF li\u1EC7u\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: JavaScript s\u1EED d\u1EE5ng API `fetch`\
+  \ \u0111\u1EC3 g\u1EEDi c\xE1c y\xEAu c\u1EA7u. D\u01B0\u1EDBi \u0111\xE2y l\xE0\
+  \ c\xE1ch th\u1EF1c hi\u1EC7n m\u1ED9t y\xEAu c\u1EA7u GET \u0111\u01A1n gi\u1EA3\
+  n."
 lastmod: '2024-03-13T22:44:37.149182-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP l\xE0 c\xE1ch m\xE3 JavaScript\
-  \ c\u1EE7a b\u1EA1n giao ti\u1EBFp v\u1EDBi m\xE1y ch\u1EE7."
+summary: "JavaScript s\u1EED d\u1EE5ng API `fetch` \u0111\u1EC3 g\u1EEDi c\xE1c y\xEA\
+  u c\u1EA7u."
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
 weight: 44
 ---

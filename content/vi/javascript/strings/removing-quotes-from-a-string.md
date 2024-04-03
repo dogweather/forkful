@@ -2,17 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:58.291421-07:00
-description: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi m\u1ED9t chu\u1ED7\
-  i c\xF3 ngh\u0129a l\xE0 b\u1ECF \u0111i nh\u1EEFng d\u1EA5u ngo\u1EB7c k\xE9p phi\u1EC1\
-  n ph\u1EE9c c\xF3 th\u1EC3 l\xE0m r\u1ED1i tung code c\u1EE7a b\u1EA1n, \u0111\u1EB7\
-  c bi\u1EC7t khi b\u1EA1n \u0111ang ph\xE2n t\xEDch d\u1EEF\u2026"
+description: "C\xE1ch th\u1EE9c: H\xE3y t\u01B0\u1EDFng t\u01B0\u1EE3ng b\u1EA1n c\xF3\
+  \ m\u1ED9t chu\u1ED7i \u0111\u01B0\u1EE3c bao b\u1EDFi d\u1EA5u ngo\u1EB7c k\xE9\
+  p, nh\u01B0 `\"\\\"Hello, World!\\\"\"` v\xE0 b\u1EA1n mu\u1ED1n v\u0103n b\u1EA3\
+  n nguy\xEAn b\u1EA3n, kh\xF4ng d\u1EA5u ngo\u1EB7c. D\u01B0\u1EDBi\u2026"
 lastmod: '2024-03-13T22:44:37.137199-06:00'
 model: gpt-4-0125-preview
-summary: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi m\u1ED9t chu\u1ED7\
-  i c\xF3 ngh\u0129a l\xE0 b\u1ECF \u0111i nh\u1EEFng d\u1EA5u ngo\u1EB7c k\xE9p phi\u1EC1\
-  n ph\u1EE9c c\xF3 th\u1EC3 l\xE0m r\u1ED1i tung code c\u1EE7a b\u1EA1n, \u0111\u1EB7\
-  c bi\u1EC7t khi b\u1EA1n \u0111ang ph\xE2n t\xEDch d\u1EEF li\u1EC7u ho\u1EB7c x\xE2\
-  y d\u1EF1ng c\xE1c \u0111\u1ED1i t\u01B0\u1EE3ng JSON."
+summary: "H\xE3y t\u01B0\u1EDFng t\u01B0\u1EE3ng b\u1EA1n c\xF3 m\u1ED9t chu\u1ED7\
+  i \u0111\u01B0\u1EE3c bao b\u1EDFi d\u1EA5u ngo\u1EB7c k\xE9p, nh\u01B0 `\"\\\"\
+  Hello, World!\\\"\"` v\xE0 b\u1EA1n mu\u1ED1n v\u0103n b\u1EA3n nguy\xEAn b\u1EA3\
+  n, kh\xF4ng d\u1EA5u ngo\u1EB7c."
 title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i"
 weight: 9
 ---

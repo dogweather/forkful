@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:22.568066-07:00
-description: "Ein neues Projekt in Go zu starten, umfasst das Einrichten eines Arbeitsbereichs\
-  \ und dessen Initialisierung mit den notwendigen Go-Modulen. Programmierer\u2026"
+description: "Wie: Stellen Sie zuerst sicher, dass Go installiert ist, indem Sie `go\
+  \ version` in Ihrem Terminal ausf\xFChren. Sie sollten die installierte Version\
+  \ von Go\u2026"
 lastmod: '2024-03-13T22:44:53.288346-06:00'
 model: gpt-4-0125-preview
-summary: Ein neues Projekt in Go zu starten, umfasst das Einrichten eines Arbeitsbereichs
-  und dessen Initialisierung mit den notwendigen Go-Modulen.
+summary: "Stellen Sie zuerst sicher, dass Go installiert ist, indem Sie `go version`\
+  \ in Ihrem Terminal ausf\xFChren."
 title: Ein neues Projekt starten
 weight: 1
 ---

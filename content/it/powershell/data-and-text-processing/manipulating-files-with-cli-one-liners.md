@@ -1,13 +1,9 @@
 ---
 date: 2024-01-27 16:20:52.568059-07:00
-description: "La manipolazione di file con one-liner CLI in PowerShell riguarda la\
-  \ modifica, lo spostamento o l'ottenimento di dati di file direttamente dalla riga\
-  \ di\u2026"
+description: 'Come fare: #.'
 lastmod: '2024-03-13T22:44:43.637885-06:00'
 model: gpt-4-0125-preview
-summary: La manipolazione di file con one-liner CLI in PowerShell riguarda la modifica,
-  lo spostamento o l'ottenimento di dati di file direttamente dalla riga di comando
-  in modo veloce.
+summary: '#.'
 title: Manipolazione di file con one-liner da CLI
 weight: 31
 ---

@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:32:12.679439-07:00
-description: "Eine Datumsberechnung in der Zukunft oder Vergangenheit erm\xF6glicht\
-  \ es, mit Zeitintervallen zu arbeiten - zum Beispiel, um Fristen zu setzen oder\u2026"
+description: 'How to: Mit Ruby ist es einfach.'
 lastmod: '2024-03-13T22:44:54.413519-06:00'
 model: gpt-4-1106-preview
-summary: "Eine Datumsberechnung in der Zukunft oder Vergangenheit erm\xF6glicht es,\
-  \ mit Zeitintervallen zu arbeiten - zum Beispiel, um Fristen zu setzen oder Ereignisse\
-  \ zu planen."
+summary: Mit Ruby ist es einfach.
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---

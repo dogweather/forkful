@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:19.631260-07:00
-description: "Escrever para o erro padr\xE3o (stderr) em Ruby \xE9 sobre direcionar\
-  \ mensagens de erro ou diagn\xF3sticos para um fluxo de sa\xEDda separado, distinto\
-  \ da sa\xEDda\u2026"
+description: "Como fazer: A biblioteca padr\xE3o do Ruby oferece uma maneira simples\
+  \ de escrever para o stderr usando `$stderr` ou `STDERR`. Voc\xEA n\xE3o precisa\
+  \ de\u2026"
 lastmod: '2024-03-13T22:44:47.111426-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever para o erro padr\xE3o (stderr) em Ruby \xE9 sobre direcionar mensagens\
-  \ de erro ou diagn\xF3sticos para um fluxo de sa\xEDda separado, distinto da sa\xED\
-  da padr\xE3o (stdout)."
+summary: "A biblioteca padr\xE3o do Ruby oferece uma maneira simples de escrever para\
+  \ o stderr usando `$stderr` ou `STDERR`."
 title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---

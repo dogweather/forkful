@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:56:24.504819-07:00
-description: "Kommandozeilenargumente sind Parameter, die ein Programm beim Start\
-  \ \xFCber die Konsole erh\xE4lt. Sie erm\xF6glichen es dem Benutzer, das Verhalten\
-  \ des Programms\u2026"
+description: "How to: Command-line arguments in Lua are pretty straightforward to\
+  \ handle. Here\u2019s how you nab them."
 lastmod: '2024-03-13T22:44:54.030461-06:00'
 model: gpt-4-1106-preview
-summary: "Kommandozeilenargumente sind Parameter, die ein Programm beim Start \xFC\
-  ber die Konsole erh\xE4lt."
+summary: Command-line arguments in Lua are pretty straightforward to handle.
 title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---

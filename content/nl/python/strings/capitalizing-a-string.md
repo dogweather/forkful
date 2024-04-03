@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:00.534153-07:00
-description: "Het kapitaliseren van een string betekent het transformeren van het\
-  \ eerste karakter naar een hoofdletter en de rest naar kleine letters. Programmeurs\
-  \ doen\u2026"
+description: 'Hoe te: Gebruik de ingebouwde `capitalize()` methode of `title()` methode
+  van Python voor deze klus.'
 lastmod: '2024-03-13T22:44:50.359138-06:00'
 model: gpt-4-0125-preview
-summary: Het kapitaliseren van een string betekent het transformeren van het eerste
-  karakter naar een hoofdletter en de rest naar kleine letters.
+summary: Gebruik de ingebouwde `capitalize()` methode of `title()` methode van Python
+  voor deze klus.
 title: Een string met hoofdletters maken
 weight: 2
 ---

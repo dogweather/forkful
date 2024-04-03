@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:14.767147-07:00
-description: "\xC5 sjekke om en mappe eksisterer i Java er en grunnleggende oppgave\
-  \ som involverer \xE5 verifisere tilstedev\xE6relsen av en mappe i filsystemet f\xF8\
-  r man leser\u2026"
+description: "Hvordan: I Java er det flere m\xE5ter \xE5 sjekke om en mappe eksisterer,\
+  \ prim\xE6rt ved bruk av `java.nio.file.Files` og `java.io.File` klassene. **Bruk\
+  \ av\u2026"
 lastmod: '2024-03-13T22:44:40.680641-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 sjekke om en mappe eksisterer i Java er en grunnleggende oppgave som\
-  \ involverer \xE5 verifisere tilstedev\xE6relsen av en mappe i filsystemet f\xF8\
-  r man leser fra den, skriver til den eller utf\xF8rer andre operasjoner som krever\
-  \ at den eksisterer."
+summary: "I Java er det flere m\xE5ter \xE5 sjekke om en mappe eksisterer, prim\xE6\
+  rt ved bruk av `java.nio.file.Files` og `java.io.File` klassene."
 title: Sjekker om en mappe eksisterer
 weight: 20
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:47.757607-07:00
-description: "Zapisywanie pliku tekstowego w j\u0119zyku C polega na utworzeniu lub\
-  \ otwarciu pliku w trybie zapisu, a nast\u0119pnie wykorzystaniu funkcji wej\u015B\
-  cia/wyj\u015Bcia plik\xF3w\u2026"
+description: "Jak to zrobi\u0107: Aby zapisa\u0107 tekst do pliku w C, przede wszystkim\
+  \ musisz zna\u0107 funkcje `fopen()`, `fprintf()`, `fputs()` oraz `fclose()`. Poni\u017C\
+  ej znajduje\u2026"
 lastmod: '2024-03-13T22:44:35.906476-06:00'
 model: gpt-4-0125-preview
-summary: "Zapisywanie pliku tekstowego w j\u0119zyku C polega na utworzeniu lub otwarciu\
-  \ pliku w trybie zapisu, a nast\u0119pnie wykorzystaniu funkcji wej\u015Bcia/wyj\u015B\
-  cia plik\xF3w w C do zapisania danych tekstowych."
+summary: "Aby zapisa\u0107 tekst do pliku w C, przede wszystkim musisz zna\u0107 funkcje\
+  \ `fopen()`, `fprintf()`, `fputs()` oraz `fclose()`."
 title: Pisanie pliku tekstowego
 weight: 24
 ---

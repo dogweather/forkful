@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:57:29.802344-07:00
-description: "S\xF8k og erstatt er metoden for \xE5 finne tekststrenger og bytte dem\
-  \ ut med ny tekst. Programmerere bruker dette for \xE5 oppdatere kode, rette feil\
-  \ eller\u2026"
+description: "How to: I Elm kan du bruke `String` modulen for \xE5 implementere s\xF8\
+  k og erstatning. Her er et enkelt eksempel."
 lastmod: '2024-03-13T22:44:40.693575-06:00'
 model: gpt-4-1106-preview
-summary: "S\xF8k og erstatt er metoden for \xE5 finne tekststrenger og bytte dem ut\
-  \ med ny tekst."
+summary: "I Elm kan du bruke `String` modulen for \xE5 implementere s\xF8k og erstatning."
 title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---

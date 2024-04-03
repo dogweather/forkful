@@ -1,13 +1,13 @@
 ---
 date: 2024-01-26 01:06:48.729910-07:00
-description: "El registro de eventos, en esencia, es la pr\xE1ctica de grabar eventos\
-  \ y datos de una aplicaci\xF3n de software a una salida externa, como un archivo\
-  \ o\u2026"
+description: "C\xF3mo hacerlo: En Kotlin, se puede registrar eventos usando la funci\xF3\
+  n incorporada `println()` para casos simples, o con bibliotecas m\xE1s sofisticadas\
+  \ como\u2026"
 lastmod: '2024-03-13T22:44:59.042345-06:00'
 model: gpt-4-1106-preview
-summary: "El registro de eventos, en esencia, es la pr\xE1ctica de grabar eventos\
-  \ y datos de una aplicaci\xF3n de software a una salida externa, como un archivo\
-  \ o consola."
+summary: "En Kotlin, se puede registrar eventos usando la funci\xF3n incorporada `println()`\
+  \ para casos simples, o con bibliotecas m\xE1s sofisticadas como SLF4J con Logback\
+  \ o Log4j para necesidades avanzadas."
 title: Registro de Actividades
 weight: 17
 ---

@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:48.216931-07:00
-description: "Een string naar kleine letters omzetten betekent het transformeren van\
-  \ alle letters in de tekst naar hun kleine lettertegenhangers. Programmeurs doen\
-  \ dit\u2026"
+description: "Hoe: Haskell gebruikt de `Data.Char` module om karakters te manipuleren.\
+  \ De functie `toLower` verandert specifiek een enkel karakter naar een kleine\u2026"
 lastmod: '2024-03-13T22:44:50.839353-06:00'
 model: gpt-4-0125-preview
-summary: Een string naar kleine letters omzetten betekent het transformeren van alle
-  letters in de tekst naar hun kleine lettertegenhangers.
+summary: Haskell gebruikt de `Data.Char` module om karakters te manipuleren.
 title: Een string omzetten naar kleine letters
 weight: 4
 ---

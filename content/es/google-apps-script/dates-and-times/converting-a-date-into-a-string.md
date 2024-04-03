@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:45.671748-07:00
-description: "Convertir fechas en cadenas es una tarea fundamental que permite a los\
-  \ programadores manipular y mostrar informaci\xF3n de fechas en un formato legible\
-  \ por\u2026"
+description: "C\xF3mo: Google Apps Script, al estar basado en JavaScript, permite\
+  \ m\xFAltiples m\xE9todos para lograr la conversi\xF3n de fechas a cadenas. A continuaci\xF3\
+  n, se\u2026"
 lastmod: '2024-03-13T22:44:58.548902-06:00'
 model: gpt-4-0125-preview
-summary: "Convertir fechas en cadenas es una tarea fundamental que permite a los programadores\
-  \ manipular y mostrar informaci\xF3n de fechas en un formato legible por humanos."
+summary: "Google Apps Script, al estar basado en JavaScript, permite m\xFAltiples\
+  \ m\xE9todos para lograr la conversi\xF3n de fechas a cadenas."
 title: Convirtiendo una fecha en una cadena de caracteres
 weight: 28
 ---

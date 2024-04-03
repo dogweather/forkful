@@ -2,11 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:08.005216-07:00
-description: "Het aan elkaar plakken van strings betekent dat je ze achter elkaar\
-  \ koppelt. We doen dit om berichten, URL's of elke tekst met stukjes & beetjes uit\u2026"
+description: "Hoe te: In JavaScript heb je een paar manieren om strings aan elkaar\
+  \ te plakken. Ouderwets: `+`. Modern: sjabloonliteralen. Hier is hoe ze eruitzien.\u2026"
 lastmod: '2024-03-13T22:44:51.192514-06:00'
 model: gpt-4-0125-preview
-summary: Het aan elkaar plakken van strings betekent dat je ze achter elkaar koppelt.
+summary: In JavaScript heb je een paar manieren om strings aan elkaar te plakken.
 title: Samenvoegen van strings
 weight: 3
 ---

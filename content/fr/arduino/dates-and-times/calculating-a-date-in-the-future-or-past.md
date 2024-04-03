@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:30:43.788819-07:00
-description: "Calculer une date dans le futur ou le pass\xE9 revient \xE0 trouver\
-  \ une date en ajoutant ou soustrayant des jours \xE0 partir d'aujourd'hui. Les programmeurs\
-  \ le\u2026"
+description: "Comment faire : Voici un exemple simple pour ajouter des jours \xE0\
+  \ la date actuelle avec une carte Arduino et afficher le r\xE9sultat sur le moniteur\
+  \ s\xE9rie."
 lastmod: '2024-03-13T22:44:58.128289-06:00'
 model: gpt-4-1106-preview
-summary: "Calculer une date dans le futur ou le pass\xE9 revient \xE0 trouver une\
-  \ date en ajoutant ou soustrayant des jours \xE0 partir d'aujourd'hui."
+summary: "Voici un exemple simple pour ajouter des jours \xE0 la date actuelle avec\
+  \ une carte Arduino et afficher le r\xE9sultat sur le moniteur s\xE9rie."
 title: "Calcul d'une date future ou pass\xE9e"
 weight: 26
 ---

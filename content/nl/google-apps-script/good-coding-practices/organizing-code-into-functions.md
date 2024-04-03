@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:40.521591-07:00
-description: "Code organiseren in functies gaat over het structureren van je Google\
-  \ Apps Script code door logische segmenten te scheiden in duidelijke blokken, elk\
-  \ met\u2026"
+description: "Hoe te: In Google Apps Script, dat gebaseerd is op JavaScript, definieer\
+  \ je functies met het trefwoord `function`, gevolgd door een unieke functienaam,\u2026"
 lastmod: '2024-03-13T22:44:50.337494-06:00'
 model: gpt-4-0125-preview
-summary: Code organiseren in functies gaat over het structureren van je Google Apps
-  Script code door logische segmenten te scheiden in duidelijke blokken, elk met een
-  specifieke taak.
+summary: In Google Apps Script, dat gebaseerd is op JavaScript, definieer je functies
+  met het trefwoord `function`, gevolgd door een unieke functienaam, haakjes `()`
+  die parameters kunnen bevatten, en accolades `{}` die het codeblok van de functie
+  omsluiten.
 title: Code organiseren in functies
 weight: 18
 ---

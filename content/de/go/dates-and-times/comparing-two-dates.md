@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:46.610215-07:00
-description: "Das Vergleichen von zwei Daten in der Programmierung ist eine grundlegende\
-  \ Aufgabe, die Entwicklern erm\xF6glicht, die chronologische Beziehung zwischen\u2026"
+description: "Wie geht das: In Go werden Daten haupts\xE4chlich mit dem Typ `time.Time`\
+  \ aus dem Paket `time` gehandhabt. Um zwei Daten zu vergleichen, k\xF6nnen wir Methoden\u2026"
 lastmod: '2024-03-13T22:44:53.301418-06:00'
 model: gpt-4-0125-preview
-summary: "Das Vergleichen von zwei Daten in der Programmierung ist eine grundlegende\
-  \ Aufgabe, die Entwicklern erm\xF6glicht, die chronologische Beziehung zwischen\
-  \ Daten zu bewerten."
+summary: "In Go werden Daten haupts\xE4chlich mit dem Typ `time.Time` aus dem Paket\
+  \ `time` gehandhabt."
 title: Zwei Daten vergleichen
 weight: 27
 ---

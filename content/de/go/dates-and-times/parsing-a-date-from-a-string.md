@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:00:08.143027-07:00
-description: "Das Parsen eines Datums aus einem String in Go beinhaltet die Umwandlung\
-  \ des als Text dargestellten Datums in ein nutzbareres Format (z. B. `time.Time`).\u2026"
+description: "Wie geht das: Go bietet robuste Unterst\xFCtzung f\xFCr das Parsen von\
+  \ Daten und Zeiten durch das `time` Paket. Der Schl\xFCssel liegt im Verst\xE4ndnis\
+  \ von Gos\u2026"
 lastmod: '2024-03-13T22:44:53.298332-06:00'
 model: gpt-4-0125-preview
-summary: Das Parsen eines Datums aus einem String in Go beinhaltet die Umwandlung
-  des als Text dargestellten Datums in ein nutzbareres Format (z.
+summary: "Go bietet robuste Unterst\xFCtzung f\xFCr das Parsen von Daten und Zeiten\
+  \ durch das `time` Paket."
 title: Ein Datum aus einem String interpretieren
 weight: 30
 ---

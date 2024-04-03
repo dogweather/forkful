@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:35:13.837438-07:00
-description: "Lavorare con l'XML significa analizzare, generare e manipolare documenti\
-  \ XML (eXtensible Markup Language) utilizzando il codice. I programmatori lo fanno\u2026"
+description: 'Come fare: Usiamo REXML, incluso con Ruby, per analizzare uno snippet
+  XML.'
 lastmod: '2024-03-13T22:44:44.075498-06:00'
 model: gpt-4-0125-preview
-summary: Lavorare con l'XML significa analizzare, generare e manipolare documenti
-  XML (eXtensible Markup Language) utilizzando il codice.
+summary: Usiamo REXML, incluso con Ruby, per analizzare uno snippet XML.
 title: Lavorare con XML
 weight: 40
 ---

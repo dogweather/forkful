@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 00:51:19.600762-07:00
-description: "Virheiden k\xE4sittely tarkoittaa koodin kirjoittamista, joka osaa ennakoida\
-  \ ja k\xE4sitell\xE4 ongelmia. Ohjelmoijat tekev\xE4t sit\xE4 v\xE4ltt\xE4\xE4kseen\
-  \ kaatumisia,\u2026"
+description: "Kuinka: Elmin perusfilosofia on Ei Suoritusaikaisia Poikkeuksia. Joten\
+  \ Elm hy\xF6dynt\xE4\xE4 tyypitysj\xE4rjestelm\xE4\xE4ns\xE4 tyypeill\xE4 kuten\
+  \ `Maybe` ja `Result` virheiden\u2026"
 lastmod: '2024-03-13T22:44:56.496113-06:00'
 model: gpt-4-1106-preview
-summary: "Virheiden k\xE4sittely tarkoittaa koodin kirjoittamista, joka osaa ennakoida\
-  \ ja k\xE4sitell\xE4 ongelmia."
+summary: Elmin perusfilosofia on Ei Suoritusaikaisia Poikkeuksia.
 title: "Virheiden k\xE4sittely"
 weight: 16
 ---

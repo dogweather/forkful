@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:01.014806-07:00
-description: "Tworzenie pliku tekstowego w Elm polega na tworzeniu i zapisywaniu danych\
-  \ tekstowych do pliku z aplikacji Elm. Programi\u015Bci cz\u0119sto musz\u0105 generowa\u0107\
-  \ raporty,\u2026"
+description: "Jak to zrobi\u0107: Poniewa\u017C Elm dzia\u0142a w przegl\u0105darce\
+  \ i jest zaprojektowany jako j\u0119zyk programowania bez efekt\xF3w ubocznych,\
+  \ nie ma bezpo\u015Bredniego dost\u0119pu do\u2026"
 lastmod: '2024-03-13T22:44:35.340196-06:00'
 model: gpt-4-0125-preview
-summary: Tworzenie pliku tekstowego w Elm polega na tworzeniu i zapisywaniu danych
-  tekstowych do pliku z aplikacji Elm.
+summary: "Poniewa\u017C Elm dzia\u0142a w przegl\u0105darce i jest zaprojektowany\
+  \ jako j\u0119zyk programowania bez efekt\xF3w ubocznych, nie ma bezpo\u015Bredniego\
+  \ dost\u0119pu do systemu plik\xF3w."
 title: Pisanie pliku tekstowego
 weight: 24
 ---

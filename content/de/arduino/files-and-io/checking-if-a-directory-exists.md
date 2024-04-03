@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:42.523345-07:00
-description: "Im Kontext der Arduino-Programmierung ist das \xDCberpr\xFCfen, ob ein\
-  \ Verzeichnis auf einer SD-Karte oder einem \xE4hnlichen Speichermodul existiert,\
-  \ wichtig, um\u2026"
+description: "Wie: Arduino unterst\xFCtzt direkt aus der Box heraus keine komplexen\
+  \ Dateisystemoperationen. Jedoch kann man mit der Nutzung der SD-Bibliothek, die\
+  \ Teil der\u2026"
 lastmod: '2024-03-13T22:44:54.157606-06:00'
 model: gpt-4-0125-preview
-summary: "Im Kontext der Arduino-Programmierung ist das \xDCberpr\xFCfen, ob ein Verzeichnis\
-  \ auf einer SD-Karte oder einem \xE4hnlichen Speichermodul existiert, wichtig, um\
-  \ Dateien ohne Fehler lesen oder schreiben zu k\xF6nnen."
+summary: "Arduino unterst\xFCtzt direkt aus der Box heraus keine komplexen Dateisystemoperationen."
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---

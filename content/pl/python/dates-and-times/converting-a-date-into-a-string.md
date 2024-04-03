@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:37:33.589899-07:00
-description: "Zamiana daty na napis (string) pozwala na \u0142atwe wy\u015Bwietlenie\
-  \ i zapisanie daty w czytelnej formie tekstowej. Programi\u015Bci korzystaj\u0105\
-  \ z tej konwersji, by\u2026"
+description: "Jak to zrobi\u0107: ."
 lastmod: '2024-03-13T22:44:34.961499-06:00'
 model: gpt-4-1106-preview
-summary: "Zamiana daty na napis (string) pozwala na \u0142atwe wy\u015Bwietlenie i\
-  \ zapisanie daty w czytelnej formie tekstowej."
+summary: .
 title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---

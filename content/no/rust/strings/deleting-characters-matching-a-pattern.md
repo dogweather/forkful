@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:43:02.203599-07:00
-description: "Slette tegn som matcher et m\xF8nster handler om \xE5 filtrere ut spesifikke\
-  \ karakterer fra en streng. Programmerere gj\xF8r dette for \xE5 rense data, forberede\u2026"
+description: "Slik gj\xF8r du det: ."
 lastmod: '2024-03-13T22:44:40.558242-06:00'
 model: gpt-4-1106-preview
-summary: "Slette tegn som matcher et m\xF8nster handler om \xE5 filtrere ut spesifikke\
-  \ karakterer fra en streng."
+summary: .
 title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---

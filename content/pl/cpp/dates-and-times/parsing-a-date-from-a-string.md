@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:55.322604-07:00
-description: "Parsowanie daty ze stringa polega na interpretacji formatu ci\u0105\
-  gu znak\xF3w w celu wyodr\u0119bnienia sk\u0142adnik\xF3w daty, takich jak dzie\u0144\
-  , miesi\u0105c i rok. Programi\u015Bci\u2026"
+description: "Jak to zrobi\u0107: We wsp\xF3\u0142czesnym C++ mo\u017Cna u\u017Cy\u0107\
+  \ biblioteki `<chrono>` do obs\u0142ugi dat i czas\xF3w natywnie, ale nie obs\u0142\
+  uguje ona bezpo\u015Brednio parsowania ze\u2026"
 lastmod: '2024-03-13T22:44:35.722242-06:00'
 model: gpt-4-0125-preview
-summary: "Parsowanie daty ze stringa polega na interpretacji formatu ci\u0105gu znak\xF3\
-  w w celu wyodr\u0119bnienia sk\u0142adnik\xF3w daty, takich jak dzie\u0144, miesi\u0105\
-  c i rok."
+summary: "We wsp\xF3\u0142czesnym C++ mo\u017Cna u\u017Cy\u0107 biblioteki `<chrono>`\
+  \ do obs\u0142ugi dat i czas\xF3w natywnie, ale nie obs\u0142uguje ona bezpo\u015B\
+  rednio parsowania ze string\xF3w bez r\u0119cznego parsowania dla bardziej skomplikowanych\
+  \ format\xF3w."
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---

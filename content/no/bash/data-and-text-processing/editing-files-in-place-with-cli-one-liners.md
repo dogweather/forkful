@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 16:20:46.270942-07:00
-description: "Tenk deg at du nettopp har funnet ut at du trenger \xE5 gj\xF8re en\
-  \ masseoppdatering p\xE5 flere konfigurasjonsfiler som ligger p\xE5 serveren din.\
-  \ Du kunne ha \xE5pnet\u2026"
+description: "Hvordan: N\xE5r det kommer til redigering av filer p\xE5 stedet ved\
+  \ bruk av Bash, kommer to fremtredende verkt\xF8y i spill: `sed` og `awk`. La oss\
+  \ utforske\u2026"
 lastmod: '2024-03-13T22:44:40.970254-06:00'
 model: gpt-4-0125-preview
-summary: "Tenk deg at du nettopp har funnet ut at du trenger \xE5 gj\xF8re en masseoppdatering\
-  \ p\xE5 flere konfigurasjonsfiler som ligger p\xE5 serveren din."
+summary: "N\xE5r det kommer til redigering av filer p\xE5 stedet ved bruk av Bash,\
+  \ kommer to fremtredende verkt\xF8y i spill."
 title: "Redigering av filer p\xE5 stedet med CLI-enlinjerskommandoer"
 weight: 32
 ---

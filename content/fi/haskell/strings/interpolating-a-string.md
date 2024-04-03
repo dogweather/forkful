@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:51:09.685955-07:00
-description: "Merkkijonon interpolointi tarkoittaa muuttujien tai lausekkeiden sis\xE4\
-  llytt\xE4mist\xE4 osaksi merkkijonoa. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 dynaamisen\
-  \ sis\xE4ll\xF6n\u2026"
+description: "How to: - Miten tehd\xE4: Haskellissa merkkijonon interpolointi ei ole\
+  \ yht\xE4 suoraviivaista kuin joissakin muissa kieliss\xE4, mutta se onnistuu kirjastoja\u2026"
 lastmod: '2024-03-13T22:44:56.602139-06:00'
 model: gpt-4-1106-preview
-summary: "Merkkijonon interpolointi tarkoittaa muuttujien tai lausekkeiden sis\xE4\
-  llytt\xE4mist\xE4 osaksi merkkijonoa."
+summary: "Haskellissa merkkijonon interpolointi ei ole yht\xE4 suoraviivaista kuin\
+  \ joissakin muissa kieliss\xE4, mutta se onnistuu kirjastoja hy\xF6dynt\xE4en."
 title: Merkkijonon interpolointi
 weight: 8
 ---

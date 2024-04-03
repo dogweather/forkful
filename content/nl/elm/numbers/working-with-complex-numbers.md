@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:57.320260-07:00
-description: "Complexe getallen zijn een combinatie van re\xEBle en imaginaire getallen,\
-  \ zoals `a + bi` waarbij `i` de vierkantswortel van -1 is. Ze zijn cruciaal in\u2026"
+description: "Hoe te: Elm heeft geen ingebouwde ondersteuning voor complexe getallen,\
+  \ dus je zult je eigen type en functies moeten cre\xEBren. Hier is een snelle opzet."
 lastmod: '2024-03-13T22:44:50.718462-06:00'
 model: gpt-4-0125-preview
-summary: "Complexe getallen zijn een combinatie van re\xEBle en imaginaire getallen,\
-  \ zoals `a + bi` waarbij `i` de vierkantswortel van -1 is."
+summary: "Elm heeft geen ingebouwde ondersteuning voor complexe getallen, dus je zult\
+  \ je eigen type en functies moeten cre\xEBren."
 title: Werken met complexe getallen
 weight: 14
 ---

@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:18.022081-07:00
-description: "Debug output afdrukken is het gooien van kleine broodkruimels van informatie\
-  \ in de console om fouten op te sporen. Het is snel, vies, en effectief om te\u2026"
+description: 'Hoe te: Laten we wat code op het scherm krijgen.'
 lastmod: '2024-03-13T22:44:50.684663-06:00'
 model: gpt-4-0125-preview
-summary: Debug output afdrukken is het gooien van kleine broodkruimels van informatie
-  in de console om fouten op te sporen.
+summary: Laten we wat code op het scherm krijgen.
 title: Debug-output afdrukken
 weight: 33
 ---

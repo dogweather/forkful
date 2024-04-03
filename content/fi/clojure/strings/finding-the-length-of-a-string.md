@@ -1,13 +1,9 @@
 ---
 date: 2024-01-20 17:47:03.838360-07:00
-description: "Mittaamme merkkijonojen pituutta, koska haluamme selvitt\xE4\xE4, kuinka\
-  \ monta merkki\xE4 ne sis\xE4lt\xE4v\xE4t tai validoida niiden sis\xE4lt\xF6\xE4\
-  . T\xE4m\xE4 auttaa mm. l\xF6yt\xE4m\xE4\xE4n\u2026"
+description: "How to: Clojure-kieless\xE4 merkkijonon pituuden saa selville `count`-funktiolla."
 lastmod: '2024-03-13T22:44:56.175761-06:00'
 model: gpt-4-1106-preview
-summary: "Mittaamme merkkijonojen pituutta, koska haluamme selvitt\xE4\xE4, kuinka\
-  \ monta merkki\xE4 ne sis\xE4lt\xE4v\xE4t tai validoida niiden sis\xE4lt\xF6\xE4\
-  ."
+summary: "Clojure-kieless\xE4 merkkijonon pituuden saa selville `count`-funktiolla."
 title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---

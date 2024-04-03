@@ -2,15 +2,14 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:53:51.355383-07:00
-description: "Por\xF3wnywanie dw\xF3ch dat w Dart polega na ocenie r\xF3\u017Cnicy\
-  \ czasowej lub kolejno\u015Bci mi\u0119dzy nimi, co jest kluczow\u0105 funkcjonalno\u015B\
-  ci\u0105 w aplikacjach zarz\u0105dzaj\u0105cych\u2026"
+description: "Jak to zrobi\u0107: W Dart mo\u017Cesz por\xF3wna\u0107 daty, u\u017C\
+  ywaj\u0105c klasy `DateTime`, kt\xF3ra oferuje metody takie jak `isBefore`, `isAfter`\
+  \ i `isAtSameMomentAs` do\u2026"
 lastmod: '2024-03-13T22:44:35.105425-06:00'
 model: gpt-4-0125-preview
-summary: "Por\xF3wnywanie dw\xF3ch dat w Dart polega na ocenie r\xF3\u017Cnicy czasowej\
-  \ lub kolejno\u015Bci mi\u0119dzy nimi, co jest kluczow\u0105 funkcjonalno\u015B\
-  ci\u0105 w aplikacjach zarz\u0105dzaj\u0105cych wydarzeniami, terminami czy jakimikolwiek\
-  \ danymi czasowymi."
+summary: "W Dart mo\u017Cesz por\xF3wna\u0107 daty, u\u017Cywaj\u0105c klasy `DateTime`,\
+  \ kt\xF3ra oferuje metody takie jak `isBefore`, `isAfter` i `isAtSameMomentAs` do\
+  \ bezpo\u015Bredniego por\xF3wnania."
 title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 15:30:08.873905-07:00
-description: "Parsing HTML means breaking down HTML content into something a program\
-  \ can understand and manipulate. Programmers do this to extract data, manipulate\u2026"
+description: "How to: C++ doesn't come with built-in HTML parsing capabilities. You'll\
+  \ often use a library like Gumbo-parser by Google, or something similar. Here's\
+  \ a\u2026"
 lastmod: '2024-03-13T22:45:00.355600-06:00'
 model: unknown
-summary: Parsing HTML means breaking down HTML content into something a program can
-  understand and manipulate.
+summary: C++ doesn't come with built-in HTML parsing capabilities.
 title: Parsing HTML
 weight: 43
 ---

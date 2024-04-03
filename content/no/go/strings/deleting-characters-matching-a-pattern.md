@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:30.041936-07:00
-description: "\xC5 slette tegn som matcher et spesifikt m\xF8nster handler om \xE5\
-  \ fjerne visse tegn eller sekvenser av tegn fra strenger, basert p\xE5 regler definert\
-  \ av et\u2026"
+description: "Hvordan: I Go kan sletting av tegn som matcher et m\xF8nster effektivt\
+  \ utf\xF8res ved bruk av `regexp`-pakken. Her vil vi vise hvordan du fjerner alle\
+  \ sifre,\u2026"
 lastmod: '2024-03-13T22:44:40.247892-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 slette tegn som matcher et spesifikt m\xF8nster handler om \xE5 fjerne\
-  \ visse tegn eller sekvenser av tegn fra strenger, basert p\xE5 regler definert\
-  \ av et m\xF8nster (vanligvis via regul\xE6re uttrykk)."
+summary: "I Go kan sletting av tegn som matcher et m\xF8nster effektivt utf\xF8res\
+  \ ved bruk av `regexp`-pakken."
 title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---

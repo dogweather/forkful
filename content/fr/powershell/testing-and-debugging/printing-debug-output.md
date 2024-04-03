@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:53:25.946819-07:00
-description: "L'impression de sorties de d\xE9bogage, c'est afficher les valeurs et\
-  \ les \xE9tats de votre script pendant son ex\xE9cution. On fait \xE7a pour comprendre\
-  \ ce qui se\u2026"
+description: "Comment faire : Imprimer des messages de d\xE9bogage avec `Write-Host`\
+  \ ."
 lastmod: '2024-03-13T22:44:58.051008-06:00'
 model: gpt-4-1106-preview
-summary: "L'impression de sorties de d\xE9bogage, c'est afficher les valeurs et les\
-  \ \xE9tats de votre script pendant son ex\xE9cution."
+summary: "Imprimer des messages de d\xE9bogage avec `Write-Host`."
 title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:39:59.559297-07:00
-description: "Komplekse tall utvider ideen om en-dimensjonale tallinjer til et todimensjonalt\
-  \ komplekst plan. Programmerere bruker dem innen felt som ingeni\xF8rvitenskap,\u2026"
+description: "Hvordan gj\xF8re det: I Fish h\xE5ndterer vi komplekse tall ved \xE5\
+  \ bruke `math` med reelle og imagin\xE6re deler. Her er en oppstart."
 lastmod: '2024-03-13T22:44:41.218882-06:00'
 model: gpt-4-0125-preview
-summary: Komplekse tall utvider ideen om en-dimensjonale tallinjer til et todimensjonalt
-  komplekst plan.
+summary: "I Fish h\xE5ndterer vi komplekse tall ved \xE5 bruke `math` med reelle og\
+  \ imagin\xE6re deler."
 title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 03:45:27.213128-07:00
-description: "Att avrunda tal inneb\xE4r att justera dem till en viss grad av noggrannhet.\
-  \ Programmerare g\xF6r det f\xF6r att f\xF6renkla tal f\xF6r l\xE4sbarhet, f\xF6\
-  r att uppfylla vissa\u2026"
+description: "Hur man g\xF6r: Java erbjuder flera s\xE4tt att avrunda tal. H\xE4r\
+  \ \xE4r en snabb demo med `Math.round()`, `BigDecimal`, och `DecimalFormat`."
 lastmod: '2024-03-13T22:44:37.782465-06:00'
 model: gpt-4-0125-preview
-summary: "Att avrunda tal inneb\xE4r att justera dem till en viss grad av noggrannhet."
+summary: "Java erbjuder flera s\xE4tt att avrunda tal."
 title: Avrundning av tal
 weight: 13
 ---

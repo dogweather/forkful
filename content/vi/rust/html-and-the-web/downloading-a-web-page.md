@@ -2,14 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:44.279322-07:00
-description: "T\u1EA3i xu\u1ED1ng m\u1ED9t trang web c\xF3 ngh\u0129a l\xE0 l\u1EA5\
-  y d\u1EEF li\u1EC7u m\xE0 n\xF3 ch\u1EE9a. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111\
-  i\u1EC1u n\xE0y \u0111\u1EC3 l\u1EA5y th\xF4ng tin, t\u1EF1 \u0111\u1ED9ng h\xF3\
-  a c\xE1c b\xE0i test, c\xE0o d\u1EEF li\u1EC7u, ho\u1EB7c ki\u1EC3m\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: H\xE3y t\u1EA3i xu\u1ED1ng m\u1ED9t trang\
+  \ web s\u1EED d\u1EE5ng crate `reqwest` c\u1EE7a Rust, n\xF3 cung c\u1EA5p m\u1ED9\
+  t API kh\xF4ng \u0111\u1ED3ng b\u1ED9, \u0111\u01A1n gi\u1EA3n \u0111\u1EC3 th\u1EF1\
+  c hi\u1EC7n c\xE1c y\xEAu c\u1EA7u HTTP.\u2026"
 lastmod: '2024-03-13T22:44:36.374406-06:00'
 model: gpt-4-0125-preview
-summary: "T\u1EA3i xu\u1ED1ng m\u1ED9t trang web c\xF3 ngh\u0129a l\xE0 l\u1EA5y d\u1EEF\
-  \ li\u1EC7u m\xE0 n\xF3 ch\u1EE9a."
+summary: "H\xE3y t\u1EA3i xu\u1ED1ng m\u1ED9t trang web s\u1EED d\u1EE5ng crate `reqwest`\
+  \ c\u1EE7a Rust, n\xF3 cung c\u1EA5p m\u1ED9t API kh\xF4ng \u0111\u1ED3ng b\u1ED9\
+  , \u0111\u01A1n gi\u1EA3n \u0111\u1EC3 th\u1EF1c hi\u1EC7n c\xE1c y\xEAu c\u1EA7\
+  u HTTP."
 title: "T\u1EA3i trang web"
 weight: 42
 ---

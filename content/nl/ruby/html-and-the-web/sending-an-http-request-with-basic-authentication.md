@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:18.799169-07:00
-description: "In Ruby, een HTTP-verzoek verzenden met basisverificatie houdt in dat\
-  \ je een gebruikersnaam en wachtwoord aan je verzoekheader toevoegt. Programmeurs\
-  \ doen\u2026"
+description: 'Hoe te: Om een HTTP-verzoek met basisverificatie te verzenden, gebruik
+  je doorgaans de module `Net::HTTP` in Ruby. Hier is een snel voorbeeld.'
 lastmod: '2024-03-13T22:44:51.337747-06:00'
 model: gpt-4-0125-preview
-summary: In Ruby, een HTTP-verzoek verzenden met basisverificatie houdt in dat je
-  een gebruikersnaam en wachtwoord aan je verzoekheader toevoegt.
+summary: Om een HTTP-verzoek met basisverificatie te verzenden, gebruik je doorgaans
+  de module `Net::HTTP` in Ruby.
 title: Een HTTP-verzoek verzenden met basisauthenticatie
 weight: 45
 ---

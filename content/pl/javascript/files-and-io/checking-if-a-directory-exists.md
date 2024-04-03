@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:48.880318-07:00
-description: "Sprawdzanie, czy katalog istnieje w JavaScript, jest kluczowe dla zada\u0144\
-  \ manipulacji plikami. Pozwala skryptom zweryfikowa\u0107 obecno\u015B\u0107 katalogu\
-  \ przed\u2026"
+description: "Jak to zrobi\u0107: W Node.js, poniewa\u017C JavaScript sam w sobie\
+  \ nie ma bezpo\u015Bredniego dost\u0119pu do systemu plik\xF3w, zazwyczaj u\u017C\
+  ywany jest modu\u0142 `fs` do tego typu\u2026"
 lastmod: '2024-03-13T22:44:35.810792-06:00'
 model: gpt-4-0125-preview
-summary: "Sprawdzanie, czy katalog istnieje w JavaScript, jest kluczowe dla zada\u0144\
-  \ manipulacji plikami."
+summary: "W Node.js, poniewa\u017C JavaScript sam w sobie nie ma bezpo\u015Bredniego\
+  \ dost\u0119pu do systemu plik\xF3w, zazwyczaj u\u017Cywany jest modu\u0142 `fs`\
+  \ do tego typu operacji."
 title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---

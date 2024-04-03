@@ -2,13 +2,13 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:41.047999-07:00
-description: "In Java erm\xF6glichen assoziative Arrays, oder Maps, das Speichern\
-  \ von Schl\xFCssel-Wert-Paaren f\xFCr eine effiziente Datensuche und -manipulation.\
-  \ Programmierer\u2026"
+description: "Wie geht das: Java verf\xFCgt nicht \xFCber eingebaute assoziative Arrays\
+  \ wie einige andere Sprachen, stellt aber die `Map` Schnittstelle und Klassen wie\u2026"
 lastmod: '2024-03-13T22:44:53.756244-06:00'
 model: gpt-4-0125-preview
-summary: "In Java erm\xF6glichen assoziative Arrays, oder Maps, das Speichern von\
-  \ Schl\xFCssel-Wert-Paaren f\xFCr eine effiziente Datensuche und -manipulation."
+summary: "Java verf\xFCgt nicht \xFCber eingebaute assoziative Arrays wie einige andere\
+  \ Sprachen, stellt aber die `Map` Schnittstelle und Klassen wie `HashMap` und `TreeMap`\
+  \ zur Verf\xFCgung, um diese Rolle zu erf\xFCllen."
 title: Verwendung von assoziativen Arrays
 weight: 15
 ---

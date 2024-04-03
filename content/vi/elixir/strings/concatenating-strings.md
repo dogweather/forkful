@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:11.333974-07:00
-description: "N\u1ED1i chu\u1ED7i l\xE0 vi\u1EC7c k\u1EBFt h\u1EE3p hai ho\u1EB7c\
-  \ nhi\u1EC1u chu\u1ED7i l\u1EA1i v\u1EDBi nhau \u0111\u1EC3 t\u1EA1o th\xE0nh m\u1ED9\
-  t \u0111o\u1EA1n v\u0103n b\u1EA3n \u0111\u01A1n. B\u1EA1n c\xF3 th\u1EC3 c\u1EA7\
-  n gh\xE9p v\u0103n b\u1EA3n \u0111\u1EC3 t\u1EA1o tin nh\u1EAFn cho ng\u01B0\u1EDD\
-  i d\xF9ng,\u2026"
+description: "C\xE1ch th\u1EE9c: Trong Elixir, b\u1EA1n c\xF3 th\u1EC3 n\u1ED1i chu\u1ED7\
+  i theo v\xE0i c\xE1ch \u0111\u01A1n gi\u1EA3n. H\xE3y kh\xE1m ph\xE1 c\xE1c ph\u01B0\
+  \u01A1ng ph\xE1p ph\u1ED5 bi\u1EBFn nh\u1EA5t: 1. S\u1EED d\u1EE5ng to\xE1n t\u1EED\
+  \ `<>`, l\xE0 c\xE1ch th\u1EB3ng\u2026"
 lastmod: '2024-03-13T22:44:36.197746-06:00'
 model: gpt-4-0125-preview
-summary: "N\u1ED1i chu\u1ED7i l\xE0 vi\u1EC7c k\u1EBFt h\u1EE3p hai ho\u1EB7c nhi\u1EC1\
-  u chu\u1ED7i l\u1EA1i v\u1EDBi nhau \u0111\u1EC3 t\u1EA1o th\xE0nh m\u1ED9t \u0111\
-  o\u1EA1n v\u0103n b\u1EA3n \u0111\u01A1n."
+summary: "Trong Elixir, b\u1EA1n c\xF3 th\u1EC3 n\u1ED1i chu\u1ED7i theo v\xE0i c\xE1\
+  ch \u0111\u01A1n gi\u1EA3n."
 title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 weight: 3
 ---

@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:37.121578-07:00
-description: "Vi\u1EC7c ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3\
-  n t\u1EA1i kh\xF4ng ch\xEDnh l\xE0 x\xE1c \u0111\u1ECBnh xem m\u1ED9t th\u01B0 m\u1EE5\
-  c c\xF3 \u1EDF m\u1ED9t v\u1ECB tr\xED ch\u1EC9 \u0111\u1ECBnh trong h\u1EC7 th\u1ED1\
-  ng t\u1EC7p hay kh\xF4ng. C\xE1c l\u1EADp tr\xECnh vi\xEAn\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: S\u1EED d\u1EE5ng cmdlet `Test-Path` \u0111\u1EC3\
+  \ ki\u1EC3m tra s\u1EF1 t\u1ED3n t\u1EA1i c\u1EE7a m\u1ED9t th\u01B0 m\u1EE5c. Cmdlet\
+  \ n\xE0y tr\u1EA3 v\u1EC1 m\u1ED9t boolean: `$true` n\u1EBFu th\u01B0 m\u1EE5c t\u1ED3\
+  n t\u1EA1i, v\xE0 `$false`\u2026"
 lastmod: '2024-03-13T22:44:36.955213-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1\
-  i kh\xF4ng ch\xEDnh l\xE0 x\xE1c \u0111\u1ECBnh xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3\
-  \ \u1EDF m\u1ED9t v\u1ECB tr\xED ch\u1EC9 \u0111\u1ECBnh trong h\u1EC7 th\u1ED1\
-  ng t\u1EC7p hay kh\xF4ng."
+summary: "S\u1EED d\u1EE5ng cmdlet `Test-Path` \u0111\u1EC3 ki\u1EC3m tra s\u1EF1\
+  \ t\u1ED3n t\u1EA1i c\u1EE7a m\u1ED9t th\u01B0 m\u1EE5c."
 title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
 weight: 20
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:47.061995-07:00
-description: "\xC9crire des tests en Bash implique de scripter des cas de test pour\
-  \ valider la fonctionnalit\xE9 de vos scripts Bash. Les programmeurs effectuent\
-  \ des tests\u2026"
+description: "Comment faire : Bash n'a pas de cadre de test int\xE9gr\xE9, mais vous\
+  \ pouvez \xE9crire des fonctions de test simples. Pour des tests plus sophistiqu\xE9\
+  s, des outils\u2026"
 lastmod: '2024-03-13T22:44:57.999541-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire des tests en Bash implique de scripter des cas de test pour valider\
-  \ la fonctionnalit\xE9 de vos scripts Bash."
+summary: "Bash n'a pas de cadre de test int\xE9gr\xE9, mais vous pouvez \xE9crire\
+  \ des fonctions de test simples."
 title: "R\xE9daction de tests"
 weight: 36
 ---

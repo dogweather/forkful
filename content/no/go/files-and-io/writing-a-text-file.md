@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:42.562601-07:00
-description: "\xC5 skrive en tekstfil i Go inneb\xE6rer \xE5 lage og skrive strenger\
-  \ av data til en ny eller eksisterende tekstfil. Programmerere gj\xF8r dette for\
-  \ \xE5 bevare data,\u2026"
+description: "Hvordan: I Go h\xE5ndteres skriving til en tekstfil av `os` og `io/ioutil`\
+  \ (for Go versjoner <1.16) eller `os` og `io` pluss `os` pakkene for Go 1.16 og\u2026"
 lastmod: '2024-03-13T22:44:40.287574-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive en tekstfil i Go inneb\xE6rer \xE5 lage og skrive strenger av\
-  \ data til en ny eller eksisterende tekstfil."
+summary: "I Go h\xE5ndteres skriving til en tekstfil av `os` og `io/ioutil` (for Go\
+  \ versjoner <1.16) eller `os` og `io` pluss `os` pakkene for Go 1.16 og over, noe\
+  \ som demonstrerer Go's filosofi om enkelhet og effektivitet."
 title: Skrive en tekstfil
 weight: 24
 ---

@@ -2,12 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:48.103900-07:00
-description: "Satunnaislukujen generointi Dart-kieless\xE4 sis\xE4lt\xE4\xE4 arvaamattomien\
-  \ numeeristen arvojen luomisen, jotka eroavat jokaisella suorituskerralla. Ohjelmoijat\u2026"
+description: "Kuinka: Dartin ydin kirjasto tukee satunnaislukujen generointia `Random`\
+  \ luokan avulla, joka l\xF6ytyy `dart:math`-kirjastosta. T\xE4ss\xE4 yksinkertainen\u2026"
 lastmod: '2024-03-13T22:44:56.266316-06:00'
 model: gpt-4-0125-preview
-summary: "Satunnaislukujen generointi Dart-kieless\xE4 sis\xE4lt\xE4\xE4 arvaamattomien\
-  \ numeeristen arvojen luomisen, jotka eroavat jokaisella suorituskerralla."
+summary: "Dartin ydin kirjasto tukee satunnaislukujen generointia `Random` luokan\
+  \ avulla, joka l\xF6ytyy `dart:math`-kirjastosta."
 title: Satunnaisten numeroiden luominen
 weight: 12
 ---

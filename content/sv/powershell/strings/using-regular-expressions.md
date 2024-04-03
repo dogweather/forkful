@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:44.847381-07:00
-description: "Regulj\xE4ra uttryck (regex) \xE4r sekvenser av tecken som bildar ett\
-  \ s\xF6km\xF6nster, prim\xE4rt anv\xE4nda f\xF6r s\xF6kning och manipulation av\
-  \ str\xE4ngar. Programmerare\u2026"
+description: "Hur man g\xF6r: I PowerShell kan du anv\xE4nda operatorerna `-match`,\
+  \ `-replace` och `-split`, bland andra, f\xF6r att utf\xF6ra \xE5tg\xE4rder med\
+  \ regulj\xE4ra uttryck. L\xE5t\u2026"
 lastmod: '2024-03-13T22:44:38.114188-06:00'
 model: gpt-4-0125-preview
-summary: "Regulj\xE4ra uttryck (regex) \xE4r sekvenser av tecken som bildar ett s\xF6\
-  km\xF6nster, prim\xE4rt anv\xE4nda f\xF6r s\xF6kning och manipulation av str\xE4\
-  ngar."
+summary: "I PowerShell kan du anv\xE4nda operatorerna `-match`, `-replace` och `-split`,\
+  \ bland andra, f\xF6r att utf\xF6ra \xE5tg\xE4rder med regulj\xE4ra uttryck."
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:33.068074-07:00
-description: "\xC5 lese en tekstfil i Dart inneb\xE6rer \xE5 f\xE5 tilgang til og\
-  \ hente data fra filer lagret p\xE5 filsystemet. Programmerere gj\xF8r dette for\
-  \ \xE5 h\xE5ndtere inndata,\u2026"
+description: "Hvordan: Darts kjernebibliotek, `dart:io`, gir de n\xF8dvendige funksjonene\
+  \ for \xE5 lese tekstfiler synkront eller asynkront. Her er hvordan man kan n\xE6\
+  rme seg\u2026"
 lastmod: '2024-03-13T22:44:40.506756-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 lese en tekstfil i Dart inneb\xE6rer \xE5 f\xE5 tilgang til og hente\
-  \ data fra filer lagret p\xE5 filsystemet."
+summary: "Darts kjernebibliotek, `dart:io`, gir de n\xF8dvendige funksjonene for \xE5\
+  \ lese tekstfiler synkront eller asynkront."
 title: Lese en tekstfil
 weight: 22
 ---

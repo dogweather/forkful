@@ -2,13 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:33.253982-07:00
-description: "Uuden projektin aloittaminen Dartissa k\xE4sitt\xE4\xE4 ymp\xE4rist\xF6\
-  n pystytt\xE4misen, joka edesauttaa tehokasta kehityst\xE4, testausta ja julkaisua.\
-  \ Ohjelmoijat\u2026"
+description: "Kuinka: 1. **Asenna Dart**: Varmista, ett\xE4 Dart on asennettu j\xE4\
+  rjestelm\xE4\xE4si. Jos ei, voit ladata sen osoitteesta [https://dart.dev/get-\u2026"
 lastmod: '2024-03-13T22:44:56.271500-06:00'
 model: gpt-4-0125-preview
-summary: "Uuden projektin aloittaminen Dartissa k\xE4sitt\xE4\xE4 ymp\xE4rist\xF6\
-  n pystytt\xE4misen, joka edesauttaa tehokasta kehityst\xE4, testausta ja julkaisua."
+summary: '1.'
 title: Uuden projektin aloittaminen
 weight: 1
 ---

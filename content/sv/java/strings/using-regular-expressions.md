@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:16.106858-07:00
-description: "Regular expressions (regulj\xE4ra uttryck) i Java l\xE5ter dig definiera\
-  \ specifika m\xF6nster f\xF6r att s\xF6ka, manipulera eller validera str\xE4ngar\
-  \ i din kod.\u2026"
+description: "Hur man g\xF6r: Javas inbyggda st\xF6d f\xF6r regulj\xE4ra uttryck \xE4\
+  r fr\xE4mst genom klasserna `Pattern` och `Matcher` i paketet `java.util.regex`.\
+  \ H\xE4r \xE4r ett enkelt\u2026"
 lastmod: '2024-03-13T22:44:37.777647-06:00'
 model: gpt-4-0125-preview
-summary: "Regular expressions (regulj\xE4ra uttryck) i Java l\xE5ter dig definiera\
-  \ specifika m\xF6nster f\xF6r att s\xF6ka, manipulera eller validera str\xE4ngar\
-  \ i din kod."
+summary: "Javas inbyggda st\xF6d f\xF6r regulj\xE4ra uttryck \xE4r fr\xE4mst genom\
+  \ klasserna `Pattern` och `Matcher` i paketet `java.util.regex`."
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---

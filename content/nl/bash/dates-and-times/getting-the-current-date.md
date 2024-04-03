@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:08.614804-07:00
-description: "De huidige datum in bash pakken gaat over het verkrijgen van de datum\
-  \ en tijd van het systeem. Programmeurs hebben dit nodig voor logboekregistratie,\u2026"
+description: 'Hoe te: Om de huidige datum en tijd te halen, gebruik je `date`. Hier
+  is de eenvoudige manier.'
 lastmod: '2024-03-13T22:44:50.993708-06:00'
 model: gpt-4-0125-preview
-summary: De huidige datum in bash pakken gaat over het verkrijgen van de datum en
-  tijd van het systeem.
+summary: Om de huidige datum en tijd te halen, gebruik je `date`.
 title: Het huidige datum ophalen
 weight: 29
 ---

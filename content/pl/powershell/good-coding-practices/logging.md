@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 01:07:26.915567-07:00
-description: "Logowanie polega po prostu na pozostawianiu \u015Bladu w kodzie \u2013\
-  \ to spos\xF3b na \u015Bledzenie tego, co si\u0119 dzieje, gdy skrypt jest uruchamiany\
-  \ \"na \u017Cywo\".\u2026"
+description: "Jak to zrobi\u0107: Oto kr\xF3tki przewodnik, jak doda\u0107 podstawowe\
+  \ logowanie do swoich skrypt\xF3w."
 lastmod: '2024-03-13T22:44:35.636346-06:00'
 model: gpt-4-1106-preview
-summary: "Logowanie polega po prostu na pozostawianiu \u015Bladu w kodzie \u2013 to\
-  \ spos\xF3b na \u015Bledzenie tego, co si\u0119 dzieje, gdy skrypt jest uruchamiany\
-  \ \"na \u017Cywo\"."
+summary: "Oto kr\xF3tki przewodnik, jak doda\u0107 podstawowe logowanie do swoich\
+  \ skrypt\xF3w."
 title: "Rejestrowanie zdarze\u0144"
 weight: 17
 ---

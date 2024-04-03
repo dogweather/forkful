@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:43.948977-07:00
-description: "Verificar se um diret\xF3rio existe em TypeScript \xE9 essencial para\
-  \ tarefas de gerenciamento de arquivos, como ler ou escrever dados em arquivos,\
-  \ garantindo\u2026"
+description: "Como Fazer: TypeScript, quando executado em um ambiente Node.js, permite\
+  \ verificar se um diret\xF3rio existe usando o m\xF3dulo `fs`, que fornece a fun\xE7\
+  \xE3o\u2026"
 lastmod: '2024-03-13T22:44:46.340333-06:00'
 model: gpt-4-0125-preview
-summary: "Verificar se um diret\xF3rio existe em TypeScript \xE9 essencial para tarefas\
-  \ de gerenciamento de arquivos, como ler ou escrever dados em arquivos, garantindo\
-  \ que opera\xE7\xF5es sejam realizadas apenas em diret\xF3rios v\xE1lidos."
+summary: "TypeScript, quando executado em um ambiente Node.js, permite verificar se\
+  \ um diret\xF3rio existe usando o m\xF3dulo `fs`, que fornece a fun\xE7\xE3o `existsSync()`\
+  \ ou a fun\xE7\xE3o ass\xEDncrona `access()` combinada com `constants.F_OK`."
 title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---

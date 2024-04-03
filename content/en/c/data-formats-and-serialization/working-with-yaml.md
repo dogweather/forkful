@@ -1,12 +1,12 @@
 ---
 date: 2024-02-03 17:50:14.942030-07:00
-description: "YAML, which stands for \"YAML Ain't Markup Language,\" is a human-readable\
-  \ data serialization standard that can be used for all sorts of applications, from\u2026"
+description: "How to: Working with YAML in C requires a library, as the standard C\
+  \ library does not provide direct support for YAML parsing or serialization. One\
+  \ of the\u2026"
 lastmod: '2024-03-13T22:45:00.529312-06:00'
 model: gpt-4-0125-preview
-summary: YAML, which stands for "YAML Ain't Markup Language," is a human-readable
-  data serialization standard that can be used for all sorts of applications, from
-  configuration files to data storage.
+summary: Working with YAML in C requires a library, as the standard C library does
+  not provide direct support for YAML parsing or serialization.
 title: Working with YAML
 weight: 41
 ---

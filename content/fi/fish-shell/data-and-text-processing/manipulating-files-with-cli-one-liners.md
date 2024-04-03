@@ -1,13 +1,12 @@
 ---
 date: 2024-01-27 16:21:21.234163-07:00
-description: "Ohjelmoinnin maailmassa, erityisesti Linux- tai Unix-ymp\xE4rist\xF6\
-  iss\xE4, tiedostojen suora manipulointi komentorivilt\xE4 (CLI) ei ole pelk\xE4\
-  st\xE4\xE4n mukavuuskysymys\u2026"
+description: "Miten: Tiedostojen manipulointi Fish Shelliss\xE4 on sek\xE4 intuitiivista\
+  \ ett\xE4 tehokasta. T\xE4ss\xE4 on joitakin esimerkkej\xE4 sen kyvyist\xE4: 1.\
+  \ **Tiedoston luominen**\u2026"
 lastmod: '2024-03-13T22:44:56.989259-06:00'
 model: gpt-4-0125-preview
-summary: "Ohjelmoinnin maailmassa, erityisesti Linux- tai Unix-ymp\xE4rist\xF6iss\xE4\
-  , tiedostojen suora manipulointi komentorivilt\xE4 (CLI) ei ole pelk\xE4st\xE4\xE4\
-  n mukavuuskysymys \u2013 se on voimakas ty\xF6kalu."
+summary: "Tiedostojen manipulointi Fish Shelliss\xE4 on sek\xE4 intuitiivista ett\xE4\
+  \ tehokasta."
 title: "Tiedostojen k\xE4sittely yhden rivin komentorivikomennoilla"
 weight: 31
 ---

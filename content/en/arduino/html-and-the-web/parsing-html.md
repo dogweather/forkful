@@ -1,12 +1,11 @@
 ---
 date: 2024-02-03 19:02:46.168722-07:00
-description: "Parsing HTML in Arduino projects is about extracting information from\
-  \ web pages. Programmers do this to enable their Arduino devices to interact with\
-  \ the\u2026"
+description: "How to: Parsing HTML on Arduino usually demands minimal footprint libraries\
+  \ due to limited device resources. A popular choice for web scraping and parsing\u2026"
 lastmod: '2024-03-13T22:45:00.320102-06:00'
 model: gpt-4-0125-preview
-summary: Parsing HTML in Arduino projects is about extracting information from web
-  pages.
+summary: Parsing HTML on Arduino usually demands minimal footprint libraries due to
+  limited device resources.
 title: Parsing HTML
 weight: 43
 ---

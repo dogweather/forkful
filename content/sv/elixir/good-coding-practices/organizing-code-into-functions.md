@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:10:03.726106-07:00
-description: "Att organisera kod i funktioner inneb\xE4r att gruppera relaterade operationer\
-  \ i \xE5teranv\xE4ndbara block. Vi g\xF6r det f\xF6r att f\xF6rb\xE4ttra l\xE4sbarheten\
-  \ och\u2026"
+description: "Hur man g\xF6r: L\xE5t oss skapa en enkel Elixir-funktion f\xF6r att\
+  \ g\xF6ra f\xF6rsta bokstaven i ord stora."
 lastmod: '2024-03-13T22:44:37.572941-06:00'
 model: gpt-4-1106-preview
-summary: "Att organisera kod i funktioner inneb\xE4r att gruppera relaterade operationer\
-  \ i \xE5teranv\xE4ndbara block."
+summary: "L\xE5t oss skapa en enkel Elixir-funktion f\xF6r att g\xF6ra f\xF6rsta bokstaven\
+  \ i ord stora."
 title: Att organisera kod i funktioner
 weight: 18
 ---

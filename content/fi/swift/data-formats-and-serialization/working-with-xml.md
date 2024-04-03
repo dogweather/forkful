@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:36:04.182021-07:00
-description: "XML:n k\xE4sittely tarkoittaa XML-tietojen j\xE4sent\xE4mist\xE4 ja\
-  \ tuottamista Swiftiss\xE4. Ohjelmoijat tekev\xE4t t\xE4t\xE4 tiedonvaihtoa varten,\
-  \ erityisesti silloin, kun\u2026"
+description: "Kuinka: Swift tarjoaa `XMLParser`- ja `XMLDocument`-luokat XML-tietojen\
+  \ j\xE4sent\xE4miseen. T\xE4ss\xE4 on p\xE4tk\xE4 yksinkertaisen XML-merkkijonon\
+  \ j\xE4sent\xE4miseen."
 lastmod: '2024-03-13T22:44:56.932138-06:00'
 model: gpt-4-0125-preview
-summary: "XML:n k\xE4sittely tarkoittaa XML-tietojen j\xE4sent\xE4mist\xE4 ja tuottamista\
-  \ Swiftiss\xE4."
+summary: "Swift tarjoaa `XMLParser`- ja `XMLDocument`-luokat XML-tietojen j\xE4sent\xE4\
+  miseen."
 title: "XML:n k\xE4sittely"
 weight: 40
 ---

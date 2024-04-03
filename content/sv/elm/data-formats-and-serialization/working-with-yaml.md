@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:17.166599-07:00
-description: "Elm st\xF6der inte YAML inbyggt, ett data serialiseringsformat som ofta\
-  \ anv\xE4nds f\xF6r konfigurationsfiler eller datadelning, p\xE5 grund av dess starka\
-  \ betoning\u2026"
+description: "Hur man g\xF6r: F\xF6r att hantera YAML i Elm beh\xF6ver du vanligtvis\
+  \ konvertera YAML till JSON utanf\xF6r Elm och sedan anv\xE4nda Elms inbyggda JSON-\u2026"
 lastmod: '2024-03-13T22:44:37.849862-06:00'
 model: gpt-4-0125-preview
-summary: "Elm st\xF6der inte YAML inbyggt, ett data serialiseringsformat som ofta\
-  \ anv\xE4nds f\xF6r konfigurationsfiler eller datadelning, p\xE5 grund av dess starka\
-  \ betoning p\xE5 typs\xE4kerhet och f\xF6ruts\xE4gbara resultat."
+summary: "F\xF6r att hantera YAML i Elm beh\xF6ver du vanligtvis konvertera YAML till\
+  \ JSON utanf\xF6r Elm och sedan anv\xE4nda Elms inbyggda JSON-avkodningsfunktionalitet\
+  \ f\xF6r att arbeta med datan."
 title: Att Arbeta med YAML
 weight: 41
 ---

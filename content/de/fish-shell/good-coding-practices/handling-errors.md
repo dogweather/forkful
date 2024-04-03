@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 00:52:12.895491-07:00
-description: "Fehlerbehandlung erm\xF6glicht es Ihrem Skript, sich anmutig mit dem\
-  \ Unerwarteten auseinanderzusetzen. Wir tun dies, um Fehler zu verwalten, ohne das\
-  \ Haar\u2026"
+description: "Wie geht das: Um Fehler in Fish zu fangen, nutzen Sie den `status` Befehl\
+  \ und Bedingungen. Angenommen `ping` schl\xE4gt fehl; so k\xF6nnen Sie das erkennen."
 lastmod: '2024-03-13T22:44:54.316860-06:00'
 model: gpt-4-1106-preview
-summary: "Fehlerbehandlung erm\xF6glicht es Ihrem Skript, sich anmutig mit dem Unerwarteten\
-  \ auseinanderzusetzen."
+summary: Um Fehler in Fish zu fangen, nutzen Sie den `status` Befehl und Bedingungen.
 title: Fehlerbehandlung
 weight: 16
 ---

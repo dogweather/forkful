@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:57:07.531157-07:00
-description: "La ricerca e la sostituzione di testo permettono di trovare stringhe\
-  \ specifiche e modificarle velocemente. I programmatori lo fanno per correggere\
-  \ errori,\u2026"
+description: 'How to: Ecco alcuni comandi Bash basilari per cercare e sostituire testo.
+  Usa `grep` per cercare.'
 lastmod: '2024-03-13T22:44:43.583954-06:00'
 model: gpt-4-1106-preview
-summary: La ricerca e la sostituzione di testo permettono di trovare stringhe specifiche
-  e modificarle velocemente.
+summary: Ecco alcuni comandi Bash basilari per cercare e sostituire testo.
 title: Ricerca e sostituzione del testo
 weight: 10
 ---

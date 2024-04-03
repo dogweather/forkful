@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 04:33:24.900880-07:00
-description: "Die Arbeit mit XML umfasst das Parsen und Manipulieren von XML-Dokumenten\
-  \ mithilfe von Code. Programmierer machen dies, um Daten in einem strukturierten,\u2026"
+description: "Wie geht das: Lua enth\xE4lt kein natives XML-Parsing, aber es gibt\
+  \ Bibliotheken wie LuaXML und xml2lua, die diese Aufgabe erledigen. Hier ein kurzer\
+  \ Blick\u2026"
 lastmod: '2024-03-13T22:44:54.039633-06:00'
 model: gpt-4-0125-preview
-summary: Die Arbeit mit XML umfasst das Parsen und Manipulieren von XML-Dokumenten
-  mithilfe von Code.
+summary: "Lua enth\xE4lt kein natives XML-Parsing, aber es gibt Bibliotheken wie LuaXML\
+  \ und xml2lua, die diese Aufgabe erledigen."
 title: Arbeiten mit XML
 weight: 40
 ---

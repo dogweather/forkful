@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:15.491682-07:00
-description: "Code organiseren in functies betekent dat je jouw programma opdeelt\
-  \ in herbruikbare stukken, waarbij elk stuk een specifieke taak afhandelt. We doen\
-  \ dit\u2026"
+description: 'Hoe te: Hier is een eenvoudig voorbeeld. In plaats van een lang script
+  te schrijven om gebruikers te begroeten, splitsen we de taak op in functies.'
 lastmod: '2024-03-13T22:44:50.773352-06:00'
 model: gpt-4-0125-preview
-summary: Code organiseren in functies betekent dat je jouw programma opdeelt in herbruikbare
-  stukken, waarbij elk stuk een specifieke taak afhandelt.
+summary: Hier is een eenvoudig voorbeeld.
 title: Code organiseren in functies
 weight: 18
 ---

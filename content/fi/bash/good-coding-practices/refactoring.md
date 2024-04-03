@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:16:48.865245-07:00
-description: "Uudelleenj\xE4rjestely on olemassa olevan tietokonekoodin rakenteen\
-  \ muuttamisen prosessi muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4. Se on elint\xE4\
-  rke\xE4 k\xE4yt\xE4nt\xF6\u2026"
+description: "Miten: Katsotaanpa yksinkertaista Bash-skripti\xE4, joka kaipaa uudelleenj\xE4\
+  rjestely\xE4. Se on k\xF6mpel\xF6, toistaa koodia ja sit\xE4 on vaikea seurata."
 lastmod: '2024-03-13T22:44:56.747402-06:00'
 model: gpt-4-0125-preview
-summary: "Uudelleenj\xE4rjestely on olemassa olevan tietokonekoodin rakenteen muuttamisen\
-  \ prosessi muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4."
+summary: "Katsotaanpa yksinkertaista Bash-skripti\xE4, joka kaipaa uudelleenj\xE4\
+  rjestely\xE4."
 title: Koodin refaktorointi
 weight: 19
 ---

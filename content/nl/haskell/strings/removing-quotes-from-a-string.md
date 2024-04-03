@@ -2,14 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:10.607518-07:00
-description: "Het verwijderen van aanhalingstekens uit een tekenreeks betekent het\
-  \ wegstrepen van eventuele enkele (' ') of dubbele (\" \") aanhalingstekens die\
-  \ deel\u2026"
+description: "Hoe te: In Haskell kunnen we een functie opstellen die alle aanhalingstekens\
+  \ uit een gegeven string verwijdert. Het is alsof je de aanhalingstekens de\u2026"
 lastmod: '2024-03-13T22:44:50.840304-06:00'
 model: gpt-4-0125-preview
-summary: Het verwijderen van aanhalingstekens uit een tekenreeks betekent het wegstrepen
-  van eventuele enkele (' ') of dubbele (" ") aanhalingstekens die deel uitmaken van
-  de stringgegevens.
+summary: In Haskell kunnen we een functie opstellen die alle aanhalingstekens uit
+  een gegeven string verwijdert.
 title: Quotes verwijderen uit een string
 weight: 9
 ---

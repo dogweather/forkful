@@ -1,11 +1,11 @@
 ---
 date: 2024-02-01 21:30:32.625793-07:00
-description: "Sending an HTTP request in Visual Basic for Applications (VBA) involves\
-  \ programmatically accessing web resources or web services by making requests over\u2026"
+description: "How to: The key to sending an HTTP request in VBA is utilizing the `Microsoft\
+  \ XML, v6.0` library (or older versions, depending on your system). First,\u2026"
 lastmod: '2024-03-13T22:44:59.931496-06:00'
 model: gpt-4-0125-preview
-summary: Sending an HTTP request in Visual Basic for Applications (VBA) involves programmatically
-  accessing web resources or web services by making requests over HTTP.
+summary: The key to sending an HTTP request in VBA is utilizing the `Microsoft XML,
+  v6.0` library (or older versions, depending on your system).
 title: Sending an HTTP request
 weight: 44
 ---

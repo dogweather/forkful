@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:47.162652-07:00
-description: "Das Abrufen des aktuellen Datums in Bash erfordert die Verwendung von\
-  \ integrierten Befehlen, um das Datum und die Uhrzeit in verschiedenen Formaten\u2026"
+description: "Wie geht das: In Bash ist der Befehl `date` Ihr prim\xE4res Werkzeug,\
+  \ um das aktuelle Datum und die Uhrzeit zu erhalten. Hier sind einige Beispiele,\
+  \ wie man\u2026"
 lastmod: '2024-03-13T22:44:54.069880-06:00'
 model: gpt-4-0125-preview
-summary: Das Abrufen des aktuellen Datums in Bash erfordert die Verwendung von integrierten
-  Befehlen, um das Datum und die Uhrzeit in verschiedenen Formaten anzuzeigen.
+summary: "In Bash ist der Befehl `date` Ihr prim\xE4res Werkzeug, um das aktuelle\
+  \ Datum und die Uhrzeit zu erhalten."
 title: Den aktuellen Datum abrufen
 weight: 29
 ---

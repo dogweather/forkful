@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:23:53.298516-07:00
-description: "TOML, som st\xE5r f\xF6r Tom's Obvious, Minimal Language, definierar\
-  \ hur konfigurationsfiler ska struktureras. Programmerare arbetar med TOML eftersom\
-  \ det \xE4r\u2026"
+description: "Hur man g\xF6r: F\xF6r att arbeta med TOML i JavaScript beh\xF6ver du\
+  \ en parser som `@iarna/toml`. F\xF6rst, installera den: `npm install @iarna/toml`.\
+  \ Sedan, tolka\u2026"
 lastmod: '2024-03-13T22:44:38.316746-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, som st\xE5r f\xF6r Tom's Obvious, Minimal Language, definierar hur\
-  \ konfigurationsfiler ska struktureras."
+summary: "F\xF6r att arbeta med TOML i JavaScript beh\xF6ver du en parser som `@iarna/toml`."
 title: Att arbeta med TOML
 weight: 39
 ---

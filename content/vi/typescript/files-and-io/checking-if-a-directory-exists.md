@@ -2,17 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:31.562503-07:00
-description: "Ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1\
-  i kh\xF4ng l\xE0 \u0111\u1EC3 \u0111\u1EA3m b\u1EA3o r\u1EB1ng folder th\u1EF1c\
-  \ s\u1EF1 c\xF3 m\u1EB7t tr\u01B0\u1EDBc khi b\u1EA1n \u0111\u1ECDc t\u1EEB n\xF3\
-  \ ho\u1EB7c ghi v\xE0o n\xF3. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0\
-  y \u0111\u1EC3\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong TypeScript, b\u1EA1n th\u01B0\u1EDD\
+  ng s\u1EED d\u1EE5ng module `fs` c\u1EE7a Node.js \u0111\u1EC3 ki\u1EC3m tra m\u1ED9\
+  t th\u01B0 m\u1EE5c. \u0110\xE2y l\xE0 c\xE1ch nhanh \u0111\u1EC3 l\xE0m \u0111\
+  i\u1EC1u \u0111\xF3."
 lastmod: '2024-03-13T22:44:36.338586-06:00'
 model: gpt-4-0125-preview
-summary: "Ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4\
-  ng l\xE0 \u0111\u1EC3 \u0111\u1EA3m b\u1EA3o r\u1EB1ng folder th\u1EF1c s\u1EF1\
-  \ c\xF3 m\u1EB7t tr\u01B0\u1EDBc khi b\u1EA1n \u0111\u1ECDc t\u1EEB n\xF3 ho\u1EB7\
-  c ghi v\xE0o n\xF3."
+summary: "Trong TypeScript, b\u1EA1n th\u01B0\u1EDDng s\u1EED d\u1EE5ng module `fs`\
+  \ c\u1EE7a Node.js \u0111\u1EC3 ki\u1EC3m tra m\u1ED9t th\u01B0 m\u1EE5c."
 title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
 weight: 20
 ---

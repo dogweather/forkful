@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:22.781400-07:00
-description: "Merkkijonosta lainausmerkit poistaminen C-kieless\xE4 tarkoittaa tekstisis\xE4\
-  ll\xF6n erottamista ilman ymp\xE4r\xF6ivi\xE4 yksitt\xE4isi\xE4 (' ') tai kaksois\
-  \ (\" \")\u2026"
+description: "Miten: Lainausmerkkien poistaminen merkkijonosta C-kieless\xE4 tapahtuu\
+  \ k\xE4ym\xE4ll\xE4 merkkijono l\xE4pi ja kopioimalla hahmot, jotka eiv\xE4t ole\
+  \ lainausmerkkej\xE4,\u2026"
 lastmod: '2024-03-13T22:44:57.026024-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonosta lainausmerkit poistaminen C-kieless\xE4 tarkoittaa tekstisis\xE4\
-  ll\xF6n erottamista ilman ymp\xE4r\xF6ivi\xE4 yksitt\xE4isi\xE4 (' ') tai kaksois\
-  \ (\" \") lainausmerkkej\xE4."
+summary: "Lainausmerkkien poistaminen merkkijonosta C-kieless\xE4 tapahtuu k\xE4ym\xE4\
+  ll\xE4 merkkijono l\xE4pi ja kopioimalla hahmot, jotka eiv\xE4t ole lainausmerkkej\xE4\
+  , uuteen merkkijonoon."
 title: Lainausmerkkien poistaminen merkkijonosta
 weight: 9
 ---

@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:43:19.421181-07:00
-description: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to filtrowanie string\xF3\
-  w przez wykrywanie i wyeliminowanie niechcianych sekwencji. Programi\u015Bci robi\u0105\
-  \ to, by oczy\u015Bci\u0107\u2026"
+description: "How to: (Jak to zrobi\u0107?) ."
 lastmod: '2024-03-13T22:44:35.915122-06:00'
 model: gpt-4-1106-preview
-summary: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to filtrowanie string\xF3w\
-  \ przez wykrywanie i wyeliminowanie niechcianych sekwencji."
+summary: .
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---

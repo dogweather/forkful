@@ -2,16 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:19.422090-07:00
-description: "Trong Swift, vi\u1EC7c ki\u1EC3m tra n\u1EBFu m\u1ED9t th\u01B0 m\u1EE5\
-  c t\u1ED3n t\u1EA1i gi\xFAp b\u1EA1n x\xE1c nh\u1EADn tr\u1EA1ng th\xE1i c\u1EE7\
-  a h\u1EC7 th\u1ED1ng t\u1EC7p tr\u01B0\u1EDBc khi b\u1EA1n \u0111\u1ECDc ho\u1EB7\
-  c ghi d\u1EEF li\u1EC7u. L\u1EADp tr\xECnh vi\xEAn l\xE0m\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: `FileManager` c\u1EE7a Swift c\xF3 c\xE1c c\xF4\
+  ng c\u1EE5 cho vi\u1EC7c n\xE0y. S\u1EED d\u1EE5ng ph\u01B0\u01A1ng th\u1EE9c `fileExists(atPath:)`\
+  \ c\u1EE7a n\xF3."
 lastmod: '2024-03-13T22:44:37.116732-06:00'
 model: gpt-4-0125-preview
-summary: "Trong Swift, vi\u1EC7c ki\u1EC3m tra n\u1EBFu m\u1ED9t th\u01B0 m\u1EE5\
-  c t\u1ED3n t\u1EA1i gi\xFAp b\u1EA1n x\xE1c nh\u1EADn tr\u1EA1ng th\xE1i c\u1EE7\
-  a h\u1EC7 th\u1ED1ng t\u1EC7p tr\u01B0\u1EDBc khi b\u1EA1n \u0111\u1ECDc ho\u1EB7\
-  c ghi d\u1EEF li\u1EC7u."
+summary: "`FileManager` c\u1EE7a Swift c\xF3 c\xE1c c\xF4ng c\u1EE5 cho vi\u1EC7c\
+  \ n\xE0y."
 title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
 weight: 20
 ---

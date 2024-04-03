@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:27.073231-07:00
-description: "W programowaniu komputerowym \"Drukowanie wyj\u015Bcia debugowania\"\
-  \ polega na produkowaniu szczeg\xF3\u0142owych komunikat\xF3w informacyjnych, kt\xF3\
-  re pomagaj\u0105 programistom\u2026"
+description: "Jak to zrobi\u0107: W Go mo\u017Cesz u\u017Cy\u0107 standardowego pakietu\
+  \ `fmt` do drukowania wyj\u015Bcia debugowania na konsol\u0119. Pakiet `fmt` oferuje\
+  \ r\xF3\u017Cnorodne funkcje, takie\u2026"
 lastmod: '2024-03-13T22:44:34.854264-06:00'
 model: gpt-4-0125-preview
-summary: "W programowaniu komputerowym \"Drukowanie wyj\u015Bcia debugowania\" polega\
-  \ na produkowaniu szczeg\xF3\u0142owych komunikat\xF3w informacyjnych, kt\xF3re\
-  \ pomagaj\u0105 programistom zrozumie\u0107 przep\u0142yw wykonania ich programu\
-  \ lub zlokalizowa\u0107 problemy."
+summary: "W Go mo\u017Cesz u\u017Cy\u0107 standardowego pakietu `fmt` do drukowania\
+  \ wyj\u015Bcia debugowania na konsol\u0119."
 title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---

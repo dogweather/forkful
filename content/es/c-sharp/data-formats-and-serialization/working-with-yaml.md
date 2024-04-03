@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:58.110505-07:00
-description: "YAML, que significa \"YAML Ain't Markup Language\" (YAML no es un lenguaje\
-  \ de marcado), es un formato de serializaci\xF3n de datos legible por humanos. Los\u2026"
+description: "C\xF3mo hacerlo: C# no tiene soporte incorporado para YAML, pero puedes\
+  \ trabajar f\xE1cilmente con YAML utilizando bibliotecas de terceros como *YamlDotNet*.\u2026"
 lastmod: '2024-03-13T22:44:59.097927-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, que significa \"YAML Ain't Markup Language\" (YAML no es un lenguaje\
-  \ de marcado), es un formato de serializaci\xF3n de datos legible por humanos."
+summary: "C# no tiene soporte incorporado para YAML, pero puedes trabajar f\xE1cilmente\
+  \ con YAML utilizando bibliotecas de terceros como *YamlDotNet*."
 title: Trabajando con YAML
 weight: 41
 ---

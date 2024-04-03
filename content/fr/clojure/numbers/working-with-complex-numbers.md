@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:38:39.398329-07:00
-description: "Les nombres complexes \xE9tendent les nombres r\xE9els avec une partie\
-  \ suppl\xE9mentaire, l'unit\xE9 imaginaire 'i'. Les programmeurs les utilisent dans\
-  \ divers\u2026"
+description: "Comment faire : Clojure offre un support int\xE9gr\xE9 pour les nombres\
+  \ complexes via la classe utilitaire `clojure.lang.Numbers`. Utilisez `complex`\
+  \ pour cr\xE9er\u2026"
 lastmod: '2024-03-13T22:44:57.275713-06:00'
 model: gpt-4-0125-preview
-summary: "Les nombres complexes \xE9tendent les nombres r\xE9els avec une partie suppl\xE9\
-  mentaire, l'unit\xE9 imaginaire 'i'."
+summary: "Clojure offre un support int\xE9gr\xE9 pour les nombres complexes via la\
+  \ classe utilitaire `clojure.lang.Numbers`."
 title: Manipulation des nombres complexes
 weight: 14
 ---

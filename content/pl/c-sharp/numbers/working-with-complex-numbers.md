@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 04:39:04.370982-07:00
-description: "Liczby zespolone poszerzaj\u0105 nasz system liczbowy o liczby urojone,\
-  \ umo\u017Cliwiaj\u0105c rozwi\u0105zywanie r\xF3wna\u0144, kt\xF3re nie maj\u0105\
-  \ rzeczywistych rozwi\u0105za\u0144. Programi\u015Bci\u2026"
+description: "Jak to zrobi\u0107: C# ma wbudowan\u0105 struktur\u0119 `System.Numerics.Complex`\
+  \ do przetwarzania liczb zespolonych. Oto kr\xF3tkie wprowadzenie."
 lastmod: '2024-03-13T22:44:35.402389-06:00'
 model: gpt-4-0125-preview
-summary: "Liczby zespolone poszerzaj\u0105 nasz system liczbowy o liczby urojone,\
-  \ umo\u017Cliwiaj\u0105c rozwi\u0105zywanie r\xF3wna\u0144, kt\xF3re nie maj\u0105\
-  \ rzeczywistych rozwi\u0105za\u0144."
+summary: "C# ma wbudowan\u0105 struktur\u0119 `System.Numerics.Complex` do przetwarzania\
+  \ liczb zespolonych."
 title: Praca z liczbami zespolonymi
 weight: 14
 ---

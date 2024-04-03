@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:16:29.828554-07:00
-description: "Refactorizar es el proceso de reorganizar tu c\xF3digo para mejorar\
-  \ su estructura y legibilidad sin alterar el comportamiento externo o la funcionalidad.\
-  \ Los\u2026"
+description: "C\xF3mo hacerlo: Supongamos que tienes una funci\xF3n en tu Arduino\
+  \ que est\xE1 haciendo demasiado, como esta."
 lastmod: '2024-03-13T22:44:59.341492-06:00'
 model: gpt-4-0125-preview
-summary: "Refactorizar es el proceso de reorganizar tu c\xF3digo para mejorar su estructura\
-  \ y legibilidad sin alterar el comportamiento externo o la funcionalidad."
+summary: "Supongamos que tienes una funci\xF3n en tu Arduino que est\xE1 haciendo\
+  \ demasiado, como esta."
 title: "Refactorizaci\xF3n"
 weight: 19
 ---

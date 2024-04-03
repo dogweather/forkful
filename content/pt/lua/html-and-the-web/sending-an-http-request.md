@@ -1,12 +1,13 @@
 ---
 date: 2024-01-20 18:00:01.769721-07:00
-description: "Enviar uma requisi\xE7\xE3o HTTP \xE9 o processo de solicitar dados\
-  \ ou a\xE7\xF5es de um servidor usando o protocolo HTTP. Programadores fazem isso\
-  \ para interagir com\u2026"
+description: "Como fazer: Para enviar uma requisi\xE7\xE3o HTTP em Lua, voc\xEA vai\
+  \ precisar de uma biblioteca externa, pois as funcionalidades padr\xF5es n\xE3o\
+  \ oferecem suporte\u2026"
 lastmod: '2024-03-13T22:44:46.706052-06:00'
 model: gpt-4-1106-preview
-summary: "Enviar uma requisi\xE7\xE3o HTTP \xE9 o processo de solicitar dados ou a\xE7\
-  \xF5es de um servidor usando o protocolo HTTP."
+summary: "Para enviar uma requisi\xE7\xE3o HTTP em Lua, voc\xEA vai precisar de uma\
+  \ biblioteca externa, pois as funcionalidades padr\xF5es n\xE3o oferecem suporte\
+  \ direto para isso."
 title: "Enviando uma requisi\xE7\xE3o HTTP"
 weight: 44
 ---

@@ -1,12 +1,12 @@
 ---
 date: 2024-02-01 21:12:21.317784-07:00
-description: "JSON, or JavaScript Object Notation, is a lightweight format for storing\
-  \ and transporting data, ideal for server-to-client communication and configuration\u2026"
+description: "How to: In Google Apps Script, manipulating JSON is a straightforward\
+  \ process, largely due to the native support JavaScript provides for JSON parsing\
+  \ and\u2026"
 lastmod: '2024-03-13T22:44:59.689431-06:00'
 model: gpt-4-0125-preview
-summary: JSON, or JavaScript Object Notation, is a lightweight format for storing
-  and transporting data, ideal for server-to-client communication and configuration
-  files.
+summary: In Google Apps Script, manipulating JSON is a straightforward process, largely
+  due to the native support JavaScript provides for JSON parsing and stringification.
 title: Working with JSON
 weight: 38
 ---

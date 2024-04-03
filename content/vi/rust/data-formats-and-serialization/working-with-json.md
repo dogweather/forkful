@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:07.154309-07:00
-description: "JSON (JavaScript Object Notation) l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1\
-  ng v\u0103n b\u1EA3n \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng cho vi\u1EC7c trao \u0111\
-  \u1ED5i d\u1EEF li\u1EC7u. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3 v\xEC\
-  \ s\u1EF1 \u0111\u01A1n gi\u1EA3n v\xE0 kh\u1EA3 n\u0103ng\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Rust, `serde` v\xE0 `serde_json` l\xE0\
+  \ nh\u1EEFng th\u01B0 vi\u1EC7n \u0111i \u0111\u1EA7u cho c\xF4ng vi\u1EC7c v\u1EDB\
+  i JSON. D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch s\u1EED d\u1EE5ng ch\xFAng: \u0110\
+  \u1EA7u ti\xEAn, th\xEAm c\xE1c ph\u1EE5\u2026"
 lastmod: '2024-03-13T22:44:36.404596-06:00'
 model: gpt-4-0125-preview
-summary: "JSON (JavaScript Object Notation) l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1\
-  ng v\u0103n b\u1EA3n \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng cho vi\u1EC7c trao \u0111\
-  \u1ED5i d\u1EEF li\u1EC7u."
+summary: "Trong Rust, `serde` v\xE0 `serde_json` l\xE0 nh\u1EEFng th\u01B0 vi\u1EC7\
+  n \u0111i \u0111\u1EA7u cho c\xF4ng vi\u1EC7c v\u1EDBi JSON."
 title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
 weight: 38
 ---

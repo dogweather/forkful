@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:35.159926-07:00
-description: "Baixar uma p\xE1gina web no Google Apps Script envolve buscar o conte\xFA\
-  do de uma p\xE1gina web via HTML para v\xE1rios prop\xF3sitos, como web scraping,\
-  \ extra\xE7\xE3o de\u2026"
+description: "Como fazer: No Google Apps Script, o servi\xE7o `UrlFetchApp` \xE9 fundamental\
+  \ para baixar conte\xFAdo da web. Abaixo est\xE1 um guia passo a passo e um exemplo\u2026"
 lastmod: '2024-03-13T22:44:46.106037-06:00'
 model: gpt-4-0125-preview
-summary: "Baixar uma p\xE1gina web no Google Apps Script envolve buscar o conte\xFA\
-  do de uma p\xE1gina web via HTML para v\xE1rios prop\xF3sitos, como web scraping,\
-  \ extra\xE7\xE3o de dados ou monitoramento de mudan\xE7as."
+summary: "No Google Apps Script, o servi\xE7o `UrlFetchApp` \xE9 fundamental para\
+  \ baixar conte\xFAdo da web."
 title: "Baixando uma p\xE1gina da web"
 weight: 42
 ---

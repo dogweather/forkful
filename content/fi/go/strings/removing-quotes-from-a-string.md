@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:33.044836-07:00
-description: "Merkkijonosta lainausmerkkien poistaminen Go:ssa tarkoittaa annetun\
-  \ merkkijonon alussa ja lopussa olevien lainausmerkkien (`\"` tai `'`) eliminointia.\u2026"
+description: "Kuinka: Go tarjoaa useita l\xE4hestymistapoja lainausmerkkien poistamiseen\
+  \ merkkijonosta, mutta yksi suoraviivaisimmista menetelmist\xE4 on k\xE4ytt\xE4\xE4\
+  \u2026"
 lastmod: '2024-03-13T22:44:56.037569-06:00'
 model: gpt-4-0125-preview
-summary: Merkkijonosta lainausmerkkien poistaminen Go:ssa tarkoittaa annetun merkkijonon
-  alussa ja lopussa olevien lainausmerkkien (`"` tai `'`) eliminointia.
+summary: "Go tarjoaa useita l\xE4hestymistapoja lainausmerkkien poistamiseen merkkijonosta,\
+  \ mutta yksi suoraviivaisimmista menetelmist\xE4 on k\xE4ytt\xE4\xE4 `strings`-paketin\
+  \ tarjoamia `Trim`- ja `TrimFunc`-funktioita."
 title: Lainausmerkkien poistaminen merkkijonosta
 weight: 9
 ---

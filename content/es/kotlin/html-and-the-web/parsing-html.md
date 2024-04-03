@@ -2,13 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:18.062985-07:00
-description: "Analizar HTML significa descomponer el marcado de una p\xE1gina web\
-  \ en algo que un programa puede entender y manipular. Los programadores analizan\
-  \ HTML para\u2026"
+description: "C\xF3mo hacerlo: Kotlin facilita el an\xE1lisis de HTML con bibliotecas\
+  \ como Jsoup. Aqu\xED te mostramos c\xF3mo hacerlo."
 lastmod: '2024-03-13T22:44:59.033591-06:00'
 model: gpt-4-0125-preview
-summary: "Analizar HTML significa descomponer el marcado de una p\xE1gina web en algo\
-  \ que un programa puede entender y manipular."
+summary: "Kotlin facilita el an\xE1lisis de HTML con bibliotecas como Jsoup."
 title: Analizando HTML
 weight: 43
 ---

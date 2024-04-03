@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:43:00.924306-07:00
-description: "Rimuovere caratteri corrispondenti a un pattern significa filtrare una\
-  \ stringa eliminando tutti i caratteri o gruppi di caratteri che rientrano in un\u2026"
+description: 'How to: Utilizzeremo `NSRegularExpression` per trovare pattern nei caratteri
+  e `String` methods per eliminarli.'
 lastmod: '2024-03-13T22:44:43.754786-06:00'
 model: gpt-4-1106-preview
-summary: Rimuovere caratteri corrispondenti a un pattern significa filtrare una stringa
-  eliminando tutti i caratteri o gruppi di caratteri che rientrano in un criterio
-  specifico.
+summary: Utilizzeremo `NSRegularExpression` per trovare pattern nei caratteri e `String`
+  methods per eliminarli.
 title: Eliminazione di caratteri che corrispondono a un pattern
 weight: 5
 ---

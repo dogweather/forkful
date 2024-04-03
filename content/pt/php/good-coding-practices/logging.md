@@ -1,14 +1,12 @@
 ---
 date: 2024-01-26 01:07:05.330672-07:00
-description: "O registro de atividades (logging) \xE9 basicamente como manter um di\xE1\
-  rio para o seu c\xF3digo; \xE9 o ato de gravar eventos, erros e outros pontos de\
-  \ dados\u2026"
+description: "Como Fazer: O PHP vem com uma fun\xE7\xE3o de registro de erros embutida\
+  \ que \xE9 f\xE1cil de usar. Basta inserir `error_log()` no seu c\xF3digo para enviar\
+  \ uma mensagem\u2026"
 lastmod: '2024-03-13T22:44:46.673817-06:00'
 model: gpt-4-1106-preview
-summary: "O registro de atividades (logging) \xE9 basicamente como manter um di\xE1\
-  rio para o seu c\xF3digo; \xE9 o ato de gravar eventos, erros e outros pontos de\
-  \ dados significativos que acontecem quando sua aplica\xE7\xE3o est\xE1 em execu\xE7\
-  \xE3o."
+summary: "O PHP vem com uma fun\xE7\xE3o de registro de erros embutida que \xE9 f\xE1\
+  cil de usar."
 title: Registro de Logs
 weight: 17
 ---

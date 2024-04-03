@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:31:44.821523-07:00
-description: "Att r\xE4kna ut ett framtida eller f\xF6rflutet datum inneb\xE4r att\
-  \ l\xE4gga till eller dra ifr\xE5n dagar till en given dag. Programmerare g\xF6\
-  r detta f\xF6r att hantera\u2026"
+description: "Hur g\xF6r man: ."
 lastmod: '2024-03-13T22:44:38.444765-06:00'
 model: gpt-4-1106-preview
-summary: "Att r\xE4kna ut ett framtida eller f\xF6rflutet datum inneb\xE4r att l\xE4\
-  gga till eller dra ifr\xE5n dagar till en given dag."
+summary: .
 title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutenheten"
 weight: 26
 ---

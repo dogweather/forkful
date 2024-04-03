@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 04:13:35.598191-07:00
-description: "O La\xE7o Ler-Avaliar-Imprimir (REPL, na sigla em ingl\xEAs) \xE9 um\
-  \ ambiente de programa\xE7\xE3o interativo e simples que recebe entradas \xFAnicas\
-  \ do usu\xE1rio, avalia-as\u2026"
+description: "Como Fazer: Elm n\xE3o vem com um REPL integrado. No entanto, voc\xEA\
+  \ pode usar `elm repl` a partir da linha de comando para iniciar uma sess\xE3o Elm\
+  \ ap\xF3s\u2026"
 lastmod: '2024-03-13T22:44:46.501659-06:00'
 model: gpt-4-0125-preview
-summary: "O La\xE7o Ler-Avaliar-Imprimir (REPL, na sigla em ingl\xEAs) \xE9 um ambiente\
-  \ de programa\xE7\xE3o interativo e simples que recebe entradas \xFAnicas do usu\xE1\
-  rio, avalia-as e retorna o resultado ao usu\xE1rio."
+summary: "Elm n\xE3o vem com um REPL integrado."
 title: Usando um shell interativo (REPL)
 weight: 34
 ---

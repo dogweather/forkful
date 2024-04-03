@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:53.813741-07:00
-description: "\xC5 skaffe den n\xE5v\xE6rende datoen i Java er en fundamental operasjon\
-  \ som lar programmerere manipulere datoobjekter for operasjoner som logging,\u2026"
+description: "Hvordan: Java tilbyr flere m\xE5ter \xE5 f\xE5 den n\xE5v\xE6rende datoen\
+  \ p\xE5, ved bruk av b\xE5de den gamle `java.util.Date` klassen og den nyere `java.time`\
+  \ pakken\u2026"
 lastmod: '2024-03-13T22:44:40.676871-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skaffe den n\xE5v\xE6rende datoen i Java er en fundamental operasjon\
-  \ som lar programmerere manipulere datoobjekter for operasjoner som logging, datoberegninger\
-  \ og tidsbaserte vilk\xE5r."
+summary: "Java tilbyr flere m\xE5ter \xE5 f\xE5 den n\xE5v\xE6rende datoen p\xE5,\
+  \ ved bruk av b\xE5de den gamle `java.util.Date` klassen og den nyere `java.time`\
+  \ pakken (introdusert i Java 8) som er mer allsidig og intuitiv."
 title: "F\xE5 dagens dato"
 weight: 29
 ---

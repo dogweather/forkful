@@ -2,11 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:43.484470-07:00
-description: "JSON (JavaScript Object Notation) is een tekstformaat voor gegevensuitwisseling.\
-  \ Programmeurs gebruiken het vanwege de eenvoud en interoperabiliteit\u2026"
+description: "Hoe te: In Rust zijn de `serde` en `serde_json` crates de go-to bibliotheken\
+  \ voor werk met JSON. Hier is hoe je ze gebruikt: Voeg eerst afhankelijkheden\u2026"
 lastmod: '2024-03-13T22:44:50.615488-06:00'
 model: gpt-4-0125-preview
-summary: JSON (JavaScript Object Notation) is een tekstformaat voor gegevensuitwisseling.
+summary: In Rust zijn de `serde` en `serde_json` crates de go-to bibliotheken voor
+  werk met JSON.
 title: Werken met JSON
 weight: 38
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-25 02:59:57.892439-07:00
-description: "Rounding numbers means chopping off the decimals to a set precision,\
-  \ often to whole numbers. Programmers round to simplify calculations, improve\u2026"
+description: 'How to: PHP offers a few ways to round numbers: `round()`, `ceil()`,
+  and `floor()`. Here''s how they work.'
 lastmod: '2024-03-13T22:45:00.161717-06:00'
 model: gpt-4-1106-preview
-summary: Rounding numbers means chopping off the decimals to a set precision, often
-  to whole numbers.
+summary: PHP offers a few ways to round numbers.
 title: Rounding numbers
 weight: 13
 ---

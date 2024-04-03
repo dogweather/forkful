@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 01:17:40.549844-07:00
-description: "Refaktorisering \xE4r processen att omstrukturera befintlig kod utan\
-  \ att \xE4ndra dess externa beteende, med m\xE5let att f\xF6rb\xE4ttra icke-funktionella\
-  \ attribut\u2026"
+description: "Hur man g\xF6r: L\xE5t oss st\xE4da upp ett vanligt Elixir-m\xF6nster.\
+  \ Vi kommer att refaktorisera en funktion `calculate_stats` som g\xF6r mer \xE4\
+  n den borde genom att\u2026"
 lastmod: '2024-03-13T22:44:37.575749-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktorisering \xE4r processen att omstrukturera befintlig kod utan att\
-  \ \xE4ndra dess externa beteende, med m\xE5let att f\xF6rb\xE4ttra icke-funktionella\
-  \ attribut s\xE5som l\xE4sbarhet och underh\xE5llsbarhet."
+summary: "L\xE5t oss st\xE4da upp ett vanligt Elixir-m\xF6nster."
 title: Refaktorisering
 weight: 19
 ---

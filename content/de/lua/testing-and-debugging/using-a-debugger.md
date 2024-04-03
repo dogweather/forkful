@@ -1,7 +1,7 @@
 ---
 date: 2024-01-26 03:50:09.085077-07:00
-description: "Lua kommt nicht mit einem eingebauten Debugger, aber Sie k\xF6nnen externe\
-  \ Debugger verwenden, wie zum Beispiel ZeroBrane Studio. Hier ist ein Vorgeschmack\u2026"
+description: "Wie: Lua kommt nicht mit einem eingebauten Debugger, aber Sie k\xF6\
+  nnen externe Debugger verwenden, wie zum Beispiel ZeroBrane Studio. Hier ist ein\u2026"
 lastmod: '2024-03-13T22:44:54.019667-06:00'
 model: gpt-4-0125-preview
 summary: "Lua kommt nicht mit einem eingebauten Debugger, aber Sie k\xF6nnen externe\

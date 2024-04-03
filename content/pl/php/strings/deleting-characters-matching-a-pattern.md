@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:42:42.774548-07:00
-description: "Usuwanie znak\xF3w odpowiadaj\u0105cych okre\u015Blonemu wzorcowi to\
-  \ po prostu filtrowanie tekstu. Programi\u015Bci robi\u0105 to, by oczy\u015Bci\u0107\
-  \ dane, usun\u0105\u0107 niepotrzebne\u2026"
+description: "Jak to zrobi\u0107: Do usuni\u0119cia znak\xF3w u\u017Cywa si\u0119\
+  \ cz\u0119sto wyra\u017Ce\u0144 regularnych z funkcj\u0105 `preg_replace`. Oto przyk\u0142\
+  ad."
 lastmod: '2024-03-13T22:44:35.480589-06:00'
 model: gpt-4-1106-preview
-summary: "Usuwanie znak\xF3w odpowiadaj\u0105cych okre\u015Blonemu wzorcowi to po\
-  \ prostu filtrowanie tekstu."
+summary: "Do usuni\u0119cia znak\xF3w u\u017Cywa si\u0119 cz\u0119sto wyra\u017Ce\u0144\
+  \ regularnych z funkcj\u0105 `preg_replace`."
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---

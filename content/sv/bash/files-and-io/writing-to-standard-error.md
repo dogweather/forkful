@@ -2,12 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:53.845583-07:00
-description: "Att skriva till standardfel (stderr) i Bash handlar om att dirigera\
-  \ felmeddelanden eller annan viktig diagnostisk utdata separat fr\xE5n standardutdata\u2026"
+description: "Hur man g\xF6r: I Bash anv\xE4nder du `>&2` f\xF6r att omdirigera utdata\
+  \ till stderr. H\xE4r \xE4r ett grundl\xE4ggande exempel."
 lastmod: '2024-03-13T22:44:38.098467-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva till standardfel (stderr) i Bash handlar om att dirigera felmeddelanden\
-  \ eller annan viktig diagnostisk utdata separat fr\xE5n standardutdata (stdout)."
+summary: "I Bash anv\xE4nder du `>&2` f\xF6r att omdirigera utdata till stderr."
 title: Skriva till standardfel
 weight: 25
 ---

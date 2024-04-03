@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:46.293863-07:00
-description: "Le test en Ruby consiste \xE0 v\xE9rifier que votre code se comporte\
-  \ comme pr\xE9vu dans diverses conditions. Les programmeurs \xE9crivent des tests\
-  \ pour assurer la\u2026"
+description: "Comment faire : Ruby est fourni avec une biblioth\xE8que int\xE9gr\xE9\
+  e appel\xE9e `Test::Unit` pour \xE9crire des tests unitaires, encapsulant les pratiques\
+  \ de test\u2026"
 lastmod: '2024-03-13T22:44:58.423526-06:00'
 model: gpt-4-0125-preview
-summary: "Le test en Ruby consiste \xE0 v\xE9rifier que votre code se comporte comme\
-  \ pr\xE9vu dans diverses conditions."
+summary: "Ruby est fourni avec une biblioth\xE8que int\xE9gr\xE9e appel\xE9e `Test::Unit`\
+  \ pour \xE9crire des tests unitaires, encapsulant les pratiques de test dans des\
+  \ structures simples."
 title: "R\xE9daction de tests"
 weight: 36
 ---

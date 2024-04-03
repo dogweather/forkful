@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 01:17:08.223293-07:00
-description: "Le remaniement est le processus de restructuration du code informatique\
-  \ existant sans changer son comportement externe. Les programmeurs le font pour\u2026"
+description: "Comment faire : Refactorisons une m\xE9thode C# simple qui calcule et\
+  \ imprime la somme d'un tableau de nombres : Avant le Remaniement ."
 lastmod: '2024-03-13T22:44:57.796875-06:00'
 model: gpt-4-0125-preview
-summary: Le remaniement est le processus de restructuration du code informatique existant
-  sans changer son comportement externe.
+summary: "Refactorisons une m\xE9thode C# simple qui calcule et imprime la somme d'un\
+  \ tableau de nombres."
 title: Refactoring
 weight: 19
 ---

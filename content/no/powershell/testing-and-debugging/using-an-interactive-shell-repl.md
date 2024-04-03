@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 04:16:52.245545-07:00
-description: "Det interaktive skallet, eller Read-Eval-Print Loop (REPL), lar deg\
-  \ skrive PowerShell-kommandoer og f\xE5 umiddelbar tilbakemelding. Programmerere\
-  \ bruker det\u2026"
+description: "Hvordan: Start PowerShell, og du er i REPL. Pr\xF8v `Get-Date` Cmdlet."
 lastmod: '2024-03-13T22:44:41.019475-06:00'
 model: gpt-4-0125-preview
-summary: "Det interaktive skallet, eller Read-Eval-Print Loop (REPL), lar deg skrive\
-  \ PowerShell-kommandoer og f\xE5 umiddelbar tilbakemelding."
+summary: Start PowerShell, og du er i REPL.
 title: Bruke et interaktivt skall (REPL)
 weight: 34
 ---

@@ -1,14 +1,12 @@
 ---
 date: 2024-01-27 16:20:43.381394-07:00
-description: "Editar archivos en su lugar con l\xEDneas de comando individuales (CLI,\
-  \ por sus siglas en ingl\xE9s Interface de L\xEDnea de Comando) en Ruby te permite\
-  \ modificar\u2026"
+description: "C\xF3mo hacerlo: Ruby ofrece una manera directa de editar archivos en\
+  \ su lugar directamente desde la l\xEDnea de comando. Usando el interruptor `-i`\
+  \ de Ruby,\u2026"
 lastmod: '2024-03-13T22:44:59.587564-06:00'
 model: gpt-4-0125-preview
-summary: "Editar archivos en su lugar con l\xEDneas de comando individuales (CLI,\
-  \ por sus siglas en ingl\xE9s Interface de L\xEDnea de Comando) en Ruby te permite\
-  \ modificar archivos directamente desde tu terminal, sin la necesidad de abrirlos\
-  \ en un editor, realizar cambios y guardarlos de nuevo."
+summary: "Ruby ofrece una manera directa de editar archivos en su lugar directamente\
+  \ desde la l\xEDnea de comando."
 title: "Editando archivos directamente con l\xEDneas de comandos"
 weight: 32
 ---

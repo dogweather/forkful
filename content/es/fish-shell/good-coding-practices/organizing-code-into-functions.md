@@ -3,13 +3,12 @@ changelog:
 - 2024-01-28, dogweather, reviewed and added links
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 23:01:32.943608-07:00
-description: "Organizar el c\xF3digo en funciones trata de agrupar trozos de script\
-  \ para realizar tareas espec\xEDficas. Lo hacemos porque hace que el c\xF3digo sea\
-  \ m\xE1s f\xE1cil de\u2026"
+description: "C\xF3mo hacerlo: En Fish, escribes una funci\xF3n con la palabra clave\
+  \ `function`, le das un nombre y terminas con `end`. Aqu\xED hay una simple."
 lastmod: '2024-03-13T22:44:59.507179-06:00'
 model: gpt-4-0125-preview
-summary: "Organizar el c\xF3digo en funciones trata de agrupar trozos de script para\
-  \ realizar tareas espec\xEDficas."
+summary: "En Fish, escribes una funci\xF3n con la palabra clave `function`, le das\
+  \ un nombre y terminas con `end`."
 title: "Organizando el c\xF3digo en funciones"
 weight: 18
 ---

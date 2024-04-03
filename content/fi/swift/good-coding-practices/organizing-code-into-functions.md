@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 01:11:55.630004-07:00
-description: "Koodin j\xE4rjest\xE4minen funktioihin on teht\xE4vien pilkkominen uudelleenk\xE4\
-  ytett\xE4viksi osiksi. T\xE4m\xE4 tekee koodista siistimm\xE4n, v\xE4hemm\xE4n virhealttiin\
-  \ ja\u2026"
+description: "Kuinka: Kuvittele teht\xE4v\xE4: laske taulukon keskiarvo. Ilman funktioita,\
+  \ liitt\xE4isit kaiken p\xE4\xE4ohjelmaan. Funktioiden avulla tekisit n\xE4in."
 lastmod: '2024-03-13T22:44:56.912288-06:00'
 model: gpt-4-1106-preview
-summary: "Koodin j\xE4rjest\xE4minen funktioihin on teht\xE4vien pilkkominen uudelleenk\xE4\
-  ytett\xE4viksi osiksi."
+summary: "Kuvittele teht\xE4v\xE4."
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---

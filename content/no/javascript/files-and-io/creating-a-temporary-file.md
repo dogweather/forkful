@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:41:10.386285-07:00
-description: "\xC5 lage en midlertidig fil er prosessen med \xE5 opprette en fil som\
-  \ kun skal brukes midlertidig. Programmerere gj\xF8r dette for \xE5 lagre data midlertidig\
-  \ uten \xE5\u2026"
+description: "Hvordan Gj\xF8re Det: For \xE5 lage en midlertidig fil i JavaScript,\
+  \ kan man bruke innebygde moduler som `fs` i Node.js. Her er et eksempel p\xE5 hvordan\
+  \ man\u2026"
 lastmod: '2024-03-13T22:44:41.202648-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 lage en midlertidig fil er prosessen med \xE5 opprette en fil som kun\
-  \ skal brukes midlertidig."
+summary: "For \xE5 lage en midlertidig fil i JavaScript, kan man bruke innebygde moduler\
+  \ som `fs` i Node.js."
 title: Opprette en midlertidig fil
 weight: 21
 ---

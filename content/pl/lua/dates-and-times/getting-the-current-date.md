@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:25.613161-07:00
-description: "Pobieranie aktualnej daty w programowaniu jest kluczowym zadaniem dla\
-  \ wielu aplikacji, w tym zapisywania log\xF3w, znakowania czasu zdarze\u0144 czy\
-  \ planowania\u2026"
+description: "Jak to zrobi\u0107: Lua udost\u0119pnia funkcj\u0119 `os.date` do pobierania\
+  \ aktualnej daty i czasu. Funkcj\u0119 mo\u017Cna u\u017Cy\u0107 bez argument\xF3\
+  w, aby otrzyma\u0107 sformatowany ci\u0105g\u2026"
 lastmod: '2024-03-13T22:44:35.550550-06:00'
 model: gpt-4-0125-preview
-summary: "Pobieranie aktualnej daty w programowaniu jest kluczowym zadaniem dla wielu\
-  \ aplikacji, w tym zapisywania log\xF3w, znakowania czasu zdarze\u0144 czy planowania\
-  \ zada\u0144."
+summary: "Lua udost\u0119pnia funkcj\u0119 `os.date` do pobierania aktualnej daty\
+  \ i czasu."
 title: Pobieranie aktualnej daty
 weight: 29
 ---

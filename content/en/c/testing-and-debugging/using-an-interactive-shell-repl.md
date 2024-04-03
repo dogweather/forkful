@@ -1,12 +1,12 @@
 ---
 date: 2024-02-03 17:50:02.783417-07:00
-description: "An interactive shell, also known as a Read-Eval-Print Loop (REPL), allows\
-  \ programmers to type in expressions or code and immediately see results,\u2026"
+description: "How to: To engage with a C REPL, you might not find as straightforward\
+  \ a path as in languages like Python or JavaScript. However, tools like `Cling`,\
+  \ a\u2026"
 lastmod: '2024-03-13T22:45:00.513015-06:00'
 model: gpt-4-0125-preview
-summary: An interactive shell, also known as a Read-Eval-Print Loop (REPL), allows
-  programmers to type in expressions or code and immediately see results, enhancing
-  learning and debugging processes.
+summary: To engage with a C REPL, you might not find as straightforward a path as
+  in languages like Python or JavaScript.
 title: Using an interactive shell (REPL)
 weight: 34
 ---

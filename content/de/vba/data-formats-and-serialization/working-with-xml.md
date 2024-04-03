@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:41.587832-07:00
-description: "Die Arbeit mit XML in Visual Basic f\xFCr Anwendungen (VBA) beinhaltet\
-  \ das Parsen, Erstellen und Modifizieren von XML-Dokumenten im Kontext von Microsoft\u2026"
+description: "Wie: Um mit dem Interagieren mit XML zu beginnen, verwendet man \xFC\
+  blicherweise das `MSXML2.DOMDocument`-Objekt. Diese Schnittstelle erm\xF6glicht\
+  \ es Ihnen,\u2026"
 lastmod: '2024-03-13T22:44:53.745579-06:00'
 model: gpt-4-0125-preview
-summary: "Die Arbeit mit XML in Visual Basic f\xFCr Anwendungen (VBA) beinhaltet das\
-  \ Parsen, Erstellen und Modifizieren von XML-Dokumenten im Kontext von Microsoft\
-  \ Office-Anwendungen."
+summary: "Um mit dem Interagieren mit XML zu beginnen, verwendet man \xFCblicherweise\
+  \ das `MSXML2.DOMDocument`-Objekt."
 title: Arbeiten mit XML
 weight: 40
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:16.552590-07:00
-description: "Lavorare con CSV (Valori Separati da Virgola) in JavaScript comporta\
-  \ l'analisi o la generazione di file CSV per ingerire dati tabellari da fonti esterne\u2026"
+description: "Come fare: JavaScript non ha funzionalit\xE0 incorporate per l'analisi\
+  \ o la creazione di stringhe CSV come ha con JSON. Tuttavia, \xE8 possibile gestire\u2026"
 lastmod: '2024-03-13T22:44:43.836023-06:00'
 model: gpt-4-0125-preview
-summary: Lavorare con CSV (Valori Separati da Virgola) in JavaScript comporta l'analisi
-  o la generazione di file CSV per ingerire dati tabellari da fonti esterne oppure
-  esportare dati per l'utilizzo in altri programmi.
+summary: "JavaScript non ha funzionalit\xE0 incorporate per l'analisi o la creazione\
+  \ di stringhe CSV come ha con JSON."
 title: Lavorare con i CSV
 weight: 37
 ---

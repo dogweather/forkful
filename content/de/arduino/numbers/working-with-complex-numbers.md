@@ -1,11 +1,9 @@
 ---
 date: 2024-01-26 04:36:51.380777-07:00
-description: "Komplexe Zahlen bestehen aus einem Realteil und einem Imagin\xE4rteil,\
-  \ \xFCblicherweise dargestellt als `a + bi`. Sie sind entscheidend f\xFCr einige\u2026"
+description: 'Wie: .'
 lastmod: '2024-03-13T22:44:54.139054-06:00'
 model: gpt-4-0125-preview
-summary: "Komplexe Zahlen bestehen aus einem Realteil und einem Imagin\xE4rteil, \xFC\
-  blicherweise dargestellt als `a + bi`."
+summary: .
 title: Umgang mit komplexen Zahlen
 weight: 14
 ---

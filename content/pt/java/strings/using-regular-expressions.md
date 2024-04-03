@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:08.209363-07:00
-description: "Express\xF5es regulares (regex) em Java permitem definir padr\xF5es\
-  \ espec\xEDficos para pesquisar, manipular ou validar strings no seu c\xF3digo.\
-  \ Programadores as\u2026"
+description: "Como fazer: O suporte embutido do Java para regex \xE9 primariamente\
+  \ atrav\xE9s das classes `Pattern` e `Matcher` no pacote `java.util.regex`. Aqui\
+  \ est\xE1 um\u2026"
 lastmod: '2024-03-13T22:44:46.446392-06:00'
 model: gpt-4-0125-preview
-summary: "Express\xF5es regulares (regex) em Java permitem definir padr\xF5es espec\xED\
-  ficos para pesquisar, manipular ou validar strings no seu c\xF3digo."
+summary: "O suporte embutido do Java para regex \xE9 primariamente atrav\xE9s das\
+  \ classes `Pattern` e `Matcher` no pacote `java.util.regex`."
 title: "Usando express\xF5es regulares"
 weight: 11
 ---

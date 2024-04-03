@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:37.775217-07:00
-description: "Konwersja \u0142a\u0144cucha znak\xF3w na ma\u0142e litery w j\u0119\
-  zyku C polega na przekszta\u0142ceniu wszystkich wielkich liter w danym \u0142a\u0144\
-  cuchu na odpowiadaj\u0105ce im ma\u0142e litery.\u2026"
+description: "Jak to zrobi\u0107: C nie ma wbudowanej funkcji bezpo\u015Brednio konwertuj\u0105\
+  cej \u0142a\u0144cuch znak\xF3w na ma\u0142e litery, w przeciwie\u0144stwie do niekt\xF3\
+  rych j\u0119zyk\xF3w wy\u017Cszego\u2026"
 lastmod: '2024-03-13T22:44:35.871649-06:00'
 model: gpt-4-0125-preview
-summary: "Konwersja \u0142a\u0144cucha znak\xF3w na ma\u0142e litery w j\u0119zyku\
-  \ C polega na przekszta\u0142ceniu wszystkich wielkich liter w danym \u0142a\u0144\
-  cuchu na odpowiadaj\u0105ce im ma\u0142e litery."
+summary: "C nie ma wbudowanej funkcji bezpo\u015Brednio konwertuj\u0105cej \u0142\
+  a\u0144cuch znak\xF3w na ma\u0142e litery, w przeciwie\u0144stwie do niekt\xF3rych\
+  \ j\u0119zyk\xF3w wy\u017Cszego poziomu."
 title: "Konwersja \u0142a\u0144cucha znak\xF3w na ma\u0142e litery"
 weight: 4
 ---

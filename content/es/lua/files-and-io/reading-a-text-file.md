@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:54:39.715323-07:00
-description: "Leer un archivo de texto es b\xE1sicamente acceder a la informaci\xF3\
-  n almacenada en un archivo .txt desde tu programa. Los programadores hacen esto\
-  \ para\u2026"
+description: "C\xF3mo hacerlo: ."
 lastmod: '2024-03-13T22:44:59.219890-06:00'
 model: gpt-4-1106-preview
-summary: "Leer un archivo de texto es b\xE1sicamente acceder a la informaci\xF3n almacenada\
-  \ en un archivo ."
+summary: .
 title: Lectura de un archivo de texto
 weight: 22
 ---

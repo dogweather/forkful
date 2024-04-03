@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:38:28.696065-07:00
-description: "Konvertering av strenger til sm\xE5 bokstaver betyr \xE5 endre alle\
-  \ tegn i en tekststreng til deres sm\xE5 bokstavversjon. Programmerere gj\xF8r dette\
-  \ for \xE5\u2026"
+description: "How to: I Elixir bruker vi `String.downcase/2` for \xE5 konvertere strenger\
+  \ til sm\xE5 bokstaver. Her er et eksempel."
 lastmod: '2024-03-13T22:44:40.430634-06:00'
 model: gpt-4-1106-preview
-summary: "Konvertering av strenger til sm\xE5 bokstaver betyr \xE5 endre alle tegn\
-  \ i en tekststreng til deres sm\xE5 bokstavversjon."
+summary: "I Elixir bruker vi `String.downcase/2` for \xE5 konvertere strenger til\
+  \ sm\xE5 bokstaver."
 title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---

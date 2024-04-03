@@ -1,15 +1,13 @@
 ---
 date: 2024-01-26 03:50:10.041151-07:00
-description: "\u8FD9\u91CC\u6709\u4E00\u5C0F\u6BB5\u4F7F\u7528 IntelliJ IDEA\uFF08\
-  IDE\u754C\u7684\u590F\u6D1B\u514B\xB7\u798F\u5C14\u6469\u65AF\uFF09\u5BF9 Kotlin\
-  \ \u8FDB\u884C\u8C03\u8BD5\u7684\u793A\u4F8B\uFF1A ```kotlin fun main() { val mysteryNumber\
-  \ = 42 var guess = 0 while (guess != mysteryNumber) {\u2026"
+description: "\u5982\u4F55\u64CD\u4F5C: \u8FD9\u91CC\u6709\u4E00\u5C0F\u6BB5\u4F7F\
+  \u7528 IntelliJ IDEA\uFF08IDE\u754C\u7684\u590F\u6D1B\u514B\xB7\u798F\u5C14\u6469\
+  \u65AF\uFF09\u5BF9 Kotlin \u8FDB\u884C\u8C03\u8BD5\u7684\u793A\u4F8B\uFF1A."
 lastmod: '2024-03-13T22:44:47.724251-06:00'
 model: gpt-4-0125-preview
 summary: "\u8FD9\u91CC\u6709\u4E00\u5C0F\u6BB5\u4F7F\u7528 IntelliJ IDEA\uFF08IDE\u754C\
   \u7684\u590F\u6D1B\u514B\xB7\u798F\u5C14\u6469\u65AF\uFF09\u5BF9 Kotlin \u8FDB\u884C\
-  \u8C03\u8BD5\u7684\u793A\u4F8B\uFF1A\n\n```kotlin\nfun main() {\n    val mysteryNumber\
-  \ = 42\n    var guess = 0\n\n    while (guess ."
+  \u8C03\u8BD5\u7684\u793A\u4F8B\uFF1A."
 title: "\u4F7F\u7528\u8C03\u8BD5\u5668"
 weight: 35
 ---

@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:46:26.137527-07:00
-description: "Att avrunda tal inneb\xE4r att justera dem f\xF6r att vara n\xE4rmare\
-  \ ett enklare eller mer signifikant v\xE4rde. Programmerare avrundar tal f\xF6r\
-  \ att f\xF6renkla\u2026"
+description: "Hur man g\xF6r: H\xE4r \xE4r det grundl\xE4ggande om att avrunda tal\
+  \ i Python."
 lastmod: '2024-03-13T22:44:37.478204-06:00'
 model: gpt-4-0125-preview
-summary: "Att avrunda tal inneb\xE4r att justera dem f\xF6r att vara n\xE4rmare ett\
-  \ enklare eller mer signifikant v\xE4rde."
+summary: "H\xE4r \xE4r det grundl\xE4ggande om att avrunda tal i Python."
 title: Avrundning av tal
 weight: 13
 ---

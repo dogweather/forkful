@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:46.445048-07:00
-description: "Een tekenreeks converteren naar kleine letters betekent dat alle hoofdletters\
-  \ in de tekst worden getransformeerd naar hun kleine letter equivalenten.\u2026"
+description: 'Hoe: In C# kun je een tekenreeks converteren naar kleine letters met
+  behulp van de `ToLower()` of `ToLowerInvariant()` methoden. Hier is hoe.'
 lastmod: '2024-03-13T22:44:50.797013-06:00'
 model: gpt-4-0125-preview
-summary: Een tekenreeks converteren naar kleine letters betekent dat alle hoofdletters
-  in de tekst worden getransformeerd naar hun kleine letter equivalenten.
+summary: In C# kun je een tekenreeks converteren naar kleine letters met behulp van
+  de `ToLower()` of `ToLowerInvariant()` methoden.
 title: Een string omzetten naar kleine letters
 weight: 4
 ---

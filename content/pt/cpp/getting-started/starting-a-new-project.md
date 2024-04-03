@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 18:03:11.979230-07:00
-description: "Iniciar um novo projeto em C++ \xE9 criar um espa\xE7o de trabalho limpo\
-  \ para desenvolver c\xF3digo desde o come\xE7o. Programadores fazem isso para organizar\
-  \ melhor\u2026"
+description: 'Como Fazer: Vamos iniciar um projeto simples. Usaremos o CMake, uma
+  ferramenta popular para gerar arquivos de build.'
 lastmod: '2024-03-13T22:44:46.880290-06:00'
 model: gpt-4-1106-preview
-summary: "Iniciar um novo projeto em C++ \xE9 criar um espa\xE7o de trabalho limpo\
-  \ para desenvolver c\xF3digo desde o come\xE7o."
+summary: Vamos iniciar um projeto simples.
 title: Iniciando um novo projeto
 weight: 1
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:36:52.201626-07:00
-description: "\xC5 konvertere en dato til en streng betyr \xE5 endre datoen fra et\
-  \ format Java forst\xE5r til tekst vi mennesker lett leser. Vi gj\xF8r dette for\
-  \ \xE5 vise\u2026"
+description: "How to: (Slik gj\xF8r du det:) I moderne Java bruker vi `java.time.format.DateTimeFormatter`\
+  \ sammen med `java.time.LocalDate` eller `java.time.LocalDateTime`\u2026"
 lastmod: '2024-03-13T22:44:40.677831-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 konvertere en dato til en streng betyr \xE5 endre datoen fra et format\
-  \ Java forst\xE5r til tekst vi mennesker lett leser."
+summary: I moderne Java bruker vi `java.time.format.DateTimeFormatter` sammen med
+  `java.time.LocalDate` eller `java.time.LocalDateTime` for datokonvertering.
 title: Konvertere en dato til en streng
 weight: 28
 ---

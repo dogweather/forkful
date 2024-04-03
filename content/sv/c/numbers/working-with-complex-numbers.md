@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:53.173733-07:00
-description: "Komplexa tal best\xE5r av en reell del och en imagin\xE4r del, representerade\
-  \ som `a + bi` d\xE4r `i` \xE4r kvadratroten av `-1`. Programmerare arbetar med\
-  \ komplexa\u2026"
+description: "Hur man g\xF6r: I C st\xF6ds komplexa tal av standardbiblioteket, specifikt\
+  \ `<complex.h>`. F\xF6r att anv\xE4nda dem, deklarera variabler med typen `double\
+  \ complex`\u2026"
 lastmod: '2024-03-13T22:44:38.375659-06:00'
 model: gpt-4-0125-preview
-summary: "Komplexa tal best\xE5r av en reell del och en imagin\xE4r del, representerade\
-  \ som `a + bi` d\xE4r `i` \xE4r kvadratroten av `-1`."
+summary: "I C st\xF6ds komplexa tal av standardbiblioteket, specifikt `<complex.h>`."
 title: Att arbeta med komplexa tal
 weight: 14
 ---

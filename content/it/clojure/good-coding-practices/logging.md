@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 01:01:11.287933-07:00
-description: "Il logging \xE8 essenzialmente l'equivalente software di un registro\
-  \ di bordo di una nave; \xE8 un modo per registrare gli eventi che si verificano\
-  \ mentre\u2026"
+description: "Come fare: Clojure si appoggia alle funzionalit\xE0 di logging di Java,\
+  \ ma \xE8 possibile accedervi in un modo pi\xF9 idiomatico per Clojure. Vediamo\
+  \ come potresti\u2026"
 lastmod: '2024-03-13T22:44:43.048660-06:00'
 model: gpt-4-1106-preview
-summary: "Il logging \xE8 essenzialmente l'equivalente software di un registro di\
-  \ bordo di una nave; \xE8 un modo per registrare gli eventi che si verificano mentre\
-  \ un'applicazione \xE8 in esecuzione."
+summary: "Clojure si appoggia alle funzionalit\xE0 di logging di Java, ma \xE8 possibile\
+  \ accedervi in un modo pi\xF9 idiomatico per Clojure."
 title: Registrazione Eventi (Logging)
 weight: 17
 ---

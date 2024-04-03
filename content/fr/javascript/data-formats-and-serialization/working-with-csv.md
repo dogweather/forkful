@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:14.674985-07:00
-description: "Travailler avec les CSV (Valeurs S\xE9par\xE9es par des Virgules) en\
-  \ JavaScript implique l'analyse ou la g\xE9n\xE9ration de fichiers CSV pour ing\xE9\
-  rer des donn\xE9es\u2026"
+description: "Comment faire : JavaScript ne dispose pas de fonction int\xE9gr\xE9\
+  e pour l'analyse ou la g\xE9n\xE9ration de CSV comme c'est le cas avec JSON. Cependant,\
+  \ vous pouvez\u2026"
 lastmod: '2024-03-13T22:44:58.301529-06:00'
 model: gpt-4-0125-preview
-summary: "Travailler avec les CSV (Valeurs S\xE9par\xE9es par des Virgules) en JavaScript\
-  \ implique l'analyse ou la g\xE9n\xE9ration de fichiers CSV pour ing\xE9rer des\
-  \ donn\xE9es tabulaires provenant de sources externes ou exporter des donn\xE9es\
-  \ pour une utilisation dans d'autres programmes."
+summary: "JavaScript ne dispose pas de fonction int\xE9gr\xE9e pour l'analyse ou la\
+  \ g\xE9n\xE9ration de CSV comme c'est le cas avec JSON."
 title: Travailler avec CSV
 weight: 37
 ---

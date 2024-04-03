@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:20.178233-07:00
-description: "Parsowanie HTML w Haskellu pozwala na ekstrakcj\u0119 danych, manipulowanie\
-  \ zawarto\u015Bci\u0105 HTML lub programistyczne interakcje ze stronami internetowymi.\
-  \ Operacja\u2026"
+description: "Jak to zrobi\u0107: Do parsowania HTML w Haskellu u\u017Cyjemy biblioteki\
+  \ `tagsoup` ze wzgl\u0119du na jej prostot\u0119 i elastyczno\u015B\u0107. Najpierw\
+  \ upewnij si\u0119, \u017Ce\u2026"
 lastmod: '2024-03-13T22:44:35.449452-06:00'
 model: gpt-4-0125-preview
-summary: "Parsowanie HTML w Haskellu pozwala na ekstrakcj\u0119 danych, manipulowanie\
-  \ zawarto\u015Bci\u0105 HTML lub programistyczne interakcje ze stronami internetowymi."
+summary: "Do parsowania HTML w Haskellu u\u017Cyjemy biblioteki `tagsoup` ze wzgl\u0119\
+  du na jej prostot\u0119 i elastyczno\u015B\u0107."
 title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---

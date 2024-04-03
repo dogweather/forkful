@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:39:17.025953-07:00
-description: "Trasformare una stringa in minuscolo significa convertire tutti i caratteri\
-  \ alfabetici in minuscole. Questo serve per standardizzare l'input degli utenti,\u2026"
+description: 'How to: Per convertire una stringa in minuscolo in Rust, usiamo il metodo
+  `.to_lowercase()`. Ecco un esempio rapido.'
 lastmod: '2024-03-13T22:44:43.205293-06:00'
 model: gpt-4-1106-preview
-summary: Trasformare una stringa in minuscolo significa convertire tutti i caratteri
-  alfabetici in minuscole.
+summary: Per convertire una stringa in minuscolo in Rust, usiamo il metodo `.to_lowercase()`.
 title: Conversione di una stringa in minuscolo
 weight: 4
 ---

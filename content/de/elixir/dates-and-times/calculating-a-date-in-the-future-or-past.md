@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:28:32.420577-07:00
-description: "Datumskalkulation in der Zukunft oder Vergangenheit bedeutet, ein bestimmtes\
-  \ Date aus einem Startdatum zu berechnen, indem Tage, Wochen oder Jahre\u2026"
+description: 'How to: Elixir macht Datumskalkulation einfach mit dem `Date` Modul.
+  Hier ist, wie du es machst.'
 lastmod: '2024-03-13T22:44:53.548833-06:00'
 model: gpt-4-1106-preview
-summary: "Datumskalkulation in der Zukunft oder Vergangenheit bedeutet, ein bestimmtes\
-  \ Date aus einem Startdatum zu berechnen, indem Tage, Wochen oder Jahre hinzugef\xFC\
-  gt oder abgezogen werden."
+summary: Elixir macht Datumskalkulation einfach mit dem `Date` Modul.
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---

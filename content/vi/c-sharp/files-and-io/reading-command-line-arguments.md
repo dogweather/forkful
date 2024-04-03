@@ -2,17 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:00.818618-07:00
-description: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh cho ph\xE9\
-  p m\u1ED9t ch\u01B0\u01A1ng tr\xECnh C# x\u1EED l\xFD c\xE1c \u0111\u1EA7u v\xE0\
-  o c\u1EE7a ng\u01B0\u1EDDi d\xF9ng \u0111\u01B0\u1EE3c cung c\u1EA5p khi kh\u1EDF\
-  i ch\u1EA1y. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng \u0111i\u1EC1u n\xE0\
-  y \u0111\u1EC3\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch \"\
+  nu\u1ED1t ch\u1EEDng\" nh\u1EEFng \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh."
 lastmod: '2024-03-13T22:44:36.677817-06:00'
 model: gpt-4-0125-preview
-summary: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh cho ph\xE9\
-  p m\u1ED9t ch\u01B0\u01A1ng tr\xECnh C# x\u1EED l\xFD c\xE1c \u0111\u1EA7u v\xE0\
-  o c\u1EE7a ng\u01B0\u1EDDi d\xF9ng \u0111\u01B0\u1EE3c cung c\u1EA5p khi kh\u1EDF\
-  i ch\u1EA1y."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch \"nu\u1ED1t ch\u1EEDng\" nh\u1EEF\
+  ng \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh."
 title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
 weight: 23
 ---

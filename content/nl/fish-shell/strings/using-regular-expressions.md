@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:44.202521-07:00
-description: "Reguliere expressies, of regex, zijn patronen die reeksen van strings\
-  \ beschrijven. Programmeurs gebruiken ze om tekst te zoeken, overeen te komen en\
-  \ te\u2026"
+description: "Hoe te gebruiken: De Fish Shell heeft ingebouwde regex-ondersteuning\
+  \ in commando's zoals `string`. Laten we eens duiken in enkele voorbeelden:\u2026"
 lastmod: '2024-03-13T22:44:51.235162-06:00'
 model: gpt-4-0125-preview
-summary: Reguliere expressies, of regex, zijn patronen die reeksen van strings beschrijven.
+summary: De Fish Shell heeft ingebouwde regex-ondersteuning in commando's zoals `string`.
 title: Reguliere expressies gebruiken
 weight: 11
 ---

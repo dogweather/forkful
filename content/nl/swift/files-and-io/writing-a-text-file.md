@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:45.292662-07:00
-description: "Een tekstbestand schrijven houdt in dat gegevens worden opgeslagen als\
-  \ leesbare tekst, met behulp van een karaktercodering zoals UTF-8. Programmeurs\
-  \ doen\u2026"
+description: 'Hoe: Tekst naar een bestand schrijven in Swift is eenvoudig met de `String`
+  klasse en `FileManager`. Hier is een snel voorbeeld.'
 lastmod: '2024-03-13T22:44:51.176306-06:00'
 model: gpt-4-0125-preview
-summary: Een tekstbestand schrijven houdt in dat gegevens worden opgeslagen als leesbare
-  tekst, met behulp van een karaktercodering zoals UTF-8.
+summary: Tekst naar een bestand schrijven in Swift is eenvoudig met de `String` klasse
+  en `FileManager`.
 title: Een tekstbestand schrijven
 weight: 24
 ---

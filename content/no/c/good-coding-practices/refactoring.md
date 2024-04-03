@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:28.821723-07:00
-description: "Refaktorering i programmering inneb\xE6rer omstrukturering av eksisterende\
-  \ kode uten \xE5 endre dens eksterne oppf\xF8rsel, med m\xE5l om \xE5 forbedre ikke-funksjonelle\u2026"
+description: "Hvordan: Refaktorering kan involvere en rekke taktikker fra \xE5 gi\
+  \ nytt navn til variabler for klarhet til \xE5 endre kodestrukturen for bedre modularisering.\u2026"
 lastmod: '2024-03-13T22:44:41.281241-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktorering i programmering inneb\xE6rer omstrukturering av eksisterende\
-  \ kode uten \xE5 endre dens eksterne oppf\xF8rsel, med m\xE5l om \xE5 forbedre ikke-funksjonelle\
-  \ attributter som lesbarhet, redusere kompleksitet og forbedre vedlikeholdbarheten."
+summary: "Refaktorering kan involvere en rekke taktikker fra \xE5 gi nytt navn til\
+  \ variabler for klarhet til \xE5 endre kodestrukturen for bedre modularisering."
 title: Refaktorisering
 weight: 19
 ---

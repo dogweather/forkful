@@ -2,14 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:34.712634-07:00
-description: "Vi\u1EBFt v\xE0o l\u1ED7i chu\u1EA9n (`stderr`) l\xE0 m\u1ED9t c\xE1\
-  ch \u0111\u1EC3 xu\u1EA5t th\xF4ng b\xE1o l\u1ED7i v\xE0 ch\u1EA9n \u0111o\xE1n.\
-  \ L\u1EADp tr\xECnh vi\xEAn l\xE0m v\u1EADy \u0111\u1EC3 ph\xE2n bi\u1EC7t ch\xFA\
-  ng v\u1EDBi \u0111\u1EA7u ra th\xF4ng th\u01B0\u1EDDng\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EC3 vi\u1EBFt v\xE0o l\u1ED7i chu\u1EA9\
+  n trong Clojure, b\u1EA1n s\u1EBD s\u1EED d\u1EE5ng `binding` v\u1EDBi `*err*`.\
+  \ D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t v\xED d\u1EE5 nhanh."
 lastmod: '2024-03-13T22:44:36.174672-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EBFt v\xE0o l\u1ED7i chu\u1EA9n (`stderr`) l\xE0 m\u1ED9t c\xE1ch \u0111\
-  \u1EC3 xu\u1EA5t th\xF4ng b\xE1o l\u1ED7i v\xE0 ch\u1EA9n \u0111o\xE1n."
+summary: "\u0110\u1EC3 vi\u1EBFt v\xE0o l\u1ED7i chu\u1EA9n trong Clojure, b\u1EA1\
+  n s\u1EBD s\u1EED d\u1EE5ng `binding` v\u1EDBi `*err*`."
 title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---

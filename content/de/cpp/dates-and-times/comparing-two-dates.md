@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:32:22.151859-07:00
-description: "Das Vergleichen zweier Daten bedeutet, ihre chronologische Reihenfolge\
-  \ zu bestimmen. Programmierer machen das, um Ereignisse zu organisieren, Deadlines\
-  \ zu\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:54.197072-06:00'
 model: gpt-4-1106-preview
-summary: Das Vergleichen zweier Daten bedeutet, ihre chronologische Reihenfolge zu
-  bestimmen.
+summary: .
 title: Vergleich von zwei Daten
 weight: 27
 ---

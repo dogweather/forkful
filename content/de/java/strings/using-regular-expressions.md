@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:15.471744-07:00
-description: "Regul\xE4re Ausdr\xFCcke (regex) in Java erm\xF6glichen es Ihnen, spezifische\
-  \ Muster zu definieren, um Strings in Ihrem Code zu suchen, zu manipulieren oder\
-  \ zu\u2026"
+description: "Wie geht das: Die integrierte Unterst\xFCtzung f\xFCr regex in Java\
+  \ erfolgt haupts\xE4chlich durch die Klassen `Pattern` und `Matcher` im Paket `java.util.regex`.\u2026"
 lastmod: '2024-03-13T22:44:53.753408-06:00'
 model: gpt-4-0125-preview
-summary: "Regul\xE4re Ausdr\xFCcke (regex) in Java erm\xF6glichen es Ihnen, spezifische\
-  \ Muster zu definieren, um Strings in Ihrem Code zu suchen, zu manipulieren oder\
-  \ zu validieren."
+summary: "Die integrierte Unterst\xFCtzung f\xFCr regex in Java erfolgt haupts\xE4\
+  chlich durch die Klassen `Pattern` und `Matcher` im Paket `java.util.regex`."
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

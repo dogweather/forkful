@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:23.769340-07:00
-description: "V\xE4liaikaistiedoston luominen Visual Basic for Applicationsissa (VBA)\
-  \ tarkoittaa ohjelmallisesti lyhytaikaiseen k\xE4ytt\xF6\xF6n tarkoitetun tiedoston\
-  \ tuottamista,\u2026"
+description: "Kuinka: VBA:ssa v\xE4liaikaistiedoston luominen voidaan saavuttaa k\xE4\
+  ytt\xE4m\xE4ll\xE4 `FileSystemObject`-objektia, joka on saatavilla Microsoft Scripting\
+  \ Runtime\u2026"
 lastmod: '2024-03-13T22:44:56.421648-06:00'
 model: gpt-4-0125-preview
-summary: "V\xE4liaikaistiedoston luominen Visual Basic for Applicationsissa (VBA)\
-  \ tarkoittaa ohjelmallisesti lyhytaikaiseen k\xE4ytt\xF6\xF6n tarkoitetun tiedoston\
-  \ tuottamista, tyypillisesti datan k\xE4sittely\xE4 tai automaatioteht\xE4vien puskurina\
-  \ varten."
+summary: "VBA:ssa v\xE4liaikaistiedoston luominen voidaan saavuttaa k\xE4ytt\xE4m\xE4\
+  ll\xE4 `FileSystemObject`-objektia, joka on saatavilla Microsoft Scripting Runtime\
+  \ -kirjastossa."
 title: "Tilap\xE4isen tiedoston luominen"
 weight: 21
 ---

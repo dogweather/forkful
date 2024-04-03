@@ -2,12 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:14.977883-07:00
-description: "Scrivere un file di testo in Java significa utilizzare le capacit\xE0\
-  \ del linguaggio per creare e scrivere contenuti nei file nel filesystem. I programmatori\u2026"
+description: 'Come fare: #.'
 lastmod: '2024-03-13T22:44:43.327347-06:00'
 model: gpt-4-0125-preview
-summary: "Scrivere un file di testo in Java significa utilizzare le capacit\xE0 del\
-  \ linguaggio per creare e scrivere contenuti nei file nel filesystem."
+summary: '#.'
 title: Scrivere un file di testo
 weight: 24
 ---

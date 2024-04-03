@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:09.949230-07:00
-description: "Das Schreiben von Tests in C# beinhaltet das Erstellen von automatisierten\
-  \ Skripten, um die Funktionalit\xE4t Ihres Codes zu validieren und sicherzustellen,\u2026"
+description: "Wie: C#-Entwickler verwenden haupts\xE4chlich die Frameworks NUnit oder\
+  \ xUnit zum Schreiben von Tests aufgrund ihrer Flexibilit\xE4t und des umfangreichen\u2026"
 lastmod: '2024-03-13T22:44:53.891662-06:00'
 model: gpt-4-0125-preview
-summary: "Das Schreiben von Tests in C# beinhaltet das Erstellen von automatisierten\
-  \ Skripten, um die Funktionalit\xE4t Ihres Codes zu validieren und sicherzustellen,\
-  \ dass er sich wie erwartet verh\xE4lt."
+summary: "C#-Entwickler verwenden haupts\xE4chlich die Frameworks NUnit oder xUnit\
+  \ zum Schreiben von Tests aufgrund ihrer Flexibilit\xE4t und des umfangreichen Funktionsumfangs."
 title: Tests Schreiben
 weight: 36
 ---

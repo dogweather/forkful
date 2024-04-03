@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:30:32.955696-07:00
-description: "\xC5 jobbe med XML betyr \xE5 h\xE5ndtere data i et utbredt, strukturert\
-  \ format som brukes i konfigurasjoner, meldingsutveksling og mer. Programmerere\
-  \ manipulerer\u2026"
+description: "Hvordan: Fish har ikke innebygd XML-tolk, s\xE5 du vil stole p\xE5 eksterne\
+  \ verkt\xF8y som `xmllint` eller `xmlstarlet`. Her er et kodestykke for \xE5 lese\
+  \ verdier."
 lastmod: '2024-03-13T22:44:41.251730-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 jobbe med XML betyr \xE5 h\xE5ndtere data i et utbredt, strukturert\
-  \ format som brukes i konfigurasjoner, meldingsutveksling og mer."
+summary: "Fish har ikke innebygd XML-tolk, s\xE5 du vil stole p\xE5 eksterne verkt\xF8\
+  y som `xmllint` eller `xmlstarlet`."
 title: "\xC5 jobbe med XML"
 weight: 40
 ---

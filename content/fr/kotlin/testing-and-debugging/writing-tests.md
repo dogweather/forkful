@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:57.393761-07:00
-description: "\xC9crire des tests en Kotlin consiste \xE0 cr\xE9er des extraits de\
-  \ code qui valident automatiquement la correction fonctionnelle de vos modules logiciels,\
-  \ en\u2026"
+description: "Comment faire : Kotlin prend en charge le d\xE9veloppement pilot\xE9\
+  \ par les tests avec divers frameworks, les plus populaires \xE9tant JUnit, Kotest,\
+  \ et MockK\u2026"
 lastmod: '2024-03-13T22:44:57.742609-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire des tests en Kotlin consiste \xE0 cr\xE9er des extraits de code\
-  \ qui valident automatiquement la correction fonctionnelle de vos modules logiciels,\
-  \ en s'assurant qu'ils fonctionnent comme pr\xE9vu."
+summary: "Kotlin prend en charge le d\xE9veloppement pilot\xE9 par les tests avec\
+  \ divers frameworks, les plus populaires \xE9tant JUnit, Kotest, et MockK pour le\
+  \ mocking."
 title: "R\xE9daction de tests"
 weight: 36
 ---

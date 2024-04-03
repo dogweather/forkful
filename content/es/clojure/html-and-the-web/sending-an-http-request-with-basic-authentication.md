@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 18:01:15.950659-07:00
-description: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica significa mandar\
-  \ informaci\xF3n al servidor junto con un usuario y contrase\xF1a codificados. Los\u2026"
+description: "C\xF3mo hacerlo: ."
 lastmod: '2024-03-13T22:44:58.656353-06:00'
 model: gpt-4-1106-preview
-summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica significa mandar\
-  \ informaci\xF3n al servidor junto con un usuario y contrase\xF1a codificados."
+summary: .
 title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
 weight: 45
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:39.432917-07:00
-description: "Konkatenering i Visual Basic for Applications (VBA) inneb\xE6rer \xE5\
-  \ sette sammen to eller flere strenger til en enkelt enhet. Dette er en fundamental\
-  \ oppgave\u2026"
+description: "Hvordan: VBA gir en grei metode for \xE5 konkatere strenger ved bruk\
+  \ av `&`-operat\xF8ren eller `Concatenate`-funksjonen. La oss utforske begge metodene\
+  \ med\u2026"
 lastmod: '2024-03-13T22:44:40.609487-06:00'
 model: gpt-4-0125-preview
-summary: "Konkatenering i Visual Basic for Applications (VBA) inneb\xE6rer \xE5 sette\
-  \ sammen to eller flere strenger til en enkelt enhet."
+summary: "VBA gir en grei metode for \xE5 konkatere strenger ved bruk av `&`-operat\xF8\
+  ren eller `Concatenate`-funksjonen."
 title: Sammensetting av strenger
 weight: 3
 ---

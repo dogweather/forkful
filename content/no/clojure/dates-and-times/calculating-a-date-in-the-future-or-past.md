@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:30:43.527734-07:00
-description: "Kalkulering av fremtidige eller tidligere datoer handler om \xE5 legge\
-  \ til eller trekke fra tidsenheter p\xE5 en startdato. Programmere bruker dette\
-  \ for \xE5\u2026"
+description: "Hvordan Gj\xF8re Det: ."
 lastmod: '2024-03-13T22:44:40.415150-06:00'
 model: gpt-4-1106-preview
-summary: "Kalkulering av fremtidige eller tidligere datoer handler om \xE5 legge til\
-  \ eller trekke fra tidsenheter p\xE5 en startdato."
+summary: .
 title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---

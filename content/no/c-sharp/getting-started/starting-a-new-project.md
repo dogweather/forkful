@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 18:03:21.458660-07:00
-description: "\xC5 starte et nytt prosjekt i C# er \xE5 opprette en struktur av koder\
-  \ og filer for \xE5 bygge en applikasjon eller et bibliotek. Programmerere gj\xF8\
-  r dette for \xE5\u2026"
+description: "Slik gj\xF8r du: For \xE5 starte et nytt prosjekt, kan du bruke .NET\
+  \ CLI (Command Line Interface) eller Visual Studio. La oss kj\xF8re gjennom CLI."
 lastmod: '2024-03-13T22:44:40.796403-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 starte et nytt prosjekt i C# er \xE5 opprette en struktur av koder\
-  \ og filer for \xE5 bygge en applikasjon eller et bibliotek."
+summary: "For \xE5 starte et nytt prosjekt, kan du bruke .NET CLI (Command Line Interface)\
+  \ eller Visual Studio."
 title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---

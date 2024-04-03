@@ -3,12 +3,12 @@ changelog:
 - 2024-03-25, dogweather, edited and tested
 - 2024-03-25, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:02:29.358527-07:00
-description: "Het kapitaliseren van een string betekent meestal het omzetten van het\
-  \ eerste karakter van een string naar een hoofdletter en de rest naar kleine letters.\u2026"
+description: 'Hoe: Ruby biedt [eenvoudige methoden voor stringmanipulatie](https://docs.ruby-lang.org/en/3.3/String.html),
+  inclusief kapitalisatie.'
 lastmod: '2024-03-25T19:22:02.456642-06:00'
 model: gpt-4-0125-preview
-summary: Het kapitaliseren van een string betekent meestal het omzetten van het eerste
-  karakter van een string naar een hoofdletter en de rest naar kleine letters.
+summary: Ruby biedt [eenvoudige methoden voor stringmanipulatie](https://docs.ruby-lang.org/en/3.3/String.html),
+  inclusief kapitalisatie.
 title: Een string met hoofdletters maken
 weight: 2
 ---

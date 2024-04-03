@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:27.678766-07:00
-description: "Testien kirjoittaminen Javassa koskee koodisi toiminnan varmistamista\
-  \ odotetulla tavalla eri olosuhteissa. Ohjelmoijat kirjoittavat testej\xE4 vikojen\u2026"
+description: "Kuinka: Java-kehitt\xE4j\xE4t k\xE4ytt\xE4v\xE4t p\xE4\xE4asiassa kahta\
+  \ testauskehyst\xE4: JUnitia ja TestNG:t\xE4. T\xE4ss\xE4 keskitymme JUnitiin, joka\
+  \ on suositumpi valinta testien\u2026"
 lastmod: '2024-03-13T22:44:56.448704-06:00'
 model: gpt-4-0125-preview
-summary: Testien kirjoittaminen Javassa koskee koodisi toiminnan varmistamista odotetulla
-  tavalla eri olosuhteissa.
+summary: "Java-kehitt\xE4j\xE4t k\xE4ytt\xE4v\xE4t p\xE4\xE4asiassa kahta testauskehyst\xE4\
+  ."
 title: Testien kirjoittaminen
 weight: 36
 ---

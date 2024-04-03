@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:18:29.765702-07:00
-description: "Att anv\xE4nda ett interaktivt skal, eller en L\xE4s-Utv\xE4rdera-Skriv\
-  \ Ut-Loop (REPL), l\xE5ter dig koda interaktivt. Programmerare anv\xE4nder det f\xF6\
-  r att snabbt testa\u2026"
+description: "Hur man g\xF6r: Anropa REPL genom att \xF6ppna en terminal och k\xF6\
+  ra `swift`. Skriv kod direkt och tryck p\xE5 Enter f\xF6r att k\xF6ra den. H\xE4\
+  r \xE4r en smakprov."
 lastmod: '2024-03-13T22:44:38.252746-06:00'
 model: gpt-4-0125-preview
-summary: "Att anv\xE4nda ett interaktivt skal, eller en L\xE4s-Utv\xE4rdera-Skriv\
-  \ Ut-Loop (REPL), l\xE5ter dig koda interaktivt."
+summary: "Anropa REPL genom att \xF6ppna en terminal och k\xF6ra `swift`."
 title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---

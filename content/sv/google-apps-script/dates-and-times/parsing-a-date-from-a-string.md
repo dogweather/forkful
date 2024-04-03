@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:37.760770-07:00
-description: "Att tolka ett datum fr\xE5n en str\xE4ng inneb\xE4r att konvertera text\
-  \ som representerar ett datum till ett datumobjekt, vilket m\xF6jligg\xF6r f\xF6\
-  r programmerare att\u2026"
+description: "Hur: I Google Apps Script, som \xE4r baserat p\xE5 JavaScript, har du\
+  \ flera tillv\xE4gag\xE5ngss\xE4tt f\xF6r att tolka ett datum fr\xE5n en str\xE4\
+  ng. Nedan f\xF6ljer exempel som\u2026"
 lastmod: '2024-03-13T22:44:37.449079-06:00'
 model: gpt-4-0125-preview
-summary: "Att tolka ett datum fr\xE5n en str\xE4ng inneb\xE4r att konvertera text\
-  \ som representerar ett datum till ett datumobjekt, vilket m\xF6jligg\xF6r f\xF6\
-  r programmerare att utf\xF6ra datumrelaterade operationer s\xE5som j\xE4mf\xF6relser,\
-  \ aritmetik och formatering."
+summary: "I Google Apps Script, som \xE4r baserat p\xE5 JavaScript, har du flera tillv\xE4\
+  gag\xE5ngss\xE4tt f\xF6r att tolka ett datum fr\xE5n en str\xE4ng."
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---

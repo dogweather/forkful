@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:43.845697-07:00
-description: "JSON, o JavaScript Object Notation, \xE8 un formato leggero per l'archiviazione\
-  \ e il trasporto dei dati, ideale per la comunicazione server-client e i file\u2026"
+description: "Come fare: In Google Apps Script, manipolare JSON \xE8 un processo diretto,\
+  \ principalmente a causa del supporto nativo che JavaScript offre per il parsing\
+  \ e\u2026"
 lastmod: '2024-03-13T22:44:42.980166-06:00'
 model: gpt-4-0125-preview
-summary: "JSON, o JavaScript Object Notation, \xE8 un formato leggero per l'archiviazione\
-  \ e il trasporto dei dati, ideale per la comunicazione server-client e i file di\
-  \ configurazione."
+summary: "In Google Apps Script, manipolare JSON \xE8 un processo diretto, principalmente\
+  \ a causa del supporto nativo che JavaScript offre per il parsing e la stringificazione\
+  \ di JSON."
 title: Lavorare con JSON
 weight: 38
 ---

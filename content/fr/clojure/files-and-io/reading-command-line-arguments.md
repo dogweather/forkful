@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:55:33.732185-07:00
-description: "Lire les arguments de la ligne de commande, c'est r\xE9cup\xE9rer des\
-  \ infos directement de l'utilisateur quand il ex\xE9cute votre script. On fait \xE7\
-  a pour rendre\u2026"
+description: "How to: En Clojure, on utilise la variable globale `*command-line-args*`\
+  \ pour acc\xE9der aux arguments. Regardez comment on fait ."
 lastmod: '2024-03-13T22:44:57.298398-06:00'
 model: gpt-4-1106-preview
-summary: "Lire les arguments de la ligne de commande, c'est r\xE9cup\xE9rer des infos\
-  \ directement de l'utilisateur quand il ex\xE9cute votre script."
+summary: "En Clojure, on utilise la variable globale `*command-line-args*` pour acc\xE9\
+  der aux arguments."
 title: Lecture des arguments de ligne de commande
 weight: 23
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:35.006129-07:00
-description: "Gerar n\xFAmeros aleat\xF3rios em Dart envolve a cria\xE7\xE3o de valores\
-  \ num\xE9ricos que s\xE3o imprevis\xEDveis e diferem a cada execu\xE7\xE3o. Os programadores\
-  \ aproveitam essa\u2026"
+description: "Como fazer: A biblioteca principal do Dart inclui suporte para a gera\xE7\
+  \xE3o de n\xFAmeros aleat\xF3rios com a classe `Random` encontrada em `dart:math`.\
+  \ Aqui est\xE1\u2026"
 lastmod: '2024-03-13T22:44:46.277017-06:00'
 model: gpt-4-0125-preview
-summary: "Gerar n\xFAmeros aleat\xF3rios em Dart envolve a cria\xE7\xE3o de valores\
-  \ num\xE9ricos que s\xE3o imprevis\xEDveis e diferem a cada execu\xE7\xE3o."
+summary: "A biblioteca principal do Dart inclui suporte para a gera\xE7\xE3o de n\xFA\
+  meros aleat\xF3rios com a classe `Random` encontrada em `dart:math`."
 title: "Gerando n\xFAmeros aleat\xF3rios"
 weight: 12
 ---

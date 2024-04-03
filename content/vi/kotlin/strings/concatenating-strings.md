@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:02.719062-07:00
-description: "N\u1ED1i chu\u1ED7i gi\u1ED1ng nh\u01B0 l\xE0m m\u1ED9t chi\u1EBFc sandwich,\
-  \ nh\u01B0ng thay v\xEC b\xE1nh m\xEC v\xE0 nh\xE2n, b\u1EA1n \u0111ang x\u1EBF\
-  p ch\u1ED3ng c\xE1c t\u1EEB l\u1EA1i v\u1EDBi nhau \u0111\u1EC3 t\u1EA1o th\xE0\
-  nh m\u1ED9t c\xE2u ho\u1EB7c m\u1ED9t c\u1EE5m t\u1EEB.\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1\
+  ch \u0111\u1EC3 l\xE0m cho c\xE1c chu\u1ED7i n\u1ED1i l\u1EA1i v\u1EDBi nhau trong\
+  \ Kotlin - kh\xF4ng c\u1EA7n d\xF9ng keo."
 lastmod: '2024-03-13T22:44:36.590738-06:00'
 model: gpt-4-0125-preview
-summary: "N\u1ED1i chu\u1ED7i gi\u1ED1ng nh\u01B0 l\xE0m m\u1ED9t chi\u1EBFc sandwich,\
-  \ nh\u01B0ng thay v\xEC b\xE1nh m\xEC v\xE0 nh\xE2n, b\u1EA1n \u0111ang x\u1EBF\
-  p ch\u1ED3ng c\xE1c t\u1EEB l\u1EA1i v\u1EDBi nhau \u0111\u1EC3 t\u1EA1o th\xE0\
-  nh m\u1ED9t c\xE2u ho\u1EB7c m\u1ED9t c\u1EE5m t\u1EEB."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch \u0111\u1EC3 l\xE0m cho c\xE1c\
+  \ chu\u1ED7i n\u1ED1i l\u1EA1i v\u1EDBi nhau trong Kotlin - kh\xF4ng c\u1EA7n d\xF9\
+  ng keo."
 title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 weight: 3
 ---

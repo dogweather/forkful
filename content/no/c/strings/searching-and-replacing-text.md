@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:35.465517-07:00
-description: "\xC5 s\xF8ke og erstatte tekst i C inneb\xE6rer \xE5 identifisere spesifikke\
-  \ delstrenger innenfor en st\xF8rre streng og erstatte dem med forskjellige delstrenger.\u2026"
+description: "Hvordan: C kommer ikke med innebygde funksjoner for direkte \xE5 utf\xF8\
+  re s\xF8k og erstatte p\xE5 strenger. Imidlertid kan du oppn\xE5 dette ved \xE5\
+  \ kombinere ulike\u2026"
 lastmod: '2024-03-13T22:44:41.255122-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 s\xF8ke og erstatte tekst i C inneb\xE6rer \xE5 identifisere spesifikke\
-  \ delstrenger innenfor en st\xF8rre streng og erstatte dem med forskjellige delstrenger."
+summary: "C kommer ikke med innebygde funksjoner for direkte \xE5 utf\xF8re s\xF8\
+  k og erstatte p\xE5 strenger."
 title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:32.276212-07:00
-description: "Controleren of een map bestaat in Go is cruciaal voor applicaties die\
-  \ interageren met het bestandssysteem, om fouten te voorkomen bij het proberen te\u2026"
+description: "Hoe te: In Go biedt het `os`-pakket functionaliteiten voor interactie\
+  \ met het besturingssysteem, inclusief het controleren of een map bestaat. Hier\
+  \ is hoe\u2026"
 lastmod: '2024-03-13T22:44:50.302385-06:00'
 model: gpt-4-0125-preview
-summary: Controleren of een map bestaat in Go is cruciaal voor applicaties die interageren
-  met het bestandssysteem, om fouten te voorkomen bij het proberen te benaderen of
-  wijzigen van mappen.
+summary: In Go biedt het `os`-pakket functionaliteiten voor interactie met het besturingssysteem,
+  inclusief het controleren of een map bestaat.
 title: Controleren of een directory bestaat
 weight: 20
 ---

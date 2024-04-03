@@ -2,15 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:28.659989-07:00
-description: "S\u1ED1 ph\u1EE9c m\u1EDF r\u1ED9ng d\xE3y s\u1ED1 th\u1EF1c th\xF4\
-  ng qua vi\u1EC7c th\xEAm m\u1ED9t \u0111\u01A1n v\u1ECB \u1EA3o, `i`, n\u01A1i m\xE0\
-  \ `i^2 = -1`. Ch\xFAng r\u1EA5t quan tr\u1ECDng trong c\xE1c l\u0129nh v\u1EF1c\
-  \ nh\u01B0 k\u1EF9 thu\u1EADt, v\u1EADt l\xFD v\xE0\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Java kh\xF4ng c\xF3 h\u1ED7 tr\u1EE3 s\u1EB5\
+  n cho s\u1ED1 ph\u1EE9c, nh\u01B0ng ch\xFAng ta c\xF3 th\u1EC3 t\u1EF1 t\u1EA1o\
+  \ l\u1EDBp ho\u1EB7c s\u1EED d\u1EE5ng m\u1ED9t th\u01B0 vi\u1EC7n. D\u01B0\u1EDB\
+  i \u0111\xE2y l\xE0 m\u1ED9t v\xED d\u1EE5 nhanh v\u1EC1 c\xE1ch t\u1EA1o m\u1ED9\
+  t\u2026"
 lastmod: '2024-03-13T22:44:36.481151-06:00'
 model: gpt-4-0125-preview
-summary: "S\u1ED1 ph\u1EE9c m\u1EDF r\u1ED9ng d\xE3y s\u1ED1 th\u1EF1c th\xF4ng qua\
-  \ vi\u1EC7c th\xEAm m\u1ED9t \u0111\u01A1n v\u1ECB \u1EA3o, `i`, n\u01A1i m\xE0\
-  \ `i^2 = -1`."
+summary: "Java kh\xF4ng c\xF3 h\u1ED7 tr\u1EE3 s\u1EB5n cho s\u1ED1 ph\u1EE9c, nh\u01B0\
+  ng ch\xFAng ta c\xF3 th\u1EC3 t\u1EF1 t\u1EA1o l\u1EDBp ho\u1EB7c s\u1EED d\u1EE5\
+  ng m\u1ED9t th\u01B0 vi\u1EC7n."
 title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 weight: 14
 ---

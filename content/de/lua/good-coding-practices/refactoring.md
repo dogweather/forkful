@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 01:46:05.847630-07:00
-description: "Refactoring ist die Kunst, bestehenden Code so zu \xFCberarbeiten, dass\
-  \ seine Struktur, Lesbarkeit und Effizienz verbessert werden, ohne dass sich sein\u2026"
+description: "Wie: Nehmen wir eine einfache Lua-Funktion und refaktorisieren sie.\
+  \ Wir beginnen mit einer Funktion, die die Summe der Zahlen in einer Liste berechnet,\u2026"
 lastmod: '2024-03-13T22:44:54.023424-06:00'
 model: gpt-4-0125-preview
-summary: "Refactoring ist die Kunst, bestehenden Code so zu \xFCberarbeiten, dass\
-  \ seine Struktur, Lesbarkeit und Effizienz verbessert werden, ohne dass sich sein\
-  \ \xE4u\xDFeres Verhalten \xE4ndert."
+summary: Nehmen wir eine einfache Lua-Funktion und refaktorisieren sie.
 title: Refactoring
 weight: 19
 ---

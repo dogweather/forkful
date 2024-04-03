@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:08.913516-07:00
-description: "Express\xF5es regulares em C++ s\xE3o sequ\xEAncias de caracteres que\
-  \ definem um padr\xE3o de busca, usados para a correspond\xEAncia ou manipula\xE7\
-  \xE3o de strings.\u2026"
+description: "Como fazer: O C++11 introduziu suporte para express\xF5es regulares\
+  \ na biblioteca padr\xE3o, `<regex>`, oferecendo uma estrutura robusta para busca\
+  \ e\u2026"
 lastmod: '2024-03-13T22:44:46.869937-06:00'
 model: gpt-4-0125-preview
-summary: "Express\xF5es regulares em C++ s\xE3o sequ\xEAncias de caracteres que definem\
-  \ um padr\xE3o de busca, usados para a correspond\xEAncia ou manipula\xE7\xE3o de\
+summary: "O C++11 introduziu suporte para express\xF5es regulares na biblioteca padr\xE3\
+  o, `<regex>`, oferecendo uma estrutura robusta para busca e manipula\xE7\xE3o de\
   \ strings."
 title: "Usando express\xF5es regulares"
 weight: 11

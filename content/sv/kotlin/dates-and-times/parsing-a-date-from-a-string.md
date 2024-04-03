@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:52.484084-07:00
-description: "Att tolka ett datum fr\xE5n en str\xE4ng inneb\xE4r att konvertera text\
-  \ till ett Datum-objekt. Denna operation \xE4r grundl\xE4ggande f\xF6r applikationer\
-  \ som interagerar\u2026"
+description: "Hur man g\xF6r: Kotlin st\xF6djer datumtolkning genom `java.time`-paketet,\
+  \ som introducerades i Java 8. H\xE4r \xE4r en enkel metod med hj\xE4lp av `LocalDateTime`\
+  \ och\u2026"
 lastmod: '2024-03-13T22:44:37.880609-06:00'
 model: gpt-4-0125-preview
-summary: "Att tolka ett datum fr\xE5n en str\xE4ng inneb\xE4r att konvertera text\
-  \ till ett Datum-objekt."
+summary: "Kotlin st\xF6djer datumtolkning genom `java.time`-paketet, som introducerades\
+  \ i Java 8."
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---

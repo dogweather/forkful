@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:47.757202-07:00
-description: "Praca z plikami CSV (Comma-Separated Values), czyli warto\u015Bciami\
-  \ oddzielonymi przecinkami, polega na parsowaniu i generowaniu danych tekstowych\u2026"
+description: "Jak to zrobi\u0107: W Lua, praca z plikami CSV mo\u017Ce by\u0107 podejmowana\
+  \ za pomoc\u0105 podstawowych operacji wej\u015Bcia/wyj\u015Bcia plik\xF3w oferowanych\
+  \ przez j\u0119zyk, bez\u2026"
 lastmod: '2024-03-13T22:44:35.562567-06:00'
 model: gpt-4-0125-preview
-summary: "Praca z plikami CSV (Comma-Separated Values), czyli warto\u015Bciami oddzielonymi\
-  \ przecinkami, polega na parsowaniu i generowaniu danych tekstowych zorganizowanych\
-  \ w wiersze i kolumny, przy u\u017Cyciu przecink\xF3w do oddzielania poszczeg\xF3\
-  lnych warto\u015Bci."
+summary: "W Lua, praca z plikami CSV mo\u017Ce by\u0107 podejmowana za pomoc\u0105\
+  \ podstawowych operacji wej\u015Bcia/wyj\u015Bcia plik\xF3w oferowanych przez j\u0119\
+  zyk, bez potrzeby u\u017Cywania zewn\u0119trznych bibliotek do prostych zada\u0144\
+  ."
 title: Praca z plikami CSV
 weight: 37
 ---

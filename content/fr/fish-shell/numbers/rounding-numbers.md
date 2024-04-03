@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:44:03.195543-07:00
-description: "Arrondir les nombres consiste \xE0 supprimer les d\xE9cimales pour simplifier\
-  \ vos donn\xE9es ou les adapter \xE0 des formats sp\xE9cifiques. Les programmeurs\
-  \ le font\u2026"
+description: 'Comment faire : Dans Fish, l''arrondi des nombres repose sur la commande
+  `math`. Utilisez `math -s0` pour arrondir au plus proche entier.'
 lastmod: '2024-03-13T22:44:58.316526-06:00'
 model: gpt-4-0125-preview
-summary: "Arrondir les nombres consiste \xE0 supprimer les d\xE9cimales pour simplifier\
-  \ vos donn\xE9es ou les adapter \xE0 des formats sp\xE9cifiques."
+summary: Dans Fish, l'arrondi des nombres repose sur la commande `math`.
 title: Arrondir les nombres
 weight: 13
 ---

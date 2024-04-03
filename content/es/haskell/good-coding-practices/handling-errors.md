@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 00:52:54.127365-07:00
-description: "Manejar errores en la programaci\xF3n es gestionar lo inesperado\u2014\
-  cosas que pueden salir mal. Los programadores lo hacen para asegurar que sus programas\u2026"
+description: "C\xF3mo hacerlo: Haskell maneja errores de manera s\xF3lida a trav\xE9\
+  s de tipos como `Maybe` y `Either`. Aqu\xED hay un vistazo r\xE1pido."
 lastmod: '2024-03-13T22:44:59.126064-06:00'
 model: gpt-4-1106-preview
-summary: "Manejar errores en la programaci\xF3n es gestionar lo inesperado\u2014cosas\
-  \ que pueden salir mal."
+summary: "Haskell maneja errores de manera s\xF3lida a trav\xE9s de tipos como `Maybe`\
+  \ y `Either`."
 title: Manejo de errores
 weight: 16
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 18:03:55.780211-07:00
-description: "Ein neues Projekt zu starten bedeutet, von Grund auf einen frischen\
-  \ Codebase zu erstellen. Programmierer machen das, um neue Ideen umzusetzen, Probleme\
-  \ zu\u2026"
+description: "How to: Ein neues Kotlin-Projekt kannst du schnell mit IntelliJ IDEA\
+  \ oder einer anderen IDE wie Eclipse oder Android Studio starten. Hier ist ein kleiner\u2026"
 lastmod: '2024-03-13T22:44:53.847250-06:00'
 model: gpt-4-1106-preview
-summary: Ein neues Projekt zu starten bedeutet, von Grund auf einen frischen Codebase
-  zu erstellen.
+summary: Ein neues Kotlin-Projekt kannst du schnell mit IntelliJ IDEA oder einer anderen
+  IDE wie Eclipse oder Android Studio starten.
 title: Einen neuen Projekt starten
 weight: 1
 ---

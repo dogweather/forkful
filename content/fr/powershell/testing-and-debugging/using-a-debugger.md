@@ -1,8 +1,8 @@
 ---
 date: 2024-01-26 03:50:51.027779-07:00
-description: "Dans PowerShell, vous pouvez d\xE9boguer des scripts en utilisant l'Environnement\
-  \ de Scripting Int\xE9gr\xE9 de PowerShell (ISE) int\xE9gr\xE9 ou Visual Studio\
-  \ Code (VS\u2026"
+description: "Comment faire : Dans PowerShell, vous pouvez d\xE9boguer des scripts\
+  \ en utilisant l'Environnement de Scripting Int\xE9gr\xE9 de PowerShell (ISE) int\xE9\
+  gr\xE9 ou Visual\u2026"
 lastmod: '2024-03-13T22:44:58.053511-06:00'
 model: gpt-4-0125-preview
 summary: "Dans PowerShell, vous pouvez d\xE9boguer des scripts en utilisant l'Environnement\

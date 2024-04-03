@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:20.707397-07:00
-description: "Merkkijonon alkukirjaimen muuttaminen isoksi C#:ssa tarkoittaa merkkijonon\
-  \ ensimm\xE4isen merkin muuttamista isoksi kirjaimeksi, jos se ei jo ole. T\xE4\
-  m\xE4\u2026"
+description: "Kuinka: C# tarjoaa suoraviivaisen tavan muuttaa merkkijonojen alkukirjaimet\
+  \ isoiksi sis\xE4\xE4nrakennettuja metodeja k\xE4ytt\xE4en. Yksinkertaisin tapa\
+  \ saavuttaa\u2026"
 lastmod: '2024-03-13T22:44:56.556626-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonon alkukirjaimen muuttaminen isoksi C#:ssa tarkoittaa merkkijonon\
-  \ ensimm\xE4isen merkin muuttamista isoksi kirjaimeksi, jos se ei jo ole."
+summary: "C# tarjoaa suoraviivaisen tavan muuttaa merkkijonojen alkukirjaimet isoiksi\
+  \ sis\xE4\xE4nrakennettuja metodeja k\xE4ytt\xE4en."
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---

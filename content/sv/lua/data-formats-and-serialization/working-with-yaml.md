@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:22.212337-07:00
-description: "YAML, en f\xF6rkortning f\xF6r \"YAML Ain't Markup Language,\" \xE4\
-  r en m\xE4nniskol\xE4sbar standard f\xF6r serialisering av data som ofta anv\xE4\
-  nds f\xF6r konfigurationsfiler\u2026"
+description: "Hur man g\xF6r: Lua har inte inbyggt st\xF6d f\xF6r YAML, men du kan\
+  \ arbeta med YAML-filer genom att anv\xE4nda tredjepartsbibliotek s\xE5som `lyaml`.\
+  \ Detta bibliotek\u2026"
 lastmod: '2024-03-13T22:44:38.059074-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, en f\xF6rkortning f\xF6r \"YAML Ain't Markup Language,\" \xE4r en\
-  \ m\xE4nniskol\xE4sbar standard f\xF6r serialisering av data som ofta anv\xE4nds\
-  \ f\xF6r konfigurationsfiler och datautbyte mellan spr\xE5k."
+summary: "Lua har inte inbyggt st\xF6d f\xF6r YAML, men du kan arbeta med YAML-filer\
+  \ genom att anv\xE4nda tredjepartsbibliotek s\xE5som `lyaml`."
 title: Att Arbeta med YAML
 weight: 41
 ---

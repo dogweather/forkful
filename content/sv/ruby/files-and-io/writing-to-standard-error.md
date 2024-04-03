@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:21.485494-07:00
-description: "Att skriva till standardfel (stderr) i Ruby handlar om att dirigera\
-  \ felmeddelanden eller diagnostik till en separat utmatningsstr\xF6m, skild fr\xE5\
-  n\u2026"
+description: "Hur man g\xF6r: Rubys standardbibliotek ger ett enkelt s\xE4tt att skriva\
+  \ till stderr med `$stderr` eller `STDERR`. Du beh\xF6ver inte tredjepartsbibliotek\
+  \ f\xF6r\u2026"
 lastmod: '2024-03-13T22:44:38.448094-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva till standardfel (stderr) i Ruby handlar om att dirigera felmeddelanden\
-  \ eller diagnostik till en separat utmatningsstr\xF6m, skild fr\xE5n standardutmatningen\
-  \ (stdout)."
+summary: "Rubys standardbibliotek ger ett enkelt s\xE4tt att skriva till stderr med\
+  \ `$stderr` eller `STDERR`."
 title: Skriva till standardfel
 weight: 25
 ---

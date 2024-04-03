@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:36.273929-07:00
-description: "V\xE9rifier si un r\xE9pertoire existe en C implique d'interroger le\
-  \ syst\xE8me de fichiers pour v\xE9rifier si un chemin sp\xE9cifique m\xE8ne \xE0\
-  \ un r\xE9pertoire. Les\u2026"
+description: "Comment faire : En C, l'existence d'un r\xE9pertoire peut \xEAtre v\xE9\
+  rifi\xE9e en utilisant la fonction `stat`, qui r\xE9cup\xE8re des informations sur\
+  \ le fichier ou le\u2026"
 lastmod: '2024-03-13T22:44:58.388201-06:00'
 model: gpt-4-0125-preview
-summary: "V\xE9rifier si un r\xE9pertoire existe en C implique d'interroger le syst\xE8\
-  me de fichiers pour v\xE9rifier si un chemin sp\xE9cifique m\xE8ne \xE0 un r\xE9\
-  pertoire."
+summary: "En C, l'existence d'un r\xE9pertoire peut \xEAtre v\xE9rifi\xE9e en utilisant\
+  \ la fonction `stat`, qui r\xE9cup\xE8re des informations sur le fichier ou le r\xE9\
+  pertoire \xE0 un chemin sp\xE9cifi\xE9."
 title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---

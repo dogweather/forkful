@@ -1,11 +1,11 @@
 ---
 date: 2024-02-01 21:12:15.582559-07:00
-description: "Deleting characters matching a specific pattern is a technique used\
-  \ to cleanse or format strings in programming. In the context of Google Apps Script,\u2026"
+description: "How to: Google Apps Script provides robust methods for string manipulation,\
+  \ leveraging JavaScript's inherent capabilities. To delete characters matching a\u2026"
 lastmod: '2024-03-13T22:44:59.654619-06:00'
 model: gpt-4-0125-preview
-summary: Deleting characters matching a specific pattern is a technique used to cleanse
-  or format strings in programming.
+summary: Google Apps Script provides robust methods for string manipulation, leveraging
+  JavaScript's inherent capabilities.
 title: Deleting characters matching a pattern
 weight: 5
 ---

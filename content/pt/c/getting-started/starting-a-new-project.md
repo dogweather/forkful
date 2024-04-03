@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:09.346967-07:00
-description: "Iniciar um novo projeto em C envolve configurar uma estrutura de c\xF3\
-  digo base e ambiente para gerenciar de forma eficiente as tarefas de desenvolvimento.\u2026"
+description: "Como fazer: No cerne de qualquer projeto em C est\xE1 o c\xF3digo-fonte.\
+  \ Um ponto de partida t\xEDpico envolve criar um arquivo principal, muitas vezes\
+  \ nomeado\u2026"
 lastmod: '2024-03-13T22:44:47.050760-06:00'
 model: gpt-4-0125-preview
-summary: "Iniciar um novo projeto em C envolve configurar uma estrutura de c\xF3digo\
-  \ base e ambiente para gerenciar de forma eficiente as tarefas de desenvolvimento."
+summary: "No cerne de qualquer projeto em C est\xE1 o c\xF3digo-fonte."
 title: Iniciando um novo projeto
 weight: 1
 ---

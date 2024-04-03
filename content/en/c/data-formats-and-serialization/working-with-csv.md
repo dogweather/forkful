@@ -1,13 +1,9 @@
 ---
 date: 2024-02-03 17:50:09.981078-07:00
-description: "In the realm of programming, working with CSV (Comma-Separated Values)\
-  \ files involves reading from and writing data to text files organized by rows,\
-  \ where\u2026"
+description: 'How to: #.'
 lastmod: '2024-03-13T22:45:00.531023-06:00'
 model: gpt-4-0125-preview
-summary: In the realm of programming, working with CSV (Comma-Separated Values) files
-  involves reading from and writing data to text files organized by rows, where each
-  row represents a record and each record's fields are separated by commas.
+summary: '#.'
 title: Working with CSV
 weight: 37
 ---

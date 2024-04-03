@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:41.407172-07:00
-description: "CSV-tiedostojen (pilkuilla erotetut arvot) k\xE4sittelyyn kuuluu tekstidatan\
-  \ j\xE4sent\xE4minen ja tuottaminen riveihin ja sarakkeisiin j\xE4rjestettyn\xE4\
-  , k\xE4ytt\xE4en\u2026"
+description: "Miten: Luassa CSV-tiedostojen k\xE4sittely\xE4 voidaan l\xE4hesty\xE4\
+  \ k\xE4ytt\xE4m\xE4ll\xE4 kielen tarjoamia perustiedoston IO-operaatioita, ilman\
+  \ tarvetta ulkoisille\u2026"
 lastmod: '2024-03-13T22:44:56.718911-06:00'
 model: gpt-4-0125-preview
-summary: "CSV-tiedostojen (pilkuilla erotetut arvot) k\xE4sittelyyn kuuluu tekstidatan\
-  \ j\xE4sent\xE4minen ja tuottaminen riveihin ja sarakkeisiin j\xE4rjestettyn\xE4\
-  , k\xE4ytt\xE4en pilkkuja erillisten arvojen erottamiseen."
+summary: "Luassa CSV-tiedostojen k\xE4sittely\xE4 voidaan l\xE4hesty\xE4 k\xE4ytt\xE4\
+  m\xE4ll\xE4 kielen tarjoamia perustiedoston IO-operaatioita, ilman tarvetta ulkoisille\
+  \ kirjastoille yksinkertaisissa teht\xE4viss\xE4."
 title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---

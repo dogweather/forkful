@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 18:00:01.951548-07:00
-description: "Ein HTTP-Request erm\xF6glicht es deinem Code, mit einem Webserver zu\
-  \ sprechen; man holt oder sendet Daten. Programmierer brauchen das f\xFCr APIs,\
-  \ um z.B.\u2026"
+description: 'So geht''s: .'
 lastmod: '2024-03-13T22:44:54.263248-06:00'
 model: gpt-4-1106-preview
-summary: "Ein HTTP-Request erm\xF6glicht es deinem Code, mit einem Webserver zu sprechen;\
-  \ man holt oder sendet Daten."
+summary: .
 title: Einen HTTP-Request senden
 weight: 44
 ---

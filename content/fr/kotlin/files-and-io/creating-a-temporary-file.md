@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:40:51.109082-07:00
-description: "Cr\xE9er un fichier temporaire permet de stocker des donn\xE9es qui\
-  \ ne sont n\xE9cessaires que bri\xE8vement. Les programmeurs le font pour g\xE9\
-  rer l'espace de stockage\u2026"
+description: "How to: Kotlin rend la cr\xE9ation de fichiers temporaires super facile.\
+  \ Voici comment ."
 lastmod: '2024-03-13T22:44:57.761435-06:00'
 model: gpt-4-1106-preview
-summary: "Cr\xE9er un fichier temporaire permet de stocker des donn\xE9es qui ne sont\
-  \ n\xE9cessaires que bri\xE8vement."
+summary: "Kotlin rend la cr\xE9ation de fichiers temporaires super facile."
 title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---

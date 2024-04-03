@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 03:39:16.776497-07:00
-description: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w polega na pozbyciu\
-  \ si\u0119 tych irytuj\u0105cych pojedynczych (' ') lub podw\xF3jnych (\" \") znak\xF3\
-  w cudzys\u0142owu z danych tekstowych.\u2026"
+description: "Jak to zrobi\u0107: Fish ma wbudowane czary do tego rodzaju zada\u0144\
+  . U\u017Cyj funkcji `string` bez wi\u0119kszego wysi\u0142ku. Sprawd\u017A te zakl\u0119\
+  cia."
 lastmod: '2024-03-13T22:44:35.826539-06:00'
 model: gpt-4-0125-preview
-summary: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w polega na pozbyciu si\u0119\
-  \ tych irytuj\u0105cych pojedynczych (' ') lub podw\xF3jnych (\" \") znak\xF3w cudzys\u0142\
-  owu z danych tekstowych."
+summary: "Fish ma wbudowane czary do tego rodzaju zada\u0144."
 title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---

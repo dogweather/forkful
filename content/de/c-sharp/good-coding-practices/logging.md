@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:00:15.006700-07:00
-description: "Logging ist der Vorgang des Aufzeichnens von Anwendungsereignissen und\
-  \ Datenausgaben w\xE4hrend der Laufzeit. Programmierer verwenden Logging, um Fehler\
-  \ zu\u2026"
+description: "Wie geht das: In C# kann man den eingebauten Namensraum `System.Diagnostics`\
+  \ oder Drittanbieter-Bibliotheken wie NLog oder log4net verwenden. Hier ist ein\u2026"
 lastmod: '2024-03-13T22:44:53.894481-06:00'
 model: gpt-4-1106-preview
-summary: "Logging ist der Vorgang des Aufzeichnens von Anwendungsereignissen und Datenausgaben\
-  \ w\xE4hrend der Laufzeit."
+summary: In C# kann man den eingebauten Namensraum `System.Diagnostics` oder Drittanbieter-Bibliotheken
+  wie NLog oder log4net verwenden.
 title: Protokollierung
 weight: 17
 ---

@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:37:31.281257-07:00
-description: "Zamiana daty na \u0142a\u0144cuch znak\xF3w (string) to proces przekszta\u0142\
-  cania obiektu daty w czytelny tekst. Programi\u015Bci robi\u0105 to, \u017Ceby u\u0142\
-  atwi\u0107 wy\u015Bwietlanie dat\u2026"
+description: "How to: (Jak to zrobi\u0107:) ."
 lastmod: '2024-03-13T22:44:35.943844-06:00'
 model: gpt-4-1106-preview
-summary: "Zamiana daty na \u0142a\u0144cuch znak\xF3w (string) to proces przekszta\u0142\
-  cania obiektu daty w czytelny tekst."
+summary: .
 title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---

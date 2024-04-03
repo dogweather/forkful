@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:14.063287-07:00
-description: "Att skicka en HTTP-beg\xE4ran med grundl\xE4ggande autentisering i Visual\
-  \ Basic for Applications (VBA) handlar om att komma \xE5t webbresurser som skyddas\
-  \ av\u2026"
+description: "Hur man g\xF6r: I VBA kan du anv\xE4nda biblioteket `Microsoft XML,\
+  \ v6.0` (MSXML2) f\xF6r att skicka HTTP-beg\xE4randen med grundl\xE4ggande autentisering.\
+  \ Detta inneb\xE4r\u2026"
 lastmod: '2024-03-13T22:44:37.742710-06:00'
 model: gpt-4-0125-preview
-summary: "Att skicka en HTTP-beg\xE4ran med grundl\xE4ggande autentisering i Visual\
-  \ Basic for Applications (VBA) handlar om att komma \xE5t webbresurser som skyddas\
-  \ av anv\xE4ndarnamn och l\xF6senordsuppgifter."
+summary: "I VBA kan du anv\xE4nda biblioteket `Microsoft XML, v6.0` (MSXML2) f\xF6\
+  r att skicka HTTP-beg\xE4randen med grundl\xE4ggande autentisering."
 title: "Skicka en HTTP-beg\xE4ran med grundl\xE4ggande autentisering"
 weight: 45
 ---

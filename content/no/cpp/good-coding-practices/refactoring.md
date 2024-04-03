@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:17:09.888660-07:00
-description: "Refaktorisering er prosessen med \xE5 endre den interne strukturen til\
-  \ et dataprogram uten \xE5 endre dets eksterne oppf\xF8rsel. Programmerere gj\xF8\
-  r dette for \xE5\u2026"
+description: "Hvordan: Forestille deg at du har en funksjon som gj\xF8r litt for mye,\
+  \ som denne klumpete metoden som initialiserer et objekt og ogs\xE5 utf\xF8rer logging."
 lastmod: '2024-03-13T22:44:41.108371-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktorisering er prosessen med \xE5 endre den interne strukturen til et\
-  \ dataprogram uten \xE5 endre dets eksterne oppf\xF8rsel."
+summary: "Forestille deg at du har en funksjon som gj\xF8r litt for mye, som denne\
+  \ klumpete metoden som initialiserer et objekt og ogs\xE5 utf\xF8rer logging."
 title: Refaktorering
 weight: 19
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:44:44.354413-07:00
-description: "Baixar uma p\xE1gina da web \xE9 o processo de salvar os dados de uma\
-  \ p\xE1gina em um arquivo local. Programadores fazem isso para analisar o conte\xFA\
-  do, obter\u2026"
+description: "Como Fazer: Para baixar uma p\xE1gina da web em Python, voc\xEA pode\
+  \ usar a biblioteca `requests`. Veja como."
 lastmod: '2024-03-13T22:44:46.152558-06:00'
 model: gpt-4-1106-preview
-summary: "Baixar uma p\xE1gina da web \xE9 o processo de salvar os dados de uma p\xE1\
-  gina em um arquivo local."
+summary: "Para baixar uma p\xE1gina da web em Python, voc\xEA pode usar a biblioteca\
+  \ `requests`."
 title: "Baixando uma p\xE1gina da web"
 weight: 42
 ---

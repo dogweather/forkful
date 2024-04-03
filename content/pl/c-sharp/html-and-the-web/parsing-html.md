@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:57.411408-07:00
-description: "Parsowanie HTML w programowaniu polega na analizie struktury dokumentu\
-  \ HTML, co pozwala na ekstrakcj\u0119, manipulacj\u0119 i interakcj\u0119 z jego\
-  \ zawarto\u015Bci\u0105\u2026"
+description: "Jak to zrobi\u0107: Chocia\u017C .NET oferuje podstawowe wsparcie dla\
+  \ pracy z HTML, takie jak `HttpClient` do pobierania stron internetowych, brakuje\
+  \ mu\u2026"
 lastmod: '2024-03-13T22:44:35.406212-06:00'
 model: gpt-4-0125-preview
-summary: "Parsowanie HTML w programowaniu polega na analizie struktury dokumentu HTML,\
-  \ co pozwala na ekstrakcj\u0119, manipulacj\u0119 i interakcj\u0119 z jego zawarto\u015B\
-  ci\u0105 programowo."
+summary: "Chocia\u017C .NET oferuje podstawowe wsparcie dla pracy z HTML, takie jak\
+  \ `HttpClient` do pobierania stron internetowych, brakuje mu wbudowanego, kompleksowego\
+  \ parsera HTML."
 title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---

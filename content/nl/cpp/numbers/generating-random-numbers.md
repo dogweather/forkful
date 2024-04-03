@@ -2,13 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:59.900066-07:00
-description: "Het genereren van willekeurige getallen in programmeren houdt in dat\
-  \ er reeksen getallen worden gecre\xEBerd die geen voorspelbare volgorde of patroon\u2026"
+description: "Hoe te: Om willekeurige getallen in C++ te genereren, maak je doorgaans\
+  \ gebruik van de `<random>` header, die werd ge\xEFntroduceerd in C++11 en een breed\u2026"
 lastmod: '2024-03-13T22:44:51.108553-06:00'
 model: gpt-4-0125-preview
-summary: "Het genereren van willekeurige getallen in programmeren houdt in dat er\
-  \ reeksen getallen worden gecre\xEBerd die geen voorspelbare volgorde of patroon\
-  \ hebben."
+summary: "Om willekeurige getallen in C++ te genereren, maak je doorgaans gebruik\
+  \ van de `<random>` header, die werd ge\xEFntroduceerd in C++11 en een breed scala\
+  \ aan faciliteiten biedt voor het genereren van willekeurige getallen uit verschillende\
+  \ distributies."
 title: Willekeurige getallen genereren
 weight: 12
 ---

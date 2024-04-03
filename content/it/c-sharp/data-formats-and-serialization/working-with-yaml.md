@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:54.433718-07:00
-description: "YAML, acronimo di YAML Ain't Markup Language, \xE8 un formato di serializzazione\
-  \ di dati leggibile dall'uomo. I programmatori lo usano spesso per file di\u2026"
+description: "Come fare: C# non dispone di supporto integrato per YAML, ma \xE8 possibile\
+  \ lavorare facilmente con YAML utilizzando librerie di terze parti come\u2026"
 lastmod: '2024-03-13T22:44:43.453650-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, acronimo di YAML Ain't Markup Language, \xE8 un formato di serializzazione\
-  \ di dati leggibile dall'uomo."
+summary: "C# non dispone di supporto integrato per YAML, ma \xE8 possibile lavorare\
+  \ facilmente con YAML utilizzando librerie di terze parti come *YamlDotNet*."
 title: Lavorare con YAML
 weight: 41
 ---

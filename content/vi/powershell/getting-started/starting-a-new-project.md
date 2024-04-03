@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:56.583998-07:00
-description: "Vi\u1EC7c b\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi l\xE0\
-  \ vi\u1EC7c \u0111\u1EB7t n\u1EC1n m\xF3ng cho t\xE1c ph\u1EA9m l\u1EADp tr\xEC\
-  nh c\u1EE7a b\u1EA1n. L\xE0 nh\u1EEFng l\u1EADp tr\xECnh vi\xEAn, ch\xFAng ta l\xE0\
-  m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 kh\u1EDFi \u0111\u1EA7u m\u1ED9t \xFD t\u01B0\
-  \u1EDFng m\u1EDBi\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: PowerShell l\xE0m cho vi\u1EC7c t\u1EA1\
+  o m\u1ED9t d\u1EF1 \xE1n m\u1EDBi tr\u1EDF n\xEAn \u0111\u01A1n gi\u1EA3n. B\u1EA1\
+  n c\xF3 th\u1EC3 mu\u1ED1n t\u1EA1o m\u1ED9t th\u01B0 m\u1EE5c cho d\u1EF1 \xE1\
+  n c\u1EE7a m\xECnh v\xE0 thi\u1EBFt l\u1EADp m\u1ED9t kho l\u01B0u\u2026"
 lastmod: '2024-03-13T22:44:36.937349-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c b\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi l\xE0 vi\u1EC7\
-  c \u0111\u1EB7t n\u1EC1n m\xF3ng cho t\xE1c ph\u1EA9m l\u1EADp tr\xECnh c\u1EE7\
-  a b\u1EA1n."
+summary: "PowerShell l\xE0m cho vi\u1EC7c t\u1EA1o m\u1ED9t d\u1EF1 \xE1n m\u1EDB\
+  i tr\u1EDF n\xEAn \u0111\u01A1n gi\u1EA3n."
 title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---

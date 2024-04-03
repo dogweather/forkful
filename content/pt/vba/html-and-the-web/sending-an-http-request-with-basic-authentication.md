@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:27.356306-07:00
-description: "Enviar uma solicita\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica em\
-  \ Visual Basic for Applications (VBA) trata de acessar recursos da web que s\xE3\
-  o protegidos por\u2026"
+description: "Como fazer: No VBA, voc\xEA pode usar a biblioteca `Microsoft XML, v6.0`\
+  \ (MSXML2) para enviar solicita\xE7\xF5es HTTP com autentica\xE7\xE3o b\xE1sica.\
+  \ Isso envolve definir\u2026"
 lastmod: '2024-03-13T22:44:46.411629-06:00'
 model: gpt-4-0125-preview
-summary: "Enviar uma solicita\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica em Visual\
-  \ Basic for Applications (VBA) trata de acessar recursos da web que s\xE3o protegidos\
-  \ por credenciais de nome de usu\xE1rio e senha."
+summary: "No VBA, voc\xEA pode usar a biblioteca `Microsoft XML, v6.0` (MSXML2) para\
+  \ enviar solicita\xE7\xF5es HTTP com autentica\xE7\xE3o b\xE1sica."
 title: "Enviando uma solicita\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 weight: 45
 ---

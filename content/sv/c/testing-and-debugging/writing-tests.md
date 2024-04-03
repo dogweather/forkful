@@ -2,13 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:41.076417-07:00
-description: "Att skriva tester i C inneb\xE4r att skapa mindre, hj\xE4lpprogram eller\
-  \ funktioner som automatiskt verifierar din kods funktionalitet. Programmerare g\xF6\
-  r detta\u2026"
+description: "Hur: \xC4ven om C inte har ett inbyggt testramverk som vissa andra spr\xE5\
+  k, kan du fortfarande skriva effektiva tester genom att anv\xE4nda assert.h f\xF6\
+  r enkla\u2026"
 lastmod: '2024-03-13T22:44:38.386498-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva tester i C inneb\xE4r att skapa mindre, hj\xE4lpprogram eller\
-  \ funktioner som automatiskt verifierar din kods funktionalitet."
+summary: "\xC4ven om C inte har ett inbyggt testramverk som vissa andra spr\xE5k,\
+  \ kan du fortfarande skriva effektiva tester genom att anv\xE4nda assert.h f\xF6\
+  r enkla p\xE5st\xE5enden eller integrera tredjepartsramverk som CUnit eller Unity\
+  \ f\xF6r mer strukturerade tester."
 title: Skriva tester
 weight: 36
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:53.850062-07:00
-description: "La conversion d'une date en cha\xEEne de caract\xE8res dans Visual Basic\
-  \ pour Applications (VBA) consiste \xE0 modifier le type de donn\xE9es d'une date\
-  \ pour la\u2026"
+description: "Comment faire : Dans VBA, la fonction `Format` est votre solution privil\xE9\
+  gi\xE9e pour convertir des dates en cha\xEEnes. Elle vous permet de sp\xE9cifier\
+  \ le format\u2026"
 lastmod: '2024-03-13T22:44:57.593446-06:00'
 model: gpt-4-0125-preview
-summary: "La conversion d'une date en cha\xEEne de caract\xE8res dans Visual Basic\
-  \ pour Applications (VBA) consiste \xE0 modifier le type de donn\xE9es d'une date\
-  \ pour la transformer en format de cha\xEEne."
+summary: "Dans VBA, la fonction `Format` est votre solution privil\xE9gi\xE9e pour\
+  \ convertir des dates en cha\xEEnes."
 title: "Convertir une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---

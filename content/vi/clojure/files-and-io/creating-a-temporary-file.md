@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:27.281008-07:00
-description: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi l\xE0 qu\xE1 tr\xECnh\
-  \ t\u1EA1o m\u1ED9t t\u1EC7p ng\u1EAFn h\u1EA1n cho vi\u1EC7c l\u01B0u tr\u1EEF\
-  \ d\u1EEF li\u1EC7u trung gian. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng ch\xFA\
-  ng cho c\xE1c m\u1EE5c \u0111\xEDch nh\u01B0 l\u01B0u tr\u1EEF t\u1EA1m\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Clojure l\xE0m cho vi\u1EC7c n\xE0y tr\u1EDF\
+  \ n\xEAn \u0111\u01A1n gi\u1EA3n. Th\u01B0 vi\u1EC7n `clojure.java.io` \u0111\xE3\
+  \ h\u1ED7 tr\u1EE3 b\u1EA1n."
 lastmod: '2024-03-13T22:44:36.178703-06:00'
 model: gpt-4-0125-preview
-summary: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi l\xE0 qu\xE1 tr\xECnh t\u1EA1\
-  o m\u1ED9t t\u1EC7p ng\u1EAFn h\u1EA1n cho vi\u1EC7c l\u01B0u tr\u1EEF d\u1EEF li\u1EC7\
-  u trung gian."
+summary: "Clojure l\xE0m cho vi\u1EC7c n\xE0y tr\u1EDF n\xEAn \u0111\u01A1n gi\u1EA3\
+  n."
 title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
 weight: 21
 ---

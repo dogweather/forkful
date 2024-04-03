@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:39:10.893538-07:00
-description: "Convertir une cha\xEEne de caract\xE8res en minuscules, c'est transformer\
-  \ tous ses caract\xE8res alphab\xE9tiques en leur \xE9quivalent minuscule. Les programmeurs\
-  \ le\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:58.404431-06:00'
 model: gpt-4-1106-preview
-summary: "Convertir une cha\xEEne de caract\xE8res en minuscules, c'est transformer\
-  \ tous ses caract\xE8res alphab\xE9tiques en leur \xE9quivalent minuscule."
+summary: .
 title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
 weight: 4
 ---

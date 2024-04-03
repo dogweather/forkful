@@ -1,12 +1,11 @@
 ---
 date: 2024-01-27 16:20:40.698457-07:00
-description: "Editar arquivos in-place com one-liners de CLI (Interface de Linha de\
-  \ Comando) em Ruby permite modificar arquivos diretamente do seu terminal, sem a\u2026"
+description: "Como fazer: Ruby oferece uma maneira direta de editar arquivos in-place\
+  \ diretamente da linha de comando. Usando o interruptor `-i` do Ruby, voc\xEA pode\u2026"
 lastmod: '2024-03-13T22:44:47.091417-06:00'
 model: gpt-4-0125-preview
-summary: "Editar arquivos in-place com one-liners de CLI (Interface de Linha de Comando)\
-  \ em Ruby permite modificar arquivos diretamente do seu terminal, sem a necessidade\
-  \ de abri-los em um editor, fazer altera\xE7\xF5es e salv\xE1-los de volta."
+summary: Ruby oferece uma maneira direta de editar arquivos in-place diretamente da
+  linha de comando.
 title: Editando arquivos in loco com linhas de comando
 weight: 32
 ---

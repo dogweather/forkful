@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:39.174973-07:00
-description: "Das Schreiben auf die Standardfehlerausgabe (stderr) in C# beinhaltet\
-  \ die Weiterleitung von Fehlermeldungen und Diagnosen, getrennt von der regul\xE4\
-  ren\u2026"
+description: "Wie: In C# kann das Schreiben auf die Standardfehlerausgabe mittels\
+  \ des `Console.Error`-Streams erreicht werden. Dieser Stream wird speziell f\xFC\
+  r\u2026"
 lastmod: '2024-03-13T22:44:53.904848-06:00'
 model: gpt-4-0125-preview
-summary: "Das Schreiben auf die Standardfehlerausgabe (stderr) in C# beinhaltet die\
-  \ Weiterleitung von Fehlermeldungen und Diagnosen, getrennt von der regul\xE4ren\
-  \ Ausgabe (stdout), um Benutzern und Entwicklern zu helfen, zwischen normaler Programmausgabe\
-  \ und Fehlerbenachrichtigungen zu unterscheiden."
+summary: In C# kann das Schreiben auf die Standardfehlerausgabe mittels des `Console.Error`-Streams
+  erreicht werden.
 title: Schreiben auf Standardfehler
 weight: 25
 ---

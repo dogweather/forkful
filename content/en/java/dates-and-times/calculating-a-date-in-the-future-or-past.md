@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:31:05.472226-07:00
-description: "Calculating a date in the future or past involves adjusting a known\
-  \ date by a certain number of days, months, or years. Programmers do this for features\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:59.984095-06:00'
 model: gpt-4-1106-preview
-summary: Calculating a date in the future or past involves adjusting a known date
-  by a certain number of days, months, or years.
+summary: .
 title: Calculating a date in the future or past
 weight: 26
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:35:59.211754-07:00
-description: "La concatenaci\xF3n de cadenas es unir dos o m\xE1s cadenas de texto\
-  \ en una sola. Los programadores la utilizan para combinar mensajes, construir datos\u2026"
+description: "How to: La concatenaci\xF3n en Ruby es pan comido. Aqu\xED van unos\
+  \ ejemplos."
 lastmod: '2024-03-13T22:44:59.581779-06:00'
 model: gpt-4-1106-preview
-summary: "La concatenaci\xF3n de cadenas es unir dos o m\xE1s cadenas de texto en\
-  \ una sola."
+summary: "La concatenaci\xF3n en Ruby es pan comido."
 title: "Concatenaci\xF3n de cadenas de texto"
 weight: 3
 ---

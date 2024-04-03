@@ -1,14 +1,12 @@
 ---
 date: 2024-01-26 03:48:41.744668-07:00
-description: "\uC791\uC740 \uD504\uB85C\uADF8\uB7A8\uC774 \uC81C\uB300\uB85C \uB3D9\
-  \uC791\uD558\uC9C0 \uC54A\uB294\uB2E4\uACE0 \uC0C1\uC0C1\uD574\uBCF4\uC138\uC694\
-  : ```C# static void Main() { int result = Sum(1, 2); Console.WriteLine(result);\
-  \ } static int Sum(int a, int b) { return a +\u2026"
+description: "\uC0AC\uC6A9 \uBC29\uBC95: \uC791\uC740 \uD504\uB85C\uADF8\uB7A8\uC774\
+  \ \uC81C\uB300\uB85C \uB3D9\uC791\uD558\uC9C0 \uC54A\uB294\uB2E4\uACE0 \uC0C1\uC0C1\
+  \uD574\uBCF4\uC138\uC694."
 lastmod: '2024-03-13T22:44:55.240710-06:00'
 model: gpt-4-0125-preview
 summary: "\uC791\uC740 \uD504\uB85C\uADF8\uB7A8\uC774 \uC81C\uB300\uB85C \uB3D9\uC791\
-  \uD558\uC9C0 \uC54A\uB294\uB2E4\uACE0 \uC0C1\uC0C1\uD574\uBCF4\uC138\uC694:\n\n\
-  ```C#\nstatic void Main()\n{\n    int result = Sum(1, 2);\n    Console."
+  \uD558\uC9C0 \uC54A\uB294\uB2E4\uACE0 \uC0C1\uC0C1\uD574\uBCF4\uC138\uC694."
 title: "\uB514\uBC84\uAC70 \uC0AC\uC6A9\uD558\uAE30"
 weight: 35
 ---

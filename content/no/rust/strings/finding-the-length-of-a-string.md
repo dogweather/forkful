@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:48:09.542464-07:00
-description: "\xC5 finne lengden p\xE5 en streng i Rust betyr \xE5 telle antall tegn\
-  \ den inneholder. Programmerere trenger denne informasjonen for \xE5 validere inndata,\
-  \ manipulere\u2026"
+description: "Hvordan gj\xF8re det: ."
 lastmod: '2024-03-13T22:44:40.565002-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 finne lengden p\xE5 en streng i Rust betyr \xE5 telle antall tegn den\
-  \ inneholder."
+summary: .
 title: "Finn lengden p\xE5 en streng"
 weight: 7
 ---

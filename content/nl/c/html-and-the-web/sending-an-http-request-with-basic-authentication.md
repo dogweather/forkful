@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:09.308651-07:00
-description: "Een HTTP-verzoek met basisauthenticatie verzenden in C omvat het opstellen\
-  \ van een HTTP-verzoek dat een Authorization-header bevat met gebruikersgegevens\u2026"
+description: "Hoe te: Om een HTTP-verzoek met basisauthenticatie in C te verzenden,\
+  \ moeten we de libcurl-bibliotheek gebruiken, een populaire, veelzijdige en\u2026"
 lastmod: '2024-03-13T22:44:51.290861-06:00'
 model: gpt-4-0125-preview
-summary: Een HTTP-verzoek met basisauthenticatie verzenden in C omvat het opstellen
-  van een HTTP-verzoek dat een Authorization-header bevat met gebruikersgegevens gecodeerd
-  in Base64.
+summary: Om een HTTP-verzoek met basisauthenticatie in C te verzenden, moeten we de
+  libcurl-bibliotheek gebruiken, een populaire, veelzijdige en gebruiksvriendelijke
+  client-zijde URL-overdrachtsbibliotheek.
 title: Een HTTP-verzoek verzenden met basisauthenticatie
 weight: 45
 ---

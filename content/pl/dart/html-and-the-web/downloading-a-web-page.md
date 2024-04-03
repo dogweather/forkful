@@ -2,12 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:40.155105-07:00
-description: "Pobieranie strony internetowej polega na pobraniu zawarto\u015Bci strony\
-  \ internetowej za pomoc\u0105 jej adresu URL w celu przetworzenia lub przechowania.\u2026"
+description: "Jak to zrobi\u0107: Dart oferuje pakiet `http`, popularn\u0105 bibliotek\u0119\
+  \ stron trzecich do wykonywania \u017C\u0105da\u0144 HTTP. Oto podstawowy przyk\u0142\
+  ad, jak go u\u017Cy\u0107 do pobrania\u2026"
 lastmod: '2024-03-13T22:44:35.090018-06:00'
 model: gpt-4-0125-preview
-summary: "Pobieranie strony internetowej polega na pobraniu zawarto\u015Bci strony\
-  \ internetowej za pomoc\u0105 jej adresu URL w celu przetworzenia lub przechowania."
+summary: "Dart oferuje pakiet `http`, popularn\u0105 bibliotek\u0119 stron trzecich\
+  \ do wykonywania \u017C\u0105da\u0144 HTTP."
 title: Pobieranie strony internetowej
 weight: 42
 ---

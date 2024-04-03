@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:54.159451-07:00
-description: "Het omzetten van een tekenreeks naar kleine letters is een fundamentele\
-  \ bewerking die uniformiteit en consistentie in tekstverwerking mogelijk maakt,\u2026"
+description: "Hoe: In Go kan het omzetten van een tekenreeks naar kleine letters gemakkelijk\
+  \ worden bereikt met behulp van het `strings`-pakket, specifiek de\u2026"
 lastmod: '2024-03-13T22:44:50.273985-06:00'
 model: gpt-4-0125-preview
-summary: Het omzetten van een tekenreeks naar kleine letters is een fundamentele bewerking
-  die uniformiteit en consistentie in tekstverwerking mogelijk maakt, essentieel voor
-  taken als hoofdletterongevoelige vergelijkingen of tekstnormalisatie.
+summary: In Go kan het omzetten van een tekenreeks naar kleine letters gemakkelijk
+  worden bereikt met behulp van het `strings`-pakket, specifiek de `ToLower()`-functie.
 title: Een string converteren naar kleine letters
 weight: 4
 ---

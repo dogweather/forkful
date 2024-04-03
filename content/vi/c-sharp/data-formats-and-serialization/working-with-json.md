@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:21.094472-07:00
-description: "L\xE0m vi\u1EC7c v\u1EDBi JSON c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xED\
-  ch c\xFA ph\xE1p v\xE0 t\u1EA1o ra d\u1EEF li\u1EC7u JSON (Notation \u0111\u1ED1\
-  i t\u01B0\u1EE3ng JavaScript) trong c\xE1c \u1EE9ng d\u1EE5ng c\u1EE7a b\u1EA1n.\
-  \ L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong C#, b\u1EA1n c\xF3 kh\u1EA3 n\u0103ng\
+  \ s\u1EBD s\u1EED d\u1EE5ng kh\xF4ng gian t\xEAn `System.Text.Json` \u0111\u1EC3\
+  \ x\u1EED l\xFD JSON. Gi\u1EA3 s\u1EED b\u1EA1n c\xF3 m\u1ED9t class \u0111\u01A1\
+  n gi\u1EA3n."
 lastmod: '2024-03-13T22:44:36.685395-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m vi\u1EC7c v\u1EDBi JSON c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xEDch c\xFA\
-  \ ph\xE1p v\xE0 t\u1EA1o ra d\u1EEF li\u1EC7u JSON (Notation \u0111\u1ED1i t\u01B0\
-  \u1EE3ng JavaScript) trong c\xE1c \u1EE9ng d\u1EE5ng c\u1EE7a b\u1EA1n."
+summary: "Trong C#, b\u1EA1n c\xF3 kh\u1EA3 n\u0103ng s\u1EBD s\u1EED d\u1EE5ng kh\xF4\
+  ng gian t\xEAn `System.Text.Json` \u0111\u1EC3 x\u1EED l\xFD JSON."
 title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
 weight: 38
 ---

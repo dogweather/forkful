@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:23.721096-07:00
-description: "Trouver la longueur d'une cha\xEEne en C revient \xE0 d\xE9terminer\
-  \ le nombre de caract\xE8res avant le terminateur nul `\\0`. Les programmeurs font\
-  \ cela pour\u2026"
+description: "Comment faire : En C, la fonction de la biblioth\xE8que standard `strlen()`\
+  \ est couramment utilis\xE9e pour trouver la longueur d'une cha\xEEne. Voici un\
+  \ exemple\u2026"
 lastmod: '2024-03-13T22:44:58.361469-06:00'
 model: gpt-4-0125-preview
-summary: "Trouver la longueur d'une cha\xEEne en C revient \xE0 d\xE9terminer le nombre\
-  \ de caract\xE8res avant le terminateur nul `\\0`."
+summary: "En C, la fonction de la biblioth\xE8que standard `strlen()` est couramment\
+  \ utilis\xE9e pour trouver la longueur d'une cha\xEEne."
 title: "Trouver la longueur d'une cha\xEEne"
 weight: 7
 ---

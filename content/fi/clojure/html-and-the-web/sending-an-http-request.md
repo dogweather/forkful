@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:59:28.885700-07:00
-description: "HTTP-pyynn\xF6n l\xE4hett\xE4minen on tapa saada tai l\xE4hett\xE4\xE4\
-  \ tietoa verkossa toimivien palvelimien v\xE4lill\xE4. Ohjelmoijat k\xE4ytt\xE4\
-  v\xE4t sit\xE4 dataa vaihtaakseen, API:hin\u2026"
+description: "How to: Clojuren HTTP-kirjastot, kuten `clj-http`, tekev\xE4t pyynt\xF6\
+  jen l\xE4hett\xE4misen vaivattomaksi. Esimerkiksi GET-pyynn\xF6n tekeminen."
 lastmod: '2024-03-13T22:44:56.181429-06:00'
 model: gpt-4-1106-preview
-summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen on tapa saada tai l\xE4hett\xE4\xE4 tietoa\
-  \ verkossa toimivien palvelimien v\xE4lill\xE4."
+summary: "Clojuren HTTP-kirjastot, kuten `clj-http`, tekev\xE4t pyynt\xF6jen l\xE4\
+  hett\xE4misen vaivattomaksi."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---

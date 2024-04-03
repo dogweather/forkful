@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:54.802444-07:00
-description: "Att j\xE4mf\xF6ra tv\xE5 datum i Google Apps Script, en derivat av JavaScript\
-  \ anpassad f\xF6r Googles svit av appar, \xE4r en grundl\xE4ggande uppgift f\xF6\
-  r utvecklare som\u2026"
+description: "Hur man g\xF6r: I Google Apps Script j\xE4mf\xF6rs datum med hj\xE4\
+  lp av JavaScript Date-objekt, vilket m\xF6jligg\xF6r anv\xE4ndning av standardmetoder\
+  \ f\xF6r att utv\xE4rdera\u2026"
 lastmod: '2024-03-13T22:44:37.452382-06:00'
 model: gpt-4-0125-preview
-summary: "Att j\xE4mf\xF6ra tv\xE5 datum i Google Apps Script, en derivat av JavaScript\
-  \ anpassad f\xF6r Googles svit av appar, \xE4r en grundl\xE4ggande uppgift f\xF6\
-  r utvecklare som hanterar schemal\xE4ggning, tidslinjer eller alla typer av datumrelaterade\
-  \ data."
+summary: "I Google Apps Script j\xE4mf\xF6rs datum med hj\xE4lp av JavaScript Date-objekt,\
+  \ vilket m\xF6jligg\xF6r anv\xE4ndning av standardmetoder f\xF6r att utv\xE4rdera\
+  \ vilket av tv\xE5 datum som \xE4r tidigare, senare, eller om de \xE4r samma."
 title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---

@@ -2,11 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:25.041199-07:00
-description: "Datums omzetten naar strings verandert een datumobject in een tekstformaat.\
-  \ Programmeurs doen dit om datums op een gebruikersvriendelijke manier weer te\u2026"
+description: 'Hoe: Python maakt het eenvoudig om datums naar strings om te zetten.
+  Gebruik de `strftime` methode die beschikbaar is op datumobjecten. Zo werkt het.'
 lastmod: '2024-03-13T22:44:50.388048-06:00'
 model: gpt-4-0125-preview
-summary: Datums omzetten naar strings verandert een datumobject in een tekstformaat.
+summary: Python maakt het eenvoudig om datums naar strings om te zetten.
 title: Een datum converteren naar een string
 weight: 28
 ---

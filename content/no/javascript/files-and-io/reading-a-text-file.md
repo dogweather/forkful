@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:54:32.991132-07:00
-description: "Lesing av tekstfil betyr \xE5 hente tekstdata fra en fil p\xE5 disket.\
-  \ Programmerere gj\xF8r dette for \xE5 bearbeide data, konfigurere apper eller bare\
-  \ for \xE5 vise\u2026"
+description: "Slik gj\xF8r du: JavaScript kan lese tekstfiler med fil-APIen i nettlesere\
+  \ eller `fs`-modulen i Node.js. Her er eksempler p\xE5 begge. ##."
 lastmod: '2024-03-13T22:44:41.200568-06:00'
 model: gpt-4-1106-preview
-summary: "Lesing av tekstfil betyr \xE5 hente tekstdata fra en fil p\xE5 disket."
+summary: JavaScript kan lese tekstfiler med fil-APIen i nettlesere eller `fs`-modulen
+  i Node.js.
 title: Lese en tekstfil
 weight: 22
 ---

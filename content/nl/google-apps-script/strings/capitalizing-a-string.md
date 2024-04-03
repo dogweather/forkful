@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:48:45.880465-07:00
-description: "Het kapitaliseren van een string houdt in dat de invoer wordt aangepast\
-  \ zodat het eerste teken een hoofdletter is en de rest kleine letters blijven, wat\u2026"
+description: "Hoe te: Google Apps Script, gebaseerd op JavaScript, biedt verschillende\
+  \ methoden om een string te kapitaliseren, zij het zonder een ingebouwde functie.\u2026"
 lastmod: '2024-03-13T22:44:50.313306-06:00'
 model: gpt-4-0125-preview
-summary: Het kapitaliseren van een string houdt in dat de invoer wordt aangepast zodat
-  het eerste teken een hoofdletter is en de rest kleine letters blijven, wat vaak
-  wordt gebruikt voor het formatteren van namen of titels.
+summary: Google Apps Script, gebaseerd op JavaScript, biedt verschillende methoden
+  om een string te kapitaliseren, zij het zonder een ingebouwde functie.
 title: Een string met hoofdletters maken
 weight: 2
 ---

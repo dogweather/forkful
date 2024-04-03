@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:32.232090-07:00
-description: "Assosiative tabeller, eller hashmaper, i Clojure lar deg lagre og hente\
-  \ data med n\xF8kkel-verdi-par. De er et f\xF8rstevalg for h\xE5ndtering av strukturerte\u2026"
+description: "Hvordan: I Clojure er det enkelt \xE5 opprette og manipulere assoiative\
+  \ tabeller (hashmaper). La oss dykke inn med eksempler. For \xE5 opprette en hashmap."
 lastmod: '2024-03-13T22:44:40.395510-06:00'
 model: gpt-4-0125-preview
-summary: "Assosiative tabeller, eller hashmaper, i Clojure lar deg lagre og hente\
-  \ data med n\xF8kkel-verdi-par."
+summary: "I Clojure er det enkelt \xE5 opprette og manipulere assoiative tabeller\
+  \ (hashmaper)."
 title: Bruke associative tabeller
 weight: 15
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:34.310039-07:00
-description: "Werken met XML omvat het parseren en manipuleren van XML-documenten\
-  \ met behulp van code. Programmeurs doen dit om gegevens te lezen, schrijven en\
-  \ wijzigen\u2026"
+description: "Hoe: Lua bevat geen native XML-parser, maar er zijn bibliotheken zoals\
+  \ LuaXML en xml2lua die het werk gedaan krijgen. Hier is een snelle blik op het\u2026"
 lastmod: '2024-03-13T22:44:50.961301-06:00'
 model: gpt-4-0125-preview
-summary: Werken met XML omvat het parseren en manipuleren van XML-documenten met behulp
-  van code.
+summary: Lua bevat geen native XML-parser, maar er zijn bibliotheken zoals LuaXML
+  en xml2lua die het werk gedaan krijgen.
 title: Werken met XML
 weight: 40
 ---

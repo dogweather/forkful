@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:53:29.590639-07:00
-description: "V\xE9rifier si un r\xE9pertoire existe en Dart consiste \xE0 v\xE9rifier\
-  \ la pr\xE9sence d'un r\xE9pertoire \xE0 un chemin sp\xE9cifi\xE9 sur le syst\xE8\
-  me de fichiers avant d'effectuer\u2026"
+description: "Comment faire : Dart utilise la biblioth\xE8que `dart:io` pour travailler\
+  \ avec les fichiers et les r\xE9pertoires. Voici une mani\xE8re simple de v\xE9\
+  rifier si un\u2026"
 lastmod: '2024-03-13T22:44:57.406455-06:00'
 model: gpt-4-0125-preview
-summary: "V\xE9rifier si un r\xE9pertoire existe en Dart consiste \xE0 v\xE9rifier\
-  \ la pr\xE9sence d'un r\xE9pertoire \xE0 un chemin sp\xE9cifi\xE9 sur le syst\xE8\
-  me de fichiers avant d'effectuer des op\xE9rations comme lire ou \xE9crire des fichiers."
+summary: "Dart utilise la biblioth\xE8que `dart:io` pour travailler avec les fichiers\
+  \ et les r\xE9pertoires."
 title: "V\xE9rification de l'existence d'un r\xE9pertoire"
 weight: 20
 ---

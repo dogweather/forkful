@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:42:37.561708-07:00
-description: "Deleting characters matching a pattern in PHP is about finding specific\
-  \ sequences of characters in strings and removing them. Programmers do this to clean\u2026"
+description: 'How to: PHP uses the `preg_replace` function to delete characters that
+  match a pattern using regular expressions. Here''s how to strip digits from a string.'
 lastmod: '2024-03-13T22:45:00.151964-06:00'
 model: gpt-4-1106-preview
-summary: Deleting characters matching a pattern in PHP is about finding specific sequences
-  of characters in strings and removing them.
+summary: PHP uses the `preg_replace` function to delete characters that match a pattern
+  using regular expressions.
 title: Deleting characters matching a pattern
 weight: 5
 ---

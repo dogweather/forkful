@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:41.562649-07:00
-description: "Werken met XML in Haskell omvat het parsen, manipuleren en genereren\
-  \ van XML-structuren. Programmeurs gaan om met XML om te interacteren met tal van\u2026"
+description: "Hoe: Haskell biedt bibliotheken zoals `xml-conduit` voor het omgaan\
+  \ met XML. Het volgende voorbeeld demonstreert het parsen van een XML-string en\
+  \ het\u2026"
 lastmod: '2024-03-13T22:44:50.876632-06:00'
 model: gpt-4-0125-preview
-summary: Werken met XML in Haskell omvat het parsen, manipuleren en genereren van
-  XML-structuren.
+summary: Haskell biedt bibliotheken zoals `xml-conduit` voor het omgaan met XML.
 title: Werken met XML
 weight: 40
 ---

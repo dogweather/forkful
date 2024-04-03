@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:15.328259-07:00
-description: "Att j\xE4mf\xF6ra tv\xE5 datum i Dart inneb\xE4r att utv\xE4rdera den\
-  \ temporala skillnaden eller ordningen mellan dem, en v\xE4sentlig funktion i applikationer\
-  \ som hanterar\u2026"
+description: "Hur: I Dart kan du j\xE4mf\xF6ra datum med klassen `DateTime`, som erbjuder\
+  \ metoder som `isBefore`, `isAfter` och `isAtSameMomentAs` f\xF6r direkt j\xE4mf\xF6\
+  relse.\u2026"
 lastmod: '2024-03-13T22:44:37.625582-06:00'
 model: gpt-4-0125-preview
-summary: "Att j\xE4mf\xF6ra tv\xE5 datum i Dart inneb\xE4r att utv\xE4rdera den temporala\
-  \ skillnaden eller ordningen mellan dem, en v\xE4sentlig funktion i applikationer\
-  \ som hanterar h\xE4ndelser, deadlines eller alla tidsk\xE4nsliga data."
+summary: "I Dart kan du j\xE4mf\xF6ra datum med klassen `DateTime`, som erbjuder metoder\
+  \ som `isBefore`, `isAfter` och `isAtSameMomentAs` f\xF6r direkt j\xE4mf\xF6relse."
 title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---

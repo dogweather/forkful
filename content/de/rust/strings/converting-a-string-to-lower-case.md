@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:39:04.357519-07:00
-description: "String in Kleinbuchstaben umwandeln bedeutet, alle Gro\xDFbuchstaben\
-  \ in einem String in ihre entsprechenden Kleinbuchstaben zu konvertieren. Wir machen\
-  \ das\u2026"
+description: 'Anleitung: Um in Rust einen String in Kleinbuchstaben umzuwandeln, benutze
+  die Methode `to_lowercase()`. Hier ist ein einfaches Beispiel.'
 lastmod: '2024-03-13T22:44:53.659733-06:00'
 model: gpt-4-1106-preview
-summary: "String in Kleinbuchstaben umwandeln bedeutet, alle Gro\xDFbuchstaben in\
-  \ einem String in ihre entsprechenden Kleinbuchstaben zu konvertieren."
+summary: Um in Rust einen String in Kleinbuchstaben umzuwandeln, benutze die Methode
+  `to_lowercase()`.
 title: Umformung eines Strings in Kleinbuchstaben
 weight: 4
 ---

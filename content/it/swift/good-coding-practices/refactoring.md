@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 03:37:10.768847-07:00
-description: "Il refactoring \xE8 il processo di ristrutturazione del codice informatico\
-  \ esistente senza cambiarne il comportamento esterno. I programmatori lo fanno per\u2026"
+description: 'Come fare: Partiamo con un semplice esempio in Swift in cui abbiamo
+  del codice ripetitivo.'
 lastmod: '2024-03-13T22:44:43.778294-06:00'
 model: gpt-4-0125-preview
-summary: "Il refactoring \xE8 il processo di ristrutturazione del codice informatico\
-  \ esistente senza cambiarne il comportamento esterno."
+summary: Partiamo con un semplice esempio in Swift in cui abbiamo del codice ripetitivo.
 title: Rifattorizzazione
 weight: 19
 ---

@@ -2,12 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:01.079897-07:00
-description: "Trabajar con JSON en Swift implica lidiar con un formato de datos ligero\
-  \ para el intercambio de datos. Los programadores utilizan JSON para transmitir\u2026"
+description: "C\xF3mo hacerlo: Swift facilita el an\xE1lisis de JSON con el protocolo\
+  \ `Codable`. As\xED es c\xF3mo puedes decodificar JSON a un objeto Swift."
 lastmod: '2024-03-13T22:44:59.438019-06:00'
 model: gpt-4-0125-preview
-summary: Trabajar con JSON en Swift implica lidiar con un formato de datos ligero
-  para el intercambio de datos.
+summary: "Swift facilita el an\xE1lisis de JSON con el protocolo `Codable`."
 title: Trabajando con JSON
 weight: 38
 ---

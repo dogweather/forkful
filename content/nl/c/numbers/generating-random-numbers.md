@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:15.915325-07:00
-description: "Het genereren van willekeurige getallen in C houdt in dat waarden worden\
-  \ gecre\xEBerd die onvoorspelbaar zijn en een specifieke verdeling volgen, zoals\u2026"
+description: "Hoe: In C kunnen willekeurige getallen gegenereerd worden met behulp\
+  \ van de `rand()` functie, die deel uitmaakt van de C-standaardbibliotheek\u2026"
 lastmod: '2024-03-13T22:44:51.286402-06:00'
 model: gpt-4-0125-preview
-summary: "Het genereren van willekeurige getallen in C houdt in dat waarden worden\
-  \ gecre\xEBerd die onvoorspelbaar zijn en een specifieke verdeling volgen, zoals\
-  \ uniform of normaal."
+summary: In C kunnen willekeurige getallen gegenereerd worden met behulp van de `rand()`
+  functie, die deel uitmaakt van de C-standaardbibliotheek `<stdlib.h>`.
 title: Willekeurige getallen genereren
 weight: 12
 ---

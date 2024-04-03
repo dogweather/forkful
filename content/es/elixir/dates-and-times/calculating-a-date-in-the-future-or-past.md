@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:30:42.877933-07:00
-description: "Calcular una fecha futura o pasada es simplemente determinar qu\xE9\
-  \ d\xEDa ser\xE1 o fue despu\xE9s o antes de un tiempo espec\xEDfico. Los programadores\
-  \ lo hacen para\u2026"
+description: "C\xF3mo hacerlo: Elixir facilita el trabajo con fechas usando la librer\xED\
+  a est\xE1ndar y algunas adicionales como Timex. Aqu\xED hay un ejemplo sencillo."
 lastmod: '2024-03-13T22:44:58.716039-06:00'
 model: gpt-4-1106-preview
-summary: "Calcular una fecha futura o pasada es simplemente determinar qu\xE9 d\xED\
-  a ser\xE1 o fue despu\xE9s o antes de un tiempo espec\xEDfico."
+summary: "Elixir facilita el trabajo con fechas usando la librer\xEDa est\xE1ndar\
+  \ y algunas adicionales como Timex."
 title: Calcular una fecha en el futuro o pasado
 weight: 26
 ---

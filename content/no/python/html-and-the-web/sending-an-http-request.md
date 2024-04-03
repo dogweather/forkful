@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 18:00:24.222210-07:00
-description: "\xC5 sende en HTTP-foresp\xF8rsel betyr \xE5 sp\xF8rre en server om\
-  \ info via internett. Programmerere gj\xF8r det for \xE5 hente data, som nettsideinnhold\
-  \ eller API-svar."
+description: "Hvordan: Python har flere biblioteker for HTTP-foresp\xF8rsler. La oss\
+  \ bruke `requests`, et popul\xE6rt alternativ. Installer det f\xF8rst med `pip install\u2026"
 lastmod: '2024-03-13T22:44:40.358116-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 sende en HTTP-foresp\xF8rsel betyr \xE5 sp\xF8rre en server om info\
-  \ via internett."
+summary: "Python har flere biblioteker for HTTP-foresp\xF8rsler."
 title: "\xC5 sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---

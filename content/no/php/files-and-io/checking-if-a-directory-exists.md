@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:10.962410-07:00
-description: "\xC5 sjekke om en mappe finnes er en grunnleggende oppgave i PHP-programmering,\
-  \ da det lar deg verifisere tilstedev\xE6relsen av en mappe f\xF8r du utf\xF8rer\u2026"
+description: "Hvordan: Den innf\xF8dte m\xE5ten \xE5 sjekke om en mappe finnes i PHP\
+  \ er ved \xE5 bruke `is_dir()`-funksjonen. Denne funksjonen tar en filbane som argument\
+  \ og\u2026"
 lastmod: '2024-03-13T22:44:40.900826-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 sjekke om en mappe finnes er en grunnleggende oppgave i PHP-programmering,\
-  \ da det lar deg verifisere tilstedev\xE6relsen av en mappe f\xF8r du utf\xF8rer\
-  \ operasjoner som \xE5 lese fra eller skrive til filer i den."
+summary: "Den innf\xF8dte m\xE5ten \xE5 sjekke om en mappe finnes i PHP er ved \xE5\
+  \ bruke `is_dir()`-funksjonen."
 title: Sjekker om en mappe eksisterer
 weight: 20
 ---

@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:44:14.570125-07:00
-description: "Arredondar n\xFAmeros \xE9 ajustar um decimal para o seu valor inteiro\
-  \ mais pr\xF3ximo ou para um n\xFAmero espec\xEDfico de casas decimais. Os programadores\
-  \ arredondam\u2026"
+description: "Como fazer: O m\xF3dulo `Basics` do Elm fornece fun\xE7\xF5es pr\xE1\
+  ticas para arredondamento: `round`, `floor` e `ceiling`. Veja como us\xE1-las."
 lastmod: '2024-03-13T22:44:46.494898-06:00'
 model: gpt-4-0125-preview
-summary: "Arredondar n\xFAmeros \xE9 ajustar um decimal para o seu valor inteiro mais\
-  \ pr\xF3ximo ou para um n\xFAmero espec\xEDfico de casas decimais."
+summary: "O m\xF3dulo `Basics` do Elm fornece fun\xE7\xF5es pr\xE1ticas para arredondamento."
 title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---

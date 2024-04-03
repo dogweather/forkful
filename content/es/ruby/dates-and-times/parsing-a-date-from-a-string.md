@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:08.429086-07:00
-description: "Interpretar una fecha de un string se trata de convertir texto que representa\
-  \ una fecha en un objeto `Date` o `DateTime` que Ruby entiende. Los\u2026"
+description: "C\xF3mo hacerlo: En Ruby, la biblioteca est\xE1ndar proporciona maneras\
+  \ directas de interpretar fechas de strings usando las clases `Date` y `DateTime`.\
+  \ As\xED es\u2026"
 lastmod: '2024-03-13T22:44:59.600595-06:00'
 model: gpt-4-0125-preview
-summary: Interpretar una fecha de un string se trata de convertir texto que representa
-  una fecha en un objeto `Date` o `DateTime` que Ruby entiende.
+summary: "En Ruby, la biblioteca est\xE1ndar proporciona maneras directas de interpretar\
+  \ fechas de strings usando las clases `Date` y `DateTime`."
 title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---

@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 16:21:03.420373-07:00
-description: "Dateien direkt \xFCber die Kommandozeile mit CLI-Einzeilern zu bearbeiten,\
-  \ bedeutet, direkt \xC4nderungen an Dateien vorzunehmen, ohne sie in einem Texteditor\u2026"
+description: "Wie zu: Fish Shell, bekannt f\xFCr seine benutzerfreundlichen Funktionen\
+  \ und leistungsf\xE4higen Skriptf\xE4higkeiten, bietet mehrere M\xF6glichkeiten,\
+  \ Dateien direkt\u2026"
 lastmod: '2024-03-13T22:44:54.305431-06:00'
 model: gpt-4-0125-preview
-summary: "Dateien direkt \xFCber die Kommandozeile mit CLI-Einzeilern zu bearbeiten,\
-  \ bedeutet, direkt \xC4nderungen an Dateien vorzunehmen, ohne sie in einem Texteditor\
-  \ zu \xF6ffnen."
+summary: "Fish Shell, bekannt f\xFCr seine benutzerfreundlichen Funktionen und leistungsf\xE4\
+  higen Skriptf\xE4higkeiten, bietet mehrere M\xF6glichkeiten, Dateien direkt zu bearbeiten."
 title: Bearbeiten von Dateien im Place mit CLI-Einzeilern
 weight: 32
 ---

@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:12.760859-07:00
-description: "Leggere gli argomenti da linea di comando in Go implica l'estrazione\
-  \ degli argomenti forniti a un programma durante la sua invocazione dal terminale\
-  \ o dal\u2026"
+description: "Come fare: Go offre un accesso diretto agli argomenti della linea di\
+  \ comando tramite il pacchetto `os`, in particolare usando `os.Args`, un array di\u2026"
 lastmod: '2024-03-13T22:44:42.924842-06:00'
 model: gpt-4-0125-preview
-summary: Leggere gli argomenti da linea di comando in Go implica l'estrazione degli
-  argomenti forniti a un programma durante la sua invocazione dal terminale o dal
-  prompt dei comandi.
+summary: Go offre un accesso diretto agli argomenti della linea di comando tramite
+  il pacchetto `os`, in particolare usando `os.Args`, un array di stringhe.
 title: Lettura degli argomenti da linea di comando
 weight: 23
 ---

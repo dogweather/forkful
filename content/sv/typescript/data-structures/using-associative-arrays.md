@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:13:22.573258-07:00
-description: "Associativa arrayer, eller objekt i TypeScript, l\xE5ter dig anv\xE4\
-  nda str\xE4ngar (eller nycklar) f\xF6r att komma \xE5t v\xE4rdepar. Programmerare\
-  \ anv\xE4nder dem f\xF6r mer\u2026"
+description: "Hur man g\xF6r: Att skapa och anv\xE4nda associativa arrayer i TypeScript\
+  \ \xE4r enkelt. H\xE4r \xE4r en grundl\xE4ggande genomg\xE5ng."
 lastmod: '2024-03-13T22:44:37.649138-06:00'
 model: gpt-4-0125-preview
-summary: "Associativa arrayer, eller objekt i TypeScript, l\xE5ter dig anv\xE4nda\
-  \ str\xE4ngar (eller nycklar) f\xF6r att komma \xE5t v\xE4rdepar."
+summary: "Att skapa och anv\xE4nda associativa arrayer i TypeScript \xE4r enkelt."
 title: "Att anv\xE4nda associativa arrayer"
 weight: 15
 ---

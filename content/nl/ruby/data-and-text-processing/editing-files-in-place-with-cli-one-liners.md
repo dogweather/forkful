@@ -2,14 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:53.300909-07:00
-description: "Bestanden ter plaatse bewerken met CLI (Command Line Interface) one-liners\
-  \ in Ruby stelt je in staat om bestanden rechtstreeks vanuit je terminal te\u2026"
+description: "Hoe: Ruby biedt een eenvoudige manier om bestanden ter plaatse rechtstreeks\
+  \ vanaf de commandoregel te bewerken. Met Ruby's `-i`-schakelaar kun je Ruby\u2026"
 lastmod: '2024-03-13T22:44:51.333622-06:00'
 model: gpt-4-0125-preview
-summary: Bestanden ter plaatse bewerken met CLI (Command Line Interface) one-liners
-  in Ruby stelt je in staat om bestanden rechtstreeks vanuit je terminal te wijzigen,
-  zonder ze in een editor te hoeven openen, wijzigingen aan te brengen en ze terug
-  op te slaan.
+summary: Ruby biedt een eenvoudige manier om bestanden ter plaatse rechtstreeks vanaf
+  de commandoregel te bewerken.
 title: Bestanden ter plekke bewerken met CLI one-liners
 weight: 32
 ---

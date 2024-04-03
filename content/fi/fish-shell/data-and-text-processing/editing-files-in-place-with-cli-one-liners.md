@@ -1,11 +1,13 @@
 ---
 date: 2024-01-27 16:21:19.895288-07:00
-description: "Tiedostojen suoraan muokkaaminen CLI-yksirivikomennoin tarkoittaa muutosten\
-  \ tekemist\xE4 suoraan tiedostoihin komentorivilt\xE4, ilman niiden avaamista\u2026"
+description: "Kuinka: Fish Shell, tunnettu k\xE4ytt\xE4j\xE4yst\xE4v\xE4llisist\xE4\
+  \ ominaisuuksistaan ja tehokkaista skriptausmahdollisuuksista, tarjoaa useita tapoja\
+  \ muokata tiedostoja\u2026"
 lastmod: '2024-03-13T22:44:56.990324-06:00'
 model: gpt-4-0125-preview
-summary: "Tiedostojen suoraan muokkaaminen CLI-yksirivikomennoin tarkoittaa muutosten\
-  \ tekemist\xE4 suoraan tiedostoihin komentorivilt\xE4, ilman niiden avaamista tekstieditorissa."
+summary: "Fish Shell, tunnettu k\xE4ytt\xE4j\xE4yst\xE4v\xE4llisist\xE4 ominaisuuksistaan\
+  \ ja tehokkaista skriptausmahdollisuuksista, tarjoaa useita tapoja muokata tiedostoja\
+  \ suoraan."
 title: "Tiedostojen muokkaaminen paikan p\xE4\xE4ll\xE4 komentorivin yhden rivin komennoilla"
 weight: 32
 ---

@@ -2,13 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:14.353142-07:00
-description: "Das Schreiben auf den Standardfehler (stderr) in Bash bedeutet, Fehlermeldungen\
-  \ oder jede wichtige diagnostische Ausgabe getrennt von der Standardausgabe\u2026"
+description: 'Wie: In Bash verwenden Sie `>&2`, um die Ausgabe auf stderr umzuleiten.
+  Hier ein einfaches Beispiel.'
 lastmod: '2024-03-13T22:44:54.075802-06:00'
 model: gpt-4-0125-preview
-summary: Das Schreiben auf den Standardfehler (stderr) in Bash bedeutet, Fehlermeldungen
-  oder jede wichtige diagnostische Ausgabe getrennt von der Standardausgabe (stdout)
-  zu leiten.
+summary: In Bash verwenden Sie `>&2`, um die Ausgabe auf stderr umzuleiten.
 title: Schreiben auf Standardfehler
 weight: 25
 ---

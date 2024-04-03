@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:36.994591-07:00
-description: "En TypeScript, \xE9crire sur l'erreur standard (stderr) est un processus\
-  \ consistant \xE0 envoyer des messages d'erreur ou des journaux directement sur\
-  \ le flux\u2026"
+description: "Comment faire : TypeScript, \xE9tant un sur-ensemble de JavaScript,\
+  \ repose sur l'environnement d'ex\xE9cution JS sous-jacent (comme Node.js) pour\
+  \ \xE9crire sur\u2026"
 lastmod: '2024-03-13T22:44:57.454621-06:00'
 model: gpt-4-0125-preview
-summary: "En TypeScript, \xE9crire sur l'erreur standard (stderr) est un processus\
-  \ consistant \xE0 envoyer des messages d'erreur ou des journaux directement sur\
-  \ le flux de sortie d'erreur de l'environnement (par exemple, la console dans node."
+summary: "TypeScript, \xE9tant un sur-ensemble de JavaScript, repose sur l'environnement\
+  \ d'ex\xE9cution JS sous-jacent (comme Node.js) pour \xE9crire sur stderr."
 title: "\xC9crire sur l'erreur standard"
 weight: 25
 ---

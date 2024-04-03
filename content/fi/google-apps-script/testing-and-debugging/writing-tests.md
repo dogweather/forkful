@@ -2,13 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:09:05.042173-07:00
-description: "Testien kirjoittaminen Google Apps Scriptill\xE4 (GAS) tarkoittaa automatisoitujen\
-  \ skriptien luomista koodisi k\xE4ytt\xE4ytymisen varmistamiseksi, jotta ne\u2026"
+description: "Miten: Vaikka Google Apps Scriptill\xE4 ei ole sis\xE4\xE4nrakennettua\
+  \ testausymp\xE4rist\xF6\xE4 kuten joissakin muissa ohjelmointiymp\xE4rist\xF6iss\xE4\
+  , voit silti kirjoittaa ja\u2026"
 lastmod: '2024-03-13T22:44:56.101175-06:00'
 model: gpt-4-0125-preview
-summary: "Testien kirjoittaminen Google Apps Scriptill\xE4 (GAS) tarkoittaa automatisoitujen\
-  \ skriptien luomista koodisi k\xE4ytt\xE4ytymisen varmistamiseksi, jotta ne toimivat\
-  \ odotetulla tavalla eri olosuhteissa."
+summary: "Vaikka Google Apps Scriptill\xE4 ei ole sis\xE4\xE4nrakennettua testausymp\xE4\
+  rist\xF6\xE4 kuten joissakin muissa ohjelmointiymp\xE4rist\xF6iss\xE4, voit silti\
+  \ kirjoittaa ja suorittaa testej\xE4 hy\xF6dynt\xE4m\xE4ll\xE4 yksinkertaisia GAS-funktioita\
+  \ tai integroimalla ulkoisia testikirjastoja, kuten `QUnit`."
 title: Testien kirjoittaminen
 weight: 36
 ---

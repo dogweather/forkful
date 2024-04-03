@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:12.879172-07:00
-description: "L'analyse syntaxique du HTML dans Visual Basic pour Applications (VBA)\
-  \ consiste \xE0 extraire des informations sp\xE9cifiques d'un document HTML. Les\u2026"
+description: "Comment faire : Dans VBA, vous pouvez analyser le HTML en utilisant\
+  \ la `Biblioth\xE8que d'objets HTML Microsoft`. Ajoutez une r\xE9f\xE9rence \xE0\
+  \ cette biblioth\xE8que\u2026"
 lastmod: '2024-03-13T22:44:57.555642-06:00'
 model: gpt-4-0125-preview
-summary: "L'analyse syntaxique du HTML dans Visual Basic pour Applications (VBA) consiste\
-  \ \xE0 extraire des informations sp\xE9cifiques d'un document HTML."
+summary: "Dans VBA, vous pouvez analyser le HTML en utilisant la `Biblioth\xE8que\
+  \ d'objets HTML Microsoft`."
 title: Analyse Syntaxique de HTML
 weight: 43
 ---

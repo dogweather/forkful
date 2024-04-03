@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:02.506277-07:00
-description: "JSON (JavaScript Object Notation) est un format d'\xE9change de donn\xE9\
-  es l\xE9ger, pr\xE9dominant dans les applications Web pour l'\xE9change de donn\xE9\
-  es entre clients\u2026"
+description: "Comment faire : Ruby, avec sa biblioth\xE8que standard, offre des moyens\
+  \ transparents pour analyser et g\xE9n\xE9rer du JSON. Le module principal pour\
+  \ ces\u2026"
 lastmod: '2024-03-13T22:44:58.443486-06:00'
 model: gpt-4-0125-preview
-summary: "JSON (JavaScript Object Notation) est un format d'\xE9change de donn\xE9\
-  es l\xE9ger, pr\xE9dominant dans les applications Web pour l'\xE9change de donn\xE9\
-  es entre clients et serveurs."
+summary: "Ruby, avec sa biblioth\xE8que standard, offre des moyens transparents pour\
+  \ analyser et g\xE9n\xE9rer du JSON."
 title: Travailler avec JSON
 weight: 38
 ---

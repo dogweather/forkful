@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:40:38.113663-07:00
-description: "Creating a temporary file means making a file that's only needed for\
-  \ a short time, then deleted. Programmers do it for intermediate storage, like when\
-  \ you\u2026"
+description: 'How to: In Java, the `java.nio.file` package is your friend for temporary
+  files. Check out this snippet.'
 lastmod: '2024-03-13T22:44:59.989229-06:00'
 model: gpt-4-1106-preview
-summary: Creating a temporary file means making a file that's only needed for a short
-  time, then deleted.
+summary: In Java, the `java.nio.file` package is your friend for temporary files.
 title: Creating a temporary file
 weight: 21
 ---

@@ -2,14 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:23.975736-07:00
-description: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) Dart-kieless\xE4 tarjoavat\
-  \ tehokkaan tavan etsi\xE4 ja manipuloida merkkijonoja, mahdollistaen ohjelmoijien\
-  \ suorittaa\u2026"
+description: "Miten: Dart k\xE4ytt\xE4\xE4 `RegExp`-luokkaa s\xE4\xE4nn\xF6llisiin\
+  \ lausekkeisiin. T\xE4ss\xE4 on perusesimerkki yksinkertaisen kaavan vastaamisesta\
+  \ merkkijonossa."
 lastmod: '2024-03-13T22:44:56.259639-06:00'
 model: gpt-4-0125-preview
-summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) Dart-kieless\xE4 tarjoavat tehokkaan\
-  \ tavan etsi\xE4 ja manipuloida merkkijonoja, mahdollistaen ohjelmoijien suorittaa\
-  \ monimutkaisia tekstink\xE4sittelyteht\xE4vi\xE4 tehokkaasti."
+summary: "Dart k\xE4ytt\xE4\xE4 `RegExp`-luokkaa s\xE4\xE4nn\xF6llisiin lausekkeisiin."
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---

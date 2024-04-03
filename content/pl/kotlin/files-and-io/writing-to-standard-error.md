@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:59.855425-07:00
-description: "Wypisywanie do standardowego b\u0142\u0119du (stderr) dotyczy przekazywania\
-  \ komunikat\xF3w o b\u0142\u0119dach i diagnostyki do oddzielnego strumienia, odr\u0119\
-  bnego od\u2026"
+description: "Jak to zrobi\u0107: W Kotlinie, zapis do stderr mo\u017Cna osi\u0105\
+  gn\u0105\u0107 za pomoc\u0105 `System.err.println()`. Ta metoda jest podobna do\
+  \ `System.out.println()`, ale kieruje\u2026"
 lastmod: '2024-03-13T22:44:35.381582-06:00'
 model: gpt-4-0125-preview
-summary: "Wypisywanie do standardowego b\u0142\u0119du (stderr) dotyczy przekazywania\
-  \ komunikat\xF3w o b\u0142\u0119dach i diagnostyki do oddzielnego strumienia, odr\u0119\
-  bnego od standardowego wyj\u015Bcia (stdout), co pozwala na lepsze zarz\u0105dzanie\
-  \ b\u0142\u0119dami i parsowanie log\xF3w."
+summary: "W Kotlinie, zapis do stderr mo\u017Cna osi\u0105gn\u0105\u0107 za pomoc\u0105\
+  \ `System.err.println()`."
 title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---

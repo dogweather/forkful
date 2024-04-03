@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 01:16:17.280527-07:00
-description: "Koodin j\xE4rjest\xE4minen funktioihin tarkoittaa ohjelmasi jakamista\
-  \ uudelleenk\xE4ytett\xE4viin, modulaarisiin palasiin, joita kutsutaan nimell\xE4\
-  . Teemme sen\u2026"
+description: "Kuinka: Kuvittele, ett\xE4 sinulla on koodia, joka laskee ympyr\xE4\
+  n alan useita kertoja. Sen sijaan, ett\xE4 toistaisit kaavan, k\xE4\xE4riydyt sen\
+  \ funktioon."
 lastmod: '2024-03-13T22:44:56.362164-06:00'
 model: gpt-4-0125-preview
-summary: "Koodin j\xE4rjest\xE4minen funktioihin tarkoittaa ohjelmasi jakamista uudelleenk\xE4\
-  ytett\xE4viin, modulaarisiin palasiin, joita kutsutaan nimell\xE4."
+summary: "Kuvittele, ett\xE4 sinulla on koodia, joka laskee ympyr\xE4n alan useita\
+  \ kertoja."
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---

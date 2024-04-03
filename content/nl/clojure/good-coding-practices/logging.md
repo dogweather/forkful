@@ -2,13 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:03.938405-07:00
-description: "Loggen is in wezen de software-equivalent van een scheepsjournaal; het\
-  \ is een manier om gebeurtenissen vast te leggen die plaatsvinden terwijl een\u2026"
+description: "Hoe te: Clojure leunt op Java's logvoorzieningen, maar je kunt er op\
+  \ een meer idiomatische Clojure-manier toegang toe krijgen. Laten we eens kijken\
+  \ hoe je\u2026"
 lastmod: '2024-03-13T22:44:50.426618-06:00'
 model: gpt-4-0125-preview
-summary: Loggen is in wezen de software-equivalent van een scheepsjournaal; het is
-  een manier om gebeurtenissen vast te leggen die plaatsvinden terwijl een applicatie
-  wordt uitgevoerd.
+summary: Clojure leunt op Java's logvoorzieningen, maar je kunt er op een meer idiomatische
+  Clojure-manier toegang toe krijgen.
 title: Logboekregistratie
 weight: 17
 ---

@@ -2,18 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:41.846770-07:00
-description: "Vi\u1EC7c \u0111\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7\
-  nh trong Go bao g\u1ED3m vi\u1EC7c tr\xEDch xu\u1EA5t c\xE1c \u0111\u1ED1i s\u1ED1\
-  \ \u0111\u01B0\u1EE3c cung c\u1EA5p cho m\u1ED9t ch\u01B0\u01A1ng tr\xECnh trong\
-  \ qu\xE1 tr\xECnh \u0111\u01B0\u1EE3c g\u1ECDi t\u1EEB terminal ho\u1EB7c d\u1EA5\
-  u\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Go cung c\u1EA5p quy\u1EC1n truy c\u1EADp tr\u1EF1\
+  c ti\u1EBFp v\xE0o c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh th\xF4ng qua g\xF3\
+  i `os`, c\u1EE5 th\u1EC3 s\u1EED d\u1EE5ng `os.Args`, m\u1ED9t m\u1EA3ng c\xE1c\
+  \ chu\u1ED7i. D\u01B0\u1EDBi \u0111\xE2y l\xE0\u2026"
 lastmod: '2024-03-13T22:44:36.003365-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c \u0111\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh trong\
-  \ Go bao g\u1ED3m vi\u1EC7c tr\xEDch xu\u1EA5t c\xE1c \u0111\u1ED1i s\u1ED1 \u0111\
-  \u01B0\u1EE3c cung c\u1EA5p cho m\u1ED9t ch\u01B0\u01A1ng tr\xECnh trong qu\xE1\
-  \ tr\xECnh \u0111\u01B0\u1EE3c g\u1ECDi t\u1EEB terminal ho\u1EB7c d\u1EA5u nh\u1EAF\
-  c l\u1EC7nh."
+summary: "Go cung c\u1EA5p quy\u1EC1n truy c\u1EADp tr\u1EF1c ti\u1EBFp v\xE0o c\xE1\
+  c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh th\xF4ng qua g\xF3i `os`, c\u1EE5 th\u1EC3\
+  \ s\u1EED d\u1EE5ng `os.Args`, m\u1ED9t m\u1EA3ng c\xE1c chu\u1ED7i."
 title: "\u0110\u1ECDc c\xE1c tham s\u1ED1 d\xF2ng l\u1EC7nh"
 weight: 23
 ---

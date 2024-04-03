@@ -1,13 +1,9 @@
 ---
 date: 2024-01-20 17:37:27.605106-07:00
-description: "Die Umwandlung eines Datums in einen String bedeutet einfach, ein Datum\
-  \ von einem Format, das von einem Computer verstanden wird, in Text umzuwandeln,\
-  \ den\u2026"
+description: 'How to: (Wie geht das:) .'
 lastmod: '2024-03-13T22:44:53.390372-06:00'
 model: gpt-4-1106-preview
-summary: "Die Umwandlung eines Datums in einen String bedeutet einfach, ein Datum\
-  \ von einem Format, das von einem Computer verstanden wird, in Text umzuwandeln,\
-  \ den Menschen leicht lesen k\xF6nnen."
+summary: .
 title: Datum in einen String umwandeln
 weight: 28
 ---

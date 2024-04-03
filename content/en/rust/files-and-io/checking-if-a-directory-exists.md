@@ -1,12 +1,11 @@
 ---
 date: 2024-02-03 19:02:53.046161-07:00
-description: "In software development, it's often necessary to check if a directory\
-  \ exists to avoid errors when attempting to access, read, or write files. Rust,\
-  \ being\u2026"
+description: "How to: Rust's standard library (`std`) includes functionality to check\
+  \ for the existence of a directory through the `std::path::Path` and `std::fs`\u2026"
 lastmod: '2024-03-13T22:44:59.909178-06:00'
 model: gpt-4-0125-preview
-summary: In software development, it's often necessary to check if a directory exists
-  to avoid errors when attempting to access, read, or write files.
+summary: Rust's standard library (`std`) includes functionality to check for the existence
+  of a directory through the `std::path::Path` and `std::fs` modules.
 title: Checking if a directory exists
 weight: 20
 ---

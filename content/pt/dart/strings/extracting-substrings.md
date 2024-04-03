@@ -2,13 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:00.194098-07:00
-description: "Extrair substrings trata-se de recuperar por\xE7\xF5es espec\xEDficas\
-  \ de uma string baseadas em suas posi\xE7\xF5es ou padr\xF5es. Programadores fazem\
-  \ isso para tarefas\u2026"
+description: "Como Fazer: No Dart, voc\xEA pode usar diversos m\xE9todos para extrair\
+  \ substrings, como `substring()`, `split()` e express\xF5es regulares. Cada m\xE9\
+  todo serve a\u2026"
 lastmod: '2024-03-13T22:44:46.269615-06:00'
 model: gpt-4-0125-preview
-summary: "Extrair substrings trata-se de recuperar por\xE7\xF5es espec\xEDficas de\
-  \ uma string baseadas em suas posi\xE7\xF5es ou padr\xF5es."
+summary: "No Dart, voc\xEA pode usar diversos m\xE9todos para extrair substrings,\
+  \ como `substring()`, `split()` e express\xF5es regulares."
 title: Extraindo substrings
 weight: 6
 ---

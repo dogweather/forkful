@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:51.974936-07:00
-description: "Att g\xF6ra det f\xF6rsta tecknet i en str\xE4ng till versal i Bash\
-  \ involverar att omvandla det f\xF6rsta tecknet av str\xE4ngen till stort bokstav\
-  \ medan resten av\u2026"
+description: "Hur man g\xF6r: Bash har inte en inbyggd funktion specifikt f\xF6r att\
+  \ g\xF6ra bokst\xE4ver till versaler i str\xE4ngar, men du kan \xE5stadkomma detta\
+  \ med hj\xE4lp av\u2026"
 lastmod: '2024-03-13T22:44:38.064091-06:00'
 model: gpt-4-0125-preview
-summary: "Att g\xF6ra det f\xF6rsta tecknet i en str\xE4ng till versal i Bash involverar\
-  \ att omvandla det f\xF6rsta tecknet av str\xE4ngen till stort bokstav medan resten\
-  \ av str\xE4ngen l\xE4mnas of\xF6r\xE4ndrad."
+summary: "Bash har inte en inbyggd funktion specifikt f\xF6r att g\xF6ra bokst\xE4\
+  ver till versaler i str\xE4ngar, men du kan \xE5stadkomma detta med hj\xE4lp av\
+  \ parameterexpansion eller externa verktyg som `awk`."
 title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---

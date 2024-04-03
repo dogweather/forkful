@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:51.694744-07:00
-description: "Parsowanie daty z ci\u0105gu znak\xF3w w Clojure polega na przekszta\u0142\
-  caniu tekstowych reprezentacji dat i czas\xF3w na bardziej u\u017Cyteczn\u0105 form\u0119\
-  \ (np. obiekt DateTime\u2026"
+description: "Jak to zrobi\u0107: Clojure, b\u0119d\u0105c j\u0119zykiem JVM, pozwala\
+  \ bezpo\u015Brednio korzysta\u0107 z bibliotek daty i czasu Javy. Zacznijmy od wbudowanej\
+  \ interoperacyjno\u015Bci z\u2026"
 lastmod: '2024-03-13T22:44:35.006287-06:00'
 model: gpt-4-0125-preview
-summary: "Parsowanie daty z ci\u0105gu znak\xF3w w Clojure polega na przekszta\u0142\
-  caniu tekstowych reprezentacji dat i czas\xF3w na bardziej u\u017Cyteczn\u0105 form\u0119\
-  \ (np."
+summary: "Clojure, b\u0119d\u0105c j\u0119zykiem JVM, pozwala bezpo\u015Brednio korzysta\u0107\
+  \ z bibliotek daty i czasu Javy."
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---

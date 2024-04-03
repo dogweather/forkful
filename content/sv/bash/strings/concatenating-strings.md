@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:34:20.243931-07:00
-description: "Sammanfogning av str\xE4ngar handlar om att sm\xE4lla ihop textbitar\
-  \ till en enda l\xE4ngre text. Programmerare g\xF6r det f\xF6r att bygga upp meddelanden,\
-  \ kommandon\u2026"
+description: "How to: S\xE5 h\xE4r sm\xE4ller du ihop str\xE4ngar i Bash."
 lastmod: '2024-03-13T22:44:38.072580-06:00'
 model: gpt-4-1106-preview
-summary: "Sammanfogning av str\xE4ngar handlar om att sm\xE4lla ihop textbitar till\
-  \ en enda l\xE4ngre text."
+summary: "S\xE5 h\xE4r sm\xE4ller du ihop str\xE4ngar i Bash."
 title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---

@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:47.967157-07:00
-description: "\xC5 hente dagens dato i Bash involverer bruk av innebygde kommandoer\
-  \ for \xE5 vise dato og tid i forskjellige formater. Programmerere bruker denne\u2026"
+description: "Hvordan: I Bash er `date`-kommandoen ditt prim\xE6re verkt\xF8y for\
+  \ \xE5 f\xE5 tak i dagens dato og tid. Her er noen eksempler p\xE5 hvordan du kan\
+  \ bruke den: 1. **F\xE5\u2026"
 lastmod: '2024-03-13T22:44:40.985437-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 hente dagens dato i Bash involverer bruk av innebygde kommandoer for\
-  \ \xE5 vise dato og tid i forskjellige formater."
+summary: "I Bash er `date`-kommandoen ditt prim\xE6re verkt\xF8y for \xE5 f\xE5 tak\
+  \ i dagens dato og tid."
 title: "F\xE5 dagens dato"
 weight: 29
 ---

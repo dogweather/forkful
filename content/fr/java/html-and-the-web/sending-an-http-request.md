@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:59:56.760946-07:00
-description: "Envoyer une requ\xEAte HTTP, c'est demander \xE0 un serveur web de faire\
-  \ quelque chose pour vous, comme r\xE9cup\xE9rer une page web. Les d\xE9veloppeurs\
-  \ le font pour\u2026"
+description: "How to: Avec Java 11, c\u2019est devenu tr\xE8s fluide. Vous pouvez\
+  \ utiliser le client HTTP int\xE9gr\xE9 pour envoyer des requ\xEAtes et recevoir\
+  \ des r\xE9ponses facilement.\u2026"
 lastmod: '2024-03-13T22:44:57.635887-06:00'
 model: gpt-4-1106-preview
-summary: "Envoyer une requ\xEAte HTTP, c'est demander \xE0 un serveur web de faire\
-  \ quelque chose pour vous, comme r\xE9cup\xE9rer une page web."
+summary: "Avec Java 11, c\u2019est devenu tr\xE8s fluide."
 title: "Envoi d'une requ\xEAte HTTP"
 weight: 44
 ---

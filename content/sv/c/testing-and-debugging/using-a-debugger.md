@@ -2,9 +2,9 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:13.500535-07:00
-description: "GDB (GNU Debugger) \xE4r den mest anv\xE4nda debuggern f\xF6r C-programmering.\
-  \ H\xE4r \xE4r en kort guide om hur man anv\xE4nder GDB f\xF6r att fels\xF6ka ett\
-  \ enkelt C-program.\u2026"
+description: "Hur g\xF6r man: GDB (GNU Debugger) \xE4r den mest anv\xE4nda debuggern\
+  \ f\xF6r C-programmering. H\xE4r \xE4r en kort guide om hur man anv\xE4nder GDB\
+  \ f\xF6r att fels\xF6ka ett enkelt\u2026"
 lastmod: '2024-03-13T22:44:38.387536-06:00'
 model: gpt-4-0125-preview
 summary: "GDB (GNU Debugger) \xE4r den mest anv\xE4nda debuggern f\xF6r C-programmering."

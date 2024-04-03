@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:26.853368-07:00
-description: "Att starta ett nytt projekt i Go inneb\xE4r att s\xE4tta upp en arbetsyta\
-  \ och initiera den med n\xF6dv\xE4ndiga Go-moduler. Programmerare g\xF6r detta f\xF6\
-  r att organisera\u2026"
+description: "Hur man g\xF6r: F\xF6rst, se till att du har Go installerat genom att\
+  \ k\xF6ra `go version` i din terminal. Du b\xF6r se den version av Go som du har\
+  \ installerat som\u2026"
 lastmod: '2024-03-13T22:44:37.392842-06:00'
 model: gpt-4-0125-preview
-summary: "Att starta ett nytt projekt i Go inneb\xE4r att s\xE4tta upp en arbetsyta\
-  \ och initiera den med n\xF6dv\xE4ndiga Go-moduler."
+summary: "F\xF6rst, se till att du har Go installerat genom att k\xF6ra `go version`\
+  \ i din terminal."
 title: Att starta ett nytt projekt
 weight: 1
 ---

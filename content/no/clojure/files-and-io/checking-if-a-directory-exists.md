@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:14.997285-07:00
-description: "\xC5 sjekke om en katalog eksisterer i Clojure inneb\xE6rer \xE5 verifisere\
-  \ tilstedev\xE6relsen av en filsystemkatalog fra inne i din Clojure-applikasjon.\
-  \ Denne\u2026"
+description: "Hvordan gj\xF8re dette: Clojure, som er et JVM-spr\xE5k, kan utnytte\
+  \ Java sin `java.io.File` klasse for dette form\xE5let. Du trenger ikke noe tredjepartsbibliotek\u2026"
 lastmod: '2024-03-13T22:44:40.416102-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 sjekke om en katalog eksisterer i Clojure inneb\xE6rer \xE5 verifisere\
-  \ tilstedev\xE6relsen av en filsystemkatalog fra inne i din Clojure-applikasjon."
+summary: "Clojure, som er et JVM-spr\xE5k, kan utnytte Java sin `java.io.File` klasse\
+  \ for dette form\xE5let."
 title: Sjekker om en mappe eksisterer
 weight: 20
 ---

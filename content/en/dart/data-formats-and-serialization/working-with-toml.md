@@ -1,11 +1,12 @@
 ---
 date: 2024-03-08 21:33:31.340448-07:00
-description: "TOML, or Tom's Obvious, Minimal Language, is a configuration file format\
-  \ that's easy to read due to its clear semantics. Programmers use it for\u2026"
+description: "How to: Dart doesn't include built-in support for TOML, but you can\
+  \ work with TOML files using third-party packages like `toml`. First, add `toml`\
+  \ to your\u2026"
 lastmod: '2024-03-13T22:44:59.841260-06:00'
 model: gpt-4-0125-preview
-summary: TOML, or Tom's Obvious, Minimal Language, is a configuration file format
-  that's easy to read due to its clear semantics.
+summary: Dart doesn't include built-in support for TOML, but you can work with TOML
+  files using third-party packages like `toml`.
 title: Working with TOML
 weight: 39
 ---

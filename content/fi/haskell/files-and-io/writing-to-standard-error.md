@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:20.131458-07:00
-description: "Standardivirheeseen (stderr) kirjoittaminen Haskellissa mahdollistaa\
-  \ ohjelmien tulosteiden erottamisen normaalien tulosten ja virheilmoitusten v\xE4\
-  lill\xE4.\u2026"
+description: "Kuinka: Haskellissa stderriin kirjoittaminen on suoraviivaista peruskirjaston\
+  \ `System.IO`-moduulin avulla. Alla on perusesimerkki esittelyn\xE4."
 lastmod: '2024-03-13T22:44:56.630972-06:00'
 model: gpt-4-0125-preview
-summary: "Standardivirheeseen (stderr) kirjoittaminen Haskellissa mahdollistaa ohjelmien\
-  \ tulosteiden erottamisen normaalien tulosten ja virheilmoitusten v\xE4lill\xE4."
+summary: Haskellissa stderriin kirjoittaminen on suoraviivaista peruskirjaston `System.IO`-moduulin
+  avulla.
 title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---

@@ -2,15 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:28.555788-07:00
-description: "Analisar uma data a partir de uma string no Arduino envolve extrair\
-  \ e converter os componentes da data (ano, m\xEAs, dia) de uma representa\xE7\xE3\
-  o textual para\u2026"
+description: 'Como fazer: Abordagem direta sem uma biblioteca de terceiros.'
 lastmod: '2024-03-13T22:44:46.848106-06:00'
 model: gpt-4-0125-preview
-summary: "Analisar uma data a partir de uma string no Arduino envolve extrair e converter\
-  \ os componentes da data (ano, m\xEAs, dia) de uma representa\xE7\xE3o textual para\
-  \ um formato que possa ser utilizado para cronometragem, compara\xE7\xF5es ou manipula\xE7\
-  \xF5es dentro de sketches."
+summary: Abordagem direta sem uma biblioteca de terceiros.
 title: Analisando uma data a partir de uma string
 weight: 30
 ---

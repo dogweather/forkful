@@ -1,12 +1,11 @@
 ---
 date: 2024-02-01 21:30:36.580625-07:00
-description: "Writing a text file in Visual Basic for Applications (VBA) involves\
-  \ creating, modifying, or appending text data to files, a fundamental task for storing\u2026"
+description: "How to: VBA offers several methods to write to a file, but one of the\
+  \ most straightforward ways is using the `FileSystemObject`. Here\u2019s a step-by-step\u2026"
 lastmod: '2024-03-13T22:44:59.950926-06:00'
 model: gpt-4-0125-preview
-summary: Writing a text file in Visual Basic for Applications (VBA) involves creating,
-  modifying, or appending text data to files, a fundamental task for storing outputs,
-  logging, or interacting with other applications.
+summary: VBA offers several methods to write to a file, but one of the most straightforward
+  ways is using the `FileSystemObject`.
 title: Writing a text file
 weight: 24
 ---

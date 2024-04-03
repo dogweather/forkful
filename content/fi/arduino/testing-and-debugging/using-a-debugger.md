@@ -1,8 +1,7 @@
 ---
 date: 2024-01-26 03:47:17.513292-07:00
-description: "Arduino IDE:lla voit k\xE4ytt\xE4\xE4 Serial-tulosteita virheenetsint\xE4\
-  \xE4n, mutta se on v\xE4h\xE4n kuin luolaston tutkimista taskulampun kanssa. Oikeaan\
-  \ debuggaukseen\u2026"
+description: "Kuinka: Arduino IDE:lla voit k\xE4ytt\xE4\xE4 Serial-tulosteita virheenetsint\xE4\
+  \xE4n, mutta se on v\xE4h\xE4n kuin luolaston tutkimista taskulampun kanssa. Oikeaan\u2026"
 lastmod: '2024-03-13T22:44:56.828299-06:00'
 model: gpt-4-0125-preview
 summary: "Arduino IDE:lla voit k\xE4ytt\xE4\xE4 Serial-tulosteita virheenetsint\xE4\

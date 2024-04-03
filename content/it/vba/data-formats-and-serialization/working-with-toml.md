@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:32.279858-07:00
-description: "TOML, che sta per Tom's Obvious, Minimal Language, \xE8 un formato di\
-  \ serializzazione dei dati prevalentemente utilizzato per i file di configurazione.\
-  \ I\u2026"
+description: "Come fare: Lavorare con TOML in VBA comporta l'analisi del file TOML\
+  \ per leggere le configurazioni o impostazioni nel vostro progetto VBA. VBA non\
+  \ ha un\u2026"
 lastmod: '2024-03-13T22:44:43.289926-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, che sta per Tom's Obvious, Minimal Language, \xE8 un formato di serializzazione\
-  \ dei dati prevalentemente utilizzato per i file di configurazione."
+summary: Lavorare con TOML in VBA comporta l'analisi del file TOML per leggere le
+  configurazioni o impostazioni nel vostro progetto VBA.
 title: Lavorare con TOML
 weight: 39
 ---

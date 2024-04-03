@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 18:03:14.530489-07:00
-description: "Ein neues Projekt zu starten bedeutet, von Grund auf etwas Neues zu\
-  \ schaffen. Programmierer machen das, um Ideen zu verwirklichen, Probleme zu l\xF6\
-  sen oder\u2026"
+description: 'How to: Ein Elm-Projekt zu starten ist einfach. Hier ist, wie es geht.'
 lastmod: '2024-03-13T22:44:53.805798-06:00'
 model: gpt-4-1106-preview
-summary: Ein neues Projekt zu starten bedeutet, von Grund auf etwas Neues zu schaffen.
+summary: Ein Elm-Projekt zu starten ist einfach.
 title: Einen neuen Projekt starten
 weight: 1
 ---

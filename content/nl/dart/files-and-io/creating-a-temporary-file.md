@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:34.876500-07:00
-description: "Het maken van een tijdelijk bestand in Dart houdt in dat je een bestand\
-  \ genereert dat bedoeld is voor kortstondig gebruik, voornamelijk voor scenario's\u2026"
+description: "Hoe te: De `dart:io` bibliotheek van Dart faciliteert het aanmaken van\
+  \ tijdelijke bestanden via de `Directory` klasse. Hier is een eenvoudige manier\
+  \ om\u2026"
 lastmod: '2024-03-13T22:44:50.526032-06:00'
 model: gpt-4-0125-preview
-summary: Het maken van een tijdelijk bestand in Dart houdt in dat je een bestand genereert
-  dat bedoeld is voor kortstondig gebruik, voornamelijk voor scenario's zoals het
-  cachen van gegevens, tijdelijke opslag voor bestandsverwerking, of het bewaren van
-  informatie die te gevoelig is om lang te bewaren.
+summary: De `dart:io` bibliotheek van Dart faciliteert het aanmaken van tijdelijke
+  bestanden via de `Directory` klasse.
 title: Een tijdelijk bestand aanmaken
 weight: 21
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 18:01:29.109075-07:00
-description: "Sending an HTTP request with basic authentication involves adding a\
-  \ username and password to your request to access a protected resource. Programmers\
-  \ do\u2026"
+description: 'How to: To send an HTTP request with basic authentication in Elixir,
+  you can use the `HTTPoison` library.'
 lastmod: '2024-03-13T22:44:59.782282-06:00'
 model: gpt-4-1106-preview
-summary: Sending an HTTP request with basic authentication involves adding a username
-  and password to your request to access a protected resource.
+summary: To send an HTTP request with basic authentication in Elixir, you can use
+  the `HTTPoison` library.
 title: Sending an HTTP request with basic authentication
 weight: 45
 ---

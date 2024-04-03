@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:07.745246-07:00
-description: "Pobieranie bie\u017C\u0105cej daty w TypeScript, j\u0119zyku opartym\
-  \ na JavaScript, pozwala na dost\u0119p i manipulacj\u0119 bie\u017C\u0105cymi informacjami\
-  \ o dacie i czasie. Programi\u015Bci\u2026"
+description: "Jak to zrobi\u0107: W TypeScript mo\u017Cesz u\u017Cy\u0107 obiektu\
+  \ `Date`, aby uzyska\u0107 bie\u017C\u0105c\u0105 dat\u0119 i czas. Oto jak mo\u017C\
+  esz to zrobi\u0107."
 lastmod: '2024-03-13T22:44:35.150173-06:00'
 model: gpt-4-0125-preview
-summary: "Pobieranie bie\u017C\u0105cej daty w TypeScript, j\u0119zyku opartym na\
-  \ JavaScript, pozwala na dost\u0119p i manipulacj\u0119 bie\u017C\u0105cymi informacjami\
-  \ o dacie i czasie."
+summary: "W TypeScript mo\u017Cesz u\u017Cy\u0107 obiektu `Date`, aby uzyska\u0107\
+  \ bie\u017C\u0105c\u0105 dat\u0119 i czas."
 title: Pobieranie aktualnej daty
 weight: 29
 ---

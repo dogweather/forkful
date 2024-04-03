@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:51:35.946663-07:00
-description: "String-Interpolation erm\xF6glicht es, Variable und Ausdr\xFCcke innerhalb\
-  \ eines Strings einzuf\xFCgen, um dynamische Textinhalte zu erzeugen. Programmierer\
-  \ nutzen\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:53.658831-06:00'
 model: gpt-4-1106-preview
-summary: "String-Interpolation erm\xF6glicht es, Variable und Ausdr\xFCcke innerhalb\
-  \ eines Strings einzuf\xFCgen, um dynamische Textinhalte zu erzeugen."
+summary: .
 title: Zeichenketten interpolieren
 weight: 8
 ---

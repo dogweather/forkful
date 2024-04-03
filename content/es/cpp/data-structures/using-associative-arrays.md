@@ -2,14 +2,13 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:17.968607-07:00
-description: "Los arreglos asociativos, conocidos como `std::map` o `std::unordered_map`\
-  \ en C++, llenan el vac\xEDo entre los \xEDndices de los arreglos y los datos del\
-  \ mundo\u2026"
+description: "C\xF3mo utilizarlos: En C++, los arreglos asociativos cobran vida con\
+  \ los encabezados `<map>` y `<unordered_map>`. Desglosemos ejemplos para ver ambos\
+  \ en\u2026"
 lastmod: '2024-03-13T22:44:59.368436-06:00'
 model: gpt-4-0125-preview
-summary: "Los arreglos asociativos, conocidos como `std::map` o `std::unordered_map`\
-  \ en C++, llenan el vac\xEDo entre los \xEDndices de los arreglos y los datos del\
-  \ mundo real, permiti\xE9ndote usar claves significativas."
+summary: En C++, los arreglos asociativos cobran vida con los encabezados `<map>`
+  y `<unordered_map>`.
 title: Uso de matrices asociativas
 weight: 15
 ---

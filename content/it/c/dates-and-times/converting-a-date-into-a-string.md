@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:12.041037-07:00
-description: "Convertire una data in una stringa in C comporta la traduzione di una\
-  \ struttura di data o timestamp in un formato leggibile dall'uomo. I programmatori\u2026"
+description: "Come fare: La funzione `strftime` della libreria `<time.h>` \xE8 comunemente\
+  \ usata per questo scopo. Ti permette di formattare la data e l'ora in vari modi\u2026"
 lastmod: '2024-03-13T22:44:44.012597-06:00'
 model: gpt-4-0125-preview
-summary: Convertire una data in una stringa in C comporta la traduzione di una struttura
-  di data o timestamp in un formato leggibile dall'uomo.
+summary: "La funzione `strftime` della libreria `<time.h>` \xE8 comunemente usata\
+  \ per questo scopo."
 title: Convertire una data in una stringa
 weight: 28
 ---

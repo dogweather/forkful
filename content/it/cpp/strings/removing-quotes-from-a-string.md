@@ -1,11 +1,9 @@
 ---
 date: 2024-01-26 03:37:54.795009-07:00
-description: "Rimuovere le virgolette da una stringa significa liberarsi di quei fastidiosi\
-  \ caratteri doppi o singoli che racchiudono il nostro testo (' o \"). I\u2026"
+description: 'Come fare: Ecco un modo diretto per eliminare quelle virgolette in C++.'
 lastmod: '2024-03-13T22:44:43.714410-06:00'
 model: gpt-4-0125-preview
-summary: Rimuovere le virgolette da una stringa significa liberarsi di quei fastidiosi
-  caratteri doppi o singoli che racchiudono il nostro testo (' o ").
+summary: Ecco un modo diretto per eliminare quelle virgolette in C++.
 title: Rimuovere le virgolette da una stringa
 weight: 9
 ---

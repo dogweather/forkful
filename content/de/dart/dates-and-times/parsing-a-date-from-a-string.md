@@ -2,12 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:13.749231-07:00
-description: "Das Parsen eines Datums aus einer Zeichenkette in Dart beinhaltet die\
-  \ Umwandlung von textueller Darstellung von Daten und Zeiten in ein `DateTime`-Objekt.\u2026"
+description: "Wie: Die Kernbibliothek von Dart vereinfacht das Parsen von Daten durch\
+  \ die `DateTime`-Klasse. F\xFCr einfache F\xE4lle, in denen Sie das Format des\u2026"
 lastmod: '2024-03-13T22:44:53.591304-06:00'
 model: gpt-4-0125-preview
-summary: Das Parsen eines Datums aus einer Zeichenkette in Dart beinhaltet die Umwandlung
-  von textueller Darstellung von Daten und Zeiten in ein `DateTime`-Objekt.
+summary: Die Kernbibliothek von Dart vereinfacht das Parsen von Daten durch die `DateTime`-Klasse.
 title: Einen Datum aus einem String analysieren
 weight: 30
 ---

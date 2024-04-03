@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:22.671528-07:00
-description: "Trabajar con archivos CSV (Valores Separados por Comas) se trata de\
-  \ leer y escribir en archivos de texto plano que almacenan datos tabulares. Los\u2026"
+description: "C\xF3mo hacerlo: Rust, con su enfoque en seguridad y rendimiento, ofrece\
+  \ excelentes crates (bibliotecas) para tratar con archivos CSV, siendo `csv` el\
+  \ m\xE1s\u2026"
 lastmod: '2024-03-13T22:44:58.869214-06:00'
 model: gpt-4-0125-preview
-summary: Trabajar con archivos CSV (Valores Separados por Comas) se trata de leer
-  y escribir en archivos de texto plano que almacenan datos tabulares.
+summary: "Rust, con su enfoque en seguridad y rendimiento, ofrece excelentes crates\
+  \ (bibliotecas) para tratar con archivos CSV, siendo `csv` el m\xE1s popular."
 title: Trabajando con CSV
 weight: 37
 ---

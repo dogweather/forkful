@@ -1,12 +1,11 @@
 ---
 date: 2024-02-03 19:03:35.880901-07:00
-description: "Writing to standard error (stderr) in Ruby is about directing error\
-  \ messages or diagnostics to a separate output stream, distinct from the standard\
-  \ output\u2026"
+description: "How to: Ruby's standard library provides a straightforward way to write\
+  \ to stderr using `$stderr` or `STDERR`. You don't need third-party libraries for\u2026"
 lastmod: '2024-03-13T22:45:00.566292-06:00'
 model: gpt-4-0125-preview
-summary: Writing to standard error (stderr) in Ruby is about directing error messages
-  or diagnostics to a separate output stream, distinct from the standard output (stdout).
+summary: Ruby's standard library provides a straightforward way to write to stderr
+  using `$stderr` or `STDERR`.
 title: Writing to standard error
 weight: 25
 ---

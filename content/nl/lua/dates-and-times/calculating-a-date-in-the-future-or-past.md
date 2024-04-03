@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:25.541405-07:00
-description: "Het berekenen van toekomstige of verleden data betekent uitzoeken wat\
-  \ de datum zal zijn na of voor een bepaalde hoeveelheid tijd. Programmeurs doen\
-  \ dit\u2026"
+description: 'Hoe te: In Lua heb je de functies `os.date` en `os.time` tot je beschikking
+  om te helpen met berekeningen van datum en tijd.'
 lastmod: '2024-03-13T22:44:50.950717-06:00'
 model: gpt-4-0125-preview
-summary: Het berekenen van toekomstige of verleden data betekent uitzoeken wat de
-  datum zal zijn na of voor een bepaalde hoeveelheid tijd.
+summary: In Lua heb je de functies `os.date` en `os.time` tot je beschikking om te
+  helpen met berekeningen van datum en tijd.
 title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---

@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 18:00:36.171704-07:00
-description: "HTTP-Anfragen erm\xF6glichen es, mit Webdiensten zu kommunizieren. Programmierer\
-  \ nutzen sie, um Daten zu senden und zu empfangen, was f\xFCr moderne Anwendungen\u2026"
+description: 'How to: Swift macht es mit der URLSession-API einfach, HTTP-Requests
+  zu starten. Hier ist ein minimalistischer GET-Request.'
 lastmod: '2024-03-13T22:44:54.222349-06:00'
 model: gpt-4-1106-preview
-summary: "HTTP-Anfragen erm\xF6glichen es, mit Webdiensten zu kommunizieren."
+summary: Swift macht es mit der URLSession-API einfach, HTTP-Requests zu starten.
 title: Einen HTTP-Request senden
 weight: 44
 ---

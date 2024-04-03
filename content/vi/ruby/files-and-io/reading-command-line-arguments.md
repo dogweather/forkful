@@ -2,16 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:29.781501-07:00
-description: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh trong Ruby\
-  \ cho ph\xE9p c\xE1c k\u1ECBch b\u1EA3n nh\u1EADn \u0111\u1EA7u v\xE0o ngay khi\
-  \ ch\xFAng \u0111\u01B0\u1EE3c ch\u1EA1y, nh\u01B0 c\u1EA5u h\xECnh t\xF9y ch\u1ECD\
-  n ho\u1EB7c truy\u1EC1n d\u1EEF li\u1EC7u. C\xE1c l\u1EADp tr\xECnh\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EC3 l\u1EA5y c\xE1c \u0111\u1ED1i s\u1ED1\
+  \ d\xF2ng l\u1EC7nh, Ruby cung c\u1EA5p m\u1ED9t m\u1EA3ng \u0111\u01A1n gi\u1EA3\
+  n: `ARGV`. N\xF3 ch\u1EE9a t\u1EA5t c\u1EA3 c\xE1c \u0111\u1ED1i s\u1ED1 \u0111\u01B0\
+  \u1EE3c truy\u1EC1n v\xE0o, theo th\u1EE9 t\u1EF1 ch\xFAng \u0111\u01B0\u1EE3c \u0111\
+  \u01B0a\u2026"
 lastmod: '2024-03-13T22:44:37.361764-06:00'
 model: gpt-4-0125-preview
-summary: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh trong Ruby\
-  \ cho ph\xE9p c\xE1c k\u1ECBch b\u1EA3n nh\u1EADn \u0111\u1EA7u v\xE0o ngay khi\
-  \ ch\xFAng \u0111\u01B0\u1EE3c ch\u1EA1y, nh\u01B0 c\u1EA5u h\xECnh t\xF9y ch\u1ECD\
-  n ho\u1EB7c truy\u1EC1n d\u1EEF li\u1EC7u."
+summary: "\u0110\u1EC3 l\u1EA5y c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh, Ruby\
+  \ cung c\u1EA5p m\u1ED9t m\u1EA3ng \u0111\u01A1n gi\u1EA3n."
 title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
 weight: 23
 ---

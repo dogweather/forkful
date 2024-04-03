@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 01:10:50.087801-07:00
-description: "Organizzare il codice in funzioni significa suddividere il mostro di\
-  \ un programma in pezzi gestibili, ognuno svolgente un compito distinto. I\u2026"
+description: "Come fare: Ecco un esempio classico \u2014 una funzione per calcolare\
+  \ il fattoriale di un numero."
 lastmod: '2024-03-13T22:44:43.314467-06:00'
 model: gpt-4-1106-preview
-summary: Organizzare il codice in funzioni significa suddividere il mostro di un programma
-  in pezzi gestibili, ognuno svolgente un compito distinto.
+summary: "Ecco un esempio classico \u2014 una funzione per calcolare il fattoriale\
+  \ di un numero."
 title: Organizzazione del codice in funzioni
 weight: 18
 ---

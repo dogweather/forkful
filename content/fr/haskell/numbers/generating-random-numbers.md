@@ -1,12 +1,11 @@
 ---
 date: 2024-01-27 20:33:59.219186-07:00
-description: "G\xE9n\xE9rer des nombres al\xE9atoires en Haskell consiste \xE0 cr\xE9\
-  er des nombres qui sont impr\xE9visibles selon les normes humaines. Ceci est crucial\
-  \ dans des\u2026"
+description: "Comment faire : Pour g\xE9n\xE9rer des nombres al\xE9atoires en Haskell,\
+  \ on utilise typiquement le package `random`, qui fait partie de la plateforme Haskell.\u2026"
 lastmod: '2024-03-13T22:44:57.829268-06:00'
 model: gpt-4-0125-preview
-summary: "G\xE9n\xE9rer des nombres al\xE9atoires en Haskell consiste \xE0 cr\xE9\
-  er des nombres qui sont impr\xE9visibles selon les normes humaines."
+summary: "Pour g\xE9n\xE9rer des nombres al\xE9atoires en Haskell, on utilise typiquement\
+  \ le package `random`, qui fait partie de la plateforme Haskell."
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---

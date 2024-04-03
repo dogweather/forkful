@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:45:25.507465-07:00
-description: "Kompleksiluvut ovat lukujoukko muotoa `a + bi`, miss\xE4 `a` ja `b`\
-  \ ovat reaalilukuja, ja `i` on imaginaariyksikk\xF6 (`i^2 = -1`). Ohjelmoinnissa\
-  \ niit\xE4\u2026"
+description: "Kuinka: Python tukee sis\xE4\xE4nrakennetusti kompleksilukuja. T\xE4\
+  ss\xE4 on tapa, jolla voit kokeilla niit\xE4."
 lastmod: '2024-03-13T22:44:56.137658-06:00'
 model: gpt-4-0125-preview
-summary: "Kompleksiluvut ovat lukujoukko muotoa `a + bi`, miss\xE4 `a` ja `b` ovat\
-  \ reaalilukuja, ja `i` on imaginaariyksikk\xF6 (`i^2 = -1`)."
+summary: "Python tukee sis\xE4\xE4nrakennetusti kompleksilukuja."
 title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---

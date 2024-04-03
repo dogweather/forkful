@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:07:23.310552-07:00
-description: "YAML, que significa \"YAML Ain't Markup Language\" (YAML N\xE3o \xE9\
-  \ Uma Linguagem de Marca\xE7\xE3o), \xE9 uma linguagem de serializa\xE7\xE3o de\
-  \ dados leg\xEDvel por humanos,\u2026"
+description: "Como Fazer: Trabalhar com YAML em VBA requer o entendimento de como\
+  \ analisar e converter YAML para um formato que o VBA possa manipular facilmente,\u2026"
 lastmod: '2024-03-13T22:44:46.434420-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, que significa \"YAML Ain't Markup Language\" (YAML N\xE3o \xE9 Uma\
-  \ Linguagem de Marca\xE7\xE3o), \xE9 uma linguagem de serializa\xE7\xE3o de dados\
-  \ leg\xEDvel por humanos, comumente usada para arquivos de configura\xE7\xE3o."
+summary: "Trabalhar com YAML em VBA requer o entendimento de como analisar e converter\
+  \ YAML para um formato que o VBA possa manipular facilmente, normalmente dicion\xE1\
+  rios ou cole\xE7\xF5es."
 title: Trabalhando com YAML
 weight: 41
 ---

@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:50.436775-07:00
-description: "Zwi\u0119kszanie wielko\u015Bci pierwszej litery ci\u0105gu polega na\
-  \ zamianie pierwszej litery ci\u0105gu na wielk\u0105, przy jednoczesnym zapewnieniu,\
-  \ \u017Ce reszta liter jest\u2026"
+description: "Jak to zrobi\u0107: Elixir oferuje prosty spos\xF3b na zwi\u0119kszenie\
+  \ wielko\u015Bci litery ci\u0105g\xF3w za pomoc\u0105 swoich wbudowanych funkcji,\
+  \ bez potrzeby u\u017Cywania\u2026"
 lastmod: '2024-03-13T22:44:35.023314-06:00'
 model: gpt-4-0125-preview
-summary: "Zwi\u0119kszanie wielko\u015Bci pierwszej litery ci\u0105gu polega na zamianie\
-  \ pierwszej litery ci\u0105gu na wielk\u0105, przy jednoczesnym zapewnieniu, \u017C\
-  e reszta liter jest ma\u0142a."
+summary: "Elixir oferuje prosty spos\xF3b na zwi\u0119kszenie wielko\u015Bci litery\
+  \ ci\u0105g\xF3w za pomoc\u0105 swoich wbudowanych funkcji, bez potrzeby u\u017C\
+  ywania zewn\u0119trznych bibliotek."
 title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:13.522336-07:00
-description: "JSON (JavaScript Object Notation) to lekki format wymiany danych, powszechnie\
-  \ stosowany w aplikacjach internetowych do wymiany danych mi\u0119dzy klientami\
-  \ a\u2026"
+description: "Jak to zrobi\u0107: Ruby, ze swoj\u0105 standardow\u0105 bibliotek\u0105\
+  , oferuje bezproblemowe sposoby parsowania i generowania JSON. Podstawowym modu\u0142\
+  em do tych operacji\u2026"
 lastmod: '2024-03-13T22:44:35.953560-06:00'
 model: gpt-4-0125-preview
-summary: "JSON (JavaScript Object Notation) to lekki format wymiany danych, powszechnie\
-  \ stosowany w aplikacjach internetowych do wymiany danych mi\u0119dzy klientami\
-  \ a serwerami."
+summary: "Ruby, ze swoj\u0105 standardow\u0105 bibliotek\u0105, oferuje bezproblemowe\
+  \ sposoby parsowania i generowania JSON."
 title: Praca z JSON
 weight: 38
 ---

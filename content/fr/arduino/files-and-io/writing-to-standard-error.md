@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:28.280240-07:00
-description: "\xC9crire sur l'erreur standard (stderr) dans la programmation Arduino\
-  \ consiste \xE0 diriger les messages d'erreur et les diagnostics vers un canal s\xE9\
-  par\xE9,\u2026"
+description: "Comment faire : Arduino ne diff\xE9rencie pas nativement entre la sortie\
+  \ standard et l'erreur standard comme le font les syst\xE8mes informatiques\u2026"
 lastmod: '2024-03-13T22:44:58.131599-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire sur l'erreur standard (stderr) dans la programmation Arduino consiste\
-  \ \xE0 diriger les messages d'erreur et les diagnostics vers un canal s\xE9par\xE9\
-  , garantissant qu'ils ne se m\xE9langent pas avec la sortie standard (stdout)."
+summary: "Arduino ne diff\xE9rencie pas nativement entre la sortie standard et l'erreur\
+  \ standard comme le font les syst\xE8mes informatiques conventionnels."
 title: "\xC9crire sur l'erreur standard"
 weight: 25
 ---

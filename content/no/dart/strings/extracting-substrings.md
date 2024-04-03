@@ -2,13 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:49.537891-07:00
-description: "\xC5 trekke ut delstrenger handler om \xE5 hente spesifikke deler av\
-  \ en streng basert p\xE5 deres posisjoner eller m\xF8nstre. Programmerere gj\xF8\
-  r dette for oppgaver\u2026"
+description: "Hvordan: I Dart kan du bruke ulike metoder for \xE5 trekke ut delstrenger,\
+  \ som `substring()`, `split()`, og regul\xE6re uttrykk. Hver metode tjener forskjellige\u2026"
 lastmod: '2024-03-13T22:44:40.475251-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 trekke ut delstrenger handler om \xE5 hente spesifikke deler av en\
-  \ streng basert p\xE5 deres posisjoner eller m\xF8nstre."
+summary: "I Dart kan du bruke ulike metoder for \xE5 trekke ut delstrenger, som `substring()`,\
+  \ `split()`, og regul\xE6re uttrykk."
 title: Utdrag av delstrenger
 weight: 6
 ---

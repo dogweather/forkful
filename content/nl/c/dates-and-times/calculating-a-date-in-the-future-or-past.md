@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:57.583830-07:00
-description: "Het berekenen van een datum in de toekomst of het verleden omvat het\
-  \ bepalen van een specifieke datum door een bepaald aantal dagen, maanden of jaren\
-  \ bij\u2026"
+description: "Hoe: Hoewel de standaardbibliotheek van C geen directe functies biedt\
+  \ voor datumrekenkunde, kunt u datums manipuleren met behulp van de `time.h`\u2026"
 lastmod: '2024-03-13T22:44:51.304903-06:00'
 model: gpt-4-0125-preview
-summary: Het berekenen van een datum in de toekomst of het verleden omvat het bepalen
-  van een specifieke datum door een bepaald aantal dagen, maanden of jaren bij een
-  gegeven datum op te tellen of af te trekken.
+summary: Hoewel de standaardbibliotheek van C geen directe functies biedt voor datumrekenkunde,
+  kunt u datums manipuleren met behulp van de `time.h` bibliotheek, specifiek werkend
+  met het `time_t` gegevenstype en `struct tm`.
 title: Een datum in de toekomst of verleden berekenen
 weight: 26
 ---

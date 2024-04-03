@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:41:43.676244-07:00
-description: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, dient dazu,\
-  \ Strings von nicht ben\xF6tigten oder unerw\xFCnschten Zeichen zu bereinigen. Programmierer\u2026"
+description: "Anleitung: Um in C# Zeichen zu l\xF6schen, die einem Muster entsprechen,\
+  \ benutzen wir Regex. Hier ein schnelles Beispiel."
 lastmod: '2024-03-13T22:44:53.872504-06:00'
 model: gpt-4-1106-preview
-summary: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, dient dazu, Strings\
-  \ von nicht ben\xF6tigten oder unerw\xFCnschten Zeichen zu bereinigen."
+summary: "Um in C# Zeichen zu l\xF6schen, die einem Muster entsprechen, benutzen wir\
+  \ Regex."
 title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
 weight: 5
 ---

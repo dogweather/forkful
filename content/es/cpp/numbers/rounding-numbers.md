@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:43:20.393265-07:00
-description: "Redondear n\xFAmeros significa ajustar un valor a su entero m\xE1s cercano\
-  \ o precisi\xF3n especificada. Los desarrolladores lo hacen para simplificar, cumplir\
-  \ con\u2026"
+description: "C\xF3mo hacerlo: C++ ofrece varias maneras de redondear n\xFAmeros,\
+  \ como `floor()`, `ceil()` y `round()`."
 lastmod: '2024-03-13T22:44:59.370382-06:00'
 model: gpt-4-0125-preview
-summary: "Redondear n\xFAmeros significa ajustar un valor a su entero m\xE1s cercano\
-  \ o precisi\xF3n especificada."
+summary: "C++ ofrece varias maneras de redondear n\xFAmeros, como `floor()`, `ceil()`\
+  \ y `round()`."
 title: "Redondeo de n\xFAmeros"
 weight: 13
 ---

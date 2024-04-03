@@ -2,10 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:05.940464-07:00
-description: "\u0110\u1EC3 s\u1EED d\u1EE5ng debugger trong Xcode (m\xF4i tr\u01B0\
-  \u1EDDng ph\xE1t tri\u1EC3n t\xEDch h\u1EE3p d\xE0nh cho Swift), b\u1EA1n c\xF3\
-  \ th\u1EC3 \u0111\u1EB7t \u0111i\u1EC3m d\u1EEBng (breakpoints), ki\u1EC3m tra bi\u1EBF\
-  n v\xE0 theo d\xF5i bi\u1EC3u\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EC3 s\u1EED d\u1EE5ng debugger trong\
+  \ Xcode (m\xF4i tr\u01B0\u1EDDng ph\xE1t tri\u1EC3n t\xEDch h\u1EE3p d\xE0nh cho\
+  \ Swift), b\u1EA1n c\xF3 th\u1EC3 \u0111\u1EB7t \u0111i\u1EC3m d\u1EEBng (breakpoints),\
+  \ ki\u1EC3m tra bi\u1EBFn v\xE0\u2026"
 lastmod: '2024-03-13T22:44:37.103249-06:00'
 model: gpt-4-0125-preview
 summary: "\u0110\u1EC3 s\u1EED d\u1EE5ng debugger trong Xcode (m\xF4i tr\u01B0\u1EDD\

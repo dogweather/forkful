@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 00:52:27.213944-07:00
-description: "Felhantering l\xE5ter ditt skript hantera det ov\xE4ntade p\xE5 ett\
-  \ smidigt s\xE4tt. Vi g\xF6r det f\xF6r att hantera fel utan att v\xE5ra anv\xE4\
-  ndares h\xE5r gr\xE5nar."
+description: "Hur g\xF6r man: F\xF6r att f\xE5nga fel i Fish, luta dig mot `status`-kommandot\
+  \ och villkorssatser. Anta att `ping` misslyckas; h\xE4r \xE4r hur du uppt\xE4cker\
+  \ det."
 lastmod: '2024-03-13T22:44:38.345912-06:00'
 model: gpt-4-1106-preview
-summary: "Felhantering l\xE5ter ditt skript hantera det ov\xE4ntade p\xE5 ett smidigt\
-  \ s\xE4tt."
+summary: "F\xF6r att f\xE5nga fel i Fish, luta dig mot `status`-kommandot och villkorssatser."
 title: Hantering av fel
 weight: 16
 ---

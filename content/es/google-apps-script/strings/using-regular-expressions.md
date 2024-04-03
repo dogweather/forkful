@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:19.664601-07:00
-description: "Las expresiones regulares (regex) son patrones utilizados para hacer\
-  \ coincidir combinaciones de caracteres en cadenas de texto. Los programadores las\u2026"
+description: "C\xF3mo: Usar expresiones regulares en Google Apps Script es sencillo\
+  \ gracias a la sintaxis basada en JavaScript. Aqu\xED te mostramos c\xF3mo puedes\
+  \ incorporar\u2026"
 lastmod: '2024-03-13T22:44:58.513161-06:00'
 model: gpt-4-0125-preview
-summary: Las expresiones regulares (regex) son patrones utilizados para hacer coincidir
-  combinaciones de caracteres en cadenas de texto.
+summary: Usar expresiones regulares en Google Apps Script es sencillo gracias a la
+  sintaxis basada en JavaScript.
 title: Usando expresiones regulares
 weight: 11
 ---

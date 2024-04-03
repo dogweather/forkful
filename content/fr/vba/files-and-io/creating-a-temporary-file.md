@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:18.230632-07:00
-description: "Cr\xE9er un fichier temporaire en Visual Basic pour Applications (VBA)\
-  \ consiste \xE0 g\xE9n\xE9rer programmatiquement un fichier pour un usage \xE0 court\
-  \ terme,\u2026"
+description: "Comment faire : En VBA, la cr\xE9ation d'un fichier temporaire peut\
+  \ \xEAtre r\xE9alis\xE9e en utilisant le `FileSystemObject` disponible dans la biblioth\xE8\
+  que\u2026"
 lastmod: '2024-03-13T22:44:57.603755-06:00'
 model: gpt-4-0125-preview
-summary: "Cr\xE9er un fichier temporaire en Visual Basic pour Applications (VBA) consiste\
-  \ \xE0 g\xE9n\xE9rer programmatiquement un fichier pour un usage \xE0 court terme,\
-  \ typiquement pour le traitement de donn\xE9es ou comme tampon dans des t\xE2ches\
-  \ d'automatisation."
+summary: "En VBA, la cr\xE9ation d'un fichier temporaire peut \xEAtre r\xE9alis\xE9\
+  e en utilisant le `FileSystemObject` disponible dans la biblioth\xE8que Microsoft\
+  \ Scripting Runtime."
 title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---

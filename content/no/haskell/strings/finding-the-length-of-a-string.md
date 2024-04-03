@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:47:38.968317-07:00
-description: "\xC5 finne lengden p\xE5 en streng betyr ganske enkelt \xE5 telle antall\
-  \ tegn i den. Vi gj\xF8r dette for \xE5 validere input, begrense tekst, og jobbe\
-  \ effektivt med\u2026"
+description: "Slik gj\xF8r du: Haskell gj\xF8r det enkelt \xE5 finne en strengs lengde\
+  \ med `length`-funksjonen. Her er et eksempel."
 lastmod: '2024-03-13T22:44:40.832027-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 finne lengden p\xE5 en streng betyr ganske enkelt \xE5 telle antall\
-  \ tegn i den."
+summary: "Haskell gj\xF8r det enkelt \xE5 finne en strengs lengde med `length`-funksjonen."
 title: "Finn lengden p\xE5 en streng"
 weight: 7
 ---

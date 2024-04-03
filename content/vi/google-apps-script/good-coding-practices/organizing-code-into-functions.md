@@ -2,16 +2,17 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:10.372622-07:00
-description: "T\u1ED5 ch\u1EE9c m\xE3 th\xE0nh c\xE1c h\xE0m l\xE0 v\u1EC1 vi\u1EC7\
-  c c\u1EA5u tr\xFAc m\xE3 Google Apps Script c\u1EE7a b\u1EA1n b\u1EB1ng c\xE1ch\
-  \ t\xE1ch c\xE1c ph\xE2n \u0111o\u1EA1n logic th\xE0nh c\xE1c kh\u1ED1i ri\xEAng\
-  \ bi\u1EC7t, m\u1ED7i kh\u1ED1i th\u1EF1c\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Google Apps Script, d\u1EF1a tr\xEAn JavaScript,\
+  \ b\u1EA1n \u0111\u1ECBnh ngh\u0129a h\xE0m s\u1EED d\u1EE5ng t\u1EEB kh\xF3a `function`,\
+  \ theo sau l\xE0 t\xEAn h\xE0m duy nh\u1EA5t, c\u1EB7p d\u1EA5u ngo\u1EB7c \u0111\
+  \u01A1n\u2026"
 lastmod: '2024-03-13T22:44:36.047824-06:00'
 model: gpt-4-0125-preview
-summary: "T\u1ED5 ch\u1EE9c m\xE3 th\xE0nh c\xE1c h\xE0m l\xE0 v\u1EC1 vi\u1EC7c c\u1EA5\
-  u tr\xFAc m\xE3 Google Apps Script c\u1EE7a b\u1EA1n b\u1EB1ng c\xE1ch t\xE1ch c\xE1\
-  c ph\xE2n \u0111o\u1EA1n logic th\xE0nh c\xE1c kh\u1ED1i ri\xEAng bi\u1EC7t, m\u1ED7\
-  i kh\u1ED1i th\u1EF1c hi\u1EC7n m\u1ED9t nhi\u1EC7m v\u1EE5 c\u1EE5 th\u1EC3."
+summary: "Trong Google Apps Script, d\u1EF1a tr\xEAn JavaScript, b\u1EA1n \u0111\u1ECB\
+  nh ngh\u0129a h\xE0m s\u1EED d\u1EE5ng t\u1EEB kh\xF3a `function`, theo sau l\xE0\
+  \ t\xEAn h\xE0m duy nh\u1EA5t, c\u1EB7p d\u1EA5u ngo\u1EB7c \u0111\u01A1n `()` c\xF3\
+  \ th\u1EC3 ch\u1EE9a tham s\u1ED1, v\xE0 c\u1EB7p d\u1EA5u ngo\u1EB7c nh\u1ECDn\
+  \ `{}` bao b\u1ECDc kh\u1ED1i m\xE3 c\u1EE7a h\xE0m."
 title: "S\u1EAFp x\u1EBFp m\xE3 l\u1EADp tr\xECnh v\xE0o h\xE0m s\u1ED1"
 weight: 18
 ---

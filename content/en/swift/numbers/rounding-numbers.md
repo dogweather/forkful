@@ -1,12 +1,9 @@
 ---
 date: 2024-01-25 02:59:55.932693-07:00
-description: "Rounding numbers means approximating a numerical value to a specific\
-  \ precision, typically to remove unwanted decimals. Programmers round to manage\
-  \ memory,\u2026"
+description: 'How to: Swift provides several ways to round numbers. Here''s a taste.'
 lastmod: '2024-03-13T22:45:00.391802-06:00'
 model: gpt-4-1106-preview
-summary: Rounding numbers means approximating a numerical value to a specific precision,
-  typically to remove unwanted decimals.
+summary: Swift provides several ways to round numbers.
 title: Rounding numbers
 weight: 13
 ---

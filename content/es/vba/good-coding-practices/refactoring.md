@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:38.237453-07:00
-description: "El refactoring en programaci\xF3n implica modificar la estructura del\
-  \ c\xF3digo sin cambiar su comportamiento, para mejorar aspectos como la legibilidad,\u2026"
+description: "C\xF3mo hacerlo: Consideremos un ejemplo b\xE1sico en Visual Basic para\
+  \ Aplicaciones (VBA) donde tenemos una subrutina que imprime detalles de un empleado.\u2026"
 lastmod: '2024-03-13T22:44:58.902513-06:00'
 model: gpt-4-0125-preview
-summary: "El refactoring en programaci\xF3n implica modificar la estructura del c\xF3\
-  digo sin cambiar su comportamiento, para mejorar aspectos como la legibilidad, mantenibilidad\
-  \ o rendimiento."
+summary: "Consideremos un ejemplo b\xE1sico en Visual Basic para Aplicaciones (VBA)\
+  \ donde tenemos una subrutina que imprime detalles de un empleado."
 title: "Refactorizaci\xF3n"
 weight: 19
 ---

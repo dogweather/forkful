@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:33.525613-07:00
-description: "\xC5 finne lengden p\xE5 en streng i Google Apps Script, et JavaScript-skyskriptspr\xE5\
-  k som lar deg automatisere oppgaver p\xE5 tvers av Googles produkter, handler\u2026"
+description: "Hvordan: I Google Apps Script kan du finne lengden p\xE5 en streng ved\
+  \ \xE5 bruke egenskapen `.length`, lik som i JavaScript. Denne egenskapen returnerer\
+  \ antall\u2026"
 lastmod: '2024-03-13T22:44:40.304160-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 finne lengden p\xE5 en streng i Google Apps Script, et JavaScript-skyskriptspr\xE5\
-  k som lar deg automatisere oppgaver p\xE5 tvers av Googles produkter, handler om\
-  \ \xE5 bestemme antall tegn en streng inneholder."
+summary: "I Google Apps Script kan du finne lengden p\xE5 en streng ved \xE5 bruke\
+  \ egenskapen `.length`, lik som i JavaScript."
 title: "Finner lengden p\xE5 en streng"
 weight: 7
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:41:08.860507-07:00
-description: "Att skapa en tillf\xE4llig fil \xE4r att skapa en fil som existenserar\
-  \ under en kort period, ofta under en programs k\xF6rning. Programmerare g\xF6r\
-  \ detta f\xF6r att\u2026"
+description: "How to: PHPs `tmpfile()` funktion \xE4r smidig f\xF6r att skapa en tempor\xE4\
+  r fil som automatiskt tas bort n\xE4r den inte l\xE4ngre anv\xE4nds."
 lastmod: '2024-03-13T22:44:38.015467-06:00'
 model: gpt-4-1106-preview
-summary: "Att skapa en tillf\xE4llig fil \xE4r att skapa en fil som existenserar under\
-  \ en kort period, ofta under en programs k\xF6rning."
+summary: "PHPs `tmpfile()` funktion \xE4r smidig f\xF6r att skapa en tempor\xE4r fil\
+  \ som automatiskt tas bort n\xE4r den inte l\xE4ngre anv\xE4nds."
 title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:24.229385-07:00
-description: "Express\xF5es regulares, ou regex, permitem que desenvolvedores procurem,\
-  \ combinem e manipulem strings com t\xE9cnicas avan\xE7adas de correspond\xEAncia\
-  \ de padr\xF5es.\u2026"
+description: "Como fazer: A biblioteca `regex` de Rust \xE9 a indicada para trabalhar\
+  \ com express\xF5es regulares. Para us\xE1-la, voc\xEA primeiro precisa adicion\xE1\
+  -la ao seu\u2026"
 lastmod: '2024-03-13T22:44:46.357969-06:00'
 model: gpt-4-0125-preview
-summary: "Express\xF5es regulares, ou regex, permitem que desenvolvedores procurem,\
-  \ combinem e manipulem strings com t\xE9cnicas avan\xE7adas de correspond\xEAncia\
-  \ de padr\xF5es."
+summary: "A biblioteca `regex` de Rust \xE9 a indicada para trabalhar com express\xF5\
+  es regulares."
 title: "Usando express\xF5es regulares"
 weight: 11
 ---

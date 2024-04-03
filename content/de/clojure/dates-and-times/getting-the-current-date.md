@@ -2,14 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:19.061380-07:00
-description: "Das Abrufen des aktuellen Datums in der Programmierung ist aus einer\
-  \ Vielzahl von Gr\xFCnden entscheidend, einschlie\xDFlich Protokollierung, Zeitstempelung\
-  \ von\u2026"
+description: 'Wie man es macht: #.'
 lastmod: '2024-03-13T22:44:53.430385-06:00'
 model: gpt-4-0125-preview
-summary: "Das Abrufen des aktuellen Datums in der Programmierung ist aus einer Vielzahl\
-  \ von Gr\xFCnden entscheidend, einschlie\xDFlich Protokollierung, Zeitstempelung\
-  \ von Ereignissen und Planen von Aufgaben."
+summary: '#.'
 title: Den aktuellen Datum abrufen
 weight: 29
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:12.080967-07:00
-description: "Att tolka ett datum fr\xE5n en str\xE4ng handlar om att konvertera text\
-  \ som representerar ett datum till ett `Date` eller `DateTime` objekt som Ruby f\xF6\
-  rst\xE5r.\u2026"
+description: "Hur g\xF6r man: I Ruby erbjuder standardbiblioteket direkta s\xE4tt\
+  \ att tolka datum fr\xE5n str\xE4ngar genom att anv\xE4nda `Date` och `DateTime`\
+  \ klasserna. S\xE5 h\xE4r g\xF6r\u2026"
 lastmod: '2024-03-13T22:44:38.440697-06:00'
 model: gpt-4-0125-preview
-summary: "Att tolka ett datum fr\xE5n en str\xE4ng handlar om att konvertera text\
-  \ som representerar ett datum till ett `Date` eller `DateTime` objekt som Ruby f\xF6\
-  rst\xE5r."
+summary: "I Ruby erbjuder standardbiblioteket direkta s\xE4tt att tolka datum fr\xE5\
+  n str\xE4ngar genom att anv\xE4nda `Date` och `DateTime` klasserna."
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---

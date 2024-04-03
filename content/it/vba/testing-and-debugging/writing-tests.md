@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:09:07.632262-07:00
-description: "Scrivere test nella programmazione comporta la creazione di procedure\
-  \ specifiche per validare la funzionalit\xE0 e le prestazioni dei tuoi segmenti\
-  \ di\u2026"
+description: "Come fare: Anche se Visual Basic for Applications (VBA) non viene fornito\
+  \ con un framework di test integrato simile a quelli disponibili in linguaggi come\u2026"
 lastmod: '2024-03-13T22:44:43.266907-06:00'
 model: gpt-4-0125-preview
-summary: "Scrivere test nella programmazione comporta la creazione di procedure specifiche\
-  \ per validare la funzionalit\xE0 e le prestazioni dei tuoi segmenti di codice,\
-  \ assicurando che funzionino come previsto in varie condizioni."
+summary: "Anche se Visual Basic for Applications (VBA) non viene fornito con un framework\
+  \ di test integrato simile a quelli disponibili in linguaggi come Python o JavaScript,\
+  \ puoi comunque implementare procedure di test semplici per verificare l'integrit\xE0\
+  \ del tuo codice."
 title: Scrivere test
 weight: 36
 ---

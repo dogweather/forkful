@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:34.661909-07:00
-description: "Schrijven naar standaardfout (stderr) stuurt foutmeldingen en diagnostische\
-  \ berichten apart van standaarduitvoer (stdout). Programmeurs doen dit om\u2026"
+description: 'Hoe te: .'
 lastmod: '2024-03-13T22:44:51.046599-06:00'
 model: gpt-4-0125-preview
-summary: Schrijven naar standaardfout (stderr) stuurt foutmeldingen en diagnostische
-  berichten apart van standaarduitvoer (stdout).
+summary: .
 title: Schrijven naar standaardfout
 weight: 25
 ---

@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:11.086599-07:00
-description: "Das Erstellen einer tempor\xE4ren Datei in Go erm\xF6glicht die Generierung\
-  \ einer nicht-persistenten Datei, die f\xFCr den kurzfristigen Gebrauch bestimmt\
-  \ ist,\u2026"
+description: "Wie: In Go bot das `ioutil` Paket urspr\xFCnglich Hilfsmittel zur Erstellung\
+  \ von tempor\xE4ren Dateien. Doch ab Go 1.16 wurde die Benutzung der Funktionen\
+  \ der\u2026"
 lastmod: '2024-03-13T22:44:53.309004-06:00'
 model: gpt-4-0125-preview
-summary: "Das Erstellen einer tempor\xE4ren Datei in Go erm\xF6glicht die Generierung\
-  \ einer nicht-persistenten Datei, die f\xFCr den kurzfristigen Gebrauch bestimmt\
-  \ ist, haupts\xE4chlich f\xFCr Aufgaben wie das Speichern von Zwischendaten oder\
-  \ die Unterst\xFCtzung bei Batch-Verarbeitungs-Jobs."
+summary: "In Go bot das `ioutil` Paket urspr\xFCnglich Hilfsmittel zur Erstellung\
+  \ von tempor\xE4ren Dateien."
 title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---

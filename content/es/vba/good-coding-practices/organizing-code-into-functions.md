@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:26.902246-07:00
-description: "Organizar el c\xF3digo en funciones en Visual Basic para Aplicaciones\
-  \ (VBA) implica desglosar un programa en piezas m\xE1s peque\xF1as y manejables\
-  \ conocidas como\u2026"
+description: "C\xF3mo hacerlo: En VBA, las funciones se definen usando las declaraciones\
+  \ `Function` y `End Function`. Aqu\xED hay un ejemplo simple de c\xF3mo crear una\
+  \ funci\xF3n\u2026"
 lastmod: '2024-03-13T22:44:58.899367-06:00'
 model: gpt-4-0125-preview
-summary: "Organizar el c\xF3digo en funciones en Visual Basic para Aplicaciones (VBA)\
-  \ implica desglosar un programa en piezas m\xE1s peque\xF1as y manejables conocidas\
-  \ como funciones."
+summary: En VBA, las funciones se definen usando las declaraciones `Function` y `End
+  Function`.
 title: "Organizando c\xF3digo en funciones"
 weight: 18
 ---

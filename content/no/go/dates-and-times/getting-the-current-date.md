@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:49.178997-07:00
-description: "\xC5 hente den n\xE5v\xE6rende datoen i Go er en grunnleggende oppgave\
-  \ for programmerere, p\xE5 linje med \"Hello, World!\" i sin allestedsv\xE6relse.\
-  \ Det er vesentlig for\u2026"
+description: "Hvordan: I Go er `time`-pakken din portal til \xE5 jobbe med datoer\
+  \ og tider. Funksjonen `time.Now()` gir deg den n\xE5v\xE6rende datoen og tiden,\
+  \ mens andre\u2026"
 lastmod: '2024-03-13T22:44:40.278356-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 hente den n\xE5v\xE6rende datoen i Go er en grunnleggende oppgave for\
-  \ programmerere, p\xE5 linje med \"Hello, World."
+summary: "I Go er `time`-pakken din portal til \xE5 jobbe med datoer og tider."
 title: "F\xE5 dagens dato"
 weight: 29
 ---

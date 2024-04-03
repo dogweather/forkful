@@ -2,15 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:33.348233-07:00
-description: "YAML, abreviatura de \"YAML Ain't Markup Language\" (YAML no es un lenguaje\
-  \ de marcado), es un est\xE1ndar de serializaci\xF3n de datos legible por humanos\
-  \ que\u2026"
+description: "C\xF3mo: En Java, puedes trabajar con archivos YAML utilizando bibliotecas\
+  \ de terceros, ya que la Edici\xF3n Est\xE1ndar de Java no incluye soporte incorporado\u2026"
 lastmod: '2024-03-13T22:44:58.957641-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, abreviatura de \"YAML Ain't Markup Language\" (YAML no es un lenguaje\
-  \ de marcado), es un est\xE1ndar de serializaci\xF3n de datos legible por humanos\
-  \ que los programadores utilizan para archivos de configuraci\xF3n, volcados de\
-  \ datos y transmisi\xF3n de datos entre lenguajes."
+summary: "En Java, puedes trabajar con archivos YAML utilizando bibliotecas de terceros,\
+  \ ya que la Edici\xF3n Est\xE1ndar de Java no incluye soporte incorporado para YAML."
 title: Trabajando con YAML
 weight: 41
 ---

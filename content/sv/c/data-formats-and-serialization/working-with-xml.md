@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:15.471490-07:00
-description: "Att arbeta med XML i C inneb\xE4r att tolka, f\xF6rfr\xE5ga och manipulera\
-  \ XML-dokument med hj\xE4lp av olika bibliotek. Programmerare engagerar sig med\
-  \ XML p\xE5 grund\u2026"
+description: "Hur man g\xF6r: C har inte inbyggt st\xF6d f\xF6r XML, s\xE5 du m\xE5\
+  ste anv\xE4nda externa bibliotek. Ett popul\xE4rt val \xE4r `libxml2`, ett stabilt\
+  \ och funktionellt\u2026"
 lastmod: '2024-03-13T22:44:38.410403-06:00'
 model: gpt-4-0125-preview
-summary: "Att arbeta med XML i C inneb\xE4r att tolka, f\xF6rfr\xE5ga och manipulera\
-  \ XML-dokument med hj\xE4lp av olika bibliotek."
+summary: "C har inte inbyggt st\xF6d f\xF6r XML, s\xE5 du m\xE5ste anv\xE4nda externa\
+  \ bibliotek."
 title: Att arbeta med XML
 weight: 40
 ---

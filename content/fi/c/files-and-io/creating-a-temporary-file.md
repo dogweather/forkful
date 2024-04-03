@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:19.548604-07:00
-description: "V\xE4liaikaistiedoston luominen C:ss\xE4 tarkoittaa tiedoston generointia,\
-  \ joka on tarkoitettu lyhytaikaiseen k\xE4ytt\xF6\xF6n, yleens\xE4 datank\xE4sittelyn\
-  \ tai s\xE4ilytyksen\u2026"
+description: "Kuinka: V\xE4liaikaistiedoston luominen C-ohjelmointikieless\xE4 voi\
+  \ hy\xF6dynt\xE4\xE4 funktioita, kuten `tmpfile()` ja `mkstemp()`. **K\xE4ytt\xE4\
+  en `tmpfile()`**: T\xE4m\xE4\u2026"
 lastmod: '2024-03-13T22:44:57.061430-06:00'
 model: gpt-4-0125-preview
-summary: "V\xE4liaikaistiedoston luominen C:ss\xE4 tarkoittaa tiedoston generointia,\
-  \ joka on tarkoitettu lyhytaikaiseen k\xE4ytt\xF6\xF6n, yleens\xE4 datank\xE4sittelyn\
-  \ tai s\xE4ilytyksen v\xE4liaikaiseen tilaan."
+summary: "V\xE4liaikaistiedoston luominen C-ohjelmointikieless\xE4 voi hy\xF6dynt\xE4\
+  \xE4 funktioita, kuten `tmpfile()` ja `mkstemp()`."
 title: "Tilap\xE4isen tiedoston luominen"
 weight: 21
 ---

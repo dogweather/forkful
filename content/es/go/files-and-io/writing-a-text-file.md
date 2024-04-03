@@ -2,13 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:37.192585-07:00
-description: "Escribir un archivo de texto en Go implica crear y escribir cadenas\
-  \ de datos en un archivo de texto nuevo o existente. Los programadores hacen esto\
-  \ para\u2026"
+description: "C\xF3mo hacerlo: En Go, escribir en un archivo de texto se maneja con\
+  \ los paquetes `os` y `io/ioutil` (para versiones de Go <1.16) o `os` y `io` m\xE1\
+  s el\u2026"
 lastmod: '2024-03-13T22:44:58.489298-06:00'
 model: gpt-4-0125-preview
-summary: Escribir un archivo de texto en Go implica crear y escribir cadenas de datos
-  en un archivo de texto nuevo o existente.
+summary: "En Go, escribir en un archivo de texto se maneja con los paquetes `os` y\
+  \ `io/ioutil` (para versiones de Go <1.16) o `os` y `io` m\xE1s el paquete `os`\
+  \ para Go 1.16 en adelante, demostrando la filosof\xEDa de simplicidad y eficiencia\
+  \ de Go."
 title: Escribiendo un archivo de texto
 weight: 24
 ---

@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:42.191919-07:00
-description: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgula) envolve\
-  \ ler ou escrever em arquivos de texto simples nos quais os campos de dados s\xE3\
-  o separados\u2026"
+description: "Como Fazer: O Visual Basic para Aplica\xE7\xF5es (VBA) simplifica o\
+  \ trabalho com arquivos CSV por meio de fun\xE7\xF5es e m\xE9todos integrados que\
+  \ permitem a leitura e\u2026"
 lastmod: '2024-03-13T22:44:46.436650-06:00'
 model: gpt-4-0125-preview
-summary: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgula) envolve ler\
-  \ ou escrever em arquivos de texto simples nos quais os campos de dados s\xE3o separados\
-  \ por v\xEDrgulas."
+summary: "O Visual Basic para Aplica\xE7\xF5es (VBA) simplifica o trabalho com arquivos\
+  \ CSV por meio de fun\xE7\xF5es e m\xE9todos integrados que permitem a leitura e\
+  \ escrita desses arquivos de maneira transparente."
 title: Trabalhando com CSV
 weight: 37
 ---

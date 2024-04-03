@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:25.381901-07:00
-description: "Ohjelmoinnin sanastossa refaktorointi viittaa olemassa olevan tietokonekoodin\
-  \ uudelleenj\xE4rjest\xE4miseen\u2014muuttamalla sen toteutusta muuttamatta sen\
-  \ ulkoista\u2026"
+description: "Kuinka: Google Apps Scriptiss\xE4, yleinen skenaario, joka hy\xF6tyy\
+  \ refaktoroinnista, on k\xF6mpel\xF6iden skriptien yksinkertaistaminen, jotka vuorovaikuttavat\u2026"
 lastmod: '2024-03-13T22:44:56.107115-06:00'
 model: gpt-4-0125-preview
-summary: "Ohjelmoinnin sanastossa refaktorointi viittaa olemassa olevan tietokonekoodin\
-  \ uudelleenj\xE4rjest\xE4miseen\u2014muuttamalla sen toteutusta muuttamatta sen\
-  \ ulkoista k\xE4yt\xF6st\xE4\u2014parantaakseen ei-toiminnallisia ominaisuuksia."
+summary: "Google Apps Scriptiss\xE4, yleinen skenaario, joka hy\xF6tyy refaktoroinnista,\
+  \ on k\xF6mpel\xF6iden skriptien yksinkertaistaminen, jotka vuorovaikuttavat Google\
+  \ Sheetsin tai Docsin kanssa."
 title: Uudelleenkoodaus
 weight: 19
 ---

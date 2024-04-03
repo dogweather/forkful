@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:13.473899-07:00
-description: "En programaci\xF3n inform\xE1tica, \"Imprimir salida de depuraci\xF3\
-  n\" implica producir mensajes informativos detallados que ayudan a los desarrolladores\
-  \ a\u2026"
+description: "C\xF3mo hacerlo: En Go, puedes utilizar el paquete est\xE1ndar `fmt`\
+  \ para imprimir la salida de depuraci\xF3n en la consola. El paquete `fmt` ofrece\
+  \ una variedad\u2026"
 lastmod: '2024-03-13T22:44:58.470402-06:00'
 model: gpt-4-0125-preview
-summary: "En programaci\xF3n inform\xE1tica, \"Imprimir salida de depuraci\xF3n\"\
-  \ implica producir mensajes informativos detallados que ayudan a los desarrolladores\
-  \ a comprender el flujo de ejecuci\xF3n de su programa o identificar problemas."
+summary: "En Go, puedes utilizar el paquete est\xE1ndar `fmt` para imprimir la salida\
+  \ de depuraci\xF3n en la consola."
 title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---

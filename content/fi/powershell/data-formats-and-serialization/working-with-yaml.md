@@ -2,13 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:16.233957-07:00
-description: "YAML, tai YAML Ain't Markup Language, on ihmisen luettavissa oleva datan\
-  \ serialisointikieli. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 usein konfiguraatiotiedostojen\
-  \ ja\u2026"
+description: "Kuinka: PowerShell ei oletuksena sis\xE4ll\xE4 sis\xE4\xE4nrakennettua\
+  \ cmdlet-komentoa YAML:n j\xE4sent\xE4miseen, mutta se toimii saumattomasti YAML:n\
+  \ kanssa, kun\u2026"
 lastmod: '2024-03-13T22:44:56.802800-06:00'
 model: gpt-4-0125-preview
-summary: YAML, tai YAML Ain't Markup Language, on ihmisen luettavissa oleva datan
-  serialisointikieli.
+summary: "PowerShell ei oletuksena sis\xE4ll\xE4 sis\xE4\xE4nrakennettua cmdlet-komentoa\
+  \ YAML:n j\xE4sent\xE4miseen, mutta se toimii saumattomasti YAML:n kanssa, kun hy\xF6\
+  dynn\xE4t `powershell-yaml` -moduulia tai muunnat YAML:n PowerShell-objektiksi k\xE4\
+  ytt\xE4en `ConvertFrom-Json`-komentoa yhdess\xE4 ty\xF6kalun, kuten `yq`, kanssa."
 title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---

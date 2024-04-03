@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:34:43.649713-07:00
-description: "Concat\xE9ner des cha\xEEnes, c'est coller des bouts de texte ensemble.\
-  \ On le fait pour construire des messages, des chemins de fichiers, ou tout autre\
-  \ texte\u2026"
+description: "How to: Concat\xE9ner des cha\xEEnes en Fish est intuitif. Voil\xE0\
+  \ quelques exemples ."
 lastmod: '2024-03-13T22:44:58.313506-06:00'
 model: gpt-4-1106-preview
-summary: "Concat\xE9ner des cha\xEEnes, c'est coller des bouts de texte ensemble."
+summary: "Concat\xE9ner des cha\xEEnes en Fish est intuitif."
 title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 weight: 3
 ---

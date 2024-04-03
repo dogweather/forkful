@@ -1,13 +1,13 @@
 ---
 date: 2024-01-26 01:08:09.374496-07:00
-description: "Hacer logging es como mantener un diario para tu aplicaci\xF3n; es la\
-  \ pr\xE1ctica de registrar eventos, errores y otros datos pertinentes durante la\
-  \ ejecuci\xF3n.\u2026"
+description: "C\xF3mo hacerlo: Configuramos un escenario b\xE1sico de logging en Rust\
+  \ usando el crate `log`, que proporciona una fachada de logging, y `env_logger`,\
+  \ una\u2026"
 lastmod: '2024-03-13T22:44:58.853046-06:00'
 model: gpt-4-1106-preview
-summary: "Hacer logging es como mantener un diario para tu aplicaci\xF3n; es la pr\xE1\
-  ctica de registrar eventos, errores y otros datos pertinentes durante la ejecuci\xF3\
-  n."
+summary: "Configuramos un escenario b\xE1sico de logging en Rust usando el crate `log`,\
+  \ que proporciona una fachada de logging, y `env_logger`, una implementaci\xF3n\
+  \ de logging para el crate `log`."
 title: Registro de Actividades
 weight: 17
 ---

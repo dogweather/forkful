@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:08.678966-07:00
-description: "L'arrotondamento dei numeri consiste nell'aggiustare il valore di un\
-  \ numero al suo intero pi\xF9 vicino o a un numero specifico di cifre decimali.\
-  \ I\u2026"
+description: "Come fare: In Go, non esiste una funzione incorporata che arrotondi\
+  \ direttamente i numeri a un numero specifico di cifre decimali nel pacchetto math.\u2026"
 lastmod: '2024-03-13T22:44:42.902308-06:00'
 model: gpt-4-0125-preview
-summary: "L'arrotondamento dei numeri consiste nell'aggiustare il valore di un numero\
-  \ al suo intero pi\xF9 vicino o a un numero specifico di cifre decimali."
+summary: In Go, non esiste una funzione incorporata che arrotondi direttamente i numeri
+  a un numero specifico di cifre decimali nel pacchetto math.
 title: Arrotondamento dei numeri
 weight: 13
 ---

@@ -2,15 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:53:56.011394-07:00
-description: "Konwersja daty na \u0142a\u0144cuch znak\xF3w w Dart jest cz\u0119stym\
-  \ zadaniem, gdy potrzebujemy wy\u015Bwietli\u0107 informacje o dacie i godzinie\
-  \ w formacie czytelnym dla\u2026"
+description: "Jak to zrobi\u0107: Dart dostarcza klas\u0119 `DateTime` do obs\u0142\
+  ugi dat i czas\xF3w, oraz pakiet `intl` do formatowania. Najpierw, upewnij si\u0119\
+  , \u017Ce masz pakiet `intl`,\u2026"
 lastmod: '2024-03-13T22:44:35.104264-06:00'
 model: gpt-4-0125-preview
-summary: "Konwersja daty na \u0142a\u0144cuch znak\xF3w w Dart jest cz\u0119stym zadaniem,\
-  \ gdy potrzebujemy wy\u015Bwietli\u0107 informacje o dacie i godzinie w formacie\
-  \ czytelnym dla cz\u0142owieka, lub gdy zamierzamy serializowa\u0107 dane do przechowywania\
-  \ lub transmisji."
+summary: "Dart dostarcza klas\u0119 `DateTime` do obs\u0142ugi dat i czas\xF3w, oraz\
+  \ pakiet `intl` do formatowania."
 title: "Konwersja daty na ci\u0105g znak\xF3w"
 weight: 28
 ---

@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:02.390705-07:00
-description: "Een tekstbestand lezen in Python betekent het ophalen van gegevens uit\
-  \ een bestand dat toegankelijk is op je schijf of over een netwerk. Programmeurs\u2026"
+description: 'Hoe: .'
 lastmod: '2024-03-13T22:44:50.393772-06:00'
 model: gpt-4-0125-preview
-summary: Een tekstbestand lezen in Python betekent het ophalen van gegevens uit een
-  bestand dat toegankelijk is op je schijf of over een netwerk.
+summary: .
 title: Een tekstbestand lezen
 weight: 22
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:18:42.566770-07:00
-description: "TOML, abr\xE9viation de Tom's Obvious, Minimal Language, est un format\
-  \ de s\xE9rialisation de donn\xE9es. Les programmeurs l'appr\xE9cient pour sa simplicit\xE9\
-  \ et sa\u2026"
+description: "Comment faire : Premi\xE8rement, installez `toml-cli` pour jouer avec\
+  \ TOML dans Bash. Pratique pour lire ou modifier des fichiers TOML \xE0 la vol\xE9\
+  e."
 lastmod: '2024-03-13T22:44:58.022949-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, abr\xE9viation de Tom's Obvious, Minimal Language, est un format de\
-  \ s\xE9rialisation de donn\xE9es."
+summary: "Premi\xE8rement, installez `toml-cli` pour jouer avec TOML dans Bash."
 title: Travailler avec TOML
 weight: 39
 ---

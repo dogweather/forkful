@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:16:31.301948-07:00
-description: "Una shell interattiva, o REPL (Read-Eval-Print Loop), ti permette di\
-  \ scrivere ed eseguire codice PHP al volo. \xC8 ideale per la sperimentazione, il\
-  \ debug o\u2026"
+description: 'Come fare: Avvia la REPL di PHP eseguendo `php -a` nel tuo terminale.
+  Ecco un assaggio di come funziona.'
 lastmod: '2024-03-13T22:44:43.518155-06:00'
 model: gpt-4-0125-preview
-summary: Una shell interattiva, o REPL (Read-Eval-Print Loop), ti permette di scrivere
-  ed eseguire codice PHP al volo.
+summary: Avvia la REPL di PHP eseguendo `php -a` nel tuo terminale.
 title: Utilizzo di un interprete interattivo (REPL)
 weight: 34
 ---

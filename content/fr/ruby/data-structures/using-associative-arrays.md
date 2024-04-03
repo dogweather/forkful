@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:54.615524-07:00
-description: "Les tableaux associatifs, plus commun\xE9ment appel\xE9s hash en Ruby,\
-  \ permettent d'associer des cl\xE9s uniques \xE0 des valeurs. Ils sont indispensables\
-  \ lorsque\u2026"
+description: "Comment faire : Cr\xE9er et utiliser des hash en Ruby est simple. Vous\
+  \ pouvez initialiser un hash vide, le remplir avec des paires cl\xE9-valeur, acc\xE9\
+  der aux\u2026"
 lastmod: '2024-03-13T22:44:58.410418-06:00'
 model: gpt-4-0125-preview
-summary: "Les tableaux associatifs, plus commun\xE9ment appel\xE9s hash en Ruby, permettent\
-  \ d'associer des cl\xE9s uniques \xE0 des valeurs."
+summary: "Cr\xE9er et utiliser des hash en Ruby est simple."
 title: Utilisation des tableaux associatifs
 weight: 15
 ---

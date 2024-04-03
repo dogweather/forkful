@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:10.134017-07:00
-description: "Zaokr\u0105glanie liczb, podstawowe poj\u0119cie w programowaniu komputerowym,\
-  \ polega na dopasowaniu liczby do najbli\u017Cszej liczby ca\u0142kowitej lub do\
-  \ okre\u015Blonej\u2026"
+description: "Jak: Google Apps Script, b\u0119d\u0105c j\u0119zykiem opartym na JavaScript,\
+  \ oferuje standardowe metody zaokr\u0105glania liczb. Oto przegl\u0105d trzech powszechnie\
+  \ u\u017Cywanych\u2026"
 lastmod: '2024-03-13T22:44:34.896907-06:00'
 model: gpt-4-0125-preview
-summary: "Zaokr\u0105glanie liczb, podstawowe poj\u0119cie w programowaniu komputerowym,\
-  \ polega na dopasowaniu liczby do najbli\u017Cszej liczby ca\u0142kowitej lub do\
-  \ okre\u015Blonej liczby miejsc dziesi\u0119tnych."
+summary: "Google Apps Script, b\u0119d\u0105c j\u0119zykiem opartym na JavaScript,\
+  \ oferuje standardowe metody zaokr\u0105glania liczb."
 title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---

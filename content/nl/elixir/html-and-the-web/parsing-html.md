@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:41.766722-07:00
-description: "HTML parsen betekent het doorzoeken van HTML-code om gegevens of details\
-  \ programmatisch te extraheren. Programmeurs doen dit voor taken zoals webscraping,\u2026"
+description: 'Hoe te: In Elixir kun je HTML parsen met de Floki-bibliotheek. Hier
+  is een fragment.'
 lastmod: '2024-03-13T22:44:50.459881-06:00'
 model: gpt-4-0125-preview
-summary: HTML parsen betekent het doorzoeken van HTML-code om gegevens of details
-  programmatisch te extraheren.
+summary: In Elixir kun je HTML parsen met de Floki-bibliotheek.
 title: HTML Parsen
 weight: 43
 ---

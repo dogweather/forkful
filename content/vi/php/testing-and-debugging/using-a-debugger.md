@@ -2,10 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:37.488776-07:00
-description: "PHP \u0111i k\xE8m v\u1EDBi m\u1ED9t debugger t\u01B0\u01A1ng t\xE1\
-  c c\xF3 t\xEAn l\xE0 Xdebug. D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch s\u1EED d\u1EE5\
-  ng n\xF3. \u0110\u1EA7u ti\xEAn, h\xE3y \u0111\u1EA3m b\u1EA3o b\u1EA1n \u0111\xE3\
-  \ c\xE0i \u0111\u1EB7t v\xE0 c\u1EA5u h\xECnh Xdebug trong t\u1EC7p\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: PHP \u0111i k\xE8m v\u1EDBi m\u1ED9t debugger\
+  \ t\u01B0\u01A1ng t\xE1c c\xF3 t\xEAn l\xE0 Xdebug. D\u01B0\u1EDBi \u0111\xE2y l\xE0\
+  \ c\xE1ch s\u1EED d\u1EE5ng n\xF3. \u0110\u1EA7u ti\xEAn, h\xE3y \u0111\u1EA3m b\u1EA3\
+  o b\u1EA1n \u0111\xE3 c\xE0i \u0111\u1EB7t v\xE0 c\u1EA5u h\xECnh Xdebug\u2026"
 lastmod: '2024-03-13T22:44:36.772838-06:00'
 model: gpt-4-0125-preview
 summary: "PHP \u0111i k\xE8m v\u1EDBi m\u1ED9t debugger t\u01B0\u01A1ng t\xE1c c\xF3\

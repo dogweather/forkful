@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:57:09.140786-07:00
-description: "Kommandozeilenargumente sind die Parameter, die einem Programm \xFC\
-  bergeben werden, wenn es gestartet wird. Programmierer nutzen sie, um das Verhalten\
-  \ ihrer\u2026"
+description: "So geht's: In TypeScript k\xF6nnt ihr Kommandozeilenargumente mit `process.argv`\
+  \ auslesen, das ein Array der \xFCbergebenen Argumente ist."
 lastmod: '2024-03-13T22:44:53.645905-06:00'
 model: gpt-4-1106-preview
-summary: "Kommandozeilenargumente sind die Parameter, die einem Programm \xFCbergeben\
-  \ werden, wenn es gestartet wird."
+summary: "In TypeScript k\xF6nnt ihr Kommandozeilenargumente mit `process.argv` auslesen,\
+  \ das ein Array der \xFCbergebenen Argumente ist."
 title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---

@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:09.065420-07:00
-description: "Tests schrijven is code ontwikkelen die controleert of andere code correct\
-  \ functioneert. Programmeurs doen dit om bugs vroegtijdig op te sporen, te zorgen\u2026"
+description: 'Hoe: Laten we een eenvoudige test schrijven met JUnit, een populair
+  testraamwerk in Java. We zullen een methode testen die twee gehele getallen optelt.'
 lastmod: '2024-03-13T22:44:50.685653-06:00'
 model: gpt-4-0125-preview
-summary: Tests schrijven is code ontwikkelen die controleert of andere code correct
-  functioneert.
+summary: Laten we een eenvoudige test schrijven met JUnit, een populair testraamwerk
+  in Java.
 title: Tests Schrijven
 weight: 36
 ---

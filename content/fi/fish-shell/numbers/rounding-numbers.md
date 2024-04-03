@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 03:45:20.356222-07:00
-description: "Numeroiden py\xF6rist\xE4minen on desimaalipaikkojen karsimista, jotta\
-  \ tiedot olisivat yksinkertaisempia tai sopisivat tiettyihin formaatteihin. Ohjelmoijat\u2026"
+description: "Kuinka: Fishiss\xE4 numeroiden py\xF6rist\xE4minen perustuu `math`-komentoon.\
+  \ K\xE4yt\xE4 `math -s0` py\xF6rist\xE4\xE4ksesi l\xE4himp\xE4\xE4n kokonaislukuun."
 lastmod: '2024-03-13T22:44:56.987117-06:00'
 model: gpt-4-0125-preview
-summary: "Numeroiden py\xF6rist\xE4minen on desimaalipaikkojen karsimista, jotta tiedot\
-  \ olisivat yksinkertaisempia tai sopisivat tiettyihin formaatteihin."
+summary: "Fishiss\xE4 numeroiden py\xF6rist\xE4minen perustuu `math`-komentoon."
 title: "Numerojen py\xF6rist\xE4minen"
 weight: 13
 ---

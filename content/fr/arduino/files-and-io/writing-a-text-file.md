@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:55.852652-07:00
-description: "\xC9crire un fichier texte avec Arduino implique de sauvegarder des\
-  \ donn\xE9es dans un fichier sur une carte SD ou un module de stockage similaire,\
-  \ souvent dans\u2026"
+description: "Comment : Pour \xE9crire dans un fichier texte sur une carte SD en utilisant\
+  \ Arduino, vous devez d'abord inclure la biblioth\xE8que `SD.h`, qui fournit les\u2026"
 lastmod: '2024-03-13T22:44:58.133639-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire un fichier texte avec Arduino implique de sauvegarder des donn\xE9\
-  es dans un fichier sur une carte SD ou un module de stockage similaire, souvent\
-  \ dans le but de consigner des donn\xE9es."
+summary: "Pour \xE9crire dans un fichier texte sur une carte SD en utilisant Arduino,\
+  \ vous devez d'abord inclure la biblioth\xE8que `SD.h`, qui fournit les fonctions\
+  \ n\xE9cessaires pour interagir avec les cartes SD."
 title: "R\xE9diger un fichier texte"
 weight: 24
 ---

@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 04:42:07.865425-07:00
-description: "Komplexe Zahlen erweitern die reelle Zahlengerade durch Hinzuf\xFCgen\
-  \ einer imagin\xE4ren Einheit, `i`, wobei `i^2 = -1` gilt. Sie sind von entscheidender\u2026"
+description: "Wie: Java unterst\xFCtzt komplexe Zahlen nicht direkt, aber wir k\xF6\
+  nnen unsere eigene Klasse erstellen oder eine Bibliothek verwenden. Hier ist ein\
+  \ schnelles\u2026"
 lastmod: '2024-03-13T22:44:53.757215-06:00'
 model: gpt-4-0125-preview
-summary: "Komplexe Zahlen erweitern die reelle Zahlengerade durch Hinzuf\xFCgen einer\
-  \ imagin\xE4ren Einheit, `i`, wobei `i^2 = -1` gilt."
+summary: "Java unterst\xFCtzt komplexe Zahlen nicht direkt, aber wir k\xF6nnen unsere\
+  \ eigene Klasse erstellen oder eine Bibliothek verwenden."
 title: Umgang mit komplexen Zahlen
 weight: 14
 ---

@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:58.760847-07:00
-description: "Pisanie do standardowego b\u0142\u0119du (stderr) w C# polega na kierowaniu\
-  \ komunikat\xF3w o b\u0142\u0119dach i diagnostyki oddzielnie od regularnego wyj\u015B\
-  cia (stdout), aby\u2026"
+description: "Jak to zrobi\u0107: W C#, pisanie do standardowego b\u0142\u0119du mo\u017C\
+  na osi\u0105gn\u0105\u0107 za pomoc\u0105 strumienia `Console.Error`. Strumie\u0144\
+  \ ten s\u0142u\u017Cy specjalnie do komunikat\xF3w o\u2026"
 lastmod: '2024-03-13T22:44:35.424765-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie do standardowego b\u0142\u0119du (stderr) w C# polega na kierowaniu\
-  \ komunikat\xF3w o b\u0142\u0119dach i diagnostyki oddzielnie od regularnego wyj\u015B\
-  cia (stdout), aby u\u017Cytkownicy i programi\u015Bci mogli odr\xF3\u017Cni\u0107\
-  \ normalne wyniki dzia\u0142ania programu od powiadomie\u0144 o b\u0142\u0119dach."
+summary: "W C#, pisanie do standardowego b\u0142\u0119du mo\u017Cna osi\u0105gn\u0105\
+  \u0107 za pomoc\u0105 strumienia `Console.Error`."
 title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---

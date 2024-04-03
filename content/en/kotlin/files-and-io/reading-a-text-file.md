@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:54:48.196059-07:00
-description: "Reading a text file means pulling data from a file into your program,\
-  \ typically line by line. Programmers do this to process or analyze data that's\
-  \ stored\u2026"
+description: 'How to: In Kotlin, you can read a text file easily using the `readLines()`
+  function or the `useLines` block.'
 lastmod: '2024-03-13T22:45:00.065024-06:00'
 model: gpt-4-1106-preview
-summary: Reading a text file means pulling data from a file into your program, typically
-  line by line.
+summary: In Kotlin, you can read a text file easily using the `readLines()` function
+  or the `useLines` block.
 title: Reading a text file
 weight: 22
 ---

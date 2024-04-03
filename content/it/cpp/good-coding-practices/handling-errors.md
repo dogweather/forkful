@@ -1,11 +1,9 @@
 ---
 date: 2024-01-26 00:49:27.909391-07:00
-description: "Gestire gli errori significa pianificare per quando le cose vanno storte.\
-  \ \xC8 vitale perch\xE9 aiuta ad evitare crash e rende il tuo software robusto e\
-  \ facile\u2026"
+description: 'Come fare: Ecco un blocco try-catch di base per gestire un''eccezione.'
 lastmod: '2024-03-13T22:44:43.734211-06:00'
 model: gpt-4-1106-preview
-summary: Gestire gli errori significa pianificare per quando le cose vanno storte.
+summary: Ecco un blocco try-catch di base per gestire un'eccezione.
 title: Gestione degli errori
 weight: 16
 ---

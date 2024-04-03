@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:24.787610-07:00
-description: "YAML, som st\xE5r for \"YAML Ain't Markup Language\", er et menneskelesbart\
-  \ data serialiseringsformat som vanligvis brukes for konfigurasjonsfiler.\u2026"
+description: "Hvordan: PHP, i sine n\xE5v\xE6rende iterasjoner, st\xF8tter ikke parsing\
+  \ av YAML som en del av sitt standardbibliotek. Den mest strake veien til \xE5 arbeide\
+  \ med\u2026"
 lastmod: '2024-03-13T22:44:40.906533-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, som st\xE5r for \"YAML Ain't Markup Language\", er et menneskelesbart\
-  \ data serialiseringsformat som vanligvis brukes for konfigurasjonsfiler."
+summary: "PHP, i sine n\xE5v\xE6rende iterasjoner, st\xF8tter ikke parsing av YAML\
+  \ som en del av sitt standardbibliotek."
 title: Arbeider med YAML
 weight: 41
 ---

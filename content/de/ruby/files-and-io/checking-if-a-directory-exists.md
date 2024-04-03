@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:13.542914-07:00
-description: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Ruby existiert, erm\xF6\
-  glicht es Programmierern, die Pr\xE4senz eines Verzeichnisses zu verifizieren, bevor\
-  \ sie\u2026"
+description: "Wie: Die Standardbibliothek von Ruby bietet einfache Methoden, um die\
+  \ Existenz eines Verzeichnisses zu \xFCberpr\xFCfen. So machen Sie das mit reinem\
+  \ Ruby, ohne\u2026"
 lastmod: '2024-03-13T22:44:54.414784-06:00'
 model: gpt-4-0125-preview
-summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Ruby existiert, erm\xF6glicht\
-  \ es Programmierern, die Pr\xE4senz eines Verzeichnisses zu verifizieren, bevor\
-  \ sie Operationen wie das Lesen von Dateien oder das Erstellen neuer Verzeichnisse\
-  \ durchf\xFChren."
+summary: "Die Standardbibliothek von Ruby bietet einfache Methoden, um die Existenz\
+  \ eines Verzeichnisses zu \xFCberpr\xFCfen."
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---

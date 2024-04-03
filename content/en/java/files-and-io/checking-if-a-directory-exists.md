@@ -1,12 +1,11 @@
 ---
 date: 2024-02-03 19:02:54.990525-07:00
-description: "Checking if a directory exists in Java is a fundamental task that involves\
-  \ verifying the presence of a file system directory before reading from it,\u2026"
+description: "How to: In Java, there are several ways to check if a directory exists,\
+  \ primarily using the `java.nio.file.Files` and `java.io.File` classes. **Using\u2026"
 lastmod: '2024-03-13T22:44:59.984943-06:00'
 model: gpt-4-0125-preview
-summary: Checking if a directory exists in Java is a fundamental task that involves
-  verifying the presence of a file system directory before reading from it, writing
-  to it, or performing any operations that require its existence.
+summary: In Java, there are several ways to check if a directory exists, primarily
+  using the `java.nio.file.Files` and `java.io.File` classes.
 title: Checking if a directory exists
 weight: 20
 ---

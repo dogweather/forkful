@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:01.096203-07:00
-description: "Het downloaden van een webpagina betekent het ophalen van de gegevens\
-  \ van het internet en deze lokaal opslaan. Programmeurs doen dit voor webscraping,\u2026"
+description: "Hoe: Het gereedschap bij uitstek voor deze klus? `curl`. Het is een\
+  \ krachtige opdrachtregel-tool die gegevens van het web haalt. Hier is het eenvoudigste\u2026"
 lastmod: '2024-03-13T22:44:50.981188-06:00'
 model: gpt-4-0125-preview
-summary: Het downloaden van een webpagina betekent het ophalen van de gegevens van
-  het internet en deze lokaal opslaan.
+summary: Het gereedschap bij uitstek voor deze klus.
 title: Een webpagina downloaden
 weight: 42
 ---

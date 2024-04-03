@@ -2,11 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:15.906524-07:00
-description: "Een datum uit een string parsen betekent tekst omzetten naar een datum\
-  \ datatyp. Programmeurs moeten vaak gebruikersinvoer of de inhoud van tekstbestanden\u2026"
+description: "Hoe: Haskell biedt meerdere manieren om data te parsen, maar laten we\
+  \ ons concentreren op de `time` bibliotheek en een eenvoudig voorbeeld met\u2026"
 lastmod: '2024-03-13T22:44:50.862065-06:00'
 model: gpt-4-0125-preview
-summary: Een datum uit een string parsen betekent tekst omzetten naar een datum datatyp.
+summary: Haskell biedt meerdere manieren om data te parsen, maar laten we ons concentreren
+  op de `time` bibliotheek en een eenvoudig voorbeeld met `parseTimeM`.
 title: Een datum uit een string parsen
 weight: 30
 ---

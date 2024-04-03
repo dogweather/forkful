@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 16:20:47.378695-07:00
-description: "Modificare file sul posto con righe di comando \xE8 il processo di apportare\
-  \ cambiamenti direttamente ai file dalla riga di comando, senza aprirli in un\u2026"
+description: "Come fare: Fish Shell, noto per le sue funzionalit\xE0 user-friendly\
+  \ e potenti capacit\xE0 di scripting, offre diversi modi per modificare i file sul\
+  \ posto.\u2026"
 lastmod: '2024-03-13T22:44:43.854493-06:00'
 model: gpt-4-0125-preview
-summary: "Modificare file sul posto con righe di comando \xE8 il processo di apportare\
-  \ cambiamenti direttamente ai file dalla riga di comando, senza aprirli in un editor\
-  \ di testo."
+summary: "Fish Shell, noto per le sue funzionalit\xE0 user-friendly e potenti capacit\xE0\
+  \ di scripting, offre diversi modi per modificare i file sul posto."
 title: Modifica dei file sul posto con righe di comando CLI
 weight: 32
 ---

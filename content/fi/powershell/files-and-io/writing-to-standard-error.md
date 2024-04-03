@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:36.484239-07:00
-description: "Standardivirheeseen (stderr) kirjoittaminen PowerShellissa tarkoittaa\
-  \ virhesanomien tai diagnostiikkatietojen l\xE4hett\xE4mist\xE4 suoraan stderr-virtaan,\
-  \ joka on\u2026"
+description: "Kuinka: PowerShell yksinkertaistaa stderriin kirjoittamisen prosessia\
+  \ k\xE4ytt\xE4en `Write-Error` cmdlet-komentoa tai ohjaamalla tulosteen\u2026"
 lastmod: '2024-03-13T22:44:56.798928-06:00'
 model: gpt-4-0125-preview
-summary: "Standardivirheeseen (stderr) kirjoittaminen PowerShellissa tarkoittaa virhesanomien\
-  \ tai diagnostiikkatietojen l\xE4hett\xE4mist\xE4 suoraan stderr-virtaan, joka on\
-  \ erillinen standarditulostevirrasta (stdout)."
+summary: "PowerShell yksinkertaistaa stderriin kirjoittamisen prosessia k\xE4ytt\xE4\
+  en `Write-Error` cmdlet-komentoa tai ohjaamalla tulosteen `$host.ui.WriteErrorLine()`\
+  \ metodiin."
 title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---

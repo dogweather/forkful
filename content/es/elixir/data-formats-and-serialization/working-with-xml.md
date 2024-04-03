@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:29:22.604835-07:00
-description: "Trabajar con XML en Elixir implica analizar, crear y manipular datos\
-  \ XML. Los programadores abordan XML porque es muy com\xFAn en servicios web, archivos\
-  \ de\u2026"
+description: "C\xF3mo hacerlo: Elixir no incluye el an\xE1lisis de XML en su biblioteca\
+  \ est\xE1ndar. SweetXML es una elecci\xF3n popular. Aqu\xED te mostramos c\xF3mo\
+  \ usarlo."
 lastmod: '2024-03-13T22:44:58.728018-06:00'
 model: gpt-4-0125-preview
-summary: Trabajar con XML en Elixir implica analizar, crear y manipular datos XML.
+summary: "Elixir no incluye el an\xE1lisis de XML en su biblioteca est\xE1ndar."
 title: Trabajando con XML
 weight: 40
 ---

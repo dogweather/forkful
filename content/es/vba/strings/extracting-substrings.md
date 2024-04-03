@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:20.790562-07:00
-description: "Extraer subcadenas en Visual Basic para Aplicaciones (VBA) implica aislar\
-  \ partes espec\xEDficas de una cadena basadas en criterios dados. Los programadores\u2026"
+description: "C\xF3mo hacerlo: En VBA, principalmente usas las funciones `Mid`, `Left`\
+  \ y `Right` para extraer subcadenas. A continuaci\xF3n, exploramos estas funciones\
+  \ con\u2026"
 lastmod: '2024-03-13T22:44:58.880516-06:00'
 model: gpt-4-0125-preview
-summary: "Extraer subcadenas en Visual Basic para Aplicaciones (VBA) implica aislar\
-  \ partes espec\xEDficas de una cadena basadas en criterios dados."
+summary: En VBA, principalmente usas las funciones `Mid`, `Left` y `Right` para extraer
+  subcadenas.
 title: "Extracci\xF3n de subcadenas"
 weight: 6
 ---

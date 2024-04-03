@@ -2,14 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:17.391771-07:00
-description: "Tr\xEDch xu\u1EA5t chu\u1ED7i con l\xE0 vi\u1EC7c l\u1EA5y ra c\xE1\
-  c ph\u1EA7n c\u1EE5 th\u1EC3 c\u1EE7a v\u0103n b\u1EA3n t\u1EEB m\u1ED9t chu\u1ED7\
-  i. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3\
-  \ thao t\xE1c v\xE0 s\u1EED d\u1EE5ng c\xE1c ph\u1EA7n d\u1EEF li\u1EC7u -\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Ruby l\xE0m cho vi\u1EC7c tr\xEDch xu\u1EA5\
+  t chu\u1ED7i con tr\u1EDF n\xEAn \u0111\u01A1n gi\u1EA3n. H\xE3y \u0111i th\u1EB3\
+  ng v\xE0o v\u1EA5n \u0111\u1EC1."
 lastmod: '2024-03-13T22:44:37.318163-06:00'
 model: gpt-4-0125-preview
-summary: "Tr\xEDch xu\u1EA5t chu\u1ED7i con l\xE0 vi\u1EC7c l\u1EA5y ra c\xE1c ph\u1EA7\
-  n c\u1EE5 th\u1EC3 c\u1EE7a v\u0103n b\u1EA3n t\u1EEB m\u1ED9t chu\u1ED7i."
+summary: "Ruby l\xE0m cho vi\u1EC7c tr\xEDch xu\u1EA5t chu\u1ED7i con tr\u1EDF n\xEA\
+  n \u0111\u01A1n gi\u1EA3n."
 title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 weight: 6
 ---

@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:52.150084-07:00
-description: "Trabalhar com CSVs (Valores Separados por V\xEDrgula) envolve analisar\
-  \ e gerar arquivos que armazenam dados tabulares em um formato de texto simples.\u2026"
+description: "Como fazer: Em Haskell, o manuseio de arquivos CSV pode ser realizado\
+  \ usando a biblioteca `cassava`, uma das bibliotecas de terceiros mais populares\
+  \ para\u2026"
 lastmod: '2024-03-13T22:44:46.647743-06:00'
 model: gpt-4-0125-preview
-summary: "Trabalhar com CSVs (Valores Separados por V\xEDrgula) envolve analisar e\
-  \ gerar arquivos que armazenam dados tabulares em um formato de texto simples."
+summary: "Em Haskell, o manuseio de arquivos CSV pode ser realizado usando a biblioteca\
+  \ `cassava`, uma das bibliotecas de terceiros mais populares para esse prop\xF3\
+  sito."
 title: Trabalhando com CSV
 weight: 37
 ---

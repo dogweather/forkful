@@ -2,13 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:40.500839-07:00
-description: "Att tolka ett datum fr\xE5n en str\xE4ng i Dart inneb\xE4r att konvertera\
-  \ textrepresentation av datum och tider till ett `DateTime`-objekt. Denna operation\
-  \ \xE4r\u2026"
+description: "Hur man g\xF6r: Darts k\xE4rnbibliotek f\xF6renklar datumtolkning genom\
+  \ klassen `DateTime`. F\xF6r enkla fall d\xE4r du k\xE4nner till formatet p\xE5\
+  \ datumstr\xE4ngen kan du\u2026"
 lastmod: '2024-03-13T22:44:37.622331-06:00'
 model: gpt-4-0125-preview
-summary: "Att tolka ett datum fr\xE5n en str\xE4ng i Dart inneb\xE4r att konvertera\
-  \ textrepresentation av datum och tider till ett `DateTime`-objekt."
+summary: "Darts k\xE4rnbibliotek f\xF6renklar datumtolkning genom klassen `DateTime`."
 title: "Analys av ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---

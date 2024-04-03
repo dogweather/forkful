@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:48:53.557304-07:00
-description: "Hakemiston olemassaolon tarkistaminen Google Apps Scriptill\xE4 tarkoittaa\
-  \ kansion olemassaolon varmistamista Google Drivess\xE4. Ohjelmoijat suorittavat\
-  \ usein\u2026"
+description: "Kuinka: Google Apps Script ei tarjoa suoraa \"exists\"-metodia kansioille.\
+  \ Sen sijaan k\xE4yt\xE4mme Google Driven hakutoimintoja tarkistaaksemme, onko tietyll\xE4\
+  \u2026"
 lastmod: '2024-03-13T22:44:56.114091-06:00'
 model: gpt-4-0125-preview
-summary: "Hakemiston olemassaolon tarkistaminen Google Apps Scriptill\xE4 tarkoittaa\
-  \ kansion olemassaolon varmistamista Google Drivess\xE4."
+summary: Google Apps Script ei tarjoa suoraa "exists"-metodia kansioille.
 title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---

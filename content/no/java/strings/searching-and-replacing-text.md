@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:58:03.591840-07:00
-description: "S\xF8ke og erstatte tekst betyr \xE5 finne en spesifikk tekststreng\
-  \ og bytte den ut med en annen. Programmerere bruker dette for \xE5 automatisere\
-  \ koding,\u2026"
+description: "How to: (Slik gj\xF8r du det:) Her er en enkel Java-metode som bruker\
+  \ `String`-klassens `replace`-funksjon. Koden nedenfor erstatter alle forekomster\
+  \ av\u2026"
 lastmod: '2024-03-13T22:44:40.651614-06:00'
 model: gpt-4-1106-preview
-summary: "S\xF8ke og erstatte tekst betyr \xE5 finne en spesifikk tekststreng og bytte\
-  \ den ut med en annen."
+summary: Her er en enkel Java-metode som bruker `String`-klassens `replace`-funksjon.
 title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---

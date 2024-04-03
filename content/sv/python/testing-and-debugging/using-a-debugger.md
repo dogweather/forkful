@@ -1,7 +1,7 @@
 ---
 date: 2024-01-26 04:08:55.145628-07:00
-description: "L\xE5t oss bryta ner anv\xE4ndningen av `pdb`, Pythons inbyggda debugger.\
-  \ F\xF6rest\xE4ll dig en fil, `buggy.py`, med en listig bugg: ```Python def add_one(number):\u2026"
+description: "Hur man g\xF6r: L\xE5t oss bryta ner anv\xE4ndningen av `pdb`, Pythons\
+  \ inbyggda debugger. F\xF6rest\xE4ll dig en fil, `buggy.py`, med en listig bugg."
 lastmod: '2024-03-13T22:44:37.487630-06:00'
 model: gpt-4-0125-preview
 summary: "L\xE5t oss bryta ner anv\xE4ndningen av `pdb`, Pythons inbyggda debugger."

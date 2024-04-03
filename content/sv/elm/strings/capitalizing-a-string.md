@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:19.617947-07:00
-description: "Att versalisera en str\xE4ng inneb\xE4r att omvandla det inledande tecknet\
-  \ i en given str\xE4ng till versal medan resten beh\xE5lls i gemener, ofta f\xF6\
-  r standardiserad\u2026"
+description: "Hur g\xF6r man: I Elm finns ingen inbyggd funktion specifikt f\xF6r\
+  \ att versalisera str\xE4ngar. Dock kan du enkelt uppn\xE5 detta genom att anv\xE4\
+  nda de inbyggda\u2026"
 lastmod: '2024-03-13T22:44:37.812588-06:00'
 model: gpt-4-0125-preview
-summary: "Att versalisera en str\xE4ng inneb\xE4r att omvandla det inledande tecknet\
-  \ i en given str\xE4ng till versal medan resten beh\xE5lls i gemener, ofta f\xF6\
-  r standardiserad formatering eller l\xE4sbarhet."
+summary: "I Elm finns ingen inbyggd funktion specifikt f\xF6r att versalisera str\xE4\
+  ngar."
 title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---

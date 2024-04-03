@@ -3,13 +3,12 @@ changelog:
 - 2024-03-25, dogweather, edited and tested
 - 2024-03-25, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:02:29.358527-07:00
-description: "Merkkijonon alkukirjaimen muuttaminen isoksi tarkoittaa yleens\xE4 ensimm\xE4\
-  isen merkin muuttamista isoksi kirjaimeksi ja loput pieniksi kirjaimiksi. Joskus\
-  \ se\u2026"
+description: "Miten: Ruby tarjoaa [suoraviivaisia menetelmi\xE4 merkkijonojen k\xE4\
+  sittelyyn](https://docs.ruby-lang.org/en/3.3/String.html), mukaan lukien alkukirjaimen\u2026"
 lastmod: '2024-03-25T19:22:43.009464-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonon alkukirjaimen muuttaminen isoksi tarkoittaa yleens\xE4 ensimm\xE4\
-  isen merkin muuttamista isoksi kirjaimeksi ja loput pieniksi kirjaimiksi."
+summary: "Ruby tarjoaa [suoraviivaisia menetelmi\xE4 merkkijonojen k\xE4sittelyyn](https://docs.ruby-lang.org/en/3.3/String.html),\
+  \ mukaan lukien alkukirjaimen suurentaminen."
 title: Merkkijonon alkukirjaimet isoiksi
 weight: 2
 ---

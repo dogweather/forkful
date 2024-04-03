@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:15.395587-07:00
-description: "Het omzetten van een datum naar een tekstreeks in C++ verandert een\
-  \ datumobject in een leesbaar tekstformaat. Het is essentieel voor het weergeven\
-  \ van\u2026"
+description: 'Hoe: In modern C++ zijn de bibliotheken `<chrono>` en `<iomanip>` je
+  vrienden voor datum-tijd operaties. Hier is een snelle methode met `std::put_time`.'
 lastmod: '2024-03-13T22:44:51.124135-06:00'
 model: gpt-4-0125-preview
-summary: Het omzetten van een datum naar een tekstreeks in C++ verandert een datumobject
-  in een leesbaar tekstformaat.
+summary: In modern C++ zijn de bibliotheken `<chrono>` en `<iomanip>` je vrienden
+  voor datum-tijd operaties.
 title: Een datum converteren naar een string
 weight: 28
 ---

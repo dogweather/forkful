@@ -2,14 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:53:37.767881-07:00
-description: "\xC5 sjekke om en mappe eksisterer i Dart handler om \xE5 verifisere\
-  \ tilstedev\xE6relsen av en mappe p\xE5 en angitt bane i filsystemet f\xF8r man\
-  \ utf\xF8rer operasjoner\u2026"
+description: "Hvordan: Dart bruker `dart:io`-biblioteket for \xE5 arbeide med filer\
+  \ og mapper. Her er en enkel m\xE5te \xE5 sjekke om en mappe eksisterer."
 lastmod: '2024-03-13T22:44:40.503508-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 sjekke om en mappe eksisterer i Dart handler om \xE5 verifisere tilstedev\xE6\
-  relsen av en mappe p\xE5 en angitt bane i filsystemet f\xF8r man utf\xF8rer operasjoner\
-  \ som \xE5 lese eller skrive filer."
+summary: "Dart bruker `dart:io`-biblioteket for \xE5 arbeide med filer og mapper."
 title: Sjekker om en katalog eksisterer
 weight: 20
 ---

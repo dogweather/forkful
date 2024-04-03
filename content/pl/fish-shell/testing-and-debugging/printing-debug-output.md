@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:52:38.833780-07:00
-description: "Drukowanie danych diagnostycznych to wy\u015Bwietlanie informacji, kt\xF3\
-  re pomagaj\u0105 zrozumie\u0107, co si\u0119 dzieje w skrypcie. Programi\u015Bci\
-  \ robi\u0105 to, \u017Ceby szybko\u2026"
+description: "How to: (Jak to zrobi\u0107:) Najprostszy spos\xF3b to u\u017Cy\u0107\
+  \ `echo` do wypisania warto\u015Bci zmiennych lub komunikat\xF3w."
 lastmod: '2024-03-13T22:44:35.843988-06:00'
 model: gpt-4-1106-preview
-summary: "Drukowanie danych diagnostycznych to wy\u015Bwietlanie informacji, kt\xF3\
-  re pomagaj\u0105 zrozumie\u0107, co si\u0119 dzieje w skrypcie."
+summary: "Najprostszy spos\xF3b to u\u017Cy\u0107 `echo` do wypisania warto\u015B\
+  ci zmiennych lub komunikat\xF3w."
 title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---

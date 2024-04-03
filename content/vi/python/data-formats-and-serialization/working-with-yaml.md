@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:59.982289-07:00
-description: "L\xE0m vi\u1EC7c v\u1EDBi YAML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xED\
-  ch v\xE0 t\u1EA1o ra c\xE1c t\xE0i li\u1EC7u YAML (Yet Another Markup Language -\
-  \ Ng\xF4n Ng\u1EEF \u0110\xE1nh D\u1EA5u Kh\xE1c) trong Python. L\u1EADp tr\xEC\
-  nh vi\xEAn\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi YAML\
+  \ trong Python, b\u1EA1n c\u1EA7n `pyyaml`. C\xE0i \u0111\u1EB7t n\xF3 s\u1EED d\u1EE5\
+  ng."
 lastmod: '2024-03-13T22:44:36.124173-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m vi\u1EC7c v\u1EDBi YAML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xEDch v\xE0\
-  \ t\u1EA1o ra c\xE1c t\xE0i li\u1EC7u YAML (Yet Another Markup Language - Ng\xF4\
-  n Ng\u1EEF \u0110\xE1nh D\u1EA5u Kh\xE1c) trong Python."
+summary: "\u0110\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi YAML trong Python, b\u1EA1n c\u1EA7\
+  n `pyyaml`."
 title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 weight: 41
 ---

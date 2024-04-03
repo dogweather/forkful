@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:59:56.150030-07:00
-description: "Enviar una solicitud HTTP es c\xF3mo tu programa habla con el mundo:\
-  \ pide datos a un servidor o les dice qu\xE9 hacer. Los programadores lo hacen para\u2026"
+description: "C\xF3mo hacerlo: Para solicitudes HTTP en JavaScript, `fetch` es tu\
+  \ amigo. Puedes obtener datos as\xED."
 lastmod: '2024-03-13T22:44:59.455674-06:00'
 model: gpt-4-1106-preview
-summary: "Enviar una solicitud HTTP es c\xF3mo tu programa habla con el mundo: pide\
-  \ datos a un servidor o les dice qu\xE9 hacer."
+summary: Para solicitudes HTTP en JavaScript, `fetch` es tu amigo.
 title: Enviando una solicitud http
 weight: 44
 ---

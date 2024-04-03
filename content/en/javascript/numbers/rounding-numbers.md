@@ -1,10 +1,11 @@
 ---
 date: 2024-01-25 03:00:07.457967-07:00
-description: "Rounding is chopping off the noise after a certain point in a number.\
-  \ Programmers round to control precision, manage memory, or make output user-\u2026"
+description: 'How to: Here''s how you round numbers in JavaScript using `Math.round()`,
+  `Math.ceil()`, and `Math.floor()`.'
 lastmod: '2024-03-13T22:45:00.428910-06:00'
 model: gpt-4-1106-preview
-summary: Rounding is chopping off the noise after a certain point in a number.
+summary: Here's how you round numbers in JavaScript using `Math.round()`, `Math.ceil()`,
+  and `Math.floor()`.
 title: Rounding numbers
 weight: 13
 ---

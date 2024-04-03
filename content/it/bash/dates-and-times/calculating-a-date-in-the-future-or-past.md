@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:28:42.737851-07:00
-description: "Calcolare le date nel futuro o nel passato significa determinare un\
-  \ giorno specifico prima o dopo una data nota. I programmatori lo fanno per gestire\u2026"
+description: 'How to: Calcoliamo le date usando il comando `date` in Bash. Ecco degli
+  esempi.'
 lastmod: '2024-03-13T22:44:43.612961-06:00'
 model: gpt-4-1106-preview
-summary: Calcolare le date nel futuro o nel passato significa determinare un giorno
-  specifico prima o dopo una data nota.
+summary: Calcoliamo le date usando il comando `date` in Bash.
 title: Calcolo di una data futura o passata
 weight: 26
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:31.831941-07:00
-description: "Convertir una cadena a min\xFAsculas en C implica transformar todas\
-  \ las letras may\xFAsculas de una cadena dada en sus equivalentes en min\xFAsculas.\
-  \ Los\u2026"
+description: "C\xF3mo hacerlo: C no tiene una funci\xF3n integrada para la conversi\xF3\
+  n de cadenas a min\xFAsculas directamente, a diferencia de algunos lenguajes de\
+  \ alto nivel.\u2026"
 lastmod: '2024-03-13T22:44:59.531068-06:00'
 model: gpt-4-0125-preview
-summary: "Convertir una cadena a min\xFAsculas en C implica transformar todas las\
-  \ letras may\xFAsculas de una cadena dada en sus equivalentes en min\xFAsculas."
+summary: "C no tiene una funci\xF3n integrada para la conversi\xF3n de cadenas a min\xFA\
+  sculas directamente, a diferencia de algunos lenguajes de alto nivel."
 title: "Convirtiendo una cadena de texto a min\xFAsculas"
 weight: 4
 ---

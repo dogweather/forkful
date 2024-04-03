@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:29.273214-07:00
-description: "Complexe getallen hebben een re\xEBel deel en een imaginair deel en\
-  \ zijn cruciaal in diverse velden zoals engineering, fysica en computergrafiek.\u2026"
+description: 'Hoe te: Rust heeft geen ingebouwde ondersteuning voor complexe getallen,
+  maar crates zoals `num-complex` staan voor je klaar. Hier is hoe je het gebruikt.'
 lastmod: '2024-03-13T22:44:50.588002-06:00'
 model: gpt-4-0125-preview
-summary: "Complexe getallen hebben een re\xEBel deel en een imaginair deel en zijn\
-  \ cruciaal in diverse velden zoals engineering, fysica en computergrafiek."
+summary: Rust heeft geen ingebouwde ondersteuning voor complexe getallen, maar crates
+  zoals `num-complex` staan voor je klaar.
 title: Werken met complexe getallen
 weight: 14
 ---

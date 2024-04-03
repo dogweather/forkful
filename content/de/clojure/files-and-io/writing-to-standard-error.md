@@ -2,12 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:48.040040-07:00
-description: "Das Schreiben auf den Standardfehler (stderr) bezieht sich darauf, Fehlermeldungen\
-  \ und Diagnosen an den stderr-Stream zu leiten, getrennt von der\u2026"
+description: "Wie geht das: In Clojure k\xF6nnen Sie mit dem `*err*` Stream auf stderr\
+  \ schreiben. Hier ist ein einfaches Beispiel."
 lastmod: '2024-03-13T22:44:53.436666-06:00'
 model: gpt-4-0125-preview
-summary: Das Schreiben auf den Standardfehler (stderr) bezieht sich darauf, Fehlermeldungen
-  und Diagnosen an den stderr-Stream zu leiten, getrennt von der Standardausgabe (stdout).
+summary: "In Clojure k\xF6nnen Sie mit dem `*err*` Stream auf stderr schreiben."
 title: Schreiben auf Standardfehler
 weight: 25
 ---

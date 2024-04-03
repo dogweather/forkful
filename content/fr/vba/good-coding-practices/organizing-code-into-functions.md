@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:22.166036-07:00
-description: "L'organisation du code en fonctions dans Visual Basic pour Applications\
-  \ (VBA) implique de d\xE9composer un programme en pi\xE8ces plus petites et g\xE9\
-  rables,\u2026"
+description: "Comment faire : Dans VBA, les fonctions sont d\xE9finies en utilisant\
+  \ les instructions `Function` et `End Function`. Voici un exemple simple de cr\xE9\
+  ation\u2026"
 lastmod: '2024-03-13T22:44:57.585464-06:00'
 model: gpt-4-0125-preview
-summary: "L'organisation du code en fonctions dans Visual Basic pour Applications\
-  \ (VBA) implique de d\xE9composer un programme en pi\xE8ces plus petites et g\xE9\
-  rables, connues sous le nom de fonctions."
+summary: "Dans VBA, les fonctions sont d\xE9finies en utilisant les instructions `Function`\
+  \ et `End Function`."
 title: Organiser le code en fonctions
 weight: 18
 ---

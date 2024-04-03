@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 00:53:20.320524-07:00
-description: "Fehlerbehandlung in der Programmierung handelt davon, mit Unerwartetem\
-  \ umzugehen\u2014Dinge, die schiefgehen k\xF6nnen. Programmierer machen dies, um\u2026"
+description: "Wie: Haskell behandelt Fehler robust durch Typen wie `Maybe` und `Either`.\
+  \ Hier ein kurzer \xDCberblick."
 lastmod: '2024-03-13T22:44:53.938630-06:00'
 model: gpt-4-1106-preview
-summary: "Fehlerbehandlung in der Programmierung handelt davon, mit Unerwartetem umzugehen\u2014\
-  Dinge, die schiefgehen k\xF6nnen."
+summary: Haskell behandelt Fehler robust durch Typen wie `Maybe` und `Either`.
 title: Fehlerbehandlung
 weight: 16
 ---

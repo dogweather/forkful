@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:55.343624-07:00
-description: "Het extraheren van substrings houdt in dat een deel van een string wordt\
-  \ genomen - in wezen het cre\xEBren van een nieuwe string uit een gedeelte van een\u2026"
+description: "Hoe: In Google Apps Script, dat is gebaseerd op modern JavaScript, kan\
+  \ substringextractie worden bereikt met verschillende methoden, waaronder\u2026"
 lastmod: '2024-03-13T22:44:50.319489-06:00'
 model: gpt-4-0125-preview
-summary: "Het extraheren van substrings houdt in dat een deel van een string wordt\
-  \ genomen - in wezen het cre\xEBren van een nieuwe string uit een gedeelte van een\
-  \ bestaande."
+summary: In Google Apps Script, dat is gebaseerd op modern JavaScript, kan substringextractie
+  worden bereikt met verschillende methoden, waaronder `substring()`, `substr()`,
+  en `slice()`.
 title: Substrings extraheren
 weight: 6
 ---

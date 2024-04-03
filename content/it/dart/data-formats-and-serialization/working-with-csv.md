@@ -2,12 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:34.831891-07:00
-description: "Lavorare con file CSV (Valori Separati da Virgola) comporta l'analisi\
-  \ e la generazione di file di testo dove ogni riga contiene valori separati da\u2026"
+description: "Come fare: Per gestire file CSV in Dart, in genere si elabora manualmente\
+  \ il testo o si utilizzano librerie di terze parti per semplificare il compito.\u2026"
 lastmod: '2024-03-13T22:44:43.156595-06:00'
 model: gpt-4-0125-preview
-summary: Lavorare con file CSV (Valori Separati da Virgola) comporta l'analisi e la
-  generazione di file di testo dove ogni riga contiene valori separati da virgole.
+summary: Per gestire file CSV in Dart, in genere si elabora manualmente il testo o
+  si utilizzano librerie di terze parti per semplificare il compito.
 title: Lavorare con CSV
 weight: 37
 ---

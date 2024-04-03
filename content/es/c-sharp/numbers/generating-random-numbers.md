@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 20:32:38.198865-07:00
-description: "Generar n\xFAmeros aleatorios en C# implica la creaci\xF3n de valores\
-  \ num\xE9ricos impredecibles dentro de un rango especificado. Los programadores\
-  \ utilizan estos\u2026"
+description: "C\xF3mo hacerlo: La manera m\xE1s com\xFAn de generar n\xFAmeros aleatorios\
+  \ en C# es usando la clase `System.Random`. Aqu\xED hay un ejemplo simple que demuestra\
+  \ su uso."
 lastmod: '2024-03-13T22:44:59.074382-06:00'
 model: gpt-4-0125-preview
-summary: "Generar n\xFAmeros aleatorios en C# implica la creaci\xF3n de valores num\xE9\
-  ricos impredecibles dentro de un rango especificado."
+summary: "La manera m\xE1s com\xFAn de generar n\xFAmeros aleatorios en C# es usando\
+  \ la clase `System.Random`."
 title: "Generaci\xF3n de n\xFAmeros aleatorios"
 weight: 12
 ---

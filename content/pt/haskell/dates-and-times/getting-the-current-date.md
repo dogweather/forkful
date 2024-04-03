@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:32.341210-07:00
-description: "Obter a data atual em Haskell envolve obter o tempo atual do sistema\
-  \ e transform\xE1-lo em um formato de data leg\xEDvel. Os programadores fazem isso\
-  \ para\u2026"
+description: "Como fazer: A biblioteca padr\xE3o do Haskell, `base`, fornece o m\xF3\
+  dulo `Data.Time`, que oferece funcionalidades para trabalhar com datas e horas.\
+  \ Veja como\u2026"
 lastmod: '2024-03-13T22:44:46.635619-06:00'
 model: gpt-4-0125-preview
-summary: "Obter a data atual em Haskell envolve obter o tempo atual do sistema e transform\xE1\
-  -lo em um formato de data leg\xEDvel."
+summary: "A biblioteca padr\xE3o do Haskell, `base`, fornece o m\xF3dulo `Data.Time`,\
+  \ que oferece funcionalidades para trabalhar com datas e horas."
 title: Obtendo a data atual
 weight: 29
 ---

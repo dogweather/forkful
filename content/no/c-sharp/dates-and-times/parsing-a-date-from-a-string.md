@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:48.803154-07:00
-description: "Analysering av en dato fra en tekststreng i C# inneb\xE6rer konvertering\
-  \ av tekstrepresentasjoner av datoer og tider til et `DateTime`-objekt. Dette er\u2026"
+description: "Hvordan: **Grunnleggende Analysering:** Metodene `DateTime.Parse` og\
+  \ `DateTime.TryParse` er de g\xE5-til alternativene for \xE5 konvertere en tekststreng\
+  \ til en\u2026"
 lastmod: '2024-03-13T22:44:40.806054-06:00'
 model: gpt-4-0125-preview
-summary: "Analysering av en dato fra en tekststreng i C# inneb\xE6rer konvertering\
-  \ av tekstrepresentasjoner av datoer og tider til et `DateTime`-objekt."
+summary: "**Grunnleggende Analysering:**\n\nMetodene `DateTime.Parse` og `DateTime.TryParse`\
+  \ er de g\xE5-til alternativene for \xE5 konvertere en tekststreng til en `DateTime`."
 title: Analysering av en dato fra en streng
 weight: 30
 ---

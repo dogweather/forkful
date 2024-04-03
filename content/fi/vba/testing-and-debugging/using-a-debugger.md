@@ -2,9 +2,9 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:00.845841-07:00
-description: "VBA:ssa debuggeri on olennainen osa Visual Basic Editoria (VBE). N\xE4\
-  in voit hy\xF6dynt\xE4\xE4 sit\xE4: 1. **Keskeytyskohtien asettaminen**: Klikkaa\
-  \ vasemmassa\u2026"
+description: "Kuinka: VBA:ssa debuggeri on olennainen osa Visual Basic Editoria (VBE).\
+  \ N\xE4in voit hy\xF6dynt\xE4\xE4 sit\xE4: 1. **Keskeytyskohtien asettaminen**:\
+  \ Klikkaa vasemmassa\u2026"
 lastmod: '2024-03-13T22:44:56.405745-06:00'
 model: gpt-4-0125-preview
 summary: VBA:ssa debuggeri on olennainen osa Visual Basic Editoria (VBE).

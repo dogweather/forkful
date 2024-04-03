@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 01:02:15.486120-07:00
-description: "Loggning \xE4r i grunden mjukvarans motsvarighet till ett skeppsloggbok;\
-  \ det \xE4r ett s\xE4tt att registrera h\xE4ndelser som intr\xE4ffar medan en applikation\
-  \ k\xF6rs.\u2026"
+description: "Hur man g\xF6r: Clojure lutar sig mot Javas loggningsfaciliteter, men\
+  \ du kan anv\xE4nda dem p\xE5 ett mer idiomatiskt Clojure-s\xE4tt. L\xE5t oss titta\
+  \ p\xE5 hur du kanske\u2026"
 lastmod: '2024-03-13T22:44:37.531684-06:00'
 model: gpt-4-1106-preview
-summary: "Loggning \xE4r i grunden mjukvarans motsvarighet till ett skeppsloggbok;\
-  \ det \xE4r ett s\xE4tt att registrera h\xE4ndelser som intr\xE4ffar medan en applikation\
-  \ k\xF6rs."
+summary: "Clojure lutar sig mot Javas loggningsfaciliteter, men du kan anv\xE4nda\
+  \ dem p\xE5 ett mer idiomatiskt Clojure-s\xE4tt."
 title: Loggning
 weight: 17
 ---

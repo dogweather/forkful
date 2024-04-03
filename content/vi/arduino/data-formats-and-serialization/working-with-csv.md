@@ -2,16 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:04.439540-07:00
-description: "L\xE0m vi\u1EC7c v\u1EDBi CSV (Comma-Separated Values - Gi\xE1 Tr\u1ECB\
-  \ T\xE1ch Bi\u1EC7t B\u1EB1ng D\u1EA5u Ph\u1EA9y) tr\xEAn Arduino gi\xFAp b\u1EA1\
-  n l\u01B0u tr\u1EEF v\xE0 qu\u1EA3n l\xFD d\u1EEF li\u1EC7u d\u01B0\u1EDBi d\u1EA1\
-  ng v\u0103n b\u1EA3n. N\xF3 r\u1EBB, d\u1EC5\u2026"
+description: "L\xE0m Th\u1EBF N\xE0o: D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch l\u01B0\
+  u d\u1EEF li\u1EC7u c\u1EA3m bi\u1EBFn v\xE0o m\u1ED9t t\u1EC7p CSV tr\xEAn th\u1EBB\
+  \ SD."
 lastmod: '2024-03-13T22:44:37.018579-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m vi\u1EC7c v\u1EDBi CSV (Comma-Separated Values - Gi\xE1 Tr\u1ECB\
-  \ T\xE1ch Bi\u1EC7t B\u1EB1ng D\u1EA5u Ph\u1EA9y) tr\xEAn Arduino gi\xFAp b\u1EA1\
-  n l\u01B0u tr\u1EEF v\xE0 qu\u1EA3n l\xFD d\u1EEF li\u1EC7u d\u01B0\u1EDBi d\u1EA1\
-  ng v\u0103n b\u1EA3n."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch l\u01B0u d\u1EEF li\u1EC7u c\u1EA3\
+  m bi\u1EBFn v\xE0o m\u1ED9t t\u1EC7p CSV tr\xEAn th\u1EBB SD."
 title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 weight: 37
 ---

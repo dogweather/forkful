@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 04:17:19.761019-07:00
-description: "Um REPL, ou Loop de Leitura-Avalia\xE7\xE3o-Impress\xE3o, \xE9 um ambiente\
-  \ de programa\xE7\xE3o que recebe entradas \xFAnicas do usu\xE1rio, executa-as e\
-  \ retorna o resultado ao\u2026"
+description: "Como Fazer: Entre diretamente no REPL do Python digitando `python` em\
+  \ sua linha de comando. Uma vez l\xE1, teste opera\xE7\xF5es simples ou c\xF3digo\
+  \ com v\xE1rias\u2026"
 lastmod: '2024-03-13T22:44:46.155566-06:00'
 model: gpt-4-0125-preview
-summary: "Um REPL, ou Loop de Leitura-Avalia\xE7\xE3o-Impress\xE3o, \xE9 um ambiente\
-  \ de programa\xE7\xE3o que recebe entradas \xFAnicas do usu\xE1rio, executa-as e\
-  \ retorna o resultado ao usu\xE1rio."
+summary: Entre diretamente no REPL do Python digitando `python` em sua linha de comando.
 title: Usando um shell interativo (REPL)
 weight: 34
 ---

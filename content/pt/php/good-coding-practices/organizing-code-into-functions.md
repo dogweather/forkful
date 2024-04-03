@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 01:11:28.444969-07:00
-description: "Organizar o c\xF3digo em fun\xE7\xF5es trata-se de dividir seu c\xF3\
-  digo em blocos reutiliz\xE1veis com prop\xF3sitos definidos. Fazemos isso para manter\
-  \ as coisas\u2026"
+description: "Como fazer: Imagine que temos um c\xF3digo repetitivo para cumprimentar\
+  \ usu\xE1rios. Em vez disso, vamos envolv\xEA-lo em uma fun\xE7\xE3o chamada `greet_user`."
 lastmod: '2024-03-13T22:44:46.672902-06:00'
 model: gpt-4-1106-preview
-summary: "Organizar o c\xF3digo em fun\xE7\xF5es trata-se de dividir seu c\xF3digo\
-  \ em blocos reutiliz\xE1veis com prop\xF3sitos definidos."
+summary: "Imagine que temos um c\xF3digo repetitivo para cumprimentar usu\xE1rios."
 title: "Organizando o c\xF3digo em fun\xE7\xF5es"
 weight: 18
 ---

@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:47:37.005289-07:00
-description: "Misurare la lunghezza di una stringa significa contare i caratteri che\
-  \ la compongono. I programmatori lo fanno per validare input, manipolare testi,\
-  \ o\u2026"
+description: "How to: Usiamo la propriet\xE0 `length` di una stringa. Ecco come."
 lastmod: '2024-03-13T22:44:43.802803-06:00'
 model: gpt-4-1106-preview
-summary: Misurare la lunghezza di una stringa significa contare i caratteri che la
-  compongono.
+summary: "Usiamo la propriet\xE0 `length` di una stringa."
 title: Trovare la lunghezza di una stringa
 weight: 7
 ---

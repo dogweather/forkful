@@ -2,14 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:53.686331-07:00
-description: "So s\xE1nh hai ng\xE0y gi\u1ED1ng nh\u01B0 h\u1ECFi, \"Con g\xE0 hay\
-  \ qu\u1EA3 tr\u1EE9ng c\xE1i n\xE0o c\xF3 tr\u01B0\u1EDBc?\" nh\u01B0ng v\u1EDB\
-  i ng\xE0y tr\xEAn l\u1ECBch. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u \u0111\
-  \xF3 \u0111\u1EC3 s\u1EAFp x\u1EBFp s\u1EF1 ki\u1EC7n, k\xEDch\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Swift s\u1EED d\u1EE5ng ki\u1EC3u `Date` cho\
+  \ ng\xE0y v\xE0 gi\u1EDD. D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch \u0111\u01A1\
+  n gi\u1EA3n \u0111\u1EC3 so s\xE1nh hai ng\xE0y."
 lastmod: '2024-03-13T22:44:37.114187-06:00'
 model: gpt-4-0125-preview
-summary: "So s\xE1nh hai ng\xE0y gi\u1ED1ng nh\u01B0 h\u1ECFi, \"Con g\xE0 hay qu\u1EA3\
-  \ tr\u1EE9ng c\xE1i n\xE0o c\xF3 tr\u01B0\u1EDBc."
+summary: "Swift s\u1EED d\u1EE5ng ki\u1EC3u `Date` cho ng\xE0y v\xE0 gi\u1EDD."
 title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---

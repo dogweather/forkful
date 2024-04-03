@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:14.725118-07:00
-description: "Het schrijven van een tekstbestand omvat het cre\xEBren of wijzigen\
-  \ van tekstgegevens en deze opslaan in een bestand op uw opslagmedium. Programmeurs\
-  \ doen\u2026"
+description: 'Hoe te: In Clojure gebruik je de `spit` functie om gegevens naar een
+  tekstbestand te schrijven. Het is eenvoudig.'
 lastmod: '2024-03-13T22:44:50.438447-06:00'
 model: gpt-4-0125-preview
-summary: "Het schrijven van een tekstbestand omvat het cre\xEBren of wijzigen van\
-  \ tekstgegevens en deze opslaan in een bestand op uw opslagmedium."
+summary: In Clojure gebruik je de `spit` functie om gegevens naar een tekstbestand
+  te schrijven.
 title: Een tekstbestand schrijven
 weight: 24
 ---

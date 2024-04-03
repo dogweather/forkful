@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:44:10.661467-07:00
-description: "Scaricare una pagina web significa ottenere il contenuto HTML di quella\
-  \ pagina via internet. I programmatori lo fanno per analizzare dati, testare siti\
-  \ o\u2026"
+description: 'How to: In Haskell, usiamo librerie come `http-conduit` per scaricare
+  pagine web. Ecco un semplice esempio.'
 lastmod: '2024-03-13T22:44:43.473903-06:00'
 model: gpt-4-1106-preview
-summary: Scaricare una pagina web significa ottenere il contenuto HTML di quella pagina
-  via internet.
+summary: In Haskell, usiamo librerie come `http-conduit` per scaricare pagine web.
 title: Scaricare una pagina web
 weight: 42
 ---

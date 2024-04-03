@@ -1,11 +1,10 @@
 ---
 date: 2024-02-03 17:50:17.196189-07:00
-description: "Regular expressions (regex) in programming are used to search, match,\
-  \ and manipulate strings based on specific patterns. Programmers use them for tasks\u2026"
+description: "How to: In Go, the `regexp` package provides regex functionality. Here\u2019\
+  s a step-by-step guide on how to use it: 1. **Compiling a Regular Expression**\u2026"
 lastmod: '2024-03-13T22:44:59.622128-06:00'
 model: gpt-4-0125-preview
-summary: Regular expressions (regex) in programming are used to search, match, and
-  manipulate strings based on specific patterns.
+summary: In Go, the `regexp` package provides regex functionality.
 title: Using regular expressions
 weight: 11
 ---

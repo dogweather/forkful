@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:22.633854-07:00
-description: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) ovat merkkijonoja, jotka m\xE4\
-  \xE4rittelev\xE4t hakukuviot ja joita k\xE4ytet\xE4\xE4n ensisijaisesti merkkijonojen\
-  \ haussa ja\u2026"
+description: "Miten: Arduino ei suoraan tue regexi\xE4 sen vakio-kirjastossa. Voit\
+  \ kuitenkin saavuttaa regexi\xE4 muistuttavaa toiminnallisuutta yksinkertaisille\
+  \ kuviolle\u2026"
 lastmod: '2024-03-13T22:44:56.815040-06:00'
 model: gpt-4-0125-preview
-summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) ovat merkkijonoja, jotka m\xE4\xE4\
-  rittelev\xE4t hakukuviot ja joita k\xE4ytet\xE4\xE4n ensisijaisesti merkkijonojen\
-  \ haussa ja manipuloinnissa."
+summary: "Arduino ei suoraan tue regexi\xE4 sen vakio-kirjastossa."
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---

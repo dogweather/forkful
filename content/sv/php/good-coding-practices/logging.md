@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 01:07:14.081038-07:00
-description: "Loggning liknar i grunden att h\xE5lla en dagbok f\xF6r din kod; det\
-  \ \xE4r handlingen att registrera h\xE4ndelser, fel och andra betydande datapunkter\
-  \ som intr\xE4ffar\u2026"
+description: "Hur man g\xF6r: PHP kommer med en inbyggd felloggning funktion som \xE4\
+  r enkel att anv\xE4nda. Bara stoppa in `error_log()` i din kod f\xF6r att skicka\
+  \ ett meddelande\u2026"
 lastmod: '2024-03-13T22:44:38.002800-06:00'
 model: gpt-4-1106-preview
-summary: "Loggning liknar i grunden att h\xE5lla en dagbok f\xF6r din kod; det \xE4\
-  r handlingen att registrera h\xE4ndelser, fel och andra betydande datapunkter som\
-  \ intr\xE4ffar n\xE4r din applikation k\xF6rs."
+summary: "PHP kommer med en inbyggd felloggning funktion som \xE4r enkel att anv\xE4\
+  nda."
 title: Loggning
 weight: 17
 ---

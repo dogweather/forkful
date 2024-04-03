@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:37:16.011577-07:00
-description: "Convertire una data in una stringa permette di formattare il dato temporale\
-  \ per una presentazione leggibile. Gli sviluppatori lo fanno spesso quando\u2026"
+description: 'How to: Usa `Get-Date` e `ToString` per formattare date. Ecco alcuni
+  esempi.'
 lastmod: '2024-03-13T22:44:43.654176-06:00'
 model: gpt-4-1106-preview
-summary: Convertire una data in una stringa permette di formattare il dato temporale
-  per una presentazione leggibile.
+summary: Usa `Get-Date` e `ToString` per formattare date.
 title: Conversione di una data in una stringa
 weight: 28
 ---

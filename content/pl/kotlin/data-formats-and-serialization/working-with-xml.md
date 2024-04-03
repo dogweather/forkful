@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:33:18.961514-07:00
-description: "Praca z XML obejmuje parsowanie, tworzenie i manipulowanie dokumentami\
-  \ XML - j\u0119zykiem znacznik\xF3w do przechowywania i przesy\u0142ania danych.\
-  \ Programi\u015Bci robi\u0105\u2026"
+description: "Jak to zrobi\u0107: W Kotlinie mo\u017Cesz u\u017Cy\u0107 wbudowanego\
+  \ `javax.xml.parsers` do parsowania."
 lastmod: '2024-03-13T22:44:35.389534-06:00'
 model: gpt-4-0125-preview
-summary: "Praca z XML obejmuje parsowanie, tworzenie i manipulowanie dokumentami XML\
-  \ - j\u0119zykiem znacznik\xF3w do przechowywania i przesy\u0142ania danych."
+summary: "W Kotlinie mo\u017Cesz u\u017Cy\u0107 wbudowanego `javax.xml.parsers` do\
+  \ parsowania."
 title: Praca z XML
 weight: 40
 ---

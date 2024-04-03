@@ -1,11 +1,10 @@
 ---
 date: 2024-01-27 20:26:54.398270-07:00
-description: "Generating random numbers in TypeScript is about creating unpredictable\
-  \ numeric values within a specified range. Programmers leverage these random digits\u2026"
+description: "How to: In TypeScript, you can generate random numbers using the global\
+  \ `Math` object. Below are some practical examples demonstrating how to produce\u2026"
 lastmod: '2024-03-13T22:44:59.855079-06:00'
 model: gpt-4-0125-preview
-summary: Generating random numbers in TypeScript is about creating unpredictable numeric
-  values within a specified range.
+summary: In TypeScript, you can generate random numbers using the global `Math` object.
 title: Generating random numbers
 weight: 12
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:15.088845-07:00
-description: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende godkjenning involverer\
-  \ koding av et brukernavn og passord i en foresp\xF8rselsoverskrift for \xE5 f\xE5\
-  \ tilgang til\u2026"
+description: "Hvordan: I Google Apps Script, for \xE5 sende en HTTP-foresp\xF8rsel\
+  \ med grunnleggende godkjenning, bruker du `UrlFetchApp`-tjenesten kombinert med\
+  \ en\u2026"
 lastmod: '2024-03-13T22:44:40.313659-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende godkjenning involverer\
-  \ koding av et brukernavn og passord i en foresp\xF8rselsoverskrift for \xE5 f\xE5\
-  \ tilgang til beskyttede ressurser."
+summary: "I Google Apps Script, for \xE5 sende en HTTP-foresp\xF8rsel med grunnleggende\
+  \ godkjenning, bruker du `UrlFetchApp`-tjenesten kombinert med en base64-kodet autorisasjonsoverskrift."
 title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---

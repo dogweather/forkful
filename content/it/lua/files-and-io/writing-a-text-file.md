@@ -2,14 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:43.564995-07:00
-description: "Scrivere su un file di testo in Lua comporta la creazione o l'apertura\
-  \ di un file in modalit\xE0 di scrittura, quindi utilizzare le operazioni sui file\
-  \ per\u2026"
+description: "Come fare: In Lua, lavorare con i file per scrivere \xE8 semplice. Di\
+  \ solito, si utilizza la funzione `io.open()` per aprire (o creare) un file, specificando\u2026"
 lastmod: '2024-03-13T22:44:43.575337-06:00'
 model: gpt-4-0125-preview
-summary: "Scrivere su un file di testo in Lua comporta la creazione o l'apertura di\
-  \ un file in modalit\xE0 di scrittura, quindi utilizzare le operazioni sui file\
-  \ per inserire testo."
+summary: "In Lua, lavorare con i file per scrivere \xE8 semplice."
 title: Scrivere un file di testo
 weight: 24
 ---

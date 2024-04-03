@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:59.179943-07:00
-description: "Att hitta l\xE4ngden p\xE5 en str\xE4ng i Go handlar om att best\xE4\
-  mma antalet tecken den inneh\xE5ller. Programmerare utf\xF6r rutinm\xE4ssigt denna\
-  \ operation f\xF6r att\u2026"
+description: "Hur man g\xF6r: I Go behandlas str\xE4ngar som omutbara sekvenser av\
+  \ bytes. Du kan hitta l\xE4ngden p\xE5 en str\xE4ng med hj\xE4lp av den inbyggda\
+  \ `len()`-funktionen som\u2026"
 lastmod: '2024-03-13T22:44:37.382265-06:00'
 model: gpt-4-0125-preview
-summary: "Att hitta l\xE4ngden p\xE5 en str\xE4ng i Go handlar om att best\xE4mma\
-  \ antalet tecken den inneh\xE5ller."
+summary: "I Go behandlas str\xE4ngar som omutbara sekvenser av bytes."
 title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---

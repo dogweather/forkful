@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:00:13.180446-07:00
-description: "Analisar uma data a partir de uma string em Go envolve converter a data\
-  \ representada como texto em um formato mais utiliz\xE1vel (por exemplo, `time.Time`).\u2026"
+description: "Como Fazer: Go oferece um suporte robusto para an\xE1lise de datas e\
+  \ hor\xE1rios atrav\xE9s do pacote `time`. A chave \xE9 compreender o formato de\
+  \ data de refer\xEAncia\u2026"
 lastmod: '2024-03-13T22:44:46.071320-06:00'
 model: gpt-4-0125-preview
-summary: "Analisar uma data a partir de uma string em Go envolve converter a data\
-  \ representada como texto em um formato mais utiliz\xE1vel (por exemplo, `time."
+summary: "Go oferece um suporte robusto para an\xE1lise de datas e hor\xE1rios atrav\xE9\
+  s do pacote `time`."
 title: Analisando uma data a partir de uma string
 weight: 30
 ---

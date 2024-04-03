@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:56.212131-07:00
-description: "Trouver la longueur d'une cha\xEEne en Go consiste \xE0 d\xE9terminer\
-  \ le nombre de caract\xE8res qu'elle contient. Les programmeurs effectuent r\xE9\
-  guli\xE8rement cette\u2026"
+description: "Comment faire : En Go, les cha\xEEnes sont trait\xE9es comme des s\xE9\
+  quences d'octets immuables. Vous pouvez trouver la longueur d'une cha\xEEne en utilisant\
+  \ la\u2026"
 lastmod: '2024-03-13T22:44:57.122950-06:00'
 model: gpt-4-0125-preview
-summary: "Trouver la longueur d'une cha\xEEne en Go consiste \xE0 d\xE9terminer le\
-  \ nombre de caract\xE8res qu'elle contient."
+summary: "En Go, les cha\xEEnes sont trait\xE9es comme des s\xE9quences d'octets immuables."
 title: "Trouver la longueur d'une cha\xEEne"
 weight: 7
 ---

@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:58:19.150246-07:00
-description: "Wyszukiwanie i zamiana tekstu to proces znajdowania ci\u0105g\xF3w znak\xF3\
-  w i ich podmieniania na inne. Programi\u015Bci to robi\u0105, by szybko aktualizowa\u0107\
-  \ kod, dane czy\u2026"
+description: "Jak to zrobi\u0107: ."
 lastmod: '2024-03-13T22:44:35.349441-06:00'
 model: gpt-4-1106-preview
-summary: "Wyszukiwanie i zamiana tekstu to proces znajdowania ci\u0105g\xF3w znak\xF3\
-  w i ich podmieniania na inne."
+summary: .
 title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---

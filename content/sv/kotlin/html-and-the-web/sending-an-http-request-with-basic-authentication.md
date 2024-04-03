@@ -1,13 +1,11 @@
 ---
 date: 2024-01-20 18:02:24.949096-07:00
-description: "Skicka en HTTP-f\xF6rfr\xE5gan med basic-autentisering inneb\xE4r att\
-  \ koda ihop anv\xE4ndarnamn och l\xF6senord och skicka med det i en f\xF6rfr\xE5\
-  gans `Authorization`\u2026"
+description: "S\xE5 h\xE4r g\xF6r man: H\xE4r \xE4r ett exempel p\xE5 hur man skickar\
+  \ en HTTP-f\xF6rfr\xE5gan med basic-autentisering i Kotlin med hj\xE4lp av `java.net.HttpURLConnection`."
 lastmod: '2024-03-13T22:44:37.870927-06:00'
 model: gpt-4-1106-preview
-summary: "Skicka en HTTP-f\xF6rfr\xE5gan med basic-autentisering inneb\xE4r att koda\
-  \ ihop anv\xE4ndarnamn och l\xF6senord och skicka med det i en f\xF6rfr\xE5gans\
-  \ `Authorization` header."
+summary: "H\xE4r \xE4r ett exempel p\xE5 hur man skickar en HTTP-f\xF6rfr\xE5gan med\
+  \ basic-autentisering i Kotlin med hj\xE4lp av `java.net.HttpURLConnection`."
 title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
 weight: 45
 ---

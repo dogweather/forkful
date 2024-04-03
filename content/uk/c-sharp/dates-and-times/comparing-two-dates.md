@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:32:28.192156-07:00
-description: "Comparing dates lets you determine the relationship between two points\
-  \ in time. It's essential for checking expirations, scheduling tasks, or measuring\u2026"
+description: "How to (\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\
+  \u0438): Here's the straight-up way to compare dates in C#."
 lastmod: '2024-03-13T22:44:49.309689-06:00'
 model: gpt-4-1106-preview
-summary: Comparing dates lets you determine the relationship between two points in
-  time.
+summary: Here's the straight-up way to compare dates in C#.
 title: "\u041F\u043E\u0440\u0456\u0432\u043D\u044F\u043D\u043D\u044F \u0434\u0432\u043E\
   \u0445 \u0434\u0430\u0442"
 weight: 27

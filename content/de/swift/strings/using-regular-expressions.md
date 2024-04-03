@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:35.370076-07:00
-description: "Regul\xE4re Ausdr\xFCcke oder Regex sind Zeichenfolgen, die ein Suchmuster\
-  \ bilden und h\xE4ufig f\xFCr die \xDCbereinstimmung oder Manipulation von Zeichenketten\u2026"
+description: "Wie: Die native Unterst\xFCtzung von Swift f\xFCr Regex verwendet die\
+  \ Klasse `NSRegularExpression` zusammen mit den Bereichs- und Ersetzungsmethoden\
+  \ der String-\u2026"
 lastmod: '2024-03-13T22:44:54.215888-06:00'
 model: gpt-4-0125-preview
-summary: "Regul\xE4re Ausdr\xFCcke oder Regex sind Zeichenfolgen, die ein Suchmuster\
-  \ bilden und h\xE4ufig f\xFCr die \xDCbereinstimmung oder Manipulation von Zeichenketten\
-  \ verwendet werden."
+summary: "Die native Unterst\xFCtzung von Swift f\xFCr Regex verwendet die Klasse\
+  \ `NSRegularExpression` zusammen mit den Bereichs- und Ersetzungsmethoden der String-Klasse."
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

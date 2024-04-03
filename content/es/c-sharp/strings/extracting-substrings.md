@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 17:45:19.003405-07:00
-description: "Extraer subcadenas implica tomar trozos de texto desde una cadena mayor.\
-  \ Los programadores lo hacen para analizar datos, validar entradas o simplemente\u2026"
+description: "C\xF3mo hacerlo: Vamos a ver c\xF3mo extraer subcadenas en C# usando\
+  \ el m\xE9todo `Substring`. Aqu\xED hay un ejemplo."
 lastmod: '2024-03-13T22:44:59.067621-06:00'
 model: gpt-4-1106-preview
-summary: Extraer subcadenas implica tomar trozos de texto desde una cadena mayor.
+summary: "Vamos a ver c\xF3mo extraer subcadenas en C# usando el m\xE9todo `Substring`."
 title: "Extracci\xF3n de subcadenas"
 weight: 6
 ---

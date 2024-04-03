@@ -2,16 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:31.931231-07:00
-description: "S\u1ED1 ph\u1EE9c, nh\u1EEFng s\u1ED1 c\xF3 m\u1ED9t ph\u1EA7n th\u1EF1\
-  c v\xE0 m\u1ED9t ph\u1EA7n \u1EA3o (nh\u01B0 3 + 4i), r\u1EA5t quan tr\u1ECDng trong\
-  \ c\xE1c l\u0129nh v\u1EF1c nh\u01B0 k\u1EF9 thu\u1EADt, v\u1EADt l\xFD, v\xE0 khoa\
-  \ h\u1ECDc d\u1EEF li\u1EC7u. C\xE1c l\u1EADp tr\xECnh\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: PowerShell kh\xF4ng h\u1ED7 tr\u1EE3 s\u1ED1\
+  \ ph\u1EE9c m\u1ED9t c\xE1ch t\xEDch h\u1EE3p, v\xEC v\u1EADy b\u1EA1n c\xF3 th\u1EC3\
+  \ t\u1EF1 t\u1EA1o gi\u1EA3i ph\xE1p c\u1EE7a m\xECnh ho\u1EB7c s\u1EED d\u1EE5\
+  ng `System.Numerics.Complex` c\u1EE7a\u2026"
 lastmod: '2024-03-13T22:44:36.925330-06:00'
 model: gpt-4-0125-preview
-summary: "S\u1ED1 ph\u1EE9c, nh\u1EEFng s\u1ED1 c\xF3 m\u1ED9t ph\u1EA7n th\u1EF1\
-  c v\xE0 m\u1ED9t ph\u1EA7n \u1EA3o (nh\u01B0 3 + 4i), r\u1EA5t quan tr\u1ECDng trong\
-  \ c\xE1c l\u0129nh v\u1EF1c nh\u01B0 k\u1EF9 thu\u1EADt, v\u1EADt l\xFD, v\xE0 khoa\
-  \ h\u1ECDc d\u1EEF li\u1EC7u."
+summary: "PowerShell kh\xF4ng h\u1ED7 tr\u1EE3 s\u1ED1 ph\u1EE9c m\u1ED9t c\xE1ch\
+  \ t\xEDch h\u1EE3p, v\xEC v\u1EADy b\u1EA1n c\xF3 th\u1EC3 t\u1EF1 t\u1EA1o gi\u1EA3\
+  i ph\xE1p c\u1EE7a m\xECnh ho\u1EB7c s\u1EED d\u1EE5ng `System.Numerics.Complex`\
+  \ c\u1EE7a .NET."
 title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 weight: 14
 ---

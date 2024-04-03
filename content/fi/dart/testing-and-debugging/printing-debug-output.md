@@ -2,14 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:40.571964-07:00
-description: "Debug-tulosteen tulostaminen Dartissa tarkoittaa tietojen n\xE4ytt\xE4\
-  mist\xE4 konsolissa suorituksen aikana, mik\xE4 mahdollistaa kehitt\xE4jien seurata\
-  \ suorituksen\u2026"
+description: "Kuinka: Dartissa voit tulostaa debug-tulosteen k\xE4ytt\xE4m\xE4ll\xE4\
+  \ `print()`-funktiota. N\xE4in voit tulostaa yksinkertaisia viestej\xE4 ja muuttujien\
+  \ arvoja."
 lastmod: '2024-03-13T22:44:56.273552-06:00'
 model: gpt-4-0125-preview
-summary: "Debug-tulosteen tulostaminen Dartissa tarkoittaa tietojen n\xE4ytt\xE4mist\xE4\
-  \ konsolissa suorituksen aikana, mik\xE4 mahdollistaa kehitt\xE4jien seurata suorituksen\
-  \ kulkua, tutkia muuttujien tilaa tai tunnistaa virheiden l\xE4hteen."
+summary: "Dartissa voit tulostaa debug-tulosteen k\xE4ytt\xE4m\xE4ll\xE4 `print()`-funktiota."
 title: Debug-tulosteen tulostaminen
 weight: 33
 ---

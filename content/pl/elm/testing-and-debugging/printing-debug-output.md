@@ -1,12 +1,13 @@
 ---
 date: 2024-01-20 17:52:24.722324-07:00
-description: "Debugowanie, czyli proces \u015Bledzenia i usuwania b\u0142\u0119d\xF3\
-  w, cz\u0119sto wymaga od programisty wy\u015Bwietlania danych pomocniczych. W Elm\
-  \ robimy to, by szybciej\u2026"
+description: "Jak to zrobi\u0107? W Elm mo\u017Cesz skorzysta\u0107 z funkcji `Debug.log`,\
+  \ kt\xF3ra pozwala wy\u015Bwietli\u0107 warto\u015B\u0107 w konsoli narz\u0119dzi\
+  \ deweloperskich przegl\u0105darki."
 lastmod: '2024-03-13T22:44:35.324282-06:00'
 model: gpt-4-1106-preview
-summary: "Debugowanie, czyli proces \u015Bledzenia i usuwania b\u0142\u0119d\xF3w,\
-  \ cz\u0119sto wymaga od programisty wy\u015Bwietlania danych pomocniczych."
+summary: "W Elm mo\u017Cesz skorzysta\u0107 z funkcji `Debug.log`, kt\xF3ra pozwala\
+  \ wy\u015Bwietli\u0107 warto\u015B\u0107 w konsoli narz\u0119dzi deweloperskich\
+  \ przegl\u0105darki."
 title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---

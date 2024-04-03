@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 03:37:07.351486-07:00
-description: "Supprimer les guillemets d'une cha\xEEne signifie \xE9liminer toutes\
-  \ les instances de caract\xE8res de guillemets simples (`'`) ou doubles (`\"`) qui\
-  \ entourent le\u2026"
+description: "Comment faire : Pour supprimer les guillemets d'une cha\xEEne dans Arduino,\
+  \ vous pouvez parcourir les caract\xE8res et reconstruire la cha\xEEne sans les\u2026"
 lastmod: '2024-03-13T22:44:58.095691-06:00'
 model: gpt-4-0125-preview
-summary: "Supprimer les guillemets d'une cha\xEEne signifie \xE9liminer toutes les\
-  \ instances de caract\xE8res de guillemets simples (`'`) ou doubles (`\"`) qui entourent\
-  \ le texte."
+summary: "Pour supprimer les guillemets d'une cha\xEEne dans Arduino, vous pouvez\
+  \ parcourir les caract\xE8res et reconstruire la cha\xEEne sans les caract\xE8res\
+  \ de guillemet."
 title: "Retirer les guillemets d'une cha\xEEne"
 weight: 9
 ---

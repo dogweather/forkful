@@ -2,14 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:09.597875-07:00
-description: "Escribir en el error est\xE1ndar (stderr) en Bash se trata de dirigir\
-  \ mensajes de error o cualquier salida de diagn\xF3stico importante, separ\xE1ndola\
-  \ de la\u2026"
+description: "C\xF3mo hacerlo: En Bash, se utiliza `>&2` para redirigir la salida\
+  \ hacia stderr. Aqu\xED hay un ejemplo b\xE1sico."
 lastmod: '2024-03-13T22:44:59.263457-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir en el error est\xE1ndar (stderr) en Bash se trata de dirigir mensajes\
-  \ de error o cualquier salida de diagn\xF3stico importante, separ\xE1ndola de la\
-  \ salida est\xE1ndar (stdout)."
+summary: En Bash, se utiliza `>&2` para redirigir la salida hacia stderr.
 title: "Escribiendo en el error est\xE1ndar"
 weight: 25
 ---

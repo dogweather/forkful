@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:11.081898-07:00
-description: "Kapitalizacja ci\u0105gu polega na przekszta\u0142ceniu pierwszego znaku\
-  \ ka\u017Cdego s\u0142owa w ci\u0105gu na wielk\u0105 liter\u0119, zapewniaj\u0105\
-  c jednocze\u015Bnie, \u017Ce pozosta\u0142e litery\u2026"
+description: "Jak to zrobi\u0107: Arduino, znane przede wszystkim z interakcji z sprz\u0119\
+  tem, zawiera tak\u017Ce podstawowe mo\u017Cliwo\u015Bci manipulacji ci\u0105gami\
+  \ za pomoc\u0105 obiektu\u2026"
 lastmod: '2024-03-13T22:44:35.655623-06:00'
 model: gpt-4-0125-preview
-summary: "Kapitalizacja ci\u0105gu polega na przekszta\u0142ceniu pierwszego znaku\
-  \ ka\u017Cdego s\u0142owa w ci\u0105gu na wielk\u0105 liter\u0119, zapewniaj\u0105\
-  c jednocze\u015Bnie, \u017Ce pozosta\u0142e litery pozostan\u0105 ma\u0142e."
+summary: "Arduino, znane przede wszystkim z interakcji z sprz\u0119tem, zawiera tak\u017C\
+  e podstawowe mo\u017Cliwo\u015Bci manipulacji ci\u0105gami za pomoc\u0105 obiektu\
+  \ `String`."
 title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---

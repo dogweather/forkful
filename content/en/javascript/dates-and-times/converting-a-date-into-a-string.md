@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:36:52.217820-07:00
-description: "Date to string conversion transforms a Date object into a readable text\
-  \ format, because humans like \"April 1, 2023\" more than cryptic timestamps.\u2026"
+description: 'How to: JavaScript has built-in methods to convert dates to strings.
+  Here''s how to use them.'
 lastmod: '2024-03-13T22:45:00.444326-06:00'
 model: gpt-4-1106-preview
-summary: Date to string conversion transforms a Date object into a readable text format,
-  because humans like "April 1, 2023" more than cryptic timestamps.
+summary: JavaScript has built-in methods to convert dates to strings.
 title: Converting a date into a string
 weight: 28
 ---

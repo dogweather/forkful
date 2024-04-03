@@ -1,11 +1,11 @@
 ---
 date: 2024-01-25 02:59:30.238639-07:00
-description: "Chunking code into functions is about packaging up blocks of code that\
-  \ accomplish specific tasks. Doing this makes your code clean, easier to maintain,\u2026"
+description: 'How to: Clojure functions are defined with `defn`, followed by a name,
+  parameters, and body. Here''s a quick example.'
 lastmod: '2024-03-13T22:44:59.750585-06:00'
 model: gpt-4-1106-preview
-summary: Chunking code into functions is about packaging up blocks of code that accomplish
-  specific tasks.
+summary: Clojure functions are defined with `defn`, followed by a name, parameters,
+  and body.
 title: Organizing code into functions
 weight: 18
 ---

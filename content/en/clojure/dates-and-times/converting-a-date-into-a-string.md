@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:36:24.675048-07:00
-description: "Converting a date to a string means transforming a date object into\
-  \ human-readable text. Programmers do it to display dates in understandable formats\
-  \ or\u2026"
+description: 'How to: In Clojure, we use the Java interop capabilities to format dates.
+  Here''s a quick guide.'
 lastmod: '2024-03-13T22:44:59.755911-06:00'
 model: gpt-4-1106-preview
-summary: Converting a date to a string means transforming a date object into human-readable
-  text.
+summary: In Clojure, we use the Java interop capabilities to format dates.
 title: Converting a date into a string
 weight: 28
 ---

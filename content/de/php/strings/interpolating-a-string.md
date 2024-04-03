@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:51:22.992786-07:00
-description: "String-Interpolation erm\xF6glicht es uns, Variablen nahtlos in Zeichenketten\
-  \ einzuf\xFCgen. Programmierer nutzen das, um dynamisch Inhalte zu generieren, ohne\u2026"
+description: "How to: Interpolieren in PHP ist ein Kinderspiel. F\xFCgen Sie einfach\
+  \ eine Variable in einen doppelten Anf\xFChrungszeichen-String oder Heredoc ein."
 lastmod: '2024-03-13T22:44:53.958537-06:00'
 model: gpt-4-1106-preview
-summary: "String-Interpolation erm\xF6glicht es uns, Variablen nahtlos in Zeichenketten\
-  \ einzuf\xFCgen."
+summary: Interpolieren in PHP ist ein Kinderspiel.
 title: Zeichenketten interpolieren
 weight: 8
 ---

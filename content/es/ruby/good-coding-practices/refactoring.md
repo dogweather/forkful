@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 03:36:43.272948-07:00
-description: "La refactorizaci\xF3n es el proceso de reestructurar el c\xF3digo de\
-  \ computadora existente sin cambiar su comportamiento externo. Los programadores\
-  \ refactorizan\u2026"
+description: "C\xF3mo hacerlo: Vamos a seguir el ejemplo de la refactorizaci\xF3n\
+  \ de un m\xE9todo de Ruby que calcula la suma de cuadrados. **Antes de la Refactorizaci\xF3\
+  n:**."
 lastmod: '2024-03-13T22:44:59.599607-06:00'
 model: gpt-4-0125-preview
-summary: "La refactorizaci\xF3n es el proceso de reestructurar el c\xF3digo de computadora\
-  \ existente sin cambiar su comportamiento externo."
+summary: "Vamos a seguir el ejemplo de la refactorizaci\xF3n de un m\xE9todo de Ruby\
+  \ que calcula la suma de cuadrados."
 title: "Refactorizaci\xF3n"
 weight: 19
 ---

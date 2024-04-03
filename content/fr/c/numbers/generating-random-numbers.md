@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:04.454607-07:00
-description: "G\xE9n\xE9rer des nombres al\xE9atoires en C implique de cr\xE9er des\
-  \ valeurs impr\xE9visibles et suivant une distribution sp\xE9cifique, telle que\
-  \ uniforme ou normale.\u2026"
+description: "Comment faire : En C, des nombres al\xE9atoires peuvent \xEAtre g\xE9\
+  n\xE9r\xE9s en utilisant la fonction `rand()`, qui fait partie de la biblioth\xE8\
+  que standard du C\u2026"
 lastmod: '2024-03-13T22:44:58.367123-06:00'
 model: gpt-4-0125-preview
-summary: "G\xE9n\xE9rer des nombres al\xE9atoires en C implique de cr\xE9er des valeurs\
-  \ impr\xE9visibles et suivant une distribution sp\xE9cifique, telle que uniforme\
-  \ ou normale."
+summary: "En C, des nombres al\xE9atoires peuvent \xEAtre g\xE9n\xE9r\xE9s en utilisant\
+  \ la fonction `rand()`, qui fait partie de la biblioth\xE8que standard du C `<stdlib.h>`."
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---

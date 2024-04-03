@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:49.592629-07:00
-description: "Att tolka HTML med PHP inneb\xE4r att extrahera specifik information\
-  \ fr\xE5n HTML-dokument. Programmerare utf\xF6r denna uppgift f\xF6r att automatisera\u2026"
+description: "Hur man g\xF6r: F\xF6r att tolka HTML kan PHP-programmerare anv\xE4\
+  nda inbyggda funktioner eller luta sig mot robusta bibliotek som Simple HTML DOM\
+  \ Parser. H\xE4r\u2026"
 lastmod: '2024-03-13T22:44:37.994179-06:00'
 model: gpt-4-0125-preview
-summary: "Att tolka HTML med PHP inneb\xE4r att extrahera specifik information fr\xE5\
-  n HTML-dokument."
+summary: "F\xF6r att tolka HTML kan PHP-programmerare anv\xE4nda inbyggda funktioner\
+  \ eller luta sig mot robusta bibliotek som Simple HTML DOM Parser."
 title: Tolka HTML
 weight: 43
 ---

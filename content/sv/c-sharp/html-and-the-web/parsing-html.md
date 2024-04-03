@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:42.257455-07:00
-description: "Att tolka HTML i programmering inneb\xE4r att analysera en HTML-dokuments\
-  \ struktur, vilket m\xF6jligg\xF6r f\xF6r dig att extrahera, manipulera och interagera\
-  \ med\u2026"
+description: "Hur: Medan .NET tillhandah\xE5ller grundl\xE4ggande st\xF6d f\xF6r att\
+  \ arbeta med HTML, som `HttpClient` f\xF6r att h\xE4mta webbsidor, saknar det en\
+  \ inbyggd, omfattande\u2026"
 lastmod: '2024-03-13T22:44:37.911056-06:00'
 model: gpt-4-0125-preview
-summary: "Att tolka HTML i programmering inneb\xE4r att analysera en HTML-dokuments\
-  \ struktur, vilket m\xF6jligg\xF6r f\xF6r dig att extrahera, manipulera och interagera\
-  \ med dess inneh\xE5ll programmatiskt."
+summary: "Medan .NET tillhandah\xE5ller grundl\xE4ggande st\xF6d f\xF6r att arbeta\
+  \ med HTML, som `HttpClient` f\xF6r att h\xE4mta webbsidor, saknar det en inbyggd,\
+  \ omfattande HTML-tolk."
 title: Tolka HTML
 weight: 43
 ---

@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:09.547436-07:00
-description: "Pisanie do standardowego b\u0142\u0119du (stderr) polega na przekierowywaniu\
-  \ komunikat\xF3w o b\u0142\u0119dach i diagnozy odseparowane od g\u0142\xF3wnego\
-  \ wyj\u015Bcia programu, kt\xF3re\u2026"
+description: "Jak to zrobi\u0107: Elm jest przede wszystkim ukierunkowany na rozw\xF3\
+  j aplikacji internetowych, gdzie koncepcja bezpo\u015Bredniego pisania do stderr\
+  \ nie ma\u2026"
 lastmod: '2024-03-13T22:44:35.338198-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie do standardowego b\u0142\u0119du (stderr) polega na przekierowywaniu\
-  \ komunikat\xF3w o b\u0142\u0119dach i diagnozy odseparowane od g\u0142\xF3wnego\
-  \ wyj\u015Bcia programu, kt\xF3re trafia do standardowego wyj\u015Bcia (stdout)."
+summary: "Elm jest przede wszystkim ukierunkowany na rozw\xF3j aplikacji internetowych,\
+  \ gdzie koncepcja bezpo\u015Bredniego pisania do stderr nie ma zastosowania w taki\
+  \ spos\xF3b, jak ma to miejsce w tradycyjnych \u015Brodowiskach linii polece\u0144\
+  ."
 title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:39:27.028159-07:00
-description: "Converter uma string para min\xFAsculas \xE9 basicamente transformar\
-  \ todos os caracteres de uma frase ou palavra para o formato de letra pequena. Programadores\u2026"
+description: "Como Fazer: No TypeScript, a convers\xE3o de uma string para caixa baixa\
+  \ \xE9 direta com o uso do m\xE9todo `.toLowerCase()`. Veja abaixo."
 lastmod: '2024-03-13T22:44:46.312831-06:00'
 model: gpt-4-1106-preview
-summary: "Converter uma string para min\xFAsculas \xE9 basicamente transformar todos\
-  \ os caracteres de uma frase ou palavra para o formato de letra pequena."
+summary: "No TypeScript, a convers\xE3o de uma string para caixa baixa \xE9 direta\
+  \ com o uso do m\xE9todo `.toLowerCase()`."
 title: "Convertendo uma string para min\xFAsculas"
 weight: 4
 ---

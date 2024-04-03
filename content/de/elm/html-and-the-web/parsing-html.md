@@ -2,11 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:49.324074-07:00
-description: "HTML in Elm zu parsen, bedeutet, Informationen aus HTML-Dokumenten zu\
-  \ extrahieren. Programmierer tun dies, um mit Webinhalten oder APIs zu interagieren,\u2026"
+description: "Wie geht das: Elm verf\xFCgt nicht \xFCber eine integrierte Bibliothek\
+  \ zum direkten Parsen von HTML, \xE4hnlich wie Bibliotheken in JavaScript oder Python,\u2026"
 lastmod: '2024-03-13T22:44:53.802791-06:00'
 model: gpt-4-0125-preview
-summary: HTML in Elm zu parsen, bedeutet, Informationen aus HTML-Dokumenten zu extrahieren.
+summary: "Elm verf\xFCgt nicht \xFCber eine integrierte Bibliothek zum direkten Parsen\
+  \ von HTML, \xE4hnlich wie Bibliotheken in JavaScript oder Python, aufgrund seiner\
+  \ Betonung auf Typsicherheit und der Vermeidung von Laufzeitfehlern."
 title: HTML parsen
 weight: 43
 ---

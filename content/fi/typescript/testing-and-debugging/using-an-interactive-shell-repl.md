@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 04:18:38.178307-07:00
-description: "Read-Eval-Print-Loop (REPL) on ohjelmointiymp\xE4rist\xF6, joka ottaa\
-  \ vastaan yksitt\xE4isi\xE4 k\xE4ytt\xE4j\xE4n sy\xF6tteit\xE4, suorittaa ne ja\
-  \ palauttaa tuloksen k\xE4ytt\xE4j\xE4lle.\u2026"
+description: "Miten: TypeScript ei tule oman REPL:ns\xE4 kanssa. K\xE4ytet\xE4\xE4\
+  n `ts-node`a, TypeScriptin suoritusymp\xE4rist\xF6\xE4 Node.js:lle, joka sis\xE4\
+  lt\xE4\xE4 REPL:n. Asenna ensin\u2026"
 lastmod: '2024-03-13T22:44:56.316997-06:00'
 model: gpt-4-0125-preview
-summary: "Read-Eval-Print-Loop (REPL) on ohjelmointiymp\xE4rist\xF6, joka ottaa vastaan\
-  \ yksitt\xE4isi\xE4 k\xE4ytt\xE4j\xE4n sy\xF6tteit\xE4, suorittaa ne ja palauttaa\
-  \ tuloksen k\xE4ytt\xE4j\xE4lle."
+summary: "TypeScript ei tule oman REPL:ns\xE4 kanssa."
 title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 weight: 34
 ---

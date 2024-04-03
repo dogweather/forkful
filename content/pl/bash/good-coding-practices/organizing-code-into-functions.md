@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 01:08:48.444438-07:00
-description: "Podzielenie kodu na funkcje polega na rozk\u0142adaniu skrypt\xF3w na\
-  \ mniejsze, wielokrotnie u\u017Cywalne bloki, kt\xF3re realizuj\u0105 okre\u015B\
-  lone zadania. Sprawia to, \u017Ce kod\u2026"
+description: "Jak to zrobi\u0107: Utw\xF3rz prost\u0105 funkcj\u0119 w Bashu."
 lastmod: '2024-03-13T22:44:35.590754-06:00'
 model: gpt-4-1106-preview
-summary: "Podzielenie kodu na funkcje polega na rozk\u0142adaniu skrypt\xF3w na mniejsze,\
-  \ wielokrotnie u\u017Cywalne bloki, kt\xF3re realizuj\u0105 okre\u015Blone zadania."
+summary: "Utw\xF3rz prost\u0105 funkcj\u0119 w Bashu."
 title: Organizacja kodu w funkcje
 weight: 18
 ---

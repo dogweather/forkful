@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:45.352804-07:00
-description: "YAML, lyhenteen\xE4 ilmaisulle YAML Ain't Markup Language, on ihmisen\
-  \ luettavaa tietojen sarjallistamismuotoa. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4\
-  \ usein\u2026"
+description: "Kuinka: JavaScriptiss\xE4 YAMLin kanssa ty\xF6skentely tapahtuu tyypillisesti\
+  \ k\xE4ytt\xE4m\xE4ll\xE4 kolmannen osapuolen kirjastoa, koska kieli ei sis\xE4\
+  ll\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.970186-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, lyhenteen\xE4 ilmaisulle YAML Ain't Markup Language, on ihmisen luettavaa\
-  \ tietojen sarjallistamismuotoa."
+summary: "JavaScriptiss\xE4 YAMLin kanssa ty\xF6skentely tapahtuu tyypillisesti k\xE4\
+  ytt\xE4m\xE4ll\xE4 kolmannen osapuolen kirjastoa, koska kieli ei sis\xE4ll\xE4 sis\xE4\
+  \xE4nrakennettua j\xE4sent\xE4j\xE4\xE4 YAMLille."
 title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---

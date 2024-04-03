@@ -1,13 +1,13 @@
 ---
 date: 2024-01-26 00:59:04.557566-07:00
-description: "Le \"logging\", ou journalisation, consiste \xE0 conserver un enregistrement\
-  \ d\u2019\xE9v\xE9nements, de transactions ou d\u2019activit\xE9s qui se produisent\
-  \ dans un syst\xE8me au\u2026"
+description: "Comment faire : L'Arduino ne dispose pas d'une librairie de journalisation\
+  \ int\xE9gr\xE9e comme certains autres environnements, mais vous pouvez mettre en\
+  \ \u0153uvre\u2026"
 lastmod: '2024-03-13T22:44:58.119323-06:00'
 model: gpt-4-1106-preview
-summary: "Le \"logging\", ou journalisation, consiste \xE0 conserver un enregistrement\
-  \ d\u2019\xE9v\xE9nements, de transactions ou d\u2019activit\xE9s qui se produisent\
-  \ dans un syst\xE8me au fil du temps."
+summary: "L'Arduino ne dispose pas d'une librairie de journalisation int\xE9gr\xE9\
+  e comme certains autres environnements, mais vous pouvez mettre en \u0153uvre une\
+  \ journalisation de base vers la console S\xE9rie avec peu d'efforts."
 title: Journalisation
 weight: 17
 ---

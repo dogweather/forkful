@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:47.250482-07:00
-description: "Stringconcatenatie betekent het eind-aan-eind samenvoegen van strings\
-  \ - \"hallo\" + \"wereld\" wordt \"hallowereld\". Programmeurs doen dit om tekst\
-  \ samen te\u2026"
+description: 'Hoe te: Clojure maakt stringconcatenatie eenvoudig met de `str` functie.
+  Laten we er direct induiken.'
 lastmod: '2024-03-13T22:44:50.410632-06:00'
 model: gpt-4-0125-preview
-summary: Stringconcatenatie betekent het eind-aan-eind samenvoegen van strings - "hallo"
-  + "wereld" wordt "hallowereld".
+summary: Clojure maakt stringconcatenatie eenvoudig met de `str` functie.
 title: Samenvoegen van strings
 weight: 3
 ---

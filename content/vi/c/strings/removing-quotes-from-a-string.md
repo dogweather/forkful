@@ -2,16 +2,16 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:33.310842-07:00
-description: "Vi\u1EC7c lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c kh\u1ECFi m\u1ED9t chu\u1ED7\
-  i trong C bao g\u1ED3m vi\u1EC7c tr\xEDch xu\u1EA5t n\u1ED9i dung v\u0103n b\u1EA3\
-  n m\xE0 kh\xF4ng c\u1EA7n d\u1EA5u ngo\u1EB7c \u0111\u01A1n (' ') ho\u1EB7c d\u1EA5\
-  u ngo\u1EB7c k\xE9p (\" \"). Qu\xE1\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EC3 lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7\
+  c kh\u1ECFi m\u1ED9t chu\u1ED7i trong C, ch\xFAng ta duy\u1EC7t qua chu\u1ED7i,\
+  \ sao ch\xE9p c\xE1c k\xFD t\u1EF1 kh\xF4ng ph\u1EA3i l\xE0 d\u1EA5u ngo\u1EB7c\
+  \ v\xE0o m\u1ED9t chu\u1ED7i m\u1EDBi. Qu\xE1\u2026"
 lastmod: '2024-03-13T22:44:37.251343-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c kh\u1ECFi m\u1ED9t chu\u1ED7\
-  i trong C bao g\u1ED3m vi\u1EC7c tr\xEDch xu\u1EA5t n\u1ED9i dung v\u0103n b\u1EA3\
-  n m\xE0 kh\xF4ng c\u1EA7n d\u1EA5u ngo\u1EB7c \u0111\u01A1n (' ') ho\u1EB7c d\u1EA5\
-  u ngo\u1EB7c k\xE9p (\" \")."
+summary: "\u0110\u1EC3 lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c kh\u1ECFi m\u1ED9t chu\u1ED7\
+  i trong C, ch\xFAng ta duy\u1EC7t qua chu\u1ED7i, sao ch\xE9p c\xE1c k\xFD t\u1EF1\
+  \ kh\xF4ng ph\u1EA3i l\xE0 d\u1EA5u ngo\u1EB7c v\xE0o m\u1ED9t chu\u1ED7i m\u1EDB\
+  i."
 title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i"
 weight: 9
 ---

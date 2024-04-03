@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:25.156789-07:00
-description: "Reguliere expressies (regex) zijn patronen die gebruikt worden om tekencombinaties\
-  \ in strings te vinden. Programmeurs gebruiken ze voor het zoeken,\u2026"
+description: "Hoe te gebruiken: Elm heeft geen ingebouwde regex-mogelijkheden, maar\
+  \ je kunt het pakket `elm/regex` gebruiken. Hier is hoe je regex voor veelvoorkomende\u2026"
 lastmod: '2024-03-13T22:44:50.714590-06:00'
 model: gpt-4-0125-preview
-summary: Reguliere expressies (regex) zijn patronen die gebruikt worden om tekencombinaties
-  in strings te vinden.
+summary: Elm heeft geen ingebouwde regex-mogelijkheden, maar je kunt het pakket `elm/regex`
+  gebruiken.
 title: Reguliere expressies gebruiken
 weight: 11
 ---

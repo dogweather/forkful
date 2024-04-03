@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:10.989993-07:00
-description: "Hakemiston olemassaolon tarkistaminen Clojuressa k\xE4sitt\xE4\xE4 tiedostoj\xE4\
-  rjestelm\xE4n hakemiston l\xE4sn\xE4olon varmistamisen Clojure-sovelluksessasi.\
-  \ T\xE4m\xE4 teht\xE4v\xE4 on\u2026"
+description: "Kuinka: Clojurena, ollessaan JVM-kieli, voi hy\xF6dynt\xE4\xE4 Javan\
+  \ `java.io.File` -luokkaa t\xE4h\xE4n tarkoitukseen. Et tarvitse mit\xE4\xE4n kolmannen\
+  \ osapuolen kirjastoa\u2026"
 lastmod: '2024-03-13T22:44:56.198665-06:00'
 model: gpt-4-0125-preview
-summary: "Hakemiston olemassaolon tarkistaminen Clojuressa k\xE4sitt\xE4\xE4 tiedostoj\xE4\
-  rjestelm\xE4n hakemiston l\xE4sn\xE4olon varmistamisen Clojure-sovelluksessasi."
+summary: "Clojurena, ollessaan JVM-kieli, voi hy\xF6dynt\xE4\xE4 Javan `java.io.File`\
+  \ -luokkaa t\xE4h\xE4n tarkoitukseen."
 title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---

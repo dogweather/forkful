@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:27:40.803297-07:00
-description: "Att arbeta med XML inneb\xE4r att tolka, extrahera och manipulera data\
-  \ i Extensible Markup Language-formatet. Programmerare brottas med XML eftersom\
-  \ det \xE4r\u2026"
+description: "Hur man g\xF6r: H\xE4r \xE4r hur man tolkar XML i Bash. Verktyg? xmllint\
+  \ och xmlstarlet. Loopa igenom XML-element? Absolut. Exempel med utdataprovet."
 lastmod: '2024-03-13T22:44:38.106509-06:00'
 model: gpt-4-0125-preview
-summary: "Att arbeta med XML inneb\xE4r att tolka, extrahera och manipulera data i\
-  \ Extensible Markup Language-formatet."
+summary: "H\xE4r \xE4r hur man tolkar XML i Bash."
 title: Att arbeta med XML
 weight: 40
 ---

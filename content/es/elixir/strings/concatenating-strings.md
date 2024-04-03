@@ -1,12 +1,11 @@
 ---
 date: 2024-01-27 10:42:28.298638-07:00
-description: "Concatenar cadenas trata sobre unir dos o m\xE1s cadenas para formar\
-  \ un solo texto. Podr\xEDas necesitar fusionar texto para generar mensajes de usuario,\
-  \ crear\u2026"
+description: "C\xF3mo hacerlo: En Elixir, puedes concatenar cadenas de algunas maneras\
+  \ directas. Exploremos los m\xE9todos m\xE1s comunes: 1. Usando el operador `<>`,\
+  \ que es la\u2026"
 lastmod: '2024-03-13T22:44:58.693807-06:00'
 model: gpt-4-0125-preview
-summary: "Concatenar cadenas trata sobre unir dos o m\xE1s cadenas para formar un\
-  \ solo texto."
+summary: En Elixir, puedes concatenar cadenas de algunas maneras directas.
 title: "Concatenaci\xF3n de cadenas"
 weight: 3
 ---

@@ -1,13 +1,9 @@
 ---
 date: 2024-01-20 18:02:15.229784-07:00
-description: "Wysy\u0142anie zapytania HTTP z podstawow\u0105 autentykacj\u0105 to\
-  \ proces uwierzytelniania u\u017Cytkownika przez serwer przy u\u017Cyciu loginu\
-  \ i has\u0142a zakodowanych w base64.\u2026"
+description: "Jak to zrobi\u0107: ."
 lastmod: '2024-03-13T22:44:35.277105-06:00'
 model: gpt-4-1106-preview
-summary: "Wysy\u0142anie zapytania HTTP z podstawow\u0105 autentykacj\u0105 to proces\
-  \ uwierzytelniania u\u017Cytkownika przez serwer przy u\u017Cyciu loginu i has\u0142\
-  a zakodowanych w base64."
+summary: .
 title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
 weight: 45
 ---

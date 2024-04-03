@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 01:07:54.267713-07:00
-description: "Loggning inom programmering \xE4r som att h\xE5lla en dagbok f\xF6r\
-  \ din applikation. Det \xE4r den systematiska registreringen av h\xE4ndelser, meddelanden\
-  \ och\u2026"
+description: "Hur man g\xF6r: Ruby levereras med en inbyggd modul f\xF6r loggning,\
+  \ `Logger`, som \xE4r superenkel att anv\xE4nda. H\xE4r \xE4r ett snabbt exempel\
+  \ f\xF6r att komma ig\xE5ng."
 lastmod: '2024-03-13T22:44:38.437456-06:00'
 model: gpt-4-1106-preview
-summary: "Loggning inom programmering \xE4r som att h\xE5lla en dagbok f\xF6r din\
-  \ applikation."
+summary: "Ruby levereras med en inbyggd modul f\xF6r loggning, `Logger`, som \xE4\
+  r superenkel att anv\xE4nda."
 title: Loggning
 weight: 17
 ---

@@ -1,12 +1,10 @@
 ---
 date: 2024-01-25 20:50:17.131757-07:00
-description: "Removing quotes from a string is about stripping those pesky single\
-  \ (' ') or double (\" \") quotation marks off your text data. Programmers often\
-  \ do this to\u2026"
+description: 'How to: Fish has built-in magic for this kind of task. Use the `string`
+  function without breaking a sweat. Check out these spells.'
 lastmod: '2024-03-13T22:45:00.461260-06:00'
 model: gpt-4-1106-preview
-summary: Removing quotes from a string is about stripping those pesky single (' ')
-  or double (" ") quotation marks off your text data.
+summary: Fish has built-in magic for this kind of task.
 title: Removing quotes from a string
 weight: 9
 ---

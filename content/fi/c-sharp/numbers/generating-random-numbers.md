@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 20:33:02.273957-07:00
-description: "Satunnaislukujen tuottaminen C#-kielell\xE4 k\xE4sitt\xE4\xE4 ennalta-arvaamattomien\
-  \ numeeristen arvojen luomisen m\xE4\xE4ritellyll\xE4 v\xE4lill\xE4. Ohjelmoijat\
-  \ k\xE4ytt\xE4v\xE4t n\xE4it\xE4\u2026"
+description: "Kuinka: Yleisin tapa tuottaa satunnaislukuja C#-kielell\xE4 on k\xE4\
+  ytt\xE4m\xE4ll\xE4 `System.Random`-luokkaa. T\xE4ss\xE4 on yksinkertainen esimerkki\
+  \ sen k\xE4yt\xF6st\xE4."
 lastmod: '2024-03-13T22:44:56.569103-06:00'
 model: gpt-4-0125-preview
-summary: "Satunnaislukujen tuottaminen C#-kielell\xE4 k\xE4sitt\xE4\xE4 ennalta-arvaamattomien\
-  \ numeeristen arvojen luomisen m\xE4\xE4ritellyll\xE4 v\xE4lill\xE4."
+summary: "Yleisin tapa tuottaa satunnaislukuja C#-kielell\xE4 on k\xE4ytt\xE4m\xE4\
+  ll\xE4 `System.Random`-luokkaa."
 title: Satunnaislukujen generointi
 weight: 12
 ---

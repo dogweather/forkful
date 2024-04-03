@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:00:41.547277-07:00
-description: "Logging er prosessen med \xE5 registrere applikasjonshendelser og datautskrift\
-  \ under kj\xF8retid. Programmerere logger for \xE5 diagnostisere feil, overv\xE5\
-  ke\u2026"
+description: "Hvordan: I C# kan du bruke det innebygde `System.Diagnostics` navneomr\xE5\
+  det eller tredjepartsbiblioteker som NLog eller log4net. Her er et raskt eksempel\u2026"
 lastmod: '2024-03-13T22:44:40.802588-06:00'
 model: gpt-4-1106-preview
-summary: "Logging er prosessen med \xE5 registrere applikasjonshendelser og datautskrift\
-  \ under kj\xF8retid."
+summary: "I C# kan du bruke det innebygde `System.Diagnostics` navneomr\xE5det eller\
+  \ tredjepartsbiblioteker som NLog eller log4net."
 title: "Loggf\xF8ring"
 weight: 17
 ---

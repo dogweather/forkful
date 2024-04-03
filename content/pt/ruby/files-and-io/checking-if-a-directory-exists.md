@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:14.014719-07:00
-description: "Verificar se um diret\xF3rio existe em Ruby permite que programadores\
-  \ verifiquem a presen\xE7a de um diret\xF3rio antes de realizar opera\xE7\xF5es\
-  \ como ler arquivos ou\u2026"
+description: "Como fazer: A biblioteca padr\xE3o do Ruby oferece m\xE9todos diretos\
+  \ para verificar a exist\xEAncia de um diret\xF3rio. Veja como fazer isso com Ruby\
+  \ puro, sem\u2026"
 lastmod: '2024-03-13T22:44:47.109469-06:00'
 model: gpt-4-0125-preview
-summary: "Verificar se um diret\xF3rio existe em Ruby permite que programadores verifiquem\
-  \ a presen\xE7a de um diret\xF3rio antes de realizar opera\xE7\xF5es como ler arquivos\
-  \ ou criar novos diret\xF3rios."
+summary: "A biblioteca padr\xE3o do Ruby oferece m\xE9todos diretos para verificar\
+  \ a exist\xEAncia de um diret\xF3rio."
 title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---

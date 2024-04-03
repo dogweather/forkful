@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:15.897727-07:00
-description: "Sprawdzanie, czy katalog istnieje w Elixirze, polega na weryfikacji\
-  \ obecno\u015Bci katalogu pod okre\u015Blon\u0105 \u015Bcie\u017Ck\u0105 w systemie\
-  \ plik\xF3w. Programi\u015Bci robi\u0105 to, aby\u2026"
+description: "Jak to zrobi\u0107: Standardowa biblioteka Elixira oferuje prosty spos\xF3\
+  b na sprawdzenie, czy katalog istnieje, za po\u015Brednictwem modu\u0142u `File`.\
+  \ Oto jak mo\u017Cesz z\u2026"
 lastmod: '2024-03-13T22:44:35.058821-06:00'
 model: gpt-4-0125-preview
-summary: "Sprawdzanie, czy katalog istnieje w Elixirze, polega na weryfikacji obecno\u015B\
-  ci katalogu pod okre\u015Blon\u0105 \u015Bcie\u017Ck\u0105 w systemie plik\xF3w."
+summary: "Standardowa biblioteka Elixira oferuje prosty spos\xF3b na sprawdzenie,\
+  \ czy katalog istnieje, za po\u015Brednictwem modu\u0142u `File`."
 title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---

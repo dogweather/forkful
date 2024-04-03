@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:51:09.475999-07:00
-description: "Interpolar strings \xE9 o processo de misturar vari\xE1veis, express\xF5\
-  es e texto dentro de uma string. Programadores fazem isso para tornar o c\xF3digo\
-  \ mais\u2026"
+description: 'Como Fazer: .'
 lastmod: '2024-03-13T22:44:46.949157-06:00'
 model: gpt-4-1106-preview
-summary: "Interpolar strings \xE9 o processo de misturar vari\xE1veis, express\xF5\
-  es e texto dentro de uma string."
+summary: .
 title: Interpolando uma string
 weight: 8
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:59:44.554518-07:00
-description: "\xC5 sende en HTTP-foresp\xF8rsel betyr \xE5 be en webserver om data\
-  \ eller handlinger. Utviklere gj\xF8r dette for \xE5 hente, oppdatere eller slette\
-  \ data p\xE5 nettet."
+description: "Hvordan: Elm-koden under viser hvordan du sender en HTTP GET-foresp\xF8\
+  rsel og h\xE5ndterer svaret."
 lastmod: '2024-03-13T22:44:40.705719-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 sende en HTTP-foresp\xF8rsel betyr \xE5 be en webserver om data eller\
-  \ handlinger."
+summary: "Elm-koden under viser hvordan du sender en HTTP GET-foresp\xF8rsel og h\xE5\
+  ndterer svaret."
 title: "\xC5 sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---

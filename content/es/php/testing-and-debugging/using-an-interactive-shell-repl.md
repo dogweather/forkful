@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:16:20.307341-07:00
-description: "Una shell interactiva, o REPL (Bucle Leer-Evaluar-Imprimir), te permite\
-  \ escribir y ejecutar c\xF3digo PHP al momento. Es ideal para experimentar, depurar,\
-  \ o\u2026"
+description: "C\xF3mo: Lanza el REPL de PHP ejecutando `php -a` en tu terminal. Aqu\xED\
+  \ tienes un ejemplo de c\xF3mo funciona."
 lastmod: '2024-03-13T22:44:59.162470-06:00'
 model: gpt-4-0125-preview
-summary: "Una shell interactiva, o REPL (Bucle Leer-Evaluar-Imprimir), te permite\
-  \ escribir y ejecutar c\xF3digo PHP al momento."
+summary: Lanza el REPL de PHP ejecutando `php -a` en tu terminal.
 title: Usando una shell interactiva (REPL)
 weight: 34
 ---

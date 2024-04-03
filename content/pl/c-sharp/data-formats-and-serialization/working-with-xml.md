@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 04:28:58.945406-07:00
-description: "XML (eXtensible Markup Language) dotyczy strukturyzowania danych w czytelnym\
-  \ formacie. Programi\u015Bci \u017Congluj\u0105 XML-em do konfiguracji, wymiany\
-  \ danych mi\u0119dzy\u2026"
+description: "Jak to zrobi\u0107: ."
 lastmod: '2024-03-13T22:44:35.433572-06:00'
 model: gpt-4-0125-preview
-summary: XML (eXtensible Markup Language) dotyczy strukturyzowania danych w czytelnym
-  formacie.
+summary: .
 title: Praca z XML
 weight: 40
 ---

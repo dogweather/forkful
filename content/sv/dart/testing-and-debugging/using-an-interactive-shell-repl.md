@@ -2,14 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:53.398451-07:00
-description: "En interaktiv skal (REPL - Read-Evaluate-Print Loop) f\xF6r Dart g\xF6\
-  r det m\xF6jligt f\xF6r programmerare att dynamiskt skriva och exekvera Dart-kod\
-  \ rad f\xF6r rad\u2026"
+description: "Hur: Dart kommer inte med en inbyggd REPL. Dock kan du uppn\xE5 REPL-liknande\
+  \ funktionalitet genom att anv\xE4nda DartPad (online) eller genom att utnyttja\u2026"
 lastmod: '2024-03-13T22:44:37.613721-06:00'
 model: gpt-4-0125-preview
-summary: "En interaktiv skal (REPL - Read-Evaluate-Print Loop) f\xF6r Dart g\xF6r\
-  \ det m\xF6jligt f\xF6r programmerare att dynamiskt skriva och exekvera Dart-kod\
-  \ rad f\xF6r rad utan att beh\xF6va kompilera hela skript."
+summary: Dart kommer inte med en inbyggd REPL.
 title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---

@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:56:25.864519-07:00
-description: "Att l\xE4sa kommandoradsargument \xE4r att f\xE5nga upp de textbitar\
-  \ du anger n\xE4r du k\xF6r ett program i terminalen. Programmers g\xF6r det f\xF6\
-  r att l\xE5ta anv\xE4ndare\u2026"
+description: "Hur g\xF6r man: I Haskell, anv\xE4nd modulen `System.Environment` som\
+  \ ger dig funktioner f\xF6r att hantera kommandoradsargument. H\xE4r \xE4r ett enkelt\
+  \ exempel."
 lastmod: '2024-03-13T22:44:37.970234-06:00'
 model: gpt-4-1106-preview
-summary: "Att l\xE4sa kommandoradsargument \xE4r att f\xE5nga upp de textbitar du\
-  \ anger n\xE4r du k\xF6r ett program i terminalen."
+summary: "I Haskell, anv\xE4nd modulen `System.Environment` som ger dig funktioner\
+  \ f\xF6r att hantera kommandoradsargument."
 title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---

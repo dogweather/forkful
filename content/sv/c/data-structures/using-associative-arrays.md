@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:54.854464-07:00
-description: "Associativa arrayer, k\xE4nda i andra spr\xE5k som kartor eller ordb\xF6\
-  cker, \xE4r nyckel-v\xE4rde-par som anv\xE4nds f\xF6r effektiv datauppslagning och\
-  \ manipulation. Till\u2026"
+description: "Hur man g\xF6r: C har inte inbyggt st\xF6d f\xF6r associativa arrayer\
+  \ som vissa h\xF6gniv\xE5spr\xE5k, men du kan simulera dem med hj\xE4lp av strukturer\
+  \ och hashtabeller.\u2026"
 lastmod: '2024-03-13T22:44:38.374593-06:00'
 model: gpt-4-0125-preview
-summary: "Associativa arrayer, k\xE4nda i andra spr\xE5k som kartor eller ordb\xF6\
-  cker, \xE4r nyckel-v\xE4rde-par som anv\xE4nds f\xF6r effektiv datauppslagning och\
-  \ manipulation."
+summary: "C har inte inbyggt st\xF6d f\xF6r associativa arrayer som vissa h\xF6gniv\xE5\
+  spr\xE5k, men du kan simulera dem med hj\xE4lp av strukturer och hashtabeller."
 title: "Anv\xE4nda associativa arrayer"
 weight: 15
 ---

@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:33.473104-07:00
-description: "JSON, que significa Notaci\xF3n de Objetos JavaScript, es un formato\
-  \ ligero de intercambio de datos, lo que lo hace perfecto para almacenamiento de\
-  \ datos o\u2026"
+description: "C\xF3mo: Para trabajar con JSON en Arduino, la biblioteca `ArduinoJson`\
+  \ es una opci\xF3n popular debido a su facilidad de uso y eficiencia. Permite parsear\u2026"
 lastmod: '2024-03-13T22:44:59.355676-06:00'
 model: gpt-4-0125-preview
-summary: "JSON, que significa Notaci\xF3n de Objetos JavaScript, es un formato ligero\
-  \ de intercambio de datos, lo que lo hace perfecto para almacenamiento de datos\
-  \ o archivos de configuraci\xF3n en proyectos Arduino."
+summary: "Para trabajar con JSON en Arduino, la biblioteca `ArduinoJson` es una opci\xF3\
+  n popular debido a su facilidad de uso y eficiencia."
 title: Trabajando con JSON
 weight: 38
 ---

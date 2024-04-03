@@ -1,12 +1,11 @@
 ---
 date: 2024-01-27 20:34:55.375036-07:00
-description: "Generering av tilfeldige tall i programmering handler om \xE5 skape\
-  \ tall som mangler ethvert forutsigbart m\xF8nster. Programmerere gj\xF8r dette\
-  \ av ulike grunner,\u2026"
+description: "Hvordan: Kotlin gir en enkel m\xE5te \xE5 generere tilfeldige tall gjennom\
+  \ sitt standardbibliotek. Slik kan du generere forskjellige typer tilfeldige verdier:\
+  \ #."
 lastmod: '2024-03-13T22:44:40.746152-06:00'
 model: gpt-4-0125-preview
-summary: "Generering av tilfeldige tall i programmering handler om \xE5 skape tall\
-  \ som mangler ethvert forutsigbart m\xF8nster."
+summary: "Kotlin gir en enkel m\xE5te \xE5 generere tilfeldige tall gjennom sitt standardbibliotek."
 title: Generering av tilfeldige tall
 weight: 12
 ---

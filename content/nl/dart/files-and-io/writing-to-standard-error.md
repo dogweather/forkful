@@ -2,13 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:58:02.675631-07:00
-description: "Schrijven naar standaardfout (stderr) in Dart gaat over het verzenden\
-  \ van foutmeldingen en diagnostische gegevens naar een aparte stroom, los van de\u2026"
+description: 'Hoe: In Dart is schrijven naar stderr eenvoudig met behulp van het `stderr`-object
+  dat beschikbaar is in `dart:io`. Hier is een basisvoorbeeld.'
 lastmod: '2024-03-13T22:44:50.522995-06:00'
 model: gpt-4-0125-preview
-summary: Schrijven naar standaardfout (stderr) in Dart gaat over het verzenden van
-  foutmeldingen en diagnostische gegevens naar een aparte stroom, los van de standaarduitvoer
-  (stdout).
+summary: In Dart is schrijven naar stderr eenvoudig met behulp van het `stderr`-object
+  dat beschikbaar is in `dart:io`.
 title: Schrijven naar standaardfout
 weight: 25
 ---

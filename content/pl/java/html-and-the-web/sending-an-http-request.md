@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:59:58.453227-07:00
-description: "Wysy\u0142anie \u017C\u0105dania HTTP to komunikacja z serwerem w sieci;\
-  \ mo\u017Cna prosi\u0107 o dane lub wysy\u0142a\u0107 je. Programi\u015Bci to robi\u0105\
-  , by pobiera\u0107 informacje, autoryzowa\u0107\u2026"
+description: "Jak to zrobi\u0107: Wysy\u0142anie prostej \u017C\u0105dania GET w Javie."
 lastmod: '2024-03-13T22:44:35.274252-06:00'
 model: gpt-4-1106-preview
-summary: "Wysy\u0142anie \u017C\u0105dania HTTP to komunikacja z serwerem w sieci;\
-  \ mo\u017Cna prosi\u0107 o dane lub wysy\u0142a\u0107 je."
+summary: "Wysy\u0142anie prostej \u017C\u0105dania GET w Javie."
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---

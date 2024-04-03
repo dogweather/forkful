@@ -2,16 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:23.678470-07:00
-description: "M\u1ED9t V\xF2ng L\u1EB7p \u0110\u1ECDc-\u0110\xE1nh Gi\xE1-In (REPL)\
-  \ l\xE0 m\xF4i tr\u01B0\u1EDDng l\u1EADp tr\xECnh nh\u1EADn c\xE1c m\xE3 nh\u1EAD\
-  p t\u1EEB ng\u01B0\u1EDDi d\xF9ng, th\u1EF1c thi ch\xFAng v\xE0 tr\u1EA3 k\u1EBF\
-  t qu\u1EA3 v\u1EC1 cho ng\u01B0\u1EDDi d\xF9ng. L\u1EADp tr\xECnh\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: TypeScript kh\xF4ng \u0111i k\xE8m v\u1EDB\
+  i REPL ri\xEAng c\u1EE7a m\xECnh. H\xE3y s\u1EED d\u1EE5ng `ts-node`, m\u1ED9t m\xF4\
+  i tr\u01B0\u1EDDng th\u1EF1c thi TypeScript cho Node.js bao g\u1ED3m c\u1EA3 REPL.\u2026"
 lastmod: '2024-03-13T22:44:36.321174-06:00'
 model: gpt-4-0125-preview
-summary: "M\u1ED9t V\xF2ng L\u1EB7p \u0110\u1ECDc-\u0110\xE1nh Gi\xE1-In (REPL) l\xE0\
-  \ m\xF4i tr\u01B0\u1EDDng l\u1EADp tr\xECnh nh\u1EADn c\xE1c m\xE3 nh\u1EADp t\u1EEB\
-  \ ng\u01B0\u1EDDi d\xF9ng, th\u1EF1c thi ch\xFAng v\xE0 tr\u1EA3 k\u1EBFt qu\u1EA3\
-  \ v\u1EC1 cho ng\u01B0\u1EDDi d\xF9ng."
+summary: "TypeScript kh\xF4ng \u0111i k\xE8m v\u1EDBi REPL ri\xEAng c\u1EE7a m\xEC\
+  nh."
 title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 weight: 34
 ---

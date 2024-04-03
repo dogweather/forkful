@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 03:37:49.058970-07:00
-description: "Anf\xFChrungszeichen aus einem String zu entfernen bedeutet, diese l\xE4\
-  stigen doppelten oder einzelnen Zeichen, die unseren Text umgeben (' oder \"),\u2026"
+description: "Wie geht das: Hier ist eine unkomplizierte Methode, um in C++ diese\
+  \ Anf\xFChrungszeichen loszuwerden."
 lastmod: '2024-03-13T22:44:54.172977-06:00'
 model: gpt-4-0125-preview
-summary: "Anf\xFChrungszeichen aus einem String zu entfernen bedeutet, diese l\xE4\
-  stigen doppelten oder einzelnen Zeichen, die unseren Text umgeben (' oder \"), wegzunehmen."
+summary: "Hier ist eine unkomplizierte Methode, um in C++ diese Anf\xFChrungszeichen\
+  \ loszuwerden."
 title: "Anf\xFChrungszeichen aus einem String entfernen"
 weight: 9
 ---

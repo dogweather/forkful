@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:31:56.683093-07:00
-description: "Praca z XML w Haskellu obejmuje parsowanie, manipulowanie i generowanie\
-  \ struktur XML. Programi\u015Bci obs\u0142uguj\u0105 XML, aby interakcjonowa\u0107\
-  \ z licznymi\u2026"
+description: "Jak to zrobi\u0107: Haskell oferuje takie biblioteki jak `xml-conduit`\
+  \ do obs\u0142ugi XML. Poni\u017Cszy przyk\u0142ad demonstruje parsowanie ci\u0105\
+  gu XML i kwerendowanie\u2026"
 lastmod: '2024-03-13T22:44:35.478236-06:00'
 model: gpt-4-0125-preview
-summary: Praca z XML w Haskellu obejmuje parsowanie, manipulowanie i generowanie struktur
-  XML.
+summary: "Haskell oferuje takie biblioteki jak `xml-conduit` do obs\u0142ugi XML."
 title: Praca z XML
 weight: 40
 ---

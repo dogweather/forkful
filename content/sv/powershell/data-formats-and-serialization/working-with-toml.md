@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 04:25:04.496779-07:00
-description: "TOML, en f\xF6rkortning f\xF6r Toms Uppenbara, Minimala Spr\xE5k, \xE4\
-  r ett data-serialiseringsformat som \xE4r l\xE4tt att l\xE4sa tack vare dess klara\
-  \ semantik.\u2026"
+description: "Hur man g\xF6r: I PowerShell finns det inget inbyggt cmdlet f\xF6r att\
+  \ tolka TOML. Du skulle typiskt anv\xE4nda en modul eller konvertera TOML till JSON\
+  \ med ett\u2026"
 lastmod: '2024-03-13T22:44:38.149397-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, en f\xF6rkortning f\xF6r Toms Uppenbara, Minimala Spr\xE5k, \xE4r\
-  \ ett data-serialiseringsformat som \xE4r l\xE4tt att l\xE4sa tack vare dess klara\
-  \ semantik."
+summary: "I PowerShell finns det inget inbyggt cmdlet f\xF6r att tolka TOML."
 title: Att arbeta med TOML
 weight: 39
 ---

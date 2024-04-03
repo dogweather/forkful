@@ -1,12 +1,13 @@
 ---
 date: 2024-01-26 01:09:23.979418-07:00
-description: "Loggning \xE4r som att f\xF6ra en journal f\xF6r din applikation; det\
-  \ \xE4r praxis att registrera h\xE4ndelser, fel och annan relevant data under k\xF6\
-  rning. Utvecklare\u2026"
+description: "Hur man g\xF6r: L\xE5t oss st\xE4lla in ett grundl\xE4ggande loggningscenario\
+  \ i Rust med hj\xE4lp av `log`-craten, som tillhandah\xE5ller en loggningsfasad,\
+  \ och\u2026"
 lastmod: '2024-03-13T22:44:37.705010-06:00'
 model: gpt-4-1106-preview
-summary: "Loggning \xE4r som att f\xF6ra en journal f\xF6r din applikation; det \xE4\
-  r praxis att registrera h\xE4ndelser, fel och annan relevant data under k\xF6rning."
+summary: "L\xE5t oss st\xE4lla in ett grundl\xE4ggande loggningscenario i Rust med\
+  \ hj\xE4lp av `log`-craten, som tillhandah\xE5ller en loggningsfasad, och `env_logger`,\
+  \ en loggningsimplementering f\xF6r `log`-craten."
 title: Loggning
 weight: 17
 ---

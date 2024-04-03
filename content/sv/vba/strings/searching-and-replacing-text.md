@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:21.402020-07:00
-description: "Att s\xF6ka och ers\xE4tta text i Visual Basic for Applications (VBA)\
-  \ \xE4r avg\xF6rande f\xF6r att programmeringsm\xE4ssigt redigera dokument, kalkylblad\
-  \ och databaser.\u2026"
+description: "Hur man g\xF6r: I VBA kan s\xF6kning och ers\xE4ttning av text uppn\xE5\
+  s med hj\xE4lp av `Replace`-funktionen eller genom specifika objektmodeller i applikationer\
+  \ som\u2026"
 lastmod: '2024-03-13T22:44:37.726920-06:00'
 model: gpt-4-0125-preview
-summary: "Att s\xF6ka och ers\xE4tta text i Visual Basic for Applications (VBA) \xE4\
-  r avg\xF6rande f\xF6r att programmeringsm\xE4ssigt redigera dokument, kalkylblad\
-  \ och databaser."
+summary: "I VBA kan s\xF6kning och ers\xE4ttning av text uppn\xE5s med hj\xE4lp av\
+  \ `Replace`-funktionen eller genom specifika objektmodeller i applikationer som\
+  \ Excel eller Word."
 title: "S\xF6ka och ers\xE4tta text"
 weight: 10
 ---

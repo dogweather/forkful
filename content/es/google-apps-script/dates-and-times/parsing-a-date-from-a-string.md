@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:27.099416-07:00
-description: "Analizar una fecha de una cadena implica convertir texto que representa\
-  \ una fecha en un objeto de fecha, lo que permite a los programadores realizar\u2026"
+description: "C\xF3mo hacerlo: En Google Apps Script, que se basa en JavaScript, tienes\
+  \ varios enfoques para analizar una fecha de una cadena. A continuaci\xF3n hay ejemplos\u2026"
 lastmod: '2024-03-13T22:44:58.545938-06:00'
 model: gpt-4-0125-preview
-summary: "Analizar una fecha de una cadena implica convertir texto que representa\
-  \ una fecha en un objeto de fecha, lo que permite a los programadores realizar operaciones\
-  \ relacionadas con fechas, como comparaciones, aritm\xE9tica y formateo."
+summary: En Google Apps Script, que se basa en JavaScript, tienes varios enfoques
+  para analizar una fecha de una cadena.
 title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---

@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:48:51.167761-07:00
-description: "Stringin pituuden l\xF6yt\xE4minen tarkoittaa merkkijonossa olevien\
-  \ merkkien lukum\xE4\xE4r\xE4n selvitt\xE4mist\xE4. Ohjelmoijat k\xE4ytt\xE4v\xE4\
-  t t\xE4t\xE4 esimerkiksi tietojen\u2026"
+description: "How to: - N\xE4in teet: ."
 lastmod: '2024-03-13T22:44:57.075862-06:00'
 model: gpt-4-1106-preview
-summary: "Stringin pituuden l\xF6yt\xE4minen tarkoittaa merkkijonossa olevien merkkien\
-  \ lukum\xE4\xE4r\xE4n selvitt\xE4mist\xE4."
+summary: .
 title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---

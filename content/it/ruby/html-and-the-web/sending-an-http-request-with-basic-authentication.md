@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 18:02:20.178057-07:00
-description: "Inviare una richiesta HTTP con autenticazione di base significa fornire\
-  \ username e password per accedere a risorse protette. Si fa questo per interagire\u2026"
+description: "How to: Per fare una richiesta HTTP con autenticazione di base in Ruby,\
+  \ possiamo usare la gemma 'net/http'. Nota che dovresti usare le tue credenziali\u2026"
 lastmod: '2024-03-13T22:44:44.051243-06:00'
 model: gpt-4-1106-preview
-summary: Inviare una richiesta HTTP con autenticazione di base significa fornire username
-  e password per accedere a risorse protette.
+summary: Per fare una richiesta HTTP con autenticazione di base in Ruby, possiamo
+  usare la gemma 'net/http'.
 title: Inviare una richiesta http con autenticazione di base
 weight: 45
 ---

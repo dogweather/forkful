@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:39.406062-07:00
-description: "Het schrijven van tests controleert of je code doet wat het moet doen,\
-  \ en vangt bugs vroeg op. Programmeurs testen om tijd, hoofdpijn te besparen en\
-  \ om\u2026"
+description: 'Hoe: Laten we een eenvoudige C++ functie en een test met het Catch2
+  framework gebruiken.'
 lastmod: '2024-03-13T22:44:51.116442-06:00'
 model: gpt-4-0125-preview
-summary: Het schrijven van tests controleert of je code doet wat het moet doen, en
-  vangt bugs vroeg op.
+summary: Laten we een eenvoudige C++ functie en een test met het Catch2 framework
+  gebruiken.
 title: Tests Schrijven
 weight: 36
 ---

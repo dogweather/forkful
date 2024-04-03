@@ -1,11 +1,10 @@
 ---
 date: 2024-01-19
-description: "Regular expressions, or regex, is a powerful pattern matching and searching\
-  \ tool in programming. Programmers use regex for tasks like validating user\u2026"
+description: 'How to: Let''s jump into TypeScript and see how regex is used for common
+  tasks.'
 lastmod: '2024-03-13T22:44:59.849444-06:00'
 model: unknown
-summary: Regular expressions, or regex, is a powerful pattern matching and searching
-  tool in programming.
+summary: Let's jump into TypeScript and see how regex is used for common tasks.
 title: Using regular expressions
 weight: 11
 ---

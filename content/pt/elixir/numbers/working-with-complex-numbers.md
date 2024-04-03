@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:39:14.856685-07:00
-description: "N\xFAmeros complexos t\xEAm uma parte real e uma parte imagin\xE1ria\
-  \ (como `3 + 4i`). Eles s\xE3o usados em engenharia, f\xEDsica e certos problemas\
-  \ de computa\xE7\xE3o.\u2026"
+description: "Como fazer: O Elixir n\xE3o possui n\xFAmeros complexos incorporados,\
+  \ ent\xE3o criamos os nossos ou usamos uma biblioteca, como a `ComplexNum`. Aqui\
+  \ est\xE1 um\u2026"
 lastmod: '2024-03-13T22:44:46.232281-06:00'
 model: gpt-4-0125-preview
-summary: "N\xFAmeros complexos t\xEAm uma parte real e uma parte imagin\xE1ria (como\
-  \ `3 + 4i`)."
+summary: "O Elixir n\xE3o possui n\xFAmeros complexos incorporados, ent\xE3o criamos\
+  \ os nossos ou usamos uma biblioteca, como a `ComplexNum`."
 title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---

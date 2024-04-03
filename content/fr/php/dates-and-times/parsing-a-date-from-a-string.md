@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:16.281463-07:00
-description: "Analyser une date \xE0 partir d'une cha\xEEne en PHP implique de convertir\
-  \ un texte repr\xE9sentant une date et/ou une heure en un objet `DateTime` de PHP\
-  \ ou en\u2026"
+description: "Comment faire : La classe int\xE9gr\xE9e `DateTime` de PHP offre un\
+  \ ensemble puissant de fonctions pour analyser et travailler avec les dates. Vous\
+  \ pouvez cr\xE9er\u2026"
 lastmod: '2024-03-13T22:44:57.889081-06:00'
 model: gpt-4-0125-preview
-summary: "Analyser une date \xE0 partir d'une cha\xEEne en PHP implique de convertir\
-  \ un texte repr\xE9sentant une date et/ou une heure en un objet `DateTime` de PHP\
-  \ ou en d'autres formats de date/heure."
+summary: "La classe int\xE9gr\xE9e `DateTime` de PHP offre un ensemble puissant de\
+  \ fonctions pour analyser et travailler avec les dates."
 title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
 weight: 30
 ---

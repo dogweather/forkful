@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:01.101883-07:00
-description: "YAML, acronimo di \"YAML Ain't Markup Language\" (YAML non \xE8 un linguaggio\
-  \ di marcatura), \xE8 uno standard di serializzazione di dati leggibile dall'uomo\
-  \ che\u2026"
+description: "Come fare: Lua non ha un supporto integrato per YAML, ma puoi lavorare\
+  \ con file YAML utilizzando librerie di terze parti come `lyaml`. Questa libreria\u2026"
 lastmod: '2024-03-13T22:44:43.577274-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, acronimo di \"YAML Ain't Markup Language\" (YAML non \xE8 un linguaggio\
-  \ di marcatura), \xE8 uno standard di serializzazione di dati leggibile dall'uomo\
-  \ che viene spesso utilizzato per file di configurazione e scambio di dati tra linguaggi."
+summary: Lua non ha un supporto integrato per YAML, ma puoi lavorare con file YAML
+  utilizzando librerie di terze parti come `lyaml`.
 title: Lavorare con YAML
 weight: 41
 ---

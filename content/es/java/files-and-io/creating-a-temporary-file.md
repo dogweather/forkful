@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:40:37.889818-07:00
-description: "Crear un archivo temporal significa generar un fichero que solo se usa\
-  \ durante la ejecuci\xF3n de un programa. Los programadores lo hacen para manejar\
-  \ datos\u2026"
+description: "C\xF3mo hacerlo: Crear un archivo temporal en Java es sencillo gracias\
+  \ a la clase `Files`. Aqu\xED tienes un ejemplo."
 lastmod: '2024-03-13T22:44:58.956629-06:00'
 model: gpt-4-1106-preview
-summary: "Crear un archivo temporal significa generar un fichero que solo se usa durante\
-  \ la ejecuci\xF3n de un programa."
+summary: Crear un archivo temporal en Java es sencillo gracias a la clase `Files`.
 title: Creando un archivo temporal
 weight: 21
 ---

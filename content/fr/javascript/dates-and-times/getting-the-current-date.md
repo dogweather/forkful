@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:47.977989-07:00
-description: "Obtenir la date courante en JavaScript est une t\xE2che fondamentale,\
-  \ qui implique de r\xE9cup\xE9rer et \xE9ventuellement de manipuler la date et l'heure\
-  \ du jour.\u2026"
+description: "Comment faire : En JavaScript de base, l'objet `Date` est utilis\xE9\
+  \ pour travailler avec les dates et les heures. Voici comment vous pouvez obtenir\
+  \ la date\u2026"
 lastmod: '2024-03-13T22:44:58.287078-06:00'
 model: gpt-4-0125-preview
-summary: "Obtenir la date courante en JavaScript est une t\xE2che fondamentale, qui\
-  \ implique de r\xE9cup\xE9rer et \xE9ventuellement de manipuler la date et l'heure\
-  \ du jour."
+summary: "En JavaScript de base, l'objet `Date` est utilis\xE9 pour travailler avec\
+  \ les dates et les heures."
 title: Obtenir la date actuelle
 weight: 29
 ---

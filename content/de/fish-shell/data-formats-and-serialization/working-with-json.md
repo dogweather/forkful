@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:38.762009-07:00
-description: "Die Arbeit mit JSON in der Fish Shell umfasst das Parsen und Generieren\
-  \ von JSON-Daten, eine g\xE4ngige Aufgabe f\xFCr die Konfiguration von Anwendungen,\
-  \ API-\u2026"
+description: "Wie geht das: Die Fish Shell selbst verf\xFCgt nicht \xFCber integrierte\
+  \ Hilfsprogramme zum Parsen und Generieren von JSON. Sie integriert sich jedoch\
+  \ nahtlos\u2026"
 lastmod: '2024-03-13T22:44:54.330074-06:00'
 model: gpt-4-0125-preview
-summary: "Die Arbeit mit JSON in der Fish Shell umfasst das Parsen und Generieren\
-  \ von JSON-Daten, eine g\xE4ngige Aufgabe f\xFCr die Konfiguration von Anwendungen,\
-  \ API-Interaktionen und die Optimierung von Befehlszeilen-Workflows."
+summary: "Die Fish Shell selbst verf\xFCgt nicht \xFCber integrierte Hilfsprogramme\
+  \ zum Parsen und Generieren von JSON."
 title: Arbeiten mit JSON
 weight: 38
 ---

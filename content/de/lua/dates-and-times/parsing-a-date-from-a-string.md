@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:43.838234-07:00
-description: "Das Parsen eines Datums aus einem String beinhaltet die Umwandlung von\
-  \ textuellen Darstellungen von Daten und Zeiten in ein Format, das innerhalb eines\u2026"
+description: "Wie: Lua bietet keine eingebaute Unterst\xFCtzung f\xFCr die Manipulation\
+  \ von Datum und Zeit \xFCber die begrenzte Funktionalit\xE4t der Funktionen `os.date`\
+  \ und\u2026"
 lastmod: '2024-03-13T22:44:54.024420-06:00'
 model: gpt-4-0125-preview
-summary: Das Parsen eines Datums aus einem String beinhaltet die Umwandlung von textuellen
-  Darstellungen von Daten und Zeiten in ein Format, das innerhalb eines Lua-Programms
-  leicht manipuliert, gespeichert oder verglichen werden kann.
+summary: "Lua bietet keine eingebaute Unterst\xFCtzung f\xFCr die Manipulation von\
+  \ Datum und Zeit \xFCber die begrenzte Funktionalit\xE4t der Funktionen `os.date`\
+  \ und `os.time` hinaus."
 title: Einen Datum aus einem String analysieren
 weight: 30
 ---

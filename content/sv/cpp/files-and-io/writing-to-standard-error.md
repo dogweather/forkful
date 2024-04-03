@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:40.595452-07:00
-description: "Att skriva till standardfelet (`stderr`) i C++ inneb\xE4r att skicka\
-  \ ut felmeddelanden eller diagnostik som \xE4r separata fr\xE5n huvudprogrammets\
-  \ utdata.\u2026"
+description: "Hur man g\xF6r: I C++ kan skrivning till standardfel uppn\xE5s genom\
+  \ att anv\xE4nda str\xF6mmen `cerr`, som \xE4r en del av standardbiblioteket. H\xE4\
+  r \xE4r ett grundl\xE4ggande\u2026"
 lastmod: '2024-03-13T22:44:38.225752-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva till standardfelet (`stderr`) i C++ inneb\xE4r att skicka ut\
-  \ felmeddelanden eller diagnostik som \xE4r separata fr\xE5n huvudprogrammets utdata."
+summary: "I C++ kan skrivning till standardfel uppn\xE5s genom att anv\xE4nda str\xF6\
+  mmen `cerr`, som \xE4r en del av standardbiblioteket."
 title: Skriva till standardfel
 weight: 25
 ---

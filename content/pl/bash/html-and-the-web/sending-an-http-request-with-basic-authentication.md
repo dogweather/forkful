@@ -1,13 +1,12 @@
 ---
 date: 2024-01-20 18:01:12.472873-07:00
-description: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnieniem\
-  \ to proces, gdzie przekazujesz swoje dane logowania w formie nag\u0142\xF3wka HTTP,\
-  \ aby uzyska\u0107 dost\u0119p do\u2026"
+description: "Jak to zrobi\u0107: B\u0119dziesz potrzebowa\u0107 `curl`, narz\u0119\
+  dzia dost\u0119pnego w wi\u0119kszo\u015Bci dystrybucji Linuxa. Oto jak to zrobi\u0107\
+  ."
 lastmod: '2024-03-13T22:44:35.584705-06:00'
 model: gpt-4-1106-preview
-summary: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnieniem to\
-  \ proces, gdzie przekazujesz swoje dane logowania w formie nag\u0142\xF3wka HTTP,\
-  \ aby uzyska\u0107 dost\u0119p do zabezpieczonych zasob\xF3w."
+summary: "B\u0119dziesz potrzebowa\u0107 `curl`, narz\u0119dzia dost\u0119pnego w\
+  \ wi\u0119kszo\u015Bci dystrybucji Linuxa."
 title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
 weight: 45
 ---

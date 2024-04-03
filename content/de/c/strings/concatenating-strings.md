@@ -2,12 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:50.789132-07:00
-description: "Das Verketten von Strings in C bezieht sich auf das Zusammenf\xFChren\
-  \ von zwei oder mehr Strings hintereinander, um einen neuen String zu bilden.\u2026"
+description: "Wie: In C sind Strings Arrays von Zeichen, die mit einem Nullzeichen\
+  \ (`\\0`) enden. Im Gegensatz zu h\xF6heren Programmiersprachen bietet C keine integrierte\u2026"
 lastmod: '2024-03-13T22:44:54.343534-06:00'
 model: gpt-4-0125-preview
-summary: "Das Verketten von Strings in C bezieht sich auf das Zusammenf\xFChren von\
-  \ zwei oder mehr Strings hintereinander, um einen neuen String zu bilden."
+summary: In C sind Strings Arrays von Zeichen, die mit einem Nullzeichen (`\0`) enden.
 title: Strings verketten
 weight: 3
 ---

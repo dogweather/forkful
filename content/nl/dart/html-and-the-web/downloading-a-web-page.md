@@ -2,12 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:34.878241-07:00
-description: "Een webpagina downloaden houdt in dat de inhoud van een webpagina via\
-  \ de URL wordt opgehaald voor verwerking of opslag. Programmeurs doen dit om\u2026"
+description: "Hoe te: Dart biedt het `http`-pakket, een populaire externe bibliotheek\
+  \ voor het maken van HTTP-verzoeken. Hier is een basisvoorbeeld van hoe je het kunt\u2026"
 lastmod: '2024-03-13T22:44:50.503550-06:00'
 model: gpt-4-0125-preview
-summary: Een webpagina downloaden houdt in dat de inhoud van een webpagina via de
-  URL wordt opgehaald voor verwerking of opslag.
+summary: Dart biedt het `http`-pakket, een populaire externe bibliotheek voor het
+  maken van HTTP-verzoeken.
 title: Een webpagina downloaden
 weight: 42
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:57.036989-07:00
-description: "Capitalizar una cadena en C implica convertir el primer car\xE1cter\
-  \ de cada palabra en una cadena dada a may\xFAsculas si es una letra min\xFAscula.\
-  \ Los\u2026"
+description: "C\xF3mo hacerlo: Capitalizar una cadena en C requiere un conocimiento\
+  \ b\xE1sico de manipulaci\xF3n de caracteres y recorrido de cadenas. Dado que C\
+  \ no tiene una\u2026"
 lastmod: '2024-03-13T22:44:59.526621-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizar una cadena en C implica convertir el primer car\xE1cter de cada\
-  \ palabra en una cadena dada a may\xFAsculas si es una letra min\xFAscula."
+summary: "Capitalizar una cadena en C requiere un conocimiento b\xE1sico de manipulaci\xF3\
+  n de caracteres y recorrido de cadenas."
 title: Capitalizando una cadena de caracteres
 weight: 2
 ---

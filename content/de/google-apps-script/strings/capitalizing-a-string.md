@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:48:43.615107-07:00
-description: "Das Gro\xDFschreiben eines Strings beinhaltet die Modifizierung der\
-  \ Eingabe, so dass der erste Buchstabe gro\xDFgeschrieben wird, w\xE4hrend der Rest\
-  \ klein bleibt.\u2026"
+description: "Wie: Google Apps Script, basierend auf JavaScript, erm\xF6glicht mehrere\
+  \ Methoden, um einen String zu gro\xDFzuschreiben, allerdings ohne eine eingebaute\u2026"
 lastmod: '2024-03-13T22:44:53.315409-06:00'
 model: gpt-4-0125-preview
-summary: "Das Gro\xDFschreiben eines Strings beinhaltet die Modifizierung der Eingabe,\
-  \ so dass der erste Buchstabe gro\xDFgeschrieben wird, w\xE4hrend der Rest klein\
-  \ bleibt."
+summary: "Google Apps Script, basierend auf JavaScript, erm\xF6glicht mehrere Methoden,\
+  \ um einen String zu gro\xDFzuschreiben, allerdings ohne eine eingebaute Funktion."
 title: "Einen String gro\xDFschreiben"
 weight: 2
 ---

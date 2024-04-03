@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:56.190939-07:00
-description: "Czytanie pliku tekstowego w Visual Basic for Applications (VBA) polega\
-  \ na programowym dost\u0119pie i ekstrakcji zawarto\u015Bci pliku tekstowego z poziomu\u2026"
+description: "Jak to zrobi\u0107: Najprostszym sposobem na odczyt pliku tekstowego\
+  \ w VBA jest u\u017Cycie instrukcji `Open` w po\u0142\u0105czeniu z funkcjami `Input`\
+  \ lub `Line Input`. Oto\u2026"
 lastmod: '2024-03-13T22:44:35.250996-06:00'
 model: gpt-4-0125-preview
-summary: "Czytanie pliku tekstowego w Visual Basic for Applications (VBA) polega na\
-  \ programowym dost\u0119pie i ekstrakcji zawarto\u015Bci pliku tekstowego z poziomu\
-  \ aplikacji Office."
+summary: "Najprostszym sposobem na odczyt pliku tekstowego w VBA jest u\u017Cycie\
+  \ instrukcji `Open` w po\u0142\u0105czeniu z funkcjami `Input` lub `Line Input`."
 title: Czytanie pliku tekstowego
 weight: 22
 ---

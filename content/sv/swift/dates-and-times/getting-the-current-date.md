@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:01.185838-07:00
-description: "Att f\xE5 det aktuella datumet i Swift inneb\xE4r att anv\xE4nda `Date`-klassen\
-  \ f\xF6r att f\xE5 tillg\xE5ng till datum och tid n\xE4r appen k\xF6rs. Programmerare\
-  \ beh\xF6ver h\xE4mta\u2026"
+description: "Hur man g\xF6r: Swifts `Foundation`-ramverk tillhandah\xE5ller `Date`-klassen,\
+  \ vilket g\xF6r det enkelt att f\xE5 det aktuella datumet och tiden. H\xE4r \xE4\
+  r ett\u2026"
 lastmod: '2024-03-13T22:44:38.261382-06:00'
 model: gpt-4-0125-preview
-summary: "Att f\xE5 det aktuella datumet i Swift inneb\xE4r att anv\xE4nda `Date`-klassen\
-  \ f\xF6r att f\xE5 tillg\xE5ng till datum och tid n\xE4r appen k\xF6rs."
+summary: "Swifts `Foundation`-ramverk tillhandah\xE5ller `Date`-klassen, vilket g\xF6\
+  r det enkelt att f\xE5 det aktuella datumet och tiden."
 title: "F\xE5 det aktuella datumet"
 weight: 29
 ---

@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:32.209352-07:00
-description: "Een HTTP-verzoek verzenden is als een webserver vragen om iets te doen\
-  \ of je iets te geven. Programmeurs doen dit om te interacteren met webservices,\u2026"
+description: 'Hoe: Kotlin maakt HTTP-verzoeken eenvoudig. Hier is een basisvoorbeeld
+  met `khttp`, een gebruiksvriendelijke bibliotheek.'
 lastmod: '2024-03-13T22:44:50.764488-06:00'
 model: gpt-4-0125-preview
-summary: Een HTTP-verzoek verzenden is als een webserver vragen om iets te doen of
-  je iets te geven.
+summary: Kotlin maakt HTTP-verzoeken eenvoudig.
 title: Een HTTP-verzoek verzenden
 weight: 44
 ---

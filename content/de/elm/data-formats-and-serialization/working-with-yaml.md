@@ -1,12 +1,11 @@
 ---
 date: 2024-01-19
-description: "YAML ist ein datenorientiertes Format zum Speichern und \xDCbertragen\
-  \ von Informationen, \xE4hnlich wie JSON, aber menschenlesbarer. Programmierer verwenden\
-  \ es\u2026"
+description: "Anleitung: Elm hat standardm\xE4\xDFig keine eingebaute Bibliothek zur\
+  \ YAML-Analyse. Du musst eine externe JavaScript-Bibliothek verwenden und Elm's\
+  \ Ports\u2026"
 lastmod: '2024-03-13T22:44:53.825912-06:00'
 model: unknown
-summary: "YAML ist ein datenorientiertes Format zum Speichern und \xDCbertragen von\
-  \ Informationen, \xE4hnlich wie JSON, aber menschenlesbarer."
+summary: "Elm hat standardm\xE4\xDFig keine eingebaute Bibliothek zur YAML-Analyse."
 title: Arbeiten mit YAML
 weight: 41
 ---

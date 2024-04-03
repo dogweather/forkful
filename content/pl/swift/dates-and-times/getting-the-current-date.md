@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:19.542755-07:00
-description: "Pobieranie aktualnej daty w j\u0119zyku Swift polega na u\u017Cyciu\
-  \ klasy `Date`, aby uzyska\u0107 dost\u0119p do daty i czasu, w kt\xF3rym aplikacja\
-  \ jest uruchamiana.\u2026"
+description: "Jak to zrobi\u0107: Framework `Foundation` Swifta dostarcza klas\u0119\
+  \ `Date`, co sprawia, \u017Ce uzyskanie aktualnej daty i godziny jest proste. Oto\
+  \ podstawowy\u2026"
 lastmod: '2024-03-13T22:44:35.765220-06:00'
 model: gpt-4-0125-preview
-summary: "Pobieranie aktualnej daty w j\u0119zyku Swift polega na u\u017Cyciu klasy\
-  \ `Date`, aby uzyska\u0107 dost\u0119p do daty i czasu, w kt\xF3rym aplikacja jest\
-  \ uruchamiana."
+summary: "Framework `Foundation` Swifta dostarcza klas\u0119 `Date`, co sprawia, \u017C\
+  e uzyskanie aktualnej daty i godziny jest proste."
 title: Pobieranie aktualnej daty
 weight: 29
 ---

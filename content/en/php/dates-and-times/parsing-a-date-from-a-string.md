@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:02:40.780977-07:00
-description: "Parsing a date from a string in PHP involves converting text that represents\
-  \ a date and/or time into a PHP `DateTime` object or other date/time formats.\u2026"
+description: "How to: PHP's built-in `DateTime` class provides a powerful set of functions\
+  \ for parsing and working with dates. You can create a `DateTime` instance from\u2026"
 lastmod: '2024-03-13T22:45:00.175550-06:00'
 model: gpt-4-0125-preview
-summary: Parsing a date from a string in PHP involves converting text that represents
-  a date and/or time into a PHP `DateTime` object or other date/time formats.
+summary: PHP's built-in `DateTime` class provides a powerful set of functions for
+  parsing and working with dates.
 title: Parsing a date from a string
 weight: 30
 ---

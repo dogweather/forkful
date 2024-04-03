@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:41.365232-07:00
-description: "\xC5 sjekke om en katalog eksisterer betyr \xE5 bekrefte om en spesifikk\
-  \ mappebane er til stede i filsystemet. Programmerere gj\xF8r dette for \xE5 unng\xE5\
-  \ feil n\xE5r de\u2026"
+description: "Hvordan: Elm er et front-end webprogrammeringsspr\xE5k, s\xE5 det har\
+  \ ikke direkte tilgang til filsystemet. Imidlertid ville du typisk sende en kommando\
+  \ til en\u2026"
 lastmod: '2024-03-13T22:44:40.723284-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 sjekke om en katalog eksisterer betyr \xE5 bekrefte om en spesifikk\
-  \ mappebane er til stede i filsystemet."
+summary: "Elm er et front-end webprogrammeringsspr\xE5k, s\xE5 det har ikke direkte\
+  \ tilgang til filsystemet."
 title: Sjekker om en mappe eksisterer
 weight: 20
 ---

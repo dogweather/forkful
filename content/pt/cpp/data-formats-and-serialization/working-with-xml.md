@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:28:34.236511-07:00
-description: "Trabalhar com XML significa analisar, criar e manipular dados XML (eXtensible\
-  \ Markup Language). Programadores gerenciam o XML para lidar com a troca de\u2026"
+description: "Como: Aqui est\xE1 uma maneira simples de analisar XML usando a biblioteca\
+  \ TinyXML-2."
 lastmod: '2024-03-13T22:44:46.903695-06:00'
 model: gpt-4-0125-preview
-summary: Trabalhar com XML significa analisar, criar e manipular dados XML (eXtensible
-  Markup Language).
+summary: "Aqui est\xE1 uma maneira simples de analisar XML usando a biblioteca TinyXML-2."
 title: Trabalhando com XML
 weight: 40
 ---

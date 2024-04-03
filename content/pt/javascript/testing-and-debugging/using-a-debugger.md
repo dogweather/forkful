@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 03:49:57.934879-07:00
-description: "Aqui est\xE1 um trecho de c\xF3digo JavaScript que n\xE3o est\xE1 se\
-  \ comportando conforme o esperado: ```javascript function buggyMultiply(a, b) {\
-  \ return a + b; //\u2026"
+description: "Como fazer: Aqui est\xE1 um trecho de c\xF3digo JavaScript que n\xE3\
+  o est\xE1 se comportando conforme o esperado."
 lastmod: '2024-03-13T22:44:46.967073-06:00'
 model: gpt-4-0125-preview
 summary: "Aqui est\xE1 um trecho de c\xF3digo JavaScript que n\xE3o est\xE1 se comportando\
-  \ conforme o esperado:\n\n```javascript\nfunction buggyMultiply(a, b) {\n    return\
-  \ a + b; // Ops."
+  \ conforme o esperado."
 title: Usando um depurador
 weight: 35
 ---

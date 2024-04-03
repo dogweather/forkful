@@ -2,13 +2,13 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:09.587143-07:00
-description: "Tablice asocjacyjne, czy te\u017C dok\u0142adniej w kontek\u015Bcie\
-  \ JavaScript, obiekty, pozwalaj\u0105 na mapowanie kluczy do warto\u015Bci. Jest\
-  \ to niezwykle przydatne, gdy\u2026"
+description: "Jak to zrobi\u0107: Tworzenie i u\u017Cywanie tablic asocjacyjnych (obiekt\xF3\
+  w) w JavaScript jest proste. Definiuje si\u0119 obiekt za pomoc\u0105 nawias\xF3\
+  w klamrowych `{}`, a\u2026"
 lastmod: '2024-03-13T22:44:35.789432-06:00'
 model: gpt-4-0125-preview
-summary: "Tablice asocjacyjne, czy te\u017C dok\u0142adniej w kontek\u015Bcie JavaScript,\
-  \ obiekty, pozwalaj\u0105 na mapowanie kluczy do warto\u015Bci."
+summary: "Tworzenie i u\u017Cywanie tablic asocjacyjnych (obiekt\xF3w) w JavaScript\
+  \ jest proste."
 title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---

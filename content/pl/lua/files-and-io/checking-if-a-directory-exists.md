@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:52.524785-07:00
-description: "Sprawdzanie, czy katalog istnieje, to podstawowa operacja podczas pisania\
-  \ skrypt\xF3w wchodz\u0105cych w interakcj\u0119 z systemem plik\xF3w, zapewniaj\u0105\
-  ca, \u017Ce program\u2026"
+description: "Jak to zrobi\u0107: W Lua nie masz wbudowanej funkcji, kt\xF3ra bezpo\u015B\
+  rednio sprawdza, czy katalog istnieje, wi\u0119c cz\u0119sto opierasz si\u0119 na\
+  \ bibliotece Lua File\u2026"
 lastmod: '2024-03-13T22:44:35.554435-06:00'
 model: gpt-4-0125-preview
-summary: "Sprawdzanie, czy katalog istnieje, to podstawowa operacja podczas pisania\
-  \ skrypt\xF3w wchodz\u0105cych w interakcj\u0119 z systemem plik\xF3w, zapewniaj\u0105\
-  ca, \u017Ce program dzia\u0142a na prawid\u0142owych \u015Bcie\u017Ckach i zapobiegaj\u0105\
-  ca b\u0142\u0119dom zwi\u0105zanym z nieistniej\u0105cymi katalogami."
+summary: "W Lua nie masz wbudowanej funkcji, kt\xF3ra bezpo\u015Brednio sprawdza,\
+  \ czy katalog istnieje, wi\u0119c cz\u0119sto opierasz si\u0119 na bibliotece Lua\
+  \ File System (lfs), popularnej bibliotece stron trzecich do operacji na plikach."
 title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---

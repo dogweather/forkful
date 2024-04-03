@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:04.336516-07:00
-description: "Merkkijonon alkukirjaimen suurentaminen tarkoittaa annetun merkkijonon\
-  \ ensimm\xE4isen merkin muuttamista suuraakkoseksi, jos se on pienaakkosessa, usein\u2026"
+description: "Kuinka: TypeScript, ollessaan JavaScriptin yl\xE4joukko, tarjoaa erilaisia\
+  \ menetelmi\xE4 merkkijonojen alkukirjaimen suurennukseen, alkaen puhtaista JavaScript-\u2026"
 lastmod: '2024-03-13T22:44:56.299106-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonon alkukirjaimen suurentaminen tarkoittaa annetun merkkijonon ensimm\xE4\
-  isen merkin muuttamista suuraakkoseksi, jos se on pienaakkosessa, usein j\xE4tt\xE4\
-  en loput merkkijonosta muuttumattomaksi."
+summary: "TypeScript, ollessaan JavaScriptin yl\xE4joukko, tarjoaa erilaisia menetelmi\xE4\
+  \ merkkijonojen alkukirjaimen suurennukseen, alkaen puhtaista JavaScript-l\xE4hestymistavoista\
+  \ kolmansien osapuolien kirjastojen hy\xF6dynt\xE4miseen monimutkaisemmissa tai\
+  \ tiettyj\xE4 k\xE4ytt\xF6tapauksia varten."
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---

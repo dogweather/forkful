@@ -2,13 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:11.013736-07:00
-description: "Reguliere expressies (regex) in Dart bieden een krachtige manier om\
-  \ te zoeken en te manipuleren met strings, waardoor programmeurs complexe\u2026"
+description: 'Hoe: Dart gebruikt de `RegExp` klasse voor reguliere expressies. Hier
+  is een basisvoorbeeld om een eenvoudig patroon binnen een string te matchen.'
 lastmod: '2024-03-13T22:44:50.494162-06:00'
 model: gpt-4-0125-preview
-summary: "Reguliere expressies (regex) in Dart bieden een krachtige manier om te zoeken\
-  \ en te manipuleren met strings, waardoor programmeurs complexe tekstverwerkingsopdrachten\
-  \ effici\xEBnt kunnen uitvoeren."
+summary: Dart gebruikt de `RegExp` klasse voor reguliere expressies.
 title: Reguliere expressies gebruiken
 weight: 11
 ---

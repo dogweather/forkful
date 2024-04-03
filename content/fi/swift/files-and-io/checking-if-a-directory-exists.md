@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:45.200620-07:00
-description: "Hakemiston olemassaolon tarkistaminen tiedostoj\xE4rjestelm\xE4ss\xE4\
-  \ on oleellista, kun hallinnoit tiedostorakenteita Swift-sovelluksistasi k\xE4sin.\
-  \ T\xE4m\xE4 teht\xE4v\xE4\u2026"
+description: "Kuinka tehd\xE4\xE4n: Swiftin Foundation-runko tarjoaa `FileManager`-luokan,\
+  \ jossa on menetelmi\xE4 tiedostoj\xE4rjestelm\xE4n hallintaan. Voit k\xE4ytt\xE4\
+  \xE4\u2026"
 lastmod: '2024-03-13T22:44:56.921024-06:00'
 model: gpt-4-0125-preview
-summary: "Hakemiston olemassaolon tarkistaminen tiedostoj\xE4rjestelm\xE4ss\xE4 on\
-  \ oleellista, kun hallinnoit tiedostorakenteita Swift-sovelluksistasi k\xE4sin."
+summary: "Swiftin Foundation-runko tarjoaa `FileManager`-luokan, jossa on menetelmi\xE4\
+  \ tiedostoj\xE4rjestelm\xE4n hallintaan."
 title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---

@@ -2,14 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:58:15.355068-07:00
-description: "Pisanie test\xF3w w Dart polega na tworzeniu przypadk\xF3w testowych,\
-  \ aby automatycznie weryfikowa\u0107, czy r\xF3\u017Cne cz\u0119\u015Bci programu\
-  \ dzia\u0142aj\u0105 zgodnie z oczekiwaniami.\u2026"
+description: "Jak to zrobi\u0107: W Dartcie cz\u0119sto u\u017Cywa si\u0119 pakietu\
+  \ `test` do pisania test\xF3w. Najpierw dodaj pakiet `test` do pliku `pubspec.yaml`."
 lastmod: '2024-03-13T22:44:35.095401-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie test\xF3w w Dart polega na tworzeniu przypadk\xF3w testowych, aby\
-  \ automatycznie weryfikowa\u0107, czy r\xF3\u017Cne cz\u0119\u015Bci programu dzia\u0142\
-  aj\u0105 zgodnie z oczekiwaniami."
+summary: "W Dartcie cz\u0119sto u\u017Cywa si\u0119 pakietu `test` do pisania test\xF3\
+  w."
 title: "Pisanie test\xF3w"
 weight: 36
 ---

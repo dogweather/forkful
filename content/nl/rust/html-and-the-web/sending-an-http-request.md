@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:40.018860-07:00
-description: "Het versturen van een HTTP-verzoek haalt gegevens op van of verzendt\
-  \ gegevens naar een webserver. Programmeurs doen dit om te interacteren met webdiensten\u2026"
+description: 'Hoe: Om een GET-verzoek in Rust te versturen, gebruiken we de `reqwest`
+  crate. Voeg deze eerst toe aan je `Cargo.toml`.'
 lastmod: '2024-03-13T22:44:50.590964-06:00'
 model: gpt-4-0125-preview
-summary: Het versturen van een HTTP-verzoek haalt gegevens op van of verzendt gegevens
-  naar een webserver.
+summary: Om een GET-verzoek in Rust te versturen, gebruiken we de `reqwest` crate.
 title: Een HTTP-verzoek verzenden
 weight: 44
 ---

@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:53:42.215753-07:00
-description: "Att l\xE4sa en textfil inneb\xE4r att extrahera data fr\xE5n en fil\
-  \ p\xE5 din dator till din kod. Programmerare g\xF6r detta f\xF6r att hantera informationen,\
-  \ som\u2026"
+description: "Hur man g\xF6r: ."
 lastmod: '2024-03-13T22:44:38.226718-06:00'
 model: gpt-4-1106-preview
-summary: "Att l\xE4sa en textfil inneb\xE4r att extrahera data fr\xE5n en fil p\xE5\
-  \ din dator till din kod."
+summary: .
 title: "L\xE4sa en textfil"
 weight: 22
 ---

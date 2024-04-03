@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 18:04:50.785692-07:00
-description: "\xC5 starte et nytt prosjekt i TypeScript er som \xE5 rulle ut et blankt\
-  \ lerret; det gir deg en ren start for \xE5 kode noe nytt. Programmerere gj\xF8\
-  r dette for \xE5\u2026"
+description: "How to: For \xE5 sette i gang et nytt TypeScript-prosjekt, trenger du\
+  \ Node.js og NPM (Node Package Manager) installert. Deretter bruker du f\xF8lgende\u2026"
 lastmod: '2024-03-13T22:44:40.532928-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 starte et nytt prosjekt i TypeScript er som \xE5 rulle ut et blankt\
-  \ lerret; det gir deg en ren start for \xE5 kode noe nytt."
+summary: "For \xE5 sette i gang et nytt TypeScript-prosjekt, trenger du Node.js og\
+  \ NPM (Node Package Manager) installert."
 title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---

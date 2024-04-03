@@ -2,12 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:12.448167-07:00
-description: "Envoyer une requ\xEAte HTTP en Dart est le processus qui initie la communication\
-  \ avec un serveur web ou une API depuis une application Dart. Les programmeurs\u2026"
+description: "Comment faire : Dart inclut le paquet `http`, une mani\xE8re puissante\
+  \ et pratique de travailler avec des ressources HTTP. Pour commencer, incluez-le\
+  \ dans\u2026"
 lastmod: '2024-03-13T22:44:57.386180-06:00'
 model: gpt-4-0125-preview
-summary: "Envoyer une requ\xEAte HTTP en Dart est le processus qui initie la communication\
-  \ avec un serveur web ou une API depuis une application Dart."
+summary: "Dart inclut le paquet `http`, une mani\xE8re puissante et pratique de travailler\
+  \ avec des ressources HTTP."
 title: "Envoyer une requ\xEAte HTTP"
 weight: 44
 ---

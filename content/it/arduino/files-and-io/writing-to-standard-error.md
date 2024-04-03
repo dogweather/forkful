@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:21.728359-07:00
-description: "Scrivere sullo standard error (stderr) nella programmazione Arduino\
-  \ comporta indirizzare messaggi di errore e diagnostica su un canale separato,\u2026"
+description: "Come fare: Arduino non differenzia nativamente tra output standard e\
+  \ errore standard come fanno i sistemi informatici convenzionali. Entrambi i metodi\u2026"
 lastmod: '2024-03-13T22:44:43.698959-06:00'
 model: gpt-4-0125-preview
-summary: Scrivere sullo standard error (stderr) nella programmazione Arduino comporta
-  indirizzare messaggi di errore e diagnostica su un canale separato, assicurandosi
-  che non si mischino con l'output standard (stdout).
+summary: Arduino non differenzia nativamente tra output standard e errore standard
+  come fanno i sistemi informatici convenzionali.
 title: Scrivere sull'errore standard
 weight: 25
 ---

@@ -1,12 +1,13 @@
 ---
 date: 2024-01-20 17:33:13.317598-07:00
-description: "Comparar dos fechas permite determinar cu\xE1l es anterior o posterior,\
-  \ o si son iguales. Los programadores lo hacen para validaciones, c\xE1lculos de\
-  \ per\xEDodos\u2026"
+description: "C\xF3mo: Java ofrece varias maneras de comparar fechas, aqu\xED van\
+  \ algunos ejemplos utilizando `LocalDate` de la librer\xEDa `java.time`, la cual\
+  \ est\xE1 dise\xF1ada\u2026"
 lastmod: '2024-03-13T22:44:58.949745-06:00'
 model: gpt-4-1106-preview
-summary: "Comparar dos fechas permite determinar cu\xE1l es anterior o posterior,\
-  \ o si son iguales."
+summary: "Java ofrece varias maneras de comparar fechas, aqu\xED van algunos ejemplos\
+  \ utilizando `LocalDate` de la librer\xEDa `java.time`, la cual est\xE1 dise\xF1\
+  ada para ser inmutable y thread-safe."
 title: "Comparaci\xF3n de dos fechas"
 weight: 27
 ---

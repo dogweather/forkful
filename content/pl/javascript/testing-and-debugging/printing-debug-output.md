@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:52:40.848285-07:00
-description: "Wypisywanie danych debugowania pomaga zrozumie\u0107, co si\u0119 dzieje\
-  \ w kodzie. Programi\u015Bci u\u017Cywaj\u0105 tego, by szybko znale\u017A\u0107\
-  \ b\u0142\u0119dy lub monitorowa\u0107 dzia\u0142anie\u2026"
+description: "How to: (Jak to zrobi\u0107?) Oto kilka przyk\u0142ad\xF3w."
 lastmod: '2024-03-13T22:44:35.799116-06:00'
 model: gpt-4-1106-preview
-summary: "Wypisywanie danych debugowania pomaga zrozumie\u0107, co si\u0119 dzieje\
-  \ w kodzie."
+summary: "Oto kilka przyk\u0142ad\xF3w."
 title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---

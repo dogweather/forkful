@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:56.032454-07:00
-description: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi c\xF3 ngh\u0129\
-  a l\xE0 thi\u1EBFt l\u1EADp m\u1ED9t c\u01A1 s\u1EDF m\xE3 ngu\u1ED3n m\u1EDBi cho\
-  \ nh\u1EEFng \xFD t\u01B0\u1EDFng tuy\u1EC7t v\u1EDDi c\u1EE7a b\u1EA1n. C\xE1c\
-  \ l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 bi\u1EBFn\
-  \ c\xE1c kh\xE1i\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Tr\u01B0\u1EDBc khi vi\u1EBFt m\xE3, h\xE3\
+  y quy\u1EBFt \u0111\u1ECBnh v\u1EC1 c\xF4ng c\u1EE5 v\xE0 c\u1EA5u tr\xFAc. Ch\xFA\
+  ng ta s\u1EED d\u1EE5ng Node.js v\xE0 npm (Node Package Manager) cho v\xED d\u1EE5\
+  \ n\xE0y. 1. C\xE0i \u0111\u1EB7t\u2026"
 lastmod: '2024-03-13T22:44:37.154267-06:00'
 model: gpt-4-0125-preview
-summary: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi c\xF3 ngh\u0129a\
-  \ l\xE0 thi\u1EBFt l\u1EADp m\u1ED9t c\u01A1 s\u1EDF m\xE3 ngu\u1ED3n m\u1EDBi cho\
-  \ nh\u1EEFng \xFD t\u01B0\u1EDFng tuy\u1EC7t v\u1EDDi c\u1EE7a b\u1EA1n."
+summary: "Tr\u01B0\u1EDBc khi vi\u1EBFt m\xE3, h\xE3y quy\u1EBFt \u0111\u1ECBnh v\u1EC1\
+  \ c\xF4ng c\u1EE5 v\xE0 c\u1EA5u tr\xFAc."
 title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---

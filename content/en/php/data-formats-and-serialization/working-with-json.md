@@ -1,12 +1,11 @@
 ---
 date: 2024-02-03 19:03:17.917926-07:00
-description: "JSON, or JavaScript Object Notation, is a lightweight data-interchange\
-  \ format that's easy for humans to read and write, and easy for machines to parse\
-  \ and\u2026"
+description: "How to: Working with JSON in PHP is straightforward thanks to the built-in\
+  \ functions `json_encode()` and `json_decode()`. Below are examples showcasing\u2026"
 lastmod: '2024-03-13T22:45:00.186576-06:00'
 model: gpt-4-0125-preview
-summary: JSON, or JavaScript Object Notation, is a lightweight data-interchange format
-  that's easy for humans to read and write, and easy for machines to parse and generate.
+summary: Working with JSON in PHP is straightforward thanks to the built-in functions
+  `json_encode()` and `json_decode()`.
 title: Working with JSON
 weight: 38
 ---

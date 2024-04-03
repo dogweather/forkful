@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:45:28.128978-07:00
-description: "Komplekse tall har en reell del og en imagin\xE6r del og er essensielle\
-  \ i forskjellige felt som ingeni\xF8rvitenskap, fysikk, og datagrafikk. Programmerere\u2026"
+description: "Hvordan: Rust har ikke innebygd st\xF8tte for komplekse tall, men pakker\
+  \ som `num-complex` har ryggen din. Her er hvordan du bruker den."
 lastmod: '2024-03-13T22:44:40.567938-06:00'
 model: gpt-4-0125-preview
-summary: "Komplekse tall har en reell del og en imagin\xE6r del og er essensielle\
-  \ i forskjellige felt som ingeni\xF8rvitenskap, fysikk, og datagrafikk."
+summary: "Rust har ikke innebygd st\xF8tte for komplekse tall, men pakker som `num-complex`\
+  \ har ryggen din."
 title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---

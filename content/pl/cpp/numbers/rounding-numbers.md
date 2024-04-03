@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:44:01.042035-07:00
-description: "Zaokr\u0105glanie liczb oznacza dostosowanie warto\u015Bci do najbli\u017C\
-  szej liczby ca\u0142kowitej lub okre\u015Blonej precyzji. Programi\u015Bci robi\u0105\
-  \ to, aby upraszcza\u0107,\u2026"
+description: "Jak to zrobi\u0107: C++ oferuje kilka sposob\xF3w na zaokr\u0105glenie\
+  \ liczb, takich jak `floor()`, `ceil()`, i `round()`."
 lastmod: '2024-03-13T22:44:35.707797-06:00'
 model: gpt-4-0125-preview
-summary: "Zaokr\u0105glanie liczb oznacza dostosowanie warto\u015Bci do najbli\u017C\
-  szej liczby ca\u0142kowitej lub okre\u015Blonej precyzji."
+summary: "C++ oferuje kilka sposob\xF3w na zaokr\u0105glenie liczb, takich jak `floor()`,\
+  \ `ceil()`, i `round()`."
 title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---

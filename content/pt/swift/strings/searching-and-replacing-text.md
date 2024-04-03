@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:58:46.043728-07:00
-description: "Procurar e substituir texto \xE9 basicamente mudar uma string por outra\
-  \ em um bloco de texto. Programadores fazem isso para atualizar dados, corrigir\
-  \ erros,\u2026"
+description: 'Como fazer: Segue um exemplo simples de como procurar e substituir texto
+  em Swift.'
 lastmod: '2024-03-13T22:44:46.906517-06:00'
 model: gpt-4-1106-preview
-summary: "Procurar e substituir texto \xE9 basicamente mudar uma string por outra\
-  \ em um bloco de texto."
+summary: Segue um exemplo simples de como procurar e substituir texto em Swift.
 title: Pesquisando e substituindo texto
 weight: 10
 ---

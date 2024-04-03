@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:48.252436-07:00
-description: "Regul\xE4re Ausdr\xFCcke (regex) bieten eine M\xF6glichkeit, Zeichenfolgen\
-  \ anhand definierter Muster zu suchen, zu vergleichen und zu manipulieren. Programmierer\u2026"
+description: "Wie: Um regul\xE4re Ausdr\xFCcke in C zu verwenden, arbeiten Sie haupts\xE4\
+  chlich mit der POSIX-Regex-Bibliothek (`<regex.h>`). Dieses Beispiel demonstriert\u2026"
 lastmod: '2024-03-13T22:44:54.341471-06:00'
 model: gpt-4-0125-preview
-summary: "Regul\xE4re Ausdr\xFCcke (regex) bieten eine M\xF6glichkeit, Zeichenfolgen\
-  \ anhand definierter Muster zu suchen, zu vergleichen und zu manipulieren."
+summary: "Um regul\xE4re Ausdr\xFCcke in C zu verwenden, arbeiten Sie haupts\xE4chlich\
+  \ mit der POSIX-Regex-Bibliothek (`<regex.h>`)."
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

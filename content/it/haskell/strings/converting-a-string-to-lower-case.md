@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:38:41.355565-07:00
-description: "Convertire una stringa in minuscolo significa trasformare tutti i caratteri\
-  \ alfabetici in lettere minuscole. Questo \xE8 utile per uniformare i dati prima\
-  \ di\u2026"
+description: 'How to: In Haskell, possiamo utilizzare `Data.Text.toLower` per convertire
+  una stringa in minuscolo. Ecco un esempio.'
 lastmod: '2024-03-13T22:44:43.462584-06:00'
 model: gpt-4-1106-preview
-summary: Convertire una stringa in minuscolo significa trasformare tutti i caratteri
-  alfabetici in lettere minuscole.
+summary: In Haskell, possiamo utilizzare `Data.Text.toLower` per convertire una stringa
+  in minuscolo.
 title: Conversione di una stringa in minuscolo
 weight: 4
 ---

@@ -2,12 +2,11 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:33.586368-07:00
-description: "Werken met XML in Google Apps Script stelt programmeurs in staat om\
-  \ XML-gegevens te parseren, te manipuleren en te genereren, essentieel voor webservices\u2026"
+description: "Hoe: Google Apps Script biedt de `XmlService` om met XML-gegevens te\
+  \ werken. Hieronder demonstreren we hoe we een XML-string kunnen parseren, de inhoud\u2026"
 lastmod: '2024-03-13T22:44:50.358121-06:00'
 model: gpt-4-0125-preview
-summary: Werken met XML in Google Apps Script stelt programmeurs in staat om XML-gegevens
-  te parseren, te manipuleren en te genereren, essentieel voor webservices en configuraties.
+summary: Google Apps Script biedt de `XmlService` om met XML-gegevens te werken.
 title: Werken met XML
 weight: 40
 ---

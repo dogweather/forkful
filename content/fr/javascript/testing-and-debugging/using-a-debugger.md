@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 03:49:46.740623-07:00
-description: "Voici un peu de code JavaScript qui ne se comporte pas comme pr\xE9\
-  vu : ```javascript function buggyMultiply(a, b) { return a + b; // Oups ! Cela devrait\u2026"
+description: "Comment faire : Voici un peu de code JavaScript qui ne se comporte pas\
+  \ comme pr\xE9vu ."
 lastmod: '2024-03-13T22:44:58.280681-06:00'
 model: gpt-4-0125-preview
-summary: "Voici un peu de code JavaScript qui ne se comporte pas comme pr\xE9vu :\n\
-  \n```javascript\nfunction buggyMultiply(a, b) {\n    return a + b; // Oups ."
+summary: "Voici un peu de code JavaScript qui ne se comporte pas comme pr\xE9vu."
 title: "Utilisation d'un d\xE9bogueur"
 weight: 35
 ---

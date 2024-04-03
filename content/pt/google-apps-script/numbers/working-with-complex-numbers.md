@@ -2,15 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:07:33.754844-07:00
-description: "N\xFAmeros complexos, representados como uma combina\xE7\xE3o de unidades\
-  \ reais e imagin\xE1rias (por exemplo, 3 + 4i), s\xE3o fundamentais em v\xE1rios\
-  \ problemas\u2026"
+description: "Como fazer: O Google Apps Script n\xE3o tem suporte integrado para n\xFA\
+  meros complexos, o que necessita da implementa\xE7\xE3o de funcionalidades personalizadas.\u2026"
 lastmod: '2024-03-13T22:44:46.100481-06:00'
 model: gpt-4-0125-preview
-summary: "N\xFAmeros complexos, representados como uma combina\xE7\xE3o de unidades\
-  \ reais e imagin\xE1rias (por exemplo, 3 + 4i), s\xE3o fundamentais em v\xE1rios\
-  \ problemas computacionais, especialmente em engenharia, f\xEDsica e matem\xE1tica\
-  \ aplicada."
+summary: "O Google Apps Script n\xE3o tem suporte integrado para n\xFAmeros complexos,\
+  \ o que necessita da implementa\xE7\xE3o de funcionalidades personalizadas."
 title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---

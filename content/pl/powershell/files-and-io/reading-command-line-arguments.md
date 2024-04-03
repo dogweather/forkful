@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:56:38.076474-07:00
-description: "W PowerShellu argumenty wiersza polece\u0144 to dane przekazywane do\
-  \ skryptu przy jego wywo\u0142ywaniu. Programi\u015Bci u\u017Cywaj\u0105 ich, by\
-  \ dostosowa\u0107 dzia\u0142anie skryptu\u2026"
+description: "Jak to zrobi\u0107: ."
 lastmod: '2024-03-13T22:44:35.645407-06:00'
 model: gpt-4-1106-preview
-summary: "W PowerShellu argumenty wiersza polece\u0144 to dane przekazywane do skryptu\
-  \ przy jego wywo\u0142ywaniu."
+summary: .
 title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---

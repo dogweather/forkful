@@ -1,11 +1,12 @@
 ---
 date: 2024-01-27 20:34:49.745033-07:00
-description: "Satunnaislukujen tuottaminen ohjelmoinnissa tarkoittaa sellaisten lukujen\
-  \ luomista, joilla ei ole ennustettavaa kaavaa. Ohjelmoijat tekev\xE4t n\xE4in monista\u2026"
+description: "Kuinka: Kotlin tarjoaa suoraviivaisen tavan satunnaislukujen tuottamiseen\
+  \ sen vakio kirjaston kautta. N\xE4in voit tuottaa erityyppisi\xE4 satunnaisia arvoja:\
+  \ #."
 lastmod: '2024-03-13T22:44:56.526510-06:00'
 model: gpt-4-0125-preview
-summary: Satunnaislukujen tuottaminen ohjelmoinnissa tarkoittaa sellaisten lukujen
-  luomista, joilla ei ole ennustettavaa kaavaa.
+summary: Kotlin tarjoaa suoraviivaisen tavan satunnaislukujen tuottamiseen sen vakio
+  kirjaston kautta.
 title: Satunnaislukujen generointi
 weight: 12
 ---

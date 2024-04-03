@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:58:22.777526-07:00
-description: "Tekstin etsiminen ja korvaaminen on yksinkertaisesti tekstijonon vaihtamista\
-  \ toiseen. Koodareille t\xE4m\xE4 on t\xE4rke\xE4\xE4, koska koodin muokkaaminen,\
-  \ virheiden\u2026"
+description: "How to: (Kuinka tehda\u0308:) Kotlinissa teksti\xE4 voi etsi\xE4 ja\
+  \ korvata `replace`-funktiolla. Alla on esimerkkej\xE4 k\xE4yt\xE4nn\xF6ss\xE4."
 lastmod: '2024-03-13T22:44:56.516352-06:00'
 model: gpt-4-1106-preview
-summary: Tekstin etsiminen ja korvaaminen on yksinkertaisesti tekstijonon vaihtamista
-  toiseen.
+summary: "Kotlinissa teksti\xE4 voi etsi\xE4 ja korvata `replace`-funktiolla."
 title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---

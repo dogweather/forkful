@@ -2,7 +2,7 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:07.224157-07:00
-description: "GDB (GNU Debugger) is de meest gebruikte debugger voor C-programmering.\
+description: "Hoe: GDB (GNU Debugger) is de meest gebruikte debugger voor C-programmering.\
   \ Hier is een beknopte handleiding voor het gebruik van GDB om een eenvoudig\u2026"
 lastmod: '2024-03-13T22:44:51.295896-06:00'
 model: gpt-4-0125-preview

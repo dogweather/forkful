@@ -1,12 +1,13 @@
 ---
 date: 2024-01-26 01:09:07.847179-07:00
-description: "Il logging \xE8 il processo di registrazione di eventi, errori e altre\
-  \ informazioni significative durante l'esecuzione di un programma su un supporto\u2026"
+description: "Come fare: In TypeScript, \xE8 possibile implementare facilmente un\
+  \ logging di base utilizzando i metodi della console o integrare un logging pi\xF9\
+  \ avanzato\u2026"
 lastmod: '2024-03-13T22:44:43.182341-06:00'
 model: gpt-4-1106-preview
-summary: "Il logging \xE8 il processo di registrazione di eventi, errori e altre informazioni\
-  \ significative durante l'esecuzione di un programma su un supporto esterno, spesso\
-  \ file o database."
+summary: "In TypeScript, \xE8 possibile implementare facilmente un logging di base\
+  \ utilizzando i metodi della console o integrare un logging pi\xF9 avanzato con\
+  \ librerie come `winston` o `pino`."
 title: "Registrazione delle Attivit\xE0 (Logging)"
 weight: 17
 ---

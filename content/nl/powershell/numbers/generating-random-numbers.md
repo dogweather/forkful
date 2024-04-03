@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:51.826556-07:00
-description: "Het genereren van willekeurige getallen in PowerShell gaat over het\
-  \ cre\xEBren van onvoorspelbare numerieke waarden binnen een gespecificeerd bereik.\u2026"
+description: "Hoe te: PowerShell biedt een eenvoudige aanpak om willekeurige getallen\
+  \ te genereren met behulp van de `Get-Random` cmdlet. Deze cmdlet kan willekeurige\u2026"
 lastmod: '2024-03-13T22:44:51.022875-06:00'
 model: gpt-4-0125-preview
-summary: "Het genereren van willekeurige getallen in PowerShell gaat over het cre\xEB\
-  ren van onvoorspelbare numerieke waarden binnen een gespecificeerd bereik."
+summary: PowerShell biedt een eenvoudige aanpak om willekeurige getallen te genereren
+  met behulp van de `Get-Random` cmdlet.
 title: Willekeurige getallen genereren
 weight: 12
 ---

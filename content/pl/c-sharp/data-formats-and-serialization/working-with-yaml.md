@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:01.323280-07:00
-description: "YAML, co oznacza \"YAML Ain't Markup Language\" (YAML nie jest j\u0119\
-  zykiem znacznik\xF3w), to format serializacji danych zrozumia\u0142y dla cz\u0142\
-  owieka. Programi\u015Bci\u2026"
+description: "Jak to zrobi\u0107: C# nie ma wbudowanego wsparcia dla YAML, ale mo\u017C\
+  na \u0142atwo pracowa\u0107 z YAML, u\u017Cywaj\u0105c bibliotek stron trzecich,\
+  \ takich jak *YamlDotNet*.\u2026"
 lastmod: '2024-03-13T22:44:35.429246-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, co oznacza \"YAML Ain't Markup Language\" (YAML nie jest j\u0119zykiem\
-  \ znacznik\xF3w), to format serializacji danych zrozumia\u0142y dla cz\u0142owieka."
+summary: "C# nie ma wbudowanego wsparcia dla YAML, ale mo\u017Cna \u0142atwo pracowa\u0107\
+  \ z YAML, u\u017Cywaj\u0105c bibliotek stron trzecich, takich jak *YamlDotNet*."
 title: Praca z YAML
 weight: 41
 ---

@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:04.897226-07:00
-description: "V\xE9rifier si un r\xE9pertoire existe dans Google Apps Script implique\
-  \ de v\xE9rifier la pr\xE9sence d'un dossier au sein de Google Drive. Les programmeurs\u2026"
+description: "Comment faire : Google Apps Script n'offre pas de m\xE9thode \"exists\"\
+  \ directe pour les dossiers. Au lieu de cela, nous utilisons les capacit\xE9s de\
+  \ recherche\u2026"
 lastmod: '2024-03-13T22:44:57.203545-06:00'
 model: gpt-4-0125-preview
-summary: "V\xE9rifier si un r\xE9pertoire existe dans Google Apps Script implique\
-  \ de v\xE9rifier la pr\xE9sence d'un dossier au sein de Google Drive."
+summary: "Google Apps Script n'offre pas de m\xE9thode \"exists\" directe pour les\
+  \ dossiers."
 title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---

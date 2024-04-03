@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:26.486727-07:00
-description: "Het verkrijgen van de huidige datum in Python betekent het ophalen van\
-  \ de live datum van het systeem waarop het draait. Programmeurs doen dit voor het\u2026"
+description: 'Hoe: Gebruik de `datetime` module. Het is eenvoudig.'
 lastmod: '2024-03-13T22:44:50.387107-06:00'
 model: gpt-4-0125-preview
-summary: Het verkrijgen van de huidige datum in Python betekent het ophalen van de
-  live datum van het systeem waarop het draait.
+summary: Gebruik de `datetime` module.
 title: Het huidige datum ophalen
 weight: 29
 ---

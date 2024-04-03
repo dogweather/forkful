@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:58.996269-07:00
-description: "Testar em Ruby \xE9 verificar se o seu c\xF3digo se comporta como esperado\
-  \ sob v\xE1rias condi\xE7\xF5es. Os programadores escrevem testes para garantir\
-  \ corre\xE7\xE3o,\u2026"
+description: "Como fazer: Ruby vem com uma biblioteca embutida chamada `Test::Unit`\
+  \ para escrever testes unit\xE1rios, encapsulando pr\xE1ticas de teste dentro de\
+  \ estruturas\u2026"
 lastmod: '2024-03-13T22:44:47.098904-06:00'
 model: gpt-4-0125-preview
-summary: "Testar em Ruby \xE9 verificar se o seu c\xF3digo se comporta como esperado\
-  \ sob v\xE1rias condi\xE7\xF5es."
+summary: "Ruby vem com uma biblioteca embutida chamada `Test::Unit` para escrever\
+  \ testes unit\xE1rios, encapsulando pr\xE1ticas de teste dentro de estruturas simples."
 title: Escrevendo testes
 weight: 36
 ---

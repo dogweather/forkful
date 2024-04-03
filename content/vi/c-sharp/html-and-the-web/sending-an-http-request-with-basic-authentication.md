@@ -2,17 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:14.201876-07:00
-description: "Ch\xFAng ta g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1\
-  c c\u01A1 b\u1EA3n \u0111\u1EC3 truy c\u1EADp v\xE0o c\xE1c t\xE0i nguy\xEAn \u0111\
-  \u01B0\u1EE3c b\u1EA3o v\u1EC7 b\u1EB1ng c\xE1ch bao g\u1ED3m th\xF4ng tin \u0111\
-  \u0103ng nh\u1EADp c\u1EE7a ng\u01B0\u1EDDi d\xF9ng trong\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Ch\xFAng ta h\xE3y b\u1EAFt \u0111\u1EA7\
+  u ngay v\u1EDBi m\u1ED9t s\u1ED1 m\xE3. D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9\
+  t v\xED d\u1EE5 t\u1ED1i thi\u1EC3u s\u1EED d\u1EE5ng C# \u0111\u1EC3 g\u1EEDi m\u1ED9\
+  t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3n."
 lastmod: '2024-03-13T22:44:36.657113-06:00'
 model: gpt-4-0125-preview
-summary: "Ch\xFAng ta g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1\
-  c c\u01A1 b\u1EA3n \u0111\u1EC3 truy c\u1EADp v\xE0o c\xE1c t\xE0i nguy\xEAn \u0111\
-  \u01B0\u1EE3c b\u1EA3o v\u1EC7 b\u1EB1ng c\xE1ch bao g\u1ED3m th\xF4ng tin \u0111\
-  \u0103ng nh\u1EADp c\u1EE7a ng\u01B0\u1EDDi d\xF9ng trong ti\xEAu \u0111\u1EC1 y\xEA\
-  u c\u1EA7u."
+summary: "Ch\xFAng ta h\xE3y b\u1EAFt \u0111\u1EA7u ngay v\u1EDBi m\u1ED9t s\u1ED1\
+  \ m\xE3."
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3\
   n"
 weight: 45

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-25 02:12:15.719110-07:00
-description: "Refactoring is essentially spring cleaning your code base\u2014it's\
-  \ about restructuring existing code without changing its external behavior. Programmers\
-  \ do it\u2026"
+description: "How to: Consider you have an Elm function that's doing too much, like\
+  \ mixing up UI logic with state updates. It's a perfect candidate for refactoring.\u2026"
 lastmod: '2024-03-13T22:45:00.018257-06:00'
 model: gpt-4-1106-preview
-summary: "Refactoring is essentially spring cleaning your code base\u2014it's about\
-  \ restructuring existing code without changing its external behavior."
+summary: Consider you have an Elm function that's doing too much, like mixing up UI
+  logic with state updates.
 title: Refactoring
 weight: 19
 ---

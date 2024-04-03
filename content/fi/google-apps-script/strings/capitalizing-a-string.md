@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:23.265549-07:00
-description: "Merkkijonon alkukirjaimen suurentaminen tarkoittaa sy\xF6tteen muuttamista\
-  \ siten, ett\xE4 ensimm\xE4inen merkki on iso kirjain ja loput pieni\xE4 kirjaimia,\
-  \ ja t\xE4t\xE4\u2026"
+description: "Kuinka: Google Apps Script, joka perustuu JavaScriptiin, sallii useita\
+  \ menetelmi\xE4 merkkijonon alkukirjaimen suurentamiseen, vaikkakaan siin\xE4 ei\
+  \ ole\u2026"
 lastmod: '2024-03-13T22:44:56.077856-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonon alkukirjaimen suurentaminen tarkoittaa sy\xF6tteen muuttamista\
-  \ siten, ett\xE4 ensimm\xE4inen merkki on iso kirjain ja loput pieni\xE4 kirjaimia,\
-  \ ja t\xE4t\xE4 k\xE4ytet\xE4\xE4n yleisesti nimien tai otsikoiden muotoilussa."
+summary: "Google Apps Script, joka perustuu JavaScriptiin, sallii useita menetelmi\xE4\
+  \ merkkijonon alkukirjaimen suurentamiseen, vaikkakaan siin\xE4 ei ole sis\xE4\xE4\
+  nrakennettua toimintoa."
 title: Merkkijonon alkukirjaimen suurentaminen
 weight: 2
 ---

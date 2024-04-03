@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:56:45.498739-07:00
-description: "Das Lesen von Befehlszeilenargumenten erm\xF6glicht es Programmen, beim\
-  \ Start Parameter von au\xDFen zu empfangen. Diese Flexibilit\xE4t ist essentiell,\
-  \ um\u2026"
+description: 'Anleitung: Um Befehlszeilenargumente in Python zu lesen, nutzt du das
+  `sys` Modul. Hier ein simples Beispiel.'
 lastmod: '2024-03-13T22:44:53.394189-06:00'
 model: gpt-4-1106-preview
-summary: "Das Lesen von Befehlszeilenargumenten erm\xF6glicht es Programmen, beim\
-  \ Start Parameter von au\xDFen zu empfangen."
+summary: Um Befehlszeilenargumente in Python zu lesen, nutzt du das `sys` Modul.
 title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---

@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:48:08.401637-07:00
-description: "Descobrir o comprimento de uma string significa contar o n\xFAmero de\
-  \ caracteres que ela possui. Programadores fazem isso para validar entradas, delimitar\u2026"
+description: "Como Fazer: Vamos ao c\xF3digo!."
 lastmod: '2024-03-13T22:44:46.144737-06:00'
 model: gpt-4-1106-preview
-summary: "Descobrir o comprimento de uma string significa contar o n\xFAmero de caracteres\
-  \ que ela possui."
+summary: "Vamos ao c\xF3digo."
 title: Descobrindo o comprimento de uma string
 weight: 7
 ---

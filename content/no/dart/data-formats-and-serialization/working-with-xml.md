@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:43.410385-07:00
-description: "\xC5 jobbe med XML i Dart inneb\xE6rer parsing, sp\xF8rre og modifisere\
-  \ XML-dokumenter, en prosess som er avgj\xF8rende for applikasjoner som samhandler\
-  \ med\u2026"
+description: "Hvordan: Dart inkluderer ikke innebygget st\xF8tte for XML-h\xE5ndtering\
+  \ i sitt standardbibliotek, noe som n\xF8dvendiggj\xF8r bruk av tredjepartspakker.\
+  \ En popul\xE6r\u2026"
 lastmod: '2024-03-13T22:44:40.514341-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 jobbe med XML i Dart inneb\xE6rer parsing, sp\xF8rre og modifisere\
-  \ XML-dokumenter, en prosess som er avgj\xF8rende for applikasjoner som samhandler\
-  \ med webtjenester, konfigurasjonsfiler eller arvesystemer."
+summary: "Dart inkluderer ikke innebygget st\xF8tte for XML-h\xE5ndtering i sitt standardbibliotek,\
+  \ noe som n\xF8dvendiggj\xF8r bruk av tredjepartspakker."
 title: Arbeider med XML
 weight: 40
 ---

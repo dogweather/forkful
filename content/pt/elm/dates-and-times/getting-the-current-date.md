@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 15:14:02.712219-07:00
-description: "Conseguir a data atual significa acessar o momento exato em que o c\xF3\
-  digo est\xE1 sendo executado. Programadores fazem isso para marcar eventos, gerenciar\u2026"
+description: "Como fazer: Elm torna um pouco mais envolvente pegar a data, j\xE1 que\
+  \ funciona com imutabilidade e efeitos gerenciados. Primeiro, vamos pedir a data\
+  \ e\u2026"
 lastmod: '2024-03-13T22:44:46.510680-06:00'
 model: unknown
-summary: "Conseguir a data atual significa acessar o momento exato em que o c\xF3\
-  digo est\xE1 sendo executado."
+summary: "Elm torna um pouco mais envolvente pegar a data, j\xE1 que funciona com\
+  \ imutabilidade e efeitos gerenciados."
 title: Obtendo a data atual
 weight: 29
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:18:30.339242-07:00
-description: "Il refactoring \xE8 il processo di ritocco del codice senza cambiarne\
-  \ il comportamento esterno. Si tratta tutto di pulire e organizzare il proprio lavoro\
-  \ per\u2026"
+description: "Come fare: Diciamo che hai un blocco di codice Haskell che si ripete\
+  \ pi\xF9 della tua canzone preferita. Ecco un rapido sguardo su come potresti\u2026"
 lastmod: '2024-03-13T22:44:43.483538-06:00'
 model: gpt-4-0125-preview
-summary: "Il refactoring \xE8 il processo di ritocco del codice senza cambiarne il\
-  \ comportamento esterno."
+summary: "Diciamo che hai un blocco di codice Haskell che si ripete pi\xF9 della tua\
+  \ canzone preferita."
 title: Rifattorizzazione
 weight: 19
 ---

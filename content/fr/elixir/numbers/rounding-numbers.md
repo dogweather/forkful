@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 03:43:52.819457-07:00
-description: "Arrondir des nombres signifie les ajuster \xE0 une valeur proche pour\
-  \ la simplicit\xE9 ou pour correspondre \xE0 une certaine pr\xE9cision. C'est utile\
-  \ pour am\xE9liorer\u2026"
+description: "Comment faire : Dans Elixir, vous pouvez utiliser `Float.round/2` pour\
+  \ arrondir un nombre \xE0 virgule flottante. Vous pouvez sp\xE9cifier le nombre\
+  \ de\u2026"
 lastmod: '2024-03-13T22:44:57.321376-06:00'
 model: gpt-4-0125-preview
-summary: "Arrondir des nombres signifie les ajuster \xE0 une valeur proche pour la\
-  \ simplicit\xE9 ou pour correspondre \xE0 une certaine pr\xE9cision."
+summary: "Dans Elixir, vous pouvez utiliser `Float.round/2` pour arrondir un nombre\
+  \ \xE0 virgule flottante."
 title: Arrondir les nombres
 weight: 13
 ---

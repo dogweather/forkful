@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:37.070681-07:00
-description: "Ottenere la data corrente in Go \xE8 un compito fondamentale per i programmatori,\
-  \ paragonabile alla diffusione di \"Hello, World!\". \xC8 essenziale per compiti\u2026"
+description: "Come fare: In Go, il pacchetto `time` \xE8 la tua porta d'accesso per\
+  \ lavorare con date e orari. La funzione `time.Now()` ti fornisce la data e l'ora\u2026"
 lastmod: '2024-03-13T22:44:42.919645-06:00'
 model: gpt-4-0125-preview
-summary: "Ottenere la data corrente in Go \xE8 un compito fondamentale per i programmatori,\
-  \ paragonabile alla diffusione di \"Hello, World."
+summary: "In Go, il pacchetto `time` \xE8 la tua porta d'accesso per lavorare con\
+  \ date e orari."
 title: Ottenere la data corrente
 weight: 29
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 18:00:48.585045-07:00
-description: "Sending an HTTP request with basic authentication involves transmitting\
-  \ a username and password to confirm a user's identity. Programmers do this to\u2026"
+description: "How to: Let's get our hands dirty with some code. We'll use `curl`,\
+  \ a common command-line tool. Replace `username:password` with your credentials\
+  \ and\u2026"
 lastmod: '2024-03-13T22:45:00.244573-06:00'
 model: gpt-4-1106-preview
-summary: Sending an HTTP request with basic authentication involves transmitting a
-  username and password to confirm a user's identity.
+summary: Let's get our hands dirty with some code.
 title: Sending an HTTP request with basic authentication
 weight: 45
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:41:21.884177-07:00
-description: "Tworzymy pliki tymczasowe, gdy musimy przechowa\u0107 dane tymczasowo,\
-  \ zanim uko\u0144czymy z nimi co\u015B konkretnego. Programi\u015Bci robi\u0105\
-  \ to, by zarz\u0105dza\u0107 danymi\u2026"
+description: "Jak to zrobi\u0107: W PHP robienie plik\xF3w tymczasowych jest proste.\
+  \ U\u017Cyj `tmpfile()` do stworzenia i otwarcia pliku, a on sam si\u0119 usunie\
+  \ po zamkni\u0119ciu, albo\u2026"
 lastmod: '2024-03-13T22:44:35.516862-06:00'
 model: gpt-4-1106-preview
-summary: "Tworzymy pliki tymczasowe, gdy musimy przechowa\u0107 dane tymczasowo, zanim\
-  \ uko\u0144czymy z nimi co\u015B konkretnego."
+summary: "W PHP robienie plik\xF3w tymczasowych jest proste."
 title: Tworzenie pliku tymczasowego
 weight: 21
 ---

@@ -1,14 +1,12 @@
 ---
 date: 2024-01-27 16:21:19.902608-07:00
-description: "Tiedostojen k\xE4sittely komentorivilt\xE4 (CLI, Command Line Interface)\
-  \ yksirivisill\xE4 komennoilla tarkoittaa Bash-skriptien tai -komentojen k\xE4ytt\xF6\
-  \xE4\u2026"
+description: "Kuinka: T\xE4ss\xE4 on muutamia tehokkaita yksirivisi\xE4 komentoja\
+  \ ja mit\xE4 ne voivat saavuttaa: 1. **Tiedoston luominen ja tekstin kirjoittaminen\
+  \ siihen:**."
 lastmod: '2024-03-13T22:44:56.734429-06:00'
 model: gpt-4-0125-preview
-summary: "Tiedostojen k\xE4sittely komentorivilt\xE4 (CLI, Command Line Interface)\
-  \ yksirivisill\xE4 komennoilla tarkoittaa Bash-skriptien tai -komentojen k\xE4ytt\xF6\
-  \xE4 tiedostojen, kuten luomisen, lukemisen, p\xE4ivitt\xE4misen tai poistamisen\
-  \ suorittamiseen pelk\xE4st\xE4\xE4n terminaalista."
+summary: "T\xE4ss\xE4 on muutamia tehokkaita yksirivisi\xE4 komentoja ja mit\xE4 ne\
+  \ voivat saavuttaa."
 title: "Tiedostojen k\xE4sittely komentorivin yksirivisill\xE4 komennoilla"
 weight: 31
 ---

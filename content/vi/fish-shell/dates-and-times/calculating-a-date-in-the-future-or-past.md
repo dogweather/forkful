@@ -2,16 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:49.202160-07:00
-description: "T\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7\
-  c qu\xE1 kh\u1EE9 li\xEAn quan \u0111\u1EBFn vi\u1EC7c thao t\xE1c v\u1EDBi c\xE1\
-  c ng\xE0y \u0111\u1EC3 t\xECm ra ng\xE0y n\xE0o \u0111\xF3 \u0111\xE3 qua ho\u1EB7\
-  c s\u1EBD \u0111\u1EBFn. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: \u0110\xE2y l\xE0 m\u1ED9t c\xE1ch hay\
+  \ \u0111\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi ng\xE0y th\xE1ng trong Fish Shell."
 lastmod: '2024-03-13T22:44:37.228791-06:00'
 model: gpt-4-0125-preview
-summary: "T\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1\
-  \ kh\u1EE9 li\xEAn quan \u0111\u1EBFn vi\u1EC7c thao t\xE1c v\u1EDBi c\xE1c ng\xE0\
-  y \u0111\u1EC3 t\xECm ra ng\xE0y n\xE0o \u0111\xF3 \u0111\xE3 qua ho\u1EB7c s\u1EBD\
-  \ \u0111\u1EBFn."
+summary: "\u0110\xE2y l\xE0 m\u1ED9t c\xE1ch hay \u0111\u1EC3 l\xE0m vi\u1EC7c v\u1EDB\
+  i ng\xE0y th\xE1ng trong Fish Shell."
 title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1EE9"
 weight: 26
 ---

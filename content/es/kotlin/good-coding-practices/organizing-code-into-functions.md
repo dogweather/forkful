@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 01:11:32.143731-07:00
-description: "Organizar el c\xF3digo en funciones significa dividir tu programa en\
-  \ piezas reutilizables, cada una manejando una tarea espec\xEDfica. Hacemos esto\
-  \ para que el\u2026"
+description: "C\xF3mo hacerlo: Aqu\xED hay un ejemplo simple. En lugar de escribir\
+  \ un largo script para saludar a los usuarios, dividimos la tarea en funciones."
 lastmod: '2024-03-13T22:44:59.041365-06:00'
 model: gpt-4-1106-preview
-summary: "Organizar el c\xF3digo en funciones significa dividir tu programa en piezas\
-  \ reutilizables, cada una manejando una tarea espec\xEDfica."
+summary: "Aqu\xED hay un ejemplo simple."
 title: "Organizando c\xF3digo en funciones"
 weight: 18
 ---

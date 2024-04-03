@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:40:51.530064-07:00
-description: "Creating a temporary file in PHP means making a file that'll stick around\
-  \ just long enough for you to use it, then poof\u2014it's gone. Why do that? It's\
-  \ great\u2026"
+description: "How to: PHP helps you create temporary files with the `tmpfile()` function,\
+  \ which creates a file for you in your system's temp directory. Here's a quick\u2026"
 lastmod: '2024-03-13T22:45:00.184521-06:00'
 model: gpt-4-1106-preview
-summary: "Creating a temporary file in PHP means making a file that'll stick around\
-  \ just long enough for you to use it, then poof\u2014it's gone."
+summary: PHP helps you create temporary files with the `tmpfile()` function, which
+  creates a file for you in your system's temp directory.
 title: Creating a temporary file
 weight: 21
 ---

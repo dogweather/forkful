@@ -2,16 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:35.241015-07:00
-description: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP l\xE0 c\xE1ch ch\u01B0\u01A1\
-  ng tr\xECnh c\u1EE7a b\u1EA1n y\xEAu c\u1EA7u d\u1EEF li\u1EC7u t\u1EEB web, gi\u1ED1\
-  ng nh\u01B0 c\xE1ch b\u1EA1n y\xEAu c\u1EA7u m\u1ED9t th\u1EE7 th\u01B0 v\u1EC1\
-  \ m\u1ED9t quy\u1EC3n s\xE1ch. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: S\u1EED d\u1EE5ng th\u01B0 vi\u1EC7n `HTTPoison`\
+  \ c\u1EE7a Elixir. N\xF3 g\u1ECDn g\xE0ng, \u0111\u01A1n gi\u1EA3n v\xE0 ho\xE0\
+  n th\xE0nh c\xF4ng vi\u1EC7c. 1. Th\xEAm HTTPoison v\xE0o `mix.exs` c\u1EE7a d\u1EF1\
+  \ \xE1n."
 lastmod: '2024-03-13T22:44:36.204196-06:00'
 model: gpt-4-0125-preview
-summary: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP l\xE0 c\xE1ch ch\u01B0\u01A1ng tr\xEC\
-  nh c\u1EE7a b\u1EA1n y\xEAu c\u1EA7u d\u1EEF li\u1EC7u t\u1EEB web, gi\u1ED1ng nh\u01B0\
-  \ c\xE1ch b\u1EA1n y\xEAu c\u1EA7u m\u1ED9t th\u1EE7 th\u01B0 v\u1EC1 m\u1ED9t quy\u1EC3\
-  n s\xE1ch."
+summary: "S\u1EED d\u1EE5ng th\u01B0 vi\u1EC7n `HTTPoison` c\u1EE7a Elixir."
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
 weight: 44
 ---

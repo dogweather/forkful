@@ -3,13 +3,13 @@ changelog:
 - 2024-03-25, dogweather, edited and tested
 - 2024-03-25, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:02:29.358527-07:00
-description: "Capitalizar uma string geralmente significa converter o primeiro caractere\
-  \ de uma string para mai\xFAscula e o restante para min\xFAscula. Mas \xE0s vezes\
-  \ pode\u2026"
+description: "Como Fazer: Ruby oferece [m\xE9todos diretos para a manipula\xE7\xE3\
+  o de strings](https://docs.ruby-lang.org/en/3.3/String.html), incluindo capitaliza\xE7\
+  \xE3o."
 lastmod: '2024-03-25T19:22:45.846125-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizar uma string geralmente significa converter o primeiro caractere\
-  \ de uma string para mai\xFAscula e o restante para min\xFAscula."
+summary: "Ruby oferece [m\xE9todos diretos para a manipula\xE7\xE3o de strings](https://docs.ruby-lang.org/en/3.3/String.html),\
+  \ incluindo capitaliza\xE7\xE3o."
 title: Capitalizando uma string
 weight: 2
 ---

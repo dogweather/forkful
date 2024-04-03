@@ -2,13 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:16.225747-07:00
-description: "Loggen, in de kern, is de praktijk van het vastleggen van gebeurtenissen\
-  \ en gegevens van een softwareapplicatie naar een externe uitvoer, zoals een\u2026"
+description: "Hoe te: In Kotlin kan loggen worden gedaan met behulp van de ingebouwde\
+  \ `println()` functie voor eenvoudige gevallen, of met meer geavanceerde\u2026"
 lastmod: '2024-03-13T22:44:50.774324-06:00'
 model: gpt-4-0125-preview
-summary: Loggen, in de kern, is de praktijk van het vastleggen van gebeurtenissen
-  en gegevens van een softwareapplicatie naar een externe uitvoer, zoals een bestand
-  of console.
+summary: In Kotlin kan loggen worden gedaan met behulp van de ingebouwde `println()`
+  functie voor eenvoudige gevallen, of met meer geavanceerde bibliotheken zoals SLF4J
+  met Logback of Log4j voor geavanceerde behoeften.
 title: Logboekregistratie
 weight: 17
 ---

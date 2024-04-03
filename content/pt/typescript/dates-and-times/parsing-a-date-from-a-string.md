@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:36.799395-07:00
-description: "Analisar uma data a partir de uma string envolve converter representa\xE7\
-  \xF5es textuais de datas e horas em um formato que possa ser manipulado e analisado\u2026"
+description: "Como Fazer: O TypeScript, sendo um superconjunto do JavaScript, depende\
+  \ do objeto Date para analisar datas de strings. No entanto, trabalhar com datas\
+  \ em\u2026"
 lastmod: '2024-03-13T22:44:46.335383-06:00'
 model: gpt-4-0125-preview
-summary: "Analisar uma data a partir de uma string envolve converter representa\xE7\
-  \xF5es textuais de datas e horas em um formato que possa ser manipulado e analisado\
-  \ pelo programa."
+summary: O TypeScript, sendo um superconjunto do JavaScript, depende do objeto Date
+  para analisar datas de strings.
 title: Analisando uma data a partir de uma string
 weight: 30
 ---

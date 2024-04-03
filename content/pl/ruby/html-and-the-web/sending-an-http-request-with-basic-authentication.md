@@ -1,13 +1,11 @@
 ---
 date: 2024-01-20 18:02:37.871553-07:00
-description: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawow\u0105 autoryzacj\u0105\
-  \ to proces dodawania nag\u0142\xF3wka autoryzacyjnego do \u017C\u0105dania HTTP,\
-  \ aby potwierdzi\u0107, \u017Ce mamy dost\u0119p. Programi\u015Bci\u2026"
+description: "How to: (Jak to zrobi\u0107:) Ruby u\u017Cywa `net/http` do wysy\u0142\
+  ania \u017C\u0105da\u0144 HTTP. Do\u0142\u0105czanie podstawowej autoryzacji jest\
+  \ proste."
 lastmod: '2024-03-13T22:44:35.932203-06:00'
 model: gpt-4-1106-preview
-summary: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawow\u0105 autoryzacj\u0105\
-  \ to proces dodawania nag\u0142\xF3wka autoryzacyjnego do \u017C\u0105dania HTTP,\
-  \ aby potwierdzi\u0107, \u017Ce mamy dost\u0119p."
+summary: "Ruby u\u017Cywa `net/http` do wysy\u0142ania \u017C\u0105da\u0144 HTTP."
 title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
 weight: 45
 ---

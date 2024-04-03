@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:26.648378-07:00
-description: "Comprobar si un directorio existe en Go es cr\xEDtico para aplicaciones\
-  \ que interact\xFAan con el sistema de archivos, para evitar errores al intentar\
-  \ acceder o\u2026"
+description: "C\xF3mo hacerlo: En Go, el paquete `os` ofrece funcionalidades para\
+  \ interactuar con el sistema operativo, incluyendo la verificaci\xF3n de la existencia\
+  \ de un\u2026"
 lastmod: '2024-03-13T22:44:58.483950-06:00'
 model: gpt-4-0125-preview
-summary: "Comprobar si un directorio existe en Go es cr\xEDtico para aplicaciones\
-  \ que interact\xFAan con el sistema de archivos, para evitar errores al intentar\
-  \ acceder o modificar directorios."
+summary: "En Go, el paquete `os` ofrece funcionalidades para interactuar con el sistema\
+  \ operativo, incluyendo la verificaci\xF3n de la existencia de un directorio."
 title: Verificando si un directorio existe
 weight: 20
 ---

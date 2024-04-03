@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 04:39:15.192483-07:00
-description: "Komplexa tal har en reell del och en imagin\xE4r del (som `3 + 4i`).\
-  \ De anv\xE4nds inom ingenj\xF6rsarbete, fysik och vissa dataproblem. Programmerare\
-  \ arbetar med\u2026"
+description: "Hur man g\xF6r: Elixir har inte inbyggda komplexa tal, s\xE5 vi skapar\
+  \ v\xE5ra egna eller anv\xE4nder ett bibliotek, som `ComplexNum`. H\xE4r \xE4r ett\
+  \ snabbt exempel med\u2026"
 lastmod: '2024-03-13T22:44:37.560931-06:00'
 model: gpt-4-0125-preview
-summary: "Komplexa tal har en reell del och en imagin\xE4r del (som `3 + 4i`)."
+summary: "Elixir har inte inbyggda komplexa tal, s\xE5 vi skapar v\xE5ra egna eller\
+  \ anv\xE4nder ett bibliotek, som `ComplexNum`."
 title: Att arbeta med komplexa tal
 weight: 14
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:50.655600-07:00
-description: "Omstrukturering i programmeringsspr\xE5ket refererer til prosessen med\
-  \ \xE5 restrukturere eksisterende dataprogramkode - endre faktoriseringen uten \xE5\
-  \ endre den\u2026"
+description: "Hvordan gj\xF8re det: I Google Apps Script er et vanlig scenario som\
+  \ drar nytte av omstrukturering, forenklingen av tungvinte skript som samhandler\
+  \ med\u2026"
 lastmod: '2024-03-13T22:44:40.324792-06:00'
 model: gpt-4-0125-preview
-summary: "Omstrukturering i programmeringsspr\xE5ket refererer til prosessen med \xE5\
-  \ restrukturere eksisterende dataprogramkode - endre faktoriseringen uten \xE5 endre\
-  \ den eksterne oppf\xF8rselen - for \xE5 forbedre ikke-funksjonelle attributter."
+summary: I Google Apps Script er et vanlig scenario som drar nytte av omstrukturering,
+  forenklingen av tungvinte skript som samhandler med Google Sheets eller Docs.
 title: Refaktorering
 weight: 19
 ---

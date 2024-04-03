@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:31:01.920677-07:00
-description: "Das Berechnen eines Datums in der Zukunft oder der Vergangenheit ist\
-  \ einfach, bestimmt wann Dinge passiert sind oder passieren werden. Programmierer\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:53.944410-06:00'
 model: gpt-4-1106-preview
-summary: Das Berechnen eines Datums in der Zukunft oder der Vergangenheit ist einfach,
-  bestimmt wann Dinge passiert sind oder passieren werden.
+summary: .
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---

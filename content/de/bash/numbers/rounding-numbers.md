@@ -1,11 +1,9 @@
 ---
 date: 2024-01-26 03:42:24.752922-07:00
-description: "Zahlen zu runden bedeutet, die Dezimalstellen auf einen einfacheren\
-  \ Wert zu k\xFCrzen, der f\xFCr einen gegebenen Kontext ausreichend gut ist. Programmierer\u2026"
+description: 'Wie zu: Hier ist das Wichtigste zum Runden in Bash.'
 lastmod: '2024-03-13T22:44:54.052393-06:00'
 model: gpt-4-0125-preview
-summary: "Zahlen zu runden bedeutet, die Dezimalstellen auf einen einfacheren Wert\
-  \ zu k\xFCrzen, der f\xFCr einen gegebenen Kontext ausreichend gut ist."
+summary: Hier ist das Wichtigste zum Runden in Bash.
 title: Zahlen runden
 weight: 13
 ---

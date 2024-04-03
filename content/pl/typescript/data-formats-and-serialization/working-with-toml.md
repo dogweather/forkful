@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:27:10.848815-07:00
-description: "TOML, kr\xF3tkie od Tom's Obvious, Minimal Language, to format serializacji\
-  \ danych podobny do JSON lub YAML. Programi\u015Bci u\u017Cywaj\u0105 go ze wzgl\u0119\
-  du na jego\u2026"
+description: "Jak to zrobi\u0107: Na pocz\u0105tek potrzebny b\u0119dzie parser TOML.\
+  \ `@iarna/toml` to popularny wyb\xF3r. Zainstaluj go przy pomocy npm: `npm install\
+  \ @iarna/toml\u2026"
 lastmod: '2024-03-13T22:44:35.164015-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, kr\xF3tkie od Tom's Obvious, Minimal Language, to format serializacji\
-  \ danych podobny do JSON lub YAML."
+summary: "Na pocz\u0105tek potrzebny b\u0119dzie parser TOML."
 title: Praca z TOML
 weight: 39
 ---

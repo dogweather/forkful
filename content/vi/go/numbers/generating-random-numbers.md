@@ -2,16 +2,16 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:03.020387-07:00
-description: "Vi\u1EC7c t\u1EA1o ra c\xE1c s\u1ED1 ng\u1EABu nhi\xEAn trong l\u1EAD\
-  p tr\xECnh l\xE0 vi\u1EC7c t\u1EA1o ra m\u1ED9t chu\u1ED7i s\u1ED1 m\xE0 kh\xF4\
-  ng th\u1EC3 d\u1EF1 \u0111o\xE1n m\u1ED9t c\xE1ch h\u1EE3p l\xFD t\u1ED1t h\u01A1\
-  n l\xE0 qua c\u01A1 h\u1ED9i. C\xE1c l\u1EADp tr\xECnh vi\xEAn\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Go, c\xE1c s\u1ED1 ng\u1EABu nhi\xEAn\
+  \ \u0111\u01B0\u1EE3c t\u1EA1o ra b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng g\xF3i `math/rand`\
+  \ cho c\xE1c s\u1ED1 gi\u1EA3 ng\u1EABu nhi\xEAn ho\u1EB7c `crypto/rand` cho c\xE1\
+  c s\u1ED1 gi\u1EA3 ng\u1EABu\u2026"
 lastmod: '2024-03-13T22:44:35.976446-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c t\u1EA1o ra c\xE1c s\u1ED1 ng\u1EABu nhi\xEAn trong l\u1EADp tr\xEC\
-  nh l\xE0 vi\u1EC7c t\u1EA1o ra m\u1ED9t chu\u1ED7i s\u1ED1 m\xE0 kh\xF4ng th\u1EC3\
-  \ d\u1EF1 \u0111o\xE1n m\u1ED9t c\xE1ch h\u1EE3p l\xFD t\u1ED1t h\u01A1n l\xE0 qua\
-  \ c\u01A1 h\u1ED9i."
+summary: "Trong Go, c\xE1c s\u1ED1 ng\u1EABu nhi\xEAn \u0111\u01B0\u1EE3c t\u1EA1\
+  o ra b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng g\xF3i `math/rand` cho c\xE1c s\u1ED1 gi\u1EA3\
+  \ ng\u1EABu nhi\xEAn ho\u1EB7c `crypto/rand` cho c\xE1c s\u1ED1 gi\u1EA3 ng\u1EAB\
+  u nhi\xEAn an to\xE0n m\u1EADt m\xE3."
 title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 weight: 12
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:50.566384-07:00
-description: "Regul\xE6re uttrykk (regex) gir en m\xE5te \xE5 s\xF8ke, matche og manipulere\
-  \ strenger ved hjelp av definerte m\xF8nstre. Programmerere bruker dem omfattende\
-  \ for\u2026"
+description: "Hvordan: For \xE5 bruke regul\xE6re uttrykk i C, vil du prim\xE6rt jobbe\
+  \ med POSIX regex-biblioteket (`<regex.h>`). Dette eksemplet demonstrerer grunnleggende\u2026"
 lastmod: '2024-03-13T22:44:41.260428-06:00'
 model: gpt-4-0125-preview
-summary: "Regul\xE6re uttrykk (regex) gir en m\xE5te \xE5 s\xF8ke, matche og manipulere\
-  \ strenger ved hjelp av definerte m\xF8nstre."
+summary: "For \xE5 bruke regul\xE6re uttrykk i C, vil du prim\xE6rt jobbe med POSIX\
+  \ regex-biblioteket (`<regex.h>`)."
 title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:35:21.917712-07:00
-description: "String-Konkatenation verbindet zwei oder mehr Zeichenketten zu einer\
-  \ neuen. Es ist eine Standard-Technik, um dynamische Textausgaben zu erzeugen oder\
-  \ um\u2026"
+description: 'So geht''s: In Python gibt es verschiedene Wege, Zeichenketten zu verketten.
+  Hier ein paar Beispiele.'
 lastmod: '2024-03-13T22:44:53.370276-06:00'
 model: gpt-4-1106-preview
-summary: String-Konkatenation verbindet zwei oder mehr Zeichenketten zu einer neuen.
+summary: In Python gibt es verschiedene Wege, Zeichenketten zu verketten.
 title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---

@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:31.437453-07:00
-description: "Le espressioni regolari (regex) sono uno strumento potente per l'elaborazione\
-  \ del testo, che permette ai programmatori di cercare, corrispondere e\u2026"
+description: 'Come fare: #.'
 lastmod: '2024-03-13T22:44:43.381887-06:00'
 model: gpt-4-0125-preview
-summary: Le espressioni regolari (regex) sono uno strumento potente per l'elaborazione
-  del testo, che permette ai programmatori di cercare, corrispondere e manipolare
-  le stringhe con tecniche avanzate di corrispondenza di modelli.
+summary: '#.'
 title: Utilizzo delle espressioni regolari
 weight: 11
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:49.858889-07:00
-description: "Leer argumentos de la l\xEDnea de comandos en Google Apps Script es\
-  \ un poco un t\xE9rmino incorrecto porque, a diferencia de las interfaces de l\xED\
-  nea de comandos\u2026"
+description: "C\xF3mo hacerlo: Para imitar el proceso de leer argumentos de la l\xED\
+  nea de comandos en Google Apps Script, particularmente para aplicaciones web, puedes\u2026"
 lastmod: '2024-03-13T22:44:58.568380-06:00'
 model: gpt-4-0125-preview
-summary: "Leer argumentos de la l\xEDnea de comandos en Google Apps Script es un poco\
-  \ un t\xE9rmino incorrecto porque, a diferencia de las interfaces de l\xEDnea de\
-  \ comandos tradicionales en lenguajes de programaci\xF3n como Python o Node."
+summary: "Para imitar el proceso de leer argumentos de la l\xEDnea de comandos en\
+  \ Google Apps Script, particularmente para aplicaciones web, puedes utilizar par\xE1\
+  metros de cadena de consulta."
 title: "Leyendo argumentos de la l\xEDnea de comandos"
 weight: 23
 ---

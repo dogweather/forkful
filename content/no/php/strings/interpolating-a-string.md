@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:51:19.034930-07:00
-description: "Stringinterpolasjon i PHP betyr \xE5 plassere variabler direkte i en\
-  \ streng for \xE5 bygge den. Vi gj\xF8r det fordi det er raskt og leselig n\xE5\
-  r vi vil bytte ut\u2026"
+description: "Hvordan gj\xF8re det: Du kan bruke dobbelt anf\xF8rselstegn eller heredoc-syntaks\
+  \ for \xE5 interpolere variabler i PHP. Se eksemplene under."
 lastmod: '2024-03-13T22:44:40.871848-06:00'
 model: gpt-4-1106-preview
-summary: "Stringinterpolasjon i PHP betyr \xE5 plassere variabler direkte i en streng\
-  \ for \xE5 bygge den."
+summary: "Du kan bruke dobbelt anf\xF8rselstegn eller heredoc-syntaks for \xE5 interpolere\
+  \ variabler i PHP."
 title: Interpolering av en streng
 weight: 8
 ---

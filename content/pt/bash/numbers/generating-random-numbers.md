@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 20:32:34.567643-07:00
-description: "Gerar n\xFAmeros aleat\xF3rios no Bash oferece uma maneira de introduzir\
-  \ imprevisibilidade nos scripts, o que \xE9 essencial para tarefas como gerar senhas\u2026"
+description: "Como fazer: No Bash, a vari\xE1vel `$RANDOM` \xE9 a melhor op\xE7\xE3\
+  o para gerar n\xFAmeros aleat\xF3rios. Toda vez que voc\xEA a referenciar, o Bash\
+  \ fornece um inteiro\u2026"
 lastmod: '2024-03-13T22:44:46.746647-06:00'
 model: gpt-4-0125-preview
-summary: "Gerar n\xFAmeros aleat\xF3rios no Bash oferece uma maneira de introduzir\
-  \ imprevisibilidade nos scripts, o que \xE9 essencial para tarefas como gerar senhas\
-  \ seguras, simular dados ou para programar jogos."
+summary: "No Bash, a vari\xE1vel `$RANDOM` \xE9 a melhor op\xE7\xE3o para gerar n\xFA\
+  meros aleat\xF3rios."
 title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
 weight: 12
 ---

@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:38:32.520940-07:00
-description: "Los n\xFAmeros complejos extienden los n\xFAmeros reales con una parte\
-  \ adicional, la unidad imaginaria 'i'. Los programadores los utilizan en varios\
-  \ dominios,\u2026"
+description: "C\xF3mo hacerlo: Clojure ofrece soporte incorporado para los n\xFAmeros\
+  \ complejos a trav\xE9s de la clase utilitaria `clojure.lang.Numbers`. Utiliza `complex`\
+  \ para\u2026"
 lastmod: '2024-03-13T22:44:58.650522-06:00'
 model: gpt-4-0125-preview
-summary: "Los n\xFAmeros complejos extienden los n\xFAmeros reales con una parte adicional,\
-  \ la unidad imaginaria 'i'."
+summary: "Clojure ofrece soporte incorporado para los n\xFAmeros complejos a trav\xE9\
+  s de la clase utilitaria `clojure.lang.Numbers`."
 title: "Trabajando con n\xFAmeros complejos"
 weight: 14
 ---

@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:47.561112-07:00
-description: "Att tolka ett datum fr\xE5n en str\xE4ng i Bash inneb\xE4r att extrahera\
-  \ och konvertera datuminformation fr\xE5n textdata till ett format som Bash kan\
-  \ manipulera\u2026"
+description: "Hur: Bash i sig \xE4r ganska begr\xE4nsat i direkt datumtolkningsf\xF6\
+  rm\xE5ga, och f\xF6rlitar sig ofta p\xE5 externa verktyg som `date` och `awk` f\xF6\
+  r mer sofistikerad\u2026"
 lastmod: '2024-03-13T22:44:38.091594-06:00'
 model: gpt-4-0125-preview
-summary: "Att tolka ett datum fr\xE5n en str\xE4ng i Bash inneb\xE4r att extrahera\
-  \ och konvertera datuminformation fr\xE5n textdata till ett format som Bash kan\
-  \ manipulera eller anv\xE4nda f\xF6r vidare processer."
+summary: "Bash i sig \xE4r ganska begr\xE4nsat i direkt datumtolkningsf\xF6rm\xE5\
+  ga, och f\xF6rlitar sig ofta p\xE5 externa verktyg som `date` och `awk` f\xF6r mer\
+  \ sofistikerad manipulation."
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---

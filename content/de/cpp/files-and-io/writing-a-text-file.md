@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:18.103419-07:00
-description: "Das Schreiben in eine Textdatei in C++ beinhaltet das Erstellen oder\
-  \ \xD6ffnen einer Datei und dann das Schreiben von Daten in diese, was eine grundlegende\u2026"
+description: "Wie geht das: C++ bietet mehrere M\xF6glichkeiten, in eine Textdatei\
+  \ zu schreiben, aber eine der einfachsten Methoden ist die Verwendung der Bibliothek\u2026"
 lastmod: '2024-03-13T22:44:54.202676-06:00'
 model: gpt-4-0125-preview
-summary: "Das Schreiben in eine Textdatei in C++ beinhaltet das Erstellen oder \xD6\
-  ffnen einer Datei und dann das Schreiben von Daten in diese, was eine grundlegende\
-  \ Aufgabe f\xFCr Anwendungen ist, die Daten persistent speichern m\xFCssen, wie\
-  \ beispielsweise Protokolle, von Benutzern generierte Inhalte oder Konfigurationseinstellungen."
+summary: "C++ bietet mehrere M\xF6glichkeiten, in eine Textdatei zu schreiben, aber\
+  \ eine der einfachsten Methoden ist die Verwendung der Bibliothek `<fstream>`, die\
+  \ die Klasse `ofstream` (output file stream) f\xFCr Dateischreiboperationen zur\
+  \ Verf\xFCgung stellt."
 title: Eine Textdatei schreiben
 weight: 24
 ---

@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:43:53.722354-07:00
-description: "Ladata web-sivu tarkoittaa, ett\xE4 haet sivun sis\xE4ll\xF6n netist\xE4\
-  . Ohjelmoijat tekev\xE4t t\xE4t\xE4 datan analysointiin, testaukseen tai automatisointiin."
+description: "How to: (Kuinka tehd\xE4:) ."
 lastmod: '2024-03-13T22:44:56.993222-06:00'
 model: gpt-4-1106-preview
-summary: "Ladata web-sivu tarkoittaa, ett\xE4 haet sivun sis\xE4ll\xF6n netist\xE4\
-  ."
+summary: .
 title: Verkkosivun lataaminen
 weight: 42
 ---

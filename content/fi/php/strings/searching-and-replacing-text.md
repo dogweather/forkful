@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:58:45.203683-07:00
-description: "Tekstin etsiminen ja korvaaminen on prosessi, jossa tekstist\xE4 l\xF6\
-  ydettyj\xE4 osia vaihdetaan toisiin. Ohjelmoijat tarvitsevat t\xE4t\xE4 toimintaa\
-  \ datan\u2026"
+description: "How to: PHP:ssa `str_replace`-funktio on yksi tapa tehd\xE4 tekstikorjauksia.\
+  \ T\xE4ss\xE4 yksinkertainen esimerkki."
 lastmod: '2024-03-13T22:44:56.641455-06:00'
 model: gpt-4-1106-preview
-summary: "Tekstin etsiminen ja korvaaminen on prosessi, jossa tekstist\xE4 l\xF6ydettyj\xE4\
-  \ osia vaihdetaan toisiin."
+summary: "PHP:ssa `str_replace`-funktio on yksi tapa tehd\xE4 tekstikorjauksia."
 title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---

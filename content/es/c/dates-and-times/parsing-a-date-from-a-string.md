@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:50.064496-07:00
-description: "Analizar una fecha desde una cadena en C implica convertir representaciones\
-  \ textuales de fechas en un formato que los programas pueden manipular y\u2026"
+description: "C\xF3mo hacerlo: C no proporciona una manera incorporada de analizar\
+  \ fechas desde cadenas directamente, por lo que a menudo recurrimos a la funci\xF3\
+  n\u2026"
 lastmod: '2024-03-13T22:44:59.556192-06:00'
 model: gpt-4-0125-preview
-summary: "Analizar una fecha desde una cadena en C implica convertir representaciones\
-  \ textuales de fechas en un formato que los programas pueden manipular y analizar\
-  \ de manera m\xE1s efectiva."
+summary: "C no proporciona una manera incorporada de analizar fechas desde cadenas\
+  \ directamente, por lo que a menudo recurrimos a la funci\xF3n `strptime` disponible\
+  \ en la biblioteca `<time.h>` para sistemas POSIX."
 title: Interpretando una fecha de una cadena de texto
 weight: 30
 ---

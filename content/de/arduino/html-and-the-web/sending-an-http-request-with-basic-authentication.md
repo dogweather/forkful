@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 18:01:05.490156-07:00
-description: "HTTP-Requests mit Basic Authentication senden Daten an einen Server,\
-  \ gesch\xFCtzt durch Benutzername und Passwort. Programmierer nutzen das f\xFCr\
-  \ sichere\u2026"
+description: "Anleitung: Hier ist ein einfacher Codeabschnitt f\xFCr das Senden einer\
+  \ HTTP-Anfrage mit Basic Authentication auf einem Arduino."
 lastmod: '2024-03-13T22:44:54.144511-06:00'
 model: gpt-4-1106-preview
-summary: "HTTP-Requests mit Basic Authentication senden Daten an einen Server, gesch\xFC\
-  tzt durch Benutzername und Passwort."
+summary: "Hier ist ein einfacher Codeabschnitt f\xFCr das Senden einer HTTP-Anfrage\
+  \ mit Basic Authentication auf einem Arduino."
 title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---

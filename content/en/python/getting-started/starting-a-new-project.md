@@ -2,12 +2,10 @@
 changelog:
 - 2024-02-22, dogweather, reviewed
 date: 2024-02-22 14:52:40.960064-07:00
-description: "Starting a new project in Python is about setting up a structured, maintainable\
-  \ framework from the outset. Programmers do this to ensure that their code\u2026"
+description: 'How to: #.'
 lastmod: '2024-03-13T22:44:59.708814-06:00'
 model: gpt-4-0125-preview
-summary: Starting a new project in Python is about setting up a structured, maintainable
-  framework from the outset.
+summary: '#.'
 title: Starting a new project
 weight: 1
 ---

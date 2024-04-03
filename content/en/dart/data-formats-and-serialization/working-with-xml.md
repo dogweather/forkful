@@ -1,12 +1,11 @@
 ---
 date: 2024-03-08 21:33:43.430952-07:00
-description: "Working with XML in Dart involves parsing, querying, and modifying XML\
-  \ documents, a process crucial for applications that interact with web services,\u2026"
+description: "How to: Dart does not include built-in support for XML handling in its\
+  \ standard library, necessitating the use of third-party packages. One popular\u2026"
 lastmod: '2024-03-13T22:44:59.842086-06:00'
 model: gpt-4-0125-preview
-summary: Working with XML in Dart involves parsing, querying, and modifying XML documents,
-  a process crucial for applications that interact with web services, configuration
-  files, or legacy systems.
+summary: Dart does not include built-in support for XML handling in its standard library,
+  necessitating the use of third-party packages.
 title: Working with XML
 weight: 40
 ---

@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:46.892857-07:00
-description: "De huidige datum in Elm krijgen betekent het ophalen van de huidige\
-  \ kalenderdatum van het systeem. We doen dit om gebeurtenissen te timestampen, taken\
-  \ te\u2026"
+description: 'Hoe: Elm behandelt datums met de `Time` module. Je krijgt de huidige
+  tijd als een POSIX-tijdstempel, die je dan omzet naar een datum.'
 lastmod: '2024-03-13T22:44:50.735541-06:00'
 model: gpt-4-0125-preview
-summary: De huidige datum in Elm krijgen betekent het ophalen van de huidige kalenderdatum
-  van het systeem.
+summary: Elm behandelt datums met de `Time` module.
 title: Het huidige datum ophalen
 weight: 29
 ---

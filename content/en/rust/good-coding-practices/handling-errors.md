@@ -1,10 +1,10 @@
 ---
 date: 2024-01-21 21:19:37.063922-07:00
-description: "Error handling is about dealing with things when they go sideways. Programmers\
-  \ do it to handle the unexpected, ensuring their Rust programs are robust and\u2026"
+description: 'How to: Rust handles errors in two major ways: recoverable and unrecoverable
+  errors. Let''s check out both. Recoverable errors use `Result<T, E>`.'
 lastmod: '2024-03-13T22:44:59.902673-06:00'
 model: gpt-4-1106-preview
-summary: Error handling is about dealing with things when they go sideways.
+summary: Rust handles errors in two major ways.
 title: Handling errors
 weight: 16
 ---

@@ -1,13 +1,10 @@
 ---
 date: 2024-01-26 04:41:14.464216-07:00
-description: "Los n\xFAmeros complejos, que constan de una parte real y una parte\
-  \ imaginaria, son esenciales en varios campos computacionales como la ingenier\xED\
-  a, la f\xEDsica\u2026"
+description: "C\xF3mo hacerlo: Haskell maneja los n\xFAmeros complejos con el m\xF3\
+  dulo `Data.Complex`. Aqu\xED hay un recorrido r\xE1pido."
 lastmod: '2024-03-13T22:44:59.113253-06:00'
 model: gpt-4-0125-preview
-summary: "Los n\xFAmeros complejos, que constan de una parte real y una parte imaginaria,\
-  \ son esenciales en varios campos computacionales como la ingenier\xEDa, la f\xED\
-  sica y el procesamiento de se\xF1ales."
+summary: "Haskell maneja los n\xFAmeros complejos con el m\xF3dulo `Data.Complex`."
 title: "Trabajando con n\xFAmeros complejos"
 weight: 14
 ---

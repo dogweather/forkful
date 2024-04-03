@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:47:07.697168-07:00
-description: "Die L\xE4nge eines Strings zu ermitteln bedeutet, zu z\xE4hlen, wie\
-  \ viele Zeichen er enth\xE4lt. Diese Information ist wichtig f\xFCr Input-Validierung,\u2026"
+description: "So geht\u2019s: In Elixir kannst du einfach die eingebaute Funktion\
+  \ `String.length/1` verwenden."
 lastmod: '2024-03-13T22:44:53.453662-06:00'
 model: gpt-4-1106-preview
-summary: "Die L\xE4nge eines Strings zu ermitteln bedeutet, zu z\xE4hlen, wie viele\
-  \ Zeichen er enth\xE4lt."
+summary: In Elixir kannst du einfach die eingebaute Funktion `String.length/1` verwenden.
 title: "Ermittlung der Zeichenkettenl\xE4nge"
 weight: 7
 ---

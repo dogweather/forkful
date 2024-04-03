@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:28.327560-07:00
-description: "Het lezen van opdrachtregelargumenten in PHP betekent het binnenhalen\
-  \ van invoer die aan je script wordt doorgegeven wanneer het in de console wordt\u2026"
+description: 'Hoe: PHP gebruikt een globale array `$argv` om opdrachtregelargumenten
+  op te slaan, waarbij `$argv[0]` de scriptnaam is. Zo gebruik je het.'
 lastmod: '2024-03-13T22:44:50.911327-06:00'
 model: gpt-4-0125-preview
-summary: Het lezen van opdrachtregelargumenten in PHP betekent het binnenhalen van
-  invoer die aan je script wordt doorgegeven wanneer het in de console wordt uitgevoerd.
+summary: PHP gebruikt een globale array `$argv` om opdrachtregelargumenten op te slaan,
+  waarbij `$argv[0]` de scriptnaam is.
 title: Commandoregelargumenten lezen
 weight: 23
 ---

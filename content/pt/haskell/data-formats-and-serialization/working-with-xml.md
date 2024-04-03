@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:31:51.453169-07:00
-description: "Trabalhar com XML em Haskell envolve analisar, manipular e gerar estruturas\
-  \ XML. Programadores lidam com XML para interagir com in\xFAmeras aplica\xE7\xF5\
-  es e\u2026"
+description: "Como Fazer: Haskell oferece bibliotecas como `xml-conduit` para lidar\
+  \ com XML. O exemplo a seguir demonstra como analisar uma string XML e consultar\u2026"
 lastmod: '2024-03-13T22:44:46.649596-06:00'
 model: gpt-4-0125-preview
-summary: Trabalhar com XML em Haskell envolve analisar, manipular e gerar estruturas
-  XML.
+summary: Haskell oferece bibliotecas como `xml-conduit` para lidar com XML.
 title: Trabalhando com XML
 weight: 40
 ---

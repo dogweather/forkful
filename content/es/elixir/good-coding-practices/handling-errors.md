@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 00:50:41.256863-07:00
-description: "Manejar errores significa escribir c\xF3digo que pueda lidiar con las\
-  \ cosas cuando salen mal. Los programadores lo hacen para prevenir fallos y para\u2026"
+description: "C\xF3mo hacerlo: En Elixir, a menudo usamos el emparejamiento de patrones\
+  \ y la declaraci\xF3n `case` para manejar diferentes resultados, incluidos los errores."
 lastmod: '2024-03-13T22:44:58.709659-06:00'
 model: gpt-4-1106-preview
-summary: "Manejar errores significa escribir c\xF3digo que pueda lidiar con las cosas\
-  \ cuando salen mal."
+summary: "En Elixir, a menudo usamos el emparejamiento de patrones y la declaraci\xF3\
+  n `case` para manejar diferentes resultados, incluidos los errores."
 title: Manejo de errores
 weight: 16
 ---

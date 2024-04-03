@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:10.583956-07:00
-description: "Das Ausgeben von Debug-Informationen bedeutet, tempor\xE4re, informative\
-  \ Protokollnachrichten zu generieren, die Programmierern helfen k\xF6nnen, den Ablauf\
-  \ und\u2026"
+description: "Wie geht das: In C ist die gebr\xE4uchlichste Methode zum Drucken von\
+  \ Debug-Ausgaben die Verwendung der `printf`-Funktion aus der Standard-Ein-/Ausgabe-\u2026"
 lastmod: '2024-03-13T22:44:54.355242-06:00'
 model: gpt-4-0125-preview
-summary: "Das Ausgeben von Debug-Informationen bedeutet, tempor\xE4re, informative\
-  \ Protokollnachrichten zu generieren, die Programmierern helfen k\xF6nnen, den Ablauf\
-  \ und Zustand eines Programms w\xE4hrend seiner Ausf\xFChrung zu verstehen."
+summary: "In C ist die gebr\xE4uchlichste Methode zum Drucken von Debug-Ausgaben die\
+  \ Verwendung der `printf`-Funktion aus der Standard-Ein-/Ausgabe-Bibliothek."
 title: Ausgabe von Debug-Informationen drucken
 weight: 33
 ---

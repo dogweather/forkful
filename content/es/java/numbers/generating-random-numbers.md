@@ -1,11 +1,12 @@
 ---
 date: 2024-01-27 20:34:03.190611-07:00
-description: "Generar n\xFAmeros aleatorios se refiere a producir secuencias o valores\
-  \ individuales impredecibles dentro de un rango definido. Los programadores utilizan\u2026"
+description: "C\xF3mo: En Java, generar n\xFAmeros aleatorios se puede lograr usando\
+  \ la clase `Random` del paquete `java.util`, o las clases `ThreadLocalRandom` y\u2026"
 lastmod: '2024-03-13T22:44:58.933681-06:00'
 model: gpt-4-0125-preview
-summary: "Generar n\xFAmeros aleatorios se refiere a producir secuencias o valores\
-  \ individuales impredecibles dentro de un rango definido."
+summary: "En Java, generar n\xFAmeros aleatorios se puede lograr usando la clase `Random`\
+  \ del paquete `java.util`, o las clases `ThreadLocalRandom` y `SecureRandom` para\
+  \ casos de uso espec\xEDficos."
 title: "Generaci\xF3n de n\xFAmeros aleatorios"
 weight: 12
 ---

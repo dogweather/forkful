@@ -2,12 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:39.361456-07:00
-description: "Los arreglos asociativos, conocidos como mapas en Go, te permiten almacenar\
-  \ pares clave-valor donde cada clave \xFAnica se asocia a un valor. Los\u2026"
+description: "C\xF3mo hacerlo: Crear e inicializar un mapa en Go se puede hacer de\
+  \ varias maneras. Aqu\xED tienes un ejemplo b\xE1sico para empezar."
 lastmod: '2024-03-13T22:44:58.459375-06:00'
 model: gpt-4-0125-preview
-summary: "Los arreglos asociativos, conocidos como mapas en Go, te permiten almacenar\
-  \ pares clave-valor donde cada clave \xFAnica se asocia a un valor."
+summary: Crear e inicializar un mapa en Go se puede hacer de varias maneras.
 title: Usando arrays asociativos
 weight: 15
 ---

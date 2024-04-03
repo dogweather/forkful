@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:22.342165-07:00
-description: "Wyszukiwanie i zamiana tekstu w programowaniu u\u0142atwia modyfikacj\u0119\
-  \ i zarz\u0105dzanie ci\u0105gami znak\xF3w, co jest podstawowym zadaniem w manipulacji\
-  \ danymi i\u2026"
+description: "Jak to zrobi\u0107: W Go pakiet `strings` oferuje r\xF3\u017Cne funkcje\
+  \ do wyszukiwania i zamiany tekstu w ci\u0105gach znak\xF3w. Przyjrzymy si\u0119\
+  \ kilku powszechnym metodam.\u2026"
 lastmod: '2024-03-13T22:44:34.832432-06:00'
 model: gpt-4-0125-preview
-summary: "Wyszukiwanie i zamiana tekstu w programowaniu u\u0142atwia modyfikacj\u0119\
-  \ i zarz\u0105dzanie ci\u0105gami znak\xF3w, co jest podstawowym zadaniem w manipulacji\
-  \ danymi i rozwoju oprogramowania."
+summary: "W Go pakiet `strings` oferuje r\xF3\u017Cne funkcje do wyszukiwania i zamiany\
+  \ tekstu w ci\u0105gach znak\xF3w."
 title: Wyszukiwanie i zamienianie tekstu
 weight: 10
 ---

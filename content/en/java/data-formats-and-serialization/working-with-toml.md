@@ -1,10 +1,10 @@
 ---
 date: 2024-01-25 03:39:31.741670-07:00
-description: "TOML stands for Tom's Obvious, Minimal Language. It's a data serialization\
-  \ format used for config files. Programmers use it because it's easy to read,\u2026"
+description: 'How to: You''ll need a TOML parsing library. I recommend `toml4j`. Add
+  it to your project like this.'
 lastmod: '2024-03-13T22:44:59.992689-06:00'
 model: gpt-4-1106-preview
-summary: TOML stands for Tom's Obvious, Minimal Language.
+summary: You'll need a TOML parsing library.
 title: Working with TOML
 weight: 39
 ---

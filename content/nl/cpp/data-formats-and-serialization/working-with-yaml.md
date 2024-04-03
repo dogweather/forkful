@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:58.687308-07:00
-description: "Werken met YAML houdt in dat je gegevens parseert en genereert in de\
-  \ voor mensen vriendelijke YAML Ain't Markup Language. Programmeurs gebruiken het\
-  \ voor\u2026"
+description: 'Hoe: YAML-ondersteuning is niet ingebouwd in C++. Je hebt een bibliotheek
+  zoals `yaml-cpp` nodig. Hier is hoe je een eenvoudig YAML-bestand parseert.'
 lastmod: '2024-03-13T22:44:51.133619-06:00'
 model: gpt-4-0125-preview
-summary: Werken met YAML houdt in dat je gegevens parseert en genereert in de voor
-  mensen vriendelijke YAML Ain't Markup Language.
+summary: YAML-ondersteuning is niet ingebouwd in C++.
 title: Werken met YAML
 weight: 41
 ---

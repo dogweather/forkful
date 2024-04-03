@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:10.826723-07:00
-description: "Een HTTP-verzoek verzenden met basisauthenticatie houdt in dat je een\
-  \ gebruikersnaam en wachtwoord toevoegt om toegang te krijgen tot een resource op\
-  \ een\u2026"
+description: 'Hoe te: Hier is de eenvoudige manier om een HTTP-verzoek te verzenden
+  met basisauthenticatie met cURL in PHP.'
 lastmod: '2024-03-13T22:44:50.894569-06:00'
 model: gpt-4-0125-preview
-summary: Een HTTP-verzoek verzenden met basisauthenticatie houdt in dat je een gebruikersnaam
-  en wachtwoord toevoegt om toegang te krijgen tot een resource op een server.
+summary: Hier is de eenvoudige manier om een HTTP-verzoek te verzenden met basisauthenticatie
+  met cURL in PHP.
 title: Een HTTP-verzoek verzenden met basisauthenticatie
 weight: 45
 ---

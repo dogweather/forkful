@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:46.830937-07:00
-description: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res en Clojure\
-  \ consiste \xE0 convertir des repr\xE9sentations textuelles de dates et d'heures\
-  \ en une forme\u2026"
+description: "Comment faire : Clojure, \xE9tant un langage JVM, vous permet d'utiliser\
+  \ directement les biblioth\xE8ques de dates et d'heures de Java. Commen\xE7ons par\u2026"
 lastmod: '2024-03-13T22:44:57.292014-06:00'
 model: gpt-4-0125-preview
-summary: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res en Clojure\
-  \ consiste \xE0 convertir des repr\xE9sentations textuelles de dates et d'heures\
-  \ en une forme plus utilisable (par exemple, l'objet DateTime de Clojure)."
+summary: "Clojure, \xE9tant un langage JVM, vous permet d'utiliser directement les\
+  \ biblioth\xE8ques de dates et d'heures de Java."
 title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
 weight: 30
 ---

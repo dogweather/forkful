@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 01:07:49.007916-07:00
-description: "Registrar eventos em programa\xE7\xE3o \xE9 como manter um di\xE1rio\
-  \ para a sua aplica\xE7\xE3o. \xC9 o registro sistem\xE1tico de eventos, mensagens\
-  \ e pontos de dados que lhe\u2026"
+description: "Como fazer: Ruby vem com um m\xF3dulo embutido para registro de eventos,\
+  \ `Logger`, que \xE9 super f\xE1cil de usar. Aqui est\xE1 um exemplo r\xE1pido para\
+  \ come\xE7ar."
 lastmod: '2024-03-13T22:44:47.101767-06:00'
 model: gpt-4-1106-preview
-summary: "Registrar eventos em programa\xE7\xE3o \xE9 como manter um di\xE1rio para\
-  \ a sua aplica\xE7\xE3o."
+summary: "Ruby vem com um m\xF3dulo embutido para registro de eventos, `Logger`, que\
+  \ \xE9 super f\xE1cil de usar."
 title: Registro de Logs
 weight: 17
 ---

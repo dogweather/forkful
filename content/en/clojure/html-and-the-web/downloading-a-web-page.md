@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:43:37.240018-07:00
-description: "Downloading a web page means grabbing the HTML from a URL so your program\
-  \ can work with it. Programmers do it to scrape data, automate web interactions\
-  \ or\u2026"
+description: 'How to: In Clojure, you can use `clj-http` to quickly download a web
+  page. Here''s a barebones example.'
 lastmod: '2024-03-13T22:44:59.744028-06:00'
 model: gpt-4-1106-preview
-summary: Downloading a web page means grabbing the HTML from a URL so your program
-  can work with it.
+summary: In Clojure, you can use `clj-http` to quickly download a web page.
 title: Downloading a web page
 weight: 42
 ---

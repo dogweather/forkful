@@ -2,14 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:32.479083-07:00
-description: "T\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i ngh\u0129a l\xE0\
-  \ x\xE1c \u0111\u1ECBnh xem n\xF3 ch\u1EE9a bao nhi\xEAu k\xFD t\u1EF1. L\u1EAD\
-  p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\u1EC3 x\xE1c th\u1EF1\
-  c input, thi\u1EBFt l\u1EADp v\xF2ng l\u1EB7p, ho\u1EB7c\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: C++ cung c\u1EA5p m\u1ED9t c\xE1ch tr\u1EF1\
+  c ti\u1EBFp \u0111\u1EC3 t\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i s\u1EED\
+  \ d\u1EE5ng ph\u01B0\u01A1ng th\u1EE9c `length()` c\u1EE7a l\u1EDBp `std::string`.\
+  \ Nh\u01B0ng n\u1EBFu b\u1EA1n l\xE0 ng\u01B0\u1EDDi\u2026"
 lastmod: '2024-03-13T22:44:37.030854-06:00'
 model: gpt-4-0125-preview
-summary: "T\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i ngh\u0129a l\xE0 x\xE1\
-  c \u0111\u1ECBnh xem n\xF3 ch\u1EE9a bao nhi\xEAu k\xFD t\u1EF1."
+summary: "C++ cung c\u1EA5p m\u1ED9t c\xE1ch tr\u1EF1c ti\u1EBFp \u0111\u1EC3 t\xEC\
+  m chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i s\u1EED d\u1EE5ng ph\u01B0\u01A1\
+  ng th\u1EE9c `length()` c\u1EE7a l\u1EDBp `std::string`."
 title: "T\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
 weight: 7
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:11.993379-07:00
-description: "Hakemiston olemassaolon tarkistaminen Visual Basic for Applications\
-  \ -ohjelmointikieless\xE4 (VBA) liittyy kansion olemassaolon varmentamiseen\u2026"
+description: "Kuinka: VBAssa, tarkistaaksesi, onko hakemisto olemassa, k\xE4ytet\xE4\
+  \xE4n tyypillisesti `Dir`-funktiota yhdistettyn\xE4 `vbDirectory`-attribuuttiin.\
+  \ T\xE4m\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.416499-06:00'
 model: gpt-4-0125-preview
-summary: "Hakemiston olemassaolon tarkistaminen Visual Basic for Applications -ohjelmointikieless\xE4\
-  \ (VBA) liittyy kansion olemassaolon varmentamiseen tiedostoj\xE4rjestelm\xE4ss\xE4\
-  \ ennen toimintoja, kuten tiedostojen tallentamista tai uusien hakemistojen luomista."
+summary: "VBAssa, tarkistaaksesi, onko hakemisto olemassa, k\xE4ytet\xE4\xE4n tyypillisesti\
+  \ `Dir`-funktiota yhdistettyn\xE4 `vbDirectory`-attribuuttiin."
 title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---

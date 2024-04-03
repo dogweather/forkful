@@ -1,13 +1,10 @@
 ---
 date: 2024-01-26 04:20:09.444108-07:00
-description: "TOML on lyhenne sanoista Tom's Obvious, Minimal Language, eli selke\xE4\
-  \ ja minimalistinen konfiguraatiotiedostomuoto, joka on helppo lukea sen selke\xE4\
-  n\u2026"
+description: "Kuinka: Asenna ensin TOML-j\xE4sent\xE4j\xE4 kuten `Tomlyn`. K\xE4yt\xE4\
+  \ paketinhallintaasi."
 lastmod: '2024-03-13T22:44:56.597544-06:00'
 model: gpt-4-0125-preview
-summary: "TOML on lyhenne sanoista Tom's Obvious, Minimal Language, eli selke\xE4\
-  \ ja minimalistinen konfiguraatiotiedostomuoto, joka on helppo lukea sen selke\xE4\
-  n semantiikan ansiosta."
+summary: "Asenna ensin TOML-j\xE4sent\xE4j\xE4 kuten `Tomlyn`."
 title: "Ty\xF6skentely TOML:n kanssa"
 weight: 39
 ---

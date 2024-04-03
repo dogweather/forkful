@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:34.167431-07:00
-description: "Scrivere su standard error (`stderr`) in C++ implica l'output di messaggi\
-  \ di errore o diagnostici che sono separati dall'output principale del programma.\u2026"
+description: "Come fare: In C++, scrivere su standard error pu\xF2 essere realizzato\
+  \ utilizzando il flusso `cerr`, che fa parte della libreria standard. Ecco un esempio\u2026"
 lastmod: '2024-03-13T22:44:43.744348-06:00'
 model: gpt-4-0125-preview
-summary: Scrivere su standard error (`stderr`) in C++ implica l'output di messaggi
-  di errore o diagnostici che sono separati dall'output principale del programma.
+summary: "In C++, scrivere su standard error pu\xF2 essere realizzato utilizzando\
+  \ il flusso `cerr`, che fa parte della libreria standard."
 title: Scrivere sull'errore standard
 weight: 25
 ---

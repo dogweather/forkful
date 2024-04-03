@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:34.267441-07:00
-description: "\xC5 organisere kode i funksjoner i Visual Basic for Applications (VBA)\
-  \ inneb\xE6rer \xE5 bryte ned et program i mindre, h\xE5ndterbare deler kjent som\
-  \ funksjoner.\u2026"
+description: "Hvordan: I VBA defineres funksjoner ved \xE5 bruke `Function` og `End\
+  \ Function`-uttalelsene. Her er et enkelt eksempel p\xE5 hvordan du oppretter en\
+  \ funksjon\u2026"
 lastmod: '2024-03-13T22:44:40.626483-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 organisere kode i funksjoner i Visual Basic for Applications (VBA)\
-  \ inneb\xE6rer \xE5 bryte ned et program i mindre, h\xE5ndterbare deler kjent som\
-  \ funksjoner."
+summary: "I VBA defineres funksjoner ved \xE5 bruke `Function` og `End Function`-uttalelsene."
 title: Organisering av kode i funksjoner
 weight: 18
 ---

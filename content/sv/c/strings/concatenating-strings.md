@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:53.673816-07:00
-description: "Str\xE4ngkonkatenering i C inneb\xE4r att s\xE4tta ihop tv\xE5 eller\
-  \ flera str\xE4ngar slut-i-slut f\xF6r att bilda en ny str\xE4ng. Programmerare\
-  \ utf\xF6r denna operation f\xF6r\u2026"
+description: "Hur man g\xF6r: I C \xE4r str\xE4ngar arrayer av tecken som avslutas\
+  \ med ett null-tecken (`\\0`). Till skillnad fr\xE5n i h\xF6gre programmeringsspr\xE5\
+  k, tillhandah\xE5ller C\u2026"
 lastmod: '2024-03-13T22:44:38.373534-06:00'
 model: gpt-4-0125-preview
-summary: "Str\xE4ngkonkatenering i C inneb\xE4r att s\xE4tta ihop tv\xE5 eller flera\
-  \ str\xE4ngar slut-i-slut f\xF6r att bilda en ny str\xE4ng."
+summary: "I C \xE4r str\xE4ngar arrayer av tecken som avslutas med ett null-tecken\
+  \ (`\\0`)."
 title: "Sammanfoga str\xE4ngar"
 weight: 3
 ---

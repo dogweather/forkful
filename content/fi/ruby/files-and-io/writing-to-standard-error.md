@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:30.317956-07:00
-description: "Kirjoittaminen standardivirheeseen (stderr) Rubylla tarkoittaa virheilmoitusten\
-  \ tai diagnostiikkatietojen ohjaamista erilliseen ulostulovirtaan, erill\xE4\xE4\
-  n\u2026"
+description: "Miten: Rubyn vakio kirjasto tarjoaa suoraviivaisen tavan kirjoittaa\
+  \ stderr:iin k\xE4ytt\xE4en `$stderr` tai `STDERR`. T\xE4t\xE4 perustoimintoa varten\
+  \ ei tarvita\u2026"
 lastmod: '2024-03-13T22:44:57.103728-06:00'
 model: gpt-4-0125-preview
-summary: "Kirjoittaminen standardivirheeseen (stderr) Rubylla tarkoittaa virheilmoitusten\
-  \ tai diagnostiikkatietojen ohjaamista erilliseen ulostulovirtaan, erill\xE4\xE4\
-  n standardiulostulosta (stdout)."
+summary: "Rubyn vakio kirjasto tarjoaa suoraviivaisen tavan kirjoittaa stderr:iin\
+  \ k\xE4ytt\xE4en `$stderr` tai `STDERR`."
 title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---

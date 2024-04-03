@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:39.427792-07:00
-description: "Att skriva tester i Fish Shell inneb\xE4r att skapa skript som automatiskt\
-  \ k\xF6r din kod f\xF6r att validera dess beteende mot f\xF6rv\xE4ntade resultat.\
-  \ Denna praxis\u2026"
+description: "Hur: Fish har inte ett inbyggt testramverk som vissa andra programmeringsmilj\xF6\
+  er. Du kan dock skriva enkla testskript som anv\xE4nder p\xE5st\xE5enden f\xF6r\
+  \ att\u2026"
 lastmod: '2024-03-13T22:44:38.341673-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva tester i Fish Shell inneb\xE4r att skapa skript som automatiskt\
-  \ k\xF6r din kod f\xF6r att validera dess beteende mot f\xF6rv\xE4ntade resultat."
+summary: "Fish har inte ett inbyggt testramverk som vissa andra programmeringsmilj\xF6\
+  er."
 title: Skriva tester
 weight: 36
 ---

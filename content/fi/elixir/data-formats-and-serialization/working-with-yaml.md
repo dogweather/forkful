@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:15.424696-07:00
-description: "YAML, lyhenne sanoista YAML Ain't Markup Language, on ihmisen luettavissa\
-  \ oleva datan sarjallistamisstandardi, jota k\xE4ytet\xE4\xE4n yleisesti\u2026"
+description: "Miten: Elixir ei sis\xE4ll\xE4 sis\xE4\xE4nrakennettua tukea YAML:lle.\
+  \ Voit kuitenkin k\xE4ytt\xE4\xE4 kolmannen osapuolen kirjastoja, kuten `yamerl`\
+  \ tai `yaml_elixir`,\u2026"
 lastmod: '2024-03-13T22:44:56.247143-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, lyhenne sanoista YAML Ain't Markup Language, on ihmisen luettavissa\
-  \ oleva datan sarjallistamisstandardi, jota k\xE4ytet\xE4\xE4n yleisesti konfiguraatiotiedostoissa\
-  \ ja datan vaihdossa eri kielten v\xE4lill\xE4, joilla on erilaiset datarakenteet."
+summary: "Elixir ei sis\xE4ll\xE4 sis\xE4\xE4nrakennettua tukea YAML:lle."
 title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---

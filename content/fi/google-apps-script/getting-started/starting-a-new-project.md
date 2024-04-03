@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:55.945859-07:00
-description: "Uuden projektin aloittaminen Google Apps Scriptiss\xE4 (GAS) tarkoittaa\
-  \ komentosarjatiedoston alustamista Google-ekosysteemiss\xE4 (Google Drive, Docs,\
-  \ Sheets\u2026"
+description: "Kuinka: Aloittaaksesi uuden projektin Google Apps Scriptiss\xE4, sinulla\
+  \ on muutama aloituskohta, mutta keskityt\xE4\xE4n suorimpaan menetelm\xE4\xE4n:\
+  \ skriptin luominen\u2026"
 lastmod: '2024-03-13T22:44:56.097855-06:00'
 model: gpt-4-0125-preview
-summary: "Uuden projektin aloittaminen Google Apps Scriptiss\xE4 (GAS) tarkoittaa\
-  \ komentosarjatiedoston alustamista Google-ekosysteemiss\xE4 (Google Drive, Docs,\
-  \ Sheets jne."
+summary: "Aloittaaksesi uuden projektin Google Apps Scriptiss\xE4, sinulla on muutama\
+  \ aloituskohta, mutta keskityt\xE4\xE4n suorimpaan menetelm\xE4\xE4n."
 title: Uuden projektin aloittaminen
 weight: 1
 ---

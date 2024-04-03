@@ -2,16 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:34.350628-07:00
-description: "Vi\u1EC7c vi\u1EBFt hoa m\u1ED9t chu\u1ED7i ngh\u0129a l\xE0 bi\u1EBF\
-  n ch\u1EEF c\xE1i \u0111\u1EA7u ti\xEAn c\u1EE7a m\u1ED7i t\u1EEB th\xE0nh ch\u1EEF\
-  \ hoa v\xE0 ph\u1EA7n c\xF2n l\u1EA1i th\xE0nh ch\u1EEF th\u01B0\u1EDDng. L\u1EAD\
-  p tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 \u0111\u1EA3m b\u1EA3\
-  o\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t s\u1ED1\
+  \ TypeScript nhanh ch\xF3ng \u0111\u1EC3 b\u1EA1n b\u1EAFt \u0111\u1EA7u vi\u1EBF\
+  t hoa c\xE1c chu\u1ED7i."
 lastmod: '2024-03-13T22:44:36.296446-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c vi\u1EBFt hoa m\u1ED9t chu\u1ED7i ngh\u0129a l\xE0 bi\u1EBFn ch\u1EEF\
-  \ c\xE1i \u0111\u1EA7u ti\xEAn c\u1EE7a m\u1ED7i t\u1EEB th\xE0nh ch\u1EEF hoa v\xE0\
-  \ ph\u1EA7n c\xF2n l\u1EA1i th\xE0nh ch\u1EEF th\u01B0\u1EDDng."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t s\u1ED1 TypeScript nhanh ch\xF3\
+  ng \u0111\u1EC3 b\u1EA1n b\u1EAFt \u0111\u1EA7u vi\u1EBFt hoa c\xE1c chu\u1ED7i."
 title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
 weight: 2
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:44:22.228952-07:00
-description: "Zaokr\u0105glanie liczb polega na ucinaniu miejsc dziesi\u0119tnych,\
-  \ aby upraszcza\u0107 dane lub dostosowa\u0107 je do konkretnych format\xF3w. Programi\u015B\
-  ci robi\u0105 to dla\u2026"
+description: "Jak to zrobi\u0107: W Fish, zaokr\u0105glanie liczb opiera si\u0119\
+  \ na komendzie `math`. U\u017Cyj `math -s0`, aby zaokr\u0105gli\u0107 do najbli\u017C\
+  szej liczby ca\u0142kowitej."
 lastmod: '2024-03-13T22:44:35.833838-06:00'
 model: gpt-4-0125-preview
-summary: "Zaokr\u0105glanie liczb polega na ucinaniu miejsc dziesi\u0119tnych, aby\
-  \ upraszcza\u0107 dane lub dostosowa\u0107 je do konkretnych format\xF3w."
+summary: "W Fish, zaokr\u0105glanie liczb opiera si\u0119 na komendzie `math`."
 title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---

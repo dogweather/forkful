@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:42:59.254895-07:00
-description: "Eliminar caracteres que coinciden con un patr\xF3n es quitar ciertos\
-  \ caracteres de una cadena de texto que cumplen con una condici\xF3n especificada.\
-  \ Lo hacemos\u2026"
+description: "C\xF3mo hacerlo: ."
 lastmod: '2024-03-13T22:44:58.830705-06:00'
 model: gpt-4-1106-preview
-summary: "Eliminar caracteres que coinciden con un patr\xF3n es quitar ciertos caracteres\
-  \ de una cadena de texto que cumplen con una condici\xF3n especificada."
+summary: .
 title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---

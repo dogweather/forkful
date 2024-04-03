@@ -2,15 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:34.944144-07:00
-description: "Escrever para o erro padr\xE3o (stderr) em JavaScript trata de direcionar\
-  \ mensagens de erro ou qualquer informa\xE7\xE3o cr\xEDtica para um fluxo espec\xED\
-  fico e\u2026"
+description: "Como fazer: No Node.js, escrever para stderr pode ser realizado usando\
+  \ o m\xE9todo `console.error()` ou escrevendo diretamente em `process.stderr`. Aqui\u2026"
 lastmod: '2024-03-13T22:44:46.978538-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever para o erro padr\xE3o (stderr) em JavaScript trata de direcionar\
-  \ mensagens de erro ou qualquer informa\xE7\xE3o cr\xEDtica para um fluxo espec\xED\
-  fico e separado, o que \xE9 especialmente \xFAtil em ambientes semelhantes ao Unix\
-  \ para fins de registro e depura\xE7\xE3o."
+summary: "No Node.js, escrever para stderr pode ser realizado usando o m\xE9todo `console.error()`\
+  \ ou escrevendo diretamente em `process.stderr`."
 title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---

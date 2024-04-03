@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:17.527597-07:00
-description: "Naar de standaardfout (`stderr`) schrijven is een manier om foutmeldingen\
-  \ en diagnostiek uit te sturen. Programmeurs doen dit om ze te scheiden van de\u2026"
+description: 'Hoe: Om naar de standaardfout in Clojure te schrijven, gebruik je `binding`
+  met `*err*`. Hier is een snel voorbeeld.'
 lastmod: '2024-03-13T22:44:50.436553-06:00'
 model: gpt-4-0125-preview
-summary: Naar de standaardfout (`stderr`) schrijven is een manier om foutmeldingen
-  en diagnostiek uit te sturen.
+summary: Om naar de standaardfout in Clojure te schrijven, gebruik je `binding` met
+  `*err*`.
 title: Schrijven naar standaardfout
 weight: 25
 ---

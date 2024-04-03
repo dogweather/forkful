@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 03:43:59.579896-07:00
-description: "Arredondar n\xFAmeros significa ajust\xE1-los a um valor pr\xF3ximo\
-  \ para simplicidade ou para corresponder a uma certa precis\xE3o. Isso \xE9 \xFA\
-  til para melhorar a\u2026"
+description: "Como Fazer: No Elixir, voc\xEA pode usar `Float.round/2` para arredondar\
+  \ um n\xFAmero de ponto flutuante. Voc\xEA pode especificar o n\xFAmero de d\xED\
+  gitos decimais que\u2026"
 lastmod: '2024-03-13T22:44:46.233220-06:00'
 model: gpt-4-0125-preview
-summary: "Arredondar n\xFAmeros significa ajust\xE1-los a um valor pr\xF3ximo para\
-  \ simplicidade ou para corresponder a uma certa precis\xE3o."
+summary: "No Elixir, voc\xEA pode usar `Float.round/2` para arredondar um n\xFAmero\
+  \ de ponto flutuante."
 title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---

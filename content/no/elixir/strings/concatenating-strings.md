@@ -1,12 +1,11 @@
 ---
 date: 2024-01-27 10:42:41.231494-07:00
-description: "Konkatenere strenger handler om \xE5 sette sammen to eller flere strenger\
-  \ for \xE5 danne en enkelt tekstbit. Du kan trenge \xE5 sl\xE5 sammen tekst for\
-  \ \xE5 generere\u2026"
+description: "Hvordan: I Elixir kan du konkatenere strenger p\xE5 noen f\xE5 enkle\
+  \ m\xE5ter. La oss utforske de mest vanlige metodene: 1. Ved \xE5 bruke `<>` operat\xF8\
+  ren, som er den\u2026"
 lastmod: '2024-03-13T22:44:40.435339-06:00'
 model: gpt-4-0125-preview
-summary: "Konkatenere strenger handler om \xE5 sette sammen to eller flere strenger\
-  \ for \xE5 danne en enkelt tekstbit."
+summary: "I Elixir kan du konkatenere strenger p\xE5 noen f\xE5 enkle m\xE5ter."
 title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---

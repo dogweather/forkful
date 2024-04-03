@@ -1,14 +1,11 @@
 ---
 date: 2024-02-03 19:02:29.170384-07:00
-description: "In PowerShell, checking if a directory exists is a common task that\
-  \ helps scripts make decisions based on filesystem structure\u2014such as avoiding\
-  \ errors by\u2026"
+description: "How to: PowerShell offers a straightforward way to check for the presence\
+  \ of a directory using the `Test-Path` cmdlet. This cmdlet returns a Boolean value\u2026"
 lastmod: '2024-03-13T22:45:00.297459-06:00'
 model: gpt-4-0125-preview
-summary: "In PowerShell, checking if a directory exists is a common task that helps\
-  \ scripts make decisions based on filesystem structure\u2014such as avoiding errors\
-  \ by confirming a target directory is in place before attempting to read from or\
-  \ write to it."
+summary: PowerShell offers a straightforward way to check for the presence of a directory
+  using the `Test-Path` cmdlet.
 title: Checking if a directory exists
 weight: 20
 ---

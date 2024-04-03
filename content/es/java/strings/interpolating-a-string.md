@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:51:11.692932-07:00
-description: "Interpolar una cadena significa insertar valores dentro de una string\
-  \ de forma din\xE1mica para construir un mensaje. Los programadores lo hacen para\
-  \ hacer\u2026"
+description: "C\xF3mo hacerlo: En Java, la interpolaci\xF3n de strings se puede lograr\
+  \ usando `String.format` o `System.out.printf`. Veamos c\xF3mo funcionan."
 lastmod: '2024-03-13T22:44:58.924157-06:00'
 model: gpt-4-1106-preview
-summary: "Interpolar una cadena significa insertar valores dentro de una string de\
-  \ forma din\xE1mica para construir un mensaje."
+summary: "En Java, la interpolaci\xF3n de strings se puede lograr usando `String.format`\
+  \ o `System.out.printf`."
 title: "Interpolaci\xF3n de cadenas de texto"
 weight: 8
 ---

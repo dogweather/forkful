@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:44.247893-07:00
-description: "TOML, joka tarkoittaa Tom's Obvious, Minimal Language (Tomin ilmeinen,\
-  \ minimalistinen kieli), on datan sarjoitustapa, jota k\xE4ytet\xE4\xE4n p\xE4\xE4\
-  asiassa\u2026"
+description: "Kuinka: TOMLin kanssa ty\xF6skentely VBA:ssa sis\xE4lt\xE4\xE4 TOML-tiedoston\
+  \ j\xE4sent\xE4misen, jotta konfiguraatiot tai asetukset voidaan lukea VBA-projektiisi.\
+  \ VBA:lla\u2026"
 lastmod: '2024-03-13T22:44:56.425919-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, joka tarkoittaa Tom's Obvious, Minimal Language (Tomin ilmeinen, minimalistinen\
-  \ kieli), on datan sarjoitustapa, jota k\xE4ytet\xE4\xE4n p\xE4\xE4asiassa konfiguraatiotiedostoissa."
+summary: "TOMLin kanssa ty\xF6skentely VBA:ssa sis\xE4lt\xE4\xE4 TOML-tiedoston j\xE4\
+  sent\xE4misen, jotta konfiguraatiot tai asetukset voidaan lukea VBA-projektiisi."
 title: "TOML:n kanssa ty\xF6skentely"
 weight: 39
 ---

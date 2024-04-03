@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:17.203446-07:00
-description: "Le espressioni regolari, o regex, sono sequenze di caratteri che formano\
-  \ un modello di ricerca, spesso utilizzate per compiti di confronto o manipolazione\u2026"
+description: "Come Fare: Il supporto nativo di Swift per le regex utilizza la classe\
+  \ `NSRegularExpression`, insieme ai metodi di intervallo e sostituzione della classe\u2026"
 lastmod: '2024-03-13T22:44:43.760322-06:00'
 model: gpt-4-0125-preview
-summary: Le espressioni regolari, o regex, sono sequenze di caratteri che formano
-  un modello di ricerca, spesso utilizzate per compiti di confronto o manipolazione
-  di stringhe.
+summary: Il supporto nativo di Swift per le regex utilizza la classe `NSRegularExpression`,
+  insieme ai metodi di intervallo e sostituzione della classe String.
 title: Utilizzo delle espressioni regolari
 weight: 11
 ---

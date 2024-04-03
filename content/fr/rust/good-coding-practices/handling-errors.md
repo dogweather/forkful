@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 00:57:51.098076-07:00
-description: "La gestion des erreurs consiste \xE0 g\xE9rer les choses quand elles\
-  \ ne se d\xE9roulent pas comme pr\xE9vu. Les programmeurs le font pour g\xE9rer\
-  \ l'inattendu, en\u2026"
+description: "Comment faire : Rust g\xE8re les erreurs de deux mani\xE8res principales\
+  \ : les erreurs r\xE9cup\xE9rables et les erreurs irr\xE9cup\xE9rables. Examinons\
+  \ les deux. Pour les\u2026"
 lastmod: '2024-03-13T22:44:57.490094-06:00'
 model: gpt-4-1106-preview
-summary: "La gestion des erreurs consiste \xE0 g\xE9rer les choses quand elles ne\
-  \ se d\xE9roulent pas comme pr\xE9vu."
+summary: "Rust g\xE8re les erreurs de deux mani\xE8res principales."
 title: Gestion des erreurs
 weight: 16
 ---

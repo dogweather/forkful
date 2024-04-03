@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:25.903546-07:00
-description: "Regulj\xE4ra uttryck (regex) i programmering anv\xE4nds f\xF6r att s\xF6\
-  ka, matcha och manipulera str\xE4ngar baserat p\xE5 specifika m\xF6nster. Programmerare\
-  \ anv\xE4nder dem\u2026"
+description: "Hur man g\xF6r: I Go tillhandah\xE5lls regex-funktionalitet genom paketet\
+  \ `regexp`. H\xE4r \xE4r en steg-f\xF6r-steg-guide f\xF6r hur du anv\xE4nder det:\
+  \ 1. **Kompilera ett\u2026"
 lastmod: '2024-03-13T22:44:37.381183-06:00'
 model: gpt-4-0125-preview
-summary: "Regulj\xE4ra uttryck (regex) i programmering anv\xE4nds f\xF6r att s\xF6\
-  ka, matcha och manipulera str\xE4ngar baserat p\xE5 specifika m\xF6nster."
+summary: "I Go tillhandah\xE5lls regex-funktionalitet genom paketet `regexp`."
 title: "Anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---

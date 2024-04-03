@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 17:40:46.544865-07:00
-description: "Das Erstellen einer tempor\xE4ren Datei erm\xF6glicht es einem Programm,\
-  \ Daten kurzzeitig zu speichern, ohne langfristige Spuren im Dateisystem zu hinterlassen.\u2026"
+description: "So geht's: Lua bietet keine eingebaute Funktion f\xFCr das Erstellen\
+  \ tempor\xE4rer Dateien, aber wir k\xF6nnen das OS-Modul nutzen, um auf Dateisystemfunktionen\u2026"
 lastmod: '2024-03-13T22:44:54.034546-06:00'
 model: gpt-4-1106-preview
-summary: "Das Erstellen einer tempor\xE4ren Datei erm\xF6glicht es einem Programm,\
-  \ Daten kurzzeitig zu speichern, ohne langfristige Spuren im Dateisystem zu hinterlassen."
+summary: "Lua bietet keine eingebaute Funktion f\xFCr das Erstellen tempor\xE4rer\
+  \ Dateien, aber wir k\xF6nnen das OS-Modul nutzen, um auf Dateisystemfunktionen\
+  \ zuzugreifen und eine tempor\xE4re Datei zu erstellen und zu verwenden."
 title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---

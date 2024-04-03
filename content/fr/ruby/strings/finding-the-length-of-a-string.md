@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:48:12.431292-07:00
-description: "Trouver la longueur d'une cha\xEEne de caract\xE8res, c'est simplement\
-  \ compter le nombre de caract\xE8res qu'elle contient. Les programmeurs le font\
-  \ pour valider\u2026"
+description: 'Comment faire : .'
 lastmod: '2024-03-13T22:44:58.408480-06:00'
 model: gpt-4-1106-preview
-summary: "Trouver la longueur d'une cha\xEEne de caract\xE8res, c'est simplement compter\
-  \ le nombre de caract\xE8res qu'elle contient."
+summary: .
 title: "Trouver la longueur d'une cha\xEEne de caract\xE8res"
 weight: 7
 ---

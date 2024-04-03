@@ -2,17 +2,17 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:39.840689-07:00
-description: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn li\xEAn quan \u0111\u1EBF\
-  n vi\u1EC7c s\u1EA3n xu\u1EA5t c\xE1c chu\u1ED7i ho\u1EB7c gi\xE1 tr\u1ECB \u0111\
-  \u01A1n l\u1EBB kh\xF4ng th\u1EC3 \u0111o\xE1n tr\u01B0\u1EDBc trong m\u1ED9t ph\u1EA1\
-  m vi \u0111\u01B0\u1EE3c x\xE1c \u0111\u1ECBnh. C\xE1c l\u1EADp tr\xECnh vi\xEA\
-  n\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Java, vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EAB\
+  u nhi\xEAn c\xF3 th\u1EC3 \u0111\u01B0\u1EE3c th\u1EF1c hi\u1EC7n b\u1EB1ng c\xE1\
+  ch s\u1EED d\u1EE5ng l\u1EDBp `Random` t\u1EEB g\xF3i `java.util`, ho\u1EB7c c\xE1\
+  c l\u1EDBp `ThreadLocalRandom`\u2026"
 lastmod: '2024-03-13T22:44:36.483808-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn li\xEAn quan \u0111\u1EBF\
-  n vi\u1EC7c s\u1EA3n xu\u1EA5t c\xE1c chu\u1ED7i ho\u1EB7c gi\xE1 tr\u1ECB \u0111\
-  \u01A1n l\u1EBB kh\xF4ng th\u1EC3 \u0111o\xE1n tr\u01B0\u1EDBc trong m\u1ED9t ph\u1EA1\
-  m vi \u0111\u01B0\u1EE3c x\xE1c \u0111\u1ECBnh."
+summary: "Trong Java, vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn c\xF3 th\u1EC3\
+  \ \u0111\u01B0\u1EE3c th\u1EF1c hi\u1EC7n b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng l\u1EDB\
+  p `Random` t\u1EEB g\xF3i `java.util`, ho\u1EB7c c\xE1c l\u1EDBp `ThreadLocalRandom`\
+  \ v\xE0 `SecureRandom` cho c\xE1c tr\u01B0\u1EDDng h\u1EE3p s\u1EED d\u1EE5ng c\u1EE5\
+  \ th\u1EC3."
 title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 weight: 12
 ---

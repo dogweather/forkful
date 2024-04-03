@@ -2,12 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:31.113201-07:00
-description: "Avviare un nuovo progetto in Dart comporta l'impostazione di un ambiente\
-  \ favorevole allo sviluppo efficiente, al testing e al deployment. I programmatori\u2026"
+description: "Come fare: 1. **Installa Dart**: Verifica che Dart sia installato sul\
+  \ tuo sistema. In caso contrario, puoi scaricarlo da [https://dart.dev/get-\u2026"
 lastmod: '2024-03-13T22:44:43.131014-06:00'
 model: gpt-4-0125-preview
-summary: Avviare un nuovo progetto in Dart comporta l'impostazione di un ambiente
-  favorevole allo sviluppo efficiente, al testing e al deployment.
+summary: '1.'
 title: Iniziare un nuovo progetto
 weight: 1
 ---

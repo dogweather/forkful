@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:03:32.739842-07:00
-description: "YAML, a data serialization language designed to be human-friendly, is\
-  \ often used for configuration files, inter-process messaging, and data storage.\u2026"
+description: "How to: Working with YAML in TypeScript typically involves parsing YAML\
+  \ content into JavaScript objects and possibly converting JavaScript objects back\u2026"
 lastmod: '2024-03-13T22:44:59.876697-06:00'
 model: gpt-4-0125-preview
-summary: YAML, a data serialization language designed to be human-friendly, is often
-  used for configuration files, inter-process messaging, and data storage.
+summary: Working with YAML in TypeScript typically involves parsing YAML content into
+  JavaScript objects and possibly converting JavaScript objects back into YAML.
 title: Working with YAML
 weight: 41
 ---

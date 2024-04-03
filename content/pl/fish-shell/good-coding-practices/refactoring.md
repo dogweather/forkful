@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 01:18:23.912725-07:00
-description: "Refaktoryzacja to proces restrukturyzacji istniej\u0105cego kodu bez\
-  \ zmieniania jego zewn\u0119trznego zachowania w celu poprawy atrybut\xF3w niefunkcjonalnych.\u2026"
+description: "Jak to zrobi\u0107: Wyobra\u017A sobie, \u017Ce masz skrypt, kt\xF3\
+  ry z czasem mocno uro\u015Bl. Zaczyna\u0142 prosto, ale teraz jest to bestia rozprzestrzeniaj\u0105\
+  ca macki logiki. Oto\u2026"
 lastmod: '2024-03-13T22:44:35.849979-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktoryzacja to proces restrukturyzacji istniej\u0105cego kodu bez zmieniania\
-  \ jego zewn\u0119trznego zachowania w celu poprawy atrybut\xF3w niefunkcjonalnych."
+summary: "Wyobra\u017A sobie, \u017Ce masz skrypt, kt\xF3ry z czasem mocno uro\u015B\
+  l."
 title: Refaktoryzacja
 weight: 19
 ---

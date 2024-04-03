@@ -1,11 +1,10 @@
 ---
 date: 2024-01-19
-description: "CSV (Comma-Separated Values) sind einfache Textdateien, die tabellarische\
-  \ Daten speichern. Programmierer nutzen CSV, weil es ein weit verbreitetes, leicht\u2026"
+description: "How to: Um CSV-Dateien in Haskell zu verarbeiten, nutzen wir die Bibliothek\
+  \ `cassava`. Installiere `cassava` mit `cabal install cassava` oder `stack add\u2026"
 lastmod: '2024-03-13T22:44:53.953086-06:00'
 model: unknown
-summary: CSV (Comma-Separated Values) sind einfache Textdateien, die tabellarische
-  Daten speichern.
+summary: Um CSV-Dateien in Haskell zu verarbeiten, nutzen wir die Bibliothek `cassava`.
 title: Arbeiten mit CSV-Dateien
 weight: 37
 ---

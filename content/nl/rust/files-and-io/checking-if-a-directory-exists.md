@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:01.751410-07:00
-description: "Controleren of een map bestaat in Rust is het verifi\xEBren of een map\
-  \ aanwezig is op het bestandssysteem. Programmeurs doen dit om fouten te voorkomen\
-  \ bij\u2026"
+description: 'Hoe: De standaardbibliotheek van Rust maakt deze taak eenvoudig met
+  `std::path::Path` en `std::fs`.'
 lastmod: '2024-03-13T22:44:50.608793-06:00'
 model: gpt-4-0125-preview
-summary: "Controleren of een map bestaat in Rust is het verifi\xEBren of een map aanwezig\
-  \ is op het bestandssysteem."
+summary: De standaardbibliotheek van Rust maakt deze taak eenvoudig met `std::path::Path`
+  en `std::fs`.
 title: Controleren of een directory bestaat
 weight: 20
 ---

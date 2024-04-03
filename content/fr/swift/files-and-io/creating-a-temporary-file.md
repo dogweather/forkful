@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:41:33.600849-07:00
-description: "Cr\xE9er un fichier temporaire, c'est juste \xE9crire des donn\xE9es\
-  \ qui n'ont pas besoin de rester longtemps. Les programmeurs le font pour stocker\
-  \ des trucs de\u2026"
+description: "How to: Swift rend la cr\xE9ation de fichiers temporaires assez easy.\
+  \ Voil\xE0 comment \xE7a se passe ."
 lastmod: '2024-03-13T22:44:58.248373-06:00'
 model: gpt-4-1106-preview
-summary: "Cr\xE9er un fichier temporaire, c'est juste \xE9crire des donn\xE9es qui\
-  \ n'ont pas besoin de rester longtemps."
+summary: "Swift rend la cr\xE9ation de fichiers temporaires assez easy."
 title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---

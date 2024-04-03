@@ -1,13 +1,11 @@
 ---
 date: 2024-02-03 19:02:45.429822-07:00
-description: "Parsing HTML refers to the process of breaking down and interpreting\
-  \ the structure of HTML content, typically to extract specific data or manipulate\
-  \ this\u2026"
+description: "How to: Swift, by default, doesn't include a built-in library for HTML\
+  \ parsing, necessitating the use of third-party libraries to handle this task\u2026"
 lastmod: '2024-03-13T22:45:00.394441-06:00'
 model: gpt-4-0125-preview
-summary: Parsing HTML refers to the process of breaking down and interpreting the
-  structure of HTML content, typically to extract specific data or manipulate this
-  content programmatically.
+summary: Swift, by default, doesn't include a built-in library for HTML parsing, necessitating
+  the use of third-party libraries to handle this task effectively.
 title: Parsing HTML
 weight: 43
 ---

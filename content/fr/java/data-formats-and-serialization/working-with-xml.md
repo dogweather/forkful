@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:32:19.814733-07:00
-description: "Travailler avec XML implique d'analyser, d'interroger et de manipuler\
-  \ des documents XML avec Java. Les programmeurs le font pour l'\xE9change de donn\xE9\
-  es, la\u2026"
+description: "Comment faire : Java fournit des API comme DOM (Document Object Model),\
+  \ SAX (Simple API for XML), et StAX (Streaming API for XML) pour travailler avec\u2026"
 lastmod: '2024-03-13T22:44:57.669869-06:00'
 model: gpt-4-0125-preview
-summary: Travailler avec XML implique d'analyser, d'interroger et de manipuler des
-  documents XML avec Java.
+summary: Java fournit des API comme DOM (Document Object Model), SAX (Simple API for
+  XML), et StAX (Streaming API for XML) pour travailler avec XML.
 title: Travailler avec XML
 weight: 40
 ---

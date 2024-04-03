@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 00:50:58.750284-07:00
-description: "El manejo de errores trata sobre c\xF3mo gestionar lo inesperado en\
-  \ los programas, como un portero que lidiar con los alborotadores. A los programadores\
-  \ les\u2026"
+description: "C\xF3mo hacerlo: Clojure, al igual que sus ancestros Lisp, se basa en\
+  \ las excepciones para tratar los errores. Aqu\xED te mostramos c\xF3mo demostrar\
+  \ de qu\xE9 est\xE1s\u2026"
 lastmod: '2024-03-13T22:44:58.664282-06:00'
 model: gpt-4-1106-preview
-summary: "El manejo de errores trata sobre c\xF3mo gestionar lo inesperado en los\
-  \ programas, como un portero que lidiar con los alborotadores."
+summary: Clojure, al igual que sus ancestros Lisp, se basa en las excepciones para
+  tratar los errores.
 title: Manejo de errores
 weight: 16
 ---

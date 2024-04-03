@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:50:30.694068-07:00
-description: "L'interpolazione di stringhe \xE8 il processo di inserimento di valori\
-  \ variabili all'interno di una stringa. I programmatori la usano per costruire\u2026"
+description: 'How to: C++ moderno offre diverse strade per interpolare stringhe. Vediamone
+  un paio: Con `std::format` (C++20 in poi).'
 lastmod: '2024-03-13T22:44:43.712263-06:00'
 model: gpt-4-1106-preview
-summary: "L'interpolazione di stringhe \xE8 il processo di inserimento di valori variabili\
-  \ all'interno di una stringa."
+summary: C++ moderno offre diverse strade per interpolare stringhe.
 title: Interpolazione di una stringa
 weight: 8
 ---

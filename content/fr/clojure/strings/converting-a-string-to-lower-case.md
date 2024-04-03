@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:38:05.449760-07:00
-description: "Convertir une cha\xEEne en minuscules, c'est transformer tous les caract\xE8\
-  res alphab\xE9tiques en leur \xE9quivalent minuscule. Pourquoi ? Pour uniformiser\
-  \ les\u2026"
+description: "How to: Clojure rend la conversion super facile avec la fonction `clojure.string/lower-case`.\
+  \ Jetons un \u0153il ."
 lastmod: '2024-03-13T22:44:57.268046-06:00'
 model: gpt-4-1106-preview
-summary: "Convertir une cha\xEEne en minuscules, c'est transformer tous les caract\xE8\
-  res alphab\xE9tiques en leur \xE9quivalent minuscule."
+summary: Clojure rend la conversion super facile avec la fonction `clojure.string/lower-case`.
 title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
 weight: 4
 ---

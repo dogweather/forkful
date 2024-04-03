@@ -2,13 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:01.365411-07:00
-description: "Zapisywanie pliku tekstowego w Go polega na tworzeniu i zapisywaniu\
-  \ ci\u0105g\xF3w danych w nowym lub istniej\u0105cym pliku tekstowym. Programi\u015B\
-  ci robi\u0105 to, aby\u2026"
+description: "Jak to zrobi\u0107: W Go do zapisywania w pliku tekstowym s\u0142u\u017C\
+  \u0105 pakiety `os` i `io/ioutil` (dla wersji Go <1.16) lub `os` i `io` razem z\
+  \ pakietem `os` dla Go w\u2026"
 lastmod: '2024-03-13T22:44:34.873444-06:00'
 model: gpt-4-0125-preview
-summary: "Zapisywanie pliku tekstowego w Go polega na tworzeniu i zapisywaniu ci\u0105\
-  g\xF3w danych w nowym lub istniej\u0105cym pliku tekstowym."
+summary: "W Go do zapisywania w pliku tekstowym s\u0142u\u017C\u0105 pakiety `os`\
+  \ i `io/ioutil` (dla wersji Go <1.16) lub `os` i `io` razem z pakietem `os` dla\
+  \ Go w wersji 1.16 i nowszych, co demonstruje filozofi\u0119 Go dotycz\u0105c\u0105\
+  \ prostoty i efektywno\u015Bci."
 title: Pisanie pliku tekstowego
 weight: 24
 ---

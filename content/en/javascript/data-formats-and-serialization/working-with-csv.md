@@ -1,12 +1,12 @@
 ---
 date: 2024-02-03 19:03:29.199464-07:00
-description: "Working with CSV (Comma-Separated Values) in JavaScript entails parsing\
-  \ or generating CSV files to either ingest tabular data from external sources or\u2026"
+description: "How to: JavaScript does not have built-in CSV parsing or stringifying\
+  \ functionality like it does with JSON. However, you can easily manage CSV data\
+  \ by\u2026"
 lastmod: '2024-03-13T22:45:00.454350-06:00'
 model: gpt-4-0125-preview
-summary: Working with CSV (Comma-Separated Values) in JavaScript entails parsing or
-  generating CSV files to either ingest tabular data from external sources or export
-  data for use in other programs.
+summary: JavaScript does not have built-in CSV parsing or stringifying functionality
+  like it does with JSON.
 title: Working with CSV
 weight: 37
 ---

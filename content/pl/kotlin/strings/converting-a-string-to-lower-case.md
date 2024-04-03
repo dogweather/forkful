@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:38:56.746032-07:00
-description: "Zamiana \u0142a\u0144cucha znak\xF3w na ma\u0142e litery to proces,\
-  \ gdzie wszystkie wielkie litery w tek\u015Bcie staj\u0105 si\u0119 ma\u0142ymi.\
-  \ Programi\u015Bci u\u017Cywaj\u0105 tej zmiany dla unifikacji\u2026"
+description: "How to: (Jak to zrobi\u0107:) ."
 lastmod: '2024-03-13T22:44:35.351382-06:00'
 model: gpt-4-1106-preview
-summary: "Zamiana \u0142a\u0144cucha znak\xF3w na ma\u0142e litery to proces, gdzie\
-  \ wszystkie wielkie litery w tek\u015Bcie staj\u0105 si\u0119 ma\u0142ymi."
+summary: .
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---

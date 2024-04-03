@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:14.918188-07:00
-description: "Het verwijderen van karakters die overeenkomen met een patroon in PHP\
-  \ gaat over het vinden van specifieke reeksen karakters in strings en deze\u2026"
+description: "Hoe doe je dat: PHP gebruikt de `preg_replace` functie om karakters\
+  \ die overeenkomen met een patroon te verwijderen met behulp van reguliere expressies.\u2026"
 lastmod: '2024-03-13T22:44:50.878627-06:00'
 model: gpt-4-0125-preview
-summary: Het verwijderen van karakters die overeenkomen met een patroon in PHP gaat
-  over het vinden van specifieke reeksen karakters in strings en deze verwijderen.
+summary: PHP gebruikt de `preg_replace` functie om karakters die overeenkomen met
+  een patroon te verwijderen met behulp van reguliere expressies.
 title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---

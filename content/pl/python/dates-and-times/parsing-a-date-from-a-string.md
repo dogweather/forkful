@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:30.045190-07:00
-description: "Przetwarzanie daty z ci\u0105gu znak\xF3w polega na konwersji tekstowej\
-  \ informacji o dacie i czasie na obiekt datetime lub r\xF3wnowa\u017Cny, uporz\u0105\
-  dkowany format.\u2026"
+description: "Jak to zrobi\u0107: Standardowa biblioteka Pythona dostarcza modu\u0142\
+  \ `datetime`, kt\xF3ry zawiera metod\u0119 `strptime` przeznaczon\u0105 do tego\
+  \ celu. Metoda ta wymaga\u2026"
 lastmod: '2024-03-13T22:44:34.959376-06:00'
 model: gpt-4-0125-preview
-summary: "Przetwarzanie daty z ci\u0105gu znak\xF3w polega na konwersji tekstowej\
-  \ informacji o dacie i czasie na obiekt datetime lub r\xF3wnowa\u017Cny, uporz\u0105\
-  dkowany format."
+summary: "Standardowa biblioteka Pythona dostarcza modu\u0142 `datetime`, kt\xF3ry\
+  \ zawiera metod\u0119 `strptime` przeznaczon\u0105 do tego celu."
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---

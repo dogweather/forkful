@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:43.561826-07:00
-description: "Regulj\xE4ra uttryck i programmering m\xF6jligg\xF6r m\xF6nstermatchning\
-  \ och manipulation av str\xE4ngar baserat p\xE5 specifika m\xF6nster. Programmerare\
-  \ anv\xE4nder dem f\xF6r\u2026"
+description: "Hur man g\xF6r: Lua st\xF6der inte regulj\xE4ra uttryck inbyggt p\xE5\
+  \ samma s\xE4tt som spr\xE5k som Perl eller Python. Ist\xE4llet erbjuder det m\xF6\
+  jligheter till\u2026"
 lastmod: '2024-03-13T22:44:38.028315-06:00'
 model: gpt-4-0125-preview
-summary: "Regulj\xE4ra uttryck i programmering m\xF6jligg\xF6r m\xF6nstermatchning\
-  \ och manipulation av str\xE4ngar baserat p\xE5 specifika m\xF6nster."
+summary: "Lua st\xF6der inte regulj\xE4ra uttryck inbyggt p\xE5 samma s\xE4tt som\
+  \ spr\xE5k som Perl eller Python."
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---

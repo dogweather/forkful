@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 03:44:01.585967-07:00
-description: "Numeroiden py\xF6rist\xE4minen tarkoittaa niiden s\xE4\xE4t\xE4mist\xE4\
-  \ l\xE4helle arvoon yksinkertaistamisen tai tietyn tarkkuuden saavuttamisen vuoksi.\
-  \ Se on hy\xF6dyllist\xE4\u2026"
+description: "Kuinka: Elixiriss\xE4 voit k\xE4ytt\xE4\xE4 `Float.round/2` funktiota\
+  \ liukuluvun py\xF6rist\xE4miseen. Voit m\xE4\xE4ritt\xE4\xE4, kuinka monta desimaalia\
+  \ haluat s\xE4ilytt\xE4\xE4. N\xE4in se\u2026"
 lastmod: '2024-03-13T22:44:56.221510-06:00'
 model: gpt-4-0125-preview
-summary: "Numeroiden py\xF6rist\xE4minen tarkoittaa niiden s\xE4\xE4t\xE4mist\xE4\
-  \ l\xE4helle arvoon yksinkertaistamisen tai tietyn tarkkuuden saavuttamisen vuoksi."
+summary: "Elixiriss\xE4 voit k\xE4ytt\xE4\xE4 `Float.round/2` funktiota liukuluvun\
+  \ py\xF6rist\xE4miseen."
 title: "Numerojen py\xF6rist\xE4minen"
 weight: 13
 ---

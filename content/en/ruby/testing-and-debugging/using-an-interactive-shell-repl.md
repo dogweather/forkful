@@ -1,11 +1,10 @@
 ---
 date: 2024-01-25 03:39:37.470710-07:00
-description: "An interactive shell, or REPL (Read-Eval-Print Loop), lets you test\
-  \ code in real time. Programmers use it to experiment, debug, and learn Ruby's nuances\u2026"
+description: 'How to: Ruby''s REPL is called IRB (Interactive Ruby). Jump in and try
+  Ruby straight from your terminal.'
 lastmod: '2024-03-13T22:45:00.552430-06:00'
 model: gpt-4-1106-preview
-summary: An interactive shell, or REPL (Read-Eval-Print Loop), lets you test code
-  in real time.
+summary: Ruby's REPL is called IRB (Interactive Ruby).
 title: Using an interactive shell (REPL)
 weight: 34
 ---

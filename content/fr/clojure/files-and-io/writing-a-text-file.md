@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:30.096080-07:00
-description: "\xC9crire un fichier texte en Clojure implique de cr\xE9er ou de modifier\
-  \ des fichiers pour sauvegarder des donn\xE9es en dehors de votre application, permettant\u2026"
+description: 'Comment faire : #.'
 lastmod: '2024-03-13T22:44:57.301328-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire un fichier texte en Clojure implique de cr\xE9er ou de modifier\
-  \ des fichiers pour sauvegarder des donn\xE9es en dehors de votre application, permettant\
-  \ la persistance, la configuration, la journalisation ou la communication inter-processus."
+summary: '#.'
 title: "R\xE9diger un fichier texte"
 weight: 24
 ---

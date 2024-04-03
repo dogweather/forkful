@@ -1,13 +1,10 @@
 ---
 date: 2024-01-26 04:15:28.838163-07:00
-description: "Interaktive Shells oder REPLs (Read-Eval-Print Schleifen) erm\xF6glichen\
-  \ es Ihnen, Code spontan auszuf\xFChren, Funktionen, Algorithmen zu testen oder\
-  \ mit Ideen\u2026"
+description: "Wie: Node.js wird mit einer \xFCber das Terminal zug\xE4nglichen REPL\
+  \ geliefert. \xD6ffnen Sie es, und Sie k\xF6nnen sofort loslegen. Hier ein Vorgeschmack."
 lastmod: '2024-03-13T22:44:54.267778-06:00'
 model: gpt-4-0125-preview
-summary: "Interaktive Shells oder REPLs (Read-Eval-Print Schleifen) erm\xF6glichen\
-  \ es Ihnen, Code spontan auszuf\xFChren, Funktionen, Algorithmen zu testen oder\
-  \ mit Ideen herumzuspielen."
+summary: "Node.js wird mit einer \xFCber das Terminal zug\xE4nglichen REPL geliefert."
 title: Nutzung einer interaktiven Shell (REPL)
 weight: 34
 ---

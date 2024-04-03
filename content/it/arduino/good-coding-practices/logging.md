@@ -1,12 +1,13 @@
 ---
 date: 2024-01-26 00:59:18.755393-07:00
-description: "\"Logging\" significa mantenere un registro degli eventi, delle transazioni\
-  \ o delle attivit\xE0 che si verificano nel tempo in un sistema. I programmatori\
-  \ lo\u2026"
+description: "Come fare: Arduino non dispone di una libreria di logging integrata\
+  \ come alcuni altri ambienti, ma \xE8 possibile implementare un logging di base\
+  \ sulla\u2026"
 lastmod: '2024-03-13T22:44:43.688923-06:00'
 model: gpt-4-1106-preview
-summary: "\"Logging\" significa mantenere un registro degli eventi, delle transazioni\
-  \ o delle attivit\xE0 che si verificano nel tempo in un sistema."
+summary: "Arduino non dispone di una libreria di logging integrata come alcuni altri\
+  \ ambienti, ma \xE8 possibile implementare un logging di base sulla console Seriale\
+  \ con poco sforzo."
 title: Registrazione Eventi (Logging)
 weight: 17
 ---

@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:43:46.757764-07:00
-description: "\xC5 avrunde tall betyr \xE5 justere dem til en n\xE6rliggende verdi\
-  \ for enkelhets skyld eller for \xE5 matche en viss presisjon. Det er nyttig for\
-  \ \xE5 forbedre\u2026"
+description: "Hvordan: I Elixir kan du bruke `Float.round/2` for \xE5 avrunde et flyttall.\
+  \ Du kan spesifisere antallet desimaler du vil beholde. Slik fungerer det."
 lastmod: '2024-03-13T22:44:40.438237-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 avrunde tall betyr \xE5 justere dem til en n\xE6rliggende verdi for\
-  \ enkelhets skyld eller for \xE5 matche en viss presisjon."
+summary: "I Elixir kan du bruke `Float.round/2` for \xE5 avrunde et flyttall."
 title: Avrunding av tall
 weight: 13
 ---

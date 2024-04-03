@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 01:11:40.110029-07:00
-description: "Organizar el c\xF3digo en funciones consiste en descomponer tu programa\
-  \ en bloques reutilizables y modulares identificados por un nombre. Hacemos esto\
-  \ para\u2026"
+description: "C\xF3mo hacerlo: Digamos que tienes un c\xF3digo que calcula el \xE1\
+  rea de un c\xEDrculo varias veces. En lugar de repetir la f\xF3rmula, la encapsulas\
+  \ en una funci\xF3n."
 lastmod: '2024-03-13T22:44:58.852092-06:00'
 model: gpt-4-1106-preview
-summary: "Organizar el c\xF3digo en funciones consiste en descomponer tu programa\
-  \ en bloques reutilizables y modulares identificados por un nombre."
+summary: "Digamos que tienes un c\xF3digo que calcula el \xE1rea de un c\xEDrculo\
+  \ varias veces."
 title: "Organizando c\xF3digo en funciones"
 weight: 18
 ---

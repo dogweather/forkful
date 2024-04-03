@@ -2,16 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:14.153857-07:00
-description: "Ph\xE2n chia m\xE3 th\xE0nh c\xE1c h\xE0m c\xF3 ngh\u0129a l\xE0 chia\
-  \ nh\u1ECF script th\xE0nh c\xE1c kh\u1ED1i nh\u1ECF h\u01A1n, c\xF3 th\u1EC3 s\u1EED\
-  \ d\u1EE5ng l\u1EA1i \u0111\u01B0\u1EE3c v\xE0 th\u1EF1c hi\u1EC7n c\xE1c nhi\u1EC7\
-  m v\u1EE5 c\u1EE5 th\u1EC3. \u0110i\u1EC1u n\xE0y l\xE0m cho\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: T\u1EA1o m\u1ED9t h\xE0m \u0111\u01A1n\
+  \ gi\u1EA3n trong Bash."
 lastmod: '2024-03-13T22:44:36.886400-06:00'
 model: gpt-4-0125-preview
-summary: "Ph\xE2n chia m\xE3 th\xE0nh c\xE1c h\xE0m c\xF3 ngh\u0129a l\xE0 chia nh\u1ECF\
-  \ script th\xE0nh c\xE1c kh\u1ED1i nh\u1ECF h\u01A1n, c\xF3 th\u1EC3 s\u1EED d\u1EE5\
-  ng l\u1EA1i \u0111\u01B0\u1EE3c v\xE0 th\u1EF1c hi\u1EC7n c\xE1c nhi\u1EC7m v\u1EE5\
-  \ c\u1EE5 th\u1EC3."
+summary: "T\u1EA1o m\u1ED9t h\xE0m \u0111\u01A1n gi\u1EA3n trong Bash."
 title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
 weight: 18
 ---

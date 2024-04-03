@@ -2,10 +2,10 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:32.669741-07:00
-description: "Trong VBA, tr\xECnh g\u1EE1 l\u1ED7i l\xE0 m\u1ED9t ph\u1EA7n kh\xF4\
-  ng th\u1EC3 thi\u1EBFu c\u1EE7a Visual Basic Editor (VBE). D\u01B0\u1EDBi \u0111\
-  \xE2y l\xE0 c\xE1ch b\u1EA1n c\xF3 th\u1EC3 t\u1EADn d\u1EE5ng n\xF3: 1. **\u0110\
-  \u1EB7t \u0110i\u1EC3m D\u1EEBng\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong VBA, tr\xECnh g\u1EE1 l\u1ED7i l\xE0\
+  \ m\u1ED9t ph\u1EA7n kh\xF4ng th\u1EC3 thi\u1EBFu c\u1EE7a Visual Basic Editor (VBE).\
+  \ D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch b\u1EA1n c\xF3 th\u1EC3 t\u1EADn d\u1EE5\
+  ng n\xF3: 1. **\u0110\u1EB7t \u0110i\u1EC3m\u2026"
 lastmod: '2024-03-13T22:44:36.439108-06:00'
 model: gpt-4-0125-preview
 summary: "Trong VBA, tr\xECnh g\u1EE1 l\u1ED7i l\xE0 m\u1ED9t ph\u1EA7n kh\xF4ng th\u1EC3\

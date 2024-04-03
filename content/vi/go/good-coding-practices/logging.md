@@ -2,17 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:33.176511-07:00
-description: "Trong ph\xE1t tri\u1EC3n ph\u1EA7n m\u1EC1m, vi\u1EC7c ghi nh\u1EAD\
-  t k\xFD (logging) l\xE0 quy tr\xECnh ghi l\u1EA1i th\xF4ng tin v\u1EC1 qu\xE1 tr\xEC\
-  nh th\u1EF1c thi c\u1EE7a ch\u01B0\u01A1ng tr\xECnh, \u0111\u01B0\u1EE3c thi\u1EBF\
-  t k\u1EBF \u0111\u1EC3 theo d\xF5i\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Go, vi\u1EC7c ghi nh\u1EADt k\xFD c\xF3\
+  \ th\u1EC3 \u0111\u01B0\u1EE3c th\u1EF1c hi\u1EC7n s\u1EED d\u1EE5ng g\xF3i th\u01B0\
+  \ vi\u1EC7n chu\u1EA9n `log`. G\xF3i n\xE0y cung c\u1EA5p kh\u1EA3 n\u0103ng ghi\
+  \ nh\u1EADt k\xFD \u0111\u01A1n gi\u1EA3n, ch\u1EB3ng h\u1EA1n\u2026"
 lastmod: '2024-03-13T22:44:35.991098-06:00'
 model: gpt-4-0125-preview
-summary: "Trong ph\xE1t tri\u1EC3n ph\u1EA7n m\u1EC1m, vi\u1EC7c ghi nh\u1EADt k\xFD\
-  \ (logging) l\xE0 quy tr\xECnh ghi l\u1EA1i th\xF4ng tin v\u1EC1 qu\xE1 tr\xECnh\
-  \ th\u1EF1c thi c\u1EE7a ch\u01B0\u01A1ng tr\xECnh, \u0111\u01B0\u1EE3c thi\u1EBF\
-  t k\u1EBF \u0111\u1EC3 theo d\xF5i h\xE0nh vi v\xE0 ch\u1EA9n \u0111o\xE1n c\xE1\
-  c v\u1EA5n \u0111\u1EC1."
+summary: "Trong Go, vi\u1EC7c ghi nh\u1EADt k\xFD c\xF3 th\u1EC3 \u0111\u01B0\u1EE3\
+  c th\u1EF1c hi\u1EC7n s\u1EED d\u1EE5ng g\xF3i th\u01B0 vi\u1EC7n chu\u1EA9n `log`."
 title: "Ghi nh\u1EADt k\xFD"
 weight: 17
 ---

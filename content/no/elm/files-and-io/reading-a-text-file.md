@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 17:54:24.222556-07:00
-description: "\xC5 lese en tekstfil betyr \xE5 hente den lagrede tekstdataen fra en\
-  \ fil. Programmerere gj\xF8r dette for \xE5 behandle, vise eller manipulere innhold\
-  \ som\u2026"
+description: "Hvordan: Elm har ikke innebygd st\xF8tte for \xE5 lese filer direkte\
+  \ fra filsystemet, da det prim\xE6rt kj\xF8res i nettlesere og fokuserer p\xE5 sikkerhet.\
+  \ Men, du kan\u2026"
 lastmod: '2024-03-13T22:44:40.725948-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 lese en tekstfil betyr \xE5 hente den lagrede tekstdataen fra en fil."
+summary: "Elm har ikke innebygd st\xF8tte for \xE5 lese filer direkte fra filsystemet,\
+  \ da det prim\xE6rt kj\xF8res i nettlesere og fokuserer p\xE5 sikkerhet."
 title: Lese en tekstfil
 weight: 22
 ---

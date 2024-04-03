@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:13.669953-07:00
-description: "Complexe getallen hebben een re\xEBel deel en een imaginair deel (zoals\
-  \ `3 + 4i`). Ze worden gebruikt in de techniek, fysica, en bepaalde computerproblemen.\u2026"
+description: "Hoe te: Elixir heeft geen ingebouwde complexe getallen, dus we maken\
+  \ onze eigen of gebruiken een bibliotheek, zoals `ComplexNum`. Hier is een snel\u2026"
 lastmod: '2024-03-13T22:44:50.455962-06:00'
 model: gpt-4-0125-preview
-summary: "Complexe getallen hebben een re\xEBel deel en een imaginair deel (zoals\
-  \ `3 + 4i`)."
+summary: Elixir heeft geen ingebouwde complexe getallen, dus we maken onze eigen of
+  gebruiken een bibliotheek, zoals `ComplexNum`.
 title: Werken met complexe getallen
 weight: 14
 ---

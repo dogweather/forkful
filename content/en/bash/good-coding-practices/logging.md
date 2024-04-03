@@ -1,11 +1,11 @@
 ---
 date: 2024-01-25 02:03:56.995806-07:00
-description: "Logging is the practice of recording events, errors, and other significant\
-  \ information from the running processes of a program to a file or an output\u2026"
+description: 'How to: In Bash, logging can be as simple as redirecting or appending
+  output to a file. Here''s a basic example.'
 lastmod: '2024-03-13T22:45:00.250559-06:00'
 model: gpt-4-1106-preview
-summary: Logging is the practice of recording events, errors, and other significant
-  information from the running processes of a program to a file or an output stream.
+summary: In Bash, logging can be as simple as redirecting or appending output to a
+  file.
 title: Logging
 weight: 17
 ---

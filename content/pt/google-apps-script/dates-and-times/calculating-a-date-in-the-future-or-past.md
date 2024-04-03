@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:01.827437-07:00
-description: "Calcular uma data no futuro ou no passado trata-se de manipular objetos\
-  \ de data para encontrar datas al\xE9m ou antes da data presente, respectivamente.\u2026"
+description: "Como fazer: No Google Apps Script, que \xE9 baseado em JavaScript, voc\xEA\
+  \ pode manipular datas usando o objeto `Date`. Aqui est\xE1 como calcular datas\
+  \ no futuro\u2026"
 lastmod: '2024-03-13T22:44:46.123521-06:00'
 model: gpt-4-0125-preview
-summary: "Calcular uma data no futuro ou no passado trata-se de manipular objetos\
-  \ de data para encontrar datas al\xE9m ou antes da data presente, respectivamente."
+summary: "No Google Apps Script, que \xE9 baseado em JavaScript, voc\xEA pode manipular\
+  \ datas usando o objeto `Date`."
 title: Calculando uma data no futuro ou no passado
 weight: 26
 ---

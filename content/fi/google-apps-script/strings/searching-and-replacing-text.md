@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:18.430569-07:00
-description: "Tekstin etsiminen ja korvaaminen Google Apps Scriptilla k\xE4sitt\xE4\
-  \xE4 tiettyjen merkkijonojen ohjelmallisen tunnistamisen dokumentissa, laskentataulukossa\
-  \ tai\u2026"
+description: "Kuinka: Google Apps Script tarjoaa suoraviivaisen tavan etsi\xE4 ja\
+  \ korvata teksti\xE4, erityisesti Google Docs ja Sheets -sovelluksissa. Alla on\
+  \ esimerkkej\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.080107-06:00'
 model: gpt-4-0125-preview
-summary: "Tekstin etsiminen ja korvaaminen Google Apps Scriptilla k\xE4sitt\xE4\xE4\
-  \ tiettyjen merkkijonojen ohjelmallisen tunnistamisen dokumentissa, laskentataulukossa\
-  \ tai miss\xE4 tahansa muussa Google Apps -sis\xE4lt\xF6tyypiss\xE4 ja niiden korvaamisen\
-  \ toisilla tekstiarvoilla."
+summary: "Google Apps Script tarjoaa suoraviivaisen tavan etsi\xE4 ja korvata teksti\xE4\
+  , erityisesti Google Docs ja Sheets -sovelluksissa."
 title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---

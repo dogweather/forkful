@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 01:02:40.962528-07:00
-description: "Lokitus ohjelmistokehityksess\xE4 on tekniikka, jossa kirjataan muistiin\
-  \ tapahtumia, jotka ilmenev\xE4t ohjelman suorituksen aikana, yleens\xE4 tiedostoon\
-  \ tai\u2026"
+description: "Miten: Elixiriss\xE4 perustavanlaatuinen tapa lokitietojen kirjaamiseen\
+  \ on sis\xE4\xE4nrakennetun `Logger`-moduulin kautta. T\xE4ss\xE4 on ohjeet sen\
+  \ k\xE4ytt\xF6\xF6n."
 lastmod: '2024-03-13T22:44:56.233467-06:00'
 model: gpt-4-1106-preview
-summary: "Lokitus ohjelmistokehityksess\xE4 on tekniikka, jossa kirjataan muistiin\
-  \ tapahtumia, jotka ilmenev\xE4t ohjelman suorituksen aikana, yleens\xE4 tiedostoon\
-  \ tai ulkoiseen j\xE4rjestelm\xE4\xE4n."
+summary: "Elixiriss\xE4 perustavanlaatuinen tapa lokitietojen kirjaamiseen on sis\xE4\
+  \xE4nrakennetun `Logger`-moduulin kautta."
 title: Lokitus
 weight: 17
 ---

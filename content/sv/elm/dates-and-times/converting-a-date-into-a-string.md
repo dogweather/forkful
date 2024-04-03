@@ -1,13 +1,11 @@
 ---
 date: 2024-01-20 17:36:16.894762-07:00
-description: "Att konvertera ett datum till en str\xE4ng inneb\xE4r att omvandla datumdata\
-  \ till textform, vilket g\xF6r det enklare att visa eller lagra datumet p\xE5 ett\
-  \ l\xE4sbart\u2026"
+description: "Hur man g\xF6r: Elm g\xF6r det enkelt att hantera datum och str\xE4\
+  ngar med hj\xE4lp av `Date` och `String` modulerna. H\xE4r \xE4r ett exempel."
 lastmod: '2024-03-13T22:44:37.840855-06:00'
 model: gpt-4-1106-preview
-summary: "Att konvertera ett datum till en str\xE4ng inneb\xE4r att omvandla datumdata\
-  \ till textform, vilket g\xF6r det enklare att visa eller lagra datumet p\xE5 ett\
-  \ l\xE4sbart s\xE4tt."
+summary: "Elm g\xF6r det enkelt att hantera datum och str\xE4ngar med hj\xE4lp av\
+  \ `Date` och `String` modulerna."
 title: "Omvandla ett datum till en str\xE4ng"
 weight: 28
 ---

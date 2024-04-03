@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:43:57.594816-07:00
-description: "Baixar uma p\xE1gina da web significa fazer o download do seu conte\xFA\
-  do em HTML. Programadores fazem isso para processar informa\xE7\xF5es, extrair dados\
-  \ ou\u2026"
+description: "How to: Para baixar uma p\xE1gina web em Elixir, voc\xEA pode usar a\
+  \ biblioteca HTTPoison. Primeiro, adicione `httpoison` ao seu `mix.exs`."
 lastmod: '2024-03-13T22:44:46.236960-06:00'
 model: gpt-4-1106-preview
-summary: "Baixar uma p\xE1gina da web significa fazer o download do seu conte\xFA\
-  do em HTML."
+summary: "Para baixar uma p\xE1gina web em Elixir, voc\xEA pode usar a biblioteca\
+  \ HTTPoison."
 title: "Baixando uma p\xE1gina da web"
 weight: 42
 ---

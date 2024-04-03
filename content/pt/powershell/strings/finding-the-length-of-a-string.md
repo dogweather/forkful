@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:48:11.461181-07:00
-description: "Encontrar o comprimento de uma string \xE9 descobrir quantos caracteres\
-  \ ela cont\xE9m. Programadores fazem isso para validar entradas, manipular textos\
-  \ ou\u2026"
+description: "Como Fazer: O PowerShell facilita a vida na hora de saber o tamanho\
+  \ de uma string. Veja s\xF3."
 lastmod: '2024-03-13T22:44:46.786408-06:00'
 model: gpt-4-1106-preview
-summary: "Encontrar o comprimento de uma string \xE9 descobrir quantos caracteres\
-  \ ela cont\xE9m."
+summary: O PowerShell facilita a vida na hora de saber o tamanho de uma string.
 title: Descobrindo o comprimento de uma string
 weight: 7
 ---

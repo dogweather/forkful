@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:53.781569-07:00
-description: "Capitalizar una cadena implica modificar el primer car\xE1cter de un\
-  \ texto dado a may\xFAsculas, asegurando que frases, t\xEDtulos o nombres propios\
-  \ comiencen\u2026"
+description: "C\xF3mo hacerlo: PHP soporta de forma nativa varias funciones para capitalizar\
+  \ cadenas, cada una sirviendo a un prop\xF3sito diferente. As\xED es c\xF3mo puedes\u2026"
 lastmod: '2024-03-13T22:44:59.143686-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizar una cadena implica modificar el primer car\xE1cter de un texto\
-  \ dado a may\xFAsculas, asegurando que frases, t\xEDtulos o nombres propios comiencen\
-  \ correctamente en un conjunto de datos."
+summary: "PHP soporta de forma nativa varias funciones para capitalizar cadenas, cada\
+  \ una sirviendo a un prop\xF3sito diferente."
 title: Capitalizando una cadena de texto
 weight: 2
 ---

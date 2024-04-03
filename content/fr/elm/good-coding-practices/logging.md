@@ -1,13 +1,13 @@
 ---
 date: 2024-01-26 01:02:48.560565-07:00
-description: "Le logging est essentiellement le processus d'enregistrement des \xE9\
-  v\xE9nements et des sorties de donn\xE9es d'un logiciel lors de son ex\xE9cution,\
-  \ pensez-y comme\u2026"
+description: "Comment faire : L'architecture d'Elm ne prend pas en charge les effets\
+  \ secondaires comme le logging par d\xE9faut - vous les g\xE9rez \xE0 travers des\
+  \ commandes,\u2026"
 lastmod: '2024-03-13T22:44:57.695932-06:00'
 model: gpt-4-1106-preview
-summary: "Le logging est essentiellement le processus d'enregistrement des \xE9v\xE9\
-  nements et des sorties de donn\xE9es d'un logiciel lors de son ex\xE9cution, pensez-y\
-  \ comme au journal intime du logiciel."
+summary: "L'architecture d'Elm ne prend pas en charge les effets secondaires comme\
+  \ le logging par d\xE9faut - vous les g\xE9rez \xE0 travers des commandes, qui font\
+  \ partie de l'architecture de votre application."
 title: Journalisation
 weight: 17
 ---

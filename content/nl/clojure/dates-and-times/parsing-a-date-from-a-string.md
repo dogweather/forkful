@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:46.882216-07:00
-description: "Het parseren van een datum uit een string betekent het converteren van\
-  \ tekst met een datum die door mensen gelezen kan worden, naar een formaat dat de\u2026"
+description: 'Hoe te: Clojure leunt voor het parsen van datums op Java, dus we zullen
+  hier `java.time.LocalDate` gebruiken.'
 lastmod: '2024-03-13T22:44:50.429734-06:00'
 model: gpt-4-0125-preview
-summary: Het parseren van een datum uit een string betekent het converteren van tekst
-  met een datum die door mensen gelezen kan worden, naar een formaat dat de computer
-  begrijpt.
+summary: Clojure leunt voor het parsen van datums op Java, dus we zullen hier `java.time.LocalDate`
+  gebruiken.
 title: Een datum uit een string parsen
 weight: 30
 ---

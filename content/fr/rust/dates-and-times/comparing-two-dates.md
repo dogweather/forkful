@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:33:51.074498-07:00
-description: "Comparer deux dates, c'est \xE9valuer leur ordre chronologique. Les\
-  \ programmeurs font \xE7a pour trier des \xE9l\xE9ments, v\xE9rifier des \xE9ch\xE9\
-  ances, ou calculer des\u2026"
+description: 'How to: En Rust, on utilise le crate `chrono` pour manipuler les dates.
+  Voici comment comparer deux dates .'
 lastmod: '2024-03-13T22:44:57.495448-06:00'
 model: gpt-4-1106-preview
-summary: "Comparer deux dates, c'est \xE9valuer leur ordre chronologique."
+summary: En Rust, on utilise le crate `chrono` pour manipuler les dates.
 title: Comparer deux dates
 weight: 27
 ---

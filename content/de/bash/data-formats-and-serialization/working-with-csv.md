@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:31.181748-07:00
-description: "Die Arbeit mit CSV-Dateien (Comma-Separated Values) in Bash dreht sich\
-  \ um die Verarbeitung und Manipulation von tabellarischen Daten, die im\u2026"
+description: "Wie geht das: **Lesen einer CSV-Datei Zeile f\xFCr Zeile**."
 lastmod: '2024-03-13T22:44:54.082036-06:00'
 model: gpt-4-0125-preview
-summary: Die Arbeit mit CSV-Dateien (Comma-Separated Values) in Bash dreht sich um
-  die Verarbeitung und Manipulation von tabellarischen Daten, die im Klartextformat
-  gespeichert sind.
+summary: "**Lesen einer CSV-Datei Zeile f\xFCr Zeile**."
 title: Arbeiten mit CSV
 weight: 37
 ---

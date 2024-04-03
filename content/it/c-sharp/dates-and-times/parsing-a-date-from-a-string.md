@@ -2,12 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:39.680527-07:00
-description: "Effettuare il parsing di una data da una stringa in C# implica la conversione\
-  \ delle rappresentazioni testuali di date e orari in un oggetto `DateTime`.\u2026"
+description: "Come fare: **Parsing Basic:** I metodi `DateTime.Parse` e `DateTime.TryParse`\
+  \ sono le opzioni principali per convertire una stringa in un `DateTime`. Ecco\u2026"
 lastmod: '2024-03-13T22:44:43.443287-06:00'
 model: gpt-4-0125-preview
-summary: Effettuare il parsing di una data da una stringa in C# implica la conversione
-  delle rappresentazioni testuali di date e orari in un oggetto `DateTime`.
+summary: '**Parsing Basic:**
+
+
+  I metodi `DateTime.Parse` e `DateTime.TryParse` sono le opzioni principali per convertire
+  una stringa in un `DateTime`.'
 title: Analisi di una data da una stringa
 weight: 30
 ---

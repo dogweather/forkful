@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:58:51.489223-07:00
-description: "S\xF6k och ers\xE4tt av text \xE4r en grundl\xE4ggande process d\xE4\
-  r vi hittar specifika teckenkombinationer och byter ut dem mot nya. Programmerare\
-  \ anv\xE4nder det f\xF6r\u2026"
+description: "S\xE5 h\xE4r g\xF6r du: H\xE4r \xE4r ett snabbt exempel i Swift."
 lastmod: '2024-03-13T22:44:38.236747-06:00'
 model: gpt-4-1106-preview
-summary: "S\xF6k och ers\xE4tt av text \xE4r en grundl\xE4ggande process d\xE4r vi\
-  \ hittar specifika teckenkombinationer och byter ut dem mot nya."
+summary: "H\xE4r \xE4r ett snabbt exempel i Swift."
 title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---

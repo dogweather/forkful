@@ -2,15 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:50.692502-07:00
-description: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i ngh\u0129\
-  a l\xE0 bi\u1EBFn m\u1ED9t \u0111\u1ED1i t\u01B0\u1EE3ng ng\xE0y th\xE1ng th\xE0\
-  nh v\u0103n b\u1EA3n d\u1EC5 \u0111\u1ECDc cho con ng\u01B0\u1EDDi. L\u1EADp tr\xEC\
-  nh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 hi\u1EC3n th\u1ECB c\xE1c\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong Clojure, ch\xFAng ta s\u1EED d\u1EE5\
+  ng c\xE1c kh\u1EA3 n\u0103ng t\u01B0\u01A1ng t\xE1c v\u1EDBi Java \u0111\u1EC3 \u0111\
+  \u1ECBnh d\u1EA1ng ng\xE0y th\xE1ng. D\u01B0\u1EDBi \u0111\xE2y l\xE0 h\u01B0\u1EDB\
+  ng d\u1EABn nhanh."
 lastmod: '2024-03-13T22:44:36.168132-06:00'
 model: gpt-4-0125-preview
-summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i ngh\u0129\
-  a l\xE0 bi\u1EBFn m\u1ED9t \u0111\u1ED1i t\u01B0\u1EE3ng ng\xE0y th\xE1ng th\xE0\
-  nh v\u0103n b\u1EA3n d\u1EC5 \u0111\u1ECDc cho con ng\u01B0\u1EDDi."
+summary: "Trong Clojure, ch\xFAng ta s\u1EED d\u1EE5ng c\xE1c kh\u1EA3 n\u0103ng t\u01B0\
+  \u01A1ng t\xE1c v\u1EDBi Java \u0111\u1EC3 \u0111\u1ECBnh d\u1EA1ng ng\xE0y th\xE1\
+  ng."
 title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 weight: 28
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:44:43.915293-07:00
-description: "Descargar una p\xE1gina web significa traer el contenido de una URL\
-  \ directa a tu programa. Los programadores lo hacen para procesar datos, automatizar\
-  \ tareas\u2026"
+description: "C\xF3mo hacerlo: Usaremos `file_get_contents` para agarrar el contenido\
+  \ y `file_put_contents` para guardarlo. Aqu\xED un ejemplo."
 lastmod: '2024-03-13T22:44:59.159679-06:00'
 model: gpt-4-1106-preview
-summary: "Descargar una p\xE1gina web significa traer el contenido de una URL directa\
-  \ a tu programa."
+summary: Usaremos `file_get_contents` para agarrar el contenido y `file_put_contents`
+  para guardarlo.
 title: "Descargando una p\xE1gina web"
 weight: 42
 ---

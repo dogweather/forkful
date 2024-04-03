@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:17:42.166022-07:00
-description: "Refactorizar es el proceso de reestructurar el c\xF3digo existente sin\
-  \ cambiar su comportamiento externo, con el objetivo de mejorar atributos no funcionales\u2026"
+description: "C\xF3mo hacerlo: Vamos a organizar un patr\xF3n com\xFAn de Elixir.\
+  \ Vamos a refactorizar una funci\xF3n `calculate_stats` que hace m\xE1s de lo que\
+  \ deber\xEDa dividi\xE9ndola\u2026"
 lastmod: '2024-03-13T22:44:58.710553-06:00'
 model: gpt-4-0125-preview
-summary: "Refactorizar es el proceso de reestructurar el c\xF3digo existente sin cambiar\
-  \ su comportamiento externo, con el objetivo de mejorar atributos no funcionales\
-  \ como la legibilidad y la mantenibilidad."
+summary: "Vamos a organizar un patr\xF3n com\xFAn de Elixir."
 title: "Refactorizaci\xF3n"
 weight: 19
 ---

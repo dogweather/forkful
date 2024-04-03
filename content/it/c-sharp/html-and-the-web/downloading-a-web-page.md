@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:43:42.256294-07:00
-description: "Scaricare una pagina web significa prelevare il suo contenuto via HTTP\
-  \ o HTTPS. I programmatori lo fanno per analizzare dati, verificare disponibilit\xE0\
-  \ o\u2026"
+description: "How to: (Come Fare:) In C# si pu\xF2 usare HttpClient. Ecco come."
 lastmod: '2024-03-13T22:44:43.432761-06:00'
 model: gpt-4-1106-preview
-summary: Scaricare una pagina web significa prelevare il suo contenuto via HTTP o
-  HTTPS.
+summary: "In C# si pu\xF2 usare HttpClient."
 title: Scaricare una pagina web
 weight: 42
 ---

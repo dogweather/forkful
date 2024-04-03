@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:53.948286-07:00
-description: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta C#:ssa tarkoittaa\
-  \ p\xE4iv\xE4m\xE4\xE4rien ja aikojen tekstiesitysten muuntamista `DateTime`-objektiksi.\
-  \ T\xE4m\xE4 on v\xE4ltt\xE4m\xE4t\xF6nt\xE4\u2026"
+description: "Kuinka: **Perusj\xE4sennys:** `DateTime.Parse` ja `DateTime.TryParse`\
+  \ -menetelm\xE4t ovat go-to-vaihtoehtoja muuntaaksesi merkkijonon `DateTime`-objektiksi.\u2026"
 lastmod: '2024-03-13T22:44:56.582679-06:00'
 model: gpt-4-0125-preview
-summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta C#:ssa tarkoittaa p\xE4\
-  iv\xE4m\xE4\xE4rien ja aikojen tekstiesitysten muuntamista `DateTime`-objektiksi."
+summary: "**Perusj\xE4sennys:**\n\n`DateTime.Parse` ja `DateTime.TryParse` -menetelm\xE4\
+  t ovat go-to-vaihtoehtoja muuntaaksesi merkkijonon `DateTime`-objektiksi."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
 weight: 30
 ---

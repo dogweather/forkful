@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:46.334813-07:00
-description: "So s\xE1nh hai ng\xE0y ngh\u0129a l\xE0 x\xE1c \u0111\u1ECBnh xem ng\xE0\
-  y n\xE0o di\u1EC5n ra tr\u01B0\u1EDBc ho\u1EB7c xem c\xF3 bao nhi\xEAu th\u1EDD\
-  i gian gi\u1EEFa ch\xFAng. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111\
-  i\u1EC1u n\xE0y \u0111\u1EC3 x\u1EED l\xFD nh\u01B0\u2026"
+description: "C\xE1ch l\xE0m: Elm l\xE0m cho vi\u1EC7c so s\xE1nh ng\xE0y tr\u1EDF\
+  \ n\xEAn \u0111\u01A1n gi\u1EA3n. Gi\u1EA3 s\u1EED b\u1EA1n c\xF3 hai ng\xE0y. \u0110\
+  \xE2y l\xE0 c\xE1ch b\u1EA1n ki\u1EC3m tra xem ng\xE0y n\xE0o x\u1EA3y ra tr\u01B0\
+  \u1EDBc."
 lastmod: '2024-03-13T22:44:36.561045-06:00'
 model: gpt-4-0125-preview
-summary: "So s\xE1nh hai ng\xE0y ngh\u0129a l\xE0 x\xE1c \u0111\u1ECBnh xem ng\xE0\
-  y n\xE0o di\u1EC5n ra tr\u01B0\u1EDBc ho\u1EB7c xem c\xF3 bao nhi\xEAu th\u1EDD\
-  i gian gi\u1EEFa ch\xFAng."
+summary: "Elm l\xE0m cho vi\u1EC7c so s\xE1nh ng\xE0y tr\u1EDF n\xEAn \u0111\u01A1\
+  n gi\u1EA3n."
 title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---

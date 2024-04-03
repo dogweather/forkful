@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:16:13.026372-07:00
-description: "REPL tarkoittaa Read-Eval-Print Loopia, interaktiivista ymp\xE4rist\xF6\
-  \xE4, jossa voit nopeasti testata koodia. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4\
-  \ kokeiluun,\u2026"
+description: "Miten: Hyp\xE4t\xE4ksesi Luas REPL:iin, kirjoita vain `lua` terminaaliisi.\
+  \ T\xE4ss\xE4 on esimerkki istunnosta."
 lastmod: '2024-03-13T22:44:56.698805-06:00'
 model: gpt-4-0125-preview
-summary: "REPL tarkoittaa Read-Eval-Print Loopia, interaktiivista ymp\xE4rist\xF6\xE4\
-  , jossa voit nopeasti testata koodia."
+summary: "Hyp\xE4t\xE4ksesi Luas REPL:iin, kirjoita vain `lua` terminaaliisi."
 title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 weight: 34
 ---

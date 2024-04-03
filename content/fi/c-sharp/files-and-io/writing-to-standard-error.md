@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:48.274918-07:00
-description: "C#:ssa vakiovirheeseen (stderr) kirjoittaminen tarkoittaa virheviestien\
-  \ ja diagnostiikkatietojen ohjaamista erill\xE4\xE4n s\xE4\xE4nn\xF6llisest\xE4\
-  \ tulosteesta (stdout)\u2026"
+description: "Kuinka: C#:ssa vakiovirheeseen kirjoittamisen voi saavuttaa k\xE4ytt\xE4\
+  m\xE4ll\xE4 `Console.Error`-virtaa. T\xE4t\xE4 virtaa k\xE4ytet\xE4\xE4n nimenomaan\
+  \ virheviestien ja\u2026"
 lastmod: '2024-03-13T22:44:56.590386-06:00'
 model: gpt-4-0125-preview
-summary: "C#:ssa vakiovirheeseen (stderr) kirjoittaminen tarkoittaa virheviestien\
-  \ ja diagnostiikkatietojen ohjaamista erill\xE4\xE4n s\xE4\xE4nn\xF6llisest\xE4\
-  \ tulosteesta (stdout) auttaakseen k\xE4ytt\xE4ji\xE4 ja kehitt\xE4ji\xE4 erottamaan\
-  \ normaalin ohjelman tulosteen ja virheilmoitukset toisistaan."
+summary: "C#:ssa vakiovirheeseen kirjoittamisen voi saavuttaa k\xE4ytt\xE4m\xE4ll\xE4\
+  \ `Console.Error`-virtaa."
 title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---

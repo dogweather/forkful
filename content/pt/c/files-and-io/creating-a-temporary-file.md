@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:08.330832-07:00
-description: "Criar um arquivo tempor\xE1rio em C envolve gerar um arquivo destinado\
-  \ a ser usado por curta dura\xE7\xE3o, geralmente como espa\xE7o de rascunho para\
-  \ processamento\u2026"
+description: "Como fazer: Criar um arquivo tempor\xE1rio na linguagem de programa\xE7\
+  \xE3o C pode aproveitar fun\xE7\xF5es como `tmpfile()` e `mkstemp()`. **Usando `tmpfile()`**:\
+  \ Esta\u2026"
 lastmod: '2024-03-13T22:44:47.071010-06:00'
 model: gpt-4-0125-preview
-summary: "Criar um arquivo tempor\xE1rio em C envolve gerar um arquivo destinado a\
-  \ ser usado por curta dura\xE7\xE3o, geralmente como espa\xE7o de rascunho para\
-  \ processamento ou armazenamento de dados."
+summary: "Criar um arquivo tempor\xE1rio na linguagem de programa\xE7\xE3o C pode\
+  \ aproveitar fun\xE7\xF5es como `tmpfile()` e `mkstemp()`."
 title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---

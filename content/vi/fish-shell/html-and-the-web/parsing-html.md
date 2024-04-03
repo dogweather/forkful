@@ -2,15 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:55.009542-07:00
-description: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML l\xE0 qu\xE1 tr\xECnh gi\u1EA3i m\xE3\
-  \ lingua franca c\u1EE7a web \u0111\u1EC3 l\u1ECDc d\u1EEF li\u1EC7u ho\u1EB7c thao\
-  \ t\xE1c n\u1ED9i dung. C\xE1c l\u1EADp tr\xECnh vi\xEAn ph\xE2n t\xEDch c\xFA ph\xE1\
-  p HTML \u0111\u1EC3 t\u1EF1\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Fish Shell kh\xF4ng ph\u1EA3i l\xE0 l\u1EF1\
+  a ch\u1ECDn h\xE0ng \u0111\u1EA7u \u0111\u1EC3 ph\xE2n t\xEDch c\xFA ph\xE1p HTML,\
+  \ nh\u01B0ng v\u1EDBi c\xE1c c\xF4ng c\u1EE5 ph\xF9 h\u1EE3p, vi\u1EC7c n\xE0y c\xF3\
+  \ th\u1EC3 th\u1EF1c hi\u1EC7n \u0111\u01B0\u1EE3c. H\xE3y s\u1EED\u2026"
 lastmod: '2024-03-13T22:44:37.207738-06:00'
 model: gpt-4-0125-preview
-summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML l\xE0 qu\xE1 tr\xECnh gi\u1EA3i m\xE3\
-  \ lingua franca c\u1EE7a web \u0111\u1EC3 l\u1ECDc d\u1EEF li\u1EC7u ho\u1EB7c thao\
-  \ t\xE1c n\u1ED9i dung."
+summary: "Fish Shell kh\xF4ng ph\u1EA3i l\xE0 l\u1EF1a ch\u1ECDn h\xE0ng \u0111\u1EA7\
+  u \u0111\u1EC3 ph\xE2n t\xEDch c\xFA ph\xE1p HTML, nh\u01B0ng v\u1EDBi c\xE1c c\xF4\
+  ng c\u1EE5 ph\xF9 h\u1EE3p, vi\u1EC7c n\xE0y c\xF3 th\u1EC3 th\u1EF1c hi\u1EC7n\
+  \ \u0111\u01B0\u1EE3c."
 title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---

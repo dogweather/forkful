@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:35.411661-07:00
-description: "N\u1ED1i chu\u1ED7i bao g\u1ED3m vi\u1EC7c k\u1EBFt n\u1ED1i hai ho\u1EB7\
-  c nhi\u1EC1u chu\u1ED7i l\u1EA1i v\u1EDBi nhau \u0111\u1EA7u-cu\u1ED1i \u0111\u1EC3\
-  \ t\u1EA1o th\xE0nh m\u1ED9t chu\u1ED7i m\u1EDBi. C\xE1c l\u1EADp tr\xECnh vi\xEA\
-  n l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 t\u1EA1o ra v\u0103n b\u1EA3n\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong Go, c\xF3 m\u1ED9t s\u1ED1 c\xE1\
+  ch \u0111\u1EC3 n\u1ED1i chu\u1ED7i. D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t c\xE1\
+  i nh\xECn v\xE0o m\u1ED9t s\u1ED1 ph\u01B0\u01A1ng ph\xE1p ph\u1ED5 bi\u1EBFn v\u1EDB\
+  i c\xE1c v\xED d\u1EE5: #."
 lastmod: '2024-03-13T22:44:35.970501-06:00'
 model: gpt-4-0125-preview
-summary: "N\u1ED1i chu\u1ED7i bao g\u1ED3m vi\u1EC7c k\u1EBFt n\u1ED1i hai ho\u1EB7\
-  c nhi\u1EC1u chu\u1ED7i l\u1EA1i v\u1EDBi nhau \u0111\u1EA7u-cu\u1ED1i \u0111\u1EC3\
-  \ t\u1EA1o th\xE0nh m\u1ED9t chu\u1ED7i m\u1EDBi."
+summary: "Trong Go, c\xF3 m\u1ED9t s\u1ED1 c\xE1ch \u0111\u1EC3 n\u1ED1i chu\u1ED7\
+  i."
 title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 weight: 3
 ---

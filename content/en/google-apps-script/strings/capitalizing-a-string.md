@@ -1,12 +1,11 @@
 ---
 date: 2024-02-01 21:06:44.010778-07:00
-description: "Capitalizing a string involves modifying the input so that the first\
-  \ character is uppercase while the rest remain lowercase, commonly used for formatting\u2026"
+description: "How to: Google Apps Script, being based on JavaScript, allows several\
+  \ methods to capitalize a string, albeit without a built-in function. Here are a\u2026"
 lastmod: '2024-03-13T22:44:59.653753-06:00'
 model: gpt-4-0125-preview
-summary: Capitalizing a string involves modifying the input so that the first character
-  is uppercase while the rest remain lowercase, commonly used for formatting names
-  or titles.
+summary: Google Apps Script, being based on JavaScript, allows several methods to
+  capitalize a string, albeit without a built-in function.
 title: Capitalizing a string
 weight: 2
 ---

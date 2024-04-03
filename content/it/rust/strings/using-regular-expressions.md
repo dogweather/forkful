@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:40.997314-07:00
-description: "Le espressioni regolari, o regex, permettono agli sviluppatori di cercare,\
-  \ corrispondere e manipolare stringhe con tecniche avanzate di riconoscimento di\u2026"
+description: "Come fare: La libreria `regex` di Rust \xE8 la scelta principale per\
+  \ lavorare con le espressioni regolari. Per usarla, devi prima aggiungerla al tuo\u2026"
 lastmod: '2024-03-13T22:44:43.208061-06:00'
 model: gpt-4-0125-preview
-summary: Le espressioni regolari, o regex, permettono agli sviluppatori di cercare,
-  corrispondere e manipolare stringhe con tecniche avanzate di riconoscimento di modelli.
+summary: "La libreria `regex` di Rust \xE8 la scelta principale per lavorare con le\
+  \ espressioni regolari."
 title: Utilizzo delle espressioni regolari
 weight: 11
 ---

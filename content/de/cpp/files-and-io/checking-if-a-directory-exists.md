@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:56.732375-07:00
-description: "Das \xDCberpr\xFCfen, ob ein Verzeichnis existiert, bedeutet zu bestimmen,\
-  \ ob ein Verzeichnis unter einem angegebenen Pfad vorhanden ist, bevor Operationen\
-  \ wie\u2026"
+description: "Wie geht das: In modernem C++ (C++17 und dar\xFCber hinaus) k\xF6nnen\
+  \ Sie die Dateisystembibliothek verwenden, um zu \xFCberpr\xFCfen, ob ein Verzeichnis\
+  \ existiert.\u2026"
 lastmod: '2024-03-13T22:44:54.198888-06:00'
 model: gpt-4-0125-preview
-summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis existiert, bedeutet zu bestimmen,\
-  \ ob ein Verzeichnis unter einem angegebenen Pfad vorhanden ist, bevor Operationen\
-  \ wie das Lesen von oder das Schreiben in Dateien innerhalb dieses Verzeichnisses\
-  \ ausgef\xFChrt werden."
+summary: "In modernem C++ (C++17 und dar\xFCber hinaus) k\xF6nnen Sie die Dateisystembibliothek\
+  \ verwenden, um zu \xFCberpr\xFCfen, ob ein Verzeichnis existiert."
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---

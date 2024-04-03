@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:34:00.578172-07:00
-description: "Comparar duas datas \xE9 um jeito de verificar qual delas vem antes,\
-  \ depois ou se s\xE3o iguais. Programadores fazem isso para lidar com prazos, eventos\
-  \ e\u2026"
+description: "Como fazer: Imagine que voc\xEA tem duas datas e quer saber qual \xE9\
+  \ a mais recente. No Swift, voc\xEA usaria `Date()` para criar os objetos de data\
+  \ e depois\u2026"
 lastmod: '2024-03-13T22:44:46.932947-06:00'
 model: gpt-4-1106-preview
-summary: "Comparar duas datas \xE9 um jeito de verificar qual delas vem antes, depois\
-  \ ou se s\xE3o iguais."
+summary: "Imagine que voc\xEA tem duas datas e quer saber qual \xE9 a mais recente."
 title: Comparando duas datas
 weight: 27
 ---

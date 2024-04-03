@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:53.082612-07:00
-description: "\xC5 sette stor forbokstav i en streng i Bash inneb\xE6rer \xE5 omdanne\
-  \ det f\xF8rste tegnet i strengen til en stor bokstav, mens resten av strengen forblir\
-  \ uendret.\u2026"
+description: "Hvordan: Bash har ikke en innebygd funksjon spesifikt for \xE5 sette\
+  \ stor bokstav i strenger, men du kan oppn\xE5 dette ved \xE5 bruke parameterutvidelse\
+  \ eller\u2026"
 lastmod: '2024-03-13T22:44:40.955797-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 sette stor forbokstav i en streng i Bash inneb\xE6rer \xE5 omdanne\
-  \ det f\xF8rste tegnet i strengen til en stor bokstav, mens resten av strengen forblir\
-  \ uendret."
+summary: "Bash har ikke en innebygd funksjon spesifikt for \xE5 sette stor bokstav\
+  \ i strenger, men du kan oppn\xE5 dette ved \xE5 bruke parameterutvidelse eller\
+  \ eksterne verkt\xF8y som `awk`."
 title: Sette stor bokstav i en streng
 weight: 2
 ---

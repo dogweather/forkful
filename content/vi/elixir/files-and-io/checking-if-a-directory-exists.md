@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:17.449571-07:00
-description: "Vi\u1EC7c ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3\
-  n t\u1EA1i trong Elixir \u0111\u1EA3m b\u1EA3o b\u1EA1n \u0111ang t\u01B0\u01A1\
-  ng t\xE1c v\u1EDBi m\u1ED9t \u0111\u01B0\u1EDDng d\u1EABn t\u1EC7p h\u1EE3p l\u1EC7\
-  . L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 tr\xE1nh c\xE1\
-  c\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Module `File` c\u1EE7a Elixir l\xE0 n\u01A1\
+  i b\u1EA1n n\xEAn \u0111\u1EBFn \u0111\u1EC3 ki\u1EC3m tra th\u01B0 m\u1EE5c. S\u1EED\
+  \ d\u1EE5ng `File.dir?/1` \u0111\u1EC3 tr\u1EA3 v\u1EC1 m\u1ED9t gi\xE1 tr\u1ECB\
+  \ boolean ch\u1EC9 ra li\u1EC7u th\u01B0 m\u1EE5c c\xF3\u2026"
 lastmod: '2024-03-13T22:44:36.227138-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1\
-  i trong Elixir \u0111\u1EA3m b\u1EA3o b\u1EA1n \u0111ang t\u01B0\u01A1ng t\xE1c\
-  \ v\u1EDBi m\u1ED9t \u0111\u01B0\u1EDDng d\u1EABn t\u1EC7p h\u1EE3p l\u1EC7."
+summary: "Module `File` c\u1EE7a Elixir l\xE0 n\u01A1i b\u1EA1n n\xEAn \u0111\u1EBF\
+  n \u0111\u1EC3 ki\u1EC3m tra th\u01B0 m\u1EE5c."
 title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
 weight: 20
 ---

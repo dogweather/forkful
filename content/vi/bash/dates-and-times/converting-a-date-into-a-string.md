@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:33.547736-07:00
-description: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i ngh\u0129\
-  a l\xE0 chuy\u1EC3n n\xF3 th\xE0nh v\u0103n b\u1EA3n bi\u1EC3u di\u1EC5n ng\xE0\
-  y \u0111\xF3. Ch\xFAng ta th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\u1EC3 \u0111\
-  \u1ECBnh d\u1EA1ng c\xE1c ng\xE0y cho con ng\u01B0\u1EDDi d\u1EC5 \u0111\u1ECDc\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1\
+  c v\xED d\u1EE5 v\u1EC1 c\xE1ch chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0\
+  nh chu\u1ED7i trong Bash."
 lastmod: '2024-03-13T22:44:36.894032-06:00'
 model: gpt-4-0125-preview
-summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i ngh\u0129\
-  a l\xE0 chuy\u1EC3n n\xF3 th\xE0nh v\u0103n b\u1EA3n bi\u1EC3u di\u1EC5n ng\xE0\
-  y \u0111\xF3."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1c v\xED d\u1EE5 v\u1EC1 c\xE1ch chuy\u1EC3\
+  n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i trong Bash."
 title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 weight: 28
 ---

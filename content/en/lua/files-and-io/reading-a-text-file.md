@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 17:54:48.071374-07:00
-description: Reading a text file means loading its content into your program. We do
-  it to process, analyze, or display stored data, like settings, logs, or user input.
+description: 'How to: Let''s check out how to read a text file line by line and then
+  all at once.'
 lastmod: '2024-03-13T22:45:00.221170-06:00'
 model: gpt-4-1106-preview
-summary: Reading a text file means loading its content into your program.
+summary: Let's check out how to read a text file line by line and then all at once.
 title: Reading a text file
 weight: 22
 ---

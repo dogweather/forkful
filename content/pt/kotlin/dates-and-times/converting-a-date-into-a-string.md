@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:37:03.133034-07:00
-description: "Converter uma data em uma string \xE9 o processo de transformar um objeto\
-  \ de data num texto leg\xEDvel. Programadores fazem isso para exibir datas em interfaces\u2026"
+description: 'Como fazer: .'
 lastmod: '2024-03-13T22:44:46.553658-06:00'
 model: gpt-4-1106-preview
-summary: "Converter uma data em uma string \xE9 o processo de transformar um objeto\
-  \ de data num texto leg\xEDvel."
+summary: .
 title: Convertendo uma data em uma string
 weight: 28
 ---

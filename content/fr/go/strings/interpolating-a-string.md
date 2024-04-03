@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:24.667467-07:00
-description: "L'interpolation de cha\xEEne est une m\xE9thode pour construire des\
-  \ cha\xEEnes qui incorporent des variables, permettant la cr\xE9ation dynamique\
-  \ de cha\xEEnes. Les\u2026"
+description: "Comment faire : En Go, l'interpolation de cha\xEEne est couramment r\xE9\
+  alis\xE9e en utilisant le package `fmt`, particuli\xE8rement avec la fonction `Sprintf`,\
+  \ qui\u2026"
 lastmod: '2024-03-13T22:44:57.117217-06:00'
 model: gpt-4-0125-preview
-summary: "L'interpolation de cha\xEEne est une m\xE9thode pour construire des cha\xEE\
-  nes qui incorporent des variables, permettant la cr\xE9ation dynamique de cha\xEE\
-  nes."
+summary: "En Go, l'interpolation de cha\xEEne est couramment r\xE9alis\xE9e en utilisant\
+  \ le package `fmt`, particuli\xE8rement avec la fonction `Sprintf`, qui vous permet\
+  \ d'injecter des variables dans une cha\xEEne en sp\xE9cifiant des verbes de formatage."
 title: "Interpolation d'une cha\xEEne de caract\xE8res"
 weight: 8
 ---

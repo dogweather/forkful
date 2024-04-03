@@ -1,12 +1,9 @@
 ---
 date: 2024-02-03 19:02:58.472005-07:00
-description: "PowerShell's integration with JSON (JavaScript Object Notation) is about\
-  \ parsing (reading) and generating (writing) JSON data, a common format for data\u2026"
+description: 'How to: #.'
 lastmod: '2024-03-13T22:45:00.303574-06:00'
 model: gpt-4-0125-preview
-summary: PowerShell's integration with JSON (JavaScript Object Notation) is about
-  parsing (reading) and generating (writing) JSON data, a common format for data exchange
-  on the web.
+summary: '#.'
 title: Working with JSON
 weight: 38
 ---

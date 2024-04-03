@@ -1,14 +1,11 @@
 ---
 date: 2024-01-27 20:34:57.089310-07:00
-description: "Det \xE5 generere tilfeldige tall i PHP handler om \xE5 produsere uforutsigbare\
-  \ verdier innenfor et spesifisert omr\xE5de, noe som er essensielt for oppgaver\
-  \ som \xE5\u2026"
+description: "Hvordan: PHP tilbyr flere funksjoner for \xE5 generere tilfeldige tall,\
+  \ men de mest brukte er `rand()`, `mt_rand()`, og for kryptografiske form\xE5l,\u2026"
 lastmod: '2024-03-13T22:44:40.881837-06:00'
 model: gpt-4-0125-preview
-summary: "Det \xE5 generere tilfeldige tall i PHP handler om \xE5 produsere uforutsigbare\
-  \ verdier innenfor et spesifisert omr\xE5de, noe som er essensielt for oppgaver\
-  \ som \xE5 skape unike bruker-IDer, generere passord, eller for bruk i simuleringer\
-  \ og spill."
+summary: "PHP tilbyr flere funksjoner for \xE5 generere tilfeldige tall, men de mest\
+  \ brukte er `rand()`, `mt_rand()`, og for kryptografiske form\xE5l, `random_int()`."
 title: Generering av tilfeldige tall
 weight: 12
 ---

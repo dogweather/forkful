@@ -1,11 +1,12 @@
 ---
 date: 2024-02-03 19:02:42.902269-07:00
-description: "Regular expressions (regex) in Fish Shell allow you to search, match,\
-  \ and manipulate strings based on specific patterns. Programmers utilize regex for\u2026"
+description: "How to: While Fish Shell itself does not have a built-in command for\
+  \ regex, it effectively uses external commands like `grep`, `sed`, and `awk` that\u2026"
 lastmod: '2024-03-13T22:45:00.463271-06:00'
 model: gpt-4-0125-preview
-summary: Regular expressions (regex) in Fish Shell allow you to search, match, and
-  manipulate strings based on specific patterns.
+summary: While Fish Shell itself does not have a built-in command for regex, it effectively
+  uses external commands like `grep`, `sed`, and `awk` that support regex, allowing
+  you to incorporate regex operations in your scripts.
 title: Using regular expressions
 weight: 11
 ---

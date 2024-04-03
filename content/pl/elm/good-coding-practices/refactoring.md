@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 01:17:55.596907-07:00
-description: "Refaktoryzacja to w zasadzie wiosenne sprz\u0105tanie w Twojej bazie\
-  \ kodu - chodzi o restrukturyzacj\u0119 istniej\u0105cego kodu bez zmiany jego zewn\u0119\
-  trznego\u2026"
+description: "Jak to zrobi\u0107: Za\u0142\xF3\u017Cmy, \u017Ce masz funkcj\u0119\
+  \ Elm, kt\xF3ra robi za du\u017Co, jak mieszanie logiki UI z aktualizacjami stanu.\
+  \ To idealny kandydat do refaktoryzacji.\u2026"
 lastmod: '2024-03-13T22:44:35.330085-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktoryzacja to w zasadzie wiosenne sprz\u0105tanie w Twojej bazie kodu\
-  \ - chodzi o restrukturyzacj\u0119 istniej\u0105cego kodu bez zmiany jego zewn\u0119\
-  trznego zachowania."
+summary: "Za\u0142\xF3\u017Cmy, \u017Ce masz funkcj\u0119 Elm, kt\xF3ra robi za du\u017C\
+  o, jak mieszanie logiki UI z aktualizacjami stanu."
 title: Refaktoryzacja
 weight: 19
 ---

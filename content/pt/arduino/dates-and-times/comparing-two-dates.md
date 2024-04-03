@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:32:07.318832-07:00
-description: "Comparar duas datas significa verificar se s\xE3o iguais, ou determinar\
-  \ qual \xE9 anterior ou posterior. Programadores fazem isso para rastrear eventos,\u2026"
+description: "Como fazer: Aqui est\xE1 um m\xE9todo simples usando a biblioteca `TimeLib.h`\
+  \ no Arduino."
 lastmod: '2024-03-13T22:44:46.851128-06:00'
 model: gpt-4-1106-preview
-summary: "Comparar duas datas significa verificar se s\xE3o iguais, ou determinar\
-  \ qual \xE9 anterior ou posterior."
+summary: "Aqui est\xE1 um m\xE9todo simples usando a biblioteca `TimeLib.h` no Arduino."
 title: Comparando duas datas
 weight: 27
 ---

@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:00:04.321478-07:00
-description: "Analysering av en dato fra en tekststreng i C inneb\xE6rer \xE5 konvertere\
-  \ tekstuelle representasjoner av datoer til et format som programmer kan manipulere\
-  \ og\u2026"
+description: "Hvordan: C tilbyr ikke en innebygd m\xE5te \xE5 analysere datoer fra\
+  \ strenger direkte p\xE5, s\xE5 vi tyr ofte til `strptime`-funksjonen tilgjengelig\
+  \ i biblioteket\u2026"
 lastmod: '2024-03-13T22:44:41.282316-06:00'
 model: gpt-4-0125-preview
-summary: "Analysering av en dato fra en tekststreng i C inneb\xE6rer \xE5 konvertere\
-  \ tekstuelle representasjoner av datoer til et format som programmer kan manipulere\
-  \ og analysere mer effektivt."
+summary: "C tilbyr ikke en innebygd m\xE5te \xE5 analysere datoer fra strenger direkte\
+  \ p\xE5, s\xE5 vi tyr ofte til `strptime`-funksjonen tilgjengelig i biblioteket\
+  \ `<time.h>` for POSIX-systemer."
 title: Tolke en dato fra en streng
 weight: 30
 ---

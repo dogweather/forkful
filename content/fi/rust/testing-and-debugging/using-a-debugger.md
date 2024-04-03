@@ -1,8 +1,8 @@
 ---
 date: 2024-01-26 04:10:11.665004-07:00
-description: "Rust tukee useita debuggereita, mutta yleinen on `gdb` GNU/Linuxille\
+description: "Kuinka: Rust tukee useita debuggereita, mutta yleinen on `gdb` GNU/Linuxille\
   \ tai `lldb` macOS:lle. Saatat my\xF6s k\xE4ytt\xE4\xE4 `rust-gdb`:t\xE4 tai `rust-lldb`:t\xE4\
-  , jotka\u2026"
+  ,\u2026"
 lastmod: '2024-03-13T22:44:56.361159-06:00'
 model: gpt-4-0125-preview
 summary: Rust tukee useita debuggereita, mutta yleinen on `gdb` GNU/Linuxille tai

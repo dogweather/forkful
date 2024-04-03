@@ -2,16 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:43.903618-07:00
-description: "Trong l\u1EADp tr\xECnh C, vi\u1EC7c \u0111\u1ECDc c\xE1c \u0111\u1ED1\
-  i s\u1ED1 d\xF2ng l\u1EC7nh cho ph\xE9p c\xE1c ch\u01B0\u01A1ng tr\xECnh nh\u1EAD\
-  n \u0111\u1EA7u v\xE0o ngay t\u1EEB terminal, l\xE0m t\u0103ng t\xEDnh linh ho\u1EA1\
-  t v\xE0 kh\u1EA3 n\u0103ng s\u1EED d\u1EE5ng. C\xE1c\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong C, h\xE0m `main` c\xF3 th\u1EC3 \u0111\
+  \u01B0\u1EE3c thi\u1EBFt k\u1EBF \u0111\u1EC3 ch\u1EA5p nh\u1EADn c\xE1c \u0111\u1ED1\
+  i s\u1ED1 d\xF2ng l\u1EC7nh s\u1EED d\u1EE5ng c\xE1c tham s\u1ED1 `int argc` v\xE0\
+  \ `char *argv[]`. T\u1EA1i \u0111\xE2y, `argc`\u2026"
 lastmod: '2024-03-13T22:44:37.288894-06:00'
 model: gpt-4-0125-preview
-summary: "Trong l\u1EADp tr\xECnh C, vi\u1EC7c \u0111\u1ECDc c\xE1c \u0111\u1ED1i\
-  \ s\u1ED1 d\xF2ng l\u1EC7nh cho ph\xE9p c\xE1c ch\u01B0\u01A1ng tr\xECnh nh\u1EAD\
-  n \u0111\u1EA7u v\xE0o ngay t\u1EEB terminal, l\xE0m t\u0103ng t\xEDnh linh ho\u1EA1\
-  t v\xE0 kh\u1EA3 n\u0103ng s\u1EED d\u1EE5ng."
+summary: "Trong C, h\xE0m `main` c\xF3 th\u1EC3 \u0111\u01B0\u1EE3c thi\u1EBFt k\u1EBF\
+  \ \u0111\u1EC3 ch\u1EA5p nh\u1EADn c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7\
+  nh s\u1EED d\u1EE5ng c\xE1c tham s\u1ED1 `int argc` v\xE0 `char *argv[]`."
 title: "\u0110\u1ECDc c\xE1c tham s\u1ED1 d\xF2ng l\u1EC7nh"
 weight: 23
 ---

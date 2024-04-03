@@ -1,13 +1,11 @@
 ---
 date: 2024-01-20 17:34:31.700287-07:00
-description: "Das Zusammenf\xFCgen von Zeichenketten, auch \"String Concatenation\"\
-  \ genannt, ist ziemlich grundlegend: Es geht darum, zwei oder mehrere Strings zu\
-  \ einem\u2026"
+description: "So geht's: Hier sind ein paar einfache Beispiele, wie man in C# Strings\
+  \ zusammenf\xFCgt."
 lastmod: '2024-03-13T22:44:53.880242-06:00'
 model: gpt-4-1106-preview
-summary: "Das Zusammenf\xFCgen von Zeichenketten, auch \"String Concatenation\" genannt,\
-  \ ist ziemlich grundlegend: Es geht darum, zwei oder mehrere Strings zu einem einzigen\
-  \ zu kombinieren."
+summary: "Hier sind ein paar einfache Beispiele, wie man in C# Strings zusammenf\xFC\
+  gt."
 title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:39.600736-07:00
-description: "Arredondar n\xFAmeros \xE9 o processo de ajustar os d\xEDgitos de um\
-  \ n\xFAmero para reduzir sua precis\xE3o de acordo com certas regras, seja em dire\xE7\
-  \xE3o ao n\xFAmero\u2026"
+description: "Como Fazer: Arredondar n\xFAmeros em C pode ser realizado usando v\xE1\
+  rias fun\xE7\xF5es, mas a abordagem mais comum envolve as fun\xE7\xF5es `floor()`,\
+  \ `ceil()` e\u2026"
 lastmod: '2024-03-13T22:44:47.044203-06:00'
 model: gpt-4-0125-preview
-summary: "Arredondar n\xFAmeros \xE9 o processo de ajustar os d\xEDgitos de um n\xFA\
-  mero para reduzir sua precis\xE3o de acordo com certas regras, seja em dire\xE7\xE3\
-  o ao n\xFAmero inteiro mais pr\xF3ximo ou a um n\xFAmero especificado de casas decimais."
+summary: "Arredondar n\xFAmeros em C pode ser realizado usando v\xE1rias fun\xE7\xF5\
+  es, mas a abordagem mais comum envolve as fun\xE7\xF5es `floor()`, `ceil()` e `round()`."
 title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---

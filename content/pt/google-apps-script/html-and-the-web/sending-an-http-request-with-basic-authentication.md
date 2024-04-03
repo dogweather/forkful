@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:10.507803-07:00
-description: "Enviar uma solicita\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica envolve\
-  \ codificar um nome de usu\xE1rio e senha em um cabe\xE7alho de solicita\xE7\xE3\
-  o para acessar recursos\u2026"
+description: "Como fazer: No Google Apps Script, para enviar uma solicita\xE7\xE3\
+  o HTTP com autentica\xE7\xE3o b\xE1sica, voc\xEA utiliza o servi\xE7o `UrlFetchApp`\
+  \ combinado com um\u2026"
 lastmod: '2024-03-13T22:44:46.107148-06:00'
 model: gpt-4-0125-preview
-summary: "Enviar uma solicita\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica envolve\
-  \ codificar um nome de usu\xE1rio e senha em um cabe\xE7alho de solicita\xE7\xE3\
-  o para acessar recursos protegidos."
+summary: "No Google Apps Script, para enviar uma solicita\xE7\xE3o HTTP com autentica\xE7\
+  \xE3o b\xE1sica, voc\xEA utiliza o servi\xE7o `UrlFetchApp` combinado com um cabe\xE7\
+  alho de autoriza\xE7\xE3o codificado em base64."
 title: "Enviando uma solicita\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 weight: 45
 ---

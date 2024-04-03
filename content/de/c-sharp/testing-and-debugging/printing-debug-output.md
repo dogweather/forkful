@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:52:25.551930-07:00
-description: "Beim Debuggen von C# Programmen ist das Ausgeben von Zwischenergebnissen\
-  \ und Fehlersuchinformationen essenziell. Es hilft Entwicklerinnen und Entwicklern,\u2026"
+description: 'How to: Einfache Ausgabe auf der Konsole mit `Console.WriteLine`.'
 lastmod: '2024-03-13T22:44:53.890748-06:00'
 model: gpt-4-1106-preview
-summary: Beim Debuggen von C# Programmen ist das Ausgeben von Zwischenergebnissen
-  und Fehlersuchinformationen essenziell.
+summary: Einfache Ausgabe auf der Konsole mit `Console.WriteLine`.
 title: Debug-Ausgaben drucken
 weight: 33
 ---

@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:41:30.560349-07:00
-description: "Supprimer des caract\xE8res selon un motif, c'est retirer des \xE9l\xE9\
-  ments de vos cha\xEEnes de texte qui correspondent \xE0 un crit\xE8re pr\xE9cis.\
-  \ On le fait pour\u2026"
+description: 'Comment faire : .'
 lastmod: '2024-03-13T22:44:58.089583-06:00'
 model: gpt-4-1106-preview
-summary: "Supprimer des caract\xE8res selon un motif, c'est retirer des \xE9l\xE9\
-  ments de vos cha\xEEnes de texte qui correspondent \xE0 un crit\xE8re pr\xE9cis."
+summary: .
 title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---

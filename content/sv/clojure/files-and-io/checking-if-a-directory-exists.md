@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:13.140196-07:00
-description: "Att kontrollera om en katalog finns i Clojure involverar verifiering\
-  \ av n\xE4rvaron av en filsystemskatalog fr\xE5n inom din Clojure-applikation. Denna\
-  \ uppgift\u2026"
+description: "Hur man g\xF6r: Clojure, som \xE4r ett JVM-spr\xE5k, kan anv\xE4nda\
+  \ Java-klassen `java.io.File` f\xF6r detta \xE4ndam\xE5l. Du beh\xF6ver inget tredjepartsbibliotek\
+  \ f\xF6r en s\xE5dan\u2026"
 lastmod: '2024-03-13T22:44:37.539454-06:00'
 model: gpt-4-0125-preview
-summary: "Att kontrollera om en katalog finns i Clojure involverar verifiering av\
-  \ n\xE4rvaron av en filsystemskatalog fr\xE5n inom din Clojure-applikation."
+summary: "Clojure, som \xE4r ett JVM-spr\xE5k, kan anv\xE4nda Java-klassen `java.io.File`\
+  \ f\xF6r detta \xE4ndam\xE5l."
 title: Kontrollera om en katalog existerar
 weight: 20
 ---

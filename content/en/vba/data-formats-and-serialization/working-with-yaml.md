@@ -1,11 +1,11 @@
 ---
 date: 2024-02-01 21:30:21.733754-07:00
-description: "YAML, which stands for \"YAML Ain't Markup Language\", is a human-readable\
-  \ data serialization language commonly used for configuration files. Programmers\u2026"
+description: "How to: Working with YAML in VBA requires understanding how to parse\
+  \ and convert YAML into a format that VBA can easily manipulate, usually dictionaries\u2026"
 lastmod: '2024-03-13T22:44:59.952685-06:00'
 model: gpt-4-0125-preview
-summary: YAML, which stands for "YAML Ain't Markup Language", is a human-readable
-  data serialization language commonly used for configuration files.
+summary: Working with YAML in VBA requires understanding how to parse and convert
+  YAML into a format that VBA can easily manipulate, usually dictionaries or collections.
 title: Working with YAML
 weight: 41
 ---

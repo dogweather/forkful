@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:53:56.747636-07:00
-description: "Leggere un file di testo consiste nell'acquisire dati da un file salvato\
-  \ sul tuo disco. I programmatori lo fanno per elaborare o analizzare contenuti,\u2026"
+description: "How to: Clojure rende la lettura di file di testo semplice con poche\
+  \ righe di codice. Usiamo la funzione `slurp` per leggere tutto il contenuto del\
+  \ file o\u2026"
 lastmod: '2024-03-13T22:44:43.059574-06:00'
 model: gpt-4-1106-preview
-summary: Leggere un file di testo consiste nell'acquisire dati da un file salvato
-  sul tuo disco.
+summary: Clojure rende la lettura di file di testo semplice con poche righe di codice.
 title: Lettura di un file di testo
 weight: 22
 ---

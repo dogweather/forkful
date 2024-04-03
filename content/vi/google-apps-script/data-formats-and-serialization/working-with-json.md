@@ -2,16 +2,16 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:05.134173-07:00
-description: "JSON, ho\u1EB7c JavaScript Object Notation, l\xE0 m\u1ED9t \u0111\u1ECB\
-  nh d\u1EA1ng nh\u1EB9 cho vi\u1EC7c l\u01B0u tr\u1EEF v\xE0 v\u1EADn chuy\u1EC3\
-  n d\u1EEF li\u1EC7u, l\xFD t\u01B0\u1EDFng cho vi\u1EC7c giao ti\u1EBFp gi\u1EEF\
-  a m\xE1y ch\u1EE7 v\xE0 m\xE1y kh\xE1ch\u2026"
+description: "C\xE1ch th\u1EE9c: Trong Google Apps Script, vi\u1EC7c thao t\xE1c JSON\
+  \ l\xE0 m\u1ED9t qu\xE1 tr\xECnh \u0111\u01A1n gi\u1EA3n, ch\u1EE7 y\u1EBFu l\xE0\
+  \ do s\u1EF1 h\u1ED7 tr\u1EE3 t\u1EF1 nhi\xEAn m\xE0 JavaScript cung c\u1EA5p cho\
+  \ vi\u1EC7c ph\xE2n\u2026"
 lastmod: '2024-03-13T22:44:36.069352-06:00'
 model: gpt-4-0125-preview
-summary: "JSON, ho\u1EB7c JavaScript Object Notation, l\xE0 m\u1ED9t \u0111\u1ECB\
-  nh d\u1EA1ng nh\u1EB9 cho vi\u1EC7c l\u01B0u tr\u1EEF v\xE0 v\u1EADn chuy\u1EC3\
-  n d\u1EEF li\u1EC7u, l\xFD t\u01B0\u1EDFng cho vi\u1EC7c giao ti\u1EBFp gi\u1EEF\
-  a m\xE1y ch\u1EE7 v\xE0 m\xE1y kh\xE1ch v\xE0 c\xE1c t\u1EC7p c\u1EA5u h\xECnh."
+summary: "Trong Google Apps Script, vi\u1EC7c thao t\xE1c JSON l\xE0 m\u1ED9t qu\xE1\
+  \ tr\xECnh \u0111\u01A1n gi\u1EA3n, ch\u1EE7 y\u1EBFu l\xE0 do s\u1EF1 h\u1ED7 tr\u1EE3\
+  \ t\u1EF1 nhi\xEAn m\xE0 JavaScript cung c\u1EA5p cho vi\u1EC7c ph\xE2n t\xEDch\
+  \ c\xFA ph\xE1p v\xE0 bi\u1EC3u di\u1EC5n chu\u1ED7i JSON."
 title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
 weight: 38
 ---

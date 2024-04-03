@@ -1,13 +1,10 @@
 ---
 date: 2024-01-26 04:46:22.655713-07:00
-description: "N\xFAmeros complexos, consistindo de uma parte real e uma parte imagin\xE1\
-  ria (normalmente escritos como a + bi), possibilitam c\xE1lculos que s\xE3o impratic\xE1\
-  veis ou\u2026"
+description: "Como fazer: Manusear n\xFAmeros complexos em TypeScript requer uma classe\
+  \ dedicada. Vamos criar uma e trabalhar com adi\xE7\xE3o e multiplica\xE7\xE3o."
 lastmod: '2024-03-13T22:44:46.319856-06:00'
 model: gpt-4-0125-preview
-summary: "N\xFAmeros complexos, consistindo de uma parte real e uma parte imagin\xE1\
-  ria (normalmente escritos como a + bi), possibilitam c\xE1lculos que s\xE3o impratic\xE1\
-  veis ou imposs\xEDveis apenas com os reais."
+summary: "Manusear n\xFAmeros complexos em TypeScript requer uma classe dedicada."
 title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---

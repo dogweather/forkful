@@ -2,14 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:25.717251-07:00
-description: "Regulj\xE4ra uttryck (regex) \xE4r ett kraftfullt verktyg f\xF6r textbearbetning,\
-  \ som m\xF6jligg\xF6r f\xF6r programmerare att s\xF6ka, matcha och manipulera textstr\xE4\
-  ngar med\u2026"
+description: "Hur man g\xF6r: #."
 lastmod: '2024-03-13T22:44:37.861504-06:00'
 model: gpt-4-0125-preview
-summary: "Regulj\xE4ra uttryck (regex) \xE4r ett kraftfullt verktyg f\xF6r textbearbetning,\
-  \ som m\xF6jligg\xF6r f\xF6r programmerare att s\xF6ka, matcha och manipulera textstr\xE4\
-  ngar med avancerade m\xF6nsters\xF6kningsmetoder."
+summary: '#.'
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---

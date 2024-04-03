@@ -1,13 +1,11 @@
 ---
 date: 2024-01-25 20:50:19.224696-07:00
-description: "Here's a little taste of debugging in Kotlin with IntelliJ IDEA - the\
-  \ Sherlock Holmes of IDEs: ```kotlin fun main() { val mysteryNumber = 42 var guess\
-  \ = 0\u2026"
+description: 'How to: Here''s a little taste of debugging in Kotlin with IntelliJ
+  IDEA - the Sherlock Holmes of IDEs.'
 lastmod: '2024-03-13T22:45:00.052928-06:00'
 model: gpt-4-1106-preview
-summary: "Here's a little taste of debugging in Kotlin with IntelliJ IDEA - the Sherlock\
-  \ Holmes of IDEs:\n\n```kotlin\nfun main() {\n    val mysteryNumber = 42\n    var\
-  \ guess = 0\n\n    while (guess ."
+summary: Here's a little taste of debugging in Kotlin with IntelliJ IDEA - the Sherlock
+  Holmes of IDEs.
 title: Using a debugger
 weight: 35
 ---

@@ -1,10 +1,12 @@
 ---
 date: 2024-01-20 17:37:16.454485-07:00
-description: ''
+description: "\u4F55\u3068\u306A\u305C\uFF1F Dates are numbers and converting them\
+  \ to strings means making them readable. {\"1/1/2021\" instead of \"1609459200\"\
+  }. Programmers do it to show users\u2026"
 isCJKLanguage: true
 lastmod: '2024-03-13T22:44:42.324250-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Dates are numbers and converting them to strings means making them readable.
 title: "\u65E5\u4ED8\u3092\u6587\u5B57\u5217\u306B\u5909\u63DB\u3059\u308B"
 weight: 28
 ---

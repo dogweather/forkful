@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:52:16.590140-07:00
-description: "La impresi\xF3n de informaci\xF3n de depuraci\xF3n es simplemente mostrar\
-  \ datos en la consola para entender qu\xE9 est\xE1 ocurriendo en el c\xF3digo. Los\
-  \ programadores la\u2026"
+description: "C\xF3mo Hacerlo: Elixir hace que imprimir mensajes de depuraci\xF3n\
+  \ sea un juego de ni\xF1os. Puedes utilizar `IO.puts` para la salida est\xE1ndar\
+  \ o `IO.inspect` que\u2026"
 lastmod: '2024-03-13T22:44:58.705309-06:00'
 model: gpt-4-1106-preview
-summary: "La impresi\xF3n de informaci\xF3n de depuraci\xF3n es simplemente mostrar\
-  \ datos en la consola para entender qu\xE9 est\xE1 ocurriendo en el c\xF3digo."
+summary: "Elixir hace que imprimir mensajes de depuraci\xF3n sea un juego de ni\xF1\
+  os."
 title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---

@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:32:29.281269-07:00
-description: "Por\xF3wnywanie dat umo\u017Cliwia ustalenie, kt\xF3ra z nich jest wcze\u015B\
-  niejsza lub p\xF3\u017Aniejsza. Programi\u015Bci robi\u0105 to, aby \u015Bledzi\u0107\
-  \ czas, zarz\u0105dza\u0107 wydarzeniami, lub\u2026"
+description: "How to: (Jak to zrobi\u0107:) W Arduino u\u017Cywamy struktury `tmElements_t`\
+  \ z biblioteki TimeLib do przechowywania dat. Por\xF3wnuj\u0105c dwa obiekty, sprawdzamy\
+  \ ich\u2026"
 lastmod: '2024-03-13T22:44:35.683774-06:00'
 model: gpt-4-1106-preview
-summary: "Por\xF3wnywanie dat umo\u017Cliwia ustalenie, kt\xF3ra z nich jest wcze\u015B\
-  niejsza lub p\xF3\u017Aniejsza."
+summary: "W Arduino u\u017Cywamy struktury `tmElements_t` z biblioteki TimeLib do\
+  \ przechowywania dat."
 title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---

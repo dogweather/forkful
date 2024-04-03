@@ -2,18 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:41.039120-07:00
-description: "L\xE0m vi\u1EC7c v\u1EDBi CSV, vi\u1EBFt t\u1EAFt c\u1EE7a Comma-Separated\
-  \ Values (Gi\xE1 tr\u1ECB Ph\xE2n c\xE1ch b\u1EB1ng D\u1EA5u ph\u1EA9y), c\xF3 ngh\u0129\
-  a l\xE0 x\u1EED l\xFD d\u1EEF li\u1EC7u d\u01B0\u1EDBi d\u1EA1ng v\u0103n b\u1EA3\
-  n thu\u1EA7n t\xFAy, trong \u0111\xF3\u2026"
+description: "C\xE1ch th\u1EE9c: H\xE3y \u0111\u1ECDc v\xE0 vi\u1EBFt c\xE1c t\u1EC7\
+  p CSV trong Java s\u1EED d\u1EE5ng th\u01B0 vi\u1EC7n `OpenCSV` th\u01B0\u1EDDng\
+  \ \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng. \u0110\u1EA7u ti\xEAn, th\xEAm dependency\
+  \ v\xE0o `pom.xml` n\u1EBFu b\u1EA1n s\u1EED d\u1EE5ng\u2026"
 lastmod: '2024-03-13T22:44:36.517991-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m vi\u1EC7c v\u1EDBi CSV, vi\u1EBFt t\u1EAFt c\u1EE7a Comma-Separated\
-  \ Values (Gi\xE1 tr\u1ECB Ph\xE2n c\xE1ch b\u1EB1ng D\u1EA5u ph\u1EA9y), c\xF3 ngh\u0129\
-  a l\xE0 x\u1EED l\xFD d\u1EEF li\u1EC7u d\u01B0\u1EDBi d\u1EA1ng v\u0103n b\u1EA3\
-  n thu\u1EA7n t\xFAy, trong \u0111\xF3 m\u1ED7i d\xF2ng l\xE0 m\u1ED9t b\u1EA3n ghi\
-  \ d\u1EEF li\u1EC7u v\u1EDBi c\xE1c tr\u01B0\u1EDDng \u0111\u01B0\u1EE3c ph\xE2\
-  n c\xE1ch b\u1EDFi d\u1EA5u ph\u1EA9y."
+summary: "H\xE3y \u0111\u1ECDc v\xE0 vi\u1EBFt c\xE1c t\u1EC7p CSV trong Java s\u1EED\
+  \ d\u1EE5ng th\u01B0 vi\u1EC7n `OpenCSV` th\u01B0\u1EDDng \u0111\u01B0\u1EE3c s\u1EED\
+  \ d\u1EE5ng."
 title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 weight: 37
 ---

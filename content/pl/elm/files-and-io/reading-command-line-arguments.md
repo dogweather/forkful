@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:55:50.971506-07:00
-description: "Czytanie argument\xF3w z linii polece\u0144 to spos\xF3b na przekazywanie\
-  \ danych do programu podczas jego uruchamiania. Programi\u015Bci robi\u0105 to,\
-  \ by zwi\u0119kszy\u0107\u2026"
+description: "How to: Elm nie obs\u0142uguje bezpo\u015Brednio czytania argument\xF3\
+  w linii polece\u0144, poniewa\u017C jest j\u0119zykiem skoncentrowanym na aplikacjach\
+  \ webowych. Ale mo\u017Cna to\u2026"
 lastmod: '2024-03-13T22:44:35.337194-06:00'
 model: gpt-4-1106-preview
-summary: "Czytanie argument\xF3w z linii polece\u0144 to spos\xF3b na przekazywanie\
-  \ danych do programu podczas jego uruchamiania."
+summary: "Elm nie obs\u0142uguje bezpo\u015Brednio czytania argument\xF3w linii polece\u0144\
+  , poniewa\u017C jest j\u0119zykiem skoncentrowanym na aplikacjach webowych."
 title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---

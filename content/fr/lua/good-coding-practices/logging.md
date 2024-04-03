@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 01:07:10.246884-07:00
-description: "Le logging est la pratique consistant \xE0 enregistrer des \xE9v\xE9\
-  nements, des erreurs et d'autres points de donn\xE9es significatifs qui se produisent\
-  \ tout au long\u2026"
+description: "Comment faire : Lua n'a pas de cadre de logging int\xE9gr\xE9, mais\
+  \ la mise en \u0153uvre d'une fonction de logging simple est directe. Voici un exemple\
+  \ basique\u2026"
 lastmod: '2024-03-13T22:44:57.943288-06:00'
 model: gpt-4-1106-preview
-summary: "Le logging est la pratique consistant \xE0 enregistrer des \xE9v\xE9nements,\
-  \ des erreurs et d'autres points de donn\xE9es significatifs qui se produisent tout\
-  \ au long du cycle de vie d'une application logicielle."
+summary: "Lua n'a pas de cadre de logging int\xE9gr\xE9, mais la mise en \u0153uvre\
+  \ d'une fonction de logging simple est directe."
 title: Journalisation
 weight: 17
 ---

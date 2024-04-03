@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:16.499038-07:00
-description: "Escribir en el error est\xE1ndar (stderr) en Haskell permite a los programas\
-  \ diferenciar su salida entre resultados normales y mensajes de error. Esto es\u2026"
+description: "C\xF3mo hacerlo: En Haskell, escribir en stderr es sencillo con el m\xF3\
+  dulo `System.IO` de la librer\xEDa base. A continuaci\xF3n se muestra un ejemplo\
+  \ b\xE1sico para\u2026"
 lastmod: '2024-03-13T22:44:59.134709-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir en el error est\xE1ndar (stderr) en Haskell permite a los programas\
-  \ diferenciar su salida entre resultados normales y mensajes de error."
+summary: "En Haskell, escribir en stderr es sencillo con el m\xF3dulo `System.IO`\
+  \ de la librer\xEDa base."
 title: "Escribiendo en el error est\xE1ndar"
 weight: 25
 ---

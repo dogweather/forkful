@@ -2,15 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:26.978596-07:00
-description: "Trovare la lunghezza di una stringa in Google Apps Script, un linguaggio\
-  \ di scripting cloud JavaScript che consente di automatizzare le attivit\xE0 per\
-  \ i\u2026"
+description: "Come fare: In Google Apps Script, puoi trovare la lunghezza di una stringa\
+  \ utilizzando la propriet\xE0 `.length`, allo stesso modo di JavaScript. Questa\u2026"
 lastmod: '2024-03-13T22:44:42.944788-06:00'
 model: gpt-4-0125-preview
-summary: "Trovare la lunghezza di una stringa in Google Apps Script, un linguaggio\
-  \ di scripting cloud JavaScript che consente di automatizzare le attivit\xE0 per\
-  \ i prodotti Google, consiste nel determinare il numero di caratteri che contiene\
-  \ una stringa."
+summary: "In Google Apps Script, puoi trovare la lunghezza di una stringa utilizzando\
+  \ la propriet\xE0 `.length`, allo stesso modo di JavaScript."
 title: Trovare la lunghezza di una stringa
 weight: 7
 ---

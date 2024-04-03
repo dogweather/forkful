@@ -2,11 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:59.189545-07:00
-description: "De lengte van een string vinden betekent het tellen van de tekens. Programmeurs\
-  \ doen dit om invoer te valideren, door strings te lopen en tekstgegevens\u2026"
+description: 'Hoe: JavaScript maakt het eenvoudig met de `.length` eigenschap.'
 lastmod: '2024-03-13T22:44:51.191514-06:00'
 model: gpt-4-0125-preview
-summary: De lengte van een string vinden betekent het tellen van de tekens.
+summary: JavaScript maakt het eenvoudig met de `.length` eigenschap.
 title: De lengte van een string vinden
 weight: 7
 ---

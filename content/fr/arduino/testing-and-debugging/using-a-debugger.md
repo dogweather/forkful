@@ -1,8 +1,8 @@
 ---
 date: 2024-01-26 03:47:20.321423-07:00
-description: "Avec l'IDE Arduino, vous pouvez utiliser des impressions s\xE9rie pour\
-  \ d\xE9boguer, mais c'est un peu comme utiliser une lampe de poche pour explorer\
-  \ une\u2026"
+description: "Comment faire : Avec l'IDE Arduino, vous pouvez utiliser des impressions\
+  \ s\xE9rie pour d\xE9boguer, mais c'est un peu comme utiliser une lampe de poche\
+  \ pour\u2026"
 lastmod: '2024-03-13T22:44:58.115979-06:00'
 model: gpt-4-0125-preview
 summary: "Avec l'IDE Arduino, vous pouvez utiliser des impressions s\xE9rie pour d\xE9\

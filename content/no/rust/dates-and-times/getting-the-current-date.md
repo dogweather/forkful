@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:53.119027-07:00
-description: "\xC5 hente den gjeldende datoen i Rust er en vanlig oppgave for oppgaver\
-  \ som logging, tidsbaserte operasjoner, eller rett og slett for \xE5 vise datoen.\
-  \ I\u2026"
+description: 'Hvordan: #.'
 lastmod: '2024-03-13T22:44:40.584397-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 hente den gjeldende datoen i Rust er en vanlig oppgave for oppgaver\
-  \ som logging, tidsbaserte operasjoner, eller rett og slett for \xE5 vise datoen."
+summary: '#.'
 title: "F\xE5 dagens dato"
 weight: 29
 ---

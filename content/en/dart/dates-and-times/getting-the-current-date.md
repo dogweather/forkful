@@ -1,11 +1,11 @@
 ---
 date: 2024-03-08 21:33:23.280875-07:00
-description: "Getting the current date in Dart involves querying the system for the\
-  \ current date and time. This functionality is commonly used in applications for\u2026"
+description: "How to: Dart's core library provides straightforward access to the current\
+  \ date and time through the `DateTime` class. Here's the basic example to get the\u2026"
 lastmod: '2024-03-13T22:44:59.829894-06:00'
 model: gpt-4-0125-preview
-summary: Getting the current date in Dart involves querying the system for the current
-  date and time.
+summary: Dart's core library provides straightforward access to the current date and
+  time through the `DateTime` class.
 title: Getting the current date
 weight: 29
 ---

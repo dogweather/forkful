@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:52.008390-07:00
-description: "Lire les arguments de ligne de commande dans Google Apps Script est\
-  \ un peu un abus de langage, car contrairement aux interfaces de ligne de commande\u2026"
+description: "Comment faire : Pour imiter le processus de lecture des arguments de\
+  \ ligne de commande dans Google Apps Script, en particulier pour les applications\
+  \ Web,\u2026"
 lastmod: '2024-03-13T22:44:57.204728-06:00'
 model: gpt-4-0125-preview
-summary: Lire les arguments de ligne de commande dans Google Apps Script est un peu
-  un abus de langage, car contrairement aux interfaces de ligne de commande traditionnelles
-  dans des langages de programmation tels que Python ou Node.
+summary: "Pour imiter le processus de lecture des arguments de ligne de commande dans\
+  \ Google Apps Script, en particulier pour les applications Web, vous pouvez utiliser\
+  \ les param\xE8tres de cha\xEEne de requ\xEAte."
 title: Lecture des arguments de ligne de commande
 weight: 23
 ---

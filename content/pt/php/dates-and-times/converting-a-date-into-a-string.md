@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:37:07.446385-07:00
-description: "Converter uma data para uma string significa transform\xE1-la de um\
-  \ formato de data, como UNIX Timestamp ou DateTime, para uma sequ\xEAncia de caracteres\u2026"
+description: "How to: Vamos direto ao ponto: voc\xEA precisa exibir ou salvar uma\
+  \ data em um formato personalizado em PHP? Use a classe `DateTime` e o m\xE9todo\
+  \ `format`.\u2026"
 lastmod: '2024-03-13T22:44:46.678678-06:00'
 model: gpt-4-1106-preview
-summary: "Converter uma data para uma string significa transform\xE1-la de um formato\
-  \ de data, como UNIX Timestamp ou DateTime, para uma sequ\xEAncia de caracteres\
-  \ leg\xEDveis."
+summary: Vamos direto ao ponto.
 title: Convertendo uma data em uma string
 weight: 28
 ---

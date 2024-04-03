@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:44.309535-07:00
-description: "Escribir en el error est\xE1ndar (stderr) se trata de dirigir los mensajes\
-  \ de error o de diagn\xF3stico de tu programa a un flujo separado, distinto del\
-  \ salida\u2026"
+description: "C\xF3mo hacerlo: En Swift, escribir en el error est\xE1ndar se puede\
+  \ hacer usando la clase `FileHandle` para un acceso directo al stderr. Aqu\xED hay\
+  \ un ejemplo\u2026"
 lastmod: '2024-03-13T22:44:59.432691-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir en el error est\xE1ndar (stderr) se trata de dirigir los mensajes\
-  \ de error o de diagn\xF3stico de tu programa a un flujo separado, distinto del\
-  \ salida est\xE1ndar (stdout)."
+summary: "En Swift, escribir en el error est\xE1ndar se puede hacer usando la clase\
+  \ `FileHandle` para un acceso directo al stderr."
 title: "Escribiendo en el error est\xE1ndar"
 weight: 25
 ---

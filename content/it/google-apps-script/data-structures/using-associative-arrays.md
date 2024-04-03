@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:08.108194-07:00
-description: "Gli array associativi, noti come oggetti in Google Apps Script (una\
-  \ variante di JavaScript), consentono ai programmatori di creare collezioni di coppie\u2026"
+description: "Come fare: In Google Apps Script, si creano e manipolano gli array associativi\
+  \ (oggetti) utilizzando le parentesi graffe `{}`, definendo al loro interno\u2026"
 lastmod: '2024-03-13T22:44:42.946852-06:00'
 model: gpt-4-0125-preview
-summary: Gli array associativi, noti come oggetti in Google Apps Script (una variante
-  di JavaScript), consentono ai programmatori di creare collezioni di coppie chiave-valore.
+summary: In Google Apps Script, si creano e manipolano gli array associativi (oggetti)
+  utilizzando le parentesi graffe `{}`, definendo al loro interno coppie chiave-valore.
 title: Utilizzo di array associativi
 weight: 15
 ---

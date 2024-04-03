@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:28.412141-07:00
-description: "Twee datums vergelijken betekent uitzoeken of de ene datum v\xF3\xF3\
-  r, na, of hetzelfde is als een andere. Programmeurs doen dit om planning, deadlines,\u2026"
+description: 'Hoe: Java maakt het vrij eenvoudig om datums te vergelijken. Gebruik
+  `LocalDate` en de methoden `compareTo`, `isBefore`, of `isAfter`. Hier is de kern.'
 lastmod: '2024-03-13T22:44:50.695046-06:00'
 model: gpt-4-0125-preview
-summary: "Twee datums vergelijken betekent uitzoeken of de ene datum v\xF3\xF3r, na,\
-  \ of hetzelfde is als een andere."
+summary: Java maakt het vrij eenvoudig om datums te vergelijken.
 title: Twee datums vergelijken
 weight: 27
 ---

@@ -2,12 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:47.686788-07:00
-description: "Het schrijven van een tekstbestand in Dart houdt in dat bestanden op\
-  \ de schijf worden gemaakt of gewijzigd om gegevens op te slaan in een leesbaar\u2026"
+description: "Hoe: De kernbibliotheek van Dart biedt het `dart:io` pakket voor bestandsbehandeling,\
+  \ waarmee je tekstbestanden kunt schrijven zonder de noodzaak voor\u2026"
 lastmod: '2024-03-13T22:44:50.525037-06:00'
 model: gpt-4-0125-preview
-summary: Het schrijven van een tekstbestand in Dart houdt in dat bestanden op de schijf
-  worden gemaakt of gewijzigd om gegevens op te slaan in een leesbaar formaat.
+summary: De kernbibliotheek van Dart biedt het `dart:io` pakket voor bestandsbehandeling,
+  waarmee je tekstbestanden kunt schrijven zonder de noodzaak voor bibliotheken van
+  derden.
 title: Een tekstbestand schrijven
 weight: 24
 ---

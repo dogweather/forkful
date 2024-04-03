@@ -1,13 +1,10 @@
 ---
 date: 2024-01-20 17:42:26.009400-07:00
-description: "Poistamme merkkijonoista kuvioita vastaavat merkit, koska haluamme usein\
-  \ puhdistaa sy\xF6tteit\xE4, muotoilla tietoja tai tehd\xE4 merkkijonok\xE4sittely\xE4\
-  .\u2026"
+description: "How to: - Miten: K\xE4yt\xE4 `string` komentoa kuvioita vastaavien merkkien\
+  \ poistoon. T\xE4ss\xE4 esimerkki, jossa poistetaan kaikki pisteet merkkijonosta."
 lastmod: '2024-03-13T22:44:56.976192-06:00'
 model: gpt-4-1106-preview
-summary: "Poistamme merkkijonoista kuvioita vastaavat merkit, koska haluamme usein\
-  \ puhdistaa sy\xF6tteit\xE4, muotoilla tietoja tai tehd\xE4 merkkijonok\xE4sittely\xE4\
-  ."
+summary: "K\xE4yt\xE4 `string` komentoa kuvioita vastaavien merkkien poistoon."
 title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---

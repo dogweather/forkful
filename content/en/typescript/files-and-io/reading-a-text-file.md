@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:55:05.959383-07:00
-description: "Reading a text file is grabbing the content from a file that's structured\
-  \ as human-readable text. Programmers do it to process or analyze the data, like\u2026"
+description: "How to: Let's read a text file in TypeScript using Node.js's `fs/promises`\
+  \ module. We'll keep this example simple: read a file named `example.txt` and log\u2026"
 lastmod: '2024-03-13T22:44:59.874154-06:00'
 model: gpt-4-1106-preview
-summary: Reading a text file is grabbing the content from a file that's structured
-  as human-readable text.
+summary: Let's read a text file in TypeScript using Node.js's `fs/promises` module.
 title: Reading a text file
 weight: 22
 ---

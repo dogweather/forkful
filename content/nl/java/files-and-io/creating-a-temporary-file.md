@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:18.851594-07:00
-description: "Het maken van een tijdelijk bestand betekent het cre\xEBren van een\
-  \ bestand dat slechts voor korte tijd nodig is en daarna wordt verwijderd. Programmeurs\u2026"
+description: 'Hoe: In Java is het `java.nio.file` pakket je vriend voor tijdelijke
+  bestanden. Bekijk dit fragment.'
 lastmod: '2024-03-13T22:44:50.701851-06:00'
 model: gpt-4-0125-preview
-summary: "Het maken van een tijdelijk bestand betekent het cre\xEBren van een bestand\
-  \ dat slechts voor korte tijd nodig is en daarna wordt verwijderd."
+summary: In Java is het `java.nio.file` pakket je vriend voor tijdelijke bestanden.
 title: Een tijdelijk bestand aanmaken
 weight: 21
 ---

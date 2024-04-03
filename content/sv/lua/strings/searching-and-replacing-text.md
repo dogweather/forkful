@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:58:50.552621-07:00
-description: "Att s\xF6ka och ers\xE4tta text \xE4r processen d\xE4r specifika teckenstr\xE4\
-  ngar identifieras och byts ut. Programmerare anv\xE4nder det f\xF6r att uppdatera\
-  \ kod, manipulera\u2026"
+description: "How to: (S\xE5 H\xE4r G\xF6r Du:) I Lua \xE4r `string.gsub` din kompis\
+  \ f\xF6r att byta ut text. Exempel."
 lastmod: '2024-03-13T22:44:38.023612-06:00'
 model: gpt-4-1106-preview
-summary: "Att s\xF6ka och ers\xE4tta text \xE4r processen d\xE4r specifika teckenstr\xE4\
-  ngar identifieras och byts ut."
+summary: "I Lua \xE4r `string.gsub` din kompis f\xF6r att byta ut text."
 title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---

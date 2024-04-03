@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 18:00:58.452125-07:00
-description: "Inviare una richiesta HTTP con autenticazione di base significa inviare\
-  \ al server dati che necessitano di un username e password per accedere a contenuti\u2026"
+description: 'Come Fare: .'
 lastmod: '2024-03-13T22:44:43.683411-06:00'
 model: gpt-4-1106-preview
-summary: Inviare una richiesta HTTP con autenticazione di base significa inviare al
-  server dati che necessitano di un username e password per accedere a contenuti protetti.
+summary: .
 title: Inviare una richiesta http con autenticazione di base
 weight: 45
 ---

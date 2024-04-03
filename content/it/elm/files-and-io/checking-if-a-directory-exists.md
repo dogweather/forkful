@@ -1,11 +1,12 @@
 ---
 date: 2024-01-19
-description: "Controllare l'esistenza di una directory significa verificare se una\
-  \ specifica cartella esiste nel file system. I programmatori lo fanno per evitare\u2026"
+description: "How to: Elm \xE8 un linguaggio orientato al front-end che non fornisce\
+  \ direttamente funzioni per interagire con il file system. Tuttavia, puoi comunicare\
+  \ con\u2026"
 lastmod: '2024-03-13T22:44:43.363751-06:00'
 model: unknown
-summary: Controllare l'esistenza di una directory significa verificare se una specifica
-  cartella esiste nel file system.
+summary: "Elm \xE8 un linguaggio orientato al front-end che non fornisce direttamente\
+  \ funzioni per interagire con il file system."
 title: Verifica dell'esistenza di una directory
 weight: 20
 ---

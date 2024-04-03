@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:46:13.613912-07:00
-description: "Extrahieren von Teilstrings bedeutet, bestimmte Teile aus einem l\xE4\
-  ngeren String herauszutrennen. Programmierer nutzen das, um Daten zu manipulieren,\
-  \ zu\u2026"
+description: 'So geht''s: .'
 lastmod: '2024-03-13T22:44:54.004303-06:00'
 model: gpt-4-1106-preview
-summary: "Extrahieren von Teilstrings bedeutet, bestimmte Teile aus einem l\xE4ngeren\
-  \ String herauszutrennen."
+summary: .
 title: Teilstrings extrahieren
 weight: 6
 ---

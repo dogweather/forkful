@@ -1,13 +1,11 @@
 ---
 date: 2024-01-20 17:43:19.399530-07:00
-description: "(Suppression de caract\xE8res correspondant \xE0 un motif) Dans la programmation,\
-  \ lorsque nous parlons de supprimer des caract\xE8res selon un motif, on fait\u2026"
+description: "How to: (Comment faire : ) En Swift, on peut utiliser les expressions\
+  \ r\xE9guli\xE8res (regex) pour identifier et supprimer les caract\xE8res correspondant\
+  \ \xE0 un\u2026"
 lastmod: '2024-03-13T22:44:58.198213-06:00'
 model: gpt-4-1106-preview
-summary: "(Suppression de caract\xE8res correspondant \xE0 un motif)\n\nDans la programmation,\
-  \ lorsque nous parlons de supprimer des caract\xE8res selon un motif, on fait r\xE9\
-  f\xE9rence \xE0 l'\xE9limination s\xE9lective de certains caract\xE8res dans une\
-  \ cha\xEEne de texte qui correspondent \xE0 un mod\xE8le sp\xE9cifique."
+summary: (Comment faire.
 title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---

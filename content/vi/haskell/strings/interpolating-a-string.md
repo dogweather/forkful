@@ -2,14 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:40.571289-07:00
-description: "N\u1ED9i suy chu\u1ED7i cho ph\xE9p b\u1EA1n nh\xFAng tr\u1EF1c ti\u1EBF\
-  p c\xE1c bi\u1EBFn v\xE0o trong chu\u1ED7i. \u0110i\u1EC1u n\xE0y \u0111\u01B0\u1EE3\
-  c th\u1EF1c hi\u1EC7n cho thu\u1EADn ti\u1EC7n v\xE0 d\u1EC5 \u0111\u1ECDc\u2014\
-  kh\xF4ng c\u1EA7n d\u1EA5u c\u1ED9ng hay g\u1ECDi h\xE0m \u0111\u1EC3\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Haskell, n\u1ED9i suy chu\u1ED7i kh\xF4\
+  ng ph\u1EA3i l\xE0 t\xEDnh n\u0103ng s\u1EB5n c\xF3, nh\u01B0ng v\u1EDBi g\xF3i\
+  \ `interpolate`, b\u1EA1n c\xF3 th\u1EC3 ti\u1EBFp c\u1EADn r\u1EA5t g\u1EA7n v\u1EDB\
+  i n\xF3. \u0110\u1EA7u ti\xEAn, \u0111\u1EA3m\u2026"
 lastmod: '2024-03-13T22:44:36.694298-06:00'
 model: gpt-4-0125-preview
-summary: "N\u1ED9i suy chu\u1ED7i cho ph\xE9p b\u1EA1n nh\xFAng tr\u1EF1c ti\u1EBF\
-  p c\xE1c bi\u1EBFn v\xE0o trong chu\u1ED7i."
+summary: "Trong Haskell, n\u1ED9i suy chu\u1ED7i kh\xF4ng ph\u1EA3i l\xE0 t\xEDnh\
+  \ n\u0103ng s\u1EB5n c\xF3, nh\u01B0ng v\u1EDBi g\xF3i `interpolate`, b\u1EA1n c\xF3\
+  \ th\u1EC3 ti\u1EBFp c\u1EADn r\u1EA5t g\u1EA7n v\u1EDBi n\xF3."
 title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
 weight: 8
 ---

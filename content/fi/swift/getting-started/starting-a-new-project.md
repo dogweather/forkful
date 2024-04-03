@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 18:04:39.775647-07:00
-description: "Uuden Swift-projektin aloittaminen tarkoittaa uuden sovelluksen tai\
-  \ ohjelman kehityksen k\xE4ynnist\xE4mist\xE4. Ohjelmoijat tekev\xE4t t\xE4m\xE4\
-  n luodakseen ratkaisuja\u2026"
+description: "How to: (Kuinka tehd\xE4:) Aloita uusi projekti Swiftiss\xE4 k\xE4ytt\xE4\
+  m\xE4ll\xE4 Xcodea, Applen kehitysymp\xE4rist\xF6\xE4. T\xE4ss\xE4 on esimerkki."
 lastmod: '2024-03-13T22:44:56.907694-06:00'
 model: gpt-4-1106-preview
-summary: "Uuden Swift-projektin aloittaminen tarkoittaa uuden sovelluksen tai ohjelman\
-  \ kehityksen k\xE4ynnist\xE4mist\xE4."
+summary: "Aloita uusi projekti Swiftiss\xE4 k\xE4ytt\xE4m\xE4ll\xE4 Xcodea, Applen\
+  \ kehitysymp\xE4rist\xF6\xE4."
 title: Uuden projektin aloittaminen
 weight: 1
 ---

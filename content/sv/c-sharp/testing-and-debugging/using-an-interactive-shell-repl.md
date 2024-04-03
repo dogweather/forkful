@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:12:25.633148-07:00
-description: "En REPL, eller Read-Eval-Print Loop, l\xE5ter dig skriva C#-kod och\
-  \ k\xF6ra den interaktivt. Programmerare anv\xE4nder det f\xF6r snabba experiment,\
-  \ fels\xF6kning eller\u2026"
+description: "Hur man g\xF6r: Starta en REPL i din C#-milj\xF6 genom att anv\xE4nda\
+  \ C# Interactive-f\xF6nstret eller k\xF6ra `dotnet-script` i din terminal. H\xE4\
+  r \xE4r ett smakprov p\xE5 att\u2026"
 lastmod: '2024-03-13T22:44:37.914872-06:00'
 model: gpt-4-0125-preview
-summary: "En REPL, eller Read-Eval-Print Loop, l\xE5ter dig skriva C#-kod och k\xF6\
-  ra den interaktivt."
+summary: "Starta en REPL i din C#-milj\xF6 genom att anv\xE4nda C# Interactive-f\xF6\
+  nstret eller k\xF6ra `dotnet-script` i din terminal."
 title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---

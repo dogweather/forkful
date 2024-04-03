@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:44:02.326346-07:00
-description: "\xC5 laste ned en nettside inneb\xE6rer \xE5 hente ned all HTML-koden\
-  \ som danner selve siden du ser i nettleseren. Programmere gj\xF8r dette for \xE5\
-  \ hente data, sjekke\u2026"
+description: "How to: For \xE5 laste ned en nettside i C++, kan du bruke biblioteket\
+  \ `libcurl`. Her er et enkelt eksempel."
 lastmod: '2024-03-13T22:44:41.098376-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 laste ned en nettside inneb\xE6rer \xE5 hente ned all HTML-koden som\
-  \ danner selve siden du ser i nettleseren."
+summary: "For \xE5 laste ned en nettside i C++, kan du bruke biblioteket `libcurl`."
 title: Nedlasting av en nettside
 weight: 42
 ---

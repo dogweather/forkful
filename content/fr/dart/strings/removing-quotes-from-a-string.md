@@ -2,15 +2,14 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:51.475469-07:00
-description: "Enlever les guillemets d'une cha\xEEne de caract\xE8res en Dart consiste\
-  \ \xE0 retirer les marques de citation doubles (\") ou simples (') au d\xE9but et\
-  \ \xE0 la fin d'une\u2026"
+description: "Comment faire : Dart offre des moyens directs pour enlever les guillemets\
+  \ d'une cha\xEEne en utilisant des m\xE9thodes de cha\xEEne int\xE9gr\xE9es, sans\
+  \ n\xE9cessiter de\u2026"
 lastmod: '2024-03-13T22:44:57.360872-06:00'
 model: gpt-4-0125-preview
-summary: "Enlever les guillemets d'une cha\xEEne de caract\xE8res en Dart consiste\
-  \ \xE0 retirer les marques de citation doubles (\") ou simples (') au d\xE9but et\
-  \ \xE0 la fin d'une cha\xEEne, utile pour le nettoyage de donn\xE9es ou la pr\xE9\
-  paration des cha\xEEnes pour un traitement ult\xE9rieur."
+summary: "Dart offre des moyens directs pour enlever les guillemets d'une cha\xEE\
+  ne en utilisant des m\xE9thodes de cha\xEEne int\xE9gr\xE9es, sans n\xE9cessiter\
+  \ de biblioth\xE8ques tierces."
 title: "Supprimer les guillemets d'une cha\xEEne de caract\xE8res"
 weight: 9
 ---

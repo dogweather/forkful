@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:49.538142-07:00
-description: "Em Elixir, os arrays associativos, chamados de Mapas, s\xE3o cole\xE7\
-  \xF5es de pares chave-valor onde uma chave \xFAnica aponta para um valor. Eles s\xE3\
-  o extremamente\u2026"
+description: "Como fazer: Criar um Mapa \xE9 simples. Voc\xEA usa a sintaxe `%{}`,\
+  \ assim."
 lastmod: '2024-03-13T22:44:46.231292-06:00'
 model: gpt-4-0125-preview
-summary: "Em Elixir, os arrays associativos, chamados de Mapas, s\xE3o cole\xE7\xF5\
-  es de pares chave-valor onde uma chave \xFAnica aponta para um valor."
+summary: "Criar um Mapa \xE9 simples."
 title: Usando arrays associativos
 weight: 15
 ---

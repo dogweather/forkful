@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:55:38.320708-07:00
-description: "Leer argumentos de l\xEDnea de comandos es c\xF3mo tu script de Bash\
-  \ agarra y usa los datos que el usuario pasa cuando ejecuta el programa. Esto es\
-  \ crucial\u2026"
+description: "C\xF3mo hacerlo: Para probar, guarda el siguiente c\xF3digo en un archivo\
+  \ llamado `lectura_args.sh`."
 lastmod: '2024-03-13T22:44:59.262478-06:00'
 model: gpt-4-1106-preview
-summary: "Leer argumentos de l\xEDnea de comandos es c\xF3mo tu script de Bash agarra\
-  \ y usa los datos que el usuario pasa cuando ejecuta el programa."
+summary: "Para probar, guarda el siguiente c\xF3digo en un archivo llamado `lectura_args.sh`."
 title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---

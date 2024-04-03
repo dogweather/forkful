@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:18:39.555054-07:00
-description: "TOML, abreviatura de Tom's Obvious, Minimal Language, es un formato\
-  \ de serializaci\xF3n de datos. A los programadores les gusta por su simplicidad\
-  \ y\u2026"
+description: "C\xF3mo hacerlo: Primero, instala `toml-cli` para jugar con TOML en\
+  \ Bash. \xDAtil para leer o editar archivos TOML al vuelo."
 lastmod: '2024-03-13T22:44:59.271269-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, abreviatura de Tom's Obvious, Minimal Language, es un formato de serializaci\xF3\
-  n de datos."
+summary: Primero, instala `toml-cli` para jugar con TOML en Bash.
 title: Trabajando con TOML
 weight: 39
 ---

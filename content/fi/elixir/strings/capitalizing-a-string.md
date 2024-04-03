@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:56.779644-07:00
-description: "Merkkijonon alkukirjaimen muuttaminen isoksi tarkoittaa merkkijonon\
-  \ ensimm\xE4isen kirjaimen muuttamista isoksi kirjaimeksi samalla varmistaen, ett\xE4\
-  \ kaikki\u2026"
+description: "Kuinka: Elixir tarjoaa suoraviivaisen tavan muuttaa merkkijonot alkukirjaimeltaan\
+  \ isoksi k\xE4ytt\xE4m\xE4ll\xE4 sen sis\xE4\xE4nrakennettuja funktioita ilman kolmansien\u2026"
 lastmod: '2024-03-13T22:44:56.209464-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonon alkukirjaimen muuttaminen isoksi tarkoittaa merkkijonon ensimm\xE4\
-  isen kirjaimen muuttamista isoksi kirjaimeksi samalla varmistaen, ett\xE4 kaikki\
-  \ muut kirjaimet ovat pieni\xE4."
+summary: "Elixir tarjoaa suoraviivaisen tavan muuttaa merkkijonot alkukirjaimeltaan\
+  \ isoksi k\xE4ytt\xE4m\xE4ll\xE4 sen sis\xE4\xE4nrakennettuja funktioita ilman kolmansien\
+  \ osapuolien kirjastoja."
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---

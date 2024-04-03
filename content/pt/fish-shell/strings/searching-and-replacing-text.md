@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:57:49.074436-07:00
-description: "Pesquisar e substituir texto \xE9 a arte de encontrar peda\xE7os espec\xED\
-  ficos de texto e troc\xE1-los por outros. Programadores fazem isso para corrigir\
-  \ erros,\u2026"
+description: "Como Fazer: Substituir todas as inst\xE2ncias de \"bacalhau\" por \"\
+  sardinha\" num arquivo `menu.txt`."
 lastmod: '2024-03-13T22:44:46.989662-06:00'
 model: gpt-4-1106-preview
-summary: "Pesquisar e substituir texto \xE9 a arte de encontrar peda\xE7os espec\xED\
-  ficos de texto e troc\xE1-los por outros."
+summary: "Substituir todas as inst\xE2ncias de \"bacalhau\" por \"sardinha\" num arquivo\
+  \ `menu.txt`."
 title: Pesquisando e substituindo texto
 weight: 10
 ---

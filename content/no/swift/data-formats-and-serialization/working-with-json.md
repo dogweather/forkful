@@ -2,13 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:07.266765-07:00
-description: "\xC5 jobbe med JSON i Swift betyr \xE5 h\xE5ndtere et lettvekts dataformat\
-  \ for datautveksling. Programmerere bruker JSON for \xE5 overf\xF8re data mellom\
-  \ en server og en\u2026"
+description: "Hvordan: Swift gj\xF8r tolking av JSON enkelt med `Codable`-protokollen.\
+  \ Her er hvordan du dekoder JSON til et Swift-objekt."
 lastmod: '2024-03-13T22:44:41.163204-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 jobbe med JSON i Swift betyr \xE5 h\xE5ndtere et lettvekts dataformat\
-  \ for datautveksling."
+summary: "Swift gj\xF8r tolking av JSON enkelt med `Codable`-protokollen."
 title: Arbeider med JSON
 weight: 38
 ---

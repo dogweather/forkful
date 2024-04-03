@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:52:28.158859-07:00
-description: Printing debug output means spitting out extra info to help you understand
-  what your code's doing. Programmers do it to detect and fix bugs more easily.
+description: 'How to: Get cozy with `echo` - the Swiss Army knife for output in Fish.
+  Here''s how to sprinkle some debug prints into your shell scripts.'
 lastmod: '2024-03-13T22:45:00.476610-06:00'
 model: gpt-4-1106-preview
-summary: Printing debug output means spitting out extra info to help you understand
-  what your code's doing.
+summary: Get cozy with `echo` - the Swiss Army knife for output in Fish.
 title: Printing debug output
 weight: 33
 ---

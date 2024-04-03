@@ -1,13 +1,9 @@
 ---
 date: 2024-01-20 17:37:35.463325-07:00
-description: "Converter uma data em uma string significa transformar um objeto de\
-  \ data, que o Ruby entende e manipula, em texto simples, que pode ser lido e usado\
-  \ por\u2026"
+description: 'Como Fazer: .'
 lastmod: '2024-03-13T22:44:47.106666-06:00'
 model: gpt-4-1106-preview
-summary: Converter uma data em uma string significa transformar um objeto de data,
-  que o Ruby entende e manipula, em texto simples, que pode ser lido e usado por humanos
-  ou outros sistemas.
+summary: .
 title: Convertendo uma data em uma string
 weight: 28
 ---

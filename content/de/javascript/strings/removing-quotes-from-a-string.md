@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 03:40:37.704070-07:00
-description: "Anf\xFChrungszeichen aus einem String zu entfernen bedeutet, sich dieser\
-  \ l\xE4stigen Anf\xFChrungszeichen zu entledigen, die Ihren Code durcheinanderbringen\u2026"
+description: "Wie: Stellen Sie sich vor, Sie haben einen String, der in Anf\xFChrungszeichen\
+  \ eingeschlossen ist, wie `\\\"Hello, World!\\\"` und Sie m\xF6chten den reinen,\u2026"
 lastmod: '2024-03-13T22:44:54.254343-06:00'
 model: gpt-4-0125-preview
-summary: "Anf\xFChrungszeichen aus einem String zu entfernen bedeutet, sich dieser\
-  \ l\xE4stigen Anf\xFChrungszeichen zu entledigen, die Ihren Code durcheinanderbringen\
-  \ k\xF6nnen, besonders wenn Sie Daten parsen oder JSON-Objekte konstruieren."
+summary: "Stellen Sie sich vor, Sie haben einen String, der in Anf\xFChrungszeichen\
+  \ eingeschlossen ist, wie `\\\"Hello, World!\\\"` und Sie m\xF6chten den reinen,\
+  \ unzitierten Text."
 title: "Anf\xFChrungszeichen aus einem String entfernen"
 weight: 9
 ---

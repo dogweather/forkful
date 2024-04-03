@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 17:53:52.551148-07:00
-description: "Reading a text file means pulling data from a file into your program.\
-  \ Programmers do this to process or analyze the content, like reading configs,\u2026"
+description: 'How to: Here''s how to read the entire contents of a text file named
+  `example.txt`.'
 lastmod: '2024-03-13T22:44:59.798046-06:00'
 model: gpt-4-1106-preview
-summary: Reading a text file means pulling data from a file into your program.
+summary: Here's how to read the entire contents of a text file named `example.txt`.
 title: Reading a text file
 weight: 22
 ---

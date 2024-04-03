@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:37.544557-07:00
-description: "Refactorizar, en el l\xE9xico de programaci\xF3n, se refiere al proceso\
-  \ de reestructurar el c\xF3digo de computadora existente\u2014cambiando la facturaci\xF3\
-  n sin cambiar\u2026"
+description: "C\xF3mo hacerlo: En Google Apps Script, un escenario com\xFAn que se\
+  \ beneficia de la refactorizaci\xF3n es la simplificaci\xF3n de scripts engorrosos\
+  \ que interact\xFAan\u2026"
 lastmod: '2024-03-13T22:44:58.543532-06:00'
 model: gpt-4-0125-preview
-summary: "Refactorizar, en el l\xE9xico de programaci\xF3n, se refiere al proceso\
-  \ de reestructurar el c\xF3digo de computadora existente\u2014cambiando la facturaci\xF3\
-  n sin cambiar su comportamiento externo\u2014para mejorar atributos no funcionales."
+summary: "En Google Apps Script, un escenario com\xFAn que se beneficia de la refactorizaci\xF3\
+  n es la simplificaci\xF3n de scripts engorrosos que interact\xFAan con Google Sheets\
+  \ o Docs."
 title: "Refactorizaci\xF3n"
 weight: 19
 ---

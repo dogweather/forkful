@@ -2,18 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:51.211448-07:00
-description: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n trong Google\
-  \ Apps Script l\xE0 vi\u1EC7c x\xE1c \u0111\u1ECBnh ch\u01B0\u01A1ng tr\xECnh c\xE1\
-  c chu\u1ED7i c\u1EE5 th\u1EC3 trong m\u1ED9t t\xE0i li\u1EC7u, b\u1EA3ng t\xEDnh,\
-  \ ho\u1EB7c b\u1EA5t k\u1EF3 lo\u1EA1i n\u1ED9i\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Google Apps Script cung c\u1EA5p m\u1ED9t c\xE1\
+  ch \u0111\u01A1n gi\u1EA3n \u0111\u1EC3 t\xECm v\xE0 thay th\u1EBF v\u0103n b\u1EA3\
+  n, \u0111\u1EB7c bi\u1EC7t l\xE0 trong Google Docs v\xE0 Sheets. D\u01B0\u1EDBi\
+  \ \u0111\xE2y l\xE0 c\xE1c v\xED d\u1EE5 cho\u2026"
 lastmod: '2024-03-13T22:44:36.019185-06:00'
 model: gpt-4-0125-preview
-summary: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n trong Google Apps\
-  \ Script l\xE0 vi\u1EC7c x\xE1c \u0111\u1ECBnh ch\u01B0\u01A1ng tr\xECnh c\xE1c\
-  \ chu\u1ED7i c\u1EE5 th\u1EC3 trong m\u1ED9t t\xE0i li\u1EC7u, b\u1EA3ng t\xEDnh,\
-  \ ho\u1EB7c b\u1EA5t k\u1EF3 lo\u1EA1i n\u1ED9i dung Google Apps n\xE0o kh\xE1c,\
-  \ v\xE0 thay th\u1EBF ch\xFAng b\u1EB1ng c\xE1c gi\xE1 tr\u1ECB v\u0103n b\u1EA3\
-  n kh\xE1c."
+summary: "Google Apps Script cung c\u1EA5p m\u1ED9t c\xE1ch \u0111\u01A1n gi\u1EA3\
+  n \u0111\u1EC3 t\xECm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n, \u0111\u1EB7c bi\u1EC7\
+  t l\xE0 trong Google Docs v\xE0 Sheets."
 title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
 weight: 10
 ---

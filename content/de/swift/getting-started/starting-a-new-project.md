@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 18:04:38.541939-07:00
-description: "Ein neues Projekt zu starten bedeutet, eine leere Leinwand in eine funktionierende\
-  \ App umzuwandeln. Entwickler machen das, um Ideen zum Leben zu erwecken\u2026"
+description: 'How to: (Wie geht das:) .'
 lastmod: '2024-03-13T22:44:54.226322-06:00'
 model: gpt-4-1106-preview
-summary: Ein neues Projekt zu starten bedeutet, eine leere Leinwand in eine funktionierende
-  App umzuwandeln.
+summary: .
 title: Einen neuen Projekt starten
 weight: 1
 ---

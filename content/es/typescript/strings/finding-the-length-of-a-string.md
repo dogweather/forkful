@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:48:15.930001-07:00
-description: "En TypeScript, hallar la longitud de una cadena implica contar la cantidad\
-  \ de caracteres que contiene. Saber esto es clave cuando manipulamos texto: para\u2026"
+description: "How to: La propiedad `length` devuelve el n\xFAmero de caracteres en\
+  \ una cadena."
 lastmod: '2024-03-13T22:44:58.790583-06:00'
 model: gpt-4-1106-preview
-summary: En TypeScript, hallar la longitud de una cadena implica contar la cantidad
-  de caracteres que contiene.
+summary: "La propiedad `length` devuelve el n\xFAmero de caracteres en una cadena."
 title: Calculando la longitud de una cadena
 weight: 7
 ---

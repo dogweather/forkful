@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 18:03:59.832836-07:00
-description: "Ein neues Projekt zu starten bedeutet, von Grund auf etwas Neues zu\
-  \ schaffen. Programmierer machen das, um ihre Ideen umzusetzen, Probleme zu l\xF6\
-  sen oder\u2026"
+description: "Vorgehensweise: Um ein neues JavaScript-Projekt zu starten, gibt es\
+  \ einige Schritte, die du befolgen kannst. Hier ist ein einfaches Beispiel mit `node.js`\u2026"
 lastmod: '2024-03-13T22:44:54.266892-06:00'
 model: gpt-4-1106-preview
-summary: Ein neues Projekt zu starten bedeutet, von Grund auf etwas Neues zu schaffen.
+summary: Um ein neues JavaScript-Projekt zu starten, gibt es einige Schritte, die
+  du befolgen kannst.
 title: Einen neuen Projekt starten
 weight: 1
 ---

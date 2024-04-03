@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:02:41.219107-07:00
-description: "Parsing a date from a string involves converting textual representations\
-  \ of dates and times into a format that can be manipulated and analyzed by the\u2026"
+description: "How to: TypeScript, being a superset of JavaScript, relies on the Date\
+  \ object for parsing dates from strings. However, working with dates in JS/TS can\u2026"
 lastmod: '2024-03-13T22:44:59.867235-06:00'
 model: gpt-4-0125-preview
-summary: Parsing a date from a string involves converting textual representations
-  of dates and times into a format that can be manipulated and analyzed by the program.
+summary: TypeScript, being a superset of JavaScript, relies on the Date object for
+  parsing dates from strings.
 title: Parsing a date from a string
 weight: 30
 ---

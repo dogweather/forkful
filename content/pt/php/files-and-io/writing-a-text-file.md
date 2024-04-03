@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:44.222670-07:00
-description: "Escrever um arquivo de texto em PHP envolve criar ou abrir um arquivo\
-  \ e inserir conte\xFAdo nele. Programadores fazem isso para persistir dados, como\u2026"
+description: "Como fazer: O PHP suporta nativamente a escrita de arquivos por meio\
+  \ de fun\xE7\xF5es como `file_put_contents`, `fopen` juntamente com `fwrite` e `fclose`.\
+  \ Veja\u2026"
 lastmod: '2024-03-13T22:44:46.685496-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever um arquivo de texto em PHP envolve criar ou abrir um arquivo e\
-  \ inserir conte\xFAdo nele."
+summary: "O PHP suporta nativamente a escrita de arquivos por meio de fun\xE7\xF5\
+  es como `file_put_contents`, `fopen` juntamente com `fwrite` e `fclose`."
 title: Escrevendo um arquivo de texto
 weight: 24
 ---

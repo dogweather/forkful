@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:20.828476-07:00
-description: "Pisanie do standardowego b\u0142\u0119du (stderr) w Haskellu pozwala\
-  \ programom rozr\xF3\u017Cnia\u0107 ich wyj\u015Bcie pomi\u0119dzy normalnymi wynikami\
-  \ a komunikatami o b\u0142\u0119dach. Jest to\u2026"
+description: "Jak to zrobi\u0107: W Haskellu, pisanie do stderr jest proste dzi\u0119\
+  ki modu\u0142owi `System.IO` z biblioteki podstawowej. Poni\u017Cej znajduje si\u0119\
+  \ podstawowy przyk\u0142ad\u2026"
 lastmod: '2024-03-13T22:44:35.469245-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie do standardowego b\u0142\u0119du (stderr) w Haskellu pozwala programom\
-  \ rozr\xF3\u017Cnia\u0107 ich wyj\u015Bcie pomi\u0119dzy normalnymi wynikami a komunikatami\
-  \ o b\u0142\u0119dach."
+summary: "W Haskellu, pisanie do stderr jest proste dzi\u0119ki modu\u0142owi `System.IO`\
+  \ z biblioteki podstawowej."
 title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---

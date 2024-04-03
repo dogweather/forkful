@@ -2,18 +2,16 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:11.686776-07:00
-description: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1\
-  \ b\u1EA3n bao g\u1ED3m vi\u1EC7c m\xE3 h\xF3a t\xEAn \u0111\u0103ng nh\u1EADp v\xE0\
-  \ m\u1EADt kh\u1EA9u v\xE0o m\u1ED9t ti\xEAu \u0111\u1EC1 y\xEAu c\u1EA7u \u0111\
-  \u1EC3 truy c\u1EADp v\xE0o c\xE1c t\xE0i nguy\xEAn \u0111\u01B0\u1EE3c b\u1EA3\
-  o v\u1EC7.\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Google Apps Script, \u0111\u1EC3 g\u1EED\
+  i m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3n, b\u1EA1\
+  n s\u1EED d\u1EE5ng d\u1ECBch v\u1EE5 `UrlFetchApp` k\u1EBFt h\u1EE3p v\u1EDBi ti\xEA\
+  u \u0111\u1EC1 \u1EE7y quy\u1EC1n \u0111\u01B0\u1EE3c m\xE3\u2026"
 lastmod: '2024-03-13T22:44:36.039786-06:00'
 model: gpt-4-0125-preview
-summary: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1\
-  \ b\u1EA3n bao g\u1ED3m vi\u1EC7c m\xE3 h\xF3a t\xEAn \u0111\u0103ng nh\u1EADp v\xE0\
-  \ m\u1EADt kh\u1EA9u v\xE0o m\u1ED9t ti\xEAu \u0111\u1EC1 y\xEAu c\u1EA7u \u0111\
-  \u1EC3 truy c\u1EADp v\xE0o c\xE1c t\xE0i nguy\xEAn \u0111\u01B0\u1EE3c b\u1EA3\
-  o v\u1EC7."
+summary: "Trong Google Apps Script, \u0111\u1EC3 g\u1EEDi m\u1ED9t y\xEAu c\u1EA7\
+  u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3n, b\u1EA1n s\u1EED d\u1EE5ng d\u1ECB\
+  ch v\u1EE5 `UrlFetchApp` k\u1EBFt h\u1EE3p v\u1EDBi ti\xEAu \u0111\u1EC1 \u1EE7\
+  y quy\u1EC1n \u0111\u01B0\u1EE3c m\xE3 h\xF3a base64."
 title: "G\u1EEDi y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3n"
 weight: 45
 ---

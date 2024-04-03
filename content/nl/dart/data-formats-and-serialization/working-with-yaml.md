@@ -2,12 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:42.221311-07:00
-description: "YAML, een afkorting voor YAML Ain't Markup Language, is een voor mensen\
-  \ leesbaar gegevensserialisatieformaat. Programmeurs gebruiken het voor\u2026"
+description: "Hoe: In Dart houdt werken met YAML meestal in dat je een externe bibliotheek\
+  \ gebruikt, omdat de taal geen ingebouwde YAML-parsermogelijkheden bevat. Een\u2026"
 lastmod: '2024-03-13T22:44:50.527075-06:00'
 model: gpt-4-0125-preview
-summary: YAML, een afkorting voor YAML Ain't Markup Language, is een voor mensen leesbaar
-  gegevensserialisatieformaat.
+summary: In Dart houdt werken met YAML meestal in dat je een externe bibliotheek gebruikt,
+  omdat de taal geen ingebouwde YAML-parsermogelijkheden bevat.
 title: Werken met YAML
 weight: 41
 ---

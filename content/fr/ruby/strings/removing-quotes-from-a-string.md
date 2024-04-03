@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 03:41:23.184999-07:00
-description: "Supprimer les guillemets d'une cha\xEEne signifie retirer ces marques\
-  \ de citation doubles ou simples qui entourent les valeurs de texte. Les programmeurs\u2026"
+description: "Comment faire : Ruby poss\xE8de quelques astuces sympas pour couper\
+  \ ces guillemets ennuyeux. Vous pouvez utiliser les m\xE9thodes `gsub` ou `delete`\
+  \ pour\u2026"
 lastmod: '2024-03-13T22:44:58.405390-06:00'
 model: gpt-4-0125-preview
-summary: "Supprimer les guillemets d'une cha\xEEne signifie retirer ces marques de\
-  \ citation doubles ou simples qui entourent les valeurs de texte."
+summary: "Ruby poss\xE8de quelques astuces sympas pour couper ces guillemets ennuyeux."
 title: "Retirer les guillemets d'une cha\xEEne"
 weight: 9
 ---

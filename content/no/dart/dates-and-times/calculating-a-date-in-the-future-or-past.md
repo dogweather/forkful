@@ -2,14 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:28.318611-07:00
-description: "\xC5 beregne en dato i fremtiden eller fortiden er en vanlig oppgave\
-  \ for programmerere, som handler om planlegging, p\xE5minnelser, eller enhver funksjon\
-  \ som\u2026"
+description: "Hvordan: Dart gir solid st\xF8tte for datomanipulering gjennom sin `DateTime`-klasse.\
+  \ Her er hvordan du kan beregne fremtidige eller tidligere datoer ved \xE5\u2026"
 lastmod: '2024-03-13T22:44:40.502192-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 beregne en dato i fremtiden eller fortiden er en vanlig oppgave for\
-  \ programmerere, som handler om planlegging, p\xE5minnelser, eller enhver funksjon\
-  \ som avhenger av datoberegninger."
+summary: "Dart gir solid st\xF8tte for datomanipulering gjennom sin `DateTime`-klasse."
 title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---

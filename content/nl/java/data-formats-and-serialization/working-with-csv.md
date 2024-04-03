@@ -2,13 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:21.488753-07:00
-description: "Werken met CSV, wat staat voor Comma-Separated Values (komma-gescheiden\
-  \ waarden), betekent het omgaan met gegevens in een eenvoudig tekstformaat waarbij\u2026"
+description: "Hoe: Laten we CSV-bestanden lezen en schrijven in Java met behulp van\
+  \ de veelgebruikte `OpenCSV` bibliotheek. Voeg eerst de afhankelijkheid toe aan\
+  \ je\u2026"
 lastmod: '2024-03-13T22:44:50.704836-06:00'
 model: gpt-4-0125-preview
-summary: Werken met CSV, wat staat voor Comma-Separated Values (komma-gescheiden waarden),
-  betekent het omgaan met gegevens in een eenvoudig tekstformaat waarbij elke regel
-  een gegevensrecord is met door komma's gescheiden velden.
+summary: Laten we CSV-bestanden lezen en schrijven in Java met behulp van de veelgebruikte
+  `OpenCSV` bibliotheek.
 title: Werken met CSV
 weight: 37
 ---

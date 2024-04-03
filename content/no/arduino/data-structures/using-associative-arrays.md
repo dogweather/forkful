@@ -2,13 +2,13 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:11.601710-07:00
-description: "I Arduino-verdenen lar assoiative matriser deg pare n\xF8kler med verdier,\
-  \ litt som \xE5 matche sokker med deres par. De er et f\xF8rstevalg n\xE5r du trenger\
-  \ \xE5 lagre\u2026"
+description: "Hvordan: Arduino, strengt tatt, har ikke innebygd st\xF8tte for assoiative\
+  \ matriser slik du ville funnet i h\xF8yere programmeringsspr\xE5k. Men, frykt ikke.\
+  \ Vi\u2026"
 lastmod: '2024-03-13T22:44:41.051736-06:00'
 model: gpt-4-0125-preview
-summary: "I Arduino-verdenen lar assoiative matriser deg pare n\xF8kler med verdier,\
-  \ litt som \xE5 matche sokker med deres par."
+summary: "Arduino, strengt tatt, har ikke innebygd st\xF8tte for assoiative matriser\
+  \ slik du ville funnet i h\xF8yere programmeringsspr\xE5k."
 title: Bruke associative tabeller
 weight: 15
 ---

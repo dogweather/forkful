@@ -1,11 +1,12 @@
 ---
 date: 2024-02-01 21:30:06.679780-07:00
-description: "Reading command line arguments in Visual Basic for Applications (VBA)\
-  \ involves accessing parameters passed to your program upon execution. This technique\u2026"
+description: "How to: Unlike more straightforward programming environments, VBA doesn't\
+  \ have a built-in feature to directly read command line arguments in a\u2026"
 lastmod: '2024-03-13T22:44:59.948289-06:00'
 model: gpt-4-0125-preview
-summary: Reading command line arguments in Visual Basic for Applications (VBA) involves
-  accessing parameters passed to your program upon execution.
+summary: Unlike more straightforward programming environments, VBA doesn't have a
+  built-in feature to directly read command line arguments in a conventional sense
+  because it's primarily designed for embedding within Microsoft Office applications.
 title: Reading command line arguments
 weight: 23
 ---

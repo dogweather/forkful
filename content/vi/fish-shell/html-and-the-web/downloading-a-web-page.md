@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:40.200969-07:00
-description: "T\u1EA3i m\u1ED9t trang web v\u1EC1 m\xE1y \u0111\u1ED3ng ngh\u0129\
-  a v\u1EDBi vi\u1EC7c b\u1EA1n k\xE9o n\u1ED9i dung c\u1EE7a trang \u0111\xF3 t\u1EEB\
-  \ web v\u1EC1 m\xE1y c\u1EE5c b\u1ED9 c\u1EE7a m\xECnh. L\u1EADp tr\xECnh vi\xEA\
-  n th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y cho c\xE1c m\u1EE5c\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1\
+  ch nhanh v\xE0 \u0111\u01A1n gi\u1EA3n \u0111\u1EC3 t\u1EA3i m\u1ED9t trang web\
+  \ s\u1EED d\u1EE5ng Fish Shell v\u1EDBi l\u1EC7nh `curl`."
 lastmod: '2024-03-13T22:44:37.208967-06:00'
 model: gpt-4-0125-preview
-summary: "T\u1EA3i m\u1ED9t trang web v\u1EC1 m\xE1y \u0111\u1ED3ng ngh\u0129a v\u1EDB\
-  i vi\u1EC7c b\u1EA1n k\xE9o n\u1ED9i dung c\u1EE7a trang \u0111\xF3 t\u1EEB web\
-  \ v\u1EC1 m\xE1y c\u1EE5c b\u1ED9 c\u1EE7a m\xECnh."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch nhanh v\xE0 \u0111\u01A1n gi\u1EA3\
+  n \u0111\u1EC3 t\u1EA3i m\u1ED9t trang web s\u1EED d\u1EE5ng Fish Shell v\u1EDB\
+  i l\u1EC7nh `curl`."
 title: "T\u1EA3i trang web"
 weight: 42
 ---

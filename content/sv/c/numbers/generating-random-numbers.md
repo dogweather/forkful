@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:23.494405-07:00
-description: "Att generera slumpm\xE4ssiga nummer i C inneb\xE4r att skapa v\xE4rden\
-  \ som \xE4r of\xF6ruts\xE4gbara och f\xF6ljer en specifik distribution, s\xE5som\
-  \ uniform eller normal. Denna\u2026"
+description: "Hur man g\xF6r: I C kan slumpm\xE4ssiga nummer genereras med funktionen\
+  \ `rand()`, som \xE4r en del av C:s standardbibliotek `<stdlib.h>`. Som standard\
+  \ producerar\u2026"
 lastmod: '2024-03-13T22:44:38.377824-06:00'
 model: gpt-4-0125-preview
-summary: "Att generera slumpm\xE4ssiga nummer i C inneb\xE4r att skapa v\xE4rden som\
-  \ \xE4r of\xF6ruts\xE4gbara och f\xF6ljer en specifik distribution, s\xE5som uniform\
-  \ eller normal."
+summary: "I C kan slumpm\xE4ssiga nummer genereras med funktionen `rand()`, som \xE4\
+  r en del av C:s standardbibliotek `<stdlib.h>`."
 title: "Generera slumpm\xE4ssiga nummer"
 weight: 12
 ---

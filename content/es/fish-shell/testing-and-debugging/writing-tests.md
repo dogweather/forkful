@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:24.789891-07:00
-description: "Escribir pruebas en Fish Shell implica crear scripts que ejecuten autom\xE1\
-  ticamente tu c\xF3digo para validar su comportamiento frente a los resultados\u2026"
+description: "C\xF3mo: Fish no tiene un marco de pruebas integrado como algunos otros\
+  \ entornos de programaci\xF3n. Sin embargo, puedes escribir scripts de pruebas simples\
+  \ que\u2026"
 lastmod: '2024-03-13T22:44:59.505155-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir pruebas en Fish Shell implica crear scripts que ejecuten autom\xE1\
-  ticamente tu c\xF3digo para validar su comportamiento frente a los resultados esperados."
+summary: "Fish no tiene un marco de pruebas integrado como algunos otros entornos\
+  \ de programaci\xF3n."
 title: Escribiendo pruebas
 weight: 36
 ---

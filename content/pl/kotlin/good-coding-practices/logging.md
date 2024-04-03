@@ -1,13 +1,13 @@
 ---
 date: 2024-01-26 01:08:23.836062-07:00
-description: "Logowanie, w swojej istocie, jest praktyk\u0105 rejestrowania zdarze\u0144\
-  \ i danych z aplikacji oprogramowania do zewn\u0119trznego wyj\u015Bcia, takiego\
-  \ jak plik lub\u2026"
+description: "Jak to zrobi\u0107: W Kotlinie logowanie mo\u017Ce by\u0107 wykonywane\
+  \ za pomoc\u0105 wbudowanej funkcji `println()` w prostych przypadkach lub za pomoc\u0105\
+  \ bardziej\u2026"
 lastmod: '2024-03-13T22:44:35.371416-06:00'
 model: gpt-4-1106-preview
-summary: "Logowanie, w swojej istocie, jest praktyk\u0105 rejestrowania zdarze\u0144\
-  \ i danych z aplikacji oprogramowania do zewn\u0119trznego wyj\u015Bcia, takiego\
-  \ jak plik lub konsola."
+summary: "W Kotlinie logowanie mo\u017Ce by\u0107 wykonywane za pomoc\u0105 wbudowanej\
+  \ funkcji `println()` w prostych przypadkach lub za pomoc\u0105 bardziej zaawansowanych\
+  \ bibliotek takich jak SLF4J z Logbackiem czy Log4j dla zaawansowanych potrzeb."
 title: "Rejestrowanie zdarze\u0144"
 weight: 17
 ---

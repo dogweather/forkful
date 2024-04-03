@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:38.470018-07:00
-description: "Getallen afronden is het proces waarbij de cijfers van een nummer worden\
-  \ aangepast om de precisie volgens bepaalde regels te verminderen, hetzij naar het\u2026"
+description: "Hoe: Getallen afronden in C kan worden bereikt met behulp van verschillende\
+  \ functies, maar de meest voorkomende benadering omvat de `floor()`, `ceil()`,\u2026"
 lastmod: '2024-03-13T22:44:51.285310-06:00'
 model: gpt-4-0125-preview
-summary: Getallen afronden is het proces waarbij de cijfers van een nummer worden
-  aangepast om de precisie volgens bepaalde regels te verminderen, hetzij naar het
-  dichtstbijzijnde hele getal of een gespecificeerd aantal decimalen.
+summary: Getallen afronden in C kan worden bereikt met behulp van verschillende functies,
+  maar de meest voorkomende benadering omvat de `floor()`, `ceil()`, en `round()`
+  functies.
 title: Afronden van getallen
 weight: 13
 ---

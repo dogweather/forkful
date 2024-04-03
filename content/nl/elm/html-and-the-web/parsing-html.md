@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:54.095470-07:00
-description: "HTML parsen betekent het converteren van HTML-tekst naar een datastructuur\
-  \ waarmee je programma kan werken. Programmeurs doen dit om de inhoud van\u2026"
+description: "Hoe: Elm parseert niet uit zichzelf rauwe HTML; in plaats daarvan richt\
+  \ het zich op het renderen van views met zijn eigen `Html` module. Om HTML te\u2026"
 lastmod: '2024-03-13T22:44:50.722491-06:00'
 model: gpt-4-0125-preview
-summary: HTML parsen betekent het converteren van HTML-tekst naar een datastructuur
-  waarmee je programma kan werken.
+summary: Elm parseert niet uit zichzelf rauwe HTML; in plaats daarvan richt het zich
+  op het renderen van views met zijn eigen `Html` module.
 title: HTML Parsen
 weight: 43
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:39:21.906784-07:00
-description: "Creating a temporary file in Bash means making a file that your scripts\
-  \ can use to store data briefly. Programmers do this to stash bits of info while\u2026"
+description: 'How to: Bash has a built-in command called `mktemp` to make temporary
+  files easily.'
 lastmod: '2024-03-13T22:45:00.261604-06:00'
 model: gpt-4-1106-preview
-summary: Creating a temporary file in Bash means making a file that your scripts can
-  use to store data briefly.
+summary: Bash has a built-in command called `mktemp` to make temporary files easily.
 title: Creating a temporary file
 weight: 21
 ---

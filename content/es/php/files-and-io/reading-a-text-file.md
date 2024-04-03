@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:54:42.931208-07:00
-description: "Leer un archivo de texto en PHP implica obtener su contenido para manipulaci\xF3\
-  n o an\xE1lisis. Los programadores hacen esto para importar datos,\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:59.177853-06:00'
 model: gpt-4-1106-preview
-summary: "Leer un archivo de texto en PHP implica obtener su contenido para manipulaci\xF3\
-  n o an\xE1lisis."
+summary: .
 title: Lectura de un archivo de texto
 weight: 22
 ---

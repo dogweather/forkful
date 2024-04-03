@@ -2,14 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:16.744375-07:00
-description: "T\u1EA3i xu\u1ED1ng m\u1ED9t trang web ngh\u0129a l\xE0 l\u1EA5y n\u1ED9\
-  i dung HTML t\u1EEB URL b\u1EA1n \u0111ang xem. C\xE1c l\u1EADp tr\xECnh vi\xEA\
-  n l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 k\xE9o d\u1EEF li\u1EC7u, c\u1EADp nh\u1EAD\
-  t gadget c\u1EE7a h\u1ECD, ho\u1EB7c \u0111\u01A1n\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: D\u01B0\u1EDBi \u0111\xE2y l\xE0 chi ti\u1EBF\
+  t: l\xE0m cho Arduino c\u1EE7a b\u1EA1n l\u01B0\u1EDBt web v\xE0 thu th\u1EADp nh\u1EEF\
+  ng g\xEC b\u1EA1n c\u1EA7n."
 lastmod: '2024-03-13T22:44:36.989062-06:00'
 model: gpt-4-0125-preview
-summary: "T\u1EA3i xu\u1ED1ng m\u1ED9t trang web ngh\u0129a l\xE0 l\u1EA5y n\u1ED9\
-  i dung HTML t\u1EEB URL b\u1EA1n \u0111ang xem."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 chi ti\u1EBFt."
 title: "T\u1EA3i trang web"
 weight: 42
 ---

@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:17:19.027945-07:00
-description: "En interaktiv skall, eller REPL (Read-Eval-Print Loop), lar deg teste\
-  \ kode i sanntid. Programmerere bruker den til \xE5 eksperimentere, feils\xF8ke,\
-  \ og l\xE6re\u2026"
+description: "Hvordan: Ruby's REPL kalles IRB (Interactive Ruby). Hopp inn og pr\xF8\
+  v Ruby direkte fra terminalen din."
 lastmod: '2024-03-13T22:44:41.329917-06:00'
 model: gpt-4-0125-preview
-summary: En interaktiv skall, eller REPL (Read-Eval-Print Loop), lar deg teste kode
-  i sanntid.
+summary: Ruby's REPL kalles IRB (Interactive Ruby).
 title: Bruke et interaktivt skall (REPL)
 weight: 34
 ---

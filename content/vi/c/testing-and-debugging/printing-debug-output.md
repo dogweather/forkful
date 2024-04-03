@@ -2,17 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:32.670977-07:00
-description: "Vi\u1EC7c in th\xF4ng \u0111i\u1EC7p g\u1EE1 l\u1ED7i l\xE0 vi\u1EC7\
-  c t\u1EA1o ra nh\u1EEFng th\xF4ng b\xE1o nh\u1EADt k\xFD t\u1EA1m th\u1EDDi, mang\
-  \ t\xEDnh th\xF4ng tin gi\xFAp l\u1EADp tr\xECnh vi\xEAn hi\u1EC3u \u0111\u01B0\u1EE3\
-  c d\xF2ng ch\u1EA3y v\xE0 tr\u1EA1ng th\xE1i c\u1EE7a\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong C, c\xE1ch ph\u1ED5 bi\u1EBFn nh\u1EA5\
+  t \u0111\u1EC3 in th\xF4ng \u0111i\u1EC7p g\u1EE1 l\u1ED7i l\xE0 s\u1EED d\u1EE5\
+  ng h\xE0m `printf` t\u1EEB th\u01B0 vi\u1EC7n I/O chu\u1EA9n. H\xE0m `printf` cho\
+  \ ph\xE9p \u0111\u1ECBnh d\u1EA1ng \u0111\u1EA7u ra\u2026"
 lastmod: '2024-03-13T22:44:37.271674-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c in th\xF4ng \u0111i\u1EC7p g\u1EE1 l\u1ED7i l\xE0 vi\u1EC7c t\u1EA1\
-  o ra nh\u1EEFng th\xF4ng b\xE1o nh\u1EADt k\xFD t\u1EA1m th\u1EDDi, mang t\xEDnh\
-  \ th\xF4ng tin gi\xFAp l\u1EADp tr\xECnh vi\xEAn hi\u1EC3u \u0111\u01B0\u1EE3c d\xF2\
-  ng ch\u1EA3y v\xE0 tr\u1EA1ng th\xE1i c\u1EE7a ch\u01B0\u01A1ng tr\xECnh trong qu\xE1\
-  \ tr\xECnh th\u1EF1c hi\u1EC7n."
+summary: "Trong C, c\xE1ch ph\u1ED5 bi\u1EBFn nh\u1EA5t \u0111\u1EC3 in th\xF4ng \u0111\
+  i\u1EC7p g\u1EE1 l\u1ED7i l\xE0 s\u1EED d\u1EE5ng h\xE0m `printf` t\u1EEB th\u01B0\
+  \ vi\u1EC7n I/O chu\u1EA9n."
 title: "In \u0111\u1EA7u ra debug"
 weight: 33
 ---

@@ -1,12 +1,13 @@
 ---
 date: 2024-01-27 20:34:02.785467-07:00
-description: "Gerar n\xFAmeros aleat\xF3rios consiste em produzir sequ\xEAncias ou\
-  \ valores \xFAnicos imprevis\xEDveis dentro de um intervalo definido. Os programadores\
-  \ utilizam esta\u2026"
+description: "Como fazer: Em Java, gerar n\xFAmeros aleat\xF3rios pode ser alcan\xE7\
+  ado utilizando a classe `Random` do pacote `java.util`, ou as classes `ThreadLocalRandom`\
+  \ e\u2026"
 lastmod: '2024-03-13T22:44:46.451978-06:00'
 model: gpt-4-0125-preview
-summary: "Gerar n\xFAmeros aleat\xF3rios consiste em produzir sequ\xEAncias ou valores\
-  \ \xFAnicos imprevis\xEDveis dentro de um intervalo definido."
+summary: "Em Java, gerar n\xFAmeros aleat\xF3rios pode ser alcan\xE7ado utilizando\
+  \ a classe `Random` do pacote `java.util`, ou as classes `ThreadLocalRandom` e `SecureRandom`\
+  \ para casos de uso espec\xEDficos."
 title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
 weight: 12
 ---

@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:43.796251-07:00
-description: "En programmation Rust, travailler avec YAML (YAML Ain't Markup Language)\
-  \ consiste \xE0 analyser et \xE0 g\xE9n\xE9rer des donn\xE9es au format YAML, un\
-  \ standard de\u2026"
+description: "Comment faire : Rust ne prend pas en charge YAML dans sa biblioth\xE8\
+  que standard, donc nous utilisons couramment des crates tierces comme `serde` (pour\
+  \ la\u2026"
 lastmod: '2024-03-13T22:44:57.515347-06:00'
 model: gpt-4-0125-preview
-summary: "En programmation Rust, travailler avec YAML (YAML Ain't Markup Language)\
-  \ consiste \xE0 analyser et \xE0 g\xE9n\xE9rer des donn\xE9es au format YAML, un\
-  \ standard de s\xE9rialisation de donn\xE9es convivial pour l'humain."
+summary: "Rust ne prend pas en charge YAML dans sa biblioth\xE8que standard, donc\
+  \ nous utilisons couramment des crates tierces comme `serde` (pour la s\xE9rialisation\
+  \ et la d\xE9s\xE9rialisation des donn\xE9es) en combinaison avec `serde_yaml`."
 title: Travailler avec YAML
 weight: 41
 ---

@@ -2,12 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:10.527411-07:00
-description: "Ottenere la data corrente in TypeScript, un linguaggio basato su JavaScript,\
-  \ consente di accedere e manipolare le informazioni sulla data e l'ora\u2026"
+description: 'Come fare: In TypeScript, puoi usare l''oggetto `Date` per ottenere
+  la data e l''ora correnti. Ecco come puoi farlo.'
 lastmod: '2024-03-13T22:44:43.186231-06:00'
 model: gpt-4-0125-preview
-summary: Ottenere la data corrente in TypeScript, un linguaggio basato su JavaScript,
-  consente di accedere e manipolare le informazioni sulla data e l'ora correnti.
+summary: In TypeScript, puoi usare l'oggetto `Date` per ottenere la data e l'ora correnti.
 title: Ottenere la data corrente
 weight: 29
 ---

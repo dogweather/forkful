@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:12:13.102310-07:00
-description: "REPL (Read-Eval-Print Loop, lue-arvioi-tulosta-silmukka) on yksinkertainen,\
-  \ vuorovaikutteinen ohjelmointiymp\xE4rist\xF6. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4\
-  \u2026"
+description: "Kuinka: C++ ei sis\xE4ll\xE4 sis\xE4\xE4nrakennettua REPL:i\xE4, mutta\
+  \ ty\xF6kalut, kuten Cling, tarjoavat kyseisen mahdollisuuden. T\xE4ss\xE4 on ohjeet,\
+  \ kuinka k\xE4ytt\xE4\xE4 Clingi\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.866588-06:00'
 model: gpt-4-0125-preview
-summary: "REPL (Read-Eval-Print Loop, lue-arvioi-tulosta-silmukka) on yksinkertainen,\
-  \ vuorovaikutteinen ohjelmointiymp\xE4rist\xF6."
+summary: "C++ ei sis\xE4ll\xE4 sis\xE4\xE4nrakennettua REPL:i\xE4, mutta ty\xF6kalut,\
+  \ kuten Cling, tarjoavat kyseisen mahdollisuuden."
 title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 weight: 34
 ---

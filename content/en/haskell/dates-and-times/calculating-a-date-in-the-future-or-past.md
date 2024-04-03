@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:31:13.320023-07:00
-description: "Calculating a future or past date means finding a date before or after\
-  \ a given number of days, months, or years from a specific starting point.\u2026"
+description: 'How to: Haskell uses libraries like `time` to deal with dates. Here''s
+  how to add days or months to a date, or subtract them to find a past date.'
 lastmod: '2024-03-13T22:45:00.140645-06:00'
 model: gpt-4-1106-preview
-summary: Calculating a future or past date means finding a date before or after a
-  given number of days, months, or years from a specific starting point.
+summary: Haskell uses libraries like `time` to deal with dates.
 title: Calculating a date in the future or past
 weight: 26
 ---

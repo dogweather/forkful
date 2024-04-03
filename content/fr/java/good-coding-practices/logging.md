@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:06:58.361329-07:00
-description: "Le journalisation (logging en anglais) est essentiellement le processus\
-  \ d'enregistrement d\u2019\xE9v\xE9nements qui se produisent au sein d'une application\u2026"
+description: "Comment faire : Voici une fa\xE7on simple de commencer \xE0 utiliser\
+  \ la journalisation en Java en utilisant le package int\xE9gr\xE9 `java.util.logging`."
 lastmod: '2024-03-13T22:44:57.647463-06:00'
 model: gpt-4-1106-preview
-summary: "Le journalisation (logging en anglais) est essentiellement le processus\
-  \ d'enregistrement d\u2019\xE9v\xE9nements qui se produisent au sein d'une application\
-  \ logicielle."
+summary: "Voici une fa\xE7on simple de commencer \xE0 utiliser la journalisation en\
+  \ Java en utilisant le package int\xE9gr\xE9 `java.util.logging`."
 title: Journalisation
 weight: 17
 ---

@@ -1,13 +1,9 @@
 ---
 date: 2024-01-26 04:43:44.149456-07:00
-description: "Kompleksiluvut laajentavat lukuj\xE4rjestelm\xE4\xE4mme sis\xE4lt\xE4\
-  m\xE4\xE4n negatiivisten lukujen neli\xF6juuret, miss\xE4 'imaginaariyksikk\xF6\
-  ' i on -1:n neli\xF6juuri. Ohjelmoijat\u2026"
+description: "Miten: M\xE4\xE4ritell\xE4\xE4n perus kompleksilukuluokka Kotlinissa."
 lastmod: '2024-03-13T22:44:56.524654-06:00'
 model: gpt-4-0125-preview
-summary: "Kompleksiluvut laajentavat lukuj\xE4rjestelm\xE4\xE4mme sis\xE4lt\xE4m\xE4\
-  \xE4n negatiivisten lukujen neli\xF6juuret, miss\xE4 'imaginaariyksikk\xF6' i on\
-  \ -1:n neli\xF6juuri."
+summary: "M\xE4\xE4ritell\xE4\xE4n perus kompleksilukuluokka Kotlinissa."
 title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---

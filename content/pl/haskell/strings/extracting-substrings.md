@@ -1,6 +1,6 @@
 ---
 date: 2024-01-20 17:45:52.690580-07:00
-description: '"'
+description: 'How to: ".'
 lastmod: '2024-03-13T22:44:35.440131-06:00'
 model: gpt-4-1106-preview
 summary: '".'

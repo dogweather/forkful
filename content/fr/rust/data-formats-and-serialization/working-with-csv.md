@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:17.838296-07:00
-description: "Travailler avec des fichiers CSV (Comma-Separated Values, soit valeurs\
-  \ s\xE9par\xE9es par des virgules) consiste \xE0 lire et \xE0 \xE9crire dans des\
-  \ fichiers texte\u2026"
+description: "Comment faire : Rust, avec son accent sur la s\xE9curit\xE9 et la performance,\
+  \ offre d'excellentes crates (biblioth\xE8ques) pour manipuler des fichiers CSV,\
+  \ `csv`\u2026"
 lastmod: '2024-03-13T22:44:57.524709-06:00'
 model: gpt-4-0125-preview
-summary: "Travailler avec des fichiers CSV (Comma-Separated Values, soit valeurs s\xE9\
-  par\xE9es par des virgules) consiste \xE0 lire et \xE0 \xE9crire dans des fichiers\
-  \ texte simples qui stockent des donn\xE9es tabulaires."
+summary: "Rust, avec son accent sur la s\xE9curit\xE9 et la performance, offre d'excellentes\
+  \ crates (biblioth\xE8ques) pour manipuler des fichiers CSV, `csv` \xE9tant la plus\
+  \ populaire."
 title: Travailler avec CSV
 weight: 37
 ---

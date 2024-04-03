@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:26.516638-07:00
-description: "Analiza daty z ci\u0105gu znak\xF3w w Elm polega na konwertowaniu informacji\
-  \ tekstowych przedstawiaj\u0105cych daty i czasy na format, kt\xF3ry Elm mo\u017C\
-  e zrozumie\u0107 i\u2026"
+description: "Jak to zrobi\u0107: Elm nie posiada wbudowanych mo\u017Cliwo\u015Bci\
+  \ tak rozbudowanych jak niekt\xF3re inne j\u0119zyki do analizy dat, g\u0142\xF3\
+  wnie polegaj\u0105c na interopie z\u2026"
 lastmod: '2024-03-13T22:44:35.331106-06:00'
 model: gpt-4-0125-preview
-summary: "Analiza daty z ci\u0105gu znak\xF3w w Elm polega na konwertowaniu informacji\
-  \ tekstowych przedstawiaj\u0105cych daty i czasy na format, kt\xF3ry Elm mo\u017C\
-  e zrozumie\u0107 i manipulowa\u0107, a konkretnie na typ `Date`."
+summary: "Elm nie posiada wbudowanych mo\u017Cliwo\u015Bci tak rozbudowanych jak niekt\xF3\
+  re inne j\u0119zyki do analizy dat, g\u0142\xF3wnie polegaj\u0105c na interopie\
+  \ z Javascriptem lub bibliotekach do bardziej z\u0142o\u017Conych operacji."
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---

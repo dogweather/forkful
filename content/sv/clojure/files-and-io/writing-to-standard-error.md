@@ -2,12 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:27.283934-07:00
-description: "Att skriva till standardfel (stderr) handlar om att dirigera felmeddelanden\
-  \ och diagnostik till stderr-str\xF6mmen, separat fr\xE5n standardutdata (stdout).\u2026"
+description: "Hur man g\xF6r: I Clojure kan du skriva till stderr med hj\xE4lp av\
+  \ `*err*`-str\xF6mmen. H\xE4r \xE4r ett grundl\xE4ggande exempel."
 lastmod: '2024-03-13T22:44:37.541379-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva till standardfel (stderr) handlar om att dirigera felmeddelanden\
-  \ och diagnostik till stderr-str\xF6mmen, separat fr\xE5n standardutdata (stdout)."
+summary: "I Clojure kan du skriva till stderr med hj\xE4lp av `*err*`-str\xF6mmen."
 title: Skriva till standardfel
 weight: 25
 ---

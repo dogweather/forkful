@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:58.917491-07:00
-description: "Het downloaden van een webpagina in Google Apps Script houdt in dat\
-  \ de inhoud van een webpagina via HTML wordt opgehaald voor verschillende doeleinden,\u2026"
+description: "Hoe te: In Google Apps Script is de `UrlFetchApp`-service cruciaal voor\
+  \ het downloaden van webinhoud. Hieronder staat een stap-voor-stap handleiding en\u2026"
 lastmod: '2024-03-13T22:44:50.330012-06:00'
 model: gpt-4-0125-preview
-summary: Het downloaden van een webpagina in Google Apps Script houdt in dat de inhoud
-  van een webpagina via HTML wordt opgehaald voor verschillende doeleinden, zoals
-  webscraping, gegevensextractie of het monitoren van wijzigingen.
+summary: In Google Apps Script is de `UrlFetchApp`-service cruciaal voor het downloaden
+  van webinhoud.
 title: Een webpagina downloaden
 weight: 42
 ---

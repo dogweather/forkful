@@ -1,11 +1,9 @@
 ---
 date: 2024-01-26 04:26:00.823060-07:00
-description: "TOML ist eine f\xFCr Menschen lesbare Datenserialisierungssprache, die\
-  \ oft f\xFCr Konfigurationen verwendet wird. Programmierer nutzen TOML wegen seiner\u2026"
+description: 'Wie man: .'
 lastmod: '2024-03-13T22:44:53.696503-06:00'
 model: gpt-4-0125-preview
-summary: "TOML ist eine f\xFCr Menschen lesbare Datenserialisierungssprache, die oft\
-  \ f\xFCr Konfigurationen verwendet wird."
+summary: .
 title: Arbeiten mit TOML
 weight: 39
 ---

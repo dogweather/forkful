@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:51:37.875780-07:00
-description: "L'interpolazione di stringhe permette di iniettare dei valori direttamente\
-  \ all'interno di una stringa. I programmatori la usano per concatenare variabili,\u2026"
+description: 'Come fare: .'
 lastmod: '2024-03-13T22:44:43.204255-06:00'
 model: gpt-4-1106-preview
-summary: L'interpolazione di stringhe permette di iniettare dei valori direttamente
-  all'interno di una stringa.
+summary: .
 title: Interpolazione di una stringa
 weight: 8
 ---

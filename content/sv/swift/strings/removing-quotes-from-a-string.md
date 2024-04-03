@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 03:42:02.072834-07:00
-description: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att ta bort\
-  \ alla citatmarkeringar som omsluter inneh\xE5llet. Vi g\xF6r detta f\xF6r att rensa\
-  \ indata, f\xF6rbereda\u2026"
+description: "Hur man g\xF6r: Swift l\xE5ter dig ta hand om uppgiften att ta bort\
+  \ citattecken ganska l\xE4tt. H\xE4r \xE4r ett snabbt exempel med `replacingOccurrences(of:with:)`,\
+  \ som\u2026"
 lastmod: '2024-03-13T22:44:38.239506-06:00'
 model: gpt-4-0125-preview
-summary: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att ta bort alla\
-  \ citatmarkeringar som omsluter inneh\xE5llet."
+summary: "Swift l\xE5ter dig ta hand om uppgiften att ta bort citattecken ganska l\xE4\
+  tt."
 title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 weight: 9
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:31:06.426096-07:00
-description: "Calcolare una data nel futuro o nel passato significa semplicemente\
-  \ determinare esattamente una data prima o dopo un certo punto temporale. I\u2026"
+description: 'How to: C# rende il calcolo delle date piuttosto diretto con `DateTime`
+  e `TimeSpan`. Ecco come farlo.'
 lastmod: '2024-03-13T22:44:43.447069-06:00'
 model: gpt-4-1106-preview
-summary: Calcolare una data nel futuro o nel passato significa semplicemente determinare
-  esattamente una data prima o dopo un certo punto temporale.
+summary: C# rende il calcolo delle date piuttosto diretto con `DateTime` e `TimeSpan`.
 title: Calcolo di una data futura o passata
 weight: 26
 ---

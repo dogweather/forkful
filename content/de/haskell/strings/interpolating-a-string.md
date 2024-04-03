@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:51:06.798729-07:00
-description: "String-Interpolation erm\xF6glicht es, Variablenwerte direkt in Strings\
-  \ einzuf\xFCgen. Das macht den Code \xFCbersichtlicher und erleichtert die Erstellung\u2026"
+description: "How to: In Haskell gibt es keine eingebaute String-Interpolation wie\
+  \ in manch anderen Sprachen. Stattdessen nutzen wir die `printf`-Funktion aus dem\u2026"
 lastmod: '2024-03-13T22:44:53.917444-06:00'
 model: gpt-4-1106-preview
-summary: "String-Interpolation erm\xF6glicht es, Variablenwerte direkt in Strings\
-  \ einzuf\xFCgen."
+summary: In Haskell gibt es keine eingebaute String-Interpolation wie in manch anderen
+  Sprachen.
 title: Zeichenketten interpolieren
 weight: 8
 ---

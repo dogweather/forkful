@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:09.683563-07:00
-description: "Hakemiston olemassaolon tarkistaminen Elixiriss\xE4 on hakemiston l\xE4\
-  sn\xE4olon varmistamista m\xE4\xE4ritetyss\xE4 polussa tiedostoj\xE4rjestelm\xE4\
-  ss\xE4. Ohjelmoijat tekev\xE4t\u2026"
+description: "Kuinka: Elixiring vakiokirjasto tarjoaa suoraviivaisen tavan tarkistaa\
+  \ hakemiston olemassaolo `File`-moduulin kautta. N\xE4in voit k\xE4ytt\xE4\xE4 sit\xE4\
+  ."
 lastmod: '2024-03-13T22:44:56.241514-06:00'
 model: gpt-4-0125-preview
-summary: "Hakemiston olemassaolon tarkistaminen Elixiriss\xE4 on hakemiston l\xE4\
-  sn\xE4olon varmistamista m\xE4\xE4ritetyss\xE4 polussa tiedostoj\xE4rjestelm\xE4\
-  ss\xE4."
+summary: Elixiring vakiokirjasto tarjoaa suoraviivaisen tavan tarkistaa hakemiston
+  olemassaolo `File`-moduulin kautta.
 title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:08.992962-07:00
-description: "Testien kirjoittaminen Kotlinissa tarkoittaa koodinp\xE4tkien rakentamista,\
-  \ jotka automaattisesti varmistavat ohjelmistomoduuliesi toiminnallisen\u2026"
+description: "Kuinka: Kotlin tukee testivetoinen kehityst\xE4 eri frameworkien avulla,\
+  \ suosituimpina JUnit, Kotest ja MockK mockaamiseen. T\xE4ss\xE4 on yksinkertainen\
+  \ esimerkki\u2026"
 lastmod: '2024-03-13T22:44:56.534260-06:00'
 model: gpt-4-0125-preview
-summary: "Testien kirjoittaminen Kotlinissa tarkoittaa koodinp\xE4tkien rakentamista,\
-  \ jotka automaattisesti varmistavat ohjelmistomoduuliesi toiminnallisen oikeellisuuden,\
-  \ varmistaen niiden toimivan odotetusti."
+summary: "Kotlin tukee testivetoinen kehityst\xE4 eri frameworkien avulla, suosituimpina\
+  \ JUnit, Kotest ja MockK mockaamiseen."
 title: Testien kirjoittaminen
 weight: 36
 ---

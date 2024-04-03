@@ -2,15 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:53.273387-07:00
-description: "Ohjelmoinnissa CSV-tiedostojen (pilkuin erotetut arvot) k\xE4sittely\
-  \ tarkoittaa tietojen lukemista ja kirjoittamista tekstiedostoihin, jotka on j\xE4\
-  rjestetty\u2026"
+description: 'Miten: #.'
 lastmod: '2024-03-13T22:44:57.065178-06:00'
 model: gpt-4-0125-preview
-summary: "Ohjelmoinnissa CSV-tiedostojen (pilkuin erotetut arvot) k\xE4sittely tarkoittaa\
-  \ tietojen lukemista ja kirjoittamista tekstiedostoihin, jotka on j\xE4rjestetty\
-  \ riveitt\xE4in, miss\xE4 jokainen rivi edustaa tietuetta ja jokaisen tietueen kent\xE4\
-  t on erotettu pilkuilla."
+summary: '#.'
 title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---

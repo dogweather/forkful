@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:39.845347-07:00
-description: "Lavorare con file CSV (Valori Separati da Virgola) implica la lettura\
-  \ e la scrittura di dati su questi file, una necessit\xE0 comune per compiti che\u2026"
+description: "Come fare: Elixir, con il suo potente pattern matching e il supporto\
+  \ per il pipeline, pu\xF2 gestire i file CSV in modo efficiente, anche senza librerie\
+  \ di\u2026"
 lastmod: '2024-03-13T22:44:43.106949-06:00'
 model: gpt-4-0125-preview
-summary: "Lavorare con file CSV (Valori Separati da Virgola) implica la lettura e\
-  \ la scrittura di dati su questi file, una necessit\xE0 comune per compiti che richiedono\
-  \ import/export di dati o semplici soluzioni di archiviazione."
+summary: "Elixir, con il suo potente pattern matching e il supporto per il pipeline,\
+  \ pu\xF2 gestire i file CSV in modo efficiente, anche senza librerie di terze parti."
 title: Lavorare con i CSV
 weight: 37
 ---

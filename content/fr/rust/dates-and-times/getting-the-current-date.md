@@ -2,14 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:55.862777-07:00
-description: "R\xE9cup\xE9rer la date actuelle en Rust est une t\xE2che courante pour\
-  \ des op\xE9rations telles que la journalisation, les op\xE9rations bas\xE9es sur\
-  \ le temps ou\u2026"
+description: 'Comment faire : #.'
 lastmod: '2024-03-13T22:44:57.493309-06:00'
 model: gpt-4-0125-preview
-summary: "R\xE9cup\xE9rer la date actuelle en Rust est une t\xE2che courante pour\
-  \ des op\xE9rations telles que la journalisation, les op\xE9rations bas\xE9es sur\
-  \ le temps ou simplement afficher la date."
+summary: '#.'
 title: Obtenir la date actuelle
 weight: 29
 ---

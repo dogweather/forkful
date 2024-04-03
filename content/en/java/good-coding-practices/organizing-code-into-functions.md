@@ -1,11 +1,11 @@
 ---
 date: 2024-01-25 02:59:34.954384-07:00
-description: "Organizing code into functions means breaking down the beast of a program\
-  \ into manageable chunks, each doing a distinct task. Programmers do this to make\u2026"
+description: "How to: Here's a classic example \u2014 a function to calculate the\
+  \ factorial of a number."
 lastmod: '2024-03-13T22:44:59.977282-06:00'
 model: gpt-4-1106-preview
-summary: Organizing code into functions means breaking down the beast of a program
-  into manageable chunks, each doing a distinct task.
+summary: "Here's a classic example \u2014 a function to calculate the factorial of\
+  \ a number."
 title: Organizing code into functions
 weight: 18
 ---

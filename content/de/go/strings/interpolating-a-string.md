@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:32.601714-07:00
-description: "String-Interpolation ist eine Methode, um Strings zu konstruieren, die\
-  \ Variablen einbetten, was die dynamische Erstellung von Strings erm\xF6glicht.\u2026"
+description: "Wie geht das: In Go wird die String-Interpolation \xFCblicherweise mit\
+  \ dem `fmt`-Paket erreicht, insbesondere mit der Funktion `Sprintf`, die es Ihnen\u2026"
 lastmod: '2024-03-13T22:44:53.272088-06:00'
 model: gpt-4-0125-preview
-summary: "String-Interpolation ist eine Methode, um Strings zu konstruieren, die Variablen\
-  \ einbetten, was die dynamische Erstellung von Strings erm\xF6glicht."
+summary: "In Go wird die String-Interpolation \xFCblicherweise mit dem `fmt`-Paket\
+  \ erreicht, insbesondere mit der Funktion `Sprintf`, die es Ihnen erm\xF6glicht,\
+  \ Variablen in einen String einzuf\xFCgen, indem Formatierungsverben angegeben werden."
 title: Interpolation eines Strings
 weight: 8
 ---

@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 17:33:14.787238-07:00
-description: "Comparing two dates means figuring out if one date is earlier, later,\
-  \ or the same as another. Programmers do it to track events, schedule tasks, sort\u2026"
+description: "How to: Lua doesn't have built-in date comparison functions, but we\
+  \ can use the `os.time()` function to convert dates to a numerical format (epoch\
+  \ time)\u2026"
 lastmod: '2024-03-13T22:45:00.216750-06:00'
 model: gpt-4-1106-preview
-summary: Comparing two dates means figuring out if one date is earlier, later, or
-  the same as another.
+summary: Lua doesn't have built-in date comparison functions, but we can use the `os.time()`
+  function to convert dates to a numerical format (epoch time) and then compare them.
 title: Comparing two dates
 weight: 27
 ---

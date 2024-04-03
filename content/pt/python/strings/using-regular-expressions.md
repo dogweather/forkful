@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:19.779729-07:00
-description: "Express\xF5es regulares (regex) s\xE3o padr\xF5es usados para combinar\
-  \ sequ\xEAncias de caracteres em strings. Programadores as utilizam para buscar,\
-  \ editar ou\u2026"
+description: "Como usar: Usar regex em Python envolve o m\xF3dulo `re`, que fornece\
+  \ um conjunto de fun\xE7\xF5es para processar texto usando express\xF5es regulares.\
+  \ #."
 lastmod: '2024-03-13T22:44:46.143772-06:00'
 model: gpt-4-0125-preview
-summary: "Express\xF5es regulares (regex) s\xE3o padr\xF5es usados para combinar sequ\xEA\
-  ncias de caracteres em strings."
+summary: "Usar regex em Python envolve o m\xF3dulo `re`, que fornece um conjunto de\
+  \ fun\xE7\xF5es para processar texto usando express\xF5es regulares."
 title: "Usando express\xF5es regulares"
 weight: 11
 ---

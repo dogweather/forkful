@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:46.747417-07:00
-description: "Scaricare una pagina web in C comporta l'accesso programmato al contenuto\
-  \ di una pagina web tramite internet e il suo salvataggio localmente per\u2026"
+description: "Come fare: Per scaricare una pagina web in C, un approccio popolare\
+  \ \xE8 l'utilizzo della libreria libcurl, una libreria di trasferimento URL lato\
+  \ client\u2026"
 lastmod: '2024-03-13T22:44:43.996652-06:00'
 model: gpt-4-0125-preview
-summary: Scaricare una pagina web in C comporta l'accesso programmato al contenuto
-  di una pagina web tramite internet e il suo salvataggio localmente per l'elaborazione
-  o l'uso offline.
+summary: "Per scaricare una pagina web in C, un approccio popolare \xE8 l'utilizzo\
+  \ della libreria libcurl, una libreria di trasferimento URL lato client efficiente\
+  \ e portabile."
 title: Scaricare una pagina web
 weight: 42
 ---

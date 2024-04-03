@@ -2,13 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:18.921292-07:00
-description: "Das Lesen von Befehlszeilenargumenten in Visual Basic for Applications\
-  \ (VBA) beinhaltet den Zugriff auf Parameter, die beim Ausf\xFChren Ihres Programms\u2026"
+description: "Wie: Im Gegensatz zu einfacheren Programmierumgebungen verf\xFCgt VBA\
+  \ nicht \xFCber eine integrierte Funktion, um Befehlszeilenargumente im herk\xF6\
+  mmlichen Sinne\u2026"
 lastmod: '2024-03-13T22:44:53.735427-06:00'
 model: gpt-4-0125-preview
-summary: "Das Lesen von Befehlszeilenargumenten in Visual Basic for Applications (VBA)\
-  \ beinhaltet den Zugriff auf Parameter, die beim Ausf\xFChren Ihres Programms \xFC\
-  bergeben werden."
+summary: "Im Gegensatz zu einfacheren Programmierumgebungen verf\xFCgt VBA nicht \xFC\
+  ber eine integrierte Funktion, um Befehlszeilenargumente im herk\xF6mmlichen Sinne\
+  \ direkt zu lesen, da es haupts\xE4chlich f\xFCr die Einbettung in Microsoft Office-Anwendungen\
+  \ konzipiert ist."
 title: Lesen von Befehlszeilenargumenten
 weight: 23
 ---

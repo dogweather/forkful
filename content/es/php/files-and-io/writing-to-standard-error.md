@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:58.898930-07:00
-description: "Escribir en el error est\xE1ndar (stderr) en PHP se trata de dirigir\
-  \ mensajes de error o diagn\xF3sticos de forma separada de la salida est\xE1ndar\
-  \ (stdout),\u2026"
+description: "C\xF3mo hacerlo: En PHP, escribir en stderr se puede lograr utilizando\
+  \ la funci\xF3n `fwrite()` junto con la constante predefinida `STDERR`, que representa\
+  \ el\u2026"
 lastmod: '2024-03-13T22:44:59.176839-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir en el error est\xE1ndar (stderr) en PHP se trata de dirigir mensajes\
-  \ de error o diagn\xF3sticos de forma separada de la salida est\xE1ndar (stdout),\
-  \ permitiendo a los desarrolladores gestionar mejor sus flujos de salida para la\
-  \ depuraci\xF3n y el registro de actividades."
+summary: "En PHP, escribir en stderr se puede lograr utilizando la funci\xF3n `fwrite()`\
+  \ junto con la constante predefinida `STDERR`, que representa el flujo de salida\
+  \ de errores."
 title: "Escribiendo en el error est\xE1ndar"
 weight: 25
 ---

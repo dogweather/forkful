@@ -1,12 +1,11 @@
 ---
 date: 2024-02-03 19:03:00.218296-07:00
-description: "Parsing HTML in PowerShell is about dissecting HTML content to extract\
-  \ specific data or to automate web-related tasks. Programmers do it to interact\
-  \ with\u2026"
+description: "How to: PowerShell does not natively have a dedicated HTML parser, but\
+  \ you can utilize the `Invoke-WebRequest` cmdlet to access and parse HTML content.\u2026"
 lastmod: '2024-03-13T22:45:00.282032-06:00'
 model: gpt-4-0125-preview
-summary: Parsing HTML in PowerShell is about dissecting HTML content to extract specific
-  data or to automate web-related tasks.
+summary: PowerShell does not natively have a dedicated HTML parser, but you can utilize
+  the `Invoke-WebRequest` cmdlet to access and parse HTML content.
 title: Parsing HTML
 weight: 43
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:33:31.928073-07:00
-description: "Att j\xE4mf\xF6ra tv\xE5 datum inneb\xE4r att kontrollera vilket datum\
-  \ som kommer f\xF6re eller efter det andra, eller om de \xE4r samma datum. Programmerare\
-  \ g\xF6r detta f\xF6r\u2026"
+description: "S\xE5 h\xE4r g\xF6r du: F\xF6r att j\xE4mf\xF6ra datum i Haskell, kan\
+  \ du anv\xE4nda `Data.Time` biblioteket. Se exempel nedan."
 lastmod: '2024-03-13T22:44:37.967118-06:00'
 model: gpt-4-1106-preview
-summary: "Att j\xE4mf\xF6ra tv\xE5 datum inneb\xE4r att kontrollera vilket datum som\
-  \ kommer f\xF6re eller efter det andra, eller om de \xE4r samma datum."
+summary: "F\xF6r att j\xE4mf\xF6ra datum i Haskell, kan du anv\xE4nda `Data.Time`\
+  \ biblioteket."
 title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---

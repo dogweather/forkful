@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:36.100839-07:00
-description: "Tekstitiedoston lukeminen C-kieless\xE4 tarkoittaa tiedoston avaamista\
-  \ j\xE4rjestelm\xE4ss\xE4si tiedon poimimiseksi ja tarpeen mukaan manipuloimiseksi\
-  \ tai\u2026"
+description: "Kuinka: Tekstitiedoston lukemiseen C-kieless\xE4 ty\xF6skentelet p\xE4\
+  \xE4asiassa `fopen()`, `fgets()` ja `fclose()` funktioiden kanssa standardi I/O-kirjastosta.\u2026"
 lastmod: '2024-03-13T22:44:57.059311-06:00'
 model: gpt-4-0125-preview
-summary: "Tekstitiedoston lukeminen C-kieless\xE4 tarkoittaa tiedoston avaamista j\xE4\
-  rjestelm\xE4ss\xE4si tiedon poimimiseksi ja tarpeen mukaan manipuloimiseksi tai\
-  \ n\xE4ytt\xE4miseksi."
+summary: "Tekstitiedoston lukemiseen C-kieless\xE4 ty\xF6skentelet p\xE4\xE4asiassa\
+  \ `fopen()`, `fgets()` ja `fclose()` funktioiden kanssa standardi I/O-kirjastosta."
 title: Tekstitiedoston lukeminen
 weight: 22
 ---

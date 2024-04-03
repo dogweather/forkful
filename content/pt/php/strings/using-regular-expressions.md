@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:33.193945-07:00
-description: "Express\xF5es regulares (regex) em PHP s\xE3o padr\xF5es usados para\
-  \ combinar combina\xE7\xF5es de caracteres em strings, permitindo opera\xE7\xF5\
-  es sofisticadas de busca e\u2026"
+description: "Como Fazer: O PHP suporta express\xF5es regulares atrav\xE9s da biblioteca\
+  \ PCRE (Perl Compatible Regular Expressions), oferecendo um rico conjunto de fun\xE7\
+  \xF5es.\u2026"
 lastmod: '2024-03-13T22:44:46.657531-06:00'
 model: gpt-4-0125-preview
-summary: "Express\xF5es regulares (regex) em PHP s\xE3o padr\xF5es usados para combinar\
-  \ combina\xE7\xF5es de caracteres em strings, permitindo opera\xE7\xF5es sofisticadas\
-  \ de busca e substitui\xE7\xE3o e valida\xE7\xE3o de dados."
+summary: "O PHP suporta express\xF5es regulares atrav\xE9s da biblioteca PCRE (Perl\
+  \ Compatible Regular Expressions), oferecendo um rico conjunto de fun\xE7\xF5es."
 title: "Usando express\xF5es regulares"
 weight: 11
 ---

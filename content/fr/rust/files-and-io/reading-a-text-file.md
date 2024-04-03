@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:55:00.330171-07:00
-description: "En Rust, lire un fichier texte, c'est collecter son contenu pour l'utiliser\
-  \ dans votre programme. On le fait souvent pour traiter des donn\xE9es en batch,\u2026"
+description: "How to: Pour lire un fichier texte, on utilise principalement `std::fs`\
+  \ et `std::io`. Voil\xE0 un exemple simple ."
 lastmod: '2024-03-13T22:44:57.509771-06:00'
 model: gpt-4-1106-preview
-summary: En Rust, lire un fichier texte, c'est collecter son contenu pour l'utiliser
-  dans votre programme.
+summary: Pour lire un fichier texte, on utilise principalement `std::fs` et `std::io`.
 title: Lecture d'un fichier texte
 weight: 22
 ---

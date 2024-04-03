@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 03:41:34.515772-07:00
-description: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa tekstiarvojen ymp\xE4\
-  rille kiedottujen kaksois- tai yksinkertaisten lainausmerkkien kuorimista pois.\u2026"
+description: "Kuinka: Rubylla on muutama k\xE4tev\xE4 temppu hihassaan n\xE4iden kiusallisten\
+  \ lainausmerkkien leikkaamiseksi. Voit k\xE4ytt\xE4\xE4 `gsub`- tai `delete`-metodeja\
+  \ teht\xE4v\xE4n\u2026"
 lastmod: '2024-03-13T22:44:57.072973-06:00'
 model: gpt-4-0125-preview
-summary: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa tekstiarvojen ymp\xE4\
-  rille kiedottujen kaksois- tai yksinkertaisten lainausmerkkien kuorimista pois."
+summary: "Rubylla on muutama k\xE4tev\xE4 temppu hihassaan n\xE4iden kiusallisten\
+  \ lainausmerkkien leikkaamiseksi."
 title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---

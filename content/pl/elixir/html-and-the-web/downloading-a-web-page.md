@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:44:00.255806-07:00
-description: "Pobieranie strony internetowej to proces \u015Bci\u0105gania jej tre\u015B\
-  ci, by m\xF3c przetwarza\u0107 lokalnie. Programi\u015Bci robi\u0105 to, aby analizowa\u0107\
-  \ dane, monitorowa\u0107 zmiany\u2026"
+description: "Jak to zrobi\u0107: Poni\u017Cej znajdziesz kod w j\u0119zyku Elixir,\
+  \ kt\xF3ry pobiera zawarto\u015B\u0107 strony internetowej."
 lastmod: '2024-03-13T22:44:35.040866-06:00'
 model: gpt-4-1106-preview
-summary: "Pobieranie strony internetowej to proces \u015Bci\u0105gania jej tre\u015B\
-  ci, by m\xF3c przetwarza\u0107 lokalnie."
+summary: "Poni\u017Cej znajdziesz kod w j\u0119zyku Elixir, kt\xF3ry pobiera zawarto\u015B\
+  \u0107 strony internetowej."
 title: Pobieranie strony internetowej
 weight: 42
 ---

@@ -1,14 +1,12 @@
 ---
 date: 2024-01-27 20:34:23.543917-07:00
-description: "G\xE9n\xE9rer des nombres al\xE9atoires en programmation consiste \xE0\
-  \ produire des valeurs num\xE9riques impr\xE9visibles pouvant \xEAtre utilis\xE9\
-  es \xE0 diverses fins telles que\u2026"
+description: "Comment faire : Lua offre un support int\xE9gr\xE9 pour la g\xE9n\xE9\
+  ration de nombres al\xE9atoires via la fonction `math.random`. Cette fonction peut\
+  \ \xEAtre utilis\xE9e de\u2026"
 lastmod: '2024-03-13T22:44:57.922819-06:00'
 model: gpt-4-0125-preview
-summary: "G\xE9n\xE9rer des nombres al\xE9atoires en programmation consiste \xE0 produire\
-  \ des valeurs num\xE9riques impr\xE9visibles pouvant \xEAtre utilis\xE9es \xE0 diverses\
-  \ fins telles que les simulations, les jeux ou les applications de s\xE9curit\xE9\
-  ."
+summary: "Lua offre un support int\xE9gr\xE9 pour la g\xE9n\xE9ration de nombres al\xE9\
+  atoires via la fonction `math.random`."
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---

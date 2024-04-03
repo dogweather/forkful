@@ -2,13 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:59.100885-07:00
-description: "Substrings extraheren betekent kleinere delen uit een string halen op\
-  \ basis van bepaalde criteria. Programmeurs extraheren substrings om tekstgegevens\
-  \ te\u2026"
+description: 'Hoe te: Hier is hoe je strings kunt snijden en hacken in PowerShell.'
 lastmod: '2024-03-13T22:44:51.015485-06:00'
 model: gpt-4-0125-preview
-summary: Substrings extraheren betekent kleinere delen uit een string halen op basis
-  van bepaalde criteria.
+summary: Hier is hoe je strings kunt snijden en hacken in PowerShell.
 title: Substrings extraheren
 weight: 6
 ---

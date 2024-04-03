@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:39:40.540640-07:00
-description: "Creating a temporary file is the process of making a short-lived file\
-  \ for intermediate data storage. Programmers use them for things like caching, data\u2026"
+description: 'How to: Clojure makes it simple. The `clojure.java.io` library has your
+  back.'
 lastmod: '2024-03-13T22:44:59.762802-06:00'
 model: gpt-4-1106-preview
-summary: Creating a temporary file is the process of making a short-lived file for
-  intermediate data storage.
+summary: Clojure makes it simple.
 title: Creating a temporary file
 weight: 21
 ---

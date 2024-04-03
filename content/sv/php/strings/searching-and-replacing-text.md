@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:58:28.465298-07:00
-description: "Att s\xF6ka och ers\xE4tta text \xE4r grundl\xE4ggande: det handlar\
-  \ om att hitta specifik text och byta ut den mot n\xE5got annat. Programmerare g\xF6\
-  r detta f\xF6r att\u2026"
+description: "How to (Hur man g\xF6r) I PHP \xE4r `str_replace()` en v\xE4n i n\xF6\
+  den f\xF6r att byta textstr\xE4ngar. H\xE4r \xE4r ett exempel."
 lastmod: '2024-03-13T22:44:37.981932-06:00'
 model: gpt-4-1106-preview
-summary: "Att s\xF6ka och ers\xE4tta text \xE4r grundl\xE4ggande: det handlar om att\
-  \ hitta specifik text och byta ut den mot n\xE5got annat."
+summary: "I PHP \xE4r `str_replace()` en v\xE4n i n\xF6den f\xF6r att byta textstr\xE4\
+  ngar."
 title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---

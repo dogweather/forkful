@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:58:00.793158-07:00
-description: "Suchen und Ersetzen ist die Aktion, Textmuster in einem String zu finden\
-  \ und sie durch neue Inhalte zu ersetzen. Programmierer nutzen diese Funktion, um\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:53.832698-06:00'
 model: gpt-4-1106-preview
-summary: Suchen und Ersetzen ist die Aktion, Textmuster in einem String zu finden
-  und sie durch neue Inhalte zu ersetzen.
+summary: .
 title: Suchen und Ersetzen von Text
 weight: 10
 ---

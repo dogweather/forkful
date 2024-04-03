@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:45.003668-07:00
-description: "El registro de actividades en C implica grabar el flujo y los eventos\
-  \ notables de un programa durante su tiempo de ejecuci\xF3n, proporcionando una\
-  \ revisi\xF3n\u2026"
+description: "C\xF3mo hacerlo: En C, el registro se puede lograr con operaciones b\xE1\
+  sicas de archivos o usando bibliotecas m\xE1s sofisticadas. Por simplicidad, empezaremos\u2026"
 lastmod: '2024-03-13T22:44:59.552661-06:00'
 model: gpt-4-0125-preview
-summary: "El registro de actividades en C implica grabar el flujo y los eventos notables\
-  \ de un programa durante su tiempo de ejecuci\xF3n, proporcionando una revisi\xF3\
-  n tangible de su comportamiento y rendimiento."
+summary: "En C, el registro se puede lograr con operaciones b\xE1sicas de archivos\
+  \ o usando bibliotecas m\xE1s sofisticadas."
 title: Registro
 weight: 17
 ---

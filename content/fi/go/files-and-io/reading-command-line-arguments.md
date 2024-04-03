@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:21.945433-07:00
-description: "Komennoriviparametrien lukeminen Go:ssa tarkoittaa ohjelmalle sen k\xE4\
-  ynnistyksen yhteydess\xE4 terminaalista tai komentokehotteesta annettujen argumenttien\u2026"
+description: "Kuinka: Go tarjoaa suoran p\xE4\xE4syn komentorivin argumentteihin `os`-paketin\
+  \ kautta, erityisesti k\xE4ytt\xE4m\xE4ll\xE4 `os.Args`, joka on merkkijonojen taulukko.\
+  \ T\xE4ss\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.067247-06:00'
 model: gpt-4-0125-preview
-summary: "Komennoriviparametrien lukeminen Go:ssa tarkoittaa ohjelmalle sen k\xE4\
-  ynnistyksen yhteydess\xE4 terminaalista tai komentokehotteesta annettujen argumenttien\
-  \ poimimista."
+summary: "Go tarjoaa suoran p\xE4\xE4syn komentorivin argumentteihin `os`-paketin\
+  \ kautta, erityisesti k\xE4ytt\xE4m\xE4ll\xE4 `os.Args`, joka on merkkijonojen taulukko."
 title: Komentorivin argumenttien lukeminen
 weight: 23
 ---

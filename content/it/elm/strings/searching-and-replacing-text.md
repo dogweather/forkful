@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:57:55.204566-07:00
-description: "La ricerca e sostituzione di testo permette di trovare stringhe specifiche\
-  \ e cambiarle con altre. I programmatori la usano per modificare codice, dati e\u2026"
+description: "How to: Elm fornisce funzioni per lavorare con stringhe, ma non ha funzioni\
+  \ native per la sostituzione di testo. Usiamo `String.Extra` dalla libreria\u2026"
 lastmod: '2024-03-13T22:44:43.336173-06:00'
 model: gpt-4-1106-preview
-summary: La ricerca e sostituzione di testo permette di trovare stringhe specifiche
-  e cambiarle con altre.
+summary: Elm fornisce funzioni per lavorare con stringhe, ma non ha funzioni native
+  per la sostituzione di testo.
 title: Ricerca e sostituzione del testo
 weight: 10
 ---

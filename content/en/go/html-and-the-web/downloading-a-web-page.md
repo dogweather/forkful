@@ -1,11 +1,12 @@
 ---
 date: 2024-02-03 17:50:09.242181-07:00
-description: "Downloading a web page is about fetching the HTML content of a web page\
-  \ via HTTP/HTTPS protocol. Programmers often do this for web scraping, data\u2026"
+description: "How to: In Go, the standard library provides powerful tools for web\
+  \ requests, notably the `net/http` package. To download a web page, we primarily\
+  \ use\u2026"
 lastmod: '2024-03-13T22:44:59.629853-06:00'
 model: gpt-4-0125-preview
-summary: Downloading a web page is about fetching the HTML content of a web page via
-  HTTP/HTTPS protocol.
+summary: In Go, the standard library provides powerful tools for web requests, notably
+  the `net/http` package.
 title: Downloading a web page
 weight: 42
 ---

@@ -1,14 +1,10 @@
 ---
 date: 2024-01-20 17:34:06.573203-07:00
-description: "\uBB38\uC790\uC5F4 \uC5F0\uACB0(concatenation)\uC740 \uBB38\uC790\uC5F4\
-  \uC744 \uC774\uC5B4 \uBD99\uC774\uB294 \uAC83\uC785\uB2C8\uB2E4. \uB370\uC774\uD130\
-  \uB97C \uD569\uCE58\uAC70\uB098 \uCD9C\uB825\uC744 \uD615\uC2DD\uD654\uD560 \uB54C\
-  \ \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
+description: "How to: (\uBC29\uBC95) ."
 isCJKLanguage: true
 lastmod: '2024-03-13T22:44:55.656651-06:00'
 model: gpt-4-1106-preview
-summary: "\uBB38\uC790\uC5F4 \uC5F0\uACB0(concatenation)\uC740 \uBB38\uC790\uC5F4\uC744\
-  \ \uC774\uC5B4 \uBD99\uC774\uB294 \uAC83\uC785\uB2C8\uB2E4."
+summary: .
 title: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uD558\uAE30"
 weight: 3
 ---

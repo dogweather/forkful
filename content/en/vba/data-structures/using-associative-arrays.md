@@ -1,12 +1,11 @@
 ---
 date: 2024-02-01 21:30:04.480138-07:00
-description: "Associative arrays, often known as dictionaries in Visual Basic for\
-  \ Applications (VBA), allow programmers to create collections of key-value pairs.\
-  \ This\u2026"
+description: "How to: In VBA, the `Dictionary` object provides functionality similar\
+  \ to associative arrays. You must first add a reference to the Microsoft Scripting\u2026"
 lastmod: '2024-03-13T22:44:59.928081-06:00'
 model: gpt-4-0125-preview
-summary: Associative arrays, often known as dictionaries in Visual Basic for Applications
-  (VBA), allow programmers to create collections of key-value pairs.
+summary: In VBA, the `Dictionary` object provides functionality similar to associative
+  arrays.
 title: Using associative arrays
 weight: 15
 ---

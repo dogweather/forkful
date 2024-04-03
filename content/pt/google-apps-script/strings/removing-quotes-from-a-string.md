@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:05.316402-07:00
-description: "Remover aspas de uma string no Google Apps Script \xE9 sobre eliminar\
-  \ aspas desnecess\xE1rias que podem circundar seus dados de string, geralmente provenientes\u2026"
+description: "Como fazer: Google Apps Script n\xE3o diverge muito das pr\xE1ticas\
+  \ padr\xE3o de JavaScript quando se trata de manipular strings e suas manipula\xE7\
+  \xF5es. Para remover\u2026"
 lastmod: '2024-03-13T22:44:46.094116-06:00'
 model: gpt-4-0125-preview
-summary: "Remover aspas de uma string no Google Apps Script \xE9 sobre eliminar aspas\
-  \ desnecess\xE1rias que podem circundar seus dados de string, geralmente provenientes\
-  \ de objetos JSON analisados, entrada de usu\xE1rio ou extra\xE7\xE3o de dados."
+summary: "Google Apps Script n\xE3o diverge muito das pr\xE1ticas padr\xE3o de JavaScript\
+  \ quando se trata de manipular strings e suas manipula\xE7\xF5es."
 title: Removendo aspas de uma string
 weight: 9
 ---

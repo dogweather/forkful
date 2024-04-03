@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:11.542633-07:00
-description: "Een interactieve shell, of REPL (Read-Eval-Print Loop), in Haskell laat\
-  \ je codefragmenten live uitvoeren. Het is een speeltuin voor snelle feedback, het\u2026"
+description: 'Hoe te: Om de GHCi (Glasgow Haskell Compiler''s interactieve omgeving)
+  te starten, typ je simpelweg `ghci` in je terminal. Hier is hoe je het gebruikt.'
 lastmod: '2024-03-13T22:44:50.854024-06:00'
 model: gpt-4-0125-preview
-summary: Een interactieve shell, of REPL (Read-Eval-Print Loop), in Haskell laat je
-  codefragmenten live uitvoeren.
+summary: Om de GHCi (Glasgow Haskell Compiler's interactieve omgeving) te starten,
+  typ je simpelweg `ghci` in je terminal.
 title: Het gebruik van een interactieve shell (REPL)
 weight: 34
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:54.722496-07:00
-description: "\xC5 starte et nytt prosjekt i Google Apps Script (GAS) inneb\xE6rer\
-  \ \xE5 initialisere en scriptfil innenfor Google-\xF8kosystemet (Google Drive, Docs,\
-  \ Ark, etc.) for\u2026"
+description: "Hvordan: For \xE5 starte et nytt prosjekt i Google Apps Script, har\
+  \ du et par inngangspunkter, men la oss fokusere p\xE5 den mest direkte metoden:\
+  \ \xE5 opprette et\u2026"
 lastmod: '2024-03-13T22:44:40.314760-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 starte et nytt prosjekt i Google Apps Script (GAS) inneb\xE6rer \xE5\
-  \ initialisere en scriptfil innenfor Google-\xF8kosystemet (Google Drive, Docs,\
-  \ Ark, etc."
+summary: "For \xE5 starte et nytt prosjekt i Google Apps Script, har du et par inngangspunkter,\
+  \ men la oss fokusere p\xE5 den mest direkte metoden."
 title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---

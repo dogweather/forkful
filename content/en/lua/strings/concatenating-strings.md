@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:35:08.769721-07:00
-description: "Concatenating strings means sticking them together end-to-end to make\
-  \ a new one. Programmers do it to build up text dynamically, like creating messages\
-  \ or\u2026"
+description: 'How to: In Lua, you concatenate strings with the `..` operator. Let''s
+  see it in action.'
 lastmod: '2024-03-13T22:45:00.198247-06:00'
 model: gpt-4-1106-preview
-summary: Concatenating strings means sticking them together end-to-end to make a new
-  one.
+summary: In Lua, you concatenate strings with the `..` operator.
 title: Concatenating strings
 weight: 3
 ---

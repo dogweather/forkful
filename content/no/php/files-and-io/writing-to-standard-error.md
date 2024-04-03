@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:05.947061-07:00
-description: "\xC5 skrive til standardfeil (stderr) i PHP handler om \xE5 dirigere\
-  \ feilmeldinger eller diagnostikk separat fra standard ut (stdout). Dette lar utviklere\
-  \ bedre\u2026"
+description: "Hvordan: I PHP kan skriving til stderr oppn\xE5s ved \xE5 bruke funksjonen\
+  \ `fwrite()` sammen med den forh\xE5ndsdefinerte konstanten `STDERR`, som representerer\u2026"
 lastmod: '2024-03-13T22:44:40.902744-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive til standardfeil (stderr) i PHP handler om \xE5 dirigere feilmeldinger\
-  \ eller diagnostikk separat fra standard ut (stdout)."
+summary: "I PHP kan skriving til stderr oppn\xE5s ved \xE5 bruke funksjonen `fwrite()`\
+  \ sammen med den forh\xE5ndsdefinerte konstanten `STDERR`, som representerer feilutstr\xF8\
+  mmen."
 title: Skriving til standardfeil
 weight: 25
 ---

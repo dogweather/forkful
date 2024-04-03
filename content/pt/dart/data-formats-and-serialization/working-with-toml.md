@@ -2,14 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:33.574673-07:00
-description: "**TOML**, ou *Tom's Obvious, Minimal Language* (Linguagem M\xEDnima\
-  \ e \xD3bvia do Tom), \xE9 um formato de arquivo de configura\xE7\xE3o que \xE9\
-  \ f\xE1cil de ler devido \xE0 sua\u2026"
+description: "Como fazer: **Dart** n\xE3o inclui suporte embutido para TOML, mas voc\xEA\
+  \ pode trabalhar com arquivos TOML usando pacotes de terceiros como `toml`. Primeiro,\u2026"
 lastmod: '2024-03-13T22:44:46.306932-06:00'
 model: gpt-4-0125-preview
-summary: "**TOML**, ou *Tom's Obvious, Minimal Language* (Linguagem M\xEDnima e \xD3\
-  bvia do Tom), \xE9 um formato de arquivo de configura\xE7\xE3o que \xE9 f\xE1cil\
-  \ de ler devido \xE0 sua sem\xE2ntica clara."
+summary: "**Dart** n\xE3o inclui suporte embutido para TOML, mas voc\xEA pode trabalhar\
+  \ com arquivos TOML usando pacotes de terceiros como `toml`."
 title: Trabalhando com TOML
 weight: 39
 ---

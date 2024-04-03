@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:21.407453-07:00
-description: "Een datum naar een string converteren gaat over het veranderen van de\
-  \ manier waarop datum/tijd-gegevens worden weergegeven. Programmeurs doen dit voor\u2026"
+description: 'Hoe: In Lua gebruiken we `os.date` om datums naar strings te formatteren.
+  Hier is een stukje code om op te kauwen.'
 lastmod: '2024-03-13T22:44:50.948786-06:00'
 model: gpt-4-0125-preview
-summary: Een datum naar een string converteren gaat over het veranderen van de manier
-  waarop datum/tijd-gegevens worden weergegeven.
+summary: In Lua gebruiken we `os.date` om datums naar strings te formatteren.
 title: Een datum converteren naar een string
 weight: 28
 ---

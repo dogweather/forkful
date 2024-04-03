@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:29:30.299372-07:00
-description: "Lavorare con XML in Elixir significa analizzare, creare e manipolare\
-  \ dati XML. I programmatori si occupano di XML perch\xE9 \xE8 diffuso nei servizi\
-  \ web, nei\u2026"
+description: "Come fare: Elixir non include l'analisi XML nella sua libreria standard.\
+  \ SweetXML \xE8 una scelta popolare. Ecco come utilizzarlo."
 lastmod: '2024-03-13T22:44:43.108847-06:00'
 model: gpt-4-0125-preview
-summary: Lavorare con XML in Elixir significa analizzare, creare e manipolare dati
-  XML.
+summary: Elixir non include l'analisi XML nella sua libreria standard.
 title: Lavorare con XML
 weight: 40
 ---

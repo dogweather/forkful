@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 18:04:00.609836-07:00
-description: "D\xE9marrer un nouveau projet, c'est mettre la premi\xE8re pierre \xE0\
-  \ votre \xE9difice num\xE9rique. Les programmeurs le font pour concr\xE9tiser une\
-  \ id\xE9e, apprendre une\u2026"
+description: "Comment faire : Pour lancer un nouveau projet Kotlin, suivez ces \xE9\
+  tapes : Installez IntelliJ IDEA, un environnement de d\xE9veloppement int\xE9gr\xE9\
+  \ (IDE)\u2026"
 lastmod: '2024-03-13T22:44:57.739664-06:00'
 model: gpt-4-1106-preview
-summary: "D\xE9marrer un nouveau projet, c'est mettre la premi\xE8re pierre \xE0 votre\
-  \ \xE9difice num\xE9rique."
+summary: "Pour lancer un nouveau projet Kotlin, suivez ces \xE9tapes."
 title: Lancement d'un nouveau projet
 weight: 1
 ---

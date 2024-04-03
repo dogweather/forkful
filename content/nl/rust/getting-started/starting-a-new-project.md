@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:42.552605-07:00
-description: "Een nieuw project starten in Rust betekent het opzetten van een basisstructuur\
-  \ zodat je code een plek heeft om te leven. Programmeurs starten nieuwe\u2026"
+description: "Hoe: Om een nieuw Rust-project te starten, heb je Cargo nodig - de pakketbeheerder\
+  \ van Rust. Installeer Rust en Cargo via de offici\xEBle\u2026"
 lastmod: '2024-03-13T22:44:50.594818-06:00'
 model: gpt-4-0125-preview
-summary: Een nieuw project starten in Rust betekent het opzetten van een basisstructuur
-  zodat je code een plek heeft om te leven.
+summary: Om een nieuw Rust-project te starten, heb je Cargo nodig - de pakketbeheerder
+  van Rust.
 title: Een nieuw project starten
 weight: 1
 ---

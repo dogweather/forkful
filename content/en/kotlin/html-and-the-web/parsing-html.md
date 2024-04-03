@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 15:32:27.978327-07:00
-description: "Parsing HTML means dissecting a webpage's markup into something a program\
-  \ can understand and manipulate. Programmers parse HTML to extract data, automate\u2026"
+description: 'How to: Kotlin makes parsing HTML straightforward with libraries like
+  Jsoup. Here''s how you do it.'
 lastmod: '2024-03-13T22:45:00.046640-06:00'
 model: unknown
-summary: Parsing HTML means dissecting a webpage's markup into something a program
-  can understand and manipulate.
+summary: Kotlin makes parsing HTML straightforward with libraries like Jsoup.
 title: Parsing HTML
 weight: 43
 ---

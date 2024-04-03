@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:38.259371-07:00
-description: "Das Logging in Visual Basic f\xFCr Anwendungen (VBA) beinhaltet das\
-  \ Aufzeichnen von Informationen \xFCber das Laufzeitverhalten eines Programms in\
-  \ einer Datei,\u2026"
+description: "Wie: In VBA gibt es kein eingebautes Logging-Framework, wie es in einigen\
+  \ anderen Sprachen zu finden ist. Die Implementierung eines einfachen\u2026"
 lastmod: '2024-03-13T22:44:53.725300-06:00'
 model: gpt-4-0125-preview
-summary: "Das Logging in Visual Basic f\xFCr Anwendungen (VBA) beinhaltet das Aufzeichnen\
-  \ von Informationen \xFCber das Laufzeitverhalten eines Programms in einer Datei,\
-  \ Konsole oder Datenbank."
+summary: In VBA gibt es kein eingebautes Logging-Framework, wie es in einigen anderen
+  Sprachen zu finden ist.
 title: Protokollierung
 weight: 17
 ---

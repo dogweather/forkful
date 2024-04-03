@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:40:03.891626-07:00
-description: "Creare un file temporaneo significa generare un file destinato a essere\
-  \ utilizzato solo per un breve periodo di tempo. I programmatori lo fanno per\u2026"
+description: "How to: Elixir non include una libreria standard per la creazione di\
+  \ file temporanei, ma possiamo utilizzare `System.cmd/3` per invocare comandi Unix\u2026"
 lastmod: '2024-03-13T22:44:43.103707-06:00'
 model: gpt-4-1106-preview
-summary: Creare un file temporaneo significa generare un file destinato a essere utilizzato
-  solo per un breve periodo di tempo.
+summary: Elixir non include una libreria standard per la creazione di file temporanei,
+  ma possiamo utilizzare `System.cmd/3` per invocare comandi Unix direttamente.
 title: Creazione di un file temporaneo
 weight: 21
 ---

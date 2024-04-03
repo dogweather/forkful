@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:38.037036-07:00
-description: "\xC5 skrive til standard feil (stderr) i Rust handler om \xE5 dirigere\
-  \ feilmeldinger og diagnostikk til konsollen separat fra standard utdata (stdout).\u2026"
+description: "Hvordan gj\xF8re det: Rust gir en enkel m\xE5te \xE5 skrive til stderr\
+  \ p\xE5 ved bruk av `eprintln!`-makroen, likt som hvordan `println!` brukes for\
+  \ stdout. Her er et\u2026"
 lastmod: '2024-03-13T22:44:40.590261-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive til standard feil (stderr) i Rust handler om \xE5 dirigere feilmeldinger\
-  \ og diagnostikk til konsollen separat fra standard utdata (stdout)."
+summary: "Rust gir en enkel m\xE5te \xE5 skrive til stderr p\xE5 ved bruk av `eprintln!`-makroen,\
+  \ likt som hvordan `println!` brukes for stdout."
 title: Skriving til standardfeil
 weight: 25
 ---

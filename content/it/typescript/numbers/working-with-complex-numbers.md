@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:46:21.085325-07:00
-description: "I numeri complessi, composti da una parte reale e una immaginaria (solitamente\
-  \ scritti come a + bi), rendono possibili calcoli impraticabili o impossibili\u2026"
+description: 'Come Fare: Gestire i numeri complessi in TypeScript richiede una classe
+  dedicata. Creiamone una e procediamo con l''addizione e la moltiplicazione.'
 lastmod: '2024-03-13T22:44:43.169940-06:00'
 model: gpt-4-0125-preview
-summary: I numeri complessi, composti da una parte reale e una immaginaria (solitamente
-  scritti come a + bi), rendono possibili calcoli impraticabili o impossibili con
-  i soli numeri reali.
+summary: Gestire i numeri complessi in TypeScript richiede una classe dedicata.
 title: Lavorare con i numeri complessi
 weight: 14
 ---

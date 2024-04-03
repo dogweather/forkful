@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 04:13:24.701823-07:00
-description: "Read-Eval-Print Loop (REPL) on yksinkertainen, interaktiivinen ohjelmointiymp\xE4\
-  rist\xF6, joka ottaa vastaan yksitt\xE4isi\xE4 k\xE4ytt\xE4j\xE4n sy\xF6tteit\xE4\
-  , arvioi ne ja\u2026"
+description: "Kuinka: Elm ei sis\xE4ll\xE4 integroitua REPL:i\xE4. Voit kuitenkin\
+  \ k\xE4ytt\xE4\xE4 `elm repl` komentoa komentorivill\xE4 k\xE4ynnist\xE4\xE4ksesi\
+  \ Elmin istunnon Elm:n asentamisen\u2026"
 lastmod: '2024-03-13T22:44:56.490239-06:00'
 model: gpt-4-0125-preview
-summary: "Read-Eval-Print Loop (REPL) on yksinkertainen, interaktiivinen ohjelmointiymp\xE4\
-  rist\xF6, joka ottaa vastaan yksitt\xE4isi\xE4 k\xE4ytt\xE4j\xE4n sy\xF6tteit\xE4\
-  , arvioi ne ja palauttaa tuloksen k\xE4ytt\xE4j\xE4lle."
+summary: "Elm ei sis\xE4ll\xE4 integroitua REPL:i\xE4."
 title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 weight: 34
 ---

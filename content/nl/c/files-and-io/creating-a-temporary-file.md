@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:25.757161-07:00
-description: "Een tijdelijk bestand in C cre\xEBren betekent het genereren van een\
-  \ bestand dat bedoeld is om voor een korte duur gebruikt te worden, meestal als\
-  \ kladruimte\u2026"
+description: "Hoe te: Het cre\xEBren van een tijdelijk bestand in de C-programmeertaal\
+  \ kan functies zoals `tmpfile()` en `mkstemp()` gebruiken. **Gebruikmakend van\u2026"
 lastmod: '2024-03-13T22:44:51.311087-06:00'
 model: gpt-4-0125-preview
-summary: "Een tijdelijk bestand in C cre\xEBren betekent het genereren van een bestand\
-  \ dat bedoeld is om voor een korte duur gebruikt te worden, meestal als kladruimte\
-  \ voor gegevensverwerking of opslag."
+summary: "Het cre\xEBren van een tijdelijk bestand in de C-programmeertaal kan functies\
+  \ zoals `tmpfile()` en `mkstemp()` gebruiken."
 title: Een tijdelijk bestand aanmaken
 weight: 21
 ---

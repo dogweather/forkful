@@ -2,13 +2,10 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:09:59.352003-07:00
-description: "Gli array associativi sono come degli array super-potenziati che ti\
-  \ permettono di usare stringhe come indici invece di semplici interi. I programmatori\
-  \ li\u2026"
+description: 'Come fare: Prima di tutto, dichiara un array associativo in Bash.'
 lastmod: '2024-03-13T22:44:43.590646-06:00'
 model: gpt-4-0125-preview
-summary: Gli array associativi sono come degli array super-potenziati che ti permettono
-  di usare stringhe come indici invece di semplici interi.
+summary: Prima di tutto, dichiara un array associativo in Bash.
 title: Utilizzo di array associativi
 weight: 15
 ---

@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:01.698113-07:00
-description: "Controleren of een map bestaat in Visual Basic for Applications (VBA)\
-  \ gaat over het verifi\xEBren van de aanwezigheid van een map binnen het bestandssysteem\u2026"
+description: "Hoe te: In VBA, om te controleren of een map bestaat, gebruik je typisch\
+  \ de `Dir` functie gecombineerd met het `vbDirectory` attribuut. Deze benadering\u2026"
 lastmod: '2024-03-13T22:44:50.651479-06:00'
 model: gpt-4-0125-preview
-summary: "Controleren of een map bestaat in Visual Basic for Applications (VBA) gaat\
-  \ over het verifi\xEBren van de aanwezigheid van een map binnen het bestandssysteem\
-  \ voordat men operaties uitvoert zoals het opslaan van bestanden of het aanmaken\
-  \ van nieuwe mappen."
+summary: In VBA, om te controleren of een map bestaat, gebruik je typisch de `Dir`
+  functie gecombineerd met het `vbDirectory` attribuut.
 title: Controleren of een directory bestaat
 weight: 20
 ---

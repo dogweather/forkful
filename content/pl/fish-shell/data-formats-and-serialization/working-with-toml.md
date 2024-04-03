@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:21:59.595882-07:00
-description: "TOML to format pliku konfiguracyjnego, \u0142atwy do odczytu i zapisu\
-  \ przez ludzi, oraz \u0142atwy do przetwarzania i generowania przez maszyny. Programi\u015B\
-  ci u\u017Cywaj\u0105\u2026"
+description: "Jak to zrobi\u0107: Aby odczyta\u0107 i manipulowa\u0107 TOML w Fish,\
+  \ mo\u017Cna u\u017Cywa\u0107 narz\u0119dzia takiego jak `yj`, kt\xF3re mo\u017C\
+  e konwertowa\u0107 TOML na JSON. Oto jak."
 lastmod: '2024-03-13T22:44:35.865198-06:00'
 model: gpt-4-0125-preview
-summary: "TOML to format pliku konfiguracyjnego, \u0142atwy do odczytu i zapisu przez\
-  \ ludzi, oraz \u0142atwy do przetwarzania i generowania przez maszyny."
+summary: "Aby odczyta\u0107 i manipulowa\u0107 TOML w Fish, mo\u017Cna u\u017Cywa\u0107\
+  \ narz\u0119dzia takiego jak `yj`, kt\xF3re mo\u017Ce konwertowa\u0107 TOML na JSON."
 title: Praca z TOML
 weight: 39
 ---

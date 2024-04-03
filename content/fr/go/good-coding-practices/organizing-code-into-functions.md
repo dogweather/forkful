@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:31.779228-07:00
-description: "Organiser le code en fonctions dans Go implique de diviser le code en\
-  \ blocs r\xE9utilisables et modulaires qui effectuent des t\xE2ches sp\xE9cifiques.\
-  \ Cette\u2026"
+description: "Comment faire : Dans Go, vous d\xE9finissez une fonction en utilisant\
+  \ le mot-cl\xE9 `func`, suivi du nom de la fonction, des param\xE8tres (s'il y en\
+  \ a) et du type\u2026"
 lastmod: '2024-03-13T22:44:57.139957-06:00'
 model: gpt-4-0125-preview
-summary: "Organiser le code en fonctions dans Go implique de diviser le code en blocs\
-  \ r\xE9utilisables et modulaires qui effectuent des t\xE2ches sp\xE9cifiques."
+summary: "Dans Go, vous d\xE9finissez une fonction en utilisant le mot-cl\xE9 `func`,\
+  \ suivi du nom de la fonction, des param\xE8tres (s'il y en a) et du type de retour."
 title: Organiser le code en fonctions
 weight: 18
 ---

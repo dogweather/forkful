@@ -3,12 +3,10 @@ changelog:
 - 2024-01-21, dogweather, Reviewed for accuracy
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:15.634438-07:00
-description: "Elk project begint met een eerste stap. Voor programmeurs betekent dat\
-  \ het opzetten van de initi\xEBle structuur en het schrijven van startcode. We doen\
-  \ dit\u2026"
+description: 'Hoe te: .'
 lastmod: '2024-03-13T22:44:50.853008-06:00'
 model: gpt-4-0125-preview
-summary: Elk project begint met een eerste stap.
+summary: .
 title: Een nieuw project starten
 weight: 1
 ---

@@ -1,11 +1,13 @@
 ---
 date: 2024-01-26 01:08:48.674887-07:00
-description: "Logging er prosessen med \xE5 registrere applikasjonsatferd, feil, og\
-  \ annen viktig informasjon til et vedvarende medium, som en fil eller database.\u2026"
+description: "Hvordan gj\xF8re det: I Swift kan du skrive logger til konsollen med\
+  \ utskriftssetninger eller det mer fleksible `os.log` API-et, som kobler seg p\xE5\
+  \ det\u2026"
 lastmod: '2024-03-13T22:44:41.148566-06:00'
 model: gpt-4-1106-preview
-summary: "Logging er prosessen med \xE5 registrere applikasjonsatferd, feil, og annen\
-  \ viktig informasjon til et vedvarende medium, som en fil eller database."
+summary: "I Swift kan du skrive logger til konsollen med utskriftssetninger eller\
+  \ det mer fleksible `os.log` API-et, som kobler seg p\xE5 det enhetlige loggsystemet\
+  \ p\xE5 Apple-plattformer."
 title: "Loggf\xF8ring"
 weight: 17
 ---

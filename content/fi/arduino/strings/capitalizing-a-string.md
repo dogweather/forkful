@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:17.214058-07:00
-description: "Merkkijonon suurkirjoittaminen tarkoittaa jokaisen sanan ensimm\xE4\
-  isen merkin muuntamista suuraakkoseksi samalla varmistaen, ett\xE4 loput merkit\
-  \ s\xE4ilyv\xE4t\u2026"
+description: "Miten: Arduino, joka on p\xE4\xE4asiassa tunnettu vuorovaikutuksesta\
+  \ laitteiston kanssa, sis\xE4lt\xE4\xE4 my\xF6s perustason merkkijonon k\xE4sittelykykyj\xE4\
+  \u2026"
 lastmod: '2024-03-13T22:44:56.808542-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonon suurkirjoittaminen tarkoittaa jokaisen sanan ensimm\xE4isen\
-  \ merkin muuntamista suuraakkoseksi samalla varmistaen, ett\xE4 loput merkit s\xE4\
-  ilyv\xE4t pienaakkosina."
+summary: "Arduino, joka on p\xE4\xE4asiassa tunnettu vuorovaikutuksesta laitteiston\
+  \ kanssa, sis\xE4lt\xE4\xE4 my\xF6s perustason merkkijonon k\xE4sittelykykyj\xE4\
+  \ `String`-objektinsa kautta."
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---

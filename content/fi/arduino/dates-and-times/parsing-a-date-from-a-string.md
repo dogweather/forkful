@@ -2,15 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:24.616424-07:00
-description: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta Arduinolla\
-  \ tarkoittaa p\xE4iv\xE4m\xE4\xE4r\xE4n osien (vuosi, kuukausi, p\xE4iv\xE4) poimimista\
-  \ ja muuntamista tekstiesityksest\xE4\u2026"
+description: "Kuinka tehd\xE4: Suora l\xE4hestymistapa ilman kolmannen osapuolen kirjastoa."
 lastmod: '2024-03-13T22:44:56.833034-06:00'
 model: gpt-4-0125-preview
-summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta Arduinolla tarkoittaa\
-  \ p\xE4iv\xE4m\xE4\xE4r\xE4n osien (vuosi, kuukausi, p\xE4iv\xE4) poimimista ja\
-  \ muuntamista tekstiesityksest\xE4 muotoon, jota voidaan k\xE4ytt\xE4\xE4 ajanpidossa,\
-  \ vertailuissa tai manipuloinnissa luonnoksissa."
+summary: "Suora l\xE4hestymistapa ilman kolmannen osapuolen kirjastoa."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
 weight: 30
 ---

@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 00:57:46.441814-07:00
-description: "Manejar errores en Swift significa anticipar y responder a problemas\
-  \ que surgen cuando tu c\xF3digo se ejecuta. Lo hacemos para controlar el caos\u2014\
-  manteniendo\u2026"
+description: "C\xF3mo hacerlo: Swift utiliza el manejo de errores con los bloques\
+  \ `do`, `try` y `catch`. Echemos un vistazo."
 lastmod: '2024-03-13T22:44:59.423826-06:00'
 model: gpt-4-1106-preview
-summary: "Manejar errores en Swift significa anticipar y responder a problemas que\
-  \ surgen cuando tu c\xF3digo se ejecuta."
+summary: Swift utiliza el manejo de errores con los bloques `do`, `try` y `catch`.
 title: Manejo de errores
 weight: 16
 ---

@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:35:11.498685-07:00
-description: "\"Sammanslagning av str\xE4ngar\" inneb\xE4r att kombinera flera textstycken\
-  \ till ett. Programmerare g\xF6r det f\xF6r att manipulera textdata, skapa dynamiskt\
-  \ inneh\xE5ll\u2026"
+description: "How to: I PHP sammanfogar du str\xE4ngar med punktoperatorn (`.`). Enkelt\
+  \ och rakt p\xE5 sak. S\xE5 h\xE4r."
 lastmod: '2024-03-13T22:44:37.988446-06:00'
 model: gpt-4-1106-preview
-summary: "\"Sammanslagning av str\xE4ngar\" inneb\xE4r att kombinera flera textstycken\
-  \ till ett."
+summary: "I PHP sammanfogar du str\xE4ngar med punktoperatorn (`.`)."
 title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---

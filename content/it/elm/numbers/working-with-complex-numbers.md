@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:39:24.822224-07:00
-description: "I numeri complessi sono una combinazione di numeri reali e immaginari,\
-  \ come `a + bi` dove `i` \xE8 la radice quadrata di -1. Sono fondamentali in campi\
-  \ come\u2026"
+description: 'Come fare: Elm non ha un supporto integrato per i numeri complessi,
+  quindi dovrai creare il tuo tipo e le tue funzioni. Ecco una configurazione rapida.'
 lastmod: '2024-03-13T22:44:43.344187-06:00'
 model: gpt-4-0125-preview
-summary: "I numeri complessi sono una combinazione di numeri reali e immaginari, come\
-  \ `a + bi` dove `i` \xE8 la radice quadrata di -1."
+summary: Elm non ha un supporto integrato per i numeri complessi, quindi dovrai creare
+  il tuo tipo e le tue funzioni.
 title: Lavorare con i numeri complessi
 weight: 14
 ---

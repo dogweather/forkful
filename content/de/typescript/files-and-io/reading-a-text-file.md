@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:55:23.032718-07:00
-description: "Das Lesen einer Textdatei bedeutet, ihren Inhalt programmatisch zu erfassen\
-  \ und zu verarbeiten. Programmierer tun dies, um Daten zu importieren,\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:53.647809-06:00'
 model: gpt-4-1106-preview
-summary: Das Lesen einer Textdatei bedeutet, ihren Inhalt programmatisch zu erfassen
-  und zu verarbeiten.
+summary: .
 title: Textdatei einlesen
 weight: 22
 ---

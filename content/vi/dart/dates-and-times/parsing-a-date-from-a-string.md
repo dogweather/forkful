@@ -2,16 +2,14 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:31.346075-07:00
-description: "Vi\u1EC7c ph\xE2n t\xEDch (parsing) m\u1ED9t ng\xE0y t\u1EEB m\u1ED9\
-  t chu\u1ED7i trong Dart li\xEAn quan \u0111\u1EBFn vi\u1EC7c chuy\u1EC3n \u0111\u1ED5\
-  i bi\u1EC3u di\u1EC5n v\u0103n b\u1EA3n c\u1EE7a ng\xE0y v\xE0 gi\u1EDD th\xE0nh\
-  \ m\u1ED9t \u0111\u1ED1i t\u01B0\u1EE3ng `DateTime`.\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Th\u01B0 vi\u1EC7n c\u1ED1t l\xF5i c\u1EE7a\
+  \ Dart \u0111\u01A1n gi\u1EA3n h\xF3a vi\u1EC7c ph\xE2n t\xEDch ng\xE0y qua l\u1EDB\
+  p `DateTime`. \u0110\u1ED1i v\u1EDBi c\xE1c tr\u01B0\u1EDDng h\u1EE3p \u0111\u01A1\
+  n gi\u1EA3n khi b\u1EA1n bi\u1EBFt \u0111\u1ECBnh d\u1EA1ng c\u1EE7a\u2026"
 lastmod: '2024-03-13T22:44:36.275610-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c ph\xE2n t\xEDch (parsing) m\u1ED9t ng\xE0y t\u1EEB m\u1ED9t chu\u1ED7\
-  i trong Dart li\xEAn quan \u0111\u1EBFn vi\u1EC7c chuy\u1EC3n \u0111\u1ED5i bi\u1EC3\
-  u di\u1EC5n v\u0103n b\u1EA3n c\u1EE7a ng\xE0y v\xE0 gi\u1EDD th\xE0nh m\u1ED9t\
-  \ \u0111\u1ED1i t\u01B0\u1EE3ng `DateTime`."
+summary: "Th\u01B0 vi\u1EC7n c\u1ED1t l\xF5i c\u1EE7a Dart \u0111\u01A1n gi\u1EA3\
+  n h\xF3a vi\u1EC7c ph\xE2n t\xEDch ng\xE0y qua l\u1EDBp `DateTime`."
 title: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB chu\u1ED7i k\xFD t\u1EF1"
 weight: 30
 ---

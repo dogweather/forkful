@@ -1,11 +1,10 @@
 ---
 date: 2024-02-03 19:03:54.587811-07:00
-description: "Writing to standard error (stderr) is about directing error messages\
-  \ and diagnostics to the stderr stream, separate from standard output (stdout).\u2026"
+description: "How to: In Clojure, you can write to stderr using the `*err*` stream.\
+  \ Here\u2019s a basic example."
 lastmod: '2024-03-13T22:44:59.760246-06:00'
 model: gpt-4-0125-preview
-summary: Writing to standard error (stderr) is about directing error messages and
-  diagnostics to the stderr stream, separate from standard output (stdout).
+summary: In Clojure, you can write to stderr using the `*err*` stream.
 title: Writing to standard error
 weight: 25
 ---

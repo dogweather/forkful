@@ -2,16 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:13.200611-07:00
-description: "Vi\u1EC7c vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n c\xF3 ngh\u0129\
-  a l\xE0 l\u01B0u d\u1EEF li\u1EC7u v\xE0o m\u1ED9t t\u1EC7p c\xF3 ph\u1EA7n m\u1EDF\
-  \ r\u1ED9ng `.txt`. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1\
-  u n\xE0y \u0111\u1EC3 log, c\u1EA5u h\xECnh, ho\u1EB7c l\u01B0u tr\u1EEF d\u1EEF\
-  \u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: TypeScript, tuy l\xE0 m\u1ED9t b\u1ED9\
+  \ m\u1EDF r\u1ED9ng c\u1EE7a JavaScript, kh\xF4ng c\xF3 module h\u1EC7 th\u1ED1\
+  ng t\u1EC7p c\u1EE7a ri\xEAng m\xECnh, nh\u01B0ng n\xF3 c\xF3 th\u1EC3 s\u1EED d\u1EE5\
+  ng Node.js cho nhi\u1EC7m\u2026"
 lastmod: '2024-03-13T22:44:36.343693-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n c\xF3 ngh\u0129\
-  a l\xE0 l\u01B0u d\u1EEF li\u1EC7u v\xE0o m\u1ED9t t\u1EC7p c\xF3 ph\u1EA7n m\u1EDF\
-  \ r\u1ED9ng `."
+summary: "TypeScript, tuy l\xE0 m\u1ED9t b\u1ED9 m\u1EDF r\u1ED9ng c\u1EE7a JavaScript,\
+  \ kh\xF4ng c\xF3 module h\u1EC7 th\u1ED1ng t\u1EC7p c\u1EE7a ri\xEAng m\xECnh, nh\u01B0\
+  ng n\xF3 c\xF3 th\u1EC3 s\u1EED d\u1EE5ng Node.js cho nhi\u1EC7m v\u1EE5 n\xE0y."
 title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 24
 ---

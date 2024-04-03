@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:19.449615-07:00
-description: "Das Extrahieren von Teilzeichenketten in C umfasst das Erstellen einer\
-  \ kleineren Zeichenkette (Teilzeichenkette) aus einer gr\xF6\xDFeren Zeichenkette\
-  \ basierend\u2026"
+description: "Wie geht das: Im Gegensatz zu einigen h\xF6heren Sprachen, die eingebaute\
+  \ Methoden zur Extraktion von Teilzeichenketten bieten, erfordert C einen manuelleren\u2026"
 lastmod: '2024-03-13T22:44:54.340372-06:00'
 model: gpt-4-0125-preview
-summary: "Das Extrahieren von Teilzeichenketten in C umfasst das Erstellen einer kleineren\
-  \ Zeichenkette (Teilzeichenkette) aus einer gr\xF6\xDFeren Zeichenkette basierend\
-  \ auf spezifizierten Kriterien, wie Position und L\xE4nge."
+summary: "Im Gegensatz zu einigen h\xF6heren Sprachen, die eingebaute Methoden zur\
+  \ Extraktion von Teilzeichenketten bieten, erfordert C einen manuelleren Ansatz\
+  \ unter Verwendung seiner String-Manipulationsfunktionen."
 title: Teilstrings extrahieren
 weight: 6
 ---

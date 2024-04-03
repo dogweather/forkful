@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:57:29.248051-07:00
-description: "S\xF8k og erstatt er prosessen med \xE5 finne tekststrenger og bytte\
-  \ dem ut med noe annet. Programmerere bruker dette for \xE5 oppdatere kode, korrigere\
-  \ feil,\u2026"
+description: "How to: Bruk `sed` for \xE5 s\xF8ke og erstatte i en tekstfil. Her er\
+  \ et enkelt eksempel."
 lastmod: '2024-03-13T22:44:40.957828-06:00'
 model: gpt-4-1106-preview
-summary: "S\xF8k og erstatt er prosessen med \xE5 finne tekststrenger og bytte dem\
-  \ ut med noe annet."
+summary: "Bruk `sed` for \xE5 s\xF8ke og erstatte i en tekstfil."
 title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---

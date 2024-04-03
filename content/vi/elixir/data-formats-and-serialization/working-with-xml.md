@@ -2,10 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:17.652349-07:00
-description: '#'
+description: "G\xEC & T\u1EA1i sao? L\xE0m vi\u1EC7c v\u1EDBi XML trong Elixir c\xF3\
+  \ ngh\u0129a l\xE0 ph\xE2n t\xEDch c\xFA ph\xE1p, t\u1EA1o v\xE0 thao t\xE1c d\u1EEF\
+  \ li\u1EC7u XML. L\u1EADp tr\xECnh vi\xEAn x\u1EED l\xFD XML v\xEC n\xF3 ph\u1ED5\
+  \ bi\u1EBFn trong d\u1ECBch\u2026"
 lastmod: '2024-03-13T22:44:36.239328-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "L\xE0m vi\u1EC7c v\u1EDBi XML trong Elixir c\xF3 ngh\u0129a l\xE0 ph\xE2\
+  n t\xEDch c\xFA ph\xE1p, t\u1EA1o v\xE0 thao t\xE1c d\u1EEF li\u1EC7u XML."
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---

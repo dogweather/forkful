@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 18:01:04.179613-07:00
-description: "Enviar uma requisi\xE7\xE3o HTTP \xE9 o processo de solicitar dados\
-  \ ou a\xE7\xF5es de um recurso especificado na web. Programadores fazem isso para\
-  \ interagir com APIs,\u2026"
+description: "Como Fazer: Vamos usar a biblioteca cURL do PHP para enviar uma requisi\xE7\
+  \xE3o GET simples."
 lastmod: '2024-03-13T22:44:46.664229-06:00'
 model: gpt-4-1106-preview
-summary: "Enviar uma requisi\xE7\xE3o HTTP \xE9 o processo de solicitar dados ou a\xE7\
-  \xF5es de um recurso especificado na web."
+summary: "Vamos usar a biblioteca cURL do PHP para enviar uma requisi\xE7\xE3o GET\
+  \ simples."
 title: "Enviando uma requisi\xE7\xE3o HTTP"
 weight: 44
 ---

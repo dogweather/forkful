@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:44.632714-07:00
-description: "Numeroiden py\xF6rist\xE4minen on prosessi, jossa numeron numerot s\xE4\
-  \xE4det\xE4\xE4n v\xE4hemm\xE4n tarkoiksi tietyin s\xE4\xE4nn\xF6in, joko l\xE4\
-  himp\xE4\xE4n kokonaislukuun tai m\xE4\xE4ritettyyn\u2026"
+description: "Kuinka tehd\xE4\xE4n: Numeroiden py\xF6rist\xE4minen C-kieless\xE4 voidaan\
+  \ saavuttaa k\xE4ytt\xE4m\xE4ll\xE4 erilaisia funktioita, mutta yleisin l\xE4hestymistapa\
+  \ sis\xE4lt\xE4\xE4 `floor()`,\u2026"
 lastmod: '2024-03-13T22:44:57.034088-06:00'
 model: gpt-4-0125-preview
-summary: "Numeroiden py\xF6rist\xE4minen on prosessi, jossa numeron numerot s\xE4\xE4\
-  det\xE4\xE4n v\xE4hemm\xE4n tarkoiksi tietyin s\xE4\xE4nn\xF6in, joko l\xE4himp\xE4\
-  \xE4n kokonaislukuun tai m\xE4\xE4ritettyyn desimaalipaikkojen m\xE4\xE4r\xE4\xE4\
-  n."
+summary: "Numeroiden py\xF6rist\xE4minen C-kieless\xE4 voidaan saavuttaa k\xE4ytt\xE4\
+  m\xE4ll\xE4 erilaisia funktioita, mutta yleisin l\xE4hestymistapa sis\xE4lt\xE4\xE4\
+  \ `floor()`, `ceil()` ja `round()` funktiot."
 title: "Lukujen py\xF6rist\xE4minen"
 weight: 13
 ---

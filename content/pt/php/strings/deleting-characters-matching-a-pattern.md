@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:42:56.934986-07:00
-description: "Deletar caracteres que correspondem a um padr\xE3o \xE9 basicamente\
-  \ filtrar sua string com base em regras espec\xEDficas. Programadores fazem isso\
-  \ para limpar\u2026"
+description: "Como Fazer: Imagine que voc\xEA quer tirar todos os d\xEDgitos de uma\
+  \ string. Voc\xEA pode usar a fun\xE7\xE3o `preg_replace` do PHP."
 lastmod: '2024-03-13T22:44:46.651590-06:00'
 model: gpt-4-1106-preview
-summary: "Deletar caracteres que correspondem a um padr\xE3o \xE9 basicamente filtrar\
-  \ sua string com base em regras espec\xEDficas."
+summary: "Imagine que voc\xEA quer tirar todos os d\xEDgitos de uma string."
 title: "Excluindo caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---

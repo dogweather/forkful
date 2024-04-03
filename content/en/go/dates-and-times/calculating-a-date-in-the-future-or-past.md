@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 17:50:14.920822-07:00
-description: "Calculating a date in the future or past in Go involves manipulating\
-  \ date and time values to determine a specific point relative to a given date.\u2026"
+description: "How to: Go provides the `time` package to handle date and time operations,\
+  \ offering straightforward mechanisms for adding or subtracting time. Here's a\u2026"
 lastmod: '2024-03-13T22:44:59.642925-06:00'
 model: gpt-4-0125-preview
-summary: Calculating a date in the future or past in Go involves manipulating date
-  and time values to determine a specific point relative to a given date.
+summary: Go provides the `time` package to handle date and time operations, offering
+  straightforward mechanisms for adding or subtracting time.
 title: Calculating a date in the future or past
 weight: 26
 ---

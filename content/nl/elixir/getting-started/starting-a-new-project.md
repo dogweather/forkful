@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:17.841212-07:00
-description: "Een nieuw Elixir-project starten betekent het opzetten van een frisse\
-  \ Mix-projectstructuur. Programmeurs doen dit om te beginnen met georganiseerde\
-  \ code\u2026"
+description: "Hoe: Om een nieuw project te cre\xEBren, gebruik je het `mix new` commando."
 lastmod: '2024-03-13T22:44:50.462784-06:00'
 model: gpt-4-0125-preview
-summary: Een nieuw Elixir-project starten betekent het opzetten van een frisse Mix-projectstructuur.
+summary: "Om een nieuw project te cre\xEBren, gebruik je het `mix new` commando."
 title: Een nieuw project starten
 weight: 1
 ---

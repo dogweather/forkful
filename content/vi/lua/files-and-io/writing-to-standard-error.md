@@ -2,15 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:14:06.539131-07:00
-description: "Vi\u1EBFt v\xE0o l\u1ED7i chu\u1EA9n (stderr) cho ph\xE9p ch\u01B0\u01A1\
-  ng tr\xECnh c\u1EE7a b\u1EA1n b\xE1o c\xE1o v\u1EC1 l\u1ED7i m\xE0 kh\xF4ng l\xE0\
-  m l\u1ED9n x\u1ED9n \u0111\u1EA7u ra chu\u1EA9n (stdout). \u0110\xE2y l\xE0 m\u1ED9\
-  t t\xEDn hi\u1EC7u r\xF5 r\xE0ng cho ng\u01B0\u1EDDi\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Lua giao ti\u1EBFp v\u1EDBi stderr th\xF4\
+  ng qua `io.stderr`. D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch in m\u1ED9t th\xF4\
+  ng b\xE1o l\u1ED7i \u0111\u01A1n gi\u1EA3n."
 lastmod: '2024-03-13T22:44:36.843232-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EBFt v\xE0o l\u1ED7i chu\u1EA9n (stderr) cho ph\xE9p ch\u01B0\u01A1\
-  ng tr\xECnh c\u1EE7a b\u1EA1n b\xE1o c\xE1o v\u1EC1 l\u1ED7i m\xE0 kh\xF4ng l\xE0\
-  m l\u1ED9n x\u1ED9n \u0111\u1EA7u ra chu\u1EA9n (stdout)."
+summary: "Lua giao ti\u1EBFp v\u1EDBi stderr th\xF4ng qua `io.stderr`."
 title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---

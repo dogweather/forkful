@@ -2,14 +2,10 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:37.721427-07:00
-description: "Organizar el c\xF3digo en funciones en Dart consiste en definir bloques\
-  \ de c\xF3digo reutilizables que realizan tareas espec\xEDficas, t\xEDpicamente\
-  \ recibiendo\u2026"
+description: "C\xF3mo hacerlo: #."
 lastmod: '2024-03-13T22:44:58.758013-06:00'
 model: gpt-4-0125-preview
-summary: "Organizar el c\xF3digo en funciones en Dart consiste en definir bloques\
-  \ de c\xF3digo reutilizables que realizan tareas espec\xEDficas, t\xEDpicamente\
-  \ recibiendo entradas, procesando datos y posiblemente devolviendo salidas."
+summary: '#.'
 title: "Organizando el c\xF3digo en funciones"
 weight: 18
 ---

@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 03:36:21.508605-07:00
-description: "Refactoring ist der Prozess der Umstrukturierung bestehenden Computer-Codes,\
-  \ ohne dessen externes Verhalten zu \xE4ndern. Programmierer tun dies, um Code\u2026"
+description: "Wie geht das: Betrachten Sie eine TypeScript-Funktion, die schon bessere\
+  \ Tage gesehen hat - sie ist etwas durcheinander und k\xF6nnte etwas liebevolle\
+  \ Pflege\u2026"
 lastmod: '2024-03-13T22:44:53.639258-06:00'
 model: gpt-4-0125-preview
-summary: "Refactoring ist der Prozess der Umstrukturierung bestehenden Computer-Codes,\
-  \ ohne dessen externes Verhalten zu \xE4ndern."
+summary: "Betrachten Sie eine TypeScript-Funktion, die schon bessere Tage gesehen\
+  \ hat - sie ist etwas durcheinander und k\xF6nnte etwas liebevolle Pflege gebrauchen."
 title: Refactoring
 weight: 19
 ---

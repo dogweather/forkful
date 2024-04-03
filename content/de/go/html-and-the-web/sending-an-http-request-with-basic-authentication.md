@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:57.833563-07:00
-description: "Das Senden einer HTTP-Anfrage mit Basisauthentifizierung in Go beinhaltet\
-  \ das Hinzuf\xFCgen eines Autorisierungs-Headers zu Ihrer Anfrage, der einen\u2026"
+description: "Wie geht das: Um eine HTTP-Anfrage mit Basisauthentifizierung in Go\
+  \ zu stellen, m\xFCssen Sie Ihre Anfrage-Header so gestalten, dass sie das Feld\u2026"
 lastmod: '2024-03-13T22:44:53.287285-06:00'
 model: gpt-4-0125-preview
-summary: "Das Senden einer HTTP-Anfrage mit Basisauthentifizierung in Go beinhaltet\
-  \ das Hinzuf\xFCgen eines Autorisierungs-Headers zu Ihrer Anfrage, der einen Benutzernamen\
-  \ und ein Passwort in Form eines base64-codierten Strings enth\xE4lt."
+summary: "Um eine HTTP-Anfrage mit Basisauthentifizierung in Go zu stellen, m\xFC\
+  ssen Sie Ihre Anfrage-Header so gestalten, dass sie das Feld `Authorization` enthalten,\
+  \ gef\xFCllt mit Ihren Anmeldeinformationen im richtigen Format."
 title: Eine HTTP-Anfrage mit Basisauthentifizierung senden
 weight: 45
 ---

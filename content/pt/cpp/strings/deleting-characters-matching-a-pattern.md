@@ -1,13 +1,9 @@
 ---
 date: 2024-01-20 17:41:59.623503-07:00
-description: "Deletar caracteres que correspondem a um padr\xE3o \xE9 uma opera\xE7\
-  \xE3o de filtragem onde escolhemos caracteres espec\xEDficos de uma string para\
-  \ remover, baseando-\u2026"
+description: 'Como Fazer: .'
 lastmod: '2024-03-13T22:44:46.864284-06:00'
 model: gpt-4-1106-preview
-summary: "Deletar caracteres que correspondem a um padr\xE3o \xE9 uma opera\xE7\xE3\
-  o de filtragem onde escolhemos caracteres espec\xEDficos de uma string para remover,\
-  \ baseando-nos em crit\xE9rios definidos."
+summary: .
 title: "Excluindo caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---

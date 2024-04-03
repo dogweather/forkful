@@ -2,14 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:53.455404-07:00
-description: "Associerade arrayer, k\xE4nda som maps i Go, g\xF6r det m\xF6jligt f\xF6\
-  r dig att lagra nyckel-v\xE4rdepar d\xE4r varje unik nyckel mappas till ett v\xE4\
-  rde. Programmerare\u2026"
+description: "Hur: Att skapa och initiera en map i Go kan g\xF6ras p\xE5 olika s\xE4\
+  tt. H\xE4r \xE4r ett grundl\xE4ggande exempel f\xF6r att komma ig\xE5ng."
 lastmod: '2024-03-13T22:44:37.384434-06:00'
 model: gpt-4-0125-preview
-summary: "Associerade arrayer, k\xE4nda som maps i Go, g\xF6r det m\xF6jligt f\xF6\
-  r dig att lagra nyckel-v\xE4rdepar d\xE4r varje unik nyckel mappas till ett v\xE4\
-  rde."
+summary: "Att skapa och initiera en map i Go kan g\xF6ras p\xE5 olika s\xE4tt."
 title: "Anv\xE4nda associativa arrayer"
 weight: 15
 ---

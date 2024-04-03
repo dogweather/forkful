@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:23.467028-07:00
-description: "Analisar uma data a partir de uma string em Elm envolve converter informa\xE7\
-  \xF5es textuais que representam datas e hor\xE1rios em um formato que o Elm possa\u2026"
+description: "Como fazer: Elm n\xE3o possui capacidades internas t\xE3o robustas quanto\
+  \ algumas outras linguagens para an\xE1lise de datas, dependendo principalmente\
+  \ da\u2026"
 lastmod: '2024-03-13T22:44:46.509675-06:00'
 model: gpt-4-0125-preview
-summary: "Analisar uma data a partir de uma string em Elm envolve converter informa\xE7\
-  \xF5es textuais que representam datas e hor\xE1rios em um formato que o Elm possa\
-  \ entender e manipular, especificamente no tipo `Date`."
+summary: "Elm n\xE3o possui capacidades internas t\xE3o robustas quanto algumas outras\
+  \ linguagens para an\xE1lise de datas, dependendo principalmente da interoperabilidade\
+  \ com Javascript ou bibliotecas para opera\xE7\xF5es mais complexas."
 title: Analisando uma data a partir de uma string
 weight: 30
 ---

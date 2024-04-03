@@ -2,14 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:54.814583-07:00
-description: "Tekstitiedoston kirjoittaminen PowerShelliss\xE4 k\xE4sitt\xE4\xE4 tekstipohjaisten\
-  \ tiedostojen luomisen ja k\xE4sittelyn, mik\xE4 on perustoiminto lokitiedostojen,\
-  \ datan\u2026"
+description: "Kuinka: PowerShell tarjoaa suoraviivaisia cmdlet-komentoja tiedostojen\
+  \ k\xE4sittelyyn. `Out-File` cmdlet ja uudelleenohjausoperaattorit ovat ensisijaisesti\u2026"
 lastmod: '2024-03-13T22:44:56.800854-06:00'
 model: gpt-4-0125-preview
-summary: "Tekstitiedoston kirjoittaminen PowerShelliss\xE4 k\xE4sitt\xE4\xE4 tekstipohjaisten\
-  \ tiedostojen luomisen ja k\xE4sittelyn, mik\xE4 on perustoiminto lokitiedostojen,\
-  \ datan tallennuksen ja konfigurointiskriptien kannalta."
+summary: "PowerShell tarjoaa suoraviivaisia cmdlet-komentoja tiedostojen k\xE4sittelyyn."
 title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---

@@ -2,14 +2,11 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:09.350947-07:00
-description: "Les tableaux associatifs en PHP sont comme des listes surpuissantes\
-  \ o\xF9 chaque \xE9l\xE9ment peut \xEAtre acc\xE9d\xE9 en utilisant une cl\xE9 lisible\
-  \ par l'humain au lieu\u2026"
+description: "Comment faire : En PHP, cr\xE9er et utiliser des tableaux associatifs\
+  \ est simple. Voici un rapide aper\xE7u ."
 lastmod: '2024-03-13T22:44:57.870659-06:00'
 model: gpt-4-0125-preview
-summary: "Les tableaux associatifs en PHP sont comme des listes surpuissantes o\xF9\
-  \ chaque \xE9l\xE9ment peut \xEAtre acc\xE9d\xE9 en utilisant une cl\xE9 lisible\
-  \ par l'humain au lieu de simples num\xE9ros."
+summary: "En PHP, cr\xE9er et utiliser des tableaux associatifs est simple."
 title: Utilisation des tableaux associatifs
 weight: 15
 ---

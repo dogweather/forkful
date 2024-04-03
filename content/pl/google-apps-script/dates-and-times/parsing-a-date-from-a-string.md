@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:45.722762-07:00
-description: "Parsowanie daty ze \u0142a\u0144cucha znak\xF3w polega na przekszta\u0142\
-  ceniu tekstu reprezentuj\u0105cego dat\u0119 na obiekt daty, co umo\u017Cliwia programistom\
-  \ wykonywanie operacji\u2026"
+description: "Jak to zrobi\u0107: W Google Apps Script, kt\xF3ry oparty jest na JavaScripcie,\
+  \ masz kilka podej\u015B\u0107 do parsowania daty ze \u0142a\u0144cucha znak\xF3\
+  w. Poni\u017Cej przedstawiam\u2026"
 lastmod: '2024-03-13T22:44:34.913685-06:00'
 model: gpt-4-0125-preview
-summary: "Parsowanie daty ze \u0142a\u0144cucha znak\xF3w polega na przekszta\u0142\
-  ceniu tekstu reprezentuj\u0105cego dat\u0119 na obiekt daty, co umo\u017Cliwia programistom\
-  \ wykonywanie operacji zwi\u0105zanych z datami, takich jak por\xF3wnania, operacje\
-  \ arytmetyczne i formatowanie."
+summary: "W Google Apps Script, kt\xF3ry oparty jest na JavaScripcie, masz kilka podej\u015B\
+  \u0107 do parsowania daty ze \u0142a\u0144cucha znak\xF3w."
 title: "Analiza sk\u0142adniowa daty z ci\u0105gu znak\xF3w"
 weight: 30
 ---

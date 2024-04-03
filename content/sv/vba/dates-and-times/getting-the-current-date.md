@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:41.733519-07:00
-description: "I Visual Basic f\xF6r Applikationer (VBA) \xE4r det en vanlig uppgift\
-  \ att h\xE4mta aktuellt datum, vilket m\xF6jligg\xF6r f\xF6r programmerare att dynamiskt\
-  \ arbeta med\u2026"
+description: "Hur g\xF6r man: Att h\xE4mta det aktuella datumet i VBA \xE4r enkelt,\
+  \ med hj\xE4lp av `Date`-funktionen, medan `Now`-funktionen ger b\xE5de det aktuella\
+  \ datumet och\u2026"
 lastmod: '2024-03-13T22:44:37.754289-06:00'
 model: gpt-4-0125-preview
-summary: "I Visual Basic f\xF6r Applikationer (VBA) \xE4r det en vanlig uppgift att\
-  \ h\xE4mta aktuellt datum, vilket m\xF6jligg\xF6r f\xF6r programmerare att dynamiskt\
-  \ arbeta med datum i deras makron eller applikationer."
+summary: "Att h\xE4mta det aktuella datumet i VBA \xE4r enkelt, med hj\xE4lp av `Date`-funktionen,\
+  \ medan `Now`-funktionen ger b\xE5de det aktuella datumet och tiden."
 title: "H\xE4mta aktuellt datum"
 weight: 29
 ---

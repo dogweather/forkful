@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:05.605156-07:00
-description: "Het verwijderen van aanhalingstekens uit een string houdt in dat de\
-  \ aanhalingstekens die de string omsluiten, worden weggestript. Programmeurs willen\
-  \ dit\u2026"
+description: 'Hoe te: Bash heeft verschillende manieren om aanhalingstekens uit strings
+  te verwijderen. Hier zijn enkele snelle voorbeelden.'
 lastmod: '2024-03-13T22:44:50.967607-06:00'
 model: gpt-4-0125-preview
-summary: Het verwijderen van aanhalingstekens uit een string houdt in dat de aanhalingstekens
-  die de string omsluiten, worden weggestript.
+summary: Bash heeft verschillende manieren om aanhalingstekens uit strings te verwijderen.
 title: Quotes verwijderen uit een string
 weight: 9
 ---

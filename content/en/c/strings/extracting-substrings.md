@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 17:50:12.750500-07:00
-description: "Extracting substrings in C involves creating a smaller string (substring)\
-  \ from a larger string based on specified criteria, such as position and length.\u2026"
+description: "How to: Unlike some higher-level languages that provide built-in methods\
+  \ for substring extraction, C requires a more manual approach using its string\u2026"
 lastmod: '2024-03-13T22:45:00.501817-06:00'
 model: gpt-4-0125-preview
-summary: Extracting substrings in C involves creating a smaller string (substring)
-  from a larger string based on specified criteria, such as position and length.
+summary: Unlike some higher-level languages that provide built-in methods for substring
+  extraction, C requires a more manual approach using its string manipulation functions.
 title: Extracting substrings
 weight: 6
 ---

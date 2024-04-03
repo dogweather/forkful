@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:29.451533-07:00
-description: "Att organisera kod i funktioner handlar om att strukturera din Google\
-  \ Apps Script-kod genom att separera logiska segment till distinkta block, d\xE4\
-  r varje\u2026"
+description: "Hur: I Google Apps Script, som bygger p\xE5 JavaScript, definierar du\
+  \ funktioner med nyckelordet `function`, f\xF6ljt av ett unikt funktionsnamn, parenteser\u2026"
 lastmod: '2024-03-13T22:44:37.444771-06:00'
 model: gpt-4-0125-preview
-summary: "Att organisera kod i funktioner handlar om att strukturera din Google Apps\
-  \ Script-kod genom att separera logiska segment till distinkta block, d\xE4r varje\
-  \ block utf\xF6r en specifik uppgift."
+summary: "I Google Apps Script, som bygger p\xE5 JavaScript, definierar du funktioner\
+  \ med nyckelordet `function`, f\xF6ljt av ett unikt funktionsnamn, parenteser `()`\
+  \ som kan inneh\xE5lla parametrar, och m\xE5svingar `{}` som inkapslar funktionens\
+  \ kodblock."
 title: Att organisera kod i funktioner
 weight: 18
 ---

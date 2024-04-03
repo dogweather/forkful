@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:10.162738-07:00
-description: "Das Parsen eines Datums aus einem String besteht darin, Text, der ein\
-  \ Datum repr\xE4sentiert, in ein `Date`- oder `DateTime`-Objekt umzuwandeln, das\
-  \ Ruby\u2026"
+description: "Wie: In Ruby bietet die Standardbibliothek direkte Wege, um Daten aus\
+  \ Strings mithilfe der Klassen `Date` und `DateTime` zu parsen. Hier ist, wie man\
+  \ es\u2026"
 lastmod: '2024-03-13T22:44:54.409701-06:00'
 model: gpt-4-0125-preview
-summary: "Das Parsen eines Datums aus einem String besteht darin, Text, der ein Datum\
-  \ repr\xE4sentiert, in ein `Date`- oder `DateTime`-Objekt umzuwandeln, das Ruby\
-  \ versteht."
+summary: In Ruby bietet die Standardbibliothek direkte Wege, um Daten aus Strings
+  mithilfe der Klassen `Date` und `DateTime` zu parsen.
 title: Einen Datum aus einem String analysieren
 weight: 30
 ---

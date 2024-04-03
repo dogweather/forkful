@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 18:03:38.595870-07:00
-description: "Come\xE7ar um novo projeto \xE9 como abrir um livro em branco, onde\
-  \ voc\xEA pode escrever seus c\xF3digos do jeito que bem entender. Programadores\
-  \ fazem isso para\u2026"
+description: "Como Fazer: Vamos criar uma estrutura de diret\xF3rios para um novo\
+  \ projeto em Fish Shell. R\xE1pido, f\xE1cil e direto ao ponto."
 lastmod: '2024-03-13T22:44:47.006686-06:00'
 model: gpt-4-1106-preview
-summary: "Come\xE7ar um novo projeto \xE9 como abrir um livro em branco, onde voc\xEA\
-  \ pode escrever seus c\xF3digos do jeito que bem entender."
+summary: "Vamos criar uma estrutura de diret\xF3rios para um novo projeto em Fish\
+  \ Shell."
 title: Iniciando um novo projeto
 weight: 1
 ---

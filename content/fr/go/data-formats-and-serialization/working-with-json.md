@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:54.862603-07:00
-description: "Travailler avec le JSON (JavaScript Object Notation) en Go implique\
-  \ l'encodage et le d\xE9codage des donn\xE9es entre les structures de donn\xE9es\
-  \ Go et le format\u2026"
+description: "Comment faire : En Go, le package `encoding/json` est votre porte d'entr\xE9\
+  e pour la manipulation du JSON, offrant des m\xE9canismes pour convertir les\u2026"
 lastmod: '2024-03-13T22:44:57.159240-06:00'
 model: gpt-4-0125-preview
-summary: "Travailler avec le JSON (JavaScript Object Notation) en Go implique l'encodage\
-  \ et le d\xE9codage des donn\xE9es entre les structures de donn\xE9es Go et le format\
-  \ JSON."
+summary: "En Go, le package `encoding/json` est votre porte d'entr\xE9e pour la manipulation\
+  \ du JSON, offrant des m\xE9canismes pour convertir les structures de donn\xE9es\
+  \ Go en JSON (marshalling) et vice versa (unmarshalling)."
 title: Travailler avec JSON
 weight: 38
 ---

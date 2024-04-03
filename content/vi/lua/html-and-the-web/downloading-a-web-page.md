@@ -2,14 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:27.603868-07:00
-description: "T\u1EA3i m\u1ED9t trang web ngh\u0129a l\xE0 l\u1EA5y n\u1ED9i dung\
-  \ HTML t\u1EEB internet th\xF4ng qua URL c\u1EE7a n\xF3. C\xE1c l\u1EADp tr\xEC\
-  nh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 ph\xE2n t\xEDch n\u1ED9i dung\
-  \ web, t\u1EF1 \u0111\u1ED9ng h\xF3a c\xE1c\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Lua kh\xF4ng \u0111\u01B0\u1EE3c trang b\u1ECB\
+  \ s\u1EB5n cho c\xE1c t\xE1c v\u1EE5 web, nh\u01B0ng v\u1EDBi th\u01B0 vi\u1EC7\
+  n `socket` v\xE0 module `http`, vi\u1EC7c n\xE0y tr\u1EDF n\xEAn d\u1EC5 d\xE0ng.\
+  \ D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t v\xED d\u1EE5\u2026"
 lastmod: '2024-03-13T22:44:36.820892-06:00'
 model: gpt-4-0125-preview
-summary: "T\u1EA3i m\u1ED9t trang web ngh\u0129a l\xE0 l\u1EA5y n\u1ED9i dung HTML\
-  \ t\u1EEB internet th\xF4ng qua URL c\u1EE7a n\xF3."
+summary: "Lua kh\xF4ng \u0111\u01B0\u1EE3c trang b\u1ECB s\u1EB5n cho c\xE1c t\xE1\
+  c v\u1EE5 web, nh\u01B0ng v\u1EDBi th\u01B0 vi\u1EC7n `socket` v\xE0 module `http`,\
+  \ vi\u1EC7c n\xE0y tr\u1EDF n\xEAn d\u1EC5 d\xE0ng."
 title: "T\u1EA3i trang web"
 weight: 42
 ---

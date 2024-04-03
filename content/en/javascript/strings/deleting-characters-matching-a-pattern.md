@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 17:42:19.091714-07:00
-description: "Removing characters based on a pattern makes strings clean and uniform.\
-  \ Programmers do this for formatting, removing unwanted characters, or for\u2026"
+description: 'How to: Use `replace()` with a regular expression. The `g` flag replaces
+  all matches, not just the first.'
 lastmod: '2024-03-13T22:45:00.419298-06:00'
 model: gpt-4-1106-preview
-summary: Removing characters based on a pattern makes strings clean and uniform.
+summary: Use `replace()` with a regular expression.
 title: Deleting characters matching a pattern
 weight: 5
 ---

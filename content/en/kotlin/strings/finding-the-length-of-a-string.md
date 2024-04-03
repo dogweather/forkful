@@ -1,10 +1,9 @@
 ---
 date: 2024-01-20 17:47:44.518007-07:00
-description: Finding a string's length means counting its characters. Programmers
-  do this to validate input, loop through characters, or allocate storage.
+description: 'How to: .'
 lastmod: '2024-03-13T22:45:00.040435-06:00'
 model: gpt-4-1106-preview
-summary: Finding a string's length means counting its characters.
+summary: .
 title: Finding the length of a string
 weight: 7
 ---

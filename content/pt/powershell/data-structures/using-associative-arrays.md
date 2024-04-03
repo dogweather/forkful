@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:31.355006-07:00
-description: "Arrays associativos, tamb\xE9m conhecidos como tabelas hash ou dicion\xE1\
-  rios no PowerShell, permitem armazenar dados em pares chave-valor, tornando a\u2026"
+description: "Como Fazer: Criar e usar arrays associativos no PowerShell \xE9 bastante\
+  \ direto. Veja como fazer a m\xE1gica: **Criando um array associativo:**."
 lastmod: '2024-03-13T22:44:46.788218-06:00'
 model: gpt-4-0125-preview
-summary: "Arrays associativos, tamb\xE9m conhecidos como tabelas hash ou dicion\xE1\
-  rios no PowerShell, permitem armazenar dados em pares chave-valor, tornando a recupera\xE7\
-  \xE3o de dados direta e eficiente."
+summary: "Criar e usar arrays associativos no PowerShell \xE9 bastante direto."
 title: Usando arrays associativos
 weight: 15
 ---

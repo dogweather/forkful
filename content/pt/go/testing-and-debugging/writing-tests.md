@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:05.347340-07:00
-description: "Escrever testes em Go envolve criar peda\xE7os de c\xF3digo pequenos\
-  \ e gerenci\xE1veis que validam a funcionalidade e o comportamento da sua aplica\xE7\
-  \xE3o.\u2026"
+description: "Como fazer: Em Go, os testes s\xE3o tipicamente escritos no mesmo pacote\
+  \ do c\xF3digo que eles testam. Arquivos contendo testes s\xE3o nomeados com o sufixo\u2026"
 lastmod: '2024-03-13T22:44:46.064647-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever testes em Go envolve criar peda\xE7os de c\xF3digo pequenos e gerenci\xE1\
-  veis que validam a funcionalidade e o comportamento da sua aplica\xE7\xE3o."
+summary: "Em Go, os testes s\xE3o tipicamente escritos no mesmo pacote do c\xF3digo\
+  \ que eles testam."
 title: Escrevendo testes
 weight: 36
 ---

@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:38.735984-07:00
-description: "Loggen in de context van programmeren is het proces van het vastleggen\
-  \ van gebeurtenissen, toestanden en informatie in een bestand of een ander\u2026"
+description: "Hoe: Stel je voor dat je aan een Linux box werkt en je wilt je logs\
+  \ in een bestand gooien met goed 'ol C++. Je wilt de bibliotheken `<iostream>` en\u2026"
 lastmod: '2024-03-13T22:44:51.119385-06:00'
 model: gpt-4-0125-preview
-summary: Loggen in de context van programmeren is het proces van het vastleggen van
-  gebeurtenissen, toestanden en informatie in een bestand of een ander uitvoermedium.
+summary: Stel je voor dat je aan een Linux box werkt en je wilt je logs in een bestand
+  gooien met goed 'ol C++.
 title: Logboekregistratie
 weight: 17
 ---

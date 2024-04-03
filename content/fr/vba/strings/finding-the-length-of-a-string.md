@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:52.677381-07:00
-description: "Trouver la longueur d'une cha\xEEne de caract\xE8res en Visual Basic\
-  \ pour Applications (VBA) consiste \xE0 d\xE9terminer le nombre de caract\xE8res\
-  \ qu'elle contient. Les\u2026"
+description: "Comment : En VBA, la fonction `Len` est votre atout pour trouver la\
+  \ longueur d'une cha\xEEne. Elle retourne un entier repr\xE9sentant le nombre de\
+  \ caract\xE8res\u2026"
 lastmod: '2024-03-13T22:44:57.546194-06:00'
 model: gpt-4-0125-preview
-summary: "Trouver la longueur d'une cha\xEEne de caract\xE8res en Visual Basic pour\
-  \ Applications (VBA) consiste \xE0 d\xE9terminer le nombre de caract\xE8res qu'elle\
-  \ contient."
+summary: "En VBA, la fonction `Len` est votre atout pour trouver la longueur d'une\
+  \ cha\xEEne."
 title: "Trouver la longueur d'une cha\xEEne"
 weight: 7
 ---

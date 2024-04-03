@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:38:07.856487-07:00
-description: "Konwersja tekstu do ma\u0142ych liter polega na zmianie wszystkich wielkich\
-  \ liter w ci\u0105gu znak\xF3w na ich ma\u0142e odpowiedniki. Programi\u015Bci u\u017C\
-  ywaj\u0105 tej operacji, by\u2026"
+description: "How to: (Jak to zrobi\u0107:) Elm u\u017Cywa funkcji `String.toLower`\
+  \ do konwersji tekst\xF3w. Oto przyk\u0142ad z wykorzystaniem."
 lastmod: '2024-03-13T22:44:35.308064-06:00'
 model: gpt-4-1106-preview
-summary: "Konwersja tekstu do ma\u0142ych liter polega na zmianie wszystkich wielkich\
-  \ liter w ci\u0105gu znak\xF3w na ich ma\u0142e odpowiedniki."
+summary: "Elm u\u017Cywa funkcji `String.toLower` do konwersji tekst\xF3w."
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---

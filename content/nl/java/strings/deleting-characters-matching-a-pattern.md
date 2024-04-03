@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:55.091359-07:00
-description: "Het verwijderen van tekens die overeenkomen met een patroon gaat over\
-  \ het vinden van specifieke reeksen tekens in een string en deze wegdoen. Programmeurs\u2026"
+description: 'Hoe: In Java gebruiken we vaak de methode `String.replaceAll()` met
+  een regex-patroon om tekens te verwijderen. Hier is een snel voorbeeld.'
 lastmod: '2024-03-13T22:44:50.664700-06:00'
 model: gpt-4-0125-preview
-summary: Het verwijderen van tekens die overeenkomen met een patroon gaat over het
-  vinden van specifieke reeksen tekens in een string en deze wegdoen.
+summary: In Java gebruiken we vaak de methode `String.replaceAll()` met een regex-patroon
+  om tekens te verwijderen.
 title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---

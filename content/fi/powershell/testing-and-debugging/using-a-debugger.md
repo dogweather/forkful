@@ -1,8 +1,8 @@
 ---
 date: 2024-01-26 04:09:01.050958-07:00
-description: "PowerShellissa voit debugata skriptej\xE4 k\xE4ytt\xE4m\xE4ll\xE4 sis\xE4\
-  \xE4nrakennettua PowerShell Integrated Scripting Environment (ISE) -ymp\xE4rist\xF6\
-  \xE4 tai Visual Studio Code\u2026"
+description: "Kuinka: PowerShellissa voit debugata skriptej\xE4 k\xE4ytt\xE4m\xE4\
+  ll\xE4 sis\xE4\xE4nrakennettua PowerShell Integrated Scripting Environment (ISE)\
+  \ -ymp\xE4rist\xF6\xE4 tai Visual\u2026"
 lastmod: '2024-03-13T22:44:56.786931-06:00'
 model: gpt-4-0125-preview
 summary: "PowerShellissa voit debugata skriptej\xE4 k\xE4ytt\xE4m\xE4ll\xE4 sis\xE4\

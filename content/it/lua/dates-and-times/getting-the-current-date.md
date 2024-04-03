@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:10.154747-07:00
-description: "Il recupero della data corrente nella programmazione \xE8 un compito\
-  \ cruciale per una moltitudine di applicazioni, inclusi i registri degli eventi,\
-  \ la\u2026"
+description: "Come fare: Lua offre la funzione `os.date` per ottenere la data e l\u2019\
+  ora correnti. La funzione pu\xF2 essere utilizzata senza argomenti per ottenere\
+  \ una\u2026"
 lastmod: '2024-03-13T22:44:43.567847-06:00'
 model: gpt-4-0125-preview
-summary: "Il recupero della data corrente nella programmazione \xE8 un compito cruciale\
-  \ per una moltitudine di applicazioni, inclusi i registri degli eventi, la marcatura\
-  \ temporale (timestamping) degli eventi o la pianificazione delle attivit\xE0."
+summary: "Lua offre la funzione `os.date` per ottenere la data e l\u2019ora correnti."
 title: Ottenere la data corrente
 weight: 29
 ---

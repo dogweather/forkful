@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 17:50:21.167265-07:00
-description: "L'interpolazione di stringhe consente di inserire variabili dentro una\
-  \ stringa di testo. Lo facciamo per rendere il codice pi\xF9 leggibile e per comporre\u2026"
+description: "How to: (Come fare:) In Arduino, l'interpolazione diretta di stringhe\
+  \ non \xE8 supportata come in altri linguaggi, ma possiamo raggiungere lo stesso\u2026"
 lastmod: '2024-03-13T22:44:43.670109-06:00'
 model: gpt-4-1106-preview
-summary: L'interpolazione di stringhe consente di inserire variabili dentro una stringa
-  di testo.
+summary: "In Arduino, l'interpolazione diretta di stringhe non \xE8 supportata come\
+  \ in altri linguaggi, ma possiamo raggiungere lo stesso risultato con `sprintf()`\
+  \ o concatenando stringhe."
 title: Interpolazione di una stringa
 weight: 8
 ---

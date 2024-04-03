@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:37:05.330262-07:00
-description: "\xC5 konvertere datoer til strenger gj\xF8r det enkelt \xE5 lese og\
-  \ vise datoer for brukere. Programmerere gj\xF8r dette for \xE5 formatere eller\
-  \ lagre datoer som tekst\u2026"
+description: "Hvordan gj\xF8re det: ."
 lastmod: '2024-03-13T22:44:41.194905-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 konvertere datoer til strenger gj\xF8r det enkelt \xE5 lese og vise\
-  \ datoer for brukere."
+summary: .
 title: Konvertere en dato til en streng
 weight: 28
 ---

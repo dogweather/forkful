@@ -2,19 +2,16 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:09.496667-07:00
-description: "L\xE0m tr\xF2n s\u1ED1 l\xE0 qu\xE1 tr\xECnh \u0111i\u1EC1u ch\u1EC9\
-  nh c\xE1c ch\u1EEF s\u1ED1 c\u1EE7a m\u1ED9t s\u1ED1 \u0111\u1EC3 gi\u1EA3m \u0111\
-  \u1ED9 ch\xEDnh x\xE1c theo nh\u1EEFng quy t\u1EAFc nh\u1EA5t \u0111\u1ECBnh, ho\u1EB7\
-  c v\u1EC1 ph\xEDa s\u1ED1 nguy\xEAn g\u1EA7n nh\u1EA5t ho\u1EB7c m\u1ED9t s\u1ED1\
-  \u2026"
+description: "L\xE0m th\u1EBF n\xE0o: L\xE0m tr\xF2n s\u1ED1 trong C c\xF3 th\u1EC3\
+  \ \u0111\u01B0\u1EE3c ho\xE0n th\xE0nh b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng c\xE1\
+  c h\xE0m kh\xE1c nhau, nh\u01B0ng ph\u01B0\u01A1ng ph\xE1p ph\u1ED5 bi\u1EBFn nh\u1EA5\
+  t bao g\u1ED3m vi\u1EC7c s\u1EED d\u1EE5ng c\xE1c h\xE0m\u2026"
 lastmod: '2024-03-13T22:44:37.260695-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m tr\xF2n s\u1ED1 l\xE0 qu\xE1 tr\xECnh \u0111i\u1EC1u ch\u1EC9nh c\xE1\
-  c ch\u1EEF s\u1ED1 c\u1EE7a m\u1ED9t s\u1ED1 \u0111\u1EC3 gi\u1EA3m \u0111\u1ED9\
-  \ ch\xEDnh x\xE1c theo nh\u1EEFng quy t\u1EAFc nh\u1EA5t \u0111\u1ECBnh, ho\u1EB7\
-  c v\u1EC1 ph\xEDa s\u1ED1 nguy\xEAn g\u1EA7n nh\u1EA5t ho\u1EB7c m\u1ED9t s\u1ED1\
-  \ l\u01B0\u1EE3ng ch\u1EEF s\u1ED1 th\u1EADp ph\xE2n \u0111\u01B0\u1EE3c ch\u1EC9\
-  \ \u0111\u1ECBnh."
+summary: "L\xE0m tr\xF2n s\u1ED1 trong C c\xF3 th\u1EC3 \u0111\u01B0\u1EE3c ho\xE0\
+  n th\xE0nh b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng c\xE1c h\xE0m kh\xE1c nhau, nh\u01B0\
+  ng ph\u01B0\u01A1ng ph\xE1p ph\u1ED5 bi\u1EBFn nh\u1EA5t bao g\u1ED3m vi\u1EC7c\
+  \ s\u1EED d\u1EE5ng c\xE1c h\xE0m `floor()`, `ceil()`, v\xE0 `round()`."
 title: "L\xE0m tr\xF2n s\u1ED1"
 weight: 13
 ---

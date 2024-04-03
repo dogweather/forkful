@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:13.438456-07:00
-description: "Att kontrollera om en katalog finns handlar om att avg\xF6ra n\xE4rvaron\
-  \ av en katalog p\xE5 en specificerad s\xF6kv\xE4g innan man utf\xF6r operationer\
-  \ som att l\xE4sa fr\xE5n\u2026"
+description: "Hur: I modern C++ (C++17 och senare) kan du anv\xE4nda filsystembiblioteket\
+  \ f\xF6r att kontrollera om en katalog finns. Det erbjuder ett enkelt och\u2026"
 lastmod: '2024-03-13T22:44:38.223764-06:00'
 model: gpt-4-0125-preview
-summary: "Att kontrollera om en katalog finns handlar om att avg\xF6ra n\xE4rvaron\
-  \ av en katalog p\xE5 en specificerad s\xF6kv\xE4g innan man utf\xF6r operationer\
-  \ som att l\xE4sa fr\xE5n eller skriva till filer inuti den."
+summary: "I modern C++ (C++17 och senare) kan du anv\xE4nda filsystembiblioteket f\xF6\
+  r att kontrollera om en katalog finns."
 title: Kontrollera om en katalog existerar
 weight: 20
 ---

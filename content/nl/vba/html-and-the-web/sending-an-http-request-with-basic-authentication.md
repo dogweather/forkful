@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:26.826001-07:00
-description: "Het versturen van een HTTP-verzoek met basisauthenticatie in Visual\
-  \ Basic for Applications (VBA) gaat over het toegang krijgen tot webbronnen die\
-  \ zijn\u2026"
+description: "Hoe: In VBA kunt u de `Microsoft XML, v6.0` (MSXML2) bibliotheek gebruiken\
+  \ om HTTP-verzoeken met basisauthenticatie te verzenden. Dit houdt in dat u de\u2026"
 lastmod: '2024-03-13T22:44:50.636421-06:00'
 model: gpt-4-0125-preview
-summary: Het versturen van een HTTP-verzoek met basisauthenticatie in Visual Basic
-  for Applications (VBA) gaat over het toegang krijgen tot webbronnen die zijn beveiligd
-  met gebruikersnaam- en wachtwoordgegevens.
+summary: In VBA kunt u de `Microsoft XML, v6.0` (MSXML2) bibliotheek gebruiken om
+  HTTP-verzoeken met basisauthenticatie te verzenden.
 title: Een HTTP-verzoek verzenden met basisauthenticatie
 weight: 45
 ---

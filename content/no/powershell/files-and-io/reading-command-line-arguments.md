@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:56:27.305696-07:00
-description: "Kommandolinjeargumenter lar brukere gi input til et skript n\xE5r de\
-  \ kj\xF8rer det. Programmerere bruker dette for \xE5 lage fleksible og tilpassbare\
-  \ scripts."
+description: 'Hvordan: .'
 lastmod: '2024-03-13T22:44:41.032519-06:00'
 model: gpt-4-1106-preview
-summary: "Kommandolinjeargumenter lar brukere gi input til et skript n\xE5r de kj\xF8\
-  rer det."
+summary: .
 title: Lese kommandolinjeargumenter
 weight: 23
 ---

@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 01:07:10.640785-07:00
-description: "El registro (logging) es la pr\xE1ctica de grabar eventos, errores y\
-  \ otros puntos de datos significativos que ocurren dentro del ciclo de vida de una\u2026"
+description: "C\xF3mo hacerlo: Lua no cuenta con un marco de trabajo de registro incorporado,\
+  \ pero implementar una funci\xF3n de registro simple es sencillo. A continuaci\xF3\
+  n\u2026"
 lastmod: '2024-03-13T22:44:59.208357-06:00'
 model: gpt-4-1106-preview
-summary: "El registro (logging) es la pr\xE1ctica de grabar eventos, errores y otros\
-  \ puntos de datos significativos que ocurren dentro del ciclo de vida de una aplicaci\xF3\
-  n de software."
+summary: "Lua no cuenta con un marco de trabajo de registro incorporado, pero implementar\
+  \ una funci\xF3n de registro simple es sencillo."
 title: Registro de Actividades
 weight: 17
 ---

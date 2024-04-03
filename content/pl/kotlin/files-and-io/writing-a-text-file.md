@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:22.003528-07:00
-description: "Pisanie pliku tekstowego w Kotlinie polega na utworzeniu pliku i wprowadzeniu\
-  \ do niego tre\u015Bci tekstowej, co jest powszechnym zadaniem do przechowywania\u2026"
+description: "Jak to zrobi\u0107: Kotlin oferuje prost\u0105 metod\u0119 zapisywania\
+  \ do plik\xF3w, wykorzystuj\u0105c standardow\u0105 bibliotek\u0119 bez potrzeby\
+  \ dodatkowych bibliotek stron trzecich.\u2026"
 lastmod: '2024-03-13T22:44:35.383539-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie pliku tekstowego w Kotlinie polega na utworzeniu pliku i wprowadzeniu\
-  \ do niego tre\u015Bci tekstowej, co jest powszechnym zadaniem do przechowywania\
-  \ danych, logowania lub ustawie\u0144 konfiguracyjnych."
+summary: "Kotlin oferuje prost\u0105 metod\u0119 zapisywania do plik\xF3w, wykorzystuj\u0105\
+  c standardow\u0105 bibliotek\u0119 bez potrzeby dodatkowych bibliotek stron trzecich."
 title: Pisanie pliku tekstowego
 weight: 24
 ---

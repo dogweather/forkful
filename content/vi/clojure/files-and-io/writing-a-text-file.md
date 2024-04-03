@@ -2,17 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:36.405998-07:00
-description: "Vi\u1EC7c vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n bao g\u1ED3\
-  m vi\u1EC7c t\u1EA1o ho\u1EB7c thay \u0111\u1ED5i d\u1EEF li\u1EC7u v\u0103n b\u1EA3\
-  n v\xE0 l\u01B0u n\xF3 v\xE0o m\u1ED9t t\u1EC7p tr\xEAn ph\u01B0\u01A1ng ti\u1EC7\
-  n l\u01B0u tr\u1EEF c\u1EE7a b\u1EA1n. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7\
-  n\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong Clojure, b\u1EA1n s\u1EED d\u1EE5\
+  ng h\xE0m `spit` \u0111\u1EC3 vi\u1EBFt d\u1EEF li\u1EC7u v\xE0o m\u1ED9t t\u1EC7\
+  p v\u0103n b\u1EA3n. N\xF3 r\u1EA5t \u0111\u01A1n gi\u1EA3n."
 lastmod: '2024-03-13T22:44:36.177442-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n bao g\u1ED3m vi\u1EC7\
-  c t\u1EA1o ho\u1EB7c thay \u0111\u1ED5i d\u1EEF li\u1EC7u v\u0103n b\u1EA3n v\xE0\
-  \ l\u01B0u n\xF3 v\xE0o m\u1ED9t t\u1EC7p tr\xEAn ph\u01B0\u01A1ng ti\u1EC7n l\u01B0\
-  u tr\u1EEF c\u1EE7a b\u1EA1n."
+summary: "Trong Clojure, b\u1EA1n s\u1EED d\u1EE5ng h\xE0m `spit` \u0111\u1EC3 vi\u1EBF\
+  t d\u1EEF li\u1EC7u v\xE0o m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n."
 title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 24
 ---

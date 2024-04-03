@@ -2,14 +2,10 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:53:39.954536-07:00
-description: "Capitaliser une cha\xEEne de caract\xE8res consiste \xE0 modifier la\
-  \ premi\xE8re lettre d'un mot ou d'une phrase enti\xE8re en majuscule, tout en gardant\
-  \ le reste des\u2026"
+description: 'Comment faire : #.'
 lastmod: '2024-03-13T22:44:57.355028-06:00'
 model: gpt-4-0125-preview
-summary: "Capitaliser une cha\xEEne de caract\xE8res consiste \xE0 modifier la premi\xE8\
-  re lettre d'un mot ou d'une phrase enti\xE8re en majuscule, tout en gardant le reste\
-  \ des caract\xE8res tels quels."
+summary: '#.'
 title: "Mettre une cha\xEEne de caract\xE8res en majuscules"
 weight: 2
 ---

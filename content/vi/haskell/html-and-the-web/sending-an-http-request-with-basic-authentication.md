@@ -2,10 +2,17 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:20.542826-07:00
-description: ''
+description: "L\xE0m g\xEC & T\u1EA1i sao? G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP\
+  \ v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3n c\xF3 ngh\u0129a l\xE0 ch\u01B0\u01A1\
+  ng tr\xECnh c\u1EE7a b\u1EA1n g\xF5 c\u1EEDa d\u1ECBch v\u1EE5 web, truy\u1EC1n\
+  \ t\xE0i kho\u1EA3n ng\u01B0\u1EDDi d\xF9ng v\xE0 m\u1EADt kh\u1EA9u \u0111\u1EC3\
+  \u2026"
 lastmod: '2024-03-13T22:44:36.711861-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1\
+  \ b\u1EA3n c\xF3 ngh\u0129a l\xE0 ch\u01B0\u01A1ng tr\xECnh c\u1EE7a b\u1EA1n g\xF5\
+  \ c\u1EEDa d\u1ECBch v\u1EE5 web, truy\u1EC1n t\xE0i kho\u1EA3n ng\u01B0\u1EDDi\
+  \ d\xF9ng v\xE0 m\u1EADt kh\u1EA9u \u0111\u1EC3 v\xE0o."
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3\
   n"
 weight: 45

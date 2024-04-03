@@ -1,11 +1,9 @@
 ---
 date: 2024-01-26 04:34:17.939098-07:00
-description: "XML \xE8 un linguaggio di markup utilizzato per memorizzare e trasportare\
-  \ dati. I programmatori lavorano con XML per consentire l'interoperabilit\xE0 tra\u2026"
+description: 'Come fare: Leggere XML con SimpleXML.'
 lastmod: '2024-03-13T22:44:43.541492-06:00'
 model: gpt-4-0125-preview
-summary: "XML \xE8 un linguaggio di markup utilizzato per memorizzare e trasportare\
-  \ dati."
+summary: Leggere XML con SimpleXML.
 title: Lavorare con XML
 weight: 40
 ---

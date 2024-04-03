@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:19.033902-07:00
-description: "HTTP-pyynn\xF6n l\xE4hett\xE4minen Google Apps Scriptill\xE4 tarkoittaa\
-  \ ohjelmallisesti kutsun tekemist\xE4 ulkoiselle verkkopalvelimelle tai API:lle.\
-  \ Ohjelmoijat\u2026"
+description: "Kuinka: Google Apps Scriptiss\xE4 HTTP-pyynn\xF6n l\xE4hett\xE4misen\
+  \ ensisijainen keino on k\xE4ytt\xE4m\xE4ll\xE4 `UrlFetchApp`-palvelua. T\xE4m\xE4\
+  \ palvelu tarjoaa metodeja HTTP GET-\u2026"
 lastmod: '2024-03-13T22:44:56.092949-06:00'
 model: gpt-4-0125-preview
-summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen Google Apps Scriptill\xE4 tarkoittaa\
-  \ ohjelmallisesti kutsun tekemist\xE4 ulkoiselle verkkopalvelimelle tai API:lle."
+summary: "Google Apps Scriptiss\xE4 HTTP-pyynn\xF6n l\xE4hett\xE4misen ensisijainen\
+  \ keino on k\xE4ytt\xE4m\xE4ll\xE4 `UrlFetchApp`-palvelua."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---

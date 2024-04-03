@@ -2,14 +2,13 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:31.633648-07:00
-description: "Assoziative Arrays, bekannt als `std::map` oder `std::unordered_map`\
-  \ in C++, schlie\xDFen die L\xFCcke zwischen Array-Indizes und realen Daten, indem\
-  \ sie es\u2026"
+description: "Wie geht das: In C++ werden assoziative Arrays mit den Headern `<map>`\
+  \ und `<unordered_map>` lebensf\xE4hig. Lassen Sie uns anhand von Beispielen beide\
+  \ in\u2026"
 lastmod: '2024-03-13T22:44:54.177491-06:00'
 model: gpt-4-0125-preview
-summary: "Assoziative Arrays, bekannt als `std::map` oder `std::unordered_map` in\
-  \ C++, schlie\xDFen die L\xFCcke zwischen Array-Indizes und realen Daten, indem\
-  \ sie es Ihnen erm\xF6glichen, aussagekr\xE4ftige Schl\xFCssel zu verwenden."
+summary: "In C++ werden assoziative Arrays mit den Headern `<map>` und `<unordered_map>`\
+  \ lebensf\xE4hig."
 title: Verwendung von assoziativen Arrays
 weight: 15
 ---

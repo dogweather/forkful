@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:27.600328-07:00
-description: "Een datum naar een tekenreeks converteren betekent het vertegenwoordigen\
-  \ van een datumobject als leesbare tekst die een specifiek patroon volgt.\u2026"
+description: "Hoe: Java maakt de conversie van datum naar tekenreeks eenvoudig. De\
+  \ klasse `java.time.format.DateTimeFormatter` is je eerste keuze. Hier is een\u2026"
 lastmod: '2024-03-13T22:44:50.694071-06:00'
 model: gpt-4-0125-preview
-summary: Een datum naar een tekenreeks converteren betekent het vertegenwoordigen
-  van een datumobject als leesbare tekst die een specifiek patroon volgt.
+summary: Java maakt de conversie van datum naar tekenreeks eenvoudig.
 title: Een datum converteren naar een string
 weight: 28
 ---

@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 17:45:14.371612-07:00
-description: "Extrair substrings significa pegar peda\xE7os de uma string. Programadores\
-  \ fazem isso para manipular e analisar dados mais facilmente."
+description: "Como fazer: Vamos direto ao c\xF3digo. Suponha que voc\xEA quer pegar\
+  \ um peda\xE7o da string \"Bash \xE9 demais!\"."
 lastmod: '2024-03-13T22:44:46.740017-06:00'
 model: gpt-4-1106-preview
-summary: "Extrair substrings significa pegar peda\xE7os de uma string."
+summary: "Vamos direto ao c\xF3digo."
 title: Extraindo substrings
 weight: 6
 ---

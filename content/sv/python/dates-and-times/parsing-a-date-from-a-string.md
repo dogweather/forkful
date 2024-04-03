@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:01.638253-07:00
-description: "Att tolka ett datum fr\xE5n en str\xE4ng inneb\xE4r att konvertera textuell\
-  \ datum- och tidsinformation till ett datetime-objekt eller motsvarande strukturerat\u2026"
+description: "Hur: Pythons standardbibliotek tillhandah\xE5ller `datetime`-modulen,\
+  \ som inkluderar metoden `strptime` f\xF6r detta \xE4ndam\xE5l. Metoden kr\xE4ver\
+  \ tv\xE5 argument:\u2026"
 lastmod: '2024-03-13T22:44:37.492352-06:00'
 model: gpt-4-0125-preview
-summary: "Att tolka ett datum fr\xE5n en str\xE4ng inneb\xE4r att konvertera textuell\
-  \ datum- och tidsinformation till ett datetime-objekt eller motsvarande strukturerat\
-  \ format."
+summary: "Pythons standardbibliotek tillhandah\xE5ller `datetime`-modulen, som inkluderar\
+  \ metoden `strptime` f\xF6r detta \xE4ndam\xE5l."
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---

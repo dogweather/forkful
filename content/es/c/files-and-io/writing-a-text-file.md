@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:16.713003-07:00
-description: "Escribir un archivo de texto en C implica crear o abrir un archivo en\
-  \ modo de escritura y luego usar las funciones de E/S de archivos de C para guardar\u2026"
+description: "C\xF3mo: Para escribir texto en un archivo en C, principalmente necesitas\
+  \ estar familiarizado con las funciones `fopen()`, `fprintf()`, `fputs()` y\u2026"
 lastmod: '2024-03-13T22:44:59.565895-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir un archivo de texto en C implica crear o abrir un archivo en modo\
-  \ de escritura y luego usar las funciones de E/S de archivos de C para guardar datos\
-  \ de texto en \xE9l."
+summary: Para escribir texto en un archivo en C, principalmente necesitas estar familiarizado
+  con las funciones `fopen()`, `fprintf()`, `fputs()` y `fclose()`.
 title: Escribiendo un archivo de texto
 weight: 24
 ---

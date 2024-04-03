@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 04:15:21.503483-07:00
-description: "REPL (Read-Eval-Print Loop), czyli p\u0119tla czytaj-wykonaj-drukuj,\
-  \ to interaktywna pow\u0142oka, kt\xF3ra przetwarza pojedyncze wej\u015Bcia u\u017C\
-  ytkownika, wykonuje kod i\u2026"
+description: "Jak to zrobi\u0107: Uruchomienie REPL w Javie jest proste dzi\u0119\
+  ki narz\u0119dziu `jshell` wprowadzonemu w Java 9. Oto jak si\u0119 za to zabra\u0107\
+  \ i rozpocz\u0105\u0107 podstawow\u0105\u2026"
 lastmod: '2024-03-13T22:44:35.278928-06:00'
 model: gpt-4-0125-preview
-summary: "REPL (Read-Eval-Print Loop), czyli p\u0119tla czytaj-wykonaj-drukuj, to\
-  \ interaktywna pow\u0142oka, kt\xF3ra przetwarza pojedyncze wej\u015Bcia u\u017C\
-  ytkownika, wykonuje kod i zwraca wynik."
+summary: "Uruchomienie REPL w Javie jest proste dzi\u0119ki narz\u0119dziu `jshell`\
+  \ wprowadzonemu w Java 9."
 title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---

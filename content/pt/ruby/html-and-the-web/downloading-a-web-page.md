@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:44:36.945852-07:00
-description: "Baixar uma p\xE1gina da web \xE9 simplesmente o ato de obter o conte\xFA\
-  do HTML dessa p\xE1gina para seu uso local. Programadores fazem isso para an\xE1\
-  lise de dados,\u2026"
+description: "Como Fazer: Vamos usar a gema 'net/http' para baixar o conte\xFAdo de\
+  \ uma p\xE1gina da web."
 lastmod: '2024-03-13T22:44:47.094255-06:00'
 model: gpt-4-1106-preview
-summary: "Baixar uma p\xE1gina da web \xE9 simplesmente o ato de obter o conte\xFA\
-  do HTML dessa p\xE1gina para seu uso local."
+summary: "Vamos usar a gema 'net/http' para baixar o conte\xFAdo de uma p\xE1gina\
+  \ da web."
 title: "Baixando uma p\xE1gina da web"
 weight: 42
 ---

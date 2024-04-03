@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:03.149326-07:00
-description: "YAML, joka tarkoittaa \"YAML Ain't Markup Language\", on eritt\xE4in\
-  \ luettavissa oleva datan serialisointimuoto, jota k\xE4ytet\xE4\xE4n usein asetustiedostoissa,\
-  \ datan\u2026"
+description: "Kuinka: Kotlin ei tue sis\xE4\xE4nrakennettuna YAML:n j\xE4sennyst\xE4\
+  \ ja serialisointia, mutta voit hy\xF6dynt\xE4\xE4 suosittuja kolmannen osapuolen\
+  \ kirjastoja, kuten\u2026"
 lastmod: '2024-03-13T22:44:56.551625-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, joka tarkoittaa \"YAML Ain't Markup Language\", on eritt\xE4in luettavissa\
-  \ oleva datan serialisointimuoto, jota k\xE4ytet\xE4\xE4n usein asetustiedostoissa,\
-  \ datan tallennuksessa ja prosessien v\xE4lisess\xE4 viestinn\xE4ss\xE4."
+summary: "Kotlin ei tue sis\xE4\xE4nrakennettuna YAML:n j\xE4sennyst\xE4 ja serialisointia,\
+  \ mutta voit hy\xF6dynt\xE4\xE4 suosittuja kolmannen osapuolen kirjastoja, kuten\
+  \ `snakeyaml` (yleiseen YAML-j\xE4sennykseen) ja `kotlinx.serialization` (YAML-muoto\
+  \ laajennuksena) ty\xF6skennell\xE4ksesi YAML-tiedostojen kanssa."
 title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---

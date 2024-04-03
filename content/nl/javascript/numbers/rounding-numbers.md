@@ -2,11 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:55.521829-07:00
-description: "Afronden is het weglaten van de 'ruis' na een bepaald punt in een nummer.\
-  \ Programmeurs ronden af om precisie te beheersen, geheugen te beheren of de\u2026"
+description: 'Hoe: Hier is hoe je nummers afrondt in JavaScript met `Math.round()`,
+  `Math.ceil()`, en `Math.floor()`.'
 lastmod: '2024-03-13T22:44:51.195825-06:00'
 model: gpt-4-0125-preview
-summary: Afronden is het weglaten van de 'ruis' na een bepaald punt in een nummer.
+summary: Hier is hoe je nummers afrondt in JavaScript met `Math.round()`, `Math.ceil()`,
+  en `Math.floor()`.
 title: Afronden van getallen
 weight: 13
 ---

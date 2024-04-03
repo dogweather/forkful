@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:58.002080-07:00
-description: "Encontrar o comprimento de uma string no Google Apps Script, uma linguagem\
-  \ de scripting em nuvem JavaScript que permite automatizar tarefas em produtos do\u2026"
+description: "Como fazer: No Google Apps Script, voc\xEA pode encontrar o comprimento\
+  \ de uma string usando a propriedade `.length`, similar ao JavaScript. Esta propriedade\u2026"
 lastmod: '2024-03-13T22:44:46.097337-06:00'
 model: gpt-4-0125-preview
-summary: "Encontrar o comprimento de uma string no Google Apps Script, uma linguagem\
-  \ de scripting em nuvem JavaScript que permite automatizar tarefas em produtos do\
-  \ Google, trata-se de determinar o n\xFAmero de caracteres que uma string cont\xE9\
-  m."
+summary: "No Google Apps Script, voc\xEA pode encontrar o comprimento de uma string\
+  \ usando a propriedade `.length`, similar ao JavaScript."
 title: Encontrando o comprimento de uma string
 weight: 7
 ---

@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:31:47.372929-07:00
-description: "Calculer une date dans le futur ou le pass\xE9, c'est manipuler des\
-  \ dates pour en obtenir de nouvelles. Les programmeurs le font pour des raisons\
-  \ vari\xE9es :\u2026"
+description: 'Comment faire : .'
 lastmod: '2024-03-13T22:44:57.250717-06:00'
 model: gpt-4-1106-preview
-summary: "Calculer une date dans le futur ou le pass\xE9, c'est manipuler des dates\
-  \ pour en obtenir de nouvelles."
+summary: .
 title: "Calcul d'une date future ou pass\xE9e"
 weight: 26
 ---

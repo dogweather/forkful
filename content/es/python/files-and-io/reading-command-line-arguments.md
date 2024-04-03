@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:56:42.248523-07:00
-description: "Leer argumentos de la l\xEDnea de comandos te permite personalizar el\
-  \ comportamiento de tu programa en tiempo real, pasando datos al ejecutarlo. Los\u2026"
+description: "C\xF3mo: Python facilita la lectura de argumentos de la l\xEDnea de\
+  \ comandos usando el m\xF3dulo `sys`. Aqu\xED hay un ejemplo simple."
 lastmod: '2024-03-13T22:44:58.629236-06:00'
 model: gpt-4-1106-preview
-summary: "Leer argumentos de la l\xEDnea de comandos te permite personalizar el comportamiento\
-  \ de tu programa en tiempo real, pasando datos al ejecutarlo."
+summary: "Python facilita la lectura de argumentos de la l\xEDnea de comandos usando\
+  \ el m\xF3dulo `sys`."
 title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---

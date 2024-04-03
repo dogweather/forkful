@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:40.691316-07:00
-description: "La creazione di un file temporaneo in Visual Basic for Applications\
-  \ (VBA) comporta la generazione programmata di un file per un uso a breve termine,\u2026"
+description: "Come fare: In VBA, la creazione di un file temporaneo pu\xF2 essere\
+  \ realizzata utilizzando il `FileSystemObject` disponibile nella libreria Microsoft\u2026"
 lastmod: '2024-03-13T22:44:43.284622-06:00'
 model: gpt-4-0125-preview
-summary: "La creazione di un file temporaneo in Visual Basic for Applications (VBA)\
-  \ comporta la generazione programmata di un file per un uso a breve termine, tipicamente\
-  \ per l'elaborazione dei dati o come buffer nelle attivit\xE0 di automazione."
+summary: "In VBA, la creazione di un file temporaneo pu\xF2 essere realizzata utilizzando\
+  \ il `FileSystemObject` disponibile nella libreria Microsoft Scripting Runtime."
 title: Creazione di un file temporaneo
 weight: 21
 ---

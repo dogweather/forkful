@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:57.526824-07:00
-description: "Scrivere su un file di testo in Haskell consiste nella creazione o aggiornamento\
-  \ programmato di file contenenti testo. I programmatori eseguono questa\u2026"
+description: "Come fare: Il Prelude standard di Haskell fornisce un supporto elementare\
+  \ per scrivere su file utilizzando le funzioni `writeFile` e `appendFile` dal\u2026"
 lastmod: '2024-03-13T22:44:43.493763-06:00'
 model: gpt-4-0125-preview
-summary: Scrivere su un file di testo in Haskell consiste nella creazione o aggiornamento
-  programmato di file contenenti testo.
+summary: Il Prelude standard di Haskell fornisce un supporto elementare per scrivere
+  su file utilizzando le funzioni `writeFile` e `appendFile` dal modulo `System.IO`.
 title: Scrivere un file di testo
 weight: 24
 ---

@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:11.292775-07:00
-description: "CSV-tiedostojen (pilkuilla erotetut arvot) k\xE4sittely liittyy datan\
-  \ k\xE4sittelyyn ja muokkaamiseen yksinkertaisessa tekstiformaatissa, jossa jokainen\u2026"
+description: "Kuinka tehd\xE4: #."
 lastmod: '2024-03-13T22:44:56.887828-06:00'
 model: gpt-4-0125-preview
-summary: "CSV-tiedostojen (pilkuilla erotetut arvot) k\xE4sittely liittyy datan k\xE4\
-  sittelyyn ja muokkaamiseen yksinkertaisessa tekstiformaatissa, jossa jokainen tekstirivi\
-  \ edustaa taulukon rivi\xE4 ja pilkut erottavat yksitt\xE4iset sarakkeet."
+summary: '#.'
 title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---

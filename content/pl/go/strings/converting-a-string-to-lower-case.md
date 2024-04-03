@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:58.121122-07:00
-description: "Konwersja ci\u0105g\xF3w znak\xF3w na ma\u0142e litery to podstawowa\
-  \ operacja umo\u017Cliwiaj\u0105ca jednolito\u015B\u0107 i sp\xF3jno\u015B\u0107\
-  \ w przetwarzaniu tekstu, co jest niezb\u0119dne do zada\u0144\u2026"
+description: "Jak to zrobi\u0107: W Go konwersj\u0119 ci\u0105gu znak\xF3w na ma\u0142\
+  e litery mo\u017Cna \u0142atwo osi\u0105gn\u0105\u0107 za pomoc\u0105 pakietu `strings`,\
+  \ a konkretnie funkcji `ToLower()`. Funkcja ta\u2026"
 lastmod: '2024-03-13T22:44:34.834702-06:00'
 model: gpt-4-0125-preview
-summary: "Konwersja ci\u0105g\xF3w znak\xF3w na ma\u0142e litery to podstawowa operacja\
-  \ umo\u017Cliwiaj\u0105ca jednolito\u015B\u0107 i sp\xF3jno\u015B\u0107 w przetwarzaniu\
-  \ tekstu, co jest niezb\u0119dne do zada\u0144 takich jak por\xF3wnania niezale\u017C\
-  ne od wielko\u015Bci liter czy normalizacja tekstu."
+summary: "W Go konwersj\u0119 ci\u0105gu znak\xF3w na ma\u0142e litery mo\u017Cna\
+  \ \u0142atwo osi\u0105gn\u0105\u0107 za pomoc\u0105 pakietu `strings`, a konkretnie\
+  \ funkcji `ToLower()`."
 title: "Konwersja \u0142a\u0144cucha znak\xF3w na ma\u0142e litery"
 weight: 4
 ---

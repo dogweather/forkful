@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:52.039532-07:00
-description: "Wyra\u017Cenia regularne, czyli regex, pozwalaj\u0105 programistom wyszukiwa\u0107\
-  , dopasowywa\u0107 i manipulowa\u0107 ci\u0105gami znak\xF3w, wykorzystuj\u0105\
-  c zaawansowane techniki\u2026"
+description: "Jak to zrobi\u0107: Biblioteka `regex` w Rust jest podstawowym narz\u0119\
+  dziem do pracy z wyra\u017Ceniami regularnymi. Aby jej u\u017Cy\u0107, najpierw\
+  \ nale\u017Cy doda\u0107 j\u0105 do pliku\u2026"
 lastmod: '2024-03-13T22:44:35.174120-06:00'
 model: gpt-4-0125-preview
-summary: "Wyra\u017Cenia regularne, czyli regex, pozwalaj\u0105 programistom wyszukiwa\u0107\
-  , dopasowywa\u0107 i manipulowa\u0107 ci\u0105gami znak\xF3w, wykorzystuj\u0105\
-  c zaawansowane techniki dopasowywania wzorc\xF3w."
+summary: "Biblioteka `regex` w Rust jest podstawowym narz\u0119dziem do pracy z wyra\u017C\
+  eniami regularnymi."
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---

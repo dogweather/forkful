@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:14.572989-07:00
-description: "\xC5 sette stor bokstav i en streng i Visual Basic for Applications\
-  \ (VBA) inneb\xE6rer \xE5 konvertere den f\xF8rste bokstaven i hvert ord i en streng\
-  \ til stor\u2026"
+description: "Hvordan gj\xF8re det: VBA har ikke en innebygd funksjon spesielt for\
+  \ \xE5 sette stor bokstav i hvert ord i en streng, slik noen andre programmeringsspr\xE5\
+  k har.\u2026"
 lastmod: '2024-03-13T22:44:40.599488-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 sette stor bokstav i en streng i Visual Basic for Applications (VBA)\
-  \ inneb\xE6rer \xE5 konvertere den f\xF8rste bokstaven i hvert ord i en streng til\
-  \ stor bokstav, mens man s\xF8rger for at resten er i sm\xE5 bokstaver."
+summary: "VBA har ikke en innebygd funksjon spesielt for \xE5 sette stor bokstav i\
+  \ hvert ord i en streng, slik noen andre programmeringsspr\xE5k har."
 title: "\xC5 gj\xF8re om en streng til store bokstaver"
 weight: 2
 ---

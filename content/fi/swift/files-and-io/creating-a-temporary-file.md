@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:41:14.664471-07:00
-description: "Tilap\xE4istiedosto on v\xE4liaikainen s\xE4il\xF6 tietoja varten, kuin\
-  \ kertak\xE4ytt\xF6astia koodille. Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 turvallisen\
-  \ testiymp\xE4rist\xF6n luomiseen,\u2026"
+description: "How to: Swiftiss\xE4 voit luoda tilap\xE4istiedoston FileManagerin avulla.\
+  \ T\xE4ss\xE4 on lyhyt esimerkki."
 lastmod: '2024-03-13T22:44:56.925880-06:00'
 model: gpt-4-1106-preview
-summary: "Tilap\xE4istiedosto on v\xE4liaikainen s\xE4il\xF6 tietoja varten, kuin\
-  \ kertak\xE4ytt\xF6astia koodille."
+summary: "Swiftiss\xE4 voit luoda tilap\xE4istiedoston FileManagerin avulla."
 title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---

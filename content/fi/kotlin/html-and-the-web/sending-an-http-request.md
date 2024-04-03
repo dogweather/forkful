@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 18:00:09.548060-07:00
-description: "HTTP-pyynn\xF6n l\xE4hett\xE4minen on tapa siirt\xE4\xE4 tietoa verkon\
-  \ yli palvelimelle. Koodarit tekev\xE4t t\xE4t\xE4 hakiakseen tai l\xE4hett\xE4\xE4\
-  kseen dataa, p\xE4ivitt\xE4\xE4kseen tilaa\u2026"
+description: "How to: (Kuinka:) Kotlinissa HTTP-pyynt\xF6j\xE4 voidaan tehd\xE4 kirjastojen,\
+  \ kuten Ktor tai OkHttp, avulla. T\xE4ss\xE4 on yksinkertainen esimerkki k\xE4ytt\xE4\
+  en Ktor-\u2026"
 lastmod: '2024-03-13T22:44:56.527509-06:00'
 model: gpt-4-1106-preview
-summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen on tapa siirt\xE4\xE4 tietoa verkon yli\
-  \ palvelimelle."
+summary: "Kotlinissa HTTP-pyynt\xF6j\xE4 voidaan tehd\xE4 kirjastojen, kuten Ktor\
+  \ tai OkHttp, avulla."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---

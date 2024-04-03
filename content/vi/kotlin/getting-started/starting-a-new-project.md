@@ -2,16 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:32.193236-07:00
-description: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi c\xF3 ngh\u0129\
-  a l\xE0 thi\u1EBFt l\u1EADp c\u1EA5u tr\xFAc ban \u0111\u1EA7u v\xE0 c\xE1c t\u1EC7\
-  p tin quan tr\u1ECDng m\xE0 b\u1EA1n s\u1EBD c\u1EA7n cho \u1EE9ng d\u1EE5ng c\u1EE7\
-  a m\xECnh. L\u1EADp tr\xECnh vi\xEAn b\u1EAFt \u0111\u1EA7u d\u1EF1 \xE1n\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: H\xE3y b\u1EAFt \u0111\u1EA7u v\u1EDBi m\u1ED9\
+  t d\u1EF1 \xE1n Kotlin s\u1EED d\u1EE5ng IntelliJ IDEA \u2013 m\u1ED9t m\xF4i tr\u01B0\
+  \u1EDDng ph\xE1t tri\u1EC3n t\xEDch h\u1EE3p ph\u1ED5 bi\u1EBFn cho Kotlin. 1. M\u1EDF\
+  \ IntelliJ IDEA. 2. Ch\u1ECDn\u2026"
 lastmod: '2024-03-13T22:44:36.602591-06:00'
 model: gpt-4-0125-preview
-summary: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi c\xF3 ngh\u0129a\
-  \ l\xE0 thi\u1EBFt l\u1EADp c\u1EA5u tr\xFAc ban \u0111\u1EA7u v\xE0 c\xE1c t\u1EC7\
-  p tin quan tr\u1ECDng m\xE0 b\u1EA1n s\u1EBD c\u1EA7n cho \u1EE9ng d\u1EE5ng c\u1EE7\
-  a m\xECnh."
+summary: "H\xE3y b\u1EAFt \u0111\u1EA7u v\u1EDBi m\u1ED9t d\u1EF1 \xE1n Kotlin s\u1EED\
+  \ d\u1EE5ng IntelliJ IDEA \u2013 m\u1ED9t m\xF4i tr\u01B0\u1EDDng ph\xE1t tri\u1EC3\
+  n t\xEDch h\u1EE3p ph\u1ED5 bi\u1EBFn cho Kotlin."
 title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---

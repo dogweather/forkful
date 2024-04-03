@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:52:55.407095-07:00
-description: "\xC5 skrive ut debug informasjon betyr \xE5 printe ut data for \xE5\
-  \ forst\xE5 hva koden din gj\xF8r eller finne feil. Programmerere gj\xF8r dette\
-  \ for \xE5 se programflyten\u2026"
+description: "Slik gj\xF8r du: Bruk `System.out.println()` for enkel output til konsollen."
 lastmod: '2024-03-13T22:44:40.669233-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 skrive ut debug informasjon betyr \xE5 printe ut data for \xE5 forst\xE5\
-  \ hva koden din gj\xF8r eller finne feil."
+summary: Bruk `System.out.println()` for enkel output til konsollen.
 title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---

@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 15:31:59.808672-07:00
-description: "Att parsa HTML inneb\xE4r att man omvandlar HTML-str\xE4ngar till en\
-  \ datastruktur som datorn kan jobba med. Programmerare g\xF6r detta f\xF6r att enkelt\
-  \ kunna\u2026"
+description: "Hur g\xF6r man: F\xF6r att parsa HTML i Haskell kan vi anv\xE4nda sig\
+  \ av biblioteket `hxt`, som st\xE5r f\xF6r Haskell XML Toolbox. H\xE4r \xE4r en\
+  \ snabb uppvisning."
 lastmod: '2024-03-13T22:44:37.952895-06:00'
 model: unknown
-summary: "Att parsa HTML inneb\xE4r att man omvandlar HTML-str\xE4ngar till en datastruktur\
-  \ som datorn kan jobba med."
+summary: "F\xF6r att parsa HTML i Haskell kan vi anv\xE4nda sig av biblioteket `hxt`,\
+  \ som st\xE5r f\xF6r Haskell XML Toolbox."
 title: Tolka HTML
 weight: 43
 ---

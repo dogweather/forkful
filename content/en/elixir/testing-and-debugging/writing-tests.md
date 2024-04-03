@@ -1,11 +1,12 @@
 ---
 date: 2024-02-03 19:03:26.395083-07:00
-description: "Writing tests in Elixir involves creating automated scripts to validate\
-  \ the behavior of your code. Programmers do this to assure quality, prevent\u2026"
+description: "How to: Elixir uses ExUnit as its built-in test framework, which is\
+  \ extremely powerful and easy to use. Here's a basic example: 1. Create a new test\
+  \ file\u2026"
 lastmod: '2024-03-13T22:44:59.785638-06:00'
 model: gpt-4-0125-preview
-summary: Writing tests in Elixir involves creating automated scripts to validate the
-  behavior of your code.
+summary: Elixir uses ExUnit as its built-in test framework, which is extremely powerful
+  and easy to use.
 title: Writing tests
 weight: 36
 ---

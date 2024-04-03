@@ -1,11 +1,12 @@
 ---
 date: 2024-03-08 21:33:39.871728-07:00
-description: "Downloading a web page involves fetching the content of a web page via\
-  \ its URL for processing or storage. Programmers do this to extract information,\u2026"
+description: "How to: Dart provides the `http` package, a popular third-party library\
+  \ for making HTTP requests. Here\u2019s a basic example of how to use it to download\
+  \ a\u2026"
 lastmod: '2024-03-13T22:44:59.819698-06:00'
 model: gpt-4-0125-preview
-summary: Downloading a web page involves fetching the content of a web page via its
-  URL for processing or storage.
+summary: Dart provides the `http` package, a popular third-party library for making
+  HTTP requests.
 title: Downloading a web page
 weight: 42
 ---

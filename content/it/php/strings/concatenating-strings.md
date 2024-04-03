@@ -1,10 +1,9 @@
 ---
 date: 2024-01-20 17:35:25.977007-07:00
-description: "Concatenare stringhe significa unire due o pi\xF9 testi in uno. I programmatori\
-  \ lo fanno per costruire dinamicamente messaggi, SQL query, URL, ecc."
+description: How to (Come Fare) .
 lastmod: '2024-03-13T22:44:43.508862-06:00'
 model: gpt-4-1106-preview
-summary: "Concatenare stringhe significa unire due o pi\xF9 testi in uno."
+summary: .
 title: Concatenazione di stringhe
 weight: 3
 ---

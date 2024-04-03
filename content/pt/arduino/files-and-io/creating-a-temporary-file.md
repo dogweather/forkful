@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:39:31.781304-07:00
-description: "Criar um arquivo tempor\xE1rio \xE9 o processo de gerar um ficheiro\
-  \ que s\xF3 \xE9 necess\xE1rio durante a execu\xE7\xE3o de um programa ou tarefa.\
-  \ Programadores fazem isso\u2026"
+description: "Como fazer: No contexto do Arduino, criar um arquivo tempor\xE1rio geralmente\
+  \ envolve escrever em um cart\xE3o SD, pois o Arduino n\xE3o tem um sistema de arquivos\u2026"
 lastmod: '2024-03-13T22:44:46.858046-06:00'
 model: gpt-4-1106-preview
-summary: "Criar um arquivo tempor\xE1rio \xE9 o processo de gerar um ficheiro que\
-  \ s\xF3 \xE9 necess\xE1rio durante a execu\xE7\xE3o de um programa ou tarefa."
+summary: "No contexto do Arduino, criar um arquivo tempor\xE1rio geralmente envolve\
+  \ escrever em um cart\xE3o SD, pois o Arduino n\xE3o tem um sistema de arquivos\
+  \ tradicional integrado."
 title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---

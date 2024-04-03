@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:15.049822-07:00
-description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen ohjelmoinnissa on olennainen\
-  \ teht\xE4v\xE4 monille sovelluksille, mukaan lukien lokit, tapahtumien aikaleimat\
-  \ tai teht\xE4vien\u2026"
+description: "Kuinka: Lua tarjoaa `os.date` funktion nykyisen p\xE4iv\xE4m\xE4\xE4\
+  r\xE4n ja ajan hakemiseen. Funktion voi k\xE4ytt\xE4\xE4 ilman argumentteja saadakseen\
+  \ muotoillun merkkijonon\u2026"
 lastmod: '2024-03-13T22:44:56.707341-06:00'
 model: gpt-4-0125-preview
-summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen ohjelmoinnissa on olennainen\
-  \ teht\xE4v\xE4 monille sovelluksille, mukaan lukien lokit, tapahtumien aikaleimat\
-  \ tai teht\xE4vien ajoittaminen."
+summary: "Lua tarjoaa `os.date` funktion nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n ja ajan\
+  \ hakemiseen."
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---

@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:40.739814-07:00
-description: "Analizar una fecha de una cadena en Bash implica extraer y convertir\
-  \ informaci\xF3n de fecha de datos textuales a un formato que Bash puede manipular\
-  \ o usar\u2026"
+description: "C\xF3mo hacerlo: Bash en s\xED es bastante limitado en capacidades directas\
+  \ de an\xE1lisis de fechas, a menudo dependiendo de herramientas externas como `date`\
+  \ y\u2026"
 lastmod: '2024-03-13T22:44:59.256370-06:00'
 model: gpt-4-0125-preview
-summary: "Analizar una fecha de una cadena en Bash implica extraer y convertir informaci\xF3\
-  n de fecha de datos textuales a un formato que Bash puede manipular o usar para\
-  \ procesos adicionales."
+summary: "Bash en s\xED es bastante limitado en capacidades directas de an\xE1lisis\
+  \ de fechas, a menudo dependiendo de herramientas externas como `date` y `awk` para\
+  \ manipulaciones m\xE1s sofisticadas."
 title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---

@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 18:03:09.371599-07:00
-description: Creare un nuovo progetto Elm significa mettere su qualcosa di fresco.
-  Lo facciamo per sperimentare, imparare o per costruire qualcosa di utilizzabile.
+description: 'How to: Per iniziare un nuovo progetto in Elm, hai bisogno di alcune
+  cose: Elm installato e il tuo editor di testo preferito.'
 lastmod: '2024-03-13T22:44:43.350594-06:00'
 model: gpt-4-1106-preview
-summary: Creare un nuovo progetto Elm significa mettere su qualcosa di fresco.
+summary: Per iniziare un nuovo progetto in Elm, hai bisogno di alcune cose.
 title: Avvio di un nuovo progetto
 weight: 1
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:51.893251-07:00
-description: "Strengsammensetning i C inneb\xE6rer \xE5 sl\xE5 sammen to eller flere\
-  \ strenger ende-til-ende for \xE5 danne en ny streng. Programmerere utf\xF8rer denne\
-  \ operasjonen for\u2026"
+description: "Hvordan: I C er strenger er arrayer av tegn som avsluttes med et nulltegn\
+  \ (`\\0`). I motsetning til i h\xF8yere programmeringsspr\xE5k, tilbyr ikke C en\
+  \ innebygd\u2026"
 lastmod: '2024-03-13T22:44:41.262635-06:00'
 model: gpt-4-0125-preview
-summary: "Strengsammensetning i C inneb\xE6rer \xE5 sl\xE5 sammen to eller flere strenger\
-  \ ende-til-ende for \xE5 danne en ny streng."
+summary: I C er strenger er arrayer av tegn som avsluttes med et nulltegn (`\0`).
 title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---

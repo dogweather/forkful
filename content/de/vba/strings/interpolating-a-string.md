@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:26.669784-07:00
-description: "Stringinterpolation in Visual Basic f\xFCr Applikationen (VBA) bezieht\
-  \ sich auf den Prozess, Variablen oder Ausdr\xFCcke in einem String-Literal einzubetten,\u2026"
+description: "Wie geht das: Im Gegensatz zu einigen Sprachen, die eine eingebaute\
+  \ Stringinterpolation haben, erfordert VBA einen eher manuellen Ansatz, der\u2026"
 lastmod: '2024-03-13T22:44:53.702197-06:00'
 model: gpt-4-0125-preview
-summary: "Stringinterpolation in Visual Basic f\xFCr Applikationen (VBA) bezieht sich\
-  \ auf den Prozess, Variablen oder Ausdr\xFCcke in einem String-Literal einzubetten,\
-  \ was die dynamische Erstellung von Strings erm\xF6glicht."
+summary: Im Gegensatz zu einigen Sprachen, die eine eingebaute Stringinterpolation
+  haben, erfordert VBA einen eher manuellen Ansatz, der typischerweise den `&`-Operator
+  oder die `Format`-Funktion verwendet, um Variablen in Strings einzubetten.
 title: Interpolation einer Zeichenkette
 weight: 8
 ---

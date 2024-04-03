@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:14.190781-07:00
-description: "Verificare se una cartella esiste \xE8 un compito fondamentale nella\
-  \ programmazione PHP, poich\xE9 permette di verificare la presenza di una directory\
-  \ prima di\u2026"
+description: "Come fare: Il modo nativo per verificare se una directory esiste in\
+  \ PHP \xE8 utilizzando la funzione `is_dir()`. Questa funzione prende un percorso\
+  \ di file\u2026"
 lastmod: '2024-03-13T22:44:43.530840-06:00'
 model: gpt-4-0125-preview
-summary: "Verificare se una cartella esiste \xE8 un compito fondamentale nella programmazione\
-  \ PHP, poich\xE9 permette di verificare la presenza di una directory prima di effettuare\
-  \ operazioni quali leggere o scrivere file al suo interno."
+summary: "Il modo nativo per verificare se una directory esiste in PHP \xE8 utilizzando\
+  \ la funzione `is_dir()`."
 title: Verifica se una directory esiste
 weight: 20
 ---

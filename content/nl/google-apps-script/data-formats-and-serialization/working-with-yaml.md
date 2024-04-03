@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:51.382058-07:00
-description: "YAML, dat staat voor \"YAML Ain't Markup Language\", is een voor mensen\
-  \ leesbare gegevensserialisatiestandaard die vaak wordt gebruikt voor\u2026"
+description: "Hoe te: Hoewel Google Apps Script (GAS) geen YAML-analyse of -serialisatie\
+  \ native ondersteunt, kunt u YAML-gegevens manipuleren door JavaScript-\u2026"
 lastmod: '2024-03-13T22:44:50.353968-06:00'
 model: gpt-4-0125-preview
-summary: YAML, dat staat voor "YAML Ain't Markup Language", is een voor mensen leesbare
-  gegevensserialisatiestandaard die vaak wordt gebruikt voor configuratiebestanden
-  en gegevensuitwisseling tussen talen met verschillende gegevensstructuren.
+summary: Hoewel Google Apps Script (GAS) geen YAML-analyse of -serialisatie native
+  ondersteunt, kunt u YAML-gegevens manipuleren door JavaScript-bibliotheken te gebruiken
+  of aangepaste analysefuncties te schrijven.
 title: Werken met YAML
 weight: 41
 ---

@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:41.952221-07:00
-description: "L'analisi dell'HTML in PHP coinvolge l'estrazione di informazioni specifiche\
-  \ dai documenti HTML. I programmatori svolgono questo compito per automatizzare\u2026"
+description: "Come fare: Per l'analisi dell'HTML, i programmatori PHP possono utilizzare\
+  \ funzioni integrate o affidarsi a robuste librerie come Simple HTML DOM Parser.\u2026"
 lastmod: '2024-03-13T22:44:43.514405-06:00'
 model: gpt-4-0125-preview
-summary: L'analisi dell'HTML in PHP coinvolge l'estrazione di informazioni specifiche
-  dai documenti HTML.
+summary: Per l'analisi dell'HTML, i programmatori PHP possono utilizzare funzioni
+  integrate o affidarsi a robuste librerie come Simple HTML DOM Parser.
 title: Analisi del HTML
 weight: 43
 ---

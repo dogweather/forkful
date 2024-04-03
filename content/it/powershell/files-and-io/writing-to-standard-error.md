@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:17.880777-07:00
-description: "Scrivere su standard error (stderr) in PowerShell implica l'invio di\
-  \ messaggi di errore o diagnostici direttamente allo stream stderr, distinto dallo\u2026"
+description: "Come fare: PowerShell semplifica il processo di scrittura su stderr\
+  \ mediante l'uso del cmdlet `Write-Error` o indirizzando l'output al metodo\u2026"
 lastmod: '2024-03-13T22:44:43.658751-06:00'
 model: gpt-4-0125-preview
-summary: Scrivere su standard error (stderr) in PowerShell implica l'invio di messaggi
-  di errore o diagnostici direttamente allo stream stderr, distinto dallo stream di
-  output standard (stdout).
+summary: PowerShell semplifica il processo di scrittura su stderr mediante l'uso del
+  cmdlet `Write-Error` o indirizzando l'output al metodo `$host.ui.WriteErrorLine()`.
 title: Scrivere sull'errore standard
 weight: 25
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:21.113822-07:00
-description: "Arredondar n\xFAmeros, um conceito fundamental na programa\xE7\xE3o\
-  \ de computadores, envolve ajustar um n\xFAmero para o inteiro mais pr\xF3ximo ou\
-  \ para um n\xFAmero\u2026"
+description: "Como fazer: O Google Apps Script, sendo uma linguagem baseada em JavaScript,\
+  \ oferece m\xE9todos padr\xE3o para arredondar n\xFAmeros. Aqui est\xE1 uma explica\xE7\
+  \xE3o de\u2026"
 lastmod: '2024-03-13T22:44:46.101562-06:00'
 model: gpt-4-0125-preview
-summary: "Arredondar n\xFAmeros, um conceito fundamental na programa\xE7\xE3o de computadores,\
-  \ envolve ajustar um n\xFAmero para o inteiro mais pr\xF3ximo ou para um n\xFAmero\
-  \ espec\xEDfico de casas decimais."
+summary: "O Google Apps Script, sendo uma linguagem baseada em JavaScript, oferece\
+  \ m\xE9todos padr\xE3o para arredondar n\xFAmeros."
 title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---

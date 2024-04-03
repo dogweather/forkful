@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:04.268461-07:00
-description: "\xC5 sette stor forbokstav i en streng i PowerShell inneb\xE6rer \xE5\
-  \ transformere det f\xF8rste tegnet i en gitt streng til stor bokstav mens resten\
-  \ av strengen\u2026"
+description: "Hvordan: PowerShell, som er et allsidig verkt\xF8y, lar deg sette stor\
+  \ forbokstav i en streng ved hjelp av enkle metoder uten behov for\u2026"
 lastmod: '2024-03-13T22:44:41.000004-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 sette stor forbokstav i en streng i PowerShell inneb\xE6rer \xE5 transformere\
-  \ det f\xF8rste tegnet i en gitt streng til stor bokstav mens resten av strengen\
-  \ forblir uendret."
+summary: "PowerShell, som er et allsidig verkt\xF8y, lar deg sette stor forbokstav\
+  \ i en streng ved hjelp av enkle metoder uten behov for tredjepartsbiblioteker."
 title: Sette stor bokstav i en streng
 weight: 2
 ---

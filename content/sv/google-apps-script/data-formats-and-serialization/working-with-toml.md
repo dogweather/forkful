@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:12.884155-07:00
-description: "TOML, som st\xE5r f\xF6r Toms Uppenbara, Minimala Spr\xE5k, \xE4r ett\
-  \ konfigurationsfilformat som \xE4r l\xE4tt att l\xE4sa p\xE5 grund av dess tydliga\
-  \ semantik. Programmerare\u2026"
+description: "Hur man g\xF6r: Eftersom Google Apps Script i huvudsak \xE4r JavaScript\
+  \ med tillg\xE5ng till Googles appsvit, kr\xE4ver arbete med TOML direkt inom Google\
+  \ Apps Script\u2026"
 lastmod: '2024-03-13T22:44:37.464381-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, som st\xE5r f\xF6r Toms Uppenbara, Minimala Spr\xE5k, \xE4r ett konfigurationsfilformat\
-  \ som \xE4r l\xE4tt att l\xE4sa p\xE5 grund av dess tydliga semantik."
+summary: "Eftersom Google Apps Script i huvudsak \xE4r JavaScript med tillg\xE5ng\
+  \ till Googles appsvit, kr\xE4ver arbete med TOML direkt inom Google Apps Script\
+  \ lite uppfinningsrikedom."
 title: Arbeta med TOML
 weight: 39
 ---

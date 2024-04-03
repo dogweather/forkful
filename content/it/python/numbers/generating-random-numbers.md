@@ -1,13 +1,11 @@
 ---
 date: 2024-01-27 20:35:17.062028-07:00
-description: "La generazione di numeri casuali comporta la creazione di numeri che\
-  \ non possono essere previsti in modo ragionevole meglio che per caso, il che \xE8\
-  \u2026"
+description: "Come fare: Python fornisce il modulo `random` che aiuta nella generazione\
+  \ di numeri casuali per vari usi. Ecco come iniziare: 1. **Importazione del\u2026"
 lastmod: '2024-03-13T22:44:42.996873-06:00'
 model: gpt-4-0125-preview
-summary: "La generazione di numeri casuali comporta la creazione di numeri che non\
-  \ possono essere previsti in modo ragionevole meglio che per caso, il che \xE8 essenziale\
-  \ per lo sviluppo di simulazioni, giochi e algoritmi di sicurezza."
+summary: Python fornisce il modulo `random` che aiuta nella generazione di numeri
+  casuali per vari usi.
 title: Generazione di numeri casuali
 weight: 12
 ---

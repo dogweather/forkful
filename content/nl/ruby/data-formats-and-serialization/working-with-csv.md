@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:17.620295-07:00
-description: "CSV-bestanden (Comma-Separated Values) vertegenwoordigen tabelgegevens\
-  \ in platte tekst. Programmeurs gebruiken CSV's om datasets te importeren en te\u2026"
+description: 'Hoe te: **Een CSV lezen:**.'
 lastmod: '2024-03-13T22:44:51.389241-06:00'
 model: gpt-4-0125-preview
-summary: CSV-bestanden (Comma-Separated Values) vertegenwoordigen tabelgegevens in
-  platte tekst.
+summary: '**Een CSV lezen:**.'
 title: Werken met CSV
 weight: 37
 ---

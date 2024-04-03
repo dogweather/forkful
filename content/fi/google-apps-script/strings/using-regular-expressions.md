@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:04.003157-07:00
-description: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) ovat malleja, joita k\xE4ytet\xE4\
-  \xE4n merkkiyhdistelmien etsimiseen merkkijonoista. Ohjelmoijat hy\xF6dynt\xE4v\xE4\
-  t niit\xE4 tekstin ja datan\u2026"
+description: "Miten: S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6 Google Apps\
+  \ Scriptiss\xE4 on suoraviivaista JavaScript-pohjaisen syntaksin ansiosta. N\xE4\
+  in voit sis\xE4llytt\xE4\xE4 regexi\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.085691-06:00'
 model: gpt-4-0125-preview
-summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) ovat malleja, joita k\xE4ytet\xE4\
-  \xE4n merkkiyhdistelmien etsimiseen merkkijonoista."
+summary: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6 Google Apps Scriptiss\xE4\
+  \ on suoraviivaista JavaScript-pohjaisen syntaksin ansiosta."
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---

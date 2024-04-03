@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:54.882865-07:00
-description: "Estrarre sottosequenze di stringhe implica prendere una porzione di\
-  \ una stringa - creando essenzialmente una nuova stringa a partire da una esistente.\
-  \ I\u2026"
+description: "Come fare: In Google Apps Script, che si basa su JavaScript moderno,\
+  \ l'estrazione di sottosequenze pu\xF2 essere raggiunta attraverso vari metodi,\
+  \ inclusi\u2026"
 lastmod: '2024-03-13T22:44:42.942729-06:00'
 model: gpt-4-0125-preview
-summary: Estrarre sottosequenze di stringhe implica prendere una porzione di una stringa
-  - creando essenzialmente una nuova stringa a partire da una esistente.
+summary: "In Google Apps Script, che si basa su JavaScript moderno, l'estrazione di\
+  \ sottosequenze pu\xF2 essere raggiunta attraverso vari metodi, inclusi `substring()`,\
+  \ `substr()`, e `slice()`."
 title: Estrazione di sottostringhe
 weight: 6
 ---

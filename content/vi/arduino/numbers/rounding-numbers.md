@@ -2,17 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:41.002363-07:00
-description: "L\xE0m tr\xF2n s\u1ED1 l\xE0 vi\u1EC7c c\u1EAFt gi\u1EA3m m\u1ED9t s\u1ED1\
-  \ th\u1EADp ph\xE2n v\u1EC1 gi\xE1 tr\u1ECB nguy\xEAn g\u1EA7n nh\u1EA5t ho\u1EB7\
-  c v\u1EC1 m\u1ED9t s\u1ED1 l\u01B0\u1EE3ng ch\u1EEF s\u1ED1 th\u1EADp ph\xE2n c\u1ED1\
-  \ \u0111\u1ECBnh. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m tr\xF2n s\u1ED1 \u0111\
-  \u1EC3\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Arduino, b\u1EA1n c\xF3 th\u1EC3 l\xE0\
+  m tr\xF2n s\u1ED1 s\u1EED d\u1EE5ng c\xE1c h\xE0m c\xF3 s\u1EB5n. C\xE1c h\xE0m\
+  \ quan tr\u1ECDng l\xE0 `round`, `ceil`, v\xE0 `floor`. D\u01B0\u1EDBi \u0111\xE2\
+  y l\xE0 m\u1ED9t v\xED d\u1EE5 nhanh."
 lastmod: '2024-03-13T22:44:36.983897-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m tr\xF2n s\u1ED1 l\xE0 vi\u1EC7c c\u1EAFt gi\u1EA3m m\u1ED9t s\u1ED1\
-  \ th\u1EADp ph\xE2n v\u1EC1 gi\xE1 tr\u1ECB nguy\xEAn g\u1EA7n nh\u1EA5t ho\u1EB7\
-  c v\u1EC1 m\u1ED9t s\u1ED1 l\u01B0\u1EE3ng ch\u1EEF s\u1ED1 th\u1EADp ph\xE2n c\u1ED1\
-  \ \u0111\u1ECBnh."
+summary: "Trong Arduino, b\u1EA1n c\xF3 th\u1EC3 l\xE0m tr\xF2n s\u1ED1 s\u1EED d\u1EE5\
+  ng c\xE1c h\xE0m c\xF3 s\u1EB5n."
 title: "L\xE0m tr\xF2n s\u1ED1"
 weight: 13
 ---

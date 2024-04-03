@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:11.786902-07:00
-description: "Merkkijonon alkukirjaimen suurentaminen tarkoittaa merkkijonon jokaisen\
-  \ sanan ensimm\xE4isen merkin muuttamista suuraakkoseksi, jos se on pienaakkosena,\u2026"
+description: "Kuinka: C++:ssa voit suurentaa merkkijonon alkukirjaimen k\xE4ytt\xE4\
+  en standardikirjastoa ilman kolmannen osapuolen kirjastoja. Kuitenkin monimutkaisempia\
+  \ tai\u2026"
 lastmod: '2024-03-13T22:44:56.848336-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonon alkukirjaimen suurentaminen tarkoittaa merkkijonon jokaisen\
-  \ sanan ensimm\xE4isen merkin muuttamista suuraakkoseksi, jos se on pienaakkosena,\
-  \ samalla kun kaikki muut merkit j\xE4tet\xE4\xE4n muuttumattomiksi."
+summary: "C++:ssa voit suurentaa merkkijonon alkukirjaimen k\xE4ytt\xE4en standardikirjastoa\
+  \ ilman kolmannen osapuolen kirjastoja."
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---

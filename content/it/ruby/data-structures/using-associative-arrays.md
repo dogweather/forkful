@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:29.931349-07:00
-description: "Gli array associativi, pi\xF9 comunemente noti come hash in Ruby, consentono\
-  \ di accoppiare chiavi uniche a valori. Sono indispensabili quando \xE8 necessario\u2026"
+description: "Come fare: Creare e usare gli hash in Ruby \xE8 semplice. Puoi inizializzare\
+  \ un hash vuoto, riempirlo con coppie chiave-valore, accedere ai valori tramite\
+  \ le\u2026"
 lastmod: '2024-03-13T22:44:44.042486-06:00'
 model: gpt-4-0125-preview
-summary: "Gli array associativi, pi\xF9 comunemente noti come hash in Ruby, consentono\
-  \ di accoppiare chiavi uniche a valori."
+summary: "Creare e usare gli hash in Ruby \xE8 semplice."
 title: Utilizzo di array associativi
 weight: 15
 ---

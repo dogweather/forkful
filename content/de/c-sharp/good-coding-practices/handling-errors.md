@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 00:50:05.347551-07:00
-description: "Die Fehlerbehandlung in C# dient dazu, das Unerwartete zu bew\xE4ltigen\
-  \ \u2013 so wie \xFCber eigene Schn\xFCrsenkel zu stolpern. Programme k\xF6nnen\
-  \ \xFCber schlechte Daten\u2026"
+description: "Wie man das macht: Beginnen wir mit einem Try-Catch-Block. Es ist so,\
+  \ als w\xFCrde man unter einem Seilt\xE4nzer ein Sicherheitsnetz spannen. Wenn sie\u2026"
 lastmod: '2024-03-13T22:44:53.895545-06:00'
 model: gpt-4-1106-preview
-summary: "Die Fehlerbehandlung in C# dient dazu, das Unerwartete zu bew\xE4ltigen\
-  \ \u2013 so wie \xFCber eigene Schn\xFCrsenkel zu stolpern."
+summary: Beginnen wir mit einem Try-Catch-Block.
 title: Fehlerbehandlung
 weight: 16
 ---

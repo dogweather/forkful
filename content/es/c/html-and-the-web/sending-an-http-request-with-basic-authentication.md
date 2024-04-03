@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:50.946982-07:00
-description: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica en C implica\
-  \ crear una solicitud HTTP que incluya un encabezado de Autorizaci\xF3n con credenciales\
+description: "C\xF3mo hacerlo: Para enviar una solicitud HTTP con autenticaci\xF3\
+  n b\xE1sica en C, necesitaremos usar la biblioteca libcurl, una biblioteca de transferencia\
   \ de\u2026"
 lastmod: '2024-03-13T22:44:59.545231-06:00'
 model: gpt-4-0125-preview
-summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica en C implica crear\
-  \ una solicitud HTTP que incluya un encabezado de Autorizaci\xF3n con credenciales\
-  \ de usuario codificadas en Base64."
+summary: "Para enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica en C, necesitaremos\
+  \ usar la biblioteca libcurl, una biblioteca de transferencia de URL del lado del\
+  \ cliente popular, vers\xE1til y f\xE1cil de usar."
 title: "Enviando una solicitud HTTP con autenticaci\xF3n b\xE1sica"
 weight: 45
 ---

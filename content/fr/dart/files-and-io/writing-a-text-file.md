@@ -2,13 +2,14 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:46.056099-07:00
-description: "\xC9crire un fichier texte en Dart implique de cr\xE9er ou de modifier\
-  \ des fichiers sur le disque pour stocker des donn\xE9es dans un format lisible.\
-  \ Les\u2026"
+description: "Comment faire : La biblioth\xE8que de base de Dart fournit le package\
+  \ `dart:io` pour la gestion des fichiers, vous permettant d'\xE9crire des fichiers\
+  \ texte\u2026"
 lastmod: '2024-03-13T22:44:57.410882-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire un fichier texte en Dart implique de cr\xE9er ou de modifier des\
-  \ fichiers sur le disque pour stocker des donn\xE9es dans un format lisible."
+summary: "La biblioth\xE8que de base de Dart fournit le package `dart:io` pour la\
+  \ gestion des fichiers, vous permettant d'\xE9crire des fichiers texte sans n\xE9\
+  cessiter de biblioth\xE8ques tierces."
 title: "\xC9crire un fichier texte"
 weight: 24
 ---

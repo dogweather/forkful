@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:43.228141-07:00
-description: "Analisar HTML no PowerShell \xE9 sobre desmembrar conte\xFAdo HTML para\
-  \ extrair dados espec\xEDficos ou automatizar tarefas relacionadas \xE0 web. Os\
-  \ programadores\u2026"
+description: "Como fazer: O PowerShell n\xE3o possui nativamente um analisador HTML\
+  \ dedicado, mas voc\xEA pode utilizar o cmdlet `Invoke-WebRequest` para acessar\
+  \ e analisar\u2026"
 lastmod: '2024-03-13T22:44:46.794866-06:00'
 model: gpt-4-0125-preview
-summary: "Analisar HTML no PowerShell \xE9 sobre desmembrar conte\xFAdo HTML para\
-  \ extrair dados espec\xEDficos ou automatizar tarefas relacionadas \xE0 web."
+summary: "O PowerShell n\xE3o possui nativamente um analisador HTML dedicado, mas\
+  \ voc\xEA pode utilizar o cmdlet `Invoke-WebRequest` para acessar e analisar conte\xFA\
+  dos HTML."
 title: Analisando HTML
 weight: 43
 ---

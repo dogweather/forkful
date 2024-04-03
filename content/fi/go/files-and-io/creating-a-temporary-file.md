@@ -2,15 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:04.799561-07:00
-description: "V\xE4liaikaistiedoston luominen Go:lla mahdollistaa v\xE4liaikaisen,\
-  \ lyhytaikaiseen k\xE4ytt\xF6\xF6n suunnitellun tiedoston luomisen, joka on tarkoitettu\
-  \ p\xE4\xE4asiassa\u2026"
+description: "Miten: Go:ssa `ioutil`-paketti tarjosi alun perin apuv\xE4lineit\xE4\
+  \ v\xE4liaikaistiedostojen luomiseen. Kuitenkin, Go 1.16 edisti `os` ja `io/ioutil`-paketin\u2026"
 lastmod: '2024-03-13T22:44:56.071291-06:00'
 model: gpt-4-0125-preview
-summary: "V\xE4liaikaistiedoston luominen Go:lla mahdollistaa v\xE4liaikaisen, lyhytaikaiseen\
-  \ k\xE4ytt\xF6\xF6n suunnitellun tiedoston luomisen, joka on tarkoitettu p\xE4\xE4\
-  asiassa teht\xE4viin kuten v\xE4liaikaisen datan tallentamiseen tai er\xE4ajot\xF6\
-  iden avustamiseen."
+summary: "Go:ssa `ioutil`-paketti tarjosi alun perin apuv\xE4lineit\xE4 v\xE4liaikaistiedostojen\
+  \ luomiseen."
 title: "Tilap\xE4isen tiedoston luominen"
 weight: 21
 ---

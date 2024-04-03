@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:55.013001-07:00
-description: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP l\xE0 c\xE1ch ch\u01B0\u01A1\
-  ng tr\xECnh c\u1EE7a b\u1EA1n y\xEAu c\u1EA7u d\u1EEF li\u1EC7u t\u1EEB m\u1ED9\
-  t m\xE1y ch\u1EE7 ho\u1EB7c g\u1EEDi d\u1EEF li\u1EC7u \u0111\u1EBFn m\xE1y ch\u1EE7\
-  . L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y v\xEC \u0111\
-  \xF3 l\xE0\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong TypeScript, b\u1EA1n th\u01B0\u1EDDng\
+  \ s\u1EED d\u1EE5ng Fetch API \u0111\u1EC3 g\u1EEDi c\xE1c y\xEAu c\u1EA7u HTTP.\
+  \ D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t v\xED d\u1EE5 nhanh, s\u1EED d\u1EE5\
+  ng `async/await` \u0111\u1EC3 \u0111\u01A1n gi\u1EA3n h\xF3a."
 lastmod: '2024-03-13T22:44:36.314754-06:00'
 model: gpt-4-0125-preview
-summary: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP l\xE0 c\xE1ch ch\u01B0\u01A1ng tr\xEC\
-  nh c\u1EE7a b\u1EA1n y\xEAu c\u1EA7u d\u1EEF li\u1EC7u t\u1EEB m\u1ED9t m\xE1y ch\u1EE7\
-  \ ho\u1EB7c g\u1EEDi d\u1EEF li\u1EC7u \u0111\u1EBFn m\xE1y ch\u1EE7."
+summary: "Trong TypeScript, b\u1EA1n th\u01B0\u1EDDng s\u1EED d\u1EE5ng Fetch API\
+  \ \u0111\u1EC3 g\u1EEDi c\xE1c y\xEAu c\u1EA7u HTTP."
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
 weight: 44
 ---

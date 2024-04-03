@@ -3,15 +3,13 @@ changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 - 2024-02-05, dogweather, reviewed and corrected
 date: 2024-02-03 19:09:22.252498-07:00
-description: "Obtenir la date actuelle en Elixir implique d'acc\xE9der aux informations\
-  \ de date et d'heure du syst\xE8me, une t\xE2che courante pour la journalisation,\
-  \ le\u2026"
+description: "Comment faire : La biblioth\xE8que standard d'Elixir, \xE0 travers le\
+  \ module `DateTime`, permet de r\xE9cup\xE9rer la date et l'heure actuelles. Comme\
+  \ Elixir\u2026"
 lastmod: '2024-03-13T22:44:57.338798-06:00'
 model: gpt-4-0125-preview
-summary: "Obtenir la date actuelle en Elixir implique d'acc\xE9der aux informations\
-  \ de date et d'heure du syst\xE8me, une t\xE2che courante pour la journalisation,\
-  \ le marquage de donn\xE9es, ou toute fonctionnalit\xE9 n\xE9cessitant la connaissance\
-  \ de la date courante."
+summary: "La biblioth\xE8que standard d'Elixir, \xE0 travers le module `DateTime`,\
+  \ permet de r\xE9cup\xE9rer la date et l'heure actuelles."
 title: Obtenir la date actuelle
 weight: 29
 ---

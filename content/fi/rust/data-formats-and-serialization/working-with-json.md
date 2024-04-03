@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:07.540105-07:00
-description: "JSONin (JavaScript Object Notation) k\xE4sittely Rustissa tarkoittaa\
-  \ JSON-datan j\xE4sent\xE4mist\xE4 Rustin datarakenteisiin ja Rustin datarakenteiden\
-  \ sarjoittamista\u2026"
+description: "Kuinka: JSONin k\xE4sittelyyn Rustissa k\xE4ytet\xE4\xE4n laajalti `serde`-pakettia\
+  \ yhdess\xE4 `serde_json`in kanssa sarjoittamiseen ja j\xE4sent\xE4miseen. Ensin,\
+  \ varmista\u2026"
 lastmod: '2024-03-13T22:44:56.378661-06:00'
 model: gpt-4-0125-preview
-summary: "JSONin (JavaScript Object Notation) k\xE4sittely Rustissa tarkoittaa JSON-datan\
-  \ j\xE4sent\xE4mist\xE4 Rustin datarakenteisiin ja Rustin datarakenteiden sarjoittamista\
-  \ takaisin JSONiksi."
+summary: "JSONin k\xE4sittelyyn Rustissa k\xE4ytet\xE4\xE4n laajalti `serde`-pakettia\
+  \ yhdess\xE4 `serde_json`in kanssa sarjoittamiseen ja j\xE4sent\xE4miseen."
 title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---

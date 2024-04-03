@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:35:12.789124-07:00
-description: "Yhdistelemme merkkijonoja (eli teemme konkatenointia) liitt\xE4\xE4\
-  ksemme tekstinp\xE4tki\xE4 yhteen. Se on peruskauraa kaikessa ohjelmoinnissa: loihdit\
-  \ viestej\xE4,\u2026"
+description: "How to: | N\xE4in teet: Haskellissa on suoraan sanottuna nautinnollisen\
+  \ puhdasta koodata. Katsoppas n\xE4it\xE4 esimerkkej\xE4."
 lastmod: '2024-03-13T22:44:56.607674-06:00'
 model: gpt-4-1106-preview
-summary: "Yhdistelemme merkkijonoja (eli teemme konkatenointia) liitt\xE4\xE4ksemme\
-  \ tekstinp\xE4tki\xE4 yhteen."
+summary: Haskellissa on suoraan sanottuna nautinnollisen puhdasta koodata.
 title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---

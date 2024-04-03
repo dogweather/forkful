@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:38:28.519667-07:00
-description: "Convertir una cadena de texto a min\xFAsculas en Java significa transformar\
-  \ todos los caracteres en letra peque\xF1a. Esto se hace por consistencia, busquedas\u2026"
+description: "C\xF3mo Hacerlo: ."
 lastmod: '2024-03-13T22:44:58.925094-06:00'
 model: gpt-4-1106-preview
-summary: "Convertir una cadena de texto a min\xFAsculas en Java significa transformar\
-  \ todos los caracteres en letra peque\xF1a."
+summary: .
 title: "Conversi\xF3n de una cadena de texto a min\xFAsculas"
 weight: 4
 ---

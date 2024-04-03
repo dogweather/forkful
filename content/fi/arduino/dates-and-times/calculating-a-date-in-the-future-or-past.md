@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 17:31:03.329616-07:00
-description: "Mit\xE4 on p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen tulevaisuuteen tai\
-  \ menneisyyteen? K\xE4yt\xE4nn\xF6ss\xE4 s\xE4\xE4d\xE4mme kelloja ja kalentereita\
-  \ ohjelmallisesti. Miksi? Kalenteritoiminnot\u2026"
+description: "How to: Arduino ei suoraan tue p\xE4iv\xE4m\xE4\xE4r\xE4k\xE4sittely\xE4\
+  , mutta voimme k\xE4ytt\xE4\xE4 kirjastoja kuten `TimeLib.h`. T\xE4ss\xE4 esimerkki\
+  \ tulevan p\xE4iv\xE4m\xE4\xE4r\xE4n laskennasta."
 lastmod: '2024-03-13T22:44:56.836954-06:00'
 model: gpt-4-1106-preview
-summary: "Mit\xE4 on p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen tulevaisuuteen tai menneisyyteen."
+summary: "Arduino ei suoraan tue p\xE4iv\xE4m\xE4\xE4r\xE4k\xE4sittely\xE4, mutta\
+  \ voimme k\xE4ytt\xE4\xE4 kirjastoja kuten `TimeLib.h`."
 title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---

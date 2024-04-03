@@ -1,12 +1,10 @@
 ---
 date: 2024-01-25 03:00:16.895639-07:00
-description: "Rounding numbers means adjusting them to the nearest whole number or\
-  \ a fraction with a certain precision. Programmers round numbers to simplify values\
-  \ for\u2026"
+description: 'How to: Rust makes rounding a breeze. Check these methods out for `f32`
+  or `f64` types.'
 lastmod: '2024-03-13T22:44:59.891038-06:00'
 model: gpt-4-1106-preview
-summary: Rounding numbers means adjusting them to the nearest whole number or a fraction
-  with a certain precision.
+summary: Rust makes rounding a breeze.
 title: Rounding numbers
 weight: 13
 ---

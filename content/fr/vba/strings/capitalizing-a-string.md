@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:03.901273-07:00
-description: "La capitalisation d'une cha\xEEne de caract\xE8res dans Visual Basic\
-  \ pour Applications (VBA) consiste \xE0 convertir le premier caract\xE8re de chaque\
-  \ mot en\u2026"
+description: "Comment faire : VBA ne dispose pas de fonction int\xE9gr\xE9e sp\xE9\
+  cifiquement pour la capitalisation de chaque mot dans une cha\xEEne, contrairement\
+  \ \xE0 certains\u2026"
 lastmod: '2024-03-13T22:44:57.531564-06:00'
 model: gpt-4-0125-preview
-summary: "La capitalisation d'une cha\xEEne de caract\xE8res dans Visual Basic pour\
-  \ Applications (VBA) consiste \xE0 convertir le premier caract\xE8re de chaque mot\
-  \ en majuscule tout en s'assurant que le reste des lettres soit en minuscule."
+summary: "VBA ne dispose pas de fonction int\xE9gr\xE9e sp\xE9cifiquement pour la\
+  \ capitalisation de chaque mot dans une cha\xEEne, contrairement \xE0 certains autres\
+  \ langages de programmation."
 title: "Mettre une cha\xEEne en majuscules"
 weight: 2
 ---

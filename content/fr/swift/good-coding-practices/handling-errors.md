@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 00:57:58.109377-07:00
-description: "G\xE9rer les erreurs en Swift signifie anticiper et r\xE9pondre aux\
-  \ probl\xE8mes qui surviennent lorsque votre code est ex\xE9cut\xE9. Nous le faisons\
-  \ pour contr\xF4ler le\u2026"
+description: "Comment faire : Swift utilise la gestion des erreurs avec les blocs\
+  \ `do`, `try`, et `catch`. Jetons un coup d'\u0153il ."
 lastmod: '2024-03-13T22:44:58.230554-06:00'
 model: gpt-4-1106-preview
-summary: "G\xE9rer les erreurs en Swift signifie anticiper et r\xE9pondre aux probl\xE8\
-  mes qui surviennent lorsque votre code est ex\xE9cut\xE9."
+summary: Swift utilise la gestion des erreurs avec les blocs `do`, `try`, et `catch`.
 title: Gestion des erreurs
 weight: 16
 ---

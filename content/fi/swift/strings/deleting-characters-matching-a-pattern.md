@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 17:43:14.076075-07:00
-description: "Kun puhutaan merkkien poistamisesta tietyll\xE4 kuvioinnilla, tarkoitetaan\
-  \ prosessia, jossa valikoidut merkit siivotaan pois merkkijonosta. Ohjelmoijat\u2026"
+description: "How to: / Kuinka: Swiftiss\xE4 merkkien poistaminen kuviota k\xE4ytt\xE4\
+  en onnistuu `String` laajennoksilla ja s\xE4\xE4nn\xF6llisill\xE4 lausekkeilla (regexp).\
+  \ T\xE4ss\xE4 helppo\u2026"
 lastmod: '2024-03-13T22:44:56.891912-06:00'
 model: gpt-4-1106-preview
-summary: "Kun puhutaan merkkien poistamisesta tietyll\xE4 kuvioinnilla, tarkoitetaan\
-  \ prosessia, jossa valikoidut merkit siivotaan pois merkkijonosta."
+summary: "Swiftiss\xE4 merkkien poistaminen kuviota k\xE4ytt\xE4en onnistuu `String`\
+  \ laajennoksilla ja s\xE4\xE4nn\xF6llisill\xE4 lausekkeilla (regexp)."
 title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---

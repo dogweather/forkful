@@ -2,14 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:09.449202-07:00
-description: "Loggen is het proces van het vastleggen van applicatiegebeurtenissen\
-  \ terwijl een programma draait, waardoor een spoor van hints voor post-mortemanalyse\
-  \ en\u2026"
+description: 'Hoe te: Python wordt geleverd met een ingebouwde module voor loggen.
+  Hier is een basisopstelling.'
 lastmod: '2024-03-13T22:44:50.383142-06:00'
 model: gpt-4-0125-preview
-summary: Loggen is het proces van het vastleggen van applicatiegebeurtenissen terwijl
-  een programma draait, waardoor een spoor van hints voor post-mortemanalyse en real-time
-  monitoring wordt geboden.
+summary: Python wordt geleverd met een ingebouwde module voor loggen.
 title: Logboekregistratie
 weight: 17
 ---

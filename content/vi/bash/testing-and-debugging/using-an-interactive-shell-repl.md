@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:14.423441-07:00
-description: "REPL vi\u1EBFt t\u1EAFt c\u1EE7a Read-Eval-Print Loop, m\u1ED9t m\xF4\
-  i tr\u01B0\u1EDDng l\u1EADp tr\xECnh m\xE1y t\xEDnh \u0111\u01A1n gi\u1EA3n, t\u01B0\
-  \u01A1ng t\xE1c. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3 \u0111\
-  \u1EC3 nhanh ch\xF3ng vi\u1EBFt v\xE0 ki\u1EC3m\u2026"
+description: "C\xE1ch th\u1EE9c: Trong Bash, terminal c\u1EE7a b\u1EA1n v\u1EC1 c\u01A1\
+  \ b\u1EA3n l\xE0 m\u1ED9t REPL. B\u1EA1n g\xF5 m\u1ED9t l\u1EC7nh; n\xF3 \u0111\u1ECD\
+  c, \u0111\xE1nh gi\xE1, in k\u1EBFt qu\u1EA3, v\xE0 l\u1EB7p l\u1EA1i ch\u1EDD l\u1EC7\
+  nh ti\u1EBFp theo c\u1EE7a b\u1EA1n. D\u01B0\u1EDBi\u2026"
 lastmod: '2024-03-13T22:44:36.881364-06:00'
 model: gpt-4-0125-preview
-summary: "REPL vi\u1EBFt t\u1EAFt c\u1EE7a Read-Eval-Print Loop, m\u1ED9t m\xF4i tr\u01B0\
-  \u1EDDng l\u1EADp tr\xECnh m\xE1y t\xEDnh \u0111\u01A1n gi\u1EA3n, t\u01B0\u01A1\
-  ng t\xE1c."
+summary: "Trong Bash, terminal c\u1EE7a b\u1EA1n v\u1EC1 c\u01A1 b\u1EA3n l\xE0 m\u1ED9\
+  t REPL."
 title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 weight: 34
 ---

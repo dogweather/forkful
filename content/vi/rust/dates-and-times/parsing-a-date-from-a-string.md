@@ -2,15 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:47.586509-07:00
-description: "Ph\xE2n t\xEDch c\xFA ph\xE1p ng\xE0y th\xE1ng t\u1EEB m\u1ED9t chu\u1ED7\
-  i ngh\u0129a l\xE0 chuy\u1EC3n \u0111\u1ED5i v\u0103n b\u1EA3n th\xE0nh \u0111\u1ECB\
-  nh d\u1EA1ng ng\xE0y m\xE0 m\xE3 c\u1EE7a b\u1EA1n c\xF3 th\u1EC3 hi\u1EC3u. Ch\xFA\
-  ng ta th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y v\xEC ng\xE0y\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EC3 ph\xE2n t\xEDch c\xFA ph\xE1p ng\xE0\
+  y th\xE1ng trong Rust, ch\xFAng ta s\u1EED d\u1EE5ng crate `chrono`, m\u1ED9t th\u01B0\
+  \ vi\u1EC7n \u0111i \u0111\u1EBFn cho ng\xE0y v\xE0 gi\u1EDD. Tr\u01B0\u1EDBc ti\xEA\
+  n, th\xEAm `chrono`\u2026"
 lastmod: '2024-03-13T22:44:36.389167-06:00'
 model: gpt-4-0125-preview
-summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p ng\xE0y th\xE1ng t\u1EEB m\u1ED9t chu\u1ED7\
-  i ngh\u0129a l\xE0 chuy\u1EC3n \u0111\u1ED5i v\u0103n b\u1EA3n th\xE0nh \u0111\u1ECB\
-  nh d\u1EA1ng ng\xE0y m\xE0 m\xE3 c\u1EE7a b\u1EA1n c\xF3 th\u1EC3 hi\u1EC3u."
+summary: "\u0110\u1EC3 ph\xE2n t\xEDch c\xFA ph\xE1p ng\xE0y th\xE1ng trong Rust,\
+  \ ch\xFAng ta s\u1EED d\u1EE5ng crate `chrono`, m\u1ED9t th\u01B0 vi\u1EC7n \u0111\
+  i \u0111\u1EBFn cho ng\xE0y v\xE0 gi\u1EDD."
 title: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB chu\u1ED7i k\xED t\u1EF1"
 weight: 30
 ---

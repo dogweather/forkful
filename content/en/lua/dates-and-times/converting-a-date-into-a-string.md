@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 17:36:46.946180-07:00
-description: "Converting a date to a string is about changing how date/time data is\
-  \ displayed. Programmers do this for readability, localization, or formatting\u2026"
+description: 'How to: In Lua, we use `os.date` to format dates into strings. Here''s
+  a slice of code to chew on.'
 lastmod: '2024-03-13T22:45:00.215825-06:00'
 model: gpt-4-1106-preview
-summary: Converting a date to a string is about changing how date/time data is displayed.
+summary: In Lua, we use `os.date` to format dates into strings.
 title: Converting a date into a string
 weight: 28
 ---

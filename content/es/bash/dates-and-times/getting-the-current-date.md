@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:42.056527-07:00
-description: "Recuperar la fecha actual en Bash implica usar comandos integrados para\
-  \ mostrar la fecha y la hora en varios formatos. Los programadores utilizan esta\u2026"
+description: "C\xF3mo hacerlo: En Bash, el comando `date` es tu herramienta principal\
+  \ para obtener la fecha y hora actuales. Aqu\xED hay algunos ejemplos de c\xF3mo\
+  \ usarlo: 1.\u2026"
 lastmod: '2024-03-13T22:44:59.257538-06:00'
 model: gpt-4-0125-preview
-summary: Recuperar la fecha actual en Bash implica usar comandos integrados para mostrar
-  la fecha y la hora en varios formatos.
+summary: En Bash, el comando `date` es tu herramienta principal para obtener la fecha
+  y hora actuales.
 title: Obteniendo la fecha actual
 weight: 29
 ---

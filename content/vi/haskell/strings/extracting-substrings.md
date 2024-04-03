@@ -2,14 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:12.198681-07:00
-description: "Tr\xEDch xu\u1EA5t c\xE1c chu\u1ED7i con c\xF3 ngh\u0129a l\xE0 k\xE9\
-  o ra c\xE1c ph\u1EA7n c\u1ED1 \u0111\u1ECBnh c\u1EE7a m\u1ED9t chu\u1ED7i. L\u1EAD\
-  p tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 c\xF4 l\u1EADp d\u1EEF\
-  \ li\u1EC7u, l\xE0m s\u1EA1ch n\xF3, ho\u1EB7c l\xE0m vi\u1EC7c v\u1EDBi\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Haskell, b\u1EA1n c\xF3 th\u1EC3 c\u1EAF\
+  t v\xE0 chia chu\u1ED7i b\u1EB1ng c\xE1c h\xE0m c\xF3 s\u1EB5n nh\u01B0 `take`,\
+  \ `drop`, v\xE0 `substring` (t\u1EEB `Data.Text`)."
 lastmod: '2024-03-13T22:44:36.698106-06:00'
 model: gpt-4-0125-preview
-summary: "Tr\xEDch xu\u1EA5t c\xE1c chu\u1ED7i con c\xF3 ngh\u0129a l\xE0 k\xE9o ra\
-  \ c\xE1c ph\u1EA7n c\u1ED1 \u0111\u1ECBnh c\u1EE7a m\u1ED9t chu\u1ED7i."
+summary: "Trong Haskell, b\u1EA1n c\xF3 th\u1EC3 c\u1EAFt v\xE0 chia chu\u1ED7i b\u1EB1\
+  ng c\xE1c h\xE0m c\xF3 s\u1EB5n nh\u01B0 `take`, `drop`, v\xE0 `substring` (t\u1EEB\
+  \ `Data.Text`)."
 title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 weight: 6
 ---

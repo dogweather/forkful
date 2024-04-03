@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:56:02.681646-07:00
-description: "Beim Lesen von Kommandozeilenargumenten nimmt ein Programm Parameter\
-  \ von au\xDFen auf, um sein Verhalten zu steuern oder Daten zu verarbeiten. Programmierer\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:53.946356-06:00'
 model: gpt-4-1106-preview
-summary: "Beim Lesen von Kommandozeilenargumenten nimmt ein Programm Parameter von\
-  \ au\xDFen auf, um sein Verhalten zu steuern oder Daten zu verarbeiten."
+summary: .
 title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---

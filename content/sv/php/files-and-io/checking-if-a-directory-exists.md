@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:09.779303-07:00
-description: "Att kontrollera om en mapp finns \xE4r en grundl\xE4ggande uppgift i\
-  \ PHP-programmering eftersom det l\xE5ter dig verifiera n\xE4rvaron av en mapp innan\
-  \ du utf\xF6r\u2026"
+description: "Hur man g\xF6r: Det inf\xF6dda s\xE4ttet att kontrollera om en mapp\
+  \ finns i PHP \xE4r att anv\xE4nda funktionen `is_dir()`. Denna funktion tar en\
+  \ filv\xE4g som argument och\u2026"
 lastmod: '2024-03-13T22:44:38.010599-06:00'
 model: gpt-4-0125-preview
-summary: "Att kontrollera om en mapp finns \xE4r en grundl\xE4ggande uppgift i PHP-programmering\
-  \ eftersom det l\xE5ter dig verifiera n\xE4rvaron av en mapp innan du utf\xF6r operationer\
-  \ som att l\xE4sa fr\xE5n eller skriva till filer inuti den."
+summary: "Det inf\xF6dda s\xE4ttet att kontrollera om en mapp finns i PHP \xE4r att\
+  \ anv\xE4nda funktionen `is_dir()`."
 title: Kontrollera om en katalog existerar
 weight: 20
 ---

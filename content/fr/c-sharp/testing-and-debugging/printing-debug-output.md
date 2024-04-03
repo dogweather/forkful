@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:52:29.187512-07:00
-description: "Afficher des sorties de d\xE9bogage, c'est comme laisser des petites\
-  \ notes dans votre code pour vous dire ce qui se passe. Les d\xE9veloppeurs font\
-  \ \xE7a pour\u2026"
+description: 'How to: (Comment faire :) .'
 lastmod: '2024-03-13T22:44:57.790081-06:00'
 model: gpt-4-1106-preview
-summary: "Afficher des sorties de d\xE9bogage, c'est comme laisser des petites notes\
-  \ dans votre code pour vous dire ce qui se passe."
+summary: .
 title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---

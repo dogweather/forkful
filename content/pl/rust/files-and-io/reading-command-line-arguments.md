@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:57:06.134737-07:00
-description: "Czytanie argument\xF3w linii polece\u0144 to pobieranie danych wprowadzonych\
-  \ przez u\u017Cytkownika podczas wywo\u0142ywania programu. Programi\u015Bci u\u017C\
-  ywaj\u0105 tego, by\u2026"
+description: "Jak to zrobi\u0107: W Rust u\u017Cywamy crate`a `std::env` do obs\u0142\
+  ugi argument\xF3w."
 lastmod: '2024-03-13T22:44:35.201598-06:00'
 model: gpt-4-1106-preview
-summary: "Czytanie argument\xF3w linii polece\u0144 to pobieranie danych wprowadzonych\
-  \ przez u\u017Cytkownika podczas wywo\u0142ywania programu."
+summary: "W Rust u\u017Cywamy crate`a `std::env` do obs\u0142ugi argument\xF3w."
 title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---

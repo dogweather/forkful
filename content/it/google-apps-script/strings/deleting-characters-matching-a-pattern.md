@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:59.106322-07:00
-description: "Eliminare caratteri che corrispondono a un specifico pattern \xE8 una\
-  \ tecnica utilizzata per pulire o formattare stringhe nella programmazione. Nel\
-  \ contesto\u2026"
+description: "Come fare: Google Apps Script fornisce metodi robusti per la manipolazione\
+  \ di stringhe, sfruttando le capacit\xE0 innate di JavaScript. Per eliminare\u2026"
 lastmod: '2024-03-13T22:44:42.936728-06:00'
 model: gpt-4-0125-preview
-summary: "Eliminare caratteri che corrispondono a un specifico pattern \xE8 una tecnica\
-  \ utilizzata per pulire o formattare stringhe nella programmazione."
+summary: "Google Apps Script fornisce metodi robusti per la manipolazione di stringhe,\
+  \ sfruttando le capacit\xE0 innate di JavaScript."
 title: Eliminare i caratteri corrispondenti a un modello
 weight: 5
 ---

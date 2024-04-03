@@ -2,13 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:45.096075-07:00
-description: "\xC5 konkatere strenger involverer \xE5 sammenf\xF8ye to eller flere\
-  \ strenger ende-til-ende for \xE5 danne en ny streng. Programmerere gj\xF8r dette\
-  \ for \xE5 dynamisk\u2026"
+description: "Hvordan: I Go finnes det flere m\xE5ter \xE5 konkatere strenger p\xE5\
+  . Her er et blikk p\xE5 noen vanlige metoder med eksempler: #."
 lastmod: '2024-03-13T22:44:40.258076-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 konkatere strenger involverer \xE5 sammenf\xF8ye to eller flere strenger\
-  \ ende-til-ende for \xE5 danne en ny streng."
+summary: "I Go finnes det flere m\xE5ter \xE5 konkatere strenger p\xE5."
 title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---

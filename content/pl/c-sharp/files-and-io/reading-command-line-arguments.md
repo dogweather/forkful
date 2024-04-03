@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:55:34.368422-07:00
-description: "(Co i Dlaczego?) Czytanie argument\xF3w linii komend to spos\xF3b, by\
-  \ nasz program C# m\xF3g\u0142 otrzymywa\u0107 dane bezpo\u015Brednio od u\u017C\
-  ytkownika za pomoc\u0105 terminala.\u2026"
+description: "How to: (Jak to zrobi\u0107?)."
 lastmod: '2024-03-13T22:44:35.423746-06:00'
 model: gpt-4-1106-preview
-summary: (Co i Dlaczego.
+summary: "(Jak to zrobi\u0107?)."
 title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:53:59.740307-07:00
-description: "Converter uma string para letras min\xFAsculas \xE9 uma opera\xE7\xE3\
-  o fundamental que envolve transformar todos os caracteres de uma string dada em\
-  \ seus equivalentes\u2026"
+description: "Como fazer: No Dart, voc\xEA pode converter uma string para min\xFA\
+  scula usando o m\xE9todo `toLowerCase()` fornecido pela classe `String`. Este m\xE9\
+  todo retorna uma\u2026"
 lastmod: '2024-03-13T22:44:46.267421-06:00'
 model: gpt-4-0125-preview
-summary: "Converter uma string para letras min\xFAsculas \xE9 uma opera\xE7\xE3o fundamental\
-  \ que envolve transformar todos os caracteres de uma string dada em seus equivalentes\
-  \ em min\xFAscula."
+summary: "No Dart, voc\xEA pode converter uma string para min\xFAscula usando o m\xE9\
+  todo `toLowerCase()` fornecido pela classe `String`."
 title: "Convertendo uma string para letras min\xFAsculas"
 weight: 4
 ---

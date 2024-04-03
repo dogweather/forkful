@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 01:06:27.936384-07:00
-description: "Logging i programmering inneb\xE6rer i bunn og grunn \xE5 etterlate\
-  \ seg et spor av \"smuler\" i form av registrerte hendelser eller meldinger, som\
-  \ kan brukes til\u2026"
+description: "Hvordan: I Haskell kan logging implementeres ved hjelp av biblioteker\
+  \ som `monad-logger` eller `hslogger`. Her er et kjapt eksempel som bruker `monad-\u2026"
 lastmod: '2024-03-13T22:44:40.848197-06:00'
 model: gpt-4-1106-preview
-summary: "Logging i programmering inneb\xE6rer i bunn og grunn \xE5 etterlate seg\
-  \ et spor av \"smuler\" i form av registrerte hendelser eller meldinger, som kan\
-  \ brukes til \xE5 spore hva applikasjonen din gj\xF8r i et gitt \xF8yeblikk."
+summary: I Haskell kan logging implementeres ved hjelp av biblioteker som `monad-logger`
+  eller `hslogger`.
 title: "Loggf\xF8ring"
 weight: 17
 ---

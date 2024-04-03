@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:10.278545-07:00
-description: "Avrunding av tall i programmering handler om \xE5 tiln\xE6rme et tall\
-  \ til n\xE6rmeste hele tall eller til et bestemt antall desimalplasser. Programmerere\
-  \ runder av\u2026"
+description: "Hvordan: I Visual Basic for Applications (VBA), kan avrunding oppn\xE5\
+  s ved bruk av flere funksjoner, hver egnet for spesifikke scenarioer. Her er de\
+  \ mest\u2026"
 lastmod: '2024-03-13T22:44:40.612902-06:00'
 model: gpt-4-0125-preview
-summary: "Avrunding av tall i programmering handler om \xE5 tiln\xE6rme et tall til\
-  \ n\xE6rmeste hele tall eller til et bestemt antall desimalplasser."
+summary: "I Visual Basic for Applications (VBA), kan avrunding oppn\xE5s ved bruk\
+  \ av flere funksjoner, hver egnet for spesifikke scenarioer."
 title: Avrunding av tall
 weight: 13
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 18:02:30.152586-07:00
-description: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica es el proceso\
-  \ de comunicarse con un servidor web usando credenciales codificadas en Base64\u2026"
+description: "C\xF3mo hacerlo: En Rust, puedes usar la biblioteca `reqwest` para manejar\
+  \ solicitudes HTTP. Vamos a ver c\xF3mo implementarlo. Primero, a\xF1ade `reqwest`\
+  \ a tu\u2026"
 lastmod: '2024-03-13T22:44:58.846192-06:00'
 model: gpt-4-1106-preview
-summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica es el proceso de\
-  \ comunicarse con un servidor web usando credenciales codificadas en Base64 (usuario:contrase\xF1\
-  a)."
+summary: En Rust, puedes usar la biblioteca `reqwest` para manejar solicitudes HTTP.
 title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
 weight: 45
 ---

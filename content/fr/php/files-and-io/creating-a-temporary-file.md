@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:41:04.515571-07:00
-description: "La cr\xE9ation d'un fichier temporaire permet de stocker des donn\xE9\
-  es de mani\xE8re \xE9ph\xE9m\xE8re pendant l\u2019ex\xE9cution d\u2019un script.\
-  \ Les programmeurs utilisent des\u2026"
+description: "Comment faire : Cr\xE9er un fichier temporaire en PHP est simple et\
+  \ direct. Utilisez la fonction `tmpfile()` pour ouvrir et cr\xE9er automatiquement\
+  \ un fichier\u2026"
 lastmod: '2024-03-13T22:44:57.899847-06:00'
 model: gpt-4-1106-preview
-summary: "La cr\xE9ation d'un fichier temporaire permet de stocker des donn\xE9es\
-  \ de mani\xE8re \xE9ph\xE9m\xE8re pendant l\u2019ex\xE9cution d\u2019un script."
+summary: "Cr\xE9er un fichier temporaire en PHP est simple et direct."
 title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---

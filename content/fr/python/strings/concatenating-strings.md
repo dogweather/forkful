@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:35:27.524482-07:00
-description: "Concat\xE9ner des cha\xEEnes de caract\xE8res, c'est les coller bout\
-  \ \xE0 bout pour en faire une seule. Les programmeurs font \xE7a pour afficher des\
-  \ messages\u2026"
+description: 'Comment faire : .'
 lastmod: '2024-03-13T22:44:57.226409-06:00'
 model: gpt-4-1106-preview
-summary: "Concat\xE9ner des cha\xEEnes de caract\xE8res, c'est les coller bout \xE0\
-  \ bout pour en faire une seule."
+summary: .
 title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 weight: 3
 ---

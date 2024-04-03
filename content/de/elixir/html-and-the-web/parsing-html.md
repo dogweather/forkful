@@ -2,11 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:42.251444-07:00
-description: "HTML in Elixir zu parsen, umfasst das Extrahieren von Informationen\
-  \ aus HTML-Dokumenten. Programmierer tun dies, um programmatisch mit Webseiten zu\u2026"
+description: "Wie geht das: Elixir, mit seinem robusten Nebenl\xE4ufigkeitsmodell\
+  \ und dem Paradigma der funktionalen Programmierung, enth\xE4lt keine integrierten\
+  \ HTML-\u2026"
 lastmod: '2024-03-13T22:44:53.509680-06:00'
 model: gpt-4-0125-preview
-summary: HTML in Elixir zu parsen, umfasst das Extrahieren von Informationen aus HTML-Dokumenten.
+summary: "Elixir, mit seinem robusten Nebenl\xE4ufigkeitsmodell und dem Paradigma\
+  \ der funktionalen Programmierung, enth\xE4lt keine integrierten HTML-Parsing-Funktionen."
 title: HTML parsen
 weight: 43
 ---

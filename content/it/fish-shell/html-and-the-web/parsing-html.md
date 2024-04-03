@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:05.874360-07:00
-description: "Il parsing di HTML si riferisce all'estrazione di dati o informazioni\
-  \ da contenuti HTML, un compito comune quando si gestiscono dati web. I programmatori\u2026"
+description: "Come fare: La shell Fish, prevalentemente, non \xE8 progettata per il\
+  \ parsing HTML direttamente. Tuttavia, eccelle nel collegare insieme strumenti Unix\
+  \ come\u2026"
 lastmod: '2024-03-13T22:44:43.856460-06:00'
 model: gpt-4-0125-preview
-summary: Il parsing di HTML si riferisce all'estrazione di dati o informazioni da
-  contenuti HTML, un compito comune quando si gestiscono dati web.
+summary: "La shell Fish, prevalentemente, non \xE8 progettata per il parsing HTML\
+  \ direttamente."
 title: Analisi del HTML
 weight: 43
 ---

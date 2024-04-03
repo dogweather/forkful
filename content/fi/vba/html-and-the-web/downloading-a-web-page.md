@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:18.475025-07:00
-description: "Web-sivun lataaminen Visual Basic for Applications (VBA) -ohjelmoinnilla\
-  \ tarkoittaa web-sivun HTML-sis\xE4ll\xF6n noutamista Internetist\xE4. Ohjelmoijat\u2026"
+description: "Kuinka: Voit ladata web-sivun VBA:lla k\xE4ytt\xE4m\xE4ll\xE4 Microsoft\
+  \ XML, v6.0 (MSXML6) -kirjastoa, joka mahdollistaa palvelimen HTTP-pyynn\xF6t. Ennen\
+  \ koodiin\u2026"
 lastmod: '2024-03-13T22:44:56.399199-06:00'
 model: gpt-4-0125-preview
-summary: "Web-sivun lataaminen Visual Basic for Applications (VBA) -ohjelmoinnilla\
-  \ tarkoittaa web-sivun HTML-sis\xE4ll\xF6n noutamista Internetist\xE4."
+summary: "Voit ladata web-sivun VBA:lla k\xE4ytt\xE4m\xE4ll\xE4 Microsoft XML, v6.0\
+  \ (MSXML6) -kirjastoa, joka mahdollistaa palvelimen HTTP-pyynn\xF6t."
 title: Verkkosivun lataaminen
 weight: 42
 ---

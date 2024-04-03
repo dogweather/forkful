@@ -2,13 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:58.472223-07:00
-description: "La interpolaci\xF3n de cadenas es el proceso de inyectar valores de\
-  \ variables directamente en cadenas de texto, a menudo para crear mensajes significativos\u2026"
+description: "C\xF3mo hacerlo: En Dart, la interpolaci\xF3n de cadenas es sencilla,\
+  \ utilizando el s\xEDmbolo `$` para interpolar expresiones directamente dentro de\
+  \ literales de\u2026"
 lastmod: '2024-03-13T22:44:58.732967-06:00'
 model: gpt-4-0125-preview
-summary: "La interpolaci\xF3n de cadenas es el proceso de inyectar valores de variables\
-  \ directamente en cadenas de texto, a menudo para crear mensajes significativos\
-  \ sin concatenaciones engorrosas."
+summary: "En Dart, la interpolaci\xF3n de cadenas es sencilla, utilizando el s\xED\
+  mbolo `$` para interpolar expresiones directamente dentro de literales de cadena."
 title: Interpolando una cadena de texto
 weight: 8
 ---

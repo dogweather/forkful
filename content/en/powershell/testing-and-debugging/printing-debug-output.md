@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:53:22.782145-07:00
-description: "Printing debug output is like having a conversation with your code.\
-  \ It's about inserting print statements to show what's going on under the hood of\
-  \ your\u2026"
+description: "How to: Let's keep it simple and actually do something. We'll show the\
+  \ value of a variable, how a loop is progressing, and capture the pesky error that\u2026"
 lastmod: '2024-03-13T22:45:00.286433-06:00'
 model: gpt-4-1106-preview
-summary: Printing debug output is like having a conversation with your code.
+summary: Let's keep it simple and actually do something.
 title: Printing debug output
 weight: 33
 ---

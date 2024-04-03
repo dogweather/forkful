@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 18:00:20.129152-07:00
-description: "Enviar una petici\xF3n HTTP es el proceso de solicitar o enviar datos\
-  \ a un servidor web. Los programadores lo hacen para interactuar con servicios web,\u2026"
+description: "C\xF3mo hacerlo: Para enviar una petici\xF3n HTTP en Java, el JDK proporciona\
+  \ la clase `HttpClient`. Aqu\xED hay un ejemplo de c\xF3mo hacer una petici\xF3\
+  n GET a un\u2026"
 lastmod: '2024-03-13T22:44:58.934636-06:00'
 model: gpt-4-1106-preview
-summary: "Enviar una petici\xF3n HTTP es el proceso de solicitar o enviar datos a\
-  \ un servidor web."
+summary: "Para enviar una petici\xF3n HTTP en Java, el JDK proporciona la clase `HttpClient`."
 title: Enviando una solicitud http
 weight: 44
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:05.563852-07:00
-description: "Virheiden kirjoittaminen standardivirheeseen (stderr) Elixiriss\xE4\
-  \ on menetelm\xE4 virheilmoitusten ja diagnostiikkatietojen ohjaamiseksi erilleen\u2026"
+description: "Miten: Elixiriss\xE4 voit k\xE4ytt\xE4\xE4 `IO`-moduulin funktioita,\
+  \ kuten `IO.puts/2` ja `IO.warn/2`, kirjoittaaksesi viestej\xE4 standardivirheeseen."
 lastmod: '2024-03-13T22:44:56.243394-06:00'
 model: gpt-4-0125-preview
-summary: "Virheiden kirjoittaminen standardivirheeseen (stderr) Elixiriss\xE4 on menetelm\xE4\
-  \ virheilmoitusten ja diagnostiikkatietojen ohjaamiseksi erilleen p\xE4\xE4ulostulosta\
-  \ (stdout)."
+summary: "Elixiriss\xE4 voit k\xE4ytt\xE4\xE4 `IO`-moduulin funktioita, kuten `IO.puts/2`\
+  \ ja `IO.warn/2`, kirjoittaaksesi viestej\xE4 standardivirheeseen."
 title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---

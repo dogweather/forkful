@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:21.939712-07:00
-description: "Interaktywna pow\u0142oka, znana r\xF3wnie\u017C jako p\u0119tla czytaj-wykonaj-wypisz\
-  \ (REPL), pozwala programistom wpisywa\u0107 wyra\u017Cenia lub kod i natychmiast\
-  \ widzie\u0107 wyniki,\u2026"
+description: "Jak to zrobi\u0107: Zaanga\u017Cowanie w REPL dla C mo\u017Ce nie by\u0107\
+  \ tak bezpo\u015Brednie jak w j\u0119zykach takich jak Python czy JavaScript. Jednak\
+  \ narz\u0119dzia takie jak\u2026"
 lastmod: '2024-03-13T22:44:35.888292-06:00'
 model: gpt-4-0125-preview
-summary: "Interaktywna pow\u0142oka, znana r\xF3wnie\u017C jako p\u0119tla czytaj-wykonaj-wypisz\
-  \ (REPL), pozwala programistom wpisywa\u0107 wyra\u017Cenia lub kod i natychmiast\
-  \ widzie\u0107 wyniki, co u\u0142atwia nauk\u0119 i procesy debugowania."
+summary: "Zaanga\u017Cowanie w REPL dla C mo\u017Ce nie by\u0107 tak bezpo\u015Brednie\
+  \ jak w j\u0119zykach takich jak Python czy JavaScript."
 title: "Korzystanie z interaktywnej pow\u0142oki (REPL)"
 weight: 34
 ---

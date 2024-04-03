@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:24.035740-07:00
-description: "Tekstin etsiminen ja korvaaminen ohjelmoinnissa helpottaa merkkijonojen\
-  \ muokkausta ja hallintaa, mik\xE4 on perusteht\xE4v\xE4 datan k\xE4sittelyss\xE4\
-  \ ja\u2026"
+description: "Kuinka: Go-kieless\xE4 `strings`-paketti tarjoaa erilaisia funktioita\
+  \ tekstien etsimiseen ja korvaamiseen merkkijonoissa. Tutkitaan muutamia yleisi\xE4\
+  \u2026"
 lastmod: '2024-03-13T22:44:56.034517-06:00'
 model: gpt-4-0125-preview
-summary: "Tekstin etsiminen ja korvaaminen ohjelmoinnissa helpottaa merkkijonojen\
-  \ muokkausta ja hallintaa, mik\xE4 on perusteht\xE4v\xE4 datan k\xE4sittelyss\xE4\
-  \ ja ohjelmistokehityksess\xE4."
+summary: "Go-kieless\xE4 `strings`-paketti tarjoaa erilaisia funktioita tekstien etsimiseen\
+  \ ja korvaamiseen merkkijonoissa."
 title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---

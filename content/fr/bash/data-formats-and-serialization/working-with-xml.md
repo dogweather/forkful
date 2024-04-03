@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:27:30.326247-07:00
-description: "Travailler avec XML implique d'analyser, d'extraire et de manipuler\
-  \ des donn\xE9es au format Extensible Markup Language. Les programmeurs se d\xE9\
-  battent avec\u2026"
+description: "Comment faire : Voici comment analyser XML en Bash. Les outils ? xmllint\
+  \ et xmlstarlet. It\xE9rer \xE0 travers les \xE9l\xE9ments XML ? Absolument. Exemple\
+  \ avec\u2026"
 lastmod: '2024-03-13T22:44:58.023870-06:00'
 model: gpt-4-0125-preview
-summary: "Travailler avec XML implique d'analyser, d'extraire et de manipuler des\
-  \ donn\xE9es au format Extensible Markup Language."
+summary: Voici comment analyser XML en Bash.
 title: Travailler avec XML
 weight: 40
 ---

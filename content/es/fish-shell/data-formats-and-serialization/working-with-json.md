@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:34.043756-07:00
-description: "Trabajar con JSON en Fish Shell implica analizar y generar datos JSON,\
-  \ una tarea com\xFAn para configurar aplicaciones, interacci\xF3n con API y optimizar\u2026"
+description: "C\xF3mo hacerlo: Fish Shell, por s\xED mismo, no tiene utilidades incorporadas\
+  \ para analizar y generar JSON. Sin embargo, se integra sin problemas con\u2026"
 lastmod: '2024-03-13T22:44:59.522686-06:00'
 model: gpt-4-0125-preview
-summary: "Trabajar con JSON en Fish Shell implica analizar y generar datos JSON, una\
-  \ tarea com\xFAn para configurar aplicaciones, interacci\xF3n con API y optimizar\
-  \ flujos de trabajo en la l\xEDnea de comandos."
+summary: "Fish Shell, por s\xED mismo, no tiene utilidades incorporadas para analizar\
+  \ y generar JSON."
 title: Trabajando con JSON
 weight: 38
 ---

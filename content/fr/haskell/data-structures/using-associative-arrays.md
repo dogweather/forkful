@@ -3,13 +3,13 @@ changelog:
 - 2024-01-30, dogweather, reviewed
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:38.130304-07:00
-description: "Les tableaux associatifs, ou dictionnaires, en Haskell concernent principalement\
-  \ la mise en correspondance de cl\xE9s et de valeurs pour une recherche rapide\u2026"
+description: "Comment faire : Haskell n'inclut pas de tableaux associatifs directement\
+  \ comme certains autres langages, mais il propose une biblioth\xE8que standard\u2026"
 lastmod: '2024-03-13T22:44:57.826204-06:00'
 model: gpt-4-0125-preview
-summary: "Les tableaux associatifs, ou dictionnaires, en Haskell concernent principalement\
-  \ la mise en correspondance de cl\xE9s et de valeurs pour une recherche rapide et\
-  \ une gestion efficace des donn\xE9es."
+summary: "Haskell n'inclut pas de tableaux associatifs directement comme certains\
+  \ autres langages, mais il propose une biblioth\xE8que standard puissante appel\xE9\
+  e `Data.Map` pour travailler avec des paires cl\xE9-valeur."
 title: Utilisation des tableaux associatifs
 weight: 15
 ---

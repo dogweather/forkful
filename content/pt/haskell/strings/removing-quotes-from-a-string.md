@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 03:39:39.835016-07:00
-description: "Remover aspas de uma string significa eliminar quaisquer marcas de aspas\u2014\
-  simples (' ') ou duplas (\" \")\u2014que fa\xE7am parte dos dados da string. Programadores\u2026"
+description: "Como fazer: Em Haskell, podemos criar uma fun\xE7\xE3o que remove todas\
+  \ as aspas de uma determinada string. \xC9 como dizer para as aspas vazarem, e garantir\
+  \ que\u2026"
 lastmod: '2024-03-13T22:44:46.613741-06:00'
 model: gpt-4-0125-preview
-summary: "Remover aspas de uma string significa eliminar quaisquer marcas de aspas\u2014\
-  simples (' ') ou duplas (\" \")\u2014que fa\xE7am parte dos dados da string."
+summary: "Em Haskell, podemos criar uma fun\xE7\xE3o que remove todas as aspas de\
+  \ uma determinada string."
 title: Removendo aspas de uma string
 weight: 9
 ---

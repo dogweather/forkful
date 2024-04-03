@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:21.834026-07:00
-description: "\xC5 jobbe med JSON (JavaScript Object Notation) inneb\xE6rer parsing\
-  \ av JSON-formatterte strenger til Python-objekter og omvendt. Dette er avgj\xF8\
-  rende for web-\u2026"
+description: "Hvordan: Pythons innebygde `json`-bibliotek forenkler prosessen med\
+  \ koding (konvertering av Python-objekter til JSON) og dekoding (konvertering av\
+  \ JSON\u2026"
 lastmod: '2024-03-13T22:44:40.382327-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 jobbe med JSON (JavaScript Object Notation) inneb\xE6rer parsing av\
-  \ JSON-formatterte strenger til Python-objekter og omvendt."
+summary: Pythons innebygde `json`-bibliotek forenkler prosessen med koding (konvertering
+  av Python-objekter til JSON) og dekoding (konvertering av JSON til Python-objekter).
 title: Arbeider med JSON
 weight: 38
 ---

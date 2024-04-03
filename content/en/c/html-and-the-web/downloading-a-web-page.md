@@ -1,12 +1,11 @@
 ---
 date: 2024-02-03 17:50:09.875050-07:00
-description: "Downloading a web page in C involves programmatically accessing the\
-  \ content of a web page over the internet and saving it locally for processing or\u2026"
+description: "How to: To download a web page in C, one popular approach is using the\
+  \ libcurl library, an efficient and portable client-side URL transfer library. Ensure\u2026"
 lastmod: '2024-03-13T22:45:00.510411-06:00'
 model: gpt-4-0125-preview
-summary: Downloading a web page in C involves programmatically accessing the content
-  of a web page over the internet and saving it locally for processing or offline
-  use.
+summary: To download a web page in C, one popular approach is using the libcurl library,
+  an efficient and portable client-side URL transfer library.
 title: Downloading a web page
 weight: 42
 ---

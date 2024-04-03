@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 04:15:24.644105-07:00
-description: "Un REPL (Read-Eval-Print Loop - Ciclo Leggi-Valuta-Stampa) \xE8 una\
-  \ shell interattiva che elabora input singoli degli utenti, esegue codice e restituisce\
-  \ il\u2026"
+description: "Come fare: Avviare un REPL in Java \xE8 semplice con lo strumento `jshell`\
+  \ introdotto in Java 9. Ecco come ottenere e iniziare una sessione di base."
 lastmod: '2024-03-13T22:44:43.310315-06:00'
 model: gpt-4-0125-preview
-summary: "Un REPL (Read-Eval-Print Loop - Ciclo Leggi-Valuta-Stampa) \xE8 una shell\
-  \ interattiva che elabora input singoli degli utenti, esegue codice e restituisce\
-  \ il risultato."
+summary: "Avviare un REPL in Java \xE8 semplice con lo strumento `jshell` introdotto\
+  \ in Java 9."
 title: Utilizzo di un interprete interattivo (REPL)
 weight: 34
 ---

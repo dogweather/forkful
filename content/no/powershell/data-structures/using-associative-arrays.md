@@ -2,14 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:36.641748-07:00
-description: "Assosiative tabeller, ogs\xE5 kjent som hashtabeller eller ordb\xF8\
-  ker i PowerShell, lar deg lagre data i n\xF8kkel-verdipar, noe som gj\xF8r datahenting\
-  \ enkel og\u2026"
+description: "Hvordan: \xC5 opprette og bruke assosiative tabeller i PowerShell er\
+  \ ganske rett frem. Slik gj\xF8r du magien: **Opprette en assosiativ tabell:**."
 lastmod: '2024-03-13T22:44:41.009142-06:00'
 model: gpt-4-0125-preview
-summary: "Assosiative tabeller, ogs\xE5 kjent som hashtabeller eller ordb\xF8ker i\
-  \ PowerShell, lar deg lagre data i n\xF8kkel-verdipar, noe som gj\xF8r datahenting\
-  \ enkel og effektiv."
+summary: "\xC5 opprette og bruke assosiative tabeller i PowerShell er ganske rett\
+  \ frem."
 title: Bruke associative tabeller
 weight: 15
 ---

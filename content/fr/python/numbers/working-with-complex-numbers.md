@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 04:44:38.566328-07:00
-description: "Les nombres complexes sont un ensemble de nombres de la forme `a + bi`,\
-  \ o\xF9 `a` et `b` sont des nombres r\xE9els, et `i` est l'unit\xE9 imaginaire (`i^2\
-  \ = -1`).\u2026"
+description: "Comment faire : Python prend en charge les nombres complexes de mani\xE8\
+  re int\xE9gr\xE9e. Voici comment vous pouvez les manipuler ."
 lastmod: '2024-03-13T22:44:57.228578-06:00'
 model: gpt-4-0125-preview
-summary: "Les nombres complexes sont un ensemble de nombres de la forme `a + bi`,\
-  \ o\xF9 `a` et `b` sont des nombres r\xE9els, et `i` est l'unit\xE9 imaginaire (`i^2\
-  \ = -1`)."
+summary: "Python prend en charge les nombres complexes de mani\xE8re int\xE9gr\xE9\
+  e."
 title: Manipulation des nombres complexes
 weight: 14
 ---

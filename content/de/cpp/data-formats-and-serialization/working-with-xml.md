@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:28:13.508855-07:00
-description: "Mit XML zu arbeiten bedeutet, XML-Daten (eXtensible Markup Language)\
-  \ zu parsen, zu erstellen und zu manipulieren. Programmierer verwalten XML, um\u2026"
+description: 'Wie: Hier ist eine einfache Art, XML mit der TinyXML-2-Bibliothek zu
+  parsen.'
 lastmod: '2024-03-13T22:44:54.208529-06:00'
 model: gpt-4-0125-preview
-summary: Mit XML zu arbeiten bedeutet, XML-Daten (eXtensible Markup Language) zu parsen,
-  zu erstellen und zu manipulieren.
+summary: Hier ist eine einfache Art, XML mit der TinyXML-2-Bibliothek zu parsen.
 title: Arbeiten mit XML
 weight: 40
 ---

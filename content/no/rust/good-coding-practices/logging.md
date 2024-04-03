@@ -1,13 +1,13 @@
 ---
 date: 2024-01-26 01:09:07.835118-07:00
-description: "Loggf\xF8ring er som \xE5 holde en journal for applikasjonen din; det\
-  \ er praksisen med \xE5 registrere hendelser, feil og annen relevant data under\
-  \ kj\xF8retid.\u2026"
+description: "Hvordan: La oss sette opp et grunnleggende loggf\xF8ringsscenario i\
+  \ Rust ved \xE5 bruke `log`-kassen, som tilbyr en loggf\xF8ring facade, og `env_logger`,\
+  \ en\u2026"
 lastmod: '2024-03-13T22:44:40.580245-06:00'
 model: gpt-4-1106-preview
-summary: "Loggf\xF8ring er som \xE5 holde en journal for applikasjonen din; det er\
-  \ praksisen med \xE5 registrere hendelser, feil og annen relevant data under kj\xF8\
-  retid."
+summary: "La oss sette opp et grunnleggende loggf\xF8ringsscenario i Rust ved \xE5\
+  \ bruke `log`-kassen, som tilbyr en loggf\xF8ring facade, og `env_logger`, en loggf\xF8\
+  ringsimplementasjon for `log`-kassen."
 title: "Loggf\xF8ring"
 weight: 17
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:58:29.391221-07:00
-description: "Ricercare e sostituire testo significa trovare specifiche stringhe in\
-  \ un testo e cambiarle con altre. I programmatori lo fanno per correggere errori,\u2026"
+description: "How to: La ricerca e sostituzione in Ruby pu\xF2 essere semplice grazie\
+  \ all'uso di `gsub` e `sub`. Ecco un esempio."
 lastmod: '2024-03-13T22:44:44.034794-06:00'
 model: gpt-4-1106-preview
-summary: Ricercare e sostituire testo significa trovare specifiche stringhe in un
-  testo e cambiarle con altre.
+summary: "La ricerca e sostituzione in Ruby pu\xF2 essere semplice grazie all'uso\
+  \ di `gsub` e `sub`."
 title: Ricerca e sostituzione del testo
 weight: 10
 ---

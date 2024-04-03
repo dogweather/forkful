@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 03:44:27.690127-07:00
-description: "Zaokr\u0105glanie liczb polega na modyfikacji liczby dziesi\u0119tnej\
-  \ do jej najbli\u017Cszej warto\u015Bci ca\u0142kowitej lub do okre\u015Blonej liczby\
-  \ miejsc po przecinku.\u2026"
+description: "Jak to zrobi\u0107: Modu\u0142 `Basics` w Elm dostarcza sprytne funkcje\
+  \ do zaokr\u0105glania: `round`, `floor` i `ceiling`. Oto jak ich u\u017Cywa\u0107\
+  ."
 lastmod: '2024-03-13T22:44:35.316166-06:00'
 model: gpt-4-0125-preview
-summary: "Zaokr\u0105glanie liczb polega na modyfikacji liczby dziesi\u0119tnej do\
-  \ jej najbli\u017Cszej warto\u015Bci ca\u0142kowitej lub do okre\u015Blonej liczby\
-  \ miejsc po przecinku."
+summary: "Modu\u0142 `Basics` w Elm dostarcza sprytne funkcje do zaokr\u0105glania."
 title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---

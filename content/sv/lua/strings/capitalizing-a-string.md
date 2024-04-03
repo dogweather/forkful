@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:58.912153-07:00
-description: "Att skriva med stor bokstav inneb\xE4r att \xE4ndra det f\xF6rsta tecknet\
-  \ i varje ord i en mening till versal, samtidigt som man ser till att resten \xE4\
-  r gemener.\u2026"
+description: "Hur man g\xF6r: Lua har ingen inbyggd funktion f\xF6r att g\xF6ra bokst\xE4\
+  ver till versaler, men du kan enkelt genomf\xF6ra denna uppgift med hj\xE4lp av\
+  \ grundl\xE4ggande\u2026"
 lastmod: '2024-03-13T22:44:38.021715-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva med stor bokstav inneb\xE4r att \xE4ndra det f\xF6rsta tecknet\
-  \ i varje ord i en mening till versal, samtidigt som man ser till att resten \xE4\
-  r gemener."
+summary: "Lua har ingen inbyggd funktion f\xF6r att g\xF6ra bokst\xE4ver till versaler,\
+  \ men du kan enkelt genomf\xF6ra denna uppgift med hj\xE4lp av grundl\xE4ggande\
+  \ str\xE4ngmanipuleringsfunktioner."
 title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---

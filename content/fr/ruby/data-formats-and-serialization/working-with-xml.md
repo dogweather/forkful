@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:35:11.070065-07:00
-description: "Travailler avec XML signifie analyser, g\xE9n\xE9rer et manipuler des\
-  \ documents XML (eXtensible Markup Language) en utilisant du code. Les programmeurs\
-  \ le font\u2026"
+description: 'Comment faire : Utilisons REXML, inclus avec Ruby, pour analyser un
+  extrait XML .'
 lastmod: '2024-03-13T22:44:58.446853-06:00'
 model: gpt-4-0125-preview
-summary: "Travailler avec XML signifie analyser, g\xE9n\xE9rer et manipuler des documents\
-  \ XML (eXtensible Markup Language) en utilisant du code."
+summary: Utilisons REXML, inclus avec Ruby, pour analyser un extrait XML.
 title: Travailler avec XML
 weight: 40
 ---

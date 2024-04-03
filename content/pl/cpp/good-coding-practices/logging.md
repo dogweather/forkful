@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 01:01:15.996001-07:00
-description: "Logowanie w kontek\u015Bcie programowania to proces zapisywania zdarze\u0144\
-  , stan\xF3w i informacji do pliku lub innego medium wyj\u015Bciowego. Programi\u015B\
-  ci loguj\u0105, aby\u2026"
+description: "Jak to zrobi\u0107: Za\u0142\xF3\u017Cmy, \u017Ce pracujesz na systemie\
+  \ Linux i chcesz wrzuca\u0107 swoje logi do pliku, korzystaj\u0105c z dobrego, starego\
+  \ C++. B\u0119dziesz chcia\u0142 do\u0142\u0105czy\u0107\u2026"
 lastmod: '2024-03-13T22:44:35.719386-06:00'
 model: gpt-4-1106-preview
-summary: "Logowanie w kontek\u015Bcie programowania to proces zapisywania zdarze\u0144\
-  , stan\xF3w i informacji do pliku lub innego medium wyj\u015Bciowego."
+summary: "Za\u0142\xF3\u017Cmy, \u017Ce pracujesz na systemie Linux i chcesz wrzuca\u0107\
+  \ swoje logi do pliku, korzystaj\u0105c z dobrego, starego C++."
 title: "Rejestrowanie zdarze\u0144"
 weight: 17
 ---

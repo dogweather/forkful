@@ -1,11 +1,13 @@
 ---
 date: 2024-01-27 20:26:09.179228-07:00
-description: "Generating random numbers in programming involves creating sequences\
-  \ of numbers that lack any predictable order or pattern. Programmers often utilize\u2026"
+description: "How to: To generate random numbers in C++, you'd typically make use\
+  \ of the `<random>` header, which was introduced in C++11, offering a wide range\
+  \ of\u2026"
 lastmod: '2024-03-13T22:45:00.353910-06:00'
 model: gpt-4-0125-preview
-summary: Generating random numbers in programming involves creating sequences of numbers
-  that lack any predictable order or pattern.
+summary: To generate random numbers in C++, you'd typically make use of the `<random>`
+  header, which was introduced in C++11, offering a wide range of facilities for generating
+  random numbers from various distributions.
 title: Generating random numbers
 weight: 12
 ---

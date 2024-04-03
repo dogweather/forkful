@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:53.327687-07:00
-description: "TOML, een afkorting voor Tom's Obvious, Minimal Language, is een gegevensformaat\
-  \ vergelijkbaar met JSON of YAML, maar makkelijker leesbaar voor mensen.\u2026"
+description: "Hoe te: Zorg eerst dat je een TOML-parserbibliotheek hebt ge\xEFnstalleerd,\
+  \ zoals `yosymfony/toml`. Laten we een TOML-bestand parsen."
 lastmod: '2024-03-13T22:44:50.918934-06:00'
 model: gpt-4-0125-preview
-summary: TOML, een afkorting voor Tom's Obvious, Minimal Language, is een gegevensformaat
-  vergelijkbaar met JSON of YAML, maar makkelijker leesbaar voor mensen.
+summary: "Zorg eerst dat je een TOML-parserbibliotheek hebt ge\xEFnstalleerd, zoals\
+  \ `yosymfony/toml`."
 title: Werken met TOML
 weight: 39
 ---

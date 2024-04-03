@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:15.503289-07:00
-description: "Das Entfernen von Anf\xFChrungszeichen aus einem String in Go bedeutet,\
-  \ die f\xFChrenden und abschlie\xDFenden Anf\xFChrungszeichen (`\"` oder `'`) aus\
-  \ einem gegebenen\u2026"
+description: "Wie: Go bietet verschiedene Ans\xE4tze zum Entfernen von Anf\xFChrungszeichen\
+  \ aus einem String, aber eine der unkompliziertesten Methoden ist die Verwendung\
+  \ der\u2026"
 lastmod: '2024-03-13T22:44:53.274218-06:00'
 model: gpt-4-0125-preview
-summary: "Das Entfernen von Anf\xFChrungszeichen aus einem String in Go bedeutet,\
-  \ die f\xFChrenden und abschlie\xDFenden Anf\xFChrungszeichen (`\"` oder `'`) aus\
-  \ einem gegebenen String zu entfernen."
+summary: "Go bietet verschiedene Ans\xE4tze zum Entfernen von Anf\xFChrungszeichen\
+  \ aus einem String, aber eine der unkompliziertesten Methoden ist die Verwendung\
+  \ der Funktionen `Trim` und `TrimFunc`, die vom `strings`-Paket bereitgestellt werden."
 title: "Anf\xFChrungszeichen aus einem String entfernen"
 weight: 9
 ---

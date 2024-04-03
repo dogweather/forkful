@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:42.089248-07:00
-description: "\xC9crire des tests dans l'environnement Arduino fait r\xE9f\xE9rence\
-  \ au processus de cr\xE9ation de tests automatis\xE9s qui valident la fonctionnalit\xE9\
-  \ de votre code\u2026"
+description: "Comment faire : Arduino ne dispose pas d'un cadre de test int\xE9gr\xE9\
+  \ comme certains autres environnements de programmation. Cependant, vous pouvez\
+  \ utiliser\u2026"
 lastmod: '2024-03-13T22:44:58.114307-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire des tests dans l'environnement Arduino fait r\xE9f\xE9rence au\
-  \ processus de cr\xE9ation de tests automatis\xE9s qui valident la fonctionnalit\xE9\
-  \ de votre code sur les appareils Arduino."
+summary: "Arduino ne dispose pas d'un cadre de test int\xE9gr\xE9 comme certains autres\
+  \ environnements de programmation."
 title: "R\xE9daction de tests"
 weight: 36
 ---

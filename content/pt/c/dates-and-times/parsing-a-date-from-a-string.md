@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:00:03.106078-07:00
-description: "Analisar uma data a partir de uma string em C envolve a convers\xE3\
-  o de representa\xE7\xF5es textuais de datas em um formato que programas podem manipular\
-  \ e\u2026"
+description: "Como Fazer: C n\xE3o oferece uma maneira integrada de analisar datas\
+  \ a partir de strings diretamente, ent\xE3o frequentemente recorremos \xE0 fun\xE7\
+  \xE3o `strptime`\u2026"
 lastmod: '2024-03-13T22:44:47.060431-06:00'
 model: gpt-4-0125-preview
-summary: "Analisar uma data a partir de uma string em C envolve a convers\xE3o de\
-  \ representa\xE7\xF5es textuais de datas em um formato que programas podem manipular\
-  \ e analisar mais efetivamente."
+summary: "C n\xE3o oferece uma maneira integrada de analisar datas a partir de strings\
+  \ diretamente, ent\xE3o frequentemente recorremos \xE0 fun\xE7\xE3o `strptime` dispon\xED\
+  vel na biblioteca `<time.h>` para sistemas POSIX."
 title: Analisando uma data a partir de uma string
 weight: 30
 ---

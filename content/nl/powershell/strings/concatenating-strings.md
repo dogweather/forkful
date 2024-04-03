@@ -2,13 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:55.734342-07:00
-description: "Het combineren van strings, of concatenatie, is zoals het maken van\
-  \ een trein van woorden. We doen het om teksten samen te voegen, zinnen te vormen,\
-  \ of\u2026"
+description: 'Hoe: Laten we er meteen induiken.'
 lastmod: '2024-03-13T22:44:51.018586-06:00'
 model: gpt-4-0125-preview
-summary: Het combineren van strings, of concatenatie, is zoals het maken van een trein
-  van woorden.
+summary: Laten we er meteen induiken.
 title: Samenvoegen van strings
 weight: 3
 ---

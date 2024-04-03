@@ -2,12 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:09.277637-07:00
-description: "Strings aan elkaar plakken is gewoon een chique manier om te zeggen\
-  \ 'ze achter elkaar plakken'. Programmeurs doen dit om woorden en zinnen te combineren,\u2026"
+description: "Hoe: In Ruby kun je strings aan elkaar koppelen met de `+` operator\
+  \ of de `<<` methode, die de string ter plaatse wijzigt. Hier is hoe je de punten\
+  \ - of\u2026"
 lastmod: '2024-03-13T22:44:51.326818-06:00'
 model: gpt-4-0125-preview
-summary: Strings aan elkaar plakken is gewoon een chique manier om te zeggen 'ze achter
-  elkaar plakken'.
+summary: In Ruby kun je strings aan elkaar koppelen met de `+` operator of de `<<`
+  methode, die de string ter plaatse wijzigt.
 title: Samenvoegen van strings
 weight: 3
 ---

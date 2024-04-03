@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:49.619597-07:00
-description: "YAML, un langage de s\xE9rialisation de donn\xE9es con\xE7u pour \xEA\
-  tre convivial, est souvent utilis\xE9 pour les fichiers de configuration, la messagerie\
-  \ entre\u2026"
+description: "Comment faire : Travailler avec YAML en TypeScript implique g\xE9n\xE9\
+  ralement l'analyse du contenu YAML en objets JavaScript et, \xE9ventuellement, la\
+  \ conversion\u2026"
 lastmod: '2024-03-13T22:44:57.458716-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, un langage de s\xE9rialisation de donn\xE9es con\xE7u pour \xEAtre\
-  \ convivial, est souvent utilis\xE9 pour les fichiers de configuration, la messagerie\
-  \ entre processus, et le stockage de donn\xE9es."
+summary: "Travailler avec YAML en TypeScript implique g\xE9n\xE9ralement l'analyse\
+  \ du contenu YAML en objets JavaScript et, \xE9ventuellement, la conversion d'objets\
+  \ JavaScript en retour vers YAML."
 title: Travailler avec YAML
 weight: 41
 ---

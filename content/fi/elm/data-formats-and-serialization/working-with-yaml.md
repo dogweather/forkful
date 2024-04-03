@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:37.898661-07:00
-description: "Elm ei tarjoa sis\xE4\xE4nrakennettua tukea YAML:lle, joka on datan\
-  \ serialisointiformaatti ja jota k\xE4ytet\xE4\xE4n usein konfiguraatiotiedostoissa\
-  \ tai datan\u2026"
+description: "Kuinka: K\xE4sitell\xE4ksesi YAML:\xE4\xE4 Elm:ss\xE4, sinun tarvitsee\
+  \ yleens\xE4 muuntaa YAML JSON:ksi Elm:n ulkopuolella ja sitten k\xE4ytt\xE4\xE4\
+  \ Elmin sis\xE4\xE4nrakennettua JSON-\u2026"
 lastmod: '2024-03-13T22:44:56.509154-06:00'
 model: gpt-4-0125-preview
-summary: "Elm ei tarjoa sis\xE4\xE4nrakennettua tukea YAML:lle, joka on datan serialisointiformaatti\
-  \ ja jota k\xE4ytet\xE4\xE4n usein konfiguraatiotiedostoissa tai datan jakamisessa,\
-  \ koska se painottaa vahvasti tyypin turvallisuutta ja ennustettavia tuloksia."
+summary: "K\xE4sitell\xE4ksesi YAML:\xE4\xE4 Elm:ss\xE4, sinun tarvitsee yleens\xE4\
+  \ muuntaa YAML JSON:ksi Elm:n ulkopuolella ja sitten k\xE4ytt\xE4\xE4 Elmin sis\xE4\
+  \xE4nrakennettua JSON-purausfunktionaalisuutta datan k\xE4sittelyyn."
 title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---

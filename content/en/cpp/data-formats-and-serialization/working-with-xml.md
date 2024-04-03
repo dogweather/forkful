@@ -1,11 +1,9 @@
 ---
 date: 2024-01-25 03:39:47.449718-07:00
-description: "Working with XML means parsing, creating, and manipulating XML (eXtensible\
-  \ Markup Language) data. Programmers manage XML to handle structured data\u2026"
+description: 'How to: Here''s a simple way to parse XML using the TinyXML-2 library.'
 lastmod: '2024-03-13T22:45:00.379979-06:00'
 model: gpt-4-1106-preview
-summary: Working with XML means parsing, creating, and manipulating XML (eXtensible
-  Markup Language) data.
+summary: Here's a simple way to parse XML using the TinyXML-2 library.
 title: Working with XML
 weight: 40
 ---

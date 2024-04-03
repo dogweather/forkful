@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:57.660825-07:00
-description: "Analisar HTML em Rust trata-se de extrair dados de documentos HTML,\
-  \ o que \xE9 essencial para web scraping, extra\xE7\xE3o de dados ou constru\xE7\
-  \xE3o de web crawlers.\u2026"
+description: "Como fazer: Para analisar HTML em Rust, voc\xEA normalmente usar\xE1\
+  \ o crate `scraper`, que fornece uma interface de alto n\xEDvel para percorrer e\
+  \ manipular\u2026"
 lastmod: '2024-03-13T22:44:46.365570-06:00'
 model: gpt-4-0125-preview
-summary: "Analisar HTML em Rust trata-se de extrair dados de documentos HTML, o que\
-  \ \xE9 essencial para web scraping, extra\xE7\xE3o de dados ou constru\xE7\xE3o\
-  \ de web crawlers."
+summary: "Para analisar HTML em Rust, voc\xEA normalmente usar\xE1 o crate `scraper`,\
+  \ que fornece uma interface de alto n\xEDvel para percorrer e manipular documentos\
+  \ HTML."
 title: Analisando HTML
 weight: 43
 ---

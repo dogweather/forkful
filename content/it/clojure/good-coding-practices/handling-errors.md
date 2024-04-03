@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 00:50:41.678251-07:00
-description: "La gestione degli errori riguarda il controllo dell'inaspettato nei\
-  \ programmi, proprio come un buttafuori che si occupa dei guastafeste. Ai programmatori\u2026"
+description: "Come fare: Clojure, come i suoi antenati Lisp, si affida alle eccezioni\
+  \ per la gestione degli errori. Ecco come mostrare di cosa sei capace quando le\
+  \ cose\u2026"
 lastmod: '2024-03-13T22:44:43.049700-06:00'
 model: gpt-4-1106-preview
-summary: La gestione degli errori riguarda il controllo dell'inaspettato nei programmi,
-  proprio come un buttafuori che si occupa dei guastafeste.
+summary: Clojure, come i suoi antenati Lisp, si affida alle eccezioni per la gestione
+  degli errori.
 title: Gestione degli errori
 weight: 16
 ---

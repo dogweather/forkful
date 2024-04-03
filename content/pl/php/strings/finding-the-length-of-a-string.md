@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:48:08.635290-07:00
-description: "D\u0142ugo\u015B\u0107 \u0142a\u0144cucha znak\xF3w to po prostu liczba\
-  \ znak\xF3w w nim zawartych. Programi\u015Bci sprawdzaj\u0105 t\u0119 d\u0142ugo\u015B\
-  \u0107 by weryfikowa\u0107 dane wej\u015Bciowe, ogranicza\u0107 tekst do\u2026"
+description: "Jak to zrobi\u0107: W PHP u\u017Cywamy funkcji `strlen()` do uzyskania\
+  \ d\u0142ugo\u015Bci \u0142a\u0144cucha znak\xF3w. \u0141atwo i szybko."
 lastmod: '2024-03-13T22:44:35.487844-06:00'
 model: gpt-4-1106-preview
-summary: "D\u0142ugo\u015B\u0107 \u0142a\u0144cucha znak\xF3w to po prostu liczba\
-  \ znak\xF3w w nim zawartych."
+summary: "W PHP u\u017Cywamy funkcji `strlen()` do uzyskania d\u0142ugo\u015Bci \u0142\
+  a\u0144cucha znak\xF3w."
 title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 weight: 7
 ---

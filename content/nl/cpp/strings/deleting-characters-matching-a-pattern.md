@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:22.856308-07:00
-description: "Het verwijderen van tekens die overeenkomen met een patroon betekent\
-  \ het uitsluiten van specifieke sequenties uit een string. Programmeurs doen dit\
-  \ voor\u2026"
+description: 'Hoe: Laten we tekens verwijderen met `erase` en `remove_if` samen met
+  lambda-expressies. Hier is een snel voorbeeld.'
 lastmod: '2024-03-13T22:44:51.096964-06:00'
 model: gpt-4-0125-preview
-summary: Het verwijderen van tekens die overeenkomen met een patroon betekent het
-  uitsluiten van specifieke sequenties uit een string.
+summary: Laten we tekens verwijderen met `erase` en `remove_if` samen met lambda-expressies.
 title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---

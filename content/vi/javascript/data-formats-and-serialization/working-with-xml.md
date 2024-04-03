@@ -2,15 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:22.708864-07:00
-description: "L\xE0m vi\u1EC7c v\u1EDBi XML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xEDch,\
-  \ thao t\xE1c v\xE0 s\u1EA3n xu\u1EA5t n\u1ED9i dung XML b\u1EB1ng c\xE1ch s\u1EED\
-  \ d\u1EE5ng m\xE3. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0\
-  y b\u1EDFi v\xEC XML \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1\
+  ch ph\xE2n t\xEDch XML."
 lastmod: '2024-03-13T22:44:37.184597-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m vi\u1EC7c v\u1EDBi XML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xEDch, thao\
-  \ t\xE1c v\xE0 s\u1EA3n xu\u1EA5t n\u1ED9i dung XML b\u1EB1ng c\xE1ch s\u1EED d\u1EE5\
-  ng m\xE3."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch ph\xE2n t\xEDch XML."
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---

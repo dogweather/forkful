@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:52.396867-07:00
-description: "Das Gro\xDFschreiben eines Strings in C beinhaltet das Umwandeln des\
-  \ ersten Buchstabens jedes Wortes in einem gegebenen String in Gro\xDFbuchstaben,\
-  \ falls es\u2026"
+description: "Wie geht das: Das Gro\xDFschreiben eines Strings in C erfordert grundlegende\
+  \ Kenntnisse der Zeichenmanipulation und der String-Durchquerung. Da C keine\u2026"
 lastmod: '2024-03-13T22:44:54.333975-06:00'
 model: gpt-4-0125-preview
-summary: "Das Gro\xDFschreiben eines Strings in C beinhaltet das Umwandeln des ersten\
-  \ Buchstabens jedes Wortes in einem gegebenen String in Gro\xDFbuchstaben, falls\
-  \ es sich um einen Kleinbuchstaben handelt."
+summary: "Das Gro\xDFschreiben eines Strings in C erfordert grundlegende Kenntnisse\
+  \ der Zeichenmanipulation und der String-Durchquerung."
 title: "Einen String gro\xDFschreiben"
 weight: 2
 ---

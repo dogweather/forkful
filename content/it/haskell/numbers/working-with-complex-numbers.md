@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:41:33.584454-07:00
-description: "I numeri complessi, costituiti da una parte reale e una immaginaria,\
-  \ sono essenziali in vari campi del calcolo come l'ingegneria, la fisica e\u2026"
+description: 'Come fare: Haskell gestisce i numeri complessi con il modulo `Data.Complex`.
+  Ecco una rapida panoramica.'
 lastmod: '2024-03-13T22:44:43.469308-06:00'
 model: gpt-4-0125-preview
-summary: I numeri complessi, costituiti da una parte reale e una immaginaria, sono
-  essenziali in vari campi del calcolo come l'ingegneria, la fisica e l'elaborazione
-  dei segnali.
+summary: Haskell gestisce i numeri complessi con il modulo `Data.Complex`.
 title: Lavorare con i numeri complessi
 weight: 14
 ---

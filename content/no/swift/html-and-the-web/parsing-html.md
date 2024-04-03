@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 15:34:06.387643-07:00
-description: "Hva er HTML-parsing, og hvorfor driver vi med det? Parsing av HTML betyr\
-  \ \xE5 trekke ut data fra en webside sin kode. Programmerere gj\xF8r det for \xE5\
-  \ kunne\u2026"
+description: "How to: For \xE5 parse HTML i Swift, kan du bruke biblioteket SwiftSoup.\
+  \ F\xF8r du starter, m\xE5 du installere SwiftSoup via SPM eller CocoaPods. Her\
+  \ er et\u2026"
 lastmod: '2024-03-13T22:44:41.139688-06:00'
 model: unknown
-summary: Hva er HTML-parsing, og hvorfor driver vi med det.
+summary: "For \xE5 parse HTML i Swift, kan du bruke biblioteket SwiftSoup."
 title: Analyse av HTML
 weight: 43
 ---

@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:09.960677-07:00
-description: "Parser du HTML en Haskell vous permet d'extraire des donn\xE9es, de\
-  \ manipuler le contenu HTML ou d'interagir avec des pages web de mani\xE8re programmatique.\u2026"
+description: "Comment faire : Pour parser du HTML en Haskell, nous utiliserons la\
+  \ biblioth\xE8que `tagsoup` pour sa simplicit\xE9 et sa flexibilit\xE9. Commencez\
+  \ par installer\u2026"
 lastmod: '2024-03-13T22:44:57.831550-06:00'
 model: gpt-4-0125-preview
-summary: "Parser du HTML en Haskell vous permet d'extraire des donn\xE9es, de manipuler\
-  \ le contenu HTML ou d'interagir avec des pages web de mani\xE8re programmatique."
+summary: "Pour parser du HTML en Haskell, nous utiliserons la biblioth\xE8que `tagsoup`\
+  \ pour sa simplicit\xE9 et sa flexibilit\xE9."
 title: Analyse Syntaxique du HTML
 weight: 43
 ---

@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:58.644457-07:00
-description: "Het cre\xEBren van een tijdelijk bestand in Google Apps Script houdt\
-  \ in dat je een bestand genereert dat bedoeld is voor kortstondig gebruik, doorgaans\
-  \ voor\u2026"
+description: "Hoe: In Google Apps Script kan het cre\xEBren van een tijdelijk bestand\
+  \ worden bereikt met behulp van de DriveApp-service, die een eenvoudige methode\
+  \ biedt\u2026"
 lastmod: '2024-03-13T22:44:50.352662-06:00'
 model: gpt-4-0125-preview
-summary: "Het cre\xEBren van een tijdelijk bestand in Google Apps Script houdt in\
-  \ dat je een bestand genereert dat bedoeld is voor kortstondig gebruik, doorgaans\
-  \ voor tussentijdse gegevensverwerking, debugging of cache-doeleinden."
+summary: "In Google Apps Script kan het cre\xEBren van een tijdelijk bestand worden\
+  \ bereikt met behulp van de DriveApp-service, die een eenvoudige methode biedt om\
+  \ bestanden in Google Drive te cre\xEBren, te lezen en te verwijderen."
 title: Een tijdelijk bestand aanmaken
 weight: 21
 ---

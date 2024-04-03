@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:35:40.163379-07:00
-description: "I Python er string-sammenf\xF8yning prosessen \xE5 sette sammen to eller\
-  \ flere tekststrenger. Det gj\xF8res for \xE5 bygge setninger, kombinere brukerinput,\
-  \ eller\u2026"
+description: "Hvordan: I eksemplene nedenfor, bruker vi ulike m\xE5ter \xE5 sl\xE5\
+  \ sammen strenger. Merk at output kommer rett etter koden."
 lastmod: '2024-03-13T22:44:40.352976-06:00'
 model: gpt-4-1106-preview
-summary: "I Python er string-sammenf\xF8yning prosessen \xE5 sette sammen to eller\
-  \ flere tekststrenger."
+summary: "I eksemplene nedenfor, bruker vi ulike m\xE5ter \xE5 sl\xE5 sammen strenger."
 title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---

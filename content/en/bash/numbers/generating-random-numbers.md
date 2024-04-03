@@ -1,12 +1,10 @@
 ---
 date: 2024-01-27 20:26:11.777055-07:00
-description: "Generating random numbers in Bash provides a way to introduce unpredictability\
-  \ in scripts, which is essential for tasks like generating secure passwords,\u2026"
+description: "How to: In Bash, the `$RANDOM` variable is the go-to for generating\
+  \ random numbers. Each time you reference it, Bash provides a pseudorandom integer\u2026"
 lastmod: '2024-03-13T22:45:00.239183-06:00'
 model: gpt-4-0125-preview
-summary: Generating random numbers in Bash provides a way to introduce unpredictability
-  in scripts, which is essential for tasks like generating secure passwords, simulating
-  data, or for programming games.
+summary: In Bash, the `$RANDOM` variable is the go-to for generating random numbers.
 title: Generating random numbers
 weight: 12
 ---

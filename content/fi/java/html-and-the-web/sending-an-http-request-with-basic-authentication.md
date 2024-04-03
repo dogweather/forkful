@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 18:01:46.944705-07:00
-description: "HTTP-pyynt\xF6 perusautentikaatiolla tarkoittaa verkkoresurssiin p\xE4\
-  \xE4sy\xE4 k\xE4ytt\xE4j\xE4tunnuksen ja salasanan avulla. Ohjelmoijat k\xE4ytt\xE4\
-  v\xE4t sit\xE4 turvatakseen\u2026"
+description: "How to: (Kuinka tehd\xE4:) ."
 lastmod: '2024-03-13T22:44:56.444631-06:00'
 model: gpt-4-1106-preview
-summary: "HTTP-pyynt\xF6 perusautentikaatiolla tarkoittaa verkkoresurssiin p\xE4\xE4\
-  sy\xE4 k\xE4ytt\xE4j\xE4tunnuksen ja salasanan avulla."
+summary: .
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---

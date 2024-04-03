@@ -2,14 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:20.033308-07:00
-description: "Een tijdelijk bestand aanmaken is het cre\xEBren van een bestand dat\
-  \ bedoeld is om op korte termijn op je bestandssysteem te leven, vaak voor dingen\
-  \ zoals\u2026"
+description: 'Hoe te: Hier is een snelle manier om een tijdelijk bestand te maken
+  in Kotlin.'
 lastmod: '2024-03-13T22:44:50.787154-06:00'
 model: gpt-4-0125-preview
-summary: "Een tijdelijk bestand aanmaken is het cre\xEBren van een bestand dat bedoeld\
-  \ is om op korte termijn op je bestandssysteem te leven, vaak voor dingen zoals\
-  \ tussenliggende gegevens."
+summary: Hier is een snelle manier om een tijdelijk bestand te maken in Kotlin.
 title: Een tijdelijk bestand aanmaken
 weight: 21
 ---

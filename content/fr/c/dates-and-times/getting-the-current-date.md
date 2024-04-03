@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:11.260956-07:00
-description: "Obtenir la date actuelle en C n\xE9cessite de se connecter \xE0 la biblioth\xE8\
-  que standard C pour r\xE9cup\xE9rer et formater la date et l'heure actuelles du\
-  \ syst\xE8me.\u2026"
+description: "Comment faire : En C, l'en-t\xEAte `<time.h>` fournit les fonctions\
+  \ et types n\xE9cessaires pour travailler avec les dates et les heures. La fonction\
+  \ `time()`\u2026"
 lastmod: '2024-03-13T22:44:58.383768-06:00'
 model: gpt-4-0125-preview
-summary: "Obtenir la date actuelle en C n\xE9cessite de se connecter \xE0 la biblioth\xE8\
-  que standard C pour r\xE9cup\xE9rer et formater la date et l'heure actuelles du\
-  \ syst\xE8me."
+summary: "En C, l'en-t\xEAte `<time.h>` fournit les fonctions et types n\xE9cessaires\
+  \ pour travailler avec les dates et les heures."
 title: Obtenir la date actuelle
 weight: 29
 ---

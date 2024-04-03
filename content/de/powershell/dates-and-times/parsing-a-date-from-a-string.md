@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:03.318881-07:00
-description: "Das Parsen eines Datums aus einem String bedeutet, geschriebene Daten\
-  \ in Textform zu erkennen und in einen Datentyp umzuwandeln, den PowerShell verstehen\u2026"
+description: "Wie geht das: PowerShell macht das Parsen von Daten aus Strings unkompliziert\
+  \ mit seinem `Get-Date`-Cmdlet und der Typbeschleunigung `[datetime]`, die gut\u2026"
 lastmod: '2024-03-13T22:44:54.113247-06:00'
 model: gpt-4-0125-preview
-summary: Das Parsen eines Datums aus einem String bedeutet, geschriebene Daten in
-  Textform zu erkennen und in einen Datentyp umzuwandeln, den PowerShell verstehen
-  und mit dem es arbeiten kann.
+summary: "PowerShell macht das Parsen von Daten aus Strings unkompliziert mit seinem\
+  \ `Get-Date`-Cmdlet und der Typbeschleunigung `[datetime]`, die gut f\xFCr standardisierte\
+  \ Datumsformate funktionieren."
 title: Einen Datum aus einem String analysieren
 weight: 30
 ---

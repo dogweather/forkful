@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:50.244135-07:00
-description: "Werken met YAML in Go houdt in dat je YAML-bestanden (YAML Ain't Markup\
-  \ Language), een gebruikersvriendelijke gegevensserialisatiestandaard, analyseert\u2026"
+description: "Hoe: Om met YAML in Go te werken, moet je eerst een bibliotheek importeren\
+  \ die ondersteuning biedt voor het parseren en serialiseren van YAML, aangezien\u2026"
 lastmod: '2024-03-13T22:44:50.308369-06:00'
 model: gpt-4-0125-preview
-summary: Werken met YAML in Go houdt in dat je YAML-bestanden (YAML Ain't Markup Language),
-  een gebruikersvriendelijke gegevensserialisatiestandaard, analyseert naar Go-datastructuren
-  en vice versa.
+summary: Om met YAML in Go te werken, moet je eerst een bibliotheek importeren die
+  ondersteuning biedt voor het parseren en serialiseren van YAML, aangezien de standaardbibliotheek
+  van Go geen directe ondersteuning voor YAML omvat.
 title: Werken met YAML
 weight: 41
 ---

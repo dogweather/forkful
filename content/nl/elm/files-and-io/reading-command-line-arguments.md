@@ -2,13 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:05.008585-07:00
-description: "Opdrachtregelargumenten stellen gebruikers in staat om data aan jouw\
-  \ programma te voeden wanneer ze het starten. Programmeurs lezen deze om het gedrag\
-  \ van\u2026"
+description: "Hoe: Elm draait in de browser, dus het heeft geen directe toegang tot\
+  \ opdrachtregelargumenten zoals een traditionele server-side of desktop taal dat\
+  \ wel\u2026"
 lastmod: '2024-03-13T22:44:50.740734-06:00'
 model: gpt-4-0125-preview
-summary: Opdrachtregelargumenten stellen gebruikers in staat om data aan jouw programma
-  te voeden wanneer ze het starten.
+summary: Elm draait in de browser, dus het heeft geen directe toegang tot opdrachtregelargumenten
+  zoals een traditionele server-side of desktop taal dat wel heeft.
 title: Commandoregelargumenten lezen
 weight: 23
 ---

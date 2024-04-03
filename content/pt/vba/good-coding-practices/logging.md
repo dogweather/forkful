@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:09.586086-07:00
-description: "Registrar em Visual Basic para Aplica\xE7\xF5es (VBA) envolve gravar\
-  \ informa\xE7\xF5es sobre o comportamento em tempo de execu\xE7\xE3o de um programa\
-  \ em um arquivo,\u2026"
+description: "Como fazer: No VBA, n\xE3o existe uma estrutura de registro integrada\
+  \ como encontrada em algumas outras linguagens. No entanto, implementar um mecanismo\
+  \ de\u2026"
 lastmod: '2024-03-13T22:44:46.419539-06:00'
 model: gpt-4-0125-preview
-summary: "Registrar em Visual Basic para Aplica\xE7\xF5es (VBA) envolve gravar informa\xE7\
-  \xF5es sobre o comportamento em tempo de execu\xE7\xE3o de um programa em um arquivo,\
-  \ console ou banco de dados."
+summary: "No VBA, n\xE3o existe uma estrutura de registro integrada como encontrada\
+  \ em algumas outras linguagens."
 title: Registro
 weight: 17
 ---

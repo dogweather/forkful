@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:52:20.334430-07:00
-description: "Debug-Ausgaben zu drucken, bedeutet, Informationen zum Codeablauf in\
-  \ der Entwicklungskonsole anzuzeigen, um zu verstehen, was das Programm macht. Es\
-  \ hilft\u2026"
+description: 'How to: In Elm kannst du `Debug.log` nutzen, um Werte in die Konsole
+  zu schreiben. Sei dir bewusst, dass diese Funktion in Produktion entfernt sein sollte.'
 lastmod: '2024-03-13T22:44:53.807582-06:00'
 model: gpt-4-1106-preview
-summary: Debug-Ausgaben zu drucken, bedeutet, Informationen zum Codeablauf in der
-  Entwicklungskonsole anzuzeigen, um zu verstehen, was das Programm macht.
+summary: In Elm kannst du `Debug.log` nutzen, um Werte in die Konsole zu schreiben.
 title: Debug-Ausgaben drucken
 weight: 33
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:26.047038-07:00
-description: "Sprawdzanie, czy katalog istnieje, jest podstawowym zadaniem w programowaniu\
-  \ PHP, poniewa\u017C pozwala na weryfikacj\u0119 obecno\u015Bci katalogu przed wykonaniem\u2026"
+description: "Jak to zrobi\u0107: Natywnym sposobem na sprawdzenie, czy katalog istnieje\
+  \ w PHP, jest u\u017Cycie funkcji `is_dir()`. Funkcja ta przyjmuje \u015Bcie\u017C\
+  k\u0119 do katalogu jako\u2026"
 lastmod: '2024-03-13T22:44:35.511869-06:00'
 model: gpt-4-0125-preview
-summary: "Sprawdzanie, czy katalog istnieje, jest podstawowym zadaniem w programowaniu\
-  \ PHP, poniewa\u017C pozwala na weryfikacj\u0119 obecno\u015Bci katalogu przed wykonaniem\
-  \ operacji takich jak odczyt z plik\xF3w w nim zawartych lub zapis do nich."
+summary: "Natywnym sposobem na sprawdzenie, czy katalog istnieje w PHP, jest u\u017C\
+  ycie funkcji `is_dir()`."
 title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---

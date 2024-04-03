@@ -2,17 +2,16 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:00.523510-07:00
-description: "L\xE0m vi\u1EC7c v\u1EDBi t\u1EC7p CSV (Comma Separated Values - Gi\xE1\
-  \ tr\u1ECB Ph\xE2n c\xE1ch b\u1EB1ng D\u1EA5u ph\u1EA9y) bao g\u1ED3m vi\u1EC7c\
-  \ \u0111\u1ECDc t\u1EEB ho\u1EB7c ghi v\xE0o t\u1EC7p v\u0103n b\u1EA3n thu\u1EA7\
-  n t\xFAy n\u01A1i c\xE1c tr\u01B0\u1EDDng d\u1EEF\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Visual Basic for Applications (VBA) \u0111\u01A1\
+  n gi\u1EA3n h\xF3a vi\u1EC7c l\xE0m vi\u1EC7c v\u1EDBi t\u1EC7p CSV th\xF4ng qua\
+  \ c\xE1c h\xE0m v\xE0 ph\u01B0\u01A1ng th\u1EE9c t\xEDch h\u1EE3p cho ph\xE9p \u0111\
+  \u1ECDc t\u1EEB v\xE0 ghi\u2026"
 lastmod: '2024-03-13T22:44:36.462762-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m vi\u1EC7c v\u1EDBi t\u1EC7p CSV (Comma Separated Values - Gi\xE1\
-  \ tr\u1ECB Ph\xE2n c\xE1ch b\u1EB1ng D\u1EA5u ph\u1EA9y) bao g\u1ED3m vi\u1EC7c\
-  \ \u0111\u1ECDc t\u1EEB ho\u1EB7c ghi v\xE0o t\u1EC7p v\u0103n b\u1EA3n thu\u1EA7\
-  n t\xFAy n\u01A1i c\xE1c tr\u01B0\u1EDDng d\u1EEF li\u1EC7u \u0111\u01B0\u1EE3c\
-  \ ph\xE2n c\xE1ch b\u1EDFi d\u1EA5u ph\u1EA9y."
+summary: "Visual Basic for Applications (VBA) \u0111\u01A1n gi\u1EA3n h\xF3a vi\u1EC7\
+  c l\xE0m vi\u1EC7c v\u1EDBi t\u1EC7p CSV th\xF4ng qua c\xE1c h\xE0m v\xE0 ph\u01B0\
+  \u01A1ng th\u1EE9c t\xEDch h\u1EE3p cho ph\xE9p \u0111\u1ECDc t\u1EEB v\xE0 ghi\
+  \ v\xE0o c\xE1c t\u1EC7p n\xE0y m\u1ED9t c\xE1ch li\u1EC1n m\u1EA1ch."
 title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 weight: 37
 ---

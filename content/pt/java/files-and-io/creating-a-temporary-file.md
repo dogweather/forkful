@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:40:33.379451-07:00
-description: "Criar um arquivo tempor\xE1rio permite armazenar dados que s\xF3 s\xE3\
-  o necess\xE1rios durante a execu\xE7\xE3o de um programa. Programadores fazem isso\
-  \ para economizar\u2026"
+description: 'Como Fazer: .'
 lastmod: '2024-03-13T22:44:46.475093-06:00'
 model: gpt-4-1106-preview
-summary: "Criar um arquivo tempor\xE1rio permite armazenar dados que s\xF3 s\xE3o\
-  \ necess\xE1rios durante a execu\xE7\xE3o de um programa."
+summary: .
 title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---

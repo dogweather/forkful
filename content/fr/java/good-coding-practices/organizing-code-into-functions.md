@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:10:30.156239-07:00
-description: "Organiser le code en fonctions signifie d\xE9composer le monstre qu'est\
-  \ un programme en morceaux g\xE9rables, chacun effectuant une t\xE2che distincte.\
-  \ Les\u2026"
+description: "Comment faire : Voici un exemple classique \u2014 une fonction pour\
+  \ calculer le factoriel d'un nombre."
 lastmod: '2024-03-13T22:44:57.646446-06:00'
 model: gpt-4-1106-preview
-summary: "Organiser le code en fonctions signifie d\xE9composer le monstre qu'est\
-  \ un programme en morceaux g\xE9rables, chacun effectuant une t\xE2che distincte."
+summary: "Voici un exemple classique \u2014 une fonction pour calculer le factoriel\
+  \ d'un nombre."
 title: Organisation du code en fonctions
 weight: 18
 ---

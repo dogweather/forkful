@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:38:59.245771-07:00
-description: "Convertir une cha\xEEne en minuscules, c'est transformer tous les caract\xE8\
-  res majuscules en minuscules. Les programmeurs le font pour unifier les donn\xE9\
-  es,\u2026"
+description: "How to: En Lua, la fonction `string.lower()` transforme une cha\xEE\
+  ne en minuscules. Voici comment l'utiliser ."
 lastmod: '2024-03-13T22:44:57.911078-06:00'
 model: gpt-4-1106-preview
-summary: "Convertir une cha\xEEne en minuscules, c'est transformer tous les caract\xE8\
-  res majuscules en minuscules."
+summary: "En Lua, la fonction `string.lower()` transforme une cha\xEEne en minuscules."
 title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
 weight: 4
 ---

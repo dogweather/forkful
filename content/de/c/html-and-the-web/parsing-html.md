@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:32.651950-07:00
-description: "HTML in C zu parsen umfasst die Analyse von HTML-Dokumenten, um Daten,\
-  \ Strukturen oder spezifische Teile effizient zu extrahieren, oft als Vorl\xE4ufer\
-  \ des\u2026"
+description: "Wie geht das: HTML zu parsen kann aufgrund der Komplexit\xE4t von HTML\
+  \ und seiner h\xE4ufigen Abweichungen von sauberen, wohlgeformten Strukturen entmutigend\u2026"
 lastmod: '2024-03-13T22:44:54.349824-06:00'
 model: gpt-4-0125-preview
-summary: "HTML in C zu parsen umfasst die Analyse von HTML-Dokumenten, um Daten, Strukturen\
-  \ oder spezifische Teile effizient zu extrahieren, oft als Vorl\xE4ufer des Data\
-  \ Minings oder Web Scrapings."
+summary: "HTML zu parsen kann aufgrund der Komplexit\xE4t von HTML und seiner h\xE4\
+  ufigen Abweichungen von sauberen, wohlgeformten Strukturen entmutigend erscheinen."
 title: HTML parsen
 weight: 43
 ---

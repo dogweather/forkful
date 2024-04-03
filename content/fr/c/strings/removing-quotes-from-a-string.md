@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:15.329838-07:00
-description: "Enlever les guillemets d'une cha\xEEne en C implique d'extraire le contenu\
-  \ textuel sans les guillemets simples (' ') ou doubles (\" \"). Ce processus est\u2026"
+description: "Comment faire : Pour enlever les guillemets d'une cha\xEEne en C, nous\
+  \ parcourons la cha\xEEne, en copiant les caract\xE8res qui ne sont pas des guillemets\
+  \ dans\u2026"
 lastmod: '2024-03-13T22:44:58.357979-06:00'
 model: gpt-4-0125-preview
-summary: "Enlever les guillemets d'une cha\xEEne en C implique d'extraire le contenu\
-  \ textuel sans les guillemets simples (' ') ou doubles (\" \")."
+summary: "Pour enlever les guillemets d'une cha\xEEne en C, nous parcourons la cha\xEE\
+  ne, en copiant les caract\xE8res qui ne sont pas des guillemets dans une nouvelle\
+  \ cha\xEEne."
 title: "Supprimer les guillemets d'une cha\xEEne de caract\xE8res"
 weight: 9
 ---

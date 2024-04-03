@@ -1,13 +1,9 @@
 ---
 date: 2024-01-27 16:20:40.454677-07:00
-description: "Modificare i file sul posto con i one-liner CLI in PowerShell riguarda\
-  \ l'apportare modifiche dirette ai file dalla riga di comando, senza la necessit\xE0\
-  \ di\u2026"
+description: 'Come fare: #.'
 lastmod: '2024-03-13T22:44:43.638840-06:00'
 model: gpt-4-0125-preview
-summary: "Modificare i file sul posto con i one-liner CLI in PowerShell riguarda l'apportare\
-  \ modifiche dirette ai file dalla riga di comando, senza la necessit\xE0 di aprirli\
-  \ in un editor."
+summary: '#.'
 title: Modifica dei file sul posto con righe di comando CLI
 weight: 32
 ---

@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:17.433775-07:00
-description: "\xC5 lese kommandolinjeargumenter i Go involverer \xE5 trekke ut argumentene\
-  \ som er gitt til et program under dets kall fra terminalen eller kommandoprompten.\u2026"
+description: "Hvordan: Go gir direkte tilgang til kommandolinjeargumenter gjennom\
+  \ `os`-pakken, spesifikt ved bruk av `os.Args`, et array av strenger. Her er et\
+  \ enkelt\u2026"
 lastmod: '2024-03-13T22:44:40.284341-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 lese kommandolinjeargumenter i Go involverer \xE5 trekke ut argumentene\
-  \ som er gitt til et program under dets kall fra terminalen eller kommandoprompten."
+summary: Go gir direkte tilgang til kommandolinjeargumenter gjennom `os`-pakken, spesifikt
+  ved bruk av `os.Args`, et array av strenger.
 title: Lese kommandolinjeargumenter
 weight: 23
 ---

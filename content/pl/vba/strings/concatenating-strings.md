@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:47.777144-07:00
-description: "Konkatenacja w Visual Basic for Applications (VBA) polega na \u0142\u0105\
-  czeniu dw\xF3ch lub wi\u0119cej ci\u0105g\xF3w znak\xF3w w jedn\u0105 jednostk\u0119\
-  . Jest to podstawowe zadanie w\u2026"
+description: "Jak to zrobi\u0107: VBA oferuje prost\u0105 metod\u0119 \u0142\u0105\
+  czenia ci\u0105g\xF3w znak\xF3w za pomoc\u0105 operatora `&` lub funkcji `Concatenate`.\
+  \ Przyjrzyjmy si\u0119 obu metodom na\u2026"
 lastmod: '2024-03-13T22:44:35.222490-06:00'
 model: gpt-4-0125-preview
-summary: "Konkatenacja w Visual Basic for Applications (VBA) polega na \u0142\u0105\
-  czeniu dw\xF3ch lub wi\u0119cej ci\u0105g\xF3w znak\xF3w w jedn\u0105 jednostk\u0119\
-  ."
+summary: "VBA oferuje prost\u0105 metod\u0119 \u0142\u0105czenia ci\u0105g\xF3w znak\xF3\
+  w za pomoc\u0105 operatora `&` lub funkcji `Concatenate`."
 title: "Konkatenacja ci\u0105g\xF3w znak\xF3w"
 weight: 3
 ---

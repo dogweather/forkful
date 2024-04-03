@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:54:34.879289-07:00
-description: "\xC5 lese en tekstfil betyr at vi henter innholdet i fila til programmet\
-  \ v\xE5rt. Programmerere gj\xF8r dette for \xE5 behandle data, konfigurere systemer\
-  \ eller laste\u2026"
+description: 'Hvordan: .'
 lastmod: '2024-03-13T22:44:40.769020-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 lese en tekstfil betyr at vi henter innholdet i fila til programmet\
-  \ v\xE5rt."
+summary: .
 title: Lese en tekstfil
 weight: 22
 ---

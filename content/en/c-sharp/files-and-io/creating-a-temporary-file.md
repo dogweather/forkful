@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:40:00.293433-07:00
-description: "Creating a temporary file means you're generating a file for a short-term\
-  \ purpose, like storing data that's only needed during the execution of a program.\u2026"
+description: 'How to: Here''s a quick way to create and write to a temporary file
+  in C#.'
 lastmod: '2024-03-13T22:45:00.106916-06:00'
 model: gpt-4-1106-preview
-summary: Creating a temporary file means you're generating a file for a short-term
-  purpose, like storing data that's only needed during the execution of a program.
+summary: Here's a quick way to create and write to a temporary file in C#.
 title: Creating a temporary file
 weight: 21
 ---

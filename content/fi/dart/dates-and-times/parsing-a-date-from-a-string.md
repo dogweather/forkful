@@ -2,13 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:43.967744-07:00
-description: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta Dartissa\
-  \ tarkoittaa p\xE4iv\xE4m\xE4\xE4rien ja kellonaikojen tekstiesitysten muuntamista\
-  \ `DateTime`-objektiksi. T\xE4m\xE4 toiminto\u2026"
+description: "Miten: Dartin ydinkirjasto yksinkertaistaa p\xE4iv\xE4m\xE4\xE4r\xE4\
+  n j\xE4sent\xE4mist\xE4 `DateTime`-luokan avulla. Suoraviivaisissa tapauksissa,\
+  \ joissa tied\xE4t\u2026"
 lastmod: '2024-03-13T22:44:56.281173-06:00'
 model: gpt-4-0125-preview
-summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta Dartissa tarkoittaa\
-  \ p\xE4iv\xE4m\xE4\xE4rien ja kellonaikojen tekstiesitysten muuntamista `DateTime`-objektiksi."
+summary: "Dartin ydinkirjasto yksinkertaistaa p\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4\
+  mist\xE4 `DateTime`-luokan avulla."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
 weight: 30
 ---

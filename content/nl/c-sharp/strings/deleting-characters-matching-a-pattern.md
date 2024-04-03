@@ -2,13 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:24.800564-07:00
-description: "Het verwijderen van tekens die overeenkomen met een patroon gaat over\
-  \ het vinden en verwijderen van specifieke reeksen tekens uit strings op basis van\u2026"
+description: 'Hoe: Wil je sommige tekens kwijt? Zo doe je dat in C#.'
 lastmod: '2024-03-13T22:44:50.794066-06:00'
 model: gpt-4-0125-preview
-summary: Het verwijderen van tekens die overeenkomen met een patroon gaat over het
-  vinden en verwijderen van specifieke reeksen tekens uit strings op basis van regels
-  (zoals regex).
+summary: Wil je sommige tekens kwijt.
 title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---

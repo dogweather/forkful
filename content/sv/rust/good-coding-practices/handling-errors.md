@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 00:59:08.160488-07:00
-description: "Felhantering handlar om att hantera saker n\xE4r de inte g\xE5r som\
-  \ planerat. Programmerare g\xF6r det f\xF6r att hantera det ov\xE4ntade och s\xE4\
-  kerst\xE4lla att deras Rust-\u2026"
+description: "Hur g\xF6r man? Rust hanterar fel p\xE5 tv\xE5 stora s\xE4tt: \xE5terh\xE4\
+  mtande och o\xE5terh\xE4mtande fel. L\xE5t oss titta p\xE5 b\xE5da. \xC5terh\xE4\
+  mtande fel anv\xE4nder `Result<T, E>`."
 lastmod: '2024-03-13T22:44:37.706250-06:00'
 model: gpt-4-1106-preview
-summary: "Felhantering handlar om att hantera saker n\xE4r de inte g\xE5r som planerat."
+summary: "Rust hanterar fel p\xE5 tv\xE5 stora s\xE4tt."
 title: Hantering av fel
 weight: 16
 ---

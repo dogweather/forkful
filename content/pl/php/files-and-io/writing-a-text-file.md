@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:50.985310-07:00
-description: "Zapisywanie pliku tekstowego w PHP polega na utworzeniu lub otwarciu\
-  \ pliku i wstawieniu do niego zawarto\u015Bci. Programi\u015Bci robi\u0105 to, aby\
-  \ zachowa\u0107 dane,\u2026"
+description: "Jak to zrobi\u0107: PHP natywnie obs\u0142uguje zapisywanie do pliku\
+  \ za pomoc\u0105 funkcji takich jak `file_put_contents`, `fopen` w po\u0142\u0105\
+  czeniu z `fwrite` oraz\u2026"
 lastmod: '2024-03-13T22:44:35.515909-06:00'
 model: gpt-4-0125-preview
-summary: "Zapisywanie pliku tekstowego w PHP polega na utworzeniu lub otwarciu pliku\
-  \ i wstawieniu do niego zawarto\u015Bci."
+summary: "PHP natywnie obs\u0142uguje zapisywanie do pliku za pomoc\u0105 funkcji\
+  \ takich jak `file_put_contents`, `fopen` w po\u0142\u0105czeniu z `fwrite` oraz\
+  \ `fclose`."
 title: Pisanie pliku tekstowego
 weight: 24
 ---

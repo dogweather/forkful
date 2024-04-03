@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 18:04:24.388101-07:00
-description: "Starting a new project is about laying the groundwork for your coding\
-  \ masterpiece. As programmers, we do it to break ground on a fresh idea or implement\u2026"
+description: "How to: PowerShell makes spinning up a new project straightforward.\
+  \ You might want to create a directory for your project and set up a git repository.\u2026"
 lastmod: '2024-03-13T22:45:00.284707-06:00'
 model: gpt-4-1106-preview
-summary: Starting a new project is about laying the groundwork for your coding masterpiece.
+summary: PowerShell makes spinning up a new project straightforward.
 title: Starting a new project
 weight: 1
 ---

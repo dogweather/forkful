@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 03:36:46.490053-07:00
-description: "Refatora\xE7\xE3o \xE9 o processo de reestruturar o c\xF3digo de computador\
-  \ existente sem alterar seu comportamento externo. Os programadores fazem isso para\
-  \ tornar o\u2026"
+description: "Como fazer: Considere uma fun\xE7\xE3o TypeScript que j\xE1 viu dias\
+  \ melhores - est\xE1 um pouco bagun\xE7ada, e poderia usar um pouco de carinho e\
+  \ aten\xE7\xE3o."
 lastmod: '2024-03-13T22:44:46.334388-06:00'
 model: gpt-4-0125-preview
-summary: "Refatora\xE7\xE3o \xE9 o processo de reestruturar o c\xF3digo de computador\
-  \ existente sem alterar seu comportamento externo."
+summary: "Considere uma fun\xE7\xE3o TypeScript que j\xE1 viu dias melhores - est\xE1\
+  \ um pouco bagun\xE7ada, e poderia usar um pouco de carinho e aten\xE7\xE3o."
 title: "Refatora\xE7\xE3o"
 weight: 19
 ---

@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:33.361706-07:00
-description: "Il refactoring nel lessico della programmazione si riferisce al processo\
-  \ di ristrutturazione del codice informatico esistente\u2014modificando la\u2026"
+description: "Come Fare: In Google Apps Script, uno scenario comune che beneficia\
+  \ del refactoring \xE8 la semplificazione di script ingombranti che interagiscono\
+  \ con\u2026"
 lastmod: '2024-03-13T22:44:42.964872-06:00'
 model: gpt-4-0125-preview
-summary: "Il refactoring nel lessico della programmazione si riferisce al processo\
-  \ di ristrutturazione del codice informatico esistente\u2014modificando la fattorizzazione\
-  \ senza cambiare il suo comportamento esterno\u2014per migliorare attributi non\
-  \ funzionali."
+summary: "In Google Apps Script, uno scenario comune che beneficia del refactoring\
+  \ \xE8 la semplificazione di script ingombranti che interagiscono con Google Sheets\
+  \ o Docs."
 title: Rifattorizzazione
 weight: 19
 ---

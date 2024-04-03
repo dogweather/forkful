@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:44:09.952664-07:00
-description: "Baixar uma p\xE1gina web significa pegar o conte\xFAdo dela, geralmente\
-  \ em HTML, atrav\xE9s da internet. Programadores fazem isso para processar essa\
-  \ informa\xE7\xE3o,\u2026"
+description: "Como fazer: Elm torna a tarefa de baixar uma p\xE1gina web uma jornada\
+  \ tranquila, principalmente com o pacote `Http`. Vamos ver como fazer isso na pr\xE1\
+  tica."
 lastmod: '2024-03-13T22:44:46.498825-06:00'
 model: gpt-4-1106-preview
-summary: "Baixar uma p\xE1gina web significa pegar o conte\xFAdo dela, geralmente\
-  \ em HTML, atrav\xE9s da internet."
+summary: "Elm torna a tarefa de baixar uma p\xE1gina web uma jornada tranquila, principalmente\
+  \ com o pacote `Http`."
 title: "Baixando uma p\xE1gina da web"
 weight: 42
 ---

@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:29.441982-07:00
-description: "Een HTTP-verzoek verzenden is hoe je programma een ander systeem vraagt\
-  \ om gegevens of diensten over het web. Programmeurs doen dit om te interageren\
-  \ met\u2026"
+description: Hoe? In Clojure kun je HTTP-verzoeken verzenden met de `clj-http` client.
+  Voeg eerst de afhankelijkheid toe aan je `project.clj`.
 lastmod: '2024-03-13T22:44:50.416166-06:00'
 model: gpt-4-0125-preview
-summary: Een HTTP-verzoek verzenden is hoe je programma een ander systeem vraagt om
-  gegevens of diensten over het web.
+summary: In Clojure kun je HTTP-verzoeken verzenden met de `clj-http` client.
 title: Een HTTP-verzoek verzenden
 weight: 44
 ---

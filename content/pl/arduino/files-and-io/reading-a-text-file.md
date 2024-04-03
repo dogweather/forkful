@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:53:41.607760-07:00
-description: "Czytanie pliku tekstowego to proces pobierania danych z pliku zapisanego\
-  \ na karcie SD lub pami\u0119ci systemu. Programi\u015Bci robi\u0105 to, by za\u0142\
-  adowa\u0107\u2026"
+description: "How to: (Jak to zrobi\u0107:) ."
 lastmod: '2024-03-13T22:44:35.688842-06:00'
 model: gpt-4-1106-preview
-summary: "Czytanie pliku tekstowego to proces pobierania danych z pliku zapisanego\
-  \ na karcie SD lub pami\u0119ci systemu."
+summary: .
 title: Odczytywanie pliku tekstowego
 weight: 22
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:41:58.604658-07:00
-description: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, ist ein Prozess,\
-  \ bei dem bestimmte Zeichensequenzen aus einer Zeichenkette entfernt werden. Diese\u2026"
+description: "Wie geht das: Der `string` Befehl in Fish bietet mehrere Optionen, um\
+  \ Zeichen, die einem Muster entsprechen, zu l\xF6schen. Hier ein paar Beispiele."
 lastmod: '2024-03-13T22:44:54.292554-06:00'
 model: gpt-4-1106-preview
-summary: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, ist ein Prozess,\
-  \ bei dem bestimmte Zeichensequenzen aus einer Zeichenkette entfernt werden."
+summary: "Der `string` Befehl in Fish bietet mehrere Optionen, um Zeichen, die einem\
+  \ Muster entsprechen, zu l\xF6schen."
 title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
 weight: 5
 ---

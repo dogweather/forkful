@@ -2,13 +2,13 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:11.491733-07:00
-description: "Assoziative Arrays, oder Hash-Maps, in Clojure erm\xF6glichen es Ihnen,\
-  \ Daten mit Schl\xFCssel-Wert-Paaren zu speichern und abzurufen. Sie sind eine erste\
-  \ Wahl\u2026"
+description: "Wie: In Clojure ist das Erstellen und Manipulieren von assoziativen\
+  \ Arrays (Hash-Maps) unkompliziert. Lassen Sie uns mit Beispielen eintauchen. Um\
+  \ eine\u2026"
 lastmod: '2024-03-13T22:44:53.412940-06:00'
 model: gpt-4-0125-preview
-summary: "Assoziative Arrays, oder Hash-Maps, in Clojure erm\xF6glichen es Ihnen,\
-  \ Daten mit Schl\xFCssel-Wert-Paaren zu speichern und abzurufen."
+summary: In Clojure ist das Erstellen und Manipulieren von assoziativen Arrays (Hash-Maps)
+  unkompliziert.
 title: Verwendung von assoziativen Arrays
 weight: 15
 ---

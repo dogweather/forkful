@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:12.073586-07:00
-description: "O tratamento de erros no Google Apps Script \xE9 sobre prever, capturar\
-  \ e responder a exce\xE7\xF5es ou erros que ocorrem durante a execu\xE7\xE3o do\
-  \ script. Os\u2026"
+description: "Como fazer: O Google Apps Script, sendo baseado em JavaScript, nos permite\
+  \ usar a tradicional declara\xE7\xE3o `try-catch` para o tratamento de erros, junto\
+  \ com\u2026"
 lastmod: '2024-03-13T22:44:46.116415-06:00'
 model: gpt-4-0125-preview
-summary: "O tratamento de erros no Google Apps Script \xE9 sobre prever, capturar\
-  \ e responder a exce\xE7\xF5es ou erros que ocorrem durante a execu\xE7\xE3o do\
-  \ script."
+summary: "O Google Apps Script, sendo baseado em JavaScript, nos permite usar a tradicional\
+  \ declara\xE7\xE3o `try-catch` para o tratamento de erros, junto com `finally` se\
+  \ a limpeza for necess\xE1ria independentemente de sucesso ou erro."
 title: Gerenciando erros
 weight: 16
 ---

@@ -2,14 +2,11 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:04.562309-07:00
-description: "Generare numeri casuali in Visual Basic for Applications (VBA) consente\
-  \ ai programmi di simulare processi con elementi di casualit\xE0 o variabilit\xE0\
-  , come il\u2026"
+description: "Come fare: In VBA, la funzione `Rnd` viene utilizzata per generare numeri\
+  \ casuali. Per impostazione predefinita, `Rnd` genera un numero in virgola mobile\u2026"
 lastmod: '2024-03-13T22:44:43.258012-06:00'
 model: gpt-4-0125-preview
-summary: "Generare numeri casuali in Visual Basic for Applications (VBA) consente\
-  \ ai programmi di simulare processi con elementi di casualit\xE0 o variabilit\xE0\
-  , come il lancio di dadi o il campionamento dei dati."
+summary: In VBA, la funzione `Rnd` viene utilizzata per generare numeri casuali.
 title: Generare numeri casuali
 weight: 12
 ---

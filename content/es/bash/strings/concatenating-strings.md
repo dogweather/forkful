@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:34:16.433471-07:00
-description: "Concatenar cadenas es simplemente combinar dos o m\xE1s textos en uno\
-  \ solo. Los programadores lo hacen para manejar din\xE1micamente la informaci\xF3\
-  n, como\u2026"
+description: "How to: Concatenar en Bash es pan comido. Usamos `+` para sumar n\xFA\
+  meros, pero para unir palabras, pegamos variables o cadenas lado a lado. Aqu\xED\
+  \ va."
 lastmod: '2024-03-13T22:44:59.236477-06:00'
 model: gpt-4-1106-preview
-summary: "Concatenar cadenas es simplemente combinar dos o m\xE1s textos en uno solo."
+summary: Concatenar en Bash es pan comido.
 title: "Concatenaci\xF3n de cadenas de texto"
 weight: 3
 ---

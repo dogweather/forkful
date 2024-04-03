@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:26.273603-07:00
-description: "Shell t\u01B0\u01A1ng t\xE1c, hay REPLs (V\xF2ng l\u1EB7p \u0110\u1ECD\
-  c-\u0110\xE1nh gi\xE1-In), cho ph\xE9p b\u1EA1n ch\u1EA1y m\xE3 tr\xEAn m\xE1y bay,\
-  \ ki\u1EC3m th\u1EED c\xE1c h\xE0m, thu\u1EADt to\xE1n, ho\u1EB7c ngh\u1ECBch ng\u1EE3\
-  m v\u1EDBi \xFD t\u01B0\u1EDFng.\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Node.js \u0111i k\xE8m v\u1EDBi m\u1ED9t REPL\
+  \ c\xF3 th\u1EC3 truy c\u1EADp qua terminal. M\u1EDF l\xEAn, v\xE0 b\u1EA1n s\u1EB5\
+  n s\xE0ng l\u0103n b\xE1nh. D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t v\xED d\u1EE5\
+  ."
 lastmod: '2024-03-13T22:44:37.155497-06:00'
 model: gpt-4-0125-preview
-summary: "Shell t\u01B0\u01A1ng t\xE1c, hay REPLs (V\xF2ng l\u1EB7p \u0110\u1ECDc-\u0110\
-  \xE1nh gi\xE1-In), cho ph\xE9p b\u1EA1n ch\u1EA1y m\xE3 tr\xEAn m\xE1y bay, ki\u1EC3\
-  m th\u1EED c\xE1c h\xE0m, thu\u1EADt to\xE1n, ho\u1EB7c ngh\u1ECBch ng\u1EE3m v\u1EDB\
-  i \xFD t\u01B0\u1EDFng."
+summary: "Node.js \u0111i k\xE8m v\u1EDBi m\u1ED9t REPL c\xF3 th\u1EC3 truy c\u1EAD\
+  p qua terminal."
 title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 weight: 34
 ---

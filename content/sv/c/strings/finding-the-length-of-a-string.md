@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:34.949014-07:00
-description: "Att hitta l\xE4ngden p\xE5 en str\xE4ng i C inneb\xE4r att best\xE4\
-  mma antalet tecken f\xF6re det nollterminerande tecknet `\\0`. Programmerare g\xF6\
-  r detta f\xF6r att korrekt\u2026"
+description: "Hur: I C anv\xE4nds standardbiblioteksfunktionen `strlen()` vanligtvis\
+  \ f\xF6r att hitta l\xE4ngden p\xE5 en str\xE4ng. H\xE4r \xE4r ett snabbt exempel."
 lastmod: '2024-03-13T22:44:38.372477-06:00'
 model: gpt-4-0125-preview
-summary: "Att hitta l\xE4ngden p\xE5 en str\xE4ng i C inneb\xE4r att best\xE4mma antalet\
-  \ tecken f\xF6re det nollterminerande tecknet `\\0`."
+summary: "I C anv\xE4nds standardbiblioteksfunktionen `strlen()` vanligtvis f\xF6\
+  r att hitta l\xE4ngden p\xE5 en str\xE4ng."
 title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---

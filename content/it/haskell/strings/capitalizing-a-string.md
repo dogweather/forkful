@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:20.190125-07:00
-description: "Trasformare la prima lettera di una stringa in maiuscolo, garantendo\
-  \ che il resto delle lettere rimanga in minuscolo, \xE8 ci\xF2 che viene definito\u2026"
+description: 'Come fare: In Haskell, puoi capitalizzare una stringa utilizzando la
+  libreria standard senza bisogno di librerie di terze parti.'
 lastmod: '2024-03-13T22:44:43.458980-06:00'
 model: gpt-4-0125-preview
-summary: "Trasformare la prima lettera di una stringa in maiuscolo, garantendo che\
-  \ il resto delle lettere rimanga in minuscolo, \xE8 ci\xF2 che viene definito capitalizzazione\
-  \ di una stringa."
+summary: In Haskell, puoi capitalizzare una stringa utilizzando la libreria standard
+  senza bisogno di librerie di terze parti.
 title: Capitalizzare una stringa
 weight: 2
 ---

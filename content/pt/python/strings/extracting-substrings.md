@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:46:32.869132-07:00
-description: "Extrair substrings \xE9 o ato de selecionar partes espec\xEDficas de\
-  \ uma string. Programadores fazem isso para manipular, analisar, ou verificar dados\
-  \ dentro de\u2026"
+description: "Como Fazer: Extra\xEDmos substrings usando indexa\xE7\xE3o e fatiamento\
+  \ em Python. Aqui est\xE3o exemplos."
 lastmod: '2024-03-13T22:44:46.142844-06:00'
 model: gpt-4-1106-preview
-summary: "Extrair substrings \xE9 o ato de selecionar partes espec\xEDficas de uma\
-  \ string."
+summary: "Extra\xEDmos substrings usando indexa\xE7\xE3o e fatiamento em Python."
 title: Extraindo substrings
 weight: 6
 ---

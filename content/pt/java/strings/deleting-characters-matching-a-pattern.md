@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:42:37.886022-07:00
-description: "Deletar caracteres que correspondem a um padr\xE3o \xE9 basicamente\
-  \ tirar do texto tudo o que a gente n\xE3o quer ou n\xE3o precisa. Programadores\
-  \ fazem isso para\u2026"
+description: "How to: Em Java, podemos usar a classe `Pattern` e a classe `Matcher`\
+  \ para localizar e deletar os trechinhos espec\xEDficos dentro de uma string. Vamos\
+  \ ver\u2026"
 lastmod: '2024-03-13T22:44:46.440865-06:00'
 model: gpt-4-1106-preview
-summary: "Deletar caracteres que correspondem a um padr\xE3o \xE9 basicamente tirar\
-  \ do texto tudo o que a gente n\xE3o quer ou n\xE3o precisa."
+summary: "Em Java, podemos usar a classe `Pattern` e a classe `Matcher` para localizar\
+  \ e deletar os trechinhos espec\xEDficos dentro de uma string."
 title: "Excluindo caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---

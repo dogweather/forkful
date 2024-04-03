@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:03.966091-07:00
-description: "Een datum parsen vanuit een string betekent het omzetten van tekst naar\
-  \ een datumobject. Dit doen we omdat het gemakkelijker is om met data te werken,\u2026"
+description: 'Hoe: De `datetime` module van Python is je beste vriend voor het parsen
+  van data. Hier is een snelle gids.'
 lastmod: '2024-03-13T22:44:50.386136-06:00'
 model: gpt-4-0125-preview
-summary: Een datum parsen vanuit een string betekent het omzetten van tekst naar een
-  datumobject.
+summary: De `datetime` module van Python is je beste vriend voor het parsen van data.
 title: Een datum uit een string parsen
 weight: 30
 ---

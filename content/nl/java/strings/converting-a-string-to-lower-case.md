@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:16.059142-07:00
-description: "Een string omzetten naar kleine letters betekent het transformeren van\
-  \ alle letters in een string naar hun kleine-lettervorm. Programmeurs doen dit om\u2026"
+description: 'Hoe te: De `String` klasse in Java heeft een handige `toLowerCase()`
+  methode die het zware werk voor je doet. Bekijk dit eenvoudige gebruik.'
 lastmod: '2024-03-13T22:44:50.667642-06:00'
 model: gpt-4-0125-preview
-summary: Een string omzetten naar kleine letters betekent het transformeren van alle
-  letters in een string naar hun kleine-lettervorm.
+summary: De `String` klasse in Java heeft een handige `toLowerCase()` methode die
+  het zware werk voor je doet.
 title: Een string omzetten naar kleine letters
 weight: 4
 ---

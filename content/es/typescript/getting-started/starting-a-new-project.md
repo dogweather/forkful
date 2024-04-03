@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 18:04:26.627277-07:00
-description: "Empezar un nuevo proyecto en TypeScript es como plantar una semilla\
-  \ digital; le das los nutrientes b\xE1sicos y la ves crecer. Los programadores arrancan\u2026"
+description: "C\xF3mo hacerlo: Instala Node.js y npm. Luego, inicia tu proyecto."
 lastmod: '2024-03-13T22:44:58.801261-06:00'
 model: gpt-4-1106-preview
-summary: "Empezar un nuevo proyecto en TypeScript es como plantar una semilla digital;\
-  \ le das los nutrientes b\xE1sicos y la ves crecer."
+summary: Instala Node.js y npm.
 title: Iniciando un nuevo proyecto
 weight: 1
 ---

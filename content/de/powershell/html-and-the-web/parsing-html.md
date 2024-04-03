@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:35.163566-07:00
-description: "Das Parsen von HTML in PowerShell bedeutet, HTML-Inhalte zu untersuchen,\
-  \ um spezifische Daten zu extrahieren oder webbezogene Aufgaben zu automatisieren.\u2026"
+description: "Wie geht das: PowerShell verf\xFCgt nativ nicht \xFCber einen dedizierten\
+  \ HTML-Parser, aber Sie k\xF6nnen das Cmdlet `Invoke-WebRequest` verwenden, um auf\
+  \ HTML-\u2026"
 lastmod: '2024-03-13T22:44:54.101568-06:00'
 model: gpt-4-0125-preview
-summary: Das Parsen von HTML in PowerShell bedeutet, HTML-Inhalte zu untersuchen,
-  um spezifische Daten zu extrahieren oder webbezogene Aufgaben zu automatisieren.
+summary: "PowerShell verf\xFCgt nativ nicht \xFCber einen dedizierten HTML-Parser,\
+  \ aber Sie k\xF6nnen das Cmdlet `Invoke-WebRequest` verwenden, um auf HTML-Inhalte\
+  \ zuzugreifen und diese zu parsen."
 title: HTML parsen
 weight: 43
 ---

@@ -1,8 +1,8 @@
 ---
 date: 2024-01-26 03:50:05.803260-07:00
-description: "La oss si at du har et enkelt Java-program som oppf\xF8rer seg merkelig,\
-  \ og du kan ikke finne ut hvorfor. Her er hvordan du ville fyrt opp en debugger\
-  \ ved \xE5\u2026"
+description: "Hvordan: La oss si at du har et enkelt Java-program som oppf\xF8rer\
+  \ seg merkelig, og du kan ikke finne ut hvorfor. Her er hvordan du ville fyrt opp\
+  \ en\u2026"
 lastmod: '2024-03-13T22:44:40.671198-06:00'
 model: gpt-4-0125-preview
 summary: "La oss si at du har et enkelt Java-program som oppf\xF8rer seg merkelig,\

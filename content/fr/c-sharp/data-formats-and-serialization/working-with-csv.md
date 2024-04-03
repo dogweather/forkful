@@ -2,15 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:30.644052-07:00
-description: "Les fichiers CSV (Comma-Separated Values, ou valeurs s\xE9par\xE9es\
-  \ par des virgules) sont un format d'\xE9change de donn\xE9es courant qui repr\xE9\
-  sente des donn\xE9es\u2026"
+description: "Comment faire : Travailler avec des fichiers CSV en C# peut \xEAtre\
+  \ accompli \xE0 travers l'espace de noms `System.IO` pour les op\xE9rations de base,\
+  \ et pour des\u2026"
 lastmod: '2024-03-13T22:44:57.812507-06:00'
 model: gpt-4-0125-preview
-summary: "Les fichiers CSV (Comma-Separated Values, ou valeurs s\xE9par\xE9es par\
-  \ des virgules) sont un format d'\xE9change de donn\xE9es courant qui repr\xE9sente\
-  \ des donn\xE9es tabulaires en texte brut, en utilisant des virgules pour s\xE9\
-  parer les valeurs individuelles."
+summary: "Travailler avec des fichiers CSV en C# peut \xEAtre accompli \xE0 travers\
+  \ l'espace de noms `System.IO` pour les op\xE9rations de base, et pour des manipulations\
+  \ plus complexes ou pour g\xE9rer des fichiers plus grands sans probl\xE8me, on\
+  \ pourrait envisager des biblioth\xE8ques tierces comme `CsvHelper`."
 title: Travailler avec CSV
 weight: 37
 ---

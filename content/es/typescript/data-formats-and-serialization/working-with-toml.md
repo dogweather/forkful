@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:26:56.836492-07:00
-description: "TOML, abreviatura de Tom's Obvious, Minimal Language (Lenguaje M\xED\
-  nimo y Obvio de Tom), es un formato de serializaci\xF3n de datos similar a JSON\
-  \ o YAML. Los\u2026"
+description: "C\xF3mo hacerlo: Primero, necesitar\xE1s un analizador de TOML. `@iarna/toml`\
+  \ es una opci\xF3n popular. Inst\xE1lalo con npm: `npm install @iarna/toml --save`.\
+  \ Aqu\xED\u2026"
 lastmod: '2024-03-13T22:44:58.827491-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, abreviatura de Tom's Obvious, Minimal Language (Lenguaje M\xEDnimo\
-  \ y Obvio de Tom), es un formato de serializaci\xF3n de datos similar a JSON o YAML."
+summary: "Primero, necesitar\xE1s un analizador de TOML."
 title: Trabajando con TOML
 weight: 39
 ---

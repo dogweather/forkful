@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:13.013916-07:00
-description: "Werken met CSV (Comma-Separated Values) betekent het omgaan met platte\
-  \ tekstbestanden die tabelgegevens opslaan. Programmeurs gebruiken CSV omdat het\u2026"
+description: 'Hoe te: Hier is een stuk code dat een CSV-bestand leest en de inhoud
+  ervan afdrukt.'
 lastmod: '2024-03-13T22:44:51.135502-06:00'
 model: gpt-4-0125-preview
-summary: Werken met CSV (Comma-Separated Values) betekent het omgaan met platte tekstbestanden
-  die tabelgegevens opslaan.
+summary: Hier is een stuk code dat een CSV-bestand leest en de inhoud ervan afdrukt.
 title: Werken met CSV
 weight: 37
 ---

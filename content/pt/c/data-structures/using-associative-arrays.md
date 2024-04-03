@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:44.658219-07:00
-description: "Arrays associativos, conhecidos em outras linguagens como mapas ou dicion\xE1\
-  rios, s\xE3o pares de chave-valor usados para a busca e manipula\xE7\xE3o eficiente\
-  \ de\u2026"
+description: "Como fazer: C n\xE3o possui suporte embutido para arrays associativos\
+  \ como algumas linguagens de mais alto n\xEDvel, mas voc\xEA pode simul\xE1-los\
+  \ usando estruturas\u2026"
 lastmod: '2024-03-13T22:44:47.041942-06:00'
 model: gpt-4-0125-preview
-summary: "Arrays associativos, conhecidos em outras linguagens como mapas ou dicion\xE1\
-  rios, s\xE3o pares de chave-valor usados para a busca e manipula\xE7\xE3o eficiente\
-  \ de dados."
+summary: "C n\xE3o possui suporte embutido para arrays associativos como algumas linguagens\
+  \ de mais alto n\xEDvel, mas voc\xEA pode simul\xE1-los usando estruturas e hashing."
 title: Utilizando arrays associativos
 weight: 15
 ---

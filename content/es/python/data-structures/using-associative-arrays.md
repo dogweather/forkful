@@ -2,14 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:13:18.473156-07:00
-description: "Los arreglos asociativos, conocidos en Python como diccionarios, mapean\
-  \ claves a valores, facilitando la recuperaci\xF3n, modificaci\xF3n o seguimiento\
-  \ de datos\u2026"
+description: "C\xF3mo hacerlo: Crear un diccionario en Python es sencillo. Encierras\
+  \ los pares clave-valor entre llaves `{}`, con las claves y los valores separados\
+  \ por\u2026"
 lastmod: '2024-03-13T22:44:58.603487-06:00'
 model: gpt-4-0125-preview
-summary: "Los arreglos asociativos, conocidos en Python como diccionarios, mapean\
-  \ claves a valores, facilitando la recuperaci\xF3n, modificaci\xF3n o seguimiento\
-  \ de datos por un identificador \xFAnico."
+summary: Crear un diccionario en Python es sencillo.
 title: Uso de matrices asociativas
 weight: 15
 ---

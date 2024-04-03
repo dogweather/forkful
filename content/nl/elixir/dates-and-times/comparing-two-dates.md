@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:29.238090-07:00
-description: "Het vergelijken van twee data betekent controleren of ze hetzelfde zijn\
-  \ of bepalen welke eerder of later komt. Programmeurs doen dit om evenementen te\u2026"
+description: 'Hoe: Elixir maakt het vergelijken van datums eenvoudig. Hier is een
+  voorbeeld dat vandaag vergelijkt met morgen.'
 lastmod: '2024-03-13T22:44:50.474595-06:00'
 model: gpt-4-0125-preview
-summary: Het vergelijken van twee data betekent controleren of ze hetzelfde zijn of
-  bepalen welke eerder of later komt.
+summary: Elixir maakt het vergelijken van datums eenvoudig.
 title: Twee datums vergelijken
 weight: 27
 ---

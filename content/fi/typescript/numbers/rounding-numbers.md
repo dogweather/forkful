@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 03:47:26.001825-07:00
-description: "Numeroiden py\xF6rist\xE4minen tarkoittaa numeron karsimista tiettyyn\
-  \ tarkkuuteen. Ohjelmoijat tekev\xE4t n\xE4in hallitakseen numeerista tulostetta\
-  \ luettavuuden,\u2026"
+description: "Kuinka: TypeScriptiss\xE4 py\xF6rist\xE4minen voidaan tehd\xE4 k\xE4\
+  ytt\xE4en useita menetelmi\xE4. T\xE4ss\xE4 pikakatsaus."
 lastmod: '2024-03-13T22:44:56.310466-06:00'
 model: gpt-4-0125-preview
-summary: "Numeroiden py\xF6rist\xE4minen tarkoittaa numeron karsimista tiettyyn tarkkuuteen."
+summary: "TypeScriptiss\xE4 py\xF6rist\xE4minen voidaan tehd\xE4 k\xE4ytt\xE4en useita\
+  \ menetelmi\xE4."
 title: "Numerojen py\xF6rist\xE4minen"
 weight: 13
 ---

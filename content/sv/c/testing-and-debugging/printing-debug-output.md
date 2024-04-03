@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:16.178503-07:00
-description: "Att skriva ut fels\xF6kningsmeddelanden handlar om att generera tillf\xE4\
-  lliga, informativa loggmeddelanden som kan hj\xE4lpa programmerare att f\xF6rst\xE5\
-  \ fl\xF6det och\u2026"
+description: "Hur g\xF6r man: I C \xE4r det vanligaste s\xE4ttet att skriva ut fels\xF6\
+  kningsmeddelanden att anv\xE4nda funktionen `printf` fr\xE5n standard I/O-biblioteket.\
+  \ Funktionen\u2026"
 lastmod: '2024-03-13T22:44:38.385470-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva ut fels\xF6kningsmeddelanden handlar om att generera tillf\xE4\
-  lliga, informativa loggmeddelanden som kan hj\xE4lpa programmerare att f\xF6rst\xE5\
-  \ fl\xF6det och tillst\xE5ndet i ett program under dess k\xF6rning."
+summary: "I C \xE4r det vanligaste s\xE4ttet att skriva ut fels\xF6kningsmeddelanden\
+  \ att anv\xE4nda funktionen `printf` fr\xE5n standard I/O-biblioteket."
 title: "Skriva ut fels\xF6kningsutdata"
 weight: 33
 ---

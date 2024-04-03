@@ -2,14 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:17.213264-07:00
-description: "Escrever testes em programa\xE7\xE3o envolve criar e executar scripts\
-  \ que verificam se o c\xF3digo se comporta conforme esperado sob v\xE1rias condi\xE7\
-  \xF5es. Os\u2026"
+description: 'Como fazer: #.'
 lastmod: '2024-03-13T22:44:46.670930-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever testes em programa\xE7\xE3o envolve criar e executar scripts que\
-  \ verificam se o c\xF3digo se comporta conforme esperado sob v\xE1rias condi\xE7\
-  \xF5es."
+summary: '#.'
 title: Escrevendo testes
 weight: 36
 ---

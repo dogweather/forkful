@@ -2,13 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:11.738958-07:00
-description: "Leer los argumentos de la l\xEDnea de comandos en Visual Basic para\
-  \ Aplicaciones (VBA) implica acceder a los par\xE1metros pasados a tu programa al\
-  \ ejecutarse.\u2026"
+description: "C\xF3mo hacerlo: A diferencia de entornos de programaci\xF3n m\xE1s\
+  \ directos, VBA no tiene una funci\xF3n integrada para leer directamente los argumentos\
+  \ de la l\xEDnea\u2026"
 lastmod: '2024-03-13T22:44:58.910319-06:00'
 model: gpt-4-0125-preview
-summary: "Leer los argumentos de la l\xEDnea de comandos en Visual Basic para Aplicaciones\
-  \ (VBA) implica acceder a los par\xE1metros pasados a tu programa al ejecutarse."
+summary: "A diferencia de entornos de programaci\xF3n m\xE1s directos, VBA no tiene\
+  \ una funci\xF3n integrada para leer directamente los argumentos de la l\xEDnea\
+  \ de comandos en un sentido convencional porque est\xE1 dise\xF1ado principalmente\
+  \ para incrustarse dentro de aplicaciones de Microsoft Office."
 title: "Leyendo argumentos de la l\xEDnea de comandos"
 weight: 23
 ---

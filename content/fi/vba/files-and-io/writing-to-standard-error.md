@@ -2,13 +2,16 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:09:23.884760-07:00
-description: "Virheiden kirjoittaminen Visual Basic for Applications (VBA) -ohjelmassa\
-  \ tarkoittaa virheilmoitusten tai diagnostiikan ohjaamista erilleen\u2026"
+description: "Kuinka: VBA:ssa, koska suoraa sis\xE4\xE4nrakennettua funktiota nimenomaan\
+  \ virheen vakiotulostukseen ei ole kuten joissakin muissa ohjelmointikieliss\xE4\
+  , yleinen\u2026"
 lastmod: '2024-03-13T22:44:56.418527-06:00'
 model: gpt-4-0125-preview
-summary: "Virheiden kirjoittaminen Visual Basic for Applications (VBA) -ohjelmassa\
-  \ tarkoittaa virheilmoitusten tai diagnostiikan ohjaamista erilleen vakiotulosteesta,\
-  \ yleens\xE4 konsoliin tai lokitiedostoon."
+summary: "VBA:ssa, koska suoraa sis\xE4\xE4nrakennettua funktiota nimenomaan virheen\
+  \ vakiotulostukseen ei ole kuten joissakin muissa ohjelmointikieliss\xE4, yleinen\
+  \ kiertotapa sis\xE4lt\xE4\xE4 `Debug.Print`-komennon k\xE4yt\xF6n kehitysvaiheen\
+  \ virhetulosteille tai oman lokitusfunktion luomisen, joka j\xE4ljittelee t\xE4\
+  t\xE4 k\xE4ytt\xE4ytymist\xE4 tuotantosovelluksissa."
 title: Kirjoittaminen vakiovirheeseen
 weight: 25
 ---

@@ -2,13 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:39.648708-07:00
-description: "Nel contesto della programmazione Arduino, verificare se una directory\
-  \ esiste su una scheda SD o su un modulo di memoria simile consente di leggere o\u2026"
+description: "Come fare: Arduino di base non supporta operazioni complesse sui file\
+  \ system direttamente. Tuttavia, con l'utilizzo della libreria SD, che fa parte\u2026"
 lastmod: '2024-03-13T22:44:43.697043-06:00'
 model: gpt-4-0125-preview
-summary: Nel contesto della programmazione Arduino, verificare se una directory esiste
-  su una scheda SD o su un modulo di memoria simile consente di leggere o scrivere
-  file senza errori.
+summary: Arduino di base non supporta operazioni complesse sui file system direttamente.
 title: Verifica se una directory esiste
 weight: 20
 ---

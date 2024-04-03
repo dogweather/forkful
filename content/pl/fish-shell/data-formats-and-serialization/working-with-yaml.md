@@ -2,13 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:28.389974-07:00
-description: "Praca z YAML polega na analizie i manipulacji plikami YAML (YAML Ain't\
-  \ Markup Language), formacie serializacji danych u\u017Cywanym dla plik\xF3w\u2026"
+description: "Jak to zrobi\u0107: Fish Shell nie ma wbudowanego wsparcia do analizowania\
+  \ plik\xF3w YAML, ale mo\u017Cesz wykorzysta\u0107 narz\u0119dzia stron trzecich\
+  \ takie jak `yq` (lekki i\u2026"
 lastmod: '2024-03-13T22:44:35.862086-06:00'
 model: gpt-4-0125-preview
-summary: "Praca z YAML polega na analizie i manipulacji plikami YAML (YAML Ain't Markup\
-  \ Language), formacie serializacji danych u\u017Cywanym dla plik\xF3w konfiguracyjnych,\
-  \ w \u015Brodowisku Fish Shell."
+summary: "Fish Shell nie ma wbudowanego wsparcia do analizowania plik\xF3w YAML, ale\
+  \ mo\u017Cesz wykorzysta\u0107 narz\u0119dzia stron trzecich takie jak `yq` (lekki\
+  \ i przeno\u015Bny procesor YAML dzia\u0142aj\u0105cy z linii komend), aby obs\u0142\
+  ugiwa\u0107 dane YAML."
 title: Praca z YAML
 weight: 41
 ---

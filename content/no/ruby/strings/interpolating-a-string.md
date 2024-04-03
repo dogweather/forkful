@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:51:42.594301-07:00
-description: "Interpolering av strenger i Ruby lar deg sette variabler eller Ruby-kode\
-  \ inn i en streng. Vi gj\xF8r det for \xE5 bygge dynamiske strenger raskt og rent."
+description: "How to: Interpolering gj\xF8res med `#{}` inni en dobbeltfnuttet streng.\
+  \ Her er et eksempel."
 lastmod: '2024-03-13T22:44:41.302150-06:00'
 model: gpt-4-1106-preview
-summary: Interpolering av strenger i Ruby lar deg sette variabler eller Ruby-kode
-  inn i en streng.
+summary: "Interpolering gj\xF8res med `#{}` inni en dobbeltfnuttet streng."
 title: Interpolering av en streng
 weight: 8
 ---

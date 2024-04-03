@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:05.567804-07:00
-description: "Pisanie test\xF3w w j\u0119zyku Swift polega na tworzeniu i wykonywaniu\
-  \ kodu, kt\xF3ry weryfikuje poprawno\u015B\u0107 innych jednostek kodu w aplikacji.\
-  \ Programi\u015Bci robi\u0105 to,\u2026"
+description: "Jak to zrobi\u0107: Swift wspiera testowanie poprzez swoje \u015Brodowisko\
+  \ XCTest, kt\xF3re jest zintegrowane z Xcode. Mo\u017Cna pisa\u0107 testy jednostkowe\
+  \ w celu weryfikacji\u2026"
 lastmod: '2024-03-13T22:44:35.758555-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie test\xF3w w j\u0119zyku Swift polega na tworzeniu i wykonywaniu\
-  \ kodu, kt\xF3ry weryfikuje poprawno\u015B\u0107 innych jednostek kodu w aplikacji."
+summary: "Swift wspiera testowanie poprzez swoje \u015Brodowisko XCTest, kt\xF3re\
+  \ jest zintegrowane z Xcode."
 title: "Pisanie test\xF3w"
 weight: 36
 ---

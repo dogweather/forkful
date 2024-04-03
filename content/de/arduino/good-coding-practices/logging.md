@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 00:58:30.878939-07:00
-description: "\"Logging\" bezeichnet das Aufzeichnen von Ereignissen, Transaktionen\
-  \ oder Aktivit\xE4ten, die im Laufe der Zeit in einem System stattfinden. Programmierer\u2026"
+description: "Wie geht das: Arduino verf\xFCgt nicht \xFCber eine eingebaute Logging-Bibliothek\
+  \ wie einige andere Umgebungen, aber man kann ein einfaches Logging auf der\u2026"
 lastmod: '2024-03-13T22:44:54.149986-06:00'
 model: gpt-4-1106-preview
-summary: "\"Logging\" bezeichnet das Aufzeichnen von Ereignissen, Transaktionen oder\
-  \ Aktivit\xE4ten, die im Laufe der Zeit in einem System stattfinden."
+summary: "Arduino verf\xFCgt nicht \xFCber eine eingebaute Logging-Bibliothek wie\
+  \ einige andere Umgebungen, aber man kann ein einfaches Logging auf der seriellen\
+  \ Konsole mit minimalem Aufwand implementieren."
 title: Protokollierung
 weight: 17
 ---

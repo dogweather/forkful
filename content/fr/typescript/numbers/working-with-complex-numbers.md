@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 04:46:20.814984-07:00
-description: "Les nombres complexes, compos\xE9s d'une partie r\xE9elle et d'une partie\
-  \ imaginaire (g\xE9n\xE9ralement \xE9crits sous la forme a + bi), rendent possibles\
-  \ des calculs\u2026"
+description: "Comment : Manipuler des nombres complexes en TypeScript n\xE9cessite\
+  \ une classe d\xE9di\xE9e. Cr\xE9ons-en une et travaillons sur l'addition et la\
+  \ multiplication."
 lastmod: '2024-03-13T22:44:57.430117-06:00'
 model: gpt-4-0125-preview
-summary: "Les nombres complexes, compos\xE9s d'une partie r\xE9elle et d'une partie\
-  \ imaginaire (g\xE9n\xE9ralement \xE9crits sous la forme a + bi), rendent possibles\
-  \ des calculs impraticables ou impossibles avec de simples nombres r\xE9els."
+summary: "Manipuler des nombres complexes en TypeScript n\xE9cessite une classe d\xE9\
+  di\xE9e."
 title: Manipulation des nombres complexes
 weight: 14
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:17.974462-07:00
-description: "Een tekstbestand lezen in C houdt in dat je een bestand op je systeem\
-  \ opent om informatie te extraheren en deze naar behoefte te manipuleren of weer\
-  \ te\u2026"
+description: "Hoe: Om te beginnen met het lezen van een tekstbestand in C, werk je\
+  \ voornamelijk met de `fopen()`, `fgets()`, en `fclose()` functies uit de standaard\u2026"
 lastmod: '2024-03-13T22:44:51.309061-06:00'
 model: gpt-4-0125-preview
-summary: Een tekstbestand lezen in C houdt in dat je een bestand op je systeem opent
-  om informatie te extraheren en deze naar behoefte te manipuleren of weer te geven.
+summary: Om te beginnen met het lezen van een tekstbestand in C, werk je voornamelijk
+  met de `fopen()`, `fgets()`, en `fclose()` functies uit de standaard I/O-bibliotheek.
 title: Een tekstbestand lezen
 weight: 22
 ---

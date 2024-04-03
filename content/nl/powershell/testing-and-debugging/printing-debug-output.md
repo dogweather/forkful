@@ -2,11 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:06.976620-07:00
-description: "Debugoutput afdrukken is als een gesprek voeren met je code. Het gaat\
-  \ over het invoegen van printfuncties om te tonen wat er onder de motorkap van je\u2026"
+description: "Hoe: Laten we het simpel houden en daadwerkelijk iets doen. We laten\
+  \ de waarde van een variabele zien, hoe een lus vordert, en vangen de lastige fout\
+  \ op\u2026"
 lastmod: '2024-03-13T22:44:51.032201-06:00'
 model: gpt-4-0125-preview
-summary: Debugoutput afdrukken is als een gesprek voeren met je code.
+summary: Laten we het simpel houden en daadwerkelijk iets doen.
 title: Debug-output afdrukken
 weight: 33
 ---

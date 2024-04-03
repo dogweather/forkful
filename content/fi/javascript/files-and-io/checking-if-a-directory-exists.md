@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:50.658188-07:00
-description: "Tiedoston olemassaolon tarkistaminen JavaScriptill\xE4 on olennainen\
-  \ osa tiedostojen k\xE4sittelyteht\xE4vi\xE4, mik\xE4 mahdollistaa skriptien varmistaa\
-  \ kansion\u2026"
+description: "Kuinka: Node.js:ss\xE4, koska JavaScriptill\xE4 itsell\xE4\xE4n ei ole\
+  \ suoraa p\xE4\xE4sy\xE4 tiedostoj\xE4rjestelm\xE4\xE4n, yleens\xE4 k\xE4ytet\xE4\
+  \xE4n `fs`-moduulia t\xE4llaisiin operaatioihin.\u2026"
 lastmod: '2024-03-13T22:44:56.964257-06:00'
 model: gpt-4-0125-preview
-summary: "Tiedoston olemassaolon tarkistaminen JavaScriptill\xE4 on olennainen osa\
-  \ tiedostojen k\xE4sittelyteht\xE4vi\xE4, mik\xE4 mahdollistaa skriptien varmistaa\
-  \ kansion olemassaolon ennen siit\xE4 lukemista tai siihen kirjoittamista."
+summary: "Node.js:ss\xE4, koska JavaScriptill\xE4 itsell\xE4\xE4n ei ole suoraa p\xE4\
+  \xE4sy\xE4 tiedostoj\xE4rjestelm\xE4\xE4n, yleens\xE4 k\xE4ytet\xE4\xE4n `fs`-moduulia\
+  \ t\xE4llaisiin operaatioihin."
 title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---

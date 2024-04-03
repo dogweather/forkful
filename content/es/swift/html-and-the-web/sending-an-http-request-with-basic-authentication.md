@@ -1,13 +1,11 @@
 ---
 date: 2024-01-20 18:02:50.753772-07:00
-description: "Enviando una solicitud HTTP con autenticaci\xF3n b\xE1sica es simplemente\
-  \ una manera de asegurar que la comunicaci\xF3n entre un cliente y un servidor sea\
-  \ privada.\u2026"
+description: "C\xF3mo Hacerlo: El siguiente ejemplo en Swift muestra c\xF3mo enviar\
+  \ una solicitud con autenticaci\xF3n b\xE1sica utilizando URLSession."
 lastmod: '2024-03-13T22:44:59.416299-06:00'
 model: gpt-4-1106-preview
-summary: "Enviando una solicitud HTTP con autenticaci\xF3n b\xE1sica es simplemente\
-  \ una manera de asegurar que la comunicaci\xF3n entre un cliente y un servidor sea\
-  \ privada."
+summary: "El siguiente ejemplo en Swift muestra c\xF3mo enviar una solicitud con autenticaci\xF3\
+  n b\xE1sica utilizando URLSession."
 title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
 weight: 45
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:50.092811-07:00
-description: "Arrays associativos, ou como s\xE3o mais precisamente conhecidos em\
-  \ JavaScript, objetos, permitem mapear chaves a valores. Isso \xE9 extremamente\
-  \ \xFAtil quando\u2026"
+description: "Como fazer: Criar e usar arrays associativos (objetos) em JavaScript\
+  \ \xE9 direto. Voc\xEA define um objeto com chaves `{}`, e dentro delas, voc\xEA\
+  \ pode definir um\u2026"
 lastmod: '2024-03-13T22:44:46.955619-06:00'
 model: gpt-4-0125-preview
-summary: "Arrays associativos, ou como s\xE3o mais precisamente conhecidos em JavaScript,\
-  \ objetos, permitem mapear chaves a valores."
+summary: "Criar e usar arrays associativos (objetos) em JavaScript \xE9 direto."
 title: Usando arrays associativos
 weight: 15
 ---

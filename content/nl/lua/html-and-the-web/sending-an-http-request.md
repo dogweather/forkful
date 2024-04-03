@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:41.154699-07:00
-description: "Een HTTP-verzoek verzenden betekent een verzoek doen aan een externe\
-  \ server voor gegevens of actie. Programmeurs doen dit om te interageren met\u2026"
+description: 'Hoe te: Lua heeft geen ingebouwde ondersteuning voor HTTP, dus gebruiken
+  we bibliotheken. Een gangbare keuze is `lua-requests`. Hier is een snel voorbeeld.'
 lastmod: '2024-03-13T22:44:50.934324-06:00'
 model: gpt-4-0125-preview
-summary: Een HTTP-verzoek verzenden betekent een verzoek doen aan een externe server
-  voor gegevens of actie.
+summary: Lua heeft geen ingebouwde ondersteuning voor HTTP, dus gebruiken we bibliotheken.
 title: Een HTTP-verzoek verzenden
 weight: 44
 ---

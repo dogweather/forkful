@@ -1,12 +1,10 @@
 ---
 date: 2024-01-27 20:32:38.558949-07:00
-description: "Satunnaislukujen tuottaminen Arduino-projekteissa tarkoittaa arvojen\
-  \ tuottamista, jotka on suunniteltu ennakoimattomiksi, mik\xE4 on olennaista sovelluksissa\u2026"
+description: "Miten: Arduino tarjoaa yksinkertaisia funktioita satunnaislukujen tuottamiseen:\
+  \ `randomSeed()` ja `random()`. Aloita alustamalla satunnaislukugeneraattori\u2026"
 lastmod: '2024-03-13T22:44:56.821035-06:00'
 model: gpt-4-0125-preview
-summary: "Satunnaislukujen tuottaminen Arduino-projekteissa tarkoittaa arvojen tuottamista,\
-  \ jotka on suunniteltu ennakoimattomiksi, mik\xE4 on olennaista sovelluksissa kuten\
-  \ pelit, simulaatiot ja turvaj\xE4rjestelm\xE4t."
+summary: Arduino tarjoaa yksinkertaisia funktioita satunnaislukujen tuottamiseen.
 title: Satunnaislukujen generointi
 weight: 12
 ---

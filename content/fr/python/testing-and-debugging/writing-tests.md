@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:37.328574-07:00
-description: "\xC9crire des tests en Python implique la cr\xE9ation de scripts automatis\xE9\
-  s pour valider la correction de votre code. Les programmeurs font cela pour s'assurer\u2026"
+description: "Comment faire : Python est livr\xE9 avec un module int\xE9gr\xE9 pour\
+  \ \xE9crire des tests appel\xE9 `unittest`. Voici comment vous pouvez l'utiliser\
+  \ pour tester une\u2026"
 lastmod: '2024-03-13T22:44:57.239901-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire des tests en Python implique la cr\xE9ation de scripts automatis\xE9\
-  s pour valider la correction de votre code."
+summary: "Python est livr\xE9 avec un module int\xE9gr\xE9 pour \xE9crire des tests\
+  \ appel\xE9 `unittest`."
 title: "R\xE9daction de tests"
 weight: 36
 ---

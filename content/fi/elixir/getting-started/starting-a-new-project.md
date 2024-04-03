@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 18:03:30.608583-07:00
-description: "Uuden projektin aloittaminen Elixiriss\xE4 tarkoittaa uuden sovelluksen\
-  \ tai kirjaston kehityksen k\xE4ynnist\xE4mist\xE4. Koodarit tekev\xE4t t\xE4m\xE4\
-  n tyhj\xE4lt\xE4 p\xF6yd\xE4lt\xE4,\u2026"
+description: "How to: (Kuinka tehd\xE4\xE4n:) Elixiriss\xE4 projekti k\xE4ynnistet\xE4\
+  \xE4n k\xE4ytt\xE4m\xE4ll\xE4 Mix-ty\xF6kalua. Mix on Elixiriin sis\xE4\xE4nrakennettu\
+  \ ty\xF6kalu, joka hallinnoi\u2026"
 lastmod: '2024-03-13T22:44:56.227415-06:00'
 model: gpt-4-1106-preview
-summary: "Uuden projektin aloittaminen Elixiriss\xE4 tarkoittaa uuden sovelluksen\
-  \ tai kirjaston kehityksen k\xE4ynnist\xE4mist\xE4."
+summary: "Elixiriss\xE4 projekti k\xE4ynnistet\xE4\xE4n k\xE4ytt\xE4m\xE4ll\xE4 Mix-ty\xF6\
+  kalua."
 title: Uuden projektin aloittaminen
 weight: 1
 ---

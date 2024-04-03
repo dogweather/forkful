@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:30.944924-07:00
-description: "Pobieranie bie\u017C\u0105cej daty w PHP to podstawowe zadanie, kt\xF3\
-  re umo\u017Cliwia pobieranie i manipulowanie dat\u0105 i czasem systemowym. Jest\
-  \ to kluczowe dla funkcji\u2026"
+description: "Jak to zrobi\u0107: #."
 lastmod: '2024-03-13T22:44:35.507885-06:00'
 model: gpt-4-0125-preview
-summary: "Pobieranie bie\u017C\u0105cej daty w PHP to podstawowe zadanie, kt\xF3re\
-  \ umo\u017Cliwia pobieranie i manipulowanie dat\u0105 i czasem systemowym."
+summary: '#.'
 title: Pobieranie aktualnej daty
 weight: 29
 ---

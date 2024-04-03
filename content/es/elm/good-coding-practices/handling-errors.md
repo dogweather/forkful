@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 00:51:34.885160-07:00
-description: "Manejar errores significa escribir c\xF3digo que pueda anticipar y lidiar\
-  \ con situaciones problem\xE1ticas. Los programadores lo hacen para prevenir fallas,\u2026"
+description: "C\xF3mo hacerlo: La filosof\xEDa central de Elm es No Excepciones en\
+  \ Tiempo de Ejecuci\xF3n. Por lo tanto, Elm aprovecha su sistema de tipos con tipos\
+  \ como `Maybe`\u2026"
 lastmod: '2024-03-13T22:44:59.000490-06:00'
 model: gpt-4-1106-preview
-summary: "Manejar errores significa escribir c\xF3digo que pueda anticipar y lidiar\
-  \ con situaciones problem\xE1ticas."
+summary: "La filosof\xEDa central de Elm es No Excepciones en Tiempo de Ejecuci\xF3\
+  n."
 title: Manejo de errores
 weight: 16
 ---

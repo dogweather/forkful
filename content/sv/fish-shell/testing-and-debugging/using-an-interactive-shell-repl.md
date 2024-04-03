@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:14:06.185524-07:00
-description: "REPL, eller Read-Eval-Print Loop, \xE4r en interaktiv programmeringsmilj\xF6\
-  \ som tar enskilda anv\xE4ndarinmatningar, exekverar dem och returnerar resultatet.\u2026"
+description: "Hur man g\xF6r: I Fish \xE4r den interaktiva skalet standardl\xE4get\
+  \ n\xE4r du startar det. S\xE5 h\xE4r ser det ut i aktion."
 lastmod: '2024-03-13T22:44:38.339680-06:00'
 model: gpt-4-0125-preview
-summary: "REPL, eller Read-Eval-Print Loop, \xE4r en interaktiv programmeringsmilj\xF6\
-  \ som tar enskilda anv\xE4ndarinmatningar, exekverar dem och returnerar resultatet."
+summary: "I Fish \xE4r den interaktiva skalet standardl\xE4get n\xE4r du startar det."
 title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---

@@ -1,10 +1,9 @@
 ---
 date: 2024-01-20 17:44:18.283149-07:00
-description: "Descargar una p\xE1gina web significa obtener su HTML, datos y multimedia.\
-  \ Los programadores lo hacen para an\xE1lisis de datos, pruebas o copias de seguridad."
+description: "How to: Usaremos `fetch` para descargar una p\xE1gina."
 lastmod: '2024-03-13T22:44:59.457603-06:00'
 model: gpt-4-1106-preview
-summary: "Descargar una p\xE1gina web significa obtener su HTML, datos y multimedia."
+summary: "Usaremos `fetch` para descargar una p\xE1gina."
 title: "Descargando una p\xE1gina web"
 weight: 42
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:41:47.812184-07:00
-description: "Komplekse tall, som best\xE5r av en reell og en imagin\xE6r del, er\
-  \ essensielle i ulike beregningsfelt som ingeni\xF8rvitenskap, fysikk og signalbehandling.\u2026"
+description: "Hvordan: Haskell h\xE5ndterer komplekse tall med modulen `Data.Complex`.\
+  \ Her er en rask gjennomgang."
 lastmod: '2024-03-13T22:44:40.835324-06:00'
 model: gpt-4-0125-preview
-summary: "Komplekse tall, som best\xE5r av en reell og en imagin\xE6r del, er essensielle\
-  \ i ulike beregningsfelt som ingeni\xF8rvitenskap, fysikk og signalbehandling."
+summary: "Haskell h\xE5ndterer komplekse tall med modulen `Data.Complex`."
 title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---

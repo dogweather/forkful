@@ -2,11 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:18.108639-07:00
-description: "Tekst zoeken en vervangen stelt je in staat om strings te vinden en\
-  \ te wisselen. Programmeurs gebruiken het om code te updaten, te refactoren of snel\u2026"
+description: "Hoe: Laten we tekst zoeken en vervangen met Haskell. We gebruiken `Data.Text`\
+  \ voor Unicode tekstaanpak en effici\xEBntie. Zorg ervoor dat je `Data.Text` als\u2026"
 lastmod: '2024-03-13T22:44:50.837450-06:00'
 model: gpt-4-0125-preview
-summary: Tekst zoeken en vervangen stelt je in staat om strings te vinden en te wisselen.
+summary: Laten we tekst zoeken en vervangen met Haskell.
 title: Tekst zoeken en vervangen
 weight: 10
 ---

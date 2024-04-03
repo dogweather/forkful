@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:59:00.053528-07:00
-description: "Buscar e substituir texto \xE9 o processo de localizar sequ\xEAncias\
-  \ de caracteres dentro de strings e troc\xE1-las por outras. Programadores realizam\
-  \ essa tarefa\u2026"
+description: "Como fazer: Aqui est\xE3o alguns exemplos de como buscar e substituir\
+  \ texto em Python. Coment\xE1rios no c\xF3digo ajudam a explicar o passo a passo."
 lastmod: '2024-03-13T22:44:46.139000-06:00'
 model: gpt-4-1106-preview
-summary: "Buscar e substituir texto \xE9 o processo de localizar sequ\xEAncias de\
-  \ caracteres dentro de strings e troc\xE1-las por outras."
+summary: "Aqui est\xE3o alguns exemplos de como buscar e substituir texto em Python."
 title: Pesquisando e substituindo texto
 weight: 10
 ---

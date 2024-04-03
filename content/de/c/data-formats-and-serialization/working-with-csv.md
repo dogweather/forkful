@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:52.995548-07:00
-description: "Im Bereich der Programmierung beinhaltet die Arbeit mit CSV-Dateien\
-  \ (Comma-Separated Values, d.h. durch Kommas getrennte Werte) das Lesen von und\
-  \ das\u2026"
+description: 'Wie geht das: #.'
 lastmod: '2024-03-13T22:44:54.377606-06:00'
 model: gpt-4-0125-preview
-summary: Im Bereich der Programmierung beinhaltet die Arbeit mit CSV-Dateien (Comma-Separated
-  Values, d.
+summary: '#.'
 title: Arbeiten mit CSV
 weight: 37
 ---

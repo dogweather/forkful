@@ -1,11 +1,11 @@
 ---
 date: 2024-01-25 02:51:32.393618-07:00
-description: "Error handling in PHP is about managing and responding to conditions\
-  \ that disrupt the normal flow of a program, like missing files or bad data input.\u2026"
+description: 'How to: In PHP, you can manage errors using `try-catch` blocks, and
+  you can customize the process with custom error handlers and exceptions.'
 lastmod: '2024-03-13T22:45:00.173866-06:00'
 model: gpt-4-1106-preview
-summary: Error handling in PHP is about managing and responding to conditions that
-  disrupt the normal flow of a program, like missing files or bad data input.
+summary: In PHP, you can manage errors using `try-catch` blocks, and you can customize
+  the process with custom error handlers and exceptions.
 title: Handling errors
 weight: 16
 ---

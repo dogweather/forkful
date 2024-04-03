@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:01.795763-07:00
-description: "Das Verketten von Zeichenketten beinhaltet das Kombinieren von zwei\
-  \ oder mehreren Zeichenketten zu einer einzelnen Zeichenkette. Programmierer machen\u2026"
+description: "Wie: In Google Apps Script, das auf JavaScript basiert, gibt es mehrere\
+  \ M\xF6glichkeiten, Zeichenketten zu verketten. Hier sind einige g\xE4ngige Methoden:\
+  \ #."
 lastmod: '2024-03-13T22:44:53.325181-06:00'
 model: gpt-4-0125-preview
-summary: Das Verketten von Zeichenketten beinhaltet das Kombinieren von zwei oder
-  mehreren Zeichenketten zu einer einzelnen Zeichenkette.
+summary: "In Google Apps Script, das auf JavaScript basiert, gibt es mehrere M\xF6\
+  glichkeiten, Zeichenketten zu verketten."
 title: Strings verketten
 weight: 3
 ---

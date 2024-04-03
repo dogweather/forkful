@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 00:52:02.506387-07:00
-description: "Obs\u0142uga b\u0142\u0119d\xF3w polega na pisaniu kodu, kt\xF3ry mo\u017C\
-  e przewidzie\u0107 i poradzi\u0107 sobie z sytuacjami awaryjnymi. Programi\u015B\
-  ci robi\u0105 to, aby zapobiega\u0107 awariom,\u2026"
+description: "Jak robi\u0107: Podstawow\u0105 filozofi\u0105 Elm jest Brak Wyj\u0105\
+  tk\xF3w w Czasie Wykonania. Dlatego Elm wykorzystuje sw\xF3j system typ\xF3w z takimi\
+  \ typami jak `Maybe` i\u2026"
 lastmod: '2024-03-13T22:44:35.329185-06:00'
 model: gpt-4-1106-preview
-summary: "Obs\u0142uga b\u0142\u0119d\xF3w polega na pisaniu kodu, kt\xF3ry mo\u017C\
-  e przewidzie\u0107 i poradzi\u0107 sobie z sytuacjami awaryjnymi."
+summary: "Podstawow\u0105 filozofi\u0105 Elm jest Brak Wyj\u0105tk\xF3w w Czasie Wykonania."
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---

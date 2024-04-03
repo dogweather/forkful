@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:48:08.011373-07:00
-description: "In Swift bestimmt die L\xE4nge eines Strings, wie viele Zeichen er enth\xE4\
-  lt. Das ist wichtig, weil viele Programmieraufgaben, wie die Validierung von Eingaben\u2026"
+description: "So geht's: Swift bietet eine einfache und direkte Art, die L\xE4nge\
+  \ eines Strings zu bekommen \u2013 \xFCber die `count` Eigenschaft. Hier ein Beispiel."
 lastmod: '2024-03-13T22:44:54.216882-06:00'
 model: gpt-4-1106-preview
-summary: "In Swift bestimmt die L\xE4nge eines Strings, wie viele Zeichen er enth\xE4\
-  lt."
+summary: "Swift bietet eine einfache und direkte Art, die L\xE4nge eines Strings zu\
+  \ bekommen \u2013 \xFCber die `count` Eigenschaft."
 title: "Ermittlung der Zeichenkettenl\xE4nge"
 weight: 7
 ---

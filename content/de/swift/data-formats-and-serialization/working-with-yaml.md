@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:51.370456-07:00
-description: "YAML, das f\xFCr \"YAML Ain't Markup Language\" steht, ist ein menschenlesbarer\
-  \ Daten-Serialisierungsstandard f\xFCr alle Programmiersprachen. Programmierer\u2026"
+description: "Wie geht das: Swift bietet keine integrierte Unterst\xFCtzung f\xFC\
+  r YAML-Parsing und -Serialisierung, was die Verwendung von Drittanbieter-Bibliotheken\u2026"
 lastmod: '2024-03-13T22:44:54.245118-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, das f\xFCr \"YAML Ain't Markup Language\" steht, ist ein menschenlesbarer\
-  \ Daten-Serialisierungsstandard f\xFCr alle Programmiersprachen."
+summary: "Swift bietet keine integrierte Unterst\xFCtzung f\xFCr YAML-Parsing und\
+  \ -Serialisierung, was die Verwendung von Drittanbieter-Bibliotheken erforderlich\
+  \ macht."
 title: Arbeiten mit YAML
 weight: 41
 ---

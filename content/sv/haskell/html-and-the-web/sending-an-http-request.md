@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 18:00:06.572478-07:00
-description: "Att skicka en HTTP-beg\xE4ran inneb\xE4r att be en webbserver om data\
-  \ eller att utf\xF6ra en handling via internet. Programmerare g\xF6r detta f\xF6\
-  r att kommunicera med\u2026"
+description: "How to: I Haskell anv\xE4nds ofta biblioteket `http-conduit` f\xF6r\
+  \ att skicka HTTP-beg\xE4ran. H\xE4r \xE4r hur du g\xF6r en enkel GET-beg\xE4ran."
 lastmod: '2024-03-13T22:44:37.952016-06:00'
 model: gpt-4-1106-preview
-summary: "Att skicka en HTTP-beg\xE4ran inneb\xE4r att be en webbserver om data eller\
-  \ att utf\xF6ra en handling via internet."
+summary: "I Haskell anv\xE4nds ofta biblioteket `http-conduit` f\xF6r att skicka HTTP-beg\xE4\
+  ran."
 title: "Skicka en http-f\xF6rfr\xE5gan"
 weight: 44
 ---

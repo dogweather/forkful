@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:37:33.484879-07:00
-description: "Tradurre una data in una stringa vuol dire trasformarla in un formato\
-  \ leggibile per gli umani. I programmatori lo fanno per mostrare le date in un'app\
-  \ o\u2026"
+description: 'How to: In Swift, usiamo `DateFormatter` per convertire le date in stringhe.
+  Ecco un esempio.'
 lastmod: '2024-03-13T22:44:43.781285-06:00'
 model: gpt-4-1106-preview
-summary: Tradurre una data in una stringa vuol dire trasformarla in un formato leggibile
-  per gli umani.
+summary: In Swift, usiamo `DateFormatter` per convertire le date in stringhe.
 title: Conversione di una data in una stringa
 weight: 28
 ---

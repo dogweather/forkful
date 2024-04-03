@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:36:27.030503-07:00
-description: "Il Refactoring \xE8 il processo di ristrutturazione del codice informatico\
-  \ esistente senza modificarne il comportamento esterno. I programmatori lo fanno\
-  \ per\u2026"
+description: "Come fare: Considera una funzione TypeScript che ha visto giorni migliori\
+  \ - \xE8 un po' un disastro e potrebbe usare un po' di cura amorevole."
 lastmod: '2024-03-13T22:44:43.184172-06:00'
 model: gpt-4-0125-preview
-summary: "Il Refactoring \xE8 il processo di ristrutturazione del codice informatico\
-  \ esistente senza modificarne il comportamento esterno."
+summary: "Considera una funzione TypeScript che ha visto giorni migliori - \xE8 un\
+  \ po' un disastro e potrebbe usare un po' di cura amorevole."
 title: Rifattorizzazione
 weight: 19
 ---

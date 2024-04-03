@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:49.146099-07:00
-description: "Analisar uma data a partir de uma string envolve converter representa\xE7\
-  \xF5es textuais de datas e hor\xE1rios em um formato que pode ser facilmente manipulado,\u2026"
+description: "Como Fazer: Lua n\xE3o possui suporte integrado para manipula\xE7\xE3\
+  o de datas e hor\xE1rios al\xE9m da funcionalidade limitada fornecida pelas fun\xE7\
+  \xF5es `os.date` e\u2026"
 lastmod: '2024-03-13T22:44:46.718426-06:00'
 model: gpt-4-0125-preview
-summary: "Analisar uma data a partir de uma string envolve converter representa\xE7\
-  \xF5es textuais de datas e hor\xE1rios em um formato que pode ser facilmente manipulado,\
-  \ armazenado ou comparado dentro de um programa Lua."
+summary: "Lua n\xE3o possui suporte integrado para manipula\xE7\xE3o de datas e hor\xE1\
+  rios al\xE9m da funcionalidade limitada fornecida pelas fun\xE7\xF5es `os.date`\
+  \ e `os.time`."
 title: Analisando uma data a partir de uma string
 weight: 30
 ---

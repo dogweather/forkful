@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 03:37:55.773018-07:00
-description: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att skala bort\
-  \ de d\xE4r irriterande dubbla eller enkla tecknen som omsluter v\xE5r text (' eller\
-  \ \").\u2026"
+description: "Hur man g\xF6r: H\xE4r \xE4r ett rakt p\xE5 sak s\xE4tt att kasta ut\
+  \ de d\xE4r citattecknen till trottoarkanten i C++."
 lastmod: '2024-03-13T22:44:38.197279-06:00'
 model: gpt-4-0125-preview
-summary: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att skala bort de\
-  \ d\xE4r irriterande dubbla eller enkla tecknen som omsluter v\xE5r text (' eller\
-  \ \")."
+summary: "H\xE4r \xE4r ett rakt p\xE5 sak s\xE4tt att kasta ut de d\xE4r citattecknen\
+  \ till trottoarkanten i C++."
 title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 weight: 9
 ---

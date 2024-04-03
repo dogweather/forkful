@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 18:00:16.334061-07:00
-description: "Sending an HTTP request means asking a remote server for data or action.\
-  \ Programmers do this to interact with web services, fetch resources, or\u2026"
+description: 'How to: Lua doesn''t have built-in HTTP support, so we use libraries.
+  One common choice is `lua-requests`. Here''s a quick example.'
 lastmod: '2024-03-13T22:45:00.202689-06:00'
 model: gpt-4-1106-preview
-summary: Sending an HTTP request means asking a remote server for data or action.
+summary: Lua doesn't have built-in HTTP support, so we use libraries.
 title: Sending an HTTP request
 weight: 44
 ---

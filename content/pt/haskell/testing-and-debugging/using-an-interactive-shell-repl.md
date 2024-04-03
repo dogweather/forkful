@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:14:57.902357-07:00
-description: "Um shell interativo, ou REPL (Read-Eval-Print Loop), no Haskell permite\
-  \ executar trechos de c\xF3digo ao vivo. \xC9 um espa\xE7o de experimenta\xE7\xE3\
-  o para feedback\u2026"
+description: "Como fazer: Para iniciar o GHCi (ambiente interativo do Glasgow Haskell\
+  \ Compiler), basta digitar `ghci` no seu terminal. Veja como us\xE1-lo."
 lastmod: '2024-03-13T22:44:46.626904-06:00'
 model: gpt-4-0125-preview
-summary: "Um shell interativo, ou REPL (Read-Eval-Print Loop), no Haskell permite\
-  \ executar trechos de c\xF3digo ao vivo."
+summary: Para iniciar o GHCi (ambiente interativo do Glasgow Haskell Compiler), basta
+  digitar `ghci` no seu terminal.
 title: Usando um shell interativo (REPL)
 weight: 34
 ---

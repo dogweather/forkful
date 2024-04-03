@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:56:36.195217-07:00
-description: "Kommandolinjeargumenter lar deg kj\xF8re PHP-skript med spesifikke parametere\
-  \ for ulike oppgaver. \xC5 bruke disse er n\xF8dvendig for \xE5 lage fleksible skript\
-  \ som\u2026"
+description: 'How to: PHP skript mottar kommandolinjeargumenter i `$argv` array og
+  `$argc` variable. Her er et enkelt eksempel.'
 lastmod: '2024-03-13T22:44:40.901812-06:00'
 model: gpt-4-1106-preview
-summary: "Kommandolinjeargumenter lar deg kj\xF8re PHP-skript med spesifikke parametere\
-  \ for ulike oppgaver."
+summary: PHP skript mottar kommandolinjeargumenter i `$argv` array og `$argc` variable.
 title: Lese kommandolinjeargumenter
 weight: 23
 ---

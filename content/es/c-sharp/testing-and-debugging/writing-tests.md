@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:10.813394-07:00
-description: "Escribir pruebas en C# implica crear scripts automatizados para validar\
-  \ la funcionalidad de tu c\xF3digo, asegurando que se comporte como se espera. Los\u2026"
+description: "C\xF3mo hacerlo: Los desarrolladores de C# usan principalmente los marcos\
+  \ de trabajo NUnit o xUnit para escribir pruebas debido a su flexibilidad y extenso\u2026"
 lastmod: '2024-03-13T22:44:59.081624-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir pruebas en C# implica crear scripts automatizados para validar\
-  \ la funcionalidad de tu c\xF3digo, asegurando que se comporte como se espera."
+summary: "Los desarrolladores de C# usan principalmente los marcos de trabajo NUnit\
+  \ o xUnit para escribir pruebas debido a su flexibilidad y extenso conjunto de caracter\xED\
+  sticas."
 title: Escribiendo pruebas
 weight: 36
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:48.441875-07:00
-description: "XML:n k\xE4sittely Google Apps Scriptill\xE4 mahdollistaa ohjelmoijien\
-  \ j\xE4sent\xE4\xE4, manipuloida ja luoda XML-dataa, mik\xE4 on olennaista verkkopalveluille\
-  \ ja\u2026"
+description: "Kuinka: Google Apps Script tarjoaa `XmlService`-palvelun ty\xF6skentelyyn\
+  \ XML-datan kanssa. Alla n\xE4yt\xE4mme, kuinka j\xE4sent\xE4\xE4 XML-merkkijono,\
+  \ muokata sen\u2026"
 lastmod: '2024-03-13T22:44:56.124896-06:00'
 model: gpt-4-0125-preview
-summary: "XML:n k\xE4sittely Google Apps Scriptill\xE4 mahdollistaa ohjelmoijien j\xE4\
-  sent\xE4\xE4, manipuloida ja luoda XML-dataa, mik\xE4 on olennaista verkkopalveluille\
-  \ ja -asetuksille."
+summary: "Google Apps Script tarjoaa `XmlService`-palvelun ty\xF6skentelyyn XML-datan\
+  \ kanssa."
 title: "Ty\xF6skentely XML:n kanssa"
 weight: 40
 ---

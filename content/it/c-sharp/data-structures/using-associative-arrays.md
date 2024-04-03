@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:08.297284-07:00
-description: "Gli array associativi, o dizionari in C#, ti permettono di memorizzare\
-  \ e gestire coppie di chiavi e valori. Sono la tua scelta principale quando hai\u2026"
+description: 'Come fare: In C#, lavori con gli array associativi usando la classe
+  `Dictionary<TKey, TValue>`. Ecco un esempio rapido per iniziare.'
 lastmod: '2024-03-13T22:44:43.427149-06:00'
 model: gpt-4-0125-preview
-summary: Gli array associativi, o dizionari in C#, ti permettono di memorizzare e
-  gestire coppie di chiavi e valori.
+summary: In C#, lavori con gli array associativi usando la classe `Dictionary<TKey,
+  TValue>`.
 title: Utilizzo di array associativi
 weight: 15
 ---

@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 01:40:55.619046-07:00
-description: "Refaktorointi on olemassa olevan tietokonekoodin uudelleenrakentamisen\
-  \ prosessi muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4. Ohjelmoijat tekev\xE4\
-  t sit\xE4\u2026"
+description: "Kuinka: Katsotaan yksinkertaista esimerkki\xE4, jossa refaktorointi\
+  \ voi tehd\xE4 koodistasi tiiviimp\xE4\xE4 ja luettavampaa. T\xE4ss\xE4 me refaktoroimme\
+  \ funktion, joka\u2026"
 lastmod: '2024-03-13T22:44:56.958115-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktorointi on olemassa olevan tietokonekoodin uudelleenrakentamisen prosessi\
-  \ muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4."
+summary: "Katsotaan yksinkertaista esimerkki\xE4, jossa refaktorointi voi tehd\xE4\
+  \ koodistasi tiiviimp\xE4\xE4 ja luettavampaa."
 title: "Koodin uudelleenj\xE4rjestely"
 weight: 19
 ---

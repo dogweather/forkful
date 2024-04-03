@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:22.208768-07:00
-description: "\xC5 skrive tester i C# inneb\xE6rer \xE5 lage automatiserte skript\
-  \ for \xE5 validere funksjonaliteten til koden din, for \xE5 sikre at den oppf\xF8\
-  rer seg som forventet.\u2026"
+description: "Hvordan: C#-utviklere bruker prim\xE6rt NUnit- eller xUnit-rammeverkene\
+  \ for \xE5 skrive tester p\xE5 grunn av deres fleksibilitet og omfattende funksjonssett.\
+  \ Her\u2026"
 lastmod: '2024-03-13T22:44:40.799318-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive tester i C# inneb\xE6rer \xE5 lage automatiserte skript for\
-  \ \xE5 validere funksjonaliteten til koden din, for \xE5 sikre at den oppf\xF8rer\
-  \ seg som forventet."
+summary: "C#-utviklere bruker prim\xE6rt NUnit- eller xUnit-rammeverkene for \xE5\
+  \ skrive tester p\xE5 grunn av deres fleksibilitet og omfattende funksjonssett."
 title: Skrive tester
 weight: 36
 ---

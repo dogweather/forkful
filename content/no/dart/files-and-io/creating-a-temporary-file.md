@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:14.069796-07:00
-description: "\xC5 opprette en midlertidig fil i Dart inneb\xE6rer \xE5 generere en\
-  \ fil som er ment for korttidsbruk, hovedsakelig for scenarioer som caching av data,\u2026"
+description: "Hvordan: Dart's `dart:io` biblioteket legger til rette for opprettelsen\
+  \ av midlertidige filer gjennom `Directory` klassen. Her er en enkel m\xE5te \xE5\
+  \ opprette\u2026"
 lastmod: '2024-03-13T22:44:40.508873-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 opprette en midlertidig fil i Dart inneb\xE6rer \xE5 generere en fil\
-  \ som er ment for korttidsbruk, hovedsakelig for scenarioer som caching av data,\
-  \ midlertidig lagring for filbehandling eller oppbevaring av informasjon som er\
-  \ for sensitiv til \xE5 beholde lenge."
+summary: Dart's `dart:io` biblioteket legger til rette for opprettelsen av midlertidige
+  filer gjennom `Directory` klassen.
 title: Oppretting av en midlertidig fil
 weight: 21
 ---

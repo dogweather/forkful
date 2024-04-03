@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:31.319974-07:00
-description: "Pisanie test\xF3w w programowaniu polega na tworzeniu ma\u0142ych, oddzielnych\
-  \ kawa\u0142k\xF3w kodu, kt\xF3re automatycznie weryfikuj\u0105, czy r\xF3\u017C\
-  ne cz\u0119\u015Bci aplikacji dzia\u0142aj\u0105\u2026"
+description: "Jak to zrobi\u0107: Lua, b\u0119d\u0105c lekkim, lecz pot\u0119\u017C\
+  nym j\u0119zykiem skryptowym, nie zawiera wbudowanego frameworka do testowania.\
+  \ Jednak\u017Ce biblioteki stron trzecich,\u2026"
 lastmod: '2024-03-13T22:44:35.543470-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie test\xF3w w programowaniu polega na tworzeniu ma\u0142ych, oddzielnych\
-  \ kawa\u0142k\xF3w kodu, kt\xF3re automatycznie weryfikuj\u0105, czy r\xF3\u017C\
-  ne cz\u0119\u015Bci aplikacji dzia\u0142aj\u0105 zgodnie z oczekiwaniami."
+summary: "Lua, b\u0119d\u0105c lekkim, lecz pot\u0119\u017Cnym j\u0119zykiem skryptowym,\
+  \ nie zawiera wbudowanego frameworka do testowania."
 title: "Pisanie test\xF3w"
 weight: 36
 ---

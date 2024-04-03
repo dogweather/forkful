@@ -1,13 +1,14 @@
 ---
 date: 2024-01-27 20:32:56.925414-07:00
-description: "Generowanie liczb losowych w programowaniu polega na tworzeniu sekwencji\
-  \ liczb, kt\xF3re nie wykazuj\u0105 \u017Cadnego przewidywalnego porz\u0105dku lub\
-  \ wzoru. Programi\u015Bci\u2026"
+description: "Jak to zrobi\u0107: Aby wygenerowa\u0107 liczby losowe w C++, zazwyczaj\
+  \ korzysta si\u0119 z nag\u0142\xF3wka `<random>`, kt\xF3ry zosta\u0142 wprowadzony\
+  \ w C++11, oferuj\u0105c szeroki\u2026"
 lastmod: '2024-03-13T22:44:35.708703-06:00'
 model: gpt-4-0125-preview
-summary: "Generowanie liczb losowych w programowaniu polega na tworzeniu sekwencji\
-  \ liczb, kt\xF3re nie wykazuj\u0105 \u017Cadnego przewidywalnego porz\u0105dku lub\
-  \ wzoru."
+summary: "Aby wygenerowa\u0107 liczby losowe w C++, zazwyczaj korzysta si\u0119 z\
+  \ nag\u0142\xF3wka `<random>`, kt\xF3ry zosta\u0142 wprowadzony w C++11, oferuj\u0105\
+  c szeroki zakres mo\u017Cliwo\u015Bci generowania liczb losowych z r\xF3\u017Cnych\
+  \ rozk\u0142ad\xF3w."
 title: Generowanie liczb losowych
 weight: 12
 ---

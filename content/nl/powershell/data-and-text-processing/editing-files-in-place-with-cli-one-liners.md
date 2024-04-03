@@ -2,14 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:41.441612-07:00
-description: "Bestanden ter plaatse bewerken met CLI one-liners in PowerShell gaat\
-  \ over het direct wijzigen van bestanden vanaf de opdrachtregel, zonder de noodzaak\
-  \ om\u2026"
+description: 'Hoe te: #.'
 lastmod: '2024-03-13T22:44:51.024962-06:00'
 model: gpt-4-0125-preview
-summary: Bestanden ter plaatse bewerken met CLI one-liners in PowerShell gaat over
-  het direct wijzigen van bestanden vanaf de opdrachtregel, zonder de noodzaak om
-  ze in een editor te openen.
+summary: '#.'
 title: Bestanden ter plekke bewerken met CLI one-liners
 weight: 32
 ---

@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:39:04.181923-07:00
-description: "Convertir une cha\xEEne en minuscules, c'est passer tous ses caract\xE8\
-  res en minuscules. Les d\xE9veloppeurs font \xE7a pour uniformiser les donn\xE9\
-  es, faciliter les\u2026"
+description: 'How to: / Comment faire : .'
 lastmod: '2024-03-13T22:44:58.029674-06:00'
 model: gpt-4-1106-preview
-summary: "Convertir une cha\xEEne en minuscules, c'est passer tous ses caract\xE8\
-  res en minuscules."
+summary: .
 title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
 weight: 4
 ---

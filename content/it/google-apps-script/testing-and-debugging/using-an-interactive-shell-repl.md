@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:39.630592-07:00
-description: "Una shell interattiva, o Loop di Lettura-Valutazione-Stampa (REPL dall'inglese\
-  \ Read-Eval-Print Loop), \xE8 un ambiente di programmazione semplice e\u2026"
+description: "Come fare: Google Apps Script, un linguaggio di scripting basato sul\
+  \ cloud per automatizzare compiti attraverso i prodotti Google, non dispone di uno\u2026"
 lastmod: '2024-03-13T22:44:42.956873-06:00'
 model: gpt-4-0125-preview
-summary: "Una shell interattiva, o Loop di Lettura-Valutazione-Stampa (REPL dall'inglese\
-  \ Read-Eval-Print Loop), \xE8 un ambiente di programmazione semplice e interattivo\
-  \ che accoglie singoli input dell'utente (espressioni), li valuta e restituisce\
-  \ il risultato all'utente."
+summary: Google Apps Script, un linguaggio di scripting basato sul cloud per automatizzare
+  compiti attraverso i prodotti Google, non dispone di uno strumento REPL integrato
+  simile a quelli presenti in linguaggi come Python o il Node.js di JavaScript.
 title: Utilizzare un shell interattivo (REPL)
 weight: 34
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:57.103691-07:00
-description: "Reguliere expressies (regex) zijn patronen die gebruikt worden om te\
-  \ zoeken naar combinaties van karakters in tekst. Programmeurs gebruiken ze voor\
-  \ taken\u2026"
+description: 'Hoe te: In Elixir gebruik je regex met ingebouwde patronen of door je
+  eigen te maken met de `Regex` module. Hier is een snel voorbeeld.'
 lastmod: '2024-03-13T22:44:50.451951-06:00'
 model: gpt-4-0125-preview
-summary: Reguliere expressies (regex) zijn patronen die gebruikt worden om te zoeken
-  naar combinaties van karakters in tekst.
+summary: In Elixir gebruik je regex met ingebouwde patronen of door je eigen te maken
+  met de `Regex` module.
 title: Reguliere expressies gebruiken
 weight: 11
 ---

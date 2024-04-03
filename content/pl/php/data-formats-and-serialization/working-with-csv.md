@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:45.548710-07:00
-description: "Praca z CSV (Comma-Separated Values - warto\u015Bciami rozdzielonymi\
-  \ przecinkami) polega na odczycie z i zapisie danych do plik\xF3w CSV, popularnego\
-  \ formatu\u2026"
+description: "Jak to zrobi\u0107: PHP oferuje wbudowane funkcje do obs\u0142ugi plik\xF3\
+  w CSV, co sprawia, \u017Ce odczyt z nich i zapis do nich jest prosty bez potrzeby\
+  \ u\u017Cywania\u2026"
 lastmod: '2024-03-13T22:44:35.519995-06:00'
 model: gpt-4-0125-preview
-summary: "Praca z CSV (Comma-Separated Values - warto\u015Bciami rozdzielonymi przecinkami)\
-  \ polega na odczycie z i zapisie danych do plik\xF3w CSV, popularnego formatu reprezentacji\
-  \ danych tabelarycznych w postaci zwyk\u0142ego tekstu."
+summary: "PHP oferuje wbudowane funkcje do obs\u0142ugi plik\xF3w CSV, co sprawia,\
+  \ \u017Ce odczyt z nich i zapis do nich jest prosty bez potrzeby u\u017Cywania bibliotek\
+  \ stron trzecich."
 title: Praca z plikami CSV
 weight: 37
 ---

@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:25.297210-07:00
-description: "Een datum parseren uit een tekstreeks betekent het omzetten van de tekstuele\
-  \ representatie van een datum (zoals \"2023-04-01\") naar een Date-object.\u2026"
+description: 'Hoe: Swift maakt het parseren van data vrij eenvoudig met `DateFormatter`.
+  Hier is een snel voorbeeld.'
 lastmod: '2024-03-13T22:44:51.167001-06:00'
 model: gpt-4-0125-preview
-summary: Een datum parseren uit een tekstreeks betekent het omzetten van de tekstuele
-  representatie van een datum (zoals "2023-04-01") naar een Date-object.
+summary: Swift maakt het parseren van data vrij eenvoudig met `DateFormatter`.
 title: Een datum uit een string parsen
 weight: 30
 ---

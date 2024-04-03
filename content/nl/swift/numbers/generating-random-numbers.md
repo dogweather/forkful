@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:10.866748-07:00
-description: "Het genereren van willekeurige getallen in programmeren gaat over het\
-  \ cre\xEBren van niet-deterministische of onvoorspelbare numerieke waarden. Programmeurs\u2026"
+description: "Hoe te: Swift biedt een eenvoudige manier om willekeurige getallen te\
+  \ genereren via zijn standaardbibliotheek. Hier is hoe je het doet voor verschillende\u2026"
 lastmod: '2024-03-13T22:44:51.152267-06:00'
 model: gpt-4-0125-preview
-summary: "Het genereren van willekeurige getallen in programmeren gaat over het cre\xEB\
-  ren van niet-deterministische of onvoorspelbare numerieke waarden."
+summary: Swift biedt een eenvoudige manier om willekeurige getallen te genereren via
+  zijn standaardbibliotheek.
 title: Willekeurige getallen genereren
 weight: 12
 ---

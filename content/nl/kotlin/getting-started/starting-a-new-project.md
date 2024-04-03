@@ -2,12 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:55.904030-07:00
-description: "Een nieuw project starten betekent het opzetten van de initi\xEBle structuur\
-  \ en essenti\xEBle bestanden die je nodig hebt voor je applicatie. Programmeurs\u2026"
+description: "Hoe: Laten we beginnen met een Kotlin project met IntelliJ IDEA - een\
+  \ populaire IDE voor Kotlin. 1. Open IntelliJ IDEA. 2. Selecteer `Bestand > Nieuw\
+  \ >\u2026"
 lastmod: '2024-03-13T22:44:50.768299-06:00'
 model: gpt-4-0125-preview
-summary: "Een nieuw project starten betekent het opzetten van de initi\xEBle structuur\
-  \ en essenti\xEBle bestanden die je nodig hebt voor je applicatie."
+summary: Laten we beginnen met een Kotlin project met IntelliJ IDEA - een populaire
+  IDE voor Kotlin.
 title: Een nieuw project starten
 weight: 1
 ---

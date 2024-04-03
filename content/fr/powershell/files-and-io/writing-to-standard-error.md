@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:08.625383-07:00
-description: "\xC9crire sur l'erreur standard (stderr) dans PowerShell implique d'envoyer\
-  \ des messages d'erreur ou des diagnostics directement sur le flux stderr, distinct\u2026"
+description: "Comment faire : PowerShell simplifie le processus d'\xE9criture sur\
+  \ stderr gr\xE2ce \xE0 l'utilisation du cmdlet `Write-Error` ou en dirigeant la\
+  \ sortie vers la\u2026"
 lastmod: '2024-03-13T22:44:58.075508-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire sur l'erreur standard (stderr) dans PowerShell implique d'envoyer\
-  \ des messages d'erreur ou des diagnostics directement sur le flux stderr, distinct\
-  \ du flux de sortie standard (stdout)."
+summary: "PowerShell simplifie le processus d'\xE9criture sur stderr gr\xE2ce \xE0\
+  \ l'utilisation du cmdlet `Write-Error` ou en dirigeant la sortie vers la m\xE9\
+  thode `$host.ui.WriteErrorLine()`."
 title: "\xC9crire sur l'erreur standard"
 weight: 25
 ---

@@ -2,16 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:58.812070-07:00
-description: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1\
-  \ b\u1EA3n bao g\u1ED3m vi\u1EC7c truy\u1EC1n t\xEAn \u0111\u0103ng nh\u1EADp v\xE0\
-  \ m\u1EADt kh\u1EA9u \u0111\u1EC3 x\xE1c nh\u1EADn danh t\xEDnh c\u1EE7a ng\u01B0\
-  \u1EDDi d\xF9ng. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: H\xE3y th\u1EED nghi\u1EC7m v\u1EDBi m\u1ED9\
+  t s\u1ED1 m\xE3. Ch\xFAng ta s\u1EBD s\u1EED d\u1EE5ng `curl`, m\u1ED9t c\xF4ng\
+  \ c\u1EE5 d\xF2ng l\u1EC7nh ph\u1ED5 bi\u1EBFn. Thay th\u1EBF `username:password`\
+  \ b\u1EB1ng th\xF4ng tin x\xE1c\u2026"
 lastmod: '2024-03-13T22:44:36.878796-06:00'
 model: gpt-4-0125-preview
-summary: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1\
-  \ b\u1EA3n bao g\u1ED3m vi\u1EC7c truy\u1EC1n t\xEAn \u0111\u0103ng nh\u1EADp v\xE0\
-  \ m\u1EADt kh\u1EA9u \u0111\u1EC3 x\xE1c nh\u1EADn danh t\xEDnh c\u1EE7a ng\u01B0\
-  \u1EDDi d\xF9ng."
+summary: "H\xE3y th\u1EED nghi\u1EC7m v\u1EDBi m\u1ED9t s\u1ED1 m\xE3."
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3\
   n"
 weight: 45

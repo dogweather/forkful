@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:55:06.767651-07:00
-description: "L\xE4sa en textfil betyder att ditt program h\xE4mtar information lagrad\
-  \ i en fil p\xE5 disken. Programmerare g\xF6r detta f\xF6r att anv\xE4nda data,\
-  \ konfigurera\u2026"
+description: "S\xE5 h\xE4r g\xF6r du: Swift g\xF6r det r\xE4tt enkelt att \xF6ppna\
+  \ och l\xE4sa en textfil. Anv\xE4nd `String` klassen, s\xE5 h\xE4r."
 lastmod: '2024-03-13T22:44:38.268242-06:00'
 model: gpt-4-1106-preview
-summary: "L\xE4sa en textfil betyder att ditt program h\xE4mtar information lagrad\
-  \ i en fil p\xE5 disken."
+summary: "Swift g\xF6r det r\xE4tt enkelt att \xF6ppna och l\xE4sa en textfil."
 title: "L\xE4sa en textfil"
 weight: 22
 ---

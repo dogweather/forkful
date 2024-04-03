@@ -2,14 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:33.056059-07:00
-description: "L\xE0m vi\u1EC7c v\u1EDBi XML trong Haskell bao g\u1ED3m vi\u1EC7c ph\xE2\
-  n t\xEDch c\xFA ph\xE1p, thao t\xE1c v\xE0 t\u1EA1o c\u1EA5u tr\xFAc XML. C\xE1\
-  c l\u1EADp tr\xECnh vi\xEAn x\u1EED l\xFD XML \u0111\u1EC3 t\u01B0\u01A1ng t\xE1\
-  c v\u1EDBi nhi\u1EC1u \u1EE9ng d\u1EE5ng\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Haskell cung c\u1EA5p c\xE1c th\u01B0 vi\u1EC7\
+  n nh\u01B0 `xml-conduit` \u0111\u1EC3 x\u1EED l\xFD v\u1EDBi XML. V\xED d\u1EE5\
+  \ sau \u0111\xE2y minh h\u1ECDa c\xE1ch ph\xE2n t\xEDch c\xFA ph\xE1p chu\u1ED7\
+  i XML v\xE0 truy v\u1EA5n c\xE1c\u2026"
 lastmod: '2024-03-13T22:44:36.743040-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m vi\u1EC7c v\u1EDBi XML trong Haskell bao g\u1ED3m vi\u1EC7c ph\xE2\
-  n t\xEDch c\xFA ph\xE1p, thao t\xE1c v\xE0 t\u1EA1o c\u1EA5u tr\xFAc XML."
+summary: "Haskell cung c\u1EA5p c\xE1c th\u01B0 vi\u1EC7n nh\u01B0 `xml-conduit` \u0111\
+  \u1EC3 x\u1EED l\xFD v\u1EDBi XML."
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---

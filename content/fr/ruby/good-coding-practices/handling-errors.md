@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 00:56:54.478607-07:00
-description: "La gestion des erreurs consiste \xE0 anticiper l'inattendu dans le code\
-  \ \u2014 \xE0 g\xE9rer les erreurs et les probl\xE8mes avec \xE9l\xE9gance sans\
-  \ faire planter le programme.\u2026"
+description: "Comment faire : Ruby utilise `begin`, `rescue`, `ensure`, et `end` pour\
+  \ g\xE9rer les erreurs. Vous encadrez le code \xE0 risque entre `begin` et `end`.\
+  \ Si une\u2026"
 lastmod: '2024-03-13T22:44:58.427531-06:00'
 model: gpt-4-1106-preview
-summary: "La gestion des erreurs consiste \xE0 anticiper l'inattendu dans le code\
-  \ \u2014 \xE0 g\xE9rer les erreurs et les probl\xE8mes avec \xE9l\xE9gance sans\
-  \ faire planter le programme."
+summary: "Ruby utilise `begin`, `rescue`, `ensure`, et `end` pour g\xE9rer les erreurs."
 title: Gestion des erreurs
 weight: 16
 ---

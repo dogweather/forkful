@@ -1,13 +1,12 @@
 ---
 date: 2024-01-20 18:01:19.271765-07:00
-description: "Envoyer une requ\xEAte HTTP avec authentification basique, c'est transmettre\
-  \ vos identifiants (normalement un nom d'utilisateur et mot de passe) cod\xE9s en\u2026"
+description: "Comment faire : Pour envoyer une requ\xEAte HTTP avec authentification\
+  \ basique en C++, on peut utiliser la biblioth\xE8que cURL. Voici un exemple minimaliste\
+  \ ."
 lastmod: '2024-03-13T22:44:58.161168-06:00'
 model: gpt-4-1106-preview
-summary: "Envoyer une requ\xEAte HTTP avec authentification basique, c'est transmettre\
-  \ vos identifiants (normalement un nom d'utilisateur et mot de passe) cod\xE9s en\
-  \ base64 dans l'en-t\xEAte de la requ\xEAte pour acc\xE9der \xE0 des ressources\
-  \ prot\xE9g\xE9es."
+summary: "Pour envoyer une requ\xEAte HTTP avec authentification basique en C++, on\
+  \ peut utiliser la biblioth\xE8que cURL."
 title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
 weight: 45
 ---

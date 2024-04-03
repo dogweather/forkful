@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 04:44:08.341768-07:00
-description: "Komplexe Zahlen, die einen Realteil und einen Imagin\xE4rteil haben\
-  \ (wie 3 + 4i), sind lebenswichtig in Bereichen wie Technik, Physik und Datenwissenschaft.\u2026"
+description: "Wie zu: PowerShell hat keine eingebaute Unterst\xFCtzung f\xFCr komplexe\
+  \ Zahlen, daher m\xFCssen Sie entweder Ihre eigene L\xF6sung entwickeln oder .NET's\u2026"
 lastmod: '2024-03-13T22:44:54.095630-06:00'
 model: gpt-4-0125-preview
-summary: "Komplexe Zahlen, die einen Realteil und einen Imagin\xE4rteil haben (wie\
-  \ 3 + 4i), sind lebenswichtig in Bereichen wie Technik, Physik und Datenwissenschaft."
+summary: "PowerShell hat keine eingebaute Unterst\xFCtzung f\xFCr komplexe Zahlen,\
+  \ daher m\xFCssen Sie entweder Ihre eigene L\xF6sung entwickeln oder .NET's `System.Numerics.Complex`\
+  \ verwenden."
 title: Umgang mit komplexen Zahlen
 weight: 14
 ---

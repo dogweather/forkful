@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:13.924319-07:00
-description: "Das Abrufen des aktuellen Datums in C++ ist eine grundlegende Aufgabe\
-  \ f\xFCr Programme, die Daten verarbeiten oder anzeigen m\xFCssen, die auf der Systemuhr\u2026"
+description: "Wie: C++ bietet mehrere M\xF6glichkeiten, das aktuelle Datum zu erhalten,\
+  \ einschlie\xDFlich der C++-Standardbibliothek und Drittanbieter-Bibliotheken wie\
+  \ Boost.\u2026"
 lastmod: '2024-03-13T22:44:54.195269-06:00'
 model: gpt-4-0125-preview
-summary: "Das Abrufen des aktuellen Datums in C++ ist eine grundlegende Aufgabe f\xFC\
-  r Programme, die Daten verarbeiten oder anzeigen m\xFCssen, die auf der Systemuhr\
-  \ basieren."
+summary: "C++ bietet mehrere M\xF6glichkeiten, das aktuelle Datum zu erhalten, einschlie\xDF\
+  lich der C++-Standardbibliothek und Drittanbieter-Bibliotheken wie Boost."
 title: Den aktuellen Datum abrufen
 weight: 29
 ---

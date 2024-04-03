@@ -2,16 +2,17 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:33.097610-07:00
-description: "Vi\u1EC7c ph\xE2n t\xEDch c\xFA ph\xE1p m\u1ED9t ng\xE0y t\u1EEB m\u1ED9\
-  t chu\u1ED7i c\xF3 ngh\u0129a l\xE0 chuy\u1EC3n \u0111\u1ED5i v\u0103n b\u1EA3n\
-  \ m\xF4 t\u1EA3 m\u1ED9t ng\xE0y th\xE0nh \u0111\u1ECBnh d\u1EA1ng m\xE0 m\u1ED9\
-  t ch\u01B0\u01A1ng tr\xECnh c\xF3 th\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi. L\u1EADp\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Elm s\u1EED d\u1EE5ng module `Date` \u0111\u1EC3\
+  \ x\u1EED l\xFD ng\xE0y th\xE1ng, nh\u01B0ng t\xEDnh \u0111\u1EBFn ki\u1EBFn th\u1EE9\
+  c c\u1EAFt \u0111\u1EE9t c\u1EE7a t\xF4i v\xE0o \u0111\u1EA7u n\u0103m 2023, kh\xF4\
+  ng c\xF3 th\u01B0 vi\u1EC7n Elm t\xEDch h\u1EE3p s\u1EB5n\u2026"
 lastmod: '2024-03-13T22:44:36.557209-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c ph\xE2n t\xEDch c\xFA ph\xE1p m\u1ED9t ng\xE0y t\u1EEB m\u1ED9\
-  t chu\u1ED7i c\xF3 ngh\u0129a l\xE0 chuy\u1EC3n \u0111\u1ED5i v\u0103n b\u1EA3n\
-  \ m\xF4 t\u1EA3 m\u1ED9t ng\xE0y th\xE0nh \u0111\u1ECBnh d\u1EA1ng m\xE0 m\u1ED9\
-  t ch\u01B0\u01A1ng tr\xECnh c\xF3 th\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi."
+summary: "Elm s\u1EED d\u1EE5ng module `Date` \u0111\u1EC3 x\u1EED l\xFD ng\xE0y th\xE1\
+  ng, nh\u01B0ng t\xEDnh \u0111\u1EBFn ki\u1EBFn th\u1EE9c c\u1EAFt \u0111\u1EE9t\
+  \ c\u1EE7a t\xF4i v\xE0o \u0111\u1EA7u n\u0103m 2023, kh\xF4ng c\xF3 th\u01B0 vi\u1EC7\
+  n Elm t\xEDch h\u1EE3p s\u1EB5n n\xE0o \u0111\u1EC3 ph\xE2n t\xEDch c\xFA ph\xE1\
+  p ng\xE0y t\u1EEB chu\u1ED7i."
 title: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB chu\u1ED7i k\xED t\u1EF1"
 weight: 30
 ---

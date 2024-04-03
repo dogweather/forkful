@@ -2,15 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:49.222654-07:00
-description: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 l\u1ECDc qua\
-  \ m\xEA cung c\xE1c th\u1EBB HTML \u0111\u1EC3 t\xECm ki\u1EBFm d\u1EEF li\u1EC7\
-  u b\u1EA1n c\u1EA7n. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1\
-  u n\xE0y \u0111\u1EC3 tr\xEDch xu\u1EA5t th\xF4ng tin, t\u1EF1\u2026"
+description: "C\xE1ch th\u1EE9c: Lua kh\xF4ng t\u1EF1 nhi\xEAn th\xF4ng minh v\u1EC1\
+  \ web nh\u01B0 Python hay JavaScript, nh\u01B0ng v\u1EDBi c\xE1c th\u01B0 vi\u1EC7\
+  n `luasocket` v\xE0 `luahtml`, n\xF3 c\xF3 th\u1EC3 b\u01B0\u1EDBc v\xE0o l\u0129\
+  nh v\u1EF1c\u2026"
 lastmod: '2024-03-13T22:44:36.819697-06:00'
 model: gpt-4-0125-preview
-summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 l\u1ECDc qua m\xEA\
-  \ cung c\xE1c th\u1EBB HTML \u0111\u1EC3 t\xECm ki\u1EBFm d\u1EEF li\u1EC7u b\u1EA1\
-  n c\u1EA7n."
+summary: "Lua kh\xF4ng t\u1EF1 nhi\xEAn th\xF4ng minh v\u1EC1 web nh\u01B0 Python\
+  \ hay JavaScript, nh\u01B0ng v\u1EDBi c\xE1c th\u01B0 vi\u1EC7n `luasocket` v\xE0\
+  \ `luahtml`, n\xF3 c\xF3 th\u1EC3 b\u01B0\u1EDBc v\xE0o l\u0129nh v\u1EF1c ph\xE2\
+  n t\xEDch c\xFA ph\xE1p HTML."
 title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---

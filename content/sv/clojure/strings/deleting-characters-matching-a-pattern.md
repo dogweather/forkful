@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:41:53.096448-07:00
-description: "I Clojure och andra programmeringsspr\xE5k betyder att ta bort tecken\
-  \ som matchar ett m\xF6nster att du rensar din textstr\xE4ng fr\xE5n o\xF6nskade\
-  \ sekvenser. Detta\u2026"
+description: "How to: Clojure ger oss `clojure.string/replace` f\xF6r att hantera\
+  \ teckentv\xE4tt. Kolla h\xE4r."
 lastmod: '2024-03-13T22:44:37.509728-06:00'
 model: gpt-4-1106-preview
-summary: "I Clojure och andra programmeringsspr\xE5k betyder att ta bort tecken som\
-  \ matchar ett m\xF6nster att du rensar din textstr\xE4ng fr\xE5n o\xF6nskade sekvenser."
+summary: "Clojure ger oss `clojure.string/replace` f\xF6r att hantera teckentv\xE4\
+  tt."
 title: "Ta bort tecken som matchar ett m\xF6nster"
 weight: 5
 ---

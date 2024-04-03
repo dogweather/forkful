@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 18:04:29.244658-07:00
-description: "Iniciar um novo projeto em Swift \xE9 como abrir um livro em branco:\
-  \ voc\xEA come\xE7a a construir algo do zero. Programadores fazem isso para transformar\
-  \ ideias\u2026"
+description: "Como Fazer: Abrir o Xcode, escolher \"File\" > \"New\" > \"Project\"\
+  , e ent\xE3o."
 lastmod: '2024-03-13T22:44:46.921129-06:00'
 model: gpt-4-1106-preview
-summary: "Iniciar um novo projeto em Swift \xE9 como abrir um livro em branco: voc\xEA\
-  \ come\xE7a a construir algo do zero."
+summary: "Abrir o Xcode, escolher \"File\" > \"New\" > \"Project\", e ent\xE3o."
 title: Iniciando um novo projeto
 weight: 1
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:35.628910-07:00
-description: "In Visual Basic for Applications (VBA), is het ophalen van de huidige\
-  \ datum een veelvoorkomende taak die programmeurs in staat stelt om dynamisch met\u2026"
+description: "Hoe te: Het ophalen van de huidige datum in VBA is eenvoudig, met gebruik\
+  \ van de `Date` functie, terwijl de `Now` functie zowel de huidige datum als tijd\u2026"
 lastmod: '2024-03-13T22:44:50.647519-06:00'
 model: gpt-4-0125-preview
-summary: In Visual Basic for Applications (VBA), is het ophalen van de huidige datum
-  een veelvoorkomende taak die programmeurs in staat stelt om dynamisch met datums
-  in hun macro's of applicaties te werken.
+summary: Het ophalen van de huidige datum in VBA is eenvoudig, met gebruik van de
+  `Date` functie, terwijl de `Now` functie zowel de huidige datum als tijd biedt.
 title: Het verkrijgen van de huidige datum
 weight: 29
 ---

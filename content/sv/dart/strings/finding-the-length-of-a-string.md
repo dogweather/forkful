@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:30.680270-07:00
-description: "Att hitta l\xE4ngden p\xE5 en str\xE4ng i Dart handlar om att best\xE4\
-  mma antalet kodenheter (i grunden antalet tecken om man t\xE4nker p\xE5 det p\xE5\
-  \ ett f\xF6renklat s\xE4tt) i\u2026"
+description: "Hur man g\xF6r: Dart g\xF6r det enkelt att f\xE5 reda p\xE5 en str\xE4\
+  ngs l\xE4ngd genom att anv\xE4nda `length`-egenskapen. H\xE4r \xE4r ett grundl\xE4\
+  ggande exempel."
 lastmod: '2024-03-13T22:44:37.601990-06:00'
 model: gpt-4-0125-preview
-summary: "Att hitta l\xE4ngden p\xE5 en str\xE4ng i Dart handlar om att best\xE4mma\
-  \ antalet kodenheter (i grunden antalet tecken om man t\xE4nker p\xE5 det p\xE5\
-  \ ett f\xF6renklat s\xE4tt) i en given str\xE4ng."
+summary: "Dart g\xF6r det enkelt att f\xE5 reda p\xE5 en str\xE4ngs l\xE4ngd genom\
+  \ att anv\xE4nda `length`-egenskapen."
 title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---

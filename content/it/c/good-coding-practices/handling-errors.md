@@ -2,12 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:02.536018-07:00
-description: "Gestire gli errori in C comporta il rilevamento e la risposta a condizioni\
-  \ anomale che si verificano durante l'esecuzione del programma. I programmatori\u2026"
+description: "Come fare: C non ha un supporto integrato per le eccezioni come alcuni\
+  \ altri linguaggi. Invece, si affida a poche strategie convenzionali di gestione\u2026"
 lastmod: '2024-03-13T22:44:44.007088-06:00'
 model: gpt-4-0125-preview
-summary: Gestire gli errori in C comporta il rilevamento e la risposta a condizioni
-  anomale che si verificano durante l'esecuzione del programma.
+summary: C non ha un supporto integrato per le eccezioni come alcuni altri linguaggi.
 title: Gestione degli errori
 weight: 16
 ---

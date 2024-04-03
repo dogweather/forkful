@@ -1,12 +1,13 @@
 ---
 date: 2024-01-26 00:59:29.046283-07:00
-description: "\"Logowanie\" to tworzenie zapisu wydarze\u0144, transakcji lub dzia\u0142\
-  a\u0144, kt\xF3re maj\u0105 miejsce w czasie w systemie. Programi\u015Bci u\u017C\
-  ywaj\u0105 go do debugowania,\u2026"
+description: "Jak to zrobi\u0107: Arduino nie posiada wbudowanej biblioteki do logowania,\
+  \ tak jak niekt\xF3re inne \u015Brodowiska, ale mo\u017Cna zaimplementowa\u0107\
+  \ podstawowe logowanie do\u2026"
 lastmod: '2024-03-13T22:44:35.677800-06:00'
 model: gpt-4-1106-preview
-summary: "\"Logowanie\" to tworzenie zapisu wydarze\u0144, transakcji lub dzia\u0142\
-  a\u0144, kt\xF3re maj\u0105 miejsce w czasie w systemie."
+summary: "Arduino nie posiada wbudowanej biblioteki do logowania, tak jak niekt\xF3\
+  re inne \u015Brodowiska, ale mo\u017Cna zaimplementowa\u0107 podstawowe logowanie\
+  \ do konsoli szeregowej bez wi\u0119kszego problemu."
 title: "Rejestrowanie zdarze\u0144"
 weight: 17
 ---

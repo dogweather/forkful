@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:36.979692-07:00
-description: "Les expressions r\xE9guli\xE8res (regex) sont des s\xE9quences de caract\xE8\
-  res qui forment un motif de recherche, principalement utilis\xE9es pour la recherche\
-  \ et la\u2026"
+description: "Comment : Dans PowerShell, vous pouvez utiliser les op\xE9rateurs `-match`,\
+  \ `-replace` et `-split`, entre autres, pour effectuer des actions avec des\u2026"
 lastmod: '2024-03-13T22:44:58.032789-06:00'
 model: gpt-4-0125-preview
-summary: "Les expressions r\xE9guli\xE8res (regex) sont des s\xE9quences de caract\xE8\
-  res qui forment un motif de recherche, principalement utilis\xE9es pour la recherche\
-  \ et la manipulation de cha\xEEnes de caract\xE8res."
+summary: "Dans PowerShell, vous pouvez utiliser les op\xE9rateurs `-match`, `-replace`\
+  \ et `-split`, entre autres, pour effectuer des actions avec des expressions r\xE9\
+  guli\xE8res."
 title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---

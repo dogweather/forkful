@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:42:31.165420-07:00
-description: "Att radera tecken som matchar ett m\xF6nster \xE4r att plocka bort specifika\
-  \ tecken eller sekvenser av tecken fr\xE5n en str\xE4ng. Vi g\xF6r det f\xF6r att\
-  \ rensa data,\u2026"
+description: "Hur man g\xF6r: ."
 lastmod: '2024-03-13T22:44:37.772026-06:00'
 model: gpt-4-1106-preview
-summary: "Att radera tecken som matchar ett m\xF6nster \xE4r att plocka bort specifika\
-  \ tecken eller sekvenser av tecken fr\xE5n en str\xE4ng."
+summary: .
 title: "Ta bort tecken som matchar ett m\xF6nster"
 weight: 5
 ---

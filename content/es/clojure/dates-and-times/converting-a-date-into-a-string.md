@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 17:36:20.718303-07:00
-description: "Convertir una fecha en una cadena de texto permite manejar fechas como\
-  \ texto para almacenarlas o mostrarlas. Los programadores hacen esto para facilitar\u2026"
+description: "C\xF3mo hacerlo: Clojure, por ser un dialecto de Lisp y correr en la\
+  \ JVM, utiliza las clases de Java para manejar fechas. Aqu\xED hay un ejemplo de\
+  \ c\xF3mo\u2026"
 lastmod: '2024-03-13T22:44:58.668943-06:00'
 model: gpt-4-1106-preview
-summary: Convertir una fecha en una cadena de texto permite manejar fechas como texto
-  para almacenarlas o mostrarlas.
+summary: Clojure, por ser un dialecto de Lisp y correr en la JVM, utiliza las clases
+  de Java para manejar fechas.
 title: Convirtiendo una fecha en una cadena de texto
 weight: 28
 ---

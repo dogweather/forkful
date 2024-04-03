@@ -2,14 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:55.919454-07:00
-description: "R\xFAt tr\xEDch chu\u1ED7i con c\xF3 ngh\u0129a l\xE0 l\u1EA5y ra c\xE1\
-  c ph\u1EA7n c\u1EE5 th\u1EC3 c\u1EE7a m\u1ED9t chu\u1ED7i. L\u1EADp tr\xECnh vi\xEA\
-  n th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 c\xF4 l\u1EADp d\u1EEF\
-  \ li\u1EC7u, l\xE0m s\u1EA1ch \u0111\u1EA7u v\xE0o, ho\u1EB7c ph\xE2n\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong Fish, b\u1EA1n s\u1EED d\u1EE5ng\
+  \ l\u1EC7nh `string` \u0111\u1EC3 thao t\xE1c v\u1EDBi chu\u1ED7i. D\u01B0\u1EDB\
+  i \u0111\xE2y l\xE0 c\xE1ch l\xE0m: #."
 lastmod: '2024-03-13T22:44:37.193514-06:00'
 model: gpt-4-0125-preview
-summary: "R\xFAt tr\xEDch chu\u1ED7i con c\xF3 ngh\u0129a l\xE0 l\u1EA5y ra c\xE1\
-  c ph\u1EA7n c\u1EE5 th\u1EC3 c\u1EE7a m\u1ED9t chu\u1ED7i."
+summary: "Trong Fish, b\u1EA1n s\u1EED d\u1EE5ng l\u1EC7nh `string` \u0111\u1EC3 thao\
+  \ t\xE1c v\u1EDBi chu\u1ED7i."
 title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 weight: 6
 ---

@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:52:10.962410-07:00
-description: "W debugowaniu wypisywanie komunikat\xF3w to jak zostawianie sobie notatek\
-  \ po drodze - \u017Ceby wiedzie\u0107, co si\u0119 dzieje. Programi\u015Bci u\u017C\
-  ywaj\u0105 tego, aby zobaczy\u0107\u2026"
+description: "How to: | Jak to zrobi\u0107: Clojure u\u017Cywa funkcji `println` do\
+  \ wypisania na standardowe wyj\u015Bcie. Mo\u017Cesz te\u017C u\u017Cy\u0107 `prn`\
+  \ dla danych w formacie czytelnym dla\u2026"
 lastmod: '2024-03-13T22:44:34.998072-06:00'
 model: gpt-4-1106-preview
-summary: "W debugowaniu wypisywanie komunikat\xF3w to jak zostawianie sobie notatek\
-  \ po drodze - \u017Ceby wiedzie\u0107, co si\u0119 dzieje."
+summary: "Clojure u\u017Cywa funkcji `println` do wypisania na standardowe wyj\u015B\
+  cie."
 title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---

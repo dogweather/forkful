@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:45:30.749988-07:00
-description: "Komplexa tal har en realdel och en imagin\xE4rdel och \xE4r avg\xF6\
-  rande inom olika omr\xE5den s\xE5som ingenj\xF6rsvetenskap, fysik och datorgrafik.\
-  \ Programmerare anv\xE4nder\u2026"
+description: "Hur: Rust har inte inbyggt st\xF6d f\xF6r komplexa tal, men paket som\
+  \ `num-complex` t\xE4cker dina behov. S\xE5 h\xE4r anv\xE4nder du det."
 lastmod: '2024-03-13T22:44:37.691925-06:00'
 model: gpt-4-0125-preview
-summary: "Komplexa tal har en realdel och en imagin\xE4rdel och \xE4r avg\xF6rande\
-  \ inom olika omr\xE5den s\xE5som ingenj\xF6rsvetenskap, fysik och datorgrafik."
+summary: "Rust har inte inbyggt st\xF6d f\xF6r komplexa tal, men paket som `num-complex`\
+  \ t\xE4cker dina behov."
 title: Att arbeta med komplexa tal
 weight: 14
 ---

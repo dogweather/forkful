@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:17.364203-07:00
-description: "JSON, czyli Notacja Obiektowa JavaScriptu, to lekki format wymiany danych,\
-  \ \u0142atwy do odczytania i zapisania przez ludzi, jak r\xF3wnie\u017C \u0142atwy\
-  \ do przetwarzania\u2026"
+description: "Jak to zrobi\u0107: Praca z JSONem w PHP jest prosta dzi\u0119ki wbudowanym\
+  \ funkcjom `json_encode()` i `json_decode()`. Poni\u017Cej znajduj\u0105 si\u0119\
+  \ przyk\u0142ady pokazuj\u0105ce,\u2026"
 lastmod: '2024-03-13T22:44:35.518927-06:00'
 model: gpt-4-0125-preview
-summary: "JSON, czyli Notacja Obiektowa JavaScriptu, to lekki format wymiany danych,\
-  \ \u0142atwy do odczytania i zapisania przez ludzi, jak r\xF3wnie\u017C \u0142atwy\
-  \ do przetwarzania i generowania przez maszyny."
+summary: "Praca z JSONem w PHP jest prosta dzi\u0119ki wbudowanym funkcjom `json_encode()`\
+  \ i `json_decode()`."
 title: Praca z JSON
 weight: 38
 ---

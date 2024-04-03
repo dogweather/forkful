@@ -1,10 +1,9 @@
 ---
 date: 2024-01-20 17:46:25.082824-07:00
-description: "Extrair substrings \xE9 o processo de pegar peda\xE7os de uma string\
-  \ maior. Fazemos isso para manipular ou analisar partes espec\xEDficas de texto."
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:46.357049-06:00'
 model: gpt-4-1106-preview
-summary: "Extrair substrings \xE9 o processo de pegar peda\xE7os de uma string maior."
+summary: .
 title: Extraindo substrings
 weight: 6
 ---

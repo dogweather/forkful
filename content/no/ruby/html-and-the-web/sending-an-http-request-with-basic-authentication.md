@@ -1,13 +1,9 @@
 ---
 date: 2024-01-20 18:02:35.517985-07:00
-description: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering betyr\
-  \ \xE5 tilf\xF8ye brukernavn og passord i en foresp\xF8rsel for \xE5 f\xE5 tilgang\
-  \ til beskyttede\u2026"
+description: "Hvordan gj\xF8re det: ."
 lastmod: '2024-03-13T22:44:41.327670-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering betyr\
-  \ \xE5 tilf\xF8ye brukernavn og passord i en foresp\xF8rsel for \xE5 f\xE5 tilgang\
-  \ til beskyttede ressurser."
+summary: .
 title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---

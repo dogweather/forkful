@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:47:09.986891-07:00
-description: "N\xE3o h\xE1 enrola\xE7\xE3o: calcular o tamanho de uma string significa\
-  \ descobrir quantos caracteres ela tem. Fazemos isso para manipular texto com precis\xE3\
-  o, seja\u2026"
+description: "How to: C++ oferece m\xE9todos simples para essa tarefa. Vamos usar\
+  \ `length()` e `size()` \u2014 sim, os dois funcionam igual no mundo das strings.\
+  \ Confira."
 lastmod: '2024-03-13T22:44:46.870959-06:00'
 model: gpt-4-1106-preview
-summary: "N\xE3o h\xE1 enrola\xE7\xE3o: calcular o tamanho de uma string significa\
-  \ descobrir quantos caracteres ela tem."
+summary: "C++ oferece m\xE9todos simples para essa tarefa."
 title: Descobrindo o comprimento de uma string
 weight: 7
 ---

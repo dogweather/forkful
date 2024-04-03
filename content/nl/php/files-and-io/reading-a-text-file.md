@@ -2,13 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:25.231198-07:00
-description: "Een tekstbestand lezen in PHP betekent inhoud uit een bestand halen\
-  \ en in je script brengen. Programmeurs doen dit om gegevensopslag, configuratie\
-  \ te\u2026"
+description: 'Hoe te: #.'
 lastmod: '2024-03-13T22:44:50.913213-06:00'
 model: gpt-4-0125-preview
-summary: Een tekstbestand lezen in PHP betekent inhoud uit een bestand halen en in
-  je script brengen.
+summary: '#.'
 title: Een tekstbestand lezen
 weight: 22
 ---

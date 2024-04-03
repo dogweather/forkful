@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:04.012275-07:00
-description: "Die Fehlerbehandlung in C umfasst das Erkennen und Reagieren auf anomale\
-  \ Bedingungen, die w\xE4hrend der Programmausf\xFChrung auftreten. Programmierer\
-  \ tun\u2026"
+description: "Wie zu: C bietet keine integrierte Unterst\xFCtzung f\xFCr Ausnahmen\
+  \ wie einige andere Sprachen. Stattdessen st\xFCtzt es sich auf einige konventionelle\u2026"
 lastmod: '2024-03-13T22:44:54.360486-06:00'
 model: gpt-4-0125-preview
-summary: "Die Fehlerbehandlung in C umfasst das Erkennen und Reagieren auf anomale\
-  \ Bedingungen, die w\xE4hrend der Programmausf\xFChrung auftreten."
+summary: "C bietet keine integrierte Unterst\xFCtzung f\xFCr Ausnahmen wie einige\
+  \ andere Sprachen."
 title: Fehlerbehandlung
 weight: 16
 ---

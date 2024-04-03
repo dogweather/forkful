@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 01:08:19.278451-07:00
-description: "Code in Funktionen zu organisieren bedeutet, den Code in wiederverwendbare\
-  \ Einheiten aufzuteilen, wobei jede Einheit eine spezifische Aufgabe erledigt.\u2026"
+description: "Wie: Stellen Sie sich vor, Sie m\xF6chten eine LED blinken lassen. Ohne\
+  \ Funktionen ist Ihre `loop` ein unordentliches Durcheinander. Mit Funktionen ist\
+  \ es\u2026"
 lastmod: '2024-03-13T22:44:54.149059-06:00'
 model: gpt-4-1106-preview
-summary: Code in Funktionen zu organisieren bedeutet, den Code in wiederverwendbare
-  Einheiten aufzuteilen, wobei jede Einheit eine spezifische Aufgabe erledigt.
+summary: "Stellen Sie sich vor, Sie m\xF6chten eine LED blinken lassen."
 title: Code in Funktionen organisieren
 weight: 18
 ---

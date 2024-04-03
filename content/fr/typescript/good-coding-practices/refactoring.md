@@ -1,11 +1,13 @@
 ---
 date: 2024-01-26 03:36:26.394340-07:00
-description: "Le refactoring est le processus de restructuration du code informatique\
-  \ existant sans en changer le comportement externe. Les programmeurs le font pour\u2026"
+description: "Comment faire : Consid\xE9rez une fonction TypeScript qui a connu des\
+  \ jours meilleurs - elle est un peu en d\xE9sordre et pourrait b\xE9n\xE9ficier\
+  \ d'un peu\u2026"
 lastmod: '2024-03-13T22:44:57.446019-06:00'
 model: gpt-4-0125-preview
-summary: Le refactoring est le processus de restructuration du code informatique existant
-  sans en changer le comportement externe.
+summary: "Consid\xE9rez une fonction TypeScript qui a connu des jours meilleurs -\
+  \ elle est un peu en d\xE9sordre et pourrait b\xE9n\xE9ficier d'un peu d'attention\
+  \ et de soins."
 title: Remaniement de code
 weight: 19
 ---

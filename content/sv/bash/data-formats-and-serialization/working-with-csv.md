@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:48.249504-07:00
-description: "Att arbeta med CSV-filer (kommaseparerade v\xE4rden) i Bash handlar\
-  \ om att bearbeta och manipulera tabellformaterade data lagrade i ren textformat.\
-  \ Detta \xE4r\u2026"
+description: "Hur man g\xF6r: **L\xE4sa en CSV-fil rad f\xF6r rad**."
 lastmod: '2024-03-13T22:44:38.104600-06:00'
 model: gpt-4-0125-preview
-summary: "Att arbeta med CSV-filer (kommaseparerade v\xE4rden) i Bash handlar om att\
-  \ bearbeta och manipulera tabellformaterade data lagrade i ren textformat."
+summary: "**L\xE4sa en CSV-fil rad f\xF6r rad**."
 title: Arbeta med CSV
 weight: 37
 ---

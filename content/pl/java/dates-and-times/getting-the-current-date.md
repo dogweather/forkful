@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:52.986340-07:00
-description: "Pobranie bie\u017C\u0105cej daty w Java to podstawowa operacja, kt\xF3\
-  ra pozwala programistom manipulowa\u0107 obiektami dat do operacji takich jak logowanie,\
-  \ obliczenia\u2026"
+description: "Jak: Java oferuje wiele sposob\xF3w na pobranie bie\u017C\u0105cej daty,\
+  \ korzystaj\u0105c zar\xF3wno ze starej klasy `java.util.Date`, jak i nowszego pakietu\
+  \ `java.time`\u2026"
 lastmod: '2024-03-13T22:44:35.288166-06:00'
 model: gpt-4-0125-preview
-summary: "Pobranie bie\u017C\u0105cej daty w Java to podstawowa operacja, kt\xF3ra\
-  \ pozwala programistom manipulowa\u0107 obiektami dat do operacji takich jak logowanie,\
-  \ obliczenia dat i warunki oparte na czasie."
+summary: "Java oferuje wiele sposob\xF3w na pobranie bie\u017C\u0105cej daty, korzystaj\u0105\
+  c zar\xF3wno ze starej klasy `java.util.Date`, jak i nowszego pakietu `java.time`\
+  \ (wprowadzonego w Java 8), kt\xF3ry jest bardziej wszechstronny i intuicyjny."
 title: Pobieranie aktualnej daty
 weight: 29
 ---

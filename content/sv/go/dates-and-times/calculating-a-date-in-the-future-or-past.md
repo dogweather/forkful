@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:07.804612-07:00
-description: "Att ber\xE4kna ett datum i framtiden eller f\xF6rflutet i Go inneb\xE4\
-  r att man hanterar datum- och tidsv\xE4rden f\xF6r att best\xE4mma en specifik punkt\
-  \ relativt till ett\u2026"
+description: "Hur man g\xF6r: Go tillhandah\xE5ller `time`-paketet f\xF6r att hantera\
+  \ datum- och tidsoperationer, och erbjuder raka mekanismer f\xF6r att l\xE4gga till\
+  \ eller dra ifr\xE5n\u2026"
 lastmod: '2024-03-13T22:44:37.406736-06:00'
 model: gpt-4-0125-preview
-summary: "Att ber\xE4kna ett datum i framtiden eller f\xF6rflutet i Go inneb\xE4r\
-  \ att man hanterar datum- och tidsv\xE4rden f\xF6r att best\xE4mma en specifik punkt\
-  \ relativt till ett givet datum."
+summary: "Go tillhandah\xE5ller `time`-paketet f\xF6r att hantera datum- och tidsoperationer,\
+  \ och erbjuder raka mekanismer f\xF6r att l\xE4gga till eller dra ifr\xE5n tid."
 title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutet"
 weight: 26
 ---

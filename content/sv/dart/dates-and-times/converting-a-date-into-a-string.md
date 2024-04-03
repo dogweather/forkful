@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:53:56.678514-07:00
-description: "Att konvertera ett datum till en str\xE4ng i Dart \xE4r en vanlig uppgift\
-  \ n\xE4r du beh\xF6ver visa datum- och tidsinformation i ett l\xE4ttl\xE4st format,\
-  \ eller n\xE4r du\u2026"
+description: "Hur: Dart tillhandah\xE5ller klassen `DateTime` f\xF6r hantering av\
+  \ datum och tider, samt paketet `intl` f\xF6r formatering. Se f\xF6rst till att\
+  \ du har paketet\u2026"
 lastmod: '2024-03-13T22:44:37.624501-06:00'
 model: gpt-4-0125-preview
-summary: "Att konvertera ett datum till en str\xE4ng i Dart \xE4r en vanlig uppgift\
-  \ n\xE4r du beh\xF6ver visa datum- och tidsinformation i ett l\xE4ttl\xE4st format,\
-  \ eller n\xE4r du t\xE4nker serialisera data f\xF6r lagring eller \xF6verf\xF6ring."
+summary: "Dart tillhandah\xE5ller klassen `DateTime` f\xF6r hantering av datum och\
+  \ tider, samt paketet `intl` f\xF6r formatering."
 title: "Att konvertera ett datum till en str\xE4ng"
 weight: 28
 ---

@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:31:27.345461-07:00
-description: "Obliczanie daty w przesz\u0142o\u015Bci lub przysz\u0142o\u015Bci to\
-  \ zdefiniowanie momentu przed lub po danej dacie. Programi\u015Bci robi\u0105 to,\
-  \ aby zarz\u0105dza\u0107 wydarzeniami,\u2026"
+description: "How to: | Jak to zrobi\u0107: W Haskellu u\u017Cywamy biblioteki `time`\
+  \ do pracy z datami. Oto przyk\u0142ad dodawania dni do aktualnej daty."
 lastmod: '2024-03-13T22:44:35.466152-06:00'
 model: gpt-4-1106-preview
-summary: "Obliczanie daty w przesz\u0142o\u015Bci lub przysz\u0142o\u015Bci to zdefiniowanie\
-  \ momentu przed lub po danej dacie."
+summary: "W Haskellu u\u017Cywamy biblioteki `time` do pracy z datami."
 title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---

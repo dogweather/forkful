@@ -1,10 +1,9 @@
 ---
 date: 2024-01-25 02:59:47.815861-07:00
-description: "Organizing code into functions splits your script into reusable chunks.\
-  \ It's all about making your code clean, manageable, and less buggy. Modular code\u2026"
+description: 'How to: Imagine you''re writing a quick script to greet users.'
 lastmod: '2024-03-13T22:45:00.555994-06:00'
 model: gpt-4-1106-preview
-summary: Organizing code into functions splits your script into reusable chunks.
+summary: Imagine you're writing a quick script to greet users.
 title: Organizing code into functions
 weight: 18
 ---

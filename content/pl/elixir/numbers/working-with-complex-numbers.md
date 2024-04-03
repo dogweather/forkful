@@ -1,12 +1,13 @@
 ---
 date: 2024-01-26 04:39:35.120828-07:00
-description: "Liczby zespolone maj\u0105 cz\u0119\u015B\u0107 rzeczywist\u0105 i cz\u0119\
-  \u015B\u0107 urojon\u0105 (takie jak `3 + 4i`). S\u0105 u\u017Cywane w in\u017C\
-  ynierii, fizyce i w pewnych problemach obliczeniowych.\u2026"
+description: "Jak to zrobi\u0107: Elixir nie posiada wbudowanych typ\xF3w liczbowych\
+  \ zespolonych, wi\u0119c musimy stworzy\u0107 w\u0142asne lub skorzysta\u0107 z\
+  \ biblioteki, takiej jak\u2026"
 lastmod: '2024-03-13T22:44:35.035681-06:00'
 model: gpt-4-0125-preview
-summary: "Liczby zespolone maj\u0105 cz\u0119\u015B\u0107 rzeczywist\u0105 i cz\u0119\
-  \u015B\u0107 urojon\u0105 (takie jak `3 + 4i`)."
+summary: "Elixir nie posiada wbudowanych typ\xF3w liczbowych zespolonych, wi\u0119\
+  c musimy stworzy\u0107 w\u0142asne lub skorzysta\u0107 z biblioteki, takiej jak\
+  \ `ComplexNum`."
 title: Praca z liczbami zespolonymi
 weight: 14
 ---

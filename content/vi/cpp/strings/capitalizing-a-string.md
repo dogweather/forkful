@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:45.264475-07:00
-description: "Bi\u1EBFn ch\u1EEF hoa to\xE0n b\u1ED9 chu\u1ED7i ngh\u0129a l\xE0 chuy\u1EC3\
-  n t\u1EA5t c\u1EA3 c\xE1c k\xFD t\u1EF1 trong v\u0103n b\u1EA3n th\xE0nh ch\u1EEF\
-  \ in hoa. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 t\u1EA1\
-  o ra s\u1EF1 th\u1ED1ng nh\u1EA5t, nh\u1EA5n\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: C++ cung c\u1EA5p nhi\u1EC1u c\xE1ch \u0111\
+  \u1EC3 bi\u1EBFn ch\u1EEF hoa chu\u1ED7i, nh\u01B0ng \u0111\xE2y l\xE0 m\u1ED9t\
+  \ v\xED d\u1EE5 \u0111\u01A1n gi\u1EA3n."
 lastmod: '2024-03-13T22:44:37.020489-06:00'
 model: gpt-4-0125-preview
-summary: "Bi\u1EBFn ch\u1EEF hoa to\xE0n b\u1ED9 chu\u1ED7i ngh\u0129a l\xE0 chuy\u1EC3\
-  n t\u1EA5t c\u1EA3 c\xE1c k\xFD t\u1EF1 trong v\u0103n b\u1EA3n th\xE0nh ch\u1EEF\
-  \ in hoa."
+summary: "C++ cung c\u1EA5p nhi\u1EC1u c\xE1ch \u0111\u1EC3 bi\u1EBFn ch\u1EEF hoa\
+  \ chu\u1ED7i, nh\u01B0ng \u0111\xE2y l\xE0 m\u1ED9t v\xED d\u1EE5 \u0111\u01A1n\
+  \ gi\u1EA3n."
 title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
 weight: 2
 ---

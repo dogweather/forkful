@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:51.085222-07:00
-description: "JSON (JavaScript Object Notation) on kevyt tiedonvaihtoformaatti, joka\
-  \ on ihmisten luettavissa ja kirjoitettavissa helposti ja koneiden j\xE4sent\xE4\
-  miseen ja\u2026"
+description: "Kuinka: VBA ei natiivisti tue JSONin j\xE4sent\xE4mist\xE4 tai tuottamista,\
+  \ joten k\xE4yt\xE4mme skriptikielt\xE4, kuten JScripti\xE4 (ScriptControl-objektin\
+  \ kautta) JSON-\u2026"
 lastmod: '2024-03-13T22:44:56.423807-06:00'
 model: gpt-4-0125-preview
-summary: "JSON (JavaScript Object Notation) on kevyt tiedonvaihtoformaatti, joka on\
-  \ ihmisten luettavissa ja kirjoitettavissa helposti ja koneiden j\xE4sent\xE4miseen\
-  \ ja tuottamiseen yksinkertainen."
+summary: "VBA ei natiivisti tue JSONin j\xE4sent\xE4mist\xE4 tai tuottamista, joten\
+  \ k\xE4yt\xE4mme skriptikielt\xE4, kuten JScripti\xE4 (ScriptControl-objektin kautta)\
+  \ JSON-merkkijonojen j\xE4sent\xE4miseen ja JSON-objektien rakentamiseen."
 title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---

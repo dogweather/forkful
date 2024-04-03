@@ -2,13 +2,14 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:52.472331-07:00
-description: "Gli array associativi, o mappe hash, permettono di memorizzare dati\
-  \ come coppie chiave-valore, rendendo pi\xF9 semplice organizzare e recuperare informazioni\u2026"
+description: "Come fare: Fish non supporta nativamente gli array associativi come\
+  \ Bash 4+, ma \xE8 possibile ottenere una funzionalit\xE0 simile utilizzando una\
+  \ combinazione\u2026"
 lastmod: '2024-03-13T22:44:43.849235-06:00'
 model: gpt-4-0125-preview
-summary: "Gli array associativi, o mappe hash, permettono di memorizzare dati come\
-  \ coppie chiave-valore, rendendo pi\xF9 semplice organizzare e recuperare informazioni\
-  \ mediante la chiave."
+summary: "Fish non supporta nativamente gli array associativi come Bash 4+, ma \xE8\
+  \ possibile ottenere una funzionalit\xE0 simile utilizzando una combinazione di\
+  \ liste e manipolazione di stringhe."
 title: Utilizzo di array associativi
 weight: 15
 ---

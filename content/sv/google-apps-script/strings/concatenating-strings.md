@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:25.823031-07:00
-description: "Att konkatenera str\xE4ngar inneb\xE4r att kombinera tv\xE5 eller flera\
-  \ str\xE4ngar till en enda str\xE4ng. Programmerare g\xF6r detta f\xF6r att dynamiskt\
-  \ konstruera\u2026"
+description: "Hur man g\xF6r: I Google Apps Script, som \xE4r baserat p\xE5 JavaScript,\
+  \ finns det flera s\xE4tt att konkatenera str\xE4ngar p\xE5. H\xE4r \xE4r n\xE5\
+  gra vanliga metoder: #."
 lastmod: '2024-03-13T22:44:37.429434-06:00'
 model: gpt-4-0125-preview
-summary: "Att konkatenera str\xE4ngar inneb\xE4r att kombinera tv\xE5 eller flera\
-  \ str\xE4ngar till en enda str\xE4ng."
+summary: "I Google Apps Script, som \xE4r baserat p\xE5 JavaScript, finns det flera\
+  \ s\xE4tt att konkatenera str\xE4ngar p\xE5."
 title: "Konkatenering av str\xE4ngar"
 weight: 3
 ---

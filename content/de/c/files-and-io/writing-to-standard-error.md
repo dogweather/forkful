@@ -2,12 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:49.226331-07:00
-description: "Das Schreiben auf Standardfehler in C beinhaltet die Weiterleitung von\
-  \ Fehlermeldungen und diagnostischen Informationen an einen separaten Stream vom\u2026"
+description: "Wie geht das: In C wird der `stderr` Stream verwendet, um Fehlermeldungen\
+  \ zu schreiben. Anders als bei der Ausgabe auf die Standardausgabe mit `printf`,\u2026"
 lastmod: '2024-03-13T22:44:54.370621-06:00'
 model: gpt-4-0125-preview
-summary: Das Schreiben auf Standardfehler in C beinhaltet die Weiterleitung von Fehlermeldungen
-  und diagnostischen Informationen an einen separaten Stream vom Hauptprogrammausgang.
+summary: In C wird der `stderr` Stream verwendet, um Fehlermeldungen zu schreiben.
 title: Schreiben auf Standardfehler
 weight: 25
 ---

@@ -2,14 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:17.776917-07:00
-description: "Das Suchen und Ersetzen von Text in Dart beinhaltet die Untersuchung\
-  \ von Zeichenketten, um bestimmte Muster oder Zeichenfolgen zu finden und diese\
-  \ durch\u2026"
+description: "Wie: Dart bietet robuste Methoden zum Suchen und Ersetzen von Text direkt\
+  \ \xFCber seine `String`-Klasse, ohne die Notwendigkeit externer Bibliotheken. Hier\u2026"
 lastmod: '2024-03-13T22:44:53.563755-06:00'
 model: gpt-4-0125-preview
-summary: Das Suchen und Ersetzen von Text in Dart beinhaltet die Untersuchung von
-  Zeichenketten, um bestimmte Muster oder Zeichenfolgen zu finden und diese durch
-  neue Inhalte zu ersetzen.
+summary: "Dart bietet robuste Methoden zum Suchen und Ersetzen von Text direkt \xFC\
+  ber seine `String`-Klasse, ohne die Notwendigkeit externer Bibliotheken."
 title: Suchen und Ersetzen von Text
 weight: 10
 ---

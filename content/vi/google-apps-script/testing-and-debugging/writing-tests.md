@@ -2,17 +2,18 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:09:24.553353-07:00
-description: "Vi\u1EBFt test trong Google Apps Script (GAS) l\xE0 v\u1EC1 vi\u1EC7\
-  c t\u1EA1o ra c\xE1c script t\u1EF1 \u0111\u1ED9ng \u0111\u1EC3 x\xE1c minh h\xE0\
-  nh vi c\u1EE7a m\xE3 l\u1EC7nh c\u1EE7a b\u1EA1n, \u0111\u1EA3m b\u1EA3o ch\xFA\
-  ng ho\u1EA1t \u0111\u1ED9ng nh\u01B0 mong\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: M\u1EB7c d\xF9 Google Apps Script kh\xF4ng c\xF3\
+  \ m\u1ED9t khung ki\u1EC3m th\u1EED t\xEDch h\u1EE3p s\u1EB5n nh\u01B0 m\u1ED9t\
+  \ s\u1ED1 m\xF4i tr\u01B0\u1EDDng l\u1EADp tr\xECnh kh\xE1c, b\u1EA1n v\u1EABn c\xF3\
+  \ th\u1EC3 vi\u1EBFt v\xE0 ch\u1EA1y c\xE1c b\xE0i\u2026"
 lastmod: '2024-03-13T22:44:36.045265-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EBFt test trong Google Apps Script (GAS) l\xE0 v\u1EC1 vi\u1EC7c t\u1EA1\
-  o ra c\xE1c script t\u1EF1 \u0111\u1ED9ng \u0111\u1EC3 x\xE1c minh h\xE0nh vi c\u1EE7\
-  a m\xE3 l\u1EC7nh c\u1EE7a b\u1EA1n, \u0111\u1EA3m b\u1EA3o ch\xFAng ho\u1EA1t \u0111\
-  \u1ED9ng nh\u01B0 mong \u0111\u1EE3i d\u01B0\u1EDBi c\xE1c \u0111i\u1EC1u ki\u1EC7\
-  n kh\xE1c nhau."
+summary: "M\u1EB7c d\xF9 Google Apps Script kh\xF4ng c\xF3 m\u1ED9t khung ki\u1EC3\
+  m th\u1EED t\xEDch h\u1EE3p s\u1EB5n nh\u01B0 m\u1ED9t s\u1ED1 m\xF4i tr\u01B0\u1EDD\
+  ng l\u1EADp tr\xECnh kh\xE1c, b\u1EA1n v\u1EABn c\xF3 th\u1EC3 vi\u1EBFt v\xE0 ch\u1EA1\
+  y c\xE1c b\xE0i test b\u1EB1ng c\xE1ch t\u1EADn d\u1EE5ng c\xE1c h\xE0m GAS \u0111\
+  \u01A1n gi\u1EA3n ho\u1EB7c t\xEDch h\u1EE3p c\xE1c th\u01B0 vi\u1EC7n ki\u1EC3\
+  m th\u1EED b\xEAn ngo\xE0i nh\u01B0 `QUnit`."
 title: "Vi\u1EBFt ki\u1EC3m th\u1EED"
 weight: 36
 ---

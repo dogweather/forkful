@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 03:39:23.166610-07:00
-description: "Eliminar las comillas de una cadena se trata de deshacerse de esos molestos\
-  \ signos de comillas simples (' ') o dobles (\" \") de tus datos de texto. Los\u2026"
+description: "C\xF3mo hacerlo: Fish tiene una magia incorporada para este tipo de\
+  \ tarea. Usa la funci\xF3n `string` sin despeinarte. Mira estos hechizos."
 lastmod: '2024-03-13T22:44:59.488288-06:00'
 model: gpt-4-0125-preview
-summary: Eliminar las comillas de una cadena se trata de deshacerse de esos molestos
-  signos de comillas simples (' ') o dobles (" ") de tus datos de texto.
+summary: Fish tiene una magia incorporada para este tipo de tarea.
 title: Eliminando comillas de una cadena
 weight: 9
 ---

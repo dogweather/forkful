@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:46.885806-07:00
-description: "Tests schrijven in programmeren betekent het cre\xEBren van mini-programma's\
-  \ om te controleren of je code werkt zoals verwacht. Programmeurs doen dit om bugs\u2026"
+description: "Hoe: Laten we duiken in wat C# code met NUnit, een populair testraamwerk:\
+  \ 1. Stel je testraamwerk in - doorgaans inbegrepen als een NuGet-pakket. 2.\u2026"
 lastmod: '2024-03-13T22:44:50.813794-06:00'
 model: gpt-4-0125-preview
-summary: "Tests schrijven in programmeren betekent het cre\xEBren van mini-programma's\
-  \ om te controleren of je code werkt zoals verwacht."
+summary: Laten we duiken in wat C# code met NUnit, een populair testraamwerk.
 title: Tests Schrijven
 weight: 36
 ---

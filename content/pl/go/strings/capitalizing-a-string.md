@@ -2,16 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:45.332269-07:00
-description: "Zamiana pierwszej litery \u0142a\u0144cucha na wielk\u0105 liter\u0119\
-  \ polega na przekszta\u0142ceniu pierwszego znaku danego \u0142a\u0144cucha na wielk\u0105\
-  \ liter\u0119, je\u015Bli jest on pisany ma\u0142\u0105\u2026"
+description: "Jak to zrobi\u0107: W Go pakiet `strings` nie dostarcza bezpo\u015B\
+  redniej funkcji do zamiany tylko pierwszej litery \u0142a\u0144cucha na wielk\u0105\
+  \ liter\u0119. Dlatego \u0142\u0105czymy\u2026"
 lastmod: '2024-03-13T22:44:34.828481-06:00'
 model: gpt-4-0125-preview
-summary: "Zamiana pierwszej litery \u0142a\u0144cucha na wielk\u0105 liter\u0119 polega\
-  \ na przekszta\u0142ceniu pierwszego znaku danego \u0142a\u0144cucha na wielk\u0105\
-  \ liter\u0119, je\u015Bli jest on pisany ma\u0142\u0105 liter\u0105, co pozwala\
-  \ wyr\xF3\u017Cni\u0107 \u0142a\u0144cuch lub dostosowa\u0107 go do okre\u015Blonych\
-  \ norm gramatycznych."
+summary: "W Go pakiet `strings` nie dostarcza bezpo\u015Bredniej funkcji do zamiany\
+  \ tylko pierwszej litery \u0142a\u0144cucha na wielk\u0105 liter\u0119."
 title: "Zamiana liter na wielkie w ci\u0105gu znak\xF3w"
 weight: 2
 ---

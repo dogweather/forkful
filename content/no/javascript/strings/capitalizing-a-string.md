@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:46.098714-07:00
-description: "\xC5 kapitalisere en streng betyr \xE5 konvertere den f\xF8rste bokstaven\
-  \ i strengen til stor bokstav mens de gjenv\xE6rende bokstavene forblir som de er.\
-  \ Denne\u2026"
+description: "Hvordan: I JavaScript finnes det ikke en innebygd metode for direkte\
+  \ \xE5 kapitalisere strenger, men det er enkelt \xE5 implementere ved bruk av grunnleggende\u2026"
 lastmod: '2024-03-13T22:44:41.167357-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 kapitalisere en streng betyr \xE5 konvertere den f\xF8rste bokstaven\
-  \ i strengen til stor bokstav mens de gjenv\xE6rende bokstavene forblir som de er."
+summary: "I JavaScript finnes det ikke en innebygd metode for direkte \xE5 kapitalisere\
+  \ strenger, men det er enkelt \xE5 implementere ved bruk av grunnleggende strengmanipuleringsmetoder."
 title: Sette stor bokstav i en streng
 weight: 2
 ---

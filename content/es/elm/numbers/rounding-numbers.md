@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:44:44.321885-07:00
-description: "Redondear n\xFAmeros es ajustar un decimal a su valor entero m\xE1s\
-  \ cercano o a un n\xFAmero especificado de d\xEDgitos fraccionarios. Los programadores\
-  \ redondean\u2026"
+description: "C\xF3mo hacerlo: El m\xF3dulo `Basics` de Elm proporciona funciones\
+  \ \xFAtiles para redondear: `round`, `floor` y `ceiling`. As\xED es como se utilizan."
 lastmod: '2024-03-13T22:44:58.974250-06:00'
 model: gpt-4-0125-preview
-summary: "Redondear n\xFAmeros es ajustar un decimal a su valor entero m\xE1s cercano\
-  \ o a un n\xFAmero especificado de d\xEDgitos fraccionarios."
+summary: "El m\xF3dulo `Basics` de Elm proporciona funciones \xFAtiles para redondear."
 title: "Redondeo de n\xFAmeros"
 weight: 13
 ---

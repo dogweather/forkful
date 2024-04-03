@@ -1,13 +1,14 @@
 ---
 date: 2024-01-27 20:33:01.244547-07:00
-description: "A gera\xE7\xE3o de n\xFAmeros aleat\xF3rios na programa\xE7\xE3o envolve\
-  \ criar sequ\xEAncias de n\xFAmeros que n\xE3o possuem uma ordem ou padr\xE3o previs\xED\
-  veis. Os programadores\u2026"
+description: "Como Fazer: Para gerar n\xFAmeros aleat\xF3rios em C++, voc\xEA normalmente\
+  \ faria uso do cabe\xE7alho `<random>`, que foi introduzido no C++11, oferecendo\
+  \ uma ampla\u2026"
 lastmod: '2024-03-13T22:44:46.875545-06:00'
 model: gpt-4-0125-preview
-summary: "A gera\xE7\xE3o de n\xFAmeros aleat\xF3rios na programa\xE7\xE3o envolve\
-  \ criar sequ\xEAncias de n\xFAmeros que n\xE3o possuem uma ordem ou padr\xE3o previs\xED\
-  veis."
+summary: "Para gerar n\xFAmeros aleat\xF3rios em C++, voc\xEA normalmente faria uso\
+  \ do cabe\xE7alho `<random>`, que foi introduzido no C++11, oferecendo uma ampla\
+  \ gama de facilidades para gerar n\xFAmeros aleat\xF3rios de v\xE1rias distribui\xE7\
+  \xF5es."
 title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
 weight: 12
 ---

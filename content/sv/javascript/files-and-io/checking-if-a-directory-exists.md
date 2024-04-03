@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:46.768749-07:00
-description: "Att kontrollera om en katalog finns i JavaScript \xE4r avg\xF6rande\
-  \ f\xF6r filhanteringsuppgifter, vilket m\xF6jligg\xF6r f\xF6r skript att verifiera\
-  \ katalogens n\xE4rvaro\u2026"
+description: "Hur: I Node.js, eftersom JavaScript i sig inte har direkt tillg\xE5\
+  ng till filsystemet, anv\xE4nds vanligtvis `fs`-modulen f\xF6r s\xE5dana operationer.\
+  \ H\xE4r \xE4r ett\u2026"
 lastmod: '2024-03-13T22:44:38.307744-06:00'
 model: gpt-4-0125-preview
-summary: "Att kontrollera om en katalog finns i JavaScript \xE4r avg\xF6rande f\xF6\
-  r filhanteringsuppgifter, vilket m\xF6jligg\xF6r f\xF6r skript att verifiera katalogens\
-  \ n\xE4rvaro innan de l\xE4ser fr\xE5n eller skriver till den."
+summary: "I Node.js, eftersom JavaScript i sig inte har direkt tillg\xE5ng till filsystemet,\
+  \ anv\xE4nds vanligtvis `fs`-modulen f\xF6r s\xE5dana operationer."
 title: Kontrollera om en katalog existerar
 weight: 20
 ---

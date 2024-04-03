@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 04:15:42.127682-07:00
-description: "Interaktywne pow\u0142oki, czyli REPL-y (Read-Eval-Print Loops - P\u0119\
-  tle Czytaj-Wykonaj-Wypisz), pozwalaj\u0105 na bie\u017C\u0105co uruchamia\u0107\
-  \ kod, testowa\u0107 funkcje, algorytmy\u2026"
+description: "Jak to zrobi\u0107: Node.js jest dostarczany z REPL dost\u0119pnym poprzez\
+  \ terminal. Otw\xF3rz go, a b\u0119dziesz gotowy do dzia\u0142ania. Oto ma\u0142\
+  a pr\xF3bka."
 lastmod: '2024-03-13T22:44:35.798136-06:00'
 model: gpt-4-0125-preview
-summary: "Interaktywne pow\u0142oki, czyli REPL-y (Read-Eval-Print Loops - P\u0119\
-  tle Czytaj-Wykonaj-Wypisz), pozwalaj\u0105 na bie\u017C\u0105co uruchamia\u0107\
-  \ kod, testowa\u0107 funkcje, algorytmy lub bawi\u0107 si\u0119 pomys\u0142ami."
+summary: "Node.js jest dostarczany z REPL dost\u0119pnym poprzez terminal."
 title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---

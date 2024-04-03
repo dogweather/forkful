@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:54.453417-07:00
-description: "Les expressions r\xE9guli\xE8res (regex) offrent un moyen de rechercher,\
-  \ de correspondre et de manipuler des cha\xEEnes de caract\xE8res \xE0 l'aide de\
-  \ motifs d\xE9finis.\u2026"
+description: "Comment faire : Pour utiliser les expressions r\xE9guli\xE8res en C,\
+  \ vous travaillerez principalement avec la biblioth\xE8que regex POSIX (`<regex.h>`).\
+  \ Cet\u2026"
 lastmod: '2024-03-13T22:44:58.360330-06:00'
 model: gpt-4-0125-preview
-summary: "Les expressions r\xE9guli\xE8res (regex) offrent un moyen de rechercher,\
-  \ de correspondre et de manipuler des cha\xEEnes de caract\xE8res \xE0 l'aide de\
-  \ motifs d\xE9finis."
+summary: "Pour utiliser les expressions r\xE9guli\xE8res en C, vous travaillerez principalement\
+  \ avec la biblioth\xE8que regex POSIX (`<regex.h>`)."
 title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---

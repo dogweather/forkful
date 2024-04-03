@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:01.463376-07:00
-description: "Een interactieve shell, of Read-Eval-Print Loop (REPL), is een eenvoudige,\
-  \ interactieve programmeeromgeving die individuele gebruikersinvoer (expressies)\u2026"
+description: "Hoe te: Google Apps Script, een op de cloud gebaseerde scripttaal voor\
+  \ het automatiseren van taken over Google-producten, heeft geen ingebouwde REPL-tool\u2026"
 lastmod: '2024-03-13T22:44:50.333351-06:00'
 model: gpt-4-0125-preview
-summary: Een interactieve shell, of Read-Eval-Print Loop (REPL), is een eenvoudige,
-  interactieve programmeeromgeving die individuele gebruikersinvoer (expressies) neemt,
-  deze evalueert en het resultaat aan de gebruiker teruggeeft.
+summary: Google Apps Script, een op de cloud gebaseerde scripttaal voor het automatiseren
+  van taken over Google-producten, heeft geen ingebouwde REPL-tool vergelijkbaar met
+  die in talen zoals Python of JavaScript's Node.js.
 title: Gebruik van een interactieve shell (REPL)
 weight: 34
 ---

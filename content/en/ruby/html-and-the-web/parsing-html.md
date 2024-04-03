@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 15:33:38.456428-07:00
-description: "Parsing HTML means tearing apart a chuck of HTML code to grasp its structure\
-  \ and content. Programmers do it to extract data, manipulate content, or\u2026"
+description: "How to: To parse HTML in Ruby, install the 'Nokogiri' gem with `gem\
+  \ install nokogiri`. Nokogiri is like a Swiss Army knife for working with HTML and\
+  \ XML\u2026"
 lastmod: '2024-03-13T22:45:00.548790-06:00'
 model: unknown
-summary: Parsing HTML means tearing apart a chuck of HTML code to grasp its structure
-  and content.
+summary: To parse HTML in Ruby, install the 'Nokogiri' gem with `gem install nokogiri`.
 title: Parsing HTML
 weight: 43
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:52:12.496761-07:00
-description: "Mik\xE4 & Miksi? Debug-tulostus auttaa ohjelmoijia n\xE4kem\xE4\xE4\
-  n, mit\xE4 ohjelmassa tapahtuu. Se on v\xE4ltt\xE4m\xE4t\xF6n, koska se valottaa\
-  \ ohjelman suorituksen tilaa ja\u2026"
+description: "How to: Miten: Elmiss\xE4 debug-tulostuksen saa esiin `Debug.log`-funktiolla.\
+  \ Se tulostaa arvon ja palauttaa sen sellaisenaan, joten voit sijoittaa sen miss\xE4\
+  \u2026"
 lastmod: '2024-03-13T22:44:56.491188-06:00'
 model: gpt-4-1106-preview
-summary: "Mik\xE4 & Miksi."
+summary: Miten.
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---

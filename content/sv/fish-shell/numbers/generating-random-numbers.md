@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 20:34:00.048583-07:00
-description: "Att generera slumpm\xE4ssiga tal \xE4r en grundl\xE4ggande uppgift i\
-  \ programmering, anv\xE4nd f\xF6r allt fr\xE5n dataurval till spelutveckling. I\
-  \ Fish Shell m\xF6jligg\xF6r\u2026"
+description: "Hur man g\xF6r: Att generera ett slumpm\xE4ssigt tal i Fish kan vara\
+  \ enkelt, med hj\xE4lp av kombinationen av systemverktyg och skal-funktioner. Nedan\
+  \ f\xF6ljer n\xE5gra\u2026"
 lastmod: '2024-03-13T22:44:38.331603-06:00'
 model: gpt-4-0125-preview
-summary: "Att generera slumpm\xE4ssiga tal \xE4r en grundl\xE4ggande uppgift i programmering,\
-  \ anv\xE4nd f\xF6r allt fr\xE5n dataurval till spelutveckling."
+summary: "Att generera ett slumpm\xE4ssigt tal i Fish kan vara enkelt, med hj\xE4\
+  lp av kombinationen av systemverktyg och skal-funktioner."
 title: Generera slumptal
 weight: 12
 ---

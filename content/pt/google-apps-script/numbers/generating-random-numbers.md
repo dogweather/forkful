@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:04.144975-07:00
-description: "Gerar n\xFAmeros aleat\xF3rios \xE9 uma tarefa fundamental na programa\xE7\
-  \xE3o que \xE9 usada para uma mir\xEDade de aplica\xE7\xF5es, como simula\xE7\xF5\
-  es, jogos e sistemas de\u2026"
+description: "Como fazer: No Google Apps Script, voc\xEA pode gerar n\xFAmeros aleat\xF3\
+  rios usando a fun\xE7\xE3o `Math.random()`, semelhante ao JavaScript. Esta fun\xE7\
+  \xE3o retorna um\u2026"
 lastmod: '2024-03-13T22:44:46.102667-06:00'
 model: gpt-4-0125-preview
-summary: "Gerar n\xFAmeros aleat\xF3rios \xE9 uma tarefa fundamental na programa\xE7\
-  \xE3o que \xE9 usada para uma mir\xEDade de aplica\xE7\xF5es, como simula\xE7\xF5\
-  es, jogos e sistemas de seguran\xE7a."
+summary: "No Google Apps Script, voc\xEA pode gerar n\xFAmeros aleat\xF3rios usando\
+  \ a fun\xE7\xE3o `Math.random()`, semelhante ao JavaScript."
 title: "Gerando n\xFAmeros aleat\xF3rios"
 weight: 12
 ---

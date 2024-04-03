@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:51.672818-07:00
-description: "Ottenere la data corrente in Java \xE8 un'operazione fondamentale che\
-  \ consente ai programmatori di manipolare gli oggetti data per operazioni quali\
-  \ il\u2026"
+description: "Come fare: Java offre diversi modi per ottenere la data corrente, utilizzando\
+  \ sia la vecchia classe `java.util.Date` che il pi\xF9 recente pacchetto\u2026"
 lastmod: '2024-03-13T22:44:43.319269-06:00'
 model: gpt-4-0125-preview
-summary: "Ottenere la data corrente in Java \xE8 un'operazione fondamentale che consente\
-  \ ai programmatori di manipolare gli oggetti data per operazioni quali il logging,\
-  \ il calcolo delle date e le condizioni basate sul tempo."
+summary: "Java offre diversi modi per ottenere la data corrente, utilizzando sia la\
+  \ vecchia classe `java.util.Date` che il pi\xF9 recente pacchetto `java.time` (introdotto\
+  \ in Java 8), che \xE8 pi\xF9 versatile e intuitivo."
 title: Ottenere la data corrente
 weight: 29
 ---

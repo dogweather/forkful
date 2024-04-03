@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:52.858591-07:00
-description: "La concatenazione di stringhe in C consiste nell'unire due o pi\xF9\
-  \ stringhe da capo a coda per formare una nuova stringa. I programmatori eseguono\
-  \ questa\u2026"
+description: "Come fare: In C, le stringhe sono array di caratteri che terminano con\
+  \ un carattere nullo (`\\0`). A differenza dei linguaggi di livello superiore, C\
+  \ non\u2026"
 lastmod: '2024-03-13T22:44:43.903847-06:00'
 model: gpt-4-0125-preview
-summary: "La concatenazione di stringhe in C consiste nell'unire due o pi\xF9 stringhe\
-  \ da capo a coda per formare una nuova stringa."
+summary: In C, le stringhe sono array di caratteri che terminano con un carattere
+  nullo (`\0`).
 title: Concatenazione di stringhe
 weight: 3
 ---

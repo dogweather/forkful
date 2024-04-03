@@ -2,14 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:21.294276-07:00
-description: "Ghi ch\xE9p trong l\u1EADp tr\xECnh nh\u01B0 l\xE0 vi\u1EC7c gi\u1EEF\
-  \ m\u1ED9t nh\u1EADt k\xFD cho \u1EE9ng d\u1EE5ng c\u1EE7a b\u1EA1n. \u0110\xF3\
-  \ l\xE0 s\u1EF1 ghi ch\xE9p c\xF3 h\u1EC7 th\u1ED1ng c\xE1c s\u1EF1 ki\u1EC7n, th\xF4\
-  ng \u0111i\u1EC7p v\xE0 \u0111i\u1EC3m d\u1EEF li\u1EC7u m\xE0 cho\u2026"
+description: "C\xE1ch th\u1EE9c: Ruby \u0111i k\xE8m v\u1EDBi m\u1ED9t m\xF4-\u0111\
+  un \u0111\u01B0\u1EE3c t\xEDch h\u1EE3p s\u1EB5n cho vi\u1EC7c ghi ch\xE9p, `Logger`,\
+  \ r\u1EA5t d\u1EC5 s\u1EED d\u1EE5ng. D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t\
+  \ v\xED d\u1EE5 nhanh \u0111\u1EC3 b\u1EA1n b\u1EAFt \u0111\u1EA7u."
 lastmod: '2024-03-13T22:44:37.349731-06:00'
 model: gpt-4-0125-preview
-summary: "Ghi ch\xE9p trong l\u1EADp tr\xECnh nh\u01B0 l\xE0 vi\u1EC7c gi\u1EEF m\u1ED9\
-  t nh\u1EADt k\xFD cho \u1EE9ng d\u1EE5ng c\u1EE7a b\u1EA1n."
+summary: "Ruby \u0111i k\xE8m v\u1EDBi m\u1ED9t m\xF4-\u0111un \u0111\u01B0\u1EE3\
+  c t\xEDch h\u1EE3p s\u1EB5n cho vi\u1EC7c ghi ch\xE9p, `Logger`, r\u1EA5t d\u1EC5\
+  \ s\u1EED d\u1EE5ng."
 title: Ghi log
 weight: 17
 ---

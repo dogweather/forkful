@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:33:30.887383-07:00
-description: "Datenvergleiche checken, ob ein Datum vor, gleich oder nach einem anderen\
-  \ liegt. Das ist wichtig f\xFCr Reservierungen, Fristen, Logs oder\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:54.278551-06:00'
 model: gpt-4-1106-preview
-summary: Datenvergleiche checken, ob ein Datum vor, gleich oder nach einem anderen
-  liegt.
+summary: .
 title: Vergleich von zwei Daten
 weight: 27
 ---

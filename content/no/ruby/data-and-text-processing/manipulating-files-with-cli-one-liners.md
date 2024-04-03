@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 16:21:16.588308-07:00
-description: "\xC5 manipulere filer med CLI en-linjers i Ruby handler om \xE5 utf\xF8\
-  re vanlige filoperasjoner direkte fra terminalen ved \xE5 bruke Ruby-skript. Det\
-  \ er en\u2026"
+description: "Hvordan: Ruby, med sin uttrykksfulle syntaks, tillater konsise og lesbare\
+  \ en-linjers som kan h\xE5ndtere en rekke filoperasjoner. Her er noen eksempler\
+  \ du\u2026"
 lastmod: '2024-03-13T22:44:41.312695-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 manipulere filer med CLI en-linjers i Ruby handler om \xE5 utf\xF8\
-  re vanlige filoperasjoner direkte fra terminalen ved \xE5 bruke Ruby-skript."
+summary: "Ruby, med sin uttrykksfulle syntaks, tillater konsise og lesbare en-linjers\
+  \ som kan h\xE5ndtere en rekke filoperasjoner."
 title: Manipulering av filer med CLI-enkeltkommandoer
 weight: 31
 ---

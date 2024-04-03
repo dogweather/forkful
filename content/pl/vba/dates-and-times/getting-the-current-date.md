@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:47.655538-07:00
-description: "W Visual Basic for Applications (VBA), pobieranie bie\u017C\u0105cej\
-  \ daty to powszechne zadanie, kt\xF3re umo\u017Cliwia programistom dynamiczn\u0105\
-  \ prac\u0119 z datami w ich\u2026"
+description: "Jak to zrobi\u0107: Pobieranie bie\u017C\u0105cej daty w VBA jest proste,\
+  \ za pomoc\u0105 funkcji `Date`, podczas gdy funkcja `Now` dostarcza zar\xF3wno\
+  \ bie\u017C\u0105c\u0105 dat\u0119, jak i czas.\u2026"
 lastmod: '2024-03-13T22:44:35.243449-06:00'
 model: gpt-4-0125-preview
-summary: "W Visual Basic for Applications (VBA), pobieranie bie\u017C\u0105cej daty\
-  \ to powszechne zadanie, kt\xF3re umo\u017Cliwia programistom dynamiczn\u0105 prac\u0119\
-  \ z datami w ich makrach lub aplikacjach."
+summary: "Pobieranie bie\u017C\u0105cej daty w VBA jest proste, za pomoc\u0105 funkcji\
+  \ `Date`, podczas gdy funkcja `Now` dostarcza zar\xF3wno bie\u017C\u0105c\u0105\
+  \ dat\u0119, jak i czas."
 title: Pobieranie aktualnej daty
 weight: 29
 ---

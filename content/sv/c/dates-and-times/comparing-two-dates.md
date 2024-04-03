@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:43.394723-07:00
-description: "Att j\xE4mf\xF6ra tv\xE5 datum i C inneb\xE4r att fastst\xE4lla den\
-  \ kronologiska relationen mellan dem \u2013 om ett datum f\xF6reg\xE5r det andra\
-  \ eller om de \xE4r samma. Denna\u2026"
+description: "Hur: C saknar en inbyggd typ f\xF6r datum, vilket n\xF6dv\xE4ndigg\xF6\
+  r anv\xE4ndningen av `time.h`-biblioteket f\xF6r att arbeta med datum- och tidsstrukturer.\
+  \ Strukturen\u2026"
 lastmod: '2024-03-13T22:44:38.396301-06:00'
 model: gpt-4-0125-preview
-summary: "Att j\xE4mf\xF6ra tv\xE5 datum i C inneb\xE4r att fastst\xE4lla den kronologiska\
-  \ relationen mellan dem \u2013 om ett datum f\xF6reg\xE5r det andra eller om de\
-  \ \xE4r samma."
+summary: "C saknar en inbyggd typ f\xF6r datum, vilket n\xF6dv\xE4ndigg\xF6r anv\xE4\
+  ndningen av `time.h`-biblioteket f\xF6r att arbeta med datum- och tidsstrukturer."
 title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---

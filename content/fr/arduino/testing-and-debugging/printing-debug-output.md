@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:51:50.012697-07:00
-description: "Imprimer un d\xE9bogage, c'est \xE9crire dans la console pour suivre\
-  \ ce que fait votre programme. On le fait pour rep\xE9rer les bugs et comprendre\
-  \ le flux\u2026"
+description: 'How to: Imprimons "Hello, world!" et un nombre en boucle avec Arduino.'
 lastmod: '2024-03-13T22:44:58.113001-06:00'
 model: gpt-4-1106-preview
-summary: "Imprimer un d\xE9bogage, c'est \xE9crire dans la console pour suivre ce\
-  \ que fait votre programme."
+summary: Imprimons "Hello, world!" et un nombre en boucle avec Arduino.
 title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---

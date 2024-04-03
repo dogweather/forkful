@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:28.123294-07:00
-description: "Obtenir la date actuelle en programmation est une t\xE2che fondamentale\
-  \ qui permet de r\xE9cup\xE9rer et de manipuler les donn\xE9es de date et d'heure\
-  \ du syst\xE8me.\u2026"
+description: "Comment faire : Fish Shell utilise des commandes externes comme `date`\
+  \ pour obtenir la date actuelle, offrant la flexibilit\xE9 de formater la sortie\
+  \ selon\u2026"
 lastmod: '2024-03-13T22:44:58.336104-06:00'
 model: gpt-4-0125-preview
-summary: "Obtenir la date actuelle en programmation est une t\xE2che fondamentale\
-  \ qui permet de r\xE9cup\xE9rer et de manipuler les donn\xE9es de date et d'heure\
-  \ du syst\xE8me."
+summary: "Fish Shell utilise des commandes externes comme `date` pour obtenir la date\
+  \ actuelle, offrant la flexibilit\xE9 de formater la sortie selon les besoins."
 title: Obtenir la date actuelle
 weight: 29
 ---

@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:05.374130-07:00
-description: "Tekst zoeken en vervangen stelt je in staat om specifieke reeksen te\
-  \ vinden en ze te ruilen voor iets anders. Programmeurs gebruiken dit voor alles,\
-  \ van\u2026"
+description: 'Hoe: In Elm kun je de `String`-module gebruiken om delen van een string
+  te vervangen. Laten we het in actie zien.'
 lastmod: '2024-03-13T22:44:50.709641-06:00'
 model: gpt-4-0125-preview
-summary: Tekst zoeken en vervangen stelt je in staat om specifieke reeksen te vinden
-  en ze te ruilen voor iets anders.
+summary: In Elm kun je de `String`-module gebruiken om delen van een string te vervangen.
 title: Tekst zoeken en vervangen
 weight: 10
 ---

@@ -1,8 +1,7 @@
 ---
 date: 2024-01-25 20:49:59.490338-07:00
-description: "Lua doesn't come with a built-in debugger, but you can use external\
-  \ ones, like ZeroBrane Studio. Here's a taste of how you'd work with it: ```Lua\
-  \ -- This\u2026"
+description: 'How to: Lua doesn''t come with a built-in debugger, but you can use
+  external ones, like ZeroBrane Studio. Here''s a taste of how you''d work with it.'
 lastmod: '2024-03-13T22:45:00.209801-06:00'
 model: gpt-4-1106-preview
 summary: Lua doesn't come with a built-in debugger, but you can use external ones,

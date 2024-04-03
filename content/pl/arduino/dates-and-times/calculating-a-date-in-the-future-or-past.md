@@ -1,8 +1,8 @@
 ---
 date: 2024-01-20 17:28:41.164098-07:00
-description: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci to\
-  \ ustalenie dnia, miesi\u0105ca i roku przed lub po danym dniu. Programi\u015Bci\
-  \ robi\u0105 to, by zarz\u0105dza\u0107 czasem w\u2026"
+description: "Czym i dlaczego? Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142\
+  o\u015Bci to ustalenie dnia, miesi\u0105ca i roku przed lub po danym dniu. Programi\u015B\
+  ci robi\u0105 to, by\u2026"
 lastmod: '2024-03-13T22:44:35.684875-06:00'
 model: gpt-4-1106-preview
 summary: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci to ustalenie\

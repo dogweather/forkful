@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:11.303957-07:00
-description: "Att arbeta med CSV-filer (Comma-Separated Values, komma-separerade v\xE4\
-  rden) inneb\xE4r att tolka och generera textdata strukturerad som rader och kolumner,\u2026"
+description: "Hur man g\xF6r: #."
 lastmod: '2024-03-13T22:44:37.547530-06:00'
 model: gpt-4-0125-preview
-summary: "Att arbeta med CSV-filer (Comma-Separated Values, komma-separerade v\xE4\
-  rden) inneb\xE4r att tolka och generera textdata strukturerad som rader och kolumner,\
-  \ likt data i kalkylblad."
+summary: '#.'
 title: Arbeta med CSV
 weight: 37
 ---

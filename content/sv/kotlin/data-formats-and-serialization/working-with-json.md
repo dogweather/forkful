@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:14.746508-07:00
-description: "Att arbeta med JSON (JavaScript Object Notation) i Kotlin inneb\xE4\
-  r att tolka och generera JSON-data. Programmerare g\xF6r detta f\xF6r att enkelt\
-  \ utbyta data\u2026"
+description: "Hur man g\xF6r: Kotlin inkluderar inte inbyggt st\xF6d f\xF6r JSON men\
+  \ utnyttjar de kraftfulla funktionerna hos tredjepartsbibliotek s\xE5som `Gson`\
+  \ av Google och\u2026"
 lastmod: '2024-03-13T22:44:37.892333-06:00'
 model: gpt-4-0125-preview
-summary: "Att arbeta med JSON (JavaScript Object Notation) i Kotlin inneb\xE4r att\
-  \ tolka och generera JSON-data."
+summary: "Kotlin inkluderar inte inbyggt st\xF6d f\xF6r JSON men utnyttjar de kraftfulla\
+  \ funktionerna hos tredjepartsbibliotek s\xE5som `Gson` av Google och `Kotlinx.serialization`\
+  \ av JetBrains."
 title: Arbeta med JSON
 weight: 38
 ---

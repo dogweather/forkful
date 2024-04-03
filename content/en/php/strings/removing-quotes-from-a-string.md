@@ -1,13 +1,9 @@
 ---
 date: 2024-01-25 20:50:15.639523-07:00
-description: "Removing quotes from a string in PHP means stripping out those pesky\
-  \ double (`\"`) or single (`'`) quote characters that can mess with your code logic\
-  \ or\u2026"
+description: 'How to: Here''s a straightforward example using PHP''s built-in functions.'
 lastmod: '2024-03-13T22:45:00.155772-06:00'
 model: gpt-4-1106-preview
-summary: Removing quotes from a string in PHP means stripping out those pesky double
-  (`"`) or single (`'`) quote characters that can mess with your code logic or database
-  queries.
+summary: Here's a straightforward example using PHP's built-in functions.
 title: Removing quotes from a string
 weight: 9
 ---

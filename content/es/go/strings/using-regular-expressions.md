@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:08.047393-07:00
-description: "Las expresiones regulares (regex) en la programaci\xF3n se utilizan\
-  \ para buscar, coincidir y manipular cadenas basadas en patrones espec\xEDficos.\
-  \ Los\u2026"
+description: "C\xF3mo hacerlo: En Go, el paquete `regexp` proporciona funcionalidad\
+  \ regex. Aqu\xED tienes una gu\xEDa paso a paso sobre c\xF3mo usarlo: 1. **Compilar\
+  \ una Expresi\xF3n\u2026"
 lastmod: '2024-03-13T22:44:58.455924-06:00'
 model: gpt-4-0125-preview
-summary: "Las expresiones regulares (regex) en la programaci\xF3n se utilizan para\
-  \ buscar, coincidir y manipular cadenas basadas en patrones espec\xEDficos."
+summary: En Go, el paquete `regexp` proporciona funcionalidad regex.
 title: Usando expresiones regulares
 weight: 11
 ---

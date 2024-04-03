@@ -2,14 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:49.559846-07:00
-description: "Str\xE4nginterpolation \xE4r processen att injicera variabelv\xE4rden\
-  \ direkt i str\xE4ngar, ofta f\xF6r att skapa meningsfulla meddelanden utan omst\xE4\
-  ndiga\u2026"
+description: "Hur man g\xF6r: I Dart \xE4r str\xE4nginterpolation enkel, och utnyttjar\
+  \ `$`-symbolen f\xF6r att interpolera uttryck direkt inom str\xE4ngliteraler."
 lastmod: '2024-03-13T22:44:37.596120-06:00'
 model: gpt-4-0125-preview
-summary: "Str\xE4nginterpolation \xE4r processen att injicera variabelv\xE4rden direkt\
-  \ i str\xE4ngar, ofta f\xF6r att skapa meningsfulla meddelanden utan omst\xE4ndiga\
-  \ konkateneringar."
+summary: "I Dart \xE4r str\xE4nginterpolation enkel, och utnyttjar `$`-symbolen f\xF6\
+  r att interpolera uttryck direkt inom str\xE4ngliteraler."
 title: "Interpolera en str\xE4ng"
 weight: 8
 ---

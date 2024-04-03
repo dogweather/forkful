@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:32:50.757932-07:00
-description: "Comparar dos fechas significa verificar c\xF3mo se relacionan cronol\xF3\
-  gicamente. Los programadores lo hacen para manejar eventos, periodos de tiempo y\u2026"
+description: "C\xF3mo: Aqu\xED tienes ejemplos de c\xF3mo comparar fechas en Clojure\
+  \ con la librer\xEDa `clj-time`, que es un envoltorio para Joda Time en Clojure."
 lastmod: '2024-03-13T22:44:58.670218-06:00'
 model: gpt-4-1106-preview
-summary: "Comparar dos fechas significa verificar c\xF3mo se relacionan cronol\xF3\
-  gicamente."
+summary: "Aqu\xED tienes ejemplos de c\xF3mo comparar fechas en Clojure con la librer\xED\
+  a `clj-time`, que es un envoltorio para Joda Time en Clojure."
 title: "Comparaci\xF3n de dos fechas"
 weight: 27
 ---

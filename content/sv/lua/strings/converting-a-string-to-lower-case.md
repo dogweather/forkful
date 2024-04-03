@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:39:08.966988-07:00
-description: "Att konvertera en str\xE4ng till sm\xE5 bokst\xE4ver inneb\xE4r att\
-  \ omvandla alla tecken i str\xE4ngen till deras motsvarighet i gemener. Programmerare\
-  \ g\xF6r detta f\xF6r att\u2026"
+description: "Hur man g\xF6r: F\xF6r att konvertera en str\xE4ng till sm\xE5 bokst\xE4\
+  ver i Lua, anv\xE4nd den inbyggda funktionen `string.lower()`. H\xE4r \xE4r ett\
+  \ exempel."
 lastmod: '2024-03-13T22:44:38.025445-06:00'
 model: gpt-4-1106-preview
-summary: "Att konvertera en str\xE4ng till sm\xE5 bokst\xE4ver inneb\xE4r att omvandla\
-  \ alla tecken i str\xE4ngen till deras motsvarighet i gemener."
+summary: "F\xF6r att konvertera en str\xE4ng till sm\xE5 bokst\xE4ver i Lua, anv\xE4\
+  nd den inbyggda funktionen `string.lower()`."
 title: "Konvertera en str\xE4ng till gemener"
 weight: 4
 ---

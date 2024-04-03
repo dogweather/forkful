@@ -1,11 +1,11 @@
 ---
 date: 2024-01-27 20:35:01.543051-07:00
-description: "Generare numeri casuali in PowerShell riguarda la creazione di valori\
-  \ numerici imprevedibili entro un intervallo specificato. I programmatori utilizzano\u2026"
+description: "Come fare: PowerShell offre un approccio diretto per generare numeri\
+  \ casuali usando il cmdlet `Get-Random`. Questo cmdlet pu\xF2 produrre numeri casuali\u2026"
 lastmod: '2024-03-13T22:44:43.636960-06:00'
 model: gpt-4-0125-preview
-summary: Generare numeri casuali in PowerShell riguarda la creazione di valori numerici
-  imprevedibili entro un intervallo specificato.
+summary: PowerShell offre un approccio diretto per generare numeri casuali usando
+  il cmdlet `Get-Random`.
 title: Generazione di numeri casuali
 weight: 12
 ---

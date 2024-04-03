@@ -1,12 +1,11 @@
 ---
 date: 2024-02-01 21:30:02.426774-07:00
-description: "Checking if a directory exists in Visual Basic for Applications (VBA)\
-  \ is about verifying the presence of a folder within the file system before performing\u2026"
+description: "How to: In VBA, to check if a directory exists, you typically utilize\
+  \ the `Dir` function combined with the `vbDirectory` attribute. This approach allows\u2026"
 lastmod: '2024-03-13T22:44:59.947429-06:00'
 model: gpt-4-0125-preview
-summary: Checking if a directory exists in Visual Basic for Applications (VBA) is
-  about verifying the presence of a folder within the file system before performing
-  operations like saving files or creating new directories.
+summary: In VBA, to check if a directory exists, you typically utilize the `Dir` function
+  combined with the `vbDirectory` attribute.
 title: Checking if a directory exists
 weight: 20
 ---

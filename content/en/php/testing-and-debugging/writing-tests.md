@@ -1,12 +1,9 @@
 ---
 date: 2024-02-03 19:03:31.505464-07:00
-description: "Writing tests in programming involves creating and running scripts that\
-  \ verify the code behaves as expected under various conditions. Programmers do it\
-  \ to\u2026"
+description: 'How to: #.'
 lastmod: '2024-03-13T22:45:00.170139-06:00'
 model: gpt-4-0125-preview
-summary: Writing tests in programming involves creating and running scripts that verify
-  the code behaves as expected under various conditions.
+summary: '#.'
 title: Writing tests
 weight: 36
 ---

@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:54:56.986985-07:00
-description: "Tiedostosta tekstin lukeminen tarkoittaa tiedon ottamista tavallisesta\
-  \ tekstimuodossa olevalta tiedostoltasi. Ohjelmoijat lukevat tiedostoja, koska se\
-  \ on\u2026"
+description: "How to: (Kuinka tehd\xE4:) ."
 lastmod: '2024-03-13T22:44:56.967219-06:00'
 model: gpt-4-1106-preview
-summary: Tiedostosta tekstin lukeminen tarkoittaa tiedon ottamista tavallisesta tekstimuodossa
-  olevalta tiedostoltasi.
+summary: .
 title: Tekstitiedoston lukeminen
 weight: 22
 ---

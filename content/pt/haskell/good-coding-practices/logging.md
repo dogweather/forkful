@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 01:04:33.123292-07:00
-description: "Log em programa\xE7\xE3o \xE9 basicamente deixar um rastro de migalhas\
-  \ na forma de eventos ou mensagens gravadas, que podem ser usadas para acompanhar\
-  \ o que sua\u2026"
+description: "Como fazer: Em Haskell, log pode ser implementado usando bibliotecas\
+  \ como `monad-logger` ou `hslogger`. Aqui est\xE1 um exemplo r\xE1pido usando `monad-logger`."
 lastmod: '2024-03-13T22:44:46.631572-06:00'
 model: gpt-4-1106-preview
-summary: "Log em programa\xE7\xE3o \xE9 basicamente deixar um rastro de migalhas na\
-  \ forma de eventos ou mensagens gravadas, que podem ser usadas para acompanhar o\
-  \ que sua aplica\xE7\xE3o est\xE1 fazendo em qualquer momento."
+summary: Em Haskell, log pode ser implementado usando bibliotecas como `monad-logger`
+  ou `hslogger`.
 title: Registro de Logs
 weight: 17
 ---

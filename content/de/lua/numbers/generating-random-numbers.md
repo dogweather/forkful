@@ -1,13 +1,12 @@
 ---
 date: 2024-01-27 20:34:21.654921-07:00
-description: "Die Generierung von Zufallszahlen in der Programmierung geht darum,\
-  \ unvorhersehbare numerische Werte zu erzeugen, die f\xFCr eine Vielzahl von Zwecken\
-  \ wie\u2026"
+description: "Wie geht das: Lua bietet eingebaute Unterst\xFCtzung f\xFCr die Generierung\
+  \ von Zufallszahlen \xFCber die Funktion `math.random`. Diese Funktion kann auf\
+  \ mehrere\u2026"
 lastmod: '2024-03-13T22:44:54.011123-06:00'
 model: gpt-4-0125-preview
-summary: "Die Generierung von Zufallszahlen in der Programmierung geht darum, unvorhersehbare\
-  \ numerische Werte zu erzeugen, die f\xFCr eine Vielzahl von Zwecken wie Simulationen,\
-  \ Spiele oder Sicherheitsanwendungen verwendet werden k\xF6nnen."
+summary: "Lua bietet eingebaute Unterst\xFCtzung f\xFCr die Generierung von Zufallszahlen\
+  \ \xFCber die Funktion `math.random`."
 title: Generierung von Zufallszahlen
 weight: 12
 ---

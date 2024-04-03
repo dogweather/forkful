@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:47:10.692622-07:00
-description: "\xC5 finne lengden p\xE5 en streng betyr \xE5 telle antall karakterer\
-  \ den inneholder. Programmerere gj\xF8r dette for \xE5 validere inndata, begrense\
-  \ lengde, eller for \xE5\u2026"
+description: "Hvordan: Elm h\xE5ndterer strenger gjennom `String`-modulen, og `String.length`\
+  \ gir oss lengden direkte."
 lastmod: '2024-03-13T22:44:40.699530-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 finne lengden p\xE5 en streng betyr \xE5 telle antall karakterer den\
-  \ inneholder."
+summary: "Elm h\xE5ndterer strenger gjennom `String`-modulen, og `String.length` gir\
+  \ oss lengden direkte."
 title: "Finn lengden p\xE5 en streng"
 weight: 7
 ---

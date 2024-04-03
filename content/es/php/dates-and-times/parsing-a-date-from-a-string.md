@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:58.865798-07:00
-description: "Analizar una fecha de una cadena en PHP implica convertir texto que\
-  \ representa una fecha y/o hora en un objeto `DateTime` de PHP u otros formatos\
-  \ de\u2026"
+description: "C\xF3mo hacerlo: La clase incorporada `DateTime` de PHP proporciona\
+  \ un potente conjunto de funciones para analizar y trabajar con fechas. Puedes crear\
+  \ una\u2026"
 lastmod: '2024-03-13T22:44:59.170108-06:00'
 model: gpt-4-0125-preview
-summary: Analizar una fecha de una cadena en PHP implica convertir texto que representa
-  una fecha y/o hora en un objeto `DateTime` de PHP u otros formatos de fecha/hora.
+summary: La clase incorporada `DateTime` de PHP proporciona un potente conjunto de
+  funciones para analizar y trabajar con fechas.
 title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---

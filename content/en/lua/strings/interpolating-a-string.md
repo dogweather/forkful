@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 17:51:14.356597-07:00
-description: String interpolation lets you insert variables directly into strings.
-  It's done to dynamically build strings and keep code clean.
+description: 'How to: In Lua, use `..` for concatenation or `string.format` for interpolation.
+  Example.'
 lastmod: '2024-03-13T22:45:00.192772-06:00'
 model: gpt-4-1106-preview
-summary: String interpolation lets you insert variables directly into strings.
+summary: In Lua, use `..` for concatenation or `string.format` for interpolation.
 title: Interpolating a string
 weight: 8
 ---

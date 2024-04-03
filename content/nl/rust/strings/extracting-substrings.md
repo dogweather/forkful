@@ -2,14 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:12.574190-07:00
-description: "Substrings extraheren betekent een kleiner stuk uit een grotere string\
-  \ halen\u2014een beetje zoals het snijden van een cake om het stuk te krijgen dat\
-  \ je echt\u2026"
+description: "Hoe te: Laten we onze handen vies maken met Rust. Stel je voor dat je\
+  \ een string hebt en je wilt een specifiek deel ervan. Je kunt slicing gebruiken\u2026"
 lastmod: '2024-03-13T22:44:50.583070-06:00'
 model: gpt-4-0125-preview
-summary: "Substrings extraheren betekent een kleiner stuk uit een grotere string halen\u2014\
-  een beetje zoals het snijden van een cake om het stuk te krijgen dat je echt wilt\
-  \ eten."
+summary: Laten we onze handen vies maken met Rust.
 title: Substrings extraheren
 weight: 6
 ---

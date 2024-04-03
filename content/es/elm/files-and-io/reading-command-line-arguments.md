@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 17:56:21.227350-07:00
-description: "Leer argumentos de l\xEDnea de comandos significa obtener datos directamente\
-  \ cuando ejecutas un programa. Los programadores hacen esto para personalizar la\u2026"
+description: "C\xF3mo: Elm est\xE1 dise\xF1ado para aplicaciones web, por lo tanto,\
+  \ no lee directamente los argumentos de la l\xEDnea de comandos como lo hacen otros\
+  \ lenguajes.\u2026"
 lastmod: '2024-03-13T22:44:59.009007-06:00'
 model: gpt-4-1106-preview
-summary: "Leer argumentos de l\xEDnea de comandos significa obtener datos directamente\
-  \ cuando ejecutas un programa."
+summary: "Elm est\xE1 dise\xF1ado para aplicaciones web, por lo tanto, no lee directamente\
+  \ los argumentos de la l\xEDnea de comandos como lo hacen otros lenguajes."
 title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---

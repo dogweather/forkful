@@ -1,11 +1,10 @@
 ---
 date: 2024-01-25 02:12:42.772193-07:00
-description: "Refactoring is the process of restructuring existing computer code without\
-  \ changing its external behavior. Programmers refactor to improve nonfunctional\u2026"
+description: 'How to: Let''s take a classic PHP snippet and apply some refactoring
+  magic to it. Before refactoring, our code might look like this.'
 lastmod: '2024-03-13T22:45:00.174690-06:00'
 model: gpt-4-1106-preview
-summary: Refactoring is the process of restructuring existing computer code without
-  changing its external behavior.
+summary: Let's take a classic PHP snippet and apply some refactoring magic to it.
 title: Refactoring
 weight: 19
 ---

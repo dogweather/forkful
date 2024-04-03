@@ -2,12 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:26.585422-07:00
-description: "Refactoring is het proces van het herstructureren van bestaande computercod\u2014\
-  het wijzigen van de factoring\u2014zonder het externe gedrag te veranderen.\u2026"
+description: "Hoe: Stel je hebt een stukje code dat de oppervlakte en de omtrek van\
+  \ een rechthoek berekent en afdrukt, gegeven de lengte en breedte. Het doet zijn\
+  \ werk,\u2026"
 lastmod: '2024-03-13T22:44:50.385074-06:00'
 model: gpt-4-0125-preview
-summary: "Refactoring is het proces van het herstructureren van bestaande computercod\u2014\
-  het wijzigen van de factoring\u2014zonder het externe gedrag te veranderen."
+summary: Stel je hebt een stukje code dat de oppervlakte en de omtrek van een rechthoek
+  berekent en afdrukt, gegeven de lengte en breedte.
 title: Refactoring
 weight: 19
 ---

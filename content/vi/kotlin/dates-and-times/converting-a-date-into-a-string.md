@@ -2,16 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:55.517660-07:00
-description: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh m\u1ED9t chu\u1ED7\
-  i c\xF3 ngh\u0129a l\xE0 bi\u1EC3u di\u1EC5n m\u1ED9t kho\u1EA3nh kh\u1EAFc c\u1EE5\
-  \ th\u1EC3 trong \u0111\u1ECBnh d\u1EA1ng d\u1EC5 \u0111\u1ECDc cho con ng\u01B0\
-  \u1EDDi. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Kotlin, b\u1EA1n c\xF3 th\u1EC3 chuy\u1EC3\
+  n \u0111\u1ED5i m\u1ED9t `Date` th\xE0nh `String` s\u1EED d\u1EE5ng l\u1EDBp `SimpleDateFormat`.\
+  \ H\xE3y c\xF9ng vi\u1EBFt m\u1ED9t \xEDt m\xE3."
 lastmod: '2024-03-13T22:44:36.616723-06:00'
 model: gpt-4-0125-preview
-summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh m\u1ED9t chu\u1ED7i\
-  \ c\xF3 ngh\u0129a l\xE0 bi\u1EC3u di\u1EC5n m\u1ED9t kho\u1EA3nh kh\u1EAFc c\u1EE5\
-  \ th\u1EC3 trong \u0111\u1ECBnh d\u1EA1ng d\u1EC5 \u0111\u1ECDc cho con ng\u01B0\
-  \u1EDDi."
+summary: "Trong Kotlin, b\u1EA1n c\xF3 th\u1EC3 chuy\u1EC3n \u0111\u1ED5i m\u1ED9\
+  t `Date` th\xE0nh `String` s\u1EED d\u1EE5ng l\u1EDBp `SimpleDateFormat`."
 title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 weight: 28
 ---

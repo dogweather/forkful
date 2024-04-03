@@ -1,13 +1,9 @@
 ---
 date: 2024-01-26 03:38:13.864532-07:00
-description: "Remover aspas de uma string em C# significa que voc\xEA est\xE1 eliminando\
-  \ aqueles inc\xF4modos caracteres de aspas duplas (`\"`) ou simples (`'`) que envolvem\
-  \ seu\u2026"
+description: 'Como Fazer: .'
 lastmod: '2024-03-13T22:44:46.572388-06:00'
 model: gpt-4-0125-preview
-summary: "Remover aspas de uma string em C# significa que voc\xEA est\xE1 eliminando\
-  \ aqueles inc\xF4modos caracteres de aspas duplas (`\"`) ou simples (`'`) que envolvem\
-  \ seu texto."
+summary: .
 title: Removendo aspas de uma string
 weight: 9
 ---

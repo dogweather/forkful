@@ -1,11 +1,12 @@
 ---
 date: 2024-02-03 19:02:40.407752-07:00
-description: "Parsing a date from a string in Haskell involves converting textual\
-  \ representations of dates into a structured format that the program can manipulate.\u2026"
+description: "How to: Out of the box, Haskell offers basic tools for parsing dates,\
+  \ but leveraging libraries like `time` for core functionality and `date-parse` or\u2026"
 lastmod: '2024-03-13T22:45:00.137102-06:00'
 model: gpt-4-0125-preview
-summary: Parsing a date from a string in Haskell involves converting textual representations
-  of dates into a structured format that the program can manipulate.
+summary: Out of the box, Haskell offers basic tools for parsing dates, but leveraging
+  libraries like `time` for core functionality and `date-parse` or `time-parse` for
+  more flexible parsing can significantly simplify the task.
 title: Parsing a date from a string
 weight: 30
 ---

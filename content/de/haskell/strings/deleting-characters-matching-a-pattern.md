@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:42:33.531069-07:00
-description: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, bedeutet,\
-  \ bestimmte Zeichen aus einem String zu entfernen, die einem vorgegebenen Kriterium\u2026"
+description: "Anleitung: Um Zeichen zu l\xF6schen, die einem Muster in Haskell entsprechen,\
+  \ k\xF6nnen wir die `filter`-Funktion zusammen mit einer passenden Bedingung\u2026"
 lastmod: '2024-03-13T22:44:53.915441-06:00'
 model: gpt-4-1106-preview
-summary: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, bedeutet, bestimmte\
-  \ Zeichen aus einem String zu entfernen, die einem vorgegebenen Kriterium entsprechen."
+summary: "Um Zeichen zu l\xF6schen, die einem Muster in Haskell entsprechen, k\xF6\
+  nnen wir die `filter`-Funktion zusammen mit einer passenden Bedingung verwenden."
 title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
 weight: 5
 ---

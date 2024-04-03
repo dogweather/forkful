@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:46.167999-07:00
-description: "Getallen afronden betekent ze aanpassen naar het dichtstbijzijnde hele\
-  \ getal of een fractie met een bepaalde precisie. Programmeurs ronden getallen af\
-  \ om\u2026"
+description: 'Hoe: Rust maakt afronden een fluitje van een cent. Bekijk deze methoden
+  voor `f32` of `f64` types.'
 lastmod: '2024-03-13T22:44:50.589005-06:00'
 model: gpt-4-0125-preview
-summary: Getallen afronden betekent ze aanpassen naar het dichtstbijzijnde hele getal
-  of een fractie met een bepaalde precisie.
+summary: Rust maakt afronden een fluitje van een cent.
 title: Afronden van getallen
 weight: 13
 ---

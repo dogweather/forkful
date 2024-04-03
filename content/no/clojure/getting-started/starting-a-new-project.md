@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 18:03:04.201791-07:00
-description: "Noen ganger trenger vi bare et blankt lerret. \xC5 starte et nytt prosjekt\
-  \ i Clojure gir oss den freshe starten \u2013 for \xE5 utforske, eksperimentere,\
-  \ eller bygge\u2026"
+description: "How to: For \xE5 kickstarte et nytt Clojure-prosjekt, f\xE5r leiningen\
+  \ deg raskt i gang. Her er stegene."
 lastmod: '2024-03-13T22:44:40.403042-06:00'
 model: gpt-4-1106-preview
-summary: Noen ganger trenger vi bare et blankt lerret.
+summary: "For \xE5 kickstarte et nytt Clojure-prosjekt, f\xE5r leiningen deg raskt\
+  \ i gang."
 title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---

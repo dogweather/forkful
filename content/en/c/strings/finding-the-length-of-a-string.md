@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 17:49:55.005016-07:00
-description: "Finding the length of a string in C involves determining the number\
-  \ of characters before the null terminator `\\0`. Programmers do this to manipulate\u2026"
+description: 'How to: In C, the standard library function `strlen()` is commonly used
+  to find the length of a string. Here''s a quick example.'
 lastmod: '2024-03-13T22:45:00.503541-06:00'
 model: gpt-4-0125-preview
-summary: Finding the length of a string in C involves determining the number of characters
-  before the null terminator `\0`.
+summary: In C, the standard library function `strlen()` is commonly used to find the
+  length of a string.
 title: Finding the length of a string
 weight: 7
 ---

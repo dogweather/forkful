@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:37:28.955864-07:00
-description: "Convertir una fecha a texto significa transformar datos de tiempo (como\
-  \ `Date` en Kotlin) a una cadena de caracteres (`String`). Lo hacemos para mostrar\u2026"
+description: "C\xF3mo hacerlo: En Kotlin, puedes usar `SimpleDateFormat` para dar\
+  \ formato a un objeto `Date`. Aqu\xED te muestro c\xF3mo."
 lastmod: '2024-03-13T22:44:59.047559-06:00'
 model: gpt-4-1106-preview
-summary: Convertir una fecha a texto significa transformar datos de tiempo (como `Date`
-  en Kotlin) a una cadena de caracteres (`String`).
+summary: En Kotlin, puedes usar `SimpleDateFormat` para dar formato a un objeto `Date`.
 title: Convirtiendo una fecha en una cadena de texto
 weight: 28
 ---

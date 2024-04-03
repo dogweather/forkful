@@ -2,14 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:18.919169-07:00
-description: "Escrever para o erro padr\xE3o (stderr) no Bash \xE9 sobre direcionar\
-  \ mensagens de erro ou qualquer sa\xEDda de diagn\xF3stico importante separadamente\
-  \ da sa\xEDda\u2026"
+description: "Como fazer: No Bash, voc\xEA usa `>&2` para redirecionar a sa\xEDda\
+  \ para stderr. Aqui est\xE1 um exemplo b\xE1sico."
 lastmod: '2024-03-13T22:44:46.769046-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever para o erro padr\xE3o (stderr) no Bash \xE9 sobre direcionar mensagens\
-  \ de erro ou qualquer sa\xEDda de diagn\xF3stico importante separadamente da sa\xED\
-  da padr\xE3o (stdout)."
+summary: "No Bash, voc\xEA usa `>&2` para redirecionar a sa\xEDda para stderr."
 title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---

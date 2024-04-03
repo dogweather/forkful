@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:12.313184-07:00
-description: "JSON, of JavaScript Object Notation, is een lichtgewicht gegevensformaat\
-  \ voor het opslaan en transporteren van gegevens. Programmeurs gebruiken het omdat\u2026"
+description: 'Hoe te: JSON parseren in JavaScript.'
 lastmod: '2024-03-13T22:44:51.224144-06:00'
 model: gpt-4-0125-preview
-summary: JSON, of JavaScript Object Notation, is een lichtgewicht gegevensformaat
-  voor het opslaan en transporteren van gegevens.
+summary: JSON parseren in JavaScript.
 title: Werken met JSON
 weight: 38
 ---

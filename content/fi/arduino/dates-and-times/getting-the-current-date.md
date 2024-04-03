@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:00.393780-07:00
-description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen Arduino-projekteissa tarkoittaa\
-  \ reaaliaikaisen tiedon hankkimista, joka voi olla ratkaisevan t\xE4rke\xE4\xE4\
-  \ lokitiedostojen\u2026"
+description: "Kuinka: Arduino itsess\xE4\xE4n ei sis\xE4ll\xE4 sis\xE4\xE4nrakennettua\
+  \ menetelm\xE4\xE4 nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n suoraan noutamiseen, sill\xE4\
+  \ siit\xE4 puuttuu reaaliaikakello (RTC).\u2026"
 lastmod: '2024-03-13T22:44:56.834132-06:00'
 model: gpt-4-0125-preview
-summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen Arduino-projekteissa tarkoittaa\
-  \ reaaliaikaisen tiedon hankkimista, joka voi olla ratkaisevan t\xE4rke\xE4\xE4\
-  \ lokitiedostojen kirjaamisessa, aikaleimojen lis\xE4\xE4misess\xE4 tai teht\xE4\
-  vien ajoittamisessa."
+summary: "Arduino itsess\xE4\xE4n ei sis\xE4ll\xE4 sis\xE4\xE4nrakennettua menetelm\xE4\
+  \xE4 nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n suoraan noutamiseen, sill\xE4 siit\xE4\
+  \ puuttuu reaaliaikakello (RTC)."
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---

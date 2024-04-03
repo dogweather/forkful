@@ -1,13 +1,13 @@
 ---
 date: 2024-01-26 01:08:16.980724-07:00
-description: "Logowanie to proces rejestrowania zachowa\u0144 aplikacji, b\u0142\u0119\
-  d\xF3w i innych wa\u017Cnych informacji na trwa\u0142ym no\u015Bniku, takim jak\
-  \ plik lub baza danych. Programi\u015Bci\u2026"
+description: "Jak to zrobi\u0107: W Swift mo\u017Cesz zapisywa\u0107 logi na konsoli\
+  \ za pomoc\u0105 instrukcji print lub bardziej elastycznego interfejsu API `os.log`,\
+  \ kt\xF3ry \u0142\u0105czy si\u0119 z\u2026"
 lastmod: '2024-03-13T22:44:35.761334-06:00'
 model: gpt-4-1106-preview
-summary: "Logowanie to proces rejestrowania zachowa\u0144 aplikacji, b\u0142\u0119\
-  d\xF3w i innych wa\u017Cnych informacji na trwa\u0142ym no\u015Bniku, takim jak\
-  \ plik lub baza danych."
+summary: "W Swift mo\u017Cesz zapisywa\u0107 logi na konsoli za pomoc\u0105 instrukcji\
+  \ print lub bardziej elastycznego interfejsu API `os.log`, kt\xF3ry \u0142\u0105\
+  czy si\u0119 z Zintegrowanym Systemem Logowania na platformach Apple."
 title: "Rejestrowanie zdarze\u0144"
 weight: 17
 ---

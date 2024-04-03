@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:37:49.451948-07:00
-description: "I numeri complessi estendono i numeri reali aggiungendo un'unit\xE0\
-  \ immaginaria, rappresentata come 'i', dove i^2 = -1. I programmatori li usano per\u2026"
+description: 'Come fare: C++ dispone di una libreria integrata `<complex>` che facilita
+  il lavoro con i numeri complessi. Ecco una rapida occhiata.'
 lastmod: '2024-03-13T22:44:43.720613-06:00'
 model: gpt-4-0125-preview
-summary: "I numeri complessi estendono i numeri reali aggiungendo un'unit\xE0 immaginaria,\
-  \ rappresentata come 'i', dove i^2 = -1."
+summary: C++ dispone di una libreria integrata `<complex>` che facilita il lavoro
+  con i numeri complessi.
 title: Lavorare con i numeri complessi
 weight: 14
 ---

@@ -1,11 +1,12 @@
 ---
 date: 2024-01-27 10:43:51.256076-07:00
-description: "Merkkijonojen yhdist\xE4minen tarkoittaa kahden tai useamman merkkijonon\
-  \ liitt\xE4mist\xE4 yhteen muodostamaan yksi tekstikappale. Saatat tarvita tekstien\u2026"
+description: "Kuinka: Elixiriss\xE4 voit yhdist\xE4\xE4 merkkijonoja muutamalla suoraviivaisella\
+  \ tavalla. Tutkitaan yleisimpi\xE4 menetelmi\xE4: 1. K\xE4ytt\xE4m\xE4ll\xE4 `<>`\
+  \ operaattoria, joka\u2026"
 lastmod: '2024-03-13T22:44:56.218298-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonojen yhdist\xE4minen tarkoittaa kahden tai useamman merkkijonon\
-  \ liitt\xE4mist\xE4 yhteen muodostamaan yksi tekstikappale."
+summary: "Elixiriss\xE4 voit yhdist\xE4\xE4 merkkijonoja muutamalla suoraviivaisella\
+  \ tavalla."
 title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---

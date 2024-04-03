@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:19:03.513881-07:00
-description: "TOML, czyli Tom's Obvious, Minimal Language, to format serializacji\
-  \ danych. Programi\u015Bci ceni\u0105 go za prostot\u0119 i czytelno\u015B\u0107\
-  ; jest \u015Bwietny do plik\xF3w\u2026"
+description: "Jak to zrobi\u0107: Na pocz\u0105tek zainstaluj `toml-cli`, aby bawi\u0107\
+  \ si\u0119 TOML w Bashu. Przydatne do czytania lub edycji plik\xF3w TOML na bie\u017C\
+  \u0105co."
 lastmod: '2024-03-13T22:44:35.608833-06:00'
 model: gpt-4-0125-preview
-summary: TOML, czyli Tom's Obvious, Minimal Language, to format serializacji danych.
+summary: "Na pocz\u0105tek zainstaluj `toml-cli`, aby bawi\u0107 si\u0119 TOML w Bashu."
 title: Praca z TOML
 weight: 39
 ---

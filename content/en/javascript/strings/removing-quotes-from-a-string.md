@@ -1,12 +1,12 @@
 ---
 date: 2024-01-25 20:50:15.262665-07:00
-description: "Stripping quotes from a string means getting rid of those pesky quotation\
-  \ marks that can mess with your code, especially when you're parsing data or\u2026"
+description: "How to: Imagine you've got a string that's wrapped in double quotes,\
+  \ like `\"\\\"Hello, World!\\\"\"` and you want the pure, unquoted text. Here's\
+  \ a quick\u2026"
 lastmod: '2024-03-13T22:45:00.422622-06:00'
 model: gpt-4-1106-preview
-summary: Stripping quotes from a string means getting rid of those pesky quotation
-  marks that can mess with your code, especially when you're parsing data or constructing
-  JSON objects.
+summary: Imagine you've got a string that's wrapped in double quotes, like `"\"Hello,
+  World!\""` and you want the pure, unquoted text.
 title: Removing quotes from a string
 weight: 9
 ---

@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:52.084964-07:00
-description: "Zapis do standardowego b\u0142\u0119du (stderr) polega na wyprowadzaniu\
-  \ komunikat\xF3w o b\u0142\u0119dach i diagnostyki na konsol\u0119 lub terminal.\
-  \ Programi\u015Bci robi\u0105 to, aby\u2026"
+description: "Jak to zrobi\u0107: #."
 lastmod: '2024-03-13T22:44:35.294322-06:00'
 model: gpt-4-0125-preview
-summary: "Zapis do standardowego b\u0142\u0119du (stderr) polega na wyprowadzaniu\
-  \ komunikat\xF3w o b\u0142\u0119dach i diagnostyki na konsol\u0119 lub terminal."
+summary: '#.'
 title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---

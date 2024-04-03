@@ -2,15 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:53.284339-07:00
-description: "YAML, was f\xFCr \"YAML Ain't Markup Language\" steht, ist ein f\xFC\
-  r den Menschen lesbarer Daten-Serialisierungsstandard, der f\xFCr Konfigurationsdateien\
-  \ sowie in\u2026"
+description: "Wie: Direkt mit YAML in Bash zu arbeiten, erfordert ein wenig Einfallsreichtum,\
+  \ da Bash keine integrierte Unterst\xFCtzung f\xFCr das Parsen von YAML bietet.\u2026"
 lastmod: '2024-03-13T22:44:54.079925-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, was f\xFCr \"YAML Ain't Markup Language\" steht, ist ein f\xFCr den\
-  \ Menschen lesbarer Daten-Serialisierungsstandard, der f\xFCr Konfigurationsdateien\
-  \ sowie in Anwendungen verwendet werden kann, in denen Daten gespeichert oder \xFC\
-  bertragen werden."
+summary: "Direkt mit YAML in Bash zu arbeiten, erfordert ein wenig Einfallsreichtum,\
+  \ da Bash keine integrierte Unterst\xFCtzung f\xFCr das Parsen von YAML bietet."
 title: Arbeiten mit YAML
 weight: 41
 ---

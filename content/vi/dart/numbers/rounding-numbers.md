@@ -2,17 +2,14 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:23.836019-07:00
-description: "L\xE0m tr\xF2n s\u1ED1 l\xE0 qu\xE1 tr\xECnh \u0111i\u1EC1u ch\u1EC9\
-  nh m\u1ED9t s\u1ED1 \u0111\u1EC3 g\u1EA7n nh\u1EA5t v\u1EDBi s\u1ED1 nguy\xEAn ho\u1EB7\
-  c \u0111\u1EBFn m\u1ED9t s\u1ED1 l\u01B0\u1EE3ng ch\u1EEF s\u1ED1 th\u1EADp ph\xE2\
-  n \u0111\u01B0\u1EE3c ch\u1EC9 \u0111\u1ECBnh. L\u1EADp tr\xECnh vi\xEAn th\u01B0\
-  \u1EDDng l\xE0m tr\xF2n\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Dart cung c\u1EA5p c\xE1c ph\u01B0\u01A1\
+  ng th\u1EE9c b\u1EA3n \u0111\u1ECBa trong ki\u1EC3u `num` c\u1EE7a n\xF3 cho c\xE1\
+  c thao t\xE1c l\xE0m tr\xF2n. T\u1EA1i \u0111\xE2y, ch\xFAng ta s\u1EBD kh\xE1m\
+  \ ph\xE1 c\xE1c ph\u01B0\u01A1ng th\u1EE9c nh\u01B0\u2026"
 lastmod: '2024-03-13T22:44:36.255987-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m tr\xF2n s\u1ED1 l\xE0 qu\xE1 tr\xECnh \u0111i\u1EC1u ch\u1EC9nh m\u1ED9\
-  t s\u1ED1 \u0111\u1EC3 g\u1EA7n nh\u1EA5t v\u1EDBi s\u1ED1 nguy\xEAn ho\u1EB7c \u0111\
-  \u1EBFn m\u1ED9t s\u1ED1 l\u01B0\u1EE3ng ch\u1EEF s\u1ED1 th\u1EADp ph\xE2n \u0111\
-  \u01B0\u1EE3c ch\u1EC9 \u0111\u1ECBnh."
+summary: "Dart cung c\u1EA5p c\xE1c ph\u01B0\u01A1ng th\u1EE9c b\u1EA3n \u0111\u1ECB\
+  a trong ki\u1EC3u `num` c\u1EE7a n\xF3 cho c\xE1c thao t\xE1c l\xE0m tr\xF2n."
 title: "L\xE0m tr\xF2n s\u1ED1"
 weight: 13
 ---

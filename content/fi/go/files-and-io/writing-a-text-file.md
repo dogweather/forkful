@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:00.254739-07:00
-description: "Tekstitiedoston kirjoittaminen Go:lla tarkoittaa tietorivien luomista\
-  \ ja kirjoittamista uuteen tai olemassa olevaan tekstitiedostoon. Ohjelmoijat tekev\xE4\
-  t\u2026"
+description: "Kuinka: Go:ssa tekstitiedostoon kirjoittaminen hoidetaan `os`- ja `io/ioutil`-paketilla\
+  \ (Go-versioille <1.16) tai `os`- ja `io`- sek\xE4 `os`-paketeilla Go\u2026"
 lastmod: '2024-03-13T22:44:56.070266-06:00'
 model: gpt-4-0125-preview
-summary: Tekstitiedoston kirjoittaminen Go:lla tarkoittaa tietorivien luomista ja
-  kirjoittamista uuteen tai olemassa olevaan tekstitiedostoon.
+summary: "Go:ssa tekstitiedostoon kirjoittaminen hoidetaan `os`- ja `io/ioutil`-paketilla\
+  \ (Go-versioille <1.16) tai `os`- ja `io`- sek\xE4 `os`-paketeilla Go 1.16-versiosta\
+  \ eteenp\xE4in, mik\xE4 osoittaa Go:n filosofian yksinkertaisuudesta ja tehokkuudesta."
 title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---

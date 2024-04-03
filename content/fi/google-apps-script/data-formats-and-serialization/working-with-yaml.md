@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:07:40.212838-07:00
-description: "YAML, joka tulee sanoista \"YAML Ain't Markup Language\", on ihmisen\
-  \ luettavissa oleva datan serialisointistandardi, jota k\xE4ytet\xE4\xE4n yleisesti\u2026"
+description: "Kuinka: Vaikka Google Apps Script (GAS) ei natiivisti tue YAML:n j\xE4\
+  sennyst\xE4 eik\xE4 serialisointia, voit manipuloida YAML-dataa k\xE4ytt\xE4m\xE4\
+  ll\xE4 JavaScript-\u2026"
 lastmod: '2024-03-13T22:44:56.120427-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, joka tulee sanoista \"YAML Ain't Markup Language\", on ihmisen luettavissa\
-  \ oleva datan serialisointistandardi, jota k\xE4ytet\xE4\xE4n yleisesti konfiguraatiotiedostoissa\
-  \ ja tietojen vaihdossa eri kielten vakiintuneiden tietorakenteiden v\xE4lill\xE4\
-  ."
+summary: "Vaikka Google Apps Script (GAS) ei natiivisti tue YAML:n j\xE4sennyst\xE4\
+  \ eik\xE4 serialisointia, voit manipuloida YAML-dataa k\xE4ytt\xE4m\xE4ll\xE4 JavaScript-kirjastoja\
+  \ tai kirjoittamalla omia j\xE4sennysfunktioita."
 title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---

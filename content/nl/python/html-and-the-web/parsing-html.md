@@ -2,14 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:38.636725-07:00
-description: "HTML parsen is het proces van HTML-code nemen en informatie daaruit\
-  \ extraheren, een beetje zoals het vinden van naalden in een hooiberg \u2013 als\
-  \ de hooiberg\u2026"
+description: "Hoe te: Laten we Python gebruiken om wat gegevens uit een HTML-voorbeeld\
+  \ te grijpen met de `BeautifulSoup` bibliotheek, die het parsen een fluitje van\
+  \ een\u2026"
 lastmod: '2024-03-13T22:44:50.374363-06:00'
 model: gpt-4-0125-preview
-summary: "HTML parsen is het proces van HTML-code nemen en informatie daaruit extraheren,\
-  \ een beetje zoals het vinden van naalden in een hooiberg \u2013 als de hooiberg\
-  \ uit tags bestond en de naalden de gegevens waren die je wilt."
+summary: Laten we Python gebruiken om wat gegevens uit een HTML-voorbeeld te grijpen
+  met de `BeautifulSoup` bibliotheek, die het parsen een fluitje van een cent maakt.
 title: HTML Parsen
 weight: 43
 ---

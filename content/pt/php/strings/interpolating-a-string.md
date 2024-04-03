@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:51:14.750414-07:00
-description: "Interpola\xE7\xE3o de strings permite inserir valores de vari\xE1veis\
-  \ diretamente numa string sem concatena\xE7\xE3o expl\xEDcita. Programadores usam\
-  \ isso para simplificar\u2026"
+description: 'Como Fazer: .'
 lastmod: '2024-03-13T22:44:46.653695-06:00'
 model: gpt-4-1106-preview
-summary: "Interpola\xE7\xE3o de strings permite inserir valores de vari\xE1veis diretamente\
-  \ numa string sem concatena\xE7\xE3o expl\xEDcita."
+summary: .
 title: Interpolando uma string
 weight: 8
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:50:47.280284-07:00
-description: "String-Interpolation erm\xF6glicht es uns, Variablen oder Ausdr\xFC\
-  cke innerhalb eines Strings einzuf\xFCgen. Das ist praktisch, um dynamische Inhalte\
-  \ zu erzeugen,\u2026"
+description: 'How to: Elixir macht das Verwenden von String-Interpolation leicht mit
+  dem `#{}` Mechanismus. Hier ein paar Beispiele.'
 lastmod: '2024-03-13T22:44:53.448979-06:00'
 model: gpt-4-1106-preview
-summary: "String-Interpolation erm\xF6glicht es uns, Variablen oder Ausdr\xFCcke innerhalb\
-  \ eines Strings einzuf\xFCgen."
+summary: Elixir macht das Verwenden von String-Interpolation leicht mit dem `#{}`
+  Mechanismus.
 title: Zeichenketten interpolieren
 weight: 8
 ---

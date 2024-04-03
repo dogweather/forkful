@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:14:57.385625-07:00
-description: "Interaktiivinen kuori eli REPL (Read-Eval-Print Loop) Haskellissa antaa\
-  \ sinun suorittaa koodinp\xE4tki\xE4 reaaliajassa. Se on leikkikentt\xE4 nopeaa\
-  \ palautetta,\u2026"
+description: "Kuinka: Aloittaaksesi GHCi:n (Glasgow Haskell Compilerin interaktiivisen\
+  \ ymp\xE4rist\xF6n), kirjoita yksinkertaisesti `ghci` terminaaliisi. N\xE4in sit\xE4\
+  \ k\xE4ytet\xE4\xE4n."
 lastmod: '2024-03-13T22:44:56.616794-06:00'
 model: gpt-4-0125-preview
-summary: "Interaktiivinen kuori eli REPL (Read-Eval-Print Loop) Haskellissa antaa\
-  \ sinun suorittaa koodinp\xE4tki\xE4 reaaliajassa."
+summary: "Aloittaaksesi GHCi:n (Glasgow Haskell Compilerin interaktiivisen ymp\xE4\
+  rist\xF6n), kirjoita yksinkertaisesti `ghci` terminaaliisi."
 title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 weight: 34
 ---

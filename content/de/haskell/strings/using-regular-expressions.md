@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:50.079146-07:00
-description: "Regul\xE4re Ausdr\xFCcke in der Programmierung sind Zeichenfolgen, die\
-  \ ein Suchmuster definieren und typischerweise f\xFCr die Suche und Manipulation\
-  \ von\u2026"
+description: "Wie: In Haskell sind Regex-Funktionalit\xE4ten nicht Teil der Standardbibliothek,\
+  \ was die Verwendung von Drittanbieterpaketen wie `regex-base` zusammen mit\u2026"
 lastmod: '2024-03-13T22:44:53.921155-06:00'
 model: gpt-4-0125-preview
-summary: "Regul\xE4re Ausdr\xFCcke in der Programmierung sind Zeichenfolgen, die ein\
-  \ Suchmuster definieren und typischerweise f\xFCr die Suche und Manipulation von\
-  \ Zeichenketten verwendet werden."
+summary: "In Haskell sind Regex-Funktionalit\xE4ten nicht Teil der Standardbibliothek,\
+  \ was die Verwendung von Drittanbieterpaketen wie `regex-base` zusammen mit einem\
+  \ kompatiblen Backend wie `regex-posix` (f\xFCr POSIX-Regex-Unterst\xFCtzung), `regex-pcre`\
+  \ (f\xFCr Perl-kompatible Regex) usw."
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

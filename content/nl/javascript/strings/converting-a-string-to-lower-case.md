@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:07.543270-07:00
-description: "Een string converteren naar kleine letters betekent het transformeren\
-  \ van alle tekens binnenin naar hun kleine letter varianten. Programmeurs doen dit\u2026"
+description: 'Hoe te: In JavaScript converteren we een string naar kleine letters
+  met de methode `.toLowerCase()`. Het is zo simpel als.'
 lastmod: '2024-03-13T22:44:51.187428-06:00'
 model: gpt-4-0125-preview
-summary: Een string converteren naar kleine letters betekent het transformeren van
-  alle tekens binnenin naar hun kleine letter varianten.
+summary: In JavaScript converteren we een string naar kleine letters met de methode
+  `.toLowerCase()`.
 title: Een string omzetten naar kleine letters
 weight: 4
 ---

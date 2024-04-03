@@ -1,11 +1,11 @@
 ---
 date: 2024-03-08 21:33:45.306454-07:00
-description: "Sending an HTTP request in Dart is the process of initiating communications\
-  \ with a web server or API from a Dart application. Programmers do it to fetch\u2026"
+description: 'How to: Dart includes the `http` package, a powerful and convenient
+  way to work with HTTP resources. First, include it in your pubspec.yaml file.'
 lastmod: '2024-03-13T22:44:59.817971-06:00'
 model: gpt-4-0125-preview
-summary: Sending an HTTP request in Dart is the process of initiating communications
-  with a web server or API from a Dart application.
+summary: Dart includes the `http` package, a powerful and convenient way to work with
+  HTTP resources.
 title: Sending an HTTP request
 weight: 44
 ---

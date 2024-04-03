@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:16.343170-07:00
-description: "JSON (JavaScript Object Notation) on kevyt tiedonvaihtomuoto, joka on\
-  \ yleinen verkkosovelluksissa datan vaihtamiseen asiakkaiden ja palvelinten v\xE4\
-  lill\xE4.\u2026"
+description: "Miten: Ruby tarjoaa standardikirjastonsa avulla saumattomia tapoja j\xE4\
+  sent\xE4\xE4 ja tuottaa JSON-muotoista dataa. P\xE4\xE4moduuli n\xE4ille toiminnoille\
+  \ on `json`,\u2026"
 lastmod: '2024-03-13T22:44:57.109304-06:00'
 model: gpt-4-0125-preview
-summary: "JSON (JavaScript Object Notation) on kevyt tiedonvaihtomuoto, joka on yleinen\
-  \ verkkosovelluksissa datan vaihtamiseen asiakkaiden ja palvelinten v\xE4lill\xE4\
-  ."
+summary: "Ruby tarjoaa standardikirjastonsa avulla saumattomia tapoja j\xE4sent\xE4\
+  \xE4 ja tuottaa JSON-muotoista dataa."
 title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---

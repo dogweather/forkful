@@ -2,14 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:12.336735-07:00
-description: "Escribir en el error est\xE1ndar en Python trata sobre dirigir los mensajes\
-  \ de error o diagn\xF3sticos de tu programa al flujo de error (`stderr`), separado\
-  \ de\u2026"
+description: "C\xF3mo hacerlo: #."
 lastmod: '2024-03-13T22:44:58.630318-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir en el error est\xE1ndar en Python trata sobre dirigir los mensajes\
-  \ de error o diagn\xF3sticos de tu programa al flujo de error (`stderr`), separado\
-  \ de la salida est\xE1ndar (`stdout`)."
+summary: '#.'
 title: "Escribiendo en el error est\xE1ndar"
 weight: 25
 ---

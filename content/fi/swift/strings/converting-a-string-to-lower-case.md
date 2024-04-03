@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:39:08.554349-07:00
-description: "Tekstin muuttaminen pieniksi kirjaimiksi tarkoittaa kaikkien merkkijonon\
-  \ kirjainten muuntamista vastaaviksi pienaakkosiksi. T\xE4t\xE4 tehd\xE4\xE4n yhten\xE4\
-  ist\xE4m\xE4\xE4n\u2026"
+description: "How to: Swiftiss\xE4 merkkijonon muuttaminen pieniksi kirjaimiksi on\
+  \ yksinkertaista. K\xE4yt\xE4 `lowercased()` metodia."
 lastmod: '2024-03-13T22:44:56.894616-06:00'
 model: gpt-4-1106-preview
-summary: Tekstin muuttaminen pieniksi kirjaimiksi tarkoittaa kaikkien merkkijonon
-  kirjainten muuntamista vastaaviksi pienaakkosiksi.
+summary: "Swiftiss\xE4 merkkijonon muuttaminen pieniksi kirjaimiksi on yksinkertaista."
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---

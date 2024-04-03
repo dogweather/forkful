@@ -2,14 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:38.755164-07:00
-description: "N\u1ED9i suy chu\u1ED7i cho ph\xE9p b\u1EA1n nh\xFAng c\xE1c bi\u1EBF\
-  n v\xE0 bi\u1EC3u th\u1EE9c v\xE0o trong chu\u1ED7i. N\xF3 gi\xFAp cho code c\u1EE7\
-  a b\u1EA1n d\u1EC5 \u0111\u1ECDc v\xE0 linh ho\u1EA1t - kh\xF4ng c\u1EA7n d\u1EA5\
-  u c\u1ED9ng, kh\xF4ng r\u1EAFc r\u1ED1i,\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EC3 n\u1ED9i suy m\u1ED9t chu\u1ED7\
+  i trong TypeScript, b\u1EA1n s\u1EED d\u1EE5ng d\u1EA5u backtick `` ` `` v\xE0 c\xFA\
+  \ ph\xE1p `${bi\u1EC3u th\u1EE9c}`."
 lastmod: '2024-03-13T22:44:36.300333-06:00'
 model: gpt-4-0125-preview
-summary: "N\u1ED9i suy chu\u1ED7i cho ph\xE9p b\u1EA1n nh\xFAng c\xE1c bi\u1EBFn v\xE0\
-  \ bi\u1EC3u th\u1EE9c v\xE0o trong chu\u1ED7i."
+summary: "\u0110\u1EC3 n\u1ED9i suy m\u1ED9t chu\u1ED7i trong TypeScript, b\u1EA1\
+  n s\u1EED d\u1EE5ng d\u1EA5u backtick `` ` `` v\xE0 c\xFA ph\xE1p `${bi\u1EC3u th\u1EE9\
+  c}`."
 title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
 weight: 8
 ---

@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 18:02:49.709627-07:00
-description: "En HTTP-foresp\xF8rsel med basisgodkjenning lar et program be om data\
-  \ fra en server ved \xE5 inkludere brukernavn og passord i foresp\xF8rselen. Programmerere\u2026"
+description: "Hvordan gj\xF8re det: For \xE5 sende en HTTP-foresp\xF8rsel med basisgodkjenning\
+  \ i Rust, kan vi bruke `reqwest`-biblioteket, som forenkler prosessen. F\xF8rst\
+  \ m\xE5 du\u2026"
 lastmod: '2024-03-13T22:44:40.573571-06:00'
 model: gpt-4-1106-preview
-summary: "En HTTP-foresp\xF8rsel med basisgodkjenning lar et program be om data fra\
-  \ en server ved \xE5 inkludere brukernavn og passord i foresp\xF8rselen."
+summary: "For \xE5 sende en HTTP-foresp\xF8rsel med basisgodkjenning i Rust, kan vi\
+  \ bruke `reqwest`-biblioteket, som forenkler prosessen."
 title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---

@@ -1,12 +1,12 @@
 ---
 date: 2024-02-03 19:02:38.194848-07:00
-description: "Checking if a directory exists in JavaScript is essential for file manipulation\
-  \ tasks, enabling scripts to verify directory presence before reading from\u2026"
+description: "How to: In Node.js, since JavaScript itself doesn't have direct access\
+  \ to the file system, the `fs` module is typically used for such operations. Here's\
+  \ a\u2026"
 lastmod: '2024-03-13T22:45:00.447176-06:00'
 model: gpt-4-0125-preview
-summary: Checking if a directory exists in JavaScript is essential for file manipulation
-  tasks, enabling scripts to verify directory presence before reading from or writing
-  to it.
+summary: In Node.js, since JavaScript itself doesn't have direct access to the file
+  system, the `fs` module is typically used for such operations.
 title: Checking if a directory exists
 weight: 20
 ---

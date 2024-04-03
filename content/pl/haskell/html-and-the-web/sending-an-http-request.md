@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:59:51.773352-07:00
-description: "Wysy\u0142anie \u017C\u0105dania HTTP to spos\xF3b, w jaki Tw\xF3j program\
-  \ mo\u017Ce komunikowa\u0107 si\u0119 z serwerem w internecie, np. aby pobra\u0107\
-  \ dane lub wys\u0142a\u0107 informacje. Programi\u015Bci\u2026"
+description: "Jak to zrobi\u0107: W Haskellu do wysy\u0142ania \u017C\u0105da\u0144\
+  \ HTTP mo\u017Cemy u\u017Cy\u0107 biblioteki `http-conduit`. Poni\u017Cej znajdziesz\
+  \ przyk\u0142ad prostego \u017C\u0105dania GET."
 lastmod: '2024-03-13T22:44:35.448371-06:00'
 model: gpt-4-1106-preview
-summary: "Wysy\u0142anie \u017C\u0105dania HTTP to spos\xF3b, w jaki Tw\xF3j program\
-  \ mo\u017Ce komunikowa\u0107 si\u0119 z serwerem w internecie, np."
+summary: "W Haskellu do wysy\u0142ania \u017C\u0105da\u0144 HTTP mo\u017Cemy u\u017C\
+  y\u0107 biblioteki `http-conduit`."
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---

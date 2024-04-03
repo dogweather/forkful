@@ -1,13 +1,10 @@
 ---
 date: 2024-01-27 16:20:58.500349-07:00
-description: "Dateimanipulation mit CLI (Command Line Interface) One-Linern beinhaltet\
-  \ die Verwendung von Bash-Skripten oder -Befehlen, um Aktionen an Dateien wie\u2026"
+description: "Wie geht das: Hier sind ein paar wirkungsvolle One-Liner und was sie\
+  \ erreichen k\xF6nnen: 1. **Eine Datei erstellen und Text hineinschreiben:**."
 lastmod: '2024-03-13T22:44:54.054318-06:00'
 model: gpt-4-0125-preview
-summary: "Dateimanipulation mit CLI (Command Line Interface) One-Linern beinhaltet\
-  \ die Verwendung von Bash-Skripten oder -Befehlen, um Aktionen an Dateien wie Erstellen,\
-  \ Lesen, Aktualisieren oder L\xF6schen direkt aus dem Terminal heraus durchzuf\xFC\
-  hren."
+summary: "Hier sind ein paar wirkungsvolle One-Liner und was sie erreichen k\xF6nnen."
 title: Dateimanipulation mit CLI-One-Linern
 weight: 31
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:04.921305-07:00
-description: "Das Schreiben einer Textdatei in Arduino beinhaltet das Speichern von\
-  \ Daten auf einer Datei auf einer SD-Karte oder einem \xE4hnlichen Speichermodul,\
-  \ oft zu\u2026"
+description: "Wie: Um in eine Textdatei auf einer SD-Karte mit Arduino zu schreiben,\
+  \ m\xFCssen Sie zuerst die Bibliothek `SD.h` einbinden, die die notwendigen Funktionen\u2026"
 lastmod: '2024-03-13T22:44:54.161640-06:00'
 model: gpt-4-0125-preview
-summary: "Das Schreiben einer Textdatei in Arduino beinhaltet das Speichern von Daten\
-  \ auf einer Datei auf einer SD-Karte oder einem \xE4hnlichen Speichermodul, oft\
-  \ zu Zwecken der Datenerfassung."
+summary: "Um in eine Textdatei auf einer SD-Karte mit Arduino zu schreiben, m\xFC\
+  ssen Sie zuerst die Bibliothek `SD.h` einbinden, die die notwendigen Funktionen\
+  \ zur Interaktion mit SD-Karten bereitstellt."
 title: Eine Textdatei schreiben
 weight: 24
 ---

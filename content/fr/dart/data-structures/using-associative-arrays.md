@@ -2,13 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:16.969808-07:00
-description: "Les tableaux associatifs en Dart, commun\xE9ment appel\xE9s Maps, sont\
-  \ des structures de donn\xE9es qui stockent des donn\xE9es en paires cl\xE9-valeur.\
-  \ Ils permettent\u2026"
+description: "Comment faire : Dart offre une syntaxe simple pour cr\xE9er et manipuler\
+  \ des Maps. Ci-dessous, des exemples d\xE9montrant les op\xE9rations de base telles\
+  \ que la\u2026"
 lastmod: '2024-03-13T22:44:57.381472-06:00'
 model: gpt-4-0125-preview
-summary: "Les tableaux associatifs en Dart, commun\xE9ment appel\xE9s Maps, sont des\
-  \ structures de donn\xE9es qui stockent des donn\xE9es en paires cl\xE9-valeur."
+summary: "Dart offre une syntaxe simple pour cr\xE9er et manipuler des Maps."
 title: Utilisation des tableaux associatifs
 weight: 15
 ---

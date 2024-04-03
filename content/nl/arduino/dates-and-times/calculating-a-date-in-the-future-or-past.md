@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:35.669627-07:00
-description: "Het berekenen van een datum in de toekomst of het verleden betekent\
-  \ het bepalen van een specifieke dag voor of na een gegeven datum. Programmeurs\
-  \ doen dit\u2026"
+description: "Hoe: Arduino heeft geen ingebouwde datum- en tijdfuncties, maar je kunt\
+  \ de \"TimeLib.h\" bibliotheek gebruiken om datumberekeningen te verwerken. Zorg\u2026"
 lastmod: '2024-03-13T22:44:51.085323-06:00'
 model: gpt-4-0125-preview
-summary: Het berekenen van een datum in de toekomst of het verleden betekent het bepalen
-  van een specifieke dag voor of na een gegeven datum.
+summary: Arduino heeft geen ingebouwde datum- en tijdfuncties, maar je kunt de "TimeLib.h"
+  bibliotheek gebruiken om datumberekeningen te verwerken.
 title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---

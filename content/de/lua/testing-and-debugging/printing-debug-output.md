@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 17:52:59.152151-07:00
-description: "Das Ausgeben von Debug-Informationen hilft beim Verstehen, was im Code\
-  \ passiert. Programmierer nutzen es, um Fehler schnell zu finden und den\u2026"
+description: 'How to: Um in Lua Debug-Informationen auszugeben, verwendet man die
+  `print()` Funktion. Hier ein paar Beispiele.'
 lastmod: '2024-03-13T22:44:54.017788-06:00'
 model: gpt-4-1106-preview
-summary: Das Ausgeben von Debug-Informationen hilft beim Verstehen, was im Code passiert.
+summary: Um in Lua Debug-Informationen auszugeben, verwendet man die `print()` Funktion.
 title: Debug-Ausgaben drucken
 weight: 33
 ---

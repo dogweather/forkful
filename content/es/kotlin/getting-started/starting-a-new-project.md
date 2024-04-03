@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 18:03:58.928830-07:00
-description: "Iniciar un nuevo proyecto es como poner la primera piedra de tu construcci\xF3\
-  n digital; es el punto de partida para cualquier aplicaci\xF3n que planees\u2026"
+description: "C\xF3mo hacerlo: Para empezar un proyecto de Kotlin usando IntelliJ\
+  \ IDEA, sigue estos pasos simples: 1. Abre IntelliJ IDEA y selecciona \"New Project\"\
+  . 2.\u2026"
 lastmod: '2024-03-13T22:44:59.036569-06:00'
 model: gpt-4-1106-preview
-summary: "Iniciar un nuevo proyecto es como poner la primera piedra de tu construcci\xF3\
-  n digital; es el punto de partida para cualquier aplicaci\xF3n que planees desarrollar."
+summary: Para empezar un proyecto de Kotlin usando IntelliJ IDEA, sigue estos pasos
+  simples.
 title: Iniciando un nuevo proyecto
 weight: 1
 ---

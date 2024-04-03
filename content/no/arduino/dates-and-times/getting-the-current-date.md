@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:46.849050-07:00
-description: "\xC5 f\xE5 tak i dagens dato i Arduino-prosjekter inneb\xE6rer \xE5\
-  \ skaffe sanntidsinformasjon som kan v\xE6re avgj\xF8rende for logging, tidsstempling\
-  \ eller planlegging av\u2026"
+description: "Hvordan: Arduino i seg selv har ikke en innebygd metode for \xE5 direkte\
+  \ hente dagens dato, ettersom den mangler et ekte tidsur (RTC). Dette kan imidlertid\u2026"
 lastmod: '2024-03-13T22:44:41.068642-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 f\xE5 tak i dagens dato i Arduino-prosjekter inneb\xE6rer \xE5 skaffe\
-  \ sanntidsinformasjon som kan v\xE6re avgj\xF8rende for logging, tidsstempling eller\
-  \ planlegging av oppgaver."
+summary: "Arduino i seg selv har ikke en innebygd metode for \xE5 direkte hente dagens\
+  \ dato, ettersom den mangler et ekte tidsur (RTC)."
 title: "F\xE5 den gjeldende datoen"
 weight: 29
 ---

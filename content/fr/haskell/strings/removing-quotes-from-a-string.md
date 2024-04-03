@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 03:40:36.766010-07:00
-description: "Retirer les guillemets d'une cha\xEEne signifie \xE9liminer toutes les\
-  \ marques de citation\u2014simples (' ') ou doubles (\" \")\u2014qui font partie\
-  \ des donn\xE9es de la\u2026"
+description: "Comment faire : En Haskell, nous pouvons concocter une fonction qui\
+  \ supprime tous les guillemets d'une cha\xEEne donn\xE9e. C'est comme dire aux guillemets\
+  \ de\u2026"
 lastmod: '2024-03-13T22:44:57.821226-06:00'
 model: gpt-4-0125-preview
-summary: "Retirer les guillemets d'une cha\xEEne signifie \xE9liminer toutes les marques\
-  \ de citation\u2014simples (' ') ou doubles (\" \")\u2014qui font partie des donn\xE9\
-  es de la cha\xEEne."
+summary: "En Haskell, nous pouvons concocter une fonction qui supprime tous les guillemets\
+  \ d'une cha\xEEne donn\xE9e."
 title: "Retirer les guillemets d'une cha\xEEne"
 weight: 9
 ---

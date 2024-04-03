@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:06.261443-07:00
-description: "Ohjelmoinnissa testien kirjoittaminen tarkoittaa pienten, erillisten\
-  \ koodinp\xE4tkien luomista automaattisesti varmistamaan, ett\xE4 sovelluksesi eri\
-  \ osat\u2026"
+description: "Kuinka: Lua on kevyt, mutta tehokas skriptauskieli, eik\xE4 sis\xE4\
+  ll\xE4 sis\xE4\xE4nrakennettua testauskehyst\xE4. Kolmannen osapuolen kirjastot,\
+  \ kuten Busted ja LuaUnit,\u2026"
 lastmod: '2024-03-13T22:44:56.700633-06:00'
 model: gpt-4-0125-preview
-summary: "Ohjelmoinnissa testien kirjoittaminen tarkoittaa pienten, erillisten koodinp\xE4\
-  tkien luomista automaattisesti varmistamaan, ett\xE4 sovelluksesi eri osat toimivat\
-  \ odotetusti."
+summary: "Lua on kevyt, mutta tehokas skriptauskieli, eik\xE4 sis\xE4ll\xE4 sis\xE4\
+  \xE4nrakennettua testauskehyst\xE4."
 title: Testien kirjoittaminen
 weight: 36
 ---

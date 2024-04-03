@@ -2,13 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:15.121981-07:00
-description: "Reguliere expressies (regex) zijn patronen die zoekcriteria voor tekst\
-  \ defini\xEBren. Programmeurs gebruiken ze voor het matchen, vervangen of extraheren\
-  \ van\u2026"
+description: 'Hoe te: .'
 lastmod: '2024-03-13T22:44:50.969620-06:00'
 model: gpt-4-0125-preview
-summary: "Reguliere expressies (regex) zijn patronen die zoekcriteria voor tekst defini\xEB\
-  ren."
+summary: .
 title: Reguliere expressies gebruiken
 weight: 11
 ---

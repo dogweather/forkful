@@ -2,12 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:34.463824-07:00
-description: "\xC5 hente dagens dato i Python er en grunnleggende operasjon for mange\
-  \ applikasjoner, som logging, dataanalyse og tidsbasert beslutningstaking. Det handler\u2026"
+description: "Hvordan: **Bruke standardbiblioteket `datetime`:** `Datetime`-modulen\
+  \ i Pythons standardbibliotek tilbyr klasser for manipulering av datoer og\u2026"
 lastmod: '2024-03-13T22:44:40.371779-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 hente dagens dato i Python er en grunnleggende operasjon for mange\
-  \ applikasjoner, som logging, dataanalyse og tidsbasert beslutningstaking."
+summary: '**Bruke standardbiblioteket `datetime`:**
+
+
+  `Datetime`-modulen i Pythons standardbibliotek tilbyr klasser for manipulering av
+  datoer og klokkeslett.'
 title: "F\xE5 dagens dato"
 weight: 29
 ---

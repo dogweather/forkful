@@ -2,13 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:41.358845-07:00
-description: "Het vergelijken van twee datums in PowerShell betekent uitzoeken of\
-  \ de ene eerder, hetzelfde, of later is dan de andere. Programmeurs doen dit vaak\
-  \ om\u2026"
+description: 'Hoe: .'
 lastmod: '2024-03-13T22:44:51.042633-06:00'
 model: gpt-4-0125-preview
-summary: Het vergelijken van twee datums in PowerShell betekent uitzoeken of de ene
-  eerder, hetzelfde, of later is dan de andere.
+summary: .
 title: Twee datums vergelijken
 weight: 27
 ---

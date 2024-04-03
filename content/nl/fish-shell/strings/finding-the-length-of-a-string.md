@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:55.575805-07:00
-description: "De lengte van een reeks vinden betekent het tellen van het aantal karakters\
-  \ erin. Programmeurs doen dit om invoer te valideren, buffers te dimensioneren\u2026"
+description: 'Hoe te: Hier is hoe je de lengte van een reeks krijgt in Fish.'
 lastmod: '2024-03-13T22:44:51.236129-06:00'
 model: gpt-4-0125-preview
-summary: De lengte van een reeks vinden betekent het tellen van het aantal karakters
-  erin.
+summary: Hier is hoe je de lengte van een reeks krijgt in Fish.
 title: De lengte van een string vinden
 weight: 7
 ---

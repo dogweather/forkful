@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:53.950102-07:00
-description: "Das Schreiben in eine Textdatei in Haskell dreht sich darum, Dateien\
-  \ mit textuellem Inhalt programmatisch zu erstellen oder zu aktualisieren.\u2026"
+description: "Wie: Die Standard Prelude von Haskell bietet grundlegende Unterst\xFC\
+  tzung f\xFCr das Schreiben in Dateien mit den Funktionen `writeFile` und `appendFile`\
+  \ aus\u2026"
 lastmod: '2024-03-13T22:44:53.949204-06:00'
 model: gpt-4-0125-preview
-summary: Das Schreiben in eine Textdatei in Haskell dreht sich darum, Dateien mit
-  textuellem Inhalt programmatisch zu erstellen oder zu aktualisieren.
+summary: "Die Standard Prelude von Haskell bietet grundlegende Unterst\xFCtzung f\xFC\
+  r das Schreiben in Dateien mit den Funktionen `writeFile` und `appendFile` aus dem\
+  \ `System.IO`-Modul."
 title: Eine Textdatei schreiben
 weight: 24
 ---

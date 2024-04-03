@@ -2,13 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:42.511163-07:00
-description: "Die L\xE4nge eines Strings in Dart zu finden, bedeutet, die Anzahl der\
-  \ Codeeinheiten (im Grunde die Anzahl der Zeichen, wenn man es vereinfacht betrachtet)\u2026"
+description: "Wie: Dart macht es unkompliziert, die L\xE4nge eines Strings mit der\
+  \ `length` Eigenschaft zu erhalten. Hier ist ein einfaches Beispiel."
 lastmod: '2024-03-13T22:44:53.570581-06:00'
 model: gpt-4-0125-preview
-summary: "Die L\xE4nge eines Strings in Dart zu finden, bedeutet, die Anzahl der Codeeinheiten\
-  \ (im Grunde die Anzahl der Zeichen, wenn man es vereinfacht betrachtet) in einem\
-  \ gegebenen String zu bestimmen."
+summary: "Dart macht es unkompliziert, die L\xE4nge eines Strings mit der `length`\
+  \ Eigenschaft zu erhalten."
 title: "Die L\xE4nge einer Zeichenkette finden"
 weight: 7
 ---

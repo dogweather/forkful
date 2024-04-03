@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:41:11.313304-07:00
-description: "En programmation, cr\xE9er un fichier temporaire, c'est un peu comme\
-  \ prendre des notes sur un bout de papier effa\xE7able. On fait \xE7a pour stocker\
-  \ des donn\xE9es\u2026"
+description: "How to: Ruby rend la cr\xE9ation de fichiers temporaires super facile\
+  \ gr\xE2ce \xE0 la librairie standard `Tempfile`. Voici comment on s'y prend ."
 lastmod: '2024-03-13T22:44:58.441352-06:00'
 model: gpt-4-1106-preview
-summary: "En programmation, cr\xE9er un fichier temporaire, c'est un peu comme prendre\
-  \ des notes sur un bout de papier effa\xE7able."
+summary: "Ruby rend la cr\xE9ation de fichiers temporaires super facile gr\xE2ce \xE0\
+  \ la librairie standard `Tempfile`."
 title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---

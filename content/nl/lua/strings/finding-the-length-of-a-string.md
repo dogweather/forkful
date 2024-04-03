@@ -2,11 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:18.919233-07:00
-description: "De lengte van een tekst vinden betekent uitzoeken hoeveel tekens deze\
-  \ bevat. Programmeurs doen dit om invoer te valideren, tekst te manipuleren of\u2026"
+description: 'Hoe: In Lua pak je de lengte van een string met de `#` operator. Eenvoudig
+  en snel.'
 lastmod: '2024-03-13T22:44:50.928472-06:00'
 model: gpt-4-0125-preview
-summary: De lengte van een tekst vinden betekent uitzoeken hoeveel tekens deze bevat.
+summary: In Lua pak je de lengte van een string met de `#` operator.
 title: De lengte van een string vinden
 weight: 7
 ---

@@ -1,13 +1,11 @@
 ---
 date: 2024-01-27 16:20:54.290005-07:00
-description: "Nel mondo della programmazione, specialmente quando si ha a che fare\
-  \ con ambienti Linux o Unix, manipolare i file direttamente dalla riga di comando\
-  \ (CLI)\u2026"
+description: "Come fare: Manipolare i file in Fish Shell \xE8 sia intuitivo che potente.\
+  \ Ecco alcuni esempi per mostrare le sue capacit\xE0: 1. **Creare un file** \xE8\
+  \ semplice\u2026"
 lastmod: '2024-03-13T22:44:43.853386-06:00'
 model: gpt-4-0125-preview
-summary: "Nel mondo della programmazione, specialmente quando si ha a che fare con\
-  \ ambienti Linux o Unix, manipolare i file direttamente dalla riga di comando (CLI)\
-  \ non \xE8 solo una questione di comodit\xE0, ma uno strumento potente."
+summary: "Manipolare i file in Fish Shell \xE8 sia intuitivo che potente."
 title: Manipolazione di file con one-liner da CLI
 weight: 31
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:52.245010-07:00
-description: "Mettre en majuscule une cha\xEEne implique de modifier le premier caract\xE8\
-  re d'un texte donn\xE9 en majuscule, afin que les phrases, les titres ou les noms\u2026"
+description: "Comment faire : PHP prend en charge nativement diverses fonctions pour\
+  \ mettre en majuscule les cha\xEEnes, chacune servant un objectif diff\xE9rent.\
+  \ Voici\u2026"
 lastmod: '2024-03-13T22:44:57.860291-06:00'
 model: gpt-4-0125-preview
-summary: "Mettre en majuscule une cha\xEEne implique de modifier le premier caract\xE8\
-  re d'un texte donn\xE9 en majuscule, afin que les phrases, les titres ou les noms\
-  \ propres commencent correctement dans un ensemble de donn\xE9es."
+summary: "PHP prend en charge nativement diverses fonctions pour mettre en majuscule\
+  \ les cha\xEEnes, chacune servant un objectif diff\xE9rent."
 title: "Mettre en majuscule une cha\xEEne"
 weight: 2
 ---

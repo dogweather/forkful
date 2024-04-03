@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:09.145895-07:00
-description: "Travailler avec des fichiers CSV (Valeurs S\xE9par\xE9es par des Virgules)\
-  \ implique de lire ou d'\xE9crire dans des fichiers texte simples o\xF9 les champs\
-  \ de donn\xE9es\u2026"
+description: "Comment : Visual Basic pour Applications (VBA) simplifie le travail\
+  \ avec les fichiers CSV gr\xE2ce \xE0 des fonctions et m\xE9thodes int\xE9gr\xE9\
+  es qui permettent de\u2026"
 lastmod: '2024-03-13T22:44:57.607853-06:00'
 model: gpt-4-0125-preview
-summary: "Travailler avec des fichiers CSV (Valeurs S\xE9par\xE9es par des Virgules)\
-  \ implique de lire ou d'\xE9crire dans des fichiers texte simples o\xF9 les champs\
-  \ de donn\xE9es sont s\xE9par\xE9s par des virgules."
+summary: "Visual Basic pour Applications (VBA) simplifie le travail avec les fichiers\
+  \ CSV gr\xE2ce \xE0 des fonctions et m\xE9thodes int\xE9gr\xE9es qui permettent\
+  \ de lire et d'\xE9crire facilement dans ces fichiers."
 title: Travailler avec CSV
 weight: 37
 ---

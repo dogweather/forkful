@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 03:40:11.814868-07:00
-description: "Remover aspas de uma string significa se livrar dessas inc\xF4modas\
-  \ marcas de cota\xE7\xE3o que podem bagun\xE7ar seu c\xF3digo, especialmente quando\
-  \ voc\xEA est\xE1\u2026"
+description: "Como Fazer: Imagine que voc\xEA tem uma string envolvida em aspas duplas,\
+  \ como `\"\\\"Ol\xE1, Mundo!\\\"\"` e voc\xEA quer o texto puro, sem as aspas. Aqui\
+  \ est\xE1 um\u2026"
 lastmod: '2024-03-13T22:44:46.950968-06:00'
 model: gpt-4-0125-preview
-summary: "Remover aspas de uma string significa se livrar dessas inc\xF4modas marcas\
-  \ de cota\xE7\xE3o que podem bagun\xE7ar seu c\xF3digo, especialmente quando voc\xEA\
-  \ est\xE1 analisando dados ou construindo objetos JSON."
+summary: "Imagine que voc\xEA tem uma string envolvida em aspas duplas, como `\"\\\
+  \"Ol\xE1, Mundo!\\\"\"` e voc\xEA quer o texto puro, sem as aspas."
 title: Removendo aspas de uma string
 weight: 9
 ---

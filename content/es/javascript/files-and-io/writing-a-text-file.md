@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:13.844130-07:00
-description: "Escribir un archivo de texto en JavaScript a menudo se refiere a crear\
-  \ y guardar datos en un formato simple y legible para el registro, exportaci\xF3\
-  n de\u2026"
+description: "C\xF3mo hacerlo: En un entorno de Node.js, puedes usar el m\xF3dulo\
+  \ integrado `fs` (Sistema de Archivos) para escribir archivos de texto. Este ejemplo\
+  \ demuestra\u2026"
 lastmod: '2024-03-13T22:44:59.476740-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir un archivo de texto en JavaScript a menudo se refiere a crear y\
-  \ guardar datos en un formato simple y legible para el registro, exportaci\xF3n\
-  \ de entradas del usuario o fines de configuraci\xF3n."
+summary: "En un entorno de Node.js, puedes usar el m\xF3dulo integrado `fs` (Sistema\
+  \ de Archivos) para escribir archivos de texto."
 title: Escribiendo un archivo de texto
 weight: 24
 ---

@@ -2,16 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:24.751243-07:00
-description: "X\xF3a c\xE1c k\xFD t\u1EF1 kh\u1EDBp v\u1EDBi m\u1ED9t m\u1EABu \u0111\
-  \u1EC1 c\u1EADp \u0111\u1EBFn vi\u1EC7c t\xECm c\xE1c chu\u1ED7i k\xFD t\u1EF1 c\u1EE5\
-  \ th\u1EC3 trong m\u1ED9t chu\u1ED7i v\xE0 lo\u1EA1i b\u1ECF ch\xFAng. C\xE1c l\u1EAD\
-  p tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 d\u1ECDn d\u1EB9p d\u1EEF\
-  \u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong Java, ch\xFAng ta th\u01B0\u1EDD\
+  ng s\u1EED d\u1EE5ng ph\u01B0\u01A1ng th\u1EE9c `String.replaceAll()` v\u1EDBi m\u1ED9\
+  t m\u1EABu regex \u0111\u1EC3 x\xF3a k\xFD t\u1EF1. D\u01B0\u1EDBi \u0111\xE2y l\xE0\
+  \ m\u1ED9t v\xED d\u1EE5 nhanh."
 lastmod: '2024-03-13T22:44:36.468244-06:00'
 model: gpt-4-0125-preview
-summary: "X\xF3a c\xE1c k\xFD t\u1EF1 kh\u1EDBp v\u1EDBi m\u1ED9t m\u1EABu \u0111\u1EC1\
-  \ c\u1EADp \u0111\u1EBFn vi\u1EC7c t\xECm c\xE1c chu\u1ED7i k\xFD t\u1EF1 c\u1EE5\
-  \ th\u1EC3 trong m\u1ED9t chu\u1ED7i v\xE0 lo\u1EA1i b\u1ECF ch\xFAng."
+summary: "Trong Java, ch\xFAng ta th\u01B0\u1EDDng s\u1EED d\u1EE5ng ph\u01B0\u01A1\
+  ng th\u1EE9c `String.replaceAll()` v\u1EDBi m\u1ED9t m\u1EABu regex \u0111\u1EC3\
+  \ x\xF3a k\xFD t\u1EF1."
 title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
 weight: 5
 ---

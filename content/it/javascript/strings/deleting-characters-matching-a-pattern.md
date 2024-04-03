@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:42:41.655881-07:00
-description: "In JavaScript, eliminare caratteri che corrispondono a un pattern significa\
-  \ usare espressioni regolari per togliere specifici gruppi di caratteri da una\u2026"
+description: 'How to: Ecco come usare `replace()` con una regex per eliminare dei
+  caratteri.'
 lastmod: '2024-03-13T22:44:43.796405-06:00'
 model: gpt-4-1106-preview
-summary: In JavaScript, eliminare caratteri che corrispondono a un pattern significa
-  usare espressioni regolari per togliere specifici gruppi di caratteri da una stringa.
+summary: Ecco come usare `replace()` con una regex per eliminare dei caratteri.
 title: Eliminazione di caratteri che corrispondono a un pattern
 weight: 5
 ---

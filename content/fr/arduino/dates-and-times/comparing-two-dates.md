@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:32:28.515744-07:00
-description: "Comparer deux dates, c'est mesurer la diff\xE9rence entre elles ; on\
-  \ le fait pour suivre des \xE9v\xE9nements, des d\xE9lais ou pour de la synchronisation.\
-  \ C'est\u2026"
+description: "How to: (Comment faire : ) Imagine t'as deux dates : d\xE9but et fin.\
+  \ Tu veux savoir combien de temps s'est \xE9coul\xE9 entre elles. On va utiliser\
+  \ les `DateTime`\u2026"
 lastmod: '2024-03-13T22:44:58.127021-06:00'
 model: gpt-4-1106-preview
-summary: "Comparer deux dates, c'est mesurer la diff\xE9rence entre elles ; on le\
-  \ fait pour suivre des \xE9v\xE9nements, des d\xE9lais ou pour de la synchronisation."
+summary: Imagine t'as deux dates.
 title: Comparer deux dates
 weight: 27
 ---

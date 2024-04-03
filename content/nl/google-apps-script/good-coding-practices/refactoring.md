@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:13.178114-07:00
-description: "Refactoring in de programmeertaal verwijst naar het proces van het herstructureren\
-  \ van bestaande computercode\u2014het veranderen van de factoring zonder het\u2026"
+description: "Hoe te: In Google Apps Script is een veelvoorkomend scenario dat baat\
+  \ heeft bij refactoring het vereenvoudigen van omslachtige scripts die interageren\
+  \ met\u2026"
 lastmod: '2024-03-13T22:44:50.340740-06:00'
 model: gpt-4-0125-preview
-summary: "Refactoring in de programmeertaal verwijst naar het proces van het herstructureren\
-  \ van bestaande computercode\u2014het veranderen van de factoring zonder het externe\
-  \ gedrag te wijzigen\u2014om niet-functionele attributen te verbeteren."
+summary: In Google Apps Script is een veelvoorkomend scenario dat baat heeft bij refactoring
+  het vereenvoudigen van omslachtige scripts die interageren met Google Sheets of
+  Docs.
 title: Refactoring
 weight: 19
 ---

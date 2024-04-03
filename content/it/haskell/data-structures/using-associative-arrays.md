@@ -3,13 +3,13 @@ changelog:
 - 2024-01-30, dogweather, reviewed
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:28.680730-07:00
-description: "Gli array associativi, o dizionari, in Haskell riguardano principalmente\
-  \ la mappatura di chiavi a valori per una ricerca veloce e una gestione efficiente\u2026"
+description: "Come fare: Haskell non ha array associativi pronti all'uso allo stesso\
+  \ modo di alcuni altri linguaggi, ma offre una potente libreria standard chiamata\u2026"
 lastmod: '2024-03-13T22:44:43.468176-06:00'
 model: gpt-4-0125-preview
-summary: Gli array associativi, o dizionari, in Haskell riguardano principalmente
-  la mappatura di chiavi a valori per una ricerca veloce e una gestione efficiente
-  dei dati.
+summary: Haskell non ha array associativi pronti all'uso allo stesso modo di alcuni
+  altri linguaggi, ma offre una potente libreria standard chiamata `Data.Map` per
+  lavorare con coppie chiave-valore.
 title: Utilizzo di array associativi
 weight: 15
 ---

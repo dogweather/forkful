@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:46:58.572681-07:00
-description: "Refatora\xE7\xE3o \xE9 a arte de ajustar o c\xF3digo existente para\
-  \ melhorar sua estrutura, legibilidade e efici\xEAncia sem alterar seu comportamento\
-  \ externo.\u2026"
+description: "Como fazer: Vamos pegar uma fun\xE7\xE3o Lua simples e refator\xE1-la.\
+  \ Come\xE7amos com uma fun\xE7\xE3o que calcula a soma dos n\xFAmeros em uma lista,\
+  \ mas \xE9 escrita sem\u2026"
 lastmod: '2024-03-13T22:44:46.717417-06:00'
 model: gpt-4-0125-preview
-summary: "Refatora\xE7\xE3o \xE9 a arte de ajustar o c\xF3digo existente para melhorar\
-  \ sua estrutura, legibilidade e efici\xEAncia sem alterar seu comportamento externo."
+summary: "Vamos pegar uma fun\xE7\xE3o Lua simples e refator\xE1-la."
 title: "Refatora\xE7\xE3o"
 weight: 19
 ---

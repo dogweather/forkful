@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:58:21.451993-07:00
-description: "Cercare e sostituire testo in JavaScript \xE8 fondamentale. Serve per\
-  \ modifica dati dinamici, pulire input, e manipolare stringhe. E' utile in ogni\
-  \ scenario\u2026"
+description: 'How to: Ecco qualche sapore di JavaScript per la ricerca e la sostituzione
+  di testo.'
 lastmod: '2024-03-13T22:44:43.797356-06:00'
 model: gpt-4-1106-preview
-summary: "Cercare e sostituire testo in JavaScript \xE8 fondamentale."
+summary: Ecco qualche sapore di JavaScript per la ricerca e la sostituzione di testo.
 title: Ricerca e sostituzione del testo
 weight: 10
 ---

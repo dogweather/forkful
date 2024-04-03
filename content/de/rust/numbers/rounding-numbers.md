@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:46:37.153078-07:00
-description: "Zahlen runden bedeutet, sie auf die n\xE4chste ganze Zahl oder einen\
-  \ Bruchteil mit einer bestimmten Genauigkeit anzupassen. Programmierer runden Zahlen,\
-  \ um\u2026"
+description: "Wie: Rust macht das Runden zum Kinderspiel. Schauen Sie sich diese Methoden\
+  \ f\xFCr die Typen `f32` oder `f64` an."
 lastmod: '2024-03-13T22:44:53.667703-06:00'
 model: gpt-4-0125-preview
-summary: "Zahlen runden bedeutet, sie auf die n\xE4chste ganze Zahl oder einen Bruchteil\
-  \ mit einer bestimmten Genauigkeit anzupassen."
+summary: Rust macht das Runden zum Kinderspiel.
 title: Zahlen runden
 weight: 13
 ---

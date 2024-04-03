@@ -2,14 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:29.383301-07:00
-description: "Karakters verwijderen die overeenkomen met een patroon is in principe\
-  \ het filteren van ongewenste karakters of sequenties uit strings of bestandsinhoud\
-  \ op\u2026"
+description: 'Hoe te: .'
 lastmod: '2024-03-13T22:44:51.229006-06:00'
 model: gpt-4-0125-preview
-summary: Karakters verwijderen die overeenkomen met een patroon is in principe het
-  filteren van ongewenste karakters of sequenties uit strings of bestandsinhoud op
-  basis van regels, bekend als patronen.
+summary: .
 title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---

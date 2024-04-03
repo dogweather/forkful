@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:38:57.134809-07:00
-description: "Convertire una stringa in minuscolo significa trasformare tutti i caratteri\
-  \ alfabeticamente maiuscoli in minuscoli. Questo \xE8 spesso necessario per\u2026"
+description: 'Come fare: Utilizza `lower()` per convertire una stringa in minuscolo
+  in Python. Ecco un esempio.'
 lastmod: '2024-03-13T22:44:42.988567-06:00'
 model: gpt-4-1106-preview
-summary: Convertire una stringa in minuscolo significa trasformare tutti i caratteri
-  alfabeticamente maiuscoli in minuscoli.
+summary: Utilizza `lower()` per convertire una stringa in minuscolo in Python.
 title: Conversione di una stringa in minuscolo
 weight: 4
 ---

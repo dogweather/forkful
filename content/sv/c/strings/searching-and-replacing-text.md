@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:24.282963-07:00
-description: "Att s\xF6ka och ers\xE4tta text i C inneb\xE4r att identifiera specifika\
-  \ delstr\xE4ngar inom en st\xF6rre str\xE4ng och byta ut dem mot olika delstr\xE4\
-  ngar. Programmerare\u2026"
+description: "Hur man g\xF6r: C kommer inte med inbyggda funktioner f\xF6r att direkt\
+  \ utf\xF6ra s\xF6kning och ers\xE4ttning p\xE5 str\xE4ngar. Du kan dock uppn\xE5\
+  \ detta genom att kombinera\u2026"
 lastmod: '2024-03-13T22:44:38.366036-06:00'
 model: gpt-4-0125-preview
-summary: "Att s\xF6ka och ers\xE4tta text i C inneb\xE4r att identifiera specifika\
-  \ delstr\xE4ngar inom en st\xF6rre str\xE4ng och byta ut dem mot olika delstr\xE4\
-  ngar."
+summary: "C kommer inte med inbyggda funktioner f\xF6r att direkt utf\xF6ra s\xF6\
+  kning och ers\xE4ttning p\xE5 str\xE4ngar."
 title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---

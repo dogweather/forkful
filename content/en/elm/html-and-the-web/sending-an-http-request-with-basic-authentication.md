@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 18:01:30.602993-07:00
-description: "Sending an HTTP request with basic authentication involves attaching\
-  \ login credentials (username and password) to the request headers to access protected\u2026"
+description: 'How to: Elm makes HTTP requests using the `Http` package. To add basic
+  auth, you encode the credentials and include them in the request headers.'
 lastmod: '2024-03-13T22:45:00.009235-06:00'
 model: gpt-4-1106-preview
-summary: Sending an HTTP request with basic authentication involves attaching login
-  credentials (username and password) to the request headers to access protected resources.
+summary: Elm makes HTTP requests using the `Http` package.
 title: Sending an HTTP request with basic authentication
 weight: 45
 ---

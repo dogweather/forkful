@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:24.983286-07:00
-description: "\xC5 skrive en tekstfil i Rust inneb\xE6rer \xE5 opprette, skrive til\
-  \ og potensielt legge til data i en fil p\xE5 filsystemet. Programmerere utf\xF8\
-  rer denne operasjonen\u2026"
+description: "Hvordan: Rusts standardbibliotek tilbyr robuste verkt\xF8y for filmanipulering,\
+  \ hovedsakelig innkapslet innenfor `std::fs` og `std::io`-modulene. Her er et\u2026"
 lastmod: '2024-03-13T22:44:40.592200-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive en tekstfil i Rust inneb\xE6rer \xE5 opprette, skrive til og\
-  \ potensielt legge til data i en fil p\xE5 filsystemet."
+summary: "Rusts standardbibliotek tilbyr robuste verkt\xF8y for filmanipulering, hovedsakelig\
+  \ innkapslet innenfor `std::fs` og `std::io`-modulene."
 title: Skrive en tekstfil
 weight: 24
 ---

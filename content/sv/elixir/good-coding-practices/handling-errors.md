@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 00:51:10.385167-07:00
-description: "Att hantera fel inneb\xE4r att skriva kod som kan hantera n\xE4r saker\
-  \ g\xE5r snett. Programmerare g\xF6r det f\xF6r att undvika krascher och f\xF6r\
-  \ att f\xF6rs\xE4kra sig om att\u2026"
+description: "Hur man g\xF6r: I Elixir anv\xE4nder vi ofta m\xF6nstermatchning och\
+  \ `case`-satsen f\xF6r att hantera olika utfall, inklusive fel."
 lastmod: '2024-03-13T22:44:37.574850-06:00'
 model: gpt-4-1106-preview
-summary: "Att hantera fel inneb\xE4r att skriva kod som kan hantera n\xE4r saker g\xE5\
-  r snett."
+summary: "I Elixir anv\xE4nder vi ofta m\xF6nstermatchning och `case`-satsen f\xF6\
+  r att hantera olika utfall, inklusive fel."
 title: Hantering av fel
 weight: 16
 ---

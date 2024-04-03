@@ -1,11 +1,11 @@
 ---
 date: 2024-01-27 20:35:35.118406-07:00
-description: "Generare numeri casuali in TypeScript consiste nel creare valori numerici\
-  \ imprevedibili all'interno di un intervallo specificato. I programmatori\u2026"
+description: "Come fare: In TypeScript, \xE8 possibile generare numeri casuali utilizzando\
+  \ l'oggetto globale `Math`. Di seguito sono riportati alcuni esempi pratici che\u2026"
 lastmod: '2024-03-13T22:44:43.172132-06:00'
 model: gpt-4-0125-preview
-summary: Generare numeri casuali in TypeScript consiste nel creare valori numerici
-  imprevedibili all'interno di un intervallo specificato.
+summary: "In TypeScript, \xE8 possibile generare numeri casuali utilizzando l'oggetto\
+  \ globale `Math`."
 title: Generazione di numeri casuali
 weight: 12
 ---

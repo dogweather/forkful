@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 03:37:24.863446-07:00
-description: "Refaktorointi on prosessi, jossa olemassa olevaa tietokonekoodia rakennetaan\
-  \ uudelleen\u2014muutetaan faktorointia\u2014muuttamatta sen ulkoista k\xE4ytt\xE4\
-  ytymist\xE4.\u2026"
+description: "Miten: Kuvitellaan, ett\xE4 sinulla on koodinp\xE4tk\xE4, joka laskee\
+  \ ja tulostaa suorakulmion pinta-alan ja piirin annettujen pituus- ja leveysmittojen\u2026"
 lastmod: '2024-03-13T22:44:56.151841-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktorointi on prosessi, jossa olemassa olevaa tietokonekoodia rakennetaan\
-  \ uudelleen\u2014muutetaan faktorointia\u2014muuttamatta sen ulkoista k\xE4ytt\xE4\
-  ytymist\xE4."
+summary: "Kuvitellaan, ett\xE4 sinulla on koodinp\xE4tk\xE4, joka laskee ja tulostaa\
+  \ suorakulmion pinta-alan ja piirin annettujen pituus- ja leveysmittojen perusteella."
 title: Koodin refaktorointi
 weight: 19
 ---

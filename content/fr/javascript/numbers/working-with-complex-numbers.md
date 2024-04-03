@@ -1,12 +1,13 @@
 ---
 date: 2024-01-26 04:42:03.153866-07:00
-description: "Les nombres complexes sont des nombres ayant une partie r\xE9elle et\
-  \ une partie imaginaire (comme 3 + 4i). Ils apparaissent dans divers probl\xE8mes\
-  \ de\u2026"
+description: "Comment faire : JavaScript ne poss\xE8de pas de support int\xE9gr\xE9\
+  \ pour les nombres complexes, mais vous pouvez retrousser vos manches et vous en\
+  \ charger avec\u2026"
 lastmod: '2024-03-13T22:44:58.268289-06:00'
 model: gpt-4-0125-preview
-summary: "Les nombres complexes sont des nombres ayant une partie r\xE9elle et une\
-  \ partie imaginaire (comme 3 + 4i)."
+summary: "JavaScript ne poss\xE8de pas de support int\xE9gr\xE9 pour les nombres complexes,\
+  \ mais vous pouvez retrousser vos manches et vous en charger avec des objets et\
+  \ des math\xE9matiques."
 title: Manipulation des nombres complexes
 weight: 14
 ---

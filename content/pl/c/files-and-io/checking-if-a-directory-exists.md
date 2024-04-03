@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:48.671090-07:00
-description: "Sprawdzanie, czy katalog istnieje w j\u0119zyku C, polega na zapytaniu\
-  \ systemu plik\xF3w, aby zweryfikowa\u0107, czy okre\u015Blona \u015Bcie\u017Cka\
-  \ prowadzi do katalogu.\u2026"
+description: "Jak to zrobi\u0107: W C, istnienie katalogu mo\u017Cna sprawdzi\u0107\
+  \ za pomoc\u0105 funkcji `stat`, kt\xF3ra pobiera informacje o pliku lub katalogu\
+  \ znajduj\u0105cym si\u0119 pod\u2026"
 lastmod: '2024-03-13T22:44:35.902193-06:00'
 model: gpt-4-0125-preview
-summary: "Sprawdzanie, czy katalog istnieje w j\u0119zyku C, polega na zapytaniu systemu\
-  \ plik\xF3w, aby zweryfikowa\u0107, czy okre\u015Blona \u015Bcie\u017Cka prowadzi\
-  \ do katalogu."
+summary: "W C, istnienie katalogu mo\u017Cna sprawdzi\u0107 za pomoc\u0105 funkcji\
+  \ `stat`, kt\xF3ra pobiera informacje o pliku lub katalogu znajduj\u0105cym si\u0119\
+  \ pod okre\u015Blon\u0105 \u015Bcie\u017Ck\u0105."
 title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---

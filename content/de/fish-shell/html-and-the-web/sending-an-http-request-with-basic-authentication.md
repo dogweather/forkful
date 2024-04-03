@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 18:01:29.285556-07:00
-description: "Ein HTTP-Request mit Basisauthentifizierung beinhaltet das Senden von\
-  \ Benutzername und Passwort in kodierter Form zum Server, um Zugriff zu erhalten.\u2026"
+description: 'So geht''s: .'
 lastmod: '2024-03-13T22:44:54.309134-06:00'
 model: gpt-4-1106-preview
-summary: Ein HTTP-Request mit Basisauthentifizierung beinhaltet das Senden von Benutzername
-  und Passwort in kodierter Form zum Server, um Zugriff zu erhalten.
+summary: .
 title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---

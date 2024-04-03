@@ -1,8 +1,8 @@
 ---
 date: 2024-01-26 03:47:03.698352-07:00
-description: "Con el IDE de Arduino, puedes usar impresiones Serial para depurar,\
-  \ pero es un poco como usar una linterna para explorar una cueva. Para una depuraci\xF3\
-  n\u2026"
+description: "C\xF3mo: Con el IDE de Arduino, puedes usar impresiones Serial para\
+  \ depurar, pero es un poco como usar una linterna para explorar una cueva. Para\
+  \ una\u2026"
 lastmod: '2024-03-13T22:44:59.337804-06:00'
 model: gpt-4-0125-preview
 summary: Con el IDE de Arduino, puedes usar impresiones Serial para depurar, pero

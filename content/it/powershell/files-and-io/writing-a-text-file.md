@@ -2,13 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:17.299738-07:00
-description: "Scrivere un file di testo in PowerShell comporta la creazione e la manipolazione\
-  \ di file basati su testo, che \xE8 un'operazione fondamentale per la\u2026"
+description: "Come fare: PowerShell fornisce cmdlet semplici per la gestione dei file.\
+  \ Il cmdlet `Out-File` e gli operatori di reindirizzamento vengono utilizzati\u2026"
 lastmod: '2024-03-13T22:44:43.660631-06:00'
 model: gpt-4-0125-preview
-summary: "Scrivere un file di testo in PowerShell comporta la creazione e la manipolazione\
-  \ di file basati su testo, che \xE8 un'operazione fondamentale per la registrazione,\
-  \ lo stoccaggio dei dati e la scrittura di script di configurazione."
+summary: PowerShell fornisce cmdlet semplici per la gestione dei file.
 title: Scrivere un file di testo
 weight: 24
 ---

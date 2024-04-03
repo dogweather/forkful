@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:39.597087-07:00
-description: "Registrar eventos, erros ou ocorr\xEAncias not\xE1veis durante a execu\xE7\
-  \xE3o de um programa \xE9 o que constitui o logging na programa\xE7\xE3o. Programadores\
-  \ fazem isso\u2026"
+description: "Como Fazer: No Google Apps Script, o registro pode ser realizado usando\
+  \ v\xE1rios m\xE9todos, como a classe `Logger` e `console.log()`. A classe Logger\
+  \ \xE9 a\u2026"
 lastmod: '2024-03-13T22:44:46.115300-06:00'
 model: gpt-4-0125-preview
-summary: "Registrar eventos, erros ou ocorr\xEAncias not\xE1veis durante a execu\xE7\
-  \xE3o de um programa \xE9 o que constitui o logging na programa\xE7\xE3o."
+summary: "No Google Apps Script, o registro pode ser realizado usando v\xE1rios m\xE9\
+  todos, como a classe `Logger` e `console.log()`."
 title: Registro
 weight: 17
 ---

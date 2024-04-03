@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:45:27.693051-07:00
-description: "Extraire des sous-cha\xEEnes, c'est comme d\xE9couper un morceau de\
-  \ baguette \u2013 on prend juste la partie qu'on veut. Les programmeurs le font\
-  \ pour manipuler et\u2026"
+description: "How to: En Clojure, on utilise `subs` pour extraire une sous-cha\xEE\
+  ne ."
 lastmod: '2024-03-13T22:44:57.270176-06:00'
 model: gpt-4-1106-preview
-summary: "Extraire des sous-cha\xEEnes, c'est comme d\xE9couper un morceau de baguette\
-  \ \u2013 on prend juste la partie qu'on veut."
+summary: "En Clojure, on utilise `subs` pour extraire une sous-cha\xEEne."
 title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---

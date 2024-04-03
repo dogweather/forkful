@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:43:46.150282-07:00
-description: "Att ladda ned en webbsida inneb\xE4r att h\xE4mta allt inneh\xE5ll fr\xE5\
-  n en webbsida till din lokala enhet. Programmerare g\xF6r detta f\xF6r att analysera\u2026"
+description: "S\xE5 h\xE4r g\xF6r du: Enkel nedladdning med `curl`."
 lastmod: '2024-03-13T22:44:38.081375-06:00'
 model: gpt-4-1106-preview
-summary: "Att ladda ned en webbsida inneb\xE4r att h\xE4mta allt inneh\xE5ll fr\xE5\
-  n en webbsida till din lokala enhet."
+summary: Enkel nedladdning med `curl`.
 title: "H\xE4mta en webbsida"
 weight: 42
 ---

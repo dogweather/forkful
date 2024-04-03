@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:17.175378-07:00
-description: "Imprimir sa\xEDdas de depura\xE7\xE3o em Visual Basic for Applications\
-  \ (VBA) envolve colocar estrategicamente instru\xE7\xF5es de impress\xE3o dentro\
-  \ do seu c\xF3digo para\u2026"
+description: "Como fazer: No VBA, a instru\xE7\xE3o `Debug.Print` \xE9 a principal\
+  \ ferramenta para imprimir informa\xE7\xF5es de depura\xE7\xE3o na Janela Imediata\
+  \ no Editor Visual Basic\u2026"
 lastmod: '2024-03-13T22:44:46.415141-06:00'
 model: gpt-4-0125-preview
-summary: "Imprimir sa\xEDdas de depura\xE7\xE3o em Visual Basic for Applications (VBA)\
-  \ envolve colocar estrategicamente instru\xE7\xF5es de impress\xE3o dentro do seu\
-  \ c\xF3digo para exibir valores de vari\xE1veis, fluxo de execu\xE7\xE3o ou mensagens\
-  \ de depura\xE7\xE3o personalizadas."
+summary: "No VBA, a instru\xE7\xE3o `Debug.Print` \xE9 a principal ferramenta para\
+  \ imprimir informa\xE7\xF5es de depura\xE7\xE3o na Janela Imediata no Editor Visual\
+  \ Basic (VBE)."
 title: "Imprimindo a sa\xEDda de depura\xE7\xE3o"
 weight: 33
 ---

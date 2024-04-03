@@ -2,15 +2,14 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:34.252895-07:00
-description: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w w Dart polega na\
-  \ usuni\u0119ciu podw\xF3jnych (\") lub pojedynczych (') cudzys\u0142ow\xF3w z pocz\u0105\
-  tku i ko\u0144ca ci\u0105gu znak\xF3w, co jest\u2026"
+description: "Jak to zrobi\u0107: Dart oferuje proste sposoby na usuni\u0119cie cudzys\u0142\
+  ow\xF3w z ci\u0105gu znak\xF3w przy u\u017Cyciu wbudowanych metod ci\u0105gu znak\xF3\
+  w, bez potrzeby korzystania z\u2026"
 lastmod: '2024-03-13T22:44:35.077149-06:00'
 model: gpt-4-0125-preview
-summary: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w w Dart polega na usuni\u0119\
-  ciu podw\xF3jnych (\") lub pojedynczych (') cudzys\u0142ow\xF3w z pocz\u0105tku\
-  \ i ko\u0144ca ci\u0105gu znak\xF3w, co jest przydatne do oczyszczania danych lub\
-  \ przygotowywania ci\u0105gu znak\xF3w do dalszej obr\xF3bki."
+summary: "Dart oferuje proste sposoby na usuni\u0119cie cudzys\u0142ow\xF3w z ci\u0105\
+  gu znak\xF3w przy u\u017Cyciu wbudowanych metod ci\u0105gu znak\xF3w, bez potrzeby\
+  \ korzystania z bibliotek firm trzecich."
 title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---

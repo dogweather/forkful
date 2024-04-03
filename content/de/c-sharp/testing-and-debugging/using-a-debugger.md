@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:48:09.939683-07:00
-description: "Stellen Sie sich vor, Sie haben ein kleines Programm, das nicht richtig\
-  \ funktioniert: ```C# static void Main() { int result = Sum(1, 2);\u2026"
+description: 'Wie: Stellen Sie sich vor, Sie haben ein kleines Programm, das nicht
+  richtig funktioniert.'
 lastmod: '2024-03-13T22:44:53.892670-06:00'
 model: gpt-4-0125-preview
-summary: "Stellen Sie sich vor, Sie haben ein kleines Programm, das nicht richtig\
-  \ funktioniert:\n\n```C#\nstatic void Main()\n{\n    int result = Sum(1, 2);\n \
-  \   Console."
+summary: Stellen Sie sich vor, Sie haben ein kleines Programm, das nicht richtig funktioniert.
 title: Einsatz eines Debuggers
 weight: 35
 ---

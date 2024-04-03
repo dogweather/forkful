@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:39:15.916928-07:00
-description: "Convertir una cadena a min\xFAsculas significa transformar todos los\
-  \ caracteres alfab\xE9ticos en dicha cadena a su equivalente en min\xFAsculas. Los\
-  \ programadores\u2026"
+description: "C\xF3mo Hacerlo: Python hace que convertir cadenas a min\xFAsculas sea\
+  \ pan comido con el m\xE9todo `.lower()`. Aqu\xED te muestro c\xF3mo usarlo."
 lastmod: '2024-03-13T22:44:58.597548-06:00'
 model: gpt-4-1106-preview
-summary: "Convertir una cadena a min\xFAsculas significa transformar todos los caracteres\
-  \ alfab\xE9ticos en dicha cadena a su equivalente en min\xFAsculas."
+summary: "Python hace que convertir cadenas a min\xFAsculas sea pan comido con el\
+  \ m\xE9todo `.lower()`."
 title: "Conversi\xF3n de una cadena de texto a min\xFAsculas"
 weight: 4
 ---

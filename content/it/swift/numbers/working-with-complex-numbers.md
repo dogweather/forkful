@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 04:45:41.622823-07:00
-description: "Swift non ha un supporto integrato per i numeri complessi, ma possiamo\
-  \ crearne uno nostro: ```Swift struct NumeroComplesso { var reale: Double var\u2026"
+description: 'Come fare: Swift non ha un supporto integrato per i numeri complessi,
+  ma possiamo crearne uno nostro.'
 lastmod: '2024-03-13T22:44:43.764452-06:00'
 model: gpt-4-0125-preview
-summary: "Swift non ha un supporto integrato per i numeri complessi, ma possiamo crearne\
-  \ uno nostro:\n\n```Swift\nstruct NumeroComplesso {\n    var reale: Double\n   \
-  \ var immaginario: Double\n    \n    func add(_ altro: NumeroComplesso) -> NumeroComplesso\
-  \ {\n        return NumeroComplesso(reale: reale + altro."
+summary: Swift non ha un supporto integrato per i numeri complessi, ma possiamo crearne
+  uno nostro.
 title: Lavorare con i numeri complessi
 weight: 14
 ---

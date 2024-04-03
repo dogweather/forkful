@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:17:57.607268-07:00
-description: "L'utilisation d'une coquille interactive, ou d'une boucle de lecture-\xE9\
-  valuation-impression (REPL), vous permet de coder de mani\xE8re interactive. Les\u2026"
+description: "Comment faire : Invoquez REPL en ouvrant un terminal et en ex\xE9cutant\
+  \ `swift`. Tapez directement le code et appuyez sur Entr\xE9e pour l'ex\xE9cuter.\
+  \ Voici un\u2026"
 lastmod: '2024-03-13T22:44:58.224442-06:00'
 model: gpt-4-0125-preview
-summary: "L'utilisation d'une coquille interactive, ou d'une boucle de lecture-\xE9\
-  valuation-impression (REPL), vous permet de coder de mani\xE8re interactive."
+summary: "Invoquez REPL en ouvrant un terminal et en ex\xE9cutant `swift`."
 title: Utilisation d'une console interactive (REPL)
 weight: 34
 ---

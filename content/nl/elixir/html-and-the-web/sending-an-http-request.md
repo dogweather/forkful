@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:27.086770-07:00
-description: "Een HTTP-verzoek verzenden is hoe jouw programma data van het web vraagt,\
-  \ een beetje zoals je een bibliothecaris om een boek zou vragen. Programmeurs doen\u2026"
+description: 'Hoe: Gebruik de `HTTPoison` bibliotheek van Elixir. Het is netjes, eenvoudig
+  en klaart de klus. 1. Voeg HTTPoison toe aan je `mix.exs` van je project.'
 lastmod: '2024-03-13T22:44:50.458916-06:00'
 model: gpt-4-0125-preview
-summary: Een HTTP-verzoek verzenden is hoe jouw programma data van het web vraagt,
-  een beetje zoals je een bibliothecaris om een boek zou vragen.
+summary: Gebruik de `HTTPoison` bibliotheek van Elixir.
 title: Een HTTP-verzoek verzenden
 weight: 44
 ---

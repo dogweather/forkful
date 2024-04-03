@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:54:58.724123-07:00
-description: "Das Einlesen einer Textdatei bedeutet, ihren Inhalt programmatisch zug\xE4\
-  nglich zu machen. Programmierer tun dies, um Daten zu verarbeiten, Skripte zu\u2026"
+description: 'Anleitung: In PowerShell nutzt man oft `Get-Content`, um eine Datei
+  zu lesen. Hier ist ein einfaches Beispiel.'
 lastmod: '2024-03-13T22:44:54.120973-06:00'
 model: gpt-4-1106-preview
-summary: "Das Einlesen einer Textdatei bedeutet, ihren Inhalt programmatisch zug\xE4\
-  nglich zu machen."
+summary: In PowerShell nutzt man oft `Get-Content`, um eine Datei zu lesen.
 title: Textdatei einlesen
 weight: 22
 ---

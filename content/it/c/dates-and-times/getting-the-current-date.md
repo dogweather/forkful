@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:20.000396-07:00
-description: "Ottenere la data corrente in C comporta l'accesso alla libreria standard\
-  \ C per recuperare e formattare la data e l'ora correnti del sistema. I\u2026"
+description: "Come fare: In C, l'header `<time.h>` fornisce le funzioni e i tipi necessari\
+  \ per lavorare con date e orari. La funzione `time()` recupera l'ora corrente,\u2026"
 lastmod: '2024-03-13T22:44:44.011407-06:00'
 model: gpt-4-0125-preview
-summary: Ottenere la data corrente in C comporta l'accesso alla libreria standard
-  C per recuperare e formattare la data e l'ora correnti del sistema.
+summary: In C, l'header `<time.h>` fornisce le funzioni e i tipi necessari per lavorare
+  con date e orari.
 title: Ottenere la data corrente
 weight: 29
 ---

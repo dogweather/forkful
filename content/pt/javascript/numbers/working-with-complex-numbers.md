@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:42:30.649773-07:00
-description: "N\xFAmeros complexos s\xE3o n\xFAmeros com uma parte real e uma parte\
-  \ imagin\xE1ria (como 3 + 4i). Eles aparecem em v\xE1rios problemas de programa\xE7\
-  \xE3o, especialmente no\u2026"
+description: "Como: JavaScript n\xE3o possui suporte nativo para n\xFAmeros complexos,\
+  \ mas voc\xEA pode arrega\xE7ar as mangas e lidar com isso usando objetos e matem\xE1\
+  tica. Aqui\u2026"
 lastmod: '2024-03-13T22:44:46.956615-06:00'
 model: gpt-4-0125-preview
-summary: "N\xFAmeros complexos s\xE3o n\xFAmeros com uma parte real e uma parte imagin\xE1\
-  ria (como 3 + 4i)."
+summary: "JavaScript n\xE3o possui suporte nativo para n\xFAmeros complexos, mas voc\xEA\
+  \ pode arrega\xE7ar as mangas e lidar com isso usando objetos e matem\xE1tica."
 title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---

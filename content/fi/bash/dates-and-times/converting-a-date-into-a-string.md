@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:35:46.690789-07:00
-description: "Muunnetaan p\xE4iv\xE4m\xE4\xE4r\xE4 merkkijonoksi, koska j\xE4sennellyt\
-  \ formaatit on helpompi jakaa ja k\xE4sitell\xE4. Joskus tarvitaan tarkkaa muotoilua,\
-  \ esimerkiksi\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:56.750579-06:00'
 model: gpt-4-1106-preview
-summary: "Muunnetaan p\xE4iv\xE4m\xE4\xE4r\xE4 merkkijonoksi, koska j\xE4sennellyt\
-  \ formaatit on helpompi jakaa ja k\xE4sitell\xE4."
+summary: .
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---

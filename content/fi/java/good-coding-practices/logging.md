@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:07:09.093186-07:00
-description: "Lokitus on periaatteessa tapahtumien tallentamisen prosessi, jotka tapahtuvat\
-  \ ohjelmiston sis\xE4ll\xE4. Ohjelmoijat lokittavat n\xE4it\xE4 tapahtumia ker\xE4\
-  t\xE4kseen\u2026"
+description: "Kuinka: T\xE4ss\xE4 on yksinkertainen tapa aloittaa lokitus Javassa\
+  \ k\xE4ytt\xE4en sis\xE4\xE4nrakennettua `java.util.logging`-pakettia."
 lastmod: '2024-03-13T22:44:56.451470-06:00'
 model: gpt-4-1106-preview
-summary: "Lokitus on periaatteessa tapahtumien tallentamisen prosessi, jotka tapahtuvat\
-  \ ohjelmiston sis\xE4ll\xE4."
+summary: "T\xE4ss\xE4 on yksinkertainen tapa aloittaa lokitus Javassa k\xE4ytt\xE4\
+  en sis\xE4\xE4nrakennettua `java.util.logging`-pakettia."
 title: Lokitus
 weight: 17
 ---

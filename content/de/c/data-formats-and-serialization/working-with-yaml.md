@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:12.925228-07:00
-description: "YAML, das f\xFCr \"YAML Ain't Markup Language\" steht, ist ein f\xFC\
-  r Menschen lesbaren Daten-Serialisierungsstandard, der f\xFCr alle m\xF6glichen\
-  \ Anwendungen genutzt\u2026"
+description: "Wie geht das: Die Arbeit mit YAML in C erfordert eine Bibliothek, da\
+  \ die Standard-C-Bibliothek keine direkte Unterst\xFCtzung f\xFCr YAML-Parser oder\u2026"
 lastmod: '2024-03-13T22:44:54.375405-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, das f\xFCr \"YAML Ain't Markup Language\" steht, ist ein f\xFCr Menschen\
-  \ lesbaren Daten-Serialisierungsstandard, der f\xFCr alle m\xF6glichen Anwendungen\
-  \ genutzt werden kann, von Konfigurationsdateien bis hin zur Datenspeicherung."
+summary: "Die Arbeit mit YAML in C erfordert eine Bibliothek, da die Standard-C-Bibliothek\
+  \ keine direkte Unterst\xFCtzung f\xFCr YAML-Parser oder Serialisierung bietet."
 title: Arbeiten mit YAML
 weight: 41
 ---

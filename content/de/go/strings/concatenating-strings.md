@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:56.098006-07:00
-description: "Das Verketten von Zeichenfolgen beinhaltet das aneinanderf\xFCgen von\
-  \ zwei oder mehreren Zeichenfolgen am Ende, um eine neue Zeichenfolge zu bilden.\u2026"
+description: "Wie man es macht: In Go gibt es mehrere M\xF6glichkeiten, Zeichenfolgen\
+  \ zu verketten. Hier ist ein Blick auf einige g\xE4ngige Methoden mit Beispielen:\
+  \ #."
 lastmod: '2024-03-13T22:44:53.278746-06:00'
 model: gpt-4-0125-preview
-summary: "Das Verketten von Zeichenfolgen beinhaltet das aneinanderf\xFCgen von zwei\
-  \ oder mehreren Zeichenfolgen am Ende, um eine neue Zeichenfolge zu bilden."
+summary: "In Go gibt es mehrere M\xF6glichkeiten, Zeichenfolgen zu verketten."
 title: Strings verketten
 weight: 3
 ---

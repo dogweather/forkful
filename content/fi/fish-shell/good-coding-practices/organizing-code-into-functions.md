@@ -3,13 +3,12 @@ changelog:
 - 2024-01-28, dogweather, reviewed and added links
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 23:02:32.082544-07:00
-description: "Koodin j\xE4rjest\xE4minen funktioihin on osioiden kasaamista skriptist\xE4\
-  \ tiettyj\xE4 teht\xE4vi\xE4 varten. Teemme sen, koska se tekee koodista helpommin\
-  \ luettavaa,\u2026"
+description: "Kuinka: Fishiss\xE4 kirjoitat funktion `function` avainsanalla, annat\
+  \ sille nimen ja lopetat `end`-sanan kanssa. T\xE4ss\xE4 on yksinkertainen esimerkki."
 lastmod: '2024-03-13T22:44:57.000344-06:00'
 model: gpt-4-0125-preview
-summary: "Koodin j\xE4rjest\xE4minen funktioihin on osioiden kasaamista skriptist\xE4\
-  \ tiettyj\xE4 teht\xE4vi\xE4 varten."
+summary: "Fishiss\xE4 kirjoitat funktion `function` avainsanalla, annat sille nimen\
+  \ ja lopetat `end`-sanan kanssa."
 title: "Koodin j\xE4rjest\xE4minen funktioiksi"
 weight: 18
 ---

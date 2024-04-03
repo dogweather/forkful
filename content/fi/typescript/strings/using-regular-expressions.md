@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:43.594163-07:00
-description: "S\xE4\xE4nn\xF6lliset lausekkeet eli regex ovat tehokas mallin vastaavuuden\
-  \ etsimisen ja hakemisen ty\xF6kalu ohjelmoinnissa. Ohjelmoijat k\xE4ytt\xE4v\xE4\
-  t regexi\xE4 teht\xE4viin\u2026"
+description: "Kuinka: Sukelletaan TypeScriptiin ja katsotaan, miten regexi\xE4 k\xE4\
+  ytet\xE4\xE4n yleisiin teht\xE4viin."
 lastmod: '2024-03-13T22:44:56.305663-06:00'
 model: gpt-4-0125-preview
-summary: "S\xE4\xE4nn\xF6lliset lausekkeet eli regex ovat tehokas mallin vastaavuuden\
-  \ etsimisen ja hakemisen ty\xF6kalu ohjelmoinnissa."
+summary: "Sukelletaan TypeScriptiin ja katsotaan, miten regexi\xE4 k\xE4ytet\xE4\xE4\
+  n yleisiin teht\xE4viin."
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:38.044854-07:00
-description: "Das Umwandeln eines Datums in einen String in Visual Basic for Applications\
-  \ (VBA) ist ein Prozess, der verwendet wird, um den Datentyp eines Datums in ein\u2026"
+description: "Wie geht das: In VBA ist die `Format`-Funktion Ihre erste Anlaufstelle\
+  \ f\xFCr die Umwandlung von Daten in Strings. Sie erm\xF6glicht es Ihnen, das Datumsformat\u2026"
 lastmod: '2024-03-13T22:44:53.730977-06:00'
 model: gpt-4-0125-preview
-summary: "Das Umwandeln eines Datums in einen String in Visual Basic for Applications\
-  \ (VBA) ist ein Prozess, der verwendet wird, um den Datentyp eines Datums in ein\
-  \ String-Format zu \xE4ndern."
+summary: "In VBA ist die `Format`-Funktion Ihre erste Anlaufstelle f\xFCr die Umwandlung\
+  \ von Daten in Strings."
 title: Ein Datum in einen String umwandeln
 weight: 28
 ---

@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:58:02.948038-07:00
-description: "La recherche et le remplacement de texte, c'est changer une cha\xEE\
-  ne de caract\xE8res par une autre dans une donn\xE9e. Les programmeurs font \xE7\
-  a pour corriger des\u2026"
+description: 'How to: Chercher et remplacer avec JavaScript, c''est facile. Voici
+  comment.'
 lastmod: '2024-03-13T22:44:58.258656-06:00'
 model: gpt-4-1106-preview
-summary: "La recherche et le remplacement de texte, c'est changer une cha\xEEne de\
-  \ caract\xE8res par une autre dans une donn\xE9e."
+summary: Chercher et remplacer avec JavaScript, c'est facile.
 title: Recherche et remplacement de texte
 weight: 10
 ---

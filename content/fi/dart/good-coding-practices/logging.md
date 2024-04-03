@@ -2,12 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:06.780593-07:00
-description: "Dartissa lokitus viittaa ohjelman suorituksen aikana tapahtuvaan eri\
-  \ tasojen tiedon tallentamiseen. Ohjelmoijat tekev\xE4t sen seuratakseen ohjelmiston\u2026"
+description: "Kuinka: Dart sis\xE4lt\xE4\xE4 yksinkertaisen lokitusmekanismin `dart:developer`\
+  \ kirjaston kautta. Monimutkaisempien lokitustarpeiden osalta ohjelmoijat k\xE4\xE4\
+  ntyv\xE4t\u2026"
 lastmod: '2024-03-13T22:44:56.277687-06:00'
 model: gpt-4-0125-preview
-summary: Dartissa lokitus viittaa ohjelman suorituksen aikana tapahtuvaan eri tasojen
-  tiedon tallentamiseen.
+summary: "Dart sis\xE4lt\xE4\xE4 yksinkertaisen lokitusmekanismin `dart:developer`\
+  \ kirjaston kautta."
 title: "Lokitiedostojen k\xE4sittely"
 weight: 17
 ---

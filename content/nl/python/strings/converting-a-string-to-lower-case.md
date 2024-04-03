@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:05.910736-07:00
-description: "Een tekenreeks converteren naar kleine letters betekent het veranderen\
-  \ van alle hoofdletters in de tekst naar hun kleine letter equivalenten. Programmeurs\u2026"
+description: 'Hoe: Een tekenreeks naar kleine letters omzetten in Python is eenvoudig
+  met de `.lower()` methode.'
 lastmod: '2024-03-13T22:44:50.363374-06:00'
 model: gpt-4-0125-preview
-summary: Een tekenreeks converteren naar kleine letters betekent het veranderen van
-  alle hoofdletters in de tekst naar hun kleine letter equivalenten.
+summary: Een tekenreeks naar kleine letters omzetten in Python is eenvoudig met de
+  `.lower()` methode.
 title: Een string omzetten naar kleine letters
 weight: 4
 ---

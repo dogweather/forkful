@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:38.969993-07:00
-description: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong TypeScript li\xEA\
-  n quan \u0111\u1EBFn vi\u1EC7c t\u1EA1o ra c\xE1c gi\xE1 tr\u1ECB s\u1ED1 kh\xF4\
-  ng th\u1EC3 \u0111o\xE1n tr\u01B0\u1EDBc trong m\u1ED9t ph\u1EA1m vi \u0111\xE3\
-  \ x\xE1c \u0111\u1ECBnh. L\u1EADp tr\xECnh vi\xEAn t\u1EADn\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong TypeScript, b\u1EA1n c\xF3 th\u1EC3\
+  \ t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn s\u1EED d\u1EE5ng \u0111\u1ED1i t\u01B0\u1EE3\
+  ng `Math` to\xE0n c\u1EE5c. D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t s\u1ED1 v\xED\
+  \ d\u1EE5 th\u1EF1c t\u1EBF minh h\u1ECDa c\xE1ch t\u1EA1o ra s\u1ED1\u2026"
 lastmod: '2024-03-13T22:44:36.313382-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong TypeScript li\xEAn quan\
-  \ \u0111\u1EBFn vi\u1EC7c t\u1EA1o ra c\xE1c gi\xE1 tr\u1ECB s\u1ED1 kh\xF4ng th\u1EC3\
-  \ \u0111o\xE1n tr\u01B0\u1EDBc trong m\u1ED9t ph\u1EA1m vi \u0111\xE3 x\xE1c \u0111\
-  \u1ECBnh."
+summary: "Trong TypeScript, b\u1EA1n c\xF3 th\u1EC3 t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEA\
+  n s\u1EED d\u1EE5ng \u0111\u1ED1i t\u01B0\u1EE3ng `Math` to\xE0n c\u1EE5c."
 title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 weight: 12
 ---

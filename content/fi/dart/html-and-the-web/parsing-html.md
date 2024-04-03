@@ -2,13 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:19.098508-07:00
-description: "HTML:n j\xE4sent\xE4minen ohjelmoinnissa tarkoittaa tietojen kaivamista\
-  \ HTML-dokumenteista. Ohjelmoijat tekev\xE4t t\xE4m\xE4n vuorovaikuttaakseen tai\
-  \ kaivaakseen\u2026"
+description: "Kuinka: Dart ei tarjoa sis\xE4\xE4nrakennettua tukea HTML:n j\xE4sent\xE4\
+  miseen sen peruskirjastoissa. Voit kuitenkin k\xE4ytt\xE4\xE4 kolmannen osapuolen\
+  \ pakettia, kuten\u2026"
 lastmod: '2024-03-13T22:44:56.268373-06:00'
 model: gpt-4-0125-preview
-summary: "HTML:n j\xE4sent\xE4minen ohjelmoinnissa tarkoittaa tietojen kaivamista\
-  \ HTML-dokumenteista."
+summary: "Dart ei tarjoa sis\xE4\xE4nrakennettua tukea HTML:n j\xE4sent\xE4miseen\
+  \ sen peruskirjastoissa."
 title: "HTML:n j\xE4sent\xE4minen"
 weight: 43
 ---

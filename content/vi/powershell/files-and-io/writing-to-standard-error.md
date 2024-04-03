@@ -2,15 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:48.660130-07:00
-description: "Vi\u1EBFt v\xE0o l\u1ED7i chu\u1EA9n (stderr) g\u1EEDi th\xF4ng \u0111\
-  i\u1EC7p l\u1ED7i v\xE0 ch\u1EA9n \u0111o\xE1n ri\xEAng bi\u1EC7t t\u1EEB \u0111\
-  \u1EA7u ra chu\u1EA9n (stdout). L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u\
-  \ n\xE0y \u0111\u1EC3 t\xE1ch bi\u1EC7t r\xF5 r\xE0ng \u0111\u1EA7u ra\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: ."
 lastmod: '2024-03-13T22:44:36.957780-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EBFt v\xE0o l\u1ED7i chu\u1EA9n (stderr) g\u1EEDi th\xF4ng \u0111i\u1EC7\
-  p l\u1ED7i v\xE0 ch\u1EA9n \u0111o\xE1n ri\xEAng bi\u1EC7t t\u1EEB \u0111\u1EA7\
-  u ra chu\u1EA9n (stdout)."
+summary: .
 title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---

@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 20:34:46.727638-07:00
-description: "Generar n\xFAmeros aleatorios en programaci\xF3n trata de crear n\xFA\
-  meros que carezcan de cualquier patr\xF3n predecible. Los programadores hacen esto\
-  \ por diversas\u2026"
+description: "C\xF3mo hacerlo: Kotlin proporciona una manera sencilla de generar n\xFA\
+  meros aleatorios a trav\xE9s de su biblioteca est\xE1ndar. As\xED es como puedes\
+  \ generar\u2026"
 lastmod: '2024-03-13T22:44:59.031634-06:00'
 model: gpt-4-0125-preview
-summary: "Generar n\xFAmeros aleatorios en programaci\xF3n trata de crear n\xFAmeros\
-  \ que carezcan de cualquier patr\xF3n predecible."
+summary: "Kotlin proporciona una manera sencilla de generar n\xFAmeros aleatorios\
+  \ a trav\xE9s de su biblioteca est\xE1ndar."
 title: "Generaci\xF3n de n\xFAmeros aleatorios"
 weight: 12
 ---

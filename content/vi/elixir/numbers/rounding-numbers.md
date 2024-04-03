@@ -2,17 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:57.128838-07:00
-description: "L\xE0m tr\xF2n s\u1ED1 ngh\u0129a l\xE0 \u0111i\u1EC1u ch\u1EC9nh ch\xFA\
-  ng v\u1EC1 m\u1ED9t gi\xE1 tr\u1ECB g\u1EA7n nh\u1EA5t \u0111\u1EC3 \u0111\u01A1\
-  n gi\u1EA3n h\xF3a ho\u1EB7c ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t \u0111\u1ED9 ch\xED\
-  nh x\xE1c nh\u1EA5t \u0111\u1ECBnh. Vi\u1EC7c l\xE0m n\xE0y h\u1EEFu \xEDch cho\
-  \ vi\u1EC7c\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Elixir, b\u1EA1n c\xF3 th\u1EC3 s\u1EED\
+  \ d\u1EE5ng `Float.round/2` \u0111\u1EC3 l\xE0m tr\xF2n m\u1ED9t s\u1ED1 d\u1EA5\
+  u ph\u1EA9y \u0111\u1ED9ng. B\u1EA1n c\xF3 th\u1EC3 ch\u1EC9 \u0111\u1ECBnh s\u1ED1\
+  \ ch\u1EEF s\u1ED1 th\u1EADp ph\xE2n m\xE0 b\u1EA1n mu\u1ED1n gi\u1EEF.\u2026"
 lastmod: '2024-03-13T22:44:36.201613-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m tr\xF2n s\u1ED1 ngh\u0129a l\xE0 \u0111i\u1EC1u ch\u1EC9nh ch\xFA\
-  ng v\u1EC1 m\u1ED9t gi\xE1 tr\u1ECB g\u1EA7n nh\u1EA5t \u0111\u1EC3 \u0111\u01A1\
-  n gi\u1EA3n h\xF3a ho\u1EB7c ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t \u0111\u1ED9 ch\xED\
-  nh x\xE1c nh\u1EA5t \u0111\u1ECBnh."
+summary: "Trong Elixir, b\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng `Float.round/2`\
+  \ \u0111\u1EC3 l\xE0m tr\xF2n m\u1ED9t s\u1ED1 d\u1EA5u ph\u1EA9y \u0111\u1ED9ng."
 title: "L\xE0m tr\xF2n s\u1ED1"
 weight: 13
 ---

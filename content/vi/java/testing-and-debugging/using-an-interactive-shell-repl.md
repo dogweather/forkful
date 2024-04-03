@@ -2,16 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:44.621354-07:00
-description: "REPL (Read-Eval-Print Loop - V\xF2ng l\u1EB7p \u0110\u1ECDc-\u0110\xE1\
-  nh gi\xE1-In) l\xE0 m\u1ED9t shell t\u01B0\u01A1ng t\xE1c x\u1EED l\xFD \u0111\u01A1\
-  n l\u1EBB nh\u1EADp t\u1EEB ng\u01B0\u1EDDi d\xF9ng, th\u1EF1c thi m\xE3 l\u1EC7\
-  nh v\xE0 tr\u1EA3 v\u1EC1 k\u1EBFt qu\u1EA3. L\u1EADp\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: B\u1EAFt \u0111\u1EA7u m\u1ED9t REPL trong Java\
+  \ r\u1EA5t \u0111\u01A1n gi\u1EA3n v\u1EDBi c\xF4ng c\u1EE5 `jshell` \u0111\u01B0\
+  \u1EE3c gi\u1EDBi thi\u1EC7u trong Java 9. D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1\
+  ch \u0111\u1EC3 b\u1EAFt \u0111\u1EA7u m\u1ED9t phi\xEAn c\u01A1 b\u1EA3n."
 lastmod: '2024-03-13T22:44:36.491576-06:00'
 model: gpt-4-0125-preview
-summary: "REPL (Read-Eval-Print Loop - V\xF2ng l\u1EB7p \u0110\u1ECDc-\u0110\xE1nh\
-  \ gi\xE1-In) l\xE0 m\u1ED9t shell t\u01B0\u01A1ng t\xE1c x\u1EED l\xFD \u0111\u01A1\
-  n l\u1EBB nh\u1EADp t\u1EEB ng\u01B0\u1EDDi d\xF9ng, th\u1EF1c thi m\xE3 l\u1EC7\
-  nh v\xE0 tr\u1EA3 v\u1EC1 k\u1EBFt qu\u1EA3."
+summary: "B\u1EAFt \u0111\u1EA7u m\u1ED9t REPL trong Java r\u1EA5t \u0111\u01A1n gi\u1EA3\
+  n v\u1EDBi c\xF4ng c\u1EE5 `jshell` \u0111\u01B0\u1EE3c gi\u1EDBi thi\u1EC7u trong\
+  \ Java 9."
 title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 weight: 34
 ---

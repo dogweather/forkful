@@ -1,10 +1,11 @@
 ---
 date: 2024-01-20 17:48:16.922077-07:00
-description: "Sapere la lunghezza di una stringa significa contarne i caratteri. I\
-  \ programmatori lo fanno per validazione, manipolazione o semplicemente per avere\u2026"
+description: "How to: In Rust, ottenere la lunghezza di una stringa \xE8 semplice\
+  \ grazie al metodo `.len()`."
 lastmod: '2024-03-13T22:44:43.209040-06:00'
 model: gpt-4-1106-preview
-summary: Sapere la lunghezza di una stringa significa contarne i caratteri.
+summary: "In Rust, ottenere la lunghezza di una stringa \xE8 semplice grazie al metodo\
+  \ `.len()`."
 title: Trovare la lunghezza di una stringa
 weight: 7
 ---

@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:28:32.499239-07:00
-description: "Calcular uma data no futuro ou passado consiste em alterar uma data\
-  \ base por um certo per\xEDodo de tempo. Programadores realizam essa tarefa para\
-  \ agendar\u2026"
+description: 'Como fazer: .'
 lastmod: '2024-03-13T22:44:46.209948-06:00'
 model: gpt-4-1106-preview
-summary: "Calcular uma data no futuro ou passado consiste em alterar uma data base\
-  \ por um certo per\xEDodo de tempo."
+summary: .
 title: Calculando uma data no futuro ou passado
 weight: 26
 ---

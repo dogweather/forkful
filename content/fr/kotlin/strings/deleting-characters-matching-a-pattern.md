@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:42:41.113175-07:00
-description: "Supprimer des caract\xE8res correspondant \xE0 un motif, c'est filtrer\
-  \ une cha\xEEne de texte en enlevant des \xE9l\xE9ments pr\xE9cis. Les d\xE9veloppeurs\
-  \ font \xE7a pour\u2026"
+description: "How to: En Kotlin, vous pouvez utiliser la m\xE9thode `replace()` avec\
+  \ une expression r\xE9guli\xE8re pour supprimer les caract\xE8res ind\xE9sirables.\
+  \ Voici comment ."
 lastmod: '2024-03-13T22:44:57.719296-06:00'
 model: gpt-4-1106-preview
-summary: "Supprimer des caract\xE8res correspondant \xE0 un motif, c'est filtrer une\
-  \ cha\xEEne de texte en enlevant des \xE9l\xE9ments pr\xE9cis."
+summary: "En Kotlin, vous pouvez utiliser la m\xE9thode `replace()` avec une expression\
+  \ r\xE9guli\xE8re pour supprimer les caract\xE8res ind\xE9sirables."
 title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---

@@ -2,16 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:15.272345-07:00
-description: "\xC9crire dans un fichier texte en C++ implique de cr\xE9er ou d'ouvrir\
-  \ un fichier, puis d'y \xE9crire des donn\xE9es, ce qui est une t\xE2che fondamentale\
-  \ pour les\u2026"
+description: "Comment faire : C++ offre plusieurs moyens d'\xE9crire dans un fichier\
+  \ texte, mais l'une des m\xE9thodes les plus directes est d'utiliser la biblioth\xE8\
+  que\u2026"
 lastmod: '2024-03-13T22:44:58.186663-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire dans un fichier texte en C++ implique de cr\xE9er ou d'ouvrir\
-  \ un fichier, puis d'y \xE9crire des donn\xE9es, ce qui est une t\xE2che fondamentale\
-  \ pour les applications n\xE9cessitant de conserver des donn\xE9es, telles que des\
-  \ journaux, du contenu g\xE9n\xE9r\xE9 par les utilisateurs ou des param\xE8tres\
-  \ de configuration."
+summary: "C++ offre plusieurs moyens d'\xE9crire dans un fichier texte, mais l'une\
+  \ des m\xE9thodes les plus directes est d'utiliser la biblioth\xE8que `<fstream>`\
+  \ qui fournit la classe `ofstream` (flux de fichier de sortie) con\xE7ue pour les\
+  \ op\xE9rations d'\xE9criture de fichiers."
 title: "R\xE9diger un fichier texte"
 weight: 24
 ---

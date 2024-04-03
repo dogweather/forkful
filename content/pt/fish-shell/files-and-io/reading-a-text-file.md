@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:54:14.153382-07:00
-description: "Ler um arquivo de texto \xE9 acessar o conte\xFAdo de um arquivo no\
-  \ formato de texto simples. Programadores fazem isso para processamento, an\xE1\
-  lise de dados e\u2026"
+description: 'Como fazer: .'
 lastmod: '2024-03-13T22:44:47.023052-06:00'
 model: gpt-4-1106-preview
-summary: "Ler um arquivo de texto \xE9 acessar o conte\xFAdo de um arquivo no formato\
-  \ de texto simples."
+summary: .
 title: Lendo um arquivo de texto
 weight: 22
 ---

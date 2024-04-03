@@ -2,11 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:01.075148-07:00
-description: "String interpolatie betreft het mengen van variabelen met tekst. Programmeurs\
-  \ doen dit om strings on-the-fly te bouwen, waardoor de output dynamisch en\u2026"
+description: "Hoe te: Arduino heeft geen ingebouwde stringinterpolatie, maar je kunt\
+  \ vergelijkbare resultaten bereiken met `sprintf()` of door strings en variabelen\
+  \ te\u2026"
 lastmod: '2024-03-13T22:44:51.058755-06:00'
 model: gpt-4-0125-preview
-summary: String interpolatie betreft het mengen van variabelen met tekst.
+summary: Arduino heeft geen ingebouwde stringinterpolatie, maar je kunt vergelijkbare
+  resultaten bereiken met `sprintf()` of door strings en variabelen te concatenaten.
 title: Een string interpoleren
 weight: 8
 ---

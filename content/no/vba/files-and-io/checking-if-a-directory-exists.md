@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:54.016266-07:00
-description: "\xC5 sjekke om en mappe eksisterer i Visual Basic for Applications (VBA)\
-  \ handler om \xE5 verifisere tilstedev\xE6relsen av en mappe i filsystemet f\xF8\
-  r man utf\xF8rer\u2026"
+description: "Hvordan: I VBA, for \xE5 sjekke om en mappe eksisterer, bruker du vanligvis\
+  \ `Dir`-funksjonen kombinert med `vbDirectory`-attributtet. Denne tiln\xE6rmingen\
+  \ lar\u2026"
 lastmod: '2024-03-13T22:44:40.636466-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 sjekke om en mappe eksisterer i Visual Basic for Applications (VBA)\
-  \ handler om \xE5 verifisere tilstedev\xE6relsen av en mappe i filsystemet f\xF8\
-  r man utf\xF8rer operasjoner som \xE5 lagre filer eller opprette nye mapper."
+summary: "I VBA, for \xE5 sjekke om en mappe eksisterer, bruker du vanligvis `Dir`-funksjonen\
+  \ kombinert med `vbDirectory`-attributtet."
 title: Sjekke om en katalog eksisterer
 weight: 20
 ---

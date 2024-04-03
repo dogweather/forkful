@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:51.421733-07:00
-description: "In Java, gli array associativi, o mappe, consentono di memorizzare coppie\
-  \ chiave-valore per una ricerca e una manipolazione efficienti dei dati. I\u2026"
+description: "Come fare: Java non ha array associativi incorporati come alcuni linguaggi,\
+  \ ma fornisce l'interfaccia `Map` e classi come `HashMap` e `TreeMap` per\u2026"
 lastmod: '2024-03-13T22:44:43.301997-06:00'
 model: gpt-4-0125-preview
-summary: In Java, gli array associativi, o mappe, consentono di memorizzare coppie
-  chiave-valore per una ricerca e una manipolazione efficienti dei dati.
+summary: Java non ha array associativi incorporati come alcuni linguaggi, ma fornisce
+  l'interfaccia `Map` e classi come `HashMap` e `TreeMap` per riempire quel ruolo.
 title: Utilizzo di array associativi
 weight: 15
 ---

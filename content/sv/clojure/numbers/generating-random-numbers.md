@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 20:32:59.652338-07:00
-description: "Att generera slumpm\xE4ssiga tal i programmering handlar om att skapa\
-  \ v\xE4rden som inte logiskt kan f\xF6ruts\xE4gas i f\xF6rv\xE4g. Programmerare\
-  \ g\xF6r detta av olika\u2026"
+description: "Hur man g\xF6r: I Clojure \xE4r generering av slumpm\xE4ssiga tal enkel,\
+  \ och det finns ett par inbyggda funktioner som kan anv\xE4ndas direkt. F\xF6r att\
+  \ generera ett\u2026"
 lastmod: '2024-03-13T22:44:37.521309-06:00'
 model: gpt-4-0125-preview
-summary: "Att generera slumpm\xE4ssiga tal i programmering handlar om att skapa v\xE4\
-  rden som inte logiskt kan f\xF6ruts\xE4gas i f\xF6rv\xE4g."
+summary: "I Clojure \xE4r generering av slumpm\xE4ssiga tal enkel, och det finns ett\
+  \ par inbyggda funktioner som kan anv\xE4ndas direkt."
 title: Generera slumptal
 weight: 12
 ---

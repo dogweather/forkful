@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:00.698350-07:00
-description: "Trabajar con JSON (JavaScript Object Notation) en Rust consiste en analizar\
-  \ datos JSON para convertirlos en estructuras de datos de Rust y serializar\u2026"
+description: "C\xF3mo hacerlo: Para trabajar con JSON en Rust, se utiliza ampliamente\
+  \ el crate `serde` junto con `serde_json` para la serializaci\xF3n y deserializaci\xF3\
+  n.\u2026"
 lastmod: '2024-03-13T22:44:58.868162-06:00'
 model: gpt-4-0125-preview
-summary: Trabajar con JSON (JavaScript Object Notation) en Rust consiste en analizar
-  datos JSON para convertirlos en estructuras de datos de Rust y serializar estructuras
-  de datos de Rust de vuelta a JSON.
+summary: "Para trabajar con JSON en Rust, se utiliza ampliamente el crate `serde`\
+  \ junto con `serde_json` para la serializaci\xF3n y deserializaci\xF3n."
 title: Trabajando con JSON
 weight: 38
 ---

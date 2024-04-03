@@ -1,11 +1,10 @@
 ---
 date: 2024-01-25 02:03:10.867875-07:00
-description: "Logging is basically leaving a breadcrumb trail through your code -\
-  \ it's how you keep tabs on what's happening when your script's running in the wild.\u2026"
+description: 'How to: Here''s the lowdown on sprinkling some basic logging into your
+  scripts.'
 lastmod: '2024-03-13T22:45:00.290321-06:00'
 model: gpt-4-1106-preview
-summary: Logging is basically leaving a breadcrumb trail through your code - it's
-  how you keep tabs on what's happening when your script's running in the wild.
+summary: Here's the lowdown on sprinkling some basic logging into your scripts.
 title: Logging
 weight: 17
 ---

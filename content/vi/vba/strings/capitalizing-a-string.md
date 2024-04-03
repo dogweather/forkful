@@ -2,17 +2,16 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:37.494948-07:00
-description: "Vi\u1EC7c vi\u1EBFt hoa m\u1ED9t chu\u1ED7i trong Visual Basic for Applications\
-  \ (VBA) bao g\u1ED3m vi\u1EC7c chuy\u1EC3n k\xFD t\u1EF1 \u0111\u1EA7u ti\xEAn c\u1EE7\
-  a m\u1ED7i t\u1EEB trong m\u1ED9t chu\u1ED7i sang ch\u1EEF hoa v\xE0 \u0111\u1EA3\
-  m b\u1EA3o\u2026"
+description: "L\xE0m Th\u1EBF N\xE0o: VBA kh\xF4ng c\xF3 m\u1ED9t h\xE0m \u0111\u01B0\
+  \u1EE3c x\xE2y d\u1EF1ng s\u1EB5n c\u1EE5 th\u1EC3 cho vi\u1EC7c vi\u1EBFt hoa t\u1EEB\
+  ng t\u1EEB trong m\u1ED9t chu\u1ED7i, gi\u1ED1ng nh\u01B0 m\u1ED9t s\u1ED1 ng\xF4\
+  n ng\u1EEF l\u1EADp tr\xECnh kh\xE1c. Tuy nhi\xEAn,\u2026"
 lastmod: '2024-03-13T22:44:36.409593-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c vi\u1EBFt hoa m\u1ED9t chu\u1ED7i trong Visual Basic for Applications\
-  \ (VBA) bao g\u1ED3m vi\u1EC7c chuy\u1EC3n k\xFD t\u1EF1 \u0111\u1EA7u ti\xEAn c\u1EE7\
-  a m\u1ED7i t\u1EEB trong m\u1ED9t chu\u1ED7i sang ch\u1EEF hoa v\xE0 \u0111\u1EA3\
-  m b\u1EA3o r\u1EB1ng ph\u1EA7n c\xF2n l\u1EA1i c\u1EE7a chu\u1ED7i l\xE0 ch\u1EEF\
-  \ th\u01B0\u1EDDng."
+summary: "VBA kh\xF4ng c\xF3 m\u1ED9t h\xE0m \u0111\u01B0\u1EE3c x\xE2y d\u1EF1ng\
+  \ s\u1EB5n c\u1EE5 th\u1EC3 cho vi\u1EC7c vi\u1EBFt hoa t\u1EEBng t\u1EEB trong\
+  \ m\u1ED9t chu\u1ED7i, gi\u1ED1ng nh\u01B0 m\u1ED9t s\u1ED1 ng\xF4n ng\u1EEF l\u1EAD\
+  p tr\xECnh kh\xE1c."
 title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
 weight: 2
 ---

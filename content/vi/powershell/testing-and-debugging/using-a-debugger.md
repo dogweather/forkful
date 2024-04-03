@@ -2,9 +2,9 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:29.561831-07:00
-description: "Trong PowerShell, b\u1EA1n c\xF3 th\u1EC3 g\u1EE1 l\u1ED7i script s\u1EED\
-  \ d\u1EE5ng PowerShell Integrated Scripting Environment (ISE) t\xEDch h\u1EE3p s\u1EB5\
-  n ho\u1EB7c Visual Studio Code (VS Code) v\u1EDBi\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong PowerShell, b\u1EA1n c\xF3 th\u1EC3 g\u1EE1\
+  \ l\u1ED7i script s\u1EED d\u1EE5ng PowerShell Integrated Scripting Environment\
+  \ (ISE) t\xEDch h\u1EE3p s\u1EB5n ho\u1EB7c Visual Studio Code (VS\u2026"
 lastmod: '2024-03-13T22:44:36.942450-06:00'
 model: gpt-4-0125-preview
 summary: "Trong PowerShell, b\u1EA1n c\xF3 th\u1EC3 g\u1EE1 l\u1ED7i script s\u1EED\

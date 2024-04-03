@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:44:28.991394-07:00
-description: "Komplekse tall har en reell del og en imagin\xE6r del, vanligvis skrevet\
-  \ som `a + bi`. De er avgj\xF8rende i avansert matematikk, fysikk, ingeni\xF8rfag\
-  \ og visse\u2026"
+description: "Hvordan: PHP tilbyr innebygd st\xF8tte for komplekse tall ved hjelp\
+  \ av `ext-intl`-utvidelsen med `NumberFormatter`-klassen. Her er et eksempel."
 lastmod: '2024-03-13T22:44:40.879870-06:00'
 model: gpt-4-0125-preview
-summary: "Komplekse tall har en reell del og en imagin\xE6r del, vanligvis skrevet\
-  \ som `a + bi`."
+summary: "PHP tilbyr innebygd st\xF8tte for komplekse tall ved hjelp av `ext-intl`-utvidelsen\
+  \ med `NumberFormatter`-klassen."
 title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---

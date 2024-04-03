@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 17:50:18.481726-07:00
-description: "Searching and replacing text in C involves identifying specific substrings\
-  \ within a larger string and substituting them with different substrings.\u2026"
+description: "How to: C doesn't come with built-in functions for directly performing\
+  \ search and replace on strings. However, you can achieve this by combining various\u2026"
 lastmod: '2024-03-13T22:45:00.498373-06:00'
 model: gpt-4-0125-preview
-summary: Searching and replacing text in C involves identifying specific substrings
-  within a larger string and substituting them with different substrings.
+summary: C doesn't come with built-in functions for directly performing search and
+  replace on strings.
 title: Searching and replacing text
 weight: 10
 ---

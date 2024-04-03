@@ -1,11 +1,11 @@
 ---
 date: 2024-02-01 21:30:28.185169-07:00
-description: "Organizing code into functions in Visual Basic for Applications (VBA)\
-  \ involves breaking down a program into smaller, manageable pieces known as functions.\u2026"
+description: "How to: In VBA, functions are defined using the `Function` and `End\
+  \ Function` statements. Here\u2019s a simple example of how to create a function\
+  \ that\u2026"
 lastmod: '2024-03-13T22:44:59.939314-06:00'
 model: gpt-4-0125-preview
-summary: Organizing code into functions in Visual Basic for Applications (VBA) involves
-  breaking down a program into smaller, manageable pieces known as functions.
+summary: In VBA, functions are defined using the `Function` and `End Function` statements.
 title: Organizing code into functions
 weight: 18
 ---

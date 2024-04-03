@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:13:36.263906-07:00
-description: "Read-Eval-Print Loop (REPL) er et enkelt, interaktivt programmeringsmilj\xF8\
-  \ som tar enkeltbrukerinput, evaluerer dem, og returnerer resultatet til brukeren.\u2026"
+description: "Hvordan: Elm kommer ikke med en integrert REPL. Likevel kan du bruke\
+  \ `elm repl` fra kommandolinjen din for \xE5 starte en Elm \xF8kt etter \xE5 ha\
+  \ installert Elm."
 lastmod: '2024-03-13T22:44:40.710241-06:00'
 model: gpt-4-0125-preview
-summary: "Read-Eval-Print Loop (REPL) er et enkelt, interaktivt programmeringsmilj\xF8\
-  \ som tar enkeltbrukerinput, evaluerer dem, og returnerer resultatet til brukeren."
+summary: Elm kommer ikke med en integrert REPL.
 title: Bruke et interaktivt skall (REPL)
 weight: 34
 ---

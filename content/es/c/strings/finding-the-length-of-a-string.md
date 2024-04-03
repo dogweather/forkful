@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:29.076204-07:00
-description: "Encontrar la longitud de una cadena en C implica determinar el n\xFA\
-  mero de caracteres antes del terminador nulo `\\0`. Los programadores hacen esto\
-  \ para\u2026"
+description: "C\xF3mo hacerlo: En C, la funci\xF3n est\xE1ndar de la biblioteca `strlen()`\
+  \ se usa com\xFAnmente para encontrar la longitud de una cadena. Aqu\xED hay un\
+  \ ejemplo r\xE1pido."
 lastmod: '2024-03-13T22:44:59.535437-06:00'
 model: gpt-4-0125-preview
-summary: "Encontrar la longitud de una cadena en C implica determinar el n\xFAmero\
-  \ de caracteres antes del terminador nulo `\\0`."
+summary: "En C, la funci\xF3n est\xE1ndar de la biblioteca `strlen()` se usa com\xFA\
+  nmente para encontrar la longitud de una cadena."
 title: Encontrando la longitud de una cadena
 weight: 7
 ---

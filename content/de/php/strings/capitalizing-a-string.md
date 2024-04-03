@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:56.366719-07:00
-description: "Das Gro\xDFschreiben eines Strings beinhaltet die Modifikation des ersten\
-  \ Zeichens eines gegebenen Textes in Gro\xDFbuchstaben, um sicherzustellen, dass\
-  \ S\xE4tze,\u2026"
+description: "Wie: PHP unterst\xFCtzt nativ verschiedene Funktionen zum Gro\xDFschreiben\
+  \ von Strings, die jeweils unterschiedlichen Zwecken dienen. Hier ist, wie Sie sie\u2026"
 lastmod: '2024-03-13T22:44:53.955739-06:00'
 model: gpt-4-0125-preview
-summary: "Das Gro\xDFschreiben eines Strings beinhaltet die Modifikation des ersten\
-  \ Zeichens eines gegebenen Textes in Gro\xDFbuchstaben, um sicherzustellen, dass\
-  \ S\xE4tze, Titel oder Eigennamen korrekt in einem Datensatz beginnen."
+summary: "PHP unterst\xFCtzt nativ verschiedene Funktionen zum Gro\xDFschreiben von\
+  \ Strings, die jeweils unterschiedlichen Zwecken dienen."
 title: "Einen String gro\xDFschreiben"
 weight: 2
 ---

@@ -2,17 +2,17 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:47.193775-07:00
-description: "T\xE1i c\u1EA5u tr\xFAc trong ng\xF4n ng\u1EEF l\u1EADp tr\xECnh \u0111\
-  \u1EC1 c\u1EADp \u0111\u1EBFn qu\xE1 tr\xECnh c\u1EA3i t\u1ED5 m\xE3 m\xE1y t\xED\
-  nh hi\u1EC7n c\xF3 - thay \u0111\u1ED5i c\u1EA5u tr\xFAc m\xE0 kh\xF4ng thay \u0111\
-  \u1ED5i h\xE0nh vi b\xEAn ngo\xE0i - nh\u1EB1m c\u1EA3i\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong Google Apps Script, m\u1ED9t t\xEC\
+  nh hu\u1ED1ng ph\u1ED5 bi\u1EBFn \u0111\u01B0\u1EE3c h\u01B0\u1EDFng l\u1EE3i t\u1EEB\
+  \ vi\u1EC7c t\xE1i c\u1EA5u tr\xFAc l\xE0 vi\u1EC7c \u0111\u01A1n gi\u1EA3n h\xF3\
+  a c\xE1c k\u1ECBch b\u1EA3n giao ti\u1EBFp v\u1EDBi\u2026"
 lastmod: '2024-03-13T22:44:36.051885-06:00'
 model: gpt-4-0125-preview
-summary: "T\xE1i c\u1EA5u tr\xFAc trong ng\xF4n ng\u1EEF l\u1EADp tr\xECnh \u0111\u1EC1\
-  \ c\u1EADp \u0111\u1EBFn qu\xE1 tr\xECnh c\u1EA3i t\u1ED5 m\xE3 m\xE1y t\xEDnh hi\u1EC7\
-  n c\xF3 - thay \u0111\u1ED5i c\u1EA5u tr\xFAc m\xE0 kh\xF4ng thay \u0111\u1ED5i\
-  \ h\xE0nh vi b\xEAn ngo\xE0i - nh\u1EB1m c\u1EA3i thi\u1EC7n c\xE1c thu\u1ED9c t\xED\
-  nh phi ch\u1EE9c n\u0103ng."
+summary: "Trong Google Apps Script, m\u1ED9t t\xECnh hu\u1ED1ng ph\u1ED5 bi\u1EBF\
+  n \u0111\u01B0\u1EE3c h\u01B0\u1EDFng l\u1EE3i t\u1EEB vi\u1EC7c t\xE1i c\u1EA5\
+  u tr\xFAc l\xE0 vi\u1EC7c \u0111\u01A1n gi\u1EA3n h\xF3a c\xE1c k\u1ECBch b\u1EA3\
+  n giao ti\u1EBFp v\u1EDBi Google Sheets ho\u1EB7c Docs m\u1ED9t c\xE1ch n\u1EB7\
+  ng n\u1EC1."
 title: "T\xE1i c\u1EA5u tr\xFAc m\xE3 ngu\u1ED3n"
 weight: 19
 ---

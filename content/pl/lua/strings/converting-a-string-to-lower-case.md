@@ -1,13 +1,9 @@
 ---
 date: 2024-01-20 17:38:43.646081-07:00
-description: "Zamiana \u0142a\u0144cucha na ma\u0142e litery oznacza, \u017Ce ka\u017C\
-  da du\u017Ca litera w tek\u015Bcie zostaje przekszta\u0142cona na swoj\u0105 ma\u0142\
-  \u0105 wersj\u0119. Programi\u015Bci robi\u0105 to, aby u\u0142atwi\u0107\u2026"
+description: "How to: (Jak to zrobi\u0107:) ."
 lastmod: '2024-03-13T22:44:35.526858-06:00'
 model: gpt-4-1106-preview
-summary: "Zamiana \u0142a\u0144cucha na ma\u0142e litery oznacza, \u017Ce ka\u017C\
-  da du\u017Ca litera w tek\u015Bcie zostaje przekszta\u0142cona na swoj\u0105 ma\u0142\
-  \u0105 wersj\u0119."
+summary: .
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---

@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:37:55.368291-07:00
-description: "Muuttaminen merkkijono pieniksi kirjaimiksi tarkoittaa kaikkien isojen\
-  \ kirjainten muuntamista niiden pieniksi vastineiksi. Ohjelmoijat tekev\xE4t t\xE4\
-  m\xE4n\u2026"
+description: "How to: (Kuinka tehd\xE4:) ."
 lastmod: '2024-03-13T22:44:56.852293-06:00'
 model: gpt-4-1106-preview
-summary: Muuttaminen merkkijono pieniksi kirjaimiksi tarkoittaa kaikkien isojen kirjainten
-  muuntamista niiden pieniksi vastineiksi.
+summary: .
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---

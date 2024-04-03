@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:00.434714-07:00
-description: "Pisanie test\xF3w w Java ma na celu weryfikacj\u0119, czy Tw\xF3j kod\
-  \ zachowuje si\u0119 zgodnie z oczekiwaniami w r\xF3\u017Cnych warunkach. Programi\u015B\
-  ci pisz\u0105 testy, aby\u2026"
+description: "Jak to robi\u0107: Programi\u015Bci Java g\u0142\xF3wnie u\u017Cywaj\u0105\
+  \ dw\xF3ch framework\xF3w testowych: JUnit i TestNG. Tutaj skupimy si\u0119 na JUnit,\
+  \ kt\xF3ry jest popularniejszym wyborem\u2026"
 lastmod: '2024-03-13T22:44:35.280840-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie test\xF3w w Java ma na celu weryfikacj\u0119, czy Tw\xF3j kod zachowuje\
-  \ si\u0119 zgodnie z oczekiwaniami w r\xF3\u017Cnych warunkach."
+summary: "Programi\u015Bci Java g\u0142\xF3wnie u\u017Cywaj\u0105 dw\xF3ch framework\xF3\
+  w testowych."
 title: "Pisanie test\xF3w"
 weight: 36
 ---

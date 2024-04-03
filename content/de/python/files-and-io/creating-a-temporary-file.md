@@ -1,13 +1,9 @@
 ---
 date: 2024-01-20 17:40:55.011294-07:00
-description: "Tempor\xE4re Dateien sind kurzlebige Datenbeh\xE4lter, die w\xE4hrend\
-  \ der Laufzeit eines Programms f\xFCr Datentransfer, Zwischenspeicherungen oder\
-  \ Sicherheitszwecke\u2026"
+description: 'So geht''s: .'
 lastmod: '2024-03-13T22:44:53.397950-06:00'
 model: gpt-4-1106-preview
-summary: "Tempor\xE4re Dateien sind kurzlebige Datenbeh\xE4lter, die w\xE4hrend der\
-  \ Laufzeit eines Programms f\xFCr Datentransfer, Zwischenspeicherungen oder Sicherheitszwecke\
-  \ genutzt werden."
+summary: .
 title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---

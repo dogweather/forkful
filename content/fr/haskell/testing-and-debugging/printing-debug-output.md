@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:52:44.820887-07:00
-description: "Imprimer des sorties de d\xE9bogage, c'est afficher des donn\xE9es pendant\
-  \ l'ex\xE9cution pour comprendre ce qui se passe. Les d\xE9veloppeurs le font pour\
-  \ traquer\u2026"
+description: 'Comment faire : Voici quelques exemples simples en Haskell .'
 lastmod: '2024-03-13T22:44:57.836624-06:00'
 model: gpt-4-1106-preview
-summary: "Imprimer des sorties de d\xE9bogage, c'est afficher des donn\xE9es pendant\
-  \ l'ex\xE9cution pour comprendre ce qui se passe."
+summary: Voici quelques exemples simples en Haskell.
 title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---

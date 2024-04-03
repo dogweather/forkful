@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:45:48.712610-07:00
-description: "Kompleksiluvuilla on sek\xE4 reaaliosa ett\xE4 imaginaariosa (kuten\
-  \ 3 + 4i). Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 Swiftiss\xE4 teht\xE4viin, kuten\
-  \ signaalink\xE4sittely,\u2026"
+description: "Kuinka: Swift ei sis\xE4ll\xE4 valmista tukea kompleksiluvuille, mutta\
+  \ voimme luoda oman."
 lastmod: '2024-03-13T22:44:56.901291-06:00'
 model: gpt-4-0125-preview
-summary: "Kompleksiluvuilla on sek\xE4 reaaliosa ett\xE4 imaginaariosa (kuten 3 +\
-  \ 4i)."
+summary: "Swift ei sis\xE4ll\xE4 valmista tukea kompleksiluvuille, mutta voimme luoda\
+  \ oman."
 title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---

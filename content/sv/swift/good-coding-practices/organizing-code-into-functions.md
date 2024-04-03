@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:16:09.344776-07:00
-description: "Att gruppera kod i funktioner inneb\xE4r att bryta ner uppgifter i \xE5\
-  teranv\xE4ndbara delar. Det g\xF6r koden ren, mindre felben\xE4gen och enklare att\
-  \ fels\xF6ka eller\u2026"
+description: "Hur man g\xF6r: T\xE4nk dig en uppgift: ber\xE4kna genomsnittet av en\
+  \ array. Utan funktioner skulle du klumpa ihop allt i main. Med funktioner g\xF6\
+  r du s\xE5 h\xE4r."
 lastmod: '2024-03-13T22:44:38.256549-06:00'
 model: gpt-4-0125-preview
-summary: "Att gruppera kod i funktioner inneb\xE4r att bryta ner uppgifter i \xE5\
-  teranv\xE4ndbara delar."
+summary: "T\xE4nk dig en uppgift."
 title: Organisera kod i funktioner
 weight: 18
 ---

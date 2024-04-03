@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:47:13.384572-07:00
-description: "Att hitta l\xE4ngden av en str\xE4ng inneb\xE4r att r\xE4kna antalet\
-  \ tecken den inneh\xE5ller. Programmerare beh\xF6ver detta f\xF6r att manipulera\
-  \ text, validera inmatning\u2026"
+description: "How to: C# anv\xE4nder `Length`-egenskapen f\xF6r att f\xE5 en str\xE4\
+  ngs l\xE4ngd. Koden \xE4r rak: `minStr\xE4ng.Length`. Enkel som en pl\xE4tt, s\xE5\
+  \ h\xE4r ser det ut i praktiken."
 lastmod: '2024-03-13T22:44:37.904146-06:00'
 model: gpt-4-1106-preview
-summary: "Att hitta l\xE4ngden av en str\xE4ng inneb\xE4r att r\xE4kna antalet tecken\
-  \ den inneh\xE5ller."
+summary: "C# anv\xE4nder `Length`-egenskapen f\xF6r att f\xE5 en str\xE4ngs l\xE4\
+  ngd."
 title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:35.633354-07:00
-description: "L'analisi dell'HTML significa setacciare la struttura e il contenuto\
-  \ di un file HTML per estrarre informazioni. I programmatori lo fanno per accedere\
-  \ ai\u2026"
+description: "Come fare: Bash non \xE8 la prima scelta per l'analisi dell'HTML, ma\
+  \ pu\xF2 essere fatto con strumenti come `grep`, `awk`, `sed`, o utilit\xE0 esterne\
+  \ come `lynx`.\u2026"
 lastmod: '2024-03-13T22:44:43.597644-06:00'
 model: gpt-4-0125-preview
-summary: L'analisi dell'HTML significa setacciare la struttura e il contenuto di un
-  file HTML per estrarre informazioni.
+summary: "Bash non \xE8 la prima scelta per l'analisi dell'HTML, ma pu\xF2 essere\
+  \ fatto con strumenti come `grep`, `awk`, `sed`, o utilit\xE0 esterne come `lynx`."
 title: Analisi del HTML
 weight: 43
 ---

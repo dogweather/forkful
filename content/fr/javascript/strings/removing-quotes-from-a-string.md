@@ -1,13 +1,13 @@
 ---
 date: 2024-01-26 03:40:11.948520-07:00
-description: "Retirer les guillemets d'une cha\xEEne de caract\xE8res signifie se\
-  \ d\xE9barrasser de ces marques de citation ennuyeuses qui peuvent perturber votre\
-  \ code, surtout\u2026"
+description: "Comment faire : Imaginez que vous avez une cha\xEEne entour\xE9e de\
+  \ guillemets doubles, comme `\"\\\"Bonjour, le monde !\\\"\"` et que vous voulez\
+  \ le texte pur, sans\u2026"
 lastmod: '2024-03-13T22:44:58.262199-06:00'
 model: gpt-4-0125-preview
-summary: "Retirer les guillemets d'une cha\xEEne de caract\xE8res signifie se d\xE9\
-  barrasser de ces marques de citation ennuyeuses qui peuvent perturber votre code,\
-  \ surtout lorsque vous analysez des donn\xE9es ou construisez des objets JSON."
+summary: "Imaginez que vous avez une cha\xEEne entour\xE9e de guillemets doubles,\
+  \ comme `\"\\\"Bonjour, le monde !\\\"\"` et que vous voulez le texte pur, sans\
+  \ citation."
 title: "Retirer les guillemets d'une cha\xEEne"
 weight: 9
 ---

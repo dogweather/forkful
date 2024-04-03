@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:12.435541-07:00
-description: "Pisanie test\xF3w w Kotlinie polega na tworzeniu fragment\xF3w kodu,\
-  \ kt\xF3re automatycznie weryfikuj\u0105 poprawno\u015B\u0107 funkcjonaln\u0105\
-  \ modu\u0142\xF3w oprogramowania, upewniaj\u0105c\u2026"
+description: "Jak to zrobi\u0107: Kotlin wspiera rozw\xF3j sterowany testami z wykorzystaniem\
+  \ r\xF3\u017Cnych framework\xF3w, z kt\xF3rych najpopularniejsze to JUnit, Kotest\
+  \ i MockK do\u2026"
 lastmod: '2024-03-13T22:44:35.368457-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie test\xF3w w Kotlinie polega na tworzeniu fragment\xF3w kodu, kt\xF3\
-  re automatycznie weryfikuj\u0105 poprawno\u015B\u0107 funkcjonaln\u0105 modu\u0142\
-  \xF3w oprogramowania, upewniaj\u0105c si\u0119, \u017Ce dzia\u0142aj\u0105 one zgodnie\
-  \ z oczekiwaniami."
+summary: "Kotlin wspiera rozw\xF3j sterowany testami z wykorzystaniem r\xF3\u017C\
+  nych framework\xF3w, z kt\xF3rych najpopularniejsze to JUnit, Kotest i MockK do\
+  \ tworzenia mock\xF3w."
 title: "Pisanie test\xF3w"
 weight: 36
 ---

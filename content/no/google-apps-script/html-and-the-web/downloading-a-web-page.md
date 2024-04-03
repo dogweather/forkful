@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:36.303703-07:00
-description: "\xC5 laste ned en nettside i Google Apps Script inneb\xE6rer \xE5 hente\
-  \ innholdet p\xE5 en nettside via HTML for ulike form\xE5l, som nettskraping, datautvinning\
-  \ eller\u2026"
+description: "Hvordan: I Google Apps Script er tjenesten `UrlFetchApp` avgj\xF8rende\
+  \ for nedlasting av webinnhold. Nedenfor er en trinn-for-trinn-guide og et enkelt\u2026"
 lastmod: '2024-03-13T22:44:40.312588-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 laste ned en nettside i Google Apps Script inneb\xE6rer \xE5 hente\
-  \ innholdet p\xE5 en nettside via HTML for ulike form\xE5l, som nettskraping, datautvinning\
-  \ eller overv\xE5kning av endringer."
+summary: "I Google Apps Script er tjenesten `UrlFetchApp` avgj\xF8rende for nedlasting\
+  \ av webinnhold."
 title: Nedlasting av en nettside
 weight: 42
 ---

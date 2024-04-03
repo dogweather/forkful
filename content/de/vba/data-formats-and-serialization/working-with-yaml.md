@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:07:28.482729-07:00
-description: "YAML, das f\xFCr \"YAML Ain't Markup Language\" steht, ist eine f\xFC\
-  r Menschen lesbare Datenserialisierungssprache, die h\xE4ufig f\xFCr Konfigurationsdateien\u2026"
+description: "Wie geht das: Mit YAML in VBA zu arbeiten erfordert ein Verst\xE4ndnis\
+  \ daf\xFCr, wie man YAML in ein Format umwandelt, das VBA leicht manipulieren kann,\u2026"
 lastmod: '2024-03-13T22:44:53.741033-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, das f\xFCr \"YAML Ain't Markup Language\" steht, ist eine f\xFCr Menschen\
-  \ lesbare Datenserialisierungssprache, die h\xE4ufig f\xFCr Konfigurationsdateien\
-  \ verwendet wird."
+summary: "Mit YAML in VBA zu arbeiten erfordert ein Verst\xE4ndnis daf\xFCr, wie man\
+  \ YAML in ein Format umwandelt, das VBA leicht manipulieren kann, normalerweise\
+  \ W\xF6rterb\xFCcher oder Sammlungen."
 title: Arbeiten mit YAML
 weight: 41
 ---

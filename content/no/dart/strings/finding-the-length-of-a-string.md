@@ -2,14 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:50.123627-07:00
-description: "\xC5 finne lengden p\xE5 en String i Dart handler om \xE5 bestemme antallet\
-  \ kodeenheter (i hovedsak antallet tegn hvis man tenker p\xE5 det p\xE5 en forenklet\
-  \ m\xE5te) i en\u2026"
+description: "Slik gj\xF8r du: Dart gj\xF8r det enkelt \xE5 f\xE5 lengden p\xE5 en\
+  \ streng ved \xE5 bruke `length`-egenskapen. Her er et grunnleggende eksempel."
 lastmod: '2024-03-13T22:44:40.477431-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 finne lengden p\xE5 en String i Dart handler om \xE5 bestemme antallet\
-  \ kodeenheter (i hovedsak antallet tegn hvis man tenker p\xE5 det p\xE5 en forenklet\
-  \ m\xE5te) i en gitt String."
+summary: "Dart gj\xF8r det enkelt \xE5 f\xE5 lengden p\xE5 en streng ved \xE5 bruke\
+  \ `length`-egenskapen."
 title: "Finne lengden p\xE5 en streng"
 weight: 7
 ---

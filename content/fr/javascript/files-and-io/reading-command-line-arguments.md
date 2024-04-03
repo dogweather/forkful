@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:56:18.424998-07:00
-description: "Lire les arguments de ligne de commande, c'est r\xE9cup\xE9rer les donn\xE9\
-  es que les utilisateurs passent \xE0 votre programme Node.js quand ils le lancent.\
-  \ On fait\u2026"
+description: "Comment faire : Voici un petit exemple. Vous \xE9crivez un script, l'utilisateur\
+  \ le lance avec des arguments, et votre script les utilise."
 lastmod: '2024-03-13T22:44:58.292203-06:00'
 model: gpt-4-1106-preview
-summary: "Lire les arguments de ligne de commande, c'est r\xE9cup\xE9rer les donn\xE9\
-  es que les utilisateurs passent \xE0 votre programme Node."
+summary: Voici un petit exemple.
 title: Lecture des arguments de ligne de commande
 weight: 23
 ---

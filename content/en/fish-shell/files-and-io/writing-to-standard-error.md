@@ -1,11 +1,10 @@
 ---
 date: 2024-02-03 19:03:29.604068-07:00
-description: "Writing to standard error (stderr) in Fish Shell is about directing\
-  \ error messages or diagnostics separately from the standard output (stdout).\u2026"
+description: 'How to: In Fish Shell, you can write to stderr by redirecting your output
+  using `>&2`. Here is a basic example.'
 lastmod: '2024-03-13T22:45:00.488965-06:00'
 model: gpt-4-0125-preview
-summary: Writing to standard error (stderr) in Fish Shell is about directing error
-  messages or diagnostics separately from the standard output (stdout).
+summary: In Fish Shell, you can write to stderr by redirecting your output using `>&2`.
 title: Writing to standard error
 weight: 25
 ---

@@ -1,13 +1,12 @@
 ---
 date: 2024-01-27 20:35:27.329547-07:00
-description: "Generowanie losowych liczb w Rust polega na korzystaniu z bibliotek\
-  \ do produkcji nieprzewidywalnych warto\u015Bci liczbowych, co jest niezb\u0119\
-  dne do zada\u0144 z\u2026"
+description: "Jak to zrobi\u0107: Rust polega na zewn\u0119trznych crate'ach do generowania\
+  \ losowych liczb, przy czym najcz\u0119\u015Bciej u\u017Cywanym jest `rand`. Aby\
+  \ zacz\u0105\u0107 generowa\u0107\u2026"
 lastmod: '2024-03-13T22:44:35.180228-06:00'
 model: gpt-4-0125-preview
-summary: "Generowanie losowych liczb w Rust polega na korzystaniu z bibliotek do produkcji\
-  \ nieprzewidywalnych warto\u015Bci liczbowych, co jest niezb\u0119dne do zada\u0144\
-  \ z zakresu kryptografii i symulacji, do gier i algorytm\xF3w losowych."
+summary: "Rust polega na zewn\u0119trznych crate'ach do generowania losowych liczb,\
+  \ przy czym najcz\u0119\u015Bciej u\u017Cywanym jest `rand`."
 title: Generowanie liczb losowych
 weight: 12
 ---

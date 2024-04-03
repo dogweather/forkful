@@ -2,13 +2,13 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:54.611767-07:00
-description: "Associativa arrayer, eller vad Rustanv\xE4ndare kallar \"hash maps\"\
-  , \xE4r samlingar som lagrar data i nyckel-v\xE4rde-par. Programmerare anv\xE4nder\
-  \ dem f\xF6r snabb\u2026"
+description: "Hur man g\xF6r: I Rust tillhandah\xE5ller typen `HashMap` fr\xE5n modulen\
+  \ `std::collections` funktionerna f\xF6r associativa arrayer. S\xE5 h\xE4r kan du\
+  \ arbeta med dem."
 lastmod: '2024-03-13T22:44:37.690951-06:00'
 model: gpt-4-0125-preview
-summary: "Associativa arrayer, eller vad Rustanv\xE4ndare kallar \"hash maps\", \xE4\
-  r samlingar som lagrar data i nyckel-v\xE4rde-par."
+summary: "I Rust tillhandah\xE5ller typen `HashMap` fr\xE5n modulen `std::collections`\
+  \ funktionerna f\xF6r associativa arrayer."
 title: "Att anv\xE4nda associativa arrayer"
 weight: 15
 ---

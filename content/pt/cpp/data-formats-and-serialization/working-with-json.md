@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:59.698556-07:00
-description: "JSON (JavaScript Object Notation) \xE9 um formato leve para armazenamento\
-  \ e transporte de dados, tornando-se um excelente meio para troca de dados entre\u2026"
+description: "Como Fazer: Em C++, n\xE3o h\xE1 suporte nativo para JSON, mas bibliotecas\
+  \ de terceiros como nlohmann/json tornam isso direto. Aqui est\xE1 como us\xE1-la\
+  \ para\u2026"
 lastmod: '2024-03-13T22:44:46.900533-06:00'
 model: gpt-4-0125-preview
-summary: "JSON (JavaScript Object Notation) \xE9 um formato leve para armazenamento\
-  \ e transporte de dados, tornando-se um excelente meio para troca de dados entre\
-  \ servidores e aplica\xE7\xF5es web."
+summary: "Em C++, n\xE3o h\xE1 suporte nativo para JSON, mas bibliotecas de terceiros\
+  \ como nlohmann/json tornam isso direto."
 title: Trabalhando com JSON
 weight: 38
 ---

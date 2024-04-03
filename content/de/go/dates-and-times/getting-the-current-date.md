@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:26.228536-07:00
-description: "Das Abrufen des aktuellen Datums in Go ist eine grundlegende Aufgabe\
-  \ f\xFCr Programmierer, vergleichbar mit \"Hello, World!\" in seiner Allgegenwart.\
-  \ Es ist\u2026"
+description: "Wie geht das: In Go ist das `time`-Paket Ihr Zugangspunkt zur Arbeit\
+  \ mit Daten und Zeiten. Die Funktion `time.Now()` gibt Ihnen das aktuelle Datum\
+  \ und die\u2026"
 lastmod: '2024-03-13T22:44:53.299406-06:00'
 model: gpt-4-0125-preview
-summary: "Das Abrufen des aktuellen Datums in Go ist eine grundlegende Aufgabe f\xFC\
-  r Programmierer, vergleichbar mit \"Hello, World."
+summary: In Go ist das `time`-Paket Ihr Zugangspunkt zur Arbeit mit Daten und Zeiten.
 title: Das aktuelle Datum abrufen
 weight: 29
 ---

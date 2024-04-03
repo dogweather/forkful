@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:15:21.225736-07:00
-description: "Las terminales interactivas, o REPLs (Read-Eval-Print Loops, Bucles\
-  \ de Leer-Evaluar-Imprimir), te permiten ejecutar c\xF3digo sobre la marcha, probando\u2026"
+description: "C\xF3mo hacerlo: Node.js viene con un REPL accesible a trav\xE9s de\
+  \ la terminal. \xC1brelo, y est\xE1s listo para comenzar. Aqu\xED un adelanto."
 lastmod: '2024-03-13T22:44:59.460333-06:00'
 model: gpt-4-0125-preview
-summary: "Las terminales interactivas, o REPLs (Read-Eval-Print Loops, Bucles de Leer-Evaluar-Imprimir),\
-  \ te permiten ejecutar c\xF3digo sobre la marcha, probando funciones, algoritmos\
-  \ o jugueteando con ideas."
+summary: "Node.js viene con un REPL accesible a trav\xE9s de la terminal."
 title: Usando una shell interactiva (REPL)
 weight: 34
 ---

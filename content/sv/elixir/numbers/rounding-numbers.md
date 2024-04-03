@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:43:42.915311-07:00
-description: "Att avrunda tal inneb\xE4r att justera dem till ett n\xE4rliggande v\xE4\
-  rde f\xF6r enkelhetens skull eller f\xF6r att matcha en viss precision. Det \xE4\
-  r anv\xE4ndbart f\xF6r att\u2026"
+description: "Hur man g\xF6r: I Elixir kan du anv\xE4nda `Float.round/2` f\xF6r att\
+  \ avrunda ett flyttal. Du kan ange antalet decimaler du vill beh\xE5lla. S\xE5 h\xE4\
+  r fungerar det."
 lastmod: '2024-03-13T22:44:37.561871-06:00'
 model: gpt-4-0125-preview
-summary: "Att avrunda tal inneb\xE4r att justera dem till ett n\xE4rliggande v\xE4\
-  rde f\xF6r enkelhetens skull eller f\xF6r att matcha en viss precision."
+summary: "I Elixir kan du anv\xE4nda `Float.round/2` f\xF6r att avrunda ett flyttal."
 title: Avrundning av tal
 weight: 13
 ---

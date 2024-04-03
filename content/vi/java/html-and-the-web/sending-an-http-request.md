@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:00.973927-07:00
-description: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP ngh\u0129a l\xE0 y\xEAu c\u1EA7\
-  u m\xE1y ch\u1EE7 v\u1EC1 d\u1EEF li\u1EC7u ho\u1EB7c h\xE0nh \u0111\u1ED9ng, nh\u01B0\
-  \ m\u1EDF m\u1ED9t trang web ho\u1EB7c g\u1EEDi m\u1ED9t bi\u1EC3u m\u1EABu. L\u1EAD\
-  p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: H\xE3y s\u1EED d\u1EE5ng `HttpClient`, `HttpRequest`,\
+  \ v\xE0 `HttpResponse` c\u1EE7a Java 11 \u0111\u1EC3 th\u1EF1c hi\u1EC7n m\u1ED9\
+  t y\xEAu c\u1EA7u GET v\xE0 l\u1EA5y m\u1ED9t s\u1ED1 d\u1EEF li\u1EC7u."
 lastmod: '2024-03-13T22:44:36.485145-06:00'
 model: gpt-4-0125-preview
-summary: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP ngh\u0129a l\xE0 y\xEAu c\u1EA7u\
-  \ m\xE1y ch\u1EE7 v\u1EC1 d\u1EEF li\u1EC7u ho\u1EB7c h\xE0nh \u0111\u1ED9ng, nh\u01B0\
-  \ m\u1EDF m\u1ED9t trang web ho\u1EB7c g\u1EEDi m\u1ED9t bi\u1EC3u m\u1EABu."
+summary: "H\xE3y s\u1EED d\u1EE5ng `HttpClient`, `HttpRequest`, v\xE0 `HttpResponse`\
+  \ c\u1EE7a Java 11 \u0111\u1EC3 th\u1EF1c hi\u1EC7n m\u1ED9t y\xEAu c\u1EA7u GET\
+  \ v\xE0 l\u1EA5y m\u1ED9t s\u1ED1 d\u1EEF li\u1EC7u."
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
 weight: 44
 ---

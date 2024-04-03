@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:51:25.939076-07:00
-description: "L'interpolazione di stringhe permette di inserire variabili o espressioni\
-  \ direttamente all'interno di una stringa di testo. I programmatori la usano per\u2026"
+description: "How to: Kotlin rende l'interpolazione di stringhe piacevole e semplice.\
+  \ Usa il simbolo del dollaro (`$`) seguito dal nome di una variabile, o graffe\u2026"
 lastmod: '2024-03-13T22:44:43.378285-06:00'
 model: gpt-4-1106-preview
-summary: L'interpolazione di stringhe permette di inserire variabili o espressioni
-  direttamente all'interno di una stringa di testo.
+summary: Kotlin rende l'interpolazione di stringhe piacevole e semplice.
 title: Interpolazione di una stringa
 weight: 8
 ---

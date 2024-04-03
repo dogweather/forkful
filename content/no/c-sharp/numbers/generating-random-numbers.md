@@ -1,11 +1,12 @@
 ---
 date: 2024-01-27 20:33:01.237178-07:00
-description: "\xC5 generere tilfeldige tall i C# involverer opprettelsen av uforutsigbare\
-  \ numeriske verdier innenfor et spesifisert omr\xE5de. Programmerere bruker disse\u2026"
+description: "Hvordan: Den vanligste m\xE5ten \xE5 generere tilfeldige tall i C# er\
+  \ ved bruk av `System.Random`-klassen. Her er et enkelt eksempel som demonstrerer\
+  \ bruken."
 lastmod: '2024-03-13T22:44:40.791161-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 generere tilfeldige tall i C# involverer opprettelsen av uforutsigbare\
-  \ numeriske verdier innenfor et spesifisert omr\xE5de."
+summary: "Den vanligste m\xE5ten \xE5 generere tilfeldige tall i C# er ved bruk av\
+  \ `System.Random`-klassen."
 title: Generering av tilfeldige tall
 weight: 12
 ---

@@ -1,12 +1,13 @@
 ---
 date: 2024-01-26 01:09:02.639766-07:00
-description: "Il logging \xE8 il processo di registrazione dei comportamenti delle\
-  \ applicazioni, degli errori e di altre informazioni importanti su un supporto\u2026"
+description: "Come fare: In Swift, puoi scrivere log sulla console con istruzioni\
+  \ di stampa o con l'API `os.log`, pi\xF9 flessibile, che si interconnette con il\
+  \ Sistema di\u2026"
 lastmod: '2024-03-13T22:44:43.776452-06:00'
 model: gpt-4-1106-preview
-summary: "Il logging \xE8 il processo di registrazione dei comportamenti delle applicazioni,\
-  \ degli errori e di altre informazioni importanti su un supporto persistente, come\
-  \ un file o un database."
+summary: "In Swift, puoi scrivere log sulla console con istruzioni di stampa o con\
+  \ l'API `os.log`, pi\xF9 flessibile, che si interconnette con il Sistema di Logging\
+  \ Unificato sulle piattaforme Apple."
 title: "Registrazione delle Attivit\xE0 (Logging)"
 weight: 17
 ---

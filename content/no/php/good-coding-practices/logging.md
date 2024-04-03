@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 01:07:49.412606-07:00
-description: "Logging er i bunn og grunn som \xE5 f\xF8re en dagbok for koden din;\
-  \ det er handlingen med \xE5 registrere hendelser, feil og andre betydningsfulle\
-  \ datapunkter som\u2026"
+description: "Hvordan gj\xF8re det: PHP kommer med en innebygd funksjon for feillogging\
+  \ som er enkel \xE5 bruke. Bare putt `error_log()` inn i koden din for \xE5 sende\
+  \ en\u2026"
 lastmod: '2024-03-13T22:44:40.893122-06:00'
 model: gpt-4-1106-preview
-summary: "Logging er i bunn og grunn som \xE5 f\xF8re en dagbok for koden din; det\
-  \ er handlingen med \xE5 registrere hendelser, feil og andre betydningsfulle datapunkter\
-  \ som skjer n\xE5r applikasjonen din kj\xF8rer."
+summary: "PHP kommer med en innebygd funksjon for feillogging som er enkel \xE5 bruke."
 title: "Loggf\xF8ring"
 weight: 17
 ---

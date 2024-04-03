@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:35:31.354207-07:00
-description: "Konkatenasjon er prosessen \xE5 koble sammen tekststrenger. Det lar\
-  \ programmerere sette sammen ord og setninger dynamisk, noe som er viktig i alt\
-  \ fra \xE5 lage\u2026"
+description: "How to (Slik gj\xF8r du det) Bruk punktum `.` for \xE5 koble sammen\
+  \ strenger i PHP. Her er et enkelt eksempel."
 lastmod: '2024-03-13T22:44:40.877719-06:00'
 model: gpt-4-1106-preview
-summary: "Konkatenasjon er prosessen \xE5 koble sammen tekststrenger."
+summary: "Bruk punktum `.` for \xE5 koble sammen strenger i PHP."
 title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---

@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:35.977817-07:00
-description: "Assoziative Arrays, in anderen Sprachen auch als Maps oder W\xF6rterb\xFC\
-  cher bekannt, sind Schl\xFCssel-Wert-Paare, die f\xFCr effiziente Datenabfrage und\u2026"
+description: "Wie: C bietet keine eingebaute Unterst\xFCtzung f\xFCr assoziative Arrays\
+  \ wie einige h\xF6herstufige Sprachen, aber man kann sie mit Hilfe von Strukturen\
+  \ und\u2026"
 lastmod: '2024-03-13T22:44:54.344567-06:00'
 model: gpt-4-0125-preview
-summary: "Assoziative Arrays, in anderen Sprachen auch als Maps oder W\xF6rterb\xFC\
-  cher bekannt, sind Schl\xFCssel-Wert-Paare, die f\xFCr effiziente Datenabfrage und\
-  \ -manipulation genutzt werden."
+summary: "C bietet keine eingebaute Unterst\xFCtzung f\xFCr assoziative Arrays wie\
+  \ einige h\xF6herstufige Sprachen, aber man kann sie mit Hilfe von Strukturen und\
+  \ Hashing simulieren."
 title: Verwendung von assoziativen Arrays
 weight: 15
 ---

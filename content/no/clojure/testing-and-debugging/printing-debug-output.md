@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:52:08.301120-07:00
-description: "Utskrift for feils\xF8king viser programdata under kj\xF8ring, slik\
-  \ at programmerere raskt kan spore problemer. Vi bruker det fordi det er enkelt,\
-  \ og det gir\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:40.404844-06:00'
 model: gpt-4-1106-preview
-summary: "Utskrift for feils\xF8king viser programdata under kj\xF8ring, slik at programmerere\
-  \ raskt kan spore problemer."
+summary: .
 title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---

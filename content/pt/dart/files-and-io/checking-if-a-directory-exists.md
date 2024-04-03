@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:53:28.621433-07:00
-description: "Checar se um diret\xF3rio existe em Dart \xE9 sobre verificar a presen\xE7\
-  a de um diret\xF3rio em um caminho especificado no sistema de arquivos antes de\
-  \ realizar\u2026"
+description: "Como fazer: Dart usa a biblioteca `dart:io` para trabalhar com arquivos\
+  \ e diret\xF3rios. Aqui est\xE1 uma maneira simples de verificar se um diret\xF3\
+  rio existe."
 lastmod: '2024-03-13T22:44:46.297250-06:00'
 model: gpt-4-0125-preview
-summary: "Checar se um diret\xF3rio existe em Dart \xE9 sobre verificar a presen\xE7\
-  a de um diret\xF3rio em um caminho especificado no sistema de arquivos antes de\
-  \ realizar opera\xE7\xF5es como ler ou escrever arquivos."
+summary: "Dart usa a biblioteca `dart:io` para trabalhar com arquivos e diret\xF3\
+  rios."
 title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---

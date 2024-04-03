@@ -2,14 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:52.137934-07:00
-description: "N\u1ED9i suy chu\u1ED7i cho ph\xE9p b\u1EA1n nh\xFAng bi\u1EBFn ho\u1EB7\
-  c bi\u1EC3u th\u1EE9c b\xEAn trong m\u1ED9t chu\u1ED7i. Ch\xFAng ta l\xE0m \u0111\
-  i\u1EC1u n\xE0y \u0111\u1EC3 c\xF3 \u0111\u01B0\u1EE3c m\xE3 ngu\u1ED3n s\u1EA1\
-  ch h\u01A1n, d\u1EC5 \u0111\u1ECDc h\u01A1n, k\u1EBFt h\u1EE3p n\u1ED9i dung\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong Ruby, b\u1EA1n bao bi\u1EBFn ho\u1EB7\
+  c bi\u1EC3u th\u1EE9c c\u1EE7a m\xECnh trong `#{}` v\xE0 \u0111\u1EB7t n\xF3 v\xE0\
+  o n\u01A1i b\u1EA1n mu\u1ED1n trong m\u1ED9t chu\u1ED7i \u0111\u01B0\u1EE3c bao\
+  \ b\u1EDFi d\u1EA5u ngo\u1EB7c k\xE9p. Nh\u01B0\u2026"
 lastmod: '2024-03-13T22:44:37.306245-06:00'
 model: gpt-4-0125-preview
-summary: "N\u1ED9i suy chu\u1ED7i cho ph\xE9p b\u1EA1n nh\xFAng bi\u1EBFn ho\u1EB7\
-  c bi\u1EC3u th\u1EE9c b\xEAn trong m\u1ED9t chu\u1ED7i."
+summary: "Trong Ruby, b\u1EA1n bao bi\u1EBFn ho\u1EB7c bi\u1EC3u th\u1EE9c c\u1EE7\
+  a m\xECnh trong `#{}` v\xE0 \u0111\u1EB7t n\xF3 v\xE0o n\u01A1i b\u1EA1n mu\u1ED1\
+  n trong m\u1ED9t chu\u1ED7i \u0111\u01B0\u1EE3c bao b\u1EDFi d\u1EA5u ngo\u1EB7\
+  c k\xE9p."
 title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
 weight: 8
 ---

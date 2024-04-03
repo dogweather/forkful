@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:03:28.265808-07:00
-description: "Working with CSV (Comma-Separated Values) files is about reading from\
-  \ and writing to plain text files that store tabular data. Programmers do this to\u2026"
+description: "How to: Rust, with its focus on safety and performance, offers excellent\
+  \ crates (libraries) for dealing with CSV files, with `csv` being the most popular.\u2026"
 lastmod: '2024-03-13T22:44:59.916654-06:00'
 model: gpt-4-0125-preview
-summary: Working with CSV (Comma-Separated Values) files is about reading from and
-  writing to plain text files that store tabular data.
+summary: Rust, with its focus on safety and performance, offers excellent crates (libraries)
+  for dealing with CSV files, with `csv` being the most popular.
 title: Working with CSV
 weight: 37
 ---

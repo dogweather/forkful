@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:35.275284-07:00
-description: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi m\u1ED9t chu\u1ED7\
-  i c\xF3 ngh\u0129a l\xE0 lo\u1EA1i b\u1ECF nh\u1EEFng d\u1EA5u ngo\u1EB7c k\xE9\
-  p ho\u1EB7c d\u1EA5u ngo\u1EB7c \u0111\u01A1n bao quanh c\xE1c gi\xE1 tr\u1ECB v\u0103\
-  n b\u1EA3n. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u01B0\u1EDDng\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Ruby c\xF3 m\u1ED9t s\u1ED1 th\u1EE7 thu\u1EAD\
+  t hay ho \u0111\u1EC3 c\u1EAFt b\u1ECF nh\u1EEFng d\u1EA5u ngo\u1EB7c k\xE9p phi\u1EC1\
+  n ph\u1EE9c \u0111\xF3. B\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng c\xE1c ph\u01B0\
+  \u01A1ng th\u1EE9c `gsub` ho\u1EB7c `delete` \u0111\u1EC3 ho\xE0n\u2026"
 lastmod: '2024-03-13T22:44:37.316612-06:00'
 model: gpt-4-0125-preview
-summary: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi m\u1ED9t chu\u1ED7\
-  i c\xF3 ngh\u0129a l\xE0 lo\u1EA1i b\u1ECF nh\u1EEFng d\u1EA5u ngo\u1EB7c k\xE9\
-  p ho\u1EB7c d\u1EA5u ngo\u1EB7c \u0111\u01A1n bao quanh c\xE1c gi\xE1 tr\u1ECB v\u0103\
-  n b\u1EA3n."
+summary: "Ruby c\xF3 m\u1ED9t s\u1ED1 th\u1EE7 thu\u1EADt hay ho \u0111\u1EC3 c\u1EAF\
+  t b\u1ECF nh\u1EEFng d\u1EA5u ngo\u1EB7c k\xE9p phi\u1EC1n ph\u1EE9c \u0111\xF3."
 title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i"
 weight: 9
 ---

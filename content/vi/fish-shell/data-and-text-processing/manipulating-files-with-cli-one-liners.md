@@ -2,17 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:07.022044-07:00
-description: "Trong l\u0129nh v\u1EF1c l\u1EADp tr\xECnh, \u0111\u1EB7c bi\u1EC7t\
-  \ l\xE0 khi l\xE0m vi\u1EC7c v\u1EDBi m\xF4i tr\u01B0\u1EDDng Linux ho\u1EB7c Unix,\
-  \ vi\u1EC7c thao t\xE1c t\u1EC7p tin tr\u1EF1c ti\u1EBFp t\u1EEB giao di\u1EC7n\
-  \ d\xF2ng l\u1EC7nh (CLI) kh\xF4ng ch\u1EC9\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Thao t\xE1c t\u1EC7p tin trong Fish Shell\
+  \ v\u1EEBa tr\u1EF1c quan v\u1EEBa m\u1EA1nh m\u1EBD. D\u01B0\u1EDBi \u0111\xE2\
+  y l\xE0 m\u1ED9t s\u1ED1 v\xED d\u1EE5 \u0111\u1EC3 th\u1EC3 hi\u1EC7n kh\u1EA3\
+  \ n\u0103ng c\u1EE7a n\xF3: 1. **T\u1EA1o t\u1EC7p tin** \u0111\u01A1n\u2026"
 lastmod: '2024-03-13T22:44:37.203686-06:00'
 model: gpt-4-0125-preview
-summary: "Trong l\u0129nh v\u1EF1c l\u1EADp tr\xECnh, \u0111\u1EB7c bi\u1EC7t l\xE0\
-  \ khi l\xE0m vi\u1EC7c v\u1EDBi m\xF4i tr\u01B0\u1EDDng Linux ho\u1EB7c Unix, vi\u1EC7\
-  c thao t\xE1c t\u1EC7p tin tr\u1EF1c ti\u1EBFp t\u1EEB giao di\u1EC7n d\xF2ng l\u1EC7\
-  nh (CLI) kh\xF4ng ch\u1EC9 l\xE0 v\u1EA5n \u0111\u1EC1 ti\u1EC7n l\u1EE3i - \u0111\
-  \xF3 l\xE0 c\xF4ng c\u1EE5 m\u1EA1nh m\u1EBD."
+summary: "Thao t\xE1c t\u1EC7p tin trong Fish Shell v\u1EEBa tr\u1EF1c quan v\u1EEB\
+  a m\u1EA1nh m\u1EBD."
 title: "Thao t\xE1c v\u1EDBi c\xE1c t\u1EC7p tin b\u1EB1ng c\xE1c l\u1EC7nh CLI ch\u1EC9\
   \ m\u1ED9t d\xF2ng"
 weight: 31

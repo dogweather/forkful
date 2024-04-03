@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:38:31.722334-07:00
-description: "Mit\xE4 ja Miksi? K\xE4\xE4nt\xE4minen merkkijono pieniksi kirjaimiksi\
-  \ tarkoittaa kaikkien kirjainten muuttamista niiden pienikokoisiksi vastineiksi.\
-  \ Ohjelmoijat\u2026"
+description: "How to: Kuinka? Fish Shellill\xE4 saat merkkijonon pieniksi kirjaimiksi\
+  \ `string lower`-komennolla. Helppoa ja suoraviivaista. Kokeile itse."
 lastmod: '2024-03-13T22:44:56.979274-06:00'
 model: gpt-4-1106-preview
-summary: "Mit\xE4 ja Miksi."
+summary: Kuinka.
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---

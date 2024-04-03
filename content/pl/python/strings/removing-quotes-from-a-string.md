@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 03:42:23.511559-07:00
-description: "Usuwanie cudzys\u0142ow\xF3w z \u0142a\u0144cucha znak\xF3w zazwyczaj\
-  \ oznacza usuwanie zb\u0119dnych podw\xF3jnych (\") lub pojedynczych (') znak\xF3\
-  w cudzys\u0142owu. Programi\u015Bci robi\u0105 to w\u2026"
+description: "Jak to zrobi\u0107: Python oferuje kilka sposob\xF3w na pozbycie si\u0119\
+  \ niechcianych cudzys\u0142ow\xF3w z \u0142a\u0144cuch\xF3w znak\xF3w. Przejd\u017A\
+  my przez kilka przyk\u0142ad\xF3w."
 lastmod: '2024-03-13T22:44:34.936636-06:00'
 model: gpt-4-0125-preview
-summary: "Usuwanie cudzys\u0142ow\xF3w z \u0142a\u0144cucha znak\xF3w zazwyczaj oznacza\
-  \ usuwanie zb\u0119dnych podw\xF3jnych (\") lub pojedynczych (') znak\xF3w cudzys\u0142\
-  owu."
+summary: "Python oferuje kilka sposob\xF3w na pozbycie si\u0119 niechcianych cudzys\u0142\
+  ow\xF3w z \u0142a\u0144cuch\xF3w znak\xF3w."
 title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---

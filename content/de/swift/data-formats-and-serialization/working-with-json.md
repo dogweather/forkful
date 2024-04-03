@@ -1,10 +1,10 @@
 ---
 date: 2024-01-19
-description: "JSON (JavaScript Object Notation) ist ein Datenformat zum Austausch\
-  \ von Datenobjekten. Programmierer nutzen es, weil es leichtgewichtig, textbasiert,\u2026"
+description: 'How to: Swift macht das Arbeiten mit JSON mit der `Codable`-Schnittstelle
+  einfach. Hier ist ein Grundbeispiel.'
 lastmod: '2024-03-13T22:44:54.246077-06:00'
 model: unknown
-summary: JSON (JavaScript Object Notation) ist ein Datenformat zum Austausch von Datenobjekten.
+summary: Swift macht das Arbeiten mit JSON mit der `Codable`-Schnittstelle einfach.
 title: Arbeiten mit JSON
 weight: 38
 ---

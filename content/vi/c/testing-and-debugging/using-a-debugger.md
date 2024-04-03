@@ -2,10 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:25.896433-07:00
-description: "GDB (GNU Debugger) l\xE0 c\xF4ng c\u1EE5 debugger \u0111\u01B0\u1EE3\
-  c s\u1EED d\u1EE5ng ph\u1ED5 bi\u1EBFn nh\u1EA5t cho l\u1EADp tr\xECnh C. D\u01B0\
-  \u1EDBi \u0111\xE2y l\xE0 h\u01B0\u1EDBng d\u1EABn ng\u1EAFn g\u1ECDn v\u1EC1 vi\u1EC7\
-  c s\u1EED d\u1EE5ng GDB \u0111\u1EC3 g\u1EE1 l\u1ED7i m\u1ED9t ch\u01B0\u01A1ng\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: GDB (GNU Debugger) l\xE0 c\xF4ng c\u1EE5 debugger\
+  \ \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng ph\u1ED5 bi\u1EBFn nh\u1EA5t cho l\u1EAD\
+  p tr\xECnh C. D\u01B0\u1EDBi \u0111\xE2y l\xE0 h\u01B0\u1EDBng d\u1EABn ng\u1EAF\
+  n g\u1ECDn v\u1EC1 vi\u1EC7c s\u1EED d\u1EE5ng GDB \u0111\u1EC3 g\u1EE1\u2026"
 lastmod: '2024-03-13T22:44:37.274313-06:00'
 model: gpt-4-0125-preview
 summary: "GDB (GNU Debugger) l\xE0 c\xF4ng c\u1EE5 debugger \u0111\u01B0\u1EE3c s\u1EED\

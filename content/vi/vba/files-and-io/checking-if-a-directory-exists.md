@@ -2,17 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:58.105441-07:00
-description: "Ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1\
-  i trong Visual Basic cho \u1EE8ng d\u1EE5ng (VBA) l\xE0 \u0111\u1EC3 x\xE1c minh\
-  \ s\u1EF1 hi\u1EC7n di\u1EC7n c\u1EE7a m\u1ED9t th\u01B0 m\u1EE5c trong h\u1EC7\
-  \ th\u1ED1ng t\u1EADp tin tr\u01B0\u1EDBc khi\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong VBA, \u0111\u1EC3 ki\u1EC3m tra xem m\u1ED9\
+  t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng, b\u1EA1n th\u01B0\u1EDDng\
+  \ s\u1EED d\u1EE5ng h\xE0m `Dir` k\u1EBFt h\u1EE3p v\u1EDBi thu\u1ED9c t\xEDnh `vbDirectory`.\
+  \ Ph\u01B0\u01A1ng ph\xE1p n\xE0y\u2026"
 lastmod: '2024-03-13T22:44:36.452260-06:00'
 model: gpt-4-0125-preview
-summary: "Ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i trong\
-  \ Visual Basic cho \u1EE8ng d\u1EE5ng (VBA) l\xE0 \u0111\u1EC3 x\xE1c minh s\u1EF1\
-  \ hi\u1EC7n di\u1EC7n c\u1EE7a m\u1ED9t th\u01B0 m\u1EE5c trong h\u1EC7 th\u1ED1\
-  ng t\u1EADp tin tr\u01B0\u1EDBc khi th\u1EF1c hi\u1EC7n c\xE1c thao t\xE1c nh\u01B0\
-  \ l\u01B0u t\u1EC7p ho\u1EB7c t\u1EA1o th\u01B0 m\u1EE5c m\u1EDBi."
+summary: "Trong VBA, \u0111\u1EC3 ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3\
+  \ t\u1ED3n t\u1EA1i kh\xF4ng, b\u1EA1n th\u01B0\u1EDDng s\u1EED d\u1EE5ng h\xE0\
+  m `Dir` k\u1EBFt h\u1EE3p v\u1EDBi thu\u1ED9c t\xEDnh `vbDirectory`."
 title: "Ki\u1EC3m tra n\u1EBFu m\u1ED9t th\u01B0 m\u1EE5c t\u1ED3n t\u1EA1i"
 weight: 20
 ---

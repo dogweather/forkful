@@ -1,10 +1,11 @@
 ---
 date: 2024-02-03 19:02:39.265922-07:00
-description: "Parsing a date from a string involves converting text into a Date object.\
-  \ This operation is fundamental for applications that interact with dates entered\u2026"
+description: "How to: Kotlin supports date parsing through the `java.time` package,\
+  \ introduced in Java 8. Here's a simple approach using `LocalDateTime` and a specific\u2026"
 lastmod: '2024-03-13T22:45:00.057686-06:00'
 model: gpt-4-0125-preview
-summary: Parsing a date from a string involves converting text into a Date object.
+summary: Kotlin supports date parsing through the `java.time` package, introduced
+  in Java 8.
 title: Parsing a date from a string
 weight: 30
 ---

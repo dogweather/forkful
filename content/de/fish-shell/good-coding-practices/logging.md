@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 01:03:16.814951-07:00
-description: "Logging ist im Grunde das Festhalten, was Ihre Anwendung gerade macht\
-  \ \u2013 ein Tagebuch, wenn man so will, aber f\xFCr Code. Programmierer tun dies,\
-  \ um den\u2026"
+description: "Wie geht das: In Fish kann das Protokollieren so einfach sein wie das\
+  \ Weiterleiten der Standardausgabe und Fehlerstr\xF6me in eine Datei. Lassen Sie\
+  \ uns\u2026"
 lastmod: '2024-03-13T22:44:54.315952-06:00'
 model: gpt-4-1106-preview
-summary: "Logging ist im Grunde das Festhalten, was Ihre Anwendung gerade macht \u2013\
-  \ ein Tagebuch, wenn man so will, aber f\xFCr Code."
+summary: "In Fish kann das Protokollieren so einfach sein wie das Weiterleiten der\
+  \ Standardausgabe und Fehlerstr\xF6me in eine Datei."
 title: Protokollierung
 weight: 17
 ---

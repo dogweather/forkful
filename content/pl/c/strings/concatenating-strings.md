@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:10.116642-07:00
-description: "Konkatenacja \u0142a\u0144cuch\xF3w znak\xF3w w C polega na \u0142\u0105\
-  czeniu dw\xF3ch lub wi\u0119cej \u0142a\u0144cuch\xF3w znak\xF3w koniec-ko\u0144\
-  cem, aby utworzy\u0107 nowy \u0142a\u0144cuch. Programi\u015Bci wykonuj\u0105 t\u0119\
-  \u2026"
+description: "Jak to zrobi\u0107: W C, \u0142a\u0144cuchy znak\xF3w s\u0105 tablicami\
+  \ znak\xF3w ko\u0144cz\u0105cymi si\u0119 znakiem null (`\\0`). W przeciwie\u0144\
+  stwie do j\u0119zyk\xF3w wy\u017Cszego poziomu, C nie zapewnia\u2026"
 lastmod: '2024-03-13T22:44:35.877427-06:00'
 model: gpt-4-0125-preview
-summary: "Konkatenacja \u0142a\u0144cuch\xF3w znak\xF3w w C polega na \u0142\u0105\
-  czeniu dw\xF3ch lub wi\u0119cej \u0142a\u0144cuch\xF3w znak\xF3w koniec-ko\u0144\
-  cem, aby utworzy\u0107 nowy \u0142a\u0144cuch."
+summary: "W C, \u0142a\u0144cuchy znak\xF3w s\u0105 tablicami znak\xF3w ko\u0144cz\u0105\
+  cymi si\u0119 znakiem null (`\\0`)."
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:09:39.810653-07:00
-description: "Dividir o c\xF3digo em fun\xE7\xF5es significa esculpir seu c\xF3digo\
-  \ em blocos menores e reutiliz\xE1veis. Fazemos isso para evitar repeti\xE7\xE3\
-  o, tornar nosso c\xF3digo\u2026"
+description: "Como fazer: Vamos pegar uma tarefa comum: calcular a \xE1rea de um c\xED\
+  rculo. Em vez de escrever a mesma f\xF3rmula todas as vezes, encapsulamos ela em\
+  \ uma fun\xE7\xE3o."
 lastmod: '2024-03-13T22:44:46.885004-06:00'
 model: gpt-4-1106-preview
-summary: "Dividir o c\xF3digo em fun\xE7\xF5es significa esculpir seu c\xF3digo em\
-  \ blocos menores e reutiliz\xE1veis."
+summary: Vamos pegar uma tarefa comum.
 title: "Organizando o c\xF3digo em fun\xE7\xF5es"
 weight: 18
 ---

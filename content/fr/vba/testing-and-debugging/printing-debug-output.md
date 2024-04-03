@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:23.737007-07:00
-description: "Imprimer des sorties de d\xE9bogage dans Visual Basic pour Applications\
-  \ (VBA) implique de placer strat\xE9giquement des instructions print dans votre\
-  \ code pour\u2026"
+description: "Comment faire : Dans VBA, l\u2019instruction `Debug.Print` est le pilier\
+  \ pour imprimer des informations de d\xE9bogage dans la fen\xEAtre imm\xE9diate\
+  \ dans l\u2019\xE9diteur\u2026"
 lastmod: '2024-03-13T22:44:57.581003-06:00'
 model: gpt-4-0125-preview
-summary: "Imprimer des sorties de d\xE9bogage dans Visual Basic pour Applications\
-  \ (VBA) implique de placer strat\xE9giquement des instructions print dans votre\
-  \ code pour afficher les valeurs des variables, le flux d'ex\xE9cution ou des messages\
-  \ de d\xE9bogage personnalis\xE9s."
+summary: "Dans VBA, l\u2019instruction `Debug.Print` est le pilier pour imprimer des\
+  \ informations de d\xE9bogage dans la fen\xEAtre imm\xE9diate dans l\u2019\xE9diteur\
+  \ Visual Basic (VBE)."
 title: "Affichage du d\xE9bogage"
 weight: 33
 ---

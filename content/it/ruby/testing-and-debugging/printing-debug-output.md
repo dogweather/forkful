@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:53:29.333388-07:00
-description: "Stampare output per debug \xE8 mostrare informazioni interne di un programma\
-  \ durante la sua esecuzione. Programmatori lo fanno per capire meglio come il\u2026"
+description: How to (Come fare) Ruby rende super semplice stampare cose a schermo.
+  Ecco un esempio.
 lastmod: '2024-03-13T22:44:44.053857-06:00'
 model: gpt-4-1106-preview
-summary: "Stampare output per debug \xE8 mostrare informazioni interne di un programma\
-  \ durante la sua esecuzione."
+summary: Ruby rende super semplice stampare cose a schermo.
 title: Stampa dell'output di debug
 weight: 33
 ---

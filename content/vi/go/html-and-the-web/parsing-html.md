@@ -2,16 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:43.745544-07:00
-description: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML trong Go bao g\u1ED3m vi\u1EC7c ph\xE2\
-  n t\xEDch n\u1ED9i dung c\u1EE7a c\xE1c t\u1EADp tin HTML \u0111\u1EC3 tr\xEDch\
-  \ xu\u1EA5t d\u1EEF li\u1EC7u, thao t\xE1c c\u1EA5u tr\xFAc, ho\u1EB7c chuy\u1EC3\
-  n \u0111\u1ED5i HTML sang\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EC3 ph\xE2n t\xEDch c\xFA ph\xE1p HTML\
+  \ trong Go, b\u1EA1n th\u01B0\u1EDDng s\u1EED d\u1EE5ng g\xF3i `goquery` ho\u1EB7\
+  c g\xF3i `net/html` c\u1EE7a th\u01B0 vi\u1EC7n chu\u1EA9n. D\u01B0\u1EDBi \u0111\
+  \xE2y l\xE0 m\u1ED9t v\xED d\u1EE5 c\u01A1 b\u1EA3n s\u1EED\u2026"
 lastmod: '2024-03-13T22:44:35.979043-06:00'
 model: gpt-4-0125-preview
-summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML trong Go bao g\u1ED3m vi\u1EC7c ph\xE2\
-  n t\xEDch n\u1ED9i dung c\u1EE7a c\xE1c t\u1EADp tin HTML \u0111\u1EC3 tr\xEDch\
-  \ xu\u1EA5t d\u1EEF li\u1EC7u, thao t\xE1c c\u1EA5u tr\xFAc, ho\u1EB7c chuy\u1EC3\
-  n \u0111\u1ED5i HTML sang c\xE1c \u0111\u1ECBnh d\u1EA1ng kh\xE1c."
+summary: "\u0110\u1EC3 ph\xE2n t\xEDch c\xFA ph\xE1p HTML trong Go, b\u1EA1n th\u01B0\
+  \u1EDDng s\u1EED d\u1EE5ng g\xF3i `goquery` ho\u1EB7c g\xF3i `net/html` c\u1EE7\
+  a th\u01B0 vi\u1EC7n chu\u1EA9n."
 title: "Ph\xE2n T\xEDch HTML"
 weight: 43
 ---

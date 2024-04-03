@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:36.590957-07:00
-description: "Sprawdzanie, czy katalog istnieje, to podstawowa operacja w wielu zadaniach\
-  \ programistycznych, pozwalaj\u0105ca na warunkowe dzia\u0142ania w oparciu o obecno\u015B\
-  \u0107 lub\u2026"
+description: "Jak to zrobi\u0107: Haskell, za po\u015Brednictwem swojej biblioteki\
+  \ bazowej, oferuje proste sposoby na sprawdzenie istnienia katalogu, g\u0142\xF3\
+  wnie za pomoc\u0105 modu\u0142u\u2026"
 lastmod: '2024-03-13T22:44:35.467163-06:00'
 model: gpt-4-0125-preview
-summary: "Sprawdzanie, czy katalog istnieje, to podstawowa operacja w wielu zadaniach\
-  \ programistycznych, pozwalaj\u0105ca na warunkowe dzia\u0142ania w oparciu o obecno\u015B\
-  \u0107 lub brak struktur katalog\xF3w."
+summary: "Haskell, za po\u015Brednictwem swojej biblioteki bazowej, oferuje proste\
+  \ sposoby na sprawdzenie istnienia katalogu, g\u0142\xF3wnie za pomoc\u0105 modu\u0142\
+  u `System.Directory`."
 title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---

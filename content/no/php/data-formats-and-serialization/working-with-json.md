@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:51.152169-07:00
-description: "JSON, eller JavaScript Object Notation, er et lettvekts datautvekslingsformat\
-  \ som er lett \xE5 lese og skrive for mennesker, og lett for maskiner \xE5 parse\
-  \ og\u2026"
+description: "Hvordan: \xC5 jobbe med JSON i PHP er enkelt takket v\xE6re de innebygde\
+  \ funksjonene `json_encode()` og `json_decode()`. Nedenfor er eksempler som viser\
+  \ hvordan\u2026"
 lastmod: '2024-03-13T22:44:40.907571-06:00'
 model: gpt-4-0125-preview
-summary: "JSON, eller JavaScript Object Notation, er et lettvekts datautvekslingsformat\
-  \ som er lett \xE5 lese og skrive for mennesker, og lett for maskiner \xE5 parse\
-  \ og generere."
+summary: "\xC5 jobbe med JSON i PHP er enkelt takket v\xE6re de innebygde funksjonene\
+  \ `json_encode()` og `json_decode()`."
 title: Arbeider med JSON
 weight: 38
 ---

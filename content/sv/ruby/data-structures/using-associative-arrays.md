@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:54.301462-07:00
-description: "Associativa arrayer, som oftare kallas hashar i Ruby, g\xF6r det m\xF6\
-  jligt att para ihop unika nycklar med v\xE4rden. De \xE4r oumb\xE4rliga n\xE4r du\
-  \ beh\xF6ver h\xE5lla reda\u2026"
+description: "Hur man g\xF6r: Att skapa och anv\xE4nda hashar i Ruby \xE4r enkelt.\
+  \ Du kan initialisera en tom hash, fylla den med nyckel-v\xE4rdepar, komma \xE5\
+  t v\xE4rden via deras\u2026"
 lastmod: '2024-03-13T22:44:38.421555-06:00'
 model: gpt-4-0125-preview
-summary: "Associativa arrayer, som oftare kallas hashar i Ruby, g\xF6r det m\xF6jligt\
-  \ att para ihop unika nycklar med v\xE4rden."
+summary: "Att skapa och anv\xE4nda hashar i Ruby \xE4r enkelt."
 title: "Att anv\xE4nda associativa arrayer"
 weight: 15
 ---

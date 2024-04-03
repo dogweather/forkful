@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:25:30.285670-07:00
-description: "TOML, som er kort for Toms Opplagte, Minimale Spr\xE5k, er et data serialiseringsformat\
-  \ i slekt med JSON eller YAML, men har som m\xE5l \xE5 v\xE6re enkelt og\u2026"
+description: "Hvordan: F\xF8r du dykker inn, installer `toml`-pakken med `pip install\
+  \ toml`. La oss parse en TOML-fil."
 lastmod: '2024-03-13T22:44:40.384284-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, som er kort for Toms Opplagte, Minimale Spr\xE5k, er et data serialiseringsformat\
-  \ i slekt med JSON eller YAML, men har som m\xE5l \xE5 v\xE6re enkelt og leselig."
+summary: "F\xF8r du dykker inn, installer `toml`-pakken med `pip install toml`."
 title: Jobbe med TOML
 weight: 39
 ---

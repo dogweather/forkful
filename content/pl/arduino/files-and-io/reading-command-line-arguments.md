@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 17:55:39.237148-07:00
-description: "\"Co i Dlaczego?\" Czytanie argument\xF3w linii polece\u0144 to spos\xF3\
-  b na wprowadzanie danych do programu, gdy jest on uruchamiany. Programi\u015Bci\
-  \ u\u017Cywaj\u0105 tego, by\u2026"
+description: "How to: \"Jak to zrobi\u0107:\" Arduino nie obs\u0142uguje standardowych\
+  \ argument\xF3w linii polece\u0144 jak tradycyjne \u015Brodowiska programistyczne.\
+  \ Dostarczanie danych\u2026"
 lastmod: '2024-03-13T22:44:35.686857-06:00'
 model: gpt-4-1106-preview
-summary: '"Co i Dlaczego.'
+summary: "\"Jak to zrobi\u0107:\"\n\nArduino nie obs\u0142uguje standardowych argument\xF3\
+  w linii polece\u0144 jak tradycyjne \u015Brodowiska programistyczne."
 title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---

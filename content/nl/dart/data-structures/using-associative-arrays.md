@@ -2,12 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:11.297878-07:00
-description: "Associatieve arrays in Dart, doorgaans bekend als Maps, zijn datastructuren\
-  \ die gegevens opslaan in sleutel-waardeparen. Ze stellen programmeurs in staat\u2026"
+description: "Hoe te: Dart biedt een eenvoudige syntaxis voor het cre\xEBren en manipuleren\
+  \ van Maps. Hieronder zijn voorbeelden die basisbewerkingen demonstreren zoals\u2026"
 lastmod: '2024-03-13T22:44:50.497217-06:00'
 model: gpt-4-0125-preview
-summary: Associatieve arrays in Dart, doorgaans bekend als Maps, zijn datastructuren
-  die gegevens opslaan in sleutel-waardeparen.
+summary: "Dart biedt een eenvoudige syntaxis voor het cre\xEBren en manipuleren van\
+  \ Maps."
 title: Gebruik makend van associatieve arrays
 weight: 15
 ---

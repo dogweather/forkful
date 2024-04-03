@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:19:06.409958-07:00
-description: "TOML, acronimo di Tom's Obvious, Minimal Language (Linguaggio Minimo\
-  \ e Ovvio di Tom), \xE8 un formato di serializzazione dei dati. I programmatori\
-  \ lo adorano\u2026"
+description: 'Come Fare: Prima di tutto, installare `toml-cli` per giocare con TOML
+  in Bash. Utile per leggere o modificare file TOML al volo.'
 lastmod: '2024-03-13T22:44:43.622950-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, acronimo di Tom's Obvious, Minimal Language (Linguaggio Minimo e Ovvio\
-  \ di Tom), \xE8 un formato di serializzazione dei dati."
+summary: Prima di tutto, installare `toml-cli` per giocare con TOML in Bash.
 title: Lavorare con TOML
 weight: 39
 ---

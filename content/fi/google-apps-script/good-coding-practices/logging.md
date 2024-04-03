@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:00.882655-07:00
-description: "Ohjelmistokehityksess\xE4 lokitus tarkoittaa tapahtumien, virheiden\
-  \ tai merkitt\xE4vien esiintymien tallentamista suoritusaikana. Ohjelmoijat tekev\xE4\
-  t n\xE4in\u2026"
+description: "Miten: Google Apps Scriptiss\xE4 lokitusta voi suorittaa k\xE4ytt\xE4\
+  m\xE4ll\xE4 erilaisia menetelmi\xE4, kuten `Logger`-luokkaa ja `console.log()`-toimintoa.\
+  \ Logger-luokka\u2026"
 lastmod: '2024-03-13T22:44:56.104850-06:00'
 model: gpt-4-0125-preview
-summary: "Ohjelmistokehityksess\xE4 lokitus tarkoittaa tapahtumien, virheiden tai\
-  \ merkitt\xE4vien esiintymien tallentamista suoritusaikana."
+summary: "Google Apps Scriptiss\xE4 lokitusta voi suorittaa k\xE4ytt\xE4m\xE4ll\xE4\
+  \ erilaisia menetelmi\xE4, kuten `Logger`-luokkaa ja `console.log()`-toimintoa."
 title: Lokiointi
 weight: 17
 ---

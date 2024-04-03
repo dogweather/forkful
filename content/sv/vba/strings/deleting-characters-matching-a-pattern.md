@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:28.381955-07:00
-description: "Att ta bort tecken som matchar ett specifikt m\xF6nster i Visual Basic\
-  \ for Applications (VBA) inneb\xE4r att identifiera och d\xE4refter ta bort tecken\
-  \ eller\u2026"
+description: "Hur man g\xF6r: I VBA kan du anv\xE4nda funktionen `Replace` eller regulj\xE4\
+  ra uttryck f\xF6r att ta bort tecken som matchar ett m\xF6nster. H\xE4r \xE4r exempel\
+  \ p\xE5 b\xE5da\u2026"
 lastmod: '2024-03-13T22:44:37.725838-06:00'
 model: gpt-4-0125-preview
-summary: "Att ta bort tecken som matchar ett specifikt m\xF6nster i Visual Basic for\
-  \ Applications (VBA) inneb\xE4r att identifiera och d\xE4refter ta bort tecken eller\
-  \ str\xE4ngar som uppfyller vissa kriterier."
+summary: "I VBA kan du anv\xE4nda funktionen `Replace` eller regulj\xE4ra uttryck\
+  \ f\xF6r att ta bort tecken som matchar ett m\xF6nster."
 title: "Ta bort tecken som matchar ett m\xF6nster"
 weight: 5
 ---

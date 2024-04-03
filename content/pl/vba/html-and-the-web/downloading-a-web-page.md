@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:44.072532-07:00
-description: "Pobieranie strony internetowej w Visual Basic for Applications (VBA)\
-  \ polega na pobraniu zawarto\u015Bci HTML strony internetowej z Internetu. Programi\u015B\
-  ci\u2026"
+description: "Jak to zrobi\u0107: Aby pobra\u0107 stron\u0119 internetow\u0105 w VBA,\
+  \ mo\u017Cna skorzysta\u0107 z biblioteki Microsoft XML, wersja 6.0 (MSXML6), kt\xF3\
+  ra umo\u017Cliwia wykonywanie \u017C\u0105da\u0144\u2026"
 lastmod: '2024-03-13T22:44:35.230352-06:00'
 model: gpt-4-0125-preview
-summary: "Pobieranie strony internetowej w Visual Basic for Applications (VBA) polega\
-  \ na pobraniu zawarto\u015Bci HTML strony internetowej z Internetu."
+summary: "Aby pobra\u0107 stron\u0119 internetow\u0105 w VBA, mo\u017Cna skorzysta\u0107\
+  \ z biblioteki Microsoft XML, wersja 6.0 (MSXML6), kt\xF3ra umo\u017Cliwia wykonywanie\
+  \ \u017C\u0105da\u0144 HTTP serwera."
 title: Pobieranie strony internetowej
 weight: 42
 ---

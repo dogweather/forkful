@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:44.562961-07:00
-description: "Enviar una solicitud HTTP en Visual Basic para Aplicaciones (VBA) implica\
-  \ acceder program\xE1ticamente a recursos o servicios web mediante solicitudes sobre\u2026"
+description: "C\xF3mo hacerlo: La clave para enviar una solicitud HTTP en VBA es utilizar\
+  \ la biblioteca `Microsoft XML, v6.0` (o versiones anteriores, dependiendo de su\u2026"
 lastmod: '2024-03-13T22:44:58.889449-06:00'
 model: gpt-4-0125-preview
-summary: "Enviar una solicitud HTTP en Visual Basic para Aplicaciones (VBA) implica\
-  \ acceder program\xE1ticamente a recursos o servicios web mediante solicitudes sobre\
-  \ HTTP."
+summary: La clave para enviar una solicitud HTTP en VBA es utilizar la biblioteca
+  `Microsoft XML, v6.0` (o versiones anteriores, dependiendo de su sistema).
 title: Enviando una solicitud HTTP
 weight: 44
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:35.087343-07:00
-description: "Gli array associativi, noti in altri linguaggi come mappe o dizionari,\
-  \ sono coppie chiave-valore utilizzate per una ricerca e manipolazione efficienti\
-  \ dei\u2026"
+description: "Come fare: C non ha un supporto incorporato per gli array associativi\
+  \ come alcuni linguaggi di livello superiore, ma \xE8 possibile simularli utilizzando\u2026"
 lastmod: '2024-03-13T22:44:43.905100-06:00'
 model: gpt-4-0125-preview
-summary: Gli array associativi, noti in altri linguaggi come mappe o dizionari, sono
-  coppie chiave-valore utilizzate per una ricerca e manipolazione efficienti dei dati.
+summary: "C non ha un supporto incorporato per gli array associativi come alcuni linguaggi\
+  \ di livello superiore, ma \xE8 possibile simularli utilizzando strutture e hashing."
 title: Utilizzo di array associativi
 weight: 15
 ---

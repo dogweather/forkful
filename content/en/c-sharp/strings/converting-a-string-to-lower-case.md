@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:38:15.002505-07:00
-description: "Converting a string to lowercase means transforming all uppercase characters\
-  \ in the text to their lowercase equivalents. Programmers do it for\u2026"
+description: 'How to: In C#, you can convert a string to lowercase using the `ToLower()`
+  or `ToLowerInvariant()` methods. Here''s how.'
 lastmod: '2024-03-13T22:45:00.075792-06:00'
 model: gpt-4-1106-preview
-summary: Converting a string to lowercase means transforming all uppercase characters
-  in the text to their lowercase equivalents.
+summary: In C#, you can convert a string to lowercase using the `ToLower()` or `ToLowerInvariant()`
+  methods.
 title: Converting a string to lower case
 weight: 4
 ---

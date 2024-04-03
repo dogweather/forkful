@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:32.802939-07:00
-description: "Usuwanie znak\xF3w pasuj\u0105cych do okre\u015Blonego wzorca ze string\xF3\
-  w w j\u0119zyku C polega na usuni\u0119ciu wszystkich instancji pewnych znak\xF3\
-  w, kt\xF3re spe\u0142niaj\u0105\u2026"
+description: "Jak to zrobi\u0107: C nie posiada wbudowanej funkcji do bezpo\u015B\
+  redniego usuwania znak\xF3w z ci\u0105gu na podstawie wzorca, w przeciwie\u0144\
+  stwie do niekt\xF3rych j\u0119zyk\xF3w\u2026"
 lastmod: '2024-03-13T22:44:35.868291-06:00'
 model: gpt-4-0125-preview
-summary: "Usuwanie znak\xF3w pasuj\u0105cych do okre\u015Blonego wzorca ze string\xF3\
-  w w j\u0119zyku C polega na usuni\u0119ciu wszystkich instancji pewnych znak\xF3\
-  w, kt\xF3re spe\u0142niaj\u0105 predefiniowane kryteria."
+summary: "C nie posiada wbudowanej funkcji do bezpo\u015Bredniego usuwania znak\xF3\
+  w z ci\u0105gu na podstawie wzorca, w przeciwie\u0144stwie do niekt\xF3rych j\u0119\
+  zyk\xF3w wy\u017Cszego poziomu."
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---

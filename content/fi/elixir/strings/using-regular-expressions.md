@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:34.163592-07:00
-description: "Elixiriss\xE4 s\xE4\xE4nn\xF6llisi\xE4 lausekkeita (regex) k\xE4ytet\xE4\
-  \xE4n merkkijonojen hakemiseen, t\xE4sm\xE4\xE4miseen ja manipulointiin tiettyjen\
-  \ mallien perusteella. Ohjelmoijat\u2026"
+description: "Kuinka: Elixir k\xE4ytt\xE4\xE4 `Regex`-moduulia, hy\xF6dynt\xE4en Erlangin\
+  \ regex-kirjastoa, regex-operaatioihin. T\xE4ss\xE4 perusk\xE4ytt\xF6tapoja."
 lastmod: '2024-03-13T22:44:56.216386-06:00'
 model: gpt-4-0125-preview
-summary: "Elixiriss\xE4 s\xE4\xE4nn\xF6llisi\xE4 lausekkeita (regex) k\xE4ytet\xE4\
-  \xE4n merkkijonojen hakemiseen, t\xE4sm\xE4\xE4miseen ja manipulointiin tiettyjen\
-  \ mallien perusteella."
+summary: "Elixir k\xE4ytt\xE4\xE4 `Regex`-moduulia, hy\xF6dynt\xE4en Erlangin regex-kirjastoa,\
+  \ regex-operaatioihin."
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---

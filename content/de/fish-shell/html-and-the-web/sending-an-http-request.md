@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:59:30.313371-07:00
-description: "HTTP-Anfragen sind das Herzst\xFCck des Webs \u2013 sie erm\xF6glichen\
-  \ die Kommunikation zwischen dem Client (dein Rechner) und dem Server. Programmierer\
-  \ nutzen sie,\u2026"
+description: "Anleitung: Mit `curl`, einem m\xE4chtigen Werkzeug am Terminal, sendest\
+  \ du HTTP-Anfragen schnell und unkompliziert."
 lastmod: '2024-03-13T22:44:54.306424-06:00'
 model: gpt-4-1106-preview
-summary: "HTTP-Anfragen sind das Herzst\xFCck des Webs \u2013 sie erm\xF6glichen die\
-  \ Kommunikation zwischen dem Client (dein Rechner) und dem Server."
+summary: "Mit `curl`, einem m\xE4chtigen Werkzeug am Terminal, sendest du HTTP-Anfragen\
+  \ schnell und unkompliziert."
 title: Einen HTTP-Request senden
 weight: 44
 ---

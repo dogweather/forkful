@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:13.801135-07:00
-description: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering i\
-  \ Go inneb\xE6rer \xE5 legge til en autorisasjonsheader til foresp\xF8rselen din\
-  \ som inkluderer et\u2026"
+description: "Hvordan: For \xE5 lage en HTTP-foresp\xF8rsel med grunnleggende autentisering\
+  \ i Go, m\xE5 du utforme foresp\xF8rselshodene dine for \xE5 inkludere\u2026"
 lastmod: '2024-03-13T22:44:40.266361-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering i Go inneb\xE6\
-  rer \xE5 legge til en autorisasjonsheader til foresp\xF8rselen din som inkluderer\
-  \ et brukernavn og passord i form av en Base64-kodet streng."
+summary: "For \xE5 lage en HTTP-foresp\xF8rsel med grunnleggende autentisering i Go,\
+  \ m\xE5 du utforme foresp\xF8rselshodene dine for \xE5 inkludere `Authorization`-feltet,\
+  \ fylt med dine legitimasjoner i korrekt format."
 title: "Sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---

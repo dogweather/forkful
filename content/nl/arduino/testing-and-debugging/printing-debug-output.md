@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:10.168390-07:00
-description: "Debuguitvoer naar de seri\xEBle monitor printen is een manier om een\
-  \ kijkje te nemen in de geest van een Arduino. Programmeurs doen dit om problemen\
-  \ op te\u2026"
+description: 'Hoe te: Laten we meteen tot de kern komen. Stel je voor dat je elke
+  seconde "Hallo, wereld!" wilt printen. Hier is het codefragment.'
 lastmod: '2024-03-13T22:44:51.074358-06:00'
 model: gpt-4-0125-preview
-summary: "Debuguitvoer naar de seri\xEBle monitor printen is een manier om een kijkje\
-  \ te nemen in de geest van een Arduino."
+summary: Laten we meteen tot de kern komen.
 title: Debug-output afdrukken
 weight: 33
 ---

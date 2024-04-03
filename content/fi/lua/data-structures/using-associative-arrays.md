@@ -2,14 +2,13 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:26.930476-07:00
-description: "Assosiatiiviset taulukot ovat kuin salaiset k\xE4ttelytiedot Luassa\u2014\
-  sen sijaan, ett\xE4 vain numerot j\xE4rjestyisiv\xE4t uskollisesti indeksin mukaan,\
-  \ avaimiksi voi\u2026"
+description: "Miten: Luassa assosiatiivisen taulukon (tai Luassa puhuttuna taulun)\
+  \ luominen on suoraviivaista. Hylk\xE4\xE4t tavanomaiset numeeriset indeksit ja\
+  \ valitset omat\u2026"
 lastmod: '2024-03-13T22:44:56.690851-06:00'
 model: gpt-4-0125-preview
-summary: "Assosiatiiviset taulukot ovat kuin salaiset k\xE4ttelytiedot Luassa\u2014\
-  sen sijaan, ett\xE4 vain numerot j\xE4rjestyisiv\xE4t uskollisesti indeksin mukaan,\
-  \ avaimiksi voi valita mit\xE4 tahansa, mik\xE4 tekee datan hakemisesta tuulennopeaa."
+summary: Luassa assosiatiivisen taulukon (tai Luassa puhuttuna taulun) luominen on
+  suoraviivaista.
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---

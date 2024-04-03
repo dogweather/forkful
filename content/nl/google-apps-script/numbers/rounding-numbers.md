@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:55.899784-07:00
-description: "Afronden van getallen, een fundamenteel concept in computerprogrammering,\
-  \ betreft het aanpassen van een getal naar het dichtstbijzijnde gehele getal of\u2026"
+description: "Hoe: Google Apps Script, als een op JavaScript gebaseerde taal, biedt\
+  \ standaardmethodes om getallen af te ronden. Hier volgt een uitleg van drie\u2026"
 lastmod: '2024-03-13T22:44:50.325657-06:00'
 model: gpt-4-0125-preview
-summary: Afronden van getallen, een fundamenteel concept in computerprogrammering,
-  betreft het aanpassen van een getal naar het dichtstbijzijnde gehele getal of naar
-  een gespecificeerd aantal decimalen.
+summary: Google Apps Script, als een op JavaScript gebaseerde taal, biedt standaardmethodes
+  om getallen af te ronden.
 title: Afronden van getallen
 weight: 13
 ---

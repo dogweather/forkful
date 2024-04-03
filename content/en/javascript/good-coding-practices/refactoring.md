@@ -1,11 +1,11 @@
 ---
 date: 2024-01-25 02:12:36.188969-07:00
-description: "Refactoring is the process of restructuring existing computer code without\
-  \ changing its external behavior. Programmers do it to improve the nonfunctional\u2026"
+description: "How to: Let's look at a simple example where refactoring can make your\
+  \ code more concise and readable. Here, we refactor a function that calculates the\u2026"
 lastmod: '2024-03-13T22:45:00.441617-06:00'
 model: gpt-4-1106-preview
-summary: Refactoring is the process of restructuring existing computer code without
-  changing its external behavior.
+summary: Let's look at a simple example where refactoring can make your code more
+  concise and readable.
 title: Refactoring
 weight: 19
 ---

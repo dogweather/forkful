@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:41:14.121002-07:00
-description: "Crear archivos temporales es el proceso de generar ficheros que s\xF3\
-  lo se necesitan durante la ejecuci\xF3n de un programa. Los programadores los utilizan\
-  \ para\u2026"
+description: "How to: Kotlin facilita la creaci\xF3n de archivos temporales con funciones\
+  \ incorporadas. Aqu\xED te muestro c\xF3mo."
 lastmod: '2024-03-13T22:44:59.055604-06:00'
 model: gpt-4-1106-preview
-summary: "Crear archivos temporales es el proceso de generar ficheros que s\xF3lo\
-  \ se necesitan durante la ejecuci\xF3n de un programa."
+summary: "Kotlin facilita la creaci\xF3n de archivos temporales con funciones incorporadas."
 title: Creando un archivo temporal
 weight: 21
 ---

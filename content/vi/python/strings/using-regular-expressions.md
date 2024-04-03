@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:49.833020-07:00
-description: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) l\xE0 nh\u1EEFng m\u1EABu \u0111\
-  \u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 kh\u1EDBp c\xE1c k\u1EBFt h\u1EE3p\
-  \ k\xFD t\u1EF1 trong chu\u1ED7i. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng regex\
-  \ \u0111\u1EC3 t\xECm ki\u1EBFm, ch\u1EC9nh s\u1EEDa ho\u1EB7c thao\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1c v\xED\
+  \ d\u1EE5 Python s\u1EED d\u1EE5ng m\xF4-\u0111un `re` cho c\xE1c ho\u1EA1t \u0111\
+  \u1ED9ng regex ph\u1ED5 bi\u1EBFn."
 lastmod: '2024-03-13T22:44:36.083550-06:00'
 model: gpt-4-0125-preview
-summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) l\xE0 nh\u1EEFng m\u1EABu \u0111\
-  \u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 kh\u1EDBp c\xE1c k\u1EBFt h\u1EE3p\
-  \ k\xFD t\u1EF1 trong chu\u1ED7i."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1c v\xED d\u1EE5 Python s\u1EED d\u1EE5\
+  ng m\xF4-\u0111un `re` cho c\xE1c ho\u1EA1t \u0111\u1ED9ng regex ph\u1ED5 bi\u1EBF\
+  n."
 title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---

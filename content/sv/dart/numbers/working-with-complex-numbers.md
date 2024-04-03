@@ -2,13 +2,14 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:58:11.378932-07:00
-description: "Komplexa tal, som best\xE5r av en reell och en imagin\xE4r del (vanligtvis\
-  \ betecknad som a + bi), utvidgar begreppet odimensionella tal till ett\u2026"
+description: "Hur: Dart inkluderar inte i sig ett inbyggt bibliotek f\xF6r komplexa\
+  \ tal, vilket kr\xE4ver antingen implementeringen av en egen klass f\xF6r komplexa\
+  \ tal eller\u2026"
 lastmod: '2024-03-13T22:44:37.605329-06:00'
 model: gpt-4-0125-preview
-summary: "Komplexa tal, som best\xE5r av en reell och en imagin\xE4r del (vanligtvis\
-  \ betecknad som a + bi), utvidgar begreppet odimensionella tal till ett tv\xE5dimensionellt\
-  \ rum."
+summary: "Dart inkluderar inte i sig ett inbyggt bibliotek f\xF6r komplexa tal, vilket\
+  \ kr\xE4ver antingen implementeringen av en egen klass f\xF6r komplexa tal eller\
+  \ anv\xE4ndningen av ett tredjepartbibliotek."
 title: Att arbeta med komplexa tal
 weight: 14
 ---

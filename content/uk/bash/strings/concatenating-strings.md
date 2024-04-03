@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 17:34:14.697080-07:00
-description: Concatenating strings means sticking them together end-to-end. Programmers
-  do it to build up texts, commands, or data based on logic and input.
+description: "How to: (\u042F\u043A \u0446\u0435 \u0440\u043E\u0431\u0438\u0442\u0438\
+  :) Bash lets you concatenate strings easily. Here are some straightforward examples."
 lastmod: '2024-03-13T22:44:49.557975-06:00'
 model: gpt-4-1106-preview
-summary: Concatenating strings means sticking them together end-to-end.
+summary: Bash lets you concatenate strings easily.
 title: "\u041E\u0431'\u0454\u0434\u043D\u0430\u043D\u043D\u044F \u0440\u044F\u0434\
   \u043A\u0456\u0432"
 weight: 3

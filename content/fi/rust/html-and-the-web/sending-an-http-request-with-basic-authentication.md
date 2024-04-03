@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 18:02:34.966925-07:00
-description: "Mik\xE4 ja miksi? HTTP-pyynt\xF6 perusautentikaatiolla tarkoittaa palvelimelle\
-  \ l\xE4hetett\xE4v\xE4\xE4 pyynt\xF6\xE4, jossa k\xE4ytt\xE4j\xE4nimi ja salasana\
-  \ ovat mukana. Ohjelmoijat\u2026"
+description: 'How to: Miten toteutetaan.'
 lastmod: '2024-03-13T22:44:56.356512-06:00'
 model: gpt-4-1106-preview
-summary: "Mik\xE4 ja miksi."
+summary: Miten toteutetaan.
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---

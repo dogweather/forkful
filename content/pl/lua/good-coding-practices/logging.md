@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 01:06:42.766879-07:00
-description: "Rejestrowanie (logging) to praktyka zapisywania zdarze\u0144, b\u0142\
-  \u0119d\xF3w i innych istotnych punkt\xF3w danych, kt\xF3re wyst\u0119puj\u0105\
-  \ w cyklu \u017Cycia aplikacji oprogramowania.\u2026"
+description: "Jak to zrobi\u0107: Lua nie posiada wbudowanego frameworka do rejestrowania,\
+  \ ale implementacja prostych funkcji loguj\u0105cych jest prosta. Poni\u017Cej znajduje\
+  \ si\u0119\u2026"
 lastmod: '2024-03-13T22:44:35.546505-06:00'
 model: gpt-4-1106-preview
-summary: "Rejestrowanie (logging) to praktyka zapisywania zdarze\u0144, b\u0142\u0119\
-  d\xF3w i innych istotnych punkt\xF3w danych, kt\xF3re wyst\u0119puj\u0105 w cyklu\
-  \ \u017Cycia aplikacji oprogramowania."
+summary: "Lua nie posiada wbudowanego frameworka do rejestrowania, ale implementacja\
+  \ prostych funkcji loguj\u0105cych jest prosta."
 title: "Rejestrowanie zdarze\u0144"
 weight: 17
 ---

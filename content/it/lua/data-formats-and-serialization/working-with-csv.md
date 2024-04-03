@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:29.440636-07:00
-description: "Lavorare con file CSV (Valori Separati da Virgola) comporta l'analisi\
-  \ e la generazione di dati di testo organizzati in righe e colonne, utilizzando\
-  \ le\u2026"
+description: "Come fare: In Lua, lavorare con file CSV pu\xF2 essere affrontato utilizzando\
+  \ le operazioni di IO su file di base fornite dal linguaggio, senza la necessit\xE0\
+  \u2026"
 lastmod: '2024-03-13T22:44:43.579355-06:00'
 model: gpt-4-0125-preview
-summary: Lavorare con file CSV (Valori Separati da Virgola) comporta l'analisi e la
-  generazione di dati di testo organizzati in righe e colonne, utilizzando le virgole
-  per separare i singoli valori.
+summary: "In Lua, lavorare con file CSV pu\xF2 essere affrontato utilizzando le operazioni\
+  \ di IO su file di base fornite dal linguaggio, senza la necessit\xE0 di librerie\
+  \ esterne per compiti semplici."
 title: Lavorare con i CSV
 weight: 37
 ---

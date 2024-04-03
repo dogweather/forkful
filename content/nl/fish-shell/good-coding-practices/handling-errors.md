@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:45.993610-07:00
-description: "Foutafhandeling stelt je script in staat om elegant om te gaan met het\
-  \ onverwachte. We doen dit om falen te beheren zonder onze gebruiker grijs haar\
-  \ te\u2026"
+description: 'Hoe te: Om fouten in Fish op te vangen, vertrouw op de `status` opdracht
+  en conditionals. Stel dat `ping` faalt; hier is hoe je dat detecteert.'
 lastmod: '2024-03-13T22:44:51.254875-06:00'
 model: gpt-4-0125-preview
-summary: Foutafhandeling stelt je script in staat om elegant om te gaan met het onverwachte.
+summary: Om fouten in Fish op te vangen, vertrouw op de `status` opdracht en conditionals.
 title: Fouten afhandelen
 weight: 16
 ---

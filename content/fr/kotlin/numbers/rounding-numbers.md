@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 03:45:27.058769-07:00
-description: "Arrondir des nombres signifie les ajuster au nombre entier le plus proche\
-  \ ou \xE0 un degr\xE9 de pr\xE9cision sp\xE9cifi\xE9. Les programmeurs le font pour\
-  \ am\xE9liorer la\u2026"
+description: "Comment faire : En Kotlin, l'arrondi peut \xEAtre r\xE9alis\xE9 en utilisant\
+  \ plusieurs fonctions telles que `roundToInt()`, `roundToDouble()`, et en utilisant\u2026"
 lastmod: '2024-03-13T22:44:57.733042-06:00'
 model: gpt-4-0125-preview
-summary: "Arrondir des nombres signifie les ajuster au nombre entier le plus proche\
-  \ ou \xE0 un degr\xE9 de pr\xE9cision sp\xE9cifi\xE9."
+summary: "En Kotlin, l'arrondi peut \xEAtre r\xE9alis\xE9 en utilisant plusieurs fonctions\
+  \ telles que `roundToInt()`, `roundToDouble()`, et en utilisant `BigDecimal` pour\
+  \ plus de contr\xF4le."
 title: Arrondir les nombres
 weight: 13
 ---

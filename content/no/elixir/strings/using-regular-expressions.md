@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:35.126616-07:00
-description: "Regul\xE6re uttrykk (regex) i Elixir brukes for \xE5 s\xF8ke, matche\
-  \ og manipulere strenger basert p\xE5 spesifikke m\xF8nstre. Programmerere benytter\
-  \ seg av regex for\u2026"
+description: 'Hvordan: Elixir benytter `Regex`-modulen, som tar i bruk Erlangs regex-bibliotek,
+  for regex-operasjoner. Her er grunnleggende bruk.'
 lastmod: '2024-03-13T22:44:40.433477-06:00'
 model: gpt-4-0125-preview
-summary: "Regul\xE6re uttrykk (regex) i Elixir brukes for \xE5 s\xF8ke, matche og\
-  \ manipulere strenger basert p\xE5 spesifikke m\xF8nstre."
+summary: Elixir benytter `Regex`-modulen, som tar i bruk Erlangs regex-bibliotek,
+  for regex-operasjoner.
 title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---

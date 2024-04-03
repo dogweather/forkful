@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:08.419765-07:00
-description: "Les expressions r\xE9guli\xE8res, ou regex, permettent aux d\xE9veloppeurs\
-  \ de rechercher, faire correspondre et manipuler des cha\xEEnes de caract\xE8res\
-  \ avec des\u2026"
+description: "Comment faire : La biblioth\xE8que `regex` de Rust est un outil de choix\
+  \ pour travailler avec les expressions r\xE9guli\xE8res. Pour l'utiliser, vous devrez\u2026"
 lastmod: '2024-03-13T22:44:57.471353-06:00'
 model: gpt-4-0125-preview
-summary: "Les expressions r\xE9guli\xE8res, ou regex, permettent aux d\xE9veloppeurs\
-  \ de rechercher, faire correspondre et manipuler des cha\xEEnes de caract\xE8res\
-  \ avec des techniques avanc\xE9es de reconnaissance de motifs."
+summary: "La biblioth\xE8que `regex` de Rust est un outil de choix pour travailler\
+  \ avec les expressions r\xE9guli\xE8res."
 title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---

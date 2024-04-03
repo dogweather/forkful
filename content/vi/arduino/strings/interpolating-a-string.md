@@ -2,14 +2,17 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:20.293035-07:00
-description: "N\u1ED9i suy chu\u1ED7i l\xE0 vi\u1EC7c k\u1EBFt h\u1EE3p bi\u1EBFn\
-  \ v\u1EDBi v\u0103n b\u1EA3n. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111\
-  i\u1EC1u n\xE0y nh\u1EB1m t\u1EA1o c\xE1c chu\u1ED7i m\u1ED9t c\xE1ch linh ho\u1EA1\
-  t, l\xE0m cho \u0111\u1EA7u ra \u0111\u1ED9ng v\xE0 d\u1EC5 \u0111\u1ECDc."
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Arduino kh\xF4ng c\xF3 t\xEDnh n\u0103\
+  ng n\u1ED9i suy chu\u1ED7i t\xEDch h\u1EE3p s\u1EB5n, nh\u01B0ng b\u1EA1n c\xF3\
+  \ th\u1EC3 \u0111\u1EA1t \u0111\u01B0\u1EE3c k\u1EBFt qu\u1EA3 t\u01B0\u01A1ng t\u1EF1\
+  \ b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng `sprintf()` ho\u1EB7c b\u1EB1ng\u2026"
 lastmod: '2024-03-13T22:44:36.972484-06:00'
 model: gpt-4-0125-preview
-summary: "N\u1ED9i suy chu\u1ED7i l\xE0 vi\u1EC7c k\u1EBFt h\u1EE3p bi\u1EBFn v\u1EDB\
-  i v\u0103n b\u1EA3n."
+summary: "Arduino kh\xF4ng c\xF3 t\xEDnh n\u0103ng n\u1ED9i suy chu\u1ED7i t\xEDch\
+  \ h\u1EE3p s\u1EB5n, nh\u01B0ng b\u1EA1n c\xF3 th\u1EC3 \u0111\u1EA1t \u0111\u01B0\
+  \u1EE3c k\u1EBFt qu\u1EA3 t\u01B0\u01A1ng t\u1EF1 b\u1EB1ng c\xE1ch s\u1EED d\u1EE5\
+  ng `sprintf()` ho\u1EB7c b\u1EB1ng c\xE1ch n\u1ED1i chu\u1ED7i v\xE0 bi\u1EBFn l\u1EA1\
+  i v\u1EDBi nhau."
 title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
 weight: 8
 ---

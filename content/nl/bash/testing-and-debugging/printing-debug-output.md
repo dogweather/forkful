@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:16.930717-07:00
-description: "Debug output afdrukken gaat allemaal om het naar de console echo\xEB\
-  n van data om te checken wat er gaande is in je script. Programmeurs doen dit om\u2026"
+description: 'Hoe te: .'
 lastmod: '2024-03-13T22:44:50.985210-06:00'
 model: gpt-4-0125-preview
-summary: "Debug output afdrukken gaat allemaal om het naar de console echo\xEBn van\
-  \ data om te checken wat er gaande is in je script."
+summary: .
 title: Debug-output afdrukken
 weight: 33
 ---

@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:53:02.474623-07:00
-description: "Stampare l'output di debug significa visualizzare informazioni per capire\
-  \ meglio cosa sta succedendo nel codice. Questa pratica \xE8 fondamentale per\u2026"
+description: 'How to: (Come Fare:) .'
 lastmod: '2024-03-13T22:44:43.003313-06:00'
 model: gpt-4-1106-preview
-summary: Stampare l'output di debug significa visualizzare informazioni per capire
-  meglio cosa sta succedendo nel codice.
+summary: .
 title: Stampa dell'output di debug
 weight: 33
 ---

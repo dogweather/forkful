@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:38:53.186882-07:00
-description: "Convertir una cadena a min\xFAsculas es transformar todos los caracteres\
-  \ alfab\xE9ticos en un texto para que no haya may\xFAsculas. Se hace para estandarizar\u2026"
+description: "C\xF3mo hacerlo: Aqu\xED una muestra de c\xF3mo convertir una cadena\
+  \ a min\xFAsculas en JavaScript. Solo se necesita `toLowerCase`."
 lastmod: '2024-03-13T22:44:59.445930-06:00'
 model: gpt-4-1106-preview
-summary: "Convertir una cadena a min\xFAsculas es transformar todos los caracteres\
-  \ alfab\xE9ticos en un texto para que no haya may\xFAsculas."
+summary: "Aqu\xED una muestra de c\xF3mo convertir una cadena a min\xFAsculas en JavaScript."
 title: "Conversi\xF3n de una cadena de texto a min\xFAsculas"
 weight: 4
 ---

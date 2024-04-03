@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:10.326828-07:00
-description: "Escrever para o erro padr\xE3o em C envolve direcionar mensagens de\
-  \ erro e informa\xE7\xF5es de diagn\xF3stico para um fluxo separado da sa\xEDda\
-  \ principal do programa.\u2026"
+description: "Como fazer: Em C, o fluxo `stderr` \xE9 usado para escrever mensagens\
+  \ de erro. Diferentemente de escrever para a sa\xEDda padr\xE3o com `printf`, escrever\
+  \ para\u2026"
 lastmod: '2024-03-13T22:44:47.067779-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever para o erro padr\xE3o em C envolve direcionar mensagens de erro\
-  \ e informa\xE7\xF5es de diagn\xF3stico para um fluxo separado da sa\xEDda principal\
-  \ do programa."
+summary: "Em C, o fluxo `stderr` \xE9 usado para escrever mensagens de erro."
 title: "Escrevendo no erro padr\xE3o"
 weight: 25
 ---

@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:24.383275-07:00
-description: "Le espressioni regolari (regex) in Java ti permettono di definire schemi\
-  \ specifici per cercare, manipolare o validare stringhe nel tuo codice. I\u2026"
+description: "Come fare: Il supporto integrato di Java per le regex \xE8 principalmente\
+  \ attraverso le classi `Pattern` e `Matcher` nel pacchetto `java.util.regex`. Ecco\
+  \ un\u2026"
 lastmod: '2024-03-13T22:44:43.298814-06:00'
 model: gpt-4-0125-preview
-summary: Le espressioni regolari (regex) in Java ti permettono di definire schemi
-  specifici per cercare, manipolare o validare stringhe nel tuo codice.
+summary: "Il supporto integrato di Java per le regex \xE8 principalmente attraverso\
+  \ le classi `Pattern` e `Matcher` nel pacchetto `java.util.regex`."
 title: Utilizzo delle espressioni regolari
 weight: 11
 ---

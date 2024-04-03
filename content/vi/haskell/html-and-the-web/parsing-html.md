@@ -2,15 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:06.053813-07:00
-description: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 tr\xEDch xu\u1EA5\
-  t d\u1EEF li\u1EC7u t\u1EEB t\xE0i li\u1EC7u HTML\u2014sau t\u1EA5t c\u1EA3, HTML\
-  \ l\xE0 k\u1EBFt c\u1EA5u c\u1EE7a web. L\u1EADp tr\xECnh vi\xEAn ph\xE2n t\xED\
-  ch c\xFA ph\xE1p HTML \u0111\u1EC3 t\u1EF1\u2026"
+description: "L\xE0m Th\u1EBF N\xE0o: H\xE3y b\u1EAFt tay v\xE0o m\u1ED9t s\u1ED1\
+  \ m\xE3 l\u1EC7nh, s\u1EED d\u1EE5ng th\u01B0 vi\u1EC7n `tagsoup` \u0111\u1EC3 ph\xE2\
+  n t\xEDch m\u1ED9t \u0111o\u1EA1n HTML \u0111\u01A1n gi\u1EA3n. \u0110\u1EA7u ti\xEA\
+  n, h\xE3y ch\u1EAFc ch\u1EAFn c\xE0i \u0111\u1EB7t g\xF3i t\u1EEB\u2026"
 lastmod: '2024-03-13T22:44:36.709667-06:00'
 model: gpt-4-0125-preview
-summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 tr\xEDch xu\u1EA5\
-  t d\u1EEF li\u1EC7u t\u1EEB t\xE0i li\u1EC7u HTML\u2014sau t\u1EA5t c\u1EA3, HTML\
-  \ l\xE0 k\u1EBFt c\u1EA5u c\u1EE7a web."
+summary: "H\xE3y b\u1EAFt tay v\xE0o m\u1ED9t s\u1ED1 m\xE3 l\u1EC7nh, s\u1EED d\u1EE5\
+  ng th\u01B0 vi\u1EC7n `tagsoup` \u0111\u1EC3 ph\xE2n t\xEDch m\u1ED9t \u0111o\u1EA1\
+  n HTML \u0111\u01A1n gi\u1EA3n."
 title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---

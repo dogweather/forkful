@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:13.665323-07:00
-description: "Het verwijderen van quotes uit een string betekent het weglaten van\
-  \ enkele (`'`) of dubbele (`\"`) aanhalingstekens die de tekst omgeven. Programmeurs\
-  \ doen\u2026"
+description: "Hoe te: Om aanhalingstekens uit een string in Arduino te verwijderen,\
+  \ kun je over de karakters lopen en de string herbouwen zonder de aanhalingstekens.\u2026"
 lastmod: '2024-03-13T22:44:51.060676-06:00'
 model: gpt-4-0125-preview
-summary: Het verwijderen van quotes uit een string betekent het weglaten van enkele
-  (`'`) of dubbele (`"`) aanhalingstekens die de tekst omgeven.
+summary: Om aanhalingstekens uit een string in Arduino te verwijderen, kun je over
+  de karakters lopen en de string herbouwen zonder de aanhalingstekens.
 title: Quotes verwijderen uit een string
 weight: 9
 ---

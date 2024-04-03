@@ -2,16 +2,15 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:39.697717-07:00
-description: "TOML, vi\u1EBFt t\u1EAFt c\u1EE7a Tom's Obvious, Minimal Language, l\xE0\
-  \ \u0111\u1ECBnh d\u1EA1ng file c\u1EA5u h\xECnh \u0111\u01B0\u1EE3c thi\u1EBFt\
-  \ k\u1EBF \u0111\u1EC3 d\u1EC5 \u0111\u1ECDc do ng\u1EEF ngh\u0129a r\xF5 r\xE0\
-  ng c\u1EE7a n\xF3. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Dart kh\xF4ng bao g\u1ED3m h\u1ED7 tr\u1EE3\
+  \ s\u1EB5n cho TOML, nh\u01B0ng b\u1EA1n c\xF3 th\u1EC3 l\xE0m vi\u1EC7c v\u1EDB\
+  i c\xE1c file TOML s\u1EED d\u1EE5ng c\xE1c g\xF3i b\xEAn th\u1EE9 ba nh\u01B0 `toml`.\
+  \ \u0110\u1EA7u ti\xEAn, th\xEAm\u2026"
 lastmod: '2024-03-13T22:44:36.293847-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, vi\u1EBFt t\u1EAFt c\u1EE7a Tom's Obvious, Minimal Language, l\xE0\
-  \ \u0111\u1ECBnh d\u1EA1ng file c\u1EA5u h\xECnh \u0111\u01B0\u1EE3c thi\u1EBFt\
-  \ k\u1EBF \u0111\u1EC3 d\u1EC5 \u0111\u1ECDc do ng\u1EEF ngh\u0129a r\xF5 r\xE0\
-  ng c\u1EE7a n\xF3."
+summary: "Dart kh\xF4ng bao g\u1ED3m h\u1ED7 tr\u1EE3 s\u1EB5n cho TOML, nh\u01B0\
+  ng b\u1EA1n c\xF3 th\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi c\xE1c file TOML s\u1EED d\u1EE5\
+  ng c\xE1c g\xF3i b\xEAn th\u1EE9 ba nh\u01B0 `toml`."
 title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 weight: 39
 ---

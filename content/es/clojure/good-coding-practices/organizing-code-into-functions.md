@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:09:39.129860-07:00
-description: "Partir el c\xF3digo en funciones se trata de empaquetar bloques de c\xF3\
-  digo que cumplen tareas espec\xEDficas. Hacer esto vuelve tu c\xF3digo limpio, m\xE1\
-  s f\xE1cil de\u2026"
+description: "C\xF3mo hacerlo: Las funciones en Clojure se definen con `defn`, seguido\
+  \ por un nombre, par\xE1metros y cuerpo. Aqu\xED hay un ejemplo r\xE1pido."
 lastmod: '2024-03-13T22:44:58.662277-06:00'
 model: gpt-4-1106-preview
-summary: "Partir el c\xF3digo en funciones se trata de empaquetar bloques de c\xF3\
-  digo que cumplen tareas espec\xEDficas."
+summary: "Las funciones en Clojure se definen con `defn`, seguido por un nombre, par\xE1\
+  metros y cuerpo."
 title: "Organizando c\xF3digo en funciones"
 weight: 18
 ---

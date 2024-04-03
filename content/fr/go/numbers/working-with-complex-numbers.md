@@ -2,13 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:59.724797-07:00
-description: "Travailler avec des nombres complexes en programmation implique de manipuler\
-  \ des nombres qui ont \xE0 la fois une partie r\xE9elle et une partie imaginaire,\u2026"
+description: "Comment : En Go, les nombres complexes sont g\xE9r\xE9s \xE0 l'aide\
+  \ des fonctions int\xE9gr\xE9es `complex`, `real`, et `imag`, ainsi que des types\
+  \ `complex64` et\u2026"
 lastmod: '2024-03-13T22:44:57.126219-06:00'
 model: gpt-4-0125-preview
-summary: "Travailler avec des nombres complexes en programmation implique de manipuler\
-  \ des nombres qui ont \xE0 la fois une partie r\xE9elle et une partie imaginaire,\
-  \ typiquement exprim\xE9s sous la forme `a + bi`."
+summary: "En Go, les nombres complexes sont g\xE9r\xE9s \xE0 l'aide des fonctions\
+  \ int\xE9gr\xE9es `complex`, `real`, et `imag`, ainsi que des types `complex64`\
+  \ et `complex128` (repr\xE9sentant respectivement des nombres complexes de 64 bits\
+  \ et de 128 bits)."
 title: Travailler avec des nombres complexes
 weight: 14
 ---

@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:25:49.606796-07:00
-description: "TOML er et konfigurasjonsfilformat som er lett \xE5 lese p\xE5 grunn\
-  \ av sine klare semantikker. Programmerere bruker TOML for \xE5 h\xE5ndtere app-konfigurasjoner\
-  \ og\u2026"
+description: "Hvordan: F\xF8rst, installer `toml-rb`-gemmen. Det er et popul\xE6rt\
+  \ valg for TOML-tolkning i Ruby."
 lastmod: '2024-03-13T22:44:41.357099-06:00'
 model: gpt-4-0125-preview
-summary: "TOML er et konfigurasjonsfilformat som er lett \xE5 lese p\xE5 grunn av\
-  \ sine klare semantikker."
+summary: "F\xF8rst, installer `toml-rb`-gemmen."
 title: Jobbe med TOML
 weight: 39
 ---

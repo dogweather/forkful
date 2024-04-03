@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:46:05.694752-07:00
-description: "Py\xF6rist\xE4minen on ylim\xE4\xE4r\xE4isen desimaalikohinan poistoa\
-  \ luvusta tietyn pisteen j\xE4lkeen. Ohjelmoijat py\xF6rist\xE4v\xE4t hallitakseen\
-  \ tarkkuutta, hallinnoidakseen\u2026"
+description: "Miten: T\xE4ss\xE4 on, miten voit py\xF6rist\xE4\xE4 numeroita JavaScriptiss\xE4\
+  \ k\xE4ytt\xE4m\xE4ll\xE4 `Math.round()`, `Math.ceil()`, ja `Math.floor()`."
 lastmod: '2024-03-13T22:44:56.944739-06:00'
 model: gpt-4-0125-preview
-summary: "Py\xF6rist\xE4minen on ylim\xE4\xE4r\xE4isen desimaalikohinan poistoa luvusta\
-  \ tietyn pisteen j\xE4lkeen."
+summary: "T\xE4ss\xE4 on, miten voit py\xF6rist\xE4\xE4 numeroita JavaScriptiss\xE4\
+  \ k\xE4ytt\xE4m\xE4ll\xE4 `Math.round()`, `Math.ceil()`, ja `Math.floor()`."
 title: "Numerojen py\xF6rist\xE4minen"
 weight: 13
 ---

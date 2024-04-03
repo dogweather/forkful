@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:38.513860-07:00
-description: "Pobieranie bie\u017C\u0105cej daty w programowaniu to podstawowe zadanie,\
-  \ kt\xF3re pozwala na pobieranie i manipulowanie danymi dotycz\u0105cymi daty i\
-  \ czasu systemu. W\u2026"
+description: "Jak to zrobi\u0107: Fish Shell wykorzystuje zewn\u0119trzne polecenia\
+  \ takie jak `date` do pobierania bie\u017C\u0105cej daty, oferuj\u0105c elastyczno\u015B\
+  \u0107 w formatowaniu wyj\u015Bcia\u2026"
 lastmod: '2024-03-13T22:44:35.852231-06:00'
 model: gpt-4-0125-preview
-summary: "Pobieranie bie\u017C\u0105cej daty w programowaniu to podstawowe zadanie,\
-  \ kt\xF3re pozwala na pobieranie i manipulowanie danymi dotycz\u0105cymi daty i\
-  \ czasu systemu."
+summary: "Fish Shell wykorzystuje zewn\u0119trzne polecenia takie jak `date` do pobierania\
+  \ bie\u017C\u0105cej daty, oferuj\u0105c elastyczno\u015B\u0107 w formatowaniu wyj\u015B\
+  cia wed\u0142ug potrzeb."
 title: Pobieranie aktualnej daty
 weight: 29
 ---

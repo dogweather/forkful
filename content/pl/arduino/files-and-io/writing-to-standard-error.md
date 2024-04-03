@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:49.675510-07:00
-description: "Pisanie na standardowe wyj\u015Bcie b\u0142\u0119d\xF3w (stderr) w programowaniu\
-  \ Arduino polega na kierowaniu komunikat\xF3w o b\u0142\u0119dach i diagnostyki\
-  \ do osobnego kana\u0142u,\u2026"
+description: "Jak to zrobi\u0107: Arduino domy\u015Blnie nie rozr\xF3\u017Cnia mi\u0119\
+  dzy standardowym wyj\u015Bciem a wyj\u015Bciem b\u0142\u0119du, jak to robi\u0105\
+  \ konwencjonalne systemy komputerowe. Zar\xF3wno\u2026"
 lastmod: '2024-03-13T22:44:35.687843-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie na standardowe wyj\u015Bcie b\u0142\u0119d\xF3w (stderr) w programowaniu\
-  \ Arduino polega na kierowaniu komunikat\xF3w o b\u0142\u0119dach i diagnostyki\
-  \ do osobnego kana\u0142u, zapewniaj\u0105c, \u017Ce nie mieszaj\u0105 si\u0119\
-  \ one ze standardowym wyj\u015Bciem (stdout)."
+summary: "Arduino domy\u015Blnie nie rozr\xF3\u017Cnia mi\u0119dzy standardowym wyj\u015B\
+  ciem a wyj\u015Bciem b\u0142\u0119du, jak to robi\u0105 konwencjonalne systemy komputerowe."
 title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---

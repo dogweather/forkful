@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:35:34.323893-07:00
-description: "String-Konkatenation ist das Zusammenf\xFCgen von zwei oder mehreren\
-  \ Textst\xFCcken (Strings) zu einem einzigen String. Programmierer nutzen dies,\
-  \ um dynamische\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:54.093497-06:00'
 model: gpt-4-1106-preview
-summary: "String-Konkatenation ist das Zusammenf\xFCgen von zwei oder mehreren Textst\xFC\
-  cken (Strings) zu einem einzigen String."
+summary: .
 title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---

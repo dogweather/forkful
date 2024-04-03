@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:33.912976-07:00
-description: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery to podstawowa operacja\
-  \ polegaj\u0105ca na przekszta\u0142ceniu wszystkich znak\xF3w w danym ci\u0105\
-  gu na ich odpowiedniki w ma\u0142ych\u2026"
+description: "Jak to zrobi\u0107: W Dart mo\u017Cna przekonwertowa\u0107 ci\u0105\
+  g znak\xF3w na ma\u0142e litery za pomoc\u0105 metody `toLowerCase()`, kt\xF3r\u0105\
+  \ dostarcza klasa `String`. Metoda ta zwraca\u2026"
 lastmod: '2024-03-13T22:44:35.075975-06:00'
 model: gpt-4-0125-preview
-summary: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery to podstawowa operacja\
-  \ polegaj\u0105ca na przekszta\u0142ceniu wszystkich znak\xF3w w danym ci\u0105\
-  gu na ich odpowiedniki w ma\u0142ych literach."
+summary: "W Dart mo\u017Cna przekonwertowa\u0107 ci\u0105g znak\xF3w na ma\u0142e\
+  \ litery za pomoc\u0105 metody `toLowerCase()`, kt\xF3r\u0105 dostarcza klasa `String`."
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---

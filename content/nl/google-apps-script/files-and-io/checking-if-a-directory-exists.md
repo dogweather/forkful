@@ -2,12 +2,11 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:07.865728-07:00
-description: "Controleren of een map bestaat in Google Apps Script houdt in dat wordt\
-  \ geverifieerd of een map in Google Drive aanwezig is. Programmeurs voeren deze\u2026"
+description: "Hoe doe je dat: Google Apps Script biedt geen directe \"bestaat\" methode\
+  \ voor mappen. In plaats daarvan gebruiken we de zoekmogelijkheden van Google Drive\u2026"
 lastmod: '2024-03-13T22:44:50.347533-06:00'
 model: gpt-4-0125-preview
-summary: Controleren of een map bestaat in Google Apps Script houdt in dat wordt geverifieerd
-  of een map in Google Drive aanwezig is.
+summary: Google Apps Script biedt geen directe "bestaat" methode voor mappen.
 title: Controleren of een directory bestaat
 weight: 20
 ---

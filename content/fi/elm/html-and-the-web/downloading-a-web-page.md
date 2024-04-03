@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:44:00.683070-07:00
-description: "Webbisivun lataaminen tarkoittaa sivun sis\xE4ll\xF6n hakemista netist\xE4\
-  . Ohjelmoijat lataavat sivuja tiedon ker\xE4\xE4miseen, automatisointiin, tai interaktiivisten\u2026"
+description: "How to: Lataa sivu Elm:ss\xE4 HTTP-paketin kanssa. Vastaanota ja k\xE4\
+  sittele tieto."
 lastmod: '2024-03-13T22:44:56.487319-06:00'
 model: gpt-4-1106-preview
-summary: "Webbisivun lataaminen tarkoittaa sivun sis\xE4ll\xF6n hakemista netist\xE4\
-  ."
+summary: "Lataa sivu Elm:ss\xE4 HTTP-paketin kanssa."
 title: Verkkosivun lataaminen
 weight: 42
 ---

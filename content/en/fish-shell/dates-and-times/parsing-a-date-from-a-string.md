@@ -1,12 +1,12 @@
 ---
 date: 2024-02-03 19:02:46.465958-07:00
-description: "Parsing a date from a string involves extracting date information encoded\
-  \ within strings and converting it into a structured format that programming\u2026"
+description: "How to: In Fish Shell, you don't have built-in commands specifically\
+  \ designed for parsing dates from strings. Instead, you rely on external utilities\
+  \ like\u2026"
 lastmod: '2024-03-13T22:45:00.482992-06:00'
 model: gpt-4-0125-preview
-summary: Parsing a date from a string involves extracting date information encoded
-  within strings and converting it into a structured format that programming environments
-  can recognize and manipulate.
+summary: In Fish Shell, you don't have built-in commands specifically designed for
+  parsing dates from strings.
 title: Parsing a date from a string
 weight: 30
 ---

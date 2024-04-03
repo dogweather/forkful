@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:43:44.533230-07:00
-description: "Baixar uma p\xE1gina da web \xE9 o processo de pegar o conte\xFAdo de\
-  \ uma p\xE1gina atrav\xE9s da Internet e salv\xE1-lo localmente. Programadores fazem\
-  \ isso para an\xE1lise\u2026"
+description: "Como Fazer: Usaremos a biblioteca C++ `CPR` para baixar o conte\xFA\
+  do de uma p\xE1gina web de forma f\xE1cil. Primeiro, instale a biblioteca via gerenciador\
+  \ de\u2026"
 lastmod: '2024-03-13T22:44:46.878383-06:00'
 model: gpt-4-1106-preview
-summary: "Baixar uma p\xE1gina da web \xE9 o processo de pegar o conte\xFAdo de uma\
-  \ p\xE1gina atrav\xE9s da Internet e salv\xE1-lo localmente."
+summary: "Usaremos a biblioteca C++ `CPR` para baixar o conte\xFAdo de uma p\xE1gina\
+  \ web de forma f\xE1cil."
 title: "Baixando uma p\xE1gina da web"
 weight: 42
 ---

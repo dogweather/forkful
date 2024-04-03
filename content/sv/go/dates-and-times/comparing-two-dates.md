@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:49.032649-07:00
-description: "Att j\xE4mf\xF6ra tv\xE5 datum i programmering \xE4r en grundl\xE4ggande\
-  \ uppgift som l\xE5ter utvecklare utv\xE4rdera den kronologiska relationen mellan\
-  \ datum. S\xE5dana\u2026"
+description: "Hur: I Go hanteras datum fr\xE4mst med typen `time.Time` fr\xE5n paketet\
+  \ `time`. F\xF6r att j\xE4mf\xF6ra tv\xE5 datum kan vi anv\xE4nda metoder som `Before()`,\
+  \ `After()` och\u2026"
 lastmod: '2024-03-13T22:44:37.405658-06:00'
 model: gpt-4-0125-preview
-summary: "Att j\xE4mf\xF6ra tv\xE5 datum i programmering \xE4r en grundl\xE4ggande\
-  \ uppgift som l\xE5ter utvecklare utv\xE4rdera den kronologiska relationen mellan\
-  \ datum."
+summary: "I Go hanteras datum fr\xE4mst med typen `time.Time` fr\xE5n paketet `time`."
 title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---

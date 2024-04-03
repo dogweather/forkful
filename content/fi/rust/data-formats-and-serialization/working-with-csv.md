@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:27.176692-07:00
-description: "CSV-tiedostojen (pilkuin erotetut arvot) k\xE4sittely tarkoittaa tabulaarisen\
-  \ datan tallentavien yksinkertaistettujen tekstitiedostojen lukemista ja\u2026"
+description: "Kuinka tehd\xE4: Rust, keskittyen turvallisuuteen ja suorituskykyyn,\
+  \ tarjoaa erinomaisia kirjastoja (crates) CSV-tiedostojen k\xE4sittelyyn, joista\
+  \ `csv` on\u2026"
 lastmod: '2024-03-13T22:44:56.379678-06:00'
 model: gpt-4-0125-preview
-summary: "CSV-tiedostojen (pilkuin erotetut arvot) k\xE4sittely tarkoittaa tabulaarisen\
-  \ datan tallentavien yksinkertaistettujen tekstitiedostojen lukemista ja kirjoittamista."
+summary: "Rust, keskittyen turvallisuuteen ja suorituskykyyn, tarjoaa erinomaisia\
+  \ kirjastoja (crates) CSV-tiedostojen k\xE4sittelyyn, joista `csv` on suosituin."
 title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---

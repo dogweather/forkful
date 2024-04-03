@@ -2,16 +2,17 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:12:27.240046-07:00
-description: "L\xE0m vi\u1EC7c v\u1EDBi JSON (JavaScript Object Notation) trong Go\
-  \ \u0111\u1EC1 c\u1EADp \u0111\u1EBFn vi\u1EC7c m\xE3 h\xF3a v\xE0 gi\u1EA3i m\xE3\
-  \ d\u1EEF li\u1EC7u gi\u1EEFa c\xE1c c\u1EA5u tr\xFAc d\u1EEF li\u1EC7u c\u1EE7\
-  a Go v\xE0 \u0111\u1ECBnh d\u1EA1ng JSON. C\xF4ng\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Go, g\xF3i `encoding/json` l\xE0 c\xE1\
+  nh c\u1ED5ng c\u1EE7a b\u1EA1n \u0111\u1EBFn v\u1EDBi vi\u1EC7c \u0111i\u1EC1u khi\u1EC3\
+  n JSON, cung c\u1EA5p c\u01A1 ch\u1EBF \u0111\u1EC3 chuy\u1EC3n \u0111\u1ED5i c\u1EA5\
+  u tr\xFAc d\u1EEF li\u1EC7u c\u1EE7a Go sang\u2026"
 lastmod: '2024-03-13T22:44:36.011224-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m vi\u1EC7c v\u1EDBi JSON (JavaScript Object Notation) trong Go \u0111\
-  \u1EC1 c\u1EADp \u0111\u1EBFn vi\u1EC7c m\xE3 h\xF3a v\xE0 gi\u1EA3i m\xE3 d\u1EEF\
-  \ li\u1EC7u gi\u1EEFa c\xE1c c\u1EA5u tr\xFAc d\u1EEF li\u1EC7u c\u1EE7a Go v\xE0\
-  \ \u0111\u1ECBnh d\u1EA1ng JSON."
+summary: "Trong Go, g\xF3i `encoding/json` l\xE0 c\xE1nh c\u1ED5ng c\u1EE7a b\u1EA1\
+  n \u0111\u1EBFn v\u1EDBi vi\u1EC7c \u0111i\u1EC1u khi\u1EC3n JSON, cung c\u1EA5\
+  p c\u01A1 ch\u1EBF \u0111\u1EC3 chuy\u1EC3n \u0111\u1ED5i c\u1EA5u tr\xFAc d\u1EEF\
+  \ li\u1EC7u c\u1EE7a Go sang JSON (m\xE3 h\xF3a) v\xE0 ng\u01B0\u1EE3c l\u1EA1i\
+  \ (gi\u1EA3i m\xE3)."
 title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
 weight: 38
 ---

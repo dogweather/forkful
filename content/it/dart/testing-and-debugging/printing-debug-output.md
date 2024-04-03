@@ -2,14 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:40.999705-07:00
-description: "Stampare l'output di debug in Dart riguarda la visualizzazione di informazioni\
-  \ sulla console durante l'esecuzione, permettendo agli sviluppatori di\u2026"
+description: 'Come fare: In Dart, puoi stampare l''output di debug utilizzando la
+  funzione `print()`. Ecco come stampare semplici messaggi e valori delle variabili.'
 lastmod: '2024-03-13T22:44:43.133124-06:00'
 model: gpt-4-0125-preview
-summary: Stampare l'output di debug in Dart riguarda la visualizzazione di informazioni
-  sulla console durante l'esecuzione, permettendo agli sviluppatori di tracciare il
-  flusso di esecuzione, indagare lo stato delle variabili o identificare la fonte
-  degli errori.
+summary: In Dart, puoi stampare l'output di debug utilizzando la funzione `print()`.
 title: Stampa dell'output di debug
 weight: 33
 ---

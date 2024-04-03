@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:40.674565-07:00
-description: "T\u1EA3i m\u1ED9t trang web v\u1EC1 c\u01A1 b\u1EA3n l\xE0 vi\u1EC7\
-  c l\u1EA5y d\u1EEF li\u1EC7u t\u1EEB URL b\u1EA1n ch\u1EC9 \u0111\u1ECBnh v\xE0\
-  \ k\xE9o n\xF3 v\u1EC1 m\xE1y t\xEDnh c\u1EE7a b\u1EA1n. L\u1EADp tr\xECnh vi\xEA\
-  n l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 ph\xE2n t\xEDch d\u1EEF li\u1EC7u, theo\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Ch\xFAng ta s\u1EBD s\u1EED d\u1EE5ng th\u01B0\
+  \ vi\u1EC7n `requests` c\u1EE7a Python. N\u1EBFu b\u1EA1n ch\u01B0a c\xF3 n\xF3\
+  , h\xE3y c\xE0i \u0111\u1EB7t v\u1EDBi `pip install requests`. D\u01B0\u1EDBi \u0111\
+  \xE2y l\xE0 m\u1ED9t v\xED d\u1EE5 nhanh."
 lastmod: '2024-03-13T22:44:36.095136-06:00'
 model: gpt-4-0125-preview
-summary: "T\u1EA3i m\u1ED9t trang web v\u1EC1 c\u01A1 b\u1EA3n l\xE0 vi\u1EC7c l\u1EA5\
-  y d\u1EEF li\u1EC7u t\u1EEB URL b\u1EA1n ch\u1EC9 \u0111\u1ECBnh v\xE0 k\xE9o n\xF3\
-  \ v\u1EC1 m\xE1y t\xEDnh c\u1EE7a b\u1EA1n."
+summary: "Ch\xFAng ta s\u1EBD s\u1EED d\u1EE5ng th\u01B0 vi\u1EC7n `requests` c\u1EE7\
+  a Python."
 title: "T\u1EA3i trang web"
 weight: 42
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:44.083688-07:00
-description: "Pobieranie bie\u017C\u0105cej daty w Google Apps Script dotyczy uzyskania\
-  \ aktualnej daty i godziny, co jest powszechnym zadaniem przy automatyzacji zada\u0144\
-  ,\u2026"
+description: "Jak to zrobi\u0107: Google Apps Script, kt\xF3ry bazuje na JavaScript,\
+  \ oferuje proste metody na uzyskanie bie\u017C\u0105cej daty. Mo\u017Cesz u\u017C\
+  y\u0107 konstruktora `new Date()` do\u2026"
 lastmod: '2024-03-13T22:44:34.914838-06:00'
 model: gpt-4-0125-preview
-summary: "Pobieranie bie\u017C\u0105cej daty w Google Apps Script dotyczy uzyskania\
-  \ aktualnej daty i godziny, co jest powszechnym zadaniem przy automatyzacji zada\u0144\
-  , rejestrowaniu i znakowaniu czasu w aplikacjach zwi\u0105zanych z ekosystemem Google."
+summary: "Google Apps Script, kt\xF3ry bazuje na JavaScript, oferuje proste metody\
+  \ na uzyskanie bie\u017C\u0105cej daty."
 title: Pobieranie aktualnej daty
 weight: 29
 ---

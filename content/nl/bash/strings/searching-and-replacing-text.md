@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:05.417146-07:00
-description: "Tekst zoeken en vervangen in bash betekent het omwisselen van woorden\
-  \ of patronen in een string of bestand met iets anders. Het is een dagelijkse taak\u2026"
+description: 'Hoe te: Hier is hoe je de kracht van zoeken en vervangen in bash gebruikt:
+  1. Tekst binnen een string verwisselen met `sed`.'
 lastmod: '2024-03-13T22:44:50.964416-06:00'
 model: gpt-4-0125-preview
-summary: Tekst zoeken en vervangen in bash betekent het omwisselen van woorden of
-  patronen in een string of bestand met iets anders.
+summary: Hier is hoe je de kracht van zoeken en vervangen in bash gebruikt.
 title: Tekst zoeken en vervangen
 weight: 10
 ---

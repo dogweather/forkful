@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:42.153666-07:00
-description: "Analizzare una data da una stringa in Bash comporta l'estrazione e la\
-  \ conversione delle informazioni sulla data da dati testuali in un formato che Bash\u2026"
+description: "Come fare: Di per s\xE9, Bash \xE8 piuttosto limitato nelle capacit\xE0\
+  \ dirette di analisi delle date, spesso si affida a strumenti esterni come `date`\
+  \ e `awk` per\u2026"
 lastmod: '2024-03-13T22:44:43.609052-06:00'
 model: gpt-4-0125-preview
-summary: "Analizzare una data da una stringa in Bash comporta l'estrazione e la conversione\
-  \ delle informazioni sulla data da dati testuali in un formato che Bash pu\xF2 manipolare\
-  \ o utilizzare per ulteriori processi."
+summary: "Di per s\xE9, Bash \xE8 piuttosto limitato nelle capacit\xE0 dirette di\
+  \ analisi delle date, spesso si affida a strumenti esterni come `date` e `awk` per\
+  \ manipolazioni pi\xF9 sofisticate."
 title: Analisi di una data da una stringa
 weight: 30
 ---

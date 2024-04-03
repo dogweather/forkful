@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:50:26.725662-07:00
-description: "Interpolering av str\xE4ng \xE4r processen d\xE4r man s\xE4tter in uttryck\
-  \ eller variabler in i str\xE4ngar. Programmerare g\xF6r det f\xF6r att dynamiskt\
-  \ bygga str\xE4ngar \u2013\u2026"
+description: "S\xE5 h\xE4r g\xF6r du: ."
 lastmod: '2024-03-13T22:44:37.511569-06:00'
 model: gpt-4-1106-preview
-summary: "Interpolering av str\xE4ng \xE4r processen d\xE4r man s\xE4tter in uttryck\
-  \ eller variabler in i str\xE4ngar."
+summary: .
 title: "Interpolera en str\xE4ng"
 weight: 8
 ---

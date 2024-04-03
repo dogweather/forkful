@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:19.641755-07:00
-description: "Las expresiones regulares, una herramienta poderosa para el emparejamiento\
-  \ de patrones y la manipulaci\xF3n de datos, son esenciales en tareas de\u2026"
+description: "C\xF3mo hacerlo: Clojure, manteni\xE9ndose fiel a sus ra\xEDces en la\
+  \ familia Lisp, ofrece un rico conjunto de funciones que se interfazan sin problemas\
+  \ con las\u2026"
 lastmod: '2024-03-13T22:44:58.646576-06:00'
 model: gpt-4-0125-preview
-summary: "Las expresiones regulares, una herramienta poderosa para el emparejamiento\
-  \ de patrones y la manipulaci\xF3n de datos, son esenciales en tareas de procesamiento\
-  \ de texto como validar entradas, buscar y reemplazar texto."
+summary: "Clojure, manteni\xE9ndose fiel a sus ra\xEDces en la familia Lisp, ofrece\
+  \ un rico conjunto de funciones que se interfazan sin problemas con las capacidades\
+  \ de expresiones regulares de Java."
 title: Usando expresiones regulares
 weight: 11
 ---

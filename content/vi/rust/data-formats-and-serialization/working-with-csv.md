@@ -2,16 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:20.089059-07:00
-description: "CSV, vi\u1EBFt t\u1EAFt c\u1EE7a Comma-Separated Values (Gi\xE1 tr\u1ECB\
-  \ \u0110\u01B0\u1EE3c Ph\xE2n C\xE1ch B\u1EB1ng D\u1EA5u Ph\u1EA9y), l\xE0 m\u1ED9\
-  t \u0111\u1ECBnh d\u1EA1ng t\u1EC7p \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\
-  \u1EC3 l\u01B0u tr\u1EEF d\u1EEF li\u1EC7u d\u1EA1ng b\u1EA3ng. C\xE1c l\u1EADp\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: \u0110\u1EA7u ti\xEAn, bao g\u1ED3m crate\
+  \ c\u1EA7n thi\u1EBFt trong `Cargo.toml`."
 lastmod: '2024-03-13T22:44:36.405854-06:00'
 model: gpt-4-0125-preview
-summary: "CSV, vi\u1EBFt t\u1EAFt c\u1EE7a Comma-Separated Values (Gi\xE1 tr\u1ECB\
-  \ \u0110\u01B0\u1EE3c Ph\xE2n C\xE1ch B\u1EB1ng D\u1EA5u Ph\u1EA9y), l\xE0 m\u1ED9\
-  t \u0111\u1ECBnh d\u1EA1ng t\u1EC7p \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\
-  \u1EC3 l\u01B0u tr\u1EEF d\u1EEF li\u1EC7u d\u1EA1ng b\u1EA3ng."
+summary: "\u0110\u1EA7u ti\xEAn, bao g\u1ED3m crate c\u1EA7n thi\u1EBFt trong `Cargo.toml`."
 title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 weight: 37
 ---

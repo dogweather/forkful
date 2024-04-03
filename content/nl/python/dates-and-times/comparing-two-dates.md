@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:45.955146-07:00
-description: "Het vergelijken van twee datums betekent controleren welke eerst komt\
-  \ of hoe ver ze uit elkaar liggen in tijd. Programmeurs doen dit om evenementen\
-  \ te\u2026"
+description: 'Hoe te doen: In Python kunt u de `datetime` module gebruiken om datums
+  te vergelijken. Hier is hoe.'
 lastmod: '2024-03-13T22:44:50.388998-06:00'
 model: gpt-4-0125-preview
-summary: Het vergelijken van twee datums betekent controleren welke eerst komt of
-  hoe ver ze uit elkaar liggen in tijd.
+summary: In Python kunt u de `datetime` module gebruiken om datums te vergelijken.
 title: Twee datums vergelijken
 weight: 27
 ---

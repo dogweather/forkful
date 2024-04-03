@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:56:14.846737-07:00
-description: "Leggere gli argomenti della riga di comando significa accedere ai parametri\
-  \ passati al tuo programma quando viene avviato da una shell. I programmatori lo\u2026"
+description: 'Come fare: Ecco un esempio su come accogliere gli argomenti della riga
+  di comando in Java.'
 lastmod: '2024-03-13T22:44:43.324486-06:00'
 model: gpt-4-1106-preview
-summary: Leggere gli argomenti della riga di comando significa accedere ai parametri
-  passati al tuo programma quando viene avviato da una shell.
+summary: Ecco un esempio su come accogliere gli argomenti della riga di comando in
+  Java.
 title: Lettura degli argomenti della riga di comando
 weight: 23
 ---

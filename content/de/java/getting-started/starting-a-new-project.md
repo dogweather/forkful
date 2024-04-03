@@ -1,11 +1,13 @@
 ---
 date: 2024-01-20 18:03:43.810333-07:00
-description: "Ein neues Projekt zu starten bedeutet, eine frische Code-Basis anzulegen,\
-  \ die als Grundlage f\xFCr eine Softwareanwendung dient. Programmierer starten\u2026"
+description: "So geht's: Um ein Java-Projekt zu beginnen, legen wir zuerst ein neues\
+  \ Verzeichnis an und initialisieren es mit notwendigen Dateien wie `pom.xml` f\xFC\
+  r\u2026"
 lastmod: '2024-03-13T22:44:53.763737-06:00'
 model: gpt-4-1106-preview
-summary: "Ein neues Projekt zu starten bedeutet, eine frische Code-Basis anzulegen,\
-  \ die als Grundlage f\xFCr eine Softwareanwendung dient."
+summary: "Um ein Java-Projekt zu beginnen, legen wir zuerst ein neues Verzeichnis\
+  \ an und initialisieren es mit notwendigen Dateien wie `pom.xml` f\xFCr Maven oder\
+  \ `build.gradle` f\xFCr Gradle."
 title: Einen neuen Projekt starten
 weight: 1
 ---

@@ -2,14 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:54.860071-07:00
-description: "YAML, een afkorting voor \"YAML Ain't Markup Language\", is een voor\
-  \ mensen leesbare gegevensserialisatiestandaard die we kunnen gebruiken om bestanden\
-  \ te\u2026"
+description: 'Hoe: Swift kan standaard geen YAML verwerken, dus we moeten een externe
+  bibliotheek zoals Yams gebruiken. Voeg eerst Yams toe aan je `Package.swift`.'
 lastmod: '2024-03-13T22:44:51.178432-06:00'
 model: gpt-4-0125-preview
-summary: YAML, een afkorting voor "YAML Ain't Markup Language", is een voor mensen
-  leesbare gegevensserialisatiestandaard die we kunnen gebruiken om bestanden te configureren
-  of gegevensuitwisseling te doen.
+summary: Swift kan standaard geen YAML verwerken, dus we moeten een externe bibliotheek
+  zoals Yams gebruiken.
 title: Werken met YAML
 weight: 41
 ---

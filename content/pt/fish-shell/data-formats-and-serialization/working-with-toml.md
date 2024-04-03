@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:21:36.353182-07:00
-description: "TOML \xE9 um formato de arquivo de configura\xE7\xE3o, f\xE1cil de ler\
-  \ e escrever para humanos, e f\xE1cil de analisar e gerar para m\xE1quinas. Programadores\
-  \ trabalham com\u2026"
+description: "Como fazer: Para ler e manipular TOML no Fish, voc\xEA pode usar uma\
+  \ ferramenta como `yj`, que pode converter TOML para JSON. Veja como."
 lastmod: '2024-03-13T22:44:47.029036-06:00'
 model: gpt-4-0125-preview
-summary: "TOML \xE9 um formato de arquivo de configura\xE7\xE3o, f\xE1cil de ler e\
-  \ escrever para humanos, e f\xE1cil de analisar e gerar para m\xE1quinas."
+summary: "Para ler e manipular TOML no Fish, voc\xEA pode usar uma ferramenta como\
+  \ `yj`, que pode converter TOML para JSON."
 title: Trabalhando com TOML
 weight: 39
 ---

@@ -2,14 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:35.428425-07:00
-description: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong PowerShell ch\u1EC9 l\xE0\
-  \ l\u1EA5y \xFD t\u01B0\u1EDFng c\u1EE7a h\u1EC7 th\u1ED1ng v\u1EC1 ng\xE0y h\xF4\
-  m nay. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng \u0111i\u1EC1u n\xE0y \u0111\u1EC3\
-  \ \u0111\xE1nh d\u1EA5u th\u1EDDi gian trong c\xE1c b\u1EA3n\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: D\u01B0\u1EDBi \u0111\xE2y l\xE0 \u0111\
+  o\u1EA1n m\xE3 \u0111\u01A1n gi\u1EA3n \u0111\u1EC3 l\u1EA5y ng\xE0y h\xF4m nay."
 lastmod: '2024-03-13T22:44:36.950161-06:00'
 model: gpt-4-0125-preview
-summary: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong PowerShell ch\u1EC9 l\xE0 l\u1EA5\
-  y \xFD t\u01B0\u1EDFng c\u1EE7a h\u1EC7 th\u1ED1ng v\u1EC1 ng\xE0y h\xF4m nay."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 \u0111o\u1EA1n m\xE3 \u0111\u01A1n gi\u1EA3\
+  n \u0111\u1EC3 l\u1EA5y ng\xE0y h\xF4m nay."
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 weight: 29
 ---

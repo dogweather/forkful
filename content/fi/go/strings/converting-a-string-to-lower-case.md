@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:04.735038-07:00
-description: "Merkkijonon muuntaminen pieniksi kirjaimiksi on perustoiminto, joka\
-  \ mahdollistaa yhten\xE4isyyden ja johdonmukaisuuden tekstink\xE4sittelyss\xE4,\
-  \ mik\xE4 on\u2026"
+description: "Kuinka: Gossa merkkijonon muuntaminen pieniksi kirjaimiksi onnistuu\
+  \ helposti k\xE4ytt\xE4m\xE4ll\xE4 `strings`-pakettia, erityisesti `ToLower()`-funktiota.\
+  \ T\xE4m\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.036537-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonon muuntaminen pieniksi kirjaimiksi on perustoiminto, joka mahdollistaa\
-  \ yhten\xE4isyyden ja johdonmukaisuuden tekstink\xE4sittelyss\xE4, mik\xE4 on olennaista\
-  \ esimerkiksi kirjainkoosta riippumattomia vertailuja tai tekstin normalisointia\
-  \ varten."
+summary: "Gossa merkkijonon muuntaminen pieniksi kirjaimiksi onnistuu helposti k\xE4\
+  ytt\xE4m\xE4ll\xE4 `strings`-pakettia, erityisesti `ToLower()`-funktiota."
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---

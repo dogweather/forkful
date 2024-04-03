@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 04:14:45.200745-07:00
-description: "Un shell interactif, ou REPL (Read-Eval-Print Loop), en Haskell vous\
-  \ permet d'ex\xE9cuter des extraits de code en direct. C'est un terrain de jeu pour\u2026"
+description: "Comment faire : Pour d\xE9marrer le GHCi (l'environnement interactif\
+  \ du compilateur Haskell de Glasgow), tapez simplement `ghci` dans votre terminal.\
+  \ Voici\u2026"
 lastmod: '2024-03-13T22:44:57.835668-06:00'
 model: gpt-4-0125-preview
-summary: "Un shell interactif, ou REPL (Read-Eval-Print Loop), en Haskell vous permet\
-  \ d'ex\xE9cuter des extraits de code en direct."
+summary: "Pour d\xE9marrer le GHCi (l'environnement interactif du compilateur Haskell\
+  \ de Glasgow), tapez simplement `ghci` dans votre terminal."
 title: Utilisation d'une console interactive (REPL)
 weight: 34
 ---

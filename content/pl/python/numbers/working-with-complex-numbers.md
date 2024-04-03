@@ -1,13 +1,10 @@
 ---
 date: 2024-01-26 04:44:58.769828-07:00
-description: "Liczby z\u0142o\u017Cone to zbi\xF3r liczb postaci `a + bi`, gdzie `a`\
-  \ i `b` s\u0105 liczbami rzeczywistymi, a `i` jest jednostk\u0105 urojon\u0105 (`i^2\
-  \ = -1`). W programowaniu\u2026"
+description: "Jak: Python ma wbudowane wsparcie dla liczb z\u0142o\u017Conych. Oto\
+  \ jak mo\u017Cesz si\u0119 nimi bawi\u0107."
 lastmod: '2024-03-13T22:44:34.942906-06:00'
 model: gpt-4-0125-preview
-summary: "Liczby z\u0142o\u017Cone to zbi\xF3r liczb postaci `a + bi`, gdzie `a` i\
-  \ `b` s\u0105 liczbami rzeczywistymi, a `i` jest jednostk\u0105 urojon\u0105 (`i^2\
-  \ = -1`)."
+summary: "Python ma wbudowane wsparcie dla liczb z\u0142o\u017Conych."
 title: Praca z liczbami zespolonymi
 weight: 14
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-25 02:59:59.859865-07:00
-description: "Rounding numbers means adjusting them to the nearest whole number or\
-  \ to a specified degree of precision. Programmers do it to improve readability,\
-  \ reduce\u2026"
+description: 'How to: In Kotlin, rounding can be done using several functions like
+  `roundToInt()`, `roundToDouble()`, and using `BigDecimal` for more control.'
 lastmod: '2024-03-13T22:45:00.044000-06:00'
 model: gpt-4-1106-preview
-summary: Rounding numbers means adjusting them to the nearest whole number or to a
-  specified degree of precision.
+summary: In Kotlin, rounding can be done using several functions like `roundToInt()`,
+  `roundToDouble()`, and using `BigDecimal` for more control.
 title: Rounding numbers
 weight: 13
 ---

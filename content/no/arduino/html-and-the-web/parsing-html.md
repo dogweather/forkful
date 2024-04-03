@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:38.987176-07:00
-description: "Parsing av HTML i Arduino-prosjekter handler om \xE5 trekke ut informasjon\
-  \ fra nettsider. Programmerere gj\xF8r dette for \xE5 muliggj\xF8re interaksjon\
-  \ mellom deres\u2026"
+description: "Hvordan: Parsing av HTML p\xE5 Arduino krever vanligvis biblioteker\
+  \ med minimalt fotavtrykk p\xE5 grunn av begrensede enhetsressurser. Et popul\xE6\
+  rt valg for\u2026"
 lastmod: '2024-03-13T22:44:41.056461-06:00'
 model: gpt-4-0125-preview
-summary: "Parsing av HTML i Arduino-prosjekter handler om \xE5 trekke ut informasjon\
-  \ fra nettsider."
+summary: "Parsing av HTML p\xE5 Arduino krever vanligvis biblioteker med minimalt\
+  \ fotavtrykk p\xE5 grunn av begrensede enhetsressurser."
 title: Analysering av HTML
 weight: 43
 ---

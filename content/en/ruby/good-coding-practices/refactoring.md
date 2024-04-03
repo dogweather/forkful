@@ -1,11 +1,11 @@
 ---
 date: 2024-01-25 02:12:15.720106-07:00
-description: "Refactoring is the process of restructuring existing computer code without\
-  \ changing its external behavior. Programmers refactor to improve nonfunctional\u2026"
+description: 'How to: Let''s go through an example of refactoring a Ruby method that
+  calculates the sum of squares. **Before Refactoring:**.'
 lastmod: '2024-03-13T22:45:00.558842-06:00'
 model: gpt-4-1106-preview
-summary: Refactoring is the process of restructuring existing computer code without
-  changing its external behavior.
+summary: Let's go through an example of refactoring a Ruby method that calculates
+  the sum of squares.
 title: Refactoring
 weight: 19
 ---

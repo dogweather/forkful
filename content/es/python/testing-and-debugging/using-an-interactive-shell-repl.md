@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:16:49.311817-07:00
-description: "Un REPL, o Bucle de Leer-Evaluar-Imprimir, es un entorno de programaci\xF3\
-  n que toma entradas individuales del usuario, las ejecuta y devuelve el resultado\u2026"
+description: "C\xF3mo: Salta directamente al REPL de Python escribiendo `python` en\
+  \ tu l\xEDnea de comandos. Una vez all\xED, prueba operaciones simples o c\xF3digo\
+  \ de varias\u2026"
 lastmod: '2024-03-13T22:44:58.613552-06:00'
 model: gpt-4-0125-preview
-summary: "Un REPL, o Bucle de Leer-Evaluar-Imprimir, es un entorno de programaci\xF3\
-  n que toma entradas individuales del usuario, las ejecuta y devuelve el resultado\
-  \ al usuario."
+summary: "Salta directamente al REPL de Python escribiendo `python` en tu l\xEDnea\
+  \ de comandos."
 title: Usando una shell interactiva (REPL)
 weight: 34
 ---

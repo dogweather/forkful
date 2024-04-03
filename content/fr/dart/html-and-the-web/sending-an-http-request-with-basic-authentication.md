@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:16.464117-07:00
-description: "Envoyer une requ\xEAte HTTP avec une authentification de base implique\
-  \ l'ajout d'un nom d'utilisateur et d'un mot de passe \xE0 une requ\xEAte pour v\xE9\
-  rifier\u2026"
+description: "Comment faire : En Dart, vous pouvez utiliser le package `http` pour\
+  \ envoyer des requ\xEAtes HTTP avec une authentification de base. Tout d'abord,\
+  \ ajoutez le\u2026"
 lastmod: '2024-03-13T22:44:57.389563-06:00'
 model: gpt-4-0125-preview
-summary: "Envoyer une requ\xEAte HTTP avec une authentification de base implique l'ajout\
-  \ d'un nom d'utilisateur et d'un mot de passe \xE0 une requ\xEAte pour v\xE9rifier\
-  \ l'identit\xE9 de l'utilisateur."
+summary: "En Dart, vous pouvez utiliser le package `http` pour envoyer des requ\xEA\
+  tes HTTP avec une authentification de base."
 title: "Envoyer une requ\xEAte HTTP avec une authentification de base"
 weight: 45
 ---

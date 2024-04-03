@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:06.309425-07:00
-description: "El manejo de errores en Go implica reconocer y responder a las condiciones\
-  \ de error en tu programa. Los programadores se dedican al manejo de errores para\u2026"
+description: "C\xF3mo hacerlo: En Go, el manejo de errores se gestiona expl\xEDcitamente\
+  \ mediante el tipo `error`. Las funciones que pueden fallar devuelven un error como\
+  \ su\u2026"
 lastmod: '2024-03-13T22:44:58.476013-06:00'
 model: gpt-4-0125-preview
-summary: El manejo de errores en Go implica reconocer y responder a las condiciones
-  de error en tu programa.
+summary: "En Go, el manejo de errores se gestiona expl\xEDcitamente mediante el tipo\
+  \ `error`."
 title: Manejando errores
 weight: 16
 ---

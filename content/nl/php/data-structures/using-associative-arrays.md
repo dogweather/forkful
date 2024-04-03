@@ -2,14 +2,11 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:21.707261-07:00
-description: "Associatieve arrays in PHP zijn als super-opgeladen lijsten waar elk\
-  \ element toegankelijk is met behulp van een voor mensen leesbare sleutel in plaats\
-  \ van\u2026"
+description: "Hoe te: In PHP is het cre\xEBren en gebruiken van associatieve arrays\
+  \ eenvoudig. Hier is een snelle uitleg."
 lastmod: '2024-03-13T22:44:50.887534-06:00'
 model: gpt-4-0125-preview
-summary: Associatieve arrays in PHP zijn als super-opgeladen lijsten waar elk element
-  toegankelijk is met behulp van een voor mensen leesbare sleutel in plaats van alleen
-  nummers.
+summary: "In PHP is het cre\xEBren en gebruiken van associatieve arrays eenvoudig."
 title: Gebruik van associatieve arrays
 weight: 15
 ---

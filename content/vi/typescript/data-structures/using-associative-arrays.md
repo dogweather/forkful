@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:13:38.322529-07:00
-description: "C\xE1c m\u1EA3ng k\u1EBFt h\u1EE3p, ho\u1EB7c \u0111\u1ED1i t\u01B0\u1EE3\
-  ng trong TypeScript, cho ph\xE9p b\u1EA1n s\u1EED d\u1EE5ng chu\u1ED7i (ho\u1EB7\
-  c kh\xF3a) \u0111\u1EC3 truy c\u1EADp c\xE1c c\u1EB7p gi\xE1 tr\u1ECB. C\xE1c l\u1EAD\
-  p tr\xECnh vi\xEAn s\u1EED d\u1EE5ng ch\xFAng\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Vi\u1EC7c t\u1EA1o v\xE0 s\u1EED d\u1EE5ng m\u1EA3\
+  ng k\u1EBFt h\u1EE3p trong TypeScript l\xE0 tr\u1EF1c ti\u1EBFp. D\u01B0\u1EDBi\
+  \ \u0111\xE2y l\xE0 m\u1ED9t h\u01B0\u1EDBng d\u1EABn c\u01A1 b\u1EA3n."
 lastmod: '2024-03-13T22:44:36.309355-06:00'
 model: gpt-4-0125-preview
-summary: "C\xE1c m\u1EA3ng k\u1EBFt h\u1EE3p, ho\u1EB7c \u0111\u1ED1i t\u01B0\u1EE3\
-  ng trong TypeScript, cho ph\xE9p b\u1EA1n s\u1EED d\u1EE5ng chu\u1ED7i (ho\u1EB7\
-  c kh\xF3a) \u0111\u1EC3 truy c\u1EADp c\xE1c c\u1EB7p gi\xE1 tr\u1ECB."
+summary: "Vi\u1EC7c t\u1EA1o v\xE0 s\u1EED d\u1EE5ng m\u1EA3ng k\u1EBFt h\u1EE3p trong\
+  \ TypeScript l\xE0 tr\u1EF1c ti\u1EBFp."
 title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 weight: 15
 ---

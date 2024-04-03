@@ -2,17 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:33.254677-07:00
-description: "L\xE0m vi\u1EC7c v\u1EDBi CSV (Comma-Separated Values - Gi\xE1 Tr\u1ECB\
-  \ \u0110\u01B0\u1EE3c Ph\xE2n T\xE1ch B\u1EDFi D\u1EA5u Ph\u1EA9y) bao g\u1ED3m\
-  \ vi\u1EC7c ph\xE2n t\xEDch c\xFA ph\xE1p v\xE0 thao t\xE1c d\u1EEF li\u1EC7u \u0111\
-  \u01B0\u1EE3c c\u1EA5u tr\xFAc d\u01B0\u1EDBi d\u1EA1ng\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: 1. \u0110\u1ECDc m\u1ED9t t\u1EC7p CSV\
+  \ d\xF2ng theo d\xF2ng."
 lastmod: '2024-03-13T22:44:37.240683-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m vi\u1EC7c v\u1EDBi CSV (Comma-Separated Values - Gi\xE1 Tr\u1ECB\
-  \ \u0110\u01B0\u1EE3c Ph\xE2n T\xE1ch B\u1EDFi D\u1EA5u Ph\u1EA9y) bao g\u1ED3m\
-  \ vi\u1EC7c ph\xE2n t\xEDch c\xFA ph\xE1p v\xE0 thao t\xE1c d\u1EEF li\u1EC7u \u0111\
-  \u01B0\u1EE3c c\u1EA5u tr\xFAc d\u01B0\u1EDBi d\u1EA1ng h\xE0ng v\xE0 c\u1ED9t trong\
-  \ \u0111\u1ECBnh d\u1EA1ng v\u0103n b\u1EA3n."
+summary: '1.'
 title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 weight: 37
 ---

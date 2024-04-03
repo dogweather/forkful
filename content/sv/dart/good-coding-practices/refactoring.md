@@ -2,14 +2,10 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:31.329639-07:00
-description: "Refaktorering i Dart \xE4r processen att omstrukturera befintlig kod\
-  \ utan att \xE4ndra dess externa beteende, med m\xE5let att f\xF6rb\xE4ttra dess\
-  \ interna struktur,\u2026"
+description: "Hur man g\xF6r: #."
 lastmod: '2024-03-13T22:44:37.621266-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktorering i Dart \xE4r processen att omstrukturera befintlig kod utan\
-  \ att \xE4ndra dess externa beteende, med m\xE5let att f\xF6rb\xE4ttra dess interna\
-  \ struktur, l\xE4sbarhet och underh\xE5llbarhet."
+summary: '#.'
 title: Refaktorering
 weight: 19
 ---

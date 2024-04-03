@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:44:18.382025-07:00
-description: "Downloading a web page means grabbing the HTML, CSS, JavaScript, and\
-  \ any other data that makes up the page from the server. Programmers do it to parse\u2026"
+description: 'How to: Here''s a quick way to download a page using Node.js with `node-fetch`.'
 lastmod: '2024-03-13T22:45:00.432424-06:00'
 model: gpt-4-1106-preview
-summary: Downloading a web page means grabbing the HTML, CSS, JavaScript, and any
-  other data that makes up the page from the server.
+summary: Here's a quick way to download a page using Node.js with `node-fetch`.
 title: Downloading a web page
 weight: 42
 ---

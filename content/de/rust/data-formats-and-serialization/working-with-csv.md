@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:23.488824-07:00
-description: "Die Arbeit mit CSV-Dateien (Werte getrennt durch Kommata) bezieht sich\
-  \ auf das Lesen von und Schreiben in einfache Textdateien, die tabellarische Daten\u2026"
+description: "Wie man das macht: Rust, mit seinem Fokus auf Sicherheit und Leistung,\
+  \ bietet ausgezeichnete Crates (Bibliotheken) f\xFCr die Arbeit mit CSV-Dateien,\
+  \ wobei\u2026"
 lastmod: '2024-03-13T22:44:53.695407-06:00'
 model: gpt-4-0125-preview
-summary: Die Arbeit mit CSV-Dateien (Werte getrennt durch Kommata) bezieht sich auf
-  das Lesen von und Schreiben in einfache Textdateien, die tabellarische Daten speichern.
+summary: "Rust, mit seinem Fokus auf Sicherheit und Leistung, bietet ausgezeichnete\
+  \ Crates (Bibliotheken) f\xFCr die Arbeit mit CSV-Dateien, wobei `csv` das beliebteste\
+  \ ist."
 title: Arbeiten mit CSV
 weight: 37
 ---

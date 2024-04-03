@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:31:35.571590-07:00
-description: "Calcolare una data nel futuro o nel passato significa semplicemente\
-  \ trovare una data specifica a partire da un punto noto. I programmatori lo fanno\
-  \ per\u2026"
+description: 'Come fare: Ecco esempi per calcolare date, utilizzando PowerShell. Calcolare
+  una data 10 giorni nel futuro a partire da oggi.'
 lastmod: '2024-03-13T22:44:43.655918-06:00'
 model: gpt-4-1106-preview
-summary: Calcolare una data nel futuro o nel passato significa semplicemente trovare
-  una data specifica a partire da un punto noto.
+summary: Ecco esempi per calcolare date, utilizzando PowerShell.
 title: Calcolo di una data futura o passata
 weight: 26
 ---

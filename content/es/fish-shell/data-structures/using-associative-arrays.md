@@ -2,14 +2,14 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:53.655418-07:00
-description: "Los arreglos asociativos, o mapas hash, te permiten almacenar datos\
-  \ como pares clave-valor, facilitando la organizaci\xF3n y recuperaci\xF3n de informaci\xF3\
-  n por\u2026"
+description: "C\xF3mo hacerlo: Fish no soporta nativamente arreglos asociativos como\
+  \ Bash 4+, pero puedes lograr una funcionalidad similar usando una combinaci\xF3\
+  n de listas\u2026"
 lastmod: '2024-03-13T22:44:59.492812-06:00'
 model: gpt-4-0125-preview
-summary: "Los arreglos asociativos, o mapas hash, te permiten almacenar datos como\
-  \ pares clave-valor, facilitando la organizaci\xF3n y recuperaci\xF3n de informaci\xF3\
-  n por clave."
+summary: "Fish no soporta nativamente arreglos asociativos como Bash 4+, pero puedes\
+  \ lograr una funcionalidad similar usando una combinaci\xF3n de listas y manipulaci\xF3\
+  n de cadenas."
 title: Uso de matrices asociativas
 weight: 15
 ---

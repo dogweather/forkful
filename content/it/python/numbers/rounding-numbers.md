@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 03:46:25.733001-07:00
-description: "Arrotondare i numeri significa regolarli per avvicinarli a un valore\
-  \ pi\xF9 semplice o pi\xF9 significativo. I programmatori arrotondano i numeri per\u2026"
+description: 'Come fare: Ecco le informazioni essenziali sull''arrotondamento dei
+  numeri in Python.'
 lastmod: '2024-03-13T22:44:42.995987-06:00'
 model: gpt-4-0125-preview
-summary: "Arrotondare i numeri significa regolarli per avvicinarli a un valore pi\xF9\
-  \ semplice o pi\xF9 significativo."
+summary: Ecco le informazioni essenziali sull'arrotondamento dei numeri in Python.
 title: Arrotondamento dei numeri
 weight: 13
 ---

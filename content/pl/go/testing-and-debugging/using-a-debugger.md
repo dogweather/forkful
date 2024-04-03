@@ -2,9 +2,9 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:44.647749-07:00
-description: "Go oferuje wbudowan\u0105 funkcjonalno\u015B\u0107 do debugowania o\
-  \ nazwie `delve`. Jest to pe\u0142noprawne narz\u0119dzie debuguj\u0105ce, kt\xF3\
-  re umo\u017Cliwia wykonanie program\xF3w w Go\u2026"
+description: "Jak to zrobi\u0107: Go oferuje wbudowan\u0105 funkcjonalno\u015B\u0107\
+  \ do debugowania o nazwie `delve`. Jest to pe\u0142noprawne narz\u0119dzie debuguj\u0105\
+  ce, kt\xF3re umo\u017Cliwia wykonanie\u2026"
 lastmod: '2024-03-13T22:44:34.856538-06:00'
 model: gpt-4-0125-preview
 summary: "Go oferuje wbudowan\u0105 funkcjonalno\u015B\u0107 do debugowania o nazwie\

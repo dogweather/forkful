@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:43:40.212116-07:00
-description: "Zaokr\u0105glanie liczb polega na dostosowaniu liczby do najbli\u017C\
-  szej liczby ca\u0142kowitej lub okre\u015Blonej precyzji dziesi\u0119tnej. Liczby\
-  \ zaokr\u0105glamy w celu ich\u2026"
+description: "Jak to zrobi\u0107: W Clojure g\u0142\xF3wnie u\u017Cywamy `Math/round`,\
+  \ `Math/floor` i `Math/ceil`."
 lastmod: '2024-03-13T22:44:34.989457-06:00'
 model: gpt-4-0125-preview
-summary: "Zaokr\u0105glanie liczb polega na dostosowaniu liczby do najbli\u017Cszej\
-  \ liczby ca\u0142kowitej lub okre\u015Blonej precyzji dziesi\u0119tnej."
+summary: "W Clojure g\u0142\xF3wnie u\u017Cywamy `Math/round`, `Math/floor` i `Math/ceil`."
 title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:04.451254-07:00
-description: "Att skriva med stor bokstav i PowerShell inneb\xE4r att man omvandlar\
-  \ det f\xF6rsta tecknet i en given str\xE4ng till versal medan resten av str\xE4\
-  ngen l\xE4mnas\u2026"
+description: "Hur g\xF6r man: PowerShell, som \xE4r ett m\xE5ngsidigt verktyg, l\xE5\
+  ter dig skriva med stor bokstav i en str\xE4ng p\xE5 enkla s\xE4tt utan att beh\xF6\
+  va tredjepartsbibliotek.\u2026"
 lastmod: '2024-03-13T22:44:38.107489-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva med stor bokstav i PowerShell inneb\xE4r att man omvandlar det\
-  \ f\xF6rsta tecknet i en given str\xE4ng till versal medan resten av str\xE4ngen\
-  \ l\xE4mnas of\xF6r\xE4ndrad."
+summary: "PowerShell, som \xE4r ett m\xE5ngsidigt verktyg, l\xE5ter dig skriva med\
+  \ stor bokstav i en str\xE4ng p\xE5 enkla s\xE4tt utan att beh\xF6va tredjepartsbibliotek."
 title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---

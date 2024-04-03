@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:04.864567-07:00
-description: "Het extraheren van substrings in Visual Basic voor Applications (VBA)\
-  \ omvat het isoleren van specifieke delen van een string op basis van gegeven\u2026"
+description: "Hoe: In VBA gebruik je voornamelijk de functies `Mid`, `Left` en `Right`\
+  \ om substrings te extraheren. Hieronder verkennen we deze functies met\u2026"
 lastmod: '2024-03-13T22:44:50.625306-06:00'
 model: gpt-4-0125-preview
-summary: Het extraheren van substrings in Visual Basic voor Applications (VBA) omvat
-  het isoleren van specifieke delen van een string op basis van gegeven criteria.
+summary: In VBA gebruik je voornamelijk de functies `Mid`, `Left` en `Right` om substrings
+  te extraheren.
 title: Substrings extraheren
 weight: 6
 ---

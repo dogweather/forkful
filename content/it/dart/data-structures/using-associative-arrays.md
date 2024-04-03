@@ -2,12 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:16.315377-07:00
-description: "Gli array associativi in Dart, comunemente noti come Mappe, sono strutture\
-  \ di dati che memorizzano i dati in coppie chiave-valore. Consentono ai\u2026"
+description: "Come fare: Dart offre una sintassi semplice per creare e manipolare\
+  \ le Mappe. Di seguito sono riportati esempi che dimostrano operazioni di base come\
+  \ la\u2026"
 lastmod: '2024-03-13T22:44:43.121557-06:00'
 model: gpt-4-0125-preview
-summary: Gli array associativi in Dart, comunemente noti come Mappe, sono strutture
-  di dati che memorizzano i dati in coppie chiave-valore.
+summary: Dart offre una sintassi semplice per creare e manipolare le Mappe.
 title: Utilizzo di array associativi
 weight: 15
 ---

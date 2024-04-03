@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:57.356751-07:00
-description: "Vi\u1EC7c t\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai\
-  \ ho\u1EB7c qu\xE1 kh\u1EE9 li\xEAn quan \u0111\u1EBFn vi\u1EC7c t\xEDnh to\xE1\
-  n m\u1ED9t ng\xE0y c\xE1ch bi\u1EC7t nhi\u1EC1u ng\xE0y, th\xE1ng, ho\u1EB7c n\u0103\
-  m t\u1EEB m\u1ED9t \u0111i\u1EC3m th\u1EDDi gian c\u1EE5\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: S\u1EED d\u1EE5ng m\xF4-\u0111un `Date`\
+  \ \u0111\u01B0\u1EE3c t\xEDch h\u1EE3p s\u1EB5n c\u1EE7a Elixir, b\u1EA1n c\xF3\
+  \ th\u1EC3 d\u1EC5 d\xE0ng ch\u01A1i v\u1EDBi d\xF2ng th\u1EDDi gian."
 lastmod: '2024-03-13T22:44:36.225831-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c t\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7\
-  c qu\xE1 kh\u1EE9 li\xEAn quan \u0111\u1EBFn vi\u1EC7c t\xEDnh to\xE1n m\u1ED9t\
-  \ ng\xE0y c\xE1ch bi\u1EC7t nhi\u1EC1u ng\xE0y, th\xE1ng, ho\u1EB7c n\u0103m t\u1EEB\
-  \ m\u1ED9t \u0111i\u1EC3m th\u1EDDi gian c\u1EE5 th\u1EC3."
+summary: "S\u1EED d\u1EE5ng m\xF4-\u0111un `Date` \u0111\u01B0\u1EE3c t\xEDch h\u1EE3\
+  p s\u1EB5n c\u1EE7a Elixir, b\u1EA1n c\xF3 th\u1EC3 d\u1EC5 d\xE0ng ch\u01A1i v\u1EDB\
+  i d\xF2ng th\u1EDDi gian."
 title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1EE9"
 weight: 26
 ---

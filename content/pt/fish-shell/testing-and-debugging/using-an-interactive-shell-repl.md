@@ -1,13 +1,10 @@
 ---
 date: 2024-01-26 04:13:54.470592-07:00
-description: "REPL, ou Loop de Ler-Avaliar-Imprimir, \xE9 um ambiente de programa\xE7\
-  \xE3o interativo que recebe entradas \xFAnicas do usu\xE1rio, executa-as e retorna\
-  \ o resultado.\u2026"
+description: "Como fazer: No Fish, o shell interativo \xE9 o modo padr\xE3o quando\
+  \ voc\xEA o inicia. Veja como ele funciona na pr\xE1tica."
 lastmod: '2024-03-13T22:44:47.007601-06:00'
 model: gpt-4-0125-preview
-summary: "REPL, ou Loop de Ler-Avaliar-Imprimir, \xE9 um ambiente de programa\xE7\xE3\
-  o interativo que recebe entradas \xFAnicas do usu\xE1rio, executa-as e retorna o\
-  \ resultado."
+summary: "No Fish, o shell interativo \xE9 o modo padr\xE3o quando voc\xEA o inicia."
 title: Usando um shell interativo (REPL)
 weight: 34
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:33.436627-07:00
-description: "De huidige datum krijgen in Google Apps Script gaat over het ophalen\
-  \ van de live datum en tijd, een gebruikelijke taak voor het automatiseren van taken,\u2026"
+description: "Hoe: Google Apps Script, dat is gebaseerd op JavaScript, biedt eenvoudige\
+  \ methoden om de huidige datum te krijgen. Je kunt de `new Date()` constructor\u2026"
 lastmod: '2024-03-13T22:44:50.342989-06:00'
 model: gpt-4-0125-preview
-summary: De huidige datum krijgen in Google Apps Script gaat over het ophalen van
-  de live datum en tijd, een gebruikelijke taak voor het automatiseren van taken,
-  loggen, en timestamping in apps die verbonden zijn met Google's ecosysteem.
+summary: Google Apps Script, dat is gebaseerd op JavaScript, biedt eenvoudige methoden
+  om de huidige datum te krijgen.
 title: Het verkrijgen van de huidige datum
 weight: 29
 ---

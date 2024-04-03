@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:46:49.338473-07:00
-description: "Att avrunda tal inneb\xE4r att justera dem till det n\xE4rmaste hela\
-  \ talet eller en br\xE5kdel med viss precision. Programmerare avrundar tal f\xF6\
-  r att f\xF6renkla\u2026"
+description: "Hur man g\xF6r: Rust g\xF6r avrundning till en barnlek. Kolla in dessa\
+  \ metoder f\xF6r `f32` eller `f64`-typer."
 lastmod: '2024-03-13T22:44:37.692950-06:00'
 model: gpt-4-0125-preview
-summary: "Att avrunda tal inneb\xE4r att justera dem till det n\xE4rmaste hela talet\
-  \ eller en br\xE5kdel med viss precision."
+summary: "Rust g\xF6r avrundning till en barnlek."
 title: Avrundning av tal
 weight: 13
 ---

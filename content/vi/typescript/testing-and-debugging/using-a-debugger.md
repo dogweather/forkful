@@ -2,16 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:19.502320-07:00
-description: "\u0110\u1EC3 b\u1EAFt \u0111\u1EA7u v\u1EDBi tr\xECnh g\u1EE1 l\u1ED7\
-  i trong TypeScript, t\u1EA5t c\u1EA3 nh\u1EEFng g\xEC b\u1EA1n c\u1EA7n l\xE0 m\u1ED9\
-  t IDE \u0111\u01B0\u1EE3c h\u1ED7 tr\u1EE3 (nh\u01B0 Visual Studio Code) v\xE0 m\u1ED9\
-  t c\u1EA5u h\xECnh `launch.json`. D\u01B0\u1EDBi\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: \u0110\u1EC3 b\u1EAFt \u0111\u1EA7u v\u1EDB\
+  i tr\xECnh g\u1EE1 l\u1ED7i trong TypeScript, t\u1EA5t c\u1EA3 nh\u1EEFng g\xEC\
+  \ b\u1EA1n c\u1EA7n l\xE0 m\u1ED9t IDE \u0111\u01B0\u1EE3c h\u1ED7 tr\u1EE3 (nh\u01B0\
+  \ Visual Studio Code) v\xE0 m\u1ED9t c\u1EA5u h\xECnh\u2026"
 lastmod: '2024-03-13T22:44:36.324997-06:00'
 model: gpt-4-0125-preview
 summary: "\u0110\u1EC3 b\u1EAFt \u0111\u1EA7u v\u1EDBi tr\xECnh g\u1EE1 l\u1ED7i trong\
   \ TypeScript, t\u1EA5t c\u1EA3 nh\u1EEFng g\xEC b\u1EA1n c\u1EA7n l\xE0 m\u1ED9\
   t IDE \u0111\u01B0\u1EE3c h\u1ED7 tr\u1EE3 (nh\u01B0 Visual Studio Code) v\xE0 m\u1ED9\
-  t c\u1EA5u h\xECnh `launch."
+  t c\u1EA5u h\xECnh `launch.json`."
 title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
 weight: 35
 ---

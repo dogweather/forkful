@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:14.944002-07:00
-description: "Tests schrijven betekent code cre\xEBren die controleert of andere code\
-  \ correct werkt. Programmeurs doen dit om bugs vroegtijdig op te vangen, tijd te\u2026"
+description: "Hoe: Laten we een eenvoudige functie testen met Jest, een populair testraamwerk\
+  \ voor JavaScript en TypeScript. Installeer eerst Jest met TypeScript-\u2026"
 lastmod: '2024-03-13T22:44:50.554420-06:00'
 model: gpt-4-0125-preview
-summary: "Tests schrijven betekent code cre\xEBren die controleert of andere code\
-  \ correct werkt."
+summary: Laten we een eenvoudige functie testen met Jest, een populair testraamwerk
+  voor JavaScript en TypeScript.
 title: Tests Schrijven
 weight: 36
 ---

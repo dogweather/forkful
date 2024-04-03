@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:51.870876-07:00
-description: "\xC5 sjekke om en mappe eksisterer er en grunnleggende operasjon n\xE5\
-  r man skriver skript som samhandler med filsystemet, og s\xF8rger for at programmet\
-  \ ditt\u2026"
+description: "Hvordan: I Lua har du ikke en innebygd funksjon for direkte \xE5 sjekke\
+  \ om en mappe eksisterer, s\xE5 du er ofte avhengig av Lua File System (lfs)-biblioteket,\u2026"
 lastmod: '2024-03-13T22:44:40.944611-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 sjekke om en mappe eksisterer er en grunnleggende operasjon n\xE5r\
-  \ man skriver skript som samhandler med filsystemet, og s\xF8rger for at programmet\
-  \ ditt opererer p\xE5 gyldige baner og forhindrer feil relatert til ikke-eksisterende\
-  \ mapper."
+summary: "I Lua har du ikke en innebygd funksjon for direkte \xE5 sjekke om en mappe\
+  \ eksisterer, s\xE5 du er ofte avhengig av Lua File System (lfs)-biblioteket, et\
+  \ popul\xE6rt tredjepartsbibliotek for filoperasjoner."
 title: Sjekker om en mappe eksisterer
 weight: 20
 ---

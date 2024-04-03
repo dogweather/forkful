@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:33:09.503368-07:00
-description: "In Haskell, confrontare due date significa verificare se una \xE8 prima,\
-  \ dopo o allo stesso momento dell'altra. Questo \xE8 utile per ordinare eventi\u2026"
+description: 'How to: In Haskell, usiamo il modulo `Data.Time` per lavorare con le
+  date. Ecco come confrontarle.'
 lastmod: '2024-03-13T22:44:43.487695-06:00'
 model: gpt-4-1106-preview
-summary: "In Haskell, confrontare due date significa verificare se una \xE8 prima,\
-  \ dopo o allo stesso momento dell'altra."
+summary: In Haskell, usiamo il modulo `Data.Time` per lavorare con le date.
 title: Confronto tra due date
 weight: 27
 ---

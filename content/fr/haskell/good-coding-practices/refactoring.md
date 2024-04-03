@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 01:18:24.330581-07:00
-description: "Le refactoring est le processus de peaufinement de votre code sans changer\
-  \ son comportement externe. Il s'agit de nettoyer et d'organiser votre travail\u2026"
+description: "Comment faire : Disons que vous avez un bloc de code Haskell qui se\
+  \ r\xE9p\xE8te plus que votre chanson pr\xE9f\xE9r\xE9e. Voici un coup d'\u0153\
+  il rapide sur la fa\xE7on dont\u2026"
 lastmod: '2024-03-13T22:44:57.842536-06:00'
 model: gpt-4-0125-preview
-summary: Le refactoring est le processus de peaufinement de votre code sans changer
-  son comportement externe.
+summary: "Disons que vous avez un bloc de code Haskell qui se r\xE9p\xE8te plus que\
+  \ votre chanson pr\xE9f\xE9r\xE9e."
 title: Refactoring
 weight: 19
 ---

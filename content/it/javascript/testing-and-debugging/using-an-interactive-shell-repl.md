@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:15:38.798530-07:00
-description: "Le shell interattive, o REPL (Read-Eval-Print Loops, Cicli di Lettura-Valutazione-Stampa),\
-  \ ti permettono di eseguire codice al volo, testare funzioni,\u2026"
+description: 'Come fare: Node.js include una REPL accessibile tramite il terminale.
+  Aprila, e sei pronto per iniziare. Ecco un assaggio.'
 lastmod: '2024-03-13T22:44:43.813738-06:00'
 model: gpt-4-0125-preview
-summary: Le shell interattive, o REPL (Read-Eval-Print Loops, Cicli di Lettura-Valutazione-Stampa),
-  ti permettono di eseguire codice al volo, testare funzioni, algoritmi o sperimentare
-  con idee.
+summary: Node.js include una REPL accessibile tramite il terminale.
 title: Utilizzo di un interprete interattivo (REPL)
 weight: 34
 ---

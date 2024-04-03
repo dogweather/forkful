@@ -3,15 +3,12 @@ changelog:
 - 2024-02-27, dogweather, edited and tested
 - 2024-02-27, gpt-4-0125-preview, translated from English
 date: 2024-02-27 22:50:13.618240-07:00
-description: "Het genereren van willekeurige getallen in Elm houdt het gebruik van\
-  \ de `Random` module in om pseudo-willekeurige getallen te produceren, die handig\
-  \ zijn\u2026"
+description: "Hoe: De pure functionele aard van Elm betekent dat je niet direct willekeurige\
+  \ getallen kunt genereren zoals je misschien zou doen in imperatieve talen.\u2026"
 lastmod: '2024-03-13T22:44:50.720443-06:00'
 model: gpt-4-0125-preview
-summary: Het genereren van willekeurige getallen in Elm houdt het gebruik van de `Random`
-  module in om pseudo-willekeurige getallen te produceren, die handig zijn voor een
-  verscheidenheid aan taken zoals spellen, simulaties, en zelfs als onderdeel van
-  algoritmen die stochastische processen vereisen.
+summary: De pure functionele aard van Elm betekent dat je niet direct willekeurige
+  getallen kunt genereren zoals je misschien zou doen in imperatieve talen.
 title: Genereren van willekeurige getallen
 weight: 12
 ---

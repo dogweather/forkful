@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:01.923448-07:00
-description: "Reguliere expressies, of kortweg regex, zijn reeksen van tekens die\
-  \ zoekpatronen vormen. Programmeurs gebruiken regex om tekst te zoeken, bewerken\
-  \ of te\u2026"
+description: 'Hoe te: Rust gebruikt de `regex` crate voor regex-operaties. Voeg het
+  eerst toe aan je `Cargo.toml`.'
 lastmod: '2024-03-13T22:44:50.584088-06:00'
 model: gpt-4-0125-preview
-summary: Reguliere expressies, of kortweg regex, zijn reeksen van tekens die zoekpatronen
-  vormen.
+summary: Rust gebruikt de `regex` crate voor regex-operaties.
 title: Reguliere expressies gebruiken
 weight: 11
 ---

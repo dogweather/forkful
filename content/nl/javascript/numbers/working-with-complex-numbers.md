@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:14.187683-07:00
-description: "Complexe getallen zijn getallen met een re\xEBel en een imaginair deel\
-  \ (zoals 3 + 4i). Ze komen voor in verschillende programmeerproblemen, met name\
-  \ in\u2026"
+description: "Hoe: JavaScript heeft geen ingebouwde ondersteuning voor complexe getallen,\
+  \ maar je kunt de mouwen opstropen en het aanpakken met objecten en wiskunde.\u2026"
 lastmod: '2024-03-13T22:44:51.194686-06:00'
 model: gpt-4-0125-preview
-summary: "Complexe getallen zijn getallen met een re\xEBel en een imaginair deel (zoals\
-  \ 3 + 4i)."
+summary: JavaScript heeft geen ingebouwde ondersteuning voor complexe getallen, maar
+  je kunt de mouwen opstropen en het aanpakken met objecten en wiskunde.
 title: Werken met complexe getallen
 weight: 14
 ---

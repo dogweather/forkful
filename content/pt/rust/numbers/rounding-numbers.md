@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:46:43.435815-07:00
-description: "Arredondar n\xFAmeros significa ajust\xE1-los ao n\xFAmero inteiro mais\
-  \ pr\xF3ximo ou a uma fra\xE7\xE3o com uma certa precis\xE3o. Programadores arredondam\
-  \ n\xFAmeros para\u2026"
+description: "Como fazer: Rust torna o arredondamento algo f\xE1cil. Confira estes\
+  \ m\xE9todos para os tipos `f32` ou `f64`."
 lastmod: '2024-03-13T22:44:46.362701-06:00'
 model: gpt-4-0125-preview
-summary: "Arredondar n\xFAmeros significa ajust\xE1-los ao n\xFAmero inteiro mais\
-  \ pr\xF3ximo ou a uma fra\xE7\xE3o com uma certa precis\xE3o."
+summary: "Rust torna o arredondamento algo f\xE1cil."
 title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---

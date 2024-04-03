@@ -1,11 +1,10 @@
 ---
 date: 2024-01-25 02:11:48.246297-07:00
-description: "Refactoring is the art of tweaking existing code to improve its structure,\
-  \ readability, and efficiency without altering its external behavior. Programmers\u2026"
+description: "How to: Let\u2019s take a simple Lua function and refactor it. We begin\
+  \ with a function that calculates the sum of numbers in a list but is written without\u2026"
 lastmod: '2024-03-13T22:45:00.213214-06:00'
 model: gpt-4-1106-preview
-summary: Refactoring is the art of tweaking existing code to improve its structure,
-  readability, and efficiency without altering its external behavior.
+summary: "Let\u2019s take a simple Lua function and refactor it."
 title: Refactoring
 weight: 19
 ---

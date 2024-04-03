@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:00:03.237117-07:00
-description: "Analizzare una data da una stringa in C comporta la conversione delle\
-  \ rappresentazioni testuali delle date in un formato che i programmi possono\u2026"
+description: "Come fare: C non offre un modo incorporato per analizzare le date dalle\
+  \ stringhe direttamente, quindi spesso si ricorre alla funzione `strptime`\u2026"
 lastmod: '2024-03-13T22:44:44.010141-06:00'
 model: gpt-4-0125-preview
-summary: "Analizzare una data da una stringa in C comporta la conversione delle rappresentazioni\
-  \ testuali delle date in un formato che i programmi possono manipolare ed analizzare\
-  \ pi\xF9 efficacemente."
+summary: C non offre un modo incorporato per analizzare le date dalle stringhe direttamente,
+  quindi spesso si ricorre alla funzione `strptime` disponibile nella libreria `<time.h>`
+  per i sistemi POSIX.
 title: Analizzare una data da una stringa
 weight: 30
 ---

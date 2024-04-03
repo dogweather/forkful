@@ -2,18 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:07.088760-07:00
-description: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong l\u1EADp tr\xEC\
-  nh l\xE0 v\u1EC1 vi\u1EC7c s\u1EA3n xu\u1EA5t c\xE1c gi\xE1 tr\u1ECB s\u1ED1 kh\xF4\
-  ng th\u1EC3 \u0111o\xE1n tr\u01B0\u1EDBc \u0111\u01B0\u1EE3c c\xF3 th\u1EC3 s\u1EED\
-  \ d\u1EE5ng cho m\u1ED9t lo\u1EA1t c\xE1c m\u1EE5c \u0111\xEDch nh\u01B0 m\xF4 ph\u1ECF\
-  ng,\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Lua cung c\u1EA5p h\u1ED7 tr\u1EE3 s\u1EB5n\
+  \ c\xF3 cho vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn th\xF4ng qua h\xE0m `math.random`.\
+  \ H\xE0m n\xE0y c\xF3 th\u1EC3 \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng theo nhi\u1EC1\
+  u c\xE1ch, t\xF9y thu\u1ED9c v\xE0o\u2026"
 lastmod: '2024-03-13T22:44:36.817099-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong l\u1EADp tr\xECnh l\xE0\
-  \ v\u1EC1 vi\u1EC7c s\u1EA3n xu\u1EA5t c\xE1c gi\xE1 tr\u1ECB s\u1ED1 kh\xF4ng th\u1EC3\
-  \ \u0111o\xE1n tr\u01B0\u1EDBc \u0111\u01B0\u1EE3c c\xF3 th\u1EC3 s\u1EED d\u1EE5\
-  ng cho m\u1ED9t lo\u1EA1t c\xE1c m\u1EE5c \u0111\xEDch nh\u01B0 m\xF4 ph\u1ECFng,\
-  \ tr\xF2 ch\u01A1i ho\u1EB7c \u1EE9ng d\u1EE5ng b\u1EA3o m\u1EADt."
+summary: "Lua cung c\u1EA5p h\u1ED7 tr\u1EE3 s\u1EB5n c\xF3 cho vi\u1EC7c t\u1EA1\
+  o s\u1ED1 ng\u1EABu nhi\xEAn th\xF4ng qua h\xE0m `math.random`."
 title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 weight: 12
 ---

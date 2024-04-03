@@ -2,16 +2,16 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:04.248761-07:00
-description: "Vi\u1EC7c so s\xE1nh hai ng\xE0y trong C bao g\u1ED3m vi\u1EC7c x\xE1\
-  c \u0111\u1ECBnh m\u1ED1i quan h\u1EC7 theo th\u1EDDi gian gi\u1EEFa ch\xFAng --\
-  \ li\u1EC7u m\u1ED9t ng\xE0y c\xF3 x\u1EA3y ra tr\u01B0\u1EDBc ng\xE0y kia hay ch\xFA\
-  ng c\xF3 gi\u1ED1ng\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: C kh\xF4ng c\xF3 ki\u1EC3u d\u1EEF li\u1EC7\
+  u d\xE0nh ri\xEAng cho ng\xE0y th\xE1ng, do \u0111\xF3 c\u1EA7n s\u1EED d\u1EE5\
+  ng th\u01B0 vi\u1EC7n `time.h` \u0111\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi c\u1EA5u tr\xFA\
+  c ng\xE0y v\xE0 gi\u1EDD. C\u1EA5u tr\xFAc `tm`\u2026"
 lastmod: '2024-03-13T22:44:37.284786-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c so s\xE1nh hai ng\xE0y trong C bao g\u1ED3m vi\u1EC7c x\xE1c \u0111\
-  \u1ECBnh m\u1ED1i quan h\u1EC7 theo th\u1EDDi gian gi\u1EEFa ch\xFAng -- li\u1EC7\
-  u m\u1ED9t ng\xE0y c\xF3 x\u1EA3y ra tr\u01B0\u1EDBc ng\xE0y kia hay ch\xFAng c\xF3\
-  \ gi\u1ED1ng nhau."
+summary: "C kh\xF4ng c\xF3 ki\u1EC3u d\u1EEF li\u1EC7u d\xE0nh ri\xEAng cho ng\xE0\
+  y th\xE1ng, do \u0111\xF3 c\u1EA7n s\u1EED d\u1EE5ng th\u01B0 vi\u1EC7n `time.h`\
+  \ \u0111\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi c\u1EA5u tr\xFAc ng\xE0y v\xE0 gi\u1EDD\
+  ."
 title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---

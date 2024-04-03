@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:08.269618-07:00
-description: "Lavorare con JSON implica analizzare le stringhe formattate JSON in\
-  \ strutture dati che Elixir pu\xF2 manipolare e serializzare le strutture dati di\
-  \ Elixir di\u2026"
+description: "Come fare: In Elixir, puoi utilizzare la libreria `Jason`, una scelta\
+  \ popolare per l'analisi e la generazione di JSON. Prima, aggiungi `Jason` alle\u2026"
 lastmod: '2024-03-13T22:44:43.105874-06:00'
 model: gpt-4-0125-preview
-summary: "Lavorare con JSON implica analizzare le stringhe formattate JSON in strutture\
-  \ dati che Elixir pu\xF2 manipolare e serializzare le strutture dati di Elixir di\
-  \ nuovo in stringhe JSON."
+summary: In Elixir, puoi utilizzare la libreria `Jason`, una scelta popolare per l'analisi
+  e la generazione di JSON.
 title: Lavorare con JSON
 weight: 38
 ---

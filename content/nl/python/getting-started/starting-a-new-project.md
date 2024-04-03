@@ -3,12 +3,10 @@ changelog:
 - 2024-02-22, dogweather, reviewed
 - 2024-02-22, gpt-4-0125-preview, translated from English
 date: 2024-02-22 17:30:11.656533-07:00
-description: "Een nieuw project starten in Python gaat over het opzetten van een gestructureerd,\
-  \ onderhoudbaar kader vanaf het begin. Programmeurs doen dit om ervoor te\u2026"
+description: 'Hoe te: #.'
 lastmod: '2024-03-13T22:44:50.377378-06:00'
 model: gpt-4-0125-preview
-summary: Een nieuw project starten in Python gaat over het opzetten van een gestructureerd,
-  onderhoudbaar kader vanaf het begin.
+summary: '#.'
 title: Een nieuw project starten
 weight: 1
 ---

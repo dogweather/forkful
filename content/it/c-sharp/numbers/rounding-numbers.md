@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 03:43:43.425978-07:00
-description: "Arrotondare i numeri significa adeguarli al valore posizionale specificato\
-  \ pi\xF9 vicino\u2014pensateli come semplificati. I programmatori arrotondano per\u2026"
+description: 'Come fare: Ecco il biglietto di andata e ritorno per arrotondare i numeri
+  in C#.'
 lastmod: '2024-03-13T22:44:43.428961-06:00'
 model: gpt-4-0125-preview
-summary: "Arrotondare i numeri significa adeguarli al valore posizionale specificato\
-  \ pi\xF9 vicino\u2014pensateli come semplificati."
+summary: Ecco il biglietto di andata e ritorno per arrotondare i numeri in C#.
 title: Arrotondamento dei numeri
 weight: 13
 ---

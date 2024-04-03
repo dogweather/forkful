@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:07:25.969798-07:00
-description: "Kompleksiluvut, jotka esitet\xE4\xE4n reaaliluvun ja imaginaariyksik\xF6\
-  n yhdistelm\xE4n\xE4 (esim. 3 + 4i), ovat keskeisi\xE4 erilaisissa laskennallisissa\
-  \ ongelmissa,\u2026"
+description: "Kuinka: Google Apps Script ei tue kompleksilukuja sis\xE4\xE4nrakennetusti,\
+  \ mik\xE4 edellytt\xE4\xE4 mukautetun toiminnallisuuden toteuttamista. Alla on perusrakenne\u2026"
 lastmod: '2024-03-13T22:44:56.089784-06:00'
 model: gpt-4-0125-preview
-summary: "Kompleksiluvut, jotka esitet\xE4\xE4n reaaliluvun ja imaginaariyksik\xF6\
-  n yhdistelm\xE4n\xE4 (esim."
+summary: "Google Apps Script ei tue kompleksilukuja sis\xE4\xE4nrakennetusti, mik\xE4\
+  \ edellytt\xE4\xE4 mukautetun toiminnallisuuden toteuttamista."
 title: "Ty\xF6skentely kompleksilukujen kanssa"
 weight: 14
 ---

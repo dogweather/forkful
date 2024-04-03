@@ -2,14 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:04.276484-07:00
-description: "L'interpolazione delle stringhe \xE8 il processo di iniettare valori\
-  \ di variabili direttamente nelle stringhe, spesso per creare messaggi significativi\
-  \ senza\u2026"
+description: "Come fare: In Dart, l'interpolazione delle stringhe \xE8 semplice, utilizzando\
+  \ il simbolo `$` per interpolare direttamente espressioni all'interno di\u2026"
 lastmod: '2024-03-13T22:44:43.113333-06:00'
 model: gpt-4-0125-preview
-summary: "L'interpolazione delle stringhe \xE8 il processo di iniettare valori di\
-  \ variabili direttamente nelle stringhe, spesso per creare messaggi significativi\
-  \ senza l'uso di concatenazioni ingombranti."
+summary: "In Dart, l'interpolazione delle stringhe \xE8 semplice, utilizzando il simbolo\
+  \ `$` per interpolare direttamente espressioni all'interno di letterali di stringa."
 title: Interpolazione di una stringa
 weight: 8
 ---

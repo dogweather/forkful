@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:34.982147-07:00
-description: "JSON (JavaScript Object Notation) l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1\
-  ng trao \u0111\u1ED5i d\u1EEF li\u1EC7u nh\u1EB9, d\u1EC5 \u0111\u1ECDc v\xE0 vi\u1EBF\
-  t cho con ng\u01B0\u1EDDi c\u0169ng nh\u01B0 d\u1EC5 d\xE0ng ph\xE2n t\xEDch v\xE0\
-  \ t\u1EA1o ra b\u1EDFi m\xE1y m\xF3c.\u2026"
+description: "C\xE1ch l\xE0m: \u0110\u1EC3 x\u1EED l\xFD JSON trong Elixir, ch\xFA\
+  ng ta s\u1EED d\u1EE5ng c\xE1c th\u01B0 vi\u1EC7n nh\u01B0 `Jason` ho\u1EB7c `Poison`.\
+  \ D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t h\u01B0\u1EDBng d\u1EABn nhanh v\u1EDB\
+  i `Jason`."
 lastmod: '2024-03-13T22:44:36.236011-06:00'
 model: gpt-4-0125-preview
-summary: "JSON (JavaScript Object Notation) l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1\
-  ng trao \u0111\u1ED5i d\u1EEF li\u1EC7u nh\u1EB9, d\u1EC5 \u0111\u1ECDc v\xE0 vi\u1EBF\
-  t cho con ng\u01B0\u1EDDi c\u0169ng nh\u01B0 d\u1EC5 d\xE0ng ph\xE2n t\xEDch v\xE0\
-  \ t\u1EA1o ra b\u1EDFi m\xE1y m\xF3c."
+summary: "\u0110\u1EC3 x\u1EED l\xFD JSON trong Elixir, ch\xFAng ta s\u1EED d\u1EE5\
+  ng c\xE1c th\u01B0 vi\u1EC7n nh\u01B0 `Jason` ho\u1EB7c `Poison`."
 title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
 weight: 38
 ---

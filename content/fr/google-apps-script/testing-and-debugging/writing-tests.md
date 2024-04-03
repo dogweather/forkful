@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:34.498508-07:00
-description: "\xC9crire des tests dans Google Apps Script (GAS) consiste \xE0 cr\xE9\
-  er des scripts automatis\xE9s pour v\xE9rifier le comportement de vos codes, en\
-  \ s'assurant qu'ils\u2026"
+description: "Comment faire : Bien que Google Apps Script n'ait pas de cadre de test\
+  \ int\xE9gr\xE9 comme certains autres environnements de programmation, vous pouvez\
+  \ toujours\u2026"
 lastmod: '2024-03-13T22:44:57.190207-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire des tests dans Google Apps Script (GAS) consiste \xE0 cr\xE9er\
-  \ des scripts automatis\xE9s pour v\xE9rifier le comportement de vos codes, en s'assurant\
-  \ qu'ils fonctionnent comme pr\xE9vu sous diff\xE9rentes conditions."
+summary: "Bien que Google Apps Script n'ait pas de cadre de test int\xE9gr\xE9 comme\
+  \ certains autres environnements de programmation, vous pouvez toujours \xE9crire\
+  \ et ex\xE9cuter des tests en utilisant des fonctions GAS simples ou en int\xE9\
+  grant des biblioth\xE8ques de tests externes telles que `QUnit`."
 title: "R\xE9daction de tests"
 weight: 36
 ---

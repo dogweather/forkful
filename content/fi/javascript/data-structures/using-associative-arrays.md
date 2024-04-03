@@ -2,13 +2,13 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:04.755768-07:00
-description: "Assosiatiiviset taulukot eli niin kuin Javascriptiss\xE4 tarkemmin tunnetaan,\
-  \ objektit, mahdollistavat avainten m\xE4\xE4rityksen arvoille. T\xE4m\xE4 on eritt\xE4\
-  in\u2026"
+description: "Kuinka: Assosiatiivisten taulukoiden (objektien) luominen ja k\xE4ytt\xE4\
+  minen Javascriptiss\xE4 on suoraviivaista. M\xE4\xE4rit\xE4t objektin k\xE4ytt\xE4\
+  en aaltosulkeita `{}`,\u2026"
 lastmod: '2024-03-13T22:44:56.942875-06:00'
 model: gpt-4-0125-preview
-summary: "Assosiatiiviset taulukot eli niin kuin Javascriptiss\xE4 tarkemmin tunnetaan,\
-  \ objektit, mahdollistavat avainten m\xE4\xE4rityksen arvoille."
+summary: "Assosiatiivisten taulukoiden (objektien) luominen ja k\xE4ytt\xE4minen Javascriptiss\xE4\
+  \ on suoraviivaista."
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---

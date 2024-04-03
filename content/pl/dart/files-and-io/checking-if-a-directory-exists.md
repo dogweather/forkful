@@ -2,14 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:03.432847-07:00
-description: "Sprawdzanie, czy katalog istnieje w j\u0119zyku Dart, polega na weryfikacji\
-  \ obecno\u015Bci katalogu pod okre\u015Blon\u0105 \u015Bcie\u017Ck\u0105 w systemie\
-  \ plik\xF3w przed wykonaniem\u2026"
+description: "Jak to zrobi\u0107: Dart u\u017Cywa biblioteki `dart:io` do pracy z\
+  \ plikami i katalogami. Oto prosty spos\xF3b, aby sprawdzi\u0107, czy katalog istnieje."
 lastmod: '2024-03-13T22:44:35.107796-06:00'
 model: gpt-4-0125-preview
-summary: "Sprawdzanie, czy katalog istnieje w j\u0119zyku Dart, polega na weryfikacji\
-  \ obecno\u015Bci katalogu pod okre\u015Blon\u0105 \u015Bcie\u017Ck\u0105 w systemie\
-  \ plik\xF3w przed wykonaniem operacji takich jak odczyt lub zapis plik\xF3w."
+summary: "Dart u\u017Cywa biblioteki `dart:io` do pracy z plikami i katalogami."
 title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---

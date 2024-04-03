@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:32.246542-07:00
-description: "\xC5 slette tegn som samsvarer med et bestemt m\xF8nster fra strenger\
-  \ i C handler om \xE5 fjerne alle forekomster av visse tegn som passer forh\xE5\
-  ndsdefinerte\u2026"
+description: "Hvordan: C kommer ikke med en innebygd funksjon for direkte \xE5 slette\
+  \ tegn fra en streng basert p\xE5 et m\xF8nster, ulikt noen h\xF8yere niv\xE5 spr\xE5\
+  k. Imidlertid kan\u2026"
 lastmod: '2024-03-13T22:44:41.253849-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 slette tegn som samsvarer med et bestemt m\xF8nster fra strenger i\
-  \ C handler om \xE5 fjerne alle forekomster av visse tegn som passer forh\xE5ndsdefinerte\
-  \ kriterier."
+summary: "C kommer ikke med en innebygd funksjon for direkte \xE5 slette tegn fra\
+  \ en streng basert p\xE5 et m\xF8nster, ulikt noen h\xF8yere niv\xE5 spr\xE5k."
 title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---

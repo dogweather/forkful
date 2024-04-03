@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:46:57.107413-07:00
-description: "Arredondar n\xFAmeros \xE9 reduzir um n\xFAmero para uma precis\xE3\
-  o espec\xEDfica. Programadores fazem isso para controlar a sa\xEDda num\xE9rica\
-  \ para leitura, fins de\u2026"
+description: "Como fazer: O arredondamento em TypeScript pode ser feito usando v\xE1\
+  rios m\xE9todos. Aqui est\xE1 uma r\xE1pida explica\xE7\xE3o."
 lastmod: '2024-03-13T22:44:46.320846-06:00'
 model: gpt-4-0125-preview
-summary: "Arredondar n\xFAmeros \xE9 reduzir um n\xFAmero para uma precis\xE3o espec\xED\
-  fica."
+summary: "O arredondamento em TypeScript pode ser feito usando v\xE1rios m\xE9todos."
 title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---

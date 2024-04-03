@@ -3,13 +3,12 @@ changelog:
 - 2024-01-28, dogweather, reviewed
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:23:59.921095-07:00
-description: "Interpolacja ci\u0105g\xF3w znak\xF3w to metoda osadzania wyra\u017C\
-  e\u0144 wewn\u0105trz litera\u0142\xF3w napis\xF3w. Programi\u015Bci u\u017Cywaj\u0105\
-  \ jej do dynamicznego wstawiania warto\u015Bci do ci\u0105g\xF3w\u2026"
+description: "Jak to zrobi\u0107: W Pythonie 3.6 i nowszych mo\u017Cna interpolowa\u0107\
+  \ ci\u0105gi znak\xF3w u\u017Cywaj\u0105c f-string\xF3w. Oto jak."
 lastmod: '2024-03-13T22:44:34.934628-06:00'
 model: gpt-4-0125-preview
-summary: "Interpolacja ci\u0105g\xF3w znak\xF3w to metoda osadzania wyra\u017Ce\u0144\
-  \ wewn\u0105trz litera\u0142\xF3w napis\xF3w."
+summary: "W Pythonie 3.6 i nowszych mo\u017Cna interpolowa\u0107 ci\u0105gi znak\xF3\
+  w u\u017Cywaj\u0105c f-string\xF3w."
 title: "Interpolacja \u0142a\u0144cucha znak\xF3w"
 weight: 8
 ---

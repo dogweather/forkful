@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:51.853224-07:00
-description: "De Read-Eval-Print Loop (REPL) is een eenvoudige, interactieve programmeeromgeving\
-  \ die individuele gebruikersinvoer neemt, deze evalueert en het resultaat\u2026"
+description: "Hoe te: Elm wordt niet geleverd met een ge\xEFntegreerde REPL. Echter,\
+  \ je kunt `elm repl` vanaf je opdrachtregel gebruiken om een Elm-sessie te starten\
+  \ nadat\u2026"
 lastmod: '2024-03-13T22:44:50.726373-06:00'
 model: gpt-4-0125-preview
-summary: De Read-Eval-Print Loop (REPL) is een eenvoudige, interactieve programmeeromgeving
-  die individuele gebruikersinvoer neemt, deze evalueert en het resultaat aan de gebruiker
-  teruggeeft.
+summary: "Elm wordt niet geleverd met een ge\xEFntegreerde REPL."
 title: Het gebruik van een interactieve shell (REPL)
 weight: 34
 ---

@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:33.726998-07:00
-description: "Les tableaux associatifs, \xE9galement connus sous le nom de tables\
-  \ de hachage ou de dictionnaires dans PowerShell, vous permettent de stocker des\
-  \ donn\xE9es en\u2026"
+description: "Comment faire : Cr\xE9er et utiliser des tableaux associatifs dans PowerShell\
+  \ est assez simple. Voici comment proc\xE9der : **Cr\xE9er un tableau associatif\
+  \ :**."
 lastmod: '2024-03-13T22:44:58.036177-06:00'
 model: gpt-4-0125-preview
-summary: "Les tableaux associatifs, \xE9galement connus sous le nom de tables de hachage\
-  \ ou de dictionnaires dans PowerShell, vous permettent de stocker des donn\xE9es\
-  \ en paires cl\xE9-valeur, rendant la r\xE9cup\xE9ration des donn\xE9es simple et\
-  \ efficace."
+summary: "Cr\xE9er et utiliser des tableaux associatifs dans PowerShell est assez\
+  \ simple."
 title: Utilisation des tableaux associatifs
 weight: 15
 ---

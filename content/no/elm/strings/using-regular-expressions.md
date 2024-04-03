@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:48.307178-07:00
-description: "Regul\xE6re uttrykk (regex) i programmering er m\xF8nstre brukt for\
-  \ \xE5 matche kombinasjoner av tegn i strenger. I Elm, akkurat som i andre spr\xE5\
-  k, bruker\u2026"
+description: "Hvordan: Elm har ikke innebygde regex-funksjoner i sitt kjernelager,\
+  \ noe som krever bruk av tredjepartsbiblioteker for disse operasjonene. Et av de\u2026"
 lastmod: '2024-03-13T22:44:40.698542-06:00'
 model: gpt-4-0125-preview
-summary: "Regul\xE6re uttrykk (regex) i programmering er m\xF8nstre brukt for \xE5\
-  \ matche kombinasjoner av tegn i strenger."
+summary: Elm har ikke innebygde regex-funksjoner i sitt kjernelager, noe som krever
+  bruk av tredjepartsbiblioteker for disse operasjonene.
 title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---

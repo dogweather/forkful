@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:07.618631-07:00
-description: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta Visual Basic for\
-  \ Applications (VBA) -ohjelmistossa tarkoittaa tekstin, joka esitt\xE4\xE4 p\xE4\
-  iv\xE4m\xE4\xE4r\xE4\xE4, muuntamista\u2026"
+description: "Kuinka: VBA tarjoaa yksinkertaisen tavan j\xE4sent\xE4\xE4 merkkijono\
+  \ p\xE4iv\xE4m\xE4\xE4r\xE4ksi k\xE4ytt\xE4m\xE4ll\xE4 `CDate`-funktiota tai `DateValue`-funktiota.\
+  \ On kuitenkin\u2026"
 lastmod: '2024-03-13T22:44:56.411053-06:00'
 model: gpt-4-0125-preview
-summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta Visual Basic for Applications\
-  \ (VBA) -ohjelmistossa tarkoittaa tekstin, joka esitt\xE4\xE4 p\xE4iv\xE4m\xE4\xE4\
-  r\xE4\xE4, muuntamista p\xE4iv\xE4m\xE4\xE4r\xE4tyyppiseksi tiedoksi."
+summary: "VBA tarjoaa yksinkertaisen tavan j\xE4sent\xE4\xE4 merkkijono p\xE4iv\xE4\
+  m\xE4\xE4r\xE4ksi k\xE4ytt\xE4m\xE4ll\xE4 `CDate`-funktiota tai `DateValue`-funktiota."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta"
 weight: 30
 ---

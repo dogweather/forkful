@@ -1,8 +1,7 @@
 ---
 date: 2024-01-26 03:48:00.348649-07:00
-description: "C++ integroituu debuggerien, kuten GDB:n tai Visual Studio debuggerin\
-  \ kanssa. T\xE4ss\xE4 on pieni esimerkki GDB:n k\xE4yt\xF6st\xE4: ```C++ #include\
-  \ <iostream> int\u2026"
+description: "Kuinka: C++ integroituu debuggerien, kuten GDB:n tai Visual Studio debuggerin\
+  \ kanssa. T\xE4ss\xE4 on pieni esimerkki GDB:n k\xE4yt\xF6st\xE4."
 lastmod: '2024-03-13T22:44:56.869684-06:00'
 model: gpt-4-0125-preview
 summary: C++ integroituu debuggerien, kuten GDB:n tai Visual Studio debuggerin kanssa.

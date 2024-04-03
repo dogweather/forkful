@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:55:11.546794-07:00
-description: "Ler um arquivo de texto em Rust \xE9 o processo de acessar e interpretar\
-  \ dados armazenados em arquivos no seu sistema de arquivos. Programadores fazem\
-  \ isso\u2026"
+description: 'Como Fazer: .'
 lastmod: '2024-03-13T22:44:46.385036-06:00'
 model: gpt-4-1106-preview
-summary: "Ler um arquivo de texto em Rust \xE9 o processo de acessar e interpretar\
-  \ dados armazenados em arquivos no seu sistema de arquivos."
+summary: .
 title: Lendo um arquivo de texto
 weight: 22
 ---

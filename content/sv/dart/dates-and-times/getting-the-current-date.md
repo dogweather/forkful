@@ -2,13 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:03.729636-07:00
-description: "Att h\xE4mta det aktuella datumet i Dart inneb\xE4r att man fr\xE5gar\
-  \ systemet efter det aktuella datumet och tiden. Denna funktionalitet anv\xE4nds\
-  \ vanligtvis i\u2026"
+description: "Hur man g\xF6r: Darts k\xE4rnbibliotek ger direkt \xE5tkomst till det\
+  \ aktuella datumet och tiden genom `DateTime`-klassen. H\xE4r \xE4r ett grundl\xE4\
+  ggande exempel f\xF6r att\u2026"
 lastmod: '2024-03-13T22:44:37.623389-06:00'
 model: gpt-4-0125-preview
-summary: "Att h\xE4mta det aktuella datumet i Dart inneb\xE4r att man fr\xE5gar systemet\
-  \ efter det aktuella datumet och tiden."
+summary: "Darts k\xE4rnbibliotek ger direkt \xE5tkomst till det aktuella datumet och\
+  \ tiden genom `DateTime`-klassen."
 title: "H\xE4mta aktuellt datum"
 weight: 29
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:13:16.840748-07:00
-description: "Associativa arrayer, k\xE4nda som ordb\xF6cker i Swift, l\xE5ter dig\
-  \ lagra och hantera data som nyckel-v\xE4rdepar. Programmerare anv\xE4nder dem f\xF6\
-  r att organisera data\u2026"
+description: "Hur man: Swift g\xF6r det enkelt att arbeta med associativa arrayer.\
+  \ S\xE5 h\xE4r kan du deklarera, l\xE4gga till, ta bort och komma \xE5t objekt i\
+  \ en Swift-ordbok."
 lastmod: '2024-03-13T22:44:38.244314-06:00'
 model: gpt-4-0125-preview
-summary: "Associativa arrayer, k\xE4nda som ordb\xF6cker i Swift, l\xE5ter dig lagra\
-  \ och hantera data som nyckel-v\xE4rdepar."
+summary: "Swift g\xF6r det enkelt att arbeta med associativa arrayer."
 title: "Att anv\xE4nda associativa arrayer"
 weight: 15
 ---

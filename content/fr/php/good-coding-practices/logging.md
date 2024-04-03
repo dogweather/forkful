@@ -1,14 +1,12 @@
 ---
 date: 2024-01-26 01:07:09.884379-07:00
-description: "La journalisation est en gros l'\xE9quivalent de tenir un journal pour\
-  \ votre code ; c'est l'action d'enregistrer des \xE9v\xE9nements, des erreurs et\
-  \ d'autres\u2026"
+description: "Comment faire : PHP est livr\xE9 avec une fonction int\xE9gr\xE9e de\
+  \ journalisation d'erreurs qui est facile \xE0 utiliser. Il suffit d'ins\xE9rer\
+  \ `error_log()` dans\u2026"
 lastmod: '2024-03-13T22:44:57.885602-06:00'
 model: gpt-4-1106-preview
-summary: "La journalisation est en gros l'\xE9quivalent de tenir un journal pour votre\
-  \ code ; c'est l'action d'enregistrer des \xE9v\xE9nements, des erreurs et d'autres\
-  \ points de donn\xE9es significatifs qui se produisent lorsque votre application\
-  \ fonctionne."
+summary: "PHP est livr\xE9 avec une fonction int\xE9gr\xE9e de journalisation d'erreurs\
+  \ qui est facile \xE0 utiliser."
 title: Journalisation
 weight: 17
 ---

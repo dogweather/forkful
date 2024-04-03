@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:36.094510-07:00
-description: "Vi\u1EC7c t\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai\
-  \ ho\u1EB7c qu\xE1 kh\u1EE9 c\xF3 ngh\u0129a l\xE0 t\xECm ra l\u1ECBch s\u1EBD hi\u1EC3\
-  n th\u1ECB nh\u01B0 th\u1EBF n\xE0o sau ho\u1EB7c tr\u01B0\u1EDBc m\u1ED9t kho\u1EA3\
-  ng th\u1EDDi gian c\u1EE5 th\u1EC3. C\xE1c l\u1EADp\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Rust s\u1EED d\u1EE5ng crate `chrono` cho\
+  \ m\u1ECDi nhu c\u1EA7u v\u1EC1 ng\xE0y gi\u1EDD c\u1EE7a b\u1EA1n. D\u01B0\u1EDB\
+  i \u0111\xE2y l\xE0 c\xE1ch \u0111\u1EC3 th\xEAm ho\u1EB7c tr\u1EEB m\u1ED9t ng\xE0\
+  y."
 lastmod: '2024-03-13T22:44:36.394208-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c t\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7\
-  c qu\xE1 kh\u1EE9 c\xF3 ngh\u0129a l\xE0 t\xECm ra l\u1ECBch s\u1EBD hi\u1EC3n th\u1ECB\
-  \ nh\u01B0 th\u1EBF n\xE0o sau ho\u1EB7c tr\u01B0\u1EDBc m\u1ED9t kho\u1EA3ng th\u1EDD\
-  i gian c\u1EE5 th\u1EC3."
+summary: "Rust s\u1EED d\u1EE5ng crate `chrono` cho m\u1ECDi nhu c\u1EA7u v\u1EC1\
+  \ ng\xE0y gi\u1EDD c\u1EE7a b\u1EA1n."
 title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1EE9"
 weight: 26
 ---

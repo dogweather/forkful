@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:35.949534-07:00
-description: "Regulj\xE4ra uttryck, ett kraftfullt verktyg f\xF6r m\xF6nsterigenk\xE4\
-  nning och datahantering, \xE4r essentiella i textbehandlingsuppgifter s\xE5som att\
-  \ validera\u2026"
+description: "Hur: Clojure, som h\xE5ller sig trogen till sina r\xF6tter i Lisp-familjen,\
+  \ erbjuder ett rikt utbud av funktioner som integrerar s\xF6ml\xF6st med Javas m\xF6\
+  jligheter\u2026"
 lastmod: '2024-03-13T22:44:37.515310-06:00'
 model: gpt-4-0125-preview
-summary: "Regulj\xE4ra uttryck, ett kraftfullt verktyg f\xF6r m\xF6nsterigenk\xE4\
-  nning och datahantering, \xE4r essentiella i textbehandlingsuppgifter s\xE5som att\
-  \ validera inmatning, s\xF6ka och ers\xE4tta text."
+summary: "Clojure, som h\xE5ller sig trogen till sina r\xF6tter i Lisp-familjen, erbjuder\
+  \ ett rikt utbud av funktioner som integrerar s\xF6ml\xF6st med Javas m\xF6jligheter\
+  \ f\xF6r regulj\xE4ra uttryck."
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---

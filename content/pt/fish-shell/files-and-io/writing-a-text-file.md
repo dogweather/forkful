@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:47.596780-07:00
-description: "Escrever em um arquivo de texto no Fish Shell permite armazenar dados\
-  \ de forma persistente, facilitando a recupera\xE7\xE3o ou manipula\xE7\xE3o de\
-  \ dados tanto pelo\u2026"
+description: "Como fazer: Para escrever em um arquivo de texto no Fish, voc\xEA pode\
+  \ usar o comando `echo` combinado com operadores de redirecionamento. N\xE3o existem\u2026"
 lastmod: '2024-03-13T22:44:47.024001-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever em um arquivo de texto no Fish Shell permite armazenar dados de\
-  \ forma persistente, facilitando a recupera\xE7\xE3o ou manipula\xE7\xE3o de dados\
-  \ tanto pelo mesmo script Fish quanto por outros programas."
+summary: "Para escrever em um arquivo de texto no Fish, voc\xEA pode usar o comando\
+  \ `echo` combinado com operadores de redirecionamento."
 title: Escrevendo um arquivo de texto
 weight: 24
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 03:42:30.115072-07:00
-description: "Remover aspas de uma string significa retirar quaisquer aspas que envolvam\
-  \ o conte\xFAdo. Fazemos isso para higienizar entradas, preparar dados para\u2026"
+description: "Como fazer: Swift permite que voc\xEA realize a tarefa de remo\xE7\xE3\
+  o de aspas de maneira bastante pr\xE1tica. Aqui est\xE1 um exemplo r\xE1pido usando\u2026"
 lastmod: '2024-03-13T22:44:46.909170-06:00'
 model: gpt-4-0125-preview
-summary: "Remover aspas de uma string significa retirar quaisquer aspas que envolvam\
-  \ o conte\xFAdo."
+summary: "Swift permite que voc\xEA realize a tarefa de remo\xE7\xE3o de aspas de\
+  \ maneira bastante pr\xE1tica."
 title: Removendo aspas de uma string
 weight: 9
 ---

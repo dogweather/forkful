@@ -2,13 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:02.320492-07:00
-description: "Scrivere test in Clojure, cos\xEC come in altri linguaggi di programmazione,\
-  \ comporta la creazione di codice dedicato per verificare che il tuo codice\u2026"
+description: "Come fare: Clojure, sfruttando la JVM, supporta vari framework di testing.\
+  \ Tuttavia, una libreria integrata comunemente usata \xE8 `clojure.test`. Ecco un\u2026"
 lastmod: '2024-03-13T22:44:43.045634-06:00'
 model: gpt-4-0125-preview
-summary: "Scrivere test in Clojure, cos\xEC come in altri linguaggi di programmazione,\
-  \ comporta la creazione di codice dedicato per verificare che il tuo codice principale\
-  \ funzioni come previsto."
+summary: Clojure, sfruttando la JVM, supporta vari framework di testing.
 title: Scrivere test
 weight: 36
 ---

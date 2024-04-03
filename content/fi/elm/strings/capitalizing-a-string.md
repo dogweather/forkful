@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:59.527923-07:00
-description: "Merkkijonon alkukirjaimen muuttaminen isoksi muuttaa annetun merkkijonon\
-  \ ensimm\xE4isen merkin isoksi kirjaimeksi samalla, kun loput merkit j\xE4tet\xE4\
-  \xE4n pieniksi\u2026"
+description: "Kuinka: Elmiss\xE4 ei ole sis\xE4\xE4nrakennettua funktiota merkkijonojen\
+  \ alkukirjaimen suurentamiseen. Voit kuitenkin saavuttaa t\xE4m\xE4n helposti k\xE4\
+  ytt\xE4m\xE4ll\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.471245-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonon alkukirjaimen muuttaminen isoksi muuttaa annetun merkkijonon\
-  \ ensimm\xE4isen merkin isoksi kirjaimeksi samalla, kun loput merkit j\xE4tet\xE4\
-  \xE4n pieniksi kirjaimiksi."
+summary: "Elmiss\xE4 ei ole sis\xE4\xE4nrakennettua funktiota merkkijonojen alkukirjaimen\
+  \ suurentamiseen."
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---

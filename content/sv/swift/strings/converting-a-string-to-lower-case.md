@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:39:10.145203-07:00
-description: "Att konvertera en str\xE4ng till gemener inneb\xE4r att alla stora bokst\xE4\
-  ver i str\xE4ngen omvandlas till sm\xE5 bokst\xE4ver. Programmerare g\xF6r detta\
-  \ f\xF6r att\u2026"
+description: "S\xE5 h\xE4r g\xF6r du: ."
 lastmod: '2024-03-13T22:44:38.238573-06:00'
 model: gpt-4-1106-preview
-summary: "Att konvertera en str\xE4ng till gemener inneb\xE4r att alla stora bokst\xE4\
-  ver i str\xE4ngen omvandlas till sm\xE5 bokst\xE4ver."
+summary: .
 title: "Konvertera en str\xE4ng till gemener"
 weight: 4
 ---

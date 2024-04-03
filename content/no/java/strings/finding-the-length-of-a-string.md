@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 17:47:34.598880-07:00
-description: "Finne lengden p\xE5 en streng betyr \xE5 telle antall tegn den inneholder.\
-  \ Programmerere trenger dette for validering, looping og manipulering av tekstdata."
+description: "How to: I Java bruker du `.length()`-metoden for \xE5 f\xE5 lengden\
+  \ p\xE5 en streng. Her er et enkelt eksempel."
 lastmod: '2024-03-13T22:44:40.657320-06:00'
 model: gpt-4-1106-preview
-summary: "Finne lengden p\xE5 en streng betyr \xE5 telle antall tegn den inneholder."
+summary: "I Java bruker du `.length()`-metoden for \xE5 f\xE5 lengden p\xE5 en streng."
 title: "Finn lengden p\xE5 en streng"
 weight: 7
 ---

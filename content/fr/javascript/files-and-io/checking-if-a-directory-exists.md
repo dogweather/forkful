@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:46.602487-07:00
-description: "V\xE9rifier si un r\xE9pertoire existe en JavaScript est essentiel pour\
-  \ les t\xE2ches de manipulation de fichiers, permettant aux scripts de v\xE9rifier\
-  \ la pr\xE9sence\u2026"
+description: "Comment : En Node.js, puisque JavaScript n'a pas directement acc\xE8\
+  s au syst\xE8me de fichiers, le module `fs` est g\xE9n\xE9ralement utilis\xE9 pour\
+  \ de telles\u2026"
 lastmod: '2024-03-13T22:44:58.291108-06:00'
 model: gpt-4-0125-preview
-summary: "V\xE9rifier si un r\xE9pertoire existe en JavaScript est essentiel pour\
-  \ les t\xE2ches de manipulation de fichiers, permettant aux scripts de v\xE9rifier\
-  \ la pr\xE9sence du r\xE9pertoire avant de le lire ou d'y \xE9crire."
+summary: "En Node.js, puisque JavaScript n'a pas directement acc\xE8s au syst\xE8\
+  me de fichiers, le module `fs` est g\xE9n\xE9ralement utilis\xE9 pour de telles\
+  \ op\xE9rations."
 title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---

@@ -1,8 +1,7 @@
 ---
 date: 2024-01-26 03:48:41.528340-07:00
-description: "O Fish n\xE3o possui um depurador embutido como alguns outros shells,\
-  \ mas voc\xEA pode usar ferramentas externas como `gdb` para depurar programas compilados\
-  \ ou\u2026"
+description: "Como fazer: O Fish n\xE3o possui um depurador embutido como alguns outros\
+  \ shells, mas voc\xEA pode usar ferramentas externas como `gdb` para depurar programas\u2026"
 lastmod: '2024-03-13T22:44:47.010484-06:00'
 model: gpt-4-0125-preview
 summary: "O Fish n\xE3o possui um depurador embutido como alguns outros shells, mas\

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-30 18:57:38.017965-07:00
-description: "Associative arrays, or hash maps, in Clojure allow you to store and\
-  \ retrieve data with key-value pairs. They are a go-to for managing structured data,\u2026"
+description: 'How to: In Clojure, creating and manipulating associative arrays (hash
+  maps) is straightforward. Let''s dive in with examples. To create a hash map.'
 lastmod: '2024-03-13T22:44:59.738963-06:00'
 model: gpt-4-0125-preview
-summary: Associative arrays, or hash maps, in Clojure allow you to store and retrieve
-  data with key-value pairs.
+summary: In Clojure, creating and manipulating associative arrays (hash maps) is straightforward.
 title: Using associative arrays
 weight: 15
 ---

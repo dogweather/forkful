@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 01:16:22.243342-07:00
-description: "Koodin j\xE4rjest\xE4minen funktioihin jakaa skriptisi uudelleenk\xE4\
-  ytett\xE4viin osiin. Kaikki on kiinni siit\xE4, ett\xE4 koodisi on siisti\xE4, hallittavaa\
-  \ ja v\xE4hemm\xE4n\u2026"
+description: "Kuinka: Kuvittele, ett\xE4 kirjoitat pikaskriptin k\xE4ytt\xE4jien tervehtimiseen."
 lastmod: '2024-03-13T22:44:57.092416-06:00'
 model: gpt-4-0125-preview
-summary: "Koodin j\xE4rjest\xE4minen funktioihin jakaa skriptisi uudelleenk\xE4ytett\xE4\
-  viin osiin."
+summary: "Kuvittele, ett\xE4 kirjoitat pikaskriptin k\xE4ytt\xE4jien tervehtimiseen."
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---

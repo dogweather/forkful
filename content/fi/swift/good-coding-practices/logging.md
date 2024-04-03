@@ -1,13 +1,13 @@
 ---
 date: 2024-01-26 01:09:07.334748-07:00
-description: "Lokitus on sovellusten toimintaa, virheit\xE4 ja muita t\xE4rkeit\xE4\
-  \ tietoja tallentavan prosessin kirjaamista pysyv\xE4\xE4n muotoon, kuten tiedostoon\
-  \ tai\u2026"
+description: "Kuinka: Swiftiss\xE4 voit kirjoittaa lokeja konsoliin print-lauseilla\
+  \ tai joustavammalla `os.log`-rajapinnalla, joka kytkeytyy Applen alustoilla k\xE4\
+  ytett\xE4v\xE4\xE4n\u2026"
 lastmod: '2024-03-13T22:44:56.913148-06:00'
 model: gpt-4-1106-preview
-summary: "Lokitus on sovellusten toimintaa, virheit\xE4 ja muita t\xE4rkeit\xE4 tietoja\
-  \ tallentavan prosessin kirjaamista pysyv\xE4\xE4n muotoon, kuten tiedostoon tai\
-  \ tietokantaan."
+summary: "Swiftiss\xE4 voit kirjoittaa lokeja konsoliin print-lauseilla tai joustavammalla\
+  \ `os.log`-rajapinnalla, joka kytkeytyy Applen alustoilla k\xE4ytett\xE4v\xE4\xE4\
+  n yhdistettyyn lokitusj\xE4rjestelm\xE4\xE4n (Unified Logging System)."
 title: Lokitus
 weight: 17
 ---

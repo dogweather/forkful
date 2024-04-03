@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:50.704373-07:00
-description: "Het verwijderen van tekens op basis van een patroon maakt strings schoon\
-  \ en uniform. Programmeurs doen dit voor formattering, het verwijderen van\u2026"
+description: 'Hoe te: Gebruik `replace()` met een reguliere expressie. De `g` vlag
+  vervangt alle overeenkomsten, niet alleen de eerste.'
 lastmod: '2024-03-13T22:44:51.184155-06:00'
 model: gpt-4-0125-preview
-summary: Het verwijderen van tekens op basis van een patroon maakt strings schoon
-  en uniform.
+summary: Gebruik `replace()` met een reguliere expressie.
 title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---

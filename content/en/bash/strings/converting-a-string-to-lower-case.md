@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:37:41.148972-07:00
-description: "String lowercasing is transforming all alphabet characters in a string\
-  \ to their lower case form. Programmers lower case strings for consistency,\u2026"
+description: 'How to: Here''s the simple way to convert a string to lower case in
+  Bash.'
 lastmod: '2024-03-13T22:45:00.231474-06:00'
 model: gpt-4-1106-preview
-summary: String lowercasing is transforming all alphabet characters in a string to
-  their lower case form.
+summary: Here's the simple way to convert a string to lower case in Bash.
 title: Converting a string to lower case
 weight: 4
 ---

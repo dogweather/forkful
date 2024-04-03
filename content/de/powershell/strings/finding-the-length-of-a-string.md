@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:47:53.967215-07:00
-description: "Die L\xE4nge eines Strings zu finden bedeutet, die Anzahl der Zeichen\
-  \ zu z\xE4hlen, die er enth\xE4lt. Programmierer nutzen diese Information h\xE4\
-  ufig, um Eingaben\u2026"
+description: "How to: PowerShell macht es einfach. Verwende die `.Length`-Eigenschaft\
+  \ eines Strings, um seine L\xE4nge zu erhalten."
 lastmod: '2024-03-13T22:44:54.092609-06:00'
 model: gpt-4-1106-preview
-summary: "Die L\xE4nge eines Strings zu finden bedeutet, die Anzahl der Zeichen zu\
-  \ z\xE4hlen, die er enth\xE4lt."
+summary: PowerShell macht es einfach.
 title: "Ermittlung der Zeichenkettenl\xE4nge"
 weight: 7
 ---

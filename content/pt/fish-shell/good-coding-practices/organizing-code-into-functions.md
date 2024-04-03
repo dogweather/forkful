@@ -3,13 +3,12 @@ changelog:
 - 2024-01-28, dogweather, reviewed and added links
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 23:01:27.474205-07:00
-description: "Organizar o c\xF3digo em fun\xE7\xF5es \xE9 sobre agrupar peda\xE7os\
-  \ de script para realizar tarefas espec\xEDficas. Fazemos isso porque torna o c\xF3\
-  digo mais f\xE1cil de ler,\u2026"
+description: "Como fazer: No Fish, voc\xEA escreve uma fun\xE7\xE3o com a palavra-chave\
+  \ `function`, d\xE1 um nome a ela e termina com `end`. Aqui est\xE1 uma simples."
 lastmod: '2024-03-13T22:44:47.011554-06:00'
 model: gpt-4-0125-preview
-summary: "Organizar o c\xF3digo em fun\xE7\xF5es \xE9 sobre agrupar peda\xE7os de\
-  \ script para realizar tarefas espec\xEDficas."
+summary: "No Fish, voc\xEA escreve uma fun\xE7\xE3o com a palavra-chave `function`,\
+  \ d\xE1 um nome a ela e termina com `end`."
 title: "Organizando c\xF3digo em fun\xE7\xF5es"
 weight: 18
 ---

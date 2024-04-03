@@ -2,15 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:07.141714-07:00
-description: "Vi\u1EC7c chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7\
-  i trong PowerShell c\xF3 ngh\u0129a l\xE0 thay \u0111\u1ED5i \u0111\u1ED1i t\u01B0\
-  \u1EE3ng `DateTime` th\xE0nh \u0111\u1ECBnh d\u1EA1ng v\u0103n b\u1EA3n. L\u1EAD\
-  p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EC3 chuy\u1EC3n m\u1ED9t ng\xE0y th\xE0\
+  nh chu\u1ED7i, ch\xFAng ta s\u1EED d\u1EE5ng ph\u01B0\u01A1ng th\u1EE9c `ToString`\
+  \ ho\u1EB7c to\xE1n t\u1EED \u0111\u1ECBnh d\u1EA1ng `-f`. D\u01B0\u1EDBi \u0111\
+  \xE2y l\xE0 c\xE1ch th\u1EE9c."
 lastmod: '2024-03-13T22:44:36.951419-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7\
-  i trong PowerShell c\xF3 ngh\u0129a l\xE0 thay \u0111\u1ED5i \u0111\u1ED1i t\u01B0\
-  \u1EE3ng `DateTime` th\xE0nh \u0111\u1ECBnh d\u1EA1ng v\u0103n b\u1EA3n."
+summary: "\u0110\u1EC3 chuy\u1EC3n m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i, ch\xFAng\
+  \ ta s\u1EED d\u1EE5ng ph\u01B0\u01A1ng th\u1EE9c `ToString` ho\u1EB7c to\xE1n t\u1EED\
+  \ \u0111\u1ECBnh d\u1EA1ng `-f`."
 title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 weight: 28
 ---

@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:28.799151-07:00
-description: "Vi\u1EC7c t\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i ngh\u0129\
-  a l\xE0 \u0111\u1EBFm s\u1ED1 l\u01B0\u1EE3ng k\xFD t\u1EF1 c\u1EE7a n\xF3. C\xE1\
-  c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 x\xE1c th\u1EF1\
-  c \u0111\u1EA7u v\xE0o, l\u1EB7p qua c\xE1c k\xFD t\u1EF1, ho\u1EB7c \u0111\u01A1\
-  n gi\u1EA3n\u2026"
+description: "C\xE1ch Th\u1EF1c Hi\u1EC7n: Bi\u1EC3u t\u01B0\u1EE3ng `#` c\xF3 th\u1EC3\
+  \ gi\xFAp b\u1EA1n ho\xE0n th\xE0nh c\xF4ng vi\u1EC7c trong bash. S\u1EED d\u1EE5\
+  ng n\xF3 v\u1EDBi s\u1EF1 m\u1EDF r\u1ED9ng tham s\u1ED1. D\u01B0\u1EDBi \u0111\xE2\
+  y l\xE0 c\xE1ch l\xE0m."
 lastmod: '2024-03-13T22:44:36.864554-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c t\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i ngh\u0129\
-  a l\xE0 \u0111\u1EBFm s\u1ED1 l\u01B0\u1EE3ng k\xFD t\u1EF1 c\u1EE7a n\xF3."
+summary: "Bi\u1EC3u t\u01B0\u1EE3ng `#` c\xF3 th\u1EC3 gi\xFAp b\u1EA1n ho\xE0n th\xE0\
+  nh c\xF4ng vi\u1EC7c trong bash."
 title: "T\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
 weight: 7
 ---

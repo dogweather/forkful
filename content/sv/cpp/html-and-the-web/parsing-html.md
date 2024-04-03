@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:38.647184-07:00
-description: "Att tolka HTML inneb\xE4r att bryta ner HTML-inneh\xE5ll till n\xE5\
-  got som ett program kan f\xF6rst\xE5 och manipulera. Programmerare g\xF6r detta\
-  \ f\xF6r att extrahera data,\u2026"
+description: "Hur man g\xF6r: C++ kommer inte med inbyggda funktioner f\xF6r att tolka\
+  \ HTML. Du kommer ofta att anv\xE4nda ett bibliotek som Gumbo-parser fr\xE5n Google,\
+  \ eller\u2026"
 lastmod: '2024-03-13T22:44:38.206977-06:00'
 model: gpt-4-0125-preview
-summary: "Att tolka HTML inneb\xE4r att bryta ner HTML-inneh\xE5ll till n\xE5got som\
-  \ ett program kan f\xF6rst\xE5 och manipulera."
+summary: "C++ kommer inte med inbyggda funktioner f\xF6r att tolka HTML."
 title: Tolka HTML
 weight: 43
 ---

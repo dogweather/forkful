@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 01:04:16.348341-07:00
-description: "El registro (logging) en programaci\xF3n es esencialmente dejar un rastro\
-  \ de migajas de pan en forma de eventos o mensajes registrados, los cuales se pueden\u2026"
+description: "C\xF3mo hacerlo: En Haskell, el registro se puede implementar utilizando\
+  \ bibliotecas como `monad-logger` o `hslogger`. Aqu\xED hay un ejemplo r\xE1pido\
+  \ utilizando\u2026"
 lastmod: '2024-03-13T22:44:59.125125-06:00'
 model: gpt-4-1106-preview
-summary: "El registro (logging) en programaci\xF3n es esencialmente dejar un rastro\
-  \ de migajas de pan en forma de eventos o mensajes registrados, los cuales se pueden\
-  \ usar para rastrear lo que tu aplicaci\xF3n est\xE1 haciendo en cualquier momento\
-  \ dado."
+summary: En Haskell, el registro se puede implementar utilizando bibliotecas como
+  `monad-logger` o `hslogger`.
 title: "Registro de Actividades en Programaci\xF3n"
 weight: 17
 ---

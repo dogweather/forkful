@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:13:10.230636-07:00
-description: "Arrays associativos, conhecidos como dicion\xE1rios em Swift, permitem\
-  \ armazenar e gerenciar dados em pares chave-valor. Programadores os usam para organizar\u2026"
+description: "Como fazer: Swift torna o trabalho com arrays associativos direto. Veja\
+  \ como voc\xEA pode declarar, adicionar, remover e acessar itens em um dicion\xE1\
+  rio Swift."
 lastmod: '2024-03-13T22:44:46.913828-06:00'
 model: gpt-4-0125-preview
-summary: "Arrays associativos, conhecidos como dicion\xE1rios em Swift, permitem armazenar\
-  \ e gerenciar dados em pares chave-valor."
+summary: Swift torna o trabalho com arrays associativos direto.
 title: Usando arrays associativos
 weight: 15
 ---

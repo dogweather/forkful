@@ -1,13 +1,9 @@
 ---
 date: 2024-01-26 03:38:27.376379-07:00
-description: "\xC5 fjerne anf\xF8rselstegn fra en streng i C# betyr at du tar bort\
-  \ de plagsomme doble (`\"`) eller enkle (`'`) anf\xF8rselstegnene som omslutter\
-  \ teksten din.\u2026"
+description: 'Hvordan: .'
 lastmod: '2024-03-13T22:44:40.783012-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 fjerne anf\xF8rselstegn fra en streng i C# betyr at du tar bort de\
-  \ plagsomme doble (`\"`) eller enkle (`'`) anf\xF8rselstegnene som omslutter teksten\
-  \ din."
+summary: .
 title: "Fjerne anf\xF8rselstegn fra en streng"
 weight: 9
 ---

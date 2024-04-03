@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:25.827247-07:00
-description: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n cho ph\xE9p b\u1EA1\
-  n t\xECm c\xE1c chu\u1ED7i c\u1EE5 th\u1EC3 v\xE0 \u0111\u1ED5i ch\xFAng th\xE0\
-  nh m\u1ED9t c\xE1i g\xEC kh\xE1c. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3\
-  \ cho m\u1ECDi th\u1EE9 t\u1EEB s\u1EEDa l\u1ED7i ch\xEDnh\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Elm, b\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5\
+  ng module `String` \u0111\u1EC3 thay th\u1EBF c\xE1c ph\u1EA7n c\u1EE7a m\u1ED9\
+  t chu\u1ED7i. H\xE3y xem n\xF3 ho\u1EA1t \u0111\u1ED9ng nh\u01B0 th\u1EBF n\xE0\
+  o."
 lastmod: '2024-03-13T22:44:36.524378-06:00'
 model: gpt-4-0125-preview
-summary: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n cho ph\xE9p b\u1EA1\
-  n t\xECm c\xE1c chu\u1ED7i c\u1EE5 th\u1EC3 v\xE0 \u0111\u1ED5i ch\xFAng th\xE0\
-  nh m\u1ED9t c\xE1i g\xEC kh\xE1c."
+summary: "Trong Elm, b\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng module `String` \u0111\
+  \u1EC3 thay th\u1EBF c\xE1c ph\u1EA7n c\u1EE7a m\u1ED9t chu\u1ED7i."
 title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
 weight: 10
 ---

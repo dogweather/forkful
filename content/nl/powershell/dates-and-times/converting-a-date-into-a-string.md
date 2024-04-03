@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:44.093789-07:00
-description: "Een datum naar een string converteren in PowerShell betekent het veranderen\
-  \ van een `DateTime` object naar een tekstformaat. Programmeurs doen dit om\u2026"
+description: 'Hoe te: Om een datum naar een string om te zetten, gebruiken we de `ToString`
+  methode of de `-f` opmaakoperator. Hier is hoe.'
 lastmod: '2024-03-13T22:44:51.041596-06:00'
 model: gpt-4-0125-preview
-summary: Een datum naar een string converteren in PowerShell betekent het veranderen
-  van een `DateTime` object naar een tekstformaat.
+summary: Om een datum naar een string om te zetten, gebruiken we de `ToString` methode
+  of de `-f` opmaakoperator.
 title: Een datum converteren naar een string
 weight: 28
 ---

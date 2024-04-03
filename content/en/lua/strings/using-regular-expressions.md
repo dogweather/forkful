@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:03:19.668689-07:00
-description: "Regular expressions in programming allow for pattern matching and manipulation\
-  \ of strings based on specific patterns. Programmers use them for tasks like\u2026"
+description: "How to: Lua does not support regular expressions natively in the same\
+  \ way as languages like Perl or Python. Instead, it offers pattern matching\u2026"
 lastmod: '2024-03-13T22:45:00.196217-06:00'
 model: gpt-4-0125-preview
-summary: Regular expressions in programming allow for pattern matching and manipulation
-  of strings based on specific patterns.
+summary: Lua does not support regular expressions natively in the same way as languages
+  like Perl or Python.
 title: Using regular expressions
 weight: 11
 ---

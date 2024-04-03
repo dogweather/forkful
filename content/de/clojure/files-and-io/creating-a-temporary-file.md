@@ -1,13 +1,9 @@
 ---
 date: 2024-01-20 17:40:03.175050-07:00
-description: "Tempor\xE4re Dateien dienen dazu, Daten zwischenzuspeichern, die w\xE4\
-  hrend der Laufzeit eines Programms ben\xF6tigt, aber nicht dauerhaft gespeichert\
-  \ werden\u2026"
+description: "How to: Erzeugen einer tempor\xE4ren Datei in Clojure."
 lastmod: '2024-03-13T22:44:53.439558-06:00'
 model: gpt-4-1106-preview
-summary: "Tempor\xE4re Dateien dienen dazu, Daten zwischenzuspeichern, die w\xE4hrend\
-  \ der Laufzeit eines Programms ben\xF6tigt, aber nicht dauerhaft gespeichert werden\
-  \ sollen."
+summary: "Erzeugen einer tempor\xE4ren Datei in Clojure."
 title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---

@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:22.951935-07:00
-description: "Str\xE4nginterpolering i Google Apps Script m\xF6jligg\xF6r dynamisk\
-  \ inb\xE4ddning av uttryck inom str\xE4ngar, vilket underl\xE4ttar skapandet av\
-  \ mer l\xE4sbar och\u2026"
+description: "Hur man g\xF6r: I Google Apps Script uppn\xE5s str\xE4nginterpolering\
+  \ genom malliteraler. Dessa \xE4r str\xE4ngliteraler som till\xE5ter inb\xE4ddade\
+  \ uttryck, betecknade av\u2026"
 lastmod: '2024-03-13T22:44:37.422727-06:00'
 model: gpt-4-0125-preview
-summary: "Str\xE4nginterpolering i Google Apps Script m\xF6jligg\xF6r dynamisk inb\xE4\
-  ddning av uttryck inom str\xE4ngar, vilket underl\xE4ttar skapandet av mer l\xE4\
-  sbar och underh\xE5llbar kod."
+summary: "I Google Apps Script uppn\xE5s str\xE4nginterpolering genom malliteraler."
 title: "Interpolering av en str\xE4ng"
 weight: 8
 ---

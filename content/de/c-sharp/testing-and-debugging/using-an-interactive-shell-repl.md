@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 04:12:11.714086-07:00
-description: "Ein REPL oder Read-Eval-Print Loop erm\xF6glicht es Ihnen, C#-Code zu\
-  \ tippen und diesen interaktiv auszuf\xFChren. Programmierer nutzen es f\xFCr schnelle\u2026"
+description: "Wie geht das: Starten Sie ein REPL in Ihrer C#-Umgebung, indem Sie das\
+  \ C# Interactive-Fenster verwenden oder `dotnet-script` in Ihrem Terminal ausf\xFC\
+  hren.\u2026"
 lastmod: '2024-03-13T22:44:53.889861-06:00'
 model: gpt-4-0125-preview
-summary: "Ein REPL oder Read-Eval-Print Loop erm\xF6glicht es Ihnen, C#-Code zu tippen\
-  \ und diesen interaktiv auszuf\xFChren."
+summary: "Starten Sie ein REPL in Ihrer C#-Umgebung, indem Sie das C# Interactive-Fenster\
+  \ verwenden oder `dotnet-script` in Ihrem Terminal ausf\xFChren."
 title: Nutzung einer interaktiven Shell (REPL)
 weight: 34
 ---

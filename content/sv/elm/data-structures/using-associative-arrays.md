@@ -2,14 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:01.848732-07:00
-description: "Associativa arrayer, eller som Elm kallar dem, Ordb\xF6cker, mappar\
-  \ nycklar till v\xE4rden p\xE5 ett s\xE4tt som g\xF6r uppslag, infogning och borttagning\
-  \ av v\xE4rden\u2026"
+description: "Hur man g\xF6r: I Elm arbetar du med Ordb\xF6cker i `Dict`-modulen,\
+  \ s\xE5 l\xE5t oss dyka in i ett snabbt exempel."
 lastmod: '2024-03-13T22:44:37.822242-06:00'
 model: gpt-4-0125-preview
-summary: "Associativa arrayer, eller som Elm kallar dem, Ordb\xF6cker, mappar nycklar\
-  \ till v\xE4rden p\xE5 ett s\xE4tt som g\xF6r uppslag, infogning och borttagning\
-  \ av v\xE4rden supersmidigt."
+summary: "I Elm arbetar du med Ordb\xF6cker i `Dict`-modulen, s\xE5 l\xE5t oss dyka\
+  \ in i ett snabbt exempel."
 title: "Att anv\xE4nda associativa arrayer"
 weight: 15
 ---

@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:53:08.069507-07:00
-description: "Att skriva ut debuginformation inneb\xE4r att visa vad som h\xE4nder\
-  \ i din kod under k\xF6rningen. Programmerare g\xF6r detta f\xF6r att f\xF6rst\xE5\
-  \ fl\xF6det, hitta buggar och\u2026"
+description: "How to: Du kan anv\xE4nda `print()` f\xF6r enklast m\xF6jliga debug."
 lastmod: '2024-03-13T22:44:37.485685-06:00'
 model: gpt-4-1106-preview
-summary: "Att skriva ut debuginformation inneb\xE4r att visa vad som h\xE4nder i din\
-  \ kod under k\xF6rningen."
+summary: "Du kan anv\xE4nda `print()` f\xF6r enklast m\xF6jliga debug."
 title: "Skriva ut fels\xF6kningsdata"
 weight: 33
 ---

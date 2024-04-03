@@ -1,13 +1,13 @@
 ---
 date: 2024-01-26 01:03:15.155397-07:00
-description: "Registrar (logging) \xE9 essencialmente o processo de grava\xE7\xE3\
-  o de eventos e sa\xEDdas de dados de um software enquanto ele est\xE1 em execu\xE7\
-  \xE3o, pense nisso como o\u2026"
+description: "Como fazer: A arquitetura do Elm n\xE3o suporta efeitos colaterais como\
+  \ o registro imediatamente - voc\xEA os gerencia por meio de comandos, que s\xE3\
+  o uma parte\u2026"
 lastmod: '2024-03-13T22:44:46.506745-06:00'
 model: gpt-4-1106-preview
-summary: "Registrar (logging) \xE9 essencialmente o processo de grava\xE7\xE3o de\
-  \ eventos e sa\xEDdas de dados de um software enquanto ele est\xE1 em execu\xE7\xE3\
-  o, pense nisso como o di\xE1rio do software."
+summary: "A arquitetura do Elm n\xE3o suporta efeitos colaterais como o registro imediatamente\
+  \ - voc\xEA os gerencia por meio de comandos, que s\xE3o uma parte da arquitetura\
+  \ da sua aplica\xE7\xE3o."
 title: Registro de Logs
 weight: 17
 ---

@@ -1,12 +1,13 @@
 ---
 date: 2024-01-20 17:50:25.842274-07:00
-description: "String-Interpolation erleichtert das Zusammensetzen von Strings, indem\
-  \ Variablen oder Ausdr\xFCcke direkt in String-Literale eingebettet werden. Es macht\
-  \ den\u2026"
+description: "How to: C++ hat keine eingebaute String-Interpolation wie einige andere\
+  \ Sprachen, aber wir k\xF6nnen \xE4hnliche Funktionalit\xE4ten mit `std::ostringstream`\
+  \ oder\u2026"
 lastmod: '2024-03-13T22:44:54.170994-06:00'
 model: gpt-4-1106-preview
-summary: "String-Interpolation erleichtert das Zusammensetzen von Strings, indem Variablen\
-  \ oder Ausdr\xFCcke direkt in String-Literale eingebettet werden."
+summary: "C++ hat keine eingebaute String-Interpolation wie einige andere Sprachen,\
+  \ aber wir k\xF6nnen \xE4hnliche Funktionalit\xE4ten mit `std::ostringstream` oder\
+  \ fmt-Bibliothek (C++20) erreichen."
 title: Zeichenketten interpolieren
 weight: 8
 ---

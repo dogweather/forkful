@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:02.768262-07:00
-description: "Lokitus C:ss\xE4 tarkoittaa ohjelman kulun ja merkitt\xE4vien tapahtumien\
-  \ tallentamista sen suorituksen aikana, tarjoten konkreettisen katsauksen sen\u2026"
+description: "Kuinka: C:ss\xE4 lokituksen voi saavuttaa perustiedostotoimintojen avulla\
+  \ tai k\xE4ytt\xE4m\xE4ll\xE4 monimutkaisempia kirjastoja. Aloittaaksemme yksinkertaisesti,\u2026"
 lastmod: '2024-03-13T22:44:57.047257-06:00'
 model: gpt-4-0125-preview
-summary: "Lokitus C:ss\xE4 tarkoittaa ohjelman kulun ja merkitt\xE4vien tapahtumien\
-  \ tallentamista sen suorituksen aikana, tarjoten konkreettisen katsauksen sen k\xE4\
-  ytt\xE4ytymiseen ja suorituskykyyn."
+summary: "C:ss\xE4 lokituksen voi saavuttaa perustiedostotoimintojen avulla tai k\xE4\
+  ytt\xE4m\xE4ll\xE4 monimutkaisempia kirjastoja."
 title: Lokitiedostot
 weight: 17
 ---

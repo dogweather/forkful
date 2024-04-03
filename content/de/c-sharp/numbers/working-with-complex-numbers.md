@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 04:38:03.592463-07:00
-description: "Komplexe Zahlen erweitern unser Zahlensystem um imagin\xE4re Zahlen\
-  \ und erm\xF6glichen es uns, Gleichungen zu l\xF6sen, die keine reellen L\xF6sungen\
-  \ haben.\u2026"
+description: "Wie geht das: C# verf\xFCgt \xFCber eine eingebaute `System.Numerics.Complex`\
+  \ Struktur zur Verarbeitung komplexer Zahlen. Hier ist eine kurze Anleitung."
 lastmod: '2024-03-13T22:44:53.882203-06:00'
 model: gpt-4-0125-preview
-summary: "Komplexe Zahlen erweitern unser Zahlensystem um imagin\xE4re Zahlen und\
-  \ erm\xF6glichen es uns, Gleichungen zu l\xF6sen, die keine reellen L\xF6sungen\
-  \ haben."
+summary: "C# verf\xFCgt \xFCber eine eingebaute `System.Numerics.Complex` Struktur\
+  \ zur Verarbeitung komplexer Zahlen."
 title: Umgang mit komplexen Zahlen
 weight: 14
 ---

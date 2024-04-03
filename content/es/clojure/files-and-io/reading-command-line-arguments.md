@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:55:35.356802-07:00
-description: "Leer argumentos de la l\xEDnea de comandos permite que los programas\
-  \ reciban datos del usuario al iniciarse. Los programadores utilizan esta t\xE9\
-  cnica para\u2026"
+description: "C\xF3mo Hacerlo: En Clojure, accedes a los argumentos de la l\xEDnea\
+  \ de comandos con `*command-line-args*`. Aqu\xED hay un ejemplo simple."
 lastmod: '2024-03-13T22:44:58.673185-06:00'
 model: gpt-4-1106-preview
-summary: "Leer argumentos de la l\xEDnea de comandos permite que los programas reciban\
-  \ datos del usuario al iniciarse."
+summary: "En Clojure, accedes a los argumentos de la l\xEDnea de comandos con `*command-line-args*`."
 title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---

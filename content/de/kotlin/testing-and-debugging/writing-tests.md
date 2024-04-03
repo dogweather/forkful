@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:03.978546-07:00
-description: "Das Schreiben von Tests in Kotlin beinhaltet das Erstellen von Code-Snippets,\
-  \ die automatisch die funktionale Korrektheit Ihrer Softwaremodule validieren\u2026"
+description: "Wie geht das: Kotlin unterst\xFCtzt die testgetriebene Entwicklung mit\
+  \ verschiedenen Frameworks, wobei JUnit, Kotest und MockK f\xFCr das Mocking am\u2026"
 lastmod: '2024-03-13T22:44:53.849889-06:00'
 model: gpt-4-0125-preview
-summary: Das Schreiben von Tests in Kotlin beinhaltet das Erstellen von Code-Snippets,
-  die automatisch die funktionale Korrektheit Ihrer Softwaremodule validieren und
-  sicherstellen, dass sie wie erwartet funktionieren.
+summary: "Kotlin unterst\xFCtzt die testgetriebene Entwicklung mit verschiedenen Frameworks,\
+  \ wobei JUnit, Kotest und MockK f\xFCr das Mocking am beliebtesten sind."
 title: Tests Schreiben
 weight: 36
 ---

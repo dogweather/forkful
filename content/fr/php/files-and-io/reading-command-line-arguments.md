@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:56:28.532678-07:00
-description: "Lire les arguments de ligne de commande, c'est r\xE9cup\xE9rer les donn\xE9\
-  es fournies \xE0 votre script PHP lors de son ex\xE9cution dans un terminal. On\
-  \ le fait pour\u2026"
+description: "How to: (Comment faire : ) En PHP, les arguments de ligne de commande\
+  \ sont accessibles via le tableau `$argv`. Le script affiche le premier argument\u2026"
 lastmod: '2024-03-13T22:44:57.895249-06:00'
 model: gpt-4-1106-preview
-summary: "Lire les arguments de ligne de commande, c'est r\xE9cup\xE9rer les donn\xE9\
-  es fournies \xE0 votre script PHP lors de son ex\xE9cution dans un terminal."
+summary: En PHP, les arguments de ligne de commande sont accessibles via le tableau
+  `$argv`.
 title: Lecture des arguments de ligne de commande
 weight: 23
 ---

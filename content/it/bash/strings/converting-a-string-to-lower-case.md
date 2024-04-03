@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:37:43.971699-07:00
-description: "Convertire una stringa in minuscolo significa trasformare tutti i caratteri\
-  \ da maiuscolo a minuscolo. I programmatori lo fanno per uniformare i dati, per\u2026"
+description: 'Come fare: Ecco alcuni modi per convertire una stringa in minuscolo
+  in Bash.'
 lastmod: '2024-03-13T22:44:43.585619-06:00'
 model: gpt-4-1106-preview
-summary: Convertire una stringa in minuscolo significa trasformare tutti i caratteri
-  da maiuscolo a minuscolo.
+summary: Ecco alcuni modi per convertire una stringa in minuscolo in Bash.
 title: Conversione di una stringa in minuscolo
 weight: 4
 ---

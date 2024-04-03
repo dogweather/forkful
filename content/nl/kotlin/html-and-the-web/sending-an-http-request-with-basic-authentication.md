@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:06.885023-07:00
-description: "Basisauthenticatie slingert een gebruikersnaam:wachtwoord combinatie\
-  \ op een HTTP-verzoek. Ontwikkelaars gebruiken het als een snelle en vuile manier\
-  \ om te\u2026"
+description: "Hoe: Kotlin handelt HTTP-verzoeken af met bibliotheken zoals `ktor`\
+  \ of `okhttp`. Laten we voor nu met `okhttp` doorgaan. Pak eerst de bibliotheek\
+  \ in je\u2026"
 lastmod: '2024-03-13T22:44:50.767337-06:00'
 model: gpt-4-0125-preview
-summary: Basisauthenticatie slingert een gebruikersnaam:wachtwoord combinatie op een
-  HTTP-verzoek.
+summary: Kotlin handelt HTTP-verzoeken af met bibliotheken zoals `ktor` of `okhttp`.
 title: Een HTTP-verzoek verzenden met basisauthenticatie
 weight: 45
 ---

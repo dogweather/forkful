@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 18:04:26.990123-07:00
-description: "Att starta ett nytt projekt i Swift inneb\xE4r att l\xE4gga grunden\
-  \ f\xF6r en ny app eller funktion. Programmerare g\xF6r det f\xF6r att oms\xE4tta\
-  \ id\xE9er till verklig kod\u2026"
+description: "S\xE5h\xE4r g\xF6r du: F\xF6r att kickstarta ett Swift-projekt kr\xE4\
+  vs Xcode, Apples utvecklingsmilj\xF6. H\xE4r \xE4r grunderna."
 lastmod: '2024-03-13T22:44:38.251825-06:00'
 model: gpt-4-1106-preview
-summary: "Att starta ett nytt projekt i Swift inneb\xE4r att l\xE4gga grunden f\xF6\
-  r en ny app eller funktion."
+summary: "F\xF6r att kickstarta ett Swift-projekt kr\xE4vs Xcode, Apples utvecklingsmilj\xF6\
+  ."
 title: "Att p\xE5b\xF6rja ett nytt projekt"
 weight: 1
 ---

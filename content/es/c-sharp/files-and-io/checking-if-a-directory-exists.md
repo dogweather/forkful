@@ -2,12 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:03.604406-07:00
-description: "Verificar si un directorio existe en C# implica comprobar la presencia\
-  \ de una carpeta en una ruta especificada en el sistema de archivos. Los\u2026"
+description: "C\xF3mo hacerlo: #."
 lastmod: '2024-03-13T22:44:59.091996-06:00'
 model: gpt-4-0125-preview
-summary: Verificar si un directorio existe en C# implica comprobar la presencia de
-  una carpeta en una ruta especificada en el sistema de archivos.
+summary: '#.'
 title: Comprobando si un directorio existe
 weight: 20
 ---

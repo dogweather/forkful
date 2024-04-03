@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:23.049022-07:00
-description: "YAML, siglas de \"YAML Ain't Markup Language\" (YAML no es un lenguaje\
-  \ de marcado), es un est\xE1ndar de serializaci\xF3n de datos amigable para los\
-  \ humanos que\u2026"
+description: "C\xF3mo hacerlo: Haskell no tiene soporte integrado para el procesamiento\
+  \ de YAML, pero puedes utilizar bibliotecas de terceros como `yaml` y `aeson` para\u2026"
 lastmod: '2024-03-13T22:44:59.138801-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, siglas de \"YAML Ain't Markup Language\" (YAML no es un lenguaje de\
-  \ marcado), es un est\xE1ndar de serializaci\xF3n de datos amigable para los humanos\
-  \ que puede ser utilizado para todos los lenguajes de programaci\xF3n."
+summary: Haskell no tiene soporte integrado para el procesamiento de YAML, pero puedes
+  utilizar bibliotecas de terceros como `yaml` y `aeson` para analizar y generar datos
+  YAML.
 title: Trabajando con YAML
 weight: 41
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 03:46:03.595407-07:00
-description: "Arrotondare i numeri significa regolare un valore all'intero pi\xF9\
-  \ vicino o al punto decimale specificato. I programmatori arrotondano i numeri per\u2026"
+description: 'Come fare: Hai a disposizione alcuni cmdlet e metodi utili in PowerShell
+  per l''arrotondamento: - Metodo `Round()` della classe Math.'
 lastmod: '2024-03-13T22:44:43.636085-06:00'
 model: gpt-4-0125-preview
-summary: "Arrotondare i numeri significa regolare un valore all'intero pi\xF9 vicino\
-  \ o al punto decimale specificato."
+summary: Hai a disposizione alcuni cmdlet e metodi utili in PowerShell per l'arrotondamento.
 title: Arrotondamento dei numeri
 weight: 13
 ---

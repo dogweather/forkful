@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:07.896724-07:00
-description: "S\xE4\xE4nn\xF6lliset lausekkeet eli regex mahdollistavat kehitt\xE4\
-  jille merkkijonojen haun, vastaavuuden tarkistuksen ja manipuloinnin edistyneill\xE4\
-  \u2026"
+description: "Kuinka: Rustin `regex` kirjasto on se mihin turvaudutaan ty\xF6skennelt\xE4\
+  ess\xE4 s\xE4\xE4nn\xF6llisten lausekkeiden kanssa. K\xE4ytt\xE4\xE4ksesi sit\xE4\
+  , sinun tulee ensin lis\xE4t\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.346889-06:00'
 model: gpt-4-0125-preview
-summary: "S\xE4\xE4nn\xF6lliset lausekkeet eli regex mahdollistavat kehitt\xE4jille\
-  \ merkkijonojen haun, vastaavuuden tarkistuksen ja manipuloinnin edistyneill\xE4\
-  \ kuviohakutekniikoilla."
+summary: "Rustin `regex` kirjasto on se mihin turvaudutaan ty\xF6skennelt\xE4ess\xE4\
+  \ s\xE4\xE4nn\xF6llisten lausekkeiden kanssa."
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---

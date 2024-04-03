@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:20.852579-07:00
-description: "Att skriva en textfil i Elm inneb\xE4r att skapa och spara textdata\
-  \ till en fil fr\xE5n en Elm-applikation. Programmerare beh\xF6ver ofta generera\
-  \ rapporter,\u2026"
+description: "Hur man g\xF6r: Eftersom Elm k\xF6rs i webbl\xE4saren och \xE4r designat\
+  \ f\xF6r att vara ett rent programmeringsspr\xE5k utan sidoeffekter, har det inte\
+  \ direkt \xE5tkomst till\u2026"
 lastmod: '2024-03-13T22:44:37.847817-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva en textfil i Elm inneb\xE4r att skapa och spara textdata till\
-  \ en fil fr\xE5n en Elm-applikation."
+summary: "Eftersom Elm k\xF6rs i webbl\xE4saren och \xE4r designat f\xF6r att vara\
+  \ ett rent programmeringsspr\xE5k utan sidoeffekter, har det inte direkt \xE5tkomst\
+  \ till filsystemet."
 title: Att skriva en textfil
 weight: 24
 ---

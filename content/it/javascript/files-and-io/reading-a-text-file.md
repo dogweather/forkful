@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:54:44.275941-07:00
-description: "Leggere un file di testo significa estrarre dati da un documento salvato\
-  \ sul tuo dispositivo o server. Programmatore lo fanno per manipolare,\u2026"
+description: "How to: In Node.js, leggere un file di testo \xE8 semplice. Usa il modulo\
+  \ `fs` e la sua funzione `readFile()`."
 lastmod: '2024-03-13T22:44:43.830999-06:00'
 model: gpt-4-1106-preview
-summary: Leggere un file di testo significa estrarre dati da un documento salvato
-  sul tuo dispositivo o server.
+summary: "In Node.js, leggere un file di testo \xE8 semplice."
 title: Lettura di un file di testo
 weight: 22
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:14.264377-07:00
-description: "\xC5 jobbe med CSV-filer (kommaseparerte verdier) inneb\xE6rer \xE5\
-  \ lese fra og skrive data til disse filene, noe som er en vanlig n\xF8dvendighet\
-  \ for oppgaver som\u2026"
+description: "Hvordan: Elixir, med sin kraftfulle m\xF8nstersammenligning og st\xF8\
+  tte for r\xF8rlegging, kan h\xE5ndtere CSV-filer effektivt, selv uten tredjepartsbiblioteker.\
+  \ Men\u2026"
 lastmod: '2024-03-13T22:44:40.465682-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 jobbe med CSV-filer (kommaseparerte verdier) inneb\xE6rer \xE5 lese\
-  \ fra og skrive data til disse filene, noe som er en vanlig n\xF8dvendighet for\
-  \ oppgaver som krever dataimport/eksport eller enkle lagringsl\xF8sninger."
+summary: "Elixir, med sin kraftfulle m\xF8nstersammenligning og st\xF8tte for r\xF8\
+  rlegging, kan h\xE5ndtere CSV-filer effektivt, selv uten tredjepartsbiblioteker."
 title: Arbeide med CSV
 weight: 37
 ---

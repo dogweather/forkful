@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:38.505539-07:00
-description: "Ottenere la data corrente in Haskell comporta il recupero del tempo\
-  \ corrente del sistema e la sua trasformazione in un formato di data leggibile.\
-  \ I\u2026"
+description: "Come fare: La libreria standard di Haskell, `base`, fornisce il modulo\
+  \ `Data.Time` che offre funzionalit\xE0 per lavorare con date e orari. Ecco come\
+  \ usarlo\u2026"
 lastmod: '2024-03-13T22:44:43.485582-06:00'
 model: gpt-4-0125-preview
-summary: Ottenere la data corrente in Haskell comporta il recupero del tempo corrente
-  del sistema e la sua trasformazione in un formato di data leggibile.
+summary: "La libreria standard di Haskell, `base`, fornisce il modulo `Data.Time`\
+  \ che offre funzionalit\xE0 per lavorare con date e orari."
 title: Ottenere la data corrente
 weight: 29
 ---

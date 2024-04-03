@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:28.251797-07:00
-description: "Att s\xF6ka och ers\xE4tta text i Google Apps Script inneb\xE4r att\
-  \ man programmeringsm\xE4ssigt identifierar specifika str\xE4ngar i ett dokument,\
-  \ kalkylblad eller\u2026"
+description: "Hur man g\xF6r: Google Apps Script erbjuder ett enkelt s\xE4tt att s\xF6\
+  ka och ers\xE4tta text, s\xE4rskilt inom Google Dokument och Kalkylark. Nedan finns\
+  \ exempel f\xF6r\u2026"
 lastmod: '2024-03-13T22:44:37.421644-06:00'
 model: gpt-4-0125-preview
-summary: "Att s\xF6ka och ers\xE4tta text i Google Apps Script inneb\xE4r att man\
-  \ programmeringsm\xE4ssigt identifierar specifika str\xE4ngar i ett dokument, kalkylblad\
-  \ eller n\xE5gon annan typ av Google Apps-inneh\xE5ll och ers\xE4tter dem med andra\
-  \ textv\xE4rden."
+summary: "Google Apps Script erbjuder ett enkelt s\xE4tt att s\xF6ka och ers\xE4tta\
+  \ text, s\xE4rskilt inom Google Dokument och Kalkylark."
 title: "S\xF6ka och ers\xE4tta text"
 weight: 10
 ---

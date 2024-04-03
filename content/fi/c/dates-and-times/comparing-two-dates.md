@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:38.482040-07:00
-description: "P\xE4iv\xE4m\xE4\xE4rien vertailu C-kieless\xE4 tarkoittaa niiden kronologisen\
-  \ suhteen m\xE4\xE4ritt\xE4mist\xE4 - onko toinen p\xE4iv\xE4m\xE4\xE4r\xE4 ennen\
-  \ toista tai ovatko ne samat. T\xE4m\xE4 kyky\u2026"
+description: "Miten: C ei sis\xE4ll\xE4 valmista tyyppi\xE4 p\xE4iv\xE4m\xE4\xE4rille,\
+  \ mik\xE4 tekee `time.h` kirjaston k\xE4yt\xF6n tarpeelliseksi ty\xF6skentelyss\xE4\
+  \ p\xE4iv\xE4m\xE4\xE4r\xE4- ja aikarakenteiden\u2026"
 lastmod: '2024-03-13T22:44:57.053904-06:00'
 model: gpt-4-0125-preview
-summary: "P\xE4iv\xE4m\xE4\xE4rien vertailu C-kieless\xE4 tarkoittaa niiden kronologisen\
-  \ suhteen m\xE4\xE4ritt\xE4mist\xE4 - onko toinen p\xE4iv\xE4m\xE4\xE4r\xE4 ennen\
-  \ toista tai ovatko ne samat."
+summary: "C ei sis\xE4ll\xE4 valmista tyyppi\xE4 p\xE4iv\xE4m\xE4\xE4rille, mik\xE4\
+  \ tekee `time.h` kirjaston k\xE4yt\xF6n tarpeelliseksi ty\xF6skentelyss\xE4 p\xE4\
+  iv\xE4m\xE4\xE4r\xE4- ja aikarakenteiden kanssa."
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---

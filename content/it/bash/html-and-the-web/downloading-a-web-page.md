@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:43:19.436091-07:00
-description: "Scaricare una pagina web significa prelevare tutti i dati che la compongono\
-  \ dalla rete per salvarla localmente. I programmatori fanno ci\xF2 per analizzare\u2026"
+description: "How to: Per scaricare una pagina web con Bash, si pu\xF2 usare `curl`\
+  \ o `wget`. Ecco alcuni esempi."
 lastmod: '2024-03-13T22:44:43.598663-06:00'
 model: gpt-4-1106-preview
-summary: Scaricare una pagina web significa prelevare tutti i dati che la compongono
-  dalla rete per salvarla localmente.
+summary: "Per scaricare una pagina web con Bash, si pu\xF2 usare `curl` o `wget`."
 title: Scaricare una pagina web
 weight: 42
 ---

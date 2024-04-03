@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:58:51.030206-07:00
-description: "Textsuche und -ersetzung erm\xF6glicht es uns, spezifische Zeichenketten\
-  \ in einem Text zu finden und sie durch andere zu ersetzen. Das ist n\xFCtzlich,\
-  \ um Daten\u2026"
+description: 'How to: Um Text in Swift zu suchen und zu ersetzen, verwenden wir die
+  `replacingOccurrences(of:with:)` Methode des `String` Typs. Hier ein Beispiel.'
 lastmod: '2024-03-13T22:44:54.211344-06:00'
 model: gpt-4-1106-preview
-summary: "Textsuche und -ersetzung erm\xF6glicht es uns, spezifische Zeichenketten\
-  \ in einem Text zu finden und sie durch andere zu ersetzen."
+summary: Um Text in Swift zu suchen und zu ersetzen, verwenden wir die `replacingOccurrences(of:with:)`
+  Methode des `String` Typs.
 title: Suchen und Ersetzen von Text
 weight: 10
 ---

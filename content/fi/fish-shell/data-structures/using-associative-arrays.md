@@ -2,14 +2,14 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:11.133810-07:00
-description: "Assosiatiiviset taulukot eli hajautustaulut mahdollistavat tietojen\
-  \ tallentamisen avain-arvo -pareina, mik\xE4 tekee tiedon j\xE4rjest\xE4misest\xE4\
-  \ ja hakemisesta\u2026"
+description: "Miten: Fish ei natiivisti tue assosiatiivisia taulukoita kuten Bash\
+  \ 4+, mutta voit saavuttaa samankaltaista toiminnallisuutta k\xE4ytt\xE4m\xE4ll\xE4\
+  \ yhdistelm\xE4\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.985021-06:00'
 model: gpt-4-0125-preview
-summary: "Assosiatiiviset taulukot eli hajautustaulut mahdollistavat tietojen tallentamisen\
-  \ avain-arvo -pareina, mik\xE4 tekee tiedon j\xE4rjest\xE4misest\xE4 ja hakemisesta\
-  \ avaimen perusteella helpompaa."
+summary: "Fish ei natiivisti tue assosiatiivisia taulukoita kuten Bash 4+, mutta voit\
+  \ saavuttaa samankaltaista toiminnallisuutta k\xE4ytt\xE4m\xE4ll\xE4 yhdistelm\xE4\
+  \xE4 listoja ja merkkijonomanipulaatiota."
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---

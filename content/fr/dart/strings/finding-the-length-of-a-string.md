@@ -2,15 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:27.048822-07:00
-description: "Trouver la longueur d'une cha\xEEne de caract\xE8res (String) en Dart\
-  \ consiste \xE0 d\xE9terminer le nombre d'unit\xE9s de code (essentiellement, le\
-  \ nombre de caract\xE8res\u2026"
+description: "Comment faire : Dart rend simple l'obtention de la longueur d'une cha\xEE\
+  ne gr\xE2ce \xE0 la propri\xE9t\xE9 `length`. Voici un exemple de base ."
 lastmod: '2024-03-13T22:44:57.373763-06:00'
 model: gpt-4-0125-preview
-summary: "Trouver la longueur d'une cha\xEEne de caract\xE8res (String) en Dart consiste\
-  \ \xE0 d\xE9terminer le nombre d'unit\xE9s de code (essentiellement, le nombre de\
-  \ caract\xE8res si on le pense de mani\xE8re simpliste) dans une String donn\xE9\
-  e."
+summary: "Dart rend simple l'obtention de la longueur d'une cha\xEEne gr\xE2ce \xE0\
+  \ la propri\xE9t\xE9 `length`."
 title: "Trouver la longueur d'une cha\xEEne"
 weight: 7
 ---

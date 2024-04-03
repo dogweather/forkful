@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:58:20.125940-07:00
-description: "Searching and replacing text means swapping out specific strings in\
-  \ a block of text with others. Programmers do this for tasks like fixing errors,\u2026"
+description: 'How to: Lua''s `string.gsub` function is your go-to for search and replace.
+  It works like this.'
 lastmod: '2024-03-13T22:45:00.191970-06:00'
 model: gpt-4-1106-preview
-summary: Searching and replacing text means swapping out specific strings in a block
-  of text with others.
+summary: Lua's `string.gsub` function is your go-to for search and replace.
 title: Searching and replacing text
 weight: 10
 ---

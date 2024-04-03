@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:33.477030-07:00
-description: "Convertir una cadena a min\xFAsculas es una operaci\xF3n fundamental\
-  \ que permite uniformidad y consistencia en el procesamiento de texto, esencial\
-  \ para tareas\u2026"
+description: "C\xF3mo hacerlo: En Go, convertir una cadena a min\xFAsculas se puede\
+  \ lograr f\xE1cilmente utilizando el paquete `strings`, espec\xEDficamente la funci\xF3\
+  n `ToLower()`.\u2026"
 lastmod: '2024-03-13T22:44:58.452498-06:00'
 model: gpt-4-0125-preview
-summary: "Convertir una cadena a min\xFAsculas es una operaci\xF3n fundamental que\
-  \ permite uniformidad y consistencia en el procesamiento de texto, esencial para\
-  \ tareas como comparaciones insensibles a may\xFAsculas o normalizaci\xF3n de texto."
+summary: "En Go, convertir una cadena a min\xFAsculas se puede lograr f\xE1cilmente\
+  \ utilizando el paquete `strings`, espec\xEDficamente la funci\xF3n `ToLower()`."
 title: "Convirtiendo una cadena de texto a min\xFAsculas"
 weight: 4
 ---

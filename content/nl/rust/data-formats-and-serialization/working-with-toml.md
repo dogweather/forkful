@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:52.617697-07:00
-description: "TOML is een voor mensen leesbare taal voor data-serialisatie, vaak gebruikt\
-  \ voor configuraties. Programmeurs gebruiken TOML vanwege de eenvoud en\u2026"
+description: 'Hoe te: .'
 lastmod: '2024-03-13T22:44:50.617334-06:00'
 model: gpt-4-0125-preview
-summary: TOML is een voor mensen leesbare taal voor data-serialisatie, vaak gebruikt
-  voor configuraties.
+summary: .
 title: Werken met TOML
 weight: 39
 ---

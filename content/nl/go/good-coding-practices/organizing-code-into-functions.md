@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:34.325902-07:00
-description: "Het organiseren van code in functies in Go omvat het opsplitsen van\
-  \ code in herbruikbare, modulaire blokken die specifieke taken uitvoeren. Deze aanpak\u2026"
+description: "Hoe: In Go definieer je een functie met het `func` sleutelwoord, gevolgd\
+  \ door de naam van de functie, parameters (indien van toepassing), en het\u2026"
 lastmod: '2024-03-13T22:44:50.293368-06:00'
 model: gpt-4-0125-preview
-summary: Het organiseren van code in functies in Go omvat het opsplitsen van code
-  in herbruikbare, modulaire blokken die specifieke taken uitvoeren.
+summary: In Go definieer je een functie met het `func` sleutelwoord, gevolgd door
+  de naam van de functie, parameters (indien van toepassing), en het retourtype.
 title: Code organiseren in functies
 weight: 18
 ---

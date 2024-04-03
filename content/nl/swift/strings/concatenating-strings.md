@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:16.275230-07:00
-description: "Het samenvoegen van strings is het aan elkaar plakken van afzonderlijke\
-  \ strings om een nieuwe te maken. Programmeurs doen dit om tekst dynamisch te\u2026"
+description: 'Hoe te: .'
 lastmod: '2024-03-13T22:44:51.148346-06:00'
 model: gpt-4-0125-preview
-summary: Het samenvoegen van strings is het aan elkaar plakken van afzonderlijke strings
-  om een nieuwe te maken.
+summary: .
 title: Samenvoegen van strings
 weight: 3
 ---

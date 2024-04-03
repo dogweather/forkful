@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:44:30.405237-07:00
-description: "Nedlasting av en nettside betyr \xE5 hente kildekoden for siden til\
-  \ din datamaskin. Programmerere gj\xF8r dette for \xE5 analysere innholdet, automatisere\u2026"
+description: 'How to: I PowerShell kan du laste ned en nettside med `Invoke-WebRequest`.
+  Sjekk ut dette eksemplet.'
 lastmod: '2024-03-13T22:44:41.016647-06:00'
 model: gpt-4-1106-preview
-summary: "Nedlasting av en nettside betyr \xE5 hente kildekoden for siden til din\
-  \ datamaskin."
+summary: I PowerShell kan du laste ned en nettside med `Invoke-WebRequest`.
 title: Nedlasting av en nettside
 weight: 42
 ---

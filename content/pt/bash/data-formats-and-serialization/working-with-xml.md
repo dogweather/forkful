@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:27:56.491997-07:00
-description: "Trabalhar com XML envolve o parseamento, extra\xE7\xE3o e manipula\xE7\
-  \xE3o de dados no formato da Linguagem de Marca\xE7\xE3o Extens\xEDvel. Programadores\
-  \ lidam com o XML j\xE1\u2026"
+description: "Como Fazer: Aqui est\xE1 como fazer o parse de XML em Bash. Ferramentas?\
+  \ xmllint e xmlstarlet. Percorrer os elementos XML? Com certeza. Exemplo com sa\xED\
+  da de\u2026"
 lastmod: '2024-03-13T22:44:46.777633-06:00'
 model: gpt-4-0125-preview
-summary: "Trabalhar com XML envolve o parseamento, extra\xE7\xE3o e manipula\xE7\xE3\
-  o de dados no formato da Linguagem de Marca\xE7\xE3o Extens\xEDvel."
+summary: "Aqui est\xE1 como fazer o parse de XML em Bash."
 title: Trabalhando com XML
 weight: 40
 ---

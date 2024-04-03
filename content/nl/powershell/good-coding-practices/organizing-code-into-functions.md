@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:00.012065-07:00
-description: "Code organiseren in functies gaat over het verpakken van codeblokken\
-  \ die specifieke taken uitvoeren en deze een naam geven. Dit wordt gedaan om code\u2026"
+description: 'Hoe te: Laten we een functie schrijven om de som van twee getallen te
+  berekenen. Eenvoudig, maar het illustreert het punt.'
 lastmod: '2024-03-13T22:44:51.035169-06:00'
 model: gpt-4-0125-preview
-summary: Code organiseren in functies gaat over het verpakken van codeblokken die
-  specifieke taken uitvoeren en deze een naam geven.
+summary: Laten we een functie schrijven om de som van twee getallen te berekenen.
 title: Code organiseren in functies
 weight: 18
 ---

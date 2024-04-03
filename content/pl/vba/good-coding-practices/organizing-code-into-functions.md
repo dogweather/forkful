@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:41.820389-07:00
-description: "Organizowanie kodu w funkcje w Visual Basic for Applications (VBA) polega\
-  \ na podziale programu na mniejsze, zarz\u0105dzalne cz\u0119\u015Bci znane jako\
-  \ funkcje.\u2026"
+description: "Jak to zrobi\u0107: W VBA funkcje definiuje si\u0119 za pomoc\u0105\
+  \ instrukcji `Function` i `End Function`. Oto prosty przyk\u0142ad, jak stworzy\u0107\
+  \ funkcj\u0119, kt\xF3ra oblicza pole\u2026"
 lastmod: '2024-03-13T22:44:35.237981-06:00'
 model: gpt-4-0125-preview
-summary: "Organizowanie kodu w funkcje w Visual Basic for Applications (VBA) polega\
-  \ na podziale programu na mniejsze, zarz\u0105dzalne cz\u0119\u015Bci znane jako\
-  \ funkcje."
+summary: "W VBA funkcje definiuje si\u0119 za pomoc\u0105 instrukcji `Function` i\
+  \ `End Function`."
 title: Organizacja kodu w funkcje
 weight: 18
 ---

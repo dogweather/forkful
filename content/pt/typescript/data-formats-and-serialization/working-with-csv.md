@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:24.788856-07:00
-description: "Trabalhar com CSV (Valores Separados por V\xEDrgula) envolve a leitura\
-  \ e escrita de arquivos CSV, um formato comum de troca de dados usado devido \xE0\
-  \ sua\u2026"
+description: "Como fazer: Em TypeScript, voc\xEA pode trabalhar com arquivos CSV por\
+  \ meio de c\xF3digo nativo ou utilizando bibliotecas de terceiros como `csv-parser`\
+  \ para\u2026"
 lastmod: '2024-03-13T22:44:46.348579-06:00'
 model: gpt-4-0125-preview
-summary: "Trabalhar com CSV (Valores Separados por V\xEDrgula) envolve a leitura e\
-  \ escrita de arquivos CSV, um formato comum de troca de dados usado devido \xE0\
-  \ sua simplicidade e ampla compatibilidade entre diversas plataformas e linguagens."
+summary: "Em TypeScript, voc\xEA pode trabalhar com arquivos CSV por meio de c\xF3\
+  digo nativo ou utilizando bibliotecas de terceiros como `csv-parser` para leitura\
+  \ e `csv-writer` para escrita de arquivos CSV."
 title: Trabalhando com CSV
 weight: 37
 ---

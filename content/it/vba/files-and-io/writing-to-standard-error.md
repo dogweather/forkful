@@ -2,13 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:09:06.023141-07:00
-description: "Scrivere sull'errore standard in Visual Basic for Applications (VBA)\
-  \ comporta l'indirizzare messaggi di errore o diagnosi separati dall'uscita standard,\u2026"
+description: "Come fare: In VBA, non essendoci una funzione incorporata diretta per\
+  \ scrivere specificamente sull'errore standard come in alcuni altri linguaggi di\u2026"
 lastmod: '2024-03-13T22:44:43.281503-06:00'
 model: gpt-4-0125-preview
-summary: Scrivere sull'errore standard in Visual Basic for Applications (VBA) comporta
-  l'indirizzare messaggi di errore o diagnosi separati dall'uscita standard, solitamente
-  verso la console o un file di log.
+summary: In VBA, non essendoci una funzione incorporata diretta per scrivere specificamente
+  sull'errore standard come in alcuni altri linguaggi di programmazione, un'alternativa
+  comune consiste nell'utilizzare `Debug.Print` per l'output degli errori durante
+  lo sviluppo o creare una funzione di logging personalizzata che imita questo comportamento
+  per le applicazioni in produzione.
 title: Scrivere sull'errore standard
 weight: 25
 ---

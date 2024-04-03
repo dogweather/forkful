@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 01:09:26.706817-07:00
-description: "Organizar el c\xF3digo en funciones significa agrupar operaciones relacionadas\
-  \ en bloques reutilizables. Lo hacemos para mejorar la legibilidad y\u2026"
+description: "C\xF3mo hacerlo: Vamos a crear una funci\xF3n simple en Elixir para\
+  \ capitalizar palabras."
 lastmod: '2024-03-13T22:44:58.708179-06:00'
 model: gpt-4-1106-preview
-summary: "Organizar el c\xF3digo en funciones significa agrupar operaciones relacionadas\
-  \ en bloques reutilizables."
+summary: "Vamos a crear una funci\xF3n simple en Elixir para capitalizar palabras."
 title: "Organizando c\xF3digo en funciones"
 weight: 18
 ---

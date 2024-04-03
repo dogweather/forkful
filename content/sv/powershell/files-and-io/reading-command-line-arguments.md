@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:57:04.121592-07:00
-description: "Kommandoradsargument l\xE5ter skripten anpassas vid k\xF6rning. Programmerare\
-  \ anv\xE4nder det f\xF6r att g\xF6ra skript dynamiska och flexibla \u2013 anv\xE4\
-  ndbara f\xF6r olika\u2026"
+description: "Hur g\xF6r man: ."
 lastmod: '2024-03-13T22:44:38.141097-06:00'
 model: gpt-4-1106-preview
-summary: "Kommandoradsargument l\xE5ter skripten anpassas vid k\xF6rning."
+summary: .
 title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---

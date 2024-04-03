@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:26.277432-07:00
-description: "Capitalizacja ci\u0105gu polega na przekszta\u0142ceniu pierwszej litery\
-  \ danego ci\u0105gu na wielk\u0105 liter\u0119, przy jednoczesnym zapewnieniu, \u017C\
-  e reszta liter pozostanie\u2026"
+description: "Jak to zrobi\u0107: W Haskellu mo\u017Cesz zrobi\u0107 capitalizacj\u0119\
+  \ ci\u0105gu u\u017Cywaj\u0105c standardowej biblioteki, bez potrzeby korzystania\
+  \ z bibliotek stron trzecich."
 lastmod: '2024-03-13T22:44:35.434583-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizacja ci\u0105gu polega na przekszta\u0142ceniu pierwszej litery\
-  \ danego ci\u0105gu na wielk\u0105 liter\u0119, przy jednoczesnym zapewnieniu, \u017C\
-  e reszta liter pozostanie ma\u0142a."
+summary: "W Haskellu mo\u017Cesz zrobi\u0107 capitalizacj\u0119 ci\u0105gu u\u017C\
+  ywaj\u0105c standardowej biblioteki, bez potrzeby korzystania z bibliotek stron\
+  \ trzecich."
 title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---

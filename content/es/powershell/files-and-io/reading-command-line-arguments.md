@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:56:36.282960-07:00
-description: "Leer argumentos de la l\xEDnea de comandos permite a los scripts de\
-  \ PowerShell recibir informaci\xF3n externa al ejecutarse. Los programadores usan\
-  \ esta t\xE9cnica\u2026"
+description: "C\xF3mo Hacerlo: Para leer argumentos en PowerShell, se usa la variable\
+  \ autom\xE1tica `$args`, que es un array. Aqu\xED tienes algunos ejemplos pr\xE1\
+  cticos."
 lastmod: '2024-03-13T22:44:59.307659-06:00'
 model: gpt-4-1106-preview
-summary: "Leer argumentos de la l\xEDnea de comandos permite a los scripts de PowerShell\
-  \ recibir informaci\xF3n externa al ejecutarse."
+summary: "Para leer argumentos en PowerShell, se usa la variable autom\xE1tica `$args`,\
+  \ que es un array."
 title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---

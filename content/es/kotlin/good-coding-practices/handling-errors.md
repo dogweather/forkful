@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 00:54:30.500222-07:00
-description: "El manejo de errores es c\xF3mo tu c\xF3digo se ocupa de los problemas\
-  \ que surgen durante la ejecuci\xF3n\u2014como manejar una bola curva sin dejarla\
-  \ caer. Los\u2026"
+description: "C\xF3mo hacerlo: Kotlin proporciona `try`, `catch`, `finally` y `throw`\
+  \ para gestionar errores. As\xED es c\xF3mo los utilizas."
 lastmod: '2024-03-13T22:44:59.043386-06:00'
 model: gpt-4-1106-preview
-summary: "El manejo de errores es c\xF3mo tu c\xF3digo se ocupa de los problemas que\
-  \ surgen durante la ejecuci\xF3n\u2014como manejar una bola curva sin dejarla caer."
+summary: Kotlin proporciona `try`, `catch`, `finally` y `throw` para gestionar errores.
 title: Manejo de errores
 weight: 16
 ---

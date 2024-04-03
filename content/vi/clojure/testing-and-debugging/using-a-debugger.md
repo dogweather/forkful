@@ -2,10 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:49.513048-07:00
-description: "Clojure d\u1EF1a v\xE0o M\xE1y \u1EA3o Java (JVM), v\xEC v\u1EADy nhi\u1EC1\
-  u vi\u1EC7c g\u1EE1 l\u1ED7i \u0111\u01B0\u1EE3c th\u1EF1c hi\u1EC7n v\u1EDBi c\xE1\
-  c c\xF4ng c\u1EE5 Java. M\u1ED9t c\xF4ng c\u1EE5 nh\u01B0 th\u1EBF l\xE0 `CIDER`,\
-  \ m\u1ED9t g\xF3i m\u1EA1nh m\u1EBD cho ph\xE1t\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Clojure d\u1EF1a v\xE0o M\xE1y \u1EA3o Java\
+  \ (JVM), v\xEC v\u1EADy nhi\u1EC1u vi\u1EC7c g\u1EE1 l\u1ED7i \u0111\u01B0\u1EE3\
+  c th\u1EF1c hi\u1EC7n v\u1EDBi c\xE1c c\xF4ng c\u1EE5 Java. M\u1ED9t c\xF4ng c\u1EE5\
+  \ nh\u01B0 th\u1EBF l\xE0 `CIDER`, m\u1ED9t g\xF3i m\u1EA1nh\u2026"
 lastmod: '2024-03-13T22:44:36.159230-06:00'
 model: gpt-4-0125-preview
 summary: "Clojure d\u1EF1a v\xE0o M\xE1y \u1EA3o Java (JVM), v\xEC v\u1EADy nhi\u1EC1\

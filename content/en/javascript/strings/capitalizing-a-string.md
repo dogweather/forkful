@@ -1,11 +1,12 @@
 ---
 date: 2024-02-03 19:02:39.218495-07:00
-description: "Capitalizing a string means converting the first character of the string\
-  \ to uppercase while keeping the remaining characters as is. This operation is\u2026"
+description: "How to: In JavaScript, there isn\u2019t a built-in method to directly\
+  \ capitalize strings, but it's straightforward to implement using basic string manipulation\u2026"
 lastmod: '2024-03-13T22:45:00.418440-06:00'
 model: gpt-4-0125-preview
-summary: Capitalizing a string means converting the first character of the string
-  to uppercase while keeping the remaining characters as is.
+summary: "In JavaScript, there isn\u2019t a built-in method to directly capitalize\
+  \ strings, but it's straightforward to implement using basic string manipulation\
+  \ methods."
 title: Capitalizing a string
 weight: 2
 ---

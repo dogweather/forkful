@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:07.028747-07:00
-description: "Das Schreiben auf den Standardfehler (stderr) in PowerShell bedeutet,\
-  \ Fehlermeldungen oder Diagnosen direkt an den stderr-Datenstrom zu senden, welcher\u2026"
+description: "Wie geht das: PowerShell vereinfacht den Prozess des Schreibens auf\
+  \ stderr durch die Verwendung des `Write-Error` Cmdlets oder durch das Umleiten\
+  \ der\u2026"
 lastmod: '2024-03-13T22:44:54.119995-06:00'
 model: gpt-4-0125-preview
-summary: Das Schreiben auf den Standardfehler (stderr) in PowerShell bedeutet, Fehlermeldungen
-  oder Diagnosen direkt an den stderr-Datenstrom zu senden, welcher sich vom Standardausgabe-Datenstrom
-  (stdout) unterscheidet.
+summary: PowerShell vereinfacht den Prozess des Schreibens auf stderr durch die Verwendung
+  des `Write-Error` Cmdlets oder durch das Umleiten der Ausgabe an die Methode `$host.ui.WriteErrorLine()`.
 title: Schreiben auf Standardfehler
 weight: 25
 ---

@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:30.553724-07:00
-description: "Het vergelijken van twee datums betekent controleren of ze hetzelfde\
-  \ zijn of bepalen welke eerder of later komt. Programmeurs hebben dit vaak nodig\
-  \ voor\u2026"
+description: 'Hoe: JavaScript''s `Date` objecten komen goed van pas. Wanneer je ze
+  vergelijkt, worden ze omgezet in milliseconden sinds 1 januari 1970, UTC.'
 lastmod: '2024-03-13T22:44:51.214734-06:00'
 model: gpt-4-0125-preview
-summary: Het vergelijken van twee datums betekent controleren of ze hetzelfde zijn
-  of bepalen welke eerder of later komt.
+summary: JavaScript's `Date` objecten komen goed van pas.
 title: Twee datums vergelijken
 weight: 27
 ---

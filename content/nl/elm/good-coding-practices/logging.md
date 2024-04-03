@@ -2,14 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:43.229816-07:00
-description: "Loggen is in wezen het proces van het vastleggen van gebeurtenissen\
-  \ en data-uitvoer van een softwareprogramma tijdens het draaien, denk erover als\
-  \ het\u2026"
+description: "Hoe te: De architectuur van Elm ondersteunt geen neveneffecten zoals\
+  \ loggen uit de doos - je handelt ze af via commando's, die een onderdeel zijn van\
+  \ de\u2026"
 lastmod: '2024-03-13T22:44:50.731574-06:00'
 model: gpt-4-0125-preview
-summary: Loggen is in wezen het proces van het vastleggen van gebeurtenissen en data-uitvoer
-  van een softwareprogramma tijdens het draaien, denk erover als het dagboek van de
-  software.
+summary: De architectuur van Elm ondersteunt geen neveneffecten zoals loggen uit de
+  doos - je handelt ze af via commando's, die een onderdeel zijn van de architectuur
+  van je applicatie.
 title: Logboekregistratie
 weight: 17
 ---

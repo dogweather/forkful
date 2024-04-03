@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:44:30.374908-07:00
-description: "Downloading a web page basically means grabbing the data from the URL\
-  \ you specify and pulling it onto your local machine. Programmers do it to parse\
-  \ data,\u2026"
+description: 'How to: We''ll use Python''s `requests` library. If you don''t have
+  it, install it with `pip install requests`. Here''s a quick example.'
 lastmod: '2024-03-13T22:44:59.707033-06:00'
 model: gpt-4-1106-preview
-summary: Downloading a web page basically means grabbing the data from the URL you
-  specify and pulling it onto your local machine.
+summary: We'll use Python's `requests` library.
 title: Downloading a web page
 weight: 42
 ---

@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:40:10.764379-07:00
-description: "Liczby zespolone rozszerzaj\u0105 pomys\u0142 jednowymiarowej linii\
-  \ liczbowej o dwuwymiarow\u0105 p\u0142aszczyzn\u0119 zespolon\u0105. Programi\u015B\
-  ci u\u017Cywaj\u0105 ich w dziedzinach takich jak\u2026"
+description: "Jak to zrobi\u0107: W Fish obs\u0142ugujemy liczby zespolone za pomoc\u0105\
+  \ `math` z cz\u0119\u015Bciami rzeczywist\u0105 i urojon\u0105. Oto jak zacz\u0105\
+  \u0107."
 lastmod: '2024-03-13T22:44:35.832889-06:00'
 model: gpt-4-0125-preview
-summary: "Liczby zespolone rozszerzaj\u0105 pomys\u0142 jednowymiarowej linii liczbowej\
-  \ o dwuwymiarow\u0105 p\u0142aszczyzn\u0119 zespolon\u0105."
+summary: "W Fish obs\u0142ugujemy liczby zespolone za pomoc\u0105 `math` z cz\u0119\
+  \u015Bciami rzeczywist\u0105 i urojon\u0105."
 title: Praca z liczbami zespolonymi
 weight: 14
 ---

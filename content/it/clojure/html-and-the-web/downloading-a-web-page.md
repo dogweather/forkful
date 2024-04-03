@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:43:40.392592-07:00
-description: "Scaricare una pagina web significa prelevare il contenuto HTML direttamente\
-  \ da Internet. I programmatori fanno ci\xF2 per processare dati, testare\u2026"
+description: 'How to: Usiamo `clj-http` per scaricare una pagina web. Si tratta di
+  una biblioteca Clojure semplice ma potente.'
 lastmod: '2024-03-13T22:44:43.041138-06:00'
 model: gpt-4-1106-preview
-summary: Scaricare una pagina web significa prelevare il contenuto HTML direttamente
-  da Internet.
+summary: Usiamo `clj-http` per scaricare una pagina web.
 title: Scaricare una pagina web
 weight: 42
 ---

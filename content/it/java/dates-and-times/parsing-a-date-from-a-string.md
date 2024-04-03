@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:22.826195-07:00
-description: "Estrarre una data da una stringa implica convertire la rappresentazione\
-  \ testuale di una data e ora in un oggetto `Date` o in un oggetto `LocalDateTime`\u2026"
+description: 'Come fare: #.'
 lastmod: '2024-03-13T22:44:43.318205-06:00'
 model: gpt-4-0125-preview
-summary: "Estrarre una data da una stringa implica convertire la rappresentazione\
-  \ testuale di una data e ora in un oggetto `Date` o in un oggetto `LocalDateTime`\
-  \ pi\xF9 moderno."
+summary: '#.'
 title: Analisi di una data da una stringa
 weight: 30
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:02:51.367491-07:00
-description: "Capitalizing a string in C# involves converting the first character\
-  \ of a string to uppercase if it isn't already. This alteration can be crucial for\u2026"
+description: "How to: C# offers a straightforward approach to capitalizing strings\
+  \ using built-in methods. The simplest way to achieve this is by modifying the string\u2026"
 lastmod: '2024-03-13T22:45:00.072028-06:00'
 model: gpt-4-0125-preview
-summary: Capitalizing a string in C# involves converting the first character of a
-  string to uppercase if it isn't already.
+summary: C# offers a straightforward approach to capitalizing strings using built-in
+  methods.
 title: Capitalizing a string
 weight: 2
 ---

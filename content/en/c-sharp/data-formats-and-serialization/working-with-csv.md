@@ -1,11 +1,13 @@
 ---
 date: 2024-02-03 19:03:28.377238-07:00
-description: "CSV (Comma-Separated Values) files are a common data exchange format\
-  \ that represents tabular data in plain text, using commas to separate individual\u2026"
+description: "How to: Working with CSV files in C# can be accomplished through the\
+  \ `System.IO` namespace for basic operations, and for more complex manipulations\
+  \ or to\u2026"
 lastmod: '2024-03-13T22:45:00.109637-06:00'
 model: gpt-4-0125-preview
-summary: CSV (Comma-Separated Values) files are a common data exchange format that
-  represents tabular data in plain text, using commas to separate individual values.
+summary: Working with CSV files in C# can be accomplished through the `System.IO`
+  namespace for basic operations, and for more complex manipulations or to handle
+  larger files seamlessly, one might consider third-party libraries like `CsvHelper`.
 title: Working with CSV
 weight: 37
 ---

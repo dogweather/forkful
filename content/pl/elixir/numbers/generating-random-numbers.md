@@ -1,14 +1,12 @@
 ---
 date: 2024-01-27 20:33:18.574106-07:00
-description: "Generowanie liczb losowych w Elixirze jest podstawowym zadaniem programistycznym,\
-  \ niezb\u0119dnym dla aplikacji potrzebuj\u0105cych nieprzewidywalnych wynik\xF3\
-  w,\u2026"
+description: "Jak to zrobi\u0107: Aby generowa\u0107 liczby losowe w Elixirze, g\u0142\
+  \xF3wnie u\u017Cywa si\u0119 modu\u0142u `:rand`, kt\xF3ry dostarcza kilka funkcji\
+  \ do tego celu. Oto kr\xF3tki\u2026"
 lastmod: '2024-03-13T22:44:35.037773-06:00'
 model: gpt-4-0125-preview
-summary: "Generowanie liczb losowych w Elixirze jest podstawowym zadaniem programistycznym,\
-  \ niezb\u0119dnym dla aplikacji potrzebuj\u0105cych nieprzewidywalnych wynik\xF3\
-  w, takich jak generowanie bezpiecznych token\xF3w, pr\xF3bkowanie danych czy algorytmy\
-  \ gier."
+summary: "Aby generowa\u0107 liczby losowe w Elixirze, g\u0142\xF3wnie u\u017Cywa\
+  \ si\u0119 modu\u0142u `:rand`, kt\xF3ry dostarcza kilka funkcji do tego celu."
 title: Generowanie liczb losowych
 weight: 12
 ---

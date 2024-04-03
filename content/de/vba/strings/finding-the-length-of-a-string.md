@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:39.258909-07:00
-description: "Die Ermittlung der L\xE4nge eines Strings in Visual Basic for Applications\
-  \ (VBA) umfasst die Bestimmung der Anzahl der Zeichen, die er enth\xE4lt. Programmierer\u2026"
+description: "Wie geht das: In VBA ist die `Len`-Funktion Ihre erste Anlaufstelle,\
+  \ um die L\xE4nge eines Strings zu finden. Sie gibt einen Integer zur\xFCck, der\
+  \ die Anzahl\u2026"
 lastmod: '2024-03-13T22:44:53.707570-06:00'
 model: gpt-4-0125-preview
-summary: "Die Ermittlung der L\xE4nge eines Strings in Visual Basic for Applications\
-  \ (VBA) umfasst die Bestimmung der Anzahl der Zeichen, die er enth\xE4lt."
+summary: "In VBA ist die `Len`-Funktion Ihre erste Anlaufstelle, um die L\xE4nge eines\
+  \ Strings zu finden."
 title: "Die L\xE4nge eines Strings ermitteln"
 weight: 7
 ---

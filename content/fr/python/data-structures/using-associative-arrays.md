@@ -2,14 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:39.462667-07:00
-description: "Les tableaux associatifs, connus sous le nom de dictionnaires en Python,\
-  \ associent des cl\xE9s \xE0 des valeurs, ce qui facilite la r\xE9cup\xE9ration,\
-  \ la\u2026"
+description: "Comment faire : Cr\xE9er un dictionnaire en Python est simple. Vous\
+  \ encadrez les paires cl\xE9-valeur avec des accolades `{}`, les cl\xE9s et les\
+  \ valeurs \xE9tant\u2026"
 lastmod: '2024-03-13T22:44:57.227377-06:00'
 model: gpt-4-0125-preview
-summary: "Les tableaux associatifs, connus sous le nom de dictionnaires en Python,\
-  \ associent des cl\xE9s \xE0 des valeurs, ce qui facilite la r\xE9cup\xE9ration,\
-  \ la modification ou le suivi des donn\xE9es par un identifiant unique."
+summary: "Cr\xE9er un dictionnaire en Python est simple."
 title: Utilisation des tableaux associatifs
 weight: 15
 ---

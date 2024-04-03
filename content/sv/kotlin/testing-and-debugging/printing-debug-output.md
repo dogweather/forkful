@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:52:52.021948-07:00
-description: "Debug-utskrifter anv\xE4nds f\xF6r att sp\xE5ra vad som h\xE4nder i\
-  \ din kod p\xE5 ett enkelt s\xE4tt. Programmerare anv\xE4nder det f\xF6r att snabbt\
-  \ fels\xF6ka och f\xF6lja\u2026"
+description: "S\xE5 h\xE4r g\xF6r du: Kotlin erbjuder flera s\xE4tt att skriva ut\
+  \ debug-information. H\xE4r \xE4r det vanligaste."
 lastmod: '2024-03-13T22:44:37.873684-06:00'
 model: gpt-4-1106-preview
-summary: "Debug-utskrifter anv\xE4nds f\xF6r att sp\xE5ra vad som h\xE4nder i din\
-  \ kod p\xE5 ett enkelt s\xE4tt."
+summary: "Kotlin erbjuder flera s\xE4tt att skriva ut debug-information."
 title: "Skriva ut fels\xF6kningsdata"
 weight: 33
 ---

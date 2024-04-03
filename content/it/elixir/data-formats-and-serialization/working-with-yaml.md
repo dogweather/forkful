@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:04.790479-07:00
-description: "YAML, acronimo di YAML Ain't Markup Language, \xE8 uno standard di serializzazione\
-  \ dei dati leggibile dall'uomo comunemente utilizzato per file di\u2026"
+description: "Come fare: Elixir non include supporto incorporato per YAML. Tuttavia,\
+  \ \xE8 possibile utilizzare librerie di terze parti come `yamerl` o `yaml_elixir`\
+  \ per\u2026"
 lastmod: '2024-03-13T22:44:43.104817-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, acronimo di YAML Ain't Markup Language, \xE8 uno standard di serializzazione\
-  \ dei dati leggibile dall'uomo comunemente utilizzato per file di configurazione\
-  \ e scambio di dati tra linguaggi con strutture dati diverse."
+summary: Elixir non include supporto incorporato per YAML.
 title: Lavorare con YAML
 weight: 41
 ---

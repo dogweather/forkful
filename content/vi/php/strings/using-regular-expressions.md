@@ -2,15 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:07.953523-07:00
-description: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) l\xE0 c\xE1c m\u1EABu t\xEC\
-  m ki\u1EBFm \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 kh\u1EDBp c\xE1c\
-  \ k\u1EBFt h\u1EE3p k\xFD t\u1EF1 trong chu\u1ED7i. L\u1EADp tr\xECnh vi\xEAn s\u1EED\
-  \ d\u1EE5ng ch\xFAng cho c\xE1c nhi\u1EC7m v\u1EE5 nh\u01B0 x\xE1c\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EC3 s\u1EED d\u1EE5ng regex trong PHP,\
+  \ b\u1EA1n th\u01B0\u1EDDng s\u1EED d\u1EE5ng `preg_match` \u0111\u1EC3 t\xECm ki\u1EBF\
+  m m\u1ED9t k\u1EBFt qu\u1EA3 kh\u1EDBp, ho\u1EB7c `preg_replace` cho t\xECm ki\u1EBF\
+  m v\xE0 thay th\u1EBF. D\u01B0\u1EDBi\u2026"
 lastmod: '2024-03-13T22:44:36.752851-06:00'
 model: gpt-4-0125-preview
-summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) l\xE0 c\xE1c m\u1EABu t\xECm ki\u1EBF\
-  m \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 kh\u1EDBp c\xE1c k\u1EBFt h\u1EE3\
-  p k\xFD t\u1EF1 trong chu\u1ED7i."
+summary: "\u0110\u1EC3 s\u1EED d\u1EE5ng regex trong PHP, b\u1EA1n th\u01B0\u1EDD\
+  ng s\u1EED d\u1EE5ng `preg_match` \u0111\u1EC3 t\xECm ki\u1EBFm m\u1ED9t k\u1EBF\
+  t qu\u1EA3 kh\u1EDBp, ho\u1EB7c `preg_replace` cho t\xECm ki\u1EBFm v\xE0 thay th\u1EBF\
+  ."
 title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---

@@ -2,11 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:55.975628-07:00
-description: "Parsear HTML en Elm implica extraer informaci\xF3n de documentos HTML.\
-  \ Los programadores lo hacen para interactuar con contenido web o APIs que retornan\u2026"
+description: "C\xF3mo hacerlo: Elm no dispone de una biblioteca incorporada para parsear\
+  \ HTML directamente, al igual que bibliotecas en JavaScript o Python debido a su\u2026"
 lastmod: '2024-03-13T22:44:58.977741-06:00'
 model: gpt-4-0125-preview
-summary: "Parsear HTML en Elm implica extraer informaci\xF3n de documentos HTML."
+summary: "Elm no dispone de una biblioteca incorporada para parsear HTML directamente,\
+  \ al igual que bibliotecas en JavaScript o Python debido a su \xE9nfasis en la seguridad\
+  \ de tipos y la evitaci\xF3n de errores en tiempo de ejecuci\xF3n."
 title: Analizando HTML
 weight: 43
 ---

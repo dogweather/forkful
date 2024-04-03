@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:47:57.121813-07:00
-description: "Calcolare la lunghezza di una stringa significa scoprire quanti caratteri\
-  \ contiene. I programmatori lo fanno per validare input, gestire il testo in\u2026"
+description: 'Come fare: Ecco come ottenere la lunghezza di una stringa in Python,
+  semplice e veloce.'
 lastmod: '2024-03-13T22:44:42.992296-06:00'
 model: gpt-4-1106-preview
-summary: Calcolare la lunghezza di una stringa significa scoprire quanti caratteri
-  contiene.
+summary: Ecco come ottenere la lunghezza di una stringa in Python, semplice e veloce.
 title: Trovare la lunghezza di una stringa
 weight: 7
 ---

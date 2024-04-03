@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:28.213938-07:00
-description: "Een datum in de toekomst of het verleden berekenen houdt in dat je een\
-  \ datum bepaalt die een gespecificeerd aantal dagen, maanden of jaren vanaf een\u2026"
+description: "Hoe: In Visual Basic for Applications (VBA) is de primaire functie die\
+  \ gebruikt wordt om toekomstige of verleden datums te berekenen `DateAdd()`. Deze\u2026"
 lastmod: '2024-03-13T22:44:50.650492-06:00'
 model: gpt-4-0125-preview
-summary: Een datum in de toekomst of het verleden berekenen houdt in dat je een datum
-  bepaalt die een gespecificeerd aantal dagen, maanden of jaren vanaf een gegeven
-  datum verwijderd is.
+summary: In Visual Basic for Applications (VBA) is de primaire functie die gebruikt
+  wordt om toekomstige of verleden datums te berekenen `DateAdd()`.
 title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---

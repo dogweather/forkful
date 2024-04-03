@@ -1,13 +1,11 @@
 ---
 date: 2024-02-03 19:03:17.132416-07:00
-description: "YAML, which stands for YAML Ain't Markup Language, is a human-readable\
-  \ data serialization standard that can be used for configuration files, as well\
-  \ as in\u2026"
+description: "How to: Working directly with YAML in Bash requires a bit of ingenuity\
+  \ since Bash does not have built-in support for parsing YAML. However, you can use\u2026"
 lastmod: '2024-03-13T22:45:00.262459-06:00'
 model: gpt-4-0125-preview
-summary: YAML, which stands for YAML Ain't Markup Language, is a human-readable data
-  serialization standard that can be used for configuration files, as well as in applications
-  where data is being stored or transmitted.
+summary: Working directly with YAML in Bash requires a bit of ingenuity since Bash
+  does not have built-in support for parsing YAML.
 title: Working with YAML
 weight: 41
 ---

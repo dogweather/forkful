@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:01.419082-07:00
-description: "\xC9crire sur l'erreur standard (stderr) en PHP consiste \xE0 diriger\
-  \ les messages d'erreur ou les diagnostics s\xE9par\xE9ment de la sortie standard\
-  \ (stdout),\u2026"
+description: "Comment faire : En PHP, \xE9crire sur stderr peut \xEAtre r\xE9alis\xE9\
+  \ en utilisant la fonction `fwrite()` en conjonction avec la constante pr\xE9d\xE9\
+  finie `STDERR`, qui\u2026"
 lastmod: '2024-03-13T22:44:57.896495-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire sur l'erreur standard (stderr) en PHP consiste \xE0 diriger les\
-  \ messages d'erreur ou les diagnostics s\xE9par\xE9ment de la sortie standard (stdout),\
-  \ permettant aux d\xE9veloppeurs de mieux g\xE9rer leurs flux de sortie pour le\
-  \ d\xE9bogage et la journalisation."
+summary: "En PHP, \xE9crire sur stderr peut \xEAtre r\xE9alis\xE9 en utilisant la\
+  \ fonction `fwrite()` en conjonction avec la constante pr\xE9d\xE9finie `STDERR`,\
+  \ qui repr\xE9sente le flux de sortie d'erreur."
 title: "\xC9crire sur l'erreur standard"
 weight: 25
 ---

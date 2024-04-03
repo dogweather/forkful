@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:50:36.726573-07:00
-description: "Merkkijonon interpolointi tarkoittaa muuttujien ja lausekkeiden yhdist\xE4\
-  mist\xE4 merkkijonojen sis\xE4\xE4n. Sit\xE4 k\xE4ytet\xE4\xE4n dynaamisen tekstin\
-  \ luontiin, joka\u2026"
+description: 'Miten: .'
 lastmod: '2024-03-13T22:44:56.851399-06:00'
 model: gpt-4-1106-preview
-summary: "Merkkijonon interpolointi tarkoittaa muuttujien ja lausekkeiden yhdist\xE4\
-  mist\xE4 merkkijonojen sis\xE4\xE4n."
+summary: .
 title: Merkkijonon interpolointi
 weight: 8
 ---

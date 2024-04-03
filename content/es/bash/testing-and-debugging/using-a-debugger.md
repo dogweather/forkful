@@ -1,8 +1,8 @@
 ---
 date: 2024-01-26 03:47:23.601844-07:00
-description: "Bash no viene con un depurador incorporado como algunos otros lenguajes,\
-  \ pero puedes usar comandos integrados como `set -x` para rastrear lo que est\xE1\
-  \u2026"
+description: "C\xF3mo hacerlo: Bash no viene con un depurador incorporado como algunos\
+  \ otros lenguajes, pero puedes usar comandos integrados como `set -x` para rastrear\
+  \ lo\u2026"
 lastmod: '2024-03-13T22:44:59.251057-06:00'
 model: gpt-4-0125-preview
 summary: "Bash no viene con un depurador incorporado como algunos otros lenguajes,\

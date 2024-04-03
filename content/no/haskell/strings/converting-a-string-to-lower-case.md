@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:38:33.253146-07:00
-description: "\xC5 konvertere en tekststreng til sm\xE5 bokstaver betyr \xE5 gj\xF8\
-  re alle bokstavene i strengen til miniatyrversjoner (sm\xE5 bokstaver). Programmerere\
-  \ gj\xF8r dette for\u2026"
+description: 'Hvordan: .'
 lastmod: '2024-03-13T22:44:40.828002-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 konvertere en tekststreng til sm\xE5 bokstaver betyr \xE5 gj\xF8re\
-  \ alle bokstavene i strengen til miniatyrversjoner (sm\xE5 bokstaver)."
+summary: .
 title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---

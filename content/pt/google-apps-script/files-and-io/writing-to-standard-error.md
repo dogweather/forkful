@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:09:03.486770-07:00
-description: "Escrever para o erro padr\xE3o (stderr) em linguagens de programa\xE7\
-  \xE3o trata-se de direcionar mensagens de erro e diagn\xF3sticos para um fluxo separado,\
-  \ distinto\u2026"
+description: "Como: Script do Google Apps, sendo uma linguagem de script para desenvolvimento\
+  \ de aplica\xE7\xF5es leves na plataforma do Google Apps, n\xE3o oferece uma fun\xE7\
+  \xE3o\u2026"
 lastmod: '2024-03-13T22:44:46.126912-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever para o erro padr\xE3o (stderr) em linguagens de programa\xE7\xE3\
-  o trata-se de direcionar mensagens de erro e diagn\xF3sticos para um fluxo separado,\
-  \ distinto da sa\xEDda padr\xE3o (stdout)."
+summary: "Script do Google Apps, sendo uma linguagem de script para desenvolvimento\
+  \ de aplica\xE7\xF5es leves na plataforma do Google Apps, n\xE3o oferece uma fun\xE7\
+  \xE3o embutida direta como `console.error()` para escrever para stderr, como voc\xEA\
+  \ poderia encontrar em Node.js ou Python."
 title: "Escrevendo no erro padr\xE3o"
 weight: 25
 ---

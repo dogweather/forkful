@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:15.642754-07:00
-description: "Travailler avec du CSV (Valeurs S\xE9par\xE9es par des Virgules) implique\
-  \ d'analyser et de g\xE9n\xE9rer des fichiers qui stockent des donn\xE9es tabulaires\
-  \ dans un\u2026"
+description: "Comment faire : Elm ne dispose pas d'un support int\xE9gr\xE9 pour l'analyse\
+  \ ou la g\xE9n\xE9ration de CSV ; \xE0 la place, des paquets tiers tels que `panosoft/elm-csv`\u2026"
 lastmod: '2024-03-13T22:44:57.714370-06:00'
 model: gpt-4-0125-preview
-summary: "Travailler avec du CSV (Valeurs S\xE9par\xE9es par des Virgules) implique\
-  \ d'analyser et de g\xE9n\xE9rer des fichiers qui stockent des donn\xE9es tabulaires\
-  \ dans un format texte simple."
+summary: "Elm ne dispose pas d'un support int\xE9gr\xE9 pour l'analyse ou la g\xE9\
+  n\xE9ration de CSV ; \xE0 la place, des paquets tiers tels que `panosoft/elm-csv`\
+  \ sont souvent utilis\xE9s."
 title: Travailler avec CSV
 weight: 37
 ---

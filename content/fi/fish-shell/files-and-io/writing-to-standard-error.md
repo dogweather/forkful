@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:25.109127-07:00
-description: "Virheiden kirjoittaminen (stderr) Fish Shelliss\xE4 tarkoittaa virheilmoitusten\
-  \ tai diagnostiikkatietojen ohjaamista erill\xE4\xE4n tavallisesta tulosteesta\u2026"
+description: "Miten: Fish Shelliss\xE4 voit kirjoittaa stderr-n\xE4kym\xE4\xE4n ohjaamalla\
+  \ tulosteesi k\xE4ytt\xE4en `>&2`. T\xE4ss\xE4 on perusesimerkki."
 lastmod: '2024-03-13T22:44:57.011542-06:00'
 model: gpt-4-0125-preview
-summary: "Virheiden kirjoittaminen (stderr) Fish Shelliss\xE4 tarkoittaa virheilmoitusten\
-  \ tai diagnostiikkatietojen ohjaamista erill\xE4\xE4n tavallisesta tulosteesta (stdout)."
+summary: "Fish Shelliss\xE4 voit kirjoittaa stderr-n\xE4kym\xE4\xE4n ohjaamalla tulosteesi\
+  \ k\xE4ytt\xE4en `>&2`."
 title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---

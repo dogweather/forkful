@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:18.663470-07:00
-description: "Assosiative tabeller, kjent som objekter i Google Apps Script (en variant\
-  \ av JavaScript), lar programmerere lage samlinger av n\xF8kkel-verdi-par. Denne\u2026"
+description: "Slik gj\xF8r du: I Google Apps Script oppretter og manipulerer du assosiative\
+  \ tabeller (objekter) ved hjelp av kr\xF8llparenteser `{}`, og definerer n\xF8kkel-\u2026"
 lastmod: '2024-03-13T22:44:40.306373-06:00'
 model: gpt-4-0125-preview
-summary: "Assosiative tabeller, kjent som objekter i Google Apps Script (en variant\
-  \ av JavaScript), lar programmerere lage samlinger av n\xF8kkel-verdi-par."
+summary: "I Google Apps Script oppretter og manipulerer du assosiative tabeller (objekter)\
+  \ ved hjelp av kr\xF8llparenteser `{}`, og definerer n\xF8kkel-verdi-par innenfor."
 title: Bruke assosiative tabeller
 weight: 15
 ---

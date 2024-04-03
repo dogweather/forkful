@@ -2,17 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:19.747816-07:00
-description: "R\xFAt tr\xEDch chu\u1ED7i con c\xF3 ngh\u0129a l\xE0 l\u1EA5y m\u1ED9\
-  t ph\u1EA7n nh\u1ECF h\u01A1n t\u1EEB m\u1ED9t chu\u1ED7i l\u1EDBn h\u01A1n\u2014\
-  gi\u1ED1ng nh\u01B0 vi\u1EC7c b\u1EA1n c\u1EAFt m\u1ED9t mi\u1EBFng b\xE1nh \u0111\
-  \u1EC3 \u0103n. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3\
-  \ l\u1EA5y\u2026"
+description: "L\xE0m Th\u1EBF N\xE0o: H\xE3y th\u1EED ngay v\u1EDBi Rust. H\xE3y t\u01B0\
+  \u1EDFng t\u01B0\u1EE3ng b\u1EA1n c\xF3 m\u1ED9t chu\u1ED7i, v\xE0 b\u1EA1n mu\u1ED1\
+  n m\u1ED9t ph\u1EA7n c\u1EE5 th\u1EC3 c\u1EE7a n\xF3. B\u1EA1n c\xF3 th\u1EC3 s\u1EED\
+  \ d\u1EE5ng c\xFA ph\xE1p c\u1EAFt chu\u1ED7i\u2026"
 lastmod: '2024-03-13T22:44:36.361010-06:00'
 model: gpt-4-0125-preview
-summary: "R\xFAt tr\xEDch chu\u1ED7i con c\xF3 ngh\u0129a l\xE0 l\u1EA5y m\u1ED9t\
-  \ ph\u1EA7n nh\u1ECF h\u01A1n t\u1EEB m\u1ED9t chu\u1ED7i l\u1EDBn h\u01A1n\u2014\
-  gi\u1ED1ng nh\u01B0 vi\u1EC7c b\u1EA1n c\u1EAFt m\u1ED9t mi\u1EBFng b\xE1nh \u0111\
-  \u1EC3 \u0103n."
+summary: "H\xE3y th\u1EED ngay v\u1EDBi Rust."
 title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 weight: 6
 ---

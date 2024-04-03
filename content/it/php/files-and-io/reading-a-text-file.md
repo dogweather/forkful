@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:54:45.586248-07:00
-description: "Leggere un file di testo in PHP significa accedere al contenuto salvato\
-  \ in un file sul server. I programmatori lo fanno per elaborare dati, configurare\u2026"
+description: 'How to: (Come fare:) .'
 lastmod: '2024-03-13T22:44:43.534058-06:00'
 model: gpt-4-1106-preview
-summary: Leggere un file di testo in PHP significa accedere al contenuto salvato in
-  un file sul server.
+summary: .
 title: Lettura di un file di testo
 weight: 22
 ---

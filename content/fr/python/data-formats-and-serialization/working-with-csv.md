@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:52.487284-07:00
-description: "Travailler avec les CSV (Valeurs S\xE9par\xE9es par des Virgules) implique\
-  \ la lecture et l'\xE9criture de donn\xE9es dans des fichiers CSV, un format courant\
-  \ pour le\u2026"
+description: "Comment faire : Python fournit le module int\xE9gr\xE9 `csv` pour g\xE9\
+  rer les fichiers CSV, ce qui rend la lecture et l'\xE9criture simples. Pour une\
+  \ manipulation de\u2026"
 lastmod: '2024-03-13T22:44:57.260567-06:00'
 model: gpt-4-0125-preview
-summary: "Travailler avec les CSV (Valeurs S\xE9par\xE9es par des Virgules) implique\
-  \ la lecture et l'\xE9criture de donn\xE9es dans des fichiers CSV, un format courant\
-  \ pour le stockage des donn\xE9es tabulaires."
+summary: "Python fournit le module int\xE9gr\xE9 `csv` pour g\xE9rer les fichiers\
+  \ CSV, ce qui rend la lecture et l'\xE9criture simples."
 title: Travailler avec CSV
 weight: 37
 ---

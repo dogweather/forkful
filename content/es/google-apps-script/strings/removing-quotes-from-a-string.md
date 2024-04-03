@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:03.680908-07:00
-description: "Eliminar comillas de una cadena en Google Apps Script se trata de eliminar\
-  \ las comillas innecesarias que pueden rodear tus datos de cadena, generalmente\u2026"
+description: "C\xF3mo hacerlo: Google Apps Script no se desv\xEDa mucho de las pr\xE1\
+  cticas est\xE1ndar de JavaScript cuando se trata de manejar cadenas y su manipulaci\xF3\
+  n. Para\u2026"
 lastmod: '2024-03-13T22:44:58.508981-06:00'
 model: gpt-4-0125-preview
-summary: "Eliminar comillas de una cadena en Google Apps Script se trata de eliminar\
-  \ las comillas innecesarias que pueden rodear tus datos de cadena, generalmente\
-  \ derivados de objetos JSON analizados, entrada de usuarios o extracci\xF3n de datos."
+summary: "Google Apps Script no se desv\xEDa mucho de las pr\xE1cticas est\xE1ndar\
+  \ de JavaScript cuando se trata de manejar cadenas y su manipulaci\xF3n."
 title: Eliminando comillas de una cadena
 weight: 9
 ---

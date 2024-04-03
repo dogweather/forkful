@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:56:31.746095-07:00
-description: "Comandos na linha de comando s\xE3o instru\xE7\xF5es que voc\xEA insere\
-  \ diretamente no terminal para executar um programa com op\xE7\xF5es espec\xEDficas.\
-  \ Os programadores\u2026"
+description: "Como Fazer: Para pegar argumentos da linha de comando em PHP, voc\xEA\
+  \ usa a vari\xE1vel global `$argv`. `$argc` conta os argumentos. Vamos ver isso\
+  \ em a\xE7\xE3o."
 lastmod: '2024-03-13T22:44:46.682482-06:00'
 model: gpt-4-1106-preview
-summary: "Comandos na linha de comando s\xE3o instru\xE7\xF5es que voc\xEA insere\
-  \ diretamente no terminal para executar um programa com op\xE7\xF5es espec\xEDficas."
+summary: "Para pegar argumentos da linha de comando em PHP, voc\xEA usa a vari\xE1\
+  vel global `$argv`."
 title: Lendo argumentos da linha de comando
 weight: 23
 ---

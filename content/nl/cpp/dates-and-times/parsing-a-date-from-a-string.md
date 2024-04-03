@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:04.024540-07:00
-description: "Het parsen van een datum uit een tekenreeks betekent het omzetten van\
-  \ tekst naar een datumgegevenstype. Programmeurs doen dit om datumgerelateerde logica\u2026"
+description: 'Hoe: Gebruik `<chrono>` en `<sstream>` om een datum in C++ te parsen.
+  Hier is een snel voorbeeld.'
 lastmod: '2024-03-13T22:44:51.122208-06:00'
 model: gpt-4-0125-preview
-summary: Het parsen van een datum uit een tekenreeks betekent het omzetten van tekst
-  naar een datumgegevenstype.
+summary: Gebruik `<chrono>` en `<sstream>` om een datum in C++ te parsen.
 title: Een datum uit een string parsen
 weight: 30
 ---

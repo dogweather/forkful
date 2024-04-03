@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:13.600128-07:00
-description: "Analisar HTML \xE9 sobre extrair dados ou informa\xE7\xF5es de conte\xFA\
-  do HTML, uma tarefa comum ao lidar com dados da web. Programadores fazem isso para\
-  \ automatizar\u2026"
+description: "Como Fazer: O shell Fish, predominantemente, n\xE3o \xE9 projetado para\
+  \ analisar HTML diretamente. No entanto, ele se destaca em juntar ferramentas Unix\
+  \ como\u2026"
 lastmod: '2024-03-13T22:44:47.003872-06:00'
 model: gpt-4-0125-preview
-summary: "Analisar HTML \xE9 sobre extrair dados ou informa\xE7\xF5es de conte\xFA\
-  do HTML, uma tarefa comum ao lidar com dados da web."
+summary: "O shell Fish, predominantemente, n\xE3o \xE9 projetado para analisar HTML\
+  \ diretamente."
 title: Analisando HTML
 weight: 43
 ---

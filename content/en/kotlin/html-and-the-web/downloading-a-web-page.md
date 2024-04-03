@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:44:24.285016-07:00
-description: "Downloading a web page means grabbing the HTML from a given URL to see\
-  \ or use locally. Programmers do this for stuff like web scraping, offline reading,\u2026"
+description: "How to: Let's roll with Kotlin\u2019s `HttpURLConnection` to quickly\
+  \ nab a web page. We'll also use coroutines for smooth background ops. Here's a\
+  \ primer."
 lastmod: '2024-03-13T22:45:00.047495-06:00'
 model: gpt-4-1106-preview
-summary: Downloading a web page means grabbing the HTML from a given URL to see or
-  use locally.
+summary: "Let's roll with Kotlin\u2019s `HttpURLConnection` to quickly nab a web page."
 title: Downloading a web page
 weight: 42
 ---

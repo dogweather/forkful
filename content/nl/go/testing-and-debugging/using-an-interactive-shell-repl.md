@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:18.316817-07:00
-description: "Een interactieve shell, of Lees-Evalueer-Print-Lus (REPL), stelt je\
-  \ in staat om in real-time met Go-code te experimenteren, commando's uit te voeren\
-  \ en\u2026"
+description: "Hoe te: Hoewel Go geen ingebouwde REPL bevat, heeft de gemeenschap tools\
+  \ zoals `gore` gecre\xEBerd om dit gat te vullen. Installeer eerst `gore` door te\u2026"
 lastmod: '2024-03-13T22:44:50.289169-06:00'
 model: gpt-4-0125-preview
-summary: Een interactieve shell, of Lees-Evalueer-Print-Lus (REPL), stelt je in staat
-  om in real-time met Go-code te experimenteren, commando's uit te voeren en onmiddellijke
-  feedback te krijgen.
+summary: "Hoewel Go geen ingebouwde REPL bevat, heeft de gemeenschap tools zoals `gore`\
+  \ gecre\xEBerd om dit gat te vullen."
 title: Gebruik van een interactieve shell (REPL)
 weight: 34
 ---

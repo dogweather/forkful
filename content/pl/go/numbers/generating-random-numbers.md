@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:39.703723-07:00
-description: "Generowanie losowych liczb w programowaniu polega na tworzeniu sekwencji\
-  \ liczb, kt\xF3rych nie mo\u017Cna racjonalnie przewidzie\u0107 lepiej ni\u017C\
-  \ przez przypadek.\u2026"
+description: "Jak to zrobi\u0107: W Go, losowe liczby s\u0105 generowane za pomoc\u0105\
+  \ pakietu `math/rand` dla pseudo-losowych liczb lub `crypto/rand` dla kryptograficznie\u2026"
 lastmod: '2024-03-13T22:44:34.844967-06:00'
 model: gpt-4-0125-preview
-summary: "Generowanie losowych liczb w programowaniu polega na tworzeniu sekwencji\
-  \ liczb, kt\xF3rych nie mo\u017Cna racjonalnie przewidzie\u0107 lepiej ni\u017C\
-  \ przez przypadek."
+summary: "W Go, losowe liczby s\u0105 generowane za pomoc\u0105 pakietu `math/rand`\
+  \ dla pseudo-losowych liczb lub `crypto/rand` dla kryptograficznie bezpiecznych\
+  \ pseudo-losowych liczb."
 title: Generowanie liczb losowych
 weight: 12
 ---

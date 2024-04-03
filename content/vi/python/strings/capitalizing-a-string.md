@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:51.532865-07:00
-description: "Vi\u1EC7c vi\u1EBFt hoa m\u1ED9t chu\u1ED7i ngh\u0129a l\xE0 chuy\u1EC3\
-  n k\xFD t\u1EF1 \u0111\u1EA7u ti\xEAn th\xE0nh ch\u1EEF c\xE1i in hoa v\xE0 ph\u1EA7\
-  n c\xF2n l\u1EA1i th\xE0nh ch\u1EEF c\xE1i th\u01B0\u1EDDng. C\xE1c l\u1EADp tr\xEC\
-  nh vi\xEAn th\u01B0\u1EDDng th\u1EF1c hi\u1EC7n vi\u1EC7c\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: S\u1EED d\u1EE5ng ph\u01B0\u01A1ng th\u1EE9\
+  c `capitalize()` ho\u1EB7c `title()` c\xF3 s\u1EB5n trong Python cho c\xF4ng vi\u1EC7\
+  c n\xE0y."
 lastmod: '2024-03-13T22:44:36.074522-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c vi\u1EBFt hoa m\u1ED9t chu\u1ED7i ngh\u0129a l\xE0 chuy\u1EC3\
-  n k\xFD t\u1EF1 \u0111\u1EA7u ti\xEAn th\xE0nh ch\u1EEF c\xE1i in hoa v\xE0 ph\u1EA7\
-  n c\xF2n l\u1EA1i th\xE0nh ch\u1EEF c\xE1i th\u01B0\u1EDDng."
+summary: "S\u1EED d\u1EE5ng ph\u01B0\u01A1ng th\u1EE9c `capitalize()` ho\u1EB7c `title()`\
+  \ c\xF3 s\u1EB5n trong Python cho c\xF4ng vi\u1EC7c n\xE0y."
 title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
 weight: 2
 ---

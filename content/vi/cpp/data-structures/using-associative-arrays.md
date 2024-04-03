@@ -2,17 +2,14 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:43.102990-07:00
-description: "M\u1EA3ng k\u1EBFt h\u1EE3p, \u0111\u01B0\u1EE3c bi\u1EBFt \u0111\u1EBF\
-  n v\u1EDBi t\xEAn `std::map` ho\u1EB7c `std::unordered_map` trong C++, \u0111\xE3\
-  \ l\u1EA5p \u0111\u1EA7y kho\u1EA3ng tr\u1ED1ng gi\u1EEFa ch\u1EC9 s\u1ED1 m\u1EA3\
-  ng v\xE0 d\u1EEF li\u1EC7u th\u1EF1c t\u1EBF, cho ph\xE9p\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong C++, m\u1EA3ng k\u1EBFt h\u1EE3p \u0111\
+  \u01B0\u1EE3c hi\u1EC3n th\u1ECB v\u1EDBi c\xE1c ti\xEAu \u0111\u1EC1 `<map>` v\xE0\
+  \ `<unordered_map>`. H\xE3y ph\xE2n t\xEDch c\xE1c v\xED d\u1EE5 \u0111\u1EC3 xem\
+  \ c\u1EA3 hai ho\u1EA1t \u0111\u1ED9ng nh\u01B0 th\u1EBF\u2026"
 lastmod: '2024-03-13T22:44:37.033501-06:00'
 model: gpt-4-0125-preview
-summary: "M\u1EA3ng k\u1EBFt h\u1EE3p, \u0111\u01B0\u1EE3c bi\u1EBFt \u0111\u1EBF\
-  n v\u1EDBi t\xEAn `std::map` ho\u1EB7c `std::unordered_map` trong C++, \u0111\xE3\
-  \ l\u1EA5p \u0111\u1EA7y kho\u1EA3ng tr\u1ED1ng gi\u1EEFa ch\u1EC9 s\u1ED1 m\u1EA3\
-  ng v\xE0 d\u1EEF li\u1EC7u th\u1EF1c t\u1EBF, cho ph\xE9p b\u1EA1n s\u1EED d\u1EE5\
-  ng c\xE1c kh\xF3a c\xF3 \xFD ngh\u0129a."
+summary: "Trong C++, m\u1EA3ng k\u1EBFt h\u1EE3p \u0111\u01B0\u1EE3c hi\u1EC3n th\u1ECB\
+  \ v\u1EDBi c\xE1c ti\xEAu \u0111\u1EC1 `<map>` v\xE0 `<unordered_map>`."
 title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 weight: 15
 ---

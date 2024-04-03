@@ -2,16 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:44.137420-07:00
-description: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong PowerShell li\xEA\
-  n quan \u0111\u1EBFn vi\u1EC7c t\u1EA1o ra c\xE1c gi\xE1 tr\u1ECB s\u1ED1 kh\xF4\
-  ng th\u1EC3 \u0111o\xE1n tr\u01B0\u1EDBc trong m\u1ED9t ph\u1EA1m vi \u0111\u01B0\
-  \u1EE3c ch\u1EC9 \u0111\u1ECBnh. C\xE1c l\u1EADp tr\xECnh vi\xEAn\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: PowerShell cung c\u1EA5p m\u1ED9t c\xE1\
+  ch th\u1EB3ng th\u1EAFn \u0111\u1EC3 t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn b\u1EB1\
+  ng c\xE1ch s\u1EED d\u1EE5ng cmdlet `Get-Random`. Cmdlet n\xE0y c\xF3 th\u1EC3 s\u1EA3\
+  n xu\u1EA5t ra s\u1ED1 ng\u1EABu\u2026"
 lastmod: '2024-03-13T22:44:36.928011-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong PowerShell li\xEAn quan\
-  \ \u0111\u1EBFn vi\u1EC7c t\u1EA1o ra c\xE1c gi\xE1 tr\u1ECB s\u1ED1 kh\xF4ng th\u1EC3\
-  \ \u0111o\xE1n tr\u01B0\u1EDBc trong m\u1ED9t ph\u1EA1m vi \u0111\u01B0\u1EE3c ch\u1EC9\
-  \ \u0111\u1ECBnh."
+summary: "PowerShell cung c\u1EA5p m\u1ED9t c\xE1ch th\u1EB3ng th\u1EAFn \u0111\u1EC3\
+  \ t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng cmdlet\
+  \ `Get-Random`."
 title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 weight: 12
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 00:55:07.072183-07:00
-description: "El manejo de errores en PHP se trata de administrar y responder a condiciones\
-  \ que interrumpen el flujo normal de un programa, como archivos que faltan o\u2026"
+description: "C\xF3mo hacerlo: En PHP, puedes gestionar errores utilizando bloques\
+  \ `try-catch`, y puedes personalizar el proceso con manejadores de errores personalizados\u2026"
 lastmod: '2024-03-13T22:44:59.168201-06:00'
 model: gpt-4-1106-preview
-summary: "El manejo de errores en PHP se trata de administrar y responder a condiciones\
-  \ que interrumpen el flujo normal de un programa, como archivos que faltan o entradas\
-  \ de datos err\xF3neas."
+summary: En PHP, puedes gestionar errores utilizando bloques `try-catch`, y puedes
+  personalizar el proceso con manejadores de errores personalizados y excepciones.
 title: Manejo de errores
 weight: 16
 ---

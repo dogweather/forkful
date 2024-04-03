@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:09.752457-07:00
-description: "Capitalizzare una stringa significa convertire il carattere iniziale\
-  \ di ogni parola nella stringa in maiuscolo, se esse sono in minuscolo, mantenendo\u2026"
+description: "Come fare: In C++, \xE8 possibile capitalizzare una stringa usando la\
+  \ libreria standard senza la necessit\xE0 di librerie di terze parti. Tuttavia,\
+  \ per\u2026"
 lastmod: '2024-03-13T22:44:43.709144-06:00'
 model: gpt-4-0125-preview
-summary: Capitalizzare una stringa significa convertire il carattere iniziale di ogni
-  parola nella stringa in maiuscolo, se esse sono in minuscolo, mantenendo inalterati
-  i restanti caratteri.
+summary: "In C++, \xE8 possibile capitalizzare una stringa usando la libreria standard\
+  \ senza la necessit\xE0 di librerie di terze parti."
 title: Capitalizzare una stringa
 weight: 2
 ---

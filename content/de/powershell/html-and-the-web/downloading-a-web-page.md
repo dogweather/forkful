@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:44:50.030093-07:00
-description: "Herunterladen einer Webseite bedeutet, ihren Inhalt zu sichern, um ihn\
-  \ offline zu analysieren oder zu verarbeiten. Programmierer machen das, um Daten\
-  \ zu\u2026"
+description: "How to: PowerShell macht's einfach. Hier ein Basic-Beispiel, das eine\
+  \ Webseite l\xE4dt."
 lastmod: '2024-03-13T22:44:54.102484-06:00'
 model: gpt-4-1106-preview
-summary: Herunterladen einer Webseite bedeutet, ihren Inhalt zu sichern, um ihn offline
-  zu analysieren oder zu verarbeiten.
+summary: PowerShell macht's einfach.
 title: Webseite herunterladen
 weight: 42
 ---

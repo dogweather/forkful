@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:46:57.514519-07:00
-description: "Extracting substrings means pulling out specific pieces of a string.\
-  \ It's handy for tasks like parsing data, validating input, or just breaking down\
-  \ text\u2026"
+description: 'How to: In TypeScript, you slice and dice strings with methods like
+  `substring()`, `slice()`, and the ES6 `includes()` for finding text within strings.'
 lastmod: '2024-03-13T22:44:59.848618-06:00'
 model: gpt-4-1106-preview
-summary: Extracting substrings means pulling out specific pieces of a string.
+summary: In TypeScript, you slice and dice strings with methods like `substring()`,
+  `slice()`, and the ES6 `includes()` for finding text within strings.
 title: Extracting substrings
 weight: 6
 ---

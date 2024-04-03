@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:19:10.421191-07:00
-description: "TOML, som st\xE5r for Toms \xE5penbare, minimale spr\xE5k, er et format\
-  \ for dataserialisering. Programmerere digger det for dets enkelhet og lesbarhet;\
-  \ det er\u2026"
+description: "Hvordan: F\xF8rst, installer `toml-cli` for \xE5 leke med TOML i Bash.\
+  \ Praktisk for \xE5 lese eller redigere TOML-filer p\xE5 sparket."
 lastmod: '2024-03-13T22:44:40.997952-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, som st\xE5r for Toms \xE5penbare, minimale spr\xE5k, er et format\
-  \ for dataserialisering."
+summary: "F\xF8rst, installer `toml-cli` for \xE5 leke med TOML i Bash."
 title: Jobbe med TOML
 weight: 39
 ---

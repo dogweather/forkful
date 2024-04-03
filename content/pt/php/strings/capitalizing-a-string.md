@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:55.318998-07:00
-description: "Capitalizar uma string envolve modificar o primeiro caractere de um\
-  \ texto dado para mai\xFAsculo, garantindo que frases, t\xEDtulos ou nomes pr\xF3\
-  prios comecem\u2026"
+description: "Como fazer: O PHP suporta nativamente v\xE1rias fun\xE7\xF5es para capitalizar\
+  \ strings, cada uma servindo a um prop\xF3sito diferente. Veja como voc\xEA pode\
+  \ us\xE1-las: #."
 lastmod: '2024-03-13T22:44:46.650573-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizar uma string envolve modificar o primeiro caractere de um texto\
-  \ dado para mai\xFAsculo, garantindo que frases, t\xEDtulos ou nomes pr\xF3prios\
-  \ comecem corretamente em um conjunto de dados."
+summary: "O PHP suporta nativamente v\xE1rias fun\xE7\xF5es para capitalizar strings,\
+  \ cada uma servindo a um prop\xF3sito diferente."
 title: Capitalizando uma string
 weight: 2
 ---

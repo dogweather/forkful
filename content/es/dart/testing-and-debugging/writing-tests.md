@@ -2,13 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:50.937764-07:00
-description: "Escribir pruebas en Dart implica crear casos de prueba para verificar\
-  \ autom\xE1ticamente que diferentes partes de tu programa funcionan como se espera.\
-  \ Los\u2026"
+description: "C\xF3mo hacerlo: En Dart, el paquete `test` se utiliza com\xFAnmente\
+  \ para escribir pruebas. Primero, a\xF1ade el paquete `test` a tu `pubspec.yaml`."
 lastmod: '2024-03-13T22:44:58.755839-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir pruebas en Dart implica crear casos de prueba para verificar autom\xE1\
-  ticamente que diferentes partes de tu programa funcionan como se espera."
+summary: "En Dart, el paquete `test` se utiliza com\xFAnmente para escribir pruebas."
 title: Escribiendo pruebas
 weight: 36
 ---

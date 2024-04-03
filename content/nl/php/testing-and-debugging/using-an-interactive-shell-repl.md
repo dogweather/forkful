@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:18.215910-07:00
-description: "Een interactieve shell of REPL (Read-Eval-Print Loop) stelt je in staat\
-  \ om PHP-code ter plekke te schrijven en uit te voeren. Het is ideaal voor\u2026"
+description: 'Hoe te: Start de PHP REPL door `php -a` in je terminal uit te voeren.
+  Hier is een voorproefje van hoe het werkt.'
 lastmod: '2024-03-13T22:44:50.896732-06:00'
 model: gpt-4-0125-preview
-summary: Een interactieve shell of REPL (Read-Eval-Print Loop) stelt je in staat om
-  PHP-code ter plekke te schrijven en uit te voeren.
+summary: Start de PHP REPL door `php -a` in je terminal uit te voeren.
 title: Het gebruik van een interactieve shell (REPL)
 weight: 34
 ---

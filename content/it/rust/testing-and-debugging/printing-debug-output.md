@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:53:09.331161-07:00
-description: "Il debug consiste nel stampare informazioni di output per controllare\
-  \ lo stato del tuo programma. Programmatori fanno ci\xF2 per diagnosticare e sistemare\
-  \ i\u2026"
+description: 'How to: Per stampare output di debug in Rust si usa la macro `println!`
+  per testo normale, o `dbg!` per output che include il file e la linea di codice.'
 lastmod: '2024-03-13T22:44:43.220594-06:00'
 model: gpt-4-1106-preview
-summary: Il debug consiste nel stampare informazioni di output per controllare lo
-  stato del tuo programma.
+summary: Per stampare output di debug in Rust si usa la macro `println!` per testo
+  normale, o `dbg!` per output che include il file e la linea di codice.
 title: Stampa dell'output di debug
 weight: 33
 ---

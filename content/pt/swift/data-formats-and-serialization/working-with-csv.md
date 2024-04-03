@@ -2,13 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:29.637902-07:00
-description: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgula) envolve\
-  \ analisar e gerar dados estruturados a partir de arquivos de texto onde cada linha\u2026"
+description: "Como fazer: Em Swift, n\xE3o h\xE1 suporte nativo para a an\xE1lise\
+  \ de arquivos CSV diretamente, mas voc\xEA pode manipular dados CSV usando os m\xE9\
+  todos de `String`\u2026"
 lastmod: '2024-03-13T22:44:46.943231-06:00'
 model: gpt-4-0125-preview
-summary: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgula) envolve analisar\
-  \ e gerar dados estruturados a partir de arquivos de texto onde cada linha representa\
-  \ um registro e cada registro consiste em campos separados por v\xEDrgulas."
+summary: "Em Swift, n\xE3o h\xE1 suporte nativo para a an\xE1lise de arquivos CSV\
+  \ diretamente, mas voc\xEA pode manipular dados CSV usando os m\xE9todos de `String`\
+  \ para dividir o conte\xFAdo, ou por meio de bibliotecas de terceiros como SwiftCSV\
+  \ para uma abordagem mais simplificada."
 title: Trabalhando com CSV
 weight: 37
 ---

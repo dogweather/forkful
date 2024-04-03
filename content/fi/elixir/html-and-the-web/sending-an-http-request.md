@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:59:32.395435-07:00
-description: "HTTP-pyynt\xF6 on tapa siirt\xE4\xE4 tietoa verkossa palvelimien ja\
-  \ asiakkaiden v\xE4lill\xE4. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4t\xE4 toimintoa\
-  \ hakeakseen dataa, l\xE4hett\xE4\xE4kseen dataa\u2026"
+description: "How to: Elixiriss\xE4 HTTP-pyynt\xF6jen tekeminen k\xE4y usein `HTTPoison`-kirjaston\
+  \ kautta. T\xE4ss\xE4 helppo esimerkki GET-pyynn\xF6st\xE4."
 lastmod: '2024-03-13T22:44:56.223651-06:00'
 model: gpt-4-1106-preview
-summary: "HTTP-pyynt\xF6 on tapa siirt\xE4\xE4 tietoa verkossa palvelimien ja asiakkaiden\
-  \ v\xE4lill\xE4."
+summary: "Elixiriss\xE4 HTTP-pyynt\xF6jen tekeminen k\xE4y usein `HTTPoison`-kirjaston\
+  \ kautta."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---

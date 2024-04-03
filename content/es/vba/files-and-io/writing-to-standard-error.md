@@ -2,14 +2,16 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:09:07.731731-07:00
-description: "Escribir en el error est\xE1ndar en Visual Basic para Aplicaciones (VBA)\
-  \ implica dirigir mensajes de error o diagn\xF3sticos aparte de la salida est\xE1\
-  ndar,\u2026"
+description: "C\xF3mo hacerlo: En VBA, dado que no hay una funci\xF3n integrada directa\
+  \ para escribir espec\xEDficamente en el error est\xE1ndar como en algunos otros\
+  \ lenguajes de\u2026"
 lastmod: '2024-03-13T22:44:58.911403-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir en el error est\xE1ndar en Visual Basic para Aplicaciones (VBA)\
-  \ implica dirigir mensajes de error o diagn\xF3sticos aparte de la salida est\xE1\
-  ndar, generalmente a la consola o un archivo de log."
+summary: "En VBA, dado que no hay una funci\xF3n integrada directa para escribir espec\xED\
+  ficamente en el error est\xE1ndar como en algunos otros lenguajes de programaci\xF3\
+  n, una soluci\xF3n com\xFAn implica usar `Debug.Print` para la salida de error de\
+  \ desarrollo o crear una funci\xF3n de registro personalizada que imite este comportamiento\
+  \ para aplicaciones en producci\xF3n."
 title: "Escribir en el error est\xE1ndar"
 weight: 25
 ---

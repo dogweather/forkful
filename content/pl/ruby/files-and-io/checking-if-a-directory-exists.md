@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:17.875876-07:00
-description: "Sprawdzanie, czy katalog istnieje w Ruby, pozwala programistom na weryfikacj\u0119\
-  \ obecno\u015Bci katalogu przed wykonaniem operacji takich jak odczytywanie plik\xF3\
-  w\u2026"
+description: "Jak to zrobi\u0107: Standardowa biblioteka Ruby oferuje proste metody\
+  \ do sprawdzania, czy katalog istnieje. Oto jak to zrobi\u0107 czystym Ruby, bez\
+  \ potrzeby\u2026"
 lastmod: '2024-03-13T22:44:35.946687-06:00'
 model: gpt-4-0125-preview
-summary: "Sprawdzanie, czy katalog istnieje w Ruby, pozwala programistom na weryfikacj\u0119\
-  \ obecno\u015Bci katalogu przed wykonaniem operacji takich jak odczytywanie plik\xF3\
-  w czy tworzenie nowych katalog\xF3w."
+summary: Standardowa biblioteka Ruby oferuje proste metody do sprawdzania, czy katalog
+  istnieje.
 title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---

@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:17.450264-07:00
-description: "Tworzenie tymczasowego pliku w Visual Basic for Applications (VBA) polega\
-  \ na programowym generowaniu pliku do kr\xF3tkoterminowego u\u017Cytku, typowo dla\u2026"
+description: "Jak to zrobi\u0107: W VBA tworzenie tymczasowego pliku mo\u017Cna osi\u0105\
+  gn\u0105\u0107 za pomoc\u0105 `FileSystemObject`, dost\u0119pnego w bibliotece Microsoft\
+  \ Scripting Runtime. Ten\u2026"
 lastmod: '2024-03-13T22:44:35.253231-06:00'
 model: gpt-4-0125-preview
-summary: "Tworzenie tymczasowego pliku w Visual Basic for Applications (VBA) polega\
-  \ na programowym generowaniu pliku do kr\xF3tkoterminowego u\u017Cytku, typowo dla\
-  \ przetwarzania danych lub jako bufor w zadaniach automatyzacji."
+summary: "W VBA tworzenie tymczasowego pliku mo\u017Cna osi\u0105gn\u0105\u0107 za\
+  \ pomoc\u0105 `FileSystemObject`, dost\u0119pnego w bibliotece Microsoft Scripting\
+  \ Runtime."
 title: Tworzenie tymczasowego pliku
 weight: 21
 ---

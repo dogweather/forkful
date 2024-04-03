@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:43.918618-07:00
-description: "Regul\xE6re uttrykk (regex) er sekvenser av tegn som former et s\xF8\
-  kem\xF8nster, prim\xE6rt brukt for strengs\xF8king og manipulasjon. Programmerere\
-  \ utnytter regex i\u2026"
+description: "Hvordan: I PowerShell kan du bruke operat\xF8rene `-match`, `-replace`\
+  \ og `-split`, blant andre, for \xE5 utf\xF8re handlinger med regul\xE6re uttrykk.\
+  \ La oss\u2026"
 lastmod: '2024-03-13T22:44:41.006436-06:00'
 model: gpt-4-0125-preview
-summary: "Regul\xE6re uttrykk (regex) er sekvenser av tegn som former et s\xF8kem\xF8\
-  nster, prim\xE6rt brukt for strengs\xF8king og manipulasjon."
+summary: "I PowerShell kan du bruke operat\xF8rene `-match`, `-replace` og `-split`,\
+  \ blant andre, for \xE5 utf\xF8re handlinger med regul\xE6re uttrykk."
 title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---

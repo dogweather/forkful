@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:36.462027-07:00
-description: "\xC9crire dans un fichier texte avec Fish Shell vous permet de stocker\
-  \ des donn\xE9es de mani\xE8re persistante, facilitant ainsi la r\xE9cup\xE9ration\
-  \ ou la\u2026"
+description: "Comment faire : Pour \xE9crire dans un fichier texte en Fish, vous pouvez\
+  \ utiliser la commande `echo` combin\xE9e avec des op\xE9rateurs de redirection.\
+  \ Il n'y a\u2026"
 lastmod: '2024-03-13T22:44:58.344133-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire dans un fichier texte avec Fish Shell vous permet de stocker des\
-  \ donn\xE9es de mani\xE8re persistante, facilitant ainsi la r\xE9cup\xE9ration ou\
-  \ la manipulation des donn\xE9es soit par le m\xEAme script Fish soit par d'autres\
-  \ programmes."
+summary: "Pour \xE9crire dans un fichier texte en Fish, vous pouvez utiliser la commande\
+  \ `echo` combin\xE9e avec des op\xE9rateurs de redirection."
 title: "R\xE9diger un fichier texte"
 weight: 24
 ---

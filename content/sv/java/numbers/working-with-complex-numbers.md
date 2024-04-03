@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:42:08.732969-07:00
-description: "Komplexa tal utvidgar den reella talaxeln genom till\xE4gget av en imagin\xE4\
-  r enhet, `i`, d\xE4r `i^2 = -1`. De \xE4r avg\xF6rande inom omr\xE5den som ingenj\xF6\
-  rsvetenskap,\u2026"
+description: "Hur man g\xF6r: Java har inte inbyggt st\xF6d f\xF6r komplexa tal, men\
+  \ vi kan skapa v\xE5r egen klass eller anv\xE4nda ett bibliotek. H\xE4r \xE4r ett\
+  \ snabbt exempel p\xE5 hur\u2026"
 lastmod: '2024-03-13T22:44:37.781505-06:00'
 model: gpt-4-0125-preview
-summary: "Komplexa tal utvidgar den reella talaxeln genom till\xE4gget av en imagin\xE4\
-  r enhet, `i`, d\xE4r `i^2 = -1`."
+summary: "Java har inte inbyggt st\xF6d f\xF6r komplexa tal, men vi kan skapa v\xE5\
+  r egen klass eller anv\xE4nda ett bibliotek."
 title: Att arbeta med komplexa tal
 weight: 14
 ---

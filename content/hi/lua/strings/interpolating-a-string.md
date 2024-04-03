@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:51:12.582555-07:00
-description: "Interpolating a string means inserting dynamic values into a static\
-  \ string. Programmers do it to make code flexible and to dynamically create strings\
-  \ that\u2026"
+description: "How to: (\u0915\u0948\u0938\u0947 \u0915\u0930\u0947\u0902:) Lua doesn't\
+  \ have built-in string interpolation, but we can simulate it using `string.format`."
 lastmod: '2024-03-13T22:44:52.526430-06:00'
 model: gpt-4-1106-preview
-summary: Interpolating a string means inserting dynamic values into a static string.
+summary: Lua doesn't have built-in string interpolation, but we can simulate it using
+  `string.format`.
 title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0907\u0902\u091F\u0930\u092A\
   \u094B\u0932\u0947\u0936\u0928"
 weight: 8

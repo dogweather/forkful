@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 00:50:03.952948-07:00
-description: "H\xE5ndtering av feil i C# dreier seg om \xE5 h\xE5ndtere det uventede\u2014\
-  som \xE5 snuble i skolissene. Programmer kan snuble over d\xE5rlige data eller ustabile\u2026"
+description: "Hvordan: La oss starte med en try-catch-blokk. Det er som \xE5 sette\
+  \ et sikkerhetsnett under en linedanser. Hvis de sklir, faller de ikke\u2014de blir\
+  \ fanget opp."
 lastmod: '2024-03-13T22:44:40.803874-06:00'
 model: gpt-4-1106-preview
-summary: "H\xE5ndtering av feil i C# dreier seg om \xE5 h\xE5ndtere det uventede\u2014\
-  som \xE5 snuble i skolissene."
+summary: La oss starte med en try-catch-blokk.
 title: "Feilh\xE5ndtering"
 weight: 16
 ---

@@ -1,13 +1,12 @@
 ---
 date: 2024-01-27 20:35:12.817430-07:00
-description: "\xC5 generere tilfeldige tall i Rust inneb\xE6rer \xE5 bruke biblioteker\
-  \ for \xE5 produsere uforutsette numeriske verdier, noe som er uunnv\xE6rlig for\
-  \ oppgaver som\u2026"
+description: "Hvordan: Rust er avhengig av eksterne crates for generering av tilfeldige\
+  \ tall, der `rand` er det mest brukte. For \xE5 begynne \xE5 generere tilfeldige\
+  \ tall,\u2026"
 lastmod: '2024-03-13T22:44:40.569971-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 generere tilfeldige tall i Rust inneb\xE6rer \xE5 bruke biblioteker\
-  \ for \xE5 produsere uforutsette numeriske verdier, noe som er uunnv\xE6rlig for\
-  \ oppgaver som spenner fra kryptografi og simuleringer til spill og tilfeldige algoritmer."
+summary: Rust er avhengig av eksterne crates for generering av tilfeldige tall, der
+  `rand` er det mest brukte.
 title: Generering av tilfeldige tall
 weight: 12
 ---

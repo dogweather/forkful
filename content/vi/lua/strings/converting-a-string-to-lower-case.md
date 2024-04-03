@@ -2,16 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:16.487153-07:00
-description: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i th\xE0nh d\u1EA1ng in\
-  \ th\u01B0\u1EDDng c\xF3 ngh\u0129a l\xE0 thay th\u1EBF t\u1EA5t c\u1EA3 c\xE1c\
-  \ ch\u1EEF c\xE1i in hoa trong chu\u1ED7i b\u1EB1ng c\xE1c ch\u1EEF c\xE1i in th\u01B0\
-  \u1EDDng t\u01B0\u01A1ng \u1EE9ng. L\u1EADp tr\xECnh vi\xEAn\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong Lua, b\u1EA1n c\xF3 th\u1EC3 gi\u1EA3\
+  m b\u1EDBt g\xE1nh n\u1EB7ng v\u1EDBi `string.lower()`. Cho n\xF3 m\u1ED9t chu\u1ED7\
+  i, ra l\xE0 phi\xEAn b\u1EA3n ch\u1EEF th\u01B0\u1EDDng. Quan s\xE1t."
 lastmod: '2024-03-13T22:44:36.805198-06:00'
 model: gpt-4-0125-preview
-summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i th\xE0nh d\u1EA1ng in th\u01B0\
-  \u1EDDng c\xF3 ngh\u0129a l\xE0 thay th\u1EBF t\u1EA5t c\u1EA3 c\xE1c ch\u1EEF c\xE1\
-  i in hoa trong chu\u1ED7i b\u1EB1ng c\xE1c ch\u1EEF c\xE1i in th\u01B0\u1EDDng t\u01B0\
-  \u01A1ng \u1EE9ng."
+summary: "Trong Lua, b\u1EA1n c\xF3 th\u1EC3 gi\u1EA3m b\u1EDBt g\xE1nh n\u1EB7ng\
+  \ v\u1EDBi `string.lower()`."
 title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
 weight: 4
 ---

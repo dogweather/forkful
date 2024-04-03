@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 00:51:33.578442-07:00
-description: "Obs\u0142uga b\u0142\u0119d\xF3w dotyczy zarz\u0105dzania nieoczekiwanymi\
-  \ sytuacjami w programach \u2013 jak ochroniarz radz\u0105cy sobie z awanturnikami.\
-  \ Programi\u015Bci lubi\u0105 gdy wszystko\u2026"
+description: "Jak to zrobi\u0107: Clojure, tak jak jego lispowe przodki, opiera si\u0119\
+  \ na wyj\u0105tkach do radzenia sobie z b\u0142\u0119dami. Oto jak pokaza\u0107\
+  \ na co ci\u0119 sta\u0107, gdy sprawy\u2026"
 lastmod: '2024-03-13T22:44:35.003837-06:00'
 model: gpt-4-1106-preview
-summary: "Obs\u0142uga b\u0142\u0119d\xF3w dotyczy zarz\u0105dzania nieoczekiwanymi\
-  \ sytuacjami w programach \u2013 jak ochroniarz radz\u0105cy sobie z awanturnikami."
+summary: "Clojure, tak jak jego lispowe przodki, opiera si\u0119 na wyj\u0105tkach\
+  \ do radzenia sobie z b\u0142\u0119dami."
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---

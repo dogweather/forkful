@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:10.107168-07:00
-description: "Een webpagina downloaden betekent het ophalen van de HTML, CSS, JavaScript\
-  \ en alle andere gegevens die de pagina vormen van de server. Programmeurs doen\u2026"
+description: 'Hoe te: Hier is een snelle manier om een pagina te downloaden met Node.js
+  en `node-fetch`.'
 lastmod: '2024-03-13T22:44:51.200091-06:00'
 model: gpt-4-0125-preview
-summary: Een webpagina downloaden betekent het ophalen van de HTML, CSS, JavaScript
-  en alle andere gegevens die de pagina vormen van de server.
+summary: Hier is een snelle manier om een pagina te downloaden met Node.js en `node-fetch`.
 title: Een webpagina downloaden
 weight: 42
 ---

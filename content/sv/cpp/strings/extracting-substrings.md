@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:45:12.247581-07:00
-description: "Att extrahera delstr\xE4ngar \xE4r processen att plocka ut specificerade\
-  \ delar fr\xE5n en str\xE4ng. Programmerare g\xF6r detta f\xF6r att bearbeta, analysera\
-  \ eller\u2026"
+description: "How to (Hur man g\xF6r) Exempel p\xE5 C++ med standardbiblioteket `<string>`."
 lastmod: '2024-03-13T22:44:38.198214-06:00'
 model: gpt-4-1106-preview
-summary: "Att extrahera delstr\xE4ngar \xE4r processen att plocka ut specificerade\
-  \ delar fr\xE5n en str\xE4ng."
+summary: "Exempel p\xE5 C++ med standardbiblioteket `<string>`."
 title: "Extrahera delstr\xE4ngar"
 weight: 6
 ---

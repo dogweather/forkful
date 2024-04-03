@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:22.101037-07:00
-description: "Imprimir salida de depuraci\xF3n en Dart es acerca de mostrar informaci\xF3\
-  n en la consola durante el tiempo de ejecuci\xF3n, permitiendo a los desarrolladores\u2026"
+description: "C\xF3mo hacerlo: En Dart, puedes imprimir la salida de depuraci\xF3\
+  n usando la funci\xF3n `print()`. Aqu\xED te mostramos c\xF3mo sacar mensajes simples\
+  \ y valores de\u2026"
 lastmod: '2024-03-13T22:44:58.754615-06:00'
 model: gpt-4-0125-preview
-summary: "Imprimir salida de depuraci\xF3n en Dart es acerca de mostrar informaci\xF3\
-  n en la consola durante el tiempo de ejecuci\xF3n, permitiendo a los desarrolladores\
-  \ rastrear el flujo de ejecuci\xF3n, investigar el estado de las variables, o identificar\
-  \ la fuente de errores."
+summary: "En Dart, puedes imprimir la salida de depuraci\xF3n usando la funci\xF3\
+  n `print()`."
 title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---

@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 04:35:52.849089-07:00
-description: "XML, czyli eXtensible Markup Language, to jakby rozwlek\u0142y kuzyn\
-  \ JSON-a. Z XML-em b\u0119dziesz si\u0119 zmaga\u0107, maj\u0105c do czynienia ze\
-  \ starszymi systemami,\u2026"
+description: "Jak to zrobi\u0107: W Rust, mo\u017Cna obs\u0142u\u017Cy\u0107 XML za\
+  \ pomoc\u0105 crate'\xF3w takich jak `xml-rs`. Zainstaluj, dodaj\u0105c `xml-rs\
+  \ = \"0.8\"` do twojego `Cargo.toml`. Oto jak\u2026"
 lastmod: '2024-03-13T22:44:35.210879-06:00'
 model: gpt-4-0125-preview
-summary: "XML, czyli eXtensible Markup Language, to jakby rozwlek\u0142y kuzyn JSON-a."
+summary: "W Rust, mo\u017Cna obs\u0142u\u017Cy\u0107 XML za pomoc\u0105 crate'\xF3\
+  w takich jak `xml-rs`."
 title: Praca z XML
 weight: 40
 ---

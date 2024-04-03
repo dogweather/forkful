@@ -2,16 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:40.793495-07:00
-description: "Ph\xE2n t\xEDch c\xFA ph\xE1p m\u1ED9t ng\xE0y t\u1EEB m\u1ED9t chu\u1ED7\
-  i c\xF3 ngh\u0129a l\xE0 chuy\u1EC3n \u0111\u1ED5i bi\u1EC3u di\u1EC5n v\u0103n\
-  \ b\u1EA3n c\u1EE7a m\u1ED9t ng\xE0y (nh\u01B0 \"2023-04-01\") th\xE0nh m\u1ED9\
-  t \u0111\u1ED1i t\u01B0\u1EE3ng Ng\xE0y. C\xE1c l\u1EADp tr\xECnh\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Swift khi\u1EBFn vi\u1EC7c ph\xE2n t\xEDch c\xFA\
+  \ ph\xE1p ng\xE0y tr\u1EDF n\xEAn kh\xE1 d\u1EC5 d\xE0ng v\u1EDBi `DateFormatter`.\
+  \ D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t v\xED d\u1EE5 nhanh."
 lastmod: '2024-03-13T22:44:37.110388-06:00'
 model: gpt-4-0125-preview
-summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p m\u1ED9t ng\xE0y t\u1EEB m\u1ED9t chu\u1ED7\
-  i c\xF3 ngh\u0129a l\xE0 chuy\u1EC3n \u0111\u1ED5i bi\u1EC3u di\u1EC5n v\u0103n\
-  \ b\u1EA3n c\u1EE7a m\u1ED9t ng\xE0y (nh\u01B0 \"2023-04-01\") th\xE0nh m\u1ED9\
-  t \u0111\u1ED1i t\u01B0\u1EE3ng Ng\xE0y."
+summary: "Swift khi\u1EBFn vi\u1EC7c ph\xE2n t\xEDch c\xFA ph\xE1p ng\xE0y tr\u1EDF\
+  \ n\xEAn kh\xE1 d\u1EC5 d\xE0ng v\u1EDBi `DateFormatter`."
 title: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB chu\u1ED7i k\xED t\u1EF1"
 weight: 30
 ---

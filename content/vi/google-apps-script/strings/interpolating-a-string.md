@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:17.683306-07:00
-description: "Vi\u1EC7c n\u1ED9i suy chu\u1ED7i trong Google Apps Script cho ph\xE9\
-  p nh\xFAng \u0111\u1ED9ng c\xE1c bi\u1EC3u th\u1EE9c v\xE0o trong chu\u1ED7i, gi\xFA\
-  p t\u1EA1o ra code d\u1EC5 \u0111\u1ECDc v\xE0 b\u1EA3o tr\xEC h\u01A1n. L\u1EAD\
-  p tr\xECnh vi\xEAn s\u1EED\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Google Apps Script, n\u1ED9i suy chu\u1ED7\
+  i \u0111\u01B0\u1EE3c th\u1EF1c hi\u1EC7n th\xF4ng qua literals m\u1EABu. \u0110\
+  \xE2y l\xE0 c\xE1c literals chu\u1ED7i cho ph\xE9p nh\xFAng bi\u1EC3u th\u1EE9c,\
+  \ \u0111\u01B0\u1EE3c bi\u1EC3u\u2026"
 lastmod: '2024-03-13T22:44:36.020500-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c n\u1ED9i suy chu\u1ED7i trong Google Apps Script cho ph\xE9p nh\xFA\
-  ng \u0111\u1ED9ng c\xE1c bi\u1EC3u th\u1EE9c v\xE0o trong chu\u1ED7i, gi\xFAp t\u1EA1\
-  o ra code d\u1EC5 \u0111\u1ECDc v\xE0 b\u1EA3o tr\xEC h\u01A1n."
+summary: "Trong Google Apps Script, n\u1ED9i suy chu\u1ED7i \u0111\u01B0\u1EE3c th\u1EF1\
+  c hi\u1EC7n th\xF4ng qua literals m\u1EABu."
 title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
 weight: 8
 ---

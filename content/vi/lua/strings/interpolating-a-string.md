@@ -2,14 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:18.554420-07:00
-description: "N\u1ED9i suy chu\u1ED7i cho ph\xE9p b\u1EA1n ch\xE8n c\xE1c bi\u1EBF\
-  n tr\u1EF1c ti\u1EBFp v\xE0o chu\u1ED7i. \u0110i\u1EC1u n\xE0y \u0111\u01B0\u1EE3\
-  c th\u1EF1c hi\u1EC7n \u0111\u1EC3 x\xE2y d\u1EF1ng \u0111\u1ED9ng c\xE1c chu\u1ED7\
-  i v\xE0 gi\u1EEF cho m\xE3 ngu\u1ED3n g\u1ECDn g\xE0ng."
+description: "L\xE0m sao: Trong Lua, s\u1EED d\u1EE5ng `..` \u0111\u1EC3 n\u1ED1i\
+  \ chu\u1ED7i ho\u1EB7c `string.format` cho n\u1ED9i suy. V\xED d\u1EE5."
 lastmod: '2024-03-13T22:44:36.803996-06:00'
 model: gpt-4-0125-preview
-summary: "N\u1ED9i suy chu\u1ED7i cho ph\xE9p b\u1EA1n ch\xE8n c\xE1c bi\u1EBFn tr\u1EF1\
-  c ti\u1EBFp v\xE0o chu\u1ED7i."
+summary: "Trong Lua, s\u1EED d\u1EE5ng `..` \u0111\u1EC3 n\u1ED1i chu\u1ED7i ho\u1EB7\
+  c `string.format` cho n\u1ED9i suy."
 title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
 weight: 8
 ---

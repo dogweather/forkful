@@ -1,11 +1,11 @@
 ---
 date: 2024-01-27 16:14:22.581240-07:00
-description: "Imagine you've just found out you need to make a batch update to several\
-  \ configuration files sitting on your server. You could open each file, make the\u2026"
+description: "How to: When it comes to editing files in-place using Bash, two prominent\
+  \ tools come into play: `sed` and `awk`. Let's explore how to use these powerful\u2026"
 lastmod: '2024-03-13T22:45:00.241056-06:00'
 model: gpt-4-0125-preview
-summary: Imagine you've just found out you need to make a batch update to several
-  configuration files sitting on your server.
+summary: When it comes to editing files in-place using Bash, two prominent tools come
+  into play.
 title: Editing files in-place with CLI one-liners
 weight: 32
 ---

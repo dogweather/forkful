@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 00:51:46.156712-07:00
-description: "O tratamento de erros \xE9 sobre gerenciar o inesperado em programas\u2014\
-  como um seguran\xE7a lidando com desordeiros. Programadores gostam de fluidez; o\
-  \ tratamento\u2026"
+description: "Como fazer: Clojure, assim como seus ancestrais Lisp, depende de exce\xE7\
+  \xF5es para lidar com erros. Aqui est\xE1 como voc\xEA mostra o que pode fazer quando\
+  \ as\u2026"
 lastmod: '2024-03-13T22:44:46.204121-06:00'
 model: gpt-4-1106-preview
-summary: "O tratamento de erros \xE9 sobre gerenciar o inesperado em programas\u2014\
-  como um seguran\xE7a lidando com desordeiros."
+summary: "Clojure, assim como seus ancestrais Lisp, depende de exce\xE7\xF5es para\
+  \ lidar com erros."
 title: Tratamento de erros
 weight: 16
 ---

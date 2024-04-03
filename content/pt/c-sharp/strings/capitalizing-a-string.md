@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:18.501914-07:00
-description: "Capitalizar uma string em C# envolve converter o primeiro caractere\
-  \ de uma string para mai\xFAscula, caso ele j\xE1 n\xE3o seja. Essa altera\xE7\xE3\
-  o pode ser crucial\u2026"
+description: "Como fazer: C# oferece uma abordagem direta para capitalizar strings\
+  \ usando m\xE9todos integrados. A maneira mais simples de alcan\xE7ar isso \xE9\
+  \ modificando a\u2026"
 lastmod: '2024-03-13T22:44:46.567590-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizar uma string em C# envolve converter o primeiro caractere de uma\
-  \ string para mai\xFAscula, caso ele j\xE1 n\xE3o seja."
+summary: "C# oferece uma abordagem direta para capitalizar strings usando m\xE9todos\
+  \ integrados."
 title: Capitalizando uma string
 weight: 2
 ---

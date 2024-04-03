@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 00:55:57.245131-07:00
-description: "Virheiden k\xE4sittely PHP:ss\xE4 tarkoittaa olosuhteiden hallintaa\
-  \ ja niihin reagointia, jotka h\xE4iritsev\xE4t ohjelman normaalia toimintaa, kuten\
-  \ puuttuvia\u2026"
+description: "Miten: PHP:ss\xE4 voit hallita virheit\xE4 k\xE4ytt\xE4m\xE4ll\xE4 `try-catch`-lohkoja,\
+  \ ja voit mukauttaa prosessia omien virhek\xE4sittelij\xF6iden ja poikkeusten avulla."
 lastmod: '2024-03-13T22:44:56.663419-06:00'
 model: gpt-4-1106-preview
-summary: "Virheiden k\xE4sittely PHP:ss\xE4 tarkoittaa olosuhteiden hallintaa ja niihin\
-  \ reagointia, jotka h\xE4iritsev\xE4t ohjelman normaalia toimintaa, kuten puuttuvia\
-  \ tiedostoja tai virheellist\xE4 datan sy\xF6tt\xF6\xE4."
+summary: "PHP:ss\xE4 voit hallita virheit\xE4 k\xE4ytt\xE4m\xE4ll\xE4 `try-catch`-lohkoja,\
+  \ ja voit mukauttaa prosessia omien virhek\xE4sittelij\xF6iden ja poikkeusten avulla."
 title: "Virheiden k\xE4sittely"
 weight: 16
 ---

@@ -1,8 +1,7 @@
 ---
 date: 2024-01-26 03:48:56.075823-07:00
-description: "Fish har ikke en innebygd debugger som noen andre skall har, men du\
-  \ kan bruke eksterne verkt\xF8y som `gdb` for debugging av kompilerte programmer\
-  \ eller\u2026"
+description: "Hvordan: Fish har ikke en innebygd debugger som noen andre skall har,\
+  \ men du kan bruke eksterne verkt\xF8y som `gdb` for debugging av kompilerte programmer\u2026"
 lastmod: '2024-03-13T22:44:41.231412-06:00'
 model: gpt-4-0125-preview
 summary: "Fish har ikke en innebygd debugger som noen andre skall har, men du kan\

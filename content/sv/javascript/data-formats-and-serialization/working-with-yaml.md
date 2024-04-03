@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:50.522295-07:00
-description: "YAML, som st\xE5r f\xF6r YAML Ain't Markup Language, \xE4r ett l\xE4\
-  sbarhetsv\xE4nligt data-serialiseringsformat. Programmerare anv\xE4nder ofta detta\
-  \ f\xF6r\u2026"
+description: "Hur man g\xF6r: I JavaScript inneb\xE4r arbete med YAML vanligtvis att\
+  \ man anv\xE4nder ett tredjepartsbibliotek eftersom spr\xE5ket inte inkluderar en\
+  \ inbyggd parser\u2026"
 lastmod: '2024-03-13T22:44:38.313621-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, som st\xE5r f\xF6r YAML Ain't Markup Language, \xE4r ett l\xE4sbarhetsv\xE4\
-  nligt data-serialiseringsformat."
+summary: "I JavaScript inneb\xE4r arbete med YAML vanligtvis att man anv\xE4nder ett\
+  \ tredjepartsbibliotek eftersom spr\xE5ket inte inkluderar en inbyggd parser f\xF6\
+  r YAML."
 title: Att Arbeta med YAML
 weight: 41
 ---

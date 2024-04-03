@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:58:27.807114-07:00
-description: "Searching and replacing text is how you find specific strings in content\
-  \ and swap them out for something else. Programmers do this to update data, fix\u2026"
+description: 'How to: Here''s a quick way to replace ''cat'' with ''dog'' in a sentence
+  using PHP.'
 lastmod: '2024-03-13T22:45:00.153085-06:00'
 model: gpt-4-1106-preview
-summary: Searching and replacing text is how you find specific strings in content
-  and swap them out for something else.
+summary: Here's a quick way to replace 'cat' with 'dog' in a sentence using PHP.
 title: Searching and replacing text
 weight: 10
 ---

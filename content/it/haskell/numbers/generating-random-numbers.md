@@ -1,12 +1,11 @@
 ---
 date: 2024-01-27 20:33:58.051813-07:00
-description: "Generare numeri casuali in Haskell comporta la creazione di numeri che\
-  \ sono imprevedibili secondo gli standard umani. Questo \xE8 critico in scenari\
-  \ che\u2026"
+description: "Come fare: Per generare numeri casuali in Haskell, si utilizza tipicamente\
+  \ il pacchetto `random`, che fa parte della Haskell Platform. Ecco una guida\u2026"
 lastmod: '2024-03-13T22:44:43.471075-06:00'
 model: gpt-4-0125-preview
-summary: Generare numeri casuali in Haskell comporta la creazione di numeri che sono
-  imprevedibili secondo gli standard umani.
+summary: Per generare numeri casuali in Haskell, si utilizza tipicamente il pacchetto
+  `random`, che fa parte della Haskell Platform.
 title: Generazione di numeri casuali
 weight: 12
 ---

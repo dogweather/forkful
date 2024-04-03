@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 20:34:30.107916-07:00
-description: "Satunnaislukujen tuottaminen ohjelmoinnissa tarkoittaa arvaamattomien\
-  \ numeeristen arvojen luomista, joita voidaan k\xE4ytt\xE4\xE4 monenlaisiin tarkoituksiin,\u2026"
+description: "Kuinka: Lua tarjoaa sis\xE4\xE4nrakennetun tuen satunnaislukujen tuottamiselle\
+  \ `math.random` -funktion kautta. T\xE4t\xE4 funktiota voidaan k\xE4ytt\xE4\xE4\
+  \ usealla tavalla\u2026"
 lastmod: '2024-03-13T22:44:56.693658-06:00'
 model: gpt-4-0125-preview
-summary: "Satunnaislukujen tuottaminen ohjelmoinnissa tarkoittaa arvaamattomien numeeristen\
-  \ arvojen luomista, joita voidaan k\xE4ytt\xE4\xE4 monenlaisiin tarkoituksiin, kuten\
-  \ simulaatioihin, peleihin tai turvasovelluksiin."
+summary: "Lua tarjoaa sis\xE4\xE4nrakennetun tuen satunnaislukujen tuottamiselle `math.random`\
+  \ -funktion kautta."
 title: Satunnaislukujen generointi
 weight: 12
 ---

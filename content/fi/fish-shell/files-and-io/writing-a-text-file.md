@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:56.092973-07:00
-description: "Tekstitiedostoon kirjoittaminen Fish Shelliss\xE4 mahdollistaa datan\
-  \ pysyv\xE4n tallentamisen, mik\xE4 helpottaa tiedon noutamista tai manipulointia\
-  \ joko samalla\u2026"
+description: "Kuinka: Kirjoittaaksesi tekstitiedostoon Fishiss\xE4, voit k\xE4ytt\xE4\
+  \xE4 `echo`-komentoa yhdess\xE4 uudelleenohjausoperaattoreiden kanssa. Fishille\
+  \ ei ole suosittuja\u2026"
 lastmod: '2024-03-13T22:44:57.013443-06:00'
 model: gpt-4-0125-preview
-summary: "Tekstitiedostoon kirjoittaminen Fish Shelliss\xE4 mahdollistaa datan pysyv\xE4\
-  n tallentamisen, mik\xE4 helpottaa tiedon noutamista tai manipulointia joko samalla\
-  \ Fish-skriptill\xE4 tai muilla ohjelmilla."
+summary: "Kirjoittaaksesi tekstitiedostoon Fishiss\xE4, voit k\xE4ytt\xE4\xE4 `echo`-komentoa\
+  \ yhdess\xE4 uudelleenohjausoperaattoreiden kanssa."
 title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---

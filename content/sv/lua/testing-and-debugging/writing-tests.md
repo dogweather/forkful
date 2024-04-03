@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:37.078534-07:00
-description: "Att skriva tester i programmering inneb\xE4r att skapa sm\xE5, separata\
-  \ kodstycken f\xF6r att automatiskt verifiera att olika delar av din applikation\
-  \ fungerar som\u2026"
+description: "Hur man g\xF6r: Lua, som \xE4r ett l\xE4ttviktigt men kraftfullt skriptspr\xE5\
+  k, inkluderar inte ett inbyggt testramverk. Dock g\xF6r tredjepartsbibliotek som\
+  \ Busted och\u2026"
 lastmod: '2024-03-13T22:44:38.042006-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva tester i programmering inneb\xE4r att skapa sm\xE5, separata\
-  \ kodstycken f\xF6r att automatiskt verifiera att olika delar av din applikation\
-  \ fungerar som f\xF6rv\xE4ntat."
+summary: "Lua, som \xE4r ett l\xE4ttviktigt men kraftfullt skriptspr\xE5k, inkluderar\
+  \ inte ett inbyggt testramverk."
 title: Skriva tester
 weight: 36
 ---

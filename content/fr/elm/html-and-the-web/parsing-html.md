@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:01.342313-07:00
-description: "Parser du HTML en Elm consiste \xE0 extraire des informations de documents\
-  \ HTML. Les programmeurs le font pour interagir avec le contenu web ou les API qui\u2026"
+description: "Comment faire : Elm n'a pas de biblioth\xE8que int\xE9gr\xE9e pour parser\
+  \ le HTML directement comme les biblioth\xE8ques en JavaScript ou en Python en raison\
+  \ de son\u2026"
 lastmod: '2024-03-13T22:44:57.686771-06:00'
 model: gpt-4-0125-preview
-summary: "Parser du HTML en Elm consiste \xE0 extraire des informations de documents\
-  \ HTML."
+summary: "Elm n'a pas de biblioth\xE8que int\xE9gr\xE9e pour parser le HTML directement\
+  \ comme les biblioth\xE8ques en JavaScript ou en Python en raison de son accent\
+  \ sur la s\xE9curit\xE9 des types et l'\xE9vitement des erreurs d'ex\xE9cution."
 title: Analyse Syntaxique du HTML
 weight: 43
 ---

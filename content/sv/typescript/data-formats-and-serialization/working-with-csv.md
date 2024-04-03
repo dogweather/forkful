@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:28.607955-07:00
-description: "Att arbeta med CSV (Comma-Separated Values) inneb\xE4r att l\xE4sa fr\xE5\
-  n och skriva till CSV-filer, ett vanligt datautbytesformat som anv\xE4nds p\xE5\
-  \ grund av sin\u2026"
+description: "Hur man g\xF6r: I TypeScript kan du arbeta med CSV-filer genom inbyggd\
+  \ kod eller genom att utnyttja tredjepartsbibliotek som `csv-parser` f\xF6r att\
+  \ l\xE4sa och\u2026"
 lastmod: '2024-03-13T22:44:37.678388-06:00'
 model: gpt-4-0125-preview
-summary: "Att arbeta med CSV (Comma-Separated Values) inneb\xE4r att l\xE4sa fr\xE5\
-  n och skriva till CSV-filer, ett vanligt datautbytesformat som anv\xE4nds p\xE5\
-  \ grund av sin enkelhet och breda st\xF6d \xF6ver olika plattformar och spr\xE5\
-  k."
+summary: "I TypeScript kan du arbeta med CSV-filer genom inbyggd kod eller genom att\
+  \ utnyttja tredjepartsbibliotek som `csv-parser` f\xF6r att l\xE4sa och `csv-writer`\
+  \ f\xF6r att skriva CSV-filer."
 title: Arbeta med CSV
 weight: 37
 ---

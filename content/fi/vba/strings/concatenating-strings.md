@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:53.832808-07:00
-description: "Merkkijonojen yhdist\xE4minen Visual Basic for Applications (VBA) -ohjelmointikieless\xE4\
-  \ tarkoittaa kahden tai useamman merkkijonon liitt\xE4mist\xE4 yhdeksi\u2026"
+description: "Miten: VBA tarjoaa suoraviivaisen menetelm\xE4n merkkijonojen yhdist\xE4\
+  miseen k\xE4ytt\xE4en `&`-operaattoria tai `Concatenate`-funktiota. Tutustutaan\
+  \ molempiin\u2026"
 lastmod: '2024-03-13T22:44:56.391775-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonojen yhdist\xE4minen Visual Basic for Applications (VBA) -ohjelmointikieless\xE4\
-  \ tarkoittaa kahden tai useamman merkkijonon liitt\xE4mist\xE4 yhdeksi kokonaisuudeksi."
+summary: "VBA tarjoaa suoraviivaisen menetelm\xE4n merkkijonojen yhdist\xE4miseen\
+  \ k\xE4ytt\xE4en `&`-operaattoria tai `Concatenate`-funktiota."
 title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---

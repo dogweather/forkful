@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 01:07:09.105212-07:00
-description: "Logging er praksisen med \xE5 registrere hendelser, feil og andre betydningsfulle\
-  \ datapunkter som oppst\xE5r i livssyklusen til en programvareapplikasjon.\u2026"
+description: "Hvordan gj\xF8r man det: Lua har ikke et innebygd rammeverk for logging,\
+  \ men det \xE5 implementere en enkel loggefunksjon er rett frem. Nedenfor er et\u2026"
 lastmod: '2024-03-13T22:44:40.936642-06:00'
 model: gpt-4-1106-preview
-summary: "Logging er praksisen med \xE5 registrere hendelser, feil og andre betydningsfulle\
-  \ datapunkter som oppst\xE5r i livssyklusen til en programvareapplikasjon."
+summary: "Lua har ikke et innebygd rammeverk for logging, men det \xE5 implementere\
+  \ en enkel loggefunksjon er rett frem."
 title: "Loggf\xF8ring"
 weight: 17
 ---

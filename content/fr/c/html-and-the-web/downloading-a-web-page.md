@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:43.813371-07:00
-description: "T\xE9l\xE9charger une page web en C implique d'acc\xE9der programmatiquement\
-  \ au contenu d'une page web sur Internet et de le sauvegarder localement pour un\u2026"
+description: "Comment faire : Pour t\xE9l\xE9charger une page web en C, une approche\
+  \ populaire consiste \xE0 utiliser la biblioth\xE8que libcurl, une biblioth\xE8\
+  que de transfert\u2026"
 lastmod: '2024-03-13T22:44:58.370464-06:00'
 model: gpt-4-0125-preview
-summary: "T\xE9l\xE9charger une page web en C implique d'acc\xE9der programmatiquement\
-  \ au contenu d'une page web sur Internet et de le sauvegarder localement pour un\
-  \ traitement ou une utilisation hors ligne."
+summary: "Pour t\xE9l\xE9charger une page web en C, une approche populaire consiste\
+  \ \xE0 utiliser la biblioth\xE8que libcurl, une biblioth\xE8que de transfert d'URL\
+  \ c\xF4t\xE9 client efficace et portable."
 title: "T\xE9l\xE9chargement d'une page web"
 weight: 42
 ---

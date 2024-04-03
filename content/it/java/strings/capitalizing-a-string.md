@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:41.241533-07:00
-description: "Capitalizzare una stringa implica modificare la prima lettera di ogni\
-  \ parola nella stringa in maiuscolo, assicurandosi che il resto rimanga in minuscolo.\u2026"
+description: "Come fare: La libreria standard di Java non fornisce un metodo diretto\
+  \ per capitalizzare intere stringhe in un'unica soluzione, ma \xE8 possibile ottenere\u2026"
 lastmod: '2024-03-13T22:44:43.292081-06:00'
 model: gpt-4-0125-preview
-summary: Capitalizzare una stringa implica modificare la prima lettera di ogni parola
-  nella stringa in maiuscolo, assicurandosi che il resto rimanga in minuscolo.
+summary: "La libreria standard di Java non fornisce un metodo diretto per capitalizzare\
+  \ intere stringhe in un'unica soluzione, ma \xE8 possibile ottenere questo risultato\
+  \ combinando metodi integrati."
 title: Capitalizzare una stringa
 weight: 2
 ---

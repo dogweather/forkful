@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:33:08.658032-07:00
-description: "Comparer deux dates permet de d\xE9terminer laquelle est la plus ancienne\
-  \ ou de calculer la dur\xE9e entre elles. C\u2019est crucial dans les t\xE2ches\
-  \ comme\u2026"
+description: "How to: Comparons deux dates en Haskell. On va utiliser `time` qui est\
+  \ une biblioth\xE8que puissante pour manipuler les dates et les heures."
 lastmod: '2024-03-13T22:44:57.846844-06:00'
 model: gpt-4-1106-preview
-summary: "Comparer deux dates permet de d\xE9terminer laquelle est la plus ancienne\
-  \ ou de calculer la dur\xE9e entre elles."
+summary: Comparons deux dates en Haskell.
 title: Comparer deux dates
 weight: 27
 ---

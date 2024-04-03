@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:12.733374-07:00
-description: "Att kontrollera om en mapp finns i Python handlar om att verifiera n\xE4\
-  rvaron av en mapp i filsystemet innan man utf\xF6r operationer som att l\xE4sa eller\
-  \ skriva\u2026"
+description: "Hur g\xF6r man: Python tillhandah\xE5ller inbyggda s\xE4tt att kontrollera\
+  \ om en mapp existerar genom att anv\xE4nda modulerna `os` och `pathlib`. H\xE4\
+  r \xE4r exempel f\xF6r\u2026"
 lastmod: '2024-03-13T22:44:37.497256-06:00'
 model: gpt-4-0125-preview
-summary: "Att kontrollera om en mapp finns i Python handlar om att verifiera n\xE4\
-  rvaron av en mapp i filsystemet innan man utf\xF6r operationer som att l\xE4sa eller\
-  \ skriva filer."
+summary: "Python tillhandah\xE5ller inbyggda s\xE4tt att kontrollera om en mapp existerar\
+  \ genom att anv\xE4nda modulerna `os` och `pathlib`."
 title: Kontrollera om en katalog existerar
 weight: 20
 ---

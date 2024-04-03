@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 03:47:55.367337-07:00
-description: "Immagina di avere un piccolo programma che non funziona correttamente:\
-  \ ```C# static void Main() { int result = Sum(1, 2); Console.WriteLine(result);\
-  \ }\u2026"
+description: 'Come fare: Immagina di avere un piccolo programma che non funziona correttamente.'
 lastmod: '2024-03-13T22:44:43.438257-06:00'
 model: gpt-4-0125-preview
-summary: "Immagina di avere un piccolo programma che non funziona correttamente:\n\
-  \n```C#\nstatic void Main()\n{\n    int result = Sum(1, 2);\n    Console."
+summary: Immagina di avere un piccolo programma che non funziona correttamente.
 title: Utilizzo di un debugger
 weight: 35
 ---

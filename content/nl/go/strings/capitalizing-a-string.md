@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:46.309129-07:00
-description: "Het kapitaliseren van een tekenreeks houdt in dat het eerste karakter\
-  \ van een gegeven string naar een hoofdletter wordt getransformeerd als het in kleine\u2026"
+description: "Hoe te: In Go biedt het `strings`-pakket geen directe functie om alleen\
+  \ de eerste letter van een string te kapitaliseren. Daarom combineren we de\u2026"
 lastmod: '2024-03-13T22:44:50.269985-06:00'
 model: gpt-4-0125-preview
-summary: Het kapitaliseren van een tekenreeks houdt in dat het eerste karakter van
-  een gegeven string naar een hoofdletter wordt getransformeerd als het in kleine
-  letters staat, om ervoor te zorgen dat de string opvalt of voldoet aan specifieke
-  grammaticale normen.
+summary: In Go biedt het `strings`-pakket geen directe functie om alleen de eerste
+  letter van een string te kapitaliseren.
 title: Een string kapitaliseren
 weight: 2
 ---

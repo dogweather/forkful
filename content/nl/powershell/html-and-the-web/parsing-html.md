@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:36.383935-07:00
-description: "HTML parsen betekent het afbreken van HTML-content om specifieke gegevens\
-  \ te extraheren. Programmeurs doen dit om webscraping, datamining te\u2026"
+description: 'Hoe: Laten we wat gegevens van een webpagina halen. We gebruiken Invoke-WebRequest
+  en dan filteren we uit wat we nodig hebben.'
 lastmod: '2024-03-13T22:44:51.026906-06:00'
 model: gpt-4-0125-preview
-summary: HTML parsen betekent het afbreken van HTML-content om specifieke gegevens
-  te extraheren.
+summary: Laten we wat gegevens van een webpagina halen.
 title: HTML Parsen
 weight: 43
 ---

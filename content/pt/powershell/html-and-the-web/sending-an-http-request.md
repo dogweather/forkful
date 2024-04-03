@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 18:00:32.571971-07:00
-description: "Enviar uma requisi\xE7\xE3o HTTP significa pedir informa\xE7\xF5es a\
-  \ um servidor web. Programadores fazem isso para interagir com APIs, buscar dados\
-  \ e comunicar-se\u2026"
+description: "How to: Vamos usar o comando `Invoke-RestMethod` para enviar uma requisi\xE7\
+  \xE3o GET simples."
 lastmod: '2024-03-13T22:44:46.793931-06:00'
 model: gpt-4-1106-preview
-summary: "Enviar uma requisi\xE7\xE3o HTTP significa pedir informa\xE7\xF5es a um\
-  \ servidor web."
+summary: "Vamos usar o comando `Invoke-RestMethod` para enviar uma requisi\xE7\xE3\
+  o GET simples."
 title: "Enviando uma requisi\xE7\xE3o HTTP"
 weight: 44
 ---

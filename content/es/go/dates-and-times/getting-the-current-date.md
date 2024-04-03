@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:28.247401-07:00
-description: "Obtener la fecha actual en Go es una tarea fundamental para los programadores,\
-  \ similar a \"\xA1Hola, Mundo!\" en su ubicuidad. Es esencial para tareas que van\u2026"
+description: "C\xF3mo hacerlo: En Go, el paquete `time` es tu entrada al trabajo con\
+  \ fechas y horas. La funci\xF3n `time.Now()` te da la fecha y hora actuales, mientras\
+  \ que\u2026"
 lastmod: '2024-03-13T22:44:58.479629-06:00'
 model: gpt-4-0125-preview
-summary: "Obtener la fecha actual en Go es una tarea fundamental para los programadores,\
-  \ similar a \"\xA1Hola, Mundo."
+summary: En Go, el paquete `time` es tu entrada al trabajo con fechas y horas.
 title: Obteniendo la fecha actual
 weight: 29
 ---

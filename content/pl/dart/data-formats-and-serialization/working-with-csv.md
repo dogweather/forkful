@@ -2,14 +2,14 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:29.984930-07:00
-description: "Praca z plikami CSV (Comma Separated Values - warto\u015Bci oddzielone\
-  \ przecinkami) polega na przetwarzaniu i generowaniu plik\xF3w tekstowych, gdzie\
-  \ ka\u017Cda linia\u2026"
+description: "Jak to zrobi\u0107: Aby obs\u0142ugiwa\u0107 pliki CSV w Dart, zazwyczaj\
+  \ przetwarzasz tekst r\u0119cznie lub u\u017Cywasz bibliotek stron trzecich, aby\
+  \ upro\u015Bci\u0107 zadanie. Tutaj\u2026"
 lastmod: '2024-03-13T22:44:35.117262-06:00'
 model: gpt-4-0125-preview
-summary: "Praca z plikami CSV (Comma Separated Values - warto\u015Bci oddzielone przecinkami)\
-  \ polega na przetwarzaniu i generowaniu plik\xF3w tekstowych, gdzie ka\u017Cda linia\
-  \ zawiera warto\u015Bci oddzielone przecinkami."
+summary: "Aby obs\u0142ugiwa\u0107 pliki CSV w Dart, zazwyczaj przetwarzasz tekst\
+  \ r\u0119cznie lub u\u017Cywasz bibliotek stron trzecich, aby upro\u015Bci\u0107\
+  \ zadanie."
 title: Praca z CSV
 weight: 37
 ---

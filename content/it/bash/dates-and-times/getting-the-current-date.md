@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:50.831419-07:00
-description: "Il recupero della data corrente in Bash comporta l'utilizzo di comandi\
-  \ integrati per visualizzare la data e l'ora in vari formati. I programmatori\u2026"
+description: "Come fare: In Bash, il comando `date` \xE8 il tuo strumento principale\
+  \ per ottenere la data e l'ora correnti. Ecco alcuni esempi di come usarlo: 1.\u2026"
 lastmod: '2024-03-13T22:44:43.610208-06:00'
 model: gpt-4-0125-preview
-summary: Il recupero della data corrente in Bash comporta l'utilizzo di comandi integrati
-  per visualizzare la data e l'ora in vari formati.
+summary: "In Bash, il comando `date` \xE8 il tuo strumento principale per ottenere\
+  \ la data e l'ora correnti."
 title: Ottenere la data corrente
 weight: 29
 ---

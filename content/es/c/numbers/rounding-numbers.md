@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:13.817400-07:00
-description: "Redondear n\xFAmeros es el proceso de ajustar los d\xEDgitos de un n\xFA\
-  mero para reducir su precisi\xF3n de acuerdo con ciertas reglas, ya sea hacia el\
-  \ n\xFAmero entero\u2026"
+description: "C\xF3mo hacerlo: Redondear n\xFAmeros en C se puede lograr utilizando\
+  \ varias funciones, pero el enfoque m\xE1s com\xFAn implica las funciones `floor()`,\
+  \ `ceil()`, y\u2026"
 lastmod: '2024-03-13T22:44:59.539656-06:00'
 model: gpt-4-0125-preview
-summary: "Redondear n\xFAmeros es el proceso de ajustar los d\xEDgitos de un n\xFA\
-  mero para reducir su precisi\xF3n de acuerdo con ciertas reglas, ya sea hacia el\
-  \ n\xFAmero entero m\xE1s cercano o un n\xFAmero especificado de lugares decimales."
+summary: "Redondear n\xFAmeros en C se puede lograr utilizando varias funciones, pero\
+  \ el enfoque m\xE1s com\xFAn implica las funciones `floor()`, `ceil()`, y `round()`."
 title: "Redondeo de n\xFAmeros"
 weight: 13
 ---

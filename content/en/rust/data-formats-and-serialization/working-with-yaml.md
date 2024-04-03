@@ -1,12 +1,12 @@
 ---
 date: 2024-02-03 19:03:21.192207-07:00
-description: "In Rust programming, working with YAML (YAML Ain't Markup Language)\
-  \ is about parsing and generating data in YAML format, a human-friendly data\u2026"
+description: "How to: Rust doesn't support YAML in its standard library, so we commonly\
+  \ use third-party crates like `serde` (for serializing and deserializing data) in\u2026"
 lastmod: '2024-03-13T22:44:59.914542-06:00'
 model: gpt-4-0125-preview
-summary: In Rust programming, working with YAML (YAML Ain't Markup Language) is about
-  parsing and generating data in YAML format, a human-friendly data serialization
-  standard.
+summary: Rust doesn't support YAML in its standard library, so we commonly use third-party
+  crates like `serde` (for serializing and deserializing data) in combination with
+  `serde_yaml`.
 title: Working with YAML
 weight: 41
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:42.101830-07:00
-description: "Interaktiivinen komentorivi (REPL - Read-Evaluate-Print Loop) Dartille\
-  \ mahdollistaa ohjelmoijien dynaamisen koodin kirjoittamisen ja suorittamisen rivi\u2026"
+description: "Miten: Dart ei tule sis\xE4\xE4nrakennetun REPL:n kanssa. Voit kuitenkin\
+  \ saavuttaa REPL:n kaltaisen toiminnallisuuden k\xE4ytt\xE4m\xE4ll\xE4 DartPadia\
+  \ (verkossa) tai\u2026"
 lastmod: '2024-03-13T22:44:56.272513-06:00'
 model: gpt-4-0125-preview
-summary: "Interaktiivinen komentorivi (REPL - Read-Evaluate-Print Loop) Dartille mahdollistaa\
-  \ ohjelmoijien dynaamisen koodin kirjoittamisen ja suorittamisen rivi rivilt\xE4\
-  \ ilman, ett\xE4 koko skriptej\xE4 tarvitsee k\xE4\xE4nt\xE4\xE4."
+summary: "Dart ei tule sis\xE4\xE4nrakennetun REPL:n kanssa."
 title: "Interaktiivisen kuoren (REPL) k\xE4ytt\xF6"
 weight: 34
 ---

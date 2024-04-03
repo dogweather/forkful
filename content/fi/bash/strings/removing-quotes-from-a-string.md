@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:37:54.779338-07:00
-description: "Merkkijonosta lainausmerkkien poistaminen tarkoittaa niiden lainausmerkkien\
-  \ karsimista, jotka sulkevat merkkijonon. Ohjelmoijat haluavat usein tehd\xE4 t\xE4\
-  m\xE4n\u2026"
+description: "Kuinka: Bash tarjoaa useita tapoja poistaa lainausmerkit merkkijonoista.\
+  \ T\xE4ss\xE4 muutamia nopeita esimerkkej\xE4."
 lastmod: '2024-03-13T22:44:56.726137-06:00'
 model: gpt-4-0125-preview
-summary: Merkkijonosta lainausmerkkien poistaminen tarkoittaa niiden lainausmerkkien
-  karsimista, jotka sulkevat merkkijonon.
+summary: Bash tarjoaa useita tapoja poistaa lainausmerkit merkkijonoista.
 title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:39.804447-07:00
-description: "T\u1EA3i xu\u1ED1ng m\u1ED9t trang web c\xF3 ngh\u0129a l\xE0 l\u1EA5\
-  y n\u1ED9i dung c\u1EE7a n\xF3 qua m\u1EA1ng. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0\
-  m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 thu th\u1EADp d\u1EEF li\u1EC7u web, xem ngo\u1EA1\
-  i tuy\u1EBFn, ho\u1EB7c t\u1EF1 \u0111\u1ED9ng\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: D\u01B0\u1EDBi \u0111\xE2y l\xE0 b\xF9\
+  a ph\xE9p ma thu\u1EADt \u0111\u1EC3 t\u1EA3i m\u1ED9t trang web s\u1EED d\u1EE5\
+  ng PowerShell. Ch\xFAng ta s\u1EBD s\u1EED d\u1EE5ng `Invoke-WebRequest`."
 lastmod: '2024-03-13T22:44:36.934643-06:00'
 model: gpt-4-0125-preview
-summary: "T\u1EA3i xu\u1ED1ng m\u1ED9t trang web c\xF3 ngh\u0129a l\xE0 l\u1EA5y n\u1ED9\
-  i dung c\u1EE7a n\xF3 qua m\u1EA1ng."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 b\xF9a ph\xE9p ma thu\u1EADt \u0111\u1EC3\
+  \ t\u1EA3i m\u1ED9t trang web s\u1EED d\u1EE5ng PowerShell."
 title: "T\u1EA3i trang web"
 weight: 42
 ---

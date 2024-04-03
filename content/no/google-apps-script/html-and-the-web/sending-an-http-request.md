@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:46.274847-07:00
-description: "\xC5 sende en HTTP-foresp\xF8rsel i Google Apps Script handler om \xE5\
-  \ programmert utf\xF8re et kall til en ekstern webserver eller API. Programmerere\
-  \ gj\xF8r dette for\u2026"
+description: "Hvordan: I Google Apps Script er den prim\xE6re m\xE5ten \xE5 sende\
+  \ en HTTP-foresp\xF8rsel p\xE5, ved \xE5 bruke `UrlFetchApp`-tjenesten. Denne tjenesten\
+  \ gir metoder for \xE5\u2026"
 lastmod: '2024-03-13T22:44:40.310482-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 sende en HTTP-foresp\xF8rsel i Google Apps Script handler om \xE5 programmert\
-  \ utf\xF8re et kall til en ekstern webserver eller API."
+summary: "I Google Apps Script er den prim\xE6re m\xE5ten \xE5 sende en HTTP-foresp\xF8\
+  rsel p\xE5, ved \xE5 bruke `UrlFetchApp`-tjenesten."
 title: "Sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---

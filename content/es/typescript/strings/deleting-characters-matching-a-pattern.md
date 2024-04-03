@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 17:43:07.697556-07:00
-description: "Eliminar caracteres que coinciden con un patr\xF3n es simplemente buscar\
-  \ ciertos caracteres en un texto y quitarlos. Los programadores lo hacen para limpiar\u2026"
+description: "C\xF3mo hacerlo: Para ejecutar esto en TypeScript, podemos usar el m\xE9\
+  todo `replace` con expresiones regulares. Aqu\xED hay un ejemplo b\xE1sico y su\
+  \ resultado."
 lastmod: '2024-03-13T22:44:58.783020-06:00'
 model: gpt-4-1106-preview
-summary: "Eliminar caracteres que coinciden con un patr\xF3n es simplemente buscar\
-  \ ciertos caracteres en un texto y quitarlos."
+summary: "Para ejecutar esto en TypeScript, podemos usar el m\xE9todo `replace` con\
+  \ expresiones regulares."
 title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---

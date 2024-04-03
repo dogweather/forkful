@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:27.103418-07:00
-description: "Att kontrollera om en katalog finns \xE4r en grundl\xE4ggande operation\
-  \ i m\xE5nga programmeringsuppgifter, som m\xF6jligg\xF6r villkorliga \xE5tg\xE4\
-  rder baserat p\xE5 n\xE4rvaron\u2026"
+description: "Hur man g\xF6r: Haskell erbjuder, via sitt basbibliotek, raka v\xE4\
+  gar att kontrollera om en katalog existerar, fr\xE4mst genom att anv\xE4nda modulen\u2026"
 lastmod: '2024-03-13T22:44:37.969164-06:00'
 model: gpt-4-0125-preview
-summary: "Att kontrollera om en katalog finns \xE4r en grundl\xE4ggande operation\
-  \ i m\xE5nga programmeringsuppgifter, som m\xF6jligg\xF6r villkorliga \xE5tg\xE4\
-  rder baserat p\xE5 n\xE4rvaron eller fr\xE5nvaron av katalogstrukturer."
+summary: "Haskell erbjuder, via sitt basbibliotek, raka v\xE4gar att kontrollera om\
+  \ en katalog existerar, fr\xE4mst genom att anv\xE4nda modulen `System.Directory`."
 title: Kontrollera om en katalog existerar
 weight: 20
 ---

@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:46.905956-07:00
-description: "Probar en Ruby es verificar que tu c\xF3digo se comporte como se espera\
-  \ bajo varias condiciones. Los programistas escriben pruebas para asegurar la\u2026"
+description: "C\xF3mo hacerlo: Ruby viene con una biblioteca integrada llamada `Test::Unit`\
+  \ para escribir pruebas unitarias, encapsulando pr\xE1cticas de prueba dentro de\u2026"
 lastmod: '2024-03-13T22:44:59.594918-06:00'
 model: gpt-4-0125-preview
-summary: "Probar en Ruby es verificar que tu c\xF3digo se comporte como se espera\
-  \ bajo varias condiciones."
+summary: "Ruby viene con una biblioteca integrada llamada `Test::Unit` para escribir\
+  \ pruebas unitarias, encapsulando pr\xE1cticas de prueba dentro de estructuras sencillas."
 title: Escribiendo pruebas
 weight: 36
 ---

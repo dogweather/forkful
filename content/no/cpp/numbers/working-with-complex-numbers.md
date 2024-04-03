@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:37:48.129950-07:00
-description: "Komplekse tall utvider de reelle tallene ved \xE5 legge til en imagin\xE6\
-  r enhet, representert som 'i', hvor i^2 = -1. Programm\xF8rer bruker dem for simuleringer,\u2026"
+description: 'Hvordan: C++ har et innebygd bibliotek `<complex>` som letter arbeidet
+  med komplekse tall. Her er en rask titt.'
 lastmod: '2024-03-13T22:44:41.093275-06:00'
 model: gpt-4-0125-preview
-summary: "Komplekse tall utvider de reelle tallene ved \xE5 legge til en imagin\xE6\
-  r enhet, representert som 'i', hvor i^2 = -1."
+summary: C++ har et innebygd bibliotek `<complex>` som letter arbeidet med komplekse
+  tall.
 title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---

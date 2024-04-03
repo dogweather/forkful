@@ -1,13 +1,13 @@
 ---
 date: 2024-01-26 00:56:33.033031-07:00
-description: "Obs\u0142uga b\u0142\u0119d\xF3w w PHP dotyczy zarz\u0105dzania i reagowania\
-  \ na warunki, kt\xF3re zak\u0142\xF3caj\u0105 normalny przep\u0142yw programu, takie\
-  \ jak brakuj\u0105ce pliki czy b\u0142\u0119dne dane\u2026"
+description: "Jak to zrobi\u0107: W PHP mo\u017Cesz zarz\u0105dza\u0107 b\u0142\u0119\
+  dami za pomoc\u0105 blok\xF3w `try-catch`, a tak\u017Ce dostosowa\u0107 proces poprzez\
+  \ w\u0142asne procedury obs\u0142ugi b\u0142\u0119d\xF3w i wyj\u0105tki."
 lastmod: '2024-03-13T22:44:35.504900-06:00'
 model: gpt-4-1106-preview
-summary: "Obs\u0142uga b\u0142\u0119d\xF3w w PHP dotyczy zarz\u0105dzania i reagowania\
-  \ na warunki, kt\xF3re zak\u0142\xF3caj\u0105 normalny przep\u0142yw programu, takie\
-  \ jak brakuj\u0105ce pliki czy b\u0142\u0119dne dane wej\u015Bciowe."
+summary: "W PHP mo\u017Cesz zarz\u0105dza\u0107 b\u0142\u0119dami za pomoc\u0105 blok\xF3\
+  w `try-catch`, a tak\u017Ce dostosowa\u0107 proces poprzez w\u0142asne procedury\
+  \ obs\u0142ugi b\u0142\u0119d\xF3w i wyj\u0105tki."
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---

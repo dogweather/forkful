@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:01.636083-07:00
-description: "Att tolka ett datum fr\xE5n en str\xE4ng inneb\xE4r att konvertera textuella\
-  \ representationer av datum och tider till ett format som kan hanteras, lagras eller\u2026"
+description: "Hur: Lua har inte inbyggt st\xF6d f\xF6r hantering av datum och tid\
+  \ ut\xF6ver den begr\xE4nsade funktionaliteten som tillhandah\xE5lls av funktionerna\
+  \ `os.date`och\u2026"
 lastmod: '2024-03-13T22:44:38.047873-06:00'
 model: gpt-4-0125-preview
-summary: "Att tolka ett datum fr\xE5n en str\xE4ng inneb\xE4r att konvertera textuella\
-  \ representationer av datum och tider till ett format som kan hanteras, lagras eller\
-  \ j\xE4mf\xF6ras enkelt inom ett Lua-program."
+summary: "Lua har inte inbyggt st\xF6d f\xF6r hantering av datum och tid ut\xF6ver\
+  \ den begr\xE4nsade funktionaliteten som tillhandah\xE5lls av funktionerna `os.date`och\
+  \ `os.time`."
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---

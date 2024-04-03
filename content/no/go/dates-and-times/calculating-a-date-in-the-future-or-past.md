@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:07.507451-07:00
-description: "\xC5 beregne en dato i fremtiden eller fortiden i Go inneb\xE6rer \xE5\
-  \ manipulere dato- og tidsverdier for \xE5 bestemme et spesifikt punkt i forhold\
-  \ til en gitt\u2026"
+description: "Hvordan: Go tilbyr `time`-pakken for \xE5 h\xE5ndtere dato- og tidsoperasjoner,\
+  \ og tilbyr enkle mekanismer for \xE5 legge til eller trekke fra tid. Her er en\
+  \ titt\u2026"
 lastmod: '2024-03-13T22:44:40.281812-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 beregne en dato i fremtiden eller fortiden i Go inneb\xE6rer \xE5 manipulere\
-  \ dato- og tidsverdier for \xE5 bestemme et spesifikt punkt i forhold til en gitt\
-  \ dato."
+summary: "Go tilbyr `time`-pakken for \xE5 h\xE5ndtere dato- og tidsoperasjoner, og\
+  \ tilbyr enkle mekanismer for \xE5 legge til eller trekke fra tid."
 title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---

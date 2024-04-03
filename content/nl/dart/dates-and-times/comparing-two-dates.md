@@ -2,14 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:53:43.809754-07:00
-description: "Het vergelijken van twee datums in Dart omvat het evalueren van het\
-  \ tijdelijk verschil of de volgorde tussen hen, een essenti\xEBle functionaliteit\
-  \ in\u2026"
+description: "Hoe: In Dart kun je datums vergelijken met behulp van de `DateTime`\
+  \ klasse, die methodes biedt zoals `isBefore`, `isAfter` en `isAtSameMomentAs` voor\u2026"
 lastmod: '2024-03-13T22:44:50.518397-06:00'
 model: gpt-4-0125-preview
-summary: "Het vergelijken van twee datums in Dart omvat het evalueren van het tijdelijk\
-  \ verschil of de volgorde tussen hen, een essenti\xEBle functionaliteit in applicaties\
-  \ die gebeurtenissen, deadlines of andere tijdgevoelige gegevens beheren."
+summary: In Dart kun je datums vergelijken met behulp van de `DateTime` klasse, die
+  methodes biedt zoals `isBefore`, `isAfter` en `isAtSameMomentAs` voor directe vergelijking.
 title: Twee datums vergelijken
 weight: 27
 ---

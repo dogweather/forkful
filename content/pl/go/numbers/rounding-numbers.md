@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:15.745047-07:00
-description: "Zaokr\u0105glanie liczb polega na dostosowaniu warto\u015Bci liczby\
-  \ do jej najbli\u017Cszej liczby ca\u0142kowitej lub do okre\u015Blonej liczby miejsc\
-  \ po przecinku. Programi\u015Bci\u2026"
+description: "Jak to zrobi\u0107: W j\u0119zyku Go nie ma wbudowanej funkcji, kt\xF3\
+  ra bezpo\u015Brednio zaokr\u0105gla\u0142aby liczby do okre\u015Blonej liczby miejsc\
+  \ po przecinku w pakiecie\u2026"
 lastmod: '2024-03-13T22:44:34.843903-06:00'
 model: gpt-4-0125-preview
-summary: "Zaokr\u0105glanie liczb polega na dostosowaniu warto\u015Bci liczby do jej\
-  \ najbli\u017Cszej liczby ca\u0142kowitej lub do okre\u015Blonej liczby miejsc po\
-  \ przecinku."
+summary: "W j\u0119zyku Go nie ma wbudowanej funkcji, kt\xF3ra bezpo\u015Brednio zaokr\u0105\
+  gla\u0142aby liczby do okre\u015Blonej liczby miejsc po przecinku w pakiecie matematycznym."
 title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---

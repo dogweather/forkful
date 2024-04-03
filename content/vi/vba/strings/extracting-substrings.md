@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:28.515496-07:00
-description: "Tr\xEDch xu\u1EA5t chu\u1ED7i con trong Visual Basic cho \u1EE8ng d\u1EE5\
-  ng (VBA) bao g\u1ED3m vi\u1EC7c t\xE1ch ra c\xE1c ph\u1EA7n c\u1EE5 th\u1EC3 c\u1EE7\
-  a m\u1ED9t chu\u1ED7i d\u1EF1a tr\xEAn c\xE1c ti\xEAu ch\xED \u0111\xE3 cho. C\xE1\
-  c l\u1EADp tr\xECnh\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong VBA, b\u1EA1n ch\u1EE7 y\u1EBFu s\u1EED\
+  \ d\u1EE5ng c\xE1c h\xE0m `Mid`, `Left`, v\xE0 `Right` \u0111\u1EC3 tr\xEDch xu\u1EA5\
+  t chu\u1ED7i con. D\u01B0\u1EDBi \u0111\xE2y, ch\xFAng ta kh\xE1m ph\xE1 c\xE1c\
+  \ h\xE0m n\xE0y v\u1EDBi c\xE1c v\xED\u2026"
 lastmod: '2024-03-13T22:44:36.418134-06:00'
 model: gpt-4-0125-preview
-summary: "Tr\xEDch xu\u1EA5t chu\u1ED7i con trong Visual Basic cho \u1EE8ng d\u1EE5\
-  ng (VBA) bao g\u1ED3m vi\u1EC7c t\xE1ch ra c\xE1c ph\u1EA7n c\u1EE5 th\u1EC3 c\u1EE7\
-  a m\u1ED9t chu\u1ED7i d\u1EF1a tr\xEAn c\xE1c ti\xEAu ch\xED \u0111\xE3 cho."
+summary: "Trong VBA, b\u1EA1n ch\u1EE7 y\u1EBFu s\u1EED d\u1EE5ng c\xE1c h\xE0m `Mid`,\
+  \ `Left`, v\xE0 `Right` \u0111\u1EC3 tr\xEDch xu\u1EA5t chu\u1ED7i con."
 title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 weight: 6
 ---

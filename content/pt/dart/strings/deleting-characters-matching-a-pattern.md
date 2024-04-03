@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:15.598822-07:00
-description: "Eliminar caracteres que correspondam a um padr\xE3o espec\xEDfico em\
-  \ strings \xE9 crucial para a valida\xE7\xE3o de dados, saneamento ou quando se\
-  \ prepara o texto para\u2026"
+description: "Como fazer: Dart facilita a remo\xE7\xE3o de caracteres que correspondam\
+  \ a um padr\xE3o pr\xE9-definido usando express\xF5es regulares e o m\xE9todo `replaceAll`.\
+  \ N\xE3o s\xE3o\u2026"
 lastmod: '2024-03-13T22:44:46.264256-06:00'
 model: gpt-4-0125-preview
-summary: "Eliminar caracteres que correspondam a um padr\xE3o espec\xEDfico em strings\
-  \ \xE9 crucial para a valida\xE7\xE3o de dados, saneamento ou quando se prepara\
-  \ o texto para um processamento adicional."
+summary: "Dart facilita a remo\xE7\xE3o de caracteres que correspondam a um padr\xE3\
+  o pr\xE9-definido usando express\xF5es regulares e o m\xE9todo `replaceAll`."
 title: "Excluindo caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---

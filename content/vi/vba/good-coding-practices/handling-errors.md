@@ -2,15 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:34.155679-07:00
-description: "X\u1EED l\xFD l\u1ED7i trong Visual Basic cho \u1EE8ng d\u1EE5ng (VBA)\
-  \ l\xE0 qu\xE1 tr\xECnh nh\u1EADn bi\u1EBFt, ph\xE1t hi\u1EC7n v\xE0 gi\u1EA3i quy\u1EBF\
-  t l\u1ED7i l\u1EADp tr\xECnh, \u1EE9ng d\u1EE5ng ho\u1EB7c giao ti\u1EBFp. Vi\u1EC7\
-  c tri\u1EC3n khai x\u1EED\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong VBA, x\u1EED l\xFD l\u1ED7i th\u01B0\
+  \u1EDDng \u0111\u01B0\u1EE3c tri\u1EC3n khai s\u1EED d\u1EE5ng c\xE2u l\u1EC7nh\
+  \ `On Error` m\xE0 ch\u1EC9 d\u1EABn VBA c\xE1ch ti\u1EBFn h\xE0nh khi m\u1ED9t\
+  \ l\u1ED7i x\u1EA3y ra. C\xE1c chi\u1EBFn l\u01B0\u1EE3c\u2026"
 lastmod: '2024-03-13T22:44:36.442870-06:00'
 model: gpt-4-0125-preview
-summary: "X\u1EED l\xFD l\u1ED7i trong Visual Basic cho \u1EE8ng d\u1EE5ng (VBA) l\xE0\
-  \ qu\xE1 tr\xECnh nh\u1EADn bi\u1EBFt, ph\xE1t hi\u1EC7n v\xE0 gi\u1EA3i quy\u1EBF\
-  t l\u1ED7i l\u1EADp tr\xECnh, \u1EE9ng d\u1EE5ng ho\u1EB7c giao ti\u1EBFp."
+summary: "Trong VBA, x\u1EED l\xFD l\u1ED7i th\u01B0\u1EDDng \u0111\u01B0\u1EE3c tri\u1EC3\
+  n khai s\u1EED d\u1EE5ng c\xE2u l\u1EC7nh `On Error` m\xE0 ch\u1EC9 d\u1EABn VBA\
+  \ c\xE1ch ti\u1EBFn h\xE0nh khi m\u1ED9t l\u1ED7i x\u1EA3y ra."
 title: "X\u1EED l\xFD l\u1ED7i"
 weight: 16
 ---

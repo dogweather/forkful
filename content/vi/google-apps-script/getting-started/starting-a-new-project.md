@@ -2,14 +2,16 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:15.184757-07:00
-description: "Kh\u1EDFi \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi tr\xEAn Google\
-  \ Apps Script (GAS) bao g\u1ED3m vi\u1EC7c kh\u1EDFi t\u1EA1o m\u1ED9t file script\
-  \ b\xEAn trong h\u1EC7 sinh th\xE1i c\u1EE7a Google (Google Drive, Docs, Sheets,\u2026"
+description: "C\xE1ch th\u1EE9c: \u0110\u1EC3 b\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1\
+  \ \xE1n m\u1EDBi tr\xEAn Google Apps Script, b\u1EA1n c\xF3 m\u1ED9t v\xE0i \u0111\
+  i\u1EC3m nh\u1EADp, nh\u01B0ng h\xE3y t\u1EADp trung v\xE0o ph\u01B0\u01A1ng th\u1EE9\
+  c tr\u1EF1c ti\u1EBFp nh\u1EA5t: t\u1EA1o m\u1ED9t script\u2026"
 lastmod: '2024-03-13T22:44:36.041210-06:00'
 model: gpt-4-0125-preview
-summary: "Kh\u1EDFi \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi tr\xEAn Google Apps\
-  \ Script (GAS) bao g\u1ED3m vi\u1EC7c kh\u1EDFi t\u1EA1o m\u1ED9t file script b\xEA\
-  n trong h\u1EC7 sinh th\xE1i c\u1EE7a Google (Google Drive, Docs, Sheets, v."
+summary: "\u0110\u1EC3 b\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi tr\xEA\
+  n Google Apps Script, b\u1EA1n c\xF3 m\u1ED9t v\xE0i \u0111i\u1EC3m nh\u1EADp, nh\u01B0\
+  ng h\xE3y t\u1EADp trung v\xE0o ph\u01B0\u01A1ng th\u1EE9c tr\u1EF1c ti\u1EBFp nh\u1EA5\
+  t."
 title: "Kh\u1EDFi \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---

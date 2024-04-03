@@ -1,11 +1,10 @@
 ---
 date: 2024-01-25 02:59:56.519959-07:00
-description: "Organizing code into functions means chopping your program into reusable\
-  \ pieces, each handling a specific task. We do this to make code easier to read,\u2026"
+description: "How to: Here\u2019s a simple example. Instead of writing a long script\
+  \ to greet users, we split the task into functions."
 lastmod: '2024-03-13T22:45:00.053884-06:00'
 model: gpt-4-1106-preview
-summary: Organizing code into functions means chopping your program into reusable
-  pieces, each handling a specific task.
+summary: "Here\u2019s a simple example."
 title: Organizing code into functions
 weight: 18
 ---

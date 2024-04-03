@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:38:53.066699-07:00
-description: "Converter strings para min\xFAsculas significa transformar todas as\
-  \ letras de uma string para a sua forma min\xFAscula. Programadores fazem isso para\
-  \ padronizar\u2026"
+description: "How to: Em Kotlin, \xE9 bem simples converter uma string para min\xFA\
+  sculas."
 lastmod: '2024-03-13T22:44:46.528677-06:00'
 model: gpt-4-1106-preview
-summary: "Converter strings para min\xFAsculas significa transformar todas as letras\
-  \ de uma string para a sua forma min\xFAscula."
+summary: "Em Kotlin, \xE9 bem simples converter uma string para min\xFAsculas."
 title: "Convertendo uma string para min\xFAsculas"
 weight: 4
 ---

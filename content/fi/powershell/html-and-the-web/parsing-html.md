@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:41.403086-07:00
-description: "HTML:n j\xE4sent\xE4minen PowerShelliss\xE4 tarkoittaa HTML-sis\xE4\
-  ll\xF6n purkamista erityisten tietojen poimimiseksi tai webiin liittyvien teht\xE4\
-  vien\u2026"
+description: "Kuinka: PowerShell ei natiivisti sis\xE4ll\xE4 erityist\xE4 HTML-j\xE4\
+  sent\xE4j\xE4\xE4, mutta voit k\xE4ytt\xE4\xE4 `Invoke-WebRequest` cmdletia HTML-sis\xE4\
+  ll\xF6n saavuttamiseksi ja\u2026"
 lastmod: '2024-03-13T22:44:56.780289-06:00'
 model: gpt-4-0125-preview
-summary: "HTML:n j\xE4sent\xE4minen PowerShelliss\xE4 tarkoittaa HTML-sis\xE4ll\xF6\
-  n purkamista erityisten tietojen poimimiseksi tai webiin liittyvien teht\xE4vien\
-  \ automatisoimiseksi."
+summary: "PowerShell ei natiivisti sis\xE4ll\xE4 erityist\xE4 HTML-j\xE4sent\xE4j\xE4\
+  \xE4, mutta voit k\xE4ytt\xE4\xE4 `Invoke-WebRequest` cmdletia HTML-sis\xE4ll\xF6\
+  n saavuttamiseksi ja j\xE4sent\xE4miseksi."
 title: "HTML:n j\xE4sennys"
 weight: 43
 ---

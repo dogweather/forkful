@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:53:24.504452-07:00
-description: "Printing debug output lets you peek at your program's state without\
-  \ a full-blown debugger. It's quick, dirty, and perfect for tracing pesky bugs when\
-  \ you\u2026"
+description: 'How to: To print something simple, use `println!`. If you need to print
+  a value for debugging, `dbg!` comes in handy.'
 lastmod: '2024-03-13T22:44:59.898165-06:00'
 model: gpt-4-1106-preview
-summary: Printing debug output lets you peek at your program's state without a full-blown
-  debugger.
+summary: To print something simple, use `println!`.
 title: Printing debug output
 weight: 33
 ---

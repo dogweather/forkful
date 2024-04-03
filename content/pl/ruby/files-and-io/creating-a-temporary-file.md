@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:41:32.401596-07:00
-description: ''
+description: "Co i Dlaczego? Tworzenie plik\xF3w tymczasowych pozwala na bezpieczne\
+  \ przechowywanie danych tylko na czas trwania procesu. Programi\u015Bci u\u017C\
+  ywaj\u0105 ich, gdy\u2026"
 lastmod: '2024-03-13T22:44:35.951695-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Tworzenie plik\xF3w tymczasowych pozwala na bezpieczne przechowywanie danych\
+  \ tylko na czas trwania procesu."
 title: Tworzenie pliku tymczasowego
 weight: 21
 ---

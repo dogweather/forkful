@@ -1,11 +1,12 @@
 ---
 date: 2024-02-03 19:03:17.830923-07:00
-description: "YAML, short for \"YAML Ain't Markup Language\", is a human-friendly\
-  \ data serialization standard that can be used for all programming languages. Programmers\u2026"
+description: "How to: Haskell does not have built-in support for YAML processing,\
+  \ but you can use third-party libraries such as `yaml` and `aeson` for parsing and\u2026"
 lastmod: '2024-03-13T22:45:00.146779-06:00'
 model: gpt-4-0125-preview
-summary: YAML, short for "YAML Ain't Markup Language", is a human-friendly data serialization
-  standard that can be used for all programming languages.
+summary: Haskell does not have built-in support for YAML processing, but you can use
+  third-party libraries such as `yaml` and `aeson` for parsing and generating YAML
+  data.
 title: Working with YAML
 weight: 41
 ---

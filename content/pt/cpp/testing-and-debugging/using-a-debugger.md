@@ -1,7 +1,7 @@
 ---
 date: 2024-01-26 03:48:22.062943-07:00
-description: "C++ se integra com depuradores como o GDB ou o depurador do Visual Studio.\
-  \ Aqui est\xE1 um pequeno exemplo usando o GDB: ```C++ #include <iostream> int\u2026"
+description: "Como fazer: C++ se integra com depuradores como o GDB ou o depurador\
+  \ do Visual Studio. Aqui est\xE1 um pequeno exemplo usando o GDB."
 lastmod: '2024-03-13T22:44:46.884054-06:00'
 model: gpt-4-0125-preview
 summary: C++ se integra com depuradores como o GDB ou o depurador do Visual Studio.

@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:30.968097-07:00
-description: "Afronden van getallen gaat over het afsnijden van decimalen om je gegevens\
-  \ te vereenvoudigen of aan specifieke formaten te voldoen. Programmeurs doen dit\u2026"
+description: 'Hoe: In Fish hangt het afronden van getallen af van het `math` commando.
+  Gebruik `math -s0` om af te ronden naar het dichtstbijzijnde gehele getal.'
 lastmod: '2024-03-13T22:44:51.239973-06:00'
 model: gpt-4-0125-preview
-summary: Afronden van getallen gaat over het afsnijden van decimalen om je gegevens
-  te vereenvoudigen of aan specifieke formaten te voldoen.
+summary: In Fish hangt het afronden van getallen af van het `math` commando.
 title: Afronden van getallen
 weight: 13
 ---

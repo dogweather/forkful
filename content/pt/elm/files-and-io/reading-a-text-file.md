@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 17:54:08.355465-07:00
-description: "Ler um arquivo de texto \xE9 simplesmente acessar o conte\xFAdo armazenado\
-  \ em um arquivo no formato de texto em seu programa. Programadores fazem isso para\u2026"
+description: "Como Fazer: Elm \xE9 um pouco peculiar quando se trata de lidar com\
+  \ arquivos devido \xE0 sua arquitetura. Vamos precisar interagir com JavaScript\
+  \ atrav\xE9s de\u2026"
 lastmod: '2024-03-13T22:44:46.517039-06:00'
 model: gpt-4-1106-preview
-summary: "Ler um arquivo de texto \xE9 simplesmente acessar o conte\xFAdo armazenado\
-  \ em um arquivo no formato de texto em seu programa."
+summary: "Elm \xE9 um pouco peculiar quando se trata de lidar com arquivos devido\
+  \ \xE0 sua arquitetura."
 title: Lendo um arquivo de texto
 weight: 22
 ---

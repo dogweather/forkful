@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:27:04.148803-07:00
-description: "TOML, die Abk\xFCrzung f\xFCr Toms Offensichtliche, Minimale Sprache,\
-  \ ist ein Daten-Serialisierungsformat \xE4hnlich zu JSON oder YAML. Programmierer\
-  \ nutzen es\u2026"
+description: "Wie geht das: Zuerst ben\xF6tigst du einen TOML-Parser. `@iarna/toml`\
+  \ ist eine beliebte Wahl. Installiere es mit npm: `npm install @iarna/toml --save`.\
+  \ So\u2026"
 lastmod: '2024-03-13T22:44:53.654040-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, die Abk\xFCrzung f\xFCr Toms Offensichtliche, Minimale Sprache, ist\
-  \ ein Daten-Serialisierungsformat \xE4hnlich zu JSON oder YAML."
+summary: "Zuerst ben\xF6tigst du einen TOML-Parser."
 title: Arbeiten mit TOML
 weight: 39
 ---

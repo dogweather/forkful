@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 00:54:53.285051-07:00
-description: "Att hantera fel \xE4r hur din kod tar itu med problem som uppst\xE5\
-  r under exekvering\u2014som att hantera en ov\xE4ntad boll utan att tappa den. Programmerare\
-  \ g\xF6r\u2026"
+description: "Hur man g\xF6r: Kotlin st\xF6djer `try`, `catch`, `finally` och `throw`\
+  \ f\xF6r att hantera fel. S\xE5 h\xE4r anv\xE4nder du dem."
 lastmod: '2024-03-13T22:44:37.878666-06:00'
 model: gpt-4-1106-preview
-summary: "Att hantera fel \xE4r hur din kod tar itu med problem som uppst\xE5r under\
-  \ exekvering\u2014som att hantera en ov\xE4ntad boll utan att tappa den."
+summary: "Kotlin st\xF6djer `try`, `catch`, `finally` och `throw` f\xF6r att hantera\
+  \ fel."
 title: Hantering av fel
 weight: 16
 ---

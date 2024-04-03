@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:37.419466-07:00
-description: "Das Kapitalisieren eines Strings (Zeichenkette) beinhaltet, den ersten\
-  \ Buchstaben eines gegebenen Strings in Gro\xDFbuchstaben umzuwandeln, falls dieser\u2026"
+description: "Wie: In Go bietet das `strings`-Paket keine direkte Funktion, um nur\
+  \ den ersten Buchstaben eines Strings zu kapitalisieren. Daher kombinieren wir die\u2026"
 lastmod: '2024-03-13T22:44:53.268346-06:00'
 model: gpt-4-0125-preview
-summary: "Das Kapitalisieren eines Strings (Zeichenkette) beinhaltet, den ersten Buchstaben\
-  \ eines gegebenen Strings in Gro\xDFbuchstaben umzuwandeln, falls dieser klein geschrieben\
-  \ ist."
+summary: In Go bietet das `strings`-Paket keine direkte Funktion, um nur den ersten
+  Buchstaben eines Strings zu kapitalisieren.
 title: "Einen String gro\xDFschreiben"
 weight: 2
 ---

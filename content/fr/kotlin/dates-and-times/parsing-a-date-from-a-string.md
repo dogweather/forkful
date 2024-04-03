@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:36.937646-07:00
-description: "L'analyse d'une date \xE0 partir d'une cha\xEEne de caract\xE8res implique\
-  \ de convertir du texte en un objet Date. Cette op\xE9ration est fondamentale pour\
-  \ les\u2026"
+description: "Comment faire : Kotlin prend en charge l'analyse de dates via le package\
+  \ `java.time`, introduit dans Java 8. Voici une approche simple utilisant\u2026"
 lastmod: '2024-03-13T22:44:57.749979-06:00'
 model: gpt-4-0125-preview
-summary: "L'analyse d'une date \xE0 partir d'une cha\xEEne de caract\xE8res implique\
-  \ de convertir du texte en un objet Date."
+summary: Kotlin prend en charge l'analyse de dates via le package `java.time`, introduit
+  dans Java 8.
 title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
 weight: 30
 ---

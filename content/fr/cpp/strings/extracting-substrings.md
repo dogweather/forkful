@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:45:20.998984-07:00
-description: "Extraire des sous-cha\xEEnes, c'est prendre une partie sp\xE9cifique\
-  \ d'une cha\xEEne de caract\xE8res. On fait \xE7a pour analyser, manipuler, ou valider\
-  \ des donn\xE9es\u2026"
+description: 'How to: (Comment faire :) .'
 lastmod: '2024-03-13T22:44:58.149258-06:00'
 model: gpt-4-1106-preview
-summary: "Extraire des sous-cha\xEEnes, c'est prendre une partie sp\xE9cifique d'une\
-  \ cha\xEEne de caract\xE8res."
+summary: .
 title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---

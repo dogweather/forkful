@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:51.454246-07:00
-description: "Das Parsen von HTML in Go umfasst die Analyse des Inhalts von HTML-Dateien,\
-  \ um Daten zu extrahieren, die Struktur zu manipulieren oder HTML in andere\u2026"
+description: "Wie: Um HTML in Go zu parsen, verwendet man \xFCblicherweise das `goquery`-Paket\
+  \ oder das Standardbibliothekspaket `net/html`. Hier ist ein einfaches\u2026"
 lastmod: '2024-03-13T22:44:53.285204-06:00'
 model: gpt-4-0125-preview
-summary: Das Parsen von HTML in Go umfasst die Analyse des Inhalts von HTML-Dateien,
-  um Daten zu extrahieren, die Struktur zu manipulieren oder HTML in andere Formate
-  zu konvertieren.
+summary: "Um HTML in Go zu parsen, verwendet man \xFCblicherweise das `goquery`-Paket\
+  \ oder das Standardbibliothekspaket `net/html`."
 title: HTML parsen
 weight: 43
 ---

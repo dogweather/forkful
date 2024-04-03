@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:29.747843-07:00
-description: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1\
-  \ b\u1EA3n bao g\u1ED3m vi\u1EC7c th\xEAm t\xEAn \u0111\u0103ng nh\u1EADp v\xE0\
-  \ m\u1EADt kh\u1EA9u \u0111\u1EC3 truy c\u1EADp v\xE0o m\u1ED9t t\xE0i nguy\xEA\
-  n tr\xEAn m\xE1y ch\u1EE7. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1\
+  ch \u0111\u01A1n gi\u1EA3n \u0111\u1EC3 g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDB\
+  i x\xE1c th\u1EF1c c\u01A1 b\u1EA3n s\u1EED d\u1EE5ng cURL trong PHP."
 lastmod: '2024-03-13T22:44:36.766097-06:00'
 model: gpt-4-0125-preview
-summary: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1\
-  \ b\u1EA3n bao g\u1ED3m vi\u1EC7c th\xEAm t\xEAn \u0111\u0103ng nh\u1EADp v\xE0\
-  \ m\u1EADt kh\u1EA9u \u0111\u1EC3 truy c\u1EADp v\xE0o m\u1ED9t t\xE0i nguy\xEA\
-  n tr\xEAn m\xE1y ch\u1EE7."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch \u0111\u01A1n gi\u1EA3n \u0111\u1EC3\
+  \ g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3\
+  n s\u1EED d\u1EE5ng cURL trong PHP."
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3\
   n"
 weight: 45

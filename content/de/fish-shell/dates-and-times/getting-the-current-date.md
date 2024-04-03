@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:19.502778-07:00
-description: "Das Abrufen des aktuellen Datums in der Programmierung ist eine grundlegende\
-  \ Aufgabe, die es Ihnen erm\xF6glicht, das Datum und die Zeitdaten des Systems\u2026"
+description: "Wie geht das: Fish Shell verwendet externe Befehle wie `date`, um das\
+  \ aktuelle Datum zu erhalten, und bietet Flexibilit\xE4t, das Ausgabeformat nach\
+  \ Bedarf\u2026"
 lastmod: '2024-03-13T22:44:54.319760-06:00'
 model: gpt-4-0125-preview
-summary: "Das Abrufen des aktuellen Datums in der Programmierung ist eine grundlegende\
-  \ Aufgabe, die es Ihnen erm\xF6glicht, das Datum und die Zeitdaten des Systems abzurufen\
-  \ und zu manipulieren."
+summary: "Fish Shell verwendet externe Befehle wie `date`, um das aktuelle Datum zu\
+  \ erhalten, und bietet Flexibilit\xE4t, das Ausgabeformat nach Bedarf zu formatieren."
 title: Den aktuellen Datum abrufen
 weight: 29
 ---

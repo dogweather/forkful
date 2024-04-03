@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:19.632344-07:00
-description: "YAML, acronimo di \"YAML Ain't Markup Language\", \xE8 un formato di\
-  \ serializzazione dei dati leggibile dall'uomo comunemente usato per i file di\u2026"
+description: "Come fare: PHP, nelle sue versioni attuali, non supporta l'analisi di\
+  \ YAML come parte della sua libreria standard. Il modo pi\xF9 diretto per lavorare\
+  \ con\u2026"
 lastmod: '2024-03-13T22:44:43.537025-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, acronimo di \"YAML Ain't Markup Language\", \xE8 un formato di serializzazione\
-  \ dei dati leggibile dall'uomo comunemente usato per i file di configurazione."
+summary: PHP, nelle sue versioni attuali, non supporta l'analisi di YAML come parte
+  della sua libreria standard.
 title: Lavorare con YAML
 weight: 41
 ---

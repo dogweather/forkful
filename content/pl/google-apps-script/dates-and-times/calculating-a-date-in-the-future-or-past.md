@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:02.011325-07:00
-description: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci polega\
-  \ na manipulowaniu obiektami daty, aby znale\u017A\u0107 daty poza obecn\u0105 dat\u0105\
-  \ lub przed ni\u0105, odpowiednio.\u2026"
+description: "Jak to zrobi\u0107: W Google Apps Script, kt\xF3ry opiera si\u0119 na\
+  \ JavaScript, mo\u017Cna manipulowa\u0107 datami za pomoc\u0105 obiektu `Date`.\
+  \ Oto jak obliczy\u0107 daty w\u2026"
 lastmod: '2024-03-13T22:44:34.918132-06:00'
 model: gpt-4-0125-preview
-summary: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci polega\
-  \ na manipulowaniu obiektami daty, aby znale\u017A\u0107 daty poza obecn\u0105 dat\u0105\
-  \ lub przed ni\u0105, odpowiednio."
+summary: "W Google Apps Script, kt\xF3ry opiera si\u0119 na JavaScript, mo\u017Cna\
+  \ manipulowa\u0107 datami za pomoc\u0105 obiektu `Date`."
 title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---

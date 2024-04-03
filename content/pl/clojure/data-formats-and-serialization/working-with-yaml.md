@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:05.596768-07:00
-description: "YAML, rekurencyjny akronim od \"YAML Ain't Markup Language\" (YAML nie\
-  \ jest j\u0119zykiem znacznik\xF3w), to format serializacji danych czytelny dla\
-  \ cz\u0142owieka,\u2026"
+description: "Jak to zrobi\u0107: Clojure nie zawiera wbudowanego wsparcia dla YAML,\
+  \ ale mo\u017Cesz u\u017Cy\u0107 bibliotek stron trzecich, takich jak `clj-yaml`,\
+  \ do analizowania i\u2026"
 lastmod: '2024-03-13T22:44:35.017521-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, rekurencyjny akronim od \"YAML Ain't Markup Language\" (YAML nie jest\
-  \ j\u0119zykiem znacznik\xF3w), to format serializacji danych czytelny dla cz\u0142\
-  owieka, u\u017Cywany do plik\xF3w konfiguracyjnych oraz wymiany danych mi\u0119\
-  dzy j\u0119zykami o r\xF3\u017Cnych strukturach danych."
+summary: "Clojure nie zawiera wbudowanego wsparcia dla YAML, ale mo\u017Cesz u\u017C\
+  y\u0107 bibliotek stron trzecich, takich jak `clj-yaml`, do analizowania i generowania\
+  \ danych YAML."
 title: Praca z YAML
 weight: 41
 ---

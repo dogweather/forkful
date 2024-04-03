@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:51.040048-07:00
-description: "YAML, czyli YAML Ain't Markup Language, to standard serializacji danych\
-  \ czytelnych dla cz\u0142owieka, kt\xF3ry mo\u017Ce by\u0107 u\u017Cywany do plik\xF3\
-  w konfiguracyjnych, jak\u2026"
+description: "Jak to zrobi\u0107: Bezpo\u015Brednia praca z YAML w Bashu wymaga nieco\
+  \ pomys\u0142owo\u015Bci, poniewa\u017C Bash nie ma wbudowanego wsparcia dla parsowania\
+  \ YAML. Jednak mo\u017Cesz\u2026"
 lastmod: '2024-03-13T22:44:35.605677-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, czyli YAML Ain't Markup Language, to standard serializacji danych\
-  \ czytelnych dla cz\u0142owieka, kt\xF3ry mo\u017Ce by\u0107 u\u017Cywany do plik\xF3\
-  w konfiguracyjnych, jak r\xF3wnie\u017C w aplikacjach, gdzie dane s\u0105 przechowywane\
-  \ lub przesy\u0142ane."
+summary: "Bezpo\u015Brednia praca z YAML w Bashu wymaga nieco pomys\u0142owo\u015B\
+  ci, poniewa\u017C Bash nie ma wbudowanego wsparcia dla parsowania YAML."
 title: Praca z YAML
 weight: 41
 ---

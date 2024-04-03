@@ -3,13 +3,12 @@ changelog:
 - 2024-01-28, dogweather, reviewed and added links
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 23:01:30.280210-07:00
-description: "Organizzare il codice in funzioni significa raggruppare pezzi di script\
-  \ per eseguire compiti specifici. Lo facciamo perch\xE9 rende il codice pi\xF9 facile\
-  \ da\u2026"
+description: 'Come fare: In Fish, si scrive una funzione con la parola chiave `function`,
+  si assegna un nome e si conclude con `end`. Ecco un esempio semplice.'
 lastmod: '2024-03-13T22:44:43.864781-06:00'
 model: gpt-4-0125-preview
-summary: Organizzare il codice in funzioni significa raggruppare pezzi di script per
-  eseguire compiti specifici.
+summary: In Fish, si scrive una funzione con la parola chiave `function`, si assegna
+  un nome e si conclude con `end`.
 title: Organizzare il codice in funzioni
 weight: 18
 ---

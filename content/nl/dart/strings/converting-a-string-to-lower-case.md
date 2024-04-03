@@ -2,13 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:05.085934-07:00
-description: "Een string omzetten naar kleine letters is een fundamentele bewerking\
-  \ waarbij alle tekens in een gegeven string worden getransformeerd naar hun\u2026"
+description: "Hoe: In Dart kun je een string omzetten naar kleine letters met behulp\
+  \ van de `toLowerCase()` methode die door de `String` klasse wordt aangeboden. Deze\u2026"
 lastmod: '2024-03-13T22:44:50.491209-06:00'
 model: gpt-4-0125-preview
-summary: Een string omzetten naar kleine letters is een fundamentele bewerking waarbij
-  alle tekens in een gegeven string worden getransformeerd naar hun equivalenten in
-  kleine letters.
+summary: In Dart kun je een string omzetten naar kleine letters met behulp van de
+  `toLowerCase()` methode die door de `String` klasse wordt aangeboden.
 title: Een string converteren naar onderkast
 weight: 4
 ---

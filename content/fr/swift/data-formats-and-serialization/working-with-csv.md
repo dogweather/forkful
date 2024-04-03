@@ -2,15 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:43.449643-07:00
-description: "Travailler avec des fichiers CSV (Valeurs S\xE9par\xE9es par des Virgules)\
-  \ implique l'analyse et la g\xE9n\xE9ration de donn\xE9es structur\xE9es \xE0 partir\
-  \ de fichiers texte\u2026"
+description: "Comment faire : En Swift, il n'y a pas de prise en charge native pour\
+  \ l'analyse directe des fichiers CSV, mais vous pouvez g\xE9rer les donn\xE9es CSV\
+  \ en\u2026"
 lastmod: '2024-03-13T22:44:58.252037-06:00'
 model: gpt-4-0125-preview
-summary: "Travailler avec des fichiers CSV (Valeurs S\xE9par\xE9es par des Virgules)\
-  \ implique l'analyse et la g\xE9n\xE9ration de donn\xE9es structur\xE9es \xE0 partir\
-  \ de fichiers texte o\xF9 chaque ligne repr\xE9sente un enregistrement et chaque\
-  \ enregistrement se compose de champs s\xE9par\xE9s par des virgules."
+summary: "En Swift, il n'y a pas de prise en charge native pour l'analyse directe\
+  \ des fichiers CSV, mais vous pouvez g\xE9rer les donn\xE9es CSV en utilisant les\
+  \ m\xE9thodes `String` pour diviser le contenu, ou en tirant parti de biblioth\xE8\
+  ques tierces telles que SwiftCSV pour une approche plus rationalis\xE9e."
 title: Travailler avec CSV
 weight: 37
 ---

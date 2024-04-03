@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:47:14.918279-07:00
-description: "Das Ermitteln der Zeichenkettenl\xE4nge bedeutet, zu z\xE4hlen, wie\
-  \ viele Zeichen in einer Zeichenkette vorhanden sind. Programmierer ben\xF6tigen\
-  \ diese\u2026"
+description: "How to: (Wie geht das:) Ein Beispiel in Fish Shell zur Bestimmung der\
+  \ L\xE4nge einer Zeichenkette."
 lastmod: '2024-03-13T22:44:54.298942-06:00'
 model: gpt-4-1106-preview
-summary: "Das Ermitteln der Zeichenkettenl\xE4nge bedeutet, zu z\xE4hlen, wie viele\
-  \ Zeichen in einer Zeichenkette vorhanden sind."
+summary: "Ein Beispiel in Fish Shell zur Bestimmung der L\xE4nge einer Zeichenkette."
 title: "Ermittlung der Zeichenkettenl\xE4nge"
 weight: 7
 ---

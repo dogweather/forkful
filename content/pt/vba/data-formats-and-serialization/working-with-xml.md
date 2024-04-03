@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:31.551790-07:00
-description: "Trabalhar com XML em Visual Basic for Applications (VBA) envolve analisar,\
-  \ criar e modificar documentos XML dentro do contexto das aplica\xE7\xF5es do Microsoft\u2026"
+description: "Como fazer: Para come\xE7ar a interagir com XML, normalmente utiliza-se\
+  \ o objeto `MSXML2.DOMDocument`. Esta interface permite que voc\xEA carregue, analise\
+  \ e\u2026"
 lastmod: '2024-03-13T22:44:46.438819-06:00'
 model: gpt-4-0125-preview
-summary: "Trabalhar com XML em Visual Basic for Applications (VBA) envolve analisar,\
-  \ criar e modificar documentos XML dentro do contexto das aplica\xE7\xF5es do Microsoft\
-  \ Office."
+summary: "Para come\xE7ar a interagir com XML, normalmente utiliza-se o objeto `MSXML2.DOMDocument`."
 title: Trabalhando com XML
 weight: 40
 ---

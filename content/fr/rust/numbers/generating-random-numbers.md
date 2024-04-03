@@ -1,14 +1,12 @@
 ---
 date: 2024-01-27 20:35:02.857658-07:00
-description: "G\xE9n\xE9rer des nombres al\xE9atoires en Rust implique l'utilisation\
-  \ de biblioth\xE8ques pour produire des valeurs num\xE9riques impr\xE9vues, ce qui\
-  \ est indispensable\u2026"
+description: "Comment faire : Rust s'appuie sur des crates externes pour la g\xE9\
+  n\xE9ration de nombres al\xE9atoires, `rand` \xE9tant le plus couramment utilis\xE9\
+  . Pour commencer \xE0\u2026"
 lastmod: '2024-03-13T22:44:57.477719-06:00'
 model: gpt-4-0125-preview
-summary: "G\xE9n\xE9rer des nombres al\xE9atoires en Rust implique l'utilisation de\
-  \ biblioth\xE8ques pour produire des valeurs num\xE9riques impr\xE9vues, ce qui\
-  \ est indispensable pour des t\xE2ches allant de la cryptographie et des simulations\
-  \ aux jeux et algorithmes al\xE9atoires."
+summary: "Rust s'appuie sur des crates externes pour la g\xE9n\xE9ration de nombres\
+  \ al\xE9atoires, `rand` \xE9tant le plus couramment utilis\xE9."
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---

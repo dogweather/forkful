@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:25.519893-07:00
-description: "Het downloaden van een webpagina betekent het ophalen van de HTML van\
-  \ een gegeven URL om lokaal te bekijken of te gebruiken. Programmeurs doen dit voor\u2026"
+description: "Hoe: Laten we aan de slag gaan met Kotlin's `HttpURLConnection` om snel\
+  \ een webpagina te grijpen. We gebruiken ook coroutines voor soepele\u2026"
 lastmod: '2024-03-13T22:44:50.766388-06:00'
 model: gpt-4-0125-preview
-summary: Het downloaden van een webpagina betekent het ophalen van de HTML van een
-  gegeven URL om lokaal te bekijken of te gebruiken.
+summary: Laten we aan de slag gaan met Kotlin's `HttpURLConnection` om snel een webpagina
+  te grijpen.
 title: Een webpagina downloaden
 weight: 42
 ---

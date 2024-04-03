@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 01:09:41.385527-07:00
-description: "Regrouper le code en fonctions, c'est comme trier des briques LEGO dans\
-  \ des bacs \u2013 cela facilite leur recherche et leur utilisation. Nous faisons\
-  \ cela\u2026"
+description: "Comment faire : Imaginez que vous ayez du code qui affiche une salutation\
+  \ plusieurs fois. Sans fonctions, c'est un d\xE9sordre. Avec des fonctions, c'est\u2026"
 lastmod: '2024-03-13T22:44:57.793430-06:00'
 model: gpt-4-1106-preview
-summary: "Regrouper le code en fonctions, c'est comme trier des briques LEGO dans\
-  \ des bacs \u2013 cela facilite leur recherche et leur utilisation."
+summary: Imaginez que vous ayez du code qui affiche une salutation plusieurs fois.
 title: Organisation du code en fonctions
 weight: 18
 ---

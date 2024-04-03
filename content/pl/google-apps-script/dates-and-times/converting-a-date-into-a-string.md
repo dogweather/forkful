@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:32.599167-07:00
-description: "Konwersja dat na ci\u0105gi znak\xF3w to podstawowe zadanie, kt\xF3\
-  re umo\u017Cliwia programistom manipulowanie informacjami o dacie i wy\u015Bwietlanie\
-  \ ich w formacie\u2026"
+description: "Jak to zrobi\u0107: Google Apps Script, oparty na JavaScript, pozwala\
+  \ na wiele metod osi\u0105gni\u0119cia konwersji dat na ci\u0105gi znak\xF3w. Poni\u017C\
+  ej znajduj\u0105 si\u0119 przyk\u0142ady\u2026"
 lastmod: '2024-03-13T22:44:34.915930-06:00'
 model: gpt-4-0125-preview
-summary: "Konwersja dat na ci\u0105gi znak\xF3w to podstawowe zadanie, kt\xF3re umo\u017C\
-  liwia programistom manipulowanie informacjami o dacie i wy\u015Bwietlanie ich w\
-  \ formacie czytelnym dla cz\u0142owieka."
+summary: "Google Apps Script, oparty na JavaScript, pozwala na wiele metod osi\u0105\
+  gni\u0119cia konwersji dat na ci\u0105gi znak\xF3w."
 title: "Konwersja daty na ci\u0105g znak\xF3w"
 weight: 28
 ---

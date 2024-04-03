@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:16.315792-07:00
-description: "Att j\xE4mf\xF6ra tv\xE5 datum i Visual Basic for Applications (VBA)\
-  \ inneb\xE4r att best\xE4mma deras kronologiska f\xF6rh\xE5llande till varandra.\
-  \ Programmerare g\xF6r detta f\xF6r\u2026"
+description: "Hur man g\xF6r: I VBA j\xE4mf\xF6rs datum med hj\xE4lp av de standard\
+  \ j\xE4mf\xF6relseoperatorerna (`<`, `>`, `=`, `<=`, `>=`). Innan j\xE4mf\xF6relse\
+  \ \xE4r det viktigt att\u2026"
 lastmod: '2024-03-13T22:44:37.756634-06:00'
 model: gpt-4-0125-preview
-summary: "Att j\xE4mf\xF6ra tv\xE5 datum i Visual Basic for Applications (VBA) inneb\xE4\
-  r att best\xE4mma deras kronologiska f\xF6rh\xE5llande till varandra."
+summary: "I VBA j\xE4mf\xF6rs datum med hj\xE4lp av de standard j\xE4mf\xF6relseoperatorerna\
+  \ (`<`, `>`, `=`, `<=`, `>=`)."
 title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---

@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:18.230753-07:00
-description: "Trabalhar com CSV (Valores Separados por V\xEDrgula) envolve a an\xE1\
-  lise e gera\xE7\xE3o de arquivos que armazenam dados tabulares num formato simples\
-  \ de texto puro.\u2026"
+description: "Como Fazer: Elm n\xE3o possui suporte embutido para an\xE1lise ou gera\xE7\
+  \xE3o de CSV; em vez disso, pacotes de terceiros como o `panosoft/elm-csv` s\xE3\
+  o\u2026"
 lastmod: '2024-03-13T22:44:46.521919-06:00'
 model: gpt-4-0125-preview
-summary: "Trabalhar com CSV (Valores Separados por V\xEDrgula) envolve a an\xE1lise\
-  \ e gera\xE7\xE3o de arquivos que armazenam dados tabulares num formato simples\
-  \ de texto puro."
+summary: "Elm n\xE3o possui suporte embutido para an\xE1lise ou gera\xE7\xE3o de CSV;\
+  \ em vez disso, pacotes de terceiros como o `panosoft/elm-csv` s\xE3o frequentemente\
+  \ utilizados."
 title: Trabalhando com CSV
 weight: 37
 ---

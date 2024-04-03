@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 01:18:23.770597-07:00
-description: "Refaktorering er prosessen med \xE5 restrukturere eksisterende kode\
-  \ uten \xE5 endre dens eksterne oppf\xF8rsel, med m\xE5l om \xE5 forbedre ikke-funksjonelle\
-  \ attributter\u2026"
+description: "Hvordan: La oss rydde opp i et vanlig Elixir-m\xF8nster. Vi vil refaktorere\
+  \ en funksjon `calculate_stats` som gj\xF8r mer enn den burde ved \xE5 bryte den\
+  \ ned i\u2026"
 lastmod: '2024-03-13T22:44:40.451820-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktorering er prosessen med \xE5 restrukturere eksisterende kode uten\
-  \ \xE5 endre dens eksterne oppf\xF8rsel, med m\xE5l om \xE5 forbedre ikke-funksjonelle\
-  \ attributter som lesbarhet og vedlikeholdbarhet."
+summary: "La oss rydde opp i et vanlig Elixir-m\xF8nster."
 title: Refaktorering
 weight: 19
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:44.094051-07:00
-description: "\xC5 sjekke om en mappe eksisterer i C inneb\xE6rer \xE5 foresp\xF8\
-  rre filsystemet for \xE5 verifisere om en spesifikk bane leder til en mappe. Programmerere\
-  \ utf\xF8rer\u2026"
+description: "Hvordan: I C kan eksistensen av en mappe sjekkes ved \xE5 bruke `stat`-funksjonen,\
+  \ som henter informasjon om filen eller mappen p\xE5 en spesifisert bane.\u2026"
 lastmod: '2024-03-13T22:44:41.287661-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 sjekke om en mappe eksisterer i C inneb\xE6rer \xE5 foresp\xF8rre filsystemet\
-  \ for \xE5 verifisere om en spesifikk bane leder til en mappe."
+summary: "I C kan eksistensen av en mappe sjekkes ved \xE5 bruke `stat`-funksjonen,\
+  \ som henter informasjon om filen eller mappen p\xE5 en spesifisert bane."
 title: Sjekke om en mappe eksisterer
 weight: 20
 ---

@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 17:37:26.096736-07:00
-description: "Muunnetaan p\xE4iv\xE4m\xE4\xE4r\xE4 merkkijonoksi. Se puree tiedot\
-  \ ihmisen luettavaan muotoon tai valmistelee ne tallennusta varten. Tiedon esitt\xE4\
-  minen tietyss\xE4\u2026"
+description: "How to: (Kuinka Tehd\xE4:) PowerShellissa p\xE4iv\xE4m\xE4\xE4r\xE4\xE4\
+  \ merkkijonoksi muuttaminen k\xE4ytt\xE4\xE4 `Get-Date` cmdleti\xE4 ja sen `-Format`\
+  \ parametria."
 lastmod: '2024-03-13T22:44:56.793965-06:00'
 model: gpt-4-1106-preview
-summary: "Muunnetaan p\xE4iv\xE4m\xE4\xE4r\xE4 merkkijonoksi."
+summary: "PowerShellissa p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 merkkijonoksi muuttaminen k\xE4\
+  ytt\xE4\xE4 `Get-Date` cmdleti\xE4 ja sen `-Format` parametria."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---

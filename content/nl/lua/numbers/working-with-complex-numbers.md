@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:09.861026-07:00
-description: "Complexe getallen breiden het idee van de eendimensionale getallenlijn\
-  \ uit tot het tweedimensionale vlak door een loodrechte imaginaire as op te nemen.\u2026"
+description: "Hoe te: In Lua kun je complexe getallen met tabellen voorstellen. De\
+  \ basisbewerkingen omvatten het optellen, aftrekken, vermenigvuldigen en delen van\
+  \ deze\u2026"
 lastmod: '2024-03-13T22:44:50.931441-06:00'
 model: gpt-4-0125-preview
-summary: Complexe getallen breiden het idee van de eendimensionale getallenlijn uit
-  tot het tweedimensionale vlak door een loodrechte imaginaire as op te nemen.
+summary: In Lua kun je complexe getallen met tabellen voorstellen.
 title: Werken met complexe getallen
 weight: 14
 ---

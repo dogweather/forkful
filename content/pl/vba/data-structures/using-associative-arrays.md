@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:45.753915-07:00
-description: "Tablice asocjacyjne, cz\u0119sto nazywane s\u0142ownikami w Visual Basic\
-  \ dla Aplikacji (VBA), pozwalaj\u0105 programistom na tworzenie kolekcji par klucz-warto\u015B\
-  \u0107. Ta\u2026"
+description: "Jak u\u017Cywa\u0107: W VBA obiekt `Dictionary` zapewnia funkcjonalno\u015B\
+  \u0107 podobn\u0105 do tablic asocjacyjnych. Musisz najpierw doda\u0107 odniesienie\
+  \ do Microsoft Scripting\u2026"
 lastmod: '2024-03-13T22:44:35.223745-06:00'
 model: gpt-4-0125-preview
-summary: "Tablice asocjacyjne, cz\u0119sto nazywane s\u0142ownikami w Visual Basic\
-  \ dla Aplikacji (VBA), pozwalaj\u0105 programistom na tworzenie kolekcji par klucz-warto\u015B\
-  \u0107."
+summary: "W VBA obiekt `Dictionary` zapewnia funkcjonalno\u015B\u0107 podobn\u0105\
+  \ do tablic asocjacyjnych."
 title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---

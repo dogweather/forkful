@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:19.709788-07:00
-description: "Stel je voor dat je er net achter komt dat je een batch-update moet\
-  \ uitvoeren op verschillende configuratiebestanden op je server. Je zou elk bestand\u2026"
+description: "Hoe te: Als het gaat om het ter plekke bewerken van bestanden met behulp\
+  \ van Bash, komen twee prominente hulpmiddelen in het spel: `sed` en `awk`. Laten\u2026"
 lastmod: '2024-03-13T22:44:50.978094-06:00'
 model: gpt-4-0125-preview
-summary: Stel je voor dat je er net achter komt dat je een batch-update moet uitvoeren
-  op verschillende configuratiebestanden op je server.
+summary: Als het gaat om het ter plekke bewerken van bestanden met behulp van Bash,
+  komen twee prominente hulpmiddelen in het spel.
 title: Bestanden ter plekke bewerken met CLI one-liners
 weight: 32
 ---

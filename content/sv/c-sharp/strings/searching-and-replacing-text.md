@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:57:32.110369-07:00
-description: "Att s\xF6ka och ers\xE4tta text \xE4r grundl\xE4ggande: du letar efter\
-  \ specifika teckenstr\xE4ngar och byter ut dem mot n\xE5got annat. Programmerare\
-  \ g\xF6r det f\xF6r att snabbt\u2026"
+description: "Hur g\xF6r man: L\xE5t oss dyka rakt in. H\xE4r \xE4r en snabb genomg\xE5\
+  ng av hur man kan s\xF6ka och ers\xE4tta text i C#."
 lastmod: '2024-03-13T22:44:37.898277-06:00'
 model: gpt-4-1106-preview
-summary: "Att s\xF6ka och ers\xE4tta text \xE4r grundl\xE4ggande: du letar efter specifika\
-  \ teckenstr\xE4ngar och byter ut dem mot n\xE5got annat."
+summary: "L\xE5t oss dyka rakt in."
 title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---

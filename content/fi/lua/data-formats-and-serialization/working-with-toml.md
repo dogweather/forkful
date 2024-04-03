@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:24:12.699271-07:00
-description: "TOML:n kanssa ty\xF6skentely sis\xE4lt\xE4\xE4 TOML-tietojen (Tom\u2019\
-  s Obvious, Minimal Language) j\xE4sent\xE4misen ja tuottamisen Lualla. Ohjelmoijat\
-  \ k\xE4ytt\xE4v\xE4t TOML:\xE4\xE4\u2026"
+description: "Kuinka: Ensiksi, varmista ett\xE4 Lua-ymp\xE4rist\xF6ss\xE4si on TOML-j\xE4\
+  sennin. T\xE4ss\xE4 esimerkiss\xE4 k\xE4yt\xE4mme `lua-toml`:ia."
 lastmod: '2024-03-13T22:44:56.719938-06:00'
 model: gpt-4-0125-preview
-summary: "TOML:n kanssa ty\xF6skentely sis\xE4lt\xE4\xE4 TOML-tietojen (Tom\u2019\
-  s Obvious, Minimal Language) j\xE4sent\xE4misen ja tuottamisen Lualla."
+summary: "Ensiksi, varmista ett\xE4 Lua-ymp\xE4rist\xF6ss\xE4si on TOML-j\xE4sennin."
 title: "Ty\xF6skentely TOML:n kanssa"
 weight: 39
 ---

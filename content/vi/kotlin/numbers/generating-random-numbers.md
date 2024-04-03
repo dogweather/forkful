@@ -2,15 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:46.496413-07:00
-description: "Vi\u1EC7c t\u1EA1o ra c\xE1c s\u1ED1 ng\u1EABu nhi\xEAn trong l\u1EAD\
-  p tr\xECnh l\xE0 v\u1EC1 vi\u1EC7c t\u1EA1o ra nh\u1EEFng con s\u1ED1 kh\xF4ng c\xF3\
-  \ b\u1EA5t k\u1EF3 m\u1ED9t m\u1EABu \u0111o\xE1n tr\u01B0\u1EDBc n\xE0o. C\xE1\
-  c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Kotlin cung c\u1EA5p m\u1ED9t c\xE1ch tr\u1EF1\
+  c ti\u1EBFp \u0111\u1EC3 t\u1EA1o ra c\xE1c s\u1ED1 ng\u1EABu nhi\xEAn qua th\u01B0\
+  \ vi\u1EC7n chu\u1EA9n c\u1EE7a m\xECnh. D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1\
+  ch b\u1EA1n c\xF3 th\u1EC3 t\u1EA1o ra c\xE1c lo\u1EA1i gi\xE1\u2026"
 lastmod: '2024-03-13T22:44:36.596115-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c t\u1EA1o ra c\xE1c s\u1ED1 ng\u1EABu nhi\xEAn trong l\u1EADp tr\xEC\
-  nh l\xE0 v\u1EC1 vi\u1EC7c t\u1EA1o ra nh\u1EEFng con s\u1ED1 kh\xF4ng c\xF3 b\u1EA5\
-  t k\u1EF3 m\u1ED9t m\u1EABu \u0111o\xE1n tr\u01B0\u1EDBc n\xE0o."
+summary: "Kotlin cung c\u1EA5p m\u1ED9t c\xE1ch tr\u1EF1c ti\u1EBFp \u0111\u1EC3 t\u1EA1\
+  o ra c\xE1c s\u1ED1 ng\u1EABu nhi\xEAn qua th\u01B0 vi\u1EC7n chu\u1EA9n c\u1EE7\
+  a m\xECnh."
 title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 weight: 12
 ---

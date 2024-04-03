@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:44.514908-07:00
-description: "\xC5 analysere en dato fra en streng i Visual Basic for Applications\
-  \ (VBA) handler om \xE5 konvertere tekst som representerer en dato til en datatotype\
-  \ for\u2026"
+description: "Hvordan: VBA tilbyr en enkel m\xE5te \xE5 analysere en streng til en\
+  \ dato ved bruk av `CDate`-funksjonen eller `DateValue`-funksjonen. Det er imidlertid\u2026"
 lastmod: '2024-03-13T22:44:40.630848-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 analysere en dato fra en streng i Visual Basic for Applications (VBA)\
-  \ handler om \xE5 konvertere tekst som representerer en dato til en datatotype for\
-  \ dato."
+summary: "VBA tilbyr en enkel m\xE5te \xE5 analysere en streng til en dato ved bruk\
+  \ av `CDate`-funksjonen eller `DateValue`-funksjonen."
 title: Analysering av en dato fra en streng
 weight: 30
 ---

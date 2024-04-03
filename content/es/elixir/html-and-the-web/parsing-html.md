@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:54.556806-07:00
-description: "Parsear HTML en Elixir implica extraer informaci\xF3n de documentos\
-  \ HTML. Los programadores hacen esto para interactuar program\xE1ticamente con p\xE1\
-  ginas web,\u2026"
+description: "C\xF3mo hacerlo: Elixir, con su robusto modelo de concurrencia y paradigma\
+  \ de programaci\xF3n funcional, no incluye capacidades de parseo de HTML incorporadas.\u2026"
 lastmod: '2024-03-13T22:44:58.700247-06:00'
 model: gpt-4-0125-preview
-summary: "Parsear HTML en Elixir implica extraer informaci\xF3n de documentos HTML."
+summary: "Elixir, con su robusto modelo de concurrencia y paradigma de programaci\xF3\
+  n funcional, no incluye capacidades de parseo de HTML incorporadas."
 title: Analizando HTML
 weight: 43
 ---

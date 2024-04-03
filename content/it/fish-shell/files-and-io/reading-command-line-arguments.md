@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:55:48.477316-07:00
-description: "Leggere gli argomenti da riga di comando permette ai tuoi script di\
-  \ essere dinamici e personalizzabili. I programmatori lo fanno per rendere gli script\u2026"
+description: 'Come fare: Per accedere agli argomenti da riga di comando in Fish, usiamo
+  `$argv`. Ecco un esempio semplice.'
 lastmod: '2024-03-13T22:44:43.874819-06:00'
 model: gpt-4-1106-preview
-summary: Leggere gli argomenti da riga di comando permette ai tuoi script di essere
-  dinamici e personalizzabili.
+summary: Per accedere agli argomenti da riga di comando in Fish, usiamo `$argv`.
 title: Lettura degli argomenti della riga di comando
 weight: 23
 ---

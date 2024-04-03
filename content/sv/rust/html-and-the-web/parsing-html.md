@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:56.952104-07:00
-description: "Att tolka HTML i Rust handlar om att extrahera data fr\xE5n HTML-dokument,\
-  \ vilket \xE4r v\xE4sentligt f\xF6r webbskrapning, dataextraktion eller att bygga\
-  \ webb-\u2026"
+description: "Hur g\xF6r man: F\xF6r att tolka HTML i Rust kommer du ofta att anv\xE4\
+  nda `scraper`-paketet, som erbjuder ett h\xF6gniv\xE5gr\xE4nssnitt f\xF6r att traversera\
+  \ och manipulera\u2026"
 lastmod: '2024-03-13T22:44:37.696102-06:00'
 model: gpt-4-0125-preview
-summary: "Att tolka HTML i Rust handlar om att extrahera data fr\xE5n HTML-dokument,\
-  \ vilket \xE4r v\xE4sentligt f\xF6r webbskrapning, dataextraktion eller att bygga\
-  \ webb-crawlers."
+summary: "F\xF6r att tolka HTML i Rust kommer du ofta att anv\xE4nda `scraper`-paketet,\
+  \ som erbjuder ett h\xF6gniv\xE5gr\xE4nssnitt f\xF6r att traversera och manipulera\
+  \ HTML-dokument."
 title: Tolka HTML
 weight: 43
 ---

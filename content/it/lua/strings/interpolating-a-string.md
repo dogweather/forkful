@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:51:10.944210-07:00
-description: "L'interpolazione di stringhe permette di incorporare variabili direttamente\
-  \ all'interno di una stringa, per una concatenazione elegante e leggibile. I\u2026"
+description: "How to: In Lua non esiste un operatore di interpolazione di stringa\
+  \ nativo, ma si pu\xF2 utilizzare la funzione `string.format`."
 lastmod: '2024-03-13T22:44:43.544926-06:00'
 model: gpt-4-1106-preview
-summary: L'interpolazione di stringhe permette di incorporare variabili direttamente
-  all'interno di una stringa, per una concatenazione elegante e leggibile.
+summary: "In Lua non esiste un operatore di interpolazione di stringa nativo, ma si\
+  \ pu\xF2 utilizzare la funzione `string.format`."
 title: Interpolazione di una stringa
 weight: 8
 ---

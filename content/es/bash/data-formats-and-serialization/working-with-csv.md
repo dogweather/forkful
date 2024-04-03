@@ -2,12 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:29.613852-07:00
-description: "Trabajar con archivos CSV (Valores Separados por Comas) en Bash consiste\
-  \ en procesar y manipular datos tabulares almacenados en formato de texto plano.\u2026"
+description: "C\xF3mo hacerlo: **Leyendo un Archivo CSV L\xEDnea por L\xEDnea**."
 lastmod: '2024-03-13T22:44:59.270057-06:00'
 model: gpt-4-0125-preview
-summary: Trabajar con archivos CSV (Valores Separados por Comas) en Bash consiste
-  en procesar y manipular datos tabulares almacenados en formato de texto plano.
+summary: "**Leyendo un Archivo CSV L\xEDnea por L\xEDnea**."
 title: Trabajando con CSV
 weight: 37
 ---

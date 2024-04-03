@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:10.427019-07:00
-description: "Wyra\u017Cenia regularne (regex) to sekwencje znak\xF3w definiuj\u0105\
-  ce wzorce wyszukiwania, g\u0142\xF3wnie u\u017Cywane do dopasowywania i manipulacji\
-  \ ci\u0105gami znak\xF3w.\u2026"
+description: "Jak to zrobi\u0107: Arduino nie posiada wbudowanego wsparcia dla regex\
+  \ bezpo\u015Brednio w swojej standardowej bibliotece. Jednak\u017Ce, mo\u017Cesz\
+  \ osi\u0105gn\u0105\u0107 funkcjonalno\u015B\u0107\u2026"
 lastmod: '2024-03-13T22:44:35.662356-06:00'
 model: gpt-4-0125-preview
-summary: "Wyra\u017Cenia regularne (regex) to sekwencje znak\xF3w definiuj\u0105ce\
-  \ wzorce wyszukiwania, g\u0142\xF3wnie u\u017Cywane do dopasowywania i manipulacji\
-  \ ci\u0105gami znak\xF3w."
+summary: "Arduino nie posiada wbudowanego wsparcia dla regex bezpo\u015Brednio w swojej\
+  \ standardowej bibliotece."
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---

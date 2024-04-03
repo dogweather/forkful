@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:05.346157-07:00
-description: "Regulj\xE4ra uttryck (regex) \xE4r m\xF6nster som anv\xE4nds f\xF6r\
-  \ att matcha teckenkombinationer i str\xE4ngar. Programmerare anv\xE4nder dem f\xF6\
-  r att s\xF6ka, redigera eller\u2026"
+description: "Hur: Att anv\xE4nda regex i Python inneb\xE4r att anv\xE4nda `re`-modulen,\
+  \ som tillhandah\xE5ller en upps\xE4ttning funktioner f\xF6r att bearbeta text med\
+  \ hj\xE4lp av\u2026"
 lastmod: '2024-03-13T22:44:37.473386-06:00'
 model: gpt-4-0125-preview
-summary: "Regulj\xE4ra uttryck (regex) \xE4r m\xF6nster som anv\xE4nds f\xF6r att\
-  \ matcha teckenkombinationer i str\xE4ngar."
+summary: "Att anv\xE4nda regex i Python inneb\xE4r att anv\xE4nda `re`-modulen, som\
+  \ tillhandah\xE5ller en upps\xE4ttning funktioner f\xF6r att bearbeta text med hj\xE4\
+  lp av regulj\xE4ra uttryck."
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---

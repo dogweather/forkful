@@ -2,14 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:39.477634-07:00
-description: "N\u1ED1i chu\u1ED7i l\xE0 vi\u1EC7c gh\xE9p hai ho\u1EB7c nhi\u1EC1\
-  u chu\u1ED7i l\u1EA1i v\u1EDBi nhau \u0111\u1EC3 t\u1EA1o th\xE0nh m\u1ED9t. L\u1EAD\
-  p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 x\xE2\
-  y d\u1EF1ng th\xF4ng \u0111i\u1EC7p, t\u1EA1o n\u1ED9i dung \u0111\u1ED9ng,\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: ."
 lastmod: '2024-03-13T22:44:36.307988-06:00'
 model: gpt-4-0125-preview
-summary: "N\u1ED1i chu\u1ED7i l\xE0 vi\u1EC7c gh\xE9p hai ho\u1EB7c nhi\u1EC1u chu\u1ED7\
-  i l\u1EA1i v\u1EDBi nhau \u0111\u1EC3 t\u1EA1o th\xE0nh m\u1ED9t."
+summary: .
 title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 weight: 3
 ---

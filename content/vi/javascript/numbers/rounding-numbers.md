@@ -2,14 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:52.640869-07:00
-description: "L\xE0m tr\xF2n l\xE0 vi\u1EC7c c\u1EAFt b\u1ECF ph\u1EA7n th\u1EEBa\
-  \ sau m\u1ED9t \u0111i\u1EC3m nh\u1EA5t \u0111\u1ECBnh trong s\u1ED1. L\u1EADp tr\xEC\
-  nh vi\xEAn l\xE0m tr\xF2n \u0111\u1EC3 ki\u1EC3m so\xE1t \u0111\u1ED9 ch\xEDnh x\xE1\
-  c, qu\u1EA3n l\xFD b\u1ED9 nh\u1EDB, ho\u1EB7c t\u1EA1o ra \u0111\u1EA7u ra\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1\
+  ch b\u1EA1n l\xE0m tr\xF2n s\u1ED1 trong JavaScript s\u1EED d\u1EE5ng `Math.round()`,\
+  \ `Math.ceil()`, v\xE0 `Math.floor()`."
 lastmod: '2024-03-13T22:44:37.146555-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m tr\xF2n l\xE0 vi\u1EC7c c\u1EAFt b\u1ECF ph\u1EA7n th\u1EEBa sau\
-  \ m\u1ED9t \u0111i\u1EC3m nh\u1EA5t \u0111\u1ECBnh trong s\u1ED1."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch b\u1EA1n l\xE0m tr\xF2n s\u1ED1\
+  \ trong JavaScript s\u1EED d\u1EE5ng `Math.round()`, `Math.ceil()`, v\xE0 `Math.floor()`."
 title: "L\xE0m tr\xF2n s\u1ED1"
 weight: 13
 ---

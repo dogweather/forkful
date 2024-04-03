@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:46:52.862533-07:00
-description: "Wyci\u0105ganie pod\u0142a\u0144cuch\xF3w to proces pozyskiwania kr\xF3\
-  tszych ci\u0105g\xF3w znak\xF3w z wi\u0119kszego tekstu. Programi\u015Bci u\u017C\
-  ywaj\u0105 tej techniki, by manipulowa\u0107 danymi\u2026"
+description: "How to: TypeScript daje kilka metod do \u0142atwego wydobywania pod\u0142\
+  a\u0144cuch\xF3w. Przyjrzyjmy si\u0119 przyk\u0142adom."
 lastmod: '2024-03-13T22:44:35.127341-06:00'
 model: gpt-4-1106-preview
-summary: "Wyci\u0105ganie pod\u0142a\u0144cuch\xF3w to proces pozyskiwania kr\xF3\
-  tszych ci\u0105g\xF3w znak\xF3w z wi\u0119kszego tekstu."
+summary: "TypeScript daje kilka metod do \u0142atwego wydobywania pod\u0142a\u0144\
+  cuch\xF3w."
 title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
 weight: 6
 ---

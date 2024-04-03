@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:13.246900-07:00
-description: "Convertir una cadena a min\xFAsculas implica transformar todos los caracteres\
-  \ en may\xFAsculas de una cadena a sus equivalentes en min\xFAsculas. Este proceso\
-  \ es\u2026"
+description: "C\xF3mo hacerlo: En Visual Basic para Aplicaciones (VBA), convertir\
+  \ una cadena a min\xFAsculas es sencillo utilizando la funci\xF3n `LCase`. Esta\
+  \ funci\xF3n toma una\u2026"
 lastmod: '2024-03-13T22:44:58.876455-06:00'
 model: gpt-4-0125-preview
-summary: "Convertir una cadena a min\xFAsculas implica transformar todos los caracteres\
-  \ en may\xFAsculas de una cadena a sus equivalentes en min\xFAsculas."
+summary: "En Visual Basic para Aplicaciones (VBA), convertir una cadena a min\xFA\
+  sculas es sencillo utilizando la funci\xF3n `LCase`."
 title: "Convirtiendo una cadena de texto a min\xFAsculas"
 weight: 4
 ---

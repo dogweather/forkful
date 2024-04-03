@@ -1,8 +1,8 @@
 ---
 date: 2024-01-26 04:10:28.202713-07:00
-description: "Um den Debugger in Xcode (der IDE f\xFCr Swift) zu verwenden, k\xF6\
-  nnen Sie Haltepunkte setzen, Variablen inspizieren und Ausdr\xFCcke \xFCberwachen.\
-  \ Hier ist ein\u2026"
+description: "Wie man: Um den Debugger in Xcode (der IDE f\xFCr Swift) zu verwenden,\
+  \ k\xF6nnen Sie Haltepunkte setzen, Variablen inspizieren und Ausdr\xFCcke \xFC\
+  berwachen. Hier\u2026"
 lastmod: '2024-03-13T22:44:54.229975-06:00'
 model: gpt-4-0125-preview
 summary: "Um den Debugger in Xcode (der IDE f\xFCr Swift) zu verwenden, k\xF6nnen\

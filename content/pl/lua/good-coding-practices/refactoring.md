@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 01:47:03.192289-07:00
-description: "Refaktoryzacja to sztuka modyfikowania istniej\u0105cego kodu aby poprawi\u0107\
-  \ jego struktur\u0119, czytelno\u015B\u0107 oraz wydajno\u015B\u0107, nie zmieniaj\u0105\
-  c przy tym jego zewn\u0119trznego\u2026"
+description: "Jak to zrobi\u0107: We\u017Amy prost\u0105 funkcj\u0119 Lua i dokonajmy\
+  \ jej refaktoryzacji. Zaczynamy od funkcji, kt\xF3ra oblicza sum\u0119 liczb w li\u015B\
+  cie, ale zosta\u0142a napisana bez\u2026"
 lastmod: '2024-03-13T22:44:35.548405-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktoryzacja to sztuka modyfikowania istniej\u0105cego kodu aby poprawi\u0107\
-  \ jego struktur\u0119, czytelno\u015B\u0107 oraz wydajno\u015B\u0107, nie zmieniaj\u0105\
-  c przy tym jego zewn\u0119trznego zachowania."
+summary: "We\u017Amy prost\u0105 funkcj\u0119 Lua i dokonajmy jej refaktoryzacji."
 title: Refaktoryzacja
 weight: 19
 ---

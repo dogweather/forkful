@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 18:04:14.131954-07:00
-description: "D\xE9marrer un nouveau projet, c'est comme ouvrir un livre vierge :\
-  \ vous avez une toile in\xE9dite pour \xE9crire votre code. Les programmeurs lancent\
-  \ de nouveaux\u2026"
+description: "Comment faire : Pour commencer, on utilise Cargo, l'outil de gestion\
+  \ de paquets et de syst\xE8me de build de Rust. Voici comment initier un projet\
+  \ ."
 lastmod: '2024-03-13T22:44:57.482602-06:00'
 model: gpt-4-1106-preview
-summary: "D\xE9marrer un nouveau projet, c'est comme ouvrir un livre vierge : vous\
-  \ avez une toile in\xE9dite pour \xE9crire votre code."
+summary: "Pour commencer, on utilise Cargo, l'outil de gestion de paquets et de syst\xE8\
+  me de build de Rust."
 title: Lancement d'un nouveau projet
 weight: 1
 ---

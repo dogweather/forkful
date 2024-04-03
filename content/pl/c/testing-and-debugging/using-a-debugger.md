@@ -2,9 +2,9 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:59.651462-07:00
-description: "GDB (GNU Debugger) jest najcz\u0119\u015Bciej u\u017Cywanym debugerem\
-  \ dla programowania w j\u0119zyku C. Oto kr\xF3tki przewodnik, jak u\u017Cywa\u0107\
-  \ GDB do debugowania prostego\u2026"
+description: "Jak to zrobi\u0107: GDB (GNU Debugger) jest najcz\u0119\u015Bciej u\u017C\
+  ywanym debugerem dla programowania w j\u0119zyku C. Oto kr\xF3tki przewodnik, jak\
+  \ u\u017Cywa\u0107 GDB do debugowania\u2026"
 lastmod: '2024-03-13T22:44:35.891468-06:00'
 model: gpt-4-0125-preview
 summary: "GDB (GNU Debugger) jest najcz\u0119\u015Bciej u\u017Cywanym debugerem dla\

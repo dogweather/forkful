@@ -1,12 +1,9 @@
 ---
 date: 2024-02-03 17:50:20.786904-07:00
-description: "Working with XML in Go involves parsing (reading) and generating (writing)\
-  \ XML documents\u2014a standard format for structured data interchange. Programmers\
-  \ do\u2026"
+description: 'How to: #.'
 lastmod: '2024-03-13T22:44:59.652840-06:00'
 model: gpt-4-0125-preview
-summary: "Working with XML in Go involves parsing (reading) and generating (writing)\
-  \ XML documents\u2014a standard format for structured data interchange."
+summary: '#.'
 title: Working with XML
 weight: 40
 ---

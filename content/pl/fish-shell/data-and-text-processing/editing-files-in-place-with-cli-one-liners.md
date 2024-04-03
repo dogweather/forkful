@@ -1,13 +1,13 @@
 ---
 date: 2024-01-27 16:21:35.961609-07:00
-description: "Edycja plik\xF3w bezpo\u015Brednio z linii polece\u0144 za pomoc\u0105\
-  \ jednolinijkowc\xF3w CLI polega na dokonywaniu zmian bezpo\u015Brednio w plikach,\
-  \ bez otwierania ich w\u2026"
+description: "Jak to zrobi\u0107: Fish Shell, znany ze swoich przyjaznych dla u\u017C\
+  ytkownika funkcji i pot\u0119\u017Cnych mo\u017Cliwo\u015Bci skryptowania, oferuje\
+  \ kilka sposob\xF3w na edycj\u0119\u2026"
 lastmod: '2024-03-13T22:44:35.836796-06:00'
 model: gpt-4-0125-preview
-summary: "Edycja plik\xF3w bezpo\u015Brednio z linii polece\u0144 za pomoc\u0105 jednolinijkowc\xF3\
-  w CLI polega na dokonywaniu zmian bezpo\u015Brednio w plikach, bez otwierania ich\
-  \ w edytorze tekstu."
+summary: "Fish Shell, znany ze swoich przyjaznych dla u\u017Cytkownika funkcji i pot\u0119\
+  \u017Cnych mo\u017Cliwo\u015Bci skryptowania, oferuje kilka sposob\xF3w na edycj\u0119\
+  \ plik\xF3w bezpo\u015Brednio."
 title: "Edycja plik\xF3w w miejscu przy u\u017Cyciu jednolinijkowc\xF3w CLI"
 weight: 32
 ---

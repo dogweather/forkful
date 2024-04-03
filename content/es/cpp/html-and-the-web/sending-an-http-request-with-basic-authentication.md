@@ -1,13 +1,12 @@
 ---
 date: 2024-01-20 18:01:17.534269-07:00
-description: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica significa incluir\
-  \ credenciales de usuario y contrase\xF1a codificadas en base64 en el encabezado\
-  \ de la\u2026"
+description: "How to: Para enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica\
+  \ en C++, necesitar\xE1s alguna biblioteca como `Curl` o `Boost.Beast`. Aqu\xED\
+  \ hay un ejemplo\u2026"
 lastmod: '2024-03-13T22:44:59.375070-06:00'
 model: gpt-4-1106-preview
-summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica significa incluir\
-  \ credenciales de usuario y contrase\xF1a codificadas en base64 en el encabezado\
-  \ de la solicitud."
+summary: "Para enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica en C++, necesitar\xE1\
+  s alguna biblioteca como `Curl` o `Boost.Beast`."
 title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
 weight: 45
 ---

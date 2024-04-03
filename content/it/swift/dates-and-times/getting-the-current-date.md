@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:00.270305-07:00
-description: "Ottenere la data corrente in Swift comporta l'uso della classe `Date`\
-  \ per accedere alla data e all'ora in cui l'app viene eseguita. I programmatori\
-  \ hanno\u2026"
+description: "Come fare: Il framework `Foundation` di Swift fornisce la classe `Date`,\
+  \ rendendo semplice ottenere la data e l'ora correnti. Ecco un esempio basilare\
+  \ di\u2026"
 lastmod: '2024-03-13T22:44:43.780344-06:00'
 model: gpt-4-0125-preview
-summary: Ottenere la data corrente in Swift comporta l'uso della classe `Date` per
-  accedere alla data e all'ora in cui l'app viene eseguita.
+summary: Il framework `Foundation` di Swift fornisce la classe `Date`, rendendo semplice
+  ottenere la data e l'ora correnti.
 title: Ottenere la data corrente
 weight: 29
 ---

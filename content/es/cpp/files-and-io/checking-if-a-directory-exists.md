@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:44.774452-07:00
-description: "Comprobar si un directorio existe trata de determinar la presencia de\
-  \ un directorio en una ruta especificada antes de realizar operaciones como leer\
-  \ o\u2026"
+description: "C\xF3mo hacerlo: En C++ moderno (C++17 y posteriores), puedes usar la\
+  \ biblioteca de sistema de archivos para comprobar si un directorio existe. Ofrece\
+  \ una\u2026"
 lastmod: '2024-03-13T22:44:59.389259-06:00'
 model: gpt-4-0125-preview
-summary: "Comprobar si un directorio existe trata de determinar la presencia de un\
-  \ directorio en una ruta especificada antes de realizar operaciones como leer o\
-  \ escribir en archivos dentro de \xE9l."
+summary: En C++ moderno (C++17 y posteriores), puedes usar la biblioteca de sistema
+  de archivos para comprobar si un directorio existe.
 title: Comprobando si un directorio existe
 weight: 20
 ---

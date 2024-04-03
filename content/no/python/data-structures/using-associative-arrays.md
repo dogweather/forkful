@@ -2,14 +2,11 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:47.661948-07:00
-description: "Assosiative tabeller, kjent i Python som ordb\xF8ker, kartlegger n\xF8\
-  kler til verdier, noe som gj\xF8r det enkelt \xE5 hente, endre eller spore data\
-  \ via en unik\u2026"
+description: "Hvordan: \xC5 lage en ordbok i Python er enkelt. Du omslutter n\xF8\
+  kkel-verdipar i kr\xF8llparenteser `{}`, med n\xF8kler og verdier skilt av et kolon."
 lastmod: '2024-03-13T22:44:40.353934-06:00'
 model: gpt-4-0125-preview
-summary: "Assosiative tabeller, kjent i Python som ordb\xF8ker, kartlegger n\xF8kler\
-  \ til verdier, noe som gj\xF8r det enkelt \xE5 hente, endre eller spore data via\
-  \ en unik identifikator."
+summary: "\xC5 lage en ordbok i Python er enkelt."
 title: Bruke associative tabeller
 weight: 15
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:46.902250-07:00
-description: "JSON (JavaScript Object Notation) is een lichtgewicht gegevensuitwisselingsformaat\
-  \ dat gemakkelijk te lezen en te schrijven is voor mensen, en eenvoudig\u2026"
+description: "Hoe te: VBA ondersteunt van nature geen JSON parsing of generatie, dus\
+  \ we zullen een scripttaal zoals JScript (via het ScriptControl object) gebruiken\u2026"
 lastmod: '2024-03-13T22:44:50.659298-06:00'
 model: gpt-4-0125-preview
-summary: JSON (JavaScript Object Notation) is een lichtgewicht gegevensuitwisselingsformaat
-  dat gemakkelijk te lezen en te schrijven is voor mensen, en eenvoudig te parseren
-  en te genereren voor machines.
+summary: VBA ondersteunt van nature geen JSON parsing of generatie, dus we zullen
+  een scripttaal zoals JScript (via het ScriptControl object) gebruiken voor het parsen
+  van JSON strings en het bouwen van JSON objecten.
 title: Werken met JSON
 weight: 38
 ---

@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 17:51:18.322254-07:00
-description: "String interpolation slides values into a string template like pieces\
-  \ of a puzzle, making strings dynamic and code cleaner. Programmers use it to insert\u2026"
+description: "How to: In PowerShell, you interpolate with double-quoted strings and\
+  \ the `$` symbol before the variable name. Wrap expressions in `$()` to evaluate\
+  \ them\u2026"
 lastmod: '2024-03-13T22:45:00.269540-06:00'
 model: gpt-4-1106-preview
-summary: String interpolation slides values into a string template like pieces of
-  a puzzle, making strings dynamic and code cleaner.
+summary: In PowerShell, you interpolate with double-quoted strings and the `$` symbol
+  before the variable name.
 title: Interpolating a string
 weight: 8
 ---

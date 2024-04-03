@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 18:04:24.262092-07:00
-description: "Iniciar un nuevo proyecto en Swift es crear desde cero un espacio de\
-  \ trabajo para dar vida a tus ideas. Los programadores inician proyectos para resolver\u2026"
+description: "C\xF3mo hacerlo: Vamos a iniciar un proyecto simple de Swift. Sup\xF3\
+  n que est\xE1s usando Xcode, el IDE de Apple para Swift. 1. Abre Xcode y selecciona\
+  \ \"Create a\u2026"
 lastmod: '2024-03-13T22:44:59.417226-06:00'
 model: gpt-4-1106-preview
-summary: Iniciar un nuevo proyecto en Swift es crear desde cero un espacio de trabajo
-  para dar vida a tus ideas.
+summary: Vamos a iniciar un proyecto simple de Swift.
 title: Iniciando un nuevo proyecto
 weight: 1
 ---

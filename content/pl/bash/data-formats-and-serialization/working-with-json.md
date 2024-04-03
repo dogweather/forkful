@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:43.312661-07:00
-description: "Praca z JSON w Bash polega na parsowaniu, wydobywaniu i manipulowaniu\
-  \ danymi JSON bezpo\u015Brednio z linii polece\u0144. Programi\u015Bci cz\u0119\
-  sto robi\u0105 to, aby p\u0142ynnie\u2026"
+description: "Jak to zrobi\u0107: Bash sam w sobie nie posiada wbudowanych mo\u017C\
+  liwo\u015Bci parsowania JSON, ale `jq` jest pot\u0119\u017Cnym narz\u0119dziem do\
+  \ przetwarzania JSON z linii\u2026"
 lastmod: '2024-03-13T22:44:35.606784-06:00'
 model: gpt-4-0125-preview
-summary: "Praca z JSON w Bash polega na parsowaniu, wydobywaniu i manipulowaniu danymi\
-  \ JSON bezpo\u015Brednio z linii polece\u0144."
+summary: "Bash sam w sobie nie posiada wbudowanych mo\u017Cliwo\u015Bci parsowania\
+  \ JSON, ale `jq` jest pot\u0119\u017Cnym narz\u0119dziem do przetwarzania JSON z\
+  \ linii polece\u0144, kt\xF3re wype\u0142nia t\u0119 luk\u0119."
 title: Praca z JSON
 weight: 38
 ---

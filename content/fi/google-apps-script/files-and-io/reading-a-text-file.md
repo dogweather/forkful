@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:24.650408-07:00
-description: "Tekstitiedoston lukeminen Google Apps Scriptill\xE4 (GAS) sis\xE4lt\xE4\
-  \xE4 p\xE4\xE4syn hankkimisen ja tekstidatasta tiedon poimimisen tiedostoista, jotka\
-  \ on tallennettu\u2026"
+description: "Kuinka: Aloittaaksesi tekstitiedoston lukemisen Google Apps Scriptill\xE4\
+  , sinun yleens\xE4 tarvitsee k\xE4ytt\xE4\xE4 Google Drive API:a. T\xE4ss\xE4 on\
+  \ perusesimerkki, joka\u2026"
 lastmod: '2024-03-13T22:44:56.117270-06:00'
 model: gpt-4-0125-preview
-summary: "Tekstitiedoston lukeminen Google Apps Scriptill\xE4 (GAS) sis\xE4lt\xE4\xE4\
-  \ p\xE4\xE4syn hankkimisen ja tekstidatasta tiedon poimimisen tiedostoista, jotka\
-  \ on tallennettu Google Driveen tai muuhun saatavilla olevaan pilvipohjaiseen s\xE4\
-  ilytystilaan."
+summary: "Aloittaaksesi tekstitiedoston lukemisen Google Apps Scriptill\xE4, sinun\
+  \ yleens\xE4 tarvitsee k\xE4ytt\xE4\xE4 Google Drive API:a."
 title: Tekstitiedoston lukeminen
 weight: 22
 ---

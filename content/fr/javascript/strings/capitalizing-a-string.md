@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:39.634245-07:00
-description: "Mettre une cha\xEEne de caract\xE8res en capitale signifie convertir\
-  \ le premier caract\xE8re de la cha\xEEne en majuscule tout en conservant les caract\xE8\
-  res restants\u2026"
+description: "Comment faire : En JavaScript, il n'existe pas de m\xE9thode int\xE9\
+  gr\xE9e pour mettre directement en capitale les cha\xEEnes de caract\xE8res, mais\
+  \ c'est simple \xE0\u2026"
 lastmod: '2024-03-13T22:44:58.256084-06:00'
 model: gpt-4-0125-preview
-summary: "Mettre une cha\xEEne de caract\xE8res en capitale signifie convertir le\
-  \ premier caract\xE8re de la cha\xEEne en majuscule tout en conservant les caract\xE8\
-  res restants tels quels."
+summary: "En JavaScript, il n'existe pas de m\xE9thode int\xE9gr\xE9e pour mettre\
+  \ directement en capitale les cha\xEEnes de caract\xE8res, mais c'est simple \xE0\
+  \ impl\xE9menter en utilisant les m\xE9thodes de manipulation de cha\xEEnes de base."
 title: "Mettre en majuscule une cha\xEEne"
 weight: 2
 ---

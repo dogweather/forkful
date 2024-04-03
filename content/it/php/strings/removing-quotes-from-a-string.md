@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:40:37.177260-07:00
-description: "Rimuovere le virgolette da una stringa in PHP significa eliminare quei\
-  \ fastidiosi caratteri di virgoletta doppia (`\"`) o singola (`'`) che possono\u2026"
+description: 'Come fare: Ecco un esempio semplice utilizzando le funzioni integrate
+  di PHP.'
 lastmod: '2024-03-13T22:44:43.505190-06:00'
 model: gpt-4-0125-preview
-summary: Rimuovere le virgolette da una stringa in PHP significa eliminare quei fastidiosi
-  caratteri di virgoletta doppia (`"`) o singola (`'`) che possono interferire con
-  la logica del codice o le query del database.
+summary: Ecco un esempio semplice utilizzando le funzioni integrate di PHP.
 title: Rimuovere le virgolette da una stringa
 weight: 9
 ---

@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 18:03:53.543060-07:00
-description: "Rozpoczynanie nowego projektu to jak stawianie pierwszych cegie\u0142\
-  ek \u2013 wymaga jasnego planu i narz\u0119dzi. Programi\u015Bci tworz\u0105 nowe\
-  \ projekty, aby rozwi\u0105zywa\u0107\u2026"
+description: "How to (Jak to zrobi\u0107): Aby rozpocz\u0105\u0107 nowy projekt w\
+  \ Java, potrzebujesz narz\u0119dzi jak JDK i \u015Brodowiska programistycznego,\
+  \ np. IntelliJ IDEA czy Eclipse. Po\u2026"
 lastmod: '2024-03-13T22:44:35.278033-06:00'
 model: gpt-4-1106-preview
-summary: "Rozpoczynanie nowego projektu to jak stawianie pierwszych cegie\u0142ek\
-  \ \u2013 wymaga jasnego planu i narz\u0119dzi."
+summary: "Aby rozpocz\u0105\u0107 nowy projekt w Java, potrzebujesz narz\u0119dzi\
+  \ jak JDK i \u015Brodowiska programistycznego, np."
 title: Rozpoczynanie nowego projektu
 weight: 1
 ---

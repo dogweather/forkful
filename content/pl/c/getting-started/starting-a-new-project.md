@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:16.986069-07:00
-description: "Rozpocz\u0119cie nowego projektu w C wymaga ustawienia podstawowej struktury\
-  \ kodu i \u015Brodowiska, aby efektywnie zarz\u0105dza\u0107 zadaniami programistycznymi.\u2026"
+description: "Jak to zrobi\u0107: Sercem ka\u017Cdego projektu w C jest kod \u017A\
+  r\xF3d\u0142owy. Typowy punkt wyj\u015Bcia obejmuje utworzenie g\u0142\xF3wnego\
+  \ pliku, cz\u0119sto nazwanego `main.c`, kt\xF3ry\u2026"
 lastmod: '2024-03-13T22:44:35.887259-06:00'
 model: gpt-4-0125-preview
-summary: "Rozpocz\u0119cie nowego projektu w C wymaga ustawienia podstawowej struktury\
-  \ kodu i \u015Brodowiska, aby efektywnie zarz\u0105dza\u0107 zadaniami programistycznymi."
+summary: "Sercem ka\u017Cdego projektu w C jest kod \u017Ar\xF3d\u0142owy."
 title: Rozpoczynanie nowego projektu
 weight: 1
 ---

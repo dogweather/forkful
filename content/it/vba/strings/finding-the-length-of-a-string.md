@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:48.888531-07:00
-description: "Trovare la lunghezza di una stringa in Visual Basic for Applications\
-  \ (VBA) implica determinare il numero di caratteri che contiene. I programmatori\u2026"
+description: "Come fare: In VBA, la funzione `Len` \xE8 quello che fa al caso tuo\
+  \ per trovare la lunghezza di una stringa. Restituisce un intero che rappresenta\
+  \ il numero\u2026"
 lastmod: '2024-03-13T22:44:43.252790-06:00'
 model: gpt-4-0125-preview
-summary: Trovare la lunghezza di una stringa in Visual Basic for Applications (VBA)
-  implica determinare il numero di caratteri che contiene.
+summary: "In VBA, la funzione `Len` \xE8 quello che fa al caso tuo per trovare la\
+  \ lunghezza di una stringa."
 title: Trovare la lunghezza di una stringa
 weight: 7
 ---

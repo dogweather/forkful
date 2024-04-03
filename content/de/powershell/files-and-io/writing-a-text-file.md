@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:52.170284-07:00
-description: "Das Schreiben einer Textdatei in PowerShell beinhaltet das Erstellen\
-  \ und Manipulieren von textbasierten Dateien, was eine grundlegende Operation f\xFC\
-  r\u2026"
+description: "Wie geht das: PowerShell bietet einfache Cmdlets zum Umgang mit Dateien.\
+  \ Das Cmdlet `Out-File` und die Umleitungsoperatoren werden prim\xE4r f\xFCr diesen\
+  \ Zweck\u2026"
 lastmod: '2024-03-13T22:44:54.121889-06:00'
 model: gpt-4-0125-preview
-summary: "Das Schreiben einer Textdatei in PowerShell beinhaltet das Erstellen und\
-  \ Manipulieren von textbasierten Dateien, was eine grundlegende Operation f\xFC\
-  r Logging, Datenspeicherung und Konfigurationsskripting ist."
+summary: PowerShell bietet einfache Cmdlets zum Umgang mit Dateien.
 title: Eine Textdatei schreiben
 weight: 24
 ---

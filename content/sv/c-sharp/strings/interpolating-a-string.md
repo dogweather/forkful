@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-25, gpt-4-0125-preview, translated from English
 date: 2024-02-25 17:07:02.554791-07:00
-description: "Str\xE4nginterpolering i C# g\xF6r det m\xF6jligt att skapa en ny str\xE4\
-  ng genom att inkludera uttryck inuti en str\xE4ngliteral, vilket underl\xE4ttar\
-  \ formatering och\u2026"
+description: "Hur g\xF6r man: I C# anges str\xE4nginterpolering med ett dollartecken\
+  \ (`$`) f\xF6ljt av en str\xE4ngliteral. Variabelnamn eller uttryck omsluts av m\xE5\
+  svingar (`{}`)."
 lastmod: '2024-03-13T22:44:37.899243-06:00'
 model: gpt-4-0125-preview
-summary: "Str\xE4nginterpolering i C# g\xF6r det m\xF6jligt att skapa en ny str\xE4\
-  ng genom att inkludera uttryck inuti en str\xE4ngliteral, vilket underl\xE4ttar\
-  \ formatering och sammanfogning av str\xE4ngar."
+summary: "I C# anges str\xE4nginterpolering med ett dollartecken (`$`) f\xF6ljt av\
+  \ en str\xE4ngliteral."
 title: "Interpolering av en str\xE4ng"
 weight: 8
 ---

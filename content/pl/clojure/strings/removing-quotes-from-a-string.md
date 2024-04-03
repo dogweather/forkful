@@ -1,13 +1,13 @@
 ---
 date: 2024-01-26 03:40:30.716713-07:00
-description: "Usuwanie cudzys\u0142ow\xF3w ze \u0142a\u0144cucha znak\xF3w oznacza\
-  \ pozbycie si\u0119 tych uporczywych znak\xF3w podw\xF3jnych lub pojedynczych cudzys\u0142\
-  ow\xF3w, kt\xF3re otaczaj\u0105 tw\xF3j tekst.\u2026"
+description: "Jak to zrobi\u0107: W Clojure \u0142a\u0144cuchy znak\xF3w s\u0105 niezmienne,\
+  \ wi\u0119c kiedy m\xF3wimy o \"usuwanie cudzys\u0142ow\xF3w\", naprawd\u0119 m\xF3\
+  wimy o tworzeniu nowego \u0142a\u0144cucha znak\xF3w bez\u2026"
 lastmod: '2024-03-13T22:44:34.981974-06:00'
 model: gpt-4-0125-preview
-summary: "Usuwanie cudzys\u0142ow\xF3w ze \u0142a\u0144cucha znak\xF3w oznacza pozbycie\
-  \ si\u0119 tych uporczywych znak\xF3w podw\xF3jnych lub pojedynczych cudzys\u0142\
-  ow\xF3w, kt\xF3re otaczaj\u0105 tw\xF3j tekst."
+summary: "W Clojure \u0142a\u0144cuchy znak\xF3w s\u0105 niezmienne, wi\u0119c kiedy\
+  \ m\xF3wimy o \"usuwanie cudzys\u0142ow\xF3w\", naprawd\u0119 m\xF3wimy o tworzeniu\
+  \ nowego \u0142a\u0144cucha znak\xF3w bez cudzys\u0142ow\xF3w."
 title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---

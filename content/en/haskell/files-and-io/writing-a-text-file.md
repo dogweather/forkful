@@ -1,12 +1,11 @@
 ---
 date: 2024-02-03 19:03:26.936072-07:00
-description: "Writing to a text file in Haskell is about programmatically creating\
-  \ or updating files with textual content. Programmers do this to persist data such\
-  \ as\u2026"
+description: "How to: Haskell's standard Prelude provides elementary support for writing\
+  \ to files using the `writeFile` and `appendFile` functions from the `System.IO`\u2026"
 lastmod: '2024-03-13T22:45:00.145005-06:00'
 model: gpt-4-0125-preview
-summary: Writing to a text file in Haskell is about programmatically creating or updating
-  files with textual content.
+summary: Haskell's standard Prelude provides elementary support for writing to files
+  using the `writeFile` and `appendFile` functions from the `System.IO` module.
 title: Writing a text file
 weight: 24
 ---

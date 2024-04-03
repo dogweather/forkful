@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:41.656539-07:00
-description: "Escribir en el error est\xE1ndar (stderr) se trata de dirigir mensajes\
-  \ de error y salidas de diagn\xF3stico a un canal separado, distinto de la salida\
-  \ est\xE1ndar\u2026"
+description: "C\xF3mo hacerlo: En Lua, se puede lograr escribir en stderr utilizando\
+  \ la funci\xF3n `io.stderr:write()`. As\xED es como puedes escribir un simple mensaje\
+  \ de error\u2026"
 lastmod: '2024-03-13T22:44:59.218869-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir en el error est\xE1ndar (stderr) se trata de dirigir mensajes de\
-  \ error y salidas de diagn\xF3stico a un canal separado, distinto de la salida est\xE1\
-  ndar (stdout)."
+summary: "En Lua, se puede lograr escribir en stderr utilizando la funci\xF3n `io.stderr:write()`."
 title: "Escribiendo en el error est\xE1ndar"
 weight: 25
 ---

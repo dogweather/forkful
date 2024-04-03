@@ -1,10 +1,10 @@
 ---
 date: 2024-01-21 21:19:23.845730-07:00
-description: Error handling lets your script deal with the unexpected gracefully.
-  We do it to manage failure without turning our user's hair gray.
+description: 'How to: To catch errors in Fish, lean on the `status` command and conditionals.
+  Say `ping` fails; here''s how to detect that.'
 lastmod: '2024-03-13T22:45:00.481335-06:00'
 model: gpt-4-1106-preview
-summary: Error handling lets your script deal with the unexpected gracefully.
+summary: To catch errors in Fish, lean on the `status` command and conditionals.
 title: Handling errors
 weight: 16
 ---

@@ -2,12 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:28.172432-07:00
-description: "Random (willekeurige) getallen genereren gaat over het produceren van\
-  \ onvoorspelbare sequenties of enkelvoudige waarden binnen een gedefinieerd bereik.\u2026"
+description: "Hoe: In Java kan het genereren van willekeurige getallen worden bereikt\
+  \ met de `Random` klasse uit het `java.util` pakket, of de `ThreadLocalRandom` en\u2026"
 lastmod: '2024-03-13T22:44:50.677234-06:00'
 model: gpt-4-0125-preview
-summary: Random (willekeurige) getallen genereren gaat over het produceren van onvoorspelbare
-  sequenties of enkelvoudige waarden binnen een gedefinieerd bereik.
+summary: In Java kan het genereren van willekeurige getallen worden bereikt met de
+  `Random` klasse uit het `java.util` pakket, of de `ThreadLocalRandom` en `SecureRandom`
+  klassen voor specifieke gebruikssituaties.
 title: Willekeurige getallen genereren
 weight: 12
 ---

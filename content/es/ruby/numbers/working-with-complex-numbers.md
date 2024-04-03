@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:44:57.310747-07:00
-description: "Los n\xFAmeros complejos, compuestos por una parte real y una imaginaria\
-  \ (como 3+4i), son fundamentales en ingenier\xEDa y f\xEDsica. Los programadores\
-  \ trabajan\u2026"
+description: "C\xF3mo hacerlo: Ruby facilita el manejo de los n\xFAmeros complejos.\
+  \ Puedes crearlos y manipularlos usando la clase Complex."
 lastmod: '2024-03-13T22:44:59.583695-06:00'
 model: gpt-4-0125-preview
-summary: "Los n\xFAmeros complejos, compuestos por una parte real y una imaginaria\
-  \ (como 3+4i), son fundamentales en ingenier\xEDa y f\xEDsica."
+summary: "Ruby facilita el manejo de los n\xFAmeros complejos."
 title: "Trabajando con n\xFAmeros complejos"
 weight: 14
 ---

@@ -1,12 +1,10 @@
 ---
 date: 2024-01-27 16:10:06.688509-07:00
-description: "In the realm of programming, especially when dealing with Linux or Unix\
-  \ environments, manipulating files directly from the command line interface (CLI)\u2026"
+description: "How to: Manipulating files in Fish Shell is both intuitive and potent.\
+  \ Here are some examples to showcase its capability: 1. **Creating a file** is as\u2026"
 lastmod: '2024-03-13T22:45:00.469236-06:00'
 model: gpt-4-0125-preview
-summary: "In the realm of programming, especially when dealing with Linux or Unix\
-  \ environments, manipulating files directly from the command line interface (CLI)\
-  \ isn\u2019t just a matter of convenience\u2014it\u2019s a power tool."
+summary: Manipulating files in Fish Shell is both intuitive and potent.
 title: Manipulating files with CLI one-liners
 weight: 31
 ---

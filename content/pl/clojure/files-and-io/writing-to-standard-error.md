@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:03.998061-07:00
-description: "Zapisywanie do standardowego b\u0142\u0119du (stderr) polega na kierowaniu\
-  \ komunikat\xF3w o b\u0142\u0119dach i diagnostyki do strumienia stderr, oddzielnie\
-  \ od standardowego\u2026"
+description: "Jak to zrobi\u0107: W Clojure mo\u017Cna pisa\u0107 do stderr u\u017C\
+  ywaj\u0105c strumienia `*err*`. Oto podstawowy przyk\u0142ad."
 lastmod: '2024-03-13T22:44:35.013531-06:00'
 model: gpt-4-0125-preview
-summary: "Zapisywanie do standardowego b\u0142\u0119du (stderr) polega na kierowaniu\
-  \ komunikat\xF3w o b\u0142\u0119dach i diagnostyki do strumienia stderr, oddzielnie\
-  \ od standardowego wyj\u015Bcia (stdout)."
+summary: "W Clojure mo\u017Cna pisa\u0107 do stderr u\u017Cywaj\u0105c strumienia\
+  \ `*err*`."
 title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---

@@ -1,11 +1,12 @@
 ---
 date: 2024-01-25 02:04:03.910395-07:00
-description: "Logging is the process of recording application behaviors, errors, and\
-  \ other important info to a persisting medium, like a file or database. Programmers\u2026"
+description: "How to: In Swift, you can write logs to the console with print statements\
+  \ or the more flexible `os.log` API, which hooks into the Unified Logging System\u2026"
 lastmod: '2024-03-13T22:45:00.402190-06:00'
 model: gpt-4-1106-preview
-summary: Logging is the process of recording application behaviors, errors, and other
-  important info to a persisting medium, like a file or database.
+summary: In Swift, you can write logs to the console with print statements or the
+  more flexible `os.log` API, which hooks into the Unified Logging System on Apple
+  platforms.
 title: Logging
 weight: 17
 ---

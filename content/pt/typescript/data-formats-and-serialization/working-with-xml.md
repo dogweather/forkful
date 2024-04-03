@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 04:36:45.722434-07:00
-description: "Trabalhar com XML significa analisar, manipular e escrever dados em\
-  \ XML usando programa\xE7\xE3o. Os programadores lidam com o XML para trocar dados\
-  \ entre\u2026"
+description: 'Como fazer: .'
 lastmod: '2024-03-13T22:44:46.350511-06:00'
 model: gpt-4-0125-preview
-summary: "Trabalhar com XML significa analisar, manipular e escrever dados em XML\
-  \ usando programa\xE7\xE3o."
+summary: .
 title: Trabalhando com XML
 weight: 40
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:46.097436-07:00
-description: "Sprawdzanie, czy katalog istnieje w systemie plik\xF3w, jest niezb\u0119\
-  dne do zarz\u0105dzania strukturami plik\xF3w w aplikacjach Swift. To zadanie umo\u017C\
-  liwia\u2026"
+description: "Jak to zrobi\u0107: Framework Foundation w Swifcie dostarcza klas\u0119\
+  \ `FileManager`, kt\xF3ra posiada metody do zarz\u0105dzania systemem plik\xF3w.\
+  \ Mo\u017Cesz u\u017Cy\u0107\u2026"
 lastmod: '2024-03-13T22:44:35.769117-06:00'
 model: gpt-4-0125-preview
-summary: "Sprawdzanie, czy katalog istnieje w systemie plik\xF3w, jest niezb\u0119\
-  dne do zarz\u0105dzania strukturami plik\xF3w w aplikacjach Swift."
+summary: "Framework Foundation w Swifcie dostarcza klas\u0119 `FileManager`, kt\xF3\
+  ra posiada metody do zarz\u0105dzania systemem plik\xF3w."
 title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---

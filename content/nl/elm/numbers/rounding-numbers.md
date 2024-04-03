@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:40.580332-07:00
-description: "Afronden van getallen is het aanpassen van een decimaal naar de dichtstbijzijnde\
-  \ hele waarde of naar een gespecificeerd aantal fractionele cijfers.\u2026"
+description: 'Hoe: Elm''s `Basics` module biedt handige functies voor afronden: `round`,
+  `floor` en `ceiling`. Hier is hoe je ze gebruikt.'
 lastmod: '2024-03-13T22:44:50.719462-06:00'
 model: gpt-4-0125-preview
-summary: Afronden van getallen is het aanpassen van een decimaal naar de dichtstbijzijnde
-  hele waarde of naar een gespecificeerd aantal fractionele cijfers.
+summary: Elm's `Basics` module biedt handige functies voor afronden.
 title: Afronden van getallen
 weight: 13
 ---

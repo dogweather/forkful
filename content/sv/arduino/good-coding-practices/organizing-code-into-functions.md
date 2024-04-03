@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:08:33.244094-07:00
-description: "Att organisera kod i funktioner inneb\xE4r att dela upp koden i \xE5\
-  teranv\xE4ndbara delar, d\xE4r varje del utf\xF6r ett specifikt jobb. Programmerare\
-  \ g\xF6r detta f\xF6r att\u2026"
+description: "Hur man g\xF6r: F\xF6rest\xE4ll dig att du vill blinka en LED. Utan\
+  \ funktioner \xE4r din `loop` en r\xF6rig r\xF6ra. Med funktioner \xE4r den prydlig.\
+  \ S\xE5 h\xE4r g\xF6r du."
 lastmod: '2024-03-13T22:44:38.172655-06:00'
 model: gpt-4-1106-preview
-summary: "Att organisera kod i funktioner inneb\xE4r att dela upp koden i \xE5teranv\xE4\
-  ndbara delar, d\xE4r varje del utf\xF6r ett specifikt jobb."
+summary: "F\xF6rest\xE4ll dig att du vill blinka en LED."
 title: Att organisera kod i funktioner
 weight: 18
 ---

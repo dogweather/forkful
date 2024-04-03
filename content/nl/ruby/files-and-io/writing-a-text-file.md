@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:33.778109-07:00
-description: "Naar een tekstbestand schrijven in Ruby betekent gegevens opslaan in\
-  \ een bestand op je systeem. Programmeurs doen dit voor gegevenspersistentie, loggen,\u2026"
+description: 'Hoe te: Om naar een tekstbestand in Ruby te schrijven, gebruik je de
+  `File` klasse. Hier is een snel voorbeeld.'
 lastmod: '2024-03-13T22:44:51.373153-06:00'
 model: gpt-4-0125-preview
-summary: Naar een tekstbestand schrijven in Ruby betekent gegevens opslaan in een
-  bestand op je systeem.
+summary: Om naar een tekstbestand in Ruby te schrijven, gebruik je de `File` klasse.
 title: Een tekstbestand schrijven
 weight: 24
 ---

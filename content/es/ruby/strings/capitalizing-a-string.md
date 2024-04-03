@@ -3,12 +3,12 @@ changelog:
 - 2024-03-25, dogweather, edited and tested
 - 2024-03-25, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:02:29.358527-07:00
-description: "Capitalizar una cadena generalmente significa convertir el primer car\xE1\
-  cter de una cadena a may\xFAsculas y el resto a min\xFAsculas. Pero a veces puede\u2026"
+description: "C\xF3mo hacerlo: Ruby proporciona [m\xE9todos directos para la manipulaci\xF3\
+  n de cadenas](https://docs.ruby-lang.org/es/3.3/String.html), incluida la\u2026"
 lastmod: '2024-03-25T19:21:56.267612-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizar una cadena generalmente significa convertir el primer car\xE1\
-  cter de una cadena a may\xFAsculas y el resto a min\xFAsculas."
+summary: "Ruby proporciona [m\xE9todos directos para la manipulaci\xF3n de cadenas](https://docs.ruby-lang.org/es/3.3/String.html),\
+  \ incluida la capitalizaci\xF3n."
 title: Capitalizando una cadena de texto
 weight: 2
 ---

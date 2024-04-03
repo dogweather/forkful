@@ -2,17 +2,14 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:13:22.928821-07:00
-description: "M\u1EA3ng k\u1EBFt h\u1EE3p, \u0111\u01B0\u1EE3c bi\u1EBFt \u0111\u1EBF\
-  n trong Python l\xE0 t\u1EEB \u0111i\u1EC3n (dictionaries), \xE1nh x\u1EA1 kh\xF3\
-  a v\u1EDBi gi\xE1 tr\u1ECB, l\xE0m cho vi\u1EC7c l\u1EA5y, s\u1EEDa \u0111\u1ED5\
-  i ho\u1EB7c theo d\xF5i d\u1EEF li\u1EC7u b\u1EB1ng m\u1ED9t \u0111\u1ECBnh\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EEB \u0111i\u1EC3\
+  n trong Python l\xE0 tr\u1EF1c ti\u1EBFp. B\u1EA1n \u0111\u1EB7t c\xE1c c\u1EB7\
+  p kh\xF3a-gi\xE1 tr\u1ECB trong d\u1EA5u ngo\u1EB7c nh\u1ECDn `{}`, v\u1EDBi kh\xF3\
+  a v\xE0 gi\xE1 tr\u1ECB \u0111\u01B0\u1EE3c ph\xE2n t\xE1ch\u2026"
 lastmod: '2024-03-13T22:44:36.087339-06:00'
 model: gpt-4-0125-preview
-summary: "M\u1EA3ng k\u1EBFt h\u1EE3p, \u0111\u01B0\u1EE3c bi\u1EBFt \u0111\u1EBF\
-  n trong Python l\xE0 t\u1EEB \u0111i\u1EC3n (dictionaries), \xE1nh x\u1EA1 kh\xF3\
-  a v\u1EDBi gi\xE1 tr\u1ECB, l\xE0m cho vi\u1EC7c l\u1EA5y, s\u1EEDa \u0111\u1ED5\
-  i ho\u1EB7c theo d\xF5i d\u1EEF li\u1EC7u b\u1EB1ng m\u1ED9t \u0111\u1ECBnh danh\
-  \ duy nh\u1EA5t tr\u1EDF n\xEAn d\u1EC5 d\xE0ng."
+summary: "Vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EEB \u0111i\u1EC3n trong Python l\xE0 tr\u1EF1\
+  c ti\u1EBFp."
 title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 weight: 15
 ---

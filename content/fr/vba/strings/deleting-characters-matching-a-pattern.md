@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:20.131109-07:00
-description: "La suppression de caract\xE8res correspondant \xE0 un motif sp\xE9cifique\
-  \ dans Visual Basic pour Applications (VBA) implique d'identifier et de supprimer\
-  \ ensuite\u2026"
+description: "Comment faire : Dans VBA, vous pouvez utiliser la fonction `Replace`\
+  \ ou des expressions r\xE9guli\xE8res pour supprimer les caract\xE8res correspondant\
+  \ \xE0 un motif.\u2026"
 lastmod: '2024-03-13T22:44:57.533095-06:00'
 model: gpt-4-0125-preview
-summary: "La suppression de caract\xE8res correspondant \xE0 un motif sp\xE9cifique\
-  \ dans Visual Basic pour Applications (VBA) implique d'identifier et de supprimer\
-  \ ensuite les caract\xE8res ou cha\xEEnes qui r\xE9pondent \xE0 certains crit\xE8\
-  res."
+summary: "Dans VBA, vous pouvez utiliser la fonction `Replace` ou des expressions\
+  \ r\xE9guli\xE8res pour supprimer les caract\xE8res correspondant \xE0 un motif."
 title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:13.567896-07:00
-description: "Att l\xE4sa en textfil i C inneb\xE4r att \xF6ppna en fil p\xE5 ditt\
-  \ system f\xF6r att extrahera information och manipulera eller visa den som det\
-  \ beh\xF6vs. Programmerare\u2026"
+description: "Hur: F\xF6r att b\xF6rja l\xE4sa en textfil i C arbetar du fr\xE4mst\
+  \ med funktionerna `fopen()`, `fgets()`, och `fclose()` fr\xE5n standard I/O-biblioteket.\
+  \ H\xE4r \xE4r ett\u2026"
 lastmod: '2024-03-13T22:44:38.402103-06:00'
 model: gpt-4-0125-preview
-summary: "Att l\xE4sa en textfil i C inneb\xE4r att \xF6ppna en fil p\xE5 ditt system\
-  \ f\xF6r att extrahera information och manipulera eller visa den som det beh\xF6\
-  vs."
+summary: "F\xF6r att b\xF6rja l\xE4sa en textfil i C arbetar du fr\xE4mst med funktionerna\
+  \ `fopen()`, `fgets()`, och `fclose()` fr\xE5n standard I/O-biblioteket."
 title: "L\xE4sa en textfil"
 weight: 22
 ---

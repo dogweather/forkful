@@ -2,15 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:15.354435-07:00
-description: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy, hay c\xF2n g\u1ECDi t\u1EAFt l\xE0\
-  \ regex, l\xE0 chu\u1ED7i c\xE1c k\xFD t\u1EF1 t\u1EA1o th\xE0nh m\u1EABu t\xEC\
-  m ki\u1EBFm. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng regex \u0111\u1EC3 t\xEC\
-  m ki\u1EBFm, ch\u1EC9nh s\u1EEDa ho\u1EB7c thao\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Rust s\u1EED d\u1EE5ng crate `regex` cho c\xE1\
+  c thao t\xE1c regex. \u0110\u1EA7u ti\xEAn, th\xEAm n\xF3 v\xE0o `Cargo.toml` c\u1EE7\
+  a b\u1EA1n."
 lastmod: '2024-03-13T22:44:36.362269-06:00'
 model: gpt-4-0125-preview
-summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy, hay c\xF2n g\u1ECDi t\u1EAFt l\xE0 regex,\
-  \ l\xE0 chu\u1ED7i c\xE1c k\xFD t\u1EF1 t\u1EA1o th\xE0nh m\u1EABu t\xECm ki\u1EBF\
-  m."
+summary: "Rust s\u1EED d\u1EE5ng crate `regex` cho c\xE1c thao t\xE1c regex."
 title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---

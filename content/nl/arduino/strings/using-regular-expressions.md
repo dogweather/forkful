@@ -2,12 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:33.004354-07:00
-description: "Reguliere expressies (regex) laten je zoeken naar patronen in tekst\u2014\
-  denk aan jokertekens op stero\xEFden. Programmeurs gebruiken ze om invoer te valideren,\u2026"
+description: "Hoe: Arduino heeft geen ingebouwde regex-ondersteuning, maar je kunt\
+  \ eenvoudige patrooncontroles nabootsen. Voor geavanceerdere zaken kun je overwegen\
+  \ om\u2026"
 lastmod: '2024-03-13T22:44:51.062612-06:00'
 model: gpt-4-0125-preview
-summary: "Reguliere expressies (regex) laten je zoeken naar patronen in tekst\u2014\
-  denk aan jokertekens op stero\xEFden."
+summary: Arduino heeft geen ingebouwde regex-ondersteuning, maar je kunt eenvoudige
+  patrooncontroles nabootsen.
 title: Reguliere expressies gebruiken
 weight: 11
 ---

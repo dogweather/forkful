@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:39:01.725273-07:00
-description: "In Ruby, converting a string to lower case means changing all the uppercase\
-  \ letters in the string to their lowercase counterparts. Programmers do this for\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:45:00.536966-06:00'
 model: gpt-4-1106-preview
-summary: In Ruby, converting a string to lower case means changing all the uppercase
-  letters in the string to their lowercase counterparts.
+summary: .
 title: Converting a string to lower case
 weight: 4
 ---

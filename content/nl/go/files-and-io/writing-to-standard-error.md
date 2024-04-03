@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:20.565363-07:00
-description: "Schrijven naar standaardfout (stderr) in Go houdt in dat foutmeldingen\
-  \ of diagnostische berichten niet bestemd voor de hoofduitvoerstroom worden omgeleid.\u2026"
+description: "Hoe: In Go biedt het `os`-pakket de waarde `Stderr`, die het standaardfoutbestand\
+  \ vertegenwoordigt. Je kunt dit gebruiken met de functies `fmt.Fprint`,\u2026"
 lastmod: '2024-03-13T22:44:50.304337-06:00'
 model: gpt-4-0125-preview
-summary: Schrijven naar standaardfout (stderr) in Go houdt in dat foutmeldingen of
-  diagnostische berichten niet bestemd voor de hoofduitvoerstroom worden omgeleid.
+summary: In Go biedt het `os`-pakket de waarde `Stderr`, die het standaardfoutbestand
+  vertegenwoordigt.
 title: Schrijven naar standaardfout
 weight: 25
 ---

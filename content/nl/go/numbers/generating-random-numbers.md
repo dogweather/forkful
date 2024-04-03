@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:20.293324-07:00
-description: "Het genereren van willekeurige getallen in programmeren gaat over het\
-  \ cre\xEBren van een reeks getallen die niet redelijkerwijs beter voorspeld kunnen\
-  \ worden\u2026"
+description: "Hoe: In Go worden willekeurige getallen gegenereerd met het `math/rand`\
+  \ pakket voor pseudo-willekeurige getallen of `crypto/rand` voor cryptografisch\u2026"
 lastmod: '2024-03-13T22:44:50.283085-06:00'
 model: gpt-4-0125-preview
-summary: "Het genereren van willekeurige getallen in programmeren gaat over het cre\xEB\
-  ren van een reeks getallen die niet redelijkerwijs beter voorspeld kunnen worden\
-  \ dan door toeval."
+summary: In Go worden willekeurige getallen gegenereerd met het `math/rand` pakket
+  voor pseudo-willekeurige getallen of `crypto/rand` voor cryptografisch veilige pseudo-willekeurige
+  getallen.
 title: Willekeurige getallen genereren
 weight: 12
 ---

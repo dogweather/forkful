@@ -1,12 +1,12 @@
 ---
 date: 2024-02-01 21:30:26.750010-07:00
-description: "Parsing a date from a string in Visual Basic for Applications (VBA)\
-  \ is about converting text that represents a date into a date data type. Programmers\
-  \ do\u2026"
+description: "How to: VBA offers a straightforward way to parse a string into a date\
+  \ using the `CDate` function or the `DateValue` function. However, it's crucial\
+  \ that\u2026"
 lastmod: '2024-03-13T22:44:59.942724-06:00'
 model: gpt-4-0125-preview
-summary: Parsing a date from a string in Visual Basic for Applications (VBA) is about
-  converting text that represents a date into a date data type.
+summary: VBA offers a straightforward way to parse a string into a date using the
+  `CDate` function or the `DateValue` function.
 title: Parsing a date from a string
 weight: 30
 ---

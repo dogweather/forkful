@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:36:51.439399-07:00
-description: "Omstrukturering er prosessen med \xE5 restrukturere eksisterende dataprogramkode\
-  \ uten \xE5 endre dens eksterne oppf\xF8rsel. Programmerere omstrukturerer for \xE5\
-  \u2026"
+description: "Hvordan: La oss g\xE5 gjennom et eksempel p\xE5 omstrukturering av en\
+  \ Ruby-metode som beregner summen av kvadrater. **F\xF8r omstrukturering:**."
 lastmod: '2024-03-13T22:44:41.336763-06:00'
 model: gpt-4-0125-preview
-summary: "Omstrukturering er prosessen med \xE5 restrukturere eksisterende dataprogramkode\
-  \ uten \xE5 endre dens eksterne oppf\xF8rsel."
+summary: "La oss g\xE5 gjennom et eksempel p\xE5 omstrukturering av en Ruby-metode\
+  \ som beregner summen av kvadrater."
 title: Refaktorering
 weight: 19
 ---

@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:46.998542-07:00
-description: "Het extraheren van substrings houdt in dat specifieke delen van een\
-  \ string worden opgehaald op basis van hun positie. Programmeurs voeren deze bewerking\u2026"
+description: "Hoe: In Go is het `string` type een alleen-lezen slice van bytes. Om\
+  \ substrings te extraheren, maakt men voornamelijk gebruik van de `slice`-syntax,\
+  \ naast\u2026"
 lastmod: '2024-03-13T22:44:50.275977-06:00'
 model: gpt-4-0125-preview
-summary: Het extraheren van substrings houdt in dat specifieke delen van een string
-  worden opgehaald op basis van hun positie.
+summary: In Go is het `string` type een alleen-lezen slice van bytes.
 title: Substrings extraheren
 weight: 6
 ---

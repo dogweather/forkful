@@ -1,13 +1,11 @@
 ---
 date: 2024-02-03 17:50:03.810142-07:00
-description: "Deleting characters that match a specific pattern is about removing\
-  \ certain characters or sequences of characters from strings, based on rules defined\
-  \ by\u2026"
+description: "How to: In Go, deleting characters that match a pattern can be efficiently\
+  \ accomplished using the `regexp` package. Here, we'll show how to remove all\u2026"
 lastmod: '2024-03-13T22:44:59.617005-06:00'
 model: gpt-4-0125-preview
-summary: Deleting characters that match a specific pattern is about removing certain
-  characters or sequences of characters from strings, based on rules defined by a
-  pattern (usually via regular expressions).
+summary: In Go, deleting characters that match a pattern can be efficiently accomplished
+  using the `regexp` package.
 title: Deleting characters matching a pattern
 weight: 5
 ---

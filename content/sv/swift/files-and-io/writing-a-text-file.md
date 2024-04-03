@@ -2,14 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:43.623661-07:00
-description: "Att skriva en textfil i Swift g\xF6r det m\xF6jligt att permanent lagra\
-  \ str\xE4ngdata p\xE5 filsystemet, vilket \xE4r avg\xF6rande f\xF6r uppgifter s\xE5\
-  som att spara\u2026"
+description: "Hur man g\xF6r: #."
 lastmod: '2024-03-13T22:44:38.269281-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva en textfil i Swift g\xF6r det m\xF6jligt att permanent lagra\
-  \ str\xE4ngdata p\xE5 filsystemet, vilket \xE4r avg\xF6rande f\xF6r uppgifter s\xE5\
-  som att spara konfigurationsinst\xE4llningar, anv\xE4ndardata eller loggar."
+summary: '#.'
 title: Att skriva en textfil
 weight: 24
 ---

@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 18:00:18.656983-07:00
-description: Sending an HTTP request means requesting data from a resource on the
-  web. Programmers do it to interact with APIs, scrape web content, or talk to servers.
+description: 'How to: Ruby makes it pretty easy to send HTTP requests. Here''s the
+  quickest way with the Net::HTTP standard library.'
 lastmod: '2024-03-13T22:45:00.547810-06:00'
 model: gpt-4-1106-preview
-summary: Sending an HTTP request means requesting data from a resource on the web.
+summary: Ruby makes it pretty easy to send HTTP requests.
 title: Sending an HTTP request
 weight: 44
 ---

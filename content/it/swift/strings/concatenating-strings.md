@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:35:35.089770-07:00
-description: "Concatenare le stringhe significa unire due o pi\xF9 sequenze di testo\
-  \ in una sola. Lo facciamo perch\xE9 spesso dobbiamo combinare vari pezzi di informazioni\u2026"
+description: "How to: Swift rende la concatenazione di stringhe semplice e diretta.\
+  \ Puoi usare l'operatore `+` per unire le stringhe o `\\()` per inserire valori\u2026"
 lastmod: '2024-03-13T22:44:43.762378-06:00'
 model: gpt-4-1106-preview
-summary: "Concatenare le stringhe significa unire due o pi\xF9 sequenze di testo in\
-  \ una sola."
+summary: Swift rende la concatenazione di stringhe semplice e diretta.
 title: Concatenazione di stringhe
 weight: 3
 ---

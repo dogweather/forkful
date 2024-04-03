@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:39.584022-07:00
-description: "Schrijven naar een tekstbestand betekent het opslaan van gegevens zoals\
-  \ tekst of code op je computer. Programmeurs doen dit om configuraties op te slaan,\u2026"
+description: "Hoe te: Om naar een tekstbestand in Fish te schrijven, gebruik je `echo`\
+  \ of `printf` gevolgd door de `>` of `>>` operatoren. `>` cre\xEBert een nieuw bestand\u2026"
 lastmod: '2024-03-13T22:44:51.265444-06:00'
 model: gpt-4-0125-preview
-summary: Schrijven naar een tekstbestand betekent het opslaan van gegevens zoals tekst
-  of code op je computer.
+summary: Om naar een tekstbestand in Fish te schrijven, gebruik je `echo` of `printf`
+  gevolgd door de `>` of `>>` operatoren.
 title: Een tekstbestand schrijven
 weight: 24
 ---

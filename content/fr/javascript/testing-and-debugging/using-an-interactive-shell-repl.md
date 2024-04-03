@@ -1,14 +1,11 @@
 ---
 date: 2024-01-26 04:15:22.189353-07:00
-description: "Les coquilles interactives, ou REPLs (Read-Eval-Print Loops, Boucles\
-  \ de Lecture-\xC9valuation-Affichage), vous permettent d'ex\xE9cuter du code \xE0\
-  \ la vol\xE9e, de\u2026"
+description: "Comment faire : Node.js est livr\xE9 avec un REPL accessible via le\
+  \ terminal. Ouvrez-le, et vous \xEAtes pr\xEAt \xE0 d\xE9marrer. Voici un avant-go\xFB\
+  t ."
 lastmod: '2024-03-13T22:44:58.277294-06:00'
 model: gpt-4-0125-preview
-summary: "Les coquilles interactives, ou REPLs (Read-Eval-Print Loops, Boucles de\
-  \ Lecture-\xC9valuation-Affichage), vous permettent d'ex\xE9cuter du code \xE0 la\
-  \ vol\xE9e, de tester des fonctions, des algorithmes, ou de jouer avec des id\xE9\
-  es."
+summary: "Node.js est livr\xE9 avec un REPL accessible via le terminal."
 title: Utilisation d'une console interactive (REPL)
 weight: 34
 ---

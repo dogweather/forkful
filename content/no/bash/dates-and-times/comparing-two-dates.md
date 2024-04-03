@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:32:12.433889-07:00
-description: "Sammenligning av to datoer handler om \xE5 finne ut hvilken som er tidligere,\
-  \ senere, eller om de er identiske. Programmerere gj\xF8r det for \xE5 h\xE5ndtere\u2026"
+description: "How to: Sammenlign to datoer med f\xF8lgende Bash-kommandoer. F\xF8\
+  rst, bruk `date` kommandoen til \xE5 konvertere datoer til sekunder siden Unix-epoken.\
+  \ Deretter\u2026"
 lastmod: '2024-03-13T22:44:40.987343-06:00'
 model: gpt-4-1106-preview
-summary: "Sammenligning av to datoer handler om \xE5 finne ut hvilken som er tidligere,\
-  \ senere, eller om de er identiske."
+summary: "Sammenlign to datoer med f\xF8lgende Bash-kommandoer."
 title: Sammenlikning av to datoer
 weight: 27
 ---

@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:55:43.038233-07:00
-description: "Reading command line arguments allows a C# program to process user inputs\
-  \ given at launch. Programmers use this to customize app behavior without altering\u2026"
+description: 'How to: Here''s how to gobble up those command line arguments.'
 lastmod: '2024-03-13T22:45:00.103208-06:00'
 model: gpt-4-1106-preview
-summary: Reading command line arguments allows a C# program to process user inputs
-  given at launch.
+summary: Here's how to gobble up those command line arguments.
 title: Reading command line arguments
 weight: 23
 ---

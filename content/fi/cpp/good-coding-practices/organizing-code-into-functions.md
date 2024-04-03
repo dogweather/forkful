@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:09:53.079061-07:00
-description: "Koodin jakaminen funktioihin tarkoittaa sen pilkkomista pienemmiksi,\
-  \ uudelleenk\xE4ytett\xE4viksi osiksi. Sen tavoitteena on toiston v\xE4ltt\xE4minen,\
-  \ koodin\u2026"
+description: "Kuinka tehd\xE4\xE4n: Otetaan esimerkki yleisest\xE4 teht\xE4v\xE4st\xE4\
+  : ympyr\xE4n pinta-alan laskemisesta. Sen sijaan, ett\xE4 kirjoittaisimme saman\
+  \ kaavan joka kerta,\u2026"
 lastmod: '2024-03-13T22:44:56.870709-06:00'
 model: gpt-4-1106-preview
-summary: "Koodin jakaminen funktioihin tarkoittaa sen pilkkomista pienemmiksi, uudelleenk\xE4\
-  ytett\xE4viksi osiksi."
+summary: "Otetaan esimerkki yleisest\xE4 teht\xE4v\xE4st\xE4."
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---

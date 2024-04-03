@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:05.307098-07:00
-description: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP trong Google Apps Script l\xE0\
-  \ vi\u1EC7c l\u1EADp tr\xECnh g\u1ECDi \u0111\u1EBFn m\u1ED9t m\xE1y ch\u1EE7 web\
-  \ ho\u1EB7c API b\xEAn ngo\xE0i. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1\
-  u n\xE0y \u0111\u1EC3 truy xu\u1EA5t ho\u1EB7c\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Google Apps Script, c\xE1ch ch\xEDnh \u0111\
+  \u1EC3 g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP l\xE0 s\u1EED d\u1EE5ng d\u1ECBch\
+  \ v\u1EE5 `UrlFetchApp`. D\u1ECBch v\u1EE5 n\xE0y cung c\u1EA5p c\xE1c ph\u01B0\u01A1\
+  ng th\u1EE9c \u0111\u1EC3 th\u1EF1c\u2026"
 lastmod: '2024-03-13T22:44:36.035718-06:00'
 model: gpt-4-0125-preview
-summary: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP trong Google Apps Script l\xE0 vi\u1EC7\
-  c l\u1EADp tr\xECnh g\u1ECDi \u0111\u1EBFn m\u1ED9t m\xE1y ch\u1EE7 web ho\u1EB7\
-  c API b\xEAn ngo\xE0i."
+summary: "Trong Google Apps Script, c\xE1ch ch\xEDnh \u0111\u1EC3 g\u1EEDi m\u1ED9\
+  t y\xEAu c\u1EA7u HTTP l\xE0 s\u1EED d\u1EE5ng d\u1ECBch v\u1EE5 `UrlFetchApp`."
 title: "G\u1EEDi y\xEAu c\u1EA7u HTTP"
 weight: 44
 ---

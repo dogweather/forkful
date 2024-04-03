@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:44:46.720954-07:00
-description: "Arrondir des nombres signifie les ajuster au plus proche entier ou \xE0\
-  \ la d\xE9cimale sp\xE9cifi\xE9e. Les programmeurs arrondissent les nombres pour\
-  \ contr\xF4ler la\u2026"
+description: "Comment faire : Haskell utilise les fonctions `round`, `ceiling`, `floor`\
+  \ et `truncate` du `Prelude` pour les op\xE9rations d'arrondi."
 lastmod: '2024-03-13T22:44:57.828200-06:00'
 model: gpt-4-0125-preview
-summary: "Arrondir des nombres signifie les ajuster au plus proche entier ou \xE0\
-  \ la d\xE9cimale sp\xE9cifi\xE9e."
+summary: "Haskell utilise les fonctions `round`, `ceiling`, `floor` et `truncate`\
+  \ du `Prelude` pour les op\xE9rations d'arrondi."
 title: Arrondir les nombres
 weight: 13
 ---

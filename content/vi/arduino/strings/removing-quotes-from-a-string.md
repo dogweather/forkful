@@ -2,16 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:27.068034-07:00
-description: "X\xF3a d\u1EA5u ngo\u1EB7c kh\u1ECFi m\u1ED9t chu\u1ED7i ngh\u0129a\
-  \ l\xE0 lo\u1EA1i b\u1ECF b\u1EA5t k\u1EF3 k\xFD t\u1EF1 d\u1EA5u ngo\u1EB7c \u0111\
-  \u01A1n (`'`) ho\u1EB7c d\u1EA5u ngo\u1EB7c k\xE9p (`\"`) n\xE0o bao quanh v\u0103\
-  n b\u1EA3n. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u01B0\u1EDDng\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: \u0110\u1EC3 x\xF3a d\u1EA5u ngo\u1EB7\
+  c kh\u1ECFi m\u1ED9t chu\u1ED7i trong Arduino, b\u1EA1n c\xF3 th\u1EC3 l\u1EB7p\
+  \ qua c\xE1c k\xFD t\u1EF1 v\xE0 x\xE2y d\u1EF1ng l\u1EA1i chu\u1ED7i m\xE0 kh\xF4\
+  ng c\xF3 k\xFD t\u1EF1 d\u1EA5u ngo\u1EB7c. V\xED d\u1EE5."
 lastmod: '2024-03-13T22:44:36.975010-06:00'
 model: gpt-4-0125-preview
-summary: "X\xF3a d\u1EA5u ngo\u1EB7c kh\u1ECFi m\u1ED9t chu\u1ED7i ngh\u0129a l\xE0\
-  \ lo\u1EA1i b\u1ECF b\u1EA5t k\u1EF3 k\xFD t\u1EF1 d\u1EA5u ngo\u1EB7c \u0111\u01A1\
-  n (`'`) ho\u1EB7c d\u1EA5u ngo\u1EB7c k\xE9p (`\"`) n\xE0o bao quanh v\u0103n b\u1EA3\
-  n."
+summary: "\u0110\u1EC3 x\xF3a d\u1EA5u ngo\u1EB7c kh\u1ECFi m\u1ED9t chu\u1ED7i trong\
+  \ Arduino, b\u1EA1n c\xF3 th\u1EC3 l\u1EB7p qua c\xE1c k\xFD t\u1EF1 v\xE0 x\xE2\
+  y d\u1EF1ng l\u1EA1i chu\u1ED7i m\xE0 kh\xF4ng c\xF3 k\xFD t\u1EF1 d\u1EA5u ngo\u1EB7\
+  c."
 title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i"
 weight: 9
 ---

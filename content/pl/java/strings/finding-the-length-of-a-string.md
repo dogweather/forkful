@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:47:52.848987-07:00
-description: "**Co i Dlaczego?** Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3\
-  w to po prostu sprawdzenie, ile znak\xF3w zawiera. Programi\u015Bci robi\u0105 to,\
-  \ by walidowa\u0107 dane wej\u015Bciowe,\u2026"
+description: "How to: **Jak to zrobi\u0107:** W Javie znajd\u017Amy d\u0142ugo\u015B\
+  \u0107 ci\u0105gu znak\xF3w u\u017Cywaj\u0105c metody `length()` obiektu `String`."
 lastmod: '2024-03-13T22:44:35.268090-06:00'
 model: gpt-4-1106-preview
-summary: '**Co i Dlaczego.'
+summary: "**Jak to zrobi\u0107:**\n\nW Javie znajd\u017Amy d\u0142ugo\u015B\u0107\
+  \ ci\u0105gu znak\xF3w u\u017Cywaj\u0105c metody `length()` obiektu `String`."
 title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 weight: 7
 ---

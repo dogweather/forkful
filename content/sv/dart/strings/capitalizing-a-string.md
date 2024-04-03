@@ -2,14 +2,10 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:53:38.856579-07:00
-description: "Att g\xF6ra f\xF6rsta bokstaven i ett ord eller en hel mening till versal\
-  \ inneb\xE4r att man \xE4ndrar den f\xF6rsta bokstaven till stor bokstav, medan\
-  \ resten av tecknen\u2026"
+description: "Hur man g\xF6r: #."
 lastmod: '2024-03-13T22:44:37.592888-06:00'
 model: gpt-4-0125-preview
-summary: "Att g\xF6ra f\xF6rsta bokstaven i ett ord eller en hel mening till versal\
-  \ inneb\xE4r att man \xE4ndrar den f\xF6rsta bokstaven till stor bokstav, medan\
-  \ resten av tecknen beh\xE5lls som de \xE4r."
+summary: '#.'
 title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---

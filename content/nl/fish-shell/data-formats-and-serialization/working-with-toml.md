@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:44.692781-07:00
-description: "TOML is een configuratiebestandsformaat, makkelijk voor mensen om te\
-  \ lezen en schrijven en eenvoudig voor machines om te parsen en genereren. Programmeurs\u2026"
+description: 'Hoe te: Om TOML te lezen en te manipuleren in Fish, kun je een tool
+  zoals `yj` gebruiken, die TOML naar JSON kan converteren. Zo doe je dat.'
 lastmod: '2024-03-13T22:44:51.270363-06:00'
 model: gpt-4-0125-preview
-summary: TOML is een configuratiebestandsformaat, makkelijk voor mensen om te lezen
-  en schrijven en eenvoudig voor machines om te parsen en genereren.
+summary: Om TOML te lezen en te manipuleren in Fish, kun je een tool zoals `yj` gebruiken,
+  die TOML naar JSON kan converteren.
 title: Werken met TOML
 weight: 39
 ---

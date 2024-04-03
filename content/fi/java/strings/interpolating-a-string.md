@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:51:10.398125-07:00
-description: "Merkkijonon interpolointi tarkoittaa muuttujien, lausekkeiden tai arvojen\
-  \ upottamista merkkijonoon. Se tekee koodista siistimp\xE4\xE4 ja helpottaa dynaamisten\u2026"
+description: 'Kuinka: .'
 lastmod: '2024-03-13T22:44:56.431030-06:00'
 model: gpt-4-1106-preview
-summary: Merkkijonon interpolointi tarkoittaa muuttujien, lausekkeiden tai arvojen
-  upottamista merkkijonoon.
+summary: .
 title: Merkkijonon interpolointi
 weight: 8
 ---

@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:35:26.032386-07:00
-description: "Sammanslagning av str\xE4ngar inneb\xE4r att kl\xE4mma ihop tv\xE5 eller\
-  \ fler textbitar till en. Programmerare g\xF6r detta f\xF6r att bygga meningar,\
-  \ skapa dynamiska\u2026"
+description: "Hur g\xF6r man: Concatenering \xE4r enkelt i PowerShell. Anv\xE4nd plus-tecknet\
+  \ (+) eller den inbyggda -join operatorn."
 lastmod: '2024-03-13T22:44:38.116094-06:00'
 model: gpt-4-1106-preview
-summary: "Sammanslagning av str\xE4ngar inneb\xE4r att kl\xE4mma ihop tv\xE5 eller\
-  \ fler textbitar till en."
+summary: "Concatenering \xE4r enkelt i PowerShell."
 title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---

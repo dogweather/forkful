@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:51:43.090036-07:00
-description: "String-Interpolation erm\xF6glicht das Einf\xFCgen von Variablenwerten\
-  \ in einen String. Das macht den Code lesbarer und die String-Manipulation effizienter."
+description: "How to: In TypeScript kannst du mit Template Literals arbeiten, um Interpolation\
+  \ zu nutzen. Sie werden mit Backticks (`) gekennzeichnet und k\xF6nnen\u2026"
 lastmod: '2024-03-13T22:44:53.618026-06:00'
 model: gpt-4-1106-preview
-summary: "String-Interpolation erm\xF6glicht das Einf\xFCgen von Variablenwerten in\
-  \ einen String."
+summary: In TypeScript kannst du mit Template Literals arbeiten, um Interpolation
+  zu nutzen.
 title: Zeichenketten interpolieren
 weight: 8
 ---

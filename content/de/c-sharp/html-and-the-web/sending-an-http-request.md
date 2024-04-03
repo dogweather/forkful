@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:59:18.422486-07:00
-description: "HTTP-Anfragen erm\xF6glichen die Kommunikation zwischen deiner Software\
-  \ und Webdiensten. Programmierer senden diese Anfragen, um Daten zu holen oder zu\u2026"
+description: 'How to: Hier ein Beispiel, wie man in C# eine einfache GET-Anfrage sendet
+  und die Antwort ausliest.'
 lastmod: '2024-03-13T22:44:53.884924-06:00'
 model: gpt-4-1106-preview
-summary: "HTTP-Anfragen erm\xF6glichen die Kommunikation zwischen deiner Software\
-  \ und Webdiensten."
+summary: Hier ein Beispiel, wie man in C# eine einfache GET-Anfrage sendet und die
+  Antwort ausliest.
 title: Einen HTTP-Request senden
 weight: 44
 ---

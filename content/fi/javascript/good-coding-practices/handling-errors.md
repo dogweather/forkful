@@ -1,11 +1,9 @@
 ---
 date: 2024-01-26 00:53:55.093985-07:00
-description: "Virheenk\xE4sittely on tapasi hallita tilanteita, kun koodissasi tapahtuu\
-  \ odottamattomia virheit\xE4. Se on keskeist\xE4, koska se auttaa ohjelmiasi kaatumaan\u2026"
+description: "Kuinka tehd\xE4: T\xE4ss\xE4 on klassinen `try-catch` lohko."
 lastmod: '2024-03-13T22:44:56.957235-06:00'
 model: gpt-4-1106-preview
-summary: "Virheenk\xE4sittely on tapasi hallita tilanteita, kun koodissasi tapahtuu\
-  \ odottamattomia virheit\xE4."
+summary: "T\xE4ss\xE4 on klassinen `try-catch` lohko."
 title: "Virheiden k\xE4sittely"
 weight: 16
 ---

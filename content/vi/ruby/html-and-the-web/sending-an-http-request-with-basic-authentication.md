@@ -2,16 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:35.086875-07:00
-description: "Trong Ruby, vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDB\
-  i x\xE1c th\u1EF1c c\u01A1 b\u1EA3n bao g\u1ED3m vi\u1EC7c th\xEAm t\xEAn ng\u01B0\
-  \u1EDDi d\xF9ng v\xE0 m\u1EADt kh\u1EA9u v\xE0o ti\xEAu \u0111\u1EC1 y\xEAu c\u1EA7\
-  u c\u1EE7a b\u1EA1n. L\u1EADp tr\xECnh vi\xEAn l\xE0m\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: \u0110\u1EC3 g\u1EEDi m\u1ED9t y\xEAu c\u1EA7\
+  u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3n, b\u1EA1n th\u01B0\u1EDDng s\u1EED\
+  \ d\u1EE5ng module `Net::HTTP` trong Ruby. D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9\
+  t v\xED d\u1EE5 nhanh."
 lastmod: '2024-03-13T22:44:37.340180-06:00'
 model: gpt-4-0125-preview
-summary: "Trong Ruby, vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1\
-  c th\u1EF1c c\u01A1 b\u1EA3n bao g\u1ED3m vi\u1EC7c th\xEAm t\xEAn ng\u01B0\u1EDD\
-  i d\xF9ng v\xE0 m\u1EADt kh\u1EA9u v\xE0o ti\xEAu \u0111\u1EC1 y\xEAu c\u1EA7u c\u1EE7\
-  a b\u1EA1n."
+summary: "\u0110\u1EC3 g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1\
+  c c\u01A1 b\u1EA3n, b\u1EA1n th\u01B0\u1EDDng s\u1EED d\u1EE5ng module `Net::HTTP`\
+  \ trong Ruby."
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3\
   n"
 weight: 45

@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:56:53.412695-07:00
-description: "Lire des arguments de ligne de commande, c'est r\xE9cup\xE9rer des donn\xE9\
-  es directement de celui qui lance votre script. Les programmeurs font \xE7a pour\u2026"
+description: 'How to: TypeScript utilise le processus Node.js pour lire les arguments
+  de ligne de commande. Voici un petit tuto.'
 lastmod: '2024-03-13T22:44:57.453512-06:00'
 model: gpt-4-1106-preview
-summary: "Lire des arguments de ligne de commande, c'est r\xE9cup\xE9rer des donn\xE9\
-  es directement de celui qui lance votre script."
+summary: TypeScript utilise le processus Node.js pour lire les arguments de ligne
+  de commande.
 title: Lecture des arguments de ligne de commande
 weight: 23
 ---

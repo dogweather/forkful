@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:39:00.018751-07:00
-description: "Omvandling av en textstr\xE4ng till gemener inneb\xE4r att alla versaler\
-  \ i en text blir sm\xE5 bokst\xE4ver. Programmerare anv\xE4nder detta f\xF6r att\
-  \ standardisera text\u2026"
+description: "Hur man g\xF6r: F\xF6r att konvertera en str\xE4ng till gemener i Kotlin\
+  \ \xE4r det enkelt - anv\xE4nd `toLowerCase()`-funktionen. H\xE4r \xE4r ett exempel."
 lastmod: '2024-03-13T22:44:37.858632-06:00'
 model: gpt-4-1106-preview
-summary: "Omvandling av en textstr\xE4ng till gemener inneb\xE4r att alla versaler\
-  \ i en text blir sm\xE5 bokst\xE4ver."
+summary: "F\xF6r att konvertera en str\xE4ng till gemener i Kotlin \xE4r det enkelt\
+  \ - anv\xE4nd `toLowerCase()`-funktionen."
 title: "Konvertera en str\xE4ng till gemener"
 weight: 4
 ---

@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:55.885572-07:00
-description: "Crear un archivo temporal en C implica generar un archivo que est\xE1\
-  \ destinado a ser utilizado por un corto per\xEDodo, generalmente como espacio de\
-  \ trabajo\u2026"
+description: "C\xF3mo hacerlo: Crear un archivo temporal en el lenguaje de programaci\xF3\
+  n C puede aprovechar funciones como `tmpfile()` y `mkstemp()`. **Usando\u2026"
 lastmod: '2024-03-13T22:44:59.566996-06:00'
 model: gpt-4-0125-preview
-summary: "Crear un archivo temporal en C implica generar un archivo que est\xE1 destinado\
-  \ a ser utilizado por un corto per\xEDodo, generalmente como espacio de trabajo\
-  \ para el procesamiento o almacenamiento de datos."
+summary: "Crear un archivo temporal en el lenguaje de programaci\xF3n C puede aprovechar\
+  \ funciones como `tmpfile()` y `mkstemp()`."
 title: Creando un archivo temporal
 weight: 21
 ---

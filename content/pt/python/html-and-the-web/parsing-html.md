@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:44.118753-07:00
-description: "Analisar HTML envolve analisar o c\xF3digo HTML de uma p\xE1gina da\
-  \ web para extrair informa\xE7\xF5es ou elementos espec\xEDficos, uma tarefa comum\
-  \ para web scraping,\u2026"
+description: "Como fazer: Python oferece bibliotecas poderosas como BeautifulSoup\
+  \ e requests para web scraping e an\xE1lise de HTML. Para come\xE7ar, voc\xEA precisa\
+  \ instalar\u2026"
 lastmod: '2024-03-13T22:44:46.151553-06:00'
 model: gpt-4-0125-preview
-summary: "Analisar HTML envolve analisar o c\xF3digo HTML de uma p\xE1gina da web\
-  \ para extrair informa\xE7\xF5es ou elementos espec\xEDficos, uma tarefa comum para\
-  \ web scraping, minera\xE7\xE3o de dados ou automa\xE7\xE3o de intera\xE7\xF5es\
-  \ com sites."
+summary: "Python oferece bibliotecas poderosas como BeautifulSoup e requests para\
+  \ web scraping e an\xE1lise de HTML."
 title: Analisando HTML
 weight: 43
 ---

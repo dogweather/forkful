@@ -1,11 +1,11 @@
 ---
 date: 2024-02-01 21:30:24.812939-07:00
-description: "Rounding numbers in programming is about approximating a number to its\
-  \ nearest whole number or to a certain number of decimal places. Programmers round\u2026"
+description: "How to: In Visual Basic for Applications (VBA), rounding can be achieved\
+  \ using several functions, each suited for specific scenarios. Here are the most\u2026"
 lastmod: '2024-03-13T22:44:59.929794-06:00'
 model: gpt-4-0125-preview
-summary: Rounding numbers in programming is about approximating a number to its nearest
-  whole number or to a certain number of decimal places.
+summary: In Visual Basic for Applications (VBA), rounding can be achieved using several
+  functions, each suited for specific scenarios.
 title: Rounding numbers
 weight: 13
 ---

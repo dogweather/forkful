@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:08.224727-07:00
-description: "Werken met CSV (Comma-Separated Values oftewel door komma's gescheiden\
-  \ waarden) betreft het lezen en schrijven van gegevens in een tekstformaat waarbij\u2026"
+description: "Hoe: Om met CSV in Kotlin te werken, kun je de kernbibliotheek gebruiken\
+  \ of externe bibliotheken zoals Kotlinx.serialization of Apache Commons CSV. Hier\u2026"
 lastmod: '2024-03-13T22:44:50.790120-06:00'
 model: gpt-4-0125-preview
-summary: Werken met CSV (Comma-Separated Values oftewel door komma's gescheiden waarden)
-  betreft het lezen en schrijven van gegevens in een tekstformaat waarbij elke regel
-  velden heeft die door komma's zijn gescheiden.
+summary: Om met CSV in Kotlin te werken, kun je de kernbibliotheek gebruiken of externe
+  bibliotheken zoals Kotlinx.serialization of Apache Commons CSV.
 title: Werken met CSV
 weight: 37
 ---

@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 04:12:51.678926-07:00
-description: "REPL, ovvero Read-Eval-Print Loop (Ciclo Leggi-Valuta-Stampa), \xE8\
-  \ un ambiente di programmazione per testare dinamicamente codice Clojure pezzo per\
-  \ pezzo. I\u2026"
+description: 'Come fare: Inizia lanciando REPL.'
 lastmod: '2024-03-13T22:44:43.043779-06:00'
 model: gpt-4-0125-preview
-summary: "REPL, ovvero Read-Eval-Print Loop (Ciclo Leggi-Valuta-Stampa), \xE8 un ambiente\
-  \ di programmazione per testare dinamicamente codice Clojure pezzo per pezzo."
+summary: Inizia lanciando REPL.
 title: Utilizzo di un interprete interattivo (REPL)
 weight: 34
 ---

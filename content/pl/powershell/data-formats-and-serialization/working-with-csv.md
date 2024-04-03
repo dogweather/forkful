@@ -2,14 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:56.248166-07:00
-description: "Praca z plikami CSV (Comma-Separated Values - warto\u015Bci oddzielone\
-  \ przecinkami) to cz\u0119ste zadanie podczas zarz\u0105dzania i manipulowania danymi\
-  \ w\u2026"
+description: "Jak to zrobi\u0107: #."
 lastmod: '2024-03-13T22:44:35.652356-06:00'
 model: gpt-4-0125-preview
-summary: "Praca z plikami CSV (Comma-Separated Values - warto\u015Bci oddzielone przecinkami)\
-  \ to cz\u0119ste zadanie podczas zarz\u0105dzania i manipulowania danymi w strukturalnej,\
-  \ tabelarycznej formie."
+summary: '#.'
 title: Praca z plikami CSV
 weight: 37
 ---

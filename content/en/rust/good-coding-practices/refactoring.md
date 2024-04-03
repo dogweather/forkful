@@ -1,12 +1,11 @@
 ---
 date: 2024-01-25 02:12:26.027598-07:00
-description: "Refactoring is the process of restructuring existing computer code\u2014\
-  changing the factoring\u2014without altering its external behavior. Programmers\
-  \ do it to\u2026"
+description: "How to: Let's refactor a simple piece of Rust code to make it more idiomatic\
+  \ and maintainable. We start with a function that calculates the sum of a\u2026"
 lastmod: '2024-03-13T22:44:59.903528-06:00'
 model: gpt-4-1106-preview
-summary: "Refactoring is the process of restructuring existing computer code\u2014\
-  changing the factoring\u2014without altering its external behavior."
+summary: Let's refactor a simple piece of Rust code to make it more idiomatic and
+  maintainable.
 title: Refactoring
 weight: 19
 ---

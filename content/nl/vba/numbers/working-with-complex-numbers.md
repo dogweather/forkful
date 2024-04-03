@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:05.450973-07:00
-description: "Werken met complexe getallen houdt in dat je wiskundige bewerkingen\
-  \ uitvoert op getallen die zowel een re\xEBel deel als een imaginair deel hebben.\u2026"
+description: "Hoe te: In Visual Basic for Applications (VBA) kan het omgaan met complexe\
+  \ getallen enigszins minder rechttoe rechtaan zijn in vergelijking met talen die\u2026"
 lastmod: '2024-03-13T22:44:50.630332-06:00'
 model: gpt-4-0125-preview
-summary: "Werken met complexe getallen houdt in dat je wiskundige bewerkingen uitvoert\
-  \ op getallen die zowel een re\xEBel deel als een imaginair deel hebben."
+summary: In Visual Basic for Applications (VBA) kan het omgaan met complexe getallen
+  enigszins minder rechttoe rechtaan zijn in vergelijking met talen die hier native
+  ondersteuning voor bieden.
 title: Werken met complexe getallen
 weight: 14
 ---

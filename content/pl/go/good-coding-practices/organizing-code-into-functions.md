@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:39.750809-07:00
-description: "Organizowanie kodu w funkcje w Go polega na dzieleniu kodu na ponownie\
-  \ u\u017Cywalne, modularne bloki, kt\xF3re wykonuj\u0105 okre\u015Blone zadania.\
-  \ Podej\u015Bcie to poprawia\u2026"
+description: "Jak to zrobi\u0107: W Go definiujesz funkcj\u0119 za pomoc\u0105 s\u0142\
+  owa kluczowego `func`, po kt\xF3rym nast\u0119puje nazwa funkcji, parametry (je\u015B\
+  li s\u0105) oraz typ zwracany.\u2026"
 lastmod: '2024-03-13T22:44:34.857646-06:00'
 model: gpt-4-0125-preview
-summary: "Organizowanie kodu w funkcje w Go polega na dzieleniu kodu na ponownie u\u017C\
-  ywalne, modularne bloki, kt\xF3re wykonuj\u0105 okre\u015Blone zadania."
+summary: "W Go definiujesz funkcj\u0119 za pomoc\u0105 s\u0142owa kluczowego `func`,\
+  \ po kt\xF3rym nast\u0119puje nazwa funkcji, parametry (je\u015Bli s\u0105) oraz\
+  \ typ zwracany."
 title: Organizowanie kodu w funkcje
 weight: 18
 ---

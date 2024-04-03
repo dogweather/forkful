@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 17:50:03.964838-07:00
-description: "Getting the current date in C involves tapping into the standard C library\
-  \ to fetch and format the system's current date and time. Programmers often need\u2026"
+description: "How to: In C, the `<time.h>` header provides the necessary functions\
+  \ and types to work with dates and times. The `time()` function retrieves the current\u2026"
 lastmod: '2024-03-13T22:45:00.520623-06:00'
 model: gpt-4-0125-preview
-summary: Getting the current date in C involves tapping into the standard C library
-  to fetch and format the system's current date and time.
+summary: In C, the `<time.h>` header provides the necessary functions and types to
+  work with dates and times.
 title: Getting the current date
 weight: 29
 ---

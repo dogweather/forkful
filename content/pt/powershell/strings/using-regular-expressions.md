@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:44.570055-07:00
-description: "Express\xF5es regulares (regex) s\xE3o sequ\xEAncias de caracteres que\
-  \ formam um padr\xE3o de pesquisa, usadas principalmente para busca e manipula\xE7\
-  \xE3o de strings.\u2026"
+description: "Como fazer: No PowerShell, voc\xEA pode usar os operadores `-match`,\
+  \ `-replace` e `-split`, entre outros, para realizar a\xE7\xF5es com express\xF5\
+  es regulares. Vamos\u2026"
 lastmod: '2024-03-13T22:44:46.785403-06:00'
 model: gpt-4-0125-preview
-summary: "Express\xF5es regulares (regex) s\xE3o sequ\xEAncias de caracteres que formam\
-  \ um padr\xE3o de pesquisa, usadas principalmente para busca e manipula\xE7\xE3\
-  o de strings."
+summary: "No PowerShell, voc\xEA pode usar os operadores `-match`, `-replace` e `-split`,\
+  \ entre outros, para realizar a\xE7\xF5es com express\xF5es regulares."
 title: "Usando express\xF5es regulares"
 weight: 11
 ---

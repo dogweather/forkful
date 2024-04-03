@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:25.775440-07:00
-description: "Controleren of een map bestaat zorgt ervoor dat een programma werkt\
-  \ met geldige paden, wat fouten voorkomt. Het is cruciaal voor taken die specifieke\u2026"
+description: 'Hoe: Controleer of een map bestaat met een simpel `test` commando.'
 lastmod: '2024-03-13T22:44:51.261657-06:00'
 model: gpt-4-0125-preview
-summary: Controleren of een map bestaat zorgt ervoor dat een programma werkt met geldige
-  paden, wat fouten voorkomt.
+summary: Controleer of een map bestaat met een simpel `test` commando.
 title: Controleren of een directory bestaat
 weight: 20
 ---

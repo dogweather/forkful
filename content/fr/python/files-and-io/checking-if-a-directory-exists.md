@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:11.560208-07:00
-description: "V\xE9rifier si un r\xE9pertoire existe en Python consiste \xE0 confirmer\
-  \ la pr\xE9sence d'un dossier dans le syst\xE8me de fichiers avant d'effectuer des\
-  \ op\xE9rations\u2026"
+description: "Comment faire : Python fournit des moyens natifs de v\xE9rifier l'existence\
+  \ d'un r\xE9pertoire en utilisant les modules `os` et `pathlib`. Voici des exemples\u2026"
 lastmod: '2024-03-13T22:44:57.251709-06:00'
 model: gpt-4-0125-preview
-summary: "V\xE9rifier si un r\xE9pertoire existe en Python consiste \xE0 confirmer\
-  \ la pr\xE9sence d'un dossier dans le syst\xE8me de fichiers avant d'effectuer des\
-  \ op\xE9rations telles que la lecture ou l'\xE9criture de fichiers."
+summary: "Python fournit des moyens natifs de v\xE9rifier l'existence d'un r\xE9pertoire\
+  \ en utilisant les modules `os` et `pathlib`."
 title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---

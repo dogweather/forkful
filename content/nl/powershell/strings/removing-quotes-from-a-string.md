@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:41.211022-07:00
-description: "Aanhalingstekens uit een tekenreeks verwijderen in PowerShell haalt\
-  \ enkele (`'`) of dubbele (`\"`) aanhalingstekens weg die rondom je tekst staan.\u2026"
+description: 'Hoe te: Je kunt de `-replace` operator gebruiken om aanhalingstekens
+  uit een tekenreeks te verwijderen. Zo doe je dat.'
 lastmod: '2024-03-13T22:44:51.014510-06:00'
 model: gpt-4-0125-preview
-summary: Aanhalingstekens uit een tekenreeks verwijderen in PowerShell haalt enkele
-  (`'`) of dubbele (`"`) aanhalingstekens weg die rondom je tekst staan.
+summary: Je kunt de `-replace` operator gebruiken om aanhalingstekens uit een tekenreeks
+  te verwijderen.
 title: Quotes verwijderen uit een string
 weight: 9
 ---

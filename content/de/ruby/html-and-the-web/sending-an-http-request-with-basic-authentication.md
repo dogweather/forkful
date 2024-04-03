@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 18:02:32.647298-07:00
-description: "HTTP-Anfragen mit Basic-Authentifizierung senden Daten \xFCber Benutzername\
-  \ und Passwort im Header, um Zugriff auf gesch\xFCtzte Ressourcen zu erhalten.\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:54.400202-06:00'
 model: gpt-4-1106-preview
-summary: "HTTP-Anfragen mit Basic-Authentifizierung senden Daten \xFCber Benutzername\
-  \ und Passwort im Header, um Zugriff auf gesch\xFCtzte Ressourcen zu erhalten."
+summary: .
 title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---

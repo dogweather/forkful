@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:52:21.420264-07:00
-description: "Debug-utskrift er \xE5 kaste ut data til konsollen for \xE5 spore hva\
-  \ programmet ditt gj\xF8r. Programmerere gj\xF8r dette for \xE5 forst\xE5 feil og\
-  \ forbedre kodeflyten."
+description: "Hvordan: I Elm, bruk `Debug.log` for \xE5 skrive ut vid debug-info i\
+  \ konsollen. Pass p\xE5, den er ment for lokalt arbeid \u2013 ikke for produksjon!."
 lastmod: '2024-03-13T22:44:40.711540-06:00'
 model: gpt-4-1106-preview
-summary: "Debug-utskrift er \xE5 kaste ut data til konsollen for \xE5 spore hva programmet\
-  \ ditt gj\xF8r."
+summary: "I Elm, bruk `Debug.log` for \xE5 skrive ut vid debug-info i konsollen."
 title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---

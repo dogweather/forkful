@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:12.690197-07:00
-description: "S\xF8king og erstatning av tekst i Google Apps Script inneb\xE6rer \xE5\
-  \ programmert identifisere spesifikke strenger i et dokument, regneark eller annen\
-  \ type\u2026"
+description: "Hvordan: Google Apps Script tilbyr en grei m\xE5te \xE5 s\xF8ke og erstatte\
+  \ tekst p\xE5, spesielt innen Google Dokumenter og Regneark. Nedenfor er eksempler\
+  \ for\u2026"
 lastmod: '2024-03-13T22:44:40.297717-06:00'
 model: gpt-4-0125-preview
-summary: "S\xF8king og erstatning av tekst i Google Apps Script inneb\xE6rer \xE5\
-  \ programmert identifisere spesifikke strenger i et dokument, regneark eller annen\
-  \ type Google Apps-innhold, og erstatte dem med andre tekstverdier."
+summary: "Google Apps Script tilbyr en grei m\xE5te \xE5 s\xF8ke og erstatte tekst\
+  \ p\xE5, spesielt innen Google Dokumenter og Regneark."
 title: "S\xF8ke og erstatte tekst"
 weight: 10
 ---

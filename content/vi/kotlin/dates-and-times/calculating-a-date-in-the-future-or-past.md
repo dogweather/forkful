@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:00.470110-07:00
-description: "T\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7\
-  c qu\xE1 kh\u1EE9 c\xF3 ngh\u0129a l\xE0 t\xECm m\u1ED9t ng\xE0y c\u1EE5 th\u1EC3\
-  \ tr\u01B0\u1EDBc ho\u1EB7c sau m\u1ED9t ng\xE0y \u0111\xE3 bi\u1EBFt. C\xE1c l\u1EAD\
-  p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y cho\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Kotlin x\u1EED l\xFD ng\xE0y v\xE0 gi\u1EDD\
+  \ v\u1EDBi th\u01B0 vi\u1EC7n `java.time`. \u0110\u1EC3 th\xEAm ho\u1EB7c b\u1EDB\
+  t ng\xE0y, s\u1EED d\u1EE5ng `plusDays()` ho\u1EB7c `minusDays()`. D\u01B0\u1EDB\
+  i \u0111\xE2y l\xE0 c\xE1ch l\xE0m."
 lastmod: '2024-03-13T22:44:36.619256-06:00'
 model: gpt-4-0125-preview
-summary: "T\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1\
-  \ kh\u1EE9 c\xF3 ngh\u0129a l\xE0 t\xECm m\u1ED9t ng\xE0y c\u1EE5 th\u1EC3 tr\u01B0\
-  \u1EDBc ho\u1EB7c sau m\u1ED9t ng\xE0y \u0111\xE3 bi\u1EBFt."
+summary: "Kotlin x\u1EED l\xFD ng\xE0y v\xE0 gi\u1EDD v\u1EDBi th\u01B0 vi\u1EC7n\
+  \ `java.time`."
 title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1EE9"
 weight: 26
 ---

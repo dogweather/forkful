@@ -1,11 +1,9 @@
 ---
 date: 2024-01-26 03:47:38.120938-07:00
-description: "Arrotondare i numeri significa aggiustarli al numero intero pi\xF9 vicino\
-  \ o a un grado di precisione specificato. I programmatori arrotondano i numeri per\u2026"
+description: 'Come fare: .'
 lastmod: '2024-03-13T22:44:44.044424-06:00'
 model: gpt-4-0125-preview
-summary: "Arrotondare i numeri significa aggiustarli al numero intero pi\xF9 vicino\
-  \ o a un grado di precisione specificato."
+summary: .
 title: Arrotondamento dei numeri
 weight: 13
 ---

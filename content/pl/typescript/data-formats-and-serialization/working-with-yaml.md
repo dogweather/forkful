@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:55.100865-07:00
-description: "YAML, j\u0119zyk serializacji danych zaprojektowany by by\u0107 przyjazny\
-  \ dla cz\u0142owieka, jest cz\u0119sto u\u017Cywany do plik\xF3w konfiguracyjnych,\
-  \ komunikacji\u2026"
+description: "Jak? Praca z YAML w TypeScript zazwyczaj obejmuje parsowanie tre\u015B\
+  ci YAML do obiekt\xF3w JavaScript i ewentualnie konwertowanie obiekt\xF3w JavaScript\
+  \ z powrotem\u2026"
 lastmod: '2024-03-13T22:44:35.160694-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, j\u0119zyk serializacji danych zaprojektowany by by\u0107 przyjazny\
-  \ dla cz\u0142owieka, jest cz\u0119sto u\u017Cywany do plik\xF3w konfiguracyjnych,\
-  \ komunikacji mi\u0119dzyprocesowej i przechowywania danych."
+summary: "Praca z YAML w TypeScript zazwyczaj obejmuje parsowanie tre\u015Bci YAML\
+  \ do obiekt\xF3w JavaScript i ewentualnie konwertowanie obiekt\xF3w JavaScript z\
+  \ powrotem na YAML."
 title: Praca z YAML
 weight: 41
 ---

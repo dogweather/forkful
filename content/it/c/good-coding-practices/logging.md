@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:23.868581-07:00
-description: "Il logging in C comporta la registrazione del flusso e degli eventi\
-  \ notevoli di un programma durante il suo runtime, fornendo una revisione tangibile\
-  \ del\u2026"
+description: "Come fare: In C, il logging pu\xF2 essere ottenuto con operazioni su\
+  \ file di base o utilizzando librerie pi\xF9 sofisticate. Per semplicit\xE0, inizieremo\
+  \ con la\u2026"
 lastmod: '2024-03-13T22:44:44.005952-06:00'
 model: gpt-4-0125-preview
-summary: Il logging in C comporta la registrazione del flusso e degli eventi notevoli
-  di un programma durante il suo runtime, fornendo una revisione tangibile del suo
-  comportamento e delle sue prestazioni.
+summary: "In C, il logging pu\xF2 essere ottenuto con operazioni su file di base o\
+  \ utilizzando librerie pi\xF9 sofisticate."
 title: Registro degli Eventi
 weight: 17
 ---

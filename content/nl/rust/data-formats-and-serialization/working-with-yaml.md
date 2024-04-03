@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:27.393493-07:00
-description: "Werken met YAML betekent omgaan met gegevens in het \"YAML Ain't Markup\
-  \ Language\" formaat - een mensvriendelijke standaard voor gegevensserialisatie.\u2026"
+description: "Hoe te: Om YAML in Rust te parsen en te genereren, gebruiken we de `serde_yaml`\
+  \ crate, die leunt op `serde` voor serialisatie/deserialisatie. Voeg eerst\u2026"
 lastmod: '2024-03-13T22:44:50.614552-06:00'
 model: gpt-4-0125-preview
-summary: Werken met YAML betekent omgaan met gegevens in het "YAML Ain't Markup Language"
-  formaat - een mensvriendelijke standaard voor gegevensserialisatie.
+summary: Om YAML in Rust te parsen en te genereren, gebruiken we de `serde_yaml` crate,
+  die leunt op `serde` voor serialisatie/deserialisatie.
 title: Werken met YAML
 weight: 41
 ---

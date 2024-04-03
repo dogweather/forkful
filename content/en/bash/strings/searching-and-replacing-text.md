@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:57:00.215150-07:00
-description: "Searching and replacing text in bash means swapping out words or patterns\
-  \ in a string or file with something else. It's a day-to-day task for cleaning\u2026"
+description: 'How to: Here''s how you wield the power of search and replace in bash:
+  1. Swap text within a string using `sed`.'
 lastmod: '2024-03-13T22:45:00.229850-06:00'
 model: gpt-4-1106-preview
-summary: Searching and replacing text in bash means swapping out words or patterns
-  in a string or file with something else.
+summary: Here's how you wield the power of search and replace in bash.
 title: Searching and replacing text
 weight: 10
 ---

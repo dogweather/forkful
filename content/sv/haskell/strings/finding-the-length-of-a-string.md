@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:47:39.979624-07:00
-description: "Att hitta l\xE4ngden p\xE5 en str\xE4ng inneb\xE4r att r\xE4kna antalet\
-  \ tecken den inneh\xE5ller. Programmerare g\xF6r detta f\xF6r att hantera och validera\
-  \ textdata effektivt."
+description: "S\xE5 h\xE4r g\xF6r du: Haskell \xE4r enkelt. Anv\xE4nd `length` funktionen\
+  \ p\xE5 en str\xE4ng f\xF6r att f\xE5 dess l\xE4ngd. H\xE4r \xE4r ett exempel."
 lastmod: '2024-03-13T22:44:37.946463-06:00'
 model: gpt-4-1106-preview
-summary: "Att hitta l\xE4ngden p\xE5 en str\xE4ng inneb\xE4r att r\xE4kna antalet\
-  \ tecken den inneh\xE5ller."
+summary: "Haskell \xE4r enkelt."
 title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---

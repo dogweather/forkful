@@ -1,14 +1,9 @@
 ---
 date: 2024-01-27 20:34:34.615838-07:00
-description: "Gerar n\xFAmeros aleat\xF3rios em JavaScript \xE9 uma t\xE9cnica usada\
-  \ para criar imprevisibilidade em aplica\xE7\xF5es, desde jogos que precisam de\
-  \ comportamento aleat\xF3rio\u2026"
+description: 'Como Fazer: #.'
 lastmod: '2024-03-13T22:44:46.958499-06:00'
 model: gpt-4-0125-preview
-summary: "Gerar n\xFAmeros aleat\xF3rios em JavaScript \xE9 uma t\xE9cnica usada para\
-  \ criar imprevisibilidade em aplica\xE7\xF5es, desde jogos que precisam de comportamento\
-  \ aleat\xF3rio do inimigo at\xE9 algoritmos de seguran\xE7a que requerem aleatoriedade\
-  \ criptogr\xE1fica."
+summary: '#.'
 title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
 weight: 12
 ---

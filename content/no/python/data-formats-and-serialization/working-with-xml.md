@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:34:53.948477-07:00
-description: "\"Arbeid med XML\" refererer til prosessen med \xE5 lese, opprette og\
-  \ modifisere XML (eXtensible Markup Language) filer ved hjelp av programmering.\u2026"
+description: "Hvordan: Pythons `xml.etree.ElementTree`-modul tilbyr verkt\xF8y for\
+  \ \xE5 arbeide med XML. Parse et XML-dokument."
 lastmod: '2024-03-13T22:44:40.385178-06:00'
 model: gpt-4-0125-preview
-summary: "\"Arbeid med XML\" refererer til prosessen med \xE5 lese, opprette og modifisere\
-  \ XML (eXtensible Markup Language) filer ved hjelp av programmering."
+summary: "Pythons `xml.etree.ElementTree`-modul tilbyr verkt\xF8y for \xE5 arbeide\
+  \ med XML."
 title: "\xC5 jobbe med XML"
 weight: 40
 ---

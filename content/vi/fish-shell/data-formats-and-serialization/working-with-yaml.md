@@ -2,18 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:07.756559-07:00
-description: "YAML, \"YAML Ain't Markup Language\" (YAML kh\xF4ng ph\u1EA3i l\xE0\
-  \ Ng\xF4n ng\u1EEF \u0110\xE1nh d\u1EA5u), l\xE0 m\u1ED9t ti\xEAu chu\u1EA9n m\xE3\
-  \ h\xF3a d\u1EEF li\u1EC7u th\xE2n thi\u1EC7n v\u1EDBi con ng\u01B0\u1EDDi, c\xF3\
-  \ k\xFD hi\u1EC7u \u01B0u vi\u1EC7t\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: #."
 lastmod: '2024-03-13T22:44:37.238144-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, \"YAML Ain't Markup Language\" (YAML kh\xF4ng ph\u1EA3i l\xE0 Ng\xF4\
-  n ng\u1EEF \u0110\xE1nh d\u1EA5u), l\xE0 m\u1ED9t ti\xEAu chu\u1EA9n m\xE3 h\xF3\
-  a d\u1EEF li\u1EC7u th\xE2n thi\u1EC7n v\u1EDBi con ng\u01B0\u1EDDi, c\xF3 k\xFD\
-  \ hi\u1EC7u \u01B0u vi\u1EC7t h\u01A1n ng\xF4n ng\u1EEF b\u1EA3ng v\xE0 ng\xF4n\
-  \ ng\u1EEF \u0111\xE1nh d\u1EA5u cho t\u1EC7p c\u1EA5u h\xECnh v\xE0 trao \u0111\
-  \u1ED5i d\u1EEF li\u1EC7u."
+summary: '#.'
 title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 weight: 41
 ---

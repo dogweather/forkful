@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 01:16:40.593487-07:00
-description: "Refaktoryzacja to proces restrukturyzacji istniej\u0105cego kodu komputerowego\
-  \ bez zmiany jego zewn\u0119trznego zachowania. Jest to kluczowa praktyka, aby\u2026"
+description: "Jak to zrobi\u0107: Rozwa\u017Cmy prosty skrypt Bash, kt\xF3ry wymaga\
+  \ refaktoryzacji. Jest niepor\u0119czny, z powtarzaj\u0105cym si\u0119 kodem i trudny\
+  \ do \u015Bledzenia."
 lastmod: '2024-03-13T22:44:35.593584-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktoryzacja to proces restrukturyzacji istniej\u0105cego kodu komputerowego\
-  \ bez zmiany jego zewn\u0119trznego zachowania."
+summary: "Rozwa\u017Cmy prosty skrypt Bash, kt\xF3ry wymaga refaktoryzacji."
 title: Refaktoryzacja
 weight: 19
 ---

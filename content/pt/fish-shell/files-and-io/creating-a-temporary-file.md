@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:40:00.934827-07:00
-description: "Criar um arquivo tempor\xE1rio serve para ter um espa\xE7o de armazenamento\
-  \ seguro e ef\xEAmero, \xF3timo para processamento interm\xE9dio de dados. Programadores\
-  \ fazem\u2026"
+description: "How to: No Fish Shell, voc\xEA pode criar facilmente um arquivo tempor\xE1\
+  rio usando a fun\xE7\xE3o `mktemp`."
 lastmod: '2024-03-13T22:44:47.024976-06:00'
 model: gpt-4-1106-preview
-summary: "Criar um arquivo tempor\xE1rio serve para ter um espa\xE7o de armazenamento\
-  \ seguro e ef\xEAmero, \xF3timo para processamento interm\xE9dio de dados."
+summary: "No Fish Shell, voc\xEA pode criar facilmente um arquivo tempor\xE1rio usando\
+  \ a fun\xE7\xE3o `mktemp`."
 title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---

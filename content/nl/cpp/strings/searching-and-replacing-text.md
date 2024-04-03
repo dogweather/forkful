@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:59.966260-07:00
-description: "Zoeken en vervangen van tekst is het vinden van specifieke strings binnen\
-  \ een grotere string en deze omwisselen voor iets anders. Programmeurs gebruiken\u2026"
+description: 'Hoe: C++ biedt verschillende manieren om tekst te zoeken en te vervangen.
+  Hieronder is een voorbeeld met `std::string::find` en `std::string::replace`.'
 lastmod: '2024-03-13T22:44:51.097911-06:00'
 model: gpt-4-0125-preview
-summary: Zoeken en vervangen van tekst is het vinden van specifieke strings binnen
-  een grotere string en deze omwisselen voor iets anders.
+summary: C++ biedt verschillende manieren om tekst te zoeken en te vervangen.
 title: Tekst zoeken en vervangen
 weight: 10
 ---

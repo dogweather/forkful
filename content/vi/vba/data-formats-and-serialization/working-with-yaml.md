@@ -2,16 +2,16 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:07:52.499057-07:00
-description: "YAML, vi\u1EBFt t\u1EAFt c\u1EE7a \"YAML Ain't Markup Language\", l\xE0\
-  \ m\u1ED9t ng\xF4n ng\u1EEF tu\u1EA7n t\u1EF1 h\xF3a d\u1EEF li\u1EC7u d\u1EC5 \u0111\
-  \u1ECDc cho con ng\u01B0\u1EDDi, th\u01B0\u1EDDng \u0111\u01B0\u1EE3c s\u1EED d\u1EE5\
-  ng cho c\xE1c t\u1EC7p c\u1EA5u h\xECnh. L\u1EADp\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: L\xE0m vi\u1EC7c v\u1EDBi YAML trong VBA \u0111\
+  \xF2i h\u1ECFi ph\u1EA3i hi\u1EC3u c\xE1ch ph\xE2n t\xEDch v\xE0 chuy\u1EC3n \u0111\
+  \u1ED5i YAML th\xE0nh \u0111\u1ECBnh d\u1EA1ng m\xE0 VBA c\xF3 th\u1EC3 d\u1EC5\
+  \ d\xE0ng thao t\xE1c, th\u01B0\u1EDDng l\xE0\u2026"
 lastmod: '2024-03-13T22:44:36.460116-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, vi\u1EBFt t\u1EAFt c\u1EE7a \"YAML Ain't Markup Language\", l\xE0\
-  \ m\u1ED9t ng\xF4n ng\u1EEF tu\u1EA7n t\u1EF1 h\xF3a d\u1EEF li\u1EC7u d\u1EC5 \u0111\
-  \u1ECDc cho con ng\u01B0\u1EDDi, th\u01B0\u1EDDng \u0111\u01B0\u1EE3c s\u1EED d\u1EE5\
-  ng cho c\xE1c t\u1EC7p c\u1EA5u h\xECnh."
+summary: "L\xE0m vi\u1EC7c v\u1EDBi YAML trong VBA \u0111\xF2i h\u1ECFi ph\u1EA3i\
+  \ hi\u1EC3u c\xE1ch ph\xE2n t\xEDch v\xE0 chuy\u1EC3n \u0111\u1ED5i YAML th\xE0\
+  nh \u0111\u1ECBnh d\u1EA1ng m\xE0 VBA c\xF3 th\u1EC3 d\u1EC5 d\xE0ng thao t\xE1\
+  c, th\u01B0\u1EDDng l\xE0 dictionaries ho\u1EB7c collections."
 title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 weight: 41
 ---

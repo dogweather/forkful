@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:24:41.514638-07:00
-description: "TOML, kurz f\xFCr Toms Offensichtliche, Minimale Sprache, ist ein Daten-Serialisierungsformat,\
-  \ das leicht zu lesen ist aufgrund seiner klaren Semantik.\u2026"
+description: "Wie: In PowerShell gibt es kein natives Cmdlet, um TOML zu parsen. Normalerweise\
+  \ w\xFCrden Sie ein Modul verwenden oder TOML mit einem Tool wie `toml-to-\u2026"
 lastmod: '2024-03-13T22:44:54.126899-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, kurz f\xFCr Toms Offensichtliche, Minimale Sprache, ist ein Daten-Serialisierungsformat,\
-  \ das leicht zu lesen ist aufgrund seiner klaren Semantik."
+summary: In PowerShell gibt es kein natives Cmdlet, um TOML zu parsen.
 title: Arbeiten mit TOML
 weight: 39
 ---

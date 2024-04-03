@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:46:39.989710-07:00
-description: "Das Ermitteln der L\xE4nge eines Strings bedeutet, zu z\xE4hlen, wie\
-  \ viele Zeichen er enth\xE4lt. Programmierer m\xFCssen das oft tun, um Speicher\
-  \ zu managen, f\xFCr\u2026"
+description: "Anleitung: Um die L\xE4nge eines Strings in Arduino zu finden, verwendest\
+  \ du die `length()`-Methode des String-Objekts. Hier ein schnelles Beispiel."
 lastmod: '2024-03-13T22:44:54.136115-06:00'
 model: gpt-4-1106-preview
-summary: "Das Ermitteln der L\xE4nge eines Strings bedeutet, zu z\xE4hlen, wie viele\
-  \ Zeichen er enth\xE4lt."
+summary: "Um die L\xE4nge eines Strings in Arduino zu finden, verwendest du die `length()`-Methode\
+  \ des String-Objekts."
 title: "Ermittlung der Zeichenkettenl\xE4nge"
 weight: 7
 ---

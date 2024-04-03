@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:35:01.698118-07:00
-description: "Konkatenering av str\xE4ngar inneb\xE4r att s\xE4tta ihop tv\xE5 eller\
-  \ flera textstr\xE4ngar till en. Programmerare g\xF6r detta f\xF6r att bygga dynamiska\
-  \ textmeddelanden,\u2026"
+description: "S\xE5 g\xF6r du: I Haskell kan du konkatenera str\xE4ngar med flera\
+  \ tekniker. H\xE4r \xE4r n\xE5gra exempel."
 lastmod: '2024-03-13T22:44:37.947338-06:00'
 model: gpt-4-1106-preview
-summary: "Konkatenering av str\xE4ngar inneb\xE4r att s\xE4tta ihop tv\xE5 eller flera\
-  \ textstr\xE4ngar till en."
+summary: "I Haskell kan du konkatenera str\xE4ngar med flera tekniker."
 title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---

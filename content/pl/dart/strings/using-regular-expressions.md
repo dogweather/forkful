@@ -2,15 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:19.845633-07:00
-description: "Wyra\u017Cenia regularne (regex) w Dart oferuj\u0105 pot\u0119\u017C\
-  ny spos\xF3b na wyszukiwanie i manipulowanie ci\u0105gami znak\xF3w, umo\u017Cliwiaj\u0105\
-  c programistom wykonywanie\u2026"
+description: "Jak: Dart u\u017Cywa klasy `RegExp` dla wyra\u017Ce\u0144 regularnych.\
+  \ Oto podstawowy przyk\u0142ad dopasowania prostego wzorca w ci\u0105gu znak\xF3\
+  w."
 lastmod: '2024-03-13T22:44:35.079627-06:00'
 model: gpt-4-0125-preview
-summary: "Wyra\u017Cenia regularne (regex) w Dart oferuj\u0105 pot\u0119\u017Cny spos\xF3\
-  b na wyszukiwanie i manipulowanie ci\u0105gami znak\xF3w, umo\u017Cliwiaj\u0105\
-  c programistom wykonywanie skomplikowanych zada\u0144 przetwarzania tekstu w spos\xF3\
-  b wydajny."
+summary: "Dart u\u017Cywa klasy `RegExp` dla wyra\u017Ce\u0144 regularnych."
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:07.807544-07:00
-description: "In de wereld van Arduino laten associatieve arrays je sleutels koppelen\
-  \ aan waarden, een beetje zoals je sokken zou matchen met hun paren. Ze zijn een\
-  \ go-\u2026"
+description: "Hoe: Arduino heeft strikt genomen geen ingebouwde ondersteuning voor\
+  \ associatieve arrays zoals je die zou vinden in meer high-level talen. Maar, vrees\u2026"
 lastmod: '2024-03-13T22:44:51.065560-06:00'
 model: gpt-4-0125-preview
-summary: In de wereld van Arduino laten associatieve arrays je sleutels koppelen aan
-  waarden, een beetje zoals je sokken zou matchen met hun paren.
+summary: Arduino heeft strikt genomen geen ingebouwde ondersteuning voor associatieve
+  arrays zoals je die zou vinden in meer high-level talen.
 title: Gebruik van associatieve arrays
 weight: 15
 ---

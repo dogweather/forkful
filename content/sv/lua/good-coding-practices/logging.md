@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 01:07:29.274461-07:00
-description: "Loggning \xE4r praxisen att spela in h\xE4ndelser, fel och andra betydande\
-  \ datapunkter som intr\xE4ffar inom livscykeln f\xF6r en mjukvaruapplikation. Programmerare\u2026"
+description: "Hur man g\xF6r: Lua har inte ett inbyggt loggningsramverk, men att implementera\
+  \ en enkel loggningsfunktion \xE4r rakt p\xE5 sak. Nedan f\xF6ljer ett grundl\xE4\
+  ggande\u2026"
 lastmod: '2024-03-13T22:44:38.044846-06:00'
 model: gpt-4-1106-preview
-summary: "Loggning \xE4r praxisen att spela in h\xE4ndelser, fel och andra betydande\
-  \ datapunkter som intr\xE4ffar inom livscykeln f\xF6r en mjukvaruapplikation."
+summary: "Lua har inte ett inbyggt loggningsramverk, men att implementera en enkel\
+  \ loggningsfunktion \xE4r rakt p\xE5 sak."
 title: Loggning
 weight: 17
 ---

@@ -2,14 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:53.913724-07:00
-description: "JSON (JavaScript Object Notation) est un format l\xE9ger d'\xE9change\
-  \ de donn\xE9es, facile \xE0 lire et \xE0 \xE9crire pour les humains et \xE0 analyser\
-  \ et \xE0 g\xE9n\xE9rer pour les\u2026"
+description: 'Comment faire : #.'
 lastmod: '2024-03-13T22:44:58.300392-06:00'
 model: gpt-4-0125-preview
-summary: "JSON (JavaScript Object Notation) est un format l\xE9ger d'\xE9change de\
-  \ donn\xE9es, facile \xE0 lire et \xE0 \xE9crire pour les humains et \xE0 analyser\
-  \ et \xE0 g\xE9n\xE9rer pour les machines."
+summary: '#.'
 title: Travailler avec JSON
 weight: 38
 ---

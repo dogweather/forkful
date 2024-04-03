@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:36.211417-07:00
-description: "YAML, abrevia\xE7\xE3o de YAML Ain't Markup Language (YAML N\xE3o \xE9\
-  \ Uma Linguagem de Marca\xE7\xE3o), \xE9 um formato de serializa\xE7\xE3o de dados\
-  \ leg\xEDvel por humanos.\u2026"
+description: "Como fazer: Em JavaScript, trabalhar com YAML geralmente envolve o uso\
+  \ de uma biblioteca de terceiros, uma vez que a linguagem n\xE3o inclui um analisador\u2026"
 lastmod: '2024-03-13T22:44:46.982539-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, abrevia\xE7\xE3o de YAML Ain't Markup Language (YAML N\xE3o \xE9 Uma\
-  \ Linguagem de Marca\xE7\xE3o), \xE9 um formato de serializa\xE7\xE3o de dados leg\xED\
-  vel por humanos."
+summary: "Em JavaScript, trabalhar com YAML geralmente envolve o uso de uma biblioteca\
+  \ de terceiros, uma vez que a linguagem n\xE3o inclui um analisador integrado para\
+  \ YAML."
 title: Trabalhando com YAML
 weight: 41
 ---

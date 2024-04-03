@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:46.620358-07:00
-description: "Assosiatiiviset taulukot, tunnetaan muissa kieli\xE4 karttoina tai sanakirjoina,\
-  \ ovat avain-arvo-pareja, joita k\xE4ytet\xE4\xE4n tehokkaaseen datan etsint\xE4\
-  \xE4n ja\u2026"
+description: "Kuinka: C ei tarjoa sis\xE4\xE4nrakennettua tukea assosiatiivisille\
+  \ taulukoille kuten jotkut korkeamman tason kielet, mutta voit simuloida niit\xE4\
+  \ k\xE4ytt\xE4m\xE4ll\xE4\u2026"
 lastmod: '2024-03-13T22:44:57.031819-06:00'
 model: gpt-4-0125-preview
-summary: "Assosiatiiviset taulukot, tunnetaan muissa kieli\xE4 karttoina tai sanakirjoina,\
-  \ ovat avain-arvo-pareja, joita k\xE4ytet\xE4\xE4n tehokkaaseen datan etsint\xE4\
-  \xE4n ja k\xE4sittelyyn."
+summary: "C ei tarjoa sis\xE4\xE4nrakennettua tukea assosiatiivisille taulukoille\
+  \ kuten jotkut korkeamman tason kielet, mutta voit simuloida niit\xE4 k\xE4ytt\xE4\
+  m\xE4ll\xE4 rakenteita ja hajautusta."
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---

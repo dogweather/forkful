@@ -1,12 +1,11 @@
 ---
 date: 2024-02-03 19:02:39.871634-07:00
-description: "Checking if a directory exists is a fundamental task in PHP programming,\
-  \ as it allows you to verify the presence of a directory before performing\u2026"
+description: "How to: The native way to check if a directory exists in PHP is by using\
+  \ the `is_dir()` function. This function takes a filepath as its argument and\u2026"
 lastmod: '2024-03-13T22:45:00.180235-06:00'
 model: gpt-4-0125-preview
-summary: Checking if a directory exists is a fundamental task in PHP programming,
-  as it allows you to verify the presence of a directory before performing operations
-  like reading from or writing to files within it.
+summary: The native way to check if a directory exists in PHP is by using the `is_dir()`
+  function.
 title: Checking if a directory exists
 weight: 20
 ---

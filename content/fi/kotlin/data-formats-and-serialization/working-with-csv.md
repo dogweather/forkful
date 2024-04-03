@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:49.754023-07:00
-description: "CSV:n (pilkulla erotetut arvot) k\xE4sittelyyn kuuluu tietojen lukeminen\
-  \ ja kirjoittaminen CSV-tiedostoihin, jotka ovat yleinen muoto taulukoiden tietojen\u2026"
+description: "Miten: Kotlin, ollessaan staattisesti tyypitetty ohjelmointikieli, joka\
+  \ toimii JVM:ll\xE4, ei sis\xE4ll\xE4 sis\xE4\xE4nrakennettua kirjastoa CSV-tiedostojen\u2026"
 lastmod: '2024-03-13T22:44:56.553704-06:00'
 model: gpt-4-0125-preview
-summary: "CSV:n (pilkulla erotetut arvot) k\xE4sittelyyn kuuluu tietojen lukeminen\
-  \ ja kirjoittaminen CSV-tiedostoihin, jotka ovat yleinen muoto taulukoiden tietojen\
-  \ tallentamiseen pelkk\xE4n\xE4 tekstin\xE4."
+summary: "Kotlin, ollessaan staattisesti tyypitetty ohjelmointikieli, joka toimii\
+  \ JVM:ll\xE4, ei sis\xE4ll\xE4 sis\xE4\xE4nrakennettua kirjastoa CSV-tiedostojen\
+  \ k\xE4sittelyyn."
 title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---

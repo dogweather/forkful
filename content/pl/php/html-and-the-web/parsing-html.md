@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:44.264362-07:00
-description: "Parsowanie HTML w PHP polega na wydobywaniu okre\u015Blonych informacji\
-  \ z dokument\xF3w HTML. Programi\u015Bci wykonuj\u0105 to zadanie, aby automatyzowa\u0107\
-  \ ekstrakcj\u0119\u2026"
+description: "Jak to zrobi\u0107: Do parsowania HTML, programi\u015Bci PHP mog\u0105\
+  \ wykorzysta\u0107 wbudowane funkcje lub opiera\u0107 si\u0119 na solidnych bibliotekach\
+  \ takich jak Simple HTML DOM\u2026"
 lastmod: '2024-03-13T22:44:35.495000-06:00'
 model: gpt-4-0125-preview
-summary: "Parsowanie HTML w PHP polega na wydobywaniu okre\u015Blonych informacji\
-  \ z dokument\xF3w HTML."
+summary: "Do parsowania HTML, programi\u015Bci PHP mog\u0105 wykorzysta\u0107 wbudowane\
+  \ funkcje lub opiera\u0107 si\u0119 na solidnych bibliotekach takich jak Simple\
+  \ HTML DOM Parser."
 title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---

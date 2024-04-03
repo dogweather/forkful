@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:40.189136-07:00
-description: "Das Kapitalisieren eines Strings bedeutet, den ersten Buchstaben eines\
-  \ gegebenen Strings in Gro\xDFbuchstaben umzuwandeln, falls er in Kleinbuchstaben\u2026"
+description: "Wie: TypeScript, als eine Obermenge von JavaScript, erm\xF6glicht verschiedene\
+  \ Methoden zum Kapitalisieren von Strings, die von reinen JavaScript-Ans\xE4tzen\u2026"
 lastmod: '2024-03-13T22:44:53.615169-06:00'
 model: gpt-4-0125-preview
-summary: "Das Kapitalisieren eines Strings bedeutet, den ersten Buchstaben eines gegebenen\
-  \ Strings in Gro\xDFbuchstaben umzuwandeln, falls er in Kleinbuchstaben vorliegt,\
-  \ und oft den Rest des Strings unver\xE4ndert zu lassen."
+summary: "TypeScript, als eine Obermenge von JavaScript, erm\xF6glicht verschiedene\
+  \ Methoden zum Kapitalisieren von Strings, die von reinen JavaScript-Ans\xE4tzen\
+  \ bis zur Nutzung von Drittanbieterbibliotheken f\xFCr komplexere oder spezifische\
+  \ Anwendungsf\xE4lle reichen."
 title: "Einen String gro\xDFschreiben"
 weight: 2
 ---

@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:46.439533-07:00
-description: "Testien kirjoittaminen Haskellilla koskee funktioidesi toivottujen tulosten\
-  \ varmistamista automatisoitujen tarkistusten kautta. Ohjelmoijat tekev\xE4t sen\u2026"
+description: "Kuinka: Haskell tukee erilaisia testauskehyksi\xE4, mutta kaksi suosittua\
+  \ ovat `Hspec` ja `QuickCheck`. Hspec antaa sinun m\xE4\xE4ritell\xE4 ihmislukuisia\
+  \ erittelyj\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.618595-06:00'
 model: gpt-4-0125-preview
-summary: Testien kirjoittaminen Haskellilla koskee funktioidesi toivottujen tulosten
-  varmistamista automatisoitujen tarkistusten kautta.
+summary: "Haskell tukee erilaisia testauskehyksi\xE4, mutta kaksi suosittua ovat `Hspec`\
+  \ ja `QuickCheck`."
 title: Testien kirjoittaminen
 weight: 36
 ---

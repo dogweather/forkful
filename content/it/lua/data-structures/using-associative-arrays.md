@@ -2,15 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:44.433916-07:00
-description: "Gli array associativi in Lua sono come strette di mano segrete per i\
-  \ dati \u2014 invece di avere solo numeri che si allineano diligentemente per indice,\
-  \ le tue\u2026"
+description: "Come fare: In Lua, creare un array associativo (o una tabella, in termini\
+  \ Lua) \xE8 semplice. Si abbandonano gli indici numerici usuali per chiavi di propria\u2026"
 lastmod: '2024-03-13T22:44:43.551086-06:00'
 model: gpt-4-0125-preview
-summary: "Gli array associativi in Lua sono come strette di mano segrete per i dati\
-  \ \u2014 invece di avere solo numeri che si allineano diligentemente per indice,\
-  \ le tue chiavi possono essere ci\xF2 che vuoi, rendendo il recupero dei dati un\
-  \ gioco da ragazzi."
+summary: "In Lua, creare un array associativo (o una tabella, in termini Lua) \xE8\
+  \ semplice."
 title: Utilizzo di array associativi
 weight: 15
 ---

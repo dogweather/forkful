@@ -1,14 +1,9 @@
 ---
 date: 2024-01-27 20:34:12.340976-07:00
-description: "Generowanie losowych liczb w JavaScript to technika u\u017Cywana do\
-  \ tworzenia nieprzewidywalno\u015Bci w aplikacjach, pocz\u0105wszy od gier, kt\xF3\
-  re wymagaj\u0105 losowego\u2026"
+description: "Jak to zrobi\u0107: #."
 lastmod: '2024-03-13T22:44:35.792316-06:00'
 model: gpt-4-0125-preview
-summary: "Generowanie losowych liczb w JavaScript to technika u\u017Cywana do tworzenia\
-  \ nieprzewidywalno\u015Bci w aplikacjach, pocz\u0105wszy od gier, kt\xF3re wymagaj\u0105\
-  \ losowego zachowania wrog\xF3w, po algorytmy bezpiecze\u0144stwa wymagaj\u0105\
-  ce kryptograficznej losowo\u015Bci."
+summary: '#.'
 title: Generowanie liczb losowych
 weight: 12
 ---

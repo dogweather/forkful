@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:48:53.844534-07:00
-description: "Capitalizzare una stringa comporta la modifica dell'input in modo che\
-  \ il primo carattere sia maiuscolo mentre il resto rimanga in minuscolo, comunemente\u2026"
+description: "Come fare: Google Apps Script, essendo basato su JavaScript, consente\
+  \ diversi metodi per capitalizzare una stringa, sebbene senza una funzione integrata.\u2026"
 lastmod: '2024-03-13T22:44:42.935676-06:00'
 model: gpt-4-0125-preview
-summary: Capitalizzare una stringa comporta la modifica dell'input in modo che il
-  primo carattere sia maiuscolo mentre il resto rimanga in minuscolo, comunemente
-  utilizzato per formattare nomi o titoli.
+summary: Google Apps Script, essendo basato su JavaScript, consente diversi metodi
+  per capitalizzare una stringa, sebbene senza una funzione integrata.
 title: Mettere in Maiuscolo una Stringa
 weight: 2
 ---

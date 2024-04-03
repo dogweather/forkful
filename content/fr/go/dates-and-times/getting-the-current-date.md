@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:36.146722-07:00
-description: "Obtenir la date actuelle en Go est une t\xE2che fondamentale pour les\
-  \ programmeurs, au m\xEAme titre que \"Hello, World!\" en raison de son omnipr\xE9\
-  sence. C'est\u2026"
+description: "Comment faire : En Go, le package `time` est votre porte d'entr\xE9\
+  e pour travailler avec les dates et les heures. La fonction `time.Now()` vous donne\
+  \ la\u2026"
 lastmod: '2024-03-13T22:44:57.145724-06:00'
 model: gpt-4-0125-preview
-summary: "Obtenir la date actuelle en Go est une t\xE2che fondamentale pour les programmeurs,\
-  \ au m\xEAme titre que \"Hello, World."
+summary: "En Go, le package `time` est votre porte d'entr\xE9e pour travailler avec\
+  \ les dates et les heures."
 title: Obtenir la date actuelle
 weight: 29
 ---

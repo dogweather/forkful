@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:32.744521-07:00
-description: "Inviare una richiesta HTTP comporta l'inizializzazione di una chiamata\
-  \ dalla tua applicazione Go a un server web, un'API o qualsiasi altro servizio basato\u2026"
+description: "Come fare: In Go, inviare una richiesta HTTP e gestire la risposta comporta\
+  \ l'utilizzo del pacchetto `net/http`. Ecco un esempio passo dopo passo su come\u2026"
 lastmod: '2024-03-13T22:44:42.904650-06:00'
 model: gpt-4-0125-preview
-summary: Inviare una richiesta HTTP comporta l'inizializzazione di una chiamata dalla
-  tua applicazione Go a un server web, un'API o qualsiasi altro servizio basato su
-  HTTP.
+summary: In Go, inviare una richiesta HTTP e gestire la risposta comporta l'utilizzo
+  del pacchetto `net/http`.
 title: Inviare una richiesta HTTP
 weight: 44
 ---

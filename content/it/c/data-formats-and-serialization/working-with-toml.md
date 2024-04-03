@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:12:19.043265-07:00
-description: "TOML (Tom's Obvious, Minimal Language, ovvero Linguaggio Minimale e\
-  \ Ovvio di Tom) \xE8 un formato di file di configurazione che \xE8 facile da leggere\
-  \ grazie\u2026"
+description: "Come fare: Per lavorare con TOML in C, hai prima bisogno di una libreria\
+  \ in grado di analizzare i file TOML, dato che la libreria standard C non include\u2026"
 lastmod: '2024-03-13T22:44:44.030472-06:00'
 model: gpt-4-0125-preview
-summary: "TOML (Tom's Obvious, Minimal Language, ovvero Linguaggio Minimale e Ovvio\
-  \ di Tom) \xE8 un formato di file di configurazione che \xE8 facile da leggere grazie\
-  \ alla sua chiara semantica."
+summary: "Per lavorare con TOML in C, hai prima bisogno di una libreria in grado di\
+  \ analizzare i file TOML, dato che la libreria standard C non include questa funzionalit\xE0\
+  ."
 title: Lavorare con TOML
 weight: 39
 ---

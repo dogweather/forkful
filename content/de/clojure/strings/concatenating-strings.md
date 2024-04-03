@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:34:19.896197-07:00
-description: "In Clojure und anderen Sprachen bedeutet das Verketten von Strings,\
-  \ dass wir sie aneinanderreihen, um einen neuen, l\xE4ngeren String zu bilden. Das\
-  \ ist\u2026"
+description: 'How to: Hier sind ein paar Beispiele, wie man Strings in Clojure verketten
+  kann.'
 lastmod: '2024-03-13T22:44:53.411995-06:00'
 model: gpt-4-1106-preview
-summary: "In Clojure und anderen Sprachen bedeutet das Verketten von Strings, dass\
-  \ wir sie aneinanderreihen, um einen neuen, l\xE4ngeren String zu bilden."
+summary: Hier sind ein paar Beispiele, wie man Strings in Clojure verketten kann.
 title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---

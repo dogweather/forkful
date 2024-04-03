@@ -1,12 +1,10 @@
 ---
 date: 2024-01-27 20:32:57.432945-07:00
-description: "Satunnaislukujen tuottaminen Bashissa tarjoaa keinon tuoda ep\xE4varmuutta\
-  \ skripteihin, mik\xE4 on olennaista teht\xE4viss\xE4 kuten turvallisten salasanojen\u2026"
+description: "Kuinka: Bashissa `$RANDOM`-muuttuja on se mihin turvaudutaan satunnaislukujen\
+  \ tuottamisessa. Joka kerta kun viittaat siihen, Bash tarjoaa\u2026"
 lastmod: '2024-03-13T22:44:56.733493-06:00'
 model: gpt-4-0125-preview
-summary: "Satunnaislukujen tuottaminen Bashissa tarjoaa keinon tuoda ep\xE4varmuutta\
-  \ skripteihin, mik\xE4 on olennaista teht\xE4viss\xE4 kuten turvallisten salasanojen\
-  \ generointi, datan simulointi tai pelien ohjelmointi."
+summary: Bashissa `$RANDOM`-muuttuja on se mihin turvaudutaan satunnaislukujen tuottamisessa.
 title: Satunnaislukujen generointi
 weight: 12
 ---

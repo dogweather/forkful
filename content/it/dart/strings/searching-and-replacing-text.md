@@ -2,12 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:14.457336-07:00
-description: "Cercare e sostituire testo in Dart comporta l'esame di stringhe per\
-  \ trovare determinati schemi o sequenze di caratteri e sostituirli con nuovo contenuto.\u2026"
+description: "Come fare: Dart fornisce metodi robusti per cercare e sostituire testo\
+  \ direttamente tramite la sua classe `String`, senza la necessit\xE0 di librerie\u2026"
 lastmod: '2024-03-13T22:44:43.112121-06:00'
 model: gpt-4-0125-preview
-summary: Cercare e sostituire testo in Dart comporta l'esame di stringhe per trovare
-  determinati schemi o sequenze di caratteri e sostituirli con nuovo contenuto.
+summary: "Dart fornisce metodi robusti per cercare e sostituire testo direttamente\
+  \ tramite la sua classe `String`, senza la necessit\xE0 di librerie esterne."
 title: Ricerca e sostituzione del testo
 weight: 10
 ---

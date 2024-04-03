@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:59.744270-07:00
-description: "Tekst zoeken en vervangen is het vinden van specifieke reeksen en deze\
-  \ omwisselen met iets anders. Programmeurs doen dit om code bij te werken, fouten\
-  \ te\u2026"
+description: 'Hoe te: Laten we alle instanties van ''kat'' naar ''hond'' veranderen
+  in een string.'
 lastmod: '2024-03-13T22:44:51.230069-06:00'
 model: gpt-4-0125-preview
-summary: Tekst zoeken en vervangen is het vinden van specifieke reeksen en deze omwisselen
-  met iets anders.
+summary: Laten we alle instanties van 'kat' naar 'hond' veranderen in een string.
 title: Zoeken en vervangen van tekst
 weight: 10
 ---

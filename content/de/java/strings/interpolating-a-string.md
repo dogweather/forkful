@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:51:01.158472-07:00
-description: "String-Interpolation erm\xF6glicht es, Variablenwerte nahtlos in Strings\
-  \ einzubetten. Wir nutzen es, um dynamischen Text leichter lesbar und wartbar zu\u2026"
+description: "How to: Java bietet keine eingebaute String-Interpolation wie einige\
+  \ andere Sprachen. Aber seit Java 5 verwenden wir `printf` oder `String.format`.\
+  \ Ab\u2026"
 lastmod: '2024-03-13T22:44:53.749649-06:00'
 model: gpt-4-1106-preview
-summary: "String-Interpolation erm\xF6glicht es, Variablenwerte nahtlos in Strings\
-  \ einzubetten."
+summary: Java bietet keine eingebaute String-Interpolation wie einige andere Sprachen.
 title: Zeichenketten interpolieren
 weight: 8
 ---

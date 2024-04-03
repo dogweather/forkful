@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:00.779959-07:00
-description: "Leer argumentos de l\xEDnea de comando en Go implica extraer los argumentos\
-  \ proporcionados a un programa durante su invocaci\xF3n desde el terminal o la l\xED\
-  nea\u2026"
+description: "C\xF3mo hacerlo: Go ofrece acceso directo a los argumentos de l\xED\
+  nea de comando a trav\xE9s del paquete `os`, espec\xEDficamente usando `os.Args`,\
+  \ un arreglo de\u2026"
 lastmod: '2024-03-13T22:44:58.485044-06:00'
 model: gpt-4-0125-preview
-summary: "Leer argumentos de l\xEDnea de comando en Go implica extraer los argumentos\
-  \ proporcionados a un programa durante su invocaci\xF3n desde el terminal o la l\xED\
-  nea de comandos."
+summary: "Go ofrece acceso directo a los argumentos de l\xEDnea de comando a trav\xE9\
+  s del paquete `os`, espec\xEDficamente usando `os.Args`, un arreglo de cadenas."
 title: "Leyendo argumentos de l\xEDnea de comandos"
 weight: 23
 ---

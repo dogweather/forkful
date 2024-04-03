@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:12:59.848917-07:00
-description: "Werken met XML in C houdt in dat je XML-documenten parseert, opvraagt\
-  \ en manipuleert met behulp van verschillende bibliotheken. Programmeurs werken\
-  \ met\u2026"
+description: "Hoe te: C heeft geen ingebouwde ondersteuning voor XML, dus je moet\
+  \ externe bibliotheken gebruiken. Een populaire keuze is `libxml2`, een stabiele\
+  \ en\u2026"
 lastmod: '2024-03-13T22:44:51.316398-06:00'
 model: gpt-4-0125-preview
-summary: Werken met XML in C houdt in dat je XML-documenten parseert, opvraagt en
-  manipuleert met behulp van verschillende bibliotheken.
+summary: C heeft geen ingebouwde ondersteuning voor XML, dus je moet externe bibliotheken
+  gebruiken.
 title: Werken met XML
 weight: 40
 ---

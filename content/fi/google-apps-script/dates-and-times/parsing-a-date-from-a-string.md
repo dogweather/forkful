@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:34.932962-07:00
-description: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta tarkoittaa tekstin,\
-  \ joka edustaa p\xE4iv\xE4m\xE4\xE4r\xE4\xE4, muuntamista p\xE4iv\xE4m\xE4\xE4r\xE4\
-  objektiksi. Se mahdollistaa ohjelmoijien suorittaa\u2026"
+description: "Kuinka: Google Apps Scriptiss\xE4, joka perustuu JavaScriptiin, on useita\
+  \ tapoja j\xE4sent\xE4\xE4 p\xE4iv\xE4m\xE4\xE4r\xE4 merkkijonosta. Alla on esimerkkej\xE4\
+  \ sek\xE4 natiivien\u2026"
 lastmod: '2024-03-13T22:44:56.108333-06:00'
 model: gpt-4-0125-preview
-summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta tarkoittaa tekstin,\
-  \ joka edustaa p\xE4iv\xE4m\xE4\xE4r\xE4\xE4, muuntamista p\xE4iv\xE4m\xE4\xE4r\xE4\
-  objektiksi."
+summary: "Google Apps Scriptiss\xE4, joka perustuu JavaScriptiin, on useita tapoja\
+  \ j\xE4sent\xE4\xE4 p\xE4iv\xE4m\xE4\xE4r\xE4 merkkijonosta."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta"
 weight: 30
 ---

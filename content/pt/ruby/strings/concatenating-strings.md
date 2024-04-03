@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:35:37.531758-07:00
-description: "Concatenar strings \xE9 o processo de juntar duas ou mais strings para\
-  \ formar uma \xFAnica. Programadores fazem isso para construir mensagens, gerar\
-  \ sa\xEDdas\u2026"
+description: 'How to (Como Fazer): .'
 lastmod: '2024-03-13T22:44:47.085699-06:00'
 model: gpt-4-1106-preview
-summary: "Concatenar strings \xE9 o processo de juntar duas ou mais strings para formar\
-  \ uma \xFAnica."
+summary: .
 title: Concatenando strings
 weight: 3
 ---

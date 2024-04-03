@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:43:26.326395-07:00
-description: "Zaokr\u0105glanie liczb oznacza dostosowanie ich do najbli\u017Cszej\
-  \ okre\u015Blonej warto\u015Bci miejsca \u2013 pomy\u015Bl o sprowadzeniu ich do\
-  \ prostszej formy. Programi\u015Bci\u2026"
+description: "Jak to zrobi\u0107: Oto bilet w obie strony na zaokr\u0105glanie liczb\
+  \ w C#."
 lastmod: '2024-03-13T22:44:35.403344-06:00'
 model: gpt-4-0125-preview
-summary: "Zaokr\u0105glanie liczb oznacza dostosowanie ich do najbli\u017Cszej okre\u015B\
-  lonej warto\u015Bci miejsca \u2013 pomy\u015Bl o sprowadzeniu ich do prostszej formy."
+summary: "Oto bilet w obie strony na zaokr\u0105glanie liczb w C#."
 title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---

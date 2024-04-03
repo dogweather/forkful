@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:34.984319-07:00
-description: "L'analisi dell'HTML (Parsing HTML) consiste nell'estrazione di dati\
-  \ e informazioni dai documenti HTML, che \xE8 cruciale per il web scraping, l'analisi\
-  \ dei\u2026"
+description: "Come fare: Lua non ha una libreria incorporata per l'analisi dell'HTML,\
+  \ ma \xE8 possibile utilizzare librerie di terze parti come `LuaHTML` o sfruttare\
+  \ i\u2026"
 lastmod: '2024-03-13T22:44:43.555686-06:00'
 model: gpt-4-0125-preview
-summary: "L'analisi dell'HTML (Parsing HTML) consiste nell'estrazione di dati e informazioni\
-  \ dai documenti HTML, che \xE8 cruciale per il web scraping, l'analisi dei dati\
-  \ e i compiti di automazione."
+summary: "Lua non ha una libreria incorporata per l'analisi dell'HTML, ma \xE8 possibile\
+  \ utilizzare librerie di terze parti come `LuaHTML` o sfruttare i binding per `libxml2`\
+  \ tramite `LuaXML`."
 title: Analisi del HTML
 weight: 43
 ---

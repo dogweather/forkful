@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 03:36:57.422645-07:00
-description: "Refaktorointi on prosessi, jossa olemassa olevaa tietokonekoodia rakenneuudistetaan\
-  \ muuttamatta sen ulkoista toimintaa. Ohjelmoijat refaktoroivat\u2026"
+description: "Kuinka: K\xE4yd\xE4\xE4n l\xE4pi esimerkki Ruby-metodin refaktoroinnista,\
+  \ joka laskee neli\xF6iden summan. **Ennen refaktorointia:**."
 lastmod: '2024-03-13T22:44:57.095433-06:00'
 model: gpt-4-0125-preview
-summary: Refaktorointi on prosessi, jossa olemassa olevaa tietokonekoodia rakenneuudistetaan
-  muuttamatta sen ulkoista toimintaa.
+summary: "K\xE4yd\xE4\xE4n l\xE4pi esimerkki Ruby-metodin refaktoroinnista, joka laskee\
+  \ neli\xF6iden summan."
 title: Koodin refaktorointi
 weight: 19
 ---

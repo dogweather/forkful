@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:48.843186-07:00
-description: "Interpolacja ci\u0105g\xF3w w Google Apps Script umo\u017Cliwia dynamiczne\
-  \ osadzanie wyra\u017Ce\u0144 w ci\u0105gach, u\u0142atwiaj\u0105c tworzenie bardziej\
-  \ czytelnego i \u0142atwiejszego do\u2026"
+description: "Jak to zrobi\u0107: W Google Apps Script interpolacja ci\u0105g\xF3\
+  w jest realizowana za pomoc\u0105 litera\u0142\xF3w szablonowych. S\u0105 to litera\u0142\
+  y ci\u0105g\xF3w umo\u017Cliwiaj\u0105ce osadzanie\u2026"
 lastmod: '2024-03-13T22:44:34.886130-06:00'
 model: gpt-4-0125-preview
-summary: "Interpolacja ci\u0105g\xF3w w Google Apps Script umo\u017Cliwia dynamiczne\
-  \ osadzanie wyra\u017Ce\u0144 w ci\u0105gach, u\u0142atwiaj\u0105c tworzenie bardziej\
-  \ czytelnego i \u0142atwiejszego do utrzymania kodu."
+summary: "W Google Apps Script interpolacja ci\u0105g\xF3w jest realizowana za pomoc\u0105\
+  \ litera\u0142\xF3w szablonowych."
 title: "Interpolacja ci\u0105gu znak\xF3w"
 weight: 8
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:40.310019-07:00
-description: "Testien kirjoittaminen C#:ssa tarkoittaa automatisoitujen skriptien\
-  \ luomista koodisi toiminnallisuuden varmistamiseksi, jotta se k\xE4ytt\xE4ytyy\
-  \ odotetulla\u2026"
+description: "Miten: C#-kehitt\xE4j\xE4t k\xE4ytt\xE4v\xE4t p\xE4\xE4asiassa NUnit-\
+  \ tai xUnit-kehyksi\xE4 testien kirjoittamiseen niiden joustavuuden ja laajan ominaisuusjoukon\
+  \ vuoksi. T\xE4ss\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.576501-06:00'
 model: gpt-4-0125-preview
-summary: "Testien kirjoittaminen C#:ssa tarkoittaa automatisoitujen skriptien luomista\
-  \ koodisi toiminnallisuuden varmistamiseksi, jotta se k\xE4ytt\xE4ytyy odotetulla\
-  \ tavalla."
+summary: "C#-kehitt\xE4j\xE4t k\xE4ytt\xE4v\xE4t p\xE4\xE4asiassa NUnit- tai xUnit-kehyksi\xE4\
+  \ testien kirjoittamiseen niiden joustavuuden ja laajan ominaisuusjoukon vuoksi."
 title: Testien kirjoittaminen
 weight: 36
 ---

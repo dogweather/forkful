@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:33:35.668734-07:00
-description: "Att j\xE4mf\xF6ra tv\xE5 datum inneb\xE4r att avg\xF6ra vilket av dem\
-  \ som \xE4r tidigast eller senast. Programmerare g\xF6r detta f\xF6r att hantera\
-  \ tidsberoende h\xE4ndelser, t.ex.\u2026"
+description: "How to: J\xE4mf\xF6r tv\xE5 datum i Python med `datetime`-modulen."
 lastmod: '2024-03-13T22:44:37.495355-06:00'
 model: gpt-4-1106-preview
-summary: "Att j\xE4mf\xF6ra tv\xE5 datum inneb\xE4r att avg\xF6ra vilket av dem som\
-  \ \xE4r tidigast eller senast."
+summary: "J\xE4mf\xF6r tv\xE5 datum i Python med `datetime`-modulen."
 title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---

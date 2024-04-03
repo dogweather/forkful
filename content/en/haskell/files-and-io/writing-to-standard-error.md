@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:03:30.324317-07:00
-description: "Writing to standard error (stderr) in Haskell allows programs to differentiate\
-  \ their output between normal results and error messages. This is crucial for\u2026"
+description: 'How to: In Haskell, writing to stderr is straightforward with the base
+  library''s `System.IO` module. Below is a basic example to demonstrate.'
 lastmod: '2024-03-13T22:45:00.143228-06:00'
 model: gpt-4-0125-preview
-summary: Writing to standard error (stderr) in Haskell allows programs to differentiate
-  their output between normal results and error messages.
+summary: In Haskell, writing to stderr is straightforward with the base library's
+  `System.IO` module.
 title: Writing to standard error
 weight: 25
 ---

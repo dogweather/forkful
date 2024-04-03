@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:06.571692-07:00
-description: "Das Schreiben auf den Standardfehler (`stderr`) in C++ beinhaltet die\
-  \ Ausgabe von Fehlermeldungen oder Diagnosen, die getrennt von der\u2026"
+description: "Wie geht das: In C++ kann das Schreiben auf den Standardfehler mit dem\
+  \ `cerr`-Stream erreicht werden, der Teil der Standardbibliothek ist. Hier ist ein\u2026"
 lastmod: '2024-03-13T22:44:54.200822-06:00'
 model: gpt-4-0125-preview
-summary: Das Schreiben auf den Standardfehler (`stderr`) in C++ beinhaltet die Ausgabe
-  von Fehlermeldungen oder Diagnosen, die getrennt von der Hauptprogrammausgabe sind.
+summary: In C++ kann das Schreiben auf den Standardfehler mit dem `cerr`-Stream erreicht
+  werden, der Teil der Standardbibliothek ist.
 title: Schreiben auf Standardfehler
 weight: 25
 ---

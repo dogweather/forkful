@@ -2,16 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:20.426819-07:00
-description: "Ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1\
-  i gi\xFAp b\u1EA1n x\xE1c nh\u1EADn s\u1EF1 hi\u1EC7n di\u1EC7n c\u1EE7a m\u1ED9\
-  t th\u01B0 m\u1EE5c trong h\u1EC7 th\u1ED1ng t\u1EADp tin tr\u01B0\u1EDBc khi b\u1EA1\
-  n c\u1ED1 g\u1EAFng s\u1EED d\u1EE5ng n\xF3. L\u1EADp tr\xECnh vi\xEAn\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong PHP, `is_dir()` ki\u1EC3m tra n\u1EBF\
+  u m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i."
 lastmod: '2024-03-13T22:44:36.785847-06:00'
 model: gpt-4-0125-preview
-summary: "Ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i gi\xFA\
-  p b\u1EA1n x\xE1c nh\u1EADn s\u1EF1 hi\u1EC7n di\u1EC7n c\u1EE7a m\u1ED9t th\u01B0\
-  \ m\u1EE5c trong h\u1EC7 th\u1ED1ng t\u1EADp tin tr\u01B0\u1EDBc khi b\u1EA1n c\u1ED1\
-  \ g\u1EAFng s\u1EED d\u1EE5ng n\xF3."
+summary: "Trong PHP, `is_dir()` ki\u1EC3m tra n\u1EBFu m\u1ED9t th\u01B0 m\u1EE5c\
+  \ c\xF3 t\u1ED3n t\u1EA1i."
 title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
 weight: 20
 ---

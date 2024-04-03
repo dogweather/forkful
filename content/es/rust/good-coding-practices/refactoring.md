@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 03:36:34.408385-07:00
-description: "Refactorizaci\xF3n es el proceso de reestructurar el c\xF3digo computacional\
-  \ existente\u2014cambiando la factorizaci\xF3n\u2014sin alterar su comportamiento\
-  \ externo. Los\u2026"
+description: "C\xF3mo hacerlo: Vamos a refactorizar un simple fragmento de c\xF3digo\
+  \ en Rust para hacerlo m\xE1s idiom\xE1tico y mantenible. Empezamos con una funci\xF3\
+  n que calcula\u2026"
 lastmod: '2024-03-13T22:44:58.854921-06:00'
 model: gpt-4-0125-preview
-summary: "Refactorizaci\xF3n es el proceso de reestructurar el c\xF3digo computacional\
-  \ existente\u2014cambiando la factorizaci\xF3n\u2014sin alterar su comportamiento\
-  \ externo."
+summary: "Vamos a refactorizar un simple fragmento de c\xF3digo en Rust para hacerlo\
+  \ m\xE1s idiom\xE1tico y mantenible."
 title: "Refactorizaci\xF3n"
 weight: 19
 ---

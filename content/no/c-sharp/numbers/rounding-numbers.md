@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 03:43:24.859800-07:00
-description: "\xC5 avrunde tall betyr \xE5 justere dem til den n\xE6rmeste spesifiserte\
-  \ plassverdien\u2014tenk \xE5 spenne dem ned til en enklere form. Programmerere\
-  \ runder av for \xE5\u2026"
+description: "Hvordan: Her er billetten for \xE5 avrunde tall i C#."
 lastmod: '2024-03-13T22:44:40.790192-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 avrunde tall betyr \xE5 justere dem til den n\xE6rmeste spesifiserte\
-  \ plassverdien\u2014tenk \xE5 spenne dem ned til en enklere form."
+summary: "Her er billetten for \xE5 avrunde tall i C#."
 title: Avrunding av tall
 weight: 13
 ---

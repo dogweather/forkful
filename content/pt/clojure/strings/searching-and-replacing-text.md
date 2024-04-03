@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:57:20.774285-07:00
-description: "Pesquisar e substituir texto \xE9 a arte de encontrar certas palavras\
-  \ ou padr\xF5es e troc\xE1-los por algo novo. Programadores fazem isso para corrigir\
-  \ erros,\u2026"
+description: 'Como Fazer: .'
 lastmod: '2024-03-13T22:44:46.182589-06:00'
 model: gpt-4-1106-preview
-summary: "Pesquisar e substituir texto \xE9 a arte de encontrar certas palavras ou\
-  \ padr\xF5es e troc\xE1-los por algo novo."
+summary: .
 title: Pesquisando e substituindo texto
 weight: 10
 ---

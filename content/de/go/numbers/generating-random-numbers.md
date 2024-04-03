@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:32.605170-07:00
-description: "Die Generierung von Zufallszahlen in der Programmierung dreht sich darum,\
-  \ eine Zahlenfolge zu erstellen, die nicht besser als durch Zufall vorhergesagt\u2026"
+description: "Wie geht das: In Go werden Zufallszahlen mit dem `math/rand` Paket f\xFC\
+  r Pseudo-Zufallszahlen oder `crypto/rand` f\xFCr kryptographisch sichere Pseudo-\u2026"
 lastmod: '2024-03-13T22:44:53.283057-06:00'
 model: gpt-4-0125-preview
-summary: Die Generierung von Zufallszahlen in der Programmierung dreht sich darum,
-  eine Zahlenfolge zu erstellen, die nicht besser als durch Zufall vorhergesagt werden
-  kann.
+summary: "In Go werden Zufallszahlen mit dem `math/rand` Paket f\xFCr Pseudo-Zufallszahlen\
+  \ oder `crypto/rand` f\xFCr kryptographisch sichere Pseudo-Zufallszahlen generiert."
 title: Zufallszahlen generieren
 weight: 12
 ---

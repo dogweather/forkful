@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:46.945981-07:00
-description: "Werken met YAML betekent het parseren en genereren van YAML (Yet Another\
-  \ Markup Language) documenten in Python. Programmeurs doen dit om\u2026"
+description: 'Hoe: Om met YAML in Python te werken, heb je `pyyaml` nodig. Installeer
+  het met.'
 lastmod: '2024-03-13T22:44:50.396678-06:00'
 model: gpt-4-0125-preview
-summary: Werken met YAML betekent het parseren en genereren van YAML (Yet Another
-  Markup Language) documenten in Python.
+summary: Om met YAML in Python te werken, heb je `pyyaml` nodig.
 title: Werken met YAML
 weight: 41
 ---

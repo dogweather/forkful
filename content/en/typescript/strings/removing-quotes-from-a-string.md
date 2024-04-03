@@ -1,11 +1,11 @@
 ---
 date: 2024-01-25 20:50:23.943509-07:00
-description: "Removing quotes from a string means stripping out the surrounding single\
-  \ (`'`) or double (`\"`) quote characters that define string literals in code.\u2026"
+description: 'How to: Here''s your no-nonsense guide to cutting those pesky quote
+  marks loose from your strings in TypeScript.'
 lastmod: '2024-03-13T22:44:59.847732-06:00'
 model: gpt-4-1106-preview
-summary: Removing quotes from a string means stripping out the surrounding single
-  (`'`) or double (`"`) quote characters that define string literals in code.
+summary: Here's your no-nonsense guide to cutting those pesky quote marks loose from
+  your strings in TypeScript.
 title: Removing quotes from a string
 weight: 9
 ---

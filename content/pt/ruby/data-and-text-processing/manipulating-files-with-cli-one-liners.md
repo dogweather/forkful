@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 16:21:38.799797-07:00
-description: "Manipular arquivos com one-liners CLI em Ruby trata de realizar opera\xE7\
-  \xF5es comuns com arquivos diretamente do seu terminal usando scripts Ruby. \xC9\
-  \ um m\xE9todo\u2026"
+description: "Como fazer: Ruby, com sua sintaxe expressiva, permite one-liners sucintos\
+  \ e leg\xEDveis que podem lidar com uma variedade de opera\xE7\xF5es de arquivos.\
+  \ Aqui\u2026"
 lastmod: '2024-03-13T22:44:47.090466-06:00'
 model: gpt-4-0125-preview
-summary: "Manipular arquivos com one-liners CLI em Ruby trata de realizar opera\xE7\
-  \xF5es comuns com arquivos diretamente do seu terminal usando scripts Ruby."
+summary: "Ruby, com sua sintaxe expressiva, permite one-liners sucintos e leg\xED\
+  veis que podem lidar com uma variedade de opera\xE7\xF5es de arquivos."
 title: Manipulando arquivos com one-liners de CLI
 weight: 31
 ---

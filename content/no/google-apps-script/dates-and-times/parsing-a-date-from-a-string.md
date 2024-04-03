@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:42.974938-07:00
-description: "\xC5 analysere en dato fra en streng inneb\xE6rer \xE5 konvertere tekst\
-  \ som representerer en dato, til et datoomsjekt, noe som muliggj\xF8r at programmerere\
-  \ kan\u2026"
+description: "Hvordan: I Google Apps Script, som er basert p\xE5 JavaScript, har du\
+  \ flere tiln\xE6rminger for \xE5 analysere en dato fra en streng. Nedenfor er eksempler\
+  \ som\u2026"
 lastmod: '2024-03-13T22:44:40.325895-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 analysere en dato fra en streng inneb\xE6rer \xE5 konvertere tekst\
-  \ som representerer en dato, til et datoomsjekt, noe som muliggj\xF8r at programmerere\
-  \ kan utf\xF8re dato-relaterte operasjoner som sammenligninger, aritmetikk og formatering."
+summary: "I Google Apps Script, som er basert p\xE5 JavaScript, har du flere tiln\xE6\
+  rminger for \xE5 analysere en dato fra en streng."
 title: Analysering av en dato fra en streng
 weight: 30
 ---

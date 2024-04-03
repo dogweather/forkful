@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:55:02.371289-07:00
-description: "L\xE4sning av textfiler handlar om att f\xE5 tillg\xE5ng till information\
-  \ sparad p\xE5 servern. Programmerare g\xF6r det f\xF6r att hantera data, konfigurera\
-  \ system eller\u2026"
+description: "Hur man g\xF6r: PHP erbjuder flera funktioner f\xF6r att l\xE4sa textfiler.\
+  \ H\xE4r \xE4r ett enkelt exempel med `file_get_contents` och `fopen`."
 lastmod: '2024-03-13T22:44:38.013540-06:00'
 model: gpt-4-1106-preview
-summary: "L\xE4sning av textfiler handlar om att f\xE5 tillg\xE5ng till information\
-  \ sparad p\xE5 servern."
+summary: "PHP erbjuder flera funktioner f\xF6r att l\xE4sa textfiler."
 title: "L\xE4sa en textfil"
 weight: 22
 ---

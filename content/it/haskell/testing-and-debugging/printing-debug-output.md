@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:52:36.901658-07:00
-description: "Stampare output di debug significa mostrare dati interni del programma\
-  \ durante l'esecuzione per capire cosa sta succedendo. I programmatori lo usano\
-  \ per\u2026"
+description: 'How to: Per stampare output in Haskell, possiamo usare le funzioni `print`,
+  `putStrLn` o `putStr`. Ecco alcuni esempi.'
 lastmod: '2024-03-13T22:44:43.477508-06:00'
 model: gpt-4-1106-preview
-summary: Stampare output di debug significa mostrare dati interni del programma durante
-  l'esecuzione per capire cosa sta succedendo.
+summary: Per stampare output in Haskell, possiamo usare le funzioni `print`, `putStrLn`
+  o `putStr`.
 title: Stampa dell'output di debug
 weight: 33
 ---

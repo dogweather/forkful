@@ -2,17 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:20.867837-07:00
-description: "L\xE0m vi\u1EC7c v\u1EDBi CSV (Comma-Separated Values - Gi\xE1 tr\u1ECB\
-  \ t\xE1ch bi\u1EC7t b\u1EB1ng d\u1EA5u ph\u1EA9y) bao g\u1ED3m vi\u1EC7c \u0111\u1ECD\
-  c v\xE0 vi\u1EBFt d\u1EEF li\u1EC7u d\u01B0\u1EDBi d\u1EA1ng v\u0103n b\u1EA3n,\
-  \ n\u01A1i m\u1ED7i d\xF2ng c\xF3 c\xE1c tr\u01B0\u1EDDng\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi CSV trong\
+  \ Kotlin, b\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng th\u01B0 vi\u1EC7n c\u1ED1t\
+  \ l\xF5i ho\u1EB7c c\xE1c th\u01B0 vi\u1EC7n c\u1EE7a b\xEAn th\u1EE9 ba nh\u01B0\
+  \ Kotlinx.serialization hay Apache\u2026"
 lastmod: '2024-03-13T22:44:36.630704-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m vi\u1EC7c v\u1EDBi CSV (Comma-Separated Values - Gi\xE1 tr\u1ECB\
-  \ t\xE1ch bi\u1EC7t b\u1EB1ng d\u1EA5u ph\u1EA9y) bao g\u1ED3m vi\u1EC7c \u0111\u1ECD\
-  c v\xE0 vi\u1EBFt d\u1EEF li\u1EC7u d\u01B0\u1EDBi d\u1EA1ng v\u0103n b\u1EA3n,\
-  \ n\u01A1i m\u1ED7i d\xF2ng c\xF3 c\xE1c tr\u01B0\u1EDDng t\xE1ch bi\u1EC7t nhau\
-  \ b\u1EDFi d\u1EA5u ph\u1EA9y."
+summary: "\u0110\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi CSV trong Kotlin, b\u1EA1n c\xF3\
+  \ th\u1EC3 s\u1EED d\u1EE5ng th\u01B0 vi\u1EC7n c\u1ED1t l\xF5i ho\u1EB7c c\xE1\
+  c th\u01B0 vi\u1EC7n c\u1EE7a b\xEAn th\u1EE9 ba nh\u01B0 Kotlinx.serialization\
+  \ hay Apache Commons CSV."
 title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 weight: 37
 ---

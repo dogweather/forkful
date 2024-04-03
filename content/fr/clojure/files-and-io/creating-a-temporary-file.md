@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:39:59.029938-07:00
-description: "Cr\xE9er un fichier temporaire, c'est produire un fichier destin\xE9\
-  \ \xE0 une utilisation courte et unique. Les programmeurs le font pour stocker des\
-  \ donn\xE9es\u2026"
+description: "How to: En Clojure, on utilise la librairie Java int\xE9gr\xE9e pour\
+  \ cr\xE9er et manipuler des fichiers temporaires. Voici comment faire."
 lastmod: '2024-03-13T22:44:57.302370-06:00'
 model: gpt-4-1106-preview
-summary: "Cr\xE9er un fichier temporaire, c'est produire un fichier destin\xE9 \xE0\
-  \ une utilisation courte et unique."
+summary: "En Clojure, on utilise la librairie Java int\xE9gr\xE9e pour cr\xE9er et\
+  \ manipuler des fichiers temporaires."
 title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---

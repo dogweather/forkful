@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 00:49:29.212956-07:00
-description: "G\xE9rer les erreurs dans les scripts Bash, c'est pr\xE9voir o\xF9 les\
-  \ choses pourraient mal tourner et y faire face avec \xE9l\xE9gance. Pourquoi ?\
-  \ Et bien, cela assure\u2026"
+description: 'Comment faire : .'
 lastmod: '2024-03-13T22:44:58.005287-06:00'
 model: gpt-4-1106-preview
-summary: "G\xE9rer les erreurs dans les scripts Bash, c'est pr\xE9voir o\xF9 les choses\
-  \ pourraient mal tourner et y faire face avec \xE9l\xE9gance."
+summary: .
 title: Gestion des erreurs
 weight: 16
 ---

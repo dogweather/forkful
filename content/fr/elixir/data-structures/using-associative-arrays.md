@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:55.955119-07:00
-description: "Dans Elixir, les tableaux associatifs, appel\xE9s Maps, sont des collections\
-  \ de paires cl\xE9-valeur o\xF9 une cl\xE9 unique pointe vers une valeur. Ils sont\u2026"
+description: "Comment faire : Cr\xE9er une Map est simple. Vous utilisez la syntaxe\
+  \ `%{}`, comme ceci ."
 lastmod: '2024-03-13T22:44:57.319453-06:00'
 model: gpt-4-0125-preview
-summary: "Dans Elixir, les tableaux associatifs, appel\xE9s Maps, sont des collections\
-  \ de paires cl\xE9-valeur o\xF9 une cl\xE9 unique pointe vers une valeur."
+summary: "Cr\xE9er une Map est simple."
 title: Utilisation des tableaux associatifs
 weight: 15
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 15:34:07.510905-07:00
-description: "L'interpretazione dell'HTML (parsing) serve a estrarre dati da pagine\
-  \ web. I programmatori lo fanno per analizzare, manipolare o estrarre informazioni\
-  \ in\u2026"
+description: 'Come Fare: Swift non ha librerie standard per il parsing HTML, quindi
+  usiamo `SwiftSoup`, una libreria di terze parti.'
 lastmod: '2024-03-13T22:44:43.768112-06:00'
 model: unknown
-summary: L'interpretazione dell'HTML (parsing) serve a estrarre dati da pagine web.
+summary: Swift non ha librerie standard per il parsing HTML, quindi usiamo `SwiftSoup`,
+  una libreria di terze parti.
 title: Analisi dell'HTML
 weight: 43
 ---

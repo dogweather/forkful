@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:04.591923-07:00
-description: "Att arbeta med CSV-filer (Comma-Separated Values eller komma-separerade\
-  \ v\xE4rden) inneb\xE4r att tolka och generera filer som lagrar tabul\xE4r data\
-  \ i ett enkelt,\u2026"
+description: "Hur: I Haskell kan hantering av CSV-filer uppn\xE5s med hj\xE4lp av\
+  \ `cassava`-biblioteket, ett av de popul\xE4ra tredjepartsbiblioteken f\xF6r detta\
+  \ \xE4ndam\xE5l. Nedan\u2026"
 lastmod: '2024-03-13T22:44:37.977135-06:00'
 model: gpt-4-0125-preview
-summary: "Att arbeta med CSV-filer (Comma-Separated Values eller komma-separerade\
-  \ v\xE4rden) inneb\xE4r att tolka och generera filer som lagrar tabul\xE4r data\
-  \ i ett enkelt, textbaserat format."
+summary: "I Haskell kan hantering av CSV-filer uppn\xE5s med hj\xE4lp av `cassava`-biblioteket,\
+  \ ett av de popul\xE4ra tredjepartsbiblioteken f\xF6r detta \xE4ndam\xE5l."
 title: Arbeta med CSV
 weight: 37
 ---

@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:08.685040-07:00
-description: "Het vinden van een stringlengte betekent het tellen van de tekens. We\
-  \ doen dit om invoer te valideren, door tekens te lopen, bronnen toe te wijzen,\
-  \ of uit\u2026"
+description: 'Hoe te: In C# geeft de eigenschap `string.Length` je het aantal tekens
+  in een string. Zo gebruik je het.'
 lastmod: '2024-03-13T22:44:50.801043-06:00'
 model: gpt-4-0125-preview
-summary: Het vinden van een stringlengte betekent het tellen van de tekens.
+summary: In C# geeft de eigenschap `string.Length` je het aantal tekens in een string.
 title: De lengte van een string vinden
 weight: 7
 ---

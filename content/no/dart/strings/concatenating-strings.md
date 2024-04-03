@@ -2,13 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:53:42.923024-07:00
-description: "\xC5 konkatenerere strenger i programmering inneb\xE6rer \xE5 kombinere\
-  \ to eller flere strenger til \xE9n. Programmerere gj\xF8r dette for \xE5 enkelt\
-  \ manipulere tekstdata,\u2026"
+description: "Hvordan: Dart tilbyr flere rettfram m\xE5ter \xE5 konkatenerere strenger\
+  \ p\xE5. Nedenfor er de mest vanlige metodene: #."
 lastmod: '2024-03-13T22:44:40.478519-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 konkatenerere strenger i programmering inneb\xE6rer \xE5 kombinere\
-  \ to eller flere strenger til \xE9n."
+summary: "Dart tilbyr flere rettfram m\xE5ter \xE5 konkatenerere strenger p\xE5."
 title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---

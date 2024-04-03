@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-25, gpt-4-0125-preview, translated from English
 date: 2024-02-25 17:06:50.576729-07:00
-description: "L'interpolazione di stringhe in C# consente di creare una nuova stringa\
-  \ includendo espressioni all'interno di un letterale stringa, facilitando cos\xEC\
-  \ la\u2026"
+description: "Come fare: In C#, l'interpolazione di stringhe \xE8 denotata da un segno\
+  \ di dollaro (`$`) seguito da un letterale stringa. I nomi delle variabili o le\u2026"
 lastmod: '2024-03-13T22:44:43.419793-06:00'
 model: gpt-4-0125-preview
-summary: "L'interpolazione di stringhe in C# consente di creare una nuova stringa\
-  \ includendo espressioni all'interno di un letterale stringa, facilitando cos\xEC\
-  \ la formattazione e la concatenazione di stringhe."
+summary: "In C#, l'interpolazione di stringhe \xE8 denotata da un segno di dollaro\
+  \ (`$`) seguito da un letterale stringa."
 title: Interpolazione di una stringa
 weight: 8
 ---

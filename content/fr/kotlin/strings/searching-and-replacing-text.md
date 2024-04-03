@@ -1,13 +1,10 @@
 ---
 date: 2024-01-20 17:58:10.587492-07:00
-description: "Chercher et remplacer du texte, c'est un peu comme jouer \xE0 cache-cache\
-  \ dans une for\xEAt de mots pour d\xE9nicher une phrase et la transformer en quelque\
-  \ chose\u2026"
+description: 'How to: En Kotlin, on va droit au but. Pour chercher et remplacer, on
+  utilise souvent `replace()`.'
 lastmod: '2024-03-13T22:44:57.720462-06:00'
 model: gpt-4-1106-preview
-summary: "Chercher et remplacer du texte, c'est un peu comme jouer \xE0 cache-cache\
-  \ dans une for\xEAt de mots pour d\xE9nicher une phrase et la transformer en quelque\
-  \ chose de nouveau."
+summary: En Kotlin, on va droit au but.
 title: Recherche et remplacement de texte
 weight: 10
 ---

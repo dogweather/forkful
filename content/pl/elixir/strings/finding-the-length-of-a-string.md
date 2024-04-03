@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:47:13.534224-07:00
-description: "Znalezienie d\u0142ugo\u015Bci \u0142a\u0144cucha znak\xF3w oznacza\
-  \ ustalenie, ile znak\xF3w zawiera dany tekst. Programi\u015Bci robi\u0105 to do\
-  \ walidacji, formatowania, oraz by\u2026"
+description: "Jak to zrobi\u0107: Elixir u\u017Cywa funkcji `String.length/1` do znalezienia\
+  \ d\u0142ugo\u015Bci stringa. Oto jak to dzia\u0142a."
 lastmod: '2024-03-13T22:44:35.032468-06:00'
 model: gpt-4-1106-preview
-summary: "Znalezienie d\u0142ugo\u015Bci \u0142a\u0144cucha znak\xF3w oznacza ustalenie,\
-  \ ile znak\xF3w zawiera dany tekst."
+summary: "Elixir u\u017Cywa funkcji `String.length/1` do znalezienia d\u0142ugo\u015B\
+  ci stringa."
 title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 weight: 7
 ---

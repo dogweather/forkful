@@ -1,10 +1,10 @@
 ---
 date: 2024-01-26 00:57:14.337443-07:00
-description: "Fehlerbehandlung dreht sich darum, sich zu k\xFCmmern, wenn die Dinge\
-  \ schiefgehen. Entwickler machen das, um das Unerwartete zu handhaben, und um\u2026"
+description: "Wie geht das: Rust behandelt Fehler auf zwei wesentliche Arten: behebbare\
+  \ und unbehebbare Fehler. Lassen Sie uns beide betrachten. Behebbare Fehler\u2026"
 lastmod: '2024-03-13T22:44:53.680095-06:00'
 model: gpt-4-1106-preview
-summary: "Fehlerbehandlung dreht sich darum, sich zu k\xFCmmern, wenn die Dinge schiefgehen."
+summary: Rust behandelt Fehler auf zwei wesentliche Arten.
 title: Fehlerbehandlung
 weight: 16
 ---

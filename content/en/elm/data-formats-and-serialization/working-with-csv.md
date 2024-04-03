@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:02:53.400445-07:00
-description: "Working with CSV (Comma Separated Values) involves parsing and generating\
-  \ files that store tabular data in a simple, plaintext format. This is commonly\u2026"
+description: "How to: Elm does not have built-in support for CSV parsing or generation;\
+  \ instead, third-party packages such as `panosoft/elm-csv` are often utilized.\u2026"
 lastmod: '2024-03-13T22:45:00.030778-06:00'
 model: gpt-4-0125-preview
-summary: Working with CSV (Comma Separated Values) involves parsing and generating
-  files that store tabular data in a simple, plaintext format.
+summary: Elm does not have built-in support for CSV parsing or generation; instead,
+  third-party packages such as `panosoft/elm-csv` are often utilized.
 title: Working with CSV
 weight: 37
 ---

@@ -1,11 +1,12 @@
 ---
 date: 2024-01-27 20:33:33.544070-07:00
-description: "\xC5 generere tilfeldige tall er en grunnleggende oppgave i programmering,\
-  \ som brukes til alt fra datautvalg til spillutvikling. I Fish Shell lar bruk av\u2026"
+description: "Hvordan: \xC5 generere et tilfeldig tall i Fish kan v\xE6re enkelt,\
+  \ ved \xE5 bruke kombinasjonen av systemverkt\xF8y og skallfunksjoner. Nedenfor\
+  \ er noen eksempler\u2026"
 lastmod: '2024-03-13T22:44:41.220650-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 generere tilfeldige tall er en grunnleggende oppgave i programmering,\
-  \ som brukes til alt fra datautvalg til spillutvikling."
+summary: "\xC5 generere et tilfeldig tall i Fish kan v\xE6re enkelt, ved \xE5 bruke\
+  \ kombinasjonen av systemverkt\xF8y og skallfunksjoner."
 title: Generering av tilfeldige tall
 weight: 12
 ---

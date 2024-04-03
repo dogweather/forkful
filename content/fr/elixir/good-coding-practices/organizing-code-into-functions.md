@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 01:09:43.328748-07:00
-description: "Organiser le code en fonctions consiste \xE0 regrouper les op\xE9rations\
-  \ li\xE9es en blocs r\xE9utilisables. Nous le faisons pour am\xE9liorer la lisibilit\xE9\
-  \ et la\u2026"
+description: "Comment faire : Cr\xE9ons une fonction Elixir simple pour mettre en\
+  \ majuscule les mots ."
 lastmod: '2024-03-13T22:44:57.333110-06:00'
 model: gpt-4-1106-preview
-summary: "Organiser le code en fonctions consiste \xE0 regrouper les op\xE9rations\
-  \ li\xE9es en blocs r\xE9utilisables."
+summary: "Cr\xE9ons une fonction Elixir simple pour mettre en majuscule les mots."
 title: Organisation du code en fonctions
 weight: 18
 ---

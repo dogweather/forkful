@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:43:52.578068-07:00
-description: "\xC5 laste ned en nettside er prosessen med \xE5 hente innholdet til\
-  \ en nettside via internett, slik at du kan se eller bearbeide det i et program.\u2026"
+description: "Hvordan gj\xF8r man det: Elm gj\xF8r bruk av `Http` for \xE5 laste ned\
+  \ nettsider. Her er et grunnleggende eksempel."
 lastmod: '2024-03-13T22:44:40.707507-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 laste ned en nettside er prosessen med \xE5 hente innholdet til en\
-  \ nettside via internett, slik at du kan se eller bearbeide det i et program."
+summary: "Elm gj\xF8r bruk av `Http` for \xE5 laste ned nettsider."
 title: Nedlasting av en nettside
 weight: 42
 ---

@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:46.556508-07:00
-description: "L'analyse syntaxique du HTML en programmation implique l'analyse de\
-  \ la structure d'un document HTML, ce qui vous permet d'extraire, de manipuler et\u2026"
+description: "Comment faire : Bien que .NET offre un support de base pour travailler\
+  \ avec le HTML, comme le `HttpClient` pour r\xE9cup\xE9rer des pages web, il lui\
+  \ manque un\u2026"
 lastmod: '2024-03-13T22:44:57.784630-06:00'
 model: gpt-4-0125-preview
-summary: L'analyse syntaxique du HTML en programmation implique l'analyse de la structure
-  d'un document HTML, ce qui vous permet d'extraire, de manipuler et d'interagir programmatiquement
-  avec son contenu.
+summary: "Bien que .NET offre un support de base pour travailler avec le HTML, comme\
+  \ le `HttpClient` pour r\xE9cup\xE9rer des pages web, il lui manque un analyseur\
+  \ HTML int\xE9gr\xE9 et complet."
 title: Analyse Syntaxique du HTML
 weight: 43
 ---

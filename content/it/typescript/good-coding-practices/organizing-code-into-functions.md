@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 01:16:20.914380-07:00
-description: "Organizzare il codice in funzioni significa suddividere il proprio codice\
-  \ in blocchi riutilizzabili e modulari. Lo facciamo per mantenere le cose DRY\u2026"
+description: 'Come fare: Immagina di creare una calcolatrice base. Invece di scrivere
+  la logica di addizione ovunque ne hai bisogno, crea una funzione `add`.'
 lastmod: '2024-03-13T22:44:43.181413-06:00'
 model: gpt-4-0125-preview
-summary: Organizzare il codice in funzioni significa suddividere il proprio codice
-  in blocchi riutilizzabili e modulari.
+summary: Immagina di creare una calcolatrice base.
 title: Organizzare il codice in funzioni
 weight: 18
 ---

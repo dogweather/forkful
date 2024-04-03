@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:35.848341-07:00
-description: "Das Lesen einer Textdatei in Visual Basic f\xFCr Anwendungen (VBA) beinhaltet\
-  \ den programmatischen Zugriff auf und das Extrahieren des Inhalts einer\u2026"
+description: "Wie: Die einfachste Methode, eine Textdatei in VBA zu lesen, ist die\
+  \ Verwendung der `Open` Anweisung in Kombination mit den Funktionen `Input` oder\
+  \ `Line\u2026"
 lastmod: '2024-03-13T22:44:53.737735-06:00'
 model: gpt-4-0125-preview
-summary: "Das Lesen einer Textdatei in Visual Basic f\xFCr Anwendungen (VBA) beinhaltet\
-  \ den programmatischen Zugriff auf und das Extrahieren des Inhalts einer Textdatei\
-  \ innerhalb einer Office-Anwendung."
+summary: Die einfachste Methode, eine Textdatei in VBA zu lesen, ist die Verwendung
+  der `Open` Anweisung in Kombination mit den Funktionen `Input` oder `Line Input`.
 title: Eine Textdatei lesen
 weight: 22
 ---

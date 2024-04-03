@@ -2,12 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:38.728664-07:00
-description: "Loggen is het proces van het vastleggen van applicatiegebeurtenissen\
-  \ en data-output tijdens uitvoeringstijd. Programmeurs loggen om bugs te\u2026"
+description: "Hoe te: In C# kun je de ingebouwde `System.Diagnostics`-naamruimte of\
+  \ externe bibliotheken zoals NLog of log4net gebruiken. Hier is een snel voorbeeld\
+  \ met\u2026"
 lastmod: '2024-03-13T22:44:50.816703-06:00'
 model: gpt-4-0125-preview
-summary: Loggen is het proces van het vastleggen van applicatiegebeurtenissen en data-output
-  tijdens uitvoeringstijd.
+summary: In C# kun je de ingebouwde `System.Diagnostics`-naamruimte of externe bibliotheken
+  zoals NLog of log4net gebruiken.
 title: Logboekregistratie
 weight: 17
 ---

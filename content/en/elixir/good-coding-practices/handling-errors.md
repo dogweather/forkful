@@ -1,10 +1,11 @@
 ---
 date: 2024-01-21 21:19:08.204031-07:00
-description: "Handling errors means writing code that can deal with things going sideways.\
-  \ Programmers do it to prevent crashes and to make sure their programs can\u2026"
+description: 'How to: In Elixir, we often use pattern matching and the `case` statement
+  to handle different outcomes, including errors.'
 lastmod: '2024-03-13T22:44:59.788938-06:00'
 model: gpt-4-1106-preview
-summary: Handling errors means writing code that can deal with things going sideways.
+summary: In Elixir, we often use pattern matching and the `case` statement to handle
+  different outcomes, including errors.
 title: Handling errors
 weight: 16
 ---

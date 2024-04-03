@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:40.206009-07:00
-description: "Att tolka ett datum fr\xE5n en str\xE4ng inneb\xE4r att konvertera textuella\
-  \ representationer av datum och tider till ett format som kan manipuleras och analyseras\u2026"
+description: "Hur man g\xF6r: TypeScript, som \xE4r en \xF6verm\xE4ngd av JavaScript,\
+  \ f\xF6rlitar sig p\xE5 Date-objektet f\xF6r att tolka datum fr\xE5n str\xE4ngar.\
+  \ Att arbeta med datum i JS/TS\u2026"
 lastmod: '2024-03-13T22:44:37.665315-06:00'
 model: gpt-4-0125-preview
-summary: "Att tolka ett datum fr\xE5n en str\xE4ng inneb\xE4r att konvertera textuella\
-  \ representationer av datum och tider till ett format som kan manipuleras och analyseras\
-  \ av programmet."
+summary: "TypeScript, som \xE4r en \xF6verm\xE4ngd av JavaScript, f\xF6rlitar sig\
+  \ p\xE5 Date-objektet f\xF6r att tolka datum fr\xE5n str\xE4ngar."
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---

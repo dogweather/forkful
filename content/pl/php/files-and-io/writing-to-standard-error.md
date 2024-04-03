@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:06.222548-07:00
-description: "Pisanie do standardowego b\u0142\u0119du (stderr) w PHP polega na kierowaniu\
-  \ komunikat\xF3w b\u0142\u0119d\xF3w lub diagnozy oddzielnie od standardowego wyj\u015B\
-  cia (stdout), co\u2026"
+description: "Jak to zrobi\u0107: W PHP, pisanie do stderr mo\u017Cna osi\u0105gn\u0105\
+  \u0107 za pomoc\u0105 funkcji `fwrite()` wraz z predefiniowan\u0105 sta\u0142\u0105\
+  \ `STDERR`, kt\xF3ra reprezentuje strumie\u0144\u2026"
 lastmod: '2024-03-13T22:44:35.513916-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie do standardowego b\u0142\u0119du (stderr) w PHP polega na kierowaniu\
-  \ komunikat\xF3w b\u0142\u0119d\xF3w lub diagnozy oddzielnie od standardowego wyj\u015B\
-  cia (stdout), co pozwala programistom lepiej zarz\u0105dza\u0107 swoimi strumieniami\
-  \ wyj\u015Bciowymi dla cel\xF3w debugowania i logowania."
+summary: "W PHP, pisanie do stderr mo\u017Cna osi\u0105gn\u0105\u0107 za pomoc\u0105\
+  \ funkcji `fwrite()` wraz z predefiniowan\u0105 sta\u0142\u0105 `STDERR`, kt\xF3\
+  ra reprezentuje strumie\u0144 wyj\u015Bcia b\u0142\u0119d\xF3w."
 title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---

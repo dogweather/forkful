@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:22.275534-07:00
-description: "Het vergelijken van twee datums betekent uitzoeken welke van de twee\
-  \ eerder is of hoeveel tijd er tussen hen in zit. Programmeurs doen dit om zaken\
-  \ zoals\u2026"
+description: 'Hoe: Elm maakt datumvergelijkingen eenvoudig. Laten we zeggen dat je
+  twee datums hebt. Hier is hoe je zou controleren welke als eerste komt.'
 lastmod: '2024-03-13T22:44:50.737762-06:00'
 model: gpt-4-0125-preview
-summary: Het vergelijken van twee datums betekent uitzoeken welke van de twee eerder
-  is of hoeveel tijd er tussen hen in zit.
+summary: Elm maakt datumvergelijkingen eenvoudig.
 title: Twee datums vergelijken
 weight: 27
 ---

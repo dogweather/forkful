@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:01.205757-07:00
-description: "Py\xF6rist\xE4minen tarkoittaa numeron arvon s\xE4\xE4t\xE4mist\xE4\
-  \ l\xE4himp\xE4\xE4n kokonaislukuun tai tiettyyn desimaalipaikkojen m\xE4\xE4r\xE4\
-  \xE4n. Ohjelmoijat tekev\xE4t n\xE4in syist\xE4, kuten\u2026"
+description: "Miten: Go:ssa ei ole sis\xE4\xE4nrakennettua funktiota, joka suoraan\
+  \ py\xF6rist\xE4isi numerot tiettyyn desimaalipaikkojen m\xE4\xE4r\xE4\xE4n math-paketissa.\
+  \ Voit kuitenkin\u2026"
 lastmod: '2024-03-13T22:44:56.044929-06:00'
 model: gpt-4-0125-preview
-summary: "Py\xF6rist\xE4minen tarkoittaa numeron arvon s\xE4\xE4t\xE4mist\xE4 l\xE4\
-  himp\xE4\xE4n kokonaislukuun tai tiettyyn desimaalipaikkojen m\xE4\xE4r\xE4\xE4\
-  n."
+summary: "Go:ssa ei ole sis\xE4\xE4nrakennettua funktiota, joka suoraan py\xF6rist\xE4\
+  isi numerot tiettyyn desimaalipaikkojen m\xE4\xE4r\xE4\xE4n math-paketissa."
 title: "Lukujen py\xF6rist\xE4minen"
 weight: 13
 ---

@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:58.924132-07:00
-description: "Escribir pruebas en la programaci\xF3n implica crear procedimientos\
-  \ espec\xEDficos para validar la funcionalidad y rendimiento de tus segmentos de\
-  \ c\xF3digo,\u2026"
+description: "C\xF3mo hacerlo: Aunque Visual Basic para Aplicaciones (VBA) no viene\
+  \ con un marco de pruebas integrado similar a los disponibles en lenguajes como\
+  \ Python o\u2026"
 lastmod: '2024-03-13T22:44:58.897226-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir pruebas en la programaci\xF3n implica crear procedimientos espec\xED\
-  ficos para validar la funcionalidad y rendimiento de tus segmentos de c\xF3digo,\
-  \ asegurando que funcionen como se espera bajo diversas condiciones."
+summary: "Aunque Visual Basic para Aplicaciones (VBA) no viene con un marco de pruebas\
+  \ integrado similar a los disponibles en lenguajes como Python o JavaScript, a\xFA\
+  n puedes implementar procedimientos de prueba simples para verificar la integridad\
+  \ de tu c\xF3digo."
 title: Escribiendo pruebas
 weight: 36
 ---

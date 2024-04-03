@@ -1,10 +1,11 @@
 ---
 date: 2024-01-26 01:11:28.382482-07:00
-description: "Organizar el c\xF3digo en funciones divide tu script en bloques reutilizables.\
-  \ Se trata de hacer que tu c\xF3digo sea limpio, manejable y menos propenso a\u2026"
+description: "C\xF3mo hacerlo: Imagina que est\xE1s escribiendo un script r\xE1pido\
+  \ para saludar a los usuarios."
 lastmod: '2024-03-13T22:44:59.596808-06:00'
 model: gpt-4-1106-preview
-summary: "Organizar el c\xF3digo en funciones divide tu script en bloques reutilizables."
+summary: "Imagina que est\xE1s escribiendo un script r\xE1pido para saludar a los\
+  \ usuarios."
 title: "Organizando c\xF3digo en funciones"
 weight: 18
 ---

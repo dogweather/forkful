@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:30.444282-07:00
-description: "Escribir en el error est\xE1ndar (stderr) implica enviar mensajes de\
-  \ error y diagn\xF3sticos a la consola o terminal. Los programadores lo hacen para\
-  \ separar la\u2026"
+description: "C\xF3mo hacerlo: #."
 lastmod: '2024-03-13T22:44:58.953704-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir en el error est\xE1ndar (stderr) implica enviar mensajes de error\
-  \ y diagn\xF3sticos a la consola o terminal."
+summary: '#.'
 title: "Escribiendo en el error est\xE1ndar"
 weight: 25
 ---

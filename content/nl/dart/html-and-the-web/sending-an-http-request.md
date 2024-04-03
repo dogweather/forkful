@@ -2,12 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:19.684611-07:00
-description: "Het versturen van een HTTP-verzoek in Dart is het proces van het starten\
-  \ van communicatie met een webserver of API vanuit een Dart-applicatie.\u2026"
+description: 'Hoe: Dart bevat het `http`-pakket, een krachtige en handige manier om
+  te werken met HTTP-bronnen. Voeg het eerst toe aan je pubspec.yaml-bestand.'
 lastmod: '2024-03-13T22:44:50.501425-06:00'
 model: gpt-4-0125-preview
-summary: Het versturen van een HTTP-verzoek in Dart is het proces van het starten
-  van communicatie met een webserver of API vanuit een Dart-applicatie.
+summary: Dart bevat het `http`-pakket, een krachtige en handige manier om te werken
+  met HTTP-bronnen.
 title: Het verzenden van een HTTP-verzoek
 weight: 44
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:38.244720-07:00
-description: "Capitalizar uma string em C envolve converter o primeiro caractere de\
-  \ cada palavra em uma dada string para mai\xFAsculo, caso seja uma letra min\xFA\
-  scula. Os\u2026"
+description: "Como Fazer: A capitaliza\xE7\xE3o de uma string em C requer um entendimento\
+  \ b\xE1sico sobre manipula\xE7\xE3o de caracteres e percurso de string. Como C n\xE3\
+  o possui uma\u2026"
 lastmod: '2024-03-13T22:44:47.030918-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizar uma string em C envolve converter o primeiro caractere de cada\
-  \ palavra em uma dada string para mai\xFAsculo, caso seja uma letra min\xFAscula."
+summary: "A capitaliza\xE7\xE3o de uma string em C requer um entendimento b\xE1sico\
+  \ sobre manipula\xE7\xE3o de caracteres e percurso de string."
 title: Capitalizando uma string
 weight: 2
 ---

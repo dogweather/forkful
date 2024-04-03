@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:34.329362-07:00
-description: "Capitalizar una cadena significa convertir el primer car\xE1cter de\
-  \ la cadena a may\xFAsculas mientras se mantienen los caracteres restantes tal como\
-  \ est\xE1n.\u2026"
+description: "C\xF3mo hacerlo: En JavaScript, no existe un m\xE9todo incorporado para\
+  \ capitalizar cadenas directamente, pero es f\xE1cil de implementar utilizando m\xE9\
+  todos\u2026"
 lastmod: '2024-03-13T22:44:59.441953-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizar una cadena significa convertir el primer car\xE1cter de la cadena\
-  \ a may\xFAsculas mientras se mantienen los caracteres restantes tal como est\xE1\
-  n."
+summary: "En JavaScript, no existe un m\xE9todo incorporado para capitalizar cadenas\
+  \ directamente, pero es f\xE1cil de implementar utilizando m\xE9todos b\xE1sicos\
+  \ de manipulaci\xF3n de cadenas."
 title: Capitalizando una cadena de texto
 weight: 2
 ---

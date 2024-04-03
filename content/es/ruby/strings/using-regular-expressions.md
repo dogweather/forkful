@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:57.154735-07:00
-description: "Las expresiones regulares (regex) en Ruby son patrones utilizados para\
-  \ coincidir con combinaciones de caracteres en cadenas, lo que permite a los\u2026"
+description: "C\xF3mo hacerlo: #."
 lastmod: '2024-03-13T22:44:59.579917-06:00'
 model: gpt-4-0125-preview
-summary: Las expresiones regulares (regex) en Ruby son patrones utilizados para coincidir
-  con combinaciones de caracteres en cadenas, lo que permite a los desarrolladores
-  buscar, coincidir y manipular texto de manera eficiente.
+summary: '#.'
 title: Usando expresiones regulares
 weight: 11
 ---

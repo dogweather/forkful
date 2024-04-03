@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:36:19.612974-07:00
-description: "Muuttaminen p\xE4iv\xE4m\xE4\xE4r\xE4st\xE4 merkkijonoksi tarkoittaa\
-  \ `java.util.Date` objektin esitt\xE4mist\xE4 luettavassa muodossa. Ohjelmoijat\
-  \ tekev\xE4t t\xE4m\xE4n jakamiseen,\u2026"
+description: "How to: Clojure k\xE4ytt\xE4\xE4 Java-kirjastoja p\xE4iv\xE4m\xE4\xE4\
+  rien k\xE4sittelyyn ja formaattiin. T\xE4ss\xE4 on esimerkki."
 lastmod: '2024-03-13T22:44:56.195716-06:00'
 model: gpt-4-1106-preview
-summary: "Muuttaminen p\xE4iv\xE4m\xE4\xE4r\xE4st\xE4 merkkijonoksi tarkoittaa `java."
+summary: "Clojure k\xE4ytt\xE4\xE4 Java-kirjastoja p\xE4iv\xE4m\xE4\xE4rien k\xE4\
+  sittelyyn ja formaattiin."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---

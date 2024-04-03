@@ -2,12 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:42.171609-07:00
-description: "Sammenligning av to datoer i programmering er en grunnleggende oppgave\
-  \ som lar utviklere evaluere den kronologiske relasjonen mellom datoer. Slike\u2026"
+description: "Hvordan: I Go h\xE5ndteres datoer hovedsakelig med typen `time.Time`\
+  \ fra `time`-pakken. For \xE5 sammenligne to datoer kan vi bruke metoder som `Before()`,\u2026"
 lastmod: '2024-03-13T22:44:40.280759-06:00'
 model: gpt-4-0125-preview
-summary: Sammenligning av to datoer i programmering er en grunnleggende oppgave som
-  lar utviklere evaluere den kronologiske relasjonen mellom datoer.
+summary: "I Go h\xE5ndteres datoer hovedsakelig med typen `time.Time` fra `time`-pakken."
 title: Sammenligne to datoer
 weight: 27
 ---

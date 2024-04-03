@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:31.371518-07:00
-description: "Organizzare il codice in funzioni riguarda la strutturazione del codice\
-  \ di Google Apps Script separando i segmenti logici in blocchi distinti, ognuno\
-  \ dei\u2026"
+description: "Come fare: In Google Apps Script, che si basa su JavaScript, si definiscono\
+  \ le funzioni utilizzando la parola chiave `function`, seguita da un nome di\u2026"
 lastmod: '2024-03-13T22:44:42.961294-06:00'
 model: gpt-4-0125-preview
-summary: Organizzare il codice in funzioni riguarda la strutturazione del codice di
-  Google Apps Script separando i segmenti logici in blocchi distinti, ognuno dei quali
-  esegue un compito specifico.
+summary: In Google Apps Script, che si basa su JavaScript, si definiscono le funzioni
+  utilizzando la parola chiave `function`, seguita da un nome di funzione unico, parentesi
+  `()` che possono contenere parametri e parentesi graffe `{}` che racchiudono il
+  blocco di codice della funzione.
 title: Organizzare il codice in funzioni
 weight: 18
 ---

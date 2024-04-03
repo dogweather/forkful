@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:21.220880-07:00
-description: "Parsear HTML significa tamizar la estructura y el contenido de un archivo\
-  \ HTML para extraer informaci\xF3n. Los programadores lo hacen para acceder a datos,\u2026"
+description: "C\xF3mo hacerlo: Bash no es la primera opci\xF3n para parsear HTML,\
+  \ pero se puede hacer con herramientas como `grep`, `awk`, `sed`, o utilidades externas\
+  \ como\u2026"
 lastmod: '2024-03-13T22:44:59.244295-06:00'
 model: gpt-4-0125-preview
-summary: "Parsear HTML significa tamizar la estructura y el contenido de un archivo\
-  \ HTML para extraer informaci\xF3n."
+summary: "Bash no es la primera opci\xF3n para parsear HTML, pero se puede hacer con\
+  \ herramientas como `grep`, `awk`, `sed`, o utilidades externas como `lynx`."
 title: Analizando HTML
 weight: 43
 ---

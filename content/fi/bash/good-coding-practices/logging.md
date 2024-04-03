@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 00:59:29.574352-07:00
-description: "Lokitus on k\xE4yt\xE4nt\xF6, jossa ohjelman suoritusprosessien tapahtumat,\
-  \ virheet ja muu merkitt\xE4v\xE4 tieto tallennetaan tiedostoon tai tulostevirtaan.\
-  \ Ohjelmoijat\u2026"
+description: "Miten: Bashissa lokituksesta voi tehd\xE4 niinkin yksinkertaista kuin\
+  \ uudelleenohjaamalla tai lis\xE4\xE4m\xE4ll\xE4 ulostuloa tiedostoon. T\xE4ss\xE4\
+  \ yksinkertainen esimerkki."
 lastmod: '2024-03-13T22:44:56.745611-06:00'
 model: gpt-4-1106-preview
-summary: "Lokitus on k\xE4yt\xE4nt\xF6, jossa ohjelman suoritusprosessien tapahtumat,\
-  \ virheet ja muu merkitt\xE4v\xE4 tieto tallennetaan tiedostoon tai tulostevirtaan."
+summary: "Bashissa lokituksesta voi tehd\xE4 niinkin yksinkertaista kuin uudelleenohjaamalla\
+  \ tai lis\xE4\xE4m\xE4ll\xE4 ulostuloa tiedostoon."
 title: Lokitus
 weight: 17
 ---

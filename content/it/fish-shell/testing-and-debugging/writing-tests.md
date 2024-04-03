@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:48.734497-07:00
-description: "Scrivere test in Fish Shell comporta la creazione di script che eseguono\
-  \ automaticamente il tuo codice per validarne il comportamento rispetto ai\u2026"
+description: "Come fare: Fish non dispone di un framework di testing integrato come\
+  \ alcuni altri ambienti di programmazione. Tuttavia, puoi scrivere semplici script\
+  \ di\u2026"
 lastmod: '2024-03-13T22:44:43.862668-06:00'
 model: gpt-4-0125-preview
-summary: Scrivere test in Fish Shell comporta la creazione di script che eseguono
-  automaticamente il tuo codice per validarne il comportamento rispetto ai risultati
-  attesi.
+summary: Fish non dispone di un framework di testing integrato come alcuni altri ambienti
+  di programmazione.
 title: Scrivere test
 weight: 36
 ---

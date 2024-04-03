@@ -2,17 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:55.952857-07:00
-description: "Ch\u1EC9nh s\u1EEDa t\u1EC7p t\u1EA1i ch\u1ED7 b\u1EB1ng c\xE1c d\xF2\
-  ng l\u1EC7nh CLI l\xE0 vi\u1EC7c th\u1EF1c hi\u1EC7n thay \u0111\u1ED5i tr\u1EF1\
-  c ti\u1EBFp \u0111\u1ED1i v\u1EDBi c\xE1c t\u1EC7p t\u1EEB d\xF2ng l\u1EC7nh, kh\xF4\
-  ng c\u1EA7n m\u1EDF ch\xFAng trong tr\xECnh so\u1EA1n th\u1EA3o\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Fish Shell, n\u1ED5i ti\u1EBFng v\u1EDB\
+  i c\xE1c t\xEDnh n\u0103ng th\xE2n thi\u1EC7n v\u1EDBi ng\u01B0\u1EDDi d\xF9ng v\xE0\
+  \ kh\u1EA3 n\u0103ng l\u1EADp tr\xECnh m\u1EA1nh m\u1EBD, cung c\u1EA5p nhi\u1EC1\
+  u c\xE1ch \u0111\u1EC3 ch\u1EC9nh s\u1EEDa t\u1EC7p t\u1EA1i\u2026"
 lastmod: '2024-03-13T22:44:37.205144-06:00'
 model: gpt-4-0125-preview
-summary: "Ch\u1EC9nh s\u1EEDa t\u1EC7p t\u1EA1i ch\u1ED7 b\u1EB1ng c\xE1c d\xF2ng\
-  \ l\u1EC7nh CLI l\xE0 vi\u1EC7c th\u1EF1c hi\u1EC7n thay \u0111\u1ED5i tr\u1EF1\
-  c ti\u1EBFp \u0111\u1ED1i v\u1EDBi c\xE1c t\u1EC7p t\u1EEB d\xF2ng l\u1EC7nh, kh\xF4\
-  ng c\u1EA7n m\u1EDF ch\xFAng trong tr\xECnh so\u1EA1n th\u1EA3o v\u0103n b\u1EA3\
-  n."
+summary: "Fish Shell, n\u1ED5i ti\u1EBFng v\u1EDBi c\xE1c t\xEDnh n\u0103ng th\xE2\
+  n thi\u1EC7n v\u1EDBi ng\u01B0\u1EDDi d\xF9ng v\xE0 kh\u1EA3 n\u0103ng l\u1EADp\
+  \ tr\xECnh m\u1EA1nh m\u1EBD, cung c\u1EA5p nhi\u1EC1u c\xE1ch \u0111\u1EC3 ch\u1EC9\
+  nh s\u1EEDa t\u1EC7p t\u1EA1i ch\u1ED7."
 title: "Ch\u1EC9nh s\u1EEDa file t\u1EA1i ch\u1ED7 v\u1EDBi c\xE2u l\u1EC7nh CLI ng\u1EAF\
   n g\u1ECDn"
 weight: 32

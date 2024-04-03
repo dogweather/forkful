@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 01:06:52.421728-07:00
-description: "El registro (logging), en pocas palabras, es como mantener un diario\
-  \ para tu aplicaci\xF3n: registra eventos, errores y otras acciones significativas\
-  \ que\u2026"
+description: "C\xF3mo hacerlo: De manera predeterminada, JavaScript ofrece una forma\
+  \ sencilla de registrar mensajes en la consola."
 lastmod: '2024-03-13T22:44:59.465069-06:00'
 model: gpt-4-1106-preview
-summary: "El registro (logging), en pocas palabras, es como mantener un diario para\
-  \ tu aplicaci\xF3n: registra eventos, errores y otras acciones significativas que\
-  \ ocurren mientras se ejecuta el software."
+summary: De manera predeterminada, JavaScript ofrece una forma sencilla de registrar
+  mensajes en la consola.
 title: Registro de Actividades
 weight: 17
 ---

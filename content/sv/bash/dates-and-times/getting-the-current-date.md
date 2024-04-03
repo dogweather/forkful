@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:58.616225-07:00
-description: "Att h\xE4mta det aktuella datumet i Bash inneb\xE4r att anv\xE4nda inbyggda\
-  \ kommandon f\xF6r att visa datum och tid i olika format. Programmerare anv\xE4\
-  nder denna\u2026"
+description: "Hur man g\xF6r: I Bash \xE4r `date`-kommandot ditt prim\xE4ra verktyg\
+  \ f\xF6r att f\xE5 det aktuella datumet och tiden. H\xE4r \xE4r n\xE5gra exempel\
+  \ p\xE5 hur man anv\xE4nder det: 1.\u2026"
 lastmod: '2024-03-13T22:44:38.092698-06:00'
 model: gpt-4-0125-preview
-summary: "Att h\xE4mta det aktuella datumet i Bash inneb\xE4r att anv\xE4nda inbyggda\
-  \ kommandon f\xF6r att visa datum och tid i olika format."
+summary: "I Bash \xE4r `date`-kommandot ditt prim\xE4ra verktyg f\xF6r att f\xE5 det\
+  \ aktuella datumet och tiden."
 title: "F\xE5 det aktuella datumet"
 weight: 29
 ---

@@ -2,14 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:39.263001-07:00
-description: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) l\xE0 nh\u1EEFng m\u1EABu \u0111\
-  \u1ECBnh ngh\u0129a ti\xEAu ch\xED t\xECm ki\u1EBFm cho v\u0103n b\u1EA3n. L\u1EAD\
-  p tr\xECnh vi\xEAn s\u1EED d\u1EE5ng ch\xFAng \u0111\u1EC3 t\xECm ki\u1EBFm, thay\
-  \ th\u1EBF, ho\u1EB7c tr\xEDch xu\u1EA5t c\xE1c\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: ."
 lastmod: '2024-03-13T22:44:36.863240-06:00'
 model: gpt-4-0125-preview
-summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) l\xE0 nh\u1EEFng m\u1EABu \u0111\
-  \u1ECBnh ngh\u0129a ti\xEAu ch\xED t\xECm ki\u1EBFm cho v\u0103n b\u1EA3n."
+summary: .
 title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---

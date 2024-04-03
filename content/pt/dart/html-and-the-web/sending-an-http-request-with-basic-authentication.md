@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:29.972768-07:00
-description: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica envolve\
-  \ anexar um nome de usu\xE1rio e senha a uma requisi\xE7\xE3o para verificar a identidade\
-  \ do usu\xE1rio.\u2026"
+description: "Como fazer: No Dart, voc\xEA pode usar o pacote `http` para enviar requisi\xE7\
+  \xF5es HTTP com autentica\xE7\xE3o b\xE1sica. Primeiro, adicione o pacote `http`\
+  \ ao seu\u2026"
 lastmod: '2024-03-13T22:44:46.281312-06:00'
 model: gpt-4-0125-preview
-summary: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica envolve\
-  \ anexar um nome de usu\xE1rio e senha a uma requisi\xE7\xE3o para verificar a identidade\
-  \ do usu\xE1rio."
+summary: "No Dart, voc\xEA pode usar o pacote `http` para enviar requisi\xE7\xF5es\
+  \ HTTP com autentica\xE7\xE3o b\xE1sica."
 title: "Enviando uma solicita\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 weight: 45
 ---

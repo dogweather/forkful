@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:55.102019-07:00
-description: "Het extraheren van substrings betekent het uitkiezen van specifieke\
-  \ stukken van een string. Dit is handig voor taken zoals het parseren van gegevens,\
-  \ het\u2026"
+description: "Hoe doe je dat: In TypeScript snijd en hak je strings met methoden zoals\
+  \ `substring()`, `slice()`, en de ES6 `includes()` voor het vinden van tekst binnen\u2026"
 lastmod: '2024-03-13T22:44:50.538723-06:00'
 model: gpt-4-0125-preview
-summary: Het extraheren van substrings betekent het uitkiezen van specifieke stukken
-  van een string.
+summary: In TypeScript snijd en hak je strings met methoden zoals `substring()`, `slice()`,
+  en de ES6 `includes()` voor het vinden van tekst binnen strings.
 title: Substrings extraheren
 weight: 6
 ---

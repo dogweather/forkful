@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:48:55.485052-07:00
-description: "Mettre en majuscule une cha\xEEne consiste \xE0 modifier l'entr\xE9\
-  e de mani\xE8re que le premier caract\xE8re soit en majuscule tandis que les suivants\
-  \ restent en\u2026"
+description: "Comment faire : Google Apps Script, \xE9tant bas\xE9 sur JavaScript,\
+  \ permet plusieurs m\xE9thodes pour mettre en majuscule une cha\xEEne, bien qu'il\
+  \ n'existe pas de\u2026"
 lastmod: '2024-03-13T22:44:57.163896-06:00'
 model: gpt-4-0125-preview
-summary: "Mettre en majuscule une cha\xEEne consiste \xE0 modifier l'entr\xE9e de\
-  \ mani\xE8re que le premier caract\xE8re soit en majuscule tandis que les suivants\
-  \ restent en minuscule, commun\xE9ment utilis\xE9 pour formater des noms ou des\
-  \ titres."
+summary: "Google Apps Script, \xE9tant bas\xE9 sur JavaScript, permet plusieurs m\xE9\
+  thodes pour mettre en majuscule une cha\xEEne, bien qu'il n'existe pas de fonction\
+  \ int\xE9gr\xE9e."
 title: "Mettre une cha\xEEne en majuscules"
 weight: 2
 ---

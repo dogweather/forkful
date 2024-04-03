@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:35.803196-07:00
-description: "Las expresiones regulares (regex) son secuencias de caracteres que forman\
-  \ un patr\xF3n de b\xFAsqueda, utilizadas principalmente para la b\xFAsqueda y manipulaci\xF3\
-  n\u2026"
+description: "C\xF3mo hacerlo: En PowerShell, puedes usar los operadores `-match`,\
+  \ `-replace` y `-split`, entre otros, para realizar acciones con expresiones regulares.\u2026"
 lastmod: '2024-03-13T22:44:59.280318-06:00'
 model: gpt-4-0125-preview
-summary: "Las expresiones regulares (regex) son secuencias de caracteres que forman\
-  \ un patr\xF3n de b\xFAsqueda, utilizadas principalmente para la b\xFAsqueda y manipulaci\xF3\
-  n de cadenas de texto."
+summary: En PowerShell, puedes usar los operadores `-match`, `-replace` y `-split`,
+  entre otros, para realizar acciones con expresiones regulares.
 title: Usando expresiones regulares
 weight: 11
 ---

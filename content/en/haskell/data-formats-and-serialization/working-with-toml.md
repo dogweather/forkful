@@ -1,11 +1,10 @@
 ---
 date: 2024-01-25 03:39:59.768388-07:00
-description: "Working with TOML involves parsing and generating TOML (Tom's Obvious,\
-  \ Minimal Language) data with Haskell. Programmers do it to easily manage\u2026"
+description: 'How to: First, ensure you have a TOML parsing library. For Haskell,
+  `htoml` is a popular choice. You''ll need to add it to your project''s dependencies.'
 lastmod: '2024-03-13T22:45:00.149378-06:00'
 model: gpt-4-1106-preview
-summary: Working with TOML involves parsing and generating TOML (Tom's Obvious, Minimal
-  Language) data with Haskell.
+summary: First, ensure you have a TOML parsing library.
 title: Working with TOML
 weight: 39
 ---

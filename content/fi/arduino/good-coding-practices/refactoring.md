@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 01:17:02.262412-07:00
-description: "Refaktorointi on prosessi, jossa koodiasi ty\xF6stet\xE4\xE4n uudelleen\
-  \ parantaaksesi sen rakennetta ja luettavuutta muuttamatta ulkoista k\xE4ytt\xE4\
-  ytymist\xE4 tai\u2026"
+description: "Miten: Oletetaan, ett\xE4 sinulla on Arduino-ohjelmassasi funktio, joka\
+  \ tekee aivan liikaa, kuten t\xE4ss\xE4."
 lastmod: '2024-03-13T22:44:56.831970-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktorointi on prosessi, jossa koodiasi ty\xF6stet\xE4\xE4n uudelleen\
-  \ parantaaksesi sen rakennetta ja luettavuutta muuttamatta ulkoista k\xE4ytt\xE4\
-  ytymist\xE4 tai toiminnallisuutta."
+summary: "Oletetaan, ett\xE4 sinulla on Arduino-ohjelmassasi funktio, joka tekee aivan\
+  \ liikaa, kuten t\xE4ss\xE4."
 title: Koodin refaktorointi
 weight: 19
 ---

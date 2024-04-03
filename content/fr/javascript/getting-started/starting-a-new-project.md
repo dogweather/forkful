@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 18:03:56.352677-07:00
-description: "D\xE9marrer un nouveau projet, c'est comme mettre une graine dans le\
-  \ sol num\xE9rique. Les programmeurs le font pour cr\xE9er du neuf, r\xE9soudre\
-  \ des probl\xE8mes, ou\u2026"
+description: "Comment faire : D\xE9marrer un nouveau projet JavaScript, c'est souvent\
+  \ initialiser un environnement avec `npm` et configurer le tout avec un `package.json`."
 lastmod: '2024-03-13T22:44:58.276283-06:00'
 model: gpt-4-1106-preview
-summary: "D\xE9marrer un nouveau projet, c'est comme mettre une graine dans le sol\
-  \ num\xE9rique."
+summary: "D\xE9marrer un nouveau projet JavaScript, c'est souvent initialiser un environnement\
+  \ avec `npm` et configurer le tout avec un `package.json`."
 title: Lancement d'un nouveau projet
 weight: 1
 ---

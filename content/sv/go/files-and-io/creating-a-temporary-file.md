@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:37.462085-07:00
-description: "Att skapa en tempor\xE4r fil i Go m\xF6jligg\xF6r skapandet av en icke-persistent\
-  \ fil avsedd f\xF6r kortvarig anv\xE4ndning, fr\xE4mst f\xF6r uppgifter s\xE5som\
-  \ att lagra\u2026"
+description: "Hur g\xF6r man: I Go tillhandah\xF6ll `ioutil`-paketet ursprungligen\
+  \ verktyg f\xF6r att skapa tempor\xE4ra filer. Dock fr\xE4mjade Go 1.16 anv\xE4\
+  ndningen av funktionerna i\u2026"
 lastmod: '2024-03-13T22:44:37.413060-06:00'
 model: gpt-4-0125-preview
-summary: "Att skapa en tempor\xE4r fil i Go m\xF6jligg\xF6r skapandet av en icke-persistent\
-  \ fil avsedd f\xF6r kortvarig anv\xE4ndning, fr\xE4mst f\xF6r uppgifter s\xE5som\
-  \ att lagra mellanliggande data eller bist\xE5 i batchbearbetningsjobb."
+summary: "I Go tillhandah\xF6ll `ioutil`-paketet ursprungligen verktyg f\xF6r att\
+  \ skapa tempor\xE4ra filer."
 title: "Skapa en tillf\xE4llig fil"
 weight: 21
 ---

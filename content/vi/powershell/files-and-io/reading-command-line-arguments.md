@@ -2,16 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:44.888110-07:00
-description: "Vi\u1EC7c \u0111\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7\
-  nh cho ph\xE9p c\xE1c k\u1ECBch b\u1EA3n (scripts) thay \u0111\u1ED5i c\xE1ch th\u1EE9\
-  c ho\u1EA1t \u0111\u1ED9ng d\u1EF1a tr\xEAn c\xE1c \u0111\u1EA7u v\xE0o t\u1EEB\
-  \ b\xEAn ngo\xE0i m\xE3 ngu\u1ED3n. L\u1EADp tr\xECnh vi\xEAn s\u1EED\u2026"
+description: "L\xE0m th\u1EBF n\xE0o PowerShell \u0111\u1ECDc c\xE1c \u0111\u1ED1\
+  i s\u1ED1 d\xF2ng l\u1EC7nh b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng m\u1EA3ng `$args`\
+  \ ho\u1EB7c c\xE1c tham s\u1ED1. `$args` nhanh cho c\xE1c k\u1ECBch b\u1EA3n s\u1EED\
+  \ d\u1EE5ng m\u1ED9t l\u1EA7n; c\xE1c tham\u2026"
 lastmod: '2024-03-13T22:44:36.956511-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c \u0111\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh cho\
-  \ ph\xE9p c\xE1c k\u1ECBch b\u1EA3n (scripts) thay \u0111\u1ED5i c\xE1ch th\u1EE9\
-  c ho\u1EA1t \u0111\u1ED9ng d\u1EF1a tr\xEAn c\xE1c \u0111\u1EA7u v\xE0o t\u1EEB\
-  \ b\xEAn ngo\xE0i m\xE3 ngu\u1ED3n."
+summary: "PowerShell \u0111\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh\
+  \ b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng m\u1EA3ng `$args` ho\u1EB7c c\xE1c tham s\u1ED1\
+  ."
 title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
 weight: 23
 ---

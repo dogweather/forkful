@@ -2,14 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:23.120298-07:00
-description: "Tr\xEDch xu\u1EA5t chu\u1ED7i con c\xF3 ngh\u0129a l\xE0 l\u1EA5y ra\
-  \ c\xE1c ph\u1EA7n c\u1EE5 th\u1EC3 c\u1EE7a m\u1ED9t chu\u1ED7i. \u0110i\u1EC1\
-  u n\xE0y r\u1EA5t ti\u1EC7n l\u1EE3i cho c\xE1c c\xF4ng vi\u1EC7c nh\u01B0 ph\xE2\
-  n t\xEDch d\u1EEF li\u1EC7u, x\xE1c th\u1EF1c \u0111\u1EA7u v\xE0o,\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong TypeScript, b\u1EA1n c\xF3 th\u1EC3 c\u1EAF\
+  t v\xE0 ch\u1ECDn c\xE1c chu\u1ED7i v\u1EDBi c\xE1c ph\u01B0\u01A1ng th\u1EE9c nh\u01B0\
+  \ `substring()`, `slice()`, v\xE0 `includes()` c\u1EE7a ES6 \u0111\u1EC3 t\xECm\
+  \ ki\u1EBFm v\u0103n\u2026"
 lastmod: '2024-03-13T22:44:36.304172-06:00'
 model: gpt-4-0125-preview
-summary: "Tr\xEDch xu\u1EA5t chu\u1ED7i con c\xF3 ngh\u0129a l\xE0 l\u1EA5y ra c\xE1\
-  c ph\u1EA7n c\u1EE5 th\u1EC3 c\u1EE7a m\u1ED9t chu\u1ED7i."
+summary: "Trong TypeScript, b\u1EA1n c\xF3 th\u1EC3 c\u1EAFt v\xE0 ch\u1ECDn c\xE1\
+  c chu\u1ED7i v\u1EDBi c\xE1c ph\u01B0\u01A1ng th\u1EE9c nh\u01B0 `substring()`,\
+  \ `slice()`, v\xE0 `includes()` c\u1EE7a ES6 \u0111\u1EC3 t\xECm ki\u1EBFm v\u0103\
+  n b\u1EA3n trong chu\u1ED7i."
 title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 weight: 6
 ---

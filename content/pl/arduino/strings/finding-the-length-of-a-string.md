@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:46:38.846670-07:00
-description: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w to sprawdzenie,\
-  \ ile znak\xF3w zawiera. Programi\u015Bci robi\u0105 to, by zarz\u0105dza\u0107\
-  \ danymi tekstowymi, walidowa\u0107 wej\u015Bcia lub\u2026"
+description: "Jak to zrobi\u0107: ."
 lastmod: '2024-03-13T22:44:35.663395-06:00'
 model: gpt-4-1106-preview
-summary: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w to sprawdzenie, ile\
-  \ znak\xF3w zawiera."
+summary: .
 title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 weight: 7
 ---

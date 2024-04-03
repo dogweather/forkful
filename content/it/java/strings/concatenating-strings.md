@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:35:04.416969-07:00
-description: "La concatenazione di stringhe \xE8 l'unione di due o pi\xF9 stringhe\
-  \ in un'unica. I programmatori la usano per manipolare testi, creare messaggi, o\
-  \ combinare\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:43.301032-06:00'
 model: gpt-4-1106-preview
-summary: "La concatenazione di stringhe \xE8 l'unione di due o pi\xF9 stringhe in\
-  \ un'unica."
+summary: .
 title: Concatenazione di stringhe
 weight: 3
 ---

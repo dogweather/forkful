@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:11.417278-07:00
-description: "Tworzenie pliku tekstowego w Google Apps Script pozwala deweloperom\
-  \ na trwa\u0142e przechowywanie danych, umo\u017Cliwiaj\u0105c ich dost\u0119pno\u015B\
-  \u0107 na przysz\u0142e u\u017Cycie lub\u2026"
+description: "Jak to zrobi\u0107: Tworzenie i zapisywanie do pliku tekstowego w Google\
+  \ Apps Script mo\u017Cna zrealizowa\u0107 przy pomocy us\u0142ugi Google DriveApp.\
+  \ Poni\u017Cej znajduje si\u0119\u2026"
 lastmod: '2024-03-13T22:44:34.923586-06:00'
 model: gpt-4-0125-preview
-summary: "Tworzenie pliku tekstowego w Google Apps Script pozwala deweloperom na trwa\u0142\
-  e przechowywanie danych, umo\u017Cliwiaj\u0105c ich dost\u0119pno\u015B\u0107 na\
-  \ przysz\u0142e u\u017Cycie lub analiz\u0119."
+summary: "Tworzenie i zapisywanie do pliku tekstowego w Google Apps Script mo\u017C\
+  na zrealizowa\u0107 przy pomocy us\u0142ugi Google DriveApp."
 title: Pisanie pliku tekstowego
 weight: 24
 ---

@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:54:11.794529-07:00
-description: "Att l\xE4sa en textfil inneb\xE4r att programmet h\xE4mtar data fr\xE5\
-  n en fil som \xE4r lagrad p\xE5 disken. Programmerare g\xF6r detta f\xF6r att hantera\
-  \ konfigurationer, l\xE4sa\u2026"
+description: "Hur g\xF6r man: Elm har ingen inbyggd filsystemsfunktionalitet p\xE5\
+  \ klient-sidan av en webbapplikation p.g.a. webbs\xE4kerhetsrestriktioner. Ist\xE4\
+  llet, anv\xE4nder du\u2026"
 lastmod: '2024-03-13T22:44:37.846857-06:00'
 model: gpt-4-1106-preview
-summary: "Att l\xE4sa en textfil inneb\xE4r att programmet h\xE4mtar data fr\xE5n\
-  \ en fil som \xE4r lagrad p\xE5 disken."
+summary: "Elm har ingen inbyggd filsystemsfunktionalitet p\xE5 klient-sidan av en\
+  \ webbapplikation p.g.a."
 title: "L\xE4sa en textfil"
 weight: 22
 ---

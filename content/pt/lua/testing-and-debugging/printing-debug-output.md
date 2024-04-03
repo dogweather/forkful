@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:53:13.833590-07:00
-description: "Debug print \xE9 a pr\xE1tica de exibir informa\xE7\xF5es no console\
-  \ para entender o que est\xE1 acontecendo no c\xF3digo. Programadores usam isso\
-  \ para rastrear bugs ou\u2026"
+description: "Como Fazer: Aqui est\xE1 um exemplo simples de como imprimir algo na\
+  \ tela usando Lua. A fun\xE7\xE3o `print` \xE9 a sua amiga para sa\xEDdas r\xE1\
+  pidas de debug."
 lastmod: '2024-03-13T22:44:46.711453-06:00'
 model: gpt-4-1106-preview
-summary: "Debug print \xE9 a pr\xE1tica de exibir informa\xE7\xF5es no console para\
-  \ entender o que est\xE1 acontecendo no c\xF3digo."
+summary: "Aqui est\xE1 um exemplo simples de como imprimir algo na tela usando Lua."
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---

@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:19:31.050141-07:00
-description: "TOML (Lenguaje M\xEDnimo y Obvio de Tom) es un formato de serializaci\xF3\
-  n de datos f\xE1cil de leer debido a su sem\xE1ntica clara. Los programadores utilizan\
-  \ TOML\u2026"
+description: "C\xF3mo hacerlo: Para trabajar con TOML en C++, necesitar\xE1s una biblioteca\
+  \ como `toml++`. Aqu\xED tienes una gu\xEDa r\xE1pida."
 lastmod: '2024-03-13T22:44:59.398408-06:00'
 model: gpt-4-0125-preview
-summary: "TOML (Lenguaje M\xEDnimo y Obvio de Tom) es un formato de serializaci\xF3\
-  n de datos f\xE1cil de leer debido a su sem\xE1ntica clara."
+summary: "Para trabajar con TOML en C++, necesitar\xE1s una biblioteca como `toml++`."
 title: Trabajando con TOML
 weight: 39
 ---

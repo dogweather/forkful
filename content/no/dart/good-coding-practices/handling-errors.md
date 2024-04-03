@@ -2,14 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:21.530737-07:00
-description: "H\xE5ndtering av feil i Dart handler om \xE5 forutse og h\xE5ndtere\
-  \ unntak som oppst\xE5r under programkj\xF8ring for \xE5 forbedre p\xE5liteligheten\
-  \ og brukervennligheten.\u2026"
+description: "Hvordan: Dart st\xF8tter to typer feil: *kompileringstid*-feil og *kj\xF8\
+  retid*-feil. Kompileringstid-feil oppdages av Dart-analysatoren f\xF8r koden kj\xF8\
+  rer, mens\u2026"
 lastmod: '2024-03-13T22:44:40.495416-06:00'
 model: gpt-4-0125-preview
-summary: "H\xE5ndtering av feil i Dart handler om \xE5 forutse og h\xE5ndtere unntak\
-  \ som oppst\xE5r under programkj\xF8ring for \xE5 forbedre p\xE5liteligheten og\
-  \ brukervennligheten."
+summary: "Dart st\xF8tter to typer feil."
 title: "H\xE5ndtering av feil"
 weight: 16
 ---

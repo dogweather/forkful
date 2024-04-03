@@ -2,14 +2,14 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:58:04.247327-07:00
-description: "I numeri complessi, consistendo di una parte reale e una immaginaria\
-  \ (solitamente indicati come a + bi), estendono il concetto dei numeri adimensionali\
-  \ a\u2026"
+description: "Come fare: Dart di per s\xE9 non include una libreria integrata per\
+  \ i numeri complessi, necessitando quindi dell'implementazione di una propria classe\
+  \ di\u2026"
 lastmod: '2024-03-13T22:44:43.122581-06:00'
 model: gpt-4-0125-preview
-summary: I numeri complessi, consistendo di una parte reale e una immaginaria (solitamente
-  indicati come a + bi), estendono il concetto dei numeri adimensionali a uno spazio
-  bidimensionale.
+summary: "Dart di per s\xE9 non include una libreria integrata per i numeri complessi,\
+  \ necessitando quindi dell'implementazione di una propria classe di numeri complessi\
+  \ o dell'uso di una libreria di terze parti."
 title: Lavorare con i numeri complessi
 weight: 14
 ---

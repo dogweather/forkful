@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:37.678241-07:00
-description: "Dans Visual Basic pour Applications (VBA), r\xE9cup\xE9rer la date actuelle\
-  \ est une t\xE2che courante qui permet aux programmeurs de travailler dynamiquement\
-  \ avec\u2026"
+description: "Comment faire : R\xE9cup\xE9rer la date actuelle en VBA est simple,\
+  \ en utilisant la fonction `Date`, tandis que la fonction `Now` fournit \xE0 la\
+  \ fois la date et\u2026"
 lastmod: '2024-03-13T22:44:57.592287-06:00'
 model: gpt-4-0125-preview
-summary: "Dans Visual Basic pour Applications (VBA), r\xE9cup\xE9rer la date actuelle\
-  \ est une t\xE2che courante qui permet aux programmeurs de travailler dynamiquement\
-  \ avec des dates dans leurs macros ou applications."
+summary: "R\xE9cup\xE9rer la date actuelle en VBA est simple, en utilisant la fonction\
+  \ `Date`, tandis que la fonction `Now` fournit \xE0 la fois la date et l'heure actuelles."
 title: Obtenir la date actuelle
 weight: 29
 ---

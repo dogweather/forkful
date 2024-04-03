@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:52:31.212975-07:00
-description: "Debugutskrifter \xE4r sm\xE5 meddelanden kodare infogar f\xF6r att sp\xE5\
-  ra vad ett program g\xF6r. De \xE4r superhj\xE4lpsamma f\xF6r att f\xF6rst\xE5 kodens\
-  \ fl\xF6de och fixa buggar."
+description: "How to: I Fish anv\xE4nder du `echo` eller `printf` f\xF6r att skriva\
+  \ ut debuginfo. Enkelt och rakt p\xE5 sak. H\xE4r \xE4r exempel."
 lastmod: '2024-03-13T22:44:38.340682-06:00'
 model: gpt-4-1106-preview
-summary: "Debugutskrifter \xE4r sm\xE5 meddelanden kodare infogar f\xF6r att sp\xE5\
-  ra vad ett program g\xF6r."
+summary: "I Fish anv\xE4nder du `echo` eller `printf` f\xF6r att skriva ut debuginfo."
 title: "Skriva ut fels\xF6kningsdata"
 weight: 33
 ---

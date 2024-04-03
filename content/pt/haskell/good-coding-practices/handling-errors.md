@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 00:53:44.666531-07:00
-description: "Tratar erros em programa\xE7\xE3o \xE9 sobre gerenciar o inesperado\u2014\
-  coisas que podem dar errado. Programadores fazem isso para garantir que seus programas\
-  \ possam\u2026"
+description: "Como fazer: Haskell lida com erros de forma robusta atrav\xE9s de tipos\
+  \ como `Maybe` e `Either`. Aqui est\xE1 uma r\xE1pida olhada."
 lastmod: '2024-03-13T22:44:46.632515-06:00'
 model: gpt-4-1106-preview
-summary: "Tratar erros em programa\xE7\xE3o \xE9 sobre gerenciar o inesperado\u2014\
-  coisas que podem dar errado."
+summary: "Haskell lida com erros de forma robusta atrav\xE9s de tipos como `Maybe`\
+  \ e `Either`."
 title: Tratamento de erros
 weight: 16
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:58.013267-07:00
-description: "In der C-Programmierung erm\xF6glicht das Lesen von Befehlszeilenargumenten,\
-  \ dass Programme Eingaben direkt aus dem Terminal akzeptieren k\xF6nnen, was\u2026"
+description: "Wie geht das: In C kann die `main`-Funktion so gestaltet werden, dass\
+  \ sie Befehlszeilenargumente mit den Parametern `int argc` und `char *argv[]`\u2026"
 lastmod: '2024-03-13T22:44:54.369499-06:00'
 model: gpt-4-0125-preview
-summary: "In der C-Programmierung erm\xF6glicht das Lesen von Befehlszeilenargumenten,\
-  \ dass Programme Eingaben direkt aus dem Terminal akzeptieren k\xF6nnen, was Flexibilit\xE4\
-  t und Benutzerfreundlichkeit erh\xF6ht."
+summary: In C kann die `main`-Funktion so gestaltet werden, dass sie Befehlszeilenargumente
+  mit den Parametern `int argc` und `char *argv[]` akzeptiert.
 title: Kommandozeilenargumente lesen
 weight: 23
 ---

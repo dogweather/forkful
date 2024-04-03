@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 04:29:21.385615-07:00
-description: "XML (Lenguaje de Marcas eXtensible) trata sobre estructurar datos en\
-  \ un formato legible. Los programadores manejan XML para configuraci\xF3n, intercambio\
-  \ de\u2026"
+description: "C\xF3mo hacerlo: ."
 lastmod: '2024-03-13T22:44:59.102009-06:00'
 model: gpt-4-0125-preview
-summary: XML (Lenguaje de Marcas eXtensible) trata sobre estructurar datos en un formato
-  legible.
+summary: .
 title: Trabajando con XML
 weight: 40
 ---

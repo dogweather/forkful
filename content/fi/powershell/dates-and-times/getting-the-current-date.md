@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:50.152616-07:00
-description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen PowerShelliss\xE4 tarkoittaa\
-  \ j\xE4rjestelm\xE4n nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n ja ajan noutamista. T\xE4\
-  m\xE4 toiminto on perustavaa laatua oleva\u2026"
+description: "Kuinka: PowerShell tarjoaa suoraviivaisia cmdlet-komentoja p\xE4iv\xE4\
+  m\xE4\xE4r\xE4n ja ajan saamiseksi. `Get-Date` cmdlet-komento on ensisijainen ty\xF6\
+  kalu t\xE4h\xE4n\u2026"
 lastmod: '2024-03-13T22:44:56.792912-06:00'
 model: gpt-4-0125-preview
-summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen PowerShelliss\xE4 tarkoittaa\
-  \ j\xE4rjestelm\xE4n nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n ja ajan noutamista."
+summary: "PowerShell tarjoaa suoraviivaisia cmdlet-komentoja p\xE4iv\xE4m\xE4\xE4\
+  r\xE4n ja ajan saamiseksi."
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---

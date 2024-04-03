@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 15:33:14.281024-07:00
-description: Parsing HTML means extracting data from HTML content. Programmers do
-  it to automate data retrieval from websites, like scraping prices or headlines.
+description: "How to (\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\
+  \u0438): Install `AngleSharp`, a .NET library, using PowerShell."
 lastmod: '2024-03-13T22:44:49.646626-06:00'
 model: unknown
-summary: Parsing HTML means extracting data from HTML content.
+summary: Install `AngleSharp`, a .NET library, using PowerShell.
 title: "\u041F\u0430\u0440\u0441\u0438\u043D\u0433 HTML"
 weight: 43
 ---

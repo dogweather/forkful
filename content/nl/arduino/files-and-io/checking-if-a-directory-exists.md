@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:36.857580-07:00
-description: "Controleren of een map bestaat gaat helemaal over het verifi\xEBren\
-  \ van de aanwezigheid van een map op je opslag voordat je er iets mee doet. Programmeurs\u2026"
+description: "Hoe te: Werken met mappen op Arduino omvat vaak het gebruik van de SD-bibliotheek\
+  \ voor opslag op een SD-kaart. Zorg eerst dat je Arduino correct is\u2026"
 lastmod: '2024-03-13T22:44:51.086305-06:00'
 model: gpt-4-0125-preview
-summary: "Controleren of een map bestaat gaat helemaal over het verifi\xEBren van\
-  \ de aanwezigheid van een map op je opslag voordat je er iets mee doet."
+summary: Werken met mappen op Arduino omvat vaak het gebruik van de SD-bibliotheek
+  voor opslag op een SD-kaart.
 title: Controleren of een directory bestaat
 weight: 20
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:40.224090-07:00
-description: "HTTP-pyynn\xF6n l\xE4hett\xE4minen Dartissa tarkoittaa kommunikoinnin\
-  \ aloittamista web-palvelimen tai API:n kanssa Dart-sovelluksesta. Ohjelmoijat tekev\xE4\
-  t sen\u2026"
+description: "Miten: Dart sis\xE4lt\xE4\xE4 `http`-paketin, tehokkaan ja k\xE4tev\xE4\
+  n tavan ty\xF6skennell\xE4 HTTP-resurssien kanssa. Ensin, sis\xE4llyt\xE4 se pubspec.yaml-tiedostoosi."
 lastmod: '2024-03-13T22:44:56.267351-06:00'
 model: gpt-4-0125-preview
-summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen Dartissa tarkoittaa kommunikoinnin aloittamista\
-  \ web-palvelimen tai API:n kanssa Dart-sovelluksesta."
+summary: "Dart sis\xE4lt\xE4\xE4 `http`-paketin, tehokkaan ja k\xE4tev\xE4n tavan\
+  \ ty\xF6skennell\xE4 HTTP-resurssien kanssa."
 title: "L\xE4hett\xE4m\xE4ss\xE4 HTTP-pyynt\xF6"
 weight: 44
 ---

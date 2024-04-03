@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:57:33.332118-07:00
-description: "Searching and replacing text lets you find specific strings in a body\
-  \ of text and swap them out with something else. Programmers do it for quick edits,\u2026"
+description: 'How to: In Clojure, we wield the `clojure.string/replace` function to
+  search and replace text. Let''s cut to the chase with some code.'
 lastmod: '2024-03-13T22:44:59.732084-06:00'
 model: gpt-4-1106-preview
-summary: Searching and replacing text lets you find specific strings in a body of
-  text and swap them out with something else.
+summary: In Clojure, we wield the `clojure.string/replace` function to search and
+  replace text.
 title: Searching and replacing text
 weight: 10
 ---

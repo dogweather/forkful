@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:14.156097-07:00
-description: "Testaaminen Rubylla tarkoittaa koodisi toiminnan varmistamista odotetulla\
-  \ tavalla erilaisissa olosuhteissa. Ohjelmoijat kirjoittavat testej\xE4\u2026"
+description: "Miten: Ruby sis\xE4lt\xE4\xE4 valmiiksi `Test::Unit`-kirjaston yksikk\xF6\
+  testien kirjoittamiseen, kapseloiden testik\xE4yt\xE4nt\xF6j\xE4 yksinkertaisiin\
+  \ rakenteisiin. Kuitenkin\u2026"
 lastmod: '2024-03-13T22:44:57.090116-06:00'
 model: gpt-4-0125-preview
-summary: Testaaminen Rubylla tarkoittaa koodisi toiminnan varmistamista odotetulla
-  tavalla erilaisissa olosuhteissa.
+summary: "Ruby sis\xE4lt\xE4\xE4 valmiiksi `Test::Unit`-kirjaston yksikk\xF6testien\
+  \ kirjoittamiseen, kapseloiden testik\xE4yt\xE4nt\xF6j\xE4 yksinkertaisiin rakenteisiin."
 title: Testien kirjoittaminen
 weight: 36
 ---

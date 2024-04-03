@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 18:02:16.973308-07:00
-description: "Invio di una richiesta HTTP con autenticazione di base permette di accedere\
-  \ a risorse protette online. I programmatori lo utilizzano per interagire con\u2026"
+description: "How to: In PHP, la libreria cURL \xE8 un amico fidato per mandare richieste\
+  \ HTTP con autenticazione di base. Ecco come si fa."
 lastmod: '2024-03-13T22:44:43.516402-06:00'
 model: gpt-4-1106-preview
-summary: Invio di una richiesta HTTP con autenticazione di base permette di accedere
-  a risorse protette online.
+summary: "In PHP, la libreria cURL \xE8 un amico fidato per mandare richieste HTTP\
+  \ con autenticazione di base."
 title: Inviare una richiesta http con autenticazione di base
 weight: 45
 ---

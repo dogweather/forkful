@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:54.798102-07:00
-description: "Escrever em um arquivo de texto em Ruby \xE9 uma opera\xE7\xE3o fundamental\
-  \ que permite armazenar sa\xEDdas e dados de forma persistente, possibilitando o\
-  \ acesso ou a\u2026"
+description: "Como fazer: Ruby torna as opera\xE7\xF5es com arquivos simples. Para\
+  \ escrever em um arquivo, voc\xEA pode usar a classe `File` incorporada ao Ruby.\
+  \ O exemplo a\u2026"
 lastmod: '2024-03-13T22:44:47.113386-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever em um arquivo de texto em Ruby \xE9 uma opera\xE7\xE3o fundamental\
-  \ que permite armazenar sa\xEDdas e dados de forma persistente, possibilitando o\
-  \ acesso ou a modifica\xE7\xE3o desses dados posteriormente."
+summary: "Ruby torna as opera\xE7\xF5es com arquivos simples."
 title: Escrevendo um arquivo de texto
 weight: 24
 ---

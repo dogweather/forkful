@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 01:11:48.995983-07:00
-description: "Koodin j\xE4rjest\xE4minen funktioihin tarkoittaa koodirykelmien k\xE4\
-  \xE4rimist\xE4, jotka suorittavat tiettyj\xE4 teht\xE4vi\xE4 ja niille annetaan\
-  \ nimi. T\xE4m\xE4 tehd\xE4\xE4n koodin\u2026"
+description: 'Kuinka: Kirjoitetaan funktio kahden luvun summan laskemiseen. Yksinkertainen,
+  mutta se havainnollistaa pointtia.'
 lastmod: '2024-03-13T22:44:56.787912-06:00'
 model: gpt-4-1106-preview
-summary: "Koodin j\xE4rjest\xE4minen funktioihin tarkoittaa koodirykelmien k\xE4\xE4\
-  rimist\xE4, jotka suorittavat tiettyj\xE4 teht\xE4vi\xE4 ja niille annetaan nimi."
+summary: Kirjoitetaan funktio kahden luvun summan laskemiseen.
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---

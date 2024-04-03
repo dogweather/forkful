@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:38.570923-07:00
-description: "HTML in Haskell zu parsen, erm\xF6glicht es Ihnen, Daten zu extrahieren,\
-  \ HTML-Inhalte zu manipulieren oder programmgesteuert mit Webseiten zu interagieren.\u2026"
+description: "Wie geht das: Um HTML in Haskell zu parsen, verwenden wir die `tagsoup`\
+  \ Bibliothek aufgrund ihrer Einfachheit und Flexibilit\xE4t. Stellen Sie zun\xE4\
+  chst\u2026"
 lastmod: '2024-03-13T22:44:53.929360-06:00'
 model: gpt-4-0125-preview
-summary: "HTML in Haskell zu parsen, erm\xF6glicht es Ihnen, Daten zu extrahieren,\
-  \ HTML-Inhalte zu manipulieren oder programmgesteuert mit Webseiten zu interagieren."
+summary: "Um HTML in Haskell zu parsen, verwenden wir die `tagsoup` Bibliothek aufgrund\
+  \ ihrer Einfachheit und Flexibilit\xE4t."
 title: HTML parsen
 weight: 43
 ---

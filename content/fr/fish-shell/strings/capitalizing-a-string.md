@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:21.469262-07:00
-description: "Mettre en majuscule une cha\xEEne de caract\xE8res signifie la modifier\
-  \ pour que la premi\xE8re lettre soit en majuscule et que le reste de la cha\xEE\
-  ne soit en\u2026"
+description: "Comment faire : Dans Fish Shell, les cha\xEEnes peuvent \xEAtre manipul\xE9\
+  es directement avec des fonctions int\xE9gr\xE9es, sans avoir besoin d'outils externes\
+  \ ou de\u2026"
 lastmod: '2024-03-13T22:44:58.304620-06:00'
 model: gpt-4-0125-preview
-summary: "Mettre en majuscule une cha\xEEne de caract\xE8res signifie la modifier\
-  \ pour que la premi\xE8re lettre soit en majuscule et que le reste de la cha\xEE\
-  ne soit en minuscule."
+summary: "Dans Fish Shell, les cha\xEEnes peuvent \xEAtre manipul\xE9es directement\
+  \ avec des fonctions int\xE9gr\xE9es, sans avoir besoin d'outils externes ou de\
+  \ biblioth\xE8ques."
 title: "Mettre en majuscule une cha\xEEne"
 weight: 2
 ---

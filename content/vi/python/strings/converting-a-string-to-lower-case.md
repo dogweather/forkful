@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:30.989902-07:00
-description: "Chuy\u1EC3n m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng c\xF3\
-  \ ngh\u0129a l\xE0 thay \u0111\u1ED5i t\u1EA5t c\u1EA3 c\xE1c k\xFD t\u1EF1 vi\u1EBF\
-  t hoa trong v\u0103n b\u1EA3n th\xE0nh c\xE1c k\xFD t\u1EF1 t\u01B0\u01A1ng \u0111\
-  \u01B0\u01A1ng \u1EDF d\u1EA1ng ch\u1EEF th\u01B0\u1EDDng. C\xE1c l\u1EADp\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Chuy\u1EC3n m\u1ED9t chu\u1ED7i sang d\u1EA1\
+  ng ch\u1EEF th\u01B0\u1EDDng trong Python r\u1EA5t \u0111\u01A1n gi\u1EA3n v\u1EDB\
+  i ph\u01B0\u01A1ng th\u1EE9c `.lower()`."
 lastmod: '2024-03-13T22:44:36.079703-06:00'
 model: gpt-4-0125-preview
-summary: "Chuy\u1EC3n m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng c\xF3\
-  \ ngh\u0129a l\xE0 thay \u0111\u1ED5i t\u1EA5t c\u1EA3 c\xE1c k\xFD t\u1EF1 vi\u1EBF\
-  t hoa trong v\u0103n b\u1EA3n th\xE0nh c\xE1c k\xFD t\u1EF1 t\u01B0\u01A1ng \u0111\
-  \u01B0\u01A1ng \u1EDF d\u1EA1ng ch\u1EEF th\u01B0\u1EDDng."
+summary: "Chuy\u1EC3n m\u1ED9t chu\u1ED7i sang d\u1EA1ng ch\u1EEF th\u01B0\u1EDDng\
+  \ trong Python r\u1EA5t \u0111\u01A1n gi\u1EA3n v\u1EDBi ph\u01B0\u01A1ng th\u1EE9\
+  c `.lower()`."
 title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
 weight: 4
 ---

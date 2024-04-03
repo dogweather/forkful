@@ -1,7 +1,8 @@
 ---
 date: 2024-02-01 21:30:22.659018-07:00
-description: "In VBA, the debugger is integral to the Visual Basic Editor (VBE). Here's\
-  \ how you can leverage it: 1. **Setting Breakpoints**: Click in the left margin\u2026"
+description: "How to: In VBA, the debugger is integral to the Visual Basic Editor\
+  \ (VBE). Here's how you can leverage it: 1. **Setting Breakpoints**: Click in the\
+  \ left\u2026"
 lastmod: '2024-03-13T22:44:59.938465-06:00'
 model: gpt-4-0125-preview
 summary: In VBA, the debugger is integral to the Visual Basic Editor (VBE).

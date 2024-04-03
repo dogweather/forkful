@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:50:38.186246-07:00
-description: "H\xE4r \xE4r en bit JavaScript-kod som inte beter sig som f\xF6rv\xE4\
-  ntat: ```javascript function buggyMultiply(a, b) { return a + b; // Hoppsan! Detta\
-  \ borde vara en\u2026"
+description: "Hur man g\xF6r: H\xE4r \xE4r en bit JavaScript-kod som inte beter sig\
+  \ som f\xF6rv\xE4ntat."
 lastmod: '2024-03-13T22:44:38.297950-06:00'
 model: gpt-4-0125-preview
-summary: "H\xE4r \xE4r en bit JavaScript-kod som inte beter sig som f\xF6rv\xE4ntat:\n\
-  \n```javascript\nfunction buggyMultiply(a, b) {\n    return a + b; // Hoppsan."
+summary: "H\xE4r \xE4r en bit JavaScript-kod som inte beter sig som f\xF6rv\xE4ntat."
 title: "Att anv\xE4nda en debugger"
 weight: 35
 ---

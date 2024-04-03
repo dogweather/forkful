@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:31.869478-07:00
-description: "X\u1EED l\xFD l\u1ED7i trong C# l\xE0 v\u1EC1 vi\u1EC7c qu\u1EA3n l\xFD\
-  \ nh\u1EEFng \u0111i\u1EC1u kh\xF4ng mong \u0111\u1EE3i - gi\u1ED1ng nh\u01B0 v\u1EA5\
-  p ph\u1EA3i d\xE2y gi\xE0y c\u1EE7a m\xECnh. Ch\u01B0\u01A1ng tr\xECnh c\xF3 th\u1EC3\
-  \ v\u1EA5p ph\u1EA3i d\u1EEF li\u1EC7u x\u1EA5u ho\u1EB7c k\u1EBFt\u2026"
+description: "L\xE0m Th\u1EBF N\xE0o: H\xE3y b\u1EAFt \u0111\u1EA7u v\u1EDBi kh\u1ED1\
+  i try-catch. N\xF3 gi\u1ED1ng nh\u01B0 vi\u1EC7c \u0111\u1EB7t m\u1ED9t l\u01B0\u1EDB\
+  i an to\xE0n d\u01B0\u1EDBi ng\u01B0\u1EDDi \u0111i tr\xEAn d\xE2y. N\u1EBFu h\u1ECD\
+  \ tr\u01B0\u1EE3t ch\xE2n, h\u1ECD kh\xF4ng r\u01A1i xu\u1ED1ng - h\u1ECD\u2026"
 lastmod: '2024-03-13T22:44:36.667355-06:00'
 model: gpt-4-0125-preview
-summary: "X\u1EED l\xFD l\u1ED7i trong C# l\xE0 v\u1EC1 vi\u1EC7c qu\u1EA3n l\xFD\
-  \ nh\u1EEFng \u0111i\u1EC1u kh\xF4ng mong \u0111\u1EE3i - gi\u1ED1ng nh\u01B0 v\u1EA5\
-  p ph\u1EA3i d\xE2y gi\xE0y c\u1EE7a m\xECnh."
+summary: "H\xE3y b\u1EAFt \u0111\u1EA7u v\u1EDBi kh\u1ED1i try-catch."
 title: "X\u1EED l\xFD l\u1ED7i"
 weight: 16
 ---

@@ -2,16 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:50.649739-07:00
-description: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong C \u0111\xF2i h\u1ECFi ph\u1EA3\
-  i truy c\u1EADp v\xE0o th\u01B0 vi\u1EC7n chu\u1EA9n C \u0111\u1EC3 l\u1EA5y v\xE0\
-  \ \u0111\u1ECBnh d\u1EA1ng ng\xE0y v\xE0 gi\u1EDD hi\u1EC7n t\u1EA1i c\u1EE7a h\u1EC7\
-  \ th\u1ED1ng. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u01B0\u1EDDng c\u1EA7n\u2026"
+description: "C\xE1ch l\xE0m: Trong C, ti\xEAu \u0111\u1EC1 `<time.h>` cung c\u1EA5\
+  p c\xE1c h\xE0m v\xE0 ki\u1EC3u c\u1EA7n thi\u1EBFt \u0111\u1EC3 l\xE0m vi\u1EC7\
+  c v\u1EDBi ng\xE0y v\xE0 gi\u1EDD. H\xE0m `time()` l\u1EA5y th\u1EDDi gian hi\u1EC7\
+  n t\u1EA1i, trong khi\u2026"
 lastmod: '2024-03-13T22:44:37.282296-06:00'
 model: gpt-4-0125-preview
-summary: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong C \u0111\xF2i h\u1ECFi ph\u1EA3\
-  i truy c\u1EADp v\xE0o th\u01B0 vi\u1EC7n chu\u1EA9n C \u0111\u1EC3 l\u1EA5y v\xE0\
-  \ \u0111\u1ECBnh d\u1EA1ng ng\xE0y v\xE0 gi\u1EDD hi\u1EC7n t\u1EA1i c\u1EE7a h\u1EC7\
-  \ th\u1ED1ng."
+summary: "Trong C, ti\xEAu \u0111\u1EC1 `<time.h>` cung c\u1EA5p c\xE1c h\xE0m v\xE0\
+  \ ki\u1EC3u c\u1EA7n thi\u1EBFt \u0111\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi ng\xE0y v\xE0\
+  \ gi\u1EDD."
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 weight: 29
 ---

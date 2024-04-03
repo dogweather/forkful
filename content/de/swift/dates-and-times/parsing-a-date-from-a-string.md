@@ -2,12 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:33.684292-07:00
-description: "Das Parsen eines Datums aus einem String umfasst die Umwandlung von\
-  \ textuellen Datums- und Zeitangaben in ein `Date`-Objekt. Dieser Prozess ist essenziell\u2026"
+description: 'Wie geht das: #.'
 lastmod: '2024-03-13T22:44:54.234509-06:00'
 model: gpt-4-0125-preview
-summary: Das Parsen eines Datums aus einem String umfasst die Umwandlung von textuellen
-  Datums- und Zeitangaben in ein `Date`-Objekt.
+summary: '#.'
 title: Einen Datum aus einem String analysieren
 weight: 30
 ---

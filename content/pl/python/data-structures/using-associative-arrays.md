@@ -2,14 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:51.192241-07:00
-description: "Tablice asocjacyjne, znane w Pythonie jako s\u0142owniki, mapuj\u0105\
-  \ klucze na warto\u015Bci, co u\u0142atwia pobieranie, modyfikowanie lub \u015B\
-  ledzenie danych za pomoc\u0105\u2026"
+description: "Jak to zrobi\u0107: Tworzenie s\u0142ownika w Pythonie jest proste.\
+  \ Otaczasz pary klucz-warto\u015B\u0107 nawiasami klamrowymi `{}`, klucze i warto\u015B\
+  ci oddzielone s\u0105\u2026"
 lastmod: '2024-03-13T22:44:34.941833-06:00'
 model: gpt-4-0125-preview
-summary: "Tablice asocjacyjne, znane w Pythonie jako s\u0142owniki, mapuj\u0105 klucze\
-  \ na warto\u015Bci, co u\u0142atwia pobieranie, modyfikowanie lub \u015Bledzenie\
-  \ danych za pomoc\u0105 unikalnego identyfikatora."
+summary: "Tworzenie s\u0142ownika w Pythonie jest proste."
 title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---

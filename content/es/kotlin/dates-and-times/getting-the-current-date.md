@@ -2,14 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:06.420064-07:00
-description: "En la programaci\xF3n, obtener la fecha actual es una tarea fundamental\
-  \ que permite a los desarrolladores acceder, mostrar o manipular la fecha actual\
-  \ dentro\u2026"
+description: "C\xF3mo hacerlo: #."
 lastmod: '2024-03-13T22:44:59.046578-06:00'
 model: gpt-4-0125-preview
-summary: "En la programaci\xF3n, obtener la fecha actual es una tarea fundamental\
-  \ que permite a los desarrolladores acceder, mostrar o manipular la fecha actual\
-  \ dentro de sus aplicaciones."
+summary: '#.'
 title: Obteniendo la fecha actual
 weight: 29
 ---

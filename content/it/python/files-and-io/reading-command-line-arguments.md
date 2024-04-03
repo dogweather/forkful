@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:56:30.641828-07:00
-description: "Leggere gli argomenti della riga di comando significa estrarre i parametri\
-  \ che passi al tuo script Python al momento dell'esecuzione. I programmatori\u2026"
+description: "How to: Usiamo `sys.argv` per accedere agli argomenti. \xC8 semplice.\
+  \ Ecco un esempio."
 lastmod: '2024-03-13T22:44:43.016570-06:00'
 model: gpt-4-1106-preview
-summary: Leggere gli argomenti della riga di comando significa estrarre i parametri
-  che passi al tuo script Python al momento dell'esecuzione.
+summary: Usiamo `sys.argv` per accedere agli argomenti.
 title: Lettura degli argomenti della riga di comando
 weight: 23
 ---

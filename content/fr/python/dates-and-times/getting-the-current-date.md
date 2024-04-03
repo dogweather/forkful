@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:28.434067-07:00
-description: "L'obtention de la date actuelle en Python est une op\xE9ration essentielle\
-  \ pour de nombreuses applications, telles que la journalisation, l'analyse de\u2026"
+description: "Comment faire : **En utilisant la biblioth\xE8que standard `datetime`\
+  \ :** Le module `datetime` dans la biblioth\xE8que standard de Python fournit des\
+  \ classes\u2026"
 lastmod: '2024-03-13T22:44:57.247791-06:00'
 model: gpt-4-0125-preview
-summary: "L'obtention de la date actuelle en Python est une op\xE9ration essentielle\
-  \ pour de nombreuses applications, telles que la journalisation, l'analyse de donn\xE9\
-  es et la prise de d\xE9cisions bas\xE9e sur le temps."
+summary: "**En utilisant la biblioth\xE8que standard `datetime` :**\n\nLe module `datetime`\
+  \ dans la biblioth\xE8que standard de Python fournit des classes pour manipuler\
+  \ des dates et des heures."
 title: Obtenir la date actuelle
 weight: 29
 ---

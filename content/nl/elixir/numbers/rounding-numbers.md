@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:51.460870-07:00
-description: "Getallen afronden betekent dat je ze aanpast naar een nabijgelegen waarde\
-  \ voor eenvoud of om te voldoen aan een bepaalde precisie. Het is nuttig voor het\u2026"
+description: "Hoe: In Elixir, kun je `Float.round/2` gebruiken om een kommagetal af\
+  \ te ronden. Je kunt het aantal decimale cijfers specificeren dat je wilt behouden.\
+  \ Zo\u2026"
 lastmod: '2024-03-13T22:44:50.456974-06:00'
 model: gpt-4-0125-preview
-summary: Getallen afronden betekent dat je ze aanpast naar een nabijgelegen waarde
-  voor eenvoud of om te voldoen aan een bepaalde precisie.
+summary: In Elixir, kun je `Float.round/2` gebruiken om een kommagetal af te ronden.
 title: Afronden van getallen
 weight: 13
 ---

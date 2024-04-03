@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:13.045554-07:00
-description: "Das L\xF6schen von Zeichen, die einem bestimmten Muster in Visual Basic\
-  \ for Applications (VBA) entsprechen, umfasst das Identifizieren und anschlie\xDF\
-  ende\u2026"
+description: "Wie: In VBA k\xF6nnen Sie die `Replace`-Funktion oder regul\xE4re Ausdr\xFC\
+  cke verwenden, um Zeichen zu l\xF6schen, die einem Muster entsprechen. Hier sind\
+  \ Beispiele\u2026"
 lastmod: '2024-03-13T22:44:53.699975-06:00'
 model: gpt-4-0125-preview
-summary: "Das L\xF6schen von Zeichen, die einem bestimmten Muster in Visual Basic\
-  \ for Applications (VBA) entsprechen, umfasst das Identifizieren und anschlie\xDF\
-  ende Entfernen von Zeichen oder Zeichenketten, die bestimmte Kriterien erf\xFCllen."
+summary: "In VBA k\xF6nnen Sie die `Replace`-Funktion oder regul\xE4re Ausdr\xFCcke\
+  \ verwenden, um Zeichen zu l\xF6schen, die einem Muster entsprechen."
 title: "Zeichen, die einem Muster entsprechen, l\xF6schen"
 weight: 5
 ---

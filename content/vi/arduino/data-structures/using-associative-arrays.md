@@ -2,15 +2,15 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:32.698227-07:00
-description: "Trong th\u1EBF gi\u1EDBi c\u1EE7a Arduino, m\u1EA3ng k\u1EBFt h\u1EE3\
-  p cho ph\xE9p b\u1EA1n gh\xE9p c\xE1c key v\u1EDBi c\xE1c gi\xE1 tr\u1ECB, ki\u1EC3\
-  u nh\u01B0 c\xE1ch b\u1EA1n gh\xE9p \u0111\xF4i t\u1EA5t v\u1EDBi nhau. Ch\xFAng\
-  \ l\xE0 l\u1EF1a ch\u1ECDn t\u1ED1t khi b\u1EA1n\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: N\xF3i m\u1ED9t c\xE1ch nghi\xEAm ng\u1EB7\
+  t, Arduino kh\xF4ng h\u1ED7 tr\u1EE3 s\u1EB5n t\xEDnh n\u0103ng m\u1EA3ng k\u1EBF\
+  t h\u1EE3p nh\u01B0 b\u1EA1n th\u1EA5y trong c\xE1c ng\xF4n ng\u1EEF c\u1EA5p cao.\
+  \ Nh\u01B0ng, \u0111\u1EEBng lo. Ch\xFAng\u2026"
 lastmod: '2024-03-13T22:44:36.981317-06:00'
 model: gpt-4-0125-preview
-summary: "Trong th\u1EBF gi\u1EDBi c\u1EE7a Arduino, m\u1EA3ng k\u1EBFt h\u1EE3p cho\
-  \ ph\xE9p b\u1EA1n gh\xE9p c\xE1c key v\u1EDBi c\xE1c gi\xE1 tr\u1ECB, ki\u1EC3\
-  u nh\u01B0 c\xE1ch b\u1EA1n gh\xE9p \u0111\xF4i t\u1EA5t v\u1EDBi nhau."
+summary: "N\xF3i m\u1ED9t c\xE1ch nghi\xEAm ng\u1EB7t, Arduino kh\xF4ng h\u1ED7 tr\u1EE3\
+  \ s\u1EB5n t\xEDnh n\u0103ng m\u1EA3ng k\u1EBFt h\u1EE3p nh\u01B0 b\u1EA1n th\u1EA5\
+  y trong c\xE1c ng\xF4n ng\u1EEF c\u1EA5p cao."
 title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 weight: 15
 ---

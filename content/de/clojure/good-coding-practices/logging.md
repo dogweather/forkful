@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 01:01:36.972932-07:00
-description: "Logging ist im Grunde das softwaretechnische \xC4quivalent zu einem\
-  \ Schiffslogbuch; es ist eine Methode, um Ereignisse aufzuzeichnen, die w\xE4hrend\
-  \ des\u2026"
+description: "Wie geht das: Clojure st\xFCtzt sich auf die Logging-Funktionen von\
+  \ Java, aber Sie k\xF6nnen diese auf eine idiomatischere Clojure-Art anzapfen. Lassen\
+  \ Sie uns\u2026"
 lastmod: '2024-03-13T22:44:53.425909-06:00'
 model: gpt-4-1106-preview
-summary: "Logging ist im Grunde das softwaretechnische \xC4quivalent zu einem Schiffslogbuch;\
-  \ es ist eine Methode, um Ereignisse aufzuzeichnen, die w\xE4hrend des Betriebs\
-  \ einer Anwendung geschehen."
+summary: "Clojure st\xFCtzt sich auf die Logging-Funktionen von Java, aber Sie k\xF6\
+  nnen diese auf eine idiomatischere Clojure-Art anzapfen."
 title: Protokollierung
 weight: 17
 ---

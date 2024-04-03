@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:47:14.554390-07:00
-description: "Finding the length of a string means counting the number of characters\
-  \ in it. Programmers do it to validate input, size buffers, or loop through\u2026"
+description: 'How to: Here''s how to get a string''s length in Fish.'
 lastmod: '2024-03-13T22:45:00.464151-06:00'
 model: gpt-4-1106-preview
-summary: Finding the length of a string means counting the number of characters in
-  it.
+summary: Here's how to get a string's length in Fish.
 title: Finding the length of a string
 weight: 7
 ---

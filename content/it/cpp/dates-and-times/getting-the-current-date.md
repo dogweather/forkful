@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:08.832595-07:00
-description: "Recuperare la data corrente in C++ \xE8 un compito fondamentale per\
-  \ i programmi che necessitano di elaborare o visualizzare date basate sull'orologio\
-  \ del\u2026"
+description: "Come fare: C++ offre diversi modi per ottenere la data corrente, inclusa\
+  \ la libreria standard di C++ e librerie di terze parti come Boost. Gli esempi\u2026"
 lastmod: '2024-03-13T22:44:43.737445-06:00'
 model: gpt-4-0125-preview
-summary: "Recuperare la data corrente in C++ \xE8 un compito fondamentale per i programmi\
-  \ che necessitano di elaborare o visualizzare date basate sull'orologio del sistema."
+summary: C++ offre diversi modi per ottenere la data corrente, inclusa la libreria
+  standard di C++ e librerie di terze parti come Boost.
 title: Ottenere la data corrente
 weight: 29
 ---

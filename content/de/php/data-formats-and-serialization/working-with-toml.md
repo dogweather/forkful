@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:24:30.415893-07:00
-description: "TOML, die Abk\xFCrzung f\xFCr Tom's Obvious, Minimal Language, ist ein\
-  \ Datenformat \xE4hnlich zu JSON oder YAML, jedoch leichter f\xFCr Menschen zu lesen.\u2026"
+description: "Wie geht das: Zuerst stellen Sie sicher, dass Sie eine TOML-Parser-Bibliothek\
+  \ installiert haben, wie `yosymfony/toml`. Lassen Sie uns eine TOML-Datei\u2026"
 lastmod: '2024-03-13T22:44:53.996501-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, die Abk\xFCrzung f\xFCr Tom's Obvious, Minimal Language, ist ein Datenformat\
-  \ \xE4hnlich zu JSON oder YAML, jedoch leichter f\xFCr Menschen zu lesen."
+summary: Zuerst stellen Sie sicher, dass Sie eine TOML-Parser-Bibliothek installiert
+  haben, wie `yosymfony/toml`.
 title: Arbeiten mit TOML
 weight: 39
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:56.281791-07:00
-description: "Werken met CSV (Comma-Separated Values) betekent het lezen en schrijven\
-  \ van gegevens in een tekstformaat waarbij elke regel waarden heeft die door komma's\u2026"
+description: "Hoe te: Elm heeft geen ingebouwde CSV-parser, maar je kunt er gemakkelijk\
+  \ een toevoegen met een pakket zoals `elm-csv`. Hier is een snel voorbeeld van het\u2026"
 lastmod: '2024-03-13T22:44:50.747540-06:00'
 model: gpt-4-0125-preview
-summary: Werken met CSV (Comma-Separated Values) betekent het lezen en schrijven van
-  gegevens in een tekstformaat waarbij elke regel waarden heeft die door komma's worden
-  gescheiden.
+summary: Elm heeft geen ingebouwde CSV-parser, maar je kunt er gemakkelijk een toevoegen
+  met een pakket zoals `elm-csv`.
 title: Werken met CSV
 weight: 37
 ---

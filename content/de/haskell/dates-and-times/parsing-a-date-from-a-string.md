@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:20.163479-07:00
-description: "Das Parsen eines Datums aus einem String in Haskell beinhaltet die Umwandlung\
-  \ von textuellen Darstellungen von Daten in ein strukturiertes Format, das das\u2026"
+description: "Wie: Out of the Box bietet Haskell grundlegende Werkzeuge f\xFCr das\
+  \ Parsen von Daten an, aber das Nutzen von Bibliotheken wie `time` f\xFCr die\u2026"
 lastmod: '2024-03-13T22:44:53.940643-06:00'
 model: gpt-4-0125-preview
-summary: Das Parsen eines Datums aus einem String in Haskell beinhaltet die Umwandlung
-  von textuellen Darstellungen von Daten in ein strukturiertes Format, das das Programm
-  manipulieren kann.
+summary: "Out of the Box bietet Haskell grundlegende Werkzeuge f\xFCr das Parsen von\
+  \ Daten an, aber das Nutzen von Bibliotheken wie `time` f\xFCr die Kernfunktionalit\xE4\
+  t und `date-parse` oder `time-parse` f\xFCr flexibleres Parsen kann die Aufgabe\
+  \ erheblich vereinfachen."
 title: Einen Datum aus einem String analysieren
 weight: 30
 ---

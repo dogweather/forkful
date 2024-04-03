@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:57:13.454196-07:00
-description: "Suchen und Ersetzen von Text ist ein Basiskonzept, bei dem Zeichenketten\
-  \ innerhalb einer gr\xF6\xDFeren Textmenge gefunden und durch andere ersetzt werden.\u2026"
+description: Wie geht das? .
 lastmod: '2024-03-13T22:44:54.169847-06:00'
 model: gpt-4-1106-preview
-summary: "Suchen und Ersetzen von Text ist ein Basiskonzept, bei dem Zeichenketten\
-  \ innerhalb einer gr\xF6\xDFeren Textmenge gefunden und durch andere ersetzt werden."
+summary: .
 title: Suchen und Ersetzen von Text
 weight: 10
 ---

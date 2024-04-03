@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:49.788099-07:00
-description: "Een webpagina downloaden in C houdt in dat je programmatisch toegang\
-  \ krijgt tot de inhoud van een webpagina via het internet en deze lokaal opslaat\
-  \ voor\u2026"
+description: "Hoe te: Om een webpagina in C te downloaden, is een populaire aanpak\
+  \ het gebruik van de libcurl-bibliotheek, een effici\xEBnte en draagbare client-side\
+  \ URL-\u2026"
 lastmod: '2024-03-13T22:44:51.289857-06:00'
 model: gpt-4-0125-preview
-summary: Een webpagina downloaden in C houdt in dat je programmatisch toegang krijgt
-  tot de inhoud van een webpagina via het internet en deze lokaal opslaat voor verwerking
-  of offline gebruik.
+summary: "Om een webpagina in C te downloaden, is een populaire aanpak het gebruik\
+  \ van de libcurl-bibliotheek, een effici\xEBnte en draagbare client-side URL-transferbibliotheek."
 title: Een webpagina downloaden
 weight: 42
 ---

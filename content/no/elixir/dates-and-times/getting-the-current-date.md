@@ -3,14 +3,12 @@ changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 - 2024-02-05, dogweather, reviewed and corrected
 date: 2024-02-03 19:09:27.907362-07:00
-description: "\xC5 f\xE5 den gjeldende datoen i Elixir involverer \xE5 f\xE5 tilgang\
-  \ til systemets dato- og tidsinformasjon, en vanlig oppgave for logging, datostempling,\
-  \ eller\u2026"
+description: "Hvordan: Elixirs standardbibliotek, gjennom `DateTime`-modulen, tillater\
+  \ henting av gjeldende dato og tid. Siden Elixir kj\xF8rer p\xE5 Erlang VM (BEAM),\u2026"
 lastmod: '2024-03-13T22:44:40.453955-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 f\xE5 den gjeldende datoen i Elixir involverer \xE5 f\xE5 tilgang til\
-  \ systemets dato- og tidsinformasjon, en vanlig oppgave for logging, datostempling,\
-  \ eller enhver funksjonalitet som krever kunnskap om den n\xE5v\xE6rende datoen."
+summary: Elixirs standardbibliotek, gjennom `DateTime`-modulen, tillater henting av
+  gjeldende dato og tid.
 title: "F\xE5 dagens dato"
 weight: 29
 ---

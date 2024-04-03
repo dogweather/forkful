@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:38:20.166106-07:00
-description: "Converting a string to lower case is changing all the letters within\
-  \ a string to their lower case form. Programmers do this for consistency in data\u2026"
+description: 'How to: Elixir makes it a breeze. Use the `String.downcase/1` function.'
 lastmod: '2024-03-13T22:44:59.771275-06:00'
 model: gpt-4-1106-preview
-summary: Converting a string to lower case is changing all the letters within a string
-  to their lower case form.
+summary: Elixir makes it a breeze.
 title: Converting a string to lower case
 weight: 4
 ---

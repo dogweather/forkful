@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 01:01:07.800393-07:00
-description: "Logging i programmeringssammenheng er prosessen med \xE5 registrere\
-  \ hendelser, tilstander og informasjon til en fil eller annet utgangsmedium. Programmerere\u2026"
+description: "Hvordan: La oss si at du jobber p\xE5 en Linux-maskin og du vil kaste\
+  \ loggene dine til en fil med god gammeldags C++. Du vil inkludere bibliotekene\u2026"
 lastmod: '2024-03-13T22:44:41.106355-06:00'
 model: gpt-4-1106-preview
-summary: "Logging i programmeringssammenheng er prosessen med \xE5 registrere hendelser,\
-  \ tilstander og informasjon til en fil eller annet utgangsmedium."
+summary: "La oss si at du jobber p\xE5 en Linux-maskin og du vil kaste loggene dine\
+  \ til en fil med god gammeldags C++."
 title: "Loggf\xF8ring"
 weight: 17
 ---

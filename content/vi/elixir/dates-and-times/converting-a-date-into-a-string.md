@@ -2,16 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:46.066971-07:00
-description: "Vi\u1EC7c chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7\
-  i trong Elixir bi\u1EBFn ng\xE0y t\u1EEB m\u1ED9t c\u1EA5u tr\xFAc th\xE0nh m\u1ED9\
-  t lo\u1EA1t k\xFD t\u1EF1 d\u1EC5 \u0111\u1ECDc \u0111\u1EC3 hi\u1EC3n th\u1ECB\
-  \ ho\u1EB7c l\u01B0u tr\u1EEF. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Elixir, m\xF4-\u0111un `Date` c\xF3 m\u1ED9\
+  t h\xE0m `to_string/1` chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7\
+  i."
 lastmod: '2024-03-13T22:44:36.223306-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7\
-  i trong Elixir bi\u1EBFn ng\xE0y t\u1EEB m\u1ED9t c\u1EA5u tr\xFAc th\xE0nh m\u1ED9\
-  t lo\u1EA1t k\xFD t\u1EF1 d\u1EC5 \u0111\u1ECDc \u0111\u1EC3 hi\u1EC3n th\u1ECB\
-  \ ho\u1EB7c l\u01B0u tr\u1EEF."
+summary: "Trong Elixir, m\xF4-\u0111un `Date` c\xF3 m\u1ED9t h\xE0m `to_string/1`\
+  \ chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i."
 title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 weight: 28
 ---

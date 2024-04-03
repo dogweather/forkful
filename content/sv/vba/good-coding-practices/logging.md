@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:07.545406-07:00
-description: "Loggning i Visual Basic for Applications (VBA) inneb\xE4r att man spelar\
-  \ in information om ett programs k\xF6rtidsbeteende till en fil, konsol eller databas.\u2026"
+description: "Hur man g\xF6r: I VBA finns det inte ett inbyggt loggningsramverk som\
+  \ finns i vissa andra spr\xE5k. Dock \xE4r det enkelt att implementera en enkel\u2026"
 lastmod: '2024-03-13T22:44:37.750138-06:00'
 model: gpt-4-0125-preview
-summary: "Loggning i Visual Basic for Applications (VBA) inneb\xE4r att man spelar\
-  \ in information om ett programs k\xF6rtidsbeteende till en fil, konsol eller databas."
+summary: "I VBA finns det inte ett inbyggt loggningsramverk som finns i vissa andra\
+  \ spr\xE5k."
 title: Loggning
 weight: 17
 ---

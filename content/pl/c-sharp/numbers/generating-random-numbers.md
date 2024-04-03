@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 20:33:06.460666-07:00
-description: "Generowanie losowych liczb w C# polega na tworzeniu nieprzewidywalnych\
-  \ warto\u015Bci numerycznych w okre\u015Blonym zakresie. Programi\u015Bci u\u017C\
-  ywaj\u0105 tych metod do\u2026"
+description: "Jak to zrobi\u0107: Najcz\u0119stszym sposobem generowania losowych\
+  \ liczb w C# jest u\u017Cycie klasy `System.Random`. Oto prosty przyk\u0142ad demonstruj\u0105\
+  cy jej u\u017Cycie."
 lastmod: '2024-03-13T22:44:35.404281-06:00'
 model: gpt-4-0125-preview
-summary: "Generowanie losowych liczb w C# polega na tworzeniu nieprzewidywalnych warto\u015B\
-  ci numerycznych w okre\u015Blonym zakresie."
+summary: "Najcz\u0119stszym sposobem generowania losowych liczb w C# jest u\u017C\
+  ycie klasy `System.Random`."
 title: Generowanie liczb losowych
 weight: 12
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:41:53.714586-07:00
-description: "I numeri complessi estendono la linea dei numeri reali attraverso l'aggiunta\
-  \ di un'unit\xE0 immaginaria, `i`, dove `i^2 = -1`. Sono fondamentali in campi\u2026"
+description: "Come fare: Java non ha un supporto incorporato per i numeri complessi,\
+  \ ma possiamo creare una nostra classe o usare una libreria. Ecco un esempio rapido\u2026"
 lastmod: '2024-03-13T22:44:43.303130-06:00'
 model: gpt-4-0125-preview
-summary: "I numeri complessi estendono la linea dei numeri reali attraverso l'aggiunta\
-  \ di un'unit\xE0 immaginaria, `i`, dove `i^2 = -1`."
+summary: Java non ha un supporto incorporato per i numeri complessi, ma possiamo creare
+  una nostra classe o usare una libreria.
 title: Lavorare con i numeri complessi
 weight: 14
 ---

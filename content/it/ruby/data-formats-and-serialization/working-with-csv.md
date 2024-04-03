@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:07.381128-07:00
-description: "Lavorare con i file CSV in Ruby offre un approccio diretto per gestire\
-  \ i dati tabellari. I programmatori spesso si dedicano a questa pratica per il\u2026"
+description: 'Come fare: Ruby include di default la libreria CSV, che semplifica la
+  lettura e la scrittura di file CSV. Ecco come puoi sfruttarla per compiti comuni:
+  #.'
 lastmod: '2024-03-13T22:44:44.073551-06:00'
 model: gpt-4-0125-preview
-summary: Lavorare con i file CSV in Ruby offre un approccio diretto per gestire i
-  dati tabellari.
+summary: Ruby include di default la libreria CSV, che semplifica la lettura e la scrittura
+  di file CSV.
 title: Lavorare con i CSV
 weight: 37
 ---

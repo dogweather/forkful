@@ -2,12 +2,13 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:52.607697-07:00
-description: "Assosiatiiviset taulukot, tai sanakirjat C#:ssa, antavat sinun tallentaa\
-  \ ja hallita avain-arvo -pareja. Ne ovat sinun valintasi, kun tarvitset nopeasti\u2026"
+description: "Miten: C#:ssa ty\xF6skentelet assosiatiivisten taulukoiden kanssa k\xE4\
+  ytt\xE4m\xE4ll\xE4 `Dictionary<TKey, TValue>` -luokkaa. T\xE4ss\xE4 on nopea esimerkki,\
+  \ jolla p\xE4\xE4set\u2026"
 lastmod: '2024-03-13T22:44:56.566219-06:00'
 model: gpt-4-0125-preview
-summary: Assosiatiiviset taulukot, tai sanakirjat C#:ssa, antavat sinun tallentaa
-  ja hallita avain-arvo -pareja.
+summary: "C#:ssa ty\xF6skentelet assosiatiivisten taulukoiden kanssa k\xE4ytt\xE4\
+  m\xE4ll\xE4 `Dictionary<TKey, TValue>` -luokkaa."
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---

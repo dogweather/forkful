@@ -1,12 +1,10 @@
 ---
 date: 2024-01-25 20:50:29.988124-07:00
-description: "Removing quotes from a string in PowerShell strips out single (`'`)\
-  \ or double (`\"`) quotation marks wrapped around your text. Programmers often need\
-  \ to\u2026"
+description: 'How to: You can use the `-replace` operator to strip quotes from a string.
+  Here''s how.'
 lastmod: '2024-03-13T22:45:00.271256-06:00'
 model: gpt-4-1106-preview
-summary: Removing quotes from a string in PowerShell strips out single (`'`) or double
-  (`"`) quotation marks wrapped around your text.
+summary: You can use the `-replace` operator to strip quotes from a string.
 title: Removing quotes from a string
 weight: 9
 ---

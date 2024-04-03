@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:30.353687-07:00
-description: "Een REPL, of Read-Eval-Print Loop, is een programmeeromgeving die individuele\
-  \ gebruikersinvoer neemt, deze uitvoert, en het resultaat aan de gebruiker\u2026"
+description: 'Hoe: Duik direct in Python''s REPL door `python` in je commandoregel
+  te typen. Eenmaal daar, test eenvoudige operaties of meerdere regels code.'
 lastmod: '2024-03-13T22:44:50.378366-06:00'
 model: gpt-4-0125-preview
-summary: Een REPL, of Read-Eval-Print Loop, is een programmeeromgeving die individuele
-  gebruikersinvoer neemt, deze uitvoert, en het resultaat aan de gebruiker teruggeeft.
+summary: Duik direct in Python's REPL door `python` in je commandoregel te typen.
 title: Het gebruik van een interactieve shell (REPL)
 weight: 34
 ---

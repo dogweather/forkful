@@ -1,13 +1,11 @@
 ---
 date: 2024-01-20 18:00:46.388908-07:00
-description: "\xC5 sende en HTTP-foresp\xF8rsel med basisgodkjenning betyr \xE5 kreve\
-  \ tilgang til en beskyttet ressurs p\xE5 nettet ved \xE5 inkludere brukernavn og\
-  \ passord.\u2026"
+description: "Hvordan gj\xF8re det: Bruk ESP8266 eller ESP32 med WiFi-bibliotek for\
+  \ \xE5 koble til et nettverk og utf\xF8re HTTP-foresp\xF8rsler med basisgodkjenning."
 lastmod: '2024-03-13T22:44:41.058351-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 sende en HTTP-foresp\xF8rsel med basisgodkjenning betyr \xE5 kreve\
-  \ tilgang til en beskyttet ressurs p\xE5 nettet ved \xE5 inkludere brukernavn og\
-  \ passord."
+summary: "Bruk ESP8266 eller ESP32 med WiFi-bibliotek for \xE5 koble til et nettverk\
+  \ og utf\xF8re HTTP-foresp\xF8rsler med basisgodkjenning."
 title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---

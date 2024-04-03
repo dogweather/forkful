@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 01:07:23.767722-07:00
-description: "Loggning \xE4r i grund och botten att l\xE4mna ett sp\xE5r genom din\
-  \ kod - det \xE4r hur du h\xE5ller koll p\xE5 vad som h\xE4nder n\xE4r ditt skript\
-  \ k\xF6rs i det vilda.\u2026"
+description: "Hur man g\xF6r: H\xE4r \xE4r knepen f\xF6r att str\xF6 in grundl\xE4\
+  ggande loggning i dina skript."
 lastmod: '2024-03-13T22:44:38.132332-06:00'
 model: gpt-4-1106-preview
-summary: "Loggning \xE4r i grund och botten att l\xE4mna ett sp\xE5r genom din kod\
-  \ - det \xE4r hur du h\xE5ller koll p\xE5 vad som h\xE4nder n\xE4r ditt skript k\xF6\
-  rs i det vilda."
+summary: "H\xE4r \xE4r knepen f\xF6r att str\xF6 in grundl\xE4ggande loggning i dina\
+  \ skript."
 title: Loggning
 weight: 17
 ---

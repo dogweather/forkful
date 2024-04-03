@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 01:44:01.959580-07:00
-description: "Refatora\xE7\xE3o \xE9 o processo de ajustar o c\xF3digo existente para\
-  \ melhorar sua estrutura, legibilidade e desempenho sem alterar seu comportamento\
-  \ externo.\u2026"
+description: "Como Fazer: Aqui est\xE1 um trecho em Kotlin mostrando um problema comum\
+  \ no c\xF3digo e sua vers\xE3o refatorada. Come\xE7amos com um trecho de c\xF3digo\
+  \ que est\xE1\u2026"
 lastmod: '2024-03-13T22:44:46.550624-06:00'
 model: gpt-4-0125-preview
-summary: "Refatora\xE7\xE3o \xE9 o processo de ajustar o c\xF3digo existente para\
-  \ melhorar sua estrutura, legibilidade e desempenho sem alterar seu comportamento\
-  \ externo."
+summary: "Aqui est\xE1 um trecho em Kotlin mostrando um problema comum no c\xF3digo\
+  \ e sua vers\xE3o refatorada."
 title: "Refatora\xE7\xE3o"
 weight: 19
 ---

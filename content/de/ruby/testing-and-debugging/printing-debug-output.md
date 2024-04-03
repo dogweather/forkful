@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:53:11.693928-07:00
-description: "Drucken von Debug-Output ist, wenn wir programminterne Daten zur Laufzeit\
-  \ ausgeben, um Fehler zu finden und den Programmfluss zu verstehen. Wir machen\u2026"
+description: 'How to: Ruby bietet mehrere Wege, um Debug-Ausgaben zu machen. Hier
+  sind ein paar Beispiele.'
 lastmod: '2024-03-13T22:44:54.403103-06:00'
 model: gpt-4-1106-preview
-summary: Drucken von Debug-Output ist, wenn wir programminterne Daten zur Laufzeit
-  ausgeben, um Fehler zu finden und den Programmfluss zu verstehen.
+summary: Ruby bietet mehrere Wege, um Debug-Ausgaben zu machen.
 title: Debug-Ausgaben drucken
 weight: 33
 ---

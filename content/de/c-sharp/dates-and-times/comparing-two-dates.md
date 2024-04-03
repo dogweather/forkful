@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:32:46.124981-07:00
-description: "Das Vergleichen von zwei Daten \xFCberpr\xFCft, ob sie gleich sind,\
-  \ oder ermittelt, welches fr\xFCher oder sp\xE4ter liegt. Entwickler ben\xF6tigen\
-  \ dies f\xFCr\u2026"
+description: Wie geht das? Verwenden der `DateTime`-Klasse in C#.
 lastmod: '2024-03-13T22:44:53.900749-06:00'
 model: gpt-4-1106-preview
-summary: "Das Vergleichen von zwei Daten \xFCberpr\xFCft, ob sie gleich sind, oder\
-  \ ermittelt, welches fr\xFCher oder sp\xE4ter liegt."
+summary: Verwenden der `DateTime`-Klasse in C#.
 title: Vergleich von zwei Daten
 weight: 27
 ---

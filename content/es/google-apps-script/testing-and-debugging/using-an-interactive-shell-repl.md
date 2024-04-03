@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:19.688043-07:00
-description: "Una shell interactiva, o Bucle de Leer-Evaluar-Imprimir (REPL, por sus\
-  \ siglas en ingl\xE9s), es un entorno de programaci\xF3n simple e interactivo que\
-  \ toma\u2026"
+description: "C\xF3mo hacerlo: Google Apps Script, un lenguaje de scripting basado\
+  \ en la nube para automatizar tareas a trav\xE9s de los productos de Google, no\
+  \ tiene una\u2026"
 lastmod: '2024-03-13T22:44:58.532694-06:00'
 model: gpt-4-0125-preview
-summary: "Una shell interactiva, o Bucle de Leer-Evaluar-Imprimir (REPL, por sus siglas\
-  \ en ingl\xE9s), es un entorno de programaci\xF3n simple e interactivo que toma\
-  \ entradas \xFAnicas del usuario (expresiones), las eval\xFAa y devuelve el resultado\
-  \ al usuario."
+summary: "Google Apps Script, un lenguaje de scripting basado en la nube para automatizar\
+  \ tareas a trav\xE9s de los productos de Google, no tiene una herramienta REPL integrada\
+  \ similar a las de lenguajes como Python o Node.js de JavaScript."
 title: Usando un shell interactivo (REPL)
 weight: 34
 ---

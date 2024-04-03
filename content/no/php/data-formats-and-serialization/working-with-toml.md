@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:24:37.477933-07:00
-description: "TOML, som st\xE5r for Tom's Obvious, Minimal Language, er et dataformat\
-  \ liknende JSON eller YAML, men enklere \xE5 lese for mennesker. Programmerere bruker\
-  \ det\u2026"
+description: "Hvordan: F\xF8rst, s\xF8rg for at du har installert et TOML parser bibliotek,\
+  \ som `yosymfony/toml`. La oss parse en TOML-fil."
 lastmod: '2024-03-13T22:44:40.909767-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, som st\xE5r for Tom's Obvious, Minimal Language, er et dataformat\
-  \ liknende JSON eller YAML, men enklere \xE5 lese for mennesker."
+summary: "F\xF8rst, s\xF8rg for at du har installert et TOML parser bibliotek, som\
+  \ `yosymfony/toml`."
 title: Jobbe med TOML
 weight: 39
 ---

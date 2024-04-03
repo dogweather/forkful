@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:14.736870-07:00
-description: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen\
-  \ liittyy p\xE4iv\xE4m\xE4\xE4r\xE4n m\xE4\xE4ritt\xE4miseen, joka on m\xE4\xE4\
-  r\xE4tyn lukum\xE4\xE4r\xE4n p\xE4ivi\xE4, kuukausia tai vuosia pois\u2026"
+description: "Kuinka: Visual Basic for Applications (VBA) -ohjelmassa ensisijainen\
+  \ funktio tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4rien laskemiseen on\
+  \ `DateAdd()`. T\xE4m\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.415456-06:00'
 model: gpt-4-0125-preview
-summary: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen liittyy\
-  \ p\xE4iv\xE4m\xE4\xE4r\xE4n m\xE4\xE4ritt\xE4miseen, joka on m\xE4\xE4r\xE4tyn\
-  \ lukum\xE4\xE4r\xE4n p\xE4ivi\xE4, kuukausia tai vuosia pois annetusta p\xE4iv\xE4\
-  m\xE4\xE4r\xE4st\xE4."
+summary: "Visual Basic for Applications (VBA) -ohjelmassa ensisijainen funktio tulevaisuuden\
+  \ tai menneisyyden p\xE4iv\xE4m\xE4\xE4rien laskemiseen on `DateAdd()`."
 title: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---

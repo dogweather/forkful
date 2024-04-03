@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 01:02:12.853815-07:00
-description: "Il logging \xE8 essenzialmente il processo di registrazione di eventi\
-  \ e output di dati da un software durante il suo funzionamento, pensalo come il\
-  \ diario\u2026"
+description: "Come fare: L'architettura di Elm non supporta effetti collaterali come\
+  \ il logging di base\u2014li gestisci attraverso comandi, che sono una parte\u2026"
 lastmod: '2024-03-13T22:44:43.356177-06:00'
 model: gpt-4-1106-preview
-summary: "Il logging \xE8 essenzialmente il processo di registrazione di eventi e\
-  \ output di dati da un software durante il suo funzionamento, pensalo come il diario\
-  \ del software."
+summary: "L'architettura di Elm non supporta effetti collaterali come il logging di\
+  \ base\u2014li gestisci attraverso comandi, che sono una parte dell'architettura\
+  \ della tua applicazione."
 title: Registrazione Eventi (Logging)
 weight: 17
 ---

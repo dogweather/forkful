@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:23.170611-07:00
-description: "Mettre en majuscule la premi\xE8re lettre d'une cha\xEEne de caract\xE8\
-  res en Rust implique de modifier cette cha\xEEne afin que son premier caract\xE8\
-  re soit une\u2026"
+description: "Comment faire : Pour mettre en majuscule la premi\xE8re lettre d'une\
+  \ cha\xEEne de caract\xE8res en Rust, vous avez deux options principales : utiliser\
+  \ les\u2026"
 lastmod: '2024-03-13T22:44:57.464555-06:00'
 model: gpt-4-0125-preview
-summary: "Mettre en majuscule la premi\xE8re lettre d'une cha\xEEne de caract\xE8\
-  res en Rust implique de modifier cette cha\xEEne afin que son premier caract\xE8\
-  re soit une majuscule s'il s'agit d'une lettre, tout en laissant le reste de la\
-  \ cha\xEEne inchang\xE9."
+summary: "Pour mettre en majuscule la premi\xE8re lettre d'une cha\xEEne de caract\xE8\
+  res en Rust, vous avez deux options principales."
 title: "Mettre en majuscule une cha\xEEne"
 weight: 2
 ---

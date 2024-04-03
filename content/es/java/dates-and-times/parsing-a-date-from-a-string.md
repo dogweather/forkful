@@ -2,14 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:16.083734-07:00
-description: "Convertir una fecha de una cadena implica convertir la representaci\xF3\
-  n en texto de una fecha y hora en un objeto `Date` o en un objeto `LocalDateTime`\
-  \ m\xE1s\u2026"
+description: "C\xF3mo hacerlo: #."
 lastmod: '2024-03-13T22:44:58.946669-06:00'
 model: gpt-4-0125-preview
-summary: "Convertir una fecha de una cadena implica convertir la representaci\xF3\
-  n en texto de una fecha y hora en un objeto `Date` o en un objeto `LocalDateTime`\
-  \ m\xE1s moderno."
+summary: '#.'
 title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---

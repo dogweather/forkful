@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:42:55.096681-07:00
-description: "Komplexe Zahlen sind Zahlen mit einem Real- und einem Imagin\xE4rteil\
-  \ (wie 3 + 4i). Sie tauchen in verschiedenen Programmierproblemen auf, insbesondere\
-  \ in\u2026"
+description: "Wie geht das: JavaScript hat keine eingebaute Unterst\xFCtzung f\xFC\
+  r komplexe Zahlen, aber man kann die \xC4rmel hochkrempeln und es mit Objekten und\
+  \ Mathematik\u2026"
 lastmod: '2024-03-13T22:44:54.260224-06:00'
 model: gpt-4-0125-preview
-summary: "Komplexe Zahlen sind Zahlen mit einem Real- und einem Imagin\xE4rteil (wie\
-  \ 3 + 4i)."
+summary: "JavaScript hat keine eingebaute Unterst\xFCtzung f\xFCr komplexe Zahlen,\
+  \ aber man kann die \xC4rmel hochkrempeln und es mit Objekten und Mathematik bewerkstelligen."
 title: Umgang mit komplexen Zahlen
 weight: 14
 ---

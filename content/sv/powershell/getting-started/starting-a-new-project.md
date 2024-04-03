@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 18:04:14.252299-07:00
-description: "Starta ett nytt projekt inneb\xE4r att skapa en grund f\xF6r all kod\
-  \ som kommer. Programmerare g\xF6r detta f\xF6r att organisera och definiera ramar\
-  \ f\xF6r deras\u2026"
+description: "S\xE5 h\xE4r g\xF6r du: F\xF6r att sparka ig\xE5ng ett nytt PowerShell-projekt,\
+  \ kan du b\xF6rja med att skapa en ny katalog och initialisera en git-repository\
+  \ f\xF6r\u2026"
 lastmod: '2024-03-13T22:44:38.126656-06:00'
 model: gpt-4-1106-preview
-summary: "Starta ett nytt projekt inneb\xE4r att skapa en grund f\xF6r all kod som\
-  \ kommer."
+summary: "F\xF6r att sparka ig\xE5ng ett nytt PowerShell-projekt, kan du b\xF6rja\
+  \ med att skapa en ny katalog och initialisera en git-repository f\xF6r versionshantering."
 title: "Att p\xE5b\xF6rja ett nytt projekt"
 weight: 1
 ---

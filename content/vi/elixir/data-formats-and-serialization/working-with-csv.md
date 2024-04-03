@@ -2,15 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:25.364256-07:00
-description: "CSV (Comma-Separated Values - Gi\xE1 tr\u1ECB t\xE1ch bi\u1EC7t b\u1EB1\
-  ng d\u1EA5u ph\u1EA9y) l\xE0 \u0111\u1ECBnh d\u1EA1ng v\u0103n b\u1EA3n \u0111\u01A1\
-  n gi\u1EA3n cho d\u1EEF li\u1EC7u d\u1EA1ng b\u1EA3ng. C\xE1c l\u1EADp tr\xECnh\
-  \ vi\xEAn s\u1EED d\u1EE5ng CSV \u0111\u1EC3 d\u1EC5\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Elixir kh\xF4ng bao g\u1ED3m vi\u1EC7c\
+  \ ph\xE2n t\xEDch CSV trong th\u01B0 vi\u1EC7n chu\u1EA9n c\u1EE7a m\xECnh, nh\u01B0\
+  ng b\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng g\xF3i hex `CSV`. D\u01B0\u1EDBi \u0111\
+  \xE2y l\xE0 m\u1ED9t v\xED d\u1EE5 nhanh\u2026"
 lastmod: '2024-03-13T22:44:36.237254-06:00'
 model: gpt-4-0125-preview
-summary: "CSV (Comma-Separated Values - Gi\xE1 tr\u1ECB t\xE1ch bi\u1EC7t b\u1EB1\
-  ng d\u1EA5u ph\u1EA9y) l\xE0 \u0111\u1ECBnh d\u1EA1ng v\u0103n b\u1EA3n \u0111\u01A1\
-  n gi\u1EA3n cho d\u1EEF li\u1EC7u d\u1EA1ng b\u1EA3ng."
+summary: "Elixir kh\xF4ng bao g\u1ED3m vi\u1EC7c ph\xE2n t\xEDch CSV trong th\u01B0\
+  \ vi\u1EC7n chu\u1EA9n c\u1EE7a m\xECnh, nh\u01B0ng b\u1EA1n c\xF3 th\u1EC3 s\u1EED\
+  \ d\u1EE5ng g\xF3i hex `CSV`."
 title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 weight: 37
 ---

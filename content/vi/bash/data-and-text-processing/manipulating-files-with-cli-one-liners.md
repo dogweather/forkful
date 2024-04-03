@@ -2,18 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:42.572498-07:00
-description: "Vi\u1EC7c thao t\xE1c v\u1EDBi c\xE1c t\u1EC7p tin s\u1EED d\u1EE5ng\
-  \ CLI (Command Line Interface) b\u1EB1ng c\xE1ch nh\u1EADp l\u1EC7nh \u0111\u01A1\
-  n v\u1EDBi Bash bao g\u1ED3m vi\u1EC7c d\xF9ng c\xE1c script Bash hay l\u1EC7nh\
-  \ \u0111\u1EC3 th\u1EF1c\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t s\u1ED1\
+  \ l\u1EC7nh \u0111\u01A1n \u0111\u1EA7y m\u1EA1nh m\u1EBD v\xE0 nh\u1EEFng g\xEC\
+  \ ch\xFAng c\xF3 th\u1EC3 th\u1EF1c hi\u1EC7n: 1. **T\u1EA1o m\u1ED9t t\u1EC7p tin\
+  \ v\xE0 vi\u1EBFt v\u0103n b\u1EA3n v\xE0o \u0111\xF3:**."
 lastmod: '2024-03-13T22:44:36.872190-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c thao t\xE1c v\u1EDBi c\xE1c t\u1EC7p tin s\u1EED d\u1EE5ng CLI\
-  \ (Command Line Interface) b\u1EB1ng c\xE1ch nh\u1EADp l\u1EC7nh \u0111\u01A1n v\u1EDB\
-  i Bash bao g\u1ED3m vi\u1EC7c d\xF9ng c\xE1c script Bash hay l\u1EC7nh \u0111\u1EC3\
-  \ th\u1EF1c hi\u1EC7n c\xE1c thao t\xE1c tr\xEAn t\u1EC7p tin, nh\u01B0 t\u1EA1\
-  o, \u0111\u1ECDc, c\u1EADp nh\u1EADt, ho\u1EB7c x\xF3a ch\xFAng, t\u1EA5t c\u1EA3\
-  \ t\u1EEB terminal."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t s\u1ED1 l\u1EC7nh \u0111\u01A1\
+  n \u0111\u1EA7y m\u1EA1nh m\u1EBD v\xE0 nh\u1EEFng g\xEC ch\xFAng c\xF3 th\u1EC3\
+  \ th\u1EF1c hi\u1EC7n."
 title: "Thao t\xE1c v\u1EDBi c\xE1c t\u1EC7p tin b\u1EB1ng c\xE1c l\u1EC7nh CLI ch\u1EC9\
   \ m\u1ED9t d\xF2ng"
 weight: 31

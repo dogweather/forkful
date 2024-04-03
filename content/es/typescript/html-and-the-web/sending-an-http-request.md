@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 18:00:33.811078-07:00
-description: "Mandar una solicitud HTTP es el proceso de pedir o enviar datos a un\
-  \ servidor web. Lo hacemos para interactuar con APIs, obtener recursos, enviar\u2026"
+description: "How to: Para mandar una solicitud HTTP, vamos a usar `fetch`, que est\xE1\
+  \ ya incluido en JavaScript y es accesible en TypeScript."
 lastmod: '2024-03-13T22:44:58.797224-06:00'
 model: gpt-4-1106-preview
-summary: Mandar una solicitud HTTP es el proceso de pedir o enviar datos a un servidor
-  web.
+summary: "Para mandar una solicitud HTTP, vamos a usar `fetch`, que est\xE1 ya incluido\
+  \ en JavaScript y es accesible en TypeScript."
 title: Enviando una solicitud http
 weight: 44
 ---

@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:41:06.466232-07:00
-description: "Att skapa en tempor\xE4r fil inneb\xE4r att generera en fil som endast\
-  \ \xE4r avsedd f\xF6r tillf\xE4llig anv\xE4ndning. Programmerare g\xF6r detta f\xF6\
-  r att hantera data som\u2026"
+description: "S\xE5 h\xE4r g\xF6r du: Skapa en tempor\xE4r fil i PowerShell."
 lastmod: '2024-03-13T22:44:38.144999-06:00'
 model: gpt-4-1106-preview
-summary: "Att skapa en tempor\xE4r fil inneb\xE4r att generera en fil som endast \xE4\
-  r avsedd f\xF6r tillf\xE4llig anv\xE4ndning."
+summary: "Skapa en tempor\xE4r fil i PowerShell."
 title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---

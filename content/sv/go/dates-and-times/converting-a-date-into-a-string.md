@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:09.061328-07:00
-description: "Att konvertera ett datum till en str\xE4ng i Go inneb\xE4r att omvandla\
-  \ ett `time.Time`-objekt till ett l\xE4sbart str\xE4ngformat. Programmerare utf\xF6\
-  r ofta denna\u2026"
+description: "Hur: I Go tillhandah\xE5ller `time`-paketet funktionalitet f\xF6r att\
+  \ arbeta med datum och tider, inklusive formatering av ett `time.Time`-objekt till\
+  \ en\u2026"
 lastmod: '2024-03-13T22:44:37.404622-06:00'
 model: gpt-4-0125-preview
-summary: "Att konvertera ett datum till en str\xE4ng i Go inneb\xE4r att omvandla\
-  \ ett `time."
+summary: "I Go tillhandah\xE5ller `time`-paketet funktionalitet f\xF6r att arbeta\
+  \ med datum och tider, inklusive formatering av ett `time.Time`-objekt till en str\xE4\
+  ng."
 title: "Omvandla ett datum till en str\xE4ng"
 weight: 28
 ---

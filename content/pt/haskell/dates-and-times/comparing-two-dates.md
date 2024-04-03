@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:33:05.194546-07:00
-description: "Comparar duas datas significa verificar a rela\xE7\xE3o temporal entre\
-  \ elas: qual \xE9 anterior, posterior ou se s\xE3o a mesma. Programadores fazem\
-  \ isso para\u2026"
+description: "Como Fazer: No Haskell, voc\xEA pode usar a biblioteca `Data.Time` para\
+  \ trabalhar com datas. Aqui est\xE1 um exemplo simples."
 lastmod: '2024-03-13T22:44:46.637515-06:00'
 model: gpt-4-1106-preview
-summary: "Comparar duas datas significa verificar a rela\xE7\xE3o temporal entre elas:\
-  \ qual \xE9 anterior, posterior ou se s\xE3o a mesma."
+summary: "No Haskell, voc\xEA pode usar a biblioteca `Data.Time` para trabalhar com\
+  \ datas."
 title: Comparando duas datas
 weight: 27
 ---

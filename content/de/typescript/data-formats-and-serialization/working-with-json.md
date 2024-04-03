@@ -2,12 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:39.960249-07:00
-description: "Die Arbeit mit JSON (JavaScript Object Notation) umfasst das Parsen\
-  \ von JSON-Daten zu einem in TypeScript nutzbaren Format und umgekehrt. Programmierer\u2026"
+description: 'Wie: #.'
 lastmod: '2024-03-13T22:44:53.651640-06:00'
 model: gpt-4-0125-preview
-summary: Die Arbeit mit JSON (JavaScript Object Notation) umfasst das Parsen von JSON-Daten
-  zu einem in TypeScript nutzbaren Format und umgekehrt.
+summary: '#.'
 title: Arbeiten mit JSON
 weight: 38
 ---

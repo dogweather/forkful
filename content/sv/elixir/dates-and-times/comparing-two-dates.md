@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:32:47.520208-07:00
-description: "Att j\xE4mf\xF6ra tv\xE5 datum inneb\xE4r att granska deras relativa\
-  \ position p\xE5 tidslinjen. Programmerare g\xF6r detta f\xF6r att avg\xF6ra tidsintervaller,\
-  \ h\xE4ndelseordning,\u2026"
+description: "How to: I Elixir anv\xE4nder vi `DateTime` modulen f\xF6r att hantera\
+  \ och j\xE4mf\xF6ra datum. H\xE4r \xE4r ett snabbt exempel."
 lastmod: '2024-03-13T22:44:37.579985-06:00'
 model: gpt-4-1106-preview
-summary: "Att j\xE4mf\xF6ra tv\xE5 datum inneb\xE4r att granska deras relativa position\
-  \ p\xE5 tidslinjen."
+summary: "I Elixir anv\xE4nder vi `DateTime` modulen f\xF6r att hantera och j\xE4\
+  mf\xF6ra datum."
 title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---

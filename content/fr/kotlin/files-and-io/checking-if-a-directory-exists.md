@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:06.766898-07:00
-description: "V\xE9rifier si un r\xE9pertoire existe en Kotlin implique de confirmer\
-  \ la pr\xE9sence d'un r\xE9pertoire \xE0 un chemin sp\xE9cifi\xE9. Les programmeurs\
-  \ r\xE9alisent cette t\xE2che\u2026"
+description: "Comment faire : Kotlin, fonctionnant sur la JVM, utilise l'API File\
+  \ de Java pour les op\xE9rations sur les fichiers, rendant les v\xE9rifications\
+  \ de l'existence\u2026"
 lastmod: '2024-03-13T22:44:57.755864-06:00'
 model: gpt-4-0125-preview
-summary: "V\xE9rifier si un r\xE9pertoire existe en Kotlin implique de confirmer la\
-  \ pr\xE9sence d'un r\xE9pertoire \xE0 un chemin sp\xE9cifi\xE9."
+summary: "Kotlin, fonctionnant sur la JVM, utilise l'API File de Java pour les op\xE9\
+  rations sur les fichiers, rendant les v\xE9rifications de l'existence des r\xE9\
+  pertoires directes."
 title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---

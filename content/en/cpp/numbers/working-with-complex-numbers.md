@@ -1,11 +1,10 @@
 ---
 date: 2024-01-25 03:00:11.130683-07:00
-description: "Complex numbers extend the real numbers by adding an imaginary unit,\
-  \ represented as 'i', where i^2 = -1. Programmers use them for simulations, signal\u2026"
+description: 'How to: C++ has a built-in library `<complex>` that eases working with
+  complex numbers. Here''s a quick look.'
 lastmod: '2024-03-13T22:45:00.352236-06:00'
 model: gpt-4-1106-preview
-summary: Complex numbers extend the real numbers by adding an imaginary unit, represented
-  as 'i', where i^2 = -1.
+summary: C++ has a built-in library `<complex>` that eases working with complex numbers.
 title: Working with complex numbers
 weight: 14
 ---

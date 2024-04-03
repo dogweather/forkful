@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:48.060690-07:00
-description: "Att skriva en textfil i PHP inneb\xE4r att skapa eller \xF6ppna en fil\
-  \ och infoga inneh\xE5ll i den. Programmerare g\xF6r detta f\xF6r att bevara data,\
-  \ som\u2026"
+description: "Hur man g\xF6r: PHP st\xF6der nativt filskrivning genom funktioner som\
+  \ `file_put_contents`, `fopen` tillsammans med `fwrite` och `fclose`. S\xE5 h\xE4\
+  r anv\xE4nder du\u2026"
 lastmod: '2024-03-13T22:44:38.014500-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva en textfil i PHP inneb\xE4r att skapa eller \xF6ppna en fil och\
-  \ infoga inneh\xE5ll i den."
+summary: "PHP st\xF6der nativt filskrivning genom funktioner som `file_put_contents`,\
+  \ `fopen` tillsammans med `fwrite` och `fclose`."
 title: Att skriva en textfil
 weight: 24
 ---

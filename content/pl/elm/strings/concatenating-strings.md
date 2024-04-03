@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:34:32.058679-07:00
-description: "\u0141\u0105czenie ci\u0105g\xF3w znak\xF3w (string concatenation) to\
-  \ proces \u0142\u0105czenia dw\xF3ch lub wi\u0119cej tekst\xF3w w jeden ci\u0105\
-  g. Programi\u015Bci robi\u0105 to, aby tworzy\u0107 wiadomo\u015Bci,\u2026"
+description: "Jak to zrobi\u0107: W Elm, mo\u017Cemy u\u017Cy\u0107 operatora `++`,\
+  \ \u017Ceby po\u0142\u0105czy\u0107 ci\u0105gi znak\xF3w. Oto jak to wygl\u0105\
+  da w praktyce."
 lastmod: '2024-03-13T22:44:35.313245-06:00'
 model: gpt-4-1106-preview
-summary: "\u0141\u0105czenie ci\u0105g\xF3w znak\xF3w (string concatenation) to proces\
-  \ \u0142\u0105czenia dw\xF3ch lub wi\u0119cej tekst\xF3w w jeden ci\u0105g."
+summary: "W Elm, mo\u017Cemy u\u017Cy\u0107 operatora `++`, \u017Ceby po\u0142\u0105\
+  czy\u0107 ci\u0105gi znak\xF3w."
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---

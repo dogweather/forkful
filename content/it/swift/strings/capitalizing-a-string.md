@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:31.363892-07:00
-description: "Capitalizzare una stringa in Swift modifica la stringa data in modo\
-  \ che il suo primo carattere sia maiuscolo, e i caratteri rimanenti minuscoli. I\u2026"
+description: "Come fare: Le strutture `String` di Swift vengono fornite con un paio\
+  \ di metodi integrati per manipolare il caso delle stringhe. Ecco alcuni approcci\
+  \ per\u2026"
 lastmod: '2024-03-13T22:44:43.753707-06:00'
 model: gpt-4-0125-preview
-summary: Capitalizzare una stringa in Swift modifica la stringa data in modo che il
-  suo primo carattere sia maiuscolo, e i caratteri rimanenti minuscoli.
+summary: Le strutture `String` di Swift vengono fornite con un paio di metodi integrati
+  per manipolare il caso delle stringhe.
 title: Capitalizzare una stringa
 weight: 2
 ---

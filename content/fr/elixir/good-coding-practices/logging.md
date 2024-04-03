@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 01:02:35.248928-07:00
-description: "La journalisation dans le d\xE9veloppement de logiciels est la technique\
-  \ permettant d'enregistrer les \xE9v\xE9nements qui se produisent pendant l'ex\xE9\
-  cution d'un\u2026"
+description: "Comment faire : Dans Elixir, la m\xE9thode principale pour enregistrer\
+  \ des informations est l'utilisation du module int\xE9gr\xE9 `Logger`. Voici comment\
+  \ vous\u2026"
 lastmod: '2024-03-13T22:44:57.334037-06:00'
 model: gpt-4-1106-preview
-summary: "La journalisation dans le d\xE9veloppement de logiciels est la technique\
-  \ permettant d'enregistrer les \xE9v\xE9nements qui se produisent pendant l'ex\xE9\
-  cution d'un programme, typiquement dans un fichier ou un syst\xE8me externe."
+summary: "Dans Elixir, la m\xE9thode principale pour enregistrer des informations\
+  \ est l'utilisation du module int\xE9gr\xE9 `Logger`."
 title: Journalisation
 weight: 17
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:43:12.419869-07:00
-description: "Zahlen runden bedeutet, einen Wert auf die n\xE4chste ganze Zahl oder\
-  \ eine angegebene Genauigkeit anzupassen. Entwickler tun dies, um zu vereinfachen,\
-  \ sich\u2026"
+description: "Wie geht das: C++ bietet mehrere M\xF6glichkeiten, Zahlen zu runden,\
+  \ wie `floor()`, `ceil()` und `round()`."
 lastmod: '2024-03-13T22:44:54.179761-06:00'
 model: gpt-4-0125-preview
-summary: "Zahlen runden bedeutet, einen Wert auf die n\xE4chste ganze Zahl oder eine\
-  \ angegebene Genauigkeit anzupassen."
+summary: "C++ bietet mehrere M\xF6glichkeiten, Zahlen zu runden, wie `floor()`, `ceil()`\
+  \ und `round()`."
 title: Zahlen runden
 weight: 13
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:34.408401-07:00
-description: "JSON, o JavaScript Object Notation, \xE8 un formato leggero di interscambio\
-  \ di dati, rendendolo perfetto per l'archiviazione di dati o file di configurazione\u2026"
+description: "Come fare: Per lavorare con JSON in Arduino, la libreria `ArduinoJson`\
+  \ \xE8 una scelta popolare grazie alla sua facilit\xE0 d'uso e efficienza. Permette\
+  \ di\u2026"
 lastmod: '2024-03-13T22:44:43.705622-06:00'
 model: gpt-4-0125-preview
-summary: "JSON, o JavaScript Object Notation, \xE8 un formato leggero di interscambio\
-  \ di dati, rendendolo perfetto per l'archiviazione di dati o file di configurazione\
-  \ nei progetti Arduino."
+summary: "Per lavorare con JSON in Arduino, la libreria `ArduinoJson` \xE8 una scelta\
+  \ popolare grazie alla sua facilit\xE0 d'uso e efficienza."
 title: Lavorare con JSON
 weight: 38
 ---

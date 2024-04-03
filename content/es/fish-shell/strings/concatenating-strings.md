@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 17:34:43.718312-07:00
-description: "Concatenar cadenas significa unirlas para formar una sola. Los programadores\
-  \ lo hacen para manipular texto, crear comandos o generar salidas espec\xEDficas."
+description: "C\xF3mo hacerlo: En Fish Shell, concatenar es directo. Aqu\xED unos\
+  \ ejemplos."
 lastmod: '2024-03-13T22:44:59.491878-06:00'
 model: gpt-4-1106-preview
-summary: Concatenar cadenas significa unirlas para formar una sola.
+summary: En Fish Shell, concatenar es directo.
 title: "Concatenaci\xF3n de cadenas de texto"
 weight: 3
 ---

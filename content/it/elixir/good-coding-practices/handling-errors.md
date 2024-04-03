@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 00:51:18.372831-07:00
-description: "Gestire gli errori significa scrivere codice che pu\xF2 affrontare situazioni\
-  \ impreviste. I programmatori lo fanno per prevenire crash e per assicurarsi che\u2026"
+description: 'Come fare: In Elixir, si usa spesso il pattern matching e l''istruzione
+  `case` per gestire diversi esiti, inclusi gli errori.'
 lastmod: '2024-03-13T22:44:43.091149-06:00'
 model: gpt-4-1106-preview
-summary: "Gestire gli errori significa scrivere codice che pu\xF2 affrontare situazioni\
-  \ impreviste."
+summary: In Elixir, si usa spesso il pattern matching e l'istruzione `case` per gestire
+  diversi esiti, inclusi gli errori.
 title: Gestione degli errori
 weight: 16
 ---

@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:45:27.594801-07:00
-description: "\xC5 avrunde tall er \xE5 justere et desimaltall til n\xE6rmeste hele\
-  \ verdi eller til et spesifisert antall desimaler. Programmerere avrunder for \xE5\
-  \ redusere\u2026"
+description: 'Hvordan: Elms `Basics`-modul tilbyr praktiske funksjoner for avrunding:
+  `round`, `floor` og `ceiling`. Slik bruker du dem.'
 lastmod: '2024-03-13T22:44:40.703607-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 avrunde tall er \xE5 justere et desimaltall til n\xE6rmeste hele verdi\
-  \ eller til et spesifisert antall desimaler."
+summary: Elms `Basics`-modul tilbyr praktiske funksjoner for avrunding.
 title: Avrunding av tall
 weight: 13
 ---

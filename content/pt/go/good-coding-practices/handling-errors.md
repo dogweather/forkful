@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:21.906718-07:00
-description: "Tratar erros em Go envolve reconhecer e responder \xE0s condi\xE7\xF5\
-  es de erro no seu programa. Os programadores se envolvem no tratamento de erros\
-  \ para garantir\u2026"
+description: "Como fazer: No Go, o tratamento de erros \xE9 gerenciado explicitamente\
+  \ usando o tipo `error`. Fun\xE7\xF5es que podem falhar retornam um erro como seu\
+  \ \xFAltimo\u2026"
 lastmod: '2024-03-13T22:44:46.069015-06:00'
 model: gpt-4-0125-preview
-summary: "Tratar erros em Go envolve reconhecer e responder \xE0s condi\xE7\xF5es\
-  \ de erro no seu programa."
+summary: "No Go, o tratamento de erros \xE9 gerenciado explicitamente usando o tipo\
+  \ `error`."
 title: Gerenciando erros
 weight: 16
 ---

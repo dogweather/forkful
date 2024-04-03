@@ -1,13 +1,10 @@
 ---
 date: 2024-01-26 04:42:52.821052-07:00
-description: "N\xFAmeros complexos expandem nosso sistema num\xE9rico para incluir\
-  \ as ra\xEDzes quadradas de n\xFAmeros negativos, onde a unidade 'imagin\xE1ria'\
-  \ i \xE9 igual \xE0 raiz\u2026"
+description: "Como fazer: Vamos definir uma classe b\xE1sica de n\xFAmero complexo\
+  \ em Kotlin."
 lastmod: '2024-03-13T22:44:46.535454-06:00'
 model: gpt-4-0125-preview
-summary: "N\xFAmeros complexos expandem nosso sistema num\xE9rico para incluir as\
-  \ ra\xEDzes quadradas de n\xFAmeros negativos, onde a unidade 'imagin\xE1ria' i\
-  \ \xE9 igual \xE0 raiz quadrada de -1."
+summary: "Vamos definir uma classe b\xE1sica de n\xFAmero complexo em Kotlin."
 title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---

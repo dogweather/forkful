@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 17:59:18.678074-07:00
-description: "HTTP-Anfragen erm\xF6glichen die Kommunikation mit Web-Diensten. Programmierer\
-  \ senden solche Anfragen, um Daten zu erhalten, zu senden oder Web-Operationen\u2026"
+description: "Vorgehensweise: C++ hat keine eingebaute Unterst\xFCtzung f\xFCr HTTP.\
+  \ Bibliotheken wie `libcurl` oder `cpprestsdk` sind beliebt. Hier ein Beispiel mit\u2026"
 lastmod: '2024-03-13T22:44:54.181596-06:00'
 model: gpt-4-1106-preview
-summary: "HTTP-Anfragen erm\xF6glichen die Kommunikation mit Web-Diensten."
+summary: "C++ hat keine eingebaute Unterst\xFCtzung f\xFCr HTTP."
 title: Einen HTTP-Request senden
 weight: 44
 ---

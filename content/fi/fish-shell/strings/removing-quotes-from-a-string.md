@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:39:12.564927-07:00
-description: "Merkkijonosta lainausmerkkien poistaminen tarkoittaa n\xE4iden kiusallisten\
-  \ yksitt\xE4isten (' ') tai kaksinkertaisten (\" \") lainausmerkkien poistamista\u2026"
+description: "Miten: Fishiss\xE4 on sis\xE4\xE4nrakennettua magiaa t\xE4llaiseen teht\xE4\
+  v\xE4\xE4n. K\xE4yt\xE4 `string`-funktiota hikoilematta. Tutustu n\xE4ihin loitsuihin."
 lastmod: '2024-03-13T22:44:56.980207-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonosta lainausmerkkien poistaminen tarkoittaa n\xE4iden kiusallisten\
-  \ yksitt\xE4isten (' ') tai kaksinkertaisten (\" \") lainausmerkkien poistamista\
-  \ tekstidatastasi."
+summary: "Fishiss\xE4 on sis\xE4\xE4nrakennettua magiaa t\xE4llaiseen teht\xE4v\xE4\
+  \xE4n."
 title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---

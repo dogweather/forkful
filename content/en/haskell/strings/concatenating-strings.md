@@ -1,10 +1,11 @@
 ---
 date: 2024-01-20 17:35:03.400584-07:00
-description: "Concatenating strings means smushing them together end to end. Programmers\
-  \ do it when they need to stitch together bits of text to form a new string, like\u2026"
+description: 'How to: Haskell makes string concatenation pretty straightforward with
+  the `(++)` operator.'
 lastmod: '2024-03-13T22:45:00.120755-06:00'
 model: gpt-4-1106-preview
-summary: Concatenating strings means smushing them together end to end.
+summary: Haskell makes string concatenation pretty straightforward with the `(++)`
+  operator.
 title: Concatenating strings
 weight: 3
 ---

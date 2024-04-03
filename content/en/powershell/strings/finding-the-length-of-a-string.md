@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:47:46.919728-07:00
-description: "In PowerShell, finding the length of a string means to count the number\
-  \ of characters it contains. Programmers do it to validate input, manipulate text\u2026"
+description: 'How to: PowerShell makes getting the string length straightforward.
+  Just toss a string at the `.Length` property, like this.'
 lastmod: '2024-03-13T22:45:00.274038-06:00'
 model: gpt-4-1106-preview
-summary: In PowerShell, finding the length of a string means to count the number of
-  characters it contains.
+summary: PowerShell makes getting the string length straightforward.
 title: Finding the length of a string
 weight: 7
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:32.653811-07:00
-description: "\xC5 skrive ut feils\xF8kingsutdata i Visual Basic for Applications\
-  \ (VBA) inneb\xE6rer \xE5 strategisk plassere utskriftssetninger i koden din for\
-  \ \xE5 vise\u2026"
+description: "Hvordan: I VBA er `Debug.Print`-setningen en arbeidshest for \xE5 skrive\
+  \ ut feils\xF8kingsinformasjon til umiddelbarvinduet i Visual Basic Editor (VBE).\
+  \ For \xE5\u2026"
 lastmod: '2024-03-13T22:44:40.622854-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive ut feils\xF8kingsutdata i Visual Basic for Applications (VBA)\
-  \ inneb\xE6rer \xE5 strategisk plassere utskriftssetninger i koden din for \xE5\
-  \ vise variabelverdier, utf\xF8relsesflyt eller tilpassede feils\xF8kingsmeldinger."
+summary: "I VBA er `Debug.Print`-setningen en arbeidshest for \xE5 skrive ut feils\xF8\
+  kingsinformasjon til umiddelbarvinduet i Visual Basic Editor (VBE)."
 title: "Utskrift av feils\xF8kingsdata"
 weight: 33
 ---

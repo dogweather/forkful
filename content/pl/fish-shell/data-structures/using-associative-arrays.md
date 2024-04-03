@@ -2,14 +2,14 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:59.015234-07:00
-description: "Tablice asocjacyjne, czyli mapy haszowe, pozwalaj\u0105 przechowywa\u0107\
-  \ dane jako pary klucz-warto\u015B\u0107, co u\u0142atwia organizowanie i odzyskiwanie\
-  \ informacji za pomoc\u0105\u2026"
+description: "Jak to zrobi\u0107: Fish nie obs\u0142uguje natywnie tablic asocjacyjnych\
+  \ tak jak Bash 4+, ale mo\u017Cna osi\u0105gn\u0105\u0107 podobn\u0105 funkcjonalno\u015B\
+  \u0107, u\u017Cywaj\u0105c kombinacji list i\u2026"
 lastmod: '2024-03-13T22:44:35.831843-06:00'
 model: gpt-4-0125-preview
-summary: "Tablice asocjacyjne, czyli mapy haszowe, pozwalaj\u0105 przechowywa\u0107\
-  \ dane jako pary klucz-warto\u015B\u0107, co u\u0142atwia organizowanie i odzyskiwanie\
-  \ informacji za pomoc\u0105 klucza."
+summary: "Fish nie obs\u0142uguje natywnie tablic asocjacyjnych tak jak Bash 4+, ale\
+  \ mo\u017Cna osi\u0105gn\u0105\u0107 podobn\u0105 funkcjonalno\u015B\u0107, u\u017C\
+  ywaj\u0105c kombinacji list i manipulacji ci\u0105gami znak\xF3w."
 title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---

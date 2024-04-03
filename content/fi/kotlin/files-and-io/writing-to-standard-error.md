@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:48.927001-07:00
-description: "Standardivirheeseen (stderr) kirjoittaminen on virheviestien ja diagnostiikan\
-  \ ohjaamista erilliseen virtaan, joka eroaa standarditulosteesta (stdout).\u2026"
+description: "Kuinka: Kotlinissa stderr:iin kirjoittaminen voidaan saavuttaa k\xE4\
+  ytt\xE4m\xE4ll\xE4 `System.err.println()`. T\xE4m\xE4 metodi on samankaltainen kuin\u2026"
 lastmod: '2024-03-13T22:44:56.547740-06:00'
 model: gpt-4-0125-preview
-summary: Standardivirheeseen (stderr) kirjoittaminen on virheviestien ja diagnostiikan
-  ohjaamista erilliseen virtaan, joka eroaa standarditulosteesta (stdout).
+summary: "Kotlinissa stderr:iin kirjoittaminen voidaan saavuttaa k\xE4ytt\xE4m\xE4\
+  ll\xE4 `System.err.println()`."
 title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---

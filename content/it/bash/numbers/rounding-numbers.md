@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 03:43:09.766930-07:00
-description: "Arrotondare i numeri significa tagliare le cifre decimali fino a un\
-  \ valore pi\xF9 semplice che sia sufficientemente buono per un determinato contesto.\
-  \ I\u2026"
+description: 'Come fare: Ecco l''abc sull''arrotondamento in Bash.'
 lastmod: '2024-03-13T22:44:43.592491-06:00'
 model: gpt-4-0125-preview
-summary: "Arrotondare i numeri significa tagliare le cifre decimali fino a un valore\
-  \ pi\xF9 semplice che sia sufficientemente buono per un determinato contesto."
+summary: Ecco l'abc sull'arrotondamento in Bash.
 title: Arrotondamento dei numeri
 weight: 13
 ---

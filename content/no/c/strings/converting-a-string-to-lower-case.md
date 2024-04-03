@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:53.218856-07:00
-description: "\xC5 konvertere en streng til sm\xE5 bokstaver i C inneb\xE6rer \xE5\
-  \ transformere alle store bokstaver i en gitt streng til deres tilsvarende sm\xE5\
-  \ bokstaver.\u2026"
+description: "Hvordan: C har ikke en innebygd funksjon for direkte konvertering av\
+  \ strenger til sm\xE5 bokstaver, i motsetning til noen h\xF8yniv\xE5spr\xE5k. Prosessen\
+  \ kan\u2026"
 lastmod: '2024-03-13T22:44:41.257241-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 konvertere en streng til sm\xE5 bokstaver i C inneb\xE6rer \xE5 transformere\
-  \ alle store bokstaver i en gitt streng til deres tilsvarende sm\xE5 bokstaver."
+summary: "C har ikke en innebygd funksjon for direkte konvertering av strenger til\
+  \ sm\xE5 bokstaver, i motsetning til noen h\xF8yniv\xE5spr\xE5k."
 title: "Konvertering av en streng til sm\xE5 bokstaver"
 weight: 4
 ---

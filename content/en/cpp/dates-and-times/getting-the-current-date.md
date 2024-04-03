@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:02:47.219646-07:00
-description: "Retrieving the current date in C++ is a fundamental task for programs\
-  \ that need to process or display dates based on the system's clock. It's essential\u2026"
+description: "How to: C++ provides several ways to get the current date, including\
+  \ the C++ standard library and third-party libraries like Boost. The following examples\u2026"
 lastmod: '2024-03-13T22:45:00.366994-06:00'
 model: gpt-4-0125-preview
-summary: Retrieving the current date in C++ is a fundamental task for programs that
-  need to process or display dates based on the system's clock.
+summary: C++ provides several ways to get the current date, including the C++ standard
+  library and third-party libraries like Boost.
 title: Getting the current date
 weight: 29
 ---

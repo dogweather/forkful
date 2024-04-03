@@ -1,12 +1,13 @@
 ---
 date: 2024-01-26 03:45:48.568987-07:00
-description: "Numeroiden py\xF6rist\xE4minen tarkoittaa niiden s\xE4\xE4t\xE4mist\xE4\
-  \ l\xE4himp\xE4\xE4n kokonaislukuun tai tiettyyn tarkkuuteen. Ohjelmoijat tekev\xE4\
-  t niin parantaakseen\u2026"
+description: "Miten: Kotlinissa py\xF6rist\xE4misen voi tehd\xE4 k\xE4ytt\xE4m\xE4\
+  ll\xE4 useita funktioita, kuten `roundToInt()`, `roundToDouble()`, ja `BigDecimal`\
+  \ antaa enemm\xE4n hallintaa."
 lastmod: '2024-03-13T22:44:56.525603-06:00'
 model: gpt-4-0125-preview
-summary: "Numeroiden py\xF6rist\xE4minen tarkoittaa niiden s\xE4\xE4t\xE4mist\xE4\
-  \ l\xE4himp\xE4\xE4n kokonaislukuun tai tiettyyn tarkkuuteen."
+summary: "Kotlinissa py\xF6rist\xE4misen voi tehd\xE4 k\xE4ytt\xE4m\xE4ll\xE4 useita\
+  \ funktioita, kuten `roundToInt()`, `roundToDouble()`, ja `BigDecimal` antaa enemm\xE4\
+  n hallintaa."
 title: "Numerojen py\xF6rist\xE4minen"
 weight: 13
 ---

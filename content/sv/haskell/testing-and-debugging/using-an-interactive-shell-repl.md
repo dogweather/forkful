@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:14:55.960533-07:00
-description: "En interaktiv skal, eller REPL (Read-Eval-Print Loop), i Haskell l\xE5\
-  ter dig k\xF6ra kodsnuttar live. Det \xE4r en lekplats f\xF6r snabb feedback, testning\
-  \ av\u2026"
+description: "Hur: F\xF6r att starta GHCi (Glasgow Haskell Compiler's interaktiva\
+  \ milj\xF6), skriv helt enkelt `ghci` i din terminal. S\xE5 h\xE4r anv\xE4nder du\
+  \ det."
 lastmod: '2024-03-13T22:44:37.956700-06:00'
 model: gpt-4-0125-preview
-summary: "En interaktiv skal, eller REPL (Read-Eval-Print Loop), i Haskell l\xE5ter\
-  \ dig k\xF6ra kodsnuttar live."
+summary: "F\xF6r att starta GHCi (Glasgow Haskell Compiler's interaktiva milj\xF6\
+  ), skriv helt enkelt `ghci` i din terminal."
 title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---

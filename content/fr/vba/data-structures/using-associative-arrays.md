@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:23.500599-07:00
-description: "Les tableaux associatifs, souvent connus sous le nom de dictionnaires\
-  \ dans Visual Basic pour Applications (VBA), permettent aux programmeurs de cr\xE9\
-  er des\u2026"
+description: "Comment faire : Dans VBA, l'objet `Dictionary` offre une fonctionnalit\xE9\
+  \ similaire aux tableaux associatifs. Vous devez d'abord ajouter une r\xE9f\xE9\
+  rence au\u2026"
 lastmod: '2024-03-13T22:44:57.548862-06:00'
 model: gpt-4-0125-preview
-summary: "Les tableaux associatifs, souvent connus sous le nom de dictionnaires dans\
-  \ Visual Basic pour Applications (VBA), permettent aux programmeurs de cr\xE9er\
-  \ des collections de paires cl\xE9-valeur."
+summary: "Dans VBA, l'objet `Dictionary` offre une fonctionnalit\xE9 similaire aux\
+  \ tableaux associatifs."
 title: Utilisation des tableaux associatifs
 weight: 15
 ---

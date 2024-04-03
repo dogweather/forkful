@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:15.929272-07:00
-description: "Escrever no erro padr\xE3o (stderr) em Go envolve direcionar mensagens\
-  \ de erro ou diagn\xF3sticos que n\xE3o s\xE3o destinados ao fluxo de sa\xEDda principal.\
-  \ Os\u2026"
+description: "Como Fazer: No Go, o pacote `os` fornece o valor `Stderr`, representando\
+  \ o arquivo de erro padr\xE3o. Voc\xEA pode us\xE1-lo com as fun\xE7\xF5es `fmt.Fprint`,\u2026"
 lastmod: '2024-03-13T22:44:46.078667-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever no erro padr\xE3o (stderr) em Go envolve direcionar mensagens de\
-  \ erro ou diagn\xF3sticos que n\xE3o s\xE3o destinados ao fluxo de sa\xEDda principal."
+summary: "No Go, o pacote `os` fornece o valor `Stderr`, representando o arquivo de\
+  \ erro padr\xE3o."
 title: "Escrevendo no erro padr\xE3o"
 weight: 25
 ---

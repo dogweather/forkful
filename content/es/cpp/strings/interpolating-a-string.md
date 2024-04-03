@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:50:33.681689-07:00
-description: "La interpolaci\xF3n de cadenas permite insertar valores de variables\
-  \ dentro de una cadena de texto. Los programadores lo hacen para construir mensajes\u2026"
+description: "C\xF3mo hacerlo: Con la versi\xF3n m\xE1s reciente de C++, puedes utilizar\
+  \ `std::format` para la interpolaci\xF3n de cadenas de forma sencilla."
 lastmod: '2024-03-13T22:44:59.361895-06:00'
 model: gpt-4-1106-preview
-summary: "La interpolaci\xF3n de cadenas permite insertar valores de variables dentro\
-  \ de una cadena de texto."
+summary: "Con la versi\xF3n m\xE1s reciente de C++, puedes utilizar `std::format`\
+  \ para la interpolaci\xF3n de cadenas de forma sencilla."
 title: "Interpolaci\xF3n de cadenas de texto"
 weight: 8
 ---

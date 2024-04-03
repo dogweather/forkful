@@ -1,11 +1,12 @@
 ---
 date: 2024-02-03 19:02:30.450485-07:00
-description: "Capitalizing a string involves converting the first letter of the string\
-  \ to uppercase while ensuring the rest of the letters are in lowercase. This action\u2026"
+description: "How to: Elixir provides a straightforward way to capitalize strings\
+  \ using its built-in functions without the need for third-party libraries. Here's\
+  \ a\u2026"
 lastmod: '2024-03-13T22:44:59.767928-06:00'
 model: gpt-4-0125-preview
-summary: Capitalizing a string involves converting the first letter of the string
-  to uppercase while ensuring the rest of the letters are in lowercase.
+summary: Elixir provides a straightforward way to capitalize strings using its built-in
+  functions without the need for third-party libraries.
 title: Capitalizing a string
 weight: 2
 ---

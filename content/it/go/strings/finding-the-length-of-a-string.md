@@ -2,12 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:49.042378-07:00
-description: "Trovare la lunghezza di una stringa in Go riguarda il determinare il\
-  \ numero di caratteri che contiene. I programmatori eseguono regolarmente questa\u2026"
+description: "Come fare: In Go, le stringhe sono trattate come sequenze di byte immutabili.\
+  \ Puoi trovare la lunghezza di una stringa utilizzando la funzione integrata\u2026"
 lastmod: '2024-03-13T22:44:42.898102-06:00'
 model: gpt-4-0125-preview
-summary: Trovare la lunghezza di una stringa in Go riguarda il determinare il numero
-  di caratteri che contiene.
+summary: In Go, le stringhe sono trattate come sequenze di byte immutabili.
 title: Trovare la lunghezza di una stringa
 weight: 7
 ---

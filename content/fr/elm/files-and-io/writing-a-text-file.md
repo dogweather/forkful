@@ -1,12 +1,12 @@
 ---
 date: 2024-01-19
-description: "\xC9crire un fichier texte consiste \xE0 sauvegarder des donn\xE9es\
-  \ en format lisible. Les d\xE9veloppeurs le font pour conserver des configurations,\
-  \ sauver des\u2026"
+description: "How to: Elm ne poss\xE8de pas de syst\xE8me de fichiers int\xE9gr\xE9\
+  , car il est con\xE7u pour la s\xE9curit\xE9 dans des applications web. Pour \xE9\
+  crire un fichier, on\u2026"
 lastmod: '2024-03-13T22:44:57.709534-06:00'
 model: unknown
-summary: "\xC9crire un fichier texte consiste \xE0 sauvegarder des donn\xE9es en format\
-  \ lisible."
+summary: "Elm ne poss\xE8de pas de syst\xE8me de fichiers int\xE9gr\xE9, car il est\
+  \ con\xE7u pour la s\xE9curit\xE9 dans des applications web."
 title: "\xC9criture d'un fichier texte"
 weight: 24
 ---

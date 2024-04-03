@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:46:21.425376-07:00
-description: "Substringien poiminta tarkoittaa isommasta merkkijonosta tietyn osan\
-  \ eli alamerkkijonon erottamista. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 datan r\xE4\
-  \xE4t\xE4l\xF6intiin,\u2026"
+description: "How to: - Kuinka tehd\xE4: PHP:ss\xE4 alamerkkijonoja voi poimia `substr`-\
+  \ ja `mb_substr`-funktioiden avulla. T\xE4ss\xE4 pari esimerkki\xE4."
 lastmod: '2024-03-13T22:44:56.644966-06:00'
 model: gpt-4-1106-preview
-summary: Substringien poiminta tarkoittaa isommasta merkkijonosta tietyn osan eli
-  alamerkkijonon erottamista.
+summary: "PHP:ss\xE4 alamerkkijonoja voi poimia `substr`- ja `mb_substr`-funktioiden\
+  \ avulla."
 title: Merkkijonojen osien poimiminen
 weight: 6
 ---

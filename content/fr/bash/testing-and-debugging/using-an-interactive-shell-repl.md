@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:11:08.568727-07:00
-description: "REPL est l'acronyme de Read-Eval-Print Loop (Boucle Lire-\xC9valuer-Imprimer),\
-  \ un environnement de programmation informatique simple et interactif. Les\u2026"
+description: "Comment faire : Dans Bash, votre terminal est essentiellement un REPL.\
+  \ Vous tapez une commande ; il la lit, l'\xE9value, imprime le r\xE9sultat et boucle\
+  \ en\u2026"
 lastmod: '2024-03-13T22:44:57.996872-06:00'
 model: gpt-4-0125-preview
-summary: "REPL est l'acronyme de Read-Eval-Print Loop (Boucle Lire-\xC9valuer-Imprimer),\
-  \ un environnement de programmation informatique simple et interactif."
+summary: Dans Bash, votre terminal est essentiellement un REPL.
 title: Utilisation d'une console interactive (REPL)
 weight: 34
 ---

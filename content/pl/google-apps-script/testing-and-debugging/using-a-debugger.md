@@ -2,9 +2,9 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:16.732987-07:00
-description: "Google Apps Script zapewnia wbudowany debugger w Edytorze Apps Script,\
-  \ pomagaj\u0105c w rozwi\u0105zywaniu problem\xF3w ze skryptami. Oto, jak zainicjowa\u0107\
-  \ i u\u017Cywa\u0107\u2026"
+description: "Jak to zrobi\u0107: Google Apps Script zapewnia wbudowany debugger w\
+  \ Edytorze Apps Script, pomagaj\u0105c w rozwi\u0105zywaniu problem\xF3w ze skryptami.\
+  \ Oto, jak\u2026"
 lastmod: '2024-03-13T22:44:34.907981-06:00'
 model: gpt-4-0125-preview
 summary: "Google Apps Script zapewnia wbudowany debugger w Edytorze Apps Script, pomagaj\u0105\

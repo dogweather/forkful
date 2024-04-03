@@ -2,14 +2,16 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:58.401563-07:00
-description: "\xC9crire sur l'erreur standard en Visual Basic pour Applications (VBA)\
-  \ consiste \xE0 diriger les messages d'erreur ou les diagnostics \xE0 part de la\
-  \ sortie\u2026"
+description: "Comment faire : En VBA, puisqu'il n'y a pas de fonction int\xE9gr\xE9\
+  e directe pour \xE9crire sp\xE9cifiquement sur l'erreur standard comme dans certains\
+  \ autres\u2026"
 lastmod: '2024-03-13T22:44:57.599723-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire sur l'erreur standard en Visual Basic pour Applications (VBA)\
-  \ consiste \xE0 diriger les messages d'erreur ou les diagnostics \xE0 part de la\
-  \ sortie standard, habituellement vers la console ou un fichier journal."
+summary: "En VBA, puisqu'il n'y a pas de fonction int\xE9gr\xE9e directe pour \xE9\
+  crire sp\xE9cifiquement sur l'erreur standard comme dans certains autres langages\
+  \ de programmation, une solution courante consiste \xE0 utiliser `Debug.Print` pour\
+  \ la sortie des erreurs de d\xE9veloppement ou \xE0 cr\xE9er une fonction de journalisation\
+  \ personnalis\xE9e qui imite ce comportement pour les applications de production."
 title: "\xC9crire sur l'erreur standard"
 weight: 25
 ---

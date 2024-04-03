@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:20.065001-07:00
-description: "Les tableaux associatifs, connus sous le nom d'objets dans Google Apps\
-  \ Script (une variante de JavaScript), permettent aux programmeurs de cr\xE9er des\u2026"
+description: "Comment : Dans Google Apps Script, vous cr\xE9ez et manipulez des tableaux\
+  \ associatifs (objets) en utilisant des accolades `{}`, en d\xE9finissant des paires\u2026"
 lastmod: '2024-03-13T22:44:57.176983-06:00'
 model: gpt-4-0125-preview
-summary: "Les tableaux associatifs, connus sous le nom d'objets dans Google Apps Script\
-  \ (une variante de JavaScript), permettent aux programmeurs de cr\xE9er des collections\
-  \ de paires cl\xE9-valeur."
+summary: "Dans Google Apps Script, vous cr\xE9ez et manipulez des tableaux associatifs\
+  \ (objets) en utilisant des accolades `{}`, en d\xE9finissant des paires cl\xE9\
+  -valeur \xE0 l'int\xE9rieur."
 title: Utilisation des tableaux associatifs
 weight: 15
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:38.715801-07:00
-description: "YAML, wat staat voor \"YAML Ain't Markup Language\", is een voor mensen\
-  \ leesbare standaard voor gegevensserialisatie die voor allerlei toepassingen kan\u2026"
+description: "Hoe te: Werken met YAML in C vereist een bibliotheek, aangezien de standaard\
+  \ C-bibliotheek geen directe ondersteuning biedt voor YAML-parsing of\u2026"
 lastmod: '2024-03-13T22:44:51.312174-06:00'
 model: gpt-4-0125-preview
-summary: YAML, wat staat voor "YAML Ain't Markup Language", is een voor mensen leesbare
-  standaard voor gegevensserialisatie die voor allerlei toepassingen kan worden gebruikt,
-  van configuratiebestanden tot gegevensopslag.
+summary: Werken met YAML in C vereist een bibliotheek, aangezien de standaard C-bibliotheek
+  geen directe ondersteuning biedt voor YAML-parsing of -serialisatie.
 title: Werken met YAML
 weight: 41
 ---

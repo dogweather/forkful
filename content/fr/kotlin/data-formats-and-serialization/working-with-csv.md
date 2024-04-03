@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:28.539271-07:00
-description: "Travailler avec des fichiers CSV (Valeurs S\xE9par\xE9es par des Virgules)\
-  \ implique de lire et d'\xE9crire des donn\xE9es dans des fichiers CSV, un format\
-  \ commun pour\u2026"
+description: "Comment : Kotlin, \xE9tant un langage de programmation \xE0 typage statique\
+  \ qui s'ex\xE9cute sur la JVM, n'inclut pas de biblioth\xE8que int\xE9gr\xE9e pour\
+  \ la manipulation\u2026"
 lastmod: '2024-03-13T22:44:57.765152-06:00'
 model: gpt-4-0125-preview
-summary: "Travailler avec des fichiers CSV (Valeurs S\xE9par\xE9es par des Virgules)\
-  \ implique de lire et d'\xE9crire des donn\xE9es dans des fichiers CSV, un format\
-  \ commun pour le stockage des donn\xE9es tabulaires en texte brut."
+summary: "Kotlin, \xE9tant un langage de programmation \xE0 typage statique qui s'ex\xE9\
+  cute sur la JVM, n'inclut pas de biblioth\xE8que int\xE9gr\xE9e pour la manipulation\
+  \ des fichiers CSV."
 title: Travailler avec CSV
 weight: 37
 ---

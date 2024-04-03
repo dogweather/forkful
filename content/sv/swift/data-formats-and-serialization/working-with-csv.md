@@ -1,12 +1,12 @@
 ---
 date: 2024-01-19
-description: "CSV, \"Comma-Separated Values\", \xE4r textfiler d\xE4r data separeras\
-  \ med kommatecken. Programmerare anv\xE4nder CSV f\xF6r enkelheten att lagra och\
-  \ utbyta data mellan\u2026"
+description: "How to: F\xF6r att jobba med CSV-filer i Swift kan man anv\xE4nda `String`-metoder\
+  \ f\xF6r att dela upp inneh\xE5llet. Nedan ser du hur man kan l\xE4sa och skriva\
+  \ CSV-\u2026"
 lastmod: '2024-03-13T22:44:38.273827-06:00'
 model: unknown
-summary: "CSV, \"Comma-Separated Values\", \xE4r textfiler d\xE4r data separeras med\
-  \ kommatecken."
+summary: "F\xF6r att jobba med CSV-filer i Swift kan man anv\xE4nda `String`-metoder\
+  \ f\xF6r att dela upp inneh\xE5llet."
 title: Arbeta med csv
 weight: 37
 ---

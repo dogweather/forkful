@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:16.981770-07:00
-description: "Een tekstbestand schrijven in C++ betekent het cre\xEBren of wijzigen\
-  \ van een bestand om tekstuele gegevens op te slaan. Programmeurs doen dit om gegevens\u2026"
+description: "Hoe: Hieronder staat een eenvoudig C++ programma dat een tekstbestand\
+  \ cre\xEBert en er \"Hallo, Wereld!\" naar schrijft."
 lastmod: '2024-03-13T22:44:51.131571-06:00'
 model: gpt-4-0125-preview
-summary: "Een tekstbestand schrijven in C++ betekent het cre\xEBren of wijzigen van\
-  \ een bestand om tekstuele gegevens op te slaan."
+summary: "Hieronder staat een eenvoudig C++ programma dat een tekstbestand cre\xEB\
+  ert en er \"Hallo, Wereld!\" naar schrijft."
 title: Een tekstbestand schrijven
 weight: 24
 ---

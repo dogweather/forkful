@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:35:07.509148-07:00
-description: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w, czyli string\xF3\
-  w, to po prostu proces ich zestawiania w jeden ci\u0105g\u0142y tekst. Dzi\u0119\
-  ki temu mo\u017Cemy tworzy\u0107 wiadomo\u015Bci, kt\xF3re maj\u0105\u2026"
+description: "How to? (Jak to zrobi\u0107?) \u0141\u0105czenie string\xF3w w Javie\
+  \ to pestka. Mo\u017Cesz u\u017Cy\u0107 operatora plus (+), metody `concat()` lub\
+  \ klasy `StringBuilder`. Oto przyk\u0142ady."
 lastmod: '2024-03-13T22:44:35.269251-06:00'
 model: gpt-4-1106-preview
-summary: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w, czyli string\xF3w,\
-  \ to po prostu proces ich zestawiania w jeden ci\u0105g\u0142y tekst."
+summary: "\u0141\u0105czenie string\xF3w w Javie to pestka."
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---

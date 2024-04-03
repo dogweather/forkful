@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:40.837966-07:00
-description: "Merkkijonojen v\xE4liint\xE4ytt\xF6 Google Apps Scriptiss\xE4 mahdollistaa\
-  \ lausekkeiden dynaamisen upottamisen merkkijonoihin, mik\xE4 helpottaa luettavamman\
-  \ ja\u2026"
+description: "Kuinka: Google Apps Scriptiss\xE4 merkkijonojen v\xE4liint\xE4yt\xF6\
+  n saavutetaan k\xE4ytt\xE4m\xE4ll\xE4 mallipohjaisia literaaleja. N\xE4m\xE4 ovat\
+  \ merkkijonoliteraaleja, jotka\u2026"
 lastmod: '2024-03-13T22:44:56.081409-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonojen v\xE4liint\xE4ytt\xF6 Google Apps Scriptiss\xE4 mahdollistaa\
-  \ lausekkeiden dynaamisen upottamisen merkkijonoihin, mik\xE4 helpottaa luettavamman\
-  \ ja yll\xE4pidett\xE4v\xE4mm\xE4n koodin luomista."
+summary: "Google Apps Scriptiss\xE4 merkkijonojen v\xE4liint\xE4yt\xF6n saavutetaan\
+  \ k\xE4ytt\xE4m\xE4ll\xE4 mallipohjaisia literaaleja."
 title: Merkkijonon interpolaatio
 weight: 8
 ---

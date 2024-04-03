@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 04:12:58.713902-07:00
-description: "REPL, eli Read-Eval-Print Loop, on ohjelmointiymp\xE4rist\xF6, jossa\
-  \ Clojure-koodia voidaan testata dynaamisesti pala palalta. Ohjelmoijat k\xE4ytt\xE4\
-  v\xE4t sit\xE4\u2026"
+description: "Kuinka: Aloita k\xE4ynnist\xE4m\xE4ll\xE4 REPL."
 lastmod: '2024-03-13T22:44:56.186007-06:00'
 model: gpt-4-0125-preview
-summary: "REPL, eli Read-Eval-Print Loop, on ohjelmointiymp\xE4rist\xF6, jossa Clojure-koodia\
-  \ voidaan testata dynaamisesti pala palalta."
+summary: "Aloita k\xE4ynnist\xE4m\xE4ll\xE4 REPL."
 title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 weight: 34
 ---

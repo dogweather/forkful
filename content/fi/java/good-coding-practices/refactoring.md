@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 01:39:27.534775-07:00
-description: "Uudelleenj\xE4rjestely tarkoittaa olemassa olevan tietokonekoodin rakenteen\
-  \ muuttamista\u2014muuttamalla faktorisointia\u2014muuttamatta sen ulkoista k\xE4\
-  ytt\xE4ytymist\xE4.\u2026"
+description: "Kuinka: Otetaan esimerkiksi yksinkertainen Java-luokka, joka kaipaa\
+  \ uudelleenj\xE4rjestely\xE4 huonon organisaationsa ja ep\xE4selvyytens\xE4 vuoksi."
 lastmod: '2024-03-13T22:44:56.453528-06:00'
 model: gpt-4-0125-preview
-summary: "Uudelleenj\xE4rjestely tarkoittaa olemassa olevan tietokonekoodin rakenteen\
-  \ muuttamista\u2014muuttamalla faktorisointia\u2014muuttamatta sen ulkoista k\xE4\
-  ytt\xE4ytymist\xE4."
+summary: "Otetaan esimerkiksi yksinkertainen Java-luokka, joka kaipaa uudelleenj\xE4\
+  rjestely\xE4 huonon organisaationsa ja ep\xE4selvyytens\xE4 vuoksi."
 title: "Koodin uudelleenj\xE4rjestely"
 weight: 19
 ---

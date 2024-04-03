@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:23.974570-07:00
-description: "Zapis do pliku tekstowego w C++ polega na tworzeniu lub otwieraniu pliku,\
-  \ a nast\u0119pnie zapisywaniu w nim danych, co stanowi podstawowe zadanie dla\u2026"
+description: "Jak to zrobi\u0107: C++ oferuje kilka sposob\xF3w na zapis do pliku\
+  \ tekstowego, ale jedn\u0105 z najprostszych metod jest u\u017Cycie biblioteki `<fstream>`,\
+  \ kt\xF3ra zapewnia\u2026"
 lastmod: '2024-03-13T22:44:35.731127-06:00'
 model: gpt-4-0125-preview
-summary: "Zapis do pliku tekstowego w C++ polega na tworzeniu lub otwieraniu pliku,\
-  \ a nast\u0119pnie zapisywaniu w nim danych, co stanowi podstawowe zadanie dla aplikacji\
-  \ potrzebuj\u0105cych zachowa\u0107 dane, takie jak logi, tre\u015Bci generowane\
-  \ przez u\u017Cytkownik\xF3w lub ustawienia konfiguracyjne."
+summary: "C++ oferuje kilka sposob\xF3w na zapis do pliku tekstowego, ale jedn\u0105\
+  \ z najprostszych metod jest u\u017Cycie biblioteki `<fstream>`, kt\xF3ra zapewnia\
+  \ klas\u0119 `ofstream` (strumie\u0144 wyj\u015Bciowy do pliku) przeznaczon\u0105\
+  \ do operacji zapisu do pliku."
 title: Pisanie pliku tekstowego
 weight: 24
 ---

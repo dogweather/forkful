@@ -1,10 +1,9 @@
 ---
 date: 2024-01-20 17:54:46.014268-07:00
-description: "I Lua l\xE4ser du en textfil f\xF6r att h\xE4mta information. Programmerare\
-  \ g\xF6r det f\xF6r att spara, \xE4ndra eller anv\xE4nda data."
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:38.056177-06:00'
 model: gpt-4-1106-preview
-summary: "I Lua l\xE4ser du en textfil f\xF6r att h\xE4mta information."
+summary: .
 title: "L\xE4sa en textfil"
 weight: 22
 ---

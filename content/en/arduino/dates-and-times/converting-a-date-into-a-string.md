@@ -1,13 +1,10 @@
 ---
 date: 2024-01-20 17:35:39.898970-07:00
-description: "Converting a date to a string means changing a date's representation\
-  \ from a format that programming understands, like day, month, and year integers,\
-  \ to\u2026"
+description: 'How to: Here''s a straightforward example of converting a date to a
+  string on Arduino.'
 lastmod: '2024-03-13T22:45:00.331381-06:00'
 model: gpt-4-1106-preview
-summary: Converting a date to a string means changing a date's representation from
-  a format that programming understands, like day, month, and year integers, to plain
-  text.
+summary: Here's a straightforward example of converting a date to a string on Arduino.
 title: Converting a date into a string
 weight: 28
 ---

@@ -2,12 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:22.183843-07:00
-description: "Testien kirjoittaminen TypeScriptill\xE4 sis\xE4lt\xE4\xE4 automatisoitujen\
-  \ skriptien luomisen koodisi toimivuuden ja oikeellisuuden varmentamiseksi. Ohjelmoijat\u2026"
+description: "Kuinka: TypeScript toimii harmonisesti useimpien JavaScriptin testauskehysten\
+  \ kanssa. Demonstrointitarkoituksessa k\xE4yt\xE4mme Jestia, suosittua\u2026"
 lastmod: '2024-03-13T22:44:56.318885-06:00'
 model: gpt-4-0125-preview
-summary: "Testien kirjoittaminen TypeScriptill\xE4 sis\xE4lt\xE4\xE4 automatisoitujen\
-  \ skriptien luomisen koodisi toimivuuden ja oikeellisuuden varmentamiseksi."
+summary: TypeScript toimii harmonisesti useimpien JavaScriptin testauskehysten kanssa.
 title: Testien kirjoittaminen
 weight: 36
 ---

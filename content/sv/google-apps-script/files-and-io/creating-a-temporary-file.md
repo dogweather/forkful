@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:52.581437-07:00
-description: "Att skapa en tillf\xE4llig fil i Google Apps Script inneb\xE4r att generera\
-  \ en fil avsedd f\xF6r kortvarigt bruk, vanligtvis f\xF6r mellanliggande databehandling,\u2026"
+description: "Hur man g\xF6r: I Google Apps Script kan en tillf\xE4llig fil skapas\
+  \ genom att anv\xE4nda DriveApp-tj\xE4nsten, som erbjuder en enkel metod f\xF6r\
+  \ att skapa, l\xE4sa och ta\u2026"
 lastmod: '2024-03-13T22:44:37.459835-06:00'
 model: gpt-4-0125-preview
-summary: "Att skapa en tillf\xE4llig fil i Google Apps Script inneb\xE4r att generera\
-  \ en fil avsedd f\xF6r kortvarigt bruk, vanligtvis f\xF6r mellanliggande databehandling,\
-  \ fels\xF6kning eller caching\xE4ndam\xE5l."
+summary: "I Google Apps Script kan en tillf\xE4llig fil skapas genom att anv\xE4nda\
+  \ DriveApp-tj\xE4nsten, som erbjuder en enkel metod f\xF6r att skapa, l\xE4sa och\
+  \ ta bort filer i Google Drive."
 title: "Skapa en tillf\xE4llig fil"
 weight: 21
 ---

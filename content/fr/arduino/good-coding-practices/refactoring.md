@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 01:16:36.374873-07:00
-description: "Le refactoring est le processus de retravail de votre code pour am\xE9\
-  liorer sa structure et sa lisibilit\xE9 sans modifier le comportement ou la fonctionnalit\xE9\
-  \u2026"
+description: 'Comment faire : Disons que vous avez une fonction sur votre Arduino
+  qui fait beaucoup trop, comme ceci .'
 lastmod: '2024-03-13T22:44:58.121853-06:00'
 model: gpt-4-0125-preview
-summary: "Le refactoring est le processus de retravail de votre code pour am\xE9liorer\
-  \ sa structure et sa lisibilit\xE9 sans modifier le comportement ou la fonctionnalit\xE9\
-  \ externe."
+summary: Disons que vous avez une fonction sur votre Arduino qui fait beaucoup trop,
+  comme ceci.
 title: Refactoring
 weight: 19
 ---

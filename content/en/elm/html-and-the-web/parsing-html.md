@@ -1,10 +1,12 @@
 ---
 date: 2024-02-03 19:02:39.515187-07:00
-description: "Parsing HTML in Elm involves extracting information from HTML documents.\
-  \ Programmers do it to interface with web content or APIs that return HTML,\u2026"
+description: "How to: Elm doesn't have a built-in library for parsing HTML directly\
+  \ akin to libraries in JavaScript or Python due to its emphasis on type safety and\u2026"
 lastmod: '2024-03-13T22:45:00.007564-06:00'
 model: gpt-4-0125-preview
-summary: Parsing HTML in Elm involves extracting information from HTML documents.
+summary: Elm doesn't have a built-in library for parsing HTML directly akin to libraries
+  in JavaScript or Python due to its emphasis on type safety and avoiding runtime
+  errors.
 title: Parsing HTML
 weight: 43
 ---

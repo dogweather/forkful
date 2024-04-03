@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:13.829313-07:00
-description: "Tworzenie pliku tekstowego w Visual Basic for Applications (VBA) polega\
-  \ na tworzeniu, modyfikowaniu lub dodawaniu danych tekstowych do plik\xF3w, co jest\u2026"
+description: "Jak to zrobi\u0107: VBA oferuje kilka metod na zapis do pliku, ale jedn\u0105\
+  \ z najprostszych dr\xF3g jest u\u017Cycie `FileSystemObject`. Oto krok po kroku,\
+  \ jak stworzy\u0107\u2026"
 lastmod: '2024-03-13T22:44:35.252181-06:00'
 model: gpt-4-0125-preview
-summary: "Tworzenie pliku tekstowego w Visual Basic for Applications (VBA) polega\
-  \ na tworzeniu, modyfikowaniu lub dodawaniu danych tekstowych do plik\xF3w, co jest\
-  \ podstawowym zadaniem do przechowywania wynik\xF3w, logowania lub interakcji z\
-  \ innymi aplikacjami."
+summary: "VBA oferuje kilka metod na zapis do pliku, ale jedn\u0105 z najprostszych\
+  \ dr\xF3g jest u\u017Cycie `FileSystemObject`."
 title: Pisanie pliku tekstowego
 weight: 24
 ---

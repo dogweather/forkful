@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 01:08:00.287664-07:00
-description: "Logging ist wie das F\xFChren eines Tagebuchs f\xFCr Ihre Anwendung;\
-  \ es ist die Praxis, Ereignisse, Fehler und andere relevante Daten w\xE4hrend der\
-  \ Laufzeit\u2026"
+description: "Wie geht das: Lassen Sie uns ein grundlegendes Logging-Szenario in Rust\
+  \ mit Hilfe der `log`-Crate einrichten, die eine Logging-Fassade bietet, und\u2026"
 lastmod: '2024-03-13T22:44:53.679106-06:00'
 model: gpt-4-1106-preview
-summary: "Logging ist wie das F\xFChren eines Tagebuchs f\xFCr Ihre Anwendung; es\
-  \ ist die Praxis, Ereignisse, Fehler und andere relevante Daten w\xE4hrend der Laufzeit\
-  \ aufzuzeichnen."
+summary: "Lassen Sie uns ein grundlegendes Logging-Szenario in Rust mit Hilfe der\
+  \ `log`-Crate einrichten, die eine Logging-Fassade bietet, und `env_logger`, einer\
+  \ Logging-Implementierung f\xFCr die `log`-Crate."
 title: Protokollierung
 weight: 17
 ---

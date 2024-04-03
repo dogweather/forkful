@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:00.467844-07:00
-description: "\xC5 jobbe med XML i C involverer parsing, sp\xF8rring og manipulering\
-  \ av XML-dokumenter ved bruk av ulike biblioteker. Programmerere arbeider med XML\
-  \ p\xE5 grunn\u2026"
+description: "Hvordan: C har ikke innebygd st\xF8tte for XML, s\xE5 du m\xE5 bruke\
+  \ eksterne biblioteker. Et popul\xE6rt valg er `libxml2`, et stabilt og funksjonsrikt\
+  \ bibliotek.\u2026"
 lastmod: '2024-03-13T22:44:41.298281-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 jobbe med XML i C involverer parsing, sp\xF8rring og manipulering av\
-  \ XML-dokumenter ved bruk av ulike biblioteker."
+summary: "C har ikke innebygd st\xF8tte for XML, s\xE5 du m\xE5 bruke eksterne biblioteker."
 title: Arbeider med XML
 weight: 40
 ---

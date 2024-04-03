@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:16.021710-07:00
-description: "Pobieranie bie\u017C\u0105cej daty w C# polega na uzyskaniu obecnych\
-  \ informacji o dacie i czasie z systemu. Programi\u015Bci cz\u0119sto musz\u0105\
-  \ uzyska\u0107 dost\u0119p do tych\u2026"
+description: "Jak to zrobi\u0107: C# oferuje prosty spos\xF3b na pobranie bie\u017C\
+  \u0105cej daty za pomoc\u0105 klasy `DateTime`, kt\xF3ra jest cz\u0119\u015Bci\u0105\
+  \ przestrzeni nazw System w .NET Framework.\u2026"
 lastmod: '2024-03-13T22:44:35.418794-06:00'
 model: gpt-4-0125-preview
-summary: "Pobieranie bie\u017C\u0105cej daty w C# polega na uzyskaniu obecnych informacji\
-  \ o dacie i czasie z systemu."
+summary: "C# oferuje prosty spos\xF3b na pobranie bie\u017C\u0105cej daty za pomoc\u0105\
+  \ klasy `DateTime`, kt\xF3ra jest cz\u0119\u015Bci\u0105 przestrzeni nazw System\
+  \ w .NET Framework."
 title: Pobieranie aktualnej daty
 weight: 29
 ---

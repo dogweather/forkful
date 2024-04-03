@@ -1,12 +1,9 @@
 ---
 date: 2024-02-03 19:03:00.222394-07:00
-description: "Working with CSV (Comma-Separated Values) files involves parsing and\
-  \ generating text data structured as rows and columns, akin to spreadsheet data.\
-  \ This\u2026"
+description: 'How to: #.'
 lastmod: '2024-03-13T22:44:59.765357-06:00'
 model: gpt-4-0125-preview
-summary: Working with CSV (Comma-Separated Values) files involves parsing and generating
-  text data structured as rows and columns, akin to spreadsheet data.
+summary: '#.'
 title: Working with CSV
 weight: 37
 ---

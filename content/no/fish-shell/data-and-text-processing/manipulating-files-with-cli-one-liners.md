@@ -1,14 +1,11 @@
 ---
 date: 2024-01-27 16:20:59.095345-07:00
-description: "I programmeringsverdenen, spesielt n\xE5r man h\xE5ndterer Linux- eller\
-  \ Unix-milj\xF8er, er manipulering av filer direkte fra kommandolinjegrensesnittet\
-  \ (CLI) ikke\u2026"
+description: "Hvordan: \xC5 manipulere filer i Fish Shell er b\xE5de intuitivt og\
+  \ kraftfullt. Her er noen eksempler for \xE5 vise dets evner: 1. **\xC5 opprette\
+  \ en fil** er s\xE5 rett\u2026"
 lastmod: '2024-03-13T22:44:41.221564-06:00'
 model: gpt-4-0125-preview
-summary: "I programmeringsverdenen, spesielt n\xE5r man h\xE5ndterer Linux- eller\
-  \ Unix-milj\xF8er, er manipulering av filer direkte fra kommandolinjegrensesnittet\
-  \ (CLI) ikke bare et sp\xF8rsm\xE5l om bekvemmelighet \u2013 det er et kraftverkt\xF8\
-  y."
+summary: "\xC5 manipulere filer i Fish Shell er b\xE5de intuitivt og kraftfullt."
 title: Manipulering av filer med CLI-enkeltkommandoer
 weight: 31
 ---

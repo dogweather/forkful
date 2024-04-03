@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:59:12.897844-07:00
-description: "(Co i dlaczego?) Wysy\u0142anie zapytania HTTP to komunikacja mi\u0119\
-  dzy twoim komputerem a serwerem; m\xF3wi\u0105c pro\u015Bciej, to tak, jakby\u015B\
-  \ wys\u0142a\u0142 list z pro\u015Bb\u0105 do\u2026"
+description: "How to: (Jak to zrobi\u0107:) U\u017Cycie `curl` w Bashu to najprostsza\
+  \ forma wysy\u0142ania zapytania HTTP. Oto jak to zrobi\u0107."
 lastmod: '2024-03-13T22:44:35.581770-06:00'
 model: gpt-4-1106-preview
-summary: (Co i dlaczego.
+summary: "(Jak to zrobi\u0107:)\n\nU\u017Cycie `curl` w Bashu to najprostsza forma\
+  \ wysy\u0142ania zapytania HTTP."
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---

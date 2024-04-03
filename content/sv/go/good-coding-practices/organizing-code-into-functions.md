@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:42.595825-07:00
-description: "Att organisera kod i funktioner i Go inneb\xE4r att man delar upp koden\
-  \ i \xE5teranv\xE4ndbara, modul\xE4ra block som utf\xF6r specifika uppgifter. Detta\u2026"
+description: "Hur man g\xF6r: I Go definierar du en funktion med hj\xE4lp av nyckelordet\
+  \ `func`, f\xF6ljt av funktionens namn, parametrar (om n\xE5gra), och returtypen.\
+  \ L\xE5t oss\u2026"
 lastmod: '2024-03-13T22:44:37.398128-06:00'
 model: gpt-4-0125-preview
-summary: "Att organisera kod i funktioner i Go inneb\xE4r att man delar upp koden\
-  \ i \xE5teranv\xE4ndbara, modul\xE4ra block som utf\xF6r specifika uppgifter."
+summary: "I Go definierar du en funktion med hj\xE4lp av nyckelordet `func`, f\xF6\
+  ljt av funktionens namn, parametrar (om n\xE5gra), och returtypen."
 title: Organisering av kod i funktioner
 weight: 18
 ---

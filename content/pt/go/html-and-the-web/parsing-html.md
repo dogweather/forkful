@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:00:01.372714-07:00
-description: "Analisar HTML em Go envolve examinar o conte\xFAdo de arquivos HTML\
-  \ para extrair dados, manipular a estrutura ou converter o HTML em outros formatos.\u2026"
+description: "Como fazer: Para analisar HTML em Go, normalmente se usa o pacote `goquery`\
+  \ ou o pacote `net/html` da biblioteca padr\xE3o. Aqui est\xE1 um exemplo b\xE1\
+  sico\u2026"
 lastmod: '2024-03-13T22:44:46.058188-06:00'
 model: gpt-4-0125-preview
-summary: "Analisar HTML em Go envolve examinar o conte\xFAdo de arquivos HTML para\
-  \ extrair dados, manipular a estrutura ou converter o HTML em outros formatos."
+summary: "Para analisar HTML em Go, normalmente se usa o pacote `goquery` ou o pacote\
+  \ `net/html` da biblioteca padr\xE3o."
 title: Analisando HTML
 weight: 43
 ---

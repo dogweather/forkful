@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:25.923473-07:00
-description: "Organizar el c\xF3digo en funciones se trata de estructurar su c\xF3\
-  digo de Google Apps Script separando segmentos l\xF3gicos en bloques distintos,\
-  \ cada uno\u2026"
+description: "C\xF3mo hacerlo: En Google Apps Script, que se basa en JavaScript, se\
+  \ definen las funciones utilizando la palabra clave `function`, seguida por un nombre\
+  \ de\u2026"
 lastmod: '2024-03-13T22:44:58.539408-06:00'
 model: gpt-4-0125-preview
-summary: "Organizar el c\xF3digo en funciones se trata de estructurar su c\xF3digo\
-  \ de Google Apps Script separando segmentos l\xF3gicos en bloques distintos, cada\
-  \ uno realizando una tarea espec\xEDfica."
+summary: "En Google Apps Script, que se basa en JavaScript, se definen las funciones\
+  \ utilizando la palabra clave `function`, seguida por un nombre de funci\xF3n \xFA\
+  nico, par\xE9ntesis `()` que pueden contener par\xE1metros y llaves `{}` que encapsulan\
+  \ el bloque de c\xF3digo de la funci\xF3n."
 title: "Organizando c\xF3digo en funciones"
 weight: 18
 ---

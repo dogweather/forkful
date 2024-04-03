@@ -1,10 +1,9 @@
 ---
 date: 2024-01-20 17:51:29.618497-07:00
-description: String interpolation inserts variables right into strings. It makes building
-  strings smooth and readable, avoiding clunky concatenations.
+description: 'How to: In Rust, we use the `format!` macro.'
 lastmod: '2024-03-13T22:44:59.883483-06:00'
 model: gpt-4-1106-preview
-summary: String interpolation inserts variables right into strings.
+summary: In Rust, we use the `format!` macro.
 title: Interpolating a string
 weight: 8
 ---

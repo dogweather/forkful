@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:56:37.926451-07:00
-description: "Reading command-line arguments in Ruby allows scripts to take input\
-  \ right when they're run, like configuring options or passing data. Programmers\
-  \ use them\u2026"
+description: 'How to: To grab command-line arguments, Ruby provides a simple array:
+  `ARGV`. It contains all the arguments passed, in the order they were given.'
 lastmod: '2024-03-13T22:45:00.565435-06:00'
 model: gpt-4-1106-preview
-summary: Reading command-line arguments in Ruby allows scripts to take input right
-  when they're run, like configuring options or passing data.
+summary: To grab command-line arguments, Ruby provides a simple array.
 title: Reading command line arguments
 weight: 23
 ---

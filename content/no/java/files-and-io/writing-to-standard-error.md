@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:38.901649-07:00
-description: "\xC5 skrive til standard feil (stderr) inneb\xE6rer \xE5 sende ut feilmeldinger\
-  \ og diagnostikk til konsollen eller terminalen. Programmerere gj\xF8r dette for\
-  \ \xE5\u2026"
+description: 'Hvordan: #.'
 lastmod: '2024-03-13T22:44:40.682810-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive til standard feil (stderr) inneb\xE6rer \xE5 sende ut feilmeldinger\
-  \ og diagnostikk til konsollen eller terminalen."
+summary: '#.'
 title: Skriving til standardfeil
 weight: 25
 ---

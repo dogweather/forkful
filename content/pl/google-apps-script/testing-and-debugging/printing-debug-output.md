@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:08.294092-07:00
-description: "Drukowanie wyj\u015Bcia debugowania polega na strategicznym umieszczaniu\
-  \ w kodzie instrukcji logowania w celu wy\u015Bwietlenia warto\u015Bci zmiennych,\
-  \ przep\u0142ywu\u2026"
+description: "Jak to zrobi\u0107: Google Apps Script zapewnia klas\u0119 `Logger`\
+  \ dla podstawowego debugowania, a dla bardziej zaawansowanych potrzeb, klas\u0119\
+  \ `console` wprowadzon\u0105\u2026"
 lastmod: '2024-03-13T22:44:34.905830-06:00'
 model: gpt-4-0125-preview
-summary: "Drukowanie wyj\u015Bcia debugowania polega na strategicznym umieszczaniu\
-  \ w kodzie instrukcji logowania w celu wy\u015Bwietlenia warto\u015Bci zmiennych,\
-  \ przep\u0142ywu wykonania lub b\u0142\u0119d\xF3w komunikat\xF3w podczas uruchamiania."
+summary: "Google Apps Script zapewnia klas\u0119 `Logger` dla podstawowego debugowania,\
+  \ a dla bardziej zaawansowanych potrzeb, klas\u0119 `console` wprowadzon\u0105 w\
+  \ \u015Brodowisku uruchomieniowym V8."
 title: "Drukowanie informacji wyj\u015Bciowych debugowania"
 weight: 33
 ---

@@ -1,13 +1,9 @@
 ---
 date: 2024-01-26 00:56:41.820912-07:00
-description: "Feilh\xE5ndtering i Python (eller ethvert programmeringsspr\xE5k) handler\
-  \ om \xE5 forvente det uventede \u2013 det er kunsten \xE5 h\xE5ndtere n\xE5dige\
-  \ problemer n\xE5r ting g\xE5r\u2026"
+description: "Hvordan gj\xF8re: ."
 lastmod: '2024-03-13T22:44:40.368824-06:00'
 model: gpt-4-1106-preview
-summary: "Feilh\xE5ndtering i Python (eller ethvert programmeringsspr\xE5k) handler\
-  \ om \xE5 forvente det uventede \u2013 det er kunsten \xE5 h\xE5ndtere n\xE5dige\
-  \ problemer n\xE5r ting g\xE5r galt i koden din."
+summary: .
 title: "Feilh\xE5ndtering"
 weight: 16
 ---

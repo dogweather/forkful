@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:44.337175-07:00
-description: "L\xE0m vi\u1EC7c v\u1EDBi YAML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xED\
-  ch v\xE0 t\u1EA1o ra d\u1EEF li\u1EC7u \u0111\u1ECBnh d\u1EA1ng YAML, m\u1ED9t chu\u1EA9\
-  n h\xF3a d\u1EEF li\u1EC7u \u0111\u1ECDc \u0111\u01B0\u1EE3c cho con ng\u01B0\u1EDD\
-  i. L\u1EADp tr\xECnh vi\xEAn l\xE0m vi\u1EC7c n\xE0y cho\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Elixir kh\xF4ng bao g\u1ED3m h\u1ED7 tr\u1EE3\
+  \ YAML t\xEDch h\u1EE3p s\u1EB5n, nh\u01B0ng b\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5\
+  ng th\u01B0 vi\u1EC7n `yamerl`. \u0110\u1EA7u ti\xEAn, th\xEAm `yamerl` v\xE0o t\u1EC7\
+  p `mix.exs` c\u1EE7a b\u1EA1n."
 lastmod: '2024-03-13T22:44:36.234793-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m vi\u1EC7c v\u1EDBi YAML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xEDch v\xE0\
-  \ t\u1EA1o ra d\u1EEF li\u1EC7u \u0111\u1ECBnh d\u1EA1ng YAML, m\u1ED9t chu\u1EA9\
-  n h\xF3a d\u1EEF li\u1EC7u \u0111\u1ECDc \u0111\u01B0\u1EE3c cho con ng\u01B0\u1EDD\
-  i."
+summary: "Elixir kh\xF4ng bao g\u1ED3m h\u1ED7 tr\u1EE3 YAML t\xEDch h\u1EE3p s\u1EB5\
+  n, nh\u01B0ng b\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng th\u01B0 vi\u1EC7n `yamerl`."
 title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 weight: 41
 ---

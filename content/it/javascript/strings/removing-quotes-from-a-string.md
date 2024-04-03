@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 03:40:23.871094-07:00
-description: "Rimuovere le virgolette da una stringa significa sbarazzarsi di quei\
-  \ fastidiosi segni di punteggiatura che possono creare problemi con il tuo codice,\u2026"
+description: "Come fare: Immagina di avere una stringa racchiusa tra virgolette doppie,\
+  \ come `\"\\\"Ciao, Mondo!\\\"\"` e vuoi il testo puro, senza virgolette. Ecco un\
+  \ breve\u2026"
 lastmod: '2024-03-13T22:44:43.800059-06:00'
 model: gpt-4-0125-preview
-summary: Rimuovere le virgolette da una stringa significa sbarazzarsi di quei fastidiosi
-  segni di punteggiatura che possono creare problemi con il tuo codice, specialmente
-  quando si analizzano dati o si costruiscono oggetti JSON.
+summary: Immagina di avere una stringa racchiusa tra virgolette doppie, come `"\"Ciao,
+  Mondo!\""` e vuoi il testo puro, senza virgolette.
 title: Rimuovere le virgolette da una stringa
 weight: 9
 ---

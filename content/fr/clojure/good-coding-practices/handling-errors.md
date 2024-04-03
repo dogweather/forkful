@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 00:50:27.438056-07:00
-description: "La gestion des erreurs consiste \xE0 g\xE9rer l'inattendu dans les programmes\u2014\
-  comme un videur faisant face \xE0 des perturbateurs. Les programmeurs pr\xE9f\xE8\
-  rent que\u2026"
+description: "Comment faire : Clojure, comme ses anc\xEAtres Lisp, s'appuie sur les\
+  \ exceptions pour g\xE9rer les erreurs. Voici comment montrer de quoi vous \xEA\
+  tes capable\u2026"
 lastmod: '2024-03-13T22:44:57.289940-06:00'
 model: gpt-4-1106-preview
-summary: "La gestion des erreurs consiste \xE0 g\xE9rer l'inattendu dans les programmes\u2014\
-  comme un videur faisant face \xE0 des perturbateurs."
+summary: "Clojure, comme ses anc\xEAtres Lisp, s'appuie sur les exceptions pour g\xE9\
+  rer les erreurs."
 title: Gestion des erreurs
 weight: 16
 ---

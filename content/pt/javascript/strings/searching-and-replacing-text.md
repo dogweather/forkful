@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:58:06.613952-07:00
-description: "Procurar e substituir texto \xE9 como uma opera\xE7\xE3o de busca e\
-  \ troca, onde um trecho de texto \xE9 localizado e trocado por outro. Programadores\
-  \ fazem isso para\u2026"
+description: "Como Fazer: Vamos ver como JavaScript lida com isso usando o m\xE9todo\
+  \ `replace` de strings."
 lastmod: '2024-03-13T22:44:46.948252-06:00'
 model: gpt-4-1106-preview
-summary: "Procurar e substituir texto \xE9 como uma opera\xE7\xE3o de busca e troca,\
-  \ onde um trecho de texto \xE9 localizado e trocado por outro."
+summary: "Vamos ver como JavaScript lida com isso usando o m\xE9todo `replace` de\
+  \ strings."
 title: Pesquisando e substituindo texto
 weight: 10
 ---

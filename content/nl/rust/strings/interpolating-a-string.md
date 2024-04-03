@@ -2,11 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:10.904229-07:00
-description: String interpolatie voegt variabelen direct in strings in. Het maakt
-  het bouwen van strings soepel en leesbaar, en vermijdt onhandige aaneenschakelingen.
+description: 'Hoe te: In Rust gebruiken we de `format!` macro.'
 lastmod: '2024-03-13T22:44:50.580131-06:00'
 model: gpt-4-0125-preview
-summary: String interpolatie voegt variabelen direct in strings in.
+summary: In Rust gebruiken we de `format!` macro.
 title: Een string interpoleren
 weight: 8
 ---

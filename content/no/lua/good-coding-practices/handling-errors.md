@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 00:55:46.758824-07:00
-description: "\xC5 h\xE5ndtere feil i koding handler om \xE5 forvente det uventede.\
-  \ Det er kunsten \xE5 planlegge for n\xE5r ting g\xE5r galt, slik at du kan holde\
-  \ programmet ditt i jevn\u2026"
+description: "Hvordan: Lua bruker to hovedfunksjoner for feilh\xE5ndtering: `pcall`\
+  \ og `xpcall`. Slik bruker du dem."
 lastmod: '2024-03-13T22:44:40.937585-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 h\xE5ndtere feil i koding handler om \xE5 forvente det uventede."
+summary: "Lua bruker to hovedfunksjoner for feilh\xE5ndtering."
 title: "Feilh\xE5ndtering"
 weight: 16
 ---

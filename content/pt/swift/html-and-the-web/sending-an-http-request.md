@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 18:00:33.130433-07:00
-description: "Enviar uma requisi\xE7\xE3o HTTP \xE9 o processo de pedir dados ou enviar\
-  \ dados para um servidor web. Programadores fazem isso para interagir com APIs,\
-  \ para buscar\u2026"
+description: "How to: No Swift, para enviar uma requisi\xE7\xE3o HTTP, usamos principalmente\
+  \ a classe `URLSession`. Vou mostrar um exemplo r\xE1pido de como buscar um JSON\
+  \ de\u2026"
 lastmod: '2024-03-13T22:44:46.917501-06:00'
 model: gpt-4-1106-preview
-summary: "Enviar uma requisi\xE7\xE3o HTTP \xE9 o processo de pedir dados ou enviar\
-  \ dados para um servidor web."
+summary: "No Swift, para enviar uma requisi\xE7\xE3o HTTP, usamos principalmente a\
+  \ classe `URLSession`."
 title: "Enviando uma requisi\xE7\xE3o HTTP"
 weight: 44
 ---

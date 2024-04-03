@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:50.445044-07:00
-description: "Reguliere expressies (regex) zijn zoekpatronen die worden gebruikt om\
-  \ combinaties van karakters in strings te matchen. Programmeurs gebruiken ze voor\u2026"
+description: "Hoe te gebruiken: Om regex in PHP te gebruiken, gebruik je typisch `preg_match`\
+  \ voor het vinden van een match, of `preg_replace` voor zoek-en-vervang.\u2026"
 lastmod: '2024-03-13T22:44:50.884413-06:00'
 model: gpt-4-0125-preview
-summary: Reguliere expressies (regex) zijn zoekpatronen die worden gebruikt om combinaties
-  van karakters in strings te matchen.
+summary: Om regex in PHP te gebruiken, gebruik je typisch `preg_match` voor het vinden
+  van een match, of `preg_replace` voor zoek-en-vervang.
 title: Reguliere expressies gebruiken
 weight: 11
 ---

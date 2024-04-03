@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:30.155216-07:00
-description: "Att konvertera en str\xE4ng till sm\xE5 bokst\xE4ver i Google Apps Script,\
-  \ ett molnbaserat skriptspr\xE5k f\xF6r automatisering av uppgifter \xF6ver Googles\
-  \ produkter, \xE4r\u2026"
+description: "Hur: Att konvertera en str\xE4ng till sm\xE5 bokst\xE4ver i Google Apps\
+  \ Script \xE4r enkelt, tack vare de inbyggda JavaScript-metoderna som finns tillg\xE4\
+  ngliga inom\u2026"
 lastmod: '2024-03-13T22:44:37.423933-06:00'
 model: gpt-4-0125-preview
-summary: "Att konvertera en str\xE4ng till sm\xE5 bokst\xE4ver i Google Apps Script,\
-  \ ett molnbaserat skriptspr\xE5k f\xF6r automatisering av uppgifter \xF6ver Googles\
-  \ produkter, \xE4r en grundl\xE4ggande uppgift syftad till att standardisera textdata."
+summary: "Att konvertera en str\xE4ng till sm\xE5 bokst\xE4ver i Google Apps Script\
+  \ \xE4r enkelt, tack vare de inbyggda JavaScript-metoderna som finns tillg\xE4ngliga\
+  \ inom skriptmilj\xF6n."
 title: "Omvandla en str\xE4ng till gemener"
 weight: 4
 ---

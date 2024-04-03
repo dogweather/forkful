@@ -1,11 +1,11 @@
 ---
 date: 2024-01-25 03:00:03.460077-07:00
-description: "Complex numbers, the ones with a real part and an imaginary part (like\
-  \ 3 + 4i), are vital in fields like engineering, physics, and data science.\u2026"
+description: 'How to: PowerShell doesn''t have built-in complex number support, so
+  you either roll your own solution or use .NET''s `System.Numerics.Complex`.'
 lastmod: '2024-03-13T22:45:00.276606-06:00'
 model: gpt-4-1106-preview
-summary: Complex numbers, the ones with a real part and an imaginary part (like 3
-  + 4i), are vital in fields like engineering, physics, and data science.
+summary: PowerShell doesn't have built-in complex number support, so you either roll
+  your own solution or use .NET's `System.Numerics.Complex`.
 title: Working with complex numbers
 weight: 14
 ---

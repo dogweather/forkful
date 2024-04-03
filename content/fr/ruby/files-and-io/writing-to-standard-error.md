@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:15.890972-07:00
-description: "\xC9crire sur l'erreur standard (stderr) en Ruby, c'est diriger les\
-  \ messages d'erreur ou les diagnostics vers un flux de sortie s\xE9par\xE9, distinct\
-  \ de la sortie\u2026"
+description: "Comment faire : La biblioth\xE8que standard de Ruby offre une mani\xE8\
+  re simple d'\xE9crire sur stderr en utilisant `$stderr` ou `STDERR`. Vous n'avez\
+  \ pas besoin\u2026"
 lastmod: '2024-03-13T22:44:58.438326-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire sur l'erreur standard (stderr) en Ruby, c'est diriger les messages\
-  \ d'erreur ou les diagnostics vers un flux de sortie s\xE9par\xE9, distinct de la\
-  \ sortie standard (stdout)."
+summary: "La biblioth\xE8que standard de Ruby offre une mani\xE8re simple d'\xE9crire\
+  \ sur stderr en utilisant `$stderr` ou `STDERR`."
 title: "\xC9crire sur l'erreur standard"
 weight: 25
 ---

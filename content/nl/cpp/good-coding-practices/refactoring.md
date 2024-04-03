@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:52.888017-07:00
-description: "Refactoring is het proces van het wijzigen van de interne structuur\
-  \ van een computerprogramma zonder het externe gedrag aan te passen. Programmeurs\
-  \ doen\u2026"
+description: 'Hoe te: Stel je voor dat je een functie hebt die net iets te veel doet,
+  zoals deze logge methode die een object initialiseert en ook voor het loggen zorgt.'
 lastmod: '2024-03-13T22:44:51.121255-06:00'
 model: gpt-4-0125-preview
-summary: Refactoring is het proces van het wijzigen van de interne structuur van een
-  computerprogramma zonder het externe gedrag aan te passen.
+summary: Stel je voor dat je een functie hebt die net iets te veel doet, zoals deze
+  logge methode die een object initialiseert en ook voor het loggen zorgt.
 title: Refactoring
 weight: 19
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:44.625538-07:00
-description: "Merkkijonojen alijonojen erottaminen Visual Basic for Applicationsissa\
-  \ (VBA) sis\xE4lt\xE4\xE4 tiettyjen osien erist\xE4misen merkkijonosta annettujen\
-  \ kriteerien\u2026"
+description: "Kuinka: VBAssa k\xE4ytet\xE4\xE4n p\xE4\xE4asiassa `Mid`, `Left` ja\
+  \ `Right` funktioita alijonojen erottamiseen. Alla tutkitaan n\xE4it\xE4 funktioita\
+  \ esimerkkien avulla: 1.\u2026"
 lastmod: '2024-03-13T22:44:56.388646-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonojen alijonojen erottaminen Visual Basic for Applicationsissa (VBA)\
-  \ sis\xE4lt\xE4\xE4 tiettyjen osien erist\xE4misen merkkijonosta annettujen kriteerien\
-  \ perusteella."
+summary: "VBAssa k\xE4ytet\xE4\xE4n p\xE4\xE4asiassa `Mid`, `Left` ja `Right` funktioita\
+  \ alijonojen erottamiseen."
 title: Alimerkkijonojen erottaminen
 weight: 6
 ---

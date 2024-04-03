@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:57:22.984759-07:00
-description: "La recherche et le remplacement de texte permettent de trouver des cha\xEE\
-  nes sp\xE9cifiques dans un texte et de les remplacer par d'autres. Les programmeurs\u2026"
+description: "How to: Le code C++ suivant montre comment rechercher et remplacer du\
+  \ texte avec la biblioth\xE8que standard."
 lastmod: '2024-03-13T22:44:58.144610-06:00'
 model: gpt-4-1106-preview
-summary: "La recherche et le remplacement de texte permettent de trouver des cha\xEE\
-  nes sp\xE9cifiques dans un texte et de les remplacer par d'autres."
+summary: "Le code C++ suivant montre comment rechercher et remplacer du texte avec\
+  \ la biblioth\xE8que standard."
 title: Recherche et remplacement de texte
 weight: 10
 ---

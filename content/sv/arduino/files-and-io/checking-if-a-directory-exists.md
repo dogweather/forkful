@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:44.537063-07:00
-description: "I sammanhanget av Arduino-programmering \xE4r det viktigt att kontrollera\
-  \ om en mapp finns p\xE5 ett SD-kort eller liknande lagringsmodul f\xF6r att kunna\
-  \ l\xE4sa\u2026"
+description: "Hur man g\xF6r: Arduino st\xF6der inte komplext filsystemshantering\
+  \ direkt ur l\xE5dan. Men, med hj\xE4lp av SD-biblioteket, som \xE4r en del av standard\
+  \ Arduino IDE,\u2026"
 lastmod: '2024-03-13T22:44:38.181915-06:00'
 model: gpt-4-0125-preview
-summary: "I sammanhanget av Arduino-programmering \xE4r det viktigt att kontrollera\
-  \ om en mapp finns p\xE5 ett SD-kort eller liknande lagringsmodul f\xF6r att kunna\
-  \ l\xE4sa eller skriva filer utan fel."
+summary: "Arduino st\xF6der inte komplext filsystemshantering direkt ur l\xE5dan."
 title: Kontrollera om en katalog existerar
 weight: 20
 ---

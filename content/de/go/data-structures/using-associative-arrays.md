@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:39.883120-07:00
-description: "Assoziative Arrays, in Go als Maps bekannt, erm\xF6glichen es dir, Schl\xFC\
-  ssel-Wert-Paare zu speichern, bei denen jeder einzigartige Schl\xFCssel auf einen\
-  \ Wert\u2026"
+description: 'Wie man: Das Erstellen und Initialisieren einer Map in Go kann auf verschiedene
+  Arten erfolgen. Hier ist ein einfaches Beispiel, um zu beginnen.'
 lastmod: '2024-03-13T22:44:53.279905-06:00'
 model: gpt-4-0125-preview
-summary: "Assoziative Arrays, in Go als Maps bekannt, erm\xF6glichen es dir, Schl\xFC\
-  ssel-Wert-Paare zu speichern, bei denen jeder einzigartige Schl\xFCssel auf einen\
-  \ Wert verweist."
+summary: Das Erstellen und Initialisieren einer Map in Go kann auf verschiedene Arten
+  erfolgen.
 title: Verwendung von assoziativen Arrays
 weight: 15
 ---

@@ -1,11 +1,12 @@
 ---
 date: 2024-02-03 19:02:42.618463-07:00
-description: "Capitalizing a string in PowerShell involves transforming the first\
-  \ character of a given string to uppercase while leaving the rest of the string\u2026"
+description: "How to: PowerShell, being a versatile tool, allows you to capitalize\
+  \ a string using straightforward methods without needing third-party libraries.\
+  \ Here's\u2026"
 lastmod: '2024-03-13T22:45:00.266879-06:00'
 model: gpt-4-0125-preview
-summary: Capitalizing a string in PowerShell involves transforming the first character
-  of a given string to uppercase while leaving the rest of the string unchanged.
+summary: PowerShell, being a versatile tool, allows you to capitalize a string using
+  straightforward methods without needing third-party libraries.
 title: Capitalizing a string
 weight: 2
 ---

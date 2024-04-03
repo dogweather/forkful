@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:03:15.492126-07:00
-description: "Writing a text file in PHP involves creating or opening a file and inserting\
-  \ content into it. Programmers do this to persist data, like user-generated\u2026"
+description: "How to: PHP natively supports file writing through functions like `file_put_contents`,\
+  \ `fopen` together with `fwrite`, and `fclose`. Here is how to use\u2026"
 lastmod: '2024-03-13T22:45:00.183658-06:00'
 model: gpt-4-0125-preview
-summary: Writing a text file in PHP involves creating or opening a file and inserting
-  content into it.
+summary: PHP natively supports file writing through functions like `file_put_contents`,
+  `fopen` together with `fwrite`, and `fclose`.
 title: Writing a text file
 weight: 24
 ---

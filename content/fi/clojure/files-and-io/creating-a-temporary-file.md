@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:40:03.421195-07:00
-description: "Luodaan v\xE4liaikainen tiedosto varastoimaan dataa, jota ei tarvita\
-  \ pysyv\xE4sti. K\xE4ytet\xE4\xE4n v\xE4liaikaisia tiedostoja s\xE4ilytt\xE4m\xE4\
-  \xE4n ohjelman suorituksen aikana\u2026"
+description: "How to: - Kuinka tehd\xE4: ."
 lastmod: '2024-03-13T22:44:56.203591-06:00'
 model: gpt-4-1106-preview
-summary: "Luodaan v\xE4liaikainen tiedosto varastoimaan dataa, jota ei tarvita pysyv\xE4\
-  sti."
+summary: .
 title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---

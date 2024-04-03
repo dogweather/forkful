@@ -2,15 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:13.349402-07:00
-description: "In th\xF4ng tin g\u1EE1 r\u1ED1i l\xE0 vi\u1EC7c phun ra d\u1EEF li\u1EC7\
-  u t\u1EEB ch\u01B0\u01A1ng tr\xECnh c\u1EE7a b\u1EA1n \u0111\u1EC3 xem chuy\u1EC7\
-  n g\xEC \u0111ang x\u1EA3y ra ph\xEDa sau. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1\
-  c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 theo\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: M\u1ED9t c\xE1ch d\u1EC5 d\xE0ng \u0111\u1EC3\
+  \ in th\xF4ng tin g\u1EE1 r\u1ED1i trong Haskell l\xE0 s\u1EED d\u1EE5ng h\xE0m\
+  \ `print`, n\xF3 nh\u1EADn m\u1ED9t gi\xE1 tr\u1ECB l\xE0 th\u1EC3 hi\u1EC7n c\u1EE7\
+  a typeclass `Show` v\xE0 xu\u1EA5t n\xF3\u2026"
 lastmod: '2024-03-13T22:44:36.715408-06:00'
 model: gpt-4-0125-preview
-summary: "In th\xF4ng tin g\u1EE1 r\u1ED1i l\xE0 vi\u1EC7c phun ra d\u1EEF li\u1EC7\
-  u t\u1EEB ch\u01B0\u01A1ng tr\xECnh c\u1EE7a b\u1EA1n \u0111\u1EC3 xem chuy\u1EC7\
-  n g\xEC \u0111ang x\u1EA3y ra ph\xEDa sau."
+summary: "M\u1ED9t c\xE1ch d\u1EC5 d\xE0ng \u0111\u1EC3 in th\xF4ng tin g\u1EE1 r\u1ED1\
+  i trong Haskell l\xE0 s\u1EED d\u1EE5ng h\xE0m `print`, n\xF3 nh\u1EADn m\u1ED9\
+  t gi\xE1 tr\u1ECB l\xE0 th\u1EC3 hi\u1EC7n c\u1EE7a typeclass `Show` v\xE0 xu\u1EA5\
+  t n\xF3 ra console."
 title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 weight: 33
 ---

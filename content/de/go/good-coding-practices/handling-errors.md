@@ -2,12 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:04.181688-07:00
-description: "Die Fehlerbehandlung in Go umfasst das Erkennen und Reagieren auf Fehlerbedingungen\
-  \ in Ihrem Programm. Programmierer betreiben Fehlerbehandlung, um\u2026"
+description: "Wie: In Go wird die Fehlerbehandlung explizit mit dem `error`-Typ verwaltet.\
+  \ Funktionen, die fehlschlagen k\xF6nnen, geben einen Fehler als ihren letzten\u2026"
 lastmod: '2024-03-13T22:44:53.296214-06:00'
 model: gpt-4-0125-preview
-summary: Die Fehlerbehandlung in Go umfasst das Erkennen und Reagieren auf Fehlerbedingungen
-  in Ihrem Programm.
+summary: In Go wird die Fehlerbehandlung explizit mit dem `error`-Typ verwaltet.
 title: Fehlerbehandlung
 weight: 16
 ---

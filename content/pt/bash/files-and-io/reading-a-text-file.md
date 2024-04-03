@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:53:42.870686-07:00
-description: "Ler um arquivo de texto significa acessar e manipular o conte\xFAdo\
-  \ armazenado num arquivo no seu sistema. Programadores fazem isso para obter dados,\u2026"
+description: 'Como Fazer: Para ler um arquivo linha por linha.'
 lastmod: '2024-03-13T22:44:46.770406-06:00'
 model: gpt-4-1106-preview
-summary: "Ler um arquivo de texto significa acessar e manipular o conte\xFAdo armazenado\
-  \ num arquivo no seu sistema."
+summary: Para ler um arquivo linha por linha.
 title: Lendo um arquivo de texto
 weight: 22
 ---

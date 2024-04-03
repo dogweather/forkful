@@ -2,14 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:47.450584-07:00
-description: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n l\xE0 vi\u1EC7c l\u1EA5\
-  y th\xF4ng tin t\u1EEB m\u1ED9t t\xE0i li\u1EC7u .txt v\xE0o ch\u01B0\u01A1ng tr\xEC\
-  nh c\u1EE7a b\u1EA1n. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\
-  \u1EC3 truy c\u1EADp v\xE0 thao t\xE1c d\u1EEF li\u1EC7u: c\xE0i\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch b\u1EA1\
+  n \u0111\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong JavaScript hi\u1EC7n t\u1EA1\
+  i: **S\u1EED d\u1EE5ng Node.js v\u1EDBi Promises (Async/Await)**."
 lastmod: '2024-03-13T22:44:37.176002-06:00'
 model: gpt-4-0125-preview
-summary: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n l\xE0 vi\u1EC7c l\u1EA5\
-  y th\xF4ng tin t\u1EEB m\u1ED9t t\xE0i li\u1EC7u ."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch b\u1EA1n \u0111\u1ECDc m\u1ED9\
+  t t\u1EC7p v\u0103n b\u1EA3n trong JavaScript hi\u1EC7n t\u1EA1i."
 title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 22
 ---

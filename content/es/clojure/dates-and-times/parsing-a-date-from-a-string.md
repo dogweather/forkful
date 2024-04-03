@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:43.866215-07:00
-description: "Analizar una fecha de una cadena en Clojure se trata de convertir representaciones\
-  \ textuales de fechas y horas en una forma m\xE1s utilizable (por ejemplo,\u2026"
+description: "C\xF3mo hacerlo: Dado que Clojure es un lenguaje JVM, te permite usar\
+  \ directamente las bibliotecas de fecha y hora de Java. Comencemos con la\u2026"
 lastmod: '2024-03-13T22:44:58.666684-06:00'
 model: gpt-4-0125-preview
-summary: "Analizar una fecha de una cadena en Clojure se trata de convertir representaciones\
-  \ textuales de fechas y horas en una forma m\xE1s utilizable (por ejemplo, el objeto\
-  \ DateTime de Clojure)."
+summary: Dado que Clojure es un lenguaje JVM, te permite usar directamente las bibliotecas
+  de fecha y hora de Java.
 title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---

@@ -1,8 +1,8 @@
 ---
 date: 2024-01-26 04:10:20.053395-07:00
-description: "Rust suporta v\xE1rios depuradores, mas um comum \xE9 o `gdb` para GNU/Linux\
-  \ ou `lldb` para macOS. Voc\xEA tamb\xE9m pode usar `rust-gdb` ou `rust-lldb`, que\
-  \ s\xE3o\u2026"
+description: "Como: Rust suporta v\xE1rios depuradores, mas um comum \xE9 o `gdb`\
+  \ para GNU/Linux ou `lldb` para macOS. Voc\xEA tamb\xE9m pode usar `rust-gdb` ou\
+  \ `rust-lldb`, que\u2026"
 lastmod: '2024-03-13T22:44:46.372131-06:00'
 model: gpt-4-0125-preview
 summary: "Rust suporta v\xE1rios depuradores, mas um comum \xE9 o `gdb` para GNU/Linux\

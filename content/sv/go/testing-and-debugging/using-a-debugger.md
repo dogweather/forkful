@@ -2,9 +2,9 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:09.034247-07:00
-description: "Go erbjuder en inbyggd m\xF6jlighet f\xF6r fels\xF6kning som kallas\
-  \ `delve`. Det \xE4r ett fullfj\xE4drat fels\xF6kningsverktyg som till\xE5ter dig\
-  \ att exekvera Go-program\u2026"
+description: "Hur man g\xF6r: Go erbjuder en inbyggd m\xF6jlighet f\xF6r fels\xF6\
+  kning som kallas `delve`. Det \xE4r ett fullfj\xE4drat fels\xF6kningsverktyg som\
+  \ till\xE5ter dig att exekvera\u2026"
 lastmod: '2024-03-13T22:44:37.397025-06:00'
 model: gpt-4-0125-preview
 summary: "Go erbjuder en inbyggd m\xF6jlighet f\xF6r fels\xF6kning som kallas `delve`."

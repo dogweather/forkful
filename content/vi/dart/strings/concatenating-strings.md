@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:53:57.652501-07:00
-description: "Trong l\u1EADp tr\xECnh, n\u1ED1i chu\u1ED7i l\xE0 qu\xE1 tr\xECnh k\u1EBF\
-  t h\u1EE3p hai ho\u1EB7c nhi\u1EC1u chu\u1ED7i th\xE0nh m\u1ED9t. L\u1EADp tr\xEC\
-  nh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 d\u1EC5 d\xE0ng thao t\xE1\
-  c v\u1EDBi d\u1EEF li\u1EC7u v\u0103n b\u1EA3n, x\xE2y\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Dart cung c\u1EA5p nhi\u1EC1u c\xE1ch \u0111\
+  \u01A1n gi\u1EA3n \u0111\u1EC3 n\u1ED1i chu\u1ED7i. D\u01B0\u1EDBi \u0111\xE2y l\xE0\
+  \ nh\u1EEFng ph\u01B0\u01A1ng ph\xE1p ph\u1ED5 bi\u1EBFn nh\u1EA5t: #."
 lastmod: '2024-03-13T22:44:36.251967-06:00'
 model: gpt-4-0125-preview
-summary: "Trong l\u1EADp tr\xECnh, n\u1ED1i chu\u1ED7i l\xE0 qu\xE1 tr\xECnh k\u1EBF\
-  t h\u1EE3p hai ho\u1EB7c nhi\u1EC1u chu\u1ED7i th\xE0nh m\u1ED9t."
+summary: "Dart cung c\u1EA5p nhi\u1EC1u c\xE1ch \u0111\u01A1n gi\u1EA3n \u0111\u1EC3\
+  \ n\u1ED1i chu\u1ED7i."
 title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 weight: 3
 ---

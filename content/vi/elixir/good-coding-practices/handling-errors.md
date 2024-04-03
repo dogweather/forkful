@@ -2,15 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:10.695090-07:00
-description: "X\u1EED l\xFD l\u1ED7i ngh\u0129a l\xE0 vi\u1EBFt m\xE3 c\xF3 th\u1EC3\
-  \ \u0111\u1ED1i ph\xF3 v\u1EDBi t\xECnh hu\u1ED1ng kh\xF4ng nh\u01B0 mong \u0111\
-  \u1EE3i. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 ng\u0103\
-  n ch\u1EB7n s\u1EF1 c\u1ED1 v\xE0 \u0111\u1EA3m b\u1EA3o r\u1EB1ng ch\u01B0\u01A1\
-  ng tr\xECnh\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Elixir, ch\xFAng ta th\u01B0\u1EDDng s\u1EED\
+  \ d\u1EE5ng k\u1EF9 thu\u1EADt so kh\u1EDBp m\u1EABu v\xE0 l\u1EC7nh `case` \u0111\
+  \u1EC3 x\u1EED l\xFD c\xE1c k\u1EBFt qu\u1EA3 kh\xE1c nhau, bao g\u1ED3m c\u1EA3\
+  \ l\u1ED7i."
 lastmod: '2024-03-13T22:44:36.218173-06:00'
 model: gpt-4-0125-preview
-summary: "X\u1EED l\xFD l\u1ED7i ngh\u0129a l\xE0 vi\u1EBFt m\xE3 c\xF3 th\u1EC3 \u0111\
-  \u1ED1i ph\xF3 v\u1EDBi t\xECnh hu\u1ED1ng kh\xF4ng nh\u01B0 mong \u0111\u1EE3i."
+summary: "Trong Elixir, ch\xFAng ta th\u01B0\u1EDDng s\u1EED d\u1EE5ng k\u1EF9 thu\u1EAD\
+  t so kh\u1EDBp m\u1EABu v\xE0 l\u1EC7nh `case` \u0111\u1EC3 x\u1EED l\xFD c\xE1\
+  c k\u1EBFt qu\u1EA3 kh\xE1c nhau, bao g\u1ED3m c\u1EA3 l\u1ED7i."
 title: "X\u1EED l\xFD l\u1ED7i"
 weight: 16
 ---

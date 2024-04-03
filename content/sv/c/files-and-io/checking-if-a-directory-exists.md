@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:05.368505-07:00
-description: "Att kontrollera om en katalog existerar i C inneb\xE4r att man fr\xE5\
-  gar filsystemet f\xF6r att verifiera om en specifik s\xF6kv\xE4g leder till en katalog.\u2026"
+description: "Hur man g\xF6r: I C kan existensen av en katalog kontrolleras med hj\xE4\
+  lp av `stat`-funktionen, som h\xE4mtar information om filen eller katalogen p\xE5\
+  \ en angiven\u2026"
 lastmod: '2024-03-13T22:44:38.398949-06:00'
 model: gpt-4-0125-preview
-summary: "Att kontrollera om en katalog existerar i C inneb\xE4r att man fr\xE5gar\
-  \ filsystemet f\xF6r att verifiera om en specifik s\xF6kv\xE4g leder till en katalog."
+summary: "I C kan existensen av en katalog kontrolleras med hj\xE4lp av `stat`-funktionen,\
+  \ som h\xE4mtar information om filen eller katalogen p\xE5 en angiven s\xF6kv\xE4\
+  g."
 title: Kontrollera om en katalog existerar
 weight: 20
 ---

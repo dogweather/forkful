@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:17.445683-07:00
-description: "Pisanie do standardowego b\u0142\u0119du w j\u0119zyku C polega na kierowaniu\
-  \ komunikat\xF3w o b\u0142\u0119dach i informacji diagnostycznych do oddzielnego\
-  \ strumienia, r\xF3\u017Cnego od\u2026"
+description: "Jak to zrobi\u0107: W C, do pisania komunikat\xF3w o b\u0142\u0119dach\
+  \ u\u017Cywany jest strumie\u0144 `stderr`. W przeciwie\u0144stwie do pisania do\
+  \ standardowego wyj\u015Bcia za pomoc\u0105\u2026"
 lastmod: '2024-03-13T22:44:35.904348-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie do standardowego b\u0142\u0119du w j\u0119zyku C polega na kierowaniu\
-  \ komunikat\xF3w o b\u0142\u0119dach i informacji diagnostycznych do oddzielnego\
-  \ strumienia, r\xF3\u017Cnego od g\u0142\xF3wnego wyj\u015Bcia programu."
+summary: "W C, do pisania komunikat\xF3w o b\u0142\u0119dach u\u017Cywany jest strumie\u0144\
+  \ `stderr`."
 title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---

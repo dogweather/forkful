@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:53.303250-07:00
-description: "Die Umwandlung von Daten in Zeichenketten ist eine grundlegende Aufgabe,\
-  \ die es Programmierern erm\xF6glicht, Datumsinformationen in einem f\xFCr Menschen\u2026"
+description: "Wie: Google Apps Script, basierend auf JavaScript, erm\xF6glicht mehrere\
+  \ Methoden, um die Umwandlung von Daten in Zeichenketten zu erreichen. Unten sind\u2026"
 lastmod: '2024-03-13T22:44:53.346581-06:00'
 model: gpt-4-0125-preview
-summary: "Die Umwandlung von Daten in Zeichenketten ist eine grundlegende Aufgabe,\
-  \ die es Programmierern erm\xF6glicht, Datumsinformationen in einem f\xFCr Menschen\
-  \ lesbaren Format zu manipulieren und anzuzeigen."
+summary: "Google Apps Script, basierend auf JavaScript, erm\xF6glicht mehrere Methoden,\
+  \ um die Umwandlung von Daten in Zeichenketten zu erreichen."
 title: Ein Datum in einen String umwandeln
 weight: 28
 ---

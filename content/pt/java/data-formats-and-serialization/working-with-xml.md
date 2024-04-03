@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:32:36.947606-07:00
-description: "Trabalhar com XML envolve analisar, consultar e manipular documentos\
-  \ XML com Java. Os programadores fazem isso para troca de dados, gerenciamento de\u2026"
+description: "Como fazer: Java oferece APIs como DOM (Modelo de Objeto de Documento),\
+  \ SAX (API Simples para XML) e StAX (API de Streaming para XML) para trabalhar com\u2026"
 lastmod: '2024-03-13T22:44:46.481154-06:00'
 model: gpt-4-0125-preview
-summary: Trabalhar com XML envolve analisar, consultar e manipular documentos XML
-  com Java.
+summary: Java oferece APIs como DOM (Modelo de Objeto de Documento), SAX (API Simples
+  para XML) e StAX (API de Streaming para XML) para trabalhar com XML.
 title: Trabalhando com XML
 weight: 40
 ---

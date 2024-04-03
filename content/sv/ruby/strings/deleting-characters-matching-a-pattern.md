@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:43:08.134217-07:00
-description: "I Ruby kan du rensa str\xE4ngar fr\xE5n o\xF6nskade tecken genom att\
-  \ matcha dem mot ett m\xF6nster. Programmerare g\xF6r detta f\xF6r att st\xE4da\
-  \ data, validera input eller\u2026"
+description: "How to: I Ruby anv\xE4nder du `String#gsub` och `String#delete` f\xF6\
+  r att ta bort tecken som matchar ett m\xF6nster. H\xE4r \xE4r n\xE5gra exempel."
 lastmod: '2024-03-13T22:44:38.412772-06:00'
 model: gpt-4-1106-preview
-summary: "I Ruby kan du rensa str\xE4ngar fr\xE5n o\xF6nskade tecken genom att matcha\
-  \ dem mot ett m\xF6nster."
+summary: "I Ruby anv\xE4nder du `String#gsub` och `String#delete` f\xF6r att ta bort\
+  \ tecken som matchar ett m\xF6nster."
 title: "Ta bort tecken som matchar ett m\xF6nster"
 weight: 5
 ---

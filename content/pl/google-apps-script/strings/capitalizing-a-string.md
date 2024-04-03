@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:03.289636-07:00
-description: "Capitalizacja ci\u0105gu polega na modyfikacji wej\u015Bcia tak, aby\
-  \ pierwsza litera by\u0142a wielk\u0105 liter\u0105, a reszta ma\u0142ymi literami,\
-  \ co jest powszechnie stosowane do\u2026"
+description: "Jak to zrobi\u0107: Google Apps Script, oparty na JavaScript, umo\u017C\
+  liwia kilka metod na kapitalizacj\u0119 ci\u0105gu, chocia\u017C nie posiada wbudowanej\
+  \ funkcji. Oto kilka\u2026"
 lastmod: '2024-03-13T22:44:34.882396-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizacja ci\u0105gu polega na modyfikacji wej\u015Bcia tak, aby pierwsza\
-  \ litera by\u0142a wielk\u0105 liter\u0105, a reszta ma\u0142ymi literami, co jest\
-  \ powszechnie stosowane do formatowania nazw lub tytu\u0142\xF3w."
+summary: "Google Apps Script, oparty na JavaScript, umo\u017Cliwia kilka metod na\
+  \ kapitalizacj\u0119 ci\u0105gu, chocia\u017C nie posiada wbudowanej funkcji."
 title: "Zamiana liter w ci\u0105gu na wielkie"
 weight: 2
 ---

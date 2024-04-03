@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:59:13.483723-07:00
-description: "Sending an HTTP request is a way for programs to communicate over the\
-  \ web, asking for data or submitting some. Programmers do it to interact with APIs,\u2026"
+description: 'How to: C# makes sending HTTP requests straightforward with `HttpClient`.
+  Here''s the skeleton of a GET request.'
 lastmod: '2024-03-13T22:45:00.085602-06:00'
 model: gpt-4-1106-preview
-summary: Sending an HTTP request is a way for programs to communicate over the web,
-  asking for data or submitting some.
+summary: C# makes sending HTTP requests straightforward with `HttpClient`.
 title: Sending an HTTP request
 weight: 44
 ---

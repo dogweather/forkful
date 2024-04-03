@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:47:26.190328-07:00
-description: "Finding a string's length means figuring out how many characters it\
-  \ contains. Programmers often do this to validate input, loop through characters,\
-  \ or\u2026"
+description: 'How to: Java strings have a `length()` method. Call it, and you get
+  the character count. Easy.'
 lastmod: '2024-03-13T22:44:59.964436-06:00'
 model: gpt-4-1106-preview
-summary: Finding a string's length means figuring out how many characters it contains.
+summary: Java strings have a `length()` method.
 title: Finding the length of a string
 weight: 7
 ---

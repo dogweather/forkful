@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:58:16.283929-07:00
-description: "Text suchen und ersetzen ist grundlegendes Werkzeug in der Programmierung;\
-  \ es erm\xF6glicht uns, bestimmte Zeichen oder Zeichenfolgen zu finden und sie durch\u2026"
+description: 'How to: Java macht Textersetzungen ziemlich einfach mit der `String`
+  Klasse.'
 lastmod: '2024-03-13T22:44:53.748738-06:00'
 model: gpt-4-1106-preview
-summary: "Text suchen und ersetzen ist grundlegendes Werkzeug in der Programmierung;\
-  \ es erm\xF6glicht uns, bestimmte Zeichen oder Zeichenfolgen zu finden und sie durch\
-  \ andere zu ersetzen."
+summary: Java macht Textersetzungen ziemlich einfach mit der `String` Klasse.
 title: Suchen und Ersetzen von Text
 weight: 10
 ---

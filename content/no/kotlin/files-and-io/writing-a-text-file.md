@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:25.721030-07:00
-description: "\xC5 skrive en tekstfil i Kotlin inneb\xE6rer \xE5 lage en fil og legge\
-  \ inn tekstinnhold i den, en vanlig oppgave for lagring av data, logging eller innstillinger\u2026"
+description: "Hvordan: Kotlin tilbyr en grei tiln\xE6rming for \xE5 skrive til filer,\
+  \ ved \xE5 utnytte standardbiblioteket uten \xE5 trenge ytterligere tredjepartsbiblioteker.\
+  \ Her\u2026"
 lastmod: '2024-03-13T22:44:40.770236-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive en tekstfil i Kotlin inneb\xE6rer \xE5 lage en fil og legge\
-  \ inn tekstinnhold i den, en vanlig oppgave for lagring av data, logging eller innstillinger\
-  \ for konfigurasjon."
+summary: "Kotlin tilbyr en grei tiln\xE6rming for \xE5 skrive til filer, ved \xE5\
+  \ utnytte standardbiblioteket uten \xE5 trenge ytterligere tredjepartsbiblioteker."
 title: Skrive en tekstfil
 weight: 24
 ---

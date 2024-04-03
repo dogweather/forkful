@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 00:50:44.946263-07:00
-description: "O tratamento de erros em C# \xE9 sobre gerenciar o inesperado\u2014\
-  como trope\xE7ar nos pr\xF3prios cadar\xE7os. Programas podem trope\xE7ar em dados\
-  \ ruins ou conex\xF5es\u2026"
+description: "Como fazer: Vamos come\xE7ar com um bloco try-catch. \xC9 como colocar\
+  \ uma rede de seguran\xE7a sob um equilibrista na corda bamba. Se escorregarem,\
+  \ eles n\xE3o\u2026"
 lastmod: '2024-03-13T22:44:46.591359-06:00'
 model: gpt-4-1106-preview
-summary: "O tratamento de erros em C# \xE9 sobre gerenciar o inesperado\u2014como\
-  \ trope\xE7ar nos pr\xF3prios cadar\xE7os."
+summary: "Vamos come\xE7ar com um bloco try-catch."
 title: Tratamento de erros
 weight: 16
 ---

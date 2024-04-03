@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:20.868112-07:00
-description: "Het vergelijken van twee datums in Google Apps Script, een afgeleide\
-  \ van JavaScript, speciaal ontworpen voor de suite van Google-applicaties, is een\u2026"
+description: "Hoe: In Google Apps Script worden datums vergeleken met behulp van JavaScript\
+  \ Date objecten, waardoor het gebruik van standaardmethoden mogelijk is om te\u2026"
 lastmod: '2024-03-13T22:44:50.345303-06:00'
 model: gpt-4-0125-preview
-summary: "Het vergelijken van twee datums in Google Apps Script, een afgeleide van\
-  \ JavaScript, speciaal ontworpen voor de suite van Google-applicaties, is een essenti\xEB\
-  le taak voor ontwikkelaars die zich bezighouden met planning, tijdlijnen of enige\
-  \ datumgerelateerde gegevens."
+summary: In Google Apps Script worden datums vergeleken met behulp van JavaScript
+  Date objecten, waardoor het gebruik van standaardmethoden mogelijk is om te evalueren
+  welke van de twee datums vroeger is, later of als ze hetzelfde zijn.
 title: Twee datums vergelijken
 weight: 27
 ---

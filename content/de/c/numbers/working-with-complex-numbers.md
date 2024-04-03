@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:53.913110-07:00
-description: "Komplexe Zahlen bestehen aus einem Realteil und einem Imagin\xE4rteil,\
-  \ dargestellt als `a + bi`, wobei `i` die Quadratwurzel von `-1` ist. Programmierer\u2026"
+description: "Wie: In C werden komplexe Zahlen durch die Standardbibliothek unterst\xFC\
+  tzt, insbesondere durch `<complex.h>`. Um sie zu nutzen, deklarieren Sie Variablen\u2026"
 lastmod: '2024-03-13T22:44:54.345635-06:00'
 model: gpt-4-0125-preview
-summary: "Komplexe Zahlen bestehen aus einem Realteil und einem Imagin\xE4rteil, dargestellt\
-  \ als `a + bi`, wobei `i` die Quadratwurzel von `-1` ist."
+summary: "In C werden komplexe Zahlen durch die Standardbibliothek unterst\xFCtzt,\
+  \ insbesondere durch `<complex.h>`."
 title: Arbeiten mit komplexen Zahlen
 weight: 14
 ---

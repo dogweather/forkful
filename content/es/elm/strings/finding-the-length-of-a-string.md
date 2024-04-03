@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:47:15.502432-07:00
-description: "En elm, encontrar la longitud de una cadena significa contar cu\xE1\
-  ntos caracteres contiene. Los programadores lo hacen para validar entradas, limitar\
-  \ texto\u2026"
+description: "C\xF3mo hacerlo: Para obtener la longitud de una cadena en Elm, utiliza\
+  \ la funci\xF3n `String.length`. Aqu\xED tienes un ejemplo."
 lastmod: '2024-03-13T22:44:58.970468-06:00'
 model: gpt-4-1106-preview
-summary: "En elm, encontrar la longitud de una cadena significa contar cu\xE1ntos\
-  \ caracteres contiene."
+summary: "Para obtener la longitud de una cadena en Elm, utiliza la funci\xF3n `String.length`."
 title: Calculando la longitud de una cadena
 weight: 7
 ---

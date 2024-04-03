@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:58.310295-07:00
-description: "Comparer deux dates dans Google Apps Script, un d\xE9riv\xE9 de JavaScript\
-  \ adapt\xE9 pour la suite d'applications de Google, est une t\xE2che essentielle\
-  \ pour les\u2026"
+description: "Comment faire : Dans Google Apps Script, les dates sont compar\xE9es\
+  \ en utilisant des objets Date de JavaScript, permettant l'utilisation de m\xE9\
+  thodes\u2026"
 lastmod: '2024-03-13T22:44:57.201202-06:00'
 model: gpt-4-0125-preview
-summary: "Comparer deux dates dans Google Apps Script, un d\xE9riv\xE9 de JavaScript\
-  \ adapt\xE9 pour la suite d'applications de Google, est une t\xE2che essentielle\
-  \ pour les d\xE9veloppeurs traitant de planification, de chronologies ou de toute\
-  \ donn\xE9e li\xE9e aux dates."
+summary: "Dans Google Apps Script, les dates sont compar\xE9es en utilisant des objets\
+  \ Date de JavaScript, permettant l'utilisation de m\xE9thodes standards pour \xE9\
+  valuer quelle date est la plus ancienne, la plus r\xE9cente, ou si elles sont identiques."
 title: Comparer deux dates
 weight: 27
 ---

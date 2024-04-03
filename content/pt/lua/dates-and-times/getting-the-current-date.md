@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:19.695808-07:00
-description: "Recuperar a data atual na programa\xE7\xE3o \xE9 uma tarefa crucial\
-  \ para uma infinidade de aplica\xE7\xF5es, incluindo registro de atividades (logging),\
-  \ marca\xE7\xE3o de\u2026"
+description: "Como fazer: O Lua fornece a fun\xE7\xE3o `os.date` para obter a data\
+  \ e a hora atuais. A fun\xE7\xE3o pode ser usada sem argumentos para obter uma string\
+  \ formatada ou\u2026"
 lastmod: '2024-03-13T22:44:46.719540-06:00'
 model: gpt-4-0125-preview
-summary: "Recuperar a data atual na programa\xE7\xE3o \xE9 uma tarefa crucial para\
-  \ uma infinidade de aplica\xE7\xF5es, incluindo registro de atividades (logging),\
-  \ marca\xE7\xE3o de eventos com carimbo de data/hora ou agendamento de tarefas."
+summary: "O Lua fornece a fun\xE7\xE3o `os.date` para obter a data e a hora atuais."
 title: Obtendo a data atual
 weight: 29
 ---

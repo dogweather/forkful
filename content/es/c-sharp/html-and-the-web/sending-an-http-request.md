@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:59:12.370760-07:00
-description: "Enviar una solicitud HTTP significa pedir datos de un servidor web desde\
-  \ tu programa. Los programadores lo hacemos para interactuar con APIs web, recoger\u2026"
+description: "C\xF3mo hacerlo: ."
 lastmod: '2024-03-13T22:44:59.075311-06:00'
 model: gpt-4-1106-preview
-summary: Enviar una solicitud HTTP significa pedir datos de un servidor web desde
-  tu programa.
+summary: .
 title: Enviando una solicitud http
 weight: 44
 ---

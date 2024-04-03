@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:43:03.944658-07:00
-description: "Eliminar caracteres que siguen un patr\xF3n en Python es como limpiar\
-  \ tu texto, dejando solo lo que necesitas. Los programadores lo hacen para validar\
-  \ datos,\u2026"
+description: "C\xF3mo se hace: Digamos que tienes un texto con varios signos de puntuaci\xF3\
+  n y quieres dejar solo las letras y n\xFAmeros. Podemos usar el m\xF3dulo `re` de\
+  \ Python\u2026"
 lastmod: '2024-03-13T22:44:58.594248-06:00'
 model: gpt-4-1106-preview
-summary: "Eliminar caracteres que siguen un patr\xF3n en Python es como limpiar tu\
-  \ texto, dejando solo lo que necesitas."
+summary: "Digamos que tienes un texto con varios signos de puntuaci\xF3n y quieres\
+  \ dejar solo las letras y n\xFAmeros."
 title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---

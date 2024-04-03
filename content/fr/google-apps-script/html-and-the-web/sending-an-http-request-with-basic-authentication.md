@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:01.336403-07:00
-description: "L'envoi d'une requ\xEAte HTTP avec une authentification de base consiste\
-  \ \xE0 coder un nom d'utilisateur et un mot de passe dans un en-t\xEAte de requ\xEA\
-  te pour\u2026"
+description: "Comment faire : Dans Google Apps Script, pour envoyer une requ\xEAte\
+  \ HTTP avec authentification de base, vous utilisez le service `UrlFetchApp` combin\xE9\
+  \ \xE0 un\u2026"
 lastmod: '2024-03-13T22:44:57.185126-06:00'
 model: gpt-4-0125-preview
-summary: "L'envoi d'une requ\xEAte HTTP avec une authentification de base consiste\
-  \ \xE0 coder un nom d'utilisateur et un mot de passe dans un en-t\xEAte de requ\xEA\
-  te pour acc\xE9der \xE0 des ressources prot\xE9g\xE9es."
+summary: "Dans Google Apps Script, pour envoyer une requ\xEAte HTTP avec authentification\
+  \ de base, vous utilisez le service `UrlFetchApp` combin\xE9 \xE0 un en-t\xEAte\
+  \ d'autorisation cod\xE9 en base64."
 title: "Envoyer une requ\xEAte HTTP avec une authentification de base"
 weight: 45
 ---

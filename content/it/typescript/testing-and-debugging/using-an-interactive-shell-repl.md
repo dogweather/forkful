@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:18:29.873282-07:00
-description: "Un Read-Eval-Print-Loop (REPL) \xE8 un ambiente di programmazione che\
-  \ prende singoli input dall'utente, li esegue e restituisce il risultato all'utente.\
-  \ I\u2026"
+description: "Come fare: TypeScript non viene fornito con un proprio REPL. Utilizziamo\
+  \ `ts-node`, un ambiente di esecuzione TypeScript per Node.js che include un REPL.\u2026"
 lastmod: '2024-03-13T22:44:43.177612-06:00'
 model: gpt-4-0125-preview
-summary: "Un Read-Eval-Print-Loop (REPL) \xE8 un ambiente di programmazione che prende\
-  \ singoli input dall'utente, li esegue e restituisce il risultato all'utente."
+summary: TypeScript non viene fornito con un proprio REPL.
 title: Utilizzo di un interprete interattivo (REPL)
 weight: 34
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:37:54.894621-07:00
-description: "Refaktorering er prosessen med \xE5 tweake koden din uten \xE5 endre\
-  \ dens eksterne oppf\xF8rsel. Det handler alt om \xE5 rydde opp og organisere din\
-  \ handling for \xE5\u2026"
+description: "Hvordan: La oss si at du har en klump med Haskell-kode som gjentar seg\
+  \ selv mer enn din favorittsang. Her er en rask titt p\xE5 hvordan du kan refaktorere\u2026"
 lastmod: '2024-03-13T22:44:40.850271-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktorering er prosessen med \xE5 tweake koden din uten \xE5 endre dens\
-  \ eksterne oppf\xF8rsel."
+summary: La oss si at du har en klump med Haskell-kode som gjentar seg selv mer enn
+  din favorittsang.
 title: Refaktorering
 weight: 19
 ---

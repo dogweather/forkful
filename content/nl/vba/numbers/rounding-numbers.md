@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:14.240737-07:00
-description: "Afronden van getallen in programmeren gaat over het benaderen van een\
-  \ getal tot het dichtstbijzijnde gehele getal of tot een bepaald aantal decimalen.\u2026"
+description: "Hoe te: In Visual Basic for Applications (VBA) kan afronden worden bereikt\
+  \ met behulp van verschillende functies, elk geschikt voor specifieke scenario's.\u2026"
 lastmod: '2024-03-13T22:44:50.631351-06:00'
 model: gpt-4-0125-preview
-summary: Afronden van getallen in programmeren gaat over het benaderen van een getal
-  tot het dichtstbijzijnde gehele getal of tot een bepaald aantal decimalen.
+summary: In Visual Basic for Applications (VBA) kan afronden worden bereikt met behulp
+  van verschillende functies, elk geschikt voor specifieke scenario's.
 title: Afronden van getallen
 weight: 13
 ---

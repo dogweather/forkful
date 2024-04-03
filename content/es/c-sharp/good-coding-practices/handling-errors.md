@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 00:52:54.803645-07:00
-description: "Manejar errores en C# es acerca de gestionar lo inesperado, como tropezar\
-  \ con los cordones de tus zapatos. Los programas pueden tropezarse con datos\u2026"
+description: "C\xF3mo hacerlo: Empecemos con un bloque try-catch. Es como poner una\
+  \ red de seguridad bajo un funambulista. Si se resbala, no cae al vac\xEDo\u2014\
+  queda atrapado."
 lastmod: '2024-03-13T22:44:59.085310-06:00'
 model: gpt-4-1106-preview
-summary: Manejar errores en C# es acerca de gestionar lo inesperado, como tropezar
-  con los cordones de tus zapatos.
+summary: Empecemos con un bloque try-catch.
 title: Manejo de errores
 weight: 16
 ---

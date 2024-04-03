@@ -2,10 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:12.503092-07:00
-description: ''
+description: "C\xE1i g\xEC & T\u1EA1i sao? L\xE0m vi\u1EC7c v\u1EDBi CSV, vi\u1EBF\
+  t t\u1EAFt c\u1EE7a \"Comma-Separated Values\" (Gi\xE1 tr\u1ECB t\xE1ch b\u1EB1\
+  ng d\u1EA5u ph\u1EA9y), bao g\u1ED3m qu\xE1 tr\xECnh ph\xE2n t\xEDch v\xE0 thao\
+  \ t\xE1c d\u1EEF li\u1EC7u\u2026"
 lastmod: '2024-03-13T22:44:36.907008-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "L\xE0m vi\u1EC7c v\u1EDBi CSV, vi\u1EBFt t\u1EAFt c\u1EE7a \"Comma-Separated\
+  \ Values\" (Gi\xE1 tr\u1ECB t\xE1ch b\u1EB1ng d\u1EA5u ph\u1EA9y), bao g\u1ED3m\
+  \ qu\xE1 tr\xECnh ph\xE2n t\xEDch v\xE0 thao t\xE1c d\u1EEF li\u1EC7u trong \u0111\
+  \u1ECBnh d\u1EA1ng v\u0103n b\u1EA3n b\u1EA3ng."
 title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 weight: 37
 ---

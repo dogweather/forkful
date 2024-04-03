@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 01:09:33.578591-07:00
-description: "Raggruppare il codice in funzioni \xE8 come ordinare i mattoncini LEGO\
-  \ in contenitori\u2014rende pi\xF9 facile trovarli e utilizzarli. Lo facciamo per\
-  \ evitare\u2026"
+description: "Come fare: Immagina di avere un codice che stampa un saluto pi\xF9 volte.\
+  \ Senza funzioni, \xE8 un disordine. Con le funzioni, \xE8 ordinato."
 lastmod: '2024-03-13T22:44:43.439178-06:00'
 model: gpt-4-1106-preview
-summary: "Raggruppare il codice in funzioni \xE8 come ordinare i mattoncini LEGO in\
-  \ contenitori\u2014rende pi\xF9 facile trovarli e utilizzarli."
+summary: "Immagina di avere un codice che stampa un saluto pi\xF9 volte."
 title: Organizzazione del codice in funzioni
 weight: 18
 ---

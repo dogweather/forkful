@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:43:32.434171-07:00
-description: "Das Herunterladen einer Webseite bedeutet, ihren Inhalt \xFCber das\
-  \ Internet abzurufen. Programmierer tun das, um Daten zu sammeln, Webservices zu\
-  \ nutzen\u2026"
+description: "How to: Hier ist ein einfaches Beispiel mit `C++` und `libcurl`, einer\
+  \ leistungsf\xE4higen Bibliothek f\xFCr Client-seitige URL-Transfers."
 lastmod: '2024-03-13T22:44:54.183579-06:00'
 model: gpt-4-1106-preview
-summary: "Das Herunterladen einer Webseite bedeutet, ihren Inhalt \xFCber das Internet\
-  \ abzurufen."
+summary: "Hier ist ein einfaches Beispiel mit `C++` und `libcurl`, einer leistungsf\xE4\
+  higen Bibliothek f\xFCr Client-seitige URL-Transfers."
 title: Webseite herunterladen
 weight: 42
 ---

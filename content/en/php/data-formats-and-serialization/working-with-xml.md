@@ -1,10 +1,9 @@
 ---
 date: 2024-01-25 03:39:37.908801-07:00
-description: "XML is a markup language used for storing and transporting data. Programmers\
-  \ work with XML to enable interoperability between applications and systems -\u2026"
+description: 'How to: Reading XML with SimpleXML.'
 lastmod: '2024-03-13T22:45:00.189434-06:00'
 model: gpt-4-1106-preview
-summary: XML is a markup language used for storing and transporting data.
+summary: Reading XML with SimpleXML.
 title: Working with XML
 weight: 40
 ---

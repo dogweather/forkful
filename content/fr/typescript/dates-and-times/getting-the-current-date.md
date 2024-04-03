@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:54.572526-07:00
-description: "Obtenir la date courante en TypeScript, un langage construit sur JavaScript,\
-  \ vous permet d'acc\xE9der et de manipuler les informations actuelles de date et\u2026"
+description: 'Comment faire : En TypeScript, vous pouvez utiliser l''objet `Date`
+  pour obtenir la date et l''heure actuelles. Voici comment vous pouvez le faire .'
 lastmod: '2024-03-13T22:44:57.448182-06:00'
 model: gpt-4-0125-preview
-summary: "Obtenir la date courante en TypeScript, un langage construit sur JavaScript,\
-  \ vous permet d'acc\xE9der et de manipuler les informations actuelles de date et\
-  \ d'heure."
+summary: En TypeScript, vous pouvez utiliser l'objet `Date` pour obtenir la date et
+  l'heure actuelles.
 title: Obtenir la date actuelle
 weight: 29
 ---

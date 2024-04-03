@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:05.193051-07:00
-description: "Substringen extraheren gaat over het uithalen van specifieke stukken\
-  \ tekst uit een string. Programmeurs doen dit om delen van data te manipuleren en\
-  \ te\u2026"
+description: 'Hoe: Ruby maakt het extraheren van substrings eenvoudig. Laten we meteen
+  ter zake komen.'
 lastmod: '2024-03-13T22:44:51.323757-06:00'
 model: gpt-4-0125-preview
-summary: Substringen extraheren gaat over het uithalen van specifieke stukken tekst
-  uit een string.
+summary: Ruby maakt het extraheren van substrings eenvoudig.
 title: Substrings extraheren
 weight: 6
 ---

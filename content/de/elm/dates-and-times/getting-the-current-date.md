@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 15:14:15.658251-07:00
-description: "Das Abrufen des aktuellen Datums ist ein Prozess, bei dem wir die momentane\
-  \ Datumswerte (Tag, Monat, Jahr) vom Computer erhalten. Programmierer nutzen\u2026"
+description: 'Anleitung: In Elm, holen Sie das aktuelle Datum mit der `Time`-Modul.
+  Verbinden Sie dies mit einer Subscription, um das Datum im Model zu aktualisieren.'
 lastmod: '2024-03-13T22:44:53.815907-06:00'
 model: unknown
-summary: Das Abrufen des aktuellen Datums ist ein Prozess, bei dem wir die momentane
-  Datumswerte (Tag, Monat, Jahr) vom Computer erhalten.
+summary: In Elm, holen Sie das aktuelle Datum mit der `Time`-Modul.
 title: Aktuelles Datum abrufen
 weight: 29
 ---

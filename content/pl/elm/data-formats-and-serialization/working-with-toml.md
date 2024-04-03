@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:21:25.921072-07:00
-description: "TOML, skr\xF3t od Tom's Obvious, Minimal Language, to j\u0119zyk serializacji\
-  \ danych. Programi\u015Bci Elm u\u017Cywaj\u0105 go do zarz\u0105dzania danymi konfiguracyjnymi,\
-  \ poniewa\u017C\u2026"
+description: "Jak to zrobi\u0107: Elm nie ma wbudowanego parsera TOML, ale mo\u017C\
+  na korzysta\u0107 z interakcji z JavaScriptem lub u\u017Cy\u0107 pakietu spo\u0142\
+  eczno\u015Bciowego. Oto jak mo\u017Cna\u2026"
 lastmod: '2024-03-13T22:44:35.345429-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, skr\xF3t od Tom's Obvious, Minimal Language, to j\u0119zyk serializacji\
-  \ danych."
+summary: "Elm nie ma wbudowanego parsera TOML, ale mo\u017Cna korzysta\u0107 z interakcji\
+  \ z JavaScriptem lub u\u017Cy\u0107 pakietu spo\u0142eczno\u015Bciowego."
 title: Praca z TOML
 weight: 39
 ---

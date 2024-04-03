@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:07:42.718758-07:00
-description: "Arbeid med komplekse tall inneb\xE6rer \xE5 utf\xF8re matematiske operasjoner\
-  \ p\xE5 tall som har b\xE5de en reell del og en imagin\xE6r del. Programmerere tar\
-  \ ofte for seg\u2026"
+description: "Hvordan: I Visual Basic for Applications (VBA), kan h\xE5ndtering av\
+  \ komplekse tall v\xE6re noe mindre rett frem sammenlignet med spr\xE5k med innebygget\
+  \ st\xF8tte\u2026"
 lastmod: '2024-03-13T22:44:40.611670-06:00'
 model: gpt-4-0125-preview
-summary: "Arbeid med komplekse tall inneb\xE6rer \xE5 utf\xF8re matematiske operasjoner\
-  \ p\xE5 tall som har b\xE5de en reell del og en imagin\xE6r del."
+summary: "I Visual Basic for Applications (VBA), kan h\xE5ndtering av komplekse tall\
+  \ v\xE6re noe mindre rett frem sammenlignet med spr\xE5k med innebygget st\xF8tte\
+  \ for dem."
 title: Arbeide med komplekse tall
 weight: 14
 ---

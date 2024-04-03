@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 01:16:18.771023-07:00
-description: "Code in Funktionen zu organisieren, bedeutet, Ihren Code in wiederverwendbare,\
-  \ modulare Bl\xF6cke zu unterteilen. Wir tun dies, um Dinge DRY (Don't Repeat\u2026"
+description: "Wie: Stellen Sie sich vor, Sie erstellen einen einfachen Taschenrechner.\
+  \ Anstatt die Logik f\xFCr die Addition \xFCberall dort zu schreiben, wo Sie sie\u2026"
 lastmod: '2024-03-13T22:44:53.636591-06:00'
 model: gpt-4-0125-preview
-summary: "Code in Funktionen zu organisieren, bedeutet, Ihren Code in wiederverwendbare,\
-  \ modulare Bl\xF6cke zu unterteilen."
+summary: Stellen Sie sich vor, Sie erstellen einen einfachen Taschenrechner.
 title: Code in Funktionen organisieren
 weight: 18
 ---

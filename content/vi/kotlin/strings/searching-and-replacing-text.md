@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:33.962022-07:00
-description: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n gi\u1ED1ng nh\u01B0\
-  \ ch\u01A1i tr\u1ED1n t\xECm v\u1EDBi chu\u1ED7i k\xFD t\u1EF1, sau \u0111\xF3 thay\
-  \ ng\u01B0\u1EDDi \u1EA9n b\u1EB1ng ng\u01B0\u1EDDi kh\xE1c. \u0110\xF3 l\xE0 m\u1ED9\
-  t nhi\u1EC7m v\u1EE5 l\u1EADp tr\xECnh ph\u1ED5 bi\u1EBFn, r\u1EA5t\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Kotlin \u0111\u01A1n gi\u1EA3n h\xF3a vi\u1EC7\
+  c thao t\xE1c v\u1EDBi v\u0103n b\u1EA3n th\xF4ng qua th\u01B0 vi\u1EC7n ti\xEA\
+  u chu\u1EA9n c\u1EE7a n\xF3. D\u01B0\u1EDBi \u0111\xE2y, xem c\xE1ch b\u1EA1n s\u1EED\
+  \ d\u1EE5ng `replace` \u0111\u1EC3 \u0111\u1ED5i t\u1EEB."
 lastmod: '2024-03-13T22:44:36.581231-06:00'
 model: gpt-4-0125-preview
-summary: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n gi\u1ED1ng nh\u01B0\
-  \ ch\u01A1i tr\u1ED1n t\xECm v\u1EDBi chu\u1ED7i k\xFD t\u1EF1, sau \u0111\xF3 thay\
-  \ ng\u01B0\u1EDDi \u1EA9n b\u1EB1ng ng\u01B0\u1EDDi kh\xE1c."
+summary: "Kotlin \u0111\u01A1n gi\u1EA3n h\xF3a vi\u1EC7c thao t\xE1c v\u1EDBi v\u0103\
+  n b\u1EA3n th\xF4ng qua th\u01B0 vi\u1EC7n ti\xEAu chu\u1EA9n c\u1EE7a n\xF3."
 title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
 weight: 10
 ---

@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:48:35.732035-07:00
-description: "Merkkijonon pituuden selvitt\xE4minen tarkoittaa sen merkkim\xE4\xE4\
-  r\xE4n laskemista. Ohjelmoijat tarvitsevat t\xE4t\xE4 tietoa validointiin, rajauksiin\
-  \ ja tiedon\u2026"
+description: "How to: (Kuinka tehd\xE4:) ."
 lastmod: '2024-03-13T22:44:56.306657-06:00'
 model: gpt-4-1106-preview
-summary: "Merkkijonon pituuden selvitt\xE4minen tarkoittaa sen merkkim\xE4\xE4r\xE4\
-  n laskemista."
+summary: .
 title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---

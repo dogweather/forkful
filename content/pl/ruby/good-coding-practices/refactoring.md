@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 03:37:02.442589-07:00
-description: "Refaktoryzacja to proces restrukturyzacji istniej\u0105cego kodu komputerowego\
-  \ bez zmiany jego zewn\u0119trznego zachowania. Programi\u015Bci przeprowadzaj\u0105\
-  \u2026"
+description: "Jak to zrobi\u0107: Przejd\u017Amy przez przyk\u0142ad refaktoryzacji\
+  \ metody Ruby, kt\xF3ra oblicza sum\u0119 kwadrat\xF3w. **Przed refaktoryzacj\u0105\
+  :**."
 lastmod: '2024-03-13T22:44:35.940757-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktoryzacja to proces restrukturyzacji istniej\u0105cego kodu komputerowego\
-  \ bez zmiany jego zewn\u0119trznego zachowania."
+summary: "Przejd\u017Amy przez przyk\u0142ad refaktoryzacji metody Ruby, kt\xF3ra\
+  \ oblicza sum\u0119 kwadrat\xF3w."
 title: Refaktoryzacja
 weight: 19
 ---

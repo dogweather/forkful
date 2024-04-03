@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:44.751962-07:00
-description: "Trong Ruby, vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m gi\xFAp b\u1EA3\
-  o v\u1EC7 d\u1EEF li\u1EC7u nh\u1EA1y c\u1EA3m v\xE0 qu\u1EA3n l\xFD nhu c\u1EA7\
-  u l\u01B0u tr\u1EEF tho\xE1ng qua. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5\
-  ng n\xF3 cho vi\u1EC7c x\u1EED l\xFD t\u1EC7p ng\u1EAFn\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Th\u01B0 vi\u1EC7n chu\u1EA9n c\u1EE7a Ruby\
+  \ cung c\u1EA5p `Tempfile` \u0111\u1EC3 t\u1EA1o t\u1EC7p t\u1EA1m. H\xE3y c\xF9\
+  ng t\xECm hi\u1EC3u."
 lastmod: '2024-03-13T22:44:37.366836-06:00'
 model: gpt-4-0125-preview
-summary: "Trong Ruby, vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m gi\xFAp b\u1EA3\
-  o v\u1EC7 d\u1EEF li\u1EC7u nh\u1EA1y c\u1EA3m v\xE0 qu\u1EA3n l\xFD nhu c\u1EA7\
-  u l\u01B0u tr\u1EEF tho\xE1ng qua."
+summary: "Th\u01B0 vi\u1EC7n chu\u1EA9n c\u1EE7a Ruby cung c\u1EA5p `Tempfile` \u0111\
+  \u1EC3 t\u1EA1o t\u1EC7p t\u1EA1m."
 title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
 weight: 21
 ---

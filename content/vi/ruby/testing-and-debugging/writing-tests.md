@@ -2,14 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:25.384906-07:00
-description: "Vi\u1EBFt c\xE1c b\xE0i test ki\u1EC3m tra xem code c\xF3 ho\u1EA1t\
-  \ \u0111\u1ED9ng nh\u01B0 mong \u0111\u1EE3i. L\u1EADp tr\xECnh vi\xEAn th\u1EF1\
-  c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\u1EC3 ph\xE1t hi\u1EC7n l\u1ED7i s\u1EDBm, b\u1EA3\
-  o \u0111\u1EA3m \u0111\u1ED9 tin c\u1EADy v\xE0 d\u1EC5 d\xE0ng thay\u2026"
+description: "L\xE0m Th\u1EBF N\xE0o: Ruby s\u1EED d\u1EE5ng Minitest v\xE0 RSpec\
+  \ cho vi\u1EC7c test\u2014h\xE3y s\u1EED d\u1EE5ng RSpec. \u0110\u1EA7u ti\xEAn,\
+  \ c\xE0i \u0111\u1EB7t n\xF3."
 lastmod: '2024-03-13T22:44:37.345669-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EBFt c\xE1c b\xE0i test ki\u1EC3m tra xem code c\xF3 ho\u1EA1t \u0111\
-  \u1ED9ng nh\u01B0 mong \u0111\u1EE3i."
+summary: "Ruby s\u1EED d\u1EE5ng Minitest v\xE0 RSpec cho vi\u1EC7c test\u2014h\xE3\
+  y s\u1EED d\u1EE5ng RSpec."
 title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
 weight: 36
 ---

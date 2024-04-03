@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:02.277461-07:00
-description: "Capitalizar uma string em Bash envolve transformar o primeiro caractere\
-  \ da string para mai\xFAscula, mantendo o resto da string inalterado. Esta t\xE9\
-  cnica \xE9\u2026"
+description: "Como fazer: O Bash n\xE3o possui uma fun\xE7\xE3o embutida especificamente\
+  \ para capitalizar strings, mas voc\xEA pode realizar essa tarefa usando expans\xE3\
+  o de\u2026"
 lastmod: '2024-03-13T22:44:46.734341-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizar uma string em Bash envolve transformar o primeiro caractere\
-  \ da string para mai\xFAscula, mantendo o resto da string inalterado."
+summary: "O Bash n\xE3o possui uma fun\xE7\xE3o embutida especificamente para capitalizar\
+  \ strings, mas voc\xEA pode realizar essa tarefa usando expans\xE3o de par\xE2metro\
+  \ ou ferramentas externas como `awk`."
 title: Capitalizando uma string
 weight: 2
 ---

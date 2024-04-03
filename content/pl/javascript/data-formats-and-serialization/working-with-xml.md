@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 04:32:40.759514-07:00
-description: "Praca z XML oznacza analizowanie, manipulowanie oraz tworzenie zawarto\u015B\
-  ci XML przy u\u017Cyciu kodu. Programi\u015Bci robi\u0105 to, poniewa\u017C XML\
-  \ jest powszechnie\u2026"
+description: "Jak to zrobi\u0107: Oto jak przeprowadzi\u0107 analiz\u0119 XML."
 lastmod: '2024-03-13T22:44:35.820655-06:00'
 model: gpt-4-0125-preview
-summary: "Praca z XML oznacza analizowanie, manipulowanie oraz tworzenie zawarto\u015B\
-  ci XML przy u\u017Cyciu kodu."
+summary: "Oto jak przeprowadzi\u0107 analiz\u0119 XML."
 title: Praca z XML
 weight: 40
 ---

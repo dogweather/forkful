@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 17:50:03.941196-07:00
-description: "Converting a date into a string in C involves translating a date structure\
-  \ or timestamp into a human-readable format. Programmers often perform this task\u2026"
+description: "How to: The `strftime` function from the `<time.h>` library is commonly\
+  \ used for this purpose. It allows you to format date and time in a variety of ways\u2026"
 lastmod: '2024-03-13T22:45:00.521471-06:00'
 model: gpt-4-0125-preview
-summary: Converting a date into a string in C involves translating a date structure
-  or timestamp into a human-readable format.
+summary: The `strftime` function from the `<time.h>` library is commonly used for
+  this purpose.
 title: Converting a date into a string
 weight: 28
 ---

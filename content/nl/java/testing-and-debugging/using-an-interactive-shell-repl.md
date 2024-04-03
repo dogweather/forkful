@@ -2,12 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:28.207931-07:00
-description: "Een REPL (Read-Eval-Print Loop) is een interactieve shell die enkele\
-  \ gebruikersinvoeren verwerkt, code uitvoert en het resultaat teruggeeft. Programmeurs\u2026"
+description: "Hoe te: Een REPL in Java starten is eenvoudig met de `jshell`-tool,\
+  \ ge\xEFntroduceerd in Java 9. Hier is hoe je ermee aan de slag kunt en een basis\
+  \ sessie\u2026"
 lastmod: '2024-03-13T22:44:50.683668-06:00'
 model: gpt-4-0125-preview
-summary: Een REPL (Read-Eval-Print Loop) is een interactieve shell die enkele gebruikersinvoeren
-  verwerkt, code uitvoert en het resultaat teruggeeft.
+summary: "Een REPL in Java starten is eenvoudig met de `jshell`-tool, ge\xEFntroduceerd\
+  \ in Java 9."
 title: Het gebruik van een interactieve shell (REPL)
 weight: 34
 ---

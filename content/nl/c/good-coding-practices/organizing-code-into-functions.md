@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:17.112664-07:00
-description: "Code in C organiseren in functies omvat het opsplitsen van complexe\
-  \ taken in kleinere, herbruikbare blokken code. Deze praktijk verbetert de leesbaarheid,\u2026"
+description: "Hoe: In C wordt een functie gedeclareerd met een retourtype, een naam,\
+  \ en parameters (indien van toepassing), gevolgd door een blok code. Laten we\u2026"
 lastmod: '2024-03-13T22:44:51.296864-06:00'
 model: gpt-4-0125-preview
-summary: Code in C organiseren in functies omvat het opsplitsen van complexe taken
-  in kleinere, herbruikbare blokken code.
+summary: In C wordt een functie gedeclareerd met een retourtype, een naam, en parameters
+  (indien van toepassing), gevolgd door een blok code.
 title: Code organiseren in functies
 weight: 18
 ---

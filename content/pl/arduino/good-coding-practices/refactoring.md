@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 01:16:44.467176-07:00
-description: "Refaktoryzacja to proces przerabiania kodu w celu poprawy jego struktury\
-  \ i czytelno\u015Bci, bez zmiany zewn\u0119trznego zachowania lub funkcjonalno\u015B\
-  ci.\u2026"
+description: "Jak to zrobi\u0107: Za\u0142\xF3\u017Cmy, \u017Ce masz na swoim Arduino\
+  \ funkcj\u0119, kt\xF3ra robi zbyt wiele, na przyk\u0142ad tak\u0105."
 lastmod: '2024-03-13T22:44:35.679649-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktoryzacja to proces przerabiania kodu w celu poprawy jego struktury\
-  \ i czytelno\u015Bci, bez zmiany zewn\u0119trznego zachowania lub funkcjonalno\u015B\
-  ci."
+summary: "Za\u0142\xF3\u017Cmy, \u017Ce masz na swoim Arduino funkcj\u0119, kt\xF3\
+  ra robi zbyt wiele, na przyk\u0142ad tak\u0105."
 title: Refaktoryzacja
 weight: 19
 ---

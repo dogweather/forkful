@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:42.692441-07:00
-description: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 ph\xE1 v\u1EE1\
-  \ n\u1ED9i dung HTML \u0111\u1EC3 tr\xEDch xu\u1EA5t d\u1EEF li\u1EC7u c\u1EE5 th\u1EC3\
-  . L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3\
-  \ t\u1EF1 \u0111\u1ED9ng h\xF3a vi\u1EC7c thu th\u1EADp d\u1EEF\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: H\xE3y l\u1EA5y m\u1ED9t s\u1ED1 d\u1EEF\
+  \ li\u1EC7u t\u1EEB m\u1ED9t trang web. Ch\xFAng ta s\u1EBD s\u1EED d\u1EE5ng Invoke-WebRequest\
+  \ v\xE0 sau \u0111\xF3 l\u1ECDc ra nh\u1EEFng g\xEC ch\xFAng ta c\u1EA7n."
 lastmod: '2024-03-13T22:44:36.933342-06:00'
 model: gpt-4-0125-preview
-summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 ph\xE1 v\u1EE1\
-  \ n\u1ED9i dung HTML \u0111\u1EC3 tr\xEDch xu\u1EA5t d\u1EEF li\u1EC7u c\u1EE5 th\u1EC3\
-  ."
+summary: "H\xE3y l\u1EA5y m\u1ED9t s\u1ED1 d\u1EEF li\u1EC7u t\u1EEB m\u1ED9t trang\
+  \ web."
 title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---

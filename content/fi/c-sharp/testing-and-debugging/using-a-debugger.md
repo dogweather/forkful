@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 03:47:59.489645-07:00
-description: "Kuvittele, ett\xE4 sinulla on pieni ohjelma, joka ei toimi oikein: ```C#\
-  \ static void Main() { int tulos = Summa(1, 2); Console.WriteLine(tulos); } static\
-  \ int\u2026"
+description: "Kuinka: Kuvittele, ett\xE4 sinulla on pieni ohjelma, joka ei toimi oikein."
 lastmod: '2024-03-13T22:44:56.577537-06:00'
 model: gpt-4-0125-preview
-summary: "Kuvittele, ett\xE4 sinulla on pieni ohjelma, joka ei toimi oikein:\n\n```C#\n\
-  static void Main()\n{\n    int tulos = Summa(1, 2);\n    Console."
+summary: "Kuvittele, ett\xE4 sinulla on pieni ohjelma, joka ei toimi oikein."
 title: "Debuggerin k\xE4ytt\xF6"
 weight: 35
 ---

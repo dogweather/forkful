@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:43:48.053314-07:00
-description: "Att ladda ner en webbsida inneb\xE4r att h\xE4mta dess inneh\xE5ll \xF6\
-  ver internet. Programmerare g\xF6r detta f\xF6r att samla data, automatisera tester\
-  \ eller \xF6vervaka\u2026"
+description: "How to: I Clojure kan du anv\xE4nda `clj-http` biblioteket f\xF6r att\
+  \ enkelt ladda ner inneh\xE5llet p\xE5 en webbsida. H\xE4r \xE4r ett exempel."
 lastmod: '2024-03-13T22:44:37.524235-06:00'
 model: gpt-4-1106-preview
-summary: "Att ladda ner en webbsida inneb\xE4r att h\xE4mta dess inneh\xE5ll \xF6\
-  ver internet."
+summary: "I Clojure kan du anv\xE4nda `clj-http` biblioteket f\xF6r att enkelt ladda\
+  \ ner inneh\xE5llet p\xE5 en webbsida."
 title: "H\xE4mta en webbsida"
 weight: 42
 ---

@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:50.811772-07:00
-description: "Die Umwandlung eines Datums in einen String in C beinhaltet die \xDC\
-  bersetzung einer Datenstruktur oder eines Zeitstempels in ein menschenlesbares Format.\u2026"
+description: "Wie geht das: Die Funktion `strftime` aus der Bibliothek `<time.h>`\
+  \ wird h\xE4ufig f\xFCr diesen Zweck verwendet. Sie erm\xF6glicht es Ihnen, Datum\
+  \ und Zeit auf\u2026"
 lastmod: '2024-03-13T22:44:54.365134-06:00'
 model: gpt-4-0125-preview
-summary: "Die Umwandlung eines Datums in einen String in C beinhaltet die \xDCbersetzung\
-  \ einer Datenstruktur oder eines Zeitstempels in ein menschenlesbares Format."
+summary: "Die Funktion `strftime` aus der Bibliothek `<time.h>` wird h\xE4ufig f\xFC\
+  r diesen Zweck verwendet."
 title: Ein Datum in einen String umwandeln
 weight: 28
 ---

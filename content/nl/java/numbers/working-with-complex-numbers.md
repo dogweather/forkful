@@ -2,12 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:39.199677-07:00
-description: "Complexe getallen breiden de re\xEBle getallenlijn uit door de toevoeging\
-  \ van een imaginair eenheid, `i`, waarbij `i^2 = -1`. Ze zijn cruciaal in velden\u2026"
+description: "Hoe te: Java heeft geen ingebouwde ondersteuning voor complexe getallen,\
+  \ maar we kunnen onze eigen klasse bouwen of een bibliotheek gebruiken. Hier is\
+  \ een\u2026"
 lastmod: '2024-03-13T22:44:50.675227-06:00'
 model: gpt-4-0125-preview
-summary: "Complexe getallen breiden de re\xEBle getallenlijn uit door de toevoeging\
-  \ van een imaginair eenheid, `i`, waarbij `i^2 = -1`."
+summary: Java heeft geen ingebouwde ondersteuning voor complexe getallen, maar we
+  kunnen onze eigen klasse bouwen of een bibliotheek gebruiken.
 title: Werken met complexe getallen
 weight: 14
 ---

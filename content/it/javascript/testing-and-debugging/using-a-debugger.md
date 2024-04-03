@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 03:49:52.314418-07:00
-description: "Ecco un po' di codice JavaScript che non si comporta come previsto:\
-  \ ```javascript function buggyMultiply(a, b) { return a + b; // Ops! Questo dovrebbe\u2026"
+description: 'Come fare: Ecco un po'' di codice JavaScript che non si comporta come
+  previsto.'
 lastmod: '2024-03-13T22:44:43.816804-06:00'
 model: gpt-4-0125-preview
-summary: "Ecco un po' di codice JavaScript che non si comporta come previsto:\n\n\
-  ```javascript\nfunction buggyMultiply(a, b) {\n    return a + b; // Ops."
+summary: Ecco un po' di codice JavaScript che non si comporta come previsto.
 title: Utilizzo di un debugger
 weight: 35
 ---

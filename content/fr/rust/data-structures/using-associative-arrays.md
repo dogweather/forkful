@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:43.559000-07:00
-description: "Les tableaux associatifs, ou ce que les Rustac\xE9s appellent \"hash\
-  \ maps\", sont des collections qui stockent des donn\xE9es en paires cl\xE9-valeur.\
-  \ Les\u2026"
+description: "Comment faire : En Rust, le type `HashMap` du module `std::collections`\
+  \ fournit la fonctionnalit\xE9 des tableaux associatifs. Voici comment vous pouvez\u2026"
 lastmod: '2024-03-13T22:44:57.474716-06:00'
 model: gpt-4-0125-preview
-summary: "Les tableaux associatifs, ou ce que les Rustac\xE9s appellent \"hash maps\"\
-  , sont des collections qui stockent des donn\xE9es en paires cl\xE9-valeur."
+summary: "En Rust, le type `HashMap` du module `std::collections` fournit la fonctionnalit\xE9\
+  \ des tableaux associatifs."
 title: Utilisation des tableaux associatifs
 weight: 15
 ---

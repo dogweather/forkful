@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:46:11.625885-07:00
-description: "Hva er ekstrahering av delstrenger? Det er n\xE5r du plukker ut deler\
-  \ av en tekststreng. Hvorfor? Fordi noen ganger trenger du bare et spesifikt stykke\
-  \ av\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:40.739161-06:00'
 model: gpt-4-1106-preview
-summary: Hva er ekstrahering av delstrenger.
+summary: .
 title: Uthenting av delstrenger
 weight: 6
 ---

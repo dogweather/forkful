@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:50.335244-07:00
-description: "Escribir pruebas en Swift implica crear y ejecutar c\xF3digo que verifica\
-  \ la correcci\xF3n de otras unidades de c\xF3digo en tu aplicaci\xF3n. Los programadores\
-  \ lo\u2026"
+description: "C\xF3mo hacerlo: Swift soporta las pruebas a trav\xE9s de su marco XCTest,\
+  \ el cual est\xE1 integrado en Xcode. Puedes escribir pruebas unitarias para verificar\u2026"
 lastmod: '2024-03-13T22:44:59.420080-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir pruebas en Swift implica crear y ejecutar c\xF3digo que verifica\
-  \ la correcci\xF3n de otras unidades de c\xF3digo en tu aplicaci\xF3n."
+summary: "Swift soporta las pruebas a trav\xE9s de su marco XCTest, el cual est\xE1\
+  \ integrado en Xcode."
 title: Escribiendo pruebas
 weight: 36
 ---

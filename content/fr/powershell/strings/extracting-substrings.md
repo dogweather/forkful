@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:46:17.755008-07:00
-description: "Extraire des sous-cha\xEEnes, c'est comme couper un morceau de votre\
-  \ baguette pr\xE9f\xE9r\xE9e \u2013 vous prenez juste la partie que vous voulez.\
-  \ Les programmeurs font\u2026"
+description: "How to: (Comment faire :) Voici le pain et le beurre de l'extraction\
+  \ de sous-cha\xEEnes en PowerShell. Simple, direct."
 lastmod: '2024-03-13T22:44:58.031664-06:00'
 model: gpt-4-1106-preview
-summary: "Extraire des sous-cha\xEEnes, c'est comme couper un morceau de votre baguette\
-  \ pr\xE9f\xE9r\xE9e \u2013 vous prenez juste la partie que vous voulez."
+summary: "Voici le pain et le beurre de l'extraction de sous-cha\xEEnes en PowerShell."
 title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---

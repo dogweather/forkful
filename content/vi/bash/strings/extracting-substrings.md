@@ -2,17 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:43.082611-07:00
-description: "Tr\xEDch xu\u1EA5t chu\u1ED7i con c\xF3 ngh\u0129a l\xE0 l\u1EA5y ra\
-  \ c\xE1c ph\u1EA7n c\u1EE5 th\u1EC3 c\u1EE7a chu\u1ED7i \u2014 ngh\u0129 gi\u1ED1\
-  ng nh\u01B0 vi\u1EC7c c\u1EAFt m\u1ED9t \xEDt s\u1EE3i ch\u1EC9 t\u1EEB m\u1ED9\
-  t chi\u1EBFc \xE1o len. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u \u0111\xF3\
-  \u2026"
+description: "L\xE0m th\u1EBF n\xE0o: D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1i nh\xEC\
+  n t\u1ED5ng quan v\u1EC1 tr\xEDch xu\u1EA5t chu\u1ED7i con trong Bash."
 lastmod: '2024-03-13T22:44:36.862000-06:00'
 model: gpt-4-0125-preview
-summary: "Tr\xEDch xu\u1EA5t chu\u1ED7i con c\xF3 ngh\u0129a l\xE0 l\u1EA5y ra c\xE1\
-  c ph\u1EA7n c\u1EE5 th\u1EC3 c\u1EE7a chu\u1ED7i \u2014 ngh\u0129 gi\u1ED1ng nh\u01B0\
-  \ vi\u1EC7c c\u1EAFt m\u1ED9t \xEDt s\u1EE3i ch\u1EC9 t\u1EEB m\u1ED9t chi\u1EBF\
-  c \xE1o len."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1i nh\xECn t\u1ED5ng quan v\u1EC1 tr\xED\
+  ch xu\u1EA5t chu\u1ED7i con trong Bash."
 title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 weight: 6
 ---

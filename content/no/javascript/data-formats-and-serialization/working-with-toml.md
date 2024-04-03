@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:23:29.999267-07:00
-description: "TOML, forkortelse for Tom's Obvious, Minimal Language, definerer hvordan\
-  \ man strukturerer konfigurasjonsfiler. Programmerere jobber med TOML fordi det\
-  \ er\u2026"
+description: "Hvordan: For \xE5 jobbe med TOML i JavaScript, trenger du en parser\
+  \ som `@iarna/toml`. F\xF8rst, installer den: `npm install @iarna/toml`. Deretter,\
+  \ parser du\u2026"
 lastmod: '2024-03-13T22:44:41.206767-06:00'
 model: gpt-4-0125-preview
-summary: TOML, forkortelse for Tom's Obvious, Minimal Language, definerer hvordan
-  man strukturerer konfigurasjonsfiler.
+summary: "For \xE5 jobbe med TOML i JavaScript, trenger du en parser som `@iarna/toml`."
 title: Jobbe med TOML
 weight: 39
 ---

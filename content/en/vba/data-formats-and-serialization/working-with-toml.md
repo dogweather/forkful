@@ -1,11 +1,11 @@
 ---
 date: 2024-02-01 21:30:11.576511-07:00
-description: "TOML, which stands for Tom's Obvious, Minimal Language, is a data serialization\
-  \ format predominantly used for configuration files. Programmers leverage\u2026"
+description: "How to: Working with TOML in VBA involves parsing the TOML file to read\
+  \ configurations or settings into your VBA project. VBA does not have built-in\u2026"
 lastmod: '2024-03-13T22:44:59.955565-06:00'
 model: gpt-4-0125-preview
-summary: TOML, which stands for Tom's Obvious, Minimal Language, is a data serialization
-  format predominantly used for configuration files.
+summary: Working with TOML in VBA involves parsing the TOML file to read configurations
+  or settings into your VBA project.
 title: Working with TOML
 weight: 39
 ---

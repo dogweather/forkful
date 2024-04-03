@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:41:19.887535-07:00
-description: "Att skapa en tempor\xE4r fil inneb\xE4r att man skapar en fil som bara\
-  \ beh\xF6vs tempor\xE4rt, ofta under en programk\xF6rnings tid. Programerare anv\xE4\
-  nder detta f\xF6r att\u2026"
+description: "Hur man g\xF6r: F\xF6r att skapa en tempor\xE4r fil i Ruby anv\xE4nder\
+  \ vi standardbiblioteket `Tempfile`. H\xE4r \xE4r ett enkelt exempel."
 lastmod: '2024-03-13T22:44:38.451146-06:00'
 model: gpt-4-1106-preview
-summary: "Att skapa en tempor\xE4r fil inneb\xE4r att man skapar en fil som bara beh\xF6\
-  vs tempor\xE4rt, ofta under en programk\xF6rnings tid."
+summary: "F\xF6r att skapa en tempor\xE4r fil i Ruby anv\xE4nder vi standardbiblioteket\
+  \ `Tempfile`."
 title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---

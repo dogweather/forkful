@@ -2,16 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:24.306478-07:00
-description: "Vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1\
-  c c\u01A1 b\u1EA3n bao g\u1ED3m vi\u1EC7c th\xEAm m\u1ED9t header v\u1EDBi t\xEA\
-  n ng\u01B0\u1EDDi d\xF9ng v\xE0 m\u1EADt kh\u1EA9u \u0111\u1EC3 truy c\u1EADp v\xE0\
-  o m\u1ED9t t\xE0i nguy\xEAn \u0111\u01B0\u1EE3c b\u1EA3o v\u1EC7. L\u1EADp\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Java l\xE0m cho vi\u1EC7c g\u1EEDi y\xEAu c\u1EA7\
+  u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3n tr\u1EDF n\xEAn kh\xE1 \u0111\u01A1\
+  n gi\u1EA3n s\u1EED d\u1EE5ng l\u1EDBp `HttpURLConnection`. \u0110\xE2y l\xE0 m\u1ED9\
+  t v\xED d\u1EE5 nhanh."
 lastmod: '2024-03-13T22:44:36.488941-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1\
-  c c\u01A1 b\u1EA3n bao g\u1ED3m vi\u1EC7c th\xEAm m\u1ED9t header v\u1EDBi t\xEA\
-  n ng\u01B0\u1EDDi d\xF9ng v\xE0 m\u1EADt kh\u1EA9u \u0111\u1EC3 truy c\u1EADp v\xE0\
-  o m\u1ED9t t\xE0i nguy\xEAn \u0111\u01B0\u1EE3c b\u1EA3o v\u1EC7."
+summary: "Java l\xE0m cho vi\u1EC7c g\u1EEDi y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c\
+  \ th\u1EF1c c\u01A1 b\u1EA3n tr\u1EDF n\xEAn kh\xE1 \u0111\u01A1n gi\u1EA3n s\u1EED\
+  \ d\u1EE5ng l\u1EDBp `HttpURLConnection`."
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3\
   n"
 weight: 45

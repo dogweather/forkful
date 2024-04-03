@@ -2,13 +2,13 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:13.505463-07:00
-description: "Les tableaux associatifs, connus sous le nom de `std::map` ou `std::unordered_map`\
-  \ en C++, comblent le foss\xE9 entre les indices de tableau et les donn\xE9es\u2026"
+description: "Comment faire : En C++, les tableaux associatifs prennent vie avec les\
+  \ en-t\xEAtes `<map>` et `<unordered_map>`. Voyons des exemples pour observer les\
+  \ deux\u2026"
 lastmod: '2024-03-13T22:44:58.154397-06:00'
 model: gpt-4-0125-preview
-summary: "Les tableaux associatifs, connus sous le nom de `std::map` ou `std::unordered_map`\
-  \ en C++, comblent le foss\xE9 entre les indices de tableau et les donn\xE9es du\
-  \ monde r\xE9el, vous permettant d'utiliser des cl\xE9s significatives."
+summary: "En C++, les tableaux associatifs prennent vie avec les en-t\xEAtes `<map>`\
+  \ et `<unordered_map>`."
 title: Utilisation des tableaux associatifs
 weight: 15
 ---

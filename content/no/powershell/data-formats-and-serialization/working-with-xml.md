@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 04:34:20.036693-07:00
-description: "\xC5 jobbe med XML inneb\xE6rer \xE5 manipulere og f\xE5 tilgang til\
-  \ data strukturert i det utvidbare merkespr\xE5ket (eXtensible Markup Language).\
-  \ Programmerere\u2026"
+description: 'Hvordan: .'
 lastmod: '2024-03-13T22:44:41.041217-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 jobbe med XML inneb\xE6rer \xE5 manipulere og f\xE5 tilgang til data\
-  \ strukturert i det utvidbare merkespr\xE5ket (eXtensible Markup Language)."
+summary: .
 title: "\xC5 jobbe med XML"
 weight: 40
 ---

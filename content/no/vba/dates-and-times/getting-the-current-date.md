@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:39.984767-07:00
-description: "I Visual Basic for Applications (VBA) er det \xE5 hente den gjeldende\
-  \ datoen en vanlig oppgave som gj\xF8r at programmerere kan jobbe dynamisk med datoer\
-  \ i sine\u2026"
+description: "Hvordan: \xC5 hente den gjeldende datoen i VBA er greit, ved \xE5 bruke\
+  \ `Date`-funksjonen, mens `Now`-funksjonen gir b\xE5de den gjeldende datoen og tiden.\
+  \ Slik\u2026"
 lastmod: '2024-03-13T22:44:40.631911-06:00'
 model: gpt-4-0125-preview
-summary: "I Visual Basic for Applications (VBA) er det \xE5 hente den gjeldende datoen\
-  \ en vanlig oppgave som gj\xF8r at programmerere kan jobbe dynamisk med datoer i\
-  \ sine makroer eller applikasjoner."
+summary: "\xC5 hente den gjeldende datoen i VBA er greit, ved \xE5 bruke `Date`-funksjonen,\
+  \ mens `Now`-funksjonen gir b\xE5de den gjeldende datoen og tiden."
 title: "F\xE5 den gjeldende datoen"
 weight: 29
 ---

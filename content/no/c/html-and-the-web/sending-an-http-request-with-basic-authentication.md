@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:15.243583-07:00
-description: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering i\
-  \ C involverer \xE5 lage en HTTP-foresp\xF8rsel som inkluderer en autorisasjonsheader\
-  \ med\u2026"
+description: "Hvordan: For \xE5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering\
+  \ i C, trenger vi \xE5 bruke libcurl-biblioteket, et popul\xE6rt, allsidig og lett\
+  \ \xE5\u2026"
 lastmod: '2024-03-13T22:44:41.271569-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering i C involverer\
-  \ \xE5 lage en HTTP-foresp\xF8rsel som inkluderer en autorisasjonsheader med brukerlegitimasjon\
-  \ kodet i Base64."
+summary: "For \xE5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering i\
+  \ C, trenger vi \xE5 bruke libcurl-biblioteket, et popul\xE6rt, allsidig og lett\
+  \ \xE5 bruke klient-side URL-overf\xF8ringsbibliotek."
 title: "Sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---

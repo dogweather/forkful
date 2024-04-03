@@ -2,13 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:51.985743-07:00
-description: "Escrever testes em Java \xE9 sobre verificar se o seu c\xF3digo se comporta\
-  \ conforme esperado sob v\xE1rias condi\xE7\xF5es. Programadores escrevem testes\
-  \ para prevenir\u2026"
+description: "Como fazer: Desenvolvedores Java primariamente usam dois frameworks\
+  \ de teste: JUnit e TestNG. Aqui, focaremos no JUnit, a escolha mais popular para\u2026"
 lastmod: '2024-03-13T22:44:46.459649-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever testes em Java \xE9 sobre verificar se o seu c\xF3digo se comporta\
-  \ conforme esperado sob v\xE1rias condi\xE7\xF5es."
+summary: Desenvolvedores Java primariamente usam dois frameworks de teste.
 title: Escrevendo testes
 weight: 36
 ---

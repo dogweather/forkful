@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:30:19.095585-07:00
-description: "Ty\xF6skentely XML:n kanssa tarkoittaa XML-dokumenttien j\xE4sent\xE4\
-  mist\xE4, muuntamista ja tuottamista Elm:ss\xE4. Syy t\xE4h\xE4n on vuorovaikutuksessa\
-  \ monien web-\u2026"
+description: "Kuinka: Elm:ss\xE4 k\xE4sittelet XML:\xE4\xE4 k\xE4ytt\xE4m\xE4ll\xE4\
+  \ `elm/xml` -pakettia. T\xE4ss\xE4 pikakatsaus XML-katkelman j\xE4sent\xE4miseen."
 lastmod: '2024-03-13T22:44:56.513481-06:00'
 model: gpt-4-0125-preview
-summary: "Ty\xF6skentely XML:n kanssa tarkoittaa XML-dokumenttien j\xE4sent\xE4mist\xE4\
-  , muuntamista ja tuottamista Elm:ss\xE4."
+summary: "Elm:ss\xE4 k\xE4sittelet XML:\xE4\xE4 k\xE4ytt\xE4m\xE4ll\xE4 `elm/xml`\
+  \ -pakettia."
 title: "XML:n k\xE4sittely"
 weight: 40
 ---

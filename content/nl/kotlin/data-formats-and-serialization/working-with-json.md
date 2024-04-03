@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:33.279339-07:00
-description: "JSON (JavaScript Object Notation) is een formaat voor het structureren\
-  \ van gegevens, gebruikt voor opslag en overdracht. Programmeurs gebruiken het omdat\u2026"
+description: "Hoe: Om met JSON in Kotlin te werken, kun je de `kotlinx.serialization`\
+  \ bibliotheek gebruiken. Hier is een eenvoudig voorbeeld van het serialiseren en\u2026"
 lastmod: '2024-03-13T22:44:50.789172-06:00'
 model: gpt-4-0125-preview
-summary: JSON (JavaScript Object Notation) is een formaat voor het structureren van
-  gegevens, gebruikt voor opslag en overdracht.
+summary: Om met JSON in Kotlin te werken, kun je de `kotlinx.serialization` bibliotheek
+  gebruiken.
 title: Werken met JSON
 weight: 38
 ---

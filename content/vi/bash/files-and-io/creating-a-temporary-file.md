@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:37.854650-07:00
-description: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi trong Bash c\xF3 ngh\u0129\
-  a l\xE0 t\u1EA1o m\u1ED9t t\u1EADp tin m\xE0 c\xE1c k\u1ECBch b\u1EA3n c\u1EE7a\
-  \ b\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng \u0111\u1EC3 l\u01B0u tr\u1EEF d\u1EEF\
-  \ li\u1EC7u m\u1ED9t c\xE1ch ng\u1EAFn g\u1ECDn. L\u1EADp tr\xECnh\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Bash c\xF3 m\u1ED9t l\u1EC7nh \u0111\u01B0\u1EE3\
+  c t\xEDch h\u1EE3p s\u1EB5n g\u1ECDi l\xE0 `mktemp` \u0111\u1EC3 d\u1EC5 d\xE0ng\
+  \ t\u1EA1o t\u1EADp tin t\u1EA1m th\u1EDDi."
 lastmod: '2024-03-13T22:44:36.904192-06:00'
 model: gpt-4-0125-preview
-summary: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi trong Bash c\xF3 ngh\u0129\
-  a l\xE0 t\u1EA1o m\u1ED9t t\u1EADp tin m\xE0 c\xE1c k\u1ECBch b\u1EA3n c\u1EE7a\
-  \ b\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng \u0111\u1EC3 l\u01B0u tr\u1EEF d\u1EEF\
-  \ li\u1EC7u m\u1ED9t c\xE1ch ng\u1EAFn g\u1ECDn."
+summary: "Bash c\xF3 m\u1ED9t l\u1EC7nh \u0111\u01B0\u1EE3c t\xEDch h\u1EE3p s\u1EB5\
+  n g\u1ECDi l\xE0 `mktemp` \u0111\u1EC3 d\u1EC5 d\xE0ng t\u1EA1o t\u1EADp tin t\u1EA1\
+  m th\u1EDDi."
 title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
 weight: 21
 ---

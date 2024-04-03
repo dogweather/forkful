@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:36:25.913792-07:00
-description: "\xC5 konvertere en dato til en streng betyr \xE5 endre dens format fra\
-  \ et daterepresentasjonssystem til en tekstrepresentasjon. Programmerere gj\xF8\
-  r dette for \xE5\u2026"
+description: "How to: Fish Shell gj\xF8r det lett \xE5 formatere datoer. Bruk `date`\
+  \ kommandoen med \xF8nskede opsjoner."
 lastmod: '2024-03-13T22:44:41.239103-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 konvertere en dato til en streng betyr \xE5 endre dens format fra et\
-  \ daterepresentasjonssystem til en tekstrepresentasjon."
+summary: "Fish Shell gj\xF8r det lett \xE5 formatere datoer."
 title: Konvertere en dato til en streng
 weight: 28
 ---

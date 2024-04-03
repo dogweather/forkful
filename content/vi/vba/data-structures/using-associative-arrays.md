@@ -2,17 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:58.537789-07:00
-description: "C\xE1c m\u1EA3ng k\u1EBFt h\u1EE3p, th\u01B0\u1EDDng \u0111\u01B0\u1EE3\
-  c bi\u1EBFt \u0111\u1EBFn nh\u01B0 b\u1ED9 t\u1EEB \u0111i\u1EC3n trong Visual Basic\
-  \ cho \u1EE8ng d\u1EE5ng (VBA), cho ph\xE9p c\xE1c l\u1EADp tr\xECnh vi\xEAn t\u1EA1\
-  o ra c\xE1c b\u1ED9 s\u01B0u t\u1EADp c\u1EE7a c\xE1c c\u1EB7p\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong VBA, \u0111\u1ED1i t\u01B0\u1EE3ng `Dictionary`\
+  \ cung c\u1EA5p ch\u1EE9c n\u0103ng t\u01B0\u01A1ng t\u1EF1 nh\u01B0 c\xE1c m\u1EA3\
+  ng k\u1EBFt h\u1EE3p. B\u1EA1n c\u1EA7n ph\u1EA3i th\xEAm m\u1ED9t tham chi\u1EBF\
+  u \u0111\u1EBFn Microsoft Scripting\u2026"
 lastmod: '2024-03-13T22:44:36.423164-06:00'
 model: gpt-4-0125-preview
-summary: "C\xE1c m\u1EA3ng k\u1EBFt h\u1EE3p, th\u01B0\u1EDDng \u0111\u01B0\u1EE3\
-  c bi\u1EBFt \u0111\u1EBFn nh\u01B0 b\u1ED9 t\u1EEB \u0111i\u1EC3n trong Visual Basic\
-  \ cho \u1EE8ng d\u1EE5ng (VBA), cho ph\xE9p c\xE1c l\u1EADp tr\xECnh vi\xEAn t\u1EA1\
-  o ra c\xE1c b\u1ED9 s\u01B0u t\u1EADp c\u1EE7a c\xE1c c\u1EB7p kh\xF3a-gi\xE1 tr\u1ECB\
-  ."
+summary: "Trong VBA, \u0111\u1ED1i t\u01B0\u1EE3ng `Dictionary` cung c\u1EA5p ch\u1EE9\
+  c n\u0103ng t\u01B0\u01A1ng t\u1EF1 nh\u01B0 c\xE1c m\u1EA3ng k\u1EBFt h\u1EE3p."
 title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 weight: 15
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 03:36:52.343960-07:00
-description: "Refactoring ist der Prozess der Umstrukturierung von bestehendem Computercode,\
-  \ ohne dessen externes Verhalten zu \xE4ndern. Programmierer f\xFChren ein\u2026"
+description: "Wie geht das: Lassen Sie uns anhand eines Beispiels das Refactoring\
+  \ einer Ruby-Methode durchgehen, die die Summe der Quadrate berechnet. **Vor dem\u2026"
 lastmod: '2024-03-13T22:44:54.408707-06:00'
 model: gpt-4-0125-preview
-summary: "Refactoring ist der Prozess der Umstrukturierung von bestehendem Computercode,\
-  \ ohne dessen externes Verhalten zu \xE4ndern."
+summary: Lassen Sie uns anhand eines Beispiels das Refactoring einer Ruby-Methode
+  durchgehen, die die Summe der Quadrate berechnet.
 title: Refactoring
 weight: 19
 ---

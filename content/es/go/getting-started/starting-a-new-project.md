@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:26.596924-07:00
-description: "Iniciar un nuevo proyecto en Go implica configurar un espacio de trabajo\
-  \ e inicializarlo con los m\xF3dulos de Go necesarios. Los programadores hacen esto\u2026"
+description: "C\xF3mo hacerlo: Primero, aseg\xFArate de tener Go instalado ejecutando\
+  \ `go version` en tu terminal. Deber\xEDas ver la versi\xF3n de Go que has instalado\
+  \ como\u2026"
 lastmod: '2024-03-13T22:44:58.468156-06:00'
 model: gpt-4-0125-preview
-summary: "Iniciar un nuevo proyecto en Go implica configurar un espacio de trabajo\
-  \ e inicializarlo con los m\xF3dulos de Go necesarios."
+summary: "Primero, aseg\xFArate de tener Go instalado ejecutando `go version` en tu\
+  \ terminal."
 title: Iniciando un nuevo proyecto
 weight: 1
 ---

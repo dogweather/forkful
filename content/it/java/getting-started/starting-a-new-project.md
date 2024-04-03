@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 18:03:56.599373-07:00
-description: "Avviare un nuovo progetto significa creare un ambiente per sviluppare\
-  \ il tuo software. Lo fai per partire con un'organizzazione chiara e permettere\
-  \ una\u2026"
+description: 'How to: (Come fare) Creiamo una semplice applicazione Java che saluta
+  l''utente.'
 lastmod: '2024-03-13T22:44:43.309463-06:00'
 model: gpt-4-1106-preview
-summary: Avviare un nuovo progetto significa creare un ambiente per sviluppare il
-  tuo software.
+summary: Creiamo una semplice applicazione Java che saluta l'utente.
 title: Avvio di un nuovo progetto
 weight: 1
 ---

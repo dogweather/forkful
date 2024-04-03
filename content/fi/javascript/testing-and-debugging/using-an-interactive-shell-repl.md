@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:15:34.079291-07:00
-description: "Interaktiiviset kuoret eli REPL:t (Read-Eval-Print Loopit, Luke-Evaloi-Tulosta-Silmukka)\
-  \ mahdollistavat koodin ajamisen lennosta, toimintojen, algoritmien\u2026"
+description: "Kuinka: Node.js toimitetaan REPL:n kanssa, joka on k\xE4ytett\xE4viss\xE4\
+  \ terminaalin kautta. Avaa se, ja olet valmis aloittamaan. T\xE4ss\xE4 maistiainen."
 lastmod: '2024-03-13T22:44:56.951430-06:00'
 model: gpt-4-0125-preview
-summary: Interaktiiviset kuoret eli REPL:t (Read-Eval-Print Loopit, Luke-Evaloi-Tulosta-Silmukka)
-  mahdollistavat koodin ajamisen lennosta, toimintojen, algoritmien testaamisen tai
-  ideoiden kokeilun.
+summary: "Node.js toimitetaan REPL:n kanssa, joka on k\xE4ytett\xE4viss\xE4 terminaalin\
+  \ kautta."
 title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 weight: 34
 ---

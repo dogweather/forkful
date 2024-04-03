@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:45:51.880988-07:00
-description: "Liczby zespolone maj\u0105 cz\u0119\u015B\u0107 rzeczywist\u0105 i cz\u0119\
-  \u015B\u0107 urojon\u0105 (jak 3 + 4i). Programi\u015Bci u\u017Cywaj\u0105 ich w\
-  \ Swift do zada\u0144 takich jak przetwarzanie sygna\u0142\xF3w,\u2026"
+description: "Jak to zrobi\u0107: Swift nie ma wbudowanego wsparcia dla liczb zespolonych,\
+  \ ale mo\u017Cemy stworzy\u0107 w\u0142asne."
 lastmod: '2024-03-13T22:44:35.748834-06:00'
 model: gpt-4-0125-preview
-summary: "Liczby zespolone maj\u0105 cz\u0119\u015B\u0107 rzeczywist\u0105 i cz\u0119\
-  \u015B\u0107 urojon\u0105 (jak 3 + 4i)."
+summary: "Swift nie ma wbudowanego wsparcia dla liczb zespolonych, ale mo\u017Cemy\
+  \ stworzy\u0107 w\u0142asne."
 title: Praca z liczbami zespolonymi
 weight: 14
 ---

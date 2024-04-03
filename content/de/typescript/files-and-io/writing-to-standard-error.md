@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:35.149980-07:00
-description: "In TypeScript ist das Schreiben auf Standardfehler (stderr) ein Prozess\
-  \ des Sendens von Fehlermeldungen oder Protokollen direkt an den Fehlerausgabestrom\u2026"
+description: "Wie zu: TypeScript, als eine Obermenge von JavaScript, st\xFCtzt sich\
+  \ auf die zugrunde liegende JS-Laufzeitumgebung (wie Node.js) f\xFCr das Schreiben\
+  \ auf\u2026"
 lastmod: '2024-03-13T22:44:53.646828-06:00'
 model: gpt-4-0125-preview
-summary: In TypeScript ist das Schreiben auf Standardfehler (stderr) ein Prozess des
-  Sendens von Fehlermeldungen oder Protokollen direkt an den Fehlerausgabestrom der
-  Umgebung (z.
+summary: "TypeScript, als eine Obermenge von JavaScript, st\xFCtzt sich auf die zugrunde\
+  \ liegende JS-Laufzeitumgebung (wie Node.js) f\xFCr das Schreiben auf stderr."
 title: Schreiben auf Standardfehler
 weight: 25
 ---

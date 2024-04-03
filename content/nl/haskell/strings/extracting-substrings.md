@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:49.295240-07:00
-description: "Substringen extraheren betekent specifieke delen van een string naar\
-  \ voren halen. Programmeurs doen dit om data te isoleren, te schonen, of om met\
-  \ delen\u2026"
+description: 'Hoe te: In Haskell kun je strings in stukjes snijden met ingebouwde
+  functies zoals `take`, `drop` en `substring` (van `Data.Text`).'
 lastmod: '2024-03-13T22:44:50.841282-06:00'
 model: gpt-4-0125-preview
-summary: Substringen extraheren betekent specifieke delen van een string naar voren
-  halen.
+summary: In Haskell kun je strings in stukjes snijden met ingebouwde functies zoals
+  `take`, `drop` en `substring` (van `Data.Text`).
 title: Substrings extraheren
 weight: 6
 ---

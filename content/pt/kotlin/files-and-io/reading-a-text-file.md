@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:54:34.988032-07:00
-description: "Ler um arquivo de texto significa extrair a informa\xE7\xE3o dele para\
-  \ ser processada. Programadores fazem isso para manipular dados, configurar programas\
-  \ ou\u2026"
+description: 'Como Fazer: .'
 lastmod: '2024-03-13T22:44:46.559382-06:00'
 model: gpt-4-1106-preview
-summary: "Ler um arquivo de texto significa extrair a informa\xE7\xE3o dele para ser\
-  \ processada."
+summary: .
 title: Lendo um arquivo de texto
 weight: 22
 ---

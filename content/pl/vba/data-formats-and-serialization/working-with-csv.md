@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:23.657463-07:00
-description: "Praca z plikami CSV (Comma Separated Values - warto\u015Bci oddzielone\
-  \ przecinkami) polega na odczytywaniu z nich danych lub zapisywaniu do nich danych\
-  \ w\u2026"
+description: "Jak to zrobi\u0107: Visual Basic for Applications (VBA) u\u0142atwia\
+  \ prac\u0119 z plikami CSV za pomoc\u0105 wbudowanych funkcji i metod, kt\xF3re\
+  \ bezproblemowo pozwalaj\u0105 na\u2026"
 lastmod: '2024-03-13T22:44:35.256445-06:00'
 model: gpt-4-0125-preview
-summary: "Praca z plikami CSV (Comma Separated Values - warto\u015Bci oddzielone przecinkami)\
-  \ polega na odczytywaniu z nich danych lub zapisywaniu do nich danych w formacie\
-  \ plik\xF3w tekstowych, gdzie pola danych s\u0105 oddzielone przecinkami."
+summary: "Visual Basic for Applications (VBA) u\u0142atwia prac\u0119 z plikami CSV\
+  \ za pomoc\u0105 wbudowanych funkcji i metod, kt\xF3re bezproblemowo pozwalaj\u0105\
+  \ na odczytywanie z tych plik\xF3w i zapisywanie do nich."
 title: Praca z formatem CSV
 weight: 37
 ---

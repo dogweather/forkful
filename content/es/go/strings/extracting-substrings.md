@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:41.637175-07:00
-description: "Extraer subcadenas implica recuperar porciones espec\xEDficas de una\
-  \ cadena bas\xE1ndose en sus posiciones. Los programadores realizan frecuentemente\
-  \ esta\u2026"
+description: "C\xF3mo hacerlo: En Go, el tipo `string` es un segmento de bytes de\
+  \ solo lectura. Para extraer subcadenas, principalmente se utiliza la sintaxis de\
+  \ `slice`\u2026"
 lastmod: '2024-03-13T22:44:58.454616-06:00'
 model: gpt-4-0125-preview
-summary: "Extraer subcadenas implica recuperar porciones espec\xEDficas de una cadena\
-  \ bas\xE1ndose en sus posiciones."
+summary: En Go, el tipo `string` es un segmento de bytes de solo lectura.
 title: Extrayendo subcadenas
 weight: 6
 ---

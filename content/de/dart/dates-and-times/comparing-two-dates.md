@@ -2,13 +2,14 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:53:36.857154-07:00
-description: "Das Vergleichen von zwei Daten in Dart beinhaltet die Auswertung des\
-  \ zeitlichen Unterschieds oder der Reihenfolge zwischen ihnen, eine wesentliche\u2026"
+description: "Wie geht das: In Dart k\xF6nnen Sie Daten mit der `DateTime`-Klasse\
+  \ vergleichen, die Methoden wie `isBefore`, `isAfter` und `isAtSameMomentAs` f\xFC\
+  r den\u2026"
 lastmod: '2024-03-13T22:44:53.594625-06:00'
 model: gpt-4-0125-preview
-summary: "Das Vergleichen von zwei Daten in Dart beinhaltet die Auswertung des zeitlichen\
-  \ Unterschieds oder der Reihenfolge zwischen ihnen, eine wesentliche Funktionalit\xE4\
-  t in Anwendungen, die Ereignisse, Fristen oder zeitkritische Daten verwalten."
+summary: "In Dart k\xF6nnen Sie Daten mit der `DateTime`-Klasse vergleichen, die Methoden\
+  \ wie `isBefore`, `isAfter` und `isAtSameMomentAs` f\xFCr den direkten Vergleich\
+  \ bietet."
 title: Vergleich von zwei Daten
 weight: 27
 ---

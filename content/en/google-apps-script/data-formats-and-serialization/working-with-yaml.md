@@ -1,12 +1,12 @@
 ---
 date: 2024-02-01 21:11:59.655738-07:00
-description: "YAML, which stands for \"YAML Ain't Markup Language,\" is a human-readable\
-  \ data serialization standard that is commonly used for configuration files and\u2026"
+description: "How to: While Google Apps Script (GAS) doesn't natively support YAML\
+  \ parsing or serialization, you can manipulate YAML data by using JavaScript libraries\u2026"
 lastmod: '2024-03-13T22:44:59.688325-06:00'
 model: gpt-4-0125-preview
-summary: YAML, which stands for "YAML Ain't Markup Language," is a human-readable
-  data serialization standard that is commonly used for configuration files and data
-  exchange between languages with varying data structures.
+summary: While Google Apps Script (GAS) doesn't natively support YAML parsing or serialization,
+  you can manipulate YAML data by using JavaScript libraries or writing custom parsing
+  functions.
 title: Working with YAML
 weight: 41
 ---

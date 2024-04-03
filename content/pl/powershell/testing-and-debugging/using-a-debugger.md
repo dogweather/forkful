@@ -1,8 +1,8 @@
 ---
 date: 2024-01-26 04:08:55.992040-07:00
-description: "W PowerShellu mo\u017Cesz debugowa\u0107 skrypty za pomoc\u0105 wbudowanego\
-  \ \u015Brodowiska PowerShell Integrated Scripting Environment (ISE) lub Visual Studio\
-  \ Code (VS Code)\u2026"
+description: "Jak to zrobi\u0107: W PowerShellu mo\u017Cesz debugowa\u0107 skrypty\
+  \ za pomoc\u0105 wbudowanego \u015Brodowiska PowerShell Integrated Scripting Environment\
+  \ (ISE) lub Visual Studio\u2026"
 lastmod: '2024-03-13T22:44:35.634450-06:00'
 model: gpt-4-0125-preview
 summary: "W PowerShellu mo\u017Cesz debugowa\u0107 skrypty za pomoc\u0105 wbudowanego\

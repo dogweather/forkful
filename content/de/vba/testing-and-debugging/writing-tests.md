@@ -2,13 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:36.886492-07:00
-description: "Tests in der Programmierung zu schreiben bedeutet, spezifische Verfahren\
-  \ zu erstellen, um die Funktionalit\xE4t und Leistung Ihrer Codeabschnitte zu\u2026"
+description: "Wie man: Obwohl Visual Basic for Applications (VBA) nicht mit einem\
+  \ integrierten Testframework wie den in Sprachen wie Python oder JavaScript verf\xFC\
+  gbaren\u2026"
 lastmod: '2024-03-13T22:44:53.721902-06:00'
 model: gpt-4-0125-preview
-summary: "Tests in der Programmierung zu schreiben bedeutet, spezifische Verfahren\
-  \ zu erstellen, um die Funktionalit\xE4t und Leistung Ihrer Codeabschnitte zu validieren\
-  \ und sicherzustellen, dass sie unter verschiedenen Bedingungen wie erwartet funktionieren."
+summary: "Obwohl Visual Basic for Applications (VBA) nicht mit einem integrierten\
+  \ Testframework wie den in Sprachen wie Python oder JavaScript verf\xFCgbaren kommt,\
+  \ k\xF6nnen Sie dennoch einfache Testverfahren implementieren, um die Integrit\xE4\
+  t Ihres Codes zu \xFCberpr\xFCfen."
 title: Tests schreiben
 weight: 36
 ---

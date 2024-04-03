@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:43.855184-07:00
-description: "Il parsing di HTML in Clojure consiste nell'estrazione programmatica\
-  \ di informazioni dai documenti HTML. I programmatori fanno ci\xF2 per accedere,\u2026"
+description: "Come fare: Clojure non dispone di capacit\xE0 integrate di parsing HTML,\
+  \ ma puoi sfruttare le librerie Java o gli wrapper Clojure come `enlive` o `hickory`.\u2026"
 lastmod: '2024-03-13T22:44:43.040072-06:00'
 model: gpt-4-0125-preview
-summary: Il parsing di HTML in Clojure consiste nell'estrazione programmatica di informazioni
-  dai documenti HTML.
+summary: "Clojure non dispone di capacit\xE0 integrate di parsing HTML, ma puoi sfruttare\
+  \ le librerie Java o gli wrapper Clojure come `enlive` o `hickory`."
 title: Analisi del HTML
 weight: 43
 ---

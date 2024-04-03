@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:51:04.776000-07:00
-description: "W interpolacji string\xF3w chodzi o wstawianie warto\u015Bci zmiennych\
-  \ w \u015Brodek \u0142a\u0144cucha tekstowego. Robimy to, by \u0142atwiej budowa\u0107\
-  \ dynamiczne wiadomo\u015Bci i\u2026"
+description: "How to: **W JavaScript mo\u017Cna interpolowa\u0107 stringi przy u\u017C\
+  yciu template literals, oto jak:**."
 lastmod: '2024-03-13T22:44:35.782655-06:00'
 model: gpt-4-1106-preview
-summary: "W interpolacji string\xF3w chodzi o wstawianie warto\u015Bci zmiennych w\
-  \ \u015Brodek \u0142a\u0144cucha tekstowego."
+summary: "**W JavaScript mo\u017Cna interpolowa\u0107 stringi przy u\u017Cyciu template\
+  \ literals, oto jak:**."
 title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 8
 ---

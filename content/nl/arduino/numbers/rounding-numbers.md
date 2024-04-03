@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:40.396795-07:00
-description: "Afronden van getallen betekent het trimmen van een decimaal naar de\
-  \ dichtstbijzijnde gehele waarde of naar een vastgesteld aantal decimalen. Programmeurs\u2026"
+description: 'Hoe: In Arduino kunt u getallen afronden met ingebouwde functies. Belangrijke
+  spelers zijn `round`, `ceil`, en `floor`. Hier is een snelle demo.'
 lastmod: '2024-03-13T22:44:51.067585-06:00'
 model: gpt-4-0125-preview
-summary: Afronden van getallen betekent het trimmen van een decimaal naar de dichtstbijzijnde
-  gehele waarde of naar een vastgesteld aantal decimalen.
+summary: In Arduino kunt u getallen afronden met ingebouwde functies.
 title: Afronden van getallen
 weight: 13
 ---

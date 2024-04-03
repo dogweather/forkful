@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:25:01.192071-07:00
-description: "TOML, en forkortelse for Toms Obvious, Minimal Language, er et data\
-  \ serialiseringsformat som er lett \xE5 lese p\xE5 grunn av sine klare semantikker.\u2026"
+description: "Hvordan: I PowerShell finnes det ikke noe innebygd cmdlet for \xE5 tolke\
+  \ TOML. Du ville typisk brukt en modul eller konvertert TOML til JSON med et verkt\xF8\
+  y\u2026"
 lastmod: '2024-03-13T22:44:41.040314-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, en forkortelse for Toms Obvious, Minimal Language, er et data serialiseringsformat\
-  \ som er lett \xE5 lese p\xE5 grunn av sine klare semantikker."
+summary: "I PowerShell finnes det ikke noe innebygd cmdlet for \xE5 tolke TOML."
 title: Jobbe med TOML
 weight: 39
 ---

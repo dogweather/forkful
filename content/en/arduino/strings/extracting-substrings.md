@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:44:55.544409-07:00
-description: "Extracting substrings means pulling out specific parts of a string -\
-  \ like grabbing a slice of pie. Programmers do this to isolate data, clean inputs,\
-  \ or\u2026"
+description: 'How to: Arduino strings can be sliced and diced using `substring()`.'
 lastmod: '2024-03-13T22:45:00.312310-06:00'
 model: gpt-4-1106-preview
-summary: Extracting substrings means pulling out specific parts of a string - like
-  grabbing a slice of pie.
+summary: Arduino strings can be sliced and diced using `substring()`.
 title: Extracting substrings
 weight: 6
 ---

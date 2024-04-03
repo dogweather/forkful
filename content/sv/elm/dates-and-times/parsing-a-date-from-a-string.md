@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:17.502954-07:00
-description: "Att tolka ett datum fr\xE5n en str\xE4ng i Elm inneb\xE4r att konvertera\
-  \ textuell information som representerar datum och tider till ett format som Elm\
-  \ kan f\xF6rst\xE5\u2026"
+description: "Hur man g\xF6r: Elm har inte inbyggda funktioner som \xE4r lika robusta\
+  \ som vissa andra spr\xE5k f\xF6r datumtolkning, och f\xF6rlitar sig huvudsakligen\
+  \ p\xE5 Javascript-\u2026"
 lastmod: '2024-03-13T22:44:37.838889-06:00'
 model: gpt-4-0125-preview
-summary: "Att tolka ett datum fr\xE5n en str\xE4ng i Elm inneb\xE4r att konvertera\
-  \ textuell information som representerar datum och tider till ett format som Elm\
-  \ kan f\xF6rst\xE5 och manipulera, specifikt till `Date`-typen."
+summary: "Elm har inte inbyggda funktioner som \xE4r lika robusta som vissa andra\
+  \ spr\xE5k f\xF6r datumtolkning, och f\xF6rlitar sig huvudsakligen p\xE5 Javascript-interoperabilitet\
+  \ eller bibliotek f\xF6r mer komplexa operationer."
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---

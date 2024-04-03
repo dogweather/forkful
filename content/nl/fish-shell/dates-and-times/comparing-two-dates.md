@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:36.155065-07:00
-description: "Het vergelijken van twee data houdt in dat je controleert of een datum\
-  \ eerder, hetzelfde, of later is dan een andere. Programmeurs doen dit om evenementen\u2026"
+description: 'Hoe: Met Fish Shell kunnen we twee data vergelijken met behulp van het
+  `date` commando. Hieronder staan voorbeelden.'
 lastmod: '2024-03-13T22:44:51.259709-06:00'
 model: gpt-4-0125-preview
-summary: Het vergelijken van twee data houdt in dat je controleert of een datum eerder,
-  hetzelfde, of later is dan een andere.
+summary: Met Fish Shell kunnen we twee data vergelijken met behulp van het `date`
+  commando.
 title: Twee datums vergelijken
 weight: 27
 ---

@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:54.422720-07:00
-description: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra gi\xFAp ki\u1EC3m tra xem m\xE3\
-  \ c\u1EE7a b\u1EA1n c\xF3 th\u1EF1c hi\u1EC7n \u0111\xFAng nh\u01B0 mong \u0111\u1EE3\
-  i hay kh\xF4ng, b\u1EAFt \u0111\u01B0\u1EE3c l\u1ED7i s\u1EDBm. C\xE1c l\u1EADp\
-  \ tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n ki\u1EC3m tra \u0111\u1EC3\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: H\xE3y s\u1EED d\u1EE5ng m\u1ED9t h\xE0m C++\
+  \ \u0111\u01A1n gi\u1EA3n v\xE0 m\u1ED9t b\xE0i ki\u1EC3m tra s\u1EED d\u1EE5ng\
+  \ framework Catch2."
 lastmod: '2024-03-13T22:44:37.047256-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra gi\xFAp ki\u1EC3m tra xem m\xE3 c\u1EE7\
-  a b\u1EA1n c\xF3 th\u1EF1c hi\u1EC7n \u0111\xFAng nh\u01B0 mong \u0111\u1EE3i hay\
-  \ kh\xF4ng, b\u1EAFt \u0111\u01B0\u1EE3c l\u1ED7i s\u1EDBm."
+summary: "H\xE3y s\u1EED d\u1EE5ng m\u1ED9t h\xE0m C++ \u0111\u01A1n gi\u1EA3n v\xE0\
+  \ m\u1ED9t b\xE0i ki\u1EC3m tra s\u1EED d\u1EE5ng framework Catch2."
 title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
 weight: 36
 ---

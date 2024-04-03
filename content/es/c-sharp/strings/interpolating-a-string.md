@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-25, gpt-4-0125-preview, translated from English
 date: 2024-02-25 17:07:00.069426-07:00
-description: "La interpolaci\xF3n de cadenas en C# te permite crear una nueva cadena\
-  \ al incluir expresiones dentro de un literal de cadena, lo que facilita el formateo\
-  \ y\u2026"
+description: "C\xF3mo hacerlo: En C#, la interpolaci\xF3n de cadenas se indica con\
+  \ un signo de d\xF3lar (`$`) seguido de un literal de cadena. Los nombres de las\
+  \ variables o las\u2026"
 lastmod: '2024-03-13T22:44:59.064720-06:00'
 model: gpt-4-0125-preview
-summary: "La interpolaci\xF3n de cadenas en C# te permite crear una nueva cadena al\
-  \ incluir expresiones dentro de un literal de cadena, lo que facilita el formateo\
-  \ y la concatenaci\xF3n de cadenas."
+summary: "En C#, la interpolaci\xF3n de cadenas se indica con un signo de d\xF3lar\
+  \ (`$`) seguido de un literal de cadena."
 title: Interpolando una cadena de texto
 weight: 8
 ---

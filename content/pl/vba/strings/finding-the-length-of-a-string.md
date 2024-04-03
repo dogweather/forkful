@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:01.742452-07:00
-description: "Znalezienie d\u0142ugo\u015Bci \u0142a\u0144cucha znak\xF3w w Visual\
-  \ Basic for Applications (VBA) polega na okre\u015Bleniu liczby znak\xF3w, jakie\
-  \ zawiera. Programi\u015Bci cz\u0119sto wykonuj\u0105\u2026"
+description: "Jak to zrobi\u0107: W VBA funkcja `Len` jest Twoim pierwszym wyborem\
+  \ do znajdowania d\u0142ugo\u015Bci \u0142a\u0144cucha znak\xF3w. Zwraca liczb\u0119\
+  \ ca\u0142kowit\u0105 reprezentuj\u0105c\u0105 liczb\u0119\u2026"
 lastmod: '2024-03-13T22:44:35.221322-06:00'
 model: gpt-4-0125-preview
-summary: "Znalezienie d\u0142ugo\u015Bci \u0142a\u0144cucha znak\xF3w w Visual Basic\
-  \ for Applications (VBA) polega na okre\u015Bleniu liczby znak\xF3w, jakie zawiera."
+summary: "W VBA funkcja `Len` jest Twoim pierwszym wyborem do znajdowania d\u0142\
+  ugo\u015Bci \u0142a\u0144cucha znak\xF3w."
 title: "Znajdowanie d\u0142ugo\u015Bci \u0142a\u0144cucha znak\xF3w"
 weight: 7
 ---

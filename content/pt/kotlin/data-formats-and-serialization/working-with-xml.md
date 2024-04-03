@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:33:24.708320-07:00
-description: "Trabalhar com XML envolve analisar, criar e manipular documentos XML\
-  \ - uma linguagem de marca\xE7\xE3o para armazenamento e transfer\xEAncia de dados.\u2026"
+description: "Como fazer: Em Kotlin, voc\xEA pode usar o `javax.xml.parsers` integrado\
+  \ para an\xE1lise."
 lastmod: '2024-03-13T22:44:46.566590-06:00'
 model: gpt-4-0125-preview
-summary: "Trabalhar com XML envolve analisar, criar e manipular documentos XML - uma\
-  \ linguagem de marca\xE7\xE3o para armazenamento e transfer\xEAncia de dados."
+summary: "Em Kotlin, voc\xEA pode usar o `javax.xml.parsers` integrado para an\xE1\
+  lise."
 title: Trabalhando com XML
 weight: 40
 ---

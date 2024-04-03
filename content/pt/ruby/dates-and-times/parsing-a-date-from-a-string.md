@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:13.575796-07:00
-description: "Analisar uma data a partir de uma string consiste em converter um texto\
-  \ que representa uma data em um objeto `Date` ou `DateTime` que o Ruby compreende.\u2026"
+description: "Como Fazer: No Ruby, a biblioteca padr\xE3o oferece maneiras diretas\
+  \ de analisar datas a partir de strings usando as classes `Date` e `DateTime`. Veja\
+  \ como\u2026"
 lastmod: '2024-03-13T22:44:47.104642-06:00'
 model: gpt-4-0125-preview
-summary: Analisar uma data a partir de uma string consiste em converter um texto que
-  representa uma data em um objeto `Date` ou `DateTime` que o Ruby compreende.
+summary: "No Ruby, a biblioteca padr\xE3o oferece maneiras diretas de analisar datas\
+  \ a partir de strings usando as classes `Date` e `DateTime`."
 title: Analisando uma data a partir de uma string
 weight: 30
 ---

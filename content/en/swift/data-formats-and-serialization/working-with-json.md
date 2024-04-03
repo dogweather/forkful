@@ -1,12 +1,10 @@
 ---
 date: 2024-01-19
-description: "Working with JSON in Swift means dealing with a lightweight data format\
-  \ for data interchange. Programmers use JSON to transmit data between a server and\
-  \ a\u2026"
+description: 'How to: Swift makes JSON parsing straightforward with the `Codable`
+  protocol. Here''s how you decode JSON to a Swift object.'
 lastmod: '2024-03-13T22:45:00.414999-06:00'
 model: unknown
-summary: Working with JSON in Swift means dealing with a lightweight data format for
-  data interchange.
+summary: Swift makes JSON parsing straightforward with the `Codable` protocol.
 title: Working with JSON
 weight: 38
 ---

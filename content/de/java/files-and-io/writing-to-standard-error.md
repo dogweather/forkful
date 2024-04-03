@@ -2,12 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:28.224483-07:00
-description: "Das Schreiben auf den Standardfehler (stderr) umfasst das Ausgeben von\
-  \ Fehlermeldungen und Diagnosen auf die Konsole oder das Terminal. Programmierer\u2026"
+description: 'Wie: #.'
 lastmod: '2024-03-13T22:44:53.778833-06:00'
 model: gpt-4-0125-preview
-summary: Das Schreiben auf den Standardfehler (stderr) umfasst das Ausgeben von Fehlermeldungen
-  und Diagnosen auf die Konsole oder das Terminal.
+summary: '#.'
 title: Schreiben auf Standardfehler
 weight: 25
 ---

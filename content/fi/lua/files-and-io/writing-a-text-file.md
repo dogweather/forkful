@@ -2,14 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:56.205256-07:00
-description: "Tekstitiedostoon kirjoittaminen Luassa tarkoittaa tiedoston luomista\
-  \ tai avaamista kirjoitustilassa ja sen j\xE4lkeen tiedosto-operaatioiden k\xE4\
-  ytt\xE4mist\xE4\u2026"
+description: "Kuinka: Luassa tiedostojen k\xE4sittely kirjoitusta varten on suoraviivaista.\
+  \ Tyypillisesti k\xE4yt\xE4t `io.open()` -funktiota tiedoston avaamiseen (tai\u2026"
 lastmod: '2024-03-13T22:44:56.714836-06:00'
 model: gpt-4-0125-preview
-summary: "Tekstitiedostoon kirjoittaminen Luassa tarkoittaa tiedoston luomista tai\
-  \ avaamista kirjoitustilassa ja sen j\xE4lkeen tiedosto-operaatioiden k\xE4ytt\xE4\
-  mist\xE4 tekstin lis\xE4\xE4miseen."
+summary: "Luassa tiedostojen k\xE4sittely kirjoitusta varten on suoraviivaista."
 title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---

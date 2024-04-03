@@ -1,10 +1,11 @@
 ---
 date: 2024-01-26 04:36:43.925360-07:00
-description: "Los n\xFAmeros complejos consisten en una parte real y una parte imaginaria.\
-  \ Los programadores los usan en campos como el procesamiento de se\xF1ales, la\u2026"
+description: "C\xF3mo hacerlo: Bash no soporta n\xFAmeros complejos de manera nativa.\
+  \ A menudo se utiliza una herramienta externa como `bc` con su opci\xF3n `-l`. Aqu\xED\
+  \ est\xE1 c\xF3mo\u2026"
 lastmod: '2024-03-13T22:44:59.238383-06:00'
 model: gpt-4-0125-preview
-summary: "Los n\xFAmeros complejos consisten en una parte real y una parte imaginaria."
+summary: "Bash no soporta n\xFAmeros complejos de manera nativa."
 title: "Trabajando con n\xFAmeros complejos"
 weight: 14
 ---

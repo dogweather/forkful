@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:07.311221-07:00
-description: "La interpolaci\xF3n de cadenas, en programaci\xF3n, implica la construcci\xF3\
-  n de cadenas mediante la incrustaci\xF3n de expresiones dentro de cadenas literales.\
-  \ Los\u2026"
+description: "C\xF3mo hacerlo: C, a diferencia de algunos lenguajes de alto nivel,\
+  \ no soporta directamente la interpolaci\xF3n de cadenas en su sintaxis. En cambio,\
+  \ la\u2026"
 lastmod: '2024-03-13T22:44:59.529978-06:00'
 model: gpt-4-0125-preview
-summary: "La interpolaci\xF3n de cadenas, en programaci\xF3n, implica la construcci\xF3\
-  n de cadenas mediante la incrustaci\xF3n de expresiones dentro de cadenas literales."
+summary: "C, a diferencia de algunos lenguajes de alto nivel, no soporta directamente\
+  \ la interpolaci\xF3n de cadenas en su sintaxis."
 title: Interpolando una cadena de texto
 weight: 8
 ---

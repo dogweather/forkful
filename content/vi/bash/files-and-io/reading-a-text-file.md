@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:48.138779-07:00
-description: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n c\xF3 ngh\u0129a l\xE0\
-  \ l\u1EA5y n\u1ED9i dung t\u1EEB t\u1EC7p v\xE0o trong k\u1ECBch b\u1EA3n (script)\
-  \ c\u1EE7a b\u1EA1n. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0\
-  y \u0111\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi d\u1EEF li\u1EC7u, c\u1EA5u\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1\
+  ch \u0111\u01A1n gi\u1EA3n nh\u1EA5t \u0111\u1EC3 \u0111\u1ECDc m\u1ED9t t\u1EC7\
+  p d\xF2ng n\xE0y qua d\xF2ng kh\xE1c."
 lastmod: '2024-03-13T22:44:36.901656-06:00'
 model: gpt-4-0125-preview
-summary: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n c\xF3 ngh\u0129a l\xE0\
-  \ l\u1EA5y n\u1ED9i dung t\u1EEB t\u1EC7p v\xE0o trong k\u1ECBch b\u1EA3n (script)\
-  \ c\u1EE7a b\u1EA1n."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch \u0111\u01A1n gi\u1EA3n nh\u1EA5\
+  t \u0111\u1EC3 \u0111\u1ECDc m\u1ED9t t\u1EC7p d\xF2ng n\xE0y qua d\xF2ng kh\xE1\
+  c."
 title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 22
 ---

@@ -1,11 +1,12 @@
 ---
 date: 2024-02-03 19:02:24.890926-07:00
-description: "Checking if a directory exists in Elixir is about verifying the presence\
-  \ of a directory at a specified path in the file system. Programmers do this to\u2026"
+description: "How to: Elixir's standard library offers a straightforward way to check\
+  \ for the existence of a directory through the `File` module. Here's how you can\
+  \ use\u2026"
 lastmod: '2024-03-13T22:44:59.795379-06:00'
 model: gpt-4-0125-preview
-summary: Checking if a directory exists in Elixir is about verifying the presence
-  of a directory at a specified path in the file system.
+summary: Elixir's standard library offers a straightforward way to check for the existence
+  of a directory through the `File` module.
 title: Checking if a directory exists
 weight: 20
 ---

@@ -2,15 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:33.097898-07:00
-description: "L'interpolation de cha\xEEnes dans Visual Basic pour Applications (VBA)\
-  \ fait r\xE9f\xE9rence au processus d'int\xE9gration de variables ou d'expressions\
-  \ au sein d'une\u2026"
+description: "Comment faire : Contrairement \xE0 certains langages qui poss\xE8dent\
+  \ une interpolation de cha\xEEnes int\xE9gr\xE9e, VBA requiert une approche plus\
+  \ manuelle utilisant\u2026"
 lastmod: '2024-03-13T22:44:57.537552-06:00'
 model: gpt-4-0125-preview
-summary: "L'interpolation de cha\xEEnes dans Visual Basic pour Applications (VBA)\
-  \ fait r\xE9f\xE9rence au processus d'int\xE9gration de variables ou d'expressions\
-  \ au sein d'une litt\xE9rale de cha\xEEne, permettant la formation dynamique de\
-  \ cha\xEEnes."
+summary: "Contrairement \xE0 certains langages qui poss\xE8dent une interpolation\
+  \ de cha\xEEnes int\xE9gr\xE9e, VBA requiert une approche plus manuelle utilisant\
+  \ typiquement l'op\xE9rateur `&` ou la fonction `Format` pour int\xE9grer des variables\
+  \ dans des cha\xEEnes."
 title: "Interpolation d'une cha\xEEne de caract\xE8res"
 weight: 8
 ---

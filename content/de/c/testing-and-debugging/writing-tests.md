@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:31.931127-07:00
-description: "Tests in C zu schreiben, bedeutet, kleinere Hilfsprogramme oder Funktionen\
-  \ zu erstellen, die automatisch die Funktionalit\xE4t Ihres Codes \xFCberpr\xFC\
-  fen.\u2026"
+description: "Wie: Obwohl C nicht \xFCber ein integriertes Test-Framework wie einige\
+  \ andere Sprachen verf\xFCgt, k\xF6nnen Sie dennoch effektive Tests schreiben, indem\
+  \ Sie\u2026"
 lastmod: '2024-03-13T22:44:54.356268-06:00'
 model: gpt-4-0125-preview
-summary: "Tests in C zu schreiben, bedeutet, kleinere Hilfsprogramme oder Funktionen\
-  \ zu erstellen, die automatisch die Funktionalit\xE4t Ihres Codes \xFCberpr\xFC\
-  fen."
+summary: "Obwohl C nicht \xFCber ein integriertes Test-Framework wie einige andere\
+  \ Sprachen verf\xFCgt, k\xF6nnen Sie dennoch effektive Tests schreiben, indem Sie\
+  \ assert.h f\xFCr einfache Behauptungen verwenden oder Drittanbieter-Frameworks\
+  \ wie CUnit oder Unity f\xFCr strukturiertere Tests integrieren."
 title: Tests schreiben
 weight: 36
 ---

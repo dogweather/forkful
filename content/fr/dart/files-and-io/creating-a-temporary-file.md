@@ -2,16 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:18.695472-07:00
-description: "La cr\xE9ation d'un fichier temporaire en Dart implique de g\xE9n\xE9\
-  rer un fichier destin\xE9 \xE0 une utilisation \xE0 court terme, principalement\
-  \ pour des sc\xE9narios tels\u2026"
+description: "Comment faire : La biblioth\xE8que `dart:io` de Dart facilite la cr\xE9\
+  ation de fichiers temporaires gr\xE2ce \xE0 la classe `Directory`. Voici une mani\xE8\
+  re simple de\u2026"
 lastmod: '2024-03-13T22:44:57.412276-06:00'
 model: gpt-4-0125-preview
-summary: "La cr\xE9ation d'un fichier temporaire en Dart implique de g\xE9n\xE9rer\
-  \ un fichier destin\xE9 \xE0 une utilisation \xE0 court terme, principalement pour\
-  \ des sc\xE9narios tels que la mise en cache des donn\xE9es, le stockage temporaire\
-  \ pour le traitement de fichiers, ou le maintien d'informations trop sensibles pour\
-  \ \xEAtre conserv\xE9es longtemps."
+summary: "La biblioth\xE8que `dart:io` de Dart facilite la cr\xE9ation de fichiers\
+  \ temporaires gr\xE2ce \xE0 la classe `Directory`."
 title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---

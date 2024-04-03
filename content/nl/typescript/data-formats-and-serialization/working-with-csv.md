@@ -2,14 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:19.321514-07:00
-description: "Werken met CSV (Comma-Separated Values), oftewel door komma's gescheiden\
-  \ waarden, betekent het lezen en schrijven van gegevens in een tekstformaat waarbij\u2026"
+description: 'Hoe te: Het lezen van CSV in TypeScript is eenvoudig met bibliotheken
+  zoals `papaparse`. Om CSV-bestanden te kunnen behandelen, installeer het eerst.'
 lastmod: '2024-03-13T22:44:50.573858-06:00'
 model: gpt-4-0125-preview
-summary: Werken met CSV (Comma-Separated Values), oftewel door komma's gescheiden
-  waarden, betekent het lezen en schrijven van gegevens in een tekstformaat waarbij
-  elke regel een gegevensrecord vertegenwoordigt en de velden door komma's van elkaar
-  gescheiden zijn.
+summary: Het lezen van CSV in TypeScript is eenvoudig met bibliotheken zoals `papaparse`.
 title: Werken met CSV
 weight: 37
 ---

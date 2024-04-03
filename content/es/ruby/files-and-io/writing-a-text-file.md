@@ -2,14 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:48.458931-07:00
-description: "Escribir en un archivo de texto en Ruby es una operaci\xF3n fundamental\
-  \ que te permite almacenar salida y datos de manera persistente, permitiendo que\
-  \ los\u2026"
+description: "C\xF3mo hacerlo: Ruby simplifica las operaciones con archivos. Para\
+  \ escribir en un archivo, puedes usar la clase incorporada de Ruby `File`. El siguiente\u2026"
 lastmod: '2024-03-13T22:44:59.609149-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir en un archivo de texto en Ruby es una operaci\xF3n fundamental\
-  \ que te permite almacenar salida y datos de manera persistente, permitiendo que\
-  \ los datos sean accedidos o modificados m\xE1s tarde."
+summary: Ruby simplifica las operaciones con archivos.
 title: Escribiendo un archivo de texto
 weight: 24
 ---

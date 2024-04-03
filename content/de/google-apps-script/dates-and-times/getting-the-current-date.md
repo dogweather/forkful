@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:30.517120-07:00
-description: "Das Abrufen des aktuellen Datums in Google Apps Script handelt vom Abrufen\
-  \ des aktuellen Datums und der Uhrzeit, einer g\xE4ngigen Aufgabe zur\u2026"
+description: "Wie geht das: Google Apps Script, das auf JavaScript basiert, bietet\
+  \ einfache Methoden, um das aktuelle Datum zu erhalten. Sie k\xF6nnen den Konstruktor\
+  \ `new\u2026"
 lastmod: '2024-03-13T22:44:53.345482-06:00'
 model: gpt-4-0125-preview
-summary: "Das Abrufen des aktuellen Datums in Google Apps Script handelt vom Abrufen\
-  \ des aktuellen Datums und der Uhrzeit, einer g\xE4ngigen Aufgabe zur Automatisierung\
-  \ von Aufgaben, Protokollierung und Zeitstempelung in Apps, die an das Google-\xD6\
-  kosystem gebunden sind."
+summary: Google Apps Script, das auf JavaScript basiert, bietet einfache Methoden,
+  um das aktuelle Datum zu erhalten.
 title: Das aktuelle Datum abrufen
 weight: 29
 ---

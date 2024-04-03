@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 03:45:41.398731-07:00
-description: "Avrunding er \xE5 klippe av st\xF8yen etter et visst punkt i et tall.\
-  \ Programmerere avrunder for \xE5 kontrollere presisjon, h\xE5ndtere minne, eller\
-  \ gj\xF8re output\u2026"
+description: 'Hvordan: Her er hvordan du avrunder tall i JavaScript ved hjelp av `Math.round()`,
+  `Math.ceil()`, og `Math.floor()`.'
 lastmod: '2024-03-13T22:44:41.179008-06:00'
 model: gpt-4-0125-preview
-summary: "Avrunding er \xE5 klippe av st\xF8yen etter et visst punkt i et tall."
+summary: Her er hvordan du avrunder tall i JavaScript ved hjelp av `Math.round()`,
+  `Math.ceil()`, og `Math.floor()`.
 title: Avrunding av tall
 weight: 13
 ---

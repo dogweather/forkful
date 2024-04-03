@@ -2,15 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:25.510424-07:00
-description: "Das Parsen eines Datums aus einem String beinhaltet die Umwandlung von\
-  \ Text, der ein Datum darstellt, in ein Datum-Objekt, was Programmierern erm\xF6\
-  glicht,\u2026"
+description: "Wie zu: In Google Apps Script, welches auf JavaScript basiert, gibt\
+  \ es mehrere Ans\xE4tze, um ein Datum aus einem String zu parsen. Unten finden Sie\u2026"
 lastmod: '2024-03-13T22:44:53.344345-06:00'
 model: gpt-4-0125-preview
-summary: "Das Parsen eines Datums aus einem String beinhaltet die Umwandlung von Text,\
-  \ der ein Datum darstellt, in ein Datum-Objekt, was Programmierern erm\xF6glicht,\
-  \ datumsbezogene Operationen wie Vergleiche, Arithmetik und Formatierung durchzuf\xFC\
-  hren."
+summary: "In Google Apps Script, welches auf JavaScript basiert, gibt es mehrere Ans\xE4\
+  tze, um ein Datum aus einem String zu parsen."
 title: Einen Datum aus einem String auslesen
 weight: 30
 ---

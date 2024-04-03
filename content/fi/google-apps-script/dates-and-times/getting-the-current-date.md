@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:53.904090-07:00
-description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen Google Apps Scriptill\xE4\
-  \ tarkoittaa live-p\xE4iv\xE4m\xE4\xE4r\xE4n ja -ajan hakemista, yleist\xE4 teht\xE4\
-  v\xE4\xE4 automaatioteht\xE4viss\xE4,\u2026"
+description: "Kuinka: Google Apps Script, joka perustuu JavaScriptiin, tarjoaa suoraviivaisia\
+  \ menetelmi\xE4 nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkimiseksi. Voit k\xE4ytt\xE4\
+  \xE4 `new\u2026"
 lastmod: '2024-03-13T22:44:56.109595-06:00'
 model: gpt-4-0125-preview
-summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen Google Apps Scriptill\xE4\
-  \ tarkoittaa live-p\xE4iv\xE4m\xE4\xE4r\xE4n ja -ajan hakemista, yleist\xE4 teht\xE4\
-  v\xE4\xE4 automaatioteht\xE4viss\xE4, lokitiedoissa ja aikaleimoissa Googlen ekosysteemiin\
-  \ sidotuissa sovelluksissa."
+summary: "Google Apps Script, joka perustuu JavaScriptiin, tarjoaa suoraviivaisia\
+  \ menetelmi\xE4 nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkimiseksi."
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---

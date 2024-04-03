@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:36:30.954119-07:00
-description: "Das Umwandeln eines Datums in einen String bedeutet, ein Datum in eine\
-  \ Textform zu bringen, die Menschen lesen k\xF6nnen. Programmierer machen das, um\
-  \ Daten\u2026"
+description: "How to: (Wie geht das:) Fish hat eingebaute Funktionen, um mit Datum\
+  \ und Zeit zu arbeiten. Hier ein paar Beispiele, wie man ein Datum in Fish in einen\u2026"
 lastmod: '2024-03-13T22:44:54.320720-06:00'
 model: gpt-4-1106-preview
-summary: "Das Umwandeln eines Datums in einen String bedeutet, ein Datum in eine Textform\
-  \ zu bringen, die Menschen lesen k\xF6nnen."
+summary: Fish hat eingebaute Funktionen, um mit Datum und Zeit zu arbeiten.
 title: Datum in einen String umwandeln
 weight: 28
 ---

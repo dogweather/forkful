@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:22.847900-07:00
-description: "M\u1ED9t shell t\u01B0\u01A1ng t\xE1c Rust, hay REPL (Read-Eval-Print\
-  \ Loop), cho ph\xE9p b\u1EA1n ch\u1EA1y m\xE3 Rust t\u1EE9c th\xEC, xem k\u1EBF\
-  t qu\u1EA3 ngay l\u1EADp t\u1EE9c, r\u1EA5t ho\xE0n h\u1EA3o cho vi\u1EC7c th\u1EED\
-  \ nghi\u1EC7m\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Cho \u0111\u1EBFn nay, Rust ch\u01B0a c\xF3\
+  \ REPL ch\xEDnh th\u1EE9c \u0111i k\xE8m v\u1EDBi n\xF3. B\u1EA1n c\xF3 th\u1EC3\
+  \ s\u1EED d\u1EE5ng c\xE1c c\xF4ng c\u1EE5 c\u1EE7a b\xEAn th\u1EE9 ba nh\u01B0\
+  \ `evcxr_repl`. C\xE0i \u0111\u1EB7t n\xF3 b\u1EB1ng\u2026"
 lastmod: '2024-03-13T22:44:36.378691-06:00'
 model: gpt-4-0125-preview
-summary: "M\u1ED9t shell t\u01B0\u01A1ng t\xE1c Rust, hay REPL (Read-Eval-Print Loop),\
-  \ cho ph\xE9p b\u1EA1n ch\u1EA1y m\xE3 Rust t\u1EE9c th\xEC, xem k\u1EBFt qu\u1EA3\
-  \ ngay l\u1EADp t\u1EE9c, r\u1EA5t ho\xE0n h\u1EA3o cho vi\u1EC7c th\u1EED nghi\u1EC7\
-  m ho\u1EB7c h\u1ECDc h\u1ECFi."
+summary: "Cho \u0111\u1EBFn nay, Rust ch\u01B0a c\xF3 REPL ch\xEDnh th\u1EE9c \u0111\
+  i k\xE8m v\u1EDBi n\xF3."
 title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 weight: 34
 ---

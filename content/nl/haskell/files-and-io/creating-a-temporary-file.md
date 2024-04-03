@@ -2,14 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:09.714148-07:00
-description: "Een tijdelijk bestand cre\xEBren betekent het maken van een bestand\
-  \ voor kortstondig gebruik, vaak voor het beheren van gegevens tijdens de uitvoering\
-  \ van\u2026"
+description: 'Hoe: Haskell biedt het `temporary` pakket, dat handige functies bevat
+  voor tijdelijke bestandsoperaties. Hier is een snelle demonstratie.'
 lastmod: '2024-03-13T22:44:50.871837-06:00'
 model: gpt-4-0125-preview
-summary: "Een tijdelijk bestand cre\xEBren betekent het maken van een bestand voor\
-  \ kortstondig gebruik, vaak voor het beheren van gegevens tijdens de uitvoering\
-  \ van een programma."
+summary: Haskell biedt het `temporary` pakket, dat handige functies bevat voor tijdelijke
+  bestandsoperaties.
 title: Een tijdelijk bestand aanmaken
 weight: 21
 ---

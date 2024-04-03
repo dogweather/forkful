@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:00:01.464406-07:00
-description: "Das Parsen eines Datums aus einem String in C involviert die Umwandlung\
-  \ von textuellen Datumsdarstellungen in ein Format, mit dem Programme effektiver\u2026"
+description: "Wie: C bietet keine eingebaute M\xF6glichkeit, direkt aus Strings Daten\
+  \ zu parsen, deshalb greifen wir oft auf die `strptime` Funktion zur\xFCck, die\
+  \ in der\u2026"
 lastmod: '2024-03-13T22:44:54.362805-06:00'
 model: gpt-4-0125-preview
-summary: "Das Parsen eines Datums aus einem String in C involviert die Umwandlung\
-  \ von textuellen Datumsdarstellungen in ein Format, mit dem Programme effektiver\
-  \ umgehen und Analysen durchf\xFChren k\xF6nnen."
+summary: "C bietet keine eingebaute M\xF6glichkeit, direkt aus Strings Daten zu parsen,\
+  \ deshalb greifen wir oft auf die `strptime` Funktion zur\xFCck, die in der `<time.h>`\
+  \ Bibliothek f\xFCr POSIX-Systeme verf\xFCgbar ist."
 title: Ein Datum aus einem String interpretieren
 weight: 30
 ---

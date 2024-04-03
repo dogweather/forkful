@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:02:43.841401-07:00
-description: "Capitalizing a string involves modifying the string so that its first\
-  \ character is uppercase, while the rest of the string remains unchanged. Programmers\u2026"
+description: 'How to: Clojure, being a JVM language, allows you to utilize Java String
+  methods directly. Here''s a basic example of how to capitalize a string in Clojure.'
 lastmod: '2024-03-13T22:44:59.730224-06:00'
 model: gpt-4-0125-preview
-summary: Capitalizing a string involves modifying the string so that its first character
-  is uppercase, while the rest of the string remains unchanged.
+summary: Clojure, being a JVM language, allows you to utilize Java String methods
+  directly.
 title: Capitalizing a string
 weight: 2
 ---

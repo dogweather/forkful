@@ -2,16 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:23.404633-07:00
-description: "T\u1ED5 ch\u1EE9c m\xE3 l\u1EC7nh th\xE0nh c\xE1c h\xE0m ngh\u0129a\
-  \ l\xE0 ph\xE2n chia m\xE3 l\u1EC7nh c\u1EE7a b\u1EA1n th\xE0nh c\xE1c ph\u1EA7\
-  n c\xF3 th\u1EC3 t\xE1i s\u1EED d\u1EE5ng, m\u1ED7i ph\u1EA7n th\u1EF1c hi\u1EC7\
-  n m\u1ED9t c\xF4ng vi\u1EC7c c\u1EE5 th\u1EC3. L\u1EADp tr\xECnh\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: H\xE3y t\u01B0\u1EDFng t\u01B0\u1EE3ng\
+  \ b\u1EA1n mu\u1ED1n nh\u1EA5p nh\xE1y m\u1ED9t \u0111\xE8n LED. Kh\xF4ng c\xF3\
+  \ h\xE0m, `v\xF2ng l\u1EB7p` c\u1EE7a b\u1EA1n s\u1EBD l\xE0 m\u1ED9t \u0111\u1ED1\
+  ng l\u1ED9n x\u1ED9n. V\u1EDBi h\xE0m, n\xF3 g\u1ECDn g\xE0ng. \u0110\xE2y l\xE0\
+  \ c\xE1ch."
 lastmod: '2024-03-13T22:44:36.996066-06:00'
 model: gpt-4-0125-preview
-summary: "T\u1ED5 ch\u1EE9c m\xE3 l\u1EC7nh th\xE0nh c\xE1c h\xE0m ngh\u0129a l\xE0\
-  \ ph\xE2n chia m\xE3 l\u1EC7nh c\u1EE7a b\u1EA1n th\xE0nh c\xE1c ph\u1EA7n c\xF3\
-  \ th\u1EC3 t\xE1i s\u1EED d\u1EE5ng, m\u1ED7i ph\u1EA7n th\u1EF1c hi\u1EC7n m\u1ED9\
-  t c\xF4ng vi\u1EC7c c\u1EE5 th\u1EC3."
+summary: "H\xE3y t\u01B0\u1EDFng t\u01B0\u1EE3ng b\u1EA1n mu\u1ED1n nh\u1EA5p nh\xE1\
+  y m\u1ED9t \u0111\xE8n LED."
 title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
 weight: 18
 ---

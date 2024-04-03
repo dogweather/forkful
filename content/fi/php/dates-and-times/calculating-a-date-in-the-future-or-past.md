@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:31:28.404885-07:00
-description: "Laskemme p\xE4iv\xE4m\xE4\xE4ri\xE4 tulevaisuudessa tai menneisyydess\xE4\
-  \ hallitaksemme aikatauluja ja m\xE4\xE4ritt\xE4ksemme m\xE4\xE4r\xE4aikoja. Ohjelmoijat\
-  \ tekev\xE4t sen\u2026"
+description: "How to - Kuinka tehd\xE4: Php:ss\xE4 k\xE4yt\xE4mme `DateTime`-luokkaa\
+  \ ja `DateInterval`-luokkaa p\xE4iv\xE4m\xE4\xE4rien laskemiseen."
 lastmod: '2024-03-13T22:44:56.669642-06:00'
 model: gpt-4-1106-preview
-summary: "Laskemme p\xE4iv\xE4m\xE4\xE4ri\xE4 tulevaisuudessa tai menneisyydess\xE4\
-  \ hallitaksemme aikatauluja ja m\xE4\xE4ritt\xE4ksemme m\xE4\xE4r\xE4aikoja."
+summary: "Php:ss\xE4 k\xE4yt\xE4mme `DateTime`-luokkaa ja `DateInterval`-luokkaa p\xE4\
+  iv\xE4m\xE4\xE4rien laskemiseen."
 title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---

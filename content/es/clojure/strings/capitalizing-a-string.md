@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:51.124098-07:00
-description: "Capitalizar una cadena implica modificar la cadena para que su primer\
-  \ car\xE1cter est\xE9 en may\xFAsculas, mientras que el resto de la cadena permanece\
-  \ sin\u2026"
+description: "C\xF3mo hacerlo: Clojure, al ser un lenguaje JVM, te permite utilizar\
+  \ directamente los m\xE9todos de String de Java. Aqu\xED tienes un ejemplo b\xE1\
+  sico de c\xF3mo\u2026"
 lastmod: '2024-03-13T22:44:58.639841-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizar una cadena implica modificar la cadena para que su primer car\xE1\
-  cter est\xE9 en may\xFAsculas, mientras que el resto de la cadena permanece sin\
-  \ cambios."
+summary: "Clojure, al ser un lenguaje JVM, te permite utilizar directamente los m\xE9\
+  todos de String de Java."
 title: Capitalizando una cadena de texto
 weight: 2
 ---

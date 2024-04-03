@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 20:34:21.265161-07:00
-description: "Satunnaislukujen generointi liittyy ennustamattomien sekvenssien tai\
-  \ yksitt\xE4isten arvojen tuottamiseen m\xE4\xE4ritellyll\xE4 v\xE4lill\xE4. Ohjelmoijat\
-  \ k\xE4ytt\xE4v\xE4t t\xE4t\xE4\u2026"
+description: "Kuinka: Javassa satunnaislukujen generointi on mahdollista k\xE4ytt\xE4\
+  m\xE4ll\xE4 `java.util`-paketin `Random`-luokkaa tai tiettyihin k\xE4ytt\xF6tarkoituksiin\u2026"
 lastmod: '2024-03-13T22:44:56.440807-06:00'
 model: gpt-4-0125-preview
-summary: "Satunnaislukujen generointi liittyy ennustamattomien sekvenssien tai yksitt\xE4\
-  isten arvojen tuottamiseen m\xE4\xE4ritellyll\xE4 v\xE4lill\xE4."
+summary: "Javassa satunnaislukujen generointi on mahdollista k\xE4ytt\xE4m\xE4ll\xE4\
+  \ `java.util`-paketin `Random`-luokkaa tai tiettyihin k\xE4ytt\xF6tarkoituksiin\
+  \ `ThreadLocalRandom`- ja `SecureRandom`-luokkia."
 title: Satunnaislukujen generointi
 weight: 12
 ---

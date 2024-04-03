@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-27, dogweather, edited and tested
 date: 2024-02-27 22:04:38.367952-07:00
-description: "Generating random numbers in Elm involves using the `Random` module\
-  \ to produce pseudo-random numbers, which come in handy for a variety of tasks such\
-  \ as\u2026"
+description: "How to: Elm's pure functional nature means that you can't generate random\
+  \ numbers directly as you might in imperative languages. Instead, you use the\u2026"
 lastmod: '2024-03-13T22:45:00.005764-06:00'
 model: gpt-4-0125-preview
-summary: Generating random numbers in Elm involves using the `Random` module to produce
-  pseudo-random numbers, which come in handy for a variety of tasks such as games,
-  simulations, and even as part of algorithms that require stochastic processes.
+summary: Elm's pure functional nature means that you can't generate random numbers
+  directly as you might in imperative languages.
 title: Generating random numbers
 weight: 12
 ---

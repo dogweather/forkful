@@ -2,16 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:34.267576-07:00
-description: "M\u1ED9t b\u1EA3ng \u0111i\u1EC1u khi\u1EC3n t\u01B0\u01A1ng t\xE1c,\
-  \ hay REPL (Read-Eval-Print Loop - V\xF2ng L\u1EB7p \u0110\u1ECDc-\u0110\xE1nh Gi\xE1\
-  -In), cho ph\xE9p b\u1EA1n th\u1EED nghi\u1EC7m \u0111o\u1EA1n m\xE3 m\u1ED9t c\xE1\
-  ch th\u1EF1c t\u1EBF. C\xE1c l\u1EADp tr\xECnh\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: \u0110\u1EC3 kh\u1EDFi ch\u1EA1y IEx, m\u1EDF\
+  \ terminal v\xE0 g\xF5 `iex`. D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t v\xED d\u1EE5\
+  ."
 lastmod: '2024-03-13T22:44:36.210579-06:00'
 model: gpt-4-0125-preview
-summary: "M\u1ED9t b\u1EA3ng \u0111i\u1EC1u khi\u1EC3n t\u01B0\u01A1ng t\xE1c, hay\
-  \ REPL (Read-Eval-Print Loop - V\xF2ng L\u1EB7p \u0110\u1ECDc-\u0110\xE1nh Gi\xE1\
-  -In), cho ph\xE9p b\u1EA1n th\u1EED nghi\u1EC7m \u0111o\u1EA1n m\xE3 m\u1ED9t c\xE1\
-  ch th\u1EF1c t\u1EBF."
+summary: "\u0110\u1EC3 kh\u1EDFi ch\u1EA1y IEx, m\u1EDF terminal v\xE0 g\xF5 `iex`."
 title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 weight: 34
 ---

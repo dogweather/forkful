@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:16.428456-07:00
-description: "X\xF3a d\u1EA5u ngo\u1EB7c t\u1EEB m\u1ED9t chu\u1ED7i l\xE0 vi\u1EC7\
-  c lo\u1EA1i b\u1ECF nh\u1EEFng d\u1EA5u ngo\u1EB7c k\xE9p (\" \") ho\u1EB7c d\u1EA5\
-  u ngo\u1EB7c \u0111\u01A1n (' ') kh\xF3 ch\u1ECBu kh\u1ECFi d\u1EEF li\u1EC7u v\u0103\
-  n b\u1EA3n c\u1EE7a b\u1EA1n. L\u1EADp tr\xECnh vi\xEAn th\u01B0\u1EDDng\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Fish c\xF3 ph\xE9p m\xE0u t\xEDch h\u1EE3p cho\
+  \ lo\u1EA1i nhi\u1EC7m v\u1EE5 n\xE0y. S\u1EED d\u1EE5ng h\xE0m `string` m\xE0 kh\xF4\
+  ng c\u1EA7n m\xF2 m\u1EABm. H\xE3y th\u1EED xem nh\u1EEFng ph\xE9p thu\u1EADt n\xE0\
+  y."
 lastmod: '2024-03-13T22:44:37.192236-06:00'
 model: gpt-4-0125-preview
-summary: "X\xF3a d\u1EA5u ngo\u1EB7c t\u1EEB m\u1ED9t chu\u1ED7i l\xE0 vi\u1EC7c lo\u1EA1\
-  i b\u1ECF nh\u1EEFng d\u1EA5u ngo\u1EB7c k\xE9p (\" \") ho\u1EB7c d\u1EA5u ngo\u1EB7\
-  c \u0111\u01A1n (' ') kh\xF3 ch\u1ECBu kh\u1ECFi d\u1EEF li\u1EC7u v\u0103n b\u1EA3\
-  n c\u1EE7a b\u1EA1n."
+summary: "Fish c\xF3 ph\xE9p m\xE0u t\xEDch h\u1EE3p cho lo\u1EA1i nhi\u1EC7m v\u1EE5\
+  \ n\xE0y."
 title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i"
 weight: 9
 ---

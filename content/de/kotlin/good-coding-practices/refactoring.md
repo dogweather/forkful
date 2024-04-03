@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 01:42:45.059682-07:00
-description: "Refactoring ist der Prozess, bestehenden Code zu \xFCberarbeiten, um\
-  \ seine Struktur, Lesbarkeit und Leistung zu verbessern, ohne sein externes Verhalten\
-  \ zu\u2026"
+description: "Wie geht das: Hier ist ein Kotlin-Schnipsel, der einen h\xE4ufigen Code-Geruch\
+  \ und seine \xFCberarbeitete Version zeigt. Wir beginnen mit einem Code-St\xFCck,\
+  \ das\u2026"
 lastmod: '2024-03-13T22:44:53.854626-06:00'
 model: gpt-4-0125-preview
-summary: "Refactoring ist der Prozess, bestehenden Code zu \xFCberarbeiten, um seine\
-  \ Struktur, Lesbarkeit und Leistung zu verbessern, ohne sein externes Verhalten\
-  \ zu ver\xE4ndern."
+summary: "Hier ist ein Kotlin-Schnipsel, der einen h\xE4ufigen Code-Geruch und seine\
+  \ \xFCberarbeitete Version zeigt."
 title: Refactoring
 weight: 19
 ---

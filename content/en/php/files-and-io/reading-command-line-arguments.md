@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:56:36.994318-07:00
-description: "Reading command line arguments in PHP means grabbing inputs passed to\
-  \ your script when it's run in the console. Programmers do it to make their scripts\u2026"
+description: 'How to: PHP uses a global array `$argv` to store command line arguments,
+  with `$argv[0]` being the script name. Here''s how you use it.'
 lastmod: '2024-03-13T22:45:00.181120-06:00'
 model: gpt-4-1106-preview
-summary: Reading command line arguments in PHP means grabbing inputs passed to your
-  script when it's run in the console.
+summary: PHP uses a global array `$argv` to store command line arguments, with `$argv[0]`
+  being the script name.
 title: Reading command line arguments
 weight: 23
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:24:18.978698-07:00
-description: "\xC5 arbeide med TOML inneb\xE6rer parsing og generering av TOML (Toms\
-  \ Obvious, Minimal Language)-data med Lua. Programmerere benytter TOML for\u2026"
+description: "Hvordan: F\xF8rst, s\xF8rg for at Lua-milj\xF8et ditt har en TOML-parser.\
+  \ Vi vil bruke `lua-toml` for dette eksemplet."
 lastmod: '2024-03-13T22:44:40.953910-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 arbeide med TOML inneb\xE6rer parsing og generering av TOML (Toms Obvious,\
-  \ Minimal Language)-data med Lua."
+summary: "F\xF8rst, s\xF8rg for at Lua-milj\xF8et ditt har en TOML-parser."
 title: Jobbe med TOML
 weight: 39
 ---

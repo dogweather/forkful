@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 20:34:48.187481-07:00
-description: "G\xE9n\xE9rer des nombres al\xE9atoires dans PowerShell consiste \xE0\
-  \ cr\xE9er des valeurs num\xE9riques impr\xE9visibles dans une plage sp\xE9cifi\xE9\
-  e. Les programmeurs utilisent\u2026"
+description: "Comment faire : PowerShell offre une approche simple pour g\xE9n\xE9\
+  rer des nombres al\xE9atoires \xE0 l'aide de l'applet de commande `Get-Random`.\
+  \ Cette applet de\u2026"
 lastmod: '2024-03-13T22:44:58.039659-06:00'
 model: gpt-4-0125-preview
-summary: "G\xE9n\xE9rer des nombres al\xE9atoires dans PowerShell consiste \xE0 cr\xE9\
-  er des valeurs num\xE9riques impr\xE9visibles dans une plage sp\xE9cifi\xE9e."
+summary: "PowerShell offre une approche simple pour g\xE9n\xE9rer des nombres al\xE9\
+  atoires \xE0 l'aide de l'applet de commande `Get-Random`."
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:53.687805-07:00
-description: "Sprawdzanie, czy katalog istnieje, polega na okre\u015Bleniu obecno\u015B\
-  ci katalogu pod okre\u015Blon\u0105 \u015Bcie\u017Ck\u0105 przed wykonaniem operacji\
-  \ takich jak czytanie z plik\xF3w\u2026"
+description: "Jak to zrobi\u0107: W nowoczesnym C++ (C++17 i nowsze) mo\u017Cna u\u017C\
+  y\u0107 biblioteki filesystem do sprawdzenia, czy katalog istnieje. Zapewnia ona\
+  \ prosty i\u2026"
 lastmod: '2024-03-13T22:44:35.727214-06:00'
 model: gpt-4-0125-preview
-summary: "Sprawdzanie, czy katalog istnieje, polega na okre\u015Bleniu obecno\u015B\
-  ci katalogu pod okre\u015Blon\u0105 \u015Bcie\u017Ck\u0105 przed wykonaniem operacji\
-  \ takich jak czytanie z plik\xF3w lub zapisywanie do nich."
+summary: "W nowoczesnym C++ (C++17 i nowsze) mo\u017Cna u\u017Cy\u0107 biblioteki\
+  \ filesystem do sprawdzenia, czy katalog istnieje."
 title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---

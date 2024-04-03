@@ -2,16 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:07:31.107309-07:00
-description: "Vi\u1EC7c l\xE0m vi\u1EC7c v\u1EDBi XML trong Visual Basic for Applications\
-  \ (VBA) bao g\u1ED3m vi\u1EC7c ph\xE2n t\xEDch c\xFA ph\xE1p, t\u1EA1o v\xE0 s\u1EED\
-  a \u0111\u1ED5i c\xE1c t\xE0i li\u1EC7u XML trong b\u1ED1i c\u1EA3nh c\u1EE7a c\xE1\
-  c \u1EE9ng\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EC3 b\u1EAFt \u0111\u1EA7u t\u01B0\u01A1\
+  ng t\xE1c v\u1EDBi XML, ng\u01B0\u1EDDi ta th\u01B0\u1EDDng s\u1EED d\u1EE5ng \u0111\
+  \u1ED1i t\u01B0\u1EE3ng `MSXML2.DOMDocument`. Giao di\u1EC7n n\xE0y cho ph\xE9p\
+  \ b\u1EA1n t\u1EA3i, ph\xE2n t\xEDch c\xFA ph\xE1p v\xE0\u2026"
 lastmod: '2024-03-13T22:44:36.465420-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c l\xE0m vi\u1EC7c v\u1EDBi XML trong Visual Basic for Applications\
-  \ (VBA) bao g\u1ED3m vi\u1EC7c ph\xE2n t\xEDch c\xFA ph\xE1p, t\u1EA1o v\xE0 s\u1EED\
-  a \u0111\u1ED5i c\xE1c t\xE0i li\u1EC7u XML trong b\u1ED1i c\u1EA3nh c\u1EE7a c\xE1\
-  c \u1EE9ng d\u1EE5ng Microsoft Office."
+summary: "\u0110\u1EC3 b\u1EAFt \u0111\u1EA7u t\u01B0\u01A1ng t\xE1c v\u1EDBi XML,\
+  \ ng\u01B0\u1EDDi ta th\u01B0\u1EDDng s\u1EED d\u1EE5ng \u0111\u1ED1i t\u01B0\u1EE3\
+  ng `MSXML2.DOMDocument`."
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---

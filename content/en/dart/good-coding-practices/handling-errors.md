@@ -1,11 +1,11 @@
 ---
 date: 2024-03-08 21:33:51.623284-07:00
-description: "Handling errors in Dart is about anticipating and managing exceptions\
-  \ that arise during program execution to enhance reliability and usability.\u2026"
+description: "How to: Dart supports two types of errors: *compile-time* errors and\
+  \ *run-time* errors. Compile-time errors are detected by the Dart analyzer before\
+  \ the\u2026"
 lastmod: '2024-03-13T22:44:59.827352-06:00'
 model: gpt-4-0125-preview
-summary: Handling errors in Dart is about anticipating and managing exceptions that
-  arise during program execution to enhance reliability and usability.
+summary: Dart supports two types of errors.
 title: Handling errors
 weight: 16
 ---

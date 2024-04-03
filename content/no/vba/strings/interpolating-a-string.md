@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:28.728130-07:00
-description: "Strenginterpolering i Visual Basic for Applications (VBA) refererer\
-  \ til prosessen med \xE5 inneby variabler eller uttrykk innenfor en strengliteral,\
-  \ noe som\u2026"
+description: "Hvordan: I motsetning til noen spr\xE5k som har innebygd strenginterpolering,\
+  \ krever VBA en mer manuell tiln\xE6rming som typisk bruker `&`-operatoren eller\u2026"
 lastmod: '2024-03-13T22:44:40.602802-06:00'
 model: gpt-4-0125-preview
-summary: "Strenginterpolering i Visual Basic for Applications (VBA) refererer til\
-  \ prosessen med \xE5 inneby variabler eller uttrykk innenfor en strengliteral, noe\
-  \ som gj\xF8r det mulig \xE5 danne dynamiske strenger."
+summary: "I motsetning til noen spr\xE5k som har innebygd strenginterpolering, krever\
+  \ VBA en mer manuell tiln\xE6rming som typisk bruker `&`-operatoren eller `Format`-funksjonen\
+  \ for \xE5 bygge inn variabler i strenger."
 title: Interpolering av en streng
 weight: 8
 ---

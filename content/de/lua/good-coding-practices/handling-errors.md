@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 00:54:59.577326-07:00
-description: "Fehlerbehandlung in der Programmierung bedeutet, mit dem Unerwarteten\
-  \ zu rechnen. Es ist die Kunst, f\xFCr den Fall zu planen, dass Dinge schiefgehen,\
-  \ damit\u2026"
+description: "Wie geht das: Lua verwendet zwei Hauptfunktionen f\xFCr die Fehlerbehandlung:\
+  \ `pcall` und `xpcall`. So setzt man sie ein."
 lastmod: '2024-03-13T22:44:54.022567-06:00'
 model: gpt-4-1106-preview
-summary: Fehlerbehandlung in der Programmierung bedeutet, mit dem Unerwarteten zu
-  rechnen.
+summary: "Lua verwendet zwei Hauptfunktionen f\xFCr die Fehlerbehandlung."
 title: Fehlerbehandlung
 weight: 16
 ---

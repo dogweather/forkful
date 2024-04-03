@@ -2,16 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:18.485189-07:00
-description: "T\xE1i c\u1EA5u tr\xFAc m\xE3 essentially l\xE0 vi\u1EC7c d\u1ECDn d\u1EB9\
-  p m\xE3 ngu\u1ED3n nh\u01B0 l\xE0m s\u1EA1ch m\xF9a xu\xE2n - n\xF3 l\xE0 v\u1EC1\
-  \ vi\u1EC7c c\u1EA5u tr\xFAc l\u1EA1i m\xE3 hi\u1EC7n c\xF3 m\xE0 kh\xF4ng thay\
-  \ \u0111\u1ED5i h\xE0nh vi b\xEAn ngo\xE0i c\u1EE7a\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Gi\u1EA3 s\u1EED b\u1EA1n c\xF3 m\u1ED9t h\xE0\
+  m Elm \u0111ang l\xE0m qu\xE1 nhi\u1EC1u th\u1EE9, nh\u01B0 l\xE0 m\u1ED7i l\u1EAB\
+  n logic UI v\u1EDBi c\u1EADp nh\u1EADt tr\u1EA1ng th\xE1i. \u0110\xF3 l\xE0 \u1EE9\
+  ng c\u1EED vi\xEAn ho\xE0n h\u1EA3o cho vi\u1EC7c t\xE1i\u2026"
 lastmod: '2024-03-13T22:44:36.555862-06:00'
 model: gpt-4-0125-preview
-summary: "T\xE1i c\u1EA5u tr\xFAc m\xE3 essentially l\xE0 vi\u1EC7c d\u1ECDn d\u1EB9\
-  p m\xE3 ngu\u1ED3n nh\u01B0 l\xE0m s\u1EA1ch m\xF9a xu\xE2n - n\xF3 l\xE0 v\u1EC1\
-  \ vi\u1EC7c c\u1EA5u tr\xFAc l\u1EA1i m\xE3 hi\u1EC7n c\xF3 m\xE0 kh\xF4ng thay\
-  \ \u0111\u1ED5i h\xE0nh vi b\xEAn ngo\xE0i c\u1EE7a n\xF3."
+summary: "Gi\u1EA3 s\u1EED b\u1EA1n c\xF3 m\u1ED9t h\xE0m Elm \u0111ang l\xE0m qu\xE1\
+  \ nhi\u1EC1u th\u1EE9, nh\u01B0 l\xE0 m\u1ED7i l\u1EABn logic UI v\u1EDBi c\u1EAD\
+  p nh\u1EADt tr\u1EA1ng th\xE1i."
 title: "T\xE1i c\u1EA5u tr\xFAc m\xE3"
 weight: 19
 ---

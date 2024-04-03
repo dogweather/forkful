@@ -1,13 +1,11 @@
 ---
 date: 2024-01-20 17:52:30.326612-07:00
-description: "Att skriva ut debug-information i Elixir hj\xE4lper utvecklare att f\xF6\
-  rst\xE5 vad deras kod g\xF6r i realtid och varf\xF6r den beter sig p\xE5 ett visst\
-  \ s\xE4tt. Det \xE4r en\u2026"
+description: "Hur g\xF6r man: Elixir ger oss `IO.inspect/2` f\xF6r att enkelt printa\
+  \ ut variabler och se deras v\xE4rde."
 lastmod: '2024-03-13T22:44:37.569685-06:00'
 model: gpt-4-1106-preview
-summary: "Att skriva ut debug-information i Elixir hj\xE4lper utvecklare att f\xF6\
-  rst\xE5 vad deras kod g\xF6r i realtid och varf\xF6r den beter sig p\xE5 ett visst\
-  \ s\xE4tt."
+summary: "Elixir ger oss `IO.inspect/2` f\xF6r att enkelt printa ut variabler och\
+  \ se deras v\xE4rde."
 title: "Skriva ut fels\xF6kningsdata"
 weight: 33
 ---

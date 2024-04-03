@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:59:33.250170-07:00
-description: "\"Wysy\u0142anie \u017C\u0105dania HTTP to proces komunikowania si\u0119\
-  \ z serwerem w celu pobrania lub wys\u0142ania danych. Programi\u015Bci robi\u0105\
-  \ to, aby wymienia\u0107 dane z aplikacjami\u2026"
+description: "How to: W Clojure wysy\u0142anie \u017C\u0105dania HTTP jest \u0142\
+  atwe. U\u017Cyjemy popularnej biblioteki `clj-http`. Zainstaluj j\u0105, dodaj\u0105\
+  c do twojego `project.clj`."
 lastmod: '2024-03-13T22:44:34.991405-06:00'
 model: gpt-4-1106-preview
-summary: "\"Wysy\u0142anie \u017C\u0105dania HTTP to proces komunikowania si\u0119\
-  \ z serwerem w celu pobrania lub wys\u0142ania danych."
+summary: "W Clojure wysy\u0142anie \u017C\u0105dania HTTP jest \u0142atwe."
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---

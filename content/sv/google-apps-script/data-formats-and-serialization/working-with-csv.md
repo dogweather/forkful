@@ -2,14 +2,10 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:23.713105-07:00
-description: "Att arbeta med CSV-filer (Comma-Separated Values) i Google Apps Script\
-  \ inneb\xE4r att l\xE4sa, modifiera och skriva textfiler d\xE4r varje rad representerar\
-  \ en\u2026"
+description: "Hur man g\xF6r: #."
 lastmod: '2024-03-13T22:44:37.463272-06:00'
 model: gpt-4-0125-preview
-summary: "Att arbeta med CSV-filer (Comma-Separated Values) i Google Apps Script inneb\xE4\
-  r att l\xE4sa, modifiera och skriva textfiler d\xE4r varje rad representerar en\
-  \ datapost med v\xE4rden separerade av komman."
+summary: '#.'
 title: Att Arbeta med CSV
 weight: 37
 ---

@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:08.002051-07:00
-description: "Schrijven naar standaardfout (stderr) betekent het versturen van je\
-  \ foutmeldingen, gescheiden van de normale uitvoer (stdout). Programmeurs doen dit\
-  \ om\u2026"
+description: 'Hoe te: In C#, schrijf naar stderr met behulp van `Console.Error.WriteLine()`.
+  Het lijkt op `Console.WriteLine()`, alleen gericht op de foutstroom.'
 lastmod: '2024-03-13T22:44:50.826434-06:00'
 model: gpt-4-0125-preview
-summary: Schrijven naar standaardfout (stderr) betekent het versturen van je foutmeldingen,
-  gescheiden van de normale uitvoer (stdout).
+summary: In C#, schrijf naar stderr met behulp van `Console.Error.WriteLine()`.
 title: Schrijven naar standaardfout
 weight: 25
 ---

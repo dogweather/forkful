@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:13.673514-07:00
-description: "TOML, que significa Tom's Obvious, Minimal Language (Linguagem M\xED\
-  nima e \xD3bvia do Tom), \xE9 um formato de arquivo de configura\xE7\xE3o f\xE1\
-  cil de ler devido \xE0 sua\u2026"
+description: "Como fazer: Visto que o Google Apps Script \xE9 essencialmente JavaScript\
+  \ com acesso ao pacote de aplicativos do Google, trabalhar com TOML diretamente\u2026"
 lastmod: '2024-03-13T22:44:46.134673-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, que significa Tom's Obvious, Minimal Language (Linguagem M\xEDnima\
-  \ e \xD3bvia do Tom), \xE9 um formato de arquivo de configura\xE7\xE3o f\xE1cil\
-  \ de ler devido \xE0 sua sem\xE2ntica clara."
+summary: "Visto que o Google Apps Script \xE9 essencialmente JavaScript com acesso\
+  \ ao pacote de aplicativos do Google, trabalhar com TOML diretamente dentro do Google\
+  \ Apps Script requer um pouco de engenhosidade."
 title: Trabalhando com TOML
 weight: 39
 ---

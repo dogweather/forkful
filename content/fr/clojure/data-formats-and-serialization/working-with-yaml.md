@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:52.401814-07:00
-description: "YAML, un acronyme r\xE9cursif pour \"YAML Ain't Markup Language\" (YAML\
-  \ n'est pas un langage de balisage), est un format de s\xE9rialisation de donn\xE9\
-  es lisible\u2026"
+description: "Comment faire : Clojure n'inclut pas de support int\xE9gr\xE9 pour YAML,\
+  \ mais vous pouvez utiliser des biblioth\xE8ques tierces comme `clj-yaml` pour analyser\
+  \ et\u2026"
 lastmod: '2024-03-13T22:44:57.303454-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, un acronyme r\xE9cursif pour \"YAML Ain't Markup Language\" (YAML\
-  \ n'est pas un langage de balisage), est un format de s\xE9rialisation de donn\xE9\
-  es lisible par l'homme utilis\xE9 pour les fichiers de configuration et l'\xE9change\
-  \ de donn\xE9es entre les langues ayant diff\xE9rentes structures de donn\xE9es."
+summary: "Clojure n'inclut pas de support int\xE9gr\xE9 pour YAML, mais vous pouvez\
+  \ utiliser des biblioth\xE8ques tierces comme `clj-yaml` pour analyser et g\xE9\
+  n\xE9rer des donn\xE9es YAML."
 title: Travailler avec YAML
 weight: 41
 ---

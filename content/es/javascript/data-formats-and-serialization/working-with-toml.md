@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:23:17.077850-07:00
-description: "TOML, abreviatura de Tom's Obvious, Minimal Language, define c\xF3mo\
-  \ estructurar archivos de configuraci\xF3n. Los programadores trabajan con TOML\
-  \ porque es\u2026"
+description: "C\xF3mo hacerlo: Para trabajar con TOML en JavaScript, necesitar\xE1\
+  s un analizador como `@iarna/toml`. Primero, inst\xE1lalo: `npm install @iarna/toml`.\
+  \ Luego,\u2026"
 lastmod: '2024-03-13T22:44:59.481778-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, abreviatura de Tom's Obvious, Minimal Language, define c\xF3mo estructurar\
-  \ archivos de configuraci\xF3n."
+summary: "Para trabajar con TOML en JavaScript, necesitar\xE1s un analizador como\
+  \ `@iarna/toml`."
 title: Trabajando con TOML
 weight: 39
 ---

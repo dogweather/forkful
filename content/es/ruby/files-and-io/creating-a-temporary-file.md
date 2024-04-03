@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:41:10.282374-07:00
-description: "Crear un archivo temporal es como abrir un cuaderno para apuntes r\xE1\
-  pidos que sabes que no necesitar\xE1s despu\xE9s. Los programadores lo hacen para\
-  \ guardar\u2026"
+description: "C\xF3mo: R\xE1pido y f\xE1cil, as\xED es como Ruby maneja archivos temporales.\
+  \ El m\xF3dulo `Tempfile` de la biblioteca est\xE1ndar es lo que necesitas. Aqu\xED\
+  \ un ejemplo."
 lastmod: '2024-03-13T22:44:59.610137-06:00'
 model: gpt-4-1106-preview
-summary: "Crear un archivo temporal es como abrir un cuaderno para apuntes r\xE1pidos\
-  \ que sabes que no necesitar\xE1s despu\xE9s."
+summary: "R\xE1pido y f\xE1cil, as\xED es como Ruby maneja archivos temporales."
 title: Creando un archivo temporal
 weight: 21
 ---

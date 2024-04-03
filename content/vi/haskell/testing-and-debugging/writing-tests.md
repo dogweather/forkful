@@ -2,14 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:26.876517-07:00
-description: "Vi\u1EBFt test ki\u1EC3m tra xem code c\xF3 th\u1EF1c hi\u1EC7n \u0111\
-  \xFAng c\xF4ng vi\u1EC7c m\xE0 n\xF3 c\u1EA7n l\xE0m hay kh\xF4ng. Testing gi\xFA\
-  p b\u1EAFt l\u1ED7i, h\u1ED7 tr\u1EE3 b\u1EA3o tr\xEC code, v\xE0 \u0111\u1EA3m\
-  \ b\u1EA3o c\xE1c thay \u0111\u1ED5i kh\xF4ng\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Haskell s\u1EED d\u1EE5ng HUnit cho c\xE1\
+  c unit test c\u01A1 b\u1EA3n, v\xE0 QuickCheck cho c\xE1c property-based test. D\u01B0\
+  \u1EDBi \u0111\xE2y l\xE0 m\u1ED9t v\xED d\u1EE5 nhanh v\u1EC1 HUnit."
 lastmod: '2024-03-13T22:44:36.716655-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EBFt test ki\u1EC3m tra xem code c\xF3 th\u1EF1c hi\u1EC7n \u0111\xFA\
-  ng c\xF4ng vi\u1EC7c m\xE0 n\xF3 c\u1EA7n l\xE0m hay kh\xF4ng."
+summary: "Haskell s\u1EED d\u1EE5ng HUnit cho c\xE1c unit test c\u01A1 b\u1EA3n, v\xE0\
+  \ QuickCheck cho c\xE1c property-based test."
 title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
 weight: 36
 ---

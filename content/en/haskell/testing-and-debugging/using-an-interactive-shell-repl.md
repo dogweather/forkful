@@ -1,11 +1,11 @@
 ---
 date: 2024-01-25 03:39:41.583758-07:00
-description: "An interactive shell, or REPL (Read-Eval-Print Loop), in Haskell lets\
-  \ you run code snippets live. It's a playground for quick feedback, testing functions,\u2026"
+description: 'How to: To start the GHCi (Glasgow Haskell Compiler''s interactive environment),
+  simply type `ghci` in your terminal. Here''s how to use it.'
 lastmod: '2024-03-13T22:45:00.130048-06:00'
 model: gpt-4-1106-preview
-summary: An interactive shell, or REPL (Read-Eval-Print Loop), in Haskell lets you
-  run code snippets live.
+summary: To start the GHCi (Glasgow Haskell Compiler's interactive environment), simply
+  type `ghci` in your terminal.
 title: Using an interactive shell (REPL)
 weight: 34
 ---

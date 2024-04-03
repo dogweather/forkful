@@ -1,7 +1,7 @@
 ---
 date: 2024-01-26 03:48:47.155825-07:00
-description: "Elm no tiene un depurador integrado en el sentido tradicional que, digamos,\
-  \ JavaScript tiene con las herramientas de desarrollo del navegador. Sin\u2026"
+description: "C\xF3mo hacerlo: Elm no tiene un depurador integrado en el sentido tradicional\
+  \ que, digamos, JavaScript tiene con las herramientas de desarrollo del\u2026"
 lastmod: '2024-03-13T22:44:58.997386-06:00'
 model: gpt-4-0125-preview
 summary: Elm no tiene un depurador integrado en el sentido tradicional que, digamos,

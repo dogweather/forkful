@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:44.202805-07:00
-description: "Att avrunda tal i programmering handlar om att approximera ett tal till\
-  \ dess n\xE4rmaste heltal eller till ett visst antal decimalplatser. Programmerare\u2026"
+description: "Hur man g\xF6r: I Visual Basic for Applications (VBA) kan avrundning\
+  \ uppn\xE5s med hj\xE4lp av flera funktioner, var och en l\xE4mpad f\xF6r specifika\
+  \ scenarier. H\xE4r \xE4r\u2026"
 lastmod: '2024-03-13T22:44:37.737399-06:00'
 model: gpt-4-0125-preview
-summary: "Att avrunda tal i programmering handlar om att approximera ett tal till\
-  \ dess n\xE4rmaste heltal eller till ett visst antal decimalplatser."
+summary: "I Visual Basic for Applications (VBA) kan avrundning uppn\xE5s med hj\xE4\
+  lp av flera funktioner, var och en l\xE4mpad f\xF6r specifika scenarier."
 title: Avrundning av nummer
 weight: 13
 ---

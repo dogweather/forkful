@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:02.752073-07:00
-description: "JSON (JavaScript Object Notation) \xE4r ett l\xE4ttviktigt datautbytesformat,\
-  \ som \xE4r utbrett i webbapplikationer f\xF6r datav\xE4xling mellan klienter och\
-  \ servrar.\u2026"
+description: "Hur: Ruby, med sitt standardbibliotek, erbjuder s\xF6ml\xF6sa s\xE4\
+  tt att tolka och generera JSON. Den prim\xE4ra modulen f\xF6r dessa operationer\
+  \ \xE4r `json`, som enkelt\u2026"
 lastmod: '2024-03-13T22:44:38.453231-06:00'
 model: gpt-4-0125-preview
-summary: "JSON (JavaScript Object Notation) \xE4r ett l\xE4ttviktigt datautbytesformat,\
-  \ som \xE4r utbrett i webbapplikationer f\xF6r datav\xE4xling mellan klienter och\
-  \ servrar."
+summary: "Ruby, med sitt standardbibliotek, erbjuder s\xF6ml\xF6sa s\xE4tt att tolka\
+  \ och generera JSON."
 title: Arbeta med JSON
 weight: 38
 ---

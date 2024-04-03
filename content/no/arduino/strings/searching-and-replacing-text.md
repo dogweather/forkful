@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:56:57.507359-07:00
-description: "Teksts\xF8k og -erstattning lar deg finne spesifikke ord eller fraser\
-  \ og endre dem til noe annet. Programmerere bruker dette for \xE5 oppdatere kode,\
-  \ korrigere\u2026"
+description: 'Hvordan: .'
 lastmod: '2024-03-13T22:44:41.044150-06:00'
 model: gpt-4-1106-preview
-summary: "Teksts\xF8k og -erstattning lar deg finne spesifikke ord eller fraser og\
-  \ endre dem til noe annet."
+summary: .
 title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---

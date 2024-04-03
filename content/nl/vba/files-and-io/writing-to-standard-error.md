@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:09:14.305314-07:00
-description: "Schrijven naar standaardfout in Visual Basic for Applications (VBA)\
-  \ houdt in dat foutmeldingen of diagnostische berichten worden omgeleid, apart van\
-  \ de\u2026"
+description: "Hoe te: In VBA, aangezien er geen directe ingebouwde functie bestaat\
+  \ om specifiek naar standaardfout te schrijven zoals in sommige andere\u2026"
 lastmod: '2024-03-13T22:44:50.653771-06:00'
 model: gpt-4-0125-preview
-summary: Schrijven naar standaardfout in Visual Basic for Applications (VBA) houdt
-  in dat foutmeldingen of diagnostische berichten worden omgeleid, apart van de standaarduitvoer,
-  gewoonlijk naar de console of een logbestand.
+summary: "In VBA, aangezien er geen directe ingebouwde functie bestaat om specifiek\
+  \ naar standaardfout te schrijven zoals in sommige andere programmeertalen, is een\
+  \ veelgebruikte workaround het gebruik van `Debug.Print` voor ontwikkelingsfoutuitvoer\
+  \ of het cre\xEBren van een aangepaste logfunctie die dit gedrag nabootst voor productietoepassingen."
 title: Schrijven naar standaardfout
 weight: 25
 ---

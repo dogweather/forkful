@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:30:04.395462-07:00
-description: "Arbeiten mit XML bedeutet das Parsen, Transformieren und Generieren\
-  \ von XML-Dokumenten in Elm. Es wird durchgef\xFChrt, um mit vielen Webdiensten\
-  \ und \xE4lteren\u2026"
+description: 'Wie geht das: In Elm arbeitet man mit XML mithilfe des `elm/xml` Pakets.
+  Hier ist ein kurzer Einblick in das Parsen eines XML-Snippets.'
 lastmod: '2024-03-13T22:44:53.829777-06:00'
 model: gpt-4-0125-preview
-summary: Arbeiten mit XML bedeutet das Parsen, Transformieren und Generieren von XML-Dokumenten
-  in Elm.
+summary: In Elm arbeitet man mit XML mithilfe des `elm/xml` Pakets.
 title: Arbeiten mit XML
 weight: 40
 ---

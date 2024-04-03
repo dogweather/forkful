@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:28.785297-07:00
-description: "Verificar se um diret\xF3rio existe no Visual Basic for Applications\
-  \ (VBA) trata de confirmar a presen\xE7a de uma pasta dentro do sistema de arquivos\
-  \ antes de\u2026"
+description: "Como fazer: No VBA, para verificar se um diret\xF3rio existe, normalmente\
+  \ utiliza-se a fun\xE7\xE3o `Dir` combinada com o atributo `vbDirectory`. Essa abordagem\u2026"
 lastmod: '2024-03-13T22:44:46.427982-06:00'
 model: gpt-4-0125-preview
-summary: "Verificar se um diret\xF3rio existe no Visual Basic for Applications (VBA)\
-  \ trata de confirmar a presen\xE7a de uma pasta dentro do sistema de arquivos antes\
-  \ de realizar opera\xE7\xF5es como salvar arquivos ou criar novos diret\xF3rios."
+summary: "No VBA, para verificar se um diret\xF3rio existe, normalmente utiliza-se\
+  \ a fun\xE7\xE3o `Dir` combinada com o atributo `vbDirectory`."
 title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---

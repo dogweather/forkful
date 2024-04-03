@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:55.325983-07:00
-description: "YAML:n k\xE4sittely Go:ssa k\xE4sitt\xE4\xE4 YAML (YAML Ain't Markup\
-  \ Language) -tiedostojen j\xE4sent\xE4misen Go:n tietorakenteisiin ja p\xE4invastoin.\
-  \ Ohjelmoijat tekev\xE4t\u2026"
+description: "Miten: Gon kanssa YAML:n k\xE4sittelyyn tarvitset ensin kirjaston, joka\
+  \ tukee YAML:n j\xE4sent\xE4mist\xE4 ja serialisointia, koska Gon vakio kirjasto\
+  \ ei sis\xE4ll\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.072394-06:00'
 model: gpt-4-0125-preview
-summary: "YAML:n k\xE4sittely Go:ssa k\xE4sitt\xE4\xE4 YAML (YAML Ain't Markup Language)\
-  \ -tiedostojen j\xE4sent\xE4misen Go:n tietorakenteisiin ja p\xE4invastoin."
+summary: "Gon kanssa YAML:n k\xE4sittelyyn tarvitset ensin kirjaston, joka tukee YAML:n\
+  \ j\xE4sent\xE4mist\xE4 ja serialisointia, koska Gon vakio kirjasto ei sis\xE4ll\xE4\
+  \ suoraa tukea YAML:lle."
 title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---

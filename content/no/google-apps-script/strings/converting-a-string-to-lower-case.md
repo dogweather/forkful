@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:20.203639-07:00
-description: "\xC5 konvertere en streng til sm\xE5 bokstaver i Google Apps Script,\
-  \ et skybasert skriptspr\xE5k for automatisering av oppgaver p\xE5 tvers av Googles\
-  \ produkter, er\u2026"
+description: "Hvordan: \xC5 konvertere en streng til sm\xE5 bokstaver i Google Apps\
+  \ Script er enkelt, takket v\xE6re de innebygde JavaScript-metodene som er tilgjengelige\u2026"
 lastmod: '2024-03-13T22:44:40.299883-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 konvertere en streng til sm\xE5 bokstaver i Google Apps Script, et\
-  \ skybasert skriptspr\xE5k for automatisering av oppgaver p\xE5 tvers av Googles\
-  \ produkter, er en grunnleggende oppgave rettet mot \xE5 standardisere tekstdata."
+summary: "\xC5 konvertere en streng til sm\xE5 bokstaver i Google Apps Script er enkelt,\
+  \ takket v\xE6re de innebygde JavaScript-metodene som er tilgjengelige innenfor\
+  \ skriptmilj\xF8et."
 title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---

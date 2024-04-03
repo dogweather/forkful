@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:11:12.895833-07:00
-description: "Organiser le code en fonctions consiste \xE0 d\xE9composer votre code\
-  \ en blocs r\xE9utilisables ayant des objectifs d\xE9finis. Nous le faisons pour\
-  \ maintenir une\u2026"
+description: "Comment faire : Imaginez que nous ayons du code r\xE9p\xE9titif pour\
+  \ saluer les utilisateurs. \xC0 la place, nous allons l'encapsuler dans une fonction\
+  \ comme\u2026"
 lastmod: '2024-03-13T22:44:57.884560-06:00'
 model: gpt-4-1106-preview
-summary: "Organiser le code en fonctions consiste \xE0 d\xE9composer votre code en\
-  \ blocs r\xE9utilisables ayant des objectifs d\xE9finis."
+summary: "Imaginez que nous ayons du code r\xE9p\xE9titif pour saluer les utilisateurs."
 title: Organisation du code en fonctions
 weight: 18
 ---

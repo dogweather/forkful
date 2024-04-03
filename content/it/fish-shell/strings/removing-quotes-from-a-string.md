@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 03:38:44.253380-07:00
-description: "Rimuovere le virgolette da una stringa significa togliere quei fastidiosi\
-  \ segni di virgoletta singola (' ') o doppia (\" \") dai tuoi dati di testo. I\u2026"
+description: "Come fare: Fish ha delle funzionalit\xE0 integrate magiche per questo\
+  \ tipo di compito. Usa la funzione `string` senza sudare. Dai un'occhiata a questi\u2026"
 lastmod: '2024-03-13T22:44:43.843944-06:00'
 model: gpt-4-0125-preview
-summary: Rimuovere le virgolette da una stringa significa togliere quei fastidiosi
-  segni di virgoletta singola (' ') o doppia (" ") dai tuoi dati di testo.
+summary: "Fish ha delle funzionalit\xE0 integrate magiche per questo tipo di compito."
 title: Rimuovere le virgolette da una stringa
 weight: 9
 ---

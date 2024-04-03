@@ -1,8 +1,7 @@
 ---
 date: 2024-01-20 17:43:04.202690-07:00
-description: "Zeichen, die einem Muster entsprechen, zu l\xF6schen, bedeutet, aus\
-  \ einem Text gezielt bestimmte Elemente zu entfernen. Programmierer nutzen diese\
-  \ Operation,\u2026"
+description: "Was & Warum? Zeichen, die einem Muster entsprechen, zu l\xF6schen, bedeutet,\
+  \ aus einem Text gezielt bestimmte Elemente zu entfernen. Programmierer nutzen\u2026"
 lastmod: '2024-03-13T22:44:53.657013-06:00'
 model: gpt-4-1106-preview
 summary: "Zeichen, die einem Muster entsprechen, zu l\xF6schen, bedeutet, aus einem\

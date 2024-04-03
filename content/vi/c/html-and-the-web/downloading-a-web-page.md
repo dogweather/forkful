@@ -2,16 +2,16 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:23.794694-07:00
-description: "T\u1EA3i m\u1ED9t trang web b\u1EB1ng C bao g\u1ED3m vi\u1EC7c truy\
-  \ c\u1EADp tr\u1EF1c ti\u1EBFp v\xE0o n\u1ED9i dung c\u1EE7a m\u1ED9t trang web\
-  \ tr\xEAn internet v\xE0 l\u01B0u n\xF3 t\u1EA1i m\xE1y c\u1EE5c b\u1ED9 \u0111\u1EC3\
-  \ x\u1EED l\xFD ho\u1EB7c s\u1EED d\u1EE5ng ngo\u1EA1i\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: \u0110\u1EC3 t\u1EA3i m\u1ED9t trang web\
+  \ trong C, m\u1ED9t ph\u01B0\u01A1ng ph\xE1p ph\u1ED5 bi\u1EBFn l\xE0 s\u1EED d\u1EE5\
+  ng th\u01B0 vi\u1EC7n libcurl, m\u1ED9t th\u01B0 vi\u1EC7n chuy\u1EC3n giao URL\
+  \ b\xEAn client hi\u1EC7u qu\u1EA3 v\xE0 c\xF3\u2026"
 lastmod: '2024-03-13T22:44:37.266071-06:00'
 model: gpt-4-0125-preview
-summary: "T\u1EA3i m\u1ED9t trang web b\u1EB1ng C bao g\u1ED3m vi\u1EC7c truy c\u1EAD\
-  p tr\u1EF1c ti\u1EBFp v\xE0o n\u1ED9i dung c\u1EE7a m\u1ED9t trang web tr\xEAn internet\
-  \ v\xE0 l\u01B0u n\xF3 t\u1EA1i m\xE1y c\u1EE5c b\u1ED9 \u0111\u1EC3 x\u1EED l\xFD\
-  \ ho\u1EB7c s\u1EED d\u1EE5ng ngo\u1EA1i tuy\u1EBFn."
+summary: "\u0110\u1EC3 t\u1EA3i m\u1ED9t trang web trong C, m\u1ED9t ph\u01B0\u01A1\
+  ng ph\xE1p ph\u1ED5 bi\u1EBFn l\xE0 s\u1EED d\u1EE5ng th\u01B0 vi\u1EC7n libcurl,\
+  \ m\u1ED9t th\u01B0 vi\u1EC7n chuy\u1EC3n giao URL b\xEAn client hi\u1EC7u qu\u1EA3\
+  \ v\xE0 c\xF3 th\u1EC3 chuy\u1EC3n \u0111\u1ED5i."
 title: "T\u1EA3i trang web v\u1EC1"
 weight: 42
 ---

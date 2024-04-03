@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:36:36.523744-07:00
-description: "Muuntaminen p\xE4iv\xE4m\xE4\xE4r\xE4st\xE4 merkkijonoksi tarkoittaa\
-  \ p\xE4iv\xE4m\xE4\xE4r\xE4-datan esitt\xE4mist\xE4 luettavassa muodossa. Kehitt\xE4\
-  j\xE4t tekev\xE4t t\xE4t\xE4, koska ihmiset ymm\xE4rt\xE4v\xE4t\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:56.238699-06:00'
 model: gpt-4-1106-preview
-summary: "Muuntaminen p\xE4iv\xE4m\xE4\xE4r\xE4st\xE4 merkkijonoksi tarkoittaa p\xE4\
-  iv\xE4m\xE4\xE4r\xE4-datan esitt\xE4mist\xE4 luettavassa muodossa."
+summary: .
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---

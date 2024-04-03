@@ -2,16 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:21.447320-07:00
-description: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh l\xE0 vi\u1EC7\
-  c l\u1EA5y nh\u1EEFng ph\u1EA7n th\xEAm b\u1EA1n g\xF5 sau t\xEAn c\u1EE7a script,\
-  \ gi\u1ED1ng nh\u01B0 nh\u1EEFng c\xE1i b\u1EAFt tay b\xED m\u1EADt \u0111\u1EC3\
-  \ t\xF9y ch\u1EC9nh h\xE0nh vi c\u1EE7a script. L\u1EADp\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Gi\u1EA3 s\u1EED `greet.fish` l\xE0 script c\u1EE7\
+  a b\u1EA1n. B\u1EA1n mu\u1ED1n n\xF3 nh\u1EADn m\u1ED9t t\xEAn v\xE0 ph\xE1t ra\
+  \ l\u1EDDi ch\xE0o."
 lastmod: '2024-03-13T22:44:37.231479-06:00'
 model: gpt-4-0125-preview
-summary: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh l\xE0 vi\u1EC7\
-  c l\u1EA5y nh\u1EEFng ph\u1EA7n th\xEAm b\u1EA1n g\xF5 sau t\xEAn c\u1EE7a script,\
-  \ gi\u1ED1ng nh\u01B0 nh\u1EEFng c\xE1i b\u1EAFt tay b\xED m\u1EADt \u0111\u1EC3\
-  \ t\xF9y ch\u1EC9nh h\xE0nh vi c\u1EE7a script."
+summary: "Gi\u1EA3 s\u1EED `greet.fish` l\xE0 script c\u1EE7a b\u1EA1n."
 title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
 weight: 23
 ---

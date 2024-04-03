@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:09.344406-07:00
-description: "Capitalizar uma string envolve converter o caractere inicial de cada\
-  \ palavra na string para mai\xFAscula, caso esteja em min\xFAscula, enquanto mant\xE9\
-  m os demais\u2026"
+description: "Como fazer: Em C++, voc\xEA pode capitalizar uma string usando a biblioteca\
+  \ padr\xE3o sem a necessidade de bibliotecas de terceiros. No entanto, para\u2026"
 lastmod: '2024-03-13T22:44:46.863249-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizar uma string envolve converter o caractere inicial de cada palavra\
-  \ na string para mai\xFAscula, caso esteja em min\xFAscula, enquanto mant\xE9m os\
-  \ demais caracteres inalterados."
+summary: "Em C++, voc\xEA pode capitalizar uma string usando a biblioteca padr\xE3\
+  o sem a necessidade de bibliotecas de terceiros."
 title: Capitalizando uma string
 weight: 2
 ---

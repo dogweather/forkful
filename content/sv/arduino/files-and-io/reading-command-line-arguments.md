@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:55:17.931782-07:00
-description: "Kommandoradsargument l\xE5ter anv\xE4ndare skicka information till ett\
-  \ program n\xE4r de startar det. Programmerare anv\xE4nder detta f\xF6r att g\xF6\
-  ra program flexibla\u2026"
+description: "Hur Man G\xF6r: Arduino-plattformen har traditionellt ingen kommandorad,\
+  \ eftersom den k\xF6rs p\xE5 mikrokontroller snarare \xE4n en fullskalig dator.\
+  \ Ist\xE4llet\u2026"
 lastmod: '2024-03-13T22:44:38.183216-06:00'
 model: gpt-4-1106-preview
-summary: "Kommandoradsargument l\xE5ter anv\xE4ndare skicka information till ett program\
-  \ n\xE4r de startar det."
+summary: "Arduino-plattformen har traditionellt ingen kommandorad, eftersom den k\xF6\
+  rs p\xE5 mikrokontroller snarare \xE4n en fullskalig dator."
 title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---

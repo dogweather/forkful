@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:19.343320-07:00
-description: "String interpolatie, in programmeren, houdt in dat strings worden opgebouwd\
-  \ door expressies in te sluiten binnen letterlijke strings. Programmeurs doen\u2026"
+description: "Hoe: C, in tegenstelling tot sommige hoog-niveau talen, ondersteunt\
+  \ geen directe string interpolatie in zijn syntaxis. In plaats daarvan wordt het\u2026"
 lastmod: '2024-03-13T22:44:51.275490-06:00'
 model: gpt-4-0125-preview
-summary: String interpolatie, in programmeren, houdt in dat strings worden opgebouwd
-  door expressies in te sluiten binnen letterlijke strings.
+summary: C, in tegenstelling tot sommige hoog-niveau talen, ondersteunt geen directe
+  string interpolatie in zijn syntaxis.
 title: Een string interpoleren
 weight: 8
 ---

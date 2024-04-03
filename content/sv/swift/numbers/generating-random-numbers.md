@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 20:35:34.306766-07:00
-description: "Att generera slumpm\xE4ssiga tal i programmering handlar om att skapa\
-  \ icke-deterministiska eller of\xF6ruts\xE4gbara numeriska v\xE4rden. Programmerare\
-  \ anv\xE4nder\u2026"
+description: "Hur man g\xF6r: Swift erbjuder ett enkelt s\xE4tt att generera slumpm\xE4\
+  ssiga tal genom sitt standardbibliotek. S\xE5 h\xE4r g\xF6r du det f\xF6r olika\
+  \ numeriska typer."
 lastmod: '2024-03-13T22:44:38.247013-06:00'
 model: gpt-4-0125-preview
-summary: "Att generera slumpm\xE4ssiga tal i programmering handlar om att skapa icke-deterministiska\
-  \ eller of\xF6ruts\xE4gbara numeriska v\xE4rden."
+summary: "Swift erbjuder ett enkelt s\xE4tt att generera slumpm\xE4ssiga tal genom\
+  \ sitt standardbibliotek."
 title: Generera slumptal
 weight: 12
 ---

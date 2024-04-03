@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:43:29.358433-07:00
-description: "Komplexa tal utvidgar id\xE9n om en endimensionell tal-linje till ett\
-  \ tv\xE5dimensionellt plan genom att inkludera en vinkelr\xE4t imagin\xE4r axel.\
-  \ Programmerare\u2026"
+description: "Hur man g\xF6r: I Lua kan du representera komplexa tal med tabeller.\
+  \ De grundl\xE4ggande operationerna innefattar att addera, subtrahera, multiplicera\
+  \ och dela\u2026"
 lastmod: '2024-03-13T22:44:38.032176-06:00'
 model: gpt-4-0125-preview
-summary: "Komplexa tal utvidgar id\xE9n om en endimensionell tal-linje till ett tv\xE5\
-  dimensionellt plan genom att inkludera en vinkelr\xE4t imagin\xE4r axel."
+summary: I Lua kan du representera komplexa tal med tabeller.
 title: Att arbeta med komplexa tal
 weight: 14
 ---

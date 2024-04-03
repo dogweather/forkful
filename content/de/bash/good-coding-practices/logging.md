@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 00:59:09.991592-07:00
-description: "Logging ist die Praxis, Ereignisse, Fehler und andere bedeutsame Informationen\
-  \ von laufenden Prozessen eines Programms in eine Datei oder einen\u2026"
+description: "Wie geht das: Im Bash kann Logging so einfach sein wie das Umleiten\
+  \ oder Anh\xE4ngen der Ausgabe an eine Datei. Hier ein einfaches Beispiel."
 lastmod: '2024-03-13T22:44:54.065969-06:00'
 model: gpt-4-1106-preview
-summary: Logging ist die Praxis, Ereignisse, Fehler und andere bedeutsame Informationen
-  von laufenden Prozessen eines Programms in eine Datei oder einen Ausgabestrom aufzuzeichnen.
+summary: "Im Bash kann Logging so einfach sein wie das Umleiten oder Anh\xE4ngen der\
+  \ Ausgabe an eine Datei."
 title: Protokollierung
 weight: 17
 ---

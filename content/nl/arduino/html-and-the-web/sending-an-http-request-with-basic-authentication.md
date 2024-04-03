@@ -2,12 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:53.636093-07:00
-description: "Een HTTP-verzoek verzenden met basisauthenticatie voegt een beveiligingslaag\
-  \ toe door om een gebruikersnaam en wachtwoord te vragen. Programmeurs\u2026"
+description: "Hoe: Om dit op een Arduino te realiseren, moet je eerst de benodigde\
+  \ bibliotheken opnemen - typisch `<ESP8266WiFi.h>` voor ESP8266 of `<WiFi.h>` voor\u2026"
 lastmod: '2024-03-13T22:44:51.072395-06:00'
 model: gpt-4-0125-preview
-summary: Een HTTP-verzoek verzenden met basisauthenticatie voegt een beveiligingslaag
-  toe door om een gebruikersnaam en wachtwoord te vragen.
+summary: Om dit op een Arduino te realiseren, moet je eerst de benodigde bibliotheken
+  opnemen - typisch `<ESP8266WiFi.h>` voor ESP8266 of `<WiFi.h>` voor ESP32, en `<Base64.h>`
+  voor het coderen van authenticatiegegevens.
 title: Een HTTP-verzoek verzenden met basisauthenticatie
 weight: 45
 ---

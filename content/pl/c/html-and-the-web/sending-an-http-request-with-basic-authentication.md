@@ -2,15 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:53.920973-07:00
-description: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnieniem\
-  \ w j\u0119zyku C polega na przygotowaniu \u017C\u0105dania HTTP, kt\xF3re zawiera\
-  \ nag\u0142\xF3wek Authorization z\u2026"
+description: "Jak to zrobi\u0107: Aby wys\u0142a\u0107 \u017C\u0105danie HTTP z podstawowym\
+  \ uwierzytelnieniem w j\u0119zyku C, b\u0119dziemy potrzebowa\u0107 u\u017Cy\u0107\
+  \ biblioteki libcurl, popularnej,\u2026"
 lastmod: '2024-03-13T22:44:35.886199-06:00'
 model: gpt-4-0125-preview
-summary: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnieniem w\
-  \ j\u0119zyku C polega na przygotowaniu \u017C\u0105dania HTTP, kt\xF3re zawiera\
-  \ nag\u0142\xF3wek Authorization z zakodowanymi w Base64 po\u015Bwiadczeniami u\u017C\
-  ytkownika."
+summary: "Aby wys\u0142a\u0107 \u017C\u0105danie HTTP z podstawowym uwierzytelnieniem\
+  \ w j\u0119zyku C, b\u0119dziemy potrzebowa\u0107 u\u017Cy\u0107 biblioteki libcurl,\
+  \ popularnej, wszechstronnej i \u0142atwej w u\u017Cyciu biblioteki do transferu\
+  \ URL po stronie klienta."
 title: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnianiem"
 weight: 45
 ---

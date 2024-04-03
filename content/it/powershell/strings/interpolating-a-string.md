@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:51:22.254741-07:00
-description: "L'interpolazione di una stringa consente di inserire variabili o espressioni\
-  \ direttamente all'interno di una stringa di testo. I programmatori la usano\u2026"
+description: "How to: Interpolare una stringa in PowerShell \xE8 semplice: usate il\
+  \ doppio apice `\" \"` e inserite variabili con il simbolo del dollaro `$` seguito\
+  \ dal nome\u2026"
 lastmod: '2024-03-13T22:44:43.627440-06:00'
 model: gpt-4-1106-preview
-summary: L'interpolazione di una stringa consente di inserire variabili o espressioni
-  direttamente all'interno di una stringa di testo.
+summary: "Interpolare una stringa in PowerShell \xE8 semplice."
 title: Interpolazione di una stringa
 weight: 8
 ---

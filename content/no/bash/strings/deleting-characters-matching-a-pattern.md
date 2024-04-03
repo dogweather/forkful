@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:41:40.714886-07:00
-description: "I Bash kan du slette tegn som matcher et m\xF8nster for \xE5 forenkle\
-  \ strenger eller rense data. Dette er nyttig n\xE5r du jobber med tekstbehandling\
-  \ eller\u2026"
+description: "Hvordan: For \xE5 slette tegn fra en streng som matcher et m\xF8nster,\
+  \ bruk parameterexpansjon. Her er noen eksempler."
 lastmod: '2024-03-13T22:44:40.956781-06:00'
 model: gpt-4-1106-preview
-summary: "I Bash kan du slette tegn som matcher et m\xF8nster for \xE5 forenkle strenger\
-  \ eller rense data."
+summary: "For \xE5 slette tegn fra en streng som matcher et m\xF8nster, bruk parameterexpansjon."
 title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---

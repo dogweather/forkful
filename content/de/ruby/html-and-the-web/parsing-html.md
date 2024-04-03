@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:01.919353-07:00
-description: "HTML zu parsen bedeutet, ein St\xFCck HTML-Code zu zerlegen, um seine\
-  \ Struktur und seinen Inhalt zu erfassen. Programmierer machen das, um Daten zu\u2026"
+description: "Wie: Um HTML in Ruby zu parsen, installiere das 'Nokogiri'-Gem mit `gem\
+  \ install nokogiri`. Nokogiri ist wie ein Schweizer Taschenmesser f\xFCr die Arbeit\
+  \ mit\u2026"
 lastmod: '2024-03-13T22:44:54.398413-06:00'
 model: gpt-4-0125-preview
-summary: "HTML zu parsen bedeutet, ein St\xFCck HTML-Code zu zerlegen, um seine Struktur\
-  \ und seinen Inhalt zu erfassen."
+summary: Um HTML in Ruby zu parsen, installiere das 'Nokogiri'-Gem mit `gem install
+  nokogiri`.
 title: HTML parsen
 weight: 43
 ---

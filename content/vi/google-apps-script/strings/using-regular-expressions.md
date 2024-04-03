@@ -2,15 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:11.492701-07:00
-description: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) l\xE0 nh\u1EEFng m\u1EABu \u0111\
-  \u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 kh\u1EDBp c\xE1c k\u1EBFt h\u1EE3p\
-  \ k\xFD t\u1EF1 trong chu\u1ED7i. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5\
-  ng ch\xFAng \u0111\u1EC3 t\xECm ki\u1EBFm, ch\u1EC9nh s\u1EEDa ho\u1EB7c\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xED\
+  nh quy trong Google Apps Script kh\xE1 \u0111\u01A1n gi\u1EA3n nh\u1EDD v\xE0o c\xFA\
+  \ ph\xE1p d\u1EF1a tr\xEAn JavaScript. D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch\
+  \ b\u1EA1n c\xF3 th\u1EC3 t\xEDch h\u1EE3p\u2026"
 lastmod: '2024-03-13T22:44:36.026079-06:00'
 model: gpt-4-0125-preview
-summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) l\xE0 nh\u1EEFng m\u1EABu \u0111\
-  \u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 kh\u1EDBp c\xE1c k\u1EBFt h\u1EE3p\
-  \ k\xFD t\u1EF1 trong chu\u1ED7i."
+summary: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy trong Google Apps Script\
+  \ kh\xE1 \u0111\u01A1n gi\u1EA3n nh\u1EDD v\xE0o c\xFA ph\xE1p d\u1EF1a tr\xEAn\
+  \ JavaScript."
 title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---

@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:35.455714-07:00
-description: "Het verwijderen van aanhalingstekens uit een string betekent het wegpellen\
-  \ van die dubbele of enkele aanhalingstekens die rondom tekstwaarden wikkelen.\u2026"
+description: "Hoe: Ruby heeft enkele slimme trucjes om die lastige aanhalingstekens\
+  \ weg te knippen. Je kunt de methoden `gsub` of `delete` gebruiken om de klus te\u2026"
 lastmod: '2024-03-13T22:44:51.322611-06:00'
 model: gpt-4-0125-preview
-summary: Het verwijderen van aanhalingstekens uit een string betekent het wegpellen
-  van die dubbele of enkele aanhalingstekens die rondom tekstwaarden wikkelen.
+summary: Ruby heeft enkele slimme trucjes om die lastige aanhalingstekens weg te knippen.
 title: Quotes verwijderen uit een string
 weight: 9
 ---

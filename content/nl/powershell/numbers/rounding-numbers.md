@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:49.503462-07:00
-description: "Afronden van getallen gaat over het aanpassen van een waarde naar het\
-  \ dichtstbijzijnde geheel getal of opgegeven decimale plaats. Programmeurs ronden\u2026"
+description: 'Hoe: Je hebt een paar handige cmdlets en methoden in PowerShell voor
+  het afronden: - `Round()` methode uit de Math-klasse.'
 lastmod: '2024-03-13T22:44:51.021900-06:00'
 model: gpt-4-0125-preview
-summary: Afronden van getallen gaat over het aanpassen van een waarde naar het dichtstbijzijnde
-  geheel getal of opgegeven decimale plaats.
+summary: Je hebt een paar handige cmdlets en methoden in PowerShell voor het afronden.
 title: Afronden van getallen
 weight: 13
 ---

@@ -2,16 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:58.907486-07:00
-description: "X\u1EED l\xFD l\u1ED7i trong c\xE1c ch\u01B0\u01A1ng tr\xECnh c\u1EE7\
-  a b\u1EA1n b\u1EAFt l\u1EA5y nh\u1EEFng \u0111i\u1EC1u kh\xF4ng l\u01B0\u1EDDng\
-  \ tr\u01B0\u1EDBc s\u1EBD c\u1ED1 g\u1EAFng l\xE0m b\u1EA1n v\u1EA5p ng\xE3. B\u1EA1\
-  n l\xE0m \u0111i\u1EC1u \u0111\xF3 \u0111\u1EC3 gi\u1EEF cho Arduino c\u1EE7a b\u1EA1\
-  n kh\xF4ng\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Gi\u1EA3 s\u1EED Arduino c\u1EE7a b\u1EA1n \u0111\
+  ang \u0111\u1ECDc m\u1ED9t c\u1EA3m bi\u1EBFn c\xF3 th\u1EC3 th\u1EC9nh tho\u1EA3\
+  ng s\u1EA3n xu\u1EA5t ra c\xE1c gi\xE1 tr\u1ECB ngo\xE0i ph\u1EA1m vi. D\u01B0\u1EDB\
+  i \u0111\xE2y l\xE0 c\xE1ch b\u1EA1n c\xF3 th\u1EC3 x\u1EED l\xFD\u2026"
 lastmod: '2024-03-13T22:44:36.998740-06:00'
 model: gpt-4-0125-preview
-summary: "X\u1EED l\xFD l\u1ED7i trong c\xE1c ch\u01B0\u01A1ng tr\xECnh c\u1EE7a b\u1EA1\
-  n b\u1EAFt l\u1EA5y nh\u1EEFng \u0111i\u1EC1u kh\xF4ng l\u01B0\u1EDDng tr\u01B0\u1EDB\
-  c s\u1EBD c\u1ED1 g\u1EAFng l\xE0m b\u1EA1n v\u1EA5p ng\xE3."
+summary: "Gi\u1EA3 s\u1EED Arduino c\u1EE7a b\u1EA1n \u0111ang \u0111\u1ECDc m\u1ED9\
+  t c\u1EA3m bi\u1EBFn c\xF3 th\u1EC3 th\u1EC9nh tho\u1EA3ng s\u1EA3n xu\u1EA5t ra\
+  \ c\xE1c gi\xE1 tr\u1ECB ngo\xE0i ph\u1EA1m vi."
 title: "X\u1EED l\xFD l\u1ED7i"
 weight: 16
 ---

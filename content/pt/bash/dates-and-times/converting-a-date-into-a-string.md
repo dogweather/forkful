@@ -1,13 +1,11 @@
 ---
 date: 2024-01-20 17:35:51.750689-07:00
-description: "Converter datas em strings \xE9 uma maneira de formatar as informa\xE7\
-  \xF5es de data e hora em um texto leg\xEDvel ou em um padr\xE3o espec\xEDfico para\
-  \ armazenamento e\u2026"
+description: "Como Fazer: Para converter uma data em string, voc\xEA pode usar o comando\
+  \ `date` no Bash. Abaixo alguns exemplos com diferentes formatos."
 lastmod: '2024-03-13T22:44:46.764313-06:00'
 model: gpt-4-1106-preview
-summary: "Converter datas em strings \xE9 uma maneira de formatar as informa\xE7\xF5\
-  es de data e hora em um texto leg\xEDvel ou em um padr\xE3o espec\xEDfico para armazenamento\
-  \ e exibi\xE7\xE3o."
+summary: "Para converter uma data em string, voc\xEA pode usar o comando `date` no\
+  \ Bash."
 title: Convertendo uma data em uma string
 weight: 28
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:45.957614-07:00
-description: "\xC5 sjekke om en mappe eksisterer i TypeScript er essensielt for filh\xE5\
-  ndteringsoppgaver, slik som \xE5 lese fra eller skrive data til filer, og sikre\
-  \ at\u2026"
+description: "Hvordan: TypeScript, n\xE5r det kj\xF8res i et Node.js-milj\xF8, lar\
+  \ deg sjekke om en mappe eksisterer ved \xE5 bruke `fs`-modulen, som gir `existsSync()`-funksjonen\u2026"
 lastmod: '2024-03-13T22:44:40.546587-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 sjekke om en mappe eksisterer i TypeScript er essensielt for filh\xE5\
-  ndteringsoppgaver, slik som \xE5 lese fra eller skrive data til filer, og sikre\
-  \ at operasjoner kun utf\xF8res p\xE5 gyldige mapper."
+summary: "TypeScript, n\xE5r det kj\xF8res i et Node.js-milj\xF8, lar deg sjekke om\
+  \ en mappe eksisterer ved \xE5 bruke `fs`-modulen, som gir `existsSync()`-funksjonen\
+  \ eller den asynkrone `access()`-funksjonen kombinert med `constants.F_OK`."
 title: Sjekker om en mappe eksisterer
 weight: 20
 ---

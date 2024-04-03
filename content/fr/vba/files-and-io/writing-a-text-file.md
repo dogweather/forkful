@@ -2,15 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:09.548942-07:00
-description: "\xC9crire un fichier texte en Visual Basic pour Applications (VBA) implique\
-  \ de cr\xE9er, modifier ou ajouter des donn\xE9es textuelles \xE0 des fichiers,\
-  \ une t\xE2che\u2026"
+description: "Comment faire : VBA offre plusieurs m\xE9thodes pour \xE9crire dans\
+  \ un fichier, mais l'une des mani\xE8res les plus simples est d'utiliser le `FileSystemObject`.\u2026"
 lastmod: '2024-03-13T22:44:57.602096-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire un fichier texte en Visual Basic pour Applications (VBA) implique\
-  \ de cr\xE9er, modifier ou ajouter des donn\xE9es textuelles \xE0 des fichiers,\
-  \ une t\xE2che fondamentale pour le stockage des sorties, la journalisation ou l'interaction\
-  \ avec d'autres applications."
+summary: "VBA offre plusieurs m\xE9thodes pour \xE9crire dans un fichier, mais l'une\
+  \ des mani\xE8res les plus simples est d'utiliser le `FileSystemObject`."
 title: "R\xE9daction d'un fichier texte"
 weight: 24
 ---

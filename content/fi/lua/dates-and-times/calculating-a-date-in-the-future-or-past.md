@@ -1,12 +1,13 @@
 ---
 date: 2024-01-20 17:31:24.723669-07:00
-description: "Lasketaan p\xE4iv\xE4m\xE4\xE4r\xE4 tulevaisuudessa tai menneisyydess\xE4\
-  . Koodarit tekev\xE4t t\xE4t\xE4 ajoituksen, m\xE4\xE4r\xE4aikojen ja tapahtumaseurannan\
-  \ vuoksi."
+description: "How to: - Kuinka tehd\xE4: Lua ei sis\xE4ll\xE4 sis\xE4\xE4nrakennettuja\
+  \ p\xE4iv\xE4m\xE4\xE4r\xE4k\xE4sittelyn ty\xF6kaluja, mutta `os.date` ja `os.time`\
+  \ funktioilla selvi\xE4\xE4 paljon.\u2026"
 lastmod: '2024-03-13T22:44:56.710234-06:00'
 model: gpt-4-1106-preview
-summary: "Lasketaan p\xE4iv\xE4m\xE4\xE4r\xE4 tulevaisuudessa tai menneisyydess\xE4\
-  ."
+summary: "Lua ei sis\xE4ll\xE4 sis\xE4\xE4nrakennettuja p\xE4iv\xE4m\xE4\xE4r\xE4\
+  k\xE4sittelyn ty\xF6kaluja, mutta `os.date` ja `os.time` funktioilla selvi\xE4\xE4\
+  \ paljon."
 title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---

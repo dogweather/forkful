@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:59.880838-07:00
-description: "\xC5 skrive til en tekstfil i Ruby er en grunnleggende operasjon som\
-  \ lar deg lagre utdata og data p\xE5 en vedvarende m\xE5te, slik at data kan tilg\xE5\
-  s eller endres\u2026"
+description: "Hvordan: Ruby gj\xF8r filoperasjoner enkle. For \xE5 skrive til en fil,\
+  \ kan du bruke Rubys innebygde `File`-klasse. F\xF8lgende eksempel demonstrerer\
+  \ hvordan du\u2026"
 lastmod: '2024-03-13T22:44:41.351778-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive til en tekstfil i Ruby er en grunnleggende operasjon som lar\
-  \ deg lagre utdata og data p\xE5 en vedvarende m\xE5te, slik at data kan tilg\xE5\
-  s eller endres senere."
+summary: "Ruby gj\xF8r filoperasjoner enkle."
 title: Skrive en tekstfil
 weight: 24
 ---

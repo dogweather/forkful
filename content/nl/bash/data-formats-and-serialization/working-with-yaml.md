@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:32.005929-07:00
-description: "YAML ain't Markup Language (YAML) is een voor mensen leesbare standaard\
-  \ voor gegevensserialisatie. Programmeurs gebruiken het voor configuratiebestanden,\u2026"
+description: 'Hoe te: Hier is een eenvoudig voorbeeld van het lezen van een YAML-bestand
+  met Bash. Gegeven `config.yaml`.'
 lastmod: '2024-03-13T22:44:51.004295-06:00'
 model: gpt-4-0125-preview
-summary: YAML ain't Markup Language (YAML) is een voor mensen leesbare standaard voor
-  gegevensserialisatie.
+summary: Hier is een eenvoudig voorbeeld van het lezen van een YAML-bestand met Bash.
 title: Werken met YAML
 weight: 41
 ---

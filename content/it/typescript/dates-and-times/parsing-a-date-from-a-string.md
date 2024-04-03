@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:52.691177-07:00
-description: "Analizzare una data da una stringa comporta la conversione di rappresentazioni\
-  \ testuali di date e orari in un formato che pu\xF2 essere manipolato ed\u2026"
+description: "Come fare: TypeScript, essendo un sovrainsieme di JavaScript, si basa\
+  \ sull'oggetto Date per l'analisi delle date da stringhe. Tuttavia, lavorare con\
+  \ le\u2026"
 lastmod: '2024-03-13T22:44:43.185163-06:00'
 model: gpt-4-0125-preview
-summary: "Analizzare una data da una stringa comporta la conversione di rappresentazioni\
-  \ testuali di date e orari in un formato che pu\xF2 essere manipolato ed analizzato\
-  \ dal programma."
+summary: TypeScript, essendo un sovrainsieme di JavaScript, si basa sull'oggetto Date
+  per l'analisi delle date da stringhe.
 title: Analisi di una data da una stringa
 weight: 30
 ---

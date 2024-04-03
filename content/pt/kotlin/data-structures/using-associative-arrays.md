@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:02.003853-07:00
-description: "Arrays associativos, ou mapas, em Kotlin s\xE3o cole\xE7\xF5es que armazenam\
-  \ pares de chave-valor. Os programadores os usam para organizar e recuperar dados\
-  \ de\u2026"
+description: "Como fazer: Criar e usar um mapa em Kotlin \xE9 simples. Aqui est\xE1\
+  \ um guia r\xE1pido sobre como faz\xEA-lo."
 lastmod: '2024-03-13T22:44:46.534467-06:00'
 model: gpt-4-0125-preview
-summary: "Arrays associativos, ou mapas, em Kotlin s\xE3o cole\xE7\xF5es que armazenam\
-  \ pares de chave-valor."
+summary: "Criar e usar um mapa em Kotlin \xE9 simples."
 title: Usando arrays associativos
 weight: 15
 ---

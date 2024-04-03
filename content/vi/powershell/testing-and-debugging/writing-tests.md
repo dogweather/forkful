@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:14:01.965126-07:00
-description: "Vi\u1EBFt th\u1EED nghi\u1EC7m trong l\u1EADp tr\xECnh ngh\u0129a l\xE0\
-  \ t\u1EA1o ra c\xE1c k\u1ECBch b\u1EA3n ki\u1EC3m tra xem m\xE3 c\u1EE7a b\u1EA1\
-  n c\xF3 ch\u1EA1y \u0111\xFAng kh\xF4ng. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0\
-  m vi\u1EC7c n\xE0y \u0111\u1EC3 ph\xE1t hi\u1EC7n l\u1ED7i\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9\
+  t b\xE0i test nhanh cho h\xE0m c\u1ED9ng s\u1ED1 s\u1EED d\u1EE5ng Pester, b\u1ED9\
+  \ khung ki\u1EC3m th\u1EED c\u1EE7a PowerShell. B\u1EA1n th\u01B0\u1EDDng l\u01B0\
+  u k\u1ECBch b\u1EA3n n\xE0y v\u1EDBi t\xEAn\u2026"
 lastmod: '2024-03-13T22:44:36.941184-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EBFt th\u1EED nghi\u1EC7m trong l\u1EADp tr\xECnh ngh\u0129a l\xE0\
-  \ t\u1EA1o ra c\xE1c k\u1ECBch b\u1EA3n ki\u1EC3m tra xem m\xE3 c\u1EE7a b\u1EA1\
-  n c\xF3 ch\u1EA1y \u0111\xFAng kh\xF4ng."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t b\xE0i test nhanh cho h\xE0m c\u1ED9\
+  ng s\u1ED1 s\u1EED d\u1EE5ng Pester, b\u1ED9 khung ki\u1EC3m th\u1EED c\u1EE7a PowerShell."
 title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
 weight: 36
 ---

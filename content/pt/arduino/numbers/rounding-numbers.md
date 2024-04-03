@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:43:00.718458-07:00
-description: "Arredondar n\xFAmeros \xE9 cortar um decimal para o seu valor inteiro\
-  \ mais pr\xF3ximo ou para um n\xFAmero determinado de casas decimais. Os programadores\
-  \ arredondam\u2026"
+description: "Como Fazer: No Arduino, voc\xEA pode arredondar n\xFAmeros usando fun\xE7\
+  \xF5es embutidas. Os principais jogadores s\xE3o `round`, `ceil` e `floor`. Aqui\
+  \ est\xE1 uma\u2026"
 lastmod: '2024-03-13T22:44:46.834350-06:00'
 model: gpt-4-0125-preview
-summary: "Arredondar n\xFAmeros \xE9 cortar um decimal para o seu valor inteiro mais\
-  \ pr\xF3ximo ou para um n\xFAmero determinado de casas decimais."
+summary: "No Arduino, voc\xEA pode arredondar n\xFAmeros usando fun\xE7\xF5es embutidas."
 title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---

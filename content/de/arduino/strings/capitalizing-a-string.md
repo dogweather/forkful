@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:06.961671-07:00
-description: "Das Kapitalisieren eines Strings bedeutet, den ersten Buchstaben jedes\
-  \ Wortes in einem String in Gro\xDFbuchstaben umzuwandeln, w\xE4hrend sichergestellt\
-  \ wird,\u2026"
+description: "Wie: Arduino, haupts\xE4chlich bekannt f\xFCr die Interaktion mit Hardware,\
+  \ bietet auch grundlegende M\xF6glichkeiten zur String-Manipulation durch sein\u2026"
 lastmod: '2024-03-13T22:44:54.128786-06:00'
 model: gpt-4-0125-preview
-summary: "Das Kapitalisieren eines Strings bedeutet, den ersten Buchstaben jedes Wortes\
-  \ in einem String in Gro\xDFbuchstaben umzuwandeln, w\xE4hrend sichergestellt wird,\
-  \ dass der Rest klein bleibt."
+summary: "Arduino, haupts\xE4chlich bekannt f\xFCr die Interaktion mit Hardware, bietet\
+  \ auch grundlegende M\xF6glichkeiten zur String-Manipulation durch sein `String`-Objekt."
 title: "Einen String gro\xDFschreiben"
 weight: 2
 ---

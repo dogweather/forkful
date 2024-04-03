@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:17.564265-07:00
-description: "La cr\xE9ation d'un fichier temporaire en Go permet la g\xE9n\xE9ration\
-  \ d'un fichier non persistant destin\xE9 \xE0 une utilisation \xE0 court terme,\
-  \ principalement pour\u2026"
+description: "Comment faire : Dans Go, le paquet `ioutil` fournissait initialement\
+  \ des utilitaires pour la cr\xE9ation de fichiers temporaires. Cependant, Go 1.16\
+  \ a promu\u2026"
 lastmod: '2024-03-13T22:44:57.156530-06:00'
 model: gpt-4-0125-preview
-summary: "La cr\xE9ation d'un fichier temporaire en Go permet la g\xE9n\xE9ration\
-  \ d'un fichier non persistant destin\xE9 \xE0 une utilisation \xE0 court terme,\
-  \ principalement pour des t\xE2ches telles que le stockage de donn\xE9es provisoires\
-  \ ou l'assistance dans des travaux de traitement par lots."
+summary: "Dans Go, le paquet `ioutil` fournissait initialement des utilitaires pour\
+  \ la cr\xE9ation de fichiers temporaires."
 title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---

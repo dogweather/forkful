@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:47:28.121243-07:00
-description: "\"Mik\xE4 & Miksi?\" Stringin pituuden selvitt\xE4minen tarkoittaa merkkijonossa\
-  \ olevien merkkien m\xE4\xE4r\xE4n laskemista. Ohjelmoijat tekev\xE4t t\xE4m\xE4\
-  n, jotta voivat\u2026"
+description: "How to: \"N\xE4in teet:\" Elixirisssa stringin pituuden saa selville\
+  \ `String.length/1` funktiolla. Helppoa ja yksinkertaista."
 lastmod: '2024-03-13T22:44:56.217413-06:00'
 model: gpt-4-1106-preview
-summary: "\"Mik\xE4 & Miksi."
+summary: "\"N\xE4in teet:\"\nElixirisssa stringin pituuden saa selville `String.length/1`\
+  \ funktiolla."
 title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---

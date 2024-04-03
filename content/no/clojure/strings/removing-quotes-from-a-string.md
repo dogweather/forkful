@@ -1,12 +1,13 @@
 ---
 date: 2024-01-26 03:38:45.831893-07:00
-description: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr \xE5 kvitte seg med\
-  \ de irriterende doble eller enkle anf\xF8rselstegnene som omslutter teksten din.\
-  \ Programmerere\u2026"
+description: "Hvordan: I Clojure er strenger uforanderlige, s\xE5 n\xE5r vi snakker\
+  \ om \"\xE5 fjerne anf\xF8rselstegn,\" snakker vi egentlig om \xE5 skape en ny streng\
+  \ uten\u2026"
 lastmod: '2024-03-13T22:44:40.390966-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr \xE5 kvitte seg med de\
-  \ irriterende doble eller enkle anf\xF8rselstegnene som omslutter teksten din."
+summary: "I Clojure er strenger uforanderlige, s\xE5 n\xE5r vi snakker om \"\xE5 fjerne\
+  \ anf\xF8rselstegn,\" snakker vi egentlig om \xE5 skape en ny streng uten anf\xF8\
+  rselstegn."
 title: "Fjerne anf\xF8rselstegn fra en streng"
 weight: 9
 ---

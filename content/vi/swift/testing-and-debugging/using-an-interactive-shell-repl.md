@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:42.010143-07:00
-description: "S\u1EED d\u1EE5ng m\u1ED9t shell t\u01B0\u01A1ng t\xE1c, hay v\xF2ng\
-  \ l\u1EB7p \u0110\u1ECDc-\u0110\xE1nh gi\xE1-In (REPL), cho ph\xE9p b\u1EA1n l\u1EAD\
-  p tr\xECnh m\u1ED9t c\xE1ch t\u01B0\u01A1ng t\xE1c. L\u1EADp tr\xECnh vi\xEAn s\u1EED\
-  \ d\u1EE5ng n\xF3 \u0111\u1EC3 nhanh ch\xF3ng ki\u1EC3m\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: K\xEDch ho\u1EA1t REPL b\u1EB1ng c\xE1ch m\u1EDF\
+  \ m\u1ED9t terminal v\xE0 ch\u1EA1y `swift`. G\xF5 m\xE3 tr\u1EF1c ti\u1EBFp v\xE0\
+  \ nh\u1EA5n Enter \u0111\u1EC3 ch\u1EA1y n\xF3. D\u01B0\u1EDBi \u0111\xE2y l\xE0\
+  \ m\u1ED9t v\xED d\u1EE5."
 lastmod: '2024-03-13T22:44:37.099404-06:00'
 model: gpt-4-0125-preview
-summary: "S\u1EED d\u1EE5ng m\u1ED9t shell t\u01B0\u01A1ng t\xE1c, hay v\xF2ng l\u1EB7\
-  p \u0110\u1ECDc-\u0110\xE1nh gi\xE1-In (REPL), cho ph\xE9p b\u1EA1n l\u1EADp tr\xEC\
-  nh m\u1ED9t c\xE1ch t\u01B0\u01A1ng t\xE1c."
+summary: "K\xEDch ho\u1EA1t REPL b\u1EB1ng c\xE1ch m\u1EDF m\u1ED9t terminal v\xE0\
+  \ ch\u1EA1y `swift`."
 title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 weight: 34
 ---

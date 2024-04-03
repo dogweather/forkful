@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:20.109303-07:00
-description: "HTML zu parsen bedeutet, sich durch die Auszeichnung zu arbeiten, um\
-  \ Daten wie Text, Links oder andere Elemente zu extrahieren. Wir tun dies, um mit\u2026"
+description: "Wie: Lassen Sie uns Jsoup verwenden, eine praktische Bibliothek f\xFC\
+  r den Umgang mit HTML aus der realen Welt. F\xFCgen Sie zun\xE4chst die Abh\xE4\
+  ngigkeit hinzu."
 lastmod: '2024-03-13T22:44:53.761143-06:00'
 model: gpt-4-0125-preview
-summary: HTML zu parsen bedeutet, sich durch die Auszeichnung zu arbeiten, um Daten
-  wie Text, Links oder andere Elemente zu extrahieren.
+summary: "Lassen Sie uns Jsoup verwenden, eine praktische Bibliothek f\xFCr den Umgang\
+  \ mit HTML aus der realen Welt."
 title: HTML parsen
 weight: 43
 ---

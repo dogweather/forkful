@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:26.133187-07:00
-description: "Praca z liczbami zespolonymi w programowaniu polega na manipulowaniu\
-  \ liczbami, kt\xF3re maj\u0105 zar\xF3wno cz\u0119\u015B\u0107 rzeczywist\u0105\
-  , jak i urojon\u0105, zwykle wyra\u017Cane jako\u2026"
+description: "Jak to zrobi\u0107: W Go, liczby zespolone s\u0105 obs\u0142ugiwane\
+  \ za pomoc\u0105 wbudowanych funkcji `complex`, `real` i `imag`, wraz z typami `complex64`\
+  \ i `complex128`\u2026"
 lastmod: '2024-03-13T22:44:34.842788-06:00'
 model: gpt-4-0125-preview
-summary: "Praca z liczbami zespolonymi w programowaniu polega na manipulowaniu liczbami,\
-  \ kt\xF3re maj\u0105 zar\xF3wno cz\u0119\u015B\u0107 rzeczywist\u0105, jak i urojon\u0105\
-  , zwykle wyra\u017Cane jako `a + bi`."
+summary: "W Go, liczby zespolone s\u0105 obs\u0142ugiwane za pomoc\u0105 wbudowanych\
+  \ funkcji `complex`, `real` i `imag`, wraz z typami `complex64` i `complex128` (reprezentuj\u0105\
+  ce odpowiednio 64-bitowe i 128-bitowe liczby zespolone)."
 title: Praca z liczbami zespolonymi
 weight: 14
 ---

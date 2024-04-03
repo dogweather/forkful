@@ -1,12 +1,11 @@
 ---
 date: 2024-01-27 20:33:53.160311-07:00
-description: "Das Generieren von Zufallszahlen in Haskell umfasst das Erstellen von\
-  \ Zahlen, die nach menschlichen Ma\xDFst\xE4ben unvorhersehbar sind. Dies ist kritisch\
-  \ in\u2026"
+description: "Wie geht das: Um Zufallszahlen in Haskell zu generieren, verwendet man\
+  \ typischerweise das `random` Paket, das Teil der Haskell Plattform ist. Hier ist\u2026"
 lastmod: '2024-03-13T22:44:53.926985-06:00'
 model: gpt-4-0125-preview
-summary: "Das Generieren von Zufallszahlen in Haskell umfasst das Erstellen von Zahlen,\
-  \ die nach menschlichen Ma\xDFst\xE4ben unvorhersehbar sind."
+summary: Um Zufallszahlen in Haskell zu generieren, verwendet man typischerweise das
+  `random` Paket, das Teil der Haskell Plattform ist.
 title: Generierung von Zufallszahlen
 weight: 12
 ---

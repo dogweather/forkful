@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:58:10.026380-07:00
-description: "Buscar y reemplazar texto implica localizar ciertas cadenas de caracteres\
-  \ y sustituirlas por otras diferentes. Los programadores lo hacen constantemente\u2026"
+description: "C\xF3mo hacerlo: En Haskell, podemos usar la librer\xEDa `Data.Text`\
+  \ para estas tareas. Aqu\xED hay un ejemplo r\xE1pido."
 lastmod: '2024-03-13T22:44:59.104824-06:00'
 model: gpt-4-1106-preview
-summary: Buscar y reemplazar texto implica localizar ciertas cadenas de caracteres
-  y sustituirlas por otras diferentes.
+summary: "En Haskell, podemos usar la librer\xEDa `Data.Text` para estas tareas."
 title: Buscando y reemplazando texto
 weight: 10
 ---

@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:54.078176-07:00
-description: "El manejo de errores en Google Apps Script trata sobre prever, capturar\
-  \ y responder a excepciones o errores que ocurren durante la ejecuci\xF3n del script.\u2026"
+description: "C\xF3mo hacerlo: Google Apps Script, al estar basado en JavaScript,\
+  \ nos permite usar la declaraci\xF3n tradicional `try-catch` para el manejo de errores,\
+  \ junto\u2026"
 lastmod: '2024-03-13T22:44:58.542193-06:00'
 model: gpt-4-0125-preview
-summary: "El manejo de errores en Google Apps Script trata sobre prever, capturar\
-  \ y responder a excepciones o errores que ocurren durante la ejecuci\xF3n del script."
+summary: "Google Apps Script, al estar basado en JavaScript, nos permite usar la declaraci\xF3\
+  n tradicional `try-catch` para el manejo de errores, junto con `finally` si se requiere\
+  \ limpieza independientemente del \xE9xito o error."
 title: Manejo de errores
 weight: 16
 ---

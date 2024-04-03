@@ -1,12 +1,10 @@
 ---
 date: 2024-01-27 16:20:37.987173-07:00
-description: "Manipular archivos con one-liners de CLI (Interfaz de L\xEDnea de Comando)\
-  \ implica el uso de scripts o comandos Bash para realizar acciones sobre archivos,\u2026"
+description: "C\xF3mo hacerlo: Aqu\xED hay algunos one-liners potentes y lo que pueden\
+  \ lograr: 1. **Crear un archivo y escribir texto en \xE9l:**."
 lastmod: '2024-03-13T22:44:59.241192-06:00'
 model: gpt-4-0125-preview
-summary: "Manipular archivos con one-liners de CLI (Interfaz de L\xEDnea de Comando)\
-  \ implica el uso de scripts o comandos Bash para realizar acciones sobre archivos,\
-  \ como crearlos, leerlos, actualizarlos o eliminarlos, todo desde el terminal."
+summary: "Aqu\xED hay algunos one-liners potentes y lo que pueden lograr."
 title: "Manipulando archivos con comandos de l\xEDnea de una sola l\xEDnea"
 weight: 31
 ---

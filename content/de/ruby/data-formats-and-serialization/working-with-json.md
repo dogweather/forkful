@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:02.491997-07:00
-description: "JSON (JavaScript Object Notation) ist ein leichtgewichtiges Daten-Austauschformat,\
-  \ das vor allem in Webanwendungen f\xFCr den Datenaustausch zwischen Clients\u2026"
+description: "Wie: Ruby bietet mit seiner Standardbibliothek nahtlose M\xF6glichkeiten\
+  \ zum Parsen und Generieren von JSON. Das prim\xE4re Modul f\xFCr diese Operationen\
+  \ ist\u2026"
 lastmod: '2024-03-13T22:44:54.421815-06:00'
 model: gpt-4-0125-preview
-summary: "JSON (JavaScript Object Notation) ist ein leichtgewichtiges Daten-Austauschformat,\
-  \ das vor allem in Webanwendungen f\xFCr den Datenaustausch zwischen Clients und\
-  \ Servern verbreitet ist."
+summary: "Ruby bietet mit seiner Standardbibliothek nahtlose M\xF6glichkeiten zum\
+  \ Parsen und Generieren von JSON."
 title: Arbeiten mit JSON
 weight: 38
 ---

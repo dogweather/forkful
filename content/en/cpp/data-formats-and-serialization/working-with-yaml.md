@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:03:36.080909-07:00
-description: "YAML, which stands for YAML Ain't Markup Language, is a human-readable\
-  \ data serialization format. Programmers use it for configuration files, data\u2026"
+description: "How to: To work with YAML in C++, a popular choice is the `yaml-cpp`\
+  \ library. First, ensure you have `yaml-cpp` installed and properly linked to your\
+  \ C++\u2026"
 lastmod: '2024-03-13T22:45:00.376239-06:00'
 model: gpt-4-0125-preview
-summary: YAML, which stands for YAML Ain't Markup Language, is a human-readable data
-  serialization format.
+summary: To work with YAML in C++, a popular choice is the `yaml-cpp` library.
 title: Working with YAML
 weight: 41
 ---

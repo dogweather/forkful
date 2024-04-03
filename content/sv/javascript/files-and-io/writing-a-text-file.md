@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:15.708907-07:00
-description: "Att skriva en textfil i JavaScript handlar ofta om att skapa och spara\
-  \ data i ett enkelt, l\xE4sbart format f\xF6r loggning, export av anv\xE4ndarinmatning\
-  \ eller\u2026"
+description: "Hur man g\xF6r: I en Node.js-milj\xF6 kan du anv\xE4nda den inbyggda\
+  \ `fs` (File System)-modulen f\xF6r att skriva textfiler. Detta exempel demonstrerar\
+  \ hur man\u2026"
 lastmod: '2024-03-13T22:44:38.311671-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva en textfil i JavaScript handlar ofta om att skapa och spara data\
-  \ i ett enkelt, l\xE4sbart format f\xF6r loggning, export av anv\xE4ndarinmatning\
-  \ eller konfigurations\xE4ndam\xE5l."
+summary: "I en Node.js-milj\xF6 kan du anv\xE4nda den inbyggda `fs` (File System)-modulen\
+  \ f\xF6r att skriva textfiler."
 title: Att skriva en textfil
 weight: 24
 ---

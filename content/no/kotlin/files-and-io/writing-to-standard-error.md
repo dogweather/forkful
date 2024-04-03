@@ -2,14 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:11.061457-07:00
-description: "\xC5 skrive til standard feil (stderr) handler om \xE5 sende ut feilmeldinger\
-  \ og diagnostikk til en separat str\xF8m, forskjellig fra standard utdata (stdout),\
-  \ som\u2026"
+description: "Hvordan: I Kotlin kan skriving til stderr oppn\xE5s ved \xE5 bruke `System.err.println()`.\
+  \ Denne metoden er lik `System.out.println()` men dirigerer utdata til\u2026"
 lastmod: '2024-03-13T22:44:40.767853-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive til standard feil (stderr) handler om \xE5 sende ut feilmeldinger\
-  \ og diagnostikk til en separat str\xF8m, forskjellig fra standard utdata (stdout),\
-  \ som gj\xF8r det mulig for bedre feilh\xE5ndtering og loggtolkning."
+summary: "I Kotlin kan skriving til stderr oppn\xE5s ved \xE5 bruke `System.err.println()`."
 title: Skriving til standardfeil
 weight: 25
 ---

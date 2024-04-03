@@ -1,10 +1,9 @@
 ---
 date: 2024-01-20 17:47:29.353328-07:00
-description: Finding a string's length means counting its characters. Programmers
-  do it to validate input, loop through strings, and manipulate text data efficiently.
+description: 'How to: JavaScript keeps it simple with the `.length` property.'
 lastmod: '2024-03-13T22:45:00.425155-06:00'
 model: gpt-4-1106-preview
-summary: Finding a string's length means counting its characters.
+summary: JavaScript keeps it simple with the `.length` property.
 title: Finding the length of a string
 weight: 7
 ---

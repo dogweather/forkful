@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:23:52.289727-07:00
-description: "TOML oznacza Tom's Obvious, Minimal Language (Oczywisty, Minimalistyczny\
-  \ J\u0119zyk Toma). Jest u\u017Cywany dla plik\xF3w konfiguracyjnych, poniewa\u017C\
-  \ jest \u0142atwy do\u2026"
+description: "Jak to zrobi\u0107: Aby obs\u0142ugiwa\u0107 TOML w Kotlinie, mo\u017C\
+  na u\u017Cy\u0107 biblioteki takiej jak `ktoml`. Na pocz\u0105tek, dodajmy zale\u017C\
+  no\u015B\u0107 w pliku `build.gradle.kts`."
 lastmod: '2024-03-13T22:44:35.388583-06:00'
 model: gpt-4-0125-preview
-summary: "TOML oznacza Tom's Obvious, Minimal Language (Oczywisty, Minimalistyczny\
-  \ J\u0119zyk Toma)."
+summary: "Aby obs\u0142ugiwa\u0107 TOML w Kotlinie, mo\u017Cna u\u017Cy\u0107 biblioteki\
+  \ takiej jak `ktoml`."
 title: Praca z TOML
 weight: 39
 ---

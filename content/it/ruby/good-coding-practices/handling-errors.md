@@ -1,13 +1,10 @@
 ---
 date: 2024-01-26 00:56:35.279230-07:00
-description: "La gestione degli errori consiste nel prevedere l'inaspettato nel codice\
-  \ \u2014 gestire gli errori e i problemi con grazia senza che il programma vada\
-  \ in\u2026"
+description: "Come fare: Ruby utilizza `begin`, `rescue`, `ensure` ed `end` per gestire\
+  \ gli errori. Si racchiude il codice rischioso tra `begin` ed `end`. Se si\u2026"
 lastmod: '2024-03-13T22:44:44.058589-06:00'
 model: gpt-4-1106-preview
-summary: "La gestione degli errori consiste nel prevedere l'inaspettato nel codice\
-  \ \u2014 gestire gli errori e i problemi con grazia senza che il programma vada\
-  \ in crash."
+summary: Ruby utilizza `begin`, `rescue`, `ensure` ed `end` per gestire gli errori.
 title: Gestione degli errori
 weight: 16
 ---

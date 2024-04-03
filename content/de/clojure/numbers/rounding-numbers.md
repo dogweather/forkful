@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:43:30.134244-07:00
-description: "Runden von Zahlen bedeutet, eine Zahl auf die n\xE4chste ganze Zahl\
-  \ oder auf eine bestimmte Dezimalgenauigkeit anzupassen. Wir runden Zahlen, um sie\
-  \ f\xFCr die\u2026"
+description: "Wie: In Clojure verwenden wir haupts\xE4chlich `Math/round`, `Math/floor`\
+  \ und `Math/ceil`."
 lastmod: '2024-03-13T22:44:53.414789-06:00'
 model: gpt-4-0125-preview
-summary: "Runden von Zahlen bedeutet, eine Zahl auf die n\xE4chste ganze Zahl oder\
-  \ auf eine bestimmte Dezimalgenauigkeit anzupassen."
+summary: "In Clojure verwenden wir haupts\xE4chlich `Math/round`, `Math/floor` und\
+  \ `Math/ceil`."
 title: Zahlen runden
 weight: 13
 ---

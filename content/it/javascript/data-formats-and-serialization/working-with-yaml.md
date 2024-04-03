@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:35.761279-07:00
-description: "YAML, acronimo di \"YAML Ain't Markup Language\", \xE8 un formato di\
-  \ serializzazione dei dati leggibile dall'uomo. Gli sviluppatori lo utilizzano spesso\
-  \ per\u2026"
+description: "Come Fare: In JavaScript, lavorare con YAML comporta tipicamente l'uso\
+  \ di una libreria di terze parti, poich\xE9 il linguaggio non include un parser\u2026"
 lastmod: '2024-03-13T22:44:43.833944-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, acronimo di \"YAML Ain't Markup Language\", \xE8 un formato di serializzazione\
-  \ dei dati leggibile dall'uomo."
+summary: "In JavaScript, lavorare con YAML comporta tipicamente l'uso di una libreria\
+  \ di terze parti, poich\xE9 il linguaggio non include un parser incorporato per\
+  \ YAML."
 title: Lavorare con YAML
 weight: 41
 ---

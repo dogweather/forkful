@@ -1,13 +1,12 @@
 ---
 date: 2024-01-27 16:21:18.345278-07:00
-description: "Imaginez que vous venez de d\xE9couvrir que vous devez effectuer une\
-  \ mise \xE0 jour par lots sur plusieurs fichiers de configuration se trouvant sur\
-  \ votre\u2026"
+description: "Comment proc\xE9der : Lorsqu'il s'agit de modifier des fichiers sur\
+  \ place en utilisant Bash, deux outils pr\xE9dominants entrent en jeu : `sed` et\
+  \ `awk`.\u2026"
 lastmod: '2024-03-13T22:44:57.990032-06:00'
 model: gpt-4-0125-preview
-summary: "Imaginez que vous venez de d\xE9couvrir que vous devez effectuer une mise\
-  \ \xE0 jour par lots sur plusieurs fichiers de configuration se trouvant sur votre\
-  \ serveur."
+summary: "Lorsqu'il s'agit de modifier des fichiers sur place en utilisant Bash, deux\
+  \ outils pr\xE9dominants entrent en jeu."
 title: "Modification de fichiers sur place avec des lignes de commande en une seule\
   \ \xE9tape"
 weight: 32

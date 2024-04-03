@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:00:07.395061-07:00
-description: "Att parsa HTML i Go inneb\xE4r att analysera inneh\xE5llet i HTML-filer\
-  \ f\xF6r att extrahera data, manipulera strukturen eller konvertera HTML till andra\
-  \ format.\u2026"
+description: "Hur man g\xF6r: F\xF6r att parsa HTML i Go anv\xE4nder du vanligtvis\
+  \ paketet `goquery` eller standardbibliotekets paket `net/html`. H\xE4r \xE4r ett\
+  \ grundl\xE4ggande\u2026"
 lastmod: '2024-03-13T22:44:37.389653-06:00'
 model: gpt-4-0125-preview
-summary: "Att parsa HTML i Go inneb\xE4r att analysera inneh\xE5llet i HTML-filer\
-  \ f\xF6r att extrahera data, manipulera strukturen eller konvertera HTML till andra\
-  \ format."
+summary: "F\xF6r att parsa HTML i Go anv\xE4nder du vanligtvis paketet `goquery` eller\
+  \ standardbibliotekets paket `net/html`."
 title: Tolka HTML
 weight: 43
 ---

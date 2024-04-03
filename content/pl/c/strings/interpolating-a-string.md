@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:44.845358-07:00
-description: "Interpolacja ci\u0105g\xF3w, w programowaniu, polega na tworzeniu ci\u0105\
-  g\xF3w przez osadzanie wyra\u017Ce\u0144 wewn\u0105trz dos\u0142ownych ci\u0105\
-  g\xF3w znak\xF3w. Programi\u015Bci robi\u0105 to, aby\u2026"
+description: "Jak to zrobi\u0107: C, w przeciwie\u0144stwie do niekt\xF3rych j\u0119\
+  zyk\xF3w wysokiego poziomu, nie wspiera interpolacji ci\u0105g\xF3w bezpo\u015B\
+  rednio w swojej sk\u0142adni. Zamiast tego,\u2026"
 lastmod: '2024-03-13T22:44:35.870537-06:00'
 model: gpt-4-0125-preview
-summary: "Interpolacja ci\u0105g\xF3w, w programowaniu, polega na tworzeniu ci\u0105\
-  g\xF3w przez osadzanie wyra\u017Ce\u0144 wewn\u0105trz dos\u0142ownych ci\u0105\
-  g\xF3w znak\xF3w."
+summary: "C, w przeciwie\u0144stwie do niekt\xF3rych j\u0119zyk\xF3w wysokiego poziomu,\
+  \ nie wspiera interpolacji ci\u0105g\xF3w bezpo\u015Brednio w swojej sk\u0142adni."
 title: "Interpolacja ci\u0105gu znak\xF3w"
 weight: 8
 ---

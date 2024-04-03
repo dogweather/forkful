@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:16.089729-07:00
-description: "Het omzetten van een datum naar een tekenreeks betekent het veranderen\
-  \ van een datumobject in een platte-tekstformaat. Programmeurs doen dit voor\u2026"
+description: "Hoe te: In PHP zet de `date()` functie een tijdstempel om in een beter\
+  \ leesbare tekenreeks. Het `DateTime` object dient een soortgelijk doel met zijn\u2026"
 lastmod: '2024-03-13T22:44:50.907261-06:00'
 model: gpt-4-0125-preview
-summary: Het omzetten van een datum naar een tekenreeks betekent het veranderen van
-  een datumobject in een platte-tekstformaat.
+summary: In PHP zet de `date()` functie een tijdstempel om in een beter leesbare tekenreeks.
 title: Een datum converteren naar een string
 weight: 28
 ---

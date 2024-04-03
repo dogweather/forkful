@@ -2,13 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:43.388177-07:00
-description: "Loggen in programmeren is in wezen een spoor van broodkruimels achterlaten\
-  \ in de vorm van opgenomen gebeurtenissen of berichten, die gebruikt kunnen\u2026"
+description: "Hoe: In Haskell kan loggen ge\xEFmplementeerd worden met behulp van\
+  \ bibliotheken zoals `monad-logger` of `hslogger`. Hier is een snel voorbeeld met\
+  \ `monad-\u2026"
 lastmod: '2024-03-13T22:44:50.858784-06:00'
 model: gpt-4-0125-preview
-summary: Loggen in programmeren is in wezen een spoor van broodkruimels achterlaten
-  in de vorm van opgenomen gebeurtenissen of berichten, die gebruikt kunnen worden
-  om bij te houden wat je applicatie op elk gegeven moment doet.
+summary: "In Haskell kan loggen ge\xEFmplementeerd worden met behulp van bibliotheken\
+  \ zoals `monad-logger` of `hslogger`."
 title: Logboekregistratie
 weight: 17
 ---

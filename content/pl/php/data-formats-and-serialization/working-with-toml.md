@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:24:53.483613-07:00
-description: "TOML, skr\xF3t od Tom's Obvious, Minimal Language, to format danych\
-  \ podobny do JSON lub YAML, ale bardziej czytelny dla ludzi. Programi\u015Bci u\u017C\
-  ywaj\u0105 go do\u2026"
+description: "Jak to zrobi\u0107: Najpierw upewnij si\u0119, \u017Ce masz zainstalowan\u0105\
+  \ bibliotek\u0119 parsera TOML, tak\u0105 jak `yosymfony/toml`. Spr\xF3bujmy przet\u0142\
+  umaczy\u0107 plik TOML."
 lastmod: '2024-03-13T22:44:35.521005-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, skr\xF3t od Tom's Obvious, Minimal Language, to format danych podobny\
-  \ do JSON lub YAML, ale bardziej czytelny dla ludzi."
+summary: "Najpierw upewnij si\u0119, \u017Ce masz zainstalowan\u0105 bibliotek\u0119\
+  \ parsera TOML, tak\u0105 jak `yosymfony/toml`."
 title: Praca z TOML
 weight: 39
 ---

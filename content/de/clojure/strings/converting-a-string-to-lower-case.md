@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:38:03.144323-07:00
-description: "Das Umwandeln eines Strings in Kleinbuchstaben bedeutet, alle Buchstaben\
-  \ in einem Text in ihre entsprechende kleine Form zu \xFCbertragen. Programmierer\u2026"
+description: 'Wie geht das: In Clojure kannst du Strings mit der `clojure.string/lower-case`
+  Funktion in Kleinbuchstaben umwandeln. Hier ist, wie du es machst.'
 lastmod: '2024-03-13T22:44:53.407411-06:00'
 model: gpt-4-1106-preview
-summary: "Das Umwandeln eines Strings in Kleinbuchstaben bedeutet, alle Buchstaben\
-  \ in einem Text in ihre entsprechende kleine Form zu \xFCbertragen."
+summary: In Clojure kannst du Strings mit der `clojure.string/lower-case` Funktion
+  in Kleinbuchstaben umwandeln.
 title: Umformung eines Strings in Kleinbuchstaben
 weight: 4
 ---

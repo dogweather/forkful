@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:55:35.992376-07:00
-description: "Czytanie pliku tekstowego to po prostu wczytywanie zawarto\u015Bci pliku\
-  \ do pami\u0119ci komputera. Programi\u015Bci robi\u0105 to, by manipulowa\u0107\
-  \ danymi, dokonywa\u0107 analiz\u2026"
+description: "How to: \u0141apcie kr\xF3tki przyk\u0142ad u\u017Cycia `fs` i `readFile`\
+  \ z `promises` (do unikni\u0119cia callback hell)."
 lastmod: '2024-03-13T22:44:35.157201-06:00'
 model: gpt-4-1106-preview
-summary: "Czytanie pliku tekstowego to po prostu wczytywanie zawarto\u015Bci pliku\
-  \ do pami\u0119ci komputera."
+summary: "\u0141apcie kr\xF3tki przyk\u0142ad u\u017Cycia `fs` i `readFile` z `promises`\
+  \ (do unikni\u0119cia callback hell)."
 title: Odczytywanie pliku tekstowego
 weight: 22
 ---

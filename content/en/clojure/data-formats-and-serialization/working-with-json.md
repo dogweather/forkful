@@ -1,11 +1,12 @@
 ---
 date: 2024-02-03 19:03:12.908663-07:00
-description: "Working with JSON (JavaScript Object Notation) in Clojure involves parsing\
-  \ JSON strings into Clojure data structures (maps, vectors) and vice versa. This\u2026"
+description: "How to: Clojure does not include built-in functions for working with\
+  \ JSON, so you will typically use third-party libraries. `cheshire` and `jsonista`\
+  \ are\u2026"
 lastmod: '2024-03-13T22:44:59.764495-06:00'
 model: gpt-4-0125-preview
-summary: Working with JSON (JavaScript Object Notation) in Clojure involves parsing
-  JSON strings into Clojure data structures (maps, vectors) and vice versa.
+summary: Clojure does not include built-in functions for working with JSON, so you
+  will typically use third-party libraries.
 title: Working with JSON
 weight: 38
 ---

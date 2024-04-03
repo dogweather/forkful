@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:54:39.104745-07:00
-description: "Att l\xE4sa en textfil inneb\xE4r att din Kotlin-kod h\xE4mtar data\
-  \ fr\xE5n en fil som sparats p\xE5 disken. Programmerare g\xF6r detta f\xF6r att\
-  \ hantera indata,\u2026"
+description: "Hur man g\xF6r: ."
 lastmod: '2024-03-13T22:44:37.888394-06:00'
 model: gpt-4-1106-preview
-summary: "Att l\xE4sa en textfil inneb\xE4r att din Kotlin-kod h\xE4mtar data fr\xE5\
-  n en fil som sparats p\xE5 disken."
+summary: .
 title: "L\xE4sa en textfil"
 weight: 22
 ---

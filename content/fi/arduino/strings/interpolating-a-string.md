@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:49:59.839884-07:00
-description: "Stringien interpolointi tarkoittaa muuttujien ja lausekkeiden upottamista\
-  \ suoraan merkkijonoihin. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 koodin selkeytt\xE4\
-  miseen ja\u2026"
+description: "How to: (Kuinka tehd\xE4:) Arduino ei suoraan tue stringien interpolointia,\
+  \ mutta voit saavuttaa saman vaikutuksen `sprintf`-funktiolla tai liitt\xE4m\xE4\
+  ll\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.811306-06:00'
 model: gpt-4-1106-preview
-summary: Stringien interpolointi tarkoittaa muuttujien ja lausekkeiden upottamista
-  suoraan merkkijonoihin.
+summary: "Arduino ei suoraan tue stringien interpolointia, mutta voit saavuttaa saman\
+  \ vaikutuksen `sprintf`-funktiolla tai liitt\xE4m\xE4ll\xE4 merkkijonoja yhteen."
 title: Merkkijonon interpolointi
 weight: 8
 ---

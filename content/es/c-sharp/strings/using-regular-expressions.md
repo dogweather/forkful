@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:11.608543-07:00
-description: "Las expresiones regulares (regex) en C# son una herramienta poderosa\
-  \ para la coincidencia de patrones dentro de cadenas, lo que permite a los\u2026"
+description: "C\xF3mo: #."
 lastmod: '2024-03-13T22:44:59.068561-06:00'
 model: gpt-4-0125-preview
-summary: Las expresiones regulares (regex) en C# son una herramienta poderosa para
-  la coincidencia de patrones dentro de cadenas, lo que permite a los programadores
-  buscar, reemplazar, dividir o extraer datos de manera eficiente.
+summary: '#.'
 title: Usando expresiones regulares
 weight: 11
 ---

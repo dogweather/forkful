@@ -2,16 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:25.935328-07:00
-description: "Vi\u1EC7c in ra \u0111\u1EA7u ra \u0111\u1EC3 g\u1EE1 l\u1ED7i gi\u1ED1\
-  ng nh\u01B0 vi\u1EC7c \u0111\u1EC3 l\u1EA1i nh\u1EEFng m\u1EA9u b\xE1nh m\xEC trong\
-  \ m\xE3 l\u1EC7nh c\u1EE7a b\u1EA1n: n\xF3 hi\u1EC3n th\u1ECB l\u1ED9 tr\xECnh c\u1EE7\
-  a d\u1EEF li\u1EC7u v\xE0 lu\u1ED3ng l\xF4gic trong qu\xE1 tr\xECnh\u2026"
+description: "L\xE0m Th\u1EBF N\xE0o: Trong Clojure, b\u1EA1n th\u01B0\u1EDDng xuy\xEA\
+  n in ra \u0111\u1EA7u ra \u0111\u1EC3 g\u1EE1 l\u1ED7i s\u1EED d\u1EE5ng `println`,\
+  \ `printf`, `pr`, ho\u1EB7c `prn`. D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch b\u1EA1\
+  n r\u1EA3i r\xE1c m\u1ED9t s\u1ED1 in\u2026"
 lastmod: '2024-03-13T22:44:36.156675-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c in ra \u0111\u1EA7u ra \u0111\u1EC3 g\u1EE1 l\u1ED7i gi\u1ED1\
-  ng nh\u01B0 vi\u1EC7c \u0111\u1EC3 l\u1EA1i nh\u1EEFng m\u1EA9u b\xE1nh m\xEC trong\
-  \ m\xE3 l\u1EC7nh c\u1EE7a b\u1EA1n: n\xF3 hi\u1EC3n th\u1ECB l\u1ED9 tr\xECnh c\u1EE7\
-  a d\u1EEF li\u1EC7u v\xE0 lu\u1ED3ng l\xF4gic trong qu\xE1 tr\xECnh th\u1EF1c thi."
+summary: "Trong Clojure, b\u1EA1n th\u01B0\u1EDDng xuy\xEAn in ra \u0111\u1EA7u ra\
+  \ \u0111\u1EC3 g\u1EE1 l\u1ED7i s\u1EED d\u1EE5ng `println`, `printf`, `pr`, ho\u1EB7\
+  c `prn`."
 title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 weight: 33
 ---

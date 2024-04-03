@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 15:31:15.808761-07:00
-description: "O parsing de HTML \xE9 o processo de converter strings de HTML em uma\
-  \ estrutura que possa ser manipulada e acessada pelo seu programa Elm. Programadores\u2026"
+description: 'Como Fazer: Em Elm, usamos `elm/html` para criar HTML e `elm/parser`
+  para interpretar strings de HTML. Vamos a um exemplo.'
 lastmod: '2024-03-13T22:44:46.497895-06:00'
 model: unknown
-summary: "O parsing de HTML \xE9 o processo de converter strings de HTML em uma estrutura\
-  \ que possa ser manipulada e acessada pelo seu programa Elm."
+summary: Em Elm, usamos `elm/html` para criar HTML e `elm/parser` para interpretar
+  strings de HTML.
 title: "An\xE1lise de HTML"
 weight: 43
 ---

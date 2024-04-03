@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:06.096662-07:00
-description: "L'analisi di una data da una stringa comporta l'estrazione delle informazioni\
-  \ sulla data codificate all'interno di stringhe e la loro conversione in un\u2026"
+description: "Come fare: In Fish Shell, non si dispone di comandi integrati specificamente\
+  \ progettati per l'analisi delle date da stringhe. Invece, ci si affida a\u2026"
 lastmod: '2024-03-13T22:44:43.868928-06:00'
 model: gpt-4-0125-preview
-summary: L'analisi di una data da una stringa comporta l'estrazione delle informazioni
-  sulla data codificate all'interno di stringhe e la loro conversione in un formato
-  strutturato che gli ambienti di programmazione possono riconoscere e manipolare.
+summary: In Fish Shell, non si dispone di comandi integrati specificamente progettati
+  per l'analisi delle date da stringhe.
 title: Analisi di una data da una stringa
 weight: 30
 ---

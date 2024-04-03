@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:53.199380-07:00
-description: "CSV-tiedostojen (pilkuilla erotetut arvot) k\xE4sittely sis\xE4lt\xE4\
-  \xE4 tiedostojen j\xE4sent\xE4misen ja luomisen, jotka tallentavat taulukkomuotoista\
-  \ dataa\u2026"
+description: "Miten: Haskellissa CSV-tiedostojen k\xE4sittelyn voi saavuttaa k\xE4\
+  ytt\xE4m\xE4ll\xE4 `cassava`-kirjastoa, joka on yksi suosituimmista kolmannen osapuolen\
+  \ kirjastoista\u2026"
 lastmod: '2024-03-13T22:44:56.636770-06:00'
 model: gpt-4-0125-preview
-summary: "CSV-tiedostojen (pilkuilla erotetut arvot) k\xE4sittely sis\xE4lt\xE4\xE4\
-  \ tiedostojen j\xE4sent\xE4misen ja luomisen, jotka tallentavat taulukkomuotoista\
-  \ dataa yksinkertaisessa, tekstipohjaisessa muodossa."
+summary: "Haskellissa CSV-tiedostojen k\xE4sittelyn voi saavuttaa k\xE4ytt\xE4m\xE4\
+  ll\xE4 `cassava`-kirjastoa, joka on yksi suosituimmista kolmannen osapuolen kirjastoista\
+  \ t\xE4h\xE4n tarkoitukseen."
 title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---

@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 01:17:27.427776-07:00
-description: "Refaktorering er prosessen med \xE5 restrukturere eksisterende datakode\
-  \ uten \xE5 endre dens eksterne oppf\xF8rsel, med m\xE5l om \xE5 forbedre ikke-funksjonelle\u2026"
+description: "Hvordan: Refaktorering i Clojure\u2014takket v\xE6re dets rene syntaks\
+  \ og funksjonelle paradigme\u2014kan v\xE6re utrolig greit. La oss ta for oss et\
+  \ vanlig scenario:\u2026"
 lastmod: '2024-03-13T22:44:40.410347-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktorering er prosessen med \xE5 restrukturere eksisterende datakode\
-  \ uten \xE5 endre dens eksterne oppf\xF8rsel, med m\xE5l om \xE5 forbedre ikke-funksjonelle\
-  \ attributter."
+summary: "Refaktorering i Clojure\u2014takket v\xE6re dets rene syntaks og funksjonelle\
+  \ paradigme\u2014kan v\xE6re utrolig greit."
 title: Refaktorering
 weight: 19
 ---

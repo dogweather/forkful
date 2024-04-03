@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:44.661135-07:00
-description: "Znalezienie d\u0142ugo\u015Bci stringa w C polega na okre\u015Bleniu\
-  \ liczby znak\xF3w przed terminator nulowym `\\0`. Programi\u015Bci robi\u0105 to,\
-  \ aby poprawnie manipulowa\u0107 ci\u0105gami\u2026"
+description: "Jak to zrobi\u0107: W C, standardowo u\u017Cywan\u0105 funkcj\u0105\
+  \ do znajdowania d\u0142ugo\u015Bci stringa jest `strlen()`. Oto kr\xF3tki przyk\u0142\
+  ad."
 lastmod: '2024-03-13T22:44:35.876273-06:00'
 model: gpt-4-0125-preview
-summary: "Znalezienie d\u0142ugo\u015Bci stringa w C polega na okre\u015Bleniu liczby\
-  \ znak\xF3w przed terminator nulowym `\\0`."
+summary: "W C, standardowo u\u017Cywan\u0105 funkcj\u0105 do znajdowania d\u0142ugo\u015B\
+  ci stringa jest `strlen()`."
 title: "Znajdowanie d\u0142ugo\u015Bci \u0142a\u0144cucha"
 weight: 7
 ---

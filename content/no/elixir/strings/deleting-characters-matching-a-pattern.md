@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:42:13.446821-07:00
-description: "\xC5 slette tegn som matcher et m\xF8nster inneb\xE6rer \xE5 finne og\
-  \ fjerne spesifikke sekvenser av tegn fra en streng. Programmerere gj\xF8r dette\
-  \ for \xE5 rense data,\u2026"
+description: 'Hvordan: .'
 lastmod: '2024-03-13T22:44:40.428039-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 slette tegn som matcher et m\xF8nster inneb\xE6rer \xE5 finne og fjerne\
-  \ spesifikke sekvenser av tegn fra en streng."
+summary: .
 title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---

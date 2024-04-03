@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:13.873478-07:00
-description: "La ricerca e la sostituzione di testo in C prevedono l'identificazione\
-  \ di specifiche sottostringhe all'interno di una stringa pi\xF9 grande e la loro\u2026"
+description: "Come fare: C non dispone di funzioni incorporate per eseguire direttamente\
+  \ la ricerca e la sostituzione sulle stringhe. Tuttavia, \xE8 possibile ottenere\u2026"
 lastmod: '2024-03-13T22:44:43.889152-06:00'
 model: gpt-4-0125-preview
-summary: "La ricerca e la sostituzione di testo in C prevedono l'identificazione di\
-  \ specifiche sottostringhe all'interno di una stringa pi\xF9 grande e la loro sostituzione\
-  \ con altre sottostringhe."
+summary: C non dispone di funzioni incorporate per eseguire direttamente la ricerca
+  e la sostituzione sulle stringhe.
 title: Ricerca e sostituzione del testo
 weight: 10
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:03.785856-07:00
-description: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) t\xECm ki\u1EBFm v\xE0 thao\
-  \ t\xE1c v\u1EDBi chu\u1ED7i d\u1EF1a tr\xEAn c\xE1c m\u1EABu. L\u1EADp tr\xECnh\
-  \ vi\xEAn s\u1EED d\u1EE5ng ch\xFAng cho c\xE1c nhi\u1EC7m v\u1EE5 nh\u01B0 x\xE1\
-  c th\u1EF1c bi\u1EC3u m\u1EABu, ph\xE2n\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong Haskell, b\u1EA1n c\xF3 th\u1EC3\
+  \ s\u1EED d\u1EE5ng regex v\u1EDBi g\xF3i `regex-tdfa`. \u1EDE \u0111\xE2y, ch\xFA\
+  ng t\xF4i b\u1EAFt s\u1ED1 t\u1EEB m\u1ED9t chu\u1ED7i."
 lastmod: '2024-03-13T22:44:36.699312-06:00'
 model: gpt-4-0125-preview
-summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) t\xECm ki\u1EBFm v\xE0 thao t\xE1\
-  c v\u1EDBi chu\u1ED7i d\u1EF1a tr\xEAn c\xE1c m\u1EABu."
+summary: "Trong Haskell, b\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng regex v\u1EDBi\
+  \ g\xF3i `regex-tdfa`."
 title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---

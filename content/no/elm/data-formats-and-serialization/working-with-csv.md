@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:27.957010-07:00
-description: "\xC5 jobbe med CSV (Comma Separated Values) inneb\xE6rer parsing og\
-  \ generering av filer som lagrer tabelldata i et enkelt, klartekstformat. Dette\
-  \ er vanlig\u2026"
+description: "Hvordan: Elm har ikke innebygd st\xF8tte for parsing eller generering\
+  \ av CSV; i stedet brukes ofte tredjepartspakker som `panosoft/elm-csv`. Nedenfor\u2026"
 lastmod: '2024-03-13T22:44:40.730703-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 jobbe med CSV (Comma Separated Values) inneb\xE6rer parsing og generering\
-  \ av filer som lagrer tabelldata i et enkelt, klartekstformat."
+summary: "Elm har ikke innebygd st\xF8tte for parsing eller generering av CSV; i stedet\
+  \ brukes ofte tredjepartspakker som `panosoft/elm-csv`."
 title: Arbeide med CSV
 weight: 37
 ---

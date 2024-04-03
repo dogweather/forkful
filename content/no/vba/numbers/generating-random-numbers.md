@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:07.826082-07:00
-description: "\xC5 generere tilfeldige tall i Visual Basic for Applications (VBA)\
-  \ gir muligheten til \xE5 simulere prosesser med elementer av sjanse eller variabilitet,\
-  \ som\u2026"
+description: "Hvordan: I VBA brukes `Rnd`-funksjonen til \xE5 generere tilfeldige\
+  \ tall. Som standard genererer `Rnd` et enkeltpresisjon flyttall som er st\xF8rre\
+  \ enn eller\u2026"
 lastmod: '2024-03-13T22:44:40.614378-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 generere tilfeldige tall i Visual Basic for Applications (VBA) gir\
-  \ muligheten til \xE5 simulere prosesser med elementer av sjanse eller variabilitet,\
-  \ som terningkast eller pr\xF8veutvalg."
+summary: "I VBA brukes `Rnd`-funksjonen til \xE5 generere tilfeldige tall."
 title: Generere tilfeldige tall
 weight: 12
 ---

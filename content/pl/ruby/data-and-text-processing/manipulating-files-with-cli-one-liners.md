@@ -1,13 +1,13 @@
 ---
 date: 2024-01-27 16:21:38.017624-07:00
-description: "Manipulowanie plikami przy u\u017Cyciu jednoliniowych polece\u0144 CLI\
-  \ w Ruby polega na wykonywaniu typowych operacji na plikach bezpo\u015Brednio z\
-  \ poziomu terminala za\u2026"
+description: "Jak to zrobi\u0107: Ruby ze swoj\u0105 wyrazist\u0105 sk\u0142adni\u0105\
+  \ umo\u017Cliwia tworzenie zwi\u0119z\u0142ych i czytelnych jednoliniowych polece\u0144\
+  , kt\xF3re mog\u0105 obs\u0142ugiwa\u0107 r\xF3\u017Cnorodne\u2026"
 lastmod: '2024-03-13T22:44:35.927634-06:00'
 model: gpt-4-0125-preview
-summary: "Manipulowanie plikami przy u\u017Cyciu jednoliniowych polece\u0144 CLI w\
-  \ Ruby polega na wykonywaniu typowych operacji na plikach bezpo\u015Brednio z poziomu\
-  \ terminala za pomoc\u0105 skrypt\xF3w Ruby."
+summary: "Ruby ze swoj\u0105 wyrazist\u0105 sk\u0142adni\u0105 umo\u017Cliwia tworzenie\
+  \ zwi\u0119z\u0142ych i czytelnych jednoliniowych polece\u0144, kt\xF3re mog\u0105\
+  \ obs\u0142ugiwa\u0107 r\xF3\u017Cnorodne operacje na plikach."
 title: "Manipulowanie plikami za pomoc\u0105 jednolinijkowc\xF3w CLI"
 weight: 31
 ---

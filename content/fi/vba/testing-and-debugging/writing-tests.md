@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:51.491594-07:00
-description: "Ohjelmoinnissa testien kirjoittaminen tarkoittaa tiettyjen menettelyjen\
-  \ luomista koodin toimivuuden ja suorituskyvyn varmistamiseksi, varmistamaan, ett\xE4\
-  \u2026"
+description: "Miten: Vaikka Visual Basic for Applications (VBA) ei sis\xE4ll\xE4k\xE4\
+  \xE4n valmista testausrunkoa, joka olisi verrattavissa kieliss\xE4 kuten Python\
+  \ tai JavaScript\u2026"
 lastmod: '2024-03-13T22:44:56.404723-06:00'
 model: gpt-4-0125-preview
-summary: "Ohjelmoinnissa testien kirjoittaminen tarkoittaa tiettyjen menettelyjen\
-  \ luomista koodin toimivuuden ja suorituskyvyn varmistamiseksi, varmistamaan, ett\xE4\
-  \ ne toimivat odotetusti erilaisissa olosuhteissa."
+summary: "Vaikka Visual Basic for Applications (VBA) ei sis\xE4ll\xE4k\xE4\xE4n valmista\
+  \ testausrunkoa, joka olisi verrattavissa kieliss\xE4 kuten Python tai JavaScript\
+  \ saatavilla oleviin, voit silti toteuttaa yksinkertaisia testimenettelyj\xE4 koodisi\
+  \ eheyden tarkistamiseksi."
 title: Testien kirjoittaminen
 weight: 36
 ---

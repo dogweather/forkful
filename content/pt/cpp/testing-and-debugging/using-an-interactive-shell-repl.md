@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:12:06.076563-07:00
-description: "Um REPL (Read-Eval-Print-Loop - Ler-Avaliar-Imprimir-Loop) \xE9 um ambiente\
-  \ de programa\xE7\xE3o simples e interativo. Programadores o utilizam para experimenta\xE7\
-  \xE3o\u2026"
+description: "Como Fazer: C++ n\xE3o vem com um REPL integrado, mas ferramentas como\
+  \ Cling oferecem essa capacidade. Aqui est\xE1 como usar o Cling para calcular a\
+  \ soma de\u2026"
 lastmod: '2024-03-13T22:44:46.881188-06:00'
 model: gpt-4-0125-preview
-summary: "Um REPL (Read-Eval-Print-Loop - Ler-Avaliar-Imprimir-Loop) \xE9 um ambiente\
-  \ de programa\xE7\xE3o simples e interativo."
+summary: "C++ n\xE3o vem com um REPL integrado, mas ferramentas como Cling oferecem\
+  \ essa capacidade."
 title: Usando um shell interativo (REPL)
 weight: 34
 ---

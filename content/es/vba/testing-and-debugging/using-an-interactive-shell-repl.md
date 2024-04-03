@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:16.176985-07:00
-description: "Una consola interactiva, o Bucle Leer-Evaluar-Imprimir (REPL por sus\
-  \ siglas en ingl\xE9s), permite a los usuarios introducir comandos, ejecutarlos\
-  \ y ver los\u2026"
+description: "C\xF3mo: Visual Basic para Aplicaciones (VBA) por s\xED mismo no soporta\
+  \ de forma nativa una consola interactiva o experiencia REPL, como se ve en lenguajes\u2026"
 lastmod: '2024-03-13T22:44:58.895036-06:00'
 model: gpt-4-0125-preview
-summary: "Una consola interactiva, o Bucle Leer-Evaluar-Imprimir (REPL por sus siglas\
-  \ en ingl\xE9s), permite a los usuarios introducir comandos, ejecutarlos y ver los\
-  \ resultados en tiempo real."
+summary: "Visual Basic para Aplicaciones (VBA) por s\xED mismo no soporta de forma\
+  \ nativa una consola interactiva o experiencia REPL, como se ve en lenguajes como\
+  \ Python o JavaScript."
 title: Usando un shell interactivo (REPL)
 weight: 34
 ---

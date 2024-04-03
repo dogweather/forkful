@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:37:54.982811-07:00
-description: "Das Umwandeln eines Strings in Kleinbuchstaben in Bash bedeutet, alle\
-  \ Gro\xDFbuchstaben in einem Text in ihre entsprechenden Kleinbuchstaben zu \xE4\
-  ndern.\u2026"
+description: "Anleitung: Ein Beispiel, wie man einen String in Bash mit eingebauten\
+  \ String-Operationen zu Kleinbuchstaben \xE4ndern kann."
 lastmod: '2024-03-13T22:44:54.044464-06:00'
 model: gpt-4-1106-preview
-summary: "Das Umwandeln eines Strings in Kleinbuchstaben in Bash bedeutet, alle Gro\xDF\
-  buchstaben in einem Text in ihre entsprechenden Kleinbuchstaben zu \xE4ndern."
+summary: "Ein Beispiel, wie man einen String in Bash mit eingebauten String-Operationen\
+  \ zu Kleinbuchstaben \xE4ndern kann."
 title: Umformung eines Strings in Kleinbuchstaben
 weight: 4
 ---

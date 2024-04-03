@@ -2,16 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:53.206409-07:00
-description: "L\xE0m tr\xF2n s\u1ED1 c\xF3 ngh\u0129a l\xE0 \u0111i\u1EC1u ch\u1EC9\
-  nh ch\xFAng \u0111\u1EC3 \u0111\u1EA1t m\u1ED9t \u0111\u1ED9 ch\xEDnh x\xE1c ch\u1EC9\
-  \ \u0111\u1ECBnh. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0\
-  y \u0111\u1EC3 \u0111\u01A1n gi\u1EA3n h\xF3a s\u1ED1 li\u1EC7u cho d\u1EC5 \u0111\
-  \u1ECDc, \u0111\u1EC3 \u0111\xE1p\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Java cung c\u1EA5p nhi\u1EC1u c\xE1ch \u0111\
+  \u1EC3 l\xE0m tr\xF2n s\u1ED1. D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t v\xED d\u1EE5\
+  \ nhanh v\u1EDBi `Math.round()`, `BigDecimal`, v\xE0 `DecimalFormat`."
 lastmod: '2024-03-13T22:44:36.482468-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m tr\xF2n s\u1ED1 c\xF3 ngh\u0129a l\xE0 \u0111i\u1EC1u ch\u1EC9nh\
-  \ ch\xFAng \u0111\u1EC3 \u0111\u1EA1t m\u1ED9t \u0111\u1ED9 ch\xEDnh x\xE1c ch\u1EC9\
-  \ \u0111\u1ECBnh."
+summary: "Java cung c\u1EA5p nhi\u1EC1u c\xE1ch \u0111\u1EC3 l\xE0m tr\xF2n s\u1ED1\
+  ."
 title: "L\xE0m tr\xF2n s\u1ED1"
 weight: 13
 ---

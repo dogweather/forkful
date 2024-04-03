@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 17:45:03.809782-07:00
-description: "Scaricare una pagina web significa acquisire i dati da un URL. I programmatori\
-  \ lo fanno per recuperare informazioni, consumare servizi web o per integrare\u2026"
+description: 'How to: In Swift, usiamo `URLSession` per scaricare contenuti web. Ecco
+  un esempio semplice.'
 lastmod: '2024-03-13T22:44:43.768958-06:00'
 model: gpt-4-1106-preview
-summary: Scaricare una pagina web significa acquisire i dati da un URL.
+summary: In Swift, usiamo `URLSession` per scaricare contenuti web.
 title: Scaricare una pagina web
 weight: 42
 ---

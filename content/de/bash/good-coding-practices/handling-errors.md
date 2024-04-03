@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 00:36:56.268023-07:00
-description: "Fehlerbehandlung in Bash-Skripten bedeutet, vorherzusehen, wo Probleme\
-  \ auftreten k\xF6nnten, und diese elegant zu behandeln. Warum? Nun, es h\xE4lt Ihr\
-  \ Skript\u2026"
+description: 'Wie geht das: .'
 lastmod: '2024-03-13T22:44:54.066893-06:00'
 model: gpt-4-1106-preview
-summary: "Fehlerbehandlung in Bash-Skripten bedeutet, vorherzusehen, wo Probleme auftreten\
-  \ k\xF6nnten, und diese elegant zu behandeln."
+summary: .
 title: Fehlerbehandlung
 weight: 16
 ---

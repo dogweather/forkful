@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:51:50.797922-07:00
-description: "Strenginterpolasjon er det \xE5 sette sammen en streng med variabler\
-  \ eller uttrykk. Programmerere bruker det for \xE5 lage dynamisk tekst og forbedre\u2026"
+description: "Slik gj\xF8r du: ."
 lastmod: '2024-03-13T22:44:40.518257-06:00'
 model: gpt-4-1106-preview
-summary: "Strenginterpolasjon er det \xE5 sette sammen en streng med variabler eller\
-  \ uttrykk."
+summary: .
 title: Interpolering av en streng
 weight: 8
 ---

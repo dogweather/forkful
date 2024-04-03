@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:41:07.600063-07:00
-description: "Crear archivos temporales es pr\xE1ctica com\xFAn en programaci\xF3\
-  n para guardar datos que solo necesitas durante la ejecuci\xF3n de tu script. Se\
-  \ hace para no dejar\u2026"
+description: "C\xF3mo hacerlo: Para trabajar con archivos temporales en Python, usamos\
+  \ el m\xF3dulo `tempfile`. Aqu\xED un ejemplo simple."
 lastmod: '2024-03-13T22:44:58.633522-06:00'
 model: gpt-4-1106-preview
-summary: "Crear archivos temporales es pr\xE1ctica com\xFAn en programaci\xF3n para\
-  \ guardar datos que solo necesitas durante la ejecuci\xF3n de tu script."
+summary: "Para trabajar con archivos temporales en Python, usamos el m\xF3dulo `tempfile`."
 title: Creando un archivo temporal
 weight: 21
 ---

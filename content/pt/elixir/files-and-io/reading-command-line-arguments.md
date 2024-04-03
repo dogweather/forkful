@@ -1,13 +1,9 @@
 ---
 date: 2024-01-20 17:55:52.862037-07:00
-description: "Ler argumentos da linha de comando permite que programas em Elixir recebam\
-  \ dados externos quando s\xE3o iniciados, tornando-os customiz\xE1veis e flex\xED\
-  veis.\u2026"
+description: "How to: Comece com um projeto Elixir. Aqui est\xE1 o que voc\xEA precisa."
 lastmod: '2024-03-13T22:44:46.253360-06:00'
 model: gpt-4-1106-preview
-summary: "Ler argumentos da linha de comando permite que programas em Elixir recebam\
-  \ dados externos quando s\xE3o iniciados, tornando-os customiz\xE1veis e flex\xED\
-  veis."
+summary: Comece com um projeto Elixir.
 title: Lendo argumentos da linha de comando
 weight: 23
 ---

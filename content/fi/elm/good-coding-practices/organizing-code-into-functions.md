@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 01:10:42.118485-07:00
-description: "Koko koodisi heitt\xE4minen yhteen suureen kasaa? Huono idea. Jakaminen\
-  \ funktioihin? Hyv\xE4 idea. Se pit\xE4\xE4 Elm-koodisi siistin\xE4, uudelleenk\xE4\
-  ytett\xE4v\xE4n\xE4 ja\u2026"
+description: "Miten: T\xE4ss\xE4 on palanen Elm-koodia, jossa on yksinkertainen funktio\
+  \ k\xE4ytt\xE4j\xE4n tervehtimiseen."
 lastmod: '2024-03-13T22:44:56.494265-06:00'
 model: gpt-4-1106-preview
-summary: "Koko koodisi heitt\xE4minen yhteen suureen kasaa."
+summary: "T\xE4ss\xE4 on palanen Elm-koodia, jossa on yksinkertainen funktio k\xE4\
+  ytt\xE4j\xE4n tervehtimiseen."
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---

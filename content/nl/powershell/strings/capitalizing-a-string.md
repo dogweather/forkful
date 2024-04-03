@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:28.443821-07:00
-description: "Een tekenreeks kapitaliseren betekent dat elke letter met een hoofdletter\
-  \ begint, doorgaans gebruikt voor titels of om eigennamen te benadrukken.\u2026"
+description: "Hoe: Laten we wat tekst opvrolijken. In PowerShell, gebruik `.ToTitleCase`\
+  \ van `System.Globalization` voor kapitalisatie zoals bij titels, of eenvoudige\u2026"
 lastmod: '2024-03-13T22:44:51.009372-06:00'
 model: gpt-4-0125-preview
-summary: Een tekenreeks kapitaliseren betekent dat elke letter met een hoofdletter
-  begint, doorgaans gebruikt voor titels of om eigennamen te benadrukken.
+summary: Laten we wat tekst opvrolijken.
 title: Een string met hoofdletters maken
 weight: 2
 ---

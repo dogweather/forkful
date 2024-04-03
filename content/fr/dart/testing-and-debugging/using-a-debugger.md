@@ -2,7 +2,7 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:02.128649-07:00
-description: '#'
+description: 'Comment faire : #.'
 lastmod: '2024-03-13T22:44:57.395026-06:00'
 model: gpt-4-0125-preview
 summary: '#.'

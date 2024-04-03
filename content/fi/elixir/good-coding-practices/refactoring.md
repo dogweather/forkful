@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 01:18:09.227740-07:00
-description: "Refaktorointi on prosessi, jossa olemassa olevaa koodia uudelleenj\xE4\
-  rjestet\xE4\xE4n muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4. Tavoitteena on\
-  \ parantaa ei-\u2026"
+description: "Kuinka: Siistit\xE4\xE4n yleinen Elixir-malli. Refaktoroimme `calculate_stats`\
+  \ funktion, joka tekee enemm\xE4n kuin sen pit\xE4isi, jakamalla sen pienempiin,\u2026"
 lastmod: '2024-03-13T22:44:56.235350-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktorointi on prosessi, jossa olemassa olevaa koodia uudelleenj\xE4rjestet\xE4\
-  \xE4n muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4."
+summary: "Siistit\xE4\xE4n yleinen Elixir-malli."
 title: Koodin refaktorointi
 weight: 19
 ---

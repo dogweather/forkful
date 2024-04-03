@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 18:02:49.074949-07:00
-description: "Uuden projektin aloittaminen on puhtaan koodisivun luomista ja projektikansion\
-  \ rakentamista. Koodarit aloittavat uusia projekteja organisoidakseen ideansa\u2026"
+description: "How to: (Kuinka tehd\xE4:) ."
 lastmod: '2024-03-13T22:44:56.740147-06:00'
 model: gpt-4-1106-preview
-summary: Uuden projektin aloittaminen on puhtaan koodisivun luomista ja projektikansion
-  rakentamista.
+summary: .
 title: Uuden projektin aloittaminen
 weight: 1
 ---

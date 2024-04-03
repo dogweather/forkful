@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 18:04:06.957812-07:00
-description: "Att starta ett nytt projekt inneb\xE4r att skapa en ny mapp och filstruktur\
-  \ f\xF6r ett programmeringsprojekt. Programmerare g\xF6r detta f\xF6r att organisera\
-  \ kod,\u2026"
+description: 'How to: Skapa en ny mapp i din arbetsyta.'
 lastmod: '2024-03-13T22:44:38.039155-06:00'
 model: gpt-4-1106-preview
-summary: "Att starta ett nytt projekt inneb\xE4r att skapa en ny mapp och filstruktur\
-  \ f\xF6r ett programmeringsprojekt."
+summary: Skapa en ny mapp i din arbetsyta.
 title: "Att p\xE5b\xF6rja ett nytt projekt"
 weight: 1
 ---

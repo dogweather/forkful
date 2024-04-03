@@ -1,14 +1,12 @@
 ---
 date: 2024-01-27 20:35:25.415544-07:00
-description: "Att generera slumpm\xE4ssiga nummer i Rust inneb\xE4r att anv\xE4nda\
-  \ bibliotek f\xF6r att producera of\xF6ruts\xE4gbara numeriska v\xE4rden, vilket\
-  \ \xE4r oumb\xE4rligt f\xF6r uppgifter\u2026"
+description: "Hur man g\xF6r: Rust f\xF6rlitar sig p\xE5 externa crates f\xF6r generering\
+  \ av slumpm\xE4ssiga nummer, d\xE4r `rand` \xE4r det mest anv\xE4nda. F\xF6r att\
+  \ b\xF6rja generera\u2026"
 lastmod: '2024-03-13T22:44:37.693886-06:00'
 model: gpt-4-0125-preview
-summary: "Att generera slumpm\xE4ssiga nummer i Rust inneb\xE4r att anv\xE4nda bibliotek\
-  \ f\xF6r att producera of\xF6ruts\xE4gbara numeriska v\xE4rden, vilket \xE4r oumb\xE4\
-  rligt f\xF6r uppgifter som str\xE4cker sig fr\xE5n kryptografi och simulationer\
-  \ till spel och slumpm\xE4ssiga algoritmer."
+summary: "Rust f\xF6rlitar sig p\xE5 externa crates f\xF6r generering av slumpm\xE4\
+  ssiga nummer, d\xE4r `rand` \xE4r det mest anv\xE4nda."
 title: Generera slumptal
 weight: 12
 ---

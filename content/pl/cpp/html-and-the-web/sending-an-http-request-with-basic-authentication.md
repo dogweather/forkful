@@ -1,13 +1,12 @@
 ---
 date: 2024-01-20 18:01:23.209982-07:00
-description: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawow\u0105 autentykacj\u0105\
-  \ to proces, w kt\xF3rym klient internetowy przekazuje dane logowania do serwera\
-  \ w zabezpieczonym formacie.\u2026"
+description: "How To (Jak To Zrobi\u0107): C++ nie ma wbudowanego wsparcia dla HTTP,\
+  \ wi\u0119c u\u017Cyjemy biblioteki `CURL` oraz dodatkowo `cpp-base64` do zakodowania\
+  \ po\u015Bwiadcze\u0144.\u2026"
 lastmod: '2024-03-13T22:44:35.712530-06:00'
 model: gpt-4-1106-preview
-summary: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawow\u0105 autentykacj\u0105\
-  \ to proces, w kt\xF3rym klient internetowy przekazuje dane logowania do serwera\
-  \ w zabezpieczonym formacie."
+summary: "C++ nie ma wbudowanego wsparcia dla HTTP, wi\u0119c u\u017Cyjemy biblioteki\
+  \ `CURL` oraz dodatkowo `cpp-base64` do zakodowania po\u015Bwiadcze\u0144."
 title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
 weight: 45
 ---

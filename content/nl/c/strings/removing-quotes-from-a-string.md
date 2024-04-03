@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:26.868427-07:00
-description: "Het verwijderen van aanhalingstekens uit een string in C omvat het extraheren\
-  \ van de tekstuele inhoud zonder de omsluitende enkele (' ') of dubbele (\" \")\u2026"
+description: "Hoe te: Om aanhalingstekens uit een string in C te verwijderen, doorlopen\
+  \ we de string, waarbij we tekens die geen aanhalingstekens zijn kopi\xEBren naar\
+  \ een\u2026"
 lastmod: '2024-03-13T22:44:51.277656-06:00'
 model: gpt-4-0125-preview
-summary: Het verwijderen van aanhalingstekens uit een string in C omvat het extraheren
-  van de tekstuele inhoud zonder de omsluitende enkele (' ') of dubbele (" ") aanhalingstekens.
+summary: "Om aanhalingstekens uit een string in C te verwijderen, doorlopen we de\
+  \ string, waarbij we tekens die geen aanhalingstekens zijn kopi\xEBren naar een\
+  \ nieuwe string."
 title: Quotes uit een string verwijderen
 weight: 9
 ---

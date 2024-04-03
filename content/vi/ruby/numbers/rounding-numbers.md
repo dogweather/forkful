@@ -2,17 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:17.848877-07:00
-description: "L\xE0m tr\xF2n s\u1ED1 c\xF3 ngh\u0129a l\xE0 \u0111i\u1EC1u ch\u1EC9\
-  nh ch\xFAng v\u1EC1 s\u1ED1 nguy\xEAn g\u1EA7n nh\u1EA5t ho\u1EB7c \u0111\u1EBF\
-  n m\u1ED9t m\u1EE9c \u0111\u1ED9 ch\xEDnh x\xE1c \u0111\u01B0\u1EE3c ch\u1EC9 \u0111\
-  \u1ECBnh. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m tr\xF2n s\u1ED1 \u0111\u1EC3 \u0111\
-  \u01A1n gi\u1EA3n\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: ."
 lastmod: '2024-03-13T22:44:37.330463-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m tr\xF2n s\u1ED1 c\xF3 ngh\u0129a l\xE0 \u0111i\u1EC1u ch\u1EC9nh\
-  \ ch\xFAng v\u1EC1 s\u1ED1 nguy\xEAn g\u1EA7n nh\u1EA5t ho\u1EB7c \u0111\u1EBFn\
-  \ m\u1ED9t m\u1EE9c \u0111\u1ED9 ch\xEDnh x\xE1c \u0111\u01B0\u1EE3c ch\u1EC9 \u0111\
-  \u1ECBnh."
+summary: .
 title: "L\xE0m tr\xF2n s\u1ED1"
 weight: 13
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:04.688043-07:00
-description: "Het genereren van willekeurige getallen in Elixir is een fundamentele\
-  \ programmeertaak, essentieel voor applicaties die onvoorspelbare resultaten nodig\u2026"
+description: "Hoe te: Om willekeurige getallen te genereren in Elixir, gebruik je\
+  \ voornamelijk de `:rand` module die verschillende functies biedt voor dit doel.\
+  \ Hier is\u2026"
 lastmod: '2024-03-13T22:44:50.457928-06:00'
 model: gpt-4-0125-preview
-summary: Het genereren van willekeurige getallen in Elixir is een fundamentele programmeertaak,
-  essentieel voor applicaties die onvoorspelbare resultaten nodig hebben zoals bij
-  het genereren van veilige tokens, het bemonsteren van gegevens, of in spelalgoritmen.
+summary: Om willekeurige getallen te genereren in Elixir, gebruik je voornamelijk
+  de `:rand` module die verschillende functies biedt voor dit doel.
 title: Willekeurige getallen genereren
 weight: 12
 ---

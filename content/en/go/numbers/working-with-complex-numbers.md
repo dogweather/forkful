@@ -1,11 +1,12 @@
 ---
 date: 2024-02-03 17:50:08.701621-07:00
-description: "Working with complex numbers in programming involves manipulating numbers\
-  \ that have both a real and an imaginary part, typically expressed as `a + bi`.\u2026"
+description: "How to: In Go, complex numbers are handled using the built-in `complex`,\
+  \ `real`, and `imag` functions, along with `complex64` and `complex128` types\u2026"
 lastmod: '2024-03-13T22:44:59.625553-06:00'
 model: gpt-4-0125-preview
-summary: Working with complex numbers in programming involves manipulating numbers
-  that have both a real and an imaginary part, typically expressed as `a + bi`.
+summary: In Go, complex numbers are handled using the built-in `complex`, `real`,
+  and `imag` functions, along with `complex64` and `complex128` types (representing
+  64-bit and 128-bit complex numbers respectively).
 title: Working with complex numbers
 weight: 14
 ---

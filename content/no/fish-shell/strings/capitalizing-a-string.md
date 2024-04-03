@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:19.170453-07:00
-description: "\xC5 sette stor forbokstav i en streng betyr \xE5 endre den slik at\
-  \ den f\xF8rste bokstaven er stor, og resten av strengen er med sm\xE5 bokstaver.\
-  \ Dette er en vanlig\u2026"
+description: "Hvordan: I Fish Shell kan strenger manipuleres direkte med innebygde\
+  \ funksjoner, uten behov for eksterne verkt\xF8y eller biblioteker. For \xE5 sette\
+  \ stor\u2026"
 lastmod: '2024-03-13T22:44:41.208643-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 sette stor forbokstav i en streng betyr \xE5 endre den slik at den\
-  \ f\xF8rste bokstaven er stor, og resten av strengen er med sm\xE5 bokstaver."
+summary: "I Fish Shell kan strenger manipuleres direkte med innebygde funksjoner,\
+  \ uten behov for eksterne verkt\xF8y eller biblioteker."
 title: Sette stor bokstav i en streng
 weight: 2
 ---

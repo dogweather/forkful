@@ -2,16 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:02.492873-07:00
-description: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n l\xE0 l\u01B0u tr\u1EEF\
-  \ d\u1EEF li\u1EC7u d\u01B0\u1EDBi d\u1EA1ng v\u0103n b\u1EA3n thu\u1EA7n t\xFA\
-  y tr\xEAn \u0111\u0129a. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7\
-  c n\xE0y cho m\u1EE5c \u0111\xEDch ghi nh\u1EADt k\xFD, c\u1EA5u h\xECnh, ho\u1EB7\
-  c\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch \u0111\
+  \u1EC3 vi\u1EBFt v\xE0o m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong PowerShell; n\xF3\
+  \ c\u1EF1c k\u1EF3 d\u1EC5 d\xE0ng! T\u1EA1o v\xE0 vi\u1EBFt v\u0103n b\u1EA3n v\xE0\
+  o m\u1ED9t t\u1EC7p m\u1EDBi."
 lastmod: '2024-03-13T22:44:36.960332-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n l\xE0 l\u01B0u tr\u1EEF d\u1EEF\
-  \ li\u1EC7u d\u01B0\u1EDBi d\u1EA1ng v\u0103n b\u1EA3n thu\u1EA7n t\xFAy tr\xEA\
-  n \u0111\u0129a."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch \u0111\u1EC3 vi\u1EBFt v\xE0o m\u1ED9\
+  t t\u1EC7p v\u0103n b\u1EA3n trong PowerShell; n\xF3 c\u1EF1c k\u1EF3 d\u1EC5 d\xE0\
+  ng."
 title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 24
 ---

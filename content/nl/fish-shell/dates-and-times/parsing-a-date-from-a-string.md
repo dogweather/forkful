@@ -2,13 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:56.155272-07:00
-description: "Het parsen van een datum uit een string houdt in het lezen van datumgegevens\
-  \ die zijn opgemaakt als tekst en het omzetten ervan naar een\u2026"
+description: 'Hoe: .'
 lastmod: '2024-03-13T22:44:51.256765-06:00'
 model: gpt-4-0125-preview
-summary: Het parsen van een datum uit een string houdt in het lezen van datumgegevens
-  die zijn opgemaakt als tekst en het omzetten ervan naar een datumdatastructuur die
-  het programma kan begrijpen.
+summary: .
 title: Een datum uit een string parsen
 weight: 30
 ---

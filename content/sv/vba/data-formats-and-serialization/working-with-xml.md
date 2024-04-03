@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:54.381527-07:00
-description: "Att arbeta med XML i Visual Basic for Applications (VBA) inneb\xE4r\
-  \ att analysera, skapa och modifiera XML-dokument inom ramen f\xF6r Microsoft Office-\u2026"
+description: "Hur man g\xF6r: F\xF6r att b\xF6rja interagera med XML anv\xE4nder man\
+  \ vanligtvis objektet `MSXML2.DOMDocument`. Det h\xE4r gr\xE4nssnittet g\xF6r det\
+  \ m\xF6jligt f\xF6r dig att\u2026"
 lastmod: '2024-03-13T22:44:37.769910-06:00'
 model: gpt-4-0125-preview
-summary: "Att arbeta med XML i Visual Basic for Applications (VBA) inneb\xE4r att\
-  \ analysera, skapa och modifiera XML-dokument inom ramen f\xF6r Microsoft Office-applikationer."
+summary: "F\xF6r att b\xF6rja interagera med XML anv\xE4nder man vanligtvis objektet\
+  \ `MSXML2.DOMDocument`."
 title: Arbeta med XML
 weight: 40
 ---

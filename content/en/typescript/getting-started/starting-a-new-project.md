@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 18:04:27.083983-07:00
-description: "Starting a new project in TypeScript is all about setting up a solid\
-  \ foundation to code on. Programmers initiate new projects to turn fresh ideas into\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:59.859527-06:00'
 model: gpt-4-1106-preview
-summary: Starting a new project in TypeScript is all about setting up a solid foundation
-  to code on.
+summary: .
 title: Starting a new project
 weight: 1
 ---

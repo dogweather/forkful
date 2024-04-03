@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:00:02.674929-07:00
-description: "Code in Go in Funktionen zu organisieren, bedeutet, den Code in wiederverwendbare,\
-  \ modulare Bl\xF6cke zu unterteilen, die spezifische Aufgaben ausf\xFChren.\u2026"
+description: "Wie: In Go definieren Sie eine Funktion mit dem Schl\xFCsselwort `func`,\
+  \ gefolgt vom Namen der Funktion, Parametern (falls vorhanden) und dem R\xFCckgabetyp.\u2026"
 lastmod: '2024-03-13T22:44:53.293678-06:00'
 model: gpt-4-0125-preview
-summary: "Code in Go in Funktionen zu organisieren, bedeutet, den Code in wiederverwendbare,\
-  \ modulare Bl\xF6cke zu unterteilen, die spezifische Aufgaben ausf\xFChren."
+summary: "In Go definieren Sie eine Funktion mit dem Schl\xFCsselwort `func`, gefolgt\
+  \ vom Namen der Funktion, Parametern (falls vorhanden) und dem R\xFCckgabetyp."
 title: Organisation von Code in Funktionen
 weight: 18
 ---

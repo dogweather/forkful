@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:49.154571-07:00
-description: "Skriving til standardfeil (stderr) handler om \xE5 lede programmets\
-  \ feilmeldinger eller diagnostiske utdata til en separat str\xF8m, forskjellig fra\u2026"
+description: "Hvordan: I Swift kan skriving til standardfeil gj\xF8res ved \xE5 bruke\
+  \ `FileHandle`-klassen for direkte tilgang til stderr. Her er et enkelt eksempel."
 lastmod: '2024-03-13T22:44:41.158340-06:00'
 model: gpt-4-0125-preview
-summary: "Skriving til standardfeil (stderr) handler om \xE5 lede programmets feilmeldinger\
-  \ eller diagnostiske utdata til en separat str\xF8m, forskjellig fra standardutdata\
-  \ (stdout)."
+summary: "I Swift kan skriving til standardfeil gj\xF8res ved \xE5 bruke `FileHandle`-klassen\
+  \ for direkte tilgang til stderr."
 title: Skriving til standardfeil
 weight: 25
 ---

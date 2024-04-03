@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:35:45.672979-07:00
-description: "Concat\xE9ner des cha\xEEnes, c'est les joindre bout \xE0 bout. On fait\
-  \ \xE7a pour cr\xE9er des phrases, des messages d'erreur, ou assembler des bouts\
-  \ de texte de\u2026"
+description: 'How to: (Comment faire : ) .'
 lastmod: '2024-03-13T22:44:58.209398-06:00'
 model: gpt-4-1106-preview
-summary: "Concat\xE9ner des cha\xEEnes, c'est les joindre bout \xE0 bout."
+summary: .
 title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 weight: 3
 ---

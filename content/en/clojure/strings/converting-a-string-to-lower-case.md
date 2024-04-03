@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:37:54.271048-07:00
-description: "Converting a string to lower case means transforming all the characters\
-  \ in the text to their lower-case variants, such as turning \"Hello, World!\" into\u2026"
+description: 'How to: In Clojure, to convert a string to lower case, you''ll use the
+  `clojure.string/lower-case` function. Look how simple it is.'
 lastmod: '2024-03-13T22:44:59.733802-06:00'
 model: gpt-4-1106-preview
-summary: Converting a string to lower case means transforming all the characters in
-  the text to their lower-case variants, such as turning "Hello, World.
+summary: In Clojure, to convert a string to lower case, you'll use the `clojure.string/lower-case`
+  function.
 title: Converting a string to lower case
 weight: 4
 ---

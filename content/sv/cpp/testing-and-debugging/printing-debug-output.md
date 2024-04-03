@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:52:05.650822-07:00
-description: "Utskrift f\xF6r fels\xF6kning \xE4r n\xE4r man skriver ut meddelanden\
-  \ f\xF6r att f\xF6rst\xE5 vad programmet g\xF6r. Programmerare g\xF6r detta f\xF6\
-  r att snabbt hitta och fixa buggar."
+description: "Hur man g\xF6r: ."
 lastmod: '2024-03-13T22:44:38.211636-06:00'
 model: gpt-4-1106-preview
-summary: "Utskrift f\xF6r fels\xF6kning \xE4r n\xE4r man skriver ut meddelanden f\xF6\
-  r att f\xF6rst\xE5 vad programmet g\xF6r."
+summary: .
 title: "Skriva ut fels\xF6kningsdata"
 weight: 33
 ---

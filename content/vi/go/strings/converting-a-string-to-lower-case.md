@@ -2,18 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:40.481418-07:00
-description: "Vi\u1EC7c chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF\
-  \ th\u01B0\u1EDDng l\xE0 m\u1ED9t thao t\xE1c c\u01A1 b\u1EA3n gi\xFAp \u0111\u1EA3\
-  m b\u1EA3o s\u1EF1 th\u1ED1ng nh\u1EA5t v\xE0 nh\u1EA5t qu\xE1n trong x\u1EED l\xFD\
-  \ v\u0103n b\u1EA3n, r\u1EA5t c\u1EA7n thi\u1EBFt cho c\xE1c t\xE1c\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Go, vi\u1EC7c chuy\u1EC3n \u0111\u1ED5\
+  i m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng c\xF3 th\u1EC3 d\u1EC5\
+  \ d\xE0ng th\u1EF1c hi\u1EC7n th\xF4ng qua g\xF3i `strings`, c\u1EE5 th\u1EC3 l\xE0\
+  \ h\xE0m `ToLower()`. H\xE0m n\xE0y\u2026"
 lastmod: '2024-03-13T22:44:35.963487-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF\
-  \ th\u01B0\u1EDDng l\xE0 m\u1ED9t thao t\xE1c c\u01A1 b\u1EA3n gi\xFAp \u0111\u1EA3\
-  m b\u1EA3o s\u1EF1 th\u1ED1ng nh\u1EA5t v\xE0 nh\u1EA5t qu\xE1n trong x\u1EED l\xFD\
-  \ v\u0103n b\u1EA3n, r\u1EA5t c\u1EA7n thi\u1EBFt cho c\xE1c t\xE1c v\u1EE5 nh\u01B0\
-  \ so s\xE1nh kh\xF4ng ph\xE2n bi\u1EC7t ch\u1EEF hoa ch\u1EEF th\u01B0\u1EDDng hay\
-  \ chu\u1EA9n h\xF3a v\u0103n b\u1EA3n."
+summary: "Trong Go, vi\u1EC7c chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i th\xE0\
+  nh ch\u1EEF th\u01B0\u1EDDng c\xF3 th\u1EC3 d\u1EC5 d\xE0ng th\u1EF1c hi\u1EC7n\
+  \ th\xF4ng qua g\xF3i `strings`, c\u1EE5 th\u1EC3 l\xE0 h\xE0m `ToLower()`."
 title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
 weight: 4
 ---

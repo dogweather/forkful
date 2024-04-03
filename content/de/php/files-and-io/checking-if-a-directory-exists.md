@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:30.307855-07:00
-description: "Das \xDCberpr\xFCfen, ob ein Verzeichnis existiert, ist eine grundlegende\
-  \ Aufgabe in der PHP-Programmierung, da es Ihnen erm\xF6glicht, die Pr\xE4senz eines\u2026"
+description: "Wie: Die native Methode, um zu \xFCberpr\xFCfen, ob ein Verzeichnis\
+  \ in PHP existiert, ist die Verwendung der `is_dir()` Funktion. Diese Funktion nimmt\
+  \ einen\u2026"
 lastmod: '2024-03-13T22:44:53.986775-06:00'
 model: gpt-4-0125-preview
-summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis existiert, ist eine grundlegende\
-  \ Aufgabe in der PHP-Programmierung, da es Ihnen erm\xF6glicht, die Pr\xE4senz eines\
-  \ Verzeichnisses zu verifizieren, bevor Sie Operationen wie das Lesen von oder das\
-  \ Schreiben in Dateien innerhalb dieses Verzeichnisses ausf\xFChren."
+summary: "Die native Methode, um zu \xFCberpr\xFCfen, ob ein Verzeichnis in PHP existiert,\
+  \ ist die Verwendung der `is_dir()` Funktion."
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---

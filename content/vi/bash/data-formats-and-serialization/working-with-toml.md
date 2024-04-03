@@ -2,14 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:28.860791-07:00
-description: "TOML, vi\u1EBFt t\u1EAFt c\u1EE7a Tom's Obvious, Minimal Language, l\xE0\
-  \ m\u1ED9t \u0111\u1ECBnh d\u1EA1ng chu\u1ED7i h\xF3a d\u1EEF li\u1EC7u. L\u1EAD\
-  p tr\xECnh vi\xEAn \u01B0a th\xEDch n\xF3 v\xEC s\u1EF1 \u0111\u01A1n gi\u1EA3n\
-  \ v\xE0 d\u1EC5 \u0111\u1ECDc; n\xF3 th\u1EF1c s\u1EF1\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: \u0110\u1EA7u ti\xEAn, c\xE0i \u0111\u1EB7\
+  t `toml-cli` \u0111\u1EC3 thao t\xE1c v\u1EDBi TOML trong Bash. Ti\u1EC7n l\u1EE3\
+  i cho vi\u1EC7c \u0111\u1ECDc ho\u1EB7c ch\u1EC9nh s\u1EEDa c\xE1c file TOML m\u1ED9\
+  t c\xE1ch nhanh ch\xF3ng."
 lastmod: '2024-03-13T22:44:36.907975-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, vi\u1EBFt t\u1EAFt c\u1EE7a Tom's Obvious, Minimal Language, l\xE0\
-  \ m\u1ED9t \u0111\u1ECBnh d\u1EA1ng chu\u1ED7i h\xF3a d\u1EEF li\u1EC7u."
+summary: "\u0110\u1EA7u ti\xEAn, c\xE0i \u0111\u1EB7t `toml-cli` \u0111\u1EC3 thao\
+  \ t\xE1c v\u1EDBi TOML trong Bash."
 title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 weight: 39
 ---

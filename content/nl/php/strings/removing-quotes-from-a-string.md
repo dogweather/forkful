@@ -2,14 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:20.851009-07:00
-description: "Het verwijderen van aanhalingstekens uit een string in PHP betekent\
-  \ het weghalen van die vervelende dubbele (`\"`) of enkele (`'`) aanhalingstekens\
-  \ die je\u2026"
+description: 'Hoe: Hier is een eenvoudig voorbeeld met behulp van PHP''s ingebouwde
+  functies.'
 lastmod: '2024-03-13T22:44:50.882491-06:00'
 model: gpt-4-0125-preview
-summary: Het verwijderen van aanhalingstekens uit een string in PHP betekent het weghalen
-  van die vervelende dubbele (`"`) of enkele (`'`) aanhalingstekens die je code logica
-  of database queries kunnen verstoren.
+summary: Hier is een eenvoudig voorbeeld met behulp van PHP's ingebouwde functies.
 title: Quotes verwijderen uit een string
 weight: 9
 ---

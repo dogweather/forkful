@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:35.455404-07:00
-description: "Eine Textdatei in TypeScript zu schreiben, ist eine entscheidende F\xE4\
-  higkeit f\xFCr das Persistieren von Daten, Konfigurationen oder das Generieren von\u2026"
+description: "Wie geht das: TypeScript selbst behandelt Dateioperationen nicht direkt,\
+  \ da es zu JavaScript kompiliert wird, das traditionell im Browser mit begrenztem\u2026"
 lastmod: '2024-03-13T22:44:53.648696-06:00'
 model: gpt-4-0125-preview
-summary: "Eine Textdatei in TypeScript zu schreiben, ist eine entscheidende F\xE4\
-  higkeit f\xFCr das Persistieren von Daten, Konfigurationen oder das Generieren von\
-  \ Protokollen."
+summary: "TypeScript selbst behandelt Dateioperationen nicht direkt, da es zu JavaScript\
+  \ kompiliert wird, das traditionell im Browser mit begrenztem Zugriff auf das Dateisystem\
+  \ ausgef\xFChrt wird."
 title: Eine Textdatei schreiben
 weight: 24
 ---

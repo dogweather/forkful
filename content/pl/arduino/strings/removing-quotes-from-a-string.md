@@ -1,13 +1,13 @@
 ---
 date: 2024-01-26 03:37:45.539599-07:00
-description: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w oznacza usuni\u0119\
-  cie wszystkich wyst\u0105pie\u0144 pojedynczych (`'`) lub podw\xF3jnych (`\"`) znak\xF3\
-  w cudzys\u0142owu otaczaj\u0105cych tekst.\u2026"
+description: "Jak to zrobi\u0107: Aby usun\u0105\u0107 cudzys\u0142owy z ci\u0105\
+  gu znak\xF3w w Arduino, mo\u017Cna przeiterowa\u0107 przez znaki i odbudowa\u0107\
+  \ ci\u0105g bez znak\xF3w cudzys\u0142owu. Na przyk\u0142ad."
 lastmod: '2024-03-13T22:44:35.660360-06:00'
 model: gpt-4-0125-preview
-summary: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w oznacza usuni\u0119\
-  cie wszystkich wyst\u0105pie\u0144 pojedynczych (`'`) lub podw\xF3jnych (`\"`) znak\xF3\
-  w cudzys\u0142owu otaczaj\u0105cych tekst."
+summary: "Aby usun\u0105\u0107 cudzys\u0142owy z ci\u0105gu znak\xF3w w Arduino, mo\u017C\
+  na przeiterowa\u0107 przez znaki i odbudowa\u0107 ci\u0105g bez znak\xF3w cudzys\u0142\
+  owu."
 title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---

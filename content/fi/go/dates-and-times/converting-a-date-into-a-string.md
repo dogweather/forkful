@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:29.060091-07:00
-description: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi Go:ssa k\xE4sitt\xE4\
-  \xE4 `time.Time` -oliomuunnoksen luettavaan merkkijonomuotoon. Ohjelmoijat suorittavat\
-  \ usein t\xE4m\xE4n\u2026"
+description: "Kuinka: Go:ssa `time` -paketti tarjoaa toiminnallisuudet ty\xF6skennell\xE4\
+  \ p\xE4iv\xE4m\xE4\xE4rien ja aikojen kanssa, mukaan lukien `time.Time` -oliomuunnoksen\
+  \ muotoilu\u2026"
 lastmod: '2024-03-13T22:44:56.062935-06:00'
 model: gpt-4-0125-preview
-summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi Go:ssa k\xE4sitt\xE4\
-  \xE4 `time."
+summary: "Go:ssa `time` -paketti tarjoaa toiminnallisuudet ty\xF6skennell\xE4 p\xE4\
+  iv\xE4m\xE4\xE4rien ja aikojen kanssa, mukaan lukien `time.Time` -oliomuunnoksen\
+  \ muotoilu merkkijonoksi."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuttaminen merkkijonoksi"
 weight: 28
 ---

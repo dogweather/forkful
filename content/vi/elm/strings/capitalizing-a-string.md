@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:36.114907-07:00
-description: "Vi\u1EC7c vi\u1EBFt hoa m\u1ED9t chu\u1ED7i ngh\u0129a l\xE0 chuy\u1EC3\
-  n k\xFD t\u1EF1 \u0111\u1EA7u ti\xEAn sang ch\u1EEF hoa v\xE0 gi\u1EEF nguy\xEA\
-  n ph\u1EA7n c\xF2n l\u1EA1i \u1EDF d\u1EA1ng ch\u1EEF th\u01B0\u1EDDng. L\u1EAD\
-  p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1ED1i\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Elm, b\u1EA1n kh\xF4ng c\xF3 s\u1EB5n\
+  \ h\xE0m vi\u1EBFt hoa ngay t\u1EEB \u0111\u1EA7u, nh\u01B0ng b\u1EA1n c\xF3 th\u1EC3\
+  \ d\u1EC5 d\xE0ng t\u1EA1o m\u1ED9t h\xE0m nh\u01B0 sau."
 lastmod: '2024-03-13T22:44:36.521757-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c vi\u1EBFt hoa m\u1ED9t chu\u1ED7i ngh\u0129a l\xE0 chuy\u1EC3\
-  n k\xFD t\u1EF1 \u0111\u1EA7u ti\xEAn sang ch\u1EEF hoa v\xE0 gi\u1EEF nguy\xEA\
-  n ph\u1EA7n c\xF2n l\u1EA1i \u1EDF d\u1EA1ng ch\u1EEF th\u01B0\u1EDDng."
+summary: "Trong Elm, b\u1EA1n kh\xF4ng c\xF3 s\u1EB5n h\xE0m vi\u1EBFt hoa ngay t\u1EEB\
+  \ \u0111\u1EA7u, nh\u01B0ng b\u1EA1n c\xF3 th\u1EC3 d\u1EC5 d\xE0ng t\u1EA1o m\u1ED9\
+  t h\xE0m nh\u01B0 sau."
 title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
 weight: 2
 ---

@@ -2,14 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:48.276559-07:00
-description: "\xC9crire un fichier texte en PowerShell implique de cr\xE9er et de\
-  \ manipuler des fichiers bas\xE9s sur du texte, ce qui est une op\xE9ration fondamentale\
-  \ pour la\u2026"
+description: "Comment : PowerShell fournit des cmdlets simples pour la gestion des\
+  \ fichiers. Le cmdlet `Out-File` et les op\xE9rateurs de redirection sont principalement\u2026"
 lastmod: '2024-03-13T22:44:58.077773-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire un fichier texte en PowerShell implique de cr\xE9er et de manipuler\
-  \ des fichiers bas\xE9s sur du texte, ce qui est une op\xE9ration fondamentale pour\
-  \ la journalisation, le stockage de donn\xE9es et le script de configuration."
+summary: PowerShell fournit des cmdlets simples pour la gestion des fichiers.
 title: "R\xE9diger un fichier texte"
 weight: 24
 ---

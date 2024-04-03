@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 01:02:09.603902-07:00
-description: "Lokitus on ohjelmistojen vastine laivan lokikirjalle; se on tapa kirjata\
-  \ tapahtumia, jotka sattuvat sovelluksen suorituksen aikana. Ohjelmoijat tekev\xE4\
-  t\u2026"
+description: "Kuinka tehd\xE4: Clojure nojautuu Javan lokitustoimintoihin, mutta voit\
+  \ ottaa ne k\xE4ytt\xF6\xF6n idiomaattisemmin Clojuren tapaan. Katsotaanpa, miten\
+  \ voit k\xE4ytt\xE4\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.190608-06:00'
 model: gpt-4-1106-preview
-summary: Lokitus on ohjelmistojen vastine laivan lokikirjalle; se on tapa kirjata
-  tapahtumia, jotka sattuvat sovelluksen suorituksen aikana.
+summary: "Clojure nojautuu Javan lokitustoimintoihin, mutta voit ottaa ne k\xE4ytt\xF6\
+  \xF6n idiomaattisemmin Clojuren tapaan."
 title: Lokitus
 weight: 17
 ---

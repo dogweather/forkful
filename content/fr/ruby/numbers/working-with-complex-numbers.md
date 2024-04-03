@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:45:03.225027-07:00
-description: "Les nombres complexes, compos\xE9s d'une partie r\xE9elle et d'une partie\
-  \ imaginaire (comme 3+4i), sont un pilier dans l'ing\xE9nierie et la physique. Les\u2026"
+description: "Comment faire : Ruby facilite la manipulation des nombres complexes.\
+  \ Vous pouvez les cr\xE9er et les manipuler en utilisant la classe Complex ."
 lastmod: '2024-03-13T22:44:58.411431-06:00'
 model: gpt-4-0125-preview
-summary: "Les nombres complexes, compos\xE9s d'une partie r\xE9elle et d'une partie\
-  \ imaginaire (comme 3+4i), sont un pilier dans l'ing\xE9nierie et la physique."
+summary: Ruby facilite la manipulation des nombres complexes.
 title: Manipulation des nombres complexes
 weight: 14
 ---

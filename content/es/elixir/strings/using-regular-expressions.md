@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:20.075666-07:00
-description: "Las expresiones regulares (regex) en Elixir se utilizan para buscar,\
-  \ coincidir y manipular cadenas basadas en patrones espec\xEDficos. Los programadores\u2026"
+description: "C\xF3mo hacerlo: Elixir utiliza el m\xF3dulo `Regex`, aprovechando la\
+  \ biblioteca regex de Erlang, para operaciones de regex. Aqu\xED est\xE1n los usos\
+  \ b\xE1sicos."
 lastmod: '2024-03-13T22:44:58.691741-06:00'
 model: gpt-4-0125-preview
-summary: "Las expresiones regulares (regex) en Elixir se utilizan para buscar, coincidir\
-  \ y manipular cadenas basadas en patrones espec\xEDficos."
+summary: "Elixir utiliza el m\xF3dulo `Regex`, aprovechando la biblioteca regex de\
+  \ Erlang, para operaciones de regex."
 title: Usando expresiones regulares
 weight: 11
 ---

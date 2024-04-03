@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:43:59.723357-07:00
-description: "Att ladda ner en webbsida inneb\xE4r att h\xE4mta dess inneh\xE5ll \xF6\
-  ver internet s\xE5 att det kan anv\xE4ndas lokalt p\xE5 din dator. Programmerare\
-  \ g\xF6r detta f\xF6r att\u2026"
+description: "How to: Elixir g\xF6r det l\xE4tt att ladda ner webbsidor med hj\xE4\
+  lp av biblioteket HTTPoison. H\xE4r \xE4r ett enkelt exempel som visar hur du g\xF6\
+  r."
 lastmod: '2024-03-13T22:44:37.565721-06:00'
 model: gpt-4-1106-preview
-summary: "Att ladda ner en webbsida inneb\xE4r att h\xE4mta dess inneh\xE5ll \xF6\
-  ver internet s\xE5 att det kan anv\xE4ndas lokalt p\xE5 din dator."
+summary: "Elixir g\xF6r det l\xE4tt att ladda ner webbsidor med hj\xE4lp av biblioteket\
+  \ HTTPoison."
 title: "H\xE4mta en webbsida"
 weight: 42
 ---

@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:43:30.285703-07:00
-description: "Avrundning av tal handlar om att justera ett tal till n\xE4rmaste hela\
-  \ tal eller till en viss decimalprecision. Vi avrundar tal f\xF6r att f\xF6renkla\
-  \ dem f\xF6r\u2026"
+description: "Hur man g\xF6r: I Clojure anv\xE4nder vi fr\xE4mst `Math/round`, `Math/floor`\
+  \ och `Math/ceil`."
 lastmod: '2024-03-13T22:44:37.520388-06:00'
 model: gpt-4-0125-preview
-summary: "Avrundning av tal handlar om att justera ett tal till n\xE4rmaste hela tal\
-  \ eller till en viss decimalprecision."
+summary: "I Clojure anv\xE4nder vi fr\xE4mst `Math/round`, `Math/floor` och `Math/ceil`."
 title: Avrundning av tal
 weight: 13
 ---

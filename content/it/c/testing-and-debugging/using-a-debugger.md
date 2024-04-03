@@ -2,9 +2,9 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:45.286297-07:00
-description: "GDB (GNU Debugger) \xE8 il debugger pi\xF9 comunemente utilizzato per\
-  \ la programmazione in C. Ecco una breve guida sull'uso di GDB per il debug di un\
-  \ semplice\u2026"
+description: "Come fare: GDB (GNU Debugger) \xE8 il debugger pi\xF9 comunemente utilizzato\
+  \ per la programmazione in C. Ecco una breve guida sull'uso di GDB per il debug\
+  \ di un\u2026"
 lastmod: '2024-03-13T22:44:44.003546-06:00'
 model: gpt-4-0125-preview
 summary: "GDB (GNU Debugger) \xE8 il debugger pi\xF9 comunemente utilizzato per la\

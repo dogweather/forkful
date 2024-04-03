@@ -2,13 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:11.561042-07:00
-description: "Express\xF5es regulares (regex) em Dart oferecem uma maneira poderosa\
-  \ de buscar e manipular strings, permitindo que programadores realizem tarefas complexas\u2026"
+description: "Como fazer: Dart utiliza a classe `RegExp` para express\xF5es regulares.\
+  \ Aqui est\xE1 um exemplo b\xE1sico para combinar um padr\xE3o simples dentro de\
+  \ uma string."
 lastmod: '2024-03-13T22:44:46.270619-06:00'
 model: gpt-4-0125-preview
-summary: "Express\xF5es regulares (regex) em Dart oferecem uma maneira poderosa de\
-  \ buscar e manipular strings, permitindo que programadores realizem tarefas complexas\
-  \ de processamento de texto de forma eficiente."
+summary: "Dart utiliza a classe `RegExp` para express\xF5es regulares."
 title: "Usando express\xF5es regulares"
 weight: 11
 ---

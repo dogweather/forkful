@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:57.907089-07:00
-description: "Controleren of een map bestaat in Elixir zorgt ervoor dat je interactie\
-  \ hebt met een geldig bestandspad. Programmeurs doen dit om fouten te vermijden,\u2026"
+description: 'Hoe te: Elixir''s `File` module is je beste vriend voor mapcontroles.
+  Gebruik `File.dir?/1` om een boolean terug te geven die aangeeft of de map bestaat.'
 lastmod: '2024-03-13T22:44:50.476555-06:00'
 model: gpt-4-0125-preview
-summary: Controleren of een map bestaat in Elixir zorgt ervoor dat je interactie hebt
-  met een geldig bestandspad.
+summary: Elixir's `File` module is je beste vriend voor mapcontroles.
 title: Controleren of een directory bestaat
 weight: 20
 ---

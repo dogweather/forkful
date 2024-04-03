@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:29.588196-07:00
-description: "Escribir pruebas en el entorno de Arduino se refiere al proceso de crear\
-  \ pruebas automatizadas que validan la funcionalidad de tu c\xF3digo en dispositivos\u2026"
+description: "C\xF3mo: Arduino no tiene un marco de pruebas integrado como algunos\
+  \ otros entornos de programaci\xF3n. Sin embargo, puedes usar bibliotecas de terceros\
+  \ como\u2026"
 lastmod: '2024-03-13T22:44:59.336808-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir pruebas en el entorno de Arduino se refiere al proceso de crear\
-  \ pruebas automatizadas que validan la funcionalidad de tu c\xF3digo en dispositivos\
-  \ Arduino."
+summary: "Arduino no tiene un marco de pruebas integrado como algunos otros entornos\
+  \ de programaci\xF3n."
 title: Escribiendo pruebas
 weight: 36
 ---

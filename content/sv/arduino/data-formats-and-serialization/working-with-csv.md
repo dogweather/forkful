@@ -2,15 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:59.016483-07:00
-description: "Att arbeta med CSV-filer (kommaseparerade v\xE4rden) i Arduino inneb\xE4\
-  r att l\xE4sa fr\xE5n och skriva till CSV-filer som vanligtvis lagras p\xE5 ett\
-  \ SD-kort, vilket\u2026"
+description: "Hur man g\xF6r: Arduino har inte ett inbyggt bibliotek specifikt f\xF6\
+  r att hantera CSV-filer, men du kan anv\xE4nda `SD`- och `SPI`-biblioteken f\xF6\
+  r att komma \xE5t\u2026"
 lastmod: '2024-03-13T22:44:38.190411-06:00'
 model: gpt-4-0125-preview
-summary: "Att arbeta med CSV-filer (kommaseparerade v\xE4rden) i Arduino inneb\xE4\
-  r att l\xE4sa fr\xE5n och skriva till CSV-filer som vanligtvis lagras p\xE5 ett\
-  \ SD-kort, vilket m\xF6jligg\xF6r datalogging, konfigurationsinst\xE4llningar och\
-  \ mer."
+summary: "Arduino har inte ett inbyggt bibliotek specifikt f\xF6r att hantera CSV-filer,\
+  \ men du kan anv\xE4nda `SD`- och `SPI`-biblioteken f\xF6r att komma \xE5t filer\
+  \ p\xE5 ett SD-kort och sedan tolka eller generera CSV-data med hj\xE4lp av grundl\xE4\
+  ggande tekniker f\xF6r str\xE4ngmanipulering."
 title: Arbeta med CSV
 weight: 37
 ---

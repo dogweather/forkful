@@ -1,13 +1,10 @@
 ---
 date: 2024-01-26 04:43:02.987590-07:00
-description: "Komplexa tal ut\xF6kar v\xE5rt talsystem f\xF6r att inkludera kvadratr\xF6\
-  tter av negativa tal, d\xE4r den 'imagin\xE4ra' enheten i motsvarar kvadratroten\
-  \ av -1.\u2026"
+description: "Hur man g\xF6r: L\xE5t oss definiera en grundl\xE4ggande klass f\xF6\
+  r komplexa tal i Kotlin."
 lastmod: '2024-03-13T22:44:37.865338-06:00'
 model: gpt-4-0125-preview
-summary: "Komplexa tal ut\xF6kar v\xE5rt talsystem f\xF6r att inkludera kvadratr\xF6\
-  tter av negativa tal, d\xE4r den 'imagin\xE4ra' enheten i motsvarar kvadratroten\
-  \ av -1."
+summary: "L\xE5t oss definiera en grundl\xE4ggande klass f\xF6r komplexa tal i Kotlin."
 title: Att arbeta med komplexa tal
 weight: 14
 ---

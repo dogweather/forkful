@@ -1,13 +1,10 @@
 ---
 date: 2024-01-20 17:46:13.414518-07:00
-description: "Extraire des sous-cha\xEEnes, c'est comme sculpter un petit bout de\
-  \ bois d'un gros tronc; en PHP, cela signifie prendre une partie d'une cha\xEEne\
-  \ de\u2026"
+description: "How to: PHP utilise la fonction `substr()` pour extraire des sous-cha\xEE\
+  nes. Simple, droit au but. Voici comment \xE7a fonctionne ."
 lastmod: '2024-03-13T22:44:57.866505-06:00'
 model: gpt-4-1106-preview
-summary: "Extraire des sous-cha\xEEnes, c'est comme sculpter un petit bout de bois\
-  \ d'un gros tronc; en PHP, cela signifie prendre une partie d'une cha\xEEne de caract\xE8\
-  res."
+summary: "PHP utilise la fonction `substr()` pour extraire des sous-cha\xEEnes."
 title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---

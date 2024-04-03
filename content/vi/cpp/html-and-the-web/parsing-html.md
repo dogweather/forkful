@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:47.326286-07:00
-description: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 ph\xE1 v\u1EE1\
-  \ n\u1ED9i dung HTML th\xE0nh c\xE1i g\xEC \u0111\xF3 m\xE0 ch\u01B0\u01A1ng tr\xEC\
-  nh c\xF3 th\u1EC3 hi\u1EC3u v\xE0 thao t\xE1c \u0111\u01B0\u1EE3c. L\u1EADp tr\xEC\
-  nh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 tr\xEDch\u2026"
+description: "C\xE1ch th\u1EE9c: C++ kh\xF4ng \u0111i k\xE8m v\u1EDBi kh\u1EA3 n\u0103\
+  ng ph\xE2n t\xEDch c\xFA ph\xE1p HTML \u0111\u01B0\u1EE3c t\xEDch h\u1EE3p s\u1EB5\
+  n. B\u1EA1n th\u01B0\u1EDDng s\u1EBD s\u1EED d\u1EE5ng m\u1ED9t th\u01B0 vi\u1EC7\
+  n nh\u01B0 Gumbo-parser c\u1EE7a Google, ho\u1EB7c\u2026"
 lastmod: '2024-03-13T22:44:37.040174-06:00'
 model: gpt-4-0125-preview
-summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 ph\xE1 v\u1EE1\
-  \ n\u1ED9i dung HTML th\xE0nh c\xE1i g\xEC \u0111\xF3 m\xE0 ch\u01B0\u01A1ng tr\xEC\
-  nh c\xF3 th\u1EC3 hi\u1EC3u v\xE0 thao t\xE1c \u0111\u01B0\u1EE3c."
+summary: "C++ kh\xF4ng \u0111i k\xE8m v\u1EDBi kh\u1EA3 n\u0103ng ph\xE2n t\xEDch\
+  \ c\xFA ph\xE1p HTML \u0111\u01B0\u1EE3c t\xEDch h\u1EE3p s\u1EB5n."
 title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:52.504653-07:00
-description: "Tarkistaminen, l\xF6ytyyk\xF6 hakemisto, tarkoittaa vahvistamista, onko\
-  \ tietty kansiov\xE4yl\xE4 olemassa tiedostoj\xE4rjestelm\xE4ss\xE4. Ohjelmoijat\
-  \ tekev\xE4t niin\u2026"
+description: "Miten: Elm on front-end web-ohjelmointikieli, joten sill\xE4 ei ole\
+  \ suoraa p\xE4\xE4sy\xE4 tiedostoj\xE4rjestelm\xE4\xE4n. Kuitenkin tyypillisesti\
+  \ l\xE4hett\xE4isit komennon\u2026"
 lastmod: '2024-03-13T22:44:56.502809-06:00'
 model: gpt-4-0125-preview
-summary: "Tarkistaminen, l\xF6ytyyk\xF6 hakemisto, tarkoittaa vahvistamista, onko\
-  \ tietty kansiov\xE4yl\xE4 olemassa tiedostoj\xE4rjestelm\xE4ss\xE4."
+summary: "Elm on front-end web-ohjelmointikieli, joten sill\xE4 ei ole suoraa p\xE4\
+  \xE4sy\xE4 tiedostoj\xE4rjestelm\xE4\xE4n."
 title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---

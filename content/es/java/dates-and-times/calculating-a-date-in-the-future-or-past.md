@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:31:27.187748-07:00
-description: "Calcular una fecha en el futuro o en el pasado significa encontrar una\
-  \ fecha determinada antes o despu\xE9s de una fecha de referencia. Los programadores\
-  \ lo\u2026"
+description: "C\xF3mo Hacerlo: En Java, podemos usar `LocalDate` para calcular fechas.\
+  \ Un ejemplo simple ser\xEDa."
 lastmod: '2024-03-13T22:44:58.950654-06:00'
 model: gpt-4-1106-preview
-summary: "Calcular una fecha en el futuro o en el pasado significa encontrar una fecha\
-  \ determinada antes o despu\xE9s de una fecha de referencia."
+summary: En Java, podemos usar `LocalDate` para calcular fechas.
 title: Calcular una fecha en el futuro o pasado
 weight: 26
 ---

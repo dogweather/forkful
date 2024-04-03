@@ -1,11 +1,10 @@
 ---
 date: 2024-01-25 02:11:47.196706-07:00
-description: "Refactoring is the process of restructuring existing computer code without\
-  \ changing its external behavior. Programmers do it to clean up the codebase,\u2026"
+description: 'How to: Let''s start with a basic Swift example where we have some repetitive
+  code.'
 lastmod: '2024-03-13T22:45:00.403899-06:00'
 model: gpt-4-1106-preview
-summary: Refactoring is the process of restructuring existing computer code without
-  changing its external behavior.
+summary: Let's start with a basic Swift example where we have some repetitive code.
 title: Refactoring
 weight: 19
 ---

@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:32.331990-07:00
-description: "\xC5 skrive en tekstfil i PowerShell inneb\xE6rer \xE5 opprette og manipulere\
-  \ tekstbaserte filer, som er en grunnleggende operasjon for logging, datalagring\
-  \ og\u2026"
+description: "Hvordan: PowerShell tilbyr enkle cmdlets for h\xE5ndtering av filer.\
+  \ Cmdleten `Out-File` og omdirigeringsoperat\xF8rene er prim\xE6rt brukt for dette\
+  \ form\xE5let. Her\u2026"
 lastmod: '2024-03-13T22:44:41.035381-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive en tekstfil i PowerShell inneb\xE6rer \xE5 opprette og manipulere\
-  \ tekstbaserte filer, som er en grunnleggende operasjon for logging, datalagring\
-  \ og konfigurasjonsskripting."
+summary: "PowerShell tilbyr enkle cmdlets for h\xE5ndtering av filer."
 title: Skrive en tekstfil
 weight: 24
 ---

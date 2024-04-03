@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:10.472439-07:00
-description: "Konwertowanie ci\u0105gu znak\xF3w na ma\u0142e litery polega na przekszta\u0142\
-  ceniu wszystkich wielkich liter w ci\u0105gu na ich ma\u0142e odpowiedniki. Proces\
-  \ ten jest niezb\u0119dny\u2026"
+description: "Jak to zrobi\u0107: W Visual Basic for Applications (VBA), konwersja\
+  \ ci\u0105gu znak\xF3w na ma\u0142e litery jest prosta dzi\u0119ki funkcji `LCase`.\
+  \ Funkcja ta przyjmuje ci\u0105g\u2026"
 lastmod: '2024-03-13T22:44:35.216696-06:00'
 model: gpt-4-0125-preview
-summary: "Konwertowanie ci\u0105gu znak\xF3w na ma\u0142e litery polega na przekszta\u0142\
-  ceniu wszystkich wielkich liter w ci\u0105gu na ich ma\u0142e odpowiedniki."
+summary: "W Visual Basic for Applications (VBA), konwersja ci\u0105gu znak\xF3w na\
+  \ ma\u0142e litery jest prosta dzi\u0119ki funkcji `LCase`."
 title: "Konwersja \u0142a\u0144cucha znak\xF3w na ma\u0142e litery"
 weight: 4
 ---

@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:02.048691-07:00
-description: "Das Schreiben in eine Textdatei in Python ist eine grundlegende Aufgabe,\
-  \ die das Erstellen oder \xD6ffnen einer Datei und dann das Anh\xE4ngen oder\u2026"
+description: 'Wie geht das: #.'
 lastmod: '2024-03-13T22:44:53.396952-06:00'
 model: gpt-4-0125-preview
-summary: "Das Schreiben in eine Textdatei in Python ist eine grundlegende Aufgabe,\
-  \ die das Erstellen oder \xD6ffnen einer Datei und dann das Anh\xE4ngen oder \xDC\
-  berschreiben von Text umfasst."
+summary: '#.'
 title: Eine Textdatei schreiben
 weight: 24
 ---

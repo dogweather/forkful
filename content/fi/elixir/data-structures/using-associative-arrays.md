@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:47.401780-07:00
-description: "Elixiriss\xE4 assosiatiiviset taulukot, kutsuttuina karttoina (Maps),\
-  \ ovat avain-arvo-pareista koostuvia kokoelmia, joissa uniikki avain osoittaa arvoon.\
-  \ Ne\u2026"
+description: "Kuinka: Kartan luominen on suoraviivaista. K\xE4yt\xE4t `%{}`-syntaksia,\
+  \ n\xE4in."
 lastmod: '2024-03-13T22:44:56.219476-06:00'
 model: gpt-4-0125-preview
-summary: "Elixiriss\xE4 assosiatiiviset taulukot, kutsuttuina karttoina (Maps), ovat\
-  \ avain-arvo-pareista koostuvia kokoelmia, joissa uniikki avain osoittaa arvoon."
+summary: Kartan luominen on suoraviivaista.
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---

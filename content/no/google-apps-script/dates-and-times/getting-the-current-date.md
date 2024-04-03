@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:28.008327-07:00
-description: "\xC5 f\xE5 tak i dagens dato i Google Apps Script handler om \xE5 hente\
-  \ den levende datoen og tiden, en vanlig oppgave for automatisering, logging og\
-  \ tidsstempling\u2026"
+description: "Hvordan: Google Apps Script, som er basert p\xE5 JavaScript, tilbyr\
+  \ enkle metoder for \xE5 f\xE5 tak i dagens dato. Du kan bruke `new Date()`-konstrukt\xF8\
+  ren for \xE5\u2026"
 lastmod: '2024-03-13T22:44:40.327006-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 f\xE5 tak i dagens dato i Google Apps Script handler om \xE5 hente\
-  \ den levende datoen og tiden, en vanlig oppgave for automatisering, logging og\
-  \ tidsstempling i apper knyttet til Googles \xF8kosystem."
+summary: "Google Apps Script, som er basert p\xE5 JavaScript, tilbyr enkle metoder\
+  \ for \xE5 f\xE5 tak i dagens dato."
 title: "F\xE5 den gjeldende datoen"
 weight: 29
 ---

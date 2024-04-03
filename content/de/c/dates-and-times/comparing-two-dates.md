@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:26.395980-07:00
-description: "Das Vergleichen zweier Daten in C beinhaltet die Bestimmung der chronologischen\
-  \ Beziehung zwischen ihnen \u2013 ob ein Datum dem anderen vorausgeht oder ob sie\u2026"
+description: "Wie geht das: C hat keinen integrierten Typ f\xFCr Daten, was die Verwendung\
+  \ der `time.h`-Bibliothek zur Arbeit mit Datum- und Zeitstrukturen notwendig\u2026"
 lastmod: '2024-03-13T22:44:54.366206-06:00'
 model: gpt-4-0125-preview
-summary: "Das Vergleichen zweier Daten in C beinhaltet die Bestimmung der chronologischen\
-  \ Beziehung zwischen ihnen \u2013 ob ein Datum dem anderen vorausgeht oder ob sie\
-  \ gleich sind."
+summary: "C hat keinen integrierten Typ f\xFCr Daten, was die Verwendung der `time.h`-Bibliothek\
+  \ zur Arbeit mit Datum- und Zeitstrukturen notwendig macht."
 title: Zwei Daten vergleichen
 weight: 27
 ---

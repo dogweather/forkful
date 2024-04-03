@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:03.553010-07:00
-description: "YAML, co oznacza \"YAML Ain't Markup Language\", jest przyjaznym dla\
-  \ cz\u0142owieka standardem serializacji danych dla wszystkich j\u0119zyk\xF3w programowania.\u2026"
+description: "Jak to zrobi\u0107: Swift nie zawiera wbudowanego wsparcia dla parsowania\
+  \ i serializacji YAML, co wymusza korzystanie z bibliotek stron trzecich. Popularnym\u2026"
 lastmod: '2024-03-13T22:44:35.774938-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, co oznacza \"YAML Ain't Markup Language\", jest przyjaznym dla cz\u0142\
-  owieka standardem serializacji danych dla wszystkich j\u0119zyk\xF3w programowania."
+summary: Swift nie zawiera wbudowanego wsparcia dla parsowania i serializacji YAML,
+  co wymusza korzystanie z bibliotek stron trzecich.
 title: Praca z YAML
 weight: 41
 ---

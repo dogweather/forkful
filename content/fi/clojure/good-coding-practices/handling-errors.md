@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 00:51:03.833169-07:00
-description: "Virheenk\xE4sittely on ohjelmien odottamattomien tilanteiden hallintaa\u2014\
-  kuin j\xE4rjestyksenvalvoja, joka kohtaa h\xE4irik\xF6it\xE4. Ohjelmoijat pit\xE4\
-  v\xE4t sujuvuudesta;\u2026"
+description: "Miten: Clojure, kuten sen Lisp-esivanhemmat, nojaa poikkeusten varaan\
+  \ virheiden k\xE4sittelyss\xE4. T\xE4ss\xE4 on miten n\xE4yt\xE4t mihin olet kykenev\xE4\
+  inen, kun asiat\u2026"
 lastmod: '2024-03-13T22:44:56.191522-06:00'
 model: gpt-4-1106-preview
-summary: "Virheenk\xE4sittely on ohjelmien odottamattomien tilanteiden hallintaa\u2014\
-  kuin j\xE4rjestyksenvalvoja, joka kohtaa h\xE4irik\xF6it\xE4."
+summary: "Clojure, kuten sen Lisp-esivanhemmat, nojaa poikkeusten varaan virheiden\
+  \ k\xE4sittelyss\xE4."
 title: "Virheiden k\xE4sittely"
 weight: 16
 ---

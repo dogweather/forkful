@@ -2,13 +2,14 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:22.726335-07:00
-description: "Dans le domaine de l'Arduino, les tableaux associatifs vous permettent\
-  \ d'associer des clefs \xE0 des valeurs, un peu comme si vous associez des chaussettes\u2026"
+description: "Comment faire : Strictement parlant, l'Arduino ne poss\xE8de pas de\
+  \ support int\xE9gr\xE9 pour les tableaux associatifs comme vous pourriez en trouver\
+  \ dans des\u2026"
 lastmod: '2024-03-13T22:44:58.101627-06:00'
 model: gpt-4-0125-preview
-summary: "Dans le domaine de l'Arduino, les tableaux associatifs vous permettent d'associer\
-  \ des clefs \xE0 des valeurs, un peu comme si vous associez des chaussettes avec\
-  \ leurs paires."
+summary: "Strictement parlant, l'Arduino ne poss\xE8de pas de support int\xE9gr\xE9\
+  \ pour les tableaux associatifs comme vous pourriez en trouver dans des langages\
+  \ de plus haut niveau."
 title: Utilisation des tableaux associatifs
 weight: 15
 ---

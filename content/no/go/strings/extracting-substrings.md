@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:40.004612-07:00
-description: "\xC5 trekke ut delstrenger inneb\xE6rer \xE5 hente spesifikke deler\
-  \ av en streng basert p\xE5 deres posisjoner. Programmerere utf\xF8rer ofte denne\
-  \ operasjonen for \xE5\u2026"
+description: "Hvordan: I Go, er `string`-typen en skrivebeskyttet slice av bytes.\
+  \ For \xE5 trekke ut delstrenger, bruker man prim\xE6rt `slice`-syntaksen, sammen\
+  \ med den\u2026"
 lastmod: '2024-03-13T22:44:40.254205-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 trekke ut delstrenger inneb\xE6rer \xE5 hente spesifikke deler av en\
-  \ streng basert p\xE5 deres posisjoner."
+summary: I Go, er `string`-typen en skrivebeskyttet slice av bytes.
 title: Utdrag av delstrenger
 weight: 6
 ---

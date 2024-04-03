@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:50.429593-07:00
-description: "Foutafhandeling in Google Apps Script is het voorspellen, vangen en\
-  \ reageren op uitzonderingen of fouten die optreden tijdens de uitvoering van een\u2026"
+description: "Hoe: Google Apps Script, gebaseerd op JavaScript, stelt ons in staat\
+  \ om de traditionele `try-catch` verklaring voor foutafhandeling te gebruiken, samen\u2026"
 lastmod: '2024-03-13T22:44:50.339714-06:00'
 model: gpt-4-0125-preview
-summary: Foutafhandeling in Google Apps Script is het voorspellen, vangen en reageren
-  op uitzonderingen of fouten die optreden tijdens de uitvoering van een script.
+summary: Google Apps Script, gebaseerd op JavaScript, stelt ons in staat om de traditionele
+  `try-catch` verklaring voor foutafhandeling te gebruiken, samen met `finally` als
+  opruiming vereist is, ongeacht succes of fout.
 title: Fouten afhandelen
 weight: 16
 ---

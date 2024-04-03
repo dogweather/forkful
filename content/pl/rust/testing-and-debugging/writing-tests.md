@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:14.151331-07:00
-description: "Pisanie test\xF3w w Rust polega na tworzeniu automatycznych kontroli,\
-  \ aby zapewni\u0107, \u017Ce kod dzia\u0142a zgodnie z oczekiwaniami. Programi\u015B\
-  ci robi\u0105 to, aby wcze\u015Bnie\u2026"
+description: "Jak to zrobi\u0107: Wbudowany framework testowy Rusta wspiera testy\
+  \ jednostkowe, integracyjne oraz dokumentacyjne bez potrzeby korzystania z zewn\u0119\
+  trznych\u2026"
 lastmod: '2024-03-13T22:44:35.188287-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie test\xF3w w Rust polega na tworzeniu automatycznych kontroli, aby\
-  \ zapewni\u0107, \u017Ce kod dzia\u0142a zgodnie z oczekiwaniami."
+summary: "Wbudowany framework testowy Rusta wspiera testy jednostkowe, integracyjne\
+  \ oraz dokumentacyjne bez potrzeby korzystania z zewn\u0119trznych bibliotek."
 title: "Pisanie test\xF3w"
 weight: 36
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:03:26.357603-07:00
-description: "Working with CSV (Comma-Separated Values) involves reading from and\
-  \ writing data to CSV files, a popular format for representing tabular data in plain\u2026"
+description: "How to: PHP provides built-in functions for handling CSV files, making\
+  \ it straightforward to read from and write to these files without needing third-\u2026"
 lastmod: '2024-03-13T22:45:00.187568-06:00'
 model: gpt-4-0125-preview
-summary: Working with CSV (Comma-Separated Values) involves reading from and writing
-  data to CSV files, a popular format for representing tabular data in plain text.
+summary: PHP provides built-in functions for handling CSV files, making it straightforward
+  to read from and write to these files without needing third-party libraries.
 title: Working with CSV
 weight: 37
 ---

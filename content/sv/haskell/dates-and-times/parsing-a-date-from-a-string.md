@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:35.831510-07:00
-description: "Att tolka ett datum fr\xE5n en str\xE4ng i Haskell inneb\xE4r att omvandla\
-  \ textuella representationer av datum till ett strukturerat format som programmet\
-  \ kan\u2026"
+description: "Hur g\xF6r man: Direkt ur l\xE5dan erbjuder Haskell grundl\xE4ggande\
+  \ verktyg f\xF6r att tolka datum, men genom att anv\xE4nda bibliotek som `time`\
+  \ f\xF6r grundl\xE4ggande\u2026"
 lastmod: '2024-03-13T22:44:37.964139-06:00'
 model: gpt-4-0125-preview
-summary: "Att tolka ett datum fr\xE5n en str\xE4ng i Haskell inneb\xE4r att omvandla\
-  \ textuella representationer av datum till ett strukturerat format som programmet\
-  \ kan manipulera."
+summary: "Direkt ur l\xE5dan erbjuder Haskell grundl\xE4ggande verktyg f\xF6r att\
+  \ tolka datum, men genom att anv\xE4nda bibliotek som `time` f\xF6r grundl\xE4ggande\
+  \ funktionalitet och `date-parse` eller `time-parse` f\xF6r mer flexibel tolkning\
+  \ kan uppgiften f\xF6renklas avsev\xE4rt."
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---

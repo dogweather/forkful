@@ -2,15 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:39.523964-07:00
-description: "Het lezen van commandoregelargumenten in Dart stelt programmeurs in\
-  \ staat om direct gegevens in de console in te voeren bij het uitvoeren van een\
-  \ Dart-\u2026"
+description: "Hoe te: Dart biedt een eenvoudige benadering om toegang te krijgen tot\
+  \ commandoregelargumenten via de `List<String> args` in de hoofdmethode. Hieronder\u2026"
 lastmod: '2024-03-13T22:44:50.521932-06:00'
 model: gpt-4-0125-preview
-summary: Het lezen van commandoregelargumenten in Dart stelt programmeurs in staat
-  om direct gegevens in de console in te voeren bij het uitvoeren van een Dart-programma,
-  waardoor de interactiviteit en flexibiliteit voor diverse gebruiksscenario's wordt
-  verbeterd, inclusief automatiseringsscripts, CLI-tools of batchverwerking.
+summary: Dart biedt een eenvoudige benadering om toegang te krijgen tot commandoregelargumenten
+  via de `List<String> args` in de hoofdmethode.
 title: Commandoregelargumenten lezen
 weight: 23
 ---

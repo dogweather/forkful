@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:15.352199-07:00
-description: "Eliminar caracteres que coinciden con un patr\xF3n espec\xEDfico en\
-  \ Visual Basic para Aplicaciones (VBA) implica identificar y posteriormente eliminar\u2026"
+description: "C\xF3mo hacerlo: En VBA, puedes usar la funci\xF3n `Replace` o expresiones\
+  \ regulares para eliminar caracteres que coinciden con un patr\xF3n. Aqu\xED hay\
+  \ ejemplos de\u2026"
 lastmod: '2024-03-13T22:44:58.873078-06:00'
 model: gpt-4-0125-preview
-summary: "Eliminar caracteres que coinciden con un patr\xF3n espec\xEDfico en Visual\
-  \ Basic para Aplicaciones (VBA) implica identificar y posteriormente eliminar caracteres\
-  \ o cadenas que cumplen con ciertos criterios."
+summary: "En VBA, puedes usar la funci\xF3n `Replace` o expresiones regulares para\
+  \ eliminar caracteres que coinciden con un patr\xF3n."
 title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---

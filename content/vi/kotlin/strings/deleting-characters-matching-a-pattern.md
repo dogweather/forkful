@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:21.681239-07:00
-description: "X\xF3a c\xE1c k\xFD t\u1EF1 kh\u1EDBp v\u1EDBi m\u1ED9t m\u1EABu \u0111\
-  \u1EC1 c\u1EADp \u0111\u1EBFn vi\u1EC7c t\xECm ki\u1EBFm v\xE0 lo\u1EA1i b\u1ECF\
-  \ c\xE1c chu\u1ED7i k\xFD t\u1EF1 c\u1EE5 th\u1EC3 trong m\u1ED9t chu\u1ED7i d\u1EF1\
-  a tr\xEAn c\xE1c quy t\u1EAFc (m\u1EABu). C\xE1c l\u1EADp tr\xECnh vi\xEAn\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\xE2y l\xE0 c\xE1ch b\u1EA1n c\xF3 th\u1EC3\
+  \ x\xF3a c\xE1c k\xFD t\u1EF1 kh\u1EDBp v\u1EDBi m\u1ED9t m\u1EABu trong Kotlin,\
+  \ s\u1EED d\u1EE5ng m\u1ED9t m\u1EABu regex \u0111\u01A1n gi\u1EA3n."
 lastmod: '2024-03-13T22:44:36.579674-06:00'
 model: gpt-4-0125-preview
-summary: "X\xF3a c\xE1c k\xFD t\u1EF1 kh\u1EDBp v\u1EDBi m\u1ED9t m\u1EABu \u0111\u1EC1\
-  \ c\u1EADp \u0111\u1EBFn vi\u1EC7c t\xECm ki\u1EBFm v\xE0 lo\u1EA1i b\u1ECF c\xE1\
-  c chu\u1ED7i k\xFD t\u1EF1 c\u1EE5 th\u1EC3 trong m\u1ED9t chu\u1ED7i d\u1EF1a tr\xEA\
-  n c\xE1c quy t\u1EAFc (m\u1EABu)."
+summary: "\u0110\xE2y l\xE0 c\xE1ch b\u1EA1n c\xF3 th\u1EC3 x\xF3a c\xE1c k\xFD t\u1EF1\
+  \ kh\u1EDBp v\u1EDBi m\u1ED9t m\u1EABu trong Kotlin, s\u1EED d\u1EE5ng m\u1ED9t\
+  \ m\u1EABu regex \u0111\u01A1n gi\u1EA3n."
 title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
 weight: 5
 ---

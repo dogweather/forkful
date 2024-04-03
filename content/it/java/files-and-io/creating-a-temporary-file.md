@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:40:36.243869-07:00
-description: "Creare un file temporaneo serve a manipolare dati che non devono sopravvivere\
-  \ oltre la durata del programma. I programmatori li usano per test,\u2026"
+description: 'How to: Java fornisce metodi utili per creare file temporanei. Ecco
+  come si fa.'
 lastmod: '2024-03-13T22:44:43.328317-06:00'
 model: gpt-4-1106-preview
-summary: Creare un file temporaneo serve a manipolare dati che non devono sopravvivere
-  oltre la durata del programma.
+summary: Java fornisce metodi utili per creare file temporanei.
 title: Creazione di un file temporaneo
 weight: 21
 ---

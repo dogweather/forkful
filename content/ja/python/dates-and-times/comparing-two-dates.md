@@ -1,13 +1,10 @@
 ---
 date: 2024-01-20 17:33:33.436783-07:00
-description: "Comparing two dates means checking how they relate: is one earlier,\
-  \ later, or the same as the other? Programmers compare dates to schedule events,\
-  \ track\u2026"
+description: "How to: (\u65B9\u6CD5) ."
 isCJKLanguage: true
 lastmod: '2024-03-13T22:44:41.516038-06:00'
 model: gpt-4-1106-preview
-summary: 'Comparing two dates means checking how they relate: is one earlier, later,
-  or the same as the other.'
+summary: .
 title: "\u65E5\u4ED8\u3092\u6BD4\u8F03\u3059\u308B"
 weight: 27
 ---

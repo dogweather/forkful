@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:09.966714-07:00
-description: "Parsowanie daty z ci\u0105gu tekstowego polega na rozpoznawaniu i konwersji\
-  \ zapisanych dat w formie tekstowej na typ danych daty, kt\xF3ry PowerShell mo\u017C\
-  e\u2026"
+description: "Jak to zrobi\u0107: PowerShell u\u0142atwia parsowanie dat z ci\u0105\
+  g\xF3w tekstowych za pomoc\u0105 polecenia cmdlet `Get-Date` oraz akceleratora typu\
+  \ `[datetime]`, kt\xF3re\u2026"
 lastmod: '2024-03-13T22:44:35.639378-06:00'
 model: gpt-4-0125-preview
-summary: "Parsowanie daty z ci\u0105gu tekstowego polega na rozpoznawaniu i konwersji\
-  \ zapisanych dat w formie tekstowej na typ danych daty, kt\xF3ry PowerShell mo\u017C\
-  e zrozumie\u0107 i z kt\xF3rym mo\u017Ce pracowa\u0107."
+summary: "PowerShell u\u0142atwia parsowanie dat z ci\u0105g\xF3w tekstowych za pomoc\u0105\
+  \ polecenia cmdlet `Get-Date` oraz akceleratora typu `[datetime]`, kt\xF3re dobrze\
+  \ radz\u0105 sobie ze standardowymi formatami daty."
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---

@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 17:34:11.132443-07:00
-description: "Concatenare stringhe significa unirle in una sola. \xC8 utile per costruire\
-  \ messaggi, comandi, o lavorare con percorsi di file."
+description: 'How to: Per concatenare stringhe in Bash basta metterle vicine. Senza
+  spazi, senza niente.'
 lastmod: '2024-03-13T22:44:43.589765-06:00'
 model: gpt-4-1106-preview
-summary: Concatenare stringhe significa unirle in una sola.
+summary: Per concatenare stringhe in Bash basta metterle vicine.
 title: Concatenazione di stringhe
 weight: 3
 ---

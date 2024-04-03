@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:03.043227-07:00
-description: "Gli array associativi, o come li chiama Elm, Dizionari, mappano le chiavi\
-  \ ai valori in modo tale da rendere il recupero, l'inserimento e l'eliminazione\u2026"
+description: 'Come fare: In Elm, lavori con i Dizionari nel modulo `Dict`, quindi
+  esploriamo un rapido esempio.'
 lastmod: '2024-03-13T22:44:43.343246-06:00'
 model: gpt-4-0125-preview
-summary: Gli array associativi, o come li chiama Elm, Dizionari, mappano le chiavi
-  ai valori in modo tale da rendere il recupero, l'inserimento e l'eliminazione dei
-  valori estremamente rapidi.
+summary: In Elm, lavori con i Dizionari nel modulo `Dict`, quindi esploriamo un rapido
+  esempio.
 title: Utilizzo di array associativi
 weight: 15
 ---

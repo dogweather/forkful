@@ -1,11 +1,13 @@
 ---
 date: 2024-01-20 17:40:18.447278-07:00
-description: "Creare un file temporaneo significa generare un file destinato a un\
-  \ uso breve, spesso come un'area di lavoro o per operazioni di trascinamento. I\u2026"
+description: "How to: In Elm, direttamente non possiamo creare file temporanei poich\xE9\
+  \ Elm \xE8 un linguaggio per la programmazione front-end che gira sul browser e\
+  \ non ha\u2026"
 lastmod: '2024-03-13T22:44:43.368946-06:00'
 model: gpt-4-1106-preview
-summary: Creare un file temporaneo significa generare un file destinato a un uso breve,
-  spesso come un'area di lavoro o per operazioni di trascinamento.
+summary: "In Elm, direttamente non possiamo creare file temporanei poich\xE9 Elm \xE8\
+  \ un linguaggio per la programmazione front-end che gira sul browser e non ha accesso\
+  \ diretto al file system."
 title: Creazione di un file temporaneo
 weight: 21
 ---

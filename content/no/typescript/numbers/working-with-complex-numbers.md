@@ -1,13 +1,10 @@
 ---
 date: 2024-01-26 04:46:23.798045-07:00
-description: "Komplekse tall, som best\xE5r av en reell del og en imagin\xE6r del\
-  \ (vanligvis skrevet som a + bi), \xE5pner for beregninger som er upraktiske eller\
-  \ umulige med\u2026"
+description: "Hvordan: \xC5 h\xE5ndtere komplekse tall i TypeScript krever en dedikert\
+  \ klasse. La oss lage en og jobbe gjennom addisjon og multiplikasjon."
 lastmod: '2024-03-13T22:44:40.526071-06:00'
 model: gpt-4-0125-preview
-summary: "Komplekse tall, som best\xE5r av en reell del og en imagin\xE6r del (vanligvis\
-  \ skrevet som a + bi), \xE5pner for beregninger som er upraktiske eller umulige\
-  \ med bare reelle tall."
+summary: "\xC5 h\xE5ndtere komplekse tall i TypeScript krever en dedikert klasse."
 title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---

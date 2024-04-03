@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 15:29:51.232707-07:00
-description: "Parsing HTML means sifting through the structure and content of an HTML\
-  \ file to extract information. Programmers do it to access data, manipulate content,\u2026"
+description: "How to: Bash isn't the go-to for parsing HTML, but it can be done with\
+  \ tools like `grep`, `awk`, `sed`, or external utilities like `lynx`. For robustness,\u2026"
 lastmod: '2024-03-13T22:45:00.242912-06:00'
 model: unknown
-summary: Parsing HTML means sifting through the structure and content of an HTML file
-  to extract information.
+summary: Bash isn't the go-to for parsing HTML, but it can be done with tools like
+  `grep`, `awk`, `sed`, or external utilities like `lynx`.
 title: Parsing HTML
 weight: 43
 ---

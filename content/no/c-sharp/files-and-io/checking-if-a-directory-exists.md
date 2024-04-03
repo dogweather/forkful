@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:18.966699-07:00
-description: "\xC5 sjekke om en mappe eksisterer i C# inneb\xE6rer \xE5 verifisere\
-  \ tilstedev\xE6relsen av en mappe p\xE5 en spesifisert bane i filsystemet. Programmerere\
-  \ gj\xF8r dette\u2026"
+description: 'Hvordan: #.'
 lastmod: '2024-03-13T22:44:40.812204-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 sjekke om en mappe eksisterer i C# inneb\xE6rer \xE5 verifisere tilstedev\xE6\
-  relsen av en mappe p\xE5 en spesifisert bane i filsystemet."
+summary: '#.'
 title: Sjekker om en mappe eksisterer
 weight: 20
 ---

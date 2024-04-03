@@ -2,11 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:54.482620-07:00
-description: "YAML staat voor \"YAML Ain't Markup Language.\" Het is een voor mensen\
-  \ leesbare gegevensserialisatieformaat. Programmeurs gebruiken het voor\u2026"
+description: "Hoe te: Om met YAML in Ruby te werken heb je de `yaml` bibliotheek nodig.\
+  \ Het maakt deel uit van de standaardbibliotheek van Ruby, dus je hoeft het alleen\u2026"
 lastmod: '2024-03-13T22:44:51.385447-06:00'
 model: gpt-4-0125-preview
-summary: YAML staat voor "YAML Ain't Markup Language.
+summary: Om met YAML in Ruby te werken heb je de `yaml` bibliotheek nodig.
 title: Werken met YAML
 weight: 41
 ---

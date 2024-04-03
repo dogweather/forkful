@@ -2,16 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:59.690996-07:00
-description: "Vi\u1EC7c ghi v\xE0o k\xEAnh l\u1ED7i chu\u1EA9n (`stderr`) chuy\u1EC3\
-  n c\xE1c th\xF4ng \u0111i\u1EC7p quan tr\u1ECDng \u0111\u1EBFn m\u1ED9t lu\u1ED3\
-  ng xu\u1EA5t ra \u0111\u1EB7c bi\u1EC7t \u0111\u01B0\u1EE3c d\xE0nh ri\xEAng cho\
-  \ l\u1ED7i, t\xE1ch bi\u1EC7t kh\u1ECFi lu\u1ED3ng xu\u1EA5t\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Swift gi\xFAp vi\u1EC7c ghi v\xE0o `stderr`\
+  \ tr\u1EDF n\xEAn \u0111\u01A1n gi\u1EA3n. Xem v\xED d\u1EE5 d\u01B0\u1EDBi \u0111\
+  \xE2y."
 lastmod: '2024-03-13T22:44:37.119272-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c ghi v\xE0o k\xEAnh l\u1ED7i chu\u1EA9n (`stderr`) chuy\u1EC3n\
-  \ c\xE1c th\xF4ng \u0111i\u1EC7p quan tr\u1ECDng \u0111\u1EBFn m\u1ED9t lu\u1ED3\
-  ng xu\u1EA5t ra \u0111\u1EB7c bi\u1EC7t \u0111\u01B0\u1EE3c d\xE0nh ri\xEAng cho\
-  \ l\u1ED7i, t\xE1ch bi\u1EC7t kh\u1ECFi lu\u1ED3ng xu\u1EA5t ch\xEDnh (`stdout`)."
+summary: "Swift gi\xFAp vi\u1EC7c ghi v\xE0o `stderr` tr\u1EDF n\xEAn \u0111\u01A1\
+  n gi\u1EA3n."
 title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---

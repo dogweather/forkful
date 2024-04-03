@@ -2,17 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:34.854352-07:00
-description: "Ghi nh\u1EADt k\xFD, n\xF3i m\u1ED9t c\xE1ch ng\u1EAFn g\u1ECDn, gi\u1ED1\
-  ng nh\u01B0 vi\u1EC7c gi\u1EEF m\u1ED9t cu\u1ED1n nh\u1EADt k\xFD cho \u1EE9ng d\u1EE5\
-  ng c\u1EE7a b\u1EA1n\u2014n\xF3 ghi l\u1EA1i c\xE1c s\u1EF1 ki\u1EC7n, l\u1ED7i,\
-  \ v\xE0 c\xE1c h\xE0nh \u0111\u1ED9ng \u0111\xE1ng ch\xFA \xFD kh\xE1c\u2026"
+description: "L\xE0m Th\u1EBF N\xE0o: Ngay t\u1EEB c\u01A1 b\u1EA3n, JavaScript cung\
+  \ c\u1EA5p m\u1ED9t c\xE1ch \u0111\u01A1n gi\u1EA3n \u0111\u1EC3 ghi nh\u1EEFng\
+  \ th\xF4ng \u0111i\u1EC7p v\xE0o b\u1EA3ng \u0111i\u1EC1u khi\u1EC3n."
 lastmod: '2024-03-13T22:44:37.161707-06:00'
 model: gpt-4-0125-preview
-summary: "Ghi nh\u1EADt k\xFD, n\xF3i m\u1ED9t c\xE1ch ng\u1EAFn g\u1ECDn, gi\u1ED1\
-  ng nh\u01B0 vi\u1EC7c gi\u1EEF m\u1ED9t cu\u1ED1n nh\u1EADt k\xFD cho \u1EE9ng d\u1EE5\
-  ng c\u1EE7a b\u1EA1n\u2014n\xF3 ghi l\u1EA1i c\xE1c s\u1EF1 ki\u1EC7n, l\u1ED7i,\
-  \ v\xE0 c\xE1c h\xE0nh \u0111\u1ED9ng \u0111\xE1ng ch\xFA \xFD kh\xE1c x\u1EA3y\
-  \ ra trong khi ph\u1EA7n m\u1EC1m \u0111ang ch\u1EA1y."
+summary: "Ngay t\u1EEB c\u01A1 b\u1EA3n, JavaScript cung c\u1EA5p m\u1ED9t c\xE1ch\
+  \ \u0111\u01A1n gi\u1EA3n \u0111\u1EC3 ghi nh\u1EEFng th\xF4ng \u0111i\u1EC7p v\xE0\
+  o b\u1EA3ng \u0111i\u1EC1u khi\u1EC3n."
 title: Ghi log
 weight: 17
 ---

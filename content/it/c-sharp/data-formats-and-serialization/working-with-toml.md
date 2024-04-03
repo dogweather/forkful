@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:20:14.240203-07:00
-description: "TOML \xE8 un acronimo per Tom's Obvious, Minimal Language, un formato\
-  \ di file di configurazione che \xE8 facile da leggere grazie alla sua semantica\
-  \ chiara. I\u2026"
+description: 'Come fare: Prima, installa un parser TOML come `Tomlyn`. Usa il tuo
+  gestore di pacchetti.'
 lastmod: '2024-03-13T22:44:43.457016-06:00'
 model: gpt-4-0125-preview
-summary: "TOML \xE8 un acronimo per Tom's Obvious, Minimal Language, un formato di\
-  \ file di configurazione che \xE8 facile da leggere grazie alla sua semantica chiara."
+summary: Prima, installa un parser TOML come `Tomlyn`.
 title: Lavorare con TOML
 weight: 39
 ---

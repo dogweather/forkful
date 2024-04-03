@@ -2,13 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:14.314566-07:00
-description: "Komennoriviparametrien lukeminen Visual Basic for Applications (VBA):ssa\
-  \ liittyy parametrien k\xE4ytt\xF6\xF6n ohjelmasi suorituksen yhteydess\xE4. T\xE4\
-  t\xE4 tekniikkaa\u2026"
+description: "Kuinka: Toisin kuin monet suoraviivaisemmat ohjelmointiymp\xE4rist\xF6\
+  t, VBA:lla ei ole sis\xE4\xE4nrakennettua ominaisuutta komentoriviparametrien suoraan\
+  \ lukemiseen\u2026"
 lastmod: '2024-03-13T22:44:56.417536-06:00'
 model: gpt-4-0125-preview
-summary: "Komennoriviparametrien lukeminen Visual Basic for Applications (VBA):ssa\
-  \ liittyy parametrien k\xE4ytt\xF6\xF6n ohjelmasi suorituksen yhteydess\xE4."
+summary: "Toisin kuin monet suoraviivaisemmat ohjelmointiymp\xE4rist\xF6t, VBA:lla\
+  \ ei ole sis\xE4\xE4nrakennettua ominaisuutta komentoriviparametrien suoraan lukemiseen\
+  \ perinteisess\xE4 mieless\xE4, koska se on ensisijaisesti suunniteltu upotettavaksi\
+  \ Microsoft Office -sovelluksiin."
 title: Komentoriviparametrien lukeminen
 weight: 23
 ---

@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 04:43:35.455821-07:00
-description: "Liczby zespolone rozszerzaj\u0105 ide\u0119 jednowymiarowej linii liczbowej\
-  \ na dwuwymiarow\u0105 p\u0142aszczyzn\u0119, poprzez w\u0142\u0105czenie prostopad\u0142\
-  ej osi urojonej. Programi\u015Bci\u2026"
+description: "Jak to zrobi\u0107: W Lua mo\u017Cna reprezentowa\u0107 liczby zespolone\
+  \ za pomoc\u0105 tabel. Podstawowe operacje obejmuj\u0105 dodawanie, odejmowanie,\
+  \ mno\u017Cenie i dzielenie tych\u2026"
 lastmod: '2024-03-13T22:44:35.534019-06:00'
 model: gpt-4-0125-preview
-summary: "Liczby zespolone rozszerzaj\u0105 ide\u0119 jednowymiarowej linii liczbowej\
-  \ na dwuwymiarow\u0105 p\u0142aszczyzn\u0119, poprzez w\u0142\u0105czenie prostopad\u0142\
-  ej osi urojonej."
+summary: "W Lua mo\u017Cna reprezentowa\u0107 liczby zespolone za pomoc\u0105 tabel."
 title: Praca z liczbami zespolonymi
 weight: 14
 ---

@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:51:16.589686-07:00
-description: "Interpolering av str\xE4ngar inneb\xE4r att man blandar variabler och\
-  \ str\xE4ngar f\xF6r att skapa en ny, sammansatt str\xE4ng. Programmerare interpolerar\
-  \ str\xE4ngar f\xF6r\u2026"
+description: "S\xE5 H\xE4r G\xF6r Du: Java 15 (och senare) inf\xF6rde `String.format()`\
+  \ f\xF6r str\xE4nginterpolering."
 lastmod: '2024-03-13T22:44:37.773878-06:00'
 model: gpt-4-1106-preview
-summary: "Interpolering av str\xE4ngar inneb\xE4r att man blandar variabler och str\xE4\
-  ngar f\xF6r att skapa en ny, sammansatt str\xE4ng."
+summary: "Java 15 (och senare) inf\xF6rde `String.format()` f\xF6r str\xE4nginterpolering."
 title: "Interpolera en str\xE4ng"
 weight: 8
 ---

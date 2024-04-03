@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:15:44.685815-07:00
-description: "Interaktiva skal, eller REPL (Read-Eval-Print Loop), l\xE5ter dig k\xF6\
-  ra kod p\xE5 flyget, testa funktioner, algoritmer eller pilla med id\xE9er. De \xE4\
-  r kodningens\u2026"
+description: "Hur man g\xF6r: Node.js levereras med ett REPL som \xE4r tillg\xE4ngligt\
+  \ via terminalen. Poppa upp det, och du \xE4r redo att b\xF6rja. H\xE4r \xE4r en\
+  \ smakprov."
 lastmod: '2024-03-13T22:44:38.295006-06:00'
 model: gpt-4-0125-preview
-summary: "Interaktiva skal, eller REPL (Read-Eval-Print Loop), l\xE5ter dig k\xF6\
-  ra kod p\xE5 flyget, testa funktioner, algoritmer eller pilla med id\xE9er."
+summary: "Node.js levereras med ett REPL som \xE4r tillg\xE4ngligt via terminalen."
 title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---

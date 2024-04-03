@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:28:30.879408-07:00
-description: "Calculating a future or past date involves figuring out what the date\
-  \ was, or will be, after or before a specific time interval. Programmers often need\u2026"
+description: 'How to: Calculating future dates.'
 lastmod: '2024-03-13T22:45:00.101493-06:00'
 model: gpt-4-1106-preview
-summary: Calculating a future or past date involves figuring out what the date was,
-  or will be, after or before a specific time interval.
+summary: Calculating future dates.
 title: Calculating a date in the future or past
 weight: 26
 ---

@@ -1,13 +1,12 @@
 ---
 date: 2024-01-27 16:21:39.062889-07:00
-description: "Wyobra\u017A sobie, \u017Ce w\u0142a\u015Bnie dowiedzia\u0142e\u015B\
-  \ si\u0119, \u017Ce musisz przeprowadzi\u0107 masow\u0105 aktualizacj\u0119 kilku\
-  \ plik\xF3w konfiguracyjnych znajduj\u0105cych si\u0119 na twoim serwerze.\u2026"
+description: "Jak to zrobi\u0107: Je\u015Bli chodzi o edycj\u0119 plik\xF3w na miejscu\
+  \ przy u\u017Cyciu Bash, dwa wybitne narz\u0119dzia wchodz\u0105 w gr\u0119: `sed`\
+  \ i `awk`. Przyjrzyjmy si\u0119, jak u\u017Cywa\u0107\u2026"
 lastmod: '2024-03-13T22:44:35.580635-06:00'
 model: gpt-4-0125-preview
-summary: "Wyobra\u017A sobie, \u017Ce w\u0142a\u015Bnie dowiedzia\u0142e\u015B si\u0119\
-  , \u017Ce musisz przeprowadzi\u0107 masow\u0105 aktualizacj\u0119 kilku plik\xF3\
-  w konfiguracyjnych znajduj\u0105cych si\u0119 na twoim serwerze."
+summary: "Je\u015Bli chodzi o edycj\u0119 plik\xF3w na miejscu przy u\u017Cyciu Bash,\
+  \ dwa wybitne narz\u0119dzia wchodz\u0105 w gr\u0119."
 title: "Edycja plik\xF3w w miejscu przy u\u017Cyciu jednolinijkowc\xF3w CLI"
 weight: 32
 ---

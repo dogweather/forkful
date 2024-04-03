@@ -2,18 +2,16 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:42.530748-07:00
-description: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\
-  \u1EDDng trong Google Apps Script, m\u1ED9t ng\xF4n ng\u1EEF l\u1EADp tr\xECnh d\u1EF1\
-  a tr\xEAn \u0111\xE1m m\xE2y \u0111\u1EC3 t\u1EF1 \u0111\u1ED9ng h\xF3a c\xE1c t\xE1\
-  c v\u1EE5 tr\xEAn c\xE1c s\u1EA3n ph\u1EA9m c\u1EE7a\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Vi\u1EC7c chuy\u1EC3n \u0111\u1ED5i m\u1ED9\
+  t chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng trong Google Apps Script kh\xE1\
+  \ \u0111\u01A1n gi\u1EA3n, nh\u1EDD v\xE0o c\xE1c ph\u01B0\u01A1ng th\u1EE9c JavaScript\
+  \ t\xEDch h\u1EE3p s\u1EB5n trong m\xF4i\u2026"
 lastmod: '2024-03-13T22:44:36.021794-06:00'
 model: gpt-4-0125-preview
-summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\
-  \u1EDDng trong Google Apps Script, m\u1ED9t ng\xF4n ng\u1EEF l\u1EADp tr\xECnh d\u1EF1\
-  a tr\xEAn \u0111\xE1m m\xE2y \u0111\u1EC3 t\u1EF1 \u0111\u1ED9ng h\xF3a c\xE1c t\xE1\
-  c v\u1EE5 tr\xEAn c\xE1c s\u1EA3n ph\u1EA9m c\u1EE7a Google, l\xE0 m\u1ED9t nhi\u1EC7\
-  m v\u1EE5 c\u01A1 b\u1EA3n nh\u1EB1m chu\u1EA9n h\xF3a d\u1EEF li\u1EC7u v\u0103\
-  n b\u1EA3n."
+summary: "Vi\u1EC7c chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF\
+  \ th\u01B0\u1EDDng trong Google Apps Script kh\xE1 \u0111\u01A1n gi\u1EA3n, nh\u1EDD\
+  \ v\xE0o c\xE1c ph\u01B0\u01A1ng th\u1EE9c JavaScript t\xEDch h\u1EE3p s\u1EB5n\
+  \ trong m\xF4i tr\u01B0\u1EDDng l\u1EADp tr\xECnh."
 title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
 weight: 4
 ---

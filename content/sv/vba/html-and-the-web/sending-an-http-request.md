@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:55.222065-07:00
-description: "Att skicka en HTTP-beg\xE4ran i Visual Basic for Applications (VBA)\
-  \ inneb\xE4r att man programmatiskt tillg\xE5r webbresurser eller webbtj\xE4nster\
-  \ genom att g\xF6ra\u2026"
+description: "Hur: Nyckeln till att skicka en HTTP-beg\xE4ran i VBA \xE4r att anv\xE4\
+  nda `Microsoft XML, v6.0`-biblioteket (eller \xE4ldre versioner, beroende p\xE5\
+  \ ditt system). Se\u2026"
 lastmod: '2024-03-13T22:44:37.739479-06:00'
 model: gpt-4-0125-preview
-summary: "Att skicka en HTTP-beg\xE4ran i Visual Basic for Applications (VBA) inneb\xE4\
-  r att man programmatiskt tillg\xE5r webbresurser eller webbtj\xE4nster genom att\
-  \ g\xF6ra f\xF6rfr\xE5gningar \xF6ver HTTP."
+summary: "Nyckeln till att skicka en HTTP-beg\xE4ran i VBA \xE4r att anv\xE4nda `Microsoft\
+  \ XML, v6.0`-biblioteket (eller \xE4ldre versioner, beroende p\xE5 ditt system)."
 title: "Skicka en HTTP-f\xF6rfr\xE5gan"
 weight: 44
 ---

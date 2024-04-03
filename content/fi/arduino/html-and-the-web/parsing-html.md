@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:32.723041-07:00
-description: "HTML:n j\xE4sent\xE4minen Arduino-projekteissa koskee tietojen poimimista\
-  \ verkkosivuilta. Ohjelmoijat tekev\xE4t t\xE4m\xE4n mahdollistaakseen Arduinolaitteidensa\u2026"
+description: "Kuinka: HTML:n j\xE4sent\xE4minen Arduinolla vaatii yleens\xE4 pienikokoisia\
+  \ kirjastoja rajoitettujen laiteresurssien vuoksi. Suosittu valinta verkkosivujen\u2026"
 lastmod: '2024-03-13T22:44:56.822866-06:00'
 model: gpt-4-0125-preview
-summary: "HTML:n j\xE4sent\xE4minen Arduino-projekteissa koskee tietojen poimimista\
-  \ verkkosivuilta."
+summary: "HTML:n j\xE4sent\xE4minen Arduinolla vaatii yleens\xE4 pienikokoisia kirjastoja\
+  \ rajoitettujen laiteresurssien vuoksi."
 title: "HTML:n j\xE4sennys"
 weight: 43
 ---

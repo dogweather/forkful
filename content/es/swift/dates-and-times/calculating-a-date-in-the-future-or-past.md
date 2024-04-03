@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:32:06.966605-07:00
-description: "Calcular una fecha en el futuro o en el pasado significa determinar\
-  \ un momento espec\xEDfico antes o despu\xE9s de una fecha dada. Los programadores\
-  \ hacen esto\u2026"
+description: "C\xF3mo Hacerlo: ."
 lastmod: '2024-03-13T22:44:59.429716-06:00'
 model: gpt-4-1106-preview
-summary: "Calcular una fecha en el futuro o en el pasado significa determinar un momento\
-  \ espec\xEDfico antes o despu\xE9s de una fecha dada."
+summary: .
 title: Calcular una fecha en el futuro o pasado
 weight: 26
 ---

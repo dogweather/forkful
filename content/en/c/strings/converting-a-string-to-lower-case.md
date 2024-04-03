@@ -1,11 +1,12 @@
 ---
 date: 2024-02-03 17:50:08.457437-07:00
-description: "Converting a string to lowercase in C involves transforming all uppercase\
-  \ letters in a given string to their corresponding lowercase equivalents.\u2026"
+description: "How to: C doesn't have a built-in function for string conversion to\
+  \ lowercase directly, unlike some high-level languages. However, the process can\
+  \ be\u2026"
 lastmod: '2024-03-13T22:45:00.500084-06:00'
 model: gpt-4-0125-preview
-summary: Converting a string to lowercase in C involves transforming all uppercase
-  letters in a given string to their corresponding lowercase equivalents.
+summary: C doesn't have a built-in function for string conversion to lowercase directly,
+  unlike some high-level languages.
 title: Converting a string to lower case
 weight: 4
 ---

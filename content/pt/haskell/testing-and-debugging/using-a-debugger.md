@@ -1,8 +1,8 @@
 ---
 date: 2024-01-26 03:50:20.611670-07:00
-description: "Vamos passear com o GHCi, o ambiente interativo do Haskell que pode\
-  \ atuar como um depurador b\xE1sico. Voc\xEA o inicia com o seu c\xF3digo Haskell\
-  \ e come\xE7a a\u2026"
+description: "Como fazer: Vamos passear com o GHCi, o ambiente interativo do Haskell\
+  \ que pode atuar como um depurador b\xE1sico. Voc\xEA o inicia com o seu c\xF3digo\
+  \ Haskell e\u2026"
 lastmod: '2024-03-13T22:44:46.629715-06:00'
 model: gpt-4-0125-preview
 summary: "Vamos passear com o GHCi, o ambiente interativo do Haskell que pode atuar\

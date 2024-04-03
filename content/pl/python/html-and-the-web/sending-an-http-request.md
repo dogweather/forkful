@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 18:00:17.565958-07:00
-description: "Wys\u0142anie \u017C\u0105dania HTTP (Hypertext Transfer Protocol) to\
-  \ spos\xF3b, w jaki nasz program mo\u017Ce komunikowa\u0107 si\u0119 z serwerami\
-  \ w Internecie. Robimy to, \u017Ceby pobra\u0107\u2026"
+description: "Jak to zrobi\u0107: U\u017Cyjemy `requests`, \u0142atwej w u\u017Cyciu\
+  \ biblioteki pozwalaj\u0105cej na wysy\u0142anie \u017C\u0105da\u0144 HTTP. Instalacja\
+  \ to linijka w terminalu."
 lastmod: '2024-03-13T22:44:34.946102-06:00'
 model: gpt-4-1106-preview
-summary: "Wys\u0142anie \u017C\u0105dania HTTP (Hypertext Transfer Protocol) to spos\xF3\
-  b, w jaki nasz program mo\u017Ce komunikowa\u0107 si\u0119 z serwerami w Internecie."
+summary: "U\u017Cyjemy `requests`, \u0142atwej w u\u017Cyciu biblioteki pozwalaj\u0105\
+  cej na wysy\u0142anie \u017C\u0105da\u0144 HTTP."
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---

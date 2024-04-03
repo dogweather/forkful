@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:50.435958-07:00
-description: "L'analisi di una data da una stringa in Clojure consiste nel convertire\
-  \ le rappresentazioni testuali di date ed orari in una forma pi\xF9 utilizzabile\
-  \ (ad\u2026"
+description: "Come fare: Clojure, essendo un linguaggio JVM, ti consente di utilizzare\
+  \ direttamente le librerie di date e orari di Java. Iniziamo con l'interoperabilit\xE0\
+  \u2026"
 lastmod: '2024-03-13T22:44:43.051779-06:00'
 model: gpt-4-0125-preview
-summary: "L'analisi di una data da una stringa in Clojure consiste nel convertire\
-  \ le rappresentazioni testuali di date ed orari in una forma pi\xF9 utilizzabile\
-  \ (ad esempio, l'oggetto DateTime di Clojure)."
+summary: Clojure, essendo un linguaggio JVM, ti consente di utilizzare direttamente
+  le librerie di date e orari di Java.
 title: Analisi di una data da una stringa
 weight: 30
 ---

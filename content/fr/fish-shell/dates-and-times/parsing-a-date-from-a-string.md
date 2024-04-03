@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:00.125677-07:00
-description: "L'analyse d'une date \xE0 partir d'une cha\xEEne de caract\xE8res implique\
-  \ d'extraire les informations de date encod\xE9es au sein de cha\xEEnes et de les\
-  \ convertir en\u2026"
+description: "Comment faire : Dans Fish Shell, il n'y a pas de commandes int\xE9gr\xE9\
+  es sp\xE9cifiquement con\xE7ues pour l'analyse de dates \xE0 partir de cha\xEEnes.\
+  \ \xC0 la place, vous\u2026"
 lastmod: '2024-03-13T22:44:58.334915-06:00'
 model: gpt-4-0125-preview
-summary: "L'analyse d'une date \xE0 partir d'une cha\xEEne de caract\xE8res implique\
-  \ d'extraire les informations de date encod\xE9es au sein de cha\xEEnes et de les\
-  \ convertir en un format structur\xE9 que les environnements de programmation peuvent\
-  \ reconna\xEEtre et manipuler."
+summary: "Dans Fish Shell, il n'y a pas de commandes int\xE9gr\xE9es sp\xE9cifiquement\
+  \ con\xE7ues pour l'analyse de dates \xE0 partir de cha\xEEnes."
 title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
 weight: 30
 ---

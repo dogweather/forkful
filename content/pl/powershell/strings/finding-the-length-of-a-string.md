@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:47:51.492693-07:00
-description: "D\u0142ugo\u015B\u0107 \u0142a\u0144cucha znak\xF3w to ilo\u015B\u0107\
-  \ znak\xF3w, z kt\xF3rych si\u0119 sk\u0142ada. Programi\u015Bci musz\u0105 to sprawdza\u0107\
-  , aby zarz\u0105dza\u0107 tekstem, np. w walidacji, ekstrakcji danych,\u2026"
+description: "Jak to zrobi\u0107: W PowerShell mierzenie d\u0142ugo\u015Bci \u0142\
+  a\u0144cucha jest proste. U\u017Cyj w\u0142a\u015Bciwo\u015Bci `Length`."
 lastmod: '2024-03-13T22:44:35.618813-06:00'
 model: gpt-4-1106-preview
-summary: "D\u0142ugo\u015B\u0107 \u0142a\u0144cucha znak\xF3w to ilo\u015B\u0107 znak\xF3\
-  w, z kt\xF3rych si\u0119 sk\u0142ada."
+summary: "W PowerShell mierzenie d\u0142ugo\u015Bci \u0142a\u0144cucha jest proste."
 title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 weight: 7
 ---

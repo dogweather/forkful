@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:34:15.048974-07:00
-description: "Sammenkjeding av strenger i C# er det \xE5 sl\xE5 sammen tekst. Det\
-  \ lar deg raskt sette sammen variabler, input og statisk tekst for utskrift, lagring\
-  \ eller\u2026"
+description: "How to: (Slik gj\xF8r du det:) ."
 lastmod: '2024-03-13T22:44:40.787072-06:00'
 model: gpt-4-1106-preview
-summary: "Sammenkjeding av strenger i C# er det \xE5 sl\xE5 sammen tekst."
+summary: .
 title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---

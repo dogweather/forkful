@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:20.169530-07:00
-description: "\xC5 organisere kode i funksjoner i C inneb\xE6rer \xE5 bryte ned komplekse\
-  \ oppgaver i mindre, gjenbrukbare blokker med kode. Denne praksisen forbedrer\u2026"
+description: "Hvordan: I C er en funksjon erkl\xE6rt med en returtype, et navn og\
+  \ parametere (hvis noen), fulgt av en blokk med kode. La oss starte med et enkelt\
+  \ eksempel:\u2026"
 lastmod: '2024-03-13T22:44:41.278169-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 organisere kode i funksjoner i C inneb\xE6rer \xE5 bryte ned komplekse\
-  \ oppgaver i mindre, gjenbrukbare blokker med kode."
+summary: "I C er en funksjon erkl\xE6rt med en returtype, et navn og parametere (hvis\
+  \ noen), fulgt av en blokk med kode."
 title: Organisering av kode i funksjoner
 weight: 18
 ---

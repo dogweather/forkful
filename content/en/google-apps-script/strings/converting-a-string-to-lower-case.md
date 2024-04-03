@@ -1,12 +1,11 @@
 ---
 date: 2024-02-01 21:12:08.821698-07:00
-description: "Converting a string to lower case in Google Apps Script, a cloud-based\
-  \ scripting language for automating tasks across Google products, is a fundamental\u2026"
+description: "How to: Converting a string to lower case in Google Apps Script is straightforward,\
+  \ thanks to the built-in JavaScript methods available within the\u2026"
 lastmod: '2024-03-13T22:44:59.658053-06:00'
 model: gpt-4-0125-preview
-summary: Converting a string to lower case in Google Apps Script, a cloud-based scripting
-  language for automating tasks across Google products, is a fundamental task aimed
-  at standardizing text data.
+summary: Converting a string to lower case in Google Apps Script is straightforward,
+  thanks to the built-in JavaScript methods available within the scripting environment.
 title: Converting a string to lower case
 weight: 4
 ---

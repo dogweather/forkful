@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:12.602554-07:00
-description: "Regul\xE4re Ausdr\xFCcke, oder Regex, erm\xF6glichen es Entwicklern,\
-  \ mit fortgeschrittenen Mustervergleichstechniken in Zeichenketten zu suchen, \xDC\
-  bereinstimmungen\u2026"
+description: "Wie geht das: Die `regex` Bibliothek in Rust ist der Anlaufpunkt, um\
+  \ mit regul\xE4ren Ausdr\xFCcken zu arbeiten. Um sie zu nutzen, m\xFCssen Sie sie\
+  \ zuerst in Ihre\u2026"
 lastmod: '2024-03-13T22:44:53.662854-06:00'
 model: gpt-4-0125-preview
-summary: "Regul\xE4re Ausdr\xFCcke, oder Regex, erm\xF6glichen es Entwicklern, mit\
-  \ fortgeschrittenen Mustervergleichstechniken in Zeichenketten zu suchen, \xDCbereinstimmungen\
-  \ zu finden und diese zu manipulieren."
+summary: "Die `regex` Bibliothek in Rust ist der Anlaufpunkt, um mit regul\xE4ren\
+  \ Ausdr\xFCcken zu arbeiten."
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

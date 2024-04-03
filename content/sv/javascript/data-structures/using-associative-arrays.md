@@ -2,13 +2,13 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:51.133536-07:00
-description: "Associativa arrayer, eller som de mer korrekt kallas i JavaScript, objekt,\
-  \ l\xE5ter dig koppla nycklar till v\xE4rden. Detta \xE4r extremt praktiskt n\xE4\
-  r du beh\xF6ver\u2026"
+description: "Hur man g\xF6r: Att skapa och anv\xE4nda associativa arrayer (objekt)\
+  \ i JavaScript \xE4r enkelt. Du definierar ett objekt med klammerparanteser `{}`,\
+  \ och inuti\u2026"
 lastmod: '2024-03-13T22:44:38.286413-06:00'
 model: gpt-4-0125-preview
-summary: "Associativa arrayer, eller som de mer korrekt kallas i JavaScript, objekt,\
-  \ l\xE5ter dig koppla nycklar till v\xE4rden."
+summary: "Att skapa och anv\xE4nda associativa arrayer (objekt) i JavaScript \xE4\
+  r enkelt."
 title: "Att anv\xE4nda associativa arrayer"
 weight: 15
 ---

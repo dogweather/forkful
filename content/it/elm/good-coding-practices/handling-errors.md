@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 00:51:44.281330-07:00
-description: "Gestire gli errori significa scrivere codice che pu\xF2 anticipare e\
-  \ affrontare le problematiche che emergono. I programmatori lo fanno per evitare\
-  \ crash del\u2026"
+description: "Come fare: La filosofia di base di Elm \xE8 Nessuna Eccezione a Runtime.\
+  \ Di conseguenza, Elm sfrutta il suo sistema di tipi con tipi come `Maybe` e `Result`\u2026"
 lastmod: '2024-03-13T22:44:43.357149-06:00'
 model: gpt-4-1106-preview
-summary: "Gestire gli errori significa scrivere codice che pu\xF2 anticipare e affrontare\
-  \ le problematiche che emergono."
+summary: "La filosofia di base di Elm \xE8 Nessuna Eccezione a Runtime."
 title: Gestione degli errori
 weight: 16
 ---

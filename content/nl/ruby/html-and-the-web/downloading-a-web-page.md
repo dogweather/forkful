@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:32.735504-07:00
-description: "Het downloaden van een webpagina betekent het ophalen van de HTML-inhoud\
-  \ van het internet. Programmeurs doen dit om de gegevens te parsen, informatie te\u2026"
+description: 'Hoe te: Ruby maakt het downloaden van een webpagina eenvoudig met bibliotheken
+  zoals `net/http` en gems zoals `open-uri`. Zo doe je het met `net/http`.'
 lastmod: '2024-03-13T22:44:51.336738-06:00'
 model: gpt-4-0125-preview
-summary: Het downloaden van een webpagina betekent het ophalen van de HTML-inhoud
-  van het internet.
+summary: Ruby maakt het downloaden van een webpagina eenvoudig met bibliotheken zoals
+  `net/http` en gems zoals `open-uri`.
 title: Een webpagina downloaden
 weight: 42
 ---

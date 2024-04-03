@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:25.862239-07:00
-description: "Chuy\u1EC3n \u0111\u1ED5i ng\xE0y th\xE1ng th\xE0nh x\xE2u k\xFD t\u1EF1\
-  \ bi\u1EBFn \u0111\u1ED5i m\u1ED9t \u0111\u1ED1i t\u01B0\u1EE3ng ng\xE0y th\xE1\
-  ng th\xE0nh \u0111\u1ECBnh d\u1EA1ng v\u0103n b\u1EA3n. L\u1EADp tr\xECnh vi\xEA\
-  n th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 hi\u1EC3n th\u1ECB ng\xE0\
-  y th\xE1ng\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Python l\xE0m cho vi\u1EC7c chuy\u1EC3n \u0111\
+  \u1ED5i ng\xE0y th\xE1ng th\xE0nh x\xE2u k\xFD t\u1EF1 tr\u1EDF n\xEAn d\u1EC5 d\xE0\
+  ng. S\u1EED d\u1EE5ng ph\u01B0\u01A1ng th\u1EE9c `strftime` c\xF3 s\u1EB5n tr\xEA\
+  n c\xE1c \u0111\u1ED1i t\u01B0\u1EE3ng ng\xE0y\u2026"
 lastmod: '2024-03-13T22:44:36.112485-06:00'
 model: gpt-4-0125-preview
-summary: "Chuy\u1EC3n \u0111\u1ED5i ng\xE0y th\xE1ng th\xE0nh x\xE2u k\xFD t\u1EF1\
-  \ bi\u1EBFn \u0111\u1ED5i m\u1ED9t \u0111\u1ED1i t\u01B0\u1EE3ng ng\xE0y th\xE1\
-  ng th\xE0nh \u0111\u1ECBnh d\u1EA1ng v\u0103n b\u1EA3n."
+summary: "Python l\xE0m cho vi\u1EC7c chuy\u1EC3n \u0111\u1ED5i ng\xE0y th\xE1ng th\xE0\
+  nh x\xE2u k\xFD t\u1EF1 tr\u1EDF n\xEAn d\u1EC5 d\xE0ng."
 title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 weight: 28
 ---

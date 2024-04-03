@@ -2,12 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:18.044446-07:00
-description: "Stringinterpolatie laat je variabelen direct in strings inbedden. Het\
-  \ wordt gedaan voor gemak en leesbaarheid\u2014geen plus tekens of functieaanroepen\
-  \ nodig\u2026"
+description: "Hoe te: In Haskell is stringinterpolatie niet standaard ingebouwd, maar\
+  \ met het `interpolate` pakket kun je er vrij dichtbij komen. Zorg eerst dat je\
+  \ het\u2026"
 lastmod: '2024-03-13T22:44:50.838384-06:00'
 model: gpt-4-0125-preview
-summary: Stringinterpolatie laat je variabelen direct in strings inbedden.
+summary: In Haskell is stringinterpolatie niet standaard ingebouwd, maar met het `interpolate`
+  pakket kun je er vrij dichtbij komen.
 title: Een string interpoleren
 weight: 8
 ---

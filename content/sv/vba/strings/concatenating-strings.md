@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:25.403615-07:00
-description: "Konkatenering i Visual Basic for Applications (VBA) inneb\xE4r att sammanfoga\
-  \ tv\xE5 eller flera str\xE4ngar till en enda enhet. Detta \xE4r en grundl\xE4ggande\
-  \ uppgift\u2026"
+description: "Hur man g\xF6r: VBA erbjuder en enkel metod f\xF6r att konkatenera str\xE4\
+  ngar med hj\xE4lp av `&`-operatorn eller `Concatenate`-funktionen. L\xE5t oss utforska\
+  \ b\xE5da\u2026"
 lastmod: '2024-03-13T22:44:37.734281-06:00'
 model: gpt-4-0125-preview
-summary: "Konkatenering i Visual Basic for Applications (VBA) inneb\xE4r att sammanfoga\
-  \ tv\xE5 eller flera str\xE4ngar till en enda enhet."
+summary: "VBA erbjuder en enkel metod f\xF6r att konkatenera str\xE4ngar med hj\xE4\
+  lp av `&`-operatorn eller `Concatenate`-funktionen."
 title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---

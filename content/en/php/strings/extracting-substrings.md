@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:46:05.047707-07:00
-description: "Extracting substrings means pulling specific portions from a string.\
-  \ Programmers do it to process or manipulate data, like fetching a username from\
-  \ an\u2026"
+description: 'How to: PHP offers several functions to extract substrings. Let''s check
+  out `substr`, `mb_substr`, and `strstr`.'
 lastmod: '2024-03-13T22:45:00.156628-06:00'
 model: gpt-4-1106-preview
-summary: Extracting substrings means pulling specific portions from a string.
+summary: PHP offers several functions to extract substrings.
 title: Extracting substrings
 weight: 6
 ---

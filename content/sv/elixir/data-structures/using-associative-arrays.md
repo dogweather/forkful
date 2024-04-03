@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:51.326344-07:00
-description: "I Elixir, kallade associativa arrayer f\xF6r Maps, \xE4r samlingar av\
-  \ nyckel-v\xE4rde-par d\xE4r en unik nyckel pekar p\xE5 ett v\xE4rde. De \xE4r superpraktiska\
-  \ f\xF6r att lagra\u2026"
+description: "Hur man g\xF6r: Att skapa en Map \xE4r enkelt. Du anv\xE4nder `%{}`-syntaxen,\
+  \ s\xE5 h\xE4r."
 lastmod: '2024-03-13T22:44:37.559959-06:00'
 model: gpt-4-0125-preview
-summary: "I Elixir, kallade associativa arrayer f\xF6r Maps, \xE4r samlingar av nyckel-v\xE4\
-  rde-par d\xE4r en unik nyckel pekar p\xE5 ett v\xE4rde."
+summary: "Att skapa en Map \xE4r enkelt."
 title: "Att anv\xE4nda associativa arrayer"
 weight: 15
 ---

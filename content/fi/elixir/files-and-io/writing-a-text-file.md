@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:43.847714-07:00
-description: "Tiedostoon kirjoittaminen Elixirilla on olennainen taito kehitt\xE4\
-  jille, sill\xE4 se mahdollistaa datan pysyvyyden, lokitiedon kirjaamisen tai ihmisluettavan\u2026"
+description: "Kuinka: Elixir tekee tiedoston k\xE4sittelyst\xE4 yksinkertaista sis\xE4\
+  \xE4nrakennettujen moduulien avulla. P\xE4\xE4asiallinen tapa kirjoittaa tiedostoon\
+  \ on k\xE4ytt\xE4m\xE4ll\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.245224-06:00'
 model: gpt-4-0125-preview
-summary: "Tiedostoon kirjoittaminen Elixirilla on olennainen taito kehitt\xE4jille,\
-  \ sill\xE4 se mahdollistaa datan pysyvyyden, lokitiedon kirjaamisen tai ihmisluettavan\
-  \ sis\xE4ll\xF6n viemisen."
+summary: "Elixir tekee tiedoston k\xE4sittelyst\xE4 yksinkertaista sis\xE4\xE4nrakennettujen\
+  \ moduulien avulla."
 title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---

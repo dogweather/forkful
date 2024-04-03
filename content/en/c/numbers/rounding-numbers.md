@@ -1,13 +1,11 @@
 ---
 date: 2024-02-03 17:50:04.693524-07:00
-description: "Rounding numbers is the process of adjusting the digits of a number\
-  \ to reduce its precision according to certain rules, either towards the nearest\
-  \ whole\u2026"
+description: "How to: Rounding numbers in C can be accomplished using various functions,\
+  \ but the most common approach involves the `floor()`, `ceil()`, and `round()`\u2026"
 lastmod: '2024-03-13T22:45:00.506964-06:00'
 model: gpt-4-0125-preview
-summary: Rounding numbers is the process of adjusting the digits of a number to reduce
-  its precision according to certain rules, either towards the nearest whole number
-  or a specified number of decimal places.
+summary: Rounding numbers in C can be accomplished using various functions, but the
+  most common approach involves the `floor()`, `ceil()`, and `round()` functions.
 title: Rounding numbers
 weight: 13
 ---

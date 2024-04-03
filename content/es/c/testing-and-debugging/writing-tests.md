@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:31.670490-07:00
-description: "Escribir pruebas en C implica crear programas o funciones auxiliares\
-  \ m\xE1s peque\xF1os que verifiquen autom\xE1ticamente la funcionalidad de tu c\xF3\
-  digo. Los\u2026"
+description: "C\xF3mo hacerlo: Aunque C no cuenta con un marco de pruebas integrado\
+  \ como algunos otros lenguajes, a\xFAn puedes escribir pruebas efectivas usando\
+  \ assert.h\u2026"
 lastmod: '2024-03-13T22:44:59.549509-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir pruebas en C implica crear programas o funciones auxiliares m\xE1\
-  s peque\xF1os que verifiquen autom\xE1ticamente la funcionalidad de tu c\xF3digo."
+summary: "Aunque C no cuenta con un marco de pruebas integrado como algunos otros\
+  \ lenguajes, a\xFAn puedes escribir pruebas efectivas usando assert.h para afirmaciones\
+  \ simples o integrar marcos de terceros como CUnit o Unity para pruebas m\xE1s estructuradas."
 title: Escribir pruebas
 weight: 36
 ---

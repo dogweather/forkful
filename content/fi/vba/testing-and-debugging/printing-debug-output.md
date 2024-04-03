@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:38.326050-07:00
-description: "Tulosteen tulostaminen debuggausta varten Visual Basic for Applications\
-  \ (VBA) -ohjelmassa sis\xE4lt\xE4\xE4 tulostuslauseiden strategisen sijoittamisen\
-  \ koodiisi\u2026"
+description: "Miten: VBA:ssa `Debug.Print`-lause on ty\xF6juhta debug-tietojen tulostamiseksi\
+  \ V\xE4lit\xF6n-ikkunaan Visual Basic Editorissa (VBE). Jotta voisit k\xE4ytt\xE4\
+  \xE4 t\xE4t\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.403631-06:00'
 model: gpt-4-0125-preview
-summary: "Tulosteen tulostaminen debuggausta varten Visual Basic for Applications\
-  \ (VBA) -ohjelmassa sis\xE4lt\xE4\xE4 tulostuslauseiden strategisen sijoittamisen\
-  \ koodiisi n\xE4ytt\xE4m\xE4\xE4n muuttujien arvot, suorituksen kulun tai mukautetut\
-  \ debug-viestit."
+summary: "VBA:ssa `Debug.Print`-lause on ty\xF6juhta debug-tietojen tulostamiseksi\
+  \ V\xE4lit\xF6n-ikkunaan Visual Basic Editorissa (VBE)."
 title: Debug-tulosteen tulostaminen
 weight: 33
 ---

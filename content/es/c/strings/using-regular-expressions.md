@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:43.098002-07:00
-description: "Las expresiones regulares (regex) ofrecen una manera de buscar, coincidir\
-  \ y manipular cadenas utilizando patrones definidos. Los programadores las\u2026"
+description: "C\xF3mo hacerlo: Para usar expresiones regulares en C, principalmente\
+  \ estar\xE1s trabajando con la biblioteca de regex POSIX (`<regex.h>`). Este ejemplo\u2026"
 lastmod: '2024-03-13T22:44:59.534359-06:00'
 model: gpt-4-0125-preview
-summary: Las expresiones regulares (regex) ofrecen una manera de buscar, coincidir
-  y manipular cadenas utilizando patrones definidos.
+summary: "Para usar expresiones regulares en C, principalmente estar\xE1s trabajando\
+  \ con la biblioteca de regex POSIX (`<regex.h>`)."
 title: Usando expresiones regulares
 weight: 11
 ---

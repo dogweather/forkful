@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:56:21.282050-07:00
-description: "Kommandoradsargument l\xE5ter dig mata in data till ditt Java-program\
-  \ n\xE4r du startar det. Programmerare anv\xE4nder detta f\xF6r att g\xF6ra programmen\
-  \ flexibla och\u2026"
+description: "Hur g\xF6r man: Enkelt! I din `main`-metod, de d\xE4r `String[] args`\
+  \ \xE4r dina argument. Kika h\xE4r."
 lastmod: '2024-03-13T22:44:37.802467-06:00'
 model: gpt-4-1106-preview
-summary: "Kommandoradsargument l\xE5ter dig mata in data till ditt Java-program n\xE4\
-  r du startar det."
+summary: Enkelt.
 title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---

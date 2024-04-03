@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:45:36.042858-07:00
-description: "Kompleksiluvuilla on reaaliosa ja imaginaariosa, ja ne ovat keskeisi\xE4\
-  \ monilla aloilla, kuten insin\xF6\xF6ritieteiss\xE4, fysiikassa ja tietokonegrafiikassa.\u2026"
+description: "Kuinka: Rust ei suoraan tue kompleksilukuja, mutta kirjastot, kuten\
+  \ `num-complex`, ovat apunasi. N\xE4in voit k\xE4ytt\xE4\xE4 sit\xE4."
 lastmod: '2024-03-13T22:44:56.350797-06:00'
 model: gpt-4-0125-preview
-summary: "Kompleksiluvuilla on reaaliosa ja imaginaariosa, ja ne ovat keskeisi\xE4\
-  \ monilla aloilla, kuten insin\xF6\xF6ritieteiss\xE4, fysiikassa ja tietokonegrafiikassa."
+summary: Rust ei suoraan tue kompleksilukuja, mutta kirjastot, kuten `num-complex`,
+  ovat apunasi.
 title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---

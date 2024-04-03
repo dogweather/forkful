@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:40.344673-07:00
-description: "En la programaci\xF3n Bash, comprobar si un directorio existe es un\
-  \ mecanismo de control esencial utilizado para verificar la presencia de un directorio\u2026"
+description: "C\xF3mo hacerlo: En su n\xFAcleo, Bash te permite comprobar la existencia\
+  \ de un directorio usando declaraciones condicionales y el operador `-d`. A\u2026"
 lastmod: '2024-03-13T22:44:59.261452-06:00'
 model: gpt-4-0125-preview
-summary: "En la programaci\xF3n Bash, comprobar si un directorio existe es un mecanismo\
-  \ de control esencial utilizado para verificar la presencia de un directorio antes\
-  \ de realizar operaciones con archivos."
+summary: "En su n\xFAcleo, Bash te permite comprobar la existencia de un directorio\
+  \ usando declaraciones condicionales y el operador `-d`."
 title: Comprobando si un directorio existe
 weight: 20
 ---

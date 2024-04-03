@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 18:02:51.315083-07:00
-description: "Starting a new project means setting up the foundation for your codebase.\
-  \ Programmers do this to kickstart the development process, guide the project's\u2026"
+description: "How to: When starting, choose your build system or IDE. For simplicity,\
+  \ we\u2019ll use a basic text editor and g++. Create two files: `main.cpp` and a\u2026"
 lastmod: '2024-03-13T22:45:00.358161-06:00'
 model: gpt-4-1106-preview
-summary: Starting a new project means setting up the foundation for your codebase.
+summary: When starting, choose your build system or IDE.
 title: Starting a new project
 weight: 1
 ---

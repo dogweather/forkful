@@ -1,12 +1,13 @@
 ---
 date: 2024-01-20 17:39:47.594551-07:00
-description: "V\xE4liaikaistiedoston luominen on prosessi, jossa tiedosto luodaan\
-  \ tilap\xE4ist\xE4 k\xE4ytt\xF6\xE4 varten. Koodarit k\xE4ytt\xE4v\xE4t v\xE4liaikaistiedostoja\
-  \ datan tilap\xE4iseen\u2026"
+description: "How to: - N\xE4in teet sen: Arduino-ymp\xE4rist\xF6ss\xE4 v\xE4liaikaistiedostoja\
+  \ ei tyypillisesti k\xE4ytet\xE4 samoin kuin ty\xF6p\xF6yt\xE4j\xE4rjestelmiss\xE4\
+  , koska mikrokontrollereilla\u2026"
 lastmod: '2024-03-13T22:44:56.842611-06:00'
 model: gpt-4-1106-preview
-summary: "V\xE4liaikaistiedoston luominen on prosessi, jossa tiedosto luodaan tilap\xE4\
-  ist\xE4 k\xE4ytt\xF6\xE4 varten."
+summary: "Arduino-ymp\xE4rist\xF6ss\xE4 v\xE4liaikaistiedostoja ei tyypillisesti k\xE4\
+  ytet\xE4 samoin kuin ty\xF6p\xF6yt\xE4j\xE4rjestelmiss\xE4, koska mikrokontrollereilla\
+  \ on rajoitettu muisti ja ne k\xE4sittelev\xE4t tiedostoja eri tavalla."
 title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---

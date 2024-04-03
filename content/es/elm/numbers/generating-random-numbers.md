@@ -3,15 +3,13 @@ changelog:
 - 2024-02-27, dogweather, edited and tested
 - 2024-02-27, gpt-4-0125-preview, translated from English
 date: 2024-02-27 22:50:20.728417-07:00
-description: "Generar n\xFAmeros aleatorios en Elm implica usar el m\xF3dulo `Random`\
-  \ para producir n\xFAmeros pseudo-aleatorios, los cuales son \xFAtiles para una\
-  \ variedad de\u2026"
+description: "C\xF3mo hacerlo: La naturaleza puramente funcional de Elm significa\
+  \ que no puedes generar n\xFAmeros aleatorios directamente como podr\xEDas hacerlo\
+  \ en lenguajes\u2026"
 lastmod: '2024-03-13T22:44:58.975260-06:00'
 model: gpt-4-0125-preview
-summary: "Generar n\xFAmeros aleatorios en Elm implica usar el m\xF3dulo `Random`\
-  \ para producir n\xFAmeros pseudo-aleatorios, los cuales son \xFAtiles para una\
-  \ variedad de tareas como juegos, simulaciones, e incluso como parte de algoritmos\
-  \ que requieren procesos estoc\xE1sticos."
+summary: "La naturaleza puramente funcional de Elm significa que no puedes generar\
+  \ n\xFAmeros aleatorios directamente como podr\xEDas hacerlo en lenguajes imperativos."
 title: "Generando n\xFAmeros aleatorios"
 weight: 12
 ---

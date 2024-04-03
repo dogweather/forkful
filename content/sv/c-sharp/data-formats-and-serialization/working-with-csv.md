@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:19.790459-07:00
-description: "CSV-filer (Comma-Separated Values) \xE4r ett vanligt datautbytesformat\
-  \ som representerar tabul\xE4r data i ren text, genom att anv\xE4nda kommatecken\
-  \ f\xF6r att\u2026"
+description: "Hur man g\xF6r: Att arbeta med CSV-filer i C# kan \xE5stadkommas genom\
+  \ namnrymden `System.IO` f\xF6r grundl\xE4ggande operationer, och f\xF6r mer komplexa\
+  \ manipulationer\u2026"
 lastmod: '2024-03-13T22:44:37.935853-06:00'
 model: gpt-4-0125-preview
-summary: "CSV-filer (Comma-Separated Values) \xE4r ett vanligt datautbytesformat som\
-  \ representerar tabul\xE4r data i ren text, genom att anv\xE4nda kommatecken f\xF6\
-  r att separera enskilda v\xE4rden."
+summary: "Att arbeta med CSV-filer i C# kan \xE5stadkommas genom namnrymden `System.IO`\
+  \ f\xF6r grundl\xE4ggande operationer, och f\xF6r mer komplexa manipulationer eller\
+  \ f\xF6r att hantera st\xF6rre filer s\xF6ml\xF6st, kan man \xF6verv\xE4ga tredjepartsbibliotek\
+  \ som `CsvHelper`."
 title: Arbeta med CSV
 weight: 37
 ---

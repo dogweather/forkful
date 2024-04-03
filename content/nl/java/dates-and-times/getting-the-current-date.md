@@ -2,14 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:14.737043-07:00
-description: "De huidige datum in Java verkrijgen is een fluitje van een cent \u2013\
-  \ het draait allemaal om het gebruiken van de juiste klasse om de huidige dag uit\
-  \ de\u2026"
+description: 'Hoe: #.'
 lastmod: '2024-03-13T22:44:50.693051-06:00'
 model: gpt-4-0125-preview
-summary: "De huidige datum in Java verkrijgen is een fluitje van een cent \u2013 het\
-  \ draait allemaal om het gebruiken van de juiste klasse om de huidige dag uit de\
-  \ systeemklok te halen."
+summary: '#.'
 title: Het huidige datum ophalen
 weight: 29
 ---

@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:34:39.631595-07:00
-description: "Vergleichen von zwei Daten bedeutet, ihre zeitliche Reihenfolge zu bestimmen\
-  \ und zu erkennen, ob sie gleich oder verschieden sind. Programmierer nutzen\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:54.237497-06:00'
 model: gpt-4-1106-preview
-summary: Vergleichen von zwei Daten bedeutet, ihre zeitliche Reihenfolge zu bestimmen
-  und zu erkennen, ob sie gleich oder verschieden sind.
+summary: .
 title: Vergleich von zwei Daten
 weight: 27
 ---

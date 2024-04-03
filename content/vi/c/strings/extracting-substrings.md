@@ -2,16 +2,17 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:26.327898-07:00
-description: "Trong C, vi\u1EC7c tr\xEDch xu\u1EA5t c\xE1c chu\u1ED7i con bao g\u1ED3\
-  m vi\u1EC7c t\u1EA1o m\u1ED9t chu\u1ED7i nh\u1ECF h\u01A1n (chu\u1ED7i con) t\u1EEB\
-  \ m\u1ED9t chu\u1ED7i l\u1EDBn h\u01A1n d\u1EF1a tr\xEAn c\xE1c ti\xEAu ch\xED c\u1EE5\
-  \ th\u1EC3, nh\u01B0 v\u1ECB tr\xED v\xE0 \u0111\u1ED9\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Kh\xE1c v\u1EDBi m\u1ED9t s\u1ED1 ng\xF4n ng\u1EEF\
+  \ c\u1EA5p cao cung c\u1EA5p c\xE1c ph\u01B0\u01A1ng th\u1EE9c c\xF3 s\u1EB5n \u0111\
+  \u1EC3 tr\xEDch xu\u1EA5t chu\u1ED7i con, C \u0111\xF2i h\u1ECFi m\u1ED9t c\xE1\
+  ch ti\u1EBFp c\u1EADn th\u1EE7 c\xF4ng h\u01A1n b\u1EB1ng c\xE1ch\u2026"
 lastmod: '2024-03-13T22:44:37.252681-06:00'
 model: gpt-4-0125-preview
-summary: "Trong C, vi\u1EC7c tr\xEDch xu\u1EA5t c\xE1c chu\u1ED7i con bao g\u1ED3\
-  m vi\u1EC7c t\u1EA1o m\u1ED9t chu\u1ED7i nh\u1ECF h\u01A1n (chu\u1ED7i con) t\u1EEB\
-  \ m\u1ED9t chu\u1ED7i l\u1EDBn h\u01A1n d\u1EF1a tr\xEAn c\xE1c ti\xEAu ch\xED c\u1EE5\
-  \ th\u1EC3, nh\u01B0 v\u1ECB tr\xED v\xE0 \u0111\u1ED9 d\xE0i."
+summary: "Kh\xE1c v\u1EDBi m\u1ED9t s\u1ED1 ng\xF4n ng\u1EEF c\u1EA5p cao cung c\u1EA5\
+  p c\xE1c ph\u01B0\u01A1ng th\u1EE9c c\xF3 s\u1EB5n \u0111\u1EC3 tr\xEDch xu\u1EA5\
+  t chu\u1ED7i con, C \u0111\xF2i h\u1ECFi m\u1ED9t c\xE1ch ti\u1EBFp c\u1EADn th\u1EE7\
+  \ c\xF4ng h\u01A1n b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng c\xE1c h\xE0m thao t\xE1\
+  c chu\u1ED7i c\u1EE7a n\xF3."
 title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 weight: 6
 ---

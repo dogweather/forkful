@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 17:45:26.226975-07:00
-description: "Substrenger lar oss hente spesifiserte deler av en streng. Nyttig for\
-  \ \xE5 analysere tekst, hente ut data, eller formatere utdata."
+description: 'How to: Ekstrahering av substringer i Clojure er rett fram. Bruk `subs`
+  funksjonen. Her er et eksempel.'
 lastmod: '2024-03-13T22:44:40.391847-06:00'
 model: gpt-4-1106-preview
-summary: Substrenger lar oss hente spesifiserte deler av en streng.
+summary: Ekstrahering av substringer i Clojure er rett fram.
 title: Uthenting av delstrenger
 weight: 6
 ---

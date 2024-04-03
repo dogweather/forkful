@@ -3,14 +3,15 @@ changelog:
 - 2024-01-30, dogweather, reviewed
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:33.533292-07:00
-description: "Tablice asocjacyjne, czyli s\u0142owniki, w Haskellu s\u0142u\u017C\u0105\
-  \ do mapowania kluczy na warto\u015Bci w celu szybkiego wyszukiwania i efektywnego\
-  \ zarz\u0105dzania danymi.\u2026"
+description: "Jak to zrobi\u0107: Haskell nie posiada wbudowanych tablic asocjacyjnych\
+  \ w taki sam spos\xF3b jak niekt\xF3re inne j\u0119zyki, ale oferuje pot\u0119\u017C\
+  n\u0105 bibliotek\u0119 standardow\u0105\u2026"
 lastmod: '2024-03-13T22:44:35.444308-06:00'
 model: gpt-4-0125-preview
-summary: "Tablice asocjacyjne, czyli s\u0142owniki, w Haskellu s\u0142u\u017C\u0105\
-  \ do mapowania kluczy na warto\u015Bci w celu szybkiego wyszukiwania i efektywnego\
-  \ zarz\u0105dzania danymi."
+summary: "Haskell nie posiada wbudowanych tablic asocjacyjnych w taki sam spos\xF3\
+  b jak niekt\xF3re inne j\u0119zyki, ale oferuje pot\u0119\u017Cn\u0105 bibliotek\u0119\
+  \ standardow\u0105 o nazwie `Data.Map` do pracy z parami klucz-warto\u015B\u0107\
+  ."
 title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---

@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:22.165548-07:00
-description: "Elm n'int\xE8gre pas de support natif pour YAML, un format de s\xE9\
-  rialisation de donn\xE9es souvent utilis\xE9 pour les fichiers de configuration\
-  \ ou le partage de\u2026"
+description: "Comment faire : Pour g\xE9rer YAML dans Elm, vous devez g\xE9n\xE9ralement\
+  \ convertir YAML en JSON en dehors d'Elm, puis utiliser la fonctionnalit\xE9 de\
+  \ d\xE9codeur JSON\u2026"
 lastmod: '2024-03-13T22:44:57.711972-06:00'
 model: gpt-4-0125-preview
-summary: "Elm n'int\xE8gre pas de support natif pour YAML, un format de s\xE9rialisation\
-  \ de donn\xE9es souvent utilis\xE9 pour les fichiers de configuration ou le partage\
-  \ de donn\xE9es, en raison de son fort accent sur la s\xE9curit\xE9 de type et les\
-  \ r\xE9sultats pr\xE9visibles."
+summary: "Pour g\xE9rer YAML dans Elm, vous devez g\xE9n\xE9ralement convertir YAML\
+  \ en JSON en dehors d'Elm, puis utiliser la fonctionnalit\xE9 de d\xE9codeur JSON\
+  \ int\xE9gr\xE9e \xE0 Elm pour travailler avec les donn\xE9es."
 title: Travailler avec YAML
 weight: 41
 ---

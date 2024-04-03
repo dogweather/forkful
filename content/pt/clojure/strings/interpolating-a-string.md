@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:50:29.443077-07:00
-description: "Interpola\xE7\xE3o de strings permite injetar vari\xE1veis diretamente\
-  \ em um peda\xE7o de texto. Programadores fazem isso para construir strings de forma\
-  \ din\xE2mica e\u2026"
+description: 'Como fazer: .'
 lastmod: '2024-03-13T22:44:46.183483-06:00'
 model: gpt-4-1106-preview
-summary: "Interpola\xE7\xE3o de strings permite injetar vari\xE1veis diretamente em\
-  \ um peda\xE7o de texto."
+summary: .
 title: Interpolando uma string
 weight: 8
 ---

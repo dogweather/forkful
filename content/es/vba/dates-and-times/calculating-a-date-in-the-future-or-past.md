@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:48:55.724086-07:00
-description: "Calcular una fecha en el futuro o en el pasado implica determinar una\
-  \ fecha que est\xE9 a un n\xFAmero especificado de d\xEDas, meses o a\xF1os de distancia\
-  \ desde una\u2026"
+description: "C\xF3mo hacerlo: En Visual Basic para Aplicaciones (VBA), la funci\xF3\
+  n principal utilizada para calcular fechas futuras o pasadas es `DateAdd()`. Esta\
+  \ funci\xF3n\u2026"
 lastmod: '2024-03-13T22:44:58.908153-06:00'
 model: gpt-4-0125-preview
-summary: "Calcular una fecha en el futuro o en el pasado implica determinar una fecha\
-  \ que est\xE9 a un n\xFAmero especificado de d\xEDas, meses o a\xF1os de distancia\
-  \ desde una fecha dada."
+summary: "En Visual Basic para Aplicaciones (VBA), la funci\xF3n principal utilizada\
+  \ para calcular fechas futuras o pasadas es `DateAdd()`."
 title: "C\xE1lculo de una fecha futura o pasada"
 weight: 26
 ---

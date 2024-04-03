@@ -1,11 +1,9 @@
 ---
 date: 2024-01-26 00:54:40.212050-07:00
-description: "Felhantering \xE4r hur du hanterar n\xE4r saker g\xE5r snett i din kod.\
-  \ Det \xE4r viktigt eftersom det hj\xE4lper dina program att misslyckas anst\xE4\
-  ndigt och instruerar\u2026"
+description: "Hur man g\xF6r: H\xE4r \xE4r den klassiska `try-catch`-blocket."
 lastmod: '2024-03-13T22:44:38.300745-06:00'
 model: gpt-4-1106-preview
-summary: "Felhantering \xE4r hur du hanterar n\xE4r saker g\xE5r snett i din kod."
+summary: "H\xE4r \xE4r den klassiska `try-catch`-blocket."
 title: Hantering av fel
 weight: 16
 ---

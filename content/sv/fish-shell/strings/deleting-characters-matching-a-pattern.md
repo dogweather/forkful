@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:42:11.740036-07:00
-description: "Att ta bort tecken som matchar ett m\xF6nster inneb\xE4r att man systematiskt\
-  \ hittar specifika sekvenser av tecken i en textstr\xE4ng och tar bort dem.\u2026"
+description: "S\xE5 h\xE4r g\xF6r du: Med Fish Shell kan du anv\xE4nda `string` kommandot\
+  \ f\xF6r att hantera textstr\xE4ngar. H\xE4r \xE4r n\xE5gra exempel."
 lastmod: '2024-03-13T22:44:38.319812-06:00'
 model: gpt-4-1106-preview
-summary: "Att ta bort tecken som matchar ett m\xF6nster inneb\xE4r att man systematiskt\
-  \ hittar specifika sekvenser av tecken i en textstr\xE4ng och tar bort dem."
+summary: "Med Fish Shell kan du anv\xE4nda `string` kommandot f\xF6r att hantera textstr\xE4\
+  ngar."
 title: "Ta bort tecken som matchar ett m\xF6nster"
 weight: 5
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:38:38.271900-07:00
-description: "Convertir une cha\xEEne de caract\xE8res en minuscules, c'est transformer\
-  \ tous les caract\xE8res alphab\xE9tiques en leurs \xE9quivalents en minuscule.\
-  \ Les programmeurs\u2026"
+description: "How to: Haskell rend ce processus assez simple avec la fonction `toLower`\
+  \ du module `Data.Char`. Voici comment \xE7a marche ."
 lastmod: '2024-03-13T22:44:57.820086-06:00'
 model: gpt-4-1106-preview
-summary: "Convertir une cha\xEEne de caract\xE8res en minuscules, c'est transformer\
-  \ tous les caract\xE8res alphab\xE9tiques en leurs \xE9quivalents en minuscule."
+summary: Haskell rend ce processus assez simple avec la fonction `toLower` du module
+  `Data.Char`.
 title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
 weight: 4
 ---

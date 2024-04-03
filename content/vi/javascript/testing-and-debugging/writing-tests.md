@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:10.524242-07:00
-description: "Vi\u1EC7c vi\u1EBFt tests trong l\u1EADp tr\xECnh ki\u1EC3m tra xem\
-  \ m\xE3 c\xF3 ho\u1EA1t \u0111\u1ED9ng nh\u01B0 mong \u0111\u1EE3i hay kh\xF4ng\
-  \ - gi\u1ED1ng nh\u01B0 m\u1ED9t b\xE0i ki\u1EC3m tra cho c\xE1c h\xE0m c\u1EE7\
-  a b\u1EA1n. L\u1EADp tr\xECnh vi\xEAn vi\u1EBFt\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: H\xE3y t\u01B0\u1EDFng t\u01B0\u1EE3ng\
+  \ m\u1ED9t h\xE0m \u0111\u01A1n gi\u1EA3n \u0111\u1EC3 c\u1ED9ng hai s\u1ED1 trong\
+  \ JavaScript."
 lastmod: '2024-03-13T22:44:37.157983-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c vi\u1EBFt tests trong l\u1EADp tr\xECnh ki\u1EC3m tra xem m\xE3\
-  \ c\xF3 ho\u1EA1t \u0111\u1ED9ng nh\u01B0 mong \u0111\u1EE3i hay kh\xF4ng - gi\u1ED1\
-  ng nh\u01B0 m\u1ED9t b\xE0i ki\u1EC3m tra cho c\xE1c h\xE0m c\u1EE7a b\u1EA1n."
+summary: "H\xE3y t\u01B0\u1EDFng t\u01B0\u1EE3ng m\u1ED9t h\xE0m \u0111\u01A1n gi\u1EA3\
+  n \u0111\u1EC3 c\u1ED9ng hai s\u1ED1 trong JavaScript."
 title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
 weight: 36
 ---

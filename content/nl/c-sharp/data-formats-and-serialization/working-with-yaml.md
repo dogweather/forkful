@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:42.066600-07:00
-description: "YAML is een door mensen goed leesbare gegevensserialisatiestandaard\
-  \ die wordt gebruikt in programmering voor configuratiebestanden, gegevensopslag\
-  \ en\u2026"
+description: "Hoe te: Om met YAML in C# te werken, heb je de YamlDotNet-bibliotheek\
+  \ nodig. Je kunt deze installeren via NuGet: `Install-Package YamlDotNet`. Eerst,\u2026"
 lastmod: '2024-03-13T22:44:50.830550-06:00'
 model: gpt-4-0125-preview
-summary: YAML is een door mensen goed leesbare gegevensserialisatiestandaard die wordt
-  gebruikt in programmering voor configuratiebestanden, gegevensopslag en meer.
+summary: Om met YAML in C# te werken, heb je de YamlDotNet-bibliotheek nodig.
 title: Werken met YAML
 weight: 41
 ---

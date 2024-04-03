@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:26.330432-07:00
-description: "Chia code th\xE0nh c\xE1c h\xE0m ngh\u0129a l\xE0 t\xE1ch code c\u1EE7\
-  a b\u1EA1n th\xE0nh c\xE1c ph\u1EA7n nh\u1ECF h\u01A1n, c\xF3 th\u1EC3 t\xE1i s\u1EED\
-  \ d\u1EE5ng. Ch\xFAng ta l\xE0m nh\u01B0 v\u1EADy \u0111\u1EC3 tr\xE1nh l\u1EB7\
-  p l\u1EA1i, l\xE0m cho code c\u1EE7a\u2026"
+description: "L\xE0m Th\u1EBF N\xE0o: H\xE3y l\u1EA5y m\u1ED9t nhi\u1EC7m v\u1EE5\
+  \ ph\u1ED5 bi\u1EBFn: t\xEDnh di\u1EC7n t\xEDch c\u1EE7a m\u1ED9t h\xECnh tr\xF2\
+  n. Thay v\xEC vi\u1EBFt c\xF9ng m\u1ED9t c\xF4ng th\u1EE9c m\u1ED7i l\u1EA7n, ch\xFA\
+  ng ta g\xF3i g\u1ECDn n\xF3 v\xE0o m\u1ED9t h\xE0m."
 lastmod: '2024-03-13T22:44:37.049810-06:00'
 model: gpt-4-0125-preview
-summary: "Chia code th\xE0nh c\xE1c h\xE0m ngh\u0129a l\xE0 t\xE1ch code c\u1EE7a\
-  \ b\u1EA1n th\xE0nh c\xE1c ph\u1EA7n nh\u1ECF h\u01A1n, c\xF3 th\u1EC3 t\xE1i s\u1EED\
-  \ d\u1EE5ng."
+summary: "H\xE3y l\u1EA5y m\u1ED9t nhi\u1EC7m v\u1EE5 ph\u1ED5 bi\u1EBFn."
 title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
 weight: 18
 ---

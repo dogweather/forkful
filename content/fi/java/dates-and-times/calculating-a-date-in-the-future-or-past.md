@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:31:17.132933-07:00
-description: "Laskemme tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4ri\xE4 ymm\xE4\
-  rt\xE4\xE4ksemme aikav\xE4lej\xE4 ja ajastaa tapahtumia. Ohjelmoijat tekev\xE4t\
-  \ t\xE4t\xE4 aikatauluttamisen,\u2026"
+description: "N\xE4in se tehd\xE4\xE4n: Java tarjoaa `LocalDate`-luokan p\xE4iv\xE4\
+  m\xE4\xE4rien k\xE4sittelyyn. T\xE4ss\xE4 on esimerkki, jossa lasketaan tulevaisuuden\
+  \ p\xE4iv\xE4m\xE4\xE4r\xE4."
 lastmod: '2024-03-13T22:44:56.458593-06:00'
 model: gpt-4-1106-preview
-summary: "Laskemme tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4ri\xE4 ymm\xE4\
-  rt\xE4\xE4ksemme aikav\xE4lej\xE4 ja ajastaa tapahtumia."
+summary: "Java tarjoaa `LocalDate`-luokan p\xE4iv\xE4m\xE4\xE4rien k\xE4sittelyyn."
 title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---

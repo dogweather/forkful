@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 00:52:39.955148-07:00
-description: "Virheenk\xE4sittely antaa skriptillesi mahdollisuuden k\xE4sitell\xE4\
-  \ odottamattomia tilanteita sulavasti. Teemme sen hallitaksemme ep\xE4onnistumisia\
-  \ aiheuttamatta\u2026"
+description: "Miten: Virheiden kiinniottamiseksi Fishiss\xE4, nojaa `status`-komentoon\
+  \ ja ehtolauseisiin. Sanokaamme, ett\xE4 `ping` ep\xE4onnistuu; t\xE4ss\xE4 on miten\
+  \ voit havaita\u2026"
 lastmod: '2024-03-13T22:44:57.002247-06:00'
 model: gpt-4-1106-preview
-summary: "Virheenk\xE4sittely antaa skriptillesi mahdollisuuden k\xE4sitell\xE4 odottamattomia\
-  \ tilanteita sulavasti."
+summary: "Virheiden kiinniottamiseksi Fishiss\xE4, nojaa `status`-komentoon ja ehtolauseisiin."
 title: "Virheiden k\xE4sittely"
 weight: 16
 ---

@@ -2,14 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:57.582174-07:00
-description: "Refactoring is het proces van het herwerken van je code om zijn structuur\
-  \ en leesbaarheid te verbeteren zonder het externe gedrag of de functionaliteit\
-  \ te\u2026"
+description: 'Hoe: Stel je voor dat je een functie op je Arduino hebt die veel te
+  veel doet, zoals dit.'
 lastmod: '2024-03-13T22:44:51.080322-06:00'
 model: gpt-4-0125-preview
-summary: Refactoring is het proces van het herwerken van je code om zijn structuur
-  en leesbaarheid te verbeteren zonder het externe gedrag of de functionaliteit te
-  wijzigen.
+summary: Stel je voor dat je een functie op je Arduino hebt die veel te veel doet,
+  zoals dit.
 title: Refactoring
 weight: 19
 ---

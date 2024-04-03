@@ -2,12 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:22.157866-07:00
-description: "Testien kirjoittaminen ohjelmoinnissa tarkoittaa skriptien luomista\
-  \ ja suorittamista, jotka varmistavat koodin toimivan odotetusti eri olosuhteissa.\u2026"
+description: 'Kuinka: #.'
 lastmod: '2024-03-13T22:44:56.659384-06:00'
 model: gpt-4-0125-preview
-summary: Testien kirjoittaminen ohjelmoinnissa tarkoittaa skriptien luomista ja suorittamista,
-  jotka varmistavat koodin toimivan odotetusti eri olosuhteissa.
+summary: '#.'
 title: Testien kirjoittaminen
 weight: 36
 ---

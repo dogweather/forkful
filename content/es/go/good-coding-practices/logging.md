@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:55.244930-07:00
-description: "El registro (logging) en el desarrollo de software es el proceso de\
-  \ grabar informaci\xF3n sobre la ejecuci\xF3n de un programa, dise\xF1ado para rastrear\
-  \ su\u2026"
+description: "C\xF3mo hacerlo: En Go, el registro puede ser implementado usando el\
+  \ paquete de la biblioteca est\xE1ndar `log`. Este paquete proporciona capacidades\
+  \ de\u2026"
 lastmod: '2024-03-13T22:44:58.474867-06:00'
 model: gpt-4-0125-preview
-summary: "El registro (logging) en el desarrollo de software es el proceso de grabar\
-  \ informaci\xF3n sobre la ejecuci\xF3n de un programa, dise\xF1ado para rastrear\
-  \ su comportamiento y diagnosticar problemas."
+summary: "En Go, el registro puede ser implementado usando el paquete de la biblioteca\
+  \ est\xE1ndar `log`."
 title: Registro
 weight: 17
 ---

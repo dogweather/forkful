@@ -1,13 +1,13 @@
 ---
 date: 2024-01-27 20:33:24.920992-07:00
-description: "Att generera slumpm\xE4ssiga nummer i Elixir \xE4r en grundl\xE4ggande\
-  \ programmeringsuppgift, avg\xF6rande f\xF6r applikationer som beh\xF6ver of\xF6\
-  ruts\xE4gbara resultat s\xE5som\u2026"
+description: "Hur man g\xF6r: F\xF6r att generera slumpm\xE4ssiga nummer i Elixir\
+  \ anv\xE4nder du fr\xE4mst `:rand`-modulen som tillhandah\xE5ller flera funktioner\
+  \ f\xF6r detta \xE4ndam\xE5l. H\xE4r\u2026"
 lastmod: '2024-03-13T22:44:37.562805-06:00'
 model: gpt-4-0125-preview
-summary: "Att generera slumpm\xE4ssiga nummer i Elixir \xE4r en grundl\xE4ggande programmeringsuppgift,\
-  \ avg\xF6rande f\xF6r applikationer som beh\xF6ver of\xF6ruts\xE4gbara resultat\
-  \ s\xE5som vid generering av s\xE4kra tokens, dataurval eller i spela algoritmer."
+summary: "F\xF6r att generera slumpm\xE4ssiga nummer i Elixir anv\xE4nder du fr\xE4\
+  mst `:rand`-modulen som tillhandah\xE5ller flera funktioner f\xF6r detta \xE4ndam\xE5\
+  l."
 title: Generera slumptal
 weight: 12
 ---

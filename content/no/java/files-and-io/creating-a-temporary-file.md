@@ -1,13 +1,9 @@
 ---
 date: 2024-01-20 17:41:02.550722-07:00
-description: "\xC5 lage en midlertidig fil i Java betyr \xE5 skape en fille som er\
-  \ tenkt \xE5 v\xE6re kortvarig, ofte for \xE5 h\xE5ndtere data midlertidig under\
-  \ applikasjonens kj\xF8retid.\u2026"
+description: 'Hvordan: .'
 lastmod: '2024-03-13T22:44:40.685719-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 lage en midlertidig fil i Java betyr \xE5 skape en fille som er tenkt\
-  \ \xE5 v\xE6re kortvarig, ofte for \xE5 h\xE5ndtere data midlertidig under applikasjonens\
-  \ kj\xF8retid."
+summary: .
 title: Opprette en midlertidig fil
 weight: 21
 ---

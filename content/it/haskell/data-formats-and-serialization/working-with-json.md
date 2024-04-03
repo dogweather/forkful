@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:53.911483-07:00
-description: "Lavorare con JSON (JavaScript Object Notation) in Haskell comporta l'analisi\
-  \ dei dati JSON in tipi Haskell e la conversione dei tipi Haskell di nuovo in\u2026"
+description: "Come fare: Haskell non ha un supporto integrato per JSON come JavaScript,\
+  \ ma con l'aiuto di librerie di terze parti come **Aeson**, la gestione del JSON\u2026"
 lastmod: '2024-03-13T22:44:43.496724-06:00'
 model: gpt-4-0125-preview
-summary: Lavorare con JSON (JavaScript Object Notation) in Haskell comporta l'analisi
-  dei dati JSON in tipi Haskell e la conversione dei tipi Haskell di nuovo in JSON.
+summary: Haskell non ha un supporto integrato per JSON come JavaScript, ma con l'aiuto
+  di librerie di terze parti come **Aeson**, la gestione del JSON diventa semplice.
 title: Lavorare con JSON
 weight: 38
 ---

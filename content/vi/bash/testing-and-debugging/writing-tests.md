@@ -2,14 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:10.435598-07:00
-description: "Vi\u1EBFt ki\u1EC3m th\u1EED x\xE1c minh r\u1EB1ng m\xE3 l\u1EC7nh ho\u1EA1\
-  t \u0111\u1ED9ng nh\u01B0 mong \u0111\u1EE3i. L\u1EADp tr\xECnh vi\xEAn ki\u1EC3\
-  m th\u1EED \u0111\u1EC3 b\u1EAFt l\u1ED7i s\u1EDBm, \u0111\u1EA3m b\u1EA3o \u0111\
-  \u1ED9 tin c\u1EADy v\xE0 c\u1EADp nh\u1EADt an to\xE0n."
+description: "L\xE0m th\u1EBF n\xE0o: Bash kh\xF4ng c\xF3 khung ki\u1EC3m th\u1EED\
+  \ c\xF3 s\u1EB5n, nh\u01B0ng b\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng c\xE1c l\u1EC7\
+  nh ki\u1EC3m tra \u0111\u01A1n gi\u1EA3n v\xE0 ph\xE9p kh\u1EB3ng \u0111\u1ECBnh.\
+  \ H\xE3y vi\u1EBFt m\u1ED9t h\xE0m v\xE0 ki\u1EC3m th\u1EED n\xF3\u2026"
 lastmod: '2024-03-13T22:44:36.883868-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EBFt ki\u1EC3m th\u1EED x\xE1c minh r\u1EB1ng m\xE3 l\u1EC7nh ho\u1EA1\
-  t \u0111\u1ED9ng nh\u01B0 mong \u0111\u1EE3i."
+summary: "Bash kh\xF4ng c\xF3 khung ki\u1EC3m th\u1EED c\xF3 s\u1EB5n, nh\u01B0ng\
+  \ b\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng c\xE1c l\u1EC7nh ki\u1EC3m tra \u0111\
+  \u01A1n gi\u1EA3n v\xE0 ph\xE9p kh\u1EB3ng \u0111\u1ECBnh."
 title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
 weight: 36
 ---

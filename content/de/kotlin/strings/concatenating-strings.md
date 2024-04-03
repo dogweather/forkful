@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:34:58.019054-07:00
-description: "String-Konkatenation bedeutet, zwei oder mehr Strings zu einem zusammenzuf\xFC\
-  gen. Programmierer machen das, um dynamische Textausgaben zu erzeugen oder\u2026"
+description: 'How to: (Wie macht man das:) .'
 lastmod: '2024-03-13T22:44:53.839116-06:00'
 model: gpt-4-1106-preview
-summary: "String-Konkatenation bedeutet, zwei oder mehr Strings zu einem zusammenzuf\xFC\
-  gen."
+summary: .
 title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---

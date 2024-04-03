@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:57:50.562265-07:00
-description: "La ricerca e la sostituzione di testo \xE8 una manipolazione di stringhe\
-  \ in cui troviamo certo contenuto e lo rimpiazziamo con altro. I programmatori lo\u2026"
+description: 'How to: Ecco un esempio in Haskell utilizzando le funzioni `subRegex`
+  dalla libreria `regex-compat`.'
 lastmod: '2024-03-13T22:44:43.460844-06:00'
 model: gpt-4-1106-preview
-summary: "La ricerca e la sostituzione di testo \xE8 una manipolazione di stringhe\
-  \ in cui troviamo certo contenuto e lo rimpiazziamo con altro."
+summary: Ecco un esempio in Haskell utilizzando le funzioni `subRegex` dalla libreria
+  `regex-compat`.
 title: Ricerca e sostituzione del testo
 weight: 10
 ---

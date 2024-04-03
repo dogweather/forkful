@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:54:36.376075-07:00
-description: "Leggere un file di testo in Lua significa estrarre dati da un documento\
-  \ salvato sul disco. I programmatori lo fanno per manipolare, analizzare o\u2026"
+description: 'How to: (Come Fare) .'
 lastmod: '2024-03-13T22:44:43.574410-06:00'
 model: gpt-4-1106-preview
-summary: Leggere un file di testo in Lua significa estrarre dati da un documento salvato
-  sul disco.
+summary: .
 title: Lettura di un file di testo
 weight: 22
 ---

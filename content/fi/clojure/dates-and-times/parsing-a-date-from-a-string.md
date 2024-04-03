@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:59.337998-07:00
-description: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta Clojuressa\
-  \ on tekstuaalisten p\xE4iv\xE4m\xE4\xE4r\xE4- ja aikailmaisujen muuntamista k\xE4\
-  ytt\xF6kelpoisempaan muotoon (esim. Clojuren\u2026"
+description: "Kuinka: Clojure, ollessaan JVM-kieli, mahdollistaa Javan p\xE4iv\xE4\
+  m\xE4\xE4r\xE4- ja aikalukkastojen suoran k\xE4yt\xF6n. Aloittakaamme sis\xE4\xE4\
+  nrakennetulla Java-yhteisty\xF6ll\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.193495-06:00'
 model: gpt-4-0125-preview
-summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta Clojuressa on\
-  \ tekstuaalisten p\xE4iv\xE4m\xE4\xE4r\xE4- ja aikailmaisujen muuntamista k\xE4\
-  ytt\xF6kelpoisempaan muotoon (esim."
+summary: "Clojure, ollessaan JVM-kieli, mahdollistaa Javan p\xE4iv\xE4m\xE4\xE4r\xE4\
+  - ja aikalukkastojen suoran k\xE4yt\xF6n."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
 weight: 30
 ---

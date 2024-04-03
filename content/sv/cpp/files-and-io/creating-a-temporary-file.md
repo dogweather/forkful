@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:39:55.355167-07:00
-description: "Att skapa en tempor\xE4r fil inneb\xE4r att vi tillf\xE4lligt lagrar\
-  \ data p\xE5 disk. Programmerare g\xF6r detta f\xF6r att hantera stora datam\xE4\
-  ngder, h\xE5lla p\xE5 anv\xE4ndardata\u2026"
+description: "Hur g\xF6r man: I C++17 och fram\xE5t, anv\xE4nd `std::filesystem` f\xF6\
+  r att skapa och hantera tempor\xE4ra filer. H\xE4r \xE4r ett exempel p\xE5 hur man\
+  \ skapar en tempor\xE4r fil\u2026"
 lastmod: '2024-03-13T22:44:38.228755-06:00'
 model: gpt-4-1106-preview
-summary: "Att skapa en tempor\xE4r fil inneb\xE4r att vi tillf\xE4lligt lagrar data\
-  \ p\xE5 disk."
+summary: "I C++17 och fram\xE5t, anv\xE4nd `std::filesystem` f\xF6r att skapa och\
+  \ hantera tempor\xE4ra filer."
 title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---

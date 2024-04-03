@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:54.046209-07:00
-description: "O tratamento de erros em C envolve a detec\xE7\xE3o e resposta a condi\xE7\
-  \xF5es an\xF4malas que surgem durante a execu\xE7\xE3o do programa. Os programadores\
-  \ fazem isso para\u2026"
+description: "Como fazer: C n\xE3o possui suporte embutido para exce\xE7\xF5es como\
+  \ algumas outras linguagens. Em vez disso, ele depende de algumas estrat\xE9gias\
+  \ convencionais de\u2026"
 lastmod: '2024-03-13T22:44:47.058345-06:00'
 model: gpt-4-0125-preview
-summary: "O tratamento de erros em C envolve a detec\xE7\xE3o e resposta a condi\xE7\
-  \xF5es an\xF4malas que surgem durante a execu\xE7\xE3o do programa."
+summary: "C n\xE3o possui suporte embutido para exce\xE7\xF5es como algumas outras\
+  \ linguagens."
 title: Gerenciando erros
 weight: 16
 ---

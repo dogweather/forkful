@@ -2,13 +2,16 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:09:00.999102-07:00
-description: "\xC5 skrive til standardfeil i Visual Basic for Applications (VBA) inneb\xE6\
-  rer \xE5 omdirigere feilmeldinger eller diagnostikk bort fra standard utdata, vanligvis\u2026"
+description: "Hvordan: I VBA, siden det ikke finnes en direkte innebygd funksjon for\
+  \ \xE5 skrive spesifikt til standardfeil som i noen andre programmeringsspr\xE5\
+  k, inneb\xE6rer\u2026"
 lastmod: '2024-03-13T22:44:40.638919-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive til standardfeil i Visual Basic for Applications (VBA) inneb\xE6\
-  rer \xE5 omdirigere feilmeldinger eller diagnostikk bort fra standard utdata, vanligvis\
-  \ til konsollen eller en loggfil."
+summary: "I VBA, siden det ikke finnes en direkte innebygd funksjon for \xE5 skrive\
+  \ spesifikt til standardfeil som i noen andre programmeringsspr\xE5k, inneb\xE6\
+  rer en vanlig l\xF8sning \xE5 bruke `Debug.Print` for utdata av feil under utvikling,\
+  \ eller \xE5 opprette en egendefinert loggf\xF8ringsfunksjon som etterligner denne\
+  \ oppf\xF8rselen for produksjonsapplikasjoner."
 title: Skrive til standardfeil
 weight: 25
 ---

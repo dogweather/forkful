@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:40.037112-07:00
-description: "Scrivere test in Elm comporta la creazione di casi di test per verificare\
-  \ la correttezza del tuo codice Elm, assicurandosi che si comporti come previsto.\u2026"
+description: 'Come fare: Elm utilizza il pacchetto `elm-explorations/test` per scrivere
+  test unitari e fuzz. Inizia aggiungendo il pacchetto al tuo progetto.'
 lastmod: '2024-03-13T22:44:43.353291-06:00'
 model: gpt-4-0125-preview
-summary: Scrivere test in Elm comporta la creazione di casi di test per verificare
-  la correttezza del tuo codice Elm, assicurandosi che si comporti come previsto.
+summary: Elm utilizza il pacchetto `elm-explorations/test` per scrivere test unitari
+  e fuzz.
 title: Scrivere test
 weight: 36
 ---

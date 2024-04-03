@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:26:32.389417-07:00
-description: "TOML (Tom's Obvious, Minimal Language) on data-serialisointiformaatti,\
-  \ joka on helppo lukea sen selke\xE4n semantiikan ansiosta. Ohjelmoijat k\xE4ytt\xE4\
-  v\xE4t\u2026"
+description: "Kuinka: Aloittaaksesi tarvitset TOML-j\xE4sent\xE4j\xE4n. Swiftill\xE4\
+  \ ei ole sis\xE4\xE4nrakennettua, joten k\xE4ytet\xE4\xE4n `TOMLDecoder`ia. Asenna\
+  \ se Swift Package Managerin\u2026"
 lastmod: '2024-03-13T22:44:56.930954-06:00'
 model: gpt-4-0125-preview
-summary: "TOML (Tom's Obvious, Minimal Language) on data-serialisointiformaatti, joka\
-  \ on helppo lukea sen selke\xE4n semantiikan ansiosta."
+summary: "Aloittaaksesi tarvitset TOML-j\xE4sent\xE4j\xE4n."
 title: "Ty\xF6skentely TOML:n kanssa"
 weight: 39
 ---

@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:37:37.481244-07:00
-description: "Convertir une date en cha\xEEne de caract\xE8res permet de pr\xE9senter\
-  \ des informations temporelles de mani\xE8re lisible par l'humain. Les d\xE9veloppeurs\
-  \ le font pour\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:58.236232-06:00'
 model: gpt-4-1106-preview
-summary: "Convertir une date en cha\xEEne de caract\xE8res permet de pr\xE9senter\
-  \ des informations temporelles de mani\xE8re lisible par l'humain."
+summary: .
 title: "Conversion d'une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---

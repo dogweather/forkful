@@ -2,13 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:49.340125-07:00
-description: "Testen schrijven betekent het cre\xEBren van een set voorwaarden om\
-  \ te controleren of je code zich gedraagt zoals verwacht. Programmeurs doen dit\
-  \ om fouten\u2026"
+description: 'Hoe te: .'
 lastmod: '2024-03-13T22:44:51.075396-06:00'
 model: gpt-4-0125-preview
-summary: "Testen schrijven betekent het cre\xEBren van een set voorwaarden om te controleren\
-  \ of je code zich gedraagt zoals verwacht."
+summary: .
 title: Tests Schrijven
 weight: 36
 ---

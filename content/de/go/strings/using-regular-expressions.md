@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:11.270779-07:00
-description: "Regul\xE4re Ausdr\xFCcke (regex) werden in der Programmierung verwendet,\
-  \ um nach Mustern zu suchen, \xDCbereinstimmungen zu finden und Zeichenketten basierend\
-  \ auf\u2026"
+description: "Wie geht das: In Go stellt das `regexp`-Paket die Funktionalit\xE4t\
+  \ f\xFCr regul\xE4re Ausdr\xFCcke bereit. Hier ist eine Schritt-f\xFCr-Schritt-Anleitung,\
+  \ wie man es\u2026"
 lastmod: '2024-03-13T22:44:53.276409-06:00'
 model: gpt-4-0125-preview
-summary: "Regul\xE4re Ausdr\xFCcke (regex) werden in der Programmierung verwendet,\
-  \ um nach Mustern zu suchen, \xDCbereinstimmungen zu finden und Zeichenketten basierend\
-  \ auf spezifischen Mustern zu manipulieren."
+summary: "In Go stellt das `regexp`-Paket die Funktionalit\xE4t f\xFCr regul\xE4re\
+  \ Ausdr\xFCcke bereit."
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

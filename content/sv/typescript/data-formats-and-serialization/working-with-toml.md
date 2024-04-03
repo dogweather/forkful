@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:27:24.753960-07:00
-description: "TOML, en f\xF6rkortning f\xF6r Toms Obvious, Minimal Language, \xE4\
-  r ett format f\xF6r serialisering av data som liknar JSON eller YAML. Programmerare\
-  \ anv\xE4nder det p\xE5\u2026"
+description: "Hur man g\xF6r: F\xF6rst beh\xF6ver du en TOML-parser. `@iarna/toml`\
+  \ \xE4r ett popul\xE4rt val. Installera det med npm: `npm install @iarna/toml --save`.\
+  \ S\xE5 h\xE4r l\xE4ser du\u2026"
 lastmod: '2024-03-13T22:44:37.679391-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, en f\xF6rkortning f\xF6r Toms Obvious, Minimal Language, \xE4r ett\
-  \ format f\xF6r serialisering av data som liknar JSON eller YAML."
+summary: "F\xF6rst beh\xF6ver du en TOML-parser."
 title: Att arbeta med TOML
 weight: 39
 ---

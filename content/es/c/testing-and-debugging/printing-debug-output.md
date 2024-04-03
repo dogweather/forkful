@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:07.741540-07:00
-description: "Imprimir mensajes de depuraci\xF3n se trata de generar mensajes registrados\
-  \ temporales e informativos que pueden ayudar a los programadores a entender el\u2026"
+description: "C\xF3mo hacerlo: En C, la forma m\xE1s com\xFAn de imprimir mensajes\
+  \ de depuraci\xF3n es utilizando la funci\xF3n `printf` de la biblioteca de E/S\
+  \ est\xE1ndar. La funci\xF3n\u2026"
 lastmod: '2024-03-13T22:44:59.548469-06:00'
 model: gpt-4-0125-preview
-summary: "Imprimir mensajes de depuraci\xF3n se trata de generar mensajes registrados\
-  \ temporales e informativos que pueden ayudar a los programadores a entender el\
-  \ flujo y el estado de un programa durante su ejecuci\xF3n."
+summary: "En C, la forma m\xE1s com\xFAn de imprimir mensajes de depuraci\xF3n es\
+  \ utilizando la funci\xF3n `printf` de la biblioteca de E/S est\xE1ndar."
 title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---

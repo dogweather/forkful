@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:33.965900-07:00
-description: "Express\xF5es regulares (regex) em Elixir s\xE3o usadas para buscar,\
-  \ combinar e manipular strings baseadas em padr\xF5es espec\xEDficos. Programadores\
-  \ utilizam regex\u2026"
+description: "Como fazer: Elixir utiliza o m\xF3dulo `Regex`, aproveitando a biblioteca\
+  \ regex do Erlang, para opera\xE7\xF5es com regex. Aqui est\xE3o usos b\xE1sicos."
 lastmod: '2024-03-13T22:44:46.228368-06:00'
 model: gpt-4-0125-preview
-summary: "Express\xF5es regulares (regex) em Elixir s\xE3o usadas para buscar, combinar\
-  \ e manipular strings baseadas em padr\xF5es espec\xEDficos."
+summary: "Elixir utiliza o m\xF3dulo `Regex`, aproveitando a biblioteca regex do Erlang,\
+  \ para opera\xE7\xF5es com regex."
 title: "Usando express\xF5es regulares"
 weight: 11
 ---

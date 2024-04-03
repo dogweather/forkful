@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:06.440217-07:00
-description: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 l\u1ECDc qua\
-  \ m\xE3 HTML \u0111\u1EC3 t\xECm ki\u1EBFm, tr\xEDch xu\u1EA5t ho\u1EB7c thao t\xE1\
-  c th\xF4ng tin. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3\
-  \ t\u01B0\u01A1ng t\xE1c v\u1EDBi n\u1ED9i dung\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EC3 b\u1EAFt \u0111\u1EA7u, c\xE0i\
+  \ \u0111\u1EB7t m\u1ED9t th\u01B0 vi\u1EC7n nh\u01B0 `node-html-parser`. D\u01B0\
+  \u1EDBi \u0111\xE2y l\xE0 l\u1EC7nh terminal."
 lastmod: '2024-03-13T22:44:36.316042-06:00'
 model: gpt-4-0125-preview
-summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 l\u1ECDc qua m\xE3\
-  \ HTML \u0111\u1EC3 t\xECm ki\u1EBFm, tr\xEDch xu\u1EA5t ho\u1EB7c thao t\xE1c th\xF4\
-  ng tin."
+summary: "\u0110\u1EC3 b\u1EAFt \u0111\u1EA7u, c\xE0i \u0111\u1EB7t m\u1ED9t th\u01B0\
+  \ vi\u1EC7n nh\u01B0 `node-html-parser`."
 title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---

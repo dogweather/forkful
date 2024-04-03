@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:45:10.825948-07:00
-description: "Komplekse tall, som best\xE5r av en reell og en imagin\xE6r del (som\
-  \ 3+4i), er en grunnpilar i ingeni\xF8rfag og fysikk. Programmerere jobber med dem\
-  \ i\u2026"
+description: "Hvordan: Ruby gj\xF8r det enkelt \xE5 h\xE5ndtere komplekse tall. Du\
+  \ kan opprette og manipulere dem ved \xE5 bruke Complex-klassen."
 lastmod: '2024-03-13T22:44:41.309740-06:00'
 model: gpt-4-0125-preview
-summary: "Komplekse tall, som best\xE5r av en reell og en imagin\xE6r del (som 3+4i),\
-  \ er en grunnpilar i ingeni\xF8rfag og fysikk."
+summary: "Ruby gj\xF8r det enkelt \xE5 h\xE5ndtere komplekse tall."
 title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---

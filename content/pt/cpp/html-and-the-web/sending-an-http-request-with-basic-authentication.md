@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 18:01:31.866743-07:00
-description: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica \xE9\
-  \ enviar um pedido a um servidor web que exige usu\xE1rio e senha no cabe\xE7alho.\
-  \ Programadores fazem isso\u2026"
+description: "How to: (Como Fazer:) Vamos ver como fazer isso em C++. Primeiro, voc\xEA\
+  \ precisa de uma biblioteca de rede, como a cURL. Instale-a se necess\xE1rio e aqui\
+  \ est\xE1\u2026"
 lastmod: '2024-03-13T22:44:46.879341-06:00'
 model: gpt-4-1106-preview
-summary: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica \xE9 enviar\
-  \ um pedido a um servidor web que exige usu\xE1rio e senha no cabe\xE7alho."
+summary: Vamos ver como fazer isso em C++.
 title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 weight: 45
 ---

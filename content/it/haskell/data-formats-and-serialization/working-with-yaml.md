@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:33.628679-07:00
-description: "YAML, acronimo di \"YAML Ain't Markup Language\", \xE8 uno standard\
-  \ di serializzazione di dati amichevole per l'utente che pu\xF2 essere utilizzato\
-  \ per tutti i\u2026"
+description: "Come fare: Haskell non ha un supporto integrato per l'elaborazione di\
+  \ YAML, ma \xE8 possibile utilizzare librerie di terze parti come `yaml` e `aeson`\
+  \ per\u2026"
 lastmod: '2024-03-13T22:44:43.495665-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, acronimo di \"YAML Ain't Markup Language\", \xE8 uno standard di serializzazione\
-  \ di dati amichevole per l'utente che pu\xF2 essere utilizzato per tutti i linguaggi\
-  \ di programmazione."
+summary: "Haskell non ha un supporto integrato per l'elaborazione di YAML, ma \xE8\
+  \ possibile utilizzare librerie di terze parti come `yaml` e `aeson` per l'analisi\
+  \ e la generazione di dati YAML."
 title: Lavorare con YAML
 weight: 41
 ---

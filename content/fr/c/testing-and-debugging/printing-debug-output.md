@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:12.048431-07:00
-description: "L'impression de sorties de d\xE9bogage consiste \xE0 g\xE9n\xE9rer des\
-  \ messages de journal temporaires et informatifs qui peuvent aider les programmeurs\
-  \ \xE0 comprendre\u2026"
+description: "Comment faire : En C, la mani\xE8re la plus courante d'imprimer une\
+  \ sortie de d\xE9bogage est d'utiliser la fonction `printf` de la biblioth\xE8que\
+  \ standard d\u2019E/S.\u2026"
 lastmod: '2024-03-13T22:44:58.374993-06:00'
 model: gpt-4-0125-preview
-summary: "L'impression de sorties de d\xE9bogage consiste \xE0 g\xE9n\xE9rer des messages\
-  \ de journal temporaires et informatifs qui peuvent aider les programmeurs \xE0\
-  \ comprendre le flux et l'\xE9tat d'un programme pendant son ex\xE9cution."
+summary: "En C, la mani\xE8re la plus courante d'imprimer une sortie de d\xE9bogage\
+  \ est d'utiliser la fonction `printf` de la biblioth\xE8que standard d\u2019E/S."
 title: "Impression de sortie de d\xE9bogage"
 weight: 33
 ---

@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:56:43.544888-07:00
-description: "Kommandoradsargument l\xE5ter anv\xE4ndare ge input direkt n\xE4r de\
-  \ k\xF6r ett Python-program. Det \xE4r viktigt f\xF6r att skapa flexibla program\
-  \ som kan anpassas vid\u2026"
+description: "How to (Hur g\xF6r man): ."
 lastmod: '2024-03-13T22:44:37.498272-06:00'
 model: gpt-4-1106-preview
-summary: "Kommandoradsargument l\xE5ter anv\xE4ndare ge input direkt n\xE4r de k\xF6\
-  r ett Python-program."
+summary: .
 title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---

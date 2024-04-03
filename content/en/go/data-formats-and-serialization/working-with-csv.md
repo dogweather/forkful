@@ -1,12 +1,11 @@
 ---
 date: 2024-02-03 17:50:14.450709-07:00
-description: "Comma-Separated Values (CSV) format is ubiquitous for data exchange\
-  \ due to its simplicity and ease of integration with most programming languages,\u2026"
+description: "How to: Working with CSV files in Go is straightforward, thanks to its\
+  \ standard library, `encoding/csv`. Below is a primer on reading and writing CSV\u2026"
 lastmod: '2024-03-13T22:44:59.651078-06:00'
 model: gpt-4-0125-preview
-summary: Comma-Separated Values (CSV) format is ubiquitous for data exchange due to
-  its simplicity and ease of integration with most programming languages, including
-  Go.
+summary: Working with CSV files in Go is straightforward, thanks to its standard library,
+  `encoding/csv`.
 title: Working with CSV
 weight: 37
 ---

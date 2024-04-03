@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:54.106634-07:00
-description: "JSON eli JavaScript Object Notation on kevyt tiedonvaihtoformaatti,\
-  \ joka sopii erinomaisesti sek\xE4 tietojen tallennukseen ett\xE4 kokoonpanotiedostoihin\u2026"
+description: "Kuinka: JSONin k\xE4ytt\xE4miseen Arduinossa suosittu valinta on `ArduinoJson`-kirjasto\
+  \ sen helppok\xE4ytt\xF6isyyden ja tehokkuuden vuoksi. Se mahdollistaa JSON-\u2026"
 lastmod: '2024-03-13T22:44:56.844632-06:00'
 model: gpt-4-0125-preview
-summary: "JSON eli JavaScript Object Notation on kevyt tiedonvaihtoformaatti, joka\
-  \ sopii erinomaisesti sek\xE4 tietojen tallennukseen ett\xE4 kokoonpanotiedostoihin\
-  \ Arduino-projekteissa."
+summary: "JSONin k\xE4ytt\xE4miseen Arduinossa suosittu valinta on `ArduinoJson`-kirjasto\
+  \ sen helppok\xE4ytt\xF6isyyden ja tehokkuuden vuoksi."
 title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---

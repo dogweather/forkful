@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:42:24.697049-07:00
-description: "Das Entfernen von Anf\xFChrungszeichen aus einem String bedeutet, die\
-  \ umgebenden einfachen (`'`) oder doppelten (`\"`) Anf\xFChrungszeichen, die\u2026"
+description: "Wie: Hier ist dein unkomplizierter Leitfaden, um diese l\xE4stigen Anf\xFC\
+  hrungszeichen von deinen Strings in TypeScript loszuwerden."
 lastmod: '2024-03-13T22:44:53.619784-06:00'
 model: gpt-4-0125-preview
-summary: "Das Entfernen von Anf\xFChrungszeichen aus einem String bedeutet, die umgebenden\
-  \ einfachen (`'`) oder doppelten (`\"`) Anf\xFChrungszeichen, die Zeichenfolgenliterale\
-  \ im Code definieren, herauszustreifen."
+summary: "Hier ist dein unkomplizierter Leitfaden, um diese l\xE4stigen Anf\xFChrungszeichen\
+  \ von deinen Strings in TypeScript loszuwerden."
 title: "Anf\xFChrungszeichen aus einem String entfernen"
 weight: 9
 ---

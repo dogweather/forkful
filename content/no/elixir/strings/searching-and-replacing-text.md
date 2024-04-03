@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:57:47.894526-07:00
-description: "S\xF8king og erstattning av tekst lar oss finne bestemte ord eller uttrykk\
-  \ og bytte dem ut med noe annet. Programmerere gj\xF8r dette for \xE5 oppdatere\
-  \ kode,\u2026"
+description: "Hvordan: For \xE5 s\xF8ke og erstatte tekst i Elixir, bruker vi `String.replace/4`\
+  \ funksjonen. Her er et enkelt eksempel."
 lastmod: '2024-03-13T22:44:40.428948-06:00'
 model: gpt-4-1106-preview
-summary: "S\xF8king og erstattning av tekst lar oss finne bestemte ord eller uttrykk\
-  \ og bytte dem ut med noe annet."
+summary: "For \xE5 s\xF8ke og erstatte tekst i Elixir, bruker vi `String.replace/4`\
+  \ funksjonen."
 title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---

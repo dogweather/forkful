@@ -2,14 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:50.309025-07:00
-description: "Recuperar a data atual em Rust \xE9 uma tarefa comum para atividades\
-  \ como registro (logging), opera\xE7\xF5es baseadas em tempo, ou simplesmente para\
-  \ exibir a\u2026"
+description: 'Como fazer: #.'
 lastmod: '2024-03-13T22:44:46.378096-06:00'
 model: gpt-4-0125-preview
-summary: "Recuperar a data atual em Rust \xE9 uma tarefa comum para atividades como\
-  \ registro (logging), opera\xE7\xF5es baseadas em tempo, ou simplesmente para exibir\
-  \ a data."
+summary: '#.'
 title: Obtendo a data atual
 weight: 29
 ---

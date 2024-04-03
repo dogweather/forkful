@@ -1,11 +1,10 @@
 ---
 date: 2024-01-25 03:39:54.985454-07:00
-description: "REPL stands for Read-Eval-Print Loop, a simple, interactive computer\
-  \ programming environment. Coders use it to quickly write and test code, experiment\u2026"
+description: "How to: In Bash, your terminal is essentially a REPL. You type a command;\
+  \ it reads it, evaluates it, prints the outcome, and loops back awaiting your next\u2026"
 lastmod: '2024-03-13T22:45:00.246307-06:00'
 model: gpt-4-1106-preview
-summary: REPL stands for Read-Eval-Print Loop, a simple, interactive computer programming
-  environment.
+summary: In Bash, your terminal is essentially a REPL.
 title: Using an interactive shell (REPL)
 weight: 34
 ---

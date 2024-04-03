@@ -1,13 +1,13 @@
 ---
 date: 2024-01-26 01:08:47.263501-07:00
-description: "El registro (logging) es el proceso de grabar eventos, errores y otra\
-  \ informaci\xF3n significativa durante la ejecuci\xF3n de un programa en un medio\
-  \ externo, a\u2026"
+description: "C\xF3mo hacerlo: En TypeScript, puedes implementar f\xE1cilmente un\
+  \ registro b\xE1sico utilizando m\xE9todos de la consola o integrar un registro\
+  \ m\xE1s avanzado con\u2026"
 lastmod: '2024-03-13T22:44:58.808142-06:00'
 model: gpt-4-1106-preview
-summary: "El registro (logging) es el proceso de grabar eventos, errores y otra informaci\xF3\
-  n significativa durante la ejecuci\xF3n de un programa en un medio externo, a menudo\
-  \ archivos o bases de datos."
+summary: "En TypeScript, puedes implementar f\xE1cilmente un registro b\xE1sico utilizando\
+  \ m\xE9todos de la consola o integrar un registro m\xE1s avanzado con librer\xED\
+  as como `winston` o `pino`."
 title: Registro de Actividades
 weight: 17
 ---

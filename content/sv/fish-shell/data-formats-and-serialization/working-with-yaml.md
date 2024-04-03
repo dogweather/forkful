@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:41.342767-07:00
-description: "Att arbeta med YAML inneb\xE4r att tolka och hantera YAML-filer (YAML\
-  \ Ain't Markup Language), ett serialiseringsformat f\xF6r data som anv\xE4nds f\xF6\
-  r\u2026"
+description: "Hur man g\xF6r: Fish Shell har inte inbyggt st\xF6d f\xF6r att tolka\
+  \ YAML, men du kan anv\xE4nda tredjepartsverktyg som `yq` (en l\xE4tt och b\xE4\
+  rbar kommandorads YAML-\u2026"
 lastmod: '2024-03-13T22:44:38.358542-06:00'
 model: gpt-4-0125-preview
-summary: "Att arbeta med YAML inneb\xE4r att tolka och hantera YAML-filer (YAML Ain't\
-  \ Markup Language), ett serialiseringsformat f\xF6r data som anv\xE4nds f\xF6r konfigurationsfiler,\
-  \ i Fish Shell."
+summary: "Fish Shell har inte inbyggt st\xF6d f\xF6r att tolka YAML, men du kan anv\xE4\
+  nda tredjepartsverktyg som `yq` (en l\xE4tt och b\xE4rbar kommandorads YAML-processor)\
+  \ f\xF6r att hantera YAML-data."
 title: Att Arbeta med YAML
 weight: 41
 ---

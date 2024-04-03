@@ -2,12 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:51.087978-07:00
-description: "Kirjoittaminen vakiovirheeseen (stderr) tarkoittaa virheviestien ja\
-  \ diagnostiikkatietojen ohjaamista stderr-virtaan, erotettuna vakiotulosteesta (stdout).\u2026"
+description: "Kuinka: Clojuressa voit kirjoittaa stderr-virtaan k\xE4ytt\xE4m\xE4\
+  ll\xE4 `*err*`-virtaa. T\xE4ss\xE4 on perusesimerkki."
 lastmod: '2024-03-13T22:44:56.200565-06:00'
 model: gpt-4-0125-preview
-summary: Kirjoittaminen vakiovirheeseen (stderr) tarkoittaa virheviestien ja diagnostiikkatietojen
-  ohjaamista stderr-virtaan, erotettuna vakiotulosteesta (stdout).
+summary: "Clojuressa voit kirjoittaa stderr-virtaan k\xE4ytt\xE4m\xE4ll\xE4 `*err*`-virtaa."
 title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---

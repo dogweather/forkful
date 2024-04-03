@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:23.516785-07:00
-description: "In Ruby helpt het maken van een tijdelijk bestand om gevoelige gegevens\
-  \ te beschermen en vluchtige opslagbehoeften te beheren. Programmeurs gebruiken\
-  \ het\u2026"
+description: 'Hoe: De standaardbibliotheek van Ruby biedt `Tempfile` voor het maken
+  van tijdelijke bestanden. Laten we er direct induiken.'
 lastmod: '2024-03-13T22:44:51.379678-06:00'
 model: gpt-4-0125-preview
-summary: In Ruby helpt het maken van een tijdelijk bestand om gevoelige gegevens te
-  beschermen en vluchtige opslagbehoeften te beheren.
+summary: De standaardbibliotheek van Ruby biedt `Tempfile` voor het maken van tijdelijke
+  bestanden.
 title: Een tijdelijk bestand aanmaken
 weight: 21
 ---

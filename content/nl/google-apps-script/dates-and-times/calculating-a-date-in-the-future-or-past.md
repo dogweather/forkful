@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:48:51.979194-07:00
-description: "Het berekenen van een datum in de toekomst of het verleden gaat over\
-  \ het manipuleren van datumobjecten om data te vinden die verder liggen dan of voor\
-  \ de\u2026"
+description: "Hoe: In Google Apps Script, dat is gebaseerd op JavaScript, kun je datums\
+  \ manipuleren met behulp van het `Date` object. Hier is hoe je datums in de\u2026"
 lastmod: '2024-03-13T22:44:50.346453-06:00'
 model: gpt-4-0125-preview
-summary: Het berekenen van een datum in de toekomst of het verleden gaat over het
-  manipuleren van datumobjecten om data te vinden die verder liggen dan of voor de
-  huidige datum, respectievelijk.
+summary: In Google Apps Script, dat is gebaseerd op JavaScript, kun je datums manipuleren
+  met behulp van het `Date` object.
 title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:29.748716-07:00
-description: "Das Senden einer HTTP-Anfrage mit grundlegender Authentifizierung in\
-  \ Visual Basic for Applications (VBA) dient dazu, auf Webressourcen zuzugreifen,\
-  \ die\u2026"
+description: "Wie geht das: In VBA k\xF6nnen Sie die `Microsoft XML, v6.0` (MSXML2)\
+  \ Bibliothek verwenden, um HTTP-Anfragen mit grundlegender Authentifizierung zu\
+  \ senden.\u2026"
 lastmod: '2024-03-13T22:44:53.717423-06:00'
 model: gpt-4-0125-preview
-summary: "Das Senden einer HTTP-Anfrage mit grundlegender Authentifizierung in Visual\
-  \ Basic for Applications (VBA) dient dazu, auf Webressourcen zuzugreifen, die durch\
-  \ Benutzernamen und Passwort gesch\xFCtzt sind."
+summary: "In VBA k\xF6nnen Sie die `Microsoft XML, v6.0` (MSXML2) Bibliothek verwenden,\
+  \ um HTTP-Anfragen mit grundlegender Authentifizierung zu senden."
 title: Eine HTTP-Anfrage mit einfacher Authentifizierung senden
 weight: 45
 ---

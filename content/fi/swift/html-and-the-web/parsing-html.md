@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:30.800522-07:00
-description: "HTML:n j\xE4sent\xE4minen viittaa HTML-sis\xE4ll\xF6n rakenteen purkamiseen\
-  \ ja tulkitsemiseen, tyypillisesti tiettyjen tietojen poimimiseksi tai t\xE4m\xE4\
-  n sis\xE4ll\xF6n\u2026"
+description: "Kuinka: Swift ei oletusarvoisesti sis\xE4ll\xE4 sis\xE4\xE4nrakennettua\
+  \ kirjastoa HTML:n j\xE4sent\xE4miseen, mik\xE4 edellytt\xE4\xE4 kolmannen osapuolen\
+  \ kirjastojen k\xE4ytt\xF6\xE4 t\xE4m\xE4n\u2026"
 lastmod: '2024-03-13T22:44:56.904915-06:00'
 model: gpt-4-0125-preview
-summary: "HTML:n j\xE4sent\xE4minen viittaa HTML-sis\xE4ll\xF6n rakenteen purkamiseen\
-  \ ja tulkitsemiseen, tyypillisesti tiettyjen tietojen poimimiseksi tai t\xE4m\xE4\
-  n sis\xE4ll\xF6n ohjelmallisesti k\xE4sittelyyn."
+summary: "Swift ei oletusarvoisesti sis\xE4ll\xE4 sis\xE4\xE4nrakennettua kirjastoa\
+  \ HTML:n j\xE4sent\xE4miseen, mik\xE4 edellytt\xE4\xE4 kolmannen osapuolen kirjastojen\
+  \ k\xE4ytt\xF6\xE4 t\xE4m\xE4n teht\xE4v\xE4n tehokkaaseen k\xE4sittelyyn."
 title: "HTML:n j\xE4sennys"
 weight: 43
 ---

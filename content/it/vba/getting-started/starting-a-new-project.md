@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:49.834649-07:00
-description: "L'avvio di un nuovo progetto in Visual Basic for Applications (VBA)\
-  \ comporta l'installazione di un ambiente all'interno di un'applicazione host, come\u2026"
+description: "Come fare: Quando sei pronto per iniziare un nuovo progetto VBA, il\
+  \ punto di partenza comporta tipicamente l'accesso all'editor VBA e l'inizializzazione\u2026"
 lastmod: '2024-03-13T22:44:43.263350-06:00'
 model: gpt-4-0125-preview
-summary: "L'avvio di un nuovo progetto in Visual Basic for Applications (VBA) comporta\
-  \ l'installazione di un ambiente all'interno di un'applicazione host, come Excel,\
-  \ per automatizzare compiti o estendere la funzionalit\xE0."
+summary: Quando sei pronto per iniziare un nuovo progetto VBA, il punto di partenza
+  comporta tipicamente l'accesso all'editor VBA e l'inizializzazione del tuo framework
+  di progetto.
 title: Iniziando un nuovo progetto
 weight: 1
 ---

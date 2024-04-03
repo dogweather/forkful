@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:24.332850-07:00
-description: "La concatenazione in Visual Basic for Applications (VBA) implica l'unione\
-  \ di due o pi\xF9 stringhe in un'unica entit\xE0. Questo \xE8 un compito fondamentale\
-  \ nella\u2026"
+description: "Come fare: VBA fornisce un metodo semplice per concatenare le stringhe\
+  \ utilizzando l'operatore `&` o la funzione `Concatenate`. Esploriamo entrambi i\u2026"
 lastmod: '2024-03-13T22:44:43.253826-06:00'
 model: gpt-4-0125-preview
-summary: "La concatenazione in Visual Basic for Applications (VBA) implica l'unione\
-  \ di due o pi\xF9 stringhe in un'unica entit\xE0."
+summary: VBA fornisce un metodo semplice per concatenare le stringhe utilizzando l'operatore
+  `&` o la funzione `Concatenate`.
 title: Concatenazione di stringhe
 weight: 3
 ---

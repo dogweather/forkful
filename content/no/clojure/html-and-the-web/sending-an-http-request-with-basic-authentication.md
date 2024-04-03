@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 18:01:25.904701-07:00
-description: "HTTP-foresp\xF8rsler med grunnleggende autentisering inneb\xE6rer \xE5\
-  \ sende brukernavn og passord i en header for tilgang. Programmerere bruker dette\
-  \ for \xE5 sikre\u2026"
+description: "Hvordan gj\xF8re det: For \xE5 sende en HTTP-foresp\xF8rsel med grunnleggende\
+  \ autentisering i Clojure, kan vi bruke `clj-http` biblioteket. Her er et eksempel."
 lastmod: '2024-03-13T22:44:40.402134-06:00'
 model: gpt-4-1106-preview
-summary: "HTTP-foresp\xF8rsler med grunnleggende autentisering inneb\xE6rer \xE5 sende\
-  \ brukernavn og passord i en header for tilgang."
+summary: "For \xE5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering i\
+  \ Clojure, kan vi bruke `clj-http` biblioteket."
 title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---

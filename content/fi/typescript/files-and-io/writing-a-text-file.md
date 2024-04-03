@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:34.985667-07:00
-description: "Tekstitiedoston kirjoittaminen TypeScriptill\xE4 on kriittinen taito\
-  \ datan pysyvyyden, konfiguraatioiden tai lokiin kirjoittamisen kannalta. Ohjelmoijat\u2026"
+description: "Kuinka: TypeScript ei itsess\xE4\xE4n k\xE4sittele suoraan tiedosto-operaatioita,\
+  \ sill\xE4 se k\xE4\xE4ntyy JavaScriptiksi, joka perinteisesti toimii selaimessa\u2026"
 lastmod: '2024-03-13T22:44:56.333178-06:00'
 model: gpt-4-0125-preview
-summary: "Tekstitiedoston kirjoittaminen TypeScriptill\xE4 on kriittinen taito datan\
-  \ pysyvyyden, konfiguraatioiden tai lokiin kirjoittamisen kannalta."
+summary: "TypeScript ei itsess\xE4\xE4n k\xE4sittele suoraan tiedosto-operaatioita,\
+  \ sill\xE4 se k\xE4\xE4ntyy JavaScriptiksi, joka perinteisesti toimii selaimessa\
+  \ rajoitetulla p\xE4\xE4syll\xE4 tiedostoj\xE4rjestelm\xE4\xE4n."
 title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---

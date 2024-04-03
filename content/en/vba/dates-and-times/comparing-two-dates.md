@@ -1,12 +1,11 @@
 ---
 date: 2024-02-01 21:30:17.126306-07:00
-description: "Comparing two dates in Visual Basic for Applications (VBA) involves\
-  \ determining their chronological relationship to each other. Programmers do this\
-  \ to\u2026"
+description: "How to: In VBA, dates are compared using the standard comparison operators\
+  \ (`<`, `>`, `=`, `<=`, `>=`). Before comparing, it's important to ensure that\u2026"
 lastmod: '2024-03-13T22:44:59.945667-06:00'
 model: gpt-4-0125-preview
-summary: Comparing two dates in Visual Basic for Applications (VBA) involves determining
-  their chronological relationship to each other.
+summary: In VBA, dates are compared using the standard comparison operators (`<`,
+  `>`, `=`, `<=`, `>=`).
 title: Comparing two dates
 weight: 27
 ---

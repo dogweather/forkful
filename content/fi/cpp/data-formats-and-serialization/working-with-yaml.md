@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:38.781906-07:00
-description: "YAML, joka tarkoittaa \"YAML Ain't Markup Language\", on ihmisen luettavissa\
-  \ oleva tiedon sarjallistamisformaatti. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4\u2026"
+description: "Miten: YAML:n k\xE4sittelyyn C++:ssa suosittu valinta on `yaml-cpp`\
+  \ kirjasto. Varmista ensin, ett\xE4 sinulla on `yaml-cpp` asennettuna ja oikein\
+  \ linkitettyn\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.885754-06:00'
 model: gpt-4-0125-preview
-summary: YAML, joka tarkoittaa "YAML Ain't Markup Language", on ihmisen luettavissa
-  oleva tiedon sarjallistamisformaatti.
+summary: "YAML:n k\xE4sittelyyn C++:ssa suosittu valinta on `yaml-cpp` kirjasto."
 title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-01-27 20:35:25.921645-07:00
-description: "La generazione di numeri casuali nella programmazione riguarda la creazione\
-  \ di valori numerici non deterministici o imprevedibili. I programmatori\u2026"
+description: 'Come fare: Swift offre un modo diretto per generare numeri casuali attraverso
+  la sua libreria standard. Ecco come si fa per diversi tipi numerici.'
 lastmod: '2024-03-13T22:44:43.766317-06:00'
 model: gpt-4-0125-preview
-summary: La generazione di numeri casuali nella programmazione riguarda la creazione
-  di valori numerici non deterministici o imprevedibili.
+summary: Swift offre un modo diretto per generare numeri casuali attraverso la sua
+  libreria standard.
 title: Generazione di numeri casuali
 weight: 12
 ---

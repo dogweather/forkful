@@ -1,8 +1,7 @@
 ---
 date: 2024-01-25 20:50:36.334976-07:00
-description: "Let's break down using `pdb`, Python's built-in debugger. Imagine a\
-  \ file, `buggy.py`, with a sneaky bug: ```Python def add_one(number): result = number\
-  \ ++\u2026"
+description: 'How to: Let''s break down using `pdb`, Python''s built-in debugger.
+  Imagine a file, `buggy.py`, with a sneaky bug.'
 lastmod: '2024-03-13T22:44:59.712228-06:00'
 model: gpt-4-1106-preview
 summary: Let's break down using `pdb`, Python's built-in debugger.

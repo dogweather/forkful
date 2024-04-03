@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:49.371745-07:00
-description: "Att g\xF6ra f\xF6rsta bokstaven i en str\xE4ng stor inneb\xE4r att modifiera\
-  \ den f\xF6rsta karakt\xE4ren av en given str\xE4ng till versal om den \xE4r i gemen,\
-  \ ofta medan resten\u2026"
+description: "Hur man g\xF6r: TypeScript, som \xE4r en ut\xF6kning av JavaScript,\
+  \ till\xE5ter olika metoder f\xF6r att g\xF6ra f\xF6rsta bokstaven i en str\xE4\
+  ng stor, allt fr\xE5n rena\u2026"
 lastmod: '2024-03-13T22:44:37.639583-06:00'
 model: gpt-4-0125-preview
-summary: "Att g\xF6ra f\xF6rsta bokstaven i en str\xE4ng stor inneb\xE4r att modifiera\
-  \ den f\xF6rsta karakt\xE4ren av en given str\xE4ng till versal om den \xE4r i gemen,\
-  \ ofta medan resten av str\xE4ngen l\xE4mnas of\xF6r\xE4ndrad."
+summary: "TypeScript, som \xE4r en ut\xF6kning av JavaScript, till\xE5ter olika metoder\
+  \ f\xF6r att g\xF6ra f\xF6rsta bokstaven i en str\xE4ng stor, allt fr\xE5n rena\
+  \ JavaScript-ansatser till att anv\xE4nda tredjepartsbibliotek f\xF6r mer komplexa\
+  \ eller specifika anv\xE4ndningsfall."
 title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---

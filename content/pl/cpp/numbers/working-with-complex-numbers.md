@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:37:58.312217-07:00
-description: "Liczby zespolone rozszerzaj\u0105 liczby rzeczywiste przez dodanie jednostki\
-  \ urojonej, reprezentowanej jako 'i', gdzie i^2 = -1. Programi\u015Bci u\u017Cywaj\u0105\
-  \ ich do\u2026"
+description: "Jak to zrobi\u0107: C++ posiada wbudowan\u0105 bibliotek\u0119 `<complex>`,\
+  \ kt\xF3ra u\u0142atwia prac\u0119 z liczbami zespolonymi. Oto szybki przegl\u0105\
+  d."
 lastmod: '2024-03-13T22:44:35.706861-06:00'
 model: gpt-4-0125-preview
-summary: "Liczby zespolone rozszerzaj\u0105 liczby rzeczywiste przez dodanie jednostki\
-  \ urojonej, reprezentowanej jako 'i', gdzie i^2 = -1."
+summary: "C++ posiada wbudowan\u0105 bibliotek\u0119 `<complex>`, kt\xF3ra u\u0142\
+  atwia prac\u0119 z liczbami zespolonymi."
 title: Praca z liczbami zespolonymi
 weight: 14
 ---

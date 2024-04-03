@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:46:15.524985-07:00
-description: "Extracting substrings means pulling out specific parts of a string,\
-  \ like snipping a piece from a ribbon. Programmers do it to isolate data, parse\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:59.698464-06:00'
 model: gpt-4-1106-preview
-summary: Extracting substrings means pulling out specific parts of a string, like
-  snipping a piece from a ribbon.
+summary: .
 title: Extracting substrings
 weight: 6
 ---

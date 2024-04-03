@@ -2,14 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:12.052119-07:00
-description: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) l\xE0 nh\u1EEFng m\u1EABu \u0111\
-  \u01B0\u1EE3c d\xF9ng \u0111\u1EC3 kh\u1EDBp chu\u1ED7i k\xFD t\u1EF1. L\u1EADp\
-  \ tr\xECnh vi\xEAn s\u1EED d\u1EE5ng ch\xFAng \u0111\u1EC3 t\xECm ki\u1EBFm, ch\u1EC9\
-  nh s\u1EEDa ho\u1EB7c x\xE1c th\u1EF1c v\u0103n b\u1EA3n. Ch\xFAng\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: H\xE3y xem x\xE9t vi\u1EC7c kh\u1EDBp, thay\
+  \ th\u1EBF, v\xE0 t\xE1ch chu\u1ED7i s\u1EED d\u1EE5ng regex trong C#. **Kh\u1EDB\
+  p S\u1ED1 \u0110i\u1EC7n Tho\u1EA1i:**."
 lastmod: '2024-03-13T22:44:36.644033-06:00'
 model: gpt-4-0125-preview
-summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) l\xE0 nh\u1EEFng m\u1EABu \u0111\
-  \u01B0\u1EE3c d\xF9ng \u0111\u1EC3 kh\u1EDBp chu\u1ED7i k\xFD t\u1EF1."
+summary: "H\xE3y xem x\xE9t vi\u1EC7c kh\u1EDBp, thay th\u1EBF, v\xE0 t\xE1ch chu\u1ED7\
+  i s\u1EED d\u1EE5ng regex trong C#."
 title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---

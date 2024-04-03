@@ -3,12 +3,12 @@ changelog:
 - 2024-01-28, dogweather, reviewed and added links
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 23:01:27.107827-07:00
-description: "Het organiseren van code in functies gaat over het bundelen van stukjes\
-  \ script om specifieke taken uit te voeren. We doen dit omdat het de code\u2026"
+description: 'Hoe: In Fish schrijf je een functie met het trefwoord `function`, geef
+  je het een naam en eindig je met `end`. Hier is een eenvoudige.'
 lastmod: '2024-03-13T22:44:51.252899-06:00'
 model: gpt-4-0125-preview
-summary: Het organiseren van code in functies gaat over het bundelen van stukjes script
-  om specifieke taken uit te voeren.
+summary: In Fish schrijf je een functie met het trefwoord `function`, geef je het
+  een naam en eindig je met `end`.
 title: Code organiseren in functies
 weight: 18
 ---

@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:38:07.165801-07:00
-description: "Converter uma string para letras min\xFAsculas significa transformar\
-  \ todas as letras mai\xFAsculas da string em sua forma min\xFAscula correspondente.\u2026"
+description: 'Como fazer: .'
 lastmod: '2024-03-13T22:44:46.486957-06:00'
 model: gpt-4-1106-preview
-summary: "Converter uma string para letras min\xFAsculas significa transformar todas\
-  \ as letras mai\xFAsculas da string em sua forma min\xFAscula correspondente."
+summary: .
 title: "Convertendo uma string para min\xFAsculas"
 weight: 4
 ---

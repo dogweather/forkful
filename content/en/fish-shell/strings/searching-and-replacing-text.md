@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:57:35.968213-07:00
-description: "Searching and replacing text is finding specific strings and swapping\
-  \ them with something else. Programmers do it to update code, correct errors, or\
-  \ to\u2026"
+description: 'How to: Let''s change all instances of ''cat'' to ''dog'' in a string.'
 lastmod: '2024-03-13T22:45:00.458659-06:00'
 model: gpt-4-1106-preview
-summary: Searching and replacing text is finding specific strings and swapping them
-  with something else.
+summary: Let's change all instances of 'cat' to 'dog' in a string.
 title: Searching and replacing text
 weight: 10
 ---

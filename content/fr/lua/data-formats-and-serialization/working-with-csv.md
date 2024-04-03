@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:42.671643-07:00
-description: "Travailler avec des fichiers CSV (Comma-Separated Values ou Valeurs\
-  \ S\xE9par\xE9es par des Virgules) implique de parser et de g\xE9n\xE9rer des donn\xE9\
-  es textuelles\u2026"
+description: "Comment faire : En Lua, travailler avec des fichiers CSV peut \xEAtre\
+  \ abord\xE9 en utilisant les op\xE9rations de base d'entr\xE9e/sortie de fichiers\
+  \ fournies par le\u2026"
 lastmod: '2024-03-13T22:44:57.963029-06:00'
 model: gpt-4-0125-preview
-summary: "Travailler avec des fichiers CSV (Comma-Separated Values ou Valeurs S\xE9\
-  par\xE9es par des Virgules) implique de parser et de g\xE9n\xE9rer des donn\xE9\
-  es textuelles organis\xE9es en lignes et colonnes, en utilisant des virgules pour\
-  \ s\xE9parer les valeurs individuelles."
+summary: "En Lua, travailler avec des fichiers CSV peut \xEAtre abord\xE9 en utilisant\
+  \ les op\xE9rations de base d'entr\xE9e/sortie de fichiers fournies par le langage,\
+  \ sans n\xE9cessiter de biblioth\xE8ques externes pour des t\xE2ches simples."
 title: Travailler avec CSV
 weight: 37
 ---

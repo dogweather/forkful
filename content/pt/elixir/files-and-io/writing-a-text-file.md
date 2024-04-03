@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:38.478600-07:00
-description: "Escrever em um arquivo de texto em Elixir \xE9 uma habilidade essencial\
-  \ para desenvolvedores, permitindo a persist\xEAncia de dados, registro (logging)\
-  \ ou\u2026"
+description: "Como fazer: Elixir torna o manuseio de arquivos direto com m\xF3dulos\
+  \ integrados. A principal maneira de escrever em um arquivo \xE9 usando as fun\xE7\
+  \xF5es\u2026"
 lastmod: '2024-03-13T22:44:46.256265-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever em um arquivo de texto em Elixir \xE9 uma habilidade essencial\
-  \ para desenvolvedores, permitindo a persist\xEAncia de dados, registro (logging)\
-  \ ou exporta\xE7\xE3o de conte\xFAdo leg\xEDvel por humanos."
+summary: "Elixir torna o manuseio de arquivos direto com m\xF3dulos integrados."
 title: Escrevendo um arquivo de texto
 weight: 24
 ---

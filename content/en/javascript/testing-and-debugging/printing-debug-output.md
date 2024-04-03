@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:53:03.734143-07:00
-description: "Printing debug output in JavaScript is about showing variables, errors,\
-  \ or any other info that helps figure out what your code is doing at a glance.\u2026"
+description: 'How to: Javascript makes it super easy to print debug output using `console.log()`.
+  Here''s how.'
 lastmod: '2024-03-13T22:45:00.435837-06:00'
 model: gpt-4-1106-preview
-summary: Printing debug output in JavaScript is about showing variables, errors, or
-  any other info that helps figure out what your code is doing at a glance.
+summary: Javascript makes it super easy to print debug output using `console.log()`.
 title: Printing debug output
 weight: 33
 ---

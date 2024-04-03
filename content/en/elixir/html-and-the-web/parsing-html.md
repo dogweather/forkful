@@ -1,10 +1,11 @@
 ---
 date: 2024-02-03 19:02:42.400756-07:00
-description: "Parsing HTML in Elixir involves extracting information from HTML documents.\
-  \ Programmers do this to programmatically interact with web pages, scrape data,\u2026"
+description: "How to: Elixir, with its robust concurrency model and functional programming\
+  \ paradigm, doesn't include built-in HTML parsing capabilities. However, you\u2026"
 lastmod: '2024-03-13T22:44:59.780563-06:00'
 model: gpt-4-0125-preview
-summary: Parsing HTML in Elixir involves extracting information from HTML documents.
+summary: Elixir, with its robust concurrency model and functional programming paradigm,
+  doesn't include built-in HTML parsing capabilities.
 title: Parsing HTML
 weight: 43
 ---

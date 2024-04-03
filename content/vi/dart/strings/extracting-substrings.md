@@ -2,15 +2,15 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:56.066135-07:00
-description: "R\xFAt tr\xEDch c\xE1c chu\u1ED7i con l\xE0 vi\u1EC7c truy xu\u1EA5\
-  t c\xE1c ph\u1EA7n c\u1EE5 th\u1EC3 c\u1EE7a m\u1ED9t chu\u1ED7i d\u1EF1a tr\xEA\
-  n v\u1ECB tr\xED ho\u1EB7c c\xE1c m\u1EABu. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c\
-  \ hi\u1EC7n \u0111i\u1EC1u n\xE0y cho c\xE1c nhi\u1EC7m v\u1EE5\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Dart, b\u1EA1n c\xF3 th\u1EC3 s\u1EED\
+  \ d\u1EE5ng nhi\u1EC1u ph\u01B0\u01A1ng ph\xE1p kh\xE1c nhau \u0111\u1EC3 r\xFA\
+  t tr\xEDch c\xE1c chu\u1ED7i con, nh\u01B0 `substring()`, `split()`, v\xE0 bi\u1EC3\
+  u th\u1EE9c ch\xEDnh quy.\u2026"
 lastmod: '2024-03-13T22:44:36.247761-06:00'
 model: gpt-4-0125-preview
-summary: "R\xFAt tr\xEDch c\xE1c chu\u1ED7i con l\xE0 vi\u1EC7c truy xu\u1EA5t c\xE1\
-  c ph\u1EA7n c\u1EE5 th\u1EC3 c\u1EE7a m\u1ED9t chu\u1ED7i d\u1EF1a tr\xEAn v\u1ECB\
-  \ tr\xED ho\u1EB7c c\xE1c m\u1EABu."
+summary: "Trong Dart, b\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng nhi\u1EC1u ph\u01B0\
+  \u01A1ng ph\xE1p kh\xE1c nhau \u0111\u1EC3 r\xFAt tr\xEDch c\xE1c chu\u1ED7i con,\
+  \ nh\u01B0 `substring()`, `split()`, v\xE0 bi\u1EC3u th\u1EE9c ch\xEDnh quy."
 title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 weight: 6
 ---

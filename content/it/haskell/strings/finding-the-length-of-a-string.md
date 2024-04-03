@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:47:31.256558-07:00
-description: "Calcolare la lunghezza di una stringa significa contare quanti caratteri\
-  \ contiene. I programmatori lo fanno per validare input, gestire formati di testo\
-  \ o\u2026"
+description: 'How to: In Haskell, usi `length` per trovare la lunghezza di una stringa.
+  Ecco un esempio.'
 lastmod: '2024-03-13T22:44:43.466398-06:00'
 model: gpt-4-1106-preview
-summary: Calcolare la lunghezza di una stringa significa contare quanti caratteri
-  contiene.
+summary: In Haskell, usi `length` per trovare la lunghezza di una stringa.
 title: Trovare la lunghezza di una stringa
 weight: 7
 ---

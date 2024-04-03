@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:15:46.852757-07:00
-description: "En REPL (Read-Eval-Print Loop) er et enkelt, interaktivt programmeringsmilj\xF8\
-  . Programmerere bruker det for raske kodingstester, teste kodebiter eller l\xE6\
-  re\u2026"
+description: "Hvordan: \xC5 starte Kotlin sin REPL er en lek. \xC5pne terminalen din\
+  \ og skriv `kotlinc`. Du vil havne i Kotlin-skallet. La oss pr\xF8ve \xE5 definere\
+  \ en variabel og\u2026"
 lastmod: '2024-03-13T22:44:40.751845-06:00'
 model: gpt-4-0125-preview
-summary: "En REPL (Read-Eval-Print Loop) er et enkelt, interaktivt programmeringsmilj\xF8\
-  ."
+summary: "\xC5 starte Kotlin sin REPL er en lek."
 title: Bruke et interaktivt skall (REPL)
 weight: 34
 ---

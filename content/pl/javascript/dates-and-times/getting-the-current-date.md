@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:01.999548-07:00
-description: "Pobieranie bie\u017C\u0105cej daty w JavaScript jest podstawowym zadaniem,\
-  \ obejmuj\u0105cym pobieranie i ewentualnie manipulowanie dzisiejsz\u0105 dat\u0105\
-  \ i czasem. Programi\u015Bci\u2026"
+description: "Jak to zrobi\u0107: W czystym JavaScript u\u017Cywa si\u0119 obiektu\
+  \ `Date`, aby pracowa\u0107 z datami i czasem. Oto jak mo\u017Cna uzyska\u0107 bie\u017C\
+  \u0105c\u0105 dat\u0119 i czas."
 lastmod: '2024-03-13T22:44:35.806955-06:00'
 model: gpt-4-0125-preview
-summary: "Pobieranie bie\u017C\u0105cej daty w JavaScript jest podstawowym zadaniem,\
-  \ obejmuj\u0105cym pobieranie i ewentualnie manipulowanie dzisiejsz\u0105 dat\u0105\
-  \ i czasem."
+summary: "W czystym JavaScript u\u017Cywa si\u0119 obiektu `Date`, aby pracowa\u0107\
+  \ z datami i czasem."
 title: Pobieranie aktualnej daty
 weight: 29
 ---

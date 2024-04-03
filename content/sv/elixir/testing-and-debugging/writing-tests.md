@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:46.961399-07:00
-description: "Att skriva tester i Elixir inneb\xE4r att man skapar automatiserade\
-  \ skript f\xF6r att validera beteendet hos ens kod. Programmerare g\xF6r detta f\xF6\
-  r att\u2026"
+description: "Hur man g\xF6r: Elixir anv\xE4nder ExUnit som sitt inbyggda testramverk,\
+  \ vilket \xE4r extremt kraftfullt och enkelt att anv\xE4nda. H\xE4r \xE4r ett grundl\xE4\
+  ggande exempel:\u2026"
 lastmod: '2024-03-13T22:44:37.570876-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva tester i Elixir inneb\xE4r att man skapar automatiserade skript\
-  \ f\xF6r att validera beteendet hos ens kod."
+summary: "Elixir anv\xE4nder ExUnit som sitt inbyggda testramverk, vilket \xE4r extremt\
+  \ kraftfullt och enkelt att anv\xE4nda."
 title: Skriva tester
 weight: 36
 ---

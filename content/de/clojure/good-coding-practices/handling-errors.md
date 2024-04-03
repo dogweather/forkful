@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 00:51:59.026553-07:00
-description: "Fehlerbehandlung geht darum, das Unerwartete in Programmen zu managen\
-  \ \u2013 wie ein T\xFCrsteher, der sich um Unruhestifter k\xFCmmert. Programmierer\
-  \ m\xF6gen es\u2026"
+description: "Wie geht das: Clojure, wie seine Lisp-Vorfahren, st\xFCtzt sich auf\
+  \ Ausnahmen (Exceptions), um mit Fehlern umzugehen. Hier ist, wie du dein K\xF6\
+  nnen zeigst,\u2026"
 lastmod: '2024-03-13T22:44:53.426901-06:00'
 model: gpt-4-1106-preview
-summary: "Fehlerbehandlung geht darum, das Unerwartete in Programmen zu managen \u2013\
-  \ wie ein T\xFCrsteher, der sich um Unruhestifter k\xFCmmert."
+summary: "Clojure, wie seine Lisp-Vorfahren, st\xFCtzt sich auf Ausnahmen (Exceptions),\
+  \ um mit Fehlern umzugehen."
 title: Fehlerbehandlung
 weight: 16
 ---

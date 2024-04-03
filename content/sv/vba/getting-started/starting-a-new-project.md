@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:02.462655-07:00
-description: "Att starta ett nytt projekt i Visual Basic for Applications (VBA) inneb\xE4\
-  r att man inr\xE4ttar en milj\xF6 inom ett v\xE4rdprogram, som Excel, f\xF6r att\
-  \ automatisera\u2026"
+description: "Hur man g\xF6r: N\xE4r du \xE4r redo att b\xF6rja med ett nytt VBA-projekt,\
+  \ b\xF6rjar du vanligtvis med att komma \xE5t VBA-editorn och initiera ditt projektframework.\
+  \ L\xE5t\u2026"
 lastmod: '2024-03-13T22:44:37.743842-06:00'
 model: gpt-4-0125-preview
-summary: "Att starta ett nytt projekt i Visual Basic for Applications (VBA) inneb\xE4\
-  r att man inr\xE4ttar en milj\xF6 inom ett v\xE4rdprogram, som Excel, f\xF6r att\
-  \ automatisera uppgifter eller ut\xF6ka funktionalitet."
+summary: "N\xE4r du \xE4r redo att b\xF6rja med ett nytt VBA-projekt, b\xF6rjar du\
+  \ vanligtvis med att komma \xE5t VBA-editorn och initiera ditt projektframework."
 title: Att starta ett nytt projekt
 weight: 1
 ---

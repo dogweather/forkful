@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:32.341087-07:00
-description: "YAML, que significa \"YAML Ain't Markup Language\" (YAML N\xE3o \xE9\
-  \ uma Linguagem de Marca\xE7\xE3o), \xE9 um padr\xE3o de serializa\xE7\xE3o de dados\
-  \ leg\xEDvel por humanos que pode\u2026"
+description: "Como fazer: Trabalhar com YAML em C requer uma biblioteca, j\xE1 que\
+  \ a biblioteca padr\xE3o do C n\xE3o oferece suporte direto para an\xE1lise ou serializa\xE7\
+  \xE3o de\u2026"
 lastmod: '2024-03-13T22:44:47.072124-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, que significa \"YAML Ain't Markup Language\" (YAML N\xE3o \xE9 uma\
-  \ Linguagem de Marca\xE7\xE3o), \xE9 um padr\xE3o de serializa\xE7\xE3o de dados\
-  \ leg\xEDvel por humanos que pode ser utilizado para todo tipo de aplica\xE7\xE3\
-  o, desde arquivos de configura\xE7\xE3o at\xE9 armazenamento de dados."
+summary: "Trabalhar com YAML em C requer uma biblioteca, j\xE1 que a biblioteca padr\xE3\
+  o do C n\xE3o oferece suporte direto para an\xE1lise ou serializa\xE7\xE3o de YAML."
 title: Trabalhando com YAML
 weight: 41
 ---

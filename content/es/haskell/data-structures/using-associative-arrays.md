@@ -3,13 +3,14 @@ changelog:
 - 2024-01-30, dogweather, reviewed
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:23.298680-07:00
-description: "Los arrays asociativos, o diccionarios, en Haskell tratan sobre mapear\
-  \ claves a valores para una b\xFAsqueda r\xE1pida y un manejo eficiente de datos.\
-  \ Los\u2026"
+description: "C\xF3mo hacerlo: Haskell no tiene arrays asociativos de manera inmediata\
+  \ de la misma forma que algunos otros lenguajes, pero ofrece una biblioteca est\xE1\
+  ndar\u2026"
 lastmod: '2024-03-13T22:44:59.112284-06:00'
 model: gpt-4-0125-preview
-summary: "Los arrays asociativos, o diccionarios, en Haskell tratan sobre mapear claves\
-  \ a valores para una b\xFAsqueda r\xE1pida y un manejo eficiente de datos."
+summary: "Haskell no tiene arrays asociativos de manera inmediata de la misma forma\
+  \ que algunos otros lenguajes, pero ofrece una biblioteca est\xE1ndar poderosa llamada\
+  \ `Data.Map` para trabajar con pares clave-valor."
 title: Uso de matrices asociativas
 weight: 15
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 18:03:18.567037-07:00
-description: "Starting a new project means setting up a fresh programming environment\
-  \ for your code. Programmers do it to kick off development with a clean slate and\u2026"
+description: 'How to: To bootstrap a Clojure project, we''ll use Leiningen, a popular
+  build tool for Clojure.'
 lastmod: '2024-03-13T22:44:59.746267-06:00'
 model: gpt-4-1106-preview
-summary: Starting a new project means setting up a fresh programming environment for
-  your code.
+summary: To bootstrap a Clojure project, we'll use Leiningen, a popular build tool
+  for Clojure.
 title: Starting a new project
 weight: 1
 ---

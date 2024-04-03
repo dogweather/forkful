@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:44:36.361540-07:00
-description: ''
+description: "Co i dlaczego? Pobieranie strony internetowej to proces \u015Bci\u0105\
+  gania jej zawarto\u015Bci do analizy lub przetwarzania. Programi\u015Bci robi\u0105\
+  \ to, by np. zbiera\u0107 dane\u2026"
 lastmod: '2024-03-13T22:44:35.931437-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Pobieranie strony internetowej to proces \u015Bci\u0105gania jej zawarto\u015B\
+  ci do analizy lub przetwarzania."
 title: Pobieranie strony internetowej
 weight: 42
 ---

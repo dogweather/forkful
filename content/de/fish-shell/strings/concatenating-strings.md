@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:34:47.349514-07:00
-description: "Beim Verketten von Strings geht es darum, sie aneinanderzureihen, um\
-  \ einen l\xE4ngeren String zu bilden. Programmierer machen das, um dynamische Texte\
-  \ zu\u2026"
+description: "So geht\u2019s: Im Fish Shell f\xFCgt man Strings mit einfachem Nebeneinanderstellen\
+  \ zusammen."
 lastmod: '2024-03-13T22:44:54.299815-06:00'
 model: gpt-4-1106-preview
-summary: "Beim Verketten von Strings geht es darum, sie aneinanderzureihen, um einen\
-  \ l\xE4ngeren String zu bilden."
+summary: "Im Fish Shell f\xFCgt man Strings mit einfachem Nebeneinanderstellen zusammen."
 title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:25.624898-07:00
-description: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen\
-  \ liittyy p\xE4iv\xE4m\xE4\xE4r\xE4objektien manipulointiin l\xF6yt\xE4\xE4kseen\
-  \ tulevia tai menneit\xE4 p\xE4iv\xE4m\xE4\xE4ri\xE4 nykyhetkeen\u2026"
+description: "Kuinka tehd\xE4: Google Apps Scriptiss\xE4, joka perustuu JavaScriptiin,\
+  \ voit manipuloida p\xE4iv\xE4m\xE4\xE4ri\xE4 k\xE4ytt\xE4m\xE4ll\xE4 `Date`-objektia.\
+  \ N\xE4in voit laskea\u2026"
 lastmod: '2024-03-13T22:44:56.113011-06:00'
 model: gpt-4-0125-preview
-summary: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen liittyy\
-  \ p\xE4iv\xE4m\xE4\xE4r\xE4objektien manipulointiin l\xF6yt\xE4\xE4kseen tulevia\
-  \ tai menneit\xE4 p\xE4iv\xE4m\xE4\xE4ri\xE4 nykyhetkeen n\xE4hden."
+summary: "Google Apps Scriptiss\xE4, joka perustuu JavaScriptiin, voit manipuloida\
+  \ p\xE4iv\xE4m\xE4\xE4ri\xE4 k\xE4ytt\xE4m\xE4ll\xE4 `Date`-objektia."
 title: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---

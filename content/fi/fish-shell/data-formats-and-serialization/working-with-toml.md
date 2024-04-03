@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:21:28.129214-07:00
-description: "TOML on konfiguraatiotiedostomuoto, joka on helppo ihmisille lukea ja\
-  \ kirjoittaa, sek\xE4 helposti koneiden j\xE4sent\xE4m\xE4\xE4 ja luotavaa. Ohjelmoijat\
-  \ k\xE4ytt\xE4v\xE4t\u2026"
+description: "Kuinka: TOMLin lukemiseen ja manipulointiin Fish-skriptikieless\xE4\
+  \ voit k\xE4ytt\xE4\xE4 ty\xF6kalua kuten `yj`, joka voi muuntaa TOMLin JSON-muotoon.\
+  \ N\xE4in se tehd\xE4\xE4n."
 lastmod: '2024-03-13T22:44:57.018521-06:00'
 model: gpt-4-0125-preview
-summary: "TOML on konfiguraatiotiedostomuoto, joka on helppo ihmisille lukea ja kirjoittaa,\
-  \ sek\xE4 helposti koneiden j\xE4sent\xE4m\xE4\xE4 ja luotavaa."
+summary: "TOMLin lukemiseen ja manipulointiin Fish-skriptikieless\xE4 voit k\xE4ytt\xE4\
+  \xE4 ty\xF6kalua kuten `yj`, joka voi muuntaa TOMLin JSON-muotoon."
 title: "Ty\xF6skentely TOML:n kanssa"
 weight: 39
 ---

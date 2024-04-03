@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:52:59.077649-07:00
-description: "On imprime des donn\xE9es de d\xE9bogage pour voir ce qui se passe dans\
-  \ le code pendant son ex\xE9cution. Cela aide \xE0 rep\xE9rer les erreurs et \xE0\
-  \ comprendre le flux\u2026"
+description: 'How to / Comment faire : Pour afficher quelque chose dans Lua, on utilise
+  la fonction `print()`. Voici un exemple simple .'
 lastmod: '2024-03-13T22:44:57.939187-06:00'
 model: gpt-4-1106-preview
-summary: "On imprime des donn\xE9es de d\xE9bogage pour voir ce qui se passe dans\
-  \ le code pendant son ex\xE9cution."
+summary: Pour afficher quelque chose dans Lua, on utilise la fonction `print()`.
 title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---

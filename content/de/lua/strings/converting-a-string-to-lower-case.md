@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:38:56.052733-07:00
-description: "In Lua bedeutet das Umwandeln eines Strings in Kleinbuchstaben, jeden\
-  \ Buchstaben des Strings in seine entsprechende kleine Form zu konvertieren. Diese\u2026"
+description: 'How to: In Lua ist die Umwandlung eines Strings in Kleinbuchstaben einfach
+  und geradlinig mit der Funktion `string.lower()`. Hier ein Beispiel.'
 lastmod: '2024-03-13T22:44:54.002218-06:00'
 model: gpt-4-1106-preview
-summary: In Lua bedeutet das Umwandeln eines Strings in Kleinbuchstaben, jeden Buchstaben
-  des Strings in seine entsprechende kleine Form zu konvertieren.
+summary: In Lua ist die Umwandlung eines Strings in Kleinbuchstaben einfach und geradlinig
+  mit der Funktion `string.lower()`.
 title: Umformung eines Strings in Kleinbuchstaben
 weight: 4
 ---

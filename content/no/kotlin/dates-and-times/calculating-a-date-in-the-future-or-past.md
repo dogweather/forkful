@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:31:34.551703-07:00
-description: "\xC5 beregne en dato i fremtiden eller fortiden handler om \xE5 tilf\xF8\
-  ye eller trekke fra dager, m\xE5neder eller \xE5r fra en n\xE6rv\xE6rende dato.\
-  \ Programutviklere gj\xF8r\u2026"
+description: "Slik gj\xF8r du: ."
 lastmod: '2024-03-13T22:44:40.764398-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 beregne en dato i fremtiden eller fortiden handler om \xE5 tilf\xF8\
-  ye eller trekke fra dager, m\xE5neder eller \xE5r fra en n\xE6rv\xE6rende dato."
+summary: .
 title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---

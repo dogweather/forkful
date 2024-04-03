@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:45:56.302157-07:00
-description: "Extraire des sous-cha\xEEnes, c'est comme prendre un biscuit dans la\
-  \ bo\xEEte : vous choisissez une partie sp\xE9cifique d'une cha\xEEne de caract\xE8\
-  res. Les\u2026"
+description: 'Comment faire : .'
 lastmod: '2024-03-13T22:44:57.822218-06:00'
 model: gpt-4-1106-preview
-summary: "Extraire des sous-cha\xEEnes, c'est comme prendre un biscuit dans la bo\xEE\
-  te : vous choisissez une partie sp\xE9cifique d'une cha\xEEne de caract\xE8res."
+summary: .
 title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---

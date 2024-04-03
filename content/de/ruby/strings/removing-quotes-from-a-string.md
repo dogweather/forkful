@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 03:41:21.535715-07:00
-description: "Das Entfernen von Anf\xFChrungszeichen aus einem String bedeutet, diese\
-  \ doppelten oder einfachen Anf\xFChrungszeichen wegzunehmen, die Textwerte umschlie\xDF\
-  en.\u2026"
+description: "Wie: Ruby hat einige nette Tricks auf Lager, um diese l\xE4stigen Anf\xFC\
+  hrungszeichen herauszuschneiden. Du kannst die Methoden `gsub` oder `delete` verwenden,\u2026"
 lastmod: '2024-03-13T22:44:54.386121-06:00'
 model: gpt-4-0125-preview
-summary: "Das Entfernen von Anf\xFChrungszeichen aus einem String bedeutet, diese\
-  \ doppelten oder einfachen Anf\xFChrungszeichen wegzunehmen, die Textwerte umschlie\xDF\
-  en."
+summary: "Ruby hat einige nette Tricks auf Lager, um diese l\xE4stigen Anf\xFChrungszeichen\
+  \ herauszuschneiden."
 title: "Anf\xFChrungszeichen aus einem String entfernen"
 weight: 9
 ---

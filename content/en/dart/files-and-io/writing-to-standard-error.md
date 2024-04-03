@@ -1,11 +1,11 @@
 ---
 date: 2024-03-08 21:33:36.614571-07:00
-description: "Writing to standard error (stderr) in Dart is about sending error messages\
-  \ and diagnostics to a separate stream, distinct from the standard output\u2026"
+description: "How to: In Dart, writing to stderr is straightforward using the `stderr`\
+  \ object available in `dart:io`. Here\u2019s a basic example."
 lastmod: '2024-03-13T22:44:59.835316-06:00'
 model: gpt-4-0125-preview
-summary: Writing to standard error (stderr) in Dart is about sending error messages
-  and diagnostics to a separate stream, distinct from the standard output (stdout).
+summary: In Dart, writing to stderr is straightforward using the `stderr` object available
+  in `dart:io`.
 title: Writing to standard error
 weight: 25
 ---

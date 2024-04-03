@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:54.284238-07:00
-description: "Stringinterpolatie stelt je in staat waarden in een string in te voegen.\
-  \ Het is handig voor het cre\xEBren van aangepaste berichten, het automatiseren\
-  \ van\u2026"
+description: 'Hoe te: Bash strings werken goed samen met variabelen. Laat een variabele
+  in een string vallen met enkele krullende haakjes, en je bent klaar.'
 lastmod: '2024-03-13T22:44:50.965372-06:00'
 model: gpt-4-0125-preview
-summary: Stringinterpolatie stelt je in staat waarden in een string in te voegen.
+summary: Bash strings werken goed samen met variabelen.
 title: Een string interpoleren
 weight: 8
 ---

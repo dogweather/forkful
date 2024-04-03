@@ -2,14 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:11.853228-07:00
-description: "\xC9crire un fichier texte en Java consiste \xE0 utiliser les capacit\xE9\
-  s du langage pour cr\xE9er et \xE9crire du contenu dans des fichiers sur le syst\xE8\
-  me de fichiers.\u2026"
+description: 'Comment faire : #.'
 lastmod: '2024-03-13T22:44:57.663128-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire un fichier texte en Java consiste \xE0 utiliser les capacit\xE9\
-  s du langage pour cr\xE9er et \xE9crire du contenu dans des fichiers sur le syst\xE8\
-  me de fichiers."
+summary: '#.'
 title: "R\xE9diger un fichier texte"
 weight: 24
 ---

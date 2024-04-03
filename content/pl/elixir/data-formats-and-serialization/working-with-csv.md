@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:47.684348-07:00
-description: "Praca z plikami CSV (Comma-Separated Values - warto\u015Bci oddzielone\
-  \ przecinkami) polega na odczycie z tych plik\xF3w i zapisywaniu danych do nich,\
-  \ co jest\u2026"
+description: "Jak to zrobi\u0107: Elixir, z jego pot\u0119\u017Cnym dopasowywaniem\
+  \ wzorc\xF3w i wsparciem dla \u0142\u0105czenia potokowego (pipelining), mo\u017C\
+  e skutecznie obs\u0142u\u017Cy\u0107 pliki CSV, nawet\u2026"
 lastmod: '2024-03-13T22:44:35.067342-06:00'
 model: gpt-4-0125-preview
-summary: "Praca z plikami CSV (Comma-Separated Values - warto\u015Bci oddzielone przecinkami)\
-  \ polega na odczycie z tych plik\xF3w i zapisywaniu danych do nich, co jest cz\u0119\
-  sto wymagane przy zadaniach zwi\u0105zanych z importem/eksportem danych lub prostymi\
-  \ rozwi\u0105zaniami przechowywania."
+summary: "Elixir, z jego pot\u0119\u017Cnym dopasowywaniem wzorc\xF3w i wsparciem\
+  \ dla \u0142\u0105czenia potokowego (pipelining), mo\u017Ce skutecznie obs\u0142\
+  u\u017Cy\u0107 pliki CSV, nawet bez zewn\u0119trznych bibliotek."
 title: Praca z plikami CSV
 weight: 37
 ---

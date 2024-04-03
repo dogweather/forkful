@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:19.376206-07:00
-description: "Een tekstbestand schrijven in Visual Basic for Applications (VBA) houdt\
-  \ in dat je tekstgegevens aanmaakt, wijzigt of toevoegt aan bestanden, een\u2026"
+description: "Hoe te: VBA biedt verschillende methoden om naar een bestand te schrijven,\
+  \ maar een van de meest eenvoudige manieren is door gebruik te maken van het\u2026"
 lastmod: '2024-03-13T22:44:50.655904-06:00'
 model: gpt-4-0125-preview
-summary: Een tekstbestand schrijven in Visual Basic for Applications (VBA) houdt in
-  dat je tekstgegevens aanmaakt, wijzigt of toevoegt aan bestanden, een fundamentele
-  taak voor het opslaan van uitvoer, loggen of interactie met andere applicaties.
+summary: VBA biedt verschillende methoden om naar een bestand te schrijven, maar een
+  van de meest eenvoudige manieren is door gebruik te maken van het `FileSystemObject`.
 title: Een tekstbestand schrijven
 weight: 24
 ---

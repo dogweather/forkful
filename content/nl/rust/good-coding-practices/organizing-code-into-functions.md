@@ -2,13 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:18.991405-07:00
-description: "Code organiseren in functies gaat over het opsplitsen van je programma\
-  \ in herbruikbare, modulaire stukken die door een naam ge\xEFdentificeerd worden.\
-  \ We\u2026"
+description: "Hoe: Stel je voor dat je code hebt die meerdere keren de oppervlakte\
+  \ van een cirkel berekent. In plaats van de formule te herhalen, verpak je het in\
+  \ een\u2026"
 lastmod: '2024-03-13T22:44:50.599671-06:00'
 model: gpt-4-0125-preview
-summary: "Code organiseren in functies gaat over het opsplitsen van je programma in\
-  \ herbruikbare, modulaire stukken die door een naam ge\xEFdentificeerd worden."
+summary: Stel je voor dat je code hebt die meerdere keren de oppervlakte van een cirkel
+  berekent.
 title: Code organiseren in functies
 weight: 18
 ---

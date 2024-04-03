@@ -2,18 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:29.817677-07:00
-description: "X\xF3a c\xE1c k\xFD t\u1EF1 kh\u1EDBp v\u1EDBi m\u1ED9t m\u1EABu ngh\u0129\
-  a l\xE0 lo\u1EA1i b\u1ECF c\xE1c chu\u1ED7i k\xFD t\u1EF1 c\u1EE5 th\u1EC3 kh\u1ECF\
-  i m\u1ED9t chu\u1ED7i d\u1EF1a tr\xEAn m\u1ED9t m\u1EABu \u0111\xE3 \u0111\u01B0\
-  \u1EE3c \u0111\u1ECBnh ngh\u0129a, nh\u01B0 s\u1ED1 ho\u1EB7c d\u1EA5u ch\u1EA5\
-  m c\xE2u. L\u1EADp\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: ."
 lastmod: '2024-03-13T22:44:37.075709-06:00'
 model: gpt-4-0125-preview
-summary: "X\xF3a c\xE1c k\xFD t\u1EF1 kh\u1EDBp v\u1EDBi m\u1ED9t m\u1EABu ngh\u0129\
-  a l\xE0 lo\u1EA1i b\u1ECF c\xE1c chu\u1ED7i k\xFD t\u1EF1 c\u1EE5 th\u1EC3 kh\u1ECF\
-  i m\u1ED9t chu\u1ED7i d\u1EF1a tr\xEAn m\u1ED9t m\u1EABu \u0111\xE3 \u0111\u01B0\
-  \u1EE3c \u0111\u1ECBnh ngh\u0129a, nh\u01B0 s\u1ED1 ho\u1EB7c d\u1EA5u ch\u1EA5\
-  m c\xE2u."
+summary: .
 title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
 weight: 5
 ---

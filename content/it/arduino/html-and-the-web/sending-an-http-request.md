@@ -1,10 +1,9 @@
 ---
 date: 2024-01-20 17:58:55.544615-07:00
-description: Inviamo una richiesta HTTP per comunicare con server web. Usato per ottenere
-  informazioni da servizi internet o inviarne.
+description: 'How to: Connettiti alla rete, configura l''HTTPS, invia la richiesta.'
 lastmod: '2024-03-13T22:44:43.680587-06:00'
 model: gpt-4-1106-preview
-summary: Inviamo una richiesta HTTP per comunicare con server web.
+summary: Connettiti alla rete, configura l'HTTPS, invia la richiesta.
 title: Inviare una richiesta http
 weight: 44
 ---

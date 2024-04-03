@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:32:27.534742-07:00
-description: "Vertaillaan kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 selvitt\xE4m\xE4\xE4\
-  n niiden j\xE4rjestys tai aikaero. Tarpeen esimerkiksi ajanhallinnassa ja tapahtumien\
-  \ seurannassa."
+description: 'How to: (Miten toimia:) .'
 lastmod: '2024-03-13T22:44:56.836076-06:00'
 model: gpt-4-1106-preview
-summary: "Vertaillaan kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 selvitt\xE4m\xE4\xE4n niiden\
-  \ j\xE4rjestys tai aikaero."
+summary: .
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---

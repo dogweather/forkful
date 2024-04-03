@@ -2,17 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:00.852741-07:00
-description: "Vi\u1EC7c vi\u1EBFt hoa c\xF3 ngh\u0129a l\xE0 thay \u0111\u1ED5i ch\u1EEF\
-  \ c\xE1i \u0111\u1EA7u ti\xEAn c\u1EE7a t\u1EEB th\xE0nh ch\u1EEF in hoa; trong\
-  \ chu\u1ED7i k\xFD t\u1EF1, th\u01B0\u1EDDng li\xEAn quan \u0111\u1EBFn vi\u1EC7\
-  c \u0111\u1ECBnh d\u1EA1ng ho\u1EB7c l\xE0m cho v\u0103n b\u1EA3n\u2026"
+description: "L\xE0m Th\u1EBF N\xE0o: Swift l\xE0m cho vi\u1EC7c vi\u1EBFt hoa chu\u1ED7\
+  i k\xFD t\u1EF1 tr\u1EDF n\xEAn tr\u1EF1c ti\u1EBFp. D\u01B0\u1EDBi \u0111\xE2y\
+  \ l\xE0 m\u1ED9t h\u01B0\u1EDBng d\u1EABn nhanh."
 lastmod: '2024-03-13T22:44:37.074326-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c vi\u1EBFt hoa c\xF3 ngh\u0129a l\xE0 thay \u0111\u1ED5i ch\u1EEF\
-  \ c\xE1i \u0111\u1EA7u ti\xEAn c\u1EE7a t\u1EEB th\xE0nh ch\u1EEF in hoa; trong\
-  \ chu\u1ED7i k\xFD t\u1EF1, th\u01B0\u1EDDng li\xEAn quan \u0111\u1EBFn vi\u1EC7\
-  c \u0111\u1ECBnh d\u1EA1ng ho\u1EB7c l\xE0m cho v\u0103n b\u1EA3n th\xE2n thi\u1EC7\
-  n v\u1EDBi ng\u01B0\u1EDDi d\xF9ng h\u01A1n."
+summary: "Swift l\xE0m cho vi\u1EC7c vi\u1EBFt hoa chu\u1ED7i k\xFD t\u1EF1 tr\u1EDF\
+  \ n\xEAn tr\u1EF1c ti\u1EBFp."
 title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
 weight: 2
 ---

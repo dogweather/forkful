@@ -2,16 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:29.425235-07:00
-description: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh trong Java\
-  \ l\xE0 vi\u1EC7c l\u1EA5y input cung c\u1EA5p b\u1EDFi ng\u01B0\u1EDDi d\xF9ng\
-  \ khi h\u1ECD kh\u1EDFi \u0111\u1ED9ng ch\u01B0\u01A1ng tr\xECnh c\u1EE7a b\u1EA1\
-  n t\u1EEB console. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Java thu th\u1EADp c\xE1c \u0111\u1ED1i s\u1ED1\
+  \ d\xF2ng l\u1EC7nh m\xE0 b\u1EA1n ph\xE1t ra v\u1EDBi ph\u01B0\u01A1ng th\u1EE9\
+  c `main`. H\xE3y nh\xECn v\xE0o v\xED d\u1EE5 ng\u1EAFn g\u1ECDn n\xE0y."
 lastmod: '2024-03-13T22:44:36.509441-06:00'
 model: gpt-4-0125-preview
-summary: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh trong Java\
-  \ l\xE0 vi\u1EC7c l\u1EA5y input cung c\u1EA5p b\u1EDFi ng\u01B0\u1EDDi d\xF9ng\
-  \ khi h\u1ECD kh\u1EDFi \u0111\u1ED9ng ch\u01B0\u01A1ng tr\xECnh c\u1EE7a b\u1EA1\
-  n t\u1EEB console."
+summary: "Java thu th\u1EADp c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh m\xE0\
+  \ b\u1EA1n ph\xE1t ra v\u1EDBi ph\u01B0\u01A1ng th\u1EE9c `main`."
 title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
 weight: 23
 ---

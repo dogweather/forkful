@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 04:38:48.117873-07:00
-description: "Komplexe Zahlen bestehen aus einem Realteil und einem Imagin\xE4rteil\
-  \ (wie `3 + 4i`). Sie werden in der Ingenieurwissenschaft, Physik und bei bestimmten\u2026"
+description: "Wie: Elixir bietet keine eingebauten komplexen Zahlen, daher m\xFCssen\
+  \ wir unsere eigenen erstellen oder eine Bibliothek wie `ComplexNum` verwenden.\
+  \ Hier ist\u2026"
 lastmod: '2024-03-13T22:44:53.461662-06:00'
 model: gpt-4-0125-preview
-summary: "Komplexe Zahlen bestehen aus einem Realteil und einem Imagin\xE4rteil (wie\
-  \ `3 + 4i`)."
+summary: "Elixir bietet keine eingebauten komplexen Zahlen, daher m\xFCssen wir unsere\
+  \ eigenen erstellen oder eine Bibliothek wie `ComplexNum` verwenden."
 title: Umgang mit komplexen Zahlen
 weight: 14
 ---

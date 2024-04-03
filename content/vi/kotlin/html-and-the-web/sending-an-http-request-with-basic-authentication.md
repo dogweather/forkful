@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:14.522381-07:00
-description: "X\xE1c th\u1EF1c c\u01A1 b\u1EA3n \u0111\xEDnh k\xE8m m\u1ED9t t\u1ED5\
-  \ h\u1EE3p t\xEAn ng\u01B0\u1EDDi d\xF9ng:m\u1EADt kh\u1EA9u v\xE0o m\u1ED9t y\xEA\
-  u c\u1EA7u HTTP. C\xE1c nh\xE0 ph\xE1t tri\u1EC3n s\u1EED d\u1EE5ng n\xF3 nh\u01B0\
-  \ m\u1ED9t c\xE1ch nhanh ch\xF3ng v\xE0 b\u1EA9n \u0111\u1EC3 ch\u1EE9ng\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Kotlin x\u1EED l\xFD y\xEAu c\u1EA7u HTTP\
+  \ v\u1EDBi c\xE1c th\u01B0 vi\u1EC7n nh\u01B0 `ktor` ho\u1EB7c `okhttp`. Ch\xFA\
+  ng ta s\u1EBD s\u1EED d\u1EE5ng `okhttp` cho b\xE2y gi\u1EDD. Tr\u01B0\u1EDBc ti\xEA\
+  n, th\xEAm th\u01B0 vi\u1EC7n\u2026"
 lastmod: '2024-03-13T22:44:36.601308-06:00'
 model: gpt-4-0125-preview
-summary: "X\xE1c th\u1EF1c c\u01A1 b\u1EA3n \u0111\xEDnh k\xE8m m\u1ED9t t\u1ED5 h\u1EE3\
-  p t\xEAn ng\u01B0\u1EDDi d\xF9ng:m\u1EADt kh\u1EA9u v\xE0o m\u1ED9t y\xEAu c\u1EA7\
-  u HTTP."
+summary: "Kotlin x\u1EED l\xFD y\xEAu c\u1EA7u HTTP v\u1EDBi c\xE1c th\u01B0 vi\u1EC7\
+  n nh\u01B0 `ktor` ho\u1EB7c `okhttp`."
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3\
   n"
 weight: 45

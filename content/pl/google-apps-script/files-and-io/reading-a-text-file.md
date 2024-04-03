@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:25.678548-07:00
-description: "Odczytywanie pliku tekstowego w Google Apps Script (GAS) polega na dost\u0119\
-  pie do danych tekstowych z plik\xF3w przechowywanych w Google Drive lub innym\u2026"
+description: "Jak to zrobi\u0107: Aby zacz\u0105\u0107 czyta\u0107 plik tekstowy za\
+  \ pomoc\u0105 Google Apps Script, zazwyczaj nale\u017Cy u\u017Cy\u0107 Google Drive\
+  \ API. Oto podstawowy przyk\u0142ad pokazuj\u0105cy,\u2026"
 lastmod: '2024-03-13T22:44:34.922496-06:00'
 model: gpt-4-0125-preview
-summary: "Odczytywanie pliku tekstowego w Google Apps Script (GAS) polega na dost\u0119\
-  pie do danych tekstowych z plik\xF3w przechowywanych w Google Drive lub innym dost\u0119\
-  pnym chmurowym schowku."
+summary: "Aby zacz\u0105\u0107 czyta\u0107 plik tekstowy za pomoc\u0105 Google Apps\
+  \ Script, zazwyczaj nale\u017Cy u\u017Cy\u0107 Google Drive API."
 title: Czytanie pliku tekstowego
 weight: 22
 ---

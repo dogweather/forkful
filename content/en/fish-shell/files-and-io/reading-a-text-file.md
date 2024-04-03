@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:54:14.326383-07:00
-description: "Reading a text file is grabbing the data within a file for processing.\
-  \ Programmers do it to extract information, configure apps, parse logs, or just\
-  \ feed\u2026"
+description: 'How to: Here''s the Fish Shell scoop on opening those text files.'
 lastmod: '2024-03-13T22:45:00.489814-06:00'
 model: gpt-4-1106-preview
-summary: Reading a text file is grabbing the data within a file for processing.
+summary: Here's the Fish Shell scoop on opening those text files.
 title: Reading a text file
 weight: 22
 ---

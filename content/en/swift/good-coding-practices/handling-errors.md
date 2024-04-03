@@ -1,12 +1,10 @@
 ---
 date: 2024-01-21 21:19:52.546193-07:00
-description: "Handling errors in Swift means anticipating and responding to problems\
-  \ that pop up when your code runs. We do it to control the chaos\u2014keeping apps\
-  \ from\u2026"
+description: "How to: Swift uses error handling with `do`, `try`, and `catch` blocks.\
+  \ Let\u2019s take a look."
 lastmod: '2024-03-13T22:45:00.403054-06:00'
 model: gpt-4-1106-preview
-summary: Handling errors in Swift means anticipating and responding to problems that
-  pop up when your code runs.
+summary: Swift uses error handling with `do`, `try`, and `catch` blocks.
 title: Handling errors
 weight: 16
 ---

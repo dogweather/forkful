@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 04:24:40.901205-07:00
-description: "TOML, abreviatura de Tom's Obvious, Minimal Language (Lenguaje M\xED\
-  nimo y Obvio de Tom), es un formato de serializaci\xF3n de datos que es f\xE1cil\
-  \ de leer debido\u2026"
+description: "C\xF3mo hacerlo: En PowerShell, no hay un cmdlet nativo para analizar\
+  \ TOML. T\xEDpicamente usar\xEDas un m\xF3dulo o convertir\xEDas TOML a JSON con\
+  \ una herramienta como\u2026"
 lastmod: '2024-03-13T22:44:59.315977-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, abreviatura de Tom's Obvious, Minimal Language (Lenguaje M\xEDnimo\
-  \ y Obvio de Tom), es un formato de serializaci\xF3n de datos que es f\xE1cil de\
-  \ leer debido a su sem\xE1ntica clara."
+summary: En PowerShell, no hay un cmdlet nativo para analizar TOML.
 title: Trabajando con TOML
 weight: 39
 ---

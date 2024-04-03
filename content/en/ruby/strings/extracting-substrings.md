@@ -1,10 +1,9 @@
 ---
 date: 2024-01-20 17:46:34.472563-07:00
-description: "Extracting substrings is about pulling out specific bits of text from\
-  \ a string. Programmers do it to manipulate and use parts of data\u2014like grabbing\u2026"
+description: 'How to: Ruby makes extracting substrings simple. Let''s cut to the chase.'
 lastmod: '2024-03-13T22:45:00.538680-06:00'
 model: gpt-4-1106-preview
-summary: Extracting substrings is about pulling out specific bits of text from a string.
+summary: Ruby makes extracting substrings simple.
 title: Extracting substrings
 weight: 6
 ---

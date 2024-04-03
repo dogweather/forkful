@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:23:45.447274-07:00
-description: "TOML, eine Abk\xFCrzung f\xFCr Toms Offensichtliche, Minimale Sprache,\
-  \ definiert, wie Konfigurationsdateien strukturiert werden sollen. Programmierer\
-  \ arbeiten\u2026"
+description: "Wie man vorgeht: Um mit TOML in JavaScript zu arbeiten, ben\xF6tigen\
+  \ Sie einen Parser wie `@iarna/toml`. Installieren Sie es zuerst: `npm install\u2026"
 lastmod: '2024-03-13T22:44:54.289719-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, eine Abk\xFCrzung f\xFCr Toms Offensichtliche, Minimale Sprache, definiert,\
-  \ wie Konfigurationsdateien strukturiert werden sollen."
+summary: "Um mit TOML in JavaScript zu arbeiten, ben\xF6tigen Sie einen Parser wie\
+  \ `@iarna/toml`."
 title: Arbeiten mit TOML
 weight: 39
 ---

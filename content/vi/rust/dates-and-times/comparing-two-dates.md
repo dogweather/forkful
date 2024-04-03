@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:15.085956-07:00
-description: "So s\xE1nh hai ng\xE0y th\xE1ng c\xF3 ngh\u0129a l\xE0 ki\u1EC3m tra\
-  \ xem ch\xFAng c\xF3 b\u1EB1ng nhau kh\xF4ng, ho\u1EB7c m\u1ED9t ng\xE0y n\xE0o\
-  \ \u0111\xF3 di\u1EC5n ra tr\u01B0\u1EDBc ho\u1EB7c sau ng\xE0y kia. L\u1EADp tr\xEC\
-  nh vi\xEAn s\u1EED d\u1EE5ng\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Rust s\u1EED d\u1EE5ng `chrono` \u0111\u1EC3\
+  \ d\u1EC5 d\xE0ng x\u1EED l\xFD ng\xE0y th\xE1ng. \u0110\u1EA7u ti\xEAn, `cargo.toml`\
+  \ c\u1EA7n `chrono = \"0.4\"`. Sau \u0111\xF3, b\u1EA1n c\xF3 th\u1EC3 so s\xE1\
+  nh ng\xE0y nh\u01B0 sau."
 lastmod: '2024-03-13T22:44:36.392934-06:00'
 model: gpt-4-0125-preview
-summary: "So s\xE1nh hai ng\xE0y th\xE1ng c\xF3 ngh\u0129a l\xE0 ki\u1EC3m tra xem\
-  \ ch\xFAng c\xF3 b\u1EB1ng nhau kh\xF4ng, ho\u1EB7c m\u1ED9t ng\xE0y n\xE0o \u0111\
-  \xF3 di\u1EC5n ra tr\u01B0\u1EDBc ho\u1EB7c sau ng\xE0y kia."
+summary: "Rust s\u1EED d\u1EE5ng `chrono` \u0111\u1EC3 d\u1EC5 d\xE0ng x\u1EED l\xFD\
+  \ ng\xE0y th\xE1ng."
 title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---

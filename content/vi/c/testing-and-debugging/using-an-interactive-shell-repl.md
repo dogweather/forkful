@@ -2,17 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:34.738001-07:00
-description: "M\u1ED9t shell t\u01B0\u01A1ng t\xE1c, c\xF2n \u0111\u01B0\u1EE3c g\u1ECD\
-  i l\xE0 V\xF2ng l\u1EB7p \u0110\u1ECDc-\u0110\xE1nh gi\xE1-In (REPL), cho ph\xE9\
-  p l\u1EADp tr\xECnh vi\xEAn nh\u1EADp bi\u1EC3u th\u1EE9c ho\u1EB7c m\xE3 v\xE0\
-  \ ngay l\u1EADp t\u1EE9c th\u1EA5y k\u1EBFt qu\u1EA3, t\u0103ng\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EC3 t\u01B0\u01A1ng t\xE1c v\u1EDB\
+  i REPL C, b\u1EA1n c\xF3 th\u1EC3 s\u1EBD kh\xF4ng t\xECm th\u1EA5y m\u1ED9t con\
+  \ \u0111\u01B0\u1EDDng th\u1EB3ng th\u1EAFn nh\u01B0 trong ng\xF4n ng\u1EEF nh\u01B0\
+  \ Python ho\u1EB7c JavaScript. Tuy nhi\xEAn, c\xE1c\u2026"
 lastmod: '2024-03-13T22:44:37.270334-06:00'
 model: gpt-4-0125-preview
-summary: "M\u1ED9t shell t\u01B0\u01A1ng t\xE1c, c\xF2n \u0111\u01B0\u1EE3c g\u1ECD\
-  i l\xE0 V\xF2ng l\u1EB7p \u0110\u1ECDc-\u0110\xE1nh gi\xE1-In (REPL), cho ph\xE9\
-  p l\u1EADp tr\xECnh vi\xEAn nh\u1EADp bi\u1EC3u th\u1EE9c ho\u1EB7c m\xE3 v\xE0\
-  \ ngay l\u1EADp t\u1EE9c th\u1EA5y k\u1EBFt qu\u1EA3, t\u0103ng c\u01B0\u1EDDng\
-  \ qu\xE1 tr\xECnh h\u1ECDc t\u1EADp v\xE0 g\u1EE1 l\u1ED7i."
+summary: "\u0110\u1EC3 t\u01B0\u01A1ng t\xE1c v\u1EDBi REPL C, b\u1EA1n c\xF3 th\u1EC3\
+  \ s\u1EBD kh\xF4ng t\xECm th\u1EA5y m\u1ED9t con \u0111\u01B0\u1EDDng th\u1EB3ng\
+  \ th\u1EAFn nh\u01B0 trong ng\xF4n ng\u1EEF nh\u01B0 Python ho\u1EB7c JavaScript."
 title: "S\u1EED d\u1EE5ng giao di\u1EC7n d\xF2ng l\u1EC7nh t\u01B0\u01A1ng t\xE1c\
   \ (REPL)"
 weight: 34

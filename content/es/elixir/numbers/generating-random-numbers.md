@@ -1,14 +1,12 @@
 ---
 date: 2024-01-27 20:32:40.260311-07:00
-description: "Generar n\xFAmeros aleatorios en Elixir es una tarea de programaci\xF3\
-  n fundamental, vital para aplicaciones que necesitan resultados impredecibles como\
-  \ en la\u2026"
+description: "C\xF3mo hacerlo: Para generar n\xFAmeros aleatorios en Elixir, se utiliza\
+  \ principalmente el m\xF3dulo `:rand` que proporciona varias funciones para este\
+  \ prop\xF3sito.\u2026"
 lastmod: '2024-03-13T22:44:58.698289-06:00'
 model: gpt-4-0125-preview
-summary: "Generar n\xFAmeros aleatorios en Elixir es una tarea de programaci\xF3n\
-  \ fundamental, vital para aplicaciones que necesitan resultados impredecibles como\
-  \ en la generaci\xF3n de tokens seguros, el muestreo de datos o en algoritmos de\
-  \ juegos."
+summary: "Para generar n\xFAmeros aleatorios en Elixir, se utiliza principalmente\
+  \ el m\xF3dulo `:rand` que proporciona varias funciones para este prop\xF3sito."
 title: "Generaci\xF3n de n\xFAmeros aleatorios"
 weight: 12
 ---

@@ -1,12 +1,13 @@
 ---
 date: 2024-01-20 17:40:00.515995-07:00
-description: "Tworzymy tymczasowy plik, by obrabia\u0107 dane, kt\xF3re nie musz\u0105\
-  \ trwa\u0107 d\u0142ugo. Programi\u015Bci robi\u0105 to, by testowa\u0107 kod, przechowywa\u0107\
-  \ dane sekwencyjnie, lub\u2026"
+description: "How to: W Elixirze nie ma wbudowanej obs\u0142ugi dla tworzenia tymczasowych\
+  \ plik\xF3w, ale mo\u017Cemy u\u017Cy\u0107 `System.cmd/3` z `mktemp` dost\u0119\
+  pnym na wi\u0119kszo\u015Bci system\xF3w\u2026"
 lastmod: '2024-03-13T22:44:35.064193-06:00'
 model: gpt-4-1106-preview
-summary: "Tworzymy tymczasowy plik, by obrabia\u0107 dane, kt\xF3re nie musz\u0105\
-  \ trwa\u0107 d\u0142ugo."
+summary: "W Elixirze nie ma wbudowanej obs\u0142ugi dla tworzenia tymczasowych plik\xF3\
+  w, ale mo\u017Cemy u\u017Cy\u0107 `System.cmd/3` z `mktemp` dost\u0119pnym na wi\u0119\
+  kszo\u015Bci system\xF3w UNIX."
 title: Tworzenie pliku tymczasowego
 weight: 21
 ---

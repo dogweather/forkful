@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:54:23.424815-07:00
-description: "\xC5 lese en tekstfil betyr \xE5 hente og se innholdet som er lagret\
-  \ i filen. Programmerere gj\xF8r dette for \xE5 behandle data, konfigurere systemer\
-  \ eller skript,\u2026"
+description: "Slik gj\xF8r du: Her er noen enkle kommandoer for \xE5 lese tekstfiler\
+  \ i Bash."
 lastmod: '2024-03-13T22:44:40.992085-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 lese en tekstfil betyr \xE5 hente og se innholdet som er lagret i filen."
+summary: "Her er noen enkle kommandoer for \xE5 lese tekstfiler i Bash."
 title: Lese en tekstfil
 weight: 22
 ---

@@ -1,10 +1,9 @@
 ---
 date: 2024-01-20 17:48:07.158280-07:00
-description: "Finding the length of a string means counting its characters. It's basic\
-  \ but crucial for tasks like validation, text-processing, and determining storage\u2026"
+description: 'How to: Ruby keeps it simple with the `.length` method.'
 lastmod: '2024-03-13T22:45:00.540444-06:00'
 model: gpt-4-1106-preview
-summary: Finding the length of a string means counting its characters.
+summary: Ruby keeps it simple with the `.length` method.
 title: Finding the length of a string
 weight: 7
 ---

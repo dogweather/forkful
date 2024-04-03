@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:08.600820-07:00
-description: "Escrever no erro padr\xE3o (stderr) em PHP diz respeito a direcionar\
-  \ mensagens de erro ou diagn\xF3sticos separadamente da sa\xEDda padr\xE3o (stdout),\
-  \ permitindo que\u2026"
+description: "Como fazer: Em PHP, escrever no stderr pode ser alcan\xE7ado usando\
+  \ a fun\xE7\xE3o `fwrite()` juntamente com a constante predefinida `STDERR`, que\
+  \ representa o\u2026"
 lastmod: '2024-03-13T22:44:46.683477-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever no erro padr\xE3o (stderr) em PHP diz respeito a direcionar mensagens\
-  \ de erro ou diagn\xF3sticos separadamente da sa\xEDda padr\xE3o (stdout), permitindo\
-  \ que desenvolvedores gerenciem melhor seus fluxos de sa\xEDda para fins de depura\xE7\
-  \xE3o e registro."
+summary: "Em PHP, escrever no stderr pode ser alcan\xE7ado usando a fun\xE7\xE3o `fwrite()`\
+  \ juntamente com a constante predefinida `STDERR`, que representa o fluxo de sa\xED\
+  da de erros."
 title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---

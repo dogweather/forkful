@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:03:04.819670-07:00
-description: "Regular expressions (regex) in Java allow you to define specific patterns\
-  \ to search, manipulate, or validate strings in your code. Programmers use them\u2026"
+description: "How to: Java's built-in support for regex is primarily through the `Pattern`\
+  \ and `Matcher` classes in the `java.util.regex` package. Here\u2019s a simple\u2026"
 lastmod: '2024-03-13T22:44:59.963542-06:00'
 model: gpt-4-0125-preview
-summary: Regular expressions (regex) in Java allow you to define specific patterns
-  to search, manipulate, or validate strings in your code.
+summary: Java's built-in support for regex is primarily through the `Pattern` and
+  `Matcher` classes in the `java.util.regex` package.
 title: Using regular expressions
 weight: 11
 ---

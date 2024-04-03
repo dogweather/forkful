@@ -2,13 +2,13 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:09:55.187301-07:00
-description: "I Arduino-v\xE4rlden l\xE5ter associativa arrayer dig koppla nycklar\
-  \ till v\xE4rden, lite som att du skulle matcha sockor med deras par. De \xE4r ett\
-  \ givet val n\xE4r du\u2026"
+description: "Hur g\xF6r man: Arduino har, strikt talat, inte inbyggt st\xF6d f\xF6\
+  r associativa arrayer som du skulle hitta i h\xF6gre programmeringsspr\xE5k. Men,\
+  \ frukta inte. Vi\u2026"
 lastmod: '2024-03-13T22:44:38.161192-06:00'
 model: gpt-4-0125-preview
-summary: "I Arduino-v\xE4rlden l\xE5ter associativa arrayer dig koppla nycklar till\
-  \ v\xE4rden, lite som att du skulle matcha sockor med deras par."
+summary: "Arduino har, strikt talat, inte inbyggt st\xF6d f\xF6r associativa arrayer\
+  \ som du skulle hitta i h\xF6gre programmeringsspr\xE5k."
 title: "Att anv\xE4nda associativa arrayer"
 weight: 15
 ---

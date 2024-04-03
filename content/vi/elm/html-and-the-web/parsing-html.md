@@ -2,16 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:51.111206-07:00
-description: "Vi\u1EC7c ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0\
-  \ chuy\u1EC3n \u0111\u1ED5i v\u0103n b\u1EA3n HTML th\xE0nh m\u1ED9t c\u1EA5u tr\xFA\
-  c d\u1EEF li\u1EC7u m\xE0 ch\u01B0\u01A1ng tr\xECnh c\u1EE7a b\u1EA1n c\xF3 th\u1EC3\
-  \ t\u01B0\u01A1ng t\xE1c \u0111\u01B0\u1EE3c. C\xE1c l\u1EADp tr\xECnh\u2026"
+description: "L\xE0m Th\u1EBF N\xE0o: Elm kh\xF4ng t\u1EF1 ph\xE2n t\xEDch c\xFA ph\xE1\
+  p HTML ngay l\u1EADp t\u1EE9c m\xE0 thay v\xE0o \u0111\xF3, n\xF3 t\u1EADp trung\
+  \ v\xE0o vi\u1EC7c render c\xE1c view v\u1EDBi module `Html` c\u1EE7a ri\xEAng m\xEC\
+  nh. \u0110\u1EC3\u2026"
 lastmod: '2024-03-13T22:44:36.541168-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 chuy\u1EC3\
-  n \u0111\u1ED5i v\u0103n b\u1EA3n HTML th\xE0nh m\u1ED9t c\u1EA5u tr\xFAc d\u1EEF\
-  \ li\u1EC7u m\xE0 ch\u01B0\u01A1ng tr\xECnh c\u1EE7a b\u1EA1n c\xF3 th\u1EC3 t\u01B0\
-  \u01A1ng t\xE1c \u0111\u01B0\u1EE3c."
+summary: "Elm kh\xF4ng t\u1EF1 ph\xE2n t\xEDch c\xFA ph\xE1p HTML ngay l\u1EADp t\u1EE9\
+  c m\xE0 thay v\xE0o \u0111\xF3, n\xF3 t\u1EADp trung v\xE0o vi\u1EC7c render c\xE1\
+  c view v\u1EDBi module `Html` c\u1EE7a ri\xEAng m\xECnh."
 title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---

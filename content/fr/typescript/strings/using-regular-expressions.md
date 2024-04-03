@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:05.333545-07:00
-description: "Les expressions r\xE9guli\xE8res, ou regex, sont un outil puissant de\
-  \ correspondance et de recherche de motifs en programmation. Les programmeurs utilisent\u2026"
+description: "Comment faire : Plongeons dans TypeScript pour voir comment les regex\
+  \ sont utilis\xE9es pour des t\xE2ches courantes."
 lastmod: '2024-03-13T22:44:57.426065-06:00'
 model: gpt-4-0125-preview
-summary: "Les expressions r\xE9guli\xE8res, ou regex, sont un outil puissant de correspondance\
-  \ et de recherche de motifs en programmation."
+summary: "Plongeons dans TypeScript pour voir comment les regex sont utilis\xE9es\
+  \ pour des t\xE2ches courantes."
 title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---

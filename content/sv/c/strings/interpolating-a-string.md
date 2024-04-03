@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:24.862763-07:00
-description: "Str\xE4nginterpolering, i programmering, inneb\xE4r konstruktionen av\
-  \ str\xE4ngar genom att b\xE4dda in uttryck inom litterala str\xE4ngar. Programmerare\
-  \ g\xF6r detta f\xF6r\u2026"
+description: "Hur man g\xE5r till v\xE4ga: C, till skillnad fr\xE5n vissa h\xF6gniv\xE5\
+  spr\xE5k, st\xF6der inte str\xE4nginterpolering direkt i sin syntax. Ist\xE4llet\
+  \ uppn\xE5s str\xE4ngkonstruktion\u2026"
 lastmod: '2024-03-13T22:44:38.367125-06:00'
 model: gpt-4-0125-preview
-summary: "Str\xE4nginterpolering, i programmering, inneb\xE4r konstruktionen av str\xE4\
-  ngar genom att b\xE4dda in uttryck inom litterala str\xE4ngar."
+summary: "C, till skillnad fr\xE5n vissa h\xF6gniv\xE5spr\xE5k, st\xF6der inte str\xE4\
+  nginterpolering direkt i sin syntax."
 title: "Interpolera en str\xE4ng"
 weight: 8
 ---

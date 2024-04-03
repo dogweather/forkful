@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 20:33:03.540409-07:00
-description: "Generar n\xFAmeros aleatorios en la programaci\xF3n trata sobre crear\
-  \ valores que no pueden ser predichos l\xF3gicamente con antelaci\xF3n. Los programadores\
-  \ hacen\u2026"
+description: "C\xF3mo hacerlo: En Clojure, la generaci\xF3n de n\xFAmeros aleatorios\
+  \ es sencilla, y hay un par de funciones incorporadas que se pueden usar de inmediato.\
+  \ Para\u2026"
 lastmod: '2024-03-13T22:44:58.652469-06:00'
 model: gpt-4-0125-preview
-summary: "Generar n\xFAmeros aleatorios en la programaci\xF3n trata sobre crear valores\
-  \ que no pueden ser predichos l\xF3gicamente con antelaci\xF3n."
+summary: "En Clojure, la generaci\xF3n de n\xFAmeros aleatorios es sencilla, y hay\
+  \ un par de funciones incorporadas que se pueden usar de inmediato."
 title: "Generaci\xF3n de n\xFAmeros aleatorios"
 weight: 12
 ---

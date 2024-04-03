@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:08.509909-07:00
-description: "YAML, que significa \"YAML Ain't Markup Language\" (YAML No es un Lenguaje\
-  \ de Marcado), es un est\xE1ndar de serializaci\xF3n de datos legible por humanos\
-  \ que se\u2026"
+description: "C\xF3mo hacerlo: Trabajar con YAML en C requiere una biblioteca, ya\
+  \ que la biblioteca est\xE1ndar de C no proporciona soporte directo para el an\xE1\
+  lisis o\u2026"
 lastmod: '2024-03-13T22:44:59.568081-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, que significa \"YAML Ain't Markup Language\" (YAML No es un Lenguaje\
-  \ de Marcado), es un est\xE1ndar de serializaci\xF3n de datos legible por humanos\
-  \ que se puede utilizar para todo tipo de aplicaciones, desde archivos de configuraci\xF3\
-  n hasta almacenamiento de datos."
+summary: "Trabajar con YAML en C requiere una biblioteca, ya que la biblioteca est\xE1\
+  ndar de C no proporciona soporte directo para el an\xE1lisis o serializaci\xF3n\
+  \ de YAML."
 title: Trabajando con YAML
 weight: 41
 ---

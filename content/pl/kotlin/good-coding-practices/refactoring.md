@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 01:44:13.455403-07:00
-description: "Refaktoryzacja to proces modyfikacji istniej\u0105cego kodu w celu polepszenia\
-  \ jego struktury, czytelno\u015Bci i wydajno\u015Bci, bez zmiany jego zewn\u0119\
-  trznego\u2026"
+description: "Jak to zrobi\u0107: Oto fragment kodu w Kotlinie pokazuj\u0105cy powszechny\
+  \ \"smr\xF3d\" kodu oraz jego zrefaktoryzowan\u0105 wersj\u0119. Zaczynamy od kawa\u0142\
+  ka kodu, kt\xF3ry robi za\u2026"
 lastmod: '2024-03-13T22:44:35.373360-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktoryzacja to proces modyfikacji istniej\u0105cego kodu w celu polepszenia\
-  \ jego struktury, czytelno\u015Bci i wydajno\u015Bci, bez zmiany jego zewn\u0119\
-  trznego zachowania."
+summary: "Oto fragment kodu w Kotlinie pokazuj\u0105cy powszechny \"smr\xF3d\" kodu\
+  \ oraz jego zrefaktoryzowan\u0105 wersj\u0119."
 title: Refaktoryzacja
 weight: 19
 ---

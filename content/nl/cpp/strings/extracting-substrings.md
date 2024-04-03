@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:44.012006-07:00
-description: "Het extraheren van substrings betekent het wegnemen van kleine stukjes\
-  \ uit een grotere string. Programmeurs doen dit om specifieke data binnen een tekst\u2026"
+description: "Hoe te: C++ maakt het gemakkelijk om een substring te pakken. `std::string`\
+  \ is hier onze betrouwbare hulp, met de functie `substr()` die het meeste zware\u2026"
 lastmod: '2024-03-13T22:44:51.101740-06:00'
 model: gpt-4-0125-preview
-summary: Het extraheren van substrings betekent het wegnemen van kleine stukjes uit
-  een grotere string.
+summary: C++ maakt het gemakkelijk om een substring te pakken.
 title: Substrings extraheren
 weight: 6
 ---

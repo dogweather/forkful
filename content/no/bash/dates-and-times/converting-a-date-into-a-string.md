@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:35:51.419531-07:00
-description: "Dato til tekstkonvertering inneb\xE6rer \xE5 endre en dato-representasjon\
-  \ til en lesbar tekststreng. Programmerere gj\xF8r dette for \xE5 vise datoen i\
-  \ et format som\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:40.986407-06:00'
 model: gpt-4-1106-preview
-summary: "Dato til tekstkonvertering inneb\xE6rer \xE5 endre en dato-representasjon\
-  \ til en lesbar tekststreng."
+summary: .
 title: Konvertere en dato til en streng
 weight: 28
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:40:07.580006-07:00
-description: "Midlertidige filer er kortlivet dataoppbevaring p\xE5 disk. Vi lager\
-  \ dem for sikker og flyktig datah\xE5ndtering, ofte ved h\xE5ndtering av store datamengder\
-  \ eller\u2026"
+description: "How to (Slik gj\xF8r du det) C# tilbyr flere m\xE5ter \xE5 opprette\
+  \ midlertidige filer. Her er et enkelt eksempel med `Path.GetTempFileName()`."
 lastmod: '2024-03-13T22:44:40.817410-06:00'
 model: gpt-4-1106-preview
-summary: "Midlertidige filer er kortlivet dataoppbevaring p\xE5 disk."
+summary: "C# tilbyr flere m\xE5ter \xE5 opprette midlertidige filer."
 title: Opprette en midlertidig fil
 weight: 21
 ---

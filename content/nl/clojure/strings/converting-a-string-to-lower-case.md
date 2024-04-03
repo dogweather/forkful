@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:35.522172-07:00
-description: "Een string omzetten naar kleine letters betekent het transformeren van\
-  \ alle karakters in de tekst naar hun varianten in kleine letters, zoals het\u2026"
+description: 'Hoe: In Clojure, om een string naar kleine letters om te zetten, gebruik
+  je de `clojure.string/lower-case` functie. Kijk hoe eenvoudig het is.'
 lastmod: '2024-03-13T22:44:50.405472-06:00'
 model: gpt-4-0125-preview
-summary: Een string omzetten naar kleine letters betekent het transformeren van alle
-  karakters in de tekst naar hun varianten in kleine letters, zoals het veranderen
-  van "Hello, World.
+summary: In Clojure, om een string naar kleine letters om te zetten, gebruik je de
+  `clojure.string/lower-case` functie.
 title: Een string omzetten naar kleine letters
 weight: 4
 ---

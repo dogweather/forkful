@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:11:44.189681-07:00
-description: "Organizar el c\xF3digo en funciones consiste en desglosar tu c\xF3digo\
-  \ en bloques reutilizables con fines espec\xEDficos. Lo hacemos para que el c\xF3\
-  digo sea m\xE1s\u2026"
+description: "C\xF3mo hacerlo: Digamos que est\xE1s escribiendo un script para calcular\
+  \ el cuadrado y el cubo de un n\xFAmero. Sin funciones, es un l\xEDo de repeticiones."
 lastmod: '2024-03-13T22:44:58.617976-06:00'
 model: gpt-4-1106-preview
-summary: "Organizar el c\xF3digo en funciones consiste en desglosar tu c\xF3digo en\
-  \ bloques reutilizables con fines espec\xEDficos."
+summary: "Digamos que est\xE1s escribiendo un script para calcular el cuadrado y el\
+  \ cubo de un n\xFAmero."
 title: "Organizando c\xF3digo en funciones"
 weight: 18
 ---

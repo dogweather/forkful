@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:45:24.269969-07:00
-description: "Extraire des sous-cha\xEEnes, c'est r\xE9cup\xE9rer des parties sp\xE9\
-  cifiques d'une cha\xEEne de caract\xE8res. On le fait pour analyser, formater ou\
-  \ manipuler des donn\xE9es\u2026"
+description: "How to: En Elm, on utilise les fonctions `String.slice` pour d\xE9couper\
+  \ une sous-cha\xEEne. Voici comment."
 lastmod: '2024-03-13T22:44:57.676970-06:00'
 model: gpt-4-1106-preview
-summary: "Extraire des sous-cha\xEEnes, c'est r\xE9cup\xE9rer des parties sp\xE9cifiques\
-  \ d'une cha\xEEne de caract\xE8res."
+summary: "En Elm, on utilise les fonctions `String.slice` pour d\xE9couper une sous-cha\xEE\
+  ne."
 title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---

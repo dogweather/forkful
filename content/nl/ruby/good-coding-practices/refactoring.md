@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:06.680324-07:00
-description: "Refactoring is het proces van het herstructureren van bestaande computercode\
-  \ zonder het externe gedrag ervan te wijzigen. Programmeurs voeren refactoring\u2026"
+description: 'Hoe: Laten we een voorbeeld doorlopen van het refactoren van een Ruby-methode
+  die de som van kwadraten berekent. **Voor Refactoring:**.'
 lastmod: '2024-03-13T22:44:51.347191-06:00'
 model: gpt-4-0125-preview
-summary: Refactoring is het proces van het herstructureren van bestaande computercode
-  zonder het externe gedrag ervan te wijzigen.
+summary: Laten we een voorbeeld doorlopen van het refactoren van een Ruby-methode
+  die de som van kwadraten berekent.
 title: Refactoring
 weight: 19
 ---

@@ -2,12 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:56.616038-07:00
-description: "Gli array associativi, noti come mappe in Go, ti permettono di memorizzare\
-  \ coppie chiave-valore dove ogni chiave unica \xE8 mappata a un valore. I\u2026"
+description: "Come fare: Creare e inizializzare una mappa in Go pu\xF2 essere fatto\
+  \ in vari modi. Ecco un esempio basilare per iniziare."
 lastmod: '2024-03-13T22:44:42.900234-06:00'
 model: gpt-4-0125-preview
-summary: "Gli array associativi, noti come mappe in Go, ti permettono di memorizzare\
-  \ coppie chiave-valore dove ogni chiave unica \xE8 mappata a un valore."
+summary: "Creare e inizializzare una mappa in Go pu\xF2 essere fatto in vari modi."
 title: Utilizzo di array associativi
 weight: 15
 ---

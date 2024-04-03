@@ -1,11 +1,10 @@
 ---
 date: 2024-02-03 19:03:13.620376-07:00
-description: "Regular expressions, or regex, allow developers to search, match, and\
-  \ manipulate strings with advanced pattern-matching techniques. In Rust, utilizing\u2026"
+description: 'How to: Rust''s `regex` library is a go-to for working with regular
+  expressions. To use it, you''ll first need to add it to your `Cargo.toml`.'
 lastmod: '2024-03-13T22:44:59.886867-06:00'
 model: gpt-4-0125-preview
-summary: Regular expressions, or regex, allow developers to search, match, and manipulate
-  strings with advanced pattern-matching techniques.
+summary: Rust's `regex` library is a go-to for working with regular expressions.
 title: Using regular expressions
 weight: 11
 ---

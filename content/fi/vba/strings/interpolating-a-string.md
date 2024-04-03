@@ -2,13 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:56.479752-07:00
-description: "Merkkijonointerpolointi Visual Basic for Applications (VBA) -ohjelmoinnissa\
-  \ viittaa prosessiin, jossa muuttujia tai lausekkeita sijoitetaan\u2026"
+description: "Kuinka: Toisin kuin joissakin kieliss\xE4, joissa on sis\xE4\xE4nrakennettu\
+  \ merkkijonointerpolointi, VBA vaatii yleens\xE4 manuaalisemman l\xE4hestymistavan\
+  \ muuttujien\u2026"
 lastmod: '2024-03-13T22:44:56.385572-06:00'
 model: gpt-4-0125-preview
-summary: Merkkijonointerpolointi Visual Basic for Applications (VBA) -ohjelmoinnissa
-  viittaa prosessiin, jossa muuttujia tai lausekkeita sijoitetaan merkkijonoliteraaliin,
-  jolloin voidaan muodostaa dynaamisia merkkijonoja.
+summary: "Toisin kuin joissakin kieliss\xE4, joissa on sis\xE4\xE4nrakennettu merkkijonointerpolointi,\
+  \ VBA vaatii yleens\xE4 manuaalisemman l\xE4hestymistavan muuttujien sis\xE4llytt\xE4\
+  miseksi merkkijonoihin, tyypillisesti k\xE4ytt\xE4m\xE4ll\xE4 `&`-operaattoria tai\
+  \ `Format`-funktiota."
 title: Merkkijonon interpolaatio
 weight: 8
 ---

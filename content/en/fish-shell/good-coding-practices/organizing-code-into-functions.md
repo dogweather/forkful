@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, dogweather, reviewed and added links
 date: 2024-01-25 03:00:10.607473-07:00
-description: "Organizing code into functions is about bundling up bits of script to\
-  \ do specific tasks. We do it because it makes code easier to read, test, and reuse\
-  \ \u2014\u2026"
+description: "How to: In Fish, you write a function with `function` keyword, give\
+  \ it a name, and end with `end`. Here\u2019s a simple one."
 lastmod: '2024-03-13T22:45:00.479513-06:00'
 model: gpt-4-1106-preview
-summary: Organizing code into functions is about bundling up bits of script to do
-  specific tasks.
+summary: In Fish, you write a function with `function` keyword, give it a name, and
+  end with `end`.
 title: Organizing code into functions
 weight: 18
 ---

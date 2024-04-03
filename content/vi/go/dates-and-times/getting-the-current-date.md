@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:10.050878-07:00
-description: "Vi\u1EC7c l\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong Go l\xE0 m\u1ED9\
-  t nhi\u1EC7m v\u1EE5 c\u01A1 b\u1EA3n d\xE0nh cho l\u1EADp tr\xECnh vi\xEAn, t\u01B0\
-  \u01A1ng t\u1EF1 nh\u01B0 \"Hello, World!\" v\u1EC1 m\u1EE9c \u0111\u1ED9 ph\u1ED5\
-  \ bi\u1EBFn. N\xF3 c\u1EA7n thi\u1EBFt cho c\xE1c\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Go, g\xF3i `time` l\xE0 c\xE1nh c\u1EED\
+  a c\u1EE7a b\u1EA1n \u0111\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi ng\xE0y v\xE0 gi\u1EDD\
+  . H\xE0m `time.Now()` cung c\u1EA5p cho b\u1EA1n ng\xE0y v\xE0 gi\u1EDD hi\u1EC7\
+  n t\u1EA1i, trong khi c\xE1c\u2026"
 lastmod: '2024-03-13T22:44:35.996560-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c l\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong Go l\xE0 m\u1ED9t nhi\u1EC7\
-  m v\u1EE5 c\u01A1 b\u1EA3n d\xE0nh cho l\u1EADp tr\xECnh vi\xEAn, t\u01B0\u01A1\
-  ng t\u1EF1 nh\u01B0 \"Hello, World."
+summary: "Trong Go, g\xF3i `time` l\xE0 c\xE1nh c\u1EEDa c\u1EE7a b\u1EA1n \u0111\u1EC3\
+  \ l\xE0m vi\u1EC7c v\u1EDBi ng\xE0y v\xE0 gi\u1EDD."
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 weight: 29
 ---

@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:38.863862-07:00
-description: "Das Abrufen des aktuellen Datums in C erfordert den Zugriff auf die\
-  \ Standard-C-Bibliothek, um das aktuelle Datum und die aktuelle Zeit des Systems\u2026"
+description: "Wie: In C bietet der Header `<time.h>` die notwendigen Funktionen und\
+  \ Typen, um mit Daten und Zeiten zu arbeiten. Die Funktion `time()` ruft die aktuelle\u2026"
 lastmod: '2024-03-13T22:44:54.363900-06:00'
 model: gpt-4-0125-preview
-summary: Das Abrufen des aktuellen Datums in C erfordert den Zugriff auf die Standard-C-Bibliothek,
-  um das aktuelle Datum und die aktuelle Zeit des Systems abzurufen und zu formatieren.
+summary: In C bietet der Header `<time.h>` die notwendigen Funktionen und Typen, um
+  mit Daten und Zeiten zu arbeiten.
 title: Das aktuelle Datum abrufen
 weight: 29
 ---

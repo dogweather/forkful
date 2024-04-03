@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:29.307418-07:00
-description: "Verificare se una directory esiste in C implica interrogare il file\
-  \ system per verificare se un determinato percorso conduce a una directory. I\u2026"
+description: "Come fare: In C, l'esistenza di una directory pu\xF2 essere controllata\
+  \ utilizzando la funzione `stat`, che recupera informazioni sul file o sulla directory\u2026"
 lastmod: '2024-03-13T22:44:44.016074-06:00'
 model: gpt-4-0125-preview
-summary: Verificare se una directory esiste in C implica interrogare il file system
-  per verificare se un determinato percorso conduce a una directory.
+summary: "In C, l'esistenza di una directory pu\xF2 essere controllata utilizzando\
+  \ la funzione `stat`, che recupera informazioni sul file o sulla directory in un\
+  \ percorso specificato."
 title: Verificare se una directory esiste
 weight: 20
 ---

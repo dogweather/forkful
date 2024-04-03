@@ -2,14 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:41.450135-07:00
-description: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong bash l\xE0 vi\u1EC7c l\u1EA5\
-  y ng\xE0y v\xE0 gi\u1EDD c\u1EE7a h\u1EC7 th\u1ED1ng. L\u1EADp tr\xECnh vi\xEAn\
-  \ c\u1EA7n n\xF3 cho vi\u1EC7c ghi nh\u1EADt k\xFD, \u0111\xE1nh d\u1EA5u th\u1EDD\
-  i gian, ho\u1EB7c l\xEAn l\u1ECBch c\xE1c t\xE1c\u2026"
+description: "C\xE1ch th\u1EE9c: \u0110\u1EC3 l\u1EA5y ng\xE0y v\xE0 gi\u1EDD hi\u1EC7\
+  n t\u1EA1i, b\u1EA1n s\u1EED d\u1EE5ng `date`. \u0110\xE2y l\xE0 c\xE1ch \u0111\u01A1\
+  n gi\u1EA3n."
 lastmod: '2024-03-13T22:44:36.892800-06:00'
 model: gpt-4-0125-preview
-summary: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong bash l\xE0 vi\u1EC7c l\u1EA5y\
-  \ ng\xE0y v\xE0 gi\u1EDD c\u1EE7a h\u1EC7 th\u1ED1ng."
+summary: "\u0110\u1EC3 l\u1EA5y ng\xE0y v\xE0 gi\u1EDD hi\u1EC7n t\u1EA1i, b\u1EA1\
+  n s\u1EED d\u1EE5ng `date`."
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 weight: 29
 ---

@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:34:08.021535-07:00
-description: "Comparar dos fechas es verificar c\xF3mo se relacionan temporalmente:\
-  \ si una es anterior, posterior o la misma que la otra. Los programadores lo hacen\
-  \ para\u2026"
+description: "C\xF3mo hacerlo: Ruby facilita la comparaci\xF3n de fechas con su biblioteca\
+  \ 'date'. Aqu\xED un ejemplo sencillo."
 lastmod: '2024-03-13T22:44:59.603506-06:00'
 model: gpt-4-1106-preview
-summary: "Comparar dos fechas es verificar c\xF3mo se relacionan temporalmente: si\
-  \ una es anterior, posterior o la misma que la otra."
+summary: "Ruby facilita la comparaci\xF3n de fechas con su biblioteca 'date'."
 title: "Comparaci\xF3n de dos fechas"
 weight: 27
 ---

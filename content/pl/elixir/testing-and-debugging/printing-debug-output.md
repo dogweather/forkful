@@ -1,13 +1,9 @@
 ---
 date: 2024-01-20 17:52:36.467653-07:00
-description: "Debugowanie to jak detektywowanie w kodzie \u2013 szukamy b\u0142\u0119\
-  d\xF3w, u\u017Cywaj\u0105c wydruk\xF3w, \u017Ceby zobaczy\u0107, co si\u0119 dzieje\
-  \ w trakcie dzia\u0142ania programu. Drukujemy r\xF3\u017Cne\u2026"
+description: "Jak to zrobi\u0107: ."
 lastmod: '2024-03-13T22:44:35.045094-06:00'
 model: gpt-4-1106-preview
-summary: "Debugowanie to jak detektywowanie w kodzie \u2013 szukamy b\u0142\u0119\
-  d\xF3w, u\u017Cywaj\u0105c wydruk\xF3w, \u017Ceby zobaczy\u0107, co si\u0119 dzieje\
-  \ w trakcie dzia\u0142ania programu."
+summary: .
 title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---

@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:15:06.923329-07:00
-description: "Interaktywna pow\u0142oka, czyli REPL (Read-Eval-Print Loop), w Haskellu\
-  \ pozwala na uruchamianie fragment\xF3w kodu na \u017Cywo. Jest to plac zabaw dla\
-  \ szybkiego\u2026"
+description: "Jak to zrobi\u0107: Aby uruchomi\u0107 GHCi (interaktywne \u015Brodowisko\
+  \ Glasgow Haskell Compiler), wystarczy wpisa\u0107 `ghci` w terminalu. Oto jak z\
+  \ niego korzysta\u0107."
 lastmod: '2024-03-13T22:44:35.453489-06:00'
 model: gpt-4-0125-preview
-summary: "Interaktywna pow\u0142oka, czyli REPL (Read-Eval-Print Loop), w Haskellu\
-  \ pozwala na uruchamianie fragment\xF3w kodu na \u017Cywo."
+summary: "Aby uruchomi\u0107 GHCi (interaktywne \u015Brodowisko Glasgow Haskell Compiler),\
+  \ wystarczy wpisa\u0107 `ghci` w terminalu."
 title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---

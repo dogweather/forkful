@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:54:56.193566-07:00
-description: "Das Lesen einer Textdatei bedeutet, ihren Inhalt in ein Programm zu\
-  \ laden, um ihn zu verarbeiten. Programmierer machen das, weil Textdateien oft\u2026"
+description: Wie geht das? .
 lastmod: '2024-03-13T22:44:53.396017-06:00'
 model: gpt-4-1106-preview
-summary: Das Lesen einer Textdatei bedeutet, ihren Inhalt in ein Programm zu laden,
-  um ihn zu verarbeiten.
+summary: .
 title: Textdatei einlesen
 weight: 22
 ---

@@ -1,14 +1,13 @@
 ---
 date: 2024-01-27 20:34:39.616658-07:00
-description: "G\xE9n\xE9rer des nombres al\xE9atoires en PHP consiste \xE0 produire\
-  \ des valeurs impr\xE9visibles dans une plage sp\xE9cifi\xE9e, ce qui est essentiel\
-  \ pour des t\xE2ches comme\u2026"
+description: "Comment faire : PHP offre plusieurs fonctions pour g\xE9n\xE9rer des\
+  \ nombres al\xE9atoires, mais les plus couramment utilis\xE9es sont `rand()`, `mt_rand()`,\
+  \ et pour\u2026"
 lastmod: '2024-03-13T22:44:57.873707-06:00'
 model: gpt-4-0125-preview
-summary: "G\xE9n\xE9rer des nombres al\xE9atoires en PHP consiste \xE0 produire des\
-  \ valeurs impr\xE9visibles dans une plage sp\xE9cifi\xE9e, ce qui est essentiel\
-  \ pour des t\xE2ches comme cr\xE9er des identifiants utilisateur uniques, g\xE9\
-  n\xE9rer des mots de passe ou pour une utilisation dans des simulations et des jeux."
+summary: "PHP offre plusieurs fonctions pour g\xE9n\xE9rer des nombres al\xE9atoires,\
+  \ mais les plus couramment utilis\xE9es sont `rand()`, `mt_rand()`, et pour des\
+  \ fins cryptographiques, `random_int()`."
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---

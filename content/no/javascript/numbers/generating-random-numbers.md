@@ -1,13 +1,9 @@
 ---
 date: 2024-01-27 20:34:14.904248-07:00
-description: "\xC5 generere tilfeldige tall i JavaScript er en teknikk som brukes\
-  \ for \xE5 skape uforutsigbarhet i applikasjoner, fra spill som trenger tilfeldig\
-  \ fiendeadferd\u2026"
+description: 'Hvordan: #.'
 lastmod: '2024-03-13T22:44:41.179886-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 generere tilfeldige tall i JavaScript er en teknikk som brukes for\
-  \ \xE5 skape uforutsigbarhet i applikasjoner, fra spill som trenger tilfeldig fiendeadferd\
-  \ til sikkerhetsalgoritmer som krever kryptografisk tilfeldighet."
+summary: '#.'
 title: Generering av tilfeldige tall
 weight: 12
 ---

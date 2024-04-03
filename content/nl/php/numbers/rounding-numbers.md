@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:54.251152-07:00
-description: "Getallen afronden betekent het afhakken van decimale getallen tot een\
-  \ vastgelegde nauwkeurigheid, vaak tot hele getallen. Programmeurs ronden af om\u2026"
+description: 'Hoe: PHP biedt een paar manieren om getallen af te ronden: `round()`,
+  `ceil()` en `floor()`. Hier is hoe ze werken.'
 lastmod: '2024-03-13T22:44:50.889684-06:00'
 model: gpt-4-0125-preview
-summary: Getallen afronden betekent het afhakken van decimale getallen tot een vastgelegde
-  nauwkeurigheid, vaak tot hele getallen.
+summary: PHP biedt een paar manieren om getallen af te ronden.
 title: Afronden van getallen
 weight: 13
 ---

@@ -2,14 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:22.990562-07:00
-description: "Encontrar la longitud de una cadena (String) en Dart se trata de determinar\
-  \ el n\xFAmero de unidades de c\xF3digo (esencialmente, el n\xFAmero de caracteres\
-  \ si se\u2026"
+description: "C\xF3mo hacerlo: Dart hace que sea sencillo obtener la longitud de una\
+  \ cadena usando la propiedad `length`. Aqu\xED hay un ejemplo b\xE1sico."
 lastmod: '2024-03-13T22:44:58.738923-06:00'
 model: gpt-4-0125-preview
-summary: "Encontrar la longitud de una cadena (String) en Dart se trata de determinar\
-  \ el n\xFAmero de unidades de c\xF3digo (esencialmente, el n\xFAmero de caracteres\
-  \ si se piensa de manera simplista) en una cadena dada."
+summary: Dart hace que sea sencillo obtener la longitud de una cadena usando la propiedad
+  `length`.
 title: Encontrando la longitud de una cadena
 weight: 7
 ---

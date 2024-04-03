@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:37.901356-07:00
-description: "HTML parsen betekent het verwerken en analyseren van de structuur en\
-  \ inhoud van HTML-code. Programmeurs doen dit om websites te schrapen, gegevens\
-  \ te\u2026"
+description: 'Hoe: PHP heeft een aantal ingebouwde bibliotheken om HTML te parsen,
+  zoals DOMDocument. Hier is een eenvoudig gebruiksvoorbeeld.'
 lastmod: '2024-03-13T22:44:50.892669-06:00'
 model: gpt-4-0125-preview
-summary: HTML parsen betekent het verwerken en analyseren van de structuur en inhoud
-  van HTML-code.
+summary: PHP heeft een aantal ingebouwde bibliotheken om HTML te parsen, zoals DOMDocument.
 title: HTML Parsen
 weight: 43
 ---

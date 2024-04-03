@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:57.250511-07:00
-description: "Eliminar caracteres que coinciden con un patr\xF3n espec\xEDfico es\
-  \ una t\xE9cnica utilizada para limpiar o formatear cadenas en programaci\xF3n.\
-  \ En el contexto de\u2026"
+description: "C\xF3mo hacerlo: Google Apps Script proporciona m\xE9todos robustos\
+  \ para la manipulaci\xF3n de cadenas, aprovechando las capacidades inherentes de\
+  \ JavaScript. Para\u2026"
 lastmod: '2024-03-13T22:44:58.502042-06:00'
 model: gpt-4-0125-preview
-summary: "Eliminar caracteres que coinciden con un patr\xF3n espec\xEDfico es una\
-  \ t\xE9cnica utilizada para limpiar o formatear cadenas en programaci\xF3n."
+summary: "Google Apps Script proporciona m\xE9todos robustos para la manipulaci\xF3\
+  n de cadenas, aprovechando las capacidades inherentes de JavaScript."
 title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---

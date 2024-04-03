@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:43:49.455155-07:00
-description: "Downloading a web page means fetching its contents over the internet\u2014\
-  essentially, what your browser does. Programmers do this to automate data extraction,\u2026"
+description: "How to: Elixir, with its powerful HTTP client libraries, makes this\
+  \ task a breeze. Here\u2019s how with `HTTPoison`."
 lastmod: '2024-03-13T22:44:59.781399-06:00'
 model: gpt-4-1106-preview
-summary: "Downloading a web page means fetching its contents over the internet\u2014\
-  essentially, what your browser does."
+summary: Elixir, with its powerful HTTP client libraries, makes this task a breeze.
 title: Downloading a web page
 weight: 42
 ---

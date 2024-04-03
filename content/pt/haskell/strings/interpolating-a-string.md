@@ -1,11 +1,13 @@
 ---
 date: 2024-01-20 17:50:54.364457-07:00
-description: "Interpolar uma string significa inserir valores de vari\xE1veis ou express\xF5\
-  es dentro dela para formar uma nova string. Programadores fazem isso para\u2026"
+description: "Como Fazer: Haskell n\xE3o tem interpola\xE7\xE3o de strings nativa\
+  \ como outras linguagens, mas podemos chegar l\xE1 com a biblioteca `text` e sua\
+  \ fun\xE7\xE3o `printf` ou\u2026"
 lastmod: '2024-03-13T22:44:46.611945-06:00'
 model: gpt-4-1106-preview
-summary: "Interpolar uma string significa inserir valores de vari\xE1veis ou express\xF5\
-  es dentro dela para formar uma nova string."
+summary: "Haskell n\xE3o tem interpola\xE7\xE3o de strings nativa como outras linguagens,\
+  \ mas podemos chegar l\xE1 com a biblioteca `text` e sua fun\xE7\xE3o `printf` ou\
+  \ a biblioteca `interpolate`."
 title: Interpolando uma string
 weight: 8
 ---

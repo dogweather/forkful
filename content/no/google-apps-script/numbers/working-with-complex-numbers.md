@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:07:42.909564-07:00
-description: "Komplekse tall, representert som en kombinasjon av reelle og imagin\xE6\
-  re enheter (f.eks. 3 + 4i), er grunnleggende i ulike beregningsproblemer, spesielt\u2026"
+description: "Hvordan: Google Apps Script har ikke innebygd st\xF8tte for komplekse\
+  \ tall, noe som n\xF8dvendiggj\xF8r implementering av tilpasset funksjonalitet.\
+  \ Nedenfor er en\u2026"
 lastmod: '2024-03-13T22:44:40.307400-06:00'
 model: gpt-4-0125-preview
-summary: "Komplekse tall, representert som en kombinasjon av reelle og imagin\xE6\
-  re enheter (f."
+summary: "Google Apps Script har ikke innebygd st\xF8tte for komplekse tall, noe som\
+  \ n\xF8dvendiggj\xF8r implementering av tilpasset funksjonalitet."
 title: Arbeide med komplekse tall
 weight: 14
 ---

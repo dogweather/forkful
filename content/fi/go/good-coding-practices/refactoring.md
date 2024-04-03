@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:17.717668-07:00
-description: "Ohjelmoinnissa refaktorointi tarkoittaa olemassa olevan tietokonekoodin\
-  \ uudelleenj\xE4rjestely\xE4\u2014faktorisoinnin muuttamista\u2014muuttamatta sen\
-  \ ulkoista\u2026"
+description: "Miten: Gossa refaktorointi voi vaihdella yksinkertaisista kooditweaksista\
+  \ monimutkaisempiin muutoksiin. Aloittakaamme perusesimerkill\xE4: yksinkertaistetaan\u2026"
 lastmod: '2024-03-13T22:44:56.059671-06:00'
 model: gpt-4-0125-preview
-summary: "Ohjelmoinnissa refaktorointi tarkoittaa olemassa olevan tietokonekoodin\
-  \ uudelleenj\xE4rjestely\xE4\u2014faktorisoinnin muuttamista\u2014muuttamatta sen\
-  \ ulkoista k\xE4ytt\xE4ytymist\xE4."
+summary: Gossa refaktorointi voi vaihdella yksinkertaisista kooditweaksista monimutkaisempiin
+  muutoksiin.
 title: Koodin uudelleenkirjoitus
 weight: 19
 ---

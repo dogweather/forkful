@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 03:42:20.355868-07:00
-description: "Das Entfernen von Anf\xFChrungszeichen aus einem String bedeutet, jegliche\
-  \ Anf\xFChrungszeichen, die den Inhalt umschlie\xDFen, zu beseitigen. Wir tun dies,\
-  \ um\u2026"
+description: "Wie: Swift erm\xF6glicht es Ihnen, die Aufgabe, Anf\xFChrungszeichen\
+  \ zu entfernen, ziemlich geschickt zu bew\xE4ltigen. Hier ist ein schnelles Beispiel\
+  \ unter\u2026"
 lastmod: '2024-03-13T22:44:54.214029-06:00'
 model: gpt-4-0125-preview
-summary: "Das Entfernen von Anf\xFChrungszeichen aus einem String bedeutet, jegliche\
-  \ Anf\xFChrungszeichen, die den Inhalt umschlie\xDFen, zu beseitigen."
+summary: "Swift erm\xF6glicht es Ihnen, die Aufgabe, Anf\xFChrungszeichen zu entfernen,\
+  \ ziemlich geschickt zu bew\xE4ltigen."
 title: "Anf\xFChrungszeichen aus einem String entfernen"
 weight: 9
 ---

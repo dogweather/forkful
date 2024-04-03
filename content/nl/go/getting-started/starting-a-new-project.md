@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:31.934296-07:00
-description: "Een nieuw project opstarten in Go houdt in dat je een werkruimte opzet\
-  \ en deze initialiseert met de benodigde Go modules. Programmeurs doen dit om code\
-  \ te\u2026"
+description: "Hoe: Zorg er eerst voor dat je Go ge\xEFnstalleerd hebt door `go version`\
+  \ in je terminal te draaien. Je zou de ge\xEFnstalleerde versie van Go als output\
+  \ moeten\u2026"
 lastmod: '2024-03-13T22:44:50.288139-06:00'
 model: gpt-4-0125-preview
-summary: Een nieuw project opstarten in Go houdt in dat je een werkruimte opzet en
-  deze initialiseert met de benodigde Go modules.
+summary: "Zorg er eerst voor dat je Go ge\xEFnstalleerd hebt door `go version` in\
+  \ je terminal te draaien."
 title: Een nieuw project starten
 weight: 1
 ---

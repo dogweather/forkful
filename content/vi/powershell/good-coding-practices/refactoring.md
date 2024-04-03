@@ -2,16 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:12.757633-07:00
-description: "Refactoring l\xE0 qu\xE1 tr\xECnh c\u1EA5u tr\xFAc l\u1EA1i m\xE3 m\xE1\
-  y t\xEDnh hi\u1EC7n c\xF3 m\xE0 kh\xF4ng thay \u0111\u1ED5i h\xE0nh vi b\xEAn ngo\xE0\
-  i c\u1EE7a n\xF3, nh\u1EB1m m\u1EE5c \u0111\xEDch c\u1EA3i thi\u1EC7n c\xE1c thu\u1ED9\
-  c t\xEDnh kh\xF4ng ch\u1EE9c\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: PowerShell kh\xF4ng c\xF3 c\xF4ng c\u1EE5 refactoring\
+  \ chuy\xEAn d\u1EE5ng t\xEDch h\u1EE3p s\u1EB5n, nh\u01B0ng b\u1EA1n v\u1EABn c\xF3\
+  \ th\u1EC3 d\u1ECDn d\u1EB9p m\xE3 c\u1EE7a m\xECnh cho t\xEDnh d\u1EC5 \u0111\u1ECD\
+  c v\xE0 hi\u1EC7u su\u1EA5t. Xem\u2026"
 lastmod: '2024-03-13T22:44:36.947538-06:00'
 model: gpt-4-0125-preview
-summary: "Refactoring l\xE0 qu\xE1 tr\xECnh c\u1EA5u tr\xFAc l\u1EA1i m\xE3 m\xE1\
-  y t\xEDnh hi\u1EC7n c\xF3 m\xE0 kh\xF4ng thay \u0111\u1ED5i h\xE0nh vi b\xEAn ngo\xE0\
-  i c\u1EE7a n\xF3, nh\u1EB1m m\u1EE5c \u0111\xEDch c\u1EA3i thi\u1EC7n c\xE1c thu\u1ED9\
-  c t\xEDnh kh\xF4ng ch\u1EE9c n\u0103ng c\u1EE7a ph\u1EA7n m\u1EC1m."
+summary: "PowerShell kh\xF4ng c\xF3 c\xF4ng c\u1EE5 refactoring chuy\xEAn d\u1EE5\
+  ng t\xEDch h\u1EE3p s\u1EB5n, nh\u01B0ng b\u1EA1n v\u1EABn c\xF3 th\u1EC3 d\u1ECD\
+  n d\u1EB9p m\xE3 c\u1EE7a m\xECnh cho t\xEDnh d\u1EC5 \u0111\u1ECDc v\xE0 hi\u1EC7\
+  u su\u1EA5t."
 title: "T\xE1i c\u1EA5u tr\xFAc m\xE3"
 weight: 19
 ---

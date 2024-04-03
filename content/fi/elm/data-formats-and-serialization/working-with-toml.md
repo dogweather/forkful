@@ -1,11 +1,13 @@
 ---
 date: 2024-01-26 04:21:14.001050-07:00
-description: "TOML, lyhennettyn\xE4 Tom's Obvious, Minimal Language, on data-serialisointikieli.\
-  \ Elm-ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 konfiguraatiotiedon hallintaan, koska\
-  \ se on\u2026"
+description: "Kuinka: Elmiss\xE4 ei ole sis\xE4\xE4nrakennettua TOML-j\xE4sent\xE4\
+  j\xE4\xE4, mutta voit tehd\xE4 yhteisty\xF6t\xE4 JavaScriptin kanssa tai k\xE4ytt\xE4\
+  \xE4 yhteis\xF6n pakettia. N\xE4in saatat\u2026"
 lastmod: '2024-03-13T22:44:56.512412-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, lyhennettyn\xE4 Tom's Obvious, Minimal Language, on data-serialisointikieli."
+summary: "Elmiss\xE4 ei ole sis\xE4\xE4nrakennettua TOML-j\xE4sent\xE4j\xE4\xE4, mutta\
+  \ voit tehd\xE4 yhteisty\xF6t\xE4 JavaScriptin kanssa tai k\xE4ytt\xE4\xE4 yhteis\xF6\
+  n pakettia."
 title: "Ty\xF6skentely TOML:n kanssa"
 weight: 39
 ---

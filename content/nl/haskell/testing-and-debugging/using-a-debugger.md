@@ -2,7 +2,7 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:35.008459-07:00
-description: "Laten we een wandeling maken met GHCi, Haskell's interactieve omgeving\
+description: "Hoe: Laten we een wandeling maken met GHCi, Haskell's interactieve omgeving\
   \ die kan dienen als een basale debugger. Je start het op met je Haskell-code en\u2026"
 lastmod: '2024-03-13T22:44:50.856874-06:00'
 model: gpt-4-0125-preview

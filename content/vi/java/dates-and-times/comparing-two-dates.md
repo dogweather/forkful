@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:57.013409-07:00
-description: "So s\xE1nh hai ng\xE0y t\u1EE9c l\xE0 t\xECm ra xem m\u1ED9t ng\xE0\
-  y \u0111\u1EBFn tr\u01B0\u1EDBc, sau, hay tr\xF9ng kh\u1EDBp v\u1EDBi ng\xE0y n\xE0\
-  o \u0111\xF3. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3\
-  \ x\u1EED l\xFD l\u1ECBch tr\xECnh, h\u1EA1n ch\xF3t, s\u1EAFp\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Java l\xE0m cho vi\u1EC7c so s\xE1nh ng\xE0\
+  y th\xE1ng tr\u1EDF n\xEAn kh\xE1 d\u1EC5 d\xE0ng. S\u1EED d\u1EE5ng `LocalDate`\
+  \ v\xE0 c\xE1c ph\u01B0\u01A1ng th\u1EE9c `compareTo`, `isBefore`, ho\u1EB7c `isAfter`.\u2026"
 lastmod: '2024-03-13T22:44:36.505639-06:00'
 model: gpt-4-0125-preview
-summary: "So s\xE1nh hai ng\xE0y t\u1EE9c l\xE0 t\xECm ra xem m\u1ED9t ng\xE0y \u0111\
-  \u1EBFn tr\u01B0\u1EDBc, sau, hay tr\xF9ng kh\u1EDBp v\u1EDBi ng\xE0y n\xE0o \u0111\
-  \xF3."
+summary: "Java l\xE0m cho vi\u1EC7c so s\xE1nh ng\xE0y th\xE1ng tr\u1EDF n\xEAn kh\xE1\
+  \ d\u1EC5 d\xE0ng."
 title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---

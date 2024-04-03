@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:43:12.435150-07:00
-description: "Komplexe Zahlen erweitern die Idee der eindimensionalen Zahlengerade\
-  \ in die zweidimensionale Ebene, indem eine senkrechte imagin\xE4re Achse miteinbezogen\u2026"
+description: "Wie geht das: In Lua k\xF6nnen Sie komplexe Zahlen mit Tabellen darstellen.\
+  \ Die grundlegenden Operationen umfassen das Hinzuf\xFCgen, Subtrahieren,\u2026"
 lastmod: '2024-03-13T22:44:54.009046-06:00'
 model: gpt-4-0125-preview
-summary: "Komplexe Zahlen erweitern die Idee der eindimensionalen Zahlengerade in\
-  \ die zweidimensionale Ebene, indem eine senkrechte imagin\xE4re Achse miteinbezogen\
-  \ wird."
+summary: "In Lua k\xF6nnen Sie komplexe Zahlen mit Tabellen darstellen."
 title: Umgang mit komplexen Zahlen
 weight: 14
 ---

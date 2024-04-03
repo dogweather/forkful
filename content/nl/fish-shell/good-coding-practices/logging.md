@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:49.382375-07:00
-description: "Loggen is in essentie het opschrijven van wat je applicatie doet - een\
-  \ dagboek, als je wilt, maar dan voor code. Programmeurs doen dit om de fijne\u2026"
+description: "Hoe te: In Fish kan loggen zo simpel zijn als het omleiden van standaard\
+  \ uitvoer- en foutstromen naar een bestand. Laten we een logboekvermelding maken\u2026"
 lastmod: '2024-03-13T22:44:51.253914-06:00'
 model: gpt-4-0125-preview
-summary: Loggen is in essentie het opschrijven van wat je applicatie doet - een dagboek,
-  als je wilt, maar dan voor code.
+summary: In Fish kan loggen zo simpel zijn als het omleiden van standaard uitvoer-
+  en foutstromen naar een bestand.
 title: Logboekregistratie
 weight: 17
 ---

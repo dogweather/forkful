@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:11.211977-07:00
-description: "Merkkijonon alkukirjaimen muuttaminen isoksi kirjaimeksi PowerShelliss\xE4\
-  \ tarkoittaa annetun merkkijonon ensimm\xE4isen merkin muuttamista isoksi kirjaimeksi,\u2026"
+description: "Miten: PowerShell, ollessaan monipuolinen ty\xF6kalu, mahdollistaa merkkijonon\
+  \ alkukirjaimen isoksi muuttamisen yksinkertaisilla menetelmill\xE4 ilman, ett\xE4\
+  \u2026"
 lastmod: '2024-03-13T22:44:56.763990-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonon alkukirjaimen muuttaminen isoksi kirjaimeksi PowerShelliss\xE4\
-  \ tarkoittaa annetun merkkijonon ensimm\xE4isen merkin muuttamista isoksi kirjaimeksi,\
-  \ samalla kun loput merkkijonosta j\xE4tet\xE4\xE4n muuttumattomiksi."
+summary: "PowerShell, ollessaan monipuolinen ty\xF6kalu, mahdollistaa merkkijonon\
+  \ alkukirjaimen isoksi muuttamisen yksinkertaisilla menetelmill\xE4 ilman, ett\xE4\
+  \ tarvitsee kolmannen osapuolen kirjastoja."
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---

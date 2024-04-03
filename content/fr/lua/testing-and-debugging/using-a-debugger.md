@@ -1,8 +1,8 @@
 ---
 date: 2024-01-26 03:50:08.143505-07:00
-description: "Lua n'est pas fourni avec un d\xE9bogueur int\xE9gr\xE9, mais vous pouvez\
-  \ utiliser des d\xE9bogueurs externes, comme ZeroBrane Studio. Voici un aper\xE7\
-  u de la fa\xE7on\u2026"
+description: "Comment faire : Lua n'est pas fourni avec un d\xE9bogueur int\xE9gr\xE9\
+  , mais vous pouvez utiliser des d\xE9bogueurs externes, comme ZeroBrane Studio.\
+  \ Voici un aper\xE7u\u2026"
 lastmod: '2024-03-13T22:44:57.941325-06:00'
 model: gpt-4-0125-preview
 summary: "Lua n'est pas fourni avec un d\xE9bogueur int\xE9gr\xE9, mais vous pouvez\

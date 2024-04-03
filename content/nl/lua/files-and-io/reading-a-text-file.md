@@ -2,11 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:48.712798-07:00
-description: "Een tekstbestand lezen betekent het laden van de inhoud in je programma.\
-  \ We doen dit om opgeslagen gegevens te verwerken, analyseren of weergeven, zoals\u2026"
+description: "Hoe: Laten we bekijken hoe we een tekstbestand regel voor regel en vervolgens\
+  \ in \xE9\xE9n keer kunnen lezen."
 lastmod: '2024-03-13T22:44:50.954593-06:00'
 model: gpt-4-0125-preview
-summary: Een tekstbestand lezen betekent het laden van de inhoud in je programma.
+summary: "Laten we bekijken hoe we een tekstbestand regel voor regel en vervolgens\
+  \ in \xE9\xE9n keer kunnen lezen."
 title: Een tekstbestand lezen
 weight: 22
 ---

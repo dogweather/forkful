@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:22:45.380058-07:00
-description: "TOML steht f\xFCr Toms Offensichtliche, Minimalistische Sprache. Es\
-  \ ist ein Daten-Serialisierungsformat, das f\xFCr Konfigurationsdateien verwendet\
-  \ wird.\u2026"
+description: "Wie geht das: Du ben\xF6tigst eine TOML-Parsing-Bibliothek. Ich empfehle\
+  \ `toml4j`. F\xFCge sie so deinem Projekt hinzu."
 lastmod: '2024-03-13T22:44:53.785734-06:00'
 model: gpt-4-0125-preview
-summary: "TOML steht f\xFCr Toms Offensichtliche, Minimalistische Sprache."
+summary: "Du ben\xF6tigst eine TOML-Parsing-Bibliothek."
 title: Arbeiten mit TOML
 weight: 39
 ---

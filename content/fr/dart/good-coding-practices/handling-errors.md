@@ -2,14 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:08.798500-07:00
-description: "G\xE9rer les erreurs en Dart consiste \xE0 anticiper et g\xE9rer les\
-  \ exceptions qui surviennent pendant l'ex\xE9cution du programme pour am\xE9liorer\
-  \ la fiabilit\xE9 et\u2026"
+description: "Comment faire : Dart prend en charge deux types d'erreurs : les erreurs\
+  \ *de compilation* et les erreurs *d'ex\xE9cution*. Les erreurs de compilation sont\u2026"
 lastmod: '2024-03-13T22:44:57.398552-06:00'
 model: gpt-4-0125-preview
-summary: "G\xE9rer les erreurs en Dart consiste \xE0 anticiper et g\xE9rer les exceptions\
-  \ qui surviennent pendant l'ex\xE9cution du programme pour am\xE9liorer la fiabilit\xE9\
-  \ et l'utilisabilit\xE9."
+summary: Dart prend en charge deux types d'erreurs.
 title: Gestion des erreurs
 weight: 16
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:39:00.704047-07:00
-description: "Kompleksiluvut laajentavat reaalilukuja lis\xE4osalla, kuvitteellisella\
-  \ yksik\xF6ll\xE4 'i'. Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 useilla alueilla,\
-  \ mukaan lukien\u2026"
+description: "Kuinka: Clojure tarjoaa sis\xE4\xE4nrakennetun tuen kompleksiluvuille\
+  \ `clojure.lang.Numbers` apuluokan kautta. K\xE4yt\xE4 `complex`-toimintoa kompleksilukujen\u2026"
 lastmod: '2024-03-13T22:44:56.178505-06:00'
 model: gpt-4-0125-preview
-summary: "Kompleksiluvut laajentavat reaalilukuja lis\xE4osalla, kuvitteellisella\
-  \ yksik\xF6ll\xE4 'i'."
+summary: "Clojure tarjoaa sis\xE4\xE4nrakennetun tuen kompleksiluvuille `clojure.lang.Numbers`\
+  \ apuluokan kautta."
 title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---

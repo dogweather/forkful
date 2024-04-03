@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:53:00.540390-07:00
-description: "Debug-tulosteiden printtaaminen auttaa bongaamaan ohjelman ongelmakohtia.\
-  \ Koodarit tekev\xE4t t\xE4t\xE4 koska se on simppeli tapa n\xE4hd\xE4, mit\xE4\
-  \ sovelluksessa\u2026"
+description: "How to: (Kuinka tehd\xE4:) ."
 lastmod: '2024-03-13T22:44:56.447758-06:00'
 model: gpt-4-1106-preview
-summary: Debug-tulosteiden printtaaminen auttaa bongaamaan ohjelman ongelmakohtia.
+summary: .
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---

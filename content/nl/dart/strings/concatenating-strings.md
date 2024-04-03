@@ -2,12 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:10.380126-07:00
-description: "Het samenvoegen van strings in programmeren houdt in dat twee of meer\
-  \ strings tot \xE9\xE9n worden gecombineerd. Programmeurs doen dit om tekstgegevens\u2026"
+description: 'Hoe te: Dart biedt verschillende eenvoudige manieren om strings samen
+  te voegen. Hieronder staan de meest voorkomende methoden: #.'
 lastmod: '2024-03-13T22:44:50.496237-06:00'
 model: gpt-4-0125-preview
-summary: "Het samenvoegen van strings in programmeren houdt in dat twee of meer strings\
-  \ tot \xE9\xE9n worden gecombineerd."
+summary: Dart biedt verschillende eenvoudige manieren om strings samen te voegen.
 title: Strings samenvoegen
 weight: 3
 ---

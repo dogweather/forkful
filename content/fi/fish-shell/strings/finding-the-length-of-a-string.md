@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:47:19.636867-07:00
-description: "Stringin pituuden m\xE4\xE4ritt\xE4minen tarkoittaa merkkijonon merkkien\
-  \ lukum\xE4\xE4r\xE4n laskemista. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4t\xE4 saadakseen\
-  \ tietoa datan muodosta,\u2026"
+description: "How to (Kuinka tehd\xE4) ."
 lastmod: '2024-03-13T22:44:56.983166-06:00'
 model: gpt-4-1106-preview
-summary: "Stringin pituuden m\xE4\xE4ritt\xE4minen tarkoittaa merkkijonon merkkien\
-  \ lukum\xE4\xE4r\xE4n laskemista."
+summary: .
 title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---

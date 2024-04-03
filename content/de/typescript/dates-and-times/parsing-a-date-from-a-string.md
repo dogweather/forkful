@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:35.761771-07:00
-description: "Das Parsen eines Datums aus einem String beinhaltet das Umwandeln von\
-  \ textuellen Darstellungen von Daten und Zeiten in ein Format, das vom Programm\u2026"
+description: "Wie: TypeScript, als Obermenge von JavaScript, st\xFCtzt sich auf das\
+  \ Date-Objekt zum Parsen von Daten aus Strings. Allerdings kann das Arbeiten mit\
+  \ Daten in\u2026"
 lastmod: '2024-03-13T22:44:53.640223-06:00'
 model: gpt-4-0125-preview
-summary: Das Parsen eines Datums aus einem String beinhaltet das Umwandeln von textuellen
-  Darstellungen von Daten und Zeiten in ein Format, das vom Programm manipuliert und
-  analysiert werden kann.
+summary: "TypeScript, als Obermenge von JavaScript, st\xFCtzt sich auf das Date-Objekt\
+  \ zum Parsen von Daten aus Strings."
 title: Einen Datum aus einem String analysieren
 weight: 30
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:04.232096-07:00
-description: "Das Senden einer HTTP-Anfrage mit Basis-Authentifizierung beinhaltet\
-  \ das Kodieren eines Benutzernamens und eines Passworts in einen Anfrage-Header,\
-  \ um\u2026"
+description: "Wie: In Google Apps Script senden Sie eine HTTP-Anfrage mit Basis-Authentifizierung,\
+  \ indem Sie den `UrlFetchApp`-Dienst zusammen mit einem\u2026"
 lastmod: '2024-03-13T22:44:53.333560-06:00'
 model: gpt-4-0125-preview
-summary: "Das Senden einer HTTP-Anfrage mit Basis-Authentifizierung beinhaltet das\
-  \ Kodieren eines Benutzernamens und eines Passworts in einen Anfrage-Header, um\
-  \ Zugang zu gesch\xFCtzten Ressourcen zu erhalten."
+summary: In Google Apps Script senden Sie eine HTTP-Anfrage mit Basis-Authentifizierung,
+  indem Sie den `UrlFetchApp`-Dienst zusammen mit einem Base64-kodierten Autorisierungs-Header
+  nutzen.
 title: Eine HTTP-Anfrage mit einfacher Authentifizierung senden
 weight: 45
 ---

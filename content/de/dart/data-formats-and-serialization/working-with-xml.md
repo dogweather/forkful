@@ -2,13 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:36.831575-07:00
-description: "Die Arbeit mit XML in Dart beinhaltet das Parsen, Abfragen und Modifizieren\
-  \ von XML-Dokumenten, ein Prozess, der f\xFCr Applikationen, die mit Webdiensten,\u2026"
+description: "Wie zu: Dart enth\xE4lt keine integrierte Unterst\xFCtzung f\xFCr die\
+  \ XML-Verarbeitung in seiner Standardbibliothek, was die Verwendung von Drittanbieter-Paketen\u2026"
 lastmod: '2024-03-13T22:44:53.614079-06:00'
 model: gpt-4-0125-preview
-summary: "Die Arbeit mit XML in Dart beinhaltet das Parsen, Abfragen und Modifizieren\
-  \ von XML-Dokumenten, ein Prozess, der f\xFCr Applikationen, die mit Webdiensten,\
-  \ Konfigurationsdateien oder Altsystemen interagieren, entscheidend ist."
+summary: "Dart enth\xE4lt keine integrierte Unterst\xFCtzung f\xFCr die XML-Verarbeitung\
+  \ in seiner Standardbibliothek, was die Verwendung von Drittanbieter-Paketen erforderlich\
+  \ macht."
 title: Arbeiten mit XML
 weight: 40
 ---

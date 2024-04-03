@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:00.378516-07:00
-description: "Loggen in Visual Basic for Applications (VBA) houdt in dat er informatie\
-  \ over het runtimegedrag van een programma wordt vastgelegd in een bestand, console\u2026"
+description: "Hoe te: In VBA is er niet een ingebouwd logkader zoals gevonden in sommige\
+  \ andere talen. Echter, het implementeren van een eenvoudig logmechanisme is\u2026"
 lastmod: '2024-03-13T22:44:50.643532-06:00'
 model: gpt-4-0125-preview
-summary: Loggen in Visual Basic for Applications (VBA) houdt in dat er informatie
-  over het runtimegedrag van een programma wordt vastgelegd in een bestand, console
-  of database.
+summary: In VBA is er niet een ingebouwd logkader zoals gevonden in sommige andere
+  talen.
 title: Logboekregistratie
 weight: 17
 ---

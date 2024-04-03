@@ -2,14 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:33.900186-07:00
-description: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) l\xE0 c\xF4ng c\u1EE5 \u0111\
-  \u1EC3 t\xECm ki\u1EBFm m\u1EABu trong v\u0103n b\u1EA3n. L\u1EADp tr\xECnh vi\xEA\
-  n s\u1EED d\u1EE5ng ch\xFAng \u0111\u1EC3 t\xECm ki\u1EBFm, ki\u1EC3m tra, ho\u1EB7\
-  c thao t\xE1c d\u1EEF li\u1EC7u m\u1ED9t c\xE1ch\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Kotlin l\xE0m cho regex tr\u1EDF n\xEAn d\u1EC5\
+  \ d\xE0ng. H\xE3y xem m\u1ED9t s\u1ED1 v\xED d\u1EE5 m\xE3 c\u1EE5 th\u1EC3."
 lastmod: '2024-03-13T22:44:36.588092-06:00'
 model: gpt-4-0125-preview
-summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) l\xE0 c\xF4ng c\u1EE5 \u0111\u1EC3\
-  \ t\xECm ki\u1EBFm m\u1EABu trong v\u0103n b\u1EA3n."
+summary: "Kotlin l\xE0m cho regex tr\u1EDF n\xEAn d\u1EC5 d\xE0ng."
 title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---

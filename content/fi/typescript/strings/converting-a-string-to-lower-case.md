@@ -1,10 +1,9 @@
 ---
 date: 2024-01-20 17:39:12.372251-07:00
-description: "Muuttaa merkkijono pieniksi kirjaimiksi. Tehd\xE4\xE4n johdonmukaisuuden\
-  \ ja vertailun helpottamiseksi."
+description: "How to - Kuinka tehd\xE4\xE4n ."
 lastmod: '2024-03-13T22:44:56.302764-06:00'
 model: gpt-4-1106-preview
-summary: Muuttaa merkkijono pieniksi kirjaimiksi.
+summary: .
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---

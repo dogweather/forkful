@@ -2,12 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:46.793221-07:00
-description: "Analizzare una data da una stringa comporta la conversione di rappresentazioni\
-  \ testuali di data e ora in un oggetto `Date`. Questo processo \xE8 essenziale\u2026"
+description: 'Come fare: #.'
 lastmod: '2024-03-13T22:44:43.779287-06:00'
 model: gpt-4-0125-preview
-summary: Analizzare una data da una stringa comporta la conversione di rappresentazioni
-  testuali di data e ora in un oggetto `Date`.
+summary: '#.'
 title: Analisi di una data da una stringa
 weight: 30
 ---

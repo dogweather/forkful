@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:44:06.874603-07:00
-description: "N\xFAmeros complexos t\xEAm uma parte real e uma parte imagin\xE1ria,\
-  \ geralmente escritos como `a + bi`. Eles s\xE3o cruciais em matem\xE1tica avan\xE7\
-  ada, f\xEDsica,\u2026"
+description: "Como: O PHP oferece suporte integrado para n\xFAmeros complexos usando\
+  \ a extens\xE3o `ext-intl` com a classe `NumberFormatter`. Aqui est\xE1 um exemplo."
 lastmod: '2024-03-13T22:44:46.661371-06:00'
 model: gpt-4-0125-preview
-summary: "N\xFAmeros complexos t\xEAm uma parte real e uma parte imagin\xE1ria, geralmente\
-  \ escritos como `a + bi`."
+summary: "O PHP oferece suporte integrado para n\xFAmeros complexos usando a extens\xE3\
+  o `ext-intl` com a classe `NumberFormatter`."
 title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---

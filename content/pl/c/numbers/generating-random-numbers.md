@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:18.964016-07:00
-description: "Generowanie losowych liczb w j\u0119zyku C polega na tworzeniu warto\u015B\
-  ci, kt\xF3re s\u0105 nieprzewidywalne i pod\u0105\u017Caj\u0105 za okre\u015Blonym\
-  \ rozk\u0142adem, takim jak jednostajny\u2026"
+description: "Jak to zrobi\u0107: W j\u0119zyku C losowe liczby mo\u017Cna generowa\u0107\
+  \ za pomoc\u0105 funkcji `rand()`, kt\xF3ra jest cz\u0119\u015Bci\u0105 standardowej\
+  \ biblioteki C `<stdlib.h>`. Domy\u015Blnie\u2026"
 lastmod: '2024-03-13T22:44:35.881862-06:00'
 model: gpt-4-0125-preview
-summary: "Generowanie losowych liczb w j\u0119zyku C polega na tworzeniu warto\u015B\
-  ci, kt\xF3re s\u0105 nieprzewidywalne i pod\u0105\u017Caj\u0105 za okre\u015Blonym\
-  \ rozk\u0142adem, takim jak jednostajny lub normalny."
+summary: "W j\u0119zyku C losowe liczby mo\u017Cna generowa\u0107 za pomoc\u0105 funkcji\
+  \ `rand()`, kt\xF3ra jest cz\u0119\u015Bci\u0105 standardowej biblioteki C `<stdlib.h>`."
 title: Generowanie liczb losowych
 weight: 12
 ---

@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:30.523930-07:00
-description: "Crear un archivo temporal en Google Apps Script implica generar un archivo\
-  \ destinado para uso a corto plazo, t\xEDpicamente para procesamiento de datos\u2026"
+description: "C\xF3mo: En Google Apps Script, crear un archivo temporal se puede lograr\
+  \ utilizando el servicio DriveApp, el cual proporciona un m\xE9todo sencillo para\
+  \ crear,\u2026"
 lastmod: '2024-03-13T22:44:58.585382-06:00'
 model: gpt-4-0125-preview
-summary: "Crear un archivo temporal en Google Apps Script implica generar un archivo\
-  \ destinado para uso a corto plazo, t\xEDpicamente para procesamiento de datos intermediario,\
-  \ depuraci\xF3n o prop\xF3sitos de cach\xE9."
+summary: "En Google Apps Script, crear un archivo temporal se puede lograr utilizando\
+  \ el servicio DriveApp, el cual proporciona un m\xE9todo sencillo para crear, leer\
+  \ y eliminar archivos en Google Drive."
 title: Creando un archivo temporal
 weight: 21
 ---

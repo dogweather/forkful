@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:39.263891-07:00
-description: "\xC9crire sur l'erreur standard (stderr) en C# implique de diriger les\
-  \ messages d'erreur et les diagnostics s\xE9par\xE9ment de la sortie r\xE9guli\xE8\
-  re (stdout) pour\u2026"
+description: "Comment faire : En C#, \xE9crire sur l'erreur standard peut \xEAtre\
+  \ r\xE9alis\xE9 en utilisant le flux `Console.Error`. Ce flux est utilis\xE9 sp\xE9\
+  cifiquement pour les\u2026"
 lastmod: '2024-03-13T22:44:57.805615-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire sur l'erreur standard (stderr) en C# implique de diriger les messages\
-  \ d'erreur et les diagnostics s\xE9par\xE9ment de la sortie r\xE9guli\xE8re (stdout)\
-  \ pour aider les utilisateurs et les d\xE9veloppeurs \xE0 distinguer entre la sortie\
-  \ normale du programme et les notifications d'erreur."
+summary: "En C#, \xE9crire sur l'erreur standard peut \xEAtre r\xE9alis\xE9 en utilisant\
+  \ le flux `Console.Error`."
 title: "\xC9crire sur l'erreur standard"
 weight: 25
 ---

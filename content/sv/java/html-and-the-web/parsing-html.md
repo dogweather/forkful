@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:27.561168-07:00
-description: "Att tolka HTML inneb\xE4r att gr\xE4va igenom m\xE4rkspr\xE5ket f\xF6\
-  r att extrahera data som text, l\xE4nkar eller andra element. Vi g\xF6r det f\xF6\
-  r att interagera med eller\u2026"
+description: "Hur man g\xF6r: L\xE5t oss anv\xE4nda Jsoup, ett praktiskt bibliotek\
+  \ f\xF6r att arbeta med verklig HTML. F\xF6rst, l\xE4gg till beroendet."
 lastmod: '2024-03-13T22:44:37.785317-06:00'
 model: gpt-4-0125-preview
-summary: "Att tolka HTML inneb\xE4r att gr\xE4va igenom m\xE4rkspr\xE5ket f\xF6r att\
-  \ extrahera data som text, l\xE4nkar eller andra element."
+summary: "L\xE5t oss anv\xE4nda Jsoup, ett praktiskt bibliotek f\xF6r att arbeta med\
+  \ verklig HTML."
 title: Tolka HTML
 weight: 43
 ---

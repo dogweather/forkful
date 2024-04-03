@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:27.970541-07:00
-description: "Het extraheren van substrings betekent dat je slechts een deel van een\
-  \ string pakt\u2014alsof je een lint knipt tot de lengte die je nodig hebt. Programmeurs\u2026"
+description: 'Hoe: Swift maakt het vrij eenvoudig om met substrings te werken. Laten
+  we er direct induiken met enkele voorbeelden.'
 lastmod: '2024-03-13T22:44:51.145038-06:00'
 model: gpt-4-0125-preview
-summary: "Het extraheren van substrings betekent dat je slechts een deel van een string\
-  \ pakt\u2014alsof je een lint knipt tot de lengte die je nodig hebt."
+summary: Swift maakt het vrij eenvoudig om met substrings te werken.
 title: Substrings extraheren
 weight: 6
 ---

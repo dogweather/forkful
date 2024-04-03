@@ -1,11 +1,12 @@
 ---
 date: 2024-01-27 20:33:56.394505-07:00
-description: "Das Generieren von Zufallszahlen bezieht sich auf die Erzeugung von\
-  \ unvorhersehbaren Sequenzen oder Einzelwerten innerhalb eines definierten Bereichs.\u2026"
+description: "Wie: In Java kann das Generieren von Zufallszahlen mithilfe der `Random`-Klasse\
+  \ aus dem `java.util`-Paket oder den Klassen `ThreadLocalRandom` und\u2026"
 lastmod: '2024-03-13T22:44:53.759036-06:00'
 model: gpt-4-0125-preview
-summary: Das Generieren von Zufallszahlen bezieht sich auf die Erzeugung von unvorhersehbaren
-  Sequenzen oder Einzelwerten innerhalb eines definierten Bereichs.
+summary: "In Java kann das Generieren von Zufallszahlen mithilfe der `Random`-Klasse\
+  \ aus dem `java.util`-Paket oder den Klassen `ThreadLocalRandom` und `SecureRandom`\
+  \ f\xFCr spezifische Anwendungsf\xE4lle erreicht werden."
 title: Generierung von Zufallszahlen
 weight: 12
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:43:48.272053-07:00
-description: "Scaricare una pagina web significa recuperarne i contenuti via HTTP\
-  \ per usarli in una app. I programmatori lo fanno per accedere a dati dinamici,\u2026"
+description: "How to: (Come fare:) In Elm, usare `Http` per scaricare una pagina web\
+  \ \xE8 diretto. Creiamo una richiesta e gestiamo la risposta."
 lastmod: '2024-03-13T22:44:43.348863-06:00'
 model: gpt-4-1106-preview
-summary: Scaricare una pagina web significa recuperarne i contenuti via HTTP per usarli
-  in una app.
+summary: "In Elm, usare `Http` per scaricare una pagina web \xE8 diretto."
 title: Scaricare una pagina web
 weight: 42
 ---

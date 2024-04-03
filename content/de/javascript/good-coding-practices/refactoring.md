@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 01:40:34.287024-07:00
-description: "Refactoring ist der Prozess der Umstrukturierung vorhandenen Computer-Codes,\
-  \ ohne sein externes Verhalten zu \xE4ndern. Programmierer machen das, um die\u2026"
+description: "Wie geht das: Schauen wir uns ein einfaches Beispiel an, bei dem Refactoring\
+  \ Ihren Code konziser und lesbarer machen kann. Hier refaktorisieren wir eine\u2026"
 lastmod: '2024-03-13T22:44:54.274466-06:00'
 model: gpt-4-0125-preview
-summary: "Refactoring ist der Prozess der Umstrukturierung vorhandenen Computer-Codes,\
-  \ ohne sein externes Verhalten zu \xE4ndern."
+summary: Schauen wir uns ein einfaches Beispiel an, bei dem Refactoring Ihren Code
+  konziser und lesbarer machen kann.
 title: Refactoring
 weight: 19
 ---

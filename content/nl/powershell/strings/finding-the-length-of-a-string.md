@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:15.674976-07:00
-description: "In PowerShell betekent het vinden van de lengte van een tekenreeks het\
-  \ tellen van het aantal karakters dat het bevat. Programmeurs doen dit om invoer\
-  \ te\u2026"
+description: 'Hoe te: PowerShell maakt het verkrijgen van de tekenreekslengte eenvoudig.
+  Gooi gewoon een tekenreeks naar de `.Length` eigenschap, zoals dit.'
 lastmod: '2024-03-13T22:44:51.017431-06:00'
 model: gpt-4-0125-preview
-summary: In PowerShell betekent het vinden van de lengte van een tekenreeks het tellen
-  van het aantal karakters dat het bevat.
+summary: PowerShell maakt het verkrijgen van de tekenreekslengte eenvoudig.
 title: De lengte van een string vinden
 weight: 7
 ---

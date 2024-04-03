@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:41.974190-07:00
-description: "Merkkijonon pituuden selvitt\xE4minen Google Apps Scriptill\xE4, joka\
-  \ on JavaScript-pohjainen pilviskriptikieli, jonka avulla voit automatisoida teht\xE4\
-  vi\xE4\u2026"
+description: "Kuinka: Google Apps Scriptill\xE4 voit selvitt\xE4\xE4 merkkijonon pituuden\
+  \ k\xE4ytt\xE4m\xE4ll\xE4 `.length`-ominaisuutta, samankaltaisesti kuin JavaScriptiss\xE4\
+  . T\xE4m\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.086702-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonon pituuden selvitt\xE4minen Google Apps Scriptill\xE4, joka on\
-  \ JavaScript-pohjainen pilviskriptikieli, jonka avulla voit automatisoida teht\xE4\
-  vi\xE4 Googlen tuotteiden parissa, tarkoittaa merkkijonon sis\xE4lt\xE4mien merkkien\
-  \ m\xE4\xE4r\xE4n m\xE4\xE4ritt\xE4mist\xE4."
+summary: "Google Apps Scriptill\xE4 voit selvitt\xE4\xE4 merkkijonon pituuden k\xE4\
+  ytt\xE4m\xE4ll\xE4 `.length`-ominaisuutta, samankaltaisesti kuin JavaScriptiss\xE4\
+  ."
 title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---

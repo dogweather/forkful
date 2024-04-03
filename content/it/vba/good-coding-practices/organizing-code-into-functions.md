@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:30.693651-07:00
-description: "Organizzare il codice in funzioni in Visual Basic for Applications (VBA)\
-  \ comporta la suddivisione di un programma in pezzi pi\xF9 piccoli e gestibili,\
-  \ noti\u2026"
+description: "Come fare: In VBA, le funzioni vengono definite utilizzando le istruzioni\
+  \ `Function` e `End Function`. Ecco un semplice esempio di come creare una\u2026"
 lastmod: '2024-03-13T22:44:43.269206-06:00'
 model: gpt-4-0125-preview
-summary: "Organizzare il codice in funzioni in Visual Basic for Applications (VBA)\
-  \ comporta la suddivisione di un programma in pezzi pi\xF9 piccoli e gestibili,\
-  \ noti come funzioni."
+summary: In VBA, le funzioni vengono definite utilizzando le istruzioni `Function`
+  e `End Function`.
 title: Organizzare il codice in funzioni
 weight: 18
 ---

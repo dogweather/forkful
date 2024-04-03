@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:45.751827-07:00
-description: "Analizzare una data da una stringa implica interpretare il formato della\
-  \ stringa per estrarre componenti della data come giorno, mese e anno. I\u2026"
+description: "Come fare: Nel C++ moderno, \xE8 possibile utilizzare la libreria `<chrono>`\
+  \ per gestire date e orari nativamente, ma questa non supporta direttamente\u2026"
 lastmod: '2024-03-13T22:44:43.736111-06:00'
 model: gpt-4-0125-preview
-summary: Analizzare una data da una stringa implica interpretare il formato della
-  stringa per estrarre componenti della data come giorno, mese e anno.
+summary: "Nel C++ moderno, \xE8 possibile utilizzare la libreria `<chrono>` per gestire\
+  \ date e orari nativamente, ma questa non supporta direttamente l'analisi da stringhe\
+  \ senza un parsing manuale per formati pi\xF9 complessi."
 title: Analisi di una data da una stringa
 weight: 30
 ---

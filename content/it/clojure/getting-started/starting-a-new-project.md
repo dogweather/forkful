@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 18:03:04.595548-07:00
-description: "Avviare un nuovo progetto significa configurare l'ambiente di sviluppo\
-  \ per piazzare solidamente le basi del software. I programmatori fanno questo per\u2026"
+description: 'How to: (Come fare:) Clojure offre uno strumento integrato,`lein`, per
+  iniziare nuovi progetti. Ecco come si usa.'
 lastmod: '2024-03-13T22:44:43.042895-06:00'
 model: gpt-4-1106-preview
-summary: Avviare un nuovo progetto significa configurare l'ambiente di sviluppo per
-  piazzare solidamente le basi del software.
+summary: Clojure offre uno strumento integrato,`lein`, per iniziare nuovi progetti.
 title: Avvio di un nuovo progetto
 weight: 1
 ---

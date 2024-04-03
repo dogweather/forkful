@@ -2,14 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:44.584999-07:00
-description: "Vi\u1EC7c l\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong Ruby c\u1EF1c k\u1EF3\
-  \ \u0111\u01A1n gi\u1EA3n: l\u1EA5y ng\xE0y c\u1EE7a h\xF4m nay. C\xE1c l\u1EAD\
-  p tr\xECnh vi\xEAn c\u1EA7n n\xF3 cho nhi\u1EC1u t\xE1c v\u1EE5 kh\xE1c nhau t\u1EEB\
-  \ ghi log v\xE0 \u0111\xE1nh d\u1EA5u th\u1EDDi\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Ruby gi\xFAp vi\u1EC7c l\u1EA5y ng\xE0y hi\u1EC7\
+  n t\u1EA1i tr\u1EDF n\xEAn r\u1EA5t d\u1EC5 d\xE0ng. D\u01B0\u1EDBi \u0111\xE2y\
+  \ l\xE0 c\xE1ch l\xE0m."
 lastmod: '2024-03-13T22:44:37.355119-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c l\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong Ruby c\u1EF1c k\u1EF3\
-  \ \u0111\u01A1n gi\u1EA3n: l\u1EA5y ng\xE0y c\u1EE7a h\xF4m nay."
+summary: "Ruby gi\xFAp vi\u1EC7c l\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i tr\u1EDF n\xEA\
+  n r\u1EA5t d\u1EC5 d\xE0ng."
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 weight: 29
 ---

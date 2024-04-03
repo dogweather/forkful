@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:36.847329-07:00
-description: "YAML, un lenguaje de serializaci\xF3n de datos dise\xF1ado para ser\
-  \ amigable con el humano, se usa a menudo para archivos de configuraci\xF3n, mensajes\
-  \ entre\u2026"
+description: "C\xF3mo hacerlo: Trabajar con YAML en TypeScript t\xEDpicamente involucra\
+  \ parsear el contenido YAML en objetos de JavaScript y posiblemente convertir objetos\
+  \ de\u2026"
 lastmod: '2024-03-13T22:44:58.823709-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, un lenguaje de serializaci\xF3n de datos dise\xF1ado para ser amigable\
-  \ con el humano, se usa a menudo para archivos de configuraci\xF3n, mensajes entre\
-  \ procesos y almacenamiento de datos."
+summary: "Trabajar con YAML en TypeScript t\xEDpicamente involucra parsear el contenido\
+  \ YAML en objetos de JavaScript y posiblemente convertir objetos de JavaScript de\
+  \ vuelta a YAML."
 title: Trabajando con YAML
 weight: 41
 ---

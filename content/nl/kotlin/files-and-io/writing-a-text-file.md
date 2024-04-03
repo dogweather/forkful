@@ -2,13 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:53.029638-07:00
-description: "Een tekstbestand schrijven in programmeren betekent het cre\xEBren en\
-  \ opslaan van gegevens in een leesbaar bestandsformaat, zoals .txt. Programmeurs\
-  \ doen dit\u2026"
+description: 'Hoe te: Laten we "Hallo, bestand!" naar een "greeting.txt" bestand schrijven.'
 lastmod: '2024-03-13T22:44:50.786146-06:00'
 model: gpt-4-0125-preview
-summary: "Een tekstbestand schrijven in programmeren betekent het cre\xEBren en opslaan\
-  \ van gegevens in een leesbaar bestandsformaat, zoals ."
+summary: Laten we "Hallo, bestand!" naar een "greeting.txt" bestand schrijven.
 title: Een tekstbestand schrijven
 weight: 24
 ---

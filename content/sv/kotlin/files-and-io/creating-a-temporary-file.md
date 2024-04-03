@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:40:37.906889-07:00
-description: "Tillf\xE4lliga filer \xE4r tempor\xE4ra storage-enheter som program\
-  \ anv\xE4nder f\xF6r att hantera data under k\xF6rning. Programmerare skapar dem\
-  \ f\xF6r att f\xF6rhindra\u2026"
+description: "Hur g\xF6r man: Att skapa en tillf\xE4llig fil i Kotlin \xE4r enkelt.\
+  \ Anv\xE4nd `createTempFile`-metoden fr\xE5n `java.io.File`."
 lastmod: '2024-03-13T22:44:37.890312-06:00'
 model: gpt-4-1106-preview
-summary: "Tillf\xE4lliga filer \xE4r tempor\xE4ra storage-enheter som program anv\xE4\
-  nder f\xF6r att hantera data under k\xF6rning."
+summary: "Att skapa en tillf\xE4llig fil i Kotlin \xE4r enkelt."
 title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---

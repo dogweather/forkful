@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:43:53.767444-07:00
-description: "I numeri complessi hanno una parte reale e una parte immaginaria, solitamente\
-  \ scritti come `a + bi`. Sono fondamentali in matematica avanzata, fisica,\u2026"
+description: 'Come fare: PHP fornisce supporto integrato per i numeri complessi utilizzando
+  l''estensione `ext-intl` con la classe `NumberFormatter`. Ecco un esempio.'
 lastmod: '2024-03-13T22:44:43.510754-06:00'
 model: gpt-4-0125-preview
-summary: I numeri complessi hanno una parte reale e una parte immaginaria, solitamente
-  scritti come `a + bi`.
+summary: PHP fornisce supporto integrato per i numeri complessi utilizzando l'estensione
+  `ext-intl` con la classe `NumberFormatter`.
 title: Lavorare con i numeri complessi
 weight: 14
 ---

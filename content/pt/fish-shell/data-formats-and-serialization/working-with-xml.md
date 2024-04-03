@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:30:45.570448-07:00
-description: "Trabalhar com XML significa manipular dados em um formato estruturado\
-  \ e pervasivo usado em configura\xE7\xF5es, mensagens e mais. Programadores manipulam\
-  \ o XML\u2026"
+description: "Como fazer: O Fish n\xE3o possui an\xE1lise de XML incorporada, ent\xE3\
+  o voc\xEA vai depender de ferramentas externas como o `xmllint` ou `xmlstarlet`.\
+  \ Aqui est\xE1 um\u2026"
 lastmod: '2024-03-13T22:44:47.029936-06:00'
 model: gpt-4-0125-preview
-summary: "Trabalhar com XML significa manipular dados em um formato estruturado e\
-  \ pervasivo usado em configura\xE7\xF5es, mensagens e mais."
+summary: "O Fish n\xE3o possui an\xE1lise de XML incorporada, ent\xE3o voc\xEA vai\
+  \ depender de ferramentas externas como o `xmllint` ou `xmlstarlet`."
 title: Trabalhando com XML
 weight: 40
 ---

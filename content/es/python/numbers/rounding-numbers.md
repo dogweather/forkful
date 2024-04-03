@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:46:17.495175-07:00
-description: "Redondear n\xFAmeros significa ajustarlos para que est\xE9n m\xE1s cerca\
-  \ de un valor m\xE1s simple o m\xE1s significativo. Los programadores redondean\
-  \ los n\xFAmeros para\u2026"
+description: "C\xF3mo hacerlo: Aqu\xED tienes los detalles sobre c\xF3mo redondear\
+  \ n\xFAmeros en Python."
 lastmod: '2024-03-13T22:44:58.605595-06:00'
 model: gpt-4-0125-preview
-summary: "Redondear n\xFAmeros significa ajustarlos para que est\xE9n m\xE1s cerca\
-  \ de un valor m\xE1s simple o m\xE1s significativo."
+summary: "Aqu\xED tienes los detalles sobre c\xF3mo redondear n\xFAmeros en Python."
 title: "Redondeo de n\xFAmeros"
 weight: 13
 ---

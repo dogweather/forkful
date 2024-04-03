@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:26.075905-07:00
-description: "Trabalhar com YAML envolve analisar e manipular arquivos YAML (YAML\
-  \ Ain't Markup Language), um formato de serializa\xE7\xE3o de dados usado para arquivos\
-  \ de\u2026"
+description: "Como fazer: O Fish Shell n\xE3o tem suporte nativo para analisar YAML,\
+  \ mas voc\xEA pode utilizar ferramentas de terceiros como o `yq` (um processador\
+  \ de linha\u2026"
 lastmod: '2024-03-13T22:44:47.025942-06:00'
 model: gpt-4-0125-preview
-summary: "Trabalhar com YAML envolve analisar e manipular arquivos YAML (YAML Ain't\
-  \ Markup Language), um formato de serializa\xE7\xE3o de dados usado para arquivos\
-  \ de configura\xE7\xE3o, no Fish Shell."
+summary: "O Fish Shell n\xE3o tem suporte nativo para analisar YAML, mas voc\xEA pode\
+  \ utilizar ferramentas de terceiros como o `yq` (um processador de linha de comando\
+  \ YAML leve e port\xE1til) para manipular dados YAML."
 title: Trabalhando com YAML
 weight: 41
 ---

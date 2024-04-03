@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 03:46:05.886889-07:00
-description: "Redondear n\xFAmeros se trata de ajustar un valor al entero m\xE1s cercano\
-  \ o al lugar decimal especificado. Los programadores redondean n\xFAmeros para simplificar\u2026"
+description: "C\xF3mo hacerlo: Tienes a tu disposici\xF3n algunos cmdlets y m\xE9\
+  todos \xFAtiles en PowerShell para redondear: - M\xE9todo `Round()` de la clase\
+  \ Math."
 lastmod: '2024-03-13T22:44:59.285230-06:00'
 model: gpt-4-0125-preview
-summary: "Redondear n\xFAmeros se trata de ajustar un valor al entero m\xE1s cercano\
-  \ o al lugar decimal especificado."
+summary: "Tienes a tu disposici\xF3n algunos cmdlets y m\xE9todos \xFAtiles en PowerShell\
+  \ para redondear."
 title: "Redondeo de n\xFAmeros"
 weight: 13
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:17:36.958004-07:00
-description: "Refactoring ist der Prozess der Umstrukturierung vorhandenen Computer-Codes,\
-  \ ohne dessen \xE4u\xDFeres Verhalten zu ver\xE4ndern. Programmierer tun dies, um\
-  \ den\u2026"
+description: 'Wie geht das: Lassen Sie uns eine einfache C#-Methode refaktorisieren,
+  die die Summe eines Arrays von Zahlen berechnet und ausgibt: Vor dem Refactoring.'
 lastmod: '2024-03-13T22:44:53.896591-06:00'
 model: gpt-4-0125-preview
-summary: "Refactoring ist der Prozess der Umstrukturierung vorhandenen Computer-Codes,\
-  \ ohne dessen \xE4u\xDFeres Verhalten zu ver\xE4ndern."
+summary: Lassen Sie uns eine einfache C#-Methode refaktorisieren, die die Summe eines
+  Arrays von Zahlen berechnet und ausgibt.
 title: Refactoring
 weight: 19
 ---

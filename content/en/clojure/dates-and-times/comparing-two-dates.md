@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:32:28.116760-07:00
-description: "Comparing two dates means checking how they relate\u2014is one earlier,\
-  \ later, or the exact same as the other? Programmers do this to handle deadlines,\u2026"
+description: 'How to: Clojure uses the Java interop capabilities to handle dates.
+  Let''s roll up our sleeves and dive in.'
 lastmod: '2024-03-13T22:44:59.756764-06:00'
 model: gpt-4-1106-preview
-summary: "Comparing two dates means checking how they relate\u2014is one earlier,\
-  \ later, or the exact same as the other."
+summary: Clojure uses the Java interop capabilities to handle dates.
 title: Comparing two dates
 weight: 27
 ---

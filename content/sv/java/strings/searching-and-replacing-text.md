@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:58:34.147405-07:00
-description: "Att s\xF6ka och ers\xE4tta text inneb\xE4r att automatiskt hitta specifika\
-  \ teckenstr\xE4ngar i en text och byta ut dem mot andra str\xE4ngar. Programmerare\
-  \ g\xF6r detta f\xF6r\u2026"
+description: "How to: Java erbjuder `String` metoder f\xF6r att enkelt hantera s\xF6\
+  kning och ers\xE4ttning, samt `Pattern` och `Matcher` klasser f\xF6r avancerade\
+  \ behov. H\xE4r \xE4r\u2026"
 lastmod: '2024-03-13T22:44:37.772957-06:00'
 model: gpt-4-1106-preview
-summary: "Att s\xF6ka och ers\xE4tta text inneb\xE4r att automatiskt hitta specifika\
-  \ teckenstr\xE4ngar i en text och byta ut dem mot andra str\xE4ngar."
+summary: "Java erbjuder `String` metoder f\xF6r att enkelt hantera s\xF6kning och\
+  \ ers\xE4ttning, samt `Pattern` och `Matcher` klasser f\xF6r avancerade behov."
 title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---

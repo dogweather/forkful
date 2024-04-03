@@ -2,13 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:07.073671-07:00
-description: "Arredondar n\xFAmeros \xE9 o processo de ajustar um n\xFAmero para o\
-  \ seu inteiro mais pr\xF3ximo ou para um n\xFAmero especificado de casas decimais.\
-  \ Programadores\u2026"
+description: "Como fazer: Dart fornece m\xE9todos nativos em seu tipo fundamental\
+  \ `num` para opera\xE7\xF5es de arredondamento. Aqui, exploraremos m\xE9todos como\
+  \ `round()`,\u2026"
 lastmod: '2024-03-13T22:44:46.275952-06:00'
 model: gpt-4-0125-preview
-summary: "Arredondar n\xFAmeros \xE9 o processo de ajustar um n\xFAmero para o seu\
-  \ inteiro mais pr\xF3ximo ou para um n\xFAmero especificado de casas decimais."
+summary: "Dart fornece m\xE9todos nativos em seu tipo fundamental `num` para opera\xE7\
+  \xF5es de arredondamento."
 title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---

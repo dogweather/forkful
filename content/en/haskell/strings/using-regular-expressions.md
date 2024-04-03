@@ -1,11 +1,14 @@
 ---
 date: 2024-02-03 19:02:43.421953-07:00
-description: "Regular expressions in programming are sequences of characters that\
-  \ define a search pattern, typically employed for string searching and manipulation.\u2026"
+description: "How to: In Haskell, regex functionalities are not part of the standard\
+  \ library, necessitating the use of third-party packages like `regex-base` along\
+  \ with\u2026"
 lastmod: '2024-03-13T22:45:00.119037-06:00'
 model: gpt-4-0125-preview
-summary: Regular expressions in programming are sequences of characters that define
-  a search pattern, typically employed for string searching and manipulation.
+summary: In Haskell, regex functionalities are not part of the standard library, necessitating
+  the use of third-party packages like `regex-base` along with a compatible backend
+  like `regex-posix` (for POSIX regex support), `regex-pcre` (for Perl-compatible
+  regex), etc.
 title: Using regular expressions
 weight: 11
 ---

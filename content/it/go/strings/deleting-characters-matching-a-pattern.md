@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:32.866535-07:00
-description: "Eliminare caratteri che corrispondono a un pattern specifico consiste\
-  \ nel rimuovere certi caratteri o sequenze di caratteri da stringhe, basandosi su\u2026"
+description: "Come fare: In Go, eliminare caratteri che corrispondono a un pattern\
+  \ pu\xF2 essere realizzato in modo efficiente utilizzando il pacchetto `regexp`.\
+  \ Qui,\u2026"
 lastmod: '2024-03-13T22:44:42.890579-06:00'
 model: gpt-4-0125-preview
-summary: Eliminare caratteri che corrispondono a un pattern specifico consiste nel
-  rimuovere certi caratteri o sequenze di caratteri da stringhe, basandosi su regole
-  definite da un pattern (solitamente attraverso espressioni regolari).
+summary: "In Go, eliminare caratteri che corrispondono a un pattern pu\xF2 essere\
+  \ realizzato in modo efficiente utilizzando il pacchetto `regexp`."
 title: Eliminazione dei caratteri corrispondenti a un pattern
 weight: 5
 ---

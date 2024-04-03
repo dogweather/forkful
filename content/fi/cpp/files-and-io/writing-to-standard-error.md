@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:40.336820-07:00
-description: "Virheilmoitusten kirjoittaminen standardivirheeseen (`stderr`) C++:ssa\
-  \ tarkoittaa virheviestien tai diagnostiikkatietojen tulostamista, jotka ovat\u2026"
+description: "Kuinka: C++:ssa standardivirheeseen kirjoittaminen voidaan saavuttaa\
+  \ k\xE4ytt\xE4m\xE4ll\xE4 `cerr`-virtaa, joka on osa standardikirjastoa. T\xE4ss\xE4\
+  \ on perusesimerkki."
 lastmod: '2024-03-13T22:44:56.881849-06:00'
 model: gpt-4-0125-preview
-summary: "Virheilmoitusten kirjoittaminen standardivirheeseen (`stderr`) C++:ssa tarkoittaa\
-  \ virheviestien tai diagnostiikkatietojen tulostamista, jotka ovat erill\xE4\xE4\
-  n p\xE4\xE4ohjelman tulosteesta."
+summary: "C++:ssa standardivirheeseen kirjoittaminen voidaan saavuttaa k\xE4ytt\xE4\
+  m\xE4ll\xE4 `cerr`-virtaa, joka on osa standardikirjastoa."
 title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---

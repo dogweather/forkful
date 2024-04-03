@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:30:28.493730-07:00
-description: "Trabajar con XML significa analizar, transformar y generar documentos\
-  \ XML en Elm. Se hace para interactuar con muchos servicios web y sistemas heredados\u2026"
+description: "C\xF3mo: En Elm, se trabaja con XML usando el paquete `elm/xml`. Aqu\xED\
+  \ hay un vistazo r\xE1pido a c\xF3mo analizar un fragmento de XML."
 lastmod: '2024-03-13T22:44:59.017931-06:00'
 model: gpt-4-0125-preview
-summary: Trabajar con XML significa analizar, transformar y generar documentos XML
-  en Elm.
+summary: En Elm, se trabaja con XML usando el paquete `elm/xml`.
 title: Trabajando con XML
 weight: 40
 ---

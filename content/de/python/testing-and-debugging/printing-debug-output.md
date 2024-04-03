@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:53:22.791929-07:00
-description: "Druckausgabe zur Fehlersuche (engl. \"debug output\") wirft einen Blick\
-  \ unter die Motorhaube deines Codes. Programmierer nutzen sie, um zu verstehen,\
-  \ was im\u2026"
+description: 'How to: Du willst wissen, wie dein Code tickt? `print()` ist dein Freund.
+  Platziere es neben Variablen und sieh dir die Magie an.'
 lastmod: '2024-03-13T22:44:53.381262-06:00'
 model: gpt-4-1106-preview
-summary: Druckausgabe zur Fehlersuche (engl.
+summary: Du willst wissen, wie dein Code tickt.
 title: Debug-Ausgaben drucken
 weight: 33
 ---

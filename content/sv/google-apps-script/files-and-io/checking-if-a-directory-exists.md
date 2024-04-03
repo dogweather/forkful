@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:48:48.533187-07:00
-description: "Att kontrollera om en mapp finns i Google Apps Script inneb\xE4r att\
-  \ verifiera n\xE4rvaron av en mapp inom Google Drive. Programmerare utf\xF6r ofta\
-  \ denna kontroll\u2026"
+description: "Hur man g\xF6r: Google Apps Script erbjuder inte en direkt \"finns\"\
+  \ metod f\xF6r mappar. Ist\xE4llet anv\xE4nder vi Google Drives s\xF6kfunktioner\
+  \ f\xF6r att kontrollera om\u2026"
 lastmod: '2024-03-13T22:44:37.454509-06:00'
 model: gpt-4-0125-preview
-summary: "Att kontrollera om en mapp finns i Google Apps Script inneb\xE4r att verifiera\
-  \ n\xE4rvaron av en mapp inom Google Drive."
+summary: "Google Apps Script erbjuder inte en direkt \"finns\" metod f\xF6r mappar."
 title: Kontroll om en katalog existerar
 weight: 20
 ---

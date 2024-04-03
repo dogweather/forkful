@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:06.534563-07:00
-description: "Reguliere expressies (regex) zijn patronen die gebruikt worden om combinaties\
-  \ van karakters in strings te vinden. Programmeurs gebruiken regex voor het\u2026"
+description: 'Hoe: Hieronder staan Python voorbeelden die het `re` module gebruiken
+  voor gangbare regex operaties.'
 lastmod: '2024-03-13T22:44:50.366389-06:00'
 model: gpt-4-0125-preview
-summary: Reguliere expressies (regex) zijn patronen die gebruikt worden om combinaties
-  van karakters in strings te vinden.
+summary: Hieronder staan Python voorbeelden die het `re` module gebruiken voor gangbare
+  regex operaties.
 title: Reguliere expressies gebruiken
 weight: 11
 ---

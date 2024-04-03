@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 18:02:03.241373-07:00
-description: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica es incluir\
-  \ tus credenciales en una solicitud web para acceder a recursos protegidos. Los\
-  \ programadores\u2026"
+description: "C\xF3mo Hacerlo: Usaremos el m\xF3dulo `socket.http` para realizar la\
+  \ solicitud y `mime` para codificar las credenciales."
 lastmod: '2024-03-13T22:44:59.201480-06:00'
 model: gpt-4-1106-preview
-summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica es incluir tus\
-  \ credenciales en una solicitud web para acceder a recursos protegidos."
+summary: "Usaremos el m\xF3dulo `socket.http` para realizar la solicitud y `mime`\
+  \ para codificar las credenciales."
 title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
 weight: 45
 ---

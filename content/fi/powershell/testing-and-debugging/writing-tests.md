@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:42.797877-07:00
-description: "Testien kirjoittaminen PowerShellill\xE4 tarkoittaa skriptien luomista,\
-  \ jotka automaattisesti varmistavat PowerShell-koodisi toiminnallisuuden, taaten\
-  \ sen\u2026"
+description: "Miten: PowerShell ei sis\xE4ll\xE4 sis\xE4\xE4nrakennettua testauskehyst\xE4\
+  , mutta Pester, suosittu kolmannen osapuolen moduuli, on laajalti k\xE4ytetty testien\u2026"
 lastmod: '2024-03-13T22:44:56.785742-06:00'
 model: gpt-4-0125-preview
-summary: "Testien kirjoittaminen PowerShellill\xE4 tarkoittaa skriptien luomista,\
-  \ jotka automaattisesti varmistavat PowerShell-koodisi toiminnallisuuden, taaten\
-  \ sen toimivan odotetulla tavalla."
+summary: "PowerShell ei sis\xE4ll\xE4 sis\xE4\xE4nrakennettua testauskehyst\xE4, mutta\
+  \ Pester, suosittu kolmannen osapuolen moduuli, on laajalti k\xE4ytetty testien\
+  \ kirjoittamiseen ja suorittamiseen."
 title: Testien kirjoittaminen
 weight: 36
 ---

@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:13.593397-07:00
-description: "Escrever em um arquivo de texto em C++ envolve criar ou abrir um arquivo\
-  \ e, em seguida, escrever dados nele, o que \xE9 uma tarefa fundamental para\u2026"
+description: "Como Fazer: C++ oferece v\xE1rias maneiras de escrever em um arquivo\
+  \ de texto, mas um dos m\xE9todos mais diretos \xE9 usando a biblioteca `<fstream>`,\
+  \ que\u2026"
 lastmod: '2024-03-13T22:44:46.897490-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever em um arquivo de texto em C++ envolve criar ou abrir um arquivo\
-  \ e, em seguida, escrever dados nele, o que \xE9 uma tarefa fundamental para aplica\xE7\
-  \xF5es que precisam persistir dados, como logs, conte\xFAdo gerado por usu\xE1rios\
-  \ ou configura\xE7\xF5es."
+summary: "C++ oferece v\xE1rias maneiras de escrever em um arquivo de texto, mas um\
+  \ dos m\xE9todos mais diretos \xE9 usando a biblioteca `<fstream>`, que proporciona\
+  \ a classe `ofstream` (fluxo de arquivo de sa\xEDda) projetada para opera\xE7\xF5\
+  es de escrita em arquivo."
 title: Escrevendo um arquivo de texto
 weight: 24
 ---

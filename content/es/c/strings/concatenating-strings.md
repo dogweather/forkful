@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:44.813933-07:00
-description: "La concatenaci\xF3n de cadenas en C involucra unir dos o m\xE1s cadenas\
-  \ de extremo a extremo para formar una nueva cadena. Los programadores realizan\
-  \ esta\u2026"
+description: "C\xF3mo hacerlo: En C, las cadenas son arreglos de caracteres que terminan\
+  \ con un car\xE1cter nulo (`\\0`). A diferencia de en los lenguajes de alto nivel,\
+  \ C no\u2026"
 lastmod: '2024-03-13T22:44:59.536483-06:00'
 model: gpt-4-0125-preview
-summary: "La concatenaci\xF3n de cadenas en C involucra unir dos o m\xE1s cadenas\
-  \ de extremo a extremo para formar una nueva cadena."
+summary: "En C, las cadenas son arreglos de caracteres que terminan con un car\xE1\
+  cter nulo (`\\0`)."
 title: Concatenando cadenas de texto
 weight: 3
 ---

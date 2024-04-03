@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:38:04.359725-07:00
-description: "Muutetaan merkkijono pieniksi kirjaimiksi. Teemme sen siksi, ett\xE4\
-  \ voimme vertailla tekstej\xE4 tasapuolisesti riippumatta alkuper\xE4isest\xE4 kirjainkoosta\
-  \ tai\u2026"
+description: "How to / Miten tehd\xE4\xE4n: C# kieless\xE4 k\xE4yt\xE4t `ToLower()`-metodia,\
+  \ joka on osa `String`-luokkaa. T\xE4ss\xE4 yksinkertainen esimerkki ja sen tulostus."
 lastmod: '2024-03-13T22:44:56.560398-06:00'
 model: gpt-4-1106-preview
-summary: Muutetaan merkkijono pieniksi kirjaimiksi.
+summary: "C# kieless\xE4 k\xE4yt\xE4t `ToLower()`-metodia, joka on osa `String`-luokkaa."
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---

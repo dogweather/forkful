@@ -2,13 +2,11 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:28.218677-07:00
-description: "Satunnaislukujen tuottaminen Visual Basic for Applications (VBA) -ohjelmissa\
-  \ mahdollistaa prosessien, joissa on sattumanvaraisuuden tai muuttuvuuden\u2026"
+description: "Miten: VBA:ssa k\xE4ytet\xE4\xE4n `Rnd`-funktiota satunnaislukujen tuottamiseen.\
+  \ Oletusarvoisesti `Rnd` tuottaa yksitt\xE4isen tarkkuuden liukuluvun, joka on suurempi\u2026"
 lastmod: '2024-03-13T22:44:56.395952-06:00'
 model: gpt-4-0125-preview
-summary: "Satunnaislukujen tuottaminen Visual Basic for Applications (VBA) -ohjelmissa\
-  \ mahdollistaa prosessien, joissa on sattumanvaraisuuden tai muuttuvuuden elementtej\xE4\
-  , kuten nopanheitot tai tietojen n\xE4ytteist\xE4minen, simuloimisen."
+summary: "VBA:ssa k\xE4ytet\xE4\xE4n `Rnd`-funktiota satunnaislukujen tuottamiseen."
 title: Sattumanvaraisten numeroiden generointi
 weight: 12
 ---

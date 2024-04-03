@@ -2,17 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:54.824549-07:00
-description: "Trong l\u1EADp tr\xECnh m\xE1y t\xEDnh, \"In th\xF4ng \u0111i\u1EC7\
-  p g\u1EE1 l\u1ED7i\" bao g\u1ED3m vi\u1EC7c s\u1EA3n xu\u1EA5t c\xE1c th\xF4ng \u0111\
-  i\u1EC7p th\xF4ng tin chi ti\u1EBFt gi\xFAp c\xE1c nh\xE0 ph\xE1t tri\u1EC3n hi\u1EC3\
-  u \u0111\u01B0\u1EE3c lu\u1ED3ng th\u1EF1c hi\u1EC7n\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong Go, b\u1EA1n c\xF3 th\u1EC3 s\u1EED\
+  \ d\u1EE5ng g\xF3i `fmt` chu\u1EA9n \u0111\u1EC3 in th\xF4ng \u0111i\u1EC7p g\u1EE1\
+  \ l\u1ED7i ra b\u1EA3ng \u0111i\u1EC1u khi\u1EC3n. G\xF3i `fmt` cung c\u1EA5p m\u1ED9\
+  t lo\u1EA1t c\xE1c h\xE0m, nh\u01B0\u2026"
 lastmod: '2024-03-13T22:44:35.985665-06:00'
 model: gpt-4-0125-preview
-summary: "Trong l\u1EADp tr\xECnh m\xE1y t\xEDnh, \"In th\xF4ng \u0111i\u1EC7p g\u1EE1\
-  \ l\u1ED7i\" bao g\u1ED3m vi\u1EC7c s\u1EA3n xu\u1EA5t c\xE1c th\xF4ng \u0111i\u1EC7\
-  p th\xF4ng tin chi ti\u1EBFt gi\xFAp c\xE1c nh\xE0 ph\xE1t tri\u1EC3n hi\u1EC3u\
-  \ \u0111\u01B0\u1EE3c lu\u1ED3ng th\u1EF1c hi\u1EC7n c\u1EE7a ch\u01B0\u01A1ng tr\xEC\
-  nh ho\u1EB7c x\xE1c \u0111\u1ECBnh c\xE1c v\u1EA5n \u0111\u1EC1."
+summary: "Trong Go, b\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng g\xF3i `fmt` chu\u1EA9\
+  n \u0111\u1EC3 in th\xF4ng \u0111i\u1EC7p g\u1EE1 l\u1ED7i ra b\u1EA3ng \u0111i\u1EC1\
+  u khi\u1EC3n."
 title: "In \u0111\u1EA7u ra debug"
 weight: 33
 ---

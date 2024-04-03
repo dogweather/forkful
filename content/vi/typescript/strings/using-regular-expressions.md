@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:14.626476-07:00
-description: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy, hay c\xF2n g\u1ECDi l\xE0 regex, l\xE0\
-  \ m\u1ED9t c\xF4ng c\u1EE5 m\u1EA1nh m\u1EBD \u0111\u1EC3 t\xECm ki\u1EBFm v\xE0\
-  \ kh\u1EDBp m\u1EABu trong l\u1EADp tr\xECnh. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED\
-  \ d\u1EE5ng regex cho nh\u1EEFng t\xE1c\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: H\xE3y nh\u1EA3y v\xE0o TypeScript v\xE0 xem\
+  \ regex \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng nh\u01B0 th\u1EBF n\xE0o cho c\xE1\
+  c t\xE1c v\u1EE5 ph\u1ED5 bi\u1EBFn."
 lastmod: '2024-03-13T22:44:36.305399-06:00'
 model: gpt-4-0125-preview
-summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy, hay c\xF2n g\u1ECDi l\xE0 regex, l\xE0\
-  \ m\u1ED9t c\xF4ng c\u1EE5 m\u1EA1nh m\u1EBD \u0111\u1EC3 t\xECm ki\u1EBFm v\xE0\
-  \ kh\u1EDBp m\u1EABu trong l\u1EADp tr\xECnh."
+summary: "H\xE3y nh\u1EA3y v\xE0o TypeScript v\xE0 xem regex \u0111\u01B0\u1EE3c s\u1EED\
+  \ d\u1EE5ng nh\u01B0 th\u1EBF n\xE0o cho c\xE1c t\xE1c v\u1EE5 ph\u1ED5 bi\u1EBF\
+  n."
 title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---

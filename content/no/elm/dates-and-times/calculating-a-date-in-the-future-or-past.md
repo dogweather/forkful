@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:31:08.903313-07:00
-description: "Beregning av fremtidig eller tidligere dato betyr \xE5 finne en dato\
-  \ f\xF8r eller etter en spesifikk dag. Programmerere gj\xF8r dette for funksjonalitet\
-  \ som\u2026"
+description: "How to: I Elm bruker du ofte `Time` og `Date` biblioteker for \xE5 h\xE5\
+  ndtere datoer. Her er hvordan du kan beregne en dato i fremtiden eller fortiden."
 lastmod: '2024-03-13T22:44:40.722292-06:00'
 model: gpt-4-1106-preview
-summary: "Beregning av fremtidig eller tidligere dato betyr \xE5 finne en dato f\xF8\
-  r eller etter en spesifikk dag."
+summary: "I Elm bruker du ofte `Time` og `Date` biblioteker for \xE5 h\xE5ndtere datoer."
 title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---

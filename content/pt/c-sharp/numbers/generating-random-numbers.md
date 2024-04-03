@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 20:32:40.258171-07:00
-description: "Gerar n\xFAmeros aleat\xF3rios em C# envolve a cria\xE7\xE3o de valores\
-  \ num\xE9ricos imprevis\xEDveis dentro de um intervalo especificado. Programadores\
-  \ usam esses m\xE9todos\u2026"
+description: "Como fazer: A maneira mais comum de gerar n\xFAmeros aleat\xF3rios em\
+  \ C# \xE9 usando a classe `System.Random`. Aqui est\xE1 um exemplo simples demonstrando\
+  \ seu uso."
 lastmod: '2024-03-13T22:44:46.579987-06:00'
 model: gpt-4-0125-preview
-summary: "Gerar n\xFAmeros aleat\xF3rios em C# envolve a cria\xE7\xE3o de valores\
-  \ num\xE9ricos imprevis\xEDveis dentro de um intervalo especificado."
+summary: "A maneira mais comum de gerar n\xFAmeros aleat\xF3rios em C# \xE9 usando\
+  \ a classe `System.Random`."
 title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
 weight: 12
 ---

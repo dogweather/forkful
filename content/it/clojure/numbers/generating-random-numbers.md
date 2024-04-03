@@ -1,11 +1,11 @@
 ---
 date: 2024-01-27 20:33:05.429183-07:00
-description: "Generare numeri casuali nella programmazione riguarda la creazione di\
-  \ valori che non possono essere previsti logicamente in anticipo. I programmatori\u2026"
+description: "Come fare: In Clojure, la generazione di numeri casuali \xE8 semplice\
+  \ e ci sono un paio di funzioni incorporate che possono essere utilizzate immediatamente.\u2026"
 lastmod: '2024-03-13T22:44:43.038116-06:00'
 model: gpt-4-0125-preview
-summary: Generare numeri casuali nella programmazione riguarda la creazione di valori
-  che non possono essere previsti logicamente in anticipo.
+summary: "In Clojure, la generazione di numeri casuali \xE8 semplice e ci sono un\
+  \ paio di funzioni incorporate che possono essere utilizzate immediatamente."
 title: Generazione di numeri casuali
 weight: 12
 ---

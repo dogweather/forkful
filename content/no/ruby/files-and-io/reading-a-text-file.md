@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:55:14.604834-07:00
-description: "Lese en tekstfil i Ruby betyr \xE5 hente data fra en fil som er lagret\
-  \ p\xE5 disken. Programmerere gj\xF8r dette for \xE5 behandle informasjon som er\
-  \ bevart over tid,\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:41.350804-06:00'
 model: gpt-4-1106-preview
-summary: "Lese en tekstfil i Ruby betyr \xE5 hente data fra en fil som er lagret p\xE5\
-  \ disken."
+summary: .
 title: Lese en tekstfil
 weight: 22
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:36.532548-07:00
-description: "Het vergelijken van twee datums in programmeren is een fundamentele\
-  \ taak die ontwikkelaars in staat stelt de chronologische relatie tussen datums\
-  \ te\u2026"
+description: "Hoe: In Go worden datums voornamelijk behandeld met het type `time.Time`\
+  \ uit het `time`-pakket. Om twee datums te vergelijken, kunnen we methoden\u2026"
 lastmod: '2024-03-13T22:44:50.300389-06:00'
 model: gpt-4-0125-preview
-summary: Het vergelijken van twee datums in programmeren is een fundamentele taak
-  die ontwikkelaars in staat stelt de chronologische relatie tussen datums te evalueren.
+summary: In Go worden datums voornamelijk behandeld met het type `time.Time` uit het
+  `time`-pakket.
 title: Twee datums vergelijken
 weight: 27
 ---

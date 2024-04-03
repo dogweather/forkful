@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:37.791153-07:00
-description: "Analizar una fecha desde una cadena implica convertir representaciones\
-  \ textuales de fechas y horas en un formato que pueda ser manipulado y analizado\
-  \ por\u2026"
+description: "C\xF3mo hacerlo: TypeScript, siendo un superconjunto de JavaScript,\
+  \ se basa en el objeto Date para analizar fechas desde cadenas. Sin embargo, trabajar\
+  \ con\u2026"
 lastmod: '2024-03-13T22:44:58.811319-06:00'
 model: gpt-4-0125-preview
-summary: Analizar una fecha desde una cadena implica convertir representaciones textuales
-  de fechas y horas en un formato que pueda ser manipulado y analizado por el programa.
+summary: TypeScript, siendo un superconjunto de JavaScript, se basa en el objeto Date
+  para analizar fechas desde cadenas.
 title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---

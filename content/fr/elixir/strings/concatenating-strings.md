@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 10:42:44.053991-07:00
-description: "La concat\xE9nation de cha\xEEnes de caract\xE8res consiste \xE0 joindre\
-  \ deux ou plusieurs cha\xEEnes pour former un seul texte. Vous pourriez avoir besoin\
-  \ de fusionner\u2026"
+description: "Comment faire : Dans Elixir, vous pouvez concat\xE9ner des cha\xEEnes\
+  \ de plusieurs mani\xE8res simples. Explorons les m\xE9thodes les plus courantes\
+  \ : 1. Utiliser\u2026"
 lastmod: '2024-03-13T22:44:57.318351-06:00'
 model: gpt-4-0125-preview
-summary: "La concat\xE9nation de cha\xEEnes de caract\xE8res consiste \xE0 joindre\
-  \ deux ou plusieurs cha\xEEnes pour former un seul texte."
+summary: "Dans Elixir, vous pouvez concat\xE9ner des cha\xEEnes de plusieurs mani\xE8\
+  res simples."
 title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 weight: 3
 ---

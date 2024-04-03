@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 17:50:12.605034-07:00
-description: "Organizing code into functions in Go involves breaking down code into\
-  \ reusable, modular blocks that perform specific tasks. This approach enhances code\u2026"
+description: "How to: In Go, you define a function using the `func` keyword, followed\
+  \ by the function's name, parameters (if any), and the return type. Let's illustrate\u2026"
 lastmod: '2024-03-13T22:44:59.636021-06:00'
 model: gpt-4-0125-preview
-summary: Organizing code into functions in Go involves breaking down code into reusable,
-  modular blocks that perform specific tasks.
+summary: In Go, you define a function using the `func` keyword, followed by the function's
+  name, parameters (if any), and the return type.
 title: Organizing code into functions
 weight: 18
 ---

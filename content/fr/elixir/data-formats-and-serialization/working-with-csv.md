@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:05.397377-07:00
-description: "Travailler avec des fichiers CSV (Valeurs S\xE9par\xE9es par des Virgules)\
-  \ consiste \xE0 lire et \xE0 \xE9crire des donn\xE9es dans ces fichiers, un besoin\
-  \ commun pour les\u2026"
+description: "Comment faire : Elixir, avec son puissant syst\xE8me de correspondance\
+  \ de motifs et son support pour le cha\xEEnage, peut g\xE9rer les fichiers CSV efficacement,\u2026"
 lastmod: '2024-03-13T22:44:57.351719-06:00'
 model: gpt-4-0125-preview
-summary: "Travailler avec des fichiers CSV (Valeurs S\xE9par\xE9es par des Virgules)\
-  \ consiste \xE0 lire et \xE0 \xE9crire des donn\xE9es dans ces fichiers, un besoin\
-  \ commun pour les t\xE2ches n\xE9cessitant l'import/export de donn\xE9es ou des\
-  \ solutions de stockage simples."
+summary: "Elixir, avec son puissant syst\xE8me de correspondance de motifs et son\
+  \ support pour le cha\xEEnage, peut g\xE9rer les fichiers CSV efficacement, m\xEA\
+  me sans biblioth\xE8ques tierces."
 title: Travailler avec CSV
 weight: 37
 ---

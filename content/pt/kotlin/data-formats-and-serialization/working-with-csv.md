@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:51.747907-07:00
-description: "Trabalhar com CSV (Valores Separados por V\xEDrgula) envolve a leitura\
-  \ e escrita de dados em arquivos CSV, um formato comum para armazenar dados tabulares\
-  \ em\u2026"
+description: "Como Fazer: Kotlin, sendo uma linguagem de programa\xE7\xE3o de tipagem\
+  \ est\xE1tica que \xE9 executada na JVM, n\xE3o inclui uma biblioteca embutida para\
+  \ o manuseio de\u2026"
 lastmod: '2024-03-13T22:44:46.564466-06:00'
 model: gpt-4-0125-preview
-summary: "Trabalhar com CSV (Valores Separados por V\xEDrgula) envolve a leitura e\
-  \ escrita de dados em arquivos CSV, um formato comum para armazenar dados tabulares\
-  \ em texto puro."
+summary: "Kotlin, sendo uma linguagem de programa\xE7\xE3o de tipagem est\xE1tica\
+  \ que \xE9 executada na JVM, n\xE3o inclui uma biblioteca embutida para o manuseio\
+  \ de arquivos CSV."
 title: Trabalhando com CSV
 weight: 37
 ---

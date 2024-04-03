@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 17:35:10.623643-07:00
-description: "String-Konkatenation verbindet einfach zwei oder mehr Strings zu einem.\
-  \ Programmierer nutzen das, um dynamische Textausgaben zu erzeugen oder Daten aus\u2026"
+description: 'How to: PHP nutzt den Punkt (`.`), um Strings zu verketten. Hier ein
+  paar Schnipsel.'
 lastmod: '2024-03-13T22:44:53.964604-06:00'
 model: gpt-4-1106-preview
-summary: String-Konkatenation verbindet einfach zwei oder mehr Strings zu einem.
+summary: PHP nutzt den Punkt (`.`), um Strings zu verketten.
 title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---

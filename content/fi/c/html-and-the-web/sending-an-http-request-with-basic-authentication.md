@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:23.228746-07:00
-description: "HTTP-pyynt\xF6 perusautentikaatiolla C-kielell\xE4 l\xE4hett\xE4minen\
-  \ tarkoittaa HTTP-pyynn\xF6n muodostamista, joka sis\xE4lt\xE4\xE4 Authorization-otsakkeen\
-  \ k\xE4ytt\xE4j\xE4tiedot\u2026"
+description: "Miten: Perusautentikaatiolla HTTP-pyynn\xF6n l\xE4hett\xE4miseksi C-kielell\xE4\
+  \ meid\xE4n tulee k\xE4ytt\xE4\xE4 libcurl-kirjastoa, joka on suosittu, monik\xE4\
+  ytt\xF6inen ja\u2026"
 lastmod: '2024-03-13T22:44:57.039984-06:00'
 model: gpt-4-0125-preview
-summary: "HTTP-pyynt\xF6 perusautentikaatiolla C-kielell\xE4 l\xE4hett\xE4minen tarkoittaa\
-  \ HTTP-pyynn\xF6n muodostamista, joka sis\xE4lt\xE4\xE4 Authorization-otsakkeen\
-  \ k\xE4ytt\xE4j\xE4tiedot koodattuna Base64-muotoon."
+summary: "Perusautentikaatiolla HTTP-pyynn\xF6n l\xE4hett\xE4miseksi C-kielell\xE4\
+  \ meid\xE4n tulee k\xE4ytt\xE4\xE4 libcurl-kirjastoa, joka on suosittu, monik\xE4\
+  ytt\xF6inen ja helppok\xE4ytt\xF6inen asiakaspuolen URL-siirtokirjasto."
 title: "L\xE4hett\xE4minen HTTP-pyynt\xF6 perustodennuksella"
 weight: 45
 ---

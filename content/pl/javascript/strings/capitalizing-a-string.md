@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:48.151744-07:00
-description: "Wielk\u0105 liter\u0105 na pocz\u0105tku ci\u0105gu znak\xF3w (ang.\
-  \ capitalizing a string) rozumiemy zamian\u0119 pierwszej litery ci\u0105gu na du\u017C\
-  \u0105, pozostawiaj\u0105c pozosta\u0142e znaki bez\u2026"
+description: "Jak to zrobi\u0107: W JavaScript nie ma wbudowanej metody bezpo\u015B\
+  rednio przeznaczonej do zmiany pierwszej litery ci\u0105gu na wielk\u0105, ale mo\u017C\
+  na to \u0142atwo\u2026"
 lastmod: '2024-03-13T22:44:35.779856-06:00'
 model: gpt-4-0125-preview
-summary: "Wielk\u0105 liter\u0105 na pocz\u0105tku ci\u0105gu znak\xF3w (ang."
+summary: "W JavaScript nie ma wbudowanej metody bezpo\u015Brednio przeznaczonej do\
+  \ zmiany pierwszej litery ci\u0105gu na wielk\u0105, ale mo\u017Cna to \u0142atwo\
+  \ zrealizowa\u0107, korzystaj\u0105c z podstawowych metod manipulacji ci\u0105gami."
 title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:47.180514-07:00
-description: "Les expressions r\xE9guli\xE8res (regex) dans Visual Basic pour Applications\
-  \ (VBA) offrent un moyen puissant de rechercher, correspondre et manipuler des\u2026"
+description: "Comment faire : Pour utiliser les expressions r\xE9guli\xE8res dans\
+  \ VBA, vous devez d'abord activer la biblioth\xE8que Microsoft VBScript Regular\
+  \ Expressions. Dans\u2026"
 lastmod: '2024-03-13T22:44:57.543597-06:00'
 model: gpt-4-0125-preview
-summary: "Les expressions r\xE9guli\xE8res (regex) dans Visual Basic pour Applications\
-  \ (VBA) offrent un moyen puissant de rechercher, correspondre et manipuler des cha\xEE\
-  nes de caract\xE8res."
+summary: "Pour utiliser les expressions r\xE9guli\xE8res dans VBA, vous devez d'abord\
+  \ activer la biblioth\xE8que Microsoft VBScript Regular Expressions."
 title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---

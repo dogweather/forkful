@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:39:57.764279-07:00
-description: "Rimuovere le virgolette da una stringa significa eliminare i segni di\
-  \ citazione\u2014singoli (' '), doppi (\" \") o entrambi\u2014dai dati di testo.\
-  \ I programmatori\u2026"
+description: "Come fare: Estraiamo quelle fastidiose virgolette dal nostro testo.\
+  \ Useremo il metodo `replace()` per le correzioni rapide e regex per i casi pi\xF9\
+  \u2026"
 lastmod: '2024-03-13T22:44:43.296954-06:00'
 model: gpt-4-0125-preview
-summary: "Rimuovere le virgolette da una stringa significa eliminare i segni di citazione\u2014\
-  singoli (' '), doppi (\" \") o entrambi\u2014dai dati di testo."
+summary: Estraiamo quelle fastidiose virgolette dal nostro testo.
 title: Rimuovere le virgolette da una stringa
 weight: 9
 ---

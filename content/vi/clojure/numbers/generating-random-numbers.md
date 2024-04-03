@@ -2,17 +2,17 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:29.669205-07:00
-description: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong l\u1EADp tr\xEC\
-  nh l\xE0 v\u1EC1 vi\u1EC7c t\u1EA1o ra c\xE1c gi\xE1 tr\u1ECB kh\xF4ng th\u1EC3\
-  \ \u0111\u01B0\u1EE3c d\u1EF1 \u0111o\xE1n m\u1ED9t c\xE1ch logic tr\u01B0\u1EDB\
-  c th\u1EDDi \u0111i\u1EC3m. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7\
+description: "L\xE0m th\u1EBF n\xE0o: Trong Clojure, vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EAB\
+  u nhi\xEAn kh\xE1 \u0111\u01A1n gi\u1EA3n, v\xE0 c\xF3 m\u1ED9t s\u1ED1 h\xE0m \u0111\
+  \u01B0\u1EE3c t\xEDch h\u1EE3p s\u1EB5n c\xF3 th\u1EC3 \u0111\u01B0\u1EE3c s\u1EED\
+  \ d\u1EE5ng ngay l\u1EADp t\u1EE9c. \u0110\u1EC3 t\u1EA1o m\u1ED9t s\u1ED1 th\u1EF1\
   c\u2026"
 lastmod: '2024-03-13T22:44:36.147478-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong l\u1EADp tr\xECnh l\xE0\
-  \ v\u1EC1 vi\u1EC7c t\u1EA1o ra c\xE1c gi\xE1 tr\u1ECB kh\xF4ng th\u1EC3 \u0111\u01B0\
-  \u1EE3c d\u1EF1 \u0111o\xE1n m\u1ED9t c\xE1ch logic tr\u01B0\u1EDBc th\u1EDDi \u0111\
-  i\u1EC3m."
+summary: "Trong Clojure, vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn kh\xE1 \u0111\
+  \u01A1n gi\u1EA3n, v\xE0 c\xF3 m\u1ED9t s\u1ED1 h\xE0m \u0111\u01B0\u1EE3c t\xED\
+  ch h\u1EE3p s\u1EB5n c\xF3 th\u1EC3 \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng ngay l\u1EAD\
+  p t\u1EE9c."
 title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 weight: 12
 ---

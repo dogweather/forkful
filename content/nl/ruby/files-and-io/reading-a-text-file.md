@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:20.772742-07:00
-description: "Het lezen van een tekstbestand betekent het toegang krijgen tot de inhoud\
-  \ van een bestand dat op de schijf is opgeslagen via code. Programmeurs doen dit\u2026"
+description: "Hoe: Een bestand lezen in Ruby is eenvoudig. Je kunt de `File` klasse\
+  \ gebruiken, die verschillende methoden biedt om bestanden te lezen. Hier is een\u2026"
 lastmod: '2024-03-13T22:44:51.370671-06:00'
 model: gpt-4-0125-preview
-summary: Het lezen van een tekstbestand betekent het toegang krijgen tot de inhoud
-  van een bestand dat op de schijf is opgeslagen via code.
+summary: Een bestand lezen in Ruby is eenvoudig.
 title: Een tekstbestand lezen
 weight: 22
 ---

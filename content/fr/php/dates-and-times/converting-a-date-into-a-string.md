@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:36:57.147731-07:00
-description: "Transformer une date en cha\xEEne de caract\xE8res permet de la formater\
-  \ pour l'affichage. Les d\xE9veloppeurs font cela pour des raisons de lisibilit\xE9\
-  \ et pour\u2026"
+description: "How to: (Comment faire:) Pour convertir une date en cha\xEEne de caract\xE8\
+  res en PHP, utilisez la fonction `date_format()` ou la m\xE9thode `format` d'un\
+  \ objet\u2026"
 lastmod: '2024-03-13T22:44:57.891171-06:00'
 model: gpt-4-1106-preview
-summary: "Transformer une date en cha\xEEne de caract\xE8res permet de la formater\
-  \ pour l'affichage."
+summary: "Pour convertir une date en cha\xEEne de caract\xE8res en PHP, utilisez la\
+  \ fonction `date_format()` ou la m\xE9thode `format` d'un objet `DateTime`."
 title: "Conversion d'une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---

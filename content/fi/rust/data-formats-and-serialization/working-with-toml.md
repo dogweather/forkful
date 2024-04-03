@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 04:26:19.793875-07:00
-description: "TOML on ihmisen luettavissa oleva datan serialisointikieli, jota k\xE4\
-  ytet\xE4\xE4n usein konfiguraatioissa. Ohjelmoijat k\xE4ytt\xE4v\xE4t TOMLia sen\
-  \ yksinkertaisuuden ja\u2026"
+description: 'Kuinka toimia: .'
 lastmod: '2024-03-13T22:44:56.380653-06:00'
 model: gpt-4-0125-preview
-summary: "TOML on ihmisen luettavissa oleva datan serialisointikieli, jota k\xE4ytet\xE4\
-  \xE4n usein konfiguraatioissa."
+summary: .
 title: "Ty\xF6skentely TOML:n kanssa"
 weight: 39
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:00.408647-07:00
-description: "Een HTTP-verzoek met basisauthenticatie verzenden betekent dat je programma\
-  \ aanklopt bij de deur van een webdienst, waarbij een gebruikersnaam en\u2026"
+description: "Hoe te: Je hebt het pakket `http-conduit` nodig voor HTTP-acties en\
+  \ `base64-bytestring` voor het coderen van referenties. Importeer ze en gebruik\u2026"
 lastmod: '2024-03-13T22:44:50.851982-06:00'
 model: gpt-4-0125-preview
-summary: Een HTTP-verzoek met basisauthenticatie verzenden betekent dat je programma
-  aanklopt bij de deur van een webdienst, waarbij een gebruikersnaam en wachtwoord
-  worden doorgegeven voor toegang.
+summary: Je hebt het pakket `http-conduit` nodig voor HTTP-acties en `base64-bytestring`
+  voor het coderen van referenties.
 title: Een HTTP-verzoek verzenden met basisauthenticatie
 weight: 45
 ---

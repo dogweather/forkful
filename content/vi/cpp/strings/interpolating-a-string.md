@@ -2,14 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:39.157407-07:00
-description: "N\u1ED9i suy chu\u1ED7i l\xE0 vi\u1EC7c ch\xE8n c\xE1c bi\u1EBFn v\xE0\
-  o trong chu\u1ED7i. Ch\xFAng ta l\xE0m \u0111i\u1EC1u \u0111\xF3 \u0111\u1EC3 x\xE2\
-  y d\u1EF1ng th\xF4ng \u0111i\u1EC7p m\u1ED9t c\xE1ch linh ho\u1EA1t, c\xE1 nh\xE2\
-  n h\xF3a \u0111\u1EA7u ra, ho\u1EB7c t\u1EA1o l\u1EADp truy\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: C++ kh\xF4ng c\xF3 t\xEDnh n\u0103ng n\u1ED9\
+  i suy chu\u1ED7i \u0111\u01B0\u1EE3c t\xEDch h\u1EE3p s\u1EB5n nh\u01B0 m\u1ED9\
+  t s\u1ED1 ng\xF4n ng\u1EEF kh\xE1c. B\u1EA1n th\u01B0\u1EDDng s\u1EED d\u1EE5ng\
+  \ `std::ostringstream`, `std::format` (t\u1EEB\u2026"
 lastmod: '2024-03-13T22:44:37.024318-06:00'
 model: gpt-4-0125-preview
-summary: "N\u1ED9i suy chu\u1ED7i l\xE0 vi\u1EC7c ch\xE8n c\xE1c bi\u1EBFn v\xE0o\
-  \ trong chu\u1ED7i."
+summary: "C++ kh\xF4ng c\xF3 t\xEDnh n\u0103ng n\u1ED9i suy chu\u1ED7i \u0111\u01B0\
+  \u1EE3c t\xEDch h\u1EE3p s\u1EB5n nh\u01B0 m\u1ED9t s\u1ED1 ng\xF4n ng\u1EEF kh\xE1\
+  c."
 title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
 weight: 8
 ---

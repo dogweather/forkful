@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 04:14:04.961096-07:00
-description: "REPL, czyli Read-Eval-Print Loop (P\u0119tla Czytaj-Wykonaj-Wydrukuj),\
-  \ to interaktywne \u015Brodowisko programistyczne, kt\xF3re przyjmuje pojedyncze\
-  \ wej\u015Bcia\u2026"
+description: "Jak to zrobi\u0107: W Fish, interaktywna pow\u0142oka jest domy\u015B\
+  lnym trybem, gdy j\u0105 uruchamiasz. Oto jak to wygl\u0105da w akcji."
 lastmod: '2024-03-13T22:44:35.842997-06:00'
 model: gpt-4-0125-preview
-summary: "REPL, czyli Read-Eval-Print Loop (P\u0119tla Czytaj-Wykonaj-Wydrukuj), to\
-  \ interaktywne \u015Brodowisko programistyczne, kt\xF3re przyjmuje pojedyncze wej\u015B\
-  cia u\u017Cytkownika, wykonuje je i zwraca wynik."
+summary: "W Fish, interaktywna pow\u0142oka jest domy\u015Blnym trybem, gdy j\u0105\
+  \ uruchamiasz."
 title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---

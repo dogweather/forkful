@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:49.577855-07:00
-description: "Datums vergelijken in C houdt in dat wordt bepaald hoe de chronologische\
-  \ relatie tussen twee datums is - of de ene datum voor de andere komt of dat ze\u2026"
+description: "Hoe te: C heeft geen ingebouwd type voor datums, wat het noodzakelijk\
+  \ maakt om de `time.h` bibliotheek te gebruiken om met datum- en tijdsstructuren\
+  \ te\u2026"
 lastmod: '2024-03-13T22:44:51.303709-06:00'
 model: gpt-4-0125-preview
-summary: Datums vergelijken in C houdt in dat wordt bepaald hoe de chronologische
-  relatie tussen twee datums is - of de ene datum voor de andere komt of dat ze hetzelfde
-  zijn.
+summary: C heeft geen ingebouwd type voor datums, wat het noodzakelijk maakt om de
+  `time.h` bibliotheek te gebruiken om met datum- en tijdsstructuren te werken.
 title: Twee datums vergelijken
 weight: 27
 ---

@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:49.880931-07:00
-description: "Reguliere expressies (regex) bieden een manier om te zoeken, overeenkomsten\
-  \ te vinden en strings te manipuleren met behulp van gedefinieerde patronen.\u2026"
+description: "Hoe: Om reguliere expressies in C te gebruiken, werk je voornamelijk\
+  \ met de POSIX regex-bibliotheek (`<regex.h>`). Dit voorbeeld demonstreert\u2026"
 lastmod: '2024-03-13T22:44:51.280103-06:00'
 model: gpt-4-0125-preview
-summary: Reguliere expressies (regex) bieden een manier om te zoeken, overeenkomsten
-  te vinden en strings te manipuleren met behulp van gedefinieerde patronen.
+summary: Om reguliere expressies in C te gebruiken, werk je voornamelijk met de POSIX
+  regex-bibliotheek (`<regex.h>`).
 title: Reguliere expressies gebruiken
 weight: 11
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:13:30.968796-07:00
-description: "Assosiative tabeller, kjent som ordb\xF8ker i Swift, lar deg lagre og\
-  \ h\xE5ndtere data som n\xF8kkel-verdi-par. Programmerere bruker dem til \xE5 organisere\
-  \ data\u2026"
+description: "Hvordan: Swift gj\xF8r det enkelt \xE5 jobbe med assosiative tabeller.\
+  \ Her er hvordan du kan erkl\xE6re, legge til, fjerne og f\xE5 tilgang til elementer\
+  \ i en Swift-\u2026"
 lastmod: '2024-03-13T22:44:41.135004-06:00'
 model: gpt-4-0125-preview
-summary: "Assosiative tabeller, kjent som ordb\xF8ker i Swift, lar deg lagre og h\xE5\
-  ndtere data som n\xF8kkel-verdi-par."
+summary: "Swift gj\xF8r det enkelt \xE5 jobbe med assosiative tabeller."
 title: Bruke associative tabeller
 weight: 15
 ---

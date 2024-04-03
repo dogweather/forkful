@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:39:35.514667-07:00
-description: "(Co i Dlaczego?) Tworzenie tymczasowego pliku to po prostu robienie\
-  \ miejsca na dane, kt\xF3re s\u0105 potrzebne tylko na chwil\u0119. Programi\u015B\
-  ci robi\u0105 to, by nie\u2026"
+description: "How to: (Jak to zrobi\u0107:)."
 lastmod: '2024-03-13T22:44:35.690784-06:00'
 model: gpt-4-1106-preview
-summary: (Co i Dlaczego.
+summary: "(Jak to zrobi\u0107:)."
 title: Tworzenie pliku tymczasowego
 weight: 21
 ---

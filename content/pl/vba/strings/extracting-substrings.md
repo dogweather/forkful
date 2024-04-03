@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:35.704616-07:00
-description: "Wyodr\u0119bnianie podci\u0105g\xF3w w Visual Basic for Applications\
-  \ (VBA) polega na izolowaniu okre\u015Blonych cz\u0119\u015Bci ci\u0105gu na podstawie\
-  \ zadanych kryteri\xF3w. Programi\u015Bci\u2026"
+description: "Jak to zrobi\u0107: W VBA g\u0142\xF3wnie u\u017Cywa si\u0119 funkcji\
+  \ `Mid`, `Left` i `Right` do wyodr\u0119bniania podci\u0105g\xF3w. Poni\u017Cej,\
+  \ badamy te funkcje na przyk\u0142adach: 1. **Mid**:\u2026"
 lastmod: '2024-03-13T22:44:35.218914-06:00'
 model: gpt-4-0125-preview
-summary: "Wyodr\u0119bnianie podci\u0105g\xF3w w Visual Basic for Applications (VBA)\
-  \ polega na izolowaniu okre\u015Blonych cz\u0119\u015Bci ci\u0105gu na podstawie\
-  \ zadanych kryteri\xF3w."
+summary: "W VBA g\u0142\xF3wnie u\u017Cywa si\u0119 funkcji `Mid`, `Left` i `Right`\
+  \ do wyodr\u0119bniania podci\u0105g\xF3w."
 title: "Wydobywanie podci\u0105g\xF3w"
 weight: 6
 ---

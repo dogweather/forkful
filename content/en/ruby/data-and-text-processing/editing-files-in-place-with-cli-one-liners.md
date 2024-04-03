@@ -1,13 +1,11 @@
 ---
 date: 2024-01-27 16:14:22.954897-07:00
-description: "Editing files in-place with CLI (Command Line Interface) one-liners\
-  \ in Ruby allows you to modify files directly from your terminal, without needing\
-  \ to\u2026"
+description: "How to: Ruby provides a straightforward way to edit files in-place right\
+  \ from the command line. Using Ruby's `-i` switch, you can tell Ruby to operate\u2026"
 lastmod: '2024-03-13T22:45:00.546898-06:00'
 model: gpt-4-0125-preview
-summary: Editing files in-place with CLI (Command Line Interface) one-liners in Ruby
-  allows you to modify files directly from your terminal, without needing to open
-  them in an editor, make changes, and save them back.
+summary: Ruby provides a straightforward way to edit files in-place right from the
+  command line.
 title: Editing files in-place with CLI one-liners
 weight: 32
 ---

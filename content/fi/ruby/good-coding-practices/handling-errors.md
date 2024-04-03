@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 00:56:33.425950-07:00
-description: "Virheenk\xE4sittelyss\xE4 on kyse odottamattoman odottamisesta koodissa\
-  \ \u2013 hallitaan virheet ja ongelmat sulavasti ilman, ett\xE4 ohjelma kaatuu.\
-  \ Ohjelmoijat\u2026"
+description: "Kuinka: Ruby k\xE4ytt\xE4\xE4 `begin`, `rescue`, `ensure` ja `end` avainsanoja\
+  \ virheenk\xE4sittelyss\xE4. K\xE4\xE4rit riskaabelin koodin `begin` ja `end` rakenteen\
+  \ sis\xE4\xE4n.\u2026"
 lastmod: '2024-03-13T22:44:57.094408-06:00'
 model: gpt-4-1106-preview
-summary: "Virheenk\xE4sittelyss\xE4 on kyse odottamattoman odottamisesta koodissa\
-  \ \u2013 hallitaan virheet ja ongelmat sulavasti ilman, ett\xE4 ohjelma kaatuu."
+summary: "Ruby k\xE4ytt\xE4\xE4 `begin`, `rescue`, `ensure` ja `end` avainsanoja virheenk\xE4\
+  sittelyss\xE4."
 title: "Virheiden k\xE4sittely"
 weight: 16
 ---

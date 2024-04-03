@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:21.463047-07:00
-description: "Een webpagina downloaden betekent in wezen het grijpen van de gegevens\
-  \ van de URL die je opgeeft en deze op je lokale machine trekken. Programmeurs doen\u2026"
+description: "Hoe te: We gebruiken de `requests` bibliotheek van Python. Als je deze\
+  \ niet hebt, installeer het dan met `pip install requests`. Hier is een snel\u2026"
 lastmod: '2024-03-13T22:44:50.375412-06:00'
 model: gpt-4-0125-preview
-summary: Een webpagina downloaden betekent in wezen het grijpen van de gegevens van
-  de URL die je opgeeft en deze op je lokale machine trekken.
+summary: We gebruiken de `requests` bibliotheek van Python.
 title: Een webpagina downloaden
 weight: 42
 ---

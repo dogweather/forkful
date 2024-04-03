@@ -2,16 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:43.777140-07:00
-description: "XML l\xE0 m\u1ED9t ng\xF4n ng\u1EEF \u0111\xE1nh d\u1EA5u \u0111\u01B0\
-  \u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 l\u01B0u tr\u1EEF v\xE0 v\u1EADn chuy\u1EC3\
-  n d\u1EEF li\u1EC7u. L\u1EADp tr\xECnh vi\xEAn l\xE0m vi\u1EC7c v\u1EDBi XML \u0111\
-  \u1EC3 cho ph\xE9p t\xEDnh t\u01B0\u01A1ng th\xEDch gi\u1EEFa c\xE1c \u1EE9ng d\u1EE5\
-  ng\u2026"
+description: "C\xE1ch th\u1EE9c: \u0110\u1ECDc XML v\u1EDBi SimpleXML."
 lastmod: '2024-03-13T22:44:36.799501-06:00'
 model: gpt-4-0125-preview
-summary: "XML l\xE0 m\u1ED9t ng\xF4n ng\u1EEF \u0111\xE1nh d\u1EA5u \u0111\u01B0\u1EE3\
-  c s\u1EED d\u1EE5ng \u0111\u1EC3 l\u01B0u tr\u1EEF v\xE0 v\u1EADn chuy\u1EC3n d\u1EEF\
-  \ li\u1EC7u."
+summary: "\u0110\u1ECDc XML v\u1EDBi SimpleXML."
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---

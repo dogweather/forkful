@@ -2,12 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:58:03.920330-07:00
-description: "Att skriva till standardfel (stderr) i Dart handlar om att skicka felmeddelanden\
-  \ och diagnostik till en separat str\xF6m, skild fr\xE5n standardutdata (stdout).\u2026"
+description: "Hur man g\xF6r: I Dart \xE4r det enkelt att skriva till stderr genom\
+  \ att anv\xE4nda `stderr`-objektet som finns tillg\xE4ngligt i `dart:io`. H\xE4\
+  r \xE4r ett grundl\xE4ggande\u2026"
 lastmod: '2024-03-13T22:44:37.630072-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva till standardfel (stderr) i Dart handlar om att skicka felmeddelanden\
-  \ och diagnostik till en separat str\xF6m, skild fr\xE5n standardutdata (stdout)."
+summary: "I Dart \xE4r det enkelt att skriva till stderr genom att anv\xE4nda `stderr`-objektet\
+  \ som finns tillg\xE4ngligt i `dart:io`."
 title: Skriva till standardfel
 weight: 25
 ---

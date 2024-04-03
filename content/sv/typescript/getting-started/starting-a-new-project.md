@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 18:04:42.184339-07:00
-description: "Att starta ett nytt projekt inneb\xE4r att s\xE4tta upp en grundl\xE4\
-  ggande struktur f\xF6r din kod s\xE5 att du kan b\xF6rja bygga din applikation.\
-  \ Programmerare g\xF6r det\u2026"
+description: "Hur man g\xF6r: F\xF6r att kickstarta ett TypeScript-projekt, anv\xE4\
+  nd f\xF6ljande kommandon."
 lastmod: '2024-03-13T22:44:37.656815-06:00'
 model: gpt-4-1106-preview
-summary: "Att starta ett nytt projekt inneb\xE4r att s\xE4tta upp en grundl\xE4ggande\
-  \ struktur f\xF6r din kod s\xE5 att du kan b\xF6rja bygga din applikation."
+summary: "F\xF6r att kickstarta ett TypeScript-projekt, anv\xE4nd f\xF6ljande kommandon."
 title: "Att p\xE5b\xF6rja ett nytt projekt"
 weight: 1
 ---

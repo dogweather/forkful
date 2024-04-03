@@ -1,13 +1,13 @@
 ---
 date: 2024-01-27 16:20:44.363202-07:00
-description: "Modifier des fichiers sur place avec des lignes de commande est une\
-  \ pratique qui consiste \xE0 apporter des modifications directement aux fichiers\
-  \ depuis la\u2026"
+description: "Comment faire : Fish Shell, connu pour ses fonctionnalit\xE9s conviviales\
+  \ et ses puissantes capacit\xE9s de script, offre plusieurs mani\xE8res de modifier\
+  \ des\u2026"
 lastmod: '2024-03-13T22:44:58.320122-06:00'
 model: gpt-4-0125-preview
-summary: "Modifier des fichiers sur place avec des lignes de commande est une pratique\
-  \ qui consiste \xE0 apporter des modifications directement aux fichiers depuis la\
-  \ ligne de commande, sans les ouvrir dans un \xE9diteur de texte."
+summary: "Fish Shell, connu pour ses fonctionnalit\xE9s conviviales et ses puissantes\
+  \ capacit\xE9s de script, offre plusieurs mani\xE8res de modifier des fichiers sur\
+  \ place."
 title: "Modification de fichiers sur place avec des lignes de commande en une seule\
   \ \xE9tape"
 weight: 32

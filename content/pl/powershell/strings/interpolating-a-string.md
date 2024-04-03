@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:51:22.918258-07:00
-description: "Interpolacja napis\xF3w to wstawianie warto\u015Bci wyra\u017Ce\u0144\
-  \ do napisu. Programi\u015Bci u\u017Cywaj\u0105 tego, aby tworzy\u0107 tekst z dynamicznie\
-  \ zmieniaj\u0105cymi si\u0119 danymi, co\u2026"
+description: "How to: (Jak to zrobi\u0107:) ."
 lastmod: '2024-03-13T22:44:35.613683-06:00'
 model: gpt-4-1106-preview
-summary: "Interpolacja napis\xF3w to wstawianie warto\u015Bci wyra\u017Ce\u0144 do\
-  \ napisu."
+summary: .
 title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 8
 ---

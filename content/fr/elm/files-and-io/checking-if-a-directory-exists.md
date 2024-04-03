@@ -1,11 +1,12 @@
 ---
 date: 2024-01-19
-description: "\"Quoi et Pourquoi ?\": V\xE9rifier si un dossier existe c'est s'assurer\
-  \ que le chemin d'acc\xE8s pointe vers quelque chose de r\xE9el. Les d\xE9veloppeurs\
-  \ font \xE7a pour\u2026"
+description: "How to: \"Comment Faire :\" Elm n'est pas con\xE7u pour interagir directement\
+  \ avec le syst\xE8me de fichiers. Il faut faire appel \xE0 JavaScript par l'interm\xE9\
+  diaire\u2026"
 lastmod: '2024-03-13T22:44:57.705209-06:00'
 model: unknown
-summary: '"Quoi et Pourquoi .'
+summary: "\"Comment Faire :\"\n\nElm n'est pas con\xE7u pour interagir directement\
+  \ avec le syst\xE8me de fichiers."
 title: "V\xE9rification de l'existence d'un r\xE9pertoire"
 weight: 20
 ---

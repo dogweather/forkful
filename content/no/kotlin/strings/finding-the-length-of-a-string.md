@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:47:35.845942-07:00
-description: "\xC5 finne lengden p\xE5 en streng betyr \xE5 telle antall tegn i den.\
-  \ Vi gj\xF8r det for \xE5 validere inndata, skj\xE6re opp tekst, eller bare for\
-  \ \xE5 holde oversikt over\u2026"
+description: 'Hvordan: .'
 lastmod: '2024-03-13T22:44:40.741172-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 finne lengden p\xE5 en streng betyr \xE5 telle antall tegn i den."
+summary: .
 title: "Finn lengden p\xE5 en streng"
 weight: 7
 ---

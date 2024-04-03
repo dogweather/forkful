@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:57.462583-07:00
-description: "Het afhandelen van fouten in C# gaat over het beheren van het onverwachte\u2014\
-  zoals struikelen over je veters. Programma's kunnen struikelen over slechte\u2026"
+description: "Hoe te: Laten we beginnen met een try-catch blok. Het is alsof je een\
+  \ veiligheidsnet onder een koorddanser plaatst. Als ze uitglijden, vallen ze niet\
+  \ te\u2026"
 lastmod: '2024-03-13T22:44:50.817636-06:00'
 model: gpt-4-0125-preview
-summary: "Het afhandelen van fouten in C# gaat over het beheren van het onverwachte\u2014\
-  zoals struikelen over je veters."
+summary: Laten we beginnen met een try-catch blok.
 title: Fouten afhandelen
 weight: 16
 ---

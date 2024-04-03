@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 00:50:43.965968-07:00
-description: "Att hantera fel i C# handlar om att hantera det ov\xE4ntade\u2014som\
-  \ att snubbla p\xE5 sina egna skosn\xF6ren. Program kan snubbla p\xE5 d\xE5liga\
-  \ data eller ostadiga\u2026"
+description: "Hur g\xF6r man: L\xE5t oss b\xF6rja med en try-catch-block. Det \xE4\
+  r som att s\xE4tta ett s\xE4kerhetsn\xE4t under en lindansare. Om de halkar faller\
+  \ de inte pladask\u2014de\u2026"
 lastmod: '2024-03-13T22:44:37.920770-06:00'
 model: gpt-4-1106-preview
-summary: "Att hantera fel i C# handlar om att hantera det ov\xE4ntade\u2014som att\
-  \ snubbla p\xE5 sina egna skosn\xF6ren."
+summary: "L\xE5t oss b\xF6rja med en try-catch-block."
 title: Hantering av fel
 weight: 16
 ---

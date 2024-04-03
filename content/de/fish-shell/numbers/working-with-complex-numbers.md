@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:39:58.935922-07:00
-description: "Komplexe Zahlen erweitern die Idee von eindimensionalen Zahlengeraden\
-  \ zu einer zweidimensionalen komplexen Ebene. Programmierer nutzen sie in Bereichen\u2026"
+description: "Wie zu: In Fish behandeln wir komplexe Zahlen mit `math` und unterteilen\
+  \ diese in Real- und Imagin\xE4rteile. Hier ein Start."
 lastmod: '2024-03-13T22:44:54.301716-06:00'
 model: gpt-4-0125-preview
-summary: Komplexe Zahlen erweitern die Idee von eindimensionalen Zahlengeraden zu
-  einer zweidimensionalen komplexen Ebene.
+summary: "In Fish behandeln wir komplexe Zahlen mit `math` und unterteilen diese in\
+  \ Real- und Imagin\xE4rteile."
 title: Umgang mit komplexen Zahlen
 weight: 14
 ---

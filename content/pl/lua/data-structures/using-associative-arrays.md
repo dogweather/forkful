@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:07.716226-07:00
-description: "Tablice asocjacyjne to jak tajne u\u015Bciski d\u0142oni dla danych\
-  \ w Lua \u2014 zamiast samych numer\xF3w ustawiaj\u0105cych si\u0119 pos\u0142usznie\
-  \ wed\u0142ug indeksu, Twoje klucze mog\u0105\u2026"
+description: "Jak to zrobi\u0107: W Lua, tworzenie tablicy asocjacyjnej (lub tabeli,\
+  \ jak m\xF3wi\u0105 w Lua) jest proste. Rezygnujesz z typowych numerycznych indeks\xF3\
+  w na rzecz\u2026"
 lastmod: '2024-03-13T22:44:35.533000-06:00'
 model: gpt-4-0125-preview
-summary: "Tablice asocjacyjne to jak tajne u\u015Bciski d\u0142oni dla danych w Lua\
-  \ \u2014 zamiast samych numer\xF3w ustawiaj\u0105cych si\u0119 pos\u0142usznie wed\u0142\
-  ug indeksu, Twoje klucze mog\u0105 by\u0107 czymkolwiek chcesz, co sprawia, \u017C\
-  e odzyskiwanie danych jest dziecinnie proste."
+summary: "W Lua, tworzenie tablicy asocjacyjnej (lub tabeli, jak m\xF3wi\u0105 w Lua)\
+  \ jest proste."
 title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---

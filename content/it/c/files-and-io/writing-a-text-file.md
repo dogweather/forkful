@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:27.878052-07:00
-description: "Scrivere un file di testo in C comporta la creazione o l'apertura di\
-  \ un file in modalit\xE0 di scrittura e poi l'uso delle funzioni di I/O su file\
-  \ di C per\u2026"
+description: "Come fare: Per scrivere testo in un file in C, \xE8 principalmente necessario\
+  \ essere a conoscenza delle funzioni `fopen()`, `fprintf()`, `fputs()` e\u2026"
 lastmod: '2024-03-13T22:44:44.023601-06:00'
 model: gpt-4-0125-preview
-summary: "Scrivere un file di testo in C comporta la creazione o l'apertura di un\
-  \ file in modalit\xE0 di scrittura e poi l'uso delle funzioni di I/O su file di\
-  \ C per salvare i dati di testo al suo interno."
+summary: "Per scrivere testo in un file in C, \xE8 principalmente necessario essere\
+  \ a conoscenza delle funzioni `fopen()`, `fprintf()`, `fputs()` e `fclose()`."
 title: Scrivere un file di testo
 weight: 24
 ---

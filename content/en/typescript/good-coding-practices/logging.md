@@ -1,12 +1,12 @@
 ---
 date: 2024-01-25 02:03:12.954798-07:00
-description: "Logging is the process of recording events, errors, and other significant\
-  \ information during the execution of a program to an external medium, often files\u2026"
+description: "How to: In TypeScript, you can easily implement basic logging using\
+  \ console methods or integrate more advanced logging with libraries like `winston`\
+  \ or\u2026"
 lastmod: '2024-03-13T22:44:59.864712-06:00'
 model: gpt-4-1106-preview
-summary: Logging is the process of recording events, errors, and other significant
-  information during the execution of a program to an external medium, often files
-  or databases.
+summary: In TypeScript, you can easily implement basic logging using console methods
+  or integrate more advanced logging with libraries like `winston` or `pino`.
 title: Logging
 weight: 17
 ---

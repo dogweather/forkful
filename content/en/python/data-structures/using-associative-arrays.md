@@ -1,11 +1,10 @@
 ---
 date: 2024-01-30 18:57:25.397240-07:00
-description: "Associative arrays, known in Python as dictionaries, map keys to values,\
-  \ making it easy to retrieve, modify, or track data by a unique identifier.\u2026"
+description: 'How to: Creating a dictionary in Python is straightforward. You enclose
+  key-value pairs in curly braces `{}`, with keys and values separated by a colon.'
 lastmod: '2024-03-13T22:44:59.701807-06:00'
 model: gpt-4-0125-preview
-summary: Associative arrays, known in Python as dictionaries, map keys to values,
-  making it easy to retrieve, modify, or track data by a unique identifier.
+summary: Creating a dictionary in Python is straightforward.
 title: Using associative arrays
 weight: 15
 ---

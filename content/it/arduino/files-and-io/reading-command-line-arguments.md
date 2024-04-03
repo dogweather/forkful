@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:55:29.215497-07:00
-description: "Leggere gli argomenti da riga di comando significa raccogliere input\
-  \ quando eseguiamo un programma, utili per modificarne il comportamento senza cambiare\u2026"
+description: 'Come Fare: .'
 lastmod: '2024-03-13T22:44:43.698039-06:00'
 model: gpt-4-1106-preview
-summary: Leggere gli argomenti da riga di comando significa raccogliere input quando
-  eseguiamo un programma, utili per modificarne il comportamento senza cambiare il
-  codice.
+summary: .
 title: Lettura degli argomenti della riga di comando
 weight: 23
 ---

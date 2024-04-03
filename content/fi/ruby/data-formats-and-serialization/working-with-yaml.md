@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:24.538004-07:00
-description: "YAML, joka tarkoittaa YAML Ain't Markup Language, on laajalti k\xE4\
-  yt\xF6ss\xE4 Rubyn konfiguraatiotiedostoissa ja datan sarjallistamisessa sen ihmislukuisan\u2026"
+description: "Kuinka: Ruby sis\xE4lt\xE4\xE4 sis\xE4\xE4nrakennetun kirjaston nimelt\xE4\
+  \ Psych YAMLin j\xE4sennyst\xE4 ja tuottamista varten. K\xE4ytt\xE4\xE4ksesi sit\xE4\
+  , sinun t\xE4ytyy ensin vaatia YAML-\u2026"
 lastmod: '2024-03-13T22:44:57.108207-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, joka tarkoittaa YAML Ain't Markup Language, on laajalti k\xE4yt\xF6\
-  ss\xE4 Rubyn konfiguraatiotiedostoissa ja datan sarjallistamisessa sen ihmislukuisan\
-  \ muodon vuoksi."
+summary: "Ruby sis\xE4lt\xE4\xE4 sis\xE4\xE4nrakennetun kirjaston nimelt\xE4 Psych\
+  \ YAMLin j\xE4sennyst\xE4 ja tuottamista varten."
 title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---

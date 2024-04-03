@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:33.526259-07:00
-description: "Att l\xE4sa kommandoradsargument i Go inneb\xE4r att extrahera argumenten\
-  \ som tillhandah\xE5lls till ett program vid dess anrop fr\xE5n terminalen eller\u2026"
+description: "Hur man g\xF6r: Go ger direkt\xE5tkomst till kommandoradsargument genom\
+  \ paketet `os`, specifikt med hj\xE4lp av `os.Args`, en array av str\xE4ngar. H\xE4\
+  r \xE4r ett enkelt\u2026"
 lastmod: '2024-03-13T22:44:37.408871-06:00'
 model: gpt-4-0125-preview
-summary: "Att l\xE4sa kommandoradsargument i Go inneb\xE4r att extrahera argumenten\
-  \ som tillhandah\xE5lls till ett program vid dess anrop fr\xE5n terminalen eller\
-  \ kommandotolken."
+summary: "Go ger direkt\xE5tkomst till kommandoradsargument genom paketet `os`, specifikt\
+  \ med hj\xE4lp av `os.Args`, en array av str\xE4ngar."
 title: "L\xE4ser in kommandoradsargument"
 weight: 23
 ---

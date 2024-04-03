@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 01:07:19.359731-07:00
-description: "Lokittaminen on k\xE4yt\xE4nn\xF6ss\xE4 kuin p\xE4iv\xE4kirjan pit\xE4\
-  mist\xE4 koodillesi; se on tapa tallentaa tapahtumia, virheit\xE4 ja muita merkitt\xE4\
-  vi\xE4 datapisteit\xE4, jotka\u2026"
+description: "Kuinka: PHP:ss\xE4 on sis\xE4\xE4nrakennettu virhelokitusfunktio, joka\
+  \ on helppok\xE4ytt\xF6inen. Lis\xE4\xE4 vain `error_log()` koodiisi l\xE4hett\xE4\
+  \xE4ksesi viestin palvelimesi\u2026"
 lastmod: '2024-03-13T22:44:56.662264-06:00'
 model: gpt-4-1106-preview
-summary: "Lokittaminen on k\xE4yt\xE4nn\xF6ss\xE4 kuin p\xE4iv\xE4kirjan pit\xE4mist\xE4\
-  \ koodillesi; se on tapa tallentaa tapahtumia, virheit\xE4 ja muita merkitt\xE4\
-  vi\xE4 datapisteit\xE4, jotka tapahtuvat sovelluksesi suorittaessa."
+summary: "PHP:ss\xE4 on sis\xE4\xE4nrakennettu virhelokitusfunktio, joka on helppok\xE4\
+  ytt\xF6inen."
 title: Lokitus
 weight: 17
 ---

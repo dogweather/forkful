@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:01.783838-07:00
-description: "Tworzenie tymczasowego pliku w Google Apps Script polega na generowaniu\
-  \ pliku przeznaczonego do kr\xF3tkotrwa\u0142ego u\u017Cytku, zazwyczaj do przetwarzania\
-  \ danych\u2026"
+description: "Jak to zrobi\u0107: W Google Apps Script, stworzenie tymczasowego pliku\
+  \ mo\u017Cna osi\u0105gn\u0105\u0107 za pomoc\u0105 serwisu DriveApp, kt\xF3ry zapewnia\
+  \ prost\u0105 metod\u0119 na tworzenie,\u2026"
 lastmod: '2024-03-13T22:44:34.924654-06:00'
 model: gpt-4-0125-preview
-summary: "Tworzenie tymczasowego pliku w Google Apps Script polega na generowaniu\
-  \ pliku przeznaczonego do kr\xF3tkotrwa\u0142ego u\u017Cytku, zazwyczaj do przetwarzania\
-  \ danych po\u015Brednich, debugowania lub w celach cache\u2019owania."
+summary: "W Google Apps Script, stworzenie tymczasowego pliku mo\u017Cna osi\u0105\
+  gn\u0105\u0107 za pomoc\u0105 serwisu DriveApp, kt\xF3ry zapewnia prost\u0105 metod\u0119\
+  \ na tworzenie, czytanie i usuwanie plik\xF3w w Google Drive."
 title: Tworzenie tymczasowego pliku
 weight: 21
 ---

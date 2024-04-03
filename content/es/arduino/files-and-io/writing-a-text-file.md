@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:51.881896-07:00
-description: "Escribir un archivo de texto en Arduino implica guardar datos en un\
-  \ archivo en una tarjeta SD o un m\xF3dulo de almacenamiento similar, a menudo para\
-  \ fines\u2026"
+description: "C\xF3mo: Para escribir en un archivo de texto en una tarjeta SD usando\
+  \ Arduino, primero necesitas incluir la biblioteca `SD.h`, que proporciona las funciones\u2026"
 lastmod: '2024-03-13T22:44:59.351892-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir un archivo de texto en Arduino implica guardar datos en un archivo\
-  \ en una tarjeta SD o un m\xF3dulo de almacenamiento similar, a menudo para fines\
-  \ de registro de datos."
+summary: Para escribir en un archivo de texto en una tarjeta SD usando Arduino, primero
+  necesitas incluir la biblioteca `SD.h`, que proporciona las funciones necesarias
+  para interactuar con tarjetas SD.
 title: Escribiendo un archivo de texto
 weight: 24
 ---

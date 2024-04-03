@@ -1,11 +1,10 @@
 ---
 date: 2024-02-03 19:03:17.004048-07:00
-description: "Writing to a text file in Elixir is an essential skill for developers,\
-  \ allowing for data persistence, logging, or exporting human-readable content.\u2026"
+description: "How to: Elixir makes file handling straightforward with built-in modules.\
+  \ The primary way to write to a file is using the `File.write/2` or\u2026"
 lastmod: '2024-03-13T22:44:59.798867-06:00'
 model: gpt-4-0125-preview
-summary: Writing to a text file in Elixir is an essential skill for developers, allowing
-  for data persistence, logging, or exporting human-readable content.
+summary: Elixir makes file handling straightforward with built-in modules.
 title: Writing a text file
 weight: 24
 ---

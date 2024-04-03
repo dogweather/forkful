@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:37:47.932423-07:00
-description: "Muunnetaan p\xE4iv\xE4m\xE4\xE4r\xE4 merkkijonoksi, jotta sit\xE4 voi\
-  \ k\xE4ytt\xE4\xE4 tekstiyhteyksiss\xE4, kuten k\xE4ytt\xF6liittymiss\xE4 ja raporteissa.\
-  \ Koodarit tekev\xE4t t\xE4m\xE4n esitt\xE4\xE4kseen\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:57.098735-06:00'
 model: gpt-4-1106-preview
-summary: "Muunnetaan p\xE4iv\xE4m\xE4\xE4r\xE4 merkkijonoksi, jotta sit\xE4 voi k\xE4\
-  ytt\xE4\xE4 tekstiyhteyksiss\xE4, kuten k\xE4ytt\xF6liittymiss\xE4 ja raporteissa."
+summary: .
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---

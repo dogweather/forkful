@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:49.252015-07:00
-description: "L\xE0m vi\u1EC7c v\u1EDBi JSON (JavaScript Object Notation) trong C++\
-  \ bao g\u1ED3m vi\u1EC7c ph\xE2n t\xEDch c\xFA ph\xE1p v\xE0 t\u1EA1o d\u1EEF li\u1EC7\
-  u v\u0103n b\u1EA3n \u0111\u01B0\u1EE3c \u0111\u1ECBnh d\u1EA1ng nh\u01B0 l\xE0\
-  \ JSON. L\u1EADp tr\xECnh vi\xEAn\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi JSON\
+  \ trong C++, b\u1EA1n c\u1EA7n s\u1EED d\u1EE5ng m\u1ED9t th\u01B0 vi\u1EC7n nh\u01B0\
+  \ `nlohmann/json`. D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch b\u1EA1n c\xF3 th\u1EC3\
+  \ ph\xE2n t\xEDch c\xFA ph\xE1p v\xE0 t\u1EA1o d\u1EEF\u2026"
 lastmod: '2024-03-13T22:44:37.069968-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m vi\u1EC7c v\u1EDBi JSON (JavaScript Object Notation) trong C++ bao\
-  \ g\u1ED3m vi\u1EC7c ph\xE2n t\xEDch c\xFA ph\xE1p v\xE0 t\u1EA1o d\u1EEF li\u1EC7\
-  u v\u0103n b\u1EA3n \u0111\u01B0\u1EE3c \u0111\u1ECBnh d\u1EA1ng nh\u01B0 l\xE0\
-  \ JSON."
+summary: "\u0110\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi JSON trong C++, b\u1EA1n c\u1EA7\
+  n s\u1EED d\u1EE5ng m\u1ED9t th\u01B0 vi\u1EC7n nh\u01B0 `nlohmann/json`."
 title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
 weight: 38
 ---

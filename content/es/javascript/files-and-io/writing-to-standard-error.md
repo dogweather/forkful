@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:25.499262-07:00
-description: "Escribir en el error est\xE1ndar (stderr) en JavaScript se trata de\
-  \ dirigir mensajes de error o cualquier informaci\xF3n cr\xEDtica a un flujo espec\xED\
-  fico y\u2026"
+description: "C\xF3mo: En Node.js, escribir en stderr se puede lograr utilizando el\
+  \ m\xE9todo `console.error()` o escribiendo directamente en `process.stderr`. Aqu\xED\
+  \ hay\u2026"
 lastmod: '2024-03-13T22:44:59.474675-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir en el error est\xE1ndar (stderr) en JavaScript se trata de dirigir\
-  \ mensajes de error o cualquier informaci\xF3n cr\xEDtica a un flujo espec\xEDfico\
-  \ y separado, lo cual es especialmente \xFAtil en entornos similares a Unix para\
-  \ prop\xF3sitos de registro y depuraci\xF3n."
+summary: "En Node.js, escribir en stderr se puede lograr utilizando el m\xE9todo `console.error()`\
+  \ o escribiendo directamente en `process.stderr`."
 title: "Escribiendo en el error est\xE1ndar"
 weight: 25
 ---

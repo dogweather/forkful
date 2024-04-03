@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:46.843881-07:00
-description: "Criar um arquivo tempor\xE1rio em Google Apps Script envolve gerar um\
-  \ arquivo destinado ao uso de curto prazo, tipicamente para processamento intermedi\xE1\
-  rio\u2026"
+description: "Como fazer: No Google Apps Script, criar um arquivo tempor\xE1rio pode\
+  \ ser alcan\xE7ado usando o servi\xE7o DriveApp, que fornece um m\xE9todo direto\
+  \ para criar, ler\u2026"
 lastmod: '2024-03-13T22:44:46.130125-06:00'
 model: gpt-4-0125-preview
-summary: "Criar um arquivo tempor\xE1rio em Google Apps Script envolve gerar um arquivo\
-  \ destinado ao uso de curto prazo, tipicamente para processamento intermedi\xE1\
-  rio de dados, depura\xE7\xE3o ou prop\xF3sitos de cache."
+summary: "No Google Apps Script, criar um arquivo tempor\xE1rio pode ser alcan\xE7\
+  ado usando o servi\xE7o DriveApp, que fornece um m\xE9todo direto para criar, ler\
+  \ e deletar arquivos no Google Drive."
 title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---

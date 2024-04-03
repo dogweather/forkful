@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:39:59.998868-07:00
-description: "Opprette en midlertidig fil betyr \xE5 skape en fil som er ment for\
-  \ kortvarig bruk og ofte slettet etter bruk. Programmerere gj\xF8r dette for \xE5\
-  \ lagre data\u2026"
+description: "How to: I C++, kan du bruke `<filesystem>` biblioteket for \xE5 h\xE5\
+  ndtere midlertidige filer. Her er et eksempel."
 lastmod: '2024-03-13T22:44:41.119573-06:00'
 model: gpt-4-1106-preview
-summary: "Opprette en midlertidig fil betyr \xE5 skape en fil som er ment for kortvarig\
-  \ bruk og ofte slettet etter bruk."
+summary: "I C++, kan du bruke `<filesystem>` biblioteket for \xE5 h\xE5ndtere midlertidige\
+  \ filer."
 title: Opprette en midlertidig fil
 weight: 21
 ---

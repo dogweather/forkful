@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 01:09:23.840515-07:00
-description: "\xC5 organisere kode i funksjoner er som \xE5 sortere LEGO-klosser i\
-  \ bokser \u2013 det gj\xF8r det enklere \xE5 finne og bruke dem. Vi gj\xF8r dette\
-  \ for \xE5 unng\xE5 gjentakelse,\u2026"
+description: 'Hvordan: Forestil deg at du har kode som skriver ut en hilsen flere
+  ganger. Uten funksjoner blir det rot. Med funksjoner blir det ryddig.'
 lastmod: '2024-03-13T22:44:40.801493-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 organisere kode i funksjoner er som \xE5 sortere LEGO-klosser i bokser\
-  \ \u2013 det gj\xF8r det enklere \xE5 finne og bruke dem."
+summary: Forestil deg at du har kode som skriver ut en hilsen flere ganger.
 title: Organisering av kode i funksjoner
 weight: 18
 ---

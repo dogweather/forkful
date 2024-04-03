@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 01:07:17.980953-07:00
-description: "Registrar \xE9 basicamente deixar um rastro de migalhas atrav\xE9s do\
-  \ seu c\xF3digo - \xE9 como voc\xEA acompanha o que est\xE1 acontecendo quando o\
-  \ seu script est\xE1 rodando\u2026"
+description: "Como fazer: Aqui vai a ess\xEAncia de como adicionar um registro b\xE1\
+  sico aos seus scripts."
 lastmod: '2024-03-13T22:44:46.803399-06:00'
 model: gpt-4-1106-preview
-summary: "Registrar \xE9 basicamente deixar um rastro de migalhas atrav\xE9s do seu\
-  \ c\xF3digo - \xE9 como voc\xEA acompanha o que est\xE1 acontecendo quando o seu\
-  \ script est\xE1 rodando solto."
+summary: "Aqui vai a ess\xEAncia de como adicionar um registro b\xE1sico aos seus\
+  \ scripts."
 title: Registro de Logs
 weight: 17
 ---

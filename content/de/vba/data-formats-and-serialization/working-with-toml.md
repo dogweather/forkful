@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:18.544798-07:00
-description: "TOML, was f\xFCr Toms Offensichtliche, Minimale Sprache steht, ist ein\
-  \ Daten-Serialisierungsformat, das haupts\xE4chlich f\xFCr Konfigurationsdateien\
-  \ verwendet\u2026"
+description: "Wie: Die Arbeit mit TOML in VBA beinhaltet das Parsen der TOML-Datei,\
+  \ um Konfigurationen oder Einstellungen in Ihr VBA-Projekt zu lesen. VBA hat keine\u2026"
 lastmod: '2024-03-13T22:44:53.744312-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, was f\xFCr Toms Offensichtliche, Minimale Sprache steht, ist ein Daten-Serialisierungsformat,\
-  \ das haupts\xE4chlich f\xFCr Konfigurationsdateien verwendet wird."
+summary: Die Arbeit mit TOML in VBA beinhaltet das Parsen der TOML-Datei, um Konfigurationen
+  oder Einstellungen in Ihr VBA-Projekt zu lesen.
 title: Arbeiten mit TOML
 weight: 39
 ---

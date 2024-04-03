@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:29:38.453443-07:00
-description: "\xC5 jobbe med XML i Elixir inneb\xE6rer \xE5 analysere, opprette og\
-  \ manipulere XML-data. Programmerere tar for seg XML fordi det er utbredt i webtjenester,\u2026"
+description: "Hvordan: Elixir inkluderer ikke XML-analyse i sitt standardbibliotek.\
+  \ SweetXML er et popul\xE6rt valg. Her er hvordan du bruker det."
 lastmod: '2024-03-13T22:44:40.467583-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 jobbe med XML i Elixir inneb\xE6rer \xE5 analysere, opprette og manipulere\
-  \ XML-data."
+summary: Elixir inkluderer ikke XML-analyse i sitt standardbibliotek.
 title: "\xC5 jobbe med XML"
 weight: 40
 ---

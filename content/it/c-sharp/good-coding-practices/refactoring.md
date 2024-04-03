@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 01:17:10.313249-07:00
-description: "Il refactoring \xE8 il processo di ristrutturazione del codice informatico\
-  \ esistente senza cambiarne il comportamento esterno. I programmatori lo fanno per\u2026"
+description: 'Come fare: Rifattorizziamo un semplice metodo C# che calcola e stampa
+  la somma di un array di numeri: Prima del Refactoring.'
 lastmod: '2024-03-13T22:44:43.442243-06:00'
 model: gpt-4-0125-preview
-summary: "Il refactoring \xE8 il processo di ristrutturazione del codice informatico\
-  \ esistente senza cambiarne il comportamento esterno."
+summary: Rifattorizziamo un semplice metodo C# che calcola e stampa la somma di un
+  array di numeri.
 title: Rifattorizzazione
 weight: 19
 ---

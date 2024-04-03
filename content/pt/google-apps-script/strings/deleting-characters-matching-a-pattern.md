@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:02.378480-07:00
-description: "Deletar caracteres que correspondem a um padr\xE3o espec\xEDfico \xE9\
-  \ uma t\xE9cnica usada para limpar ou formatar strings na programa\xE7\xE3o. No\
-  \ contexto do Google Apps\u2026"
+description: "Como fazer: O Google Apps Script oferece m\xE9todos robustos para manipula\xE7\
+  \xE3o de strings, aproveitando as capacidades inerentes do JavaScript. Para deletar\u2026"
 lastmod: '2024-03-13T22:44:46.089490-06:00'
 model: gpt-4-0125-preview
-summary: "Deletar caracteres que correspondem a um padr\xE3o espec\xEDfico \xE9 uma\
-  \ t\xE9cnica usada para limpar ou formatar strings na programa\xE7\xE3o."
+summary: "O Google Apps Script oferece m\xE9todos robustos para manipula\xE7\xE3o\
+  \ de strings, aproveitando as capacidades inerentes do JavaScript."
 title: "Excluindo caracteres correspondentes a um padr\xE3o"
 weight: 5
 ---

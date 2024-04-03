@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:52:46.688350-07:00
-description: "Debug-Ausgaben dienen dazu, den Programmfluss und Variablenwerte w\xE4\
-  hrend der Laufzeit zu beobachten. Programmierer nutzen sie, um Fehler schneller\
-  \ zu\u2026"
+description: "How to: Debugging in Kotlin ist simpel. Verwende `println()` f\xFCr\
+  \ schnelles Feedback."
 lastmod: '2024-03-13T22:44:53.848996-06:00'
 model: gpt-4-1106-preview
-summary: "Debug-Ausgaben dienen dazu, den Programmfluss und Variablenwerte w\xE4hrend\
-  \ der Laufzeit zu beobachten."
+summary: Debugging in Kotlin ist simpel.
 title: Debug-Ausgaben drucken
 weight: 33
 ---

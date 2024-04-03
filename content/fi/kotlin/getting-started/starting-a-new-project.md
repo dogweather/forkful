@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 18:03:55.666775-07:00
-description: "Uuden projektin aloittaminen on kuin puhtaan paperin ottaminen \u2013\
-  \ mahdollisuus luoda jotakin uutta. Koodarit tekev\xE4t sen ratkaistakseen ongelmia,\u2026"
+description: "How to: (Kuinka tehd\xE4\xE4n:) Aloita uusi Kotlin-projekti. Asenna\
+  \ ensin IntelliJ IDEA. K\xE4ynnist\xE4 se, ja luo uusi projekti."
 lastmod: '2024-03-13T22:44:56.531269-06:00'
 model: gpt-4-1106-preview
-summary: "Uuden projektin aloittaminen on kuin puhtaan paperin ottaminen \u2013 mahdollisuus\
-  \ luoda jotakin uutta."
+summary: Aloita uusi Kotlin-projekti.
 title: Uuden projektin aloittaminen
 weight: 1
 ---

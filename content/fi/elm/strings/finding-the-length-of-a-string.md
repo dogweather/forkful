@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:47:31.205422-07:00
-description: "Stringin pituuden selvitt\xE4minen tarkoittaa merkkijonossa olevien\
-  \ merkkien lukum\xE4\xE4r\xE4n laskemista. Ohjelmoijat tekev\xE4t t\xE4t\xE4, jotta\
-  \ saavat tiet\xE4\xE4\u2026"
+description: "How to: (Kuinka tehd\xE4:) Elm tarjoaa `String.length` funktion, joka\
+  \ ottaa merkkijonon (`String`) ja palauttaa pituuden (`Int`)."
 lastmod: '2024-03-13T22:44:56.479562-06:00'
 model: gpt-4-1106-preview
-summary: "Stringin pituuden selvitt\xE4minen tarkoittaa merkkijonossa olevien merkkien\
-  \ lukum\xE4\xE4r\xE4n laskemista."
+summary: Elm tarjoaa `String.length` funktion, joka ottaa merkkijonon (`String`) ja
+  palauttaa pituuden (`Int`).
 title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---

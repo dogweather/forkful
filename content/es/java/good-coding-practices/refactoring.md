@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 01:38:25.812753-07:00
-description: "La refactorizaci\xF3n es el proceso de reestructuraci\xF3n del c\xF3\
-  digo inform\xE1tico existente\u2014cambiando la facturaci\xF3n\u2014sin alterar\
-  \ su comportamiento externo. Los\u2026"
+description: "C\xF3mo hacerlo: Tomemos una clase Java simple que est\xE1 gritando\
+  \ por una refactorizaci\xF3n debido a su pobre organizaci\xF3n y falta de claridad."
 lastmod: '2024-03-13T22:44:58.945597-06:00'
 model: gpt-4-0125-preview
-summary: "La refactorizaci\xF3n es el proceso de reestructuraci\xF3n del c\xF3digo\
-  \ inform\xE1tico existente\u2014cambiando la facturaci\xF3n\u2014sin alterar su\
-  \ comportamiento externo."
+summary: "Tomemos una clase Java simple que est\xE1 gritando por una refactorizaci\xF3\
+  n debido a su pobre organizaci\xF3n y falta de claridad."
 title: "Refactorizaci\xF3n"
 weight: 19
 ---

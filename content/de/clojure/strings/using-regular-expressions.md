@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:29.189690-07:00
-description: "Regul\xE4re Ausdr\xFCcke, ein m\xE4chtiges Werkzeug zur Mustervergleichung\
-  \ und Datenmanipulation, sind unverzichtbar bei Textverarbeitungsaufgaben wie Validierung\u2026"
+description: "Wie geht das: Clojure, seiner Wurzeln in der Lisp-Familie treu bleibend,\
+  \ bietet einen reichen Satz an Funktionen, die nahtlos mit den F\xE4higkeiten von\
+  \ Java\u2026"
 lastmod: '2024-03-13T22:44:53.410165-06:00'
 model: gpt-4-0125-preview
-summary: "Regul\xE4re Ausdr\xFCcke, ein m\xE4chtiges Werkzeug zur Mustervergleichung\
-  \ und Datenmanipulation, sind unverzichtbar bei Textverarbeitungsaufgaben wie Validierung\
-  \ der Eingabe, Suche und Ersetzung von Text."
+summary: "Clojure, seiner Wurzeln in der Lisp-Familie treu bleibend, bietet einen\
+  \ reichen Satz an Funktionen, die nahtlos mit den F\xE4higkeiten von Java in Bezug\
+  \ auf regul\xE4re Ausdr\xFCcke interagieren."
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

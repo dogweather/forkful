@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:41:27.687220-07:00
-description: "Tworzenie tymczasowych plik\xF3w to proces, w kt\xF3rym program tworzy\
-  \ plik, kt\xF3ry ma by\u0107 u\u017Cyty tylko na kr\xF3tki czas. Programi\u015B\
-  ci robi\u0105 to, by zarz\u0105dza\u0107 danymi\u2026"
+description: "How to: (Jak to zrobi\u0107:) Rust u\u017Cywa `tempfile` crate do \u0142\
+  atwego tworzenia tymczasowych plik\xF3w. Poni\u017Cej znajdziesz przyk\u0142ad."
 lastmod: '2024-03-13T22:44:35.205533-06:00'
 model: gpt-4-1106-preview
-summary: "Tworzenie tymczasowych plik\xF3w to proces, w kt\xF3rym program tworzy plik,\
-  \ kt\xF3ry ma by\u0107 u\u017Cyty tylko na kr\xF3tki czas."
+summary: "Rust u\u017Cywa `tempfile` crate do \u0142atwego tworzenia tymczasowych\
+  \ plik\xF3w."
 title: Tworzenie pliku tymczasowego
 weight: 21
 ---

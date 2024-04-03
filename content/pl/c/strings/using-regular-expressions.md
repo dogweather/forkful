@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:17.717139-07:00
-description: "Wyra\u017Cenia regularne (regex) dostarczaj\u0105 sposobu na wyszukiwanie,\
-  \ dopasowywanie i manipulowanie ci\u0105gami znak\xF3w przy u\u017Cyciu zdefiniowanych\
-  \ wzorc\xF3w.\u2026"
+description: "Jak to zrobi\u0107: Aby u\u017Cywa\u0107 wyra\u017Ce\u0144 regularnych\
+  \ w C, b\u0119dziesz przede wszystkim pracowa\u0107 z bibliotek\u0105 POSIX regex\
+  \ (`<regex.h>`). Ten przyk\u0142ad demonstruje\u2026"
 lastmod: '2024-03-13T22:44:35.874978-06:00'
 model: gpt-4-0125-preview
-summary: "Wyra\u017Cenia regularne (regex) dostarczaj\u0105 sposobu na wyszukiwanie,\
-  \ dopasowywanie i manipulowanie ci\u0105gami znak\xF3w przy u\u017Cyciu zdefiniowanych\
-  \ wzorc\xF3w."
+summary: "Aby u\u017Cywa\u0107 wyra\u017Ce\u0144 regularnych w C, b\u0119dziesz przede\
+  \ wszystkim pracowa\u0107 z bibliotek\u0105 POSIX regex (`<regex.h>`)."
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---

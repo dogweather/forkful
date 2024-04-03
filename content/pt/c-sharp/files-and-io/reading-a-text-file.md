@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:53:54.519310-07:00
-description: "Ler um arquivo de texto em C# significa entrar na dan\xE7a dos bytes\
-  \ pra tirar informa\xE7\xF5es \xFAteis de um arquivo `.txt`. Programadores fazem\
-  \ isso porque,\u2026"
+description: "Como Fazer: Vamos direto aos bits. Aqui est\xE3o alguns exemplos de\
+  \ como ler um arquivo de texto em C#."
 lastmod: '2024-03-13T22:44:46.601124-06:00'
 model: gpt-4-1106-preview
-summary: "Ler um arquivo de texto em C# significa entrar na dan\xE7a dos bytes pra\
-  \ tirar informa\xE7\xF5es \xFAteis de um arquivo `."
+summary: Vamos direto aos bits.
 title: Lendo um arquivo de texto
 weight: 22
 ---

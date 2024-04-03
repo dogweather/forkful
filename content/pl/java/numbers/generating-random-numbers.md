@@ -1,12 +1,13 @@
 ---
 date: 2024-01-27 20:34:07.947459-07:00
-description: "Generowanie losowych liczb polega na tworzeniu nieprzewidywalnych sekwencji\
-  \ lub pojedynczych warto\u015Bci w okre\u015Blonym zakresie. Programi\u015Bci u\u017C\
-  ywaj\u0105 tej\u2026"
+description: "Jak to zrobi\u0107: W Javie, generowanie losowych liczb mo\u017Cna osi\u0105\
+  gn\u0105\u0107 za pomoc\u0105 klasy `Random` z pakietu `java.util`, lub klas `ThreadLocalRandom`\
+  \ i\u2026"
 lastmod: '2024-03-13T22:44:35.273264-06:00'
 model: gpt-4-0125-preview
-summary: "Generowanie losowych liczb polega na tworzeniu nieprzewidywalnych sekwencji\
-  \ lub pojedynczych warto\u015Bci w okre\u015Blonym zakresie."
+summary: "W Javie, generowanie losowych liczb mo\u017Cna osi\u0105gn\u0105\u0107 za\
+  \ pomoc\u0105 klasy `Random` z pakietu `java.util`, lub klas `ThreadLocalRandom`\
+  \ i `SecureRandom` dla specyficznych przypadk\xF3w u\u017Cycia."
 title: Generowanie liczb losowych
 weight: 12
 ---

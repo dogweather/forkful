@@ -2,17 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:22.004834-07:00
-description: "Vi\u1EC7c vi\u1EBFt m\u1ED9t t\u1EADp tin v\u0103n b\u1EA3n li\xEAn\
-  \ quan \u0111\u1EBFn vi\u1EC7c l\u01B0u d\u1EEF li\u1EC7u v\xE0o m\u1ED9t t\u1EAD\
-  p tin theo \u0111\u1ECBnh d\u1EA1ng c\xF3 th\u1EC3 \u0111\u1ECDc \u0111\u01B0\u1EE3\
-  c b\u1EDFi con ng\u01B0\u1EDDi. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7\
-  n\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Elixir l\xE0m cho vi\u1EC7c vi\u1EBFt t\u1EAD\
+  p tin v\u0103n b\u1EA3n tr\u1EDF n\xEAn \u0111\u01A1n gi\u1EA3n. D\u01B0\u1EDBi\
+  \ \u0111\xE2y l\xE0 m\u1ED9t v\xED d\u1EE5 \u0111\u01A1n gi\u1EA3n v\u1EC1 vi\u1EC7\
+  c vi\u1EBFt v\xE0o m\u1ED9t t\u1EADp tin t\xEAn l\xE0 \"hello.txt\"."
 lastmod: '2024-03-13T22:44:36.232291-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c vi\u1EBFt m\u1ED9t t\u1EADp tin v\u0103n b\u1EA3n li\xEAn quan\
-  \ \u0111\u1EBFn vi\u1EC7c l\u01B0u d\u1EEF li\u1EC7u v\xE0o m\u1ED9t t\u1EADp tin\
-  \ theo \u0111\u1ECBnh d\u1EA1ng c\xF3 th\u1EC3 \u0111\u1ECDc \u0111\u01B0\u1EE3\
-  c b\u1EDFi con ng\u01B0\u1EDDi."
+summary: "Elixir l\xE0m cho vi\u1EC7c vi\u1EBFt t\u1EADp tin v\u0103n b\u1EA3n tr\u1EDF\
+  \ n\xEAn \u0111\u01A1n gi\u1EA3n."
 title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 24
 ---

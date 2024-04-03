@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:20.538766-07:00
-description: "YAML, qui signifie \"YAML Ain't Markup Language\" (YAML n'est pas un\
-  \ langage de balisage), est largement utilis\xE9 en Ruby pour les fichiers de configuration\u2026"
+description: "Comment faire : Ruby est livr\xE9 avec une biblioth\xE8que int\xE9gr\xE9\
+  e appel\xE9e Psych pour l'analyse et l'\xE9mission de YAML. Pour l'utiliser, vous\
+  \ devez d'abord\u2026"
 lastmod: '2024-03-13T22:44:58.442351-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, qui signifie \"YAML Ain't Markup Language\" (YAML n'est pas un langage\
-  \ de balisage), est largement utilis\xE9 en Ruby pour les fichiers de configuration\
-  \ et la s\xE9rialisation des donn\xE9es en raison de son format lisible par l'homme."
+summary: "Ruby est livr\xE9 avec une biblioth\xE8que int\xE9gr\xE9e appel\xE9e Psych\
+  \ pour l'analyse et l'\xE9mission de YAML."
 title: Travailler avec YAML
 weight: 41
 ---

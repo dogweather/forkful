@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:53:53.809833-07:00
-description: "Lire un fichier texte en programmation, c'est r\xE9colter le contenu\
-  \ d'un fichier pour l'utiliser ou le modifier. En tant que programmeurs, on fait\
-  \ \xE7a pour\u2026"
+description: 'Comment faire : .'
 lastmod: '2024-03-13T22:44:57.346410-06:00'
 model: gpt-4-1106-preview
-summary: "Lire un fichier texte en programmation, c'est r\xE9colter le contenu d'un\
-  \ fichier pour l'utiliser ou le modifier."
+summary: .
 title: Lecture d'un fichier texte
 weight: 22
 ---

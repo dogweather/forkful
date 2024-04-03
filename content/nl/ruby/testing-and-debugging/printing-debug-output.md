@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:24.725390-07:00
-description: "Debug-output printen in Ruby is als broodkruimels achterlaten in je\
-  \ code om variabele waarden en programmaduur bij te houden. Programmeurs doen dit\
-  \ om\u2026"
+description: 'Hoe te: In Ruby zijn `puts` en `p` je methoden voor snelle output naar
+  de console.'
 lastmod: '2024-03-13T22:44:51.340771-06:00'
 model: gpt-4-0125-preview
-summary: Debug-output printen in Ruby is als broodkruimels achterlaten in je code
-  om variabele waarden en programmaduur bij te houden.
+summary: In Ruby zijn `puts` en `p` je methoden voor snelle output naar de console.
 title: Debug-output afdrukken
 weight: 33
 ---

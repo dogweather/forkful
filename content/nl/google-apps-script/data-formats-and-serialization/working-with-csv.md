@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:58.778489-07:00
-description: "Werken met CSV (Comma-Separated Values) bestanden in Google Apps Script\
-  \ houdt het lezen, wijzigen en schrijven van platte tekstbestanden in, waarbij elke\u2026"
+description: 'Hoe te: #.'
 lastmod: '2024-03-13T22:44:50.356053-06:00'
 model: gpt-4-0125-preview
-summary: Werken met CSV (Comma-Separated Values) bestanden in Google Apps Script houdt
-  het lezen, wijzigen en schrijven van platte tekstbestanden in, waarbij elke regel
-  een datarecord vertegenwoordigt met waarden gescheiden door komma's.
+summary: '#.'
 title: Werken met CSV
 weight: 37
 ---

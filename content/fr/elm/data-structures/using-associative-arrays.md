@@ -2,14 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:49.049169-07:00
-description: "Les tableaux associatifs, ou comme les appelle Elm, les Dictionnaires,\
-  \ associent des cl\xE9s \xE0 des valeurs de mani\xE8re \xE0 rendre la recherche,\
-  \ l'insertion et\u2026"
+description: 'Comment faire : Dans Elm, vous travaillez avec les Dictionnaires dans
+  le module `Dict`, alors plongeons dans un exemple rapide .'
 lastmod: '2024-03-13T22:44:57.681369-06:00'
 model: gpt-4-0125-preview
-summary: "Les tableaux associatifs, ou comme les appelle Elm, les Dictionnaires, associent\
-  \ des cl\xE9s \xE0 des valeurs de mani\xE8re \xE0 rendre la recherche, l'insertion\
-  \ et la suppression de valeurs extr\xEAmement rapides."
+summary: Dans Elm, vous travaillez avec les Dictionnaires dans le module `Dict`, alors
+  plongeons dans un exemple rapide.
 title: Utilisation des tableaux associatifs
 weight: 15
 ---

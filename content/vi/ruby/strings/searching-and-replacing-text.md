@@ -2,16 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:32.776345-07:00
-description: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n l\xE0 vi\u1EC7\
-  c \u0111\u1ED5i c\xE1c t\u1EEB ho\u1EB7c c\u1EE5m t\u1EEB c\u1EE5 th\u1EC3 th\xE0\
-  nh c\xE1c l\u1EF1a ch\u1ECDn kh\xE1c trong m\u1ED9t chu\u1ED7i. C\xE1c l\u1EADp\
-  \ tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 c\u1EAD\
-  p\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Ruby l\xE0m cho \u0111i\u1EC1u n\xE0y tr\u1EDF\
+  \ n\xEAn d\u1EC5 d\xE0ng. S\u1EED d\u1EE5ng `gsub` \u0111\u1EC3 thay th\u1EBF to\xE0\
+  n c\u1EA7u, ho\u1EB7c `sub` cho m\u1ED9t tr\u01B0\u1EDDng h\u1EE3p duy nh\u1EA5\
+  t. D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t c\xE1i\u2026"
 lastmod: '2024-03-13T22:44:37.304912-06:00'
 model: gpt-4-0125-preview
-summary: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n l\xE0 vi\u1EC7c \u0111\
-  \u1ED5i c\xE1c t\u1EEB ho\u1EB7c c\u1EE5m t\u1EEB c\u1EE5 th\u1EC3 th\xE0nh c\xE1\
-  c l\u1EF1a ch\u1ECDn kh\xE1c trong m\u1ED9t chu\u1ED7i."
+summary: "Ruby l\xE0m cho \u0111i\u1EC1u n\xE0y tr\u1EDF n\xEAn d\u1EC5 d\xE0ng."
 title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
 weight: 10
 ---

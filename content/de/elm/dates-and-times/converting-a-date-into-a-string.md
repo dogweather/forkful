@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:36:15.868862-07:00
-description: "Ein Datum in einen String umzuwandeln, bedeutet, die Date-Information\
-  \ in eine Textform zu bringen, die f\xFCr Menschen lesbar ist. Programmierer machen\
-  \ das,\u2026"
+description: 'So geht''s: Ein einfaches Beispiel in Elm, um das aktuelle Datum und
+  die Zeit in einen String umzuwandeln.'
 lastmod: '2024-03-13T22:44:53.816812-06:00'
 model: gpt-4-1106-preview
-summary: "Ein Datum in einen String umzuwandeln, bedeutet, die Date-Information in\
-  \ eine Textform zu bringen, die f\xFCr Menschen lesbar ist."
+summary: Ein einfaches Beispiel in Elm, um das aktuelle Datum und die Zeit in einen
+  String umzuwandeln.
 title: Datum in einen String umwandeln
 weight: 28
 ---

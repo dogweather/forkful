@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:23.974378-07:00
-description: "Het huidige datum in Ruby pakken is zo simpel als het klinkt: de datum\
-  \ van vandaag ophalen. Programmeurs hebben dit nodig voor taken vari\xEBrend van\
-  \ loggen\u2026"
+description: 'Hoe te: Ruby maakt het kinderlijk eenvoudig om de huidige datum te krijgen.
+  Zo doe je dat.'
 lastmod: '2024-03-13T22:44:51.349184-06:00'
 model: gpt-4-0125-preview
-summary: 'Het huidige datum in Ruby pakken is zo simpel als het klinkt: de datum van
-  vandaag ophalen.'
+summary: Ruby maakt het kinderlijk eenvoudig om de huidige datum te krijgen.
 title: Het huidige datum ophalen
 weight: 29
 ---

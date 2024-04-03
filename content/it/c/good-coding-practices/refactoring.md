@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:38.598168-07:00
-description: "Il refactoring nella programmazione implica la ristrutturazione del\
-  \ codice esistente senza modificarne il comportamento esterno, con l'obiettivo di\u2026"
+description: "Come fare: Il refactoring pu\xF2 coinvolgere una gamma di tattiche,\
+  \ dalla rinomina di variabili per maggiore chiarezza alla modifica della struttura\
+  \ del\u2026"
 lastmod: '2024-03-13T22:44:44.008590-06:00'
 model: gpt-4-0125-preview
-summary: "Il refactoring nella programmazione implica la ristrutturazione del codice\
-  \ esistente senza modificarne il comportamento esterno, con l'obiettivo di migliorare\
-  \ attributi non funzionali come la leggibilit\xE0, ridurre la complessit\xE0 e aumentare\
-  \ la manutenibilit\xE0."
+summary: "Il refactoring pu\xF2 coinvolgere una gamma di tattiche, dalla rinomina\
+  \ di variabili per maggiore chiarezza alla modifica della struttura del codice per\
+  \ una migliore modularizzazione."
 title: Rifattorizzazione
 weight: 19
 ---

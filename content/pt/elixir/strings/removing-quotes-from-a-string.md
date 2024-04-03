@@ -1,11 +1,13 @@
 ---
 date: 2024-01-26 03:38:34.822289-07:00
-description: "Remover aspas de uma string significa descartar aquelas embalagens extras\
-  \ para obter o texto limpo por dentro. Os programadores fazem isso para higienizar\u2026"
+description: "Como Fazer: Elixir n\xE3o possui uma fun\xE7\xE3o embutida para 'remover\
+  \ aspas', mas \xE9 muito f\xE1cil criar a sua pr\xF3pria fun\xE7\xE3o utilizando\
+  \ correspond\xEAncia de padr\xF5es\u2026"
 lastmod: '2024-03-13T22:44:46.226381-06:00'
 model: gpt-4-0125-preview
-summary: Remover aspas de uma string significa descartar aquelas embalagens extras
-  para obter o texto limpo por dentro.
+summary: "Elixir n\xE3o possui uma fun\xE7\xE3o embutida para 'remover aspas', mas\
+  \ \xE9 muito f\xE1cil criar a sua pr\xF3pria fun\xE7\xE3o utilizando correspond\xEA\
+  ncia de padr\xF5es ou fun\xE7\xF5es `String`."
 title: Removendo aspas de uma string
 weight: 9
 ---

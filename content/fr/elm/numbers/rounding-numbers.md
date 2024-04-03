@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:43:56.218890-07:00
-description: "Arrondir les nombres consiste \xE0 ajuster un d\xE9cimal \xE0 sa valeur\
-  \ enti\xE8re la plus proche ou \xE0 un nombre sp\xE9cifi\xE9 de chiffres fractionnaires.\
-  \ Les programmeurs\u2026"
+description: 'Comment faire : Le module `Basics` d''Elm fournit des fonctions pratiques
+  pour l''arrondissement : `round`, `floor` et `ceiling`. Voici comment les utiliser.'
 lastmod: '2024-03-13T22:44:57.683396-06:00'
 model: gpt-4-0125-preview
-summary: "Arrondir les nombres consiste \xE0 ajuster un d\xE9cimal \xE0 sa valeur\
-  \ enti\xE8re la plus proche ou \xE0 un nombre sp\xE9cifi\xE9 de chiffres fractionnaires."
+summary: Le module `Basics` d'Elm fournit des fonctions pratiques pour l'arrondissement.
 title: Arrondir les nombres
 weight: 13
 ---

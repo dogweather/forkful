@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:25.990569-07:00
-description: "Het lezen van commandoregelargumenten in Visual Basic for Applications\
-  \ (VBA) houdt in dat je toegang krijgt tot parameters die aan je programma worden\u2026"
+description: "Hoe: In tegenstelling tot eenvoudigere programmeeromgevingen heeft VBA\
+  \ geen ingebouwde functie om commandoregelargumenten rechtstreeks op een\u2026"
 lastmod: '2024-03-13T22:44:50.652517-06:00'
 model: gpt-4-0125-preview
-summary: Het lezen van commandoregelargumenten in Visual Basic for Applications (VBA)
-  houdt in dat je toegang krijgt tot parameters die aan je programma worden doorgegeven
-  bij uitvoering.
+summary: In tegenstelling tot eenvoudigere programmeeromgevingen heeft VBA geen ingebouwde
+  functie om commandoregelargumenten rechtstreeks op een conventionele manier te lezen,
+  omdat het vooral is ontworpen voor integratie binnen Microsoft Office-applicaties.
 title: Commandoregelargumenten lezen
 weight: 23
 ---

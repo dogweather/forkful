@@ -2,15 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:17.066001-07:00
-description: "L\xE0m vi\u1EC7c v\u1EDBi JSON trong Bash bao g\u1ED3m vi\u1EC7c ph\xE2\
-  n t\xEDch c\xFA ph\xE1p v\xE0 t\u1EA1o d\u1EEF li\u1EC7u d\u1EA1ng JSON tr\u1EF1\
-  c ti\u1EBFp t\u1EEB d\xF2ng l\u1EC7nh. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1\
-  c hi\u1EC7n \u0111i\u1EC1u n\xE0y cho\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: ."
 lastmod: '2024-03-13T22:44:36.906100-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m vi\u1EC7c v\u1EDBi JSON trong Bash bao g\u1ED3m vi\u1EC7c ph\xE2\
-  n t\xEDch c\xFA ph\xE1p v\xE0 t\u1EA1o d\u1EEF li\u1EC7u d\u1EA1ng JSON tr\u1EF1\
-  c ti\u1EBFp t\u1EEB d\xF2ng l\u1EC7nh."
+summary: .
 title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
 weight: 38
 ---

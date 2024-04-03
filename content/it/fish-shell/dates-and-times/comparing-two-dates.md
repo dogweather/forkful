@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 17:32:43.568367-07:00
-description: "Confrontare due date significa verificare se una precede, segue o coincide\
-  \ con l'altra. I programmatori lo fanno per gestire eventi, scadenze, o per\u2026"
+description: "Come fare: Per confrontare due date in Fish, utilizza il comando `date`\
+  \ per ottenere i secondi dal 1\xB0 gennaio 1970 (timestamp) e confrontali con `-gt`,\u2026"
 lastmod: '2024-03-13T22:44:43.871979-06:00'
 model: gpt-4-1106-preview
-summary: Confrontare due date significa verificare se una precede, segue o coincide
-  con l'altra.
+summary: "Per confrontare due date in Fish, utilizza il comando `date` per ottenere\
+  \ i secondi dal 1\xB0 gennaio 1970 (timestamp) e confrontali con `-gt`, `-lt`, o\
+  \ `-eq`."
 title: Confronto tra due date
 weight: 27
 ---

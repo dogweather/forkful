@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:26.414946-07:00
-description: "Extrair substrings em C envolve criar uma string menor (substring) a\
-  \ partir de uma string maior com base em crit\xE9rios especificados, como posi\xE7\
-  \xE3o e\u2026"
+description: "Como fazer: Ao contr\xE1rio de algumas linguagens de alto n\xEDvel que\
+  \ fornecem m\xE9todos embutidos para a extra\xE7\xE3o de substrings, o C requer\
+  \ uma abordagem mais\u2026"
 lastmod: '2024-03-13T22:44:47.037488-06:00'
 model: gpt-4-0125-preview
-summary: "Extrair substrings em C envolve criar uma string menor (substring) a partir\
-  \ de uma string maior com base em crit\xE9rios especificados, como posi\xE7\xE3\
-  o e comprimento."
+summary: "Ao contr\xE1rio de algumas linguagens de alto n\xEDvel que fornecem m\xE9\
+  todos embutidos para a extra\xE7\xE3o de substrings, o C requer uma abordagem mais\
+  \ manual usando suas fun\xE7\xF5es de manipula\xE7\xE3o de strings."
 title: Extraindo substrings
 weight: 6
 ---

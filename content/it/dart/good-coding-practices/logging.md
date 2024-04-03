@@ -2,13 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:01.431022-07:00
-description: "Il logging in Dart si riferisce al processo di registrazione di vari\
-  \ livelli di informazioni durante l'esecuzione di un programma. I programmatori\
-  \ lo\u2026"
+description: "Come fare: Dart include un meccanismo di logging semplice attraverso\
+  \ la libreria `dart:developer`. Per esigenze di logging pi\xF9 sofisticate, i\u2026"
 lastmod: '2024-03-13T22:44:43.138128-06:00'
 model: gpt-4-0125-preview
-summary: Il logging in Dart si riferisce al processo di registrazione di vari livelli
-  di informazioni durante l'esecuzione di un programma.
+summary: Dart include un meccanismo di logging semplice attraverso la libreria `dart:developer`.
 title: Registrazione
 weight: 17
 ---

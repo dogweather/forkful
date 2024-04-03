@@ -2,13 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:18.137242-07:00
-description: "\xC5 skrive tester i TypeScript inneb\xE6rer \xE5 lage automatiserte\
-  \ skript for \xE5 verifisere funksjonaliteten og riktigheten av koden din. Programmerere\
-  \ gj\xF8r dette\u2026"
+description: "Hvordan: TypeScript fungerer harmonisk med de fleste JavaScript-testingrammeverk.\
+  \ For demonstrasjonsform\xE5l vil vi bruke Jest, et popul\xE6rt\u2026"
 lastmod: '2024-03-13T22:44:40.535728-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive tester i TypeScript inneb\xE6rer \xE5 lage automatiserte skript\
-  \ for \xE5 verifisere funksjonaliteten og riktigheten av koden din."
+summary: TypeScript fungerer harmonisk med de fleste JavaScript-testingrammeverk.
 title: Skrive tester
 weight: 36
 ---

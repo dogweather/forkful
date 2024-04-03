@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 01:17:49.474716-07:00
-description: "Refaktorering er i bunn og grunn \xE5 gj\xF8re en v\xE5rrengj\xF8ring\
-  \ i koden din \u2013 det handler om \xE5 restrukturere eksisterende kode uten \xE5\
-  \ endre dens eksterne\u2026"
+description: "Hvordan: Anta at du har en Elm-funksjon som gj\xF8r for mye, som \xE5\
+  \ blande UI-logikk med oppdateringer av tilstand. Det er en perfekt kandidat for\u2026"
 lastmod: '2024-03-13T22:44:40.717850-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktorering er i bunn og grunn \xE5 gj\xF8re en v\xE5rrengj\xF8ring i\
-  \ koden din \u2013 det handler om \xE5 restrukturere eksisterende kode uten \xE5\
-  \ endre dens eksterne oppf\xF8rsel."
+summary: "Anta at du har en Elm-funksjon som gj\xF8r for mye, som \xE5 blande UI-logikk\
+  \ med oppdateringer av tilstand."
 title: Refaktorering
 weight: 19
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:09.831025-07:00
-description: "Un shell interattivo, o Ciclo Leggi-Valuta-Stampa (REPL), ti permette\
-  \ di sperimentare con il codice Go in tempo reale, eseguendo comandi e ottenendo\u2026"
+description: "Come fare: Anche se Go non include un REPL incorporato, la comunit\xE0\
+  \ ha creato strumenti come `gore` per colmare questa lacuna. Prima di tutto, installa\u2026"
 lastmod: '2024-03-13T22:44:42.910033-06:00'
 model: gpt-4-0125-preview
-summary: Un shell interattivo, o Ciclo Leggi-Valuta-Stampa (REPL), ti permette di
-  sperimentare con il codice Go in tempo reale, eseguendo comandi e ottenendo feedback
-  immediati.
+summary: "Anche se Go non include un REPL incorporato, la comunit\xE0 ha creato strumenti\
+  \ come `gore` per colmare questa lacuna."
 title: Utilizzo di un guscio interattivo (REPL)
 weight: 34
 ---

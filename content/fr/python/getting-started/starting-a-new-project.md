@@ -3,13 +3,10 @@ changelog:
 - 2024-02-22, dogweather, reviewed
 - 2024-02-22, gpt-4-0125-preview, translated from English
 date: 2024-02-22 17:29:57.341989-07:00
-description: "Commencer un nouveau projet en Python, c'est mettre en place d\xE8s\
-  \ le d\xE9part une structure organis\xE9e et maintenable. Les programmeurs font\
-  \ cela pour\u2026"
+description: 'Comment faire : #.'
 lastmod: '2024-03-13T22:44:57.236761-06:00'
 model: gpt-4-0125-preview
-summary: "Commencer un nouveau projet en Python, c'est mettre en place d\xE8s le d\xE9\
-  part une structure organis\xE9e et maintenable."
+summary: '#.'
 title: "D\xE9marrer un nouveau projet"
 weight: 1
 ---

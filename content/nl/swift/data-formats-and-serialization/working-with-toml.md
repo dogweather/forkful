@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:59.170587-07:00
-description: "TOML (Tom's Obvious, Minimal Language) is een gegevensserialisatieformaat\
-  \ dat makkelijk te lezen is vanwege de duidelijke semantiek. Programmeurs\u2026"
+description: "Hoe te: Om te beginnen, heb je een TOML-parser nodig. Swift heeft geen\
+  \ ingebouwde, dus laten we `TOMLDecoder` gebruiken. Installeer het via Swift Package\u2026"
 lastmod: '2024-03-13T22:44:51.181282-06:00'
 model: gpt-4-0125-preview
-summary: TOML (Tom's Obvious, Minimal Language) is een gegevensserialisatieformaat
-  dat makkelijk te lezen is vanwege de duidelijke semantiek.
+summary: Om te beginnen, heb je een TOML-parser nodig.
 title: Werken met TOML
 weight: 39
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:45.583477-07:00
-description: "Regulj\xE4ra uttryck (regex) i PHP \xE4r m\xF6nster som anv\xE4nds f\xF6\
-  r att matcha teckenkombinationer i str\xE4ngar, vilket m\xF6jligg\xF6r avancerade\
-  \ s\xF6k-och-ers\xE4tt-\u2026"
+description: "Hur man g\xF6r: PHP st\xF6der regulj\xE4ra uttryck genom PCRE-biblioteket\
+  \ (Perl Compatible Regular Expressions), som erbjuder en rik upps\xE4ttning funktioner.\
+  \ S\xE5 h\xE4r\u2026"
 lastmod: '2024-03-13T22:44:37.986543-06:00'
 model: gpt-4-0125-preview
-summary: "Regulj\xE4ra uttryck (regex) i PHP \xE4r m\xF6nster som anv\xE4nds f\xF6\
-  r att matcha teckenkombinationer i str\xE4ngar, vilket m\xF6jligg\xF6r avancerade\
-  \ s\xF6k-och-ers\xE4tt-operationer och datavalidering."
+summary: "PHP st\xF6der regulj\xE4ra uttryck genom PCRE-biblioteket (Perl Compatible\
+  \ Regular Expressions), som erbjuder en rik upps\xE4ttning funktioner."
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---

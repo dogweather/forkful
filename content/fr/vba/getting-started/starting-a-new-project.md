@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:47.105141-07:00
-description: "D\xE9marrer un nouveau projet en Visual Basic pour Applications (VBA)\
-  \ implique de configurer un environnement au sein d'une application h\xF4te, comme\
-  \ Excel,\u2026"
+description: "Comment faire : Lorsque vous \xEAtes pr\xEAt \xE0 commencer un nouveau\
+  \ projet VBA, le point de d\xE9part implique g\xE9n\xE9ralement d'acc\xE9der \xE0\
+  \ l'\xE9diteur VBA et\u2026"
 lastmod: '2024-03-13T22:44:57.574603-06:00'
 model: gpt-4-0125-preview
-summary: "D\xE9marrer un nouveau projet en Visual Basic pour Applications (VBA) implique\
-  \ de configurer un environnement au sein d'une application h\xF4te, comme Excel,\
-  \ pour automatiser des t\xE2ches ou \xE9tendre des fonctionnalit\xE9s."
+summary: "Lorsque vous \xEAtes pr\xEAt \xE0 commencer un nouveau projet VBA, le point\
+  \ de d\xE9part implique g\xE9n\xE9ralement d'acc\xE9der \xE0 l'\xE9diteur VBA et\
+  \ d'initialiser votre cadre de projet."
 title: "D\xE9marrer un nouveau projet"
 weight: 1
 ---

@@ -2,17 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:08.040374-07:00
-description: "Vi\u1EC7c t\u1EA3i m\u1ED9t trang web b\u1EB1ng Google Apps Script bao\
-  \ g\u1ED3m vi\u1EC7c l\u1EA5y n\u1ED9i dung c\u1EE7a trang web th\xF4ng qua HTML\
-  \ cho c\xE1c m\u1EE5c \u0111\xEDch kh\xE1c nhau, nh\u01B0 l\u1EA5y d\u1EEF li\u1EC7\
-  u web,\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong Google Apps Script, d\u1ECBch v\u1EE5\
+  \ `UrlFetchApp` l\xE0 y\u1EBFu t\u1ED1 then ch\u1ED1t \u0111\u1EC3 t\u1EA3i n\u1ED9\
+  i dung web. D\u01B0\u1EDBi \u0111\xE2y l\xE0 h\u01B0\u1EDBng d\u1EABn t\u1EEBng\
+  \ b\u01B0\u1EDBc v\xE0 m\u1ED9t v\xED d\u1EE5 \u0111\u01A1n\u2026"
 lastmod: '2024-03-13T22:44:36.038409-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c t\u1EA3i m\u1ED9t trang web b\u1EB1ng Google Apps Script bao g\u1ED3\
-  m vi\u1EC7c l\u1EA5y n\u1ED9i dung c\u1EE7a trang web th\xF4ng qua HTML cho c\xE1\
-  c m\u1EE5c \u0111\xEDch kh\xE1c nhau, nh\u01B0 l\u1EA5y d\u1EEF li\u1EC7u web, tr\xED\
-  ch xu\u1EA5t d\u1EEF li\u1EC7u, ho\u1EB7c theo d\xF5i s\u1EF1 thay \u0111\u1ED5\
-  i."
+summary: "Trong Google Apps Script, d\u1ECBch v\u1EE5 `UrlFetchApp` l\xE0 y\u1EBF\
+  u t\u1ED1 then ch\u1ED1t \u0111\u1EC3 t\u1EA3i n\u1ED9i dung web."
 title: "T\u1EA3i v\u1EC1 m\u1ED9t trang web"
 weight: 42
 ---

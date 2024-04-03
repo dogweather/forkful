@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:47:25.569033-07:00
-description: "La longueur d'une cha\xEEne, c'est compter les \xE9l\xE9ments qui la\
-  \ composent. Les programmeurs le font pour valider des donn\xE9es, optimiser des\
-  \ performances ou\u2026"
+description: "How to: En Haskell, pour trouver la longueur d'une cha\xEEne, on utilise\
+  \ la fonction `length`. Simple et directe, voici comment \xE7a fonctionne ."
 lastmod: '2024-03-13T22:44:57.824320-06:00'
 model: gpt-4-1106-preview
-summary: "La longueur d'une cha\xEEne, c'est compter les \xE9l\xE9ments qui la composent."
+summary: "En Haskell, pour trouver la longueur d'une cha\xEEne, on utilise la fonction\
+  \ `length`."
 title: "Trouver la longueur d'une cha\xEEne de caract\xE8res"
 weight: 7
 ---

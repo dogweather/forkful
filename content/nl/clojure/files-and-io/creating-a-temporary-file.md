@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:05.915060-07:00
-description: "Een tijdelijk bestand maken is het proces van het cre\xEBren van een\
-  \ kortstondig bestand voor tussentijdse gegevensopslag. Programmeurs gebruiken ze\
-  \ voor\u2026"
+description: 'Hoe: Clojure maakt het simpel. De `clojure.java.io` bibliotheek staat
+  voor je klaar.'
 lastmod: '2024-03-13T22:44:50.439444-06:00'
 model: gpt-4-0125-preview
-summary: "Een tijdelijk bestand maken is het proces van het cre\xEBren van een kortstondig\
-  \ bestand voor tussentijdse gegevensopslag."
+summary: Clojure maakt het simpel.
 title: Een tijdelijk bestand aanmaken
 weight: 21
 ---

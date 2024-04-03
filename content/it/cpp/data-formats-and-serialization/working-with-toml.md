@@ -1,13 +1,10 @@
 ---
 date: 2024-01-26 04:19:29.869297-07:00
-description: "TOML (Tom's Obvious, Minimal Language - Linguaggio Minimale ed Ovvio\
-  \ di Tom) \xE8 un formato di serializzazione di dati facile da leggere grazie alla\
-  \ sua\u2026"
+description: 'Come fare: Per lavorare con TOML in C++, avrai bisogno di una libreria
+  come `toml++`. Ecco una guida rapida.'
 lastmod: '2024-03-13T22:44:43.751491-06:00'
 model: gpt-4-0125-preview
-summary: "TOML (Tom's Obvious, Minimal Language - Linguaggio Minimale ed Ovvio di\
-  \ Tom) \xE8 un formato di serializzazione di dati facile da leggere grazie alla\
-  \ sua semantica chiara."
+summary: Per lavorare con TOML in C++, avrai bisogno di una libreria come `toml++`.
 title: Lavorare con TOML
 weight: 39
 ---

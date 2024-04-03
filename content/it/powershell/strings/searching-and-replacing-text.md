@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:58:30.050587-07:00
-description: "La ricerca e sostituzione di testo permette di localizzare stringhe\
-  \ specifiche in un documento e cambiarle con altre. Programmare queste operazioni\u2026"
+description: 'How to: Esempio semplice per cercare e sostituire una parola in una
+  stringa.'
 lastmod: '2024-03-13T22:44:43.626601-06:00'
 model: gpt-4-1106-preview
-summary: La ricerca e sostituzione di testo permette di localizzare stringhe specifiche
-  in un documento e cambiarle con altre.
+summary: Esempio semplice per cercare e sostituire una parola in una stringa.
 title: Ricerca e sostituzione del testo
 weight: 10
 ---

@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:54.660899-07:00
-description: "Zoeken en vervangen van tekst in programmeren is precies wat het lijkt:\
-  \ het scannen van strings op bepaalde patronen en deze vervangen door iets anders.\u2026"
+description: 'Hoe doe je het: .'
 lastmod: '2024-03-13T22:44:51.140964-06:00'
 model: gpt-4-0125-preview
-summary: 'Zoeken en vervangen van tekst in programmeren is precies wat het lijkt:
-  het scannen van strings op bepaalde patronen en deze vervangen door iets anders.'
+summary: .
 title: Tekst zoeken en vervangen
 weight: 10
 ---

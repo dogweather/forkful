@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:11.579804-07:00
-description: "Pobieranie strony internetowej polega na pobraniu tre\u015Bci HTML strony\
-  \ internetowej za po\u015Brednictwem protoko\u0142u HTTP/HTTPS. Programi\u015Bci\
-  \ cz\u0119sto robi\u0105 to w\u2026"
+description: "Jak to zrobi\u0107: W j\u0119zyku Go standardowa biblioteka zapewnia\
+  \ pot\u0119\u017Cne narz\u0119dzia do wykonywania zapyta\u0144 internetowych, zw\u0142\
+  aszcza pakiet `net/http`. Do\u2026"
 lastmod: '2024-03-13T22:44:34.849250-06:00'
 model: gpt-4-0125-preview
-summary: "Pobieranie strony internetowej polega na pobraniu tre\u015Bci HTML strony\
-  \ internetowej za po\u015Brednictwem protoko\u0142u HTTP/HTTPS."
+summary: "W j\u0119zyku Go standardowa biblioteka zapewnia pot\u0119\u017Cne narz\u0119\
+  dzia do wykonywania zapyta\u0144 internetowych, zw\u0142aszcza pakiet `net/http`."
 title: Pobieranie strony internetowej
 weight: 42
 ---

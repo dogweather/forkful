@@ -2,13 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:46.662757-07:00
-description: "Werken met JSON (JavaScript Object Notation) houdt in dat JSON-gegevens\
-  \ worden omgezet van strings naar Dart-objecten en vice versa, een veelvoorkomende\u2026"
+description: "Hoe te: Dart biedt ingebouwde ondersteuning voor JSON met de `dart:convert`-bibliotheek,\
+  \ wat het coderen en decoderen van JSON eenvoudig maakt. Hieronder\u2026"
 lastmod: '2024-03-13T22:44:50.528007-06:00'
 model: gpt-4-0125-preview
-summary: Werken met JSON (JavaScript Object Notation) houdt in dat JSON-gegevens worden
-  omgezet van strings naar Dart-objecten en vice versa, een veelvoorkomende taak bij
-  web- en app-ontwikkeling voor gegevensuitwisseling.
+summary: Dart biedt ingebouwde ondersteuning voor JSON met de `dart:convert`-bibliotheek,
+  wat het coderen en decoderen van JSON eenvoudig maakt.
 title: Werken met JSON
 weight: 38
 ---

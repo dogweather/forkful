@@ -2,14 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:18.598417-07:00
-description: "Tekstin etsiminen ja korvaaminen Dartissa k\xE4sitt\xE4\xE4 merkkijonojen\
-  \ tutkiskelua tietyt mallit tai merkkijonojen sekvenssit l\xF6yt\xE4\xE4kseen ja\
-  \ korvatakseen ne\u2026"
+description: "Kuinka: Dart tarjoaa vankkoja menetelmi\xE4 tekstien etsimiseen ja korvaamiseen\
+  \ suoraan sen `String`-luokan kautta, ilman ulkoisten kirjastojen tarvetta.\u2026"
 lastmod: '2024-03-13T22:44:56.254290-06:00'
 model: gpt-4-0125-preview
-summary: "Tekstin etsiminen ja korvaaminen Dartissa k\xE4sitt\xE4\xE4 merkkijonojen\
-  \ tutkiskelua tietyt mallit tai merkkijonojen sekvenssit l\xF6yt\xE4\xE4kseen ja\
-  \ korvatakseen ne uudella sis\xE4ll\xF6ll\xE4."
+summary: "Dart tarjoaa vankkoja menetelmi\xE4 tekstien etsimiseen ja korvaamiseen\
+  \ suoraan sen `String`-luokan kautta, ilman ulkoisten kirjastojen tarvetta."
 title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---

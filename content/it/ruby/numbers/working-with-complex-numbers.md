@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:45:16.769770-07:00
-description: "I numeri complessi, costituiti da una parte reale e una immaginaria\
-  \ (come 3+4i), sono fondamentali in ingegneria e fisica. I programmatori li utilizzano\u2026"
+description: 'Come fare: Ruby rende molto semplice la gestione dei numeri complessi.
+  Puoi crearli e manipolarli utilizzando la classe Complex.'
 lastmod: '2024-03-13T22:44:44.043506-06:00'
 model: gpt-4-0125-preview
-summary: I numeri complessi, costituiti da una parte reale e una immaginaria (come
-  3+4i), sono fondamentali in ingegneria e fisica.
+summary: Ruby rende molto semplice la gestione dei numeri complessi.
 title: Lavorare con i numeri complessi
 weight: 14
 ---

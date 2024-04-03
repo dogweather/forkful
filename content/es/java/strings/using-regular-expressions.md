@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:06.284738-07:00
-description: "Las expresiones regulares (regex) en Java te permiten definir patrones\
-  \ espec\xEDficos para buscar, manipular o validar cadenas en tu c\xF3digo. Los\u2026"
+description: "C\xF3mo hacerlo: El soporte integrado de Java para regex se proporciona\
+  \ principalmente a trav\xE9s de las clases `Pattern` y `Matcher` en el paquete\u2026"
 lastmod: '2024-03-13T22:44:58.927927-06:00'
 model: gpt-4-0125-preview
-summary: "Las expresiones regulares (regex) en Java te permiten definir patrones espec\xED\
-  ficos para buscar, manipular o validar cadenas en tu c\xF3digo."
+summary: "El soporte integrado de Java para regex se proporciona principalmente a\
+  \ trav\xE9s de las clases `Pattern` y `Matcher` en el paquete `java.util.regex`."
 title: Usando expresiones regulares
 weight: 11
 ---

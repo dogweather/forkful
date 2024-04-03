@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:44:30.451147-07:00
-description: "Webseiten herunterladen bedeutet, den Inhalt einer Webseite \xFCber\
-  \ das Internet auf deinen Computer zu \xFCbertragen. Programmierer tun dies, um\
-  \ Daten zu\u2026"
+description: "Vorgehensweise: Um eine Webseite in Lua herunterzuladen, verwendest\
+  \ du die `socket.http`-Bibliothek. Im Beispiel unten siehst du, wie man den Inhalt\
+  \ einer\u2026"
 lastmod: '2024-03-13T22:44:54.014262-06:00'
 model: gpt-4-1106-preview
-summary: "Webseiten herunterladen bedeutet, den Inhalt einer Webseite \xFCber das\
-  \ Internet auf deinen Computer zu \xFCbertragen."
+summary: Um eine Webseite in Lua herunterzuladen, verwendest du die `socket.http`-Bibliothek.
 title: Webseite herunterladen
 weight: 42
 ---

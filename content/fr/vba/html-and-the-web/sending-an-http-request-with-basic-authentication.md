@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:23.656253-07:00
-description: "Envoyer une requ\xEAte HTTP avec authentification de base dans Visual\
-  \ Basic pour Applications (VBA) consiste \xE0 acc\xE9der aux ressources web prot\xE9\
-  g\xE9es par des\u2026"
+description: "Comment faire : Dans VBA, vous pouvez utiliser la biblioth\xE8que `Microsoft\
+  \ XML, v6.0` (MSXML2) pour envoyer des requ\xEAtes HTTP avec authentification de\u2026"
 lastmod: '2024-03-13T22:44:57.566025-06:00'
 model: gpt-4-0125-preview
-summary: "Envoyer une requ\xEAte HTTP avec authentification de base dans Visual Basic\
-  \ pour Applications (VBA) consiste \xE0 acc\xE9der aux ressources web prot\xE9g\xE9\
-  es par des identifiants de nom d'utilisateur et mot de passe."
+summary: "Dans VBA, vous pouvez utiliser la biblioth\xE8que `Microsoft XML, v6.0`\
+  \ (MSXML2) pour envoyer des requ\xEAtes HTTP avec authentification de base."
 title: "Envoyer une requ\xEAte HTTP avec une authentification de base"
 weight: 45
 ---

@@ -1,11 +1,13 @@
 ---
 date: 2024-01-26 01:17:00.772174-07:00
-description: "Le refactoring est le processus de changement de la structure interne\
-  \ d'un programme informatique sans alt\xE9rer son comportement externe. Les programmeurs\u2026"
+description: "Comment faire : Imaginez que vous ayez une fonction qui fait un peu\
+  \ trop de choses, comme cette m\xE9thode encombrante qui initialise un objet et\
+  \ effectue\u2026"
 lastmod: '2024-03-13T22:44:58.172058-06:00'
 model: gpt-4-0125-preview
-summary: "Le refactoring est le processus de changement de la structure interne d'un\
-  \ programme informatique sans alt\xE9rer son comportement externe."
+summary: "Imaginez que vous ayez une fonction qui fait un peu trop de choses, comme\
+  \ cette m\xE9thode encombrante qui initialise un objet et effectue \xE9galement\
+  \ des logs."
 title: Refactoring
 weight: 19
 ---

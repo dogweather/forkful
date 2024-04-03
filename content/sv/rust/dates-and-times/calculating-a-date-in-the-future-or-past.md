@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:32:12.519832-07:00
-description: "Ber\xE4kning av ett datum i framtiden eller f\xF6rflutet handlar om\
-  \ att ta ett givet datum och addera eller subtrahera tid fr\xE5n det. Programmerare\
-  \ g\xF6r detta f\xF6r\u2026"
+description: "Hur g\xF6r man: F\xF6r att hantera datum och tid i Rust anv\xE4nder\
+  \ vi `chrono`-biblioteket. H\xE4r \xE4r en enkel guide."
 lastmod: '2024-03-13T22:44:37.712706-06:00'
 model: gpt-4-1106-preview
-summary: "Ber\xE4kning av ett datum i framtiden eller f\xF6rflutet handlar om att\
-  \ ta ett givet datum och addera eller subtrahera tid fr\xE5n det."
+summary: "F\xF6r att hantera datum och tid i Rust anv\xE4nder vi `chrono`-biblioteket."
 title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutenheten"
 weight: 26
 ---

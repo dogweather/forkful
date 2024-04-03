@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:29.229236-07:00
-description: "\xC5 jobbe med JSON (JavaScript Object Notation) i Clojure inneb\xE6\
-  rer \xE5 analysere JSON-strenger til Clojure-datastrukturer (maps, vektorer) og\
-  \ omvendt. Denne\u2026"
+description: "Hvordan: Clojure inkluderer ikke innebygde funksjoner for \xE5 jobbe\
+  \ med JSON, s\xE5 du vil typisk bruke tredjepartsbiblioteker. `cheshire` og `jsonista`\
+  \ er\u2026"
 lastmod: '2024-03-13T22:44:40.423097-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 jobbe med JSON (JavaScript Object Notation) i Clojure inneb\xE6rer\
-  \ \xE5 analysere JSON-strenger til Clojure-datastrukturer (maps, vektorer) og omvendt."
+summary: "Clojure inkluderer ikke innebygde funksjoner for \xE5 jobbe med JSON, s\xE5\
+  \ du vil typisk bruke tredjepartsbiblioteker."
 title: Arbeider med JSON
 weight: 38
 ---

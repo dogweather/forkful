@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:53.019390-07:00
-description: "JSON, eller JavaScript Object Notation, \xE4r ett l\xE4ttviktigt format\
-  \ f\xF6r lagring och transport av data, idealiskt f\xF6r kommunikation server-till-klient\
-  \ samt\u2026"
+description: "Hur man g\xF6r: I Google Apps Script \xE4r manipulering av JSON en enkel\
+  \ process, mycket tack vare det inhemska st\xF6det JavaScript erbjuder f\xF6r tolkning\
+  \ och\u2026"
 lastmod: '2024-03-13T22:44:37.462215-06:00'
 model: gpt-4-0125-preview
-summary: "JSON, eller JavaScript Object Notation, \xE4r ett l\xE4ttviktigt format\
-  \ f\xF6r lagring och transport av data, idealiskt f\xF6r kommunikation server-till-klient\
-  \ samt konfigurationsfiler."
+summary: "I Google Apps Script \xE4r manipulering av JSON en enkel process, mycket\
+  \ tack vare det inhemska st\xF6det JavaScript erbjuder f\xF6r tolkning och omvandling\
+  \ av JSON."
 title: Arbeta med JSON
 weight: 38
 ---

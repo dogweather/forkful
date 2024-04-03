@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:13.424864-07:00
-description: "Das Schreiben auf den Standardfehler (stderr) in der Fish Shell bedeutet,\
-  \ Fehlermeldungen oder Diagnosen getrennt von der Standardausgabe (stdout) zu\u2026"
+description: "Wie geht das: In der Fish Shell k\xF6nnen Sie auf stderr schreiben,\
+  \ indem Sie Ihre Ausgabe mit `>&2` umleiten. Hier ist ein einfaches Beispiel."
 lastmod: '2024-03-13T22:44:54.325241-06:00'
 model: gpt-4-0125-preview
-summary: Das Schreiben auf den Standardfehler (stderr) in der Fish Shell bedeutet,
-  Fehlermeldungen oder Diagnosen getrennt von der Standardausgabe (stdout) zu leiten.
+summary: "In der Fish Shell k\xF6nnen Sie auf stderr schreiben, indem Sie Ihre Ausgabe\
+  \ mit `>&2` umleiten."
 title: Schreiben auf Standardfehler
 weight: 25
 ---

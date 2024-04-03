@@ -1,11 +1,12 @@
 ---
 date: 2024-02-03 17:50:04.449226-07:00
-description: "Reading command line arguments in Go involves extracting the arguments\
-  \ provided to a program during its invocation from the terminal or command prompt.\u2026"
+description: "How to: Go provides direct access to command-line arguments through\
+  \ the `os` package, specifically using `os.Args`, an array of strings. Here\u2019\
+  s a simple\u2026"
 lastmod: '2024-03-13T22:44:59.644860-06:00'
 model: gpt-4-0125-preview
-summary: Reading command line arguments in Go involves extracting the arguments provided
-  to a program during its invocation from the terminal or command prompt.
+summary: Go provides direct access to command-line arguments through the `os` package,
+  specifically using `os.Args`, an array of strings.
 title: Reading command line arguments
 weight: 23
 ---

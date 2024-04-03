@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-25, gpt-4-0125-preview, translated from English
 date: 2024-02-25 17:06:56.306880-07:00
-description: "Die Zeichenketteninterpolation in C# erm\xF6glicht es Ihnen, einen neuen\
-  \ String zu erstellen, indem Ausdr\xFCcke innerhalb eines Zeichenketten-Literals\u2026"
+description: "Wie geht das: In C# wird die Zeichenketteninterpolation durch ein Dollarzeichen\
+  \ (`$`) angezeigt, gefolgt von einem Zeichenketten-Literal. Die\u2026"
 lastmod: '2024-03-13T22:44:53.874361-06:00'
 model: gpt-4-0125-preview
-summary: "Die Zeichenketteninterpolation in C# erm\xF6glicht es Ihnen, einen neuen\
-  \ String zu erstellen, indem Ausdr\xFCcke innerhalb eines Zeichenketten-Literals\
-  \ eingef\xFCgt werden."
+summary: In C# wird die Zeichenketteninterpolation durch ein Dollarzeichen (`$`) angezeigt,
+  gefolgt von einem Zeichenketten-Literal.
 title: Interpolation eines Strings
 weight: 8
 ---

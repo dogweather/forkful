@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:02:26.224094-07:00
-description: "Checking if a directory exists in Ruby allows programmers to verify\
-  \ the presence of a directory before performing operations like reading files or\u2026"
+description: "How to: Ruby's standard library provides straightforward methods to\
+  \ check for a directory's existence. Here's how you do it with pure Ruby, without\u2026"
 lastmod: '2024-03-13T22:45:00.564536-06:00'
 model: gpt-4-0125-preview
-summary: Checking if a directory exists in Ruby allows programmers to verify the presence
-  of a directory before performing operations like reading files or creating new directories.
+summary: Ruby's standard library provides straightforward methods to check for a directory's
+  existence.
 title: Checking if a directory exists
 weight: 20
 ---

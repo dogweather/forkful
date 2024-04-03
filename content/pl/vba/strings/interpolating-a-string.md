@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:02.315407-07:00
-description: "Interpolacja ci\u0105g\xF3w w Visual Basic for Applications (VBA) odnosi\
-  \ si\u0119 do procesu osadzania zmiennych lub wyra\u017Ce\u0144 w dos\u0142ownym\
-  \ ci\u0105gu znak\xF3w, co umo\u017Cliwia\u2026"
+description: "Jak to zrobi\u0107: W przeciwie\u0144stwie do niekt\xF3rych j\u0119\
+  zyk\xF3w, kt\xF3re maj\u0105 wbudowan\u0105 interpolacj\u0119 ci\u0105g\xF3w, VBA\
+  \ wymaga bardziej r\u0119cznego podej\u015Bcia, zazwyczaj za\u2026"
 lastmod: '2024-03-13T22:44:35.215178-06:00'
 model: gpt-4-0125-preview
-summary: "Interpolacja ci\u0105g\xF3w w Visual Basic for Applications (VBA) odnosi\
-  \ si\u0119 do procesu osadzania zmiennych lub wyra\u017Ce\u0144 w dos\u0142ownym\
-  \ ci\u0105gu znak\xF3w, co umo\u017Cliwia dynamiczne tworzenie ci\u0105g\xF3w."
+summary: "W przeciwie\u0144stwie do niekt\xF3rych j\u0119zyk\xF3w, kt\xF3re maj\u0105\
+  \ wbudowan\u0105 interpolacj\u0119 ci\u0105g\xF3w, VBA wymaga bardziej r\u0119cznego\
+  \ podej\u015Bcia, zazwyczaj za pomoc\u0105 operatora `&` lub funkcji `Format` do\
+  \ osadzania zmiennych w ci\u0105gach."
 title: "Interpolacja ci\u0105gu znak\xF3w"
 weight: 8
 ---

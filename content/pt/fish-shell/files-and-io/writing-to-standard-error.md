@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:17.123817-07:00
-description: "Escrever para o erro padr\xE3o (stderr) no Fish Shell \xE9 sobre direcionar\
-  \ mensagens de erro ou diagn\xF3sticos separadamente da sa\xEDda padr\xE3o (stdout).\
-  \ Os\u2026"
+description: "Como Fazer: No Fish Shell, voc\xEA pode escrever para stderr redirecionando\
+  \ sua sa\xEDda usando `>&2`. Aqui est\xE1 um exemplo b\xE1sico."
 lastmod: '2024-03-13T22:44:47.022065-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever para o erro padr\xE3o (stderr) no Fish Shell \xE9 sobre direcionar\
-  \ mensagens de erro ou diagn\xF3sticos separadamente da sa\xEDda padr\xE3o (stdout)."
+summary: "No Fish Shell, voc\xEA pode escrever para stderr redirecionando sua sa\xED\
+  da usando `>&2`."
 title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---

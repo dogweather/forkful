@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:21.364953-07:00
-description: "Das Runden von Zahlen ist der Prozess der Anpassung der Ziffern einer\
-  \ Zahl, um deren Genauigkeit nach bestimmten Regeln zu verringern, entweder in\u2026"
+description: "Wie: Das Runden von Zahlen in C kann mit verschiedenen Funktionen erreicht\
+  \ werden, der gebr\xE4uchlichste Ansatz beinhaltet jedoch die Funktionen `floor()`,\u2026"
 lastmod: '2024-03-13T22:44:54.346668-06:00'
 model: gpt-4-0125-preview
-summary: "Das Runden von Zahlen ist der Prozess der Anpassung der Ziffern einer Zahl,\
-  \ um deren Genauigkeit nach bestimmten Regeln zu verringern, entweder in Richtung\
-  \ der n\xE4chsten ganzen Zahl oder einer spezifizierten Anzahl von Dezimalstellen."
+summary: "Das Runden von Zahlen in C kann mit verschiedenen Funktionen erreicht werden,\
+  \ der gebr\xE4uchlichste Ansatz beinhaltet jedoch die Funktionen `floor()`, `ceil()`\
+  \ und `round()`."
 title: Zahlen runden
 weight: 13
 ---

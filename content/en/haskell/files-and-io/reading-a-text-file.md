@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:54:23.280188-07:00
-description: "Reading a text file in programming lets your code absorb data, like\
-  \ pouring coffee into your brain in the morning. We do it to feed programs information\u2026"
+description: 'How to: Here''s how you get Haskell to read text files without breaking
+  a sweat. Crack open your favorite editor, and let''s write some code.'
 lastmod: '2024-03-13T22:45:00.144113-06:00'
 model: gpt-4-1106-preview
-summary: Reading a text file in programming lets your code absorb data, like pouring
-  coffee into your brain in the morning.
+summary: Here's how you get Haskell to read text files without breaking a sweat.
 title: Reading a text file
 weight: 22
 ---

@@ -2,14 +2,16 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:58.946175-07:00
-description: "Ohjelmoinnissa s\xE4\xE4nn\xF6lliset lausekkeet ovat merkkijonoja, jotka\
-  \ m\xE4\xE4rittelev\xE4t hakukaavan, ja niit\xE4 k\xE4ytet\xE4\xE4n yleens\xE4 merkkijonojen\
-  \ etsimiseen ja\u2026"
+description: "Kuinka: Haskellissa s\xE4\xE4nn\xF6llisen lausekkeen toiminnot eiv\xE4\
+  t kuulu vakio kirjastoon, joten on tarpeen k\xE4ytt\xE4\xE4 kolmannen osapuolen\
+  \ paketteja kuten `regex-\u2026"
 lastmod: '2024-03-13T22:44:56.605781-06:00'
 model: gpt-4-0125-preview
-summary: "Ohjelmoinnissa s\xE4\xE4nn\xF6lliset lausekkeet ovat merkkijonoja, jotka\
-  \ m\xE4\xE4rittelev\xE4t hakukaavan, ja niit\xE4 k\xE4ytet\xE4\xE4n yleens\xE4 merkkijonojen\
-  \ etsimiseen ja k\xE4sittelyyn."
+summary: "Haskellissa s\xE4\xE4nn\xF6llisen lausekkeen toiminnot eiv\xE4t kuulu vakio\
+  \ kirjastoon, joten on tarpeen k\xE4ytt\xE4\xE4 kolmannen osapuolen paketteja kuten\
+  \ `regex-base` yhdess\xE4 yhteensopivan taustaj\xE4rjestelm\xE4n kanssa kuten `regex-posix`\
+  \ (POSIX-yhteensopivaa regex-tukea varten), `regex-pcre` (Perl-yhteensopivaa regex-tukea\
+  \ varten), jne."
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---

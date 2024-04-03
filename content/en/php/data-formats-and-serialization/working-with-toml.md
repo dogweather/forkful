@@ -1,11 +1,10 @@
 ---
 date: 2024-01-25 03:39:36.379349-07:00
-description: "TOML, short for Tom's Obvious, Minimal Language, is a data format similar\
-  \ to JSON or YAML, but easier to read for humans. Programmers use it for config\u2026"
+description: 'How to: First, make sure you''ve got a TOML parser library installed,
+  like `yosymfony/toml`. Let''s parse a TOML file.'
 lastmod: '2024-03-13T22:45:00.188547-06:00'
 model: gpt-4-1106-preview
-summary: TOML, short for Tom's Obvious, Minimal Language, is a data format similar
-  to JSON or YAML, but easier to read for humans.
+summary: First, make sure you've got a TOML parser library installed, like `yosymfony/toml`.
 title: Working with TOML
 weight: 39
 ---

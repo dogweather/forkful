@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:41:59.535072-07:00
-description: "Deleting characters matching a pattern is all about finding specific\
-  \ sequences of characters and getting rid of them. Programmers do this to sanitize\u2026"
+description: 'How to: In Elixir, use the `String.replace/4` function to delete characters
+  matching a pattern. Check out these samples.'
 lastmod: '2024-03-13T22:44:59.768782-06:00'
 model: gpt-4-1106-preview
-summary: Deleting characters matching a pattern is all about finding specific sequences
-  of characters and getting rid of them.
+summary: In Elixir, use the `String.replace/4` function to delete characters matching
+  a pattern.
 title: Deleting characters matching a pattern
 weight: 5
 ---

@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:31.915841-07:00
-description: "\xC9crire un fichier texte en C# implique de cr\xE9er ou de modifier\
-  \ programmiquement des fichiers textes sur le syst\xE8me de fichiers - une t\xE2\
-  che fondamentale\u2026"
+description: "Comment faire : C# simplifie les op\xE9rations sur les fichiers avec\
+  \ son espace de noms `System.IO`, fournissant des m\xE9thodes directes pour \xE9\
+  crire des\u2026"
 lastmod: '2024-03-13T22:44:57.807720-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire un fichier texte en C# implique de cr\xE9er ou de modifier programmiquement\
-  \ des fichiers textes sur le syst\xE8me de fichiers - une t\xE2che fondamentale\
-  \ pour de nombreuses applications, telles que la journalisation, l'exportation de\
-  \ donn\xE9es, ou la gestion de configuration."
+summary: "C# simplifie les op\xE9rations sur les fichiers avec son espace de noms\
+  \ `System.IO`, fournissant des m\xE9thodes directes pour \xE9crire des fichiers\
+  \ textes."
 title: "R\xE9diger un fichier texte"
 weight: 24
 ---

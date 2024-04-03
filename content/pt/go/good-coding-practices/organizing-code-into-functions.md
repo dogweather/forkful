@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:30.742805-07:00
-description: "Organizar o c\xF3digo em fun\xE7\xF5es em Go envolve dividir o c\xF3\
-  digo em blocos modulares reutiliz\xE1veis que executam tarefas espec\xEDficas. Esta\
-  \ abordagem real\xE7a a\u2026"
+description: "Como Fazer: Em Go, voc\xEA define uma fun\xE7\xE3o usando a palavra-chave\
+  \ `func`, seguida pelo nome da fun\xE7\xE3o, par\xE2metros (se houver) e o tipo\
+  \ de retorno. Vamos\u2026"
 lastmod: '2024-03-13T22:44:46.066833-06:00'
 model: gpt-4-0125-preview
-summary: "Organizar o c\xF3digo em fun\xE7\xF5es em Go envolve dividir o c\xF3digo\
-  \ em blocos modulares reutiliz\xE1veis que executam tarefas espec\xEDficas."
+summary: "Em Go, voc\xEA define uma fun\xE7\xE3o usando a palavra-chave `func`, seguida\
+  \ pelo nome da fun\xE7\xE3o, par\xE2metros (se houver) e o tipo de retorno."
 title: "Organizando c\xF3digo em fun\xE7\xF5es"
 weight: 18
 ---

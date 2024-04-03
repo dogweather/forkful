@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:26.468596-07:00
-description: "Escribir pruebas en Bash implica crear scripts de casos de prueba para\
-  \ validar la funcionalidad de tus scripts de Bash. Los programadores realizan pruebas\u2026"
+description: "C\xF3mo hacerlo: Bash no tiene un marco de pruebas integrado, pero puedes\
+  \ escribir funciones de prueba simples. Para pruebas m\xE1s sofisticadas, herramientas\u2026"
 lastmod: '2024-03-13T22:44:59.250142-06:00'
 model: gpt-4-0125-preview
-summary: Escribir pruebas en Bash implica crear scripts de casos de prueba para validar
-  la funcionalidad de tus scripts de Bash.
+summary: Bash no tiene un marco de pruebas integrado, pero puedes escribir funciones
+  de prueba simples.
 title: Escribiendo pruebas
 weight: 36
 ---

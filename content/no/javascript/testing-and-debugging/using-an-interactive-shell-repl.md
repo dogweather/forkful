@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:15:31.491201-07:00
-description: "Interaktive skall, eller REPLer (Read-Eval-Print Looper), lar deg kj\xF8\
-  re kode p\xE5 sparket, teste funksjoner, algoritmer, eller tukle med ideer. De er\
-  \ kodens\u2026"
+description: "Hvordan: Node.js leveres med en REPL som er tilgjengelig via terminalen.\
+  \ \xC5pne den, og du er klar til \xE5 rulle. Her er en smakebit."
 lastmod: '2024-03-13T22:44:41.185010-06:00'
 model: gpt-4-0125-preview
-summary: "Interaktive skall, eller REPLer (Read-Eval-Print Looper), lar deg kj\xF8\
-  re kode p\xE5 sparket, teste funksjoner, algoritmer, eller tukle med ideer."
+summary: Node.js leveres med en REPL som er tilgjengelig via terminalen.
 title: Bruke et interaktivt skall (REPL)
 weight: 34
 ---

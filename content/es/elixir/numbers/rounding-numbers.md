@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 03:43:42.156475-07:00
-description: "Redondear n\xFAmeros significa ajustarlos a un valor cercano por simplicidad\
-  \ o para coincidir con cierta precisi\xF3n. Es \xFAtil para mejorar la legibilidad,\u2026"
+description: "C\xF3mo hacerlo: En Elixir, puedes usar `Float.round/2` para redondear\
+  \ un n\xFAmero de punto flotante. Puedes especificar el n\xFAmero de d\xEDgitos\
+  \ decimales que\u2026"
 lastmod: '2024-03-13T22:44:58.697323-06:00'
 model: gpt-4-0125-preview
-summary: "Redondear n\xFAmeros significa ajustarlos a un valor cercano por simplicidad\
-  \ o para coincidir con cierta precisi\xF3n."
+summary: "En Elixir, puedes usar `Float.round/2` para redondear un n\xFAmero de punto\
+  \ flotante."
 title: "Redondeo de n\xFAmeros"
 weight: 13
 ---

@@ -1,10 +1,10 @@
 ---
 date: 2024-01-25 02:59:42.293888-07:00
-description: "Complex numbers consist of a real part and an imaginary part. Programmers\
-  \ use them in fields like signal processing, quantum mechanics, and whenever the\u2026"
+description: "How to: Bash doesn't support complex numbers natively. You'll often\
+  \ use an external tool like `bc` with its `-l` option. Here's how you crunch complex\u2026"
 lastmod: '2024-03-13T22:45:00.237449-06:00'
 model: gpt-4-1106-preview
-summary: Complex numbers consist of a real part and an imaginary part.
+summary: Bash doesn't support complex numbers natively.
 title: Working with complex numbers
 weight: 14
 ---

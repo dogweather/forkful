@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:56:10.102794-07:00
-description: "Lire des arguments de ligne de commande, c'est r\xE9cup\xE9rer les donn\xE9\
-  es que l'utilisateur passe \xE0 votre application. Les programmeurs font \xE7a pour\u2026"
+description: "How to: La magie op\xE8re dans la signature de la m\xE9thode `main`.\
+  \ Voil\xE0 comment \xE7a marche ."
 lastmod: '2024-03-13T22:44:57.658966-06:00'
 model: gpt-4-1106-preview
-summary: "Lire des arguments de ligne de commande, c'est r\xE9cup\xE9rer les donn\xE9\
-  es que l'utilisateur passe \xE0 votre application."
+summary: "La magie op\xE8re dans la signature de la m\xE9thode `main`."
 title: Lecture des arguments de ligne de commande
 weight: 23
 ---

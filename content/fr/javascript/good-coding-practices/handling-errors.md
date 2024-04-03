@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 00:53:51.728622-07:00
-description: "La gestion des erreurs consiste \xE0 g\xE9rer les situations o\xF9 votre\
-  \ code ne se comporte pas comme pr\xE9vu. C'est crucial car cela permet \xE0 vos\
-  \ programmes de se\u2026"
+description: 'Comment faire : Voici le classique bloc `try-catch` .'
 lastmod: '2024-03-13T22:44:58.283689-06:00'
 model: gpt-4-1106-preview
-summary: "La gestion des erreurs consiste \xE0 g\xE9rer les situations o\xF9 votre\
-  \ code ne se comporte pas comme pr\xE9vu."
+summary: Voici le classique bloc `try-catch`.
 title: Gestion des erreurs
 weight: 16
 ---

@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:48.272974-07:00
-description: "YAML, \"YAML Ain't Markup Language,\" l\xE0 m\u1ED9t ti\xEAu chu\u1EA9\
-  n h\xF3a d\u1EEF li\u1EC7u th\xE2n thi\u1EC7n v\u1EDBi con ng\u01B0\u1EDDi d\xE0\
-  nh cho t\u1EA5t c\u1EA3 ng\xF4n ng\u1EEF l\u1EADp tr\xECnh. C\xE1c l\u1EADp tr\xEC\
-  nh vi\xEAn s\u1EED d\u1EE5ng\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Clojure kh\xF4ng bao g\u1ED3m h\u1ED7 tr\u1EE3\
+  \ t\xEDch h\u1EE3p s\u1EB5n cho YAML. B\u1EA1n s\u1EBD c\u1EA7n s\u1EED d\u1EE5\
+  ng m\u1ED9t th\u01B0 vi\u1EC7n nh\u01B0 `clj-yaml`. \u0110\u1EA7u ti\xEAn, th\xEA\
+  m n\xF3 v\xE0o ph\u1EA7n ph\u1EE5 thu\u1ED9c c\u1EE7a\u2026"
 lastmod: '2024-03-13T22:44:36.179912-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, \"YAML Ain't Markup Language,\" l\xE0 m\u1ED9t ti\xEAu chu\u1EA9n\
-  \ h\xF3a d\u1EEF li\u1EC7u th\xE2n thi\u1EC7n v\u1EDBi con ng\u01B0\u1EDDi d\xE0\
-  nh cho t\u1EA5t c\u1EA3 ng\xF4n ng\u1EEF l\u1EADp tr\xECnh."
+summary: "Clojure kh\xF4ng bao g\u1ED3m h\u1ED7 tr\u1EE3 t\xEDch h\u1EE3p s\u1EB5\
+  n cho YAML."
 title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 weight: 41
 ---

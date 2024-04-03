@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:14.834838-07:00
-description: "Att extrahera delstr\xE4ngar i Visual Basic for Applications (VBA) inneb\xE4\
-  r att isolera specifika delar av en str\xE4ng baserat p\xE5 givna kriterier. Programmerare\u2026"
+description: "Hur man g\xF6r: I VBA anv\xE4nder du fr\xE4mst funktionerna `Mid`, `Left`\
+  \ och `Right` f\xF6r att extrahera delstr\xE4ngar. Nedan utforskar vi dessa funktioner\
+  \ med\u2026"
 lastmod: '2024-03-13T22:44:37.731142-06:00'
 model: gpt-4-0125-preview
-summary: "Att extrahera delstr\xE4ngar i Visual Basic for Applications (VBA) inneb\xE4\
-  r att isolera specifika delar av en str\xE4ng baserat p\xE5 givna kriterier."
+summary: "I VBA anv\xE4nder du fr\xE4mst funktionerna `Mid`, `Left` och `Right` f\xF6\
+  r att extrahera delstr\xE4ngar."
 title: "Extrahera delstr\xE4ngar"
 weight: 6
 ---

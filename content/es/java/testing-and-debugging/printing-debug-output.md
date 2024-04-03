@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:52:50.266460-07:00
-description: "Imprimir mensajes de depuraci\xF3n es el arte de mostrar informaci\xF3\
-  n temporal en la consola para entender qu\xE9 est\xE1 pasando en nuestro c\xF3digo.\
-  \ Los\u2026"
+description: "C\xF3mo hacerlo: Aqu\xED tienes un ejemplo sencillo."
 lastmod: '2024-03-13T22:44:58.940095-06:00'
 model: gpt-4-1106-preview
-summary: "Imprimir mensajes de depuraci\xF3n es el arte de mostrar informaci\xF3n\
-  \ temporal en la consola para entender qu\xE9 est\xE1 pasando en nuestro c\xF3digo."
+summary: "Aqu\xED tienes un ejemplo sencillo."
 title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---

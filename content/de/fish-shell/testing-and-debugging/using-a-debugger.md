@@ -1,8 +1,8 @@
 ---
 date: 2024-01-26 03:48:36.960633-07:00
-description: "Fish hat keinen eingebauten Debugger wie einige andere Shells, aber\
-  \ Sie k\xF6nnen externe Tools wie `gdb` f\xFCr das Debuggen von kompilierten Programmen\
-  \ oder\u2026"
+description: "Wie: Fish hat keinen eingebauten Debugger wie einige andere Shells,\
+  \ aber Sie k\xF6nnen externe Tools wie `gdb` f\xFCr das Debuggen von kompilierten\
+  \ Programmen\u2026"
 lastmod: '2024-03-13T22:44:54.313954-06:00'
 model: gpt-4-0125-preview
 summary: "Fish hat keinen eingebauten Debugger wie einige andere Shells, aber Sie\

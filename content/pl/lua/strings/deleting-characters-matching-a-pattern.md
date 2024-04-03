@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:43:02.061984-07:00
-description: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to proces wyci\u0105gania\
-  \ specyficznych sekwencji z \u0142a\u0144cucha tekstowego. Programi\u015Bci robi\u0105\
-  \ to, by oczy\u015Bci\u0107 dane, usun\u0105\u0107\u2026"
+description: "How to: - Jak to zrobi\u0107: ."
 lastmod: '2024-03-13T22:44:35.524048-06:00'
 model: gpt-4-1106-preview
-summary: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to proces wyci\u0105gania specyficznych\
-  \ sekwencji z \u0142a\u0144cucha tekstowego."
+summary: .
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---

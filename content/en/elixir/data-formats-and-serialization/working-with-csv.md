@@ -1,12 +1,11 @@
 ---
 date: 2024-02-03 19:03:10.829234-07:00
-description: "Working with CSV (Comma-Separated Values) files involves reading from\
-  \ and writing data to these files, a common necessity for tasks requiring data\u2026"
+description: "How to: Elixir, with its powerful pattern matching and support for pipelining,\
+  \ can handle CSV files efficiently, even without third-party libraries.\u2026"
 lastmod: '2024-03-13T22:44:59.802302-06:00'
 model: gpt-4-0125-preview
-summary: Working with CSV (Comma-Separated Values) files involves reading from and
-  writing data to these files, a common necessity for tasks requiring data import/export
-  or simple storage solutions.
+summary: Elixir, with its powerful pattern matching and support for pipelining, can
+  handle CSV files efficiently, even without third-party libraries.
 title: Working with CSV
 weight: 37
 ---

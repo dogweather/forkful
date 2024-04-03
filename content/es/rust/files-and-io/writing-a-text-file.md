@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:08.802729-07:00
-description: "Escribir un archivo de texto en Rust implica crear, escribir y, potencialmente,\
-  \ a\xF1adir datos a un archivo en el sistema de archivos. Los programadores\u2026"
+description: "C\xF3mo hacerlo: La biblioteca est\xE1ndar de Rust proporciona herramientas\
+  \ robustas para la manipulaci\xF3n de archivos, encapsuladas principalmente dentro\
+  \ de los\u2026"
 lastmod: '2024-03-13T22:44:58.864891-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir un archivo de texto en Rust implica crear, escribir y, potencialmente,\
-  \ a\xF1adir datos a un archivo en el sistema de archivos."
+summary: "La biblioteca est\xE1ndar de Rust proporciona herramientas robustas para\
+  \ la manipulaci\xF3n de archivos, encapsuladas principalmente dentro de los m\xF3\
+  dulos `std::fs` y `std::io`."
 title: Escribiendo un archivo de texto
 weight: 24
 ---

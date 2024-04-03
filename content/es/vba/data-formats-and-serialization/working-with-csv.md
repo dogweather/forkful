@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:02.859862-07:00
-description: "Trabajar con archivos CSV (Valores Separados por Comas) implica leer\
-  \ o escribir en archivos de texto plano donde los campos de datos est\xE1n separados\
-  \ por\u2026"
+description: "C\xF3mo: Visual Basic para Aplicaciones (VBA) simplifica el trabajo\
+  \ con archivos CSV a trav\xE9s de funciones y m\xE9todos integrados que permiten\
+  \ leer y escribir\u2026"
 lastmod: '2024-03-13T22:44:58.918093-06:00'
 model: gpt-4-0125-preview
-summary: "Trabajar con archivos CSV (Valores Separados por Comas) implica leer o escribir\
-  \ en archivos de texto plano donde los campos de datos est\xE1n separados por comas."
+summary: "Visual Basic para Aplicaciones (VBA) simplifica el trabajo con archivos\
+  \ CSV a trav\xE9s de funciones y m\xE9todos integrados que permiten leer y escribir\
+  \ en estos archivos de manera fluida."
 title: Trabajando con CSV
 weight: 37
 ---

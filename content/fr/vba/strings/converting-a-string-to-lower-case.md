@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:06.951748-07:00
-description: "Convertir une cha\xEEne en minuscules implique de transformer tous les\
-  \ caract\xE8res majuscules d'une cha\xEEne en leurs \xE9quivalents minuscules. Ce\
-  \ processus est\u2026"
+description: "Comment faire : Dans Visual Basic pour Applications (VBA), convertir\
+  \ une cha\xEEne en minuscules est simple en utilisant la fonction `LCase`. Cette\
+  \ fonction\u2026"
 lastmod: '2024-03-13T22:44:57.539152-06:00'
 model: gpt-4-0125-preview
-summary: "Convertir une cha\xEEne en minuscules implique de transformer tous les caract\xE8\
-  res majuscules d'une cha\xEEne en leurs \xE9quivalents minuscules."
+summary: "Dans Visual Basic pour Applications (VBA), convertir une cha\xEEne en minuscules\
+  \ est simple en utilisant la fonction `LCase`."
 title: "Convertir une cha\xEEne en minuscules"
 weight: 4
 ---

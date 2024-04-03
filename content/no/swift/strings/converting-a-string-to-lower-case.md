@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:39:19.733796-07:00
-description: "N\xE5r du konverterer en streng til sm\xE5 bokstaver, endrer du alle\
-  \ bokstavene til deres miniatyr versjoner. Programmerere gj\xF8r dette for \xE5\
-  \ forenkle\u2026"
+description: "How to: Swift gj\xF8r det lett \xE5 h\xE5ndtere strenger. Her er hvordan\
+  \ du konverterer."
 lastmod: '2024-03-13T22:44:41.129286-06:00'
 model: gpt-4-1106-preview
-summary: "N\xE5r du konverterer en streng til sm\xE5 bokstaver, endrer du alle bokstavene\
-  \ til deres miniatyr versjoner."
+summary: "Swift gj\xF8r det lett \xE5 h\xE5ndtere strenger."
 title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---

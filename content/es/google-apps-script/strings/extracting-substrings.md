@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:46.081604-07:00
-description: "La extracci\xF3n de subcadenas implica tomar una porci\xF3n de una cadena,\
-  \ esencialmente creando una nueva cadena a partir de una existente. Los programadores\u2026"
+description: "C\xF3mo: En Google Apps Script, que se basa en JavaScript moderno, la\
+  \ extracci\xF3n de subcadenas se puede lograr a trav\xE9s de varios m\xE9todos,\
+  \ incluidos\u2026"
 lastmod: '2024-03-13T22:44:58.510919-06:00'
 model: gpt-4-0125-preview
-summary: "La extracci\xF3n de subcadenas implica tomar una porci\xF3n de una cadena,\
-  \ esencialmente creando una nueva cadena a partir de una existente."
+summary: "En Google Apps Script, que se basa en JavaScript moderno, la extracci\xF3\
+  n de subcadenas se puede lograr a trav\xE9s de varios m\xE9todos, incluidos `substring()`,\
+  \ `substr()` y `slice()`."
 title: "Extracci\xF3n de subcadenas"
 weight: 6
 ---

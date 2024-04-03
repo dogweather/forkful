@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 18:03:12.800214-07:00
-description: "Lancer un nouveau projet en Elm, c'est cr\xE9er un point de d\xE9part\
-  \ propre pour coder une appli web fonctionnelle et r\xE9active. On fait \xE7a pour\
-  \ structurer\u2026"
+description: "How to: (Comment faire :) Pour commencer, installez Elm et cr\xE9ez\
+  \ votre projet ."
 lastmod: '2024-03-13T22:44:57.689903-06:00'
 model: gpt-4-1106-preview
-summary: "Lancer un nouveau projet en Elm, c'est cr\xE9er un point de d\xE9part propre\
-  \ pour coder une appli web fonctionnelle et r\xE9active."
+summary: "Pour commencer, installez Elm et cr\xE9ez votre projet."
 title: Lancement d'un nouveau projet
 weight: 1
 ---

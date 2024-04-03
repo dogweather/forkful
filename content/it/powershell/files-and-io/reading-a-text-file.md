@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:54:57.815673-07:00
-description: "Leggere un file di testo significa estrarre il suo contenuto per utilizzarlo\
-  \ in modo programmabile. I programmatori lo fanno per manipolare, analizzare\u2026"
+description: 'How to: Ecco come leggere un file di testo con PowerShell in modo semplice
+  e diretto.'
 lastmod: '2024-03-13T22:44:43.659731-06:00'
 model: gpt-4-1106-preview
-summary: Leggere un file di testo significa estrarre il suo contenuto per utilizzarlo
-  in modo programmabile.
+summary: Ecco come leggere un file di testo con PowerShell in modo semplice e diretto.
 title: Lettura di un file di testo
 weight: 22
 ---

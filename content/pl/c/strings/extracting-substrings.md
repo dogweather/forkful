@@ -2,15 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:36.015924-07:00
-description: "Wyodr\u0119bnianie podci\u0105g\xF3w w C polega na tworzeniu mniejszego\
-  \ \u0142a\u0144cucha znak\xF3w (podci\u0105gu) z wi\u0119kszego \u0142a\u0144cucha\
-  \ na podstawie okre\u015Blonych kryteri\xF3w, takich jak\u2026"
+description: "Jak to zrobi\u0107: W przeciwie\u0144stwie do niekt\xF3rych j\u0119\
+  zyk\xF3w wy\u017Cszego poziomu, kt\xF3re oferuj\u0105 wbudowane metody do wyodr\u0119\
+  bniania podci\u0105g\xF3w, C wymaga bardziej\u2026"
 lastmod: '2024-03-13T22:44:35.873879-06:00'
 model: gpt-4-0125-preview
-summary: "Wyodr\u0119bnianie podci\u0105g\xF3w w C polega na tworzeniu mniejszego\
-  \ \u0142a\u0144cucha znak\xF3w (podci\u0105gu) z wi\u0119kszego \u0142a\u0144cucha\
-  \ na podstawie okre\u015Blonych kryteri\xF3w, takich jak pozycja i d\u0142ugo\u015B\
-  \u0107."
+summary: "W przeciwie\u0144stwie do niekt\xF3rych j\u0119zyk\xF3w wy\u017Cszego poziomu,\
+  \ kt\xF3re oferuj\u0105 wbudowane metody do wyodr\u0119bniania podci\u0105g\xF3\
+  w, C wymaga bardziej r\u0119cznego podej\u015Bcia przy u\u017Cyciu jego funkcji\
+  \ manipulacji \u0142a\u0144cuchami."
 title: "Wydobywanie podci\u0105g\xF3w"
 weight: 6
 ---

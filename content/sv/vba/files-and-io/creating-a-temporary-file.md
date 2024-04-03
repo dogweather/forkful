@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:43.360693-07:00
-description: "Att skapa en tempor\xE4r fil i Visual Basic for Applications (VBA) inneb\xE4\
-  r att man programmeringsm\xE4ssigt genererar en fil f\xF6r kortvarig anv\xE4ndning,\u2026"
+description: "Hur man: I VBA kan man skapa en tempor\xE4r fil med hj\xE4lp av `FileSystemObject`\
+  \ som finns tillg\xE4ngligt i Microsoft Scripting Runtime-biblioteket. Detta\u2026"
 lastmod: '2024-03-13T22:44:37.764243-06:00'
 model: gpt-4-0125-preview
-summary: "Att skapa en tempor\xE4r fil i Visual Basic for Applications (VBA) inneb\xE4\
-  r att man programmeringsm\xE4ssigt genererar en fil f\xF6r kortvarig anv\xE4ndning,\
-  \ vanligtvis f\xF6r databehandling eller som en buffert i automatiseringsuppgifter."
+summary: "I VBA kan man skapa en tempor\xE4r fil med hj\xE4lp av `FileSystemObject`\
+  \ som finns tillg\xE4ngligt i Microsoft Scripting Runtime-biblioteket."
 title: "Skapa en tillf\xE4llig fil"
 weight: 21
 ---

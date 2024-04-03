@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:37:18.857011-07:00
-description: "\"Mik\xE4 & Miksi?\" P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi\
-  \ palauttaa aika-arvon luettavassa muodossa. Ohjelmoijat tekev\xE4t t\xE4m\xE4n,\
-  \ koska se helpottaa p\xE4iv\xE4m\xE4\xE4r\xE4n\u2026"
+description: "How to: \"N\xE4in tehd\xE4\xE4n:\"."
 lastmod: '2024-03-13T22:44:56.667721-06:00'
 model: gpt-4-1106-preview
-summary: "\"Mik\xE4 & Miksi."
+summary: "\"N\xE4in tehd\xE4\xE4n:\"."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---

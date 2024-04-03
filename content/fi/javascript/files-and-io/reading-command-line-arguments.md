@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:56:57.094075-07:00
-description: "Komennorivin argumentit ovat ohjelmalle annettuja sy\xF6tteit\xE4, jotka\
-  \ m\xE4\xE4ritell\xE4\xE4n ohjelman k\xE4ynnistyksen yhteydess\xE4. Ohjelmoijat\
-  \ k\xE4ytt\xE4v\xE4t niit\xE4, jotta\u2026"
+description: "How to: (Kuinka Tehd\xE4\xE4n:) JavaScriptiss\xE4 Node.js- ymp\xE4rist\xF6\
+  ss\xE4 komennorivin argumenttien lukeminen tapahtuu `process.argv`-objektilla. Perus\
+  \ k\xE4ytt\xF6tapa\u2026"
 lastmod: '2024-03-13T22:44:56.965304-06:00'
 model: gpt-4-1106-preview
-summary: "Komennorivin argumentit ovat ohjelmalle annettuja sy\xF6tteit\xE4, jotka\
-  \ m\xE4\xE4ritell\xE4\xE4n ohjelman k\xE4ynnistyksen yhteydess\xE4."
+summary: "JavaScriptiss\xE4 Node.js- ymp\xE4rist\xF6ss\xE4 komennorivin argumenttien\
+  \ lukeminen tapahtuu `process.argv`-objektilla."
 title: Komennoriviparametrien lukeminen
 weight: 23
 ---

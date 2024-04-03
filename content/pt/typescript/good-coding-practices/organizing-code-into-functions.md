@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:16:13.565804-07:00
-description: "Organizar o c\xF3digo em fun\xE7\xF5es significa dividir seu c\xF3digo\
-  \ em blocos reutiliz\xE1veis e modulares. Fazemos isso para manter as coisas DRY\
-  \ (Do not Repeat\u2026"
+description: "Como fazer: Imagine que voc\xEA est\xE1 fazendo uma calculadora b\xE1\
+  sica. Em vez de escrever a l\xF3gica de adi\xE7\xE3o em todos os lugares onde precisa\
+  \ dela, crie uma\u2026"
 lastmod: '2024-03-13T22:44:46.331592-06:00'
 model: gpt-4-0125-preview
-summary: "Organizar o c\xF3digo em fun\xE7\xF5es significa dividir seu c\xF3digo em\
-  \ blocos reutiliz\xE1veis e modulares."
+summary: "Imagine que voc\xEA est\xE1 fazendo uma calculadora b\xE1sica."
 title: "Organizando o c\xF3digo em fun\xE7\xF5es"
 weight: 18
 ---

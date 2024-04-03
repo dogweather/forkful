@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:54.435614-07:00
-description: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n c\xF3 ngh\u0129a l\xE0\
-  \ \u0111\u01B0a d\u1EEF li\u1EC7u t\u1EEB m\u1ED9t t\u1EC7p v\xE0o ch\u01B0\u01A1\
-  ng tr\xECnh c\u1EE7a b\u1EA1n. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0\
-  y \u0111\u1EC3 x\u1EED l\xFD ho\u1EB7c ph\xE2n t\xEDch n\u1ED9i dung, nh\u01B0 \u0111\
-  \u1ECDc c\u1EA5u\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1\
+  ch \u0111\u1EC3 \u0111\u1ECDc to\xE0n b\u1ED9 n\u1ED9i dung c\u1EE7a m\u1ED9t t\u1EC7\
+  p v\u0103n b\u1EA3n c\xF3 t\xEAn `example.txt`."
 lastmod: '2024-03-13T22:44:36.231012-06:00'
 model: gpt-4-0125-preview
-summary: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n c\xF3 ngh\u0129a l\xE0\
-  \ \u0111\u01B0a d\u1EEF li\u1EC7u t\u1EEB m\u1ED9t t\u1EC7p v\xE0o ch\u01B0\u01A1\
-  ng tr\xECnh c\u1EE7a b\u1EA1n."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch \u0111\u1EC3 \u0111\u1ECDc to\xE0\
+  n b\u1ED9 n\u1ED9i dung c\u1EE7a m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n c\xF3 t\xEA\
+  n `example.txt`."
 title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 22
 ---

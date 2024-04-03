@@ -2,16 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:23.643823-07:00
-description: "In \u0111\u1EA7u ra \u0111\u1EC3 g\u1EE1 l\u1ED7i ch\u1EE7 y\u1EBFu\
-  \ li\xEAn quan \u0111\u1EBFn vi\u1EC7c hi\u1EC3n th\u1ECB d\u1EEF li\u1EC7u l\xEA\
-  n console \u0111\u1EC3 ki\u1EC3m tra xem \u0111i\u1EC1u g\xEC \u0111ang di\u1EC5\
-  n ra trong script c\u1EE7a b\u1EA1n. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: ."
 lastmod: '2024-03-13T22:44:36.882630-06:00'
 model: gpt-4-0125-preview
-summary: "In \u0111\u1EA7u ra \u0111\u1EC3 g\u1EE1 l\u1ED7i ch\u1EE7 y\u1EBFu li\xEA\
-  n quan \u0111\u1EBFn vi\u1EC7c hi\u1EC3n th\u1ECB d\u1EEF li\u1EC7u l\xEAn console\
-  \ \u0111\u1EC3 ki\u1EC3m tra xem \u0111i\u1EC1u g\xEC \u0111ang di\u1EC5n ra trong\
-  \ script c\u1EE7a b\u1EA1n."
+summary: .
 title: "In \u1EA5n th\xF4ng tin g\u1EE1 l\u1ED7i"
 weight: 33
 ---

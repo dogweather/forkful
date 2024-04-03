@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:50:40.548706-07:00
-description: "Strenginterpolasjon betyr \xE5 smelte sammen variabler med tekst. Vi\
-  \ gj\xF8r det for \xE5 bygge brukertilpassede meldinger eller for \xE5 kombinere\
-  \ data dynamisk."
+description: "How to: Elm bruker `++` operatoren for \xE5 sette sammen strenger. Det\
+  \ er ingen innebygget strenginterpolasjon, men vi kan lage klar og lesbar kode likevel."
 lastmod: '2024-03-13T22:44:40.694435-06:00'
 model: gpt-4-1106-preview
-summary: "Strenginterpolasjon betyr \xE5 smelte sammen variabler med tekst."
+summary: "Elm bruker `++` operatoren for \xE5 sette sammen strenger."
 title: Interpolering av en streng
 weight: 8
 ---

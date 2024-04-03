@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:55:02.716920-07:00
-description: "Att l\xE4sa en textfil inneb\xE4r att inh\xE4mta textdata fr\xE5n en\
-  \ fil p\xE5 din h\xE5rddisk. Programmerare g\xF6r det f\xF6r att behandla och anv\xE4\
-  nda data, som\u2026"
+description: "Hur man g\xF6r: Det enklaste s\xE4ttet att l\xE4sa en textfil i Rust\
+  \ \xE4r med `std::fs`."
 lastmod: '2024-03-13T22:44:37.716824-06:00'
 model: gpt-4-1106-preview
-summary: "Att l\xE4sa en textfil inneb\xE4r att inh\xE4mta textdata fr\xE5n en fil\
-  \ p\xE5 din h\xE5rddisk."
+summary: "Det enklaste s\xE4ttet att l\xE4sa en textfil i Rust \xE4r med `std::fs`."
 title: "L\xE4sa en textfil"
 weight: 22
 ---

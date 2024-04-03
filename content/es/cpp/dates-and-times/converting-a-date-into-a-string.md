@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:36:02.571149-07:00
-description: "Convertir una fecha a texto permite mostrarla en diferentes formatos,\
-  \ facilitando la lectura para humanos o la compatibilidad con sistemas externos.\
-  \ Es\u2026"
+description: "C\xF3mo hacerlo: Podemos usar la biblioteca `<chrono>` de C++ y la clase\
+  \ `std::ostringstream` junto con `<iomanip>` para formatear fechas."
 lastmod: '2024-03-13T22:44:59.386533-06:00'
 model: gpt-4-1106-preview
-summary: Convertir una fecha a texto permite mostrarla en diferentes formatos, facilitando
-  la lectura para humanos o la compatibilidad con sistemas externos.
+summary: Podemos usar la biblioteca `<chrono>` de C++ y la clase `std::ostringstream`
+  junto con `<iomanip>` para formatear fechas.
 title: Convirtiendo una fecha en una cadena de texto
 weight: 28
 ---

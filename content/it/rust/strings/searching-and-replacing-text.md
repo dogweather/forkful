@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:59:05.376180-07:00
-description: "Cercare e sostituire del testo \xE8 l'atto di trovare specifiche stringhe\
-  \ in un dato testo e scambiarle con altre. I programmatori lo fanno per correzioni\
-  \ in\u2026"
+description: 'How to (Come fare): In Rust, puoi usare il metodo `replace` per stringhe.
+  Ecco un esempio.'
 lastmod: '2024-03-13T22:44:43.203373-06:00'
 model: gpt-4-1106-preview
-summary: "Cercare e sostituire del testo \xE8 l'atto di trovare specifiche stringhe\
-  \ in un dato testo e scambiarle con altre."
+summary: In Rust, puoi usare il metodo `replace` per stringhe.
 title: Ricerca e sostituzione del testo
 weight: 10
 ---

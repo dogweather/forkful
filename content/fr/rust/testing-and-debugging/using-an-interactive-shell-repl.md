@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 04:17:52.108983-07:00
-description: "Un shell interactif Rust, ou REPL (Read-Eval-Print Loop, Boucle Lire-\xC9\
-  valuer-Imprimer), vous permet d'ex\xE9cuter du code Rust \xE0 la vol\xE9e, en voyant\
-  \ des\u2026"
+description: "Comment faire : \xC0 l'heure actuelle, Rust n'a pas de REPL officiel\
+  \ livr\xE9 avec. Vous pouvez utiliser des outils tiers comme `evcxr_repl`. Installez-le\
+  \ avec\u2026"
 lastmod: '2024-03-13T22:44:57.483578-06:00'
 model: gpt-4-0125-preview
-summary: "Un shell interactif Rust, ou REPL (Read-Eval-Print Loop, Boucle Lire-\xC9\
-  valuer-Imprimer), vous permet d'ex\xE9cuter du code Rust \xE0 la vol\xE9e, en voyant\
-  \ des r\xE9sultats instantan\xE9s, parfait pour l'exp\xE9rimentation ou l'apprentissage."
+summary: "\xC0 l'heure actuelle, Rust n'a pas de REPL officiel livr\xE9 avec."
 title: Utilisation d'une console interactive (REPL)
 weight: 34
 ---

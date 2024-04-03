@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 20:33:56.708979-07:00
-description: "Gerar n\xFAmeros aleat\xF3rios em Haskell implica na cria\xE7\xE3o de\
-  \ n\xFAmeros que s\xE3o imprevis\xEDveis segundo padr\xF5es humanos. Isso \xE9 cr\xED\
-  tico em cen\xE1rios que v\xE3o desde\u2026"
+description: "Como fazer: Para gerar n\xFAmeros aleat\xF3rios em Haskell, normalmente\
+  \ se utiliza o pacote `random`, que faz parte da Plataforma Haskell. Aqui est\xE1\
+  \ um guia\u2026"
 lastmod: '2024-03-13T22:44:46.621284-06:00'
 model: gpt-4-0125-preview
-summary: "Gerar n\xFAmeros aleat\xF3rios em Haskell implica na cria\xE7\xE3o de n\xFA\
-  meros que s\xE3o imprevis\xEDveis segundo padr\xF5es humanos."
+summary: "Para gerar n\xFAmeros aleat\xF3rios em Haskell, normalmente se utiliza o\
+  \ pacote `random`, que faz parte da Plataforma Haskell."
 title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
 weight: 12
 ---

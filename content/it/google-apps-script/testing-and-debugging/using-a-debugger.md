@@ -2,8 +2,8 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:26.341643-07:00
-description: "Google Apps Script fornisce un debugger integrato all'interno dell'Editor\
-  \ di Apps Script per aiutare a risolvere i problemi degli script. Ecco come\u2026"
+description: "Come fare: Google Apps Script fornisce un debugger integrato all'interno\
+  \ dell'Editor di Apps Script per aiutare a risolvere i problemi degli script. Ecco\u2026"
 lastmod: '2024-03-13T22:44:42.960241-06:00'
 model: gpt-4-0125-preview
 summary: Google Apps Script fornisce un debugger integrato all'interno dell'Editor

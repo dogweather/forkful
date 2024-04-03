@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:13:22.578091-07:00
-description: "M\u1EA3ng k\u1EBFt h\u1EE3p, hay c\xF2n \u0111\u01B0\u1EE3c bi\u1EBF\
-  t \u0111\u1EBFn nhi\u1EC1u h\u01A1n v\u1EDBi t\xEAn g\u1ECDi l\xE0 b\u1EA3ng b\u0103\
-  m trong Ruby, cho ph\xE9p gh\xE9p c\u1EB7p kh\xF3a duy nh\u1EA5t v\u1EDBi gi\xE1\
-  \ tr\u1ECB. Ch\xFAng l\xE0 th\u1EE9 kh\xF4ng th\u1EC3\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: T\u1EA1o v\xE0 s\u1EED d\u1EE5ng b\u1EA3ng b\u0103\
+  m trong Ruby r\u1EA5t \u0111\u01A1n gi\u1EA3n. B\u1EA1n c\xF3 th\u1EC3 kh\u1EDF\
+  i t\u1EA1o m\u1ED9t b\u1EA3ng b\u0103m tr\u1ED1ng, \u0111i\u1EC1n n\xF3 v\u1EDB\
+  i c\xE1c c\u1EB7p kh\xF3a-gi\xE1 tr\u1ECB, truy c\u1EADp gi\xE1 tr\u1ECB\u2026"
 lastmod: '2024-03-13T22:44:37.327759-06:00'
 model: gpt-4-0125-preview
-summary: "M\u1EA3ng k\u1EBFt h\u1EE3p, hay c\xF2n \u0111\u01B0\u1EE3c bi\u1EBFt \u0111\
-  \u1EBFn nhi\u1EC1u h\u01A1n v\u1EDBi t\xEAn g\u1ECDi l\xE0 b\u1EA3ng b\u0103m trong\
-  \ Ruby, cho ph\xE9p gh\xE9p c\u1EB7p kh\xF3a duy nh\u1EA5t v\u1EDBi gi\xE1 tr\u1ECB\
-  ."
+summary: "T\u1EA1o v\xE0 s\u1EED d\u1EE5ng b\u1EA3ng b\u0103m trong Ruby r\u1EA5t\
+  \ \u0111\u01A1n gi\u1EA3n."
 title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 weight: 15
 ---

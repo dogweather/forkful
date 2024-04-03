@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:57:07.512304-07:00
-description: "S\xF6kning och ers\xE4ttning av text inneb\xE4r att man automatiskt\
-  \ hittar specifika str\xE4ngar och byter ut dem mot andra. Programmerare anv\xE4\
-  nder detta f\xF6r att\u2026"
+description: "S\xE5 h\xE4r g\xF6r du: F\xF6ljande Arduino-kod anv\xE4nder `String.replace()`\
+  \ f\xF6r att s\xF6ka och ers\xE4tta text."
 lastmod: '2024-03-13T22:44:38.153339-06:00'
 model: gpt-4-1106-preview
-summary: "S\xF6kning och ers\xE4ttning av text inneb\xE4r att man automatiskt hittar\
-  \ specifika str\xE4ngar och byter ut dem mot andra."
+summary: "F\xF6ljande Arduino-kod anv\xE4nder `String.replace()` f\xF6r att s\xF6\
+  ka och ers\xE4tta text."
 title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:58.134559-07:00
-description: "Ler argumentos da linha de comando no Google Apps Script \xE9 um pouco\
-  \ inadequado porque, ao contr\xE1rio de interfaces de linha de comando tradicionais\
-  \ em\u2026"
+description: "Como: Para imitar o processo de leitura dos argumentos da linha de comando\
+  \ no Google Apps Script, especialmente para aplicativos web, voc\xEA pode utilizar\u2026"
 lastmod: '2024-03-13T22:44:46.125662-06:00'
 model: gpt-4-0125-preview
-summary: "Ler argumentos da linha de comando no Google Apps Script \xE9 um pouco inadequado\
-  \ porque, ao contr\xE1rio de interfaces de linha de comando tradicionais em linguagens\
-  \ de programa\xE7\xE3o como Python ou Node."
+summary: "Para imitar o processo de leitura dos argumentos da linha de comando no\
+  \ Google Apps Script, especialmente para aplicativos web, voc\xEA pode utilizar\
+  \ par\xE2metros de string de consulta."
 title: Lendo argumentos da linha de comando
 weight: 23
 ---

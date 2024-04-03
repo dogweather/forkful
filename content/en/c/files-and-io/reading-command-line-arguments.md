@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 17:50:02.171992-07:00
-description: "In C programming, reading command line arguments allows programs to\
-  \ accept inputs right from the terminal, enhancing flexibility and usability.\u2026"
+description: "How to: In C, the `main` function can be designed to accept command\
+  \ line arguments using the parameters `int argc` and `char *argv[]`. Here, `argc`\u2026"
 lastmod: '2024-03-13T22:45:00.524947-06:00'
 model: gpt-4-0125-preview
-summary: In C programming, reading command line arguments allows programs to accept
-  inputs right from the terminal, enhancing flexibility and usability.
+summary: In C, the `main` function can be designed to accept command line arguments
+  using the parameters `int argc` and `char *argv[]`.
 title: Reading command line arguments
 weight: 23
 ---

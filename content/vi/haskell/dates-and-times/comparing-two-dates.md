@@ -2,15 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:53.145063-07:00
-description: "So s\xE1nh hai ng\xE0y ngh\u0129a l\xE0 ph\xE1n \u0111o\xE1n c\xE1i\
-  \ n\xE0o s\u1EDBm h\u01A1n, mu\u1ED9n h\u01A1n, hay n\u1EBFu ch\xFAng l\xE0 c\xF9\
-  ng m\u1ED9t th\u1EDDi \u0111i\u1EC3m. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1\
-  u n\xE0y \u0111\u1EC3 s\u1EAFp x\u1EBFp c\xE1c s\u1EF1 ki\u1EC7n,\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Haskell, \u0111\u01B0\u1EE3c bi\u1EBFt \u0111\
+  \u1EBFn m\u1ED9t c\xE1ch \xE2m th\u1EA7m v\u1EDBi s\u1EF1 tinh khi\u1EBFt c\u1EE7\
+  a m\xECnh, c\u1EA7n b\u1EA1n n\xF3i chuy\u1EC7n v\u1EC1 ng\xE0y th\xE1ng v\u1EDB\
+  i nh\u1EEFng th\u01B0 vi\u1EC7n \u0111\xFAng \u0111\u1EAFn. H\xE3y d\xF9ng\u2026"
 lastmod: '2024-03-13T22:44:36.728412-06:00'
 model: gpt-4-0125-preview
-summary: "So s\xE1nh hai ng\xE0y ngh\u0129a l\xE0 ph\xE1n \u0111o\xE1n c\xE1i n\xE0\
-  o s\u1EDBm h\u01A1n, mu\u1ED9n h\u01A1n, hay n\u1EBFu ch\xFAng l\xE0 c\xF9ng m\u1ED9\
-  t th\u1EDDi \u0111i\u1EC3m."
+summary: "Haskell, \u0111\u01B0\u1EE3c bi\u1EBFt \u0111\u1EBFn m\u1ED9t c\xE1ch \xE2\
+  m th\u1EA7m v\u1EDBi s\u1EF1 tinh khi\u1EBFt c\u1EE7a m\xECnh, c\u1EA7n b\u1EA1\
+  n n\xF3i chuy\u1EC7n v\u1EC1 ng\xE0y th\xE1ng v\u1EDBi nh\u1EEFng th\u01B0 vi\u1EC7\
+  n \u0111\xFAng \u0111\u1EAFn."
 title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---

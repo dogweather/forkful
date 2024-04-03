@@ -2,14 +2,14 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:53.009756-07:00
-description: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w to proces wstrzykiwania\
-  \ warto\u015Bci zmiennych bezpo\u015Brednio w \u0142a\u0144cuchy znak\xF3w, cz\u0119\
-  sto w celu tworzenia znacz\u0105cych komunikat\xF3w\u2026"
+description: "Jak to zrobi\u0107: W Dart, interpolacja \u0142a\u0144cuch\xF3w znak\xF3\
+  w jest prosta, wykorzystuje symbol `$` do bezpo\u015Bredniej interpolacji wyra\u017C\
+  e\u0144 w litera\u0142ach \u0142a\u0144cuchowych."
 lastmod: '2024-03-13T22:44:35.074603-06:00'
 model: gpt-4-0125-preview
-summary: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w to proces wstrzykiwania warto\u015B\
-  ci zmiennych bezpo\u015Brednio w \u0142a\u0144cuchy znak\xF3w, cz\u0119sto w celu\
-  \ tworzenia znacz\u0105cych komunikat\xF3w bez uci\u0105\u017Cliwych konkatenacji."
+summary: "W Dart, interpolacja \u0142a\u0144cuch\xF3w znak\xF3w jest prosta, wykorzystuje\
+  \ symbol `$` do bezpo\u015Bredniej interpolacji wyra\u017Ce\u0144 w litera\u0142\
+  ach \u0142a\u0144cuchowych."
 title: "Interpolacja ci\u0105gu znak\xF3w"
 weight: 8
 ---

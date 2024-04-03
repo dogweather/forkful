@@ -2,16 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:12:10.054378-07:00
-description: "\u0110\u1ECBnh d\u1EA1ng Gi\xE1 tr\u1ECB T\xE1ch b\u1EB1ng D\u1EA5u\
-  \ ph\u1EA9y (CSV) ph\u1ED5 bi\u1EBFn cho trao \u0111\u1ED5i d\u1EEF li\u1EC7u do\
-  \ t\xEDnh \u0111\u01A1n gi\u1EA3n v\xE0 d\u1EC5 d\xE0ng t\xEDch h\u1EE3p v\u1EDB\
-  i h\u1EA7u h\u1EBFt c\xE1c ng\xF4n ng\u1EEF l\u1EADp tr\xECnh, bao g\u1ED3m\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: L\xE0m vi\u1EC7c v\u1EDBi c\xE1c t\u1EC7p CSV\
+  \ trong Go r\u1EA5t d\u1EC5 d\xE0ng, nh\u1EDD v\xE0o th\u01B0 vi\u1EC7n ti\xEAu\
+  \ chu\u1EA9n, `encoding/csv`. D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t b\xE0i gi\u1EDB\
+  i thi\u1EC7u v\u1EC1 \u0111\u1ECDc v\xE0 vi\u1EBFt c\xE1c\u2026"
 lastmod: '2024-03-13T22:44:36.012555-06:00'
 model: gpt-4-0125-preview
-summary: "\u0110\u1ECBnh d\u1EA1ng Gi\xE1 tr\u1ECB T\xE1ch b\u1EB1ng D\u1EA5u ph\u1EA9\
-  y (CSV) ph\u1ED5 bi\u1EBFn cho trao \u0111\u1ED5i d\u1EEF li\u1EC7u do t\xEDnh \u0111\
-  \u01A1n gi\u1EA3n v\xE0 d\u1EC5 d\xE0ng t\xEDch h\u1EE3p v\u1EDBi h\u1EA7u h\u1EBF\
-  t c\xE1c ng\xF4n ng\u1EEF l\u1EADp tr\xECnh, bao g\u1ED3m c\u1EA3 Go."
+summary: "L\xE0m vi\u1EC7c v\u1EDBi c\xE1c t\u1EC7p CSV trong Go r\u1EA5t d\u1EC5\
+  \ d\xE0ng, nh\u1EDD v\xE0o th\u01B0 vi\u1EC7n ti\xEAu chu\u1EA9n, `encoding/csv`."
 title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 weight: 37
 ---

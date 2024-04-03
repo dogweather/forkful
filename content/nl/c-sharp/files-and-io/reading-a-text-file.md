@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:58.410052-07:00
-description: "Een tekstbestand lezen is het ophalen van gegevens uit een bestand dat\
-  \ tekst bevat. Programmeurs doen dit om configuraties te laden, gegevens te lezen\
-  \ of\u2026"
+description: 'Hoe te: Laten we er direct induiken. Hier is hoe je uit een bestand
+  leest in C# met `System.IO`.'
 lastmod: '2024-03-13T22:44:50.827427-06:00'
 model: gpt-4-0125-preview
-summary: Een tekstbestand lezen is het ophalen van gegevens uit een bestand dat tekst
-  bevat.
+summary: Laten we er direct induiken.
 title: Een tekstbestand lezen
 weight: 22
 ---

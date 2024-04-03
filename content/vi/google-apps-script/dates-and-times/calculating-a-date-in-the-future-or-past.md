@@ -2,16 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:38.924364-07:00
-description: "Vi\u1EC7c t\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai\
-  \ ho\u1EB7c qu\xE1 kh\u1EE9 li\xEAn quan \u0111\u1EBFn vi\u1EC7c thao t\xE1c v\u1EDB\
-  i c\xE1c \u0111\u1ED1i t\u01B0\u1EE3ng ng\xE0y \u0111\u1EC3 t\xECm ra c\xE1c ng\xE0\
-  y n\u1EB1m ngo\xE0i ho\u1EB7c tr\u01B0\u1EDBc ng\xE0y hi\u1EC7n\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Google Apps Script, d\u1EF1a tr\xEAn JavaScript,\
+  \ b\u1EA1n c\xF3 th\u1EC3 thao t\xE1c v\u1EDBi ng\xE0y b\u1EB1ng c\xE1ch s\u1EED\
+  \ d\u1EE5ng \u0111\u1ED1i t\u01B0\u1EE3ng `Date`. D\u01B0\u1EDBi \u0111\xE2y l\xE0\
+  \ c\xE1ch \u0111\u1EC3 t\xEDnh to\xE1n\u2026"
 lastmod: '2024-03-13T22:44:36.058862-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c t\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7\
-  c qu\xE1 kh\u1EE9 li\xEAn quan \u0111\u1EBFn vi\u1EC7c thao t\xE1c v\u1EDBi c\xE1\
-  c \u0111\u1ED1i t\u01B0\u1EE3ng ng\xE0y \u0111\u1EC3 t\xECm ra c\xE1c ng\xE0y n\u1EB1\
-  m ngo\xE0i ho\u1EB7c tr\u01B0\u1EDBc ng\xE0y hi\u1EC7n t\u1EA1i."
+summary: "Trong Google Apps Script, d\u1EF1a tr\xEAn JavaScript, b\u1EA1n c\xF3 th\u1EC3\
+  \ thao t\xE1c v\u1EDBi ng\xE0y b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng \u0111\u1ED1\
+  i t\u01B0\u1EE3ng `Date`."
 title: "T\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1\
   \ kh\u1EE9"
 weight: 26

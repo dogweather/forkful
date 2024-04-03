@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:58.915537-07:00
-description: "V\xE9rifier l'existence d'un r\xE9pertoire en Go est crucial pour les\
-  \ applications qui interagissent avec le syst\xE8me de fichiers, afin d'\xE9viter\
-  \ les erreurs lors\u2026"
+description: "Comment faire : En Go, le paquet `os` fournit des fonctionnalit\xE9\
+  s pour interagir avec le syst\xE8me d'exploitation, y compris v\xE9rifier l'existence\
+  \ d'un\u2026"
 lastmod: '2024-03-13T22:44:57.150419-06:00'
 model: gpt-4-0125-preview
-summary: "V\xE9rifier l'existence d'un r\xE9pertoire en Go est crucial pour les applications\
-  \ qui interagissent avec le syst\xE8me de fichiers, afin d'\xE9viter les erreurs\
-  \ lors de la tentative d'acc\xE8s ou de modification des r\xE9pertoires."
+summary: "En Go, le paquet `os` fournit des fonctionnalit\xE9s pour interagir avec\
+  \ le syst\xE8me d'exploitation, y compris v\xE9rifier l'existence d'un r\xE9pertoire."
 title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---

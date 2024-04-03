@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:46.370222-07:00
-description: "Avviare un nuovo progetto in Google Apps Script (GAS) comporta l'inizializzazione\
-  \ di un file script all'interno dell'ecosistema Google (Google Drive,\u2026"
+description: "Come Fare: Per iniziare un nuovo progetto in Google Apps Script, hai\
+  \ un paio di punti di accesso, ma concentriamoci sul metodo pi\xF9 diretto: creare\
+  \ uno\u2026"
 lastmod: '2024-03-13T22:44:42.955738-06:00'
 model: gpt-4-0125-preview
-summary: Avviare un nuovo progetto in Google Apps Script (GAS) comporta l'inizializzazione
-  di un file script all'interno dell'ecosistema Google (Google Drive, Docs, Sheets,
-  ecc.
+summary: "Per iniziare un nuovo progetto in Google Apps Script, hai un paio di punti\
+  \ di accesso, ma concentriamoci sul metodo pi\xF9 diretto."
 title: Iniziando un nuovo progetto
 weight: 1
 ---

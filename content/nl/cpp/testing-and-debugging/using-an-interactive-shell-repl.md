@@ -2,11 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:24.749032-07:00
-description: "Een REPL (Read-Eval-Print-Loop) is een eenvoudige, interactieve programmeeromgeving.\
-  \ Programmeurs gebruiken het voor realtime taalexperimenten, snelle\u2026"
+description: "Hoe te gebruiken: C++ heeft geen ingebouwde REPL, maar tools zoals Cling\
+  \ bieden die mogelijkheid. Hier is hoe je Cling kunt gebruiken om de som van twee\u2026"
 lastmod: '2024-03-13T22:44:51.114247-06:00'
 model: gpt-4-0125-preview
-summary: Een REPL (Read-Eval-Print-Loop) is een eenvoudige, interactieve programmeeromgeving.
+summary: C++ heeft geen ingebouwde REPL, maar tools zoals Cling bieden die mogelijkheid.
 title: Het gebruik van een interactieve shell (REPL)
 weight: 34
 ---

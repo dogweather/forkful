@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:00.160115-07:00
-description: "Refaktoryzacja w leksykonie programowania odnosi si\u0119 do procesu\
-  \ restrukturyzacji istniej\u0105cego kodu komputerowego \u2013 zmiany faktoryzacji\
-  \ bez zmiany jego\u2026"
+description: "Jak: W Google Apps Script, typowym scenariuszem, kt\xF3ry korzysta z\
+  \ refaktoryzacji, jest uproszczenie zawi\u0142ych skrypt\xF3w, kt\xF3re wsp\xF3\u0142\
+  dzia\u0142aj\u0105 z Google Sheets\u2026"
 lastmod: '2024-03-13T22:44:34.912342-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktoryzacja w leksykonie programowania odnosi si\u0119 do procesu restrukturyzacji\
-  \ istniej\u0105cego kodu komputerowego \u2013 zmiany faktoryzacji bez zmiany jego\
-  \ zewn\u0119trznego zachowania \u2013 w celu poprawy atrybut\xF3w niefunkcjonalnych."
+summary: "W Google Apps Script, typowym scenariuszem, kt\xF3ry korzysta z refaktoryzacji,\
+  \ jest uproszczenie zawi\u0142ych skrypt\xF3w, kt\xF3re wsp\xF3\u0142dzia\u0142\
+  aj\u0105 z Google Sheets lub Docs."
 title: Refaktoryzacja
 weight: 19
 ---

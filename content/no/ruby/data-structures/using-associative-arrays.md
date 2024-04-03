@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:43.911652-07:00
-description: "Assosiative tabeller, mer kjent som hashes i Ruby, gj\xF8r det mulig\
-  \ \xE5 pare unike n\xF8kler med verdier. De er uunnv\xE6rlige n\xE5r du trenger\
-  \ \xE5 holde styr p\xE5\u2026"
+description: "Hvordan: \xC5 opprette og bruke hashes i Ruby er enkelt. Du kan initialisere\
+  \ en tom hash, fylle den med n\xF8kkel-verdipar, f\xE5 tilgang til verdier ved hjelp\
+  \ av\u2026"
 lastmod: '2024-03-13T22:44:41.308771-06:00'
 model: gpt-4-0125-preview
-summary: "Assosiative tabeller, mer kjent som hashes i Ruby, gj\xF8r det mulig \xE5\
-  \ pare unike n\xF8kler med verdier."
+summary: "\xC5 opprette og bruke hashes i Ruby er enkelt."
 title: Bruke associative tabeller
 weight: 15
 ---

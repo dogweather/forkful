@@ -1,12 +1,11 @@
 ---
 date: 2024-01-19
-description: "Lavorare con YAML significa manipolare un linguaggio di serializzazione\
-  \ dati che punta sulla leggibilit\xE0 umana. I programmatori lo usano perch\xE9\
-  \ \xE8 comodo\u2026"
+description: 'How to: Per iniziare, installa la libreria `yaml-cpp` usando il gestore
+  di pacchetti che preferisci. Ecco un esempio di lettura e scrittura.'
 lastmod: '2024-03-13T22:44:43.748497-06:00'
 model: unknown
-summary: "Lavorare con YAML significa manipolare un linguaggio di serializzazione\
-  \ dati che punta sulla leggibilit\xE0 umana."
+summary: Per iniziare, installa la libreria `yaml-cpp` usando il gestore di pacchetti
+  che preferisci.
 title: Lavorare con YAML
 weight: 41
 ---

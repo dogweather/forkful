@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 17:39:52.676581-07:00
-description: "Creare un file temporaneo serve a immagazzinare dati che non necessitano\
-  \ di persistenza a lungo termine. I programmatori li utilizzano per memorizzare\u2026"
+description: "How to: (Come fare:) In C++17, \xE8 stata introdotta la `<filesystem>`\
+  \ library per gestire i file in maniera pi\xF9 semplice. Di seguito, un esempio\
+  \ su come\u2026"
 lastmod: '2024-03-13T22:44:43.747627-06:00'
 model: gpt-4-1106-preview
-summary: Creare un file temporaneo serve a immagazzinare dati che non necessitano
-  di persistenza a lungo termine.
+summary: "In C++17, \xE8 stata introdotta la `<filesystem>` library per gestire i\
+  \ file in maniera pi\xF9 semplice."
 title: Creazione di un file temporaneo
 weight: 21
 ---

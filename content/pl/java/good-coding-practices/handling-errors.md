@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 00:54:44.500120-07:00
-description: "Obs\u0142uga b\u0142\u0119d\xF3w polega na pisaniu kodu, kt\xF3ry przewiduje\
-  \ b\u0142\u0119dne sytuacje i radzi sobie z nimi. Programi\u015Bci robi\u0105 to,\
-  \ aby oprogramowanie by\u0142o bardziej\u2026"
+description: "Jak to zrobi\u0107: Java u\u017Cywa wyj\u0105tk\xF3w do obs\u0142ugi\
+  \ b\u0142\u0119d\xF3w. Ryzykowny kod umieszcza si\u0119 w bloku `try` oraz przechwytuje\
+  \ wyj\u0105tki w bloku `catch`. Oto prosty\u2026"
 lastmod: '2024-03-13T22:44:35.284783-06:00'
 model: gpt-4-1106-preview
-summary: "Obs\u0142uga b\u0142\u0119d\xF3w polega na pisaniu kodu, kt\xF3ry przewiduje\
-  \ b\u0142\u0119dne sytuacje i radzi sobie z nimi."
+summary: "Java u\u017Cywa wyj\u0105tk\xF3w do obs\u0142ugi b\u0142\u0119d\xF3w."
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---

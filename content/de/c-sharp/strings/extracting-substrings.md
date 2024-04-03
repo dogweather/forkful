@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:45:27.032258-07:00
-description: "Das Extrahieren von Teilzeichenketten greift bestimmte Abschnitte aus\
-  \ einer l\xE4ngeren Zeichenkette heraus. Programmierer tun das, um Daten zu analysieren,\u2026"
+description: 'So geht''s: .'
 lastmod: '2024-03-13T22:44:53.877249-06:00'
 model: gpt-4-1106-preview
-summary: "Das Extrahieren von Teilzeichenketten greift bestimmte Abschnitte aus einer\
-  \ l\xE4ngeren Zeichenkette heraus."
+summary: .
 title: Teilstrings extrahieren
 weight: 6
 ---

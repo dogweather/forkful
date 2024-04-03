@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:42:05.708647-07:00
-description: "\xC5 slette tegn som matcher et m\xF8nster inneb\xE6rer \xE5 finne og\
-  \ fjerne spesifikke tegnsekvenser fra en streng. Programmerere gj\xF8r dette for\
-  \ \xE5 rense data,\u2026"
+description: "Hvordan gj\xF8re det: For \xE5 slette tegn som matcher et m\xF8nster\
+  \ i Clojure, kan du bruke `clojure.string/replace` funksjonen med et regul\xE6rt\
+  \ uttrykk."
 lastmod: '2024-03-13T22:44:40.387155-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 slette tegn som matcher et m\xF8nster inneb\xE6rer \xE5 finne og fjerne\
-  \ spesifikke tegnsekvenser fra en streng."
+summary: "For \xE5 slette tegn som matcher et m\xF8nster i Clojure, kan du bruke `clojure.string/replace`\
+  \ funksjonen med et regul\xE6rt uttrykk."
 title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---

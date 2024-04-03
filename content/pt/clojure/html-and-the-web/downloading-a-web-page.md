@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:43:48.609855-07:00
-description: "Baixar uma p\xE1gina da web \xE9 simplesmente trazer conte\xFAdo da\
-  \ internet para o seu computador. Programadores fazem isso para coletar dados, automatizar\u2026"
+description: "Como Fazer: Vamos usar a biblioteca `clj-http` para baixar uma p\xE1\
+  gina."
 lastmod: '2024-03-13T22:44:46.195560-06:00'
 model: gpt-4-1106-preview
-summary: "Baixar uma p\xE1gina da web \xE9 simplesmente trazer conte\xFAdo da internet\
-  \ para o seu computador."
+summary: "Vamos usar a biblioteca `clj-http` para baixar uma p\xE1gina."
 title: "Baixando uma p\xE1gina da web"
 weight: 42
 ---

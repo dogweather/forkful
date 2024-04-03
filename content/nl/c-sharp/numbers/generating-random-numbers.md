@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:34.702079-07:00
-description: "Het genereren van willekeurige getallen in C# omvat de creatie van onvoorspelbare\
-  \ numerieke waarden binnen een gespecificeerd bereik. Programmeurs\u2026"
+description: "Hoe: De meest voorkomende manier om willekeurige getallen te genereren\
+  \ in C# is het gebruik van de `System.Random` klasse. Hier is een eenvoudig voorbeeld\u2026"
 lastmod: '2024-03-13T22:44:50.805900-06:00'
 model: gpt-4-0125-preview
-summary: Het genereren van willekeurige getallen in C# omvat de creatie van onvoorspelbare
-  numerieke waarden binnen een gespecificeerd bereik.
+summary: De meest voorkomende manier om willekeurige getallen te genereren in C# is
+  het gebruik van de `System.Random` klasse.
 title: Willekeurige getallen genereren
 weight: 12
 ---

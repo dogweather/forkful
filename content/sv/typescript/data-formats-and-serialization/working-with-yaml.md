@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:50.748053-07:00
-description: "YAML, ett dataserialiseringsspr\xE5k designat f\xF6r att vara anv\xE4\
-  ndarv\xE4nligt, anv\xE4nds ofta f\xF6r konfigurationsfiler, mellanprocessmeddelanden\
-  \ och datalagring.\u2026"
+description: "Hur man g\xF6r: Att arbeta med YAML i TypeScript inneb\xE4r vanligtvis\
+  \ att tolka YAML-inneh\xE5ll till JavaScript-objekt och m\xF6jligen konvertera JavaScript-objekt\u2026"
 lastmod: '2024-03-13T22:44:37.676289-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, ett dataserialiseringsspr\xE5k designat f\xF6r att vara anv\xE4ndarv\xE4\
-  nligt, anv\xE4nds ofta f\xF6r konfigurationsfiler, mellanprocessmeddelanden och\
-  \ datalagring."
+summary: "Att arbeta med YAML i TypeScript inneb\xE4r vanligtvis att tolka YAML-inneh\xE5\
+  ll till JavaScript-objekt och m\xF6jligen konvertera JavaScript-objekt tillbaka\
+  \ till YAML."
 title: Att Arbeta med YAML
 weight: 41
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:12:10.764374-07:00
-description: "Un REPL, o Bucle Leer-Evaluar-Imprimir, te permite escribir c\xF3digo\
-  \ C# y ejecutarlo de manera interactiva. Los programadores lo usan para experimentos\u2026"
+description: "C\xF3mo hacerlo: Inicia un REPL en tu entorno C# usando la ventana Interactiva\
+  \ de C# o ejecuta `dotnet-script` en tu terminal. Aqu\xED tienes un ejemplo de su\u2026"
 lastmod: '2024-03-13T22:44:59.079785-06:00'
 model: gpt-4-0125-preview
-summary: "Un REPL, o Bucle Leer-Evaluar-Imprimir, te permite escribir c\xF3digo C#\
-  \ y ejecutarlo de manera interactiva."
+summary: Inicia un REPL en tu entorno C# usando la ventana Interactiva de C# o ejecuta
+  `dotnet-script` en tu terminal.
 title: Usando una shell interactiva (REPL)
 weight: 34
 ---

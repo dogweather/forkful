@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:42.473950-07:00
-description: "Het verzenden van een HTTP-verzoek houdt in dat er vanuit je Go-applicatie\
-  \ een oproep wordt gedaan naar een webserver, API of een andere op HTTP-\u2026"
+description: "Hoe te: In Go, het verzenden van een HTTP-verzoek en het afhandelen\
+  \ van de response, betekent gebruik maken van het `net/http` pakket. Hier is een\
+  \ stap-\u2026"
 lastmod: '2024-03-13T22:44:50.284162-06:00'
 model: gpt-4-0125-preview
-summary: Het verzenden van een HTTP-verzoek houdt in dat er vanuit je Go-applicatie
-  een oproep wordt gedaan naar een webserver, API of een andere op HTTP-gebaseerde
-  dienst.
+summary: In Go, het verzenden van een HTTP-verzoek en het afhandelen van de response,
+  betekent gebruik maken van het `net/http` pakket.
 title: Een HTTP-verzoek verzenden
 weight: 44
 ---

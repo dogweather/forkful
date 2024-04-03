@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:52.454894-07:00
-description: "Das Lesen von Befehlszeilenargumenten in Google Apps Script ist etwas\
-  \ irref\xFChrend, denn im Gegensatz zu traditionellen Befehlszeilenschnittstellen\
-  \ in\u2026"
+description: "Wie: Um den Prozess des Lesens von Befehlszeilenargumenten in Google\
+  \ Apps Script nachzuahmen, besonders bei Web-Apps, k\xF6nnen Sie Query-String-Parameter\u2026"
 lastmod: '2024-03-13T22:44:53.350812-06:00'
 model: gpt-4-0125-preview
-summary: "Das Lesen von Befehlszeilenargumenten in Google Apps Script ist etwas irref\xFC\
-  hrend, denn im Gegensatz zu traditionellen Befehlszeilenschnittstellen in Programmiersprachen\
-  \ wie Python oder Node."
+summary: "Um den Prozess des Lesens von Befehlszeilenargumenten in Google Apps Script\
+  \ nachzuahmen, besonders bei Web-Apps, k\xF6nnen Sie Query-String-Parameter nutzen."
 title: Lesen von Befehlszeilenargumenten
 weight: 23
 ---

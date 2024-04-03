@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 18:01:24.664117-07:00
-description: "I C# skickar vi HTTP-beg\xE4ran med grundl\xE4ggande autentisering f\xF6\
-  r att s\xE4kert \xF6verf\xF6ra anv\xE4ndarnamn och l\xF6senord till servern. Detta\
-  \ anv\xE4nds f\xF6r att bevisa\u2026"
+description: "Steg f\xF6r Steg: Vi anv\xE4nder klassen `HttpClient` och l\xE4gger\
+  \ till en header f\xF6r autentisering. L\xE4gg m\xE4rke till hur enkelt det \xE4\
+  r."
 lastmod: '2024-03-13T22:44:37.912996-06:00'
 model: gpt-4-1106-preview
-summary: "I C# skickar vi HTTP-beg\xE4ran med grundl\xE4ggande autentisering f\xF6\
-  r att s\xE4kert \xF6verf\xF6ra anv\xE4ndarnamn och l\xF6senord till servern."
+summary: "Vi anv\xE4nder klassen `HttpClient` och l\xE4gger till en header f\xF6r\
+  \ autentisering."
 title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
 weight: 45
 ---

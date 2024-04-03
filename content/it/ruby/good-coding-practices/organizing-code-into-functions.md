@@ -1,10 +1,9 @@
 ---
 date: 2024-01-26 01:11:59.313124-07:00
-description: "Organizzare il codice in funzioni divide il tuo script in blocchi riutilizzabili.\
-  \ Si tratta di rendere il codice pulito, gestibile e meno soggetto a\u2026"
+description: 'Come fare: Immagina di scrivere uno script veloce per salutare gli utenti.'
 lastmod: '2024-03-13T22:44:44.056655-06:00'
 model: gpt-4-1106-preview
-summary: Organizzare il codice in funzioni divide il tuo script in blocchi riutilizzabili.
+summary: Immagina di scrivere uno script veloce per salutare gli utenti.
 title: Organizzazione del codice in funzioni
 weight: 18
 ---

@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:21.206397-07:00
-description: "TOML, som st\xE5r for Toms Opplagte, Minimale Spr\xE5k, er et konfigurasjonsfilformat\
-  \ som er lett \xE5 lese p\xE5 grunn av sin klare semantikk. Programmerere bruker\u2026"
+description: "Hvordan: Siden Google Apps Script i bunn og grunn er JavaScript med\
+  \ tilgang til Googles app-samling, krever arbeid med TOML direkte innen Google Apps\u2026"
 lastmod: '2024-03-13T22:44:40.341473-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, som st\xE5r for Toms Opplagte, Minimale Spr\xE5k, er et konfigurasjonsfilformat\
-  \ som er lett \xE5 lese p\xE5 grunn av sin klare semantikk."
+summary: Siden Google Apps Script i bunn og grunn er JavaScript med tilgang til Googles
+  app-samling, krever arbeid med TOML direkte innen Google Apps Script litt oppfinnsomhet.
 title: Arbeider med TOML
 weight: 39
 ---

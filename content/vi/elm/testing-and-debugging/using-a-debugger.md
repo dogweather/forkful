@@ -2,10 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:07.139945-07:00
-description: "Elm kh\xF4ng c\xF3 b\u1ED9 g\u1EE1 l\u1ED7i t\xEDch h\u1EE3p trong b\u1EA3\
-  n th\xE2n n\xF3 theo ngh\u0129a truy\u1EC1n th\u1ED1ng nh\u01B0, v\xED d\u1EE5,\
-  \ JavaScript v\u1EDBi c\xF4ng c\u1EE5 ph\xE1t tri\u1EC3n tr\xECnh duy\u1EC7t. Tuy\
-  \ nhi\xEAn, c\u1ED9ng \u0111\u1ED3ng\u2026"
+description: "C\xE1ch th\u1EE9c: Elm kh\xF4ng c\xF3 b\u1ED9 g\u1EE1 l\u1ED7i t\xED\
+  ch h\u1EE3p trong b\u1EA3n th\xE2n n\xF3 theo ngh\u0129a truy\u1EC1n th\u1ED1ng\
+  \ nh\u01B0, v\xED d\u1EE5, JavaScript v\u1EDBi c\xF4ng c\u1EE5 ph\xE1t tri\u1EC3\
+  n tr\xECnh duy\u1EC7t. Tuy nhi\xEAn,\u2026"
 lastmod: '2024-03-13T22:44:36.550301-06:00'
 model: gpt-4-0125-preview
 summary: "Elm kh\xF4ng c\xF3 b\u1ED9 g\u1EE1 l\u1ED7i t\xEDch h\u1EE3p trong b\u1EA3\

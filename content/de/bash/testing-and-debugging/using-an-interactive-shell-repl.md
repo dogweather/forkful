@@ -1,10 +1,10 @@
 ---
 date: 2024-01-26 04:11:02.113709-07:00
-description: "REPL steht f\xFCr Read-Eval-Print Loop, eine einfache, interaktive Computerprogrammierumgebung.\
-  \ Programmierer nutzen es, um schnell Code zu schreiben und zu\u2026"
+description: "Wie geht das: In Bash ist Ihr Terminal im Grunde ein REPL. Sie geben\
+  \ einen Befehl ein; es liest ihn, wertet ihn aus, gibt das Ergebnis aus und kehrt\u2026"
 lastmod: '2024-03-13T22:44:54.061130-06:00'
 model: gpt-4-0125-preview
-summary: "REPL steht f\xFCr Read-Eval-Print Loop, eine einfache, interaktive Computerprogrammierumgebung."
+summary: In Bash ist Ihr Terminal im Grunde ein REPL.
 title: Nutzung einer interaktiven Shell (REPL)
 weight: 34
 ---

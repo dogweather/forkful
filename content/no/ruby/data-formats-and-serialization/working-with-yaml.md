@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:30.065636-07:00
-description: "YAML, som st\xE5r for YAML Ain't Markup Language, er mye brukt i Ruby\
-  \ for konfigurasjonsfiler og dataserialisering p\xE5 grunn av sitt lesbare format.\u2026"
+description: "Hvordan: Ruby kommer med et innebygget bibliotek kalt Psych for parsing\
+  \ og utforming av YAML. For \xE5 bruke det, m\xE5 du f\xF8rst kreve YAML-standardbiblioteket.\u2026"
 lastmod: '2024-03-13T22:44:41.353946-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, som st\xE5r for YAML Ain't Markup Language, er mye brukt i Ruby for\
-  \ konfigurasjonsfiler og dataserialisering p\xE5 grunn av sitt lesbare format."
+summary: Ruby kommer med et innebygget bibliotek kalt Psych for parsing og utforming
+  av YAML.
 title: Arbeider med YAML
 weight: 41
 ---

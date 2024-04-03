@@ -1,13 +1,12 @@
 ---
 date: 2024-01-20 18:02:40.531034-07:00
-description: "Att skicka en HTTP-beg\xE4ran med Basic Authentication inneb\xE4r att\
-  \ du inkluderar anv\xE4ndarens legitimationer i en header f\xF6r att f\xE5 tillg\xE5\
-  ng till skyddade\u2026"
+description: "S\xE5 h\xE4r g\xF6r du: F\xF6r att skicka en HTTP-beg\xE4ran med Basic\
+  \ Authentication i Swift, anv\xE4nd URLSession. H\xE4r \xE4r ett exempel som demonstrerar\
+  \ processen."
 lastmod: '2024-03-13T22:44:38.250849-06:00'
 model: gpt-4-1106-preview
-summary: "Att skicka en HTTP-beg\xE4ran med Basic Authentication inneb\xE4r att du\
-  \ inkluderar anv\xE4ndarens legitimationer i en header f\xF6r att f\xE5 tillg\xE5\
-  ng till skyddade resurser p\xE5 en server."
+summary: "F\xF6r att skicka en HTTP-beg\xE4ran med Basic Authentication i Swift, anv\xE4\
+  nd URLSession."
 title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
 weight: 45
 ---

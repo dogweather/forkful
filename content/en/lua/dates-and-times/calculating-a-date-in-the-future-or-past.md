@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:31:28.720896-07:00
-description: "Calculating future or past dates means figuring out what the date will\
-  \ be after or before a certain amount of time. Programmers do this for features\
-  \ like\u2026"
+description: 'How to: In Lua, you have the `os.date` and `os.time` functions at your
+  disposal to help with date and time calculations.'
 lastmod: '2024-03-13T22:45:00.217645-06:00'
 model: gpt-4-1106-preview
-summary: Calculating future or past dates means figuring out what the date will be
-  after or before a certain amount of time.
+summary: In Lua, you have the `os.date` and `os.time` functions at your disposal to
+  help with date and time calculations.
 title: Calculating a date in the future or past
 weight: 26
 ---

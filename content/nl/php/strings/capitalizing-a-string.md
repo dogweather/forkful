@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:59.642219-07:00
-description: "Het kapitaliseren van een string betekent het veranderen van de eerste\
-  \ letter van elk woord naar een hoofdletter. Programmeurs kapitaliseren strings\
-  \ voor\u2026"
+description: 'Hoe te: In PHP kapitaliseren we strings met de functie `ucwords()` voor
+  volledige titels of `ucfirst()` voor enkele regels of zinnen.'
 lastmod: '2024-03-13T22:44:50.877640-06:00'
 model: gpt-4-0125-preview
-summary: Het kapitaliseren van een string betekent het veranderen van de eerste letter
-  van elk woord naar een hoofdletter.
+summary: In PHP kapitaliseren we strings met de functie `ucwords()` voor volledige
+  titels of `ucfirst()` voor enkele regels of zinnen.
 title: Een string met hoofdletters maken
 weight: 2
 ---

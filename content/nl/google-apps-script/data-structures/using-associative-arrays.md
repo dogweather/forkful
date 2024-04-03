@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:03.148817-07:00
-description: "Associatieve arrays, bekend als objecten in Google Apps Script (een\
-  \ variant van JavaScript), stellen programmeurs in staat om verzamelingen van sleutel-\u2026"
+description: "Hoe: In Google Apps Script cre\xEBer en manipuleer je associatieve arrays\
+  \ (objecten) met behulp van accolades `{}`, waarbinnen je sleutel-waardeparen\u2026"
 lastmod: '2024-03-13T22:44:50.323557-06:00'
 model: gpt-4-0125-preview
-summary: "Associatieve arrays, bekend als objecten in Google Apps Script (een variant\
-  \ van JavaScript), stellen programmeurs in staat om verzamelingen van sleutel-waardeparen\
-  \ te cre\xEBren."
+summary: "In Google Apps Script cre\xEBer en manipuleer je associatieve arrays (objecten)\
+  \ met behulp van accolades `{}`, waarbinnen je sleutel-waardeparen definieert."
 title: Gebruik van associatieve arrays
 weight: 15
 ---

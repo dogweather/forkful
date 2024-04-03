@@ -1,13 +1,12 @@
 ---
 date: 2024-01-20 17:42:59.913326-07:00
-description: "Na programa\xE7\xE3o, deletar caracteres que correspondem a um padr\xE3\
-  o significa identificar e remover s\xE9ries espec\xEDficas de caracteres dentro\
-  \ de uma string.\u2026"
+description: "Como Fazer: Para remover caracteres que correspondem a um padr\xE3o\
+  \ em Rust, voc\xEA pode usar o m\xE9todo `replace` ou express\xF5es regulares com\
+  \ o crate `regex`.\u2026"
 lastmod: '2024-03-13T22:44:46.352491-06:00'
 model: gpt-4-1106-preview
-summary: "Na programa\xE7\xE3o, deletar caracteres que correspondem a um padr\xE3\
-  o significa identificar e remover s\xE9ries espec\xEDficas de caracteres dentro\
-  \ de uma string."
+summary: "Para remover caracteres que correspondem a um padr\xE3o em Rust, voc\xEA\
+  \ pode usar o m\xE9todo `replace` ou express\xF5es regulares com o crate `regex`."
 title: "Excluindo caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---

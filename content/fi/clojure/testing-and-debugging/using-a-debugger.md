@@ -1,8 +1,8 @@
 ---
 date: 2024-01-26 03:48:23.573625-07:00
-description: "Clojure nojaa Java Virtuaalikoneeseen (JVM), joten suuri osa debuggauksesta\
-  \ tapahtuu Java-ty\xF6kaluilla. Yksi t\xE4llainen ty\xF6kalu on `CIDER`, tehokas\
-  \ paketti\u2026"
+description: "Kuinka: Clojure nojaa Java Virtuaalikoneeseen (JVM), joten suuri osa\
+  \ debuggauksesta tapahtuu Java-ty\xF6kaluilla. Yksi t\xE4llainen ty\xF6kalu on `CIDER`,\
+  \ tehokas\u2026"
 lastmod: '2024-03-13T22:44:56.188818-06:00'
 model: gpt-4-0125-preview
 summary: "Clojure nojaa Java Virtuaalikoneeseen (JVM), joten suuri osa debuggauksesta\

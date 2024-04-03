@@ -2,14 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:18.747022-07:00
-description: "Het genereren van willekeurige getallen in PHP gaat over het produceren\
-  \ van onvoorspelbare waarden binnen een gespecificeerd bereik, wat essentieel is\u2026"
+description: "Hoe te: PHP biedt verschillende functies voor het genereren van willekeurige\
+  \ getallen, maar de meest gebruikte zijn `rand()`, `mt_rand()`, en voor\u2026"
 lastmod: '2024-03-13T22:44:50.890632-06:00'
 model: gpt-4-0125-preview
-summary: "Het genereren van willekeurige getallen in PHP gaat over het produceren\
-  \ van onvoorspelbare waarden binnen een gespecificeerd bereik, wat essentieel is\
-  \ voor taken zoals het cre\xEBren van unieke gebruikers-ID's, het genereren van\
-  \ wachtwoorden, of voor gebruik in simulaties en spellen."
+summary: PHP biedt verschillende functies voor het genereren van willekeurige getallen,
+  maar de meest gebruikte zijn `rand()`, `mt_rand()`, en voor cryptografische doeleinden
+  `random_int()`.
 title: Willekeurige getallen genereren
 weight: 12
 ---

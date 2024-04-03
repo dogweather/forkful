@@ -2,12 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:12.985819-07:00
-description: "HTML zu parsen bedeutet, HTML-Code zu durchforsten, um Informationen\
-  \ zu finden, zu extrahieren oder zu manipulieren. Programmierer machen das, um mit\u2026"
+description: 'Wie geht das: Um zu beginnen, installieren Sie eine Bibliothek wie `node-html-parser`.
+  Hier ist der Terminalbefehl.'
 lastmod: '2024-03-13T22:44:53.629240-06:00'
 model: gpt-4-0125-preview
-summary: HTML zu parsen bedeutet, HTML-Code zu durchforsten, um Informationen zu finden,
-  zu extrahieren oder zu manipulieren.
+summary: Um zu beginnen, installieren Sie eine Bibliothek wie `node-html-parser`.
 title: HTML parsen
 weight: 43
 ---

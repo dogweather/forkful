@@ -2,12 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:11.318015-07:00
-description: "JSON (JavaScript Object Notation) to lekki format wymiany danych, \u0142\
-  atwy do odczytania i zapisania dla ludzi oraz do analizy i generowania dla maszyn.\u2026"
+description: "Jak to zrobi\u0107: #."
 lastmod: '2024-03-13T22:44:35.817689-06:00'
 model: gpt-4-0125-preview
-summary: "JSON (JavaScript Object Notation) to lekki format wymiany danych, \u0142\
-  atwy do odczytania i zapisania dla ludzi oraz do analizy i generowania dla maszyn."
+summary: '#.'
 title: Praca z JSON
 weight: 38
 ---

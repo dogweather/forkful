@@ -1,11 +1,11 @@
 ---
 date: 2024-01-25 03:39:31.938698-07:00
-description: "TOML is a config file format, easy for humans to read and write, and\
-  \ easy for machines to parse and generate. Programmers work with TOML for clear,\u2026"
+description: "How to: To read and manipulate TOML in Fish, you might use a tool like\
+  \ `yj`, which can convert TOML to JSON. Here\u2019s how."
 lastmod: '2024-03-13T22:45:00.494927-06:00'
 model: gpt-4-1106-preview
-summary: TOML is a config file format, easy for humans to read and write, and easy
-  for machines to parse and generate.
+summary: To read and manipulate TOML in Fish, you might use a tool like `yj`, which
+  can convert TOML to JSON.
 title: Working with TOML
 weight: 39
 ---

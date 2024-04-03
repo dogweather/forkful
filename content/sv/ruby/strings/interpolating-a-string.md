@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:51:50.722105-07:00
-description: "Stringinterpolering l\xE5ter dig s\xE4tta in variabler eller Ruby-kod\
-  \ inne i en str\xE4ng. Det \xE4r ett snabbt och l\xE4sarv\xE4nligt s\xE4tt att bygga\
-  \ dynamiska str\xE4ngar."
+description: "Hur man g\xF6r: Interpolering g\xF6rs med `#{}` inuti en \"dubbelciterad\"\
+  \ str\xE4ng. H\xE4r \xE4r n\xE5gra exempel."
 lastmod: '2024-03-13T22:44:38.414674-06:00'
 model: gpt-4-1106-preview
-summary: "Stringinterpolering l\xE5ter dig s\xE4tta in variabler eller Ruby-kod inne\
-  \ i en str\xE4ng."
+summary: "Interpolering g\xF6rs med `#{}` inuti en \"dubbelciterad\" str\xE4ng."
 title: "Interpolera en str\xE4ng"
 weight: 8
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:07:55.831980-07:00
-description: "\xC9crire un fichier texte dans Google Apps Script permet aux d\xE9\
-  veloppeurs de stocker des donn\xE9es de mani\xE8re persistante, rendant ces donn\xE9\
-  es accessibles\u2026"
+description: "Comment : Cr\xE9er et \xE9crire dans un fichier texte avec Google Apps\
+  \ Script peut \xEAtre accompli gr\xE2ce au service Google DriveApp. Voici un guide\
+  \ \xE9tape par\u2026"
 lastmod: '2024-03-13T22:44:57.208343-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire un fichier texte dans Google Apps Script permet aux d\xE9veloppeurs\
-  \ de stocker des donn\xE9es de mani\xE8re persistante, rendant ces donn\xE9es accessibles\
-  \ pour une utilisation ou une analyse future."
+summary: "Cr\xE9er et \xE9crire dans un fichier texte avec Google Apps Script peut\
+  \ \xEAtre accompli gr\xE2ce au service Google DriveApp."
 title: "R\xE9daction d'un fichier texte"
 weight: 24
 ---

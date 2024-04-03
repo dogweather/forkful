@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 00:49:28.435244-07:00
-description: "Obs\u0142uga b\u0142\u0119d\xF3w w twoich programach wy\u0142awia te\
-  \ nieprzewidziane sytuacje, kt\xF3re pr\xF3buj\u0105 ci\u0119 podstawi\u0107. Robisz\
-  \ to, aby zapobiec \"stopieniu si\u0119\" twojego\u2026"
+description: "Jak to zrobi\u0107: Za\u0142\xF3\u017Cmy, \u017Ce twoje Arduino odczytuje\
+  \ warto\u015Bci z czujnika, kt\xF3ry mo\u017Ce sporadycznie wyprodukowa\u0107 warto\u015B\
+  ci z poza zakresu. Oto jak mo\u017Cesz sobie\u2026"
 lastmod: '2024-03-13T22:44:35.678776-06:00'
 model: gpt-4-1106-preview
-summary: "Obs\u0142uga b\u0142\u0119d\xF3w w twoich programach wy\u0142awia te nieprzewidziane\
-  \ sytuacje, kt\xF3re pr\xF3buj\u0105 ci\u0119 podstawi\u0107."
+summary: "Za\u0142\xF3\u017Cmy, \u017Ce twoje Arduino odczytuje warto\u015Bci z czujnika,\
+  \ kt\xF3ry mo\u017Ce sporadycznie wyprodukowa\u0107 warto\u015Bci z poza zakresu."
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---

@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:20.395864-07:00
-description: "Uuden projektin aloittaminen C-kielell\xE4 sis\xE4lt\xE4\xE4 perustavanlaatuisen\
-  \ koodirakenteen ja ymp\xE4rist\xF6n pystytt\xE4misen, jotta kehitysteht\xE4v\xE4\
-  t voidaan hallita\u2026"
+description: "Kuinka: Mink\xE4 tahansa C-projektin ytimess\xE4 on l\xE4hdekoodi. Tyypillinen\
+  \ aloituspiste sis\xE4lt\xE4\xE4 `main.c` -nimisen p\xE4\xE4fileen luomisen, joka\
+  \ toimii ohjelman\u2026"
 lastmod: '2024-03-13T22:44:57.041120-06:00'
 model: gpt-4-0125-preview
-summary: "Uuden projektin aloittaminen C-kielell\xE4 sis\xE4lt\xE4\xE4 perustavanlaatuisen\
-  \ koodirakenteen ja ymp\xE4rist\xF6n pystytt\xE4misen, jotta kehitysteht\xE4v\xE4\
-  t voidaan hallita tehokkaasti."
+summary: "Mink\xE4 tahansa C-projektin ytimess\xE4 on l\xE4hdekoodi."
 title: Uuden projektin aloittaminen
 weight: 1
 ---

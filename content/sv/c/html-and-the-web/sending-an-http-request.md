@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:32.456112-07:00
-description: "Att skicka en HTTP-f\xF6rfr\xE5gan inneb\xE4r att skapa och skicka en\
-  \ f\xF6rfr\xE5gan till en webbserver f\xF6r att h\xE4mta eller skicka in data. Programmerare\
-  \ g\xF6r detta i C\u2026"
+description: "Hur man g\xF6r: F\xF6r att skicka en HTTP-f\xF6rfr\xE5gan i C kommer\
+  \ du vanligtvis att luta dig mot bibliotek som libcurl, eftersom C inte har inbyggt\
+  \ st\xF6d f\xF6r\u2026"
 lastmod: '2024-03-13T22:44:38.378909-06:00'
 model: gpt-4-0125-preview
-summary: "Att skicka en HTTP-f\xF6rfr\xE5gan inneb\xE4r att skapa och skicka en f\xF6\
-  rfr\xE5gan till en webbserver f\xF6r att h\xE4mta eller skicka in data."
+summary: "F\xF6r att skicka en HTTP-f\xF6rfr\xE5gan i C kommer du vanligtvis att luta\
+  \ dig mot bibliotek som libcurl, eftersom C inte har inbyggt st\xF6d f\xF6r webbprotokoll."
 title: "Att skicka en HTTP-beg\xE4ran"
 weight: 44
 ---

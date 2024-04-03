@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:56.230298-07:00
-description: "Pisanie test\xF3w w programowaniu polega na tworzeniu konkretnych procedur\
-  \ w celu walidacji funkcjonalno\u015Bci i wydajno\u015Bci fragment\xF3w kodu, zapewniaj\u0105\
-  c ich\u2026"
+description: "Jak to zrobi\u0107: Cho\u0107 Visual Basic for Applications (VBA) nie\
+  \ jest wyposa\u017Cony w wbudowany framework do testowania, podobnie do tych dost\u0119\
+  pnych w j\u0119zykach\u2026"
 lastmod: '2024-03-13T22:44:35.235914-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie test\xF3w w programowaniu polega na tworzeniu konkretnych procedur\
-  \ w celu walidacji funkcjonalno\u015Bci i wydajno\u015Bci fragment\xF3w kodu, zapewniaj\u0105\
-  c ich prawid\u0142owe dzia\u0142anie w r\xF3\u017Cnych warunkach."
+summary: "Cho\u0107 Visual Basic for Applications (VBA) nie jest wyposa\u017Cony w\
+  \ wbudowany framework do testowania, podobnie do tych dost\u0119pnych w j\u0119\
+  zykach takich jak Python czy JavaScript, wci\u0105\u017C mo\u017Cesz implementowa\u0107\
+  \ proste procedury testowe do sprawdzania integralno\u015Bci swojego kodu."
 title: "Pisanie test\xF3w"
 weight: 36
 ---

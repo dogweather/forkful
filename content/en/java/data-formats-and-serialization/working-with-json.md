@@ -1,11 +1,10 @@
 ---
 date: 2024-01-25 03:57:30.429534-07:00
-description: "Working with JSON (JavaScript Object Notation) means handling this lightweight\
-  \ data-interchange format inside your Java applications. Programmers go for\u2026"
+description: "How to: Let's roll up our sleeves and get to coding with JSON in Java.\
+  \ First thing, you'll need a JSON processing library like `Jackson` or `Google Gson`.\u2026"
 lastmod: '2024-03-13T22:44:59.990948-06:00'
 model: gpt-4-1106-preview
-summary: Working with JSON (JavaScript Object Notation) means handling this lightweight
-  data-interchange format inside your Java applications.
+summary: Let's roll up our sleeves and get to coding with JSON in Java.
 title: Working with JSON
 weight: 38
 ---

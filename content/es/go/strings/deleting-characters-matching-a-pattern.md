@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:35.124580-07:00
-description: "Eliminar caracteres que coincidan con un patr\xF3n espec\xEDfico se\
-  \ trata de eliminar ciertos caracteres o secuencias de caracteres de cadenas, basado\
-  \ en reglas\u2026"
+description: "C\xF3mo: En Go, eliminar caracteres que coincidan con un patr\xF3n puede\
+  \ lograrse de manera eficiente usando el paquete `regexp`. Aqu\xED, mostraremos\
+  \ c\xF3mo remover\u2026"
 lastmod: '2024-03-13T22:44:58.449241-06:00'
 model: gpt-4-0125-preview
-summary: "Eliminar caracteres que coincidan con un patr\xF3n espec\xEDfico se trata\
-  \ de eliminar ciertos caracteres o secuencias de caracteres de cadenas, basado en\
-  \ reglas definidas por un patr\xF3n (usualmente mediante expresiones regulares)."
+summary: "En Go, eliminar caracteres que coincidan con un patr\xF3n puede lograrse\
+  \ de manera eficiente usando el paquete `regexp`."
 title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---

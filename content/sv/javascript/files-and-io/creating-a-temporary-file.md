@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:40:41.434751-07:00
-description: "Skapa en tempor\xE4r fil \xE4r som att l\xE4gga upp en tempor\xE4r hylla\
-  \ f\xF6r data. Vi g\xF6r det f\xF6r att hantera information som beh\xF6ver existera\
-  \ under en kort period,\u2026"
+description: "How to: JavaScript har inte inbyggt st\xF6d f\xF6r att direkt skapa\
+  \ tempor\xE4ra filer. Men vi kan anv\xE4nda Node.js med `fs`-modulen kombinerat\
+  \ med `tmp`-paketet\u2026"
 lastmod: '2024-03-13T22:44:38.312680-06:00'
 model: gpt-4-1106-preview
-summary: "Skapa en tempor\xE4r fil \xE4r som att l\xE4gga upp en tempor\xE4r hylla\
-  \ f\xF6r data."
+summary: "JavaScript har inte inbyggt st\xF6d f\xF6r att direkt skapa tempor\xE4ra\
+  \ filer."
 title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---

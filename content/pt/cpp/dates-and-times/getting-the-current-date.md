@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:10.543236-07:00
-description: "Recuperar a data atual em C++ \xE9 uma tarefa fundamental para programas\
-  \ que precisam processar ou exibir datas baseadas no rel\xF3gio do sistema. \xC9\
-  \ essencial\u2026"
+description: "Como fazer: C++ oferece v\xE1rias maneiras de obter a data atual, incluindo\
+  \ a biblioteca padr\xE3o do C++ e bibliotecas de terceiros como a Boost. Os exemplos\
+  \ a\u2026"
 lastmod: '2024-03-13T22:44:46.889797-06:00'
 model: gpt-4-0125-preview
-summary: "Recuperar a data atual em C++ \xE9 uma tarefa fundamental para programas\
-  \ que precisam processar ou exibir datas baseadas no rel\xF3gio do sistema."
+summary: "C++ oferece v\xE1rias maneiras de obter a data atual, incluindo a biblioteca\
+  \ padr\xE3o do C++ e bibliotecas de terceiros como a Boost."
 title: Obtendo a data atual
 weight: 29
 ---

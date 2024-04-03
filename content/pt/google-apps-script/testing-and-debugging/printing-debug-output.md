@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:52.924566-07:00
-description: "Imprimir sa\xEDdas de depura\xE7\xE3o envolve colocar estrategicamente\
-  \ declara\xE7\xF5es de registro no seu c\xF3digo para exibir valores de vari\xE1\
-  veis, fluxo de execu\xE7\xE3o ou\u2026"
+description: "Como fazer: O Google Apps Script oferece a classe `Logger` para depura\xE7\
+  \xE3o b\xE1sica, e para necessidades mais avan\xE7adas, a classe `console` introduzida\
+  \ no\u2026"
 lastmod: '2024-03-13T22:44:46.110548-06:00'
 model: gpt-4-0125-preview
-summary: "Imprimir sa\xEDdas de depura\xE7\xE3o envolve colocar estrategicamente declara\xE7\
-  \xF5es de registro no seu c\xF3digo para exibir valores de vari\xE1veis, fluxo de\
-  \ execu\xE7\xE3o ou mensagens de erro durante a execu\xE7\xE3o."
+summary: "O Google Apps Script oferece a classe `Logger` para depura\xE7\xE3o b\xE1\
+  sica, e para necessidades mais avan\xE7adas, a classe `console` introduzida no tempo\
+  \ de execu\xE7\xE3o V8."
 title: "Imprimindo a sa\xEDda de depura\xE7\xE3o"
 weight: 33
 ---

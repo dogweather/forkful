@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:33:04.863825-07:00
-description: "Sammenligning av to datoer handler om \xE5 sjekke hvilken som er tidligst,\
-  \ om de er like, eller om den ene ligger etter den andre. Programmerere trenger\u2026"
+description: "How to: Sammenligning av to datoer i Fish kan gj\xF8res med `date` kommandoen\
+  \ og litt kreativ scripting. Her er et eksempel."
 lastmod: '2024-03-13T22:44:41.239997-06:00'
 model: gpt-4-1106-preview
-summary: "Sammenligning av to datoer handler om \xE5 sjekke hvilken som er tidligst,\
-  \ om de er like, eller om den ene ligger etter den andre."
+summary: "Sammenligning av to datoer i Fish kan gj\xF8res med `date` kommandoen og\
+  \ litt kreativ scripting."
 title: Sammenlikning av to datoer
 weight: 27
 ---

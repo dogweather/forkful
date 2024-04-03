@@ -1,13 +1,10 @@
 ---
 date: 2024-01-26 03:39:40.437962-07:00
-description: "Supprimer les guillemets d'une cha\xEEne signifie \xE9liminer tout marque\
-  \ de citation\u2014simple (' '), double (\" \"), ou les deux\u2014des donn\xE9es\
-  \ textuelles. Les\u2026"
+description: "Comment faire : Retirons ces guillemets ennuyeux de notre texte. Nous\
+  \ utiliserons la m\xE9thode `replace()` pour les corrections rapides et les expressions\u2026"
 lastmod: '2024-03-13T22:44:57.623513-06:00'
 model: gpt-4-0125-preview
-summary: "Supprimer les guillemets d'une cha\xEEne signifie \xE9liminer tout marque\
-  \ de citation\u2014simple (' '), double (\" \"), ou les deux\u2014des donn\xE9es\
-  \ textuelles."
+summary: Retirons ces guillemets ennuyeux de notre texte.
 title: "Retirer les guillemets d'une cha\xEEne"
 weight: 9
 ---

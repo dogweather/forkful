@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 18:02:06.432200-07:00
-description: "HTTP-Requests mit Basisauthentifizierung schicken Daten sicher \xFC\
-  ber das Netz. Entwickler nutzen das, um vertrauliche Daten wie Benutzernamen und\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:54.266020-06:00'
 model: gpt-4-1106-preview
-summary: "HTTP-Requests mit Basisauthentifizierung schicken Daten sicher \xFCber das\
-  \ Netz."
+summary: .
 title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---

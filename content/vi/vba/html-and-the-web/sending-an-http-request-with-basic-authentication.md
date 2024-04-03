@@ -2,16 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:28.600677-07:00
-description: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1\
-  \ b\u1EA3n trong Visual Basic for Applications (VBA) l\xE0 truy c\u1EADp v\xE0o\
-  \ c\xE1c ngu\u1ED3n web \u0111\u01B0\u1EE3c b\u1EA3o v\u1EC7 b\u1EDFi t\xEAn ng\u01B0\
-  \u1EDDi d\xF9ng v\xE0 m\u1EADt\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong VBA, b\u1EA1n c\xF3 th\u1EC3 s\u1EED\
+  \ d\u1EE5ng th\u01B0 vi\u1EC7n `Microsoft XML, v6.0` (MSXML2) \u0111\u1EC3 g\u1EED\
+  i c\xE1c y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3n. \u0110\
+  i\u1EC1u n\xE0y li\xEAn quan \u0111\u1EBFn\u2026"
 lastmod: '2024-03-13T22:44:36.432383-06:00'
 model: gpt-4-0125-preview
-summary: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1\
-  \ b\u1EA3n trong Visual Basic for Applications (VBA) l\xE0 truy c\u1EADp v\xE0o\
-  \ c\xE1c ngu\u1ED3n web \u0111\u01B0\u1EE3c b\u1EA3o v\u1EC7 b\u1EDFi t\xEAn ng\u01B0\
-  \u1EDDi d\xF9ng v\xE0 m\u1EADt kh\u1EA9u."
+summary: "Trong VBA, b\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng th\u01B0 vi\u1EC7n\
+  \ `Microsoft XML, v6.0` (MSXML2) \u0111\u1EC3 g\u1EEDi c\xE1c y\xEAu c\u1EA7u HTTP\
+  \ v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3n."
 title: "G\u1EEDi y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3n"
 weight: 45
 ---

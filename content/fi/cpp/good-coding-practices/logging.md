@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 01:01:40.649673-07:00
-description: "Ohjelmoinnin yhteydess\xE4 lokiin kirjaaminen tarkoittaa tapahtumien,\
-  \ tilojen ja tiedon tallentamista tiedostoon tai muuhun ulostuloalustaan. Ohjelmoijat\u2026"
+description: "Kuinka: Oletetaan, ett\xE4 ty\xF6skentelet Linux-koneella ja haluat\
+  \ dumpata lokitiedostot tiedostoon k\xE4ytt\xE4en hyv\xE4\xE4 vanhaa C++. Haluat\
+  \ sis\xE4llytt\xE4\xE4 `<iostream>`-\u2026"
 lastmod: '2024-03-13T22:44:56.871645-06:00'
 model: gpt-4-1106-preview
-summary: "Ohjelmoinnin yhteydess\xE4 lokiin kirjaaminen tarkoittaa tapahtumien, tilojen\
-  \ ja tiedon tallentamista tiedostoon tai muuhun ulostuloalustaan."
+summary: "Oletetaan, ett\xE4 ty\xF6skentelet Linux-koneella ja haluat dumpata lokitiedostot\
+  \ tiedostoon k\xE4ytt\xE4en hyv\xE4\xE4 vanhaa C++."
 title: Lokitus
 weight: 17
 ---

@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:15.805125-07:00
-description: "Een tijdelijk bestand aanmaken in Bash betekent het maken van een bestand\
-  \ dat jouw scripts kunnen gebruiken om gegevens kortstondig op te slaan.\u2026"
+description: 'Hoe: Bash heeft een ingebouwd commando genaamd `mktemp` om gemakkelijk
+  tijdelijke bestanden te maken.'
 lastmod: '2024-03-13T22:44:51.003113-06:00'
 model: gpt-4-0125-preview
-summary: Een tijdelijk bestand aanmaken in Bash betekent het maken van een bestand
-  dat jouw scripts kunnen gebruiken om gegevens kortstondig op te slaan.
+summary: Bash heeft een ingebouwd commando genaamd `mktemp` om gemakkelijk tijdelijke
+  bestanden te maken.
 title: Een tijdelijk bestand aanmaken
 weight: 21
 ---

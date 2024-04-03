@@ -2,16 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:18.674562-07:00
-description: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong Swift c\xF3\
-  \ ngh\u0129a l\xE0 l\u1EA5y n\u1ED9i dung t\u1EEB m\u1ED9t t\u1EC7p l\u01B0u tr\u1EEF\
-  \ tr\xEAn \u0111\u0129a. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u\
-  \ n\xE0y \u0111\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi d\u1EEF li\u1EC7u \u0111\xE3 l\u01B0\
-  u nh\u01B0\u2026"
+description: "C\xE1ch th\u1EE9c: \u0110\u1EC3 \u0111\u1ECDc v\u0103n b\u1EA3n t\u1EEB\
+  \ m\u1ED9t t\u1EC7p trong Swift, s\u1EED d\u1EE5ng c\xE1c ph\u01B0\u01A1ng th\u1EE9\
+  c ti\u1EC7n \xEDch c\u1EE7a l\u1EDBp `String`. D\u01B0\u1EDBi \u0111\xE2y l\xE0\
+  \ m\u1ED9t v\xED d\u1EE5 nh\u1ECF."
 lastmod: '2024-03-13T22:44:37.120598-06:00'
 model: gpt-4-0125-preview
-summary: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong Swift c\xF3 ngh\u0129\
-  a l\xE0 l\u1EA5y n\u1ED9i dung t\u1EEB m\u1ED9t t\u1EC7p l\u01B0u tr\u1EEF tr\xEA\
-  n \u0111\u0129a."
+summary: "\u0110\u1EC3 \u0111\u1ECDc v\u0103n b\u1EA3n t\u1EEB m\u1ED9t t\u1EC7p trong\
+  \ Swift, s\u1EED d\u1EE5ng c\xE1c ph\u01B0\u01A1ng th\u1EE9c ti\u1EC7n \xEDch c\u1EE7\
+  a l\u1EDBp `String`."
 title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 22
 ---

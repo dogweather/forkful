@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:53.780222-07:00
-description: "YAML, som st\xE5r for YAML Ain't Markup Language, er et menneskelesbart\
-  \ data serialiseringsformat. Programmerere bruker det ofte for konfigurasjonsfiler,\u2026"
+description: "Hvordan: C# har ikke innebygd st\xF8tte for YAML, men du kan enkelt\
+  \ arbeide med YAML ved \xE5 bruke tredjepartsbiblioteker som *YamlDotNet*. F\xF8\
+  rst m\xE5 du\u2026"
 lastmod: '2024-03-13T22:44:40.818365-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, som st\xE5r for YAML Ain't Markup Language, er et menneskelesbart\
-  \ data serialiseringsformat."
+summary: "C# har ikke innebygd st\xF8tte for YAML, men du kan enkelt arbeide med YAML\
+  \ ved \xE5 bruke tredjepartsbiblioteker som *YamlDotNet*."
 title: Arbeider med YAML
 weight: 41
 ---

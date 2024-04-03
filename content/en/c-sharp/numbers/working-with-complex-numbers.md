@@ -1,11 +1,11 @@
 ---
 date: 2024-01-25 03:00:29.786885-07:00
-description: "Complex numbers expand our number system to include imaginary numbers,\
-  \ allowing us to solve equations that don't have real solutions. Programmers work\u2026"
+description: 'How to: C# has a built in `System.Numerics.Complex` structure for processing
+  complex numbers. Here''s a quick run-through.'
 lastmod: '2024-03-13T22:45:00.082712-06:00'
 model: gpt-4-1106-preview
-summary: Complex numbers expand our number system to include imaginary numbers, allowing
-  us to solve equations that don't have real solutions.
+summary: C# has a built in `System.Numerics.Complex` structure for processing complex
+  numbers.
 title: Working with complex numbers
 weight: 14
 ---

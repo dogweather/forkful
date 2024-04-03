@@ -2,12 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:27.601486-07:00
-description: "Leer un archivo de texto en Dart implica acceder y recuperar datos de\
-  \ archivos almacenados en el sistema de archivos. Los programadores hacen esto para\u2026"
+description: "C\xF3mo hacerlo: La biblioteca central de Dart, `dart:io`, proporciona\
+  \ las funcionalidades necesarias para leer archivos de texto de manera sincr\xF3\
+  nica o\u2026"
 lastmod: '2024-03-13T22:44:58.773116-06:00'
 model: gpt-4-0125-preview
-summary: Leer un archivo de texto en Dart implica acceder y recuperar datos de archivos
-  almacenados en el sistema de archivos.
+summary: "La biblioteca central de Dart, `dart:io`, proporciona las funcionalidades\
+  \ necesarias para leer archivos de texto de manera sincr\xF3nica o asincr\xF3nica."
 title: Leyendo un archivo de texto
 weight: 22
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:47.522797-07:00
-description: "Eine interaktive Shell oder Read-Eval-Print Loop (REPL) ist eine einfache,\
-  \ interaktive Programmierumgebung, die einzelne Benutzereingaben (Ausdr\xFCcke)\u2026"
+description: "Wie: Google Apps Script, eine cloud-basierte Skriptsprache zum Automatisieren\
+  \ von Aufgaben \xFCber Google-Produkte hinweg, verf\xFCgt \xFCber kein eingebautes\u2026"
 lastmod: '2024-03-13T22:44:53.335794-06:00'
 model: gpt-4-0125-preview
-summary: "Eine interaktive Shell oder Read-Eval-Print Loop (REPL) ist eine einfache,\
-  \ interaktive Programmierumgebung, die einzelne Benutzereingaben (Ausdr\xFCcke)\
-  \ entgegennimmt, diese auswertet und das Ergebnis an den Benutzer zur\xFCckgibt."
+summary: "Google Apps Script, eine cloud-basierte Skriptsprache zum Automatisieren\
+  \ von Aufgaben \xFCber Google-Produkte hinweg, verf\xFCgt \xFCber kein eingebautes\
+  \ REPL-Tool \xE4hnlich denen in Sprachen wie Python oder JavaScripts Node.js."
 title: Verwendung einer interaktiven Shell (REPL)
 weight: 34
 ---

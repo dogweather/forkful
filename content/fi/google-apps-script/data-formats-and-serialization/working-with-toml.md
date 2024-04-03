@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:32.885558-07:00
-description: "TOML, joka tarkoittaa Tom's Obvious, Minimal Language, on asetustiedostomuoto,\
-  \ joka on helppo lukea sen selke\xE4n semantiikan ansiosta. Ohjelmoijat\u2026"
+description: "Kuinka: Koska Google Apps Script on k\xE4yt\xE4nn\xF6ss\xE4 JavaScriptill\xE4\
+  \ toteutettu yhteys Googlen sovelluskokonaisuuteen, on TOML:n suora k\xE4ytt\xF6\
+  \ Google Apps\u2026"
 lastmod: '2024-03-13T22:44:56.123828-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, joka tarkoittaa Tom's Obvious, Minimal Language, on asetustiedostomuoto,\
-  \ joka on helppo lukea sen selke\xE4n semantiikan ansiosta."
+summary: "Koska Google Apps Script on k\xE4yt\xE4nn\xF6ss\xE4 JavaScriptill\xE4 toteutettu\
+  \ yhteys Googlen sovelluskokonaisuuteen, on TOML:n suora k\xE4ytt\xF6 Google Apps\
+  \ Scriptiss\xE4 hieman oveluutta vaativaa."
 title: "TOML:n kanssa ty\xF6skentely"
 weight: 39
 ---

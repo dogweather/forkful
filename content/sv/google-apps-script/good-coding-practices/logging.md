@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:17.982887-07:00
-description: "Loggning i programmering inneb\xE4r att man registrerar h\xE4ndelser,\
-  \ fel eller anm\xE4rkningsv\xE4rda f\xF6reteelser under k\xF6rning. Programmerare\
-  \ g\xF6r detta f\xF6r att\u2026"
+description: "Hur man g\xF6r: I Google Apps Script kan loggning utf\xF6ras med olika\
+  \ metoder, s\xE5som `Logger`-klassen och `console.log()`. Logger-klassen \xE4r det\
+  \ traditionella\u2026"
 lastmod: '2024-03-13T22:44:37.445878-06:00'
 model: gpt-4-0125-preview
-summary: "Loggning i programmering inneb\xE4r att man registrerar h\xE4ndelser, fel\
-  \ eller anm\xE4rkningsv\xE4rda f\xF6reteelser under k\xF6rning."
+summary: "I Google Apps Script kan loggning utf\xF6ras med olika metoder, s\xE5som\
+  \ `Logger`-klassen och `console.log()`."
 title: Loggning
 weight: 17
 ---

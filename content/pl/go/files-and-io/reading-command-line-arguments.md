@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:31.194111-07:00
-description: "Odczytywanie argument\xF3w wiersza polece\u0144 w Go polega na ekstrakcji\
-  \ argument\xF3w dostarczonych do programu podczas jego wywo\u0142ania z terminala\
-  \ lub wiersza\u2026"
+description: "Jak to zrobi\u0107: Go zapewnia bezpo\u015Bredni dost\u0119p do argument\xF3\
+  w wiersza polece\u0144 poprzez pakiet `os`, a konkretnie za pomoc\u0105 `os.Args`,\
+  \ tablicy ci\u0105g\xF3w znak\xF3w.\u2026"
 lastmod: '2024-03-13T22:44:34.869659-06:00'
 model: gpt-4-0125-preview
-summary: "Odczytywanie argument\xF3w wiersza polece\u0144 w Go polega na ekstrakcji\
-  \ argument\xF3w dostarczonych do programu podczas jego wywo\u0142ania z terminala\
-  \ lub wiersza polece\u0144."
+summary: "Go zapewnia bezpo\u015Bredni dost\u0119p do argument\xF3w wiersza polece\u0144\
+  \ poprzez pakiet `os`, a konkretnie za pomoc\u0105 `os.Args`, tablicy ci\u0105g\xF3\
+  w znak\xF3w."
 title: "Czytanie argument\xF3w z linii polece\u0144"
 weight: 23
 ---

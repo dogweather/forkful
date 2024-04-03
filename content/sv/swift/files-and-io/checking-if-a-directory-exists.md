@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:50.404768-07:00
-description: "Att kontrollera om en katalog finns i filsystemet \xE4r avg\xF6rande\
-  \ f\xF6r att hantera filstrukturer fr\xE5n dina Swift-applikationer. Denna uppgift\
-  \ m\xF6jligg\xF6r f\xF6r\u2026"
+description: "Hur: Swifts Foundation-ramverk tillhandah\xE5ller `FileManager`-klassen,\
+  \ som har metoder f\xF6r att hantera filsystemet. Du kan anv\xE4nda `FileManager`\
+  \ f\xF6r att\u2026"
 lastmod: '2024-03-13T22:44:38.265216-06:00'
 model: gpt-4-0125-preview
-summary: "Att kontrollera om en katalog finns i filsystemet \xE4r avg\xF6rande f\xF6\
-  r att hantera filstrukturer fr\xE5n dina Swift-applikationer."
+summary: "Swifts Foundation-ramverk tillhandah\xE5ller `FileManager`-klassen, som\
+  \ har metoder f\xF6r att hantera filsystemet."
 title: Kontrollera om en katalog existerar
 weight: 20
 ---

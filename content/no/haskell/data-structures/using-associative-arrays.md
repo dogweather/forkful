@@ -3,12 +3,14 @@ changelog:
 - 2024-01-30, dogweather, reviewed
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:38.135493-07:00
-description: "Assosiative tabeller, eller ordb\xF8ker, i Haskell handler om \xE5 kartlegge\
-  \ n\xF8kler til verdier for rask oppslag og effektiv datah\xE5ndtering. Programmerere\u2026"
+description: "Hvordan: Haskell har ikke assosiative tabeller rett ut av boksen p\xE5\
+  \ samme m\xE5te som noen andre spr\xE5k, men det tilbyr et kraftfullt standardbibliotek\
+  \ kalt\u2026"
 lastmod: '2024-03-13T22:44:40.834141-06:00'
 model: gpt-4-0125-preview
-summary: "Assosiative tabeller, eller ordb\xF8ker, i Haskell handler om \xE5 kartlegge\
-  \ n\xF8kler til verdier for rask oppslag og effektiv datah\xE5ndtering."
+summary: "Haskell har ikke assosiative tabeller rett ut av boksen p\xE5 samme m\xE5\
+  te som noen andre spr\xE5k, men det tilbyr et kraftfullt standardbibliotek kalt\
+  \ `Data.Map` for \xE5 arbeide med n\xF8kkel-verdi-par."
 title: Bruke associative tabeller
 weight: 15
 ---

@@ -1,11 +1,9 @@
 ---
 date: 2024-01-25 02:59:55.559713-07:00
-description: "Rounding numbers means adjusting them to be closer to a simpler or more\
-  \ significant value. Programmers round off numbers to simplify results, limit\u2026"
+description: 'How to: Here''s the lowdown on rounding numbers in Python.'
 lastmod: '2024-03-13T22:44:59.703689-06:00'
 model: gpt-4-1106-preview
-summary: Rounding numbers means adjusting them to be closer to a simpler or more significant
-  value.
+summary: Here's the lowdown on rounding numbers in Python.
 title: Rounding numbers
 weight: 13
 ---

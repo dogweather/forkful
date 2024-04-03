@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:33:43.771227-07:00
-description: "Vertaamme kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 selvitt\xE4\xE4ksemme\
-  \ niiden j\xE4rjestyksen tai aikaeron. T\xE4m\xE4 on t\xE4rke\xE4\xE4 aikataulutuksessa,\
-  \ m\xE4\xE4r\xE4aikojen seurannassa ja\u2026"
+description: 'How to: - Kuinka: .'
 lastmod: '2024-03-13T22:44:56.709330-06:00'
 model: gpt-4-1106-preview
-summary: "Vertaamme kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 selvitt\xE4\xE4ksemme niiden\
-  \ j\xE4rjestyksen tai aikaeron."
+summary: .
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---

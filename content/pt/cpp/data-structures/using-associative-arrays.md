@@ -2,13 +2,13 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:14.117278-07:00
-description: "Arrays associativos, conhecidos como `std::map` ou `std::unordered_map`\
-  \ em C++, preenchem a lacuna entre \xEDndices de arrays e dados do mundo real,\u2026"
+description: "Como fazer: Em C++, os arrays associativos ganham vida com os cabe\xE7\
+  alhos `<map>` e `<unordered_map>`. Vamos detalhar exemplos para ver ambos em a\xE7\
+  \xE3o. #."
 lastmod: '2024-03-13T22:44:46.872755-06:00'
 model: gpt-4-0125-preview
-summary: "Arrays associativos, conhecidos como `std::map` ou `std::unordered_map`\
-  \ em C++, preenchem a lacuna entre \xEDndices de arrays e dados do mundo real, permitindo\
-  \ que voc\xEA use chaves significativas."
+summary: "Em C++, os arrays associativos ganham vida com os cabe\xE7alhos `<map>`\
+  \ e `<unordered_map>`."
 title: Usando arrays associativos
 weight: 15
 ---

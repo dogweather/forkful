@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:45:47.415614-07:00
-description: "Il refactoring \xE8 l'arte di modificare il codice esistente per migliorarne\
-  \ la struttura, la leggibilit\xE0 e l'efficienza senza alterarne il comportamento\u2026"
+description: "Come fare: Prendiamo una semplice funzione Lua e rifattorizziamola.\
+  \ Cominciamo con una funzione che calcola la somma dei numeri in una lista, ma \xE8\
+  \ scritta\u2026"
 lastmod: '2024-03-13T22:44:43.565756-06:00'
 model: gpt-4-0125-preview
-summary: "Il refactoring \xE8 l'arte di modificare il codice esistente per migliorarne\
-  \ la struttura, la leggibilit\xE0 e l'efficienza senza alterarne il comportamento\
-  \ esterno."
+summary: Prendiamo una semplice funzione Lua e rifattorizziamola.
 title: Rifattorizzazione
 weight: 19
 ---

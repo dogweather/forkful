@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:43.758598-07:00
-description: "In th\xF4ng \u0111i\u1EC7p g\u1EE1 l\u1ED7i gi\u1ED1ng nh\u01B0 vi\u1EC7\
-  c tr\xF2 chuy\u1EC7n v\u1EDBi m\xE3 l\u1EC7nh c\u1EE7a b\u1EA1n; b\u1EA1n r\u1EAF\
-  c v\xE0o c\xE1c c\xE2u l\u1EC7nh in \u0111\u1EC3 ki\u1EC3m tra s\u1EE9c kh\u1ECF\
-  e v\xE0 t\u01B0 duy c\u1EE7a n\xF3. L\u1EADp tr\xECnh vi\xEAn l\xE0m\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t \u0111\
+  o\u1EA1n m\xE3 cho th\u1EA5y c\xE1ch in m\u1ED9t th\xF4ng \u0111i\u1EC7p g\u1EE1\
+  \ l\u1ED7i \u0111\u01A1n gi\u1EA3n ra b\u1EA3ng \u0111i\u1EC1u khi\u1EC3n."
 lastmod: '2024-03-13T22:44:37.045984-06:00'
 model: gpt-4-0125-preview
-summary: "In th\xF4ng \u0111i\u1EC7p g\u1EE1 l\u1ED7i gi\u1ED1ng nh\u01B0 vi\u1EC7\
-  c tr\xF2 chuy\u1EC7n v\u1EDBi m\xE3 l\u1EC7nh c\u1EE7a b\u1EA1n; b\u1EA1n r\u1EAF\
-  c v\xE0o c\xE1c c\xE2u l\u1EC7nh in \u0111\u1EC3 ki\u1EC3m tra s\u1EE9c kh\u1ECF\
-  e v\xE0 t\u01B0 duy c\u1EE7a n\xF3."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t \u0111o\u1EA1n m\xE3 cho th\u1EA5\
+  y c\xE1ch in m\u1ED9t th\xF4ng \u0111i\u1EC7p g\u1EE1 l\u1ED7i \u0111\u01A1n gi\u1EA3\
+  n ra b\u1EA3ng \u0111i\u1EC1u khi\u1EC3n."
 title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 weight: 33
 ---

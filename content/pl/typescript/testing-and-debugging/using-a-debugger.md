@@ -1,13 +1,13 @@
 ---
 date: 2024-01-26 04:11:28.219967-07:00
-description: "Aby zacz\u0105\u0107 prac\u0119 z debuggerem w TypeScript, wszystko,\
-  \ czego potrzebujesz to obs\u0142ugiwane IDE (takie jak Visual Studio Code) i konfiguracja\
-  \ `launch.json`.\u2026"
+description: "Jak korzysta\u0107: Aby zacz\u0105\u0107 prac\u0119 z debuggerem w TypeScript,\
+  \ wszystko, czego potrzebujesz to obs\u0142ugiwane IDE (takie jak Visual Studio\
+  \ Code) i konfiguracja\u2026"
 lastmod: '2024-03-13T22:44:35.143625-06:00'
 model: gpt-4-0125-preview
 summary: "Aby zacz\u0105\u0107 prac\u0119 z debuggerem w TypeScript, wszystko, czego\
   \ potrzebujesz to obs\u0142ugiwane IDE (takie jak Visual Studio Code) i konfiguracja\
-  \ `launch."
+  \ `launch.json`."
 title: Korzystanie z debugera
 weight: 35
 ---

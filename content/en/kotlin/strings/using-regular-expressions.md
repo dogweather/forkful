@@ -1,12 +1,9 @@
 ---
 date: 2024-02-03 19:03:08.406169-07:00
-description: "Regular expressions (regex) are a powerful tool for text processing,\
-  \ allowing programmers to search, match, and manipulate strings with advanced pattern-\u2026"
+description: 'How to: #.'
 lastmod: '2024-03-13T22:45:00.039553-06:00'
 model: gpt-4-0125-preview
-summary: Regular expressions (regex) are a powerful tool for text processing, allowing
-  programmers to search, match, and manipulate strings with advanced pattern-matching
-  techniques.
+summary: '#.'
 title: Using regular expressions
 weight: 11
 ---

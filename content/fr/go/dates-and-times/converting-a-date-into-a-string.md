@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:19.228175-07:00
-description: "Convertir une date en cha\xEEne de caract\xE8res en Go implique de transformer\
-  \ un objet `time.Time` en un format de cha\xEEne lisible. Les programmeurs effectuent\u2026"
+description: "Comment faire : En Go, le package `time` offre des fonctionnalit\xE9\
+  s pour travailler avec les dates et les heures, y compris la mise en forme d\u2019\
+  un objet\u2026"
 lastmod: '2024-03-13T22:44:57.146827-06:00'
 model: gpt-4-0125-preview
-summary: "Convertir une date en cha\xEEne de caract\xE8res en Go implique de transformer\
-  \ un objet `time."
+summary: "En Go, le package `time` offre des fonctionnalit\xE9s pour travailler avec\
+  \ les dates et les heures, y compris la mise en forme d\u2019un objet `time.Time`\
+  \ en cha\xEEne de caract\xE8res."
 title: "Convertir une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---

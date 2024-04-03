@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:55.617845-07:00
-description: "Refactoring in der Programmierung beinhaltet die Umstrukturierung bestehenden\
-  \ Computer-Codes - das \xC4ndern der Faktorisierung - ohne dessen externes\u2026"
+description: "Wie: In Go kann das Refactoring von einfachen Code-Anpassungen bis hin\
+  \ zu komplexeren \xC4nderungen reichen. Beginnen wir mit einem grundlegenden Beispiel:\u2026"
 lastmod: '2024-03-13T22:44:53.297220-06:00'
 model: gpt-4-0125-preview
-summary: "Refactoring in der Programmierung beinhaltet die Umstrukturierung bestehenden\
-  \ Computer-Codes - das \xC4ndern der Faktorisierung - ohne dessen externes Verhalten\
-  \ zu ver\xE4ndern."
+summary: "In Go kann das Refactoring von einfachen Code-Anpassungen bis hin zu komplexeren\
+  \ \xC4nderungen reichen."
 title: Refaktorisierung
 weight: 19
 ---

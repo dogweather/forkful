@@ -1,12 +1,9 @@
 ---
 date: 2024-02-03 19:03:21.820214-07:00
-description: "Writing a text file in Java is about using the language's capabilities\
-  \ to create and write content into files on the filesystem. Programmers do this\
-  \ for\u2026"
+description: 'How to: #.'
 lastmod: '2024-03-13T22:44:59.988377-06:00'
 model: gpt-4-0125-preview
-summary: Writing a text file in Java is about using the language's capabilities to
-  create and write content into files on the filesystem.
+summary: '#.'
 title: Writing a text file
 weight: 24
 ---

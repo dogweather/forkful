@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:42.851699-07:00
-description: "L\xE0m vi\u1EC7c v\u1EDBi JSON trong Swift ngh\u0129a l\xE0 \u0111\u1ED1\
-  i ph\xF3 v\u1EDBi m\u1ED9t \u0111\u1ECBnh d\u1EA1ng d\u1EEF li\u1EC7u g\u1ECDn nh\u1EB9\
-  \ d\xE0nh cho trao \u0111\u1ED5i d\u1EEF li\u1EC7u. L\u1EADp tr\xECnh vi\xEAn s\u1EED\
-  \ d\u1EE5ng JSON \u0111\u1EC3 truy\u1EC1n d\u1EEF li\u1EC7u\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Swift l\xE0m cho vi\u1EC7c ph\xE2n t\xEDch JSON\
+  \ tr\u1EDF n\xEAn d\u1EC5 d\xE0ng v\u1EDBi giao th\u1EE9c `Codable`. D\u01B0\u1EDB\
+  i \u0111\xE2y l\xE0 c\xE1ch b\u1EA1n gi\u1EA3i m\xE3 JSON th\xE0nh m\u1ED9t \u0111\
+  \u1ED1i t\u01B0\u1EE3ng Swift."
 lastmod: '2024-03-13T22:44:37.125953-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m vi\u1EC7c v\u1EDBi JSON trong Swift ngh\u0129a l\xE0 \u0111\u1ED1\
-  i ph\xF3 v\u1EDBi m\u1ED9t \u0111\u1ECBnh d\u1EA1ng d\u1EEF li\u1EC7u g\u1ECDn nh\u1EB9\
-  \ d\xE0nh cho trao \u0111\u1ED5i d\u1EEF li\u1EC7u."
+summary: "Swift l\xE0m cho vi\u1EC7c ph\xE2n t\xEDch JSON tr\u1EDF n\xEAn d\u1EC5\
+  \ d\xE0ng v\u1EDBi giao th\u1EE9c `Codable`."
 title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
 weight: 38
 ---

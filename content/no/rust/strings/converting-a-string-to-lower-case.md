@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:39:08.912979-07:00
-description: "\xC5 konvertere en streng til sm\xE5 bokstaver betyr \xE5 endre alle\
-  \ bokstavene til sine minuskul\xE6re motstykker. Programmere gj\xF8r dette for \xE5\
-  \ f\xE5 konsistente data,\u2026"
+description: "Slik gj\xF8r du: Hvis du har en streng, og du vil gj\xF8re hele greia\
+  \ sm\xE5tt, er det s\xE5nn du gj\xF8r det i Rust."
 lastmod: '2024-03-13T22:44:40.560941-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 konvertere en streng til sm\xE5 bokstaver betyr \xE5 endre alle bokstavene\
-  \ til sine minuskul\xE6re motstykker."
+summary: "Hvis du har en streng, og du vil gj\xF8re hele greia sm\xE5tt, er det s\xE5\
+  nn du gj\xF8r det i Rust."
 title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---

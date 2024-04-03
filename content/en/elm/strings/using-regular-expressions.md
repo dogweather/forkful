@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:02:47.206438-07:00
-description: "Regular expressions (regex) in programming are patterns used for matching\
-  \ character combinations in strings. In Elm, just like in other languages,\u2026"
+description: "How to: Elm does not have built-in regex functions in its core library,\
+  \ requiring the use of third-party libraries for these operations. One of the\u2026"
 lastmod: '2024-03-13T22:45:00.000408-06:00'
 model: gpt-4-0125-preview
-summary: Regular expressions (regex) in programming are patterns used for matching
-  character combinations in strings.
+summary: Elm does not have built-in regex functions in its core library, requiring
+  the use of third-party libraries for these operations.
 title: Using regular expressions
 weight: 11
 ---

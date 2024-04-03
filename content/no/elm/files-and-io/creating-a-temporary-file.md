@@ -1,12 +1,13 @@
 ---
 date: 2024-01-20 17:40:41.265431-07:00
-description: "\xC5 lage en midlertidig fil er \xE5 skape en fil som er ment for kortvarig\
-  \ bruk. Programmerere gj\xF8r dette for \xE5 h\xE5ndtere data som ikke trenger \xE5\
-  \ v\xE6re varig\u2026"
+description: "How to: Elm kj\xF8rer i nettleseren og har ikke direkte tilgang til\
+  \ filsystemet, s\xE5 eksemplene vi vanligvis snakker om for \xE5 lage midlertidige\
+  \ filer er ikke\u2026"
 lastmod: '2024-03-13T22:44:40.727724-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 lage en midlertidig fil er \xE5 skape en fil som er ment for kortvarig\
-  \ bruk."
+summary: "Elm kj\xF8rer i nettleseren og har ikke direkte tilgang til filsystemet,\
+  \ s\xE5 eksemplene vi vanligvis snakker om for \xE5 lage midlertidige filer er ikke\
+  \ relevant."
 title: Opprette en midlertidig fil
 weight: 21
 ---

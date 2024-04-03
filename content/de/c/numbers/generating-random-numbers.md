@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:01.406776-07:00
-description: "Die Generierung von Zufallszahlen in C umfasst das Erstellen von Werten,\
-  \ die unvorhersehbar sind und einer spezifischen Verteilung folgen, wie zum\u2026"
+description: "Wie: In C k\xF6nnen Zufallszahlen mit der Funktion `rand()` generiert\
+  \ werden, die Teil der C-Standardbibliothek `<stdlib.h>` ist. Standardm\xE4\xDF\
+  ig erzeugt\u2026"
 lastmod: '2024-03-13T22:44:54.347736-06:00'
 model: gpt-4-0125-preview
-summary: "Die Generierung von Zufallszahlen in C umfasst das Erstellen von Werten,\
-  \ die unvorhersehbar sind und einer spezifischen Verteilung folgen, wie zum Beispiel\
-  \ gleichm\xE4\xDFig oder normal."
+summary: "In C k\xF6nnen Zufallszahlen mit der Funktion `rand()` generiert werden,\
+  \ die Teil der C-Standardbibliothek `<stdlib.h>` ist."
 title: Zufallszahlen generieren
 weight: 12
 ---

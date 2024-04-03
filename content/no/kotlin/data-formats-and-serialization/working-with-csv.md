@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:32.093244-07:00
-description: "Arbeid med CSV (kommaseparerte verdier) inneb\xE6rer lesing fra og skriving\
-  \ til CSV-filer, et vanlig format for lagring av tabul\xE6re data i ren tekst.\u2026"
+description: "Hvordan: Kotlin, som er et statisk typet programmeringsspr\xE5k som\
+  \ kj\xF8rer p\xE5 JVM, inkluderer ikke et innebygd bibliotek for h\xE5ndtering av\
+  \ CSV-filer. Du kan\u2026"
 lastmod: '2024-03-13T22:44:40.774759-06:00'
 model: gpt-4-0125-preview
-summary: "Arbeid med CSV (kommaseparerte verdier) inneb\xE6rer lesing fra og skriving\
-  \ til CSV-filer, et vanlig format for lagring av tabul\xE6re data i ren tekst."
+summary: "Kotlin, som er et statisk typet programmeringsspr\xE5k som kj\xF8rer p\xE5\
+  \ JVM, inkluderer ikke et innebygd bibliotek for h\xE5ndtering av CSV-filer."
 title: Arbeide med CSV
 weight: 37
 ---

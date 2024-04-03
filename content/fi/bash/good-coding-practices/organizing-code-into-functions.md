@@ -1,13 +1,9 @@
 ---
 date: 2024-01-26 01:09:12.560901-07:00
-description: "Koodin jakaminen funktioihin tarkoittaa skriptien pilkkomista pienempiin,\
-  \ uudelleenk\xE4ytett\xE4viin lohkoihin, jotka suorittavat tiettyj\xE4 teht\xE4\
-  vi\xE4. Se tekee\u2026"
+description: 'Miten: Luo yksinkertainen funktio Bashissa.'
 lastmod: '2024-03-13T22:44:56.744729-06:00'
 model: gpt-4-1106-preview
-summary: "Koodin jakaminen funktioihin tarkoittaa skriptien pilkkomista pienempiin,\
-  \ uudelleenk\xE4ytett\xE4viin lohkoihin, jotka suorittavat tiettyj\xE4 teht\xE4\
-  vi\xE4."
+summary: Luo yksinkertainen funktio Bashissa.
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---

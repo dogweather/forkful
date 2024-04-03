@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:57:28.251859-07:00
-description: "Chercher et remplacer du texte, c'est modifier des bouts de cha\xEE\
-  nes par d'autres. Les d\xE9veloppeurs l'utilisent pour corriger des donn\xE9es,\
-  \ formatter ou\u2026"
+description: 'How to: (Comment faire:) Voici quelques exemples pour fouiller et substituer
+  des textes en C# .'
 lastmod: '2024-03-13T22:44:57.770928-06:00'
 model: gpt-4-1106-preview
-summary: "Chercher et remplacer du texte, c'est modifier des bouts de cha\xEEnes par\
-  \ d'autres."
+summary: Voici quelques exemples pour fouiller et substituer des textes en C#.
 title: Recherche et remplacement de texte
 weight: 10
 ---

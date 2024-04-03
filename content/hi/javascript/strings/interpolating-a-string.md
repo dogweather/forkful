@@ -1,16 +1,15 @@
 ---
 date: 2024-01-20 17:51:44.974787-07:00
-description: "String interpolation \u090F\u0915 method \u0939\u0948 \u091C\u093F\u0938\
-  \u0938\u0947 \u0939\u092E variables \u0914\u0930 expressions \u0915\u094B strings\
-  \ \u092E\u0947\u0902 directly \u0907\u0928\u094D\u0938\u0930\u094D\u091F \u0915\u0930\
-  \ \u0938\u0915\u0924\u0947 \u0939\u0948\u0902. \u092F\u0947 programmers \u0915\u094B\
-  \ repetitive string\u2026"
+description: "How to (\u0915\u0948\u0938\u0947 \u0915\u0930\u0947\u0902): String interpolation\
+  \ \u0915\u0930\u0928\u0947 \u0915\u0947 \u0932\u093F\u090F, JavaScript \u092E\u0947\
+  \u0902 template literals \u0915\u093E use \u0915\u0930\u0947\u0902. \u092F\u0947\
+  \ backticks (`` ` ``) \u0915\u0947 \u0938\u093E\u0925 \u0932\u093F\u0916\u0947 \u091C\
+  \u093E\u0924\u0947 \u0939\u0948\u0902 \u0914\u0930 `${}`\u2026"
 lastmod: '2024-03-13T22:44:52.966561-06:00'
 model: gpt-4-1106-preview
-summary: "String interpolation \u090F\u0915 method \u0939\u0948 \u091C\u093F\u0938\
-  \u0938\u0947 \u0939\u092E variables \u0914\u0930 expressions \u0915\u094B strings\
-  \ \u092E\u0947\u0902 directly \u0907\u0928\u094D\u0938\u0930\u094D\u091F \u0915\u0930\
-  \ \u0938\u0915\u0924\u0947 \u0939\u0948\u0902."
+summary: "String interpolation \u0915\u0930\u0928\u0947 \u0915\u0947 \u0932\u093F\u090F\
+  , JavaScript \u092E\u0947\u0902 template literals \u0915\u093E use \u0915\u0930\u0947\
+  \u0902."
 title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0907\u0902\u091F\u0930\u092A\
   \u094B\u0932\u0947\u0936\u0928"
 weight: 8

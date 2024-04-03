@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:55.217255-07:00
-description: "Zapisywanie do pliku tekstowego w Fish Shell umo\u017Cliwia trwa\u0142\
-  e przechowywanie danych, co u\u0142atwia ich p\xF3\u017Aniejsze pobieranie lub manipulowanie,\
-  \ zar\xF3wno przez\u2026"
+description: "Jak to zrobi\u0107: Aby zapisa\u0107 do pliku tekstowego w Fish, mo\u017C\
+  na u\u017Cy\u0107 polecenia `echo` po\u0142\u0105czonego z operatorami przekierowania.\
+  \ Nie ma popularnych bibliotek\u2026"
 lastmod: '2024-03-13T22:44:35.860156-06:00'
 model: gpt-4-0125-preview
-summary: "Zapisywanie do pliku tekstowego w Fish Shell umo\u017Cliwia trwa\u0142e\
-  \ przechowywanie danych, co u\u0142atwia ich p\xF3\u017Aniejsze pobieranie lub manipulowanie,\
-  \ zar\xF3wno przez ten sam skrypt Fish, jak i inne programy."
+summary: "Aby zapisa\u0107 do pliku tekstowego w Fish, mo\u017Cna u\u017Cy\u0107 polecenia\
+  \ `echo` po\u0142\u0105czonego z operatorami przekierowania."
 title: Pisanie pliku tekstowego
 weight: 24
 ---

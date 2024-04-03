@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:29.093603-07:00
-description: "Analisar HTML significa vasculhar a estrutura e o conte\xFAdo de um\
-  \ arquivo HTML para extrair informa\xE7\xF5es. Programadores fazem isso para acessar\
-  \ dados,\u2026"
+description: "Como fazer: Bash n\xE3o \xE9 a primeira op\xE7\xE3o para an\xE1lise\
+  \ de HTML, mas pode ser feito com ferramentas como `grep`, `awk`, `sed`, ou utilit\xE1\
+  rios externos como\u2026"
 lastmod: '2024-03-13T22:44:46.750679-06:00'
 model: gpt-4-0125-preview
-summary: "Analisar HTML significa vasculhar a estrutura e o conte\xFAdo de um arquivo\
-  \ HTML para extrair informa\xE7\xF5es."
+summary: "Bash n\xE3o \xE9 a primeira op\xE7\xE3o para an\xE1lise de HTML, mas pode\
+  \ ser feito com ferramentas como `grep`, `awk`, `sed`, ou utilit\xE1rios externos\
+  \ como `lynx`."
 title: Analisando HTML
 weight: 43
 ---

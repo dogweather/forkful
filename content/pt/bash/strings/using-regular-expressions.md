@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:01.475370-07:00
-description: "Express\xF5es regulares (regex) no Bash permitem que voc\xEA pesquise,\
-  \ manipule e manuseie strings e arquivos com base em padr\xF5es espec\xEDficos.\
-  \ Programadores\u2026"
+description: 'Como: #.'
 lastmod: '2024-03-13T22:44:46.740993-06:00'
 model: gpt-4-0125-preview
-summary: "Express\xF5es regulares (regex) no Bash permitem que voc\xEA pesquise, manipule\
-  \ e manuseie strings e arquivos com base em padr\xF5es espec\xEDficos."
+summary: '#.'
 title: "Usando express\xF5es regulares"
 weight: 11
 ---

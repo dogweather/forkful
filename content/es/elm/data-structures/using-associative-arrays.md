@@ -2,14 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:05.451099-07:00
-description: "Los arreglos asociativos, o como los llama Elm, Diccionarios, mapean\
-  \ claves a valores de una manera que hace que la b\xFAsqueda, inserci\xF3n y eliminaci\xF3\
-  n de\u2026"
+description: "C\xF3mo hacerlo: En Elm, trabajas con Diccionarios en el m\xF3dulo `Dict`,\
+  \ as\xED que vamos a sumergirnos en un ejemplo r\xE1pido."
 lastmod: '2024-03-13T22:44:58.972311-06:00'
 model: gpt-4-0125-preview
-summary: "Los arreglos asociativos, o como los llama Elm, Diccionarios, mapean claves\
-  \ a valores de una manera que hace que la b\xFAsqueda, inserci\xF3n y eliminaci\xF3\
-  n de valores sean super r\xE1pidas."
+summary: "En Elm, trabajas con Diccionarios en el m\xF3dulo `Dict`, as\xED que vamos\
+  \ a sumergirnos en un ejemplo r\xE1pido."
 title: Uso de matrices asociativas
 weight: 15
 ---

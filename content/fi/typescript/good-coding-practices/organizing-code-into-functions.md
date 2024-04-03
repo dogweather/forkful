@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 01:16:28.707947-07:00
-description: "Koodin j\xE4rjest\xE4minen funktioiksi tarkoittaa koodisi pilkkomista\
-  \ uudelleenk\xE4ytett\xE4viksi, modulaarisiksi lohkoiksi. T\xE4m\xE4 tehd\xE4\xE4\
-  n DRY (Don't Repeat Yourself)\u2026"
+description: "Miten: Kuvitellaan, ett\xE4 teet peruslaskinta. Sen sijaan, ett\xE4\
+  \ kirjoittaisit lis\xE4yslogiikan joka kerta kun tarvitset sit\xE4, luo `add` funktio."
 lastmod: '2024-03-13T22:44:56.320757-06:00'
 model: gpt-4-0125-preview
-summary: "Koodin j\xE4rjest\xE4minen funktioiksi tarkoittaa koodisi pilkkomista uudelleenk\xE4\
-  ytett\xE4viksi, modulaarisiksi lohkoiksi."
+summary: "Kuvitellaan, ett\xE4 teet peruslaskinta."
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---

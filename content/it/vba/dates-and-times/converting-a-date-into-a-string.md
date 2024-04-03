@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:53.654368-07:00
-description: "Convertire una data in una stringa in Visual Basic for Applications\
-  \ (VBA) \xE8 un processo utilizzato per modificare il tipo di dati di una data in\
-  \ un\u2026"
+description: "Come fare: In VBA, la funzione `Format` \xE8 la soluzione ideale per\
+  \ convertire le date in stringhe. Ti consente di specificare esattamente il formato\
+  \ della\u2026"
 lastmod: '2024-03-13T22:44:43.275698-06:00'
 model: gpt-4-0125-preview
-summary: "Convertire una data in una stringa in Visual Basic for Applications (VBA)\
-  \ \xE8 un processo utilizzato per modificare il tipo di dati di una data in un formato\
-  \ stringa."
+summary: "In VBA, la funzione `Format` \xE8 la soluzione ideale per convertire le\
+  \ date in stringhe."
 title: Convertire una data in una stringa
 weight: 28
 ---

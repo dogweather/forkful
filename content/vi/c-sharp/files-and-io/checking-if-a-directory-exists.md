@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:20.947915-07:00
-description: "Ki\u1EC3m tra s\u1EF1 t\u1ED3n t\u1EA1i c\u1EE7a m\u1ED9t th\u01B0 m\u1EE5\
-  c trong C# gi\xFAp b\u1EA1n x\xE1c \u0111\u1ECBnh xem m\u1ED9t th\u01B0 m\u1EE5\
-  c c\u1EE5 th\u1EC3 c\xF3 s\u1EB5n tr\xEAn h\u1EC7 th\u1ED1ng t\u1EC7p hay kh\xF4\
-  ng. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n\u2026"
+description: "C\xE1ch l\xE0m: D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch b\u1EA1n c\xF3\
+  \ th\u1EC3 ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i\
+  \ kh\xF4ng s\u1EED d\u1EE5ng namespace `System.IO`."
 lastmod: '2024-03-13T22:44:36.676473-06:00'
 model: gpt-4-0125-preview
-summary: "Ki\u1EC3m tra s\u1EF1 t\u1ED3n t\u1EA1i c\u1EE7a m\u1ED9t th\u01B0 m\u1EE5\
-  c trong C# gi\xFAp b\u1EA1n x\xE1c \u0111\u1ECBnh xem m\u1ED9t th\u01B0 m\u1EE5\
-  c c\u1EE5 th\u1EC3 c\xF3 s\u1EB5n tr\xEAn h\u1EC7 th\u1ED1ng t\u1EC7p hay kh\xF4\
-  ng."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch b\u1EA1n c\xF3 th\u1EC3 ki\u1EC3\
+  m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng s\u1EED d\u1EE5\
+  ng namespace `System.IO`."
 title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
 weight: 20
 ---

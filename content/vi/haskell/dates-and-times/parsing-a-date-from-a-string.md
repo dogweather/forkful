@@ -2,15 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:47.039160-07:00
-description: "Ph\xE2n t\xEDch c\xFA ph\xE1p m\u1ED9t ng\xE0y th\xE1ng t\u1EEB chu\u1ED7\
-  i ngh\u0129a l\xE0 bi\u1EBFn \u0111\u1ED5i v\u0103n b\u1EA3n th\xE0nh lo\u1EA1i\
-  \ d\u1EEF li\u1EC7u ng\xE0y th\xE1ng. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u01B0\u1EDD\
-  ng c\u1EA7n chuy\u1EC3n \u0111\u1ED5i \u0111\u1EA7u v\xE0o c\u1EE7a\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Haskell cung c\u1EA5p nhi\u1EC1u c\xE1\
+  ch \u0111\u1EC3 ph\xE2n t\xEDch c\xFA ph\xE1p ng\xE0y th\xE1ng, nh\u01B0ng ch\xFA\
+  ng ta h\xE3y t\u1EADp trung v\xE0o th\u01B0 vi\u1EC7n `time` v\xE0 m\u1ED9t v\xED\
+  \ d\u1EE5 \u0111\u01A1n gi\u1EA3n s\u1EED\u2026"
 lastmod: '2024-03-13T22:44:36.724606-06:00'
 model: gpt-4-0125-preview
-summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p m\u1ED9t ng\xE0y th\xE1ng t\u1EEB chu\u1ED7\
-  i ngh\u0129a l\xE0 bi\u1EBFn \u0111\u1ED5i v\u0103n b\u1EA3n th\xE0nh lo\u1EA1i\
-  \ d\u1EEF li\u1EC7u ng\xE0y th\xE1ng."
+summary: "Haskell cung c\u1EA5p nhi\u1EC1u c\xE1ch \u0111\u1EC3 ph\xE2n t\xEDch c\xFA\
+  \ ph\xE1p ng\xE0y th\xE1ng, nh\u01B0ng ch\xFAng ta h\xE3y t\u1EADp trung v\xE0o\
+  \ th\u01B0 vi\u1EC7n `time` v\xE0 m\u1ED9t v\xED d\u1EE5 \u0111\u01A1n gi\u1EA3\
+  n s\u1EED d\u1EE5ng `parseTimeM`."
 title: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB chu\u1ED7i k\xED t\u1EF1"
 weight: 30
 ---

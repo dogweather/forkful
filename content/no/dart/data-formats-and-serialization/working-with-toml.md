@@ -2,13 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:57.022186-07:00
-description: "TOML, eller Toms Opplagte, Minimale Spr\xE5k, er et konfigurasjonsfilformat\
-  \ som er lett \xE5 lese p\xE5 grunn av sin klare semantikk. Programmerere bruker\
-  \ det til\u2026"
+description: "Hvordan: Dart inkluderer ikke innebygd st\xF8tte for TOML, men du kan\
+  \ jobbe med TOML-filer ved \xE5 bruke tredjepartspakker som `toml`. F\xF8rst, legg\
+  \ til `toml` i\u2026"
 lastmod: '2024-03-13T22:44:40.513327-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, eller Toms Opplagte, Minimale Spr\xE5k, er et konfigurasjonsfilformat\
-  \ som er lett \xE5 lese p\xE5 grunn av sin klare semantikk."
+summary: "Dart inkluderer ikke innebygd st\xF8tte for TOML, men du kan jobbe med TOML-filer\
+  \ ved \xE5 bruke tredjepartspakker som `toml`."
 title: "\xC5 Arbeide med TOML"
 weight: 39
 ---

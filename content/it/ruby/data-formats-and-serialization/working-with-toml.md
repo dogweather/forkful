@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:25:45.924006-07:00
-description: "TOML \xE8 un formato di file di configurazione che \xE8 facile da leggere\
-  \ grazie alla sua chiara semantica. I programmatori usano TOML per gestire le\u2026"
+description: "Come fare: Per prima cosa, installa la gemma `toml-rb`. \xC8 una scelta\
+  \ popolare per l'analisi di TOML in Ruby."
 lastmod: '2024-03-13T22:44:44.074626-06:00'
 model: gpt-4-0125-preview
-summary: "TOML \xE8 un formato di file di configurazione che \xE8 facile da leggere\
-  \ grazie alla sua chiara semantica."
+summary: Per prima cosa, installa la gemma `toml-rb`.
 title: Lavorare con TOML
 weight: 39
 ---

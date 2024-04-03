@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:54.304364-07:00
-description: "Att ta bort tecken som matchar ett specifikt m\xF6nster handlar om att\
-  \ eliminera vissa tecken eller sekvenser av tecken fr\xE5n str\xE4ngar, baserat\
-  \ p\xE5 regler\u2026"
+description: "Hur g\xF6r man: I Go kan man effektivt ta bort tecken som matchar ett\
+  \ m\xF6nster genom att anv\xE4nda paketet `regexp`. H\xE4r visar vi hur man tar\
+  \ bort alla siffror,\u2026"
 lastmod: '2024-03-13T22:44:37.374841-06:00'
 model: gpt-4-0125-preview
-summary: "Att ta bort tecken som matchar ett specifikt m\xF6nster handlar om att eliminera\
-  \ vissa tecken eller sekvenser av tecken fr\xE5n str\xE4ngar, baserat p\xE5 regler\
-  \ definierade av ett m\xF6nster (vanligtvis via regulj\xE4ra uttryck)."
+summary: "I Go kan man effektivt ta bort tecken som matchar ett m\xF6nster genom att\
+  \ anv\xE4nda paketet `regexp`."
 title: "Radera tecken som matchar ett m\xF6nster"
 weight: 5
 ---

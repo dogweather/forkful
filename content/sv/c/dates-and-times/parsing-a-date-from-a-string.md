@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:00:05.246922-07:00
-description: "Att tolka ett datum fr\xE5n en str\xE4ng i C inneb\xE4r att konvertera\
-  \ textuella representationer av datum till ett format som program kan manipulera\
-  \ och analysera\u2026"
+description: "Hur man g\xF6r: C erbjuder inte ett inbyggt s\xE4tt att tolka datum\
+  \ fr\xE5n str\xE4ngar direkt, s\xE5 vi anv\xE4nder ofta funktionen `strptime` som\
+  \ finns i biblioteket\u2026"
 lastmod: '2024-03-13T22:44:38.392740-06:00'
 model: gpt-4-0125-preview
-summary: "Att tolka ett datum fr\xE5n en str\xE4ng i C inneb\xE4r att konvertera textuella\
-  \ representationer av datum till ett format som program kan manipulera och analysera\
-  \ mer effektivt."
+summary: "C erbjuder inte ett inbyggt s\xE4tt att tolka datum fr\xE5n str\xE4ngar\
+  \ direkt, s\xE5 vi anv\xE4nder ofta funktionen `strptime` som finns i biblioteket\
+  \ `<time.h>` f\xF6r POSIX-system."
 title: "Omtolkning av ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---

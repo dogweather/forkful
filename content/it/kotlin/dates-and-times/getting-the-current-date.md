@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:17.564914-07:00
-description: "Nella programmazione, ottenere la data corrente \xE8 un compito fondamentale\
-  \ che permette agli sviluppatori di accedere, visualizzare o manipolare la data\u2026"
+description: 'Come fare: #.'
 lastmod: '2024-03-13T22:44:43.401186-06:00'
 model: gpt-4-0125-preview
-summary: "Nella programmazione, ottenere la data corrente \xE8 un compito fondamentale\
-  \ che permette agli sviluppatori di accedere, visualizzare o manipolare la data\
-  \ corrente all'interno delle loro applicazioni."
+summary: '#.'
 title: Ottenere la data corrente
 weight: 29
 ---

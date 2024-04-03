@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:56:26.674346-07:00
-description: "Kommandozeilenargumente sind die Parameter, die beim Starten eines Programms\
-  \ \xFCber die Konsole \xFCbergeben werden. Sie erm\xF6glichen es, dass Programme\u2026"
+description: "How to: Um in Kotlin Kommandozeilenargumente zu lesen, greift man einfach\
+  \ auf das Array `args` zu, das in die `main`-Funktion eingebettet ist. Sieht so\u2026"
 lastmod: '2024-03-13T22:44:53.861513-06:00'
 model: gpt-4-1106-preview
-summary: "Kommandozeilenargumente sind die Parameter, die beim Starten eines Programms\
-  \ \xFCber die Konsole \xFCbergeben werden."
+summary: Um in Kotlin Kommandozeilenargumente zu lesen, greift man einfach auf das
+  Array `args` zu, das in die `main`-Funktion eingebettet ist.
 title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---

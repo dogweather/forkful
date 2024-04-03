@@ -2,15 +2,16 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:35.547913-07:00
-description: "YAML, vi\u1EBFt t\u1EAFt c\u1EE7a YAML Ain't Markup Language, l\xE0\
-  \ m\u1ED9t \u0111\u1ECBnh d\u1EA1ng tu\u1EA7n t\u1EF1 h\xF3a d\u1EEF li\u1EC7u d\u1EC5\
-  \ \u0111\u1ECDc cho con ng\u01B0\u1EDDi. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5\
-  ng n\xF3 cho c\xE1c t\u1EC7p c\u1EA5u h\xECnh,\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong Dart, l\xE0m vi\u1EC7c v\u1EDBi YAML\
+  \ th\u01B0\u1EDDng li\xEAn quan \u0111\u1EBFn vi\u1EC7c s\u1EED d\u1EE5ng m\u1ED9\
+  t th\u01B0 vi\u1EC7n b\xEAn th\u1EE9 ba v\xEC ng\xF4n ng\u1EEF n\xE0y kh\xF4ng bao\
+  \ g\u1ED3m kh\u1EA3 n\u0103ng ph\xE2n t\xEDch\u2026"
 lastmod: '2024-03-13T22:44:36.290075-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, vi\u1EBFt t\u1EAFt c\u1EE7a YAML Ain't Markup Language, l\xE0 m\u1ED9\
-  t \u0111\u1ECBnh d\u1EA1ng tu\u1EA7n t\u1EF1 h\xF3a d\u1EEF li\u1EC7u d\u1EC5 \u0111\
-  \u1ECDc cho con ng\u01B0\u1EDDi."
+summary: "Trong Dart, l\xE0m vi\u1EC7c v\u1EDBi YAML th\u01B0\u1EDDng li\xEAn quan\
+  \ \u0111\u1EBFn vi\u1EC7c s\u1EED d\u1EE5ng m\u1ED9t th\u01B0 vi\u1EC7n b\xEAn th\u1EE9\
+  \ ba v\xEC ng\xF4n ng\u1EEF n\xE0y kh\xF4ng bao g\u1ED3m kh\u1EA3 n\u0103ng ph\xE2\
+  n t\xEDch c\xFA ph\xE1p YAML t\xEDch h\u1EE3p s\u1EB5n."
 title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 weight: 41
 ---

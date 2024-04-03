@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:43.846755-07:00
-description: "\xC5 sette stor forbokstav i en streng inneb\xE6rer \xE5 endre det f\xF8\
-  rste tegnet av en gitt streng til stor bokstav hvis den er i sm\xE5 bokstaver, ofte\
-  \ uten \xE5 endre\u2026"
+description: "Hvordan: TypeScript, som er et superset av JavaScript, tillater forskjellige\
+  \ metoder for \xE5 sette stor forbokstav i strenger, som spenner fra rene\u2026"
 lastmod: '2024-03-13T22:44:40.515451-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 sette stor forbokstav i en streng inneb\xE6rer \xE5 endre det f\xF8\
-  rste tegnet av en gitt streng til stor bokstav hvis den er i sm\xE5 bokstaver, ofte\
-  \ uten \xE5 endre resten av strengen."
+summary: "TypeScript, som er et superset av JavaScript, tillater forskjellige metoder\
+  \ for \xE5 sette stor forbokstav i strenger, som spenner fra rene JavaScript-tiln\xE6\
+  rminger til \xE5 benytte tredjepartsbiblioteker for mer komplekse eller spesifikke\
+  \ brukstilfeller."
 title: Sette stor bokstav i en streng
 weight: 2
 ---

@@ -1,13 +1,11 @@
 ---
 date: 2024-01-27 16:20:52.565808-07:00
-description: "Dans le domaine de la programmation, surtout lorsqu'on travaille avec\
-  \ des environnements Linux ou Unix, manipuler des fichiers directement depuis\u2026"
+description: "Comment faire : Manipuler des fichiers dans Fish Shell est \xE0 la fois\
+  \ intuitif et puissant. Voici quelques exemples pour d\xE9montrer sa capacit\xE9\
+  \ : 1. **Cr\xE9er\u2026"
 lastmod: '2024-03-13T22:44:58.318898-06:00'
 model: gpt-4-0125-preview
-summary: "Dans le domaine de la programmation, surtout lorsqu'on travaille avec des\
-  \ environnements Linux ou Unix, manipuler des fichiers directement depuis l'interface\
-  \ de ligne de commande (CLI) n'est pas seulement une question de commodit\xE9, c'est\
-  \ un outil de pouvoir."
+summary: "Manipuler des fichiers dans Fish Shell est \xE0 la fois intuitif et puissant."
 title: Manipulation de fichiers avec des commandes en une ligne en CLI
 weight: 31
 ---

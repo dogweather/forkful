@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:49.349049-07:00
-description: "YAML, en forkortelse for \"YAML Ain't Markup Language\", er en menneskevennlig\
-  \ standard for serialisering av data som kan brukes for alle\u2026"
+description: "Hvordan: Haskell har ikke innebygd st\xF8tte for prosessering av YAML,\
+  \ men du kan bruke tredjepartsbiblioteker som `yaml` og `aeson` for \xE5 analysere\
+  \ og\u2026"
 lastmod: '2024-03-13T22:44:40.863695-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, en forkortelse for \"YAML Ain't Markup Language\", er en menneskevennlig\
-  \ standard for serialisering av data som kan brukes for alle programmeringsspr\xE5\
-  k."
+summary: "Haskell har ikke innebygd st\xF8tte for prosessering av YAML, men du kan\
+  \ bruke tredjepartsbiblioteker som `yaml` og `aeson` for \xE5 analysere og generere\
+  \ YAML-data."
 title: Arbeider med YAML
 weight: 41
 ---

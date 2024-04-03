@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:07.500777-07:00
-description: "V\xE9rifier si un r\xE9pertoire existe est une t\xE2che fondamentale\
-  \ en programmation PHP, car cela permet de v\xE9rifier la pr\xE9sence d'un r\xE9\
-  pertoire avant\u2026"
+description: "Comment faire : La mani\xE8re native de v\xE9rifier si un r\xE9pertoire\
+  \ existe en PHP est d'utiliser la fonction `is_dir()`. Cette fonction prend un chemin\
+  \ de\u2026"
 lastmod: '2024-03-13T22:44:57.893965-06:00'
 model: gpt-4-0125-preview
-summary: "V\xE9rifier si un r\xE9pertoire existe est une t\xE2che fondamentale en\
-  \ programmation PHP, car cela permet de v\xE9rifier la pr\xE9sence d'un r\xE9pertoire\
-  \ avant d'effectuer des op\xE9rations telles que la lecture ou l'\xE9criture de\
-  \ fichiers \xE0 l'int\xE9rieur."
+summary: "La mani\xE8re native de v\xE9rifier si un r\xE9pertoire existe en PHP est\
+  \ d'utiliser la fonction `is_dir()`."
 title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---

@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:56.098431-07:00
-description: "Att tolka ett datum fr\xE5n en str\xE4ng i Clojure handlar om att konvertera\
-  \ textuella representationer av datum och tider till en mer anv\xE4ndbar form (t.ex.\u2026"
+description: "Hur: Clojure, som \xE4r ett JVM-spr\xE5k, till\xE5ter dig att anv\xE4\
+  nda Java's datum- och tidsbibliotek direkt. L\xE5t oss b\xF6rja med den inbyggda\
+  \ Java-\u2026"
 lastmod: '2024-03-13T22:44:37.534530-06:00'
 model: gpt-4-0125-preview
-summary: "Att tolka ett datum fr\xE5n en str\xE4ng i Clojure handlar om att konvertera\
-  \ textuella representationer av datum och tider till en mer anv\xE4ndbar form (t."
+summary: "Clojure, som \xE4r ett JVM-spr\xE5k, till\xE5ter dig att anv\xE4nda Java's\
+  \ datum- och tidsbibliotek direkt."
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---

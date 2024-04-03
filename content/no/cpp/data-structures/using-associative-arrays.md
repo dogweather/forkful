@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:20.576425-07:00
-description: "Assosiative tabeller, kjent som `std::map` eller `std::unordered_map`\
-  \ i C++, brobygger gapet mellom tabellindekser og virkelige data, og lar deg bruke\u2026"
+description: "Hvordan: I C++ blir assosiative tabeller levendegjort med hodefilene\
+  \ `<map>` og `<unordered_map>`. La oss ta noen eksempler for \xE5 se begge i aksjon.\
+  \ #."
 lastmod: '2024-03-13T22:44:41.092309-06:00'
 model: gpt-4-0125-preview
-summary: "Assosiative tabeller, kjent som `std::map` eller `std::unordered_map` i\
-  \ C++, brobygger gapet mellom tabellindekser og virkelige data, og lar deg bruke\
-  \ meningsfulle n\xF8kler."
+summary: I C++ blir assosiative tabeller levendegjort med hodefilene `<map>` og `<unordered_map>`.
 title: Bruke associative tabeller
 weight: 15
 ---

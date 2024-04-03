@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:33:12.096022-07:00
-description: "\xC5 jobbe med XML inneb\xE6rer parsing, oppretting og manipulering\
-  \ av XML-dokumenter \u2013 et markup-spr\xE5k for datalagring og -overf\xF8ring.\
-  \ Programmerere gj\xF8r dette\u2026"
+description: 'Hvordan: I Kotlin kan du bruke den innebygde `javax.xml.parsers` for
+  parsing.'
 lastmod: '2024-03-13T22:44:40.776769-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 jobbe med XML inneb\xE6rer parsing, oppretting og manipulering av XML-dokumenter\
-  \ \u2013 et markup-spr\xE5k for datalagring og -overf\xF8ring."
+summary: I Kotlin kan du bruke den innebygde `javax.xml.parsers` for parsing.
 title: "\xC5 jobbe med XML"
 weight: 40
 ---

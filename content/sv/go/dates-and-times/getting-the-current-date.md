@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:37.093910-07:00
-description: "Att f\xE5 det aktuella datumet i Go \xE4r en grundl\xE4ggande uppgift\
-  \ f\xF6r programmerare, lika vanlig som \"Hello, World!\" i sin allm\xE4nhet. Det\
-  \ \xE4r avg\xF6rande f\xF6r\u2026"
+description: "Hur man g\xF6r: I Go \xE4r `time`-paketet din port till att arbeta med\
+  \ datum och tider. Funktionen `time.Now()` ger dig det aktuella datumet och tiden,\
+  \ medan\u2026"
 lastmod: '2024-03-13T22:44:37.403589-06:00'
 model: gpt-4-0125-preview
-summary: "Att f\xE5 det aktuella datumet i Go \xE4r en grundl\xE4ggande uppgift f\xF6\
-  r programmerare, lika vanlig som \"Hello, World."
+summary: "I Go \xE4r `time`-paketet din port till att arbeta med datum och tider."
 title: "H\xE4mta aktuellt datum"
 weight: 29
 ---

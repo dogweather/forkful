@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:44.093572-07:00
-description: "Associatieve arrays, bekend in andere talen als mappen of woordenboeken,\
-  \ zijn sleutel-waarde paren die worden gebruikt voor effici\xEBnte gegevensopzoeking\u2026"
+description: "Hoe te: C biedt geen ingebouwde ondersteuning voor associatieve arrays\
+  \ zoals sommige hogere programmeertalen, maar je kunt ze simuleren met behulp van\u2026"
 lastmod: '2024-03-13T22:44:51.283139-06:00'
 model: gpt-4-0125-preview
-summary: "Associatieve arrays, bekend in andere talen als mappen of woordenboeken,\
-  \ zijn sleutel-waarde paren die worden gebruikt voor effici\xEBnte gegevensopzoeking\
-  \ en manipulatie."
+summary: C biedt geen ingebouwde ondersteuning voor associatieve arrays zoals sommige
+  hogere programmeertalen, maar je kunt ze simuleren met behulp van structuren en
+  hashing.
 title: Gebruik van associatieve arrays
 weight: 15
 ---

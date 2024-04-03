@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 18:00:15.783024-07:00
-description: "\xC5 sende en HTTP-foresp\xF8rsel betyr \xE5 be om data eller handling\
-  \ fra en webserver. Programmerere gj\xF8r det for \xE5 integrere nettjenester og\
-  \ hente data dynamisk."
+description: "Slik gj\xF8r du: Kotlin gj\xF8r det enkelt med biblioteket `khttp`.\
+  \ Her er et eksempel for GET."
 lastmod: '2024-03-13T22:44:40.747120-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 sende en HTTP-foresp\xF8rsel betyr \xE5 be om data eller handling fra\
-  \ en webserver."
+summary: "Kotlin gj\xF8r det enkelt med biblioteket `khttp`."
 title: "\xC5 sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---

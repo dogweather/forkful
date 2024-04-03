@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:37.943062-07:00
-description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n noutaminen Pythonissa on perustoiminto\
-  \ monille sovelluksille, kuten lokitiedostoille, data-analyysille ja aikaan perustuvalle\u2026"
+description: "Miten: **K\xE4ytt\xE4en standardikirjastoa `datetime`:** `Datetime`-moduuli\
+  \ Pythonin standardikirjastossa tarjoaa luokkia p\xE4iv\xE4m\xE4\xE4rien ja aikojen\
+  \ k\xE4sittelyyn.\u2026"
 lastmod: '2024-03-13T22:44:56.153947-06:00'
 model: gpt-4-0125-preview
-summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n noutaminen Pythonissa on perustoiminto\
-  \ monille sovelluksille, kuten lokitiedostoille, data-analyysille ja aikaan perustuvalle\
-  \ p\xE4\xE4t\xF6ksenteolle."
+summary: "**K\xE4ytt\xE4en standardikirjastoa `datetime`:**\n\n`Datetime`-moduuli\
+  \ Pythonin standardikirjastossa tarjoaa luokkia p\xE4iv\xE4m\xE4\xE4rien ja aikojen\
+  \ k\xE4sittelyyn."
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:11:18.245909-07:00
-description: "REPL st\xE5r for Read-Eval-Print Loop, et enkelt, interaktivt dataprogrammeringsmilj\xF8\
-  . Kodeutviklere bruker det til raskt \xE5 skrive og teste kode,\u2026"
+description: "Hvordan: I Bash er terminalen din i bunn og grunn en REPL. Du skriver\
+  \ en kommando; den leser den, evaluerer den, skriver ut resultatet og looper tilbake\
+  \ i\u2026"
 lastmod: '2024-03-13T22:44:40.976504-06:00'
 model: gpt-4-0125-preview
-summary: "REPL st\xE5r for Read-Eval-Print Loop, et enkelt, interaktivt dataprogrammeringsmilj\xF8\
-  ."
+summary: I Bash er terminalen din i bunn og grunn en REPL.
 title: Bruke et interaktivt skall (REPL)
 weight: 34
 ---

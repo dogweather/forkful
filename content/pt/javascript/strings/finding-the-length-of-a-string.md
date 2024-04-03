@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:47:57.836199-07:00
-description: "Descobrir o tamanho de uma string \xE9 basicamente contar quantos caracteres\
-  \ ela tem. Programadores fazem isso para validar entradas, manipular textos ou\u2026"
+description: "How to: Usar `length` em JavaScript \xE9 moleza. Olha s\xF3."
 lastmod: '2024-03-13T22:44:46.953808-06:00'
 model: gpt-4-1106-preview
-summary: "Descobrir o tamanho de uma string \xE9 basicamente contar quantos caracteres\
-  \ ela tem."
+summary: "Usar `length` em JavaScript \xE9 moleza."
 title: Descobrindo o comprimento de uma string
 weight: 7
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:17.072015-07:00
-description: "YAML, qui signifie \"YAML Ain't Markup Language\" (YAML n'est pas un\
-  \ langage de balisage), est un format de s\xE9rialisation de donn\xE9es lisible\
-  \ par l'homme\u2026"
+description: "Comment faire : PHP, dans ses it\xE9rations actuelles, ne supporte pas\
+  \ l'analyse de YAML comme partie de sa biblioth\xE8que standard. La mani\xE8re la\
+  \ plus directe\u2026"
 lastmod: '2024-03-13T22:44:57.900882-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, qui signifie \"YAML Ain't Markup Language\" (YAML n'est pas un langage\
-  \ de balisage), est un format de s\xE9rialisation de donn\xE9es lisible par l'homme\
-  \ couramment utilis\xE9 pour les fichiers de configuration."
+summary: "PHP, dans ses it\xE9rations actuelles, ne supporte pas l'analyse de YAML\
+  \ comme partie de sa biblioth\xE8que standard."
 title: Travailler avec YAML
 weight: 41
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:16.379682-07:00
-description: "Zoeken en vervangen van tekst in programmeren vergemakkelijkt het wijzigen\
-  \ en beheren van strings, wat een fundamentele taak is bij gegevensmanipulatie en\u2026"
+description: "Hoe te: In Go biedt het `strings`-pakket verschillende functies om tekst\
+  \ binnen strings te zoeken en te vervangen. Laten we een paar gangbare methoden\u2026"
 lastmod: '2024-03-13T22:44:50.272024-06:00'
 model: gpt-4-0125-preview
-summary: Zoeken en vervangen van tekst in programmeren vergemakkelijkt het wijzigen
-  en beheren van strings, wat een fundamentele taak is bij gegevensmanipulatie en
-  softwareontwikkeling.
+summary: In Go biedt het `strings`-pakket verschillende functies om tekst binnen strings
+  te zoeken en te vervangen.
 title: Tekst zoeken en vervangen
 weight: 10
 ---

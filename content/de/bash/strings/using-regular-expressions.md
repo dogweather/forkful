@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:58.614392-07:00
-description: "Regul\xE4re Ausdr\xFCcke (regex) in Bash erm\xF6glichen es Ihnen, nach\
-  \ bestimmten Mustern in Zeichenketten und Dateien zu suchen, diese zu manipulieren\
-  \ und zu\u2026"
+description: 'Wie geht das: #.'
 lastmod: '2024-03-13T22:44:54.047485-06:00'
 model: gpt-4-0125-preview
-summary: "Regul\xE4re Ausdr\xFCcke (regex) in Bash erm\xF6glichen es Ihnen, nach bestimmten\
-  \ Mustern in Zeichenketten und Dateien zu suchen, diese zu manipulieren und zu verarbeiten."
+summary: '#.'
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

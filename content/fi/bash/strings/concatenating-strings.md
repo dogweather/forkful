@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:34:01.597668-07:00
-description: "Yksinkertaistettuna, merkkijonojen yhdist\xE4minen on tapa liitt\xE4\
-  \xE4 tekstej\xE4 yhteen. Ohjelmoijat tekev\xE4t t\xE4t\xE4, koska tarvitsevat usein\
-  \ luoda dynaamisia\u2026"
+description: "How to - Kuinka tehd\xE4\xE4n: ."
 lastmod: '2024-03-13T22:44:56.729836-06:00'
 model: gpt-4-1106-preview
-summary: "Yksinkertaistettuna, merkkijonojen yhdist\xE4minen on tapa liitt\xE4\xE4\
-  \ tekstej\xE4 yhteen."
+summary: .
 title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---

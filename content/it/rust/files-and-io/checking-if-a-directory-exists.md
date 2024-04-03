@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:34.338711-07:00
-description: "Nello sviluppo software, spesso \xE8 necessario verificare se una directory\
-  \ esiste per evitare errori quando si tenta di accedere, leggere o scrivere file.\u2026"
+description: "Come: La libreria standard di Rust (`std`) include funzionalit\xE0 per\
+  \ controllare l'esistenza di una directory attraverso i moduli `std::path::Path`\
+  \ e\u2026"
 lastmod: '2024-03-13T22:44:43.232783-06:00'
 model: gpt-4-0125-preview
-summary: "Nello sviluppo software, spesso \xE8 necessario verificare se una directory\
-  \ esiste per evitare errori quando si tenta di accedere, leggere o scrivere file."
+summary: "La libreria standard di Rust (`std`) include funzionalit\xE0 per controllare\
+  \ l'esistenza di una directory attraverso i moduli `std::path::Path` e `std::fs`."
 title: Verifica se una directory esiste
 weight: 20
 ---

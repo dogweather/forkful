@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:46.116839-07:00
-description: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 l\u1ECDc qua\
-  \ m\xE3 HTML \u0111\u1EC3 tr\xEDch xu\u1EA5t d\u1EEF li\u1EC7u ho\u1EB7c chi ti\u1EBF\
-  t m\u1ED9t c\xE1ch l\u1EADp tr\xECnh. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111\
-  i\u1EC1u n\xE0y cho c\xE1c nhi\u1EC7m\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Elixir, b\u1EA1n c\xF3 th\u1EC3 ph\xE2\
+  n t\xEDch c\xFA ph\xE1p HTML v\u1EDBi th\u01B0 vi\u1EC7n Floki. D\u01B0\u1EDBi \u0111\
+  \xE2y l\xE0 m\u1ED9t \u0111o\u1EA1n m\xE3."
 lastmod: '2024-03-13T22:44:36.205436-06:00'
 model: gpt-4-0125-preview
-summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 l\u1ECDc qua m\xE3\
-  \ HTML \u0111\u1EC3 tr\xEDch xu\u1EA5t d\u1EEF li\u1EC7u ho\u1EB7c chi ti\u1EBF\
-  t m\u1ED9t c\xE1ch l\u1EADp tr\xECnh."
+summary: "Trong Elixir, b\u1EA1n c\xF3 th\u1EC3 ph\xE2n t\xEDch c\xFA ph\xE1p HTML\
+  \ v\u1EDBi th\u01B0 vi\u1EC7n Floki."
 title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---

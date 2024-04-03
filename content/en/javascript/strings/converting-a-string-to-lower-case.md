@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:38:31.875730-07:00
-description: "Converting a string to lowercase means transforming all the characters\
-  \ within it to their lower case counterparts. Programmers do it for consistency,\u2026"
+description: 'How to: In JavaScript, we convert a string to lowercase with the `.toLowerCase()`
+  method. It''s as simple as.'
 lastmod: '2024-03-13T22:45:00.421770-06:00'
 model: gpt-4-1106-preview
-summary: Converting a string to lowercase means transforming all the characters within
-  it to their lower case counterparts.
+summary: In JavaScript, we convert a string to lowercase with the `.toLowerCase()`
+  method.
 title: Converting a string to lower case
 weight: 4
 ---

@@ -2,12 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:58.866524-07:00
-description: "Associatiiviset taulukot Dartissa, tunnetaan yleisesti nimell\xE4 Mapit,\
-  \ ovat tietorakenteita, jotka tallentavat tietoja avain-arvo -pareina. Ne\u2026"
+description: "Miten: Dart tarjoaa suoraviivaisen syntaksin Map-tietorakenteiden luomiseen\
+  \ ja k\xE4sittelyyn. Alla on esimerkkej\xE4 perustoiminnoista, kuten luomisesta,\u2026"
 lastmod: '2024-03-13T22:44:56.262961-06:00'
 model: gpt-4-0125-preview
-summary: "Associatiiviset taulukot Dartissa, tunnetaan yleisesti nimell\xE4 Mapit,\
-  \ ovat tietorakenteita, jotka tallentavat tietoja avain-arvo -pareina."
+summary: "Dart tarjoaa suoraviivaisen syntaksin Map-tietorakenteiden luomiseen ja\
+  \ k\xE4sittelyyn."
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---

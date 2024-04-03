@@ -2,14 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:16.458369-07:00
-description: "L'\xE9criture sur l'erreur standard (stderr) en Bash consiste \xE0 diriger\
-  \ les messages d'erreur ou toute sortie de diagnostic importante s\xE9par\xE9e de\
-  \ la sortie\u2026"
+description: 'Comment faire : En Bash, vous utilisez `>&2` pour rediriger la sortie
+  vers stderr. Voici un exemple de base .'
 lastmod: '2024-03-13T22:44:58.014926-06:00'
 model: gpt-4-0125-preview
-summary: "L'\xE9criture sur l'erreur standard (stderr) en Bash consiste \xE0 diriger\
-  \ les messages d'erreur ou toute sortie de diagnostic importante s\xE9par\xE9e de\
-  \ la sortie standard (stdout)."
+summary: En Bash, vous utilisez `>&2` pour rediriger la sortie vers stderr.
 title: "\xC9crire sur l'erreur standard"
 weight: 25
 ---

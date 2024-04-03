@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 18:04:04.507321-07:00
-description: "Iniciar um novo projeto de programa\xE7\xE3o \xE9 como colocar uma semente\
-  \ na terra esperando que cres\xE7a e se transforme em uma \xE1rvore robusta. Programadores\u2026"
+description: "Como Fazer: Come\xE7ar um projeto PHP \xE9 simples. Voc\xEA precisa\
+  \ de um ambiente de desenvolvimento b\xE1sico. Instale um servidor local como XAMP,\
+  \ WAMP ou MAMP e\u2026"
 lastmod: '2024-03-13T22:44:46.668010-06:00'
 model: gpt-4-1106-preview
-summary: "Iniciar um novo projeto de programa\xE7\xE3o \xE9 como colocar uma semente\
-  \ na terra esperando que cres\xE7a e se transforme em uma \xE1rvore robusta."
+summary: "Come\xE7ar um projeto PHP \xE9 simples."
 title: Iniciando um novo projeto
 weight: 1
 ---

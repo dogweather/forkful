@@ -2,10 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:25.860378-07:00
-description: ''
+description: "L\xE0 g\xEC & T\u1EA1i sao? T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103\
+  n b\u1EA3n c\xF3 ngh\u0129a l\xE0 t\xECm c\xE1c chu\u1ED7i con c\u1EE5 th\u1EC3\
+  \ v\xE0 thay th\u1EBF ch\xFAng b\u1EB1ng c\xE1i m\u1EDBi. T\u1EA1i sao ph\u1EA3\
+  i l\xE0m th\u1EBF? N\xF3 xu\u1EA5t hi\u1EC7n m\u1ECDi\u2026"
 lastmod: '2024-03-13T22:44:37.133206-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n c\xF3 ngh\u0129a\
+  \ l\xE0 t\xECm c\xE1c chu\u1ED7i con c\u1EE5 th\u1EC3 v\xE0 thay th\u1EBF ch\xFA\
+  ng b\u1EB1ng c\xE1i m\u1EDBi."
 title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
 weight: 10
 ---

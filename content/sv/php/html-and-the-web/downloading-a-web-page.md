@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:44:47.834249-07:00
-description: "Att ladda ner en webbsida \xE4r att h\xE4mta allt dess inneh\xE5ll f\xF6\
-  r att anv\xE4nda eller bearbeta lokalt. Programmerare g\xF6r det f\xF6r att samla\
-  \ data, testa online-\u2026"
+description: "How to: F\xF6r att ladda ner en webbsida med PHP, anv\xE4nd `file_get_contents()`\
+  \ eller cURL-biblioteket. H\xE4r \xE4r grundl\xE4ggande exempel."
 lastmod: '2024-03-13T22:44:37.995152-06:00'
 model: gpt-4-1106-preview
-summary: "Att ladda ner en webbsida \xE4r att h\xE4mta allt dess inneh\xE5ll f\xF6\
-  r att anv\xE4nda eller bearbeta lokalt."
+summary: "F\xF6r att ladda ner en webbsida med PHP, anv\xE4nd `file_get_contents()`\
+  \ eller cURL-biblioteket."
 title: "H\xE4mta en webbsida"
 weight: 42
 ---

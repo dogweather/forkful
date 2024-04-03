@@ -3,14 +3,11 @@ changelog:
 - 2024-01-28, dogweather, reviewed
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:01.302887-07:00
-description: "Een datum uit een string parsen gaat over het nemen van tekst, zoals\
-  \ \"2023-04-05\", en het omzetten naar een datumformaat dat je programma kan begrijpen\
-  \ en\u2026"
+description: 'Hoe: In Elixir kun je datums parsen met behulp van de `Date` module.
+  Zo zet je een string om in een datum.'
 lastmod: '2024-03-13T22:44:50.471621-06:00'
 model: gpt-4-0125-preview
-summary: Een datum uit een string parsen gaat over het nemen van tekst, zoals "2023-04-05",
-  en het omzetten naar een datumformaat dat je programma kan begrijpen en mee kan
-  werken.
+summary: In Elixir kun je datums parsen met behulp van de `Date` module.
 title: Een datum uit een string parsen
 weight: 30
 ---

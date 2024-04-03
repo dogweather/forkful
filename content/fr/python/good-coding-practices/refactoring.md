@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 03:38:04.966916-07:00
-description: "Le remaniement est le processus de restructuration du code informatique\
-  \ existant\u2014changer le factoring\u2014sans modifier son comportement externe.\
-  \ Les\u2026"
+description: "Comment faire : Supposons que vous ayez un morceau de code qui calcule\
+  \ et imprime la superficie et le p\xE9rim\xE8tre d'un rectangle \xE9tant donn\xE9\
+  \ sa longueur et\u2026"
 lastmod: '2024-03-13T22:44:57.245495-06:00'
 model: gpt-4-0125-preview
-summary: "Le remaniement est le processus de restructuration du code informatique\
-  \ existant\u2014changer le factoring\u2014sans modifier son comportement externe."
+summary: "Supposons que vous ayez un morceau de code qui calcule et imprime la superficie\
+  \ et le p\xE9rim\xE8tre d'un rectangle \xE9tant donn\xE9 sa longueur et sa largeur."
 title: Remaniement de code
 weight: 19
 ---

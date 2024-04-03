@@ -2,16 +2,19 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:56.105209-07:00
-description: "Vi\u1EC7c \u0111\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7\
-  nh trong Visual Basic for Applications (VBA) bao g\u1ED3m vi\u1EC7c truy c\u1EAD\
-  p c\xE1c tham s\u1ED1 \u0111\u01B0\u1EE3c truy\u1EC1n \u0111\u1EBFn ch\u01B0\u01A1\
-  ng tr\xECnh c\u1EE7a b\u1EA1n khi th\u1EF1c\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Kh\xE1c v\u1EDBi nh\u1EEFng m\xF4i tr\u01B0\u1EDD\
+  ng l\u1EADp tr\xECnh \u0111\u01A1n gi\u1EA3n h\u01A1n, VBA kh\xF4ng c\xF3 t\xED\
+  nh n\u0103ng t\xEDch h\u1EE3p \u0111\u1EC3 \u0111\u1ECDc tr\u1EF1c ti\u1EBFp c\xE1\
+  c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh m\u1ED9t c\xE1ch th\xF4ng th\u01B0\u1EDD\
+  ng\u2026"
 lastmod: '2024-03-13T22:44:36.453591-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c \u0111\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh trong\
-  \ Visual Basic for Applications (VBA) bao g\u1ED3m vi\u1EC7c truy c\u1EADp c\xE1\
-  c tham s\u1ED1 \u0111\u01B0\u1EE3c truy\u1EC1n \u0111\u1EBFn ch\u01B0\u01A1ng tr\xEC\
-  nh c\u1EE7a b\u1EA1n khi th\u1EF1c thi."
+summary: "Kh\xE1c v\u1EDBi nh\u1EEFng m\xF4i tr\u01B0\u1EDDng l\u1EADp tr\xECnh \u0111\
+  \u01A1n gi\u1EA3n h\u01A1n, VBA kh\xF4ng c\xF3 t\xEDnh n\u0103ng t\xEDch h\u1EE3\
+  p \u0111\u1EC3 \u0111\u1ECDc tr\u1EF1c ti\u1EBFp c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2\
+  ng l\u1EC7nh m\u1ED9t c\xE1ch th\xF4ng th\u01B0\u1EDDng b\u1EDFi v\xEC n\xF3 ch\u1EE7\
+  \ y\u1EBFu \u0111\u01B0\u1EE3c thi\u1EBFt k\u1EBF \u0111\u1EC3 nh\xFAng trong c\xE1\
+  c \u1EE9ng d\u1EE5ng Microsoft Office."
 title: "\u0110\u1ECDc \u0111\u1ED1i s\u1ED1 t\u1EEB d\xF2ng l\u1EC7nh"
 weight: 23
 ---

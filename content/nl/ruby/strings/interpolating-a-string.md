@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:12.715245-07:00
-description: "Stringinterpolatie stelt je in staat om variabelen of expressies binnen\
-  \ een string in te voegen. We doen dit voor schonere, beter leesbare code die\u2026"
+description: 'Hoe te: In Ruby wikkel je je variabele of expressie in `#{}` en plaats
+  je het waar je het wilt hebben in een string met dubbele aanhalingstekens. Zo dus.'
 lastmod: '2024-03-13T22:44:51.320578-06:00'
 model: gpt-4-0125-preview
-summary: Stringinterpolatie stelt je in staat om variabelen of expressies binnen een
-  string in te voegen.
+summary: In Ruby wikkel je je variabele of expressie in `#{}` en plaats je het waar
+  je het wilt hebben in een string met dubbele aanhalingstekens.
 title: Een string interpoleren
 weight: 8
 ---

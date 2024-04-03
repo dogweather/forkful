@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:18.019066-07:00
-description: "L'analisi di una data da una stringa in Haskell consiste nel convertire\
-  \ le rappresentazioni testuali delle date in un formato strutturato che il programma\u2026"
+description: "Come fare: Di base, Haskell offre strumenti semplici per l'analisi delle\
+  \ date, ma sfruttare librerie come `time` per la funzionalit\xE0 di base e `date-\u2026"
 lastmod: '2024-03-13T22:44:43.484527-06:00'
 model: gpt-4-0125-preview
-summary: "L'analisi di una data da una stringa in Haskell consiste nel convertire\
-  \ le rappresentazioni testuali delle date in un formato strutturato che il programma\
-  \ pu\xF2 manipolare."
+summary: "Di base, Haskell offre strumenti semplici per l'analisi delle date, ma sfruttare\
+  \ librerie come `time` per la funzionalit\xE0 di base e `date-parse` o `time-parse`\
+  \ per un'analisi pi\xF9 flessibile, pu\xF2 semplificare notevolmente il compito."
 title: Analisi di una data da una stringa
 weight: 30
 ---

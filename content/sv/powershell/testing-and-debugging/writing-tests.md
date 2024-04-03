@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:40.125826-07:00
-description: "Att skriva tester i PowerShell inneb\xE4r att skapa skript som automatiskt\
-  \ validerar funktionaliteten i din PowerShell-kod, f\xF6r att s\xE4kerst\xE4lla\
-  \ att den beter\u2026"
+description: "Hur man g\xF6r: PowerShell har inte ett inbyggt testramverk, men Pester,\
+  \ en popul\xE4r tredjepartsmodul, anv\xE4nds ofta f\xF6r att skriva och k\xF6ra\
+  \ tester. S\xE5 h\xE4r\u2026"
 lastmod: '2024-03-13T22:44:38.129427-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva tester i PowerShell inneb\xE4r att skapa skript som automatiskt\
-  \ validerar funktionaliteten i din PowerShell-kod, f\xF6r att s\xE4kerst\xE4lla\
-  \ att den beter sig som f\xF6rv\xE4ntat."
+summary: "PowerShell har inte ett inbyggt testramverk, men Pester, en popul\xE4r tredjepartsmodul,\
+  \ anv\xE4nds ofta f\xF6r att skriva och k\xF6ra tester."
 title: Skriva tester
 weight: 36
 ---

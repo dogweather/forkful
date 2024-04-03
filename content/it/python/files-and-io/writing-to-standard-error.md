@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:11.475246-07:00
-description: "Scrivere su standard error in Python significa indirizzare i messaggi\
-  \ di errore o diagnostici del proprio programma allo stream di errore (`stderr`),\u2026"
+description: 'Come fare: #.'
 lastmod: '2024-03-13T22:44:43.017482-06:00'
 model: gpt-4-0125-preview
-summary: Scrivere su standard error in Python significa indirizzare i messaggi di
-  errore o diagnostici del proprio programma allo stream di errore (`stderr`), separandoli
-  dall'output standard (`stdout`).
+summary: '#.'
 title: Scrivere sull'errore standard
 weight: 25
 ---

@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:02.909503-07:00
-description: "Merkkijonon alkukirjaimen suurentaminen Visual Basic for Applications\
-  \ (VBA) -kielell\xE4 tarkoittaa merkkijonon jokaisen sanan ensimm\xE4isen merkin\
-  \ muuttamista\u2026"
+description: "Kuinka: VBA:ssa ei ole sis\xE4\xE4nrakennettua funktiota nimenomaan\
+  \ jokaisen sanan alkukirjaimen suurentamiseen merkkijonossa, toisin kuin joissakin\
+  \ muissa\u2026"
 lastmod: '2024-03-13T22:44:56.382483-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonon alkukirjaimen suurentaminen Visual Basic for Applications (VBA)\
-  \ -kielell\xE4 tarkoittaa merkkijonon jokaisen sanan ensimm\xE4isen merkin muuttamista\
-  \ isoksi kirjaimeksi samalla kun varmistetaan, ett\xE4 loput ovat pieni\xE4 kirjaimia."
+summary: "VBA:ssa ei ole sis\xE4\xE4nrakennettua funktiota nimenomaan jokaisen sanan\
+  \ alkukirjaimen suurentamiseen merkkijonossa, toisin kuin joissakin muissa ohjelmointikieliss\xE4\
+  ."
 title: Merkkijonon alkukirjaimen suurentaminen
 weight: 2
 ---

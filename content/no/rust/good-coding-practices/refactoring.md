@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 03:36:56.310010-07:00
-description: "Refaktorering er prosessen med \xE5 restrukturere eksisterende dataprogramkode\u2014\
-  endre faktoriseringen\u2014uten \xE5 endre dens eksterne oppf\xF8rsel. Programmerere\
-  \ gj\xF8r\u2026"
+description: "Hvordan: La oss refaktorere et enkelt stykke Rust-kode for \xE5 gj\xF8\
+  re det mer idiomatisk og vedlikeholdbart. Vi starter med en funksjon som kalkulerer\
+  \ summen\u2026"
 lastmod: '2024-03-13T22:44:40.582122-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktorering er prosessen med \xE5 restrukturere eksisterende dataprogramkode\u2014\
-  endre faktoriseringen\u2014uten \xE5 endre dens eksterne oppf\xF8rsel."
+summary: "La oss refaktorere et enkelt stykke Rust-kode for \xE5 gj\xF8re det mer\
+  \ idiomatisk og vedlikeholdbart."
 title: Refaktorering
 weight: 19
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:38.838300-07:00
-description: "In TypeScript, scrivere sull'errore standard (stderr) \xE8 un processo\
-  \ che invia messaggi di errore o log direttamente al flusso di uscita di errore\u2026"
+description: "Come fare: TypeScript, essendo un sovrainsieme di JavaScript, si affida\
+  \ all'ambiente di runtime JS sottostante (come Node.js) per scrivere su stderr.\
+  \ Ecco\u2026"
 lastmod: '2024-03-13T22:44:43.192405-06:00'
 model: gpt-4-0125-preview
-summary: "In TypeScript, scrivere sull'errore standard (stderr) \xE8 un processo che\
-  \ invia messaggi di errore o log direttamente al flusso di uscita di errore dell'ambiente\
-  \ (ad esempio, la console in node."
+summary: TypeScript, essendo un sovrainsieme di JavaScript, si affida all'ambiente
+  di runtime JS sottostante (come Node.js) per scrivere su stderr.
 title: Scrivere sull'errore standard
 weight: 25
 ---

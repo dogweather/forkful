@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 00:49:58.215725-07:00
-description: "Feilh\xE5ndtering betyr \xE5 planlegge for n\xE5r ting g\xE5r galt.\
-  \ Det er avgj\xF8rende fordi det hjelper med \xE5 unng\xE5 krasjer og gj\xF8r programvaren\
-  \ din robust og\u2026"
+description: "Hvordan: Her er en grunnleggende try-catch blokk for \xE5 h\xE5ndtere\
+  \ et unntak."
 lastmod: '2024-03-13T22:44:41.107485-06:00'
 model: gpt-4-1106-preview
-summary: "Feilh\xE5ndtering betyr \xE5 planlegge for n\xE5r ting g\xE5r galt."
+summary: "Her er en grunnleggende try-catch blokk for \xE5 h\xE5ndtere et unntak."
 title: "Feilh\xE5ndtering"
 weight: 16
 ---

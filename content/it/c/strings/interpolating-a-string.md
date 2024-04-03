@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:20.473105-07:00
-description: "L'interpolazione di stringhe, nella programmazione, comporta la costruzione\
-  \ di stringhe inserendo espressioni all'interno di stringhe letterali. I\u2026"
+description: "Come fare: C, a differenza di alcuni linguaggi di alto livello, non\
+  \ supporta direttamente l'interpolazione di stringhe nella sua sintassi. Invece,\
+  \ la\u2026"
 lastmod: '2024-03-13T22:44:43.890600-06:00'
 model: gpt-4-0125-preview
-summary: L'interpolazione di stringhe, nella programmazione, comporta la costruzione
-  di stringhe inserendo espressioni all'interno di stringhe letterali.
+summary: C, a differenza di alcuni linguaggi di alto livello, non supporta direttamente
+  l'interpolazione di stringhe nella sua sintassi.
 title: Interpolazione di una stringa
 weight: 8
 ---

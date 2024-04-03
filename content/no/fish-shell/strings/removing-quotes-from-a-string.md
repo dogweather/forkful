@@ -1,13 +1,10 @@
 ---
 date: 2024-01-26 03:39:07.856319-07:00
-description: "\xC5 fjerne anf\xF8rselstegn fra en streng handler om \xE5 stripe bort\
-  \ de irriterende enkle (' ') eller doble (\" \") anf\xF8rselstegnene fra tekstdataene\
-  \ dine.\u2026"
+description: "Hvordan: Fish har innebygd magi for denne typen oppgave. Bruk `string`-funksjonen\
+  \ uten \xE5 svette. Sjekk ut disse trylleformlene."
 lastmod: '2024-03-13T22:44:41.213265-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 fjerne anf\xF8rselstegn fra en streng handler om \xE5 stripe bort de\
-  \ irriterende enkle (' ') eller doble (\" \") anf\xF8rselstegnene fra tekstdataene\
-  \ dine."
+summary: Fish har innebygd magi for denne typen oppgave.
 title: "Fjerne anf\xF8rselstegn fra en streng"
 weight: 9
 ---

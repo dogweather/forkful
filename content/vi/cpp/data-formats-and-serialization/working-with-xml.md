@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:46.771172-07:00
-description: "L\xE0m vi\u1EC7c v\u1EDBi XML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xEDch\
-  \ c\xFA ph\xE1p, t\u1EA1o v\xE0 thao t\xE1c d\u1EEF li\u1EC7u XML (eXtensible Markup\
-  \ Language - Ng\xF4n ng\u1EEF \u0110\xE1nh d\u1EA5u M\u1EDF r\u1ED9ng). C\xE1c l\u1EAD\
-  p tr\xECnh vi\xEAn\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t c\xE1\
+  ch \u0111\u01A1n gi\u1EA3n \u0111\u1EC3 ph\xE2n t\xEDch c\xFA ph\xE1p XML s\u1EED\
+  \ d\u1EE5ng th\u01B0 vi\u1EC7n TinyXML-2."
 lastmod: '2024-03-13T22:44:37.073071-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m vi\u1EC7c v\u1EDBi XML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xEDch c\xFA\
-  \ ph\xE1p, t\u1EA1o v\xE0 thao t\xE1c d\u1EEF li\u1EC7u XML (eXtensible Markup Language\
-  \ - Ng\xF4n ng\u1EEF \u0110\xE1nh d\u1EA5u M\u1EDF r\u1ED9ng)."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t c\xE1ch \u0111\u01A1n gi\u1EA3\
+  n \u0111\u1EC3 ph\xE2n t\xEDch c\xFA ph\xE1p XML s\u1EED d\u1EE5ng th\u01B0 vi\u1EC7\
+  n TinyXML-2."
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---

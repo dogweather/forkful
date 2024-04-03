@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:52.941240-07:00
-description: "Loggen is in essentie het proces van het vastleggen van gebeurtenissen\
-  \ die plaatsvinden binnen een softwareapplicatie. Programmeurs loggen deze\u2026"
+description: 'Hoe: Hier is een eenvoudige manier om te beginnen met loggen in Java
+  met behulp van het ingebouwde `java.util.logging` pakket.'
 lastmod: '2024-03-13T22:44:50.688824-06:00'
 model: gpt-4-0125-preview
-summary: Loggen is in essentie het proces van het vastleggen van gebeurtenissen die
-  plaatsvinden binnen een softwareapplicatie.
+summary: Hier is een eenvoudige manier om te beginnen met loggen in Java met behulp
+  van het ingebouwde `java.util.logging` pakket.
 title: Logboekregistratie
 weight: 17
 ---

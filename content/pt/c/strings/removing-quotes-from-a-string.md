@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:13.362590-07:00
-description: "Remover aspas de uma string em C envolve extrair o conte\xFAdo textual\
-  \ sem as aspas simples (' ') ou duplas (\" \") encapsulando. Esse processo \xE9\
-  \ essencial\u2026"
+description: "Como fazer: Para remover aspas de uma string em C, percorremos a string,\
+  \ copiando caracteres que n\xE3o s\xE3o aspas para uma nova string. Esse processo\
+  \ pode\u2026"
 lastmod: '2024-03-13T22:44:47.036438-06:00'
 model: gpt-4-0125-preview
-summary: "Remover aspas de uma string em C envolve extrair o conte\xFAdo textual sem\
-  \ as aspas simples (' ') ou duplas (\" \") encapsulando."
+summary: "Para remover aspas de uma string em C, percorremos a string, copiando caracteres\
+  \ que n\xE3o s\xE3o aspas para uma nova string."
 title: Removendo aspas de uma string
 weight: 9
 ---

@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 18:02:15.998023-07:00
-description: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica significa incluir\
-  \ credenciales de usuario y contrase\xF1a en una solicitud a un servidor. Los\u2026"
+description: "C\xF3mo Hacerlo: Para enviar una solicitud HTTP con autenticaci\xF3\
+  n b\xE1sica en Python, puedes utilizar la biblioteca `requests`. Aqu\xED tienes\
+  \ un ejemplo r\xE1pido."
 lastmod: '2024-03-13T22:44:58.610722-06:00'
 model: gpt-4-1106-preview
-summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica significa incluir\
-  \ credenciales de usuario y contrase\xF1a en una solicitud a un servidor."
+summary: "Para enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica en Python,\
+  \ puedes utilizar la biblioteca `requests`."
 title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
 weight: 45
 ---

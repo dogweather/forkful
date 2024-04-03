@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:58:57.790080-07:00
-description: "\xC5 sende en HTTP-foresp\xF8rsel g\xE5r ut p\xE5 \xE5 be om data eller\
-  \ handling fra en server. Programmerere gj\xF8r dette for \xE5 hente informasjon,\
-  \ interagere med\u2026"
+description: "Slik gj\xF8r du det: For \xE5 sende en HTTP-foresp\xF8rsel kan du bruke\
+  \ `curl` eller `wget`. Disse kommandoene er kraftige og vanlige verkt\xF8y som er\u2026"
 lastmod: '2024-03-13T22:44:40.971356-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 sende en HTTP-foresp\xF8rsel g\xE5r ut p\xE5 \xE5 be om data eller\
-  \ handling fra en server."
+summary: "For \xE5 sende en HTTP-foresp\xF8rsel kan du bruke `curl` eller `wget`."
 title: "\xC5 sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---

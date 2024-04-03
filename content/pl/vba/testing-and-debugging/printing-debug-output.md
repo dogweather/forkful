@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:40.783238-07:00
-description: "Wypisywanie informacji debugowych w Visual Basic for Applications (VBA)\
-  \ polega na strategicznym umieszczaniu instrukcji wypisywania w kodzie, aby\u2026"
+description: "Jak to zrobi\u0107: W VBA instrukcja `Debug.Print` jest g\u0142\xF3\
+  wnym narz\u0119dziem do wypisywania informacji debugowych do Natychmiastowego Okna\
+  \ (Immediate Window) w\u2026"
 lastmod: '2024-03-13T22:44:35.234830-06:00'
 model: gpt-4-0125-preview
-summary: "Wypisywanie informacji debugowych w Visual Basic for Applications (VBA)\
-  \ polega na strategicznym umieszczaniu instrukcji wypisywania w kodzie, aby wy\u015B\
-  wietla\u0107 warto\u015Bci zmiennych, przebieg wykonania lub niestandardowe komunikaty\
-  \ debugowe."
+summary: "W VBA instrukcja `Debug.Print` jest g\u0142\xF3wnym narz\u0119dziem do wypisywania\
+  \ informacji debugowych do Natychmiastowego Okna (Immediate Window) w Visual Basic\
+  \ Editor (VBE)."
 title: "Drukowanie informacji wyj\u015Bciowych debugowania"
 weight: 33
 ---

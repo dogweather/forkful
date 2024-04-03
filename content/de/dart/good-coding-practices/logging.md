@@ -2,12 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:07.613357-07:00
-description: "Das Protokollieren in Dart bezieht sich auf den Prozess der Aufzeichnung\
-  \ verschiedener Informationsniveaus w\xE4hrend der Ausf\xFChrung eines Programms.\u2026"
+description: "Wie geht das: Dart umfasst einen einfachen Protokollierungsmechanismus\
+  \ durch die `dart:developer`-Bibliothek. F\xFCr anspruchsvollere\u2026"
 lastmod: '2024-03-13T22:44:53.588170-06:00'
 model: gpt-4-0125-preview
-summary: "Das Protokollieren in Dart bezieht sich auf den Prozess der Aufzeichnung\
-  \ verschiedener Informationsniveaus w\xE4hrend der Ausf\xFChrung eines Programms."
+summary: Dart umfasst einen einfachen Protokollierungsmechanismus durch die `dart:developer`-Bibliothek.
 title: Protokollierung
 weight: 17
 ---

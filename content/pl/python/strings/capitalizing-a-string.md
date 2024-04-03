@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:20.835334-07:00
-description: "Kapitalizacja ci\u0105gu znak\xF3w oznacza przekszta\u0142cenie pierwszego\
-  \ znaku ci\u0105gu na wielk\u0105 liter\u0119, a reszt\u0119 na ma\u0142e litery.\
-  \ Operacja ta jest powszechnie\u2026"
+description: "Jak to zrobi\u0107: #."
 lastmod: '2024-03-13T22:44:34.931388-06:00'
 model: gpt-4-0125-preview
-summary: "Kapitalizacja ci\u0105gu znak\xF3w oznacza przekszta\u0142cenie pierwszego\
-  \ znaku ci\u0105gu na wielk\u0105 liter\u0119, a reszt\u0119 na ma\u0142e litery."
+summary: '#.'
 title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---

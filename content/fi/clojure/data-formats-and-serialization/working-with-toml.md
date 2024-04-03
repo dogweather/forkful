@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:20:32.032181-07:00
-description: "Ty\xF6skentely TOML:n kanssa tarkoittaa, ett\xE4 k\xE4sittelet dataa\
-  \ Minimaalisessa \"Tom's Obvious, Minimal Language\" -formaatissa, mik\xE4 on suosittua\u2026"
+description: "Kuinka: Tehd\xE4ksesi t\xF6it\xE4 TOML:n kanssa Clojuressa tarvitset\
+  \ kirjaston, kuten `clj-toml`. Lis\xE4\xE4 se ensin `deps.edn`-tiedostoosi."
 lastmod: '2024-03-13T22:44:56.207586-06:00'
 model: gpt-4-0125-preview
-summary: "Ty\xF6skentely TOML:n kanssa tarkoittaa, ett\xE4 k\xE4sittelet dataa Minimaalisessa\
-  \ \"Tom's Obvious, Minimal Language\" -formaatissa, mik\xE4 on suosittua konfiguraatiotiedostoissa\
-  \ sen helpon luettavuuden vuoksi."
+summary: "Tehd\xE4ksesi t\xF6it\xE4 TOML:n kanssa Clojuressa tarvitset kirjaston,\
+  \ kuten `clj-toml`."
 title: "Ty\xF6skentely TOML:n kanssa"
 weight: 39
 ---

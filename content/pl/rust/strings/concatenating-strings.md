@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:35:40.191452-07:00
-description: "\u0141\u0105czenie string\xF3w to po prostu spos\xF3b, by z dw\xF3ch\
-  \ czy wi\u0119cej osobnych tekst\xF3w zrobi\u0107 jeden ci\u0105g\u0142y. Programi\u015B\
-  ci robi\u0105 to, gdy potrzebuj\u0105 stworzy\u0107\u2026"
+description: "How to: (Jak to zrobi\u0107:) Rust u\u017Cywa r\xF3\u017Cnych metod\
+  \ do \u0142\u0105czenia string\xF3w. Oto kilka przyk\u0142ad\xF3w."
 lastmod: '2024-03-13T22:44:35.176168-06:00'
 model: gpt-4-1106-preview
-summary: "\u0141\u0105czenie string\xF3w to po prostu spos\xF3b, by z dw\xF3ch czy\
-  \ wi\u0119cej osobnych tekst\xF3w zrobi\u0107 jeden ci\u0105g\u0142y."
+summary: "Rust u\u017Cywa r\xF3\u017Cnych metod do \u0142\u0105czenia string\xF3w."
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---

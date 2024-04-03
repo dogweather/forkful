@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:11.971303-07:00
-description: "Nel mondo di Arduino, gli array associativi ti permettono di abbinare\
-  \ chiavi a valori, un po' come accoppiare i calzini con i loro compagni. Sono la\u2026"
+description: "Come fare: Arduino, parlando in termini stretti, non ha un supporto\
+  \ integrato per gli array associativi come lo troveresti nei linguaggi di programmazione\u2026"
 lastmod: '2024-03-13T22:44:43.676265-06:00'
 model: gpt-4-0125-preview
-summary: Nel mondo di Arduino, gli array associativi ti permettono di abbinare chiavi
-  a valori, un po' come accoppiare i calzini con i loro compagni.
+summary: Arduino, parlando in termini stretti, non ha un supporto integrato per gli
+  array associativi come lo troveresti nei linguaggi di programmazione di alto livello.
 title: Utilizzo di array associativi
 weight: 15
 ---

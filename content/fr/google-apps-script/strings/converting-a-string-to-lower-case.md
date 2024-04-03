@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:49.586224-07:00
-description: "Convertir une cha\xEEne en minuscules avec Google Apps Script, un langage\
-  \ de script bas\xE9 sur le cloud pour automatiser des t\xE2ches \xE0 travers les\
-  \ produits\u2026"
+description: "Comment : Convertir une cha\xEEne en minuscules dans Google Apps Script\
+  \ est simple, gr\xE2ce aux m\xE9thodes JavaScript int\xE9gr\xE9es disponibles dans\
+  \ l'environnement\u2026"
 lastmod: '2024-03-13T22:44:57.168819-06:00'
 model: gpt-4-0125-preview
-summary: "Convertir une cha\xEEne en minuscules avec Google Apps Script, un langage\
-  \ de script bas\xE9 sur le cloud pour automatiser des t\xE2ches \xE0 travers les\
-  \ produits Google, est une t\xE2che fondamentale visant \xE0 normaliser les donn\xE9\
-  es textuelles."
+summary: "Convertir une cha\xEEne en minuscules dans Google Apps Script est simple,\
+  \ gr\xE2ce aux m\xE9thodes JavaScript int\xE9gr\xE9es disponibles dans l'environnement\
+  \ de script."
 title: "Convertir une cha\xEEne en minuscules"
 weight: 4
 ---

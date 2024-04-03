@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:59.286454-07:00
-description: "Regulj\xE4ra uttryck (regex) i Bash g\xF6r det m\xF6jligt att s\xF6\
-  ka, manipulera och hantera str\xE4ngar och filer baserat p\xE5 s\xE4rskilda m\xF6\
-  nster. Programmerare anv\xE4nder\u2026"
+description: "Hur man g\xF6r: #."
 lastmod: '2024-03-13T22:44:38.070677-06:00'
 model: gpt-4-0125-preview
-summary: "Regulj\xE4ra uttryck (regex) i Bash g\xF6r det m\xF6jligt att s\xF6ka, manipulera\
-  \ och hantera str\xE4ngar och filer baserat p\xE5 s\xE4rskilda m\xF6nster."
+summary: '#.'
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---

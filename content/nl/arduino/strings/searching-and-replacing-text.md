@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:04.294119-07:00
-description: "Tekst zoeken en vervangen stelt je in staat om specifieke tekens of\
-  \ reeksen te vinden in een tekst en deze te vervangen door iets anders. Programmeurs\u2026"
+description: "Hoe: Arduino ondersteunt niet standaard het zoeken en vervangen van\
+  \ strings zoals hogere programmeertalen dat doen. Je kunt echter werken met tekenarrays\u2026"
 lastmod: '2024-03-13T22:44:51.057772-06:00'
 model: gpt-4-0125-preview
-summary: Tekst zoeken en vervangen stelt je in staat om specifieke tekens of reeksen
-  te vinden in een tekst en deze te vervangen door iets anders.
+summary: Arduino ondersteunt niet standaard het zoeken en vervangen van strings zoals
+  hogere programmeertalen dat doen.
 title: Tekst zoeken en vervangen
 weight: 10
 ---

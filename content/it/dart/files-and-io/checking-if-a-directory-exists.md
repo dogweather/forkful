@@ -2,13 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:53:29.329476-07:00
-description: "Controllare se una directory esiste in Dart comporta la verifica della\
-  \ presenza di una directory in un percorso specificato sul file system prima di\u2026"
+description: 'Come fare: Dart utilizza la libreria `dart:io` per lavorare con file
+  e directory. Ecco un modo semplice per verificare se una directory esiste.'
 lastmod: '2024-03-13T22:44:43.147872-06:00'
 model: gpt-4-0125-preview
-summary: Controllare se una directory esiste in Dart comporta la verifica della presenza
-  di una directory in un percorso specificato sul file system prima di eseguire operazioni
-  come la lettura o la scrittura di file.
+summary: Dart utilizza la libreria `dart:io` per lavorare con file e directory.
 title: Verifica dell'esistenza di una directory
 weight: 20
 ---

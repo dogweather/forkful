@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 03:40:38.035723-07:00
-description: "Das Entfernen von Anf\xFChrungszeichen aus einem PHP-String bedeutet,\
-  \ diese l\xE4stigen doppelten (`\"`) oder einfachen (`'`) Anf\xFChrungszeichen,\
-  \ die Ihre Code-\u2026"
+description: 'Wie geht das: Hier ist ein einfaches Beispiel unter Verwendung der integrierten
+  Funktionen von PHP.'
 lastmod: '2024-03-13T22:44:53.960322-06:00'
 model: gpt-4-0125-preview
-summary: "Das Entfernen von Anf\xFChrungszeichen aus einem PHP-String bedeutet, diese\
-  \ l\xE4stigen doppelten (`\"`) oder einfachen (`'`) Anf\xFChrungszeichen, die Ihre\
-  \ Code-Logik oder Datenbankabfragen durcheinander bringen k\xF6nnen, herauszufiltern."
+summary: Hier ist ein einfaches Beispiel unter Verwendung der integrierten Funktionen
+  von PHP.
 title: "Anf\xFChrungszeichen aus einem String entfernen"
 weight: 9
 ---

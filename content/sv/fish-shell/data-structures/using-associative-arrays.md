@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:59.211907-07:00
-description: "Associativa arrayer, eller hashmappar, l\xE5ter dig lagra data som nyckel-v\xE4\
-  rdepar, vilket g\xF6r det enklare att organisera och h\xE4mta information med nyckeln.\u2026"
+description: "Hur g\xF6r man: Fish st\xF6der inte native associativa arrayer som Bash\
+  \ 4+, men du kan uppn\xE5 liknande funktionalitet med en kombination av listor och\u2026"
 lastmod: '2024-03-13T22:44:38.328610-06:00'
 model: gpt-4-0125-preview
-summary: "Associativa arrayer, eller hashmappar, l\xE5ter dig lagra data som nyckel-v\xE4\
-  rdepar, vilket g\xF6r det enklare att organisera och h\xE4mta information med nyckeln."
+summary: "Fish st\xF6der inte native associativa arrayer som Bash 4+, men du kan uppn\xE5\
+  \ liknande funktionalitet med en kombination av listor och str\xE4ngmanipulation."
 title: "Att anv\xE4nda associativa arrayer"
 weight: 15
 ---

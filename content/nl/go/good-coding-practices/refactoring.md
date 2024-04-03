@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:05.518595-07:00
-description: "Refactoring in programmeren houdt in dat bestaande computercodes worden\
-  \ geherstructureerd\u2014de factoring wordt veranderd\u2014zonder dat hun externe\
-  \ gedrag\u2026"
+description: "Hoe: In Go kan refactoring vari\xEBren van eenvoudige code-aanpassingen\
+  \ tot complexere wijzigingen. Laten we beginnen met een basaal voorbeeld: het\u2026"
 lastmod: '2024-03-13T22:44:50.296285-06:00'
 model: gpt-4-0125-preview
-summary: "Refactoring in programmeren houdt in dat bestaande computercodes worden\
-  \ geherstructureerd\u2014de factoring wordt veranderd\u2014zonder dat hun externe\
-  \ gedrag verandert."
+summary: "In Go kan refactoring vari\xEBren van eenvoudige code-aanpassingen tot complexere\
+  \ wijzigingen."
 title: Refactoring
 weight: 19
 ---

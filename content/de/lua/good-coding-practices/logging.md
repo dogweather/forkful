@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 01:06:36.916059-07:00
-description: "Das Protokollieren ist die Praxis, Ereignisse, Fehler und andere signifikante\
-  \ Datenpunkte aufzuzeichnen, die im Lebenszyklus einer Softwareanwendung\u2026"
+description: "Wie geht das: Lua verf\xFCgt nicht \xFCber ein eingebautes Protokollierungsframework,\
+  \ aber das Implementieren einer einfachen Protokollierungsfunktion ist\u2026"
 lastmod: '2024-03-13T22:44:54.021632-06:00'
 model: gpt-4-1106-preview
-summary: Das Protokollieren ist die Praxis, Ereignisse, Fehler und andere signifikante
-  Datenpunkte aufzuzeichnen, die im Lebenszyklus einer Softwareanwendung auftreten.
+summary: "Lua verf\xFCgt nicht \xFCber ein eingebautes Protokollierungsframework,\
+  \ aber das Implementieren einer einfachen Protokollierungsfunktion ist unkompliziert."
 title: Protokollierung
 weight: 17
 ---

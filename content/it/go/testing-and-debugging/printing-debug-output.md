@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:17.284611-07:00
-description: "Nella programmazione informatica, \"Stampare l'output di debug\" implica\
-  \ produrre messaggi informativi dettagliati che aiutano gli sviluppatori a\u2026"
+description: "Come fare: In Go, puoi utilizzare il pacchetto standard `fmt` per stampare\
+  \ l'output di debug nella console. Il pacchetto `fmt` offre una variet\xE0 di\u2026"
 lastmod: '2024-03-13T22:44:42.911095-06:00'
 model: gpt-4-0125-preview
-summary: Nella programmazione informatica, "Stampare l'output di debug" implica produrre
-  messaggi informativi dettagliati che aiutano gli sviluppatori a comprendere il flusso
-  di esecuzione del loro programma o a identificare problemi.
+summary: In Go, puoi utilizzare il pacchetto standard `fmt` per stampare l'output
+  di debug nella console.
 title: Stampa dell'output di debug
 weight: 33
 ---

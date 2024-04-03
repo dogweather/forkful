@@ -2,14 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:28.417520-07:00
-description: "Pisanie do standardowego b\u0142\u0119du (stderr) w Bashu polega na\
-  \ kierowaniu komunikat\xF3w b\u0142\u0119d\xF3w lub wszelkich wa\u017Cnych wyj\u015B\
-  \u0107 diagnostycznych oddzielnie od\u2026"
+description: "Jak to zrobi\u0107: W Bashu u\u017Cywasz `>&2` do przekierowania wyj\u015B\
+  cia do stderr. Oto podstawowy przyk\u0142ad."
 lastmod: '2024-03-13T22:44:35.601775-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie do standardowego b\u0142\u0119du (stderr) w Bashu polega na kierowaniu\
-  \ komunikat\xF3w b\u0142\u0119d\xF3w lub wszelkich wa\u017Cnych wyj\u015B\u0107\
-  \ diagnostycznych oddzielnie od standardowego wyj\u015Bcia (stdout)."
+summary: "W Bashu u\u017Cywasz `>&2` do przekierowania wyj\u015Bcia do stderr."
 title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---

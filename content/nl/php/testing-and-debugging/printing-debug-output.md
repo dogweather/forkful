@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:27.262041-07:00
-description: "Het printen van debug-output gaat over het op het scherm knallen van\
-  \ de interne data van je code om uit te vogelen wat er aan de hand is. Programmeurs\u2026"
+description: 'Hoe te: .'
 lastmod: '2024-03-13T22:44:50.897987-06:00'
 model: gpt-4-0125-preview
-summary: Het printen van debug-output gaat over het op het scherm knallen van de interne
-  data van je code om uit te vogelen wat er aan de hand is.
+summary: .
 title: Debug-output afdrukken
 weight: 33
 ---

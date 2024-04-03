@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:22.756164-07:00
-description: "Een HTTP-verzoek versturen is de handeling van het vragen om data of\
-  \ actie aan een webserver. Programmeurs doen dit om te interacteren met API's,\u2026"
+description: "Hoe: Laten we naar het leuke gedeelte gaan. Je hebt de `http-client`\
+  \ en `http-client-tls` pakketten nodig. Stel je stack in en voeg ze toe aan je\u2026"
 lastmod: '2024-03-13T22:44:50.849147-06:00'
 model: gpt-4-0125-preview
-summary: Een HTTP-verzoek versturen is de handeling van het vragen om data of actie
-  aan een webserver.
+summary: Laten we naar het leuke gedeelte gaan.
 title: Een HTTP-verzoek verzenden
 weight: 44
 ---

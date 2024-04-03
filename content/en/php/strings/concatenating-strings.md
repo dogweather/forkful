@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:35:16.268542-07:00
-description: "Concatenating strings is basically just stringing words together. Think\
-  \ of it like making a train out of words instead of carriages. Programmers do it\
-  \ to\u2026"
+description: 'How to: In PHP, concatenating is all about the dot (`.''). Take two
+  strings, put a dot between them, and voila! They''re now one.'
 lastmod: '2024-03-13T22:45:00.159180-06:00'
 model: gpt-4-1106-preview
-summary: Concatenating strings is basically just stringing words together.
+summary: In PHP, concatenating is all about the dot (`.').
 title: Concatenating strings
 weight: 3
 ---

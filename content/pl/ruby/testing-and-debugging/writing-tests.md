@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:09.934883-07:00
-description: "Testowanie w Ruby polega na weryfikacji, czy Tw\xF3j kod zachowuje si\u0119\
-  \ zgodnie z oczekiwaniami w r\xF3\u017Cnych warunkach. Programi\u015Bci pisz\u0105\
-  \ testy, aby zapewni\u0107\u2026"
+description: "Jak to zrobi\u0107: Ruby jest wyposa\u017Cony w wbudowan\u0105 bibliotek\u0119\
+  \ o nazwie `Test::Unit` do pisania test\xF3w jednostkowych, zawieraj\u0105c\u0105\
+  \ praktyki testowe w prostych\u2026"
 lastmod: '2024-03-13T22:44:35.935903-06:00'
 model: gpt-4-0125-preview
-summary: "Testowanie w Ruby polega na weryfikacji, czy Tw\xF3j kod zachowuje si\u0119\
-  \ zgodnie z oczekiwaniami w r\xF3\u017Cnych warunkach."
+summary: "Ruby jest wyposa\u017Cony w wbudowan\u0105 bibliotek\u0119 o nazwie `Test::Unit`\
+  \ do pisania test\xF3w jednostkowych, zawieraj\u0105c\u0105 praktyki testowe w prostych\
+  \ strukturach."
 title: "Pisanie test\xF3w"
 weight: 36
 ---

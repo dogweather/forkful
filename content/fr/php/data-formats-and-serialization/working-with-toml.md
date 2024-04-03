@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:24:32.114954-07:00
-description: "TOML, abr\xE9viation de Tom's Obvious, Minimal Language, est un format\
-  \ de donn\xE9es semblable \xE0 JSON ou YAML, mais plus facile \xE0 lire pour les\
-  \ humains. Les\u2026"
+description: "Comment faire : D'abord, assurez-vous d'avoir install\xE9 une biblioth\xE8\
+  que d'analyse TOML, comme `yosymfony/toml`. Analysons un fichier TOML ."
 lastmod: '2024-03-13T22:44:57.904225-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, abr\xE9viation de Tom's Obvious, Minimal Language, est un format de\
-  \ donn\xE9es semblable \xE0 JSON ou YAML, mais plus facile \xE0 lire pour les humains."
+summary: "D'abord, assurez-vous d'avoir install\xE9 une biblioth\xE8que d'analyse\
+  \ TOML, comme `yosymfony/toml`."
 title: Travailler avec TOML
 weight: 39
 ---

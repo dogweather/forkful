@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:43.726610-07:00
-description: "Baixar uma p\xE1gina da web em Visual Basic for Applications (VBA) envolve\
-  \ obter o conte\xFAdo HTML de uma p\xE1gina da web da Internet. Programadores\u2026"
+description: "Como fazer: Para baixar uma p\xE1gina da web em VBA, voc\xEA pode utilizar\
+  \ a biblioteca Microsoft XML, v6.0 (MSXML6), que permite solicita\xE7\xF5es HTTP\
+  \ do servidor.\u2026"
 lastmod: '2024-03-13T22:44:46.410564-06:00'
 model: gpt-4-0125-preview
-summary: "Baixar uma p\xE1gina da web em Visual Basic for Applications (VBA) envolve\
-  \ obter o conte\xFAdo HTML de uma p\xE1gina da web da Internet."
+summary: "Para baixar uma p\xE1gina da web em VBA, voc\xEA pode utilizar a biblioteca\
+  \ Microsoft XML, v6.0 (MSXML6), que permite solicita\xE7\xF5es HTTP do servidor."
 title: "Baixando uma p\xE1gina da web"
 weight: 42
 ---

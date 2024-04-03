@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:16.093862-07:00
-description: "\xC9crire des tests en programmation implique de cr\xE9er de petits\
-  \ morceaux de code s\xE9par\xE9s pour v\xE9rifier automatiquement que diff\xE9rentes\
-  \ parties de votre\u2026"
+description: "Comment faire : Lua, \xE9tant un langage de script l\xE9ger mais puissant,\
+  \ n'inclut pas de framework de test int\xE9gr\xE9. Cependant, des biblioth\xE8ques\
+  \ tierces comme\u2026"
 lastmod: '2024-03-13T22:44:57.940220-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire des tests en programmation implique de cr\xE9er de petits morceaux\
-  \ de code s\xE9par\xE9s pour v\xE9rifier automatiquement que diff\xE9rentes parties\
-  \ de votre application fonctionnent comme pr\xE9vu."
+summary: "Lua, \xE9tant un langage de script l\xE9ger mais puissant, n'inclut pas\
+  \ de framework de test int\xE9gr\xE9."
 title: "R\xE9daction de tests"
 weight: 36
 ---

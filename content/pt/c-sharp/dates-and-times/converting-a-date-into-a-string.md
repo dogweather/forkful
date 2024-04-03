@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:36:15.208482-07:00
-description: "Converter uma data em uma string transforma o objeto `DateTime` em texto\
-  \ leg\xEDvel. Fazemos isso para exibir datas de forma adequada em interfaces de\u2026"
+description: "How to: O C# oferece o m\xE9todo `ToString()` para formatar e converter\
+  \ datas. Vamos a alguns exemplos."
 lastmod: '2024-03-13T22:44:46.595474-06:00'
 model: gpt-4-1106-preview
-summary: "Converter uma data em uma string transforma o objeto `DateTime` em texto\
-  \ leg\xEDvel."
+summary: "O C# oferece o m\xE9todo `ToString()` para formatar e converter datas."
 title: Convertendo uma data em uma string
 weight: 28
 ---

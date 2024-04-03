@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 18:04:26.632335-07:00
-description: "Iniciar um novo projeto em PowerShell \xE9 como abrir um livro branco;\
-  \ voc\xEA cria um espa\xE7o para desenvolver scripts e solu\xE7\xF5es automatizadas.\
-  \ Programadores\u2026"
+description: "Como Fazer: Para come\xE7ar um novo projeto em PowerShell, primeiro\
+  \ pense na estrutura de diret\xF3rios. Veja um exemplo simples de cria\xE7\xE3o\
+  \ de diret\xF3rio de\u2026"
 lastmod: '2024-03-13T22:44:46.797708-06:00'
 model: gpt-4-1106-preview
-summary: "Iniciar um novo projeto em PowerShell \xE9 como abrir um livro branco; voc\xEA\
-  \ cria um espa\xE7o para desenvolver scripts e solu\xE7\xF5es automatizadas."
+summary: "Para come\xE7ar um novo projeto em PowerShell, primeiro pense na estrutura\
+  \ de diret\xF3rios."
 title: Iniciando um novo projeto
 weight: 1
 ---

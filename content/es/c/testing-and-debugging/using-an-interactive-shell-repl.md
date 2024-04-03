@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:06.147087-07:00
-description: "Un shell interactivo, tambi\xE9n conocido como un bucle Leer-Evaluar-Imprimir\
-  \ (REPL, por sus siglas en ingl\xE9s), permite a los programadores escribir\u2026"
+description: "C\xF3mo hacerlo: Para interactuar con un REPL en C, es posible que no\
+  \ encuentres un camino tan directo como en lenguajes como Python o JavaScript. Sin\u2026"
 lastmod: '2024-03-13T22:44:59.547377-06:00'
 model: gpt-4-0125-preview
-summary: "Un shell interactivo, tambi\xE9n conocido como un bucle Leer-Evaluar-Imprimir\
-  \ (REPL, por sus siglas en ingl\xE9s), permite a los programadores escribir expresiones\
-  \ o c\xF3digo y ver inmediatamente los resultados, mejorando los procesos de aprendizaje\
-  \ y depuraci\xF3n."
+summary: Para interactuar con un REPL en C, es posible que no encuentres un camino
+  tan directo como en lenguajes como Python o JavaScript.
 title: Utilizando un shell interactivo (REPL)
 weight: 34
 ---

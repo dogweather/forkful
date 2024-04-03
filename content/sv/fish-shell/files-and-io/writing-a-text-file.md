@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:54.974536-07:00
-description: "Att skriva till en textfil i Fish Shell g\xF6r att du kan lagra data\
-  \ p\xE5 ett best\xE4ndigt s\xE4tt, vilket m\xF6jligg\xF6r enkel h\xE4mtning eller\
-  \ manipulation av data\u2026"
+description: "Hur man g\xF6r: F\xF6r att skriva till en textfil i Fish kan du anv\xE4\
+  nda `echo`-kommandot i kombination med omdirigeringsoperatorer. Det finns inte popul\xE4\
+  ra\u2026"
 lastmod: '2024-03-13T22:44:38.356579-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva till en textfil i Fish Shell g\xF6r att du kan lagra data p\xE5\
-  \ ett best\xE4ndigt s\xE4tt, vilket m\xF6jligg\xF6r enkel h\xE4mtning eller manipulation\
-  \ av data antingen av samma Fish-script eller andra program."
+summary: "F\xF6r att skriva till en textfil i Fish kan du anv\xE4nda `echo`-kommandot\
+  \ i kombination med omdirigeringsoperatorer."
 title: Att skriva en textfil
 weight: 24
 ---

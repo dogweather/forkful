@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:18.925679-07:00
-description: "Complexe getallen hebben een re\xEBel deel en een imaginair deel (zoals\
-  \ 3 + 4i). Programmeurs gebruiken ze in Swift voor taken zoals signaalverwerking,\
-  \ het\u2026"
+description: 'Hoe: Swift heeft geen ingebouwde ondersteuning voor complexe getallen,
+  maar we kunnen onze eigen maken.'
 lastmod: '2024-03-13T22:44:51.150347-06:00'
 model: gpt-4-0125-preview
-summary: "Complexe getallen hebben een re\xEBel deel en een imaginair deel (zoals\
-  \ 3 + 4i)."
+summary: Swift heeft geen ingebouwde ondersteuning voor complexe getallen, maar we
+  kunnen onze eigen maken.
 title: Werken met complexe getallen
 weight: 14
 ---

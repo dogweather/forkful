@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:35:49.262097-07:00
-description: ''
+description: "\u0429\u043E \u0456 \u0427\u043E\u043C\u0443? Date to string conversion\
+  \ means transforming a date (like year, month, day) into a text format. Programmers\
+  \ do this to display dates on\u2026"
 lastmod: '2024-03-13T22:44:49.736966-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Date to string conversion means transforming a date (like year, month, day)
+  into a text format.
 title: "\u041F\u0435\u0440\u0435\u0442\u0432\u043E\u0440\u0435\u043D\u043D\u044F \u0434\
   \u0430\u0442\u0438 \u0432 \u0440\u044F\u0434\u043E\u043A"
 weight: 28

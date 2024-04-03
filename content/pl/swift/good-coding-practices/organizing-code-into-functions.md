@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:16:19.276639-07:00
-description: "Grupowanie kodu w funkcje polega na dzieleniu zada\u0144 na wielokrotnie\
-  \ u\u017Cywalne fragmenty. Sprawia to, \u017Ce kod jest czytelny, mniej podatny\
-  \ na b\u0142\u0119dy i\u2026"
+description: "Jak to zrobi\u0107: Wyobra\u017A sobie zadanie: oblicz \u015Bredni\u0105\
+  \ z tablicy. Bez funkcji, wrzuci\u0142by\u015B to wszystko do funkcji main. Z funkcjami\
+  \ zrobi\u0142by\u015B to tak."
 lastmod: '2024-03-13T22:44:35.760426-06:00'
 model: gpt-4-0125-preview
-summary: "Grupowanie kodu w funkcje polega na dzieleniu zada\u0144 na wielokrotnie\
-  \ u\u017Cywalne fragmenty."
+summary: "Wyobra\u017A sobie zadanie."
 title: Organizowanie kodu w funkcje
 weight: 18
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:55.175508-07:00
-description: "Tablice asocjacyjne, znane bardziej jako hashe w Ruby, umo\u017Cliwiaj\u0105\
-  \ parowanie unikalnych kluczy z warto\u015Bciami. S\u0105 niezast\u0105pione, kiedy\
-  \ potrzebujesz \u015Bledzi\u0107\u2026"
+description: "Jak to zrobi\u0107: Tworzenie i u\u017Cywanie hashy w Ruby jest proste.\
+  \ Mo\u017Cesz zainicjalizowa\u0107 pusty hash, wype\u0142ni\u0107 go parami klucz-warto\u015B\
+  \u0107, uzyska\u0107 dost\u0119p do\u2026"
 lastmod: '2024-03-13T22:44:35.923789-06:00'
 model: gpt-4-0125-preview
-summary: "Tablice asocjacyjne, znane bardziej jako hashe w Ruby, umo\u017Cliwiaj\u0105\
-  \ parowanie unikalnych kluczy z warto\u015Bciami."
+summary: "Tworzenie i u\u017Cywanie hashy w Ruby jest proste."
 title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---

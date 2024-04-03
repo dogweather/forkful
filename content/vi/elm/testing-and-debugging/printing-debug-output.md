@@ -2,15 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:40.537775-07:00
-description: "In th\xF4ng tin g\u1EE1 l\u1ED7i trong Elm l\xE0 vi\u1EC7c hi\u1EC3\
-  n th\u1ECB c\xE1c gi\xE1 tr\u1ECB tr\xEAn b\u1EA3ng \u0111i\u1EC1u khi\u1EC3n \u0111\
-  \u1EC3 hi\u1EC3u \u0111i\u1EC1u g\xEC \u0111ang x\u1EA3y ra trong m\xE3 c\u1EE7\
-  a b\u1EA1n. Ch\xFAng t\xF4i l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Elm kh\xF4ng c\xF3 h\xE0m `print` s\u1EB5\
+  n c\xF3 nh\u01B0 m\u1ED9t s\u1ED1 ng\xF4n ng\u1EEF kh\xE1c, nh\u01B0ng b\u1EA1n\
+  \ c\xF3 th\u1EC3 s\u1EED d\u1EE5ng m\xF4-\u0111un `Debug` cho \u0111\u1EA7u ra b\u1EA3\
+  ng \u0111i\u1EC1u khi\u1EC3n."
 lastmod: '2024-03-13T22:44:36.547705-06:00'
 model: gpt-4-0125-preview
-summary: "In th\xF4ng tin g\u1EE1 l\u1ED7i trong Elm l\xE0 vi\u1EC7c hi\u1EC3n th\u1ECB\
-  \ c\xE1c gi\xE1 tr\u1ECB tr\xEAn b\u1EA3ng \u0111i\u1EC1u khi\u1EC3n \u0111\u1EC3\
-  \ hi\u1EC3u \u0111i\u1EC1u g\xEC \u0111ang x\u1EA3y ra trong m\xE3 c\u1EE7a b\u1EA1\
+summary: "Elm kh\xF4ng c\xF3 h\xE0m `print` s\u1EB5n c\xF3 nh\u01B0 m\u1ED9t s\u1ED1\
+  \ ng\xF4n ng\u1EEF kh\xE1c, nh\u01B0ng b\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng\
+  \ m\xF4-\u0111un `Debug` cho \u0111\u1EA7u ra b\u1EA3ng \u0111i\u1EC1u khi\u1EC3\
   n."
 title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 weight: 33

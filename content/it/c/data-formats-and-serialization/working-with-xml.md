@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:00.841912-07:00
-description: "Lavorare con XML in C coinvolge l'analisi (parsing), l'interrogazione\
-  \ e la manipolazione di documenti XML utilizzando varie librerie. I programmatori\
-  \ si\u2026"
+description: "Come fare: C non ha un supporto integrato per XML, quindi \xE8 necessario\
+  \ utilizzare librerie esterne. Una scelta popolare \xE8 `libxml2`, una libreria\
+  \ stabile\u2026"
 lastmod: '2024-03-13T22:44:44.031637-06:00'
 model: gpt-4-0125-preview
-summary: Lavorare con XML in C coinvolge l'analisi (parsing), l'interrogazione e la
-  manipolazione di documenti XML utilizzando varie librerie.
+summary: "C non ha un supporto integrato per XML, quindi \xE8 necessario utilizzare\
+  \ librerie esterne."
 title: Lavorare con XML
 weight: 40
 ---

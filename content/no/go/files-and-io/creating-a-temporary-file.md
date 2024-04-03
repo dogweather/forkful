@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:26.241847-07:00
-description: "\xC5 lage en midlertidig fil i Go muliggj\xF8r genereringen av en ikke-persistent\
-  \ fil designet for kortvarig bruk, hovedsakelig for oppgaver som \xE5 lagre\u2026"
+description: "Hvordan: I Go, `ioutil`-pakken opprinnelig tilbudt hjelpefunksjoner\
+  \ for \xE5 lage midlertidige filer. Imidlertid, promoterte Go 1.16 bruken av `os`\
+  \ og\u2026"
 lastmod: '2024-03-13T22:44:40.288898-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 lage en midlertidig fil i Go muliggj\xF8r genereringen av en ikke-persistent\
-  \ fil designet for kortvarig bruk, hovedsakelig for oppgaver som \xE5 lagre midlertidig\
-  \ data eller assistere i batchbehandlingsjobber."
+summary: "I Go, `ioutil`-pakken opprinnelig tilbudt hjelpefunksjoner for \xE5 lage\
+  \ midlertidige filer."
 title: Oppretting av en midlertidig fil
 weight: 21
 ---

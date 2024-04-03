@@ -2,17 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:01.338009-07:00
-description: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i sang k\xFD t\u1EF1 th\u01B0\
-  \u1EDDng c\xF3 ngh\u0129a l\xE0 bi\u1EBFn \u0111\u1ED5i t\u1EA5t c\u1EA3 c\xE1c\
-  \ k\xFD t\u1EF1 ch\u1EEF c\xE1i sang d\u1EA1ng ch\u1EEF th\u01B0\u1EDDng c\u1EE7\
-  a ch\xFAng. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u01B0\u1EDDng l\xE0m \u0111i\u1EC1\
-  u\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Elm s\u1EED d\u1EE5ng h\xE0m `String.toLower`\
+  \ \u0111\u1EC3 chuy\u1EC3n \u0111\u1ED5i v\u0103n b\u1EA3n."
 lastmod: '2024-03-13T22:44:36.526918-06:00'
 model: gpt-4-0125-preview
-summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i sang k\xFD t\u1EF1 th\u01B0\
-  \u1EDDng c\xF3 ngh\u0129a l\xE0 bi\u1EBFn \u0111\u1ED5i t\u1EA5t c\u1EA3 c\xE1c\
-  \ k\xFD t\u1EF1 ch\u1EEF c\xE1i sang d\u1EA1ng ch\u1EEF th\u01B0\u1EDDng c\u1EE7\
-  a ch\xFAng."
+summary: "Elm s\u1EED d\u1EE5ng h\xE0m `String.toLower` \u0111\u1EC3 chuy\u1EC3n \u0111\
+  \u1ED5i v\u0103n b\u1EA3n."
 title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
 weight: 4
 ---

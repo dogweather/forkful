@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:31:18.715907-07:00
-description: "Calcular uma data no futuro ou passado \xE9 simplesmente determinar\
-  \ uma data adicionando ou subtraindo um certo per\xEDodo de tempo a partir de hoje.\u2026"
+description: "Como Fazer: Vamos usar a biblioteca `time` para manipular datas. Aqui\
+  \ est\xE3o os passos e um exemplo simples."
 lastmod: '2024-03-13T22:44:46.638444-06:00'
 model: gpt-4-1106-preview
-summary: "Calcular uma data no futuro ou passado \xE9 simplesmente determinar uma\
-  \ data adicionando ou subtraindo um certo per\xEDodo de tempo a partir de hoje."
+summary: Vamos usar a biblioteca `time` para manipular datas.
 title: Calculando uma data no futuro ou passado
 weight: 26
 ---

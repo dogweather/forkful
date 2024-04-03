@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:09:44.695732-07:00
-description: "Att skriva till standardfel (stderr) i programmeringsspr\xE5k handlar\
-  \ om att dirigera felmeddelanden och diagnostik till en separat str\xF6m, skild\
-  \ fr\xE5n den\u2026"
+description: "Hur: Google Apps Script, som \xE4r ett skriptspr\xE5k f\xF6r l\xE4ttviktsapplikationsutveckling\
+  \ p\xE5 Google Apps-plattformen, erbjuder inte en direkt inbyggd funktion\u2026"
 lastmod: '2024-03-13T22:44:37.456661-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva till standardfel (stderr) i programmeringsspr\xE5k handlar om\
-  \ att dirigera felmeddelanden och diagnostik till en separat str\xF6m, skild fr\xE5\
-  n den standardm\xE4ssiga utmatningen (stdout)."
+summary: "Google Apps Script, som \xE4r ett skriptspr\xE5k f\xF6r l\xE4ttviktsapplikationsutveckling\
+  \ p\xE5 Google Apps-plattformen, erbjuder inte en direkt inbyggd funktion som `console.error()`\
+  \ f\xF6r skrivning till stderr, som man kanske hittar i Node.js eller Python."
 title: Skriva till standardfel
 weight: 25
 ---

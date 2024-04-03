@@ -2,16 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:21.384248-07:00
-description: "S\u1ED1 ph\u1EE9c m\u1EDF r\u1ED9ng \xFD t\u01B0\u1EDFng v\u1EC1 \u0111\
-  \u01B0\u1EDDng s\u1ED1 m\u1ED9t chi\u1EC1u th\xE0nh m\u1ED9t m\u1EB7t ph\u1EB3ng\
-  \ ph\u1EE9c t\u1EA1p hai chi\u1EC1u. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng\
-  \ ch\xFAng trong c\xE1c l\u0129nh v\u1EF1c nh\u01B0 k\u1EF9 thu\u1EADt, v\u1EAD\
-  t l\xFD\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Fish, ch\xFAng ta x\u1EED l\xFD s\u1ED1\
+  \ ph\u1EE9c b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng `math` v\u1EDBi ph\u1EA7n th\u1EF1\
+  c v\xE0 ph\u1EA7n \u1EA3o. D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t kh\u1EDFi \u0111\
+  \u1EA7u."
 lastmod: '2024-03-13T22:44:37.199843-06:00'
 model: gpt-4-0125-preview
-summary: "S\u1ED1 ph\u1EE9c m\u1EDF r\u1ED9ng \xFD t\u01B0\u1EDFng v\u1EC1 \u0111\u01B0\
-  \u1EDDng s\u1ED1 m\u1ED9t chi\u1EC1u th\xE0nh m\u1ED9t m\u1EB7t ph\u1EB3ng ph\u1EE9\
-  c t\u1EA1p hai chi\u1EC1u."
+summary: "Trong Fish, ch\xFAng ta x\u1EED l\xFD s\u1ED1 ph\u1EE9c b\u1EB1ng c\xE1\
+  ch s\u1EED d\u1EE5ng `math` v\u1EDBi ph\u1EA7n th\u1EF1c v\xE0 ph\u1EA7n \u1EA3\
+  o."
 title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 weight: 14
 ---

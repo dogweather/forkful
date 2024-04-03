@@ -2,14 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:49.601580-07:00
-description: "Assoziative Arrays, oder wie sie in Elm genannt werden, Dictionaries,\
-  \ ordnen Schl\xFCsseln Werte zu, was das Suchen, Einf\xFCgen und L\xF6schen von\
-  \ Werten super\u2026"
+description: 'Wie geht das: In Elm arbeitet man mit Dictionaries im `Dict`-Modul,
+  also lass uns in ein schnelles Beispiel eintauchen.'
 lastmod: '2024-03-13T22:44:53.797772-06:00'
 model: gpt-4-0125-preview
-summary: "Assoziative Arrays, oder wie sie in Elm genannt werden, Dictionaries, ordnen\
-  \ Schl\xFCsseln Werte zu, was das Suchen, Einf\xFCgen und L\xF6schen von Werten\
-  \ super schnell macht."
+summary: In Elm arbeitet man mit Dictionaries im `Dict`-Modul, also lass uns in ein
+  schnelles Beispiel eintauchen.
 title: Verwendung von assoziativen Arrays
 weight: 15
 ---

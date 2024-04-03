@@ -2,16 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:58.903387-07:00
-description: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 l\u1ECDc qua\
-  \ m\xE3 HTML \u0111\u1EC3 tr\xEDch xu\u1EA5t c\xE1c ph\u1EA7n h\u1EEFu \xEDch -\
-  \ gi\u1ED1ng nh\u01B0 t\xECm s\u1ED1 \u0111i\u1EC7n tho\u1EA1i tr\xEAn m\u1ED9t\
-  \ trang li\xEAn h\u1EC7. T\u1EA1i sao l\u1EA1i l\xE0m\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Arduino kh\xF4ng t\u1EF1 nhi\xEAn thu\u1EA7\
+  n th\u1EE5c v\u1EC1 web, nh\u01B0ng v\u1EDBi c\xE1c module b\xEAn ngo\xE0i (nh\u01B0\
+  \ ESP8266), b\u1EA1n c\xF3 th\u1EC3 k\u1EBFt n\u1ED1i v\xE0 l\u1EA5y n\u1ED9i dung\
+  \ web. \u1EDE \u0111\xE2y\u2026"
 lastmod: '2024-03-13T22:44:36.987792-06:00'
 model: gpt-4-0125-preview
-summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 l\u1ECDc qua m\xE3\
-  \ HTML \u0111\u1EC3 tr\xEDch xu\u1EA5t c\xE1c ph\u1EA7n h\u1EEFu \xEDch - gi\u1ED1\
-  ng nh\u01B0 t\xECm s\u1ED1 \u0111i\u1EC7n tho\u1EA1i tr\xEAn m\u1ED9t trang li\xEA\
-  n h\u1EC7."
+summary: "Arduino kh\xF4ng t\u1EF1 nhi\xEAn thu\u1EA7n th\u1EE5c v\u1EC1 web, nh\u01B0\
+  ng v\u1EDBi c\xE1c module b\xEAn ngo\xE0i (nh\u01B0 ESP8266), b\u1EA1n c\xF3 th\u1EC3\
+  \ k\u1EBFt n\u1ED1i v\xE0 l\u1EA5y n\u1ED9i dung web."
 title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-02-03 19:03:27.651279-07:00
-description: "Writing a text file in Elm involves creating and saving textual data\
-  \ to a file from an Elm application. Programmers often need to generate reports,\
-  \ logs,\u2026"
+description: "How to: Since Elm runs in the browser and is designed to be a pure programming\
+  \ language without side effects, it does not have direct access to the file\u2026"
 lastmod: '2024-03-13T22:45:00.027181-06:00'
 model: gpt-4-0125-preview
-summary: Writing a text file in Elm involves creating and saving textual data to a
-  file from an Elm application.
+summary: Since Elm runs in the browser and is designed to be a pure programming language
+  without side effects, it does not have direct access to the file system.
 title: Writing a text file
 weight: 24
 ---

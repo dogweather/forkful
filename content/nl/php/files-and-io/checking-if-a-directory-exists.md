@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:14.606191-07:00
-description: "Controleren of een directory bestaat laat je de aanwezigheid van een\
-  \ map in het bestandssysteem bevestigen voordat je probeert deze te gebruiken.\u2026"
+description: 'Hoe te: In PHP controleert `is_dir()` of een directory bestaat.'
 lastmod: '2024-03-13T22:44:50.910368-06:00'
 model: gpt-4-0125-preview
-summary: Controleren of een directory bestaat laat je de aanwezigheid van een map
-  in het bestandssysteem bevestigen voordat je probeert deze te gebruiken.
+summary: In PHP controleert `is_dir()` of een directory bestaat.
 title: Controleren of een directory bestaat
 weight: 20
 ---

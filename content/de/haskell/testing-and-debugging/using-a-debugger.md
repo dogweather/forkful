@@ -1,7 +1,8 @@
 ---
 date: 2024-01-26 03:49:21.766038-07:00
-description: "Lassen Sie uns einen Spaziergang mit GHCi machen, Haskeals interaktiver\
-  \ Umgebung, die als einfacher Debugger fungieren kann. Sie starten es mit Ihrem\u2026"
+description: "Wie man es macht: Lassen Sie uns einen Spaziergang mit GHCi machen,\
+  \ Haskeals interaktiver Umgebung, die als einfacher Debugger fungieren kann. Sie\
+  \ starten\u2026"
 lastmod: '2024-03-13T22:44:53.935850-06:00'
 model: gpt-4-0125-preview
 summary: Lassen Sie uns einen Spaziergang mit GHCi machen, Haskeals interaktiver Umgebung,

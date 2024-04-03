@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:26:43.643891-07:00
-description: "TOML (Toms Opplagte, Minimalistiske Spr\xE5k) er et data serialiseringsformat\
-  \ som er lett \xE5 lese p\xE5 grunn av dets klare semantikk. Programmerere bruker\
-  \ TOML\u2026"
+description: "Hvordan: For \xE5 starte trenger du en TOML-tolker. Swift har ikke en\
+  \ innebygd, s\xE5 la oss bruke `TOMLDecoder`. Installer den via Swift Package Manager\
+  \ og\u2026"
 lastmod: '2024-03-13T22:44:41.165394-06:00'
 model: gpt-4-0125-preview
-summary: "TOML (Toms Opplagte, Minimalistiske Spr\xE5k) er et data serialiseringsformat\
-  \ som er lett \xE5 lese p\xE5 grunn av dets klare semantikk."
+summary: "For \xE5 starte trenger du en TOML-tolker."
 title: Jobbe med TOML
 weight: 39
 ---

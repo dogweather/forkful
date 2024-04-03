@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:06.976600-07:00
-description: "Calculer une date dans le futur ou le pass\xE9 implique de d\xE9terminer\
-  \ une date qui se trouve \xE0 un nombre sp\xE9cifi\xE9 de jours, de mois ou d'ann\xE9\
-  es d'une date\u2026"
+description: "Comment : Dans Visual Basic pour Applications (VBA), la fonction principale\
+  \ utilis\xE9e pour calculer les dates futures ou pass\xE9es est `DateAdd()`. Cette\u2026"
 lastmod: '2024-03-13T22:44:57.595818-06:00'
 model: gpt-4-0125-preview
-summary: "Calculer une date dans le futur ou le pass\xE9 implique de d\xE9terminer\
-  \ une date qui se trouve \xE0 un nombre sp\xE9cifi\xE9 de jours, de mois ou d'ann\xE9\
-  es d'une date donn\xE9e."
+summary: "Dans Visual Basic pour Applications (VBA), la fonction principale utilis\xE9\
+  e pour calculer les dates futures ou pass\xE9es est `DateAdd()`."
 title: "Calculer une date dans le futur ou le pass\xE9"
 weight: 26
 ---

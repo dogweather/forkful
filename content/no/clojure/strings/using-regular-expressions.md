@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:36.412245-07:00
-description: "Regul\xE6re uttrykk, et kraftfullt verkt\xF8y for m\xF8nstersammenligning\
-  \ og databehandling, er essensielle i tekstbehandlingsoppgaver slik som \xE5 validere\
-  \ inndata,\u2026"
+description: "Hvordan: Clojure, som holder seg tro mot sine r\xF8tter i Lisp-familien,\
+  \ tilbyr et rikt sett med funksjoner som fungerer s\xF8ml\xF8st med Java sine regul\xE6\
+  re\u2026"
 lastmod: '2024-03-13T22:44:40.392723-06:00'
 model: gpt-4-0125-preview
-summary: "Regul\xE6re uttrykk, et kraftfullt verkt\xF8y for m\xF8nstersammenligning\
-  \ og databehandling, er essensielle i tekstbehandlingsoppgaver slik som \xE5 validere\
-  \ inndata, s\xF8ke og erstatte tekst."
+summary: "Clojure, som holder seg tro mot sine r\xF8tter i Lisp-familien, tilbyr et\
+  \ rikt sett med funksjoner som fungerer s\xF8ml\xF8st med Java sine regul\xE6re\
+  \ uttrykkskapasiteter."
 title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---

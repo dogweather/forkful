@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 18:01:38.981305-07:00
-description: "L\xE4het\xE4mme HTTP-pyynn\xF6n perusautentikoinnilla, kun haluamme\
-  \ p\xE4\xE4st\xE4 k\xE4siksi suojattuun resurssiin verkkopalvelussa. Se on tapa\
-  \ todentaa k\xE4ytt\xE4j\xE4n\u2026"
+description: "How to: Fish Shell on yksinkertainen mutta tehokas, ja HTTP-pyynn\xF6\
+  n tekeminen perusautentikoinnilla on suoraviivaista. T\xE4ss\xE4 esimerkkikoodi,\
+  \ jonka avulla\u2026"
 lastmod: '2024-03-13T22:44:56.994083-06:00'
 model: gpt-4-1106-preview
-summary: "L\xE4het\xE4mme HTTP-pyynn\xF6n perusautentikoinnilla, kun haluamme p\xE4\
-  \xE4st\xE4 k\xE4siksi suojattuun resurssiin verkkopalvelussa."
+summary: "Fish Shell on yksinkertainen mutta tehokas, ja HTTP-pyynn\xF6n tekeminen\
+  \ perusautentikoinnilla on suoraviivaista."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:36.020471-07:00
-description: "Tekstitiedoston kirjoittaminen Visual Basic for Applications (VBA) -ohjelmistolla\
-  \ liittyy tiedostoihin tekstidatan luomiseen, muokkaamiseen tai\u2026"
+description: "Miten: VBA tarjoaa useita menetelmi\xE4 tiedostoon kirjoittamiseen,\
+  \ mutta yksi suoraviivaisimmista tavoista on k\xE4ytt\xE4\xE4 `FileSystemObject`-oliota.\
+  \ T\xE4ss\xE4 on\u2026"
 lastmod: '2024-03-13T22:44:56.420593-06:00'
 model: gpt-4-0125-preview
-summary: "Tekstitiedoston kirjoittaminen Visual Basic for Applications (VBA) -ohjelmistolla\
-  \ liittyy tiedostoihin tekstidatan luomiseen, muokkaamiseen tai liitt\xE4miseen,\
-  \ mik\xE4 on perusteht\xE4v\xE4 tulosten tallentamisessa, lokitiedostojen k\xE4\
-  sittelyss\xE4 tai muiden sovellusten kanssa vuorovaikutuksessa."
+summary: "VBA tarjoaa useita menetelmi\xE4 tiedostoon kirjoittamiseen, mutta yksi\
+  \ suoraviivaisimmista tavoista on k\xE4ytt\xE4\xE4 `FileSystemObject`-oliota."
 title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---

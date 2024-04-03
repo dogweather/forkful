@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:32.176436-07:00
-description: "Trabajar con archivos CSV (Valores Separados por Comas) implica el an\xE1\
-  lisis, manipulaci\xF3n y generaci\xF3n de datos en un formato tabular que es ampliamente\u2026"
+description: "C\xF3mo hacerlo: Fish Shell, por s\xED mismo, no tiene funciones integradas\
+  \ espec\xEDficamente dise\xF1adas para la manipulaci\xF3n de CSV. Sin embargo, puedes\u2026"
 lastmod: '2024-03-13T22:44:59.523747-06:00'
 model: gpt-4-0125-preview
-summary: "Trabajar con archivos CSV (Valores Separados por Comas) implica el an\xE1\
-  lisis, manipulaci\xF3n y generaci\xF3n de datos en un formato tabular que es ampliamente\
-  \ utilizado para el intercambio de datos entre aplicaciones."
+summary: "Fish Shell, por s\xED mismo, no tiene funciones integradas espec\xEDficamente\
+  \ dise\xF1adas para la manipulaci\xF3n de CSV."
 title: Trabajando con CSV
 weight: 37
 ---

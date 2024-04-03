@@ -2,17 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:18.621551-07:00
-description: "Logging l\xE0 qu\xE1 tr\xECnh ghi l\u1EA1i c\xE1c s\u1EF1 ki\u1EC7n,\
-  \ l\u1ED7i v\xE0 c\xE1c th\xF4ng tin \u0111\xE1ng ch\xFA \xFD kh\xE1c trong qu\xE1\
-  \ tr\xECnh th\u1EF1c thi c\u1EE7a m\u1ED9t ch\u01B0\u01A1ng tr\xECnh v\xE0o m\u1ED9\
-  t ph\u01B0\u01A1ng ti\u1EC7n ngo\u1EA1i vi,\u2026"
+description: "C\xE1ch th\u1EE9c: Trong TypeScript, b\u1EA1n c\xF3 th\u1EC3 d\u1EC5\
+  \ d\xE0ng tri\u1EC3n khai logging c\u01A1 b\u1EA3n b\u1EB1ng c\xE1ch s\u1EED d\u1EE5\
+  ng c\xE1c ph\u01B0\u01A1ng th\u1EE9c console ho\u1EB7c t\xEDch h\u1EE3p logging\
+  \ n\xE2ng cao h\u01A1n v\u1EDBi\u2026"
 lastmod: '2024-03-13T22:44:36.327515-06:00'
 model: gpt-4-0125-preview
-summary: "Logging l\xE0 qu\xE1 tr\xECnh ghi l\u1EA1i c\xE1c s\u1EF1 ki\u1EC7n, l\u1ED7\
-  i v\xE0 c\xE1c th\xF4ng tin \u0111\xE1ng ch\xFA \xFD kh\xE1c trong qu\xE1 tr\xEC\
-  nh th\u1EF1c thi c\u1EE7a m\u1ED9t ch\u01B0\u01A1ng tr\xECnh v\xE0o m\u1ED9t ph\u01B0\
-  \u01A1ng ti\u1EC7n ngo\u1EA1i vi, th\u01B0\u1EDDng l\xE0 c\xE1c t\u1EC7p ho\u1EB7\
-  c c\u01A1 s\u1EDF d\u1EEF li\u1EC7u."
+summary: "Trong TypeScript, b\u1EA1n c\xF3 th\u1EC3 d\u1EC5 d\xE0ng tri\u1EC3n khai\
+  \ logging c\u01A1 b\u1EA3n b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng c\xE1c ph\u01B0\u01A1\
+  ng th\u1EE9c console ho\u1EB7c t\xEDch h\u1EE3p logging n\xE2ng cao h\u01A1n v\u1EDB\
+  i c\xE1c th\u01B0 vi\u1EC7n nh\u01B0 `winston` ho\u1EB7c `pino`."
 title: Ghi log
 weight: 17
 ---

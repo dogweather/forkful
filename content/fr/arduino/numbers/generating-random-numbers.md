@@ -1,14 +1,12 @@
 ---
 date: 2024-01-27 20:32:41.674315-07:00
-description: "G\xE9n\xE9rer des nombres al\xE9atoires dans les projets Arduino consiste\
-  \ \xE0 produire des valeurs con\xE7ues pour \xEAtre impr\xE9visibles, ce qui est\
-  \ crucial pour des\u2026"
+description: "Comment faire : Arduino fournit des fonctions simples pour g\xE9n\xE9\
+  rer des nombres al\xE9atoires : `randomSeed()` et `random()`. Pour commencer, initialisez\
+  \ le\u2026"
 lastmod: '2024-03-13T22:44:58.104765-06:00'
 model: gpt-4-0125-preview
-summary: "G\xE9n\xE9rer des nombres al\xE9atoires dans les projets Arduino consiste\
-  \ \xE0 produire des valeurs con\xE7ues pour \xEAtre impr\xE9visibles, ce qui est\
-  \ crucial pour des applications telles que les jeux, les simulations et les syst\xE8\
-  mes de s\xE9curit\xE9."
+summary: "Arduino fournit des fonctions simples pour g\xE9n\xE9rer des nombres al\xE9\
+  atoires."
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---

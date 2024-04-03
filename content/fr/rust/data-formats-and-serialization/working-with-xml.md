@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:35:36.755185-07:00
-description: "XML, abr\xE9viation de eXtensible Markup Language, est comme le cousin\
-  \ verbeux de JSON. Vous aurez \xE0 vous d\xE9battre avec XML lors de la manipulation\
-  \ de\u2026"
+description: "Comment faire : En Rust, vous pouvez g\xE9rer XML avec des crates telles\
+  \ que `xml-rs`. Installez en ajoutant `xml-rs = \"0.8\"` \xE0 votre `Cargo.toml`.\
+  \ Voici\u2026"
 lastmod: '2024-03-13T22:44:57.529708-06:00'
 model: gpt-4-0125-preview
-summary: "XML, abr\xE9viation de eXtensible Markup Language, est comme le cousin verbeux\
-  \ de JSON."
+summary: "En Rust, vous pouvez g\xE9rer XML avec des crates telles que `xml-rs`."
 title: Travailler avec XML
 weight: 40
 ---

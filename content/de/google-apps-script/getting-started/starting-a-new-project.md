@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:27.507025-07:00
-description: "Ein neues Projekt in Google Apps Script (GAS) zu starten, bedeutet,\
-  \ eine Skriptdatei innerhalb des Google-\xD6kosystems (Google Drive, Docs, Sheets\
-  \ usw.) zu\u2026"
+description: "Wie: Um ein neues Projekt in Google Apps Script zu starten, haben Sie\
+  \ einige Einstiegspunkte, aber konzentrieren wir uns auf die direkteste Methode:\
+  \ das\u2026"
 lastmod: '2024-03-13T22:44:53.334668-06:00'
 model: gpt-4-0125-preview
-summary: "Ein neues Projekt in Google Apps Script (GAS) zu starten, bedeutet, eine\
-  \ Skriptdatei innerhalb des Google-\xD6kosystems (Google Drive, Docs, Sheets usw."
+summary: Um ein neues Projekt in Google Apps Script zu starten, haben Sie einige Einstiegspunkte,
+  aber konzentrieren wir uns auf die direkteste Methode.
 title: Einen neuen Projektstart
 weight: 1
 ---

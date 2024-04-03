@@ -2,18 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:54.949225-07:00
-description: "Vi\u1EC7c vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n b\u1EB1ng Visual\
-  \ Basic for Applications (VBA) bao g\u1ED3m vi\u1EC7c t\u1EA1o, ch\u1EC9nh s\u1EED\
-  a, ho\u1EB7c th\xEAm d\u1EEF li\u1EC7u v\u0103n b\u1EA3n v\xE0o c\xE1c t\u1EC7p,\
-  \ m\u1ED9t nhi\u1EC7m v\u1EE5 c\u01A1 b\u1EA3n\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: VBA cung c\u1EA5p m\u1ED9t s\u1ED1 ph\u01B0\u01A1\
+  ng ph\xE1p \u0111\u1EC3 vi\u1EBFt v\xE0o m\u1ED9t t\u1EC7p, nh\u01B0ng m\u1ED9t\
+  \ trong nh\u1EEFng c\xE1ch \u0111\u01A1n gi\u1EA3n nh\u1EA5t l\xE0 s\u1EED d\u1EE5\
+  ng `FileSystemObject`. D\u01B0\u1EDBi \u0111\xE2y l\xE0\u2026"
 lastmod: '2024-03-13T22:44:36.457508-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n b\u1EB1ng Visual\
-  \ Basic for Applications (VBA) bao g\u1ED3m vi\u1EC7c t\u1EA1o, ch\u1EC9nh s\u1EED\
-  a, ho\u1EB7c th\xEAm d\u1EEF li\u1EC7u v\u0103n b\u1EA3n v\xE0o c\xE1c t\u1EC7p,\
-  \ m\u1ED9t nhi\u1EC7m v\u1EE5 c\u01A1 b\u1EA3n \u0111\u1EC3 l\u01B0u tr\u1EEF k\u1EBF\
-  t qu\u1EA3 \u0111\u1EA7u ra, ghi nh\u1EADt k\xFD, ho\u1EB7c t\u01B0\u01A1ng t\xE1\
-  c v\u1EDBi c\xE1c \u1EE9ng d\u1EE5ng kh\xE1c."
+summary: "VBA cung c\u1EA5p m\u1ED9t s\u1ED1 ph\u01B0\u01A1ng ph\xE1p \u0111\u1EC3\
+  \ vi\u1EBFt v\xE0o m\u1ED9t t\u1EC7p, nh\u01B0ng m\u1ED9t trong nh\u1EEFng c\xE1\
+  ch \u0111\u01A1n gi\u1EA3n nh\u1EA5t l\xE0 s\u1EED d\u1EE5ng `FileSystemObject`."
 title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 24
 ---

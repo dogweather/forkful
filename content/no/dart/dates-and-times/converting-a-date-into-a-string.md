@@ -2,15 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:53:54.793249-07:00
-description: "\xC5 konvertere en dato til en streng i Dart er en vanlig oppgave n\xE5\
-  r du trenger \xE5 vise datoen og tidspunktet i et format som er leselig for mennesker,\
-  \ eller\u2026"
+description: "Hvordan gj\xF8re det: Dart tilbyr `DateTime`-klassen for h\xE5ndtering\
+  \ av datoer og tider, og `intl`-pakken for formatering. F\xF8rst, s\xF8rg for at\
+  \ du har\u2026"
 lastmod: '2024-03-13T22:44:40.499954-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 konvertere en dato til en streng i Dart er en vanlig oppgave n\xE5\
-  r du trenger \xE5 vise datoen og tidspunktet i et format som er leselig for mennesker,\
-  \ eller n\xE5r du har til hensikt \xE5 serialisere data for lagring eller overf\xF8\
-  ring."
+summary: "Dart tilbyr `DateTime`-klassen for h\xE5ndtering av datoer og tider, og\
+  \ `intl`-pakken for formatering."
 title: Konvertere en dato til en streng
 weight: 28
 ---

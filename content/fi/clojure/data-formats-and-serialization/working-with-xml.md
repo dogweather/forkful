@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:29:00.132074-07:00
-description: "XML on merkint\xE4kieli dokumenttien koodaamiseen tavalla, joka on sek\xE4\
-  \ ihmis- ett\xE4 koneellisesti luettavissa. Se on avainasemassa verkkopalveluissa,\u2026"
+description: "Kuinka: Clojure tarjoaa `clojure.data.xml` kirjaston XML:n j\xE4sent\xE4\
+  miseen ja tuottamiseen. Aloitetaan XML:n j\xE4sent\xE4misest\xE4."
 lastmod: '2024-03-13T22:44:56.208495-06:00'
 model: gpt-4-0125-preview
-summary: "XML on merkint\xE4kieli dokumenttien koodaamiseen tavalla, joka on sek\xE4\
-  \ ihmis- ett\xE4 koneellisesti luettavissa."
+summary: "Clojure tarjoaa `clojure.data.xml` kirjaston XML:n j\xE4sent\xE4miseen ja\
+  \ tuottamiseen."
 title: "XML:n k\xE4sittely"
 weight: 40
 ---

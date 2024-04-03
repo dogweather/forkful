@@ -2,9 +2,9 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:28.331482-07:00
-description: "Google Apps Script propose un d\xE9bogueur int\xE9gr\xE9 dans l'\xE9\
-  diteur Apps Script pour aider \xE0 d\xE9panner les scripts. Voici comment initier\
-  \ et utiliser le\u2026"
+description: "Comment faire : Google Apps Script propose un d\xE9bogueur int\xE9gr\xE9\
+  \ dans l'\xE9diteur Apps Script pour aider \xE0 d\xE9panner les scripts. Voici comment\
+  \ initier et\u2026"
 lastmod: '2024-03-13T22:44:57.191275-06:00'
 model: gpt-4-0125-preview
 summary: "Google Apps Script propose un d\xE9bogueur int\xE9gr\xE9 dans l'\xE9diteur\

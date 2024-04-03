@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 18:03:50.627179-07:00
-description: "Rozpocz\u0119cie nowego projektu to stawianie pierwszych krok\xF3w w\
-  \ tworzeniu twojej aplikacji czy systemu. Programi\u015Bci robi\u0105 to, by przekszta\u0142\
-  ci\u0107 pomys\u0142y w\u2026"
+description: "Jak to zrobi\u0107: ."
 lastmod: '2024-03-13T22:44:35.365634-06:00'
 model: gpt-4-1106-preview
-summary: "Rozpocz\u0119cie nowego projektu to stawianie pierwszych krok\xF3w w tworzeniu\
-  \ twojej aplikacji czy systemu."
+summary: .
 title: Rozpoczynanie nowego projektu
 weight: 1
 ---

@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:00.549342-07:00
-description: "Citaten uit een string verwijderen betekent die extra verpakkingen wegnemen\
-  \ om de schone tekst binnenin te krijgen. Programmeurs doen dit om invoer te\u2026"
+description: "Hoe: Elixir heeft geen ingebouwde 'verwijder citaten'-functie, maar\
+  \ het is kinderspel om er zelf een te maken met patroonmatching of `String`-functies.\u2026"
 lastmod: '2024-03-13T22:44:50.450072-06:00'
 model: gpt-4-0125-preview
-summary: Citaten uit een string verwijderen betekent die extra verpakkingen wegnemen
-  om de schone tekst binnenin te krijgen.
+summary: Elixir heeft geen ingebouwde 'verwijder citaten'-functie, maar het is kinderspel
+  om er zelf een te maken met patroonmatching of `String`-functies.
 title: Quotes verwijderen uit een string
 weight: 9
 ---

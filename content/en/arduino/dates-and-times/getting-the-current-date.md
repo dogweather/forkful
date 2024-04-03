@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:02:37.384870-07:00
-description: "Getting the current date in Arduino projects involves obtaining real-time\
-  \ information that can be crucial for logging, timestamping, or scheduling tasks.\u2026"
+description: "How to: Arduino itself doesn't have a built-in method to directly fetch\
+  \ the current date, as it lacks a real-time clock (RTC). However, this can be\u2026"
 lastmod: '2024-03-13T22:45:00.330478-06:00'
 model: gpt-4-0125-preview
-summary: Getting the current date in Arduino projects involves obtaining real-time
-  information that can be crucial for logging, timestamping, or scheduling tasks.
+summary: Arduino itself doesn't have a built-in method to directly fetch the current
+  date, as it lacks a real-time clock (RTC).
 title: Getting the current date
 weight: 29
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:44:47.122293-07:00
-description: "Webseiten herunterladen bedeutet, den Inhalt einer Webseite zu holen\
-  \ und lokal zu speichern. Programmierer machen das, um Daten zu analysieren,\u2026"
+description: "Anleitung: Mit Python kannst du mit nur wenigen Zeilen Code eine Webseite\
+  \ herunterladen. Ein beliebtes Paket daf\xFCr ist `requests`."
 lastmod: '2024-03-13T22:44:53.377075-06:00'
 model: gpt-4-1106-preview
-summary: Webseiten herunterladen bedeutet, den Inhalt einer Webseite zu holen und
-  lokal zu speichern.
+summary: Mit Python kannst du mit nur wenigen Zeilen Code eine Webseite herunterladen.
 title: Webseite herunterladen
 weight: 42
 ---

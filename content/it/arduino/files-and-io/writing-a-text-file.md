@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:06.333749-07:00
-description: "Scrivere un file di testo in Arduino implica salvare dati su un file\
-  \ presente su una scheda SD o un modulo di memorizzazione simile, spesso a scopo\
-  \ di\u2026"
+description: "Come fare: Per scrivere su un file di testo su una scheda SD utilizzando\
+  \ Arduino, \xE8 necessario prima includere la libreria `SD.h`, che fornisce le\u2026"
 lastmod: '2024-03-13T22:44:43.701671-06:00'
 model: gpt-4-0125-preview
-summary: Scrivere un file di testo in Arduino implica salvare dati su un file presente
-  su una scheda SD o un modulo di memorizzazione simile, spesso a scopo di registrazione
-  dati.
+summary: "Per scrivere su un file di testo su una scheda SD utilizzando Arduino, \xE8\
+  \ necessario prima includere la libreria `SD.h`, che fornisce le funzioni necessarie\
+  \ per interagire con le schede SD."
 title: Scrivere un file di testo
 weight: 24
 ---

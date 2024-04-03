@@ -2,17 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:50.703974-07:00
-description: "Trong Swift, vi\u1EC7c in \u0111\u1EA7u ra \u0111\u1EC3 g\u1EE1 l\u1ED7\
-  i ngh\u0129a l\xE0 hi\u1EC3n th\u1ECB d\u1EEF li\u1EC7u trong khu v\u1EF1c g\u1EE1\
-  \ l\u1ED7i, th\u01B0\u1EDDng l\xE0 trong m\u1ED9t IDE ho\u1EB7c b\u1EA3ng \u0111\
-  i\u1EC1u khi\u1EC3n, \u0111\u1EC3 theo d\xF5i nh\u1EEFng g\xEC\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Swift, b\u1EA1n c\xF3 m\u1ED9t ng\u01B0\
+  \u1EDDi b\u1EA1n trong h\xE0m `print()`. D\u1EC5 s\u1EED d\u1EE5ng, n\xF3 cho b\u1EA1\
+  n c\xE1i nh\xECn v\u1EC1 nh\u1EEFng g\xEC \u0111ang di\u1EC5n ra trong m\xE3 c\u1EE7\
+  a b\u1EA1n."
 lastmod: '2024-03-13T22:44:37.100669-06:00'
 model: gpt-4-0125-preview
-summary: "Trong Swift, vi\u1EC7c in \u0111\u1EA7u ra \u0111\u1EC3 g\u1EE1 l\u1ED7\
-  i ngh\u0129a l\xE0 hi\u1EC3n th\u1ECB d\u1EEF li\u1EC7u trong khu v\u1EF1c g\u1EE1\
-  \ l\u1ED7i, th\u01B0\u1EDDng l\xE0 trong m\u1ED9t IDE ho\u1EB7c b\u1EA3ng \u0111\
-  i\u1EC1u khi\u1EC3n, \u0111\u1EC3 theo d\xF5i nh\u1EEFng g\xEC \u0111ang x\u1EA3\
-  y ra tr\u1EF1c ti\u1EBFp trong m\xE3 c\u1EE7a b\u1EA1n."
+summary: "Trong Swift, b\u1EA1n c\xF3 m\u1ED9t ng\u01B0\u1EDDi b\u1EA1n trong h\xE0\
+  m `print()`."
 title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 weight: 33
 ---

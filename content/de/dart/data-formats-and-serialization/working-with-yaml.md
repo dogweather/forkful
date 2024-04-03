@@ -2,12 +2,14 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:26.799710-07:00
-description: "YAML, die Abk\xFCrzung f\xFCr YAML Ain't Markup Language, ist ein f\xFC\
-  r Menschen lesbares Daten-Serialisierungsformat. Programmierer nutzen es f\xFCr\u2026"
+description: "Wie geht das: Bei Dart umfasst das Arbeiten mit YAML typischerweise\
+  \ die Verwendung einer Drittanbieter-Bibliothek, da die Sprache keine integrierten\
+  \ YAML-\u2026"
 lastmod: '2024-03-13T22:44:53.603207-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, die Abk\xFCrzung f\xFCr YAML Ain't Markup Language, ist ein f\xFC\
-  r Menschen lesbares Daten-Serialisierungsformat."
+summary: "Bei Dart umfasst das Arbeiten mit YAML typischerweise die Verwendung einer\
+  \ Drittanbieter-Bibliothek, da die Sprache keine integrierten YAML-Parsing-F\xE4\
+  higkeiten besitzt."
 title: Arbeiten mit YAML
 weight: 41
 ---

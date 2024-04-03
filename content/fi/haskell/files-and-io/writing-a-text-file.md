@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:13.309995-07:00
-description: "Tekstitiedoston kirjoittaminen Haskellissa tarkoittaa tekstimuotoisten\
-  \ tiedostojen ohjelmallista luomista tai p\xE4ivitt\xE4mist\xE4. Ohjelmoijat tekev\xE4\
-  t t\xE4t\xE4\u2026"
+description: "Kuinka: Haskellin standard Prelude tarjoaa perustason tuen tiedostoihin\
+  \ kirjoittamiselle `writeFile` ja `appendFile` funktioiden avulla `System.IO`\u2026"
 lastmod: '2024-03-13T22:44:56.632812-06:00'
 model: gpt-4-0125-preview
-summary: "Tekstitiedoston kirjoittaminen Haskellissa tarkoittaa tekstimuotoisten tiedostojen\
-  \ ohjelmallista luomista tai p\xE4ivitt\xE4mist\xE4."
+summary: Haskellin standard Prelude tarjoaa perustason tuen tiedostoihin kirjoittamiselle
+  `writeFile` ja `appendFile` funktioiden avulla `System.IO` moduulista.
 title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---

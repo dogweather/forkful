@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:53.682990-07:00
-description: "Code organiseren in functies betekent dat gerelateerde operaties worden\
-  \ gegroepeerd in herbruikbare blokken. We doen dit om de leesbaarheid en het\u2026"
+description: 'Hoe te: Laten we een eenvoudige Elixir-functie maken om woorden te kapitaliseren.'
 lastmod: '2024-03-13T22:44:50.467605-06:00'
 model: gpt-4-0125-preview
-summary: Code organiseren in functies betekent dat gerelateerde operaties worden gegroepeerd
-  in herbruikbare blokken.
+summary: Laten we een eenvoudige Elixir-functie maken om woorden te kapitaliseren.
 title: Code organiseren in functies
 weight: 18
 ---

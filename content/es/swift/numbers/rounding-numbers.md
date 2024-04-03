@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:46:53.768510-07:00
-description: "Redondear n\xFAmeros significa aproximar un valor num\xE9rico a una\
-  \ precisi\xF3n espec\xEDfica, t\xEDpicamente para eliminar decimales no deseados.\
-  \ Los programadores\u2026"
+description: "C\xF3mo: Swift provee varias maneras de redondear n\xFAmeros. Aqu\xED\
+  \ tienes un adelanto."
 lastmod: '2024-03-13T22:44:59.411549-06:00'
 model: gpt-4-0125-preview
-summary: "Redondear n\xFAmeros significa aproximar un valor num\xE9rico a una precisi\xF3\
-  n espec\xEDfica, t\xEDpicamente para eliminar decimales no deseados."
+summary: "Swift provee varias maneras de redondear n\xFAmeros."
 title: "Redondeo de n\xFAmeros"
 weight: 13
 ---

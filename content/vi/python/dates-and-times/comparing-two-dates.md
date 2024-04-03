@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:59.388487-07:00
-description: "So s\xE1nh hai ng\xE0y c\xF3 ngh\u0129a l\xE0 ki\u1EC3m tra ng\xE0y\
-  \ n\xE0o \u0111\u1EBFn tr\u01B0\u1EDBc ho\u1EB7c ch\xFAng c\xE1ch xa nhau bao xa\
-  \ v\u1EC1 th\u1EDDi gian. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0\
-  y \u0111\u1EC3 l\xEAn l\u1ECBch cho c\xE1c s\u1EF1\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong Python, b\u1EA1n c\xF3 th\u1EC3 s\u1EED\
+  \ d\u1EE5ng m\xF4-\u0111un `datetime` \u0111\u1EC3 so s\xE1nh c\xE1c ng\xE0y. D\u01B0\
+  \u1EDBi \u0111\xE2y l\xE0 c\xE1ch l\xE0m."
 lastmod: '2024-03-13T22:44:36.113821-06:00'
 model: gpt-4-0125-preview
-summary: "So s\xE1nh hai ng\xE0y c\xF3 ngh\u0129a l\xE0 ki\u1EC3m tra ng\xE0y n\xE0\
-  o \u0111\u1EBFn tr\u01B0\u1EDBc ho\u1EB7c ch\xFAng c\xE1ch xa nhau bao xa v\u1EC1\
-  \ th\u1EDDi gian."
+summary: "Trong Python, b\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng m\xF4-\u0111un `datetime`\
+  \ \u0111\u1EC3 so s\xE1nh c\xE1c ng\xE0y."
 title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---

@@ -2,10 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:44.404512-07:00
-description: "Rust h\u1ED7 tr\u1EE3 nhi\u1EC1u tr\xECnh g\u1EE1 l\u1ED7i, nh\u01B0\
-  ng m\u1ED9t c\xE1i ph\u1ED5 bi\u1EBFn l\xE0 `gdb` cho GNU/Linux ho\u1EB7c `lldb`\
-  \ cho macOS. B\u1EA1n c\u0169ng c\xF3 th\u1EC3 s\u1EED d\u1EE5ng `rust-gdb` hay\
-  \ `rust-lldb`,\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Rust h\u1ED7 tr\u1EE3 nhi\u1EC1u tr\xEC\
+  nh g\u1EE1 l\u1ED7i, nh\u01B0ng m\u1ED9t c\xE1i ph\u1ED5 bi\u1EBFn l\xE0 `gdb` cho\
+  \ GNU/Linux ho\u1EB7c `lldb` cho macOS. B\u1EA1n c\u0169ng c\xF3 th\u1EC3 s\u1EED\
+  \ d\u1EE5ng `rust-gdb`\u2026"
 lastmod: '2024-03-13T22:44:36.382602-06:00'
 model: gpt-4-0125-preview
 summary: "Rust h\u1ED7 tr\u1EE3 nhi\u1EC1u tr\xECnh g\u1EE1 l\u1ED7i, nh\u01B0ng m\u1ED9\

@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:57:03.302317-07:00
-description: "Leggere gli argomenti della linea di comando significa accedere ai dati\
-  \ che gli utenti inseriscono quando avviano il tuo programma da terminale. I\u2026"
+description: 'How to: (Come fare) In Ruby, gli argomenti della linea di comando sono
+  accessibili attraverso l''array `ARGV`. Ecco un esempio di base.'
 lastmod: '2024-03-13T22:44:44.066211-06:00'
 model: gpt-4-1106-preview
-summary: Leggere gli argomenti della linea di comando significa accedere ai dati che
-  gli utenti inseriscono quando avviano il tuo programma da terminale.
+summary: In Ruby, gli argomenti della linea di comando sono accessibili attraverso
+  l'array `ARGV`.
 title: Lettura degli argomenti della riga di comando
 weight: 23
 ---

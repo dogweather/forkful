@@ -2,12 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:06.067553-07:00
-description: "Merkkijonojen osien erottelu liittyy tiettyjen merkkijonojen osien noutamiseen\
-  \ niiden sijainnin tai mallien perusteella. Ohjelmoijat tekev\xE4t t\xE4m\xE4n\u2026"
+description: "Kuinka: Dartissa voit k\xE4ytt\xE4\xE4 erilaisia menetelmi\xE4 merkkijonojen\
+  \ osien erotteluun, kuten `substring()`, `split()` ja s\xE4\xE4nn\xF6lliset lausekkeet.\
+  \ Jokainen\u2026"
 lastmod: '2024-03-13T22:44:56.258628-06:00'
 model: gpt-4-0125-preview
-summary: Merkkijonojen osien erottelu liittyy tiettyjen merkkijonojen osien noutamiseen
-  niiden sijainnin tai mallien perusteella.
+summary: "Dartissa voit k\xE4ytt\xE4\xE4 erilaisia menetelmi\xE4 merkkijonojen osien\
+  \ erotteluun, kuten `substring()`, `split()` ja s\xE4\xE4nn\xF6lliset lausekkeet."
 title: Alimerkkijonojen erottaminen
 weight: 6
 ---

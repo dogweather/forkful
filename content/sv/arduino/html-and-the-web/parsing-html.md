@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:31.045771-07:00
-description: "Att tolka HTML i Arduino-projekt handlar om att extrahera information\
-  \ fr\xE5n webbsidor. Programmerare g\xF6r detta f\xF6r att m\xF6jligg\xF6ra f\xF6\
-  r deras Arduino-enheter\u2026"
+description: "Hur man g\xF6r: Att tolka HTML p\xE5 Arduino kr\xE4ver vanligtvis bibliotek\
+  \ med minimalt fotavtryck p\xE5 grund av begr\xE4nsade enhetsresurser. Ett popul\xE4\
+  rt val f\xF6r\u2026"
 lastmod: '2024-03-13T22:44:38.165954-06:00'
 model: gpt-4-0125-preview
-summary: "Att tolka HTML i Arduino-projekt handlar om att extrahera information fr\xE5\
-  n webbsidor."
+summary: "Att tolka HTML p\xE5 Arduino kr\xE4ver vanligtvis bibliotek med minimalt\
+  \ fotavtryck p\xE5 grund av begr\xE4nsade enhetsresurser."
 title: Tolka HTML
 weight: 43
 ---

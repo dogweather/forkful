@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:01.190727-07:00
-description: "Een HTTP-verzoek met basisauthenticatie versturen houdt in dat een gebruikersnaam\
-  \ en wachtwoord aan een verzoek worden toegevoegd voor toegangscontrole.\u2026"
+description: "Hoe: Hier is een basisvoorbeeld met de `CURL`-bibliotheek in C++. Zorg\
+  \ ervoor dat je `libcurl` hebt ge\xEFnstalleerd voordat je begint."
 lastmod: '2024-03-13T22:44:51.112355-06:00'
 model: gpt-4-0125-preview
-summary: Een HTTP-verzoek met basisauthenticatie versturen houdt in dat een gebruikersnaam
-  en wachtwoord aan een verzoek worden toegevoegd voor toegangscontrole.
+summary: Hier is een basisvoorbeeld met de `CURL`-bibliotheek in C++.
 title: Een HTTP-verzoek verzenden met basisauthenticatie
 weight: 45
 ---

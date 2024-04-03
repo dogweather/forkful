@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:38:28.833887-07:00
-description: "Convertire una stringa in minuscolo significa trasformare tutti i caratteri\
-  \ al suo interno in lettere minuscole. I programmatori lo fanno per uniformare i\u2026"
+description: 'How to: Java usa il metodo `toLowerCase()` per convertire una stringa
+  in minuscolo. Vediamo un esempio pratico.'
 lastmod: '2024-03-13T22:44:43.296035-06:00'
 model: gpt-4-1106-preview
-summary: Convertire una stringa in minuscolo significa trasformare tutti i caratteri
-  al suo interno in lettere minuscole.
+summary: Java usa il metodo `toLowerCase()` per convertire una stringa in minuscolo.
 title: Conversione di una stringa in minuscolo
 weight: 4
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:39:01.842026-07:00
-description: "La refactorisation est le processus de restructuration du code informatique\
-  \ existant\u2014changer la facturation\u2014sans modifier son comportement externe.\
-  \ Les\u2026"
+description: "Comment : Prenons une simple classe Java qui crie \xE0 la refactorisation\
+  \ en raison de sa mauvaise organisation et de son manque de clart\xE9."
 lastmod: '2024-03-13T22:44:57.649776-06:00'
 model: gpt-4-0125-preview
-summary: "La refactorisation est le processus de restructuration du code informatique\
-  \ existant\u2014changer la facturation\u2014sans modifier son comportement externe."
+summary: "Prenons une simple classe Java qui crie \xE0 la refactorisation en raison\
+  \ de sa mauvaise organisation et de son manque de clart\xE9."
 title: "R\xE9usinage"
 weight: 19
 ---

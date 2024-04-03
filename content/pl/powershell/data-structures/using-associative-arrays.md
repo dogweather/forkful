@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:38.636232-07:00
-description: "Tablice asocjacyjne, znane r\xF3wnie\u017C jako tablice mieszaj\u0105\
-  ce lub s\u0142owniki w PowerShellu, pozwalaj\u0105 na przechowywanie danych w parach\
-  \ klucz-warto\u015B\u0107, co\u2026"
+description: "Jak to zrobi\u0107: Tworzenie i u\u017Cywanie tablic asocjacyjnych w\
+  \ PowerShellu jest ca\u0142kiem proste. Oto jak to zrobisz: **Tworzenie tablicy\
+  \ asocjacyjnej:**."
 lastmod: '2024-03-13T22:44:35.620732-06:00'
 model: gpt-4-0125-preview
-summary: "Tablice asocjacyjne, znane r\xF3wnie\u017C jako tablice mieszaj\u0105ce\
-  \ lub s\u0142owniki w PowerShellu, pozwalaj\u0105 na przechowywanie danych w parach\
-  \ klucz-warto\u015B\u0107, co sprawia, \u017Ce odzyskiwanie danych jest proste i\
-  \ efektywne."
+summary: "Tworzenie i u\u017Cywanie tablic asocjacyjnych w PowerShellu jest ca\u0142\
+  kiem proste."
 title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---

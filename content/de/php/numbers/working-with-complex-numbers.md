@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 04:43:29.667567-07:00
-description: "Komplexe Zahlen haben einen Realteil und einen Imagin\xE4rteil, \xFC\
-  blicherweise geschrieben als `a + bi`. Sie sind entscheidend in fortgeschrittener\u2026"
+description: "Wie geht das: PHP bietet eingebaute Unterst\xFCtzung f\xFCr komplexe\
+  \ Zahlen mit der Erweiterung `ext-intl` und der Klasse `NumberFormatter`. Hier ist\
+  \ ein\u2026"
 lastmod: '2024-03-13T22:44:53.966460-06:00'
 model: gpt-4-0125-preview
-summary: "Komplexe Zahlen haben einen Realteil und einen Imagin\xE4rteil, \xFCblicherweise\
-  \ geschrieben als `a + bi`."
+summary: "PHP bietet eingebaute Unterst\xFCtzung f\xFCr komplexe Zahlen mit der Erweiterung\
+  \ `ext-intl` und der Klasse `NumberFormatter`."
 title: Umgang mit komplexen Zahlen
 weight: 14
 ---

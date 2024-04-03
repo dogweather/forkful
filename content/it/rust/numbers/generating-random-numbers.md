@@ -1,12 +1,11 @@
 ---
 date: 2024-01-27 20:35:34.052385-07:00
-description: "Generare numeri casuali in Rust comporta l'utilizzo di librerie per\
-  \ produrre valori numerici imprevedibili, cosa indispensabile per compiti che vanno\u2026"
+description: "Come fare: Rust si affida a crate esterni per la generazione di numeri\
+  \ casuali, essendo `rand` il pi\xF9 comunemente utilizzato. Per iniziare a generare\u2026"
 lastmod: '2024-03-13T22:44:43.213969-06:00'
 model: gpt-4-0125-preview
-summary: Generare numeri casuali in Rust comporta l'utilizzo di librerie per produrre
-  valori numerici imprevedibili, cosa indispensabile per compiti che vanno dalla crittografia
-  e le simulazioni ai giochi e agli algoritmi randomizzati.
+summary: "Rust si affida a crate esterni per la generazione di numeri casuali, essendo\
+  \ `rand` il pi\xF9 comunemente utilizzato."
 title: Generazione di numeri casuali
 weight: 12
 ---

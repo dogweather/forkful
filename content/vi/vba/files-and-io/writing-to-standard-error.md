@@ -2,17 +2,19 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:09:25.932372-07:00
-description: "Ghi v\xE0o l\u1ED7i chu\u1EA9n trong Visual Basic for Applications (VBA)\
-  \ li\xEAn quan \u0111\u1EBFn vi\u1EC7c h\u01B0\u1EDBng c\xE1c th\xF4ng b\xE1o l\u1ED7\
-  i ho\u1EB7c ch\u1EA9n \u0111o\xE1n ra kh\u1ECFi \u0111\u1EA7u ra chu\u1EA9n, th\u01B0\
-  \u1EDDng l\xE0 t\u1EDBi\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong VBA, do kh\xF4ng c\xF3 h\xE0m t\xED\
+  ch h\u1EE3p s\u1EB5n tr\u1EF1c ti\u1EBFp \u0111\u1EC3 ghi c\u1EE5 th\u1EC3 v\xE0\
+  o l\u1ED7i chu\u1EA9n nh\u01B0 m\u1ED9t s\u1ED1 ng\xF4n ng\u1EEF l\u1EADp tr\xEC\
+  nh kh\xE1c, m\u1ED9t gi\u1EA3i ph\xE1p th\u01B0\u1EDDng g\u1EB7p\u2026"
 lastmod: '2024-03-13T22:44:36.454894-06:00'
 model: gpt-4-0125-preview
-summary: "Ghi v\xE0o l\u1ED7i chu\u1EA9n trong Visual Basic for Applications (VBA)\
-  \ li\xEAn quan \u0111\u1EBFn vi\u1EC7c h\u01B0\u1EDBng c\xE1c th\xF4ng b\xE1o l\u1ED7\
-  i ho\u1EB7c ch\u1EA9n \u0111o\xE1n ra kh\u1ECFi \u0111\u1EA7u ra chu\u1EA9n, th\u01B0\
-  \u1EDDng l\xE0 t\u1EDBi b\u1EA3ng \u0111i\u1EC1u khi\u1EC3n ho\u1EB7c m\u1ED9t t\u1EC7\
-  p nh\u1EADt k\xFD."
+summary: "Trong VBA, do kh\xF4ng c\xF3 h\xE0m t\xEDch h\u1EE3p s\u1EB5n tr\u1EF1c\
+  \ ti\u1EBFp \u0111\u1EC3 ghi c\u1EE5 th\u1EC3 v\xE0o l\u1ED7i chu\u1EA9n nh\u01B0\
+  \ m\u1ED9t s\u1ED1 ng\xF4n ng\u1EEF l\u1EADp tr\xECnh kh\xE1c, m\u1ED9t gi\u1EA3\
+  i ph\xE1p th\u01B0\u1EDDng g\u1EB7p bao g\u1ED3m vi\u1EC7c s\u1EED d\u1EE5ng `Debug.Print`\
+  \ cho \u0111\u1EA7u ra l\u1ED7i ph\xE1t tri\u1EC3n ho\u1EB7c t\u1EA1o m\u1ED9t h\xE0\
+  m nh\u1EADt k\xFD t\xF9y ch\u1EC9nh m\xF4 ph\u1ECFng h\xE0nh vi n\xE0y cho c\xE1\
+  c \u1EE9ng d\u1EE5ng s\u1EA3n xu\u1EA5t."
 title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---

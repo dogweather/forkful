@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:17.356845-07:00
-description: "\xC5 jobbe med CSV (Comma-Separated Values) filer handler om \xE5 lese\
-  \ fra og skrive til rene tekstfiler som lagrer tabul\xE6re data. Programmerere gj\xF8\
-  r dette for\u2026"
+description: "Hvordan: Rust, med sitt fokus p\xE5 sikkerhet og ytelse, tilbyr utmerkede\
+  \ crates (biblioteker) for \xE5 h\xE5ndtere CSV-filer, hvor `csv` er det mest popul\xE6\
+  re. Du\u2026"
 lastmod: '2024-03-13T22:44:40.596424-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 jobbe med CSV (Comma-Separated Values) filer handler om \xE5 lese fra\
-  \ og skrive til rene tekstfiler som lagrer tabul\xE6re data."
+summary: "Rust, med sitt fokus p\xE5 sikkerhet og ytelse, tilbyr utmerkede crates\
+  \ (biblioteker) for \xE5 h\xE5ndtere CSV-filer, hvor `csv` er det mest popul\xE6\
+  re."
 title: Arbeide med CSV
 weight: 37
 ---

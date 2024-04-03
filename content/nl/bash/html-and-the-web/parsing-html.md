@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:33.722457-07:00
-description: "HTML parsen betekent het doorzoeken van de structuur en inhoud van een\
-  \ HTML-bestand om informatie te extraheren. Programmeurs doen dit om data te\u2026"
+description: "Hoe: Bash is niet de eerste keuze voor het parsen van HTML, maar het\
+  \ is mogelijk met tools zoals `grep`, `awk`, `sed`, of externe hulpprogramma's als\u2026"
 lastmod: '2024-03-13T22:44:50.980237-06:00'
 model: gpt-4-0125-preview
-summary: HTML parsen betekent het doorzoeken van de structuur en inhoud van een HTML-bestand
-  om informatie te extraheren.
+summary: Bash is niet de eerste keuze voor het parsen van HTML, maar het is mogelijk
+  met tools zoals `grep`, `awk`, `sed`, of externe hulpprogramma's als `lynx`.
 title: HTML Parsen
 weight: 43
 ---

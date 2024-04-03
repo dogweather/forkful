@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:30.155839-07:00
-description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen ohjelmoinnissa on perustavaa\
-  \ laatua oleva teht\xE4v\xE4, joka mahdollistaa j\xE4rjestelm\xE4n p\xE4iv\xE4m\xE4\
-  \xE4r\xE4- ja aikatietojen noutamisen ja\u2026"
+description: "Miten: Fish Shell k\xE4ytt\xE4\xE4 ulkoisia komentoja, kuten `date`,\
+  \ nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saamiseksi, tarjoten joustavuutta tulosteen\
+  \ muotoiluun tarpeen mukaan.\u2026"
 lastmod: '2024-03-13T22:44:57.005554-06:00'
 model: gpt-4-0125-preview
-summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen ohjelmoinnissa on perustavaa\
-  \ laatua oleva teht\xE4v\xE4, joka mahdollistaa j\xE4rjestelm\xE4n p\xE4iv\xE4m\xE4\
-  \xE4r\xE4- ja aikatietojen noutamisen ja manipuloinnin."
+summary: "Fish Shell k\xE4ytt\xE4\xE4 ulkoisia komentoja, kuten `date`, nykyisen p\xE4\
+  iv\xE4m\xE4\xE4r\xE4n saamiseksi, tarjoten joustavuutta tulosteen muotoiluun tarpeen\
+  \ mukaan."
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---

@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:55.008600-07:00
-description: "Tablice asocjacyjne, znane w innych j\u0119zykach jako mapy lub s\u0142\
-  owniki, s\u0105 parami klucz-warto\u015B\u0107 u\u017Cywanymi do efektywnego wyszukiwania\
-  \ i manipulowania danymi.\u2026"
+description: "Jak to zrobi\u0107: C nie posiada wbudowanego wsparcia dla tablic asocjacyjnych,\
+  \ jak niekt\xF3re j\u0119zyki wy\u017Cszego poziomu, ale mo\u017Cna je symulowa\u0107\
+  \ za pomoc\u0105\u2026"
 lastmod: '2024-03-13T22:44:35.878565-06:00'
 model: gpt-4-0125-preview
-summary: "Tablice asocjacyjne, znane w innych j\u0119zykach jako mapy lub s\u0142\
-  owniki, s\u0105 parami klucz-warto\u015B\u0107 u\u017Cywanymi do efektywnego wyszukiwania\
-  \ i manipulowania danymi."
+summary: "C nie posiada wbudowanego wsparcia dla tablic asocjacyjnych, jak niekt\xF3\
+  re j\u0119zyki wy\u017Cszego poziomu, ale mo\u017Cna je symulowa\u0107 za pomoc\u0105\
+  \ struktur i haszowania."
 title: "U\u017Cywanie tablic asocjacyjnych"
 weight: 15
 ---

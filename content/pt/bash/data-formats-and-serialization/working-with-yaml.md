@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:41.039497-07:00
-description: "YAML, que significa YAML Ain't Markup Language (YAML N\xE3o \xE9 Uma\
-  \ Linguagem de Marca\xE7\xE3o), \xE9 um padr\xE3o de serializa\xE7\xE3o de dados\
-  \ leg\xEDvel por humanos que pode\u2026"
+description: "Como fazer: Trabalhar diretamente com YAML no Bash requer um pouco de\
+  \ engenhosidade, j\xE1 que o Bash n\xE3o tem suporte embutido para a an\xE1lise\
+  \ de YAML. No\u2026"
 lastmod: '2024-03-13T22:44:46.773528-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, que significa YAML Ain't Markup Language (YAML N\xE3o \xE9 Uma Linguagem\
-  \ de Marca\xE7\xE3o), \xE9 um padr\xE3o de serializa\xE7\xE3o de dados leg\xEDvel\
-  \ por humanos que pode ser usado para arquivos de configura\xE7\xE3o, bem como em\
-  \ aplica\xE7\xF5es onde os dados est\xE3o sendo armazenados ou transmitidos."
+summary: "Trabalhar diretamente com YAML no Bash requer um pouco de engenhosidade,\
+  \ j\xE1 que o Bash n\xE3o tem suporte embutido para a an\xE1lise de YAML."
 title: Trabalhando com YAML
 weight: 41
 ---

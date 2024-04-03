@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 03:40:05.021513-07:00
-description: "Eliminar las comillas de una cadena significa deshacerse de esas molestas\
-  \ comillas que pueden interferir con tu c\xF3digo, especialmente cuando est\xE1\
-  s\u2026"
+description: "C\xF3mo hacerlo: Imagina que tienes una cadena envuelta en comillas\
+  \ dobles, como `\"\\\"\xA1Hola, Mundo!\\\"\"` y quieres el texto puro, sin comillas.\
+  \ Aqu\xED tienes un\u2026"
 lastmod: '2024-03-13T22:44:59.446900-06:00'
 model: gpt-4-0125-preview
-summary: "Eliminar las comillas de una cadena significa deshacerse de esas molestas\
-  \ comillas que pueden interferir con tu c\xF3digo, especialmente cuando est\xE1\
-  s analizando datos o construyendo objetos JSON."
+summary: "Imagina que tienes una cadena envuelta en comillas dobles, como `\"\\\"\xA1\
+  Hola, Mundo!\\\"\"` y quieres el texto puro, sin comillas."
 title: Eliminando comillas de una cadena
 weight: 9
 ---

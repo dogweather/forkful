@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 00:55:27.883879-07:00
-description: "Tratar erros na codifica\xE7\xE3o \xE9 esperar pelo inesperado. \xC9\
-  \ a arte de se planejar para quando as coisas sa\xEDrem do controle, para que voc\xEA\
-  \ possa manter seu\u2026"
+description: "Como Fazer: O Lua utiliza duas fun\xE7\xF5es principais para tratamento\
+  \ de erros: `pcall` e `xpcall`. Veja como us\xE1-las."
 lastmod: '2024-03-13T22:44:46.716547-06:00'
 model: gpt-4-1106-preview
-summary: "Tratar erros na codifica\xE7\xE3o \xE9 esperar pelo inesperado."
+summary: "O Lua utiliza duas fun\xE7\xF5es principais para tratamento de erros."
 title: Tratamento de erros
 weight: 16
 ---

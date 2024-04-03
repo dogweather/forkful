@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 04:19:32.635709-07:00
-description: "TOML (Tom's Obvious, Minimal Language, ou en fran\xE7ais, \"Langage\
-  \ Minimal et \xC9vident de Tom\") est un format de s\xE9rialisation de donn\xE9\
-  es facile \xE0 lire gr\xE2ce\u2026"
+description: "Comment faire : Pour travailler avec TOML en C++, vous aurez besoin\
+  \ d'une biblioth\xE8que comme `toml++`. Voici un d\xE9marrage rapide ."
 lastmod: '2024-03-13T22:44:58.193705-06:00'
 model: gpt-4-0125-preview
-summary: "TOML (Tom's Obvious, Minimal Language, ou en fran\xE7ais, \"Langage Minimal\
-  \ et \xC9vident de Tom\") est un format de s\xE9rialisation de donn\xE9es facile\
-  \ \xE0 lire gr\xE2ce \xE0 sa s\xE9mantique claire."
+summary: "Pour travailler avec TOML en C++, vous aurez besoin d'une biblioth\xE8que\
+  \ comme `toml++`."
 title: Travailler avec TOML
 weight: 39
 ---

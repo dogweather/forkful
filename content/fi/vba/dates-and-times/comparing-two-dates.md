@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:53.875549-07:00
-description: "P\xE4iv\xE4m\xE4\xE4rien vertaaminen Visual Basic for Applications (VBA)\
-  \ -ohjelmointikieless\xE4 tarkoittaa niiden aikaj\xE4rjestyssuhteen m\xE4\xE4ritt\xE4\
-  mist\xE4 toisiinsa n\xE4hden.\u2026"
+description: "Kuinka: VBAssa p\xE4iv\xE4m\xE4\xE4ri\xE4 verrataan k\xE4ytt\xE4en standardin\
+  \ vertailuoperaattoreita (`<`, `>`, `=`, `<=`, `>=`). Vertaamista ennen on t\xE4\
+  rke\xE4\xE4 varmistaa, ett\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.414303-06:00'
 model: gpt-4-0125-preview
-summary: "P\xE4iv\xE4m\xE4\xE4rien vertaaminen Visual Basic for Applications (VBA)\
-  \ -ohjelmointikieless\xE4 tarkoittaa niiden aikaj\xE4rjestyssuhteen m\xE4\xE4ritt\xE4\
-  mist\xE4 toisiinsa n\xE4hden."
+summary: "VBAssa p\xE4iv\xE4m\xE4\xE4ri\xE4 verrataan k\xE4ytt\xE4en standardin vertailuoperaattoreita\
+  \ (`<`, `>`, `=`, `<=`, `>=`)."
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---

@@ -1,13 +1,12 @@
 ---
 date: 2024-01-27 20:32:58.266653-07:00
-description: "Zufallszahlen in Elixir zu erzeugen, ist eine grundlegende Programmieraufgabe,\
-  \ die f\xFCr Anwendungen unerl\xE4sslich ist, die unvorhersehbare Ergebnisse\u2026"
+description: "Wie: Um Zufallszahlen in Elixir zu generieren, verwenden Sie in erster\
+  \ Linie das `:rand` Modul, das mehrere Funktionen f\xFCr diesen Zweck bereitstellt.\
+  \ Hier\u2026"
 lastmod: '2024-03-13T22:44:53.482304-06:00'
 model: gpt-4-0125-preview
-summary: "Zufallszahlen in Elixir zu erzeugen, ist eine grundlegende Programmieraufgabe,\
-  \ die f\xFCr Anwendungen unerl\xE4sslich ist, die unvorhersehbare Ergebnisse ben\xF6\
-  tigen, wie beispielsweise die Erstellung sicherer Tokens, das Stichprobenziehen\
-  \ von Daten oder in Spielalgorithmen."
+summary: "Um Zufallszahlen in Elixir zu generieren, verwenden Sie in erster Linie\
+  \ das `:rand` Modul, das mehrere Funktionen f\xFCr diesen Zweck bereitstellt."
 title: Generierung von Zufallszahlen
 weight: 12
 ---

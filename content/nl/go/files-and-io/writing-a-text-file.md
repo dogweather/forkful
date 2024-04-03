@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:49.741520-07:00
-description: "Een tekstbestand schrijven in Go omvat het cre\xEBren en schrijven van\
-  \ datareeksen in een nieuw of bestaand tekstbestand. Programmeurs doen dit om gegevens\u2026"
+description: "Hoe: In Go wordt het schrijven naar een tekstbestand afgehandeld door\
+  \ het `os` en `io/ioutil` (voor Go-versies <1.16) of `os` en `io` plus `os`-pakketten\u2026"
 lastmod: '2024-03-13T22:44:50.306266-06:00'
 model: gpt-4-0125-preview
-summary: "Een tekstbestand schrijven in Go omvat het cre\xEBren en schrijven van datareeksen\
-  \ in een nieuw of bestaand tekstbestand."
+summary: "In Go wordt het schrijven naar een tekstbestand afgehandeld door het `os`\
+  \ en `io/ioutil` (voor Go-versies <1.16) of `os` en `io` plus `os`-pakketten voor\
+  \ Go 1.16 en hoger, wat de filosofie van eenvoud en effici\xEBntie van Go aantoont."
 title: Een tekstbestand schrijven
 weight: 24
 ---

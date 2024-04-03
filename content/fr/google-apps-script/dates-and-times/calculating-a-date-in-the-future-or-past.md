@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:48:49.669678-07:00
-description: "Calculer une date dans le futur ou le pass\xE9 consiste \xE0 manipuler\
-  \ des objets date pour trouver des dates au-del\xE0 ou avant la date actuelle, respectivement.\u2026"
+description: "Comment faire : Dans Google Apps Script, qui est bas\xE9 sur JavaScript,\
+  \ vous pouvez manipuler les dates en utilisant l'objet `Date`. Voici comment calculer\u2026"
 lastmod: '2024-03-13T22:44:57.202335-06:00'
 model: gpt-4-0125-preview
-summary: "Calculer une date dans le futur ou le pass\xE9 consiste \xE0 manipuler des\
-  \ objets date pour trouver des dates au-del\xE0 ou avant la date actuelle, respectivement."
+summary: "Dans Google Apps Script, qui est bas\xE9 sur JavaScript, vous pouvez manipuler\
+  \ les dates en utilisant l'objet `Date`."
 title: "Calculer une date dans le futur ou le pass\xE9"
 weight: 26
 ---

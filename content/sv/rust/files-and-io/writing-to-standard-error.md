@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:31.872891-07:00
-description: "Att skriva till standardfel (stderr) i Rust handlar om att dirigera\
-  \ felmeddelanden och diagnostik till konsolen separat fr\xE5n standardutdatan (stdout).\u2026"
+description: "Hur man g\xF6r: Rust erbjuder ett rakt p\xE5 sak s\xE4tt att skriva\
+  \ till stderr med hj\xE4lp av `eprintln!`-makrot, liknande hur `println!` anv\xE4\
+  nds f\xF6r stdout. H\xE4r \xE4r\u2026"
 lastmod: '2024-03-13T22:44:37.715816-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva till standardfel (stderr) i Rust handlar om att dirigera felmeddelanden\
-  \ och diagnostik till konsolen separat fr\xE5n standardutdatan (stdout)."
+summary: "Rust erbjuder ett rakt p\xE5 sak s\xE4tt att skriva till stderr med hj\xE4\
+  lp av `eprintln!`-makrot, liknande hur `println!` anv\xE4nds f\xF6r stdout."
 title: Skriva till standardfel
 weight: 25
 ---

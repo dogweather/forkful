@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:12:32.465143-07:00
-description: "TOML (Tom's Obvious, Minimal Language) \xE8 un formato di file di configurazione\
-  \ facile da leggere grazie alla sua sintassi semplice. I programmatori\u2026"
+description: "Come fare: Per iniziare a lavorare con TOML in Go, \xE8 necessario includere\
+  \ una libreria che possa analizzare i file TOML poich\xE9 la libreria standard di\
+  \ Go\u2026"
 lastmod: '2024-03-13T22:44:42.933533-06:00'
 model: gpt-4-0125-preview
-summary: "TOML (Tom's Obvious, Minimal Language) \xE8 un formato di file di configurazione\
-  \ facile da leggere grazie alla sua sintassi semplice."
+summary: "Per iniziare a lavorare con TOML in Go, \xE8 necessario includere una libreria\
+  \ che possa analizzare i file TOML poich\xE9 la libreria standard di Go non supporta\
+  \ nativamente TOML."
 title: Lavorare con TOML
 weight: 39
 ---

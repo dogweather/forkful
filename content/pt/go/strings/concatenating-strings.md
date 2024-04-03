@@ -2,12 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:53.869805-07:00
-description: "Concatenar strings envolve unir duas ou mais strings de ponta a ponta\
-  \ para formar uma nova string. Os programadores fazem isso para gerar texto\u2026"
+description: "Como Fazer: Em Go, existem v\xE1rias maneiras de concatenar strings.\
+  \ Aqui est\xE1 uma olhada em alguns m\xE9todos comuns com exemplos: #."
 lastmod: '2024-03-13T22:44:46.051885-06:00'
 model: gpt-4-0125-preview
-summary: Concatenar strings envolve unir duas ou mais strings de ponta a ponta para
-  formar uma nova string.
+summary: "Em Go, existem v\xE1rias maneiras de concatenar strings."
 title: Concatenando strings
 weight: 3
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:48.743597-07:00
-description: "Het verkrijgen van de huidige datum in Go is een fundamentele taak voor\
-  \ programmeurs, vergelijkbaar met \"Hallo, wereld!\" in zijn alomtegenwoordigheid.\
-  \ Het\u2026"
+description: "Hoe te: In Go is het `time` pakket je toegangspoort tot het werken met\
+  \ datums en tijden. De `time.Now()` functie geeft je de huidige datum en tijd,\u2026"
 lastmod: '2024-03-13T22:44:50.298377-06:00'
 model: gpt-4-0125-preview
-summary: Het verkrijgen van de huidige datum in Go is een fundamentele taak voor programmeurs,
-  vergelijkbaar met "Hallo, wereld.
+summary: In Go is het `time` pakket je toegangspoort tot het werken met datums en
+  tijden.
 title: De huidige datum krijgen
 weight: 29
 ---

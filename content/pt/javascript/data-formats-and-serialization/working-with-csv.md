@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:16.613422-07:00
-description: "Trabalhar com CSV (Valores Separados por V\xEDrgula) em JavaScript envolve\
-  \ a an\xE1lise ou gera\xE7\xE3o de arquivos CSV para ingerir dados tabulares de\
-  \ fontes\u2026"
+description: "Como Fazer: JavaScript n\xE3o possui funcionalidades embutidas para\
+  \ an\xE1lise (parsing) de CSV ou para transform\xE1-los em strings (stringifying),\
+  \ como acontece\u2026"
 lastmod: '2024-03-13T22:44:46.984528-06:00'
 model: gpt-4-0125-preview
-summary: "Trabalhar com CSV (Valores Separados por V\xEDrgula) em JavaScript envolve\
-  \ a an\xE1lise ou gera\xE7\xE3o de arquivos CSV para ingerir dados tabulares de\
-  \ fontes externas ou exportar dados para uso em outros programas."
+summary: "JavaScript n\xE3o possui funcionalidades embutidas para an\xE1lise (parsing)\
+  \ de CSV ou para transform\xE1-los em strings (stringifying), como acontece com\
+  \ JSON."
 title: Trabalhando com CSV
 weight: 37
 ---

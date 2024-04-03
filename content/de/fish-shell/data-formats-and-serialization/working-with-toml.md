@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:21:19.576908-07:00
-description: "TOML ist ein Konfigurationsdateiformat, das f\xFCr Menschen leicht zu\
-  \ lesen und zu schreiben ist und von Maschinen einfach geparst und generiert werden\
-  \ kann.\u2026"
+description: 'Wie geht das: Um TOML in Fish zu lesen und zu manipulieren, kann man
+  ein Werkzeug wie `yj` verwenden, das TOML in JSON konvertieren kann. So geht''s.'
 lastmod: '2024-03-13T22:44:54.332089-06:00'
 model: gpt-4-0125-preview
-summary: "TOML ist ein Konfigurationsdateiformat, das f\xFCr Menschen leicht zu lesen\
-  \ und zu schreiben ist und von Maschinen einfach geparst und generiert werden kann."
+summary: Um TOML in Fish zu lesen und zu manipulieren, kann man ein Werkzeug wie `yj`
+  verwenden, das TOML in JSON konvertieren kann.
 title: Arbeiten mit TOML
 weight: 39
 ---

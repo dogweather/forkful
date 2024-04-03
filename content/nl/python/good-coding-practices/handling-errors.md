@@ -2,13 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:23.666645-07:00
-description: "Het afhandelen van fouten in Python (of elke programmeertaal) gaat over\
-  \ het verwachten van het onverwachte - het is de kunst van het gracieus omgaan met\u2026"
+description: 'Hoe: .'
 lastmod: '2024-03-13T22:44:50.384121-06:00'
 model: gpt-4-0125-preview
-summary: Het afhandelen van fouten in Python (of elke programmeertaal) gaat over het
-  verwachten van het onverwachte - het is de kunst van het gracieus omgaan met situaties
-  waarin dingen misgaan in je code.
+summary: .
 title: Fouten afhandelen
 weight: 16
 ---

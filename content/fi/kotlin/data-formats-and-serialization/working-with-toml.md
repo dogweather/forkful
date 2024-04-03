@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:23:42.916722-07:00
-description: "TOML tarkoittaa Tom's Obvious, Minimal Language -kielt\xE4. Sit\xE4\
-  \ k\xE4ytet\xE4\xE4n konfiguraatiotiedostoihin, koska se on ihmisten luettavissa\
-  \ ja kirjoitettavissa\u2026"
+description: "Kuinka: Kotlinin kanssa TOMLin k\xE4sittelyyn voisi k\xE4ytt\xE4\xE4\
+  \ kirjastoa, kuten `ktoml`. Aloitetaan lis\xE4\xE4m\xE4ll\xE4 riippuvuus `build.gradle.kts`-tiedostoosi."
 lastmod: '2024-03-13T22:44:56.554705-06:00'
 model: gpt-4-0125-preview
-summary: "TOML tarkoittaa Tom's Obvious, Minimal Language -kielt\xE4."
+summary: "Kotlinin kanssa TOMLin k\xE4sittelyyn voisi k\xE4ytt\xE4\xE4 kirjastoa,\
+  \ kuten `ktoml`."
 title: "Ty\xF6skentely TOML:n kanssa"
 weight: 39
 ---

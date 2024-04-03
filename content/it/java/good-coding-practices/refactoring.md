@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:18:50.344627-07:00
-description: "Il Refactoring \xE8 il processo di ristrutturazione del codice informatico\
-  \ esistente\u2014cambiando il factoring\u2014senza alterarne il comportamento esterno.\
-  \ I\u2026"
+description: 'Come fare: Prendiamo una semplice classe Java che chiede a gran voce
+  un refactoring a causa della sua cattiva organizzazione e mancanza di chiarezza.'
 lastmod: '2024-03-13T22:44:43.317172-06:00'
 model: gpt-4-0125-preview
-summary: "Il Refactoring \xE8 il processo di ristrutturazione del codice informatico\
-  \ esistente\u2014cambiando il factoring\u2014senza alterarne il comportamento esterno."
+summary: Prendiamo una semplice classe Java che chiede a gran voce un refactoring
+  a causa della sua cattiva organizzazione e mancanza di chiarezza.
 title: Rifattorizzazione
 weight: 19
 ---

@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:24.574599-07:00
-description: "Een string met een hoofdletter laten beginnen betekent dat je de eerste\
-  \ letter van elk woord omzet naar een hoofdletter. Programmeurs doen dit om tekst\
-  \ te\u2026"
+description: 'Hoe te: In Kotlin kun je strings gemakkelijk met een hoofdletter laten
+  beginnen. Hier is een snel voorbeeld.'
 lastmod: '2024-03-13T22:44:50.750582-06:00'
 model: gpt-4-0125-preview
-summary: Een string met een hoofdletter laten beginnen betekent dat je de eerste letter
-  van elk woord omzet naar een hoofdletter.
+summary: In Kotlin kun je strings gemakkelijk met een hoofdletter laten beginnen.
 title: Een string met hoofdletters maken
 weight: 2
 ---

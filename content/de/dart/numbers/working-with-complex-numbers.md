@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:37.098847-07:00
-description: "Komplexe Zahlen, bestehend aus einem Real- und einem Imagin\xE4rteil\
-  \ (\xFCblicherweise als a + bi dargestellt), erweitern das Konzept der dimensionslosen\
-  \ Zahlen\u2026"
+description: "Wie geht das: Dart selbst beinhaltet keine integrierte Bibliothek f\xFC\
+  r komplexe Zahlen, was entweder die Implementierung einer eigenen komplexen Zahlklasse\u2026"
 lastmod: '2024-03-13T22:44:53.573965-06:00'
 model: gpt-4-0125-preview
-summary: "Komplexe Zahlen, bestehend aus einem Real- und einem Imagin\xE4rteil (\xFC\
-  blicherweise als a + bi dargestellt), erweitern das Konzept der dimensionslosen\
-  \ Zahlen auf einen zweidimensionalen Raum."
+summary: "Dart selbst beinhaltet keine integrierte Bibliothek f\xFCr komplexe Zahlen,\
+  \ was entweder die Implementierung einer eigenen komplexen Zahlklasse oder die Verwendung\
+  \ einer Bibliothek von Drittanbietern erforderlich macht."
 title: Arbeiten mit komplexen Zahlen
 weight: 14
 ---

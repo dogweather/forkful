@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:21.346738-07:00
-description: "\xC5 skrive til standardfeil (stderr) i PowerShell inneb\xE6rer \xE5\
-  \ sende feilmeldinger eller diagnostikk direkte til stderr-str\xF8mmen, forskjellig\
-  \ fra\u2026"
+description: "Hvordan: PowerShell forenkler prosessen med \xE5 skrive til stderr gjennom\
+  \ bruk av `Write-Error` cmdlet eller ved \xE5 dirigere utdata til\u2026"
 lastmod: '2024-03-13T22:44:41.033430-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive til standardfeil (stderr) i PowerShell inneb\xE6rer \xE5 sende\
-  \ feilmeldinger eller diagnostikk direkte til stderr-str\xF8mmen, forskjellig fra\
-  \ standardutdata-str\xF8mmen (stdout)."
+summary: "PowerShell forenkler prosessen med \xE5 skrive til stderr gjennom bruk av\
+  \ `Write-Error` cmdlet eller ved \xE5 dirigere utdata til `$host.ui.WriteErrorLine()`\
+  \ metoden."
 title: Skriving til standardfeil
 weight: 25
 ---

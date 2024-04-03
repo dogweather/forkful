@@ -2,13 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:18.111736-07:00
-description: "Att l\xE4sa kommandoradsargument i Visual Basic for Applications (VBA)\
-  \ inneb\xE4r att man tillg\xE5r parametrar som passerats till ditt program vid k\xF6\
-  rning. Denna\u2026"
+description: "Hur man g\xF6r: Till skillnad fr\xE5n mer raka programmeringsmilj\xF6\
+  er, har VBA inte en inbyggd funktion f\xF6r att direkt l\xE4sa kommandoradsargument\
+  \ i konventionell\u2026"
 lastmod: '2024-03-13T22:44:37.759829-06:00'
 model: gpt-4-0125-preview
-summary: "Att l\xE4sa kommandoradsargument i Visual Basic for Applications (VBA) inneb\xE4\
-  r att man tillg\xE5r parametrar som passerats till ditt program vid k\xF6rning."
+summary: "Till skillnad fr\xE5n mer raka programmeringsmilj\xF6er, har VBA inte en\
+  \ inbyggd funktion f\xF6r att direkt l\xE4sa kommandoradsargument i konventionell\
+  \ bem\xE4rkelse eftersom det fr\xE4mst \xE4r designat f\xF6r inb\xE4ddning inom\
+  \ Microsoft Office-applikationer."
 title: "L\xE4sa kommandoradsargument"
 weight: 23
 ---

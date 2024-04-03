@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:37:53.629879-07:00
-description: "Supprimer les guillemets d'une cha\xEEne consiste \xE0 retirer les marques\
-  \ de citation qui encadrent la cha\xEEne. Les programmeurs souhaitent souvent le\
-  \ faire\u2026"
+description: "Comment faire : Bash offre plusieurs fa\xE7ons de retirer les guillemets\
+  \ des cha\xEEnes. Voici quelques exemples rapides ."
 lastmod: '2024-03-13T22:44:57.975896-06:00'
 model: gpt-4-0125-preview
-summary: "Supprimer les guillemets d'une cha\xEEne consiste \xE0 retirer les marques\
-  \ de citation qui encadrent la cha\xEEne."
+summary: "Bash offre plusieurs fa\xE7ons de retirer les guillemets des cha\xEEnes."
 title: "Retirer les guillemets d'une cha\xEEne"
 weight: 9
 ---

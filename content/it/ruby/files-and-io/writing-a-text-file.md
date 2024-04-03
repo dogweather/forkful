@@ -2,13 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:06.833963-07:00
-description: "Scrivere su un file di testo in Ruby \xE8 un'operazione fondamentale\
-  \ che consente di conservare output e dati in modo persistente, rendendo possibili\u2026"
+description: "Come fare: Ruby rende le operazioni sui file semplici. Per scrivere\
+  \ su un file, puoi utilizzare la classe incorporata `File` di Ruby. L'esempio seguente\u2026"
 lastmod: '2024-03-13T22:44:44.069224-06:00'
 model: gpt-4-0125-preview
-summary: "Scrivere su un file di testo in Ruby \xE8 un'operazione fondamentale che\
-  \ consente di conservare output e dati in modo persistente, rendendo possibili l'accesso\
-  \ o la modifica dei dati in seguito."
+summary: Ruby rende le operazioni sui file semplici.
 title: Scrivere un file di testo
 weight: 24
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:29.608672-07:00
-description: "Code in Funktionen in Visual Basic f\xFCr Anwendungen (VBA) zu organisieren,\
-  \ bedeutet, ein Programm in kleinere, handhabbare St\xFCcke, bekannt als Funktionen,\u2026"
+description: "Wie man das macht: In VBA werden Funktionen mit den Anweisungen `Function`\
+  \ und `End Function` definiert. Hier ist ein einfaches Beispiel, wie man eine\u2026"
 lastmod: '2024-03-13T22:44:53.724259-06:00'
 model: gpt-4-0125-preview
-summary: "Code in Funktionen in Visual Basic f\xFCr Anwendungen (VBA) zu organisieren,\
-  \ bedeutet, ein Programm in kleinere, handhabbare St\xFCcke, bekannt als Funktionen,\
-  \ zu unterteilen."
+summary: In VBA werden Funktionen mit den Anweisungen `Function` und `End Function`
+  definiert.
 title: Organisation von Code in Funktionen
 weight: 18
 ---

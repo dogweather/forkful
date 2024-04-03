@@ -2,13 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:37.346264-07:00
-description: "Parsowanie HTML oznacza rozbieranie znacznik\xF3w strony internetowej\
-  \ na co\u015B, co program mo\u017Ce zrozumie\u0107 i manipulowa\u0107. Programi\u015B\
-  ci parsuj\u0105 HTML w celu\u2026"
+description: "Jak to zrobi\u0107: Kotlin u\u0142atwia parsowanie HTML dzi\u0119ki\
+  \ bibliotekom takim jak Jsoup. Oto jak to zrobi\u0107."
 lastmod: '2024-03-13T22:44:35.362793-06:00'
 model: gpt-4-0125-preview
-summary: "Parsowanie HTML oznacza rozbieranie znacznik\xF3w strony internetowej na\
-  \ co\u015B, co program mo\u017Ce zrozumie\u0107 i manipulowa\u0107."
+summary: "Kotlin u\u0142atwia parsowanie HTML dzi\u0119ki bibliotekom takim jak Jsoup."
 title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---

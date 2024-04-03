@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 01:17:55.425347-07:00
-description: "Le remaniement (ou refactoring) est essentiellement le grand m\xE9nage\
-  \ de votre base de code - il s'agit de restructurer le code existant sans en changer\
-  \ le\u2026"
+description: "Comment faire : Imaginez que vous avez une fonction Elm qui fait trop\
+  \ de choses, comme m\xE9langer la logique de l'interface utilisateur avec les mises\
+  \ \xE0\u2026"
 lastmod: '2024-03-13T22:44:57.698457-06:00'
 model: gpt-4-0125-preview
-summary: "Le remaniement (ou refactoring) est essentiellement le grand m\xE9nage de\
-  \ votre base de code - il s'agit de restructurer le code existant sans en changer\
-  \ le comportement externe."
+summary: "Imaginez que vous avez une fonction Elm qui fait trop de choses, comme m\xE9\
+  langer la logique de l'interface utilisateur avec les mises \xE0 jour d'\xE9tat."
 title: Refactoring
 weight: 19
 ---

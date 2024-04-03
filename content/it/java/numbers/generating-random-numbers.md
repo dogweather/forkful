@@ -1,11 +1,12 @@
 ---
 date: 2024-01-27 20:34:12.101014-07:00
-description: "Generare numeri casuali consiste nel produrre sequenze o valori singoli\
-  \ imprevedibili all'interno di un intervallo definito. I programmatori utilizzano\u2026"
+description: "Come fare: In Java, la generazione di numeri casuali pu\xF2 essere realizzata\
+  \ utilizzando la classe `Random` del pacchetto `java.util`, o le classi\u2026"
 lastmod: '2024-03-13T22:44:43.305058-06:00'
 model: gpt-4-0125-preview
-summary: Generare numeri casuali consiste nel produrre sequenze o valori singoli imprevedibili
-  all'interno di un intervallo definito.
+summary: "In Java, la generazione di numeri casuali pu\xF2 essere realizzata utilizzando\
+  \ la classe `Random` del pacchetto `java.util`, o le classi `ThreadLocalRandom`\
+  \ e `SecureRandom` per casi d'uso specifici."
 title: Generazione di numeri casuali
 weight: 12
 ---

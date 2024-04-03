@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:35:00.273360-07:00
-description: "Sammenkjeding av strenger handler om \xE5 sl\xE5 sammen tekster til\
-  \ \xE9n. Programmerere gj\xF8r dette for \xE5 bygge setninger, vise data og kombinere\
-  \ brukerinput."
+description: 'Hvordan: I Haskell, bruker vi `(++)` operatoren eller `concat` funksjonen.
+  Her er litt kode.'
 lastmod: '2024-03-13T22:44:40.832902-06:00'
 model: gpt-4-1106-preview
-summary: "Sammenkjeding av strenger handler om \xE5 sl\xE5 sammen tekster til \xE9\
-  n."
+summary: I Haskell, bruker vi `(++)` operatoren eller `concat` funksjonen.
 title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---

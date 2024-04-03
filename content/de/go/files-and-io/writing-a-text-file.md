@@ -2,12 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:24.671649-07:00
-description: "Das Schreiben einer Textdatei in Go umfasst das Erstellen und Schreiben\
-  \ von Zeichenketten von Daten in eine neue oder vorhandene Textdatei. Programmierer\u2026"
+description: "Wie geht das: In Go wird das Schreiben in eine Textdatei durch die Pakete\
+  \ `os` und `io/ioutil` (f\xFCr Go-Versionen <1.16) oder `os` und `io` plus `os`\
+  \ f\xFCr\u2026"
 lastmod: '2024-03-13T22:44:53.307895-06:00'
 model: gpt-4-0125-preview
-summary: Das Schreiben einer Textdatei in Go umfasst das Erstellen und Schreiben von
-  Zeichenketten von Daten in eine neue oder vorhandene Textdatei.
+summary: "In Go wird das Schreiben in eine Textdatei durch die Pakete `os` und `io/ioutil`\
+  \ (f\xFCr Go-Versionen <1.16) oder `os` und `io` plus `os` f\xFCr Go 1.16 und h\xF6\
+  her gehandhabt, was die Philosophie von Go hinsichtlich Einfachheit und Effizienz\
+  \ demonstriert."
 title: Eine Textdatei schreiben
 weight: 24
 ---

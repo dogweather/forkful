@@ -1,11 +1,11 @@
 ---
 date: 2024-02-01 21:30:21.737007-07:00
-description: "Regular expressions (regex) in Visual Basic for Applications (VBA) provide\
-  \ a powerful way to search, match, and manipulate strings. Programmers use them\u2026"
+description: "How to: To use regular expressions in VBA, you first need to enable\
+  \ the Microsoft VBScript Regular Expressions library. In the VBA editor, go to `Tools`\u2026"
 lastmod: '2024-03-13T22:44:59.925468-06:00'
 model: gpt-4-0125-preview
-summary: Regular expressions (regex) in Visual Basic for Applications (VBA) provide
-  a powerful way to search, match, and manipulate strings.
+summary: To use regular expressions in VBA, you first need to enable the Microsoft
+  VBScript Regular Expressions library.
 title: Using regular expressions
 weight: 11
 ---

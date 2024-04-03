@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:50.754375-07:00
-description: "Pobieranie bie\u017C\u0105cej daty w Rust jest powszechnym zadaniem\
-  \ w przypadkach takich jak logowanie, operacje czasowe, czy po prostu wy\u015Bwietlanie\
-  \ daty. W\u2026"
+description: "Jak to zrobi\u0107: #."
 lastmod: '2024-03-13T22:44:35.196037-06:00'
 model: gpt-4-0125-preview
-summary: "Pobieranie bie\u017C\u0105cej daty w Rust jest powszechnym zadaniem w przypadkach\
-  \ takich jak logowanie, operacje czasowe, czy po prostu wy\u015Bwietlanie daty."
+summary: '#.'
 title: Pobieranie aktualnej daty
 weight: 29
 ---

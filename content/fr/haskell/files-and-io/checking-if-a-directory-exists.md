@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:24.209008-07:00
-description: "V\xE9rifier si un r\xE9pertoire existe est une op\xE9ration fondamentale\
-  \ dans de nombreuses t\xE2ches de programmation, permettant des actions conditionnelles\
-  \ bas\xE9es\u2026"
+description: "Comment faire : Haskell, gr\xE2ce \xE0 sa biblioth\xE8que de base, offre\
+  \ des moyens simples de v\xE9rifier l'existence d'un r\xE9pertoire, principalement\
+  \ en utilisant le\u2026"
 lastmod: '2024-03-13T22:44:57.848850-06:00'
 model: gpt-4-0125-preview
-summary: "V\xE9rifier si un r\xE9pertoire existe est une op\xE9ration fondamentale\
-  \ dans de nombreuses t\xE2ches de programmation, permettant des actions conditionnelles\
-  \ bas\xE9es sur la pr\xE9sence ou l'absence de structures de r\xE9pertoires."
+summary: "Haskell, gr\xE2ce \xE0 sa biblioth\xE8que de base, offre des moyens simples\
+  \ de v\xE9rifier l'existence d'un r\xE9pertoire, principalement en utilisant le\
+  \ module `System.Directory`."
 title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---

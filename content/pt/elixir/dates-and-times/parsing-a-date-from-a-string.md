@@ -3,13 +3,11 @@ changelog:
 - 2024-01-28, dogweather, reviewed
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 02:05:29.095545-07:00
-description: "Analisar uma data de uma string trata-se de pegar um texto, como \"\
-  2023-04-05\", e convert\xEA-lo em um formato de data que seu programa possa entender\
-  \ e\u2026"
+description: "Como fazer: Em Elixir, voc\xEA pode analisar datas usando o m\xF3dulo\
+  \ `Date`. Veja como converter uma string em uma data."
 lastmod: '2024-03-13T22:44:46.247419-06:00'
 model: gpt-4-0125-preview
-summary: "Analisar uma data de uma string trata-se de pegar um texto, como \"2023-04-05\"\
-  , e convert\xEA-lo em um formato de data que seu programa possa entender e trabalhar."
+summary: "Em Elixir, voc\xEA pode analisar datas usando o m\xF3dulo `Date`."
 title: Analisando uma data a partir de uma string
 weight: 30
 ---

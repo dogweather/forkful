@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:09.031800-07:00
-description: "Las expresiones regulares, o regex, permiten a los desarrolladores buscar,\
-  \ coincidir y manipular cadenas con t\xE9cnicas avanzadas de coincidencia de\u2026"
+description: "C\xF3mo hacerlo: La biblioteca `regex` de Rust es la opci\xF3n predilecta\
+  \ para trabajar con expresiones regulares. Para usarla, primero necesitar\xE1s a\xF1\
+  adirla a\u2026"
 lastmod: '2024-03-13T22:44:58.836597-06:00'
 model: gpt-4-0125-preview
-summary: "Las expresiones regulares, o regex, permiten a los desarrolladores buscar,\
-  \ coincidir y manipular cadenas con t\xE9cnicas avanzadas de coincidencia de patrones."
+summary: "La biblioteca `regex` de Rust es la opci\xF3n predilecta para trabajar con\
+  \ expresiones regulares."
 title: Usando expresiones regulares
 weight: 11
 ---

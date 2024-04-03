@@ -1,11 +1,9 @@
 ---
 date: 2024-01-26 04:34:09.263746-07:00
-description: "XML er et merkespr\xE5k brukt for lagring og transport av data. Programmerere\
-  \ arbeider med XML for \xE5 muliggj\xF8re interoperabilitet mellom applikasjoner\
-  \ og\u2026"
+description: 'Hvordan: Lese XML med SimpleXML.'
 lastmod: '2024-03-13T22:44:40.910675-06:00'
 model: gpt-4-0125-preview
-summary: "XML er et merkespr\xE5k brukt for lagring og transport av data."
+summary: Lese XML med SimpleXML.
 title: "\xC5 jobbe med XML"
 weight: 40
 ---

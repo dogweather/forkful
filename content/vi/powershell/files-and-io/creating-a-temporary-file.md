@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:51.470946-07:00
-description: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi c\xF3 ngh\u0129a l\xE0\
-  \ t\u1EA1o m\u1ED9t t\u1EC7p \u0111\u1EC3 s\u1EED d\u1EE5ng trong th\u1EDDi gian\
-  \ ng\u1EAFn, th\u01B0\u1EDDng l\xE0 \u0111\u1EC3 l\u01B0u tr\u1EEF d\u1EEF li\u1EC7\
-  u trong su\u1ED1t m\u1ED9t phi\xEAn l\xE0m vi\u1EC7c. C\xE1c l\u1EADp tr\xECnh\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: \u0110\u1EC3 t\u1EA1o ra m\u1ED9t t\u1EC7\
+  p t\u1EA1m th\u1EDDi trong PowerShell, b\u1EA1n s\u1EED d\u1EE5ng `New-TemporaryFile`.\
+  \ Cmdlet n\xE0y t\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi trong th\u01B0 m\u1EE5\
+  c temp c\u1EE7a b\u1EA1n.\u2026"
 lastmod: '2024-03-13T22:44:36.961604-06:00'
 model: gpt-4-0125-preview
-summary: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi c\xF3 ngh\u0129a l\xE0 t\u1EA1\
-  o m\u1ED9t t\u1EC7p \u0111\u1EC3 s\u1EED d\u1EE5ng trong th\u1EDDi gian ng\u1EAF\
-  n, th\u01B0\u1EDDng l\xE0 \u0111\u1EC3 l\u01B0u tr\u1EEF d\u1EEF li\u1EC7u trong\
-  \ su\u1ED1t m\u1ED9t phi\xEAn l\xE0m vi\u1EC7c."
+summary: "\u0110\u1EC3 t\u1EA1o ra m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi trong PowerShell,\
+  \ b\u1EA1n s\u1EED d\u1EE5ng `New-TemporaryFile`."
 title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
 weight: 21
 ---

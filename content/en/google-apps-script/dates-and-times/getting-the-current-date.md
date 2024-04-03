@@ -1,13 +1,11 @@
 ---
 date: 2024-02-01 21:12:06.188042-07:00
-description: "Getting the current date in Google Apps Script is about fetching the\
-  \ live date and time, a common task for automating tasks, logging, and timestamping\
-  \ in\u2026"
+description: "How to: Google Apps Script, which is based on JavaScript, offers straightforward\
+  \ methods to get the current date. You can use the `new Date()` constructor\u2026"
 lastmod: '2024-03-13T22:44:59.679287-06:00'
 model: gpt-4-0125-preview
-summary: Getting the current date in Google Apps Script is about fetching the live
-  date and time, a common task for automating tasks, logging, and timestamping in
-  apps tied to Google's ecosystem.
+summary: Google Apps Script, which is based on JavaScript, offers straightforward
+  methods to get the current date.
 title: Getting the current date
 weight: 29
 ---

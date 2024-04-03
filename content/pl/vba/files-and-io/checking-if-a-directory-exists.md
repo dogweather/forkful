@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:56.495085-07:00
-description: "Sprawdzanie, czy katalog istnieje w Visual Basic for Applications (VBA),\
-  \ polega na weryfikacji obecno\u015Bci folderu w systemie plik\xF3w przed wykonaniem\u2026"
+description: "Jak to zrobi\u0107: W VBA, aby sprawdzi\u0107, czy katalog istnieje,\
+  \ zazwyczaj u\u017Cywa si\u0119 funkcji `Dir` w po\u0142\u0105czeniu z atrybutem\
+  \ `vbDirectory`. To podej\u015Bcie pozwala\u2026"
 lastmod: '2024-03-13T22:44:35.247779-06:00'
 model: gpt-4-0125-preview
-summary: "Sprawdzanie, czy katalog istnieje w Visual Basic for Applications (VBA),\
-  \ polega na weryfikacji obecno\u015Bci folderu w systemie plik\xF3w przed wykonaniem\
-  \ operacji takich jak zapisywanie plik\xF3w czy tworzenie nowych katalog\xF3w."
+summary: "W VBA, aby sprawdzi\u0107, czy katalog istnieje, zazwyczaj u\u017Cywa si\u0119\
+  \ funkcji `Dir` w po\u0142\u0105czeniu z atrybutem `vbDirectory`."
 title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:58:02.627932-07:00
-description: "Cercare e sostituire testo \xE8 una tecnica per identificare stringhe\
-  \ specifiche e cambiarle con altre. I programmatori lo fanno per correggere errori,\u2026"
+description: 'How to: Clojure offre funzioni potenti per cercare e sostituire. Ecco
+  degli esempi.'
 lastmod: '2024-03-13T22:44:43.028069-06:00'
 model: gpt-4-1106-preview
-summary: "Cercare e sostituire testo \xE8 una tecnica per identificare stringhe specifiche\
-  \ e cambiarle con altre."
+summary: Clojure offre funzioni potenti per cercare e sostituire.
 title: Ricerca e sostituzione del testo
 weight: 10
 ---

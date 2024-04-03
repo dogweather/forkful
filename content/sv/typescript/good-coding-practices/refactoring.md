@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:36:26.384554-07:00
-description: "Refaktorisering \xE4r processen att omstrukturera befintlig dator kod\
-  \ utan att \xE4ndra dess yttre beteende. Programmerare g\xF6r det f\xF6r att g\xF6\
-  ra koden renare,\u2026"
+description: "Hur man g\xF6r: T\xE4nk dig en TypeScript funktion som har sett b\xE4\
+  ttre dagar - den \xE4r lite r\xF6rig och kan beh\xF6va lite \xF6mhet och omsorg."
 lastmod: '2024-03-13T22:44:37.664315-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktorisering \xE4r processen att omstrukturera befintlig dator kod utan\
-  \ att \xE4ndra dess yttre beteende."
+summary: "T\xE4nk dig en TypeScript funktion som har sett b\xE4ttre dagar - den \xE4\
+  r lite r\xF6rig och kan beh\xF6va lite \xF6mhet och omsorg."
 title: Refaktorisering
 weight: 19
 ---

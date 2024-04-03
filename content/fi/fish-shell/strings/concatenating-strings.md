@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:34:45.631617-07:00
-description: "Mik\xE4 & Miksi? Yhdistelemme merkkijonoja - eli \"concatenate\" - kun\
-  \ haluamme liitt\xE4\xE4 erilliset tekstip\xE4tk\xE4t yhteen. Ohjelmoijat tekev\xE4\
-  t t\xE4m\xE4n usein\u2026"
+description: "How to: Kuinka tehd\xE4."
 lastmod: '2024-03-13T22:44:56.984055-06:00'
 model: gpt-4-1106-preview
-summary: "Mik\xE4 & Miksi."
+summary: "Kuinka tehd\xE4."
 title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---

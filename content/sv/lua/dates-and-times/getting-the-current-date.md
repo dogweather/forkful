@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:21.943436-07:00
-description: "Att h\xE4mta det aktuella datumet i programmering \xE4r en avg\xF6rande\
-  \ uppgift f\xF6r en m\xE4ngd applikationer, inklusive loggning, tidsst\xE4mpling\
-  \ av h\xE4ndelser eller\u2026"
+description: "Hur man g\xF6r: Lua tillhandah\xE5ller funktionen `os.date` f\xF6r att\
+  \ f\xE5 det aktuella datumet och tiden. Funktionen kan anv\xE4ndas utan argument\
+  \ f\xF6r att f\xE5 en\u2026"
 lastmod: '2024-03-13T22:44:38.049120-06:00'
 model: gpt-4-0125-preview
-summary: "Att h\xE4mta det aktuella datumet i programmering \xE4r en avg\xF6rande\
-  \ uppgift f\xF6r en m\xE4ngd applikationer, inklusive loggning, tidsst\xE4mpling\
-  \ av h\xE4ndelser eller schemal\xE4ggning av uppgifter."
+summary: "Lua tillhandah\xE5ller funktionen `os.date` f\xF6r att f\xE5 det aktuella\
+  \ datumet och tiden."
 title: "F\xE5 det aktuella datumet"
 weight: 29
 ---

@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 01:18:58.325686-07:00
-description: "Refactorizar es el proceso de reestructurar el c\xF3digo inform\xE1\
-  tico existente sin cambiar su comportamiento externo. Los programadores lo hacen\
-  \ para mejorar\u2026"
+description: "C\xF3mo hacerlo: Veamos un ejemplo simple donde la refactorizaci\xF3\
+  n puede hacer que tu c\xF3digo sea m\xE1s conciso y legible. Aqu\xED, refactorizamos\
+  \ una funci\xF3n que\u2026"
 lastmod: '2024-03-13T22:44:59.466961-06:00'
 model: gpt-4-0125-preview
-summary: "Refactorizar es el proceso de reestructurar el c\xF3digo inform\xE1tico\
-  \ existente sin cambiar su comportamiento externo."
+summary: "Veamos un ejemplo simple donde la refactorizaci\xF3n puede hacer que tu\
+  \ c\xF3digo sea m\xE1s conciso y legible."
 title: "Refactorizaci\xF3n"
 weight: 19
 ---

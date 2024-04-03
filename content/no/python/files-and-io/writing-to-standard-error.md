@@ -1,11 +1,10 @@
 ---
 date: 2024-01-19
-description: "Skriving til standard error (stderr) er hvordan programmer rapporterer\
-  \ feil og advarsler uten \xE5 blande dette med hoveddatautstr\xF8mmen (stdout).\u2026"
+description: "How to: For \xE5 skrive til stderr i Python, bruk `sys.stderr`. Her\
+  \ er et enkelt eksempel."
 lastmod: '2024-03-13T22:44:40.377482-06:00'
 model: unknown
-summary: "Skriving til standard error (stderr) er hvordan programmer rapporterer feil\
-  \ og advarsler uten \xE5 blande dette med hoveddatautstr\xF8mmen (stdout)."
+summary: "For \xE5 skrive til stderr i Python, bruk `sys.stderr`."
 title: Skrive til standardfeil
 weight: 25
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:19.134146-07:00
-description: "Drukowanie danych diagnostycznych polega na generowaniu tymczasowych,\
-  \ informacyjnych komunikat\xF3w logowania, kt\xF3re mog\u0105 pom\xF3c programistom\
-  \ zrozumie\u0107\u2026"
+description: "Jak to zrobi\u0107: W C najcz\u0119stszym sposobem drukowania danych\
+  \ diagnostycznych jest u\u017Cycie funkcji `printf` z biblioteki standardowej wej\u015B\
+  cia/wyj\u015Bcia. Funkcja\u2026"
 lastmod: '2024-03-13T22:44:35.889355-06:00'
 model: gpt-4-0125-preview
-summary: "Drukowanie danych diagnostycznych polega na generowaniu tymczasowych, informacyjnych\
-  \ komunikat\xF3w logowania, kt\xF3re mog\u0105 pom\xF3c programistom zrozumie\u0107\
-  \ przep\u0142yw i stan programu podczas jego wykonywania."
+summary: "W C najcz\u0119stszym sposobem drukowania danych diagnostycznych jest u\u017C\
+  ycie funkcji `printf` z biblioteki standardowej wej\u015Bcia/wyj\u015Bcia."
 title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---

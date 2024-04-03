@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:52:37.014847-07:00
-description: "Debugausgaben zu drucken hilft beim Verstehen, was der Code macht und\
-  \ warum er es tut. Programmierer nutzen es, um Fehler zu finden und den Ablauf ihrer\u2026"
+description: 'So geht''s: Ein einfaches Beispiel zum Drucken von Debug-Informationen
+  in Java.'
 lastmod: '2024-03-13T22:44:53.765542-06:00'
 model: gpt-4-1106-preview
-summary: Debugausgaben zu drucken hilft beim Verstehen, was der Code macht und warum
-  er es tut.
+summary: Ein einfaches Beispiel zum Drucken von Debug-Informationen in Java.
 title: Debug-Ausgaben drucken
 weight: 33
 ---

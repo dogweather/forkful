@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:21.876660-07:00
-description: "X\u1EED l\xFD l\u1ED7i c\xF3 ngh\u0129a l\xE0 l\xEAn k\u1EBF ho\u1EA1\
-  ch cho nh\u1EEFng khi m\u1ECDi th\u1EE9 di\u1EC5n ra kh\xF4ng nh\u01B0 mong \u0111\
-  \u1EE3i. \u0110i\u1EC1u n\xE0y quan tr\u1ECDng v\xEC n\xF3 gi\xFAp tr\xE1nh g\xE2\
-  y s\u1EADp ch\u01B0\u01A1ng tr\xECnh v\xE0 l\xE0m cho\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t kh\u1ED1\
+  i c\u01A1 b\u1EA3n try-catch \u0111\u1EC3 x\u1EED l\xFD m\u1ED9t ngo\u1EA1i l\u1EC7\
+  ."
 lastmod: '2024-03-13T22:44:37.052361-06:00'
 model: gpt-4-0125-preview
-summary: "X\u1EED l\xFD l\u1ED7i c\xF3 ngh\u0129a l\xE0 l\xEAn k\u1EBF ho\u1EA1ch\
-  \ cho nh\u1EEFng khi m\u1ECDi th\u1EE9 di\u1EC5n ra kh\xF4ng nh\u01B0 mong \u0111\
-  \u1EE3i."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t kh\u1ED1i c\u01A1 b\u1EA3n try-catch\
+  \ \u0111\u1EC3 x\u1EED l\xFD m\u1ED9t ngo\u1EA1i l\u1EC7."
 title: "X\u1EED l\xFD l\u1ED7i"
 weight: 16
 ---

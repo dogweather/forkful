@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:49.623689-07:00
-description: "HTML parseren betekent het doorzoeken van HTML-code om informatie te\
-  \ vinden, te extraheren of te manipuleren. Programmeurs doen dit om te interageren\
-  \ met\u2026"
+description: 'Hoe te beginnen: Om te beginnen, installeer je een bibliotheek zoals
+  `node-html-parser`. Hier is de terminalopdracht.'
 lastmod: '2024-03-13T22:44:50.548257-06:00'
 model: gpt-4-0125-preview
-summary: HTML parseren betekent het doorzoeken van HTML-code om informatie te vinden,
-  te extraheren of te manipuleren.
+summary: Om te beginnen, installeer je een bibliotheek zoals `node-html-parser`.
 title: HTML Parsen
 weight: 43
 ---

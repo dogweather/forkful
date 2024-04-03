@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:59.462130-07:00
-description: "Parsowanie HTML w Rust polega na wydobywaniu danych z dokument\xF3w\
-  \ HTML, co jest kluczowe dla web scrapingu, ekstrakcji danych lub budowania web\
-  \ crawler\xF3w.\u2026"
+description: "Jak to zrobi\u0107: Aby parsowa\u0107 HTML w Rust, cz\u0119sto u\u017C\
+  ywa si\u0119 pakietu `scraper`, kt\xF3ry dostarcza wysokopoziomowy interfejs do\
+  \ przegl\u0105dania i manipulowania\u2026"
 lastmod: '2024-03-13T22:44:35.182113-06:00'
 model: gpt-4-0125-preview
-summary: "Parsowanie HTML w Rust polega na wydobywaniu danych z dokument\xF3w HTML,\
-  \ co jest kluczowe dla web scrapingu, ekstrakcji danych lub budowania web crawler\xF3\
-  w."
+summary: "Aby parsowa\u0107 HTML w Rust, cz\u0119sto u\u017Cywa si\u0119 pakietu `scraper`,\
+  \ kt\xF3ry dostarcza wysokopoziomowy interfejs do przegl\u0105dania i manipulowania\
+  \ dokumentami HTML."
 title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---

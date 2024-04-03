@@ -1,12 +1,13 @@
 ---
 date: 2024-01-20 17:41:39.967018-07:00
-description: "Tworzenie pliku tymczasowego to proces generowania pliku, kt\xF3ry ma\
-  \ s\u0142u\u017Cy\u0107 chwilowym celom i zwykle jest usuwany po u\u017Cyciu. Programi\u015B\
-  ci u\u017Cywaj\u0105 plik\xF3w\u2026"
+description: "How to: W TypeScript korzystamy z paczki `fs` z Node.js, \u017Ceby \u0142\
+  atwo zarz\u0105dza\u0107 plikami \u2014 tworzy\u0107, odczytywa\u0107, pisa\u0107\
+  \ i usuwa\u0107, tak\u017Ce te tymczasowe."
 lastmod: '2024-03-13T22:44:35.159408-06:00'
 model: gpt-4-1106-preview
-summary: "Tworzenie pliku tymczasowego to proces generowania pliku, kt\xF3ry ma s\u0142\
-  u\u017Cy\u0107 chwilowym celom i zwykle jest usuwany po u\u017Cyciu."
+summary: "W TypeScript korzystamy z paczki `fs` z Node.js, \u017Ceby \u0142atwo zarz\u0105\
+  dza\u0107 plikami \u2014 tworzy\u0107, odczytywa\u0107, pisa\u0107 i usuwa\u0107\
+  , tak\u017Ce te tymczasowe."
 title: Tworzenie pliku tymczasowego
 weight: 21
 ---

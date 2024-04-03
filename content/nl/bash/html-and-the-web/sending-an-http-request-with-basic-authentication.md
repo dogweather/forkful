@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:42.186121-07:00
-description: "Het versturen van een HTTP-verzoek met basisauthenticatie houdt in dat\
-  \ een gebruikersnaam en wachtwoord worden verzonden om de identiteit van een\u2026"
+description: "Hoe te: Laten we onze handen vuilmaken met wat code. We zullen `curl`\
+  \ gebruiken, een gangbare opdrachtregeltool. Vervang `gebruikersnaam:wachtwoord`\
+  \ door\u2026"
 lastmod: '2024-03-13T22:44:50.982175-06:00'
 model: gpt-4-0125-preview
-summary: Het versturen van een HTTP-verzoek met basisauthenticatie houdt in dat een
-  gebruikersnaam en wachtwoord worden verzonden om de identiteit van een gebruiker
-  te bevestigen.
+summary: Laten we onze handen vuilmaken met wat code.
 title: Een HTTP-verzoek verzenden met basisauthenticatie
 weight: 45
 ---

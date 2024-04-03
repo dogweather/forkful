@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:44.809594-07:00
-description: "YAML, som st\xE5r for YAML Ain't Markup Language, er en menneskelesbar\
-  \ standard for serialisering av data som kan brukes for konfigurasjonsfiler, samt\
-  \ i\u2026"
+description: "Hvordan: \xC5 jobbe direkte med YAML i Bash krever litt oppfinnsomhet\
+  \ siden Bash ikke har innebygd st\xF8tte for parsing av YAML. Du kan imidlertid\
+  \ bruke\u2026"
 lastmod: '2024-03-13T22:44:40.994937-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, som st\xE5r for YAML Ain't Markup Language, er en menneskelesbar standard\
-  \ for serialisering av data som kan brukes for konfigurasjonsfiler, samt i applikasjoner\
-  \ hvor data lagres eller overf\xF8res."
+summary: "\xC5 jobbe direkte med YAML i Bash krever litt oppfinnsomhet siden Bash\
+  \ ikke har innebygd st\xF8tte for parsing av YAML."
 title: Arbeider med YAML
 weight: 41
 ---

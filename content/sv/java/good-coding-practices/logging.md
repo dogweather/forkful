@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:07:02.071273-07:00
-description: "Loggning \xE4r i grunden processen att spela in h\xE4ndelser som intr\xE4\
-  ffar inuti en programapplikation. Programmerare loggar dessa h\xE4ndelser f\xF6\
-  r att f\xE5nga\u2026"
+description: "Hur man g\xF6r: H\xE4r \xE4r ett enkelt s\xE4tt att komma ig\xE5ng med\
+  \ loggning i Java med hj\xE4lp av det inbyggda paketet `java.util.logging`."
 lastmod: '2024-03-13T22:44:37.793646-06:00'
 model: gpt-4-1106-preview
-summary: "Loggning \xE4r i grunden processen att spela in h\xE4ndelser som intr\xE4\
-  ffar inuti en programapplikation."
+summary: "H\xE4r \xE4r ett enkelt s\xE4tt att komma ig\xE5ng med loggning i Java med\
+  \ hj\xE4lp av det inbyggda paketet `java.util.logging`."
 title: Loggning
 weight: 17
 ---

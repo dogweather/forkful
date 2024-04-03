@@ -1,13 +1,11 @@
 ---
 date: 2024-01-20 18:02:08.927213-07:00
-description: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering inneb\xE6\
-  rer \xE5 inkludere brukernavn og passord for \xE5 f\xE5 tilgang til en ressurs p\xE5\
-  \ en server. Vi\u2026"
+description: "Hvordan: For \xE5 sende en HTTP-foresp\xF8rsel med Basisgodkjenning\
+  \ i Kotlin, bruk biblioteket `khttp`. Slik ser koden ut."
 lastmod: '2024-03-13T22:44:40.749978-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering inneb\xE6\
-  rer \xE5 inkludere brukernavn og passord for \xE5 f\xE5 tilgang til en ressurs p\xE5\
-  \ en server."
+summary: "For \xE5 sende en HTTP-foresp\xF8rsel med Basisgodkjenning i Kotlin, bruk\
+  \ biblioteket `khttp`."
 title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---

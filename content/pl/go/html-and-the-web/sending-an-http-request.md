@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:47.897900-07:00
-description: "Wysy\u0142anie \u017C\u0105dania HTTP polega na inicjowaniu po\u0142\
-  \u0105czenia z aplikacji Go do serwera sieciowego, API lub innej us\u0142ugi opartej\
-  \ na protokole HTTP. Programi\u015Bci\u2026"
+description: "Jak to zrobi\u0107: W Go, wys\u0142anie \u017C\u0105dania HTTP i obs\u0142\
+  uga odpowiedzi wymaga u\u017Cycia pakietu `net/http`. Oto przyk\u0142adowy, krok\
+  \ po kroku spos\xF3b pokazuj\u0105cy, jak\u2026"
 lastmod: '2024-03-13T22:44:34.846513-06:00'
 model: gpt-4-0125-preview
-summary: "Wysy\u0142anie \u017C\u0105dania HTTP polega na inicjowaniu po\u0142\u0105\
-  czenia z aplikacji Go do serwera sieciowego, API lub innej us\u0142ugi opartej na\
-  \ protokole HTTP."
+summary: "W Go, wys\u0142anie \u017C\u0105dania HTTP i obs\u0142uga odpowiedzi wymaga\
+  \ u\u017Cycia pakietu `net/http`."
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---

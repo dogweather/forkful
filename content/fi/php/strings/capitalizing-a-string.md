@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:59.961944-07:00
-description: "Merkkijonon alkukirjaimen suurentaminen tarkoittaa annetun tekstin ensimm\xE4\
-  isen merkin muuttamista suuraakkoseksi, varmistetaan, ett\xE4 lauseet, otsikot tai\u2026"
+description: "Kuinka: PHP tukee natiivisti erilaisia funktioita merkkijonojen alkukirjaimen\
+  \ suurentamiseksi, jokainen palvelee eri tarkoitusta. T\xE4ss\xE4 on kuinka voit\u2026"
 lastmod: '2024-03-13T22:44:56.639575-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonon alkukirjaimen suurentaminen tarkoittaa annetun tekstin ensimm\xE4\
-  isen merkin muuttamista suuraakkoseksi, varmistetaan, ett\xE4 lauseet, otsikot tai\
-  \ erisnimet alkavat oikein tietoaineistossa."
+summary: PHP tukee natiivisti erilaisia funktioita merkkijonojen alkukirjaimen suurentamiseksi,
+  jokainen palvelee eri tarkoitusta.
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---

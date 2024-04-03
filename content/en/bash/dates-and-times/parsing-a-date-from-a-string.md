@@ -1,12 +1,11 @@
 ---
 date: 2024-02-03 19:03:36.109719-07:00
-description: "Parsing a date from a string in Bash involves extracting and converting\
-  \ date information from textual data into a format that Bash can manipulate or use\u2026"
+description: "How to: Bash itself is quite limited in direct date parsing capabilities,\
+  \ often relying on external tools like `date` and `awk` for more sophisticated\u2026"
 lastmod: '2024-03-13T22:45:00.253084-06:00'
 model: gpt-4-0125-preview
-summary: Parsing a date from a string in Bash involves extracting and converting date
-  information from textual data into a format that Bash can manipulate or use for
-  further processes.
+summary: Bash itself is quite limited in direct date parsing capabilities, often relying
+  on external tools like `date` and `awk` for more sophisticated manipulation.
 title: Parsing a date from a string
 weight: 30
 ---

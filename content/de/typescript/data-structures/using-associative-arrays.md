@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:13:14.746932-07:00
-description: "Assoziative Arrays oder Objekte in TypeScript erm\xF6glichen es Ihnen,\
-  \ mit Strings (oder Schl\xFCsseln) auf Wertpaare zuzugreifen. Programmierer nutzen\
-  \ sie f\xFCr\u2026"
+description: 'Wie man es macht: Das Erstellen und Verwenden von assoziativen Arrays
+  in TypeScript ist unkompliziert. Hier eine grundlegende Anleitung.'
 lastmod: '2024-03-13T22:44:53.624495-06:00'
 model: gpt-4-0125-preview
-summary: "Assoziative Arrays oder Objekte in TypeScript erm\xF6glichen es Ihnen, mit\
-  \ Strings (oder Schl\xFCsseln) auf Wertpaare zuzugreifen."
+summary: Das Erstellen und Verwenden von assoziativen Arrays in TypeScript ist unkompliziert.
 title: Verwendung von assoziativen Arrays
 weight: 15
 ---

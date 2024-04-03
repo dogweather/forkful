@@ -2,13 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:25.582162-07:00
-description: "Een datum in de toekomst of het verleden berekenen betekent uitzoeken\
-  \ welke datum het zal zijn na of voor een bepaalde tijdsspanne. Het is nuttig voor\
-  \ het\u2026"
+description: "Hoe: C++20 introduceerde de `<chrono>` bibliotheek upgrades, waardoor\
+  \ omgaan met tijd minder lastig is. Hier is een snel voorbeeld van het toevoegen\
+  \ van\u2026"
 lastmod: '2024-03-13T22:44:51.126104-06:00'
 model: gpt-4-0125-preview
-summary: Een datum in de toekomst of het verleden berekenen betekent uitzoeken welke
-  datum het zal zijn na of voor een bepaalde tijdsspanne.
+summary: C++20 introduceerde de `<chrono>` bibliotheek upgrades, waardoor omgaan met
+  tijd minder lastig is.
 title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---

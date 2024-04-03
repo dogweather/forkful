@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 18:00:22.875044-07:00
-description: "HTTP-Anfragen sind der Weg, wie Programme auf das Web zugreifen; sie\
-  \ holen oder senden Daten an Server. Programmierer nutzen diese, um mit Web-Diensten\
-  \ zu\u2026"
+description: 'Vorgehensweise: So sendet man eine simple HTTP GET-Anfrage in Lua.'
 lastmod: '2024-03-13T22:44:54.012315-06:00'
 model: gpt-4-1106-preview
-summary: HTTP-Anfragen sind der Weg, wie Programme auf das Web zugreifen; sie holen
-  oder senden Daten an Server.
+summary: So sendet man eine simple HTTP GET-Anfrage in Lua.
 title: Einen HTTP-Request senden
 weight: 44
 ---

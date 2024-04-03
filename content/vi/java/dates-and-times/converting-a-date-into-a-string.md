@@ -2,17 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:38.849406-07:00
-description: "Chuy\u1EC3n \u0111\u1ED5i ng\xE0y th\xE0nh chu\u1ED7i ngh\u0129a l\xE0\
-  \ bi\u1EC3u di\u1EC5n m\u1ED9t \u0111\u1ED1i t\u01B0\u1EE3ng ng\xE0y d\u01B0\u1EDB\
-  i d\u1EA1ng v\u0103n b\u1EA3n d\u1EC5 \u0111\u1ECDc theo m\u1ED9t m\u1EABu c\u1EE5\
-  \ th\u1EC3. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\
-  \u1EC3 hi\u1EC3n\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Java l\xE0m cho vi\u1EC7c chuy\u1EC3n \u0111\
+  \u1ED5i ng\xE0y th\xE0nh chu\u1ED7i tr\u1EDF n\xEAn d\u1EC5 d\xE0ng. L\u1EDBp `java.time.format.DateTimeFormatter`\
+  \ l\xE0 l\u1EF1a ch\u1ECDn h\xE0ng \u0111\u1EA7u c\u1EE7a b\u1EA1n. D\u01B0\u1EDB\
+  i\u2026"
 lastmod: '2024-03-13T22:44:36.504365-06:00'
 model: gpt-4-0125-preview
-summary: "Chuy\u1EC3n \u0111\u1ED5i ng\xE0y th\xE0nh chu\u1ED7i ngh\u0129a l\xE0 bi\u1EC3\
-  u di\u1EC5n m\u1ED9t \u0111\u1ED1i t\u01B0\u1EE3ng ng\xE0y d\u01B0\u1EDBi d\u1EA1\
-  ng v\u0103n b\u1EA3n d\u1EC5 \u0111\u1ECDc theo m\u1ED9t m\u1EABu c\u1EE5 th\u1EC3\
-  ."
+summary: "Java l\xE0m cho vi\u1EC7c chuy\u1EC3n \u0111\u1ED5i ng\xE0y th\xE0nh chu\u1ED7\
+  i tr\u1EDF n\xEAn d\u1EC5 d\xE0ng."
 title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 weight: 28
 ---

@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:01.758356-07:00
-description: "Analizar una fecha de una cadena en Elm implica convertir informaci\xF3\
-  n textual que representa fechas y horas en un formato que Elm pueda entender y\u2026"
+description: "C\xF3mo hacerlo: Elm no tiene capacidades integradas tan robustas como\
+  \ algunos otros lenguajes para el an\xE1lisis de fechas, dependiendo principalmente\
+  \ de la\u2026"
 lastmod: '2024-03-13T22:44:59.002436-06:00'
 model: gpt-4-0125-preview
-summary: "Analizar una fecha de una cadena en Elm implica convertir informaci\xF3\
-  n textual que representa fechas y horas en un formato que Elm pueda entender y manipular,\
-  \ espec\xEDficamente en el tipo `Date`."
+summary: "Elm no tiene capacidades integradas tan robustas como algunos otros lenguajes\
+  \ para el an\xE1lisis de fechas, dependiendo principalmente de la interoperabilidad\
+  \ con Javascript o bibliotecas para operaciones m\xE1s complejas."
 title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---

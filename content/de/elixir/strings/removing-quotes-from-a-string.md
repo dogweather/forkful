@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 03:39:06.450740-07:00
-description: "Anf\xFChrungszeichen aus einem String zu entfernen bedeutet, diese zus\xE4\
-  tzlichen Verpackungen abzulegen, um den sauberen Text im Inneren zu erhalten.\u2026"
+description: "Wie geht das: Elixir hat keine eingebaute Funktion zum Entfernen von\
+  \ Anf\xFChrungszeichen, aber es ist ein Kinderspiel, Ihre eigene Funktion mit\u2026"
 lastmod: '2024-03-13T22:44:53.450789-06:00'
 model: gpt-4-0125-preview
-summary: "Anf\xFChrungszeichen aus einem String zu entfernen bedeutet, diese zus\xE4\
-  tzlichen Verpackungen abzulegen, um den sauberen Text im Inneren zu erhalten."
+summary: "Elixir hat keine eingebaute Funktion zum Entfernen von Anf\xFChrungszeichen,\
+  \ aber es ist ein Kinderspiel, Ihre eigene Funktion mit Musterabgleich oder `String`-Funktionen\
+  \ zu erstellen."
 title: "Anf\xFChrungszeichen aus einem String entfernen"
 weight: 9
 ---

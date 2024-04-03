@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:14.630160-07:00
-description: "Das Suchen und Ersetzen von Text in Visual Basic f\xFCr Applikationen\
-  \ (VBA) ist unerl\xE4sslich f\xFCr die programmatische Bearbeitung von Dokumenten,\u2026"
+description: "Wie geht das: In VBA kann das Suchen und Ersetzen von Text mit der `Replace`-Funktion\
+  \ oder durch spezifische Objektmodelle in Anwendungen wie Excel oder\u2026"
 lastmod: '2024-03-13T22:44:53.701155-06:00'
 model: gpt-4-0125-preview
-summary: "Das Suchen und Ersetzen von Text in Visual Basic f\xFCr Applikationen (VBA)\
-  \ ist unerl\xE4sslich f\xFCr die programmatische Bearbeitung von Dokumenten, Tabellenkalkulationen\
-  \ und Datenbanken."
+summary: In VBA kann das Suchen und Ersetzen von Text mit der `Replace`-Funktion oder
+  durch spezifische Objektmodelle in Anwendungen wie Excel oder Word erreicht werden.
 title: Suchen und Ersetzen von Text
 weight: 10
 ---

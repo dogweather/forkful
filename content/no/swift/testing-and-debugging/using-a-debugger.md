@@ -1,8 +1,7 @@
 ---
 date: 2024-01-26 04:10:55.172891-07:00
-description: "For \xE5 bruke feils\xF8keren i Xcode (IDE for Swift), kan du sette\
-  \ brytepunkter, inspisere variabler og se p\xE5 uttrykk. Her er et eksempel: ```Swift\
-  \ func\u2026"
+description: "Hvordan: For \xE5 bruke feils\xF8keren i Xcode (IDE for Swift), kan\
+  \ du sette brytepunkter, inspisere variabler og se p\xE5 uttrykk. Her er et eksempel."
 lastmod: '2024-03-13T22:44:41.146440-06:00'
 model: gpt-4-0125-preview
 summary: "For \xE5 bruke feils\xF8keren i Xcode (IDE for Swift), kan du sette brytepunkter,\

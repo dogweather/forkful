@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:23:27.663270-07:00
-description: "TOML, acronimo di Tom's Obvious, Minimal Language, definisce come strutturare\
-  \ i file di configurazione. I programmatori lavorano con TOML perch\xE9 \xE8 facile\u2026"
+description: "Come fare: Per lavorare con TOML in JavaScript, avrai bisogno di un\
+  \ parser come `@iarna/toml`. Prima di tutto, installalo: `npm install @iarna/toml`.\
+  \ Poi,\u2026"
 lastmod: '2024-03-13T22:44:43.837235-06:00'
 model: gpt-4-0125-preview
-summary: TOML, acronimo di Tom's Obvious, Minimal Language, definisce come strutturare
-  i file di configurazione.
+summary: Per lavorare con TOML in JavaScript, avrai bisogno di un parser come `@iarna/toml`.
 title: Lavorare con TOML
 weight: 39
 ---

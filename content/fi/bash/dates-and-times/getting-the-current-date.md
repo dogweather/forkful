@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:00.310952-07:00
-description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen Bashissa k\xE4sitt\xE4\
-  \xE4 sis\xE4\xE4nrakennettujen komentojen k\xE4ytt\xE4misen p\xE4iv\xE4m\xE4\xE4\
-  r\xE4n ja ajan n\xE4ytt\xE4miseen eri muodoissa. Ohjelmoijat\u2026"
+description: "Kuinka: Bashissa `date`-komento on ensisijainen ty\xF6kalusi nykyisen\
+  \ p\xE4iv\xE4m\xE4\xE4r\xE4n ja ajan saamiseksi. T\xE4ss\xE4 on muutamia esimerkkej\xE4\
+  \ sen k\xE4yt\xF6st\xE4: 1. **Hanki\u2026"
 lastmod: '2024-03-13T22:44:56.749580-06:00'
 model: gpt-4-0125-preview
-summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen Bashissa k\xE4sitt\xE4\xE4\
-  \ sis\xE4\xE4nrakennettujen komentojen k\xE4ytt\xE4misen p\xE4iv\xE4m\xE4\xE4r\xE4\
-  n ja ajan n\xE4ytt\xE4miseen eri muodoissa."
+summary: "Bashissa `date`-komento on ensisijainen ty\xF6kalusi nykyisen p\xE4iv\xE4\
+  m\xE4\xE4r\xE4n ja ajan saamiseksi."
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 00:49:58.639415-07:00
-description: "Tratar erros significa planejar para quando as coisas derem errado.\
-  \ \xC9 vital por ajudar a evitar falhas e tornar seu software robusto e amig\xE1\
-  vel para o\u2026"
+description: "Como fazer: Aqui est\xE1 um bloco b\xE1sico try-catch para tratar uma\
+  \ exce\xE7\xE3o."
 lastmod: '2024-03-13T22:44:46.886898-06:00'
 model: gpt-4-1106-preview
-summary: Tratar erros significa planejar para quando as coisas derem errado.
+summary: "Aqui est\xE1 um bloco b\xE1sico try-catch para tratar uma exce\xE7\xE3o."
 title: Tratamento de erros
 weight: 16
 ---

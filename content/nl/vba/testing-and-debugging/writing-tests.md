@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:42.193774-07:00
-description: "Het schrijven van tests in programmeren omvat het cre\xEBren van specifieke\
-  \ procedures om de functionaliteit en prestaties van je code segmenten te\u2026"
+description: "Hoe te: Hoewel Visual Basic for Applications (VBA) niet wordt geleverd\
+  \ met een ingebouwd testraamwerk vergelijkbaar met die beschikbaar in talen zoals\u2026"
 lastmod: '2024-03-13T22:44:50.640424-06:00'
 model: gpt-4-0125-preview
-summary: "Het schrijven van tests in programmeren omvat het cre\xEBren van specifieke\
-  \ procedures om de functionaliteit en prestaties van je code segmenten te valideren,\
-  \ ervoor zorgend dat ze werken zoals verwacht onder verschillende omstandigheden."
+summary: Hoewel Visual Basic for Applications (VBA) niet wordt geleverd met een ingebouwd
+  testraamwerk vergelijkbaar met die beschikbaar in talen zoals Python of JavaScript,
+  kun je nog steeds eenvoudige testprocedures implementeren om de integriteit van
+  je code te controleren.
 title: Tests Schrijven
 weight: 36
 ---

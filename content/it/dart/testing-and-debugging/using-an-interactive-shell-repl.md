@@ -2,14 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:38.525140-07:00
-description: "Un interprete interattivo (REPL - Read-Evaluate-Print Loop) per Dart\
-  \ consente ai programmatori di digitare e eseguire dinamicamente il codice Dart\
-  \ riga\u2026"
+description: "Come fare: Dart non viene fornito con un REPL integrato. Tuttavia, \xE8\
+  \ possibile ottenere funzionalit\xE0 simili a un REPL utilizzando DartPad (online)\
+  \ o\u2026"
 lastmod: '2024-03-13T22:44:43.132045-06:00'
 model: gpt-4-0125-preview
-summary: "Un interprete interattivo (REPL - Read-Evaluate-Print Loop) per Dart consente\
-  \ ai programmatori di digitare e eseguire dinamicamente il codice Dart riga per\
-  \ riga senza la necessit\xE0 di compilare interi script."
+summary: Dart non viene fornito con un REPL integrato.
 title: Utilizzo di un guscio interattivo (REPL)
 weight: 34
 ---

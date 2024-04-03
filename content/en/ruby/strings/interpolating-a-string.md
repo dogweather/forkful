@@ -1,10 +1,11 @@
 ---
 date: 2024-01-20 17:51:31.620513-07:00
-description: "String interpolation lets you embed variables or expressions inside\
-  \ a string. We do this for cleaner, more readable code that glues together dynamic\u2026"
+description: 'How to: In Ruby, you wrap your variable or expression in `#{}` and plunk
+  it down where you want it in a double-quoted string. Like so.'
 lastmod: '2024-03-13T22:45:00.536135-06:00'
 model: gpt-4-1106-preview
-summary: String interpolation lets you embed variables or expressions inside a string.
+summary: In Ruby, you wrap your variable or expression in `#{}` and plunk it down
+  where you want it in a double-quoted string.
 title: Interpolating a string
 weight: 8
 ---

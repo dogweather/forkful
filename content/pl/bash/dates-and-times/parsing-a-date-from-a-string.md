@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:11.225821-07:00
-description: "Analiza daty ze stringa w Bashu polega na ekstrakcji i konwersji informacji\
-  \ daty z danych tekstowych na format, kt\xF3ry Bash mo\u017Ce manipulowa\u0107 lub\
-  \ u\u017Cywa\u0107 do\u2026"
+description: "Jak to zrobi\u0107: Sam Bash jest do\u015B\u0107 ograniczony w bezpo\u015B\
+  rednich mo\u017Cliwo\u015Bciach analizy dat, cz\u0119sto polegaj\u0105c na zewn\u0119\
+  trznych narz\u0119dziach takich jak `date` i\u2026"
 lastmod: '2024-03-13T22:44:35.594595-06:00'
 model: gpt-4-0125-preview
-summary: "Analiza daty ze stringa w Bashu polega na ekstrakcji i konwersji informacji\
-  \ daty z danych tekstowych na format, kt\xF3ry Bash mo\u017Ce manipulowa\u0107 lub\
-  \ u\u017Cywa\u0107 do dalszych proces\xF3w."
+summary: "Sam Bash jest do\u015B\u0107 ograniczony w bezpo\u015Brednich mo\u017Cliwo\u015B\
+  ciach analizy dat, cz\u0119sto polegaj\u0105c na zewn\u0119trznych narz\u0119dziach\
+  \ takich jak `date` i `awk` do bardziej zaawansowanej manipulacji."
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---

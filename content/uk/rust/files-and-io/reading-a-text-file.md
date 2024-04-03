@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:55:09.110956-07:00
-description: "Reading a text file means pulling text data from a file on your system\
-  \ - it's basic I/O. Programmers need this to access and manipulate data, like configs\u2026"
+description: "How to: (\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\
+  \u0438:) ."
 lastmod: '2024-03-13T22:44:48.966412-06:00'
 model: gpt-4-1106-preview
-summary: Reading a text file means pulling text data from a file on your system -
-  it's basic I/O.
+summary: .
 title: "\u0427\u0438\u0442\u0430\u043D\u043D\u044F \u0442\u0435\u043A\u0441\u0442\u043E\
   \u0432\u043E\u0433\u043E \u0444\u0430\u0439\u043B\u0443"
 weight: 22

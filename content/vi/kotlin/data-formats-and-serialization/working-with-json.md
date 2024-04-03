@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:36.530463-07:00
-description: "JSON (JavaScript Object Notation) l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1\
-  ng \u0111\u1EC3 c\u1EA5u tr\xFAc d\u1EEF li\u1EC7u, \u0111\u01B0\u1EE3c s\u1EED\
-  \ d\u1EE5ng cho vi\u1EC7c l\u01B0u tr\u1EEF v\xE0 truy\u1EC1n d\u1EEF li\u1EC7u.\
-  \ L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3 v\xEC n\xF3\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi JSON\
+  \ trong Kotlin, b\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng th\u01B0 vi\u1EC7n `kotlinx.serialization`.\
+  \ D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t v\xED d\u1EE5 \u0111\u01A1n gi\u1EA3\
+  n v\u1EC1 vi\u1EC7c tu\u1EA7n t\u1EF1 h\xF3a v\xE0\u2026"
 lastmod: '2024-03-13T22:44:36.629468-06:00'
 model: gpt-4-0125-preview
-summary: "JSON (JavaScript Object Notation) l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1\
-  ng \u0111\u1EC3 c\u1EA5u tr\xFAc d\u1EEF li\u1EC7u, \u0111\u01B0\u1EE3c s\u1EED\
-  \ d\u1EE5ng cho vi\u1EC7c l\u01B0u tr\u1EEF v\xE0 truy\u1EC1n d\u1EEF li\u1EC7u."
+summary: "\u0110\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi JSON trong Kotlin, b\u1EA1n c\xF3\
+  \ th\u1EC3 s\u1EED d\u1EE5ng th\u01B0 vi\u1EC7n `kotlinx.serialization`."
 title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
 weight: 38
 ---

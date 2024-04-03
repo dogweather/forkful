@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:24.100952-07:00
-description: "Bestanden manipuleren met CLI one-liners in PowerShell gaat over het\
-  \ snel wijzigen, verplaatsen of verkrijgen van bestandsgegevens direct vanaf de\u2026"
+description: 'Hoe te: #.'
 lastmod: '2024-03-13T22:44:51.023916-06:00'
 model: gpt-4-0125-preview
-summary: Bestanden manipuleren met CLI one-liners in PowerShell gaat over het snel
-  wijzigen, verplaatsen of verkrijgen van bestandsgegevens direct vanaf de opdrachtregel.
+summary: '#.'
 title: Bestanden manipuleren met CLI one-liners
 weight: 31
 ---

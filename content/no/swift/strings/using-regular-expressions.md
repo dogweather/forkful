@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:52.291826-07:00
-description: "Regul\xE6re uttrykk, eller regex, er sekvenser av tegn som danner et\
-  \ s\xF8kem\xF8nster, ofte brukt til oppgaver som sammenligning eller manipulasjon\
-  \ av\u2026"
+description: "Hvordan: Swifts innebygde st\xF8tte for regex benytter klassen `NSRegularExpression`,\
+  \ sammen med String-klassens omr\xE5de- og erstatningsmetoder. Nedenfor er\u2026"
 lastmod: '2024-03-13T22:44:41.132202-06:00'
 model: gpt-4-0125-preview
-summary: "Regul\xE6re uttrykk, eller regex, er sekvenser av tegn som danner et s\xF8\
-  kem\xF8nster, ofte brukt til oppgaver som sammenligning eller manipulasjon av tekststrenger."
+summary: "Swifts innebygde st\xF8tte for regex benytter klassen `NSRegularExpression`,\
+  \ sammen med String-klassens omr\xE5de- og erstatningsmetoder."
 title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---

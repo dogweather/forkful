@@ -1,14 +1,12 @@
 ---
 date: 2024-01-26 01:06:55.335383-07:00
-description: "La journalisation en programmation consiste essentiellement \xE0 laisser\
-  \ une trace de miettes de pain sous forme d'\xE9v\xE9nements ou de messages enregistr\xE9\
-  s, qui\u2026"
+description: "Comment faire : En Haskell, la journalisation peut \xEAtre impl\xE9\
+  ment\xE9e en utilisant des biblioth\xE8ques telles que `monad-logger` ou `hslogger`.\
+  \ Voici un\u2026"
 lastmod: '2024-03-13T22:44:57.840616-06:00'
 model: gpt-4-1106-preview
-summary: "La journalisation en programmation consiste essentiellement \xE0 laisser\
-  \ une trace de miettes de pain sous forme d'\xE9v\xE9nements ou de messages enregistr\xE9\
-  s, qui peuvent \xEAtre utilis\xE9s pour suivre ce que fait votre application \xE0\
-  \ tout moment."
+summary: "En Haskell, la journalisation peut \xEAtre impl\xE9ment\xE9e en utilisant\
+  \ des biblioth\xE8ques telles que `monad-logger` ou `hslogger`."
 title: Journalisation
 weight: 17
 ---

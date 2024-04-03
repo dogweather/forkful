@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:18.722389-07:00
-description: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong C++ c\xF3 ngh\u0129\
-  a l\xE0 t\u1EA1o ho\u1EB7c ch\u1EC9nh s\u1EEDa m\u1ED9t t\u1EC7p \u0111\u1EC3 l\u01B0\
-  u tr\u1EEF d\u1EEF li\u1EC7u v\u0103n b\u1EA3n. L\u1EADp tr\xECnh vi\xEAn th\u1EF1\
-  c hi\u1EC7n \u0111\u1EC3 l\u01B0u tr\u1EEF d\u1EEF li\u1EC7u nh\u01B0 c\u1EA5u\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9\
+  t ch\u01B0\u01A1ng tr\xECnh C++ \u0111\u01A1n gi\u1EA3n t\u1EA1o m\u1ED9t t\u1EC7\
+  p v\u0103n b\u1EA3n v\xE0 vi\u1EBFt \"Hello, World!\" v\xE0o \u0111\xF3."
 lastmod: '2024-03-13T22:44:37.066247-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong C++ c\xF3 ngh\u0129\
-  a l\xE0 t\u1EA1o ho\u1EB7c ch\u1EC9nh s\u1EEDa m\u1ED9t t\u1EC7p \u0111\u1EC3 l\u01B0\
-  u tr\u1EEF d\u1EEF li\u1EC7u v\u0103n b\u1EA3n."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t ch\u01B0\u01A1ng tr\xECnh C++\
+  \ \u0111\u01A1n gi\u1EA3n t\u1EA1o m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n v\xE0 vi\u1EBF\
+  t \"Hello, World!\" v\xE0o \u0111\xF3."
 title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 24
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:26.234218-07:00
-description: "HTML parsen betekent door HTML-code heen zeven om nuttige stukjes te\
-  \ extraheren - zoals het schrapen van een telefoonnummer van een contactpagina.\
-  \ Waarom\u2026"
+description: "Hoe te: Arduino is van nature niet web-vaardig, maar met externe modules\
+  \ (zoals ESP8266) kun je verbinden en webinhoud ophalen. Hier halen we HTML op en\u2026"
 lastmod: '2024-03-13T22:44:51.070484-06:00'
 model: gpt-4-0125-preview
-summary: HTML parsen betekent door HTML-code heen zeven om nuttige stukjes te extraheren
-  - zoals het schrapen van een telefoonnummer van een contactpagina.
+summary: Arduino is van nature niet web-vaardig, maar met externe modules (zoals ESP8266)
+  kun je verbinden en webinhoud ophalen.
 title: HTML Parsen
 weight: 43
 ---

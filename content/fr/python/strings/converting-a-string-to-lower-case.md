@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 17:38:56.648204-07:00
-description: "Pourquoi convertir des cha\xEEnes en minuscules ? Simple : pour uniformiser\
-  \ les donn\xE9es. \xC7a aide \xE0 comparer, trier ou rechercher sans souci de casse."
+description: "How to: Voil\xE0 le pain quotidien : la m\xE9thode `.lower()`. C'est\
+  \ facile et efficace."
 lastmod: '2024-03-13T22:44:57.221500-06:00'
 model: gpt-4-1106-preview
-summary: "Pourquoi convertir des cha\xEEnes en minuscules ."
+summary: "Voil\xE0 le pain quotidien."
 title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
 weight: 4
 ---

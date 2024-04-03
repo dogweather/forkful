@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:47.532900-07:00
-description: "L'interpolation de cha\xEEnes est le processus d'injecter directement\
-  \ des valeurs de variables dans des cha\xEEnes de caract\xE8res, souvent pour cr\xE9\
-  er des\u2026"
+description: "Comment faire : En Dart, l'interpolation de cha\xEEnes est simple, en\
+  \ utilisant le symbole `$` pour interpoler directement les expressions au sein des\u2026"
 lastmod: '2024-03-13T22:44:57.358514-06:00'
 model: gpt-4-0125-preview
-summary: "L'interpolation de cha\xEEnes est le processus d'injecter directement des\
-  \ valeurs de variables dans des cha\xEEnes de caract\xE8res, souvent pour cr\xE9\
-  er des messages significatifs sans concat\xE9nations fastidieuses."
+summary: "En Dart, l'interpolation de cha\xEEnes est simple, en utilisant le symbole\
+  \ `$` pour interpoler directement les expressions au sein des litt\xE9raux de cha\xEE\
+  ne."
 title: "Interpolation d'une cha\xEEne de caract\xE8res"
 weight: 8
 ---

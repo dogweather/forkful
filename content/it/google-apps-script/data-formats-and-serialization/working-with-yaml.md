@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:57.274625-07:00
-description: "YAML, acronimo di \"YAML Ain't Markup Language\" (YAML Non \xE8 un Linguaggio\
-  \ di Markup), \xE8 uno standard di serializzazione dei dati leggibile dall'uomo\u2026"
+description: "Come fare: Anche se Google Apps Script (GAS) non supporta nativamente\
+  \ l'analisi o la serializzazione di YAML, \xE8 possibile manipolare i dati YAML\u2026"
 lastmod: '2024-03-13T22:44:42.978972-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, acronimo di \"YAML Ain't Markup Language\" (YAML Non \xE8 un Linguaggio\
-  \ di Markup), \xE8 uno standard di serializzazione dei dati leggibile dall'uomo\
-  \ comunemente utilizzato per i file di configurazione e lo scambio di dati tra linguaggi\
-  \ con strutture dati diverse."
+summary: "Anche se Google Apps Script (GAS) non supporta nativamente l'analisi o la\
+  \ serializzazione di YAML, \xE8 possibile manipolare i dati YAML utilizzando librerie\
+  \ JavaScript o scrivendo funzioni di analisi personalizzate."
 title: Lavorare con YAML
 weight: 41
 ---

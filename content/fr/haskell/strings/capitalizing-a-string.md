@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:20.716714-07:00
-description: "Mettre une cha\xEEne en capitale implique de transformer la premi\xE8\
-  re lettre d'une cha\xEEne donn\xE9e en majuscule tout en s'assurant que les autres\
-  \ lettres\u2026"
+description: "Comment faire : En Haskell, vous pouvez mettre une cha\xEEne en capitale\
+  \ en utilisant la biblioth\xE8que standard sans avoir besoin de biblioth\xE8ques\
+  \ tierces."
 lastmod: '2024-03-13T22:44:57.815801-06:00'
 model: gpt-4-0125-preview
-summary: "Mettre une cha\xEEne en capitale implique de transformer la premi\xE8re\
-  \ lettre d'une cha\xEEne donn\xE9e en majuscule tout en s'assurant que les autres\
-  \ lettres restent en minuscule."
+summary: "En Haskell, vous pouvez mettre une cha\xEEne en capitale en utilisant la\
+  \ biblioth\xE8que standard sans avoir besoin de biblioth\xE8ques tierces."
 title: "Mettre en majuscule une cha\xEEne"
 weight: 2
 ---

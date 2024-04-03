@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 01:16:31.369124-07:00
-description: "Refaktorisering \xE4r processen att omstrukturera befintlig dator kod\
-  \ utan att \xE4ndra dess externa beteende. Det \xE4r en vital metod f\xF6r att reducera\u2026"
+description: "Hur g\xF6r man: L\xE5t oss \xF6verv\xE4ga ett enkelt Bash-skript som\
+  \ beh\xF6ver n\xE5gon refaktorisering. Det \xE4r klumpigt, med upprepad kod och\
+  \ sv\xE5rt att f\xF6lja."
 lastmod: '2024-03-13T22:44:38.090609-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktorisering \xE4r processen att omstrukturera befintlig dator kod utan\
-  \ att \xE4ndra dess externa beteende."
+summary: "L\xE5t oss \xF6verv\xE4ga ett enkelt Bash-skript som beh\xF6ver n\xE5gon\
+  \ refaktorisering."
 title: Refaktorisering
 weight: 19
 ---

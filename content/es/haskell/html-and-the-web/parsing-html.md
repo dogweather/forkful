@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 15:32:11.698577-07:00
-description: "El an\xE1lisis de HTML (parsing HTML) significa examinar el contenido\
-  \ de una p\xE1gina web para extraer datos o informaci\xF3n estructurada. Los programadores\
-  \ lo\u2026"
+description: "C\xF3mo hacerlo: Podemos usar la biblioteca `tagsoup` de Haskell para\
+  \ parsear HTML de una forma sencilla. Primero, instala la librer\xEDa con `cabal\
+  \ install\u2026"
 lastmod: '2024-03-13T22:44:59.116873-06:00'
 model: unknown
-summary: "El an\xE1lisis de HTML (parsing HTML) significa examinar el contenido de\
-  \ una p\xE1gina web para extraer datos o informaci\xF3n estructurada."
+summary: Podemos usar la biblioteca `tagsoup` de Haskell para parsear HTML de una
+  forma sencilla.
 title: "An\xE1lisis de HTML"
 weight: 43
 ---

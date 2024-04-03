@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:36.220955-07:00
-description: "Deletar caracteres que correspondem a um padr\xE3o espec\xEDfico \xE9\
-  \ sobre remover certos caracteres ou sequ\xEAncias de caracteres de strings, com\
-  \ base em regras\u2026"
+description: "Como fazer: Em Go, deletar caracteres que correspondem a um padr\xE3\
+  o pode ser eficientemente realizado usando o pacote `regexp`. Aqui, vamos mostrar\
+  \ como\u2026"
 lastmod: '2024-03-13T22:44:46.043384-06:00'
 model: gpt-4-0125-preview
-summary: "Deletar caracteres que correspondem a um padr\xE3o espec\xEDfico \xE9 sobre\
-  \ remover certos caracteres ou sequ\xEAncias de caracteres de strings, com base\
-  \ em regras definidas por um padr\xE3o (geralmente via express\xF5es regulares)."
+summary: "Em Go, deletar caracteres que correspondem a um padr\xE3o pode ser eficientemente\
+  \ realizado usando o pacote `regexp`."
 title: "Deletando caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---

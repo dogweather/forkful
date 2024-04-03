@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:23:40.352463-07:00
-description: "TOML steht f\xFCr Toms Offensichtliche, Minimale Sprache. Es wird f\xFC\
-  r Konfigurationsdateien verwendet, weil es f\xFCr Menschen leicht zu lesen und zu\
-  \ schreiben\u2026"
+description: "Wie zu: Um TOML in Kotlin zu handhaben, k\xF6nnte man eine Bibliothek\
+  \ wie `ktoml` verwenden. Zuerst f\xFCgen wir die Abh\xE4ngigkeit in Ihre `build.gradle.kts`\u2026"
 lastmod: '2024-03-13T22:44:53.869586-06:00'
 model: gpt-4-0125-preview
-summary: "TOML steht f\xFCr Toms Offensichtliche, Minimale Sprache."
+summary: "Um TOML in Kotlin zu handhaben, k\xF6nnte man eine Bibliothek wie `ktoml`\
+  \ verwenden."
 title: Arbeiten mit TOML
 weight: 39
 ---

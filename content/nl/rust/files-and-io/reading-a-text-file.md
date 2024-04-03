@@ -2,11 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:01.404213-07:00
-description: "Een tekstbestand lezen is het verkrijgen van tekstinhoud uit een .txt-bestand\
-  \ op je schijf. Programmeurs doen dit om gegevens te verwerken zoals\u2026"
+description: 'Hoe: De standaardbibliotheek van Rust maakt het eenvoudig om bestanden
+  te lezen.'
 lastmod: '2024-03-13T22:44:50.611657-06:00'
 model: gpt-4-0125-preview
-summary: Een tekstbestand lezen is het verkrijgen van tekstinhoud uit een .
+summary: De standaardbibliotheek van Rust maakt het eenvoudig om bestanden te lezen.
 title: Een tekstbestand lezen
 weight: 22
 ---

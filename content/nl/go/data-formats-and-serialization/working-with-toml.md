@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:12:43.308560-07:00
-description: "TOML (Tom's Obvious, Minimal Language) is een configuratiebestandsformaat\
-  \ dat gemakkelijk te lezen is vanwege zijn eenvoudige syntaxis. Programmeurs\u2026"
+description: "Hoe: Om te beginnen met het werken met TOML in Go, moet je eerst een\
+  \ bibliotheek toevoegen die TOML-bestanden kan parseren, aangezien de\u2026"
 lastmod: '2024-03-13T22:44:50.311288-06:00'
 model: gpt-4-0125-preview
-summary: TOML (Tom's Obvious, Minimal Language) is een configuratiebestandsformaat
-  dat gemakkelijk te lezen is vanwege zijn eenvoudige syntaxis.
+summary: Om te beginnen met het werken met TOML in Go, moet je eerst een bibliotheek
+  toevoegen die TOML-bestanden kan parseren, aangezien de standaardbibliotheek van
+  Go geen native ondersteuning voor TOML biedt.
 title: Werken met TOML
 weight: 39
 ---

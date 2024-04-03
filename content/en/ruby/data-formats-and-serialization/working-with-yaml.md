@@ -1,11 +1,12 @@
 ---
 date: 2024-02-03 19:03:11.899120-07:00
-description: "YAML, which stands for YAML Ain't Markup Language, is extensively used\
-  \ in Ruby for configuration files and data serialization due to its human-readable\u2026"
+description: "How to: Ruby comes with a built-in library called Psych for parsing\
+  \ and emitting YAML. To utilize it, you first need to require the YAML standard\
+  \ library.\u2026"
 lastmod: '2024-03-13T22:45:00.569747-06:00'
 model: gpt-4-0125-preview
-summary: YAML, which stands for YAML Ain't Markup Language, is extensively used in
-  Ruby for configuration files and data serialization due to its human-readable format.
+summary: Ruby comes with a built-in library called Psych for parsing and emitting
+  YAML.
 title: Working with YAML
 weight: 41
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:43:17.953657-07:00
-description: "Kompleksiluvut laajentavat yksiulotteisen lukusuoran ideaa kaksiulotteiseen\
-  \ tasoon sis\xE4llytt\xE4m\xE4ll\xE4 pystysuoran imagin\xE4\xE4riakselin. Ohjelmoijat\u2026"
+description: "Miten: Luassa voit esitt\xE4\xE4 kompleksilukuja taulukoiden avulla.\
+  \ Perustoiminnot sis\xE4lt\xE4v\xE4t taulukoiden lis\xE4\xE4misen, v\xE4hent\xE4\
+  misen, kertomisen ja jakamisen.\u2026"
 lastmod: '2024-03-13T22:44:56.691822-06:00'
 model: gpt-4-0125-preview
-summary: "Kompleksiluvut laajentavat yksiulotteisen lukusuoran ideaa kaksiulotteiseen\
-  \ tasoon sis\xE4llytt\xE4m\xE4ll\xE4 pystysuoran imagin\xE4\xE4riakselin."
+summary: "Luassa voit esitt\xE4\xE4 kompleksilukuja taulukoiden avulla."
 title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---

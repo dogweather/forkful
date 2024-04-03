@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:20.091395-07:00
-description: "Escrever um arquivo de texto em Visual Basic for Applications (VBA)\
-  \ envolve criar, modificar ou acrescentar dados de texto a arquivos, uma tarefa\u2026"
+description: "Como fazer: O VBA oferece diversos m\xE9todos para escrever em um arquivo,\
+  \ mas uma das maneiras mais diretas \xE9 usando o `FileSystemObject`. Aqui est\xE1\
+  \ um guia\u2026"
 lastmod: '2024-03-13T22:44:46.432244-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever um arquivo de texto em Visual Basic for Applications (VBA) envolve\
-  \ criar, modificar ou acrescentar dados de texto a arquivos, uma tarefa fundamental\
-  \ para armazenar resultados, registrar logs ou interagir com outras aplica\xE7\xF5\
-  es."
+summary: "O VBA oferece diversos m\xE9todos para escrever em um arquivo, mas uma das\
+  \ maneiras mais diretas \xE9 usando o `FileSystemObject`."
 title: Escrevendo um arquivo de texto
 weight: 24
 ---

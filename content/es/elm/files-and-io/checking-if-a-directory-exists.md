@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:22.477437-07:00
-description: "Comprobar si un directorio existe significa confirmar si una ruta de\
-  \ carpeta espec\xEDfica est\xE1 presente en el sistema de archivos. Los programadores\
-  \ lo\u2026"
+description: "C\xF3mo hacerlo: Elm es un lenguaje de programaci\xF3n web de front-end,\
+  \ por lo que no tiene acceso directo al sistema de archivos. Sin embargo, t\xED\
+  picamente\u2026"
 lastmod: '2024-03-13T22:44:59.008002-06:00'
 model: gpt-4-0125-preview
-summary: "Comprobar si un directorio existe significa confirmar si una ruta de carpeta\
-  \ espec\xEDfica est\xE1 presente en el sistema de archivos."
+summary: "Elm es un lenguaje de programaci\xF3n web de front-end, por lo que no tiene\
+  \ acceso directo al sistema de archivos."
 title: Comprobando si un directorio existe
 weight: 20
 ---

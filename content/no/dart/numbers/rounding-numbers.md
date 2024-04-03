@@ -2,13 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:14.310552-07:00
-description: "Avrunding av tall er prosessen med \xE5 justere et tall til n\xE6rmeste\
-  \ hele tall eller til et spesifisert antall desimalplasser. Programmerere runder\
-  \ ofte av\u2026"
+description: "Hvordan: Dart tilbyr native metoder i sin kjerne `num`-type for avrundingsoperasjoner.\
+  \ Her vil vi utforske metoder som `round()`, `floor()`, `ceil()`, og\u2026"
 lastmod: '2024-03-13T22:44:40.481624-06:00'
 model: gpt-4-0125-preview
-summary: "Avrunding av tall er prosessen med \xE5 justere et tall til n\xE6rmeste\
-  \ hele tall eller til et spesifisert antall desimalplasser."
+summary: Dart tilbyr native metoder i sin kjerne `num`-type for avrundingsoperasjoner.
 title: Avrunding av tall
 weight: 13
 ---

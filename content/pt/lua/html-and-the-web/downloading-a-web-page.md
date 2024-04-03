@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:44:39.229205-07:00
-description: "Baixar uma p\xE1gina da web significa capturar o conte\xFAdo de uma\
-  \ p\xE1gina da internet e salv\xE1-lo localmente. Programadores fazem isso para\
-  \ an\xE1lise,\u2026"
+description: 'Como Fazer: Vamos usar o LuaSocket, uma biblioteca Lua para redes. Para
+  instalar, use `luarocks install luasocket`.'
 lastmod: '2024-03-13T22:44:46.707861-06:00'
 model: gpt-4-1106-preview
-summary: "Baixar uma p\xE1gina da web significa capturar o conte\xFAdo de uma p\xE1\
-  gina da internet e salv\xE1-lo localmente."
+summary: Vamos usar o LuaSocket, uma biblioteca Lua para redes.
 title: "Baixando uma p\xE1gina da web"
 weight: 42
 ---

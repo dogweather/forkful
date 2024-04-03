@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:33.727342-07:00
-description: "Att arbeta med JSON (JavaScript Object Notation) inneb\xE4r att tolka\
-  \ JSON-data till och fr\xE5n ett anv\xE4ndbart format i TypeScript. Programmerare\
-  \ g\xF6r detta f\xF6r\u2026"
+description: "Hur man g\xF6r: #."
 lastmod: '2024-03-13T22:44:37.677354-06:00'
 model: gpt-4-0125-preview
-summary: "Att arbeta med JSON (JavaScript Object Notation) inneb\xE4r att tolka JSON-data\
-  \ till och fr\xE5n ett anv\xE4ndbart format i TypeScript."
+summary: '#.'
 title: Arbeta med JSON
 weight: 38
 ---

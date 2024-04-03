@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:15.547222-07:00
-description: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica em\
-  \ C envolve criar uma solicita\xE7\xE3o HTTP que inclua um cabe\xE7alho de Autoriza\xE7\
-  \xE3o com credenciais de\u2026"
+description: "Como Fazer: Para enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3\
+  o b\xE1sica em C, precisaremos usar a biblioteca libcurl, uma biblioteca de transfer\xEA\
+  ncia de URL\u2026"
 lastmod: '2024-03-13T22:44:47.049673-06:00'
 model: gpt-4-0125-preview
-summary: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica em C envolve\
-  \ criar uma solicita\xE7\xE3o HTTP que inclua um cabe\xE7alho de Autoriza\xE7\xE3\
-  o com credenciais de usu\xE1rio codificadas em Base64."
+summary: "Para enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica em\
+  \ C, precisaremos usar a biblioteca libcurl, uma biblioteca de transfer\xEAncia\
+  \ de URL do lado do cliente popular, vers\xE1til e f\xE1cil de usar."
 title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 weight: 45
 ---

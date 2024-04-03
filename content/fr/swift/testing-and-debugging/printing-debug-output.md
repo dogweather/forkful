@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:53:17.821961-07:00
-description: "L'affichage des informations de d\xE9bogage est essentiel pour comprendre\
-  \ ce qui se passe dans votre code. Les programmeurs utilisent cette technique pour\u2026"
+description: 'Comment faire : .'
 lastmod: '2024-03-13T22:44:58.225416-06:00'
 model: gpt-4-1106-preview
-summary: "L'affichage des informations de d\xE9bogage est essentiel pour comprendre\
-  \ ce qui se passe dans votre code."
+summary: .
 title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---

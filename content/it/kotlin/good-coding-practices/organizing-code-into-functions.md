@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 01:11:29.708007-07:00
-description: "Organizzare il codice in funzioni significa suddividere il tuo programma\
-  \ in parti riutilizzabili, ognuna delle quali gestisce un compito specifico. Questo\u2026"
+description: 'Come fare: Ecco un esempio semplice. Invece di scrivere un lungo script
+  per salutare gli utenti, dividiamo il compito in funzioni.'
 lastmod: '2024-03-13T22:44:43.396269-06:00'
 model: gpt-4-1106-preview
-summary: Organizzare il codice in funzioni significa suddividere il tuo programma
-  in parti riutilizzabili, ognuna delle quali gestisce un compito specifico.
+summary: Ecco un esempio semplice.
 title: Organizzazione del codice in funzioni
 weight: 18
 ---

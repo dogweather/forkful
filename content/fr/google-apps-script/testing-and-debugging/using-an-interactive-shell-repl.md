@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:38.754325-07:00
-description: "Une coquille interactive ou Read-Eval-Print Loop (REPL), est un environnement\
-  \ de programmation simple et interactif qui prend des entr\xE9es d'utilisateur\u2026"
+description: "Comment faire : Google Apps Script, un langage de script bas\xE9 sur\
+  \ le cloud pour automatiser les t\xE2ches \xE0 travers les produits Google, ne dispose\
+  \ pas d'un\u2026"
 lastmod: '2024-03-13T22:44:57.187861-06:00'
 model: gpt-4-0125-preview
-summary: "Une coquille interactive ou Read-Eval-Print Loop (REPL), est un environnement\
-  \ de programmation simple et interactif qui prend des entr\xE9es d'utilisateur uniques\
-  \ (expressions), les \xE9value, et retourne le r\xE9sultat \xE0 l'utilisateur."
+summary: "Google Apps Script, un langage de script bas\xE9 sur le cloud pour automatiser\
+  \ les t\xE2ches \xE0 travers les produits Google, ne dispose pas d'un outil REPL\
+  \ int\xE9gr\xE9 similaire \xE0 ceux des langages comme Python ou le Node.js de JavaScript."
 title: Utiliser un shell interactif (REPL)
 weight: 34
 ---

@@ -2,14 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:16.438387-07:00
-description: "Een HTTP-verzoek verzenden met basisauthenticatie is wanneer je programma\
-  \ contact maakt met een webserver en zegt: \"H\xE9, ik ben het,\" met behulp van\
-  \ een\u2026"
+description: 'Hoe te: Hier is hoe je een server netjes om gegevens vraagt met een
+  ''alsjeblieft'' in de vorm van basisauthenticatie.'
 lastmod: '2024-03-13T22:44:51.028793-06:00'
 model: gpt-4-0125-preview
-summary: "Een HTTP-verzoek verzenden met basisauthenticatie is wanneer je programma\
-  \ contact maakt met een webserver en zegt: \"H\xE9, ik ben het,\" met behulp van\
-  \ een gebruikersnaam en wachtwoord."
+summary: Hier is hoe je een server netjes om gegevens vraagt met een 'alsjeblieft'
+  in de vorm van basisauthenticatie.
 title: Een HTTP-verzoek verzenden met basisauthenticatie
 weight: 45
 ---

@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:19.212779-07:00
-description: "Calcular una fecha en el futuro o pasado implica determinar una fecha\
-  \ espec\xEDfica al agregar o restar un cierto n\xFAmero de d\xEDas, meses o a\xF1\
-  os a una fecha\u2026"
+description: "C\xF3mo: Aunque la biblioteca est\xE1ndar de C no proporciona funciones\
+  \ directas para la aritm\xE9tica de fechas, puedes manipular fechas utilizando la\
+  \ biblioteca\u2026"
 lastmod: '2024-03-13T22:44:59.560497-06:00'
 model: gpt-4-0125-preview
-summary: "Calcular una fecha en el futuro o pasado implica determinar una fecha espec\xED\
-  fica al agregar o restar un cierto n\xFAmero de d\xEDas, meses o a\xF1os a una fecha\
-  \ dada."
+summary: "Aunque la biblioteca est\xE1ndar de C no proporciona funciones directas\
+  \ para la aritm\xE9tica de fechas, puedes manipular fechas utilizando la biblioteca\
+  \ `time.h`, espec\xEDficamente trabajando con el tipo de datos `time_t` y `struct\
+  \ tm`."
 title: "C\xE1lculo de una fecha en el futuro o en el pasado"
 weight: 26
 ---

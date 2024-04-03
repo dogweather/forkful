@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:27.892968-07:00
-description: "Substrings extraheren betekent specifieke delen uit een string halen\
-  \ - zoals het nemen van een stuk taart. Programmeurs doen dit om gegevens te isoleren,\u2026"
+description: 'Hoe: Met Arduino strings kun je segmenten snijden en verdelen met `substring()`.'
 lastmod: '2024-03-13T22:44:51.061659-06:00'
 model: gpt-4-0125-preview
-summary: Substrings extraheren betekent specifieke delen uit een string halen - zoals
-  het nemen van een stuk taart.
+summary: Met Arduino strings kun je segmenten snijden en verdelen met `substring()`.
 title: Substrings extraheren
 weight: 6
 ---

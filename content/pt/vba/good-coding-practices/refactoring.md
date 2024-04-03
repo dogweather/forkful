@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:52.186511-07:00
-description: "Refatora\xE7\xE3o em programa\xE7\xE3o envolve modificar a estrutura\
-  \ do c\xF3digo sem alterar seu comportamento, para melhorar aspectos como legibilidade,\u2026"
+description: "Como fazer: Considere um exemplo b\xE1sico em Visual Basic for Applications\
+  \ (VBA) onde temos uma sub-rotina que imprime detalhes de um funcion\xE1rio.\u2026"
 lastmod: '2024-03-13T22:44:46.421648-06:00'
 model: gpt-4-0125-preview
-summary: "Refatora\xE7\xE3o em programa\xE7\xE3o envolve modificar a estrutura do\
-  \ c\xF3digo sem alterar seu comportamento, para melhorar aspectos como legibilidade,\
-  \ manutenibilidade ou desempenho."
+summary: "Considere um exemplo b\xE1sico em Visual Basic for Applications (VBA) onde\
+  \ temos uma sub-rotina que imprime detalhes de um funcion\xE1rio."
 title: "Refatora\xE7\xE3o"
 weight: 19
 ---

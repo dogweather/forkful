@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 01:10:34.654351-07:00
-description: "Jogar todo o seu c\xF3digo em uma grande pilha? M\xE1 ideia. Dividi-lo\
-  \ em fun\xE7\xF5es? Boa ideia. Isso mant\xE9m o seu c\xF3digo em Elm limpo, reutiliz\xE1\
-  vel e mais f\xE1cil\u2026"
+description: "Como fazer: Aqui est\xE1 um trecho de c\xF3digo Elm com uma fun\xE7\xE3\
+  o simples para cumprimentar um usu\xE1rio."
 lastmod: '2024-03-13T22:44:46.505773-06:00'
 model: gpt-4-1106-preview
-summary: "Jogar todo o seu c\xF3digo em uma grande pilha."
+summary: "Aqui est\xE1 um trecho de c\xF3digo Elm com uma fun\xE7\xE3o simples para\
+  \ cumprimentar um usu\xE1rio."
 title: "Organizando o c\xF3digo em fun\xE7\xF5es"
 weight: 18
 ---

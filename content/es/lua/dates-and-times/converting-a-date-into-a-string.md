@@ -1,13 +1,11 @@
 ---
 date: 2024-01-20 17:37:03.704254-07:00
-description: "Convertir una fecha en una cadena permite presentar la informaci\xF3\
-  n de forma legible para humanos y facilita su almacenamiento o uso en formatos como\
-  \ JSON.\u2026"
+description: "C\xF3mo Hacerlo: Encontrar\xE1s aqu\xED ejemplos sobre c\xF3mo convertir\
+  \ una fecha a cadena en Lua."
 lastmod: '2024-03-13T22:44:59.213516-06:00'
 model: gpt-4-1106-preview
-summary: "Convertir una fecha en una cadena permite presentar la informaci\xF3n de\
-  \ forma legible para humanos y facilita su almacenamiento o uso en formatos como\
-  \ JSON."
+summary: "Encontrar\xE1s aqu\xED ejemplos sobre c\xF3mo convertir una fecha a cadena\
+  \ en Lua."
 title: Convirtiendo una fecha en una cadena de texto
 weight: 28
 ---

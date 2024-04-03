@@ -1,11 +1,10 @@
 ---
 date: 2024-02-03 17:50:09.115308-07:00
-description: "Handling errors in Go involves recognizing and responding to error conditions\
-  \ in your program. Programmers engage in error handling to ensure their\u2026"
+description: "How to: In Go, error handling is explicitly managed using the `error`\
+  \ type. Functions that can fail return an error as their last return value. Checking\u2026"
 lastmod: '2024-03-13T22:44:59.637763-06:00'
 model: gpt-4-0125-preview
-summary: Handling errors in Go involves recognizing and responding to error conditions
-  in your program.
+summary: In Go, error handling is explicitly managed using the `error` type.
 title: Handling errors
 weight: 16
 ---

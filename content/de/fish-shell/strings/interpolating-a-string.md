@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:50:49.970956-07:00
-description: "Interpolieren, also das Einf\xFCgen von Variablen in Strings, spart\
-  \ dir viel Tipparbeit und vereinfacht die Code-Wartung. Es erm\xF6glicht dynamische\u2026"
+description: 'How to: Fish Shell macht''s leicht.'
 lastmod: '2024-03-13T22:44:54.294314-06:00'
 model: gpt-4-1106-preview
-summary: "Interpolieren, also das Einf\xFCgen von Variablen in Strings, spart dir\
-  \ viel Tipparbeit und vereinfacht die Code-Wartung."
+summary: Fish Shell macht's leicht.
 title: Zeichenketten interpolieren
 weight: 8
 ---

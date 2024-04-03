@@ -1,11 +1,11 @@
 ---
 date: 2024-01-27 20:35:26.203969-07:00
-description: "Das Generieren von Zufallszahlen in TypeScript dreht sich darum, unberechenbare\
-  \ numerische Werte innerhalb eines spezifizierten Bereichs zu erschaffen.\u2026"
+description: "Wie: In TypeScript kannst du mithilfe des globalen `Math`-Objekts Zufallszahlen\
+  \ generieren. Unten sind einige praktische Beispiele aufgef\xFChrt, die zeigen,\u2026"
 lastmod: '2024-03-13T22:44:53.627297-06:00'
 model: gpt-4-0125-preview
-summary: Das Generieren von Zufallszahlen in TypeScript dreht sich darum, unberechenbare
-  numerische Werte innerhalb eines spezifizierten Bereichs zu erschaffen.
+summary: In TypeScript kannst du mithilfe des globalen `Math`-Objekts Zufallszahlen
+  generieren.
 title: Generierung von Zufallszahlen
 weight: 12
 ---

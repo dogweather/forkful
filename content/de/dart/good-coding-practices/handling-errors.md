@@ -2,14 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:37.033305-07:00
-description: "Fehlerbehandlung in Dart geht darum, Ausnahmen, die w\xE4hrend der Ausf\xFC\
-  hrung des Programms auftreten, vorherzusehen und zu verwalten, um die Zuverl\xE4\
-  ssigkeit\u2026"
+description: "Wie man: Dart unterst\xFCtzt zwei Arten von Fehlern: *Kompilierzeit*-Fehler\
+  \ und *Laufzeit*-Fehler. Kompilierzeitfehler werden vom Dart-Analyzer erkannt,\u2026"
 lastmod: '2024-03-13T22:44:53.589201-06:00'
 model: gpt-4-0125-preview
-summary: "Fehlerbehandlung in Dart geht darum, Ausnahmen, die w\xE4hrend der Ausf\xFC\
-  hrung des Programms auftreten, vorherzusehen und zu verwalten, um die Zuverl\xE4\
-  ssigkeit und Benutzerfreundlichkeit zu erh\xF6hen."
+summary: "Dart unterst\xFCtzt zwei Arten von Fehlern."
 title: Fehlerbehandlung
 weight: 16
 ---

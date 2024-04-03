@@ -1,12 +1,13 @@
 ---
 date: 2024-01-26 01:08:03.616886-07:00
-description: "La journalisation est le processus d'enregistrement des comportements,\
-  \ des erreurs et d'autres informations importantes d'une application dans un support\u2026"
+description: "Comment faire : En Swift, vous pouvez \xE9crire des logs dans la console\
+  \ avec des instructions `print` ou bien utiliser l'API `os.log` plus flexible, qui\
+  \ se\u2026"
 lastmod: '2024-03-13T22:44:58.229491-06:00'
 model: gpt-4-1106-preview
-summary: "La journalisation est le processus d'enregistrement des comportements, des\
-  \ erreurs et d'autres informations importantes d'une application dans un support\
-  \ persistant, comme un fichier ou une base de donn\xE9es."
+summary: "En Swift, vous pouvez \xE9crire des logs dans la console avec des instructions\
+  \ `print` ou bien utiliser l'API `os.log` plus flexible, qui se connecte au syst\xE8\
+  me de journalisation unifi\xE9 sur les plateformes Apple."
 title: Journalisation
 weight: 17
 ---

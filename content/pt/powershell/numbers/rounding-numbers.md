@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 03:46:17.864731-07:00
-description: "Arredondar n\xFAmeros consiste em ajustar um valor para o inteiro mais\
-  \ pr\xF3ximo ou para um ponto decimal especificado. Programadores arredondam n\xFA\
-  meros para\u2026"
+description: "Como fazer: Voc\xEA tem \xE0 disposi\xE7\xE3o alguns cmdlets e m\xE9\
+  todos \xFAteis no PowerShell para arredondamento: - M\xE9todo `Round()` da classe\
+  \ Math."
 lastmod: '2024-03-13T22:44:46.790126-06:00'
 model: gpt-4-0125-preview
-summary: "Arredondar n\xFAmeros consiste em ajustar um valor para o inteiro mais pr\xF3\
-  ximo ou para um ponto decimal especificado."
+summary: "Voc\xEA tem \xE0 disposi\xE7\xE3o alguns cmdlets e m\xE9todos \xFAteis no\
+  \ PowerShell para arredondamento."
 title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---

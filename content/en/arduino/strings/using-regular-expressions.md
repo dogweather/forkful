@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:02:45.377922-07:00
-description: "Regular expressions (regex) are sequences of characters that define\
-  \ search patterns, primarily used for string matching and manipulation. Programmers\u2026"
+description: "How to: Arduino does not have built-in support for regex directly in\
+  \ its standard library. However, you can achieve regex-like functionality for simple\u2026"
 lastmod: '2024-03-13T22:45:00.313177-06:00'
 model: gpt-4-0125-preview
-summary: Regular expressions (regex) are sequences of characters that define search
-  patterns, primarily used for string matching and manipulation.
+summary: Arduino does not have built-in support for regex directly in its standard
+  library.
 title: Using regular expressions
 weight: 11
 ---

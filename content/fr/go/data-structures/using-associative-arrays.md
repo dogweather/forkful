@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:48.728472-07:00
-description: "Les tableaux associatifs, connus sous le nom de maps en Go, vous permettent\
-  \ de stocker des paires cl\xE9-valeur o\xF9 chaque cl\xE9 unique est associ\xE9\
-  e \xE0 une\u2026"
+description: "Comment faire : Cr\xE9er et initialiser une map en Go peut se faire\
+  \ de diff\xE9rentes mani\xE8res. Voici un exemple de base pour commencer ."
 lastmod: '2024-03-13T22:44:57.125132-06:00'
 model: gpt-4-0125-preview
-summary: "Les tableaux associatifs, connus sous le nom de maps en Go, vous permettent\
-  \ de stocker des paires cl\xE9-valeur o\xF9 chaque cl\xE9 unique est associ\xE9\
-  e \xE0 une valeur."
+summary: "Cr\xE9er et initialiser une map en Go peut se faire de diff\xE9rentes mani\xE8\
+  res."
 title: Utilisation des tableaux associatifs
 weight: 15
 ---

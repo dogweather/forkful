@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 01:09:42.755256-07:00
-description: "Code in Funktionen zu organisieren bedeutet, verwandte Operationen in\
-  \ wiederverwendbare Bl\xF6cke zu gliedern. Wir tun dies, um die Lesbarkeit und\u2026"
+description: "Wie geht das: Lassen Sie uns eine einfache Elixir-Funktion erstellen,\
+  \ um W\xF6rter zu kapitalisieren."
 lastmod: '2024-03-13T22:44:53.539289-06:00'
 model: gpt-4-1106-preview
-summary: "Code in Funktionen zu organisieren bedeutet, verwandte Operationen in wiederverwendbare\
-  \ Bl\xF6cke zu gliedern."
+summary: "Lassen Sie uns eine einfache Elixir-Funktion erstellen, um W\xF6rter zu\
+  \ kapitalisieren."
 title: Code in Funktionen organisieren
 weight: 18
 ---

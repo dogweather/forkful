@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:48.584747-07:00
-description: "Att f\xE5 det aktuella datumet i Google Apps Script handlar om att h\xE4\
-  mta det levande datumet och tiden, en vanlig uppgift f\xF6r att automatisera uppgifter,\u2026"
+description: "Hur man g\xF6r: Google Apps Script, som bygger p\xE5 JavaScript, erbjuder\
+  \ enkla metoder f\xF6r att f\xE5 det aktuella datumet. Du kan anv\xE4nda konstrukt\xF6\
+  ren `new\u2026"
 lastmod: '2024-03-13T22:44:37.450216-06:00'
 model: gpt-4-0125-preview
-summary: "Att f\xE5 det aktuella datumet i Google Apps Script handlar om att h\xE4\
-  mta det levande datumet och tiden, en vanlig uppgift f\xF6r att automatisera uppgifter,\
-  \ logga och tidsst\xE4mpla i appar knutna till Googles ekosystem."
+summary: "Google Apps Script, som bygger p\xE5 JavaScript, erbjuder enkla metoder\
+  \ f\xF6r att f\xE5 det aktuella datumet."
 title: "H\xE4mta aktuellt datum"
 weight: 29
 ---

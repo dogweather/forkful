@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:18.812642-07:00
-description: "Att l\xE4sa kommandoradsargument i Google Apps Script \xE4r en smula\
-  \ missvisande eftersom Google Apps Script, till skillnad fr\xE5n traditionella\u2026"
+description: "Hur man g\xF6r: F\xF6r att efterlikna processen att l\xE4sa kommandoradsargument\
+  \ i Google Apps Script, s\xE4rskilt f\xF6r webbappar, kan du utnyttja\u2026"
 lastmod: '2024-03-13T22:44:37.455514-06:00'
 model: gpt-4-0125-preview
-summary: "Att l\xE4sa kommandoradsargument i Google Apps Script \xE4r en smula missvisande\
-  \ eftersom Google Apps Script, till skillnad fr\xE5n traditionella kommandoradsgr\xE4\
-  nssnitt i programmeringsspr\xE5k som Python eller Node."
+summary: "F\xF6r att efterlikna processen att l\xE4sa kommandoradsargument i Google\
+  \ Apps Script, s\xE4rskilt f\xF6r webbappar, kan du utnyttja fr\xE5gestr\xE4ngsparametrar."
 title: "L\xE4sa kommandoradsargument"
 weight: 23
 ---

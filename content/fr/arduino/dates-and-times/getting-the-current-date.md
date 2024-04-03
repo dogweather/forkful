@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:52.616688-07:00
-description: "Obtenir la date actuelle dans les projets Arduino consiste \xE0 obtenir\
-  \ des informations en temps r\xE9el qui peuvent \xEAtre cruciales pour la journalisation,\u2026"
+description: "Comment faire : Arduino lui-m\xEAme n'a pas de m\xE9thode int\xE9gr\xE9\
+  e pour r\xE9cup\xE9rer directement la date actuelle, car il manque d'une horloge\
+  \ en temps r\xE9el (RTC).\u2026"
 lastmod: '2024-03-13T22:44:58.124828-06:00'
 model: gpt-4-0125-preview
-summary: "Obtenir la date actuelle dans les projets Arduino consiste \xE0 obtenir\
-  \ des informations en temps r\xE9el qui peuvent \xEAtre cruciales pour la journalisation,\
-  \ l'horodatage ou la planification des t\xE2ches."
+summary: "Arduino lui-m\xEAme n'a pas de m\xE9thode int\xE9gr\xE9e pour r\xE9cup\xE9\
+  rer directement la date actuelle, car il manque d'une horloge en temps r\xE9el (RTC)."
 title: Obtenir la date actuelle
 weight: 29
 ---

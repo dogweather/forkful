@@ -1,13 +1,11 @@
 ---
 date: 2024-01-20 17:42:49.447845-07:00
-description: "Deleting characters that match a certain pattern is about stripping\
-  \ away unwanted bits from your strings \u2014 think cleaning up data or parsing\
-  \ text files.\u2026"
+description: 'How to: PowerShell uses the `-replace` operator to delete characters
+  that match a pattern. Here''s some string-fixing action for you.'
 lastmod: '2024-03-13T22:45:00.267768-06:00'
 model: gpt-4-1106-preview
-summary: "Deleting characters that match a certain pattern is about stripping away\
-  \ unwanted bits from your strings \u2014 think cleaning up data or parsing text\
-  \ files."
+summary: PowerShell uses the `-replace` operator to delete characters that match a
+  pattern.
 title: Deleting characters matching a pattern
 weight: 5
 ---

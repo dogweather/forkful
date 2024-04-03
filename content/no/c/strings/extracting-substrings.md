@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:22.928270-07:00
-description: "\xC5 trekke ut delstrenger i C inneb\xE6rer \xE5 skape en mindre streng\
-  \ (delstreng) fra en st\xF8rre etter angitte kriterier, som posisjon og lengde.\
-  \ Programmerere\u2026"
+description: "Hvordan: I motsetning til noen h\xF8yere niv\xE5 spr\xE5k som tilbyr\
+  \ innebygde metoder for delstrenguttrekking, krever C en mer manuell tiln\xE6rming\
+  \ ved bruk av dens\u2026"
 lastmod: '2024-03-13T22:44:41.259371-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 trekke ut delstrenger i C inneb\xE6rer \xE5 skape en mindre streng\
-  \ (delstreng) fra en st\xF8rre etter angitte kriterier, som posisjon og lengde."
+summary: "I motsetning til noen h\xF8yere niv\xE5 spr\xE5k som tilbyr innebygde metoder\
+  \ for delstrenguttrekking, krever C en mer manuell tiln\xE6rming ved bruk av dens\
+  \ strengmanipuleringsfunksjoner."
 title: Utdrag av delstrenger
 weight: 6
 ---

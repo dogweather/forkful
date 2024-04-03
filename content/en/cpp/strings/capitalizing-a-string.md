@@ -1,12 +1,11 @@
 ---
 date: 2024-02-03 19:02:53.042562-07:00
-description: "Capitalizing a string involves converting the initial character of each\
-  \ word in the string to uppercase if it is in lowercase while keeping the remaining\u2026"
+description: "How to: In C++, you can capitalize a string using the standard library\
+  \ without the need for third-party libraries. However, for more complex or specific\u2026"
 lastmod: '2024-03-13T22:45:00.342676-06:00'
 model: gpt-4-0125-preview
-summary: Capitalizing a string involves converting the initial character of each word
-  in the string to uppercase if it is in lowercase while keeping the remaining characters
-  unchanged.
+summary: In C++, you can capitalize a string using the standard library without the
+  need for third-party libraries.
 title: Capitalizing a string
 weight: 2
 ---

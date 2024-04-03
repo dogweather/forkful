@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:40.676701-07:00
-description: "JSON, czyli JavaScript Object Notation, to lekki format s\u0142u\u017C\
-  \u0105cy do przechowywania i przesy\u0142ania danych, idealny do komunikacji serwer-klient\
-  \ oraz plik\xF3w\u2026"
+description: "Jak to zrobi\u0107: W Google Apps Script manipulacja JSON jest procesem\
+  \ prostym, g\u0142\xF3wnie dzi\u0119ki natywnej obs\u0142udze JavaScript dla parsowania\
+  \ JSON i\u2026"
 lastmod: '2024-03-13T22:44:34.926850-06:00'
 model: gpt-4-0125-preview
-summary: "JSON, czyli JavaScript Object Notation, to lekki format s\u0142u\u017C\u0105\
-  cy do przechowywania i przesy\u0142ania danych, idealny do komunikacji serwer-klient\
-  \ oraz plik\xF3w konfiguracyjnych."
+summary: "W Google Apps Script manipulacja JSON jest procesem prostym, g\u0142\xF3\
+  wnie dzi\u0119ki natywnej obs\u0142udze JavaScript dla parsowania JSON i konwertowania\
+  \ na ci\u0105g znak\xF3w."
 title: Praca z JSON
 weight: 38
 ---

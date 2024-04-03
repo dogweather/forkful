@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 17:47:51.987661-07:00
-description: "\xC5 finne lengden av en streng betyr \xE5 telle antall tegn i den.\
-  \ Programmerere gj\xF8r dette for validering, l\xF8kkekontroll og tekstmanipulering."
+description: "How to: Her er noen enkle m\xE5ter \xE5 finne lengden p\xE5 en streng\
+  \ i PowerShell."
 lastmod: '2024-03-13T22:44:41.007390-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 finne lengden av en streng betyr \xE5 telle antall tegn i den."
+summary: "Her er noen enkle m\xE5ter \xE5 finne lengden p\xE5 en streng i PowerShell."
 title: "Finn lengden p\xE5 en streng"
 weight: 7
 ---

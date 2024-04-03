@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:44:21.158380-07:00
-description: "T\xE9l\xE9charger une page web, c'est r\xE9cup\xE9rer son contenu via\
-  \ Internet. Les programmeurs le font pour traiter des donn\xE9es, alimenter des\
-  \ applications ou\u2026"
+description: 'Comment faire : .'
 lastmod: '2024-03-13T22:44:57.737759-06:00'
 model: gpt-4-1106-preview
-summary: "T\xE9l\xE9charger une page web, c'est r\xE9cup\xE9rer son contenu via Internet."
+summary: .
 title: "T\xE9l\xE9chargement d'une page web"
 weight: 42
 ---

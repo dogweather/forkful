@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:07:08.250476-07:00
-description: "YAML, que significa \"YAML Ain't Markup Language\" (YAML no es un lenguaje\
-  \ de marcado), es un est\xE1ndar de serializaci\xF3n de datos legible por humanos\
-  \ que se\u2026"
+description: "C\xF3mo: Aunque Google Apps Script (GAS) no admite de forma nativa el\
+  \ an\xE1lisis o la serializaci\xF3n de YAML, puedes manipular datos YAML utilizando\
+  \ bibliotecas\u2026"
 lastmod: '2024-03-13T22:44:58.586757-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, que significa \"YAML Ain't Markup Language\" (YAML no es un lenguaje\
-  \ de marcado), es un est\xE1ndar de serializaci\xF3n de datos legible por humanos\
-  \ que se utiliza com\xFAnmente para archivos de configuraci\xF3n e intercambio de\
-  \ datos entre lenguajes con estructuras de datos variadas."
+summary: "Aunque Google Apps Script (GAS) no admite de forma nativa el an\xE1lisis\
+  \ o la serializaci\xF3n de YAML, puedes manipular datos YAML utilizando bibliotecas\
+  \ de JavaScript o escribiendo funciones de an\xE1lisis personalizadas."
 title: Trabajando con YAML
 weight: 41
 ---

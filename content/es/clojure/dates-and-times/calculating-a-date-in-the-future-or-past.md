@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:28:40.944773-07:00
-description: "Calcular una fecha en el futuro o pasado es b\xE1sicamente sumar o restar\
-  \ d\xEDas a una fecha dada. Lo hacemos para programar eventos, calcular vencimientos\
-  \ o\u2026"
+description: "How to: Para trabajar con fechas en Clojure, usaremos la librer\xED\
+  a `clj-time`, una envoltura para Joda-Time. La instalamos agregando `[clj-time \"\
+  0.15.2\"]`\u2026"
 lastmod: '2024-03-13T22:44:58.671172-06:00'
 model: gpt-4-1106-preview
-summary: "Calcular una fecha en el futuro o pasado es b\xE1sicamente sumar o restar\
-  \ d\xEDas a una fecha dada."
+summary: "Para trabajar con fechas en Clojure, usaremos la librer\xEDa `clj-time`,\
+  \ una envoltura para Joda-Time."
 title: "C\xE1lculo de una fecha en el futuro o el pasado"
 weight: 26
 ---

@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:29:03.622343-07:00
-description: "XML est un langage de balisage pour encoder des documents d'une mani\xE8\
-  re qui est \xE0 la fois lisible par l'homme et par la machine. Il est cl\xE9 dans\
-  \ les\u2026"
+description: "Comment faire : Clojure propose la biblioth\xE8que `clojure.data.xml`\
+  \ pour l'analyse et l'\xE9mission de XML. Tout d'abord, analysons un peu de XML\
+  \ ."
 lastmod: '2024-03-13T22:44:57.308078-06:00'
 model: gpt-4-0125-preview
-summary: "XML est un langage de balisage pour encoder des documents d'une mani\xE8\
-  re qui est \xE0 la fois lisible par l'homme et par la machine."
+summary: "Clojure propose la biblioth\xE8que `clojure.data.xml` pour l'analyse et\
+  \ l'\xE9mission de XML."
 title: Travailler avec XML
 weight: 40
 ---

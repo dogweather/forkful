@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:13:55.129760-07:00
-description: "REPL, o Ciclo de Leer-Evaluar-Imprimir, es un entorno de programaci\xF3\
-  n interactivo que toma las entradas de los usuarios, las ejecuta y devuelve el\u2026"
+description: "C\xF3mo hacerlo: En Fish, el shell interactivo es el modo predeterminado\
+  \ cuando lo inicias. As\xED es como se ve en acci\xF3n."
 lastmod: '2024-03-13T22:44:59.503264-06:00'
 model: gpt-4-0125-preview
-summary: "REPL, o Ciclo de Leer-Evaluar-Imprimir, es un entorno de programaci\xF3\
-  n interactivo que toma las entradas de los usuarios, las ejecuta y devuelve el resultado."
+summary: En Fish, el shell interactivo es el modo predeterminado cuando lo inicias.
 title: Usando una shell interactiva (REPL)
 weight: 34
 ---

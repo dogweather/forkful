@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 01:48:02.366899-07:00
-description: "*Nimeksi annettu* kehitt\xE4minen on prosessi, jossa olemassa olevaa\
-  \ tietokonekoodia uudelleenj\xE4rjestet\xE4\xE4n muuttamatta sen ulkoista k\xE4\
-  ytt\xE4ytymist\xE4.\u2026"
+description: "Kuinka: Otetaan klassinen PHP-koodip\xE4tk\xE4 ja sovelletaan siihen\
+  \ *nimeksi annettu*-taikaa. Ennen *nimeksi annettu-a*, koodimme saattaa n\xE4ytt\xE4\
+  \xE4 t\xE4lt\xE4."
 lastmod: '2024-03-13T22:44:56.664468-06:00'
 model: gpt-4-0125-preview
-summary: "*Nimeksi annettu* kehitt\xE4minen on prosessi, jossa olemassa olevaa tietokonekoodia\
-  \ uudelleenj\xE4rjestet\xE4\xE4n muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4\
-  ."
+summary: "Otetaan klassinen PHP-koodip\xE4tk\xE4 ja sovelletaan siihen *nimeksi annettu*-taikaa."
 title: Koodin refaktorointi
 weight: 19
 ---

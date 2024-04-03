@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:50.001808-07:00
-description: "Ottenere la data corrente nei progetti Arduino coinvolge l'acquisizione\
-  \ di informazioni in tempo reale che possono essere cruciali per la registrazione,\u2026"
+description: "Come fare: Di per s\xE9, Arduino non dispone di un metodo integrato\
+  \ per recuperare direttamente la data corrente, in quanto manca di un orologio in\
+  \ tempo\u2026"
 lastmod: '2024-03-13T22:44:43.692903-06:00'
 model: gpt-4-0125-preview
-summary: "Ottenere la data corrente nei progetti Arduino coinvolge l'acquisizione\
-  \ di informazioni in tempo reale che possono essere cruciali per la registrazione,\
-  \ l'apposizione di timestamp o la programmazione di attivit\xE0."
+summary: "Di per s\xE9, Arduino non dispone di un metodo integrato per recuperare\
+  \ direttamente la data corrente, in quanto manca di un orologio in tempo reale (RTC)."
 title: Ottenere la data corrente
 weight: 29
 ---

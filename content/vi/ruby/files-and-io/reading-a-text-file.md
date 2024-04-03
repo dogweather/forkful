@@ -2,15 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:10.069760-07:00
-description: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n c\xF3 ngh\u0129a l\xE0\
-  \ truy c\u1EADp n\u1ED9i dung c\u1EE7a m\u1ED9t t\u1EC7p l\u01B0u tr\u1EEF tr\xEA\
-  n \u0111\u0129a th\xF4ng qua m\xE3 l\u1EC7nh. L\u1EADp tr\xECnh vi\xEAn th\u1EF1\
-  c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 x\u1EED l\xFD, ph\xE2n t\xEDch\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: \u0110\u1ECDc m\u1ED9t t\u1EC7p trong Ruby\
+  \ r\u1EA5t \u0111\u01A1n gi\u1EA3n. B\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng l\u1EDB\
+  p `File`, n\u01A1i cung c\u1EA5p c\xE1c ph\u01B0\u01A1ng th\u1EE9c kh\xE1c nhau\
+  \ \u0111\u1EC3 \u0111\u1ECDc t\u1EC7p. D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9\
+  t v\xED\u2026"
 lastmod: '2024-03-13T22:44:37.364305-06:00'
 model: gpt-4-0125-preview
-summary: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n c\xF3 ngh\u0129a l\xE0\
-  \ truy c\u1EADp n\u1ED9i dung c\u1EE7a m\u1ED9t t\u1EC7p l\u01B0u tr\u1EEF tr\xEA\
-  n \u0111\u0129a th\xF4ng qua m\xE3 l\u1EC7nh."
+summary: "\u0110\u1ECDc m\u1ED9t t\u1EC7p trong Ruby r\u1EA5t \u0111\u01A1n gi\u1EA3\
+  n."
 title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 22
 ---

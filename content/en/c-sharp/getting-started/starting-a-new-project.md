@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 18:02:56.464432-07:00
-description: "Starting a new C# project means setting up a fresh solution and project\
-  \ files that structure your code. Programmers kick off new projects to turn ideas\u2026"
+description: "How to: Let's roll up our sleeves and get our hands on some code. Assume\
+  \ you've got .NET 6 or later - that's the latest at the time of writing. You'll\
+  \ use\u2026"
 lastmod: '2024-03-13T22:45:00.089242-06:00'
 model: gpt-4-1106-preview
-summary: Starting a new C# project means setting up a fresh solution and project files
-  that structure your code.
+summary: Let's roll up our sleeves and get our hands on some code.
 title: Starting a new project
 weight: 1
 ---

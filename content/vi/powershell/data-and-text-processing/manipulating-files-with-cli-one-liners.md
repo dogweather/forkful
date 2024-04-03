@@ -2,16 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:53.471613-07:00
-description: "Vi\u1EC7c thao t\xE1c v\u1EDBi c\xE1c t\u1EC7p tin b\u1EB1ng c\xE1c\
-  \ l\u1EC7nh m\u1ED9t d\xF2ng trong PowerShell li\xEAn quan \u0111\u1EBFn vi\u1EC7\
-  c nhanh ch\xF3ng thay \u0111\u1ED5i, di chuy\u1EC3n ho\u1EB7c l\u1EA5y d\u1EEF li\u1EC7\
-  u t\u1EC7p tin tr\u1EF1c\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: #."
 lastmod: '2024-03-13T22:44:36.929303-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c thao t\xE1c v\u1EDBi c\xE1c t\u1EC7p tin b\u1EB1ng c\xE1c l\u1EC7\
-  nh m\u1ED9t d\xF2ng trong PowerShell li\xEAn quan \u0111\u1EBFn vi\u1EC7c nhanh\
-  \ ch\xF3ng thay \u0111\u1ED5i, di chuy\u1EC3n ho\u1EB7c l\u1EA5y d\u1EEF li\u1EC7\
-  u t\u1EC7p tin tr\u1EF1c ti\u1EBFp t\u1EEB d\xF2ng l\u1EC7nh."
+summary: '#.'
 title: "Thao t\xE1c v\u1EDBi c\xE1c t\u1EC7p tin b\u1EB1ng c\xE1c l\u1EC7nh CLI ch\u1EC9\
   \ m\u1ED9t d\xF2ng"
 weight: 31

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:04.220737-07:00
-description: "Escribir un archivo de texto en Google Apps Script permite a los desarrolladores\
-  \ almacenar datos de manera persistente, haci\xE9ndolos accesibles para uso\u2026"
+description: "C\xF3mo hacerlo: Crear y escribir en un archivo de texto en Google Apps\
+  \ Script se puede lograr a trav\xE9s del servicio Google DriveApp. A continuaci\xF3\
+  n, se\u2026"
 lastmod: '2024-03-13T22:44:58.584255-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir un archivo de texto en Google Apps Script permite a los desarrolladores\
-  \ almacenar datos de manera persistente, haci\xE9ndolos accesibles para uso futuro\
-  \ o an\xE1lisis."
+summary: "Crear y escribir en un archivo de texto en Google Apps Script se puede lograr\
+  \ a trav\xE9s del servicio Google DriveApp."
 title: Escribiendo un archivo de texto
 weight: 24
 ---

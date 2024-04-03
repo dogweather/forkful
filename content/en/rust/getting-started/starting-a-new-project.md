@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 18:04:28.935864-07:00
-description: "Starting a new project in Rust means setting up a basic structure so\
-  \ your code has a place to live. Programmers kick off new projects to solve problems,\u2026"
+description: "How to: To start a new Rust project, you need Cargo\u2014the Rust package\
+  \ manager. Install Rust and Cargo through the official installer, rustup."
 lastmod: '2024-03-13T22:44:59.896433-06:00'
 model: gpt-4-1106-preview
-summary: Starting a new project in Rust means setting up a basic structure so your
-  code has a place to live.
+summary: "To start a new Rust project, you need Cargo\u2014the Rust package manager."
 title: Starting a new project
 weight: 1
 ---

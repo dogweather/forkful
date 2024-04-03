@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:31:36.718183-07:00
-description: "Calculating a future or past date means finding a date before or after\
-  \ a specified time. Programmers do this for reminders, subscriptions, scheduling,\
-  \ and\u2026"
+description: 'How to: PHP makes date math simple with `DateTime` and `DateInterval`.
+  Check this out.'
 lastmod: '2024-03-13T22:45:00.179355-06:00'
 model: gpt-4-1106-preview
-summary: Calculating a future or past date means finding a date before or after a
-  specified time.
+summary: PHP makes date math simple with `DateTime` and `DateInterval`.
 title: Calculating a date in the future or past
 weight: 26
 ---

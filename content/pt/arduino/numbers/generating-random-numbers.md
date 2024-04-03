@@ -1,13 +1,12 @@
 ---
 date: 2024-01-27 20:32:40.956797-07:00
-description: "Gerar n\xFAmeros aleat\xF3rios em projetos Arduino envolve produzir\
-  \ valores que s\xE3o imprevis\xEDveis por design, crucial para aplica\xE7\xF5es\
-  \ como jogos, simula\xE7\xF5es e\u2026"
+description: "Como fazer: O Arduino oferece fun\xE7\xF5es simples para a gera\xE7\xE3\
+  o de n\xFAmeros aleat\xF3rios: `randomSeed()` e `random()`. Para come\xE7ar, \xE9\
+  \ necess\xE1rio semear o\u2026"
 lastmod: '2024-03-13T22:44:46.835311-06:00'
 model: gpt-4-0125-preview
-summary: "Gerar n\xFAmeros aleat\xF3rios em projetos Arduino envolve produzir valores\
-  \ que s\xE3o imprevis\xEDveis por design, crucial para aplica\xE7\xF5es como jogos,\
-  \ simula\xE7\xF5es e sistemas de seguran\xE7a."
+summary: "O Arduino oferece fun\xE7\xF5es simples para a gera\xE7\xE3o de n\xFAmeros\
+  \ aleat\xF3rios."
 title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
 weight: 12
 ---

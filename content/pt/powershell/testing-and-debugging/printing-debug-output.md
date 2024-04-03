@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:53:24.489868-07:00
-description: "Depurar \xE9 como procurar uma agulha no palheiro: voc\xEA precisa ver\
-  \ o que seu c\xF3digo est\xE1 realmente fazendo. Programadores imprimem mensagens\
-  \ de depura\xE7\xE3o\u2026"
+description: "Como Fazer: Imprimir no PowerShell \xE9 simples. Use `Write-Host` para\
+  \ enviar texto para a tela, ou `Write-Debug` para mensagens de debug que podem ser\u2026"
 lastmod: '2024-03-13T22:44:46.799557-06:00'
 model: gpt-4-1106-preview
-summary: "Depurar \xE9 como procurar uma agulha no palheiro: voc\xEA precisa ver o\
-  \ que seu c\xF3digo est\xE1 realmente fazendo."
+summary: "Imprimir no PowerShell \xE9 simples."
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---

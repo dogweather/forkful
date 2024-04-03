@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 04:38:29.447592-07:00
-description: "N\xFAmeros complexos expandem nosso sistema num\xE9rico para incluir\
-  \ n\xFAmeros imagin\xE1rios, permitindo-nos resolver equa\xE7\xF5es que n\xE3o t\xEA\
-  m solu\xE7\xF5es reais.\u2026"
+description: "Como: C# possui uma estrutura integrada `System.Numerics.Complex` para\
+  \ processar n\xFAmeros complexos. Aqui est\xE1 um r\xE1pido passo a passo."
 lastmod: '2024-03-13T22:44:46.578125-06:00'
 model: gpt-4-0125-preview
-summary: "N\xFAmeros complexos expandem nosso sistema num\xE9rico para incluir n\xFA\
-  meros imagin\xE1rios, permitindo-nos resolver equa\xE7\xF5es que n\xE3o t\xEAm solu\xE7\
-  \xF5es reais."
+summary: "C# possui uma estrutura integrada `System.Numerics.Complex` para processar\
+  \ n\xFAmeros complexos."
 title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---

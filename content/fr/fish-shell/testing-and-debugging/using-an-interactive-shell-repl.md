@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 04:14:07.624169-07:00
-description: "REPL, ou Boucle Lire-\xC9valuer-Imprimer, est un environnement de programmation\
-  \ interactif qui prend des entr\xE9es utilisateur individuelles, les ex\xE9cute\
-  \ et\u2026"
+description: "Comment faire : Dans Fish, le shell interactif est le mode par d\xE9\
+  faut lorsque vous le d\xE9marrez. Voici \xE0 quoi cela ressemble en action ."
 lastmod: '2024-03-13T22:44:58.326241-06:00'
 model: gpt-4-0125-preview
-summary: "REPL, ou Boucle Lire-\xC9valuer-Imprimer, est un environnement de programmation\
-  \ interactif qui prend des entr\xE9es utilisateur individuelles, les ex\xE9cute\
-  \ et retourne le r\xE9sultat."
+summary: "Dans Fish, le shell interactif est le mode par d\xE9faut lorsque vous le\
+  \ d\xE9marrez."
 title: Utilisation d'une console interactive (REPL)
 weight: 34
 ---

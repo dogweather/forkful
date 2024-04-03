@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:47:26.335499-07:00
-description: "Encontrar la longitud de una cadena significa descubrir cu\xE1ntos caracteres\
-  \ contiene. Programadores lo hacen para validar entradas, limitar textos o\u2026"
+description: "C\xF3mo Hacerlo: Para obtener la longitud de una cadena en Fish, emplea\
+  \ la funci\xF3n `string length`. Aqu\xED tienes un par de ejemplos."
 lastmod: '2024-03-13T22:44:59.491025-06:00'
 model: gpt-4-1106-preview
-summary: "Encontrar la longitud de una cadena significa descubrir cu\xE1ntos caracteres\
-  \ contiene."
+summary: "Para obtener la longitud de una cadena en Fish, emplea la funci\xF3n `string\
+  \ length`."
 title: Calculando la longitud de una cadena
 weight: 7
 ---

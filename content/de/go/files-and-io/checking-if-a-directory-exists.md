@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:35.244611-07:00
-description: "Die \xDCberpr\xFCfung, ob ein Verzeichnis in Go existiert, ist kritisch\
-  \ f\xFCr Anwendungen, die mit dem Dateisystem interagieren, um Fehler beim Versuch\
-  \ des\u2026"
+description: "Wie: In Go bietet das `os`-Paket Funktionen zur Interaktion mit dem\
+  \ Betriebssystem, einschlie\xDFlich der \xDCberpr\xFCfung, ob ein Verzeichnis existiert.\
+  \ Hier\u2026"
 lastmod: '2024-03-13T22:44:53.303759-06:00'
 model: gpt-4-0125-preview
-summary: "Die \xDCberpr\xFCfung, ob ein Verzeichnis in Go existiert, ist kritisch\
-  \ f\xFCr Anwendungen, die mit dem Dateisystem interagieren, um Fehler beim Versuch\
-  \ des Zugriffs oder der Modifikation von Verzeichnissen zu vermeiden."
+summary: "In Go bietet das `os`-Paket Funktionen zur Interaktion mit dem Betriebssystem,\
+  \ einschlie\xDFlich der \xDCberpr\xFCfung, ob ein Verzeichnis existiert."
 title: "\xDCberpr\xFCfen, ob ein Verzeichnis existiert"
 weight: 20
 ---

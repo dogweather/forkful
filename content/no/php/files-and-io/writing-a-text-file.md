@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:47.911480-07:00
-description: "\xC5 skrive en tekstfil i PHP inneb\xE6rer \xE5 opprette eller \xE5\
-  pne en fil og sette inn innhold i den. Programmerere gj\xF8r dette for \xE5 bevare\
-  \ data, som\u2026"
+description: "Hvordan: PHP st\xF8tter nativt filskriving gjennom funksjoner som `file_put_contents`,\
+  \ `fopen` sammen med `fwrite`, og `fclose`. Slik bruker du dem: #."
 lastmod: '2024-03-13T22:44:40.904692-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive en tekstfil i PHP inneb\xE6rer \xE5 opprette eller \xE5pne en\
-  \ fil og sette inn innhold i den."
+summary: "PHP st\xF8tter nativt filskriving gjennom funksjoner som `file_put_contents`,\
+  \ `fopen` sammen med `fwrite`, og `fclose`."
 title: Skrive en tekstfil
 weight: 24
 ---

@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:13:31.996309-07:00
-description: "Il Read-Eval-Print Loop (REPL) \xE8 un ambiente di programmazione semplice\
-  \ e interattivo che prende singoli input dall'utente, li valuta e ritorna il\u2026"
+description: "Come fare: Elm non viene fornito con un REPL integrato. Tuttavia, puoi\
+  \ utilizzare `elm repl` dalla tua riga di comando per avviare una sessione Elm dopo\u2026"
 lastmod: '2024-03-13T22:44:43.351417-06:00'
 model: gpt-4-0125-preview
-summary: "Il Read-Eval-Print Loop (REPL) \xE8 un ambiente di programmazione semplice\
-  \ e interattivo che prende singoli input dall'utente, li valuta e ritorna il risultato\
-  \ all'utente."
+summary: Elm non viene fornito con un REPL integrato.
 title: Utilizzo di un interprete interattivo (REPL)
 weight: 34
 ---

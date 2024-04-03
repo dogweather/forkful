@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:53.580669-07:00
-description: "JSON (JavaScript Object Notation) \xE4r ett l\xE4ttviktigt datautbytesformat\
-  \ som \xE4r enkelt f\xF6r m\xE4nniskor att l\xE4sa och skriva, samt f\xF6r maskiner\
-  \ att tolka och\u2026"
+description: "Hur man g\xF6r: VBA st\xF6der inte nativt tolkning eller generering\
+  \ av JSON, s\xE5 vi kommer att anv\xE4nda ett skriptspr\xE5k som JScript (via ScriptControl-objektet)\u2026"
 lastmod: '2024-03-13T22:44:37.766561-06:00'
 model: gpt-4-0125-preview
-summary: "JSON (JavaScript Object Notation) \xE4r ett l\xE4ttviktigt datautbytesformat\
-  \ som \xE4r enkelt f\xF6r m\xE4nniskor att l\xE4sa och skriva, samt f\xF6r maskiner\
-  \ att tolka och generera."
+summary: "VBA st\xF6der inte nativt tolkning eller generering av JSON, s\xE5 vi kommer\
+  \ att anv\xE4nda ett skriptspr\xE5k som JScript (via ScriptControl-objektet) f\xF6\
+  r att tolka JSON-str\xE4ngar och bygga JSON-objekt."
 title: Arbeta med JSON
 weight: 38
 ---

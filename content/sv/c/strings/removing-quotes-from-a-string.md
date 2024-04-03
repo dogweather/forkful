@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:11.869370-07:00
-description: "Att ta bort citattecken fr\xE5n en str\xE4ng i C inneb\xE4r att extrahera\
-  \ textinneh\xE5llet utan de omslutande enkla (' ') eller dubbla (\" \") citattecknen.\
-  \ Denna\u2026"
+description: "Hur man g\xF6r: F\xF6r att ta bort citattecken fr\xE5n en str\xE4ng\
+  \ i C g\xE5r vi igenom str\xE4ngen och kopierar tecken som inte \xE4r citattecken\
+  \ till en ny str\xE4ng. Denna\u2026"
 lastmod: '2024-03-13T22:44:38.369239-06:00'
 model: gpt-4-0125-preview
-summary: "Att ta bort citattecken fr\xE5n en str\xE4ng i C inneb\xE4r att extrahera\
-  \ textinneh\xE5llet utan de omslutande enkla (' ') eller dubbla (\" \") citattecknen."
+summary: "F\xF6r att ta bort citattecken fr\xE5n en str\xE4ng i C g\xE5r vi igenom\
+  \ str\xE4ngen och kopierar tecken som inte \xE4r citattecken till en ny str\xE4\
+  ng."
 title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 weight: 9
 ---

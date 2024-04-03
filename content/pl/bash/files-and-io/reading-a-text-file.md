@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:53:47.529705-07:00
-description: "Przeczytanie pliku tekstowego w Bashu to po prostu wy\u015Bwietlenie\
-  \ jego zawarto\u015Bci w terminalu. Programi\u015Bci robi\u0105 to do analizy danych,\
-  \ debugowania i\u2026"
+description: "Jak to zrobi\u0107: ."
 lastmod: '2024-03-13T22:44:35.602781-06:00'
 model: gpt-4-1106-preview
-summary: "Przeczytanie pliku tekstowego w Bashu to po prostu wy\u015Bwietlenie jego\
-  \ zawarto\u015Bci w terminalu."
+summary: .
 title: Odczytywanie pliku tekstowego
 weight: 22
 ---

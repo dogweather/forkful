@@ -1,13 +1,10 @@
 ---
 date: 2024-01-26 04:17:57.798919-07:00
-description: "Una shell interattiva di Rust, o un REPL (Read-Eval-Print Loop), ti\
-  \ permette di eseguire codice Rust al volo, vedendo risultati istantanei, perfetto\
-  \ per\u2026"
+description: 'Come fare: Al momento, Rust non ha un REPL ufficiale incluso. Puoi usare
+  strumenti di terze parti come `evcxr_repl`. Installalo con Cargo.'
 lastmod: '2024-03-13T22:44:43.219649-06:00'
 model: gpt-4-0125-preview
-summary: Una shell interattiva di Rust, o un REPL (Read-Eval-Print Loop), ti permette
-  di eseguire codice Rust al volo, vedendo risultati istantanei, perfetto per sperimentare
-  o imparare.
+summary: Al momento, Rust non ha un REPL ufficiale incluso.
 title: Utilizzo di un interprete interattivo (REPL)
 weight: 34
 ---

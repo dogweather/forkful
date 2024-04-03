@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:18.185528-07:00
-description: "Werken met CSV (Comma-Separated Values), betekent het lezen en schrijven\
-  \ van gegevens in tabelvorm. Programmeurs gebruiken CSV vanwege de eenvoud en brede\u2026"
+description: "Hoe: Om CSV in Haskell te hanteren, kun je de `cassava` bibliotheek\
+  \ gebruiken. Installeer het door `cassava` toe te voegen aan je `.cabal` bestand\
+  \ of door\u2026"
 lastmod: '2024-03-13T22:44:50.874687-06:00'
 model: gpt-4-0125-preview
-summary: Werken met CSV (Comma-Separated Values), betekent het lezen en schrijven
-  van gegevens in tabelvorm.
+summary: Om CSV in Haskell te hanteren, kun je de `cassava` bibliotheek gebruiken.
 title: Werken met CSV
 weight: 37
 ---

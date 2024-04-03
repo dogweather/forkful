@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:43.830932-07:00
-description: "Capitalizar uma string envolve converter a primeira letra da string\
-  \ para mai\xFAscula enquanto garante que as restantes letras estejam em min\xFA\
-  scula. Essa\u2026"
+description: "Como fazer: Elixir oferece uma maneira direta de capitalizar strings\
+  \ usando suas fun\xE7\xF5es integradas, sem a necessidade de bibliotecas de terceiros.\
+  \ Aqui\u2026"
 lastmod: '2024-03-13T22:44:46.221817-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizar uma string envolve converter a primeira letra da string para\
-  \ mai\xFAscula enquanto garante que as restantes letras estejam em min\xFAscula."
+summary: "Elixir oferece uma maneira direta de capitalizar strings usando suas fun\xE7\
+  \xF5es integradas, sem a necessidade de bibliotecas de terceiros."
 title: Capitalizando uma string
 weight: 2
 ---

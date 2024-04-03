@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:09.676438-07:00
-description: "Att skriva till en textfil i Haskell handlar om att programmatiskt skapa\
-  \ eller uppdatera filer med textinneh\xE5ll. Programmerare g\xF6r detta f\xF6r att\
-  \ bevara\u2026"
+description: "Hur man g\xF6r: Haskells standard Prelude tillhandah\xE5ller grundl\xE4\
+  ggande st\xF6d f\xF6r att skriva till filer med funktionerna `writeFile` och `appendFile`\
+  \ fr\xE5n\u2026"
 lastmod: '2024-03-13T22:44:37.973114-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva till en textfil i Haskell handlar om att programmatiskt skapa\
-  \ eller uppdatera filer med textinneh\xE5ll."
+summary: "Haskells standard Prelude tillhandah\xE5ller grundl\xE4ggande st\xF6d f\xF6\
+  r att skriva till filer med funktionerna `writeFile` och `appendFile` fr\xE5n modulen\
+  \ `System.IO`."
 title: Att skriva en textfil
 weight: 24
 ---

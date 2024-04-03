@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:14.328162-07:00
-description: "Elm n\xE3o possui suporte nativo para YAML, um formato de serializa\xE7\
-  \xE3o de dados frequentemente utilizado para arquivos de configura\xE7\xE3o ou compartilhamento\
-  \ de\u2026"
+description: "Como Fazer: Para lidar com YAML em Elm, normalmente \xE9 preciso converter\
+  \ YAML para JSON fora do Elm e ent\xE3o usar a funcionalidade de decodificador JSON\u2026"
 lastmod: '2024-03-13T22:44:46.519766-06:00'
 model: gpt-4-0125-preview
-summary: "Elm n\xE3o possui suporte nativo para YAML, um formato de serializa\xE7\xE3\
-  o de dados frequentemente utilizado para arquivos de configura\xE7\xE3o ou compartilhamento\
-  \ de dados, devido \xE0 sua forte \xEAnfase em seguran\xE7a de tipos e resultados\
-  \ previs\xEDveis."
+summary: "Para lidar com YAML em Elm, normalmente \xE9 preciso converter YAML para\
+  \ JSON fora do Elm e ent\xE3o usar a funcionalidade de decodificador JSON integrada\
+  \ do Elm para trabalhar com os dados."
 title: Trabalhando com YAML
 weight: 41
 ---

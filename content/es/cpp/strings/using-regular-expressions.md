@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:03.680713-07:00
-description: "Las expresiones regulares en C++ son secuencias de caracteres que definen\
-  \ un patr\xF3n de b\xFAsqueda, utilizadas para el emparejamiento o manipulaci\xF3\
-  n de\u2026"
+description: "C\xF3mo hacerlo: C++11 introdujo soporte para expresiones regulares\
+  \ en la biblioteca est\xE1ndar, `<regex>`, ofreciendo un marco robusto para la b\xFA\
+  squeda y\u2026"
 lastmod: '2024-03-13T22:44:59.365572-06:00'
 model: gpt-4-0125-preview
-summary: "Las expresiones regulares en C++ son secuencias de caracteres que definen\
-  \ un patr\xF3n de b\xFAsqueda, utilizadas para el emparejamiento o manipulaci\xF3\
+summary: "C++11 introdujo soporte para expresiones regulares en la biblioteca est\xE1\
+  ndar, `<regex>`, ofreciendo un marco robusto para la b\xFAsqueda y manipulaci\xF3\
   n de cadenas."
 title: Usando expresiones regulares
 weight: 11

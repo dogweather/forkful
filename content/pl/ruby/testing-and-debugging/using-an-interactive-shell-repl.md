@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:17:46.038921-07:00
-description: "Interaktywna konsola, czyli REPL (Read-Eval-Print Loop - Cykl Czytaj-Wykonaj-Wydrukuj),\
-  \ pozwala testowa\u0107 kod w czasie rzeczywistym. Programi\u015Bci u\u017Cywaj\u0105\
-  \u2026"
+description: "Jak to zrobi\u0107: REPL Ruby'ego nazywa si\u0119 IRB (Interaktywne\
+  \ Ruby). Wskocz i wypr\xF3buj Ruby prosto z terminala."
 lastmod: '2024-03-13T22:44:35.934009-06:00'
 model: gpt-4-0125-preview
-summary: "Interaktywna konsola, czyli REPL (Read-Eval-Print Loop - Cykl Czytaj-Wykonaj-Wydrukuj),\
-  \ pozwala testowa\u0107 kod w czasie rzeczywistym."
+summary: "REPL Ruby'ego nazywa si\u0119 IRB (Interaktywne Ruby)."
 title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---

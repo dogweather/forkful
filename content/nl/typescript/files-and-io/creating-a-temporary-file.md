@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:09.968231-07:00
-description: "Een tijdelijk bestand maken betekent het cre\xEBren van een bestand\
-  \ dat slechts voor korte tijd nodig is, meestal tijdens de uitvoering van een programma.\u2026"
+description: "Hoe: Een tijdelijk bestand in TypeScript maken is niet ingebouwd, maar\
+  \ je kunt de `fs` module in Node.js gebruiken om de klus te klaren. Hier is een\u2026"
 lastmod: '2024-03-13T22:44:50.570968-06:00'
 model: gpt-4-0125-preview
-summary: "Een tijdelijk bestand maken betekent het cre\xEBren van een bestand dat\
-  \ slechts voor korte tijd nodig is, meestal tijdens de uitvoering van een programma."
+summary: Een tijdelijk bestand in TypeScript maken is niet ingebouwd, maar je kunt
+  de `fs` module in Node.js gebruiken om de klus te klaren.
 title: Een tijdelijk bestand aanmaken
 weight: 21
 ---

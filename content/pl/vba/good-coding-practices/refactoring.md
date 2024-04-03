@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:12.995886-07:00
-description: "Refaktoryzacja w programowaniu polega na modyfikowaniu struktury kodu\
-  \ bez zmiany jego zachowania, aby poprawi\u0107 aspekty takie jak czytelno\u015B\
-  \u0107, \u0142atwo\u015B\u0107\u2026"
+description: "Jak to zrobi\u0107: Rozwa\u017Cmy podstawowy przyk\u0142ad w Visual\
+  \ Basic for Applications (VBA), gdzie mamy subrutyn\u0119, kt\xF3ra drukuje szczeg\xF3\
+  \u0142y pracownika. Pocz\u0105tkowo\u2026"
 lastmod: '2024-03-13T22:44:35.241310-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktoryzacja w programowaniu polega na modyfikowaniu struktury kodu bez\
-  \ zmiany jego zachowania, aby poprawi\u0107 aspekty takie jak czytelno\u015B\u0107\
-  , \u0142atwo\u015B\u0107 utrzymania czy wydajno\u015B\u0107."
+summary: "Rozwa\u017Cmy podstawowy przyk\u0142ad w Visual Basic for Applications (VBA),\
+  \ gdzie mamy subrutyn\u0119, kt\xF3ra drukuje szczeg\xF3\u0142y pracownika."
 title: Refaktoryzacja
 weight: 19
 ---

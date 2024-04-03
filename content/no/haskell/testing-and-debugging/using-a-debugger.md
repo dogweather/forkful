@@ -1,8 +1,8 @@
 ---
 date: 2024-01-26 03:49:24.935174-07:00
-description: "La oss ta en tur med GHCi, Haskell sitt interaktive milj\xF8 som kan\
-  \ fungere som en grunnleggende feils\xF8ker. Du fyrer det opp med Haskell-koden\
-  \ din og\u2026"
+description: "Hvordan: La oss ta en tur med GHCi, Haskell sitt interaktive milj\xF8\
+  \ som kan fungere som en grunnleggende feils\xF8ker. Du fyrer det opp med Haskell-koden\
+  \ din\u2026"
 lastmod: '2024-03-13T22:44:40.846179-06:00'
 model: gpt-4-0125-preview
 summary: "La oss ta en tur med GHCi, Haskell sitt interaktive milj\xF8 som kan fungere\

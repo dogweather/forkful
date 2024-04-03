@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 00:54:55.906729-07:00
-description: "El manejo de errores es c\xF3mo gestionas cuando las cosas no van bien\
-  \ en tu c\xF3digo. Es clave porque ayuda a que tus programas fallen de manera controlada\
-  \ e\u2026"
+description: "C\xF3mo hacerlo: Aqu\xED est\xE1 el cl\xE1sico bloque `try-catch`."
 lastmod: '2024-03-13T22:44:59.466055-06:00'
 model: gpt-4-1106-preview
-summary: "El manejo de errores es c\xF3mo gestionas cuando las cosas no van bien en\
-  \ tu c\xF3digo."
+summary: "Aqu\xED est\xE1 el cl\xE1sico bloque `try-catch`."
 title: Manejo de errores
 weight: 16
 ---

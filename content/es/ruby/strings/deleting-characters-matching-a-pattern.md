@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:43:06.018261-07:00
-description: "Eliminar caracteres que coinciden con un patr\xF3n es simplemente decirle\
-  \ a tu programa que busque y quite ciertas secuencias o tipos de caracteres de una\u2026"
+description: "C\xF3mo: Ruby es genial para tratar con patrones, y aqu\xED van unos\
+  \ ejemplos claros."
 lastmod: '2024-03-13T22:44:59.574496-06:00'
 model: gpt-4-1106-preview
-summary: "Eliminar caracteres que coinciden con un patr\xF3n es simplemente decirle\
-  \ a tu programa que busque y quite ciertas secuencias o tipos de caracteres de una\
-  \ cadena de texto."
+summary: "Ruby es genial para tratar con patrones, y aqu\xED van unos ejemplos claros."
 title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---

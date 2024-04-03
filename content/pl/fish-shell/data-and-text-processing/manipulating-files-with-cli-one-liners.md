@@ -1,13 +1,12 @@
 ---
 date: 2024-01-27 16:21:07.968693-07:00
-description: "W \u015Bwiecie programowania, szczeg\xF3lnie podczas pracy z systemami\
-  \ Linux lub Unix, manipulacja plikami bezpo\u015Brednio z poziomu interfejsu linii\
-  \ komend (CLI)\u2026"
+description: "Jak to zrobi\u0107: Manipulacja plikami w Fish Shell jest zar\xF3wno\
+  \ intuicyjna, jak i pot\u0119\u017Cna. Oto kilka przyk\u0142ad\xF3w, kt\xF3re pokazuj\u0105\
+  \ jego mo\u017Cliwo\u015Bci: 1.\u2026"
 lastmod: '2024-03-13T22:44:35.835723-06:00'
 model: gpt-4-0125-preview
-summary: "W \u015Bwiecie programowania, szczeg\xF3lnie podczas pracy z systemami Linux\
-  \ lub Unix, manipulacja plikami bezpo\u015Brednio z poziomu interfejsu linii komend\
-  \ (CLI) nie jest tylko kwesti\u0105 wygody - to narz\u0119dzie mocy."
+summary: "Manipulacja plikami w Fish Shell jest zar\xF3wno intuicyjna, jak i pot\u0119\
+  \u017Cna."
 title: "Manipulowanie plikami za pomoc\u0105 jednolinijkowc\xF3w CLI"
 weight: 31
 ---

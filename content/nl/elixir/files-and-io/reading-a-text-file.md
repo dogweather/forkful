@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:59.747594-07:00
-description: "Een tekstbestand lezen betekent gegevens uit een bestand in je programma\
-  \ trekken. Programmeurs doen dit om de inhoud te verwerken of te analyseren, zoals\u2026"
+description: 'Hoe: Hier is hoe je de volledige inhoud van een tekstbestand genaamd
+  `example.txt` leest.'
 lastmod: '2024-03-13T22:44:50.479439-06:00'
 model: gpt-4-0125-preview
-summary: Een tekstbestand lezen betekent gegevens uit een bestand in je programma
-  trekken.
+summary: Hier is hoe je de volledige inhoud van een tekstbestand genaamd `example.txt`
+  leest.
 title: Een tekstbestand lezen
 weight: 22
 ---

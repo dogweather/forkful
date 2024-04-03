@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:46.343652-07:00
-description: "Das Schreiben auf den Standardfehler (stderr) bezieht sich auf das Ausgeben\
-  \ von Fehlermeldungen und Diagnosen auf einem separaten Stream, abgegrenzt vom\u2026"
+description: "Wie: In Kotlin kann das Schreiben auf stderr mit `System.err.println()`\
+  \ erreicht werden. Diese Methode \xE4hnelt `System.out.println()`, leitet die Ausgabe\u2026"
 lastmod: '2024-03-13T22:44:53.862480-06:00'
 model: gpt-4-0125-preview
-summary: "Das Schreiben auf den Standardfehler (stderr) bezieht sich auf das Ausgeben\
-  \ von Fehlermeldungen und Diagnosen auf einem separaten Stream, abgegrenzt vom Standardausgabestream\
-  \ (stdout), was eine bessere Fehlerbehandlung und Protokollierung erm\xF6glicht."
+summary: In Kotlin kann das Schreiben auf stderr mit `System.err.println()` erreicht
+  werden.
 title: Schreiben auf Standardfehler
 weight: 25
 ---

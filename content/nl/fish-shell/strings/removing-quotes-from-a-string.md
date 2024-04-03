@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:10.928067-07:00
-description: "Het verwijderen van aanhalingstekens uit een string gaat over het strippen\
-  \ van die lastige enkele (' ') of dubbele (\" \") aanhalingstekens van je\u2026"
+description: 'Hoe te: Fish heeft ingebouwde magie voor dit soort taak. Gebruik de
+  `string` functie zonder een druppel zweet. Bekijk deze spreuken.'
 lastmod: '2024-03-13T22:44:51.233243-06:00'
 model: gpt-4-0125-preview
-summary: Het verwijderen van aanhalingstekens uit een string gaat over het strippen
-  van die lastige enkele (' ') of dubbele (" ") aanhalingstekens van je tekstgegevens.
+summary: Fish heeft ingebouwde magie voor dit soort taak.
 title: Quotes verwijderen uit een string
 weight: 9
 ---

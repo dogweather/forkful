@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:08.789897-07:00
-description: "Regul\xE4re Ausdr\xFCcke (Regex) sind Muster, die verwendet werden,\
-  \ um Kombinationen von Zeichen in Zeichenketten zu finden. Programmierer nutzen\
-  \ sie f\xFCr die\u2026"
+description: "Wie geht das: Die Verwendung von Regex in Python erfolgt \xFCber das\
+  \ Modul `re`, das eine Reihe von Funktionen zur Verarbeitung von Text mit regul\xE4\
+  ren\u2026"
 lastmod: '2024-03-13T22:44:53.368186-06:00'
 model: gpt-4-0125-preview
-summary: "Regul\xE4re Ausdr\xFCcke (Regex) sind Muster, die verwendet werden, um Kombinationen\
-  \ von Zeichen in Zeichenketten zu finden."
+summary: "Die Verwendung von Regex in Python erfolgt \xFCber das Modul `re`, das eine\
+  \ Reihe von Funktionen zur Verarbeitung von Text mit regul\xE4ren Ausdr\xFCcken\
+  \ bereitstellt."
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

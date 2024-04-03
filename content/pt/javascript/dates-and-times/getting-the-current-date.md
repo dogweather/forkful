@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:45.851729-07:00
-description: "Obter a data atual em JavaScript \xE9 uma tarefa fundamental, envolvendo\
-  \ a recupera\xE7\xE3o e, possivelmente, a manipula\xE7\xE3o da data e hora de hoje.\
-  \ Programadores\u2026"
+description: "Como fazer: No JavaScript puro, o objeto `Date` \xE9 usado para trabalhar\
+  \ com datas e horas. Aqui est\xE1 como voc\xEA pode obter a data e hora atuais."
 lastmod: '2024-03-13T22:44:46.972894-06:00'
 model: gpt-4-0125-preview
-summary: "Obter a data atual em JavaScript \xE9 uma tarefa fundamental, envolvendo\
-  \ a recupera\xE7\xE3o e, possivelmente, a manipula\xE7\xE3o da data e hora de hoje."
+summary: "No JavaScript puro, o objeto `Date` \xE9 usado para trabalhar com datas\
+  \ e horas."
 title: Obtendo a data atual
 weight: 29
 ---

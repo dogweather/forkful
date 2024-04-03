@@ -2,16 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:45.100648-07:00
-description: "Chuy\u1EC3n ch\u1EEF c\xE1i \u0111\u1EA7u ti\xEAn c\u1EE7a m\u1ED7i\
-  \ t\u1EEB trong chu\u1ED7i th\xE0nh ch\u1EEF in hoa \u0111\u01B0\u1EE3c g\u1ECD\
-  i l\xE0 vi\u1EC7c vi\u1EBFt hoa chu\u1ED7i. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111\
-  i\u1EC1u n\xE0y \u0111\u1EC3 \u0111\u1ECBnh d\u1EA1ng, \u0111\u1ED3ng nh\u1EA5t,\
-  \ v\xE0\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Bash, b\u1EA1n c\xF3 th\u1EC3 vi\u1EBF\
+  t hoa chu\u1ED7i theo nhi\u1EC1u c\xE1ch. D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9\
+  t c\xE1ch truy\u1EC1n th\u1ED1ng s\u1EED d\u1EE5ng `awk`."
 lastmod: '2024-03-13T22:44:36.854768-06:00'
 model: gpt-4-0125-preview
-summary: "Chuy\u1EC3n ch\u1EEF c\xE1i \u0111\u1EA7u ti\xEAn c\u1EE7a m\u1ED7i t\u1EEB\
-  \ trong chu\u1ED7i th\xE0nh ch\u1EEF in hoa \u0111\u01B0\u1EE3c g\u1ECDi l\xE0 vi\u1EC7\
-  c vi\u1EBFt hoa chu\u1ED7i."
+summary: "Trong Bash, b\u1EA1n c\xF3 th\u1EC3 vi\u1EBFt hoa chu\u1ED7i theo nhi\u1EC1\
+  u c\xE1ch."
 title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
 weight: 2
 ---

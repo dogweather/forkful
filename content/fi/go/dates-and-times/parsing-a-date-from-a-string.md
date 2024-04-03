@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:26.554424-07:00
-description: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta Go:ssa tarkoittaa\
-  \ p\xE4iv\xE4m\xE4\xE4r\xE4n muuntamista tekstist\xE4 k\xE4ytt\xF6kelpoisempaan\
-  \ muotoon (esim. `time.Time`). Ohjelmoijat\u2026"
+description: "Kuinka: Go tarjoaa vankan tuen p\xE4iv\xE4m\xE4\xE4rien ja aikojen j\xE4\
+  sent\xE4miseen `time`-pakettinsa kautta. Avain on ymm\xE4rt\xE4\xE4 Gon viitep\xE4\
+  iv\xE4m\xE4\xE4r\xE4n muoto: `Mon Jan 2\u2026"
 lastmod: '2024-03-13T22:44:56.060799-06:00'
 model: gpt-4-0125-preview
-summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta Go:ssa tarkoittaa\
-  \ p\xE4iv\xE4m\xE4\xE4r\xE4n muuntamista tekstist\xE4 k\xE4ytt\xF6kelpoisempaan\
-  \ muotoon (esim."
+summary: "Go tarjoaa vankan tuen p\xE4iv\xE4m\xE4\xE4rien ja aikojen j\xE4sent\xE4\
+  miseen `time`-pakettinsa kautta."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
 weight: 30
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-02-03 19:03:07.502456-07:00
-description: "Writing a text file in Arduino involves saving data to a file on an\
-  \ SD card or similar storage module, often for data logging purposes. Programmers\
-  \ do\u2026"
+description: "How to: To write to a text file on an SD card using Arduino, you first\
+  \ need to include the `SD.h` library, which provides the necessary functions to\u2026"
 lastmod: '2024-03-13T22:45:00.337458-06:00'
 model: gpt-4-0125-preview
-summary: Writing a text file in Arduino involves saving data to a file on an SD card
-  or similar storage module, often for data logging purposes.
+summary: To write to a text file on an SD card using Arduino, you first need to include
+  the `SD.h` library, which provides the necessary functions to interact with SD cards.
 title: Writing a text file
 weight: 24
 ---

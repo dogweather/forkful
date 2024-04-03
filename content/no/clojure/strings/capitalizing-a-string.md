@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:53.738362-07:00
-description: "\xC5 sette stor bokstav i en streng inneb\xE6rer \xE5 endre strengen\
-  \ slik at dens f\xF8rste tegn er en stor bokstav, mens resten av strengen forblir\
-  \ uendret.\u2026"
+description: "Hvordan: Clojure, som er et JVM-spr\xE5k, lar deg bruke Java String-metoder\
+  \ direkte. Her er et grunnleggende eksempel p\xE5 hvordan du setter stor bokstav\
+  \ i en\u2026"
 lastmod: '2024-03-13T22:44:40.386166-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 sette stor bokstav i en streng inneb\xE6rer \xE5 endre strengen slik\
-  \ at dens f\xF8rste tegn er en stor bokstav, mens resten av strengen forblir uendret."
+summary: "Clojure, som er et JVM-spr\xE5k, lar deg bruke Java String-metoder direkte."
 title: Sette stor bokstav i en streng
 weight: 2
 ---

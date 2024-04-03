@@ -2,12 +2,14 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:36.175232-07:00
-description: "YAML, lyhenne sanoista YAML Ain't Markup Language, on ihmisluettava\
-  \ tietojen serialisointiformaatti. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 asetustiedostoihin,\u2026"
+description: "Kuinka: Dartissa YAML:n k\xE4ytt\xF6 tyypillisesti edellytt\xE4\xE4\
+  \ kolmannen osapuolen kirjaston k\xE4ytt\xF6\xE4, koska kieli ei sis\xE4ll\xE4 sis\xE4\
+  \xE4nrakennettuja YAML-\u2026"
 lastmod: '2024-03-13T22:44:56.293580-06:00'
 model: gpt-4-0125-preview
-summary: YAML, lyhenne sanoista YAML Ain't Markup Language, on ihmisluettava tietojen
-  serialisointiformaatti.
+summary: "Dartissa YAML:n k\xE4ytt\xF6 tyypillisesti edellytt\xE4\xE4 kolmannen osapuolen\
+  \ kirjaston k\xE4ytt\xF6\xE4, koska kieli ei sis\xE4ll\xE4 sis\xE4\xE4nrakennettuja\
+  \ YAML-j\xE4sennysominaisuuksia."
 title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---

@@ -2,16 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:34.902502-07:00
-description: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1\
-  \ b\u1EA3n bao g\u1ED3m vi\u1EC7c \u0111\xEDnh k\xE8m t\xEAn ng\u01B0\u1EDDi d\xF9\
-  ng v\xE0 m\u1EADt kh\u1EA9u v\xE0o m\u1ED9t y\xEAu c\u1EA7u \u0111\u1EC3 truy c\u1EAD\
-  p v\xE0o n\u1ED9i dung web \u0111\u01B0\u1EE3c b\u1EA3o v\u1EC7. L\u1EADp\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1\
+  ch g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3\
+  n trong Swift."
 lastmod: '2024-03-13T22:44:37.096763-06:00'
 model: gpt-4-0125-preview
-summary: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1\
-  \ b\u1EA3n bao g\u1ED3m vi\u1EC7c \u0111\xEDnh k\xE8m t\xEAn ng\u01B0\u1EDDi d\xF9\
-  ng v\xE0 m\u1EADt kh\u1EA9u v\xE0o m\u1ED9t y\xEAu c\u1EA7u \u0111\u1EC3 truy c\u1EAD\
-  p v\xE0o n\u1ED9i dung web \u0111\u01B0\u1EE3c b\u1EA3o v\u1EC7."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch g\u1EEDi m\u1ED9t y\xEAu c\u1EA7\
+  u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3n trong Swift."
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3\
   n"
 weight: 45

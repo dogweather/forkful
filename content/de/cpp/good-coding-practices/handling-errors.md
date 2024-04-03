@@ -1,10 +1,10 @@
 ---
 date: 2024-01-26 00:49:32.716273-07:00
-description: "Fehlerbehandlung bedeutet, f\xFCr den Fall zu planen, dass etwas schiefgeht.\
-  \ Sie ist wichtig, weil sie Abst\xFCrze verhindert und Ihre Software robust und\u2026"
+description: 'Wie geht das: Hier ist ein grundlegender try-catch-Block, um eine Ausnahme
+  zu behandeln.'
 lastmod: '2024-03-13T22:44:54.192209-06:00'
 model: gpt-4-1106-preview
-summary: "Fehlerbehandlung bedeutet, f\xFCr den Fall zu planen, dass etwas schiefgeht."
+summary: Hier ist ein grundlegender try-catch-Block, um eine Ausnahme zu behandeln.
 title: Fehlerbehandlung
 weight: 16
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:43.834118-07:00
-description: "Scrivere su standard error (stderr) in C# implica dirigere i messaggi\
-  \ di errore e le diagnostiche separatamente dall'output regolare (stdout) per aiutare\u2026"
+description: "Come fare: In C#, scrivere su standard error pu\xF2 essere ottenuto\
+  \ utilizzando il flusso `Console.Error`. Questo flusso \xE8 usato specificamente\
+  \ per messaggi\u2026"
 lastmod: '2024-03-13T22:44:43.449881-06:00'
 model: gpt-4-0125-preview
-summary: Scrivere su standard error (stderr) in C# implica dirigere i messaggi di
-  errore e le diagnostiche separatamente dall'output regolare (stdout) per aiutare
-  utenti e sviluppatori a distinguere tra l'output normale del programma e le notifiche
-  di errore.
+summary: "In C#, scrivere su standard error pu\xF2 essere ottenuto utilizzando il\
+  \ flusso `Console.Error`."
 title: Scrivere sull'errore standard
 weight: 25
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:36.615463-07:00
-description: "Assosiatiiviset taulukot, jotka Visual Basic for Applications (VBA)\
-  \ -ymp\xE4rist\xF6ss\xE4 tunnetaan usein sanakirjoina, mahdollistavat ohjelmoijien\
-  \ luoda avain-\u2026"
+description: "Kuinka: VBA:ssa `Dictionary`-objekti tarjoaa toiminnallisuutta, joka\
+  \ on samankaltaista kuin assosiatiiviset taulukot. Sinun on ensin lis\xE4tt\xE4\
+  v\xE4 viittaus\u2026"
 lastmod: '2024-03-13T22:44:56.392811-06:00'
 model: gpt-4-0125-preview
-summary: "Assosiatiiviset taulukot, jotka Visual Basic for Applications (VBA) -ymp\xE4\
-  rist\xF6ss\xE4 tunnetaan usein sanakirjoina, mahdollistavat ohjelmoijien luoda avain-arvo\
-  \ -pareja sis\xE4lt\xE4vi\xE4 kokoelmia."
+summary: VBA:ssa `Dictionary`-objekti tarjoaa toiminnallisuutta, joka on samankaltaista
+  kuin assosiatiiviset taulukot.
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---

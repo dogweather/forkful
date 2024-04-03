@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:37.760875-07:00
-description: "Een string omzetten naar kleine letters betekent elke letter in de string\
-  \ veranderen in een kleine letter. Het is handig voor hoofdletterongevoelige\u2026"
+description: 'Hoe te: .'
 lastmod: '2024-03-13T22:44:50.581078-06:00'
 model: gpt-4-0125-preview
-summary: Een string omzetten naar kleine letters betekent elke letter in de string
-  veranderen in een kleine letter.
+summary: .
 title: Een string omzetten naar kleine letters
 weight: 4
 ---

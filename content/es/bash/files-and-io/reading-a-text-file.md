@@ -1,10 +1,12 @@
 ---
 date: 2024-01-20 17:53:50.132238-07:00
-description: "Leer un archivo de texto significa acceder a su contenido usando un\
-  \ programa. Los programadores lo hacen para procesar o analizar los datos,\u2026"
+description: "C\xF3mo hacerlo: Para leer un archivo de texto en Bash, puedes usar\
+  \ `cat`, `less`, o un bucle mientras lees l\xEDnea por l\xEDnea. Aqu\xED tienes\
+  \ algunos ejemplos."
 lastmod: '2024-03-13T22:44:59.264433-06:00'
 model: gpt-4-1106-preview
-summary: Leer un archivo de texto significa acceder a su contenido usando un programa.
+summary: "Para leer un archivo de texto en Bash, puedes usar `cat`, `less`, o un bucle\
+  \ mientras lees l\xEDnea por l\xEDnea."
 title: Lectura de un archivo de texto
 weight: 22
 ---

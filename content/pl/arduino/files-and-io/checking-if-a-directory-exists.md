@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:59.119314-07:00
-description: "W kontek\u015Bcie programowania Arduino, sprawdzenie, czy katalog istnieje\
-  \ na karcie SD lub podobnym module pami\u0119ci, pozwala na odczytywanie lub zapisywanie\u2026"
+description: "Jak to zrobi\u0107: Arduino natywnie nie wspiera skomplikowanych operacji\
+  \ na systemie plik\xF3w od razu po wyj\u0119ciu z pude\u0142ka. Jednak\u017Ce, przy\
+  \ u\u017Cyciu biblioteki SD,\u2026"
 lastmod: '2024-03-13T22:44:35.685845-06:00'
 model: gpt-4-0125-preview
-summary: "W kontek\u015Bcie programowania Arduino, sprawdzenie, czy katalog istnieje\
-  \ na karcie SD lub podobnym module pami\u0119ci, pozwala na odczytywanie lub zapisywanie\
-  \ plik\xF3w bez b\u0142\u0119d\xF3w."
+summary: "Arduino natywnie nie wspiera skomplikowanych operacji na systemie plik\xF3\
+  w od razu po wyj\u0119ciu z pude\u0142ka."
 title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---

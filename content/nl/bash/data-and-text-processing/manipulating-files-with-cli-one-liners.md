@@ -2,14 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:42.584129-07:00
-description: "Bestanden manipuleren met CLI (Command Line Interface) one-liners houdt\
-  \ in dat Bash-scripts of -opdrachten worden gebruikt om acties op bestanden uit\
-  \ te\u2026"
+description: 'Hoe: Hier zijn een paar krachtige one-liners en wat ze kunnen bereiken:
+  1. **Een bestand maken en tekst erin schrijven:**.'
 lastmod: '2024-03-13T22:44:50.976805-06:00'
 model: gpt-4-0125-preview
-summary: Bestanden manipuleren met CLI (Command Line Interface) one-liners houdt in
-  dat Bash-scripts of -opdrachten worden gebruikt om acties op bestanden uit te voeren,
-  zoals ze maken, lezen, updaten of verwijderen, allemaal vanuit de terminal.
+summary: Hier zijn een paar krachtige one-liners en wat ze kunnen bereiken.
 title: Bestanden manipuleren met CLI one-liners
 weight: 31
 ---

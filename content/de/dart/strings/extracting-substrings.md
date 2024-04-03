@@ -2,12 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:38.950998-07:00
-description: "Das Extrahieren von Teilzeichenketten bezieht sich auf das Abrufen spezifischer\
-  \ Abschnitte einer Zeichenkette basierend auf ihren Positionen oder Mustern.\u2026"
+description: "Wie: In Dart k\xF6nnen Sie verschiedene Methoden verwenden, um Teilzeichenketten\
+  \ zu extrahieren, wie `substring()`, `split()` und regul\xE4re Ausdr\xFCcke. Jede\u2026"
 lastmod: '2024-03-13T22:44:53.568195-06:00'
 model: gpt-4-0125-preview
-summary: Das Extrahieren von Teilzeichenketten bezieht sich auf das Abrufen spezifischer
-  Abschnitte einer Zeichenkette basierend auf ihren Positionen oder Mustern.
+summary: "In Dart k\xF6nnen Sie verschiedene Methoden verwenden, um Teilzeichenketten\
+  \ zu extrahieren, wie `substring()`, `split()` und regul\xE4re Ausdr\xFCcke."
 title: Teilstrings extrahieren
 weight: 6
 ---

@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:10.651349-07:00
-description: "Das L\xF6schen von Zeichen, die einem spezifischen Muster in Strings\
-  \ in C entsprechen, bedeutet, alle Instanzen bestimmter Zeichen zu entfernen, die\u2026"
+description: "Wie: C verf\xFCgt im Gegensatz zu einigen h\xF6heren Sprachen nicht\
+  \ \xFCber eine integrierte Funktion zum direkten L\xF6schen von Zeichen aus einem\
+  \ String basierend\u2026"
 lastmod: '2024-03-13T22:44:54.335075-06:00'
 model: gpt-4-0125-preview
-summary: "Das L\xF6schen von Zeichen, die einem spezifischen Muster in Strings in\
-  \ C entsprechen, bedeutet, alle Instanzen bestimmter Zeichen zu entfernen, die vordefinierte\
-  \ Kriterien erf\xFCllen."
+summary: "C verf\xFCgt im Gegensatz zu einigen h\xF6heren Sprachen nicht \xFCber eine\
+  \ integrierte Funktion zum direkten L\xF6schen von Zeichen aus einem String basierend\
+  \ auf einem Muster."
 title: "Zeichen l\xF6schen, die einem Muster entsprechen"
 weight: 5
 ---

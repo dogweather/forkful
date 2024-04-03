@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:13.772887-07:00
-description: "Virheenk\xE4sittely Google Apps Scriptiss\xE4 tarkoittaa poikkeustilanteiden\
-  \ tai virheiden ennakointia, kiinniottamista ja niihin vastaamista koodin suorituksen\u2026"
+description: "Kuinka: Google Apps Script, koska se perustuu JavaScriptiin, mahdollistaa\
+  \ perinteisen `try-catch`-lauseen k\xE4yt\xF6n virheiden k\xE4sittelyyn, sek\xE4\
+  \u2026"
 lastmod: '2024-03-13T22:44:56.106042-06:00'
 model: gpt-4-0125-preview
-summary: "Virheenk\xE4sittely Google Apps Scriptiss\xE4 tarkoittaa poikkeustilanteiden\
-  \ tai virheiden ennakointia, kiinniottamista ja niihin vastaamista koodin suorituksen\
-  \ aikana."
+summary: "Google Apps Script, koska se perustuu JavaScriptiin, mahdollistaa perinteisen\
+  \ `try-catch`-lauseen k\xE4yt\xF6n virheiden k\xE4sittelyyn, sek\xE4 `finally`-lauseen,\
+  \ jos loppusiivous on tarpeen riippumatta siit\xE4, tapahtuiko virhe tai ei."
 title: "Virheiden k\xE4sittely"
 weight: 16
 ---

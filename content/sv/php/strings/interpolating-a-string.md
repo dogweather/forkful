@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:51:26.930779-07:00
-description: "Interpolera en str\xE4ng inneb\xE4r att infoga variabelv\xE4rden direkt\
-  \ i str\xE4ngen. Programmerare g\xF6r detta f\xF6r att smidigt kunna bygga dynamiska\
-  \ texter utan att\u2026"
+description: "S\xE5 h\xE4r g\xF6r du: ."
 lastmod: '2024-03-13T22:44:37.982836-06:00'
 model: gpt-4-1106-preview
-summary: "Interpolera en str\xE4ng inneb\xE4r att infoga variabelv\xE4rden direkt\
-  \ i str\xE4ngen."
+summary: .
 title: "Interpolera en str\xE4ng"
 weight: 8
 ---

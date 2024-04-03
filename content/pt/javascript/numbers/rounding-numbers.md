@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:45:34.382177-07:00
-description: "Arredondar \xE9 eliminar o ru\xEDdo ap\xF3s um determinado ponto em\
-  \ um n\xFAmero. Programadores arredondam para controlar a precis\xE3o, gerenciar\
-  \ mem\xF3ria ou tornar a\u2026"
+description: "Como fazer: Aqui est\xE1 como voc\xEA arredonda n\xFAmeros em JavaScript\
+  \ usando `Math.round()`, `Math.ceil()`, e `Math.floor()`."
 lastmod: '2024-03-13T22:44:46.957574-06:00'
 model: gpt-4-0125-preview
-summary: "Arredondar \xE9 eliminar o ru\xEDdo ap\xF3s um determinado ponto em um n\xFA\
-  mero."
+summary: "Aqui est\xE1 como voc\xEA arredonda n\xFAmeros em JavaScript usando `Math.round()`,\
+  \ `Math.ceil()`, e `Math.floor()`."
 title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---

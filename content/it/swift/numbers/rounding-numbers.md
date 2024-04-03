@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 03:46:52.871494-07:00
-description: "Arrotondare i numeri significa approssimare un valore numerico a una\
-  \ precisione specifica, tipicamente per rimuovere decimali indesiderati. I\u2026"
+description: 'Come fare: Swift offre diversi modi per arrotondare i numeri. Ecco un
+  assaggio.'
 lastmod: '2024-03-13T22:44:43.765417-06:00'
 model: gpt-4-0125-preview
-summary: Arrotondare i numeri significa approssimare un valore numerico a una precisione
-  specifica, tipicamente per rimuovere decimali indesiderati.
+summary: Swift offre diversi modi per arrotondare i numeri.
 title: Arrotondamento dei numeri
 weight: 13
 ---

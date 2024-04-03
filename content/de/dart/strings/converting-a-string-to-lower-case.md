@@ -2,13 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:53:47.325517-07:00
-description: "Das Umwandeln eines Strings in Kleinbuchstaben ist eine grundlegende\
-  \ Operation, die das Transformieren aller Zeichen eines gegebenen Strings in ihre\u2026"
+description: "Wie: In Dart k\xF6nnen Sie einen String mit der Methode `toLowerCase()`\
+  \ der `String`-Klasse in Kleinbuchstaben umwandeln. Diese Methode gibt einen neuen\u2026"
 lastmod: '2024-03-13T22:44:53.565965-06:00'
 model: gpt-4-0125-preview
-summary: "Das Umwandeln eines Strings in Kleinbuchstaben ist eine grundlegende Operation,\
-  \ die das Transformieren aller Zeichen eines gegebenen Strings in ihre Kleinbuchstaben-\xC4\
-  quivalente beinhaltet."
+summary: "In Dart k\xF6nnen Sie einen String mit der Methode `toLowerCase()` der `String`-Klasse\
+  \ in Kleinbuchstaben umwandeln."
 title: Eine Zeichenkette in Kleinbuchstaben umwandeln
 weight: 4
 ---

@@ -1,13 +1,12 @@
 ---
 date: 2024-01-27 20:32:52.201505-07:00
-description: "Generowanie losowych liczb w Bashu zapewnia spos\xF3b na wprowadzenie\
-  \ nieprzewidywalno\u015Bci do skrypt\xF3w, co jest niezb\u0119dne do zada\u0144\
-  \ takich jak generowanie\u2026"
+description: "Jak to zrobi\u0107: W Bashu zmienna `$RANDOM` jest g\u0142\xF3wnym narz\u0119\
+  dziem do generowania losowych liczb. Za ka\u017Cdym razem, gdy si\u0119 do niej\
+  \ odwo\u0142asz, Bash dostarcza\u2026"
 lastmod: '2024-03-13T22:44:35.578540-06:00'
 model: gpt-4-0125-preview
-summary: "Generowanie losowych liczb w Bashu zapewnia spos\xF3b na wprowadzenie nieprzewidywalno\u015B\
-  ci do skrypt\xF3w, co jest niezb\u0119dne do zada\u0144 takich jak generowanie bezpiecznych\
-  \ hase\u0142, symulowanie danych czy programowanie gier."
+summary: "W Bashu zmienna `$RANDOM` jest g\u0142\xF3wnym narz\u0119dziem do generowania\
+  \ losowych liczb."
 title: Generowanie liczb losowych
 weight: 12
 ---

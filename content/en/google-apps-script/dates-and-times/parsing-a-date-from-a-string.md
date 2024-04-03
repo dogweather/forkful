@@ -1,12 +1,11 @@
 ---
 date: 2024-02-01 21:12:09.436172-07:00
-description: "Parsing a date from a string involves converting text that represents\
-  \ a date into a date object, enabling programmers to perform date-related operations\u2026"
+description: "How to: In Google Apps Script, which is based on JavaScript, you have\
+  \ several approaches to parse a date from a string. Below are examples using both\u2026"
 lastmod: '2024-03-13T22:44:59.678377-06:00'
 model: gpt-4-0125-preview
-summary: Parsing a date from a string involves converting text that represents a date
-  into a date object, enabling programmers to perform date-related operations such
-  as comparisons, arithmetic, and formatting.
+summary: In Google Apps Script, which is based on JavaScript, you have several approaches
+  to parse a date from a string.
 title: Parsing a date from a string
 weight: 30
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:02:35.939026-07:00
-description: "Retrieving the current date in programming is a crucial task for a multitude\
-  \ of applications, including logging, timestamping events, or scheduling tasks.\u2026"
+description: "How to: Lua provides the `os.date` function to get the current date\
+  \ and time. The function can be used without arguments to get a formatted string\
+  \ or with\u2026"
 lastmod: '2024-03-13T22:45:00.214961-06:00'
 model: gpt-4-0125-preview
-summary: Retrieving the current date in programming is a crucial task for a multitude
-  of applications, including logging, timestamping events, or scheduling tasks.
+summary: Lua provides the `os.date` function to get the current date and time.
 title: Getting the current date
 weight: 29
 ---

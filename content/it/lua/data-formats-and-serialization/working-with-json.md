@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:14.389597-07:00
-description: "Lavorare con JSON in Lua comporta l'analisi di stringhe in formato JSON\
-  \ per trasformarle in tabelle Lua e viceversa, consentendo un facile scambio di\
-  \ dati\u2026"
+description: "Come fare: Lua non include una libreria integrata per l'elaborazione\
+  \ di JSON. Pertanto, una delle librerie di terze parti pi\xF9 popolari \xE8 `dkjson`,\
+  \ che\u2026"
 lastmod: '2024-03-13T22:44:43.578372-06:00'
 model: gpt-4-0125-preview
-summary: Lavorare con JSON in Lua comporta l'analisi di stringhe in formato JSON per
-  trasformarle in tabelle Lua e viceversa, consentendo un facile scambio di dati tra
-  applicazioni Lua e servizi web o API esterne.
+summary: Lua non include una libreria integrata per l'elaborazione di JSON.
 title: Lavorare con JSON
 weight: 38
 ---

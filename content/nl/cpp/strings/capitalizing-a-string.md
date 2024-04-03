@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:28.925104-07:00
-description: "Het kapitaliseren van een tekenreeks betekent het omzetten van alle\
-  \ tekens in de tekst naar hoofdletters. Programmeurs doen dit voor uniformiteit,\
-  \ nadruk,\u2026"
+description: 'Hoe: C++ biedt verschillende manieren om een string te kapitaliseren,
+  maar hier is een eenvoudige voorbeeld.'
 lastmod: '2024-03-13T22:44:51.096012-06:00'
 model: gpt-4-0125-preview
-summary: Het kapitaliseren van een tekenreeks betekent het omzetten van alle tekens
-  in de tekst naar hoofdletters.
+summary: C++ biedt verschillende manieren om een string te kapitaliseren, maar hier
+  is een eenvoudige voorbeeld.
 title: Een string met hoofdletters maken
 weight: 2
 ---

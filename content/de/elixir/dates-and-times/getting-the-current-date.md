@@ -3,15 +3,12 @@ changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 - 2024-02-05, dogweather, reviewed and corrected
 date: 2024-02-03 19:09:23.043432-07:00
-description: "Das Abrufen des aktuellen Datums in Elixir umfasst den Zugriff auf die\
-  \ Datums- und Zeitinformationen des Systems, eine allgemeine Aufgabe f\xFCr das\
-  \ Logging,\u2026"
+description: "Wie: Die Standardbibliothek von Elixir erm\xF6glicht \xFCber das `DateTime`-Modul\
+  \ das Abrufen des aktuellen Datums und der aktuellen Uhrzeit. Da Elixir auf der\u2026"
 lastmod: '2024-03-13T22:44:53.545535-06:00'
 model: gpt-4-0125-preview
-summary: "Das Abrufen des aktuellen Datums in Elixir umfasst den Zugriff auf die Datums-\
-  \ und Zeitinformationen des Systems, eine allgemeine Aufgabe f\xFCr das Logging,\
-  \ Datumsstempel oder jede Funktionalit\xE4t, die Kenntnisse \xFCber das aktuelle\
-  \ Datum erfordert."
+summary: "Die Standardbibliothek von Elixir erm\xF6glicht \xFCber das `DateTime`-Modul\
+  \ das Abrufen des aktuellen Datums und der aktuellen Uhrzeit."
 title: Den aktuellen Datum abrufen
 weight: 29
 ---

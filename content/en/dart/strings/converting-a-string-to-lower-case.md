@@ -1,11 +1,11 @@
 ---
 date: 2024-03-08 21:33:50.597368-07:00
-description: "Converting a string to lowercase is a fundamental operation that involves\
-  \ transforming all the characters in a given string to their lowercase\u2026"
+description: "How to: In Dart, you can convert a string to lowercase using the `toLowerCase()`\
+  \ method provided by the `String` class. This method returns a new string\u2026"
 lastmod: '2024-03-13T22:44:59.808746-06:00'
 model: gpt-4-0125-preview
-summary: Converting a string to lowercase is a fundamental operation that involves
-  transforming all the characters in a given string to their lowercase equivalents.
+summary: In Dart, you can convert a string to lowercase using the `toLowerCase()`
+  method provided by the `String` class.
 title: Converting a string to lower case
 weight: 4
 ---

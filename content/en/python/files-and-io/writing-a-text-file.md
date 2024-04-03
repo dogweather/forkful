@@ -1,11 +1,9 @@
 ---
 date: 2024-02-03 19:03:28.639146-07:00
-description: "Writing to a text file in Python is a fundamental task that involves\
-  \ creating or opening a file and then appending or overwriting text. This functionality\u2026"
+description: 'How to: #.'
 lastmod: '2024-03-13T22:44:59.724274-06:00'
 model: gpt-4-0125-preview
-summary: Writing to a text file in Python is a fundamental task that involves creating
-  or opening a file and then appending or overwriting text.
+summary: '#.'
 title: Writing a text file
 weight: 24
 ---

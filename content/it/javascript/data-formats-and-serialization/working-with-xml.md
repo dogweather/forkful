@@ -1,11 +1,9 @@
 ---
 date: 2024-01-26 04:32:43.302178-07:00
-description: "Lavorare con XML significa analizzare, manipolare e produrre contenuti\
-  \ XML mediante codice. I programmatori lo fanno perch\xE9 XML \xE8 ampiamente utilizzato\u2026"
+description: 'Come fare: Ecco come analizzare XML.'
 lastmod: '2024-03-13T22:44:43.838157-06:00'
 model: gpt-4-0125-preview
-summary: Lavorare con XML significa analizzare, manipolare e produrre contenuti XML
-  mediante codice.
+summary: Ecco come analizzare XML.
 title: Lavorare con XML
 weight: 40
 ---

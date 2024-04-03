@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:43:37.759978-07:00
-description: "*T\xE9l\xE9charger une page web*, c'est r\xE9cup\xE9rer son contenu\
-  \ via internet. Les programmeurs le font pour analyser des donn\xE9es, automatiser\
-  \ des t\xE2ches ou tester\u2026"
+description: "How to: Pour t\xE9l\xE9charger le contenu d'une page web, on utilise\
+  \ la classe `HttpClient`. Voici un exemple simple ."
 lastmod: '2024-03-13T22:44:57.785751-06:00'
 model: gpt-4-1106-preview
-summary: "*T\xE9l\xE9charger une page web*, c'est r\xE9cup\xE9rer son contenu via\
-  \ internet."
+summary: "Pour t\xE9l\xE9charger le contenu d'une page web, on utilise la classe `HttpClient`."
 title: "T\xE9l\xE9chargement d'une page web"
 weight: 42
 ---

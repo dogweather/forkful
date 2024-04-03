@@ -1,10 +1,11 @@
 ---
 date: 2024-01-20 17:51:09.582336-07:00
-description: "Interpolering i strenger lar oss sette inn variabler direkte i en tekst.\
-  \ Programmerere gj\xF8r dette for \xE5 enkelt kunne bygge dynamiske meldinger."
+description: "How to: (Hvordan:) I Java 15 ble det introdusert en forh\xE5ndsvisningsfunksjon\
+  \ kalt text blocks, som gj\xF8r string interpolasjon enklere. Her er et eksempel."
 lastmod: '2024-03-13T22:44:40.652484-06:00'
 model: gpt-4-1106-preview
-summary: Interpolering i strenger lar oss sette inn variabler direkte i en tekst.
+summary: "I Java 15 ble det introdusert en forh\xE5ndsvisningsfunksjon kalt text blocks,\
+  \ som gj\xF8r string interpolasjon enklere."
 title: Interpolering av en streng
 weight: 8
 ---

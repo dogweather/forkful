@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:02.878533-07:00
-description: "Karakters die een patroon matchen verwijderen in een string betekent\
-  \ het vinden en weghalen van specifieke reeksen tekens. Programmeurs doen dit om\
-  \ tekst\u2026"
+description: 'Hoe te doen: In Rust kunnen we de `replace` methode van het `String`
+  type of regex gebruiken voor meer complexe patronen. Hier is hoe je dat doet.'
 lastmod: '2024-03-13T22:44:50.578039-06:00'
 model: gpt-4-0125-preview
-summary: Karakters die een patroon matchen verwijderen in een string betekent het
-  vinden en weghalen van specifieke reeksen tekens.
+summary: In Rust kunnen we de `replace` methode van het `String` type of regex gebruiken
+  voor meer complexe patronen.
 title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:58:22.375441-07:00
-description: "Buscar y reemplazar texto es el proceso de encontrar una cadena espec\xED\
-  fica y cambiarla por otra. Los programadores lo hacen para corregir errores,\u2026"
+description: "C\xF3mo hacerlo: Para buscar y reemplazar texto en PowerShell, puedes\
+  \ usar el cmdlet `Replace` o el operador `-replace`. Aqu\xED tienes algunos ejemplos."
 lastmod: '2024-03-13T22:44:59.275297-06:00'
 model: gpt-4-1106-preview
-summary: "Buscar y reemplazar texto es el proceso de encontrar una cadena espec\xED\
-  fica y cambiarla por otra."
+summary: Para buscar y reemplazar texto en PowerShell, puedes usar el cmdlet `Replace`
+  o el operador `-replace`.
 title: Buscando y reemplazando texto
 weight: 10
 ---

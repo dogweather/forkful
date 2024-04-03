@@ -3,12 +3,11 @@ changelog:
 - 2024-01-28, dogweather, reviewed
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 03:01:14.207115-07:00
-description: "Att tolka HTML inneb\xE4r att extrahera data fr\xE5n HTML-dokument.\
-  \ Programmerare g\xF6r detta f\xF6r att interagera med eller manipulera webbinneh\xE5\
-  ll, automatisera\u2026"
+description: "Hur man g\xF6r: L\xE5t oss tolka HTML med hj\xE4lp av `DOMParser`-API\
+  \ i JavaScript."
 lastmod: '2024-03-13T22:44:38.291257-06:00'
 model: gpt-4-0125-preview
-summary: "Att tolka HTML inneb\xE4r att extrahera data fr\xE5n HTML-dokument."
+summary: "L\xE5t oss tolka HTML med hj\xE4lp av `DOMParser`-API i JavaScript."
 title: Analysera HTML
 weight: 43
 ---

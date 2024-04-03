@@ -1,14 +1,12 @@
 ---
 date: 2024-01-27 20:35:24.579832-07:00
-description: "Gerar n\xFAmeros aleat\xF3rios em Rust envolve o uso de bibliotecas\
-  \ para produzir valores num\xE9ricos imprevis\xEDveis, o que \xE9 indispens\xE1\
-  vel para tarefas que v\xE3o\u2026"
+description: "Como fazer: Rust depende de crates externas para a gera\xE7\xE3o de\
+  \ n\xFAmeros aleat\xF3rios, sendo `rand` a mais comumente usada. Para come\xE7ar\
+  \ a gerar n\xFAmeros\u2026"
 lastmod: '2024-03-13T22:44:46.363662-06:00'
 model: gpt-4-0125-preview
-summary: "Gerar n\xFAmeros aleat\xF3rios em Rust envolve o uso de bibliotecas para\
-  \ produzir valores num\xE9ricos imprevis\xEDveis, o que \xE9 indispens\xE1vel para\
-  \ tarefas que v\xE3o desde criptografia e simula\xE7\xF5es at\xE9 jogos e algoritmos\
-  \ randomizados."
+summary: "Rust depende de crates externas para a gera\xE7\xE3o de n\xFAmeros aleat\xF3\
+  rios, sendo `rand` a mais comumente usada."
 title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
 weight: 12
 ---

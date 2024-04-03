@@ -2,16 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:20.528705-07:00
-description: "Vi\u1EBFt m\u1ED9t t\u1EADp tin v\u0103n b\u1EA3n trong l\u1EADp tr\xEC\
-  nh li\xEAn quan \u0111\u1EBFn vi\u1EC7c t\u1EA1o v\xE0 l\u01B0u d\u1EEF li\u1EC7\
-  u v\xE0o m\u1ED9t \u0111\u1ECBnh d\u1EA1ng t\u1EADp tin c\xF3 th\u1EC3 \u0111\u1ECD\
-  c \u0111\u01B0\u1EE3c, nh\u01B0 .txt. L\u1EADp tr\xECnh vi\xEAn l\xE0m\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: H\xE3y vi\u1EBFt \"Hello, file!\" v\xE0o t\u1EAD\
+  p tin \"greeting.txt\"."
 lastmod: '2024-03-13T22:44:36.625682-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EBFt m\u1ED9t t\u1EADp tin v\u0103n b\u1EA3n trong l\u1EADp tr\xEC\
-  nh li\xEAn quan \u0111\u1EBFn vi\u1EC7c t\u1EA1o v\xE0 l\u01B0u d\u1EEF li\u1EC7\
-  u v\xE0o m\u1ED9t \u0111\u1ECBnh d\u1EA1ng t\u1EADp tin c\xF3 th\u1EC3 \u0111\u1ECD\
-  c \u0111\u01B0\u1EE3c, nh\u01B0 ."
+summary: "H\xE3y vi\u1EBFt \"Hello, file!\" v\xE0o t\u1EADp tin \"greeting.txt\"."
 title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 24
 ---

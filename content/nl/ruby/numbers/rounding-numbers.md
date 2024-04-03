@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:09.626968-07:00
-description: "Het afronden van getallen betekent het aanpassen ervan naar het dichtstbijzijnde\
-  \ gehele getal of naar een gespecificeerde mate van precisie. Programmeurs\u2026"
+description: 'Hoe: .'
 lastmod: '2024-03-13T22:44:51.329991-06:00'
 model: gpt-4-0125-preview
-summary: Het afronden van getallen betekent het aanpassen ervan naar het dichtstbijzijnde
-  gehele getal of naar een gespecificeerde mate van precisie.
+summary: .
 title: Afronden van getallen
 weight: 13
 ---

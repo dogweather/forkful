@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:58:37.325811-07:00
-description: "Chercher et remplacer du texte, c'est un peu comme chasser les fautes\
-  \ de frappe et les corriger. Programmers le font pour nettoyer des donn\xE9es, mettre\
-  \ \xE0\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:58.199575-06:00'
 model: gpt-4-1106-preview
-summary: Chercher et remplacer du texte, c'est un peu comme chasser les fautes de
-  frappe et les corriger.
+summary: .
 title: Recherche et remplacement de texte
 weight: 10
 ---

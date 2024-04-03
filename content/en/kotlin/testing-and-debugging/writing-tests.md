@@ -1,12 +1,11 @@
 ---
 date: 2024-02-03 19:03:33.785130-07:00
-description: "Writing tests in Kotlin involves crafting code snippets that automatically\
-  \ validate the functional correctness of your software modules, ensuring they\u2026"
+description: "How to: Kotlin supports test-driven development with various frameworks,\
+  \ the most popular being JUnit, Kotest, and MockK for mocking. Here's a simple\u2026"
 lastmod: '2024-03-13T22:45:00.051865-06:00'
 model: gpt-4-0125-preview
-summary: Writing tests in Kotlin involves crafting code snippets that automatically
-  validate the functional correctness of your software modules, ensuring they work
-  as expected.
+summary: Kotlin supports test-driven development with various frameworks, the most
+  popular being JUnit, Kotest, and MockK for mocking.
 title: Writing tests
 weight: 36
 ---

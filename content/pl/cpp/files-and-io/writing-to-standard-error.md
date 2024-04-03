@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:53.775582-07:00
-description: "Pisanie do standardowego b\u0142\u0119du (`stderr`) w C++ polega na\
-  \ wyprowadzaniu komunikat\xF3w o b\u0142\u0119dach lub diagnostyki, kt\xF3re s\u0105\
-  \ oddzielone od g\u0142\xF3wnego wyniku\u2026"
+description: "Jak to zrobi\u0107: W C++, pisanie do standardowego b\u0142\u0119du\
+  \ mo\u017Cna osi\u0105gn\u0105\u0107 za pomoc\u0105 strumienia `cerr`, kt\xF3ry\
+  \ jest cz\u0119\u015Bci\u0105 standardowej biblioteki. Oto\u2026"
 lastmod: '2024-03-13T22:44:35.729203-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie do standardowego b\u0142\u0119du (`stderr`) w C++ polega na wyprowadzaniu\
-  \ komunikat\xF3w o b\u0142\u0119dach lub diagnostyki, kt\xF3re s\u0105 oddzielone\
-  \ od g\u0142\xF3wnego wyniku dzia\u0142ania programu."
+summary: "W C++, pisanie do standardowego b\u0142\u0119du mo\u017Cna osi\u0105gn\u0105\
+  \u0107 za pomoc\u0105 strumienia `cerr`, kt\xF3ry jest cz\u0119\u015Bci\u0105 standardowej\
+  \ biblioteki."
 title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---

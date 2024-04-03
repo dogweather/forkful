@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:49.378801-07:00
-description: "Obtener la fecha actual en proyectos de Arduino implica la adquisici\xF3\
-  n de informaci\xF3n en tiempo real que puede ser crucial para el registro, estampado\
-  \ de\u2026"
+description: "C\xF3mo hacerlo: Arduino por s\xED mismo no tiene un m\xE9todo incorporado\
+  \ para obtener directamente la fecha actual, ya que carece de un reloj en tiempo\
+  \ real (RTC\u2026"
 lastmod: '2024-03-13T22:44:59.343748-06:00'
 model: gpt-4-0125-preview
-summary: "Obtener la fecha actual en proyectos de Arduino implica la adquisici\xF3\
-  n de informaci\xF3n en tiempo real que puede ser crucial para el registro, estampado\
-  \ de tiempo o programaci\xF3n de tareas."
+summary: "Arduino por s\xED mismo no tiene un m\xE9todo incorporado para obtener directamente\
+  \ la fecha actual, ya que carece de un reloj en tiempo real (RTC por sus siglas\
+  \ en ingl\xE9s)."
 title: Obteniendo la fecha actual
 weight: 29
 ---

@@ -2,12 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:11.295197-07:00
-description: "Een HTTP-verzoek verzenden met basisverificatie is wanneer je een oproep\
-  \ doet naar een webserver, inclusief een gebruikersnaam en wachtwoord voor toegang.\u2026"
+description: "Hoe te: Lua heeft geen ingebouwde HTTP-ondersteuning, dus je hebt een\
+  \ externe bibliotheek nodig zoals `socket.http` van LuaSocket of `http.request`\
+  \ van de\u2026"
 lastmod: '2024-03-13T22:44:50.937143-06:00'
 model: gpt-4-0125-preview
-summary: Een HTTP-verzoek verzenden met basisverificatie is wanneer je een oproep
-  doet naar een webserver, inclusief een gebruikersnaam en wachtwoord voor toegang.
+summary: Lua heeft geen ingebouwde HTTP-ondersteuning, dus je hebt een externe bibliotheek
+  nodig zoals `socket.http` van LuaSocket of `http.request` van de `http`-bibliotheek
+  als je Lua 5.3+ gebruikt.
 title: Een HTTP-verzoek verzenden met basisauthenticatie
 weight: 45
 ---

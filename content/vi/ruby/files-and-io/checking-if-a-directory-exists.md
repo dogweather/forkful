@@ -2,15 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:38.822660-07:00
-description: "Ki\u1EC3m tra n\u1EBFu m\u1ED9t th\u01B0 m\u1EE5c t\u1ED3n t\u1EA1i\
-  \ c\xF3 ngh\u0129a l\xE0 x\xE1c nh\u1EADn xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 m\u1EB7\
-  t trong h\u1EC7 th\u1ED1ng t\u1EC7p tin hay kh\xF4ng. L\u1EADp tr\xECnh vi\xEAn\
-  \ th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 tr\xE1nh\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong Ruby, b\u1EA1n c\xF3 th\u1EC3 s\u1EED\
+  \ d\u1EE5ng ph\u01B0\u01A1ng th\u1EE9c `Dir.exist?` \u0111\u1EC3 ki\u1EC3m tra n\u1EBF\
+  u m\u1ED9t th\u01B0 m\u1EE5c t\u1ED3n t\u1EA1i. D\u01B0\u1EDBi \u0111\xE2y l\xE0\
+  \ c\xE1ch n\xF3 tr\xF4ng nh\u01B0 th\u1EBF n\xE0o."
 lastmod: '2024-03-13T22:44:37.360478-06:00'
 model: gpt-4-0125-preview
-summary: "Ki\u1EC3m tra n\u1EBFu m\u1ED9t th\u01B0 m\u1EE5c t\u1ED3n t\u1EA1i c\xF3\
-  \ ngh\u0129a l\xE0 x\xE1c nh\u1EADn xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 m\u1EB7\
-  t trong h\u1EC7 th\u1ED1ng t\u1EC7p tin hay kh\xF4ng."
+summary: "Trong Ruby, b\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng ph\u01B0\u01A1ng th\u1EE9\
+  c `Dir.exist?` \u0111\u1EC3 ki\u1EC3m tra n\u1EBFu m\u1ED9t th\u01B0 m\u1EE5c t\u1ED3\
+  n t\u1EA1i."
 title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
 weight: 20
 ---

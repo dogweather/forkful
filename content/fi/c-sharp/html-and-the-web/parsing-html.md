@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:09.979123-07:00
-description: "HTML:n j\xE4sennys ohjelmoinnissa tarkoittaa HTML-dokumentin rakenteen\
-  \ analysoimista, mik\xE4 mahdollistaa sen sis\xE4ll\xF6n ohjelmallisen k\xE4sittelyn,\
-  \ muokkaamisen\u2026"
+description: "Kuinka: Vaikka .NET tarjoaa perustason tuen HTML:n k\xE4sittelyyn, kuten\
+  \ `HttpClient`-luokan verkkosivujen noutamiseen, siit\xE4 puuttuu sis\xE4\xE4nrakennettu,\u2026"
 lastmod: '2024-03-13T22:44:56.570987-06:00'
 model: gpt-4-0125-preview
-summary: "HTML:n j\xE4sennys ohjelmoinnissa tarkoittaa HTML-dokumentin rakenteen analysoimista,\
-  \ mik\xE4 mahdollistaa sen sis\xE4ll\xF6n ohjelmallisen k\xE4sittelyn, muokkaamisen\
-  \ ja vuorovaikutuksen."
+summary: "Vaikka .NET tarjoaa perustason tuen HTML:n k\xE4sittelyyn, kuten `HttpClient`-luokan\
+  \ verkkosivujen noutamiseen, siit\xE4 puuttuu sis\xE4\xE4nrakennettu, kattava HTML-j\xE4\
+  sennin."
 title: "HTML:n j\xE4sennys"
 weight: 43
 ---

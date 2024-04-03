@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:33.560340-07:00
-description: "Trabajar con JSON en programaci\xF3n Bash implica analizar, extraer\
-  \ y manipular datos JSON directamente desde la l\xEDnea de comandos. Los programadores\
-  \ a\u2026"
+description: "C\xF3mo hacerlo: Bash por s\xED solo carece de capacidades integradas\
+  \ de an\xE1lisis de JSON, pero `jq` es un poderoso procesador JSON de l\xEDnea de\
+  \ comandos que\u2026"
 lastmod: '2024-03-13T22:44:59.268830-06:00'
 model: gpt-4-0125-preview
-summary: "Trabajar con JSON en programaci\xF3n Bash implica analizar, extraer y manipular\
-  \ datos JSON directamente desde la l\xEDnea de comandos."
+summary: "Bash por s\xED solo carece de capacidades integradas de an\xE1lisis de JSON,\
+  \ pero `jq` es un poderoso procesador JSON de l\xEDnea de comandos que llena este\
+  \ vac\xEDo."
 title: Trabajando con JSON
 weight: 38
 ---

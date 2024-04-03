@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:27.783786-07:00
-description: "Trabajar con archivos CSV (Valores Separados por Comas) implica analizar\
-  \ y generar datos de texto organizados en filas y columnas, utilizando comas para\u2026"
+description: "C\xF3mo hacerlo: En Lua, trabajar con archivos CSV se puede abordar\
+  \ utilizando operaciones b\xE1sicas de E/S de archivos proporcionadas por el lenguaje,\
+  \ sin\u2026"
 lastmod: '2024-03-13T22:44:59.225033-06:00'
 model: gpt-4-0125-preview
-summary: Trabajar con archivos CSV (Valores Separados por Comas) implica analizar
-  y generar datos de texto organizados en filas y columnas, utilizando comas para
-  separar los valores individuales.
+summary: "En Lua, trabajar con archivos CSV se puede abordar utilizando operaciones\
+  \ b\xE1sicas de E/S de archivos proporcionadas por el lenguaje, sin necesidad de\
+  \ bibliotecas externas para tareas simples."
 title: Trabajando con CSV
 weight: 37
 ---

@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:58:53.359440-07:00
-description: "Inviare una richiesta HTTP permette ai vostri script Bash di comunicare\
-  \ con il web, scambiando dati con i server. I programmatori lo fanno per interagire\u2026"
+description: 'Come Fare: .'
 lastmod: '2024-03-13T22:44:43.596427-06:00'
 model: gpt-4-1106-preview
-summary: Inviare una richiesta HTTP permette ai vostri script Bash di comunicare con
-  il web, scambiando dati con i server.
+summary: .
 title: Inviare una richiesta http
 weight: 44
 ---

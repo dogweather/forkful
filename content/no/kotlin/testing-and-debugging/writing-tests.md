@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:08.123772-07:00
-description: "\xC5 skrive tester i Kotlin inneb\xE6rer \xE5 lage kodeutsnitt som automatisk\
-  \ validerer den funksjonelle korrektheten av programvaremodulene dine, og s\xF8\
-  rger for at\u2026"
+description: "Hvordan: Kotlin st\xF8tter testdrevet utvikling med forskjellige rammeverk,\
+  \ der de mest popul\xE6re er JUnit, Kotest og MockK for mocking. Her er et enkelt\u2026"
 lastmod: '2024-03-13T22:44:40.754188-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive tester i Kotlin inneb\xE6rer \xE5 lage kodeutsnitt som automatisk\
-  \ validerer den funksjonelle korrektheten av programvaremodulene dine, og s\xF8\
-  rger for at de fungerer som forventet."
+summary: "Kotlin st\xF8tter testdrevet utvikling med forskjellige rammeverk, der de\
+  \ mest popul\xE6re er JUnit, Kotest og MockK for mocking."
 title: Skrive tester
 weight: 36
 ---

@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 01:04:27.357626-07:00
-description: "Att logga \xE4r i grund och botten att skriva ned vad din applikation\
-  \ h\xE5ller p\xE5 med \u2013 som en dagbok, om du s\xE5 vill, men f\xF6r kod. Programmerare\
-  \ g\xF6r det f\xF6r\u2026"
+description: "Hur man g\xF6r: I Fish kan loggning vara s\xE5 enkelt som att omdirigera\
+  \ standard utdatan och felstr\xF6mmar till en fil. L\xE5t oss skapa en loggpost\
+  \ f\xF6r v\xE5r scripts\u2026"
 lastmod: '2024-03-13T22:44:38.344938-06:00'
 model: gpt-4-1106-preview
-summary: "Att logga \xE4r i grund och botten att skriva ned vad din applikation h\xE5\
-  ller p\xE5 med \u2013 som en dagbok, om du s\xE5 vill, men f\xF6r kod."
+summary: "I Fish kan loggning vara s\xE5 enkelt som att omdirigera standard utdatan\
+  \ och felstr\xF6mmar till en fil."
 title: Loggning
 weight: 17
 ---

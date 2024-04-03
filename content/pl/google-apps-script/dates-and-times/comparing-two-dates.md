@@ -2,15 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:01.452770-07:00
-description: "Por\xF3wnywanie dw\xF3ch dat w Google Apps Script, pochodnej JavaScriptu\
-  \ dostosowanej do zestawu aplikacji Google'a, jest kluczowym zadaniem dla programist\xF3\
-  w\u2026"
+description: "Jak to zrobi\u0107: W Google Apps Script daty por\xF3wnuje si\u0119\
+  \ za pomoc\u0105 obiekt\xF3w Date JavaScript, co umo\u017Cliwia korzystanie z standardowych\
+  \ metod do oceny, kt\xF3ra\u2026"
 lastmod: '2024-03-13T22:44:34.916995-06:00'
 model: gpt-4-0125-preview
-summary: "Por\xF3wnywanie dw\xF3ch dat w Google Apps Script, pochodnej JavaScriptu\
-  \ dostosowanej do zestawu aplikacji Google'a, jest kluczowym zadaniem dla programist\xF3\
-  w zajmuj\u0105cych si\u0119 planowaniem, harmonogramami lub jakimikolwiek danymi\
-  \ zwi\u0105zanymi z datami."
+summary: "W Google Apps Script daty por\xF3wnuje si\u0119 za pomoc\u0105 obiekt\xF3\
+  w Date JavaScript, co umo\u017Cliwia korzystanie z standardowych metod do oceny,\
+  \ kt\xF3ra z dw\xF3ch dat jest wcze\u015Bniejsza, p\xF3\u017Aniejsza lub czy s\u0105\
+  \ takie same."
 title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---

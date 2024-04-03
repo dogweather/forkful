@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:36:30.516509-07:00
-description: "Das Umwandeln eines Datums in einen String ist die Darstellung eines\
-  \ Datumsobjekts als Text. Programmierer nutzen das, um Datumsangaben nutzerfreundlich\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:53.942649-06:00'
 model: gpt-4-1106-preview
-summary: Das Umwandeln eines Datums in einen String ist die Darstellung eines Datumsobjekts
-  als Text.
+summary: .
 title: Datum in einen String umwandeln
 weight: 28
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:44.810236-07:00
-description: "Die L\xE4nge eines Strings in Google Apps Script zu finden, einer JavaScript-Cloud-Scripting-Sprache,\
-  \ die es Ihnen erm\xF6glicht, Aufgaben \xFCber Google-Produkte\u2026"
+description: "Wie geht das: In Google Apps Script k\xF6nnen Sie die L\xE4nge eines\
+  \ Strings mithilfe der `.length`-Eigenschaft finden, \xE4hnlich wie in JavaScript.\
+  \ Diese\u2026"
 lastmod: '2024-03-13T22:44:53.324067-06:00'
 model: gpt-4-0125-preview
-summary: "Die L\xE4nge eines Strings in Google Apps Script zu finden, einer JavaScript-Cloud-Scripting-Sprache,\
-  \ die es Ihnen erm\xF6glicht, Aufgaben \xFCber Google-Produkte hinweg zu automatisieren,\
-  \ handelt davon, die Anzahl der Zeichen zu bestimmen, die ein String enth\xE4lt."
+summary: "In Google Apps Script k\xF6nnen Sie die L\xE4nge eines Strings mithilfe\
+  \ der `.length`-Eigenschaft finden, \xE4hnlich wie in JavaScript."
 title: "Die L\xE4nge eines Strings ermitteln"
 weight: 7
 ---

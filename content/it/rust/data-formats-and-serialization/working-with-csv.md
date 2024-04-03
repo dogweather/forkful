@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:04.552937-07:00
-description: "Lavorare con file CSV (Valori Separati da Virgola) consiste nel leggere\
-  \ e scrivere file di testo semplice che memorizzano dati tabellari. I programmatori\u2026"
+description: "Come fare: Rust, con il suo focus sulla sicurezza e le prestazioni,\
+  \ offre eccellenti crate (librerie) per gestire i file CSV, essendo `csv` il pi\xF9\
+  \u2026"
 lastmod: '2024-03-13T22:44:43.240950-06:00'
 model: gpt-4-0125-preview
-summary: Lavorare con file CSV (Valori Separati da Virgola) consiste nel leggere e
-  scrivere file di testo semplice che memorizzano dati tabellari.
+summary: "Rust, con il suo focus sulla sicurezza e le prestazioni, offre eccellenti\
+  \ crate (librerie) per gestire i file CSV, essendo `csv` il pi\xF9 popolare."
 title: Lavorare con i CSV
 weight: 37
 ---

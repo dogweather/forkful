@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:35.759511-07:00
-description: "Les nombres complexes se composent d'une partie r\xE9elle et d'une partie\
-  \ imaginaire, repr\xE9sent\xE9es comme `a + bi` o\xF9 `i` est la racine carr\xE9\
-  e de `-1`. Les\u2026"
+description: "Comment faire : En C, les nombres complexes sont pris en charge par\
+  \ la biblioth\xE8que standard, sp\xE9cifiquement `<complex.h>`. Pour les utiliser,\
+  \ d\xE9clarez\u2026"
 lastmod: '2024-03-13T22:44:58.364838-06:00'
 model: gpt-4-0125-preview
-summary: "Les nombres complexes se composent d'une partie r\xE9elle et d'une partie\
-  \ imaginaire, repr\xE9sent\xE9es comme `a + bi` o\xF9 `i` est la racine carr\xE9\
-  e de `-1`."
+summary: "En C, les nombres complexes sont pris en charge par la biblioth\xE8que standard,\
+  \ sp\xE9cifiquement `<complex.h>`."
 title: Travailler avec des nombres complexes
 weight: 14
 ---

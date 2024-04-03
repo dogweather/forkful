@@ -1,12 +1,11 @@
 ---
 date: 2024-02-03 19:03:17.164753-07:00
-description: "YAML, short for \"YAML Ain't Markup Language,\" is a human-readable\
-  \ data serialization standard that is often used for configuration files and data\
-  \ exchange\u2026"
+description: "How to: Lua does not have built-in support for YAML, but you can work\
+  \ with YAML files by using third-party libraries such as `lyaml`. This library allows\u2026"
 lastmod: '2024-03-13T22:45:00.223731-06:00'
 model: gpt-4-0125-preview
-summary: YAML, short for "YAML Ain't Markup Language," is a human-readable data serialization
-  standard that is often used for configuration files and data exchange between languages.
+summary: Lua does not have built-in support for YAML, but you can work with YAML files
+  by using third-party libraries such as `lyaml`.
 title: Working with YAML
 weight: 41
 ---

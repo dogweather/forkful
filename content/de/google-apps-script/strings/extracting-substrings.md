@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:48.269883-07:00
-description: "Das Extrahieren von Teilzeichenfolgen beinhaltet das Nehmen eines Teils\
-  \ einer Zeichenkette - im Wesentlichen das Erstellen einer neuen Zeichenkette aus\u2026"
+description: "Wie: In Google Apps Script, das auf modernem JavaScript basiert, kann\
+  \ das Extrahieren von Teilzeichenfolgen durch mehrere Methoden erreicht werden,\u2026"
 lastmod: '2024-03-13T22:44:53.321982-06:00'
 model: gpt-4-0125-preview
-summary: Das Extrahieren von Teilzeichenfolgen beinhaltet das Nehmen eines Teils einer
-  Zeichenkette - im Wesentlichen das Erstellen einer neuen Zeichenkette aus einem
-  Teil einer bestehenden.
+summary: "In Google Apps Script, das auf modernem JavaScript basiert, kann das Extrahieren\
+  \ von Teilzeichenfolgen durch mehrere Methoden erreicht werden, einschlie\xDFlich\
+  \ `substring()`, `substr()` und `slice()`."
 title: Teilzeichenketten extrahieren
 weight: 6
 ---

@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:51.050863-07:00
-description: "Capitaliser une cha\xEEne dans Bash consiste \xE0 transformer le premier\
-  \ caract\xE8re de la cha\xEEne en majuscule tout en laissant le reste de la cha\xEE\
-  ne inchang\xE9.\u2026"
+description: "Comment faire : Bash n'a pas de fonction int\xE9gr\xE9e sp\xE9cifiquement\
+  \ pour la capitalisation des cha\xEEnes, mais vous pouvez accomplir cette t\xE2\
+  che en utilisant\u2026"
 lastmod: '2024-03-13T22:44:57.968046-06:00'
 model: gpt-4-0125-preview
-summary: "Capitaliser une cha\xEEne dans Bash consiste \xE0 transformer le premier\
-  \ caract\xE8re de la cha\xEEne en majuscule tout en laissant le reste de la cha\xEE\
-  ne inchang\xE9."
+summary: "Bash n'a pas de fonction int\xE9gr\xE9e sp\xE9cifiquement pour la capitalisation\
+  \ des cha\xEEnes, mais vous pouvez accomplir cette t\xE2che en utilisant l'expansion\
+  \ de param\xE8tres ou des outils externes comme `awk`."
 title: "Mettre en majuscule une cha\xEEne"
 weight: 2
 ---

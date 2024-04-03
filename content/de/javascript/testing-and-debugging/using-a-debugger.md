@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:49:55.091778-07:00
-description: "Hier ein St\xFCck JavaScript-Code, das sich nicht wie erwartet verh\xE4\
-  lt: ```javascript function buggyMultiply(a, b) { return a + b; // Hoppla! Das sollte\
-  \ eine\u2026"
+description: "Wie geht das: Hier ein St\xFCck JavaScript-Code, das sich nicht wie\
+  \ erwartet verh\xE4lt."
 lastmod: '2024-03-13T22:44:54.270630-06:00'
 model: gpt-4-0125-preview
 summary: "Hier ein St\xFCck JavaScript-Code, das sich nicht wie erwartet verh\xE4\
-  lt:\n\n```javascript\nfunction buggyMultiply(a, b) {\n    return a + b; // Hoppla."
+  lt."
 title: Einsatz eines Debuggers
 weight: 35
 ---

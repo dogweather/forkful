@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:52:20.631255-07:00
-description: "Vi pratar om `debug output` \u2013 textmeddelanden som hj\xE4lper utvecklare\
-  \ att fels\xF6ka kod. Varf\xF6r? F\xF6r att sp\xE5ra vad koden g\xF6r och hitta\
-  \ buggarna snabbt."
+description: "How to: Med `Console.WriteLine`, `Debug.WriteLine` eller `Trace.WriteLine`\
+  \ kan du skriva ut meddelanden. Anv\xE4nd `Console.WriteLine` f\xF6r konsollappar\
+  \ och\u2026"
 lastmod: '2024-03-13T22:44:37.915824-06:00'
 model: gpt-4-1106-preview
-summary: "Vi pratar om `debug output` \u2013 textmeddelanden som hj\xE4lper utvecklare\
-  \ att fels\xF6ka kod."
+summary: Med `Console.WriteLine`, `Debug.WriteLine` eller `Trace.WriteLine` kan du
+  skriva ut meddelanden.
 title: "Skriva ut fels\xF6kningsdata"
 weight: 33
 ---

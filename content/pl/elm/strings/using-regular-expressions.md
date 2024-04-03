@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:44.072939-07:00
-description: "Wyra\u017Cenia regularne (regex) w programowaniu to wzorce u\u017Cywane\
-  \ do dopasowywania kombinacji znak\xF3w w ci\u0105gach znak\xF3w. W Elm, podobnie\
-  \ jak w innych j\u0119zykach,\u2026"
+description: "Jak to zrobi\u0107: Elm nie posiada wbudowanych funkcji regex w swojej\
+  \ g\u0142\xF3wnej bibliotece, wymaga u\u017Cywania bibliotek stron trzecich dla\
+  \ tych operacji. Jednym z\u2026"
 lastmod: '2024-03-13T22:44:35.311029-06:00'
 model: gpt-4-0125-preview
-summary: "Wyra\u017Cenia regularne (regex) w programowaniu to wzorce u\u017Cywane\
-  \ do dopasowywania kombinacji znak\xF3w w ci\u0105gach znak\xF3w."
+summary: "Elm nie posiada wbudowanych funkcji regex w swojej g\u0142\xF3wnej bibliotece,\
+  \ wymaga u\u017Cywania bibliotek stron trzecich dla tych operacji."
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---

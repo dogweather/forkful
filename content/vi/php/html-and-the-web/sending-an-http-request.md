@@ -2,14 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:27.205311-07:00
-description: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP l\xE0 quy tr\xECnh m\xE0 ch\u01B0\
-  \u01A1ng tr\xECnh y\xEAu c\u1EA7u d\u1EEF li\u1EC7u t\u1EEB m\xE1y ch\u1EE7. L\u1EAD\
-  p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\u1EC3 t\u01B0\u01A1\
-  ng t\xE1c v\u1EDBi d\u1ECBch v\u1EE5 web, API, ho\u1EB7c\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: PHP c\xF3 m\u1ED9t c\xE1ch g\u1ECDn l\xE0\
+  nh \u0111\u1EC3 x\u1EED l\xFD y\xEAu c\u1EA7u HTTP v\u1EDBi th\u01B0 vi\u1EC7n `cURL`.\
+  \ Nh\u01B0ng c\xE1ch m\u1EDBi m\u1EBB h\u01A1n l\xE0 s\u1EED d\u1EE5ng `file_get_contents`\
+  \ cho c\xE1c y\xEAu c\u1EA7u\u2026"
 lastmod: '2024-03-13T22:44:36.762162-06:00'
 model: gpt-4-0125-preview
-summary: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP l\xE0 quy tr\xECnh m\xE0 ch\u01B0\
-  \u01A1ng tr\xECnh y\xEAu c\u1EA7u d\u1EEF li\u1EC7u t\u1EEB m\xE1y ch\u1EE7."
+summary: "PHP c\xF3 m\u1ED9t c\xE1ch g\u1ECDn l\xE0nh \u0111\u1EC3 x\u1EED l\xFD y\xEA\
+  u c\u1EA7u HTTP v\u1EDBi th\u01B0 vi\u1EC7n `cURL`."
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
 weight: 44
 ---

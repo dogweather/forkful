@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:02.026260-07:00
-description: "Verificar se um diret\xF3rio existe em Go \xE9 cr\xEDtico para aplica\xE7\
-  \xF5es que interagem com o sistema de arquivos, para evitar erros ao tentar acessar\
-  \ ou modificar\u2026"
+description: "Como fazer: Em Go, o pacote `os` fornece funcionalidades para interagir\
+  \ com o sistema operacional, incluindo a verifica\xE7\xE3o da exist\xEAncia de um\
+  \ diret\xF3rio.\u2026"
 lastmod: '2024-03-13T22:44:46.076547-06:00'
 model: gpt-4-0125-preview
-summary: "Verificar se um diret\xF3rio existe em Go \xE9 cr\xEDtico para aplica\xE7\
-  \xF5es que interagem com o sistema de arquivos, para evitar erros ao tentar acessar\
-  \ ou modificar diret\xF3rios."
+summary: "Em Go, o pacote `os` fornece funcionalidades para interagir com o sistema\
+  \ operacional, incluindo a verifica\xE7\xE3o da exist\xEAncia de um diret\xF3rio."
 title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---

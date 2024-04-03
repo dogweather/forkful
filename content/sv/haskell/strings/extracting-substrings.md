@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:45:43.674143-07:00
-description: "Att extrahera delstr\xE4ngar inneb\xE4r att man plockar ut specifika\
-  \ delar av en textstr\xE4ng. Programmerare g\xF6r detta f\xF6r att manipulera och\
-  \ analysera data,\u2026"
+description: "How to: I Haskell anv\xE4nder du ofta standardbibliotekets funktioner\
+  \ f\xF6r att hantera str\xE4ngar. H\xE4r \xE4r n\xE5gra exempel p\xE5 hur man extraherar\
+  \ delstr\xE4ngar."
 lastmod: '2024-03-13T22:44:37.944482-06:00'
 model: gpt-4-1106-preview
-summary: "Att extrahera delstr\xE4ngar inneb\xE4r att man plockar ut specifika delar\
-  \ av en textstr\xE4ng."
+summary: "I Haskell anv\xE4nder du ofta standardbibliotekets funktioner f\xF6r att\
+  \ hantera str\xE4ngar."
 title: "Extrahera delstr\xE4ngar"
 weight: 6
 ---

@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:31:11.852953-07:00
-description: "Datum-Berechnungen sind n\xF6tig, um Vergangenheits- oder Zukunftsdaten\
-  \ zu ermitteln. Programmierer nutzen dies f\xFCr Features wie Erinnerungen, Zeitabl\xE4\
-  ufe\u2026"
+description: 'How to: JavaScript bietet eingebaute Funktionen, um mit Daten zu arbeiten.
+  Hier zwei Beispiele.'
 lastmod: '2024-03-13T22:44:54.279530-06:00'
 model: gpt-4-1106-preview
-summary: "Datum-Berechnungen sind n\xF6tig, um Vergangenheits- oder Zukunftsdaten\
-  \ zu ermitteln."
+summary: JavaScript bietet eingebaute Funktionen, um mit Daten zu arbeiten.
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---

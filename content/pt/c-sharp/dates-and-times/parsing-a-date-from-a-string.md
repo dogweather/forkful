@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:46.759690-07:00
-description: "Analisar (parse) uma data de uma string em C# envolve converter representa\xE7\
-  \xF5es textuais de datas e horas em um objeto `DateTime`. Isso \xE9 essencial para\u2026"
+description: "Como Fazer: **An\xE1lise B\xE1sica:** Os m\xE9todos `DateTime.Parse`\
+  \ e `DateTime.TryParse` s\xE3o as op\xE7\xF5es padr\xE3o para converter uma string\
+  \ em um `DateTime`. Aqui\u2026"
 lastmod: '2024-03-13T22:44:46.593445-06:00'
 model: gpt-4-0125-preview
-summary: "Analisar (parse) uma data de uma string em C# envolve converter representa\xE7\
-  \xF5es textuais de datas e horas em um objeto `DateTime`."
+summary: "**An\xE1lise B\xE1sica:**\n\nOs m\xE9todos `DateTime.Parse` e `DateTime.TryParse`\
+  \ s\xE3o as op\xE7\xF5es padr\xE3o para converter uma string em um `DateTime`."
 title: Analisando uma data a partir de uma string
 weight: 30
 ---

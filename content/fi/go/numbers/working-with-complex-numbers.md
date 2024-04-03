@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:14.145333-07:00
-description: "Ohjelmoinnissa kompleksilukujen k\xE4sitteleminen sis\xE4lt\xE4\xE4\
-  \ lukujen manipulointia, joilla on sek\xE4 reaaliosa ett\xE4 imaginaariosa, tyypillisesti\
-  \ ilmaistuna\u2026"
+description: "Kuinka: Go-kieless\xE4 k\xE4sitell\xE4\xE4n kompleksilukuja k\xE4ytt\xE4\
+  m\xE4ll\xE4 sis\xE4\xE4nrakennettuja `complex`, `real` ja `imag` funktioita, sek\xE4\
+  \ `complex64` ja `complex128`\u2026"
 lastmod: '2024-03-13T22:44:56.043824-06:00'
 model: gpt-4-0125-preview
-summary: "Ohjelmoinnissa kompleksilukujen k\xE4sitteleminen sis\xE4lt\xE4\xE4 lukujen\
-  \ manipulointia, joilla on sek\xE4 reaaliosa ett\xE4 imaginaariosa, tyypillisesti\
-  \ ilmaistuna muodossa `a + bi`."
+summary: "Go-kieless\xE4 k\xE4sitell\xE4\xE4n kompleksilukuja k\xE4ytt\xE4m\xE4ll\xE4\
+  \ sis\xE4\xE4nrakennettuja `complex`, `real` ja `imag` funktioita, sek\xE4 `complex64`\
+  \ ja `complex128` tyyppej\xE4 (edustavat 64-bittisi\xE4 ja 128-bittisi\xE4 kompleksilukuja\
+  \ vastaavasti)."
 title: "Ty\xF6skenteleminen kompleksilukujen kanssa"
 weight: 14
 ---

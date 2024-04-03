@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:35:31.814330-07:00
-description: "Sammanfogning av str\xE4ngar \xE4r processen att limma ihop textstycken\
-  \ f\xF6r att skapa en ny, sammanh\xE4ngande text. Programmerare g\xF6r detta f\xF6\
-  r att bygga\u2026"
+description: "S\xE5 h\xE4r g\xF6r du: Du kan sammanfoga str\xE4ngar i Rust p\xE5 n\xE5\
+  gra olika s\xE4tt. Anv\xE4nd `+` operatorn eller `format!` makrot f\xF6r att smidigt\
+  \ kombinera dem."
 lastmod: '2024-03-13T22:44:37.689816-06:00'
 model: gpt-4-1106-preview
-summary: "Sammanfogning av str\xE4ngar \xE4r processen att limma ihop textstycken\
-  \ f\xF6r att skapa en ny, sammanh\xE4ngande text."
+summary: "Du kan sammanfoga str\xE4ngar i Rust p\xE5 n\xE5gra olika s\xE4tt."
 title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---

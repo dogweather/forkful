@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:36:03.527608-07:00
-description: "Konwersja daty na ci\u0105g znak\xF3w (string) pozwala na \u0142atwe\
-  \ wy\u015Bwietlanie i zapisywanie dat w czytelnej formie. Programi\u015Bci wykonuj\u0105\
-  \ t\u0119 operacj\u0119, by poprawi\u0107\u2026"
+description: "How to: (Jak to zrobi\u0107:) Arduino nie ma wbudowanej obs\u0142ugi\
+  \ dat, ale mo\u017Cna u\u017Cy\u0107 biblioteki `TimeLib.h`. Oto przyk\u0142ad."
 lastmod: '2024-03-13T22:44:35.682793-06:00'
 model: gpt-4-1106-preview
-summary: "Konwersja daty na ci\u0105g znak\xF3w (string) pozwala na \u0142atwe wy\u015B\
-  wietlanie i zapisywanie dat w czytelnej formie."
+summary: "Arduino nie ma wbudowanej obs\u0142ugi dat, ale mo\u017Cna u\u017Cy\u0107\
+  \ biblioteki `TimeLib.h`."
 title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---

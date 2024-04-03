@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:40.339553-07:00
-description: "Complexe getallen, bestaande uit een re\xEBel en een imaginair deel\
-  \ (zoals 3+4i), zijn een basiscomponent in engineering en fysica. Programmeurs werken\
-  \ ermee\u2026"
+description: "Hoe: Ruby maakt het hanteren van complexe getallen heel eenvoudig. Je\
+  \ kunt ze cre\xEBren en manipuleren met behulp van de Complex klasse."
 lastmod: '2024-03-13T22:44:51.328948-06:00'
 model: gpt-4-0125-preview
-summary: "Complexe getallen, bestaande uit een re\xEBel en een imaginair deel (zoals\
-  \ 3+4i), zijn een basiscomponent in engineering en fysica."
+summary: Ruby maakt het hanteren van complexe getallen heel eenvoudig.
 title: Werken met complexe getallen
 weight: 14
 ---

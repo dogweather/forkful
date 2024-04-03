@@ -1,12 +1,11 @@
 ---
 date: 2024-03-08 21:33:58.218914-07:00
-description: "YAML, short for YAML Ain't Markup Language, is a human-readable data\
-  \ serialization format. Programmers use it for configuration files, data exchange,\
-  \ and\u2026"
+description: "How to: In Dart, working with YAML typically involves using a third-party\
+  \ library as the language does not include built-in YAML parsing capabilities. A\u2026"
 lastmod: '2024-03-13T22:44:59.838730-06:00'
 model: gpt-4-0125-preview
-summary: YAML, short for YAML Ain't Markup Language, is a human-readable data serialization
-  format.
+summary: In Dart, working with YAML typically involves using a third-party library
+  as the language does not include built-in YAML parsing capabilities.
 title: Working with YAML
 weight: 41
 ---

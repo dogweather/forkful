@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:44:26.387677-07:00
-description: "Czyli po polsku: \"Co i dlaczego?\" Pobieranie strony internetowej to\
-  \ proces, w kt\xF3rym uzyskujemy jej dane (najcz\u0119\u015Bciej w formacie HTML)\
-  \ bezpo\u015Brednio na\u2026"
+description: "How to: Czyli po polsku: \"Jak to zrobi\u0107:\" W Haskellu, mo\u017C\
+  emy u\u017Cy\u0107 biblioteki `http-conduit` do pobierania stron internetowych.\
+  \ Oto przyk\u0142ad u\u017Cycia."
 lastmod: '2024-03-13T22:44:35.450572-06:00'
 model: gpt-4-1106-preview
-summary: 'Czyli po polsku: "Co i dlaczego.'
+summary: Czyli po polsku.
 title: Pobieranie strony internetowej
 weight: 42
 ---

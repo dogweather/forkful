@@ -2,15 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:53:31.766794-07:00
-description: "Convertir una fecha en una cadena en Dart es una tarea com\xFAn cuando\
-  \ necesitas mostrar informaci\xF3n de fecha y hora en un formato legible por humanos,\
-  \ o\u2026"
+description: "C\xF3mo hacerlo: Dart proporciona la clase `DateTime` para manejar fechas\
+  \ y horas, y el paquete `intl` para formatear. Primero, aseg\xFArate de tener el\
+  \ paquete\u2026"
 lastmod: '2024-03-13T22:44:58.766330-06:00'
 model: gpt-4-0125-preview
-summary: "Convertir una fecha en una cadena en Dart es una tarea com\xFAn cuando necesitas\
-  \ mostrar informaci\xF3n de fecha y hora en un formato legible por humanos, o cuando\
-  \ tienes la intenci\xF3n de serializar datos para almacenamiento o transmisi\xF3\
-  n."
+summary: Dart proporciona la clase `DateTime` para manejar fechas y horas, y el paquete
+  `intl` para formatear.
 title: Convirtiendo una fecha en una cadena de texto
 weight: 28
 ---

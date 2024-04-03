@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:37.956688-07:00
-description: "Att konvertera en str\xE4ng till gemener i C inneb\xE4r att omvandla\
-  \ alla versaler i en given str\xE4ng till motsvarande gemener. Programmerare utf\xF6\
-  r ofta denna\u2026"
+description: "Hur g\xF6r man: C har inte en inbyggd funktion f\xF6r direkt konvertering\
+  \ av str\xE4ngar till gemener, till skillnad fr\xE5n vissa h\xF6gniv\xE5spr\xE5\
+  k. Processen kan dock\u2026"
 lastmod: '2024-03-13T22:44:38.368184-06:00'
 model: gpt-4-0125-preview
-summary: "Att konvertera en str\xE4ng till gemener i C inneb\xE4r att omvandla alla\
-  \ versaler i en given str\xE4ng till motsvarande gemener."
+summary: "C har inte en inbyggd funktion f\xF6r direkt konvertering av str\xE4ngar\
+  \ till gemener, till skillnad fr\xE5n vissa h\xF6gniv\xE5spr\xE5k."
 title: "Omvandla en str\xE4ng till gemener"
 weight: 4
 ---

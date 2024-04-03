@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:47:35.832577-07:00
-description: "Die L\xE4nge eines Strings zu finden, hei\xDFt, zu bestimmen, wie viele\
-  \ Zeichen er enth\xE4lt. Wir brauchen das, um Textdaten zu validieren, zu schneiden\
-  \ oder\u2026"
+description: "How to: Hier ein schnelles Beispiel, wie man die L\xE4nge eines Strings\
+  \ in Kotlin findet."
 lastmod: '2024-03-13T22:44:53.838266-06:00'
 model: gpt-4-1106-preview
-summary: "Die L\xE4nge eines Strings zu finden, hei\xDFt, zu bestimmen, wie viele\
-  \ Zeichen er enth\xE4lt."
+summary: "Hier ein schnelles Beispiel, wie man die L\xE4nge eines Strings in Kotlin\
+  \ findet."
 title: "Ermittlung der Zeichenkettenl\xE4nge"
 weight: 7
 ---

@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:45:16.064856-07:00
-description: "Estrarre sottostringhe significa selezionare parti specifiche da una\
-  \ stringa di testo. I programmatori lo fanno per analisi, manipolazione dati o\u2026"
+description: 'Come fare: .'
 lastmod: '2024-03-13T22:44:43.031589-06:00'
 model: gpt-4-1106-preview
-summary: Estrarre sottostringhe significa selezionare parti specifiche da una stringa
-  di testo.
+summary: .
 title: Estrazione di sottostringhe
 weight: 6
 ---

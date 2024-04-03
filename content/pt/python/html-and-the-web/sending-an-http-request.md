@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 18:00:28.560747-07:00
-description: "Enviar um pedido HTTP \xE9 como voc\xEA faz seu c\xF3digo conversar\
-  \ com a web. Programadores fazem isso para buscar dados, enviar informa\xE7\xF5\
-  es, interagir com APIs \u2013\u2026"
+description: "Como Fazer: Vamos usar o `requests`, uma biblioteca em Python que facilita\
+  \ a emiss\xE3o de pedidos HTTP. Primeiro, voc\xEA precisa ter a biblioteca instalada."
 lastmod: '2024-03-13T22:44:46.150570-06:00'
 model: gpt-4-1106-preview
-summary: "Enviar um pedido HTTP \xE9 como voc\xEA faz seu c\xF3digo conversar com\
-  \ a web."
+summary: "Vamos usar o `requests`, uma biblioteca em Python que facilita a emiss\xE3\
+  o de pedidos HTTP."
 title: "Enviando uma requisi\xE7\xE3o HTTP"
 weight: 44
 ---

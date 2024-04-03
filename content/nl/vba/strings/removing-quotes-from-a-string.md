@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:13.000506-07:00
-description: "Het verwijderen van aanhalingstekens uit een string in VBA houdt in\
-  \ dat enkele (`'`) of dubbele (`\"`) aanhalingstekens, die een string kunnen omsluiten\
-  \ of\u2026"
+description: "Hoe: In VBA zijn er meerdere benaderingen om aanhalingstekens uit een\
+  \ string te verwijderen. Hier is een eenvoudig voorbeeld dat de `Replace` functie\u2026"
 lastmod: '2024-03-13T22:44:50.624283-06:00'
 model: gpt-4-0125-preview
-summary: Het verwijderen van aanhalingstekens uit een string in VBA houdt in dat enkele
-  (`'`) of dubbele (`"`) aanhalingstekens, die een string kunnen omsluiten of er binnen
-  ingebed zijn, worden weggehaald.
+summary: In VBA zijn er meerdere benaderingen om aanhalingstekens uit een string te
+  verwijderen.
 title: Quotes uit een string verwijderen
 weight: 9
 ---

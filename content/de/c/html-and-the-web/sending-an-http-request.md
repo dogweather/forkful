@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:37.581063-07:00
-description: "Das Senden einer HTTP-Anfrage umfasst das Erstellen und Versenden einer\
-  \ Anfrage an einen Webserver, um Daten abzurufen oder zu \xFCbermitteln. Programmierer\u2026"
+description: "Wie: Um eine HTTP-Anfrage in C zu senden, st\xFCtzt man sich in der\
+  \ Regel auf Bibliotheken wie libcurl, da C keine integrierte Unterst\xFCtzung f\xFC\
+  r\u2026"
 lastmod: '2024-03-13T22:44:54.348772-06:00'
 model: gpt-4-0125-preview
-summary: "Das Senden einer HTTP-Anfrage umfasst das Erstellen und Versenden einer\
-  \ Anfrage an einen Webserver, um Daten abzurufen oder zu \xFCbermitteln."
+summary: "Um eine HTTP-Anfrage in C zu senden, st\xFCtzt man sich in der Regel auf\
+  \ Bibliotheken wie libcurl, da C keine integrierte Unterst\xFCtzung f\xFCr Webprotokolle\
+  \ bietet."
 title: Eine HTTP-Anforderung senden
 weight: 44
 ---

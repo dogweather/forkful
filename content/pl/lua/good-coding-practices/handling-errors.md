@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 00:55:36.277720-07:00
-description: "Obs\u0142uga b\u0142\u0119d\xF3w w programowaniu polega na oczekiwaniu\
-  \ nieoczekiwanego. To sztuka planowania na wypadek gdyby co\u015B posz\u0142o nie\
-  \ tak, aby\u015B m\xF3g\u0142 utrzyma\u0107 swoj\u0105\u2026"
+description: "Jak to zrobi\u0107: Lua u\u017Cywa dw\xF3ch g\u0142\xF3wnych funkcji\
+  \ do obs\u0142ugi b\u0142\u0119d\xF3w: `pcall` oraz `xpcall`. Oto jak ich u\u017C\
+  ywa\u0107."
 lastmod: '2024-03-13T22:44:35.547500-06:00'
 model: gpt-4-1106-preview
-summary: "Obs\u0142uga b\u0142\u0119d\xF3w w programowaniu polega na oczekiwaniu nieoczekiwanego."
+summary: "Lua u\u017Cywa dw\xF3ch g\u0142\xF3wnych funkcji do obs\u0142ugi b\u0142\
+  \u0119d\xF3w."
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---

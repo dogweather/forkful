@@ -2,12 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:17.671407-07:00
-description: "Loggen in Dart verwijst naar het proces van het vastleggen van informatie\
-  \ op verschillende niveaus tijdens de uitvoering van een programma. Programmeurs\u2026"
+description: "Hoe te: Dart bevat een eenvoudig logmechanisme via de `dart:developer`\
+  \ bibliotheek. Voor meer geavanceerde logbehoeften wenden programmeurs zich vaak\
+  \ tot\u2026"
 lastmod: '2024-03-13T22:44:50.512242-06:00'
 model: gpt-4-0125-preview
-summary: Loggen in Dart verwijst naar het proces van het vastleggen van informatie
-  op verschillende niveaus tijdens de uitvoering van een programma.
+summary: Dart bevat een eenvoudig logmechanisme via de `dart:developer` bibliotheek.
 title: Loggen
 weight: 17
 ---

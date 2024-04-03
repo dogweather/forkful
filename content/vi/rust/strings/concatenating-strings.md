@@ -2,16 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:48.259364-07:00
-description: "N\u1ED1i chu\u1ED7i l\xE0 vi\u1EC7c gh\xE9p c\xE1c chu\u1ED7i l\u1EA1\
-  i v\u1EDBi nhau t\u1EEB \u0111\u1EA7u \u0111\u1EBFn cu\u1ED1i \u0111\u1EC3 t\u1EA1\
-  o th\xE0nh m\u1ED9t c\xE1i m\u1EDBi. Ch\xFAng ta th\u1EF1c hi\u1EC7n \u0111i\u1EC1\
-  u n\xE0y \u0111\u1EC3 x\xE2y d\u1EF1ng th\xF4ng \u0111i\u1EC7p, t\u1EA1o ra \u0111\
-  \u1EA7u ra,\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Rust cung c\u1EA5p cho b\u1EA1n m\u1ED9t s\u1ED1\
+  \ c\xE1ch \u0111\u1EC3 gh\xE9p c\xE1c v\u0103n b\u1EA3n l\u1EA1i v\u1EDBi nhau.\
+  \ H\xE3y c\xF9ng kh\xE1m ph\xE1. #."
 lastmod: '2024-03-13T22:44:36.364885-06:00'
 model: gpt-4-0125-preview
-summary: "N\u1ED1i chu\u1ED7i l\xE0 vi\u1EC7c gh\xE9p c\xE1c chu\u1ED7i l\u1EA1i v\u1EDB\
-  i nhau t\u1EEB \u0111\u1EA7u \u0111\u1EBFn cu\u1ED1i \u0111\u1EC3 t\u1EA1o th\xE0\
-  nh m\u1ED9t c\xE1i m\u1EDBi."
+summary: "Rust cung c\u1EA5p cho b\u1EA1n m\u1ED9t s\u1ED1 c\xE1ch \u0111\u1EC3 gh\xE9\
+  p c\xE1c v\u0103n b\u1EA3n l\u1EA1i v\u1EDBi nhau."
 title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 weight: 3
 ---

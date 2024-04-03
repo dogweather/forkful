@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:53.138767-07:00
-description: "Express\xF5es regulares (regex) no Visual Basic for Applications (VBA)\
-  \ oferecem uma maneira poderosa de pesquisar, combinar e manipular strings.\u2026"
+description: "Como: Para usar express\xF5es regulares no VBA, voc\xEA primeiro precisa\
+  \ habilitar a biblioteca Microsoft VBScript Regular Expressions. No editor do VBA,\
+  \ v\xE1 em\u2026"
 lastmod: '2024-03-13T22:44:46.400586-06:00'
 model: gpt-4-0125-preview
-summary: "Express\xF5es regulares (regex) no Visual Basic for Applications (VBA) oferecem\
-  \ uma maneira poderosa de pesquisar, combinar e manipular strings."
+summary: "Para usar express\xF5es regulares no VBA, voc\xEA primeiro precisa habilitar\
+  \ a biblioteca Microsoft VBScript Regular Expressions."
 title: "Usando express\xF5es regulares"
 weight: 11
 ---

@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 04:45:14.502187-07:00
-description: "Les nombres complexes comportent une partie r\xE9elle et une partie\
-  \ imaginaire et sont cruciaux dans divers domaines tels que l'ing\xE9nierie, la\
-  \ physique et\u2026"
+description: "Comment faire : Rust n'a pas de support int\xE9gr\xE9 pour les nombres\
+  \ complexes, mais des crates comme `num-complex` vous couvrent. Voici comment l'utiliser\
+  \ ."
 lastmod: '2024-03-13T22:44:57.475747-06:00'
 model: gpt-4-0125-preview
-summary: "Les nombres complexes comportent une partie r\xE9elle et une partie imaginaire\
-  \ et sont cruciaux dans divers domaines tels que l'ing\xE9nierie, la physique et\
-  \ les graphiques informatiques."
+summary: "Rust n'a pas de support int\xE9gr\xE9 pour les nombres complexes, mais des\
+  \ crates comme `num-complex` vous couvrent."
 title: Manipulation des nombres complexes
 weight: 14
 ---

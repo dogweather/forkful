@@ -1,11 +1,12 @@
 ---
 date: 2024-01-19
-description: "YAML to format danych u\u017Cywany do konfiguracji i serializacji. Programi\u015B\
-  ci korzystaj\u0105 z niego ze wzgl\u0119du na jego czytelno\u015B\u0107 i prostot\u0119\
-  ."
+description: "How to: (Jak to zrobi\u0107:) Elm nie ma wbudowanego wsparcia dla YAML,\
+  \ wi\u0119c trzeba u\u017Cy\u0107 zewn\u0119trznej biblioteki lub konwertowa\u0107\
+  \ YAML do JSON. Oto przyk\u0142ad\u2026"
 lastmod: '2024-03-13T22:44:35.342159-06:00'
 model: unknown
-summary: "YAML to format danych u\u017Cywany do konfiguracji i serializacji."
+summary: "Elm nie ma wbudowanego wsparcia dla YAML, wi\u0119c trzeba u\u017Cy\u0107\
+  \ zewn\u0119trznej biblioteki lub konwertowa\u0107 YAML do JSON."
 title: Praca z yaml
 weight: 41
 ---

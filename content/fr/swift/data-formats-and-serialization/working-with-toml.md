@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 04:26:35.031886-07:00
-description: "TOML (Tom's Obvious, Minimal Language ou le Langage Minimal et \xC9\
-  vident de Tom) est un format de s\xE9rialisation de donn\xE9es facile \xE0 lire\
-  \ en raison de sa\u2026"
+description: "Comment faire : Pour commencer, vous avez besoin d'un analyseur TOML.\
+  \ Swift n'en poss\xE8de pas un int\xE9gr\xE9, donc utilisons `TOMLDecoder`. Installez-le\
+  \ via le\u2026"
 lastmod: '2024-03-13T22:44:58.253179-06:00'
 model: gpt-4-0125-preview
-summary: "TOML (Tom's Obvious, Minimal Language ou le Langage Minimal et \xC9vident\
-  \ de Tom) est un format de s\xE9rialisation de donn\xE9es facile \xE0 lire en raison\
-  \ de sa s\xE9mantique claire."
+summary: Pour commencer, vous avez besoin d'un analyseur TOML.
 title: Travailler avec TOML
 weight: 39
 ---

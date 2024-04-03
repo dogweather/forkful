@@ -2,14 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:43.182592-07:00
-description: "Vi\u1EC7c tr\xEDch xu\u1EA5t c\xE1c chu\u1ED7i con ngh\u0129a l\xE0\
-  \ l\u1EA5y c\xE1c ph\u1EA7n c\u1EE5 th\u1EC3 ra kh\u1ECFi m\u1ED9t chu\u1ED7i. C\xE1\
-  c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3\
-  \ c\xF4 l\u1EADp, thao t\xE1c, ho\u1EB7c ph\xE2n t\xEDch\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Elm l\xE0m cho \u0111i\u1EC1u n\xE0y tr\u1EDF\
+  \ n\xEAn d\u1EC5 d\xE0ng. \u0110\u1EA7u ti\xEAn, ch\xFAng ta s\u1EED d\u1EE5ng `String.slice`."
 lastmod: '2024-03-13T22:44:36.529516-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c tr\xEDch xu\u1EA5t c\xE1c chu\u1ED7i con ngh\u0129a l\xE0 l\u1EA5\
-  y c\xE1c ph\u1EA7n c\u1EE5 th\u1EC3 ra kh\u1ECFi m\u1ED9t chu\u1ED7i."
+summary: "Elm l\xE0m cho \u0111i\u1EC1u n\xE0y tr\u1EDF n\xEAn d\u1EC5 d\xE0ng."
 title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 weight: 6
 ---

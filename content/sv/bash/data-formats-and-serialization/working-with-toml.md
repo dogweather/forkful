@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:19:00.947654-07:00
-description: "TOML, en kortform f\xF6r Toms Obvious, Minimal Language, \xE4r ett format\
-  \ f\xF6r data-serialisering. Programmerare gillar det f\xF6r dess enkelhet och l\xE4\
-  sbarhet; det\u2026"
+description: "Hur man g\xF6r: B\xF6rja med att installera `toml-cli` f\xF6r att leka\
+  \ med TOML i Bash. Praktiskt f\xF6r att l\xE4sa eller redigera TOML-filer p\xE5\
+  \ spr\xE5ng."
 lastmod: '2024-03-13T22:44:38.105598-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, en kortform f\xF6r Toms Obvious, Minimal Language, \xE4r ett format\
-  \ f\xF6r data-serialisering."
+summary: "B\xF6rja med att installera `toml-cli` f\xF6r att leka med TOML i Bash."
 title: Att arbeta med TOML
 weight: 39
 ---

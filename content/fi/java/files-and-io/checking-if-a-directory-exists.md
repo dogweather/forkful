@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:10.923123-07:00
-description: "Tarkastus siit\xE4, onko kansio olemassa Javassa, on perusteht\xE4v\xE4\
-  , joka sis\xE4lt\xE4\xE4 tiedostoj\xE4rjestelm\xE4n kansion olemassaolon varmistamisen\
-  \ ennen siit\xE4\u2026"
+description: "Kuinka: Javassa on useita tapoja tarkistaa, onko kansio olemassa, ensisijaisesti\
+  \ k\xE4ytt\xE4m\xE4ll\xE4 `java.nio.file.Files`- ja `java.io.File`-luokkia. **K\xE4\
+  ytt\xE4en\u2026"
 lastmod: '2024-03-13T22:44:56.459599-06:00'
 model: gpt-4-0125-preview
-summary: "Tarkastus siit\xE4, onko kansio olemassa Javassa, on perusteht\xE4v\xE4\
-  , joka sis\xE4lt\xE4\xE4 tiedostoj\xE4rjestelm\xE4n kansion olemassaolon varmistamisen\
-  \ ennen siit\xE4 lukemista, sinne kirjoittamista tai mit\xE4 tahansa toimintoja,\
-  \ jotka edellytt\xE4v\xE4t sen olemassaoloa."
+summary: "Javassa on useita tapoja tarkistaa, onko kansio olemassa, ensisijaisesti\
+  \ k\xE4ytt\xE4m\xE4ll\xE4 `java.nio.file.Files`- ja `java.io.File`-luokkia."
 title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---

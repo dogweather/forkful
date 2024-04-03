@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:18.006849-07:00
-description: "Las expresiones regulares (regex) son una herramienta poderosa para\
-  \ el procesamiento de texto, permitiendo a los programadores buscar, coincidir y\u2026"
+description: "C\xF3mo: #."
 lastmod: '2024-03-13T22:44:59.025781-06:00'
 model: gpt-4-0125-preview
-summary: "Las expresiones regulares (regex) son una herramienta poderosa para el procesamiento\
-  \ de texto, permitiendo a los programadores buscar, coincidir y manipular cadenas\
-  \ con t\xE9cnicas avanzadas de coincidencia de patrones."
+summary: '#.'
 title: Usando expresiones regulares
 weight: 11
 ---

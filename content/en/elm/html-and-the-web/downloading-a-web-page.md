@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:43:48.588566-07:00
-description: "Downloading a web page means grabbing data from the internet directly\
-  \ into your app to display or process it. Programmers do it to obtain real-time\u2026"
+description: 'How to: Elm requires side effects like HTTP requests to be structured
+  as commands. You''ll use the `Http` module to fetch and handle the response.'
 lastmod: '2024-03-13T22:45:00.008399-06:00'
 model: gpt-4-1106-preview
-summary: Downloading a web page means grabbing data from the internet directly into
-  your app to display or process it.
+summary: Elm requires side effects like HTTP requests to be structured as commands.
 title: Downloading a web page
 weight: 42
 ---

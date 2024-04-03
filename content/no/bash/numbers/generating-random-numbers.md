@@ -1,13 +1,12 @@
 ---
 date: 2024-01-27 20:32:37.178554-07:00
-description: "\xC5 generere tilfeldige tall i Bash gir en m\xE5te \xE5 innf\xF8re\
-  \ uforutsigbarhet i skript p\xE5, noe som er essensielt for oppgaver som \xE5 generere\
-  \ sikre passord,\u2026"
+description: "Hvordan gj\xF8re det: I Bash er `$RANDOM`-variabelen veien \xE5 g\xE5\
+  \ for \xE5 generere tilfeldige tall. Hver gang du refererer til den, gir Bash et\
+  \ pseudotilfeldig\u2026"
 lastmod: '2024-03-13T22:44:40.968256-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 generere tilfeldige tall i Bash gir en m\xE5te \xE5 innf\xF8re uforutsigbarhet\
-  \ i skript p\xE5, noe som er essensielt for oppgaver som \xE5 generere sikre passord,\
-  \ simulere data eller for programmering av spill."
+summary: "I Bash er `$RANDOM`-variabelen veien \xE5 g\xE5 for \xE5 generere tilfeldige\
+  \ tall."
 title: Generering av tilfeldige tall
 weight: 12
 ---

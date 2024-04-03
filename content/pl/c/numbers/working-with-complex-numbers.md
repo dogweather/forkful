@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:08.294353-07:00
-description: "Liczby zespolone sk\u0142adaj\u0105 si\u0119 z cz\u0119\u015Bci rzeczywistej\
-  \ i urojonej, reprezentowane jako `a + bi`, gdzie `i` jest pierwiastkiem kwadratowym\
-  \ z `-1`. Programi\u015Bci\u2026"
+description: "Jak to zrobi\u0107: W j\u0119zyku C liczby zespolone s\u0105 obs\u0142\
+  ugiwane przez bibliotek\u0119 standardow\u0105, a konkretnie przez `<complex.h>`.\
+  \ Aby z nich korzysta\u0107, nale\u017Cy\u2026"
 lastmod: '2024-03-13T22:44:35.879665-06:00'
 model: gpt-4-0125-preview
-summary: "Liczby zespolone sk\u0142adaj\u0105 si\u0119 z cz\u0119\u015Bci rzeczywistej\
-  \ i urojonej, reprezentowane jako `a + bi`, gdzie `i` jest pierwiastkiem kwadratowym\
-  \ z `-1`."
+summary: "W j\u0119zyku C liczby zespolone s\u0105 obs\u0142ugiwane przez bibliotek\u0119\
+  \ standardow\u0105, a konkretnie przez `<complex.h>`."
 title: Praca z liczbami zespolonymi
 weight: 14
 ---

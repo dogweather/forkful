@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:04.622760-07:00
-description: "TOML, kort voor Tom's Obvious, Minimal Language, is een gegevensserialisatieformaat\
-  \ dat gemakkelijk te lezen is vanwege de duidelijke semantiek.\u2026"
+description: "Hoe te: In PowerShell is er geen native cmdlet om TOML te parsen. Typisch\
+  \ zou je een module gebruiken of TOML naar JSON converteren met een tool zoals\u2026"
 lastmod: '2024-03-13T22:44:51.053671-06:00'
 model: gpt-4-0125-preview
-summary: TOML, kort voor Tom's Obvious, Minimal Language, is een gegevensserialisatieformaat
-  dat gemakkelijk te lezen is vanwege de duidelijke semantiek.
+summary: In PowerShell is er geen native cmdlet om TOML te parsen.
 title: Werken met TOML
 weight: 39
 ---

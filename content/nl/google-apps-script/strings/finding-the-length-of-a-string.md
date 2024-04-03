@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:28.087831-07:00
-description: "De lengte van een string vinden in Google Apps Script, een JavaScript\
-  \ cloud scriptingtaal waarmee je taken kunt automatiseren binnen Google-producten,\u2026"
+description: "Hoe te: In Google Apps Script kun je de lengte van een string vinden\
+  \ met de `.length` eigenschap, vergelijkbaar met JavaScript. Deze eigenschap\u2026"
 lastmod: '2024-03-13T22:44:50.321480-06:00'
 model: gpt-4-0125-preview
-summary: De lengte van een string vinden in Google Apps Script, een JavaScript cloud
-  scriptingtaal waarmee je taken kunt automatiseren binnen Google-producten, gaat
-  over het bepalen van het aantal karakters dat een string bevat.
+summary: In Google Apps Script kun je de lengte van een string vinden met de `.length`
+  eigenschap, vergelijkbaar met JavaScript.
 title: De lengte van een string vinden
 weight: 7
 ---

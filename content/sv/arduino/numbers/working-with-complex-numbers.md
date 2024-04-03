@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 04:36:49.107608-07:00
-description: "Komplexa tal har en reell del och en imagin\xE4r del, vanligtvis skrivet\
-  \ som `a + bi`. De \xE4r avg\xF6rande f\xF6r vissa matematikintensiva Arduino-projekt\
-  \ som\u2026"
+description: "Hur man g\xF6r: ."
 lastmod: '2024-03-13T22:44:38.162192-06:00'
 model: gpt-4-0125-preview
-summary: "Komplexa tal har en reell del och en imagin\xE4r del, vanligtvis skrivet\
-  \ som `a + bi`."
+summary: .
 title: Att arbeta med komplexa tal
 weight: 14
 ---

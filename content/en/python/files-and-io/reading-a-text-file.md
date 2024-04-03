@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:54:55.075228-07:00
-description: "Reading a text file in Python is grabbing data from a file that's accessible\
-  \ on your disk or over a network. Programmers read files to use the stored data\u2026"
+description: 'How to: .'
 lastmod: '2024-04-01'
 model: gpt-4-1106-preview
-summary: Reading a text file in Python is grabbing data from a file that's accessible
-  on your disk or over a network.
+summary: .
 title: Reading a text file
 weight: 22
 ---

@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:44.687685-07:00
-description: "R\xE9cup\xE9rer la date actuelle en Bash implique l'utilisation de commandes\
-  \ int\xE9gr\xE9es pour afficher la date et l'heure dans divers formats. Les programmeurs\u2026"
+description: "Comment faire : En Bash, la commande `date` est votre principal outil\
+  \ pour obtenir la date et l'heure actuelles. Voici quelques exemples de comment\u2026"
 lastmod: '2024-03-13T22:44:58.009023-06:00'
 model: gpt-4-0125-preview
-summary: "R\xE9cup\xE9rer la date actuelle en Bash implique l'utilisation de commandes\
-  \ int\xE9gr\xE9es pour afficher la date et l'heure dans divers formats."
+summary: En Bash, la commande `date` est votre principal outil pour obtenir la date
+  et l'heure actuelles.
 title: Obtenir la date actuelle
 weight: 29
 ---

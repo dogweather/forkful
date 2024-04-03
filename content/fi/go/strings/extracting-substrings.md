@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:54.076270-07:00
-description: "Merkkijonojen osien poimiminen k\xE4sitt\xE4\xE4 tiettyjen merkkijonojen\
-  \ osien hakemisen niiden sijaintien perusteella. Ohjelmoijat suorittavat t\xE4t\xE4\
-  \ toimenpidett\xE4\u2026"
+description: "Miten: Go-kieless\xE4 `string`-tyyppi on vain luku -taulukko (slice)\
+  \ tavuja. Merkkijonojen osien poimimiseen k\xE4ytet\xE4\xE4n p\xE4\xE4asiassa `slice`-syntaksia\
+  \ yhdess\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.038611-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonojen osien poimiminen k\xE4sitt\xE4\xE4 tiettyjen merkkijonojen\
-  \ osien hakemisen niiden sijaintien perusteella."
+summary: "Go-kieless\xE4 `string`-tyyppi on vain luku -taulukko (slice) tavuja."
 title: Alimerkkijonojen erottaminen
 weight: 6
 ---

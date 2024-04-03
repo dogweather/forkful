@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:53.375248-07:00
-description: "Kirjoittaminen standardivirheeseen (stderr) tarkoittaa ohjelmasi virheviestien\
-  \ tai diagnostiikkatulosteiden ohjaamista erilliseen virtaan, joka eroaa\u2026"
+description: "Kuinka: Swiftiss\xE4 standardivirheeseen kirjoittaminen voidaan suorittaa\
+  \ k\xE4ytt\xE4m\xE4ll\xE4 `FileHandle`-luokkaa suoraa stderr-p\xE4\xE4sy\xE4 varten.\
+  \ T\xE4ss\xE4 on\u2026"
 lastmod: '2024-03-13T22:44:56.922903-06:00'
 model: gpt-4-0125-preview
-summary: Kirjoittaminen standardivirheeseen (stderr) tarkoittaa ohjelmasi virheviestien
-  tai diagnostiikkatulosteiden ohjaamista erilliseen virtaan, joka eroaa standarditulosteesta
-  (stdout).
+summary: "Swiftiss\xE4 standardivirheeseen kirjoittaminen voidaan suorittaa k\xE4\
+  ytt\xE4m\xE4ll\xE4 `FileHandle`-luokkaa suoraa stderr-p\xE4\xE4sy\xE4 varten."
 title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---

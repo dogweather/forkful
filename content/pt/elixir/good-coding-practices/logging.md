@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 01:02:31.826093-07:00
-description: "Registros (logging) no desenvolvimento de software \xE9 a t\xE9cnica\
-  \ de registrar eventos que ocorrem enquanto um programa est\xE1 em execu\xE7\xE3\
-  o, tipicamente em um\u2026"
+description: "Como fazer: Em Elixir, a maneira prim\xE1ria de registrar informa\xE7\
+  \xF5es \xE9 atrav\xE9s do m\xF3dulo `Logger` integrado. Veja como voc\xEA pode us\xE1\
+  -lo."
 lastmod: '2024-03-13T22:44:46.244460-06:00'
 model: gpt-4-1106-preview
-summary: "Registros (logging) no desenvolvimento de software \xE9 a t\xE9cnica de\
-  \ registrar eventos que ocorrem enquanto um programa est\xE1 em execu\xE7\xE3o,\
-  \ tipicamente em um arquivo ou sistema externo."
+summary: "Em Elixir, a maneira prim\xE1ria de registrar informa\xE7\xF5es \xE9 atrav\xE9\
+  s do m\xF3dulo `Logger` integrado."
 title: Registro de Logs
 weight: 17
 ---

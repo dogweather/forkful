@@ -2,15 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:25.942271-07:00
-description: "Vi\u1EBFt ki\u1EC3m th\u1EED trong l\u1EADp tr\xECnh l\xE0 t\u1EA1o\
-  \ ra code \u0111\u1EC3 ki\u1EC3m tra xem m\xE3 kh\xE1c c\xF3 ho\u1EA1t \u0111\u1ED9\
-  ng \u0111\xFAng c\xE1ch kh\xF4ng. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7\
-  n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 ph\xE1t hi\u1EC7n s\u1EDBm\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong Elixir, b\u1EA1n s\u1EBD s\u1EED\
+  \ d\u1EE5ng ExUnit \u0111\u1EC3 vi\u1EBFt ki\u1EC3m th\u1EED. \u0110\xF3 l\xE0 m\u1ED9\
+  t framework c\xF3 s\u1EB5n, th\xE2n thi\u1EC7n v\xE0 d\u1EC5 d\xE0ng \u0111\u1EC3\
+  \ b\u1EAFt \u0111\u1EA7u. D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t v\xED d\u1EE5\
+  \u2026"
 lastmod: '2024-03-13T22:44:36.213078-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EBFt ki\u1EC3m th\u1EED trong l\u1EADp tr\xECnh l\xE0 t\u1EA1o ra code\
-  \ \u0111\u1EC3 ki\u1EC3m tra xem m\xE3 kh\xE1c c\xF3 ho\u1EA1t \u0111\u1ED9ng \u0111\
-  \xFAng c\xE1ch kh\xF4ng."
+summary: "Trong Elixir, b\u1EA1n s\u1EBD s\u1EED d\u1EE5ng ExUnit \u0111\u1EC3 vi\u1EBF\
+  t ki\u1EC3m th\u1EED."
 title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
 weight: 36
 ---

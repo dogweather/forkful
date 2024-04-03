@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:42.507057-07:00
-description: "Na programa\xE7\xE3o Bash, verificar se um diret\xF3rio existe \xE9\
-  \ um mecanismo de controle essencial usado para verificar a presen\xE7a de um diret\xF3\
-  rio antes de\u2026"
+description: "Como fazer: No seu n\xFAcleo, Bash permite verificar a exist\xEAncia\
+  \ de um diret\xF3rio usando declara\xE7\xF5es condicionais e o operador `-d`. Abaixo\
+  \ est\xE1 um exemplo\u2026"
 lastmod: '2024-03-13T22:44:46.767096-06:00'
 model: gpt-4-0125-preview
-summary: "Na programa\xE7\xE3o Bash, verificar se um diret\xF3rio existe \xE9 um mecanismo\
-  \ de controle essencial usado para verificar a presen\xE7a de um diret\xF3rio antes\
-  \ de realizar opera\xE7\xF5es de arquivo."
+summary: "No seu n\xFAcleo, Bash permite verificar a exist\xEAncia de um diret\xF3\
+  rio usando declara\xE7\xF5es condicionais e o operador `-d`."
 title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---

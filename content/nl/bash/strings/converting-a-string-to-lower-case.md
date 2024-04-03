@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:35.409220-07:00
-description: "Het omzetten van strings naar kleine letters is het transformeren van\
-  \ alle alfabetische tekens in een string naar hun kleine lettervorm. Programmeurs\u2026"
+description: 'Hoe: Hier is de eenvoudige manier om een string naar kleine letters
+  om te zetten in Bash.'
 lastmod: '2024-03-13T22:44:50.966591-06:00'
 model: gpt-4-0125-preview
-summary: Het omzetten van strings naar kleine letters is het transformeren van alle
-  alfabetische tekens in een string naar hun kleine lettervorm.
+summary: Hier is de eenvoudige manier om een string naar kleine letters om te zetten
+  in Bash.
 title: Een string omzetten naar kleine letters
 weight: 4
 ---

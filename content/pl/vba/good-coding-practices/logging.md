@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:16.190176-07:00
-description: "Logowanie w Visual Basic for Applications (VBA) polega na rejestrowaniu\
-  \ informacji o zachowaniu programu w czasie jego dzia\u0142ania do pliku, konsoli\
-  \ lub\u2026"
+description: "Jak to zrobi\u0107: W VBA nie ma wbudowanego frameworka do logowania,\
+  \ jak to ma miejsce w niekt\xF3rych innych j\u0119zykach. Jednak\u017Ce, implementacja\
+  \ prostego\u2026"
 lastmod: '2024-03-13T22:44:35.239177-06:00'
 model: gpt-4-0125-preview
-summary: "Logowanie w Visual Basic for Applications (VBA) polega na rejestrowaniu\
-  \ informacji o zachowaniu programu w czasie jego dzia\u0142ania do pliku, konsoli\
-  \ lub bazy danych."
+summary: "W VBA nie ma wbudowanego frameworka do logowania, jak to ma miejsce w niekt\xF3\
+  rych innych j\u0119zykach."
 title: Rejestrowanie
 weight: 17
 ---

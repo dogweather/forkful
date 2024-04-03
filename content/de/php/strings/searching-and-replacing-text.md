@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:58:27.928375-07:00
-description: "Suchen und Ersetzen von Text in PHP ist quasi ein digitaler Find-Dich-Fix-Dich-Prozess:\
-  \ Du hast ein St\xFCckchen Text, und Du willst ein Wort oder eine\u2026"
+description: "Wie geht das? Um Text in PHP zu suchen und zu ersetzen, verwenden wir\
+  \ h\xE4ufig `str_replace()` oder `preg_replace()` f\xFCr komplexere, muster-basierte\u2026"
 lastmod: '2024-03-13T22:44:53.957634-06:00'
 model: gpt-4-1106-preview
-summary: "Suchen und Ersetzen von Text in PHP ist quasi ein digitaler Find-Dich-Fix-Dich-Prozess:\
-  \ Du hast ein St\xFCckchen Text, und Du willst ein Wort oder eine Phrase durch eine\
-  \ andere austauschen."
+summary: "Um Text in PHP zu suchen und zu ersetzen, verwenden wir h\xE4ufig `str_replace()`\
+  \ oder `preg_replace()` f\xFCr komplexere, muster-basierte Operationen."
 title: Suchen und Ersetzen von Text
 weight: 10
 ---

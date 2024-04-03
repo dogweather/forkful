@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:29.568517-07:00
-description: "\xC5 analysere en dato fra en streng inneb\xE6rer \xE5 konvertere tekstinformasjon\
-  \ om dato og tid til et datetime-objekt eller et tilsvarende strukturert format.\u2026"
+description: "Hvordan: Pythons standardbibliotek tilbyr `datetime`-modulen, som inkluderer\
+  \ `strptime`-metoden for dette form\xE5let. Metoden krever to argumenter:\u2026"
 lastmod: '2024-03-13T22:44:40.370727-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 analysere en dato fra en streng inneb\xE6rer \xE5 konvertere tekstinformasjon\
-  \ om dato og tid til et datetime-objekt eller et tilsvarende strukturert format."
+summary: "Pythons standardbibliotek tilbyr `datetime`-modulen, som inkluderer `strptime`-metoden\
+  \ for dette form\xE5let."
 title: Analysering av en dato fra en streng
 weight: 30
 ---

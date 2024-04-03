@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:46:12.958077-07:00
-description: "Wycinanie podci\u0105g\xF3w to pobieranie fragment\xF3w z wi\u0119kszego\
-  \ ci\u0105gu znak\xF3w. Programi\u015Bci robi\u0105 to, by manipulowa\u0107 danymi,\
-  \ wyci\u0105ga\u0107 informacje lub sprawdza\u0107\u2026"
+description: "How to: (Jak to zrobi\u0107?) Java u\u017Cywa metody `substring()` klasy\
+  \ `String` do wycinania podci\u0105g\xF3w. Przyk\u0142ady."
 lastmod: '2024-03-13T22:44:35.266100-06:00'
 model: gpt-4-1106-preview
-summary: "Wycinanie podci\u0105g\xF3w to pobieranie fragment\xF3w z wi\u0119kszego\
-  \ ci\u0105gu znak\xF3w."
+summary: "Java u\u017Cywa metody `substring()` klasy `String` do wycinania podci\u0105\
+  g\xF3w."
 title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
 weight: 6
 ---

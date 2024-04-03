@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 03:48:15.714827-07:00
-description: "Wyobra\u017A sobie, \u017Ce masz ma\u0142y program, kt\xF3ry nie dzia\u0142\
-  a prawid\u0142owo: ```C# static void Main() { int result = Sum(1, 2); Console.WriteLine(result);\
-  \ } static\u2026"
+description: "Jak to zrobi\u0107: Wyobra\u017A sobie, \u017Ce masz ma\u0142y program,\
+  \ kt\xF3ry nie dzia\u0142a prawid\u0142owo."
 lastmod: '2024-03-13T22:44:35.412889-06:00'
 model: gpt-4-0125-preview
 summary: "Wyobra\u017A sobie, \u017Ce masz ma\u0142y program, kt\xF3ry nie dzia\u0142\
-  a prawid\u0142owo:\n\n```C#\nstatic void Main()\n{\n    int result = Sum(1, 2);\n\
-  \    Console."
+  a prawid\u0142owo."
 title: Korzystanie z debugera
 weight: 35
 ---

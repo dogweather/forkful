@@ -1,13 +1,12 @@
 ---
 date: 2024-01-27 20:33:22.214806-07:00
-description: "La g\xE9n\xE9ration de nombres al\xE9atoires est une t\xE2che fondamentale\
-  \ en programmation, utilis\xE9e pour tout, de l'\xE9chantillonnage de donn\xE9es\
-  \ au d\xE9veloppement de\u2026"
+description: "Comment faire : G\xE9n\xE9rer un nombre al\xE9atoire dans Fish peut\
+  \ \xEAtre simple, en utilisant la combinaison des utilitaires syst\xE8me et des\
+  \ capacit\xE9s du shell. Ci-\u2026"
 lastmod: '2024-03-13T22:44:58.317584-06:00'
 model: gpt-4-0125-preview
-summary: "La g\xE9n\xE9ration de nombres al\xE9atoires est une t\xE2che fondamentale\
-  \ en programmation, utilis\xE9e pour tout, de l'\xE9chantillonnage de donn\xE9es\
-  \ au d\xE9veloppement de jeux."
+summary: "G\xE9n\xE9rer un nombre al\xE9atoire dans Fish peut \xEAtre simple, en utilisant\
+  \ la combinaison des utilitaires syst\xE8me et des capacit\xE9s du shell."
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---

@@ -2,14 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:17.943551-07:00
-description: "YAML, \"YAML Ain't Markup Language,\" l\xE0 m\u1ED9t ng\xF4n ng\u1EEF\
-  \ tu\u1EA7n t\u1EF1 h\xF3a d\u1EEF li\u1EC7u. L\u1EADp tr\xECnh vi\xEAn s\u1EED\
-  \ d\u1EE5ng n\xF3 do t\xEDnh d\u1EC5 \u0111\u1ECDc v\xE0 \u0111\u01A1n gi\u1EA3\
-  n, \u0111\u1EB7c bi\u1EC7t l\xE0 cho c\xE1c t\u1EC7p c\u1EA5u\u2026"
+description: "L\xE0m Th\u1EBF N\xE0o: \u0110\u1EC3 x\u1EED l\xFD YAML trong Java,\
+  \ h\xE3y s\u1EED d\u1EE5ng `snakeyaml`, m\u1ED9t th\u01B0 vi\u1EC7n ph\u1ED5 bi\u1EBF\
+  n. \u0110\u1EA7u ti\xEAn, th\xEAm s\u1EF1 ph\u1EE5 thu\u1ED9c v\xE0o `pom.xml` c\u1EE7\
+  a b\u1EA1n."
 lastmod: '2024-03-13T22:44:36.516046-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, \"YAML Ain't Markup Language,\" l\xE0 m\u1ED9t ng\xF4n ng\u1EEF tu\u1EA7\
-  n t\u1EF1 h\xF3a d\u1EEF li\u1EC7u."
+summary: "\u0110\u1EC3 x\u1EED l\xFD YAML trong Java, h\xE3y s\u1EED d\u1EE5ng `snakeyaml`,\
+  \ m\u1ED9t th\u01B0 vi\u1EC7n ph\u1ED5 bi\u1EBFn."
 title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 weight: 41
 ---

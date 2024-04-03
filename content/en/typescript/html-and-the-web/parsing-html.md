@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 15:33:59.686760-07:00
-description: "Parsing HTML means sifting through HTML code to find, extract, or manipulate\
-  \ info. Programmers do it to interact with web content\u2014maybe scraping data,\
-  \ or\u2026"
+description: 'How to: To get started, install a library like `node-html-parser`. Here''s
+  the terminal command.'
 lastmod: '2024-03-13T22:44:59.856894-06:00'
 model: unknown
-summary: Parsing HTML means sifting through HTML code to find, extract, or manipulate
-  info.
+summary: To get started, install a library like `node-html-parser`.
 title: Parsing HTML
 weight: 43
 ---

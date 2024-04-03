@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:29:08.275957-07:00
-description: "XML er et merkespr\xE5k for koding av dokumenter p\xE5 en m\xE5te som\
-  \ er lesbar b\xE5de for mennesker og maskiner. Det er n\xF8kkel i webtjenester,\
-  \ konfigurasjonsfiler\u2026"
+description: "Hvordan: Clojure tilbyr `clojure.data.xml`-biblioteket for XML-parsing\
+  \ og -generering. F\xF8rst, la oss parse litt XML."
 lastmod: '2024-03-13T22:44:40.426062-06:00'
 model: gpt-4-0125-preview
-summary: "XML er et merkespr\xE5k for koding av dokumenter p\xE5 en m\xE5te som er\
-  \ lesbar b\xE5de for mennesker og maskiner."
+summary: Clojure tilbyr `clojure.data.xml`-biblioteket for XML-parsing og -generering.
 title: "\xC5 jobbe med XML"
 weight: 40
 ---

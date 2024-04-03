@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:36.179364-07:00
-description: "Das Senden einer HTTP-Anfrage beinhaltet, dass von Ihrer Go-Anwendung\
-  \ ein Aufruf zu einem Webserver, einer API oder einem anderen HTTP-basierten Dienst\u2026"
+description: "Wie geht das: In Go beinhaltet das Senden einer HTTP-Anfrage und das\
+  \ Verarbeiten der Antwort die Verwendung des `net/http`-Pakets. Hier ist ein\u2026"
 lastmod: '2024-03-13T22:44:53.284133-06:00'
 model: gpt-4-0125-preview
-summary: Das Senden einer HTTP-Anfrage beinhaltet, dass von Ihrer Go-Anwendung ein
-  Aufruf zu einem Webserver, einer API oder einem anderen HTTP-basierten Dienst initiiert
-  wird.
+summary: In Go beinhaltet das Senden einer HTTP-Anfrage und das Verarbeiten der Antwort
+  die Verwendung des `net/http`-Pakets.
 title: Eine HTTP-Anforderung senden
 weight: 44
 ---

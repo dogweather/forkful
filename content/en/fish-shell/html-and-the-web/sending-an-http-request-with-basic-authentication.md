@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 18:01:23.805540-07:00
-description: "Sending an HTTP request with basic authentication involves transmitting\
-  \ a username and password over the web to access protected resources. Programmers\u2026"
+description: 'How to: In Fish Shell, use `curl` to make an HTTP request with basic
+  auth. Replace `username`, `password`, and `the_url`.'
 lastmod: '2024-03-13T22:45:00.474020-06:00'
 model: gpt-4-1106-preview
-summary: Sending an HTTP request with basic authentication involves transmitting a
-  username and password over the web to access protected resources.
+summary: In Fish Shell, use `curl` to make an HTTP request with basic auth.
 title: Sending an HTTP request with basic authentication
 weight: 45
 ---

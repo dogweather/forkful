@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:32:57.483532-07:00
-description: "Att j\xE4mf\xF6ra tv\xE5 datum inneb\xE4r att fastst\xE4lla vilket som\
-  \ \xE4r tidigast eller senast, eller om de \xE4r samma. Programmerare g\xF6r detta\
-  \ f\xF6r att hantera\u2026"
+description: "Hur man g\xF6r: I Fish Shell kan du anv\xE4nda `date` f\xF6r att j\xE4\
+  mf\xF6ra datum. Ta en titt."
 lastmod: '2024-03-13T22:44:38.350746-06:00'
 model: gpt-4-1106-preview
-summary: "Att j\xE4mf\xF6ra tv\xE5 datum inneb\xE4r att fastst\xE4lla vilket som \xE4\
-  r tidigast eller senast, eller om de \xE4r samma."
+summary: "I Fish Shell kan du anv\xE4nda `date` f\xF6r att j\xE4mf\xF6ra datum."
 title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---

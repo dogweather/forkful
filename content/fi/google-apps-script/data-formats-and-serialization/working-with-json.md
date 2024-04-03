@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:19.263131-07:00
-description: "JSON, eli JavaScript Object Notation, on kevyt muoto datan tallentamiseen\
-  \ ja siirt\xE4miseen, ihanteellinen palvelimen ja asiakkaan v\xE4liseen kommunikointiin\u2026"
+description: "Miten: Google Apps Scriptill\xE4 JSONin k\xE4sittely on suoraviivaista,\
+  \ suurelta osin natiivin tuen ansiosta, jonka JavaScript tarjoaa JSONin j\xE4sent\xE4\
+  miseen ja\u2026"
 lastmod: '2024-03-13T22:44:56.121563-06:00'
 model: gpt-4-0125-preview
-summary: "JSON, eli JavaScript Object Notation, on kevyt muoto datan tallentamiseen\
-  \ ja siirt\xE4miseen, ihanteellinen palvelimen ja asiakkaan v\xE4liseen kommunikointiin\
-  \ sek\xE4 konfiguraatiotiedostoihin."
+summary: "Google Apps Scriptill\xE4 JSONin k\xE4sittely on suoraviivaista, suurelta\
+  \ osin natiivin tuen ansiosta, jonka JavaScript tarjoaa JSONin j\xE4sent\xE4miseen\
+  \ ja merkkijonoksi muuttamiseen."
 title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---

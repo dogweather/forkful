@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:08.783435-07:00
-description: "Das Abrufen des aktuellen Datums in C# beinhaltet das Abrufen der aktuellen\
-  \ Datums- und Uhrzeitangaben vom System. Programmierer m\xFCssen oft auf diese\u2026"
+description: "Wie: C# bietet eine unkomplizierte Methode, um das aktuelle Datum mittels\
+  \ der `DateTime` Klasse zu erhalten, die Teil des System-Namensraums des .NET-\u2026"
 lastmod: '2024-03-13T22:44:53.898822-06:00'
 model: gpt-4-0125-preview
-summary: Das Abrufen des aktuellen Datums in C# beinhaltet das Abrufen der aktuellen
-  Datums- und Uhrzeitangaben vom System.
+summary: C# bietet eine unkomplizierte Methode, um das aktuelle Datum mittels der
+  `DateTime` Klasse zu erhalten, die Teil des System-Namensraums des .NET-Frameworks
+  ist.
 title: Den aktuellen Datum abrufen
 weight: 29
 ---

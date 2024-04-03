@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:00.630190-07:00
-description: "\xC5 fjerne anf\xF8rselstegn fra en streng i Google Apps Script handler\
-  \ om \xE5 eliminere un\xF8dvendige anf\xF8rselstegn som kan omgi string-dataen din,\
-  \ vanligvis\u2026"
+description: "Hvordan: Google Apps Script avviker ikke mye fra standard JavaScript-praksis\
+  \ n\xE5r det kommer til behandling av strenger og deres manipulering. For \xE5 fjerne\u2026"
 lastmod: '2024-03-13T22:44:40.300993-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 fjerne anf\xF8rselstegn fra en streng i Google Apps Script handler\
-  \ om \xE5 eliminere un\xF8dvendige anf\xF8rselstegn som kan omgi string-dataen din,\
-  \ vanligvis stammende fra analyserte JSON-objekter, brukerinndata, eller datautvinning."
+summary: "Google Apps Script avviker ikke mye fra standard JavaScript-praksis n\xE5\
+  r det kommer til behandling av strenger og deres manipulering."
 title: "Fjerner anf\xF8rselstegn fra en streng"
 weight: 9
 ---

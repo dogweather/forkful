@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:38.612527-07:00
-description: "Vi\u1EC7c l\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong Elm c\xF3 ngh\u0129\
-  a l\xE0 truy xu\u1EA5t ng\xE0y l\u1ECBch hi\u1EC7n t\u1EA1i t\u1EEB h\u1EC7 th\u1ED1\
-  ng. Ch\xFAng ta l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 \u0111\xE1nh d\u1EA5u\
-  \ th\u1EDDi gian cho c\xE1c s\u1EF1 ki\u1EC7n, l\xEAn\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Elm x\u1EED l\xFD ng\xE0y th\xE1ng v\u1EDB\
+  i module `Time`. B\u1EA1n s\u1EBD nh\u1EADn \u0111\u01B0\u1EE3c th\u1EDDi gian hi\u1EC7\
+  n t\u1EA1i d\u01B0\u1EDBi d\u1EA1ng d\u1EA5u th\u1EDDi gian POSIX, sau \u0111\xF3\
+  \ chuy\u1EC3n \u0111\u1ED5i sang ng\xE0y."
 lastmod: '2024-03-13T22:44:36.558535-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c l\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong Elm c\xF3 ngh\u0129\
-  a l\xE0 truy xu\u1EA5t ng\xE0y l\u1ECBch hi\u1EC7n t\u1EA1i t\u1EEB h\u1EC7 th\u1ED1\
-  ng."
+summary: "Elm x\u1EED l\xFD ng\xE0y th\xE1ng v\u1EDBi module `Time`."
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 weight: 29
 ---

@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:37.614608-07:00
-description: "Dans le d\xE9veloppement de logiciels, il est souvent n\xE9cessaire\
-  \ de v\xE9rifier si un r\xE9pertoire existe pour \xE9viter les erreurs lors de la\
-  \ tentative d'acc\xE8s, de\u2026"
+description: "Comment faire : La biblioth\xE8que standard de Rust (`std`) inclut des\
+  \ fonctionnalit\xE9s pour v\xE9rifier l'existence d'un r\xE9pertoire \xE0 travers\
+  \ les modules\u2026"
 lastmod: '2024-03-13T22:44:57.498341-06:00'
 model: gpt-4-0125-preview
-summary: "Dans le d\xE9veloppement de logiciels, il est souvent n\xE9cessaire de v\xE9\
-  rifier si un r\xE9pertoire existe pour \xE9viter les erreurs lors de la tentative\
-  \ d'acc\xE8s, de lecture ou d'\xE9criture de fichiers."
+summary: "La biblioth\xE8que standard de Rust (`std`) inclut des fonctionnalit\xE9\
+  s pour v\xE9rifier l'existence d'un r\xE9pertoire \xE0 travers les modules `std::path::Path`\
+  \ et `std::fs`."
 title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---

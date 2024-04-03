@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:47:57.245011-07:00
-description: ''
+description: "\u0429\u043E \u0442\u0430 \u041D\u0430\u0432\u0456\u0449\u043E? Finding\
+  \ the length of a string means getting the number of characters it contains. Programmers\
+  \ do this to validate input, process text data,\u2026"
 lastmod: '2024-03-13T22:44:49.484807-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Finding the length of a string means getting the number of characters it
+  contains.
 title: "\u0412\u0438\u0437\u043D\u0430\u0447\u0435\u043D\u043D\u044F \u0434\u043E\u0432\
   \u0436\u0438\u043D\u0438 \u0440\u044F\u0434\u043A\u0430"
 weight: 7

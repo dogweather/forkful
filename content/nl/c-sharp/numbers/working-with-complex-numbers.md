@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:05.089114-07:00
-description: "Complexe getallen breiden ons getallensysteem uit met imaginaire getallen,\
-  \ waardoor we vergelijkingen kunnen oplossen die geen re\xEBle oplossingen hebben.\u2026"
+description: 'Hoe te: C# heeft een ingebouwde `System.Numerics.Complex` structuur
+  voor het verwerken van complexe getallen. Hier volgt een snelle doorloop.'
 lastmod: '2024-03-13T22:44:50.803965-06:00'
 model: gpt-4-0125-preview
-summary: "Complexe getallen breiden ons getallensysteem uit met imaginaire getallen,\
-  \ waardoor we vergelijkingen kunnen oplossen die geen re\xEBle oplossingen hebben."
+summary: C# heeft een ingebouwde `System.Numerics.Complex` structuur voor het verwerken
+  van complexe getallen.
 title: Werken met complexe getallen
 weight: 14
 ---

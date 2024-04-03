@@ -1,13 +1,11 @@
 ---
 date: 2024-01-20 17:55:53.825957-07:00
-description: "Leer argumentos de la l\xEDnea de comandos permite que tus programas\
-  \ de Elixir reciban informaci\xF3n externa al ser ejecutados, habilit\xE1ndote para\
-  \ construir\u2026"
+description: "C\xF3mo Hacerlo: Elixir hace que leer argumentos de la l\xEDnea de comandos\
+  \ sea sencillo con `System.argv/0`. Ejemplo simple."
 lastmod: '2024-03-13T22:44:58.718189-06:00'
 model: gpt-4-1106-preview
-summary: "Leer argumentos de la l\xEDnea de comandos permite que tus programas de\
-  \ Elixir reciban informaci\xF3n externa al ser ejecutados, habilit\xE1ndote para\
-  \ construir aplicaciones din\xE1micas que se adapten seg\xFAn los insumos del usuario."
+summary: "Elixir hace que leer argumentos de la l\xEDnea de comandos sea sencillo\
+  \ con `System.argv/0`."
 title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---

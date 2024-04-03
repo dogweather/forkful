@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:44:33.506016-07:00
-description: "Komplexe Zahlen sind eine Menge von Zahlen der Form `a + bi`, wobei\
-  \ `a` und `b` reelle Zahlen sind und `i` die imagin\xE4re Einheit ist (`i^2 = -1`).\
-  \ In der\u2026"
+description: "Wie: Python bietet eine eingebaute Unterst\xFCtzung f\xFCr komplexe\
+  \ Zahlen. Hier ist, wie man mit ihnen arbeiten kann."
 lastmod: '2024-03-13T22:44:53.372432-06:00'
 model: gpt-4-0125-preview
-summary: "Komplexe Zahlen sind eine Menge von Zahlen der Form `a + bi`, wobei `a`\
-  \ und `b` reelle Zahlen sind und `i` die imagin\xE4re Einheit ist (`i^2 = -1`)."
+summary: "Python bietet eine eingebaute Unterst\xFCtzung f\xFCr komplexe Zahlen."
 title: Umgang mit komplexen Zahlen
 weight: 14
 ---

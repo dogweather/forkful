@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:19.525507-07:00
-description: "Die Arbeit mit CSV-Dateien umfasst das Lesen von und das Schreiben in\
-  \ Dateien mit kommaseparierten Werten (CSV), einem beliebten Format f\xFCr den\u2026"
+description: 'Wie: #.'
 lastmod: '2024-03-13T22:44:53.784736-06:00'
 model: gpt-4-0125-preview
-summary: "Die Arbeit mit CSV-Dateien umfasst das Lesen von und das Schreiben in Dateien\
-  \ mit kommaseparierten Werten (CSV), einem beliebten Format f\xFCr den Datenaustausch,\
-  \ da es einfach und weit verbreitet unterst\xFCtzt wird."
+summary: '#.'
 title: Arbeiten mit CSV
 weight: 37
 ---

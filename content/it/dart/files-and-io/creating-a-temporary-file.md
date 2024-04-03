@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:14.023817-07:00
-description: "Creare un file temporaneo in Dart implica la generazione di un file\
-  \ destinato a un uso a breve termine, principalmente per scenari come la memorizzazione\u2026"
+description: "Come fare: La libreria `dart:io` di Dart facilita la creazione di file\
+  \ temporanei attraverso la classe `Directory`. Ecco un modo semplice per creare\
+  \ un\u2026"
 lastmod: '2024-03-13T22:44:43.153088-06:00'
 model: gpt-4-0125-preview
-summary: Creare un file temporaneo in Dart implica la generazione di un file destinato
-  a un uso a breve termine, principalmente per scenari come la memorizzazione nella
-  cache dei dati, lo storage temporaneo per l'elaborazione dei file o il mantenimento
-  di informazioni troppo sensibili per essere conservate a lungo.
+summary: La libreria `dart:io` di Dart facilita la creazione di file temporanei attraverso
+  la classe `Directory`.
 title: Creazione di un file temporaneo
 weight: 21
 ---

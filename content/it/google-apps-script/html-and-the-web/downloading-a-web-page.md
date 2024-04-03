@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:32.298891-07:00
-description: "Scaricare una pagina web in Google Apps Script comporta il recupero\
-  \ del contenuto di una pagina web tramite HTML per vari scopi, come lo scraping\
-  \ web,\u2026"
+description: "Come fare: In Google Apps Script, il servizio `UrlFetchApp` \xE8 fondamentale\
+  \ per scaricare contenuti web. Di seguito \xE8 presente una guida passo dopo passo\
+  \ e\u2026"
 lastmod: '2024-03-13T22:44:42.953586-06:00'
 model: gpt-4-0125-preview
-summary: Scaricare una pagina web in Google Apps Script comporta il recupero del contenuto
-  di una pagina web tramite HTML per vari scopi, come lo scraping web, l'estrazione
-  di dati o il monitoraggio dei cambiamenti.
+summary: "In Google Apps Script, il servizio `UrlFetchApp` \xE8 fondamentale per scaricare\
+  \ contenuti web."
 title: Scaricare una pagina web
 weight: 42
 ---

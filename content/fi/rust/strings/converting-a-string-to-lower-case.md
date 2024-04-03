@@ -1,10 +1,9 @@
 ---
 date: 2024-01-20 17:39:48.492908-07:00
-description: "\"Mik\xE4 & Miksi?\" Muuttaa merkkijonon pieniksi kirjaimiksi. T\xE4\
-  m\xE4 helpottaa vertailua ja hakua, koska isot ja pienet kirjaimet kohdellaan samoin."
+description: "How to: \"Kuinka tehd\xE4:\"."
 lastmod: '2024-03-13T22:44:56.343951-06:00'
 model: gpt-4-1106-preview
-summary: "\"Mik\xE4 & Miksi."
+summary: "\"Kuinka tehd\xE4:\"."
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---

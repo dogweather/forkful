@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:33.501451-07:00
-description: "Konwersja daty na ci\u0105g znak\xF3w w Go polega na przekszta\u0142\
-  ceniu obiektu `time.Time` na czytelny format ci\u0105gu znak\xF3w. Programi\u015B\
-  ci cz\u0119sto wykonuj\u0105 t\u0119 operacj\u0119,\u2026"
+description: "Jak to zrobi\u0107: W Go pakiet `time` zapewnia funkcjonalno\u015Bci\
+  \ do pracy z datami i czasem, w tym formatowanie obiektu `time.Time` na ci\u0105\
+  g znak\xF3w. Metoda\u2026"
 lastmod: '2024-03-13T22:44:34.865173-06:00'
 model: gpt-4-0125-preview
-summary: "Konwersja daty na ci\u0105g znak\xF3w w Go polega na przekszta\u0142ceniu\
-  \ obiektu `time."
+summary: "W Go pakiet `time` zapewnia funkcjonalno\u015Bci do pracy z datami i czasem,\
+  \ w tym formatowanie obiektu `time.Time` na ci\u0105g znak\xF3w."
 title: "Konwersja daty na ci\u0105g znak\xF3w"
 weight: 28
 ---

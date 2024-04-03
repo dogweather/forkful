@@ -2,15 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:59.003271-07:00
-description: "Praca z plikami CSV (Comma-Separated Values - warto\u015Bci oddzielone\
-  \ przecinkami) w Arduino wi\u0105\u017Ce si\u0119 z odczytem z plik\xF3w CSV i zapisywaniem\
-  \ do nich,\u2026"
+description: "Jak to zrobi\u0107: Arduino nie posiada wbudowanej biblioteki specjalnie\
+  \ do obs\u0142ugi plik\xF3w CSV, ale mo\u017Cesz u\u017Cy\u0107 bibliotek `SD` i\
+  \ `SPI` do dost\u0119pu do plik\xF3w na\u2026"
 lastmod: '2024-03-13T22:44:35.693870-06:00'
 model: gpt-4-0125-preview
-summary: "Praca z plikami CSV (Comma-Separated Values - warto\u015Bci oddzielone przecinkami)\
-  \ w Arduino wi\u0105\u017Ce si\u0119 z odczytem z plik\xF3w CSV i zapisywaniem do\
-  \ nich, zazwyczaj przechowywanych na karcie SD, co umo\u017Cliwia rejestrowanie\
-  \ danych, ustawienia konfiguracyjne i wiele wi\u0119cej."
+summary: "Arduino nie posiada wbudowanej biblioteki specjalnie do obs\u0142ugi plik\xF3\
+  w CSV, ale mo\u017Cesz u\u017Cy\u0107 bibliotek `SD` i `SPI` do dost\u0119pu do\
+  \ plik\xF3w na karcie SD, a nast\u0119pnie przetwarza\u0107 lub generowa\u0107 dane\
+  \ CSV za pomoc\u0105 podstawowych technik manipulacji ci\u0105gami znak\xF3w."
 title: Praca z plikami CSV
 weight: 37
 ---

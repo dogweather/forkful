@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:33.495071-07:00
-description: "Tests in PowerShell zu schreiben, umfasst das Erstellen von Skripten,\
-  \ die automatisch die Funktionalit\xE4t Ihres PowerShell-Codes validieren und\u2026"
+description: "Wie: PowerShell verf\xFCgt nicht \xFCber ein eingebautes Testframework,\
+  \ aber Pester, ein beliebtes Drittanbieter-Modul, wird weitgehend verwendet, um\
+  \ Tests zu\u2026"
 lastmod: '2024-03-13T22:44:54.107516-06:00'
 model: gpt-4-0125-preview
-summary: "Tests in PowerShell zu schreiben, umfasst das Erstellen von Skripten, die\
-  \ automatisch die Funktionalit\xE4t Ihres PowerShell-Codes validieren und sicherstellen,\
-  \ dass er sich wie erwartet verh\xE4lt."
+summary: "PowerShell verf\xFCgt nicht \xFCber ein eingebautes Testframework, aber\
+  \ Pester, ein beliebtes Drittanbieter-Modul, wird weitgehend verwendet, um Tests\
+  \ zu schreiben und auszuf\xFChren."
 title: Tests Schreiben
 weight: 36
 ---

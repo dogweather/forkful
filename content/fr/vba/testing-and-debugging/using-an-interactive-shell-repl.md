@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:42.747543-07:00
-description: "Un shell interactif, ou boucle de lecture-\xE9valuation-affichage (REPL\
-  \ pour Read-Eval-Print Loop), permet aux utilisateurs de saisir des commandes, de\
-  \ les\u2026"
+description: "Comment faire : Visual Basic pour Applications (VBA) lui-m\xEAme ne\
+  \ supporte pas nativement un shell interactif ou une exp\xE9rience REPL comme on\
+  \ le voit dans\u2026"
 lastmod: '2024-03-13T22:44:57.579637-06:00'
 model: gpt-4-0125-preview
-summary: "Un shell interactif, ou boucle de lecture-\xE9valuation-affichage (REPL\
-  \ pour Read-Eval-Print Loop), permet aux utilisateurs de saisir des commandes, de\
-  \ les ex\xE9cuter et de voir les r\xE9sultats en temps r\xE9el."
+summary: "Visual Basic pour Applications (VBA) lui-m\xEAme ne supporte pas nativement\
+  \ un shell interactif ou une exp\xE9rience REPL comme on le voit dans des langages\
+  \ comme Python ou JavaScript."
 title: Utiliser un shell interactif (REPL)
 weight: 34
 ---

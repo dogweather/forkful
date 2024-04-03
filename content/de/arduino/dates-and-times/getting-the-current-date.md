@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:48.037680-07:00
-description: "Das aktuelle Datum in Arduino-Projekten zu bekommen, beinhaltet das\
-  \ Abrufen von Echtzeitinformationen, die f\xFCr das Logging, Zeitstempeln oder das\
-  \ Planen\u2026"
+description: "Wie geht das: Arduino selbst hat keine eingebaute Methode, um direkt\
+  \ das aktuelle Datum zu fetchen, da ihm eine Echtzeituhr (RTC) fehlt. Dies kann\
+  \ jedoch\u2026"
 lastmod: '2024-03-13T22:44:54.153940-06:00'
 model: gpt-4-0125-preview
-summary: "Das aktuelle Datum in Arduino-Projekten zu bekommen, beinhaltet das Abrufen\
-  \ von Echtzeitinformationen, die f\xFCr das Logging, Zeitstempeln oder das Planen\
-  \ von Aufgaben entscheidend sein k\xF6nnen."
+summary: Arduino selbst hat keine eingebaute Methode, um direkt das aktuelle Datum
+  zu fetchen, da ihm eine Echtzeituhr (RTC) fehlt.
 title: Den aktuellen Datum abrufen
 weight: 29
 ---

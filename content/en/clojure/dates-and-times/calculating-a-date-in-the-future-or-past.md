@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:28:31.670616-07:00
-description: "Calculating future or past dates involves manipulating dates to find\
-  \ out what they'll be after a certain period or what they were. Programmers do this\
-  \ for\u2026"
+description: 'How to: In Clojure, you''ll mainly use the `clj-time` library for date
+  operations. Here''s a quick show.'
 lastmod: '2024-03-13T22:44:59.757671-06:00'
 model: gpt-4-1106-preview
-summary: Calculating future or past dates involves manipulating dates to find out
-  what they'll be after a certain period or what they were.
+summary: In Clojure, you'll mainly use the `clj-time` library for date operations.
 title: Calculating a date in the future or past
 weight: 26
 ---

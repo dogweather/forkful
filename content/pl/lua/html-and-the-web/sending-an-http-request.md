@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 18:00:15.633151-07:00
-description: "Wysy\u0142anie \u017C\u0105dania HTTP to proces komunikacji z serwerem\
-  \ w sieci. Programi\u015Bci robi\u0105 to, by pobiera\u0107 dane, wysy\u0142a\u0107\
-  \ formularze lub interaktywnie komunikowa\u0107\u2026"
+description: "Jak to zrobi\u0107: Do wysy\u0142ania \u017C\u0105da\u0144 HTTP w Lua\
+  \ u\u017Cyjemy biblioteki `socket.http`. Przyk\u0142adowy kod."
 lastmod: '2024-03-13T22:44:35.536827-06:00'
 model: gpt-4-1106-preview
-summary: "Wysy\u0142anie \u017C\u0105dania HTTP to proces komunikacji z serwerem w\
-  \ sieci."
+summary: "Do wysy\u0142ania \u017C\u0105da\u0144 HTTP w Lua u\u017Cyjemy biblioteki\
+  \ `socket.http`."
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 03:45:52.393156-07:00
-description: "Numeroiden py\xF6rist\xE4minen tarkoittaa desimaalien poistamista tiettyyn\
-  \ tarkkuuteen, usein kokonaislukuihin. Ohjelmoijat py\xF6rist\xE4v\xE4t yksinkertaistaakseen\u2026"
+description: "Kuinka: PHP tarjoaa muutaman tavan numeroiden py\xF6rist\xE4miseen:\
+  \ `round()`, `ceil()` ja `floor()`. N\xE4in ne toimivat."
 lastmod: '2024-03-13T22:44:56.650659-06:00'
 model: gpt-4-0125-preview
-summary: "Numeroiden py\xF6rist\xE4minen tarkoittaa desimaalien poistamista tiettyyn\
-  \ tarkkuuteen, usein kokonaislukuihin."
+summary: "PHP tarjoaa muutaman tavan numeroiden py\xF6rist\xE4miseen."
 title: "Numerojen py\xF6rist\xE4minen"
 weight: 13
 ---

@@ -2,14 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:03.701063-07:00
-description: "YAML l\xE0 vi\u1EBFt t\u1EAFt c\u1EE7a \"YAML Ain't Markup Language\"\
-  \ (YAML kh\xF4ng ph\u1EA3i l\xE0 Ng\xF4n ng\u1EEF \u0110\xE1nh d\u1EA5u). \u0110\
-  \xE2y l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1ng tu\u1EA7n t\u1EF1 h\xF3a d\u1EEF li\u1EC7\
-  u d\u1EC5 \u0111\u1ECDc cho con ng\u01B0\u1EDDi.\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi YAML\
+  \ trong Ruby, b\u1EA1n c\u1EA7n th\u01B0 vi\u1EC7n `yaml`. N\xF3 l\xE0 m\u1ED9t\
+  \ ph\u1EA7n c\u1EE7a th\u01B0 vi\u1EC7n chu\u1EA9n c\u1EE7a Ruby, v\xEC v\u1EAD\
+  y ch\u1EC9 c\u1EA7n y\xEAu c\u1EA7u n\xF3."
 lastmod: '2024-03-13T22:44:37.368058-06:00'
 model: gpt-4-0125-preview
-summary: "YAML l\xE0 vi\u1EBFt t\u1EAFt c\u1EE7a \"YAML Ain't Markup Language\" (YAML\
-  \ kh\xF4ng ph\u1EA3i l\xE0 Ng\xF4n ng\u1EEF \u0110\xE1nh d\u1EA5u)."
+summary: "\u0110\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi YAML trong Ruby, b\u1EA1n c\u1EA7\
+  n th\u01B0 vi\u1EC7n `yaml`."
 title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 weight: 41
 ---

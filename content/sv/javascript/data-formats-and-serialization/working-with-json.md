@@ -2,14 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:11.781361-07:00
-description: "JSON (JavaScript Object Notation) \xE4r ett l\xE4ttviktigt datautbytesformat,\
-  \ enkelt f\xF6r m\xE4nniskor att l\xE4sa och skriva samt f\xF6r maskiner att tolka\
-  \ och generera.\u2026"
+description: "Hur man g\xF6r: #."
 lastmod: '2024-03-13T22:44:38.314652-06:00'
 model: gpt-4-0125-preview
-summary: "JSON (JavaScript Object Notation) \xE4r ett l\xE4ttviktigt datautbytesformat,\
-  \ enkelt f\xF6r m\xE4nniskor att l\xE4sa och skriva samt f\xF6r maskiner att tolka\
-  \ och generera."
+summary: '#.'
 title: Arbeta med JSON
 weight: 38
 ---

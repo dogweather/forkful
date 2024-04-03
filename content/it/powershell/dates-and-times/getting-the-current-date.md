@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:37.226709-07:00
-description: "Ottenere la data corrente in PowerShell riguarda il recupero della data\
-  \ e dell'ora attuali del sistema. Quest'operazione \xE8 fondamentale per compiti\
-  \ come\u2026"
+description: "Come fare: PowerShell fornisce cmdlet semplici per ottenere data e ora.\
+  \ Il cmdlet `Get-Date` \xE8 lo strumento primario per questo scopo. Pu\xF2 restituire\
+  \ la\u2026"
 lastmod: '2024-03-13T22:44:43.653191-06:00'
 model: gpt-4-0125-preview
-summary: Ottenere la data corrente in PowerShell riguarda il recupero della data e
-  dell'ora attuali del sistema.
+summary: PowerShell fornisce cmdlet semplici per ottenere data e ora.
 title: Ottenere la data corrente
 weight: 29
 ---

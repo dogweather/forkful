@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:35.617039-07:00
-description: "HTML:n j\xE4sent\xE4minen Google Apps Scriptiss\xE4 tarkoittaa tietojen\
-  \ poimimista HTML-sis\xE4ll\xF6st\xE4, mik\xE4 on erityisen hy\xF6dyllist\xE4, kun\
-  \ toimitaan verkkosivujen tai\u2026"
+description: "Miten: Google Apps Scriptill\xE4 ei ole sis\xE4\xE4nrakennettua metodia\
+  \ HTML:n j\xE4sent\xE4miseen. Voit kuitenkin hy\xF6dynt\xE4\xE4 `UrlFetchApp`-palvelua\
+  \ HTML-sis\xE4ll\xF6n\u2026"
 lastmod: '2024-03-13T22:44:56.094034-06:00'
 model: gpt-4-0125-preview
-summary: "HTML:n j\xE4sent\xE4minen Google Apps Scriptiss\xE4 tarkoittaa tietojen\
-  \ poimimista HTML-sis\xE4ll\xF6st\xE4, mik\xE4 on erityisen hy\xF6dyllist\xE4, kun\
-  \ toimitaan verkkosivujen tai web-pohjaisten tietol\xE4hteiden kanssa."
+summary: "Google Apps Scriptill\xE4 ei ole sis\xE4\xE4nrakennettua metodia HTML:n\
+  \ j\xE4sent\xE4miseen."
 title: "HTML:n j\xE4sent\xE4minen"
 weight: 43
 ---

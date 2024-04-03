@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 01:17:44.328992-07:00
-description: "Il refactoring \xE8 essenzialmente come fare le pulizie di primavera\
-  \ nel tuo codice\u2014riguarda la ristrutturazione del codice esistente senza modificarne\
-  \ il\u2026"
+description: "Come fare: Supponiamo di avere una funzione Elm che sta facendo troppo,\
+  \ come mescolare la logica dell'UI con gli aggiornamenti dello stato. \xC8 un candidato\u2026"
 lastmod: '2024-03-13T22:44:43.358036-06:00'
 model: gpt-4-0125-preview
-summary: "Il refactoring \xE8 essenzialmente come fare le pulizie di primavera nel\
-  \ tuo codice\u2014riguarda la ristrutturazione del codice esistente senza modificarne\
-  \ il comportamento esterno."
+summary: Supponiamo di avere una funzione Elm che sta facendo troppo, come mescolare
+  la logica dell'UI con gli aggiornamenti dello stato.
 title: Rifattorizzazione
 weight: 19
 ---

@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:36.440285-07:00
-description: "Capitalizar uma string significa converter o primeiro caractere da string\
-  \ para mai\xFAsculo, mantendo os caracteres restantes como est\xE3o. Essa opera\xE7\
-  \xE3o \xE9\u2026"
+description: "Como fazer: Em JavaScript, n\xE3o existe um m\xE9todo integrado para\
+  \ capitalizar strings diretamente, mas \xE9 f\xE1cil implementar usando m\xE9todos\
+  \ b\xE1sicos de\u2026"
 lastmod: '2024-03-13T22:44:46.946175-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizar uma string significa converter o primeiro caractere da string\
-  \ para mai\xFAsculo, mantendo os caracteres restantes como est\xE3o."
+summary: "Em JavaScript, n\xE3o existe um m\xE9todo integrado para capitalizar strings\
+  \ diretamente, mas \xE9 f\xE1cil implementar usando m\xE9todos b\xE1sicos de manipula\xE7\
+  \xE3o de strings."
 title: Capitalizando uma string
 weight: 2
 ---

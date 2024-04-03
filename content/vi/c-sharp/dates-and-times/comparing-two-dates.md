@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:59.302913-07:00
-description: "So s\xE1nh hai ng\xE0y ngh\u0129a l\xE0 ki\u1EC3m tra ch\xFAng c\xF3\
-  \ m\u1ED1i quan h\u1EC7 nh\u01B0 th\u1EBF n\xE0o\u2014m\u1ED9t ng\xE0y c\xF3 s\u1EDB\
-  m h\u01A1n, mu\u1ED9n h\u01A1n, hay ch\xEDnh x\xE1c c\xF9ng m\u1ED9t th\u1EDDi \u0111\
-  i\u1EC3m v\u1EDBi ng\xE0y kia kh\xF4ng.\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: H\xE3y c\xF9ng nhau t\xECm hi\u1EC3u v\u1EC1\
+  \ C# cho vi\u1EC7c so s\xE1nh ng\xE0y. Gi\u1EA3 s\u1EED ch\xFAng ta c\xF3 hai \u0111\
+  \u1ED1i t\u01B0\u1EE3ng `DateTime`, `date1` v\xE0 `date2`. Ch\xFAng t\xF4i so s\xE1\
+  nh\u2026"
 lastmod: '2024-03-13T22:44:36.673836-06:00'
 model: gpt-4-0125-preview
-summary: "So s\xE1nh hai ng\xE0y ngh\u0129a l\xE0 ki\u1EC3m tra ch\xFAng c\xF3 m\u1ED1\
-  i quan h\u1EC7 nh\u01B0 th\u1EBF n\xE0o\u2014m\u1ED9t ng\xE0y c\xF3 s\u1EDBm h\u01A1\
-  n, mu\u1ED9n h\u01A1n, hay ch\xEDnh x\xE1c c\xF9ng m\u1ED9t th\u1EDDi \u0111i\u1EC3\
-  m v\u1EDBi ng\xE0y kia kh\xF4ng."
+summary: "H\xE3y c\xF9ng nhau t\xECm hi\u1EC3u v\u1EC1 C# cho vi\u1EC7c so s\xE1nh\
+  \ ng\xE0y."
 title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---

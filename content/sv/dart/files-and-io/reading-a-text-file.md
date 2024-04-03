@@ -2,13 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:34.973151-07:00
-description: "Att l\xE4sa en textfil i Dart inneb\xE4r att man f\xE5r tillg\xE5ng\
-  \ till och h\xE4mtar data fr\xE5n filer som \xE4r lagrade p\xE5 filsystemet. Programmerare\
-  \ g\xF6r detta f\xF6r att\u2026"
+description: "Hur man g\xF6r: Darts k\xE4rnbibliotek, `dart:io`, erbjuder de n\xF6\
+  dv\xE4ndiga funktionerna f\xF6r att l\xE4sa textfiler synkront eller asynkront.\
+  \ S\xE5 h\xE4r kan du g\xE5\u2026"
 lastmod: '2024-03-13T22:44:37.631142-06:00'
 model: gpt-4-0125-preview
-summary: "Att l\xE4sa en textfil i Dart inneb\xE4r att man f\xE5r tillg\xE5ng till\
-  \ och h\xE4mtar data fr\xE5n filer som \xE4r lagrade p\xE5 filsystemet."
+summary: "Darts k\xE4rnbibliotek, `dart:io`, erbjuder de n\xF6dv\xE4ndiga funktionerna\
+  \ f\xF6r att l\xE4sa textfiler synkront eller asynkront."
 title: "L\xE4sa en textfil"
 weight: 22
 ---

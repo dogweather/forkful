@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:55:24.572257-07:00
-description: "Leggere gli argomenti della riga di comando consente agli script Bash\
-  \ di ricevere parametri esterni, rendendoli pi\xF9 flessibili. I programmatori fanno\
-  \ ci\xF2\u2026"
+description: 'Come fare: .'
 lastmod: '2024-03-13T22:44:43.614892-06:00'
 model: gpt-4-1106-preview
-summary: "Leggere gli argomenti della riga di comando consente agli script Bash di\
-  \ ricevere parametri esterni, rendendoli pi\xF9 flessibili."
+summary: .
 title: Lettura degli argomenti della riga di comando
 weight: 23
 ---

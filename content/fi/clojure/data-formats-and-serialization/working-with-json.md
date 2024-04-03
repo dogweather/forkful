@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:13.790096-07:00
-description: "JSONin (JavaScript Object Notation) k\xE4sittely Clojuressa sis\xE4\
-  lt\xE4\xE4 JSON-merkkijonojen j\xE4sent\xE4misen Clojure-tietorakenteiksi (hajautustaulut,\
-  \ vektorit) ja\u2026"
+description: "Kuinka: Clojure ei sis\xE4ll\xE4 sis\xE4\xE4nrakennettuja funktioita\
+  \ ty\xF6skentelyyn JSONin kanssa, joten yleens\xE4 k\xE4ytet\xE4\xE4n kolmannen\
+  \ osapuolen kirjastoja. `cheshire`\u2026"
 lastmod: '2024-03-13T22:44:56.205567-06:00'
 model: gpt-4-0125-preview
-summary: "JSONin (JavaScript Object Notation) k\xE4sittely Clojuressa sis\xE4lt\xE4\
-  \xE4 JSON-merkkijonojen j\xE4sent\xE4misen Clojure-tietorakenteiksi (hajautustaulut,\
-  \ vektorit) ja p\xE4invastoin."
+summary: "Clojure ei sis\xE4ll\xE4 sis\xE4\xE4nrakennettuja funktioita ty\xF6skentelyyn\
+  \ JSONin kanssa, joten yleens\xE4 k\xE4ytet\xE4\xE4n kolmannen osapuolen kirjastoja."
 title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---

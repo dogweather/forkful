@@ -2,13 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:14.618570-07:00
-description: "Att arbeta med JSON i Swift inneb\xE4r att hantera ett l\xE4ttviktigt\
-  \ dataformat f\xF6r datautbyte. Programmerare anv\xE4nder JSON f\xF6r att \xF6verf\xF6\
-  ra data mellan en\u2026"
+description: "Hur man g\xF6r: Swift g\xF6r JSON-tolkning enkelt med `Codable`-protokollet.\
+  \ S\xE5 h\xE4r avkodar du JSON till ett Swift-objekt."
 lastmod: '2024-03-13T22:44:38.272874-06:00'
 model: gpt-4-0125-preview
-summary: "Att arbeta med JSON i Swift inneb\xE4r att hantera ett l\xE4ttviktigt dataformat\
-  \ f\xF6r datautbyte."
+summary: "Swift g\xF6r JSON-tolkning enkelt med `Codable`-protokollet."
 title: Arbeta med JSON
 weight: 38
 ---

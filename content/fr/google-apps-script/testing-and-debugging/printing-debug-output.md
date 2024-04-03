@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:17.785204-07:00
-description: "L'impression des sorties de d\xE9bogage implique de placer strat\xE9\
-  giquement des d\xE9clarations de journalisation dans votre code pour afficher les\
-  \ valeurs des\u2026"
+description: "Comment faire : Google Apps Script fournit la classe `Logger` pour le\
+  \ d\xE9bogage de base, et pour des besoins plus avanc\xE9s, la classe `console`\
+  \ introduite\u2026"
 lastmod: '2024-03-13T22:44:57.189024-06:00'
 model: gpt-4-0125-preview
-summary: "L'impression des sorties de d\xE9bogage implique de placer strat\xE9giquement\
-  \ des d\xE9clarations de journalisation dans votre code pour afficher les valeurs\
-  \ des variables, le flux d'ex\xE9cution ou les erreurs de messages pendant l'ex\xE9\
-  cution."
+summary: "Google Apps Script fournit la classe `Logger` pour le d\xE9bogage de base,\
+  \ et pour des besoins plus avanc\xE9s, la classe `console` introduite dans l'environnement\
+  \ d'ex\xE9cution V8."
 title: "Affichage du d\xE9bogage"
 weight: 33
 ---

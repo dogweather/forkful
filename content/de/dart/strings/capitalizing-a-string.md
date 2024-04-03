@@ -2,14 +2,10 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:22.367911-07:00
-description: "Das Gro\xDFschreiben eines Strings beinhaltet das Modifizieren des ersten\
-  \ Buchstabens eines Wortes oder eines ganzen Satzes in Gro\xDFbuchstaben, w\xE4\
-  hrend der\u2026"
+description: 'Wie geht das: #.'
 lastmod: '2024-03-13T22:44:53.561517-06:00'
 model: gpt-4-0125-preview
-summary: "Das Gro\xDFschreiben eines Strings beinhaltet das Modifizieren des ersten\
-  \ Buchstabens eines Wortes oder eines ganzen Satzes in Gro\xDFbuchstaben, w\xE4\
-  hrend der Rest der Zeichen unver\xE4ndert bleibt."
+summary: '#.'
 title: "Einen String gro\xDFschreiben"
 weight: 2
 ---

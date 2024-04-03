@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:18.014625-07:00
-description: "\xC5 skrive til standardfeil (stderr) i Ruby handler om \xE5 dirigere\
-  \ feilmeldinger eller diagnostikk til en separat utstr\xF8m, forskjellig fra standardutgangen\u2026"
+description: "Hvordan: Rubys standardbibliotek gir en enkel m\xE5te \xE5 skrive til\
+  \ stderr ved \xE5 bruke `$stderr` eller `STDERR`. Du trenger ikke tredjepartsbiblioteker\
+  \ for\u2026"
 lastmod: '2024-03-13T22:44:41.349646-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive til standardfeil (stderr) i Ruby handler om \xE5 dirigere feilmeldinger\
-  \ eller diagnostikk til en separat utstr\xF8m, forskjellig fra standardutgangen\
-  \ (stdout)."
+summary: "Rubys standardbibliotek gir en enkel m\xE5te \xE5 skrive til stderr ved\
+  \ \xE5 bruke `$stderr` eller `STDERR`."
 title: Skriving til standardfeil
 weight: 25
 ---

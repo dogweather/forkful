@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:04.655068-07:00
-description: "Associatieve arrays zijn als super-opgeladen arrays die je toestaan\
-  \ om strings te gebruiken als indexen in plaats van enkel integers. Programmeurs\u2026"
+description: 'Hoe te gebruiken: Allereerst, verklaar een associatieve array in Bash.'
 lastmod: '2024-03-13T22:44:50.972548-06:00'
 model: gpt-4-0125-preview
-summary: Associatieve arrays zijn als super-opgeladen arrays die je toestaan om strings
-  te gebruiken als indexen in plaats van enkel integers.
+summary: Allereerst, verklaar een associatieve array in Bash.
 title: Gebruik van associatieve arrays
 weight: 15
 ---

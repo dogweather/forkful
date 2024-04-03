@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 03:45:44.465822-07:00
-description: "Arredondar n\xFAmeros significa ajust\xE1-los ao n\xFAmero inteiro mais\
-  \ pr\xF3ximo ou a um grau especificado de precis\xE3o. Programadores fazem isso\
-  \ para melhorar a\u2026"
+description: "Como Fazer: Em Kotlin, o arredondamento pode ser feito usando v\xE1\
+  rias fun\xE7\xF5es como `roundToInt()`, `roundToDouble()`, e usando `BigDecimal`\
+  \ para mais\u2026"
 lastmod: '2024-03-13T22:44:46.536426-06:00'
 model: gpt-4-0125-preview
-summary: "Arredondar n\xFAmeros significa ajust\xE1-los ao n\xFAmero inteiro mais\
-  \ pr\xF3ximo ou a um grau especificado de precis\xE3o."
+summary: "Em Kotlin, o arredondamento pode ser feito usando v\xE1rias fun\xE7\xF5\
+  es como `roundToInt()`, `roundToDouble()`, e usando `BigDecimal` para mais controle."
 title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---

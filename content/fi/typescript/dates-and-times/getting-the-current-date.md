@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:05.156265-07:00
-description: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen TypeScriptiss\xE4, joka\
-  \ on JavaScript-pohjainen kieli, mahdollistaa nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4\
-  n ja ajan tiedon k\xE4ytt\xE4misen ja\u2026"
+description: "Kuinka: TypeScriptiss\xE4 voit k\xE4ytt\xE4\xE4 `Date`-objektia nykyisen\
+  \ p\xE4iv\xE4m\xE4\xE4r\xE4n ja ajan saamiseksi. N\xE4in voit tehd\xE4 sen."
 lastmod: '2024-03-13T22:44:56.325607-06:00'
 model: gpt-4-0125-preview
-summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen TypeScriptiss\xE4, joka\
-  \ on JavaScript-pohjainen kieli, mahdollistaa nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4\
-  n ja ajan tiedon k\xE4ytt\xE4misen ja manipuloinnin."
+summary: "TypeScriptiss\xE4 voit k\xE4ytt\xE4\xE4 `Date`-objektia nykyisen p\xE4iv\xE4\
+  m\xE4\xE4r\xE4n ja ajan saamiseksi."
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---

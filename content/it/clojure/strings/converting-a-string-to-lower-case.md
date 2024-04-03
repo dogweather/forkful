@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:38:01.315140-07:00
-description: "Convertire una stringa in minuscolo \xE8 il processo di trasformazione\
-  \ di tutti i caratteri di una stringa in lettere minuscole. Si fa per uniformit\xE0\
-  , per\u2026"
+description: 'Come Fare: .'
 lastmod: '2024-03-13T22:44:43.029784-06:00'
 model: gpt-4-1106-preview
-summary: "Convertire una stringa in minuscolo \xE8 il processo di trasformazione di\
-  \ tutti i caratteri di una stringa in lettere minuscole."
+summary: .
 title: Conversione di una stringa in minuscolo
 weight: 4
 ---

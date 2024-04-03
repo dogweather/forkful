@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:34:19.887590-07:00
-description: "Comparar duas datas significa verificar a rela\xE7\xE3o temporal entre\
-  \ elas: qual vem antes, se s\xE3o iguais ou qual \xE9 posterior. Programadores fazem\
-  \ isso para\u2026"
+description: 'Como fazer: .'
 lastmod: '2024-03-13T22:44:46.338353-06:00'
 model: gpt-4-1106-preview
-summary: "Comparar duas datas significa verificar a rela\xE7\xE3o temporal entre elas:\
-  \ qual vem antes, se s\xE3o iguais ou qual \xE9 posterior."
+summary: .
 title: Comparando duas datas
 weight: 27
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:34.838312-07:00
-description: "CSV-tiedostojen (pilkulla erotetut arvot) k\xE4sittely k\xE4sitt\xE4\
-  \xE4 lukemista tai kirjoittamista yksinkertaisiin tekstitiedostoihin, joissa tietokent\xE4\
-  t ovat\u2026"
+description: "Kuinka: Visual Basic for Applications (VBA) yksinkertaistaa CSV-tiedostojen\
+  \ k\xE4sittely\xE4 sis\xE4\xE4nrakennettujen funktioiden ja metodien kautta, jotka\u2026"
 lastmod: '2024-03-13T22:44:56.424873-06:00'
 model: gpt-4-0125-preview
-summary: "CSV-tiedostojen (pilkulla erotetut arvot) k\xE4sittely k\xE4sitt\xE4\xE4\
-  \ lukemista tai kirjoittamista yksinkertaisiin tekstitiedostoihin, joissa tietokent\xE4\
-  t ovat erotettu pilkuilla."
+summary: "Visual Basic for Applications (VBA) yksinkertaistaa CSV-tiedostojen k\xE4\
+  sittely\xE4 sis\xE4\xE4nrakennettujen funktioiden ja metodien kautta, jotka mahdollistavat\
+  \ sujuvan luvun ja kirjoittamisen n\xE4ihin tiedostoihin."
 title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---

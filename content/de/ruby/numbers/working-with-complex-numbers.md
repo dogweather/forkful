@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:45:10.098871-07:00
-description: "Komplexe Zahlen, bestehend aus einem realen und einem imagin\xE4ren\
-  \ Teil (wie 3+4i), sind ein Grundpfeiler in der Ingenieurwissenschaft und Physik.\u2026"
+description: 'Wie geht das: Ruby macht den Umgang mit komplexen Zahlen kinderleicht.
+  Man kann sie mit der Klasse Complex erstellen und manipulieren.'
 lastmod: '2024-03-13T22:44:54.392133-06:00'
 model: gpt-4-0125-preview
-summary: "Komplexe Zahlen, bestehend aus einem realen und einem imagin\xE4ren Teil\
-  \ (wie 3+4i), sind ein Grundpfeiler in der Ingenieurwissenschaft und Physik."
+summary: Ruby macht den Umgang mit komplexen Zahlen kinderleicht.
 title: Umgang mit komplexen Zahlen
 weight: 14
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:39.382240-07:00
-description: "Arrondir des nombres est le processus qui consiste \xE0 ajuster un nombre\
-  \ \xE0 son nombre entier le plus proche ou \xE0 un nombre sp\xE9cifi\xE9 de d\xE9\
-  cimales. Les\u2026"
+description: "Comment faire : Dart fournit des m\xE9thodes natives dans son type de\
+  \ base `num` pour les op\xE9rations d'arrondissement. Ici, nous allons explorer\
+  \ des m\xE9thodes\u2026"
 lastmod: '2024-03-13T22:44:57.383855-06:00'
 model: gpt-4-0125-preview
-summary: "Arrondir des nombres est le processus qui consiste \xE0 ajuster un nombre\
-  \ \xE0 son nombre entier le plus proche ou \xE0 un nombre sp\xE9cifi\xE9 de d\xE9\
-  cimales."
+summary: "Dart fournit des m\xE9thodes natives dans son type de base `num` pour les\
+  \ op\xE9rations d'arrondissement."
 title: Arrondissement des nombres
 weight: 13
 ---

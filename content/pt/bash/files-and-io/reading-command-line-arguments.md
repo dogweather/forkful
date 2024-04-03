@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:55:34.356535-07:00
-description: "Ler argumentos da linha de comando permite aos scripts em Bash pegar\
-  \ dados externos sem serem est\xE1ticos. Os programadores utilizam essas informa\xE7\
-  \xF5es para\u2026"
+description: 'Como fazer: .'
 lastmod: '2024-03-13T22:44:46.768077-06:00'
 model: gpt-4-1106-preview
-summary: "Ler argumentos da linha de comando permite aos scripts em Bash pegar dados\
-  \ externos sem serem est\xE1ticos."
+summary: .
 title: Lendo argumentos da linha de comando
 weight: 23
 ---

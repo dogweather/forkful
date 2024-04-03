@@ -1,10 +1,11 @@
 ---
 date: 2024-01-26 04:15:33.148867-07:00
-description: "Ein REPL (Read-Eval-Print Loop) ist eine einfache, interaktive Programmierumgebung.\
-  \ Programmierer nutzen es f\xFCr schnelle Codierungsversuche, das Testen\u2026"
+description: "Wie: Das Starten des Kotlin-REPL ist ein Kinderspiel. \xD6ffne dein\
+  \ Terminal und tippe `kotlinc` ein. Du wirst in die Kotlin-Shell gelangen. Lass\
+  \ uns\u2026"
 lastmod: '2024-03-13T22:44:53.848116-06:00'
 model: gpt-4-0125-preview
-summary: Ein REPL (Read-Eval-Print Loop) ist eine einfache, interaktive Programmierumgebung.
+summary: Das Starten des Kotlin-REPL ist ein Kinderspiel.
 title: Nutzung einer interaktiven Shell (REPL)
 weight: 34
 ---

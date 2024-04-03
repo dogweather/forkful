@@ -1,13 +1,13 @@
 ---
 date: 2024-01-26 03:38:45.842793-07:00
-description: "Das Entfernen von Anf\xFChrungszeichen aus einem String bedeutet, sich\
-  \ von diesen l\xE4stigen doppelten oder einfachen Anf\xFChrungszeichen zu befreien,\
-  \ die Ihren\u2026"
+description: "Wie zu: In Clojure sind Strings unver\xE4nderlich, daher sprechen wir\
+  \ beim \"Entfernen von Anf\xFChrungszeichen\" wirklich davon, einen neuen String\
+  \ ohne\u2026"
 lastmod: '2024-03-13T22:44:53.408325-06:00'
 model: gpt-4-0125-preview
-summary: "Das Entfernen von Anf\xFChrungszeichen aus einem String bedeutet, sich von\
-  \ diesen l\xE4stigen doppelten oder einfachen Anf\xFChrungszeichen zu befreien,\
-  \ die Ihren Text umschlie\xDFen."
+summary: "In Clojure sind Strings unver\xE4nderlich, daher sprechen wir beim \"Entfernen\
+  \ von Anf\xFChrungszeichen\" wirklich davon, einen neuen String ohne Anf\xFChrungszeichen\
+  \ zu erstellen."
 title: "Anf\xFChrungszeichen aus einem String entfernen"
 weight: 9
 ---

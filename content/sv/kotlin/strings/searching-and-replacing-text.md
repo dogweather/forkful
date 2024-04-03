@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:58:07.467950-07:00
-description: "Att s\xF6ka och ers\xE4tta text \xE4r processen att hitta specifika\
-  \ str\xE4ngar i data och automatiskt byta ut dem mot annan text. Programmerare anv\xE4\
-  nder det f\xF6r att\u2026"
+description: "Hur g\xF6r man: ."
 lastmod: '2024-03-13T22:44:37.856822-06:00'
 model: gpt-4-1106-preview
-summary: "Att s\xF6ka och ers\xE4tta text \xE4r processen att hitta specifika str\xE4\
-  ngar i data och automatiskt byta ut dem mot annan text."
+summary: .
 title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---

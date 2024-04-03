@@ -1,13 +1,11 @@
 ---
 date: 2024-01-20 18:01:49.074131-07:00
-description: "Das Senden einer HTTP-Anfrage mit Basisauthentifizierung bedeutet, einem\
-  \ Server deine Identit\xE4t zu best\xE4tigen, indem du Benutzername und Passwort\
-  \ kodiert\u2026"
+description: "Wie geht das? Um eine HTTP-Anfrage mit Basisauthentifizierung in Haskell\
+  \ zu senden, kann man die `http-client` und `base64-bytestring` Bibliotheken\u2026"
 lastmod: '2024-03-13T22:44:53.931270-06:00'
 model: gpt-4-1106-preview
-summary: "Das Senden einer HTTP-Anfrage mit Basisauthentifizierung bedeutet, einem\
-  \ Server deine Identit\xE4t zu best\xE4tigen, indem du Benutzername und Passwort\
-  \ kodiert im Kopf der Anfrage mitschickst."
+summary: Um eine HTTP-Anfrage mit Basisauthentifizierung in Haskell zu senden, kann
+  man die `http-client` und `base64-bytestring` Bibliotheken verwenden.
 title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---

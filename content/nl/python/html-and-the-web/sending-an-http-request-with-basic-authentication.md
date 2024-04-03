@@ -2,13 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:13.710660-07:00
-description: "Het verzenden van een HTTP-verzoek met basisauthenticatie houdt in dat\
-  \ je een gebruikersnaam en wachtwoord in een verzoek aan een server gooit om te\u2026"
+description: 'Hoe: Zo laat je Python communiceren met een server met Basic Auth.'
 lastmod: '2024-03-13T22:44:50.376372-06:00'
 model: gpt-4-0125-preview
-summary: Het verzenden van een HTTP-verzoek met basisauthenticatie houdt in dat je
-  een gebruikersnaam en wachtwoord in een verzoek aan een server gooit om te bewijzen
-  dat je toegang hebt.
+summary: Zo laat je Python communiceren met een server met Basic Auth.
 title: Een HTTP-verzoek verzenden met basisauthenticatie
 weight: 45
 ---

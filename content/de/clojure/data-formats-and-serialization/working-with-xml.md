@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:29:22.442067-07:00
-description: "XML ist eine Auszeichnungssprache zum Kodieren von Dokumenten auf eine\
-  \ Weise, die sowohl f\xFCr Menschen als auch f\xFCr Maschinen lesbar ist. Sie ist\
-  \ ein\u2026"
+description: "Wie man: Clojure bietet die Bibliothek `clojure.data.xml` f\xFCr das\
+  \ Parsen und Erzeugen von XML. Zuerst parsen wir etwas XML."
 lastmod: '2024-03-13T22:44:53.444581-06:00'
 model: gpt-4-0125-preview
-summary: "XML ist eine Auszeichnungssprache zum Kodieren von Dokumenten auf eine Weise,\
-  \ die sowohl f\xFCr Menschen als auch f\xFCr Maschinen lesbar ist."
+summary: "Clojure bietet die Bibliothek `clojure.data.xml` f\xFCr das Parsen und Erzeugen\
+  \ von XML."
 title: Arbeiten mit XML
 weight: 40
 ---

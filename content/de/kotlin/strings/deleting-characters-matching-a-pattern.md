@@ -1,13 +1,10 @@
 ---
 date: 2024-01-20 17:42:50.472676-07:00
-description: "In der Programmierung bedeutet das L\xF6schen von Zeichen, die einem\
-  \ Muster entsprechen, dass wir bestimmte Zeichen aus einem Text entfernen - zum\
-  \ Beispiel\u2026"
+description: "How to: Betrachten wir ein paar Code-Beispiele. Hier verwenden wir Regex\
+  \ (Regular Expressions), um passende Zeichen zu finden und zu l\xF6schen."
 lastmod: '2024-03-13T22:44:53.831783-06:00'
 model: gpt-4-1106-preview
-summary: "In der Programmierung bedeutet das L\xF6schen von Zeichen, die einem Muster\
-  \ entsprechen, dass wir bestimmte Zeichen aus einem Text entfernen - zum Beispiel\
-  \ alle Ziffern oder Leerzeichen."
+summary: Betrachten wir ein paar Code-Beispiele.
 title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
 weight: 5
 ---

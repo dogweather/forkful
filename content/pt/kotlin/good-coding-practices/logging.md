@@ -1,12 +1,13 @@
 ---
 date: 2024-01-26 01:06:47.356703-07:00
-description: "O ato de registrar eventos e dados de uma aplica\xE7\xE3o de software\
-  \ em uma sa\xEDda externa, como um arquivo ou console, \xE9 conhecido como logging.\
-  \ Programadores\u2026"
+description: "Como fazer: Em Kotlin, o logging pode ser realizado usando a fun\xE7\
+  \xE3o integrada `println()` para casos simples, ou com bibliotecas mais sofisticadas\
+  \ como\u2026"
 lastmod: '2024-03-13T22:44:46.548693-06:00'
 model: gpt-4-1106-preview
-summary: "O ato de registrar eventos e dados de uma aplica\xE7\xE3o de software em\
-  \ uma sa\xEDda externa, como um arquivo ou console, \xE9 conhecido como logging."
+summary: "Em Kotlin, o logging pode ser realizado usando a fun\xE7\xE3o integrada\
+  \ `println()` para casos simples, ou com bibliotecas mais sofisticadas como SLF4J\
+  \ com Logback ou Log4j para necessidades avan\xE7adas."
 title: Registro de Logs
 weight: 17
 ---

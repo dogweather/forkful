@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 01:17:16.495107-07:00
-description: "Refactorizaci\xF3n es el proceso de reestructurar c\xF3digo de computadora\
-  \ existente sin cambiar su comportamiento externo, con el objetivo de mejorar atributos\u2026"
+description: "C\xF3mo hacerlo: La refactorizaci\xF3n en Clojure, gracias a su sintaxis\
+  \ limpia y paradigma funcional, puede ser incre\xEDblemente sencilla. Abordemos\
+  \ un escenario\u2026"
 lastmod: '2024-03-13T22:44:58.665441-06:00'
 model: gpt-4-0125-preview
-summary: "Refactorizaci\xF3n es el proceso de reestructurar c\xF3digo de computadora\
-  \ existente sin cambiar su comportamiento externo, con el objetivo de mejorar atributos\
-  \ no funcionales."
+summary: "La refactorizaci\xF3n en Clojure, gracias a su sintaxis limpia y paradigma\
+  \ funcional, puede ser incre\xEDblemente sencilla."
 title: "Refactorizaci\xF3n"
 weight: 19
 ---

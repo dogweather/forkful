@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:58.275029-07:00
-description: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong m\xE3 l\u1EC7nh c\u1EE7a b\u1EA1\
-  n gi\xFAp b\u1EA1n ghi l\u1EA1i c\xE1c s\u1EF1 ki\u1EC7n ngay khi ch\xFAng x\u1EA3\
-  y ra. \u0110i\u1EC1u n\xE0y r\u1EA5t quan tr\u1ECDng cho vi\u1EC7c ghi nh\u1EAD\
-  t k\xFD, theo d\xF5i d\u1EEF li\u1EC7u\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong Haskell, b\u1EA1n l\u1EA5y ng\xE0\
+  y hi\u1EC7n t\u1EA1i b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng th\u01B0 vi\u1EC7n `Data.Time`.\
+  \ \u0110\u1EA7u ti\xEAn, nh\u1EADp nh\u1EEFng g\xEC b\u1EA1n c\u1EA7n."
 lastmod: '2024-03-13T22:44:36.725850-06:00'
 model: gpt-4-0125-preview
-summary: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong m\xE3 l\u1EC7nh c\u1EE7a b\u1EA1\
-  n gi\xFAp b\u1EA1n ghi l\u1EA1i c\xE1c s\u1EF1 ki\u1EC7n ngay khi ch\xFAng x\u1EA3\
-  y ra."
+summary: "Trong Haskell, b\u1EA1n l\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i b\u1EB1ng c\xE1\
+  ch s\u1EED d\u1EE5ng th\u01B0 vi\u1EC7n `Data.Time`."
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 weight: 29
 ---

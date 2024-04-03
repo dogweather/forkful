@@ -1,11 +1,12 @@
 ---
 date: 2024-03-08 21:33:32.977714-07:00
-description: "Searching and replacing text in Dart involves examining strings to find\
-  \ certain patterns or sequences of characters and substituting them with new\u2026"
+description: "How to: Dart provides robust methods for searching and replacing text\
+  \ directly through its `String` class, without the need for external libraries.\
+  \ Here's\u2026"
 lastmod: '2024-03-13T22:44:59.807002-06:00'
 model: gpt-4-0125-preview
-summary: Searching and replacing text in Dart involves examining strings to find certain
-  patterns or sequences of characters and substituting them with new content.
+summary: Dart provides robust methods for searching and replacing text directly through
+  its `String` class, without the need for external libraries.
 title: Searching and replacing text
 weight: 10
 ---

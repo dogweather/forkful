@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:46:12.526973-07:00
-description: "Zaokr\u0105glanie liczb oznacza dostosowanie ich do okre\u015Blonego\
-  \ stopnia precyzji. Programi\u015Bci robi\u0105 to, aby upro\u015Bci\u0107 liczby\
-  \ dla czytelno\u015Bci, spe\u0142ni\u0107 okre\u015Blone\u2026"
+description: "Jak: Java oferuje wiele sposob\xF3w zaokr\u0105glania liczb. Oto szybka\
+  \ demonstracja z `Math.round()`, `BigDecimal` i `DecimalFormat`."
 lastmod: '2024-03-13T22:44:35.272326-06:00'
 model: gpt-4-0125-preview
-summary: "Zaokr\u0105glanie liczb oznacza dostosowanie ich do okre\u015Blonego stopnia\
-  \ precyzji."
+summary: "Java oferuje wiele sposob\xF3w zaokr\u0105glania liczb."
 title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---

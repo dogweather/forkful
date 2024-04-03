@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:39:11.574953-07:00
-description: "Convertire una stringa in minuscolo significa trasformare tutti i caratteri\
-  \ alfabeticamente maiuscoli in minuscoli. I programmatori lo fanno per\u2026"
+description: "How to - Come Fare In PowerShell, convertire una stringa in minuscolo\
+  \ \xE8 semplicissimo. Usa il metodo `.ToLower()` su una stringa, cos\xEC."
 lastmod: '2024-03-13T22:44:43.628284-06:00'
 model: gpt-4-1106-preview
-summary: Convertire una stringa in minuscolo significa trasformare tutti i caratteri
-  alfabeticamente maiuscoli in minuscoli.
+summary: "In PowerShell, convertire una stringa in minuscolo \xE8 semplicissimo."
 title: Conversione di una stringa in minuscolo
 weight: 4
 ---

@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:00.575825-07:00
-description: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP gi\u1ED1ng nh\u01B0 y\xEAu c\u1EA7\
-  u m\u1ED9t m\xE1y ch\u1EE7 web th\u1EF1c hi\u1EC7n \u0111i\u1EC1u g\xEC \u0111\xF3\
-  \ ho\u1EB7c cung c\u1EA5p cho b\u1EA1n th\u1EE9 g\xEC \u0111\xF3. C\xE1c l\u1EAD\
-  p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\u1EC3\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Kotlin l\xE0m cho vi\u1EC7c g\u1EEDi y\xEAu\
+  \ c\u1EA7u HTTP tr\u1EDF n\xEAn d\u1EC5 d\xE0ng. D\u01B0\u1EDBi \u0111\xE2y l\xE0\
+  \ m\u1ED9t v\xED d\u1EE5 c\u01A1 b\u1EA3n s\u1EED d\u1EE5ng `khttp`, m\u1ED9t th\u01B0\
+  \ vi\u1EC7n th\xE2n thi\u1EC7n v\u1EDBi ng\u01B0\u1EDDi d\xF9ng."
 lastmod: '2024-03-13T22:44:36.597473-06:00'
 model: gpt-4-0125-preview
-summary: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP gi\u1ED1ng nh\u01B0 y\xEAu c\u1EA7\
-  u m\u1ED9t m\xE1y ch\u1EE7 web th\u1EF1c hi\u1EC7n \u0111i\u1EC1u g\xEC \u0111\xF3\
-  \ ho\u1EB7c cung c\u1EA5p cho b\u1EA1n th\u1EE9 g\xEC \u0111\xF3."
+summary: "Kotlin l\xE0m cho vi\u1EC7c g\u1EEDi y\xEAu c\u1EA7u HTTP tr\u1EDF n\xEA\
+  n d\u1EC5 d\xE0ng."
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
 weight: 44
 ---

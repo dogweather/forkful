@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:56:09.361779-07:00
-description: "Lire des arguments de la ligne de commande, c'est r\xE9cup\xE9rer les\
-  \ donn\xE9es qu'un utilisateur entre lorsqu'il ex\xE9cute votre programme. Les programmeurs\
-  \ font\u2026"
+description: 'Comment faire : .'
 lastmod: '2024-03-13T22:44:57.343911-06:00'
 model: gpt-4-1106-preview
-summary: "Lire des arguments de la ligne de commande, c'est r\xE9cup\xE9rer les donn\xE9\
-  es qu'un utilisateur entre lorsqu'il ex\xE9cute votre programme."
+summary: .
 title: Lecture des arguments de ligne de commande
 weight: 23
 ---

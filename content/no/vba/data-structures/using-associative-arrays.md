@@ -2,12 +2,11 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:30.332870-07:00
-description: "Assosiative tabeller, ofte kjent som ordb\xF8ker i Visual Basic for\
-  \ Applications (VBA), lar programmerere lage samlinger av n\xF8kkel-verdi-par. Denne\u2026"
+description: "Hvordan: I VBA tilbyr `Dictionary`-objektet funksjonalitet lik assosiative\
+  \ tabeller. Du m\xE5 f\xF8rst legge til en referanse til Microsoft Scripting Runtime\u2026"
 lastmod: '2024-03-13T22:44:40.610593-06:00'
 model: gpt-4-0125-preview
-summary: "Assosiative tabeller, ofte kjent som ordb\xF8ker i Visual Basic for Applications\
-  \ (VBA), lar programmerere lage samlinger av n\xF8kkel-verdi-par."
+summary: I VBA tilbyr `Dictionary`-objektet funksjonalitet lik assosiative tabeller.
 title: Bruke assosiative tabeller
 weight: 15
 ---

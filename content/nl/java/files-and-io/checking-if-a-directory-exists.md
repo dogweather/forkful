@@ -2,13 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:55.034884-07:00
-description: "Controleren of een directory bestaat betekent verifi\xEBren dat deze\
-  \ er is voordat je probeert bestanden erin te lezen of te schrijven. Programmeurs\
-  \ doen dit\u2026"
+description: 'Hoe te: Hier is hoe je controleert of een directory bestaat met `java.nio.file`.'
 lastmod: '2024-03-13T22:44:50.697020-06:00'
 model: gpt-4-0125-preview
-summary: "Controleren of een directory bestaat betekent verifi\xEBren dat deze er\
-  \ is voordat je probeert bestanden erin te lezen of te schrijven."
+summary: Hier is hoe je controleert of een directory bestaat met `java.nio.file`.
 title: Controleren of een directory bestaat
 weight: 20
 ---

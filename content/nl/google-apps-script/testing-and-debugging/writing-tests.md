@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:42.016073-07:00
-description: "Tests schrijven in Google Apps Script (GAS) betekent het cre\xEBren\
-  \ van geautomatiseerde scripts om het gedrag van je codes te verifi\xEBren, zodat\
-  \ ze presteren\u2026"
+description: "Hoe: Hoewel Google Apps Script geen ingebouwd testraamwerk heeft zoals\
+  \ sommige andere programmeeromgevingen, kun je nog steeds tests schrijven en\u2026"
 lastmod: '2024-03-13T22:44:50.335436-06:00'
 model: gpt-4-0125-preview
-summary: "Tests schrijven in Google Apps Script (GAS) betekent het cre\xEBren van\
-  \ geautomatiseerde scripts om het gedrag van je codes te verifi\xEBren, zodat ze\
-  \ presteren zoals verwacht onder verschillende omstandigheden."
+summary: Hoewel Google Apps Script geen ingebouwd testraamwerk heeft zoals sommige
+  andere programmeeromgevingen, kun je nog steeds tests schrijven en uitvoeren door
+  eenvoudige GAS-functies te gebruiken of externe testbibliotheken zoals `QUnit` te
+  integreren.
 title: Tests Schrijven
 weight: 36
 ---

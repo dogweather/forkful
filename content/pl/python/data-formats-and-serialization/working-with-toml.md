@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 04:25:38.744987-07:00
-description: "TOML, skr\xF3t od Tom's Obvious, Minimal Language, to format serializacji\
-  \ danych podobny do JSON lub YAML, ale maj\u0105cy na celu prostot\u0119 i czytelno\u015B\
-  \u0107.\u2026"
+description: "Jak to zrobi\u0107? Przed rozpocz\u0119ciem, zainstaluj pakiet `toml`\
+  \ za pomoc\u0105 polecenia `pip install toml`. Przeanalizujmy plik TOML."
 lastmod: '2024-03-13T22:44:34.974704-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, skr\xF3t od Tom's Obvious, Minimal Language, to format serializacji\
-  \ danych podobny do JSON lub YAML, ale maj\u0105cy na celu prostot\u0119 i czytelno\u015B\
-  \u0107."
+summary: "Przed rozpocz\u0119ciem, zainstaluj pakiet `toml` za pomoc\u0105 polecenia\
+  \ `pip install toml`."
 title: Praca z TOML
 weight: 39
 ---

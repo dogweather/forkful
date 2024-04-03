@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:42.540861-07:00
-description: "Schrijven naar standaard fout (`stderr`) kanalen cruciale berichten\
-  \ naar een speciale uitvoerstroom gereserveerd voor fouten, gescheiden van de hoofd\u2026"
+description: 'Hoe te: Swift maakt schrijven naar `stderr` eenvoudig. Zie het onderstaande
+  voorbeeld.'
 lastmod: '2024-03-13T22:44:51.174299-06:00'
 model: gpt-4-0125-preview
-summary: Schrijven naar standaard fout (`stderr`) kanalen cruciale berichten naar
-  een speciale uitvoerstroom gereserveerd voor fouten, gescheiden van de hoofd uitvoer
-  (`stdout`).
+summary: Swift maakt schrijven naar `stderr` eenvoudig.
 title: Schrijven naar standaardfout
 weight: 25
 ---

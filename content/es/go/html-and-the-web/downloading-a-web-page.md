@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:57.836066-07:00
-description: "Descargar una p\xE1gina web trata de obtener el contenido HTML de una\
-  \ p\xE1gina web a trav\xE9s del protocolo HTTP/HTTPS. Los programadores a menudo\
-  \ hacen esto\u2026"
+description: "C\xF3mo hacerlo: En Go, la biblioteca est\xE1ndar proporciona herramientas\
+  \ poderosas para solicitudes web, notablemente el paquete `net/http`. Para descargar\u2026"
 lastmod: '2024-03-13T22:44:58.465954-06:00'
 model: gpt-4-0125-preview
-summary: "Descargar una p\xE1gina web trata de obtener el contenido HTML de una p\xE1\
-  gina web a trav\xE9s del protocolo HTTP/HTTPS."
+summary: "En Go, la biblioteca est\xE1ndar proporciona herramientas poderosas para\
+  \ solicitudes web, notablemente el paquete `net/http`."
 title: "Descargando una p\xE1gina web"
 weight: 42
 ---

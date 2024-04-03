@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:32.246607-07:00
-description: "Das Senden einer HTTP-Anfrage in Google Apps Script bedeutet, programmgesteuert\
-  \ eine Anfrage an einen externen Webserver oder eine API zu stellen.\u2026"
+description: "Wie: In Google Apps Script ist die prim\xE4re Methode zum Senden einer\
+  \ HTTP-Anfrage die Verwendung des `UrlFetchApp`-Dienstes. Dieser Dienst bietet Methoden,\u2026"
 lastmod: '2024-03-13T22:44:53.330391-06:00'
 model: gpt-4-0125-preview
-summary: Das Senden einer HTTP-Anfrage in Google Apps Script bedeutet, programmgesteuert
-  eine Anfrage an einen externen Webserver oder eine API zu stellen.
+summary: "In Google Apps Script ist die prim\xE4re Methode zum Senden einer HTTP-Anfrage\
+  \ die Verwendung des `UrlFetchApp`-Dienstes."
 title: Eine HTTP-Anfrage senden
 weight: 44
 ---

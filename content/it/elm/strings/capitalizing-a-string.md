@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:54.287494-07:00
-description: "La capitalizzazione di una stringa comporta la trasformazione del carattere\
-  \ iniziale di una stringa data in maiuscolo, mantenendo il resto in minuscolo,\u2026"
+description: "Come fare: In Elm, non esiste una funzione incorporata specificamente\
+  \ per capitalizzare le stringhe. Tuttavia, puoi ottenere facilmente questo risultato\u2026"
 lastmod: '2024-03-13T22:44:43.334297-06:00'
 model: gpt-4-0125-preview
-summary: "La capitalizzazione di una stringa comporta la trasformazione del carattere\
-  \ iniziale di una stringa data in maiuscolo, mantenendo il resto in minuscolo, spesso\
-  \ a fini di formattazione standardizzata o leggibilit\xE0."
+summary: In Elm, non esiste una funzione incorporata specificamente per capitalizzare
+  le stringhe.
 title: Capitalizzare una stringa
 weight: 2
 ---

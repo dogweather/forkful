@@ -2,15 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:35.154390-07:00
-description: "T\xE1i c\u1EA5u tr\xFAc l\xE0 qu\xE1 tr\xECnh c\u1EA3i t\u1ED5 m\xE3\
-  \ m\xE1y t\xEDnh hi\u1EC7n c\xF3 m\xE0 kh\xF4ng thay \u0111\u1ED5i h\xE0nh vi b\xEA\
-  n ngo\xE0i c\u1EE7a n\xF3. L\u1EADp tr\xECnh vi\xEAn t\xE1i c\u1EA5u tr\xFAc \u0111\
-  \u1EC3 c\u1EA3i thi\u1EC7n c\xE1c thu\u1ED9c t\xEDnh\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Ch\xFAng ta c\xF9ng xem qua m\u1ED9t v\xED d\u1EE5\
+  \ v\u1EC1 vi\u1EC7c t\xE1i c\u1EA5u tr\xFAc m\u1ED9t ph\u01B0\u01A1ng th\u1EE9c\
+  \ Ruby t\xEDnh t\u1ED5ng c\xE1c b\xECnh ph\u01B0\u01A1ng. **Tr\u01B0\u1EDBc khi\
+  \ t\xE1i c\u1EA5u tr\xFAc:**."
 lastmod: '2024-03-13T22:44:37.352423-06:00'
 model: gpt-4-0125-preview
-summary: "T\xE1i c\u1EA5u tr\xFAc l\xE0 qu\xE1 tr\xECnh c\u1EA3i t\u1ED5 m\xE3 m\xE1\
-  y t\xEDnh hi\u1EC7n c\xF3 m\xE0 kh\xF4ng thay \u0111\u1ED5i h\xE0nh vi b\xEAn ngo\xE0\
-  i c\u1EE7a n\xF3."
+summary: "Ch\xFAng ta c\xF9ng xem qua m\u1ED9t v\xED d\u1EE5 v\u1EC1 vi\u1EC7c t\xE1\
+  i c\u1EA5u tr\xFAc m\u1ED9t ph\u01B0\u01A1ng th\u1EE9c Ruby t\xEDnh t\u1ED5ng c\xE1\
+  c b\xECnh ph\u01B0\u01A1ng."
 title: "T\xE1i c\u1EA5u tr\xFAc m\xE3"
 weight: 19
 ---

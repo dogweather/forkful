@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:28.086100-07:00
-description: "Capitalizar uma string em Swift modifica a string dada de modo que seu\
-  \ primeiro caractere seja mai\xFAsculo, e os caracteres restantes sejam min\xFA\
-  sculos.\u2026"
+description: "Como fazer: As struct `String` de Swift v\xEAm com alguns m\xE9todos\
+  \ embutidos para manipular a caixa de strings. Aqui est\xE3o algumas abordagens\
+  \ para capitalizar\u2026"
 lastmod: '2024-03-13T22:44:46.904643-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizar uma string em Swift modifica a string dada de modo que seu primeiro\
-  \ caractere seja mai\xFAsculo, e os caracteres restantes sejam min\xFAsculos."
+summary: "As struct `String` de Swift v\xEAm com alguns m\xE9todos embutidos para\
+  \ manipular a caixa de strings."
 title: Capitalizando uma string
 weight: 2
 ---

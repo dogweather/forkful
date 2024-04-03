@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:13.830910-07:00
-description: "Czytanie pliku tekstowego w j\u0119zyku C polega na otwarciu pliku w\
-  \ systemie w celu wydobycia informacji oraz ich manipulowania lub wy\u015Bwietlania\
-  \ zgodnie z\u2026"
+description: "Jak to zrobi\u0107: Aby rozpocz\u0105\u0107 czytanie pliku tekstowego\
+  \ w j\u0119zyku C, g\u0142\xF3wnie pracuje si\u0119 z funkcjami `fopen()`, `fgets()`\
+  \ oraz `fclose()` z biblioteki\u2026"
 lastmod: '2024-03-13T22:44:35.905406-06:00'
 model: gpt-4-0125-preview
-summary: "Czytanie pliku tekstowego w j\u0119zyku C polega na otwarciu pliku w systemie\
-  \ w celu wydobycia informacji oraz ich manipulowania lub wy\u015Bwietlania zgodnie\
-  \ z potrzebami."
+summary: "Aby rozpocz\u0105\u0107 czytanie pliku tekstowego w j\u0119zyku C, g\u0142\
+  \xF3wnie pracuje si\u0119 z funkcjami `fopen()`, `fgets()` oraz `fclose()` z biblioteki\
+  \ standardowej I/O."
 title: Czytanie pliku tekstowego
 weight: 22
 ---

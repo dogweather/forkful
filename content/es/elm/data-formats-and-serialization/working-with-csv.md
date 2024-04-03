@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:16.224013-07:00
-description: "Trabajar con CSV (Valores Separados por Comas) implica analizar y generar\
-  \ archivos que almacenan datos tabulares en un formato de texto plano simple. Esto\u2026"
+description: "C\xF3mo hacerlo: Elm no tiene soporte incorporado para el an\xE1lisis\
+  \ o generaci\xF3n de CSV; en su lugar, a menudo se utilizan paquetes de terceros\
+  \ como\u2026"
 lastmod: '2024-03-13T22:44:59.016035-06:00'
 model: gpt-4-0125-preview
-summary: Trabajar con CSV (Valores Separados por Comas) implica analizar y generar
-  archivos que almacenan datos tabulares en un formato de texto plano simple.
+summary: "Elm no tiene soporte incorporado para el an\xE1lisis o generaci\xF3n de\
+  \ CSV; en su lugar, a menudo se utilizan paquetes de terceros como `panosoft/elm-csv`."
 title: Trabajando con CSV
 weight: 37
 ---

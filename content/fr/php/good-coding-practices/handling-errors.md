@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 00:55:14.503733-07:00
-description: "La gestion des erreurs en PHP consiste \xE0 g\xE9rer et r\xE9pondre\
-  \ \xE0 des conditions qui perturbent le d\xE9roulement normal d\u2019un programme,\
-  \ telles que des fichiers\u2026"
+description: "Comment faire : En PHP, vous pouvez g\xE9rer les erreurs \xE0 l'aide\
+  \ de blocs `try-catch`, et vous pouvez personnaliser le processus avec des gestionnaires\u2026"
 lastmod: '2024-03-13T22:44:57.886989-06:00'
 model: gpt-4-1106-preview
-summary: "La gestion des erreurs en PHP consiste \xE0 g\xE9rer et r\xE9pondre \xE0\
-  \ des conditions qui perturbent le d\xE9roulement normal d\u2019un programme, telles\
-  \ que des fichiers manquants ou des entr\xE9es de donn\xE9es incorrectes."
+summary: "En PHP, vous pouvez g\xE9rer les erreurs \xE0 l'aide de blocs `try-catch`,\
+  \ et vous pouvez personnaliser le processus avec des gestionnaires d'erreur personnalis\xE9\
+  s et des exceptions."
 title: Gestion des erreurs
 weight: 16
 ---

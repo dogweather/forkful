@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:38.037501-07:00
-description: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) trong l\u1EADp tr\xECnh \u0111\
-  \u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 t\xECm ki\u1EBFm, kh\u1EDBp v\xE0 thao\
-  \ t\xE1c chu\u1ED7i d\u1EF1a tr\xEAn c\xE1c m\u1EABu c\u1EE5 th\u1EC3. C\xE1c l\u1EAD\
-  p tr\xECnh vi\xEAn s\u1EED d\u1EE5ng ch\xFAng cho\u2026"
+description: "C\xE1ch th\u1EE9c: Trong Go, g\xF3i `regexp` cung c\u1EA5p ch\u1EE9\
+  c n\u0103ng regex. D\u01B0\u1EDBi \u0111\xE2y l\xE0 h\u01B0\u1EDBng d\u1EABn t\u1EEB\
+  ng b\u01B0\u1EDBc v\u1EC1 c\xE1ch s\u1EED d\u1EE5ng n\xF3: 1. **Bi\xEAn d\u1ECB\
+  ch m\u1ED9t Bi\u1EC3u th\u1EE9c Ch\xEDnh quy**\u2026"
 lastmod: '2024-03-13T22:44:35.967787-06:00'
 model: gpt-4-0125-preview
-summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) trong l\u1EADp tr\xECnh \u0111\u01B0\
-  \u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 t\xECm ki\u1EBFm, kh\u1EDBp v\xE0 thao t\xE1\
-  c chu\u1ED7i d\u1EF1a tr\xEAn c\xE1c m\u1EABu c\u1EE5 th\u1EC3."
+summary: "Trong Go, g\xF3i `regexp` cung c\u1EA5p ch\u1EE9c n\u0103ng regex."
 title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---

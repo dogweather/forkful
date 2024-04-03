@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 18:04:31.744650-07:00
-description: "Come\xE7ar um novo projeto \xE9 como abrir um livro em branco para um\
-  \ programador: \xE9 uma oportunidade de criar algo do zero. Programadores come\xE7\
-  am novos\u2026"
+description: "Como Fazer: Vamos montar um projeto TypeScript b\xE1sico. Primeiro,\
+  \ certifique-se de ter o Node.js e o npm instalados. Depois, instale o TypeScript\u2026"
 lastmod: '2024-03-13T22:44:46.326633-06:00'
 model: gpt-4-1106-preview
-summary: "Come\xE7ar um novo projeto \xE9 como abrir um livro em branco para um programador:\
-  \ \xE9 uma oportunidade de criar algo do zero."
+summary: "Vamos montar um projeto TypeScript b\xE1sico."
 title: Iniciando um novo projeto
 weight: 1
 ---

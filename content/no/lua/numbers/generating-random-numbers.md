@@ -1,12 +1,11 @@
 ---
 date: 2024-01-27 20:34:30.344907-07:00
-description: "Generering av tilfeldige tall i programmering handler om \xE5 produsere\
-  \ uforutsigbare numeriske verdier som kan brukes til en rekke form\xE5l, som simuleringer,\u2026"
+description: "Hvordan: Lua har innebygd st\xF8tte for \xE5 generere tilfeldige tall\
+  \ via `math.random`-funksjonen. Denne funksjonen kan brukes p\xE5 flere m\xE5ter,\
+  \ avhengig av\u2026"
 lastmod: '2024-03-13T22:44:40.925876-06:00'
 model: gpt-4-0125-preview
-summary: "Generering av tilfeldige tall i programmering handler om \xE5 produsere\
-  \ uforutsigbare numeriske verdier som kan brukes til en rekke form\xE5l, som simuleringer,\
-  \ spill eller sikkerhetsapplikasjoner."
+summary: "Lua har innebygd st\xF8tte for \xE5 generere tilfeldige tall via `math.random`-funksjonen."
 title: Generering av tilfeldige tall
 weight: 12
 ---

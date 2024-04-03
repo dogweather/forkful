@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:43:38.444844-07:00
-description: "Att ladda ner en webbsida inneb\xE4r att h\xE4mta sidans inneh\xE5ll\
-  \ \xF6ver n\xE4tet. Programmerare g\xF6r detta f\xF6r att analysera inneh\xE5llet,\
-  \ granska data eller integrera\u2026"
+description: "S\xE5 h\xE4r g\xF6r du: F\xF6r att ladda ner en webbsida i C++ kan vi\
+  \ anv\xE4nda biblioteket cURL. F\xF6rst m\xE5ste du se till att cURL \xE4r installerat\
+  \ och l\xE4nkat till ditt\u2026"
 lastmod: '2024-03-13T22:44:38.207929-06:00'
 model: gpt-4-1106-preview
-summary: "Att ladda ner en webbsida inneb\xE4r att h\xE4mta sidans inneh\xE5ll \xF6\
-  ver n\xE4tet."
+summary: "F\xF6r att ladda ner en webbsida i C++ kan vi anv\xE4nda biblioteket cURL."
 title: "H\xE4mta en webbsida"
 weight: 42
 ---

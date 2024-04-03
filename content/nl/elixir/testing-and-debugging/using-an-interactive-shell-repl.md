@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:07.791953-07:00
-description: "Een interactieve shell, of REPL (Read-Eval-Print Loop), stelt je in\
-  \ staat om codefragmenten in real-time uit te proberen. Elixir-programmeurs gebruiken\
-  \ de\u2026"
+description: 'Hoe: Om IEx te starten, open je terminal en typ je `iex`. Hier is een
+  voorproefje.'
 lastmod: '2024-03-13T22:44:50.463784-06:00'
 model: gpt-4-0125-preview
-summary: Een interactieve shell, of REPL (Read-Eval-Print Loop), stelt je in staat
-  om codefragmenten in real-time uit te proberen.
+summary: Om IEx te starten, open je terminal en typ je `iex`.
 title: Het gebruik van een interactieve shell (REPL)
 weight: 34
 ---

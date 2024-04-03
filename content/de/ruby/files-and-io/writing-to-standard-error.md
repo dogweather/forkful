@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:45.851299-07:00
-description: "Das Schreiben auf Standardfehler (stderr) in Ruby bezieht sich darauf,\
-  \ Fehlermeldungen oder Diagnosen auf einen separaten Ausgabestrom zu lenken, der\
-  \ sich\u2026"
+description: "Wie geht das: Die Standardbibliothek von Ruby bietet eine unkomplizierte\
+  \ M\xF6glichkeit, auf stderr zu schreiben, und zwar mit `$stderr` oder `STDERR`.\
+  \ F\xFCr\u2026"
 lastmod: '2024-03-13T22:44:54.416833-06:00'
 model: gpt-4-0125-preview
-summary: Das Schreiben auf Standardfehler (stderr) in Ruby bezieht sich darauf, Fehlermeldungen
-  oder Diagnosen auf einen separaten Ausgabestrom zu lenken, der sich vom Standardausgang
-  (stdout) unterscheidet.
+summary: "Die Standardbibliothek von Ruby bietet eine unkomplizierte M\xF6glichkeit,\
+  \ auf stderr zu schreiben, und zwar mit `$stderr` oder `STDERR`."
 title: Schreiben auf Standardfehler
 weight: 25
 ---

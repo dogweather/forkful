@@ -2,14 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:57.725909-07:00
-description: "Het schrijven van tests in Dart omvat het cre\xEBren van testgevallen\
-  \ om automatisch te verifi\xEBren dat verschillende delen van je programma werken\
-  \ zoals\u2026"
+description: 'Hoe: In Dart wordt het `test` pakket vaak gebruikt voor het schrijven
+  van tests. Voeg eerst het `test` pakket toe aan je `pubspec.yaml`.'
 lastmod: '2024-03-13T22:44:50.508666-06:00'
 model: gpt-4-0125-preview
-summary: "Het schrijven van tests in Dart omvat het cre\xEBren van testgevallen om\
-  \ automatisch te verifi\xEBren dat verschillende delen van je programma werken zoals\
-  \ verwacht."
+summary: In Dart wordt het `test` pakket vaak gebruikt voor het schrijven van tests.
 title: Tests Schrijven
 weight: 36
 ---

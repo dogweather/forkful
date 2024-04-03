@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:55:46.536761-07:00
-description: "Lire les arguments de la ligne de commande, c'est r\xE9cup\xE9rer les\
-  \ infos que l'utilisateur passe \xE0 notre programme lorsqu'il le d\xE9marre. Les\
-  \ programmeurs\u2026"
+description: "How to: Elm n'est pas con\xE7u pour cr\xE9er des applications CLI, donc\
+  \ lire directement les arguments de la ligne de commande n'est pas possible. Mais\
+  \ on peut\u2026"
 lastmod: '2024-03-13T22:44:57.706164-06:00'
 model: gpt-4-1106-preview
-summary: "Lire les arguments de la ligne de commande, c'est r\xE9cup\xE9rer les infos\
-  \ que l'utilisateur passe \xE0 notre programme lorsqu'il le d\xE9marre."
+summary: "Elm n'est pas con\xE7u pour cr\xE9er des applications CLI, donc lire directement\
+  \ les arguments de la ligne de commande n'est pas possible."
 title: Lecture des arguments de ligne de commande
 weight: 23
 ---

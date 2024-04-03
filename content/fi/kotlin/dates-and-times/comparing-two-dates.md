@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:33:12.563256-07:00
-description: "Vertaillaan kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 - siis tutkitaan kumpi\
-  \ on aikaisempi tai onko ne samat. Tarvitaan esimerkiksi ajanjaksojen validointiin\
-  \ tai aikaj\xE4rjestyksen\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:56.543824-06:00'
 model: gpt-4-1106-preview
-summary: "Vertaillaan kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 - siis tutkitaan kumpi on\
-  \ aikaisempi tai onko ne samat."
+summary: .
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---

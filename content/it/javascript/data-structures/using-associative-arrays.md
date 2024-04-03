@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:44.879743-07:00
-description: "Gli array associativi, o come sono pi\xF9 correttamente noti in JavaScript,\
-  \ gli oggetti, ti permettono di mappare chiavi a valori. Questo \xE8 estremamente\u2026"
+description: "Come fare: Creare e usare array associativi (oggetti) in JavaScript\
+  \ \xE8 semplice. Si definisce un oggetto con le parentesi graffe `{}`, e all'interno\
+  \ di\u2026"
 lastmod: '2024-03-13T22:44:43.804627-06:00'
 model: gpt-4-0125-preview
-summary: "Gli array associativi, o come sono pi\xF9 correttamente noti in JavaScript,\
-  \ gli oggetti, ti permettono di mappare chiavi a valori."
+summary: "Creare e usare array associativi (oggetti) in JavaScript \xE8 semplice."
 title: Utilizzo di array associativi
 weight: 15
 ---

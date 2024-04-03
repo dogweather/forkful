@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:40:30.297396-07:00
-description: "Mit\xE4 & Miksi? Luodaan v\xE4liaikainen tiedosto vastaanottamaan dataa,\
-  \ joka ei tarvitse pysyv\xE4ist\xE4 tallennusta. K\xE4ytet\xE4\xE4n testauksessa,\
-  \ v\xE4liaikaisessa datan\u2026"
+description: "How to: Miten: Haskell antaa k\xE4tevi\xE4 kirjastoja v\xE4liaikaisten\
+  \ tiedostojen k\xE4sittelyyn, kuten `temporary`. T\xE4ss\xE4 esimerkki sen k\xE4\
+  yt\xF6st\xE4."
 lastmod: '2024-03-13T22:44:56.633791-06:00'
 model: gpt-4-1106-preview
-summary: "Mit\xE4 & Miksi."
+summary: Miten.
 title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---

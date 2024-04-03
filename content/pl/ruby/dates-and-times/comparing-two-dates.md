@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:33:37.504423-07:00
-description: "Por\xF3wnywanie dw\xF3ch dat to sprawdzanie, kt\xF3ra data jest wcze\u015B\
-  niejsza, p\xF3\u017Aniejsza lub czy s\u0105 identyczne. Programi\u015Bci robi\u0105\
-  \ to, aby obs\u0142u\u017Cy\u0107 terminy,\u2026"
+description: "How to: (Jak to zrobi\u0107:) ."
 lastmod: '2024-03-13T22:44:35.944790-06:00'
 model: gpt-4-1106-preview
-summary: "Por\xF3wnywanie dw\xF3ch dat to sprawdzanie, kt\xF3ra data jest wcze\u015B\
-  niejsza, p\xF3\u017Aniejsza lub czy s\u0105 identyczne."
+summary: .
 title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---

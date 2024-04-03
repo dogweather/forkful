@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:26.328063-07:00
-description: "Escribir pruebas en PowerShell implica crear scripts que validen autom\xE1\
-  ticamente la funcionalidad de tu c\xF3digo de PowerShell, asegur\xE1ndose de que\
-  \ se\u2026"
+description: "C\xF3mo hacerlo: PowerShell no tiene un marco de pruebas incorporado,\
+  \ pero Pester, un m\xF3dulo de terceros muy popular, es ampliamente utilizado para\
+  \ escribir\u2026"
 lastmod: '2024-03-13T22:44:59.295779-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir pruebas en PowerShell implica crear scripts que validen autom\xE1\
-  ticamente la funcionalidad de tu c\xF3digo de PowerShell, asegur\xE1ndose de que\
-  \ se comporte como se espera."
+summary: "PowerShell no tiene un marco de pruebas incorporado, pero Pester, un m\xF3\
+  dulo de terceros muy popular, es ampliamente utilizado para escribir y ejecutar\
+  \ pruebas."
 title: Escribiendo pruebas
 weight: 36
 ---

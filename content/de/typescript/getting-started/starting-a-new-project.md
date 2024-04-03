@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 18:04:43.412537-07:00
-description: "Ein neues Projekt zu beginnen bedeutet, eine frische Codebasis anzulegen,\
-  \ um eine Idee oder L\xF6sung umzusetzen. Programmierer starten neue Projekte, um\u2026"
+description: "How to: Um ein neues TypeScript-Projekt zu starten, installiere zun\xE4\
+  chst Node.js und npm. Dann f\xFChre die folgenden Schritte aus."
 lastmod: '2024-03-13T22:44:53.631868-06:00'
 model: gpt-4-1106-preview
-summary: "Ein neues Projekt zu beginnen bedeutet, eine frische Codebasis anzulegen,\
-  \ um eine Idee oder L\xF6sung umzusetzen."
+summary: "Um ein neues TypeScript-Projekt zu starten, installiere zun\xE4chst Node.js\
+  \ und npm."
 title: Einen neuen Projekt starten
 weight: 1
 ---

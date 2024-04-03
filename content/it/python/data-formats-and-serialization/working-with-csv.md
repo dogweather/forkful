@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:52.130912-07:00
-description: "Lavorare con i CSV (Valori Separati da Virgola) comporta la lettura\
-  \ da e la scrittura su file CSV, un formato comune per memorizzare dati tabellari.\
-  \ I\u2026"
+description: "Come fare: Python fornisce il modulo integrato `csv` per gestire i file\
+  \ CSV, rendendo semplice leggere da e scrivere su di essi. Per una manipolazione\
+  \ dei\u2026"
 lastmod: '2024-03-13T22:44:43.023388-06:00'
 model: gpt-4-0125-preview
-summary: Lavorare con i CSV (Valori Separati da Virgola) comporta la lettura da e
-  la scrittura su file CSV, un formato comune per memorizzare dati tabellari.
+summary: Python fornisce il modulo integrato `csv` per gestire i file CSV, rendendo
+  semplice leggere da e scrivere su di essi.
 title: Lavorare con i CSV
 weight: 37
 ---

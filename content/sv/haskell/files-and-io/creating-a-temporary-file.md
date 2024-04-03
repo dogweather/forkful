@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:40:21.783453-07:00
-description: "Att skapa en tempor\xE4r fil inneb\xE4r att vi tillf\xE4lligt lagrar\
-  \ data under programmets k\xF6rning. Programmerare g\xF6r detta f\xF6r att hantera\
-  \ data som inte beh\xF6ver\u2026"
+description: "S\xE5 H\xE4r G\xF6r Du: I Haskell kan du skapa och hantera tempor\xE4\
+  ra filer med `System.IO.Temp`. Koden nedan visar hur."
 lastmod: '2024-03-13T22:44:37.974115-06:00'
 model: gpt-4-1106-preview
-summary: "Att skapa en tempor\xE4r fil inneb\xE4r att vi tillf\xE4lligt lagrar data\
-  \ under programmets k\xF6rning."
+summary: "I Haskell kan du skapa och hantera tempor\xE4ra filer med `System.IO.Temp`."
 title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---

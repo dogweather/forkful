@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:00.358262-07:00
-description: "Die Umwandlung eines Strings in Kleinbuchstaben in C bedeutet, alle\
-  \ Gro\xDFbuchstaben in einem gegebenen String in ihre entsprechenden Kleinbuchstaben\
-  \ zu\u2026"
+description: "Wie: C hat keine eingebaute Funktion f\xFCr die direkte Umwandlung von\
+  \ Strings in Kleinbuchstaben, anders als einige Hochsprachen. Jedoch kann der Prozess\u2026"
 lastmod: '2024-03-13T22:44:54.338244-06:00'
 model: gpt-4-0125-preview
-summary: "Die Umwandlung eines Strings in Kleinbuchstaben in C bedeutet, alle Gro\xDF\
-  buchstaben in einem gegebenen String in ihre entsprechenden Kleinbuchstaben zu transformieren."
+summary: "C hat keine eingebaute Funktion f\xFCr die direkte Umwandlung von Strings\
+  \ in Kleinbuchstaben, anders als einige Hochsprachen."
 title: Konvertierung eines Strings in Kleinbuchstaben
 weight: 4
 ---

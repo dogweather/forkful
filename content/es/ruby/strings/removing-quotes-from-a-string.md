@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 03:41:42.363799-07:00
-description: "Quitar las comillas de una cadena significa despojar esos signos de\
-  \ comillas dobles o simples que envuelven los valores de texto. Los programadores\
-  \ a\u2026"
+description: "C\xF3mo hacerlo: Ruby tiene algunos trucos ingeniosos bajo la manga\
+  \ para recortar esas molestas comillas. Puedes usar los m\xE9todos `gsub` o `delete`\
+  \ para\u2026"
 lastmod: '2024-03-13T22:44:59.578127-06:00'
 model: gpt-4-0125-preview
-summary: Quitar las comillas de una cadena significa despojar esos signos de comillas
-  dobles o simples que envuelven los valores de texto.
+summary: Ruby tiene algunos trucos ingeniosos bajo la manga para recortar esas molestas
+  comillas.
 title: Eliminando comillas de una cadena
 weight: 9
 ---

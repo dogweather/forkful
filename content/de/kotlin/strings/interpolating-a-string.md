@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:51:09.625047-07:00
-description: "String-Interpolation erm\xF6glicht es, Variablen und Ausdr\xFCcke direkt\
-  \ in Strings einzuf\xFCgen, was den Code lesbarer und die String-Konstruktion einfacher\u2026"
+description: 'So geht''s: .'
 lastmod: '2024-03-13T22:44:53.833583-06:00'
 model: gpt-4-1106-preview
-summary: "String-Interpolation erm\xF6glicht es, Variablen und Ausdr\xFCcke direkt\
-  \ in Strings einzuf\xFCgen, was den Code lesbarer und die String-Konstruktion einfacher\
-  \ macht."
+summary: .
 title: Zeichenketten interpolieren
 weight: 8
 ---

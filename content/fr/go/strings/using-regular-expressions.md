@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:11.259589-07:00
-description: "Les expressions r\xE9guli\xE8res (regex) en programmation sont utilis\xE9\
-  es pour rechercher, correspondre et manipuler des cha\xEEnes de caract\xE8res bas\xE9\
-  es sur des\u2026"
+description: "Comment faire : En Go, le package `regexp` fournit des fonctionnalit\xE9\
+  s regex. Voici un guide \xE9tape par \xE9tape sur comment l'utiliser : 1. **Compiler\
+  \ une\u2026"
 lastmod: '2024-03-13T22:44:57.121832-06:00'
 model: gpt-4-0125-preview
-summary: "Les expressions r\xE9guli\xE8res (regex) en programmation sont utilis\xE9\
-  es pour rechercher, correspondre et manipuler des cha\xEEnes de caract\xE8res bas\xE9\
-  es sur des motifs sp\xE9cifiques."
+summary: "En Go, le package `regexp` fournit des fonctionnalit\xE9s regex."
 title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:35.201642-07:00
-description: "Capitalizar uma string envolve transformar o primeiro caractere de uma\
-  \ string dada em mai\xFAscula, se ele estiver em min\xFAscula, garantindo que a\
-  \ string se\u2026"
+description: "Como fazer: Em Go, o pacote `strings` n\xE3o fornece uma fun\xE7\xE3\
+  o direta para capitalizar apenas a primeira letra de uma string. Portanto, combinamos\
+  \ a fun\xE7\xE3o\u2026"
 lastmod: '2024-03-13T22:44:46.042290-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizar uma string envolve transformar o primeiro caractere de uma string\
-  \ dada em mai\xFAscula, se ele estiver em min\xFAscula, garantindo que a string\
-  \ se destaque ou adira a normas gramaticais espec\xEDficas."
+summary: "Em Go, o pacote `strings` n\xE3o fornece uma fun\xE7\xE3o direta para capitalizar\
+  \ apenas a primeira letra de uma string."
 title: Capitalizando uma string
 weight: 2
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:15.161927-07:00
-description: "Scrivere su standard error (stderr) in Go comporta l'indirizzare messaggi\
-  \ di errore o diagnostica che non sono destinati al flusso di output principale.\
-  \ I\u2026"
+description: "Come fare: In Go, il pacchetto `os` fornisce il valore `Stderr`, che\
+  \ rappresenta il file di errore standard. Puoi utilizzarlo con le funzioni\u2026"
 lastmod: '2024-03-13T22:44:42.925893-06:00'
 model: gpt-4-0125-preview
-summary: Scrivere su standard error (stderr) in Go comporta l'indirizzare messaggi
-  di errore o diagnostica che non sono destinati al flusso di output principale.
+summary: In Go, il pacchetto `os` fornisce il valore `Stderr`, che rappresenta il
+  file di errore standard.
 title: Scrittura su errore standard
 weight: 25
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:55:36.651159-07:00
-description: "Ler argumentos da linha de comando significa capturar os dados fornecidos\
-  \ quando um programa \xE9 iniciado no terminal. Programadores fazem isso para\u2026"
+description: "Como Fazer: Aqui est\xE1 um exemplo simples de como ler argumentos da\
+  \ linha de comando em C#."
 lastmod: '2024-03-13T22:44:46.599153-06:00'
 model: gpt-4-1106-preview
-summary: "Ler argumentos da linha de comando significa capturar os dados fornecidos\
-  \ quando um programa \xE9 iniciado no terminal."
+summary: "Aqui est\xE1 um exemplo simples de como ler argumentos da linha de comando\
+  \ em C#."
 title: Lendo argumentos da linha de comando
 weight: 23
 ---

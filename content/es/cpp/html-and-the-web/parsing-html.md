@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:24.028084-07:00
-description: "Analizar HTML significa descomponer el contenido HTML en algo que un\
-  \ programa puede entender y manipular. Los programadores hacen esto para extraer\
-  \ datos,\u2026"
+description: "C\xF3mo hacerlo: C++ no viene con capacidades incorporadas para el an\xE1\
+  lisis de HTML. A menudo se utiliza una biblioteca como Gumbo-parser de Google, o\
+  \ algo\u2026"
 lastmod: '2024-03-13T22:44:59.373203-06:00'
 model: gpt-4-0125-preview
-summary: Analizar HTML significa descomponer el contenido HTML en algo que un programa
-  puede entender y manipular.
+summary: "C++ no viene con capacidades incorporadas para el an\xE1lisis de HTML."
 title: Analizando HTML
 weight: 43
 ---

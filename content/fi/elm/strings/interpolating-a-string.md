@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:50:54.499244-07:00
-description: "Mik\xE4 on merkkijonojen interpolointi ja miksi ohjelmoijat k\xE4ytt\xE4\
-  v\xE4t sit\xE4? Merkkijonojen interpoloinnilla tarkoitetaan muuttujien tai lausekkeiden\u2026"
+description: "How to: Elmiss\xE4, merkkijonojen yhdist\xE4minen tapahtuu `++` operaattorilla,\
+  \ koska suoraa interpolointia ei tueta. T\xE4ss\xE4 esimerkki."
 lastmod: '2024-03-13T22:44:56.474085-06:00'
 model: gpt-4-1106-preview
-summary: "Mik\xE4 on merkkijonojen interpolointi ja miksi ohjelmoijat k\xE4ytt\xE4\
-  v\xE4t sit\xE4."
+summary: "Elmiss\xE4, merkkijonojen yhdist\xE4minen tapahtuu `++` operaattorilla,\
+  \ koska suoraa interpolointia ei tueta."
 title: Merkkijonon interpolointi
 weight: 8
 ---

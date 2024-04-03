@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:55:17.336418-07:00
-description: "Kommandozeilenargumente sind Parameter, die einem Bash-Skript \xFCbergeben\
-  \ werden, um sein Verhalten dynamisch anzupassen. Programmierer nutzen dies, um\u2026"
+description: Wie geht das? .
 lastmod: '2024-03-13T22:44:54.074841-06:00'
 model: gpt-4-1106-preview
-summary: "Kommandozeilenargumente sind Parameter, die einem Bash-Skript \xFCbergeben\
-  \ werden, um sein Verhalten dynamisch anzupassen."
+summary: .
 title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---

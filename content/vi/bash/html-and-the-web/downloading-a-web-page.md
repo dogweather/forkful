@@ -2,14 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:21.946145-07:00
-description: "T\u1EA3i xu\u1ED1ng m\u1ED9t trang web c\xF3 ngh\u0129a l\xE0 l\u1EA5\
-  y d\u1EEF li\u1EC7u t\u1EEB internet v\xE0 l\u01B0u tr\u1EEF c\u1EE5c b\u1ED9. L\u1EAD\
-  p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y cho c\xE1c m\u1EE5\
-  c \u0111\xEDch nh\u01B0 web scraping, ph\xE2n\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: C\xF4ng c\u1EE5 ti\xEAu bi\u1EC3u cho c\xF4\
+  ng vi\u1EC7c n\xE0y? `curl`. \u0110\xF3 l\xE0 m\u1ED9t ti\u1EC7n \xEDch d\xF2ng\
+  \ l\u1EC7nh m\u1EA1nh m\u1EBD gi\xFAp t\u1EA3i d\u1EEF li\u1EC7u t\u1EEB web. D\u01B0\
+  \u1EDBi \u0111\xE2y l\xE0 tr\u01B0\u1EDDng h\u1EE3p s\u1EED d\u1EE5ng\u2026"
 lastmod: '2024-03-13T22:44:36.877544-06:00'
 model: gpt-4-0125-preview
-summary: "T\u1EA3i xu\u1ED1ng m\u1ED9t trang web c\xF3 ngh\u0129a l\xE0 l\u1EA5y d\u1EEF\
-  \ li\u1EC7u t\u1EEB internet v\xE0 l\u01B0u tr\u1EEF c\u1EE5c b\u1ED9."
+summary: "C\xF4ng c\u1EE5 ti\xEAu bi\u1EC3u cho c\xF4ng vi\u1EC7c n\xE0y."
 title: "T\u1EA3i trang web"
 weight: 42
 ---

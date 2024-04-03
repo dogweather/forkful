@@ -2,12 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:21.987700-07:00
-description: "Parsear una fecha de un string en Dart implica convertir la representaci\xF3\
-  n textual de fechas y horas en un objeto `DateTime`. Esta operaci\xF3n es esencial\u2026"
+description: "C\xF3mo hacerlo: La biblioteca central de Dart simplifica el an\xE1\
+  lisis de fechas mediante la clase `DateTime`. Para casos sencillos donde conoces\
+  \ el formato\u2026"
 lastmod: '2024-03-13T22:44:58.763426-06:00'
 model: gpt-4-0125-preview
-summary: "Parsear una fecha de un string en Dart implica convertir la representaci\xF3\
-  n textual de fechas y horas en un objeto `DateTime`."
+summary: "La biblioteca central de Dart simplifica el an\xE1lisis de fechas mediante\
+  \ la clase `DateTime`."
 title: Analizando una fecha desde una cadena de texto
 weight: 30
 ---

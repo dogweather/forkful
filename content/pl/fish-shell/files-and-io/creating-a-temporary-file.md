@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:40:12.918048-07:00
-description: "Tworzenie pliku tymczasowego to spos\xF3b na chwilowe przechowanie danych\
-  \ bez za\u015Bmiecania systemu. Programi\u015Bci robi\u0105 to, kiedy potrzebuj\u0105\
-  \ szybkiego,\u2026"
+description: "How to: W Fish mo\u017Cna \u0142atwo stworzy\u0107 plik tymczasowy.\
+  \ U\u017Cyj `mktemp`, by zadzia\u0142a\u0107 magi\u0119."
 lastmod: '2024-03-13T22:44:35.861147-06:00'
 model: gpt-4-1106-preview
-summary: "Tworzenie pliku tymczasowego to spos\xF3b na chwilowe przechowanie danych\
-  \ bez za\u015Bmiecania systemu."
+summary: "W Fish mo\u017Cna \u0142atwo stworzy\u0107 plik tymczasowy."
 title: Tworzenie pliku tymczasowego
 weight: 21
 ---

@@ -2,11 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:20.369190-07:00
-description: "Reguliere expressies (regex) zoeken, matchen en manipuleren strings.\
-  \ Ze worden gebruikt vanwege hun flexibiliteit en effici\xEBntie bij tekstverwerkingstaken."
+description: 'Hoe te gebruiken: .'
 lastmod: '2024-03-13T22:44:50.408482-06:00'
 model: gpt-4-0125-preview
-summary: Reguliere expressies (regex) zoeken, matchen en manipuleren strings.
+summary: .
 title: Reguliere expressies gebruiken
 weight: 11
 ---

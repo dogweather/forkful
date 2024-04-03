@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 01:09:23.563546-07:00
-description: "Organizar c\xF3digo em fun\xE7\xF5es \xE9 como separar pe\xE7as de LEGO\
-  \ em caixas\u2014torna encontrar e usar essas pe\xE7as mais f\xE1cil. Fazemos isso\
-  \ para evitar repeti\xE7\xE3o, para\u2026"
+description: "Como fazer: Imagine que voc\xEA tem um c\xF3digo que imprime uma sauda\xE7\
+  \xE3o v\xE1rias vezes. Sem fun\xE7\xF5es, \xE9 uma bagun\xE7a. Com fun\xE7\xF5es,\
+  \ fica arrumado."
 lastmod: '2024-03-13T22:44:46.589484-06:00'
 model: gpt-4-1106-preview
-summary: "Organizar c\xF3digo em fun\xE7\xF5es \xE9 como separar pe\xE7as de LEGO\
-  \ em caixas\u2014torna encontrar e usar essas pe\xE7as mais f\xE1cil."
+summary: "Imagine que voc\xEA tem um c\xF3digo que imprime uma sauda\xE7\xE3o v\xE1\
+  rias vezes."
 title: "Organizando o c\xF3digo em fun\xE7\xF5es"
 weight: 18
 ---

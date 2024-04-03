@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:19.922474-07:00
-description: "En interaktiv skal, eller Read-Eval-Print Loop (REPL), \xE4r en enkel,\
-  \ interaktiv programmeringsmilj\xF6 som tar emot enskilda anv\xE4ndarinmatningar\
-  \ (uttryck),\u2026"
+description: "Hur: Google Apps Script, ett molnbaserat skriptspr\xE5k f\xF6r automatisering\
+  \ av uppgifter \xF6ver Googles produkter, har inte ett inbyggt REPL-verktyg liknande\
+  \ de\u2026"
 lastmod: '2024-03-13T22:44:37.440518-06:00'
 model: gpt-4-0125-preview
-summary: "En interaktiv skal, eller Read-Eval-Print Loop (REPL), \xE4r en enkel, interaktiv\
-  \ programmeringsmilj\xF6 som tar emot enskilda anv\xE4ndarinmatningar (uttryck),\
-  \ utv\xE4rderar dem och returnerar resultatet till anv\xE4ndaren."
+summary: "Google Apps Script, ett molnbaserat skriptspr\xE5k f\xF6r automatisering\
+  \ av uppgifter \xF6ver Googles produkter, har inte ett inbyggt REPL-verktyg liknande\
+  \ de i spr\xE5k som Python eller JavaScripts Node.js."
 title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---

@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:43:09.322480-07:00
-description: "Att ta bort tecken som matchar ett m\xF6nster \xE4r ett s\xE4tt att\
-  \ filtrera text genom att eliminera o\xF6nskade tecken eller textstr\xE4ngar. Programmerare\
-  \ g\xF6r detta\u2026"
+description: "Hur man g\xF6r: Exempel p\xE5 PowerShell-kod och utdata."
 lastmod: '2024-03-13T22:44:38.108497-06:00'
 model: gpt-4-1106-preview
-summary: "Att ta bort tecken som matchar ett m\xF6nster \xE4r ett s\xE4tt att filtrera\
-  \ text genom att eliminera o\xF6nskade tecken eller textstr\xE4ngar."
+summary: "Exempel p\xE5 PowerShell-kod och utdata."
 title: "Ta bort tecken som matchar ett m\xF6nster"
 weight: 5
 ---

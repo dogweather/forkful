@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:14.552011-07:00
-description: "Att hantera fel i C inneb\xE4r att uppt\xE4cka och bem\xF6ta onormala\
-  \ f\xF6rh\xE5llanden som uppst\xE5r under programk\xF6rning. Programmerare g\xF6\
-  r detta f\xF6r att f\xF6rhindra\u2026"
+description: "Hur man g\xF6r: C har inte inbyggt st\xF6d f\xF6r undantag som vissa\
+  \ andra spr\xE5k har. Ist\xE4llet f\xF6rlitar det sig p\xE5 n\xE5gra konventionella\
+  \ strategier f\xF6r\u2026"
 lastmod: '2024-03-13T22:44:38.390671-06:00'
 model: gpt-4-0125-preview
-summary: "Att hantera fel i C inneb\xE4r att uppt\xE4cka och bem\xF6ta onormala f\xF6\
-  rh\xE5llanden som uppst\xE5r under programk\xF6rning."
+summary: "C har inte inbyggt st\xF6d f\xF6r undantag som vissa andra spr\xE5k har."
 title: Hantera fel
 weight: 16
 ---

@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:27.567013-07:00
-description: "Tests in Google Apps Script (GAS) zu schreiben, bedeutet, automatisierte\
-  \ Skripte zu erstellen, um das Verhalten Ihrer Codes zu \xFCberpr\xFCfen und\u2026"
+description: "Wie geht das: Obwohl Google Apps Script kein eingebautes Test-Framework\
+  \ wie einige andere Programmierumgebungen hat, k\xF6nnen Sie immer noch Tests schreiben\u2026"
 lastmod: '2024-03-13T22:44:53.337885-06:00'
 model: gpt-4-0125-preview
-summary: "Tests in Google Apps Script (GAS) zu schreiben, bedeutet, automatisierte\
-  \ Skripte zu erstellen, um das Verhalten Ihrer Codes zu \xFCberpr\xFCfen und sicherzustellen,\
-  \ dass sie unter verschiedenen Bedingungen wie erwartet funktionieren."
+summary: "Obwohl Google Apps Script kein eingebautes Test-Framework wie einige andere\
+  \ Programmierumgebungen hat, k\xF6nnen Sie immer noch Tests schreiben und ausf\xFC\
+  hren, indem Sie einfache GAS-Funktionen nutzen oder externe Testbibliotheken wie\
+  \ `QUnit` integrieren."
 title: Tests schreiben
 weight: 36
 ---

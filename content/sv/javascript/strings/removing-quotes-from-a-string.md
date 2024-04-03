@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 03:40:18.489615-07:00
-description: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att bli av med\
-  \ de d\xE4r irriterande citattecknen som kan st\xE4lla till med problem i din kod,\
-  \ s\xE4rskilt n\xE4r du\u2026"
+description: "Hur g\xF6r man: T\xE4nk dig att du har en str\xE4ng som \xE4r omsluten\
+  \ av dubbla citattecken, som `\"\\\"Hej, v\xE4rlden!\\\"\"` och du vill ha texten\
+  \ ren, utan citattecken.\u2026"
 lastmod: '2024-03-13T22:44:38.281430-06:00'
 model: gpt-4-0125-preview
-summary: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att bli av med de\
-  \ d\xE4r irriterande citattecknen som kan st\xE4lla till med problem i din kod,\
-  \ s\xE4rskilt n\xE4r du tolkar data eller bygger JSON-objekt."
+summary: "T\xE4nk dig att du har en str\xE4ng som \xE4r omsluten av dubbla citattecken,\
+  \ som `\"\\\"Hej, v\xE4rlden!\\\"\"` och du vill ha texten ren, utan citattecken."
 title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 weight: 9
 ---

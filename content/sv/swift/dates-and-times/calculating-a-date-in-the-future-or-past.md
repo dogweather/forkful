@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:32:09.106086-07:00
-description: "Ber\xE4kning av framtida eller f\xF6rflutna datum \xE4r en process att\
-  \ l\xE4gga till eller dra fr\xE5n ett givet datum. Programmerare g\xF6r detta f\xF6\
-  r att hantera\u2026"
+description: "S\xE5 h\xE4r g\xF6r du: ."
 lastmod: '2024-03-13T22:44:38.264231-06:00'
 model: gpt-4-1106-preview
-summary: "Ber\xE4kning av framtida eller f\xF6rflutna datum \xE4r en process att l\xE4\
-  gga till eller dra fr\xE5n ett givet datum."
+summary: .
 title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutenheten"
 weight: 26
 ---

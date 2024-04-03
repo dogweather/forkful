@@ -1,11 +1,11 @@
 ---
 date: 2024-02-01 21:30:17.130436-07:00
-description: "Extracting substrings in Visual Basic for Applications (VBA) involves\
-  \ isolating specific parts of a string based on given criteria. Programmers do this\u2026"
+description: "How to: In VBA, you primarily use the `Mid`, `Left`, and `Right` functions\
+  \ to extract substrings. Below, we explore these functions with examples: 1.\u2026"
 lastmod: '2024-03-13T22:44:59.924627-06:00'
 model: gpt-4-0125-preview
-summary: Extracting substrings in Visual Basic for Applications (VBA) involves isolating
-  specific parts of a string based on given criteria.
+summary: In VBA, you primarily use the `Mid`, `Left`, and `Right` functions to extract
+  substrings.
 title: Extracting substrings
 weight: 6
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:47.474915-07:00
-description: "\xC5 analysere en dato fra en streng handler om \xE5 konvertere tekst\
-  \ som representerer en dato til et `Date` eller `DateTime`-objekt som Ruby forst\xE5\
-  r.\u2026"
+description: "Hvordan: I Ruby tilbyr standardbiblioteket direkte m\xE5ter \xE5 analysere\
+  \ datoer fra strenger ved hjelp av `Date` og `DateTime`-klassene. Her er hvordan\
+  \ du\u2026"
 lastmod: '2024-03-13T22:44:41.341675-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 analysere en dato fra en streng handler om \xE5 konvertere tekst som\
-  \ representerer en dato til et `Date` eller `DateTime`-objekt som Ruby forst\xE5\
-  r."
+summary: "I Ruby tilbyr standardbiblioteket direkte m\xE5ter \xE5 analysere datoer\
+  \ fra strenger ved hjelp av `Date` og `DateTime`-klassene."
 title: Analysering av en dato fra en streng
 weight: 30
 ---

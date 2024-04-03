@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:06.426412-07:00
-description: "String-Interpolation, in der Programmierung, beinhaltet den Aufbau von\
-  \ Zeichenketten, indem Ausdr\xFCcke innerhalb von w\xF6rtlichen Zeichenketten eingebettet\u2026"
+description: "Wie man es macht: C unterst\xFCtzt im Gegensatz zu einigen Hochsprachen\
+  \ die String-Interpolation nicht direkt in seiner Syntax. Stattdessen wird der Aufbau\u2026"
 lastmod: '2024-03-13T22:44:54.337212-06:00'
 model: gpt-4-0125-preview
-summary: "String-Interpolation, in der Programmierung, beinhaltet den Aufbau von Zeichenketten,\
-  \ indem Ausdr\xFCcke innerhalb von w\xF6rtlichen Zeichenketten eingebettet werden."
+summary: "C unterst\xFCtzt im Gegensatz zu einigen Hochsprachen die String-Interpolation\
+  \ nicht direkt in seiner Syntax."
 title: Interpolation eines Strings
 weight: 8
 ---

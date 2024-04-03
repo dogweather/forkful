@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:09.398041-07:00
-description: "Feilh\xE5ndtering i Visual Basic for Applications (VBA) refererer til\
-  \ prosessen med \xE5 forutse, oppdage og l\xF8se programmerings-, applikasjons-\
-  \ eller\u2026"
+description: "Hvordan: I VBA blir feilh\xE5ndtering typisk implementert ved bruk av\
+  \ `On Error`-setningen som instruerer VBA i hvordan man skal fortsette n\xE5r en\
+  \ feil\u2026"
 lastmod: '2024-03-13T22:44:40.628706-06:00'
 model: gpt-4-0125-preview
-summary: "Feilh\xE5ndtering i Visual Basic for Applications (VBA) refererer til prosessen\
-  \ med \xE5 forutse, oppdage og l\xF8se programmerings-, applikasjons- eller kommunikasjonsfeil."
+summary: "I VBA blir feilh\xE5ndtering typisk implementert ved bruk av `On Error`-setningen\
+  \ som instruerer VBA i hvordan man skal fortsette n\xE5r en feil oppst\xE5r."
 title: "H\xE5ndtering av feil"
 weight: 16
 ---

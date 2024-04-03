@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:14.065613-07:00
-description: "Een nieuw project starten in Elm betekent het opzetten van een schone\
-  \ lei voor het bouwen van betrouwbare webapps. Programmeurs doen dit om te profiteren\u2026"
+description: 'Hoe te: In Elm, begin je met het `elm init` commando. Navigeer naar
+  je projectmap en start je terminal.'
 lastmod: '2024-03-13T22:44:50.725388-06:00'
 model: gpt-4-0125-preview
-summary: Een nieuw project starten in Elm betekent het opzetten van een schone lei
-  voor het bouwen van betrouwbare webapps.
+summary: In Elm, begin je met het `elm init` commando.
 title: Een nieuw project starten
 weight: 1
 ---

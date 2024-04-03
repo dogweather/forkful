@@ -2,15 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:40.063854-07:00
-description: "X\u1EED l\xFD l\u1ED7i l\xE0 c\xE1ch b\u1EA1n qu\u1EA3n l\xFD khi m\u1ECD\
-  i th\u1EE9 di\u1EC5n ra kh\xF4ng nh\u01B0 k\u1EBF ho\u1EA1ch trong m\xE3 c\u1EE7\
-  a b\u1EA1n. \u0110i\u1EC1u n\xE0y quan tr\u1ECDng b\u1EDFi v\xEC n\xF3 gi\xFAp ch\u01B0\
-  \u01A1ng tr\xECnh c\u1EE7a b\u1EA1n th\u1EA5t b\u1EA1i\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: D\u01B0\u1EDBi \u0111\xE2y l\xE0 kh\u1ED1\
+  i `try-catch` kinh \u0111i\u1EC3n."
 lastmod: '2024-03-13T22:44:37.163064-06:00'
 model: gpt-4-0125-preview
-summary: "X\u1EED l\xFD l\u1ED7i l\xE0 c\xE1ch b\u1EA1n qu\u1EA3n l\xFD khi m\u1ECD\
-  i th\u1EE9 di\u1EC5n ra kh\xF4ng nh\u01B0 k\u1EBF ho\u1EA1ch trong m\xE3 c\u1EE7\
-  a b\u1EA1n."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 kh\u1ED1i `try-catch` kinh \u0111i\u1EC3\
+  n."
 title: "X\u1EED l\xFD l\u1ED7i"
 weight: 16
 ---

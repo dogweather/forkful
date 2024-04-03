@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:07:17.217873-07:00
-description: "Il logging \xE8 la pratica di registrare eventi, errori e altri punti\
-  \ dati significativi che si verificano all'interno del ciclo di vita di un'applicazione\u2026"
+description: "Come fare: Lua non ha un framework di logging incorporato, ma implementare\
+  \ una funzione di logging semplice \xE8 abbastanza diretto. Di seguito \xE8 riportato\u2026"
 lastmod: '2024-03-13T22:44:43.563918-06:00'
 model: gpt-4-1106-preview
-summary: "Il logging \xE8 la pratica di registrare eventi, errori e altri punti dati\
-  \ significativi che si verificano all'interno del ciclo di vita di un'applicazione\
-  \ software."
+summary: "Lua non ha un framework di logging incorporato, ma implementare una funzione\
+  \ di logging semplice \xE8 abbastanza diretto."
 title: "Registrazione delle Attivit\xE0 (Logging)"
 weight: 17
 ---

@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:38.685590-07:00
-description: "Werken met YAML betekent het parsen en genereren van YAML-geformatteerde\
-  \ data, een voor mensen leesbare standaard voor data-serialisatie. Programmeurs\u2026"
+description: 'Hoe: Elixir bevat geen ingebouwde YAML-ondersteuning, maar je kunt de
+  `yamerl` bibliotheek gebruiken. Voeg eerst `yamerl` toe aan je `mix.exs` bestand.'
 lastmod: '2024-03-13T22:44:50.482328-06:00'
 model: gpt-4-0125-preview
-summary: Werken met YAML betekent het parsen en genereren van YAML-geformatteerde
-  data, een voor mensen leesbare standaard voor data-serialisatie.
+summary: Elixir bevat geen ingebouwde YAML-ondersteuning, maar je kunt de `yamerl`
+  bibliotheek gebruiken.
 title: Werken met YAML
 weight: 41
 ---

@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:06.340247-07:00
-description: "\xC5 sende en HTTP-foresp\xF8rsel i Visual Basic for Applications (VBA)\
-  \ inneb\xE6rer programmatisk tilgang til webressurser eller webtjenester ved \xE5\
-  \ gj\xF8re\u2026"
+description: "Slik gj\xF8r du: N\xF8kkelen til \xE5 sende en HTTP-foresp\xF8rsel i\
+  \ VBA er \xE5 utnytte `Microsoft XML, v6.0`-biblioteket (eller eldre versjoner,\
+  \ avhengig av systemet\u2026"
 lastmod: '2024-03-13T22:44:40.615740-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 sende en HTTP-foresp\xF8rsel i Visual Basic for Applications (VBA)\
-  \ inneb\xE6rer programmatisk tilgang til webressurser eller webtjenester ved \xE5\
-  \ gj\xF8re foresp\xF8rsler over HTTP."
+summary: "N\xF8kkelen til \xE5 sende en HTTP-foresp\xF8rsel i VBA er \xE5 utnytte\
+  \ `Microsoft XML, v6.0`-biblioteket (eller eldre versjoner, avhengig av systemet\
+  \ ditt)."
 title: "Sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---

@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:20:50.772412-07:00
-description: "TOML:n kanssa ty\xF6skentely tarkoittaa TOML-datam (Tom's Obvious, Minimal\
-  \ Language) j\xE4sent\xE4mist\xE4 ja generointia k\xE4ytt\xE4en Elixiria. Ohjelmoijat\
-  \ k\xE4ytt\xE4v\xE4t\u2026"
+description: "Miten: Lis\xE4\xE4 ensin TOML-j\xE4sent\xE4j\xE4 mix-riippuvuuksiisi.\
+  \ T\xE4ss\xE4 esimerkiss\xE4 k\xE4ytet\xE4\xE4n `toml-elixir`."
 lastmod: '2024-03-13T22:44:56.250197-06:00'
 model: gpt-4-0125-preview
-summary: "TOML:n kanssa ty\xF6skentely tarkoittaa TOML-datam (Tom's Obvious, Minimal\
-  \ Language) j\xE4sent\xE4mist\xE4 ja generointia k\xE4ytt\xE4en Elixiria."
+summary: "Lis\xE4\xE4 ensin TOML-j\xE4sent\xE4j\xE4 mix-riippuvuuksiisi."
 title: "Ty\xF6skentely TOML:n kanssa"
 weight: 39
 ---

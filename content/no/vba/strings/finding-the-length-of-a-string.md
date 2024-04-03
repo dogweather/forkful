@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:44.655521-07:00
-description: "\xC5 finne lengden p\xE5 en streng i Visual Basic for Applications (VBA)\
-  \ inneb\xE6rer \xE5 bestemme antall tegn den inneholder. Programmerere utf\xF8rer\
-  \ ofte denne\u2026"
+description: "Hvordan: I VBA er `Len`-funksjonen din go-to for \xE5 finne lengden\
+  \ p\xE5 en streng. Den returnerer et heltall som representerer antall tegn i en\
+  \ spesifisert\u2026"
 lastmod: '2024-03-13T22:44:40.608464-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 finne lengden p\xE5 en streng i Visual Basic for Applications (VBA)\
-  \ inneb\xE6rer \xE5 bestemme antall tegn den inneholder."
+summary: "I VBA er `Len`-funksjonen din go-to for \xE5 finne lengden p\xE5 en streng."
 title: "Finner lengden p\xE5 en streng"
 weight: 7
 ---

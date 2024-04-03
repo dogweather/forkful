@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:07:40.976281-07:00
-description: "Trabalhar com n\xFAmeros complexos envolve realizar opera\xE7\xF5es\
-  \ matem\xE1ticas em n\xFAmeros que possuem tanto uma parte real quanto uma parte\
-  \ imagin\xE1ria.\u2026"
+description: "Como fazer: Em Visual Basic for Applications (VBA), lidar com n\xFA\
+  meros complexos pode ser um tanto quanto menos direto comparado com linguagens que\
+  \ possuem\u2026"
 lastmod: '2024-03-13T22:44:46.405147-06:00'
 model: gpt-4-0125-preview
-summary: "Trabalhar com n\xFAmeros complexos envolve realizar opera\xE7\xF5es matem\xE1\
-  ticas em n\xFAmeros que possuem tanto uma parte real quanto uma parte imagin\xE1\
-  ria."
+summary: "Em Visual Basic for Applications (VBA), lidar com n\xFAmeros complexos pode\
+  \ ser um tanto quanto menos direto comparado com linguagens que possuem suporte\
+  \ nativo para eles."
 title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---

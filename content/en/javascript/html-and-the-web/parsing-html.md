@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, dogweather, reviewed
 date: 2024-01-20 15:32:10.298214-07:00
-description: "Parsing HTML means extracting data from HTML documents. Programmers\
-  \ do it to interact with or manipulate web content, automate data extraction, or\
-  \ for web\u2026"
+description: 'How to: Let''s parse HTML using the `DOMParser` API in JavaScript.'
 lastmod: '2024-03-13T22:45:00.431554-06:00'
 model: unknown
-summary: Parsing HTML means extracting data from HTML documents.
+summary: Let's parse HTML using the `DOMParser` API in JavaScript.
 title: Parsing HTML
 weight: 43
 ---

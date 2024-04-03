@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:20.512561-07:00
-description: "Gli array associativi, spesso noti come dizionari in Visual Basic for\
-  \ Applications (VBA), consentono ai programmatori di creare collezioni di coppie\u2026"
+description: "Come fare: In VBA, l'oggetto `Dictionary` fornisce funzionalit\xE0 simili\
+  \ agli array associativi. Devi prima aggiungere un riferimento al Microsoft Scripting\u2026"
 lastmod: '2024-03-13T22:44:43.254861-06:00'
 model: gpt-4-0125-preview
-summary: Gli array associativi, spesso noti come dizionari in Visual Basic for Applications
-  (VBA), consentono ai programmatori di creare collezioni di coppie chiave-valore.
+summary: "In VBA, l'oggetto `Dictionary` fornisce funzionalit\xE0 simili agli array\
+  \ associativi."
 title: Utilizzo di array associativi
 weight: 15
 ---

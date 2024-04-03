@@ -1,13 +1,9 @@
 ---
 date: 2024-01-27 16:20:54.320777-07:00
-description: "Att redigera filer direkt med CLI enradskommandon i PowerShell handlar\
-  \ om att g\xF6ra direkta \xE4ndringar i filer fr\xE5n kommandoraden, utan att beh\xF6\
-  va \xF6ppna dem\u2026"
+description: "Hur g\xF6r man: #."
 lastmod: '2024-03-13T22:44:38.121959-06:00'
 model: gpt-4-0125-preview
-summary: "Att redigera filer direkt med CLI enradskommandon i PowerShell handlar om\
-  \ att g\xF6ra direkta \xE4ndringar i filer fr\xE5n kommandoraden, utan att beh\xF6\
-  va \xF6ppna dem i en textredigerare."
+summary: '#.'
 title: "Redigera filer p\xE5 plats med kommandoradsenradare"
 weight: 32
 ---

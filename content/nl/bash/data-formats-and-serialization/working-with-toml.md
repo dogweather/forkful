@@ -2,11 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:35.502313-07:00
-description: "TOML, afkorting voor Tom's Obvious, Minimal Language, is een data-serialisatieformaat.\
-  \ Programmeurs zijn er dol op vanwege de eenvoud en leesbaarheid; het\u2026"
+description: 'Hoe te: Allereerst, installeer `toml-cli` om met TOML in Bash te spelen.
+  Handig voor het lezen of bewerken van TOML-bestanden ter plekke.'
 lastmod: '2024-03-13T22:44:51.007209-06:00'
 model: gpt-4-0125-preview
-summary: TOML, afkorting voor Tom's Obvious, Minimal Language, is een data-serialisatieformaat.
+summary: Allereerst, installeer `toml-cli` om met TOML in Bash te spelen.
 title: Werken met TOML
 weight: 39
 ---

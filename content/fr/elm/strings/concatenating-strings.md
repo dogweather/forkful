@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:34:36.237214-07:00
-description: "La concat\xE9nation de cha\xEEnes, c'est simplement coller des textes\
-  \ bout \xE0 bout. On le fait pour modeler des messages, combiner des valeurs ou\
-  \ cr\xE9er des\u2026"
+description: "How to: En Elm, on utilise l'op\xE9rateur `(++)` pour concat\xE9ner\
+  \ des cha\xEEnes de caract\xE8res. Voil\xE0 comment \xE7a marche ."
 lastmod: '2024-03-13T22:44:57.680370-06:00'
 model: gpt-4-1106-preview
-summary: "La concat\xE9nation de cha\xEEnes, c'est simplement coller des textes bout\
-  \ \xE0 bout."
+summary: "En Elm, on utilise l'op\xE9rateur `(++)` pour concat\xE9ner des cha\xEE\
+  nes de caract\xE8res."
 title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 weight: 3
 ---

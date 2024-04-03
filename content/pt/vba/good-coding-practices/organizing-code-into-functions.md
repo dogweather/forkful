@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:22.229806-07:00
-description: "Organizar o c\xF3digo em fun\xE7\xF5es no Visual Basic for Applications\
-  \ (VBA) envolve dividir um programa em partes menores e gerenci\xE1veis, conhecidas\
-  \ como\u2026"
+description: "Como fazer: No VBA, as fun\xE7\xF5es s\xE3o definidas usando as instru\xE7\
+  \xF5es `Function` e `End Function`. Aqui est\xE1 um exemplo simples de como criar\
+  \ uma fun\xE7\xE3o que\u2026"
 lastmod: '2024-03-13T22:44:46.418480-06:00'
 model: gpt-4-0125-preview
-summary: "Organizar o c\xF3digo em fun\xE7\xF5es no Visual Basic for Applications\
-  \ (VBA) envolve dividir um programa em partes menores e gerenci\xE1veis, conhecidas\
-  \ como fun\xE7\xF5es."
+summary: "No VBA, as fun\xE7\xF5es s\xE3o definidas usando as instru\xE7\xF5es `Function`\
+  \ e `End Function`."
 title: "Organizando c\xF3digo em fun\xE7\xF5es"
 weight: 18
 ---

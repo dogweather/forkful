@@ -1,13 +1,13 @@
 ---
 date: 2024-01-26 01:08:20.655601-07:00
-description: "Le logging est le processus d'enregistrement des \xE9v\xE9nements, erreurs\
-  \ et autres informations importantes pendant l'ex\xE9cution d'un programme sur un\
-  \ support\u2026"
+description: "Comment faire : En TypeScript, vous pouvez facilement mettre en \u0153\
+  uvre un logging de base en utilisant les m\xE9thodes de la console ou int\xE9grer\
+  \ un logging\u2026"
 lastmod: '2024-03-13T22:44:57.443826-06:00'
 model: gpt-4-1106-preview
-summary: "Le logging est le processus d'enregistrement des \xE9v\xE9nements, erreurs\
-  \ et autres informations importantes pendant l'ex\xE9cution d'un programme sur un\
-  \ support externe, souvent des fichiers ou des bases de donn\xE9es."
+summary: "En TypeScript, vous pouvez facilement mettre en \u0153uvre un logging de\
+  \ base en utilisant les m\xE9thodes de la console ou int\xE9grer un logging plus\
+  \ avanc\xE9 avec des biblioth\xE8ques telles que `winston` ou `pino`."
 title: Journalisation
 weight: 17
 ---

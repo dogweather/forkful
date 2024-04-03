@@ -3,15 +3,14 @@ changelog:
 - 2024-02-27, dogweather, edited and tested
 - 2024-02-27, gpt-4-0125-preview, translated from English
 date: 2024-02-27 22:50:36.803137-07:00
-description: "G\xE9n\xE9rer des nombres al\xE9atoires en Elm n\xE9cessite l'utilisation\
-  \ du module `Random` pour produire des nombres pseudo-al\xE9atoires, qui s'av\xE8\
-  rent utiles pour\u2026"
+description: "Comment faire : La nature purement fonctionnelle d'Elm signifie que\
+  \ vous ne pouvez pas g\xE9n\xE9rer des nombres al\xE9atoires directement comme vous\
+  \ pourriez le\u2026"
 lastmod: '2024-03-13T22:44:57.684496-06:00'
 model: gpt-4-0125-preview
-summary: "G\xE9n\xE9rer des nombres al\xE9atoires en Elm n\xE9cessite l'utilisation\
-  \ du module `Random` pour produire des nombres pseudo-al\xE9atoires, qui s'av\xE8\
-  rent utiles pour une vari\xE9t\xE9 de t\xE2ches telles que les jeux, les simulations,\
-  \ et m\xEAme en tant que partie d'algorithmes n\xE9cessitant des processus stochastiques."
+summary: "La nature purement fonctionnelle d'Elm signifie que vous ne pouvez pas g\xE9\
+  n\xE9rer des nombres al\xE9atoires directement comme vous pourriez le faire dans\
+  \ les langages imp\xE9ratifs."
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---

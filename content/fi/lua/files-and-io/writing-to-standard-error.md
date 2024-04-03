@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:59.300059-07:00
-description: "Kirjoittaminen standardivirheeseen (stderr) tarkoittaa virheviestien\
-  \ ja diagnostiikkatulosteiden ohjaamista erilliseen kanavaan, eroon\u2026"
+description: "Miten: Luassa virheiden kirjoittaminen stderr:iin on mahdollista `io.stderr:write()`-funktion\
+  \ avulla. T\xE4ss\xE4 on miten voit kirjoittaa yksinkertaisen\u2026"
 lastmod: '2024-03-13T22:44:56.713026-06:00'
 model: gpt-4-0125-preview
-summary: Kirjoittaminen standardivirheeseen (stderr) tarkoittaa virheviestien ja diagnostiikkatulosteiden
-  ohjaamista erilliseen kanavaan, eroon standarditulosteesta (stdout).
+summary: Luassa virheiden kirjoittaminen stderr:iin on mahdollista `io.stderr:write()`-funktion
+  avulla.
 title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---

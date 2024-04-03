@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:46.145566-07:00
-description: "Reguliere expressies (regex) zijn hulpmiddelen voor het matchen van\
-  \ patronen in tekst. Programmeurs gebruiken ze om data effici\xEBnt te zoeken, valideren\
-  \ of\u2026"
+description: 'Hoe te: Kotlin maakt regex eenvoudig. Laten we enkele praktische codevoorbeelden
+  bekijken.'
 lastmod: '2024-03-13T22:44:50.757586-06:00'
 model: gpt-4-0125-preview
-summary: Reguliere expressies (regex) zijn hulpmiddelen voor het matchen van patronen
-  in tekst.
+summary: Kotlin maakt regex eenvoudig.
 title: Reguliere expressies gebruiken
 weight: 11
 ---

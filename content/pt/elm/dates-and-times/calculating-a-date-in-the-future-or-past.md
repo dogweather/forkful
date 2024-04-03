@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:30:55.147423-07:00
-description: "Calcular uma data no futuro ou no passado \xE9 determinar um dia espec\xED\
-  fico antes ou depois de uma data conhecida. Programadores fazem isso para agendar\u2026"
+description: 'Como fazer: .'
 lastmod: '2024-03-13T22:44:46.513298-06:00'
 model: gpt-4-1106-preview
-summary: "Calcular uma data no futuro ou no passado \xE9 determinar um dia espec\xED\
-  fico antes ou depois de uma data conhecida."
+summary: .
 title: Calculando uma data no futuro ou passado
 weight: 26
 ---

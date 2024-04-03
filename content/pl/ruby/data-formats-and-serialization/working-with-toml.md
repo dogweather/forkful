@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:25:53.853171-07:00
-description: "TOML to format pliku konfiguracyjnego, kt\xF3ry jest \u0142atwy do odczytu\
-  \ dzi\u0119ki swojej jasnej semantyce. Programi\u015Bci u\u017Cywaj\u0105 TOML do\
-  \ zarz\u0105dzania konfiguracjami\u2026"
+description: "Jak to zrobi\u0107: Najpierw zainstaluj gem `toml-rb`. Jest to popularny\
+  \ wyb\xF3r do parsowania TOML w Ruby."
 lastmod: '2024-03-13T22:44:35.955636-06:00'
 model: gpt-4-0125-preview
-summary: "TOML to format pliku konfiguracyjnego, kt\xF3ry jest \u0142atwy do odczytu\
-  \ dzi\u0119ki swojej jasnej semantyce."
+summary: Najpierw zainstaluj gem `toml-rb`.
 title: Praca z TOML
 weight: 39
 ---

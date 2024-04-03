@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:48:26.603962-07:00
-description: "Att hitta l\xE4ngden p\xE5 en str\xE4ng inneb\xE4r att ta reda p\xE5\
-  \ antalet tecken den inneh\xE5ller. Programmerare beh\xF6ver ofta veta detta f\xF6\
-  r att validera indata,\u2026"
+description: "Hur g\xF6r man: F\xF6r att f\xE5 l\xE4ngden p\xE5 en str\xE4ng i Swift\
+  \ \xE4r det bara att anv\xE4nda `count`-egenskapen."
 lastmod: '2024-03-13T22:44:38.242407-06:00'
 model: gpt-4-1106-preview
-summary: "Att hitta l\xE4ngden p\xE5 en str\xE4ng inneb\xE4r att ta reda p\xE5 antalet\
-  \ tecken den inneh\xE5ller."
+summary: "F\xF6r att f\xE5 l\xE4ngden p\xE5 en str\xE4ng i Swift \xE4r det bara att\
+  \ anv\xE4nda `count`-egenskapen."
 title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---

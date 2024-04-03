@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:21.740294-07:00
-description: "Mit CSV (Comma-Separated Values, durch Kommata getrennte Werte) in JavaScript\
-  \ zu arbeiten, bedeutet, CSV-Dateien zu parsen oder zu generieren, um\u2026"
+description: "Wie geht das: JavaScript verf\xFCgt nicht \xFCber integrierte CSV-Parsing-\
+  \ oder Stringifying-Funktionen wie bei JSON. Jedoch kann man CSV-Daten leicht\u2026"
 lastmod: '2024-03-13T22:44:54.288733-06:00'
 model: gpt-4-0125-preview
-summary: "Mit CSV (Comma-Separated Values, durch Kommata getrennte Werte) in JavaScript\
-  \ zu arbeiten, bedeutet, CSV-Dateien zu parsen oder zu generieren, um Tabellendaten\
-  \ aus externen Quellen zu importieren oder Daten f\xFCr die Verwendung in anderen\
-  \ Programmen zu exportieren."
+summary: "JavaScript verf\xFCgt nicht \xFCber integrierte CSV-Parsing- oder Stringifying-Funktionen\
+  \ wie bei JSON."
 title: Arbeiten mit CSV
 weight: 37
 ---

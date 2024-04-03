@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:12.303497-07:00
-description: "R\xE9cup\xE9rer la date actuelle en programmation est une t\xE2che cruciale\
-  \ pour de nombreuses applications, y compris la journalisation, le marquage temporel\
-  \ des\u2026"
+description: "Comment faire : Lua fournit la fonction `os.date` pour obtenir la date\
+  \ et l'heure actuelles. La fonction peut \xEAtre utilis\xE9e sans arguments pour\
+  \ obtenir\u2026"
 lastmod: '2024-03-13T22:44:57.948183-06:00'
 model: gpt-4-0125-preview
-summary: "R\xE9cup\xE9rer la date actuelle en programmation est une t\xE2che cruciale\
-  \ pour de nombreuses applications, y compris la journalisation, le marquage temporel\
-  \ des \xE9v\xE9nements ou la planification des t\xE2ches."
+summary: Lua fournit la fonction `os.date` pour obtenir la date et l'heure actuelles.
 title: Obtenir la date actuelle
 weight: 29
 ---

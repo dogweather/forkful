@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:42:41.564841-07:00
-description: "Avrunding av tall inneb\xE6rer \xE5 trimme et desimaltall til sin n\xE6\
-  rmeste hele verdi eller til et bestemt antall desimalplasser. Programmerere runder\
-  \ av tall\u2026"
+description: "Hvordan: I Arduino kan du avrunde tall ved \xE5 bruke innebygde funksjoner.\
+  \ Viktige akt\xF8rer er `round`, `ceil` og `floor`. Her er en rask demo."
 lastmod: '2024-03-13T22:44:41.053603-06:00'
 model: gpt-4-0125-preview
-summary: "Avrunding av tall inneb\xE6rer \xE5 trimme et desimaltall til sin n\xE6\
-  rmeste hele verdi eller til et bestemt antall desimalplasser."
+summary: "I Arduino kan du avrunde tall ved \xE5 bruke innebygde funksjoner."
 title: Avrunding av tall
 weight: 13
 ---

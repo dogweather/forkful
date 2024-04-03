@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:56.623750-07:00
-description: "Att ber\xE4kna ett datum i framtiden eller f\xF6rflutet inneb\xE4r att\
-  \ best\xE4mma ett specifikt datum genom att l\xE4gga till eller dra ifr\xE5n ett\
-  \ visst antal dagar,\u2026"
+description: "Hur man g\xF6r: \xC4ven om C:s standardbibliotek inte tillhandah\xE5\
+  ller direkta funktioner f\xF6r datumaritmetik, kan du manipulera datum med hj\xE4\
+  lp av biblioteket\u2026"
 lastmod: '2024-03-13T22:44:38.397719-06:00'
 model: gpt-4-0125-preview
-summary: "Att ber\xE4kna ett datum i framtiden eller f\xF6rflutet inneb\xE4r att best\xE4\
-  mma ett specifikt datum genom att l\xE4gga till eller dra ifr\xE5n ett visst antal\
-  \ dagar, m\xE5nader eller \xE5r fr\xE5n ett angivet datum."
+summary: "\xC4ven om C:s standardbibliotek inte tillhandah\xE5ller direkta funktioner\
+  \ f\xF6r datumaritmetik, kan du manipulera datum med hj\xE4lp av biblioteket `time.h`,\
+  \ specifikt genom att arbeta med datatypen `time_t` och `struct tm`."
 title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutet"
 weight: 26
 ---

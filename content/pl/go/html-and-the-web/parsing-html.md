@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:34.051813-07:00
-description: "Parsowanie HTML w Go polega na analizowaniu zawarto\u015Bci plik\xF3\
-  w HTML w celu ekstrakcji danych, manipulacji struktur\u0105 lub konwersji HTML na\
-  \ inne formaty.\u2026"
+description: "Jak to zrobi\u0107: Aby przeprowadzi\u0107 parsowanie HTML w Go, zazwyczaj\
+  \ u\u017Cywa si\u0119 pakietu `goquery` lub standardowej biblioteki `net/html`.\
+  \ Oto podstawowy\u2026"
 lastmod: '2024-03-13T22:44:34.847998-06:00'
 model: gpt-4-0125-preview
-summary: "Parsowanie HTML w Go polega na analizowaniu zawarto\u015Bci plik\xF3w HTML\
-  \ w celu ekstrakcji danych, manipulacji struktur\u0105 lub konwersji HTML na inne\
-  \ formaty."
+summary: "Aby przeprowadzi\u0107 parsowanie HTML w Go, zazwyczaj u\u017Cywa si\u0119\
+  \ pakietu `goquery` lub standardowej biblioteki `net/html`."
 title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---

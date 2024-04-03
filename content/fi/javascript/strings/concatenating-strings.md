@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:34:57.429032-07:00
-description: "Stringien yhdist\xE4minen tarkoittaa kahden tai useamman tekstinp\xE4\
-  tk\xE4n liitt\xE4mist\xE4 yhteen. Koodarit tekev\xE4t t\xE4t\xE4 muodostaakseen\
-  \ k\xE4ytt\xE4j\xE4lle n\xE4ytett\xE4vi\xE4\u2026"
+description: "How to - Kuinka Tehd\xE4: ."
 lastmod: '2024-03-13T22:44:56.941902-06:00'
 model: gpt-4-1106-preview
-summary: "Stringien yhdist\xE4minen tarkoittaa kahden tai useamman tekstinp\xE4tk\xE4\
-  n liitt\xE4mist\xE4 yhteen."
+summary: .
 title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---

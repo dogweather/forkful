@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 03:45:32.320720-07:00
-description: "Arrondir les nombres signifie les ajuster \xE0 l'entier le plus proche\
-  \ ou \xE0 un nombre de d\xE9cimales sp\xE9cifi\xE9. C'est un \xE9l\xE9ment fondamental\
-  \ en programmation\u2026"
+description: 'Comment faire : .'
 lastmod: '2024-03-13T22:44:57.921409-06:00'
 model: gpt-4-0125-preview
-summary: "Arrondir les nombres signifie les ajuster \xE0 l'entier le plus proche ou\
-  \ \xE0 un nombre de d\xE9cimales sp\xE9cifi\xE9."
+summary: .
 title: Arrondir les nombres
 weight: 13
 ---

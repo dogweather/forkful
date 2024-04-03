@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:23.566928-07:00
-description: "Convertire una data in una stringa in Go comporta la trasformazione\
-  \ di un oggetto `time.Time` in un formato di stringa leggibile. I programmatori\
-  \ spesso\u2026"
+description: "Come fare: In Go, il pacchetto `time` fornisce funzionalit\xE0 per lavorare\
+  \ con date e orari, inclusa la formattazione di un oggetto `time.Time` in una\u2026"
 lastmod: '2024-03-13T22:44:42.920673-06:00'
 model: gpt-4-0125-preview
-summary: Convertire una data in una stringa in Go comporta la trasformazione di un
-  oggetto `time.
+summary: "In Go, il pacchetto `time` fornisce funzionalit\xE0 per lavorare con date\
+  \ e orari, inclusa la formattazione di un oggetto `time.Time` in una stringa."
 title: Convertire una data in una stringa
 weight: 28
 ---

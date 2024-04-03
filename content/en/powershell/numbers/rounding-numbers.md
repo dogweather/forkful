@@ -1,11 +1,10 @@
 ---
 date: 2024-01-25 02:59:40.250262-07:00
-description: "Rounding numbers is about tuning a value to the nearest integer or specified\
-  \ decimal place. Programmers round numbers to simplify data, enhance\u2026"
+description: 'How to: You''ve got a few handy cmdlets and methods in PowerShell for
+  rounding: - `Round()` method from Math class.'
 lastmod: '2024-03-13T22:45:00.277465-06:00'
 model: gpt-4-1106-preview
-summary: Rounding numbers is about tuning a value to the nearest integer or specified
-  decimal place.
+summary: You've got a few handy cmdlets and methods in PowerShell for rounding.
 title: Rounding numbers
 weight: 13
 ---

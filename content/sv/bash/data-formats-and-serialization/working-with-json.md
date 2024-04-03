@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:34.205684-07:00
-description: "Att arbeta med JSON i Bash-programmering inneb\xE4r att tolka, extrahera\
-  \ och manipulera JSON-data direkt fr\xE5n kommandoraden. Programmerare g\xF6r ofta\
-  \ detta f\xF6r\u2026"
+description: "Hur man g\xF6r: Bash har i sig inga inbyggda JSON-tolkningsfunktioner,\
+  \ men `jq` \xE4r en kraftfull kommandoradsprocessor f\xF6r JSON som fyller detta\
+  \ gap. S\xE5 h\xE4r\u2026"
 lastmod: '2024-03-13T22:44:38.103428-06:00'
 model: gpt-4-0125-preview
-summary: "Att arbeta med JSON i Bash-programmering inneb\xE4r att tolka, extrahera\
-  \ och manipulera JSON-data direkt fr\xE5n kommandoraden."
+summary: "Bash har i sig inga inbyggda JSON-tolkningsfunktioner, men `jq` \xE4r en\
+  \ kraftfull kommandoradsprocessor f\xF6r JSON som fyller detta gap."
 title: Arbeta med JSON
 weight: 38
 ---

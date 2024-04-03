@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 17:50:02.611930-07:00
-description: "Organizing code into functions in C involves breaking down complex tasks\
-  \ into smaller, reusable blocks of code. This practice enhances readability,\u2026"
+description: "How to: In C, a function is declared with a return type, a name, and\
+  \ parameters (if any), followed by a block of code. Let's start with a simple example:\u2026"
 lastmod: '2024-03-13T22:45:00.516382-06:00'
 model: gpt-4-0125-preview
-summary: Organizing code into functions in C involves breaking down complex tasks
-  into smaller, reusable blocks of code.
+summary: In C, a function is declared with a return type, a name, and parameters (if
+  any), followed by a block of code.
 title: Organizing code into functions
 weight: 18
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:36:13.881470-07:00
-description: "Convertir una fecha en una cadena de texto permite mostrarla o procesarla\
-  \ de manera legible para humanos. Los programadores lo hacen para interactuar con\u2026"
+description: "C\xF3mo hacerlo: Aqu\xED te muestro c\xF3mo puedes convertir una fecha\
+  \ en cadena."
 lastmod: '2024-03-13T22:44:59.344989-06:00'
 model: gpt-4-1106-preview
-summary: Convertir una fecha en una cadena de texto permite mostrarla o procesarla
-  de manera legible para humanos.
+summary: "Aqu\xED te muestro c\xF3mo puedes convertir una fecha en cadena."
 title: Convirtiendo una fecha en una cadena de texto
 weight: 28
 ---

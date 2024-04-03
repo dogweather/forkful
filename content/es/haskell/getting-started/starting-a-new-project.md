@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 18:04:06.661037-07:00
-description: "Iniciar un nuevo proyecto en Haskell es abrir la puerta a un mundo de\
-  \ programaci\xF3n funcional pura. Los programadores emprenden esta tarea para explorar\u2026"
+description: "C\xF3mo Hacerlo: Para comenzar un nuevo proyecto en Haskell, lo m\xE1\
+  s com\xFAn es usar Stack, una herramienta de construcci\xF3n que facilita la gesti\xF3\
+  n de\u2026"
 lastmod: '2024-03-13T22:44:59.119593-06:00'
 model: gpt-4-1106-preview
-summary: "Iniciar un nuevo proyecto en Haskell es abrir la puerta a un mundo de programaci\xF3\
-  n funcional pura."
+summary: "Para comenzar un nuevo proyecto en Haskell, lo m\xE1s com\xFAn es usar Stack,\
+  \ una herramienta de construcci\xF3n que facilita la gesti\xF3n de proyectos."
 title: Iniciando un nuevo proyecto
 weight: 1
 ---

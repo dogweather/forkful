@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:27.477782-07:00
-description: "Een string met hoofdletters schrijven betekent alle karakters omzetten\
-  \ naar hoofdletters. Programmeurs doen dit voor consistentie, leesbaarheid, of om\
-  \ aan\u2026"
+description: 'Hoe: In Fish zet je een string om naar hoofdletters met het `string
+  upper` commando. Zo doe je dat.'
 lastmod: '2024-03-13T22:44:51.227963-06:00'
 model: gpt-4-0125-preview
-summary: Een string met hoofdletters schrijven betekent alle karakters omzetten naar
-  hoofdletters.
+summary: In Fish zet je een string om naar hoofdletters met het `string upper` commando.
 title: Een string met hoofdletters maken
 weight: 2
 ---

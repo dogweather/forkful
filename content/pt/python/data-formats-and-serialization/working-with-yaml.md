@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:30.378936-07:00
-description: "YAML, que significa \"YAML Ain't Markup Language\" (YAML N\xE3o \xE9\
-  \ Uma Linguagem de Marca\xE7\xE3o), \xE9 um formato de serializa\xE7\xE3o de dados\
-  \ leg\xEDvel por humanos.\u2026"
+description: "Como fazer: Ler e escrever em YAML com Python normalmente envolve o\
+  \ uso de uma biblioteca de terceiros, sendo a `PyYAML` a mais popular. Para come\xE7\
+  ar,\u2026"
 lastmod: '2024-03-13T22:44:46.175553-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, que significa \"YAML Ain't Markup Language\" (YAML N\xE3o \xE9 Uma\
-  \ Linguagem de Marca\xE7\xE3o), \xE9 um formato de serializa\xE7\xE3o de dados leg\xED\
-  vel por humanos."
+summary: Ler e escrever em YAML com Python normalmente envolve o uso de uma biblioteca
+  de terceiros, sendo a `PyYAML` a mais popular.
 title: Trabalhando com YAML
 weight: 41
 ---

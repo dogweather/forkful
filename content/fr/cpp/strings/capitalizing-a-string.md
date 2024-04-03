@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:04.994202-07:00
-description: "Mettre une cha\xEEne de caract\xE8res en capitales implique de convertir\
-  \ le premier caract\xE8re de chaque mot de la cha\xEEne en majuscule s'il est en\
-  \ minuscule,\u2026"
+description: "Comment faire : En C++, vous pouvez mettre une cha\xEEne de caract\xE8\
+  res en capitales en utilisant la biblioth\xE8que standard sans avoir besoin de biblioth\xE8\
+  ques\u2026"
 lastmod: '2024-03-13T22:44:58.141355-06:00'
 model: gpt-4-0125-preview
-summary: "Mettre une cha\xEEne de caract\xE8res en capitales implique de convertir\
-  \ le premier caract\xE8re de chaque mot de la cha\xEEne en majuscule s'il est en\
-  \ minuscule, tout en gardant les caract\xE8res restants inchang\xE9s."
+summary: "En C++, vous pouvez mettre une cha\xEEne de caract\xE8res en capitales en\
+  \ utilisant la biblioth\xE8que standard sans avoir besoin de biblioth\xE8ques tierces."
 title: "Mettre en majuscule une cha\xEEne"
 weight: 2
 ---

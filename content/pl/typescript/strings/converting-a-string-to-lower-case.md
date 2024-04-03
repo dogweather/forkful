@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:39:30.330469-07:00
-description: "Zmiana ci\u0105gu znak\xF3w na ma\u0142e litery to przekszta\u0142cenie\
-  \ wszystkich liter w ci\u0105gu na ich odpowiedniki w dolnym rejestrze. Robimy to,\
-  \ by ujednolici\u0107 dane\u2026"
+description: "How to (Jak to zrobi\u0107): U\u017Cyj metody `.toLowerCase()` na ci\u0105\
+  gu znak\xF3w w TypeScript, jak w przyk\u0142adzie poni\u017Cej."
 lastmod: '2024-03-13T22:44:35.125325-06:00'
 model: gpt-4-1106-preview
-summary: "Zmiana ci\u0105gu znak\xF3w na ma\u0142e litery to przekszta\u0142cenie\
-  \ wszystkich liter w ci\u0105gu na ich odpowiedniki w dolnym rejestrze."
+summary: "U\u017Cyj metody `.toLowerCase()` na ci\u0105gu znak\xF3w w TypeScript,\
+  \ jak w przyk\u0142adzie poni\u017Cej."
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---

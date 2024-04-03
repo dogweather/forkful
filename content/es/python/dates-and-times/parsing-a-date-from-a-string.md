@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:18.741903-07:00
-description: "Analizar una fecha de una cadena implica convertir informaci\xF3n textual\
-  \ de fecha y hora en un objeto datetime o un formato estructurado equivalente. Esto\u2026"
+description: "C\xF3mo hacerlo: La biblioteca est\xE1ndar de Python proporciona el\
+  \ m\xF3dulo `datetime`, que incluye el m\xE9todo `strptime` para este prop\xF3sito.\
+  \ El m\xE9todo requiere\u2026"
 lastmod: '2024-03-13T22:44:58.622049-06:00'
 model: gpt-4-0125-preview
-summary: "Analizar una fecha de una cadena implica convertir informaci\xF3n textual\
-  \ de fecha y hora en un objeto datetime o un formato estructurado equivalente."
+summary: "La biblioteca est\xE1ndar de Python proporciona el m\xF3dulo `datetime`,\
+  \ que incluye el m\xE9todo `strptime` para este prop\xF3sito."
 title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---

@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 17:44:42.541235-07:00
-description: "Quando scarichi una pagina web, copi i suoi contenuti dalla rete al\
-  \ tuo computer. I programmatori lo fanno per estrarre dati, testare siti, o per\u2026"
+description: "How to: Python rende il download di pagine web un gioco da ragazzi.\
+  \ Un modo semplice \xE8 usare `requests`. Ecco come."
 lastmod: '2024-03-13T22:44:42.999644-06:00'
 model: gpt-4-1106-preview
-summary: Quando scarichi una pagina web, copi i suoi contenuti dalla rete al tuo computer.
+summary: Python rende il download di pagine web un gioco da ragazzi.
 title: Scaricare una pagina web
 weight: 42
 ---

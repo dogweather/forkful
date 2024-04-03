@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:55.105294-07:00
-description: "Nel contesto di Ruby, il testing si riferisce alla verifica che il codice\
-  \ si comporti come previsto in varie condizioni. I programmatori scrivono test per\u2026"
+description: "Come fare: Ruby include una libreria integrata chiamata `Test::Unit`\
+  \ per scrivere test unitari, incapsulando le pratiche di testing in strutture semplici.\u2026"
 lastmod: '2024-03-13T22:44:44.054802-06:00'
 model: gpt-4-0125-preview
-summary: Nel contesto di Ruby, il testing si riferisce alla verifica che il codice
-  si comporti come previsto in varie condizioni.
+summary: Ruby include una libreria integrata chiamata `Test::Unit` per scrivere test
+  unitari, incapsulando le pratiche di testing in strutture semplici.
 title: Scrivere test
 weight: 36
 ---

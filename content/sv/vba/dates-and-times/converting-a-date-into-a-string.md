@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:02.575194-07:00
-description: "Att konvertera ett datum till en str\xE4ng i Visual Basic for Applications\
-  \ (VBA) \xE4r en process som anv\xE4nds f\xF6r att \xE4ndra datatypen f\xF6r ett\
-  \ datum till\u2026"
+description: "Hur g\xF6r man: I VBA \xE4r `Format`-funktionen din l\xF6sning f\xF6\
+  r att konvertera datum till str\xE4ngar. Den l\xE5ter dig specificera datumformatet\
+  \ precis som du\u2026"
 lastmod: '2024-03-13T22:44:37.755509-06:00'
 model: gpt-4-0125-preview
-summary: "Att konvertera ett datum till en str\xE4ng i Visual Basic for Applications\
-  \ (VBA) \xE4r en process som anv\xE4nds f\xF6r att \xE4ndra datatypen f\xF6r ett\
-  \ datum till str\xE4ngformat."
+summary: "I VBA \xE4r `Format`-funktionen din l\xF6sning f\xF6r att konvertera datum\
+  \ till str\xE4ngar."
 title: "Omvandla ett datum till en str\xE4ng"
 weight: 28
 ---

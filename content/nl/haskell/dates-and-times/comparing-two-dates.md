@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:28.360035-07:00
-description: "Het vergelijken van twee data betekent beoordelen welke eerder is, later,\
-  \ of als ze op hetzelfde moment plaatsvinden. Programmeurs doen dit om evenementen\u2026"
+description: "Hoe te: Haskell, stilletjes bekend om zijn puurheid, vereist dat je\
+  \ de juiste bibliotheken gebruikt om over datums te praten. Laten we `Data.Time`\u2026"
 lastmod: '2024-03-13T22:44:50.864947-06:00'
 model: gpt-4-0125-preview
-summary: Het vergelijken van twee data betekent beoordelen welke eerder is, later,
-  of als ze op hetzelfde moment plaatsvinden.
+summary: Haskell, stilletjes bekend om zijn puurheid, vereist dat je de juiste bibliotheken
+  gebruikt om over datums te praten.
 title: Twee datums vergelijken
 weight: 27
 ---

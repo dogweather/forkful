@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:27.935182-07:00
-description: "Das Schreiben von Tests in Python beinhaltet das Erstellen automatisierter\
-  \ Skripte, um die Korrektheit Ihres Codes zu validieren. Programmierer tun dies,\u2026"
+description: "Wie geht das: Python kommt mit einem integrierten Modul zum Schreiben\
+  \ von Tests namens `unittest`. So k\xF6nnen Sie es verwenden, um eine einfache Funktion\u2026"
 lastmod: '2024-03-13T22:44:53.382460-06:00'
 model: gpt-4-0125-preview
-summary: Das Schreiben von Tests in Python beinhaltet das Erstellen automatisierter
-  Skripte, um die Korrektheit Ihres Codes zu validieren.
+summary: Python kommt mit einem integrierten Modul zum Schreiben von Tests namens
+  `unittest`.
 title: Tests Schreiben
 weight: 36
 ---

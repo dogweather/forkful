@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:05.926269-07:00
-description: "Een tijdelijk bestand cre\xEBren betekent het maken van een bestand\
-  \ dat je weggooit na kort gebruik. Programmeurs doen dit voor tijdelijke opslag\
-  \ of wanneer\u2026"
+description: 'Hoe te: In Elixir kun je een tijdelijk bestand maken en gebruiken met
+  de functie `System.tmp_dir/1` en de module `File`. Hier is een snel voorbeeld.'
 lastmod: '2024-03-13T22:44:50.481354-06:00'
 model: gpt-4-0125-preview
-summary: "Een tijdelijk bestand cre\xEBren betekent het maken van een bestand dat\
-  \ je weggooit na kort gebruik."
+summary: In Elixir kun je een tijdelijk bestand maken en gebruiken met de functie
+  `System.tmp_dir/1` en de module `File`.
 title: Een tijdelijk bestand aanmaken
 weight: 21
 ---

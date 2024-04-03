@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 17:55:07.584036-07:00
-description: "Leggere un file di testo significa accedere al suo contenuto tramite\
-  \ codice. I programmatori lo fanno per processare dati, configurazioni o per leggere\u2026"
+description: 'How to: Per leggere un file di testo in Node.js con TypeScript, uso
+  la libreria `fs`. Ecco come fare.'
 lastmod: '2024-03-13T22:44:43.193429-06:00'
 model: gpt-4-1106-preview
-summary: Leggere un file di testo significa accedere al suo contenuto tramite codice.
+summary: Per leggere un file di testo in Node.js con TypeScript, uso la libreria `fs`.
 title: Lettura di un file di testo
 weight: 22
 ---

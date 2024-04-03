@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:19.178343-07:00
-description: "Lavorare con CSV (Valori Separati da Virgola) implica l'analisi e la\
-  \ generazione di file che memorizzano dati tabellari in un formato semplice di testo\u2026"
+description: "Come fare: Elm non ha un supporto integrato per l'analisi o la generazione\
+  \ di CSV; invece, si utilizzano spesso pacchetti di terze parti come\u2026"
 lastmod: '2024-03-13T22:44:43.372310-06:00'
 model: gpt-4-0125-preview
-summary: Lavorare con CSV (Valori Separati da Virgola) implica l'analisi e la generazione
-  di file che memorizzano dati tabellari in un formato semplice di testo puro.
+summary: Elm non ha un supporto integrato per l'analisi o la generazione di CSV; invece,
+  si utilizzano spesso pacchetti di terze parti come `panosoft/elm-csv`.
 title: Lavorare con i CSV
 weight: 37
 ---

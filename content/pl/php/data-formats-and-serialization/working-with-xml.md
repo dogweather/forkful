@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 04:34:14.789353-07:00
-description: "XML to j\u0119zyk znacznik\xF3w u\u017Cywany do przechowywania i transportu\
-  \ danych. Programi\u015Bci pracuj\u0105 z XML, aby umo\u017Cliwi\u0107 interoperacyjno\u015B\
-  \u0107 mi\u0119dzy aplikacjami i\u2026"
+description: "Jak to zrobi\u0107: Odczytywanie XML za pomoc\u0105 SimpleXML."
 lastmod: '2024-03-13T22:44:35.521932-06:00'
 model: gpt-4-0125-preview
-summary: "XML to j\u0119zyk znacznik\xF3w u\u017Cywany do przechowywania i transportu\
-  \ danych."
+summary: "Odczytywanie XML za pomoc\u0105 SimpleXML."
 title: Praca z XML
 weight: 40
 ---

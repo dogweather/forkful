@@ -2,14 +2,10 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:07.783175-07:00
-description: "Les tableaux associatifs sont comme des tableaux surpuissants qui vous\
-  \ permettent d'utiliser des cha\xEEnes de caract\xE8res comme indices, au lieu de\
-  \ se\u2026"
+description: "Comment faire : D'abord, d\xE9clarez un tableau associatif en Bash ."
 lastmod: '2024-03-13T22:44:57.981996-06:00'
 model: gpt-4-0125-preview
-summary: "Les tableaux associatifs sont comme des tableaux surpuissants qui vous permettent\
-  \ d'utiliser des cha\xEEnes de caract\xE8res comme indices, au lieu de se limiter\
-  \ aux entiers."
+summary: "D'abord, d\xE9clarez un tableau associatif en Bash."
 title: Utilisation des tableaux associatifs
 weight: 15
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:23.043281-07:00
-description: "Escrever para o erro padr\xE3o (stderr) em Rust \xE9 sobre direcionar\
-  \ mensagens de erro e diagn\xF3sticos para o console separadamente da sa\xEDda padr\xE3\
-  o (stdout). Os\u2026"
+description: "Como fazer: Rust oferece uma maneira simples de escrever para stderr\
+  \ usando a macro `eprintln!`, semelhante a como `println!` \xE9 usada para stdout.\
+  \ Aqui\u2026"
 lastmod: '2024-03-13T22:44:46.384028-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever para o erro padr\xE3o (stderr) em Rust \xE9 sobre direcionar mensagens\
-  \ de erro e diagn\xF3sticos para o console separadamente da sa\xEDda padr\xE3o (stdout)."
+summary: "Rust oferece uma maneira simples de escrever para stderr usando a macro\
+  \ `eprintln!`, semelhante a como `println!` \xE9 usada para stdout."
 title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---

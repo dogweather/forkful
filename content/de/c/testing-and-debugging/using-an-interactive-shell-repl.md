@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:10.058812-07:00
-description: "Eine interaktive Shell, auch bekannt als Read-Eval-Print Loop (REPL),\
-  \ erm\xF6glicht es Programmierern, Ausdr\xFCcke oder Code einzugeben und sofort\
-  \ Ergebnisse\u2026"
+description: "Wie geht das: Den Einstieg in eine C-REPL zu finden, ist vielleicht\
+  \ nicht so geradlinig wie in Sprachen wie Python oder JavaScript. Jedoch machen\u2026"
 lastmod: '2024-03-13T22:44:54.354188-06:00'
 model: gpt-4-0125-preview
-summary: "Eine interaktive Shell, auch bekannt als Read-Eval-Print Loop (REPL), erm\xF6\
-  glicht es Programmierern, Ausdr\xFCcke oder Code einzugeben und sofort Ergebnisse\
-  \ zu sehen, was das Lernen und den Debugging-Prozess verbessert."
+summary: Den Einstieg in eine C-REPL zu finden, ist vielleicht nicht so geradlinig
+  wie in Sprachen wie Python oder JavaScript.
 title: Mit einer interaktiven Shell (REPL) arbeiten
 weight: 34
 ---

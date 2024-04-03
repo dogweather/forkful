@@ -1,11 +1,11 @@
 ---
 date: 2024-01-27 20:26:09.319695-07:00
-description: "Generating random numbers in programming is about creating numbers that\
-  \ lack any predictable pattern. Programmers do this for various reasons, including\u2026"
+description: "How to: Kotlin provides a straightforward way to generate random numbers\
+  \ through its standard library. Here's how you can generate different types of\u2026"
 lastmod: '2024-03-13T22:45:00.044853-06:00'
 model: gpt-4-0125-preview
-summary: Generating random numbers in programming is about creating numbers that lack
-  any predictable pattern.
+summary: Kotlin provides a straightforward way to generate random numbers through
+  its standard library.
 title: Generating random numbers
 weight: 12
 ---

@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:53.562527-07:00
-description: "Att kontrollera om en katalog finns \xE4r en grundl\xE4ggande operation\
-  \ n\xE4r man skriver skript som interagerar med filsystemet, f\xF6r att s\xE4kerst\xE4\
-  lla att ditt\u2026"
+description: "Hur man g\xF6r: I Lua har du ingen inbyggd funktion f\xF6r att direkt\
+  \ kontrollera om en katalog finns, s\xE5 du f\xF6rlitar dig ofta p\xE5 Lua File\
+  \ System (lfs)\u2026"
 lastmod: '2024-03-13T22:44:38.053302-06:00'
 model: gpt-4-0125-preview
-summary: "Att kontrollera om en katalog finns \xE4r en grundl\xE4ggande operation\
-  \ n\xE4r man skriver skript som interagerar med filsystemet, f\xF6r att s\xE4kerst\xE4\
-  lla att ditt program arbetar med giltiga s\xF6kv\xE4gar och f\xF6rhindrar fel relaterade\
-  \ till icke-existerande kataloger."
+summary: "I Lua har du ingen inbyggd funktion f\xF6r att direkt kontrollera om en\
+  \ katalog finns, s\xE5 du f\xF6rlitar dig ofta p\xE5 Lua File System (lfs) biblioteket,\
+  \ ett popul\xE4rt tredjepartsbibliotek f\xF6r filoperationer."
 title: Kontrollera om en katalog existerar
 weight: 20
 ---

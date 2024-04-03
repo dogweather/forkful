@@ -2,17 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:57.302516-07:00
-description: "Vi\u1EC7c lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c t\u1EEB m\u1ED9t chu\u1ED7\
-  i trong VBA bao g\u1ED3m vi\u1EC7c g\u1EE1 b\u1ECF c\xE1c th\u1EC3 hi\u1EC7n c\u1EE7\
-  a d\u1EA5u ngo\u1EB7c \u0111\u01A1n (`'`) ho\u1EB7c d\u1EA5u ngo\u1EB7c k\xE9p (`\"\
-  `) c\xF3 th\u1EC3 bao b\u1ECDc ho\u1EB7c \u0111\u01B0\u1EE3c\u2026"
+description: "C\xE1ch th\u1EE9c: Trong VBA, c\xF3 nhi\u1EC1u c\xE1ch ti\u1EBFp c\u1EAD\
+  n \u0111\u1EC3 lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c t\u1EEB m\u1ED9t chu\u1ED7\
+  i. D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t v\xED d\u1EE5 \u0111\u01A1n gi\u1EA3\
+  n s\u1EED d\u1EE5ng h\xE0m `Replace`, h\xE0m n\xE0y t\xECm ki\u1EBFm m\u1ED9t\u2026"
 lastmod: '2024-03-13T22:44:36.416795-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c t\u1EEB m\u1ED9t chu\u1ED7\
-  i trong VBA bao g\u1ED3m vi\u1EC7c g\u1EE1 b\u1ECF c\xE1c th\u1EC3 hi\u1EC7n c\u1EE7\
-  a d\u1EA5u ngo\u1EB7c \u0111\u01A1n (`'`) ho\u1EB7c d\u1EA5u ngo\u1EB7c k\xE9p (`\"\
-  `) c\xF3 th\u1EC3 bao b\u1ECDc ho\u1EB7c \u0111\u01B0\u1EE3c nh\xFAng trong chu\u1ED7\
-  i."
+summary: "Trong VBA, c\xF3 nhi\u1EC1u c\xE1ch ti\u1EBFp c\u1EADn \u0111\u1EC3 lo\u1EA1\
+  i b\u1ECF d\u1EA5u ngo\u1EB7c t\u1EEB m\u1ED9t chu\u1ED7i."
 title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i k\xFD t\u1EF1"
 weight: 9
 ---

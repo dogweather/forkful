@@ -1,13 +1,13 @@
 ---
 date: 2024-01-26 04:44:02.681944-07:00
-description: "Les nombres complexes, ceux ayant une partie r\xE9elle et une partie\
-  \ imaginaire (comme 3 + 4i), sont essentiels dans des domaines tels que l'ing\xE9\
-  nierie, la\u2026"
+description: "Comment faire : PowerShell n'a pas de support int\xE9gr\xE9 pour les\
+  \ nombres complexes, donc vous devez soit d\xE9velopper votre propre solution, soit\
+  \ utiliser\u2026"
 lastmod: '2024-03-13T22:44:58.037373-06:00'
 model: gpt-4-0125-preview
-summary: "Les nombres complexes, ceux ayant une partie r\xE9elle et une partie imaginaire\
-  \ (comme 3 + 4i), sont essentiels dans des domaines tels que l'ing\xE9nierie, la\
-  \ physique et la science des donn\xE9es."
+summary: "PowerShell n'a pas de support int\xE9gr\xE9 pour les nombres complexes,\
+  \ donc vous devez soit d\xE9velopper votre propre solution, soit utiliser `System.Numerics.Complex`\
+  \ de .NET."
 title: Manipulation des nombres complexes
 weight: 14
 ---

@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:55:14.838810-07:00
-description: Reading command line arguments lets scripts behave differently based
-  on user input. It's how scripts can be versatile and not just one-trick ponies.
+description: 'How to: .'
 lastmod: '2024-03-13T22:45:00.258264-06:00'
 model: gpt-4-1106-preview
-summary: Reading command line arguments lets scripts behave differently based on user
-  input.
+summary: .
 title: Reading command line arguments
 weight: 23
 ---

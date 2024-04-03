@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:45.806141-07:00
-description: "HTML:n j\xE4sent\xE4minen tarkoittaa HTML-tiedoston rakenteen ja sis\xE4\
-  ll\xF6n seulomista tiedon poimimiseksi. Ohjelmoijat tekev\xE4t sit\xE4 p\xE4\xE4\
-  st\xE4kseen k\xE4siksi\u2026"
+description: "Kuinka: Bash ei ole ensisijainen ty\xF6kalu HTML:n j\xE4sent\xE4miseen,\
+  \ mutta se on mahdollista tehd\xE4 ty\xF6kaluilla kuten `grep`, `awk`, `sed` tai\
+  \ ulkoisilla\u2026"
 lastmod: '2024-03-13T22:44:56.737501-06:00'
 model: gpt-4-0125-preview
-summary: "HTML:n j\xE4sent\xE4minen tarkoittaa HTML-tiedoston rakenteen ja sis\xE4\
-  ll\xF6n seulomista tiedon poimimiseksi."
+summary: "Bash ei ole ensisijainen ty\xF6kalu HTML:n j\xE4sent\xE4miseen, mutta se\
+  \ on mahdollista tehd\xE4 ty\xF6kaluilla kuten `grep`, `awk`, `sed` tai ulkoisilla\
+  \ apuohjelmilla kuten `lynx`."
 title: "HTML:n j\xE4sennys"
 weight: 43
 ---

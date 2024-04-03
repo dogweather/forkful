@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:02.058396-07:00
-description: "Travailler avec JSON (JavaScript Object Notation) implique d'analyser\
-  \ des cha\xEEnes format\xE9es JSON en objets Python et vice versa. Cela est crucial\
-  \ pour le\u2026"
+description: "Comment faire : La biblioth\xE8que int\xE9gr\xE9e `json` de Python simplifie\
+  \ le processus d'encodage (convertir des objets Python en JSON) et de d\xE9codage\u2026"
 lastmod: '2024-03-13T22:44:57.259502-06:00'
 model: gpt-4-0125-preview
-summary: "Travailler avec JSON (JavaScript Object Notation) implique d'analyser des\
-  \ cha\xEEnes format\xE9es JSON en objets Python et vice versa."
+summary: "La biblioth\xE8que int\xE9gr\xE9e `json` de Python simplifie le processus\
+  \ d'encodage (convertir des objets Python en JSON) et de d\xE9codage (convertir\
+  \ JSON en objets Python)."
 title: Travailler avec JSON
 weight: 38
 ---

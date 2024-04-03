@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:37.033311-07:00
-description: "YAML, som st\xE5r f\xF6r \"YAML Ain't Markup Language,\" \xE4r en l\xE4\
-  sbar standard f\xF6r dataserialisering som programmerare anv\xE4nder f\xF6r konfigurationsfiler,\u2026"
+description: "Hur man g\xF6r: I Java kan du arbeta med YAML-filer med hj\xE4lp av\
+  \ tredjepartsbibliotek eftersom Java Standard Edition inte inkluderar inbyggt st\xF6\
+  d f\xF6r YAML.\u2026"
 lastmod: '2024-03-13T22:44:37.807379-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, som st\xE5r f\xF6r \"YAML Ain't Markup Language,\" \xE4r en l\xE4\
-  sbar standard f\xF6r dataserialisering som programmerare anv\xE4nder f\xF6r konfigurationsfiler,\
-  \ datadumpning och datatransmission mellan spr\xE5k."
+summary: "I Java kan du arbeta med YAML-filer med hj\xE4lp av tredjepartsbibliotek\
+  \ eftersom Java Standard Edition inte inkluderar inbyggt st\xF6d f\xF6r YAML."
 title: Att Arbeta med YAML
 weight: 41
 ---

@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:33:28.004305-07:00
-description: "Comparer deux dates, c'est voir si elles sont identiques, quelle est\
-  \ la plus r\xE9cente, etc. En PHP, on fait \xE7a souvent pour valider des \xE9v\xE9\
-  nements, des\u2026"
+description: 'Comment faire : Voici comment on compare des dates en PHP.'
 lastmod: '2024-03-13T22:44:57.892070-06:00'
 model: gpt-4-1106-preview
-summary: "Comparer deux dates, c'est voir si elles sont identiques, quelle est la\
-  \ plus r\xE9cente, etc."
+summary: Voici comment on compare des dates en PHP.
 title: Comparer deux dates
 weight: 27
 ---

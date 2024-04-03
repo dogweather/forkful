@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:54.577326-07:00
-description: "YAML, das f\xFCr \"YAML Ain't Markup Language\" steht, ist ein menschenlesbares\
-  \ Daten-Serialisierungsformat. Programmierer nutzen es h\xE4ufig f\xFCr\u2026"
+description: "Wie: C# unterst\xFCtzt YAML nicht standardm\xE4\xDFig, aber Sie k\xF6\
+  nnen ganz einfach mit YAML arbeiten, indem Sie Drittanbieter-Bibliotheken wie *YamlDotNet*\u2026"
 lastmod: '2024-03-13T22:44:53.908974-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, das f\xFCr \"YAML Ain't Markup Language\" steht, ist ein menschenlesbares\
-  \ Daten-Serialisierungsformat."
+summary: "C# unterst\xFCtzt YAML nicht standardm\xE4\xDFig, aber Sie k\xF6nnen ganz\
+  \ einfach mit YAML arbeiten, indem Sie Drittanbieter-Bibliotheken wie *YamlDotNet*\
+  \ verwenden."
 title: Arbeiten mit YAML
 weight: 41
 ---

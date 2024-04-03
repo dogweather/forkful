@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:03:03.774454-07:00
-description: "Regular expressions (regex) are patterns used to match character combinations\
-  \ in strings. Programmers utilize them for searching, editing, or manipulating\u2026"
+description: 'How to: Using regex in Python involves the `re` module, which provides
+  a set of functions to process text using regular expressions. #.'
 lastmod: '2024-03-13T22:44:59.699294-06:00'
 model: gpt-4-0125-preview
-summary: Regular expressions (regex) are patterns used to match character combinations
-  in strings.
+summary: Using regex in Python involves the `re` module, which provides a set of functions
+  to process text using regular expressions.
 title: Using regular expressions
 weight: 11
 ---

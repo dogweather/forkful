@@ -1,13 +1,10 @@
 ---
 date: 2024-01-26 04:15:31.495023-07:00
-description: "Shells interativos, ou REPLs (Read-Eval-Print Loops, ou La\xE7os de\
-  \ Ler-Avaliar-Imprimir), permitem que voc\xEA execute c\xF3digo de forma instant\xE2\
-  nea, testando\u2026"
+description: "Como usar: O Node.js vem com um REPL acess\xEDvel atrav\xE9s do terminal.\
+  \ Abra-o e voc\xEA est\xE1 pronto para come\xE7ar. Aqui vai uma amostra."
 lastmod: '2024-03-13T22:44:46.964157-06:00'
 model: gpt-4-0125-preview
-summary: "Shells interativos, ou REPLs (Read-Eval-Print Loops, ou La\xE7os de Ler-Avaliar-Imprimir),\
-  \ permitem que voc\xEA execute c\xF3digo de forma instant\xE2nea, testando fun\xE7\
-  \xF5es, algoritmos ou brincando com ideias."
+summary: "O Node.js vem com um REPL acess\xEDvel atrav\xE9s do terminal."
 title: Usando um shell interativo (REPL)
 weight: 34
 ---

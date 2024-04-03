@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:02.284697-07:00
-description: "Organizzare il codice in funzioni in C comporta la suddivisione di compiti\
-  \ complessi in blocchi di codice pi\xF9 piccoli e riutilizzabili. Questa pratica\u2026"
+description: "Come fare: In C, una funzione \xE8 dichiarata con un tipo di ritorno,\
+  \ un nome e parametri (se presenti), seguiti da un blocco di codice. Cominciamo\
+  \ con un\u2026"
 lastmod: '2024-03-13T22:44:44.004783-06:00'
 model: gpt-4-0125-preview
-summary: "Organizzare il codice in funzioni in C comporta la suddivisione di compiti\
-  \ complessi in blocchi di codice pi\xF9 piccoli e riutilizzabili."
+summary: "In C, una funzione \xE8 dichiarata con un tipo di ritorno, un nome e parametri\
+  \ (se presenti), seguiti da un blocco di codice."
 title: Organizzare il codice in funzioni
 weight: 18
 ---

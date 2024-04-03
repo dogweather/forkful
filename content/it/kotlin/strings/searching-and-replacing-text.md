@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:58:18.854074-07:00
-description: "La ricerca e la sostituzione di testo permettono di trovare specifiche\
-  \ sequenze di caratteri in una stringa e di rimpiazzarle con altre. I programmatori\u2026"
+description: 'How to: Kotlin rende la ricerca e la sostituzione di testo semplice
+  grazie alle sue funzioni incorporate. Ecco un esempio.'
 lastmod: '2024-03-13T22:44:43.377408-06:00'
 model: gpt-4-1106-preview
-summary: La ricerca e la sostituzione di testo permettono di trovare specifiche sequenze
-  di caratteri in una stringa e di rimpiazzarle con altre.
+summary: Kotlin rende la ricerca e la sostituzione di testo semplice grazie alle sue
+  funzioni incorporate.
 title: Ricerca e sostituzione del testo
 weight: 10
 ---

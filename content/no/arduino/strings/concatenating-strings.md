@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:34:09.893713-07:00
-description: "Konkatenering av strenger er prosessen med \xE5 sette sammen to eller\
-  \ flere tekststrenger. Programmerere gj\xF8r dette for \xE5 bygge meldinger, lage\
-  \ dynamiske\u2026"
+description: "Slik gj\xF8r du: ."
 lastmod: '2024-03-13T22:44:41.050768-06:00'
 model: gpt-4-1106-preview
-summary: "Konkatenering av strenger er prosessen med \xE5 sette sammen to eller flere\
-  \ tekststrenger."
+summary: .
 title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:43:28.679638-07:00
-description: "I numeri complessi estendono l'idea della linea numerica unidimensionale\
-  \ al piano bidimensionale includendo un asse immaginario perpendicolare. I\u2026"
+description: "Come fare: In Lua, puoi rappresentare i numeri complessi con le tabelle.\
+  \ Le operazioni di base coinvolgono l'aggiunta, la sottrazione, la moltiplicazione\u2026"
 lastmod: '2024-03-13T22:44:43.552081-06:00'
 model: gpt-4-0125-preview
-summary: I numeri complessi estendono l'idea della linea numerica unidimensionale
-  al piano bidimensionale includendo un asse immaginario perpendicolare.
+summary: In Lua, puoi rappresentare i numeri complessi con le tabelle.
 title: Lavorare con i numeri complessi
 weight: 14
 ---

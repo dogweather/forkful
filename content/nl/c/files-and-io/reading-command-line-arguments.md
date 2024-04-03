@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:12.801397-07:00
-description: "In C-programmering maakt het lezen van commandoregelargumenten het mogelijk\
-  \ dat programma's invoer rechtstreeks vanuit de terminal accepteren, wat de\u2026"
+description: "Hoe: In C kan de `main`-functie zo worden ontworpen dat ze commandoregelargumenten\
+  \ accepteert met behulp van de parameters `int argc` en `char *argv[]`.\u2026"
 lastmod: '2024-03-13T22:44:51.307065-06:00'
 model: gpt-4-0125-preview
-summary: In C-programmering maakt het lezen van commandoregelargumenten het mogelijk
-  dat programma's invoer rechtstreeks vanuit de terminal accepteren, wat de flexibiliteit
-  en bruikbaarheid verhoogt.
+summary: In C kan de `main`-functie zo worden ontworpen dat ze commandoregelargumenten
+  accepteert met behulp van de parameters `int argc` en `char *argv[]`.
 title: Commandoregelargumenten lezen
 weight: 23
 ---

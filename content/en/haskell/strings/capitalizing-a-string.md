@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:02:30.982258-07:00
-description: "Capitalizing a string involves transforming the first letter of a given\
-  \ string to uppercase while ensuring the rest of the letters remain lowercase.\u2026"
+description: 'How to: In Haskell, you can capitalize a string using the standard library
+  without needing any third-party libraries.'
 lastmod: '2024-03-13T22:45:00.112475-06:00'
 model: gpt-4-0125-preview
-summary: Capitalizing a string involves transforming the first letter of a given string
-  to uppercase while ensuring the rest of the letters remain lowercase.
+summary: In Haskell, you can capitalize a string using the standard library without
+  needing any third-party libraries.
 title: Capitalizing a string
 weight: 2
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:53.000466-07:00
-description: "Het maken van een tijdelijk bestand betekent het cre\xEBren van een\
-  \ bestand dat slechts voor korte tijd of voor de huidige sessie nodig is. Programmeurs\
-  \ doen\u2026"
+description: "Hoe: Arduino werkt typisch met microcontrollers die niet over een traditioneel\
+  \ bestandssysteem beschikken - dus \"bestanden\" worden niet op dezelfde manier\u2026"
 lastmod: '2024-03-13T22:44:51.091147-06:00'
 model: gpt-4-0125-preview
-summary: "Het maken van een tijdelijk bestand betekent het cre\xEBren van een bestand\
-  \ dat slechts voor korte tijd of voor de huidige sessie nodig is."
+summary: Arduino werkt typisch met microcontrollers die niet over een traditioneel
+  bestandssysteem beschikken - dus "bestanden" worden niet op dezelfde manier beheerd
+  als op een pc.
 title: Een tijdelijk bestand aanmaken
 weight: 21
 ---

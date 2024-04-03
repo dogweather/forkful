@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:10.580299-07:00
-description: "T\u1ED5 ch\u1EE9c code v\xE0o trong c\xE1c h\xE0m ngh\u0129a l\xE0 chia\
-  \ ch\u01B0\u01A1ng tr\xECnh c\u1EE7a b\u1EA1n th\xE0nh c\xE1c ph\u1EA7n c\xF3 th\u1EC3\
-  \ t\xE1i s\u1EED d\u1EE5ng, m\u1ED7i ph\u1EA7n x\u1EED l\xFD m\u1ED9t nhi\u1EC7\
-  m v\u1EE5 c\u1EE5 th\u1EC3. Ch\xFAng ta l\xE0m \u0111i\u1EC1u\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9\
+  t v\xED d\u1EE5 \u0111\u01A1n gi\u1EA3n. Thay v\xEC vi\u1EBFt m\u1ED9t \u0111o\u1EA1\
+  n script d\xE0i \u0111\u1EC3 ch\xE0o m\u1EEBng ng\u01B0\u1EDDi d\xF9ng, ch\xFAng\
+  \ t\xF4i chia nhi\u1EC7m v\u1EE5 \u0111\xF3 th\xE0nh c\xE1c h\xE0m."
 lastmod: '2024-03-13T22:44:36.608898-06:00'
 model: gpt-4-0125-preview
-summary: "T\u1ED5 ch\u1EE9c code v\xE0o trong c\xE1c h\xE0m ngh\u0129a l\xE0 chia\
-  \ ch\u01B0\u01A1ng tr\xECnh c\u1EE7a b\u1EA1n th\xE0nh c\xE1c ph\u1EA7n c\xF3 th\u1EC3\
-  \ t\xE1i s\u1EED d\u1EE5ng, m\u1ED7i ph\u1EA7n x\u1EED l\xFD m\u1ED9t nhi\u1EC7\
-  m v\u1EE5 c\u1EE5 th\u1EC3."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t v\xED d\u1EE5 \u0111\u01A1n gi\u1EA3\
+  n."
 title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
 weight: 18
 ---

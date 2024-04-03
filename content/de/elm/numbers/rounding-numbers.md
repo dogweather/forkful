@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 03:44:03.220410-07:00
-description: "Das Runden von Zahlen ist das Anpassen einer Dezimalzahl auf ihren n\xE4\
-  chsten ganzzahligen Wert oder auf eine bestimmte Anzahl von Nachkommastellen.\u2026"
+description: 'Wie geht das: Das `Basics`-Modul von Elm bietet praktische Funktionen
+  zum Runden: `round`, `floor` und `ceiling`. Hier ist, wie man sie verwendet.'
 lastmod: '2024-03-13T22:44:53.799666-06:00'
 model: gpt-4-0125-preview
-summary: "Das Runden von Zahlen ist das Anpassen einer Dezimalzahl auf ihren n\xE4\
-  chsten ganzzahligen Wert oder auf eine bestimmte Anzahl von Nachkommastellen."
+summary: Das `Basics`-Modul von Elm bietet praktische Funktionen zum Runden.
 title: Zahlen runden
 weight: 13
 ---

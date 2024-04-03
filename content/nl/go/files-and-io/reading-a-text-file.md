@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:11.449159-07:00
-description: "Het lezen van een tekstbestand in Go omvat het openen en ophalen van\
-  \ inhoud uit een bestand opgeslagen op schijf voor verwerking of analyse. Programmeurs\u2026"
+description: "Hoe: Het lezen van een tekstbestand in Go kan op verschillende manieren\
+  \ worden bereikt, maar een van de eenvoudigste methoden is het gebruik van het\u2026"
 lastmod: '2024-03-13T22:44:50.305294-06:00'
 model: gpt-4-0125-preview
-summary: Het lezen van een tekstbestand in Go omvat het openen en ophalen van inhoud
-  uit een bestand opgeslagen op schijf voor verwerking of analyse.
+summary: Het lezen van een tekstbestand in Go kan op verschillende manieren worden
+  bereikt, maar een van de eenvoudigste methoden is het gebruik van het `ioutil` pakket.
 title: Een tekstbestand lezen
 weight: 22
 ---

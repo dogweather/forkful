@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:48:00.845798-07:00
-description: "Att hitta l\xE4ngden p\xE5 en str\xE4ng inneb\xE4r att r\xE4kna antalet\
-  \ tecken den inneh\xE5ller. Programmerare g\xF6r det f\xF6r att validera indata,\
-  \ navigera genom text, eller\u2026"
+description: "Hur g\xF6r man: F\xF6r att f\xE5nga l\xE4ngden p\xE5 en str\xE4ng i\
+  \ Lua, anv\xE4nd `#` operatorn. Kolla h\xE4r."
 lastmod: '2024-03-13T22:44:38.029310-06:00'
 model: gpt-4-1106-preview
-summary: "Att hitta l\xE4ngden p\xE5 en str\xE4ng inneb\xE4r att r\xE4kna antalet\
-  \ tecken den inneh\xE5ller."
+summary: "F\xF6r att f\xE5nga l\xE4ngden p\xE5 en str\xE4ng i Lua, anv\xE4nd `#` operatorn."
 title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---

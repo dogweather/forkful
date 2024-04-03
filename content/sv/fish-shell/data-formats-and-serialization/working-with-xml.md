@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 04:30:44.214195-07:00
-description: "Att arbeta med XML inneb\xE4r att hantera data i ett utbrett, strukturerat\
-  \ format som anv\xE4nds i konfigurationer, meddelanden och mer. Programmerare\u2026"
+description: "Hur man g\xF6r: Fish har ingen inbyggd XML-tolkning, s\xE5 du kommer\
+  \ att luta dig mot externa verktyg som `xmllint` eller `xmlstarlet`. H\xE4r \xE4\
+  r en kodsnutt f\xF6r\u2026"
 lastmod: '2024-03-13T22:44:38.362499-06:00'
 model: gpt-4-0125-preview
-summary: "Att arbeta med XML inneb\xE4r att hantera data i ett utbrett, strukturerat\
-  \ format som anv\xE4nds i konfigurationer, meddelanden och mer."
+summary: "Fish har ingen inbyggd XML-tolkning, s\xE5 du kommer att luta dig mot externa\
+  \ verktyg som `xmllint` eller `xmlstarlet`."
 title: Att arbeta med XML
 weight: 40
 ---

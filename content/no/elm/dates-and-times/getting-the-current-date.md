@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 15:14:18.979784-07:00
-description: "\xC5 hente n\xE5v\xE6rende dato betyr \xE5 tilgjengeliggj\xF8re akkurat\
-  \ hvilken dag det er, helt ned til millisekundet, i Elm-programmet ditt. Dette er\
-  \ nyttig for alt\u2026"
+description: "How to: Elm har ikke innebygd dato-behandling, s\xE5 du m\xE5 bruke\
+  \ `elm/time` biblioteket. Her er et eksempel p\xE5 hvordan du kan f\xE5 den n\xE5\
+  v\xE6rende datoen."
 lastmod: '2024-03-13T22:44:40.719933-06:00'
 model: unknown
-summary: "\xC5 hente n\xE5v\xE6rende dato betyr \xE5 tilgjengeliggj\xF8re akkurat\
-  \ hvilken dag det er, helt ned til millisekundet, i Elm-programmet ditt."
+summary: "Elm har ikke innebygd dato-behandling, s\xE5 du m\xE5 bruke `elm/time` biblioteket."
 title: "Slik f\xE5r du tak i dagens dato"
 weight: 29
 ---

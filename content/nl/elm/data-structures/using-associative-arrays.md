@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:48.884991-07:00
-description: "Associatieve arrays, of zoals Elm ze noemt, Woordenboeken (Dictionaries),\
-  \ koppelen sleutels aan waarden op een manier die het opzoeken, invoegen en\u2026"
+description: 'Hoe te gebruiken: In Elm werk je met Woordenboeken in de `Dict`-module,
+  dus laten we duiken in een snel voorbeeld.'
 lastmod: '2024-03-13T22:44:50.717471-06:00'
 model: gpt-4-0125-preview
-summary: Associatieve arrays, of zoals Elm ze noemt, Woordenboeken (Dictionaries),
-  koppelen sleutels aan waarden op een manier die het opzoeken, invoegen en verwijderen
-  van waarden supersnel maakt.
+summary: In Elm werk je met Woordenboeken in de `Dict`-module, dus laten we duiken
+  in een snel voorbeeld.
 title: Gebruik van associatieve arrays
 weight: 15
 ---

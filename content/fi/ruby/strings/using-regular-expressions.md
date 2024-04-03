@@ -2,15 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:20.906047-07:00
-description: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) Rubyn kieless\xE4 ovat malleja,\
-  \ joita k\xE4ytet\xE4\xE4n merkkijonojen merkkiyhdistelmien vastaavuuden etsimiseen,\
-  \ mahdollistaen\u2026"
+description: 'Kuinka: #.'
 lastmod: '2024-03-13T22:44:57.074862-06:00'
 model: gpt-4-0125-preview
-summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) Rubyn kieless\xE4 ovat malleja,\
-  \ joita k\xE4ytet\xE4\xE4n merkkijonojen merkkiyhdistelmien vastaavuuden etsimiseen,\
-  \ mahdollistaen kehitt\xE4jille tekstin etsimisen, vastaavuuden tarkistamisen ja\
-  \ manipuloinnin tehokkaasti."
+summary: '#.'
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---

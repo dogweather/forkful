@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:42.046294-07:00
-description: "\xC5 skrive til en tekstfil i Elixir er en essensiell ferdighet for\
-  \ utviklere, som tillater dataoppbevaring, logging, eller eksportering av menneskelesbart\u2026"
+description: "Hvordan: Elixir gj\xF8r filh\xE5ndtering enkelt med innebygde moduler.\
+  \ Den prim\xE6re m\xE5ten \xE5 skrive til en fil p\xE5 er ved \xE5 bruke funksjonene\
+  \ `File.write/2` eller\u2026"
 lastmod: '2024-03-13T22:44:40.461722-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive til en tekstfil i Elixir er en essensiell ferdighet for utviklere,\
-  \ som tillater dataoppbevaring, logging, eller eksportering av menneskelesbart innhold."
+summary: "Elixir gj\xF8r filh\xE5ndtering enkelt med innebygde moduler."
 title: Skrive en tekstfil
 weight: 24
 ---

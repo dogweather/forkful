@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:44.409957-07:00
-description: "TOML (Tom's Obvious, Minimal Language) is een gegevensserialisatieformaat\
-  \ dat makkelijk te lezen is vanwege de duidelijke semantiek. Programmeurs\u2026"
+description: 'Hoe te gebruiken: Om met TOML in C++ te werken, heb je een bibliotheek
+  zoals `toml++` nodig. Hier is een snelle start.'
 lastmod: '2024-03-13T22:44:51.136440-06:00'
 model: gpt-4-0125-preview
-summary: TOML (Tom's Obvious, Minimal Language) is een gegevensserialisatieformaat
-  dat makkelijk te lezen is vanwege de duidelijke semantiek.
+summary: Om met TOML in C++ te werken, heb je een bibliotheek zoals `toml++` nodig.
 title: Werken met TOML
 weight: 39
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:29:59.344024-07:00
-description: "Att arbeta med XML i Elixir inneb\xE4r att tolka, skapa och manipulera\
-  \ XML-data. Programmerare tar sig an XML eftersom det \xE4r utbrett inom webbtj\xE4\
-  nster,\u2026"
+description: "Hur man g\xF6r: Elixir inkluderar inte XML-tolkning i sitt standardbibliotek.\
+  \ SweetXML \xE4r ett popul\xE4rt val. S\xE5 h\xE4r anv\xE4nder du det."
 lastmod: '2024-03-13T22:44:37.591907-06:00'
 model: gpt-4-0125-preview
-summary: "Att arbeta med XML i Elixir inneb\xE4r att tolka, skapa och manipulera XML-data."
+summary: Elixir inkluderar inte XML-tolkning i sitt standardbibliotek.
 title: Att arbeta med XML
 weight: 40
 ---

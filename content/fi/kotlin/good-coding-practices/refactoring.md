@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 01:43:15.352121-07:00
-description: "Refaktorointi on prosessi, jossa olemassa olevaa koodia muokataan parantamaan\
-  \ sen rakennetta, luettavuutta ja suorituskyky\xE4 muuttamatta sen ulkoista\u2026"
+description: "Kuinka: T\xE4ss\xE4 on Kotlin-koodinp\xE4tk\xE4, jossa n\xE4ytet\xE4\
+  \xE4n yleinen koodin haju ja sen refaktoroitu versio. Aloitamme koodinpalalla, joka\
+  \ tekee liikaa."
 lastmod: '2024-03-13T22:44:56.539295-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktorointi on prosessi, jossa olemassa olevaa koodia muokataan parantamaan\
-  \ sen rakennetta, luettavuutta ja suorituskyky\xE4 muuttamatta sen ulkoista k\xE4\
-  ytt\xE4ytymist\xE4."
+summary: "T\xE4ss\xE4 on Kotlin-koodinp\xE4tk\xE4, jossa n\xE4ytet\xE4\xE4n yleinen\
+  \ koodin haju ja sen refaktoroitu versio."
 title: "Koodin uudelleenj\xE4rjestely"
 weight: 19
 ---

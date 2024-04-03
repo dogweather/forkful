@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:34:49.776731-07:00
-description: "\"XML:n k\xE4sittely\" viittaa XML-tiedostojen (eXtensible Markup Language)\
-  \ lukemisen, luomisen ja muokkaamisen prosessiin ohjelmoinnin avulla. Ohjelmoijat\u2026"
+description: "Kuinka: Pythonin `xml.etree.ElementTree` -moduuli tarjoaa ty\xF6kalut\
+  \ XML:n k\xE4sittelyyn. J\xE4senn\xE4 XML-dokumentti."
 lastmod: '2024-03-13T22:44:56.167695-06:00'
 model: gpt-4-0125-preview
-summary: "\"XML:n k\xE4sittely\" viittaa XML-tiedostojen (eXtensible Markup Language)\
-  \ lukemisen, luomisen ja muokkaamisen prosessiin ohjelmoinnin avulla."
+summary: "Pythonin `xml.etree.ElementTree` -moduuli tarjoaa ty\xF6kalut XML:n k\xE4\
+  sittelyyn."
 title: "XML:n k\xE4sittely"
 weight: 40
 ---

@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:13:09.969061-07:00
-description: "En interaktiv skal, eller REPL (Read-Eval-Print Loop), l\xE5ter dig\
-  \ prova kodsnuttar i realtid. Elixir-programmerare anv\xE4nder REPL, kallad IEx\
-  \ (Interactive\u2026"
+description: "Hur man g\xF6r: F\xF6r att starta IEx, \xF6ppna din terminal och skriv\
+  \ `iex`. H\xE4r \xE4r ett smakprov."
 lastmod: '2024-03-13T22:44:37.568745-06:00'
 model: gpt-4-0125-preview
-summary: "En interaktiv skal, eller REPL (Read-Eval-Print Loop), l\xE5ter dig prova\
-  \ kodsnuttar i realtid."
+summary: "F\xF6r att starta IEx, \xF6ppna din terminal och skriv `iex`."
 title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---

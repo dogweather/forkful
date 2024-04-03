@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 18:04:43.108160-07:00
-description: "Uuden projektin aloittaminen PHP:ss\xE4 on kuin tyhj\xE4lt\xE4 p\xF6\
-  yd\xE4lt\xE4 aloittamista; uutta luovaa prosessia. Koodarit tekev\xE4t sen paketoidakseen\
-  \ ideoita ja\u2026"
+description: "How to: (Kuinka tehd\xE4:) Aloitetaan yksinkertaisella `\"Hello, world!\"\
+  ` -esimerkill\xE4. Tallenna t\xE4m\xE4 tiedostoksi nimelt\xE4 `index.php`."
 lastmod: '2024-03-13T22:44:56.656657-06:00'
 model: gpt-4-1106-preview
-summary: "Uuden projektin aloittaminen PHP:ss\xE4 on kuin tyhj\xE4lt\xE4 p\xF6yd\xE4\
-  lt\xE4 aloittamista; uutta luovaa prosessia."
+summary: "Aloitetaan yksinkertaisella `\"Hello, world!\"` -esimerkill\xE4."
 title: Uuden projektin aloittaminen
 weight: 1
 ---

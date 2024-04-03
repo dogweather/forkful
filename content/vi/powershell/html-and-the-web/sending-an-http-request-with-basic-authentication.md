@@ -2,17 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:41.830339-07:00
-description: "Vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1\
-  c c\u01A1 b\u1EA3n l\xE0 khi ch\u01B0\u01A1ng tr\xECnh c\u1EE7a b\u1EA1n li\xEA\
-  n l\u1EA1c v\u1EDBi m\xE1y ch\u1EE7 web v\xE0 n\xF3i \"N\xE0y, \u0111\xE2y l\xE0\
-  \ t\xF4i,\" s\u1EED d\u1EE5ng t\xEAn \u0111\u0103ng nh\u1EADp v\xE0 m\u1EADt\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1\
+  ch b\u1EA1n l\u1ECBch s\u1EF1 y\xEAu c\u1EA7u m\xE1y ch\u1EE7 d\u1EEF li\u1EC7u\
+  \ v\u1EDBi m\u1ED9t 'l\u1EDDi xin ph\xE9p' d\u01B0\u1EDBi d\u1EA1ng x\xE1c th\u1EF1\
+  c c\u01A1 b\u1EA3n."
 lastmod: '2024-03-13T22:44:36.935936-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1\
-  c c\u01A1 b\u1EA3n l\xE0 khi ch\u01B0\u01A1ng tr\xECnh c\u1EE7a b\u1EA1n li\xEA\
-  n l\u1EA1c v\u1EDBi m\xE1y ch\u1EE7 web v\xE0 n\xF3i \"N\xE0y, \u0111\xE2y l\xE0\
-  \ t\xF4i,\" s\u1EED d\u1EE5ng t\xEAn \u0111\u0103ng nh\u1EADp v\xE0 m\u1EADt kh\u1EA9\
-  u."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch b\u1EA1n l\u1ECBch s\u1EF1 y\xEA\
+  u c\u1EA7u m\xE1y ch\u1EE7 d\u1EEF li\u1EC7u v\u1EDBi m\u1ED9t 'l\u1EDDi xin ph\xE9\
+  p' d\u01B0\u1EDBi d\u1EA1ng x\xE1c th\u1EF1c c\u01A1 b\u1EA3n."
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3\
   n"
 weight: 45

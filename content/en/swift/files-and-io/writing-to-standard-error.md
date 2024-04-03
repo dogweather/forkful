@@ -1,12 +1,11 @@
 ---
 date: 2024-02-03 19:03:49.305565-07:00
-description: "Writing to standard error (stderr) is about directing your program's\
-  \ error messages or diagnostics output to a separate stream, distinct from the standard\u2026"
+description: 'How to: In Swift, writing to standard error can be done using the `FileHandle`
+  class for direct stderr access. Here''s a simple example.'
 lastmod: '2024-03-13T22:45:00.410678-06:00'
 model: gpt-4-0125-preview
-summary: Writing to standard error (stderr) is about directing your program's error
-  messages or diagnostics output to a separate stream, distinct from the standard
-  output (stdout).
+summary: In Swift, writing to standard error can be done using the `FileHandle` class
+  for direct stderr access.
 title: Writing to standard error
 weight: 25
 ---

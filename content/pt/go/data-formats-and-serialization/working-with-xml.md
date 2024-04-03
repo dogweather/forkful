@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:04.856656-07:00
-description: "Trabalhar com XML em Go envolve o parsing (leitura) e a gera\xE7\xE3\
-  o (escrita) de documentos XML \u2014 um formato padr\xE3o para a troca de dados\
-  \ estruturados.\u2026"
+description: 'Como fazer: #.'
 lastmod: '2024-03-13T22:44:46.087209-06:00'
 model: gpt-4-0125-preview
-summary: "Trabalhar com XML em Go envolve o parsing (leitura) e a gera\xE7\xE3o (escrita)\
-  \ de documentos XML \u2014 um formato padr\xE3o para a troca de dados estruturados."
+summary: '#.'
 title: Trabalhando com XML
 weight: 40
 ---

@@ -1,11 +1,9 @@
 ---
 date: 2024-01-26 03:42:46.666327-07:00
-description: "Numeroiden py\xF6rist\xE4minen tarkoittaa desimaalien karsimista yksinkertaisempaan\
-  \ arvoon, joka on riitt\xE4v\xE4n hyv\xE4 tietyss\xE4 kontekstissa. Ohjelmoijat\u2026"
+description: "Kuinka: T\xE4ss\xE4 tietoisku Bashin py\xF6rist\xE4misest\xE4."
 lastmod: '2024-03-13T22:44:56.732573-06:00'
 model: gpt-4-0125-preview
-summary: "Numeroiden py\xF6rist\xE4minen tarkoittaa desimaalien karsimista yksinkertaisempaan\
-  \ arvoon, joka on riitt\xE4v\xE4n hyv\xE4 tietyss\xE4 kontekstissa."
+summary: "T\xE4ss\xE4 tietoisku Bashin py\xF6rist\xE4misest\xE4."
 title: "Numerojen py\xF6rist\xE4minen"
 weight: 13
 ---

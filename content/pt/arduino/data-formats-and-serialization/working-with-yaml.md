@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:39.861331-07:00
-description: "YAML (YAML N\xE3o \xE9 Uma Linguagem de Marca\xE7\xE3o) \xE9 um padr\xE3\
-  o de serializa\xE7\xE3o de dados leg\xEDvel por humanos, que pode ser usado para\
-  \ arquivos de configura\xE7\xE3o,\u2026"
+description: "Como Fazer: Trabalhar diretamente com YAML no Arduino n\xE3o \xE9 t\xE3\
+  o direto quanto em ambientes de programa\xE7\xE3o de n\xEDvel mais alto, devido\
+  \ a restri\xE7\xF5es de\u2026"
 lastmod: '2024-03-13T22:44:46.859065-06:00'
 model: gpt-4-0125-preview
-summary: "YAML (YAML N\xE3o \xE9 Uma Linguagem de Marca\xE7\xE3o) \xE9 um padr\xE3\
-  o de serializa\xE7\xE3o de dados leg\xEDvel por humanos, que pode ser usado para\
-  \ arquivos de configura\xE7\xE3o, comunica\xE7\xE3o entre programas e armazenamento\
-  \ de dados."
+summary: "Trabalhar diretamente com YAML no Arduino n\xE3o \xE9 t\xE3o direto quanto\
+  \ em ambientes de programa\xE7\xE3o de n\xEDvel mais alto, devido a restri\xE7\xF5\
+  es de mem\xF3ria e a aus\xEAncia de bibliotecas nativas para processamento de YAML."
 title: Trabalhando com YAML
 weight: 41
 ---

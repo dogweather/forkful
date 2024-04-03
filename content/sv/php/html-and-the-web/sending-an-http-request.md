@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 18:00:10.161608-07:00
-description: "Att skicka en HTTP-beg\xE4ran \xE4r processen att be en server om data\
-  \ eller utf\xF6ra en \xE5tg\xE4rd. Programmerare g\xF6r detta f\xF6r att interagera\
-  \ med webbtj\xE4nster,\u2026"
+description: "Hur g\xF6r man: F\xF6r att skicka en HTTP-beg\xE4ran i PHP \xE4r `cURL`\
+  \ en vanlig metod. H\xE4r \xE4r ett enkelt skript som g\xF6r en GET-beg\xE4ran."
 lastmod: '2024-03-13T22:44:37.993234-06:00'
 model: gpt-4-1106-preview
-summary: "Att skicka en HTTP-beg\xE4ran \xE4r processen att be en server om data eller\
-  \ utf\xF6ra en \xE5tg\xE4rd."
+summary: "F\xF6r att skicka en HTTP-beg\xE4ran i PHP \xE4r `cURL` en vanlig metod."
 title: "Skicka en http-f\xF6rfr\xE5gan"
 weight: 44
 ---

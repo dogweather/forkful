@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:04.976972-07:00
-description: "YAML, lyhennys sanoista \"YAML Ain't Markup Language\", on ihmisen luettavissa\
-  \ oleva datan serialisointistandardi, jota k\xE4ytet\xE4\xE4n usein asetustiedostoissa\u2026"
+description: "Miten: Lualla ei ole sis\xE4\xE4nrakennettua tukea YAMLille, mutta voit\
+  \ ty\xF6skennell\xE4 YAML-tiedostojen kanssa k\xE4ytt\xE4m\xE4ll\xE4 kolmannen osapuolen\
+  \ kirjastoja, kuten\u2026"
 lastmod: '2024-03-13T22:44:56.716796-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, lyhennys sanoista \"YAML Ain't Markup Language\", on ihmisen luettavissa\
-  \ oleva datan serialisointistandardi, jota k\xE4ytet\xE4\xE4n usein asetustiedostoissa\
-  \ sek\xE4 datan vaihdossa eri kielten v\xE4lill\xE4."
+summary: "Lualla ei ole sis\xE4\xE4nrakennettua tukea YAMLille, mutta voit ty\xF6\
+  skennell\xE4 YAML-tiedostojen kanssa k\xE4ytt\xE4m\xE4ll\xE4 kolmannen osapuolen\
+  \ kirjastoja, kuten `lyaml`."
 title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---

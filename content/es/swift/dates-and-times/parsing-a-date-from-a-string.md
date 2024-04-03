@@ -2,12 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:24.759831-07:00
-description: "Analizar una fecha a partir de una cadena implica convertir representaciones\
-  \ textuales de fecha y hora en un objeto `Date`. Este proceso es esencial en\u2026"
+description: "C\xF3mo: #."
 lastmod: '2024-03-13T22:44:59.425792-06:00'
 model: gpt-4-0125-preview
-summary: Analizar una fecha a partir de una cadena implica convertir representaciones
-  textuales de fecha y hora en un objeto `Date`.
+summary: '#.'
 title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---

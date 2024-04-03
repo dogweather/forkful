@@ -2,14 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:11.593838-07:00
-description: "N\u1ED9i suy chu\u1ED7i l\xE0 c\xE1ch \u0111\u1EC3 nh\xFAng tr\u1EF1\
-  c ti\u1EBFp c\xE1c bi\u1EBFn v\xE0o b\xEAn trong m\u1ED9t chu\u1ED7i. L\u1EADp tr\xEC\
-  nh vi\xEAn s\u1EED d\u1EE5ng n\xF3 \u0111\u1EC3 n\u1ED1i c\xE1c bi\u1EBFn v\xE0\
-  \ chu\u1ED7i m\u1ED9t c\xE1ch hi\u1EC7u qu\u1EA3, l\xE0m cho\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong JavaScript, n\u1ED9i suy chu\u1ED7i th\u01B0\
+  \u1EDDng \u0111\u01B0\u1EE3c th\u1EF1c hi\u1EC7n b\u1EB1ng c\xE1ch s\u1EED d\u1EE5\
+  ng c\xE1c literal m\u1EABu. D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch b\u1EA1n c\xF3\
+  \ th\u1EC3 l\xE0m \u0111i\u1EC1u \u0111\xF3."
 lastmod: '2024-03-13T22:44:37.134294-06:00'
 model: gpt-4-0125-preview
-summary: "N\u1ED9i suy chu\u1ED7i l\xE0 c\xE1ch \u0111\u1EC3 nh\xFAng tr\u1EF1c ti\u1EBF\
-  p c\xE1c bi\u1EBFn v\xE0o b\xEAn trong m\u1ED9t chu\u1ED7i."
+summary: "Trong JavaScript, n\u1ED9i suy chu\u1ED7i th\u01B0\u1EDDng \u0111\u01B0\u1EE3\
+  c th\u1EF1c hi\u1EC7n b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng c\xE1c literal m\u1EAB\
+  u."
 title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
 weight: 8
 ---

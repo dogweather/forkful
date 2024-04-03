@@ -1,13 +1,10 @@
 ---
 date: 2024-01-26 03:40:42.256316-07:00
-description: "Att ta bort citattecken fr\xE5n en str\xE4ng i PHP betyder att ta bort\
-  \ de irriterande dubbla (`\"`) eller enkla (`'`) citattecknen som kan st\xF6ka till\
-  \ din\u2026"
+description: "Hur: H\xE4r \xE4r ett rakt p\xE5 sak exempel som anv\xE4nder PHP:s inbyggda\
+  \ funktioner."
 lastmod: '2024-03-13T22:44:37.984654-06:00'
 model: gpt-4-0125-preview
-summary: "Att ta bort citattecken fr\xE5n en str\xE4ng i PHP betyder att ta bort de\
-  \ irriterande dubbla (`\"`) eller enkla (`'`) citattecknen som kan st\xF6ka till\
-  \ din kodlogik eller databasfr\xE5gor."
+summary: "H\xE4r \xE4r ett rakt p\xE5 sak exempel som anv\xE4nder PHP:s inbyggda funktioner."
 title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 weight: 9
 ---

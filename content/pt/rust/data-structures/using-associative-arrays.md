@@ -2,13 +2,13 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:53.310736-07:00
-description: "Arrays associativos, ou o que Rustaceans chamam de \"hash maps\", s\xE3\
-  o cole\xE7\xF5es que armazenam dados em pares de chave-valor. Programadores os utilizam\
-  \ para\u2026"
+description: "Como Fazer: Em Rust, o tipo `HashMap` do m\xF3dulo `std::collections`\
+  \ fornece a funcionalidade de arrays associativos. Aqui est\xE1 como voc\xEA pode\
+  \ trabalhar com\u2026"
 lastmod: '2024-03-13T22:44:46.360815-06:00'
 model: gpt-4-0125-preview
-summary: "Arrays associativos, ou o que Rustaceans chamam de \"hash maps\", s\xE3\
-  o cole\xE7\xF5es que armazenam dados em pares de chave-valor."
+summary: "Em Rust, o tipo `HashMap` do m\xF3dulo `std::collections` fornece a funcionalidade\
+  \ de arrays associativos."
 title: Usando arrays associativos
 weight: 15
 ---

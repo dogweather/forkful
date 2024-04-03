@@ -2,13 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:22.331428-07:00
-description: "Zaokr\u0105glanie liczb to proces dopasowywania liczby do jej najbli\u017C\
-  szej liczby ca\u0142kowitej lub do okre\u015Blonej liczby miejsc dziesi\u0119tnych.\
-  \ Programi\u015Bci cz\u0119sto\u2026"
+description: "Jak to zrobi\u0107: Dart oferuje natywne metody w swoim podstawowym\
+  \ typie `num` dla operacji zaokr\u0105glania. Tutaj przyjrzymy si\u0119 metodom\
+  \ takim jak `round()`,\u2026"
 lastmod: '2024-03-13T22:44:35.085489-06:00'
 model: gpt-4-0125-preview
-summary: "Zaokr\u0105glanie liczb to proces dopasowywania liczby do jej najbli\u017C\
-  szej liczby ca\u0142kowitej lub do okre\u015Blonej liczby miejsc dziesi\u0119tnych."
+summary: "Dart oferuje natywne metody w swoim podstawowym typie `num` dla operacji\
+  \ zaokr\u0105glania."
 title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---

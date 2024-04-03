@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:16:11.990763-07:00
-description: "Organizzare il codice in funzioni consiste nel suddividere il codice\
-  \ in blocchi riutilizzabili con scopi specifici. Lo facciamo per rendere il codice\
-  \ pi\xF9\u2026"
+description: "Come fare: Diciamo che stai scrivendo uno script per calcolare il quadrato\
+  \ e il cubo di un numero. Senza funzioni, \xE8 un pasticcio di ripetizioni."
 lastmod: '2024-03-13T22:44:43.006562-06:00'
 model: gpt-4-0125-preview
-summary: Organizzare il codice in funzioni consiste nel suddividere il codice in blocchi
-  riutilizzabili con scopi specifici.
+summary: Diciamo che stai scrivendo uno script per calcolare il quadrato e il cubo
+  di un numero.
 title: Organizzare il codice in funzioni
 weight: 18
 ---

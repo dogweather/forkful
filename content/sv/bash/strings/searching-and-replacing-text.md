@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:57:29.176776-07:00
-description: "S\xF6kning och ers\xE4ttning av text hanterar automatisk \xE4ndring\
-  \ av str\xE4ngar i filer. Programmerare anv\xE4nder det f\xF6r att effektivisera\
-  \ uppdateringar, korrigera\u2026"
+description: "Hur g\xF6r man: ."
 lastmod: '2024-03-13T22:44:38.066046-06:00'
 model: gpt-4-1106-preview
-summary: "S\xF6kning och ers\xE4ttning av text hanterar automatisk \xE4ndring av str\xE4\
-  ngar i filer."
+summary: .
 title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---

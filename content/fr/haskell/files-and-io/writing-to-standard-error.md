@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:17.804092-07:00
-description: "\xC9crire dans l'erreur standard (stderr) en Haskell permet aux programmes\
-  \ de diff\xE9rencier leur sortie entre les r\xE9sultats normaux et les messages\
-  \ d'erreur.\u2026"
+description: "Comment faire : En Haskell, \xE9crire dans stderr est simple avec le\
+  \ module `System.IO` de la biblioth\xE8que de base. Voici un exemple basique pour\
+  \ d\xE9montrer ."
 lastmod: '2024-03-13T22:44:57.850932-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire dans l'erreur standard (stderr) en Haskell permet aux programmes\
-  \ de diff\xE9rencier leur sortie entre les r\xE9sultats normaux et les messages\
-  \ d'erreur."
+summary: "En Haskell, \xE9crire dans stderr est simple avec le module `System.IO`\
+  \ de la biblioth\xE8que de base."
 title: "\xC9crire sur l'erreur standard"
 weight: 25
 ---

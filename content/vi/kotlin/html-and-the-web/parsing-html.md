@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:55.520119-07:00
-description: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xED\
-  ch c\xFA ph\xE1p \u0111\xE1nh d\u1EA5u c\u1EE7a m\u1ED9t trang web th\xE0nh c\xE1\
-  i g\xEC \u0111\xF3 m\xE0 ch\u01B0\u01A1ng tr\xECnh c\xF3 th\u1EC3 hi\u1EC3u v\xE0\
-  \ thao t\xE1c \u0111\u01B0\u1EE3c. L\u1EADp tr\xECnh\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Kotlin l\xE0m cho vi\u1EC7c ph\xE2n t\xEDch\
+  \ c\xFA ph\xE1p HTML tr\u1EDF n\xEAn \u0111\u01A1n gi\u1EA3n v\u1EDBi c\xE1c th\u01B0\
+  \ vi\u1EC7n nh\u01B0 Jsoup. D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch b\u1EA1n l\xE0\
+  m."
 lastmod: '2024-03-13T22:44:36.598767-06:00'
 model: gpt-4-0125-preview
-summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xED\
-  ch c\xFA ph\xE1p \u0111\xE1nh d\u1EA5u c\u1EE7a m\u1ED9t trang web th\xE0nh c\xE1\
-  i g\xEC \u0111\xF3 m\xE0 ch\u01B0\u01A1ng tr\xECnh c\xF3 th\u1EC3 hi\u1EC3u v\xE0\
-  \ thao t\xE1c \u0111\u01B0\u1EE3c."
+summary: "Kotlin l\xE0m cho vi\u1EC7c ph\xE2n t\xEDch c\xFA ph\xE1p HTML tr\u1EDF\
+  \ n\xEAn \u0111\u01A1n gi\u1EA3n v\u1EDBi c\xE1c th\u01B0 vi\u1EC7n nh\u01B0 Jsoup."
 title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---

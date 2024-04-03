@@ -2,12 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:47.436186-07:00
-description: "Arrotondare i numeri \xE8 il processo di aggiustamento di un numero\
-  \ al suo numero intero pi\xF9 vicino o a un numero specifico di decimali. Gli sviluppatori\u2026"
+description: "Come fare: Dart fornisce metodi nativi nel suo tipo di base `num` per\
+  \ le operazioni di arrotondamento. Qui, esploreremo metodi come `round()`, `floor()`,\u2026"
 lastmod: '2024-03-13T22:44:43.123946-06:00'
 model: gpt-4-0125-preview
-summary: "Arrotondare i numeri \xE8 il processo di aggiustamento di un numero al suo\
-  \ numero intero pi\xF9 vicino o a un numero specifico di decimali."
+summary: Dart fornisce metodi nativi nel suo tipo di base `num` per le operazioni
+  di arrotondamento.
 title: Arrotondamento dei numeri
 weight: 13
 ---

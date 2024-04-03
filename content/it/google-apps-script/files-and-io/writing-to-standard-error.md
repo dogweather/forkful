@@ -2,13 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:09:04.693879-07:00
-description: "La scrittura su standard error (stderr) nei linguaggi di programmazione\
-  \ riguarda l'indirizzamento dei messaggi di errore e delle diagnostiche su un flusso\u2026"
+description: "Come fare: Google Apps Script, essendo un linguaggio di scripting per\
+  \ lo sviluppo di applicazioni leggere sulla piattaforma Google Apps, non fornisce\
+  \ una\u2026"
 lastmod: '2024-03-13T22:44:42.974202-06:00'
 model: gpt-4-0125-preview
-summary: La scrittura su standard error (stderr) nei linguaggi di programmazione riguarda
-  l'indirizzamento dei messaggi di errore e delle diagnostiche su un flusso separato,
-  diverso dall'output standard (stdout).
+summary: Google Apps Script, essendo un linguaggio di scripting per lo sviluppo di
+  applicazioni leggere sulla piattaforma Google Apps, non fornisce una funzione incorporata
+  diretta come `console.error()` per scrivere su stderr, come si potrebbe trovare
+  in Node.js o Python.
 title: Scrivere sull'errore standard
 weight: 25
 ---

@@ -2,17 +2,15 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:07.533362-07:00
-description: "N\u1ED9i suy chu\u1ED7i l\xE0 qu\xE1 tr\xECnh ch\xE8n tr\u1EF1c ti\u1EBF\
-  p gi\xE1 tr\u1ECB bi\u1EBFn v\xE0o trong chu\u1ED7i, th\u01B0\u1EDDng \u0111\u01B0\
-  \u1EE3c d\xF9ng \u0111\u1EC3 t\u1EA1o ra c\xE1c th\xF4ng \u0111i\u1EC7p \xFD ngh\u0129\
-  a m\xE0 kh\xF4ng c\u1EA7n \u0111\u1EBFn s\u1EF1 n\u1ED1i chu\u1ED7i\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Dart, n\u1ED9i suy chu\u1ED7i kh\xE1 \u0111\
+  \u01A1n gi\u1EA3n, s\u1EED d\u1EE5ng k\xFD t\u1EF1 `$` \u0111\u1EC3 n\u1ED9i suy\
+  \ c\xE1c bi\u1EC3u th\u1EE9c tr\u1EF1c ti\u1EBFp trong c\xE1c chu\u1ED7i k\xFD t\u1EF1\
+  ."
 lastmod: '2024-03-13T22:44:36.243739-06:00'
 model: gpt-4-0125-preview
-summary: "N\u1ED9i suy chu\u1ED7i l\xE0 qu\xE1 tr\xECnh ch\xE8n tr\u1EF1c ti\u1EBF\
-  p gi\xE1 tr\u1ECB bi\u1EBFn v\xE0o trong chu\u1ED7i, th\u01B0\u1EDDng \u0111\u01B0\
-  \u1EE3c d\xF9ng \u0111\u1EC3 t\u1EA1o ra c\xE1c th\xF4ng \u0111i\u1EC7p \xFD ngh\u0129\
-  a m\xE0 kh\xF4ng c\u1EA7n \u0111\u1EBFn s\u1EF1 n\u1ED1i chu\u1ED7i r\u01B0\u1EDD\
-  m r\xE0."
+summary: "Trong Dart, n\u1ED9i suy chu\u1ED7i kh\xE1 \u0111\u01A1n gi\u1EA3n, s\u1EED\
+  \ d\u1EE5ng k\xFD t\u1EF1 `$` \u0111\u1EC3 n\u1ED9i suy c\xE1c bi\u1EC3u th\u1EE9\
+  c tr\u1EF1c ti\u1EBFp trong c\xE1c chu\u1ED7i k\xFD t\u1EF1."
 title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
 weight: 8
 ---

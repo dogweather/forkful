@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:51.400223-07:00
-description: "Een tekstbestand schrijven op Arduino betekent het opslaan van gegevens\
-  \ als tekst in een bestand, meestal op een SD-kaart. Programmeurs doen dit om\u2026"
+description: 'Hoe: Verbind eerst een SD-kaartlezer met je Arduino. Dan heb je de SD-bibliotheek
+  nodig. Hier is een snel script.'
 lastmod: '2024-03-13T22:44:51.090188-06:00'
 model: gpt-4-0125-preview
-summary: Een tekstbestand schrijven op Arduino betekent het opslaan van gegevens als
-  tekst in een bestand, meestal op een SD-kaart.
+summary: Verbind eerst een SD-kaartlezer met je Arduino.
 title: Een tekstbestand schrijven
 weight: 24
 ---

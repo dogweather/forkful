@@ -1,11 +1,12 @@
 ---
 date: 2024-02-03 19:03:21.023196-07:00
-description: "YAML, which stands for \"YAML Ain't Markup Language\", is a human-readable\
-  \ data serialization format that is commonly used for configuration files.\u2026"
+description: "How to: PHP, as of its current iterations, does not support parsing\
+  \ YAML as part of its standard library. The most straightforward way to work with\
+  \ YAML\u2026"
 lastmod: '2024-03-13T22:45:00.185436-06:00'
 model: gpt-4-0125-preview
-summary: YAML, which stands for "YAML Ain't Markup Language", is a human-readable
-  data serialization format that is commonly used for configuration files.
+summary: PHP, as of its current iterations, does not support parsing YAML as part
+  of its standard library.
 title: Working with YAML
 weight: 41
 ---

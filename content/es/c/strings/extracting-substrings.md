@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:23.975646-07:00
-description: "Extraer subcadenas en C implica crear una cadena m\xE1s peque\xF1a (subcadena)\
-  \ a partir de una cadena m\xE1s grande bas\xE1ndose en criterios especificados,\
-  \ como la\u2026"
+description: "C\xF3mo hacerlo: A diferencia de algunos lenguajes de alto nivel que\
+  \ proporcionan m\xE9todos integrados para la extracci\xF3n de subcadenas, C requiere\
+  \ un enfoque\u2026"
 lastmod: '2024-03-13T22:44:59.533168-06:00'
 model: gpt-4-0125-preview
-summary: "Extraer subcadenas en C implica crear una cadena m\xE1s peque\xF1a (subcadena)\
-  \ a partir de una cadena m\xE1s grande bas\xE1ndose en criterios especificados,\
-  \ como la posici\xF3n y la longitud."
+summary: "A diferencia de algunos lenguajes de alto nivel que proporcionan m\xE9todos\
+  \ integrados para la extracci\xF3n de subcadenas, C requiere un enfoque m\xE1s manual\
+  \ utilizando sus funciones de manipulaci\xF3n de cadenas."
 title: Extrayendo subcadenas
 weight: 6
 ---

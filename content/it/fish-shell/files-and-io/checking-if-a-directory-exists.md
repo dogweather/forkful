@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:12.790200-07:00
-description: "Verificare se una directory esiste in Fish Shell permette agli script\
-  \ di prendere decisioni basate sulla presenza o assenza di strutture di directory,\u2026"
+description: "Come fare: Fish Shell utilizza il comando `test` per verificare tipi\
+  \ di file e caratteristiche, inclusa la verifica se un target \xE8 una directory.\
+  \ Ecco uno\u2026"
 lastmod: '2024-03-13T22:44:43.873812-06:00'
 model: gpt-4-0125-preview
-summary: Verificare se una directory esiste in Fish Shell permette agli script di
-  prendere decisioni basate sulla presenza o assenza di strutture di directory, consentendo
-  compiti come operazioni su file condizionali, registrazione o configurazione dell'ambiente.
+summary: "Fish Shell utilizza il comando `test` per verificare tipi di file e caratteristiche,\
+  \ inclusa la verifica se un target \xE8 una directory."
 title: Verifica se una directory esiste
 weight: 20
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:55.456151-07:00
-description: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res consiste\
-  \ \xE0 convertir des informations textuelles sur la date et l'heure en un objet\
-  \ datetime ou un\u2026"
+description: "Comment faire : La biblioth\xE8que standard de Python fournit le module\
+  \ `datetime`, qui inclut la m\xE9thode `strptime` \xE0 cet effet. La m\xE9thode\
+  \ n\xE9cessite deux\u2026"
 lastmod: '2024-03-13T22:44:57.246601-06:00'
 model: gpt-4-0125-preview
-summary: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res consiste\
-  \ \xE0 convertir des informations textuelles sur la date et l'heure en un objet\
-  \ datetime ou un format structur\xE9 \xE9quivalent."
+summary: "La biblioth\xE8que standard de Python fournit le module `datetime`, qui\
+  \ inclut la m\xE9thode `strptime` \xE0 cet effet."
 title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
 weight: 30
 ---

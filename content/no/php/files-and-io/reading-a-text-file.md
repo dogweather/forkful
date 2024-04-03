@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:54:47.012585-07:00
-description: "\xC5 lese en tekstfil i PHP betyr \xE5 hente data fra en fil p\xE5 serveren.\
-  \ Programmerere gj\xF8r dette for \xE5 behandle informasjon, lagre innstillinger,\
-  \ eller \xE5 vise\u2026"
+description: 'Hvordan: Lese en fil linje for linje med `fgets()`.'
 lastmod: '2024-03-13T22:44:40.903745-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 lese en tekstfil i PHP betyr \xE5 hente data fra en fil p\xE5 serveren."
+summary: Lese en fil linje for linje med `fgets()`.
 title: Lese en tekstfil
 weight: 22
 ---

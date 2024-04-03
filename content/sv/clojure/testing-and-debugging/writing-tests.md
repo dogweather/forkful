@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:10.285894-07:00
-description: "Att skriva tester i Clojure, precis som i andra programmeringsspr\xE5\
-  k, inneb\xE4r att skapa s\xE4rskild kod f\xF6r att verifiera att din huvudkod fungerar\
-  \ som\u2026"
+description: "Hur man g\xF6r: Clojure, som utnyttjar JVM, st\xF6djer olika testramverk.\
+  \ Dock \xE4r ett vanligt anv\xE4nt inbyggt bibliotek `clojure.test`. H\xE4r \xE4\
+  r ett enkelt exempel."
 lastmod: '2024-03-13T22:44:37.528940-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva tester i Clojure, precis som i andra programmeringsspr\xE5k,\
-  \ inneb\xE4r att skapa s\xE4rskild kod f\xF6r att verifiera att din huvudkod fungerar\
-  \ som f\xF6rv\xE4ntat."
+summary: "Clojure, som utnyttjar JVM, st\xF6djer olika testramverk."
 title: Skriva tester
 weight: 36
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:22.454498-07:00
-description: "Das Kapitalisieren eines Strings bedeutet, ihn so zu modifizieren, dass\
-  \ der erste Buchstabe gro\xDFgeschrieben und der Rest des Strings kleingeschrieben\u2026"
+description: "Wie geht das: In Fish Shell k\xF6nnen Strings direkt mit eingebauten\
+  \ Funktionen manipuliert werden, ohne dass externe Tools oder Bibliotheken erforderlich\u2026"
 lastmod: '2024-03-13T22:44:54.291576-06:00'
 model: gpt-4-0125-preview
-summary: "Das Kapitalisieren eines Strings bedeutet, ihn so zu modifizieren, dass\
-  \ der erste Buchstabe gro\xDFgeschrieben und der Rest des Strings kleingeschrieben\
-  \ wird."
+summary: "In Fish Shell k\xF6nnen Strings direkt mit eingebauten Funktionen manipuliert\
+  \ werden, ohne dass externe Tools oder Bibliotheken erforderlich sind."
 title: "Einen String gro\xDFschreiben"
 weight: 2
 ---

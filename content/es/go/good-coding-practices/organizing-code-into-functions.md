@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:43.600412-07:00
-description: "Organizar el c\xF3digo en funciones en Go implica desglosar el c\xF3\
-  digo en bloques modulares reutilizables que realizan tareas espec\xEDficas. Este\
-  \ enfoque mejora\u2026"
+description: "C\xF3mo hacerlo: En Go, defines una funci\xF3n usando la palabra clave\
+  \ `func`, seguida del nombre de la funci\xF3n, par\xE1metros (si los hay) y el tipo\
+  \ de retorno.\u2026"
 lastmod: '2024-03-13T22:44:58.473743-06:00'
 model: gpt-4-0125-preview
-summary: "Organizar el c\xF3digo en funciones en Go implica desglosar el c\xF3digo\
-  \ en bloques modulares reutilizables que realizan tareas espec\xEDficas."
+summary: "En Go, defines una funci\xF3n usando la palabra clave `func`, seguida del\
+  \ nombre de la funci\xF3n, par\xE1metros (si los hay) y el tipo de retorno."
 title: "Organizando c\xF3digo en funciones"
 weight: 18
 ---

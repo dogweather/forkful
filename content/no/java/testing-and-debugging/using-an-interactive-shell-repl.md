@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:15:16.492351-07:00
-description: "En REPL (Read-Eval-Print Loop) er et interaktivt skall som behandler\
-  \ enkeltbrukerinndata, utf\xF8rer kode, og returnerer resultatet. Programmerere\
-  \ bruker det\u2026"
+description: "Hvordan: \xC5 starte en REPL i Java er enkelt med `jshell`-verkt\xF8\
+  yet introdusert i Java 9. Her er hvordan du kan f\xE5 tak i det og starte en grunnleggende\
+  \ \xF8kt."
 lastmod: '2024-03-13T22:44:40.668278-06:00'
 model: gpt-4-0125-preview
-summary: "En REPL (Read-Eval-Print Loop) er et interaktivt skall som behandler enkeltbrukerinndata,\
-  \ utf\xF8rer kode, og returnerer resultatet."
+summary: "\xC5 starte en REPL i Java er enkelt med `jshell`-verkt\xF8yet introdusert\
+  \ i Java 9."
 title: Bruke et interaktivt skall (REPL)
 weight: 34
 ---

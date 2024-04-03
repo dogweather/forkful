@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:37:05.480226-07:00
-description: "Refatora\xE7\xE3o \xE9 o processo de reestruturar o c\xF3digo de computador\
-  \ existente sem alterar seu comportamento externo. Programadores refatoram para\
-  \ melhorar\u2026"
+description: "Como: Vamos ver um exemplo de refatora\xE7\xE3o de um m\xE9todo Ruby\
+  \ que calcula a soma dos quadrados. **Antes da Refatora\xE7\xE3o:**."
 lastmod: '2024-03-13T22:44:47.103652-06:00'
 model: gpt-4-0125-preview
-summary: "Refatora\xE7\xE3o \xE9 o processo de reestruturar o c\xF3digo de computador\
-  \ existente sem alterar seu comportamento externo."
+summary: "Vamos ver um exemplo de refatora\xE7\xE3o de um m\xE9todo Ruby que calcula\
+  \ a soma dos quadrados."
 title: "Refatora\xE7\xE3o"
 weight: 19
 ---

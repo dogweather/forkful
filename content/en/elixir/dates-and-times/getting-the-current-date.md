@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-05, dogweather, reviewed and corrected
 date: 2024-02-03 19:02:40.198503-07:00
-description: "Getting the current date in Elixir involves accessing the system's date\
-  \ and time information, a common task for logging, data stamping, or any\u2026"
+description: "How to: Elixir's standard library, through the `DateTime` module, allows\
+  \ fetching the current date and time. Since Elixir runs on the Erlang VM (BEAM),\
+  \ it\u2026"
 lastmod: '2024-03-13T22:44:59.791562-06:00'
 model: gpt-4-0125-preview
-summary: Getting the current date in Elixir involves accessing the system's date and
-  time information, a common task for logging, data stamping, or any functionality
-  that requires knowledge of the current date.
+summary: Elixir's standard library, through the `DateTime` module, allows fetching
+  the current date and time.
 title: Getting the current date
 weight: 29
 ---

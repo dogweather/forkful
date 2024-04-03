@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:12.621353-07:00
-description: "\xC5 kapitalisere en streng betyr \xE5 konvertere det f\xF8rste tegnet\
-  \ i en streng til stor bokstav og resten til sm\xE5 bokstaver. Denne operasjonen\
-  \ brukes ofte i\u2026"
+description: 'Hvordan: #.'
 lastmod: '2024-03-13T22:44:40.343549-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 kapitalisere en streng betyr \xE5 konvertere det f\xF8rste tegnet i\
-  \ en streng til stor bokstav og resten til sm\xE5 bokstaver."
+summary: '#.'
 title: Sette stor bokstav i en streng
 weight: 2
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:37:09.348411-07:00
-description: "W PHP konwersja daty do postaci \u0142a\u0144cucha znak\xF3w pozwala\
-  \ na \u0142atwe wy\u015Bwietlanie i zapisywanie w r\xF3\u017Cnych formatach. Robimy\
-  \ to cz\u0119sto, by dostosowa\u0107 dat\u0119 do\u2026"
+description: "How to: U\u017Cyj funkcji `date()` do formatowania i konwersji obiektu\
+  \ `DateTime` na \u0142a\u0144cuch znak\xF3w."
 lastmod: '2024-03-13T22:44:35.508931-06:00'
 model: gpt-4-1106-preview
-summary: "W PHP konwersja daty do postaci \u0142a\u0144cucha znak\xF3w pozwala na\
-  \ \u0142atwe wy\u015Bwietlanie i zapisywanie w r\xF3\u017Cnych formatach."
+summary: "U\u017Cyj funkcji `date()` do formatowania i konwersji obiektu `DateTime`\
+  \ na \u0142a\u0144cuch znak\xF3w."
 title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---

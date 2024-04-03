@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:18.978096-07:00
-description: "Eliminar comillas de una cadena en VBA implica quitar instancias de\
-  \ comillas simples (`'`) o dobles (`\"`) que pueden encapsular o estar incrustadas\
-  \ dentro\u2026"
+description: "C\xF3mo: En VBA, hay m\xFAltiples enfoques para eliminar comillas de\
+  \ una cadena. Aqu\xED hay un ejemplo sencillo usando la funci\xF3n `Replace`, la\
+  \ cual busca una\u2026"
 lastmod: '2024-03-13T22:44:58.878864-06:00'
 model: gpt-4-0125-preview
-summary: Eliminar comillas de una cadena en VBA implica quitar instancias de comillas
-  simples (`'`) o dobles (`"`) que pueden encapsular o estar incrustadas dentro de
-  la cadena.
+summary: "En VBA, hay m\xFAltiples enfoques para eliminar comillas de una cadena."
 title: Eliminando comillas de una cadena
 weight: 9
 ---

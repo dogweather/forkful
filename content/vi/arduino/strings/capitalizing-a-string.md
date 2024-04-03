@@ -2,16 +2,17 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:17.622860-07:00
-description: "Bi\u1EBFn m\u1ED7i k\xFD t\u1EF1 c\u1EE7a m\u1ED9t chu\u1ED7i th\xE0\
-  nh ch\u1EEF hoa c\xF3 ngh\u0129a l\xE0 l\xE0m cho m\u1ECDi k\xFD t\u1EF1 \u0111\u1EC1\
-  u tr\u1EDF th\xE0nh ch\u1EEF in hoa. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111\
-  i\u1EC1u n\xE0y \u0111\u1EC3 \u0111\u1EA1t \u0111\u01B0\u1EE3c s\u1EF1 nh\u1EA5\
-  t\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong m\xF4i tr\u01B0\u1EDDng Arduino,\
+  \ kh\xF4ng c\xF3 h\xE0m \u0111\u01B0\u1EE3c x\xE2y d\u1EF1ng s\u1EB5n n\xE0o \u0111\
+  \u1EC3 bi\u1EBFn to\xE0n b\u1ED9 m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF hoa, v\xEC\
+  \ v\u1EADy ch\xFAng ta s\u1EBD vi\u1EBFt m\u1ED9t h\xE0m \u0111\u01A1n\u2026"
 lastmod: '2024-03-13T22:44:36.968583-06:00'
 model: gpt-4-0125-preview
-summary: "Bi\u1EBFn m\u1ED7i k\xFD t\u1EF1 c\u1EE7a m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF\
-  \ hoa c\xF3 ngh\u0129a l\xE0 l\xE0m cho m\u1ECDi k\xFD t\u1EF1 \u0111\u1EC1u tr\u1EDF\
-  \ th\xE0nh ch\u1EEF in hoa."
+summary: "Trong m\xF4i tr\u01B0\u1EDDng Arduino, kh\xF4ng c\xF3 h\xE0m \u0111\u01B0\
+  \u1EE3c x\xE2y d\u1EF1ng s\u1EB5n n\xE0o \u0111\u1EC3 bi\u1EBFn to\xE0n b\u1ED9\
+  \ m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF hoa, v\xEC v\u1EADy ch\xFAng ta s\u1EBD\
+  \ vi\u1EBFt m\u1ED9t h\xE0m \u0111\u01A1n gi\u1EA3n \u0111\u1EC3 th\u1EF1c hi\u1EC7\
+  n vi\u1EC7c n\xE0y."
 title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
 weight: 2
 ---

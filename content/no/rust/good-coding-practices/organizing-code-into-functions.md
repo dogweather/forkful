@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 01:16:12.090645-07:00
-description: "\xC5 organisere kode i funksjoner handler om \xE5 bryte programmet ditt\
-  \ ned i gjenbrukbare, modul\xE6re biter identifisert ved et navn. Vi gj\xF8r dette\
-  \ for \xE5 gj\xF8re\u2026"
+description: "Hvordan: Si at du har kode som regner ut arealet av en sirkel flere\
+  \ ganger. I stedet for \xE5 gjenta formelen, pakker du den inn i en funksjon."
 lastmod: '2024-03-13T22:44:40.579321-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 organisere kode i funksjoner handler om \xE5 bryte programmet ditt\
-  \ ned i gjenbrukbare, modul\xE6re biter identifisert ved et navn."
+summary: Si at du har kode som regner ut arealet av en sirkel flere ganger.
 title: Organisering av kode i funksjoner
 weight: 18
 ---

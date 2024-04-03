@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:45:56.160571-07:00
-description: "Das Extrahieren von Teilstrings bedeutet, spezifische Abschnitte aus\
-  \ einem l\xE4ngeren String herauszuziehen. Programmierer nutzen dies, um Daten zu\u2026"
+description: 'Anleitung: Java macht es einfach, Teilstrings zu gewinnen. Hier ein
+  paar Beispiele, wie man das bewerkstelligt.'
 lastmod: '2024-03-13T22:44:53.752453-06:00'
 model: gpt-4-1106-preview
-summary: "Das Extrahieren von Teilstrings bedeutet, spezifische Abschnitte aus einem\
-  \ l\xE4ngeren String herauszuziehen."
+summary: Java macht es einfach, Teilstrings zu gewinnen.
 title: Teilstrings extrahieren
 weight: 6
 ---

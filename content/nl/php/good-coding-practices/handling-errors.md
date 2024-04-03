@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:05.745460-07:00
-description: "Foutafhandeling in PHP gaat over het beheren van en reageren op situaties\
-  \ die de normale gang van een programma verstoren, zoals ontbrekende bestanden of\u2026"
+description: 'Hoe: In PHP kun je fouten beheren met behulp van `try-catch` blokken,
+  en je kunt het proces aanpassen met aangepaste foutafhandelaars en uitzonderingen.'
 lastmod: '2024-03-13T22:44:50.903021-06:00'
 model: gpt-4-0125-preview
-summary: Foutafhandeling in PHP gaat over het beheren van en reageren op situaties
-  die de normale gang van een programma verstoren, zoals ontbrekende bestanden of
-  slechte data-invoer.
+summary: In PHP kun je fouten beheren met behulp van `try-catch` blokken, en je kunt
+  het proces aanpassen met aangepaste foutafhandelaars en uitzonderingen.
 title: Fouten afhandelen
 weight: 16
 ---

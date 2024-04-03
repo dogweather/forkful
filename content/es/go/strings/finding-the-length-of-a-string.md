@@ -2,13 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:40.243373-07:00
-description: "Encontrar la longitud de una cadena en Go consiste en determinar el\
-  \ n\xFAmero de caracteres que contiene. Los programadores realizan rutinariamente\
-  \ esta\u2026"
+description: "C\xF3mo hacerlo: En Go, las cadenas se tratan como secuencias de bytes\
+  \ inmutables. Puedes encontrar la longitud de una cadena usando la funci\xF3n incorporada\u2026"
 lastmod: '2024-03-13T22:44:58.457119-06:00'
 model: gpt-4-0125-preview
-summary: "Encontrar la longitud de una cadena en Go consiste en determinar el n\xFA\
-  mero de caracteres que contiene."
+summary: En Go, las cadenas se tratan como secuencias de bytes inmutables.
 title: Encontrando la longitud de una cadena
 weight: 7
 ---

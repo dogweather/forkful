@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:45.131610-07:00
-description: "Verificar se um diret\xF3rio existe em Kotlin envolve verificar a presen\xE7\
-  a de um diret\xF3rio em um caminho especificado. Programadores realizam essa tarefa\u2026"
+description: "Como Fazer: Kotlin, rodando na JVM, utiliza a API de Arquivo do Java\
+  \ para opera\xE7\xF5es de arquivo, tornando a verifica\xE7\xE3o da exist\xEAncia\
+  \ de diret\xF3rios\u2026"
 lastmod: '2024-03-13T22:44:46.556424-06:00'
 model: gpt-4-0125-preview
-summary: "Verificar se um diret\xF3rio existe em Kotlin envolve verificar a presen\xE7\
-  a de um diret\xF3rio em um caminho especificado."
+summary: "Kotlin, rodando na JVM, utiliza a API de Arquivo do Java para opera\xE7\xF5\
+  es de arquivo, tornando a verifica\xE7\xE3o da exist\xEAncia de diret\xF3rios simples."
 title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---

@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 01:39:07.162169-07:00
-description: "Refactoring ist der Prozess der Umstrukturierung bestehenden Computer-Codes\
-  \ \u2013 eine \xC4nderung der Faktorisierung \u2013 ohne dessen \xE4u\xDFeres Verhalten\
-  \ zu \xE4ndern.\u2026"
+description: 'Wie geht das: Nehmen wir eine einfache Java-Klasse, die aufgrund ihrer
+  schlechten Organisation und mangelnden Klarheit nach einem Refactoring verlangt.'
 lastmod: '2024-03-13T22:44:53.770868-06:00'
 model: gpt-4-0125-preview
-summary: "Refactoring ist der Prozess der Umstrukturierung bestehenden Computer-Codes\
-  \ \u2013 eine \xC4nderung der Faktorisierung \u2013 ohne dessen \xE4u\xDFeres Verhalten\
-  \ zu \xE4ndern."
+summary: Nehmen wir eine einfache Java-Klasse, die aufgrund ihrer schlechten Organisation
+  und mangelnden Klarheit nach einem Refactoring verlangt.
 title: Refactoring
 weight: 19
 ---

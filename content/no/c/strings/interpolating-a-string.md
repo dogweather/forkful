@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:19.057644-07:00
-description: "Strenginterpolering, i programmering, inneb\xE6rer konstruksjonen av\
-  \ strenger ved \xE5 bygge inn uttrykk innenfor litterale strenger. Programm\xF8\
-  rer gj\xF8r dette\u2026"
+description: "Hvordan: C, i motsetning til noen h\xF8yniv\xE5spr\xE5k, st\xF8tter\
+  \ ikke strenginterpolering direkte i sin syntaks. I stedet oppn\xE5s strengkonstruksjon\
+  \ med variabelt\u2026"
 lastmod: '2024-03-13T22:44:41.256182-06:00'
 model: gpt-4-0125-preview
-summary: "Strenginterpolering, i programmering, inneb\xE6rer konstruksjonen av strenger\
-  \ ved \xE5 bygge inn uttrykk innenfor litterale strenger."
+summary: "C, i motsetning til noen h\xF8yniv\xE5spr\xE5k, st\xF8tter ikke strenginterpolering\
+  \ direkte i sin syntaks."
 title: Interpolering av en streng
 weight: 8
 ---

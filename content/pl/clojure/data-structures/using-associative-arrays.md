@@ -2,14 +2,13 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:10.213793-07:00
-description: "Tablice asocjacyjne, znane tak\u017Ce jako mapy haszuj\u0105ce, w Clojure\
-  \ pozwalaj\u0105 przechowywa\u0107 i pobiera\u0107 dane za pomoc\u0105 par klucz-warto\u015B\
-  \u0107. S\u0105 one ch\u0119tnie\u2026"
+description: "Jak to zrobi\u0107: W Clojure tworzenie i manipulowanie tablicami asocjacyjnymi\
+  \ (mapami haszuj\u0105cymi) jest proste. Zag\u0142\u0119bmy si\u0119 w przyk\u0142\
+  ady. Aby utworzy\u0107 map\u0119\u2026"
 lastmod: '2024-03-13T22:44:34.987478-06:00'
 model: gpt-4-0125-preview
-summary: "Tablice asocjacyjne, znane tak\u017Ce jako mapy haszuj\u0105ce, w Clojure\
-  \ pozwalaj\u0105 przechowywa\u0107 i pobiera\u0107 dane za pomoc\u0105 par klucz-warto\u015B\
-  \u0107."
+summary: "W Clojure tworzenie i manipulowanie tablicami asocjacyjnymi (mapami haszuj\u0105\
+  cymi) jest proste."
 title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---

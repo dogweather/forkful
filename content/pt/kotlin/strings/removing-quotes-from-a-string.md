@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 03:41:00.230681-07:00
-description: "Remover aspas de uma string significa retirar quaisquer inst\xE2ncias\
-  \ de caracteres de aspas, seja simples (' ') ou duplas (\" \"), dos dados de texto\
-  \ com os\u2026"
+description: "Como fazer: Aqui est\xE1 uma maneira simples de remover ambos os tipos\
+  \ de aspas de uma string em Kotlin."
 lastmod: '2024-03-13T22:44:46.529585-06:00'
 model: gpt-4-0125-preview
-summary: "Remover aspas de uma string significa retirar quaisquer inst\xE2ncias de\
-  \ caracteres de aspas, seja simples (' ') ou duplas (\" \"), dos dados de texto\
-  \ com os quais voc\xEA est\xE1 trabalhando."
+summary: "Aqui est\xE1 uma maneira simples de remover ambos os tipos de aspas de uma\
+  \ string em Kotlin."
 title: Removendo aspas de uma string
 weight: 9
 ---

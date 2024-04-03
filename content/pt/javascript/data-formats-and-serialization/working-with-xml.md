@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 04:32:40.891677-07:00
-description: "Trabalhar com XML significa analisar, manipular e produzir conte\xFA\
-  do XML usando c\xF3digo. Programadores fazem isso porque o XML \xE9 amplamente utilizado\
-  \ para\u2026"
+description: "Como fazer: Aqui est\xE1 como analisar XML."
 lastmod: '2024-03-13T22:44:46.986485-06:00'
 model: gpt-4-0125-preview
-summary: "Trabalhar com XML significa analisar, manipular e produzir conte\xFAdo XML\
-  \ usando c\xF3digo."
+summary: "Aqui est\xE1 como analisar XML."
 title: Trabalhando com XML
 weight: 40
 ---

@@ -2,16 +2,15 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:37.652744-07:00
-description: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1\
-  \ b\u1EA3n bao g\u1ED3m vi\u1EC7c \u0111\xEDnh k\xE8m t\xEAn \u0111\u0103ng nh\u1EAD\
-  p v\xE0 m\u1EADt kh\u1EA9u v\xE0o m\u1ED9t y\xEAu c\u1EA7u \u0111\u1EC3 x\xE1c minh\
-  \ danh t\xEDnh c\u1EE7a ng\u01B0\u1EDDi d\xF9ng. C\xE1c l\u1EADp\u2026"
+description: "C\xE1ch l\xE0m: Trong Dart, b\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5\
+  ng g\xF3i `http` \u0111\u1EC3 g\u1EEDi c\xE1c y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1\
+  c th\u1EF1c c\u01A1 b\u1EA3n. \u0110\u1EA7u ti\xEAn, th\xEAm g\xF3i `http` v\xE0\
+  o t\u1EADp tin `pubspec.yaml` c\u1EE7a\u2026"
 lastmod: '2024-03-13T22:44:36.262504-06:00'
 model: gpt-4-0125-preview
-summary: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1\
-  \ b\u1EA3n bao g\u1ED3m vi\u1EC7c \u0111\xEDnh k\xE8m t\xEAn \u0111\u0103ng nh\u1EAD\
-  p v\xE0 m\u1EADt kh\u1EA9u v\xE0o m\u1ED9t y\xEAu c\u1EA7u \u0111\u1EC3 x\xE1c minh\
-  \ danh t\xEDnh c\u1EE7a ng\u01B0\u1EDDi d\xF9ng."
+summary: "Trong Dart, b\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng g\xF3i `http` \u0111\
+  \u1EC3 g\u1EEDi c\xE1c y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3\
+  n."
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3\
   n"
 weight: 45

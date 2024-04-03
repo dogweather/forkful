@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:35:23.150927-07:00
-description: "Att arbeta med XML inneb\xE4r att tolka, generera och manipulera XML\
-  \ (eXtensible Markup Language)-dokument med kod. Programmerare g\xF6r det f\xF6\
-  r att interagera\u2026"
+description: "Hur man g\xF6r: L\xE5t oss anv\xE4nda REXML, som ing\xE5r i Ruby, f\xF6\
+  r att tolka ett XML-utdrag."
 lastmod: '2024-03-13T22:44:38.456850-06:00'
 model: gpt-4-0125-preview
-summary: "Att arbeta med XML inneb\xE4r att tolka, generera och manipulera XML (eXtensible\
-  \ Markup Language)-dokument med kod."
+summary: "L\xE5t oss anv\xE4nda REXML, som ing\xE5r i Ruby, f\xF6r att tolka ett XML-utdrag."
 title: Att arbeta med XML
 weight: 40
 ---

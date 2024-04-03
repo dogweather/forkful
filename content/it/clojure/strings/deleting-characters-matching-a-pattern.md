@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:41:51.982600-07:00
-description: "Tagliare via i caratteri seguendo una certa regola \xE8 come fare pulizia\
-  \ nel testo, togliendo ci\xF2 che non serve. I programmatori lo fanno per semplificare\u2026"
+description: 'How to: In Clojure, usiamo `clojure.string/replace` per sostituire i
+  caratteri indesiderati. Ecco come.'
 lastmod: '2024-03-13T22:44:43.027166-06:00'
 model: gpt-4-1106-preview
-summary: "Tagliare via i caratteri seguendo una certa regola \xE8 come fare pulizia\
-  \ nel testo, togliendo ci\xF2 che non serve."
+summary: In Clojure, usiamo `clojure.string/replace` per sostituire i caratteri indesiderati.
 title: Eliminazione di caratteri che corrispondono a un pattern
 weight: 5
 ---

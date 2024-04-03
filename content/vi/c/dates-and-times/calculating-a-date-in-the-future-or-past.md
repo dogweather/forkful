@@ -2,17 +2,17 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:38.760608-07:00
-description: "Vi\u1EC7c t\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai\
-  \ ho\u1EB7c qu\xE1 kh\u1EE9 bao g\u1ED3m vi\u1EC7c x\xE1c \u0111\u1ECBnh m\u1ED9\
-  t ng\xE0y c\u1EE5 th\u1EC3 b\u1EB1ng c\xE1ch c\u1ED9ng ho\u1EB7c tr\u1EEB m\u1ED9\
-  t s\u1ED1 l\u01B0\u1EE3ng nh\u1EA5t \u0111\u1ECBnh c\xE1c ng\xE0y, th\xE1ng,\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: M\u1EB7c d\xF9 th\u01B0 vi\u1EC7n chu\u1EA9\
+  n C kh\xF4ng cung c\u1EA5p c\xE1c h\xE0m tr\u1EF1c ti\u1EBFp cho t\xEDnh to\xE1\
+  n ng\xE0y, b\u1EA1n c\xF3 th\u1EC3 thao t\xE1c v\u1EDBi ng\xE0y th\xE1ng s\u1EED\
+  \ d\u1EE5ng th\u01B0 vi\u1EC7n `time.h`, c\u1EE5\u2026"
 lastmod: '2024-03-13T22:44:37.286127-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c t\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7\
-  c qu\xE1 kh\u1EE9 bao g\u1ED3m vi\u1EC7c x\xE1c \u0111\u1ECBnh m\u1ED9t ng\xE0y\
-  \ c\u1EE5 th\u1EC3 b\u1EB1ng c\xE1ch c\u1ED9ng ho\u1EB7c tr\u1EEB m\u1ED9t s\u1ED1\
-  \ l\u01B0\u1EE3ng nh\u1EA5t \u0111\u1ECBnh c\xE1c ng\xE0y, th\xE1ng, ho\u1EB7c n\u0103\
-  m t\u1EEB m\u1ED9t ng\xE0y \u0111\xE3 cho."
+summary: "M\u1EB7c d\xF9 th\u01B0 vi\u1EC7n chu\u1EA9n C kh\xF4ng cung c\u1EA5p c\xE1\
+  c h\xE0m tr\u1EF1c ti\u1EBFp cho t\xEDnh to\xE1n ng\xE0y, b\u1EA1n c\xF3 th\u1EC3\
+  \ thao t\xE1c v\u1EDBi ng\xE0y th\xE1ng s\u1EED d\u1EE5ng th\u01B0 vi\u1EC7n `time.h`,\
+  \ c\u1EE5 th\u1EC3 l\xE0 l\xE0m vi\u1EC7c v\u1EDBi ki\u1EC3u d\u1EEF li\u1EC7u `time_t`\
+  \ v\xE0 `struct tm`."
 title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1EE9"
 weight: 26
 ---

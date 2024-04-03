@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:59:59.071111-07:00
-description: "Sending an HTTP request is like asking a web server to do something\
-  \ or give you something. Programmers do it to interact with web services, pull data,\u2026"
+description: 'How to: Kotlin makes HTTP requests straightforward. Here''s a basic
+  example using `khttp`, a user-friendly library.'
 lastmod: '2024-03-13T22:45:00.045730-06:00'
 model: gpt-4-1106-preview
-summary: Sending an HTTP request is like asking a web server to do something or give
-  you something.
+summary: Kotlin makes HTTP requests straightforward.
 title: Sending an HTTP request
 weight: 44
 ---

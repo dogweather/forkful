@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:58.365241-07:00
-description: "Refaktorisering inom programmering inneb\xE4r att man \xE4ndrar strukturen\
-  \ p\xE5 koden utan att \xE4ndra dess beteende, f\xF6r att f\xF6rb\xE4ttra aspekter\
-  \ som l\xE4sbarhet,\u2026"
+description: "Hur man g\xF6r: Betrakta ett grundl\xE4ggande exempel i Visual Basic\
+  \ for Applications (VBA) d\xE4r vi har en subrutin som skriver ut detaljer om en\
+  \ anst\xE4lld.\u2026"
 lastmod: '2024-03-13T22:44:37.752154-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktorisering inom programmering inneb\xE4r att man \xE4ndrar strukturen\
-  \ p\xE5 koden utan att \xE4ndra dess beteende, f\xF6r att f\xF6rb\xE4ttra aspekter\
-  \ som l\xE4sbarhet, underh\xE5llbarhet eller prestanda."
+summary: "Betrakta ett grundl\xE4ggande exempel i Visual Basic for Applications (VBA)\
+  \ d\xE4r vi har en subrutin som skriver ut detaljer om en anst\xE4lld."
 title: Refaktorering
 weight: 19
 ---

@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:36.688470-07:00
-description: "Controleren of een directory bestaat gaat over bevestigen of een gespecificeerde\
-  \ map aanwezig is op het bestandssysteem. Programmeurs doen dit om fouten\u2026"
+description: "Hoe te: Vanaf C++17 hebben we `std::filesystem` om ons leven makkelijker\
+  \ te maken voor bestandssysteemoperaties. Hier is een codefragment om te\u2026"
 lastmod: '2024-03-13T22:44:51.127446-06:00'
 model: gpt-4-0125-preview
-summary: Controleren of een directory bestaat gaat over bevestigen of een gespecificeerde
-  map aanwezig is op het bestandssysteem.
+summary: Vanaf C++17 hebben we `std::filesystem` om ons leven makkelijker te maken
+  voor bestandssysteemoperaties.
 title: Controleren of een directory bestaat
 weight: 20
 ---

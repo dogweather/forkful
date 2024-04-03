@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:46.172384-07:00
-description: "Calculer une date dans le futur ou dans le pass\xE9 en Go implique de\
-  \ manipuler des valeurs de date et d'heure pour d\xE9terminer un point sp\xE9cifique\
-  \ par\u2026"
+description: "Comment faire : Go fournit le package `time` pour g\xE9rer les op\xE9\
+  rations de date et d'heure, offrant des m\xE9canismes simples pour ajouter ou soustraire\
+  \ du\u2026"
 lastmod: '2024-03-13T22:44:57.148971-06:00'
 model: gpt-4-0125-preview
-summary: "Calculer une date dans le futur ou dans le pass\xE9 en Go implique de manipuler\
-  \ des valeurs de date et d'heure pour d\xE9terminer un point sp\xE9cifique par rapport\
-  \ \xE0 une date donn\xE9e."
+summary: "Go fournit le package `time` pour g\xE9rer les op\xE9rations de date et\
+  \ d'heure, offrant des m\xE9canismes simples pour ajouter ou soustraire du temps."
 title: "Calculer une date dans le futur ou le pass\xE9"
 weight: 26
 ---

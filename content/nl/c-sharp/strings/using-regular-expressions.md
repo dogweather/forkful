@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:47.475254-07:00
-description: "Reguliere expressies (regex) zijn patronen die worden gebruikt om reeksen\
-  \ van tekens te matchen. Programmeurs gebruiken ze voor het zoeken, bewerken of\u2026"
+description: 'Hoe te: Laten we kijken naar het matchen, vervangen en splitsen van
+  strings met regex in C#. **Een telefoonnummer matchen:**.'
 lastmod: '2024-03-13T22:44:50.800018-06:00'
 model: gpt-4-0125-preview
-summary: Reguliere expressies (regex) zijn patronen die worden gebruikt om reeksen
-  van tekens te matchen.
+summary: Laten we kijken naar het matchen, vervangen en splitsen van strings met regex
+  in C#.
 title: Reguliere expressies gebruiken
 weight: 11
 ---

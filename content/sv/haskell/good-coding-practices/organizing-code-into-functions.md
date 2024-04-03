@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 01:10:49.613449-07:00
-description: "Att organisera kod i funktioner i Haskell inneb\xE4r att bryta ner din\
-  \ kod i \xE5teranv\xE4ndbara, namngivna block. Varf\xF6r? Det h\xE5ller din kod\
-  \ DRY (Don't Repeat\u2026"
+description: "Hur man g\xF6r: S\xE5 h\xE4r kan du skriva och anv\xE4nda funktioner\
+  \ i Haskell."
 lastmod: '2024-03-13T22:44:37.960417-06:00'
 model: gpt-4-1106-preview
-summary: "Att organisera kod i funktioner i Haskell inneb\xE4r att bryta ner din kod\
-  \ i \xE5teranv\xE4ndbara, namngivna block."
+summary: "S\xE5 h\xE4r kan du skriva och anv\xE4nda funktioner i Haskell."
 title: Att organisera kod i funktioner
 weight: 18
 ---

@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:34:09.350680-07:00
-description: "Comparer deux dates, c'est d\xE9cider si une date est plus t\xF4t, plus\
-  \ tard ou la m\xEAme qu'une autre. Les programmeurs le font pour g\xE9rer les \xE9\
-  v\xE9nements, les\u2026"
+description: 'How to: (Comment faire : ) .'
 lastmod: '2024-03-13T22:44:58.237437-06:00'
 model: gpt-4-1106-preview
-summary: "Comparer deux dates, c'est d\xE9cider si une date est plus t\xF4t, plus\
-  \ tard ou la m\xEAme qu'une autre."
+summary: .
 title: Comparer deux dates
 weight: 27
 ---

@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:15.639804-07:00
-description: "Werken met XML in Elixir betekent het parseren, cre\xEBren en manipuleren\
-  \ van XML-gegevens. Programmeurs pakken XML aan omdat het wijdverbreid is in\u2026"
+description: 'Hoe: Elixir bevat geen XML-parsing in zijn standaardbibliotheek. SweetXML
+  is een populaire keuze. Hier is hoe je het gebruikt.'
 lastmod: '2024-03-13T22:44:50.486081-06:00'
 model: gpt-4-0125-preview
-summary: "Werken met XML in Elixir betekent het parseren, cre\xEBren en manipuleren\
-  \ van XML-gegevens."
+summary: Elixir bevat geen XML-parsing in zijn standaardbibliotheek.
 title: Werken met XML
 weight: 40
 ---

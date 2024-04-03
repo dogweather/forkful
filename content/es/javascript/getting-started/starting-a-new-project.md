@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 18:04:01.072654-07:00
-description: "Comenzar un proyecto nuevo es como plantar una semilla digital, esperando\
-  \ que crezca y se convierta en algo incre\xEDble. Los programadores iniciamos\u2026"
+description: "C\xF3mo hacerlo: Para iniciar un nuevo proyecto en JavaScript, usualmente\
+  \ creas una estructura b\xE1sica con archivos para tu c\xF3digo, estilos y marcado.\
+  \ Aqu\xED\u2026"
 lastmod: '2024-03-13T22:44:59.459443-06:00'
 model: gpt-4-1106-preview
-summary: "Comenzar un proyecto nuevo es como plantar una semilla digital, esperando\
-  \ que crezca y se convierta en algo incre\xEDble."
+summary: "Para iniciar un nuevo proyecto en JavaScript, usualmente creas una estructura\
+  \ b\xE1sica con archivos para tu c\xF3digo, estilos y marcado."
 title: Iniciando un nuevo proyecto
 weight: 1
 ---

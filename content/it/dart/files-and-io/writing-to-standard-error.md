@@ -2,12 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:59.571207-07:00
-description: "Scrivere sull'errore standard (stderr) in Dart consiste nell'inviare\
-  \ messaggi di errore e diagnostica a un flusso separato, distinto dall'output standard\u2026"
+description: "Come fare: In Dart, scrivere su stderr \xE8 semplice utilizzando l'oggetto\
+  \ `stderr` disponibile in `dart:io`. Ecco un esempio base."
 lastmod: '2024-03-13T22:44:43.150044-06:00'
 model: gpt-4-0125-preview
-summary: Scrivere sull'errore standard (stderr) in Dart consiste nell'inviare messaggi
-  di errore e diagnostica a un flusso separato, distinto dall'output standard (stdout).
+summary: "In Dart, scrivere su stderr \xE8 semplice utilizzando l'oggetto `stderr`\
+  \ disponibile in `dart:io`."
 title: Scrittura su errore standard
 weight: 25
 ---

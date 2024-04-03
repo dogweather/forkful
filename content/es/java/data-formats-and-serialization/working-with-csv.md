@@ -2,14 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:15.701735-07:00
-description: "Trabajar con archivos CSV implica leer y escribir datos en archivos\
-  \ de Valores Separados por Comas (CSV), un formato popular para el intercambio de\
-  \ datos\u2026"
+description: "C\xF3mo hacerlo: #."
 lastmod: '2024-03-13T22:44:58.959803-06:00'
 model: gpt-4-0125-preview
-summary: Trabajar con archivos CSV implica leer y escribir datos en archivos de Valores
-  Separados por Comas (CSV), un formato popular para el intercambio de datos porque
-  es simple y ampliamente soportado.
+summary: '#.'
 title: Trabajando con CSV
 weight: 37
 ---

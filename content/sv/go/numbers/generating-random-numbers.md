@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:33.075012-07:00
-description: "Att generera slumpm\xE4ssiga nummer i programmering handlar om att skapa\
-  \ en sekvens av nummer som inte rimligen kan f\xF6ruts\xE4gas b\xE4ttre \xE4n genom\
-  \ slumpen.\u2026"
+description: "Hur man g\xF6r: I Go genereras slumpm\xE4ssiga nummer med hj\xE4lp av\
+  \ paketet `math/rand` f\xF6r pseudoslumpm\xE4ssiga nummer eller `crypto/rand` f\xF6\
+  r kryptografiskt\u2026"
 lastmod: '2024-03-13T22:44:37.387545-06:00'
 model: gpt-4-0125-preview
-summary: "Att generera slumpm\xE4ssiga nummer i programmering handlar om att skapa\
-  \ en sekvens av nummer som inte rimligen kan f\xF6ruts\xE4gas b\xE4ttre \xE4n genom\
-  \ slumpen."
+summary: "I Go genereras slumpm\xE4ssiga nummer med hj\xE4lp av paketet `math/rand`\
+  \ f\xF6r pseudoslumpm\xE4ssiga nummer eller `crypto/rand` f\xF6r kryptografiskt\
+  \ s\xE4kra pseudoslumpm\xE4ssiga nummer."
 title: "Generera slumpm\xE4ssiga nummer"
 weight: 12
 ---

@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 04:45:43.023442-07:00
-description: "Liczby z\u0142o\u017Cone sk\u0142adaj\u0105 si\u0119 z cz\u0119\u015B\
-  ci rzeczywistej i urojonej i s\u0105 niezb\u0119dne w r\xF3\u017Cnych dziedzinach,\
-  \ takich jak in\u017Cynieria, fizyka i grafika komputerowa.\u2026"
+description: "Jak to zrobi\u0107: Rust nie posiada wbudowanego wsparcia dla liczb\
+  \ z\u0142o\u017Conych, ale takie pakiety jak `num-complex` przychodz\u0105 z pomoc\u0105\
+  . Oto jak z nich\u2026"
 lastmod: '2024-03-13T22:44:35.178358-06:00'
 model: gpt-4-0125-preview
-summary: "Liczby z\u0142o\u017Cone sk\u0142adaj\u0105 si\u0119 z cz\u0119\u015Bci\
-  \ rzeczywistej i urojonej i s\u0105 niezb\u0119dne w r\xF3\u017Cnych dziedzinach,\
-  \ takich jak in\u017Cynieria, fizyka i grafika komputerowa."
+summary: "Rust nie posiada wbudowanego wsparcia dla liczb z\u0142o\u017Conych, ale\
+  \ takie pakiety jak `num-complex` przychodz\u0105 z pomoc\u0105."
 title: Praca z liczbami zespolonymi
 weight: 14
 ---

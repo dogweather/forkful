@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:43:28.162262-07:00
-description: "Arredondar n\xFAmeros \xE9 ajustar um n\xFAmero para o inteiro mais\
-  \ pr\xF3ximo, ou para uma certa precis\xE3o decimal. Arredondamos n\xFAmeros para\
-  \ simplific\xE1-los para\u2026"
+description: 'Como fazer: Em Clojure, usamos principalmente `Math/round`, `Math/floor`
+  e `Math/ceil`.'
 lastmod: '2024-03-13T22:44:46.191814-06:00'
 model: gpt-4-0125-preview
-summary: "Arredondar n\xFAmeros \xE9 ajustar um n\xFAmero para o inteiro mais pr\xF3\
-  ximo, ou para uma certa precis\xE3o decimal."
+summary: Em Clojure, usamos principalmente `Math/round`, `Math/floor` e `Math/ceil`.
 title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---

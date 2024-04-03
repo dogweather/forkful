@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:37:16.432071-07:00
-description: "Das Umwandeln eines Datums in einen String erm\xF6glicht es uns, das\
-  \ Datum in einem benutzerfreundlichen oder spezifischen Format zu pr\xE4sentieren.\u2026"
+description: 'So geht''s: .'
 lastmod: '2024-03-13T22:44:54.115292-06:00'
 model: gpt-4-1106-preview
-summary: "Das Umwandeln eines Datums in einen String erm\xF6glicht es uns, das Datum\
-  \ in einem benutzerfreundlichen oder spezifischen Format zu pr\xE4sentieren."
+summary: .
 title: Datum in einen String umwandeln
 weight: 28
 ---

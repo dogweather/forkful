@@ -2,14 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:56.311221-07:00
-description: "Escribir en el error est\xE1ndar en C implica dirigir los mensajes de\
-  \ error y la informaci\xF3n de diagn\xF3stico a un flujo separado del resultado\
-  \ principal del\u2026"
+description: "C\xF3mo hacerlo: En C, el flujo `stderr` se utiliza para escribir mensajes\
+  \ de error. A diferencia de escribir en el resultado est\xE1ndar con `printf`, escribir\u2026"
 lastmod: '2024-03-13T22:44:59.563752-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir en el error est\xE1ndar en C implica dirigir los mensajes de error\
-  \ y la informaci\xF3n de diagn\xF3stico a un flujo separado del resultado principal\
-  \ del programa."
+summary: En C, el flujo `stderr` se utiliza para escribir mensajes de error.
 title: "Escribiendo al error est\xE1ndar"
 weight: 25
 ---

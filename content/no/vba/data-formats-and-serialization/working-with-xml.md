@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:55.728872-07:00
-description: "\xC5 arbeide med XML i Visual Basic for Applications (VBA) involverer\
-  \ parsing, oppretting og modifisering av XML-dokumenter innenfor konteksten av Microsoft\u2026"
+description: "Hvordan: For \xE5 begynne \xE5 samhandle med XML, bruker man vanligvis\
+  \ `MSXML2.DOMDocument`-objektet. Dette grensesnittet lar deg laste, parse og navigere\
+  \ XML-\u2026"
 lastmod: '2024-03-13T22:44:40.648298-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 arbeide med XML i Visual Basic for Applications (VBA) involverer parsing,\
-  \ oppretting og modifisering av XML-dokumenter innenfor konteksten av Microsoft\
-  \ Office-applikasjoner."
+summary: "For \xE5 begynne \xE5 samhandle med XML, bruker man vanligvis `MSXML2.DOMDocument`-objektet."
 title: Arbeide med XML
 weight: 40
 ---

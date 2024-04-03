@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:10.846321-07:00
-description: "Ohjelmoinnissa refaktorointi tarkoittaa koodin rakenteen muuttamista\
-  \ muuttamatta sen toimintaa, jotta esimerkiksi sen luettavuus, yll\xE4pidett\xE4\
-  vyys tai\u2026"
+description: "Kuinka: Harkitaan yksinkertaista esimerkki\xE4 Visual Basic for Applications\
+  \ (VBA) -koodissa, jossa meill\xE4 on alirutiini, joka tulostaa ty\xF6ntekij\xE4\
+  n tiedot.\u2026"
 lastmod: '2024-03-13T22:44:56.409960-06:00'
 model: gpt-4-0125-preview
-summary: "Ohjelmoinnissa refaktorointi tarkoittaa koodin rakenteen muuttamista muuttamatta\
-  \ sen toimintaa, jotta esimerkiksi sen luettavuus, yll\xE4pidett\xE4vyys tai suorituskyky\
-  \ paranisivat."
+summary: "Harkitaan yksinkertaista esimerkki\xE4 Visual Basic for Applications (VBA)\
+  \ -koodissa, jossa meill\xE4 on alirutiini, joka tulostaa ty\xF6ntekij\xE4n tiedot."
 title: Uudelleenkoodaus
 weight: 19
 ---

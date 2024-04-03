@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:04.847123-07:00
-description: "JSON (JavaScript Object Notation) l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1\
-  ng d\u1EEF li\u1EC7u \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 l\u01B0\
-  u tr\u1EEF v\xE0 truy\u1EC1n t\u1EA3i d\u1EEF li\u1EC7u. L\u1EADp tr\xECnh vi\xEA\
-  n s\u1EED d\u1EE5ng JSON v\xEC s\u1EF1 d\u1EC5 s\u1EED d\u1EE5ng v\u1EDBi\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: H\xE3y th\u1EED nghi\u1EC7m v\u1EDBi JSON\
+  \ trong Clojure. B\u1EA1n s\u1EBD c\u1EA7n `Cheshire`, m\u1ED9t th\u01B0 vi\u1EC7\
+  n ph\u1ED5 bi\u1EBFn cho m\xE3 h\xF3a/gi\u1EA3i m\xE3 JSON. Tr\u01B0\u1EDBc ti\xEA\
+  n, th\xEAm Cheshire v\xE0o\u2026"
 lastmod: '2024-03-13T22:44:36.181163-06:00'
 model: gpt-4-0125-preview
-summary: "JSON (JavaScript Object Notation) l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1\
-  ng d\u1EEF li\u1EC7u \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 l\u01B0\
-  u tr\u1EEF v\xE0 truy\u1EC1n t\u1EA3i d\u1EEF li\u1EC7u."
+summary: "H\xE3y th\u1EED nghi\u1EC7m v\u1EDBi JSON trong Clojure."
 title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
 weight: 38
 ---

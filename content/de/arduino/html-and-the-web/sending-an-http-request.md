@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:58:51.582090-07:00
-description: "HTTP-Anfragen senden bedeutet, mit einem Webserver zu kommunizieren\
-  \ \u2013 so holt man Daten oder schickt sie. Programmierer nutzen das, um ihre Arduino-\u2026"
+description: 'Wie geht das: Mit dem ESP8266/ESP32 und der entsprechenden Bibliothek
+  sieht das so aus.'
 lastmod: '2024-03-13T22:44:54.141777-06:00'
 model: gpt-4-1106-preview
-summary: "HTTP-Anfragen senden bedeutet, mit einem Webserver zu kommunizieren \u2013\
-  \ so holt man Daten oder schickt sie."
+summary: Mit dem ESP8266/ESP32 und der entsprechenden Bibliothek sieht das so aus.
 title: Einen HTTP-Request senden
 weight: 44
 ---

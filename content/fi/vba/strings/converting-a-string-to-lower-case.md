@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:44.476013-07:00
-description: "Merkkijonon muuntaminen pieniksi kirjaimiksi tarkoittaa kaikkien merkkijonon\
-  \ suurten kirjainten muuntamista niiden pieniksi vastineiksi. T\xE4m\xE4 prosessi\
-  \ on\u2026"
+description: "Miten: Visual Basic for Applicationsissa (VBA) merkkijonon muuntaminen\
+  \ pieniksi kirjaimiksi on suoraviivaista `LCase`-funktion avulla. T\xE4m\xE4 funktio\
+  \ ottaa\u2026"
 lastmod: '2024-03-13T22:44:56.386599-06:00'
 model: gpt-4-0125-preview
-summary: Merkkijonon muuntaminen pieniksi kirjaimiksi tarkoittaa kaikkien merkkijonon
-  suurten kirjainten muuntamista niiden pieniksi vastineiksi.
+summary: Visual Basic for Applicationsissa (VBA) merkkijonon muuntaminen pieniksi
+  kirjaimiksi on suoraviivaista `LCase`-funktion avulla.
 title: Merkkijonon muuttaminen pieniksi kirjaimiksi
 weight: 4
 ---

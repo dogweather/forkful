@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:03:10.678966-07:00
-description: "Lokitus on pohjimmiltaan prosessi, jossa tallennetaan tapahtumia ja\
-  \ ohjelmiston tuottamia tietoja sen suorituksen aikana, ajattele sit\xE4 ohjelmiston\u2026"
+description: "Kuinka: Elmin arkkitehtuuri ei tue sivuvaikutuksia kuten lokitusta valmiina\
+  \ - k\xE4sittelet niit\xE4 komentojen kautta, jotka ovat osa sovelluksesi\u2026"
 lastmod: '2024-03-13T22:44:56.495172-06:00'
 model: gpt-4-1106-preview
-summary: "Lokitus on pohjimmiltaan prosessi, jossa tallennetaan tapahtumia ja ohjelmiston\
-  \ tuottamia tietoja sen suorituksen aikana, ajattele sit\xE4 ohjelmiston p\xE4iv\xE4\
-  kirjana."
+summary: "Elmin arkkitehtuuri ei tue sivuvaikutuksia kuten lokitusta valmiina - k\xE4\
+  sittelet niit\xE4 komentojen kautta, jotka ovat osa sovelluksesi arkkitehtuuria."
 title: Lokitus
 weight: 17
 ---

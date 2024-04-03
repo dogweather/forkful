@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 00:52:24.550950-07:00
-description: "O tratamento de erros permite que seu script lide com o inesperado de\
-  \ forma elegante. Fazemos isso para gerenciar falhas sem deixar os cabelos dos nossos\u2026"
+description: 'Como fazer: Para capturar erros no Fish, conte com o comando `status`
+  e condicionais. Digamos que o `ping` falhe; veja como detectar isso.'
 lastmod: '2024-03-13T22:44:47.013439-06:00'
 model: gpt-4-1106-preview
-summary: O tratamento de erros permite que seu script lide com o inesperado de forma
-  elegante.
+summary: Para capturar erros no Fish, conte com o comando `status` e condicionais.
 title: Tratamento de erros
 weight: 16
 ---

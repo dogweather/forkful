@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:45.177129-07:00
-description: "Refactorizar en programaci\xF3n implica reestructurar el c\xF3digo existente\
-  \ sin cambiar su comportamiento externo, con el objetivo de mejorar atributos no\u2026"
+description: "C\xF3mo hacerlo: La refactorizaci\xF3n puede implicar una gama de t\xE1\
+  cticas desde renombrar variables para mayor claridad hasta alterar la estructura\
+  \ del c\xF3digo\u2026"
 lastmod: '2024-03-13T22:44:59.554943-06:00'
 model: gpt-4-0125-preview
-summary: "Refactorizar en programaci\xF3n implica reestructurar el c\xF3digo existente\
-  \ sin cambiar su comportamiento externo, con el objetivo de mejorar atributos no\
-  \ funcionales como la legibilidad, reducir la complejidad y aumentar la mantenibilidad."
+summary: "La refactorizaci\xF3n puede implicar una gama de t\xE1cticas desde renombrar\
+  \ variables para mayor claridad hasta alterar la estructura del c\xF3digo para una\
+  \ mejor modularizaci\xF3n."
 title: "Refactorizaci\xF3n"
 weight: 19
 ---

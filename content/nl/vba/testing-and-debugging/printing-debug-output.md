@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:45.231882-07:00
-description: "Debuguitvoer afdrukken in Visual Basic for Applications (VBA) houdt\
-  \ in dat je strategisch printopdrachten in je code plaatst om variabelwaarden,\u2026"
+description: "Hoe: In VBA is de `Debug.Print`-opdracht het werkpaard voor het afdrukken\
+  \ van debuginformatie naar het Direct Venster in de Visual Basic Editor (VBE). Om\u2026"
 lastmod: '2024-03-13T22:44:50.639429-06:00'
 model: gpt-4-0125-preview
-summary: Debuguitvoer afdrukken in Visual Basic for Applications (VBA) houdt in dat
-  je strategisch printopdrachten in je code plaatst om variabelwaarden, uitvoeringsstroom
-  of aangepaste debugberichten weer te geven.
+summary: In VBA is de `Debug.Print`-opdracht het werkpaard voor het afdrukken van
+  debuginformatie naar het Direct Venster in de Visual Basic Editor (VBE).
 title: Afdrukken van debug output
 weight: 33
 ---

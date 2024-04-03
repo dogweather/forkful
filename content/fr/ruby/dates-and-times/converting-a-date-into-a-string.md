@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:37:15.489083-07:00
-description: "Transformer une date en cha\xEEne de caract\xE8res, c'est convertir\
-  \ un objet Date en une repr\xE9sentation textuelle. Les d\xE9veloppeurs le font\
-  \ pour l'affichage \xE0\u2026"
+description: 'How to: Ruby rend la conversion des dates super simple. Voici des exemples
+  .'
 lastmod: '2024-03-13T22:44:58.431878-06:00'
 model: gpt-4-1106-preview
-summary: "Transformer une date en cha\xEEne de caract\xE8res, c'est convertir un objet\
-  \ Date en une repr\xE9sentation textuelle."
+summary: Ruby rend la conversion des dates super simple.
 title: "Conversion d'une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---

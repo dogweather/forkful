@@ -2,14 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:09.131525-07:00
-description: "N\u1ED9i suy chu\u1ED7i cho ph\xE9p b\u1EA1n nh\xFAng tr\u1EF1c ti\u1EBF\
-  p c\xE1c bi\u1EBFn v\xE0o trong chu\u1ED7i. \u0110i\u1EC1u n\xE0y r\u1EA5t ti\u1EC7\
-  n l\u1EE3i cho vi\u1EC7c t\u1EA1o ra v\u0103n b\u1EA3n \u0111\u1ED9ng, d\u1EC5 \u0111\
-  \u1ECDc m\xE0 kh\xF4ng c\u1EA7n \u0111\u1EBFn s\u1EF1 gh\xE9p\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: ."
 lastmod: '2024-03-13T22:44:36.582636-06:00'
 model: gpt-4-0125-preview
-summary: "N\u1ED9i suy chu\u1ED7i cho ph\xE9p b\u1EA1n nh\xFAng tr\u1EF1c ti\u1EBF\
-  p c\xE1c bi\u1EBFn v\xE0o trong chu\u1ED7i."
+summary: .
 title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
 weight: 8
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:59.863044-07:00
-description: "Buscar y reemplazar texto en Google Apps Script implica identificar\
-  \ program\xE1ticamente cadenas espec\xEDficas en un documento, hoja de c\xE1lculo\
-  \ o cualquier\u2026"
+description: "C\xF3mo hacerlo: Google Apps Script ofrece una manera directa de buscar\
+  \ y reemplazar texto, especialmente dentro de Google Docs y Sheets. A continuaci\xF3\
+  n, se\u2026"
 lastmod: '2024-03-13T22:44:58.504785-06:00'
 model: gpt-4-0125-preview
-summary: "Buscar y reemplazar texto en Google Apps Script implica identificar program\xE1\
-  ticamente cadenas espec\xEDficas en un documento, hoja de c\xE1lculo o cualquier\
-  \ otro tipo de contenido de Google Apps, y sustituirlas con otros valores de texto."
+summary: Google Apps Script ofrece una manera directa de buscar y reemplazar texto,
+  especialmente dentro de Google Docs y Sheets.
 title: Buscando y reemplazando texto
 weight: 10
 ---

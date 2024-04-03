@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:25.365706-07:00
-description: "Debug-output afdrukken is als het achterlaten van broodkruimels in je\
-  \ code: het toont het spoor van gegevens en logische stroom tijdens de uitvoering.\u2026"
+description: 'Hoe te: In Clojure print je vaak debug-output met behulp van `println`,
+  `printf`, `pr`, of `prn`. Hier is hoe je wat debug-prints toevoegt.'
 lastmod: '2024-03-13T22:44:50.422228-06:00'
 model: gpt-4-0125-preview
-summary: 'Debug-output afdrukken is als het achterlaten van broodkruimels in je code:
-  het toont het spoor van gegevens en logische stroom tijdens de uitvoering.'
+summary: In Clojure print je vaak debug-output met behulp van `println`, `printf`,
+  `pr`, of `prn`.
 title: Debug-output afdrukken
 weight: 33
 ---

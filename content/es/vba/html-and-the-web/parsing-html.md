@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:01.170809-07:00
-description: "Parsear HTML en Visual Basic for Applications (VBA) implica extraer\
-  \ informaci\xF3n espec\xEDfica de un documento HTML. Los programadores lo hacen\
-  \ para\u2026"
+description: "C\xF3mo hacerlo: En VBA, puedes parsear HTML usando la `Biblioteca de\
+  \ Objetos HTML de Microsoft`. Agrega una referencia a esta biblioteca en tu editor\
+  \ de VBA\u2026"
 lastmod: '2024-03-13T22:44:58.890572-06:00'
 model: gpt-4-0125-preview
-summary: "Parsear HTML en Visual Basic for Applications (VBA) implica extraer informaci\xF3\
-  n espec\xEDfica de un documento HTML."
+summary: En VBA, puedes parsear HTML usando la `Biblioteca de Objetos HTML de Microsoft`.
 title: Analizando HTML
 weight: 43
 ---

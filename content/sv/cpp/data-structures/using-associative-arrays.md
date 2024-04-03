@@ -2,14 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:24.072921-07:00
-description: "Associativa arrayer, k\xE4nda som `std::map` eller `std::unordered_map`\
-  \ i C++, \xF6verbryggar klyftan mellan arrayindex och verkliga data, vilket l\xE5\
-  ter dig\u2026"
+description: "Hur man g\xF6r: I C++ f\xE5r associativa arrayer liv med `<map>` och\
+  \ `<unordered_map>`-biblioteken. L\xE5t oss bryta ner exempel f\xF6r att se b\xE5\
+  da i aktion. #."
 lastmod: '2024-03-13T22:44:38.202066-06:00'
 model: gpt-4-0125-preview
-summary: "Associativa arrayer, k\xE4nda som `std::map` eller `std::unordered_map`\
-  \ i C++, \xF6verbryggar klyftan mellan arrayindex och verkliga data, vilket l\xE5\
-  ter dig anv\xE4nda meningsfulla nycklar."
+summary: "I C++ f\xE5r associativa arrayer liv med `<map>` och `<unordered_map>`-biblioteken."
 title: "Att anv\xE4nda associativa arrayer"
 weight: 15
 ---

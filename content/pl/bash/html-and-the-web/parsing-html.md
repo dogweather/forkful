@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:40.226667-07:00
-description: "Parsowanie HTML oznacza przeszukiwanie struktury i zawarto\u015Bci pliku\
-  \ HTML w celu wydobycia informacji. Programi\u015Bci robi\u0105 to, aby uzyska\u0107\
-  \ dost\u0119p do danych,\u2026"
+description: "Jak to zrobi\u0107: Bash nie jest pierwszym wyborem do parsowania HTML,\
+  \ ale mo\u017Cna to zrobi\u0107 przy u\u017Cyciu narz\u0119dzi takich jak `grep`,\
+  \ `awk`, `sed` lub\u2026"
 lastmod: '2024-03-13T22:44:35.582822-06:00'
 model: gpt-4-0125-preview
-summary: "Parsowanie HTML oznacza przeszukiwanie struktury i zawarto\u015Bci pliku\
-  \ HTML w celu wydobycia informacji."
+summary: "Bash nie jest pierwszym wyborem do parsowania HTML, ale mo\u017Cna to zrobi\u0107\
+  \ przy u\u017Cyciu narz\u0119dzi takich jak `grep`, `awk`, `sed` lub zewn\u0119\
+  trznych narz\u0119dzi takich jak `lynx`."
 title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---

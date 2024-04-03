@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:22.715444-07:00
-description: "Pisanie do standardowego b\u0142\u0119du (stderr) w Go polega na kierowaniu\
-  \ komunikat\xF3w o b\u0142\u0119dach lub diagnoz nieprzeznaczonych dla g\u0142\xF3\
-  wnego strumienia wyj\u015Bciowego.\u2026"
+description: "Jak to zrobi\u0107: W Go pakiet `os` dostarcza warto\u015B\u0107 `Stderr`,\
+  \ reprezentuj\u0105c\u0105 plik ze standardowym b\u0142\u0119dem. Mo\u017Cesz go\
+  \ u\u017Cy\u0107 z funkcjami `fmt.Fprint`,\u2026"
 lastmod: '2024-03-13T22:44:34.870969-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie do standardowego b\u0142\u0119du (stderr) w Go polega na kierowaniu\
-  \ komunikat\xF3w o b\u0142\u0119dach lub diagnoz nieprzeznaczonych dla g\u0142\xF3\
-  wnego strumienia wyj\u015Bciowego."
+summary: "W Go pakiet `os` dostarcza warto\u015B\u0107 `Stderr`, reprezentuj\u0105\
+  c\u0105 plik ze standardowym b\u0142\u0119dem."
 title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---

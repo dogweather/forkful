@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:20.173020-07:00
-description: "L'analyse d'une date \xE0 partir d'une cha\xEEne de caract\xE8res consiste\
-  \ \xE0 convertir un texte repr\xE9sentant une date en un objet `Date` ou `DateTime`\
-  \ que Ruby\u2026"
+description: "Comment faire : En Ruby, la biblioth\xE8que standard fournit des moyens\
+  \ directs pour analyser les dates \xE0 partir de cha\xEEnes de caract\xE8res en\
+  \ utilisant les\u2026"
 lastmod: '2024-03-13T22:44:58.429721-06:00'
 model: gpt-4-0125-preview
-summary: "L'analyse d'une date \xE0 partir d'une cha\xEEne de caract\xE8res consiste\
-  \ \xE0 convertir un texte repr\xE9sentant une date en un objet `Date` ou `DateTime`\
-  \ que Ruby comprend."
+summary: "En Ruby, la biblioth\xE8que standard fournit des moyens directs pour analyser\
+  \ les dates \xE0 partir de cha\xEEnes de caract\xE8res en utilisant les classes\
+  \ `Date` et `DateTime`."
 title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
 weight: 30
 ---

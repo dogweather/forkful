@@ -2,14 +2,16 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:29.137653-07:00
-description: "Ottenere la data corrente in Python \xE8 un'operazione fondamentale\
-  \ per molte applicazioni, come la registrazione degli eventi (logging), l'analisi\
-  \ dei dati\u2026"
+description: "Come fare: **Utilizzando la libreria standard `datetime`:** Il modulo\
+  \ `datetime` nella libreria standard di Python fornisce classi per manipolare date\
+  \ e\u2026"
 lastmod: '2024-03-13T22:44:43.011470-06:00'
 model: gpt-4-0125-preview
-summary: "Ottenere la data corrente in Python \xE8 un'operazione fondamentale per\
-  \ molte applicazioni, come la registrazione degli eventi (logging), l'analisi dei\
-  \ dati e la presa di decisioni basate sul tempo."
+summary: '**Utilizzando la libreria standard `datetime`:**
+
+
+  Il modulo `datetime` nella libreria standard di Python fornisce classi per manipolare
+  date e orari.'
 title: Ottenere la data corrente
 weight: 29
 ---

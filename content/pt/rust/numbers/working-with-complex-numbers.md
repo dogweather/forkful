@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 04:45:22.661164-07:00
-description: "N\xFAmeros complexos possuem uma parte real e uma parte imagin\xE1ria\
-  \ e s\xE3o cruciais em diversas \xE1reas, como engenharia, f\xEDsica e gr\xE1ficos\
-  \ de computador.\u2026"
+description: "Como fazer: Rust n\xE3o tem suporte embutido para n\xFAmeros complexos,\
+  \ mas crates como `num-complex` est\xE3o aqui para ajudar. Veja como usar."
 lastmod: '2024-03-13T22:44:46.361782-06:00'
 model: gpt-4-0125-preview
-summary: "N\xFAmeros complexos possuem uma parte real e uma parte imagin\xE1ria e\
-  \ s\xE3o cruciais em diversas \xE1reas, como engenharia, f\xEDsica e gr\xE1ficos\
-  \ de computador."
+summary: "Rust n\xE3o tem suporte embutido para n\xFAmeros complexos, mas crates como\
+  \ `num-complex` est\xE3o aqui para ajudar."
 title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---

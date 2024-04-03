@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:04.269480-07:00
-description: "Pobieranie aktualnej daty w projektach Arduino polega na uzyskiwaniu\
-  \ informacji w czasie rzeczywistym, co mo\u017Ce by\u0107 kluczowe do logowania,\
-  \ stemplowania\u2026"
+description: "Jak to zrobi\u0107: Arduino samo w sobie nie ma wbudowanej metody bezpo\u015B\
+  redniego pobierania aktualnej daty, poniewa\u017C brakuje mu zegara czasu rzeczywistego\u2026"
 lastmod: '2024-03-13T22:44:35.681772-06:00'
 model: gpt-4-0125-preview
-summary: "Pobieranie aktualnej daty w projektach Arduino polega na uzyskiwaniu informacji\
-  \ w czasie rzeczywistym, co mo\u017Ce by\u0107 kluczowe do logowania, stemplowania\
-  \ czasowego czy planowania zada\u0144."
+summary: "Arduino samo w sobie nie ma wbudowanej metody bezpo\u015Bredniego pobierania\
+  \ aktualnej daty, poniewa\u017C brakuje mu zegara czasu rzeczywistego (RTC)."
 title: Pobieranie aktualnej daty
 weight: 29
 ---

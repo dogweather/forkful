@@ -1,11 +1,11 @@
 ---
 date: 2024-03-08 21:33:36.306932-07:00
-description: "Extracting substrings is about retrieving specific portions of a string\
-  \ based on their positions or patterns. Programmers do this for tasks such as\u2026"
+description: "How to: In Dart, you can use various methods to extract substrings,\
+  \ such as `substring()`, `split()`, and regular expressions. Each method serves\u2026"
 lastmod: '2024-03-13T22:44:59.810532-06:00'
 model: gpt-4-0125-preview
-summary: Extracting substrings is about retrieving specific portions of a string based
-  on their positions or patterns.
+summary: In Dart, you can use various methods to extract substrings, such as `substring()`,
+  `split()`, and regular expressions.
 title: Extracting substrings
 weight: 6
 ---

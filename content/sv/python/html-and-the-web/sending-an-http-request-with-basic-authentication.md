@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 18:02:36.364267-07:00
-description: "HTTP-beg\xE4ran med grundl\xE4ggande autentisering anv\xE4nds f\xF6\
-  r att s\xE4kert skicka anv\xE4ndarnamn och l\xF6senord \xF6ver n\xE4tet. Programmerare\
-  \ g\xF6r detta f\xF6r att\u2026"
+description: "Hur man g\xF6r: S\xE4tta upp och g\xF6ra en HTTP-beg\xE4ran i Python\
+  \ med basic auth \xE4r enkelt. Anv\xE4nd `requests`-biblioteket f\xF6r effektivitet."
 lastmod: '2024-03-13T22:44:37.482720-06:00'
 model: gpt-4-1106-preview
-summary: "HTTP-beg\xE4ran med grundl\xE4ggande autentisering anv\xE4nds f\xF6r att\
-  \ s\xE4kert skicka anv\xE4ndarnamn och l\xF6senord \xF6ver n\xE4tet."
+summary: "S\xE4tta upp och g\xF6ra en HTTP-beg\xE4ran i Python med basic auth \xE4\
+  r enkelt."
 title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
 weight: 45
 ---

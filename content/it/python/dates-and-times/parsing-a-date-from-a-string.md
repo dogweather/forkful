@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:01.716180-07:00
-description: "L'analisi di una data da una stringa implica la conversione di informazioni\
-  \ testuali su data e ora in un oggetto datetime o in un formato strutturato\u2026"
+description: "Come fare: La libreria standard di Python fornisce il modulo `datetime`,\
+  \ che include il metodo `strptime` per questo scopo. Il metodo richiede due\u2026"
 lastmod: '2024-03-13T22:44:43.010434-06:00'
 model: gpt-4-0125-preview
-summary: L'analisi di una data da una stringa implica la conversione di informazioni
-  testuali su data e ora in un oggetto datetime o in un formato strutturato equivalente.
+summary: La libreria standard di Python fornisce il modulo `datetime`, che include
+  il metodo `strptime` per questo scopo.
 title: Analisi di una data da una stringa
 weight: 30
 ---

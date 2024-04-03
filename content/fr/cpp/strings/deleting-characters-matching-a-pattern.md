@@ -1,13 +1,11 @@
 ---
 date: 2024-01-20 17:41:48.811914-07:00
-description: "En C++, supprimer des caract\xE8res qui correspondent \xE0 un motif\
-  \ s\u2019av\xE8re utile pour nettoyer des strings, valider des entr\xE9es, ou pour\
-  \ tout traitement de\u2026"
+description: "How to: Regardons comment effacer des caract\xE8res d'une string en\
+  \ utilisant des regex et la librairie standard ."
 lastmod: '2024-03-13T22:44:58.142841-06:00'
 model: gpt-4-1106-preview
-summary: "En C++, supprimer des caract\xE8res qui correspondent \xE0 un motif s\u2019\
-  av\xE8re utile pour nettoyer des strings, valider des entr\xE9es, ou pour tout traitement\
-  \ de texte personnalis\xE9."
+summary: "Regardons comment effacer des caract\xE8res d'une string en utilisant des\
+  \ regex et la librairie standard."
 title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---

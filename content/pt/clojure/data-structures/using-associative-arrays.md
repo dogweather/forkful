@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:43.372369-07:00
-description: "Arrays associativos, ou mapas hash, em Clojure permitem que voc\xEA\
-  \ armazene e recupere dados com pares de chave-valor. Eles s\xE3o uma escolha principal\
-  \ para\u2026"
+description: "Como fazer: Em Clojure, criar e manipular arrays associativos (mapas\
+  \ hash) \xE9 simples. Vamos mergulhar com exemplos. Para criar um mapa hash."
 lastmod: '2024-03-13T22:44:46.189910-06:00'
 model: gpt-4-0125-preview
-summary: "Arrays associativos, ou mapas hash, em Clojure permitem que voc\xEA armazene\
-  \ e recupere dados com pares de chave-valor."
+summary: "Em Clojure, criar e manipular arrays associativos (mapas hash) \xE9 simples."
 title: Usando arrays associativos
 weight: 15
 ---

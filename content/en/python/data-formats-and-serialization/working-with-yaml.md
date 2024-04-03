@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:03:18.646002-07:00
-description: "YAML, which stands for YAML Ain't Markup Language, is a human-readable\
-  \ data serialization format. Programmers use YAML for configuration files, inter-\u2026"
+description: "How to: Reading and writing YAML in Python typically involves the use\
+  \ of a third-party library, with `PyYAML` being the most popular. To get started,\u2026"
 lastmod: '2024-03-13T22:44:59.725992-06:00'
 model: gpt-4-0125-preview
-summary: YAML, which stands for YAML Ain't Markup Language, is a human-readable data
-  serialization format.
+summary: Reading and writing YAML in Python typically involves the use of a third-party
+  library, with `PyYAML` being the most popular.
 title: Working with YAML
 weight: 41
 ---

@@ -2,16 +2,17 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:48.721039-07:00
-description: "Vi\u1EC7c t\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n trong\
-  \ Visual Basic cho \u1EE8ng d\u1EE5ng (VBA) l\xE0 thi\u1EBFt y\u1EBFu \u0111\u1EC3\
-  \ ch\u1EC9nh s\u1EEDa c\xE1c t\xE0i li\u1EC7u, b\u1EA3ng t\xEDnh v\xE0 c\u01A1 s\u1EDF\
-  \ d\u1EEF li\u1EC7u m\u1ED9t c\xE1ch l\u1EADp\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong VBA, vi\u1EC7c t\xECm ki\u1EBFm v\xE0\
+  \ thay th\u1EBF v\u0103n b\u1EA3n c\xF3 th\u1EC3 \u0111\u01B0\u1EE3c th\u1EF1c hi\u1EC7\
+  n b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng h\xE0m `Replace` ho\u1EB7c th\xF4ng qua c\xE1\
+  c m\xF4 h\xECnh \u0111\u1ED1i t\u01B0\u1EE3ng c\u1EE5\u2026"
 lastmod: '2024-03-13T22:44:36.412684-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c t\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n trong Visual\
-  \ Basic cho \u1EE8ng d\u1EE5ng (VBA) l\xE0 thi\u1EBFt y\u1EBFu \u0111\u1EC3 ch\u1EC9\
-  nh s\u1EEDa c\xE1c t\xE0i li\u1EC7u, b\u1EA3ng t\xEDnh v\xE0 c\u01A1 s\u1EDF d\u1EEF\
-  \ li\u1EC7u m\u1ED9t c\xE1ch l\u1EADp tr\xECnh."
+summary: "Trong VBA, vi\u1EC7c t\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3\
+  n c\xF3 th\u1EC3 \u0111\u01B0\u1EE3c th\u1EF1c hi\u1EC7n b\u1EB1ng c\xE1ch s\u1EED\
+  \ d\u1EE5ng h\xE0m `Replace` ho\u1EB7c th\xF4ng qua c\xE1c m\xF4 h\xECnh \u0111\u1ED1\
+  i t\u01B0\u1EE3ng c\u1EE5 th\u1EC3 trong c\xE1c \u1EE9ng d\u1EE5ng nh\u01B0 Excel\
+  \ hay Word."
 title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
 weight: 10
 ---

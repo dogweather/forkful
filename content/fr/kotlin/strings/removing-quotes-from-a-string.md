@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 03:40:25.443234-07:00
-description: "Retirer les guillemets d'une cha\xEEne signifie \xE9liminer toute occurrence\
-  \ de caract\xE8res de guillemets, qu'ils soient simples (' ') ou doubles (\" \"\
-  ), des\u2026"
+description: "Comment faire : Voici une mani\xE8re simple d'enlever les deux types\
+  \ de guillemets d'une cha\xEEne en Kotlin ."
 lastmod: '2024-03-13T22:44:57.723871-06:00'
 model: gpt-4-0125-preview
-summary: "Retirer les guillemets d'une cha\xEEne signifie \xE9liminer toute occurrence\
-  \ de caract\xE8res de guillemets, qu'ils soient simples (' ') ou doubles (\" \"\
-  ), des donn\xE9es textuelles avec lesquelles vous travaillez."
+summary: "Voici une mani\xE8re simple d'enlever les deux types de guillemets d'une\
+  \ cha\xEEne en Kotlin."
 title: "Retirer les guillemets d'une cha\xEEne"
 weight: 9
 ---

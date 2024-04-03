@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:00:12.766394-07:00
-description: "Parsowanie daty ze stringa w j\u0119zyku C polega na konwersji tekstowych\
-  \ reprezentacji dat na format, kt\xF3ry programy mog\u0105 bardziej efektywnie manipulowa\u0107\
-  \ i\u2026"
+description: "Jak to zrobi\u0107: C nie oferuje wbudowanego sposobu na bezpo\u015B\
+  rednie parsowanie dat z ci\u0105g\xF3w znak\xF3w, wi\u0119c cz\u0119sto korzystamy\
+  \ z funkcji `strptime`, dost\u0119pnej w\u2026"
 lastmod: '2024-03-13T22:44:35.896737-06:00'
 model: gpt-4-0125-preview
-summary: "Parsowanie daty ze stringa w j\u0119zyku C polega na konwersji tekstowych\
-  \ reprezentacji dat na format, kt\xF3ry programy mog\u0105 bardziej efektywnie manipulowa\u0107\
-  \ i analizowa\u0107."
+summary: "C nie oferuje wbudowanego sposobu na bezpo\u015Brednie parsowanie dat z\
+  \ ci\u0105g\xF3w znak\xF3w, wi\u0119c cz\u0119sto korzystamy z funkcji `strptime`,\
+  \ dost\u0119pnej w bibliotece `<time.h>` dla system\xF3w POSIX."
 title: "Analiza sk\u0142adniowa daty z ci\u0105gu znak\xF3w"
 weight: 30
 ---

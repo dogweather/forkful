@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:25.348863-07:00
-description: "L'interpolation de cha\xEEnes dans Google Apps Script permet d'incorporer\
-  \ dynamiquement des expressions au sein des cha\xEEnes, facilitant ainsi la cr\xE9\
-  ation\u2026"
+description: "Comment faire : Dans Google Apps Script, l'interpolation de cha\xEE\
+  nes est r\xE9alis\xE9e \xE0 travers les litt\xE9raux de gabarit. Il s'agit de litt\xE9\
+  raux de cha\xEEnes\u2026"
 lastmod: '2024-03-13T22:44:57.167669-06:00'
 model: gpt-4-0125-preview
-summary: "L'interpolation de cha\xEEnes dans Google Apps Script permet d'incorporer\
-  \ dynamiquement des expressions au sein des cha\xEEnes, facilitant ainsi la cr\xE9\
-  ation d'un code plus lisible et plus facile \xE0 maintenir."
+summary: "Dans Google Apps Script, l'interpolation de cha\xEEnes est r\xE9alis\xE9\
+  e \xE0 travers les litt\xE9raux de gabarit."
 title: "Interpolation d'une cha\xEEne de caract\xE8res"
 weight: 8
 ---

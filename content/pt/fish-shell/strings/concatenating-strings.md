@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:34:33.755972-07:00
-description: "Concatenar strings \xE9 simplesmente juntar duas ou mais sequ\xEAncias\
-  \ de caracteres para formar uma nova. Programadores fazem isso para construir mensagens,\u2026"
+description: 'Como Fazer: .'
 lastmod: '2024-03-13T22:44:46.996052-06:00'
 model: gpt-4-1106-preview
-summary: "Concatenar strings \xE9 simplesmente juntar duas ou mais sequ\xEAncias de\
-  \ caracteres para formar uma nova."
+summary: .
 title: Concatenando strings
 weight: 3
 ---

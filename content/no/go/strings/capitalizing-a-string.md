@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:38.581830-07:00
-description: "\xC5 kapitalisere en streng inneb\xE6rer \xE5 omdanne det f\xF8rste\
-  \ tegnet i en gitt streng til stor bokstav hvis det er i sm\xE5 bokstaver, for \xE5\
-  \ s\xF8rge for at strengen\u2026"
+description: "Hvordan: I Go gir ikke `strings`-pakken en direkte funksjon for \xE5\
+  \ kapitalisere kun det f\xF8rste bokstaven i en streng. Derfor kombinerer vi funksjonen\u2026"
 lastmod: '2024-03-13T22:44:40.246469-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 kapitalisere en streng inneb\xE6rer \xE5 omdanne det f\xF8rste tegnet\
-  \ i en gitt streng til stor bokstav hvis det er i sm\xE5 bokstaver, for \xE5 s\xF8\
-  rge for at strengen skiller seg ut eller overholder spesifikke grammatiske normer."
+summary: "I Go gir ikke `strings`-pakken en direkte funksjon for \xE5 kapitalisere\
+  \ kun det f\xF8rste bokstaven i en streng."
 title: Sette stor bokstav i en streng
 weight: 2
 ---

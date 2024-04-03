@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 01:06:52.431830-07:00
-description: "La registrazione (logging), in sostanza, \xE8 la pratica di annotare\
-  \ eventi e dati da un'applicazione software su un output esterno, come un file o\
-  \ la\u2026"
+description: "Come fare: In Kotlin, la registrazione pu\xF2 essere effettuata utilizzando\
+  \ la funzione integrata `println()` per casi semplici, o con librerie pi\xF9\u2026"
 lastmod: '2024-03-13T22:44:43.397245-06:00'
 model: gpt-4-1106-preview
-summary: "La registrazione (logging), in sostanza, \xE8 la pratica di annotare eventi\
-  \ e dati da un'applicazione software su un output esterno, come un file o la console."
+summary: "In Kotlin, la registrazione pu\xF2 essere effettuata utilizzando la funzione\
+  \ integrata `println()` per casi semplici, o con librerie pi\xF9 sofisticate come\
+  \ SLF4J con Logback o Log4j per esigenze avanzate."
 title: "Registrazione delle Attivit\xE0 (Logging)"
 weight: 17
 ---

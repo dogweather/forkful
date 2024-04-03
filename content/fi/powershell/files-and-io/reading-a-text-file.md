@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:54:49.027823-07:00
-description: "Tekstitiedoston lukeminen tarkoittaa tiedon hakemista tavallisen tekstimuotoisen\
-  \ tiedoston sis\xE4lt\xE4. Ohjelmoijat lukevat tekstitiedostoja, koska monet\u2026"
+description: "How to: (Kuinka tehd\xE4\xE4n:) PowerShellissa tekstitiedoston lukeminen\
+  \ on suoraviivaista. T\xE4ss\xE4 pari esimerkki\xE4: Tiedoston lukeminen kokonaisuudessaan."
 lastmod: '2024-03-13T22:44:56.799900-06:00'
 model: gpt-4-1106-preview
-summary: "Tekstitiedoston lukeminen tarkoittaa tiedon hakemista tavallisen tekstimuotoisen\
-  \ tiedoston sis\xE4lt\xE4."
+summary: PowerShellissa tekstitiedoston lukeminen on suoraviivaista.
 title: Tekstitiedoston lukeminen
 weight: 22
 ---

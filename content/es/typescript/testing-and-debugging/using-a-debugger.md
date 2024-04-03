@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:10:58.945322-07:00
-description: "Para empezar con un depurador en TypeScript, todo lo que necesita es\
-  \ un IDE compatible (como Visual Studio Code) y una configuraci\xF3n `launch.json`.\
-  \ Aqu\xED\u2026"
+description: "C\xF3mo hacerlo: Para empezar con un depurador en TypeScript, todo lo\
+  \ que necesita es un IDE compatible (como Visual Studio Code) y una configuraci\xF3\
+  n\u2026"
 lastmod: '2024-03-13T22:44:58.805760-06:00'
 model: gpt-4-0125-preview
 summary: "Para empezar con un depurador en TypeScript, todo lo que necesita es un\
-  \ IDE compatible (como Visual Studio Code) y una configuraci\xF3n `launch."
+  \ IDE compatible (como Visual Studio Code) y una configuraci\xF3n `launch.json`."
 title: Usando un depurador
 weight: 35
 ---

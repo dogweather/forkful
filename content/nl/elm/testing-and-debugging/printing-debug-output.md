@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:35.206884-07:00
-description: "Debugoutput afdrukken in Elm gaat over het weergeven van waarden in\
-  \ de console om te begrijpen wat er in je code gebeurt. We doen dit om bugs op te\
-  \ sporen\u2026"
+description: 'Hoe te: Elm heeft geen ingebouwde `print` functie zoals sommige talen,
+  maar je kunt de `Debug` module gebruiken voor de console output.'
 lastmod: '2024-03-13T22:44:50.727488-06:00'
 model: gpt-4-0125-preview
-summary: Debugoutput afdrukken in Elm gaat over het weergeven van waarden in de console
-  om te begrijpen wat er in je code gebeurt.
+summary: Elm heeft geen ingebouwde `print` functie zoals sommige talen, maar je kunt
+  de `Debug` module gebruiken voor de console output.
 title: Debug-output afdrukken
 weight: 33
 ---

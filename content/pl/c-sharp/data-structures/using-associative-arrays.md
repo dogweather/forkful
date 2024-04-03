@@ -2,13 +2,13 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:08.647715-07:00
-description: "Tablice asocjacyjne, czyli s\u0142owniki w C#, pozwalaj\u0105 przechowywa\u0107\
-  \ i zarz\u0105dza\u0107 parami kluczy i warto\u015Bci. S\u0105 Twoim pierwszym wyborem,\
-  \ gdy potrzebujesz szybko\u2026"
+description: "Jak u\u017Cywa\u0107: W C# pracujesz z tablicami asocjacyjnymi za pomoc\u0105\
+  \ klasy `Dictionary<TKey, TValue>`. Oto kr\xF3tki przyk\u0142ad, aby zacz\u0105\u0107\
+  ."
 lastmod: '2024-03-13T22:44:35.401377-06:00'
 model: gpt-4-0125-preview
-summary: "Tablice asocjacyjne, czyli s\u0142owniki w C#, pozwalaj\u0105 przechowywa\u0107\
-  \ i zarz\u0105dza\u0107 parami kluczy i warto\u015Bci."
+summary: "W C# pracujesz z tablicami asocjacyjnymi za pomoc\u0105 klasy `Dictionary<TKey,\
+  \ TValue>`."
 title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---

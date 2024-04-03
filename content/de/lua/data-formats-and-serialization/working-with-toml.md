@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:24:02.645470-07:00
-description: "Die Arbeit mit TOML umfasst das Parsen und Generieren von TOML-Daten\
-  \ (Tom's Offensichtliche, Minimale Sprache) mit Lua. Programmierer nutzen TOML f\xFC\
-  r\u2026"
+description: "Wie geht das: Stellen Sie zun\xE4chst sicher, dass Ihre Lua-Umgebung\
+  \ einen TOML-Parser hat. Wir verwenden f\xFCr dieses Beispiel `lua-toml`."
 lastmod: '2024-03-13T22:44:54.038740-06:00'
 model: gpt-4-0125-preview
-summary: Die Arbeit mit TOML umfasst das Parsen und Generieren von TOML-Daten (Tom's
-  Offensichtliche, Minimale Sprache) mit Lua.
+summary: "Stellen Sie zun\xE4chst sicher, dass Ihre Lua-Umgebung einen TOML-Parser\
+  \ hat."
 title: Arbeiten mit TOML
 weight: 39
 ---

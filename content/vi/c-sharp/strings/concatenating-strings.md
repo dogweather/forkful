@@ -2,14 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:01.261588-07:00
-description: "N\u1ED1i chu\u1ED7i l\xE0 qu\xE1 tr\xECnh gh\xE9p c\xE1c chu\u1ED7i\
-  \ l\u1EA1i v\u1EDBi nhau t\u1EEB \u0111\u1EA7u \u0111\u1EBFn cu\u1ED1i. Ch\xFAng\
-  \ ta th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y v\xEC th\u01B0\u1EDDng xuy\xEAn ch\xFA\
-  ng ta c\u1EA7n k\u1EBFt h\u1EE3p c\xE1c t\u1EEB ho\u1EB7c bi\u1EC3u\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: N\u1ED1i chu\u1ED7i trong C# c\xF3 th\u1EC3\
+  \ \u0111\u01B0\u1EE3c th\u1EF1c hi\u1EC7n theo v\xE0i c\xE1ch: S\u1EED d\u1EE5ng\
+  \ to\xE1n t\u1EED `+`."
 lastmod: '2024-03-13T22:44:36.646637-06:00'
 model: gpt-4-0125-preview
-summary: "N\u1ED1i chu\u1ED7i l\xE0 qu\xE1 tr\xECnh gh\xE9p c\xE1c chu\u1ED7i l\u1EA1\
-  i v\u1EDBi nhau t\u1EEB \u0111\u1EA7u \u0111\u1EBFn cu\u1ED1i."
+summary: "N\u1ED1i chu\u1ED7i trong C# c\xF3 th\u1EC3 \u0111\u01B0\u1EE3c th\u1EF1\
+  c hi\u1EC7n theo v\xE0i c\xE1ch."
 title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 weight: 3
 ---

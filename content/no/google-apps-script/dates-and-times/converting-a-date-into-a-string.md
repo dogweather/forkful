@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:57.856992-07:00
-description: "Konvertering av datoer til strenger er en grunnleggende oppgave som\
-  \ gj\xF8r det mulig for programmerere \xE5 manipulere og vise datoinformasjon i\
-  \ et\u2026"
+description: "Hvordan: Google Apps Script, som er basert p\xE5 JavaScript, gir flere\
+  \ metoder for \xE5 oppn\xE5 konverteringen av datoer til strenger. Nedenfor er noen\
+  \ eksempler\u2026"
 lastmod: '2024-03-13T22:44:40.328046-06:00'
 model: gpt-4-0125-preview
-summary: "Konvertering av datoer til strenger er en grunnleggende oppgave som gj\xF8\
-  r det mulig for programmerere \xE5 manipulere og vise datoinformasjon i et menneskelesbart\
-  \ format."
+summary: "Google Apps Script, som er basert p\xE5 JavaScript, gir flere metoder for\
+  \ \xE5 oppn\xE5 konverteringen av datoer til strenger."
 title: "\xC5 konvertere en dato til en streng"
 weight: 28
 ---

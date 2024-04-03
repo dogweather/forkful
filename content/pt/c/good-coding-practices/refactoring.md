@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:43.239130-07:00
-description: "Refatora\xE7\xE3o em programa\xE7\xE3o envolve reestruturar o c\xF3\
-  digo existente sem alterar seu comportamento externo, visando melhorar atributos\
-  \ n\xE3o funcionais, como\u2026"
+description: "Como: A refatora\xE7\xE3o pode envolver uma s\xE9rie de t\xE1ticas,\
+  \ desde renomear vari\xE1veis para mais clareza at\xE9 alterar a estrutura do c\xF3\
+  digo para melhor\u2026"
 lastmod: '2024-03-13T22:44:47.059370-06:00'
 model: gpt-4-0125-preview
-summary: "Refatora\xE7\xE3o em programa\xE7\xE3o envolve reestruturar o c\xF3digo\
-  \ existente sem alterar seu comportamento externo, visando melhorar atributos n\xE3\
-  o funcionais, como legibilidade, redu\xE7\xE3o de complexidade e aumento da manutenibilidade."
+summary: "A refatora\xE7\xE3o pode envolver uma s\xE9rie de t\xE1ticas, desde renomear\
+  \ vari\xE1veis para mais clareza at\xE9 alterar a estrutura do c\xF3digo para melhor\
+  \ modulariza\xE7\xE3o."
 title: "Refatora\xE7\xE3o"
 weight: 19
 ---

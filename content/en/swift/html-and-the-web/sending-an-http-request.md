@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 18:01:01.729578-07:00
-description: "Sending an HTTP request is about knocking on a web server's door, asking\
-  \ for data or serving some. Programmers do it to interact with APIs, download\u2026"
+description: 'How to: Swift makes it straightforward to send HTTP requests using the
+  `URLSession` class. Here''s a simple GET request example.'
 lastmod: '2024-03-13T22:45:00.393545-06:00'
 model: gpt-4-1106-preview
-summary: Sending an HTTP request is about knocking on a web server's door, asking
-  for data or serving some.
+summary: Swift makes it straightforward to send HTTP requests using the `URLSession`
+  class.
 title: Sending an HTTP request
 weight: 44
 ---

@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:15.359840-07:00
-description: "Buscar y reemplazar texto en Visual Basic para Aplicaciones (VBA) es\
-  \ esencial para editar documentos, hojas de c\xE1lculo y bases de datos program\xE1\
-  ticamente.\u2026"
+description: "C\xF3mo hacerlo: En VBA, buscar y reemplazar texto se puede lograr usando\
+  \ la funci\xF3n `Replace` o a trav\xE9s de modelos de objetos espec\xEDficos en\
+  \ aplicaciones\u2026"
 lastmod: '2024-03-13T22:44:58.874249-06:00'
 model: gpt-4-0125-preview
-summary: "Buscar y reemplazar texto en Visual Basic para Aplicaciones (VBA) es esencial\
-  \ para editar documentos, hojas de c\xE1lculo y bases de datos program\xE1ticamente."
+summary: "En VBA, buscar y reemplazar texto se puede lograr usando la funci\xF3n `Replace`\
+  \ o a trav\xE9s de modelos de objetos espec\xEDficos en aplicaciones como Excel\
+  \ o Word."
 title: Buscando y reemplazando texto
 weight: 10
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:39:11.241380-07:00
-description: "Converting a string to lowercase means making every character in the\
-  \ string a small letter. Programmers do it for consistency, especially for case-\u2026"
+description: 'How to: In TypeScript, making a string lowercase is a piece of cake.
+  Just call `.toLowerCase()` on your string. Here''s how.'
 lastmod: '2024-03-13T22:44:59.846872-06:00'
 model: gpt-4-1106-preview
-summary: Converting a string to lowercase means making every character in the string
-  a small letter.
+summary: In TypeScript, making a string lowercase is a piece of cake.
 title: Converting a string to lower case
 weight: 4
 ---

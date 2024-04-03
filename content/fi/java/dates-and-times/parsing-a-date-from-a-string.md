@@ -2,14 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:33.339772-07:00
-description: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta tarkoittaa p\xE4\
-  iv\xE4m\xE4\xE4r\xE4n ja ajan tekstiesityksen muuntamista `Date`-objektiksi tai\
-  \ modernimmaksi\u2026"
+description: 'Kuinka: #.'
 lastmod: '2024-03-13T22:44:56.454632-06:00'
 model: gpt-4-0125-preview
-summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta tarkoittaa p\xE4iv\xE4\
-  m\xE4\xE4r\xE4n ja ajan tekstiesityksen muuntamista `Date`-objektiksi tai modernimmaksi\
-  \ `LocalDateTime`-objektiksi."
+summary: '#.'
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
 weight: 30
 ---

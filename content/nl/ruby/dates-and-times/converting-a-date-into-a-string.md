@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:51.709248-07:00
-description: "Het converteren van een datum naar een string zet het datumobject om\
-  \ in tekst die we kunnen lezen en gebruiken. Programmeurs doen dit om datums in\
-  \ een\u2026"
+description: 'Hoe: Ruby maakt het super eenvoudig om met datums en strings te spelen.
+  Hier is hoe je het doet.'
 lastmod: '2024-03-13T22:44:51.350173-06:00'
 model: gpt-4-0125-preview
-summary: Het converteren van een datum naar een string zet het datumobject om in tekst
-  die we kunnen lezen en gebruiken.
+summary: Ruby maakt het super eenvoudig om met datums en strings te spelen.
 title: Een datum converteren naar een string
 weight: 28
 ---

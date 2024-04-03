@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:11.212983-07:00
-description: "Sprawdzanie, czy katalog istnieje w Javie, to podstawowe zadanie polegaj\u0105\
-  ce na weryfikacji obecno\u015Bci katalogu w systemie plik\xF3w przed odczytem z\
-  \ niego,\u2026"
+description: "Jak to zrobi\u0107: W Javie istnieje kilka sposob\xF3w na sprawdzenie,\
+  \ czy katalog istnieje, g\u0142\xF3wnie za pomoc\u0105 klas `java.nio.file.Files`\
+  \ i `java.io.File`.\u2026"
 lastmod: '2024-03-13T22:44:35.292187-06:00'
 model: gpt-4-0125-preview
-summary: "Sprawdzanie, czy katalog istnieje w Javie, to podstawowe zadanie polegaj\u0105\
-  ce na weryfikacji obecno\u015Bci katalogu w systemie plik\xF3w przed odczytem z\
-  \ niego, zapisem do niego lub wykonaniem jakichkolwiek operacji wymagaj\u0105cych\
-  \ jego istnienia."
+summary: "W Javie istnieje kilka sposob\xF3w na sprawdzenie, czy katalog istnieje,\
+  \ g\u0142\xF3wnie za pomoc\u0105 klas `java.nio.file.Files` i `java.io.File`."
 title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---

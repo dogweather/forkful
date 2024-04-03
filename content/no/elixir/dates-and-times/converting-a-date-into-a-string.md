@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:36:09.563584-07:00
-description: "Dato til streng-konvertering tar en dato og gj\xF8r den om til en tekstbasert\
-  \ representasjon. Dette gj\xF8r det enklere \xE5 vise datoen for mennesker eller\
-  \ \xE5\u2026"
+description: "How to: Elixir h\xE5ndterer datoer med en innebygd modul kalt `DateTime`.\
+  \ For \xE5 konvertere en dato til en streng, bruker vi `DateTime.to_string/1`."
 lastmod: '2024-03-13T22:44:40.454967-06:00'
 model: gpt-4-1106-preview
-summary: "Dato til streng-konvertering tar en dato og gj\xF8r den om til en tekstbasert\
-  \ representasjon."
+summary: "Elixir h\xE5ndterer datoer med en innebygd modul kalt `DateTime`."
 title: Konvertere en dato til en streng
 weight: 28
 ---

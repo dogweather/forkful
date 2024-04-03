@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:22:56.627481-07:00
-description: "TOML sta per Tom's Obvious, Minimal Language (Linguaggio Minimo e Ovvio\
-  \ di Tom). \xC8 un formato di serializzazione dei dati utilizzato per i file di\u2026"
+description: "Come fare: Avrai bisogno di una libreria di parsing TOML. Io consiglio\
+  \ `toml4j`. Aggiungilo al tuo progetto cos\xEC."
 lastmod: '2024-03-13T22:44:43.332408-06:00'
 model: gpt-4-0125-preview
-summary: TOML sta per Tom's Obvious, Minimal Language (Linguaggio Minimo e Ovvio di
-  Tom).
+summary: Avrai bisogno di una libreria di parsing TOML.
 title: Lavorare con TOML
 weight: 39
 ---

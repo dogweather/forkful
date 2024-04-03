@@ -2,16 +2,16 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:53:42.165591-07:00
-description: "Vi\u1EC7c tr\xEDch xu\u1EA5t c\xE1c chu\u1ED7i con bao g\u1ED3m vi\u1EC7\
-  c l\u1EA5y m\u1ED9t ph\u1EA7n c\u1EE7a chu\u1ED7i - c\u01A1 b\u1EA3n l\xE0 t\u1EA1\
-  o m\u1ED9t chu\u1ED7i m\u1EDBi t\u1EEB m\u1ED9t ph\u1EA7n c\u1EE7a chu\u1ED7i hi\u1EC7\
-  n c\xF3. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n\u2026"
+description: "L\xE0m sao: Trong Google Apps Script, d\u1EF1a tr\xEAn JavaScript hi\u1EC7\
+  n \u0111\u1EA1i, vi\u1EC7c tr\xEDch xu\u1EA5t chu\u1ED7i con c\xF3 th\u1EC3 \u0111\
+  \u1EA1t \u0111\u01B0\u1EE3c th\xF4ng qua v\xE0i ph\u01B0\u01A1ng th\u1EE9c, bao\
+  \ g\u1ED3m\u2026"
 lastmod: '2024-03-13T22:44:36.024732-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c tr\xEDch xu\u1EA5t c\xE1c chu\u1ED7i con bao g\u1ED3m vi\u1EC7\
-  c l\u1EA5y m\u1ED9t ph\u1EA7n c\u1EE7a chu\u1ED7i - c\u01A1 b\u1EA3n l\xE0 t\u1EA1\
-  o m\u1ED9t chu\u1ED7i m\u1EDBi t\u1EEB m\u1ED9t ph\u1EA7n c\u1EE7a chu\u1ED7i hi\u1EC7\
-  n c\xF3."
+summary: "Trong Google Apps Script, d\u1EF1a tr\xEAn JavaScript hi\u1EC7n \u0111\u1EA1\
+  i, vi\u1EC7c tr\xEDch xu\u1EA5t chu\u1ED7i con c\xF3 th\u1EC3 \u0111\u1EA1t \u0111\
+  \u01B0\u1EE3c th\xF4ng qua v\xE0i ph\u01B0\u01A1ng th\u1EE9c, bao g\u1ED3m `substring()`,\
+  \ `substr()`, v\xE0 `slice()`."
 title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 weight: 6
 ---

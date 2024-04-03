@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:54:58.444695-07:00
-description: "Lesen einer Textdatei in Ruby ist, wie man die Inhalte einer Datei in\
-  \ den Speicher l\xE4dt, um sie zu verarbeiten. Programmierer tun dies, um Daten\
-  \ zu\u2026"
+description: 'So geht''s: Um eine Datei zu lesen, nutze `File.read`, `File.readlines`
+  oder den `File.open`-Block. Hier sind ein paar Beispiele.'
 lastmod: '2024-03-13T22:44:54.417839-06:00'
 model: gpt-4-1106-preview
-summary: "Lesen einer Textdatei in Ruby ist, wie man die Inhalte einer Datei in den\
-  \ Speicher l\xE4dt, um sie zu verarbeiten."
+summary: Um eine Datei zu lesen, nutze `File.read`, `File.readlines` oder den `File.open`-Block.
 title: Textdatei einlesen
 weight: 22
 ---

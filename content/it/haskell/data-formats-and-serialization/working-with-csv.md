@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:47.127903-07:00
-description: "Lavorare con i CSV (Valori Separati da Virgola) implica l'analisi e\
-  \ la generazione di file che memorizzano dati tabellari in un formato semplice e\
-  \ basato\u2026"
+description: "Come fare: In Haskell, la gestione dei file CSV pu\xF2 essere realizzata\
+  \ utilizzando la libreria `cassava`, una delle pi\xF9 popolari librerie di terze\
+  \ parti\u2026"
 lastmod: '2024-03-13T22:44:43.497954-06:00'
 model: gpt-4-0125-preview
-summary: Lavorare con i CSV (Valori Separati da Virgola) implica l'analisi e la generazione
-  di file che memorizzano dati tabellari in un formato semplice e basato su testo.
+summary: "In Haskell, la gestione dei file CSV pu\xF2 essere realizzata utilizzando\
+  \ la libreria `cassava`, una delle pi\xF9 popolari librerie di terze parti per questo\
+  \ scopo."
 title: Lavorare con i CSV
 weight: 37
 ---

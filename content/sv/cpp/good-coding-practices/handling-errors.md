@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 00:49:32.643247-07:00
-description: "Att hantera fel inneb\xE4r att man planerar f\xF6r n\xE4r saker och\
-  \ ting g\xE5r fel. Det \xE4r avg\xF6rande eftersom det hj\xE4lper till att undvika\
-  \ krascher och g\xF6r din\u2026"
+description: "Hur man g\xF6r: H\xE4r \xE4r en grundl\xE4ggande try-catch block f\xF6\
+  r att hantera ett undantag."
 lastmod: '2024-03-13T22:44:38.216463-06:00'
 model: gpt-4-1106-preview
-summary: "Att hantera fel inneb\xE4r att man planerar f\xF6r n\xE4r saker och ting\
-  \ g\xE5r fel."
+summary: "H\xE4r \xE4r en grundl\xE4ggande try-catch block f\xF6r att hantera ett\
+  \ undantag."
 title: Hantering av fel
 weight: 16
 ---

@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:38:29.760361-07:00
-description: "Convertire una stringa in minuscolo significa trasformare tutti i caratteri\
-  \ alfabetici in minuscole. I programmatori lo fanno per uniformare i dati,\u2026"
+description: 'How to: Utilizza il metodo `.toLowerCase()` di JavaScript. Ecco un esempio.'
 lastmod: '2024-03-13T22:44:43.799191-06:00'
 model: gpt-4-1106-preview
-summary: Convertire una stringa in minuscolo significa trasformare tutti i caratteri
-  alfabetici in minuscole.
+summary: Utilizza il metodo `.toLowerCase()` di JavaScript.
 title: Conversione di una stringa in minuscolo
 weight: 4
 ---

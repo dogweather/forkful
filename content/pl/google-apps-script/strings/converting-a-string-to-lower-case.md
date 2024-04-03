@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:43.201249-07:00
-description: "Konwersja ci\u0105g\xF3w znak\xF3w na ma\u0142e litery w Google Apps\
-  \ Script, chmurowym j\u0119zyku skryptowym do automatyzacji zada\u0144 w produktach\
-  \ Google, jest podstawowym\u2026"
+description: "Jak to zrobi\u0107: Konwersja ci\u0105g\xF3w znak\xF3w na ma\u0142e\
+  \ litery w Google Apps Script jest prosta, dzi\u0119ki wbudowanym metodom JavaScript\
+  \ dost\u0119pnym w \u015Brodowisku\u2026"
 lastmod: '2024-03-13T22:44:34.887342-06:00'
 model: gpt-4-0125-preview
-summary: "Konwersja ci\u0105g\xF3w znak\xF3w na ma\u0142e litery w Google Apps Script,\
-  \ chmurowym j\u0119zyku skryptowym do automatyzacji zada\u0144 w produktach Google,\
-  \ jest podstawowym zadaniem maj\u0105cym na celu standaryzacj\u0119 danych tekstowych."
+summary: "Konwersja ci\u0105g\xF3w znak\xF3w na ma\u0142e litery w Google Apps Script\
+  \ jest prosta, dzi\u0119ki wbudowanym metodom JavaScript dost\u0119pnym w \u015B\
+  rodowisku skryptowym."
 title: "Konwersja \u0142a\u0144cucha znak\xF3w na ma\u0142e litery"
 weight: 4
 ---

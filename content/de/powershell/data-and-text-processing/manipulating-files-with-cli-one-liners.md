@@ -1,13 +1,9 @@
 ---
 date: 2024-01-27 16:20:58.789056-07:00
-description: "Die Manipulation von Dateien mit CLI-One-Linern in PowerShell dreht\
-  \ sich darum, schnell Dateidaten direkt \xFCber die Befehlszeile zu \xE4ndern, zu\
-  \ bewegen oder\u2026"
+description: 'Wie man: #.'
 lastmod: '2024-03-13T22:44:54.098636-06:00'
 model: gpt-4-0125-preview
-summary: "Die Manipulation von Dateien mit CLI-One-Linern in PowerShell dreht sich\
-  \ darum, schnell Dateidaten direkt \xFCber die Befehlszeile zu \xE4ndern, zu bewegen\
-  \ oder zu erhalten."
+summary: '#.'
 title: Dateimanipulation mit CLI-One-Linern
 weight: 31
 ---

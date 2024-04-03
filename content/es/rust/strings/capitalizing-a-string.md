@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:19.760423-07:00
-description: "Capitalizar una cadena en Rust implica modificar la cadena para que\
-  \ su primer car\xE1cter est\xE9 en may\xFAscula si es una letra, mientras que el\
-  \ resto de la\u2026"
+description: "C\xF3mo hacerlo: Para capitalizar una cadena en Rust, tienes dos rutas\
+  \ principales: usar las funcionalidades de la biblioteca est\xE1ndar o emplear crates\
+  \ de\u2026"
 lastmod: '2024-03-13T22:44:58.829655-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizar una cadena en Rust implica modificar la cadena para que su primer\
-  \ car\xE1cter est\xE9 en may\xFAscula si es una letra, mientras que el resto de\
-  \ la cadena permanece sin cambios."
+summary: Para capitalizar una cadena en Rust, tienes dos rutas principales.
 title: Capitalizando una cadena de texto
 weight: 2
 ---

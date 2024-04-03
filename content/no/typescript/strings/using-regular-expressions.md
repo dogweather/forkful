@@ -2,13 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:26.070865-07:00
-description: "Regul\xE6re uttrykk, eller regex, er et kraftig verkt\xF8y for m\xF8\
-  nsters\xF8king og -matching i programmering. Programmerere bruker regex til oppgaver\
-  \ som \xE5\u2026"
+description: 'Hvordan: La oss hoppe inn i TypeScript og se hvordan regex brukes til
+  vanlige oppgaver.'
 lastmod: '2024-03-13T22:44:40.522283-06:00'
 model: gpt-4-0125-preview
-summary: "Regul\xE6re uttrykk, eller regex, er et kraftig verkt\xF8y for m\xF8nsters\xF8\
-  king og -matching i programmering."
+summary: La oss hoppe inn i TypeScript og se hvordan regex brukes til vanlige oppgaver.
 title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---

@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:43:27.380057-07:00
-description: "Avrunding av tall handler om \xE5 justere et tall til n\xE6rmeste hele,\
-  \ eller til en bestemt desimalpresisjon. Vi avrunder tall for \xE5 forenkle dem\
-  \ for\u2026"
+description: "Hvordan: I Clojure bruker vi prim\xE6rt `Math/round`, `Math/floor` og\
+  \ `Math/ceil`."
 lastmod: '2024-03-13T22:44:40.397520-06:00'
 model: gpt-4-0125-preview
-summary: "Avrunding av tall handler om \xE5 justere et tall til n\xE6rmeste hele,\
-  \ eller til en bestemt desimalpresisjon."
+summary: "I Clojure bruker vi prim\xE6rt `Math/round`, `Math/floor` og `Math/ceil`."
 title: Avrunding av tall
 weight: 13
 ---

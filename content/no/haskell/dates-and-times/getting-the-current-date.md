@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:36.925981-07:00
-description: "\xC5 hente gjeldende dato i Haskell inneb\xE6rer \xE5 f\xE5 tak i systemets\
-  \ n\xE5v\xE6rende tid og omdanne den til et lesbart datoformat. Programmerere gj\xF8\
-  r dette for \xE5\u2026"
+description: "Hvordan: Haskells standardbibliotek, `base`, tilbyr `Data.Time`-modulen\
+  \ som gir funksjonalitet for \xE5 arbeide med datoer og tider. Her er hvordan du\
+  \ bruker\u2026"
 lastmod: '2024-03-13T22:44:40.852669-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 hente gjeldende dato i Haskell inneb\xE6rer \xE5 f\xE5 tak i systemets\
-  \ n\xE5v\xE6rende tid og omdanne den til et lesbart datoformat."
+summary: "Haskells standardbibliotek, `base`, tilbyr `Data.Time`-modulen som gir funksjonalitet\
+  \ for \xE5 arbeide med datoer og tider."
 title: "F\xE5 dagens dato"
 weight: 29
 ---

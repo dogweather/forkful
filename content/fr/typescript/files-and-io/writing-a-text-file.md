@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:32.618469-07:00
-description: "\xC9crire un fichier texte en TypeScript est une comp\xE9tence essentielle\
-  \ pour la persistance des donn\xE9es, la configuration ou la g\xE9n\xE9ration de\
-  \ journaux. Les\u2026"
+description: "Comment faire : TypeScript en lui-m\xEAme ne g\xE8re pas directement\
+  \ les op\xE9rations sur les fichiers car il se compile en JavaScript, qui traditionnellement\u2026"
 lastmod: '2024-03-13T22:44:57.456676-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire un fichier texte en TypeScript est une comp\xE9tence essentielle\
-  \ pour la persistance des donn\xE9es, la configuration ou la g\xE9n\xE9ration de\
-  \ journaux."
+summary: "TypeScript en lui-m\xEAme ne g\xE8re pas directement les op\xE9rations sur\
+  \ les fichiers car il se compile en JavaScript, qui traditionnellement s'ex\xE9\
+  cute dans le navigateur avec un acc\xE8s limit\xE9 au syst\xE8me de fichiers."
 title: "R\xE9diger un fichier texte"
 weight: 24
 ---

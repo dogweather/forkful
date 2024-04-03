@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:23.193443-07:00
-description: "Command line argumenten lezen stelt je Python script in staat om netjes\
-  \ om te gaan met gebruikersinvoer vanuit de terminal. Waarom? Wel, omdat\u2026"
+description: "Hoe: Door gebruik te maken van Python's `sys` module, kun je die command\
+  \ line argumenten gemakkelijk binnenhalen. Hier is hoe je ze in je script kunt\u2026"
 lastmod: '2024-03-13T22:44:50.391908-06:00'
 model: gpt-4-0125-preview
-summary: Command line argumenten lezen stelt je Python script in staat om netjes om
-  te gaan met gebruikersinvoer vanuit de terminal.
+summary: Door gebruik te maken van Python's `sys` module, kun je die command line
+  argumenten gemakkelijk binnenhalen.
 title: Commandoregelargumenten lezen
 weight: 23
 ---

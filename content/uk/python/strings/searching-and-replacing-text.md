@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:58:33.175894-07:00
-description: "Searching and replacing text means finding specific strings in data\
-  \ and swapping them out for something else. Programmers do it to update data, correct\u2026"
+description: "How to: (\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\
+  \u0438:) ."
 lastmod: '2024-03-13T22:44:48.558838-06:00'
 model: gpt-4-1106-preview
-summary: Searching and replacing text means finding specific strings in data and swapping
-  them out for something else.
+summary: .
 title: "\u041F\u043E\u0448\u0443\u043A \u0442\u0430 \u0437\u0430\u043C\u0456\u043D\
   \u0430 \u0442\u0435\u043A\u0441\u0442\u0443"
 weight: 10

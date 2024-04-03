@@ -1,8 +1,7 @@
 ---
 date: 2024-01-26 04:08:50.396923-07:00
-description: "Vediamo come utilizzare `pdb`, il debugger integrato di Python. Immagina\
-  \ un file, `buggy.py`, con un bug subdolo: ```Python def add_one(number): result\
-  \ =\u2026"
+description: 'Come fare: Vediamo come utilizzare `pdb`, il debugger integrato di Python.
+  Immagina un file, `buggy.py`, con un bug subdolo.'
 lastmod: '2024-03-13T22:44:43.005613-06:00'
 model: gpt-4-0125-preview
 summary: Vediamo come utilizzare `pdb`, il debugger integrato di Python.

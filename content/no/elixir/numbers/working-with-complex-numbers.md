@@ -1,10 +1,12 @@
 ---
 date: 2024-01-26 04:39:21.252207-07:00
-description: "Komplekse tall har en reell del og en imagin\xE6r del (som `3 + 4i`).\
-  \ De brukes i ingeni\xF8rfag, fysikk og visse databehandlingsproblemer. Programmerere\u2026"
+description: "Hvordan: Elixir har ikke innebygde komplekse tall, s\xE5 vi lager v\xE5\
+  re egne eller bruker et bibliotek, som `ComplexNum`. Her er et kjapt eksempel med\
+  \ et\u2026"
 lastmod: '2024-03-13T22:44:40.437340-06:00'
 model: gpt-4-0125-preview
-summary: "Komplekse tall har en reell del og en imagin\xE6r del (som `3 + 4i`)."
+summary: "Elixir har ikke innebygde komplekse tall, s\xE5 vi lager v\xE5re egne eller\
+  \ bruker et bibliotek, som `ComplexNum`."
 title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---

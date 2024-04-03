@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:44:12.702706-07:00
-description: "Att avrunda tal handlar om att kapa decimalplatser f\xF6r att f\xF6\
-  renkla dina data eller passa specifika format. Programmerare g\xF6r detta f\xF6\
-  r anv\xE4ndarv\xE4nlig\u2026"
+description: "Hur man g\xF6r: I Fish h\xE4nger avrundning av tal p\xE5 `math`-kommandot.\
+  \ Anv\xE4nd `math -s0` f\xF6r att avrunda till n\xE4rmaste heltal."
 lastmod: '2024-03-13T22:44:38.330687-06:00'
 model: gpt-4-0125-preview
-summary: "Att avrunda tal handlar om att kapa decimalplatser f\xF6r att f\xF6renkla\
-  \ dina data eller passa specifika format."
+summary: "I Fish h\xE4nger avrundning av tal p\xE5 `math`-kommandot."
 title: Avrundning av tal
 weight: 13
 ---

@@ -1,10 +1,11 @@
 ---
 date: 2024-01-20 17:44:37.324473-07:00
-description: "Descargar una p\xE1gina web significa traer su contenido a tu programa.\
-  \ Esto lo hacen los programadores para analizar datos, interactuar con APIs, o\u2026"
+description: "C\xF3mo hacerlo: Vamos a usar Kotlin y una librer\xEDa sencilla llamada\
+  \ `khttp` para hacer el trabajo. Aseg\xFArate de incluir `khttp` en tu `build.gradle`."
 lastmod: '2024-03-13T22:44:59.034519-06:00'
 model: gpt-4-1106-preview
-summary: "Descargar una p\xE1gina web significa traer su contenido a tu programa."
+summary: "Vamos a usar Kotlin y una librer\xEDa sencilla llamada `khttp` para hacer\
+  \ el trabajo."
 title: "Descargando una p\xE1gina web"
 weight: 42
 ---

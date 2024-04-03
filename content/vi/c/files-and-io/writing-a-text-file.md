@@ -2,17 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:58.531147-07:00
-description: "Vi\u1EC7c vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong C bao\
-  \ g\u1ED3m vi\u1EC7c t\u1EA1o ho\u1EB7c m\u1EDF m\u1ED9t t\u1EC7p \u1EDF ch\u1EBF\
-  \ \u0111\u1ED9 vi\u1EBFt v\xE0 sau \u0111\xF3 s\u1EED d\u1EE5ng c\xE1c h\xE0m I/O\
-  \ t\u1EC7p c\u1EE7a C \u0111\u1EC3 l\u01B0u d\u1EEF li\u1EC7u v\u0103n b\u1EA3n\
-  \ v\xE0o \u0111\xF3.\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: \u0110\u1EC3 vi\u1EBFt v\u0103n b\u1EA3\
+  n v\xE0o m\u1ED9t t\u1EC7p trong C, b\u1EA1n ch\u1EE7 y\u1EBFu c\u1EA7n l\xE0m quen\
+  \ v\u1EDBi c\xE1c h\xE0m `fopen()`, `fprintf()`, `fputs()`, v\xE0 `fclose()`. D\u01B0\
+  \u1EDBi \u0111\xE2y l\xE0\u2026"
 lastmod: '2024-03-13T22:44:37.292931-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong C bao g\u1ED3\
-  m vi\u1EC7c t\u1EA1o ho\u1EB7c m\u1EDF m\u1ED9t t\u1EC7p \u1EDF ch\u1EBF \u0111\u1ED9\
-  \ vi\u1EBFt v\xE0 sau \u0111\xF3 s\u1EED d\u1EE5ng c\xE1c h\xE0m I/O t\u1EC7p c\u1EE7\
-  a C \u0111\u1EC3 l\u01B0u d\u1EEF li\u1EC7u v\u0103n b\u1EA3n v\xE0o \u0111\xF3."
+summary: "\u0110\u1EC3 vi\u1EBFt v\u0103n b\u1EA3n v\xE0o m\u1ED9t t\u1EC7p trong\
+  \ C, b\u1EA1n ch\u1EE7 y\u1EBFu c\u1EA7n l\xE0m quen v\u1EDBi c\xE1c h\xE0m `fopen()`,\
+  \ `fprintf()`, `fputs()`, v\xE0 `fclose()`."
 title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 24
 ---

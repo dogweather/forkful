@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:03.601750-07:00
-description: "Verificar se um diret\xF3rio existe em Elixir trata de confirmar a presen\xE7\
-  a de um diret\xF3rio em um caminho especificado no sistema de arquivos. Programadores\u2026"
+description: "Como fazer: A biblioteca padr\xE3o do Elixir oferece uma maneira direta\
+  \ de verificar a exist\xEAncia de um diret\xF3rio por meio do m\xF3dulo `File`.\
+  \ Veja como voc\xEA\u2026"
 lastmod: '2024-03-13T22:44:46.252391-06:00'
 model: gpt-4-0125-preview
-summary: "Verificar se um diret\xF3rio existe em Elixir trata de confirmar a presen\xE7\
-  a de um diret\xF3rio em um caminho especificado no sistema de arquivos."
+summary: "A biblioteca padr\xE3o do Elixir oferece uma maneira direta de verificar\
+  \ a exist\xEAncia de um diret\xF3rio por meio do m\xF3dulo `File`."
 title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---

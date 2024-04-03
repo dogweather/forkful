@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 01:12:01.663197-07:00
-description: "Koodin j\xE4rjest\xE4minen funktioihin tarkoittaa koodin jaottelua uudelleenk\xE4\
-  ytett\xE4viksi lohkoiksi m\xE4\xE4riteltyine tarkoituksineen. Teemme niin pit\xE4\
-  \xE4ksemme asiat\u2026"
+description: "Kuinka: Kuvitellaan, ett\xE4 meill\xE4 on toistuvaa koodia k\xE4ytt\xE4\
+  jien tervehtimiseksi. Sen sijaan k\xE4\xE4rimme sen `greet_user`-nimiseen funktioon."
 lastmod: '2024-03-13T22:44:56.661344-06:00'
 model: gpt-4-1106-preview
-summary: "Koodin j\xE4rjest\xE4minen funktioihin tarkoittaa koodin jaottelua uudelleenk\xE4\
-  ytett\xE4viksi lohkoiksi m\xE4\xE4riteltyine tarkoituksineen."
+summary: "Kuvitellaan, ett\xE4 meill\xE4 on toistuvaa koodia k\xE4ytt\xE4jien tervehtimiseksi."
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---

@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:29.563630-07:00
-description: "Analizar HTML implica extraer datos e informaci\xF3n de documentos HTML,\
-  \ lo cual es crucial para el raspado web, an\xE1lisis de datos y tareas de\u2026"
+description: "C\xF3mo hacerlo: Lua no tiene una biblioteca integrada para analizar\
+  \ HTML, pero puedes utilizar bibliotecas de terceros como `LuaHTML` o aprovechar\
+  \ los\u2026"
 lastmod: '2024-03-13T22:44:59.199606-06:00'
 model: gpt-4-0125-preview
-summary: "Analizar HTML implica extraer datos e informaci\xF3n de documentos HTML,\
-  \ lo cual es crucial para el raspado web, an\xE1lisis de datos y tareas de automatizaci\xF3\
-  n."
+summary: "Lua no tiene una biblioteca integrada para analizar HTML, pero puedes utilizar\
+  \ bibliotecas de terceros como `LuaHTML` o aprovechar los enlaces para `libxml2`\
+  \ a trav\xE9s de `LuaXML`."
 title: Analizando HTML
 weight: 43
 ---

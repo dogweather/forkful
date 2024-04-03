@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:38.837225-07:00
-description: "Trabalhar com CSV (Comma-Separated Values ou Valores Separados por V\xED\
-  rgula) envolve ler e escrever dados em arquivos CSV, um formato popular para\u2026"
+description: "Como fazer: O PHP oferece fun\xE7\xF5es integradas para manipula\xE7\
+  \xE3o de arquivos CSV, tornando direto ler e escrever nesses arquivos sem necessidade\
+  \ de\u2026"
 lastmod: '2024-03-13T22:44:46.689600-06:00'
 model: gpt-4-0125-preview
-summary: "Trabalhar com CSV (Comma-Separated Values ou Valores Separados por V\xED\
-  rgula) envolve ler e escrever dados em arquivos CSV, um formato popular para representar\
-  \ dados tabulares em texto plano."
+summary: "O PHP oferece fun\xE7\xF5es integradas para manipula\xE7\xE3o de arquivos\
+  \ CSV, tornando direto ler e escrever nesses arquivos sem necessidade de bibliotecas\
+  \ de terceiros."
 title: Trabalhando com CSV
 weight: 37
 ---

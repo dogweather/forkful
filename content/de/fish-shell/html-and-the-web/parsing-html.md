@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:11.748235-07:00
-description: "Das Parsen von HTML dreht sich um das Extrahieren von Daten oder Informationen\
-  \ aus HTML-Inhalten, eine g\xE4ngige Aufgabe beim Umgang mit Webdaten.\u2026"
+description: "Wie geht das: Die Fish Shell ist vorwiegend nicht daf\xFCr ausgelegt,\
+  \ HTML direkt zu parsen. Sie zeichnet sich jedoch durch das Verkn\xFCpfen von Unix-Tools\
+  \ wie\u2026"
 lastmod: '2024-03-13T22:44:54.307363-06:00'
 model: gpt-4-0125-preview
-summary: "Das Parsen von HTML dreht sich um das Extrahieren von Daten oder Informationen\
-  \ aus HTML-Inhalten, eine g\xE4ngige Aufgabe beim Umgang mit Webdaten."
+summary: "Die Fish Shell ist vorwiegend nicht daf\xFCr ausgelegt, HTML direkt zu parsen."
 title: HTML parsen
 weight: 43
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:56:32.611078-07:00
-description: "Leer argumentos de la l\xEDnea de comandos permite a tu programa Lua\
-  \ recibir informaci\xF3n externa al momento de ser ejecutado, brind\xE1ndote flexibilidad.\
-  \ Los\u2026"
+description: "C\xF3mo hacerlo: Para leer argumentos de la l\xEDnea de comandos en\
+  \ Lua, se utiliza la tabla global `arg`. Aqu\xED un ejemplo b\xE1sico."
 lastmod: '2024-03-13T22:44:59.217818-06:00'
 model: gpt-4-1106-preview
-summary: "Leer argumentos de la l\xEDnea de comandos permite a tu programa Lua recibir\
-  \ informaci\xF3n externa al momento de ser ejecutado, brind\xE1ndote flexibilidad."
+summary: "Para leer argumentos de la l\xEDnea de comandos en Lua, se utiliza la tabla\
+  \ global `arg`."
 title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---

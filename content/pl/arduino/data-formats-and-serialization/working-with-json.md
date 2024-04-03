@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:54.481512-07:00
-description: "JSON, czyli Notacja Obiekt\xF3w JavaScript, to lekki format wymiany\
-  \ danych, idealny do przechowywania danych lub plik\xF3w konfiguracyjnych w projektach\u2026"
+description: "Jak to zrobi\u0107: Aby pracowa\u0107 z JSON w Arduino, biblioteka `ArduinoJson`\
+  \ jest popularnym wyborem ze wzgl\u0119du na jej \u0142atwo\u015B\u0107 u\u017C\
+  ycia i efektywno\u015B\u0107. Umo\u017Cliwia\u2026"
 lastmod: '2024-03-13T22:44:35.692804-06:00'
 model: gpt-4-0125-preview
-summary: "JSON, czyli Notacja Obiekt\xF3w JavaScript, to lekki format wymiany danych,\
-  \ idealny do przechowywania danych lub plik\xF3w konfiguracyjnych w projektach Arduino."
+summary: "Aby pracowa\u0107 z JSON w Arduino, biblioteka `ArduinoJson` jest popularnym\
+  \ wyborem ze wzgl\u0119du na jej \u0142atwo\u015B\u0107 u\u017Cycia i efektywno\u015B\
+  \u0107."
 title: Praca z JSON
 weight: 38
 ---

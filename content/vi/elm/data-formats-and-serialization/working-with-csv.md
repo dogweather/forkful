@@ -2,17 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:21.239377-07:00
-description: "L\xE0m vi\u1EC7c v\u1EDBi CSV (Comma-Separated Values - Gi\xE1 tr\u1ECB\
-  \ t\xE1ch bi\u1EC7t b\u1EB1ng d\u1EA5u ph\u1EA9y) c\xF3 ngh\u0129a l\xE0 \u0111\u1ECD\
-  c v\xE0 vi\u1EBFt d\u1EEF li\u1EC7u trong \u0111\u1ECBnh d\u1EA1ng v\u0103n b\u1EA3\
-  n m\xE0 m\u1ED7i d\xF2ng c\xF3 c\xE1c gi\xE1\u2026"
+description: "C\xE1ch th\u1EE9c: Elm kh\xF4ng c\xF3 tr\xECnh ph\xE2n t\xEDch CSV (parser)\
+  \ t\xEDch h\u1EE3p s\u1EB5n, nh\u01B0ng b\u1EA1n c\xF3 th\u1EC3 d\u1EC5 d\xE0ng\
+  \ th\xEAm m\u1ED9t tr\xECnh ph\xE2n t\xEDch b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng\
+  \ m\u1ED9t g\xF3i nh\u01B0 `elm-\u2026"
 lastmod: '2024-03-13T22:44:36.574378-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m vi\u1EC7c v\u1EDBi CSV (Comma-Separated Values - Gi\xE1 tr\u1ECB\
-  \ t\xE1ch bi\u1EC7t b\u1EB1ng d\u1EA5u ph\u1EA9y) c\xF3 ngh\u0129a l\xE0 \u0111\u1ECD\
-  c v\xE0 vi\u1EBFt d\u1EEF li\u1EC7u trong \u0111\u1ECBnh d\u1EA1ng v\u0103n b\u1EA3\
-  n m\xE0 m\u1ED7i d\xF2ng c\xF3 c\xE1c gi\xE1 tr\u1ECB \u0111\u01B0\u1EE3c t\xE1\
-  ch bi\u1EC7t b\u1EB1ng d\u1EA5u ph\u1EA9y."
+summary: "Elm kh\xF4ng c\xF3 tr\xECnh ph\xE2n t\xEDch CSV (parser) t\xEDch h\u1EE3\
+  p s\u1EB5n, nh\u01B0ng b\u1EA1n c\xF3 th\u1EC3 d\u1EC5 d\xE0ng th\xEAm m\u1ED9t\
+  \ tr\xECnh ph\xE2n t\xEDch b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng m\u1ED9t g\xF3i nh\u01B0\
+  \ `elm-csv`."
 title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 weight: 37
 ---

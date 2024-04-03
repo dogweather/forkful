@@ -2,12 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:24.726457-07:00
-description: "Het verwijderen van aanhalingstekens uit een string betekent dat je\
-  \ afkomt van die vervelende dubbele of enkele aanhalingstekens die je tekst omhullen.\u2026"
+description: "Hoe: In Clojure zijn strings onveranderlijk, dus als we het hebben over\
+  \ \"het verwijderen van aanhalingstekens\", hebben we het eigenlijk over het cre\xEB\
+  ren\u2026"
 lastmod: '2024-03-13T22:44:50.406453-06:00'
 model: gpt-4-0125-preview
-summary: Het verwijderen van aanhalingstekens uit een string betekent dat je afkomt
-  van die vervelende dubbele of enkele aanhalingstekens die je tekst omhullen.
+summary: "In Clojure zijn strings onveranderlijk, dus als we het hebben over \"het\
+  \ verwijderen van aanhalingstekens\", hebben we het eigenlijk over het cre\xEBren\
+  \ van een nieuwe string zonder aanhalingstekens."
 title: Quotes verwijderen uit een string
 weight: 9
 ---

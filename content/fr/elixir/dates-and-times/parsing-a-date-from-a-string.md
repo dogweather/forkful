@@ -3,14 +3,12 @@ changelog:
 - 2024-01-28, dogweather, reviewed
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 02:05:00.732896-07:00
-description: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res consiste\
-  \ \xE0 prendre un texte, comme \"2023-04-05\", et \xE0 le convertir en un format\
-  \ de date que votre\u2026"
+description: "Comment faire : En Elixir, vous pouvez analyser les dates en utilisant\
+  \ le module `Date`. Voici comment transformer une cha\xEEne de caract\xE8res en\
+  \ date ."
 lastmod: '2024-03-13T22:44:57.337589-06:00'
 model: gpt-4-0125-preview
-summary: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res consiste\
-  \ \xE0 prendre un texte, comme \"2023-04-05\", et \xE0 le convertir en un format\
-  \ de date que votre programme peut comprendre et manipuler."
+summary: En Elixir, vous pouvez analyser les dates en utilisant le module `Date`.
 title: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res"
 weight: 30
 ---

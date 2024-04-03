@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:58.255629-07:00
-description: "Converter uma data em uma string no Visual Basic for Applications (VBA)\
-  \ \xE9 um processo usado para mudar o tipo de dados de uma data para um formato\
-  \ de\u2026"
+description: "Como fazer: No VBA, a fun\xE7\xE3o `Format` \xE9 sua solu\xE7\xE3o ideal\
+  \ para converter datas em strings. Ela permite que voc\xEA especifique o formato\
+  \ da data exatamente\u2026"
 lastmod: '2024-03-13T22:44:46.424800-06:00'
 model: gpt-4-0125-preview
-summary: "Converter uma data em uma string no Visual Basic for Applications (VBA)\
-  \ \xE9 um processo usado para mudar o tipo de dados de uma data para um formato\
-  \ de string."
+summary: "No VBA, a fun\xE7\xE3o `Format` \xE9 sua solu\xE7\xE3o ideal para converter\
+  \ datas em strings."
 title: Convertendo uma data em uma string
 weight: 28
 ---

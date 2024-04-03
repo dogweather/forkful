@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:35:00.636311-07:00
-description: "\"Arbeta med XML\" avser processen att l\xE4sa, skapa och modifiera\
-  \ XML (eXtensible Markup Language)-filer med programmering. Programmerare g\xF6\
-  r det eftersom\u2026"
+description: "Hur man g\xF6r: Pythons modul `xml.etree.ElementTree` erbjuder verktyg\
+  \ f\xF6r att arbeta med XML. Analysera ett XML-dokument."
 lastmod: '2024-03-13T22:44:37.507705-06:00'
 model: gpt-4-0125-preview
-summary: "\"Arbeta med XML\" avser processen att l\xE4sa, skapa och modifiera XML\
-  \ (eXtensible Markup Language)-filer med programmering."
+summary: "Pythons modul `xml.etree.ElementTree` erbjuder verktyg f\xF6r att arbeta\
+  \ med XML."
 title: Att arbeta med XML
 weight: 40
 ---

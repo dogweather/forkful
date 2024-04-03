@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 01:07:45.839285-07:00
-description: "Il logging nella programmazione \xE8 come tenere un diario per la tua\
-  \ applicazione. \xC8 la registrazione sistematica di eventi, messaggi e punti dati\
-  \ che ti\u2026"
+description: "Come fare: Ruby include un modulo integrato per il logging, `Logger`,\
+  \ che \xE8 super facile da usare. Ecco un esempio rapido per iniziare."
 lastmod: '2024-03-13T22:44:44.057593-06:00'
 model: gpt-4-1106-preview
-summary: "Il logging nella programmazione \xE8 come tenere un diario per la tua applicazione."
+summary: "Ruby include un modulo integrato per il logging, `Logger`, che \xE8 super\
+  \ facile da usare."
 title: "Registrazione delle Attivit\xE0 (Logging)"
 weight: 17
 ---

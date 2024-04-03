@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:56.431863-07:00
-description: "Att arbeta med YAML i Go handlar om att tolka YAML-filer (YAML Ain't\
-  \ Markup Language), en m\xE4nniskov\xE4nlig standard f\xF6r data-serialisering,\
-  \ till Go-\u2026"
+description: "Hur: F\xF6r att arbeta med YAML i Go beh\xF6ver du f\xF6rst importera\
+  \ ett bibliotek som st\xF6der tolkning och serialisering av YAML, eftersom Gos standardbibliotek\u2026"
 lastmod: '2024-03-13T22:44:37.414105-06:00'
 model: gpt-4-0125-preview
-summary: "Att arbeta med YAML i Go handlar om att tolka YAML-filer (YAML Ain't Markup\
-  \ Language), en m\xE4nniskov\xE4nlig standard f\xF6r data-serialisering, till Go-datastrukturer\
-  \ och vice versa."
+summary: "F\xF6r att arbeta med YAML i Go beh\xF6ver du f\xF6rst importera ett bibliotek\
+  \ som st\xF6der tolkning och serialisering av YAML, eftersom Gos standardbibliotek\
+  \ inte inkluderar direkt st\xF6d f\xF6r YAML."
 title: Att arbeta med YAML
 weight: 41
 ---

@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:46.882207-07:00
-description: "Controllare se una directory esiste in TypeScript \xE8 essenziale per\
-  \ compiti di gestione dei file, come leggere o scrivere dati su file, assicurando\
-  \ che le\u2026"
+description: "Come fare: TypeScript, quando eseguito in un ambiente Node.js, consente\
+  \ di verificare se una directory esiste utilizzando il modulo `fs`, che fornisce\
+  \ la\u2026"
 lastmod: '2024-03-13T22:44:43.190440-06:00'
 model: gpt-4-0125-preview
-summary: "Controllare se una directory esiste in TypeScript \xE8 essenziale per compiti\
-  \ di gestione dei file, come leggere o scrivere dati su file, assicurando che le\
-  \ operazioni siano eseguite solo su directory valide."
+summary: TypeScript, quando eseguito in un ambiente Node.js, consente di verificare
+  se una directory esiste utilizzando il modulo `fs`, che fornisce la funzione `existsSync()`
+  o la funzione asincrona `access()` combinata con `constants.F_OK`.
 title: Verifica se una directory esiste
 weight: 20
 ---

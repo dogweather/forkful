@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:30:40.412013-07:00
-description: "Kalenderdaten in der Zukunft oder Vergangenheit zu berechnen bedeutet,\
-  \ ausgehend vom aktuellen Datum ein bestimmtes Datum vor- oder zur\xFCckzurechnen.\u2026"
+description: 'How to: Berechne ein Datum in der Zukunft.'
 lastmod: '2024-03-13T22:44:54.322432-06:00'
 model: gpt-4-1106-preview
-summary: "Kalenderdaten in der Zukunft oder Vergangenheit zu berechnen bedeutet, ausgehend\
-  \ vom aktuellen Datum ein bestimmtes Datum vor- oder zur\xFCckzurechnen."
+summary: Berechne ein Datum in der Zukunft.
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---

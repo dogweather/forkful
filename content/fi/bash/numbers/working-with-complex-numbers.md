@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:37:01.168827-07:00
-description: "Kompleksiluvut koostuvat reaalisesta osasta ja imaginaarisesta osasta.\
-  \ Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 aloilla kuten signaalink\xE4sittely, kvanttimekaniikka\
-  \ ja\u2026"
+description: "Kuinka: Bash ei tue kompleksilukuja natiivisti. Usein k\xE4yt\xE4t ulkoista\
+  \ ty\xF6kalua kuten `bc` sen `-l`-vaihtoehdon kanssa. N\xE4in k\xE4sittelet kompleksilukuja\u2026"
 lastmod: '2024-03-13T22:44:56.731689-06:00'
 model: gpt-4-0125-preview
-summary: Kompleksiluvut koostuvat reaalisesta osasta ja imaginaarisesta osasta.
+summary: Bash ei tue kompleksilukuja natiivisti.
 title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---

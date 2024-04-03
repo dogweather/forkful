@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:09.453436-07:00
-description: "Att konvertera ett datum till en str\xE4ng i C inneb\xE4r att \xF6vers\xE4\
-  tta en datumstruktur eller tidsst\xE4mpel till ett l\xE4sbart format f\xF6r m\xE4\
-  nniskor. Programmerare\u2026"
+description: "Hur man g\xF6r: Funktionen `strftime` fr\xE5n biblioteket `<time.h>`\
+  \ anv\xE4nds vanligtvis f\xF6r detta \xE4ndam\xE5l. Den l\xE5ter dig formatera datum\
+  \ och tid p\xE5 en m\xE4ngd\u2026"
 lastmod: '2024-03-13T22:44:38.395076-06:00'
 model: gpt-4-0125-preview
-summary: "Att konvertera ett datum till en str\xE4ng i C inneb\xE4r att \xF6vers\xE4\
-  tta en datumstruktur eller tidsst\xE4mpel till ett l\xE4sbart format f\xF6r m\xE4\
-  nniskor."
+summary: "Funktionen `strftime` fr\xE5n biblioteket `<time.h>` anv\xE4nds vanligtvis\
+  \ f\xF6r detta \xE4ndam\xE5l."
 title: "Omvandla ett datum till en str\xE4ng"
 weight: 28
 ---

@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 20:33:33.873815-07:00
-description: "Satunnaislukujen tuottaminen ohjelmoinnissa tarkoittaa arvojen luomista,\
-  \ joita ei voi ennustaa loogisesti etuk\xE4teen. Ohjelmoijat tekev\xE4t t\xE4m\xE4\
-  n monista\u2026"
+description: "Miten: Clojuressa satunnaislukujen generointi on suoraviivaista, ja\
+  \ siin\xE4 voi k\xE4ytt\xE4\xE4 suoraan muutamia sis\xE4\xE4nrakennettuja funktioita.\
+  \ Jos haluat generoida\u2026"
 lastmod: '2024-03-13T22:44:56.180461-06:00'
 model: gpt-4-0125-preview
-summary: "Satunnaislukujen tuottaminen ohjelmoinnissa tarkoittaa arvojen luomista,\
-  \ joita ei voi ennustaa loogisesti etuk\xE4teen."
+summary: "Clojuressa satunnaislukujen generointi on suoraviivaista, ja siin\xE4 voi\
+  \ k\xE4ytt\xE4\xE4 suoraan muutamia sis\xE4\xE4nrakennettuja funktioita."
 title: Satunnaislukujen generointi
 weight: 12
 ---

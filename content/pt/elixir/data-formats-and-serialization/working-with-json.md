@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:09.916314-07:00
-description: "Trabalhar com JSON envolve analisar strings formatadas em JSON em estruturas\
-  \ de dados que o Elixir pode manipular e serializar estruturas de dados do\u2026"
+description: "Como fazer: No Elixir, voc\xEA pode usar a biblioteca `Jason`, uma escolha\
+  \ popular para an\xE1lise e gera\xE7\xE3o de JSON. Primeiro, adicione `Jason` \xE0\
+  s depend\xEAncias\u2026"
 lastmod: '2024-03-13T22:44:46.259300-06:00'
 model: gpt-4-0125-preview
-summary: Trabalhar com JSON envolve analisar strings formatadas em JSON em estruturas
-  de dados que o Elixir pode manipular e serializar estruturas de dados do Elixir
-  de volta para strings JSON.
+summary: "No Elixir, voc\xEA pode usar a biblioteca `Jason`, uma escolha popular para\
+  \ an\xE1lise e gera\xE7\xE3o de JSON."
 title: Trabalhando com JSON
 weight: 38
 ---

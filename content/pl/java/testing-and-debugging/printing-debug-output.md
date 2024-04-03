@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:52:43.593339-07:00
-description: "Drukowanie informacji debugowych to spos\xF3b na wypisywanie danych\
-  \ pomagaj\u0105cych zrozumie\u0107 dzia\u0142anie kodu. Robimy to, aby szybko znale\u017A\
-  \u0107 i naprawi\u0107 b\u0142\u0119dy."
+description: "How to: (Jak to zrobi\u0107:) U\u017Cyj `System.out.println()` dla prostego\
+  \ debugowania czy `System.err.println()` dla b\u0142\u0119d\xF3w. Oto przyk\u0142\
+  ad."
 lastmod: '2024-03-13T22:44:35.279880-06:00'
 model: gpt-4-1106-preview
-summary: "Drukowanie informacji debugowych to spos\xF3b na wypisywanie danych pomagaj\u0105\
-  cych zrozumie\u0107 dzia\u0142anie kodu."
+summary: "U\u017Cyj `System.out.println()` dla prostego debugowania czy `System.err.println()`\
+  \ dla b\u0142\u0119d\xF3w."
 title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---

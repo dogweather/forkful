@@ -2,14 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:15.415186-07:00
-description: "\xC9crire sur l'erreur standard en Python consiste \xE0 diriger les\
-  \ messages d\u2019erreur ou les diagnostics de votre programme sur le flux d\u2019\
-  erreur (`stderr`),\u2026"
+description: 'Comment faire : #.'
 lastmod: '2024-03-13T22:44:57.254025-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire sur l'erreur standard en Python consiste \xE0 diriger les messages\
-  \ d\u2019erreur ou les diagnostics de votre programme sur le flux d\u2019erreur\
-  \ (`stderr`), s\xE9par\xE9ment de la sortie standard (`stdout`)."
+summary: '#.'
 title: "\xC9crire sur l'erreur standard"
 weight: 25
 ---

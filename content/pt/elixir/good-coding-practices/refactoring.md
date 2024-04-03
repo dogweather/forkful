@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 01:17:51.773148-07:00
-description: "Refatora\xE7\xE3o \xE9 o processo de reestrutura\xE7\xE3o do c\xF3digo\
-  \ existente sem alterar seu comportamento externo, visando melhorar atributos n\xE3\
-  o funcionais como\u2026"
+description: "Como fazer: Vamos arrumar um padr\xE3o comum em Elixir. Vamos refatorar\
+  \ uma fun\xE7\xE3o `calculate_stats` que faz mais do que deveria, dividindo-a em\
+  \ partes\u2026"
 lastmod: '2024-03-13T22:44:46.246361-06:00'
 model: gpt-4-0125-preview
-summary: "Refatora\xE7\xE3o \xE9 o processo de reestrutura\xE7\xE3o do c\xF3digo existente\
-  \ sem alterar seu comportamento externo, visando melhorar atributos n\xE3o funcionais\
-  \ como legibilidade e manutenibilidade."
+summary: "Vamos arrumar um padr\xE3o comum em Elixir."
 title: "Refatora\xE7\xE3o"
 weight: 19
 ---

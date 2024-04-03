@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:04.372091-07:00
-description: "Het concatenen van strings betekent het aan elkaar plakken van twee\
-  \ of meer stukken tekst. Het is net zo basisch en essentieel als het gebruik van\u2026"
+description: 'Hoe te: Elm heeft een nette operator `(++)` om de dag te redden.'
 lastmod: '2024-03-13T22:44:50.716486-06:00'
 model: gpt-4-0125-preview
-summary: Het concatenen van strings betekent het aan elkaar plakken van twee of meer
-  stukken tekst.
+summary: Elm heeft een nette operator `(++)` om de dag te redden.
 title: Samenvoegen van strings
 weight: 3
 ---

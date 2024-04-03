@@ -2,14 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:10.181830-07:00
-description: "Command line argumenten lezen is het oppakken van de extra bits die\
-  \ je typt na de naam van je script, zoals geheime handdrukken om het gedrag van\
-  \ een\u2026"
+description: 'Hoe: Stel `greet.fish` is je script. Je wilt dat het een naam neemt
+  en een begroeting uitspuwt.'
 lastmod: '2024-03-13T22:44:51.262613-06:00'
 model: gpt-4-0125-preview
-summary: Command line argumenten lezen is het oppakken van de extra bits die je typt
-  na de naam van je script, zoals geheime handdrukken om het gedrag van een script
-  aan te passen.
+summary: Stel `greet.fish` is je script.
 title: Commandoregelargumenten lezen
 weight: 23
 ---

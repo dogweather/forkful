@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:19.183377-07:00
-description: "L'analyse HTML implique de fouiller dans le balisage pour extraire des\
-  \ donn\xE9es comme du texte, des liens ou d'autres \xE9l\xE9ments. Nous le faisons\
-  \ pour\u2026"
+description: "Comment faire : Utilisons Jsoup, une biblioth\xE8que pratique pour travailler\
+  \ avec l'HTML du monde r\xE9el. Tout d'abord, ajoutez la d\xE9pendance ."
 lastmod: '2024-03-13T22:44:57.637282-06:00'
 model: gpt-4-0125-preview
-summary: "L'analyse HTML implique de fouiller dans le balisage pour extraire des donn\xE9\
-  es comme du texte, des liens ou d'autres \xE9l\xE9ments."
+summary: "Utilisons Jsoup, une biblioth\xE8que pratique pour travailler avec l'HTML\
+  \ du monde r\xE9el."
 title: Analyse Syntaxique du HTML
 weight: 43
 ---

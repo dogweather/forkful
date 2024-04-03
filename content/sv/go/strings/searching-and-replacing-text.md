@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:28.648025-07:00
-description: "Att s\xF6ka och ers\xE4tta text i programmering underl\xE4ttar modifiering\
-  \ och hantering av str\xE4ngar, vilket \xE4r en grundl\xE4ggande uppgift i datahantering\
-  \ och\u2026"
+description: "Hur man g\xF6r: I Go erbjuder `strings`-paketet olika funktioner f\xF6\
+  r att s\xF6ka och ers\xE4tta text inom str\xE4ngar. L\xE5t oss utforska n\xE5gra\
+  \ vanliga metoder.\u2026"
 lastmod: '2024-03-13T22:44:37.375924-06:00'
 model: gpt-4-0125-preview
-summary: "Att s\xF6ka och ers\xE4tta text i programmering underl\xE4ttar modifiering\
-  \ och hantering av str\xE4ngar, vilket \xE4r en grundl\xE4ggande uppgift i datahantering\
-  \ och mjukvaruutveckling."
+summary: "I Go erbjuder `strings`-paketet olika funktioner f\xF6r att s\xF6ka och\
+  \ ers\xE4tta text inom str\xE4ngar."
 title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---

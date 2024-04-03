@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 01:18:06.456649-07:00
-description: "Refaktorisering \xE4r processen att omstrukturera befintlig kod utan\
-  \ att \xE4ndra dess externa beteende f\xF6r att f\xF6rb\xE4ttra icke-funktionella\
-  \ attribut.\u2026"
+description: "Hur man g\xF6r: F\xF6rest\xE4ll dig att du har ett skript som har vuxit\
+  \ en hel del \xF6ver tiden. Det b\xF6rjade enkelt, men nu \xE4r det ett odjur som\
+  \ kryllar av\u2026"
 lastmod: '2024-03-13T22:44:38.346789-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktorisering \xE4r processen att omstrukturera befintlig kod utan att\
-  \ \xE4ndra dess externa beteende f\xF6r att f\xF6rb\xE4ttra icke-funktionella attribut."
+summary: "F\xF6rest\xE4ll dig att du har ett skript som har vuxit en hel del \xF6\
+  ver tiden."
 title: Refaktorisering
 weight: 19
 ---

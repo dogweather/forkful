@@ -2,13 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:31.991461-07:00
-description: "Debugoutput afdrukken is in wezen de manier waarop een programmeur een\
-  \ kijkje neemt naar wat er in real-time in hun code gebeurt. Het is cruciaal voor\
-  \ het\u2026"
+description: 'Hoe: Laten we dingen naar de console printen.'
 lastmod: '2024-03-13T22:44:50.770498-06:00'
 model: gpt-4-0125-preview
-summary: Debugoutput afdrukken is in wezen de manier waarop een programmeur een kijkje
-  neemt naar wat er in real-time in hun code gebeurt.
+summary: Laten we dingen naar de console printen.
 title: Debug-output afdrukken
 weight: 33
 ---

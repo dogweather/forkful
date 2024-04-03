@@ -2,13 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:42.714077-07:00
-description: "Att generera slumpm\xE4ssiga tal i Dart involverar att skapa numeriska\
-  \ v\xE4rden som \xE4r of\xF6ruts\xE4gbara och skiljer sig \xE5t vid varje k\xF6\
-  rning. Programmerare\u2026"
+description: "Hur man g\xF6r: Darts k\xE4rnbibliotek inkluderar st\xF6d f\xF6r att\
+  \ generera slumpm\xE4ssiga tal med klassen `Random` som finns i `dart:math`. H\xE4\
+  r \xE4r ett grundl\xE4ggande\u2026"
 lastmod: '2024-03-13T22:44:37.607423-06:00'
 model: gpt-4-0125-preview
-summary: "Att generera slumpm\xE4ssiga tal i Dart involverar att skapa numeriska v\xE4\
-  rden som \xE4r of\xF6ruts\xE4gbara och skiljer sig \xE5t vid varje k\xF6rning."
+summary: "Darts k\xE4rnbibliotek inkluderar st\xF6d f\xF6r att generera slumpm\xE4\
+  ssiga tal med klassen `Random` som finns i `dart:math`."
 title: "Generera slumpm\xE4ssiga nummer"
 weight: 12
 ---

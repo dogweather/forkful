@@ -1,11 +1,9 @@
 ---
 date: 2024-01-26 01:09:40.462112-07:00
-description: "\xC5 dele opp kode i funksjoner betyr \xE5 bryte ned skript i mindre,\
-  \ gjenbrukbare blokker som gj\xF8r spesifikke oppgaver. Det gj\xF8r koden mer oversiktlig,\u2026"
+description: 'Hvordan: Lag en enkel funksjon i Bash.'
 lastmod: '2024-03-13T22:44:40.980398-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 dele opp kode i funksjoner betyr \xE5 bryte ned skript i mindre, gjenbrukbare\
-  \ blokker som gj\xF8r spesifikke oppgaver."
+summary: Lag en enkel funksjon i Bash.
 title: Organisering av kode i funksjoner
 weight: 18
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:51.768747-07:00
-description: "Escrever testes em Haskell \xE9 sobre garantir que suas fun\xE7\xF5\
-  es funcionem como esperado atrav\xE9s de verifica\xE7\xF5es autom\xE1ticas. Programadores\
-  \ fazem isso para\u2026"
+description: "Como Fazer: Haskell suporta v\xE1rios frameworks de teste, mas dois\
+  \ populares s\xE3o `Hspec` e `QuickCheck`. O Hspec permite que voc\xEA defina especifica\xE7\
+  \xF5es\u2026"
 lastmod: '2024-03-13T22:44:46.628773-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever testes em Haskell \xE9 sobre garantir que suas fun\xE7\xF5es funcionem\
-  \ como esperado atrav\xE9s de verifica\xE7\xF5es autom\xE1ticas."
+summary: "Haskell suporta v\xE1rios frameworks de teste, mas dois populares s\xE3\
+  o `Hspec` e `QuickCheck`."
 title: Escrevendo testes
 weight: 36
 ---

@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:59:30.011559-07:00
-description: "Att skicka en HTTP-beg\xE4ran inneb\xE4r att be en webbserver om data\
-  \ eller en annan resurs. Programmerare g\xF6r detta f\xF6r att integrera olika webbtj\xE4\
-  nster, h\xE4mta\u2026"
+description: "Hur man g\xF6r: I Elixir anv\xE4nder vi ofta `HTTPoison` f\xF6r HTTP-beg\xE4\
+  ran. S\xE5 h\xE4r ser en grundl\xE4ggande GET-beg\xE4ran ut."
 lastmod: '2024-03-13T22:44:37.563782-06:00'
 model: gpt-4-1106-preview
-summary: "Att skicka en HTTP-beg\xE4ran inneb\xE4r att be en webbserver om data eller\
-  \ en annan resurs."
+summary: "I Elixir anv\xE4nder vi ofta `HTTPoison` f\xF6r HTTP-beg\xE4ran."
 title: "Skicka en http-f\xF6rfr\xE5gan"
 weight: 44
 ---

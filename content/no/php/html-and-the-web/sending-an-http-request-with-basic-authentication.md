@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 18:02:02.333303-07:00
-description: "Sending av en HTTP-foresp\xF8rsel med grunnleggende autentisering inneb\xE6\
-  rer \xE5 inkludere brukernavn og passord for tilgangskontroll hos en server. Programmere\u2026"
+description: "Hvordan gj\xF8re det: ."
 lastmod: '2024-03-13T22:44:40.886177-06:00'
 model: gpt-4-1106-preview
-summary: "Sending av en HTTP-foresp\xF8rsel med grunnleggende autentisering inneb\xE6\
-  rer \xE5 inkludere brukernavn og passord for tilgangskontroll hos en server."
+summary: .
 title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---

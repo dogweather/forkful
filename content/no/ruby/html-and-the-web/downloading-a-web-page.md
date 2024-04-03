@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:44:36.351315-07:00
-description: "\xC5 laste ned en webside betyr \xE5 hente HTML-innholdet fra en URL\
-  \ og lagre det p\xE5 din egen datamaskin. Programmerere gj\xF8r dette for \xE5 analysere\
-  \ innholdet,\u2026"
+description: "Slik gj\xF8r du: Ruby gj\xF8r det enkelt \xE5 laste ned en nettside.\
+  \ Her er et kort eksempel ved bruk av `net/http`-biblioteket."
 lastmod: '2024-03-13T22:44:41.316886-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 laste ned en webside betyr \xE5 hente HTML-innholdet fra en URL og\
-  \ lagre det p\xE5 din egen datamaskin."
+summary: "Ruby gj\xF8r det enkelt \xE5 laste ned en nettside."
 title: Nedlasting av en nettside
 weight: 42
 ---

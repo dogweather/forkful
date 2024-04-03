@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:59:36.162588-07:00
-description: "Enviar una solicitud HTTP es comunicarse con un servidor web, pidiendo\
-  \ informaci\xF3n o enviando datos. Los programadores lo hacen para integrar funciones\
-  \ de\u2026"
+description: "C\xF3mo hacerlo: Aqu\xED utilizaremos la biblioteca [C++ Requests](https://github.com/libcpr/cpr),\
+  \ una envoltura simple y moderna para hacer solicitudes HTTP en\u2026"
 lastmod: '2024-03-13T22:44:59.372257-06:00'
 model: gpt-4-1106-preview
-summary: "Enviar una solicitud HTTP es comunicarse con un servidor web, pidiendo informaci\xF3\
-  n o enviando datos."
+summary: "Aqu\xED utilizaremos la biblioteca [C++ Requests](https://github.com/libcpr/cpr),\
+  \ una envoltura simple y moderna para hacer solicitudes HTTP en C++ inspirada por\
+  \ la biblioteca Python requests."
 title: Enviando una solicitud http
 weight: 44
 ---

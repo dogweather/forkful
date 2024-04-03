@@ -1,12 +1,11 @@
 ---
 date: 2024-02-03 17:50:08.196568-07:00
-description: "Removing quotes from a string in C involves extracting the textual content\
-  \ without the encapsulating single (' ') or double (\" \") quotes. This process\
-  \ is\u2026"
+description: "How to: To remove quotes from a string in C, we traverse the string,\
+  \ copying characters that are not quotes into a new string. This process can be\u2026"
 lastmod: '2024-03-13T22:45:00.500948-06:00'
 model: gpt-4-0125-preview
-summary: Removing quotes from a string in C involves extracting the textual content
-  without the encapsulating single (' ') or double (" ") quotes.
+summary: To remove quotes from a string in C, we traverse the string, copying characters
+  that are not quotes into a new string.
 title: Removing quotes from a string
 weight: 9
 ---

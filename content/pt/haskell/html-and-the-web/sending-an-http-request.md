@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 18:00:01.697981-07:00
-description: "Enviar um pedido HTTP \xE9 basicamente pedir para um servidor web fazer\
-  \ algo ou dar algo. Programadores fazem isso para interagir com APIs, pegar dados,\u2026"
+description: "Como Fazer: Vamos usar a biblioteca `http-conduit` para enviar um pedido\
+  \ HTTP GET simples. Certifique-se de ter ela instalada usando `cabal install http-\u2026"
 lastmod: '2024-03-13T22:44:46.622211-06:00'
 model: gpt-4-1106-preview
-summary: "Enviar um pedido HTTP \xE9 basicamente pedir para um servidor web fazer\
-  \ algo ou dar algo."
+summary: Vamos usar a biblioteca `http-conduit` para enviar um pedido HTTP GET simples.
 title: "Enviando uma requisi\xE7\xE3o HTTP"
 weight: 44
 ---

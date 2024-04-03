@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 18:00:46.493299-07:00
-description: "Wysy\u0142anie zapytania HTTP pozwala naszej aplikacji porozumiewa\u0107\
-  \ si\u0119 z serwerem, wymieniaj\u0105c dane. Programi\u015Bci robi\u0105 to, by\
-  \ pobra\u0107, stworzy\u0107, aktualizowa\u0107\u2026"
+description: "How to: (Jak to zrobi\u0107:) ."
 lastmod: '2024-03-13T22:44:35.135712-06:00'
 model: gpt-4-1106-preview
-summary: "Wysy\u0142anie zapytania HTTP pozwala naszej aplikacji porozumiewa\u0107\
-  \ si\u0119 z serwerem, wymieniaj\u0105c dane."
+summary: .
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---

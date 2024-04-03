@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:32.632300-07:00
-description: "Arrotondare i numeri \xE8 il processo di aggiustamento delle cifre di\
-  \ un numero per ridurne la precisione secondo determinate regole, sia verso il numero\u2026"
+description: "Come fare: L'arrotondamento dei numeri in C pu\xF2 essere realizzato\
+  \ utilizzando varie funzioni, ma l'approccio pi\xF9 comune coinvolge le funzioni\
+  \ `floor()`,\u2026"
 lastmod: '2024-03-13T22:44:43.907400-06:00'
 model: gpt-4-0125-preview
-summary: "Arrotondare i numeri \xE8 il processo di aggiustamento delle cifre di un\
-  \ numero per ridurne la precisione secondo determinate regole, sia verso il numero\
-  \ intero pi\xF9 vicino sia un numero specificato di decimali."
+summary: "L'arrotondamento dei numeri in C pu\xF2 essere realizzato utilizzando varie\
+  \ funzioni, ma l'approccio pi\xF9 comune coinvolge le funzioni `floor()`, `ceil()`,\
+  \ e `round()`."
 title: Arrotondamento dei numeri
 weight: 13
 ---

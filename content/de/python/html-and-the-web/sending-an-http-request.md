@@ -1,10 +1,9 @@
 ---
 date: 2024-01-20 18:00:23.507324-07:00
-description: "HTTP-Anfragen sind das Mittel, um mit Webdiensten zu reden. Programmierer\
-  \ nutzen sie, um Daten zu holen oder zu senden, APIs zu nutzen oder Webseiten-\u2026"
+description: 'How to: (Wie man''s macht:) .'
 lastmod: '2024-03-13T22:44:53.375198-06:00'
 model: gpt-4-1106-preview
-summary: HTTP-Anfragen sind das Mittel, um mit Webdiensten zu reden.
+summary: .
 title: Einen HTTP-Request senden
 weight: 44
 ---

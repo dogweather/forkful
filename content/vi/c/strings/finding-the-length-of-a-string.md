@@ -2,15 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:02.729104-07:00
-description: "Vi\u1EC7c t\xECm \u0111\u1ED9 d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i trong\
-  \ C bao g\u1ED3m vi\u1EC7c x\xE1c \u0111\u1ECBnh s\u1ED1 l\u01B0\u1EE3ng k\xFD t\u1EF1\
-  \ tr\u01B0\u1EDBc k\xFD t\u1EF1 k\u1EBFt th\xFAc chu\u1ED7i NULL `\\0`. C\xE1c l\u1EAD\
-  p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\u1EC3\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong C, h\xE0m th\u01B0 vi\u1EC7n chu\u1EA9\
+  n `strlen()` th\u01B0\u1EDDng \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3\
+  \ t\xECm \u0111\u1ED9 d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i. D\u01B0\u1EDBi \u0111\
+  \xE2y l\xE0 m\u1ED9t v\xED d\u1EE5 nhanh."
 lastmod: '2024-03-13T22:44:37.255371-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c t\xECm \u0111\u1ED9 d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i trong\
-  \ C bao g\u1ED3m vi\u1EC7c x\xE1c \u0111\u1ECBnh s\u1ED1 l\u01B0\u1EE3ng k\xFD t\u1EF1\
-  \ tr\u01B0\u1EDBc k\xFD t\u1EF1 k\u1EBFt th\xFAc chu\u1ED7i NULL `\\0`."
+summary: "Trong C, h\xE0m th\u01B0 vi\u1EC7n chu\u1EA9n `strlen()` th\u01B0\u1EDD\
+  ng \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 t\xECm \u0111\u1ED9 d\xE0\
+  i c\u1EE7a m\u1ED9t chu\u1ED7i."
 title: "T\xECm ki\u1EBFm \u0111\u1ED9 d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i"
 weight: 7
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:58.747167-07:00
-description: "\xC5 arbeide med komplekse tall i programmering inneb\xE6rer \xE5 manipulere\
-  \ tall som har b\xE5de en reell og en imagin\xE6r del, som typisk uttrykkes som\
-  \ `a + bi`.\u2026"
+description: "Hvordan: I Go h\xE5ndteres komplekse tall ved hjelp av de innebygde\
+  \ funksjonene `complex`, `real`, og `imag`, sammen med typene `complex64` og `complex128`\u2026"
 lastmod: '2024-03-13T22:44:40.260132-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 arbeide med komplekse tall i programmering inneb\xE6rer \xE5 manipulere\
-  \ tall som har b\xE5de en reell og en imagin\xE6r del, som typisk uttrykkes som\
-  \ `a + bi`."
+summary: "I Go h\xE5ndteres komplekse tall ved hjelp av de innebygde funksjonene `complex`,\
+  \ `real`, og `imag`, sammen med typene `complex64` og `complex128` (som representerer\
+  \ henholdsvis 64-biter og 128-biters komplekse tall)."
 title: "\xC5 Arbeide med Komplekse Tall"
 weight: 14
 ---

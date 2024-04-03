@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:46.882601-07:00
-description: "\xC5 skrive til en tekstfil i Lua inneb\xE6rer \xE5 opprette eller \xE5\
-  pne en fil i skrivemodus, og deretter bruke filoperasjoner til \xE5 sette inn tekst.\
-  \ Dette er en\u2026"
+description: "Hvordan: I Lua er det enkelt \xE5 jobbe med filer for skriving. Du vil\
+  \ vanligvis bruke `io.open()`-funksjonen for \xE5 \xE5pne (eller opprette) en fil,\
+  \ ved \xE5\u2026"
 lastmod: '2024-03-13T22:44:40.948731-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive til en tekstfil i Lua inneb\xE6rer \xE5 opprette eller \xE5\
-  pne en fil i skrivemodus, og deretter bruke filoperasjoner til \xE5 sette inn tekst."
+summary: "I Lua er det enkelt \xE5 jobbe med filer for skriving."
 title: Skrive en tekstfil
 weight: 24
 ---

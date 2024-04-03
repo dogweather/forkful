@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 18:02:14.407826-07:00
-description: "Inviare una richiesta HTTP con autenticazione di base significa inserire\
-  \ username e password per accedere a risorse protette su un server. I programmatori\u2026"
+description: 'How to: In Kotlin, possiamo utilizzare `HttpURLConnection` per inviare
+  richieste HTTP con autenticazione di base.'
 lastmod: '2024-03-13T22:44:43.390961-06:00'
 model: gpt-4-1106-preview
-summary: Inviare una richiesta HTTP con autenticazione di base significa inserire
-  username e password per accedere a risorse protette su un server.
+summary: In Kotlin, possiamo utilizzare `HttpURLConnection` per inviare richieste
+  HTTP con autenticazione di base.
 title: Inviare una richiesta http con autenticazione di base
 weight: 45
 ---

@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:38.315921-07:00
-description: "Registrar en Visual Basic para Aplicaciones (VBA) implica grabar informaci\xF3\
-  n sobre el comportamiento en tiempo de ejecuci\xF3n de un programa en un archivo,\u2026"
+description: "C\xF3mo hacerlo: En VBA, no hay un marco de registro integrado como\
+  \ en algunos otros lenguajes. Sin embargo, implementar un mecanismo de registro\
+  \ simple es\u2026"
 lastmod: '2024-03-13T22:44:58.900424-06:00'
 model: gpt-4-0125-preview
-summary: "Registrar en Visual Basic para Aplicaciones (VBA) implica grabar informaci\xF3\
-  n sobre el comportamiento en tiempo de ejecuci\xF3n de un programa en un archivo,\
-  \ consola o base de datos."
+summary: En VBA, no hay un marco de registro integrado como en algunos otros lenguajes.
 title: "Registro de Informaci\xF3n"
 weight: 17
 ---

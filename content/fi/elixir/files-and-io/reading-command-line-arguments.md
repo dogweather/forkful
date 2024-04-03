@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:55:43.658100-07:00
-description: "Komennoriviparametrien lukeminen on tapa vastaanottaa k\xE4ytt\xE4j\xE4\
-  lt\xE4 tietoja ohjelman suorituksen yhteydess\xE4. Ohjelmoijat k\xE4ytt\xE4v\xE4\
-  t t\xE4t\xE4 toimintoa\u2026"
+description: "How to: Elixiriss\xE4 komennoriviparametrit saa napattua talteen `System.argv/0`\
+  \ -funktiolla. Tarkastellaan esimerkki\xE4."
 lastmod: '2024-03-13T22:44:56.242480-06:00'
 model: gpt-4-1106-preview
-summary: "Komennoriviparametrien lukeminen on tapa vastaanottaa k\xE4ytt\xE4j\xE4\
-  lt\xE4 tietoja ohjelman suorituksen yhteydess\xE4."
+summary: "Elixiriss\xE4 komennoriviparametrit saa napattua talteen `System.argv/0`\
+  \ -funktiolla."
 title: Komennoriviparametrien lukeminen
 weight: 23
 ---

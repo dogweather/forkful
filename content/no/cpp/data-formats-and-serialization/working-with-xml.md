@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:28:25.436705-07:00
-description: "\xC5 jobbe med XML betyr analyse, oppretting og manipulering av XML\
-  \ (eXtensible Markup Language)-data. Programmerere h\xE5ndterer XML for \xE5 h\xE5\
-  ndtere strukturert\u2026"
+description: "Hvordan: Her er en enkel m\xE5te \xE5 analysere XML p\xE5 ved hjelp\
+  \ av TinyXML-2-biblioteket."
 lastmod: '2024-03-13T22:44:41.124610-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 jobbe med XML betyr analyse, oppretting og manipulering av XML (eXtensible\
-  \ Markup Language)-data."
+summary: "Her er en enkel m\xE5te \xE5 analysere XML p\xE5 ved hjelp av TinyXML-2-biblioteket."
 title: "\xC5 jobbe med XML"
 weight: 40
 ---

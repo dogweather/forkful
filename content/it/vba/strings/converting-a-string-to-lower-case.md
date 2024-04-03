@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:12.228024-07:00
-description: "Convertire una stringa in minuscolo implica trasformare tutti i caratteri\
-  \ maiuscoli di una stringa nei loro equivalenti minuscoli. Questo processo \xE8\u2026"
+description: "Come fare: In Visual Basic per le Applicazioni (VBA), convertire una\
+  \ stringa in minuscolo \xE8 semplice utilizzando la funzione `LCase`. Questa funzione\u2026"
 lastmod: '2024-03-13T22:44:43.248514-06:00'
 model: gpt-4-0125-preview
-summary: Convertire una stringa in minuscolo implica trasformare tutti i caratteri
-  maiuscoli di una stringa nei loro equivalenti minuscoli.
+summary: "In Visual Basic per le Applicazioni (VBA), convertire una stringa in minuscolo\
+  \ \xE8 semplice utilizzando la funzione `LCase`."
 title: Convertire una stringa in minuscolo
 weight: 4
 ---

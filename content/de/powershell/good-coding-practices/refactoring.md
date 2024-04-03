@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:37:22.479279-07:00
-description: "Refactoring ist der Prozess der Umstrukturierung bestehenden Computer-Codes,\
-  \ ohne sein externes Verhalten zu \xE4ndern, mit dem Ziel, nichtfunktionale\u2026"
+description: "Wie: PowerShell bietet kein eigenes, dediziertes Refactoring-Tool, aber\
+  \ Sie k\xF6nnen trotzdem Ihren Code bereinigen, um Lesbarkeit und Leistung zu\u2026"
 lastmod: '2024-03-13T22:44:54.112208-06:00'
 model: gpt-4-0125-preview
-summary: "Refactoring ist der Prozess der Umstrukturierung bestehenden Computer-Codes,\
-  \ ohne sein externes Verhalten zu \xE4ndern, mit dem Ziel, nichtfunktionale Attribute\
-  \ der Software zu verbessern."
+summary: "PowerShell bietet kein eigenes, dediziertes Refactoring-Tool, aber Sie k\xF6\
+  nnen trotzdem Ihren Code bereinigen, um Lesbarkeit und Leistung zu verbessern."
 title: Refactoring
 weight: 19
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:00.402061-07:00
-description: "\xC9crire des tests en Rust consiste \xE0 cr\xE9er des v\xE9rifications\
-  \ automatis\xE9es pour s'assurer que votre code fonctionne comme pr\xE9vu. Les programmeurs\
-  \ font cela\u2026"
+description: "Comment faire : Le framework de test int\xE9gr\xE9 \xE0 Rust prend en\
+  \ charge les tests unitaires, d'int\xE9gration et de documentation sans n\xE9cessiter\
+  \ de\u2026"
 lastmod: '2024-03-13T22:44:57.485592-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire des tests en Rust consiste \xE0 cr\xE9er des v\xE9rifications\
-  \ automatis\xE9es pour s'assurer que votre code fonctionne comme pr\xE9vu."
+summary: "Le framework de test int\xE9gr\xE9 \xE0 Rust prend en charge les tests unitaires,\
+  \ d'int\xE9gration et de documentation sans n\xE9cessiter de biblioth\xE8ques externes."
 title: "R\xE9daction de tests"
 weight: 36
 ---

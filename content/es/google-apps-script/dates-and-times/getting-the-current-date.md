@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:12.719471-07:00
-description: "Obtener la fecha actual en Google Apps Script se trata de obtener la\
-  \ fecha y hora en vivo, una tarea com\xFAn para automatizar tareas, registrar y\
-  \ poner\u2026"
+description: "C\xF3mo: Google Apps Script, que se basa en JavaScript, ofrece m\xE9\
+  todos sencillos para obtener la fecha actual. Puedes usar el constructor `new Date()`\
+  \ para\u2026"
 lastmod: '2024-03-13T22:44:58.547526-06:00'
 model: gpt-4-0125-preview
-summary: "Obtener la fecha actual en Google Apps Script se trata de obtener la fecha\
-  \ y hora en vivo, una tarea com\xFAn para automatizar tareas, registrar y poner\
-  \ marcas de tiempo en aplicaciones vinculadas al ecosistema de Google."
+summary: "Google Apps Script, que se basa en JavaScript, ofrece m\xE9todos sencillos\
+  \ para obtener la fecha actual."
 title: Obteniendo la fecha actual
 weight: 29
 ---

@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:52.009923-07:00
-description: "Pisanie test\xF3w w C polega na tworzeniu mniejszych, pomocniczych program\xF3\
-  w lub funkcji, kt\xF3re automatycznie weryfikuj\u0105 funkcjonalno\u015B\u0107 Twojego\
-  \ kodu.\u2026"
+description: "Jak to zrobi\u0107: Chocia\u017C C nie ma wbudowanego frameworka do\
+  \ testowania takiego jak niekt\xF3re inne j\u0119zyki, nadal mo\u017Cesz pisa\u0107\
+  \ skuteczne testy, u\u017Cywaj\u0105c\u2026"
 lastmod: '2024-03-13T22:44:35.890391-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie test\xF3w w C polega na tworzeniu mniejszych, pomocniczych program\xF3\
-  w lub funkcji, kt\xF3re automatycznie weryfikuj\u0105 funkcjonalno\u015B\u0107 Twojego\
-  \ kodu."
+summary: "Chocia\u017C C nie ma wbudowanego frameworka do testowania takiego jak niekt\xF3\
+  re inne j\u0119zyki, nadal mo\u017Cesz pisa\u0107 skuteczne testy, u\u017Cywaj\u0105\
+  c assert.h do prostych asercji lub integracji z frameworkami stron trzecich takimi\
+  \ jak CUnit czy Unity dla bardziej strukturalnego testowania."
 title: "Pisanie test\xF3w"
 weight: 36
 ---

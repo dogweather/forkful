@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:54.175094-07:00
-description: "Standardivirheen (stderr) kirjoittaminen Arduinon ohjelmoinnissa tarkoittaa\
-  \ virheilmoitusten ja diagnostiikkatietojen ohjaamista erilliselle kanavalle,\u2026"
+description: "Kuinka: Arduino ei natiivisti erota standarditulostetta ja standardivirhett\xE4\
+  \ kuten tavalliset tietokonej\xE4rjestelm\xE4t tekev\xE4t. Sek\xE4 `Serial.print()`\
+  \ ett\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.839789-06:00'
 model: gpt-4-0125-preview
-summary: "Standardivirheen (stderr) kirjoittaminen Arduinon ohjelmoinnissa tarkoittaa\
-  \ virheilmoitusten ja diagnostiikkatietojen ohjaamista erilliselle kanavalle, varmistaen,\
-  \ ett\xE4 ne eiv\xE4t sekoitu standarditulosteeseen (stdout)."
+summary: "Arduino ei natiivisti erota standarditulostetta ja standardivirhett\xE4\
+  \ kuten tavalliset tietokonej\xE4rjestelm\xE4t tekev\xE4t."
 title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---

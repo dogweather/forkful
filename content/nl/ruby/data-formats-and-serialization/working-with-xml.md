@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:29.932388-07:00
-description: "Werken met XML betekent het parseren, genereren en manipuleren van XML\
-  \ (eXtensible Markup Language) documenten met behulp van code. Programmeurs doen\
-  \ dit\u2026"
+description: 'Hoe te: Laten we REXML, inbegrepen bij Ruby, gebruiken om een XML-snippet
+  te parsen.'
 lastmod: '2024-03-13T22:44:51.395231-06:00'
 model: gpt-4-0125-preview
-summary: Werken met XML betekent het parseren, genereren en manipuleren van XML (eXtensible
-  Markup Language) documenten met behulp van code.
+summary: Laten we REXML, inbegrepen bij Ruby, gebruiken om een XML-snippet te parsen.
 title: Werken met XML
 weight: 40
 ---

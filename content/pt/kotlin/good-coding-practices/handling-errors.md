@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 00:54:21.325281-07:00
-description: "Tratar erros \xE9 a forma como o seu c\xF3digo lida com problemas que\
-  \ surgem durante a execu\xE7\xE3o\u2014como lidar com uma bola curva sem deix\xE1\
-  -la cair. Os\u2026"
+description: "Como fazer: Kotlin fornece `try`, `catch`, `finally`, e `throw` para\
+  \ gerenciar erros. Veja como us\xE1-los."
 lastmod: '2024-03-13T22:44:46.549721-06:00'
 model: gpt-4-1106-preview
-summary: "Tratar erros \xE9 a forma como o seu c\xF3digo lida com problemas que surgem\
-  \ durante a execu\xE7\xE3o\u2014como lidar com uma bola curva sem deix\xE1-la cair."
+summary: Kotlin fornece `try`, `catch`, `finally`, e `throw` para gerenciar erros.
 title: Tratamento de erros
 weight: 16
 ---

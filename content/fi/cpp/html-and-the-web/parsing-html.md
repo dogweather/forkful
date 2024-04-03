@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:47.985829-07:00
-description: "HTML:n j\xE4sent\xE4minen tarkoittaa HTML-sis\xE4ll\xF6n hajottamista\
-  \ joksikin, jonka ohjelma voi ymm\xE4rt\xE4\xE4 ja k\xE4sitell\xE4. Ohjelmoijat\
-  \ tekev\xE4t t\xE4m\xE4n, jotta voivat\u2026"
+description: "Kuinka: C++ ei tule sis\xE4\xE4nrakennettujen HTML-j\xE4sent\xE4mismahdollisuuksien\
+  \ kanssa. Usein k\xE4yt\xE4t kirjastoa, kuten Google:n Gumbo-parser tai vastaavaa.\
+  \ T\xE4ss\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.863004-06:00'
 model: gpt-4-0125-preview
-summary: "HTML:n j\xE4sent\xE4minen tarkoittaa HTML-sis\xE4ll\xF6n hajottamista joksikin,\
-  \ jonka ohjelma voi ymm\xE4rt\xE4\xE4 ja k\xE4sitell\xE4."
+summary: "C++ ei tule sis\xE4\xE4nrakennettujen HTML-j\xE4sent\xE4mismahdollisuuksien\
+  \ kanssa."
 title: "HTML:n j\xE4sennys"
 weight: 43
 ---

@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:25.807459-07:00
-description: "Tekst zoeken en vervangen in strings is een veelvoorkomende taak in\
-  \ programmering, vaak gebruikt om gegevens te verwerken en te manipuleren. Het is\u2026"
+description: "Hoe te: TypeScript, gebouwd op JavaScript, komt met handige methoden\
+  \ voor stringmanipulatie. We kunnen `String.prototype.replace()` gebruiken voor\
+  \ basis\u2026"
 lastmod: '2024-03-13T22:44:50.534488-06:00'
 model: gpt-4-0125-preview
-summary: Tekst zoeken en vervangen in strings is een veelvoorkomende taak in programmering,
-  vaak gebruikt om gegevens te verwerken en te manipuleren.
+summary: TypeScript, gebouwd op JavaScript, komt met handige methoden voor stringmanipulatie.
 title: Tekst zoeken en vervangen
 weight: 10
 ---

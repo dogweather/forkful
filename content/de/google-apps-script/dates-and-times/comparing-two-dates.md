@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:43.646904-07:00
-description: "Das Vergleichen von zwei Daten in Google Apps Script, einer Abwandlung\
-  \ von JavaScript, die speziell f\xFCr Googles Anwendungs-Suite entwickelt wurde,\
-  \ ist\u2026"
+description: "Wie geht das: In Google Apps Script werden Daten mithilfe von JavaScript-Datumsobjekten\
+  \ verglichen, was die Verwendung von Standardmethoden zur Bewertung\u2026"
 lastmod: '2024-03-13T22:44:53.347669-06:00'
 model: gpt-4-0125-preview
-summary: "Das Vergleichen von zwei Daten in Google Apps Script, einer Abwandlung von\
-  \ JavaScript, die speziell f\xFCr Googles Anwendungs-Suite entwickelt wurde, ist\
-  \ eine wesentliche Aufgabe f\xFCr Entwickler, die sich mit Planung, Zeitpl\xE4nen\
-  \ oder jeglichen datumsbezogenen Daten besch\xE4ftigen."
+summary: "In Google Apps Script werden Daten mithilfe von JavaScript-Datumsobjekten\
+  \ verglichen, was die Verwendung von Standardmethoden zur Bewertung erm\xF6glicht,\
+  \ welches von zwei Daten fr\xFCher, sp\xE4ter oder ob sie gleich sind."
 title: Zwei Daten vergleichen
 weight: 27
 ---

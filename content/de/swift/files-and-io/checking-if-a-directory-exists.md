@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:47.374857-07:00
-description: "Es ist unerl\xE4sslich zu \xFCberpr\xFCfen, ob ein Verzeichnis im Dateisystem\
-  \ existiert, um Dateistrukturen innerhalb Ihrer Swift-Anwendungen zu verwalten.\
-  \ Diese\u2026"
+description: "Wie geht das: Das Foundation-Framework von Swift stellt die `FileManager`-Klasse\
+  \ bereit, die Methoden zur Verwaltung des Dateisystems bietet. Sie k\xF6nnen\u2026"
 lastmod: '2024-03-13T22:44:54.239375-06:00'
 model: gpt-4-0125-preview
-summary: "Es ist unerl\xE4sslich zu \xFCberpr\xFCfen, ob ein Verzeichnis im Dateisystem\
-  \ existiert, um Dateistrukturen innerhalb Ihrer Swift-Anwendungen zu verwalten."
+summary: Das Foundation-Framework von Swift stellt die `FileManager`-Klasse bereit,
+  die Methoden zur Verwaltung des Dateisystems bietet.
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---

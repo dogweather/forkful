@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:42.557424-07:00
-description: "Standardivirheeseen (stderr) kirjoittaminen JavaScriptill\xE4 tarkoittaa\
-  \ virheilmoitusten tai mink\xE4 tahansa kriittisen tiedon ohjaamista tiettyyn, erilliseen\u2026"
+description: "Miten: Node.js:ss\xE4 stderriin kirjoittaminen voidaan saavuttaa k\xE4\
+  ytt\xE4m\xE4ll\xE4 `console.error()`-metodia tai kirjoittamalla suoraan `process.stderr`iin.\
+  \ T\xE4ss\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.966241-06:00'
 model: gpt-4-0125-preview
-summary: "Standardivirheeseen (stderr) kirjoittaminen JavaScriptill\xE4 tarkoittaa\
-  \ virheilmoitusten tai mink\xE4 tahansa kriittisen tiedon ohjaamista tiettyyn, erilliseen\
-  \ virtaan, mik\xE4 on erityisen hy\xF6dyllist\xE4 Unix-tyyppisiss\xE4 ymp\xE4rist\xF6\
-  iss\xE4 lokiin kirjaamisen ja virheenkorjauksen kannalta."
+summary: "Node.js:ss\xE4 stderriin kirjoittaminen voidaan saavuttaa k\xE4ytt\xE4m\xE4\
+  ll\xE4 `console.error()`-metodia tai kirjoittamalla suoraan `process.stderr`iin."
 title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---

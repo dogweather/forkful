@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:57.197941-07:00
-description: "JSON:n (JavaScript Object Notation) k\xE4sittely C-kieless\xE4 sis\xE4\
-  lt\xE4\xE4 JSON-tietorakenteiden j\xE4sent\xE4misen, luomisen ja manipuloinnin.\
-  \ Ohjelmoijat tekev\xE4t n\xE4in\u2026"
+description: "Kuinka: JSON:n k\xE4sittelyyn C:ss\xE4 k\xE4ytet\xE4\xE4n tyypillisesti\
+  \ kirjastoa kuten `jansson` tai `json-c`, koska C ei tarjoa sis\xE4\xE4nrakennettua\
+  \ tukea JSON:lle. T\xE4ss\xE4\u2026"
 lastmod: '2024-03-13T22:44:57.064097-06:00'
 model: gpt-4-0125-preview
-summary: "JSON:n (JavaScript Object Notation) k\xE4sittely C-kieless\xE4 sis\xE4lt\xE4\
-  \xE4 JSON-tietorakenteiden j\xE4sent\xE4misen, luomisen ja manipuloinnin."
+summary: "JSON:n k\xE4sittelyyn C:ss\xE4 k\xE4ytet\xE4\xE4n tyypillisesti kirjastoa\
+  \ kuten `jansson` tai `json-c`, koska C ei tarjoa sis\xE4\xE4nrakennettua tukea\
+  \ JSON:lle."
 title: "Ty\xF6skentely JSONin kanssa"
 weight: 38
 ---

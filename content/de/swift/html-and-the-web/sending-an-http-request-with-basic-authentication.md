@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 18:02:54.481387-07:00
-description: "Beim Senden einer HTTP-Anfrage mit Basisauthentifizierung f\xFCgen wir\
-  \ Anmeldeinformationen in den Request-Header ein, um uns beim Server zu\u2026"
+description: 'How to: Mit Swift eine HTTP-Anfrage mit Basisauthentifizierung senden.'
 lastmod: '2024-03-13T22:44:54.225417-06:00'
 model: gpt-4-1106-preview
-summary: "Beim Senden einer HTTP-Anfrage mit Basisauthentifizierung f\xFCgen wir Anmeldeinformationen\
-  \ in den Request-Header ein, um uns beim Server zu authentifizieren."
+summary: Mit Swift eine HTTP-Anfrage mit Basisauthentifizierung senden.
 title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---

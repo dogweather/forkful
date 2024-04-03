@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:55:47.932341-07:00
-description: "Czytanie argument\xF3w linii polece\u0144 to spos\xF3b na podanie danych\
-  \ programowi, kiedy go uruchamiasz. Programi\u015Bci korzystaj\u0105 z tego, aby\
-  \ uczyni\u0107 swoje skrypty\u2026"
+description: "How to: (Jak to zrobi\u0107?) Podawanie argument\xF3w i odczytywanie\
+  \ ich w Fish jest banalnie proste. Oto jak."
 lastmod: '2024-03-13T22:44:35.857218-06:00'
 model: gpt-4-1106-preview
-summary: "Czytanie argument\xF3w linii polece\u0144 to spos\xF3b na podanie danych\
-  \ programowi, kiedy go uruchamiasz."
+summary: "Podawanie argument\xF3w i odczytywanie ich w Fish jest banalnie proste."
 title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---

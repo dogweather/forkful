@@ -1,11 +1,10 @@
 ---
 date: 2024-01-25 03:39:46.320314-07:00
-description: "Interactive shells, or REPLs (Read-Eval-Print Loops), let you run code\
-  \ on the fly, testing functions, algorithms, or fiddling with ideas. They're the\u2026"
+description: 'How to: Node.js ships with a REPL accessible via the terminal. Pop it
+  open, and you''re ready to roll. Here''s a taste.'
 lastmod: '2024-03-13T22:45:00.434979-06:00'
 model: gpt-4-1106-preview
-summary: Interactive shells, or REPLs (Read-Eval-Print Loops), let you run code on
-  the fly, testing functions, algorithms, or fiddling with ideas.
+summary: Node.js ships with a REPL accessible via the terminal.
 title: Using an interactive shell (REPL)
 weight: 34
 ---

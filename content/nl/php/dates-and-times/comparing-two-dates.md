@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:24.552298-07:00
-description: "Twee datums vergelijken betekent controleren of ze hetzelfde zijn, of\
-  \ uitvinden welke eerder of later is. Programmeurs doen dit voor het beheren van\u2026"
+description: 'Hoe te: PHP''s `DateTime` objecten en vergelijkingsoperators maken dit
+  eenvoudig. Hier is een eenvoudig voorbeeld.'
 lastmod: '2024-03-13T22:44:50.908220-06:00'
 model: gpt-4-0125-preview
-summary: Twee datums vergelijken betekent controleren of ze hetzelfde zijn, of uitvinden
-  welke eerder of later is.
+summary: PHP's `DateTime` objecten en vergelijkingsoperators maken dit eenvoudig.
 title: Twee datums vergelijken
 weight: 27
 ---

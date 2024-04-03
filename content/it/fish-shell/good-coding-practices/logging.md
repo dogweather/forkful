@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:04:06.386758-07:00
-description: "Il logging, essenzialmente, consiste nell'annotare ci\xF2 che la tua\
-  \ applicazione sta facendo \u2013 potremmo dire un diario, ma per il codice. I programmatori\
-  \ lo\u2026"
+description: "Come fare: In Fish, effettuare il logging pu\xF2 essere semplice come\
+  \ reindirizzare gli output standard e gli stream di errore verso un file. Facendo\u2026"
 lastmod: '2024-03-13T22:44:43.865773-06:00'
 model: gpt-4-1106-preview
-summary: "Il logging, essenzialmente, consiste nell'annotare ci\xF2 che la tua applicazione\
-  \ sta facendo \u2013 potremmo dire un diario, ma per il codice."
+summary: "In Fish, effettuare il logging pu\xF2 essere semplice come reindirizzare\
+  \ gli output standard e gli stream di errore verso un file."
 title: Registrazione Eventi (Logging)
 weight: 17
 ---

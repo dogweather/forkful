@@ -2,12 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:43.926212-07:00
-description: "Parsowanie daty ze stringa polega na konwertowaniu tekstowych reprezentacji\
-  \ daty i czasu na obiekt `Date`. Proces ten jest niezb\u0119dny w aplikacjach, w\u2026"
+description: "Jak to zrobi\u0107: #."
 lastmod: '2024-03-13T22:44:35.764172-06:00'
 model: gpt-4-0125-preview
-summary: Parsowanie daty ze stringa polega na konwertowaniu tekstowych reprezentacji
-  daty i czasu na obiekt `Date`.
+summary: '#.'
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---

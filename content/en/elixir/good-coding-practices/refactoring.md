@@ -1,12 +1,10 @@
 ---
 date: 2024-01-25 02:12:16.229146-07:00
-description: "Refactoring is the process of restructuring existing code without changing\
-  \ its external behavior, aimed at improving nonfunctional attributes like\u2026"
+description: "How to: Let's tidy up a common Elixir pattern. We'll refactor a function\
+  \ `calculate_stats` that does more than it should by breaking it into smaller,\u2026"
 lastmod: '2024-03-13T22:44:59.789768-06:00'
 model: gpt-4-1106-preview
-summary: Refactoring is the process of restructuring existing code without changing
-  its external behavior, aimed at improving nonfunctional attributes like readability
-  and maintainability.
+summary: Let's tidy up a common Elixir pattern.
 title: Refactoring
 weight: 19
 ---

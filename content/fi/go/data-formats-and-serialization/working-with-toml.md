@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:12:49.182891-07:00
-description: "TOML (Tom's Obvious, Minimal Language) on konfiguraatiotiedostojen formaatti,\
-  \ joka on helppo lukea yksinkertaisen syntaksinsa ansiosta. Ohjelmoijat\u2026"
+description: "Kuinka: Aloittaaksesi ty\xF6skentelyn TOML:n kanssa Go:ssa, sinun on\
+  \ ensin sis\xE4llytett\xE4v\xE4 kirjasto, joka osaa j\xE4sent\xE4\xE4 TOML-tiedostoja,\
+  \ sill\xE4 Go:n vakio\u2026"
 lastmod: '2024-03-13T22:44:56.075721-06:00'
 model: gpt-4-0125-preview
-summary: TOML (Tom's Obvious, Minimal Language) on konfiguraatiotiedostojen formaatti,
-  joka on helppo lukea yksinkertaisen syntaksinsa ansiosta.
+summary: "Aloittaaksesi ty\xF6skentelyn TOML:n kanssa Go:ssa, sinun on ensin sis\xE4\
+  llytett\xE4v\xE4 kirjasto, joka osaa j\xE4sent\xE4\xE4 TOML-tiedostoja, sill\xE4\
+  \ Go:n vakio kirjasto ei natiivisti tue TOML:\xE4\xE4."
 title: "TOML:n kanssa ty\xF6skentely"
 weight: 39
 ---

@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:48:16.602904-07:00
-description: "Finding the length of a string means counting the number of characters\
-  \ it contains. Programmers do this to validate, format, or process text data\u2026"
+description: 'How to: Rust gives you `len()` for straight-up length.'
 lastmod: '2024-03-13T22:44:59.887724-06:00'
 model: gpt-4-1106-preview
-summary: Finding the length of a string means counting the number of characters it
-  contains.
+summary: Rust gives you `len()` for straight-up length.
 title: Finding the length of a string
 weight: 7
 ---

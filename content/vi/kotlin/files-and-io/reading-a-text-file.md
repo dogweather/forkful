@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:53.200525-07:00
-description: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n c\xF3 ngh\u0129a l\xE0\
-  \ k\xE9o d\u1EEF li\u1EC7u t\u1EEB m\u1ED9t t\u1EC7p v\xE0o ch\u01B0\u01A1ng tr\xEC\
-  nh c\u1EE7a b\u1EA1n, th\u01B0\u1EDDng l\xE0 t\u1EEBng d\xF2ng m\u1ED9t. L\u1EAD\
-  p tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 x\u1EED l\xFD ho\u1EB7\
-  c ph\xE2n\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong Kotlin, b\u1EA1n c\xF3 th\u1EC3 d\u1EC5\
+  \ d\xE0ng \u0111\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n s\u1EED d\u1EE5ng h\xE0\
+  m `readLines()` ho\u1EB7c kh\u1ED1i `useLines`."
 lastmod: '2024-03-13T22:44:36.624436-06:00'
 model: gpt-4-0125-preview
-summary: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n c\xF3 ngh\u0129a l\xE0\
-  \ k\xE9o d\u1EEF li\u1EC7u t\u1EEB m\u1ED9t t\u1EC7p v\xE0o ch\u01B0\u01A1ng tr\xEC\
-  nh c\u1EE7a b\u1EA1n, th\u01B0\u1EDDng l\xE0 t\u1EEBng d\xF2ng m\u1ED9t."
+summary: "Trong Kotlin, b\u1EA1n c\xF3 th\u1EC3 d\u1EC5 d\xE0ng \u0111\u1ECDc m\u1ED9\
+  t t\u1EC7p v\u0103n b\u1EA3n s\u1EED d\u1EE5ng h\xE0m `readLines()` ho\u1EB7c kh\u1ED1\
+  i `useLines`."
 title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 22
 ---

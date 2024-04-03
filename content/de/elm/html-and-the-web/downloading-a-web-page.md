@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:43:48.061787-07:00
-description: "Webseiten herunterzuladen bedeutet, Anfragen an einen Server zu senden,\
-  \ um eine HTML-Seite zu erhalten. Programmierer machen das, um Daten zu sammeln,\u2026"
+description: "How to: Elm verwendet `Http`-Pakete f\xFCr Webanfragen. Hier ist ein\
+  \ einfaches Beispiel, um eine Webseite herunterzuladen."
 lastmod: '2024-03-13T22:44:53.803981-06:00'
 model: gpt-4-1106-preview
-summary: Webseiten herunterzuladen bedeutet, Anfragen an einen Server zu senden, um
-  eine HTML-Seite zu erhalten.
+summary: "Elm verwendet `Http`-Pakete f\xFCr Webanfragen."
 title: Webseite herunterladen
 weight: 42
 ---

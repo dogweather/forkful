@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 04:43:38.562956-07:00
-description: "Kompleksiluvuilla on reaaliosa ja imaginaariosa, jotka yleens\xE4 kirjoitetaan\
-  \ muodossa `a + bi`. Ne ovat keskeisi\xE4 edistyneess\xE4 matematiikassa, fysiikassa,\u2026"
+description: "Kuinka: PHP tarjoaa sis\xE4\xE4nrakennetun tuen kompleksiluvuille k\xE4\
+  ytt\xE4en `ext-intl`-laajennosta `NumberFormatter`-luokan avulla. T\xE4ss\xE4 on\
+  \ esimerkki."
 lastmod: '2024-03-13T22:44:56.649739-06:00'
 model: gpt-4-0125-preview
-summary: "Kompleksiluvuilla on reaaliosa ja imaginaariosa, jotka yleens\xE4 kirjoitetaan\
-  \ muodossa `a + bi`."
+summary: "PHP tarjoaa sis\xE4\xE4nrakennetun tuen kompleksiluvuille k\xE4ytt\xE4en\
+  \ `ext-intl`-laajennosta `NumberFormatter`-luokan avulla."
 title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---

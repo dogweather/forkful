@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:34:29.738727-07:00
-description: "Comparar duas datas \xE9 essencialmente medir a diferen\xE7a entre elas\
-  \ ou determinar qual vem antes ou depois. Programadores fazem isso para manipular\
-  \ per\xEDodos\u2026"
+description: 'Como Fazer: Vamos direto ao ponto com exemplos em PowerShell.'
 lastmod: '2024-03-13T22:44:46.809264-06:00'
 model: gpt-4-1106-preview
-summary: "Comparar duas datas \xE9 essencialmente medir a diferen\xE7a entre elas\
-  \ ou determinar qual vem antes ou depois."
+summary: Vamos direto ao ponto com exemplos em PowerShell.
 title: Comparando duas datas
 weight: 27
 ---

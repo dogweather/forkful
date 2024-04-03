@@ -2,13 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:03.770739-07:00
-description: "\xC5 hente den n\xE5v\xE6rende datoen i TypeScript, et spr\xE5k bygget\
-  \ p\xE5 JavaScript, lar deg f\xE5 tilgang til og manipulere informasjon om den n\xE5\
-  v\xE6rende datoen og\u2026"
+description: "Hvordan: I TypeScript kan du bruke `Date`-objektet for \xE5 f\xE5 den\
+  \ n\xE5v\xE6rende datoen og tiden. Slik kan du gj\xF8re det."
 lastmod: '2024-03-13T22:44:40.542619-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 hente den n\xE5v\xE6rende datoen i TypeScript, et spr\xE5k bygget p\xE5\
-  \ JavaScript, lar deg f\xE5 tilgang til og manipulere informasjon om den n\xE5v\xE6\
+summary: "I TypeScript kan du bruke `Date`-objektet for \xE5 f\xE5 den n\xE5v\xE6\
   rende datoen og tiden."
 title: "F\xE5 dagens dato"
 weight: 29

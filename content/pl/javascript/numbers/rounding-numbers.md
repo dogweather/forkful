@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:45:32.564069-07:00
-description: "Zaokr\u0105glanie polega na odci\u0119ciu nadmiaru po okre\u015Blonym\
-  \ miejscu w liczbie. Programi\u015Bci zaokr\u0105glaj\u0105 w celu kontrolowania\
-  \ dok\u0142adno\u015Bci, zarz\u0105dzania pami\u0119ci\u0105\u2026"
+description: "Jak to zrobi\u0107: Oto jak zaokr\u0105glasz liczby w JavaScript za\
+  \ pomoc\u0105 `Math.round()`, `Math.ceil()` oraz `Math.floor()`."
 lastmod: '2024-03-13T22:44:35.791407-06:00'
 model: gpt-4-0125-preview
-summary: "Zaokr\u0105glanie polega na odci\u0119ciu nadmiaru po okre\u015Blonym miejscu\
-  \ w liczbie."
+summary: "Oto jak zaokr\u0105glasz liczby w JavaScript za pomoc\u0105 `Math.round()`,\
+  \ `Math.ceil()` oraz `Math.floor()`."
 title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---

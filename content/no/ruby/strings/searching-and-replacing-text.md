@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:58:45.246700-07:00
-description: "(\"Hva & Hvorfor?\") Teksts\xF8k og -erstattning lar oss finne og bytte\
-  \ ut spesifikke ord eller fraser i en streng. Programmerere bruker dette til \xE5\
-  \ endre\u2026"
+description: "How to: (\"Slik gj\xF8r du:\") Ruby gj\xF8r det enkelt med `gsub` metoden.\
+  \ `gsub` st\xE5r for \"global substitution\" og bytter alle treff."
 lastmod: '2024-03-13T22:44:41.301280-06:00'
 model: gpt-4-1106-preview
-summary: ("Hva & Hvorfor.
+summary: "(\"Slik gj\xF8r du:\")\nRuby gj\xF8r det enkelt med `gsub` metoden."
 title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---

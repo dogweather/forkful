@@ -2,13 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:15.759631-07:00
-description: "Analisar uma data a partir de uma string em Haskell envolve converter\
-  \ representa\xE7\xF5es textuais de datas em um formato estruturado que o programa\
-  \ pode\u2026"
+description: "Como Fazer: De imediato, Haskell oferece ferramentas b\xE1sicas para\
+  \ an\xE1lise de datas, mas aproveitar bibliotecas como `time` para funcionalidades\
+  \ principais\u2026"
 lastmod: '2024-03-13T22:44:46.634577-06:00'
 model: gpt-4-0125-preview
-summary: "Analisar uma data a partir de uma string em Haskell envolve converter representa\xE7\
-  \xF5es textuais de datas em um formato estruturado que o programa pode manipular."
+summary: "De imediato, Haskell oferece ferramentas b\xE1sicas para an\xE1lise de datas,\
+  \ mas aproveitar bibliotecas como `time` para funcionalidades principais e `date-parse`\
+  \ ou `time-parse` para uma an\xE1lise mais flex\xEDvel pode significativamente simplificar\
+  \ a tarefa."
 title: Analisando uma data a partir de uma string
 weight: 30
 ---

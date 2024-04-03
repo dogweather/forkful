@@ -1,11 +1,12 @@
 ---
 date: 2024-01-27 20:33:29.831021-07:00
-description: "Generar n\xFAmeros aleatorios es una tarea fundamental en la programaci\xF3\
-  n, utilizada para todo, desde muestreo de datos hasta desarrollo de juegos. En Fish\u2026"
+description: "C\xF3mo: Generar un n\xFAmero aleatorio en Fish puede ser sencillo,\
+  \ utilizando la combinaci\xF3n de utilidades del sistema y capacidades del shell.\
+  \ A continuaci\xF3n\u2026"
 lastmod: '2024-03-13T22:44:59.495596-06:00'
 model: gpt-4-0125-preview
-summary: "Generar n\xFAmeros aleatorios es una tarea fundamental en la programaci\xF3\
-  n, utilizada para todo, desde muestreo de datos hasta desarrollo de juegos."
+summary: "Generar un n\xFAmero aleatorio en Fish puede ser sencillo, utilizando la\
+  \ combinaci\xF3n de utilidades del sistema y capacidades del shell."
 title: "Generaci\xF3n de n\xFAmeros aleatorios"
 weight: 12
 ---

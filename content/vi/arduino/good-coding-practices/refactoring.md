@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:54.229591-07:00
-description: "T\xE1i c\u1EA5u tr\xFAc l\xE0 qu\xE1 tr\xECnh l\xE0m vi\u1EC7c l\u1EA1\
-  i code c\u1EE7a b\u1EA1n nh\u1EB1m c\u1EA3i thi\u1EC7n c\u1EA5u tr\xFAc v\xE0 t\xED\
-  nh d\u1EC5 \u0111\u1ECDc m\xE0 kh\xF4ng thay \u0111\u1ED5i h\xE0nh vi ho\u1EB7c\
-  \ ch\u1EE9c n\u0103ng b\xEAn ngo\xE0i. L\u1EADp tr\xECnh\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Gi\u1EA3 s\u1EED b\u1EA1n c\xF3 m\u1ED9t h\xE0\
+  m tr\xEAn Arduino c\u1EE7a m\xECnh \u0111ang l\xE0m qu\xE1 nhi\u1EC1u vi\u1EC7c,\
+  \ nh\u01B0 th\u1EBF n\xE0y."
 lastmod: '2024-03-13T22:44:36.999990-06:00'
 model: gpt-4-0125-preview
-summary: "T\xE1i c\u1EA5u tr\xFAc l\xE0 qu\xE1 tr\xECnh l\xE0m vi\u1EC7c l\u1EA1i\
-  \ code c\u1EE7a b\u1EA1n nh\u1EB1m c\u1EA3i thi\u1EC7n c\u1EA5u tr\xFAc v\xE0 t\xED\
-  nh d\u1EC5 \u0111\u1ECDc m\xE0 kh\xF4ng thay \u0111\u1ED5i h\xE0nh vi ho\u1EB7c\
-  \ ch\u1EE9c n\u0103ng b\xEAn ngo\xE0i."
+summary: "Gi\u1EA3 s\u1EED b\u1EA1n c\xF3 m\u1ED9t h\xE0m tr\xEAn Arduino c\u1EE7\
+  a m\xECnh \u0111ang l\xE0m qu\xE1 nhi\u1EC1u vi\u1EC7c, nh\u01B0 th\u1EBF n\xE0\
+  y."
 title: "T\xE1i c\u1EA5u tr\xFAc m\xE3"
 weight: 19
 ---

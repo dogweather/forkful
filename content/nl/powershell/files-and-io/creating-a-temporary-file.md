@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:20.963329-07:00
-description: "Het maken van een tijdelijk bestand betekent het cre\xEBren van een\
-  \ bestand voor kortdurend gebruik, vaak om gegevens tijdens een sessie op te slaan.\u2026"
+description: "Hoe: Om in PowerShell een tijdelijk bestand te maken, gebruik je `New-TemporaryFile`.\
+  \ Deze cmdlet maakt een tijdelijk bestand in je temp-map. Hier is de\u2026"
 lastmod: '2024-03-13T22:44:51.049513-06:00'
 model: gpt-4-0125-preview
-summary: "Het maken van een tijdelijk bestand betekent het cre\xEBren van een bestand\
-  \ voor kortdurend gebruik, vaak om gegevens tijdens een sessie op te slaan."
+summary: Om in PowerShell een tijdelijk bestand te maken, gebruik je `New-TemporaryFile`.
 title: Een tijdelijk bestand aanmaken
 weight: 21
 ---

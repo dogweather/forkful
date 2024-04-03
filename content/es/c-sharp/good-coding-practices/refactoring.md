@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:17:12.061535-07:00
-description: "La refactorizaci\xF3n es el proceso de reestructuraci\xF3n del c\xF3\
-  digo de computadora existente sin cambiar su comportamiento externo. Los programadores\
-  \ lo hacen\u2026"
+description: "C\xF3mo hacerlo: Vamos a refactorizar un m\xE9todo simple de C# que\
+  \ calcula e imprime la suma de un arreglo de n\xFAmeros: Antes de Refactorizar."
 lastmod: '2024-03-13T22:44:59.086213-06:00'
 model: gpt-4-0125-preview
-summary: "La refactorizaci\xF3n es el proceso de reestructuraci\xF3n del c\xF3digo\
-  \ de computadora existente sin cambiar su comportamiento externo."
+summary: "Vamos a refactorizar un m\xE9todo simple de C# que calcula e imprime la\
+  \ suma de un arreglo de n\xFAmeros."
 title: "Refactorizaci\xF3n"
 weight: 19
 ---

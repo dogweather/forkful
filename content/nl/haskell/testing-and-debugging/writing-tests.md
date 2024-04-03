@@ -2,11 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:20.596911-07:00
-description: "Tests schrijven controleert of code doet wat het moet doen. Testen vangt\
-  \ bugs op, helpt bij het onderhouden van code en zorgt ervoor dat wijzigingen niets\u2026"
+description: 'Hoe te: Haskell gebruikt HUnit voor basis unit tests, en QuickCheck
+  voor property-based tests. Hier is een snel voorbeeld van HUnit.'
 lastmod: '2024-03-13T22:44:50.855929-06:00'
 model: gpt-4-0125-preview
-summary: Tests schrijven controleert of code doet wat het moet doen.
+summary: Haskell gebruikt HUnit voor basis unit tests, en QuickCheck voor property-based
+  tests.
 title: Tests Schrijven
 weight: 36
 ---

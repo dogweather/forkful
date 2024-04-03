@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:48.322859-07:00
-description: "L'analisi di una data da una stringa comporta la conversione delle rappresentazioni\
-  \ testuali di date e orari in un formato che pu\xF2 essere facilmente\u2026"
+description: "Come fare: Lua non ha supporto integrato per la manipolazione di date\
+  \ e orari oltre alla funzionalit\xE0 limitata fornita dalle funzioni `os.date` e\u2026"
 lastmod: '2024-03-13T22:44:43.566752-06:00'
 model: gpt-4-0125-preview
-summary: "L'analisi di una data da una stringa comporta la conversione delle rappresentazioni\
-  \ testuali di date e orari in un formato che pu\xF2 essere facilmente manipolato,\
-  \ memorizzato o confrontato all'interno di un programma Lua."
+summary: "Lua non ha supporto integrato per la manipolazione di date e orari oltre\
+  \ alla funzionalit\xE0 limitata fornita dalle funzioni `os.date` e `os.time`."
 title: Analisi di una data da una stringa
 weight: 30
 ---

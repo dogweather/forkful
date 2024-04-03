@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:37.701172-07:00
-description: "Le format des valeurs s\xE9par\xE9es par des virgules (CSV) est omnipr\xE9\
-  sent pour l'\xE9change de donn\xE9es en raison de sa simplicit\xE9 et de sa facilit\xE9\
-  \ d'int\xE9gration\u2026"
+description: "Comment faire : Travailler avec des fichiers CSV en Go est simple, gr\xE2\
+  ce \xE0 sa biblioth\xE8que standard, `encoding/csv`. Ci-dessous, un guide pour lire\
+  \ et\u2026"
 lastmod: '2024-03-13T22:44:57.160397-06:00'
 model: gpt-4-0125-preview
-summary: "Le format des valeurs s\xE9par\xE9es par des virgules (CSV) est omnipr\xE9\
-  sent pour l'\xE9change de donn\xE9es en raison de sa simplicit\xE9 et de sa facilit\xE9\
-  \ d'int\xE9gration avec la plupart des langages de programmation, y compris Go."
+summary: "Travailler avec des fichiers CSV en Go est simple, gr\xE2ce \xE0 sa biblioth\xE8\
+  que standard, `encoding/csv`."
 title: Travailler avec CSV
 weight: 37
 ---

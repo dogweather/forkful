@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:46.992939-07:00
-description: "Parsowanie HTML w PowerShell to proces analizowania zawarto\u015Bci\
-  \ HTML w celu wyodr\u0119bnienia konkretnych danych lub automatyzacji zada\u0144\
-  \ zwi\u0105zanych z sieci\u0105.\u2026"
+description: "Jak to zrobi\u0107: PowerShell nie posiada natywnie dedykowanego analizatora\
+  \ HTML, ale mo\u017Cna wykorzysta\u0107 cmdlet `Invoke-WebRequest` do dost\u0119\
+  pu i analizowania\u2026"
 lastmod: '2024-03-13T22:44:35.627638-06:00'
 model: gpt-4-0125-preview
-summary: "Parsowanie HTML w PowerShell to proces analizowania zawarto\u015Bci HTML\
-  \ w celu wyodr\u0119bnienia konkretnych danych lub automatyzacji zada\u0144 zwi\u0105\
-  zanych z sieci\u0105."
+summary: "PowerShell nie posiada natywnie dedykowanego analizatora HTML, ale mo\u017C\
+  na wykorzysta\u0107 cmdlet `Invoke-WebRequest` do dost\u0119pu i analizowania tre\u015B\
+  ci HTML."
 title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---

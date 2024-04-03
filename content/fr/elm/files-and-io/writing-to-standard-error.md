@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:00.326327-07:00
-description: "\xC9crire dans l'erreur standard (stderr) consiste \xE0 rediriger les\
-  \ messages d'erreur et les diagnostics s\xE9par\xE9ment du r\xE9sultat principal\
-  \ du programme, qui va\u2026"
+description: "Comment faire : Elm est principalement destin\xE9 au d\xE9veloppement\
+  \ Web, o\xF9 le concept d'\xE9criture directe sur stderr ne s'applique pas de la\
+  \ m\xEAme mani\xE8re que\u2026"
 lastmod: '2024-03-13T22:44:57.707261-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire dans l'erreur standard (stderr) consiste \xE0 rediriger les messages\
-  \ d'erreur et les diagnostics s\xE9par\xE9ment du r\xE9sultat principal du programme,\
-  \ qui va \xE0 la sortie standard (stdout)."
+summary: "Elm est principalement destin\xE9 au d\xE9veloppement Web, o\xF9 le concept\
+  \ d'\xE9criture directe sur stderr ne s'applique pas de la m\xEAme mani\xE8re que\
+  \ dans les environnements en ligne de commande traditionnels."
 title: "\xC9crire sur l'erreur standard"
 weight: 25
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:40.545678-07:00
-description: "Em TypeScript, escrever para o erro padr\xE3o (stderr) \xE9 um processo\
-  \ de enviar mensagens de erro ou logs diretamente para o fluxo de sa\xEDda de erro\
-  \ do\u2026"
+description: "Como Fazer: TypeScript, sendo um superconjunto de JavaScript, depende\
+  \ do ambiente de execu\xE7\xE3o JS subjacente (como Node.js) para escrever no stderr.\
+  \ Aqui\u2026"
 lastmod: '2024-03-13T22:44:46.342435-06:00'
 model: gpt-4-0125-preview
-summary: "Em TypeScript, escrever para o erro padr\xE3o (stderr) \xE9 um processo\
-  \ de enviar mensagens de erro ou logs diretamente para o fluxo de sa\xEDda de erro\
-  \ do ambiente (por exemplo, o console em node."
+summary: "TypeScript, sendo um superconjunto de JavaScript, depende do ambiente de\
+  \ execu\xE7\xE3o JS subjacente (como Node.js) para escrever no stderr."
 title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---

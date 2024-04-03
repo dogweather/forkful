@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:42.246940-07:00
-description: "Interaktywna pow\u0142oka, czyli p\u0119tla czytaj-wykonaj-wypisz (REPL),\
-  \ pozwala eksperymentowa\u0107 z kodem Go w czasie rzeczywistym, wykonuj\u0105c\
-  \ komendy i otrzymuj\u0105c\u2026"
+description: "Jak to zrobi\u0107: Mimo \u017Ce Go nie zawiera wbudowanego REPL, spo\u0142\
+  eczno\u015B\u0107 stworzy\u0142a narz\u0119dzia takie jak `gore`, aby wype\u0142\
+  ni\u0107 t\u0119 luk\u0119. Najpierw zainstaluj\u2026"
 lastmod: '2024-03-13T22:44:34.853069-06:00'
 model: gpt-4-0125-preview
-summary: "Interaktywna pow\u0142oka, czyli p\u0119tla czytaj-wykonaj-wypisz (REPL),\
-  \ pozwala eksperymentowa\u0107 z kodem Go w czasie rzeczywistym, wykonuj\u0105c\
-  \ komendy i otrzymuj\u0105c natychmiastow\u0105 informacj\u0119 zwrotn\u0105."
+summary: "Mimo \u017Ce Go nie zawiera wbudowanego REPL, spo\u0142eczno\u015B\u0107\
+  \ stworzy\u0142a narz\u0119dzia takie jak `gore`, aby wype\u0142ni\u0107 t\u0119\
+  \ luk\u0119."
 title: "Korzystanie z interaktywnej pow\u0142oki (REPL)"
 weight: 34
 ---

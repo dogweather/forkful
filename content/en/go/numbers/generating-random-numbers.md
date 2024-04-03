@@ -1,12 +1,11 @@
 ---
 date: 2024-02-03 17:50:07.025730-07:00
-description: "Generating random numbers in programming is about creating a sequence\
-  \ of numbers that cannot be reasonably predicted better than by chance. Programmers\
-  \ do\u2026"
+description: "How to: In Go, random numbers are generated using the `math/rand` package\
+  \ for pseudo-random numbers or `crypto/rand` for cryptographically secure pseudo-\u2026"
 lastmod: '2024-03-13T22:44:59.627263-06:00'
 model: gpt-4-0125-preview
-summary: Generating random numbers in programming is about creating a sequence of
-  numbers that cannot be reasonably predicted better than by chance.
+summary: In Go, random numbers are generated using the `math/rand` package for pseudo-random
+  numbers or `crypto/rand` for cryptographically secure pseudo-random numbers.
 title: Generating random numbers
 weight: 12
 ---

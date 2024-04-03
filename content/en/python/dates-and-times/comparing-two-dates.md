@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:33:40.579674-07:00
-description: "Comparing two dates means checking which one comes first or how far\
-  \ apart they are in time. Programmers do it to schedule events, measure time spans,\
-  \ and\u2026"
+description: 'How to: In Python, you can use the `datetime` module to compare dates.
+  Here''s how.'
 lastmod: '2024-03-13T22:44:59.719048-06:00'
 model: gpt-4-1106-preview
-summary: Comparing two dates means checking which one comes first or how far apart
-  they are in time.
+summary: In Python, you can use the `datetime` module to compare dates.
 title: Comparing two dates
 weight: 27
 ---

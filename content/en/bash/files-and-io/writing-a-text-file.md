@@ -1,11 +1,10 @@
 ---
 date: 2024-02-03 19:03:24.379648-07:00
-description: "Writing a text file in Bash allows you to automate data storage, logging,\
-  \ configuration settings, and more. It's a fundamental skill for shell scripting,\u2026"
+description: "How to: Bash provides straightforward methods for writing to a file.\
+  \ The most common are using redirection operators (`>`, `>>`) and the `tee` command.\u2026"
 lastmod: '2024-03-13T22:45:00.260750-06:00'
 model: gpt-4-0125-preview
-summary: Writing a text file in Bash allows you to automate data storage, logging,
-  configuration settings, and more.
+summary: Bash provides straightforward methods for writing to a file.
 title: Writing a text file
 weight: 24
 ---

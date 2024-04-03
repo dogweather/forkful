@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:40:53.952174-07:00
-description: "Das Erstellen einer tempor\xE4ren Datei bedeutet, eine Datei f\xFCr\
-  \ kurzzeitige Nutzung zu generieren, die nach Gebrauch meist automatisch gel\xF6\
-  scht wird.\u2026"
+description: "So geht's: In PHP ist das Erstellen einer tempor\xE4ren Datei ein Kinderspiel.\
+  \ Hier ist ein schnelles Beispiel."
 lastmod: '2024-03-13T22:44:53.991924-06:00'
 model: gpt-4-1106-preview
-summary: "Das Erstellen einer tempor\xE4ren Datei bedeutet, eine Datei f\xFCr kurzzeitige\
-  \ Nutzung zu generieren, die nach Gebrauch meist automatisch gel\xF6scht wird."
+summary: "In PHP ist das Erstellen einer tempor\xE4ren Datei ein Kinderspiel."
 title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---

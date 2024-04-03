@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:27.934956-07:00
-description: "Enviar uma solicita\xE7\xE3o HTTP envolve criar e despachar uma solicita\xE7\
-  \xE3o para um servidor web para recuperar ou submeter dados. Programadores fazem\
-  \ isso em C\u2026"
+description: "Como fazer: Para enviar uma solicita\xE7\xE3o HTTP em C, geralmente\
+  \ voc\xEA depender\xE1 de bibliotecas como a libcurl, pois o C n\xE3o possui suporte\
+  \ embutido para\u2026"
 lastmod: '2024-03-13T22:44:47.046414-06:00'
 model: gpt-4-0125-preview
-summary: "Enviar uma solicita\xE7\xE3o HTTP envolve criar e despachar uma solicita\xE7\
-  \xE3o para um servidor web para recuperar ou submeter dados."
+summary: "Para enviar uma solicita\xE7\xE3o HTTP em C, geralmente voc\xEA depender\xE1\
+  \ de bibliotecas como a libcurl, pois o C n\xE3o possui suporte embutido para protocolos\
+  \ web."
 title: "Enviando uma solicita\xE7\xE3o HTTP"
 weight: 44
 ---

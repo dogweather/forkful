@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 18:03:36.765293-07:00
-description: "Att starta ett nytt projekt inneb\xE4r att s\xE4tta upp en ny kodbas\
-  \ fr\xE5n grunden. Programmerare g\xF6r det f\xF6r att skapa unika l\xF6sningar\
-  \ eller utforska nya id\xE9er."
+description: "S\xE5 h\xE4r g\xF6r du: F\xF6r att skapa nytt Haskell-projekt rekommenderar\
+  \ vi att anv\xE4nda Stack, ett kraftfullt verktyg som hanterar projektets bygge\
+  \ och beroenden."
 lastmod: '2024-03-13T22:44:37.955829-06:00'
 model: gpt-4-1106-preview
-summary: "Att starta ett nytt projekt inneb\xE4r att s\xE4tta upp en ny kodbas fr\xE5\
-  n grunden."
+summary: "F\xF6r att skapa nytt Haskell-projekt rekommenderar vi att anv\xE4nda Stack,\
+  \ ett kraftfullt verktyg som hanterar projektets bygge och beroenden."
 title: "Att p\xE5b\xF6rja ett nytt projekt"
 weight: 1
 ---

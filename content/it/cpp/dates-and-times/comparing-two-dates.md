@@ -1,10 +1,11 @@
 ---
 date: 2024-01-20 17:32:19.222161-07:00
-description: "Comparare due date permette di stabilire quale avviene prima o dopo.\
-  \ \xC8 essenziale in applicazioni come prenotazioni, scadenze e timeline di eventi."
+description: 'How to: C++20 introduce `<chrono>` con facilmente usabili `year_month_day`,
+  che rende il confronto di date chiaro.'
 lastmod: '2024-03-13T22:44:43.739934-06:00'
 model: gpt-4-1106-preview
-summary: Comparare due date permette di stabilire quale avviene prima o dopo.
+summary: C++20 introduce `<chrono>` con facilmente usabili `year_month_day`, che rende
+  il confronto di date chiaro.
 title: Confronto tra due date
 weight: 27
 ---

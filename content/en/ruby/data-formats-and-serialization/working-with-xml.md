@@ -1,11 +1,9 @@
 ---
 date: 2024-01-25 03:39:58.779376-07:00
-description: "Working with XML means parsing, generating, and manipulating XML (eXtensible\
-  \ Markup Language) documents using code. Programmers do it to interact with\u2026"
+description: 'How to: Let''s use REXML, included with Ruby, to parse an XML snippet.'
 lastmod: '2024-03-13T22:45:00.573463-06:00'
 model: gpt-4-1106-preview
-summary: Working with XML means parsing, generating, and manipulating XML (eXtensible
-  Markup Language) documents using code.
+summary: Let's use REXML, included with Ruby, to parse an XML snippet.
 title: Working with XML
 weight: 40
 ---

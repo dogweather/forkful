@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 18:01:30.586517-07:00
-description: "HTTP-pyynt\xF6 perusautentikaatiolla on web-palvelimelle l\xE4hetetty\
-  \ pyynt\xF6, jossa on k\xE4ytt\xE4j\xE4tunnus ja salasana. Koodarit k\xE4ytt\xE4\
-  v\xE4t t\xE4t\xE4 yksinkertaiseen\u2026"
+description: "How to: L\xE4hett\xE4\xE4ksesi HTTP-pyynn\xF6n Elixiriss\xE4 perusautentikaatiolla,\
+  \ voit k\xE4ytt\xE4\xE4 `HTTPoison`-kirjastoa. T\xE4ss\xE4 on pikainen esimerkki."
 lastmod: '2024-03-13T22:44:56.226493-06:00'
 model: gpt-4-1106-preview
-summary: "HTTP-pyynt\xF6 perusautentikaatiolla on web-palvelimelle l\xE4hetetty pyynt\xF6\
-  , jossa on k\xE4ytt\xE4j\xE4tunnus ja salasana."
+summary: "L\xE4hett\xE4\xE4ksesi HTTP-pyynn\xF6n Elixiriss\xE4 perusautentikaatiolla,\
+  \ voit k\xE4ytt\xE4\xE4 `HTTPoison`-kirjastoa."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---

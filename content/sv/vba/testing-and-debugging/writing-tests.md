@@ -2,15 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:56.776142-07:00
-description: "Att skriva tester inom programmering inneb\xE4r att skapa specifika\
-  \ procedurer f\xF6r att validera funktionaliteten och prestandan hos dina kodsegment,\
-  \ f\xF6r att\u2026"
+description: "Hur man g\xF6r: \xC4ven om Visual Basic for Applications (VBA) inte\
+  \ kommer med ett inbyggt testramverk liknande de som finns tillg\xE4ngliga i spr\xE5\
+  k som Python\u2026"
 lastmod: '2024-03-13T22:44:37.747006-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva tester inom programmering inneb\xE4r att skapa specifika procedurer\
-  \ f\xF6r att validera funktionaliteten och prestandan hos dina kodsegment, f\xF6\
-  r att s\xE4kerst\xE4lla att de fungerar som f\xF6rv\xE4ntat under olika f\xF6rh\xE5\
-  llanden."
+summary: "\xC4ven om Visual Basic for Applications (VBA) inte kommer med ett inbyggt\
+  \ testramverk liknande de som finns tillg\xE4ngliga i spr\xE5k som Python eller\
+  \ JavaScript, kan du fortfarande implementera enkla testprocedurer f\xF6r att kontrollera\
+  \ integriteten hos din kod."
 title: Skriva tester
 weight: 36
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-01-25 02:59:36.321582-07:00
-description: "Complex numbers have a real part and an imaginary part and are crucial\
-  \ in various fields such as engineering, physics, and computer graphics. Programmers\u2026"
+description: 'How to: Rust doesn''t have built-in complex number support, but crates
+  like `num-complex` have your back. Here''s how to use it.'
 lastmod: '2024-03-13T22:44:59.890198-06:00'
 model: gpt-4-1106-preview
-summary: Complex numbers have a real part and an imaginary part and are crucial in
-  various fields such as engineering, physics, and computer graphics.
+summary: Rust doesn't have built-in complex number support, but crates like `num-complex`
+  have your back.
 title: Working with complex numbers
 weight: 14
 ---

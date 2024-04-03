@@ -2,13 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:14.548826-07:00
-description: "\xC5 starte et nytt prosjekt i C inneb\xE6rer \xE5 sette opp en grunnleggende\
-  \ kodestruktur og milj\xF8 for effektivt \xE5 h\xE5ndtere utviklingsoppgaver. Programmerere\
-  \ gj\xF8r\u2026"
+description: "Hvordan: Kjernen i ethvert C-prosjekt er kildekoden. Et typisk utgangspunkt\
+  \ inneb\xE6rer \xE5 lage en hovedfil, ofte kalt `main.c`, som inneholder programmets\u2026"
 lastmod: '2024-03-13T22:44:41.272675-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 starte et nytt prosjekt i C inneb\xE6rer \xE5 sette opp en grunnleggende\
-  \ kodestruktur og milj\xF8 for effektivt \xE5 h\xE5ndtere utviklingsoppgaver."
+summary: Kjernen i ethvert C-prosjekt er kildekoden.
 title: Starter et nytt prosjekt
 weight: 1
 ---

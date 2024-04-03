@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:59.950411-07:00
-description: "YAML, som st\xE5r f\xF6r YAML Ain't Markup Language, \xE4r en standard\
-  \ f\xF6r serialisering av data som \xE4r l\xE4tt f\xF6r m\xE4nniskor att l\xE4sa,\
-  \ och som fungerar med alla\u2026"
+description: "Hur man g\xF6r: Swift inkluderar inte inbyggt st\xF6d f\xF6r analys\
+  \ och serialisering av YAML, vilket kr\xE4ver anv\xE4ndning av tredjepartskibliotek.\
+  \ Ett popul\xE4rt val\u2026"
 lastmod: '2024-03-13T22:44:38.271750-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, som st\xE5r f\xF6r YAML Ain't Markup Language, \xE4r en standard f\xF6\
-  r serialisering av data som \xE4r l\xE4tt f\xF6r m\xE4nniskor att l\xE4sa, och som\
-  \ fungerar med alla programmeringsspr\xE5k."
+summary: "Swift inkluderar inte inbyggt st\xF6d f\xF6r analys och serialisering av\
+  \ YAML, vilket kr\xE4ver anv\xE4ndning av tredjepartskibliotek."
 title: Att Arbeta med YAML
 weight: 41
 ---

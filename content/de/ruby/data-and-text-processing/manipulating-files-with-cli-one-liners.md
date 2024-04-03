@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 16:21:31.389658-07:00
-description: "Das Manipulieren von Dateien mit CLI-One-Linern in Ruby dreht sich darum,\
-  \ g\xE4ngige Dateioperationen direkt aus Ihrem Terminal unter Verwendung von Ruby-\u2026"
+description: "Wie geht das: Ruby, mit seiner aussagekr\xE4ftigen Syntax, erm\xF6glicht\
+  \ knappe und lesbare One-Liner, die eine Vielzahl von Dateioperationen bew\xE4ltigen\
+  \ k\xF6nnen.\u2026"
 lastmod: '2024-03-13T22:44:54.395261-06:00'
 model: gpt-4-0125-preview
-summary: "Das Manipulieren von Dateien mit CLI-One-Linern in Ruby dreht sich darum,\
-  \ g\xE4ngige Dateioperationen direkt aus Ihrem Terminal unter Verwendung von Ruby-Skripten\
-  \ durchzuf\xFChren."
+summary: "Ruby, mit seiner aussagekr\xE4ftigen Syntax, erm\xF6glicht knappe und lesbare\
+  \ One-Liner, die eine Vielzahl von Dateioperationen bew\xE4ltigen k\xF6nnen."
 title: Dateimanipulation mit CLI-One-Linern
 weight: 31
 ---

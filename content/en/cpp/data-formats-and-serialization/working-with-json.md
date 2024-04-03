@@ -1,12 +1,12 @@
 ---
 date: 2024-02-03 19:03:09.069503-07:00
-description: "JSON (JavaScript Object Notation) is a lightweight format for storing\
-  \ and transporting data, making it an excellent medium for data interchange between\u2026"
+description: "How to: In C++, there's no native support for JSON, but third-party\
+  \ libraries like nlohmann/json make it straightforward. Here's how to use it for\
+  \ basic\u2026"
 lastmod: '2024-03-13T22:45:00.377127-06:00'
 model: gpt-4-0125-preview
-summary: JSON (JavaScript Object Notation) is a lightweight format for storing and
-  transporting data, making it an excellent medium for data interchange between servers
-  and web applications.
+summary: In C++, there's no native support for JSON, but third-party libraries like
+  nlohmann/json make it straightforward.
 title: Working with JSON
 weight: 38
 ---

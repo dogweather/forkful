@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:52.828225-07:00
-description: "Reguliere expressies (regex) zijn patronen die worden gebruikt om karaktercombinaties\
-  \ in tekst te vinden. Programmeurs gebruiken ze voor het zoeken,\u2026"
+description: "Hoe: Om regex in Java te gebruiken, heb je de klassen `Pattern` en `Matcher`\
+  \ nodig uit `java.util.regex`. Hier is een voorbeeld van het vinden van\u2026"
 lastmod: '2024-03-13T22:44:50.671061-06:00'
 model: gpt-4-0125-preview
-summary: Reguliere expressies (regex) zijn patronen die worden gebruikt om karaktercombinaties
-  in tekst te vinden.
+summary: Om regex in Java te gebruiken, heb je de klassen `Pattern` en `Matcher` nodig
+  uit `java.util.regex`.
 title: Reguliere expressies gebruiken
 weight: 11
 ---

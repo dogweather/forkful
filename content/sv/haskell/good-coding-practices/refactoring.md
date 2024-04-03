@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 01:18:41.615149-07:00
-description: "Refaktorisering \xE4r processen att justera din kod utan att \xE4ndra\
-  \ dess externa beteende. Det handlar om att st\xE4da upp och organisera din akt\
-  \ f\xF6r att g\xF6ra\u2026"
+description: "Hur man g\xF6r: L\xE5t oss s\xE4ga att du har ett stycke Haskell-kod\
+  \ som upprepar sig mer \xE4n din favoritl\xE5t. H\xE4r \xE4r en snabb titt p\xE5\
+  \ hur du kan refaktorisera det\u2026"
 lastmod: '2024-03-13T22:44:37.963161-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktorisering \xE4r processen att justera din kod utan att \xE4ndra dess\
-  \ externa beteende."
+summary: "L\xE5t oss s\xE4ga att du har ett stycke Haskell-kod som upprepar sig mer\
+  \ \xE4n din favoritl\xE5t."
 title: Refaktorisering
 weight: 19
 ---

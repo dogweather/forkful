@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:03.721702-07:00
-description: "Het verwijderen van tekens die overeenkomen met een patroon houdt in\
-  \ dat je in een string zoekt naar een specifieke reeks tekens (het patroon) en deze\u2026"
+description: 'Hoe te: .'
 lastmod: '2024-03-13T22:44:50.533443-06:00'
 model: gpt-4-0125-preview
-summary: Het verwijderen van tekens die overeenkomen met een patroon houdt in dat
-  je in een string zoekt naar een specifieke reeks tekens (het patroon) en deze verwijdert.
+summary: .
 title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---

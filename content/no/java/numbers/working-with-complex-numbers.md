@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 04:42:20.971162-07:00
-description: "Komplekse tall utvider den reelle tallinjen gjennom tillegg av en imagin\xE6\
-  r enhet, `i`, der `i^2 = -1`. De er avgj\xF8rende i felter som ingeni\xF8rvitenskap,\u2026"
+description: "Hvordan: Java har ikke innebygd st\xF8tte for komplekse tall, men vi\
+  \ kan lage v\xE5r egen klasse eller bruke et bibliotek. Her er et raskt eksempel\
+  \ p\xE5 hvordan\u2026"
 lastmod: '2024-03-13T22:44:40.660456-06:00'
 model: gpt-4-0125-preview
-summary: "Komplekse tall utvider den reelle tallinjen gjennom tillegg av en imagin\xE6\
-  r enhet, `i`, der `i^2 = -1`."
+summary: "Java har ikke innebygd st\xF8tte for komplekse tall, men vi kan lage v\xE5\
+  r egen klasse eller bruke et bibliotek."
 title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---

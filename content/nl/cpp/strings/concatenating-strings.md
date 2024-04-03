@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:00.935512-07:00
-description: "Stringconcatenatie is het aan elkaar rijgen van twee of meer strings\
-  \ achter elkaar. Programmeurs doen dit om zinnen te bouwen, berichten te cre\xEB\
-  ren of\u2026"
+description: 'Hoe te: In C++ hebben we een paar manieren om strings aan elkaar te
+  plakken. Hier is een voorbeeld met `std::string` en de plus (`+`) operator.'
 lastmod: '2024-03-13T22:44:51.104572-06:00'
 model: gpt-4-0125-preview
-summary: Stringconcatenatie is het aan elkaar rijgen van twee of meer strings achter
-  elkaar.
+summary: In C++ hebben we een paar manieren om strings aan elkaar te plakken.
 title: Samenvoegen van strings
 weight: 3
 ---

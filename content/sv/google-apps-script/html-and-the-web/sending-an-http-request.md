@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:30.864722-07:00
-description: "Att skicka en HTTP-f\xF6rfr\xE5gan i Google Apps Script handlar om att\
-  \ programmatiskt g\xF6ra ett anrop till en extern webbserver eller API. Programmerare\
-  \ g\xF6r\u2026"
+description: "Hur: I Google Apps Script \xE4r det prim\xE4ra s\xE4ttet att skicka\
+  \ en HTTP-f\xF6rfr\xE5gan genom att anv\xE4nda tj\xE4nsten `UrlFetchApp`. Denna\
+  \ tj\xE4nst tillhandah\xE5ller\u2026"
 lastmod: '2024-03-13T22:44:37.434900-06:00'
 model: gpt-4-0125-preview
-summary: "Att skicka en HTTP-f\xF6rfr\xE5gan i Google Apps Script handlar om att programmatiskt\
-  \ g\xF6ra ett anrop till en extern webbserver eller API."
+summary: "I Google Apps Script \xE4r det prim\xE4ra s\xE4ttet att skicka en HTTP-f\xF6\
+  rfr\xE5gan genom att anv\xE4nda tj\xE4nsten `UrlFetchApp`."
 title: "Skicka en HTTP-f\xF6rfr\xE5gan"
 weight: 44
 ---

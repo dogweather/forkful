@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:46.940187-07:00
-description: "Det \xE5 sette stor bokstav i en streng inneb\xE6rer \xE5 endre den\
-  \ f\xF8rste bokstaven i hvert ord i strengen til stor bokstav, mens man s\xF8rger\
-  \ for at resten forblir\u2026"
+description: "Hvordan: Java sitt standardbibliotek tilbyr ikke en direkte metode for\
+  \ \xE5 sette stor bokstav i hele strenger i ett steg, men du kan oppn\xE5 dette\
+  \ med en\u2026"
 lastmod: '2024-03-13T22:44:40.649397-06:00'
 model: gpt-4-0125-preview
-summary: "Det \xE5 sette stor bokstav i en streng inneb\xE6rer \xE5 endre den f\xF8\
-  rste bokstaven i hvert ord i strengen til stor bokstav, mens man s\xF8rger for at\
-  \ resten forblir sm\xE5 bokstaver."
+summary: "Java sitt standardbibliotek tilbyr ikke en direkte metode for \xE5 sette\
+  \ stor bokstav i hele strenger i ett steg, men du kan oppn\xE5 dette med en kombinasjon\
+  \ av innebygde metoder."
 title: Sette stor bokstav i en streng
 weight: 2
 ---

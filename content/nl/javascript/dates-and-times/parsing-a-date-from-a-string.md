@@ -2,12 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:05.359559-07:00
-description: "Een datum uit een string parsen betekent het omzetten van tekst die\
-  \ een datum vertegenwoordigt naar een datumobject. Programmeurs doen dit omdat het\u2026"
+description: "Hoe te: In JavaScript kun je een datum uit een string parsen met de\
+  \ `Date` constructor of bibliotheken zoals `Date-fns` en `Moment.js`. Hier is de\
+  \ native\u2026"
 lastmod: '2024-03-13T22:44:51.211693-06:00'
 model: gpt-4-0125-preview
-summary: Een datum uit een string parsen betekent het omzetten van tekst die een datum
-  vertegenwoordigt naar een datumobject.
+summary: In JavaScript kun je een datum uit een string parsen met de `Date` constructor
+  of bibliotheken zoals `Date-fns` en `Moment.js`.
 title: Een datum uit een string parsen
 weight: 30
 ---

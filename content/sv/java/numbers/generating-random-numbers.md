@@ -1,12 +1,13 @@
 ---
 date: 2024-01-27 20:34:23.581704-07:00
-description: "Att generera slumpm\xE4ssiga nummer handlar om att producera of\xF6\
-  ruts\xE4gbara sekvenser eller enskilda v\xE4rden inom ett definierat intervall.\
-  \ Programmerare\u2026"
+description: "Hur man g\xF6r: I Java kan slumpm\xE4ssiga nummer genereras med hj\xE4\
+  lp av klassen `Random` fr\xE5n paketet `java.util`, eller klasserna `ThreadLocalRandom`\
+  \ och\u2026"
 lastmod: '2024-03-13T22:44:37.783370-06:00'
 model: gpt-4-0125-preview
-summary: "Att generera slumpm\xE4ssiga nummer handlar om att producera of\xF6ruts\xE4\
-  gbara sekvenser eller enskilda v\xE4rden inom ett definierat intervall."
+summary: "I Java kan slumpm\xE4ssiga nummer genereras med hj\xE4lp av klassen `Random`\
+  \ fr\xE5n paketet `java.util`, eller klasserna `ThreadLocalRandom` och `SecureRandom`\
+  \ f\xF6r specifika anv\xE4ndningsomr\xE5den."
 title: Generera slumptal
 weight: 12
 ---

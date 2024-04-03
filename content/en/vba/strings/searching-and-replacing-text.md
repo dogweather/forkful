@@ -1,12 +1,12 @@
 ---
 date: 2024-02-01 21:30:21.117478-07:00
-description: "Searching and replacing text in Visual Basic for Applications (VBA)\
-  \ is essential for editing documents, spreadsheets, and databases programmatically.\
-  \ This\u2026"
+description: "How to: In VBA, searching and replacing text can be achieved using the\
+  \ `Replace` function or through specific object models in applications like Excel\
+  \ or\u2026"
 lastmod: '2024-03-13T22:44:59.921132-06:00'
 model: gpt-4-0125-preview
-summary: Searching and replacing text in Visual Basic for Applications (VBA) is essential
-  for editing documents, spreadsheets, and databases programmatically.
+summary: In VBA, searching and replacing text can be achieved using the `Replace`
+  function or through specific object models in applications like Excel or Word.
 title: Searching and replacing text
 weight: 10
 ---

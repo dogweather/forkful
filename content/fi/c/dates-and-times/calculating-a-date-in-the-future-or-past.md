@@ -2,16 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:53:17.528120-07:00
-description: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen\
-  \ tarkoittaa tietyn p\xE4iv\xE4m\xE4\xE4r\xE4n m\xE4\xE4ritt\xE4mist\xE4 lis\xE4\
-  \xE4m\xE4ll\xE4 tai v\xE4hent\xE4m\xE4ll\xE4 tietty m\xE4\xE4r\xE4 p\xE4ivi\xE4\
-  ,\u2026"
+description: "Kuinka: Vaikka C-standardikirjasto ei tarjoa suoria funktioita p\xE4\
+  iv\xE4m\xE4\xE4r\xE4aritmetiikkaan, voit manipuloida p\xE4iv\xE4m\xE4\xE4ri\xE4\
+  \ k\xE4ytt\xE4m\xE4ll\xE4 `time.h` kirjastoa,\u2026"
 lastmod: '2024-03-13T22:44:57.055125-06:00'
 model: gpt-4-0125-preview
-summary: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen tarkoittaa\
-  \ tietyn p\xE4iv\xE4m\xE4\xE4r\xE4n m\xE4\xE4ritt\xE4mist\xE4 lis\xE4\xE4m\xE4ll\xE4\
-  \ tai v\xE4hent\xE4m\xE4ll\xE4 tietty m\xE4\xE4r\xE4 p\xE4ivi\xE4, kuukausia tai\
-  \ vuosia annetusta p\xE4iv\xE4m\xE4\xE4r\xE4st\xE4."
+summary: "Vaikka C-standardikirjasto ei tarjoa suoria funktioita p\xE4iv\xE4m\xE4\xE4\
+  r\xE4aritmetiikkaan, voit manipuloida p\xE4iv\xE4m\xE4\xE4ri\xE4 k\xE4ytt\xE4m\xE4\
+  ll\xE4 `time.h` kirjastoa, ty\xF6skentelem\xE4ll\xE4 erityisesti `time_t` tietotyypin\
+  \ ja `struct tm` rakenteen kanssa."
 title: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---

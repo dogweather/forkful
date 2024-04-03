@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:41.898752-07:00
-description: "Converter uma string para min\xFAsculas \xE9 uma opera\xE7\xE3o fundamental\
-  \ que possibilita uniformidade e consist\xEAncia no processamento de texto, essencial\
-  \ para\u2026"
+description: "Como fazer: Em Go, converter uma string para min\xFAsculas pode ser\
+  \ facilmente alcan\xE7ado usando o pacote `strings`, especificamente a fun\xE7\xE3\
+  o `ToLower()`.\u2026"
 lastmod: '2024-03-13T22:44:46.046582-06:00'
 model: gpt-4-0125-preview
-summary: "Converter uma string para min\xFAsculas \xE9 uma opera\xE7\xE3o fundamental\
-  \ que possibilita uniformidade e consist\xEAncia no processamento de texto, essencial\
-  \ para tarefas como compara\xE7\xF5es sem distin\xE7\xE3o de caixa ou normaliza\xE7\
-  \xE3o de texto."
+summary: "Em Go, converter uma string para min\xFAsculas pode ser facilmente alcan\xE7\
+  ado usando o pacote `strings`, especificamente a fun\xE7\xE3o `ToLower()`."
 title: "Convertendo uma string para letras min\xFAsculas"
 weight: 4
 ---

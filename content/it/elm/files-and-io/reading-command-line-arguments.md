@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:55:50.278043-07:00
-description: "La lettura degli argomenti da riga di comando consente al tuo programma\
-  \ di accettare input dall'utente esterno al tuo codice. I programmatori lo usano\
-  \ per\u2026"
+description: "How to: Elm \xE8 principalmente focalizzato sullo sviluppo web e non\
+  \ fornisce accesso diretto agli argomenti da riga di comando come farebbe un linguaggio\u2026"
 lastmod: '2024-03-13T22:44:43.364677-06:00'
 model: gpt-4-1106-preview
-summary: La lettura degli argomenti da riga di comando consente al tuo programma di
-  accettare input dall'utente esterno al tuo codice.
+summary: "Elm \xE8 principalmente focalizzato sullo sviluppo web e non fornisce accesso\
+  \ diretto agli argomenti da riga di comando come farebbe un linguaggio come Python\
+  \ o Node.js."
 title: Lettura degli argomenti della riga di comando
 weight: 23
 ---

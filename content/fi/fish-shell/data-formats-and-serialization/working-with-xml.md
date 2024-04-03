@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 04:30:26.617499-07:00
-description: "XML:n k\xE4sittely tarkoittaa tietojen k\xE4sittely\xE4 laajalti k\xE4\
-  ytetyss\xE4, rakenteellisessa muodossa, jota k\xE4ytet\xE4\xE4n konfiguraatioissa,\
-  \ viestinn\xE4ss\xE4 ja muussa.\u2026"
+description: "Kuinka: Fish ei sis\xE4ll\xE4 valmiina XML-j\xE4sent\xE4mist\xE4, joten\
+  \ nojaudut ulkoisiin ty\xF6kaluihin, kuten `xmllint` tai `xmlstarlet`. T\xE4ss\xE4\
+  \ on katkelma arvojen\u2026"
 lastmod: '2024-03-13T22:44:57.019468-06:00'
 model: gpt-4-0125-preview
-summary: "XML:n k\xE4sittely tarkoittaa tietojen k\xE4sittely\xE4 laajalti k\xE4ytetyss\xE4\
-  , rakenteellisessa muodossa, jota k\xE4ytet\xE4\xE4n konfiguraatioissa, viestinn\xE4\
-  ss\xE4 ja muussa."
+summary: "Fish ei sis\xE4ll\xE4 valmiina XML-j\xE4sent\xE4mist\xE4, joten nojaudut\
+  \ ulkoisiin ty\xF6kaluihin, kuten `xmllint` tai `xmlstarlet`."
 title: "XML:n k\xE4sittely"
 weight: 40
 ---

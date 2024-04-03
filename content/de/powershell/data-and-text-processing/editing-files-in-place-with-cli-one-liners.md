@@ -1,12 +1,9 @@
 ---
 date: 2024-01-27 16:20:41.969806-07:00
-description: "Dateien direkt \xFCber die CLI (Command Line Interface) mit Einzeilern\
-  \ in PowerShell zu bearbeiten, bedeutet, direkte \xC4nderungen an Dateien von der\u2026"
+description: 'Wie geht das: #.'
 lastmod: '2024-03-13T22:44:54.099665-06:00'
 model: gpt-4-0125-preview
-summary: "Dateien direkt \xFCber die CLI (Command Line Interface) mit Einzeilern in\
-  \ PowerShell zu bearbeiten, bedeutet, direkte \xC4nderungen an Dateien von der Kommandozeile\
-  \ aus vorzunehmen, ohne sie in einem Editor \xF6ffnen zu m\xFCssen."
+summary: '#.'
 title: Bearbeiten von Dateien im Place mit CLI-Einzeilern
 weight: 32
 ---

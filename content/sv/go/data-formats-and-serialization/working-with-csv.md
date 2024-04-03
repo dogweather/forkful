@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:51.017004-07:00
-description: "Comma-Separated Values (CSV) format \xE4r allest\xE4des n\xE4rvarande\
-  \ f\xF6r datautbyte p\xE5 grund av dess enkelhet och l\xE4tthet att integrera med\
-  \ de flesta\u2026"
+description: "Hur: Att arbeta med CSV-filer i Go \xE4r okomplicerat, tack vare dess\
+  \ standardbibliotek, `encoding/csv`. Nedan f\xF6ljer en grundl\xE4ggande guide f\xF6\
+  r att l\xE4sa och\u2026"
 lastmod: '2024-03-13T22:44:37.416192-06:00'
 model: gpt-4-0125-preview
-summary: "Comma-Separated Values (CSV) format \xE4r allest\xE4des n\xE4rvarande f\xF6\
-  r datautbyte p\xE5 grund av dess enkelhet och l\xE4tthet att integrera med de flesta\
-  \ programmeringsspr\xE5k, inklusive Go."
+summary: "Att arbeta med CSV-filer i Go \xE4r okomplicerat, tack vare dess standardbibliotek,\
+  \ `encoding/csv`."
 title: Arbeta med CSV
 weight: 37
 ---

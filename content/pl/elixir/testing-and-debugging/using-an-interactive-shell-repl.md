@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:13:36.307589-07:00
-description: "Interaktywna pow\u0142oka, czyli REPL (Read-Eval-Print Loop - P\u0119\
-  tla Czytaj-Ewaluuj-Wydrukuj), pozwala na testowanie fragment\xF3w kodu w czasie\
-  \ rzeczywistym.\u2026"
+description: "Jak to zrobi\u0107: Aby uruchomi\u0107 IEx, otw\xF3rz terminal i wpisz\
+  \ `iex`. Oto ma\u0142y przedsmak."
 lastmod: '2024-03-13T22:44:35.044109-06:00'
 model: gpt-4-0125-preview
-summary: "Interaktywna pow\u0142oka, czyli REPL (Read-Eval-Print Loop - P\u0119tla\
-  \ Czytaj-Ewaluuj-Wydrukuj), pozwala na testowanie fragment\xF3w kodu w czasie rzeczywistym."
+summary: "Aby uruchomi\u0107 IEx, otw\xF3rz terminal i wpisz `iex`."
 title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---

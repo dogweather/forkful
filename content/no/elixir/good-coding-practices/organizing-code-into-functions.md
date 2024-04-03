@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 01:09:34.111248-07:00
-description: "\xC5 organisere kode i funksjoner inneb\xE6rer \xE5 gruppere relaterte\
-  \ operasjoner i gjenbrukbare blokker. Vi gj\xF8r dette for \xE5 forbedre lesbarhet\
-  \ og\u2026"
+description: "Hvordan: La oss lage en enkel Elixir-funksjon for \xE5 gj\xF8re ord\
+  \ store."
 lastmod: '2024-03-13T22:44:40.448772-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 organisere kode i funksjoner inneb\xE6rer \xE5 gruppere relaterte operasjoner\
-  \ i gjenbrukbare blokker."
+summary: "La oss lage en enkel Elixir-funksjon for \xE5 gj\xF8re ord store."
 title: Organisering av kode i funksjoner
 weight: 18
 ---

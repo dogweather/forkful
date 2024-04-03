@@ -1,13 +1,12 @@
 ---
 date: 2024-01-27 20:35:04.321366-07:00
-description: "Generar n\xFAmeros aleatorios en Rust implica utilizar bibliotecas para\
-  \ producir valores num\xE9ricos imprevistos, lo cual es indispensable para tareas\
-  \ que van\u2026"
+description: "C\xF3mo hacerlo: Rust depende de crates externos para la generaci\xF3\
+  n de n\xFAmeros aleatorios, siendo `rand` el m\xE1s com\xFAnmente utilizado. Para\
+  \ comenzar a generar\u2026"
 lastmod: '2024-03-13T22:44:58.842391-06:00'
 model: gpt-4-0125-preview
-summary: "Generar n\xFAmeros aleatorios en Rust implica utilizar bibliotecas para\
-  \ producir valores num\xE9ricos imprevistos, lo cual es indispensable para tareas\
-  \ que van desde la criptograf\xEDa y simulaciones hasta juegos y algoritmos aleatorizados."
+summary: "Rust depende de crates externos para la generaci\xF3n de n\xFAmeros aleatorios,\
+  \ siendo `rand` el m\xE1s com\xFAnmente utilizado."
 title: "Generaci\xF3n de n\xFAmeros aleatorios"
 weight: 12
 ---

@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:55.873352-07:00
-description: "Les tableaux associatifs sont comme des poign\xE9es de main secr\xE8\
-  tes pour les donn\xE9es en Lua\u2014au lieu de simplement num\xE9roter les indices\
-  \ de mani\xE8re ordonn\xE9e,\u2026"
+description: "Comment faire : En Lua, cr\xE9er un tableau associatif (ou une table,\
+  \ en jargon Lua) est simple. Vous abandonnez les indices num\xE9riques habituels\
+  \ pour des\u2026"
 lastmod: '2024-03-13T22:44:57.917737-06:00'
 model: gpt-4-0125-preview
-summary: "Les tableaux associatifs sont comme des poign\xE9es de main secr\xE8tes\
-  \ pour les donn\xE9es en Lua\u2014au lieu de simplement num\xE9roter les indices\
-  \ de mani\xE8re ordonn\xE9e, vos cl\xE9s peuvent \xEAtre celles que vous d\xE9sirez,\
-  \ rendant la r\xE9cup\xE9ration des donn\xE9es un jeu d'enfant."
+summary: "En Lua, cr\xE9er un tableau associatif (ou une table, en jargon Lua) est\
+  \ simple."
 title: Utilisation des tableaux associatifs
 weight: 15
 ---

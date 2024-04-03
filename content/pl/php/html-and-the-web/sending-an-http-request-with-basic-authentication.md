@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 18:02:09.811628-07:00
-description: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawow\u0105 autentykacj\u0105\
-  \ to proces, gdzie serwer oczekuje loginu i has\u0142a do wykonania akcji. Programi\u015B\
-  ci robi\u0105 to dla\u2026"
+description: "How to: (Jak to zrobi\u0107:) W PHP mo\u017Cesz u\u017Cy\u0107 cURL\
+  \ lub context stream. Przyk\u0142ad z cURL."
 lastmod: '2024-03-13T22:44:35.496913-06:00'
 model: gpt-4-1106-preview
-summary: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawow\u0105 autentykacj\u0105\
-  \ to proces, gdzie serwer oczekuje loginu i has\u0142a do wykonania akcji."
+summary: "W PHP mo\u017Cesz u\u017Cy\u0107 cURL lub context stream."
 title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
 weight: 45
 ---

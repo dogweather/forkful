@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:20.801101-07:00
-description: "Sprawdzanie czy katalog istnieje w Clojure polega na weryfikacji obecno\u015B\
-  ci katalogu systemu plik\xF3w z poziomu aplikacji Clojure. Zadanie to jest kluczowe\u2026"
+description: "Jak to zrobi\u0107: Clojure, jako j\u0119zyk dzia\u0142aj\u0105cy na\
+  \ JVM, mo\u017Ce wykorzysta\u0107 klas\u0119 `java.io.File` z Javy do tego celu.\
+  \ Nie potrzebujesz \u017Cadnej biblioteki stron\u2026"
 lastmod: '2024-03-13T22:44:35.011386-06:00'
 model: gpt-4-0125-preview
-summary: "Sprawdzanie czy katalog istnieje w Clojure polega na weryfikacji obecno\u015B\
-  ci katalogu systemu plik\xF3w z poziomu aplikacji Clojure."
+summary: "Clojure, jako j\u0119zyk dzia\u0142aj\u0105cy na JVM, mo\u017Ce wykorzysta\u0107\
+  \ klas\u0119 `java.io.File` z Javy do tego celu."
 title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---

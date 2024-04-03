@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:51.325773-07:00
-description: "Zapisywanie do pliku tekstowego w Lua polega na utworzeniu lub otwarciu\
-  \ pliku w trybie do zapisu, a nast\u0119pnie u\u017Cywaniu operacji na plikach do\
-  \ wstawiania\u2026"
+description: "Jak to zrobi\u0107: Praca z plikami pod k\u0105tem zapisu w Lua jest\
+  \ prosta. Zwykle u\u017Cywa si\u0119 funkcji `io.open()`, aby otworzy\u0107 (lub\
+  \ utworzy\u0107) plik, okre\u015Blaj\u0105c tryb\u2026"
 lastmod: '2024-03-13T22:44:35.558464-06:00'
 model: gpt-4-0125-preview
-summary: "Zapisywanie do pliku tekstowego w Lua polega na utworzeniu lub otwarciu\
-  \ pliku w trybie do zapisu, a nast\u0119pnie u\u017Cywaniu operacji na plikach do\
-  \ wstawiania tekstu."
+summary: "Praca z plikami pod k\u0105tem zapisu w Lua jest prosta."
 title: Pisanie pliku tekstowego
 weight: 24
 ---

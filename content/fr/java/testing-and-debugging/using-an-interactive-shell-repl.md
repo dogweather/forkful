@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 04:15:29.887583-07:00
-description: "Un REPL (Read-Eval-Print Loop, boucle de lecture, \xE9valuation et impression)\
-  \ est un shell interactif qui traite des entr\xE9es utilisateur uniques, ex\xE9\
-  cute du\u2026"
+description: "Comment faire : D\xE9marrer un REPL en Java est simple avec l'outil\
+  \ `jshell` introduit dans Java 9. Voici comment mettre la main dessus et lancer\
+  \ une session\u2026"
 lastmod: '2024-03-13T22:44:57.641733-06:00'
 model: gpt-4-0125-preview
-summary: "Un REPL (Read-Eval-Print Loop, boucle de lecture, \xE9valuation et impression)\
-  \ est un shell interactif qui traite des entr\xE9es utilisateur uniques, ex\xE9\
-  cute du code et renvoie le r\xE9sultat."
+summary: "D\xE9marrer un REPL en Java est simple avec l'outil `jshell` introduit dans\
+  \ Java 9."
 title: Utilisation d'une console interactive (REPL)
 weight: 34
 ---

@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:09.093862-07:00
-description: "Het kapitaliseren van een tekenreeks betekent het met een hoofdletter\
-  \ schrijven van de eerste letter van elk woord. Programmeurs doen dit voor\u2026"
+description: 'Hoe te: Lua heeft geen ingebouwde hoofdletterfunctie, dus laten we er
+  een maken.'
 lastmod: '2024-03-13T22:44:50.920807-06:00'
 model: gpt-4-0125-preview
-summary: Het kapitaliseren van een tekenreeks betekent het met een hoofdletter schrijven
-  van de eerste letter van elk woord.
+summary: Lua heeft geen ingebouwde hoofdletterfunctie, dus laten we er een maken.
 title: Een string met hoofdletters maken
 weight: 2
 ---

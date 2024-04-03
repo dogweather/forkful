@@ -2,13 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:13.875793-07:00
-description: "Das Herunterladen einer Webseite beinhaltet das Abrufen des Inhalts\
-  \ einer Webseite \xFCber ihre URL zur Verarbeitung oder Speicherung. Programmierer\
-  \ tun\u2026"
+description: "Wie: Dart stellt das `http`-Paket bereit, eine beliebte Drittanbieterbibliothek\
+  \ f\xFCr HTTP-Anfragen. Hier ist ein grundlegendes Beispiel, wie man es\u2026"
 lastmod: '2024-03-13T22:44:53.579127-06:00'
 model: gpt-4-0125-preview
-summary: "Das Herunterladen einer Webseite beinhaltet das Abrufen des Inhalts einer\
-  \ Webseite \xFCber ihre URL zur Verarbeitung oder Speicherung."
+summary: "Dart stellt das `http`-Paket bereit, eine beliebte Drittanbieterbibliothek\
+  \ f\xFCr HTTP-Anfragen."
 title: Herunterladen einer Webseite
 weight: 42
 ---

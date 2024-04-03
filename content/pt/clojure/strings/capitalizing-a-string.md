@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:47.894004-07:00
-description: "Capitalizar uma string envolve modificar a string de modo que seu primeiro\
-  \ caractere seja mai\xFAsculo, enquanto o restante da string permanece inalterado.\u2026"
+description: "Como fazer: Clojure, sendo uma linguagem JVM, permite que voc\xEA utilize\
+  \ diretamente os m\xE9todos de String do Java. Aqui est\xE1 um exemplo b\xE1sico\
+  \ de como\u2026"
 lastmod: '2024-03-13T22:44:46.180601-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizar uma string envolve modificar a string de modo que seu primeiro\
-  \ caractere seja mai\xFAsculo, enquanto o restante da string permanece inalterado."
+summary: "Clojure, sendo uma linguagem JVM, permite que voc\xEA utilize diretamente\
+  \ os m\xE9todos de String do Java."
 title: Capitalizando uma string
 weight: 2
 ---

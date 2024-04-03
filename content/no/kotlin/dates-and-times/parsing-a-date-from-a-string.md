@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 15:37:14.737512-07:00
-description: "Dato-parsing fra en streng betyr \xE5 konvertere tekst til et `Date`-objekt.\
-  \ Programmerere gj\xF8r dette for \xE5 h\xE5ndtere datoer og tider p\xE5 en standardisert,\u2026"
+description: 'How to: I Kotlin parser vi datoer ved hjelp av `java.time`-biblioteket.
+  Her er et eksempel.'
 lastmod: '2024-03-13T22:44:40.760187-06:00'
 model: unknown
-summary: "Dato-parsing fra en streng betyr \xE5 konvertere tekst til et `Date`-objekt."
+summary: I Kotlin parser vi datoer ved hjelp av `java.time`-biblioteket.
 title: Tolke en dato fra en streng
 weight: 30
 ---

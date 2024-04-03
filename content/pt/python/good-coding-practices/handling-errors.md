@@ -1,13 +1,9 @@
 ---
 date: 2024-01-26 00:56:28.520353-07:00
-description: "Tratar erros em Python (ou em qualquer linguagem de programa\xE7\xE3\
-  o) \xE9 prever o inesperado \u2013 \xE9 a arte de gerenciar com eleg\xE2ncia quando\
-  \ as coisas d\xE3o errado\u2026"
+description: 'Como fazer: .'
 lastmod: '2024-03-13T22:44:46.161720-06:00'
 model: gpt-4-1106-preview
-summary: "Tratar erros em Python (ou em qualquer linguagem de programa\xE7\xE3o) \xE9\
-  \ prever o inesperado \u2013 \xE9 a arte de gerenciar com eleg\xE2ncia quando as\
-  \ coisas d\xE3o errado no seu c\xF3digo."
+summary: .
 title: Tratamento de erros
 weight: 16
 ---

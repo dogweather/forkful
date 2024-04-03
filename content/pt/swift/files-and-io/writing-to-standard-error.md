@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:44.498816-07:00
-description: "Escrever no erro padr\xE3o (stderr) trata de direcionar as mensagens\
-  \ de erro ou diagn\xF3sticos do seu programa para uma sa\xEDda separada, distinta\
-  \ da sa\xEDda\u2026"
+description: "Como Fazer: Em Swift, escrever no erro padr\xE3o pode ser feito usando\
+  \ a classe `FileHandle` para acesso direto ao stderr. Aqui est\xE1 um exemplo simples."
 lastmod: '2024-03-13T22:44:46.937134-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever no erro padr\xE3o (stderr) trata de direcionar as mensagens de\
-  \ erro ou diagn\xF3sticos do seu programa para uma sa\xEDda separada, distinta da\
-  \ sa\xEDda padr\xE3o (stdout)."
+summary: "Em Swift, escrever no erro padr\xE3o pode ser feito usando a classe `FileHandle`\
+  \ para acesso direto ao stderr."
 title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---

@@ -2,16 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:54.561842-07:00
-description: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh trong PHP\
-  \ c\xF3 ngh\u0129a l\xE0 l\u1EA5y c\xE1c \u0111\u1EA7u v\xE0o \u0111\u01B0\u1EE3\
-  c truy\u1EC1n v\xE0o script c\u1EE7a b\u1EA1n khi n\xF3 \u0111\u01B0\u1EE3c ch\u1EA1\
-  y trong console. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: PHP s\u1EED d\u1EE5ng m\u1ED9t m\u1EA3\
+  ng to\xE0n c\u1EE5c `$argv` \u0111\u1EC3 l\u01B0u tr\u1EEF c\xE1c \u0111\u1ED1i\
+  \ s\u1ED1 d\xF2ng l\u1EC7nh, v\u1EDBi `$argv[0]` l\xE0 t\xEAn script. \u0110\xE2\
+  y l\xE0 c\xE1ch b\u1EA1n s\u1EED d\u1EE5ng n\xF3."
 lastmod: '2024-03-13T22:44:36.787116-06:00'
 model: gpt-4-0125-preview
-summary: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh trong PHP c\xF3\
-  \ ngh\u0129a l\xE0 l\u1EA5y c\xE1c \u0111\u1EA7u v\xE0o \u0111\u01B0\u1EE3c truy\u1EC1\
-  n v\xE0o script c\u1EE7a b\u1EA1n khi n\xF3 \u0111\u01B0\u1EE3c ch\u1EA1y trong\
-  \ console."
+summary: "PHP s\u1EED d\u1EE5ng m\u1ED9t m\u1EA3ng to\xE0n c\u1EE5c `$argv` \u0111\
+  \u1EC3 l\u01B0u tr\u1EEF c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh, v\u1EDB\
+  i `$argv[0]` l\xE0 t\xEAn script."
 title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
 weight: 23
 ---

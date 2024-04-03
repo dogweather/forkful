@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:41:37.464199-07:00
-description: "Crear un archivo temporal significa generar un archivo que es autom\xE1\
-  tico y desechable, usual para almacenar datos transitorios. Los programadores lo\
-  \ hacen\u2026"
+description: 'How to: Para crear un archivo temporal en Rust, puedes usar el crate
+  `tempfile` que facilita este proceso.'
 lastmod: '2024-03-13T22:44:58.866070-06:00'
 model: gpt-4-1106-preview
-summary: "Crear un archivo temporal significa generar un archivo que es autom\xE1\
-  tico y desechable, usual para almacenar datos transitorios."
+summary: Para crear un archivo temporal en Rust, puedes usar el crate `tempfile` que
+  facilita este proceso.
 title: Creando un archivo temporal
 weight: 21
 ---

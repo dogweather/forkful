@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:56.522794-07:00
-description: "Enviar uma solicita\xE7\xE3o HTTP em Visual Basic for Applications (VBA)\
-  \ envolve acessar programaticamente recursos ou servi\xE7os web fazendo solicita\xE7\
-  \xF5es via\u2026"
+description: "Como Fazer: A chave para enviar uma solicita\xE7\xE3o HTTP em VBA \xE9\
+  \ utilizando a biblioteca `Microsoft XML, v6.0` (ou vers\xF5es anteriores, dependendo\
+  \ do seu\u2026"
 lastmod: '2024-03-13T22:44:46.408420-06:00'
 model: gpt-4-0125-preview
-summary: "Enviar uma solicita\xE7\xE3o HTTP em Visual Basic for Applications (VBA)\
-  \ envolve acessar programaticamente recursos ou servi\xE7os web fazendo solicita\xE7\
-  \xF5es via HTTP."
+summary: "A chave para enviar uma solicita\xE7\xE3o HTTP em VBA \xE9 utilizando a\
+  \ biblioteca `Microsoft XML, v6.0` (ou vers\xF5es anteriores, dependendo do seu\
+  \ sistema)."
 title: "Enviando uma solicita\xE7\xE3o HTTP"
 weight: 44
 ---

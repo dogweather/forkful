@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:54.508919-07:00
-description: "JSON (JavaScript Object Notation) \xE8 un formato leggero per lo scambio\
-  \ di dati, prevalente nelle applicazioni web per la comunicazione tra client e server.\u2026"
+description: "Come fare: Ruby, con la sua libreria standard, fornisce modi semplici\
+  \ per analizzare e generare JSON. Il modulo principale per queste operazioni \xE8\
+  \ `json`,\u2026"
 lastmod: '2024-03-13T22:44:44.072498-06:00'
 model: gpt-4-0125-preview
-summary: "JSON (JavaScript Object Notation) \xE8 un formato leggero per lo scambio\
-  \ di dati, prevalente nelle applicazioni web per la comunicazione tra client e server."
+summary: Ruby, con la sua libreria standard, fornisce modi semplici per analizzare
+  e generare JSON.
 title: Lavorare con JSON
 weight: 38
 ---

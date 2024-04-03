@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:09:38.210439-07:00
-description: "Schrijven naar standaardfout (stderr) in programmeertalen gaat over\
-  \ het richten van foutmeldingen en diagnostiek naar een aparte stroom, los van de\u2026"
+description: "Hoe te: Google Apps Script, een scripttaal voor lichtgewicht applicatieontwikkeling\
+  \ op het Google Apps-platform, biedt geen directe ingebouwde functie\u2026"
 lastmod: '2024-03-13T22:44:50.349636-06:00'
 model: gpt-4-0125-preview
-summary: Schrijven naar standaardfout (stderr) in programmeertalen gaat over het richten
-  van foutmeldingen en diagnostiek naar een aparte stroom, los van de standaarduitvoer
-  (stdout).
+summary: Google Apps Script, een scripttaal voor lichtgewicht applicatieontwikkeling
+  op het Google Apps-platform, biedt geen directe ingebouwde functie zoals `console.error()`
+  voor het schrijven naar stderr, zoals je zou vinden in Node.js of Python.
 title: Schrijven naar standaardfout
 weight: 25
 ---

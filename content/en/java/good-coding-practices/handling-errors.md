@@ -1,11 +1,10 @@
 ---
 date: 2024-01-21 21:19:03.016358-07:00
-description: "Handling errors means writing code that anticipates and deals with things\
-  \ going wrong. Programmers do it to make software robust, preventing crashes and\u2026"
+description: "How to: Java uses exceptions to handle errors. You surround risky code\
+  \ with a `try` block and catch exceptions with `catch`. Here\u2019s a simple example."
 lastmod: '2024-03-13T22:44:59.978918-06:00'
 model: gpt-4-1106-preview
-summary: Handling errors means writing code that anticipates and deals with things
-  going wrong.
+summary: Java uses exceptions to handle errors.
 title: Handling errors
 weight: 16
 ---

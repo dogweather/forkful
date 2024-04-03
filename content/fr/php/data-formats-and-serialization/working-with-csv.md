@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:43.143880-07:00
-description: "Travailler avec des fichiers CSV (Comma-Separated Values ou Valeurs\
-  \ S\xE9par\xE9es par des Virgules) implique de lire et d\u2019\xE9crire des donn\xE9\
-  es dans des fichiers\u2026"
+description: "Comment faire : PHP fournit des fonctions int\xE9gr\xE9es pour la manipulation\
+  \ de fichiers CSV, rendant la lecture et l'\xE9criture dans ces fichiers directes\
+  \ sans\u2026"
 lastmod: '2024-03-13T22:44:57.903165-06:00'
 model: gpt-4-0125-preview
-summary: "Travailler avec des fichiers CSV (Comma-Separated Values ou Valeurs S\xE9\
-  par\xE9es par des Virgules) implique de lire et d\u2019\xE9crire des donn\xE9es\
-  \ dans des fichiers CSV, un format populaire pour repr\xE9senter des donn\xE9es\
-  \ tabulaires en texte brut."
+summary: "PHP fournit des fonctions int\xE9gr\xE9es pour la manipulation de fichiers\
+  \ CSV, rendant la lecture et l'\xE9criture dans ces fichiers directes sans avoir\
+  \ besoin de biblioth\xE8ques tierces."
 title: Travailler avec CSV
 weight: 37
 ---

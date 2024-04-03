@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:05.609809-07:00
-description: "Verificar se um diret\xF3rio existe em C# envolve verificar a presen\xE7\
-  a de uma pasta em um caminho especificado no sistema de arquivos. Programadores\
-  \ fazem\u2026"
+description: 'Como Fazer: #.'
 lastmod: '2024-03-13T22:44:46.598204-06:00'
 model: gpt-4-0125-preview
-summary: "Verificar se um diret\xF3rio existe em C# envolve verificar a presen\xE7\
-  a de uma pasta em um caminho especificado no sistema de arquivos."
+summary: '#.'
 title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---

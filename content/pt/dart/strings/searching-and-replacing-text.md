@@ -2,14 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:38.810348-07:00
-description: "Buscar e substituir texto em Dart envolve examinar strings para encontrar\
-  \ padr\xF5es ou sequ\xEAncias de caracteres e substitu\xED-los por novo conte\xFA\
-  do. Essa\u2026"
+description: "Como fazer: Dart oferece m\xE9todos robustos para buscar e substituir\
+  \ texto diretamente por meio de sua classe `String`, sem a necessidade de bibliotecas\u2026"
 lastmod: '2024-03-13T22:44:46.265317-06:00'
 model: gpt-4-0125-preview
-summary: "Buscar e substituir texto em Dart envolve examinar strings para encontrar\
-  \ padr\xF5es ou sequ\xEAncias de caracteres e substitu\xED-los por novo conte\xFA\
-  do."
+summary: "Dart oferece m\xE9todos robustos para buscar e substituir texto diretamente\
+  \ por meio de sua classe `String`, sem a necessidade de bibliotecas externas."
 title: Pesquisando e substituindo texto
 weight: 10
 ---

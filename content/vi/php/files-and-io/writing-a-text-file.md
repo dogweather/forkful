@@ -2,16 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:06.504693-07:00
-description: "Vi\u1EC7c vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong PHP l\xE0\
-  \ \u0111\u1EC3 l\u01B0u d\u1EEF li\u1EC7u v\xE0o m\u1ED9t t\u1EC7p tr\xEAn m\xE1\
-  y ch\u1EE7. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u01B0\u1EDDng l\xE0m \u0111i\u1EC1\
-  u n\xE0y \u0111\u1EC3 ghi nh\u1EADt k\xFD d\u1EEF li\u1EC7u, c\xE0i \u0111\u1EB7\
-  t c\u1EA5u\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Vi\u1EC7c vi\u1EBFt v\xE0o m\u1ED9t t\u1EC7\
+  p trong PHP c\xF3 th\u1EC3 \u0111\u01A1n gi\u1EA3n nh\u01B0 s\u1EED d\u1EE5ng h\xE0\
+  m `file_put_contents()`, \u0111\xF2i h\u1ECFi t\xEAn t\u1EC7p v\xE0 m\u1ED9t chu\u1ED7\
+  i d\u1EEF li\u1EC7u. D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t\u2026"
 lastmod: '2024-03-13T22:44:36.791077-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong PHP l\xE0\
-  \ \u0111\u1EC3 l\u01B0u d\u1EEF li\u1EC7u v\xE0o m\u1ED9t t\u1EC7p tr\xEAn m\xE1\
-  y ch\u1EE7."
+summary: "Vi\u1EC7c vi\u1EBFt v\xE0o m\u1ED9t t\u1EC7p trong PHP c\xF3 th\u1EC3 \u0111\
+  \u01A1n gi\u1EA3n nh\u01B0 s\u1EED d\u1EE5ng h\xE0m `file_put_contents()`, \u0111\
+  \xF2i h\u1ECFi t\xEAn t\u1EC7p v\xE0 m\u1ED9t chu\u1ED7i d\u1EEF li\u1EC7u."
 title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 24
 ---

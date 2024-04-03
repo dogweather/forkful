@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:55:35.535415-07:00
-description: "Komennoriviparametrien lukeminen tarkoittaa argumenttien vastaanottamista\
-  \ suoraan ohjelmalle, kun sen k\xE4ynnist\xE4\xE4 terminaalista. Ohjelmoijat tekev\xE4\
-  t sen,\u2026"
+description: "How to: Clojure-ohjelmissa komennoriviparametrien k\xE4ytt\xF6 on suoraviivaista.\
+  \ T\xE4ss\xE4 on helppo esimerkki."
 lastmod: '2024-03-13T22:44:56.199640-06:00'
 model: gpt-4-1106-preview
-summary: "Komennoriviparametrien lukeminen tarkoittaa argumenttien vastaanottamista\
-  \ suoraan ohjelmalle, kun sen k\xE4ynnist\xE4\xE4 terminaalista."
+summary: "Clojure-ohjelmissa komennoriviparametrien k\xE4ytt\xF6 on suoraviivaista."
 title: Komennoriviparametrien lukeminen
 weight: 23
 ---

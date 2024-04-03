@@ -3,12 +3,11 @@ changelog:
 - 2024-01-28, dogweather, reviewed
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 03:00:49.630402-07:00
-description: "HTML:n j\xE4sennys tarkoittaa tietojen purkamista HTML-dokumenteista.\
-  \ Ohjelmoijat tekev\xE4t sit\xE4 voidakseen vuorovaikuttaa tai manipuloida web-sis\xE4\
-  lt\xF6\xE4,\u2026"
+description: "Kuinka: J\xE4sennet\xE4\xE4n HTML `DOMParser`-API:n avulla JavaScriptiss\xE4\
+  ."
 lastmod: '2024-03-13T22:44:56.947743-06:00'
 model: gpt-4-0125-preview
-summary: "HTML:n j\xE4sennys tarkoittaa tietojen purkamista HTML-dokumenteista."
+summary: "J\xE4sennet\xE4\xE4n HTML `DOMParser`-API:n avulla JavaScriptiss\xE4."
 title: "HTML:n j\xE4sent\xE4minen"
 weight: 43
 ---

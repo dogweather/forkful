@@ -1,8 +1,8 @@
 ---
 date: 2024-01-26 03:47:27.375181-07:00
-description: "Bash kommer inte med en inbyggd debugger som vissa andra spr\xE5k, men\
-  \ du kan anv\xE4nda inbyggda kommandon som `set -x` f\xF6r att sp\xE5ra vad som\
-  \ h\xE4nder. Eller,\u2026"
+description: "Hur man g\xF6r: Bash kommer inte med en inbyggd debugger som vissa andra\
+  \ spr\xE5k, men du kan anv\xE4nda inbyggda kommandon som `set -x` f\xF6r att sp\xE5\
+  ra vad som\u2026"
 lastmod: '2024-03-13T22:44:38.086931-06:00'
 model: gpt-4-0125-preview
 summary: "Bash kommer inte med en inbyggd debugger som vissa andra spr\xE5k, men du\

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:18.499503-07:00
-description: "Att arbeta med CSV-filer i Ruby erbjuder ett rakt p\xE5 sak-s\xE4tt\
-  \ att hantera tabul\xE4r data. Programmerare \xE4gnar sig ofta \xE5t detta f\xF6\
-  r datautvinning,\u2026"
+description: "Hur man g\xF6r: Ruby inkluderar CSV-biblioteket som standard, vilket\
+  \ f\xF6renklar l\xE4sning fr\xE5n och skrivning till CSV-filer. S\xE5 h\xE4r kan\
+  \ du utnyttja detta f\xF6r\u2026"
 lastmod: '2024-03-13T22:44:38.454584-06:00'
 model: gpt-4-0125-preview
-summary: "Att arbeta med CSV-filer i Ruby erbjuder ett rakt p\xE5 sak-s\xE4tt att\
-  \ hantera tabul\xE4r data."
+summary: "Ruby inkluderar CSV-biblioteket som standard, vilket f\xF6renklar l\xE4\
+  sning fr\xE5n och skrivning till CSV-filer."
 title: Arbeta med CSV
 weight: 37
 ---

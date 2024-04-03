@@ -2,9 +2,9 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:21.701556-07:00
-description: "Go tarjoaa sis\xE4\xE4nrakennetun virheenj\xE4ljitysty\xF6kalun nimelt\xE4\
-  \ `delve`. Se on t\xE4ysiverinen virheenj\xE4ljitysty\xF6kalu, jonka avulla voit\
-  \ suorittaa Go-ohjelmia\u2026"
+description: "Kuinka: Go tarjoaa sis\xE4\xE4nrakennetun virheenj\xE4ljitysty\xF6kalun\
+  \ nimelt\xE4 `delve`. Se on t\xE4ysiverinen virheenj\xE4ljitysty\xF6kalu, jonka\
+  \ avulla voit suorittaa Go-\u2026"
 lastmod: '2024-03-13T22:44:56.055478-06:00'
 model: gpt-4-0125-preview
 summary: "Go tarjoaa sis\xE4\xE4nrakennetun virheenj\xE4ljitysty\xF6kalun nimelt\xE4\

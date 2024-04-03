@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 00:50:58.841439-07:00
-description: "Virheiden k\xE4sittely C#:ssa on yll\xE4tt\xE4v\xE4n hallintaa\u2014\
-  kuten kompastuminen omiin keng\xE4nnauhoihisi. Ohjelmat voivat kompastua huonoihin\
-  \ tietoihin tai\u2026"
+description: "Kuinka: Aloitetaan try-catch-lohkolla. Se on kuin turvaverkon asettaminen\
+  \ nuorallatanssijan alle. Jos he lipe\xE4v\xE4t, he eiv\xE4t putoa\u2014heid\xE4\
+  t pyydystet\xE4\xE4n."
 lastmod: '2024-03-13T22:44:56.580721-06:00'
 model: gpt-4-1106-preview
-summary: "Virheiden k\xE4sittely C#:ssa on yll\xE4tt\xE4v\xE4n hallintaa\u2014kuten\
-  \ kompastuminen omiin keng\xE4nnauhoihisi."
+summary: Aloitetaan try-catch-lohkolla.
 title: "Virheiden k\xE4sittely"
 weight: 16
 ---

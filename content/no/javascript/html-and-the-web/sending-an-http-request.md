@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:59:58.321267-07:00
-description: "\xC5 sende en HTTP-foresp\xF8rsel lar en nettside hente data eller initiere\
-  \ transaksjoner med servere over internett. Programmerere gj\xF8r dette for \xE5\
-  \ bygge\u2026"
+description: "How to: Her er en enkel m\xE5te \xE5 sende `GET` og `POST` foresp\xF8\
+  rsler ved hjelp av `fetch`."
 lastmod: '2024-03-13T22:44:41.180813-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 sende en HTTP-foresp\xF8rsel lar en nettside hente data eller initiere\
-  \ transaksjoner med servere over internett."
+summary: "Her er en enkel m\xE5te \xE5 sende `GET` og `POST` foresp\xF8rsler ved hjelp\
+  \ av `fetch`."
 title: "\xC5 sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---

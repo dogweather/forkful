@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:44.024902-07:00
-description: "O formato Comma-Separated Values (CSV) \xE9 onipresente para a troca\
-  \ de dados devido \xE0 sua simplicidade e facilidade de integra\xE7\xE3o com a maioria\
-  \ das\u2026"
+description: "Como fazer: Trabalhar com arquivos CSV em Go \xE9 direto, gra\xE7as\
+  \ \xE0 sua biblioteca padr\xE3o, `encoding/csv`. Abaixo est\xE1 um guia sobre ler\
+  \ e escrever arquivos\u2026"
 lastmod: '2024-03-13T22:44:46.085013-06:00'
 model: gpt-4-0125-preview
-summary: "O formato Comma-Separated Values (CSV) \xE9 onipresente para a troca de\
-  \ dados devido \xE0 sua simplicidade e facilidade de integra\xE7\xE3o com a maioria\
-  \ das linguagens de programa\xE7\xE3o, incluindo Go."
+summary: "Trabalhar com arquivos CSV em Go \xE9 direto, gra\xE7as \xE0 sua biblioteca\
+  \ padr\xE3o, `encoding/csv`."
 title: Trabalhando com CSV
 weight: 37
 ---

@@ -2,14 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:06.600386-07:00
-description: "La rimozione dei caratteri che corrispondono a uno specifico modello\
-  \ nelle stringhe \xE8 fondamentale per la validazione dei dati, la loro sanificazione\
-  \ o\u2026"
+description: "Come fare: Dart rende molto semplice rimuovere caratteri che corrispondono\
+  \ a un modello predefinito usando espressioni regolari e il metodo `replaceAll`.\u2026"
 lastmod: '2024-03-13T22:44:43.110843-06:00'
 model: gpt-4-0125-preview
-summary: "La rimozione dei caratteri che corrispondono a uno specifico modello nelle\
-  \ stringhe \xE8 fondamentale per la validazione dei dati, la loro sanificazione\
-  \ o quando si prepara il testo per ulteriori elaborazioni."
+summary: Dart rende molto semplice rimuovere caratteri che corrispondono a un modello
+  predefinito usando espressioni regolari e il metodo `replaceAll`.
 title: Eliminare caratteri corrispondenti a un pattern
 weight: 5
 ---

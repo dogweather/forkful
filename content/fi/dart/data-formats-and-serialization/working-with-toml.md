@@ -2,13 +2,14 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:14.251709-07:00
-description: "TOML, eli Tom's Obvious, Minimal Language, on konfigurointitiedostomuoto,\
-  \ joka on helppo lukea sen selke\xE4n semantiikan ansiosta. Ohjelmoijat k\xE4ytt\xE4\
-  v\xE4t\u2026"
+description: "Kuinka: Dart ei sis\xE4ll\xE4 sis\xE4\xE4nrakennettua tukea TOML:lle,\
+  \ mutta voit ty\xF6skennell\xE4 TOML-tiedostojen kanssa k\xE4ytt\xE4en kolmannen\
+  \ osapuolen paketteja, kuten\u2026"
 lastmod: '2024-03-13T22:44:56.297029-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, eli Tom's Obvious, Minimal Language, on konfigurointitiedostomuoto,\
-  \ joka on helppo lukea sen selke\xE4n semantiikan ansiosta."
+summary: "Dart ei sis\xE4ll\xE4 sis\xE4\xE4nrakennettua tukea TOML:lle, mutta voit\
+  \ ty\xF6skennell\xE4 TOML-tiedostojen kanssa k\xE4ytt\xE4en kolmannen osapuolen\
+  \ paketteja, kuten `toml`."
 title: "TOML:n kanssa ty\xF6skentely"
 weight: 39
 ---

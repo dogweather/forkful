@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:38.510973-07:00
-description: "Pisanie test\xF3w w Pythonie polega na tworzeniu automatycznych skrypt\xF3\
-  w, maj\u0105cych na celu zweryfikowanie poprawno\u015Bci dzia\u0142ania kodu. Programi\u015B\
-  ci robi\u0105 to,\u2026"
+description: "Jak to zrobi\u0107: Python posiada wbudowany modu\u0142 do pisania test\xF3\
+  w, nazwany `unittest`. Oto, jak mo\u017Cesz go u\u017Cy\u0107 do przetestowania\
+  \ prostej funkcji."
 lastmod: '2024-03-13T22:44:34.953084-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie test\xF3w w Pythonie polega na tworzeniu automatycznych skrypt\xF3\
-  w, maj\u0105cych na celu zweryfikowanie poprawno\u015Bci dzia\u0142ania kodu."
+summary: "Python posiada wbudowany modu\u0142 do pisania test\xF3w, nazwany `unittest`."
 title: "Pisanie test\xF3w"
 weight: 36
 ---

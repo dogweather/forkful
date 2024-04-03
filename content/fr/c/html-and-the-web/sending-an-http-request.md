@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:30.694945-07:00
-description: "Envoyer une requ\xEAte HTTP consiste \xE0 cr\xE9er et envoyer une requ\xEA\
-  te \xE0 un serveur web pour r\xE9cup\xE9rer ou soumettre des donn\xE9es. Les programmeurs\
-  \ font cela en C\u2026"
+description: "Comment : Pour envoyer une requ\xEAte HTTP en C, vous vous appuierez\
+  \ g\xE9n\xE9ralement sur des biblioth\xE8ques comme libcurl, car le C n'int\xE8\
+  gre pas de support\u2026"
 lastmod: '2024-03-13T22:44:58.368273-06:00'
 model: gpt-4-0125-preview
-summary: "Envoyer une requ\xEAte HTTP consiste \xE0 cr\xE9er et envoyer une requ\xEA\
-  te \xE0 un serveur web pour r\xE9cup\xE9rer ou soumettre des donn\xE9es."
+summary: "Pour envoyer une requ\xEAte HTTP en C, vous vous appuierez g\xE9n\xE9ralement\
+  \ sur des biblioth\xE8ques comme libcurl, car le C n'int\xE8gre pas de support natif\
+  \ pour les protocoles web."
 title: "Envoyer une requ\xEAte HTTP"
 weight: 44
 ---

@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 04:17:14.218478-07:00
-description: "REPL, czyli P\u0119tla Czytaj-Wykonaj-Drukuj, to \u015Brodowisko programistyczne,\
-  \ kt\xF3re przyjmuje pojedyncze wej\u015Bcia od u\u017Cytkownika, wykonuje je i\
-  \ zwraca wynik\u2026"
+description: "Jak to zrobi\u0107: Wejd\u017A od razu do REPL Pythona, wpisuj\u0105\
+  c `python` w wierszu polece\u0144. Gdy tam b\u0119dziesz, przetestuj proste operacje\
+  \ lub kod wieloliniowy."
 lastmod: '2024-03-13T22:44:34.951131-06:00'
 model: gpt-4-0125-preview
-summary: "REPL, czyli P\u0119tla Czytaj-Wykonaj-Drukuj, to \u015Brodowisko programistyczne,\
-  \ kt\xF3re przyjmuje pojedyncze wej\u015Bcia od u\u017Cytkownika, wykonuje je i\
-  \ zwraca wynik u\u017Cytkownikowi."
+summary: "Wejd\u017A od razu do REPL Pythona, wpisuj\u0105c `python` w wierszu polece\u0144\
+  ."
 title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---

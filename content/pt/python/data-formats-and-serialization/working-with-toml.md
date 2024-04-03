@@ -1,13 +1,10 @@
 ---
 date: 2024-01-26 04:25:36.070986-07:00
-description: "TOML, abreviatura para Tom's Obvious, Minimal Language (Linguagem M\xED\
-  nima e \xD3bvia do Tom), \xE9 um formato de serializa\xE7\xE3o de dados semelhante\
-  \ ao JSON ou\u2026"
+description: "Como Fazer: Antes de come\xE7ar, instale o pacote `toml` com `pip install\
+  \ toml`. Vamos analisar um arquivo TOML."
 lastmod: '2024-03-13T22:44:46.178631-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, abreviatura para Tom's Obvious, Minimal Language (Linguagem M\xED\
-  nima e \xD3bvia do Tom), \xE9 um formato de serializa\xE7\xE3o de dados semelhante\
-  \ ao JSON ou YAML, mas visa simplicidade e legibilidade."
+summary: "Antes de come\xE7ar, instale o pacote `toml` com `pip install toml`."
 title: Trabalhando com TOML
 weight: 39
 ---

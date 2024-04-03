@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:05.816405-07:00
-description: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Elixir existiert, bezieht\
-  \ sich darauf, die Anwesenheit eines Verzeichnisses an einem bestimmten Pfad im\
-  \ Dateisystem\u2026"
+description: "Wie: Die Standardbibliothek von Elixir bietet eine unkomplizierte M\xF6\
+  glichkeit, die Existenz eines Verzeichnisses \xFCber das `File` Modul zu \xFCberpr\xFC\
+  fen. Hier\u2026"
 lastmod: '2024-03-13T22:44:53.549918-06:00'
 model: gpt-4-0125-preview
-summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Elixir existiert, bezieht sich\
-  \ darauf, die Anwesenheit eines Verzeichnisses an einem bestimmten Pfad im Dateisystem\
-  \ zu verifizieren."
+summary: "Die Standardbibliothek von Elixir bietet eine unkomplizierte M\xF6glichkeit,\
+  \ die Existenz eines Verzeichnisses \xFCber das `File` Modul zu \xFCberpr\xFCfen."
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---

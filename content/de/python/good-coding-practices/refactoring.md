@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 03:37:28.776764-07:00
-description: "Refactoring ist der Prozess des Umstrukturierens von bestehendem Computercode\
-  \ \u2013 die \xC4nderung der Faktorisierung \u2013 ohne dessen externes Verhalten\
-  \ zu\u2026"
+description: "Wie: Nehmen wir an, Sie haben einen Codeabschnitt, der die Fl\xE4che\
+  \ und den Umfang eines Rechtecks auf Basis seiner L\xE4nge und Breite berechnet\
+  \ und\u2026"
 lastmod: '2024-03-13T22:44:53.387285-06:00'
 model: gpt-4-0125-preview
-summary: "Refactoring ist der Prozess des Umstrukturierens von bestehendem Computercode\
-  \ \u2013 die \xC4nderung der Faktorisierung \u2013 ohne dessen externes Verhalten\
-  \ zu ver\xE4ndern."
+summary: "Nehmen wir an, Sie haben einen Codeabschnitt, der die Fl\xE4che und den\
+  \ Umfang eines Rechtecks auf Basis seiner L\xE4nge und Breite berechnet und ausdruckt."
 title: Refactoring
 weight: 19
 ---

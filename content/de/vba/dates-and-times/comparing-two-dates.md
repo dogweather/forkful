@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:15.804032-07:00
-description: "Das Vergleichen von zwei Daten in Visual Basic for Applications (VBA)\
-  \ beinhaltet die Bestimmung ihrer chronologischen Beziehung zueinander. Programmierer\u2026"
+description: "Wie geht das: In VBA werden Daten mithilfe der Standardvergleichsoperatoren\
+  \ (`<`, `>`, `=`, `<=`, `>=`) verglichen. Bevor man vergleicht, ist es wichtig\u2026"
 lastmod: '2024-03-13T22:44:53.732105-06:00'
 model: gpt-4-0125-preview
-summary: Das Vergleichen von zwei Daten in Visual Basic for Applications (VBA) beinhaltet
-  die Bestimmung ihrer chronologischen Beziehung zueinander.
+summary: In VBA werden Daten mithilfe der Standardvergleichsoperatoren (`<`, `>`,
+  `=`, `<=`, `>=`) verglichen.
 title: Zwei Daten vergleichen
 weight: 27
 ---

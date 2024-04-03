@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 01:17:41.841861-07:00
-description: "Refactoring ist der Prozess der Umstrukturierung bestehenden Computer-Codes,\
-  \ ohne dessen externes Verhalten zu \xE4ndern, mit dem Ziel, nichtfunktionale\u2026"
+description: "Wie: Refactoring in Clojure\u2014dank seiner klaren Syntax und des funktionalen\
+  \ Paradigmas\u2014kann unglaublich unkompliziert sein. Betrachten wir ein h\xE4\
+  ufiges\u2026"
 lastmod: '2024-03-13T22:44:53.427816-06:00'
 model: gpt-4-0125-preview
-summary: "Refactoring ist der Prozess der Umstrukturierung bestehenden Computer-Codes,\
-  \ ohne dessen externes Verhalten zu \xE4ndern, mit dem Ziel, nichtfunktionale Attribute\
-  \ zu verbessern."
+summary: "Refactoring in Clojure\u2014dank seiner klaren Syntax und des funktionalen\
+  \ Paradigmas\u2014kann unglaublich unkompliziert sein."
 title: Refactoring
 weight: 19
 ---

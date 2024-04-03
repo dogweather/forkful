@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:43:12.882087-07:00
-description: "Apagar caracteres que correspondem a um padr\xE3o \xE9 filtrar o que\
-  \ n\xE3o queremos em uma string. Programadores fazem isso para limpar dados, validar\
-  \ entradas ou\u2026"
+description: 'Como Fazer: Para deletar caracteres indesejados em Swift, podemos usar
+  `String` e `CharacterSet`. Veja como.'
 lastmod: '2024-03-13T22:44:46.905625-06:00'
 model: gpt-4-1106-preview
-summary: "Apagar caracteres que correspondem a um padr\xE3o \xE9 filtrar o que n\xE3\
-  o queremos em uma string."
+summary: Para deletar caracteres indesejados em Swift, podemos usar `String` e `CharacterSet`.
 title: "Excluindo caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---

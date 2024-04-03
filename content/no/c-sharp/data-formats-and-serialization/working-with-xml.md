@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 04:28:56.214925-07:00
-description: "XML (eXtensible Markup Language) handler om \xE5 strukturere data i\
-  \ et lesbart format. Programmerere jobber med XML for konfigurasjon, datautveksling\
-  \ mellom\u2026"
+description: 'Hvordan: .'
 lastmod: '2024-03-13T22:44:40.822591-06:00'
 model: gpt-4-0125-preview
-summary: "XML (eXtensible Markup Language) handler om \xE5 strukturere data i et lesbart\
-  \ format."
+summary: .
 title: "\xC5 jobbe med XML"
 weight: 40
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:21.080577-07:00
-description: "YAML, que significa \"YAML Ain't Markup Language\" (YAML N\xE3o \xE9\
-  \ Uma Linguagem de Marca\xE7\xE3o), \xE9 um formato de serializa\xE7\xE3o de dados\
-  \ leg\xEDvel por humanos que \xE9\u2026"
+description: "Como Fazer: PHP, em suas itera\xE7\xF5es atuais, n\xE3o suporta a an\xE1\
+  lise de YAML como parte de sua biblioteca padr\xE3o. A maneira mais direta de trabalhar\
+  \ com YAML\u2026"
 lastmod: '2024-03-13T22:44:46.687457-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, que significa \"YAML Ain't Markup Language\" (YAML N\xE3o \xE9 Uma\
-  \ Linguagem de Marca\xE7\xE3o), \xE9 um formato de serializa\xE7\xE3o de dados leg\xED\
-  vel por humanos que \xE9 comumente usado para arquivos de configura\xE7\xE3o."
+summary: "PHP, em suas itera\xE7\xF5es atuais, n\xE3o suporta a an\xE1lise de YAML\
+  \ como parte de sua biblioteca padr\xE3o."
 title: Trabalhando com YAML
 weight: 41
 ---

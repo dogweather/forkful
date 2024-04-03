@@ -2,16 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:23.470085-07:00
-description: "TOML, vi\u1EBFt t\u1EAFt c\u1EE7a Tom's Obvious, Minimal Language, l\xE0\
-  \ m\u1ED9t \u0111\u1ECBnh d\u1EA1ng tu\u1EA7n t\u1EF1 h\xF3a d\u1EEF li\u1EC7u ch\u1EE7\
-  \ y\u1EBFu \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng cho c\xE1c t\u1EC7p c\u1EA5u h\xEC\
-  nh. C\xE1c l\u1EADp tr\xECnh vi\xEAn t\u1EADn\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: L\xE0m vi\u1EC7c v\u1EDBi TOML trong VBA bao\
+  \ g\u1ED3m vi\u1EC7c ph\xE2n t\xEDch t\u1EC7p TOML \u0111\u1EC3 \u0111\u1ECDc c\u1EA5\
+  u h\xECnh ho\u1EB7c c\xE1c thi\u1EBFt l\u1EADp v\xE0o d\u1EF1 \xE1n VBA c\u1EE7\
+  a b\u1EA1n. VBA kh\xF4ng c\xF3 s\u1EB5n h\u1ED7 tr\u1EE3\u2026"
 lastmod: '2024-03-13T22:44:36.464093-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, vi\u1EBFt t\u1EAFt c\u1EE7a Tom's Obvious, Minimal Language, l\xE0\
-  \ m\u1ED9t \u0111\u1ECBnh d\u1EA1ng tu\u1EA7n t\u1EF1 h\xF3a d\u1EEF li\u1EC7u ch\u1EE7\
-  \ y\u1EBFu \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng cho c\xE1c t\u1EC7p c\u1EA5u h\xEC\
-  nh."
+summary: "L\xE0m vi\u1EC7c v\u1EDBi TOML trong VBA bao g\u1ED3m vi\u1EC7c ph\xE2n\
+  \ t\xEDch t\u1EC7p TOML \u0111\u1EC3 \u0111\u1ECDc c\u1EA5u h\xECnh ho\u1EB7c c\xE1\
+  c thi\u1EBFt l\u1EADp v\xE0o d\u1EF1 \xE1n VBA c\u1EE7a b\u1EA1n."
 title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 weight: 39
 ---

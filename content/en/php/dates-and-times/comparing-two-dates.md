@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:33:31.916919-07:00
-description: "Comparing two dates means checking if they're the same, or finding out\
-  \ which one is earlier or later. Programmers do it to handle scheduling, event\u2026"
+description: 'How to: PHP''s `DateTime` objects and comparison operators make this
+  simple. Here''s a straightforward example.'
 lastmod: '2024-03-13T22:45:00.178429-06:00'
 model: gpt-4-1106-preview
-summary: Comparing two dates means checking if they're the same, or finding out which
-  one is earlier or later.
+summary: PHP's `DateTime` objects and comparison operators make this simple.
 title: Comparing two dates
 weight: 27
 ---

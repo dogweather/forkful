@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:11.823074-07:00
-description: "Att starta ett nytt projekt i C inneb\xE4r att man s\xE4tter upp en\
-  \ grundl\xE4ggande kodstruktur och milj\xF6 f\xF6r att effektivt hantera utvecklingsuppgifter.\u2026"
+description: "Hur man g\xF6r: K\xE4rnan i ett C-projekt \xE4r k\xE4llkoden. En typisk\
+  \ startpunkt inneb\xE4r att skapa en huvudfil, ofta med namnet `main.c`, som inneh\xE5\
+  ller programmets\u2026"
 lastmod: '2024-03-13T22:44:38.383367-06:00'
 model: gpt-4-0125-preview
-summary: "Att starta ett nytt projekt i C inneb\xE4r att man s\xE4tter upp en grundl\xE4\
-  ggande kodstruktur och milj\xF6 f\xF6r att effektivt hantera utvecklingsuppgifter."
+summary: "K\xE4rnan i ett C-projekt \xE4r k\xE4llkoden."
 title: Att starta ett nytt projekt
 weight: 1
 ---

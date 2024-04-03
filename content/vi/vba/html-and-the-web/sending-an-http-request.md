@@ -2,16 +2,16 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:04.308442-07:00
-description: "Vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP trong Visual Basic\
-  \ for Applications (VBA) bao g\u1ED3m vi\u1EC7c truy c\u1EADp v\xE0o c\xE1c t\xE0\
-  i nguy\xEAn web ho\u1EB7c d\u1ECBch v\u1EE5 web m\u1ED9t c\xE1ch l\u1EADp tr\xEC\
-  nh b\u1EB1ng\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Ch\xECa kh\xF3a \u0111\u1EC3 g\u1EEDi m\u1ED9\
+  t y\xEAu c\u1EA7u HTTP trong VBA l\xE0 s\u1EED d\u1EE5ng th\u01B0 vi\u1EC7n `Microsoft\
+  \ XML, v6.0` (ho\u1EB7c c\xE1c phi\xEAn b\u1EA3n c\u0169 h\u01A1n, t\xF9y thu\u1ED9\
+  c v\xE0o h\u1EC7 th\u1ED1ng c\u1EE7a\u2026"
 lastmod: '2024-03-13T22:44:36.428587-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP trong Visual Basic for\
-  \ Applications (VBA) bao g\u1ED3m vi\u1EC7c truy c\u1EADp v\xE0o c\xE1c t\xE0i nguy\xEA\
-  n web ho\u1EB7c d\u1ECBch v\u1EE5 web m\u1ED9t c\xE1ch l\u1EADp tr\xECnh b\u1EB1\
-  ng c\xE1ch th\u1EF1c hi\u1EC7n c\xE1c y\xEAu c\u1EA7u qua HTTP."
+summary: "Ch\xECa kh\xF3a \u0111\u1EC3 g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP trong\
+  \ VBA l\xE0 s\u1EED d\u1EE5ng th\u01B0 vi\u1EC7n `Microsoft XML, v6.0` (ho\u1EB7\
+  c c\xE1c phi\xEAn b\u1EA3n c\u0169 h\u01A1n, t\xF9y thu\u1ED9c v\xE0o h\u1EC7 th\u1ED1\
+  ng c\u1EE7a b\u1EA1n)."
 title: "G\u1EEDi y\xEAu c\u1EA7u HTTP"
 weight: 44
 ---

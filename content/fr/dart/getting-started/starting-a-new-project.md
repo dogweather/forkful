@@ -2,12 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:31.007523-07:00
-description: "Commencer un nouveau projet en Dart implique de mettre en place un environnement\
-  \ propice au d\xE9veloppement, aux tests et au d\xE9ploiement efficaces. Les\u2026"
+description: "Comment faire : 1. **Installer Dart** : Assurez-vous que Dart est install\xE9\
+  \ sur votre syst\xE8me. Sinon, vous pouvez le t\xE9l\xE9charger depuis\u2026"
 lastmod: '2024-03-13T22:44:57.390652-06:00'
 model: gpt-4-0125-preview
-summary: "Commencer un nouveau projet en Dart implique de mettre en place un environnement\
-  \ propice au d\xE9veloppement, aux tests et au d\xE9ploiement efficaces."
+summary: '1.'
 title: "D\xE9marrer un nouveau projet"
 weight: 1
 ---

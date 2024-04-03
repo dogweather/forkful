@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:49.177501-07:00
-description: "Capitalizar una cadena implica convertir la primera letra de la cadena\
-  \ en may\xFAscula mientras aseguramos que el resto de las letras est\xE9n en min\xFA\
-  sculas.\u2026"
+description: "C\xF3mo hacerlo: Elixir provee una manera directa de capitalizar cadenas\
+  \ utilizando sus funciones integradas sin la necesidad de librer\xEDas de terceros.\
+  \ Aqu\xED\u2026"
 lastmod: '2024-03-13T22:44:58.684329-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizar una cadena implica convertir la primera letra de la cadena en\
-  \ may\xFAscula mientras aseguramos que el resto de las letras est\xE9n en min\xFA\
-  sculas."
+summary: "Elixir provee una manera directa de capitalizar cadenas utilizando sus funciones\
+  \ integradas sin la necesidad de librer\xEDas de terceros."
 title: Capitalizando una cadena de texto
 weight: 2
 ---

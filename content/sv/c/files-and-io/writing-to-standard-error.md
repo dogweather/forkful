@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:14.110246-07:00
-description: "Att skriva till standardfel i C inneb\xE4r att styra felmeddelanden\
-  \ och diagnostisk information till en separat str\xF6m fr\xE5n programmets huvudutdata.\u2026"
+description: "Hur man g\xF6r: I C anv\xE4nds str\xF6mmen `stderr` f\xF6r att skriva\
+  \ ut felmeddelanden. Till skillnad fr\xE5n att skriva till standardutdata med `printf`,\
+  \ kan skrivning\u2026"
 lastmod: '2024-03-13T22:44:38.401034-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva till standardfel i C inneb\xE4r att styra felmeddelanden och\
-  \ diagnostisk information till en separat str\xF6m fr\xE5n programmets huvudutdata."
+summary: "I C anv\xE4nds str\xF6mmen `stderr` f\xF6r att skriva ut felmeddelanden."
 title: Skriva till standardfel
 weight: 25
 ---

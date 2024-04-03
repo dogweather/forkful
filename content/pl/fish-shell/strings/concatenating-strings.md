@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:34:35.722202-07:00
-description: "Konkatenacja to fancy termin na \u0142\u0105czenie string\xF3w, tworzenie\
-  \ z nich d\u0142u\u017Cszego ci\u0105gu znak\xF3w. Programi\u015Bci to robi\u0105\
-  , gdy potrzebuj\u0105 zbudowa\u0107 warto\u015Bci, takie\u2026"
+description: "Jak to zrobi\u0107: \u0141\u0105czenie string\xF3w w Fish mo\u017Cna\
+  \ zrobi\u0107 na kilka sposob\xF3w, oto najprostszy."
 lastmod: '2024-03-13T22:44:35.830815-06:00'
 model: gpt-4-1106-preview
-summary: "Konkatenacja to fancy termin na \u0142\u0105czenie string\xF3w, tworzenie\
-  \ z nich d\u0142u\u017Cszego ci\u0105gu znak\xF3w."
+summary: "\u0141\u0105czenie string\xF3w w Fish mo\u017Cna zrobi\u0107 na kilka sposob\xF3\
+  w, oto najprostszy."
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---

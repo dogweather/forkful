@@ -1,10 +1,10 @@
 ---
 date: 2024-01-26 03:47:26.170190-07:00
-description: "Avrunding av tall er \xE5 beskj\xE6re et tall til en spesifikk presisjon.\
-  \ Programmerere gj\xF8r dette for \xE5 kontrollere numerisk utdata for lesbarhet,\u2026"
+description: "Hvordan: Avrunding i TypeScript kan gj\xF8res ved hjelp av flere metoder.\
+  \ Her er en kjapp gjennomgang."
 lastmod: '2024-03-13T22:44:40.527173-06:00'
 model: gpt-4-0125-preview
-summary: "Avrunding av tall er \xE5 beskj\xE6re et tall til en spesifikk presisjon."
+summary: "Avrunding i TypeScript kan gj\xF8res ved hjelp av flere metoder."
 title: Avrunding av tall
 weight: 13
 ---

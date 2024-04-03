@@ -2,11 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:00.558209-07:00
-description: "Een tekstbestand schrijven betekent data opslaan in een bestand met\
-  \ een `.txt` extensie. Programmeurs doen dit voor loggen, configuratie, of het opslaan\u2026"
+description: "Hoe: TypeScript, als een uitbreiding van JavaScript, heeft geen eigen\
+  \ bestandssysteemmodule, maar het kan Node.js gebruiken voor deze taak. Zorg ervoor\u2026"
 lastmod: '2024-03-13T22:44:50.569950-06:00'
 model: gpt-4-0125-preview
-summary: Een tekstbestand schrijven betekent data opslaan in een bestand met een `.
+summary: TypeScript, als een uitbreiding van JavaScript, heeft geen eigen bestandssysteemmodule,
+  maar het kan Node.js gebruiken voor deze taak.
 title: Een tekstbestand schrijven
 weight: 24
 ---

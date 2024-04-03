@@ -2,12 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:54.300166-07:00
-description: "Het parseren van een datum uit een tekenreeks betekent het converteren\
-  \ van tekst die een datum voorstelt naar een formaat waarmee een programma kan\u2026"
+description: "Hoe te: Elm gebruikt de `Date` module om met datums om te gaan, maar\
+  \ voor zover mijn kennis reikt in begin 2023, is er geen ingebouwde Elm-bibliotheek\u2026"
 lastmod: '2024-03-13T22:44:50.734491-06:00'
 model: gpt-4-0125-preview
-summary: Het parseren van een datum uit een tekenreeks betekent het converteren van
-  tekst die een datum voorstelt naar een formaat waarmee een programma kan werken.
+summary: Elm gebruikt de `Date` module om met datums om te gaan, maar voor zover mijn
+  kennis reikt in begin 2023, is er geen ingebouwde Elm-bibliotheek voor het parseren
+  van datums uit tekenreeksen.
 title: Een datum uit een string parsen
 weight: 30
 ---

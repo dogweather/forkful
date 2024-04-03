@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:39:46.129479-07:00
-description: "Criar um arquivo tempor\xE1rio \xE9 fazer um arquivo que s\xF3 precisa\
-  \ existir por um curto per\xEDodo, geralmente durante a execu\xE7\xE3o de um programa.\
-  \ Programadores\u2026"
+description: "Como Fazer: Em Clojure, voc\xEA pode usar a biblioteca `clojure.java.io`\
+  \ para criar arquivos tempor\xE1rios de maneira f\xE1cil. Vamos a um exemplo."
 lastmod: '2024-03-13T22:44:46.215794-06:00'
 model: gpt-4-1106-preview
-summary: "Criar um arquivo tempor\xE1rio \xE9 fazer um arquivo que s\xF3 precisa existir\
-  \ por um curto per\xEDodo, geralmente durante a execu\xE7\xE3o de um programa."
+summary: "Em Clojure, voc\xEA pode usar a biblioteca `clojure.java.io` para criar\
+  \ arquivos tempor\xE1rios de maneira f\xE1cil."
 title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---

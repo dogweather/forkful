@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:48:37.086197-07:00
-description: "Refaktorering er prosessen med \xE5 omstrukturere eksisterende dataprogramkode\
-  \ uten \xE5 endre dens eksterne oppf\xF8rsel. Programmerere refaktorerer for \xE5\
-  \u2026"
+description: "Hvordan: La oss ta et klassisk PHP-utdrag og bruke litt refaktoreringstrollkunst\
+  \ p\xE5 det. F\xF8r refaktorering kan koden v\xE5r se slik ut."
 lastmod: '2024-03-13T22:44:40.894966-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktorering er prosessen med \xE5 omstrukturere eksisterende dataprogramkode\
-  \ uten \xE5 endre dens eksterne oppf\xF8rsel."
+summary: "La oss ta et klassisk PHP-utdrag og bruke litt refaktoreringstrollkunst\
+  \ p\xE5 det."
 title: Refaktorering
 weight: 19
 ---

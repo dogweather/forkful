@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 00:56:05.110935-07:00
-description: "G\xE9rer les erreurs avec PowerShell signifie anticiper les incidents\
-  \ et les g\xE9rer en douceur. Les programmeurs font cela pour \xE9viter les plantages\
-  \ et\u2026"
+description: 'Comment : .'
 lastmod: '2024-03-13T22:44:58.058646-06:00'
 model: gpt-4-1106-preview
-summary: "G\xE9rer les erreurs avec PowerShell signifie anticiper les incidents et\
-  \ les g\xE9rer en douceur."
+summary: .
 title: Gestion des erreurs
 weight: 16
 ---

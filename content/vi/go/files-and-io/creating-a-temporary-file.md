@@ -2,18 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:53.842860-07:00
-description: "Vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi trong Go cho\
-  \ ph\xE9p t\u1EA1o ra m\u1ED9t t\u1EC7p kh\xF4ng l\u01B0u tr\u1EEF l\xE2u d\xE0\
-  i, \u0111\u01B0\u1EE3c thi\u1EBFt k\u1EBF \u0111\u1EC3 s\u1EED d\u1EE5ng trong th\u1EDD\
-  i gian ng\u1EAFn, ch\u1EE7 y\u1EBFu l\xE0 cho c\xE1c nhi\u1EC7m\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Go, g\xF3i `ioutil` ban \u0111\u1EA7u\
+  \ cung c\u1EA5p c\xE1c ti\u1EC7n \xEDch cho vi\u1EC7c t\u1EA1o t\u1EC7p t\u1EA1\
+  m th\u1EDDi. Tuy nhi\xEAn, Go 1.16 \u0111\xE3 th\xFAc \u0111\u1EA9y vi\u1EC7c s\u1EED\
+  \ d\u1EE5ng c\xE1c ch\u1EE9c n\u0103ng c\u1EE7a\u2026"
 lastmod: '2024-03-13T22:44:36.008638-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi trong Go cho ph\xE9\
-  p t\u1EA1o ra m\u1ED9t t\u1EC7p kh\xF4ng l\u01B0u tr\u1EEF l\xE2u d\xE0i, \u0111\
-  \u01B0\u1EE3c thi\u1EBFt k\u1EBF \u0111\u1EC3 s\u1EED d\u1EE5ng trong th\u1EDDi\
-  \ gian ng\u1EAFn, ch\u1EE7 y\u1EBFu l\xE0 cho c\xE1c nhi\u1EC7m v\u1EE5 nh\u01B0\
-  \ l\u01B0u tr\u1EEF d\u1EEF li\u1EC7u trung gian ho\u1EB7c h\u1ED7 tr\u1EE3 trong\
-  \ c\xE1c c\xF4ng vi\u1EC7c x\u1EED l\xFD h\xE0ng lo\u1EA1t."
+summary: "Trong Go, g\xF3i `ioutil` ban \u0111\u1EA7u cung c\u1EA5p c\xE1c ti\u1EC7\
+  n \xEDch cho vi\u1EC7c t\u1EA1o t\u1EC7p t\u1EA1m th\u1EDDi."
 title: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi"
 weight: 21
 ---

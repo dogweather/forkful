@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:41:58.077726-07:00
-description: "I Elm handler det om \xE5 slette tegn som matcher et m\xF8nster for\
-  \ \xE5 rense data eller formatere strenger for spesifikke brukstilfeller. Det hjelper\
-  \ \xE5 holde\u2026"
+description: "How to: Elm har ikke innebygd regex, s\xE5 vi bruker `String` funksjoner\
+  \ for \xE5 fjerne spesifikke tegn."
 lastmod: '2024-03-13T22:44:40.692684-06:00'
 model: gpt-4-1106-preview
-summary: "I Elm handler det om \xE5 slette tegn som matcher et m\xF8nster for \xE5\
-  \ rense data eller formatere strenger for spesifikke brukstilfeller."
+summary: "Elm har ikke innebygd regex, s\xE5 vi bruker `String` funksjoner for \xE5\
+  \ fjerne spesifikke tegn."
 title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---

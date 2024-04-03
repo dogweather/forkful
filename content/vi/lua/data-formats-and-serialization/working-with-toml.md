@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:27.473273-07:00
-description: "L\xE0m vi\u1EC7c v\u1EDBi TOML bao g\u1ED3m vi\u1EC7c ph\xE2n t\xED\
-  ch c\xFA ph\xE1p v\xE0 t\u1EA1o d\u1EEF li\u1EC7u TOML (Tom's Obvious, Minimal Language)\
-  \ b\u1EB1ng Lua. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng TOML cho c\xE1c t\u1EC7\
-  p\u2026"
+description: "L\xE0m c\xE1ch n\xE0o: \u0110\u1EA7u ti\xEAn, \u0111\u1EA3m b\u1EA3\
+  o m\xF4i tr\u01B0\u1EDDng Lua c\u1EE7a b\u1EA1n c\xF3 tr\xECnh ph\xE2n t\xEDch c\xFA\
+  \ ph\xE1p TOML. Trong v\xED d\u1EE5 n\xE0y, ch\xFAng ta s\u1EBD s\u1EED d\u1EE5\
+  ng `lua-toml`."
 lastmod: '2024-03-13T22:44:36.852218-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m vi\u1EC7c v\u1EDBi TOML bao g\u1ED3m vi\u1EC7c ph\xE2n t\xEDch c\xFA\
-  \ ph\xE1p v\xE0 t\u1EA1o d\u1EEF li\u1EC7u TOML (Tom's Obvious, Minimal Language)\
-  \ b\u1EB1ng Lua."
+summary: "\u0110\u1EA7u ti\xEAn, \u0111\u1EA3m b\u1EA3o m\xF4i tr\u01B0\u1EDDng Lua\
+  \ c\u1EE7a b\u1EA1n c\xF3 tr\xECnh ph\xE2n t\xEDch c\xFA ph\xE1p TOML."
 title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 weight: 39
 ---

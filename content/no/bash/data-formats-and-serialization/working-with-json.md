@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:34.371036-07:00
-description: "\xC5 jobbe med JSON i Bash-programmering inneb\xE6rer parsing, uttrekking\
-  \ og manipulering av JSON-data direkte fra kommandolinjen. Programmerere gj\xF8\
-  r ofte dette\u2026"
+description: "Hvordan: Bash selv mangler innebygd JSON-parsingkapasitet, men `jq`\
+  \ er en kraftig kommandolinje JSON-prosessor som fyller dette gapet. Her er hvordan\
+  \ du\u2026"
 lastmod: '2024-03-13T22:44:40.995970-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 jobbe med JSON i Bash-programmering inneb\xE6rer parsing, uttrekking\
-  \ og manipulering av JSON-data direkte fra kommandolinjen."
+summary: Bash selv mangler innebygd JSON-parsingkapasitet, men `jq` er en kraftig
+  kommandolinje JSON-prosessor som fyller dette gapet.
 title: Arbeider med JSON
 weight: 38
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:47:04.577607-07:00
-description: "Att hitta l\xE4ngden p\xE5 en str\xE4ng inneb\xE4r att r\xE4kna antalet\
-  \ tecken i den. Programmerare g\xF6r detta f\xF6r validering, formatering eller\
-  \ andra ber\xE4kningar som\u2026"
+description: "S\xE5 h\xE4r g\xF6r du: Elixir anv\xE4nder `String.length/1` f\xF6r\
+  \ att hitta l\xE4ngden p\xE5 en str\xE4ng. H\xE4r \xE4r ett exempel."
 lastmod: '2024-03-13T22:44:37.557938-06:00'
 model: gpt-4-1106-preview
-summary: "Att hitta l\xE4ngden p\xE5 en str\xE4ng inneb\xE4r att r\xE4kna antalet\
-  \ tecken i den."
+summary: "Elixir anv\xE4nder `String.length/1` f\xF6r att hitta l\xE4ngden p\xE5 en\
+  \ str\xE4ng."
 title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---

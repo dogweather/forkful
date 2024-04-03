@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:54.756179-07:00
-description: "Analisar HTML em C envolve examinar documentos HTML para extrair dados,\
-  \ estrutura ou partes espec\xEDficas de forma eficiente, muitas vezes como precursor\
-  \ da\u2026"
+description: "Como fazer: Analisar HTML pode parecer assustador devido \xE0 complexidade\
+  \ do HTML e suas frequentes desvios de estruturas limpas e bem formadas. No entanto,\u2026"
 lastmod: '2024-03-13T22:44:47.047469-06:00'
 model: gpt-4-0125-preview
-summary: "Analisar HTML em C envolve examinar documentos HTML para extrair dados,\
-  \ estrutura ou partes espec\xEDficas de forma eficiente, muitas vezes como precursor\
-  \ da minera\xE7\xE3o de dados ou raspagem da web."
+summary: "Analisar HTML pode parecer assustador devido \xE0 complexidade do HTML e\
+  \ suas frequentes desvios de estruturas limpas e bem formadas."
 title: Analisando HTML
 weight: 43
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-25 02:59:41.349298-07:00
-description: "Complex numbers, comprised of a real and an imaginary part (like 3+4i),\
-  \ are a staple in engineering and physics. Programmers work with them in\u2026"
+description: 'How to: Ruby makes handling complex numbers a breeze. You can create
+  and manipulate them using the Complex class.'
 lastmod: '2024-03-13T22:45:00.543169-06:00'
 model: gpt-4-1106-preview
-summary: Complex numbers, comprised of a real and an imaginary part (like 3+4i), are
-  a staple in engineering and physics.
+summary: Ruby makes handling complex numbers a breeze.
 title: Working with complex numbers
 weight: 14
 ---

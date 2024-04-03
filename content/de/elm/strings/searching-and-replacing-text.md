@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:57:30.337747-07:00
-description: "Suchen und Ersetzen von Text erm\xF6glicht es, spezifische Zeichen oder\
-  \ Zeichenfolgen in einem Textblock zu finden und durch andere auszutauschen.\u2026"
+description: 'So geht''s: In Elm benutzt du oft Funktionen aus dem `String`-Modul,
+  um Text zu manipulieren. Hier ist ein einfaches Beispiel.'
 lastmod: '2024-03-13T22:44:53.789623-06:00'
 model: gpt-4-1106-preview
-summary: "Suchen und Ersetzen von Text erm\xF6glicht es, spezifische Zeichen oder\
-  \ Zeichenfolgen in einem Textblock zu finden und durch andere auszutauschen."
+summary: In Elm benutzt du oft Funktionen aus dem `String`-Modul, um Text zu manipulieren.
 title: Suchen und Ersetzen von Text
 weight: 10
 ---

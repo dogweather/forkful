@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:44.953177-07:00
-description: "Es ist wesentlich in JavaScript zu \xFCberpr\xFCfen, ob ein Verzeichnis\
-  \ existiert, um Aufgaben der Dateimanipulation durchzuf\xFChren. Dadurch k\xF6nnen\
-  \ Skripte die\u2026"
+description: "Wie geht das: In Node.js, da JavaScript selbst keinen direkten Zugriff\
+  \ auf das Dateisystem hat, wird f\xFCr solche Operationen typischerweise das `fs`\
+  \ Modul\u2026"
 lastmod: '2024-03-13T22:44:54.280829-06:00'
 model: gpt-4-0125-preview
-summary: "Es ist wesentlich in JavaScript zu \xFCberpr\xFCfen, ob ein Verzeichnis\
-  \ existiert, um Aufgaben der Dateimanipulation durchzuf\xFChren."
+summary: "In Node.js, da JavaScript selbst keinen direkten Zugriff auf das Dateisystem\
+  \ hat, wird f\xFCr solche Operationen typischerweise das `fs` Modul verwendet."
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---

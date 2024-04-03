@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:38.428994-07:00
-description: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi t\u1EE9c l\xE0 b\u1EA1\
-  n t\u1EA1o m\u1ED9t t\u1EC7p m\xE0 b\u1EA1n kh\xF4ng c\u1EA7n gi\u1EEF l\u1EA1i\
-  \ sau khi s\u1EED d\u1EE5ng xong. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n\
-  \ vi\u1EC7c n\xE0y cho d\u1EEF li\u1EC7u ch\u1EC9 c\u1EA7n thi\u1EBFt\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: M\xF4-\u0111un `tempfile` c\u1EE7a Python \u0111\
+  \u01B0\u1EE3c x\xE2y d\u1EF1ng cho m\u1EE5c \u0111\xEDch n\xE0y. H\xE3y xem n\xF3\
+  \ ho\u1EA1t \u0111\u1ED9ng nh\u01B0 th\u1EBF n\xE0o."
 lastmod: '2024-03-13T22:44:36.122977-06:00'
 model: gpt-4-0125-preview
-summary: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi t\u1EE9c l\xE0 b\u1EA1n t\u1EA1\
-  o m\u1ED9t t\u1EC7p m\xE0 b\u1EA1n kh\xF4ng c\u1EA7n gi\u1EEF l\u1EA1i sau khi s\u1EED\
-  \ d\u1EE5ng xong."
+summary: "M\xF4-\u0111un `tempfile` c\u1EE7a Python \u0111\u01B0\u1EE3c x\xE2y d\u1EF1\
+  ng cho m\u1EE5c \u0111\xEDch n\xE0y."
 title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
 weight: 21
 ---

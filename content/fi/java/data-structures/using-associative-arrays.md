@@ -2,12 +2,14 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:47.006178-07:00
-description: "Javassa assosiatiiviset taulukot eli mapit mahdollistavat avain-arvo\
-  \ -parien tallentamisen tehokasta datan hakua ja manipulaatiota varten. Ohjelmoijat\u2026"
+description: "Kuinka: Java ei sis\xE4ll\xE4 valmiiksi assosiatiivisia taulukoita,\
+  \ kuten jotkin kielet tekev\xE4t, mutta se tarjoaa `Map`-rajapinnan ja luokkia,\
+  \ kuten `HashMap`\u2026"
 lastmod: '2024-03-13T22:44:56.437837-06:00'
 model: gpt-4-0125-preview
-summary: Javassa assosiatiiviset taulukot eli mapit mahdollistavat avain-arvo -parien
-  tallentamisen tehokasta datan hakua ja manipulaatiota varten.
+summary: "Java ei sis\xE4ll\xE4 valmiiksi assosiatiivisia taulukoita, kuten jotkin\
+  \ kielet tekev\xE4t, mutta se tarjoaa `Map`-rajapinnan ja luokkia, kuten `HashMap`\
+  \ ja `TreeMap`, t\xE4ytt\xE4m\xE4\xE4n t\xE4m\xE4n roolin."
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---

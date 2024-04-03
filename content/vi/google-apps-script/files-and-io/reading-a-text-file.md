@@ -2,18 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:26.887898-07:00
-description: "Vi\u1EC7c \u0111\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong Google\
-  \ Apps Script (GAS) bao g\u1ED3m vi\u1EC7c truy c\u1EADp v\xE0 tr\xEDch xu\u1EA5\
-  t d\u1EEF li\u1EC7u v\u0103n b\u1EA3n t\u1EEB c\xE1c t\u1EC7p \u0111\u01B0\u1EE3\
-  c l\u01B0u tr\u1EEF tr\xEAn Google Drive ho\u1EB7c\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EC3 b\u1EAFt \u0111\u1EA7u \u0111\u1ECD\
+  c m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n v\u1EDBi Google Apps Script, b\u1EA1n th\u01B0\
+  \u1EDDng c\u1EA7n s\u1EED d\u1EE5ng Google Drive API. D\u01B0\u1EDBi \u0111\xE2\
+  y l\xE0 m\u1ED9t v\xED d\u1EE5 c\u01A1 b\u1EA3n minh h\u1ECDa c\xE1ch\u2026"
 lastmod: '2024-03-13T22:44:36.064093-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c \u0111\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong Google\
-  \ Apps Script (GAS) bao g\u1ED3m vi\u1EC7c truy c\u1EADp v\xE0 tr\xEDch xu\u1EA5\
-  t d\u1EEF li\u1EC7u v\u0103n b\u1EA3n t\u1EEB c\xE1c t\u1EC7p \u0111\u01B0\u1EE3\
-  c l\u01B0u tr\u1EEF tr\xEAn Google Drive ho\u1EB7c c\xE1c d\u1ECBch v\u1EE5 l\u01B0\
-  u tr\u1EEF \u0111\xE1m m\xE2y kh\xE1c c\xF3 th\u1EC3 truy c\u1EADp \u0111\u01B0\u1EE3\
-  c."
+summary: "\u0110\u1EC3 b\u1EAFt \u0111\u1EA7u \u0111\u1ECDc m\u1ED9t t\u1EC7p v\u0103\
+  n b\u1EA3n v\u1EDBi Google Apps Script, b\u1EA1n th\u01B0\u1EDDng c\u1EA7n s\u1EED\
+  \ d\u1EE5ng Google Drive API."
 title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 22
 ---

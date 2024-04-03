@@ -1,11 +1,11 @@
 ---
 date: 2024-01-27 10:38:42.803142-07:00
-description: "Concatenating strings is about joining two or more strings together\
-  \ to form a single piece of text. You might need to merge text for generating user\u2026"
+description: "How to: In Elixir, you can concatenate strings in a few straightforward\
+  \ ways. Let's explore the most common methods: 1. Using the `<>` operator, which\
+  \ is\u2026"
 lastmod: '2024-03-13T22:44:59.775423-06:00'
 model: gpt-4-0125-preview
-summary: Concatenating strings is about joining two or more strings together to form
-  a single piece of text.
+summary: In Elixir, you can concatenate strings in a few straightforward ways.
 title: Concatenating strings
 weight: 3
 ---

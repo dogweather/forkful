@@ -2,14 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:09.916572-07:00
-description: "Obtener la fecha actual en programaci\xF3n es crucial por una mir\xED\
-  ada de razones, incluyendo el registro (logging), marcar eventos con una fecha y\
-  \ hora\u2026"
+description: "C\xF3mo hacerlo: #."
 lastmod: '2024-03-13T22:44:58.667857-06:00'
 model: gpt-4-0125-preview
-summary: "Obtener la fecha actual en programaci\xF3n es crucial por una mir\xEDada\
-  \ de razones, incluyendo el registro (logging), marcar eventos con una fecha y hora\
-  \ determinadas, y la programaci\xF3n de tareas."
+summary: '#.'
 title: Obteniendo la fecha actual
 weight: 29
 ---

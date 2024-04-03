@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:50:23.101377-07:00
-description: "T\xE4ss\xE4 on pieni maistiainen Kotlinin debuggaamisesta IntelliJ IDEA:ssa\
-  \ - IDEiden Sherlock Holmes: ```kotlin fun main() { val mysteryNumber = 42 var arvaus\u2026"
+description: "Kuinka: T\xE4ss\xE4 on pieni maistiainen Kotlinin debuggaamisesta IntelliJ\
+  \ IDEA:ssa - IDEiden Sherlock Holmes."
 lastmod: '2024-03-13T22:44:56.535234-06:00'
 model: gpt-4-0125-preview
 summary: "T\xE4ss\xE4 on pieni maistiainen Kotlinin debuggaamisesta IntelliJ IDEA:ssa\
-  \ - IDEiden Sherlock Holmes:\n\n```kotlin\nfun main() {\n    val mysteryNumber =\
-  \ 42\n    var arvaus = 0\n\n    while (arvaus ."
+  \ - IDEiden Sherlock Holmes."
 title: "Debuggerin k\xE4ytt\xF6"
 weight: 35
 ---

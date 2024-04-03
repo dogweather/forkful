@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:31.405398-07:00
-description: "Analizar HTML en Clojure implica extraer informaci\xF3n de documentos\
-  \ HTML de manera program\xE1tica. Los programadores hacen esto para acceder, manipular\
-  \ o\u2026"
+description: "C\xF3mo hacerlo: Clojure no tiene capacidades de an\xE1lisis de HTML\
+  \ incorporadas, pero puedes usar bibliotecas de Java o envoltorios de Clojure como\
+  \ `enlive` o\u2026"
 lastmod: '2024-03-13T22:44:58.654431-06:00'
 model: gpt-4-0125-preview
-summary: "Analizar HTML en Clojure implica extraer informaci\xF3n de documentos HTML\
-  \ de manera program\xE1tica."
+summary: "Clojure no tiene capacidades de an\xE1lisis de HTML incorporadas, pero puedes\
+  \ usar bibliotecas de Java o envoltorios de Clojure como `enlive` o `hickory`."
 title: Analizando HTML
 weight: 43
 ---

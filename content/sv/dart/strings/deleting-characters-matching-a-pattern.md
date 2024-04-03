@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:12.808260-07:00
-description: "Att ta bort tecken som matchar ett specifikt m\xF6nster i str\xE4ngar\
-  \ \xE4r avg\xF6rande f\xF6r datavalidering, sanering, eller n\xE4r text f\xF6rbereds\
-  \ f\xF6r vidare\u2026"
+description: "Hur man g\xF6r: Dart g\xF6r det enkelt att ta bort tecken som matchar\
+  \ ett f\xF6rdefinierat m\xF6nster med hj\xE4lp av regulj\xE4ra uttryck och metoden\
+  \ `replaceAll`. Inga\u2026"
 lastmod: '2024-03-13T22:44:37.593982-06:00'
 model: gpt-4-0125-preview
-summary: "Att ta bort tecken som matchar ett specifikt m\xF6nster i str\xE4ngar \xE4\
-  r avg\xF6rande f\xF6r datavalidering, sanering, eller n\xE4r text f\xF6rbereds f\xF6\
-  r vidare bearbetning."
+summary: "Dart g\xF6r det enkelt att ta bort tecken som matchar ett f\xF6rdefinierat\
+  \ m\xF6nster med hj\xE4lp av regulj\xE4ra uttryck och metoden `replaceAll`."
 title: "Ta bort tecken som matchar ett m\xF6nster"
 weight: 5
 ---

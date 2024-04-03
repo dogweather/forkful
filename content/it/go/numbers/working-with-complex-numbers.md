@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:02.243526-07:00
-description: "Lavorare con numeri complessi nella programmazione implica la manipolazione\
-  \ di numeri che hanno sia una parte reale che una immaginaria, tipicamente\u2026"
+description: "Come fare: In Go, i numeri complessi sono gestiti utilizzando le funzioni\
+  \ incorporate `complex`, `real` e `imag`, insieme ai tipi `complex64` e\u2026"
 lastmod: '2024-03-13T22:44:42.901299-06:00'
 model: gpt-4-0125-preview
-summary: Lavorare con numeri complessi nella programmazione implica la manipolazione
-  di numeri che hanno sia una parte reale che una immaginaria, tipicamente espressi
-  come `a + bi`.
+summary: In Go, i numeri complessi sono gestiti utilizzando le funzioni incorporate
+  `complex`, `real` e `imag`, insieme ai tipi `complex64` e `complex128` (rappresentanti
+  rispettivamente numeri complessi a 64 bit e 128 bit).
 title: Lavorare con i numeri complessi
 weight: 14
 ---

@@ -1,13 +1,9 @@
 ---
 date: 2024-01-20 17:53:24.494309-07:00
-description: "Wypisywanie informacji diagnostycznych to spos\xF3b na wy\u015Bwietlanie\
-  \ danych w trakcie dzia\u0142ania programu, \u017Ceby zrozumie\u0107, co si\u0119\
-  \ w nim dzieje. Debugowanie\u2026"
+description: "Jak to zrobi\u0107: ."
 lastmod: '2024-03-13T22:44:35.934930-06:00'
 model: gpt-4-1106-preview
-summary: "Wypisywanie informacji diagnostycznych to spos\xF3b na wy\u015Bwietlanie\
-  \ danych w trakcie dzia\u0142ania programu, \u017Ceby zrozumie\u0107, co si\u0119\
-  \ w nim dzieje."
+summary: .
 title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---

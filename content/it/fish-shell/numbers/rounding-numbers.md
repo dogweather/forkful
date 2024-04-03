@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 03:44:11.397648-07:00
-description: "Arrotondare i numeri consiste nel tagliare le cifre decimali per semplificare\
-  \ i dati o adattarli a formati specifici. I programmatori lo fanno per\u2026"
+description: "Come fare: In Fish, l'arrotondamento dei numeri si basa sul comando\
+  \ `math`. Usare `math -s0` per arrotondare all'intero pi\xF9 vicino."
 lastmod: '2024-03-13T22:44:43.851265-06:00'
 model: gpt-4-0125-preview
-summary: Arrotondare i numeri consiste nel tagliare le cifre decimali per semplificare
-  i dati o adattarli a formati specifici.
+summary: In Fish, l'arrotondamento dei numeri si basa sul comando `math`.
 title: Arrotondamento dei numeri
 weight: 13
 ---

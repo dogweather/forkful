@@ -1,13 +1,12 @@
 ---
 date: 2024-01-20 18:02:37.637918-07:00
-description: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica es el proceso\
-  \ de acceso a recursos web que requieren verificaci\xF3n de usuario y contrase\xF1\
-  a. Los\u2026"
+description: "C\xF3mo hacerlo: Para enviar una solicitud HTTP con autenticaci\xF3\
+  n b\xE1sica en Ruby, puedes usar la librer\xEDa `net/http`. Aqu\xED te muestro c\xF3\
+  mo."
 lastmod: '2024-03-13T22:44:59.591262-06:00'
 model: gpt-4-1106-preview
-summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica es el proceso de\
-  \ acceso a recursos web que requieren verificaci\xF3n de usuario y contrase\xF1\
-  a."
+summary: "Para enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica en Ruby, puedes\
+  \ usar la librer\xEDa `net/http`."
 title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
 weight: 45
 ---

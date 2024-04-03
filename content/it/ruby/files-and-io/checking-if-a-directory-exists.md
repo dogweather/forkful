@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:13.361153-07:00
-description: "Verificare se una directory esiste in Ruby permette ai programmatori\
-  \ di verificare la presenza di una directory prima di eseguire operazioni come la\u2026"
+description: "Come fare: La libreria standard di Ruby fornisce metodi semplici per\
+  \ controllare l'esistenza di una directory. Ecco come si fa con puro Ruby, senza\u2026"
 lastmod: '2024-03-13T22:44:44.065240-06:00'
 model: gpt-4-0125-preview
-summary: Verificare se una directory esiste in Ruby permette ai programmatori di verificare
-  la presenza di una directory prima di eseguire operazioni come la lettura di file
-  o la creazione di nuove directory.
+summary: La libreria standard di Ruby fornisce metodi semplici per controllare l'esistenza
+  di una directory.
 title: Verifica se una directory esiste
 weight: 20
 ---

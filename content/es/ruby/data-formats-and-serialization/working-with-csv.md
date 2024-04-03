@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:03.213949-07:00
-description: "Trabajar con archivos CSV en Ruby ofrece un enfoque directo para manejar\
-  \ datos tabulares. Los programadores a menudo se involucran en esta pr\xE1ctica\
-  \ para\u2026"
+description: "C\xF3mo hacerlo: Ruby incluye por defecto la biblioteca CSV, la cual\
+  \ simplifica la lectura y escritura de archivos CSV. Aqu\xED te mostramos c\xF3\
+  mo puedes\u2026"
 lastmod: '2024-03-13T22:44:59.613404-06:00'
 model: gpt-4-0125-preview
-summary: Trabajar con archivos CSV en Ruby ofrece un enfoque directo para manejar
-  datos tabulares.
+summary: Ruby incluye por defecto la biblioteca CSV, la cual simplifica la lectura
+  y escritura de archivos CSV.
 title: Trabajando con CSV
 weight: 37
 ---

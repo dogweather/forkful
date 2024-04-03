@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:30.881461-07:00
-description: "Parsowanie daty z ci\u0105gu znak\xF3w pozwala programistom konwertowa\u0107\
-  \ tekstowe reprezentacje dat na obiekty `Date` w JavaScript, u\u0142atwiaj\u0105\
-  c operacje\u2026"
+description: "Jak to zrobi\u0107: JavaScript natywnie oferuje metod\u0119 `Date.parse()`\
+  \ oraz konstruktor `Date` do parsowania ci\u0105g\xF3w dat. Jednak te podej\u015B\
+  cia maj\u0105 ograniczenia i\u2026"
 lastmod: '2024-03-13T22:44:35.805898-06:00'
 model: gpt-4-0125-preview
-summary: "Parsowanie daty z ci\u0105gu znak\xF3w pozwala programistom konwertowa\u0107\
-  \ tekstowe reprezentacje dat na obiekty `Date` w JavaScript, u\u0142atwiaj\u0105\
-  c operacje manipulowania dat\u0105, por\xF3wnywania i formatowania."
+summary: "JavaScript natywnie oferuje metod\u0119 `Date.parse()` oraz konstruktor\
+  \ `Date` do parsowania ci\u0105g\xF3w dat."
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---

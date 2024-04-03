@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:33.840811-07:00
-description: "Een datum omzetten naar een string in Swift stelt je in staat om datums\
-  \ op te maken voor mensen. Het is essentieel voor de weergave in de UI,\u2026"
+description: 'Hoe te: Swift gebruikt `DateFormatter` om `Date` objecten om te zetten
+  in leesbare strings. Hier is hoe.'
 lastmod: '2024-03-13T22:44:51.169206-06:00'
 model: gpt-4-0125-preview
-summary: Een datum omzetten naar een string in Swift stelt je in staat om datums op
-  te maken voor mensen.
+summary: Swift gebruikt `DateFormatter` om `Date` objecten om te zetten in leesbare
+  strings.
 title: Een datum converteren naar een string
 weight: 28
 ---

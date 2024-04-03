@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:07:36.905840-07:00
-description: "Komplexa tal, representerade som en kombination av reella och imagin\xE4\
-  ra enheter (t.ex. 3 + 4i), \xE4r grundl\xE4ggande i olika ber\xE4kningsproblem,\
-  \ s\xE4rskilt inom\u2026"
+description: "Hur man g\xF6r: Google Apps Script har inte inbyggt st\xF6d f\xF6r komplexa\
+  \ tal, vilket kr\xE4ver implementering av anpassad funktionalitet. Nedan finns en\u2026"
 lastmod: '2024-03-13T22:44:37.431496-06:00'
 model: gpt-4-0125-preview
-summary: "Komplexa tal, representerade som en kombination av reella och imagin\xE4\
-  ra enheter (t."
+summary: "Google Apps Script har inte inbyggt st\xF6d f\xF6r komplexa tal, vilket\
+  \ kr\xE4ver implementering av anpassad funktionalitet."
 title: Att arbeta med komplexa tal
 weight: 14
 ---

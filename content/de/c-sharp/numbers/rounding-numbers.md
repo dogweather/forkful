@@ -1,11 +1,9 @@
 ---
 date: 2024-01-26 03:43:15.680281-07:00
-description: "Zahlen runden bedeutet, sie auf den n\xE4chsten angegebenen Stellenwert\
-  \ anzupassen \u2013 man k\xF6nnte sagen, sie auf eine einfachere Form zu reduzieren.\u2026"
+description: "Wie: Hier ist Ihr Rundreiseticket f\xFCr das Runden von Zahlen in C#."
 lastmod: '2024-03-13T22:44:53.883111-06:00'
 model: gpt-4-0125-preview
-summary: "Zahlen runden bedeutet, sie auf den n\xE4chsten angegebenen Stellenwert\
-  \ anzupassen \u2013 man k\xF6nnte sagen, sie auf eine einfachere Form zu reduzieren."
+summary: "Hier ist Ihr Rundreiseticket f\xFCr das Runden von Zahlen in C#."
 title: Zahlen runden
 weight: 13
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-25 03:39:28.325958-07:00
-description: "A REPL, or Read-Eval-Print Loop, is a programming environment that takes\
-  \ single user inputs, executes them, and returns the result to the user.\u2026"
+description: 'How to: Jump right into Python''s REPL by typing `python` in your command
+  line. Once there, test out simple operations or multi-line code.'
 lastmod: '2024-03-13T22:44:59.709714-06:00'
 model: gpt-4-1106-preview
-summary: A REPL, or Read-Eval-Print Loop, is a programming environment that takes
-  single user inputs, executes them, and returns the result to the user.
+summary: Jump right into Python's REPL by typing `python` in your command line.
 title: Using an interactive shell (REPL)
 weight: 34
 ---

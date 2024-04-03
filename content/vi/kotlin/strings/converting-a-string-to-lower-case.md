@@ -2,15 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:50.434107-07:00
-description: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\
-  \u1EDDng c\xF3 ngh\u0129a l\xE0 bi\u1EBFn m\u1ECDi k\xFD t\u1EF1 trong chu\u1ED7\
-  i th\xE0nh ch\u1EEF th\u01B0\u1EDDng. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111\
-  i\u1EC1u n\xE0y \u0111\u1EC3 \u0111\u1EA3m b\u1EA3o t\xEDnh nh\u1EA5t qu\xE1n\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: H\xE0m `toLowerCase()` c\u1EE7a Kotlin\
+  \ chuy\u1EC3n t\u1EA5t c\u1EA3 c\xE1c k\xFD t\u1EF1 trong m\u1ED9t chu\u1ED7i th\xE0\
+  nh ch\u1EEF th\u01B0\u1EDDng m\u1ED9t c\xE1ch nhanh ch\xF3ng. D\u01B0\u1EDBi \u0111\
+  \xE2y l\xE0 c\xE1ch b\u1EA1n s\u1EED d\u1EE5ng\u2026"
 lastmod: '2024-03-13T22:44:36.583922-06:00'
 model: gpt-4-0125-preview
-summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\
-  \u1EDDng c\xF3 ngh\u0129a l\xE0 bi\u1EBFn m\u1ECDi k\xFD t\u1EF1 trong chu\u1ED7\
-  i th\xE0nh ch\u1EEF th\u01B0\u1EDDng."
+summary: "H\xE0m `toLowerCase()` c\u1EE7a Kotlin chuy\u1EC3n t\u1EA5t c\u1EA3 c\xE1\
+  c k\xFD t\u1EF1 trong m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng m\u1ED9\
+  t c\xE1ch nhanh ch\xF3ng."
 title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
 weight: 4
 ---

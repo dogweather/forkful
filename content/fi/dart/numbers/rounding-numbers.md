@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:47.024355-07:00
-description: "Numeroiden py\xF6rist\xE4minen on prosessi, jossa numero s\xE4\xE4det\xE4\
-  \xE4n l\xE4himp\xE4\xE4n kokonaislukuun tai m\xE4\xE4riteltyyn m\xE4\xE4r\xE4\xE4\
-  n desimaalipaikkoja. Ohjelmoijat py\xF6rist\xE4v\xE4t\u2026"
+description: "Kuinka: Dart tarjoaa alkuper\xE4isi\xE4 metodeja sen perus `num` tyypiss\xE4\
+  \ py\xF6ristysoperaatioille. T\xE4ss\xE4 tutkimme metodeja kuten `round()`, `floor()`,\
+  \ `ceil()`,\u2026"
 lastmod: '2024-03-13T22:44:56.265109-06:00'
 model: gpt-4-0125-preview
-summary: "Numeroiden py\xF6rist\xE4minen on prosessi, jossa numero s\xE4\xE4det\xE4\
-  \xE4n l\xE4himp\xE4\xE4n kokonaislukuun tai m\xE4\xE4riteltyyn m\xE4\xE4r\xE4\xE4\
-  n desimaalipaikkoja."
+summary: "Dart tarjoaa alkuper\xE4isi\xE4 metodeja sen perus `num` tyypiss\xE4 py\xF6\
+  ristysoperaatioille."
 title: "Lukujen py\xF6rist\xE4minen"
 weight: 13
 ---

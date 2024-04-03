@@ -2,14 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:58.312429-07:00
-description: "Ghi v\xE0o l\u1ED7i chu\u1EA9n (stderr) b\xE1o c\xE1o l\u1ED7i v\xE0\
-  \ ch\u1EA9n \u0111o\xE1n ri\xEAng bi\u1EC7t t\u1EEB \u0111\u1EA7u ra chu\u1EA9n\
-  \ (stdout). \u0110i\u1EC1u n\xE0y quan tr\u1ECDng cho vi\u1EC7c g\u1EE1 l\u1ED7\
-  i v\xE0 l\u01B0u log, gi\xFAp c\xE1c nh\xE0 ph\xE1t\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Arduino kh\xF4ng h\u1ED7 tr\u1EE3 natively\
+  \ stderr, nh\u01B0ng ch\xFAng ta c\xF3 th\u1EC3 m\xF4 ph\u1ECFng n\xF3 b\u1EB1ng\
+  \ c\xE1ch ghi v\xE0o Serial. H\xE3y t\u01B0\u1EDFng t\u01B0\u1EE3ng m\u1ED9t ch\u01B0\
+  \u01A1ng tr\xECnh nh\u1EA5p\u2026"
 lastmod: '2024-03-13T22:44:37.010955-06:00'
 model: gpt-4-0125-preview
-summary: "Ghi v\xE0o l\u1ED7i chu\u1EA9n (stderr) b\xE1o c\xE1o l\u1ED7i v\xE0 ch\u1EA9\
-  n \u0111o\xE1n ri\xEAng bi\u1EC7t t\u1EEB \u0111\u1EA7u ra chu\u1EA9n (stdout)."
+summary: "Arduino kh\xF4ng h\u1ED7 tr\u1EE3 natively stderr, nh\u01B0ng ch\xFAng ta\
+  \ c\xF3 th\u1EC3 m\xF4 ph\u1ECFng n\xF3 b\u1EB1ng c\xE1ch ghi v\xE0o Serial."
 title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:56.443407-07:00
-description: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) ovat merkkijonoja, jotka muodostavat\
-  \ hakukaavan, ja niit\xE4 k\xE4ytet\xE4\xE4n p\xE4\xE4asiassa merkkijonojen haussa\
-  \ ja k\xE4sittelyss\xE4.\u2026"
+description: "Miten: PowerShellissa voit k\xE4ytt\xE4\xE4 `-match`, `-replace` ja\
+  \ `-split` operaattoreita, muun muassa, suorittamaan toimintoja s\xE4\xE4nn\xF6\
+  llisten lausekkeiden\u2026"
 lastmod: '2024-03-13T22:44:56.770436-06:00'
 model: gpt-4-0125-preview
-summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) ovat merkkijonoja, jotka muodostavat\
-  \ hakukaavan, ja niit\xE4 k\xE4ytet\xE4\xE4n p\xE4\xE4asiassa merkkijonojen haussa\
-  \ ja k\xE4sittelyss\xE4."
+summary: "PowerShellissa voit k\xE4ytt\xE4\xE4 `-match`, `-replace` ja `-split` operaattoreita,\
+  \ muun muassa, suorittamaan toimintoja s\xE4\xE4nn\xF6llisten lausekkeiden avulla."
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---

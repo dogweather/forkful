@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:17.887362-07:00
-description: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi \u0111\u1ED3\
-  ng ngh\u0129a v\u1EDBi vi\u1EC7c thi\u1EBFt l\u1EADp m\u1ED9t m\xF4i tr\u01B0\u1EDD\
-  ng l\u1EADp tr\xECnh m\u1EDBi cho \u0111o\u1EA1n m\xE3 c\u1EE7a b\u1EA1n. L\u1EAD\
-  p tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 kh\u1EDFi \u0111\u1EA7\
-  u c\xF4ng vi\u1EC7c\u2026"
+description: "C\xE1ch th\u1EE9c: \u0110\u1EC3 kh\u1EDFi t\u1EA1o m\u1ED9t d\u1EF1\
+  \ \xE1n Clojure, ch\xFAng ta s\u1EBD s\u1EED d\u1EE5ng Leiningen, m\u1ED9t c\xF4\
+  ng c\u1EE5 x\xE2y d\u1EF1ng ph\u1ED5 bi\u1EBFn cho Clojure."
 lastmod: '2024-03-13T22:44:36.154087-06:00'
 model: gpt-4-0125-preview
-summary: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi \u0111\u1ED3ng ngh\u0129\
-  a v\u1EDBi vi\u1EC7c thi\u1EBFt l\u1EADp m\u1ED9t m\xF4i tr\u01B0\u1EDDng l\u1EAD\
-  p tr\xECnh m\u1EDBi cho \u0111o\u1EA1n m\xE3 c\u1EE7a b\u1EA1n."
+summary: "\u0110\u1EC3 kh\u1EDFi t\u1EA1o m\u1ED9t d\u1EF1 \xE1n Clojure, ch\xFAng\
+  \ ta s\u1EBD s\u1EED d\u1EE5ng Leiningen, m\u1ED9t c\xF4ng c\u1EE5 x\xE2y d\u1EF1\
+  ng ph\u1ED5 bi\u1EBFn cho Clojure."
 title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---

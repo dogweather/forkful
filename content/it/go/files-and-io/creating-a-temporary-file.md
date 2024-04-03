@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:17.928974-07:00
-description: "La creazione di un file temporaneo in Go consente la generazione di\
-  \ un file non persistente progettato per un uso a breve termine, principalmente\
-  \ per\u2026"
+description: "Come fare: In Go, il pacchetto `ioutil` inizialmente forniva utility\
+  \ per la creazione di file temporanei. Tuttavia, Go 1.16 ha promosso l'uso delle\u2026"
 lastmod: '2024-03-13T22:44:42.929170-06:00'
 model: gpt-4-0125-preview
-summary: La creazione di un file temporaneo in Go consente la generazione di un file
-  non persistente progettato per un uso a breve termine, principalmente per compiti
-  come lo stoccaggio di dati intermedi o l'assistenza in lavori di elaborazione batch.
+summary: In Go, il pacchetto `ioutil` inizialmente forniva utility per la creazione
+  di file temporanei.
 title: Creazione di un file temporaneo
 weight: 21
 ---

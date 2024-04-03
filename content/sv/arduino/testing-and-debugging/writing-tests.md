@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:44.023548-07:00
-description: "Att skriva tester i Arduino-milj\xF6n h\xE4nvisar till processen att\
-  \ skapa automatiserade tester som validerar funktionaliteten hos din kod p\xE5 Arduino-enheter.\u2026"
+description: "Hur man g\xF6r: Arduino har inte ett inbyggt testramverk som vissa andra\
+  \ programmeringsmilj\xF6er. D\xE4remot kan du anv\xE4nda tredjepartsbibliotek s\xE5\
+  som `AUnit` f\xF6r\u2026"
 lastmod: '2024-03-13T22:44:38.170673-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva tester i Arduino-milj\xF6n h\xE4nvisar till processen att skapa\
-  \ automatiserade tester som validerar funktionaliteten hos din kod p\xE5 Arduino-enheter."
+summary: "Arduino har inte ett inbyggt testramverk som vissa andra programmeringsmilj\xF6\
+  er."
 title: Skriva tester
 weight: 36
 ---

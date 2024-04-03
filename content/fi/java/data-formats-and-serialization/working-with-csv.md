@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:28.500154-07:00
-description: "CSV-tiedostojen k\xE4sittelyyn kuuluu lukeminen ja kirjoittaminen pilkuilla\
-  \ erotettuihin arvoihin (CSV) tiedostoihin, mik\xE4 on suosittu tiedonvaihdon muoto,\u2026"
+description: 'Kuinka: #.'
 lastmod: '2024-03-13T22:44:56.468113-06:00'
 model: gpt-4-0125-preview
-summary: "CSV-tiedostojen k\xE4sittelyyn kuuluu lukeminen ja kirjoittaminen pilkuilla\
-  \ erotettuihin arvoihin (CSV) tiedostoihin, mik\xE4 on suosittu tiedonvaihdon muoto,\
-  \ koska se on yksinkertainen ja laajalti tuettu."
+summary: '#.'
 title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---

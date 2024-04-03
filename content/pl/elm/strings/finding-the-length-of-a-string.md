@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:47:11.206096-07:00
-description: "D\u0142ugo\u015B\u0107 ci\u0105gu znak\xF3w \u2013 to ile znak\xF3w\
-  \ zawiera. Programi\u015Bci musz\u0105 to wiedzie\u0107, aby np. weryfikowa\u0107\
-  \ dane wej\u015Bciowe czy obs\u0142ugiwa\u0107 teksty o zmiennej d\u0142ugo\u015B\
-  ci."
+description: "How to: W Elm u\u017Cywa si\u0119 funkcji `String.length` do uzyskania\
+  \ d\u0142ugo\u015Bci ci\u0105gu znak\xF3w. Oto przyk\u0142ad."
 lastmod: '2024-03-13T22:44:35.312281-06:00'
 model: gpt-4-1106-preview
-summary: "D\u0142ugo\u015B\u0107 ci\u0105gu znak\xF3w \u2013 to ile znak\xF3w zawiera."
+summary: "W Elm u\u017Cywa si\u0119 funkcji `String.length` do uzyskania d\u0142ugo\u015B\
+  ci ci\u0105gu znak\xF3w."
 title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 weight: 7
 ---

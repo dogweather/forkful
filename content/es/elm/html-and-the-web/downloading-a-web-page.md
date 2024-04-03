@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:44:06.008784-07:00
-description: "Bajar una p\xE1gina web es el proceso de obtener su contenido HTML a\
-  \ trav\xE9s de internet. Los programadores lo hacen para procesar datos, mostrar\
-  \ contenido en\u2026"
+description: "How to: Para descargar una web en Elm, usamos el m\xF3dulo `Http`. Aqu\xED\
+  \ hay un ejemplo simple que muestra c\xF3mo hacer una petici\xF3n GET."
 lastmod: '2024-03-13T22:44:58.978767-06:00'
 model: gpt-4-1106-preview
-summary: "Bajar una p\xE1gina web es el proceso de obtener su contenido HTML a trav\xE9\
-  s de internet."
+summary: "Para descargar una web en Elm, usamos el m\xF3dulo `Http`."
 title: "Descargando una p\xE1gina web"
 weight: 42
 ---

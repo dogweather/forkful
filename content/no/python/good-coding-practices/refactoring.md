@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 03:37:02.562291-07:00
-description: "Refaktorering er prosessen med \xE5 restrukturere eksisterende dataprogramkode\u2014\
-  endre faktoriseringen\u2014uten \xE5 endre dens eksterne oppf\xF8rsel. Programmerere\
-  \ gj\xF8r\u2026"
+description: "Hvordan: Anta at du har en bit kode som beregner og skriver ut arealet\
+  \ og omkretsen av et rektangel gitt lengden og bredden. Det gj\xF8r jobben, men\
+  \ det er\u2026"
 lastmod: '2024-03-13T22:44:40.369738-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktorering er prosessen med \xE5 restrukturere eksisterende dataprogramkode\u2014\
-  endre faktoriseringen\u2014uten \xE5 endre dens eksterne oppf\xF8rsel."
+summary: Anta at du har en bit kode som beregner og skriver ut arealet og omkretsen
+  av et rektangel gitt lengden og bredden.
 title: Refaktorering
 weight: 19
 ---

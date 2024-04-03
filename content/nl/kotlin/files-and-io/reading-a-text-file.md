@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:14.479120-07:00
-description: "Een tekstbestand lezen betekent het binnenhalen van data uit een bestand\
-  \ in je programma, typisch regel voor regel. Programmeurs doen dit om data die\u2026"
+description: 'Hoe: In Kotlin kun je makkelijk een tekstbestand lezen met de functie
+  `readLines()` of het `useLines` blok.'
 lastmod: '2024-03-13T22:44:50.785206-06:00'
 model: gpt-4-0125-preview
-summary: Een tekstbestand lezen betekent het binnenhalen van data uit een bestand
-  in je programma, typisch regel voor regel.
+summary: In Kotlin kun je makkelijk een tekstbestand lezen met de functie `readLines()`
+  of het `useLines` blok.
 title: Een tekstbestand lezen
 weight: 22
 ---

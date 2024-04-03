@@ -1,12 +1,11 @@
 ---
 date: 2024-01-25 03:00:04.589438-07:00
-description: "Complex numbers are a combo of real and imaginary numbers, like `a +\
-  \ bi` where `i` is the square root of -1. They're key in fields like engineering\
-  \ and\u2026"
+description: 'How to: Elm doesn''t have built-in complex number support, so you''ll
+  create your own type and functions. Here''s a quick setup.'
 lastmod: '2024-03-13T22:45:00.003815-06:00'
 model: gpt-4-1106-preview
-summary: Complex numbers are a combo of real and imaginary numbers, like `a + bi`
-  where `i` is the square root of -1.
+summary: Elm doesn't have built-in complex number support, so you'll create your own
+  type and functions.
 title: Working with complex numbers
 weight: 14
 ---

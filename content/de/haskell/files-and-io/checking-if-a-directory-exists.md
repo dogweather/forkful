@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:30.368099-07:00
-description: "Das \xDCberpr\xFCfen, ob ein Verzeichnis existiert, ist eine grundlegende\
-  \ Operation bei vielen Programmieraufgaben. Es erm\xF6glicht bedingte Aktionen basierend\u2026"
+description: "Wie: Haskell bietet durch seine Basisbibliothek einfache M\xF6glichkeiten,\
+  \ die Existenz eines Verzeichnisses zu \xFCberpr\xFCfen, haupts\xE4chlich mit dem\
+  \ Modul\u2026"
 lastmod: '2024-03-13T22:44:53.945354-06:00'
 model: gpt-4-0125-preview
-summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis existiert, ist eine grundlegende\
-  \ Operation bei vielen Programmieraufgaben."
+summary: "Haskell bietet durch seine Basisbibliothek einfache M\xF6glichkeiten, die\
+  \ Existenz eines Verzeichnisses zu \xFCberpr\xFCfen, haupts\xE4chlich mit dem Modul\
+  \ `System.Directory`."
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---

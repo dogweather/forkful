@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 20:35:10.723168-07:00
-description: "La g\xE9n\xE9ration de nombres al\xE9atoires en programmation consiste\
-  \ \xE0 cr\xE9er des valeurs num\xE9riques non d\xE9terministes ou impr\xE9visibles.\
-  \ Les programmeurs\u2026"
+description: "Comment faire : Swift offre une mani\xE8re simple de g\xE9n\xE9rer des\
+  \ nombres al\xE9atoires \xE0 travers sa biblioth\xE8que standard. Voici comment\
+  \ vous le faites pour\u2026"
 lastmod: '2024-03-13T22:44:58.216262-06:00'
 model: gpt-4-0125-preview
-summary: "La g\xE9n\xE9ration de nombres al\xE9atoires en programmation consiste \xE0\
-  \ cr\xE9er des valeurs num\xE9riques non d\xE9terministes ou impr\xE9visibles."
+summary: "Swift offre une mani\xE8re simple de g\xE9n\xE9rer des nombres al\xE9atoires\
+  \ \xE0 travers sa biblioth\xE8que standard."
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---

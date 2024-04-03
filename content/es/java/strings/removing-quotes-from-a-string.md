@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 03:39:58.200112-07:00
-description: "Eliminar comillas de una cadena significa quitar cualquier tipo de comillas\u2014\
-  simples (' '), dobles (\" \") o ambas\u2014de los datos de texto. Los programadores\u2026"
+description: "C\xF3mo hacerlo: Vamos a arrancar esas molestas comillas de nuestro\
+  \ texto. Usaremos el m\xE9todo `replace()` para las soluciones r\xE1pidas y regex\
+  \ para los casos\u2026"
 lastmod: '2024-03-13T22:44:58.926012-06:00'
 model: gpt-4-0125-preview
-summary: "Eliminar comillas de una cadena significa quitar cualquier tipo de comillas\u2014\
-  simples (' '), dobles (\" \") o ambas\u2014de los datos de texto."
+summary: Vamos a arrancar esas molestas comillas de nuestro texto.
 title: Eliminando comillas de una cadena
 weight: 9
 ---

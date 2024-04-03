@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:03.711018-07:00
-description: "Escribir en el error est\xE1ndar (stderr) se trata de redirigir los\
-  \ mensajes de error y diagn\xF3sticos por separado del resultado principal del programa,\
-  \ que\u2026"
+description: "C\xF3mo: Elm est\xE1 dirigido principalmente al desarrollo web, donde\
+  \ el concepto de escribir directamente en stderr no se aplica de la misma manera\
+  \ que en los\u2026"
 lastmod: '2024-03-13T22:44:59.010011-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir en el error est\xE1ndar (stderr) se trata de redirigir los mensajes\
-  \ de error y diagn\xF3sticos por separado del resultado principal del programa,\
-  \ que va a la salida est\xE1ndar (stdout)."
+summary: "Elm est\xE1 dirigido principalmente al desarrollo web, donde el concepto\
+  \ de escribir directamente en stderr no se aplica de la misma manera que en los\
+  \ entornos de l\xEDnea de comandos tradicionales."
 title: "Escribiendo en el error est\xE1ndar"
 weight: 25
 ---

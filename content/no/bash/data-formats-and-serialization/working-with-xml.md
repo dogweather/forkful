@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:27:40.198453-07:00
-description: "\xC5 jobbe med XML inneb\xE6rer parsing, ekstrahering og manipulering\
-  \ av data i Extensible Markup Language-formatet. Programmere sliter med XML siden\
-  \ det er et\u2026"
+description: "Hvordan: Her er hvordan du parser XML i Bash. Verkt\xF8y? xmllint og\
+  \ xmlstarlet. L\xF8kke gjennom XML-elementer? Absolutt. Eksempel med eksempel p\xE5\
+  \ utdata."
 lastmod: '2024-03-13T22:44:40.999030-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 jobbe med XML inneb\xE6rer parsing, ekstrahering og manipulering av\
-  \ data i Extensible Markup Language-formatet."
+summary: Her er hvordan du parser XML i Bash.
 title: "\xC5 jobbe med XML"
 weight: 40
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-01-25 02:04:12.450554-07:00
-description: "Logging is essentially jotting down what your application is up to\u2014\
-  a diary, if you will, but for code. Programmers do it to keep track of the nitty-\u2026"
+description: "How to: In Fish, logging can be as simple as redirecting standard output\
+  \ and error streams to a file. Let's make a log entry for our script's start and\u2026"
 lastmod: '2024-03-13T22:45:00.480456-06:00'
 model: gpt-4-1106-preview
-summary: "Logging is essentially jotting down what your application is up to\u2014\
-  a diary, if you will, but for code."
+summary: In Fish, logging can be as simple as redirecting standard output and error
+  streams to a file.
 title: Logging
 weight: 17
 ---

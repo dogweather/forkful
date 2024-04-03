@@ -2,15 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:22.718891-07:00
-description: "Les expressions r\xE9guli\xE8res (regex) sont un outil puissant pour\
-  \ le traitement de texte, permettant aux programmeurs de rechercher, correspondre\
-  \ et\u2026"
+description: 'Comment faire : #.'
 lastmod: '2024-03-13T22:44:57.726196-06:00'
 model: gpt-4-0125-preview
-summary: "Les expressions r\xE9guli\xE8res (regex) sont un outil puissant pour le\
-  \ traitement de texte, permettant aux programmeurs de rechercher, correspondre et\
-  \ manipuler des cha\xEEnes avec des techniques de correspondance de motifs avanc\xE9\
-  es."
+summary: '#.'
 title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---

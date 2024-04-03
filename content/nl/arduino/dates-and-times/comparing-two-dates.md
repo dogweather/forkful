@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:17.895644-07:00
-description: "Twee datums vergelijken betekent uitzoeken welke eerder is, later, of\
-  \ als ze hetzelfde zijn. Programmeurs doen dit om tijdgebaseerde evenementen bij\
-  \ te\u2026"
+description: 'Hoe: In Arduino kun je datums vergelijken met behulp van de `TimeLib.h`
+  bibliotheek. Installeer deze eerst. Bekijk vervolgens deze code.'
 lastmod: '2024-03-13T22:44:51.084348-06:00'
 model: gpt-4-0125-preview
-summary: Twee datums vergelijken betekent uitzoeken welke eerder is, later, of als
-  ze hetzelfde zijn.
+summary: In Arduino kun je datums vergelijken met behulp van de `TimeLib.h` bibliotheek.
 title: Twee data vergelijken
 weight: 27
 ---

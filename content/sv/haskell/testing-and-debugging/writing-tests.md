@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:53.156310-07:00
-description: "Att skriva tester i Haskell handlar om att s\xE4kerst\xE4lla att dina\
-  \ funktioner fungerar som f\xF6rv\xE4ntat genom automatiserade kontroller. Programmerare\
-  \ g\xF6r det\u2026"
+description: "Hur g\xF6r man: Haskell st\xF6der olika testramverk, men tv\xE5 popul\xE4\
+  ra \xE4r `Hspec` och `QuickCheck`. Hspec l\xE5ter dig definiera m\xE4nniskol\xE4\
+  sbara specifikationer f\xF6r\u2026"
 lastmod: '2024-03-13T22:44:37.958534-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva tester i Haskell handlar om att s\xE4kerst\xE4lla att dina funktioner\
-  \ fungerar som f\xF6rv\xE4ntat genom automatiserade kontroller."
+summary: "Haskell st\xF6der olika testramverk, men tv\xE5 popul\xE4ra \xE4r `Hspec`\
+  \ och `QuickCheck`."
 title: Skriva tester
 weight: 36
 ---

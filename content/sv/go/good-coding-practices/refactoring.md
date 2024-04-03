@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:08.615365-07:00
-description: "Refaktorisering i programmering inneb\xE4r omstrukturering av befintlig\
-  \ programkod - att \xE4ndra faktoriseringen - utan att \xE4ndra dess externa beteende.\u2026"
+description: "Hur g\xF6r man: I Go kan refaktorisering str\xE4cka sig fr\xE5n enkla\
+  \ kod\xE4ndringar till mer komplexa f\xF6r\xE4ndringar. L\xE5t oss b\xF6rja med\
+  \ ett grundl\xE4ggande exempel: att\u2026"
 lastmod: '2024-03-13T22:44:37.401423-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktorisering i programmering inneb\xE4r omstrukturering av befintlig\
-  \ programkod - att \xE4ndra faktoriseringen - utan att \xE4ndra dess externa beteende."
+summary: "I Go kan refaktorisering str\xE4cka sig fr\xE5n enkla kod\xE4ndringar till\
+  \ mer komplexa f\xF6r\xE4ndringar."
 title: Refaktorisering
 weight: 19
 ---

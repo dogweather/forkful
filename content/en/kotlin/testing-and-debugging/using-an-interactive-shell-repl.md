@@ -1,11 +1,11 @@
 ---
 date: 2024-01-25 03:39:38.209897-07:00
-description: "A REPL (Read-Eval-Print Loop) is a simple, interactive computer programming\
-  \ environment. Programmers use it for quick coding trials, testing snippets, or\u2026"
+description: "How to: Launching Kotlin's REPL is a breeze. Open your terminal and\
+  \ type `kotlinc`. You'll land in the Kotlin shell. Let's try defining a variable\
+  \ and\u2026"
 lastmod: '2024-03-13T22:45:00.050166-06:00'
 model: gpt-4-1106-preview
-summary: A REPL (Read-Eval-Print Loop) is a simple, interactive computer programming
-  environment.
+summary: Launching Kotlin's REPL is a breeze.
 title: Using an interactive shell (REPL)
 weight: 34
 ---

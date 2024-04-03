@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:13:00.553263-07:00
-description: "Un shell interattivo, o REPL (Read-Eval-Print Loop, Ciclo di Lettura-Valutazione-Stampa),\
-  \ permette di provare frammenti di codice in tempo reale. I\u2026"
+description: 'Come fare: Per avviare IEx, apri il terminale e digita `iex`. Ecco un
+  assaggio.'
 lastmod: '2024-03-13T22:44:43.085158-06:00'
 model: gpt-4-0125-preview
-summary: Un shell interattivo, o REPL (Read-Eval-Print Loop, Ciclo di Lettura-Valutazione-Stampa),
-  permette di provare frammenti di codice in tempo reale.
+summary: Per avviare IEx, apri il terminale e digita `iex`.
 title: Utilizzo di un interprete interattivo (REPL)
 weight: 34
 ---

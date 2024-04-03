@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:55:44.247682-07:00
-description: "Att l\xE4sa in kommandoradsargument inneb\xE4r att ditt C++-program\
-  \ kan ta emot och anv\xE4nda data direkt fr\xE5n terminalen n\xE4r det startar.\
-  \ Det \xE4r anv\xE4ndbart f\xF6r\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:38.224790-06:00'
 model: gpt-4-1106-preview
-summary: "Att l\xE4sa in kommandoradsargument inneb\xE4r att ditt C++-program kan\
-  \ ta emot och anv\xE4nda data direkt fr\xE5n terminalen n\xE4r det startar."
+summary: .
 title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---

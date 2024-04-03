@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 18:00:10.630040-07:00
-description: "Mandare una richiesta HTTP \xE8 come inviare una lettera al web per\
-  \ prendere o mandare informazioni. I programmatori lo fanno per interagire con API,\
-  \ servizi\u2026"
+description: "How to: PHP con `curl` \xE8 un modo popolare per inviare richieste HTTP.\
+  \ Ecco un esempio per fare una richiesta GET a un API che restituisce dati JSON."
 lastmod: '2024-03-13T22:44:43.513477-06:00'
 model: gpt-4-1106-preview
-summary: "Mandare una richiesta HTTP \xE8 come inviare una lettera al web per prendere\
-  \ o mandare informazioni."
+summary: "PHP con `curl` \xE8 un modo popolare per inviare richieste HTTP."
 title: Inviare una richiesta http
 weight: 44
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:09:44.816218-07:00
-description: "Code in Funktionen zu organisieren bedeutet, Bl\xF6cke von Code zu verpacken,\
-  \ die spezifische Aufgaben erf\xFCllen. Dadurch wird dein Code sauber, leichter\
-  \ zu\u2026"
+description: "Wie man es macht: Funktionen in Clojure werden mit `defn` definiert,\
+  \ gefolgt von einem Namen, Parametern und einem K\xF6rper. Hier ein schnelles Beispiel."
 lastmod: '2024-03-13T22:44:53.424999-06:00'
 model: gpt-4-1106-preview
-summary: "Code in Funktionen zu organisieren bedeutet, Bl\xF6cke von Code zu verpacken,\
-  \ die spezifische Aufgaben erf\xFCllen."
+summary: "Funktionen in Clojure werden mit `defn` definiert, gefolgt von einem Namen,\
+  \ Parametern und einem K\xF6rper."
 title: Code in Funktionen organisieren
 weight: 18
 ---

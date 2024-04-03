@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:57.989081-07:00
-description: "\xC9crire des tests en Clojure, tout comme dans d'autres langages de\
-  \ programmation, implique de cr\xE9er du code d\xE9di\xE9 pour v\xE9rifier que votre\
-  \ code principal\u2026"
+description: "Comment faire : Clojure, en tirant parti de la JVM, prend en charge\
+  \ divers frameworks de test. Toutefois, une biblioth\xE8que int\xE9gr\xE9e couramment\
+  \ utilis\xE9e\u2026"
 lastmod: '2024-03-13T22:44:57.286023-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire des tests en Clojure, tout comme dans d'autres langages de programmation,\
-  \ implique de cr\xE9er du code d\xE9di\xE9 pour v\xE9rifier que votre code principal\
-  \ fonctionne comme pr\xE9vu."
+summary: Clojure, en tirant parti de la JVM, prend en charge divers frameworks de
+  test.
 title: "R\xE9daction de tests"
 weight: 36
 ---

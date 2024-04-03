@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:59:51.506210-07:00
-description: "I Java sender vi HTTP-foresp\xF8rsler for \xE5 snakke med websider og\
-  \ tjenester. Det er essensielt for \xE5 hente data, sende informasjon og integrere\
-  \ med et utall\u2026"
+description: "Hvordan gj\xF8re det: Her er en kjapp kodesnutt for \xE5 sende en GET-foresp\xF8\
+  rsel og skrive ut responsen med Java 11 `HttpClient`."
 lastmod: '2024-03-13T22:44:40.663463-06:00'
 model: gpt-4-1106-preview
-summary: "I Java sender vi HTTP-foresp\xF8rsler for \xE5 snakke med websider og tjenester."
+summary: "Her er en kjapp kodesnutt for \xE5 sende en GET-foresp\xF8rsel og skrive\
+  \ ut responsen med Java 11 `HttpClient`."
 title: "\xC5 sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---

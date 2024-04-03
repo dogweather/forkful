@@ -2,13 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:45.607781-07:00
-description: "Debug-output afdrukken gaat over data uit je programma spugen om te\
-  \ zien wat er onder de motorkap gebeurt. Programmeurs doen dit om variabelen te\
-  \ volgen,\u2026"
+description: "Hoe te: Een eenvoudige manier om debug-informatie in Haskell af te drukken\
+  \ is met de `print` functie, die een waarde neemt die een instantie is van de\u2026"
 lastmod: '2024-03-13T22:44:50.854976-06:00'
 model: gpt-4-0125-preview
-summary: Debug-output afdrukken gaat over data uit je programma spugen om te zien
-  wat er onder de motorkap gebeurt.
+summary: Een eenvoudige manier om debug-informatie in Haskell af te drukken is met
+  de `print` functie, die een waarde neemt die een instantie is van de `Show` typeclass
+  en het uitvoert naar de console.
 title: Debug-output afdrukken
 weight: 33
 ---

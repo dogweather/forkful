@@ -2,15 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:20.243579-07:00
-description: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) cho ph\xE9p b\u1EA1n t\xEC\
-  m ki\u1EBFm v\u0103n b\u1EA3n theo m\xF4 h\xECnh\u2014ngh\u0129 \u0111\u1EBFn l\xE0\
-  \ phi\xEAn b\u1EA3n n\xE2ng cao c\u1EE7a wild card. L\u1EADp tr\xECnh vi\xEAn s\u1EED\
-  \ d\u1EE5ng ch\xFAng \u0111\u1EC3 x\xE1c\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Arduino kh\xF4ng h\u1ED7 tr\u1EE3 regex \u0111\
+  \u01B0\u1EE3c t\xEDch h\u1EE3p s\u1EB5n, nh\u01B0ng b\u1EA1n c\xF3 th\u1EC3 m\xF4\
+  \ ph\u1ECFng ki\u1EC3m tra m\xF4 h\xECnh \u0111\u01A1n gi\u1EA3n. \u0110\u1ED1i\
+  \ v\u1EDBi c\xE1c v\u1EA5n \u0111\u1EC1 n\xE2ng cao h\u01A1n, h\xE3y c\xE2n\u2026"
 lastmod: '2024-03-13T22:44:36.977535-06:00'
 model: gpt-4-0125-preview
-summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) cho ph\xE9p b\u1EA1n t\xECm ki\u1EBF\
-  m v\u0103n b\u1EA3n theo m\xF4 h\xECnh\u2014ngh\u0129 \u0111\u1EBFn l\xE0 phi\xEA\
-  n b\u1EA3n n\xE2ng cao c\u1EE7a wild card."
+summary: "Arduino kh\xF4ng h\u1ED7 tr\u1EE3 regex \u0111\u01B0\u1EE3c t\xEDch h\u1EE3\
+  p s\u1EB5n, nh\u01B0ng b\u1EA1n c\xF3 th\u1EC3 m\xF4 ph\u1ECFng ki\u1EC3m tra m\xF4\
+  \ h\xECnh \u0111\u01A1n gi\u1EA3n."
 title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---

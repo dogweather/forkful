@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 20:33:33.010958-07:00
-description: "Satunnaislukujen generointi on ohjelmoinnissa perusteht\xE4v\xE4, jota\
-  \ k\xE4ytet\xE4\xE4n kaikessa datan otannasta pelikehitykseen. Fish Shelliss\xE4\
-  \ j\xE4rjestelm\xE4ty\xF6kalujen\u2026"
+description: "Kuinka: Satunnaisluvun generointi Fishissa voi olla suoraviivaista,\
+  \ yhdist\xE4m\xE4ll\xE4 j\xE4rjestelm\xE4ty\xF6kaluja ja shellin kykyj\xE4. Alla\
+  \ on joitakin esimerkkej\xE4,\u2026"
 lastmod: '2024-03-13T22:44:56.988164-06:00'
 model: gpt-4-0125-preview
-summary: "Satunnaislukujen generointi on ohjelmoinnissa perusteht\xE4v\xE4, jota k\xE4\
-  ytet\xE4\xE4n kaikessa datan otannasta pelikehitykseen."
+summary: "Satunnaisluvun generointi Fishissa voi olla suoraviivaista, yhdist\xE4m\xE4\
+  ll\xE4 j\xE4rjestelm\xE4ty\xF6kaluja ja shellin kykyj\xE4."
 title: Satunnaislukujen generointi
 weight: 12
 ---

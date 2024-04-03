@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:27:23.265478-07:00
-description: "Trabalhar com XML no Arduino envolve analisar e manipular dados XML,\
-  \ geralmente vindos de APIs da web ou arquivos de configura\xE7\xE3o. Os programadores\
-  \ fazem\u2026"
+description: "Como fazer: Usaremos a biblioteca `XMLWriter` para criar XML e a biblioteca\
+  \ `tinyxml2` para analis\xE1-lo. Primeiro, instale as bibliotecas via Gerenciador\u2026"
 lastmod: '2024-03-13T22:44:46.862257-06:00'
 model: gpt-4-0125-preview
-summary: "Trabalhar com XML no Arduino envolve analisar e manipular dados XML, geralmente\
-  \ vindos de APIs da web ou arquivos de configura\xE7\xE3o."
+summary: "Usaremos a biblioteca `XMLWriter` para criar XML e a biblioteca `tinyxml2`\
+  \ para analis\xE1-lo."
 title: Trabalhando com XML
 weight: 40
 ---

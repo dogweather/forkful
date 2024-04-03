@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 00:53:36.234682-07:00
-description: "Gestire gli errori significa scrivere codice che anticipa e affronta\
-  \ le situazioni in cui le cose vanno storte. I programmatori lo fanno per rendere\
-  \ il\u2026"
+description: "Come fare: Java utilizza le eccezioni per gestire gli errori. Si circonda\
+  \ il codice a rischio con un blocco `try` e si intercettano le eccezioni con\u2026"
 lastmod: '2024-03-13T22:44:43.316324-06:00'
 model: gpt-4-1106-preview
-summary: Gestire gli errori significa scrivere codice che anticipa e affronta le situazioni
-  in cui le cose vanno storte.
+summary: Java utilizza le eccezioni per gestire gli errori.
 title: Gestione degli errori
 weight: 16
 ---

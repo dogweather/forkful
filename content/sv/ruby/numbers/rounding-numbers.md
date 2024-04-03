@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 03:46:37.786309-07:00
-description: "Att avrunda tal inneb\xE4r att justera dem till n\xE4rmaste heltal eller\
-  \ till en angiven precisionsgrad. Programmerare avrundar tal f\xF6r att f\xF6renkla,\
-  \ f\xF6r att\u2026"
+description: "Hur man g\xF6r: ."
 lastmod: '2024-03-13T22:44:38.423475-06:00'
 model: gpt-4-0125-preview
-summary: "Att avrunda tal inneb\xE4r att justera dem till n\xE4rmaste heltal eller\
-  \ till en angiven precisionsgrad."
+summary: .
 title: Avrundning av tal
 weight: 13
 ---

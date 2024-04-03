@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:25.888371-07:00
-description: "Commencer un nouveau projet en Go implique de configurer un espace de\
-  \ travail et de l'initialiser avec les modules Go n\xE9cessaires. Les programmeurs\
-  \ font\u2026"
+description: "Comment faire : D'abord, assurez-vous d'avoir Go install\xE9 en ex\xE9\
+  cutant `go version` dans votre terminal. Vous devriez voir la version de Go que\
+  \ vous avez\u2026"
 lastmod: '2024-03-13T22:44:57.134166-06:00'
 model: gpt-4-0125-preview
-summary: "Commencer un nouveau projet en Go implique de configurer un espace de travail\
-  \ et de l'initialiser avec les modules Go n\xE9cessaires."
+summary: "D'abord, assurez-vous d'avoir Go install\xE9 en ex\xE9cutant `go version`\
+  \ dans votre terminal."
 title: "D\xE9marrer un nouveau projet"
 weight: 1
 ---

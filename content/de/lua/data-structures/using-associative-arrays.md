@@ -2,15 +2,12 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:57.006405-07:00
-description: "Assoziative Arrays sind wie geheime Handschl\xE4ge f\xFCr Daten in Lua\u2014\
-  anstatt dass sich nur Zahlen brav nach Index aufreihen, k\xF6nnen deine Schl\xFC\
-  ssel alles\u2026"
+description: "Wie es geht: In Lua ist das Erstellen eines assoziativen Arrays (oder\
+  \ einer Tabelle, in Lua-Jargon) unkompliziert. Du l\xE4sst die \xFCblichen numerischen\u2026"
 lastmod: '2024-03-13T22:44:54.008069-06:00'
 model: gpt-4-0125-preview
-summary: "Assoziative Arrays sind wie geheime Handschl\xE4ge f\xFCr Daten in Lua\u2014\
-  anstatt dass sich nur Zahlen brav nach Index aufreihen, k\xF6nnen deine Schl\xFC\
-  ssel alles sein, was du m\xF6chtest, wodurch das Abrufen von Daten ein Kinderspiel\
-  \ wird."
+summary: In Lua ist das Erstellen eines assoziativen Arrays (oder einer Tabelle, in
+  Lua-Jargon) unkompliziert.
 title: Verwendung von assoziativen Arrays
 weight: 15
 ---

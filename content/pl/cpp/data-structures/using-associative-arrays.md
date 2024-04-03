@@ -2,14 +2,13 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:24.068895-07:00
-description: "Tablice asocjacyjne, znane w C++ jako `std::map` lub `std::unordered_map`,\
-  \ wype\u0142niaj\u0105 luk\u0119 mi\u0119dzy indeksami tablic a danymi z realnego\
-  \ \u015Bwiata, pozwalaj\u0105c\u2026"
+description: "Jak to zrobi\u0107: W C++, tablice asocjacyjne o\u017Cywaj\u0105 dzi\u0119\
+  ki nag\u0142\xF3wkom `<map>` i `<unordered_map>`. Przyjrzyjmy si\u0119 przyk\u0142\
+  adom, aby zobaczy\u0107 oba w akcji. #."
 lastmod: '2024-03-13T22:44:35.705832-06:00'
 model: gpt-4-0125-preview
-summary: "Tablice asocjacyjne, znane w C++ jako `std::map` lub `std::unordered_map`,\
-  \ wype\u0142niaj\u0105 luk\u0119 mi\u0119dzy indeksami tablic a danymi z realnego\
-  \ \u015Bwiata, pozwalaj\u0105c u\u017Cywa\u0107 znacz\u0105cych kluczy."
+summary: "W C++, tablice asocjacyjne o\u017Cywaj\u0105 dzi\u0119ki nag\u0142\xF3wkom\
+  \ `<map>` i `<unordered_map>`."
 title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---

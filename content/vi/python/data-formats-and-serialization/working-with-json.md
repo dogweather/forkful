@@ -2,14 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:40.622214-07:00
-description: "JSON (JavaScript Object Notation) l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1\
-  ng trao \u0111\u1ED5i d\u1EEF li\u1EC7u ph\u1ED5 bi\u1EBFn tr\xEAn web. L\u1EAD\
-  p tr\xECnh vi\xEAn s\u1EED d\u1EE5ng JSON \u0111\u1EC3 d\u1EC5 d\xE0ng truy\u1EC1\
-  n d\u1EEF li\u1EC7u gi\u1EEFa m\xE1y ch\u1EE7\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: L\xE0m vi\u1EC7c v\u1EDBi JSON trong Python\
+  \ y\xEAu c\u1EA7u m\xF4-\u0111un `json`. D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9\
+  t h\u01B0\u1EDBng d\u1EABn nhanh: #."
 lastmod: '2024-03-13T22:44:36.125392-06:00'
 model: gpt-4-0125-preview
-summary: "JSON (JavaScript Object Notation) l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1\
-  ng trao \u0111\u1ED5i d\u1EEF li\u1EC7u ph\u1ED5 bi\u1EBFn tr\xEAn web."
+summary: "L\xE0m vi\u1EC7c v\u1EDBi JSON trong Python y\xEAu c\u1EA7u m\xF4-\u0111\
+  un `json`."
 title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
 weight: 38
 ---

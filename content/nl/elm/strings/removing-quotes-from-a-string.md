@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:04.637209-07:00
-description: "Het verwijderen van aanhalingstekens uit een string betekent het wegstrepen\
-  \ van die extra dubbele of enkele aanhalingstekens die je eigenlijk niet nodig\u2026"
+description: "Hoe: In Elm kun je de `String` functies gebruiken om strings te manipuleren,\
+  \ zoals het verwijderen van aanhalingstekens. Hier is een eenvoudige manier om\u2026"
 lastmod: '2024-03-13T22:44:50.712694-06:00'
 model: gpt-4-0125-preview
-summary: Het verwijderen van aanhalingstekens uit een string betekent het wegstrepen
-  van die extra dubbele of enkele aanhalingstekens die je eigenlijk niet nodig hebt
-  in de verwerkte tekst.
+summary: In Elm kun je de `String` functies gebruiken om strings te manipuleren, zoals
+  het verwijderen van aanhalingstekens.
 title: Quotes verwijderen uit een string
 weight: 9
 ---

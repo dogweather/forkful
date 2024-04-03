@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:30:40.022980-07:00
-description: "Mit XML zu arbeiten bedeutet, Daten in einem weit verbreiteten, strukturierten\
-  \ Format zu handhaben, das in Konfigurationen, Nachrichten\xFCbermittlungen und\u2026"
+description: "Wie: Fish hat keine eingebaute XML-Parserfunktion, daher m\xFCssen Sie\
+  \ sich auf externe Tools wie `xmllint` oder `xmlstarlet` st\xFCtzen. Hier ein Schnipsel,\
+  \ um\u2026"
 lastmod: '2024-03-13T22:44:54.332973-06:00'
 model: gpt-4-0125-preview
-summary: "Mit XML zu arbeiten bedeutet, Daten in einem weit verbreiteten, strukturierten\
-  \ Format zu handhaben, das in Konfigurationen, Nachrichten\xFCbermittlungen und\
-  \ mehr verwendet wird."
+summary: "Fish hat keine eingebaute XML-Parserfunktion, daher m\xFCssen Sie sich auf\
+  \ externe Tools wie `xmllint` oder `xmlstarlet` st\xFCtzen."
 title: Arbeiten mit XML
 weight: 40
 ---

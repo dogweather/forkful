@@ -1,13 +1,12 @@
 ---
 date: 2024-01-27 16:20:47.160074-07:00
-description: "Modifier des fichiers sur place avec des lignes de commande (CLI - Command\
-  \ Line Interface) en Ruby vous permet de modifier des fichiers directement depuis\u2026"
+description: "Comment faire : Ruby offre une mani\xE8re simple de modifier des fichiers\
+  \ sur place directement depuis la ligne de commande. En utilisant l'option `-i`\
+  \ de\u2026"
 lastmod: '2024-03-13T22:44:58.415490-06:00'
 model: gpt-4-0125-preview
-summary: "Modifier des fichiers sur place avec des lignes de commande (CLI - Command\
-  \ Line Interface) en Ruby vous permet de modifier des fichiers directement depuis\
-  \ votre terminal, sans avoir besoin de les ouvrir dans un \xE9diteur, d'apporter\
-  \ des modifications et de les sauvegarder."
+summary: "Ruby offre une mani\xE8re simple de modifier des fichiers sur place directement\
+  \ depuis la ligne de commande."
 title: "Modification de fichiers sur place avec des lignes de commande en une seule\
   \ \xE9tape"
 weight: 32

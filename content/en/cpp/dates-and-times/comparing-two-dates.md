@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:32:32.259273-07:00
-description: "Comparing dates is about figuring out which of two dates is earlier,\
-  \ later, or if they're the same. Programmers do it for organizing events, expiring\u2026"
+description: 'How to: C++ makes life easy with the `<chrono>` header.'
 lastmod: '2024-03-13T22:45:00.368708-06:00'
 model: gpt-4-1106-preview
-summary: Comparing dates is about figuring out which of two dates is earlier, later,
-  or if they're the same.
+summary: C++ makes life easy with the `<chrono>` header.
 title: Comparing two dates
 weight: 27
 ---

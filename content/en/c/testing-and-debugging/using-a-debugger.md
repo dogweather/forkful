@@ -1,7 +1,7 @@
 ---
 date: 2024-02-03 17:50:08.776489-07:00
-description: "GDB (GNU Debugger) is the most commonly used debugger for C programming.\
-  \ Here is a brief guide on using GDB to debug a simple C program. First, compile\u2026"
+description: "How to: GDB (GNU Debugger) is the most commonly used debugger for C\
+  \ programming. Here is a brief guide on using GDB to debug a simple C program. First,\u2026"
 lastmod: '2024-03-13T22:45:00.515558-06:00'
 model: gpt-4-0125-preview
 summary: GDB (GNU Debugger) is the most commonly used debugger for C programming.

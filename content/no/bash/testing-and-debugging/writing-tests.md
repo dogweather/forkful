@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:34.576252-07:00
-description: "\xC5 skrive tester i Bash inneb\xE6rer \xE5 lage testtilfeller for \xE5\
-  \ validere funksjonaliteten til Bash-skriptene dine. Programmerere utf\xF8rer tester\
-  \ for \xE5 sikre at\u2026"
+description: "Hvordan: Bash har ikke et innebygd testrammeverk, men du kan skrive\
+  \ enkle testfunksjoner. For mer sofistikerte tester er tredjepartsverkt\xF8y som\
+  \ `bats-\u2026"
 lastmod: '2024-03-13T22:44:40.978454-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive tester i Bash inneb\xE6rer \xE5 lage testtilfeller for \xE5\
-  \ validere funksjonaliteten til Bash-skriptene dine."
+summary: Bash har ikke et innebygd testrammeverk, men du kan skrive enkle testfunksjoner.
 title: Skrive tester
 weight: 36
 ---

@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:39.831106-07:00
-description: "Le espressioni regolari (regex) sono pattern utilizzati per abbinare\
-  \ combinazioni di caratteri in stringhe. I programmatori le utilizzano per cercare,\u2026"
+description: "Come fare: Utilizzare espressioni regolari in Google Apps Script \xE8\
+  \ semplice grazie alla sintassi basata su JavaScript. Ecco come puoi incorporare\
+  \ regex\u2026"
 lastmod: '2024-03-13T22:44:42.943799-06:00'
 model: gpt-4-0125-preview
-summary: Le espressioni regolari (regex) sono pattern utilizzati per abbinare combinazioni
-  di caratteri in stringhe.
+summary: "Utilizzare espressioni regolari in Google Apps Script \xE8 semplice grazie\
+  \ alla sintassi basata su JavaScript."
 title: Utilizzo di espressioni regolari
 weight: 11
 ---

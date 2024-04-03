@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:22.057613-07:00
-description: "Att h\xE4mta det aktuella datumet i C++ \xE4r en grundl\xE4ggande uppgift\
-  \ f\xF6r program som beh\xF6ver bearbeta eller visa datum baserat p\xE5 systemets\
-  \ klocka. Det \xE4r\u2026"
+description: "Hur man g\xF6r: C++ erbjuder flera s\xE4tt att f\xE5 det aktuella datumet,\
+  \ inklusive C++-standardbiblioteket och tredjepartsbibliotek som Boost. F\xF6ljande\
+  \ exempel\u2026"
 lastmod: '2024-03-13T22:44:38.219701-06:00'
 model: gpt-4-0125-preview
-summary: "Att h\xE4mta det aktuella datumet i C++ \xE4r en grundl\xE4ggande uppgift\
-  \ f\xF6r program som beh\xF6ver bearbeta eller visa datum baserat p\xE5 systemets\
-  \ klocka."
+summary: "C++ erbjuder flera s\xE4tt att f\xE5 det aktuella datumet, inklusive C++-standardbiblioteket\
+  \ och tredjepartsbibliotek som Boost."
 title: "F\xE5 det aktuella datumet"
 weight: 29
 ---

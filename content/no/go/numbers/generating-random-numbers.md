@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:24.722175-07:00
-description: "\xC5 generere tilfeldige numre i programmering handler om \xE5 skape\
-  \ en sekvens av numre som ikke kan forutses med rimelighet bedre enn ved tilfeldighet.\u2026"
+description: "Hvordan: I Go genereres tilfeldige numre ved \xE5 bruke `math/rand`-pakken\
+  \ for pseudotilfeldige numre eller `crypto/rand` for kryptografisk sikre\u2026"
 lastmod: '2024-03-13T22:44:40.262246-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 generere tilfeldige numre i programmering handler om \xE5 skape en\
-  \ sekvens av numre som ikke kan forutses med rimelighet bedre enn ved tilfeldighet."
+summary: "I Go genereres tilfeldige numre ved \xE5 bruke `math/rand`-pakken for pseudotilfeldige\
+  \ numre eller `crypto/rand` for kryptografisk sikre pseudotilfeldige numre."
 title: Genererer tilfeldige tall
 weight: 12
 ---

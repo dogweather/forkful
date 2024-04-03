@@ -2,14 +2,14 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:41.645879-07:00
-description: "Les nombres complexes, constitu\xE9s d'une partie r\xE9elle et d'une\
-  \ partie imaginaire (g\xE9n\xE9ralement not\xE9s sous la forme a + bi), \xE9tendent\
-  \ le concept des\u2026"
+description: "Comment faire : Dart lui-m\xEAme n'inclut pas de biblioth\xE8que int\xE9\
+  gr\xE9e pour les nombres complexes, n\xE9cessitant soit la mise en \u0153uvre d'une\
+  \ classe de nombre\u2026"
 lastmod: '2024-03-13T22:44:57.382679-06:00'
 model: gpt-4-0125-preview
-summary: "Les nombres complexes, constitu\xE9s d'une partie r\xE9elle et d'une partie\
-  \ imaginaire (g\xE9n\xE9ralement not\xE9s sous la forme a + bi), \xE9tendent le\
-  \ concept des nombres sans dimension \xE0 un espace bidimensionnel."
+summary: "Dart lui-m\xEAme n'inclut pas de biblioth\xE8que int\xE9gr\xE9e pour les\
+  \ nombres complexes, n\xE9cessitant soit la mise en \u0153uvre d'une classe de nombre\
+  \ complexe personnalis\xE9e, soit l'utilisation d'une biblioth\xE8que tierce."
 title: Travailler avec des nombres complexes
 weight: 14
 ---

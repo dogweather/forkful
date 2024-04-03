@@ -1,13 +1,11 @@
 ---
 date: 2024-01-20 17:28:36.215661-07:00
-description: "Das Berechnen eines zuk\xFCnftigen oder vergangenen Datums erm\xF6glicht\
-  \ es uns, Zeitintervalle zu bestimmen und automatische Erinnerungen oder Fristen\
-  \ in\u2026"
+description: "So geht's: Ein Beispiel f\xFCr die Berechnung eines Datums in 7 Tagen\
+  \ und eines Datums vor 7 Tagen."
 lastmod: '2024-03-13T22:44:54.072640-06:00'
 model: gpt-4-1106-preview
-summary: "Das Berechnen eines zuk\xFCnftigen oder vergangenen Datums erm\xF6glicht\
-  \ es uns, Zeitintervalle zu bestimmen und automatische Erinnerungen oder Fristen\
-  \ in Skripten zu setzen."
+summary: "Ein Beispiel f\xFCr die Berechnung eines Datums in 7 Tagen und eines Datums\
+  \ vor 7 Tagen."
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---

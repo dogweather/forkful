@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:35:55.061520-07:00
-description: "Att konvertera ett datum till en str\xE4ng inneb\xE4r att omvandla tidsdata\
-  \ till l\xE4sbart textformat. Programmerare g\xF6r detta f\xF6r att visa datum p\xE5\
-  \ sk\xE4rmar eller\u2026"
+description: "Hur g\xF6r man: ."
 lastmod: '2024-03-13T22:44:38.178745-06:00'
 model: gpt-4-1106-preview
-summary: "Att konvertera ett datum till en str\xE4ng inneb\xE4r att omvandla tidsdata\
-  \ till l\xE4sbart textformat."
+summary: .
 title: "Omvandla ett datum till en str\xE4ng"
 weight: 28
 ---

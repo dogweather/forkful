@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:37:38.853047-07:00
-description: "\xC5 fjerne anf\xF8rselstegn fra en streng inneb\xE6rer \xE5 strippe\
-  \ bort anf\xF8rselstegnene som omslutter strengen. Programmerere \xF8nsker ofte\
-  \ \xE5 gj\xF8re dette for \xE5 rense\u2026"
+description: "Hvordan: Bash har flere m\xE5ter \xE5 fjerne anf\xF8rselstegn fra strenger\
+  \ p\xE5. Her er noen raske eksempler."
 lastmod: '2024-03-13T22:44:40.960454-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 fjerne anf\xF8rselstegn fra en streng inneb\xE6rer \xE5 strippe bort\
-  \ anf\xF8rselstegnene som omslutter strengen."
+summary: "Bash har flere m\xE5ter \xE5 fjerne anf\xF8rselstegn fra strenger p\xE5."
 title: "Fjerne anf\xF8rselstegn fra en streng"
 weight: 9
 ---

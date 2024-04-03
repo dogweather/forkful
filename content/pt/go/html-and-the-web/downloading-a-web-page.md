@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:05.665932-07:00
-description: "Baixar uma p\xE1gina da web consiste em buscar o conte\xFAdo HTML de\
-  \ uma p\xE1gina da web via protocolo HTTP/HTTPS. Programadores frequentemente fazem\
-  \ isso para\u2026"
+description: "Como: Em Go, a biblioteca padr\xE3o oferece ferramentas poderosas para\
+  \ requisi\xE7\xF5es web, notavelmente o pacote `net/http`. Para baixar uma p\xE1\
+  gina da web,\u2026"
 lastmod: '2024-03-13T22:44:46.059248-06:00'
 model: gpt-4-0125-preview
-summary: "Baixar uma p\xE1gina da web consiste em buscar o conte\xFAdo HTML de uma\
-  \ p\xE1gina da web via protocolo HTTP/HTTPS."
+summary: "Em Go, a biblioteca padr\xE3o oferece ferramentas poderosas para requisi\xE7\
+  \xF5es web, notavelmente o pacote `net/http`."
 title: "Baixando uma p\xE1gina da web"
 weight: 42
 ---

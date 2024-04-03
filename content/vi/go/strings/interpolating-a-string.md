@@ -2,15 +2,17 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:49.660019-07:00
-description: "N\u1ED9i suy chu\u1ED7i l\xE0 m\u1ED9t ph\u01B0\u01A1ng ph\xE1p \u0111\
-  \u1EC3 x\xE2y d\u1EF1ng chu\u1ED7i c\xF3 ch\u1EE9a bi\u1EBFn, cho ph\xE9p t\u1EA1\
-  o chu\u1ED7i \u0111\u1ED9ng. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0\
-  y \u0111\u1EC3 t\xF9y ch\u1EC9nh th\xF4ng \u0111i\u1EC7p, x\xE2y d\u1EF1ng\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Go, n\u1ED9i suy chu\u1ED7i th\u01B0\u1EDD\
+  ng \u0111\u01B0\u1EE3c th\u1EF1c hi\u1EC7n b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng g\xF3\
+  i `fmt`, \u0111\u1EB7c bi\u1EC7t l\xE0 v\u1EDBi h\xE0m `Sprintf`, cho ph\xE9p b\u1EA1\
+  n ch\xE8n bi\u1EBFn v\xE0o chu\u1ED7i\u2026"
 lastmod: '2024-03-13T22:44:35.962186-06:00'
 model: gpt-4-0125-preview
-summary: "N\u1ED9i suy chu\u1ED7i l\xE0 m\u1ED9t ph\u01B0\u01A1ng ph\xE1p \u0111\u1EC3\
-  \ x\xE2y d\u1EF1ng chu\u1ED7i c\xF3 ch\u1EE9a bi\u1EBFn, cho ph\xE9p t\u1EA1o chu\u1ED7\
-  i \u0111\u1ED9ng."
+summary: "Trong Go, n\u1ED9i suy chu\u1ED7i th\u01B0\u1EDDng \u0111\u01B0\u1EE3c th\u1EF1\
+  c hi\u1EC7n b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng g\xF3i `fmt`, \u0111\u1EB7c bi\u1EC7\
+  t l\xE0 v\u1EDBi h\xE0m `Sprintf`, cho ph\xE9p b\u1EA1n ch\xE8n bi\u1EBFn v\xE0\
+  o chu\u1ED7i b\u1EB1ng c\xE1ch ch\u1EC9 r\xF5 c\xE1c \u0111\u1ED9ng t\u1EEB \u0111\
+  \u1ECBnh d\u1EA1ng."
 title: "N\u1ED9i suy m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
 weight: 8
 ---

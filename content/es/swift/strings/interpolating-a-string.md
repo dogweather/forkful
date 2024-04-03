@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:51:57.036827-07:00
-description: "La interpolaci\xF3n de cadenas permite insertar variables, constantes\
-  \ y expresiones dentro de una cadena de texto. Los programadores la usan para crear\u2026"
+description: "C\xF3mo hacerlo: Vamos a verlo con c\xF3digo. A\xF1ade variables en\
+  \ una cadena usando `\\(variable)`. Aqu\xED tienes algunos ejemplos."
 lastmod: '2024-03-13T22:44:59.403112-06:00'
 model: gpt-4-1106-preview
-summary: "La interpolaci\xF3n de cadenas permite insertar variables, constantes y\
-  \ expresiones dentro de una cadena de texto."
+summary: "Vamos a verlo con c\xF3digo."
 title: "Interpolaci\xF3n de cadenas de texto"
 weight: 8
 ---

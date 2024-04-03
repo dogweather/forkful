@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:11.899252-07:00
-description: "Escrever no erro padr\xE3o (stderr) \xE9 sobre redirecionar mensagens\
-  \ de erro e diagn\xF3sticos separadamente da sa\xEDda principal do programa, que\
-  \ vai para a sa\xEDda\u2026"
+description: "Como fazer: O Elm \xE9 voltado principalmente para o desenvolvimento\
+  \ web, onde o conceito de escrever diretamente para o stderr n\xE3o se aplica da\
+  \ mesma forma\u2026"
 lastmod: '2024-03-13T22:44:46.516061-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever no erro padr\xE3o (stderr) \xE9 sobre redirecionar mensagens de\
-  \ erro e diagn\xF3sticos separadamente da sa\xEDda principal do programa, que vai\
-  \ para a sa\xEDda padr\xE3o (stdout)."
+summary: "O Elm \xE9 voltado principalmente para o desenvolvimento web, onde o conceito\
+  \ de escrever diretamente para o stderr n\xE3o se aplica da mesma forma que em ambientes\
+  \ de linha de comando tradicionais."
 title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---

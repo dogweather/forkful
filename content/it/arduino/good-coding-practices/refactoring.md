@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 01:16:42.936876-07:00
-description: "Il refactoring \xE8 il processo di rielaborazione del tuo codice per\
-  \ migliorarne la struttura e la leggibilit\xE0 senza alterare il comportamento esterno\
-  \ o la\u2026"
+description: 'Come fare: Diciamo che hai una funzione sul tuo Arduino che sta facendo
+  decisamente troppo, come questa.'
 lastmod: '2024-03-13T22:44:43.690734-06:00'
 model: gpt-4-0125-preview
-summary: "Il refactoring \xE8 il processo di rielaborazione del tuo codice per migliorarne\
-  \ la struttura e la leggibilit\xE0 senza alterare il comportamento esterno o la\
-  \ funzionalit\xE0."
+summary: Diciamo che hai una funzione sul tuo Arduino che sta facendo decisamente
+  troppo, come questa.
 title: Rifattorizzazione
 weight: 19
 ---

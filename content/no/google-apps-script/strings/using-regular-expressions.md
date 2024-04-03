@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:34.342973-07:00
-description: "Regul\xE6re uttrykk (regex) er m\xF8nstre brukt til \xE5 matche kombinasjoner\
-  \ av tegn i strenger. Programmerere bruker dem til s\xF8king, redigering eller\u2026"
+description: "Hvordan: \xC5 bruke regul\xE6re uttrykk i Google Apps Script er enkelt\
+  \ takket v\xE6re JavaScript-basert syntaks. Her er hvordan du kan inkorporere regex\
+  \ i\u2026"
 lastmod: '2024-03-13T22:44:40.303165-06:00'
 model: gpt-4-0125-preview
-summary: "Regul\xE6re uttrykk (regex) er m\xF8nstre brukt til \xE5 matche kombinasjoner\
-  \ av tegn i strenger."
+summary: "\xC5 bruke regul\xE6re uttrykk i Google Apps Script er enkelt takket v\xE6\
+  re JavaScript-basert syntaks."
 title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:56:40.695084-07:00
-description: "Das Lesen von Befehlszeilenargumenten erm\xF6glicht es einem Ruby-Skript,\
-  \ Eingaben direkt aus der Befehlszeile beim Ausf\xFChren des Programms aufzunehmen.\
-  \ Das\u2026"
+description: "Wie geht das? Ruby macht es einfach, auf Befehlszeilenargumente zuzugreifen\
+  \ \u2013 sie werden in einem speziellen Array namens `ARGV` gespeichert."
 lastmod: '2024-03-13T22:44:54.415822-06:00'
 model: gpt-4-1106-preview
-summary: "Das Lesen von Befehlszeilenargumenten erm\xF6glicht es einem Ruby-Skript,\
-  \ Eingaben direkt aus der Befehlszeile beim Ausf\xFChren des Programms aufzunehmen."
+summary: "Ruby macht es einfach, auf Befehlszeilenargumente zuzugreifen \u2013 sie\
+  \ werden in einem speziellen Array namens `ARGV` gespeichert."
 title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---

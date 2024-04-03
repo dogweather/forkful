@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 03:45:20.807570-07:00
-description: "Zahlen zu runden bedeutet, sie auf die n\xE4chste ganze Zahl oder einen\
-  \ bestimmten Genauigkeitsgrad anzupassen. Programmierer machen das, um die Lesbarkeit\u2026"
+description: "Wie: In Kotlin kann das Runden mithilfe mehrerer Funktionen wie `roundToInt()`,\
+  \ `roundToDouble()` und unter Verwendung von `BigDecimal` f\xFCr mehr Kontrolle\u2026"
 lastmod: '2024-03-13T22:44:53.841860-06:00'
 model: gpt-4-0125-preview
-summary: "Zahlen zu runden bedeutet, sie auf die n\xE4chste ganze Zahl oder einen\
-  \ bestimmten Genauigkeitsgrad anzupassen."
+summary: "In Kotlin kann das Runden mithilfe mehrerer Funktionen wie `roundToInt()`,\
+  \ `roundToDouble()` und unter Verwendung von `BigDecimal` f\xFCr mehr Kontrolle\
+  \ erfolgen."
 title: Zahlen runden
 weight: 13
 ---

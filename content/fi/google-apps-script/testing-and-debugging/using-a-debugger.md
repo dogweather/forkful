@@ -2,9 +2,9 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:35.319760-07:00
-description: "Google Apps Script tarjoaa sis\xE4\xE4nrakennetun virheenkorjausty\xF6\
+description: "Kuinka: Google Apps Script tarjoaa sis\xE4\xE4nrakennetun virheenkorjausty\xF6\
   kalun Apps Script -editorissa skriptien vianm\xE4\xE4rityst\xE4 varten. N\xE4in\
-  \ voit aloittaa ja k\xE4ytt\xE4\xE4\u2026"
+  \ voit aloittaa ja\u2026"
 lastmod: '2024-03-13T22:44:56.102273-06:00'
 model: gpt-4-0125-preview
 summary: "Google Apps Script tarjoaa sis\xE4\xE4nrakennetun virheenkorjausty\xF6kalun\

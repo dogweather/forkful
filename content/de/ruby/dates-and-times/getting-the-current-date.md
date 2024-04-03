@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:30.493722-07:00
-description: "Das Abrufen des aktuellen Datums ist eine grundlegende Aufgabe in nahezu\
-  \ jedem Programmierprojekt - vom Protokollieren von Aktivit\xE4ten in einer Anwendung\u2026"
+description: "Wie macht man das: Rubys Standardbibliothek enth\xE4lt die Klassen `Date`\
+  \ und `Time` zur Handhabung von Datums- und Zeitangaben. So k\xF6nnen Sie das aktuelle\u2026"
 lastmod: '2024-03-13T22:44:54.410761-06:00'
 model: gpt-4-0125-preview
-summary: "Das Abrufen des aktuellen Datums ist eine grundlegende Aufgabe in nahezu\
-  \ jedem Programmierprojekt - vom Protokollieren von Aktivit\xE4ten in einer Anwendung\
-  \ bis hin zum Generieren von Berichten mit Datumsstempeln."
+summary: "Rubys Standardbibliothek enth\xE4lt die Klassen `Date` und `Time` zur Handhabung\
+  \ von Datums- und Zeitangaben."
 title: Den aktuellen Datum abrufen
 weight: 29
 ---

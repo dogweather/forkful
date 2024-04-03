@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 18:04:00.724342-07:00
-description: "Aloittaa uuden projektin Java-ohjelmoinnissa tarkoittaa tyhj\xE4st\xE4\
-  \ aloittamista; uutta koodikantaa, uusia ideoita, uutta energiaa. Koodarit aloittavat\
-  \ uusia\u2026"
+description: "How to: (Kuinka tehd\xE4:) ."
 lastmod: '2024-03-13T22:44:56.445785-06:00'
 model: gpt-4-1106-preview
-summary: "Aloittaa uuden projektin Java-ohjelmoinnissa tarkoittaa tyhj\xE4st\xE4 aloittamista;\
-  \ uutta koodikantaa, uusia ideoita, uutta energiaa."
+summary: .
 title: Uuden projektin aloittaminen
 weight: 1
 ---

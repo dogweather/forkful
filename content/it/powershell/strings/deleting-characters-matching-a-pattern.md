@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:42:53.591916-07:00
-description: "Cancellare caratteri seguendo un pattern \xE8 semplicemente filtrare\
-  \ il testo per rimuovere caratteri indesiderati. Questo serve a pulire i dati o\
-  \ a\u2026"
+description: 'How to: Esempio 1: Rimuovere tutti i numeri da una stringa.'
 lastmod: '2024-03-13T22:44:43.625727-06:00'
 model: gpt-4-1106-preview
-summary: "Cancellare caratteri seguendo un pattern \xE8 semplicemente filtrare il\
-  \ testo per rimuovere caratteri indesiderati."
+summary: Esempio 1.
 title: Eliminazione di caratteri che corrispondono a un pattern
 weight: 5
 ---

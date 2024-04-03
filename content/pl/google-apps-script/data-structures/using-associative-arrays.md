@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:22.869553-07:00
-description: "Tablice asocjacyjne, znane jako obiekty w Google Apps Script (odmiana\
-  \ JavaScript), umo\u017Cliwiaj\u0105 programistom tworzenie kolekcji par klucz-warto\u015B\
-  \u0107.\u2026"
+description: "Jak to zrobi\u0107: W Google Apps Script tworzy si\u0119 i manipuluje\
+  \ tablicami asocjacyjnymi (obiektami) za pomoc\u0105 nawias\xF3w klamrowych `{}`,\
+  \ definiuj\u0105c w nich pary\u2026"
 lastmod: '2024-03-13T22:44:34.894677-06:00'
 model: gpt-4-0125-preview
-summary: "Tablice asocjacyjne, znane jako obiekty w Google Apps Script (odmiana JavaScript),\
-  \ umo\u017Cliwiaj\u0105 programistom tworzenie kolekcji par klucz-warto\u015B\u0107\
-  ."
+summary: "W Google Apps Script tworzy si\u0119 i manipuluje tablicami asocjacyjnymi\
+  \ (obiektami) za pomoc\u0105 nawias\xF3w klamrowych `{}`, definiuj\u0105c w nich\
+  \ pary klucz-warto\u015B\u0107."
 title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---

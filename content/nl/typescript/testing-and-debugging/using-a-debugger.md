@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:51.052696-07:00
-description: "Om aan de slag te gaan met een debugger in TypeScript, heb je alleen\
-  \ een ondersteunde IDE (zoals Visual Studio Code) en een `launch.json` configuratie\u2026"
+description: "Hoe te: Om aan de slag te gaan met een debugger in TypeScript, heb je\
+  \ alleen een ondersteunde IDE (zoals Visual Studio Code) en een `launch.json`\u2026"
 lastmod: '2024-03-13T22:44:50.555406-06:00'
 model: gpt-4-0125-preview
 summary: Om aan de slag te gaan met een debugger in TypeScript, heb je alleen een
-  ondersteunde IDE (zoals Visual Studio Code) en een `launch.
+  ondersteunde IDE (zoals Visual Studio Code) en een `launch.json` configuratie nodig.
 title: Een debugger gebruiken
 weight: 35
 ---

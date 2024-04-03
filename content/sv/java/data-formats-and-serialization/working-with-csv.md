@@ -2,14 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:31.957562-07:00
-description: "Att arbeta med CSV-filer inneb\xE4r att l\xE4sa fr\xE5n och skriva data\
-  \ till kommaseparerade v\xE4rden (CSV) filer, ett popul\xE4rt format f\xF6r datautbyte\
-  \ eftersom det \xE4r\u2026"
+description: "Hur man g\xF6r: #."
 lastmod: '2024-03-13T22:44:37.809664-06:00'
 model: gpt-4-0125-preview
-summary: "Att arbeta med CSV-filer inneb\xE4r att l\xE4sa fr\xE5n och skriva data\
-  \ till kommaseparerade v\xE4rden (CSV) filer, ett popul\xE4rt format f\xF6r datautbyte\
-  \ eftersom det \xE4r enkelt och brett underst\xF6tt."
+summary: '#.'
 title: Arbeta med CSV
 weight: 37
 ---

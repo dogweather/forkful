@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:26.288743-07:00
-description: "Criar um arquivo tempor\xE1rio em Go permite a gera\xE7\xE3o de um arquivo\
-  \ n\xE3o persistente projetado para uso de curto prazo, principalmente para tarefas\
-  \ como\u2026"
+description: "Como Fazer: No Go, o pacote `ioutil` originalmente fornecia utilidades\
+  \ para a cria\xE7\xE3o de arquivos tempor\xE1rios. Contudo, o Go 1.16 promoveu o\
+  \ uso das\u2026"
 lastmod: '2024-03-13T22:44:46.081770-06:00'
 model: gpt-4-0125-preview
-summary: "Criar um arquivo tempor\xE1rio em Go permite a gera\xE7\xE3o de um arquivo\
-  \ n\xE3o persistente projetado para uso de curto prazo, principalmente para tarefas\
-  \ como armazenamento de dados intermedi\xE1rios ou aux\xEDlio em trabalhos de processamento\
-  \ em lote."
+summary: "No Go, o pacote `ioutil` originalmente fornecia utilidades para a cria\xE7\
+  \xE3o de arquivos tempor\xE1rios."
 title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---

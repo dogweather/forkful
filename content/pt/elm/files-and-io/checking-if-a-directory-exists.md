@@ -1,12 +1,14 @@
 ---
 date: 2024-01-20 14:56:14.068274-07:00
-description: "Checar se um diret\xF3rio existe \xE9 o processo de verificar se um\
-  \ caminho espec\xEDfico refere-se a um diret\xF3rio no sistema de arquivos. Programadores\
-  \ fazem isso\u2026"
+description: "Como Fazer: Elm \xE9 uma linguagem para aplica\xE7\xF5es web e, portanto,\
+  \ n\xE3o tem acesso direto ao sistema de arquivos do servidor ou do cliente, ent\xE3\
+  o voc\xEA n\xE3o\u2026"
 lastmod: '2024-03-13T22:44:46.514191-06:00'
 model: unknown
-summary: "Checar se um diret\xF3rio existe \xE9 o processo de verificar se um caminho\
-  \ espec\xEDfico refere-se a um diret\xF3rio no sistema de arquivos."
+summary: "Elm \xE9 uma linguagem para aplica\xE7\xF5es web e, portanto, n\xE3o tem\
+  \ acesso direto ao sistema de arquivos do servidor ou do cliente, ent\xE3o voc\xEA\
+  \ n\xE3o pode verificar diretamente se um diret\xF3rio existe como faria em outras\
+  \ linguagens como Node.js ou Python."
 title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---

@@ -2,14 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:34.677950-07:00
-description: "JSON, hay JavaScript Object Notation, l\xE0 m\u1ED9t \u0111\u1ECBnh\
-  \ d\u1EA1ng trao \u0111\u1ED5i d\u1EEF li\u1EC7u nh\u1EB9. L\u1EADp tr\xECnh vi\xEA\
-  n s\u1EED d\u1EE5ng JSON \u0111\u1EC3 l\u01B0u tr\u1EEF v\xE0 trao \u0111\u1ED5\
-  i d\u1EEF li\u1EC7u b\u1EDFi v\xEC n\xF3 d\u1EC5 \u0111\u1ECDc\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Ruby, b\u1EA1n c\xF3 th\u1EC3 l\xE0m vi\u1EC7\
+  c v\u1EDBi JSON s\u1EED d\u1EE5ng th\u01B0 vi\u1EC7n 'json' \u0111\u01B0\u1EE3c\
+  \ t\xEDch h\u1EE3p s\u1EB5n. \u0110\u1EC3 s\u1EED d\u1EE5ng n\xF3, ch\u1EC9 c\u1EA7\
+  n y\xEAu c\u1EA7u 'json' \u1EDF \u0111\u1EA7u m\xE3 c\u1EE7a b\u1EA1n."
 lastmod: '2024-03-13T22:44:37.369324-06:00'
 model: gpt-4-0125-preview
-summary: "JSON, hay JavaScript Object Notation, l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1\
-  ng trao \u0111\u1ED5i d\u1EEF li\u1EC7u nh\u1EB9."
+summary: "Trong Ruby, b\u1EA1n c\xF3 th\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi JSON s\u1EED\
+  \ d\u1EE5ng th\u01B0 vi\u1EC7n 'json' \u0111\u01B0\u1EE3c t\xEDch h\u1EE3p s\u1EB5\
+  n."
 title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
 weight: 38
 ---

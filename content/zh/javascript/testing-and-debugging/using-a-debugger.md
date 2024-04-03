@@ -1,15 +1,11 @@
 ---
 date: 2024-01-26 03:50:03.697954-07:00
-description: "\u8FD9\u91CC\u6709\u4E00\u6BB5\u884C\u4E3A\u5F02\u5E38\u7684JavaScript\u4EE3\
-  \u7801\uFF1A ```javascript function buggyMultiply(a, b) { return a + b; // \u54CE\
-  \u5440\uFF01\u8FD9\u5E94\u8BE5\u662F\u4E58\u6CD5\uFF0C\u800C\u4E0D\u662F\u52A0\u6CD5\
-  \u3002 } let result = buggyMultiply(5, 3);\u2026"
+description: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u8FD9\u91CC\u6709\u4E00\u6BB5\u884C\u4E3A\
+  \u5F02\u5E38\u7684JavaScript\u4EE3\u7801\uFF1A."
 lastmod: '2024-03-13T22:44:48.211087-06:00'
 model: gpt-4-0125-preview
 summary: "\u8FD9\u91CC\u6709\u4E00\u6BB5\u884C\u4E3A\u5F02\u5E38\u7684JavaScript\u4EE3\
-  \u7801\uFF1A\n\n```javascript\nfunction buggyMultiply(a, b) {\n    return a + b;\
-  \ // \u54CE\u5440\uFF01\u8FD9\u5E94\u8BE5\u662F\u4E58\u6CD5\uFF0C\u800C\u4E0D\u662F\
-  \u52A0\u6CD5\u3002\n}\n\nlet result = buggyMultiply(5, 3);\nconsole."
+  \u7801\uFF1A."
 title: "\u4F7F\u7528\u8C03\u8BD5\u5668"
 weight: 35
 ---

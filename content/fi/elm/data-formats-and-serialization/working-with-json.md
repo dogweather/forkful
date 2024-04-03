@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:49.311491-07:00
-description: "JSON:n k\xE4sittely Elm:ss\xE4 tarkoittaa JSON-datan dekoodaamista Elm-tyypeiksi\
-  \ ja Elm-arvojen enkoodaamista takaisin JSON:ksi. T\xE4m\xE4 prosessi on ratkaisevan\u2026"
+description: "Kuinka: Elm k\xE4sittelee JSON:ia selke\xE4sti ja turvallisesti, p\xE4\
+  \xE4asiassa k\xE4ytt\xE4en `Json.Decode`- ja `Json.Encode`-moduleita. Aloittaaksesi\
+  \ JSON:n k\xE4sittelyn,\u2026"
 lastmod: '2024-03-13T22:44:56.510403-06:00'
 model: gpt-4-0125-preview
-summary: "JSON:n k\xE4sittely Elm:ss\xE4 tarkoittaa JSON-datan dekoodaamista Elm-tyypeiksi\
-  \ ja Elm-arvojen enkoodaamista takaisin JSON:ksi."
+summary: "Elm k\xE4sittelee JSON:ia selke\xE4sti ja turvallisesti, p\xE4\xE4asiassa\
+  \ k\xE4ytt\xE4en `Json.Decode`- ja `Json.Encode`-moduleita."
 title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---

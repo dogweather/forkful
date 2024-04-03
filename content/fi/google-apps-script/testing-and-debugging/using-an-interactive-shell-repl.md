@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:11.863400-07:00
-description: "Interaktiivinen kuori, eli Read-Eval-Print Loop (REPL), on yksinkertainen\
-  \ interaktiivinen ohjelmointiymp\xE4rist\xF6, joka ottaa vastaan yksitt\xE4isi\xE4\
-  \ k\xE4ytt\xE4j\xE4n\u2026"
+description: "Miten: Google Apps Script, pilvipohjainen skriptikieli Google-tuotteiden\
+  \ teht\xE4vien automatisointiin, ei sis\xE4ll\xE4 sis\xE4\xE4nrakennettua REPL-ty\xF6\
+  kalua, kuten\u2026"
 lastmod: '2024-03-13T22:44:56.099034-06:00'
 model: gpt-4-0125-preview
-summary: "Interaktiivinen kuori, eli Read-Eval-Print Loop (REPL), on yksinkertainen\
-  \ interaktiivinen ohjelmointiymp\xE4rist\xF6, joka ottaa vastaan yksitt\xE4isi\xE4\
-  \ k\xE4ytt\xE4j\xE4n sy\xF6tteit\xE4 (lausekkeita), arvioi ne ja palauttaa tuloksen\
-  \ k\xE4ytt\xE4j\xE4lle."
+summary: "Google Apps Script, pilvipohjainen skriptikieli Google-tuotteiden teht\xE4\
+  vien automatisointiin, ei sis\xE4ll\xE4 sis\xE4\xE4nrakennettua REPL-ty\xF6kalua,\
+  \ kuten esimerkiksi kieliss\xE4 Python tai JavaScriptin Node.js."
 title: "Interaktiivisen kuoren (REPL) k\xE4ytt\xF6"
 weight: 34
 ---

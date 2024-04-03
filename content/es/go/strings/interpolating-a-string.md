@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:58:22.687173-07:00
-description: "La interpolaci\xF3n de cadenas es un m\xE9todo para construir cadenas\
-  \ que incorporan variables, permitiendo la creaci\xF3n din\xE1mica de cadenas. Los\
-  \ programadores\u2026"
+description: "C\xF3mo hacerlo: En Go, la interpolaci\xF3n de cadenas se logra com\xFA\
+  nmente usando el paquete `fmt`, particularmente con la funci\xF3n `Sprintf`, que\
+  \ te permite\u2026"
 lastmod: '2024-03-13T22:44:58.451447-06:00'
 model: gpt-4-0125-preview
-summary: "La interpolaci\xF3n de cadenas es un m\xE9todo para construir cadenas que\
-  \ incorporan variables, permitiendo la creaci\xF3n din\xE1mica de cadenas."
+summary: "En Go, la interpolaci\xF3n de cadenas se logra com\xFAnmente usando el paquete\
+  \ `fmt`, particularmente con la funci\xF3n `Sprintf`, que te permite inyectar variables\
+  \ en una cadena especificando verbos de formato."
 title: Interpolando una cadena de texto
 weight: 8
 ---

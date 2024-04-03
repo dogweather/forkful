@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:35:06.973803-07:00
-description: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w (string\xF3w) to\
-  \ po prostu ich sklejanie. Czynimy to, by stworzy\u0107 zdania, wiadomo\u015Bci\
-  \ czy dynamicznie budowane warto\u015Bci tekstowe w\u2026"
+description: "How to: (Jak to zrobi\u0107:) ."
 lastmod: '2024-03-13T22:44:35.356784-06:00'
 model: gpt-4-1106-preview
-summary: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w (string\xF3w) to po\
-  \ prostu ich sklejanie."
+summary: .
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---

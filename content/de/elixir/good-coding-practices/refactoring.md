@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 01:17:30.267966-07:00
-description: "Das Refactoring ist der Prozess der Umstrukturierung bestehenden Codes,\
-  \ ohne dessen externes Verhalten zu \xE4ndern. Es zielt darauf ab, nichtfunktionale\u2026"
+description: "Wie man: Lassen Sie uns ein g\xE4ngiges Elixir-Muster aufr\xE4umen.\
+  \ Wir werden eine Funktion `calculate_stats` refaktorisieren, die mehr macht, als\
+  \ sie sollte,\u2026"
 lastmod: '2024-03-13T22:44:53.542588-06:00'
 model: gpt-4-0125-preview
-summary: "Das Refactoring ist der Prozess der Umstrukturierung bestehenden Codes,\
-  \ ohne dessen externes Verhalten zu \xE4ndern."
+summary: "Lassen Sie uns ein g\xE4ngiges Elixir-Muster aufr\xE4umen."
 title: Refactoring
 weight: 19
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:45:16.514698-07:00
-description: "Wyci\u0105ganie pod\u0142a\u0144cuch\xF3w to jak wybieranie najlepszych\
-  \ kawa\u0142k\xF3w ciasta - bierzesz tylko to, co potrzebujesz. Programi\u015Bci\
-  \ to robi\u0105, aby operowa\u0107 na\u2026"
+description: "How to: Clojure u\u017Cywa funkcji `subs` do wyci\u0105gania pod\u0142\
+  a\u0144cuch\xF3w. Przyjrzyjmy si\u0119 przyk\u0142adom."
 lastmod: '2024-03-13T22:44:34.982968-06:00'
 model: gpt-4-1106-preview
-summary: "Wyci\u0105ganie pod\u0142a\u0144cuch\xF3w to jak wybieranie najlepszych\
-  \ kawa\u0142k\xF3w ciasta - bierzesz tylko to, co potrzebujesz."
+summary: "Clojure u\u017Cywa funkcji `subs` do wyci\u0105gania pod\u0142a\u0144cuch\xF3\
+  w."
 title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
 weight: 6
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:02.009799-07:00
-description: "Das Erstellen einer tempor\xE4ren Datei in Visual Basic for Applications\
-  \ (VBA) beinhaltet das programmatische Generieren einer Datei f\xFCr die kurzfristige\u2026"
+description: "Wie: In VBA kann eine tempor\xE4re Datei mithilfe des `FileSystemObject`\
+  \ erstellt werden, das in der Microsoft Scripting Runtime-Bibliothek verf\xFCgbar\
+  \ ist.\u2026"
 lastmod: '2024-03-13T22:44:53.739901-06:00'
 model: gpt-4-0125-preview
-summary: "Das Erstellen einer tempor\xE4ren Datei in Visual Basic for Applications\
-  \ (VBA) beinhaltet das programmatische Generieren einer Datei f\xFCr die kurzfristige\
-  \ Verwendung, typischerweise f\xFCr die Datenverarbeitung oder als Puffer in Automatisierungsaufgaben."
+summary: "In VBA kann eine tempor\xE4re Datei mithilfe des `FileSystemObject` erstellt\
+  \ werden, das in der Microsoft Scripting Runtime-Bibliothek verf\xFCgbar ist."
 title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---

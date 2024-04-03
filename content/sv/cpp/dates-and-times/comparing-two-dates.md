@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:32:37.370900-07:00
-description: "Att j\xE4mf\xF6ra tv\xE5 datum inneb\xE4r att fastst\xE4lla om de \xE4\
-  r lika, vilket \xE4r tidigare, eller vilket \xE4r senare. Programmerare g\xF6r detta\
-  \ f\xF6r att hantera\u2026"
+description: "How to: Anv\xE4nd `std::chrono` biblioteket f\xF6r att hantera datum\
+  \ och j\xE4mf\xF6r dem med enkelhet."
 lastmod: '2024-03-13T22:44:38.221793-06:00'
 model: gpt-4-1106-preview
-summary: "Att j\xE4mf\xF6ra tv\xE5 datum inneb\xE4r att fastst\xE4lla om de \xE4r\
-  \ lika, vilket \xE4r tidigare, eller vilket \xE4r senare."
+summary: "Anv\xE4nd `std::chrono` biblioteket f\xF6r att hantera datum och j\xE4mf\xF6\
+  r dem med enkelhet."
 title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---

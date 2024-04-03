@@ -2,14 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:23.348861-07:00
-description: "Extraire des sous-cha\xEEnes consiste \xE0 r\xE9cup\xE9rer des portions\
-  \ sp\xE9cifiques d'une cha\xEEne de caract\xE8res bas\xE9es sur leurs positions\
-  \ ou leurs motifs. Les\u2026"
+description: "Comment faire : En Dart, vous pouvez utiliser diverses m\xE9thodes pour\
+  \ extraire des sous-cha\xEEnes, telles que `substring()`, `split()`, et les expressions\u2026"
 lastmod: '2024-03-13T22:44:57.371147-06:00'
 model: gpt-4-0125-preview
-summary: "Extraire des sous-cha\xEEnes consiste \xE0 r\xE9cup\xE9rer des portions\
-  \ sp\xE9cifiques d'une cha\xEEne de caract\xE8res bas\xE9es sur leurs positions\
-  \ ou leurs motifs."
+summary: "En Dart, vous pouvez utiliser diverses m\xE9thodes pour extraire des sous-cha\xEE\
+  nes, telles que `substring()`, `split()`, et les expressions r\xE9guli\xE8res."
 title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---

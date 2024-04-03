@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:33:15.049543-07:00
-description: "Comparer deux dates, c'est mettre c\xF4te \xE0 c\xF4te deux moments\
-  \ distincts pour voir lequel vient avant ou apr\xE8s, ou s'ils sont identiques.\
-  \ En programmation, on\u2026"
+description: 'Comment faire : .'
 lastmod: '2024-03-13T22:44:57.950257-06:00'
 model: gpt-4-1106-preview
-summary: "Comparer deux dates, c'est mettre c\xF4te \xE0 c\xF4te deux moments distincts\
-  \ pour voir lequel vient avant ou apr\xE8s, ou s'ils sont identiques."
+summary: .
 title: Comparer deux dates
 weight: 27
 ---

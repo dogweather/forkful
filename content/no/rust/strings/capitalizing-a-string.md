@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:30.281347-07:00
-description: "\xC5 kapitalisere en streng i Rust inneb\xE6rer \xE5 endre strengen\
-  \ slik at dens f\xF8rste bokstav er stor hvis det er en bokstav, mens resten av\
-  \ strengen forblir\u2026"
+description: "Hvordan: For \xE5 kapitalisere en streng i Rust, har du to hovedruter:\
+  \ \xE5 bruke standardbibliotekfunksjoner eller \xE5 bruke tredjeparts cratest for\
+  \ mer\u2026"
 lastmod: '2024-03-13T22:44:40.557273-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 kapitalisere en streng i Rust inneb\xE6rer \xE5 endre strengen slik\
-  \ at dens f\xF8rste bokstav er stor hvis det er en bokstav, mens resten av strengen\
-  \ forblir uendret."
+summary: "For \xE5 kapitalisere en streng i Rust, har du to hovedruter."
 title: Sette stor bokstav i en streng
 weight: 2
 ---

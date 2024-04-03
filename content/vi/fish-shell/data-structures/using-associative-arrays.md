@@ -2,16 +2,16 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:11.188314-07:00
-description: "M\u1EA3ng k\u1EBFt h\u1EE3p, hay b\u1EA3ng b\u0103m, cho ph\xE9p b\u1EA1\
-  n l\u01B0u tr\u1EEF d\u1EEF li\u1EC7u d\u01B0\u1EDBi d\u1EA1ng c\u1EB7p kh\xF3a-gi\xE1\
-  \ tr\u1ECB, gi\xFAp vi\u1EC7c t\u1ED5 ch\u1EE9c v\xE0 truy xu\u1EA5t th\xF4ng tin\
-  \ theo kh\xF3a d\u1EC5 d\xE0ng h\u01A1n. Ch\xFAng\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Fish kh\xF4ng h\u1ED7 tr\u1EE3 m\u1EA3ng k\u1EBF\
+  t h\u1EE3p natively nh\u01B0 Bash 4+, nh\u01B0ng b\u1EA1n c\xF3 th\u1EC3 \u0111\u1EA1\
+  t \u0111\u01B0\u1EE3c ch\u1EE9c n\u0103ng t\u01B0\u01A1ng t\u1EF1 b\u1EB1ng c\xE1\
+  ch s\u1EED d\u1EE5ng k\u1EBFt h\u1EE3p danh s\xE1ch v\xE0 thao\u2026"
 lastmod: '2024-03-13T22:44:37.198528-06:00'
 model: gpt-4-0125-preview
-summary: "M\u1EA3ng k\u1EBFt h\u1EE3p, hay b\u1EA3ng b\u0103m, cho ph\xE9p b\u1EA1\
-  n l\u01B0u tr\u1EEF d\u1EEF li\u1EC7u d\u01B0\u1EDBi d\u1EA1ng c\u1EB7p kh\xF3a-gi\xE1\
-  \ tr\u1ECB, gi\xFAp vi\u1EC7c t\u1ED5 ch\u1EE9c v\xE0 truy xu\u1EA5t th\xF4ng tin\
-  \ theo kh\xF3a d\u1EC5 d\xE0ng h\u01A1n."
+summary: "Fish kh\xF4ng h\u1ED7 tr\u1EE3 m\u1EA3ng k\u1EBFt h\u1EE3p natively nh\u01B0\
+  \ Bash 4+, nh\u01B0ng b\u1EA1n c\xF3 th\u1EC3 \u0111\u1EA1t \u0111\u01B0\u1EE3c\
+  \ ch\u1EE9c n\u0103ng t\u01B0\u01A1ng t\u1EF1 b\u1EB1ng c\xE1ch s\u1EED d\u1EE5\
+  ng k\u1EBFt h\u1EE3p danh s\xE1ch v\xE0 thao t\xE1c chu\u1ED7i."
 title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 weight: 15
 ---

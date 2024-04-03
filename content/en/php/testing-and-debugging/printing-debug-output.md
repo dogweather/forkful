@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:53:03.682497-07:00
-description: "Printing debug output is about slapping your code's internal data onto\
-  \ the screen to figure out what's going on. Programmers do it for a sanity check,\
-  \ to\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:45:00.169259-06:00'
 model: gpt-4-1106-preview
-summary: Printing debug output is about slapping your code's internal data onto the
-  screen to figure out what's going on.
+summary: .
 title: Printing debug output
 weight: 33
 ---

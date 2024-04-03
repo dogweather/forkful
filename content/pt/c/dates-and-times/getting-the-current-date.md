@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:18.982971-07:00
-description: "Obter a data atual em C envolve acessar a biblioteca padr\xE3o do C\
-  \ para buscar e formatar a data e a hora atual do sistema. Os programadores frequentemente\u2026"
+description: "Como Fazer: Em C, o cabe\xE7alho `<time.h>` fornece as fun\xE7\xF5es\
+  \ e tipos necess\xE1rios para trabalhar com datas e hor\xE1rios. A fun\xE7\xE3o\
+  \ `time()` recupera o hor\xE1rio\u2026"
 lastmod: '2024-03-13T22:44:47.061494-06:00'
 model: gpt-4-0125-preview
-summary: "Obter a data atual em C envolve acessar a biblioteca padr\xE3o do C para\
-  \ buscar e formatar a data e a hora atual do sistema."
+summary: "Em C, o cabe\xE7alho `<time.h>` fornece as fun\xE7\xF5es e tipos necess\xE1\
+  rios para trabalhar com datas e hor\xE1rios."
 title: Obtendo a data atual
 weight: 29
 ---

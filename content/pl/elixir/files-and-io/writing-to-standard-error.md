@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:10.807558-07:00
-description: "Pisanie do standardowego b\u0142\u0119du (stderr) w Elixirze to spos\xF3\
-  b na kierowanie komunikat\xF3w o b\u0142\u0119dach i diagnostyki, oddzielnie od\
-  \ g\u0142\xF3wnego wyniku (stdout).\u2026"
+description: "Jak to zrobi\u0107: W Elixirze mo\u017Cesz u\u017Cy\u0107 funkcji modu\u0142\
+  u `IO` takich jak `IO.puts/2` i `IO.warn/2`, aby pisa\u0107 wiadomo\u015Bci do standardowego\
+  \ b\u0142\u0119du."
 lastmod: '2024-03-13T22:44:35.060832-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie do standardowego b\u0142\u0119du (stderr) w Elixirze to spos\xF3\
-  b na kierowanie komunikat\xF3w o b\u0142\u0119dach i diagnostyki, oddzielnie od\
-  \ g\u0142\xF3wnego wyniku (stdout)."
+summary: "W Elixirze mo\u017Cesz u\u017Cy\u0107 funkcji modu\u0142u `IO` takich jak\
+  \ `IO.puts/2` i `IO.warn/2`, aby pisa\u0107 wiadomo\u015Bci do standardowego b\u0142\
+  \u0119du."
 title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---

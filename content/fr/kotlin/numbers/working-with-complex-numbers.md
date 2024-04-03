@@ -1,13 +1,10 @@
 ---
 date: 2024-01-26 04:43:36.185998-07:00
-description: "Les nombres complexes \xE9largissent notre syst\xE8me num\xE9rique pour\
-  \ inclure les racines carr\xE9es des nombres n\xE9gatifs, o\xF9 l'unit\xE9 \"imaginaire\"\
-  \ i \xE9quivaut \xE0 la\u2026"
+description: "Comment faire : D\xE9finissons une classe de nombre complexe de base\
+  \ en Kotlin ."
 lastmod: '2024-03-13T22:44:57.731111-06:00'
 model: gpt-4-0125-preview
-summary: "Les nombres complexes \xE9largissent notre syst\xE8me num\xE9rique pour\
-  \ inclure les racines carr\xE9es des nombres n\xE9gatifs, o\xF9 l'unit\xE9 \"imaginaire\"\
-  \ i \xE9quivaut \xE0 la racine carr\xE9e de -1."
+summary: "D\xE9finissons une classe de nombre complexe de base en Kotlin."
 title: Manipulation des nombres complexes
 weight: 14
 ---

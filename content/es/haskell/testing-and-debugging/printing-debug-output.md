@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:52:53.552439-07:00
-description: "La impresi\xF3n de mensajes de depuraci\xF3n es simplemente mostrar\
-  \ informaci\xF3n en la consola para entender qu\xE9 est\xE1 pasando en tu c\xF3\
-  digo. Los programadores lo\u2026"
+description: "C\xF3mo Hacerlo: Para imprimir algo en Haskell, usualmente usamos la\
+  \ funci\xF3n `print` o `putStrLn`."
 lastmod: '2024-03-13T22:44:59.121406-06:00'
 model: gpt-4-1106-preview
-summary: "La impresi\xF3n de mensajes de depuraci\xF3n es simplemente mostrar informaci\xF3\
-  n en la consola para entender qu\xE9 est\xE1 pasando en tu c\xF3digo."
+summary: "Para imprimir algo en Haskell, usualmente usamos la funci\xF3n `print` o\
+  \ `putStrLn`."
 title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---

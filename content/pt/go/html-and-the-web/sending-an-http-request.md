@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:39.714256-07:00
-description: "Enviar uma requisi\xE7\xE3o HTTP envolve iniciar uma chamada de sua\
-  \ aplica\xE7\xE3o Go para um servidor web, API ou qualquer outro servi\xE7o baseado\
-  \ em HTTP.\u2026"
+description: "Como fazer: Em Go, enviar uma requisi\xE7\xE3o HTTP e lidar com a resposta\
+  \ envolve o uso do pacote `net/http`. Aqui est\xE1 um exemplo passo a passo mostrando\
+  \ como\u2026"
 lastmod: '2024-03-13T22:44:46.057169-06:00'
 model: gpt-4-0125-preview
-summary: "Enviar uma requisi\xE7\xE3o HTTP envolve iniciar uma chamada de sua aplica\xE7\
-  \xE3o Go para um servidor web, API ou qualquer outro servi\xE7o baseado em HTTP."
+summary: "Em Go, enviar uma requisi\xE7\xE3o HTTP e lidar com a resposta envolve o\
+  \ uso do pacote `net/http`."
 title: "Enviando uma solicita\xE7\xE3o HTTP"
 weight: 44
 ---

@@ -2,12 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:54.982802-07:00
-description: "CSV (Comma-Separated Values ofwel met komma's gescheiden waarden) is\
-  \ een plat tekstformaat voor tabelgegevens. Programmeurs gebruiken CSV om gemakkelijk\u2026"
+description: "Hoe: Elixir bevat geen CSV-parsering in zijn standaardbibliotheek, maar\
+  \ je kunt het `CSV` hex-pakket gebruiken. Hier is een snel voorbeeld om je op weg\
+  \ te\u2026"
 lastmod: '2024-03-13T22:44:50.484215-06:00'
 model: gpt-4-0125-preview
-summary: CSV (Comma-Separated Values ofwel met komma's gescheiden waarden) is een
-  plat tekstformaat voor tabelgegevens.
+summary: Elixir bevat geen CSV-parsering in zijn standaardbibliotheek, maar je kunt
+  het `CSV` hex-pakket gebruiken.
 title: Werken met CSV
 weight: 37
 ---

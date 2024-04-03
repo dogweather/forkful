@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:44:43.679360-07:00
-description: "Pobieranie strony internetowej to proces uruchomienia kodu, kt\xF3ry\
-  \ \u015Bci\u0105ga zawarto\u015B\u0107 strony www do analizy lub przetwarzania.\
-  \ Programi\u015Bci robi\u0105 to, aby\u2026"
+description: "Jak to zrobi\u0107: U\u017Cyjemy biblioteki `socket.http` z Lua. Sprawdzimy,\
+  \ czy strona jest dost\u0119pna i pobierzemy zawarto\u015B\u0107."
 lastmod: '2024-03-13T22:44:35.538798-06:00'
 model: gpt-4-1106-preview
-summary: "Pobieranie strony internetowej to proces uruchomienia kodu, kt\xF3ry \u015B\
-  ci\u0105ga zawarto\u015B\u0107 strony www do analizy lub przetwarzania."
+summary: "U\u017Cyjemy biblioteki `socket.http` z Lua."
 title: Pobieranie strony internetowej
 weight: 42
 ---

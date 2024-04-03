@@ -2,15 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:38.024526-07:00
-description: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w (String) w Dart\
-  \ polega na okre\u015Bleniu liczby jednostek kodu (w zasadzie liczby znak\xF3w,\
-  \ je\u015Bli my\u015Ble\u0107 o tym uproszczonymi\u2026"
+description: "Jak to zrobi\u0107: Dart umo\u017Cliwia \u0142atwe uzyskanie d\u0142\
+  ugo\u015Bci ci\u0105gu znak\xF3w, u\u017Cywaj\u0105c w\u0142a\u015Bciwo\u015Bci\
+  \ `length`. Oto podstawowy przyk\u0142ad."
 lastmod: '2024-03-13T22:44:35.080996-06:00'
 model: gpt-4-0125-preview
-summary: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w (String) w Dart polega\
-  \ na okre\u015Bleniu liczby jednostek kodu (w zasadzie liczby znak\xF3w, je\u015B\
-  li my\u015Ble\u0107 o tym uproszczonymi kategoriami) w danym ci\u0105gu znak\xF3\
-  w."
+summary: "Dart umo\u017Cliwia \u0142atwe uzyskanie d\u0142ugo\u015Bci ci\u0105gu znak\xF3\
+  w, u\u017Cywaj\u0105c w\u0142a\u015Bciwo\u015Bci `length`."
 title: "Znajdowanie d\u0142ugo\u015Bci \u0142a\u0144cucha znak\xF3w"
 weight: 7
 ---

@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:18.808697-07:00
-description: "Das Schreiben von Tests in Elixir beinhaltet das Erstellen von automatisierten\
-  \ Skripten, um das Verhalten Ihres Codes zu validieren. Programmierer tun\u2026"
+description: "Wie geht das: Elixir verwendet ExUnit als sein eingebautes Testframework,\
+  \ welches extrem leistungsf\xE4hig und einfach zu verwenden ist. Hier ist ein\u2026"
 lastmod: '2024-03-13T22:44:53.537089-06:00'
 model: gpt-4-0125-preview
-summary: Das Schreiben von Tests in Elixir beinhaltet das Erstellen von automatisierten
-  Skripten, um das Verhalten Ihres Codes zu validieren.
+summary: "Elixir verwendet ExUnit als sein eingebautes Testframework, welches extrem\
+  \ leistungsf\xE4hig und einfach zu verwenden ist."
 title: Tests Schreiben
 weight: 36
 ---

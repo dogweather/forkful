@@ -1,11 +1,9 @@
 ---
 date: 2024-01-26 01:10:51.916332-07:00
-description: "Organizar el c\xF3digo en funciones divide las tareas en piezas reutilizables,\
-  \ lo que hace que el c\xF3digo sea m\xE1s limpio y mantenible. Hacemos esto para\u2026"
+description: "C\xF3mo hacerlo: ."
 lastmod: '2024-03-13T22:44:59.464182-06:00'
 model: gpt-4-1106-preview
-summary: "Organizar el c\xF3digo en funciones divide las tareas en piezas reutilizables,\
-  \ lo que hace que el c\xF3digo sea m\xE1s limpio y mantenible."
+summary: .
 title: "Organizando c\xF3digo en funciones"
 weight: 18
 ---

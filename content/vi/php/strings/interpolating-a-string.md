@@ -2,14 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:47.388337-07:00
-description: "N\u1ED9i suy chu\u1ED7i cho ph\xE9p b\u1EA1n ch\xE8n tr\u1EF1c ti\u1EBF\
-  p gi\xE1 tr\u1ECB c\u1EE7a bi\u1EBFn v\xE0o trong m\u1ED9t chu\u1ED7i. L\u1EADp\
-  \ tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3 \u0111\u1EC3 d\u1EC7t c\xE1c bi\u1EBF\
-  n v\xE0o v\u0103n b\u1EA3n, l\xE0m cho m\xE3 ngu\u1ED3n\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong PHP, b\u1EA1n c\xF3 th\u1EC3 n\u1ED9\
+  i suy chu\u1ED7i s\u1EED d\u1EE5ng d\u1EA5u ngo\u1EB7c k\xE9p ho\u1EB7c c\xFA ph\xE1\
+  p heredoc."
 lastmod: '2024-03-13T22:44:36.747550-06:00'
 model: gpt-4-0125-preview
-summary: "N\u1ED9i suy chu\u1ED7i cho ph\xE9p b\u1EA1n ch\xE8n tr\u1EF1c ti\u1EBF\
-  p gi\xE1 tr\u1ECB c\u1EE7a bi\u1EBFn v\xE0o trong m\u1ED9t chu\u1ED7i."
+summary: "Trong PHP, b\u1EA1n c\xF3 th\u1EC3 n\u1ED9i suy chu\u1ED7i s\u1EED d\u1EE5\
+  ng d\u1EA5u ngo\u1EB7c k\xE9p ho\u1EB7c c\xFA ph\xE1p heredoc."
 title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
 weight: 8
 ---

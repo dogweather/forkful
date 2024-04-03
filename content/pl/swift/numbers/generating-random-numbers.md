@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 20:35:26.681079-07:00
-description: "Generowanie losowych liczb w programowaniu dotyczy tworzenia warto\u015B\
-  ci numerycznych nieterministycznych lub nieprzewidywalnych. Programi\u015Bci u\u017C\
-  ywaj\u0105 liczb\u2026"
+description: "Jak to zrobi\u0107: Swift oferuje prosty spos\xF3b na generowanie losowych\
+  \ liczb za po\u015Brednictwem swojej biblioteki standardowej. Oto, jak to zrobi\u0107\
+  \ dla r\xF3\u017Cnych\u2026"
 lastmod: '2024-03-13T22:44:35.750785-06:00'
 model: gpt-4-0125-preview
-summary: "Generowanie losowych liczb w programowaniu dotyczy tworzenia warto\u015B\
-  ci numerycznych nieterministycznych lub nieprzewidywalnych."
+summary: "Swift oferuje prosty spos\xF3b na generowanie losowych liczb za po\u015B\
+  rednictwem swojej biblioteki standardowej."
 title: Generowanie liczb losowych
 weight: 12
 ---

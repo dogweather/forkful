@@ -2,15 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:04.715646-07:00
-description: "Chuy\u1EC3n m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF hoa trong l\u1EAD\
-  p tr\xECnh ngh\u0129a l\xE0 l\xE0m cho t\u1EA5t c\u1EA3 c\xE1c ch\u1EEF c\xE1i trong\
-  \ m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF hoa. \u0110\xE2y l\xE0 m\u1ED9t t\xE1c v\u1EE5\
-  \ ph\u1ED5 bi\u1EBFn \u0111\u1EC3 \u0111\u1ECBnh d\u1EA1ng\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong C#, b\u1EA1n c\xF3 th\u1EC3 chuy\u1EC3\
+  n m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF hoa s\u1EED d\u1EE5ng ph\u01B0\u01A1ng th\u1EE9\
+  c `ToUpper` tr\xEAn m\u1ED9t th\u1EC3 hi\u1EC7n c\u1EE7a chu\u1ED7i. D\u01B0\u1EDB\
+  i \u0111\xE2y l\xE0 c\xE1ch l\xE0m."
 lastmod: '2024-03-13T22:44:36.634519-06:00'
 model: gpt-4-0125-preview
-summary: "Chuy\u1EC3n m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF hoa trong l\u1EADp tr\xEC\
-  nh ngh\u0129a l\xE0 l\xE0m cho t\u1EA5t c\u1EA3 c\xE1c ch\u1EEF c\xE1i trong m\u1ED9\
-  t chu\u1ED7i th\xE0nh ch\u1EEF hoa."
+summary: "Trong C#, b\u1EA1n c\xF3 th\u1EC3 chuy\u1EC3n m\u1ED9t chu\u1ED7i th\xE0\
+  nh ch\u1EEF hoa s\u1EED d\u1EE5ng ph\u01B0\u01A1ng th\u1EE9c `ToUpper` tr\xEAn m\u1ED9\
+  t th\u1EC3 hi\u1EC7n c\u1EE7a chu\u1ED7i."
 title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
 weight: 2
 ---

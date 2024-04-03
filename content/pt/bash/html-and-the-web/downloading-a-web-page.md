@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:43:37.213336-07:00
-description: "Baixar uma p\xE1gina da web significa copiar o seu conte\xFAdo da internet\
-  \ para o seu computador. Programadores fazem isso para analisar dados, testar\u2026"
+description: "How to: Para baixar uma p\xE1gina da web com o Bash, podemos usar o\
+  \ `curl` ou `wget`. Aqui est\xE3o os exemplos."
 lastmod: '2024-03-13T22:44:46.751584-06:00'
 model: gpt-4-1106-preview
-summary: "Baixar uma p\xE1gina da web significa copiar o seu conte\xFAdo da internet\
-  \ para o seu computador."
+summary: "Para baixar uma p\xE1gina da web com o Bash, podemos usar o `curl` ou `wget`."
 title: "Baixando uma p\xE1gina da web"
 weight: 42
 ---

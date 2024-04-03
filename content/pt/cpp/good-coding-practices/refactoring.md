@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 01:17:06.673610-07:00
-description: "Refatora\xE7\xE3o \xE9 o processo de alterar a estrutura interna de\
-  \ um programa de computador sem alterar seu comportamento externo. Os programadores\
-  \ fazem isso\u2026"
+description: "Como fazer: Imagine que voc\xEA tem uma fun\xE7\xE3o que est\xE1 fazendo\
+  \ um pouco demais, como este m\xE9todo pesado que inicializa um objeto e tamb\xE9\
+  m realiza registros."
 lastmod: '2024-03-13T22:44:46.887762-06:00'
 model: gpt-4-0125-preview
-summary: "Refatora\xE7\xE3o \xE9 o processo de alterar a estrutura interna de um programa\
-  \ de computador sem alterar seu comportamento externo."
+summary: "Imagine que voc\xEA tem uma fun\xE7\xE3o que est\xE1 fazendo um pouco demais,\
+  \ como este m\xE9todo pesado que inicializa um objeto e tamb\xE9m realiza registros."
 title: "Refatora\xE7\xE3o"
 weight: 19
 ---

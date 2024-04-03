@@ -2,13 +2,13 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:58.877401-07:00
-description: "Assosiative arrayer, eller hash-maps, lar deg lagre data som n\xF8kkel-verdipar,\
-  \ noe som gj\xF8r det enklere \xE5 organisere og hente informasjon via n\xF8kkel.\
-  \ De er\u2026"
+description: "Hvordan: Fish st\xF8tter ikke assosiative arrayer naturlig som Bash\
+  \ 4+, men du kan oppn\xE5 lignende funksjonalitet ved \xE5 bruke en kombinasjon\
+  \ av lister og\u2026"
 lastmod: '2024-03-13T22:44:41.217929-06:00'
 model: gpt-4-0125-preview
-summary: "Assosiative arrayer, eller hash-maps, lar deg lagre data som n\xF8kkel-verdipar,\
-  \ noe som gj\xF8r det enklere \xE5 organisere og hente informasjon via n\xF8kkel."
+summary: "Fish st\xF8tter ikke assosiative arrayer naturlig som Bash 4+, men du kan\
+  \ oppn\xE5 lignende funksjonalitet ved \xE5 bruke en kombinasjon av lister og strengmanipulasjon."
 title: Bruke associative tabeller
 weight: 15
 ---

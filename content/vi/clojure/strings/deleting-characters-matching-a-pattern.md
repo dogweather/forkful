@@ -2,15 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:45.483290-07:00
-description: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EAB\
-  u ngh\u0129a l\xE0 lo\u1EA1i b\u1ECF c\xE1c chu\u1ED7i c\u1EE5 th\u1EC3 kh\u1ECF\
-  i m\u1ED9t chu\u1ED7i k\xFD t\u1EF1. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1\
-  u n\xE0y \u0111\u1EC3 l\xE0m s\u1EA1ch d\u1EEF li\u1EC7u, th\u1EF1c thi c\xE1c\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EC3 x\xF3a c\xE1c k\xFD t\u1EF1 s\u1EED\
+  \ d\u1EE5ng m\u1ED9t m\u1EABu trong Clojure, b\u1EA1n s\u1EED d\u1EE5ng bi\u1EC3\
+  u th\u1EE9c ch\xEDnh quy v\u1EDBi c\xE1c h\xE0m `re-seq`, `re-find`, ho\u1EB7c `re-matches`\
+  \ k\u1EBFt h\u1EE3p\u2026"
 lastmod: '2024-03-13T22:44:36.131698-06:00'
 model: gpt-4-0125-preview
-summary: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu ngh\u0129\
-  a l\xE0 lo\u1EA1i b\u1ECF c\xE1c chu\u1ED7i c\u1EE5 th\u1EC3 kh\u1ECFi m\u1ED9t\
-  \ chu\u1ED7i k\xFD t\u1EF1."
+summary: "\u0110\u1EC3 x\xF3a c\xE1c k\xFD t\u1EF1 s\u1EED d\u1EE5ng m\u1ED9t m\u1EAB\
+  u trong Clojure, b\u1EA1n s\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy v\u1EDB\
+  i c\xE1c h\xE0m `re-seq`, `re-find`, ho\u1EB7c `re-matches` k\u1EBFt h\u1EE3p v\u1EDB\
+  i `clojure.string/replace`."
 title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
 weight: 5
 ---

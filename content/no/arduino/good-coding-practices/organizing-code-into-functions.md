@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 01:09:02.745339-07:00
-description: "\xC5 organisere koden i funksjoner betyr \xE5 dele opp koden din i gjenbrukbare\
-  \ biter, hvor hver bit utf\xF8rer en spesifikk jobb. Programmerere gj\xF8r dette\
-  \ for \xE5\u2026"
+description: "Hvordan: Tenk at du vil f\xE5 en LED til \xE5 blinke. Uten funksjoner,\
+  \ er `loop`-en din en rotete klump. Med funksjoner, er den ryddig. Her er hvordan."
 lastmod: '2024-03-13T22:44:41.063232-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 organisere koden i funksjoner betyr \xE5 dele opp koden din i gjenbrukbare\
-  \ biter, hvor hver bit utf\xF8rer en spesifikk jobb."
+summary: "Tenk at du vil f\xE5 en LED til \xE5 blinke."
 title: Organisering av kode i funksjoner
 weight: 18
 ---

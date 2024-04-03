@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 00:52:33.841649-07:00
-description: "Obs\u0142uga b\u0142\u0119d\xF3w pozwala skryptowi radzi\u0107 sobie\
-  \ z niespodziewanymi sytuacjami w elegancki spos\xF3b. Robimy to, aby zarz\u0105\
-  dza\u0107 b\u0142\u0119dami bez siwienia w\u0142os\xF3w\u2026"
+description: "Jak to zrobi\u0107: Aby przechwytywa\u0107 b\u0142\u0119dy w Fish, u\u017C\
+  yj komendy `status` i warunk\xF3w. Powiedzmy, \u017Ce `ping` nie powiedzie si\u0119\
+  ; oto jak to wykry\u0107."
 lastmod: '2024-03-13T22:44:35.849064-06:00'
 model: gpt-4-1106-preview
-summary: "Obs\u0142uga b\u0142\u0119d\xF3w pozwala skryptowi radzi\u0107 sobie z niespodziewanymi\
-  \ sytuacjami w elegancki spos\xF3b."
+summary: "Aby przechwytywa\u0107 b\u0142\u0119dy w Fish, u\u017Cyj komendy `status`\
+  \ i warunk\xF3w."
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---

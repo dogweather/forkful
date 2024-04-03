@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:23.333156-07:00
-description: "Een tekstbestand schrijven betekent gegevens zoals strings opslaan in\
-  \ een bestand op je schijf. Programmeurs doen dit voor logging, het opslaan van\u2026"
+description: 'Hoe: Je kunt een tekstbestand in C# schrijven met `File.WriteAllText`,
+  `File.AppendAllText` of een `StreamWriter`.'
 lastmod: '2024-03-13T22:44:50.828561-06:00'
 model: gpt-4-0125-preview
-summary: Een tekstbestand schrijven betekent gegevens zoals strings opslaan in een
-  bestand op je schijf.
+summary: Je kunt een tekstbestand in C# schrijven met `File.WriteAllText`, `File.AppendAllText`
+  of een `StreamWriter`.
 title: Een tekstbestand schrijven
 weight: 24
 ---

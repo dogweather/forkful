@@ -1,13 +1,10 @@
 ---
 date: 2024-01-26 04:25:27.563379-07:00
-description: "TOML, abr\xE9viation de Tom's Obvious, Minimal Language, est un format\
-  \ de s\xE9rialisation de donn\xE9es comparable \xE0 JSON ou YAML, mais il vise la\
-  \ simplicit\xE9 et\u2026"
+description: 'Comment faire : Avant de commencer, installez le paquet `toml` avec
+  `pip install toml`. Analysons un fichier TOML .'
 lastmod: '2024-03-13T22:44:57.261796-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, abr\xE9viation de Tom's Obvious, Minimal Language, est un format de\
-  \ s\xE9rialisation de donn\xE9es comparable \xE0 JSON ou YAML, mais il vise la simplicit\xE9\
-  \ et la lisibilit\xE9."
+summary: Avant de commencer, installez le paquet `toml` avec `pip install toml`.
 title: Travailler avec TOML
 weight: 39
 ---

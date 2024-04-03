@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:24.992621-07:00
-description: "Debug-tulosteen tulostaminen tarkoittaa v\xE4liaikaisten, informatiivisten\
-  \ lokiviestien tuottamista, jotka voivat auttaa ohjelmoijia ymm\xE4rt\xE4m\xE4\xE4\
-  n ohjelman\u2026"
+description: "Kuinka: C:ss\xE4 yleisin tapa tulostaa debug-tuloste on k\xE4ytt\xE4\
+  m\xE4ll\xE4 `printf`-funktiota standardin I/O-kirjastosta. `printf`-funktio mahdollistaa\
+  \ muotoillun\u2026"
 lastmod: '2024-03-13T22:44:57.043249-06:00'
 model: gpt-4-0125-preview
-summary: "Debug-tulosteen tulostaminen tarkoittaa v\xE4liaikaisten, informatiivisten\
-  \ lokiviestien tuottamista, jotka voivat auttaa ohjelmoijia ymm\xE4rt\xE4m\xE4\xE4\
-  n ohjelman kulkua ja tilaa sen suorituksen aikana."
+summary: "C:ss\xE4 yleisin tapa tulostaa debug-tuloste on k\xE4ytt\xE4m\xE4ll\xE4\
+  \ `printf`-funktiota standardin I/O-kirjastosta."
 title: "Tulostetaan virheenj\xE4ljitystietoja"
 weight: 33
 ---

@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:02.291102-07:00
-description: "T\u1EA3i xu\u1ED1ng m\u1ED9t trang web c\xF3 ngh\u0129a l\xE0 n\u1EAF\
-  m b\u1EAFt n\u1ED9i dung tr\u1EF1c tuy\u1EBFn \u0111\u1EC3 b\u1EA1n c\xF3 th\u1EC3\
-  \ s\u1EED d\u1EE5ng ho\u1EB7c ph\xE2n t\xEDch n\xF3 ngo\u1EA1i tuy\u1EBFn. L\u1EAD\
-  p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\u1EC3\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: PHP l\xE0m cho vi\u1EC7c t\u1EA3i trang\
+  \ web tr\u1EDF n\xEAn kh\xE1 \u0111\u01A1n gi\u1EA3n. D\u01B0\u1EDBi \u0111\xE2\
+  y l\xE0 m\u1ED9t v\xED d\u1EE5 \u0111\u01A1n gi\u1EA3n s\u1EED d\u1EE5ng `file_get_contents()`."
 lastmod: '2024-03-13T22:44:36.764713-06:00'
 model: gpt-4-0125-preview
-summary: "T\u1EA3i xu\u1ED1ng m\u1ED9t trang web c\xF3 ngh\u0129a l\xE0 n\u1EAFm b\u1EAF\
-  t n\u1ED9i dung tr\u1EF1c tuy\u1EBFn \u0111\u1EC3 b\u1EA1n c\xF3 th\u1EC3 s\u1EED\
-  \ d\u1EE5ng ho\u1EB7c ph\xE2n t\xEDch n\xF3 ngo\u1EA1i tuy\u1EBFn."
+summary: "PHP l\xE0m cho vi\u1EC7c t\u1EA3i trang web tr\u1EDF n\xEAn kh\xE1 \u0111\
+  \u01A1n gi\u1EA3n."
 title: "T\u1EA3i trang web"
 weight: 42
 ---

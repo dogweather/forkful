@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:11:22.119219-07:00
-description: "REPL significa Loop de Ler-Avaliar-Imprimir, um ambiente de programa\xE7\
-  \xE3o computacional simples e interativo. Programadores o utilizam para escrever\
-  \ e\u2026"
+description: "Como fazer: No Bash, seu terminal \xE9 essencialmente um REPL. Voc\xEA\
+  \ digita um comando; ele l\xEA, avalia, imprime o resultado e volta ao ponto de\
+  \ espera pelo\u2026"
 lastmod: '2024-03-13T22:44:46.754327-06:00'
 model: gpt-4-0125-preview
-summary: "REPL significa Loop de Ler-Avaliar-Imprimir, um ambiente de programa\xE7\
-  \xE3o computacional simples e interativo."
+summary: "No Bash, seu terminal \xE9 essencialmente um REPL."
 title: Usando um shell interativo (REPL)
 weight: 34
 ---

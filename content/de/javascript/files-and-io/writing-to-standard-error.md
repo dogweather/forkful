@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:31.971778-07:00
-description: "Das Schreiben auf den Standardfehler (stderr) in JavaScript bedeutet,\
-  \ Fehlermeldungen oder jegliche kritische Informationen an einen spezifischen,\u2026"
+description: "Wie: In Node.js kann das Schreiben auf stderr mit der Methode `console.error()`\
+  \ oder durch direktes Schreiben auf `process.stderr` erreicht werden. Hier\u2026"
 lastmod: '2024-03-13T22:44:54.282832-06:00'
 model: gpt-4-0125-preview
-summary: "Das Schreiben auf den Standardfehler (stderr) in JavaScript bedeutet, Fehlermeldungen\
-  \ oder jegliche kritische Informationen an einen spezifischen, separaten Stream\
-  \ zu leiten, was besonders in Unix-\xE4hnlichen Umgebungen f\xFCr Protokollierungs-\
-  \ und Debuggingzwecke n\xFCtzlich ist."
+summary: In Node.js kann das Schreiben auf stderr mit der Methode `console.error()`
+  oder durch direktes Schreiben auf `process.stderr` erreicht werden.
 title: Schreiben auf Standardfehler
 weight: 25
 ---

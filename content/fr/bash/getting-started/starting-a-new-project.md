@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 18:02:43.386486-07:00
-description: "Commencer un nouveau projet, c'est comme planter une graine digitale\
-  \ \u2013 on ne sait jamais quel arbre \xE7a va devenir. Les programmeurs lancent\
-  \ des projets\u2026"
+description: 'Comment faire : .'
 lastmod: '2024-03-13T22:44:57.995687-06:00'
 model: gpt-4-1106-preview
-summary: "Commencer un nouveau projet, c'est comme planter une graine digitale \u2013\
-  \ on ne sait jamais quel arbre \xE7a va devenir."
+summary: .
 title: Lancement d'un nouveau projet
 weight: 1
 ---

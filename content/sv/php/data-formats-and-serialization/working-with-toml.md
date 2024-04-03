@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:24:34.205829-07:00
-description: "TOML, kort f\xF6r Toms Uppenbara, Minimala Spr\xE5k, \xE4r ett dataformat\
-  \ liknande JSON eller YAML, men l\xE4ttare att l\xE4sa f\xF6r m\xE4nniskor. Programmerare\
-  \ anv\xE4nder det\u2026"
+description: "Hur man g\xF6r: F\xF6rst, se till att du har ett TOML-parserbibliotek\
+  \ installerat, som `yosymfony/toml`. L\xE5t oss tolka en TOML-fil."
 lastmod: '2024-03-13T22:44:38.019805-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, kort f\xF6r Toms Uppenbara, Minimala Spr\xE5k, \xE4r ett dataformat\
-  \ liknande JSON eller YAML, men l\xE4ttare att l\xE4sa f\xF6r m\xE4nniskor."
+summary: "F\xF6rst, se till att du har ett TOML-parserbibliotek installerat, som `yosymfony/toml`."
 title: Att arbeta med TOML
 weight: 39
 ---

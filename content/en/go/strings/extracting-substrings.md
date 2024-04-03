@@ -1,11 +1,10 @@
 ---
 date: 2024-02-03 17:50:08.134260-07:00
-description: "Extracting substrings involves retrieving specific portions of a string\
-  \ based on their positions. Programmers frequently perform this operation to process\u2026"
+description: "How to: In Go, the `string` type is a read-only slice of bytes. To extract\
+  \ substrings, one primarily makes use of the `slice` syntax, alongside the built-\u2026"
 lastmod: '2024-03-13T22:44:59.621295-06:00'
 model: gpt-4-0125-preview
-summary: Extracting substrings involves retrieving specific portions of a string based
-  on their positions.
+summary: In Go, the `string` type is a read-only slice of bytes.
 title: Extracting substrings
 weight: 6
 ---

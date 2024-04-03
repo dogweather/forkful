@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:40.393493-07:00
-description: "Een tekenreeks kapitaliseren in programmeren betekent alle letters in\
-  \ een tekenreeks in hoofdletters omzetten. Het is een vaak voorkomende taak voor\
-  \ het\u2026"
+description: 'Hoe: In C# kan je een tekenreeks kapitaliseren met de `ToUpper` methode
+  op een tekenreeksinstantie. Zo ziet het eruit.'
 lastmod: '2024-03-13T22:44:50.793080-06:00'
 model: gpt-4-0125-preview
-summary: Een tekenreeks kapitaliseren in programmeren betekent alle letters in een
-  tekenreeks in hoofdletters omzetten.
+summary: In C# kan je een tekenreeks kapitaliseren met de `ToUpper` methode op een
+  tekenreeksinstantie.
 title: Een string met hoofdletters maken
 weight: 2
 ---

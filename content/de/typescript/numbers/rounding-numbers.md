@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 03:46:54.448527-07:00
-description: "Das Runden von Zahlen ist das K\xFCrzen einer Zahl auf eine spezifische\
-  \ Genauigkeit. Programmierer tun dies, um die numerische Ausgabe f\xFCr Lesbarkeit,\u2026"
+description: "Wie: Das Runden in TypeScript kann mit mehreren Methoden durchgef\xFC\
+  hrt werden. Hier ist eine schnelle Durchf\xFChrung."
 lastmod: '2024-03-13T22:44:53.626426-06:00'
 model: gpt-4-0125-preview
-summary: "Das Runden von Zahlen ist das K\xFCrzen einer Zahl auf eine spezifische\
-  \ Genauigkeit."
+summary: "Das Runden in TypeScript kann mit mehreren Methoden durchgef\xFChrt werden."
 title: Zahlen runden
 weight: 13
 ---

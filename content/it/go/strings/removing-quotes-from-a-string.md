@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:12.667822-07:00
-description: "Rimuovere le virgolette da una stringa in Go significa eliminare le\
-  \ virgolette iniziali e finali (`\"` o `'`) da una stringa data. I programmatori\
-  \ spesso\u2026"
+description: "Come fare: Go offre diversi approcci per rimuovere le virgolette da\
+  \ una stringa, ma uno dei metodi pi\xF9 diretti \xE8 utilizzare le funzioni `Trim`\
+  \ e\u2026"
 lastmod: '2024-03-13T22:44:42.894727-06:00'
 model: gpt-4-0125-preview
-summary: Rimuovere le virgolette da una stringa in Go significa eliminare le virgolette
-  iniziali e finali (`"` o `'`) da una stringa data.
+summary: "Go offre diversi approcci per rimuovere le virgolette da una stringa, ma\
+  \ uno dei metodi pi\xF9 diretti \xE8 utilizzare le funzioni `Trim` e `TrimFunc`\
+  \ fornite dal pacchetto `strings`."
 title: Rimuovere le virgolette da una stringa
 weight: 9
 ---

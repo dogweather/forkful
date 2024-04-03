@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:55:26.544284-07:00
-description: "Die Lekt\xFCre von Kommandozeilenargumenten erm\xF6glicht es, dass ein\
-  \ C#-Programm beim Start Zusatzinformationen erh\xE4lt. So passen Programmierer\
-  \ das Verhalten\u2026"
+description: 'Los geht''s: .'
 lastmod: '2024-03-13T22:44:53.903813-06:00'
 model: gpt-4-1106-preview
-summary: "Die Lekt\xFCre von Kommandozeilenargumenten erm\xF6glicht es, dass ein C#-Programm\
-  \ beim Start Zusatzinformationen erh\xE4lt."
+summary: .
 title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---

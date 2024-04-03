@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 03:39:47.703538-07:00
-description: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa kaikkien lainausmerkkien\u2014\
-  yhden (' '), kaksinkertaisen (\" \") tai molempien\u2014poistamista tekstidatasta.\u2026"
+description: "Miten: Kiskotaanpa nuo \xE4rsytt\xE4v\xE4t lainausmerkit pois tekstist\xE4\
+  mme. K\xE4yt\xE4mme `replace()`-metodia nopeisiin korjauksiin ja regexi\xE4 koviin\
+  \ p\xE4hkin\xF6ihin."
 lastmod: '2024-03-13T22:44:56.432735-06:00'
 model: gpt-4-0125-preview
-summary: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa kaikkien lainausmerkkien\u2014\
-  yhden (' '), kaksinkertaisen (\" \") tai molempien\u2014poistamista tekstidatasta."
+summary: "Kiskotaanpa nuo \xE4rsytt\xE4v\xE4t lainausmerkit pois tekstist\xE4mme."
 title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---

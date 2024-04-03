@@ -2,14 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:26.546035-07:00
-description: "Een HTTP-verzoek versturen met basale authenticatie houdt in dat een\
-  \ gebruikersnaam en wachtwoord aan een verzoek worden toegevoegd om de identiteit\
-  \ van\u2026"
+description: "Hoe: In Dart kun je het `http` pakket gebruiken om HTTP-verzoeken met\
+  \ basale authenticatie te verzenden. Voeg eerst het `http` pakket toe aan je\u2026"
 lastmod: '2024-03-13T22:44:50.504528-06:00'
 model: gpt-4-0125-preview
-summary: "Een HTTP-verzoek versturen met basale authenticatie houdt in dat een gebruikersnaam\
-  \ en wachtwoord aan een verzoek worden toegevoegd om de identiteit van de gebruiker\
-  \ te verifi\xEBren."
+summary: In Dart kun je het `http` pakket gebruiken om HTTP-verzoeken met basale authenticatie
+  te verzenden.
 title: Een HTTP-verzoek sturen met basisauthenticatie
 weight: 45
 ---

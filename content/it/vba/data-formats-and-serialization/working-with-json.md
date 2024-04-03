@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:43.521867-07:00
-description: "JSON (JavaScript Object Notation) \xE8 un formato di interscambio dati\
-  \ leggero che \xE8 facile da leggere e scrivere per gli esseri umani e per le macchine\
-  \ da\u2026"
+description: "Come fare: VBA non supporta nativamente l'analisi o la generazione di\
+  \ JSON, quindi useremo un linguaggio di scripting come JScript (tramite l'oggetto\u2026"
 lastmod: '2024-03-13T22:44:43.287518-06:00'
 model: gpt-4-0125-preview
-summary: "JSON (JavaScript Object Notation) \xE8 un formato di interscambio dati leggero\
-  \ che \xE8 facile da leggere e scrivere per gli esseri umani e per le macchine da\
-  \ analizzare e generare."
+summary: VBA non supporta nativamente l'analisi o la generazione di JSON, quindi useremo
+  un linguaggio di scripting come JScript (tramite l'oggetto ScriptControl) per analizzare
+  le stringhe JSON e costruire oggetti JSON.
 title: Lavorare con JSON
 weight: 38
 ---

@@ -2,14 +2,14 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:28.535190-07:00
-description: "YAML, sigla para YAML Ain't Markup Language (YAML N\xE3o \xE9 Uma Linguagem\
-  \ de Marca\xE7\xE3o), \xE9 um formato de serializa\xE7\xE3o de dados leg\xEDvel\
-  \ por humanos.\u2026"
+description: "Como fazer: Em Dart, trabalhar com YAML geralmente envolve o uso de\
+  \ uma biblioteca de terceiros, j\xE1 que a linguagem n\xE3o inclui recursos de an\xE1\
+  lise de YAML\u2026"
 lastmod: '2024-03-13T22:44:46.303551-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, sigla para YAML Ain't Markup Language (YAML N\xE3o \xE9 Uma Linguagem\
-  \ de Marca\xE7\xE3o), \xE9 um formato de serializa\xE7\xE3o de dados leg\xEDvel\
-  \ por humanos."
+summary: "Em Dart, trabalhar com YAML geralmente envolve o uso de uma biblioteca de\
+  \ terceiros, j\xE1 que a linguagem n\xE3o inclui recursos de an\xE1lise de YAML\
+  \ integrados."
 title: Trabalhando com YAML
 weight: 41
 ---

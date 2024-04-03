@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:30.795295-07:00
-description: "En interaktiv shell, eller Read-Eval-Print Loop (REPL), lar deg eksperimentere\
-  \ med Go-kode i sanntid, kj\xF8re kommandoer og f\xE5 umiddelbar tilbakemelding.\u2026"
+description: "Hvordan: Selv om Go ikke inkluderer en innebygd REPL, har samfunnet\
+  \ skapt verkt\xF8y som `gore` for \xE5 fylle dette gapet. F\xF8rst, installer `gore`\
+  \ ved \xE5 kj\xF8re."
 lastmod: '2024-03-13T22:44:40.268656-06:00'
 model: gpt-4-0125-preview
-summary: "En interaktiv shell, eller Read-Eval-Print Loop (REPL), lar deg eksperimentere\
-  \ med Go-kode i sanntid, kj\xF8re kommandoer og f\xE5 umiddelbar tilbakemelding."
+summary: "Selv om Go ikke inkluderer en innebygd REPL, har samfunnet skapt verkt\xF8\
+  y som `gore` for \xE5 fylle dette gapet."
 title: Bruk av interaktiv shell (REPL)
 weight: 34
 ---

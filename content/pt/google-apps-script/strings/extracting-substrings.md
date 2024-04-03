@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:56.422363-07:00
-description: "A extra\xE7\xE3o de substrings envolve pegar uma por\xE7\xE3o de uma\
-  \ string - essencialmente, criar uma nova string a partir de uma parte de uma existente.\u2026"
+description: "Como fazer: No Google Apps Script, que \xE9 baseado no moderno JavaScript,\
+  \ a extra\xE7\xE3o de substring pode ser alcan\xE7ada atrav\xE9s de v\xE1rios m\xE9\
+  todos, incluindo\u2026"
 lastmod: '2024-03-13T22:44:46.095233-06:00'
 model: gpt-4-0125-preview
-summary: "A extra\xE7\xE3o de substrings envolve pegar uma por\xE7\xE3o de uma string\
-  \ - essencialmente, criar uma nova string a partir de uma parte de uma existente."
+summary: "No Google Apps Script, que \xE9 baseado no moderno JavaScript, a extra\xE7\
+  \xE3o de substring pode ser alcan\xE7ada atrav\xE9s de v\xE1rios m\xE9todos, incluindo\
+  \ `substring()`, `substr()` e `slice()`."
 title: Extraindo substrings
 weight: 6
 ---

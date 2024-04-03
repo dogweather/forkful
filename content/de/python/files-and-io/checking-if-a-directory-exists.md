@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:09.770581-07:00
-description: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Python existiert, bedeutet,\
-  \ die Anwesenheit eines Ordners im Dateisystem zu verifizieren, bevor Operationen\
-  \ wie das\u2026"
+description: "Wie geht das: Python bietet native M\xF6glichkeiten, um die Existenz\
+  \ eines Verzeichnisses mit den Modulen `os` und `pathlib` zu \xFCberpr\xFCfen. Hier\
+  \ sind\u2026"
 lastmod: '2024-03-13T22:44:53.393190-06:00'
 model: gpt-4-0125-preview
-summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Python existiert, bedeutet,\
-  \ die Anwesenheit eines Ordners im Dateisystem zu verifizieren, bevor Operationen\
-  \ wie das Lesen oder Schreiben von Dateien durchgef\xFChrt werden."
+summary: "Python bietet native M\xF6glichkeiten, um die Existenz eines Verzeichnisses\
+  \ mit den Modulen `os` und `pathlib` zu \xFCberpr\xFCfen."
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---

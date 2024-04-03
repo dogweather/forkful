@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:11.817112-07:00
-description: "Commandoregelargumenten lezen betekent het oppakken van de extra stukjes\
-  \ die je na de naam van je script in de console typt. Programmeurs doen dit om het\u2026"
+description: 'Hoe: Hier is de kern van het grijpen van die argumenten in Lua.'
 lastmod: '2024-03-13T22:44:50.952703-06:00'
 model: gpt-4-0125-preview
-summary: Commandoregelargumenten lezen betekent het oppakken van de extra stukjes
-  die je na de naam van je script in de console typt.
+summary: Hier is de kern van het grijpen van die argumenten in Lua.
 title: Commandoregelargumenten lezen
 weight: 23
 ---

@@ -2,17 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:43.770400-07:00
-description: "Vi\u1EC7c t\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7\
-  c qu\xE1 kh\u1EE9 bao g\u1ED3m vi\u1EC7c thao t\xE1c v\u1EDBi ng\xE0y \u0111\u1EC3\
-  \ t\xECm ra ch\xFAng s\u1EBD tr\u1EDF n\xEAn nh\u01B0 th\u1EBF n\xE0o sau m\u1ED9\
-  t kho\u1EA3ng th\u1EDDi gian nh\u1EA5t \u0111\u1ECBnh\u2026"
+description: "C\xE1ch l\xE0m: Trong Clojure, b\u1EA1n ch\u1EE7 y\u1EBFu s\u1EED d\u1EE5\
+  ng th\u01B0 vi\u1EC7n `clj-time` cho c\xE1c thao t\xE1c v\u1EDBi ng\xE0y. D\u01B0\
+  \u1EDBi \u0111\xE2y l\xE0 m\u1ED9t v\xED d\u1EE5 nhanh."
 lastmod: '2024-03-13T22:44:36.170649-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c t\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1\
-  \ kh\u1EE9 bao g\u1ED3m vi\u1EC7c thao t\xE1c v\u1EDBi ng\xE0y \u0111\u1EC3 t\xEC\
-  m ra ch\xFAng s\u1EBD tr\u1EDF n\xEAn nh\u01B0 th\u1EBF n\xE0o sau m\u1ED9t kho\u1EA3\
-  ng th\u1EDDi gian nh\u1EA5t \u0111\u1ECBnh ho\u1EB7c ch\xFAng \u0111\xE3 l\xE0 nh\u01B0\
-  \ th\u1EBF n\xE0o."
+summary: "Trong Clojure, b\u1EA1n ch\u1EE7 y\u1EBFu s\u1EED d\u1EE5ng th\u01B0 vi\u1EC7\
+  n `clj-time` cho c\xE1c thao t\xE1c v\u1EDBi ng\xE0y."
 title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1EE9"
 weight: 26
 ---

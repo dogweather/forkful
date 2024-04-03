@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:31.003091-07:00
-description: "Att arbeta med CSV (Comma Separated Values) involverar tolkning och\
-  \ generering av filer som lagrar tabul\xE4r data i ett enkelt, klartextformat. Detta\u2026"
+description: "Hur man g\xF6r: Elm har inte inbyggt st\xF6d f\xF6r tolkning eller generering\
+  \ av CSV; ist\xE4llet anv\xE4nds ofta tredjepartspaket s\xE5som `panosoft/elm-csv`.\
+  \ Nedanst\xE5ende\u2026"
 lastmod: '2024-03-13T22:44:37.851959-06:00'
 model: gpt-4-0125-preview
-summary: "Att arbeta med CSV (Comma Separated Values) involverar tolkning och generering\
-  \ av filer som lagrar tabul\xE4r data i ett enkelt, klartextformat."
+summary: "Elm har inte inbyggt st\xF6d f\xF6r tolkning eller generering av CSV; ist\xE4\
+  llet anv\xE4nds ofta tredjepartspaket s\xE5som `panosoft/elm-csv`."
 title: Arbeta med CSV
 weight: 37
 ---

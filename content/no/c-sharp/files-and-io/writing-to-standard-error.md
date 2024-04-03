@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:32:45.490488-07:00
-description: "\xC5 skrive til standardfeil (stderr) i C# inneb\xE6rer \xE5 dirigere\
-  \ feilmeldinger og diagnostikk separat fra vanlig utdata (stdout) for \xE5 hjelpe\
-  \ brukere og\u2026"
+description: "Hvordan: I C# kan skriving til standardfeil oppn\xE5s ved \xE5 bruke\
+  \ `Console.Error`-str\xF8mmen. Denne str\xF8mmen brukes spesifikt for feilmeldinger\
+  \ og diagnostikk.\u2026"
 lastmod: '2024-03-13T22:44:40.814143-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 skrive til standardfeil (stderr) i C# inneb\xE6rer \xE5 dirigere feilmeldinger\
-  \ og diagnostikk separat fra vanlig utdata (stdout) for \xE5 hjelpe brukere og utviklere\
-  \ til \xE5 skille mellom normalt programutdata og feilnotifikasjoner."
+summary: "I C# kan skriving til standardfeil oppn\xE5s ved \xE5 bruke `Console.Error`-str\xF8\
+  mmen."
 title: Skriving til standardfeil
 weight: 25
 ---

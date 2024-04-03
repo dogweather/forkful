@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:00.808032-07:00
-description: "Refactoring is het proces van het herstructureren van bestaande code\
-  \ zonder het externe gedrag ervan te veranderen, gericht op het verbeteren van niet-\u2026"
+description: "Hoe te: Laten we een veelvoorkomend Elixir-patroon opruimen. We gaan\
+  \ een functie `calculate_stats` refactoren die meer doet dan het zou moeten door\
+  \ het in\u2026"
 lastmod: '2024-03-13T22:44:50.470524-06:00'
 model: gpt-4-0125-preview
-summary: Refactoring is het proces van het herstructureren van bestaande code zonder
-  het externe gedrag ervan te veranderen, gericht op het verbeteren van niet-functionele
-  attributen zoals leesbaarheid en onderhoudbaarheid.
+summary: Laten we een veelvoorkomend Elixir-patroon opruimen.
 title: Refactoring
 weight: 19
 ---

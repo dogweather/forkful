@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 18:03:16.470353-07:00
-description: "\xC5 starte et nytt prosjekt er \xE5 sette opp alt du trenger for \xE5\
-  \ bygge noe nytt fra bunnen av. Programmerere gj\xF8r det for \xE5 bringe ideer\
-  \ til liv, l\xF8se\u2026"
+description: "Slik gj\xF8r du: ."
 lastmod: '2024-03-13T22:44:41.227557-06:00'
 model: gpt-4-1106-preview
-summary: "\xC5 starte et nytt prosjekt er \xE5 sette opp alt du trenger for \xE5 bygge\
-  \ noe nytt fra bunnen av."
+summary: .
 title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---

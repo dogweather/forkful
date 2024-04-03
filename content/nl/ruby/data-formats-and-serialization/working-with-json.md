@@ -2,11 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:30.075577-07:00
-description: "JSON, of JavaScript Object Notation, is een lichtgewicht gegevensuitwisselingsformaat.\
-  \ Programmeurs gebruiken JSON om gegevens op te slaan en uit te\u2026"
+description: "Hoe doe je dat: In Ruby kun je met JSON werken met behulp van de ingebouwde\
+  \ 'json'-bibliotheek. Om het te gebruiken, moet je gewoon 'json' bovenaan je\u2026"
 lastmod: '2024-03-13T22:44:51.387449-06:00'
 model: gpt-4-0125-preview
-summary: JSON, of JavaScript Object Notation, is een lichtgewicht gegevensuitwisselingsformaat.
+summary: In Ruby kun je met JSON werken met behulp van de ingebouwde 'json'-bibliotheek.
 title: Werken met JSON
 weight: 38
 ---

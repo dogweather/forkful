@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:26.970658-07:00
-description: "Stringinterpolatie stelt u in staat om variabelen direct in een string\
-  \ te injecteren. Programmeurs gebruiken het om variabelen in tekst te verweven,\u2026"
+description: 'Hoe: In PHP kunt u strings interpoleren met behulp van dubbele aanhalingstekens
+  of heredoc-syntax.'
 lastmod: '2024-03-13T22:44:50.880572-06:00'
 model: gpt-4-0125-preview
-summary: Stringinterpolatie stelt u in staat om variabelen direct in een string te
-  injecteren.
+summary: In PHP kunt u strings interpoleren met behulp van dubbele aanhalingstekens
+  of heredoc-syntax.
 title: Een string interpoleren
 weight: 8
 ---

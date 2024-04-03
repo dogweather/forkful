@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:44:55.669420-07:00
-description: "Descargar una p\xE1gina web significa traer el contenido de esa p\xE1\
-  gina a tu dispositivo local o servidor. Los programadores lo hacen para an\xE1lisis\
-  \ de datos,\u2026"
+description: "C\xF3mo Hacerlo: Aqu\xED te dejo un ejemplo cortito y al grano usando\
+  \ `node-fetch`, una librer\xEDa muy usada para hacer peticiones HTTP que imita la\
+  \ API `fetch`\u2026"
 lastmod: '2024-03-13T22:44:58.799247-06:00'
 model: gpt-4-1106-preview
-summary: "Descargar una p\xE1gina web significa traer el contenido de esa p\xE1gina\
-  \ a tu dispositivo local o servidor."
+summary: "Aqu\xED te dejo un ejemplo cortito y al grano usando `node-fetch`, una librer\xED\
+  a muy usada para hacer peticiones HTTP que imita la API `fetch` del navegador."
 title: "Descargando una p\xE1gina web"
 weight: 42
 ---

@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:53.176244-07:00
-description: "Een tekstbestand lezen in programmeren stelt je code in staat gegevens\
-  \ te absorberen, zoals het gieten van koffie in je hersenen in de ochtend. We doen\u2026"
+description: 'Hoe: Hier is hoe je Haskell tekstbestanden laat lezen zonder een druppel
+  zweet te vergieten. Open je favoriete editor, en laten we wat code schrijven.'
 lastmod: '2024-03-13T22:44:50.869900-06:00'
 model: gpt-4-0125-preview
-summary: Een tekstbestand lezen in programmeren stelt je code in staat gegevens te
-  absorberen, zoals het gieten van koffie in je hersenen in de ochtend.
+summary: Hier is hoe je Haskell tekstbestanden laat lezen zonder een druppel zweet
+  te vergieten.
 title: Een tekstbestand lezen
 weight: 22
 ---

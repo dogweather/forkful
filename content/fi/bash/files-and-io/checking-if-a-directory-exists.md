@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:55.293122-07:00
-description: "Bash-ohjelmoinnissa tarkistus, onko hakemisto olemassa, on olennainen\
-  \ valvontamekanismi, jota k\xE4ytet\xE4\xE4n varmistamaan hakemiston olemassaolo\
-  \ ennen\u2026"
+description: "Kuinka: Perustasolla Bash mahdollistaa hakemiston olemassaolon tarkistamisen\
+  \ k\xE4ytt\xE4m\xE4ll\xE4 ehtolauseita ja `-d` operaattoria. Alla on suoraviivainen\u2026"
 lastmod: '2024-03-13T22:44:56.753414-06:00'
 model: gpt-4-0125-preview
-summary: "Bash-ohjelmoinnissa tarkistus, onko hakemisto olemassa, on olennainen valvontamekanismi,\
-  \ jota k\xE4ytet\xE4\xE4n varmistamaan hakemiston olemassaolo ennen tiedosto-operaatioiden\
-  \ suorittamista."
+summary: "Perustasolla Bash mahdollistaa hakemiston olemassaolon tarkistamisen k\xE4\
+  ytt\xE4m\xE4ll\xE4 ehtolauseita ja `-d` operaattoria."
 title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:56.764311-07:00
-description: "YAML, eine zur Datenserialisierung entworfene Sprache, die benutzerfreundlich\
-  \ sein soll, wird oft f\xFCr Konfigurationsdateien, Interprozesskommunikation und\u2026"
+description: "Wie geht das: Die Arbeit mit YAML in TypeScript beinhaltet typischerweise\
+  \ das Parsen von YAML-Inhalten in JavaScript-Objekte und m\xF6glicherweise das\u2026"
 lastmod: '2024-03-13T22:44:53.650618-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, eine zur Datenserialisierung entworfene Sprache, die benutzerfreundlich\
-  \ sein soll, wird oft f\xFCr Konfigurationsdateien, Interprozesskommunikation und\
-  \ Datenspeicherung verwendet."
+summary: "Die Arbeit mit YAML in TypeScript beinhaltet typischerweise das Parsen von\
+  \ YAML-Inhalten in JavaScript-Objekte und m\xF6glicherweise das Umwandeln von JavaScript-Objekten\
+  \ zur\xFCck in YAML."
 title: Arbeiten mit YAML
 weight: 41
 ---

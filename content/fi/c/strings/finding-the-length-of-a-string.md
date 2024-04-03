@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:33.582878-07:00
-description: "Merkkijonon pituuden m\xE4\xE4ritt\xE4minen C-kieless\xE4 tarkoittaa\
-  \ merkkien lukum\xE4\xE4r\xE4n selvitt\xE4mist\xE4 ennen nolla-terminaattoria `\\\
-  0`. Ohjelmoijat tekev\xE4t t\xE4m\xE4n,\u2026"
+description: "Kuinka: C:ss\xE4 standardikirjaston funktiota `strlen()` k\xE4ytet\xE4\
+  \xE4n yleisesti merkkijonon pituuden l\xF6yt\xE4miseen. T\xE4ss\xE4 on nopea esimerkki."
 lastmod: '2024-03-13T22:44:57.029627-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonon pituuden m\xE4\xE4ritt\xE4minen C-kieless\xE4 tarkoittaa merkkien\
-  \ lukum\xE4\xE4r\xE4n selvitt\xE4mist\xE4 ennen nolla-terminaattoria `\\0`."
+summary: "C:ss\xE4 standardikirjaston funktiota `strlen()` k\xE4ytet\xE4\xE4n yleisesti\
+  \ merkkijonon pituuden l\xF6yt\xE4miseen."
 title: "Merkkijonon pituuden m\xE4\xE4ritt\xE4minen"
 weight: 7
 ---

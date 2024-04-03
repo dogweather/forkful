@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:30.947845-07:00
-description: "Refaktorering inom programmering inneb\xE4r att man omstrukturerar befintlig\
-  \ kod utan att \xE4ndra dess externa beteende, med m\xE5let att f\xF6rb\xE4ttra\
-  \ icke-\u2026"
+description: "Hur man g\xF6r: Refaktorering kan innefatta en rad taktiker fr\xE5n\
+  \ att byta namn p\xE5 variabler f\xF6r klarhet till att \xE4ndra kodens struktur\
+  \ f\xF6r b\xE4ttre\u2026"
 lastmod: '2024-03-13T22:44:38.391679-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktorering inom programmering inneb\xE4r att man omstrukturerar befintlig\
-  \ kod utan att \xE4ndra dess externa beteende, med m\xE5let att f\xF6rb\xE4ttra\
-  \ icke-funktionella attribut som l\xE4sbarhet, minska komplexitet och \xF6ka underh\xE5\
-  llbarheten."
+summary: "Refaktorering kan innefatta en rad taktiker fr\xE5n att byta namn p\xE5\
+  \ variabler f\xF6r klarhet till att \xE4ndra kodens struktur f\xF6r b\xE4ttre modularisering."
 title: Refaktorisering
 weight: 19
 ---

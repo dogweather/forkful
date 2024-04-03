@@ -2,11 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:13.150858-07:00
-description: "De lengte van een string vinden betekent uitzoeken hoeveel tekens deze\
-  \ bevat. Programmeurs doen dit om invoer te valideren, tekst te manipuleren, of\u2026"
+description: 'Hoe te: In Swift krijg je de lengte van een string door toegang te krijgen
+  tot de `count` eigenschap. Eenvoudig, laten we het doen.'
 lastmod: '2024-03-13T22:44:51.147372-06:00'
 model: gpt-4-0125-preview
-summary: De lengte van een string vinden betekent uitzoeken hoeveel tekens deze bevat.
+summary: In Swift krijg je de lengte van een string door toegang te krijgen tot de
+  `count` eigenschap.
 title: De lengte van een string vinden
 weight: 7
 ---

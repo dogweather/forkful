@@ -2,13 +2,14 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:52.664013-07:00
-description: "W Javie tablice asocjacyjne, czyli mapy, pozwalaj\u0105 przechowywa\u0107\
-  \ pary klucz-warto\u015B\u0107 do wydajnego wyszukiwania i manipulowania danymi.\
-  \ Programi\u015Bci u\u017Cywaj\u0105\u2026"
+description: "Jak to zrobi\u0107: Java nie posiada wbudowanych tablic asocjacyjnych,\
+  \ jak niekt\xF3re j\u0119zyki, ale udost\u0119pnia interfejs `Map` oraz klasy takie\
+  \ jak `HashMap` i\u2026"
 lastmod: '2024-03-13T22:44:35.270253-06:00'
 model: gpt-4-0125-preview
-summary: "W Javie tablice asocjacyjne, czyli mapy, pozwalaj\u0105 przechowywa\u0107\
-  \ pary klucz-warto\u015B\u0107 do wydajnego wyszukiwania i manipulowania danymi."
+summary: "Java nie posiada wbudowanych tablic asocjacyjnych, jak niekt\xF3re j\u0119\
+  zyki, ale udost\u0119pnia interfejs `Map` oraz klasy takie jak `HashMap` i `TreeMap`,\
+  \ by spe\u0142ni\u0107 t\u0119 rol\u0119."
 title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---

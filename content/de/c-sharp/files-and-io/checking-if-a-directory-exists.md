@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:07.187714-07:00
-description: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in C# existiert, involviert\
-  \ die Verifizierung der Pr\xE4senz eines Ordners in einem spezifizierten Pfad im\
-  \ Dateisystem.\u2026"
+description: 'Wie zu: #.'
 lastmod: '2024-03-13T22:44:53.902621-06:00'
 model: gpt-4-0125-preview
-summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in C# existiert, involviert die\
-  \ Verifizierung der Pr\xE4senz eines Ordners in einem spezifizierten Pfad im Dateisystem."
+summary: '#.'
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---

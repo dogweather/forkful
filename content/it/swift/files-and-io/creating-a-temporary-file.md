@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:41:13.881851-07:00
-description: "Creare un file temporaneo vuol dire generare un file destinato a una\
-  \ breve esistenza, spesso usato come buffer o per scambi di dati. Si fa per gestire\u2026"
+description: "How to: La creazione di file temporanei in Swift \xE8 diretta. Usiamo\
+  \ `FileManager` e la sua funzione `url(for:in:appropriateFor:create:)`. Ecco un\
+  \ esempio."
 lastmod: '2024-03-13T22:44:43.789244-06:00'
 model: gpt-4-1106-preview
-summary: Creare un file temporaneo vuol dire generare un file destinato a una breve
-  esistenza, spesso usato come buffer o per scambi di dati.
+summary: "La creazione di file temporanei in Swift \xE8 diretta."
 title: Creazione di un file temporaneo
 weight: 21
 ---

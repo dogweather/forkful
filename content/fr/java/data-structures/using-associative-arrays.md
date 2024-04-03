@@ -2,13 +2,14 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:11:48.058066-07:00
-description: "En Java, les tableaux associatifs ou les maps, vous permettent de stocker\
-  \ des paires cl\xE9-valeur pour une recherche et une manipulation efficaces des\u2026"
+description: "Comment : Java n'a pas de tableaux associatifs int\xE9gr\xE9s comme\
+  \ certains langages, mais il fournit l'interface `Map` et des classes comme `HashMap`\
+  \ et\u2026"
 lastmod: '2024-03-13T22:44:57.631354-06:00'
 model: gpt-4-0125-preview
-summary: "En Java, les tableaux associatifs ou les maps, vous permettent de stocker\
-  \ des paires cl\xE9-valeur pour une recherche et une manipulation efficaces des\
-  \ donn\xE9es."
+summary: "Java n'a pas de tableaux associatifs int\xE9gr\xE9s comme certains langages,\
+  \ mais il fournit l'interface `Map` et des classes comme `HashMap` et `TreeMap`\
+  \ pour remplir ce r\xF4le."
 title: Utilisation des tableaux associatifs
 weight: 15
 ---

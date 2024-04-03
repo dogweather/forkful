@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:56.337348-07:00
-description: "YAML, som st\xE5r for YAML Ain't Markup Language, er et h\xF8yt leselig\
-  \ data-serieliseringsformat som ofte brukes til konfigurasjonsfiler, datalagring\
-  \ og\u2026"
+description: "Hvordan: Kotlin har ikke innebygget st\xF8tte for YAML-tolkning og serialisering,\
+  \ men du kan bruke popul\xE6re tredjepartsbiblioteker som `snakeyaml` (for\u2026"
 lastmod: '2024-03-13T22:44:40.772313-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, som st\xE5r for YAML Ain't Markup Language, er et h\xF8yt leselig\
-  \ data-serieliseringsformat som ofte brukes til konfigurasjonsfiler, datalagring\
-  \ og meldingsutveksling mellom prosesser."
+summary: "Kotlin har ikke innebygget st\xF8tte for YAML-tolkning og serialisering,\
+  \ men du kan bruke popul\xE6re tredjepartsbiblioteker som `snakeyaml` (for generell\
+  \ YAML-tolkning) og `kotlinx.serialization` (med en YAML-formatutvidelse) for \xE5\
+  \ jobbe med YAML-filer."
 title: Arbeider med YAML
 weight: 41
 ---

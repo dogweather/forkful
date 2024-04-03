@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:00:08.837927-07:00
-description: "L'analisi di una data da una stringa in Go comporta la conversione della\
-  \ data rappresentata come testo in un formato pi\xF9 utilizzabile (ad es.,\u2026"
+description: "Come fare: Go fornisce un supporto robusto per l'analisi di date e orari\
+  \ attraverso il pacchetto `time`. La chiave \xE8 capire il formato di riferimento\u2026"
 lastmod: '2024-03-13T22:44:42.918564-06:00'
 model: gpt-4-0125-preview
-summary: "L'analisi di una data da una stringa in Go comporta la conversione della\
-  \ data rappresentata come testo in un formato pi\xF9 utilizzabile (ad es."
+summary: Go fornisce un supporto robusto per l'analisi di date e orari attraverso
+  il pacchetto `time`.
 title: Analizzare una data da una stringa
 weight: 30
 ---

@@ -1,13 +1,11 @@
 ---
 date: 2024-01-20 17:31:15.736891-07:00
-description: "Menneisyyden tai tulevaisuuden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen\
-  \ tarkoittaa tietyn ajanjakson lis\xE4\xE4mist\xE4 tai v\xE4hent\xE4mist\xE4 nykyisest\xE4\
-  \ p\xE4iv\xE4st\xE4. Ohjelmoijat k\xE4ytt\xE4v\xE4t\u2026"
+description: "How to: Clojure k\xE4ytt\xE4\xE4 Javan `java.time` kirjastoa p\xE4iv\xE4\
+  m\xE4\xE4rien k\xE4sittelyyn. T\xE4ss\xE4 yksinkertainen esimerkki."
 lastmod: '2024-03-13T22:44:56.197654-06:00'
 model: gpt-4-1106-preview
-summary: "Menneisyyden tai tulevaisuuden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen tarkoittaa\
-  \ tietyn ajanjakson lis\xE4\xE4mist\xE4 tai v\xE4hent\xE4mist\xE4 nykyisest\xE4\
-  \ p\xE4iv\xE4st\xE4."
+summary: "Clojure k\xE4ytt\xE4\xE4 Javan `java.time` kirjastoa p\xE4iv\xE4m\xE4\xE4\
+  rien k\xE4sittelyyn."
 title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---

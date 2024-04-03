@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 01:10:21.757800-07:00
-description: "Koodin j\xE4rjest\xE4minen funktioihin Haskellissa tarkoittaa koodin\
-  \ pilkkomista uudelleenk\xE4ytett\xE4viin, nimettyihin lohkoihin. Miksi? Se pit\xE4\
-  \xE4 koodisi DRY:n\xE4\u2026"
+description: "Miten: T\xE4ss\xE4 on, miten voit kirjoittaa ja k\xE4ytt\xE4\xE4 funktioita\
+  \ Haskellissa."
 lastmod: '2024-03-13T22:44:56.620474-06:00'
 model: gpt-4-1106-preview
-summary: "Koodin j\xE4rjest\xE4minen funktioihin Haskellissa tarkoittaa koodin pilkkomista\
-  \ uudelleenk\xE4ytett\xE4viin, nimettyihin lohkoihin."
+summary: "T\xE4ss\xE4 on, miten voit kirjoittaa ja k\xE4ytt\xE4\xE4 funktioita Haskellissa."
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---

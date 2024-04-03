@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:52.920660-07:00
-description: "Regul\xE6re uttrykk i programmering er sekvenser av tegn som definerer\
-  \ et s\xF8kem\xF8nster, typisk brukt for s\xF8k i strenger og manipulering av disse.\
-  \ Haskell-\u2026"
+description: "Hvordan: I Haskell er ikke regex-funksjonaliteter en del av det standard\
+  \ biblioteket, noe som n\xF8dvendiggj\xF8r bruk av tredjepartspakker som `regex-base`\u2026"
 lastmod: '2024-03-13T22:44:40.831004-06:00'
 model: gpt-4-0125-preview
-summary: "Regul\xE6re uttrykk i programmering er sekvenser av tegn som definerer et\
-  \ s\xF8kem\xF8nster, typisk brukt for s\xF8k i strenger og manipulering av disse."
+summary: "I Haskell er ikke regex-funksjonaliteter en del av det standard biblioteket,\
+  \ noe som n\xF8dvendiggj\xF8r bruk av tredjepartspakker som `regex-base` sammen\
+  \ med en kompatibel bakpart som `regex-posix` (for POSIX regex-st\xF8tte), `regex-pcre`\
+  \ (for Perl-kompatible regex), osv."
 title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---

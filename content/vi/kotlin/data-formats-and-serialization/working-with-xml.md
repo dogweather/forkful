@@ -2,16 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:44.756213-07:00
-description: "L\xE0m vi\u1EC7c v\u1EDBi XML bao g\u1ED3m vi\u1EC7c ph\xE2n t\xEDch\
-  \ c\xFA ph\xE1p, t\u1EA1o v\xE0 thao t\xE1c v\u1EDBi c\xE1c t\xE0i li\u1EC7u XML\
-  \ - m\u1ED9t ng\xF4n ng\u1EEF \u0111\xE1nh d\u1EA5u d\xF9ng cho vi\u1EC7c l\u01B0\
-  u tr\u1EEF v\xE0 truy\u1EC1n d\u1EEF li\u1EC7u. C\xE1c\u2026"
+description: "L\xE0m Th\u1EBF N\xE0o: Trong Kotlin, b\u1EA1n c\xF3 th\u1EC3 s\u1EED\
+  \ d\u1EE5ng `javax.xml.parsers` t\xEDch h\u1EE3p s\u1EB5n \u0111\u1EC3 ph\xE2n t\xED\
+  ch c\xFA ph\xE1p."
 lastmod: '2024-03-13T22:44:36.633242-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m vi\u1EC7c v\u1EDBi XML bao g\u1ED3m vi\u1EC7c ph\xE2n t\xEDch c\xFA\
-  \ ph\xE1p, t\u1EA1o v\xE0 thao t\xE1c v\u1EDBi c\xE1c t\xE0i li\u1EC7u XML - m\u1ED9\
-  t ng\xF4n ng\u1EEF \u0111\xE1nh d\u1EA5u d\xF9ng cho vi\u1EC7c l\u01B0u tr\u1EEF\
-  \ v\xE0 truy\u1EC1n d\u1EEF li\u1EC7u."
+summary: "Trong Kotlin, b\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng `javax.xml.parsers`\
+  \ t\xEDch h\u1EE3p s\u1EB5n \u0111\u1EC3 ph\xE2n t\xEDch c\xFA ph\xE1p."
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---

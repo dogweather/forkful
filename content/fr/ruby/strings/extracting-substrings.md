@@ -1,13 +1,9 @@
 ---
 date: 2024-01-20 17:46:39.440956-07:00
-description: "Extraire des sous-cha\xEEnes en Ruby, c'est comme prendre un morceau\
-  \ de votre baguette pr\xE9f\xE9r\xE9e : vous isolez une part de quelque chose de\
-  \ plus grand. On le\u2026"
+description: 'How to: (Comment faire :) .'
 lastmod: '2024-03-13T22:44:58.406382-06:00'
 model: gpt-4-1106-preview
-summary: "Extraire des sous-cha\xEEnes en Ruby, c'est comme prendre un morceau de\
-  \ votre baguette pr\xE9f\xE9r\xE9e : vous isolez une part de quelque chose de plus\
-  \ grand."
+summary: .
 title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---

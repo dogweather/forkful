@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:48.771439-07:00
-description: "Analizzare una data da una stringa in Visual Basic for Applications\
-  \ (VBA) consiste nel convertire un testo che rappresenta una data in un tipo di\
-  \ dati\u2026"
+description: "Come fare: VBA offre un modo diretto per analizzare una stringa in una\
+  \ data utilizzando la funzione `CDate` o la funzione `DateValue`. Tuttavia, \xE8\
+  \u2026"
 lastmod: '2024-03-13T22:44:43.273586-06:00'
 model: gpt-4-0125-preview
-summary: Analizzare una data da una stringa in Visual Basic for Applications (VBA)
-  consiste nel convertire un testo che rappresenta una data in un tipo di dati data.
+summary: VBA offre un modo diretto per analizzare una stringa in una data utilizzando
+  la funzione `CDate` o la funzione `DateValue`.
 title: Analisi di una data da una stringa
 weight: 30
 ---

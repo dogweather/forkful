@@ -2,17 +2,16 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:43.394982-07:00
-description: "M\u1EA3ng li\xEAn k\u1EBFt, \u0111\u01B0\u1EE3c bi\u1EBFt \u0111\u1EBF\
-  n nh\u01B0 l\xE0 \u0111\u1ED1i t\u01B0\u1EE3ng trong Google Apps Script (m\u1ED9\
-  t bi\u1EBFn th\u1EC3 c\u1EE7a JavaScript), cho ph\xE9p c\xE1c l\u1EADp tr\xECnh\
-  \ vi\xEAn t\u1EA1o ra c\xE1c b\u1ED9 s\u01B0u t\u1EADp\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Google Apps Script, b\u1EA1n t\u1EA1o\
+  \ v\xE0 thao t\xE1c m\u1EA3ng li\xEAn k\u1EBFt (\u0111\u1ED1i t\u01B0\u1EE3ng) s\u1EED\
+  \ d\u1EE5ng d\u1EA5u ngo\u1EB7c nh\u1ECDn `{}`, \u0111\u1ECBnh ngh\u0129a c\xE1\
+  c c\u1EB7p kh\xF3a-gi\xE1 tr\u1ECB b\xEAn\u2026"
 lastmod: '2024-03-13T22:44:36.030110-06:00'
 model: gpt-4-0125-preview
-summary: "M\u1EA3ng li\xEAn k\u1EBFt, \u0111\u01B0\u1EE3c bi\u1EBFt \u0111\u1EBFn\
-  \ nh\u01B0 l\xE0 \u0111\u1ED1i t\u01B0\u1EE3ng trong Google Apps Script (m\u1ED9\
-  t bi\u1EBFn th\u1EC3 c\u1EE7a JavaScript), cho ph\xE9p c\xE1c l\u1EADp tr\xECnh\
-  \ vi\xEAn t\u1EA1o ra c\xE1c b\u1ED9 s\u01B0u t\u1EADp c\u1EE7a c\xE1c c\u1EB7p\
-  \ kh\xF3a-gi\xE1 tr\u1ECB."
+summary: "Trong Google Apps Script, b\u1EA1n t\u1EA1o v\xE0 thao t\xE1c m\u1EA3ng\
+  \ li\xEAn k\u1EBFt (\u0111\u1ED1i t\u01B0\u1EE3ng) s\u1EED d\u1EE5ng d\u1EA5u ngo\u1EB7\
+  c nh\u1ECDn `{}`, \u0111\u1ECBnh ngh\u0129a c\xE1c c\u1EB7p kh\xF3a-gi\xE1 tr\u1ECB\
+  \ b\xEAn trong."
 title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 weight: 15
 ---

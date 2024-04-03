@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 15:31:47.530728-07:00
-description: "Parsing av HTML betyr \xE5 gj\xF8re om HTML-kode til noe et program\
-  \ kan forst\xE5 og bruke. Programmerere gj\xF8r dette for \xE5 manipulere, hente\
-  \ ut data eller generere\u2026"
+description: "Slik gj\xF8r du: I Elm bruker du vanligvis `elm/html` biblioteket for\
+  \ \xE5 jobbe med HTML. La oss kj\xF8re gjennom et enkelt eksempel der vi parser\
+  \ en statisk\u2026"
 lastmod: '2024-03-13T22:44:40.706625-06:00'
 model: unknown
-summary: "Parsing av HTML betyr \xE5 gj\xF8re om HTML-kode til noe et program kan\
-  \ forst\xE5 og bruke."
+summary: "I Elm bruker du vanligvis `elm/html` biblioteket for \xE5 jobbe med HTML."
 title: Analyse av HTML
 weight: 43
 ---

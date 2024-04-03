@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:29.110491-07:00
-description: "HTML parsen is het proces van het decoderen van de lingua franca van\
-  \ het web om data te zeven of inhoud te manipuleren. Programmeurs parsen HTML om\u2026"
+description: "Hoe te: Fish Shell is niet de eerste keuze voor het parsen van HTML,\
+  \ maar met de juiste tools is het haalbaar. Laten we `pup`, een command-line HTML-\u2026"
 lastmod: '2024-03-13T22:44:51.245170-06:00'
 model: gpt-4-0125-preview
-summary: HTML parsen is het proces van het decoderen van de lingua franca van het
-  web om data te zeven of inhoud te manipuleren.
+summary: Fish Shell is niet de eerste keuze voor het parsen van HTML, maar met de
+  juiste tools is het haalbaar.
 title: HTML Parsen
 weight: 43
 ---

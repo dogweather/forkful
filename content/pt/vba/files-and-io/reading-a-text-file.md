@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:35.176483-07:00
-description: "Ler um arquivo de texto em Visual Basic para Aplica\xE7\xF5es (VBA)\
-  \ envolve acessar e extrair programaticamente o conte\xFAdo de um arquivo de texto\
-  \ de dentro de\u2026"
+description: "Como Fazer: A maneira mais simples de ler um arquivo de texto no VBA\
+  \ \xE9 usando a instru\xE7\xE3o `Open` em combina\xE7\xE3o com as fun\xE7\xF5es\
+  \ `Input` ou `Line Input`.\u2026"
 lastmod: '2024-03-13T22:44:46.431195-06:00'
 model: gpt-4-0125-preview
-summary: "Ler um arquivo de texto em Visual Basic para Aplica\xE7\xF5es (VBA) envolve\
-  \ acessar e extrair programaticamente o conte\xFAdo de um arquivo de texto de dentro\
-  \ de uma aplica\xE7\xE3o do Office."
+summary: "A maneira mais simples de ler um arquivo de texto no VBA \xE9 usando a instru\xE7\
+  \xE3o `Open` em combina\xE7\xE3o com as fun\xE7\xF5es `Input` ou `Line Input`."
 title: Lendo um arquivo de texto
 weight: 22
 ---

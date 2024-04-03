@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 18:00:48.287281-07:00
-description: "HTTP-pyynt\xF6 on tapa puhua verkon yli palvelimille. Ohjelmoijat l\xE4\
-  hett\xE4v\xE4t niit\xE4 datan noutamiseen, l\xE4hett\xE4miseen ja web-sovellusten\
-  \ kanssa\u2026"
+description: "How to: Rubyss\xE4 HTTP-pyynt\xF6jen l\xE4hett\xE4minen on suoraviivaista.\
+  \ T\xE4ss\xE4 esimerkki k\xE4ytt\xE4en `net/http`-kirjastoa."
 lastmod: '2024-03-13T22:44:57.083570-06:00'
 model: gpt-4-1106-preview
-summary: "HTTP-pyynt\xF6 on tapa puhua verkon yli palvelimille."
+summary: "Rubyss\xE4 HTTP-pyynt\xF6jen l\xE4hett\xE4minen on suoraviivaista."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---

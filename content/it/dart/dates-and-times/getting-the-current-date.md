@@ -2,12 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:43.856468-07:00
-description: "Ottenere la data corrente in Dart comporta l'interrogazione del sistema\
-  \ per conoscere la data e l'ora attuali. Questa funzionalit\xE0 \xE8 comunemente\u2026"
+description: "Come fare: La libreria core di Dart fornisce un accesso semplice alla\
+  \ data e all'ora correnti attraverso la classe `DateTime`. Ecco l'esempio base per\u2026"
 lastmod: '2024-03-13T22:44:43.142484-06:00'
 model: gpt-4-0125-preview
-summary: Ottenere la data corrente in Dart comporta l'interrogazione del sistema per
-  conoscere la data e l'ora attuali.
+summary: La libreria core di Dart fornisce un accesso semplice alla data e all'ora
+  correnti attraverso la classe `DateTime`.
 title: Ottenere la data corrente
 weight: 29
 ---

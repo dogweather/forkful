@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:25.183006-07:00
-description: "La gestion des erreurs dans Visual Basic pour Applications (VBA) fait\
-  \ r\xE9f\xE9rence au processus d'anticipation, de d\xE9tection et de r\xE9solution\
-  \ des erreurs de\u2026"
+description: "Comment faire : Dans VBA, la gestion des erreurs est typiquement mise\
+  \ en \u0153uvre \xE0 l'aide de l'instruction `On Error` qui instruit VBA sur la\
+  \ marche \xE0\u2026"
 lastmod: '2024-03-13T22:44:57.588566-06:00'
 model: gpt-4-0125-preview
-summary: "La gestion des erreurs dans Visual Basic pour Applications (VBA) fait r\xE9\
-  f\xE9rence au processus d'anticipation, de d\xE9tection et de r\xE9solution des\
-  \ erreurs de programmation, d'application ou de communication."
+summary: "Dans VBA, la gestion des erreurs est typiquement mise en \u0153uvre \xE0\
+  \ l'aide de l'instruction `On Error` qui instruit VBA sur la marche \xE0 suivre\
+  \ lorsqu'une erreur se produit."
 title: Gestion des erreurs
 weight: 16
 ---

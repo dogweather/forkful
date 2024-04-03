@@ -2,16 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:56.237931-07:00
-description: "X\xF3a c\xE1c k\xFD t\u1EF1 kh\u1EDBp v\u1EDBi m\u1ED9t m\u1EABu trong\
-  \ chu\u1ED7i ngh\u0129a l\xE0 t\xECm v\xE0 lo\u1EA1i b\u1ECF c\xE1c chu\u1ED7i k\xFD\
-  \ t\u1EF1 c\u1EE5 th\u1EC3. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7\
-  n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 d\u1ECDn d\u1EB9p v\u0103n b\u1EA3n, ph\xE2\
-  n\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Rust, ch\xFAng ta c\xF3 th\u1EC3 s\u1EED\
+  \ d\u1EE5ng ph\u01B0\u01A1ng th\u1EE9c `replace` t\u1EEB ki\u1EC3u `String` ho\u1EB7\
+  c regex cho c\xE1c m\u1EABu ph\u1EE9c t\u1EA1p h\u01A1n. D\u01B0\u1EDBi \u0111\xE2\
+  y l\xE0 c\xE1ch b\u1EA1n l\xE0m."
 lastmod: '2024-03-13T22:44:36.354453-06:00'
 model: gpt-4-0125-preview
-summary: "X\xF3a c\xE1c k\xFD t\u1EF1 kh\u1EDBp v\u1EDBi m\u1ED9t m\u1EABu trong chu\u1ED7\
-  i ngh\u0129a l\xE0 t\xECm v\xE0 lo\u1EA1i b\u1ECF c\xE1c chu\u1ED7i k\xFD t\u1EF1\
-  \ c\u1EE5 th\u1EC3."
+summary: "Trong Rust, ch\xFAng ta c\xF3 th\u1EC3 s\u1EED d\u1EE5ng ph\u01B0\u01A1\
+  ng th\u1EE9c `replace` t\u1EEB ki\u1EC3u `String` ho\u1EB7c regex cho c\xE1c m\u1EAB\
+  u ph\u1EE9c t\u1EA1p h\u01A1n."
 title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
 weight: 5
 ---

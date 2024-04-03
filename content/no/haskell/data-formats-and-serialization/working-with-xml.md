@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:31:45.838452-07:00
-description: "\xC5 arbeide med XML i Haskell inneb\xE6rer parsing, manipulering og\
-  \ generering av XML-strukturer. Programmerere h\xE5ndterer XML for \xE5 samhandle\
-  \ med tallrike\u2026"
+description: "Hvordan: Haskell tilbyr biblioteker som `xml-conduit` for \xE5 h\xE5\
+  ndtere XML. F\xF8lgende eksempel demonstrerer parsing av en XML-streng og foresp\xF8\
+  rsler av\u2026"
 lastmod: '2024-03-13T22:44:40.867802-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 arbeide med XML i Haskell inneb\xE6rer parsing, manipulering og generering\
-  \ av XML-strukturer."
+summary: "Haskell tilbyr biblioteker som `xml-conduit` for \xE5 h\xE5ndtere XML."
 title: "\xC5 jobbe med XML"
 weight: 40
 ---

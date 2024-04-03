@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:08:06.437284-07:00
-description: "Buscar e substituir texto na programa\xE7\xE3o facilita a modifica\xE7\
-  \xE3o e gest\xE3o de strings, o que \xE9 uma tarefa fundamental na manipula\xE7\xE3\
-  o de dados e\u2026"
+description: "Como fazer: Em Go, o pacote `strings` oferece v\xE1rias fun\xE7\xF5\
+  es para buscar e substituir texto dentro de strings. Vamos explorar alguns m\xE9\
+  todos comuns.\u2026"
 lastmod: '2024-03-13T22:44:46.044498-06:00'
 model: gpt-4-0125-preview
-summary: "Buscar e substituir texto na programa\xE7\xE3o facilita a modifica\xE7\xE3\
-  o e gest\xE3o de strings, o que \xE9 uma tarefa fundamental na manipula\xE7\xE3\
-  o de dados e desenvolvimento de software."
+summary: "Em Go, o pacote `strings` oferece v\xE1rias fun\xE7\xF5es para buscar e\
+  \ substituir texto dentro de strings."
 title: Pesquisando e substituindo texto
 weight: 10
 ---

@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:40.616971-07:00
-description: "Pisanie pliku tekstowego w TypeScript jest kluczow\u0105 umiej\u0119\
-  tno\u015Bci\u0105 dla trwa\u0142o\u015Bci danych, konfiguracji lub generowania log\xF3\
-  w. Programi\u015Bci cz\u0119sto wykonuj\u0105 to\u2026"
+description: "Jak to zrobi\u0107: Sam TypeScript nie obs\u0142uguje bezpo\u015Brednio\
+  \ operacji na plikach, poniewa\u017C kompiluje si\u0119 do JavaScript, kt\xF3ry\
+  \ tradycyjnie jest uruchamiany w\u2026"
 lastmod: '2024-03-13T22:44:35.158190-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie pliku tekstowego w TypeScript jest kluczow\u0105 umiej\u0119tno\u015B\
-  ci\u0105 dla trwa\u0142o\u015Bci danych, konfiguracji lub generowania log\xF3w."
+summary: "Sam TypeScript nie obs\u0142uguje bezpo\u015Brednio operacji na plikach,\
+  \ poniewa\u017C kompiluje si\u0119 do JavaScript, kt\xF3ry tradycyjnie jest uruchamiany\
+  \ w przegl\u0105darce z ograniczonym dost\u0119pem do systemu plik\xF3w."
 title: Pisanie pliku tekstowego
 weight: 24
 ---

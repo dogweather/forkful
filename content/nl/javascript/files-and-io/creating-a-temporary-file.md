@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:22.698805-07:00
-description: "Het maken van een tijdelijk bestand stelt je app in staat om gegevens\
-  \ op te slaan die het niet voor altijd nodig heeft. Het komt van pas wanneer je\
-  \ te\u2026"
+description: "Hoe: In JavaScript leunen de meeste bewerkingen voor tijdelijke bestanden\
+  \ op externe bibliotheken. Hier is een snel voorbeeld met behulp van de `tmp`\u2026"
 lastmod: '2024-03-13T22:44:51.222192-06:00'
 model: gpt-4-0125-preview
-summary: Het maken van een tijdelijk bestand stelt je app in staat om gegevens op
-  te slaan die het niet voor altijd nodig heeft.
+summary: In JavaScript leunen de meeste bewerkingen voor tijdelijke bestanden op externe
+  bibliotheken.
 title: Een tijdelijk bestand aanmaken
 weight: 21
 ---

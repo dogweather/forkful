@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:55.912776-07:00
-description: "Het genereren van willekeurige getallen in Ruby houdt in dat er getallen\
-  \ worden gecre\xEBerd die logischerwijs niet voorspeld kunnen worden. Dit is\u2026"
+description: 'Hoe: Ruby biedt verschillende methoden om willekeurige getallen te genereren,
+  voornamelijk via de `Random` klasse. #.'
 lastmod: '2024-03-13T22:44:51.331321-06:00'
 model: gpt-4-0125-preview
-summary: "Het genereren van willekeurige getallen in Ruby houdt in dat er getallen\
-  \ worden gecre\xEBerd die logischerwijs niet voorspeld kunnen worden."
+summary: Ruby biedt verschillende methoden om willekeurige getallen te genereren,
+  voornamelijk via de `Random` klasse.
 title: Willekeurige getallen genereren
 weight: 12
 ---

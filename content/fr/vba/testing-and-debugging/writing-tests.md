@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:44.884022-07:00
-description: "\xC9crire des tests en programmation implique de cr\xE9er des proc\xE9\
-  dures sp\xE9cifiques pour valider la fonctionnalit\xE9 et la performance de vos\
-  \ segments de code,\u2026"
+description: "Comment faire : Bien que Visual Basic pour Applications (VBA) ne soit\
+  \ pas fourni avec un cadre de tests int\xE9gr\xE9 similaire \xE0 ceux disponibles\
+  \ dans des\u2026"
 lastmod: '2024-03-13T22:44:57.582256-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire des tests en programmation implique de cr\xE9er des proc\xE9dures\
-  \ sp\xE9cifiques pour valider la fonctionnalit\xE9 et la performance de vos segments\
-  \ de code, en s'assurant qu'ils fonctionnent comme pr\xE9vu dans diverses conditions."
+summary: "Bien que Visual Basic pour Applications (VBA) ne soit pas fourni avec un\
+  \ cadre de tests int\xE9gr\xE9 similaire \xE0 ceux disponibles dans des langages\
+  \ comme Python ou JavaScript, vous pouvez toujours mettre en \u0153uvre des proc\xE9\
+  dures de test simples pour v\xE9rifier l'int\xE9grit\xE9 de votre code."
 title: "R\xE9daction de tests"
 weight: 36
 ---

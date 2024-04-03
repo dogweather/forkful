@@ -2,13 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:08.801948-07:00
-description: "\xC5 parse HTML betyr \xE5 sile gjennom HTML-kode for \xE5 finne, hente\
-  \ ut, eller manipulere informasjon. Programmerere gj\xF8r dette for \xE5 samhandle\
-  \ med webinnhold \u2013\u2026"
+description: "Hvordan: For \xE5 komme i gang, installer et bibliotek som `node-html-parser`.\
+  \ Her er terminalkommandoen."
 lastmod: '2024-03-13T22:44:40.529983-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 parse HTML betyr \xE5 sile gjennom HTML-kode for \xE5 finne, hente\
-  \ ut, eller manipulere informasjon."
+summary: "For \xE5 komme i gang, installer et bibliotek som `node-html-parser`."
 title: Analysering av HTML
 weight: 43
 ---

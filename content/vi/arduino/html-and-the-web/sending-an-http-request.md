@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:07.492837-07:00
-description: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP l\xE0 c\xE1ch m\xE0 Arduino c\u1EE7\
-  a b\u1EA1n giao ti\u1EBFp v\u1EDBi web, nh\u01B0 y\xEAu c\u1EA7u m\u1ED9t m\xE1\
-  y ch\u1EE7 g\u1EEDi l\u1EA1i m\u1ED9t s\u1ED1 d\u1EEF li\u1EC7u. C\xE1c l\u1EAD\
-  p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: L\xE0m vi\u1EC7c v\u1EDBi Arduino y\xEAu c\u1EA7\
+  u th\u01B0 vi\u1EC7n `WiFiNINA` cho c\xE1c t\xEDnh n\u0103ng m\u1EA1ng. D\u01B0\u1EDB\
+  i \u0111\xE2y l\xE0 c\xE1ch g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u GET \u0111\u01A1n\
+  \ gi\u1EA3n."
 lastmod: '2024-03-13T22:44:36.986497-06:00'
 model: gpt-4-0125-preview
-summary: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP l\xE0 c\xE1ch m\xE0 Arduino c\u1EE7\
-  a b\u1EA1n giao ti\u1EBFp v\u1EDBi web, nh\u01B0 y\xEAu c\u1EA7u m\u1ED9t m\xE1\
-  y ch\u1EE7 g\u1EEDi l\u1EA1i m\u1ED9t s\u1ED1 d\u1EEF li\u1EC7u."
+summary: "L\xE0m vi\u1EC7c v\u1EDBi Arduino y\xEAu c\u1EA7u th\u01B0 vi\u1EC7n `WiFiNINA`\
+  \ cho c\xE1c t\xEDnh n\u0103ng m\u1EA1ng."
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
 weight: 44
 ---

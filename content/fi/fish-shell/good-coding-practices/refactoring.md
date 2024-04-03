@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 01:18:52.162536-07:00
-description: "Refaktorointi on prosessi, jossa olemassa olevaa koodia uudelleenrakennetaan\
-  \ muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4 parantamaan ei-toiminnallisia\u2026"
+description: "Kuinka: Kuvittele, ett\xE4 sinulla on skripti, joka on kasvanut huomattavasti\
+  \ ajan my\xF6t\xE4. Se alkoi yksinkertaisena, mutta nyt se on hirvi\xF6, joka r\xF6\
+  nsyilee\u2026"
 lastmod: '2024-03-13T22:44:57.003126-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktorointi on prosessi, jossa olemassa olevaa koodia uudelleenrakennetaan\
-  \ muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4 parantamaan ei-toiminnallisia\
-  \ ominaisuuksia."
+summary: "Kuvittele, ett\xE4 sinulla on skripti, joka on kasvanut huomattavasti ajan\
+  \ my\xF6t\xE4."
 title: Koodin refaktorointi
 weight: 19
 ---

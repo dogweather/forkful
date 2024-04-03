@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:48.597374-07:00
-description: "L'analyse HTML dans Google Apps Script consiste \xE0 extraire des donn\xE9\
-  es de contenu HTML, ce qui est particuli\xE8rement utile lors de l'interaction avec\
-  \ des\u2026"
+description: "Comment faire : Google Apps Script n'a pas de m\xE9thode int\xE9gr\xE9\
+  e pour l'analyse HTML. Cependant, vous pouvez tirer parti du service `UrlFetchApp`\
+  \ pour\u2026"
 lastmod: '2024-03-13T22:44:57.182912-06:00'
 model: gpt-4-0125-preview
-summary: "L'analyse HTML dans Google Apps Script consiste \xE0 extraire des donn\xE9\
-  es de contenu HTML, ce qui est particuli\xE8rement utile lors de l'interaction avec\
-  \ des pages web ou des sources de donn\xE9es bas\xE9es sur le web."
+summary: "Google Apps Script n'a pas de m\xE9thode int\xE9gr\xE9e pour l'analyse HTML."
 title: Analyse Syntaxique de HTML
 weight: 43
 ---

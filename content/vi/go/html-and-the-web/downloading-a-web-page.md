@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:56:30.386584-07:00
-description: "T\u1EA3i v\u1EC1 m\u1ED9t trang web l\xE0 vi\u1EC7c l\u1EA5y n\u1ED9\
-  i dung HTML c\u1EE7a m\u1ED9t trang web qua giao th\u1EE9c HTTP/HTTPS. C\xE1c l\u1EAD\
-  p tr\xECnh vi\xEAn th\u01B0\u1EDDng l\xE0m \u0111i\u1EC1u n\xE0y cho vi\u1EC7c thu\
-  \ th\u1EADp d\u1EEF\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong Go, th\u01B0 vi\u1EC7n chu\u1EA9\
+  n cung c\u1EA5p c\xE1c c\xF4ng c\u1EE5 m\u1EA1nh m\u1EBD cho c\xE1c y\xEAu c\u1EA7\
+  u web, \u0111\u1EB7c bi\u1EC7t l\xE0 g\xF3i `net/http`. \u0110\u1EC3 t\u1EA3i m\u1ED9\
+  t trang web, ch\xFAng t\xF4i ch\u1EE7\u2026"
 lastmod: '2024-03-13T22:44:35.980302-06:00'
 model: gpt-4-0125-preview
-summary: "T\u1EA3i v\u1EC1 m\u1ED9t trang web l\xE0 vi\u1EC7c l\u1EA5y n\u1ED9i dung\
-  \ HTML c\u1EE7a m\u1ED9t trang web qua giao th\u1EE9c HTTP/HTTPS."
+summary: "Trong Go, th\u01B0 vi\u1EC7n chu\u1EA9n cung c\u1EA5p c\xE1c c\xF4ng c\u1EE5\
+  \ m\u1EA1nh m\u1EBD cho c\xE1c y\xEAu c\u1EA7u web, \u0111\u1EB7c bi\u1EC7t l\xE0\
+  \ g\xF3i `net/http`."
 title: "T\u1EA3i trang web v\u1EC1"
 weight: 42
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:38:27.051091-07:00
-description: "Convertir una cadena a min\xFAsculas significa cambiar todos los caracteres\
-  \ de la cadena a su versi\xF3n en min\xFAscula. Los programadores hacen esto para\u2026"
+description: "C\xF3mo se hace: Aqu\xED, un ejemplo r\xE1pido en Elixir. Usamos la\
+  \ funci\xF3n `String.downcase/1` para convertir toda la cadena a min\xFAsculas."
 lastmod: '2024-03-13T22:44:58.688569-06:00'
 model: gpt-4-1106-preview
-summary: "Convertir una cadena a min\xFAsculas significa cambiar todos los caracteres\
-  \ de la cadena a su versi\xF3n en min\xFAscula."
+summary: "Aqu\xED, un ejemplo r\xE1pido en Elixir."
 title: "Conversi\xF3n de una cadena de texto a min\xFAsculas"
 weight: 4
 ---

@@ -2,10 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:39.591896-07:00
-description: "Fish kh\xF4ng c\xF3 debugger t\xEDch h\u1EE3p s\u1EB5n nh\u01B0 m\u1ED9\
-  t s\u1ED1 shell kh\xE1c, nh\u01B0ng b\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng c\xE1\
-  c c\xF4ng c\u1EE5 b\xEAn ngo\xE0i nh\u01B0 `gdb` \u0111\u1EC3 debug c\xE1c ch\u01B0\
-  \u01A1ng tr\xECnh \u0111\xE3 bi\xEAn d\u1ECBch\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Fish kh\xF4ng c\xF3 debugger t\xEDch h\u1EE3\
+  p s\u1EB5n nh\u01B0 m\u1ED9t s\u1ED1 shell kh\xE1c, nh\u01B0ng b\u1EA1n c\xF3 th\u1EC3\
+  \ s\u1EED d\u1EE5ng c\xE1c c\xF4ng c\u1EE5 b\xEAn ngo\xE0i nh\u01B0 `gdb` \u0111\
+  \u1EC3 debug c\xE1c ch\u01B0\u01A1ng tr\xECnh\u2026"
 lastmod: '2024-03-13T22:44:37.216800-06:00'
 model: gpt-4-0125-preview
 summary: "Fish kh\xF4ng c\xF3 debugger t\xEDch h\u1EE3p s\u1EB5n nh\u01B0 m\u1ED9\

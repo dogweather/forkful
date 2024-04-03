@@ -1,12 +1,9 @@
 ---
 date: 2024-01-26 01:09:13.252003-07:00
-description: "Att dela upp kod i funktioner inneb\xE4r att man bryter ned skript i\
-  \ mindre, \xE5teranv\xE4ndbara block som utf\xF6r specifika uppgifter. Det g\xF6\
-  r koden renare, mer\u2026"
+description: "Hur man g\xF6r: Skapa en enkel funktion i Bash."
 lastmod: '2024-03-13T22:44:38.087879-06:00'
 model: gpt-4-1106-preview
-summary: "Att dela upp kod i funktioner inneb\xE4r att man bryter ned skript i mindre,\
-  \ \xE5teranv\xE4ndbara block som utf\xF6r specifika uppgifter."
+summary: Skapa en enkel funktion i Bash.
 title: Att organisera kod i funktioner
 weight: 18
 ---

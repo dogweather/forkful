@@ -1,12 +1,11 @@
 ---
 date: 2024-02-03 19:02:29.788794-07:00
-description: "Checking if a directory exists in Fish Shell allows scripts to make\
-  \ decisions based on the presence or absence of directory structures, enabling tasks\u2026"
+description: "How to: Fish Shell uses the `test` command to check file types and characteristics,\
+  \ including whether a target is a directory. Here's a basic pattern for\u2026"
 lastmod: '2024-03-13T22:45:00.487277-06:00'
 model: gpt-4-0125-preview
-summary: Checking if a directory exists in Fish Shell allows scripts to make decisions
-  based on the presence or absence of directory structures, enabling tasks like conditional
-  file operations, logging, or environment setup.
+summary: Fish Shell uses the `test` command to check file types and characteristics,
+  including whether a target is a directory.
 title: Checking if a directory exists
 weight: 20
 ---

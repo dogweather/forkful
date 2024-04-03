@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 01:16:25.729033-07:00
-description: "La refactorizaci\xF3n es el proceso de reestructurar c\xF3digo inform\xE1\
-  tico existente sin cambiar su comportamiento externo. Es una pr\xE1ctica vital para\
-  \ reducir\u2026"
+description: "C\xF3mo hacerlo: Consideremos un simple script de Bash que necesita\
+  \ ser refactorizado. Es torpe, con c\xF3digo repetido y es dif\xEDcil de seguir."
 lastmod: '2024-03-13T22:44:59.255131-06:00'
 model: gpt-4-0125-preview
-summary: "La refactorizaci\xF3n es el proceso de reestructurar c\xF3digo inform\xE1\
-  tico existente sin cambiar su comportamiento externo."
+summary: Consideremos un simple script de Bash que necesita ser refactorizado.
 title: "Refactorizaci\xF3n"
 weight: 19
 ---

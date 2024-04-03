@@ -2,13 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:09:31.392926-07:00
-description: "Att skriva tester i Google Apps Script (GAS) handlar om att skapa automatiserade\
-  \ skript f\xF6r att verifiera beteendet hos din kod, och s\xE4kerst\xE4lla att den\u2026"
+description: "Hur man g\xF6r: \xC4ven om Google Apps Script inte har ett inbyggt testramverk\
+  \ som vissa andra programmeringsmilj\xF6er, kan du fortfarande skriva och k\xF6\
+  ra tester\u2026"
 lastmod: '2024-03-13T22:44:37.442659-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva tester i Google Apps Script (GAS) handlar om att skapa automatiserade\
-  \ skript f\xF6r att verifiera beteendet hos din kod, och s\xE4kerst\xE4lla att den\
-  \ fungerar som f\xF6rv\xE4ntat under olika f\xF6rh\xE5llanden."
+summary: "\xC4ven om Google Apps Script inte har ett inbyggt testramverk som vissa\
+  \ andra programmeringsmilj\xF6er, kan du fortfarande skriva och k\xF6ra tester genom\
+  \ att anv\xE4nda enkla GAS-funktioner eller integrera externa testbibliotek s\xE5\
+  som `QUnit`."
 title: Skriva tester
 weight: 36
 ---

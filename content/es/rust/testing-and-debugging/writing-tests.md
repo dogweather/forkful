@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:55.156988-07:00
-description: "Escribir pruebas en Rust implica crear comprobaciones automatizadas\
-  \ para asegurar que tu c\xF3digo funciona como se espera. Los programadores hacen\
-  \ esto para\u2026"
+description: "C\xF3mo hacerlo: El marco de prueba integrado de Rust soporta pruebas\
+  \ de unidad, integraci\xF3n y documentaci\xF3n sin necesidad de bibliotecas externas.\
+  \ Las\u2026"
 lastmod: '2024-03-13T22:44:58.850145-06:00'
 model: gpt-4-0125-preview
-summary: "Escribir pruebas en Rust implica crear comprobaciones automatizadas para\
-  \ asegurar que tu c\xF3digo funciona como se espera."
+summary: "El marco de prueba integrado de Rust soporta pruebas de unidad, integraci\xF3\
+  n y documentaci\xF3n sin necesidad de bibliotecas externas."
 title: Escribiendo pruebas
 weight: 36
 ---

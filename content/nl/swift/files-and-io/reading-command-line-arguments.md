@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:35.075274-07:00
-description: "Het lezen van commandoregelargumenten stelt je Swift-programma in staat\
-  \ om extra details te grijpen wanneer gebruikers het uitvoeren. Dit is belangrijk\u2026"
+description: 'Hoe te: Swift maakt het lezen van commandoregelargumenten super eenvoudig.
+  Ze zijn toegankelijk via de `CommandLine` structuur. Hier is de essentie.'
 lastmod: '2024-03-13T22:44:51.173105-06:00'
 model: gpt-4-0125-preview
-summary: Het lezen van commandoregelargumenten stelt je Swift-programma in staat om
-  extra details te grijpen wanneer gebruikers het uitvoeren.
+summary: Swift maakt het lezen van commandoregelargumenten super eenvoudig.
 title: Commandoregelargumenten lezen
 weight: 23
 ---

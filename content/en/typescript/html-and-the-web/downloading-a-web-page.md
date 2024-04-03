@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:44:50.026184-07:00
-description: "Downloading a web page means grabbing the HTML, CSS, and potentially\
-  \ other resources from the URL you hit. Programmers do it to process content, scrape\u2026"
+description: 'How to: You can download a web page in TypeScript using Node.js and
+  the `node-fetch` library. Here''s how.'
 lastmod: '2024-03-13T22:44:59.857772-06:00'
 model: gpt-4-1106-preview
-summary: Downloading a web page means grabbing the HTML, CSS, and potentially other
-  resources from the URL you hit.
+summary: You can download a web page in TypeScript using Node.js and the `node-fetch`
+  library.
 title: Downloading a web page
 weight: 42
 ---

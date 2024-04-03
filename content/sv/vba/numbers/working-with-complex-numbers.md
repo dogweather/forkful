@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:14.575869-07:00
-description: "Att arbeta med komplexa tal inneb\xE4r att utf\xF6ra matematiska operationer\
-  \ med tal som har b\xE5de en reell del och en imagin\xE4r del. Programmerare anv\xE4\
-  nder ofta\u2026"
+description: "Hur: I Visual Basic for Applications (VBA) kan hanteringen av komplexa\
+  \ tal vara n\xE5got mindre rakt p\xE5 sak j\xE4mf\xF6rt med spr\xE5k med inbyggt\
+  \ st\xF6d f\xF6r dem. Dock\u2026"
 lastmod: '2024-03-13T22:44:37.736388-06:00'
 model: gpt-4-0125-preview
-summary: "Att arbeta med komplexa tal inneb\xE4r att utf\xF6ra matematiska operationer\
-  \ med tal som har b\xE5de en reell del och en imagin\xE4r del."
+summary: "I Visual Basic for Applications (VBA) kan hanteringen av komplexa tal vara\
+  \ n\xE5got mindre rakt p\xE5 sak j\xE4mf\xF6rt med spr\xE5k med inbyggt st\xF6d\
+  \ f\xF6r dem."
 title: Att arbeta med komplexa tal
 weight: 14
 ---

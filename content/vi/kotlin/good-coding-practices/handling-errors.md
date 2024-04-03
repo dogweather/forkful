@@ -2,16 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:39.447034-07:00
-description: "X\u1EED l\xFD l\u1ED7i l\xE0 c\xE1ch m\xE3 c\u1EE7a b\u1EA1n \u0111\u1ED1\
-  i di\u1EC7n v\u1EDBi nh\u1EEFng v\u1EA5n \u0111\u1EC1 ph\xE1t sinh trong qu\xE1\
-  \ tr\xECnh th\u1EF1c thi - gi\u1ED1ng nh\u01B0 vi\u1EC7c x\u1EED l\xFD m\u1ED9t\
-  \ t\xECnh hu\u1ED1ng b\u1EA5t ng\u1EDD m\xE0 kh\xF4ng l\xE0m r\u01A1i\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Kotlin cung c\u1EA5p `try`, `catch`, `finally`,\
+  \ v\xE0 `throw` \u0111\u1EC3 qu\u1EA3n l\xFD l\u1ED7i. D\u01B0\u1EDBi \u0111\xE2\
+  y l\xE0 c\xE1ch b\u1EA1n s\u1EED d\u1EE5ng ch\xFAng."
 lastmod: '2024-03-13T22:44:36.611550-06:00'
 model: gpt-4-0125-preview
-summary: "X\u1EED l\xFD l\u1ED7i l\xE0 c\xE1ch m\xE3 c\u1EE7a b\u1EA1n \u0111\u1ED1\
-  i di\u1EC7n v\u1EDBi nh\u1EEFng v\u1EA5n \u0111\u1EC1 ph\xE1t sinh trong qu\xE1\
-  \ tr\xECnh th\u1EF1c thi - gi\u1ED1ng nh\u01B0 vi\u1EC7c x\u1EED l\xFD m\u1ED9t\
-  \ t\xECnh hu\u1ED1ng b\u1EA5t ng\u1EDD m\xE0 kh\xF4ng l\xE0m r\u01A1i n\xF3."
+summary: "Kotlin cung c\u1EA5p `try`, `catch`, `finally`, v\xE0 `throw` \u0111\u1EC3\
+  \ qu\u1EA3n l\xFD l\u1ED7i."
 title: "X\u1EED l\xFD l\u1ED7i"
 weight: 16
 ---

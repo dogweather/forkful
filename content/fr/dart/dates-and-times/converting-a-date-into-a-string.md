@@ -2,15 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:53:32.350009-07:00
-description: "Convertir une date en cha\xEEne de caract\xE8res dans Dart est une t\xE2\
-  che courante lorsque vous avez besoin d'afficher des informations de date et d'heure\
-  \ dans\u2026"
+description: "Comment faire : Dart fournit la classe `DateTime` pour la gestion des\
+  \ dates et des heures, et le package `intl` pour le formatage. Premi\xE8rement,\
+  \ assurez-\u2026"
 lastmod: '2024-03-13T22:44:57.403108-06:00'
 model: gpt-4-0125-preview
-summary: "Convertir une date en cha\xEEne de caract\xE8res dans Dart est une t\xE2\
-  che courante lorsque vous avez besoin d'afficher des informations de date et d'heure\
-  \ dans un format lisible par l'homme, ou lorsque vous avez l'intention de s\xE9\
-  rialiser des donn\xE9es pour le stockage ou la transmission."
+summary: Dart fournit la classe `DateTime` pour la gestion des dates et des heures,
+  et le package `intl` pour le formatage.
 title: "Convertir une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---

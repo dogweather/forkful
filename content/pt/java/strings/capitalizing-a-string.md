@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:43.926143-07:00
-description: "Capitalizar uma string envolve modificar a primeira letra de cada palavra\
-  \ na string para mai\xFAscula enquanto assegura que o restante permane\xE7a em\u2026"
+description: "Como fazer: A biblioteca padr\xE3o do Java n\xE3o fornece um m\xE9todo\
+  \ direto para capitalizar strings inteiras de uma vez, mas voc\xEA pode realizar\
+  \ isso com uma\u2026"
 lastmod: '2024-03-13T22:44:46.439866-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizar uma string envolve modificar a primeira letra de cada palavra\
-  \ na string para mai\xFAscula enquanto assegura que o restante permane\xE7a em min\xFA\
-  scula."
+summary: "A biblioteca padr\xE3o do Java n\xE3o fornece um m\xE9todo direto para capitalizar\
+  \ strings inteiras de uma vez, mas voc\xEA pode realizar isso com uma combina\xE7\
+  \xE3o de m\xE9todos integrados."
 title: Capitalizando uma string
 weight: 2
 ---

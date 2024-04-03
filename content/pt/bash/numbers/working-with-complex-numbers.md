@@ -1,11 +1,11 @@
 ---
 date: 2024-01-26 04:36:59.125319-07:00
-description: "N\xFAmeros complexos consistem de uma parte real e uma imagin\xE1ria.\
-  \ Programadores os utilizam em campos como processamento de sinal, mec\xE2nica qu\xE2\
-  ntica, e\u2026"
+description: "Como fazer: O Bash n\xE3o suporta n\xFAmeros complexos nativamente.\
+  \ Voc\xEA frequentemente usar\xE1 uma ferramenta externa como `bc` com sua op\xE7\
+  \xE3o `-l`. Aqui est\xE1\u2026"
 lastmod: '2024-03-13T22:44:46.744814-06:00'
 model: gpt-4-0125-preview
-summary: "N\xFAmeros complexos consistem de uma parte real e uma imagin\xE1ria."
+summary: "O Bash n\xE3o suporta n\xFAmeros complexos nativamente."
 title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---

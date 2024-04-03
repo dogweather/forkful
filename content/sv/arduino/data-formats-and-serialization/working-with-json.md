@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:37.107703-07:00
-description: "JSON eller JavaScript Object Notation \xE4r ett l\xE4ttviktigt datautbytesformat,\
-  \ vilket g\xF6r det perfekt f\xF6r datalagring eller konfigurationsfiler i Arduino-\u2026"
+description: "Hur: F\xF6r att arbeta med JSON i Arduino \xE4r `ArduinoJson`-biblioteket\
+  \ ett popul\xE4rt val p\xE5 grund av dess anv\xE4ndarv\xE4nlighet och effektivitet.\
+  \ Det m\xF6jligg\xF6r\u2026"
 lastmod: '2024-03-13T22:44:38.189366-06:00'
 model: gpt-4-0125-preview
-summary: "JSON eller JavaScript Object Notation \xE4r ett l\xE4ttviktigt datautbytesformat,\
-  \ vilket g\xF6r det perfekt f\xF6r datalagring eller konfigurationsfiler i Arduino-projekt."
+summary: "F\xF6r att arbeta med JSON i Arduino \xE4r `ArduinoJson`-biblioteket ett\
+  \ popul\xE4rt val p\xE5 grund av dess anv\xE4ndarv\xE4nlighet och effektivitet."
 title: Arbeta med JSON
 weight: 38
 ---

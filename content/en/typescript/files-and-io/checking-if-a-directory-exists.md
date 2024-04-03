@@ -1,12 +1,12 @@
 ---
 date: 2024-02-03 19:02:35.601558-07:00
-description: "Checking if a directory exists in TypeScript is essential for file management\
-  \ tasks, such as reading from or writing data to files, ensuring that\u2026"
+description: "How to: TypeScript, when run in a Node.js environment, allows you to\
+  \ check if a directory exists by using the `fs` module, which provides the\u2026"
 lastmod: '2024-03-13T22:44:59.871565-06:00'
 model: gpt-4-0125-preview
-summary: Checking if a directory exists in TypeScript is essential for file management
-  tasks, such as reading from or writing data to files, ensuring that operations are
-  performed only on valid directories.
+summary: TypeScript, when run in a Node.js environment, allows you to check if a directory
+  exists by using the `fs` module, which provides the `existsSync()` function or the
+  asynchronous `access()` function combined with `constants.F_OK`.
 title: Checking if a directory exists
 weight: 20
 ---

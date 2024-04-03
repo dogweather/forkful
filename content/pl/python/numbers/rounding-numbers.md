@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 03:46:23.296325-07:00
-description: "Zaokr\u0105glanie liczb polega na dostosowywaniu ich do bli\u017Cszej,\
-  \ prostszej lub bardziej znacz\u0105cej warto\u015Bci. Programi\u015Bci zaokr\u0105\
-  glaj\u0105 liczby, aby upraszcza\u0107\u2026"
+description: "Jak to zrobi\u0107: Oto podstawowe informacje o zaokr\u0105glaniu liczb\
+  \ w Pythonie."
 lastmod: '2024-03-13T22:44:34.943878-06:00'
 model: gpt-4-0125-preview
-summary: "Zaokr\u0105glanie liczb polega na dostosowywaniu ich do bli\u017Cszej, prostszej\
-  \ lub bardziej znacz\u0105cej warto\u015Bci."
+summary: "Oto podstawowe informacje o zaokr\u0105glaniu liczb w Pythonie."
 title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---

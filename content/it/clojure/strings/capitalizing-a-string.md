@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:04:51.037331-07:00
-description: "Capitalizzare una stringa comporta modificare la stringa in modo che\
-  \ il suo primo carattere sia in maiuscolo, mentre il resto della stringa rimane\u2026"
+description: "Come fare: Clojure, essendo un linguaggio JVM, ti permette di utilizzare\
+  \ direttamente i metodi String di Java. Ecco un esempio base di come capitalizzare\u2026"
 lastmod: '2024-03-13T22:44:43.026234-06:00'
 model: gpt-4-0125-preview
-summary: Capitalizzare una stringa comporta modificare la stringa in modo che il suo
-  primo carattere sia in maiuscolo, mentre il resto della stringa rimane invariato.
+summary: Clojure, essendo un linguaggio JVM, ti permette di utilizzare direttamente
+  i metodi String di Java.
 title: Capitalizzare una stringa
 weight: 2
 ---

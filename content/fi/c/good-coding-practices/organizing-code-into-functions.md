@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:19.269579-07:00
-description: "Koodin j\xE4rjest\xE4minen funktioihin C-kieless\xE4 tarkoittaa monimutkaisten\
-  \ teht\xE4vien pilkkomista pienempiin, uudelleenk\xE4ytett\xE4viin koodilohkoihin.\
-  \ T\xE4m\xE4\u2026"
+description: "Miten: C-kieless\xE4 funktio ilmaistaan paluutyypill\xE4, nimell\xE4\
+  \ ja parametreilla (jos niit\xE4 on), jonka j\xE4lkeen seuraa koodilohko. Aloittakaamme\u2026"
 lastmod: '2024-03-13T22:44:57.046276-06:00'
 model: gpt-4-0125-preview
-summary: "Koodin j\xE4rjest\xE4minen funktioihin C-kieless\xE4 tarkoittaa monimutkaisten\
-  \ teht\xE4vien pilkkomista pienempiin, uudelleenk\xE4ytett\xE4viin koodilohkoihin."
+summary: "C-kieless\xE4 funktio ilmaistaan paluutyypill\xE4, nimell\xE4 ja parametreilla\
+  \ (jos niit\xE4 on), jonka j\xE4lkeen seuraa koodilohko."
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---

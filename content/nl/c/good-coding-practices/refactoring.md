@@ -2,15 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:46.631944-07:00
-description: "Refactoring in programmering betreft het herstructureren van bestaande\
-  \ code zonder het externe gedrag ervan te wijzigen, met als doel het verbeteren\
-  \ van\u2026"
+description: "Hoe: Refactoring kan een reeks tactieken omvatten, van het hernoemen\
+  \ van variabelen voor meer duidelijkheid tot het wijzigen van de structuur van code\u2026"
 lastmod: '2024-03-13T22:44:51.299754-06:00'
 model: gpt-4-0125-preview
-summary: Refactoring in programmering betreft het herstructureren van bestaande code
-  zonder het externe gedrag ervan te wijzigen, met als doel het verbeteren van niet-functionele
-  attributen zoals leesbaarheid, het verminderen van complexiteit, en het verbeteren
-  van onderhoudbaarheid.
+summary: Refactoring kan een reeks tactieken omvatten, van het hernoemen van variabelen
+  voor meer duidelijkheid tot het wijzigen van de structuur van code voor betere modularisatie.
 title: Refactoring
 weight: 19
 ---

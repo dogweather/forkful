@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:40:41.685455-07:00
-description: "Das Erstellen einer tempor\xE4ren Datei bedeutet, eine Datei zu generieren,\
-  \ die f\xFCr die kurzfristige Verwendung vorgesehen ist. Programmierer nutzen sie\
-  \ f\xFCr\u2026"
+description: "How to: Elm ist eigentlich auf funktionale Frontend-Programmierung spezialisiert,\
+  \ daher gibt es keine eingebettete Funktionalit\xE4t zum Arbeiten mit dem\u2026"
 lastmod: '2024-03-13T22:44:53.824999-06:00'
 model: gpt-4-1106-preview
-summary: "Das Erstellen einer tempor\xE4ren Datei bedeutet, eine Datei zu generieren,\
-  \ die f\xFCr die kurzfristige Verwendung vorgesehen ist."
+summary: "Elm ist eigentlich auf funktionale Frontend-Programmierung spezialisiert,\
+  \ daher gibt es keine eingebettete Funktionalit\xE4t zum Arbeiten mit dem Dateisystem\
+  \ wie das Erstellen von tempor\xE4ren Dateien."
 title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---

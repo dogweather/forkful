@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 03:42:55.761671-07:00
-description: "Numeroiden py\xF6rist\xE4minen on desimaalin leikkaamista l\xE4himp\xE4\
-  \xE4n kokonaislukuun tai asetettuun m\xE4\xE4r\xE4\xE4n desimaalipaikkoja. Ohjelmoijat\
-  \ py\xF6rist\xE4v\xE4t numeroita,\u2026"
+description: "Kuinka: Arduinossa voit py\xF6rist\xE4\xE4 numeroita k\xE4ytt\xE4en\
+  \ sis\xE4\xE4nrakennettuja funktioita. Keskeisi\xE4 toimijoita ovat `round`, `ceil`\
+  \ ja `floor`. T\xE4ss\xE4 nopea\u2026"
 lastmod: '2024-03-13T22:44:56.820127-06:00'
 model: gpt-4-0125-preview
-summary: "Numeroiden py\xF6rist\xE4minen on desimaalin leikkaamista l\xE4himp\xE4\xE4\
-  n kokonaislukuun tai asetettuun m\xE4\xE4r\xE4\xE4n desimaalipaikkoja."
+summary: "Arduinossa voit py\xF6rist\xE4\xE4 numeroita k\xE4ytt\xE4en sis\xE4\xE4\
+  nrakennettuja funktioita."
 title: "Numerojen py\xF6rist\xE4minen"
 weight: 13
 ---

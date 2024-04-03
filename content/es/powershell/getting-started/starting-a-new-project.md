@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 18:04:14.798037-07:00
-description: "Iniciar un nuevo proyecto es crear un espacio limpio y estructurado\
-  \ para tu c\xF3digo desde cero. Los programadores lo hacen para organizar ideas,\
-  \ facilitar\u2026"
+description: "C\xF3mo hacerlo: Para empezar un proyecto en PowerShell, puedes crear\
+  \ un nuevo directorio y establecer una estructura b\xE1sica con scripts y m\xF3\
+  dulos. Aqu\xED te\u2026"
 lastmod: '2024-03-13T22:44:59.292959-06:00'
 model: gpt-4-1106-preview
-summary: "Iniciar un nuevo proyecto es crear un espacio limpio y estructurado para\
-  \ tu c\xF3digo desde cero."
+summary: "Para empezar un proyecto en PowerShell, puedes crear un nuevo directorio\
+  \ y establecer una estructura b\xE1sica con scripts y m\xF3dulos."
 title: Iniciando un nuevo proyecto
 weight: 1
 ---

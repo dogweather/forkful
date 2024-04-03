@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 18:03:45.831156-07:00
-description: "Att starta ett nytt projekt i Java \xE4r som att \xF6ppna en ny, blank\
-  \ dagbok; potentialen \xE4r o\xE4ndlig. Programmerare startar nya projekt f\xF6\
-  r att omvandla id\xE9er\u2026"
+description: "S\xE5 h\xE4r g\xF6r du: Att kickstarta ett projekt \xE4r enkelt. Anv\xE4\
+  nd antingen ditt favoritutvecklingsverktyg eller kommandotolken. H\xE4r \xE4r ett\
+  \ exempel med Maven."
 lastmod: '2024-03-13T22:44:37.788113-06:00'
 model: gpt-4-1106-preview
-summary: "Att starta ett nytt projekt i Java \xE4r som att \xF6ppna en ny, blank dagbok;\
-  \ potentialen \xE4r o\xE4ndlig."
+summary: "Att kickstarta ett projekt \xE4r enkelt."
 title: "Att p\xE5b\xF6rja ett nytt projekt"
 weight: 1
 ---

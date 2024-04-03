@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:34:59.074995-07:00
-description: "String-Konkatenation verklebt einfach zwei Textst\xFCcke zu einem l\xE4\
-  ngeren. Programmierer*innen nutzen das, um Nutzerdaten zu verarbeiten, Nachrichten\
-  \ zu\u2026"
+description: "So geht\u2019s: In Haskell nutzen wir den Operator `(++)`, um Strings\
+  \ zu verketten."
 lastmod: '2024-03-13T22:44:53.923007-06:00'
 model: gpt-4-1106-preview
-summary: "String-Konkatenation verklebt einfach zwei Textst\xFCcke zu einem l\xE4\
-  ngeren."
+summary: In Haskell nutzen wir den Operator `(++)`, um Strings zu verketten.
 title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---

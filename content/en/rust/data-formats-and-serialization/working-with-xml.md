@@ -1,10 +1,10 @@
 ---
 date: 2024-01-25 03:39:48.963450-07:00
-description: "XML, short for eXtensible Markup Language, is like JSON's verbose cousin.\
-  \ You'll wrestle with XML when dealing with legacy systems, enterprise software,\u2026"
+description: 'How to: In Rust, you can handle XML with crates like `xml-rs`. Install
+  by adding `xml-rs = "0.8"` to your `Cargo.toml`. Here''s how to parse a simple XML.'
 lastmod: '2024-03-13T22:44:59.918439-06:00'
 model: gpt-4-1106-preview
-summary: XML, short for eXtensible Markup Language, is like JSON's verbose cousin.
+summary: In Rust, you can handle XML with crates like `xml-rs`.
 title: Working with XML
 weight: 40
 ---

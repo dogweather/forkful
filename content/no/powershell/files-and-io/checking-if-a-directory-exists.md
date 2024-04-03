@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:10.284376-07:00
-description: "I PowerShell er det \xE5 sjekke om en mappe finnes en vanlig oppgave\
-  \ som hjelper skript \xE5 ta beslutninger basert p\xE5 filsystemets struktur\u2014\
-  som \xE5 unng\xE5 feil\u2026"
+description: "Hvordan: PowerShell tilbyr en enkel m\xE5te \xE5 sjekke for tilstedev\xE6\
+  relsen av en mappe ved bruk av `Test-Path` cmdleten. Denne cmdleten returnerer en\
+  \ Boolean-\u2026"
 lastmod: '2024-03-13T22:44:41.031531-06:00'
 model: gpt-4-0125-preview
-summary: "I PowerShell er det \xE5 sjekke om en mappe finnes en vanlig oppgave som\
-  \ hjelper skript \xE5 ta beslutninger basert p\xE5 filsystemets struktur\u2014som\
-  \ \xE5 unng\xE5 feil ved \xE5 bekrefte at en m\xE5lmappe er p\xE5 plass f\xF8r man\
-  \ fors\xF8ker \xE5 lese fra eller skrive til den."
+summary: "PowerShell tilbyr en enkel m\xE5te \xE5 sjekke for tilstedev\xE6relsen av\
+  \ en mappe ved bruk av `Test-Path` cmdleten."
 title: Sjekker om en mappe eksisterer
 weight: 20
 ---

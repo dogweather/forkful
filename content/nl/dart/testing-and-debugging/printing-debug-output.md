@@ -2,13 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:25.668928-07:00
-description: "Debug-uitvoer afdrukken in Dart gaat over het weergeven van informatie\
-  \ in de console tijdens runtime, waardoor ontwikkelaars de uitvoeringsstroom kunnen\u2026"
+description: 'Hoe doe je dat: In Dart kun je debug-uitvoer afdrukken met de `print()`
+  functie. Hier is hoe je eenvoudige berichten en variabele waarden uitvoert.'
 lastmod: '2024-03-13T22:44:50.507580-06:00'
 model: gpt-4-0125-preview
-summary: Debug-uitvoer afdrukken in Dart gaat over het weergeven van informatie in
-  de console tijdens runtime, waardoor ontwikkelaars de uitvoeringsstroom kunnen volgen,
-  de staat van variabelen kunnen onderzoeken, of de bron van fouten kunnen identificeren.
+summary: In Dart kun je debug-uitvoer afdrukken met de `print()` functie.
 title: Debug-uitvoer afdrukken
 weight: 33
 ---

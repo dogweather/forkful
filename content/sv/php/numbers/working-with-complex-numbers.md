@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:44:37.522091-07:00
-description: "Komplexa tal har en realdel och en imagin\xE4rdel, vanligtvis skrivna\
-  \ som `a + bi`. De \xE4r avg\xF6rande inom avancerad matematik, fysik, ingenj\xF6\
-  rsvetenskap och\u2026"
+description: "Hur: PHP erbjuder inbyggt st\xF6d f\xF6r komplexa tal genom att anv\xE4\
+  nda `ext-intl`-till\xE4gget med klassen `NumberFormatter`. H\xE4r \xE4r ett exempel."
 lastmod: '2024-03-13T22:44:37.990405-06:00'
 model: gpt-4-0125-preview
-summary: "Komplexa tal har en realdel och en imagin\xE4rdel, vanligtvis skrivna som\
-  \ `a + bi`."
+summary: "PHP erbjuder inbyggt st\xF6d f\xF6r komplexa tal genom att anv\xE4nda `ext-intl`-till\xE4\
+  gget med klassen `NumberFormatter`."
 title: Att arbeta med komplexa tal
 weight: 14
 ---

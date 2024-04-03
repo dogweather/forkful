@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:40.631262-07:00
-description: "Il refactoring nella programmazione implica la modifica della struttura\
-  \ del codice senza cambiarne il comportamento, per migliorare aspetti come la\u2026"
+description: "Come fare: Consideriamo un esempio base in Visual Basic per Applicazioni\
+  \ (VBA) dove abbiamo una subroutine che stampa i dettagli di un impiegato.\u2026"
 lastmod: '2024-03-13T22:44:43.272491-06:00'
 model: gpt-4-0125-preview
-summary: "Il refactoring nella programmazione implica la modifica della struttura\
-  \ del codice senza cambiarne il comportamento, per migliorare aspetti come la leggibilit\xE0\
-  , la manutenibilit\xE0 o le prestazioni."
+summary: Consideriamo un esempio base in Visual Basic per Applicazioni (VBA) dove
+  abbiamo una subroutine che stampa i dettagli di un impiegato.
 title: Rifattorizzazione
 weight: 19
 ---

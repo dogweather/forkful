@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:08:47.221061-07:00
-description: "Organiser son code en fonctions signifie le d\xE9couper en blocs r\xE9\
-  utilisables, chaque bloc ex\xE9cutant une t\xE2che sp\xE9cifique. Les programmeurs\
-  \ le font pour\u2026"
+description: "Comment faire : Imaginez que vous voulez faire clignoter une LED. Sans\
+  \ fonctions, votre `loop` est un g\xE2chis enchev\xEAtr\xE9. Avec des fonctions,\
+  \ il est\u2026"
 lastmod: '2024-03-13T22:44:58.117761-06:00'
 model: gpt-4-1106-preview
-summary: "Organiser son code en fonctions signifie le d\xE9couper en blocs r\xE9utilisables,\
-  \ chaque bloc ex\xE9cutant une t\xE2che sp\xE9cifique."
+summary: Imaginez que vous voulez faire clignoter une LED.
 title: Organisation du code en fonctions
 weight: 18
 ---

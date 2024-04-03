@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 18:03:49.865769-07:00
-description: "N\xE5r du begynner et nytt prosjekt, starter du med en blank slate for\
-  \ \xE5 kode noe fra bunnen av. Programmerere gj\xF8r dette for \xE5 l\xF8se et nytt\
-  \ problem,\u2026"
+description: 'Hvordan: .'
 lastmod: '2024-03-13T22:44:40.667343-06:00'
 model: gpt-4-1106-preview
-summary: "N\xE5r du begynner et nytt prosjekt, starter du med en blank slate for \xE5\
-  \ kode noe fra bunnen av."
+summary: .
 title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---

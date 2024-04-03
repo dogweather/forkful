@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:52.310338-07:00
-description: "YAML is een gegevensserialisatieformaat dat gemakkelijk door mensen\
-  \ te lezen en te schrijven is. Programmeurs gebruiken het voor configuratiebestanden,\u2026"
+description: "Hoe te: Lua heeft geen ingebouwde ondersteuning voor YAML, maar je kunt\
+  \ een bibliotheek zoals `lyaml` gebruiken. Installeer het met `luarocks install\u2026"
 lastmod: '2024-03-13T22:44:50.957527-06:00'
 model: gpt-4-0125-preview
-summary: YAML is een gegevensserialisatieformaat dat gemakkelijk door mensen te lezen
-  en te schrijven is.
+summary: Lua heeft geen ingebouwde ondersteuning voor YAML, maar je kunt een bibliotheek
+  zoals `lyaml` gebruiken.
 title: Werken met YAML
 weight: 41
 ---

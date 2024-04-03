@@ -2,11 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:11.374191-07:00
-description: "Het samenvoegen van strings is eigenlijk gewoon woorden aan elkaar rijgen.\
-  \ Denk erover als het maken van een trein uit woorden in plaats van rijtuigen.\u2026"
+description: "Hoe doe je dat: In PHP gaat het samenvoegen van strings helemaal over\
+  \ de punt (`.`). Neem twee strings, plaats een punt tussen hen in, en voil\xE0!\
+  \ Ze zijn\u2026"
 lastmod: '2024-03-13T22:44:50.886304-06:00'
 model: gpt-4-0125-preview
-summary: Het samenvoegen van strings is eigenlijk gewoon woorden aan elkaar rijgen.
+summary: In PHP gaat het samenvoegen van strings helemaal over de punt (`.`).
 title: Samenvoegen van strings
 weight: 3
 ---

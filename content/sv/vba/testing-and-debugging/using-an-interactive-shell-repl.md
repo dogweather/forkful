@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:18.172077-07:00
-description: "En interaktiv skal, eller Read-Eval-Print Loop (REPL), till\xE5ter anv\xE4\
-  ndare att mata in kommandon, exekvera dem och se resultaten i realtid. Programmerare\u2026"
+description: "Hur: Visual Basic for Applications (VBA) st\xF6djer inte nativt en interaktiv\
+  \ skal eller REPL-upplevelse som man ser i spr\xE5k som Python eller JavaScript.\u2026"
 lastmod: '2024-03-13T22:44:37.744907-06:00'
 model: gpt-4-0125-preview
-summary: "En interaktiv skal, eller Read-Eval-Print Loop (REPL), till\xE5ter anv\xE4\
-  ndare att mata in kommandon, exekvera dem och se resultaten i realtid."
+summary: "Visual Basic for Applications (VBA) st\xF6djer inte nativt en interaktiv\
+  \ skal eller REPL-upplevelse som man ser i spr\xE5k som Python eller JavaScript."
 title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---

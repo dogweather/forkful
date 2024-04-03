@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:37.673029-07:00
-description: "Los n\xFAmeros complejos, compuestos por una parte real y una parte\
-  \ imaginaria (generalmente denotados como a + bi), extienden el concepto de los\
-  \ n\xFAmeros sin\u2026"
+description: "C\xF3mo hacerlo: Dart no incluye una biblioteca incorporada para n\xFA\
+  meros complejos, lo que hace necesario implementar una clase de n\xFAmero complejo\u2026"
 lastmod: '2024-03-13T22:44:58.742692-06:00'
 model: gpt-4-0125-preview
-summary: "Los n\xFAmeros complejos, compuestos por una parte real y una parte imaginaria\
-  \ (generalmente denotados como a + bi), extienden el concepto de los n\xFAmeros\
-  \ sin dimensi\xF3n a un espacio bidimensional."
+summary: "Dart no incluye una biblioteca incorporada para n\xFAmeros complejos, lo\
+  \ que hace necesario implementar una clase de n\xFAmero complejo personalizada o\
+  \ usar una biblioteca de terceros."
 title: "Trabajando con n\xFAmeros complejos"
 weight: 14
 ---

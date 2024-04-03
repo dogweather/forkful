@@ -2,14 +2,14 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:10.270752-07:00
-description: "Usuwanie znak\xF3w pasuj\u0105cych do okre\u015Blonego wzorca w ci\u0105\
-  gach znak\xF3w jest kluczowe dla walidacji danych, ich oczyszczania lub przygotowania\
-  \ tekstu do\u2026"
+description: "Jak to zrobi\u0107: Dart umo\u017Cliwia \u0142atwe usuni\u0119cie znak\xF3\
+  w pasuj\u0105cych do predefiniowanego wzorca za pomoc\u0105 wyra\u017Ce\u0144 regularnych\
+  \ i metody `replaceAll`. Do\u2026"
 lastmod: '2024-03-13T22:44:35.072361-06:00'
 model: gpt-4-0125-preview
-summary: "Usuwanie znak\xF3w pasuj\u0105cych do okre\u015Blonego wzorca w ci\u0105\
-  gach znak\xF3w jest kluczowe dla walidacji danych, ich oczyszczania lub przygotowania\
-  \ tekstu do dalszego przetwarzania."
+summary: "Dart umo\u017Cliwia \u0142atwe usuni\u0119cie znak\xF3w pasuj\u0105cych\
+  \ do predefiniowanego wzorca za pomoc\u0105 wyra\u017Ce\u0144 regularnych i metody\
+  \ `replaceAll`."
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---

@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 03:39:55.639047-07:00
-description: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w oznacza wyeliminowanie\
-  \ wszelkich znak\xF3w cudzys\u0142owu \u2014 pojedynczych (' '), podw\xF3jnych (\"\
-  \ \") lub obu \u2014 z danych\u2026"
+description: "Jak to zrobi\u0107: Wyrwijmy te irytuj\u0105ce cudzys\u0142owy z naszego\
+  \ tekstu. Do szybkich napraw u\u017Cyjemy metody `replace()`, a do twardych orzech\xF3\
+  w do zgryzienia -\u2026"
 lastmod: '2024-03-13T22:44:35.265107-06:00'
 model: gpt-4-0125-preview
-summary: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w oznacza wyeliminowanie\
-  \ wszelkich znak\xF3w cudzys\u0142owu \u2014 pojedynczych (' '), podw\xF3jnych (\"\
-  \ \") lub obu \u2014 z danych tekstowych."
+summary: "Wyrwijmy te irytuj\u0105ce cudzys\u0142owy z naszego tekstu."
 title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---

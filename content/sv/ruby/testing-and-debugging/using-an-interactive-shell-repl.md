@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:17:24.407303-07:00
-description: "Ett interaktivt skal, eller REPL (Read-Eval-Print Loop), l\xE5ter dig\
-  \ testa kod i realtid. Programmerare anv\xE4nder det f\xF6r att experimentera, fels\xF6\
-  ka och l\xE4ra\u2026"
+description: "Hur man: Ruby's REPL kallas IRB (Interactive Ruby). Hoppa in och testa\
+  \ Ruby direkt fr\xE5n din terminal."
 lastmod: '2024-03-13T22:44:38.432569-06:00'
 model: gpt-4-0125-preview
-summary: "Ett interaktivt skal, eller REPL (Read-Eval-Print Loop), l\xE5ter dig testa\
-  \ kod i realtid."
+summary: Ruby's REPL kallas IRB (Interactive Ruby).
 title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---

@@ -1,13 +1,12 @@
 ---
 date: 2024-01-27 16:21:00.295390-07:00
-description: "\xC5 redigere filer p\xE5 stedet med CLI (kommandolinjegrensesnitt)\
-  \ en-linjers kommandoer i Ruby lar deg endre filer direkte fra terminalen din, uten\
-  \ \xE5 m\xE5tte\u2026"
+description: "Hvordan: Ruby tilbyr en enkel m\xE5te \xE5 redigere filer p\xE5 stedet\
+  \ direkte fra kommandolinjen. Med Rubys `-i`-bryter kan du be Ruby operere direkte\
+  \ p\xE5 de\u2026"
 lastmod: '2024-03-13T22:44:41.313639-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 redigere filer p\xE5 stedet med CLI (kommandolinjegrensesnitt) en-linjers\
-  \ kommandoer i Ruby lar deg endre filer direkte fra terminalen din, uten \xE5 m\xE5\
-  tte \xE5pne dem i en redigerer, gj\xF8re endringer og lagre dem tilbake."
+summary: "Ruby tilbyr en enkel m\xE5te \xE5 redigere filer p\xE5 stedet direkte fra\
+  \ kommandolinjen."
 title: "Redigering av filer p\xE5 stedet med CLI-enlinjerskommandoer"
 weight: 32
 ---

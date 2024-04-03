@@ -3,14 +3,11 @@ changelog:
 - 2024-01-28, dogweather, reviewed
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 02:05:09.671092-07:00
-description: "Att tolka ett datum fr\xE5n en str\xE4ng handlar om att ta text, som\
-  \ \"2023-04-05\", och omvandla den till ett datumformat som ditt program kan f\xF6\
-  rst\xE5 och arbeta\u2026"
+description: "Hur man g\xF6r: I Elixir kan du tolka datum genom att anv\xE4nda modulen\
+  \ `Date`. S\xE5 h\xE4r omvandlar du en str\xE4ng till ett datum."
 lastmod: '2024-03-13T22:44:37.576834-06:00'
 model: gpt-4-0125-preview
-summary: "Att tolka ett datum fr\xE5n en str\xE4ng handlar om att ta text, som \"\
-  2023-04-05\", och omvandla den till ett datumformat som ditt program kan f\xF6rst\xE5\
-  \ och arbeta med."
+summary: "I Elixir kan du tolka datum genom att anv\xE4nda modulen `Date`."
 title: "Att tolka ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---

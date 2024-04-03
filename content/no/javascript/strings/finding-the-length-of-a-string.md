@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:47:35.772309-07:00
-description: "I JavaScript bestemmer vi lengden p\xE5 en streng med `.length`-egenskapen.\
-  \ Det hjelper oss med \xE5 h\xE5ndtere tekst, som \xE5 validering av input eller\
-  \ looping\u2026"
+description: 'Hvordan: .'
 lastmod: '2024-03-13T22:44:41.175252-06:00'
 model: gpt-4-1106-preview
-summary: "I JavaScript bestemmer vi lengden p\xE5 en streng med `."
+summary: .
 title: "Finn lengden p\xE5 en streng"
 weight: 7
 ---

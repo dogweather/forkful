@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:24.173640-07:00
-description: "Associativa arrayer, k\xE4nda som objekt i Google Apps Script (en variant\
-  \ av JavaScript), l\xE5ter programmerare skapa samlingar av nyckel-v\xE4rde-par.\
-  \ Denna\u2026"
+description: "Hur: I Google Apps Script skapar och manipulerar du associativa arrayer\
+  \ (objekt) genom att anv\xE4nda klammer `{}`, d\xE4r du definierar nyckel-v\xE4\
+  rde-par inuti.\u2026"
 lastmod: '2024-03-13T22:44:37.430434-06:00'
 model: gpt-4-0125-preview
-summary: "Associativa arrayer, k\xE4nda som objekt i Google Apps Script (en variant\
-  \ av JavaScript), l\xE5ter programmerare skapa samlingar av nyckel-v\xE4rde-par."
+summary: "I Google Apps Script skapar och manipulerar du associativa arrayer (objekt)\
+  \ genom att anv\xE4nda klammer `{}`, d\xE4r du definierar nyckel-v\xE4rde-par inuti."
 title: "Anv\xE4nda associativa arrayer"
 weight: 15
 ---

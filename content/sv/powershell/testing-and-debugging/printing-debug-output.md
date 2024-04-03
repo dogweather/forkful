@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:53:03.951997-07:00
-description: "Att skriva ut fels\xF6kningsdata inneb\xE4r att visa tempor\xE4r information\
-  \ f\xF6r att f\xF6rst\xE5 vad koden g\xF6r. Programmerare g\xF6r detta f\xF6r att\
-  \ snabbt hitta och \xE5tg\xE4rda\u2026"
+description: "S\xE5 h\xE4r g\xF6r du: Anv\xE4nd `Write-Host` f\xF6r enkel utskrift.\
+  \ F\xF6r mer kontroll, anv\xE4nd `Write-Debug` eller `Write-Verbose` samt deras\
+  \ motsvarande inst\xE4llningar."
 lastmod: '2024-03-13T22:44:38.128475-06:00'
 model: gpt-4-1106-preview
-summary: "Att skriva ut fels\xF6kningsdata inneb\xE4r att visa tempor\xE4r information\
-  \ f\xF6r att f\xF6rst\xE5 vad koden g\xF6r."
+summary: "Anv\xE4nd `Write-Host` f\xF6r enkel utskrift."
 title: "Skriva ut fels\xF6kningsdata"
 weight: 33
 ---

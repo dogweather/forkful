@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:50:39.324365-07:00
-description: "Strenginterpolering lar oss sette variabler eller beregnede verdier\
-  \ inn i tekst. Vi bruker det for \xE5 bygge dynamiske strenger enkelt."
+description: "How to: Elixir bruker `#{}` for \xE5 interpolere uttrykk i strenger."
 lastmod: '2024-03-13T22:44:40.429783-06:00'
 model: gpt-4-1106-preview
-summary: Strenginterpolering lar oss sette variabler eller beregnede verdier inn i
-  tekst.
+summary: "Elixir bruker `#{}` for \xE5 interpolere uttrykk i strenger."
 title: Interpolering av en streng
 weight: 8
 ---

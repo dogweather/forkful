@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:28.840971-07:00
-description: "Regulj\xE4ra uttryck, eller regex, \xE4r sekvenser av tecken som bildar\
-  \ ett s\xF6km\xF6nster, ofta anv\xE4nda f\xF6r str\xE4ngmatchning eller manipuleringsuppgifter.\u2026"
+description: "Hur: Swifts inbyggda st\xF6d f\xF6r regex anv\xE4nder klassen `NSRegularExpression`,\
+  \ tillsammans med String-klassens metoderna f\xF6r omf\xE5ng och ers\xE4ttning.\
+  \ Nedan\u2026"
 lastmod: '2024-03-13T22:44:38.241391-06:00'
 model: gpt-4-0125-preview
-summary: "Regulj\xE4ra uttryck, eller regex, \xE4r sekvenser av tecken som bildar\
-  \ ett s\xF6km\xF6nster, ofta anv\xE4nda f\xF6r str\xE4ngmatchning eller manipuleringsuppgifter."
+summary: "Swifts inbyggda st\xF6d f\xF6r regex anv\xE4nder klassen `NSRegularExpression`,\
+  \ tillsammans med String-klassens metoderna f\xF6r omf\xE5ng och ers\xE4ttning."
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---

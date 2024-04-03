@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:45.024696-07:00
-description: "Das Herunterladen einer Webseite in Google Apps Script beinhaltet das\
-  \ Abrufen des Inhalts einer Webseite \xFCber HTML f\xFCr verschiedene Zwecke, wie\
-  \ zum\u2026"
+description: "Wie: In Google Apps Script ist der `UrlFetchApp`-Dienst zentral f\xFC\
+  r das Herunterladen von Webinhalten. Unten finden Sie eine Schritt-f\xFCr-Schritt-Anleitung\u2026"
 lastmod: '2024-03-13T22:44:53.332499-06:00'
 model: gpt-4-0125-preview
-summary: "Das Herunterladen einer Webseite in Google Apps Script beinhaltet das Abrufen\
-  \ des Inhalts einer Webseite \xFCber HTML f\xFCr verschiedene Zwecke, wie zum Beispiel\
-  \ Web Scraping, Datenextraktion oder die \xDCberwachung von \xC4nderungen."
+summary: "In Google Apps Script ist der `UrlFetchApp`-Dienst zentral f\xFCr das Herunterladen\
+  \ von Webinhalten."
 title: Herunterladen einer Webseite
 weight: 42
 ---

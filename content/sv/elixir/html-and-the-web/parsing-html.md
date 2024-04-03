@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:11:54.514226-07:00
-description: "Att tolka HTML i Elixir inneb\xE4r att extrahera information fr\xE5\
-  n HTML-dokument. Programmerare g\xF6r detta f\xF6r att programmatiskt interagera\
-  \ med webbsidor,\u2026"
+description: "Hur man g\xF6r: Elixir, med dess robusta modell f\xF6r samtidighet och\
+  \ paradigmet f\xF6r funktionell programmering, inkluderar inte inbyggd kapacitet\
+  \ f\xF6r att tolka\u2026"
 lastmod: '2024-03-13T22:44:37.564730-06:00'
 model: gpt-4-0125-preview
-summary: "Att tolka HTML i Elixir inneb\xE4r att extrahera information fr\xE5n HTML-dokument."
+summary: "Elixir, med dess robusta modell f\xF6r samtidighet och paradigmet f\xF6\
+  r funktionell programmering, inkluderar inte inbyggd kapacitet f\xF6r att tolka\
+  \ HTML."
 title: Tolka HTML
 weight: 43
 ---

@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 03:36:46.299164-07:00
-description: "Refatora\xE7\xE3o \xE9 o processo de reestrutura\xE7\xE3o do c\xF3digo\
-  \ de computador existente\u2014mudando a fatora\xE7\xE3o\u2014sem alterar seu comportamento\
-  \ externo. Programadores\u2026"
+description: "Como fazer: Vamos refatorar um simples trecho de c\xF3digo em Rust para\
+  \ torn\xE1-lo mais idiom\xE1tico e manuten\xEDvel. Come\xE7amos com uma fun\xE7\xE3\
+  o que calcula a soma\u2026"
 lastmod: '2024-03-13T22:44:46.375917-06:00'
 model: gpt-4-0125-preview
-summary: "Refatora\xE7\xE3o \xE9 o processo de reestrutura\xE7\xE3o do c\xF3digo de\
-  \ computador existente\u2014mudando a fatora\xE7\xE3o\u2014sem alterar seu comportamento\
-  \ externo."
+summary: "Vamos refatorar um simples trecho de c\xF3digo em Rust para torn\xE1-lo\
+  \ mais idiom\xE1tico e manuten\xEDvel."
 title: "Refatora\xE7\xE3o"
 weight: 19
 ---

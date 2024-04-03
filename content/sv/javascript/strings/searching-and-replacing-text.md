@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:58:31.357313-07:00
-description: "Att s\xF6ka och ers\xE4tta text inneb\xE4r att hitta s\xE4rskilda teckenstr\xE4\
-  ngar i en text och byta ut dem mot andra str\xE4ngar. Programmerare g\xF6r det f\xF6\
-  r att snabbt\u2026"
+description: "How to: F\xF6r att komma ig\xE5ng, l\xE5t oss dyka rakt in i n\xE5gra\
+  \ kodexempel. Stapla inte p\xE5 med extra; rakt p\xE5 sak \xE4r nyckeln h\xE4r."
 lastmod: '2024-03-13T22:44:38.278656-06:00'
 model: gpt-4-1106-preview
-summary: "Att s\xF6ka och ers\xE4tta text inneb\xE4r att hitta s\xE4rskilda teckenstr\xE4\
-  ngar i en text och byta ut dem mot andra str\xE4ngar."
+summary: "F\xF6r att komma ig\xE5ng, l\xE5t oss dyka rakt in i n\xE5gra kodexempel."
 title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---

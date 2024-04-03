@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:23.947725-07:00
-description: "Pisanie pliku tekstowego w JavaScript cz\u0119sto odnosi si\u0119 do\
-  \ tworzenia i zapisywania danych w prostym, czytelnym formacie dla cel\xF3w logowania,\
-  \ eksportowania\u2026"
+description: "Jak to zrobi\u0107: W \u015Brodowisku Node.js mo\u017Cesz u\u017Cy\u0107\
+  \ wbudowanego modu\u0142u `fs` (File System) do pisania plik\xF3w tekstowych. Ten\
+  \ przyk\u0142ad demonstruje\u2026"
 lastmod: '2024-03-13T22:44:35.814652-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie pliku tekstowego w JavaScript cz\u0119sto odnosi si\u0119 do tworzenia\
-  \ i zapisywania danych w prostym, czytelnym formacie dla cel\xF3w logowania, eksportowania\
-  \ danych u\u017Cytkownika lub konfiguracji."
+summary: "W \u015Brodowisku Node.js mo\u017Cesz u\u017Cy\u0107 wbudowanego modu\u0142\
+  u `fs` (File System) do pisania plik\xF3w tekstowych."
 title: Pisanie pliku tekstowego
 weight: 24
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 00:49:54.306888-07:00
-description: "G\xE9rer les erreurs en C# consiste \xE0 prendre en charge l'inattendu,\
-  \ comme tr\xE9bucher sur ses lacets. Les programmes peuvent buter sur des donn\xE9\
-  es incorrectes\u2026"
+description: "Comment faire : Commen\xE7ons par un bloc try-catch. C'est comme installer\
+  \ un filet de s\xE9curit\xE9 sous un funambule. S'il glisse, il ne chute pas - il\
+  \ est\u2026"
 lastmod: '2024-03-13T22:44:57.795900-06:00'
 model: gpt-4-1106-preview
-summary: "G\xE9rer les erreurs en C# consiste \xE0 prendre en charge l'inattendu,\
-  \ comme tr\xE9bucher sur ses lacets."
+summary: "Commen\xE7ons par un bloc try-catch."
 title: Gestion des erreurs
 weight: 16
 ---

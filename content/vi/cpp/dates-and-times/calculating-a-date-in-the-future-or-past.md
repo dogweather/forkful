@@ -2,16 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:53.266021-07:00
-description: "T\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7\
-  c qu\xE1 kh\u1EE9 c\xF3 ngh\u0129a l\xE0 x\xE1c \u0111\u1ECBnh ng\xE0y n\xE0o \u0111\
-  \xF3 s\u1EBD l\xE0 sau ho\u1EB7c tr\u01B0\u1EDBc m\u1ED9t kho\u1EA3ng th\u1EDDi\
-  \ gian nh\u1EA5t \u0111\u1ECBnh. N\xF3 h\u1EEFu \xEDch cho vi\u1EC7c\u2026"
+description: "L\xE0m sao: C++20 \u0111\xE3 gi\u1EDBi thi\u1EC7u c\xE1c n\xE2ng c\u1EA5\
+  p th\u01B0 vi\u1EC7n `<chrono>`, v\xEC v\u1EADy x\u1EED l\xFD th\u1EDDi gian \xED\
+  t ph\u1EE9c t\u1EA1p h\u01A1n. D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t v\xED d\u1EE5\
+  \ nhanh v\u1EC1 vi\u1EC7c th\xEAm ng\xE0y v\xE0o\u2026"
 lastmod: '2024-03-13T22:44:37.060394-06:00'
 model: gpt-4-0125-preview
-summary: "T\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1\
-  \ kh\u1EE9 c\xF3 ngh\u0129a l\xE0 x\xE1c \u0111\u1ECBnh ng\xE0y n\xE0o \u0111\xF3\
-  \ s\u1EBD l\xE0 sau ho\u1EB7c tr\u01B0\u1EDBc m\u1ED9t kho\u1EA3ng th\u1EDDi gian\
-  \ nh\u1EA5t \u0111\u1ECBnh."
+summary: "C++20 \u0111\xE3 gi\u1EDBi thi\u1EC7u c\xE1c n\xE2ng c\u1EA5p th\u01B0 vi\u1EC7\
+  n `<chrono>`, v\xEC v\u1EADy x\u1EED l\xFD th\u1EDDi gian \xEDt ph\u1EE9c t\u1EA1\
+  p h\u01A1n."
 title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1EE9"
 weight: 26
 ---

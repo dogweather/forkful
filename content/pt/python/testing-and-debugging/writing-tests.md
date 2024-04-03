@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:31.846122-07:00
-description: "Escrever testes em Python envolve a cria\xE7\xE3o de scripts automatizados\
-  \ para validar a corre\xE7\xE3o do seu c\xF3digo. Programadores fazem isso para\
-  \ garantir que\u2026"
+description: "Como fazer: Python vem com um m\xF3dulo embutido para escrever testes\
+  \ chamado `unittest`. \xC9 assim que voc\xEA pode us\xE1-lo para testar uma fun\xE7\
+  \xE3o simples."
 lastmod: '2024-03-13T22:44:46.157511-06:00'
 model: gpt-4-0125-preview
-summary: "Escrever testes em Python envolve a cria\xE7\xE3o de scripts automatizados\
-  \ para validar a corre\xE7\xE3o do seu c\xF3digo."
+summary: "Python vem com um m\xF3dulo embutido para escrever testes chamado `unittest`."
 title: Escrevendo testes
 weight: 36
 ---

@@ -1,12 +1,13 @@
 ---
 date: 2024-01-26 03:36:52.355665-07:00
-description: "La refactorizaci\xF3n es el proceso de reestructurar c\xF3digo de computadora\
-  \ existente sin cambiar su comportamiento externo, con el objetivo de mejorar los\u2026"
+description: "C\xF3mo hacerlo: PowerShell no tiene una herramienta de refactorizaci\xF3\
+  n dedicada integrada, pero a\xFAn as\xED puedes limpiar tu c\xF3digo para mejorar\
+  \ la legibilidad\u2026"
 lastmod: '2024-03-13T22:44:59.300474-06:00'
 model: gpt-4-0125-preview
-summary: "La refactorizaci\xF3n es el proceso de reestructurar c\xF3digo de computadora\
-  \ existente sin cambiar su comportamiento externo, con el objetivo de mejorar los\
-  \ atributos no funcionales del software."
+summary: "PowerShell no tiene una herramienta de refactorizaci\xF3n dedicada integrada,\
+  \ pero a\xFAn as\xED puedes limpiar tu c\xF3digo para mejorar la legibilidad y el\
+  \ rendimiento."
 title: "Refactorizaci\xF3n"
 weight: 19
 ---

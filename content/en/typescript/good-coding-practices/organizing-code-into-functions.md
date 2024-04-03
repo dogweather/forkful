@@ -1,12 +1,10 @@
 ---
 date: 2024-01-25 03:00:11.560491-07:00
-description: "Organizing code into functions means chunking your code into reusable,\
-  \ modular blocks. We do this to keep things DRY (Don't Repeat Yourself), making\
-  \ code\u2026"
+description: 'How to: Imagine you''re making a basic calculator. Instead of writing
+  the addition logic everywhere you need it, create an `add` function.'
 lastmod: '2024-03-13T22:44:59.863874-06:00'
 model: gpt-4-1106-preview
-summary: Organizing code into functions means chunking your code into reusable, modular
-  blocks.
+summary: Imagine you're making a basic calculator.
 title: Organizing code into functions
 weight: 18
 ---

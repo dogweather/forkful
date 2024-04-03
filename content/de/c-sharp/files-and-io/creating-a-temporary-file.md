@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:40:18.869683-07:00
-description: "Ein tempor\xE4res File ist eine Datei, die zur kurzzeitigen Datenspeicherung\
-  \ w\xE4hrend der Laufzeit eines Programms erstellt wird. Programmierer nutzen solche\u2026"
+description: "How To: Hier ist ein einfaches Beispiel in C#, wie man eine tempor\xE4\
+  re Datei erstellt."
 lastmod: '2024-03-13T22:44:53.907961-06:00'
 model: gpt-4-1106-preview
-summary: "Ein tempor\xE4res File ist eine Datei, die zur kurzzeitigen Datenspeicherung\
-  \ w\xE4hrend der Laufzeit eines Programms erstellt wird."
+summary: "Hier ist ein einfaches Beispiel in C#, wie man eine tempor\xE4re Datei erstellt."
 title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---

@@ -2,12 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:43.095329-07:00
-description: "Das Parsen eines Datums aus einem String in C# beinhaltet das Umwandeln\
-  \ von textuellen Darstellungen von Daten und Zeiten in ein `DateTime`-Objekt. Dies\u2026"
+description: "Wie geht das: **Basis-Parsing:** Die Methoden `DateTime.Parse` und `DateTime.TryParse`\
+  \ sind die ersten Anlaufstellen, um einen String in ein `DateTime`\u2026"
 lastmod: '2024-03-13T22:44:53.897736-06:00'
 model: gpt-4-0125-preview
-summary: Das Parsen eines Datums aus einem String in C# beinhaltet das Umwandeln von
-  textuellen Darstellungen von Daten und Zeiten in ein `DateTime`-Objekt.
+summary: '**Basis-Parsing:**
+
+
+  Die Methoden `DateTime.Parse` und `DateTime.TryParse` sind die ersten Anlaufstellen,
+  um einen String in ein `DateTime` umzuwandeln.'
 title: Einen Datum aus einem String analysieren
 weight: 30
 ---

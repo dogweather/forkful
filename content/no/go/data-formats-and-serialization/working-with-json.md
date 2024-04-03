@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:12:01.333200-07:00
-description: "\xC5 arbeide med JSON (JavaScript Object Notation) i Go inneb\xE6rer\
-  \ koding og dekoding av data mellom Go-datastrukturer og JSON-format. Denne oppgaven\
-  \ er\u2026"
+description: "Hvordan: I Go er pakken `encoding/json` din inngangsport til JSON-manipulering,\
+  \ som tilbyr mekanismer for \xE5 konvertere Go-datastrukturer til JSON\u2026"
 lastmod: '2024-03-13T22:44:40.291136-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 arbeide med JSON (JavaScript Object Notation) i Go inneb\xE6rer koding\
-  \ og dekoding av data mellom Go-datastrukturer og JSON-format."
+summary: "I Go er pakken `encoding/json` din inngangsport til JSON-manipulering, som\
+  \ tilbyr mekanismer for \xE5 konvertere Go-datastrukturer til JSON (marshalling)\
+  \ og tilbake (unmarshalling)."
 title: Arbeide med JSON
 weight: 38
 ---

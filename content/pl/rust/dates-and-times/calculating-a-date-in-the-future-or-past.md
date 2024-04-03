@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:32:10.522439-07:00
-description: "Obliczanie dat w przysz\u0142o\u015Bci czy przesz\u0142o\u015Bci to\
-  \ ustalenie dnia przed lub po okre\u015Blonym czasie. Programi\u015Bci robi\u0105\
-  \ to, aby zarz\u0105dza\u0107 harmonogramami,\u2026"
+description: "How to: - \"Jak to zrobi\u0107:\" W Rust korzystamy z crate'a `chrono`\
+  \ do \u0142atwego obliczania dat."
 lastmod: '2024-03-13T22:44:35.199445-06:00'
 model: gpt-4-1106-preview
-summary: "Obliczanie dat w przysz\u0142o\u015Bci czy przesz\u0142o\u015Bci to ustalenie\
-  \ dnia przed lub po okre\u015Blonym czasie."
+summary: "W Rust korzystamy z crate'a `chrono` do \u0142atwego obliczania dat."
 title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---

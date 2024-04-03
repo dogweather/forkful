@@ -3,14 +3,11 @@ changelog:
 - 2024-01-28, dogweather, reviewed
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 02:05:09.518663-07:00
-description: "L'analisi di una data da una stringa consiste nel prendere del testo,\
-  \ come \"2023-04-05\", e convertirlo in un formato data che il tuo programma pu\xF2\
-  \u2026"
+description: 'Come fare: In Elixir, puoi analizzare le date utilizzando il modulo
+  `Date`. Ecco come trasformare una stringa in una data.'
 lastmod: '2024-03-13T22:44:43.093062-06:00'
 model: gpt-4-0125-preview
-summary: "L'analisi di una data da una stringa consiste nel prendere del testo, come\
-  \ \"2023-04-05\", e convertirlo in un formato data che il tuo programma pu\xF2 comprendere\
-  \ e con cui pu\xF2 lavorare."
+summary: In Elixir, puoi analizzare le date utilizzando il modulo `Date`.
 title: Analisi di una data da una stringa
 weight: 30
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:54:05.899915-07:00
-description: "Gerar n\xFAmeros aleat\xF3rios no Visual Basic for Applications (VBA)\
-  \ permite que programas simulem processos com elementos de chance ou variabilidade,\
-  \ como a\u2026"
+description: "Como Fazer: No VBA, a fun\xE7\xE3o `Rnd` \xE9 usada para gerar n\xFA\
+  meros aleat\xF3rios. Por padr\xE3o, `Rnd` gera um n\xFAmero de ponto flutuante de\
+  \ precis\xE3o simples maior ou\u2026"
 lastmod: '2024-03-13T22:44:46.407346-06:00'
 model: gpt-4-0125-preview
-summary: "Gerar n\xFAmeros aleat\xF3rios no Visual Basic for Applications (VBA) permite\
-  \ que programas simulem processos com elementos de chance ou variabilidade, como\
-  \ a rolagem de dados ou a amostragem de dados."
+summary: "No VBA, a fun\xE7\xE3o `Rnd` \xE9 usada para gerar n\xFAmeros aleat\xF3\
+  rios."
 title: "Gerando n\xFAmeros aleat\xF3rios"
 weight: 12
 ---

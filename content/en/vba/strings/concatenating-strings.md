@@ -1,11 +1,11 @@
 ---
 date: 2024-02-01 21:30:36.235039-07:00
-description: "Concatenation in Visual Basic for Applications (VBA) involves joining\
-  \ two or more strings into a single entity. This is a fundamental task in programming,\u2026"
+description: "How to: VBA provides a straightforward method for concatenating strings\
+  \ using the `&` operator or the `Concatenate` function. Let's explore both methods\u2026"
 lastmod: '2024-03-13T22:44:59.927222-06:00'
 model: gpt-4-0125-preview
-summary: Concatenation in Visual Basic for Applications (VBA) involves joining two
-  or more strings into a single entity.
+summary: VBA provides a straightforward method for concatenating strings using the
+  `&` operator or the `Concatenate` function.
 title: Concatenating strings
 weight: 3
 ---

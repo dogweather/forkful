@@ -2,17 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:47.577706-07:00
-description: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi l\xE0 qu\xE1 tr\xECnh\
-  \ t\u1EA1o ra m\u1ED9t t\u1EC7p c\xF3 th\u1EDD l\u01B0\u1EE3ng s\u1ED1ng ng\u1EAF\
-  n \u0111\u1EC3 l\u01B0u tr\u1EEF d\u1EEF li\u1EC7u ch\u1EC9 c\u1EA7n thi\u1EBFt\
-  \ trong qu\xE1 tr\xECnh th\u1EF1c thi c\u1EE7a ch\u01B0\u01A1ng tr\xECnh. C\xE1\
-  c\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Lua kh\xF4ng c\xF3 ch\u1EE9c n\u0103ng\
+  \ t\xEDch h\u1EE3p s\u1EB5n cho t\u1EC7p t\u1EA1m th\u1EDDi, nh\u01B0ng b\u1EA1\
+  n c\xF3 th\u1EC3 t\u1EF1 tri\u1EC3n khai gi\u1EA3i ph\xE1p c\u1EE7a m\xECnh b\u1EB1\
+  ng c\xE1ch s\u1EED d\u1EE5ng c\xE1c th\u01B0 vi\u1EC7n\u2026"
 lastmod: '2024-03-13T22:44:36.847041-06:00'
 model: gpt-4-0125-preview
-summary: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi l\xE0 qu\xE1 tr\xECnh t\u1EA1\
-  o ra m\u1ED9t t\u1EC7p c\xF3 th\u1EDD l\u01B0\u1EE3ng s\u1ED1ng ng\u1EAFn \u0111\
-  \u1EC3 l\u01B0u tr\u1EEF d\u1EEF li\u1EC7u ch\u1EC9 c\u1EA7n thi\u1EBFt trong qu\xE1\
-  \ tr\xECnh th\u1EF1c thi c\u1EE7a ch\u01B0\u01A1ng tr\xECnh."
+summary: "Lua kh\xF4ng c\xF3 ch\u1EE9c n\u0103ng t\xEDch h\u1EE3p s\u1EB5n cho t\u1EC7\
+  p t\u1EA1m th\u1EDDi, nh\u01B0ng b\u1EA1n c\xF3 th\u1EC3 t\u1EF1 tri\u1EC3n khai\
+  \ gi\u1EA3i ph\xE1p c\u1EE7a m\xECnh b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng c\xE1c\
+  \ th\u01B0 vi\u1EC7n `os` v\xE0 `io`."
 title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
 weight: 21
 ---

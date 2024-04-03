@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:21.268634-07:00
-description: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) ovat malleja, joita k\xE4ytet\xE4\
-  \xE4n merkkiyhdistelmien etsimiseen merkkijonoista. Ohjelmoijat k\xE4ytt\xE4v\xE4\
-  t niit\xE4 tekstin\u2026"
+description: "Kuinka: Pythonissa regexin k\xE4ytt\xF6\xF6n liittyy `re`-moduuli, joka\
+  \ tarjoaa joukon funktioita tekstin k\xE4sittelyyn s\xE4\xE4nn\xF6llisten lausekkeiden\
+  \ avulla. #."
 lastmod: '2024-03-13T22:44:56.133589-06:00'
 model: gpt-4-0125-preview
-summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) ovat malleja, joita k\xE4ytet\xE4\
-  \xE4n merkkiyhdistelmien etsimiseen merkkijonoista."
+summary: "Pythonissa regexin k\xE4ytt\xF6\xF6n liittyy `re`-moduuli, joka tarjoaa\
+  \ joukon funktioita tekstin k\xE4sittelyyn s\xE4\xE4nn\xF6llisten lausekkeiden avulla."
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---

@@ -1,13 +1,10 @@
 ---
 date: 2024-01-26 04:41:34.836612-07:00
-description: "N\xFAmeros complexos, consistindo em uma parte real e uma parte imagin\xE1\
-  ria, s\xE3o essenciais em diversos campos computacionais como engenharia, f\xED\
-  sica e\u2026"
+description: "Como fazer: Haskell lida com n\xFAmeros complexos atrav\xE9s do m\xF3\
+  dulo `Data.Complex`. Aqui est\xE1 um r\xE1pido tour."
 lastmod: '2024-03-13T22:44:46.619390-06:00'
 model: gpt-4-0125-preview
-summary: "N\xFAmeros complexos, consistindo em uma parte real e uma parte imagin\xE1\
-  ria, s\xE3o essenciais em diversos campos computacionais como engenharia, f\xED\
-  sica e processamento de sinais."
+summary: "Haskell lida com n\xFAmeros complexos atrav\xE9s do m\xF3dulo `Data.Complex`."
 title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---

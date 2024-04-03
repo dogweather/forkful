@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:40.397957-07:00
-description: "Analisar HTML no Visual Basic for Applications (VBA) envolve extrair\
-  \ informa\xE7\xF5es espec\xEDficas de um documento HTML. Programadores fazem isso\
-  \ para\u2026"
+description: "Como: No VBA, voc\xEA pode analisar HTML usando a `Biblioteca de Objetos\
+  \ HTML da Microsoft`. Adicione uma refer\xEAncia a esta biblioteca no seu editor\
+  \ VBA indo\u2026"
 lastmod: '2024-03-13T22:44:46.409505-06:00'
 model: gpt-4-0125-preview
-summary: "Analisar HTML no Visual Basic for Applications (VBA) envolve extrair informa\xE7\
-  \xF5es espec\xEDficas de um documento HTML."
+summary: "No VBA, voc\xEA pode analisar HTML usando a `Biblioteca de Objetos HTML\
+  \ da Microsoft`."
 title: Analisando HTML
 weight: 43
 ---

@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:45.960501-07:00
-description: "YAML ain't Markup Language, of YAML, is een gebruiksvriendelijke standaard\
-  \ voor gegevensserialisatie voor alle programmeertalen. Programmeurs werken met\u2026"
+description: "Hoe te: We zullen de populaire `js-yaml` bibliotheek gebruiken om YAML\
+  \ te parseren naar JavaScript-objecten en JavaScript-objecten te converteren naar\u2026"
 lastmod: '2024-03-13T22:44:51.223172-06:00'
 model: gpt-4-0125-preview
-summary: YAML ain't Markup Language, of YAML, is een gebruiksvriendelijke standaard
-  voor gegevensserialisatie voor alle programmeertalen.
+summary: We zullen de populaire `js-yaml` bibliotheek gebruiken om YAML te parseren
+  naar JavaScript-objecten en JavaScript-objecten te converteren naar YAML.
 title: Werken met YAML
 weight: 41
 ---

@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:45.687361-07:00
-description: "\xC9crire dans l'erreur standard (stderr) consiste \xE0 diriger les\
-  \ messages d'erreur et les sorties de diagnostic vers un canal distinct, diff\xE9\
-  rent de la\u2026"
+description: "Comment faire : En Lua, l'\xE9criture dans stderr peut \xEAtre r\xE9\
+  alis\xE9e en utilisant la fonction `io.stderr:write()`. Voici comment vous pouvez\
+  \ \xE9crire un simple\u2026"
 lastmod: '2024-03-13T22:44:57.955226-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire dans l'erreur standard (stderr) consiste \xE0 diriger les messages\
-  \ d'erreur et les sorties de diagnostic vers un canal distinct, diff\xE9rent de\
-  \ la sortie standard (stdout)."
+summary: "En Lua, l'\xE9criture dans stderr peut \xEAtre r\xE9alis\xE9e en utilisant\
+  \ la fonction `io.stderr:write()`."
 title: "\xC9crire sur l'erreur standard"
 weight: 25
 ---

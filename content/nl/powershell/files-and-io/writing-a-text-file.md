@@ -2,11 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:55.124870-07:00
-description: "Een tekstbestand schrijven is gegevens opslaan als platte tekst op schijf.\
-  \ Programmeurs doen dit voor logboekregistratie, configuratie of het opslaan van\u2026"
+description: 'Hoe te: Hier is hoe je naar een tekstbestand schrijft in PowerShell;
+  het is supergemakkelijk! Een nieuw bestand maken en tekst daarnaar schrijven.'
 lastmod: '2024-03-13T22:44:51.048537-06:00'
 model: gpt-4-0125-preview
-summary: Een tekstbestand schrijven is gegevens opslaan als platte tekst op schijf.
+summary: Hier is hoe je naar een tekstbestand schrijft in PowerShell; het is supergemakkelijk.
 title: Een tekstbestand schrijven
 weight: 24
 ---

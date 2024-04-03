@@ -2,16 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:07.190118-07:00
-description: "Odczytywanie argument\xF3w linii polece\u0144 w Dart umo\u017Cliwia\
-  \ programistom bezpo\u015Brednie wprowadzanie danych do konsoli podczas wykonywania\
-  \ programu Dart,\u2026"
+description: "Jak to zrobi\u0107: Dart oferuje prost\u0105 metod\u0119 dost\u0119\
+  pu do argument\xF3w linii polece\u0144 za po\u015Brednictwem `List<String> args`\
+  \ w g\u0142\xF3wnej metodzie. Poni\u017Cej znajduje\u2026"
 lastmod: '2024-03-13T22:44:35.109013-06:00'
 model: gpt-4-0125-preview
-summary: "Odczytywanie argument\xF3w linii polece\u0144 w Dart umo\u017Cliwia programistom\
-  \ bezpo\u015Brednie wprowadzanie danych do konsoli podczas wykonywania programu\
-  \ Dart, zwi\u0119kszaj\u0105c jego interaktywno\u015B\u0107 i elastyczno\u015B\u0107\
-  \ dla r\xF3\u017Cnych przypadk\xF3w u\u017Cycia, w tym skrypt\xF3w automatyzuj\u0105\
-  cych, narz\u0119dzi CLI lub przetwarzania wsadowego."
+summary: "Dart oferuje prost\u0105 metod\u0119 dost\u0119pu do argument\xF3w linii\
+  \ polece\u0144 za po\u015Brednictwem `List<String> args` w g\u0142\xF3wnej metodzie."
 title: "Czytanie argument\xF3w z linii polece\u0144"
 weight: 23
 ---

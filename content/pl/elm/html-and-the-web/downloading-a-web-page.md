@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:43:48.546941-07:00
-description: "Pobranie strony internetowej to proces \u015Bci\u0105gania tre\u015B\
-  ci ze zdalnego serwera. Programi\u015Bci robi\u0105 to, aby przetwarza\u0107 dane,\
-  \ pobiera\u0107 aktualizacje lub\u2026"
+description: "How to: (Jak to zrobi\u0107:) W Elm downloadowanie strony mo\u017Ce\
+  \ by\u0107 wykonane za pomoc\u0105 modu\u0142u `Http`. Oto przyk\u0142ad prostego\
+  \ \u017C\u0105dania GET."
 lastmod: '2024-03-13T22:44:35.320518-06:00'
 model: gpt-4-1106-preview
-summary: "Pobranie strony internetowej to proces \u015Bci\u0105gania tre\u015Bci ze\
-  \ zdalnego serwera."
+summary: "W Elm downloadowanie strony mo\u017Ce by\u0107 wykonane za pomoc\u0105 modu\u0142\
+  u `Http`."
 title: Pobieranie strony internetowej
 weight: 42
 ---

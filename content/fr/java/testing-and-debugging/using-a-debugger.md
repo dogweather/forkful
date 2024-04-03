@@ -1,8 +1,7 @@
 ---
 date: 2024-01-26 03:49:33.070551-07:00
-description: "Disons que vous avez un simple programme Java qui pose probl\xE8me,\
-  \ et vous ne pouvez pas comprendre pourquoi. Voici comment vous lanceriez un d\xE9\
-  bogueur en\u2026"
+description: "Comment faire : Disons que vous avez un simple programme Java qui pose\
+  \ probl\xE8me, et vous ne pouvez pas comprendre pourquoi. Voici comment vous lanceriez\u2026"
 lastmod: '2024-03-13T22:44:57.645083-06:00'
 model: gpt-4-0125-preview
 summary: "Disons que vous avez un simple programme Java qui pose probl\xE8me, et vous\

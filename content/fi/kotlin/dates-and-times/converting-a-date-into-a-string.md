@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:37:09.416163-07:00
-description: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi tarkoittaa LocalDateTime-olioista,\
-  \ Date-objekteista tai vastaavista p\xE4iv\xE4m\xE4\xE4r\xE4representaatioista\u2026"
+description: "How to: Kotlinissa LocalDate- ja LocalDateTime-luokkien avulla p\xE4\
+  iv\xE4m\xE4\xE4r\xE4n muotoilu onnistuu n\xE4pp\xE4r\xE4sti. T\xE4ss\xE4 pari esimerkki\xE4\
+  ."
 lastmod: '2024-03-13T22:44:56.542787-06:00'
 model: gpt-4-1106-preview
-summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi tarkoittaa LocalDateTime-olioista,\
-  \ Date-objekteista tai vastaavista p\xE4iv\xE4m\xE4\xE4r\xE4representaatioista merkkijonoformaatissa\
-  \ esitt\xE4mist\xE4."
+summary: "Kotlinissa LocalDate- ja LocalDateTime-luokkien avulla p\xE4iv\xE4m\xE4\xE4\
+  r\xE4n muotoilu onnistuu n\xE4pp\xE4r\xE4sti."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---

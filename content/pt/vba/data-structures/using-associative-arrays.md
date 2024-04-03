@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:28.238931-07:00
-description: "Arrays associativos, frequentemente conhecidos como dicion\xE1rios no\
-  \ Visual Basic para Aplica\xE7\xF5es (VBA), permitem que programadores criem cole\xE7\
-  \xF5es de pares\u2026"
+description: "Como: No VBA, o objeto `Dictionary` oferece funcionalidade similar a\
+  \ arrays associativos. Primeiro, voc\xEA deve adicionar uma refer\xEAncia ao Tempo\
+  \ de\u2026"
 lastmod: '2024-03-13T22:44:46.403988-06:00'
 model: gpt-4-0125-preview
-summary: "Arrays associativos, frequentemente conhecidos como dicion\xE1rios no Visual\
-  \ Basic para Aplica\xE7\xF5es (VBA), permitem que programadores criem cole\xE7\xF5\
-  es de pares chave-valor."
+summary: No VBA, o objeto `Dictionary` oferece funcionalidade similar a arrays associativos.
 title: Usando arrays associativos
 weight: 15
 ---

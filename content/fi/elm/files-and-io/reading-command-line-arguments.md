@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:55:53.139027-07:00
-description: "Komennon rivin argumenttien lukeminen tarkoittaa sy\xF6tteiden vastaanottamista\
-  \ k\xE4ynnistyksen yhteydess\xE4. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4t\xE4 toimintoa,\
-  \ koska se\u2026"
+description: "N\xE4in toimit: Elm ei suoraan tue komentorivin argumenttien k\xE4sittely\xE4\
+  , koska se on suunniteltu p\xE4\xE4asiassa web-kehitykseen. T\xE4m\xE4n sijaan,\
+  \ voit k\xE4ytt\xE4\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.503802-06:00'
 model: gpt-4-1106-preview
-summary: "Komennon rivin argumenttien lukeminen tarkoittaa sy\xF6tteiden vastaanottamista\
-  \ k\xE4ynnistyksen yhteydess\xE4."
+summary: "Elm ei suoraan tue komentorivin argumenttien k\xE4sittely\xE4, koska se\
+  \ on suunniteltu p\xE4\xE4asiassa web-kehitykseen."
 title: Komennoriviparametrien lukeminen
 weight: 23
 ---

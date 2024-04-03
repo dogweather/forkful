@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:18.625988-07:00
-description: "Een datum uit een string parsen houdt in dat tekst die een datum vertegenwoordigt\
-  \ wordt omgezet in een datumobject, waardoor programmeurs\u2026"
+description: "Hoe te: In Google Apps Script, dat is gebaseerd op JavaScript, heb je\
+  \ verschillende benaderingen om een datum uit een string te parsen. Hieronder volgen\u2026"
 lastmod: '2024-03-13T22:44:50.341881-06:00'
 model: gpt-4-0125-preview
-summary: Een datum uit een string parsen houdt in dat tekst die een datum vertegenwoordigt
-  wordt omgezet in een datumobject, waardoor programmeurs datumgerelateerde bewerkingen
-  kunnen uitvoeren zoals vergelijkingen, rekenkundige bewerkingen en formatteren.
+summary: In Google Apps Script, dat is gebaseerd op JavaScript, heb je verschillende
+  benaderingen om een datum uit een string te parsen.
 title: Een datum ontleden uit een string
 weight: 30
 ---

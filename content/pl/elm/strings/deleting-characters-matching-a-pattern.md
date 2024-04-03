@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:41:59.872451-07:00
-description: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to proces filtrowania tekstu\
-  \ tak, by usun\u0105\u0107 specyficzne sekwencje znak\xF3w. Programi\u015Bci robi\u0105\
-  \ to, aby czy\u015Bci\u0107 dane,\u2026"
+description: "How to: (Jak to zrobi\u0107:) W Elm, mo\u017Cna u\u017Cy\u0107 funkcji\
+  \ `String.filter` do usuni\u0119cia niepo\u017C\u0105danych znak\xF3w. Oto przyk\u0142\
+  adowy kod."
 lastmod: '2024-03-13T22:44:35.305220-06:00'
 model: gpt-4-1106-preview
-summary: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to proces filtrowania tekstu\
-  \ tak, by usun\u0105\u0107 specyficzne sekwencje znak\xF3w."
+summary: "W Elm, mo\u017Cna u\u017Cy\u0107 funkcji `String.filter` do usuni\u0119\
+  cia niepo\u017C\u0105danych znak\xF3w."
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---

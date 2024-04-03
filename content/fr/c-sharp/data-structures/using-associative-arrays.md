@@ -2,12 +2,13 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:13.451681-07:00
-description: "Les tableaux associatifs, ou dictionnaires en C#, vous permettent de\
-  \ stocker et de g\xE9rer des paires de cl\xE9s et de valeurs. Ils sont votre solution\u2026"
+description: "Comment faire : En C#, vous travaillez avec les tableaux associatifs\
+  \ en utilisant la classe `Dictionary<TKey, TValue>`. Voici un exemple rapide pour\
+  \ vous\u2026"
 lastmod: '2024-03-13T22:44:57.779377-06:00'
 model: gpt-4-0125-preview
-summary: "Les tableaux associatifs, ou dictionnaires en C#, vous permettent de stocker\
-  \ et de g\xE9rer des paires de cl\xE9s et de valeurs."
+summary: En C#, vous travaillez avec les tableaux associatifs en utilisant la classe
+  `Dictionary<TKey, TValue>`.
 title: Utilisation des tableaux associatifs
 weight: 15
 ---

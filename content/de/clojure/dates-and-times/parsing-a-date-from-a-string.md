@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:47.293630-07:00
-description: "Das Parsen eines Datums aus einem String in Clojure bezieht sich auf\
-  \ das Umwandeln textueller Darstellungen von Daten und Zeiten in eine nutzbarere\
-  \ Form\u2026"
+description: "Wie geht das: Da Clojure eine JVM-Sprache ist, erm\xF6glicht sie Ihnen,\
+  \ direkte Java's Datums- und Zeitbibliotheken zu verwenden. Beginnen wir mit der\u2026"
 lastmod: '2024-03-13T22:44:53.429156-06:00'
 model: gpt-4-0125-preview
-summary: Das Parsen eines Datums aus einem String in Clojure bezieht sich auf das
-  Umwandeln textueller Darstellungen von Daten und Zeiten in eine nutzbarere Form
-  (z.
+summary: "Da Clojure eine JVM-Sprache ist, erm\xF6glicht sie Ihnen, direkte Java's\
+  \ Datums- und Zeitbibliotheken zu verwenden."
 title: Einen Datum aus einem String analysieren
 weight: 30
 ---

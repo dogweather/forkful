@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:21.326151-07:00
-description: "Refactoring l\xE0 qu\xE1 tr\xECnh c\u1EA5u tr\xFAc l\u1EA1i m\xE3 m\xE1\
-  y t\xEDnh hi\u1EC7n c\xF3 m\xE0 kh\xF4ng thay \u0111\u1ED5i h\xE0nh vi b\xEAn ngo\xE0\
-  i c\u1EE7a n\xF3. L\u1EADp tr\xECnh vi\xEAn refactor \u0111\u1EC3 c\u1EA3i thi\u1EC7\
-  n c\xE1c thu\u1ED9c t\xEDnh\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: H\xE3y l\u1EA5y m\u1ED9t \u0111o\u1EA1n PHP\
+  \ \u0111i\u1EC3n h\xECnh v\xE0 \xE1p d\u1EE5ng m\u1ED9t s\u1ED1 ph\xE9p m\xE0u refactoring\
+  \ v\xE0o n\xF3. Tr\u01B0\u1EDBc khi refactoring, m\xE3 c\u1EE7a ch\xFAng ta c\xF3\
+  \ th\u1EC3 tr\xF4ng nh\u01B0 th\u1EBF n\xE0y."
 lastmod: '2024-03-13T22:44:36.778203-06:00'
 model: gpt-4-0125-preview
-summary: "Refactoring l\xE0 qu\xE1 tr\xECnh c\u1EA5u tr\xFAc l\u1EA1i m\xE3 m\xE1\
-  y t\xEDnh hi\u1EC7n c\xF3 m\xE0 kh\xF4ng thay \u0111\u1ED5i h\xE0nh vi b\xEAn ngo\xE0\
-  i c\u1EE7a n\xF3."
+summary: "H\xE3y l\u1EA5y m\u1ED9t \u0111o\u1EA1n PHP \u0111i\u1EC3n h\xECnh v\xE0\
+  \ \xE1p d\u1EE5ng m\u1ED9t s\u1ED1 ph\xE9p m\xE0u refactoring v\xE0o n\xF3."
 title: "T\xE1i c\u1EA5u tr\xFAc m\xE3"
 weight: 19
 ---

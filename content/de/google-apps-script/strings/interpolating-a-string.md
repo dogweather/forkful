@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:20.718901-07:00
-description: "Die Zeichenketteninterpolation in Google Apps Script erm\xF6glicht das\
-  \ dynamische Einbetten von Ausdr\xFCcken in Zeichenketten und erleichtert die Erstellung\u2026"
+description: "Wie: In Google Apps Script wird die Zeichenketteninterpolation durch\
+  \ Template-Literale erreicht. Dabei handelt es sich um Zeichenkettenliterale, die\u2026"
 lastmod: '2024-03-13T22:44:53.318651-06:00'
 model: gpt-4-0125-preview
-summary: "Die Zeichenketteninterpolation in Google Apps Script erm\xF6glicht das dynamische\
-  \ Einbetten von Ausdr\xFCcken in Zeichenketten und erleichtert die Erstellung von\
-  \ lesbarem und wartbarem Code."
+summary: In Google Apps Script wird die Zeichenketteninterpolation durch Template-Literale
+  erreicht.
 title: Interpolation einer Zeichenkette
 weight: 8
 ---

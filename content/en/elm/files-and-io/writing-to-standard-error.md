@@ -1,12 +1,12 @@
 ---
 date: 2024-02-03 19:03:26.066148-07:00
-description: "Writing to standard error (stderr) is about redirecting error messages\
-  \ and diagnostics separate from the main program output, which goes to standard\u2026"
+description: "How to: Elm is primarily targeted at web development, where the concept\
+  \ of writing directly to stderr doesn't apply in the same way as it does in\u2026"
 lastmod: '2024-03-13T22:45:00.025468-06:00'
 model: gpt-4-0125-preview
-summary: Writing to standard error (stderr) is about redirecting error messages and
-  diagnostics separate from the main program output, which goes to standard output
-  (stdout).
+summary: Elm is primarily targeted at web development, where the concept of writing
+  directly to stderr doesn't apply in the same way as it does in traditional command-line
+  environments.
 title: Writing to standard error
 weight: 25
 ---

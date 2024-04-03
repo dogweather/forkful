@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 03:39:27.610722-07:00
-description: "Eliminar comillas de una cadena significa quitar cualquier comilla\u2014\
-  simple (' ') o doble (\" \")\u2014que sea parte de los datos de la cadena. Los programadores\u2026"
+description: "C\xF3mo hacerlo: En Haskell, podemos crear una funci\xF3n que elimine\
+  \ todas las comillas de una cadena dada. Es como decirles a las comillas que se\
+  \ larguen, y\u2026"
 lastmod: '2024-03-13T22:44:59.107552-06:00'
 model: gpt-4-0125-preview
-summary: "Eliminar comillas de una cadena significa quitar cualquier comilla\u2014\
-  simple (' ') o doble (\" \")\u2014que sea parte de los datos de la cadena."
+summary: "En Haskell, podemos crear una funci\xF3n que elimine todas las comillas\
+  \ de una cadena dada."
 title: Eliminando comillas de una cadena
 weight: 9
 ---

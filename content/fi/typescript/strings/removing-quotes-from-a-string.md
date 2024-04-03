@@ -1,13 +1,11 @@
 ---
 date: 2024-01-26 03:42:25.143167-07:00
-description: "Merkkijonosta lainausmerkkien poistaminen tarkoittaa ymp\xE4r\xF6ivien\
-  \ yksitt\xE4isten (`'`) tai kaksinkertaisten (`\"`) lainausmerkkien poistamista,\
-  \ jotka\u2026"
+description: "Kuinka: T\xE4ss\xE4 on suoraviivainen opas niiden kiusallisten lainausmerkkien\
+  \ irrottamiseksi merkkijonoistasi TypeScriptill\xE4."
 lastmod: '2024-03-13T22:44:56.303554-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonosta lainausmerkkien poistaminen tarkoittaa ymp\xE4r\xF6ivien yksitt\xE4\
-  isten (`'`) tai kaksinkertaisten (`\"`) lainausmerkkien poistamista, jotka m\xE4\
-  \xE4ritt\xE4v\xE4t merkkijono-literaaleja koodissa."
+summary: "T\xE4ss\xE4 on suoraviivainen opas niiden kiusallisten lainausmerkkien irrottamiseksi\
+  \ merkkijonoistasi TypeScriptill\xE4."
 title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---

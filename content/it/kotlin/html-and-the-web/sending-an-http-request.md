@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 18:00:17.164851-07:00
-description: "Mandare una richiesta HTTP significa comunicare con un server web: invii\
-  \ una richiesta, lui ti risponde. Lo facciamo per prelevare dati, inviare form,\u2026"
+description: "How to: In Kotlin, inviare una richiesta HTTP \xE8 semplice. Ecco un\
+  \ esempio con `HttpURLConnection`."
 lastmod: '2024-03-13T22:44:43.388287-06:00'
 model: gpt-4-1106-preview
-summary: 'Mandare una richiesta HTTP significa comunicare con un server web: invii
-  una richiesta, lui ti risponde.'
+summary: "In Kotlin, inviare una richiesta HTTP \xE8 semplice."
 title: Inviare una richiesta http
 weight: 44
 ---

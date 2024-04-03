@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:07:41.745790-07:00
-description: "YAML, som st\xE5r for \"YAML Ain't Markup Language,\" er en menneskelesbar\
-  \ standard for serialisering av data som ofte brukes for konfigurasjonsfiler og\u2026"
+description: "Hvordan: Selv om Google Apps Script (GAS) ikke st\xF8tter parsing eller\
+  \ serialisering av YAML nativt, kan du manipulere YAML-data ved \xE5 bruke JavaScript-\u2026"
 lastmod: '2024-03-13T22:44:40.338177-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, som st\xE5r for \"YAML Ain't Markup Language,\" er en menneskelesbar\
-  \ standard for serialisering av data som ofte brukes for konfigurasjonsfiler og\
-  \ dataveksling mellom spr\xE5k med ulike datastrukturer."
+summary: "Selv om Google Apps Script (GAS) ikke st\xF8tter parsing eller serialisering\
+  \ av YAML nativt, kan du manipulere YAML-data ved \xE5 bruke JavaScript-biblioteker\
+  \ eller skrive egendefinerte parsingfunksjoner."
 title: Arbeider med YAML
 weight: 41
 ---

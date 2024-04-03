@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:31:09.800571-07:00
-description: "Calcular una fecha futura o pasada es simplemente sumar o restar d\xED\
-  as a una fecha dada. Los programadores lo hacen para manejar eventos, vencimientos\
-  \ o\u2026"
+description: "C\xF3mo hacerlo: Para calcular fechas en C++, podemos usar la biblioteca\
+  \ `<chrono>` junto con `<ctime>` y funciones como `std::mktime` y `std::localtime`.\u2026"
 lastmod: '2024-03-13T22:44:59.388313-06:00'
 model: gpt-4-1106-preview
-summary: "Calcular una fecha futura o pasada es simplemente sumar o restar d\xEDas\
-  \ a una fecha dada."
+summary: Para calcular fechas en C++, podemos usar la biblioteca `<chrono>` junto
+  con `<ctime>` y funciones como `std::mktime` y `std::localtime`.
 title: Calcular una fecha en el futuro o pasado
 weight: 26
 ---

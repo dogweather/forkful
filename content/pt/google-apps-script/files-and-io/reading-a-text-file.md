@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:58:12.466959-07:00
-description: "Ler um arquivo de texto com o Google Apps Script (GAS) envolve acessar\
-  \ e extrair dados de texto de arquivos armazenados no Google Drive ou outro\u2026"
+description: "Como fazer: Para come\xE7ar a ler um arquivo de texto com o Google Apps\
+  \ Script, geralmente \xE9 necess\xE1rio usar a API do Google Drive. Aqui est\xE1\
+  \ um exemplo\u2026"
 lastmod: '2024-03-13T22:44:46.128002-06:00'
 model: gpt-4-0125-preview
-summary: "Ler um arquivo de texto com o Google Apps Script (GAS) envolve acessar e\
-  \ extrair dados de texto de arquivos armazenados no Google Drive ou outro armazenamento\
-  \ baseado em nuvem acess\xEDvel."
+summary: "Para come\xE7ar a ler um arquivo de texto com o Google Apps Script, geralmente\
+  \ \xE9 necess\xE1rio usar a API do Google Drive."
 title: Lendo um arquivo de texto
 weight: 22
 ---

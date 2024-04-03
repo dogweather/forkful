@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:52.170731-07:00
-description: "Tests schrijven in C betreft het cre\xEBren van kleinere, hulpprogramma's\
-  \ of functies die automatisch de functionaliteit van je code verifi\xEBren. Programmeurs\u2026"
+description: "Hoe: Hoewel C geen ingebouwd testframework heeft zoals sommige andere\
+  \ talen, kun je nog steeds effectieve tests schrijven met `assert.h` voor eenvoudige\u2026"
 lastmod: '2024-03-13T22:44:51.294860-06:00'
 model: gpt-4-0125-preview
-summary: "Tests schrijven in C betreft het cre\xEBren van kleinere, hulpprogramma's\
-  \ of functies die automatisch de functionaliteit van je code verifi\xEBren."
+summary: Hoewel C geen ingebouwd testframework heeft zoals sommige andere talen, kun
+  je nog steeds effectieve tests schrijven met `assert.h` voor eenvoudige beweringen
+  of door derde partij frameworks zoals CUnit of Unity te integreren voor meer gestructureerd
+  testen.
 title: Tests Schrijven
 weight: 36
 ---

@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:00.178103-07:00
-description: "Att analysera HTML med PowerShell handlar om att dissekera HTML-inneh\xE5\
-  ll f\xF6r att extrahera specifika data eller automatisera webbrelaterade uppgifter.\u2026"
+description: "Hur: PowerShell har inte fr\xE5n b\xF6rjan en dedikerad HTML-parser,\
+  \ men du kan anv\xE4nda `Invoke-WebRequest`-cmdleten f\xF6r att komma \xE5t och\
+  \ analysera HTML-\u2026"
 lastmod: '2024-03-13T22:44:38.123871-06:00'
 model: gpt-4-0125-preview
-summary: "Att analysera HTML med PowerShell handlar om att dissekera HTML-inneh\xE5\
-  ll f\xF6r att extrahera specifika data eller automatisera webbrelaterade uppgifter."
+summary: "PowerShell har inte fr\xE5n b\xF6rjan en dedikerad HTML-parser, men du kan\
+  \ anv\xE4nda `Invoke-WebRequest`-cmdleten f\xF6r att komma \xE5t och analysera HTML-inneh\xE5\
+  ll."
 title: Tolka HTML
 weight: 43
 ---

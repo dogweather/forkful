@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:08.876975-07:00
-description: "Praca z JSON polega na parsowaniu ci\u0105g\xF3w znak\xF3w w formacie\
-  \ JSON na struktury danych, kt\xF3re Elixir mo\u017Ce manipulowa\u0107, oraz na\
-  \ serializacji struktur danych\u2026"
+description: "Jak to zrobi\u0107: W Elixirze mo\u017Cesz u\u017Cy\u0107 biblioteki\
+  \ `Jason`, popularnego wyboru do parsowania i generowania JSON. Najpierw dodaj `Jason`\
+  \ do zale\u017Cno\u015Bci\u2026"
 lastmod: '2024-03-13T22:44:35.066256-06:00'
 model: gpt-4-0125-preview
-summary: "Praca z JSON polega na parsowaniu ci\u0105g\xF3w znak\xF3w w formacie JSON\
-  \ na struktury danych, kt\xF3re Elixir mo\u017Ce manipulowa\u0107, oraz na serializacji\
-  \ struktur danych Elixir z powrotem na ci\u0105gi znak\xF3w JSON."
+summary: "W Elixirze mo\u017Cesz u\u017Cy\u0107 biblioteki `Jason`, popularnego wyboru\
+  \ do parsowania i generowania JSON."
 title: Praca z JSON
 weight: 38
 ---

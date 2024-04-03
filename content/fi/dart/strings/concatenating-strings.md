@@ -2,13 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:53:37.826805-07:00
-description: "Merkkijonojen yhdist\xE4minen ohjelmoinnissa tarkoittaa kahden tai useamman\
-  \ merkkijonon liitt\xE4mist\xE4 yhteen. Ohjelmoijat tekev\xE4t n\xE4in k\xE4sitell\xE4\
-  kseen\u2026"
+description: "Miten: Dart tarjoaa useita suoraviivaisia tapoja merkkijonojen yhdist\xE4\
+  miseen. Alla on yleisimm\xE4t menetelm\xE4t: #."
 lastmod: '2024-03-13T22:44:56.261952-06:00'
 model: gpt-4-0125-preview
-summary: "Merkkijonojen yhdist\xE4minen ohjelmoinnissa tarkoittaa kahden tai useamman\
-  \ merkkijonon liitt\xE4mist\xE4 yhteen."
+summary: "Dart tarjoaa useita suoraviivaisia tapoja merkkijonojen yhdist\xE4miseen."
 title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---

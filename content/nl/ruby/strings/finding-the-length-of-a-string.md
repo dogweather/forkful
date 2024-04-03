@@ -2,11 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:28.076545-07:00
-description: "De lengte van een string vinden betekent het tellen van de karakters.\
-  \ Het is basis maar cruciaal voor taken zoals validatie, tekstverwerking, en het\u2026"
+description: 'Hoe te: Ruby houdt het simpel met de `.length` methode.'
 lastmod: '2024-03-13T22:44:51.325783-06:00'
 model: gpt-4-0125-preview
-summary: De lengte van een string vinden betekent het tellen van de karakters.
+summary: Ruby houdt het simpel met de `.length` methode.
 title: De lengte van een string vinden
 weight: 7
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:26.697342-07:00
-description: "Testien kirjoittaminen Elixiriss\xE4 sis\xE4lt\xE4\xE4 automatisoitujen\
-  \ skriptien luomisen koodisi toiminnan varmentamiseksi. Ohjelmoijat tekev\xE4t t\xE4\
-  m\xE4n varmistaakseen\u2026"
+description: "Kuinka: Elixir k\xE4ytt\xE4\xE4 sis\xE4\xE4nrakennettuna testikehyksen\xE4\
+  \xE4n ExUnitia, joka on eritt\xE4in tehokas ja helppok\xE4ytt\xF6inen. T\xE4ss\xE4\
+  \ on yksinkertainen esimerkki: 1.\u2026"
 lastmod: '2024-03-13T22:44:56.230513-06:00'
 model: gpt-4-0125-preview
-summary: "Testien kirjoittaminen Elixiriss\xE4 sis\xE4lt\xE4\xE4 automatisoitujen\
-  \ skriptien luomisen koodisi toiminnan varmentamiseksi."
+summary: "Elixir k\xE4ytt\xE4\xE4 sis\xE4\xE4nrakennettuna testikehyksen\xE4\xE4n\
+  \ ExUnitia, joka on eritt\xE4in tehokas ja helppok\xE4ytt\xF6inen."
 title: Testien kirjoittaminen
 weight: 36
 ---

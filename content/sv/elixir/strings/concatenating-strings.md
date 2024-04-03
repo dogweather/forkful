@@ -1,12 +1,11 @@
 ---
 date: 2024-01-27 10:42:47.554258-07:00
-description: "Att sammanfoga str\xE4ngar handlar om att f\xF6rena tv\xE5 eller flera\
-  \ str\xE4ngar f\xF6r att bilda en enda textbit. Du kan beh\xF6va sammanfoga text\
-  \ f\xF6r att generera\u2026"
+description: "Hur man g\xF6r: I Elixir kan du sammanfoga str\xE4ngar p\xE5 n\xE5gra\
+  \ raka v\xE4gar. L\xE5t oss utforska de vanligaste metoderna: 1. Anv\xE4nda `<>`-operatorn,\
+  \ vilken \xE4r det\u2026"
 lastmod: '2024-03-13T22:44:37.558843-06:00'
 model: gpt-4-0125-preview
-summary: "Att sammanfoga str\xE4ngar handlar om att f\xF6rena tv\xE5 eller flera str\xE4\
-  ngar f\xF6r att bilda en enda textbit."
+summary: "I Elixir kan du sammanfoga str\xE4ngar p\xE5 n\xE5gra raka v\xE4gar."
 title: "Konkatenering av str\xE4ngar"
 weight: 3
 ---

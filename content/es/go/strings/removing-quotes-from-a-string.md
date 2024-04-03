@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:08.037713-07:00
-description: "Eliminar las comillas de una cadena en Go se trata de eliminar las comillas\
-  \ iniciales y finales (`\"` o `'`) de una cadena dada. A menudo, los\u2026"
+description: "C\xF3mo hacerlo: Go ofrece varios enfoques para eliminar las comillas\
+  \ de una cadena, pero uno de los m\xE9todos m\xE1s sencillos es usar las funciones\
+  \ `Trim` y\u2026"
 lastmod: '2024-03-13T22:44:58.453581-06:00'
 model: gpt-4-0125-preview
-summary: Eliminar las comillas de una cadena en Go se trata de eliminar las comillas
-  iniciales y finales (`"` o `'`) de una cadena dada.
+summary: "Go ofrece varios enfoques para eliminar las comillas de una cadena, pero\
+  \ uno de los m\xE9todos m\xE1s sencillos es usar las funciones `Trim` y `TrimFunc`\
+  \ proporcionadas por el paquete `strings`."
 title: Eliminando comillas de una cadena
 weight: 9
 ---

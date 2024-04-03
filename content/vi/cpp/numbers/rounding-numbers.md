@@ -2,16 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:58.276399-07:00
-description: "L\xE0m tr\xF2n s\u1ED1 ngh\u0129a l\xE0 \u0111i\u1EC1u ch\u1EC9nh gi\xE1\
-  \ tr\u1ECB t\u1EDBi s\u1ED1 nguy\xEAn g\u1EA7n nh\u1EA5t ho\u1EB7c \u0111\u1ED9\
-  \ ch\xEDnh x\xE1c \u0111\xE3 ch\u1EC9 \u0111\u1ECBnh. L\u1EADp tr\xECnh vi\xEAn\
-  \ th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 \u0111\u01A1n gi\u1EA3\
-  n h\xF3a, ph\xF9 h\u1EE3p\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: C++ cung c\u1EA5p m\u1ED9t v\xE0i c\xE1ch \u0111\
+  \u1EC3 l\xE0m tr\xF2n s\u1ED1, nh\u01B0 `floor()`, `ceil()`, v\xE0 `round()`."
 lastmod: '2024-03-13T22:44:37.036327-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m tr\xF2n s\u1ED1 ngh\u0129a l\xE0 \u0111i\u1EC1u ch\u1EC9nh gi\xE1\
-  \ tr\u1ECB t\u1EDBi s\u1ED1 nguy\xEAn g\u1EA7n nh\u1EA5t ho\u1EB7c \u0111\u1ED9\
-  \ ch\xEDnh x\xE1c \u0111\xE3 ch\u1EC9 \u0111\u1ECBnh."
+summary: "C++ cung c\u1EA5p m\u1ED9t v\xE0i c\xE1ch \u0111\u1EC3 l\xE0m tr\xF2n s\u1ED1\
+  , nh\u01B0 `floor()`, `ceil()`, v\xE0 `round()`."
 title: "L\xE0m tr\xF2n s\u1ED1"
 weight: 13
 ---

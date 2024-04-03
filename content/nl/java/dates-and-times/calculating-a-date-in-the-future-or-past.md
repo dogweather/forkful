@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:32.072862-07:00
-description: "Een datum in de toekomst of het verleden berekenen houdt in dat je een\
-  \ bekende datum aanpast met een bepaald aantal dagen, maanden of jaren. Programmeurs\u2026"
+description: 'Hoe: .'
 lastmod: '2024-03-13T22:44:50.696036-06:00'
 model: gpt-4-0125-preview
-summary: Een datum in de toekomst of het verleden berekenen houdt in dat je een bekende
-  datum aanpast met een bepaald aantal dagen, maanden of jaren.
+summary: .
 title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---

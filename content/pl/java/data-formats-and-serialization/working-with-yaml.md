@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:40.310061-07:00
-description: "YAML, skr\xF3t od \"YAML Ain't Markup Language\", to standard serializacji\
-  \ danych, kt\xF3ry jest czytelny dla cz\u0142owieka i kt\xF3rego programi\u015B\
-  ci u\u017Cywaj\u0105 do plik\xF3w\u2026"
+description: "Jak to zrobi\u0107: W Javie mo\u017Cna pracowa\u0107 z plikami YAML\
+  \ za pomoc\u0105 bibliotek firm trzecich, poniewa\u017C Java Standard Edition nie\
+  \ zawiera wbudowanego wsparcia\u2026"
 lastmod: '2024-03-13T22:44:35.299223-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, skr\xF3t od \"YAML Ain't Markup Language\", to standard serializacji\
-  \ danych, kt\xF3ry jest czytelny dla cz\u0142owieka i kt\xF3rego programi\u015B\
-  ci u\u017Cywaj\u0105 do plik\xF3w konfiguracyjnych, zrzut\xF3w danych oraz transmisji\
-  \ danych mi\u0119dzy j\u0119zykami."
+summary: "W Javie mo\u017Cna pracowa\u0107 z plikami YAML za pomoc\u0105 bibliotek\
+  \ firm trzecich, poniewa\u017C Java Standard Edition nie zawiera wbudowanego wsparcia\
+  \ dla YAML."
 title: Praca z YAML
 weight: 41
 ---

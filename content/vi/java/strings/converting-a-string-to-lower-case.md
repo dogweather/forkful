@@ -2,16 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:38.219026-07:00
-description: "Chuy\u1EC3n m\u1ED9t chu\u1ED7i sang ch\u1EEF th\u01B0\u1EDDng c\xF3\
-  \ ngh\u0129a l\xE0 bi\u1EBFn \u0111\u1ED5i t\u1EA5t c\u1EA3 c\xE1c ch\u1EEF c\xE1\
-  i trong chu\u1ED7i v\u1EC1 d\u1EA1ng ch\u1EEF th\u01B0\u1EDDng. L\u1EADp tr\xEC\
-  nh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\u1EC3 chu\u1EA9n h\xF3a d\u1EEF\
-  \u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: L\u1EDBp `String` trong Java c\xF3 ph\u01B0\
+  \u01A1ng th\u1EE9c `toLowerCase()` ti\u1EC7n l\u1EE3i gi\xFAp b\u1EA1n th\u1EF1\
+  c hi\u1EC7n c\xF4ng vi\u1EC7c kh\xF3 kh\u0103n n\xE0y. H\xE3y xem v\xED d\u1EE5\
+  \ \u0111\u01A1n gi\u1EA3n sau."
 lastmod: '2024-03-13T22:44:36.472125-06:00'
 model: gpt-4-0125-preview
-summary: "Chuy\u1EC3n m\u1ED9t chu\u1ED7i sang ch\u1EEF th\u01B0\u1EDDng c\xF3 ngh\u0129\
-  a l\xE0 bi\u1EBFn \u0111\u1ED5i t\u1EA5t c\u1EA3 c\xE1c ch\u1EEF c\xE1i trong chu\u1ED7\
-  i v\u1EC1 d\u1EA1ng ch\u1EEF th\u01B0\u1EDDng."
+summary: "L\u1EDBp `String` trong Java c\xF3 ph\u01B0\u01A1ng th\u1EE9c `toLowerCase()`\
+  \ ti\u1EC7n l\u1EE3i gi\xFAp b\u1EA1n th\u1EF1c hi\u1EC7n c\xF4ng vi\u1EC7c kh\xF3\
+  \ kh\u0103n n\xE0y."
 title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
 weight: 4
 ---

@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:08.774994-07:00
-description: "Reguliere expressies, of regex, is een krachtig patroonzoek- en -matchinghulpmiddel\
-  \ in programmeren. Programmeurs gebruiken regex voor taken zoals het\u2026"
+description: 'Hoe te: Laten we duiken in TypeScript en zien hoe regex wordt gebruikt
+  voor veelvoorkomende taken.'
 lastmod: '2024-03-13T22:44:50.539871-06:00'
 model: gpt-4-0125-preview
-summary: Reguliere expressies, of regex, is een krachtig patroonzoek- en -matchinghulpmiddel
-  in programmeren.
+summary: Laten we duiken in TypeScript en zien hoe regex wordt gebruikt voor veelvoorkomende
+  taken.
 title: Reguliere expressies gebruiken
 weight: 11
 ---

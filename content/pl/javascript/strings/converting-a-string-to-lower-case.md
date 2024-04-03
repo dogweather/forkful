@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:38:59.319736-07:00
-description: "Konwersja \u0142a\u0144cucha znak\xF3w (string) do ma\u0142ych liter\
-  \ to proces zmiany wszystkich liter w tek\u015Bcie na ich ma\u0142e odpowiedniki.\
-  \ Robimy to, aby ujednolici\u0107 dane,\u2026"
+description: "Jak to zrobi\u0107: ."
 lastmod: '2024-03-13T22:44:35.783562-06:00'
 model: gpt-4-1106-preview
-summary: "Konwersja \u0142a\u0144cucha znak\xF3w (string) do ma\u0142ych liter to\
-  \ proces zmiany wszystkich liter w tek\u015Bcie na ich ma\u0142e odpowiedniki."
+summary: .
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---

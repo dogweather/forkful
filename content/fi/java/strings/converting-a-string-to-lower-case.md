@@ -1,10 +1,11 @@
 ---
 date: 2024-01-20 17:38:45.419134-07:00
-description: "Muuttaa stringin pieniksi kirjaimiksi. Teemme n\xE4in muun muassa tiedon\
-  \ normalisointiin ja vertailuihin, jolloin isot kirjaimet eiv\xE4t vaikuta tulokseen."
+description: "How to (Kuinka tehd\xE4): Java tarjoaa helpon tavan muuttaa merkkijonojen\
+  \ kirjainkoko metodia `toLowerCase()` k\xE4ytt\xE4en. Katsotaanpa koodia."
 lastmod: '2024-03-13T22:44:56.431892-06:00'
 model: gpt-4-1106-preview
-summary: Muuttaa stringin pieniksi kirjaimiksi.
+summary: "Java tarjoaa helpon tavan muuttaa merkkijonojen kirjainkoko metodia `toLowerCase()`\
+  \ k\xE4ytt\xE4en."
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---

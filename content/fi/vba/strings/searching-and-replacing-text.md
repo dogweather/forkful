@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:09.212114-07:00
-description: "Tekstin etsiminen ja korvaaminen Visual Basic for Applications (VBA)\
-  \ -ymp\xE4rist\xF6ss\xE4 on olennaista dokumenttien, taulukoiden ja tietokantojen\u2026"
+description: "Miten: VBAssa, tekstin etsiminen ja korvaaminen voidaan saavuttaa k\xE4\
+  ytt\xE4m\xE4ll\xE4 `Replace`-funktiota tai sovelluskohtaisia objektimalleja sovelluksissa\
+  \ kuten\u2026"
 lastmod: '2024-03-13T22:44:56.384594-06:00'
 model: gpt-4-0125-preview
-summary: "Tekstin etsiminen ja korvaaminen Visual Basic for Applications (VBA) -ymp\xE4\
-  rist\xF6ss\xE4 on olennaista dokumenttien, taulukoiden ja tietokantojen ohjelmallisessa\
-  \ muokkaamisessa."
+summary: "VBAssa, tekstin etsiminen ja korvaaminen voidaan saavuttaa k\xE4ytt\xE4\
+  m\xE4ll\xE4 `Replace`-funktiota tai sovelluskohtaisia objektimalleja sovelluksissa\
+  \ kuten Excel tai Word."
 title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---

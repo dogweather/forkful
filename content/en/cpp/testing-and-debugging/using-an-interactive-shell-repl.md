@@ -1,10 +1,10 @@
 ---
 date: 2024-01-25 03:39:59.702145-07:00
-description: "A REPL (Read-Eval-Print-Loop) is a simple, interactive programming environment.\
-  \ Programmers use it for real-time language experimentation, quick tasks, or\u2026"
+description: 'How to: C++ doesn''t come with a built-in REPL, but tools like Cling
+  offer that capability. Here''s how to use Cling to calculate the sum of two numbers.'
 lastmod: '2024-03-13T22:45:00.358989-06:00'
 model: gpt-4-1106-preview
-summary: A REPL (Read-Eval-Print-Loop) is a simple, interactive programming environment.
+summary: C++ doesn't come with a built-in REPL, but tools like Cling offer that capability.
 title: Using an interactive shell (REPL)
 weight: 34
 ---

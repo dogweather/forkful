@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:59:12.185576-07:00
-description: "Enviar uma requisi\xE7\xE3o HTTP \xE9 basicamente pedir para um servidor\
-  \ web enviar dados para a sua aplica\xE7\xE3o. Fazemos isso para interagir com APIs,\
-  \ acessar\u2026"
+description: "Como Fazer? No C#, uma das formas mais comuns de enviar uma requisi\xE7\
+  \xE3o HTTP \xE9 usando a classe `HttpClient`. Aqui est\xE1 um exemplo simples."
 lastmod: '2024-03-13T22:44:46.580926-06:00'
 model: gpt-4-1106-preview
-summary: "Enviar uma requisi\xE7\xE3o HTTP \xE9 basicamente pedir para um servidor\
-  \ web enviar dados para a sua aplica\xE7\xE3o."
+summary: "No C#, uma das formas mais comuns de enviar uma requisi\xE7\xE3o HTTP \xE9\
+  \ usando a classe `HttpClient`."
 title: "Enviando uma requisi\xE7\xE3o HTTP"
 weight: 44
 ---

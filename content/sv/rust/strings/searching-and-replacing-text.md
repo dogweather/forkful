@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:58:41.776833-07:00
-description: "Texts\xF6kning och ers\xE4ttning inneb\xE4r att hitta specifika str\xE4\
-  ngar och byta ut dem mot andra. Programmerare g\xF6r det f\xF6r att effektivt modifiera\
-  \ data eller\u2026"
+description: "Hur g\xF6r man?: I Rust anv\xE4nder vi standardbibliotekets metoder\
+  \ f\xF6r att s\xF6ka och ers\xE4tta text. Nedan \xE4r ett exempel p\xE5 hur man\
+  \ kan g\xF6ra."
 lastmod: '2024-03-13T22:44:37.683246-06:00'
 model: gpt-4-1106-preview
-summary: "Texts\xF6kning och ers\xE4ttning inneb\xE4r att hitta specifika str\xE4\
-  ngar och byta ut dem mot andra."
+summary: "I Rust anv\xE4nder vi standardbibliotekets metoder f\xF6r att s\xF6ka och\
+  \ ers\xE4tta text."
 title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---

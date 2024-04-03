@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:37:49.477082-07:00
-description: "N\xFAmeros complexos estendem os n\xFAmeros reais adicionando uma unidade\
-  \ imagin\xE1ria, representada como 'i', onde i^2 = -1. Programadores os utilizam\
-  \ para\u2026"
+description: "Como fazer: C++ possui uma biblioteca embutida `<complex>` que facilita\
+  \ o trabalho com n\xFAmeros complexos. Aqui est\xE1 uma r\xE1pida olhada."
 lastmod: '2024-03-13T22:44:46.873723-06:00'
 model: gpt-4-0125-preview
-summary: "N\xFAmeros complexos estendem os n\xFAmeros reais adicionando uma unidade\
-  \ imagin\xE1ria, representada como 'i', onde i^2 = -1."
+summary: "C++ possui uma biblioteca embutida `<complex>` que facilita o trabalho com\
+  \ n\xFAmeros complexos."
 title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---

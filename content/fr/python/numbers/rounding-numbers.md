@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 03:47:01.917175-07:00
-description: "Arrondir des nombres signifie les ajuster pour les rapprocher d'une\
-  \ valeur plus simple ou plus significative. Les programmeurs arrondissent les nombres\u2026"
+description: 'Comment faire : Voici l''essentiel sur l''arrondissement des nombres
+  en Python .'
 lastmod: '2024-03-13T22:44:57.229658-06:00'
 model: gpt-4-0125-preview
-summary: Arrondir des nombres signifie les ajuster pour les rapprocher d'une valeur
-  plus simple ou plus significative.
+summary: Voici l'essentiel sur l'arrondissement des nombres en Python.
 title: Arrondir les nombres
 weight: 13
 ---

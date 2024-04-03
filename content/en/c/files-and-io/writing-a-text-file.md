@@ -1,12 +1,12 @@
 ---
 date: 2024-02-03 17:50:12.857742-07:00
-description: "Writing a text file in C involves creating or opening a file in write\
-  \ mode and then using C's file I/O functions to save text data to it. Programmers\
-  \ do\u2026"
+description: "How to: To write text to a file in C, you primarily need to be familiar\
+  \ with the `fopen()`, `fprintf()`, `fputs()`, and `fclose()` functions. Below is\
+  \ a\u2026"
 lastmod: '2024-03-13T22:45:00.527546-06:00'
 model: gpt-4-0125-preview
-summary: Writing a text file in C involves creating or opening a file in write mode
-  and then using C's file I/O functions to save text data to it.
+summary: To write text to a file in C, you primarily need to be familiar with the
+  `fopen()`, `fprintf()`, `fputs()`, and `fclose()` functions.
 title: Writing a text file
 weight: 24
 ---

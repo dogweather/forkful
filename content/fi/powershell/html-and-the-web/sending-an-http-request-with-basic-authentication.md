@@ -1,13 +1,9 @@
 ---
 date: 2024-01-20 18:02:44.035172-07:00
-description: "HTTP-pyynt\xF6 perusautentikoinnilla tarkoittaa verkkopalvelimeen l\xE4\
-  hetett\xE4v\xE4\xE4 pyynt\xF6\xE4, jossa k\xE4ytt\xE4j\xE4nimi ja salasana sis\xE4\
-  ltyv\xE4t selkokielell\xE4 ja koodataan\u2026"
+description: "How to: (Kuinka tehd\xE4\xE4n:) ."
 lastmod: '2024-03-13T22:44:56.782107-06:00'
 model: gpt-4-1106-preview
-summary: "HTTP-pyynt\xF6 perusautentikoinnilla tarkoittaa verkkopalvelimeen l\xE4\
-  hetett\xE4v\xE4\xE4 pyynt\xF6\xE4, jossa k\xE4ytt\xE4j\xE4nimi ja salasana sis\xE4\
-  ltyv\xE4t selkokielell\xE4 ja koodataan base64-muotoon."
+summary: .
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---

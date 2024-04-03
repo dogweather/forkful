@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:55.074989-07:00
-description: "Das Parsen eines Datums aus einem String in Elm beinhaltet das Umwandeln\
-  \ von Textinformationen, die Daten und Zeiten repr\xE4sentieren, in ein Format,\
-  \ das\u2026"
+description: "Wie geht das: Elm verf\xFCgt nicht \xFCber so robuste integrierte F\xE4\
+  higkeiten wie einige andere Sprachen zum Parsen von Daten, und verl\xE4sst sich\
+  \ haupts\xE4chlich\u2026"
 lastmod: '2024-03-13T22:44:53.814841-06:00'
 model: gpt-4-0125-preview
-summary: "Das Parsen eines Datums aus einem String in Elm beinhaltet das Umwandeln\
-  \ von Textinformationen, die Daten und Zeiten repr\xE4sentieren, in ein Format,\
-  \ das Elm verstehen und manipulieren kann, speziell in den `Date` Typ."
+summary: "Elm verf\xFCgt nicht \xFCber so robuste integrierte F\xE4higkeiten wie einige\
+  \ andere Sprachen zum Parsen von Daten, und verl\xE4sst sich haupts\xE4chlich auf\
+  \ Javascript-Interop oder Bibliotheken f\xFCr komplexere Operationen."
 title: Einen Datum aus einem String analysieren
 weight: 30
 ---

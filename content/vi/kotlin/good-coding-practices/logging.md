@@ -2,16 +2,18 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:10.689371-07:00
-description: "Logging, v\u1EC1 b\u1EA3n ch\u1EA5t, l\xE0 vi\u1EC7c ghi l\u1EA1i c\xE1\
-  c s\u1EF1 ki\u1EC7n v\xE0 d\u1EEF li\u1EC7u t\u1EEB m\u1ED9t \u1EE9ng d\u1EE5ng\
-  \ ph\u1EA7n m\u1EC1m v\xE0o m\u1ED9t \u0111\u1EA7u ra ngo\u1EA1i vi, nh\u01B0 m\u1ED9\
-  t t\u1EC7p ho\u1EB7c console. C\xE1c l\u1EADp tr\xECnh\u2026"
+description: "L\xE0m Th\u1EBF N\xE0o: Trong Kotlin, vi\u1EC7c logging c\xF3 th\u1EC3\
+  \ \u0111\u01B0\u1EE3c th\u1EF1c hi\u1EC7n b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng h\xE0\
+  m `println()` \u0111\u01B0\u1EE3c t\xEDch h\u1EE3p s\u1EB5n cho c\xE1c tr\u01B0\u1EDD\
+  ng h\u1EE3p \u0111\u01A1n gi\u1EA3n, ho\u1EB7c v\u1EDBi\u2026"
 lastmod: '2024-03-13T22:44:36.610216-06:00'
 model: gpt-4-0125-preview
-summary: "Logging, v\u1EC1 b\u1EA3n ch\u1EA5t, l\xE0 vi\u1EC7c ghi l\u1EA1i c\xE1\
-  c s\u1EF1 ki\u1EC7n v\xE0 d\u1EEF li\u1EC7u t\u1EEB m\u1ED9t \u1EE9ng d\u1EE5ng\
-  \ ph\u1EA7n m\u1EC1m v\xE0o m\u1ED9t \u0111\u1EA7u ra ngo\u1EA1i vi, nh\u01B0 m\u1ED9\
-  t t\u1EC7p ho\u1EB7c console."
+summary: "Trong Kotlin, vi\u1EC7c logging c\xF3 th\u1EC3 \u0111\u01B0\u1EE3c th\u1EF1\
+  c hi\u1EC7n b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng h\xE0m `println()` \u0111\u01B0\u1EE3\
+  c t\xEDch h\u1EE3p s\u1EB5n cho c\xE1c tr\u01B0\u1EDDng h\u1EE3p \u0111\u01A1n gi\u1EA3\
+  n, ho\u1EB7c v\u1EDBi c\xE1c th\u01B0 vi\u1EC7n ph\u1EE9c t\u1EA1p h\u01A1n nh\u01B0\
+  \ SLF4J k\xE8m theo Logback ho\u1EB7c Log4j cho nh\u1EEFng nhu c\u1EA7u n\xE2ng\
+  \ cao."
 title: Ghi log
 weight: 17
 ---

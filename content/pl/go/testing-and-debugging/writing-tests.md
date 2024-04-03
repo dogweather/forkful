@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:25.919598-07:00
-description: "Pisanie test\xF3w w Go polega na tworzeniu ma\u0142ych, zarz\u0105dzalnych\
-  \ fragment\xF3w kodu, kt\xF3re weryfikuj\u0105 funkcjonalno\u015B\u0107 i zachowanie\
-  \ aplikacji. Programi\u015Bci pisz\u0105\u2026"
+description: "Jak to zrobi\u0107: W Go testy s\u0105 zazwyczaj pisane w tym samym\
+  \ pakiecie co kod, kt\xF3ry testuj\u0105. Pliki zawieraj\u0105ce testy nazwane s\u0105\
+  \ z sufiksem `_test.go`. Testy\u2026"
 lastmod: '2024-03-13T22:44:34.855435-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie test\xF3w w Go polega na tworzeniu ma\u0142ych, zarz\u0105dzalnych\
-  \ fragment\xF3w kodu, kt\xF3re weryfikuj\u0105 funkcjonalno\u015B\u0107 i zachowanie\
-  \ aplikacji."
+summary: "W Go testy s\u0105 zazwyczaj pisane w tym samym pakiecie co kod, kt\xF3\
+  ry testuj\u0105."
 title: "Pisanie test\xF3w"
 weight: 36
 ---

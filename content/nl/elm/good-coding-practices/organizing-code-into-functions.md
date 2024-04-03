@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:07.501883-07:00
-description: "Al je code in \xE9\xE9n grote hoop gooien? Slecht idee. Het onderverdelen\
-  \ in functies? Goed idee. Het houdt je Elm-code netjes, herbruikbaar en eenvoudiger\
-  \ om\u2026"
+description: 'Hoe: Hier is een stuk Elm-code met een eenvoudige functie om een gebruiker
+  te begroeten.'
 lastmod: '2024-03-13T22:44:50.730541-06:00'
 model: gpt-4-0125-preview
-summary: "Al je code in \xE9\xE9n grote hoop gooien."
+summary: Hier is een stuk Elm-code met een eenvoudige functie om een gebruiker te
+  begroeten.
 title: Code organiseren in functies
 weight: 18
 ---

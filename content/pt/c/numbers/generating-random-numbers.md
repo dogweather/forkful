@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:13.823779-07:00
-description: "Gerar n\xFAmeros aleat\xF3rios em C envolve a cria\xE7\xE3o de valores\
-  \ que s\xE3o imprevis\xEDveis e seguem uma distribui\xE7\xE3o espec\xEDfica, como\
-  \ uniforme ou normal. Essa\u2026"
+description: "Como fazer: Em C, n\xFAmeros aleat\xF3rios podem ser gerados usando\
+  \ a fun\xE7\xE3o `rand()`, que faz parte da biblioteca padr\xE3o do C `<stdlib.h>`.\
+  \ Por padr\xE3o,\u2026"
 lastmod: '2024-03-13T22:44:47.045342-06:00'
 model: gpt-4-0125-preview
-summary: "Gerar n\xFAmeros aleat\xF3rios em C envolve a cria\xE7\xE3o de valores que\
-  \ s\xE3o imprevis\xEDveis e seguem uma distribui\xE7\xE3o espec\xEDfica, como uniforme\
-  \ ou normal."
+summary: "Em C, n\xFAmeros aleat\xF3rios podem ser gerados usando a fun\xE7\xE3o `rand()`,\
+  \ que faz parte da biblioteca padr\xE3o do C `<stdlib.h>`."
 title: "Gerando n\xFAmeros aleat\xF3rios"
 weight: 12
 ---

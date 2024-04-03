@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:41:27.602567-07:00
-description: "Tempor\xE4re Dateien sind kurzlebige Datenspeicher, die w\xE4hrend der\
-  \ Laufzeit eines Programms erstellt werden. Programmierer nutzen sie f\xFCr Daten,\
-  \ die nur\u2026"
+description: "So geht's: Um in TypeScript eine tempor\xE4re Datei zu erstellen, k\xF6\
+  nntest du das `fs`-Modul und `tmp`-Paket verwenden. Hier ist ein einfaches Beispiel,\
+  \ das\u2026"
 lastmod: '2024-03-13T22:44:53.649671-06:00'
 model: gpt-4-1106-preview
-summary: "Tempor\xE4re Dateien sind kurzlebige Datenspeicher, die w\xE4hrend der Laufzeit\
-  \ eines Programms erstellt werden."
+summary: "Um in TypeScript eine tempor\xE4re Datei zu erstellen, k\xF6nntest du das\
+  \ `fs`-Modul und `tmp`-Paket verwenden."
 title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---

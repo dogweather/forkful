@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:04.829681-07:00
-description: "Een tekenreeks omzetten naar kleine letters betekent dat alle hoofdletters\
-  \ worden vervangen door hun kleine letter equivalenten. Programmeurs doen dit\u2026"
+description: 'Hoe: Swift maakt dit eenvoudig met een eigenschap genaamd `lowercased`.
+  Zo gebruik je het.'
 lastmod: '2024-03-13T22:44:51.142905-06:00'
 model: gpt-4-0125-preview
-summary: Een tekenreeks omzetten naar kleine letters betekent dat alle hoofdletters
-  worden vervangen door hun kleine letter equivalenten.
+summary: Swift maakt dit eenvoudig met een eigenschap genaamd `lowercased`.
 title: Een string omzetten naar kleine letters
 weight: 4
 ---

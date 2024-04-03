@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:12.156103-07:00
-description: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi c\xF3 ngh\u0129a l\xE0\
-  \ t\u1EA1o ra m\u1ED9t t\u1EC7p ch\u1EC9 c\u1EA7n thi\u1EBFt trong m\u1ED9t kho\u1EA3\
-  ng th\u1EDDi gian ng\u1EAFn, sau \u0111\xF3 \u0111\u01B0\u1EE3c x\xF3a \u0111i.\
-  \ C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y cho\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong Java, g\xF3i `java.nio.file` l\xE0\
+  \ ng\u01B0\u1EDDi b\u1EA1n c\u1EE7a b\u1EA1n \u0111\u1ED1i v\u1EDBi c\xE1c t\u1EC7\
+  p t\u1EA1m th\u1EDDi. H\xE3y xem \u0111o\u1EA1n m\xE3 n\xE0y."
 lastmod: '2024-03-13T22:44:36.514541-06:00'
 model: gpt-4-0125-preview
-summary: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi c\xF3 ngh\u0129a l\xE0 t\u1EA1\
-  o ra m\u1ED9t t\u1EC7p ch\u1EC9 c\u1EA7n thi\u1EBFt trong m\u1ED9t kho\u1EA3ng th\u1EDD\
-  i gian ng\u1EAFn, sau \u0111\xF3 \u0111\u01B0\u1EE3c x\xF3a \u0111i."
+summary: "Trong Java, g\xF3i `java.nio.file` l\xE0 ng\u01B0\u1EDDi b\u1EA1n c\u1EE7\
+  a b\u1EA1n \u0111\u1ED1i v\u1EDBi c\xE1c t\u1EC7p t\u1EA1m th\u1EDDi."
 title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
 weight: 21
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:03:22.617664-07:00
-description: "Writing tests in Fish Shell involves creating scripts that automatically\
-  \ run your code to validate its behavior against expected outcomes. This practice\u2026"
+description: "How to: Fish doesn't have a built-in testing framework like some other\
+  \ programming environments. However, you can write simple test scripts that use\u2026"
 lastmod: '2024-03-13T22:45:00.477425-06:00'
 model: gpt-4-0125-preview
-summary: Writing tests in Fish Shell involves creating scripts that automatically
-  run your code to validate its behavior against expected outcomes.
+summary: Fish doesn't have a built-in testing framework like some other programming
+  environments.
 title: Writing tests
 weight: 36
 ---

@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:33.326934-07:00
-description: "Att arbeta med CSV-filer (kommaseparerade v\xE4rden) handlar om att\
-  \ l\xE4sa fr\xE5n och skriva till vanliga textfiler som lagrar tabelldata. Programmerare\
-  \ g\xF6r\u2026"
+description: "Hur man g\xF6r: Rust, med dess fokus p\xE5 s\xE4kerhet och prestanda,\
+  \ erbjuder utm\xE4rkta crates (bibliotek) f\xF6r att hantera CSV-filer, d\xE4r `csv`\
+  \ \xE4r det mest\u2026"
 lastmod: '2024-03-13T22:44:37.721861-06:00'
 model: gpt-4-0125-preview
-summary: "Att arbeta med CSV-filer (kommaseparerade v\xE4rden) handlar om att l\xE4\
-  sa fr\xE5n och skriva till vanliga textfiler som lagrar tabelldata."
+summary: "Rust, med dess fokus p\xE5 s\xE4kerhet och prestanda, erbjuder utm\xE4rkta\
+  \ crates (bibliotek) f\xF6r att hantera CSV-filer, d\xE4r `csv` \xE4r det mest popul\xE4\
+  ra."
 title: Arbeta med CSV
 weight: 37
 ---

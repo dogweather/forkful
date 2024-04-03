@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:43:20.603847-07:00
-description: "Sletting av tegn som matcher et m\xF8nster gj\xF8r at vi kan finrense\
-  \ tekst ved \xE5 ta vekk u\xF8nskede deler, som ekstrategn eller kode. Programmerere\
-  \ gj\xF8r dette\u2026"
+description: 'How to: (Hvordan:) .'
 lastmod: '2024-03-13T22:44:41.001011-06:00'
 model: gpt-4-1106-preview
-summary: "Sletting av tegn som matcher et m\xF8nster gj\xF8r at vi kan finrense tekst\
-  \ ved \xE5 ta vekk u\xF8nskede deler, som ekstrategn eller kode."
+summary: .
 title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---

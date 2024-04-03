@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:21.977204-07:00
-description: "Scrivere sull'errore standard (stderr) in Ruby significa indirizzare\
-  \ messaggi di errore o diagnostiche a un flusso di uscita separato, distinto\u2026"
+description: "Come fare: La libreria standard di Ruby offre un modo diretto per scrivere\
+  \ su stderr utilizzando `$stderr` o `STDERR`. Non \xE8 necessario utilizzare\u2026"
 lastmod: '2024-03-13T22:44:44.067341-06:00'
 model: gpt-4-0125-preview
-summary: Scrivere sull'errore standard (stderr) in Ruby significa indirizzare messaggi
-  di errore o diagnostiche a un flusso di uscita separato, distinto dall'output standard
-  (stdout).
+summary: La libreria standard di Ruby offre un modo diretto per scrivere su stderr
+  utilizzando `$stderr` o `STDERR`.
 title: Scrivere sull'errore standard
 weight: 25
 ---

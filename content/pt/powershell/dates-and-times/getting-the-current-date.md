@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:26.607005-07:00
-description: "Obter a data atual no PowerShell \xE9 sobre recuperar a data e hora\
-  \ atual do sistema. Esta opera\xE7\xE3o \xE9 fundamental para tarefas como registrar,\
-  \ cronometrar\u2026"
+description: "Como fazer: O PowerShell fornece cmdlets simples para obter a data e\
+  \ a hora. O cmdlet `Get-Date` \xE9 a principal ferramenta para esse prop\xF3sito.\
+  \ Ele pode\u2026"
 lastmod: '2024-03-13T22:44:46.807339-06:00'
 model: gpt-4-0125-preview
-summary: "Obter a data atual no PowerShell \xE9 sobre recuperar a data e hora atual\
-  \ do sistema."
+summary: O PowerShell fornece cmdlets simples para obter a data e a hora.
 title: Obtendo a data atual
 weight: 29
 ---

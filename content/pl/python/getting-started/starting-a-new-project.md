@@ -3,14 +3,10 @@ changelog:
 - 2024-02-22, dogweather, reviewed
 - 2024-02-22, gpt-4-0125-preview, translated from English
 date: 2024-02-22 17:30:10.136520-07:00
-description: "Rozpoczynaj\u0105c nowy projekt w Pythonie chodzi o to, aby od samego\
-  \ pocz\u0105tku ustawi\u0107 zorganizowan\u0105 i \u0142atw\u0105 w utrzymaniu struktur\u0119\
-  . Programi\u015Bci robi\u0105 to, aby\u2026"
+description: "Jak to zrobi\u0107: #."
 lastmod: '2024-03-13T22:44:34.950070-06:00'
 model: gpt-4-0125-preview
-summary: "Rozpoczynaj\u0105c nowy projekt w Pythonie chodzi o to, aby od samego pocz\u0105\
-  tku ustawi\u0107 zorganizowan\u0105 i \u0142atw\u0105 w utrzymaniu struktur\u0119\
-  ."
+summary: '#.'
 title: Rozpoczynanie nowego projektu
 weight: 1
 ---

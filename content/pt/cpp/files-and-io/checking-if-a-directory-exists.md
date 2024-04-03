@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:53.274473-07:00
-description: "Verificar se um diret\xF3rio existe \xE9 sobre determinar a presen\xE7\
-  a de um diret\xF3rio em um caminho especificado antes de realizar opera\xE7\xF5\
-  es como ler ou escrever\u2026"
+description: "Como fazer: No C++ moderno (C++17 e al\xE9m), voc\xEA pode usar a biblioteca\
+  \ filesystem para verificar se um diret\xF3rio existe. Ela fornece uma maneira direta\
+  \ e\u2026"
 lastmod: '2024-03-13T22:44:46.893565-06:00'
 model: gpt-4-0125-preview
-summary: "Verificar se um diret\xF3rio existe \xE9 sobre determinar a presen\xE7a\
-  \ de um diret\xF3rio em um caminho especificado antes de realizar opera\xE7\xF5\
-  es como ler ou escrever arquivos dentro dele."
+summary: "No C++ moderno (C++17 e al\xE9m), voc\xEA pode usar a biblioteca filesystem\
+  \ para verificar se um diret\xF3rio existe."
 title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---

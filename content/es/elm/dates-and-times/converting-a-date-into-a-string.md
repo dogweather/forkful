@@ -1,13 +1,9 @@
 ---
 date: 2024-01-20 17:36:39.587688-07:00
-description: "Convertir una fecha en un texto significa transformar la representaci\xF3\
-  n de tiempo (como `Date`) en una cadena de caracteres legible (como `\"2021-12-31\"\
-  `).\u2026"
+description: "C\xF3mo se hace: ."
 lastmod: '2024-03-13T22:44:59.004550-06:00'
 model: gpt-4-1106-preview
-summary: "Convertir una fecha en un texto significa transformar la representaci\xF3\
-  n de tiempo (como `Date`) en una cadena de caracteres legible (como `\"2021-12-31\"\
-  `)."
+summary: .
 title: Convirtiendo una fecha en una cadena de texto
 weight: 28
 ---

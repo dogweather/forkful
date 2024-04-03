@@ -2,16 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:57.599618-07:00
-description: "Vi\u1EC7c ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3\
-  n t\u1EA1i trong Kotlin gi\xFAp b\u1EA1n x\xE1c nh\u1EADn li\u1EC7u m\u1ED9t folder\
-  \ c\xF3 m\u1EB7t tr\u01B0\u1EDBc khi b\u1EA1n th\u1EED \u0111\u1ECDc ho\u1EB7c vi\u1EBF\
-  t t\u1EC7p v\xE0o \u0111\xF3. \u0110i\u1EC1u n\xE0y gi\xFAp\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Trong Kotlin, b\u1EA1n th\u01B0\u1EDDng s\u1EED\
+  \ d\u1EE5ng `java.io.File` (t\u1EEB th\u01B0 vi\u1EC7n chu\u1EA9n c\u1EE7a Java)\
+  \ \u0111\u1EC3 ki\u1EC3m tra th\u01B0 m\u1EE5c. D\u01B0\u1EDBi \u0111\xE2y l\xE0\
+  \ m\u1ED9t v\xED d\u1EE5 nhanh."
 lastmod: '2024-03-13T22:44:36.620555-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1\
-  i trong Kotlin gi\xFAp b\u1EA1n x\xE1c nh\u1EADn li\u1EC7u m\u1ED9t folder c\xF3\
-  \ m\u1EB7t tr\u01B0\u1EDBc khi b\u1EA1n th\u1EED \u0111\u1ECDc ho\u1EB7c vi\u1EBF\
-  t t\u1EC7p v\xE0o \u0111\xF3."
+summary: "Trong Kotlin, b\u1EA1n th\u01B0\u1EDDng s\u1EED d\u1EE5ng `java.io.File`\
+  \ (t\u1EEB th\u01B0 vi\u1EC7n chu\u1EA9n c\u1EE7a Java) \u0111\u1EC3 ki\u1EC3m tra\
+  \ th\u01B0 m\u1EE5c."
 title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
 weight: 20
 ---

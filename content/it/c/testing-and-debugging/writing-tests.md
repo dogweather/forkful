@@ -2,12 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:44.763602-07:00
-description: "Scrivere test in C comporta la creazione di programmi o funzioni ausiliari\
-  \ pi\xF9 piccoli che verificano automaticamente la funzionalit\xE0 del codice. I\u2026"
+description: "Come fare: Anche se C non ha un framework di test integrato come alcuni\
+  \ altri linguaggi, \xE8 comunque possibile scrivere test efficaci utilizzando assert.h\u2026"
 lastmod: '2024-03-13T22:44:44.002321-06:00'
 model: gpt-4-0125-preview
-summary: "Scrivere test in C comporta la creazione di programmi o funzioni ausiliari\
-  \ pi\xF9 piccoli che verificano automaticamente la funzionalit\xE0 del codice."
+summary: "Anche se C non ha un framework di test integrato come alcuni altri linguaggi,\
+  \ \xE8 comunque possibile scrivere test efficaci utilizzando assert.h per asserzioni\
+  \ semplici o integrare framework di terze parti come CUnit o Unity per test pi\xF9\
+  \ strutturati."
 title: Scrivere test
 weight: 36
 ---

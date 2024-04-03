@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:22:49.007974-07:00
-description: "Praca z TOML polega na parsowaniu i generowaniu danych TOML (Tom's Obvious,\
-  \ Minimal Language) przy u\u017Cyciu j\u0119zyka Haskell. Programi\u015Bci robi\u0105\
-  \ to, aby \u0142atwo\u2026"
+description: "Jak to zrobi\u0107: Najpierw upewnij si\u0119, \u017Ce masz bibliotek\u0119\
+  \ do parsowania TOML. Dla Haskella, `htoml` jest popularnym wyborem. Musisz doda\u0107\
+  \ j\u0105 do zale\u017Cno\u015Bci\u2026"
 lastmod: '2024-03-13T22:44:35.477257-06:00'
 model: gpt-4-0125-preview
-summary: "Praca z TOML polega na parsowaniu i generowaniu danych TOML (Tom's Obvious,\
-  \ Minimal Language) przy u\u017Cyciu j\u0119zyka Haskell."
+summary: "Najpierw upewnij si\u0119, \u017Ce masz bibliotek\u0119 do parsowania TOML."
 title: Praca z TOML
 weight: 39
 ---

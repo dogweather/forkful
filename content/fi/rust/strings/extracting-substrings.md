@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:46:31.935215-07:00
-description: "Mik\xE4 ja miksi? Substringien eli alimerkkijonojen poimiminen on prosessi,\
-  \ jossa otetaan osia kiinteist\xE4 merkkijonoista. Ohjelmoijat tekev\xE4t t\xE4\
-  t\xE4 tietojen\u2026"
+description: "How to: Kuinka tehd\xE4\xE4n."
 lastmod: '2024-03-13T22:44:56.345736-06:00'
 model: gpt-4-1106-preview
-summary: "Mik\xE4 ja miksi."
+summary: "Kuinka tehd\xE4\xE4n."
 title: Merkkijonojen osien poimiminen
 weight: 6
 ---

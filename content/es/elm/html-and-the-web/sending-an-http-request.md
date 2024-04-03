@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:59:54.220058-07:00
-description: "Mandar una petici\xF3n HTTP es como enviar un mensaje a otra computadora\
-  \ pidi\xE9ndole informaci\xF3n o para que realice una acci\xF3n. Los programadores\
-  \ lo hacen\u2026"
+description: "C\xF3mo hacerlo: ."
 lastmod: '2024-03-13T22:44:58.976488-06:00'
 model: gpt-4-1106-preview
-summary: "Mandar una petici\xF3n HTTP es como enviar un mensaje a otra computadora\
-  \ pidi\xE9ndole informaci\xF3n o para que realice una acci\xF3n."
+summary: .
 title: Enviando una solicitud http
 weight: 44
 ---

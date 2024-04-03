@@ -1,8 +1,7 @@
 ---
 date: 2024-01-25 20:50:36.208411-07:00
-description: "Elixir ships with a built-in graphical debugger called `:debugger`.\
-  \ To use it, you'll need to start it and attach to your running process. First,\
-  \ ensure\u2026"
+description: "How to: Elixir ships with a built-in graphical debugger called `:debugger`.\
+  \ To use it, you'll need to start it and attach to your running process. First,\u2026"
 lastmod: '2024-03-13T22:44:59.786465-06:00'
 model: gpt-4-1106-preview
 summary: Elixir ships with a built-in graphical debugger called `:debugger`.

@@ -1,11 +1,12 @@
 ---
 date: 2024-01-25 02:03:37.482118-07:00
-description: "Logging is like keeping a journal for your application; it's the practice\
-  \ of recording events, errors, and other pertinent data during runtime. Developers\u2026"
+description: "How to: Let's set up a basic logging scenario in Rust using the `log`\
+  \ crate, which provides a logging facade, and `env_logger`, a logging implementation\u2026"
 lastmod: '2024-03-13T22:44:59.901758-06:00'
 model: gpt-4-1106-preview
-summary: Logging is like keeping a journal for your application; it's the practice
-  of recording events, errors, and other pertinent data during runtime.
+summary: Let's set up a basic logging scenario in Rust using the `log` crate, which
+  provides a logging facade, and `env_logger`, a logging implementation for the `log`
+  crate.
 title: Logging
 weight: 17
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-27 20:34:50.289217-07:00
-description: "Das Generieren von Zufallszahlen in Ruby beinhaltet das Erstellen von\
-  \ Zahlen, die logisch nicht vorhersagbar sind. Dies ist essentiell f\xFCr Szenarien\
-  \ wie\u2026"
+description: "Wie zu: Ruby bietet mehrere Methoden zum Generieren von Zufallszahlen,\
+  \ haupts\xE4chlich \xFCber die `Random`-Klasse. #."
 lastmod: '2024-03-13T22:44:54.394161-06:00'
 model: gpt-4-0125-preview
-summary: Das Generieren von Zufallszahlen in Ruby beinhaltet das Erstellen von Zahlen,
-  die logisch nicht vorhersagbar sind.
+summary: "Ruby bietet mehrere Methoden zum Generieren von Zufallszahlen, haupts\xE4\
+  chlich \xFCber die `Random`-Klasse."
 title: Generierung von Zufallszahlen
 weight: 12
 ---

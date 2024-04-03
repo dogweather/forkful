@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 01:42:45.969008-07:00
-description: "Refactoring es el proceso de ajustar c\xF3digo existente para mejorar\
-  \ su estructura, legibilidad, y rendimiento sin cambiar su comportamiento externo.\
-  \ Los\u2026"
+description: "C\xF3mo: Aqu\xED tienes un fragmento en Kotlin que muestra un olor com\xFA\
+  n del c\xF3digo y su versi\xF3n refactorizada. Comenzamos con un bloque de c\xF3\
+  digo que est\xE1\u2026"
 lastmod: '2024-03-13T22:44:59.044325-06:00'
 model: gpt-4-0125-preview
-summary: "Refactoring es el proceso de ajustar c\xF3digo existente para mejorar su\
-  \ estructura, legibilidad, y rendimiento sin cambiar su comportamiento externo."
+summary: "Aqu\xED tienes un fragmento en Kotlin que muestra un olor com\xFAn del c\xF3\
+  digo y su versi\xF3n refactorizada."
 title: "Refactorizaci\xF3n"
 weight: 19
 ---

@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:47:51.321877-07:00
-description: "D\u0142ugo\u015B\u0107 ci\u0105gu znak\xF3w to liczba znak\xF3w w danym\
-  \ tek\u015Bcie. Programi\u015Bci musz\u0105 to wiedzie\u0107, aby np. weryfikowa\u0107\
-  \ czy dane wprowadzone przez u\u017Cytkownika pasuj\u0105 do\u2026"
+description: "Jak to zrobi\u0107: W Kotlinie, uzyskanie d\u0142ugo\u015Bci stringa\
+  \ jest banalnie proste. Oto przyk\u0142ady."
 lastmod: '2024-03-13T22:44:35.355795-06:00'
 model: gpt-4-1106-preview
-summary: "D\u0142ugo\u015B\u0107 ci\u0105gu znak\xF3w to liczba znak\xF3w w danym\
-  \ tek\u015Bcie."
+summary: "W Kotlinie, uzyskanie d\u0142ugo\u015Bci stringa jest banalnie proste."
 title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 weight: 7
 ---

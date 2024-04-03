@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:44.566675-07:00
-description: "Ohjelmoinnissa s\xE4\xE4nn\xF6lliset lausekkeet mahdollistavat merkkijonojen\
-  \ hakemisen ja manipuloinnin tiettyjen mallien perusteella. Ohjelmoijat k\xE4ytt\xE4\
-  v\xE4t niit\xE4\u2026"
+description: "Miten: Lua ei tue s\xE4\xE4nn\xF6llisi\xE4 lausekkeita natiivisti samalla\
+  \ tavalla kuin kielet kuten Perl tai Python. Sen sijaan se tarjoaa mallihakutoiminnallisuutta,\u2026"
 lastmod: '2024-03-13T22:44:56.687965-06:00'
 model: gpt-4-0125-preview
-summary: "Ohjelmoinnissa s\xE4\xE4nn\xF6lliset lausekkeet mahdollistavat merkkijonojen\
-  \ hakemisen ja manipuloinnin tiettyjen mallien perusteella."
+summary: "Lua ei tue s\xE4\xE4nn\xF6llisi\xE4 lausekkeita natiivisti samalla tavalla\
+  \ kuin kielet kuten Perl tai Python."
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---

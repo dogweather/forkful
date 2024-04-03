@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 01:17:59.406526-07:00
-description: "Il refactoring \xE8 il processo di ristrutturazione del codice esistente\
-  \ senza cambiarne il comportamento esterno per migliorare attributi non funzionali.\
-  \ I\u2026"
+description: "Come fare: Immagina di avere uno script che si \xE8 notevolmente espanso\
+  \ nel tempo. \xC8 iniziato in modo semplice, ma ora \xE8 una bestia che si estende\
+  \ con\u2026"
 lastmod: '2024-03-13T22:44:43.867825-06:00'
 model: gpt-4-0125-preview
-summary: "Il refactoring \xE8 il processo di ristrutturazione del codice esistente\
-  \ senza cambiarne il comportamento esterno per migliorare attributi non funzionali."
+summary: "Immagina di avere uno script che si \xE8 notevolmente espanso nel tempo."
 title: Rifattorizzazione
 weight: 19
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:44:19.238569-07:00
-description: "Scaricare una pagina web significa prelevare il contenuto HTML di una\
-  \ pagina da Internet. I programmatori fanno questo per processare dati, alimentare\u2026"
+description: 'Come fare: Per scaricare una pagina web in Java, possiamo usare la classe
+  `URLConnection` combinata con un `BufferedReader`. Ecco un esempio pratico.'
 lastmod: '2024-03-13T22:44:43.307691-06:00'
 model: gpt-4-1106-preview
-summary: Scaricare una pagina web significa prelevare il contenuto HTML di una pagina
-  da Internet.
+summary: Per scaricare una pagina web in Java, possiamo usare la classe `URLConnection`
+  combinata con un `BufferedReader`.
 title: Scaricare una pagina web
 weight: 42
 ---

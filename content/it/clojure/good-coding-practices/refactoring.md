@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 01:17:35.293870-07:00
-description: "Il refactoring \xE8 il processo di ristrutturazione del codice informatico\
-  \ esistente senza cambiare il suo comportamento esterno, mirato a migliorare\u2026"
+description: "Come fare: Il refactoring in Clojure\u2014grazie alla sua sintassi pulita\
+  \ e al paradigma funzionale\u2014pu\xF2 essere incredibilmente diretto. Affrontiamo\
+  \ uno\u2026"
 lastmod: '2024-03-13T22:44:43.050618-06:00'
 model: gpt-4-0125-preview
-summary: "Il refactoring \xE8 il processo di ristrutturazione del codice informatico\
-  \ esistente senza cambiare il suo comportamento esterno, mirato a migliorare attributi\
-  \ non funzionali."
+summary: "Il refactoring in Clojure\u2014grazie alla sua sintassi pulita e al paradigma\
+  \ funzionale\u2014pu\xF2 essere incredibilmente diretto."
 title: Rifattorizzazione
 weight: 19
 ---

@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:49.991882-07:00
-description: "\xC5 kapitalisere en streng inneb\xE6rer \xE5 endre det f\xF8rste tegnet\
-  \ i hvert ord i en setning til stor bokstav, samtidig som resten sikres \xE5 v\xE6\
-  re sm\xE5 bokstaver.\u2026"
+description: "Hvordan: Lua har ikke en innebygd funksjon for \xE5 kapitalisere strenger,\
+  \ men du kan enkelt utf\xF8re denne oppgaven ved hjelp av grunnleggende\u2026"
 lastmod: '2024-03-13T22:44:40.912053-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 kapitalisere en streng inneb\xE6rer \xE5 endre det f\xF8rste tegnet\
-  \ i hvert ord i en setning til stor bokstav, samtidig som resten sikres \xE5 v\xE6\
-  re sm\xE5 bokstaver."
+summary: "Lua har ikke en innebygd funksjon for \xE5 kapitalisere strenger, men du\
+  \ kan enkelt utf\xF8re denne oppgaven ved hjelp av grunnleggende strengmanipuleringsfunksjoner."
 title: Sette stor bokstav i en streng
 weight: 2
 ---

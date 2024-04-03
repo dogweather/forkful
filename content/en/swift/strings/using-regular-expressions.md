@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:03:07.240000-07:00
-description: "Regular expressions, or regex, are sequences of characters that form\
-  \ a search pattern, often used for string matching or manipulation tasks. Programmers\u2026"
+description: "How to: Swift native support for regex utilizes the `NSRegularExpression`\
+  \ class, alongside the String class's range and replacement methods. Below is an\u2026"
 lastmod: '2024-03-13T22:45:00.387300-06:00'
 model: gpt-4-0125-preview
-summary: Regular expressions, or regex, are sequences of characters that form a search
-  pattern, often used for string matching or manipulation tasks.
+summary: Swift native support for regex utilizes the `NSRegularExpression` class,
+  alongside the String class's range and replacement methods.
 title: Using regular expressions
 weight: 11
 ---

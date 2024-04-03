@@ -2,13 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:25.035161-07:00
-description: "Estrarre sottosequenze si riferisce al recupero di porzioni specifiche\
-  \ di una stringa basate sulle loro posizioni o sui loro schemi. I programmatori\
-  \ fanno\u2026"
+description: "Come fare: In Dart, \xE8 possibile utilizzare vari metodi per estrarre\
+  \ sottosequenze, come `substring()`, `split()` ed espressioni regolari. Ogni metodo\u2026"
 lastmod: '2024-03-13T22:44:43.117156-06:00'
 model: gpt-4-0125-preview
-summary: Estrarre sottosequenze si riferisce al recupero di porzioni specifiche di
-  una stringa basate sulle loro posizioni o sui loro schemi.
+summary: "In Dart, \xE8 possibile utilizzare vari metodi per estrarre sottosequenze,\
+  \ come `substring()`, `split()` ed espressioni regolari."
 title: Estrazione di sottostringhe
 weight: 6
 ---

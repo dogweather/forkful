@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:26.657873-07:00
-description: "Konwersja daty na ci\u0105g znak\xF3w w j\u0119zyku C polega na przekszta\u0142\
-  ceniu struktury daty lub znacznika czasu na format czytelny dla cz\u0142owieka.\
-  \ Programi\u015Bci cz\u0119sto\u2026"
+description: "Jak to zrobi\u0107: Do tego celu cz\u0119sto u\u017Cywana jest funkcja\
+  \ `strftime` z biblioteki `<time.h>`. Pozwala ona na formatowanie daty i czasu w\
+  \ r\xF3\u017Cnorodny spos\xF3b,\u2026"
 lastmod: '2024-03-13T22:44:35.898904-06:00'
 model: gpt-4-0125-preview
-summary: "Konwersja daty na ci\u0105g znak\xF3w w j\u0119zyku C polega na przekszta\u0142\
-  ceniu struktury daty lub znacznika czasu na format czytelny dla cz\u0142owieka."
+summary: "Do tego celu cz\u0119sto u\u017Cywana jest funkcja `strftime` z biblioteki\
+  \ `<time.h>`."
 title: "Konwersja daty na ci\u0105g znak\xF3w"
 weight: 28
 ---

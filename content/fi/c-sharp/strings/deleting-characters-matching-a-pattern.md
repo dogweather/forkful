@@ -1,13 +1,9 @@
 ---
 date: 2024-01-20 17:41:43.713822-07:00
-description: "Kun puhutaan merkkijonosta ja sen tietyll\xE4 mallilla vastaavien merkkien\
-  \ poistamisesta, tarkoitamme prosessia, jolla etsimme ja h\xE4vit\xE4mme tietyn\
-  \ mallin\u2026"
+description: 'Miten: .'
 lastmod: '2024-03-13T22:44:56.557597-06:00'
 model: gpt-4-1106-preview
-summary: "Kun puhutaan merkkijonosta ja sen tietyll\xE4 mallilla vastaavien merkkien\
-  \ poistamisesta, tarkoitamme prosessia, jolla etsimme ja h\xE4vit\xE4mme tietyn\
-  \ mallin mukaiset merkit merkkijonosta."
+summary: .
 title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---

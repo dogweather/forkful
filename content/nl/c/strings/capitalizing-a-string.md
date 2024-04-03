@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:52:50.382197-07:00
-description: "Een string met hoofdletters schrijven in C houdt in dat je het eerste\
-  \ teken van elk woord in een gegeven string omzet naar een hoofdletter als het een\u2026"
+description: "Hoe te: Het met hoofdletters schrijven van een string in C vereist een\
+  \ basisbegrip van karaktermanipulatie en het doorlopen van strings. Aangezien C\
+  \ geen\u2026"
 lastmod: '2024-03-13T22:44:51.272357-06:00'
 model: gpt-4-0125-preview
-summary: Een string met hoofdletters schrijven in C houdt in dat je het eerste teken
-  van elk woord in een gegeven string omzet naar een hoofdletter als het een kleine
-  letter is.
+summary: Het met hoofdletters schrijven van een string in C vereist een basisbegrip
+  van karaktermanipulatie en het doorlopen van strings.
 title: Een string kapitaliseren
 weight: 2
 ---

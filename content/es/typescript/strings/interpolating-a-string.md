@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 17:51:44.539615-07:00
-description: "La interpolaci\xF3n de strings nos permite insertar valores de variables\
-  \ dentro de cadenas de texto. Lo hacemos para construir mensajes din\xE1micos sin\u2026"
+description: "How to: TypeScript, al igual que JavaScript, utiliza backticks (`` `\
+  \ ``) para definir template literals, permiti\xE9ndonos insertar expresiones directamente\u2026"
 lastmod: '2024-03-13T22:44:58.784874-06:00'
 model: gpt-4-1106-preview
-summary: "La interpolaci\xF3n de strings nos permite insertar valores de variables\
-  \ dentro de cadenas de texto."
+summary: "TypeScript, al igual que JavaScript, utiliza backticks (`` ` ``) para definir\
+  \ template literals, permiti\xE9ndonos insertar expresiones directamente usando\
+  \ `${expresi\xF3n}`."
 title: "Interpolaci\xF3n de cadenas de texto"
 weight: 8
 ---

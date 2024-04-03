@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 01:50:43.364274-07:00
-description: "Refatora\xE7\xE3o \xE9 o processo de reestruturar c\xF3digo de computador\
-  \ existente sem alterar seu comportamento externo. Programadores refatoram para\
-  \ melhorar\u2026"
+description: "Como fazer: Vamos pegar um trecho cl\xE1ssico de PHP e aplicar um pouco\
+  \ de m\xE1gica de refatora\xE7\xE3o. Antes da refatora\xE7\xE3o, nosso c\xF3digo\
+  \ pode parecer assim."
 lastmod: '2024-03-13T22:44:46.675697-06:00'
 model: gpt-4-0125-preview
-summary: "Refatora\xE7\xE3o \xE9 o processo de reestruturar c\xF3digo de computador\
-  \ existente sem alterar seu comportamento externo."
+summary: "Vamos pegar um trecho cl\xE1ssico de PHP e aplicar um pouco de m\xE1gica\
+  \ de refatora\xE7\xE3o."
 title: "Refatora\xE7\xE3o"
 weight: 19
 ---

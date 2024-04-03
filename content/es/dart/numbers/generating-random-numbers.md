@@ -2,13 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:38.790335-07:00
-description: "Generar n\xFAmeros aleatorios en Dart implica crear valores num\xE9\
-  ricos que son impredecibles y difieren en cada ejecuci\xF3n. Los programadores aprovechan\
-  \ esta\u2026"
+description: "C\xF3mo hacerlo: La biblioteca central de Dart incluye soporte para\
+  \ generar n\xFAmeros aleatorios con la clase `Random` encontrada en `dart:math`.\
+  \ Aqu\xED hay un\u2026"
 lastmod: '2024-03-13T22:44:58.745399-06:00'
 model: gpt-4-0125-preview
-summary: "Generar n\xFAmeros aleatorios en Dart implica crear valores num\xE9ricos\
-  \ que son impredecibles y difieren en cada ejecuci\xF3n."
+summary: "La biblioteca central de Dart incluye soporte para generar n\xFAmeros aleatorios\
+  \ con la clase `Random` encontrada en `dart:math`."
 title: "Generando n\xFAmeros aleatorios"
 weight: 12
 ---

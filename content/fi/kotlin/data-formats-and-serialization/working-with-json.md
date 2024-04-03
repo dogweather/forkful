@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:06.492430-07:00
-description: "Ty\xF6skentely JSONin (JavaScript Object Notation) kanssa Kotlinitssa\
-  \ liittyy JSON-datamuodon j\xE4sennys- ja luontitoimiin. Ohjelmoijat tekev\xE4t\
-  \ t\xE4m\xE4n\u2026"
+description: "Kuinka: Kotlin ei sis\xE4ll\xE4 valmiiksi tukea JSONille, mutta se hy\xF6\
+  dynt\xE4\xE4 kolmansien osapuolien kirjastojen, kuten Googlen `Gson` ja JetBrainsin\u2026"
 lastmod: '2024-03-13T22:44:56.552708-06:00'
 model: gpt-4-0125-preview
-summary: "Ty\xF6skentely JSONin (JavaScript Object Notation) kanssa Kotlinitssa liittyy\
-  \ JSON-datamuodon j\xE4sennys- ja luontitoimiin."
+summary: "Kotlin ei sis\xE4ll\xE4 valmiiksi tukea JSONille, mutta se hy\xF6dynt\xE4\
+  \xE4 kolmansien osapuolien kirjastojen, kuten Googlen `Gson` ja JetBrainsin `Kotlinx.serialization`,\
+  \ tehokkaita ominaisuuksia."
 title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---

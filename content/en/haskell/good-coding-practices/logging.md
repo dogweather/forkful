@@ -1,12 +1,11 @@
 ---
 date: 2024-01-25 02:03:40.217197-07:00
-description: "Logging in programming is essentially leaving a trail of breadcrumbs\
-  \ in the form of recorded events or messages, which can be used to track what your\u2026"
+description: 'How to: In Haskell, logging can be implemented using libraries like
+  `monad-logger` or `hslogger`. Here''s a quick example using `monad-logger`.'
 lastmod: '2024-03-13T22:45:00.134283-06:00'
 model: gpt-4-1106-preview
-summary: Logging in programming is essentially leaving a trail of breadcrumbs in the
-  form of recorded events or messages, which can be used to track what your application
-  is doing at any given moment.
+summary: In Haskell, logging can be implemented using libraries like `monad-logger`
+  or `hslogger`.
 title: Logging
 weight: 17
 ---

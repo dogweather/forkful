@@ -2,15 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:53.525191-07:00
-description: "Vi\u1EC7c t\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7\
-  c qu\xE1 kh\u1EE9 li\xEAn quan \u0111\u1EBFn vi\u1EC7c x\xE1c \u0111\u1ECBnh m\u1ED9\
-  t ng\xE0y c\u1EE5 th\u1EC3 tr\u01B0\u1EDBc ho\u1EB7c sau m\u1ED9t ng\xE0y \u0111\
-  \xE3 cho. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Arduino kh\xF4ng c\xF3 h\xE0m ng\xE0y v\xE0\
+  \ gi\u1EDD \u0111\u01B0\u1EE3c x\xE2y d\u1EF1ng s\u1EB5n, nh\u01B0ng b\u1EA1n c\xF3\
+  \ th\u1EC3 s\u1EED d\u1EE5ng th\u01B0 vi\u1EC7n \"TimeLib.h\" \u0111\u1EC3 x\u1EED\
+  \ l\xFD c\xE1c ph\xE9p to\xE1n ng\xE0y. \u0110\u1EA3m b\u1EA3o b\u1EA1n\u2026"
 lastmod: '2024-03-13T22:44:37.006827-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c t\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1\
-  \ kh\u1EE9 li\xEAn quan \u0111\u1EBFn vi\u1EC7c x\xE1c \u0111\u1ECBnh m\u1ED9t ng\xE0\
-  y c\u1EE5 th\u1EC3 tr\u01B0\u1EDBc ho\u1EB7c sau m\u1ED9t ng\xE0y \u0111\xE3 cho."
+summary: "Arduino kh\xF4ng c\xF3 h\xE0m ng\xE0y v\xE0 gi\u1EDD \u0111\u01B0\u1EE3\
+  c x\xE2y d\u1EF1ng s\u1EB5n, nh\u01B0ng b\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5\
+  ng th\u01B0 vi\u1EC7n \"TimeLib.h\" \u0111\u1EC3 x\u1EED l\xFD c\xE1c ph\xE9p to\xE1\
+  n ng\xE0y."
 title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1EE9"
 weight: 26
 ---

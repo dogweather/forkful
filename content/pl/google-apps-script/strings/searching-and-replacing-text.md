@@ -2,15 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:26.662818-07:00
-description: "Wyszukiwanie i zast\u0119powanie tekstu w Google Apps Script polega\
-  \ na programowym identyfikowaniu konkretnych ci\u0105g\xF3w znak\xF3w w dokumencie,\
-  \ arkuszu\u2026"
+description: "Jak to zrobi\u0107: Google Apps Script oferuje prosty spos\xF3b na wyszukiwanie\
+  \ i zast\u0119powanie tekstu, zw\u0142aszcza w Google Docs i Arkuszach. Poni\u017C\
+  ej przyk\u0142ady dla\u2026"
 lastmod: '2024-03-13T22:44:34.884951-06:00'
 model: gpt-4-0125-preview
-summary: "Wyszukiwanie i zast\u0119powanie tekstu w Google Apps Script polega na programowym\
-  \ identyfikowaniu konkretnych ci\u0105g\xF3w znak\xF3w w dokumencie, arkuszu kalkulacyjnym\
-  \ lub innym typie zawarto\u015Bci Google Apps i zast\u0119powaniu ich innymi warto\u015B\
-  ciami tekstowymi."
+summary: "Google Apps Script oferuje prosty spos\xF3b na wyszukiwanie i zast\u0119\
+  powanie tekstu, zw\u0142aszcza w Google Docs i Arkuszach."
 title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---

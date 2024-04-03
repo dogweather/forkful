@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:10.785340-07:00
-description: "Assosiatiiviset taulukot ovat kuin tehostetut taulukot, jotka mahdollistavat\
-  \ merkkijonojen k\xE4ytt\xE4misen indeksein\xE4 pelkkien kokonaislukujen sijaan.\u2026"
+description: 'Kuinka: Aloita julistamalla Bashissa assosiatiivinen taulukko.'
 lastmod: '2024-03-13T22:44:56.730751-06:00'
 model: gpt-4-0125-preview
-summary: "Assosiatiiviset taulukot ovat kuin tehostetut taulukot, jotka mahdollistavat\
-  \ merkkijonojen k\xE4ytt\xE4misen indeksein\xE4 pelkkien kokonaislukujen sijaan."
+summary: Aloita julistamalla Bashissa assosiatiivinen taulukko.
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---

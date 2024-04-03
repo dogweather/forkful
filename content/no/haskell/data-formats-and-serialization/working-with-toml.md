@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:22:44.089246-07:00
-description: "Arbeid med TOML inneb\xE6rer parsing og generering av TOML (Toms \xC5\
-  penbare, Minimale Spr\xE5k) data med Haskell. Programmerere gj\xF8r dette for enkelt\
-  \ \xE5 h\xE5ndtere\u2026"
+description: "Hvordan: F\xF8rst, s\xF8rg for at du har et TOML parsingbibliotek. For\
+  \ Haskell er `htoml` et popul\xE6rt valg. Du m\xE5 legge det til i prosjektets avhengigheter."
 lastmod: '2024-03-13T22:44:40.866911-06:00'
 model: gpt-4-0125-preview
-summary: "Arbeid med TOML inneb\xE6rer parsing og generering av TOML (Toms \xC5penbare,\
-  \ Minimale Spr\xE5k) data med Haskell."
+summary: "F\xF8rst, s\xF8rg for at du har et TOML parsingbibliotek."
 title: Jobbe med TOML
 weight: 39
 ---

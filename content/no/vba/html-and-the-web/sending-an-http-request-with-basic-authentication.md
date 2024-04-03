@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:14.144203-07:00
-description: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering i\
-  \ Visual Basic for Applications (VBA) dreier seg om \xE5 f\xE5 tilgang til webressurser\
-  \ som er\u2026"
+description: "Hvordan: I VBA kan du bruke biblioteket `Microsoft XML, v6.0` (MSXML2)\
+  \ for \xE5 sende HTTP-foresp\xF8rsler med grunnleggende autentisering. Dette inneb\xE6\
+  rer \xE5\u2026"
 lastmod: '2024-03-13T22:44:40.619224-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering i Visual\
-  \ Basic for Applications (VBA) dreier seg om \xE5 f\xE5 tilgang til webressurser\
-  \ som er beskyttet av brukernavn- og passordopplysninger."
+summary: "I VBA kan du bruke biblioteket `Microsoft XML, v6.0` (MSXML2) for \xE5 sende\
+  \ HTTP-foresp\xF8rsler med grunnleggende autentisering."
 title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---

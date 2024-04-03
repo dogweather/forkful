@@ -1,12 +1,11 @@
 ---
 date: 2024-01-21 21:19:19.875424-07:00
-description: "Handling errors is about expecting the unexpected; it's how we manage\
-  \ when things go wrong in our code. We do it to avoid crashes and to give users\
-  \ a\u2026"
+description: 'How to: In TypeScript, handling errors often involves `try`, `catch`,
+  and `finally` blocks.'
 lastmod: '2024-03-13T22:44:59.865571-06:00'
 model: gpt-4-1106-preview
-summary: Handling errors is about expecting the unexpected; it's how we manage when
-  things go wrong in our code.
+summary: In TypeScript, handling errors often involves `try`, `catch`, and `finally`
+  blocks.
 title: Handling errors
 weight: 16
 ---

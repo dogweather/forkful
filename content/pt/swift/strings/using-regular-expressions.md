@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:18.952259-07:00
-description: "Express\xF5es regulares, ou regex, s\xE3o sequ\xEAncias de caracteres\
-  \ que formam um padr\xE3o de busca, frequentemente usadas para tarefas de correspond\xEA\
-  ncia ou\u2026"
+description: "Como: O suporte nativo do Swift para regex utiliza a classe `NSRegularExpression`,\
+  \ juntamente com os m\xE9todos de alcance e substitui\xE7\xE3o da classe String.\u2026"
 lastmod: '2024-03-13T22:44:46.911029-06:00'
 model: gpt-4-0125-preview
-summary: "Express\xF5es regulares, ou regex, s\xE3o sequ\xEAncias de caracteres que\
-  \ formam um padr\xE3o de busca, frequentemente usadas para tarefas de correspond\xEA\
-  ncia ou manipula\xE7\xE3o de strings."
+summary: "O suporte nativo do Swift para regex utiliza a classe `NSRegularExpression`,\
+  \ juntamente com os m\xE9todos de alcance e substitui\xE7\xE3o da classe String."
 title: "Usando express\xF5es regulares"
 weight: 11
 ---

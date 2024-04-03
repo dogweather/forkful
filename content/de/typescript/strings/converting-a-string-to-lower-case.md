@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:39:21.593123-07:00
-description: "Ein String in Kleinbuchstaben umzuwandeln bedeutet, alle Buchstaben\
-  \ eines Textes in ihre entsprechende kleinbuchstabige Form zu konvertieren.\u2026"
+description: 'How to: In TypeScript den `toLowerCase()` Methodenaufruf an einem String
+  anzuwenden, konvertiert den gesamten Text in Kleinbuchstaben. So geht''s.'
 lastmod: '2024-03-13T22:44:53.618885-06:00'
 model: gpt-4-1106-preview
-summary: Ein String in Kleinbuchstaben umzuwandeln bedeutet, alle Buchstaben eines
-  Textes in ihre entsprechende kleinbuchstabige Form zu konvertieren.
+summary: In TypeScript den `toLowerCase()` Methodenaufruf an einem String anzuwenden,
+  konvertiert den gesamten Text in Kleinbuchstaben.
 title: Umformung eines Strings in Kleinbuchstaben
 weight: 4
 ---

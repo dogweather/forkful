@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:44:22.261695-07:00
-description: "Descargar una p\xE1gina web es obtener su contenido completo a trav\xE9\
-  s de Internet. Los programadores lo hacen para analizar datos, verificar disponibilidad\
-  \ o\u2026"
+description: "C\xF3mo hacerlo: Usaremos la biblioteca `socket.http` para descargar\
+  \ el contenido de una p\xE1gina web. Primero, instala la biblioteca si a\xFAn no\
+  \ lo has hecho."
 lastmod: '2024-03-13T22:44:59.200573-06:00'
 model: gpt-4-1106-preview
-summary: "Descargar una p\xE1gina web es obtener su contenido completo a trav\xE9\
-  s de Internet."
+summary: "Usaremos la biblioteca `socket.http` para descargar el contenido de una\
+  \ p\xE1gina web."
 title: "Descargando una p\xE1gina web"
 weight: 42
 ---

@@ -1,12 +1,13 @@
 ---
 date: 2024-01-26 03:39:05.947606-07:00
-description: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att bli av med\
-  \ de d\xE4r irriterande dubbla eller enkla citattecken som omsluter din text. Programmerare\
-  \ g\xF6r\u2026"
+description: "Hur man g\xF6r: I Clojure \xE4r str\xE4ngar of\xF6r\xE4nderliga, s\xE5\
+  \ n\xE4r vi pratar om att \"ta bort citattecken\" pratar vi egentligen om att skapa\
+  \ en ny str\xE4ng utan\u2026"
 lastmod: '2024-03-13T22:44:37.513426-06:00'
 model: gpt-4-0125-preview
-summary: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att bli av med de\
-  \ d\xE4r irriterande dubbla eller enkla citattecken som omsluter din text."
+summary: "I Clojure \xE4r str\xE4ngar of\xF6r\xE4nderliga, s\xE5 n\xE4r vi pratar\
+  \ om att \"ta bort citattecken\" pratar vi egentligen om att skapa en ny str\xE4\
+  ng utan citattecken."
 title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 weight: 9
 ---

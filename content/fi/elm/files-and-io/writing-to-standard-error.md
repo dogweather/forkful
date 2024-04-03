@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:09.529952-07:00
-description: "Standardivirheeseen (stderr) kirjoittaminen tarkoittaa virheviestien\
-  \ ja diagnostiikkatietojen ohjaamista erilleen p\xE4\xE4ohjelman tulosteesta, joka\
-  \ menee\u2026"
+description: "Kuinka: Elm on ensisijaisesti suunnattu web-kehitykseen, jossa suoraan\
+  \ stderriin kirjoittamisen k\xE4site ei p\xE4de samalla tavalla kuin perinteisiss\xE4\
+  \u2026"
 lastmod: '2024-03-13T22:44:56.504774-06:00'
 model: gpt-4-0125-preview
-summary: "Standardivirheeseen (stderr) kirjoittaminen tarkoittaa virheviestien ja\
-  \ diagnostiikkatietojen ohjaamista erilleen p\xE4\xE4ohjelman tulosteesta, joka\
-  \ menee vakiotulostukseen (stdout)."
+summary: "Elm on ensisijaisesti suunnattu web-kehitykseen, jossa suoraan stderriin\
+  \ kirjoittamisen k\xE4site ei p\xE4de samalla tavalla kuin perinteisiss\xE4 komentorivi-ymp\xE4\
+  rist\xF6iss\xE4."
 title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---

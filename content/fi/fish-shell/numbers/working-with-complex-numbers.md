@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:40:01.518867-07:00
-description: "Kompleksiluvut laajentavat ajatusta yksiulotteisista numeroviivoista\
-  \ kaksiulotteiseen kompleksitasoon. Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 aloilla\
-  \ kuten\u2026"
+description: "Kuinka: Fishiss\xE4 k\xE4sittelemme kompleksilukuja k\xE4ytt\xE4m\xE4\
+  ll\xE4 `math`-komentoa reaaliosille ja imaginaariosille. T\xE4ss\xE4 alkuun."
 lastmod: '2024-03-13T22:44:56.986141-06:00'
 model: gpt-4-0125-preview
-summary: Kompleksiluvut laajentavat ajatusta yksiulotteisista numeroviivoista kaksiulotteiseen
-  kompleksitasoon.
+summary: "Fishiss\xE4 k\xE4sittelemme kompleksilukuja k\xE4ytt\xE4m\xE4ll\xE4 `math`-komentoa\
+  \ reaaliosille ja imaginaariosille."
 title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---

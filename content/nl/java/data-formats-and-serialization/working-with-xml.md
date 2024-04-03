@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:28.858512-07:00
-description: "Werken met XML houdt het parsen, opvragen en manipuleren van XML-documenten\
-  \ met Java in. Programmeurs doen dit voor gegevensuitwisseling,\u2026"
+description: "Hoe te: Java biedt API's zoals DOM (Document Object Model), SAX (Simple\
+  \ API for XML) en StAX (Streaming API for XML) om met XML te werken. Hier is een\u2026"
 lastmod: '2024-03-13T22:44:50.706715-06:00'
 model: gpt-4-0125-preview
-summary: Werken met XML houdt het parsen, opvragen en manipuleren van XML-documenten
-  met Java in.
+summary: Java biedt API's zoals DOM (Document Object Model), SAX (Simple API for XML)
+  en StAX (Streaming API for XML) om met XML te werken.
 title: Werken met XML
 weight: 40
 ---

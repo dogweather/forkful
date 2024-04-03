@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:57.796549-07:00
-description: "Complexe getallen, bestaande uit een re\xEBel deel en een imaginair\
-  \ deel (meestal geschreven als a + bi), maken berekeningen die onpraktisch of onmogelijk\u2026"
+description: "Hoe te: Om complexe getallen in TypeScript te hanteren, is een toegewijde\
+  \ klasse nodig. Laten we er een maken en door de optelling en vermenigvuldiging\u2026"
 lastmod: '2024-03-13T22:44:50.543933-06:00'
 model: gpt-4-0125-preview
-summary: "Complexe getallen, bestaande uit een re\xEBel deel en een imaginair deel\
-  \ (meestal geschreven als a + bi), maken berekeningen die onpraktisch of onmogelijk\
-  \ zijn met alleen re\xEBle getallen mogelijk."
+summary: Om complexe getallen in TypeScript te hanteren, is een toegewijde klasse
+  nodig.
 title: Werken met complexe getallen
 weight: 14
 ---

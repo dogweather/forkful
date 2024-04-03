@@ -1,13 +1,10 @@
 ---
 date: 2024-01-20 18:03:57.787759-07:00
-description: "Iniciar um novo projeto em Java \xE9 como plantar uma semente digital\
-  \ \u2013 voc\xEA come\xE7a com uma tela em branco e transforma-a em algo que pode\
-  \ resolver\u2026"
+description: 'Como Fazer: Vamos criar um projeto Java simples. Usarei o JDK 18, o
+  mais recente no momento do conhecimento.'
 lastmod: '2024-03-13T22:44:46.456710-06:00'
 model: gpt-4-1106-preview
-summary: "Iniciar um novo projeto em Java \xE9 como plantar uma semente digital \u2013\
-  \ voc\xEA come\xE7a com uma tela em branco e transforma-a em algo que pode resolver\
-  \ problemas, automatizar tarefas ou at\xE9 divertir."
+summary: Vamos criar um projeto Java simples.
 title: Iniciando um novo projeto
 weight: 1
 ---

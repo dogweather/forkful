@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:40.961868-07:00
-description: "Att skriva tester i Elm inneb\xE4r att skapa testfall f\xF6r att verifiera\
-  \ riktigheten av din Elm-kod, s\xE4kerst\xE4llande att den fungerar som f\xF6rv\xE4\
-  ntat.\u2026"
+description: "Hur man g\xF6r: Elm anv\xE4nder paketet `elm-explorations/test` f\xF6\
+  r att skriva enhetstester och fuzz-tester. B\xF6rja med att l\xE4gga till paketet\
+  \ i ditt projekt."
 lastmod: '2024-03-13T22:44:37.832940-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva tester i Elm inneb\xE4r att skapa testfall f\xF6r att verifiera\
-  \ riktigheten av din Elm-kod, s\xE4kerst\xE4llande att den fungerar som f\xF6rv\xE4\
-  ntat."
+summary: "Elm anv\xE4nder paketet `elm-explorations/test` f\xF6r att skriva enhetstester\
+  \ och fuzz-tester."
 title: Skriva tester
 weight: 36
 ---

@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:17.368162-07:00
-description: "Praca z plikami CSV w Ruby umo\u017Cliwia proste podej\u015Bcie do obs\u0142\
-  ugi danych tabelarycznych. Programi\u015Bci cz\u0119sto anga\u017Cuj\u0105 si\u0119\
-  \ w t\u0119 praktyk\u0119 do parsowania,\u2026"
+description: "Jak to zrobi\u0107: Ruby domy\u015Blnie zawiera bibliotek\u0119 CSV,\
+  \ kt\xF3ra upraszcza odczyt z i zapis do plik\xF3w CSV. Oto jak mo\u017Cesz to wykorzysta\u0107\
+  \ do typowych zada\u0144: #."
 lastmod: '2024-03-13T22:44:35.954651-06:00'
 model: gpt-4-0125-preview
-summary: "Praca z plikami CSV w Ruby umo\u017Cliwia proste podej\u015Bcie do obs\u0142\
-  ugi danych tabelarycznych."
+summary: "Ruby domy\u015Blnie zawiera bibliotek\u0119 CSV, kt\xF3ra upraszcza odczyt\
+  \ z i zapis do plik\xF3w CSV."
 title: Praca z plikami CSV
 weight: 37
 ---

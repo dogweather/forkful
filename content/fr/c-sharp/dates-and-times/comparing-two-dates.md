@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:32:32.758925-07:00
-description: "Comparer deux dates, c'est d\xE9cider laquelle vient avant ou apr\xE8\
-  s, ou si elles sont identiques. Les d\xE9veloppeurs le font pour trier des \xE9\
-  v\xE9nements, g\xE9rer\u2026"
+description: 'Comment faire : .'
 lastmod: '2024-03-13T22:44:57.801128-06:00'
 model: gpt-4-1106-preview
-summary: "Comparer deux dates, c'est d\xE9cider laquelle vient avant ou apr\xE8s,\
-  \ ou si elles sont identiques."
+summary: .
 title: Comparer deux dates
 weight: 27
 ---

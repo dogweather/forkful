@@ -1,10 +1,10 @@
 ---
 date: 2024-01-25 03:00:12.757467-07:00
-description: "Rounding numbers means adjusting them to a specified degree of precision.\
-  \ Programmers do it to simplify numbers for readability, to meet certain\u2026"
+description: "How to: Java offers multiple ways to round numbers. Here\u2019s a quick\
+  \ demo with `Math.round()`, `BigDecimal`, and `DecimalFormat`."
 lastmod: '2024-03-13T22:44:59.967955-06:00'
 model: gpt-4-1106-preview
-summary: Rounding numbers means adjusting them to a specified degree of precision.
+summary: Java offers multiple ways to round numbers.
 title: Rounding numbers
 weight: 13
 ---

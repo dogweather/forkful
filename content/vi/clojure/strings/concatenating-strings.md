@@ -2,14 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:07.987596-07:00
-description: "N\u1ED1i chu\u1ED7i c\xF3 ngh\u0129a l\xE0 gh\xE9p ch\xFAng l\u1EA1\
-  i v\u1EDBi nhau - \"hello\" + \"world\" tr\u1EDF th\xE0nh \"helloworld\". L\u1EAD\
-  p tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 x\xE2y d\u1EF1ng v\u0103\
-  n b\u1EA3n, nh\u01B0 l\xE0 URL,\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Clojure l\xE0m cho vi\u1EC7c n\u1ED1i chu\u1ED7\
+  i tr\u1EDF n\xEAn d\u1EC5 d\xE0ng v\u1EDBi h\xE0m `str`. H\xE3y c\xF9ng kh\xE1m\
+  \ ph\xE1 ngay."
 lastmod: '2024-03-13T22:44:36.142133-06:00'
 model: gpt-4-0125-preview
-summary: "N\u1ED1i chu\u1ED7i c\xF3 ngh\u0129a l\xE0 gh\xE9p ch\xFAng l\u1EA1i v\u1EDB\
-  i nhau - \"hello\" + \"world\" tr\u1EDF th\xE0nh \"helloworld\"."
+summary: "Clojure l\xE0m cho vi\u1EC7c n\u1ED1i chu\u1ED7i tr\u1EDF n\xEAn d\u1EC5\
+  \ d\xE0ng v\u1EDBi h\xE0m `str`."
 title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 weight: 3
 ---

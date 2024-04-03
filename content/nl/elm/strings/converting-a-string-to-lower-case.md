@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:42.217793-07:00
-description: "Een string converteren naar kleine letters betekent dat alle alfabetische\
-  \ tekens worden omgezet naar hun kleine lettervorm. Programmeurs doen dit vaak\u2026"
+description: 'Hoe te: Elm gebruikt de `String.toLower` functie om tekst te converteren.'
 lastmod: '2024-03-13T22:44:50.711730-06:00'
 model: gpt-4-0125-preview
-summary: Een string converteren naar kleine letters betekent dat alle alfabetische
-  tekens worden omgezet naar hun kleine lettervorm.
+summary: Elm gebruikt de `String.toLower` functie om tekst te converteren.
 title: Een string omzetten naar kleine letters
 weight: 4
 ---

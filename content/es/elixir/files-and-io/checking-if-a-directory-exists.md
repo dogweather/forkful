@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:03.591465-07:00
-description: "Verificar si un directorio existe en Elixir se trata de confirmar la\
-  \ presencia de un directorio en una ruta especificada en el sistema de archivos.\
-  \ Los\u2026"
+description: "C\xF3mo hacerlo: La biblioteca est\xE1ndar de Elixir ofrece una forma\
+  \ sencilla de verificar la existencia de un directorio a trav\xE9s del m\xF3dulo\
+  \ `File`. As\xED es\u2026"
 lastmod: '2024-03-13T22:44:58.717151-06:00'
 model: gpt-4-0125-preview
-summary: Verificar si un directorio existe en Elixir se trata de confirmar la presencia
-  de un directorio en una ruta especificada en el sistema de archivos.
+summary: "La biblioteca est\xE1ndar de Elixir ofrece una forma sencilla de verificar\
+  \ la existencia de un directorio a trav\xE9s del m\xF3dulo `File`."
 title: Comprobando si un directorio existe
 weight: 20
 ---

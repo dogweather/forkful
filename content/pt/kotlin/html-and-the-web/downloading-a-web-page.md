@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:44:15.286799-07:00
-description: "Baixar uma p\xE1gina da web significa fazer o download do conte\xFA\
-  do HTML de um site para analisar ou processar de alguma forma. Programadores fazem\
-  \ isso para\u2026"
+description: "Como fazer: Para baixar uma p\xE1gina da web em Kotlin, voc\xEA vai\
+  \ precisar de uma biblioteca de requisi\xE7\xF5es HTTP, como a OkHttp. Vamos a um\
+  \ exemplo simples\u2026"
 lastmod: '2024-03-13T22:44:46.540360-06:00'
 model: gpt-4-1106-preview
-summary: "Baixar uma p\xE1gina da web significa fazer o download do conte\xFAdo HTML\
-  \ de um site para analisar ou processar de alguma forma."
+summary: "Para baixar uma p\xE1gina da web em Kotlin, voc\xEA vai precisar de uma\
+  \ biblioteca de requisi\xE7\xF5es HTTP, como a OkHttp."
 title: "Baixando uma p\xE1gina da web"
 weight: 42
 ---

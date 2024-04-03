@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:46.940897-07:00
-description: "Das \xDCberpr\xFCfen, ob ein Verzeichnis existiert, ist eine grundlegende\
-  \ Operation, wenn man Skripte schreibt, die mit dem Dateisystem interagieren. Dabei\
-  \ wird\u2026"
+description: "Wie geht das: In Lua gibt es keine eingebaute Funktion, um direkt zu\
+  \ \xFCberpr\xFCfen, ob ein Verzeichnis existiert. Daher greift man oft auf die Lua\
+  \ File\u2026"
 lastmod: '2024-03-13T22:44:54.029287-06:00'
 model: gpt-4-0125-preview
-summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis existiert, ist eine grundlegende\
-  \ Operation, wenn man Skripte schreibt, die mit dem Dateisystem interagieren."
+summary: "In Lua gibt es keine eingebaute Funktion, um direkt zu \xFCberpr\xFCfen,\
+  \ ob ein Verzeichnis existiert."
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---

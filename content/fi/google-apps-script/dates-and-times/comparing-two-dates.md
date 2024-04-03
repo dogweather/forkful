@@ -2,15 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:49:58.276564-07:00
-description: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu Google Apps Scriptiss\xE4\
-  , joka on JavaScriptin johdannainen Google-sovellusten sarjaa varten, on keskeinen\
-  \ teht\xE4v\xE4 kehitt\xE4jille,\u2026"
+description: "Miten: Google Apps Scriptiss\xE4 p\xE4iv\xE4m\xE4\xE4ri\xE4 verrataan\
+  \ k\xE4ytt\xE4m\xE4ll\xE4 JavaScriptin Date-objekteja, mik\xE4 mahdollistaa standardimenetelmien\
+  \ k\xE4yt\xF6n arvioitaessa,\u2026"
 lastmod: '2024-03-13T22:44:56.111865-06:00'
 model: gpt-4-0125-preview
-summary: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu Google Apps Scriptiss\xE4, joka\
-  \ on JavaScriptin johdannainen Google-sovellusten sarjaa varten, on keskeinen teht\xE4\
-  v\xE4 kehitt\xE4jille, jotka k\xE4sittelev\xE4t aikatauluja, aikajanoja tai mit\xE4\
-  \ tahansa p\xE4iv\xE4m\xE4\xE4r\xE4\xE4n liittyvi\xE4 tietoja."
+summary: "Google Apps Scriptiss\xE4 p\xE4iv\xE4m\xE4\xE4ri\xE4 verrataan k\xE4ytt\xE4\
+  m\xE4ll\xE4 JavaScriptin Date-objekteja, mik\xE4 mahdollistaa standardimenetelmien\
+  \ k\xE4yt\xF6n arvioitaessa, kumpi kahdesta p\xE4iv\xE4m\xE4\xE4r\xE4st\xE4 on aikaisempi,\
+  \ my\xF6h\xE4isempi tai ovatko ne samat."
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---

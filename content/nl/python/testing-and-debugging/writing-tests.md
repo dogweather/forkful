@@ -2,12 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:17.675957-07:00
-description: "Testen schrijven betekent code maken om te controleren of andere code\
-  \ goed werkt. We doen dit om bugs te vangen, betrouwbaarheid te garanderen en updates\u2026"
+description: 'Hoe te: Laten we Pythons ingebouwde `unittest` framework gebruiken.'
 lastmod: '2024-03-13T22:44:50.380265-06:00'
 model: gpt-4-0125-preview
-summary: Testen schrijven betekent code maken om te controleren of andere code goed
-  werkt.
+summary: Laten we Pythons ingebouwde `unittest` framework gebruiken.
 title: Tests Schrijven
 weight: 36
 ---

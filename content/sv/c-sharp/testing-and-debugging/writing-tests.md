@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:13.005481-07:00
-description: "Att skriva tester i C# inneb\xE4r att skapa automatiserade skript f\xF6\
-  r att validera din kods funktionalitet, s\xE4kerst\xE4lla att den beter sig som\
-  \ f\xF6rv\xE4ntat.\u2026"
+description: "Hur man g\xF6r: C#-utvecklare anv\xE4nder prim\xE4rt ramverken NUnit\
+  \ eller xUnit f\xF6r att skriva tester p\xE5 grund av deras flexibilitet och omfattande\
+  \ funktionss\xE4tt.\u2026"
 lastmod: '2024-03-13T22:44:37.916802-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva tester i C# inneb\xE4r att skapa automatiserade skript f\xF6\
-  r att validera din kods funktionalitet, s\xE4kerst\xE4lla att den beter sig som\
-  \ f\xF6rv\xE4ntat."
+summary: "C#-utvecklare anv\xE4nder prim\xE4rt ramverken NUnit eller xUnit f\xF6r\
+  \ att skriva tester p\xE5 grund av deras flexibilitet och omfattande funktionss\xE4\
+  tt."
 title: Skriva tester
 weight: 36
 ---

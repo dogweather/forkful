@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:30:57.078878-07:00
-description: "Calcolare una data futura o passata significa semplicemente trovare\
-  \ una data che \xE8 un certo numero di giorni, mesi o anni distante dalla data odierna.\
-  \ I\u2026"
+description: "Come fare: Usiamo la libreria Elixir DateTime per manipolare le date.\
+  \ Aggiungere o sottrarre giorni \xE8 semplice."
 lastmod: '2024-03-13T22:44:43.097517-06:00'
 model: gpt-4-1106-preview
-summary: "Calcolare una data futura o passata significa semplicemente trovare una\
-  \ data che \xE8 un certo numero di giorni, mesi o anni distante dalla data odierna."
+summary: Usiamo la libreria Elixir DateTime per manipolare le date.
 title: Calcolo di una data futura o passata
 weight: 26
 ---

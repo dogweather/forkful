@@ -1,12 +1,11 @@
 ---
 date: 2024-01-27 20:35:24.712662-07:00
-description: "Satunnaislukujen tuottaminen ohjelmoinnissa tarkoittaa ep\xE4determinististen\
-  \ tai ennustamattomien numeeristen arvojen luomista. Ohjelmoijat k\xE4ytt\xE4v\xE4\
-  t\u2026"
+description: "Kuinka: Swift tarjoaa suoraviivaisen tavan satunnaislukujen tuottamiseen\
+  \ sen standardikirjaston kautta. N\xE4in teet sen eri numeerisille tyypeille."
 lastmod: '2024-03-13T22:44:56.903056-06:00'
 model: gpt-4-0125-preview
-summary: "Satunnaislukujen tuottaminen ohjelmoinnissa tarkoittaa ep\xE4determinististen\
-  \ tai ennustamattomien numeeristen arvojen luomista."
+summary: Swift tarjoaa suoraviivaisen tavan satunnaislukujen tuottamiseen sen standardikirjaston
+  kautta.
 title: Satunnaislukujen generointi
 weight: 12
 ---

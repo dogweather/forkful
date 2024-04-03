@@ -2,10 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:07.518368-07:00
-description: ''
+description: "L\xFD do l\xE0 g\xEC? G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDB\
+  i x\xE1c th\u1EF1c c\u01A1 b\u1EA3n th\xEAm m\u1ED9t t\u1EA7ng b\u1EA3o m\u1EAD\
+  t b\u1EB1ng c\xE1ch y\xEAu c\u1EA7u t\xEAn ng\u01B0\u1EDDi d\xF9ng v\xE0 m\u1EAD\
+  t kh\u1EA9u. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3 \u0111\u1EC3\u2026"
 lastmod: '2024-03-13T22:44:36.989985-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1\
+  \ b\u1EA3n th\xEAm m\u1ED9t t\u1EA7ng b\u1EA3o m\u1EADt b\u1EB1ng c\xE1ch y\xEA\
+  u c\u1EA7u t\xEAn ng\u01B0\u1EDDi d\xF9ng v\xE0 m\u1EADt kh\u1EA9u."
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3\
   n"
 weight: 45

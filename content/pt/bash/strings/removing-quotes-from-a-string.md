@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 03:37:33.780622-07:00
-description: "Remover aspas de uma string envolve retirar as marcas de aspas que envolvem\
-  \ a string. Programadores frequentemente querem fazer isso para sanear dados de\u2026"
+description: "Como fazer: Bash tem v\xE1rias maneiras de remover aspas de strings.\
+  \ Aqui est\xE3o alguns exemplos r\xE1pidos."
 lastmod: '2024-03-13T22:44:46.739073-06:00'
 model: gpt-4-0125-preview
-summary: Remover aspas de uma string envolve retirar as marcas de aspas que envolvem
-  a string.
+summary: "Bash tem v\xE1rias maneiras de remover aspas de strings."
 title: Removendo aspas de uma string
 weight: 9
 ---

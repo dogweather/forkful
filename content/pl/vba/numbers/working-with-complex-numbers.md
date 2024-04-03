@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:01.647764-07:00
-description: "Praca z liczbami zespolonymi polega na wykonywaniu operacji matematycznych\
-  \ na liczbach, kt\xF3re maj\u0105 zar\xF3wno cz\u0119\u015B\u0107 rzeczywist\u0105\
-  , jak i urojon\u0105. Programi\u015Bci\u2026"
+description: "Jak to zrobi\u0107: W Visual Basic for Applications (VBA), obs\u0142\
+  uga liczb zespolonych mo\u017Ce by\u0107 nieco mniej prosta w por\xF3wnaniu z j\u0119\
+  zykami, kt\xF3re maj\u0105 dla nich\u2026"
 lastmod: '2024-03-13T22:44:35.224825-06:00'
 model: gpt-4-0125-preview
-summary: "Praca z liczbami zespolonymi polega na wykonywaniu operacji matematycznych\
-  \ na liczbach, kt\xF3re maj\u0105 zar\xF3wno cz\u0119\u015B\u0107 rzeczywist\u0105\
-  , jak i urojon\u0105."
+summary: "W Visual Basic for Applications (VBA), obs\u0142uga liczb zespolonych mo\u017C\
+  e by\u0107 nieco mniej prosta w por\xF3wnaniu z j\u0119zykami, kt\xF3re maj\u0105\
+  \ dla nich natywne wsparcie."
 title: Praca z liczbami zespolonymi
 weight: 14
 ---

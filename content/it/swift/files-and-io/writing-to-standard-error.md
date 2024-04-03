@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:43.952308-07:00
-description: "Scrivere sull'errore standard (stderr) consiste nel dirigere i messaggi\
-  \ di errore o l'output di diagnostica del tuo programma su un flusso separato,\u2026"
+description: "Come fare: In Swift, scrivere sull'errore standard pu\xF2 essere fatto\
+  \ utilizzando la classe `FileHandle` per un accesso diretto a stderr. Ecco un semplice\u2026"
 lastmod: '2024-03-13T22:44:43.785924-06:00'
 model: gpt-4-0125-preview
-summary: Scrivere sull'errore standard (stderr) consiste nel dirigere i messaggi di
-  errore o l'output di diagnostica del tuo programma su un flusso separato, distinto
-  dall'output standard (stdout).
+summary: "In Swift, scrivere sull'errore standard pu\xF2 essere fatto utilizzando\
+  \ la classe `FileHandle` per un accesso diretto a stderr."
 title: Scrivere sull'errore standard
 weight: 25
 ---

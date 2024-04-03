@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:29.378046-07:00
-description: "Express\xF5es regulares, uma ferramenta poderosa para correspond\xEA\
-  ncia de padr\xF5es e manipula\xE7\xE3o de dados, s\xE3o essenciais em tarefas de\
-  \ processamento de texto\u2026"
+description: "Como: Clojure, fiel \xE0s suas ra\xEDzes na fam\xEDlia Lisp, oferece\
+  \ um rico conjunto de fun\xE7\xF5es que se integram perfeitamente com as capacidades\
+  \ de express\xE3o\u2026"
 lastmod: '2024-03-13T22:44:46.187152-06:00'
 model: gpt-4-0125-preview
-summary: "Express\xF5es regulares, uma ferramenta poderosa para correspond\xEAncia\
-  \ de padr\xF5es e manipula\xE7\xE3o de dados, s\xE3o essenciais em tarefas de processamento\
-  \ de texto como validar entrada, pesquisar e substituir texto."
+summary: "Clojure, fiel \xE0s suas ra\xEDzes na fam\xEDlia Lisp, oferece um rico conjunto\
+  \ de fun\xE7\xF5es que se integram perfeitamente com as capacidades de express\xE3\
+  o regular do Java."
 title: "Usando express\xF5es regulares"
 weight: 11
 ---

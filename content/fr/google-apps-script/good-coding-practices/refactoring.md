@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:00:02.364171-07:00
-description: "Le refactoring, dans le lexique de la programmation, d\xE9signe le processus\
-  \ de restructuration du code informatique existant \u2013 modifier la facturation\
-  \ sans\u2026"
+description: "Comment proc\xE9der : Dans Google Apps Script, un sc\xE9nario courant\
+  \ qui b\xE9n\xE9ficie du refactoring est la simplification de scripts lourds qui\
+  \ interagissent\u2026"
 lastmod: '2024-03-13T22:44:57.196013-06:00'
 model: gpt-4-0125-preview
-summary: "Le refactoring, dans le lexique de la programmation, d\xE9signe le processus\
-  \ de restructuration du code informatique existant \u2013 modifier la facturation\
-  \ sans changer son comportement externe \u2013 afin d'am\xE9liorer les attributs\
-  \ non fonctionnels."
+summary: "Dans Google Apps Script, un sc\xE9nario courant qui b\xE9n\xE9ficie du refactoring\
+  \ est la simplification de scripts lourds qui interagissent avec Google Sheets ou\
+  \ Docs."
 title: Refonte
 weight: 19
 ---

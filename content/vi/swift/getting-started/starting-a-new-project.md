@@ -2,16 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:41.217063-07:00
-description: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi \u0111\u1ED3\
-  ng ngh\u0129a v\u1EDBi vi\u1EC7c l\u0103n x\xE3 v\xE0o vi\u1EC7c thi\u1EBFt l\u1EAD\
-  p m\xF4i tr\u01B0\u1EDDng ban \u0111\u1EA7u v\xE0 c\xE1c file cho cu\u1ED9c phi\xEA\
-  u l\u01B0u code c\u1EE7a b\u1EA1n. C\xE1c l\u1EADp tr\xECnh vi\xEAn\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: ."
 lastmod: '2024-03-13T22:44:37.098111-06:00'
 model: gpt-4-0125-preview
-summary: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi \u0111\u1ED3ng ngh\u0129\
-  a v\u1EDBi vi\u1EC7c l\u0103n x\xE3 v\xE0o vi\u1EC7c thi\u1EBFt l\u1EADp m\xF4i\
-  \ tr\u01B0\u1EDDng ban \u0111\u1EA7u v\xE0 c\xE1c file cho cu\u1ED9c phi\xEAu l\u01B0\
-  u code c\u1EE7a b\u1EA1n."
+summary: .
 title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---

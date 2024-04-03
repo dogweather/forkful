@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:17.699083-07:00
-description: "Een toekomstige of verleden datum berekenen is gewoon een gegeven datum\
-  \ aanpassen met een bepaalde hoeveelheid tijd. Programmeurs doen dit om deadlines,\u2026"
+description: 'Hoe: De `Time` module van Elm en het `justinmimbs/time-extra` pakket
+  laten ons gemakkelijk met datums knoeien.'
 lastmod: '2024-03-13T22:44:50.738771-06:00'
 model: gpt-4-0125-preview
-summary: Een toekomstige of verleden datum berekenen is gewoon een gegeven datum aanpassen
-  met een bepaalde hoeveelheid tijd.
+summary: De `Time` module van Elm en het `justinmimbs/time-extra` pakket laten ons
+  gemakkelijk met datums knoeien.
 title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---

@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:46:12.701029-07:00
-description: "Att extrahera delstr\xE4ngar inneb\xE4r att plocka ut specifika delar\
-  \ ur en l\xE4ngre textstr\xE4ng. Programmerare g\xF6r det f\xF6r att isolera relevant\
-  \ data, som\u2026"
+description: "Hur g\xF6r man: L\xE5t oss dra n\xE5gra snabba exempel."
 lastmod: '2024-03-13T22:44:38.113058-06:00'
 model: gpt-4-1106-preview
-summary: "Att extrahera delstr\xE4ngar inneb\xE4r att plocka ut specifika delar ur\
-  \ en l\xE4ngre textstr\xE4ng."
+summary: "L\xE5t oss dra n\xE5gra snabba exempel."
 title: "Extrahera delstr\xE4ngar"
 weight: 6
 ---

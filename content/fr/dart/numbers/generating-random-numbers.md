@@ -2,14 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:44.130436-07:00
-description: "La g\xE9n\xE9ration de nombres al\xE9atoires en Dart consiste \xE0 cr\xE9\
-  er des valeurs num\xE9riques impr\xE9visibles et diff\xE9rentes \xE0 chaque ex\xE9\
-  cution. Les programmeurs\u2026"
+description: "Comment : La biblioth\xE8que principale de Dart inclut un support pour\
+  \ la g\xE9n\xE9ration de nombres al\xE9atoires avec la classe `Random` trouv\xE9\
+  e dans `dart:math`.\u2026"
 lastmod: '2024-03-13T22:44:57.385030-06:00'
 model: gpt-4-0125-preview
-summary: "La g\xE9n\xE9ration de nombres al\xE9atoires en Dart consiste \xE0 cr\xE9\
-  er des valeurs num\xE9riques impr\xE9visibles et diff\xE9rentes \xE0 chaque ex\xE9\
-  cution."
+summary: "La biblioth\xE8que principale de Dart inclut un support pour la g\xE9n\xE9\
+  ration de nombres al\xE9atoires avec la classe `Random` trouv\xE9e dans `dart:math`."
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---

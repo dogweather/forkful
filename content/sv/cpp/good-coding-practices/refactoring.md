@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 01:17:45.154748-07:00
-description: "Refaktorisering \xE4r processen att \xE4ndra en dators programs interna\
-  \ struktur utan att f\xF6r\xE4ndra dess externa beteende. Programmerare g\xF6r det\
-  \ f\xF6r att st\xE4da\u2026"
+description: "Hur man g\xF6r: T\xE4nk dig att du har en funktion som g\xF6r lite f\xF6\
+  r mycket, som denna klumpiga metod som initierar ett objekt och \xE4ven utf\xF6\
+  r loggning."
 lastmod: '2024-03-13T22:44:38.217400-06:00'
 model: gpt-4-0125-preview
-summary: "Refaktorisering \xE4r processen att \xE4ndra en dators programs interna\
-  \ struktur utan att f\xF6r\xE4ndra dess externa beteende."
+summary: "T\xE4nk dig att du har en funktion som g\xF6r lite f\xF6r mycket, som denna\
+  \ klumpiga metod som initierar ett objekt och \xE4ven utf\xF6r loggning."
 title: Refaktorisering
 weight: 19
 ---

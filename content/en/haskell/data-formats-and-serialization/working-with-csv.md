@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:03:03.666619-07:00
-description: "Working with CSVs (Comma-Separated Values) involves parsing and generating\
-  \ files that store tabular data in a simple, text-based format. Programmers\u2026"
+description: "How to: In Haskell, handling CSV files can be achieved using the `cassava`\
+  \ library, one of the popular third-party libraries for this purpose. Below are\u2026"
 lastmod: '2024-03-13T22:45:00.148510-06:00'
 model: gpt-4-0125-preview
-summary: Working with CSVs (Comma-Separated Values) involves parsing and generating
-  files that store tabular data in a simple, text-based format.
+summary: In Haskell, handling CSV files can be achieved using the `cassava` library,
+  one of the popular third-party libraries for this purpose.
 title: Working with CSV
 weight: 37
 ---

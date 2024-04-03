@@ -1,10 +1,9 @@
 ---
 date: 2024-01-20 18:04:08.885079-07:00
-description: "Ein neues Projekt starten bedeutet, eine frische Codebasis aufzubauen.\
-  \ Programmierer machen das, um Ideen in funktionierende Software umzusetzen und\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:53.973070-06:00'
 model: gpt-4-1106-preview
-summary: Ein neues Projekt starten bedeutet, eine frische Codebasis aufzubauen.
+summary: .
 title: Einen neuen Projekt starten
 weight: 1
 ---

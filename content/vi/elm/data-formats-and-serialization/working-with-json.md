@@ -2,16 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:27.820988-07:00
-description: "JSON (JavaScript Object Notation) l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1\
-  ng v\u0103n b\u1EA3n cho vi\u1EC7c trao \u0111\u1ED5i d\u1EEF li\u1EC7u, t\u01B0\
-  \u01A1ng t\u1EF1 nh\u01B0 XML nh\u01B0ng nh\u1EB9 h\u01A1n v\xE0 d\u1EC5 \u0111\u1ECD\
-  c h\u01A1n. C\xE1c l\u1EADp tr\xECnh vi\xEAn Elm\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Elm x\u1EED l\xFD JSON s\u1EED d\u1EE5\
+  ng c\xE1c module `Json.Decode` v\xE0 `Json.Encode`. D\u01B0\u1EDBi \u0111\xE2y l\xE0\
+  \ m\u1ED9t v\xED d\u1EE5 c\u01A1 b\u1EA3n."
 lastmod: '2024-03-13T22:44:36.573126-06:00'
 model: gpt-4-0125-preview
-summary: "JSON (JavaScript Object Notation) l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1\
-  ng v\u0103n b\u1EA3n cho vi\u1EC7c trao \u0111\u1ED5i d\u1EEF li\u1EC7u, t\u01B0\
-  \u01A1ng t\u1EF1 nh\u01B0 XML nh\u01B0ng nh\u1EB9 h\u01A1n v\xE0 d\u1EC5 \u0111\u1ECD\
-  c h\u01A1n."
+summary: "Elm x\u1EED l\xFD JSON s\u1EED d\u1EE5ng c\xE1c module `Json.Decode` v\xE0\
+  \ `Json.Encode`."
 title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
 weight: 38
 ---

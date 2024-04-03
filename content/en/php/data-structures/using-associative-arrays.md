@@ -1,11 +1,10 @@
 ---
 date: 2024-01-30 18:57:18.177593-07:00
-description: "Associative arrays in PHP are like super-charged lists where each element\
-  \ can be accessed using a human-readable key instead of just numbers. Programmers\u2026"
+description: "How to: In PHP, creating and using associative arrays is straightforward.\
+  \ Here\u2019s a quick rundown."
 lastmod: '2024-03-13T22:45:00.160018-06:00'
 model: gpt-4-0125-preview
-summary: Associative arrays in PHP are like super-charged lists where each element
-  can be accessed using a human-readable key instead of just numbers.
+summary: In PHP, creating and using associative arrays is straightforward.
 title: Using associative arrays
 weight: 15
 ---

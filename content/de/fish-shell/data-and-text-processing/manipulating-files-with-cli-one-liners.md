@@ -1,12 +1,12 @@
 ---
 date: 2024-01-27 16:21:03.416741-07:00
-description: "Im Bereich der Programmierung, insbesondere beim Umgang mit Linux- oder\
-  \ Unix-Umgebungen, ist die Manipulation von Dateien direkt \xFCber die\u2026"
+description: "Wie geht das: Dateien in der Fish Shell zu manipulieren ist sowohl intuitiv\
+  \ als auch m\xE4chtig. Hier sind einige Beispiele, die ihre F\xE4higkeiten zeigen:\
+  \ 1.\u2026"
 lastmod: '2024-03-13T22:44:54.304361-06:00'
 model: gpt-4-0125-preview
-summary: "Im Bereich der Programmierung, insbesondere beim Umgang mit Linux- oder\
-  \ Unix-Umgebungen, ist die Manipulation von Dateien direkt \xFCber die Befehlszeilenschnittstelle\
-  \ (CLI) nicht nur eine Frage der Bequemlichkeit \u2013 es ist ein m\xE4chtiges Werkzeug."
+summary: "Dateien in der Fish Shell zu manipulieren ist sowohl intuitiv als auch m\xE4\
+  chtig."
 title: Dateimanipulation mit CLI-One-Linern
 weight: 31
 ---

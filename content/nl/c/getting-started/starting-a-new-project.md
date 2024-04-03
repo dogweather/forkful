@@ -2,12 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:10.956522-07:00
-description: "Een nieuw project in C starten, betekent het opzetten van een fundamentele\
-  \ code-structuur en omgeving om ontwikkelingstaken effici\xEBnt te beheren.\u2026"
+description: "Hoe: In het hart van elk C-project staat de broncode. Een typisch startpunt\
+  \ omvat het cre\xEBren van een hoofdbestand, vaak `main.c` genoemd, dat de\u2026"
 lastmod: '2024-03-13T22:44:51.291890-06:00'
 model: gpt-4-0125-preview
-summary: "Een nieuw project in C starten, betekent het opzetten van een fundamentele\
-  \ code-structuur en omgeving om ontwikkelingstaken effici\xEBnt te beheren."
+summary: In het hart van elk C-project staat de broncode.
 title: Een nieuw project starten
 weight: 1
 ---

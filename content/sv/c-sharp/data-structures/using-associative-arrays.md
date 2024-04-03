@@ -2,13 +2,13 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:16.994809-07:00
-description: "Associativa f\xE4lt, eller ordb\xF6cker i C#, l\xE5ter dig lagra och\
-  \ hantera par av nycklar och v\xE4rden. De \xE4r ditt f\xF6rstahandsval n\xE4r du\
-  \ beh\xF6ver h\xE4mta v\xE4rden\u2026"
+description: "Hur man g\xF6r: I C# arbetar du med associativa f\xE4lt genom att anv\xE4\
+  nda klassen `Dictionary<TKey, TValue>`. H\xE4r \xE4r ett snabbt exempel f\xF6r att\
+  \ komma ig\xE5ng."
 lastmod: '2024-03-13T22:44:37.906042-06:00'
 model: gpt-4-0125-preview
-summary: "Associativa f\xE4lt, eller ordb\xF6cker i C#, l\xE5ter dig lagra och hantera\
-  \ par av nycklar och v\xE4rden."
+summary: "I C# arbetar du med associativa f\xE4lt genom att anv\xE4nda klassen `Dictionary<TKey,\
+  \ TValue>`."
 title: "Att anv\xE4nda associativa arrayer"
 weight: 15
 ---

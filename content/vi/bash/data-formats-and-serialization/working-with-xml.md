@@ -2,16 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:20.254458-07:00
-description: "L\xE0m vi\u1EC7c v\u1EDBi XML bao g\u1ED3m vi\u1EC7c ph\xE2n t\xEDch\
-  \ c\xFA ph\xE1p, tr\xEDch xu\u1EA5t, v\xE0 thao t\xE1c d\u1EEF li\u1EC7u trong \u0111\
-  \u1ECBnh d\u1EA1ng Ng\xF4n ng\u1EEF \u0110\xE1nh d\u1EA5u M\u1EDF r\u1ED9ng (Extensible\
-  \ Markup Language).\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1\
+  ch \u0111\u1EC3 ph\xE2n t\xEDch c\xFA ph\xE1p XML trong Bash. C\xF4ng c\u1EE5? xmllint\
+  \ v\xE0 xmlstarlet. L\u1EB7p qua c\xE1c ph\u1EA7n t\u1EED XML? Ch\u1EAFc ch\u1EAF\
+  n r\u1ED3i. V\xED d\u1EE5 v\u1EDBi\u2026"
 lastmod: '2024-03-13T22:44:36.909177-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m vi\u1EC7c v\u1EDBi XML bao g\u1ED3m vi\u1EC7c ph\xE2n t\xEDch c\xFA\
-  \ ph\xE1p, tr\xEDch xu\u1EA5t, v\xE0 thao t\xE1c d\u1EEF li\u1EC7u trong \u0111\u1ECB\
-  nh d\u1EA1ng Ng\xF4n ng\u1EEF \u0110\xE1nh d\u1EA5u M\u1EDF r\u1ED9ng (Extensible\
-  \ Markup Language)."
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch \u0111\u1EC3 ph\xE2n t\xEDch c\xFA\
+  \ ph\xE1p XML trong Bash."
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---

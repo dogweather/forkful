@@ -2,14 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:14.236975-07:00
-description: "Att ber\xE4kna ett datum i framtiden eller f\xF6rflutet \xE4r en vanlig\
-  \ uppgift f\xF6r programmerare som hanterar schemal\xE4ggning, p\xE5minnelser eller\
-  \ n\xE5gon funktion som\u2026"
+description: "Hur man g\xF6r: Dart erbjuder robust st\xF6d f\xF6r datummanipulation\
+  \ genom sin `DateTime`-klass. S\xE5 h\xE4r kan du ber\xE4kna framtida eller f\xF6\
+  rflutna datum med hj\xE4lp av\u2026"
 lastmod: '2024-03-13T22:44:37.626647-06:00'
 model: gpt-4-0125-preview
-summary: "Att ber\xE4kna ett datum i framtiden eller f\xF6rflutet \xE4r en vanlig\
-  \ uppgift f\xF6r programmerare som hanterar schemal\xE4ggning, p\xE5minnelser eller\
-  \ n\xE5gon funktion som beror p\xE5 datumber\xE4kningar."
+summary: "Dart erbjuder robust st\xF6d f\xF6r datummanipulation genom sin `DateTime`-klass."
 title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutna"
 weight: 26
 ---

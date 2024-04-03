@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:54.897664-07:00
-description: "Foutafhandeling gaat over het beheren van het onverwachte in programma's\
-  \ - zoals een uitsmijter die te maken heeft met lastpakken. Programmeurs houden\
-  \ van\u2026"
+description: "Hoe te: Clojure, net als zijn Lisp-voorouders, leunt op uitzonderingen\
+  \ voor het omgaan met fouten. Hier zie je wat je in je mars hebt als de zaken mis\u2026"
 lastmod: '2024-03-13T22:44:50.427665-06:00'
 model: gpt-4-0125-preview
-summary: Foutafhandeling gaat over het beheren van het onverwachte in programma's
-  - zoals een uitsmijter die te maken heeft met lastpakken.
+summary: Clojure, net als zijn Lisp-voorouders, leunt op uitzonderingen voor het omgaan
+  met fouten.
 title: Fouten afhandelen
 weight: 16
 ---

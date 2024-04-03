@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:01.527162-07:00
-description: "Concatenare le stringhe significa combinare due o pi\xF9 stringhe in\
-  \ una singola stringa. I programmatori lo fanno per costruire dinamicamente messaggi,\
-  \ URL\u2026"
+description: 'Come fare: In Google Apps Script, che si basa su JavaScript, ci sono
+  diversi modi per concatenare le stringhe. Ecco alcuni metodi comuni: #.'
 lastmod: '2024-03-13T22:44:42.945861-06:00'
 model: gpt-4-0125-preview
-summary: "Concatenare le stringhe significa combinare due o pi\xF9 stringhe in una\
-  \ singola stringa."
+summary: In Google Apps Script, che si basa su JavaScript, ci sono diversi modi per
+  concatenare le stringhe.
 title: Concatenazione di stringhe
 weight: 3
 ---

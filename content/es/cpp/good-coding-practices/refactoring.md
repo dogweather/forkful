@@ -1,11 +1,12 @@
 ---
 date: 2024-01-26 01:17:19.562146-07:00
-description: "Refactorizar es el proceso de cambiar la estructura interna de un programa\
-  \ inform\xE1tico sin alterar su comportamiento externo. Los programadores lo hacen\u2026"
+description: "C\xF3mo hacerlo: Imagina que tienes una funci\xF3n que est\xE1 haciendo\
+  \ demasiado, como este m\xE9todo torpe que inicializa un objeto y tambi\xE9n realiza\
+  \ registros\u2026"
 lastmod: '2024-03-13T22:44:59.383506-06:00'
 model: gpt-4-0125-preview
-summary: "Refactorizar es el proceso de cambiar la estructura interna de un programa\
-  \ inform\xE1tico sin alterar su comportamiento externo."
+summary: "Imagina que tienes una funci\xF3n que est\xE1 haciendo demasiado, como este\
+  \ m\xE9todo torpe que inicializa un objeto y tambi\xE9n realiza registros (logging)."
 title: "Refactorizaci\xF3n"
 weight: 19
 ---

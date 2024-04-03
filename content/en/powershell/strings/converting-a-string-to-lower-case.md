@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:38:50.587159-07:00
-description: "Changing a string to lower case means making every letter in the string\
-  \ a small letter. Programmers do this to standardize text, to make comparisons,\
-  \ and\u2026"
+description: 'How to: PowerShell is pretty handy with strings. Use the `.ToLower()`
+  method, like this.'
 lastmod: '2024-03-13T22:45:00.270406-06:00'
 model: gpt-4-1106-preview
-summary: Changing a string to lower case means making every letter in the string a
-  small letter.
+summary: PowerShell is pretty handy with strings.
 title: Converting a string to lower case
 weight: 4
 ---

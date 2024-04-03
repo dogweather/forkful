@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:26.743101-07:00
-description: "S\xE4\xE4nn\xF6lliset lausekkeet, tai regex, ovat merkkijonoja, jotka\
-  \ muodostavat haun kaavan ja joita k\xE4ytet\xE4\xE4n usein merkkijonojen etsimiseen\
-  \ tai manipulointiin.\u2026"
+description: "Miten: Swiftin natiivi tuki regexille hy\xF6dynt\xE4\xE4 `NSRegularExpression`\
+  \ luokkaa, jonka lis\xE4ksi k\xE4ytet\xE4\xE4n String-luokan range- ja replacement-metodeja.\
+  \ Alla\u2026"
 lastmod: '2024-03-13T22:44:56.897376-06:00'
 model: gpt-4-0125-preview
-summary: "S\xE4\xE4nn\xF6lliset lausekkeet, tai regex, ovat merkkijonoja, jotka muodostavat\
-  \ haun kaavan ja joita k\xE4ytet\xE4\xE4n usein merkkijonojen etsimiseen tai manipulointiin."
+summary: "Swiftin natiivi tuki regexille hy\xF6dynt\xE4\xE4 `NSRegularExpression`\
+  \ luokkaa, jonka lis\xE4ksi k\xE4ytet\xE4\xE4n String-luokan range- ja replacement-metodeja."
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---

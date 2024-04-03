@@ -2,13 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:00.488331-07:00
-description: "Att skriva till standardfel (stderr) handlar om att skicka ut felmeddelanden\
-  \ och diagnostik till en separat str\xF6m, skild fr\xE5n standardutdata (stdout),\u2026"
+description: "Hur man g\xF6r: I Kotlin kan skrivning till stderr uppn\xE5s med `System.err.println()`.\
+  \ Denna metod \xE4r lik `System.out.println()` men dirigerar utdatan till\u2026"
 lastmod: '2024-03-13T22:44:37.887394-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva till standardfel (stderr) handlar om att skicka ut felmeddelanden\
-  \ och diagnostik till en separat str\xF6m, skild fr\xE5n standardutdata (stdout),\
-  \ vilket m\xF6jligg\xF6r b\xE4ttre fels\xF6kning och loggtolkning."
+summary: "I Kotlin kan skrivning till stderr uppn\xE5s med `System.err.println()`."
 title: Skriva till standardfel
 weight: 25
 ---

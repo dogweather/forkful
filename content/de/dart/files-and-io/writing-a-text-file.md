@@ -2,13 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:42.594043-07:00
-description: "Das Schreiben einer Textdatei in Dart beinhaltet das Erstellen oder\
-  \ Modifizieren von Dateien auf der Festplatte, um Daten in einem lesbaren Format\
-  \ zu\u2026"
+description: "Wie: Die Kernbibliothek von Dart bietet das `dart:io` Paket f\xFCr die\
+  \ Dateibehandlung, das es Ihnen erm\xF6glicht, ohne die Notwendigkeit von\u2026"
 lastmod: '2024-03-13T22:44:53.601053-06:00'
 model: gpt-4-0125-preview
-summary: Das Schreiben einer Textdatei in Dart beinhaltet das Erstellen oder Modifizieren
-  von Dateien auf der Festplatte, um Daten in einem lesbaren Format zu speichern.
+summary: "Die Kernbibliothek von Dart bietet das `dart:io` Paket f\xFCr die Dateibehandlung,\
+  \ das es Ihnen erm\xF6glicht, ohne die Notwendigkeit von Drittanbieterbibliotheken,\
+  \ Textdateien zu schreiben."
 title: Eine Textdatei schreiben
 weight: 24
 ---

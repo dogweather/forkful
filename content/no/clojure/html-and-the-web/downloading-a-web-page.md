@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:43:34.459982-07:00
-description: "Nedlasting av en nettside betyr \xE5 hente ned HTML-innholdet s\xE5\
-  \ det kan analyseres eller manipuleres lokalt. Programmerere gj\xF8r dette for datainnsamling,\u2026"
+description: "How to: I Clojure kan vi bruke `clj-http` biblioteket for \xE5 laste\
+  \ ned nettsider. Her er et kort eksempel."
 lastmod: '2024-03-13T22:44:40.401241-06:00'
 model: gpt-4-1106-preview
-summary: "Nedlasting av en nettside betyr \xE5 hente ned HTML-innholdet s\xE5 det\
-  \ kan analyseres eller manipuleres lokalt."
+summary: "I Clojure kan vi bruke `clj-http` biblioteket for \xE5 laste ned nettsider."
 title: Nedlasting av en nettside
 weight: 42
 ---

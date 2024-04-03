@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:43:03.728446-07:00
-description: "Liczby zespolone rozszerzaj\u0105 nasz system liczbowy o pierwiastki\
-  \ kwadratowe z liczb ujemnych, gdzie 'urojona' jednostka i r\xF3wna si\u0119 pierwiastkowi\u2026"
+description: "Jak to zrobi\u0107: Zdefiniujmy podstawow\u0105 klas\u0119 liczby zespolonej\
+  \ w Kotlinie."
 lastmod: '2024-03-13T22:44:35.358714-06:00'
 model: gpt-4-0125-preview
-summary: "Liczby zespolone rozszerzaj\u0105 nasz system liczbowy o pierwiastki kwadratowe\
-  \ z liczb ujemnych, gdzie 'urojona' jednostka i r\xF3wna si\u0119 pierwiastkowi\
-  \ kwadratowemu z -1."
+summary: "Zdefiniujmy podstawow\u0105 klas\u0119 liczby zespolonej w Kotlinie."
 title: Praca z liczbami zespolonymi
 weight: 14
 ---

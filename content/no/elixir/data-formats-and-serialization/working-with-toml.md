@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 04:20:53.540368-07:00
-description: "\xC5 jobbe med TOML betyr \xE5 analysere og generere TOML (Toms Opplagte,\
-  \ Minimale Spr\xE5k) data ved bruk av Elixir. Programmerere bruker det til \xE5\
-  \ h\xE5ndtere\u2026"
+description: "Hvordan: F\xF8rst, legg til en TOML-tolker i dine mix-avhengigheter.\
+  \ Dette eksemplet bruker `toml-elixir`."
 lastmod: '2024-03-13T22:44:40.466698-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 jobbe med TOML betyr \xE5 analysere og generere TOML (Toms Opplagte,\
-  \ Minimale Spr\xE5k) data ved bruk av Elixir."
+summary: "F\xF8rst, legg til en TOML-tolker i dine mix-avhengigheter."
 title: Jobbe med TOML
 weight: 39
 ---

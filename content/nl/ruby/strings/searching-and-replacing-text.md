@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:22.197976-07:00
-description: "Zoeken en vervangen van tekst is het verwisselen van specifieke woorden\
-  \ of zinnen met alternatieven in een string. Programmeurs doen dit om gegevens bij\u2026"
+description: 'Hoe te: Ruby maakt het makkelijk. Gebruik `gsub` om tekst wereldwijd
+  te vervangen, of `sub` voor een enkele instantie. Hier is een snelle blik.'
 lastmod: '2024-03-13T22:44:51.319437-06:00'
 model: gpt-4-0125-preview
-summary: Zoeken en vervangen van tekst is het verwisselen van specifieke woorden of
-  zinnen met alternatieven in een string.
+summary: Ruby maakt het makkelijk.
 title: Tekst zoeken en vervangen
 weight: 10
 ---

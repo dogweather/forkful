@@ -2,10 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:48.709262-07:00
-description: "Gi\u1EA3 s\u1EED b\u1EA1n c\xF3 m\u1ED9t ch\u01B0\u01A1ng tr\xECnh Java\
-  \ \u0111\u01A1n gi\u1EA3n \u0111ang g\u1EB7p s\u1EF1 c\u1ED1, v\xE0 b\u1EA1n kh\xF4\
-  ng th\u1EC3 hi\u1EC3u t\u1EA1i sao. D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch b\u1EA1\
-  n kh\u1EDFi \u0111\u1ED9ng m\u1ED9t debugger s\u1EED d\u1EE5ng Eclipse,\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Gi\u1EA3 s\u1EED b\u1EA1n c\xF3 m\u1ED9\
+  t ch\u01B0\u01A1ng tr\xECnh Java \u0111\u01A1n gi\u1EA3n \u0111ang g\u1EB7p s\u1EF1\
+  \ c\u1ED1, v\xE0 b\u1EA1n kh\xF4ng th\u1EC3 hi\u1EC3u t\u1EA1i sao. D\u01B0\u1EDB\
+  i \u0111\xE2y l\xE0 c\xE1ch b\u1EA1n kh\u1EDFi \u0111\u1ED9ng m\u1ED9t debugger\
+  \ s\u1EED\u2026"
 lastmod: '2024-03-13T22:44:36.495401-06:00'
 model: gpt-4-0125-preview
 summary: "Gi\u1EA3 s\u1EED b\u1EA1n c\xF3 m\u1ED9t ch\u01B0\u01A1ng tr\xECnh Java\

@@ -2,14 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:50.128733-07:00
-description: "Les expressions r\xE9guli\xE8res (regex) en JavaScript sont des motifs\
-  \ utilis\xE9s pour correspondre \xE0 des combinaisons de caract\xE8res dans des\
-  \ cha\xEEnes de\u2026"
+description: 'Comment faire : #.'
 lastmod: '2024-03-13T22:44:58.264210-06:00'
 model: gpt-4-0125-preview
-summary: "Les expressions r\xE9guli\xE8res (regex) en JavaScript sont des motifs utilis\xE9\
-  s pour correspondre \xE0 des combinaisons de caract\xE8res dans des cha\xEEnes de\
-  \ caract\xE8res."
+summary: '#.'
 title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---

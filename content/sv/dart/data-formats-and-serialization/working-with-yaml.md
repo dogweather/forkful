@@ -2,13 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:39.226366-07:00
-description: "YAML, en f\xF6rkortning f\xF6r YAML Ain't Markup Language, \xE4r ett\
-  \ l\xE4sbart format f\xF6r dataserialisering. Programmerare anv\xE4nder det f\xF6\
-  r konfigurationsfiler,\u2026"
+description: "Hur man g\xF6r: I Dart involverar arbete med YAML vanligtvis anv\xE4\
+  ndning av ett externt bibliotek eftersom spr\xE5ket inte inkluderar inbyggda YAML-\u2026"
 lastmod: '2024-03-13T22:44:37.634360-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, en f\xF6rkortning f\xF6r YAML Ain't Markup Language, \xE4r ett l\xE4\
-  sbart format f\xF6r dataserialisering."
+summary: "I Dart involverar arbete med YAML vanligtvis anv\xE4ndning av ett externt\
+  \ bibliotek eftersom spr\xE5ket inte inkluderar inbyggda YAML-tolkningsfunktioner."
 title: Arbeta med YAML
 weight: 41
 ---

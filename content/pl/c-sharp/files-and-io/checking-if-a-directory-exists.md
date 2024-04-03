@@ -2,13 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:08.298215-07:00
-description: "Sprawdzanie, czy katalog istnieje w C#, polega na weryfikowaniu obecno\u015B\
-  ci folderu w okre\u015Blonej \u015Bcie\u017Cce w systemie plik\xF3w. Programi\u015B\
-  ci robi\u0105 to, aby\u2026"
+description: "Jak to zrobi\u0107: #."
 lastmod: '2024-03-13T22:44:35.422745-06:00'
 model: gpt-4-0125-preview
-summary: "Sprawdzanie, czy katalog istnieje w C#, polega na weryfikowaniu obecno\u015B\
-  ci folderu w okre\u015Blonej \u015Bcie\u017Cce w systemie plik\xF3w."
+summary: '#.'
 title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---

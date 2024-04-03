@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 01:02:40.692405-07:00
-description: "Logging er i prinsippet programvareekvivalenten til en skipslogg; det\
-  \ er en m\xE5te \xE5 registrere hendelser som skjer mens en applikasjon kj\xF8rer.\
-  \ Utviklere\u2026"
+description: "Hvordan: Clojure st\xF8tter seg p\xE5 Javas loggingsfasiliteter, men\
+  \ du kan utnytte dem p\xE5 en mer idiomatisk Clojure-m\xE5te. La oss se p\xE5 hvordan\
+  \ du kan bruke\u2026"
 lastmod: '2024-03-13T22:44:40.408522-06:00'
 model: gpt-4-1106-preview
-summary: "Logging er i prinsippet programvareekvivalenten til en skipslogg; det er\
-  \ en m\xE5te \xE5 registrere hendelser som skjer mens en applikasjon kj\xF8rer."
+summary: "Clojure st\xF8tter seg p\xE5 Javas loggingsfasiliteter, men du kan utnytte\
+  \ dem p\xE5 en mer idiomatisk Clojure-m\xE5te."
 title: "Loggf\xF8ring"
 weight: 17
 ---

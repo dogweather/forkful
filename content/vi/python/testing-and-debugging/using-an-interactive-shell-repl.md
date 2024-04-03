@@ -2,17 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:16.763799-07:00
-description: "REPL, vi\u1EBFt t\u1EAFt c\u1EE7a Read-Eval-Print Loop (V\xF2ng l\u1EB7\
-  p \u0110\u1ECDc-T\xEDnh to\xE1n-In), l\xE0 m\u1ED9t m\xF4i tr\u01B0\u1EDDng l\u1EAD\
-  p tr\xECnh l\u1EA5y \u0111\u1EA7u v\xE0o \u0111\u01A1n l\u1EBB t\u1EEB ng\u01B0\u1EDD\
-  i d\xF9ng, th\u1EF1c thi ch\xFAng v\xE0 tr\u1EA3\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: B\u1EAFt \u0111\u1EA7u ngay v\u1EDBi REPL c\u1EE7\
+  a Python b\u1EB1ng c\xE1ch g\xF5 `python` trong d\xF2ng l\u1EC7nh c\u1EE7a b\u1EA1\
+  n. M\u1ED9t khi \u0111\xE3 v\xE0o, h\xE3y th\u1EED c\xE1c thao t\xE1c \u0111\u01A1\
+  n gi\u1EA3n ho\u1EB7c m\xE3 nhi\u1EC1u\u2026"
 lastmod: '2024-03-13T22:44:36.099164-06:00'
 model: gpt-4-0125-preview
-summary: "REPL, vi\u1EBFt t\u1EAFt c\u1EE7a Read-Eval-Print Loop (V\xF2ng l\u1EB7\
-  p \u0110\u1ECDc-T\xEDnh to\xE1n-In), l\xE0 m\u1ED9t m\xF4i tr\u01B0\u1EDDng l\u1EAD\
-  p tr\xECnh l\u1EA5y \u0111\u1EA7u v\xE0o \u0111\u01A1n l\u1EBB t\u1EEB ng\u01B0\u1EDD\
-  i d\xF9ng, th\u1EF1c thi ch\xFAng v\xE0 tr\u1EA3 l\u1EA1i k\u1EBFt qu\u1EA3 cho\
-  \ ng\u01B0\u1EDDi d\xF9ng."
+summary: "B\u1EAFt \u0111\u1EA7u ngay v\u1EDBi REPL c\u1EE7a Python b\u1EB1ng c\xE1\
+  ch g\xF5 `python` trong d\xF2ng l\u1EC7nh c\u1EE7a b\u1EA1n."
 title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 weight: 34
 ---

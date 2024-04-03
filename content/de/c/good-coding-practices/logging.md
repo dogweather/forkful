@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:59:03.561730-07:00
-description: "Das Protokollieren in C beinhaltet die Aufzeichnung des Ablaufs und\
-  \ bemerkenswerter Ereignisse eines Programms w\xE4hrend seiner Laufzeit und bietet\
-  \ eine\u2026"
+description: "Wie: In C kann die Protokollierung mit grundlegenden Dateioperationen\
+  \ oder mithilfe anspruchsvollerer Bibliotheken erreicht werden. F\xFCr den Einfachheit\u2026"
 lastmod: '2024-03-13T22:44:54.359396-06:00'
 model: gpt-4-0125-preview
-summary: "Das Protokollieren in C beinhaltet die Aufzeichnung des Ablaufs und bemerkenswerter\
-  \ Ereignisse eines Programms w\xE4hrend seiner Laufzeit und bietet eine greifbare\
-  \ \xDCberpr\xFCfung seines Verhaltens und seiner Leistung."
+summary: In C kann die Protokollierung mit grundlegenden Dateioperationen oder mithilfe
+  anspruchsvollerer Bibliotheken erreicht werden.
 title: Protokollierung
 weight: 17
 ---

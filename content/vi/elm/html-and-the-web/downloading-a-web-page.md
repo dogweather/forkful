@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:00.953206-07:00
-description: "T\u1EA3i m\u1ED9t trang web ngh\u0129a l\xE0 thu th\u1EADp d\u1EEF li\u1EC7\
-  u t\u1EEB internet tr\u1EF1c ti\u1EBFp v\xE0o \u1EE9ng d\u1EE5ng c\u1EE7a b\u1EA1\
-  n \u0111\u1EC3 hi\u1EC3n th\u1ECB ho\u1EB7c x\u1EED l\xFD n\xF3. L\u1EADp tr\xEC\
-  nh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 l\u1EA5y th\xF4ng\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Elm y\xEAu c\u1EA7u c\xE1c hi\u1EC7u \u1EE9\
+  ng ph\u1EE5 nh\u01B0 c\xE1c y\xEAu c\u1EA7u HTTP \u0111\u01B0\u1EE3c c\u1EA5u tr\xFA\
+  c nh\u01B0 c\xE1c l\u1EC7nh. B\u1EA1n s\u1EBD s\u1EED d\u1EE5ng m\xF4-\u0111un `Http`\
+  \ \u0111\u1EC3 l\u1EA5y v\xE0 x\u1EED l\xFD ph\u1EA3n h\u1ED3i."
 lastmod: '2024-03-13T22:44:36.542459-06:00'
 model: gpt-4-0125-preview
-summary: "T\u1EA3i m\u1ED9t trang web ngh\u0129a l\xE0 thu th\u1EADp d\u1EEF li\u1EC7\
-  u t\u1EEB internet tr\u1EF1c ti\u1EBFp v\xE0o \u1EE9ng d\u1EE5ng c\u1EE7a b\u1EA1\
-  n \u0111\u1EC3 hi\u1EC3n th\u1ECB ho\u1EB7c x\u1EED l\xFD n\xF3."
+summary: "Elm y\xEAu c\u1EA7u c\xE1c hi\u1EC7u \u1EE9ng ph\u1EE5 nh\u01B0 c\xE1c y\xEA\
+  u c\u1EA7u HTTP \u0111\u01B0\u1EE3c c\u1EA5u tr\xFAc nh\u01B0 c\xE1c l\u1EC7nh."
 title: "T\u1EA3i trang web"
 weight: 42
 ---

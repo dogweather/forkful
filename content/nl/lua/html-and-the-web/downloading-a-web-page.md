@@ -2,13 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:22.915498-07:00
-description: "Een webpagina downloaden betekent het grijpen van de HTML-inhoud van\
-  \ het internet via de URL. Programmeurs doen dit om webinhoud te analyseren, taken\
-  \ te\u2026"
+description: "Hoe: Lua is standaard niet uitgerust voor webtaken, maar met de `socket`\
+  \ bibliotheek en `http` module, is het een fluitje van een cent. Hier is een snel\u2026"
 lastmod: '2024-03-13T22:44:50.936205-06:00'
 model: gpt-4-0125-preview
-summary: Een webpagina downloaden betekent het grijpen van de HTML-inhoud van het
-  internet via de URL.
+summary: Lua is standaard niet uitgerust voor webtaken, maar met de `socket` bibliotheek
+  en `http` module, is het een fluitje van een cent.
 title: Een webpagina downloaden
 weight: 42
 ---

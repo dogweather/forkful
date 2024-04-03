@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:38.793021-07:00
-description: "Comprobar si un directorio existe en TypeScript es esencial para tareas\
-  \ de manejo de archivos, tales como leer de o escribir datos a archivos, asegurando\u2026"
+description: "C\xF3mo hacerlo: TypeScript, cuando se ejecuta en un entorno Node.js,\
+  \ te permite comprobar si un directorio existe utilizando el m\xF3dulo `fs`, el\
+  \ cual\u2026"
 lastmod: '2024-03-13T22:44:58.816770-06:00'
 model: gpt-4-0125-preview
-summary: "Comprobar si un directorio existe en TypeScript es esencial para tareas\
-  \ de manejo de archivos, tales como leer de o escribir datos a archivos, asegurando\
-  \ que las operaciones se realicen solo en directorios v\xE1lidos."
+summary: "TypeScript, cuando se ejecuta en un entorno Node.js, te permite comprobar\
+  \ si un directorio existe utilizando el m\xF3dulo `fs`, el cual proporciona la funci\xF3\
+  n `existsSync()` o la funci\xF3n as\xEDncrona `access()` combinada con `constants.F_OK`."
 title: Comprobando si un directorio existe
 weight: 20
 ---

@@ -1,13 +1,12 @@
 ---
 date: 2024-01-26 04:24:44.577346-07:00
-description: "TOML, abrevia\xE7\xE3o de Tom's Obvious, Minimal Language (Linguagem\
-  \ M\xEDnima e \xD3bvia do Tom), \xE9 um formato de dados semelhante ao JSON ou YAML,\
-  \ mas mais f\xE1cil de\u2026"
+description: "Como fazer: Primeiro, certifique-se de que voc\xEA tenha instalada uma\
+  \ biblioteca parser de TOML, como a `yosymfony/toml`. Vamos analisar um arquivo\
+  \ TOML."
 lastmod: '2024-03-13T22:44:46.690613-06:00'
 model: gpt-4-0125-preview
-summary: "TOML, abrevia\xE7\xE3o de Tom's Obvious, Minimal Language (Linguagem M\xED\
-  nima e \xD3bvia do Tom), \xE9 um formato de dados semelhante ao JSON ou YAML, mas\
-  \ mais f\xE1cil de ler para humanos."
+summary: "Primeiro, certifique-se de que voc\xEA tenha instalada uma biblioteca parser\
+  \ de TOML, como a `yosymfony/toml`."
 title: Trabalhando com TOML
 weight: 39
 ---

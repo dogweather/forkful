@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:43.936127-07:00
-description: "Scaricare una pagina web in Visual Basic for Applications (VBA) comporta\
-  \ il recupero del contenuto HTML di una pagina web da Internet. I programmatori\u2026"
+description: "Come fare: Per scaricare una pagina web in VBA, puoi utilizzare la libreria\
+  \ Microsoft XML, v6.0 (MSXML6), che consente richieste HTTP al server. Prima di\u2026"
 lastmod: '2024-03-13T22:44:43.261098-06:00'
 model: gpt-4-0125-preview
-summary: Scaricare una pagina web in Visual Basic for Applications (VBA) comporta
-  il recupero del contenuto HTML di una pagina web da Internet.
+summary: Per scaricare una pagina web in VBA, puoi utilizzare la libreria Microsoft
+  XML, v6.0 (MSXML6), che consente richieste HTTP al server.
 title: Scaricare una pagina web
 weight: 42
 ---

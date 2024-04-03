@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-25, gpt-4-0125-preview, translated from English
 date: 2024-02-25 17:06:50.981967-07:00
-description: "A interpola\xE7\xE3o de strings em C# permite criar uma nova string\
-  \ incluindo express\xF5es dentro de um literal de string, facilitando a formata\xE7\
-  \xE3o e a\u2026"
+description: "Como fazer: Em C#, a interpola\xE7\xE3o de string \xE9 indicada pelo\
+  \ sinal de d\xF3lar (`$`) seguido de um literal de string. Os nomes das vari\xE1\
+  veis ou express\xF5es s\xE3o\u2026"
 lastmod: '2024-03-13T22:44:46.570454-06:00'
 model: gpt-4-0125-preview
-summary: "A interpola\xE7\xE3o de strings em C# permite criar uma nova string incluindo\
-  \ express\xF5es dentro de um literal de string, facilitando a formata\xE7\xE3o e\
-  \ a concatena\xE7\xE3o de strings."
+summary: "Em C#, a interpola\xE7\xE3o de string \xE9 indicada pelo sinal de d\xF3\
+  lar (`$`) seguido de um literal de string."
 title: Interpolando uma String
 weight: 8
 ---

@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:47.895478-07:00
-description: "Rust-ohjelmoinnissa YAML:n (YAML Ain't Markup Language) kanssa ty\xF6\
-  skentely on YAML-muodossa olevan datan j\xE4sent\xE4misen ja tuottamisen k\xE4sittelemist\xE4\
-  . YAML\u2026"
+description: "Kuinka: Rust ei tue YAML:\xE4\xE4 sen vakio kirjastossa, joten yleens\xE4\
+  \ k\xE4yt\xE4mme kolmannen osapuolen crateja kuten `serde` (datan serialisointiin\
+  \ ja\u2026"
 lastmod: '2024-03-13T22:44:56.377575-06:00'
 model: gpt-4-0125-preview
-summary: "Rust-ohjelmoinnissa YAML:n (YAML Ain't Markup Language) kanssa ty\xF6skentely\
-  \ on YAML-muodossa olevan datan j\xE4sent\xE4misen ja tuottamisen k\xE4sittelemist\xE4\
-  ."
+summary: "Rust ei tue YAML:\xE4\xE4 sen vakio kirjastossa, joten yleens\xE4 k\xE4\
+  yt\xE4mme kolmannen osapuolen crateja kuten `serde` (datan serialisointiin ja deserialisointiin)\
+  \ yhdess\xE4 `serde_yaml`:n kanssa."
 title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---

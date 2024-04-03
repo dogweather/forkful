@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:05:15.387706-07:00
-description: "La stampa di output per il debug riguarda la generazione di messaggi\
-  \ di log temporanei e informativi che possono aiutare i programmatori a comprendere\
-  \ il\u2026"
+description: "Come fare: In C, il modo pi\xF9 comune per stampare output di debug\
+  \ \xE8 utilizzare la funzione `printf` della libreria standard di I/O. La funzione\
+  \ `printf`\u2026"
 lastmod: '2024-03-13T22:44:44.001150-06:00'
 model: gpt-4-0125-preview
-summary: La stampa di output per il debug riguarda la generazione di messaggi di log
-  temporanei e informativi che possono aiutare i programmatori a comprendere il flusso
-  e lo stato di un programma durante la sua esecuzione.
+summary: "In C, il modo pi\xF9 comune per stampare output di debug \xE8 utilizzare\
+  \ la funzione `printf` della libreria standard di I/O."
 title: Stampa dell'output di debug
 weight: 33
 ---

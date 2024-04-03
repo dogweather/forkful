@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:43.308981-07:00
-description: "Att arbeta med CSV-filer (Comma Separated Values) inneb\xE4r att tolka,\
-  \ manipulera och generera data i ett tabellformat som \xE4r brett anv\xE4nt f\xF6\
-  r datadelning\u2026"
+description: "Hur man g\xF6r: Fish Shell har i sig inga inbyggda funktioner som specifikt\
+  \ \xE4r avsedda f\xF6r manipulation av CSV. Dock kan du utnyttja Unix-verktyg som\
+  \ `awk`,\u2026"
 lastmod: '2024-03-13T22:44:38.360642-06:00'
 model: gpt-4-0125-preview
-summary: "Att arbeta med CSV-filer (Comma Separated Values) inneb\xE4r att tolka,\
-  \ manipulera och generera data i ett tabellformat som \xE4r brett anv\xE4nt f\xF6\
-  r datadelning mellan applikationer."
+summary: "Fish Shell har i sig inga inbyggda funktioner som specifikt \xE4r avsedda\
+  \ f\xF6r manipulation av CSV."
 title: Arbeta med CSV
 weight: 37
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:38:52.067135-07:00
-description: "Convertire una stringa in minuscolo significa trasformare tutti i caratteri\
-  \ alfabeticianche quelli accentati, nella loro forma minuscola. I programmatori\u2026"
+description: 'How to: Utilizza `strtolower()` per convertire una stringa intera in
+  minuscolo.'
 lastmod: '2024-03-13T22:44:43.504316-06:00'
 model: gpt-4-1106-preview
-summary: Convertire una stringa in minuscolo significa trasformare tutti i caratteri
-  alfabeticianche quelli accentati, nella loro forma minuscola.
+summary: Utilizza `strtolower()` per convertire una stringa intera in minuscolo.
 title: Conversione di una stringa in minuscolo
 weight: 4
 ---

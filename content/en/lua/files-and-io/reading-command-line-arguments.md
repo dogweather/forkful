@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:56:27.955313-07:00
-description: "Reading command line arguments means grabbing the extra bits you type\
-  \ after your script\u2019s name in the console. Programmers do this to tweak a program's\u2026"
+description: 'How to: Here''s the skinny on grabbing those arguments in Lua.'
 lastmod: '2024-03-13T22:45:00.219406-06:00'
 model: gpt-4-1106-preview
-summary: "Reading command line arguments means grabbing the extra bits you type after\
-  \ your script\u2019s name in the console."
+summary: Here's the skinny on grabbing those arguments in Lua.
 title: Reading command line arguments
 weight: 23
 ---

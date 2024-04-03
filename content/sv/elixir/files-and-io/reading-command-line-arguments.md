@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:55:44.604382-07:00
-description: "L\xE4sa kommandoradsargument inneb\xE4r att f\xE5nga de v\xE4rden som\
-  \ anv\xE4ndaren matar in n\xE4r de k\xF6r ditt program. Programmerare g\xF6r detta\
-  \ f\xF6r att till\xE5ta dynamisk\u2026"
+description: "S\xE5 h\xE4r g\xF6r du: Elixir g\xF6r det enkelt att hantera kommandoradsargument\
+  \ med `System.argv/0`. H\xE4r \xE4r ett exempel."
 lastmod: '2024-03-13T22:44:37.582963-06:00'
 model: gpt-4-1106-preview
-summary: "L\xE4sa kommandoradsargument inneb\xE4r att f\xE5nga de v\xE4rden som anv\xE4\
-  ndaren matar in n\xE4r de k\xF6r ditt program."
+summary: "Elixir g\xF6r det enkelt att hantera kommandoradsargument med `System.argv/0`."
 title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---

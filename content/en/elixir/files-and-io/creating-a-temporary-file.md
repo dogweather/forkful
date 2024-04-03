@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:39:57.204587-07:00
-description: "Creating a temporary file means making a file that you'll toss out after\
-  \ a short use. Programmers do this for temporary storage or when they want to avoid\u2026"
+description: 'How to: In Elixir, you can create and use a temporary file with the
+  `System.tmp_dir/1` function and `File` module. Here''s a quick example.'
 lastmod: '2024-03-13T22:44:59.799743-06:00'
 model: gpt-4-1106-preview
-summary: Creating a temporary file means making a file that you'll toss out after
-  a short use.
+summary: In Elixir, you can create and use a temporary file with the `System.tmp_dir/1`
+  function and `File` module.
 title: Creating a temporary file
 weight: 21
 ---

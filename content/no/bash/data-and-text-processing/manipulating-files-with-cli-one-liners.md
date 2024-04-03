@@ -1,13 +1,10 @@
 ---
 date: 2024-01-27 16:20:59.504230-07:00
-description: "Manipulering av filer med CLI (kommandolinjegrensesnitt) en-linjers\
-  \ kommandoer involverer bruk av Bash-skript eller kommandoer for \xE5 utf\xF8re\
-  \ handlinger p\xE5\u2026"
+description: "Hvordan: Her er noen kraftfulle en-linjers kommandoer og hva de kan\
+  \ oppn\xE5: 1. **Opprette en fil og skrive tekst inn i den:**."
 lastmod: '2024-03-13T22:44:40.969220-06:00'
 model: gpt-4-0125-preview
-summary: "Manipulering av filer med CLI (kommandolinjegrensesnitt) en-linjers kommandoer\
-  \ involverer bruk av Bash-skript eller kommandoer for \xE5 utf\xF8re handlinger\
-  \ p\xE5 filer, som \xE5 opprette, lese, oppdatere eller slette dem, alt fra terminalen."
+summary: "Her er noen kraftfulle en-linjers kommandoer og hva de kan oppn\xE5."
 title: Manipulering av filer med CLI-enkeltkommandoer
 weight: 31
 ---

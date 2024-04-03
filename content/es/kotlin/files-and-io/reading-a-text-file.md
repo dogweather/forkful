@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:54:52.766937-07:00
-description: "Leer un archivo de texto en Kotlin es acceder y manipular el contenido\
-  \ de un archivo almacenado en el disco. Los programadores lo hacen para trabajar\
-  \ con\u2026"
+description: "C\xF3mo hacerlo: #."
 lastmod: '2024-03-13T22:44:59.053300-06:00'
 model: gpt-4-1106-preview
-summary: Leer un archivo de texto en Kotlin es acceder y manipular el contenido de
-  un archivo almacenado en el disco.
+summary: '#.'
 title: Lectura de un archivo de texto
 weight: 22
 ---

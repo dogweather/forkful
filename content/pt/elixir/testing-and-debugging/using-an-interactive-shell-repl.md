@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:13:09.389595-07:00
-description: "Um shell interativo, ou REPL (Leia-Avalie-Imprima Loop), permite experimentar\
-  \ trechos de c\xF3digo em tempo real. Programadores Elixir utilizam o REPL,\u2026"
+description: 'Como: Para iniciar o IEx, abra seu terminal e digite `iex`. Aqui vai
+  uma amostra.'
 lastmod: '2024-03-13T22:44:46.239790-06:00'
 model: gpt-4-0125-preview
-summary: "Um shell interativo, ou REPL (Leia-Avalie-Imprima Loop), permite experimentar\
-  \ trechos de c\xF3digo em tempo real."
+summary: Para iniciar o IEx, abra seu terminal e digite `iex`.
 title: Usando um shell interativo (REPL)
 weight: 34
 ---

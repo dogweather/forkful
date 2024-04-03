@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:04.313979-07:00
-description: "Regulj\xE4ra uttryck (regex) \xE4r sekvenser av tecken som definierar\
-  \ s\xF6km\xF6nster, fr\xE4mst anv\xE4nda f\xF6r str\xE4ngmatchning och manipulation.\
-  \ Programmerare anv\xE4nder\u2026"
+description: "Hur: Arduino har inte inbyggt st\xF6d f\xF6r regex direkt i sitt standardbibliotek.\
+  \ Du kan dock uppn\xE5 regex-liknande funktionalitet f\xF6r enkla m\xF6nster genom\
+  \ att\u2026"
 lastmod: '2024-03-13T22:44:38.158233-06:00'
 model: gpt-4-0125-preview
-summary: "Regulj\xE4ra uttryck (regex) \xE4r sekvenser av tecken som definierar s\xF6\
-  km\xF6nster, fr\xE4mst anv\xE4nda f\xF6r str\xE4ngmatchning och manipulation."
+summary: "Arduino har inte inbyggt st\xF6d f\xF6r regex direkt i sitt standardbibliotek."
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---

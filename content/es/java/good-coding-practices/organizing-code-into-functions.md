@@ -1,12 +1,10 @@
 ---
 date: 2024-01-26 01:10:19.251297-07:00
-description: "Organizar el c\xF3digo en funciones significa descomponer la bestia\
-  \ de un programa en bloques manejables, cada uno realizando una tarea distinta.\
-  \ Los\u2026"
+description: "C\xF3mo hacerlo: Aqu\xED hay un ejemplo cl\xE1sico: una funci\xF3n para\
+  \ calcular el factorial de un n\xFAmero."
 lastmod: '2024-03-13T22:44:58.942912-06:00'
 model: gpt-4-1106-preview
-summary: "Organizar el c\xF3digo en funciones significa descomponer la bestia de un\
-  \ programa en bloques manejables, cada uno realizando una tarea distinta."
+summary: "Aqu\xED hay un ejemplo cl\xE1sico."
 title: "Organizando c\xF3digo en funciones"
 weight: 18
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:29:39.292088-07:00
-description: "XML \xE9 uma linguagem de marca\xE7\xE3o para codificar documentos de\
-  \ forma que sejam leg\xEDveis por humanos e m\xE1quinas. \xC9 chave em servi\xE7\
-  os web, arquivos de\u2026"
+description: "Como fazer: Clojure oferece a biblioteca `clojure.data.xml` para an\xE1\
+  lise (parsing) e emiss\xE3o de XML. Primeiro, vamos analisar algum XML."
 lastmod: '2024-03-13T22:44:46.220848-06:00'
 model: gpt-4-0125-preview
-summary: "XML \xE9 uma linguagem de marca\xE7\xE3o para codificar documentos de forma\
-  \ que sejam leg\xEDveis por humanos e m\xE1quinas."
+summary: "Clojure oferece a biblioteca `clojure.data.xml` para an\xE1lise (parsing)\
+  \ e emiss\xE3o de XML."
 title: Trabalhando com XML
 weight: 40
 ---

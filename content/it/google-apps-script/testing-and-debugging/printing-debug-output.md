@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:57:56.257025-07:00
-description: "Stampare l'output di debug comporta il posizionamento strategico di\
-  \ istruzioni di log nel codice per visualizzare i valori delle variabili, il flusso\
-  \ di\u2026"
+description: "Come fare: Google Apps Script fornisce la classe `Logger` per il debug\
+  \ di base e, per esigenze pi\xF9 avanzate, la classe `console` introdotta nell'ambiente\u2026"
 lastmod: '2024-03-13T22:44:42.957988-06:00'
 model: gpt-4-0125-preview
-summary: Stampare l'output di debug comporta il posizionamento strategico di istruzioni
-  di log nel codice per visualizzare i valori delle variabili, il flusso di esecuzione
-  o gli errori dei messaggi durante l'esecuzione.
+summary: "Google Apps Script fornisce la classe `Logger` per il debug di base e, per\
+  \ esigenze pi\xF9 avanzate, la classe `console` introdotta nell'ambiente di esecuzione\
+  \ V8."
 title: Stampa dell'output di debug
 weight: 33
 ---

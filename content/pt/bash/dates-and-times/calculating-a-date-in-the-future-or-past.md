@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:30:45.944901-07:00
-description: "Calcular datas no futuro ou no passado \xE9 simplesmente modificar uma\
-  \ data existente para descobrir qual data ser\xE1 ou foi. Programadores fazem isso\
-  \ para\u2026"
+description: 'Como Fazer: .'
 lastmod: '2024-03-13T22:44:46.766125-06:00'
 model: gpt-4-1106-preview
-summary: "Calcular datas no futuro ou no passado \xE9 simplesmente modificar uma data\
-  \ existente para descobrir qual data ser\xE1 ou foi."
+summary: .
 title: Calculando uma data no futuro ou passado
 weight: 26
 ---

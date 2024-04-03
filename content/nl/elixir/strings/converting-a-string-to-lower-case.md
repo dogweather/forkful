@@ -2,12 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:40.509119-07:00
-description: "Een string omzetten naar kleine letters betekent dat alle letters binnen\
-  \ een string worden veranderd in hun kleine lettervorm. Programmeurs doen dit voor\u2026"
+description: 'Hoe te: Elixir maakt het een fluitje van een cent. Gebruik de `String.downcase/1`
+  functie.'
 lastmod: '2024-03-13T22:44:50.449126-06:00'
 model: gpt-4-0125-preview
-summary: Een string omzetten naar kleine letters betekent dat alle letters binnen
-  een string worden veranderd in hun kleine lettervorm.
+summary: Elixir maakt het een fluitje van een cent.
 title: Een string omzetten naar kleine letters
 weight: 4
 ---

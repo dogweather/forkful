@@ -2,13 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:49.328173-07:00
-description: "Substrings extraheren betekent specifieke delen van een string eruit\
-  \ trekken, zoals een stukje van een lint knippen. Programmeurs doen dit om gegevens\
-  \ te\u2026"
+description: 'Hoe te: .'
 lastmod: '2024-03-13T22:44:50.365414-06:00'
 model: gpt-4-0125-preview
-summary: Substrings extraheren betekent specifieke delen van een string eruit trekken,
-  zoals een stukje van een lint knippen.
+summary: .
 title: Substrings extraheren
 weight: 6
 ---

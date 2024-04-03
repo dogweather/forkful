@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:53:43.680592-07:00
-description: "Das Lesen einer Textdatei bedeutet, Daten von einer im Speichermedium\
-  \ gespeicherten Datei in dein Programm zu laden. Das machen Programmierer, um\u2026"
+description: 'How to: Der Arduino liest Textdateien mithilfe eines SD-Kartenmoduls.
+  Hier ein einfacher Sketch, der den Inhalt einer Textdatei ausliest.'
 lastmod: '2024-03-13T22:44:54.160683-06:00'
 model: gpt-4-1106-preview
-summary: Das Lesen einer Textdatei bedeutet, Daten von einer im Speichermedium gespeicherten
-  Datei in dein Programm zu laden.
+summary: Der Arduino liest Textdateien mithilfe eines SD-Kartenmoduls.
 title: Textdatei einlesen
 weight: 22
 ---

@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:07:48.746842-07:00
-description: "Rond getallen af is het aanpassen van de waarde van een getal naar het\
-  \ dichtstbijzijnde gehele getal of naar een specifiek aantal decimalen. Programmeurs\u2026"
+description: "Hoe: In Go is er geen ingebouwde functie die direct getallen afrondt\
+  \ naar een specifiek aantal decimalen in het wiskundepakket. Je kunt echter afronden\u2026"
 lastmod: '2024-03-13T22:44:50.282117-06:00'
 model: gpt-4-0125-preview
-summary: Rond getallen af is het aanpassen van de waarde van een getal naar het dichtstbijzijnde
-  gehele getal of naar een specifiek aantal decimalen.
+summary: In Go is er geen ingebouwde functie die direct getallen afrondt naar een
+  specifiek aantal decimalen in het wiskundepakket.
 title: Afronden van getallen
 weight: 13
 ---

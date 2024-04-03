@@ -1,14 +1,12 @@
 ---
 date: 2024-01-27 20:32:46.575978-07:00
-description: "G\xE9n\xE9rer des nombres al\xE9atoires en Bash offre un moyen d\u2019\
-  introduire de l\u2019impr\xE9visibilit\xE9 dans les scripts, ce qui est essentiel\
-  \ pour des t\xE2ches telles que\u2026"
+description: "Comment faire : Dans Bash, la variable `$RANDOM` est la solution privil\xE9\
+  gi\xE9e pour g\xE9n\xE9rer des nombres al\xE9atoires. Chaque fois que vous la r\xE9\
+  f\xE9rencez, Bash\u2026"
 lastmod: '2024-03-13T22:44:57.987642-06:00'
 model: gpt-4-0125-preview
-summary: "G\xE9n\xE9rer des nombres al\xE9atoires en Bash offre un moyen d\u2019introduire\
-  \ de l\u2019impr\xE9visibilit\xE9 dans les scripts, ce qui est essentiel pour des\
-  \ t\xE2ches telles que g\xE9n\xE9rer des mots de passe s\xE9curis\xE9s, simuler\
-  \ des donn\xE9es ou pour la programmation de jeux."
+summary: "Dans Bash, la variable `$RANDOM` est la solution privil\xE9gi\xE9e pour\
+  \ g\xE9n\xE9rer des nombres al\xE9atoires."
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---

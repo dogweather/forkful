@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:13:13.861339-07:00
-description: "La boucle Lire-\xC9valuer-Imprimer (REPL) est un environnement de programmation\
-  \ simple et interactif qui prend en charge les entr\xE9es utilisateur\u2026"
+description: "Comment faire : Elm ne vient pas avec un REPL int\xE9gr\xE9. Cependant,\
+  \ vous pouvez utiliser `elm repl` depuis votre ligne de commande pour d\xE9marrer\
+  \ une session\u2026"
 lastmod: '2024-03-13T22:44:57.690831-06:00'
 model: gpt-4-0125-preview
-summary: "La boucle Lire-\xC9valuer-Imprimer (REPL) est un environnement de programmation\
-  \ simple et interactif qui prend en charge les entr\xE9es utilisateur individuelles,\
-  \ les \xE9value, et renvoie le r\xE9sultat \xE0 l'utilisateur."
+summary: "Elm ne vient pas avec un REPL int\xE9gr\xE9."
 title: Utilisation d'une console interactive (REPL)
 weight: 34
 ---

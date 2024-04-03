@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:39.184184-07:00
-description: "Att h\xE4mta det aktuella datumet i Haskell inneb\xE4r att f\xE5 systemets\
-  \ nuvarande tid och omvandla den till ett l\xE4sbart datumformat. Programmerare\
-  \ g\xF6r detta f\xF6r\u2026"
+description: "Hur man g\xF6r: Haskells standardbibliotek, `base`, tillhandah\xE5ller\
+  \ `Data.Time`-modulen som erbjuder funktionalitet f\xF6r att arbeta med datum och\
+  \ tider. S\xE5\u2026"
 lastmod: '2024-03-13T22:44:37.965194-06:00'
 model: gpt-4-0125-preview
-summary: "Att h\xE4mta det aktuella datumet i Haskell inneb\xE4r att f\xE5 systemets\
-  \ nuvarande tid och omvandla den till ett l\xE4sbart datumformat."
+summary: "Haskells standardbibliotek, `base`, tillhandah\xE5ller `Data.Time`-modulen\
+  \ som erbjuder funktionalitet f\xF6r att arbeta med datum och tider."
 title: "F\xE5 det aktuella datumet"
 weight: 29
 ---

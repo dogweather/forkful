@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:48.293256-07:00
-description: "Pisanie test\xF3w w Haskellu polega na zapewnieniu, \u017Ce twoje funkcje\
-  \ dzia\u0142aj\u0105 zgodnie z oczekiwaniami poprzez automatyczne kontrole. Programi\u015B\
-  ci robi\u0105 to,\u2026"
+description: "Jak to zrobi\u0107: Haskell obs\u0142uguje r\xF3\u017Cne frameworki\
+  \ do testowania, ale dwa popularne to `Hspec` i `QuickCheck`. Hspec pozwala definiowa\u0107\
+  \ ludzko czytelne\u2026"
 lastmod: '2024-03-13T22:44:35.455450-06:00'
 model: gpt-4-0125-preview
-summary: "Pisanie test\xF3w w Haskellu polega na zapewnieniu, \u017Ce twoje funkcje\
-  \ dzia\u0142aj\u0105 zgodnie z oczekiwaniami poprzez automatyczne kontrole."
+summary: "Haskell obs\u0142uguje r\xF3\u017Cne frameworki do testowania, ale dwa popularne\
+  \ to `Hspec` i `QuickCheck`."
 title: "Pisanie test\xF3w"
 weight: 36
 ---

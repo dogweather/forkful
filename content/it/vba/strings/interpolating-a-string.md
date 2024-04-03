@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:55:40.606740-07:00
-description: "L'interpolazione di stringhe in Visual Basic for Applications (VBA)\
-  \ si riferisce al processo di incorporazione di variabili o espressioni all'interno\
-  \ di\u2026"
+description: "Come fare: A differenza di alcuni linguaggi che dispongono di interpolazione\
+  \ di stringhe integrata, VBA richiede un approccio pi\xF9 manuale che tipicamente\u2026"
 lastmod: '2024-03-13T22:44:43.247317-06:00'
 model: gpt-4-0125-preview
-summary: L'interpolazione di stringhe in Visual Basic for Applications (VBA) si riferisce
-  al processo di incorporazione di variabili o espressioni all'interno di una letterale
-  stringa, consentendo la formazione dinamica di stringhe.
+summary: "A differenza di alcuni linguaggi che dispongono di interpolazione di stringhe\
+  \ integrata, VBA richiede un approccio pi\xF9 manuale che tipicamente utilizza l'operatore\
+  \ `&` o la funzione `Format` per incorporare variabili nelle stringhe."
 title: Interpolazione di una stringa
 weight: 8
 ---

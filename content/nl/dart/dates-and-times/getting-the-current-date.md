@@ -2,12 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:42.366236-07:00
-description: "De huidige datum in Dart verkrijgen houdt in dat het systeem wordt geraadpleegd\
-  \ voor de huidige datum en tijd. Deze functionaliteit wordt vaak gebruikt in\u2026"
+description: "Hoe: De kernbibliotheek van Dart biedt eenvoudige toegang tot de huidige\
+  \ datum en tijd via de `DateTime` klasse. Hier is het basisvoorbeeld om de huidige\u2026"
 lastmod: '2024-03-13T22:44:50.516319-06:00'
 model: gpt-4-0125-preview
-summary: De huidige datum in Dart verkrijgen houdt in dat het systeem wordt geraadpleegd
-  voor de huidige datum en tijd.
+summary: De kernbibliotheek van Dart biedt eenvoudige toegang tot de huidige datum
+  en tijd via de `DateTime` klasse.
 title: De huidige datum krijgen
 weight: 29
 ---

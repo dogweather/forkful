@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:13.809699-07:00
-description: "Scrivere test in C# comporta la creazione di script automatizzati per\
-  \ validare la funzionalit\xE0 del proprio codice, assicurando che si comporti come\u2026"
+description: "Come fare: Gli sviluppatori C# usano principalmente i framework NUnit\
+  \ o xUnit per scrivere test grazie alla loro flessibilit\xE0 e ampio set di funzionalit\xE0\
+  .\u2026"
 lastmod: '2024-03-13T22:44:43.437295-06:00'
 model: gpt-4-0125-preview
-summary: "Scrivere test in C# comporta la creazione di script automatizzati per validare\
-  \ la funzionalit\xE0 del proprio codice, assicurando che si comporti come previsto."
+summary: "Gli sviluppatori C# usano principalmente i framework NUnit o xUnit per scrivere\
+  \ test grazie alla loro flessibilit\xE0 e ampio set di funzionalit\xE0."
 title: Scrivere test
 weight: 36
 ---

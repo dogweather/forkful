@@ -2,15 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:44.365575-07:00
-description: "Vi\u1EC7c vi\u1EBFt hoa m\u1ED9t chu\u1ED7i ngh\u0129a l\xE0 thay \u0111\
-  \u1ED5i k\xFD t\u1EF1 \u0111\u1EA7u ti\xEAn c\u1EE7a m\u1ED9t t\u1EEB th\xE0nh ch\u1EEF\
-  \ c\xE1i in hoa. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1\
-  u n\xE0y \u0111\u1EC3 tu\xE2n theo quy \u01B0\u1EDBc ng\xF4n\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: JavaScript kh\xF4ng c\xF3 ph\u01B0\u01A1ng th\u1EE9\
+  c t\xEDch h\u1EE3p s\u1EB5n \u0111\u1EC3 vi\u1EBFt hoa, nh\u01B0ng d\u01B0\u1EDB\
+  i \u0111\xE2y l\xE0 m\u1ED9t h\xE0m \u0111\u01A1n gi\u1EA3n th\u1EF1c hi\u1EC7n\
+  \ \u0111i\u1EC1u \u0111\xF3."
 lastmod: '2024-03-13T22:44:37.130906-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c vi\u1EBFt hoa m\u1ED9t chu\u1ED7i ngh\u0129a l\xE0 thay \u0111\
-  \u1ED5i k\xFD t\u1EF1 \u0111\u1EA7u ti\xEAn c\u1EE7a m\u1ED9t t\u1EEB th\xE0nh ch\u1EEF\
-  \ c\xE1i in hoa."
+summary: "JavaScript kh\xF4ng c\xF3 ph\u01B0\u01A1ng th\u1EE9c t\xEDch h\u1EE3p s\u1EB5\
+  n \u0111\u1EC3 vi\u1EBFt hoa, nh\u01B0ng d\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9\
+  t h\xE0m \u0111\u01A1n gi\u1EA3n th\u1EF1c hi\u1EC7n \u0111i\u1EC1u \u0111\xF3."
 title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
 weight: 2
 ---

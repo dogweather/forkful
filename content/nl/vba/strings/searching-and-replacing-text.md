@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:15.107622-07:00
-description: "Zoeken en vervangen van tekst in Visual Basic for Applications (VBA)\
-  \ is essentieel voor het programmatisch bewerken van documenten, spreadsheets en\u2026"
+description: "Hoe: In VBA kan zoeken en vervangen van tekst worden bereikt met behulp\
+  \ van de `Replace` functie of via specifieke objectmodellen in applicaties zoals\u2026"
 lastmod: '2024-03-13T22:44:50.621321-06:00'
 model: gpt-4-0125-preview
-summary: Zoeken en vervangen van tekst in Visual Basic for Applications (VBA) is essentieel
-  voor het programmatisch bewerken van documenten, spreadsheets en databases.
+summary: In VBA kan zoeken en vervangen van tekst worden bereikt met behulp van de
+  `Replace` functie of via specifieke objectmodellen in applicaties zoals Excel of
+  Word.
 title: Zoeken en vervangen van tekst
 weight: 10
 ---

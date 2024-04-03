@@ -1,8 +1,8 @@
 ---
 date: 2024-01-26 03:48:45.689170-07:00
-description: "Fish har inte en inbyggd debugger som vissa andra skal, men du kan anv\xE4\
-  nda externa verktyg som `gdb` f\xF6r att debugga kompilerade program eller `fish\
-  \ -d`\u2026"
+description: "Hur man g\xF6r: Fish har inte en inbyggd debugger som vissa andra skal,\
+  \ men du kan anv\xE4nda externa verktyg som `gdb` f\xF6r att debugga kompilerade\
+  \ program\u2026"
 lastmod: '2024-03-13T22:44:38.342777-06:00'
 model: gpt-4-0125-preview
 summary: "Fish har inte en inbyggd debugger som vissa andra skal, men du kan anv\xE4\

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 04:37:06.709668-07:00
-description: "Liczby zespolone sk\u0142adaj\u0105 si\u0119 z cz\u0119\u015Bci rzeczywistej\
-  \ i cz\u0119\u015Bci urojonej. Programi\u015Bci u\u017Cywaj\u0105 ich w dziedzinach\
-  \ takich jak przetwarzanie sygna\u0142\xF3w, mechanika\u2026"
+description: "Jak to zrobi\u0107: Bash domy\u015Blnie nie obs\u0142uguje liczb zespolonych.\
+  \ Cz\u0119sto u\u017Cywa si\u0119 zewn\u0119trznych narz\u0119dzi takich jak `bc`\
+  \ z opcj\u0105 `-l`. Oto jak przetwarzasz\u2026"
 lastmod: '2024-03-13T22:44:35.576612-06:00'
 model: gpt-4-0125-preview
-summary: "Liczby zespolone sk\u0142adaj\u0105 si\u0119 z cz\u0119\u015Bci rzeczywistej\
-  \ i cz\u0119\u015Bci urojonej."
+summary: "Bash domy\u015Blnie nie obs\u0142uguje liczb zespolonych."
 title: Praca z liczbami zespolonymi
 weight: 14
 ---

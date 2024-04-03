@@ -2,12 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:38.923033-07:00
-description: "\xC9crire sur la sortie d'erreur standard (stderr) consiste \xE0 afficher\
-  \ des messages d'erreur et des diagnostics sur la console ou le terminal. Les\u2026"
+description: 'Comment faire : #.'
 lastmod: '2024-03-13T22:44:57.660169-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire sur la sortie d'erreur standard (stderr) consiste \xE0 afficher\
-  \ des messages d'erreur et des diagnostics sur la console ou le terminal."
+summary: '#.'
 title: "\xC9crire sur l'erreur standard"
 weight: 25
 ---

@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 00:58:56.810940-07:00
-description: "Obs\u0142uga b\u0142\u0119d\xF3w polega na oczekiwaniu na nieoczekiwane;\
-  \ to, jak zarz\u0105dzamy sytuacjami, gdy co\u015B idzie nie tak w naszym kodzie.\
-  \ Robimy to, aby unikn\u0105\u0107 awarii\u2026"
+description: "Jak to zrobi\u0107: W TypeScript obs\u0142uga b\u0142\u0119d\xF3w cz\u0119\
+  sto wi\u0105\u017Ce si\u0119 z blokami `try`, `catch` i `finally`."
 lastmod: '2024-03-13T22:44:35.146828-06:00'
 model: gpt-4-1106-preview
-summary: "Obs\u0142uga b\u0142\u0119d\xF3w polega na oczekiwaniu na nieoczekiwane;\
-  \ to, jak zarz\u0105dzamy sytuacjami, gdy co\u015B idzie nie tak w naszym kodzie."
+summary: "W TypeScript obs\u0142uga b\u0142\u0119d\xF3w cz\u0119sto wi\u0105\u017C\
+  e si\u0119 z blokami `try`, `catch` i `finally`."
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---

@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:18.358640-07:00
-description: "Virheviestien kirjoittaminen standardivirheeseen (stderr) PHP:ss\xE4\
-  \ tarkoittaa virheilmoitusten tai diagnostiikkatietojen ohjaamista erill\xE4\xE4\
-  n\u2026"
+description: "Kuinka: PHP:ss\xE4 stderr:iin kirjoittaminen onnistuu k\xE4ytt\xE4m\xE4\
+  ll\xE4 `fwrite()`-funktiota yhdess\xE4 ennalta m\xE4\xE4r\xE4tyn vakion `STDERR`\
+  \ kanssa, joka edustaa virheen\u2026"
 lastmod: '2024-03-13T22:44:56.672149-06:00'
 model: gpt-4-0125-preview
-summary: "Virheviestien kirjoittaminen standardivirheeseen (stderr) PHP:ss\xE4 tarkoittaa\
-  \ virheilmoitusten tai diagnostiikkatietojen ohjaamista erill\xE4\xE4n standarditulosteesta\
-  \ (stdout), mik\xE4 antaa kehitt\xE4jille paremmat mahdollisuudet hallita tulostevirtojaan\
-  \ debuggauksen ja lokitiedostojen kannalta."
+summary: "PHP:ss\xE4 stderr:iin kirjoittaminen onnistuu k\xE4ytt\xE4m\xE4ll\xE4 `fwrite()`-funktiota\
+  \ yhdess\xE4 ennalta m\xE4\xE4r\xE4tyn vakion `STDERR` kanssa, joka edustaa virheen\
+  \ tulostevirtaa."
 title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---

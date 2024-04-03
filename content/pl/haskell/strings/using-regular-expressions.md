@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:04.476648-07:00
-description: "Wyra\u017Cenia regularne w programowaniu to sekwencje znak\xF3w definiuj\u0105\
-  ce wzorzec wyszukiwania, typowo wykorzystywane do przeszukiwania i manipulacji ci\u0105\
-  gami\u2026"
+description: "Jak to zrobi\u0107: W Haskell funkcjonalno\u015Bci regex nie s\u0105\
+  \ cz\u0119\u015Bci\u0105 standardowej biblioteki, co wymaga u\u017Cywania pakiet\xF3\
+  w stron trzecich takich jak `regex-base`\u2026"
 lastmod: '2024-03-13T22:44:35.440942-06:00'
 model: gpt-4-0125-preview
-summary: "Wyra\u017Cenia regularne w programowaniu to sekwencje znak\xF3w definiuj\u0105\
-  ce wzorzec wyszukiwania, typowo wykorzystywane do przeszukiwania i manipulacji ci\u0105\
-  gami znak\xF3w."
+summary: "W Haskell funkcjonalno\u015Bci regex nie s\u0105 cz\u0119\u015Bci\u0105\
+  \ standardowej biblioteki, co wymaga u\u017Cywania pakiet\xF3w stron trzecich takich\
+  \ jak `regex-base` wraz z kompatybilnym backendem jak `regex-posix` (dla wsparcia\
+  \ POSIX regex), `regex-pcre` (dla kompatybilnych z Perlem regex) itp."
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---

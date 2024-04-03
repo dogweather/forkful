@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:44:42.311365-07:00
-description: "T\xE9l\xE9charger une page Web, c'est r\xE9cup\xE9rer son contenu via\
-  \ le r\xE9seau. Les programmeurs font \xE7a pour analyser des donn\xE9es, tester\
-  \ des sites, ou automatiser\u2026"
+description: 'How to: (Comment faire : ) Voici un exemple simple avec `requests` .'
 lastmod: '2024-03-13T22:44:57.234424-06:00'
 model: gpt-4-1106-preview
-summary: "T\xE9l\xE9charger une page Web, c'est r\xE9cup\xE9rer son contenu via le\
-  \ r\xE9seau."
+summary: Voici un exemple simple avec `requests`.
 title: "T\xE9l\xE9chargement d'une page web"
 weight: 42
 ---

@@ -2,13 +2,11 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:37.497298-07:00
-description: "I Elixir kalles associative arrays for Maps, og er samlinger av n\xF8\
-  kkel-verdi-par der en unik n\xF8kkel peker p\xE5 en verdi. De er veldig praktiske\
-  \ for \xE5 lagre\u2026"
+description: "Hvordan: \xC5 opprette et Map er enkelt. Du bruker `%{}` syntaksen,\
+  \ slik."
 lastmod: '2024-03-13T22:44:40.436412-06:00'
 model: gpt-4-0125-preview
-summary: "I Elixir kalles associative arrays for Maps, og er samlinger av n\xF8kkel-verdi-par\
-  \ der en unik n\xF8kkel peker p\xE5 en verdi."
+summary: "\xC5 opprette et Map er enkelt."
 title: Bruke associative tabeller
 weight: 15
 ---

@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:56.998837-07:00
-description: "Tr\xEDch xu\u1EA5t c\xE1c chu\u1ED7i con c\xF3 ngh\u0129a l\xE0 l\u1EA5\
-  y ra nh\u1EEFng m\u1EA3nh nh\u1ECF t\u1EEB m\u1ED9t chu\u1ED7i l\u1EDBn h\u01A1\
-  n. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 t\xE1ch bi\u1EC7\
-  t, x\u1EED l\xFD ho\u1EB7c ph\xE2n t\xEDch d\u1EEF li\u1EC7u c\u1EE5\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: C++ l\xE0m cho vi\u1EC7c l\u1EA5y m\u1ED9t chu\u1ED7\
+  i con tr\u1EDF n\xEAn d\u1EC5 d\xE0ng. `std::string` l\xE0 \u0111\u1ED3ng minh \u0111\
+  \xE1ng tin c\u1EADy c\u1EE7a ch\xFAng ta \u1EDF \u0111\xE2y, v\u1EDBi h\xE0m `substr()`\
+  \ th\u1EF1c hi\u1EC7n\u2026"
 lastmod: '2024-03-13T22:44:37.028291-06:00'
 model: gpt-4-0125-preview
-summary: "Tr\xEDch xu\u1EA5t c\xE1c chu\u1ED7i con c\xF3 ngh\u0129a l\xE0 l\u1EA5\
-  y ra nh\u1EEFng m\u1EA3nh nh\u1ECF t\u1EEB m\u1ED9t chu\u1ED7i l\u1EDBn h\u01A1\
-  n."
+summary: "C++ l\xE0m cho vi\u1EC7c l\u1EA5y m\u1ED9t chu\u1ED7i con tr\u1EDF n\xEA\
+  n d\u1EC5 d\xE0ng."
 title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 weight: 6
 ---

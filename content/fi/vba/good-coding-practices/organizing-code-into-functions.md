@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:56:48.087391-07:00
-description: "Koodin j\xE4rjest\xE4minen funktioihin Visual Basic for Applications\
-  \ (VBA) -ohjelmistossa tarkoittaa ohjelman pilkkomista pienempiin, hallittaviin\
-  \ osiin, joita\u2026"
+description: "Kuinka: VBA:ssa funktiot m\xE4\xE4ritell\xE4\xE4n k\xE4ytt\xE4m\xE4\
+  ll\xE4 `Function` ja `End Function` -lauseita. T\xE4ss\xE4 on yksinkertainen esimerkki\
+  \ siit\xE4, miten luoda funktio,\u2026"
 lastmod: '2024-03-13T22:44:56.406766-06:00'
 model: gpt-4-0125-preview
-summary: "Koodin j\xE4rjest\xE4minen funktioihin Visual Basic for Applications (VBA)\
-  \ -ohjelmistossa tarkoittaa ohjelman pilkkomista pienempiin, hallittaviin osiin,\
-  \ joita kutsutaan funktioiksi."
+summary: "VBA:ssa funktiot m\xE4\xE4ritell\xE4\xE4n k\xE4ytt\xE4m\xE4ll\xE4 `Function`\
+  \ ja `End Function` -lauseita."
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---

@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 01:11:55.080327-07:00
-description: "Organizar o c\xF3digo em fun\xE7\xF5es se trata de dividir o c\xF3digo\
-  \ em blocos reutiliz\xE1veis com prop\xF3sitos espec\xEDficos. Fazemos isso para\
-  \ tornar o c\xF3digo mais\u2026"
+description: "Como fazer: Vamos supor que voc\xEA est\xE1 escrevendo um script para\
+  \ calcular o quadrado e o cubo de um n\xFAmero. Sem fun\xE7\xF5es, \xE9 uma bagun\xE7\
+  a de repeti\xE7\xF5es."
 lastmod: '2024-03-13T22:44:46.159430-06:00'
 model: gpt-4-1106-preview
-summary: "Organizar o c\xF3digo em fun\xE7\xF5es se trata de dividir o c\xF3digo em\
-  \ blocos reutiliz\xE1veis com prop\xF3sitos espec\xEDficos."
+summary: "Vamos supor que voc\xEA est\xE1 escrevendo um script para calcular o quadrado\
+  \ e o cubo de um n\xFAmero."
 title: "Organizando o c\xF3digo em fun\xE7\xF5es"
 weight: 18
 ---

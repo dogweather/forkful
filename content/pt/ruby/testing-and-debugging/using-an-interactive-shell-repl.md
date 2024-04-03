@@ -1,11 +1,10 @@
 ---
 date: 2024-01-26 04:17:26.260591-07:00
-description: "Um shell interativo, ou REPL (Read-Eval-Print Loop, Ciclo de Ler-Avaliar-Imprimir),\
-  \ permite testar c\xF3digo em tempo real. Programadores o utilizam para\u2026"
+description: "Como Fazer: O REPL do Ruby \xE9 chamado de IRB (Interactive Ruby). Entre\
+  \ e experimente o Ruby diretamente do seu terminal."
 lastmod: '2024-03-13T22:44:47.097012-06:00'
 model: gpt-4-0125-preview
-summary: "Um shell interativo, ou REPL (Read-Eval-Print Loop, Ciclo de Ler-Avaliar-Imprimir),\
-  \ permite testar c\xF3digo em tempo real."
+summary: "O REPL do Ruby \xE9 chamado de IRB (Interactive Ruby)."
 title: Usando um shell interativo (REPL)
 weight: 34
 ---

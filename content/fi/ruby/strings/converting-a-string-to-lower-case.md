@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:39:01.554231-07:00
-description: "Muutetaan merkkijonot pieniksi kirjaimiksi. T\xE4m\xE4 on hy\xF6dyllist\xE4\
-  \ kun haluamme vertailla tekstej\xE4 riippumatta kirjainkoosta tai yhdenmukaistaa\
-  \ tietoja."
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:57.072145-06:00'
 model: gpt-4-1106-preview
-summary: Muutetaan merkkijonot pieniksi kirjaimiksi.
+summary: .
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---

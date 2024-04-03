@@ -2,14 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:22.109846-07:00
-description: "Les expressions r\xE9guli\xE8res, ou regex, sont des s\xE9quences de\
-  \ caract\xE8res qui forment un motif de recherche, souvent utilis\xE9 pour des t\xE2\
-  ches de\u2026"
+description: "Comment faire : La prise en charge native de Swift pour les regex utilise\
+  \ la classe `NSRegularExpression`, ainsi que les m\xE9thodes de plage et de\u2026"
 lastmod: '2024-03-13T22:44:58.206110-06:00'
 model: gpt-4-0125-preview
-summary: "Les expressions r\xE9guli\xE8res, ou regex, sont des s\xE9quences de caract\xE8\
-  res qui forment un motif de recherche, souvent utilis\xE9 pour des t\xE2ches de\
-  \ correspondance ou de manipulation de cha\xEEnes."
+summary: "La prise en charge native de Swift pour les regex utilise la classe `NSRegularExpression`,\
+  \ ainsi que les m\xE9thodes de plage et de remplacement de la classe String."
 title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---

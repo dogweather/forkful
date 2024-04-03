@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:39:12.302213-07:00
-description: "Komplexe Zahlen sind eine Kombination aus reellen und imagin\xE4ren\
-  \ Zahlen, wie `a + bi`, wobei `i` die Quadratwurzel von -1 ist. Sie sind entscheidend\
-  \ in\u2026"
+description: "Wie geht das: Elm unterst\xFCtzt komplexe Zahlen nicht direkt, daher\
+  \ m\xFCssen Sie Ihren eigenen Typ und Ihre eigenen Funktionen erstellen. Hier eine\
+  \ kurze\u2026"
 lastmod: '2024-03-13T22:44:53.798766-06:00'
 model: gpt-4-0125-preview
-summary: "Komplexe Zahlen sind eine Kombination aus reellen und imagin\xE4ren Zahlen,\
-  \ wie `a + bi`, wobei `i` die Quadratwurzel von -1 ist."
+summary: "Elm unterst\xFCtzt komplexe Zahlen nicht direkt, daher m\xFCssen Sie Ihren\
+  \ eigenen Typ und Ihre eigenen Funktionen erstellen."
 title: Umgang mit komplexen Zahlen
 weight: 14
 ---

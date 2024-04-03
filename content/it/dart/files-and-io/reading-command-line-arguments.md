@@ -2,15 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:41.840834-07:00
-description: "Leggere gli argomenti della riga di comando in Dart consente ai programmatori\
-  \ di inserire dati direttamente nella console quando eseguono un programma\u2026"
+description: "Come fare: Dart offre un approccio semplice per accedere agli argomenti\
+  \ della riga di comando tramite il `List<String> args` nel metodo principale. Di\u2026"
 lastmod: '2024-03-13T22:44:43.148969-06:00'
 model: gpt-4-0125-preview
-summary: "Leggere gli argomenti della riga di comando in Dart consente ai programmatori\
-  \ di inserire dati direttamente nella console quando eseguono un programma Dart,\
-  \ aumentando l'interattivit\xE0 e la flessibilit\xE0 per vari casi d'uso, inclusi\
-  \ script di automazione, strumenti CLI (interfaccia a riga di comando) o elaborazione\
-  \ batch."
+summary: Dart offre un approccio semplice per accedere agli argomenti della riga di
+  comando tramite il `List<String> args` nel metodo principale.
 title: Leggere gli argomenti della riga di comando
 weight: 23
 ---

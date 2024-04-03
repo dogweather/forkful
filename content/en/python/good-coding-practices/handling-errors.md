@@ -1,13 +1,9 @@
 ---
 date: 2024-01-21 21:19:35.648555-07:00
-description: "Handling errors in Python (or any programming language) is about expecting\
-  \ the unexpected \u2013 it\u2019s the art of gracefully managing when things go\
-  \ south in\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:59.714733-06:00'
 model: gpt-4-1106-preview
-summary: "Handling errors in Python (or any programming language) is about expecting\
-  \ the unexpected \u2013 it\u2019s the art of gracefully managing when things go\
-  \ south in your code."
+summary: .
 title: Handling errors
 weight: 16
 ---

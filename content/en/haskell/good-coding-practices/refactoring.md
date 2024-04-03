@@ -1,12 +1,11 @@
 ---
 date: 2024-01-25 02:11:50.210807-07:00
-description: "Refactoring is the process of tweaking your code without changing its\
-  \ external behavior. It's all about cleaning up and organizing your act to make\
-  \ the\u2026"
+description: "How to: Let's say you've got a chunk of Haskell code that's repeating\
+  \ itself more than your favorite song. Here's a quick look at how you might refactor\u2026"
 lastmod: '2024-03-13T22:45:00.136166-06:00'
 model: gpt-4-1106-preview
-summary: Refactoring is the process of tweaking your code without changing its external
-  behavior.
+summary: Let's say you've got a chunk of Haskell code that's repeating itself more
+  than your favorite song.
 title: Refactoring
 weight: 19
 ---

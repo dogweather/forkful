@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:02:03.289938-07:00
-description: "Een HTTP-verzoek verzenden in Visual Basic for Applications (VBA) houdt\
-  \ in dat je programmatisch toegang krijgt tot webbronnen of webservices door\u2026"
+description: "Hoe te: De sleutel tot het verzenden van een HTTP-verzoek in VBA is\
+  \ het gebruik van de `Microsoft XML, v6.0` bibliotheek (of oudere versies, afhankelijk\u2026"
 lastmod: '2024-03-13T22:44:50.633378-06:00'
 model: gpt-4-0125-preview
-summary: Een HTTP-verzoek verzenden in Visual Basic for Applications (VBA) houdt in
-  dat je programmatisch toegang krijgt tot webbronnen of webservices door verzoeken
-  over HTTP te doen.
+summary: De sleutel tot het verzenden van een HTTP-verzoek in VBA is het gebruik van
+  de `Microsoft XML, v6.0` bibliotheek (of oudere versies, afhankelijk van je systeem).
 title: Een HTTP-verzoek verzenden
 weight: 44
 ---

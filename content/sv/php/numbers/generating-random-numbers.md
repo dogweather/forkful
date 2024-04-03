@@ -1,14 +1,13 @@
 ---
 date: 2024-01-27 20:35:04.729292-07:00
-description: "Att generera slumpm\xE4ssiga nummer i PHP handlar om att producera of\xF6\
-  ruts\xE4gbara v\xE4rden inom ett angivet intervall, vilket \xE4r v\xE4sentligt f\xF6\
-  r uppgifter som\u2026"
+description: "Hur man g\xF6r: PHP erbjuder flera funktioner f\xF6r att generera slumpm\xE4\
+  ssiga nummer, men de vanligast anv\xE4nda \xE4r `rand()`, `mt_rand()`, och f\xF6\
+  r kryptografiska\u2026"
 lastmod: '2024-03-13T22:44:37.992229-06:00'
 model: gpt-4-0125-preview
-summary: "Att generera slumpm\xE4ssiga nummer i PHP handlar om att producera of\xF6\
-  ruts\xE4gbara v\xE4rden inom ett angivet intervall, vilket \xE4r v\xE4sentligt f\xF6\
-  r uppgifter som att skapa unika anv\xE4ndar-ID, generera l\xF6senord eller f\xF6\
-  r anv\xE4ndning i simuleringar och spel."
+summary: "PHP erbjuder flera funktioner f\xF6r att generera slumpm\xE4ssiga nummer,\
+  \ men de vanligast anv\xE4nda \xE4r `rand()`, `mt_rand()`, och f\xF6r kryptografiska\
+  \ \xE4ndam\xE5l, `random_int()`."
 title: Generera slumptal
 weight: 12
 ---

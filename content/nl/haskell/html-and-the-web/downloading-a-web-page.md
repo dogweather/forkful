@@ -2,12 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:01.024352-07:00
-description: "Een webpagina downloaden betekent het ophalen van de gegevens via het\
-  \ internet; het is alsof je een kopie opslaat om lokaal te lezen of te verwerken.\u2026"
+description: "Hoe: Laten we beginnen met een eenvoudig voorbeeld waarin we gebruik\
+  \ maken van de `http-conduit` bibliotheek van Haskell. Installeer het eerst met\
+  \ `cabal\u2026"
 lastmod: '2024-03-13T22:44:50.851031-06:00'
 model: gpt-4-0125-preview
-summary: Een webpagina downloaden betekent het ophalen van de gegevens via het internet;
-  het is alsof je een kopie opslaat om lokaal te lezen of te verwerken.
+summary: Laten we beginnen met een eenvoudig voorbeeld waarin we gebruik maken van
+  de `http-conduit` bibliotheek van Haskell.
 title: Een webpagina downloaden
 weight: 42
 ---

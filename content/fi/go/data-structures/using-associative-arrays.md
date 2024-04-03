@@ -2,12 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:02.869709-07:00
-description: "Assosiatiiviset taulukot, tunnetaan Go:ssa nimell\xE4 mapit, mahdollistavat\
-  \ avain-arvo parien tallentamisen, miss\xE4 jokainen uniikki avain mappautuu arvoon.\u2026"
+description: "Kuinka: Mapin luominen ja alustaminen Go:ssa voidaan tehd\xE4 monilla\
+  \ eri tavoilla. T\xE4ss\xE4 on perusesimerkki, jolla p\xE4\xE4set alkuun."
 lastmod: '2024-03-13T22:44:56.042800-06:00'
 model: gpt-4-0125-preview
-summary: "Assosiatiiviset taulukot, tunnetaan Go:ssa nimell\xE4 mapit, mahdollistavat\
-  \ avain-arvo parien tallentamisen, miss\xE4 jokainen uniikki avain mappautuu arvoon."
+summary: "Mapin luominen ja alustaminen Go:ssa voidaan tehd\xE4 monilla eri tavoilla."
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---

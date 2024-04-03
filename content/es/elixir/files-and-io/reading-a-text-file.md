@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:54:11.094975-07:00
-description: "Leer un archivo de texto significa acceder y obtener el contenido almacenado\
-  \ en \xE9l. Programadores realizamos esto para procesar datos, configuraciones,\
-  \ o\u2026"
+description: "C\xF3mo Hacerlo: Leer un archivo de texto en Elixir es sencillo. Utiliza\
+  \ `File.read/1` para leer el contenido completo o `File.stream!/3` para manejar\u2026"
 lastmod: '2024-03-13T22:44:58.720380-06:00'
 model: gpt-4-1106-preview
-summary: "Leer un archivo de texto significa acceder y obtener el contenido almacenado\
-  \ en \xE9l."
+summary: Leer un archivo de texto en Elixir es sencillo.
 title: Lectura de un archivo de texto
 weight: 22
 ---

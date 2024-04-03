@@ -2,12 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:10.631344-07:00
-description: "Regul\xE4re Ausdr\xFCcke (regex) in JavaScript sind Muster, die verwendet\
-  \ werden, um Zeichenkombinationen in Zeichenketten abzugleichen. Programmierer nutzen\u2026"
+description: 'Wie geht das: #.'
 lastmod: '2024-03-13T22:44:54.256190-06:00'
 model: gpt-4-0125-preview
-summary: "Regul\xE4re Ausdr\xFCcke (regex) in JavaScript sind Muster, die verwendet\
-  \ werden, um Zeichenkombinationen in Zeichenketten abzugleichen."
+summary: '#.'
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

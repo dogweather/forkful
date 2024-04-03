@@ -2,13 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:42.601248-07:00
-description: "\xC5 f\xE5 tak i den n\xE5v\xE6rende datoen i Dart inneb\xE6rer \xE5\
-  \ sp\xF8rre systemet om den n\xE5v\xE6rende datoen og tiden. Denne funksjonaliteten\
-  \ brukes ofte i applikasjoner\u2026"
+description: "Hvordan: Darts kjerneprogrambibliotek gir enkel tilgang til den n\xE5\
+  v\xE6rende datoen og tiden gjennom `DateTime`-klassen. Her er et grunnleggende eksempel\
+  \ for\u2026"
 lastmod: '2024-03-13T22:44:40.498759-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 f\xE5 tak i den n\xE5v\xE6rende datoen i Dart inneb\xE6rer \xE5 sp\xF8\
-  rre systemet om den n\xE5v\xE6rende datoen og tiden."
+summary: "Darts kjerneprogrambibliotek gir enkel tilgang til den n\xE5v\xE6rende datoen\
+  \ og tiden gjennom `DateTime`-klassen."
 title: "F\xE5 den n\xE5v\xE6rende datoen"
 weight: 29
 ---

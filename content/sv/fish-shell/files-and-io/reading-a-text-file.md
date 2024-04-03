@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:54:27.664942-07:00
-description: "L\xE4sa en textfil inneb\xE4r att tillg\xE5 och anv\xE4nda inneh\xE5\
-  llet i en fil i textformat. Programmerare g\xF6r detta f\xF6r att hantera konfigurationer,\
-  \ skript, eller\u2026"
+description: "Hur g\xF6r man: F\xF6r att l\xE4sa en textfil i Fish kan du anv\xE4\
+  nda cat, less, eller n\xE5got liknande kommando. H\xE4r \xE4r ett enkelt exempel\
+  \ med cat."
 lastmod: '2024-03-13T22:44:38.355577-06:00'
 model: gpt-4-1106-preview
-summary: "L\xE4sa en textfil inneb\xE4r att tillg\xE5 och anv\xE4nda inneh\xE5llet\
-  \ i en fil i textformat."
+summary: "F\xF6r att l\xE4sa en textfil i Fish kan du anv\xE4nda cat, less, eller\
+  \ n\xE5got liknande kommando."
 title: "L\xE4sa en textfil"
 weight: 22
 ---

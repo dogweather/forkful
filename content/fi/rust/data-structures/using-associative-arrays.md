@@ -2,13 +2,13 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:52.362748-07:00
-description: "Assosiatiiviset taulukot, tai kuten Rustin k\xE4ytt\xE4j\xE4t niit\xE4\
-  \ kutsuvat, \"hajautustaulukot\", ovat kokoelmia, jotka tallentavat dataa avain-arvo\
-  \ -pareina.\u2026"
+description: "Miten: Rustissa `HashMap`-tyyppi `std::collections`-moduulista tarjoaa\
+  \ assosiatiivisten taulukoiden toiminnallisuuden. N\xE4in voit ty\xF6skennell\xE4\
+  \ niiden\u2026"
 lastmod: '2024-03-13T22:44:56.349846-06:00'
 model: gpt-4-0125-preview
-summary: "Assosiatiiviset taulukot, tai kuten Rustin k\xE4ytt\xE4j\xE4t niit\xE4 kutsuvat,\
-  \ \"hajautustaulukot\", ovat kokoelmia, jotka tallentavat dataa avain-arvo -pareina."
+summary: Rustissa `HashMap`-tyyppi `std::collections`-moduulista tarjoaa assosiatiivisten
+  taulukoiden toiminnallisuuden.
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---

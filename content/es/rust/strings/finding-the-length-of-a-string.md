@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:48:19.021037-07:00
-description: "Encontrar la longitud de una cadena de texto en Rust nos dice cu\xE1\
-  ntos bytes ocupa. Esto importa al trabajar con textos: validar entradas, limitar\
-  \ tama\xF1o,\u2026"
+description: "C\xF3mo hacerlo: Ejemplos claros para obtener la longitud de una cadena\
+  \ en Rust."
 lastmod: '2024-03-13T22:44:58.837599-06:00'
 model: gpt-4-1106-preview
-summary: "Encontrar la longitud de una cadena de texto en Rust nos dice cu\xE1ntos\
-  \ bytes ocupa."
+summary: Ejemplos claros para obtener la longitud de una cadena en Rust.
 title: Calculando la longitud de una cadena
 weight: 7
 ---

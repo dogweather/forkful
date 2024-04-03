@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:10.286382-07:00
-description: "Comprobar si un directorio existe en Ruby permite a los programadores\
-  \ verificar la presencia de un directorio antes de realizar operaciones como leer\u2026"
+description: "C\xF3mo hacerlo: La biblioteca est\xE1ndar de Ruby proporciona m\xE9\
+  todos sencillos para verificar la existencia de un directorio. Aqu\xED te mostramos\
+  \ c\xF3mo hacerlo\u2026"
 lastmod: '2024-03-13T22:44:59.605299-06:00'
 model: gpt-4-0125-preview
-summary: Comprobar si un directorio existe en Ruby permite a los programadores verificar
-  la presencia de un directorio antes de realizar operaciones como leer archivos o
-  crear nuevos directorios.
+summary: "La biblioteca est\xE1ndar de Ruby proporciona m\xE9todos sencillos para\
+  \ verificar la existencia de un directorio."
 title: Comprobando si un directorio existe
 weight: 20
 ---

@@ -2,14 +2,10 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:01.670315-07:00
-description: "Le remaniement (Refactoring) dans Dart est le processus de restructuration\
-  \ du code existant sans en changer le comportement externe, visant \xE0 am\xE9liorer\
-  \ sa\u2026"
+description: 'Comment faire : #.'
 lastmod: '2024-03-13T22:44:57.399689-06:00'
 model: gpt-4-0125-preview
-summary: "Le remaniement (Refactoring) dans Dart est le processus de restructuration\
-  \ du code existant sans en changer le comportement externe, visant \xE0 am\xE9liorer\
-  \ sa structure interne, sa lisibilit\xE9 et sa maintenabilit\xE9."
+summary: '#.'
 title: Refactorisation
 weight: 19
 ---

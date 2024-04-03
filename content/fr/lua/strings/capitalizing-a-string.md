@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:46.817853-07:00
-description: "Mettre en majuscule une cha\xEEne de caract\xE8res consiste \xE0 modifier\
-  \ le premier caract\xE8re de chaque mot d'une phrase pour le mettre en majuscule,\
-  \ tout en\u2026"
+description: "Comment faire : Lua n'a pas de fonction int\xE9gr\xE9e pour mettre les\
+  \ cha\xEEnes en majuscule, mais vous pouvez facilement accomplir cette t\xE2che\
+  \ en utilisant des\u2026"
 lastmod: '2024-03-13T22:44:57.906136-06:00'
 model: gpt-4-0125-preview
-summary: "Mettre en majuscule une cha\xEEne de caract\xE8res consiste \xE0 modifier\
-  \ le premier caract\xE8re de chaque mot d'une phrase pour le mettre en majuscule,\
-  \ tout en s'assurant que les autres restent en minuscule."
+summary: "Lua n'a pas de fonction int\xE9gr\xE9e pour mettre les cha\xEEnes en majuscule,\
+  \ mais vous pouvez facilement accomplir cette t\xE2che en utilisant des fonctions\
+  \ de manipulation de cha\xEEnes de base."
 title: "Mettre en majuscule une cha\xEEne"
 weight: 2
 ---

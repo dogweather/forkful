@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:06.106143-07:00
-description: "Obtener la fecha actual en C++ es una tarea fundamental para programas\
-  \ que necesitan procesar o mostrar fechas basadas en el reloj del sistema. Es\u2026"
+description: "C\xF3mo hacerlo: C++ ofrece varias maneras de obtener la fecha actual,\
+  \ incluyendo la biblioteca est\xE1ndar de C++ y bibliotecas de terceros como Boost.\
+  \ Los\u2026"
 lastmod: '2024-03-13T22:44:59.385574-06:00'
 model: gpt-4-0125-preview
-summary: Obtener la fecha actual en C++ es una tarea fundamental para programas que
-  necesitan procesar o mostrar fechas basadas en el reloj del sistema.
+summary: "C++ ofrece varias maneras de obtener la fecha actual, incluyendo la biblioteca\
+  \ est\xE1ndar de C++ y bibliotecas de terceros como Boost."
 title: Obteniendo la fecha actual
 weight: 29
 ---

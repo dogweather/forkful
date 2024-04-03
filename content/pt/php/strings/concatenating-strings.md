@@ -1,11 +1,9 @@
 ---
 date: 2024-01-20 17:35:33.731743-07:00
-description: "Concatenar strings \xE9 basicamente junt\xE1-las para formar uma nova.\
-  \ Programadores fazem isso para montar mensagens, caminhos de arquivos, consultas\
-  \ SQL,\u2026"
+description: 'Como Faz: .'
 lastmod: '2024-03-13T22:44:46.659420-06:00'
 model: gpt-4-1106-preview
-summary: "Concatenar strings \xE9 basicamente junt\xE1-las para formar uma nova."
+summary: .
 title: Concatenando strings
 weight: 3
 ---

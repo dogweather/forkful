@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:12:57.820772-07:00
-description: "Trabalhar com XML em C envolve analisar, consultar e manipular documentos\
-  \ XML usando diversas bibliotecas. Programadores lidam com XML devido ao seu uso\u2026"
+description: "Como fazer: C n\xE3o possui suporte embutido para XML, ent\xE3o voc\xEA\
+  \ precisar\xE1 usar bibliotecas externas. Uma escolha popular \xE9 a `libxml2`,\
+  \ uma biblioteca\u2026"
 lastmod: '2024-03-13T22:44:47.076364-06:00'
 model: gpt-4-0125-preview
-summary: Trabalhar com XML em C envolve analisar, consultar e manipular documentos
-  XML usando diversas bibliotecas.
+summary: "C n\xE3o possui suporte embutido para XML, ent\xE3o voc\xEA precisar\xE1\
+  \ usar bibliotecas externas."
 title: Trabalhando com XML
 weight: 40
 ---

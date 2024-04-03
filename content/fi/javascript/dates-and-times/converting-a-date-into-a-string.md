@@ -1,12 +1,9 @@
 ---
 date: 2024-01-20 17:37:19.223982-07:00
-description: "Muuntaminen p\xE4iv\xE4m\xE4\xE4r\xE4st\xE4 merkkijonoksi on prosessi,\
-  \ jossa `Date`-objekti muutetaan luettavaan tekstiformaattiin. T\xE4m\xE4 on hy\xF6\
-  dyllist\xE4, koska n\xE4in\u2026"
+description: 'How to: .'
 lastmod: '2024-03-13T22:44:56.961336-06:00'
 model: gpt-4-1106-preview
-summary: "Muuntaminen p\xE4iv\xE4m\xE4\xE4r\xE4st\xE4 merkkijonoksi on prosessi, jossa\
-  \ `Date`-objekti muutetaan luettavaan tekstiformaattiin."
+summary: .
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---

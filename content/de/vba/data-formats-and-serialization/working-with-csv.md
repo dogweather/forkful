@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:05.516150-07:00
-description: "Die Arbeit mit CSV-Dateien (Comma Separated Values, durch Kommas getrennte\
-  \ Werte) beinhaltet das Lesen von oder das Schreiben in einfache Textdateien, bei\u2026"
+description: "Wie: Visual Basic f\xFCr Anwendungen (VBA) vereinfacht die Arbeit mit\
+  \ CSV-Dateien durch integrierte Funktionen und Methoden, die das Lesen von und das\u2026"
 lastmod: '2024-03-13T22:44:53.743257-06:00'
 model: gpt-4-0125-preview
-summary: Die Arbeit mit CSV-Dateien (Comma Separated Values, durch Kommas getrennte
-  Werte) beinhaltet das Lesen von oder das Schreiben in einfache Textdateien, bei
-  denen die Datenfelder durch Kommas getrennt sind.
+summary: "Visual Basic f\xFCr Anwendungen (VBA) vereinfacht die Arbeit mit CSV-Dateien\
+  \ durch integrierte Funktionen und Methoden, die das Lesen von und das Schreiben\
+  \ in diese Dateien nahtlos erm\xF6glichen."
 title: Arbeiten mit CSV
 weight: 37
 ---

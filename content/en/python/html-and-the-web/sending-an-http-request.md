@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 18:00:10.605176-07:00
-description: "Sending an HTTP request is how your code asks another system for data\
-  \ or services over the web. Programmers do this to interact with web APIs, fetch\
-  \ web\u2026"
+description: 'How to: Python''s third-party `requests` library makes HTTP calls a
+  breeze. Below is how to send a simple GET request.'
 lastmod: '2024-03-13T22:44:59.705350-06:00'
 model: gpt-4-1106-preview
-summary: Sending an HTTP request is how your code asks another system for data or
-  services over the web.
+summary: Python's third-party `requests` library makes HTTP calls a breeze.
 title: Sending an HTTP request
 weight: 44
 ---

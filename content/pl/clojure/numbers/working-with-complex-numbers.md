@@ -1,12 +1,12 @@
 ---
 date: 2024-01-26 04:39:13.454494-07:00
-description: "Liczby zespolone rozszerzaj\u0105 liczby rzeczywiste o dodatkow\u0105\
-  \ cz\u0119\u015B\u0107, jednostk\u0119 urojon\u0105 'i'. Programi\u015Bci u\u017C\
-  ywaj\u0105 ich w r\xF3\u017Cnych dziedzinach, w tym w\u2026"
+description: "Jak to zrobi\u0107: Clojure oferuje wbudowane wsparcie dla liczb zespolonych\
+  \ poprzez klas\u0119 narz\u0119dziow\u0105 `clojure.lang.Numbers`. U\u017Cyj `complex`,\
+  \ aby tworzy\u0107\u2026"
 lastmod: '2024-03-13T22:44:34.988500-06:00'
 model: gpt-4-0125-preview
-summary: "Liczby zespolone rozszerzaj\u0105 liczby rzeczywiste o dodatkow\u0105 cz\u0119\
-  \u015B\u0107, jednostk\u0119 urojon\u0105 'i'."
+summary: "Clojure oferuje wbudowane wsparcie dla liczb zespolonych poprzez klas\u0119\
+  \ narz\u0119dziow\u0105 `clojure.lang.Numbers`."
 title: Praca z liczbami zespolonymi
 weight: 14
 ---

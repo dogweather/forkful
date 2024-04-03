@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:32.796928-07:00
-description: "Capitalizar una cadena en Swift modifica la cadena dada de modo que\
-  \ su primer car\xE1cter sea may\xFAscula y los caracteres restantes sean min\xFA\
-  sculas. Los\u2026"
+description: "C\xF3mo hacerlo: Las estructuras `String` de Swift vienen con un par\
+  \ de m\xE9todos integrados para manipular el caso de las cadenas. Aqu\xED hay algunos\
+  \ enfoques\u2026"
 lastmod: '2024-03-13T22:44:59.400313-06:00'
 model: gpt-4-0125-preview
-summary: "Capitalizar una cadena en Swift modifica la cadena dada de modo que su primer\
-  \ car\xE1cter sea may\xFAscula y los caracteres restantes sean min\xFAsculas."
+summary: "Las estructuras `String` de Swift vienen con un par de m\xE9todos integrados\
+  \ para manipular el caso de las cadenas."
 title: Capitalizando una cadena de texto
 weight: 2
 ---

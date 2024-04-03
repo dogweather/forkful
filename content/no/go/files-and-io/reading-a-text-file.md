@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:06:06.310072-07:00
-description: "\xC5 lese en tekstfil i Go inneb\xE6rer \xE5 f\xE5 tilgang til og hente\
-  \ innhold fra en fil lagret p\xE5 disk for bearbeiding eller analyse. Programmerere\
-  \ utf\xF8rer ofte\u2026"
+description: "Hvordan: \xC5 lese en tekstfil i Go kan oppn\xE5s p\xE5 flere m\xE5\
+  ter, men en av de mest direkte metodene er \xE5 bruke `ioutil`-pakken. Her er et\
+  \ grunnleggende\u2026"
 lastmod: '2024-03-13T22:44:40.286442-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 lese en tekstfil i Go inneb\xE6rer \xE5 f\xE5 tilgang til og hente\
-  \ innhold fra en fil lagret p\xE5 disk for bearbeiding eller analyse."
+summary: "\xC5 lese en tekstfil i Go kan oppn\xE5s p\xE5 flere m\xE5ter, men en av\
+  \ de mest direkte metodene er \xE5 bruke `ioutil`-pakken."
 title: Lese en tekstfil
 weight: 22
 ---

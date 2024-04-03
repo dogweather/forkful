@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:00.912368-07:00
-description: "In \u1EA5n d\u1EEF li\u1EC7u g\u1EE1 r\u1ED1i (debug output) t\u1EE9\
-  c l\xE0 vi\u1EC7c ph\xE1t ra th\xF4ng tin ph\u1EE5 tr\u1EE3 \u0111\u1EC3 gi\xFA\
-  p b\u1EA1n hi\u1EC3u code c\u1EE7a m\xECnh \u0111ang l\xE0m g\xEC. L\u1EADp tr\xEC\
-  nh vi\xEAn l\xE0m vi\u1EC7c n\xE0y \u0111\u1EC3 ph\xE1t\u2026"
+description: "C\xE1ch l\xE0m: L\xE0m quen v\u1EDBi `echo` - dao g\u0103m Th\u1EE5\
+  y S\u0129 cho vi\u1EC7c xu\u1EA5t d\u1EEF li\u1EC7u trong Fish. D\u01B0\u1EDBi \u0111\
+  \xE2y l\xE0 c\xE1ch \u0111\u1EC3 r\u1EA3i r\xE1c in \u1EA5n g\u1EE1 r\u1ED1i v\xE0\
+  o c\xE1c k\u1ECBch b\u1EA3n shell c\u1EE7a b\u1EA1n."
 lastmod: '2024-03-13T22:44:37.214112-06:00'
 model: gpt-4-0125-preview
-summary: "In \u1EA5n d\u1EEF li\u1EC7u g\u1EE1 r\u1ED1i (debug output) t\u1EE9c l\xE0\
-  \ vi\u1EC7c ph\xE1t ra th\xF4ng tin ph\u1EE5 tr\u1EE3 \u0111\u1EC3 gi\xFAp b\u1EA1\
-  n hi\u1EC3u code c\u1EE7a m\xECnh \u0111ang l\xE0m g\xEC."
+summary: "L\xE0m quen v\u1EDBi `echo` - dao g\u0103m Th\u1EE5y S\u0129 cho vi\u1EC7\
+  c xu\u1EA5t d\u1EEF li\u1EC7u trong Fish."
 title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 weight: 33
 ---

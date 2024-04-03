@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:01:08.375950-07:00
-description: "Wyszukiwanie i zamiana tekstu w Visual Basic dla Aplikacji (VBA) jest\
-  \ niezb\u0119dne do programistycznego edytowania dokument\xF3w, arkuszy kalkulacyjnych\
-  \ i baz\u2026"
+description: "Jak to zrobi\u0107: W VBA, wyszukiwanie i zamiana tekstu mo\u017Ce by\u0107\
+  \ osi\u0105gni\u0119te za pomoc\u0105 funkcji `Replace` lub poprzez specyficzne\
+  \ modele obiekt\xF3w w aplikacjach\u2026"
 lastmod: '2024-03-13T22:44:35.214092-06:00'
 model: gpt-4-0125-preview
-summary: "Wyszukiwanie i zamiana tekstu w Visual Basic dla Aplikacji (VBA) jest niezb\u0119\
-  dne do programistycznego edytowania dokument\xF3w, arkuszy kalkulacyjnych i baz\
-  \ danych."
+summary: "W VBA, wyszukiwanie i zamiana tekstu mo\u017Ce by\u0107 osi\u0105gni\u0119\
+  te za pomoc\u0105 funkcji `Replace` lub poprzez specyficzne modele obiekt\xF3w w\
+  \ aplikacjach takich jak Excel czy Word."
 title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---

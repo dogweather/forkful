@@ -1,11 +1,11 @@
 ---
 date: 2024-02-01 21:30:14.564394-07:00
-description: "Downloading a web page in Visual Basic for Applications (VBA) involves\
-  \ fetching the HTML content of a web page from the Internet. Programmers often\u2026"
+description: "How to: To download a web page in VBA, you can make use of the Microsoft\
+  \ XML, v6.0 (MSXML6) library, which enables server HTTP requests. Before diving\u2026"
 lastmod: '2024-03-13T22:44:59.933229-06:00'
 model: gpt-4-0125-preview
-summary: Downloading a web page in Visual Basic for Applications (VBA) involves fetching
-  the HTML content of a web page from the Internet.
+summary: To download a web page in VBA, you can make use of the Microsoft XML, v6.0
+  (MSXML6) library, which enables server HTTP requests.
 title: Downloading a web page
 weight: 42
 ---

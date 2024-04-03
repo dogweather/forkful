@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:31.213254-07:00
-description: "Das L\xF6schen von Zeichen, die einem spezifischen Muster entsprechen,\
-  \ bezieht sich auf das Entfernen bestimmter Zeichen oder Zeichenfolgen aus\u2026"
+description: "Wie: In Go kann das L\xF6schen von Zeichen, die einem Muster entsprechen,\
+  \ effizient mit dem `regexp`-Paket erreicht werden. Hier zeigen wir, wie man zun\xE4\
+  chst\u2026"
 lastmod: '2024-03-13T22:44:53.269820-06:00'
 model: gpt-4-0125-preview
-summary: "Das L\xF6schen von Zeichen, die einem spezifischen Muster entsprechen, bezieht\
-  \ sich auf das Entfernen bestimmter Zeichen oder Zeichenfolgen aus Zeichenketten,\
-  \ basierend auf Regeln, die durch ein Muster definiert sind (normalerweise \xFC\
-  ber regul\xE4re Ausdr\xFCcke)."
+summary: "In Go kann das L\xF6schen von Zeichen, die einem Muster entsprechen, effizient\
+  \ mit dem `regexp`-Paket erreicht werden."
 title: "Zeichen l\xF6schen, die einem Muster entsprechen"
 weight: 5
 ---

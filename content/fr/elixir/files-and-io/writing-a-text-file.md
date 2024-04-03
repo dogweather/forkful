@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:31.829985-07:00
-description: "\xC9crire dans un fichier texte avec Elixir est une comp\xE9tence essentielle\
-  \ pour les d\xE9veloppeurs, permettant la persistance des donn\xE9es, le journalisation\
-  \ ou\u2026"
+description: "Comment faire : Elixir rend la manipulation de fichiers simple avec\
+  \ des modules int\xE9gr\xE9s. La principale mani\xE8re d'\xE9crire dans un fichier\
+  \ est d'utiliser\u2026"
 lastmod: '2024-03-13T22:44:57.347426-06:00'
 model: gpt-4-0125-preview
-summary: "\xC9crire dans un fichier texte avec Elixir est une comp\xE9tence essentielle\
-  \ pour les d\xE9veloppeurs, permettant la persistance des donn\xE9es, le journalisation\
-  \ ou l'exportation de contenu lisible par l'homme."
+summary: "Elixir rend la manipulation de fichiers simple avec des modules int\xE9\
+  gr\xE9s."
 title: "R\xE9diger un fichier texte"
 weight: 24
 ---

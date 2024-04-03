@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:46.961052-07:00
-description: "Express\xF5es regulares (regex) fornecem uma maneira de buscar, combinar\
-  \ e manipular strings usando padr\xF5es definidos. Programadores as utilizam\u2026"
+description: "Como fazer: Para usar express\xF5es regulares em C, voc\xEA trabalhar\xE1\
+  \ principalmente com a biblioteca regex POSIX (`<regex.h>`). Este exemplo demonstra\u2026"
 lastmod: '2024-03-13T22:44:47.038555-06:00'
 model: gpt-4-0125-preview
-summary: "Express\xF5es regulares (regex) fornecem uma maneira de buscar, combinar\
-  \ e manipular strings usando padr\xF5es definidos."
+summary: "Para usar express\xF5es regulares em C, voc\xEA trabalhar\xE1 principalmente\
+  \ com a biblioteca regex POSIX (`<regex.h>`)."
 title: "Usando express\xF5es regulares"
 weight: 11
 ---

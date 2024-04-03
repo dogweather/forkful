@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:17.074415-07:00
-description: "Att skriva en textfil i Kotlin inneb\xE4r att skapa en fil och mata\
-  \ in textinneh\xE5ll i den, en vanlig uppgift f\xF6r att lagra data, logga eller\u2026"
+description: "Hur man g\xF6r: Kotlin tillhandah\xE5ller ett enkelt tillv\xE4gag\xE5\
+  ngss\xE4tt f\xF6r att skriva till filer, genom att dra nytta av standardbiblioteket\
+  \ utan att beh\xF6va\u2026"
 lastmod: '2024-03-13T22:44:37.889356-06:00'
 model: gpt-4-0125-preview
-summary: "Att skriva en textfil i Kotlin inneb\xE4r att skapa en fil och mata in textinneh\xE5\
-  ll i den, en vanlig uppgift f\xF6r att lagra data, logga eller konfigurationsinst\xE4\
-  llningar."
+summary: "Kotlin tillhandah\xE5ller ett enkelt tillv\xE4gag\xE5ngss\xE4tt f\xF6r att\
+  \ skriva till filer, genom att dra nytta av standardbiblioteket utan att beh\xF6\
+  va ytterligare tredjepartsbibliotek."
 title: Att skriva en textfil
 weight: 24
 ---

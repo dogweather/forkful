@@ -2,13 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:27.294574-07:00
-description: "Het aanmaken van een tijdelijk bestand in Go maakt de creatie van een\
-  \ niet-persistent bestand mogelijk dat ontworpen is voor kortetermijngebruik,\u2026"
+description: "Hoe te: In Go bood het `ioutil`-pakket oorspronkelijk hulpprogramma's\
+  \ voor het aanmaken van tijdelijke bestanden. Echter, Go 1.16 bevorderde het gebruik\u2026"
 lastmod: '2024-03-13T22:44:50.307296-06:00'
 model: gpt-4-0125-preview
-summary: Het aanmaken van een tijdelijk bestand in Go maakt de creatie van een niet-persistent
-  bestand mogelijk dat ontworpen is voor kortetermijngebruik, voornamelijk voor taken
-  zoals het opslaan van tussenliggende data of het assisteren bij batchverwerkingsjobs.
+summary: In Go bood het `ioutil`-pakket oorspronkelijk hulpprogramma's voor het aanmaken
+  van tijdelijke bestanden.
 title: Een tijdelijk bestand aanmaken
 weight: 21
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-02-03 19:02:33.752386-07:00
-description: "Getting the current date in JavaScript is a fundamental task, involving\
-  \ retrieving and possibly manipulating today's date and time. Programmers perform\u2026"
+description: "How to: In vanilla JavaScript, the `Date` object is used to work with\
+  \ dates and times. Here\u2019s how you can get the current date and time."
 lastmod: '2024-03-13T22:45:00.443414-06:00'
 model: gpt-4-0125-preview
-summary: Getting the current date in JavaScript is a fundamental task, involving retrieving
-  and possibly manipulating today's date and time.
+summary: In vanilla JavaScript, the `Date` object is used to work with dates and times.
 title: Getting the current date
 weight: 29
 ---

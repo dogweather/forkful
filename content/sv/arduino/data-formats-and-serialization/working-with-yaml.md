@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:25:01.159986-07:00
-description: "YAML (YAML Ain't Markup Language) \xE4r en standard f\xF6r serialisering\
-  \ av data som \xE4r l\xE4sbar f\xF6r m\xE4nniskor och kan anv\xE4ndas f\xF6r konfigurationsfiler,\u2026"
+description: "Hur man g\xF6r: Att arbeta med YAML direkt p\xE5 Arduino \xE4r inte\
+  \ lika rakt p\xE5 sak som i milj\xF6er med h\xF6gre programmeringsniv\xE5 p\xE5\
+  \ grund av begr\xE4nsningar i minne\u2026"
 lastmod: '2024-03-13T22:44:38.188267-06:00'
 model: gpt-4-0125-preview
-summary: "YAML (YAML Ain't Markup Language) \xE4r en standard f\xF6r serialisering\
-  \ av data som \xE4r l\xE4sbar f\xF6r m\xE4nniskor och kan anv\xE4ndas f\xF6r konfigurationsfiler,\
-  \ kommunikation mellan program och datalagring."
+summary: "Att arbeta med YAML direkt p\xE5 Arduino \xE4r inte lika rakt p\xE5 sak\
+  \ som i milj\xF6er med h\xF6gre programmeringsniv\xE5 p\xE5 grund av begr\xE4nsningar\
+  \ i minne och fr\xE5nvaro av inbyggda YAML-behandlingsbibliotek."
 title: Att Arbeta med YAML
 weight: 41
 ---

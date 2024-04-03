@@ -2,12 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:39.219358-07:00
-description: "Los n\xFAmeros complejos constan de una parte real y una parte imaginaria,\
-  \ representados como `a + bi` donde `i` es la ra\xEDz cuadrada de `-1`. Los\u2026"
+description: "C\xF3mo hacerlo: En C, los n\xFAmeros complejos son soportados por la\
+  \ Biblioteca Est\xE1ndar, espec\xEDficamente por `<complex.h>`. Para utilizarlos,\
+  \ declara\u2026"
 lastmod: '2024-03-13T22:44:59.538566-06:00'
 model: gpt-4-0125-preview
-summary: "Los n\xFAmeros complejos constan de una parte real y una parte imaginaria,\
-  \ representados como `a + bi` donde `i` es la ra\xEDz cuadrada de `-1`."
+summary: "En C, los n\xFAmeros complejos son soportados por la Biblioteca Est\xE1\
+  ndar, espec\xEDficamente por `<complex.h>`."
 title: "Trabajando con n\xFAmeros complejos"
 weight: 14
 ---

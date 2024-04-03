@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 17:43:45.385316-07:00
-description: "Scaricare una pagina web significa copiare i suoi contenuti dal server\
-  \ a un dispositivo locale; i programmatori lo fanno per analizzare dati, testare\u2026"
+description: "Come fare: Elixir rende il download delle pagine web un gioco da ragazzi\
+  \ con la libreria HTTPoison. Installala aggiungendo `{:httpoison, \"~> 1.8\"}` al\
+  \ tuo\u2026"
 lastmod: '2024-03-13T22:44:43.082548-06:00'
 model: gpt-4-1106-preview
-summary: Scaricare una pagina web significa copiare i suoi contenuti dal server a
-  un dispositivo locale; i programmatori lo fanno per analizzare dati, testare performance
-  o accedere a informazioni senza un browser web.
+summary: Elixir rende il download delle pagine web un gioco da ragazzi con la libreria
+  HTTPoison.
 title: Scaricare una pagina web
 weight: 42
 ---

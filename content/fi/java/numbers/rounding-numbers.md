@@ -1,12 +1,11 @@
 ---
 date: 2024-01-26 03:45:11.399172-07:00
-description: "Numeroiden py\xF6rist\xE4minen tarkoittaa niiden s\xE4\xE4t\xE4mist\xE4\
-  \ tiettyyn tarkkuusasteeseen. Ohjelmoijat tekev\xE4t sen yksinkertaistaakseen numeroita\
-  \ luettavuuden\u2026"
+description: "Miten: Java tarjoaa useita tapoja py\xF6rist\xE4\xE4 numeroita. T\xE4\
+  ss\xE4 nopea demo `Math.round()`, `BigDecimal` ja `DecimalFormat` k\xE4yt\xF6st\xE4\
+  ."
 lastmod: '2024-03-13T22:44:56.439819-06:00'
 model: gpt-4-0125-preview
-summary: "Numeroiden py\xF6rist\xE4minen tarkoittaa niiden s\xE4\xE4t\xE4mist\xE4\
-  \ tiettyyn tarkkuusasteeseen."
+summary: "Java tarjoaa useita tapoja py\xF6rist\xE4\xE4 numeroita."
 title: "Numerojen py\xF6rist\xE4minen"
 weight: 13
 ---

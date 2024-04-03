@@ -1,12 +1,12 @@
 ---
 date: 2024-01-20 18:01:25.700822-07:00
-description: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica permite a tu\
-  \ aplicaci\xF3n comunicarse con servicios web que requieren usuario y contrase\xF1\
-  a. Los\u2026"
+description: "C\xF3mo Hacerlo Primero, aseg\xFArate de tener `using System.Net;` y\
+  \ `using System.Text;` en tu archivo. Aqu\xED hay un ejemplo de c\xF3mo enviar una\
+  \ solicitud con\u2026"
 lastmod: '2024-03-13T22:44:59.077975-06:00'
 model: gpt-4-1106-preview
-summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica permite a tu aplicaci\xF3\
-  n comunicarse con servicios web que requieren usuario y contrase\xF1a."
+summary: "Primero, aseg\xFArate de tener `using System.Net;` y `using System.Text;`\
+  \ en tu archivo."
 title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
 weight: 45
 ---

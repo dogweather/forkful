@@ -1,13 +1,10 @@
 ---
 date: 2024-01-26 01:08:24.953033-07:00
-description: "Loggf\xF8ring er prosessen med \xE5 registrere hendelser i en applikasjon\
-  \ mens et program kj\xF8rer, og gir en sporlogg for analyse etter hendelsen og overv\xE5\
-  kning\u2026"
+description: "Hvordan: Python kommer med en innebygd modul for loggf\xF8ring. Her\
+  \ er en enkel oppsett."
 lastmod: '2024-03-13T22:44:40.367888-06:00'
 model: gpt-4-1106-preview
-summary: "Loggf\xF8ring er prosessen med \xE5 registrere hendelser i en applikasjon\
-  \ mens et program kj\xF8rer, og gir en sporlogg for analyse etter hendelsen og overv\xE5\
-  kning i sanntid."
+summary: "Python kommer med en innebygd modul for loggf\xF8ring."
 title: "Loggf\xF8ring"
 weight: 17
 ---

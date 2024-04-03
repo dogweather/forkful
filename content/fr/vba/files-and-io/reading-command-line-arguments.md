@@ -2,14 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:03.768832-07:00
-description: "La lecture des arguments de la ligne de commande dans Visual Basic pour\
-  \ Applications (VBA) implique l'acc\xE8s aux param\xE8tres pass\xE9s \xE0 votre\
-  \ programme lors\u2026"
+description: "Comment faire : Contrairement \xE0 des environnements de programmation\
+  \ plus simples, VBA n'a pas de fonction int\xE9gr\xE9e pour lire directement les\
+  \ arguments de\u2026"
 lastmod: '2024-03-13T22:44:57.598492-06:00'
 model: gpt-4-0125-preview
-summary: "La lecture des arguments de la ligne de commande dans Visual Basic pour\
-  \ Applications (VBA) implique l'acc\xE8s aux param\xE8tres pass\xE9s \xE0 votre\
-  \ programme lors de son ex\xE9cution."
+summary: "Contrairement \xE0 des environnements de programmation plus simples, VBA\
+  \ n'a pas de fonction int\xE9gr\xE9e pour lire directement les arguments de la ligne\
+  \ de commande dans un sens conventionnel parce qu'il est principalement con\xE7\
+  u pour \xEAtre int\xE9gr\xE9 dans les applications Microsoft Office."
 title: Lecture des arguments de ligne de commande
 weight: 23
 ---

@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 18:04:38.947128-07:00
-description: "Att b\xF6rja ett nytt projekt inneb\xE4r att skapa en grund f\xF6r din\
-  \ kodstruktur. Programmerare tar detta steg f\xF6r att organisera sina id\xE9er\
-  \ och bygga en h\xE5llbar\u2026"
+description: "How to: F\xF6r att kickstarta ett nytt Rust-projekt anv\xE4nder vi `cargo`,\
+  \ Rusts inbyggda paketmanager och byggverktyg. H\xE4r \xE4r grunderna."
 lastmod: '2024-03-13T22:44:37.699050-06:00'
 model: gpt-4-1106-preview
-summary: "Att b\xF6rja ett nytt projekt inneb\xE4r att skapa en grund f\xF6r din kodstruktur."
+summary: "F\xF6r att kickstarta ett nytt Rust-projekt anv\xE4nder vi `cargo`, Rusts\
+  \ inbyggda paketmanager och byggverktyg."
 title: "Att p\xE5b\xF6rja ett nytt projekt"
 weight: 1
 ---

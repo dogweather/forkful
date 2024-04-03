@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:27.005473-07:00
-description: "YAML, acronimo di YAML Ain't Markup Language, \xE8 un formato di serializzazione\
-  \ di dati leggibile dall'uomo. I programmatori utilizzano YAML per file di\u2026"
+description: "Come fare: Leggere e scrivere YAML in Python in genere comporta l'utilizzo\
+  \ di una libreria di terze parti, con `PyYAML` che \xE8 la pi\xF9 popolare. Per\u2026"
 lastmod: '2024-03-13T22:44:43.021341-06:00'
 model: gpt-4-0125-preview
-summary: "YAML, acronimo di YAML Ain't Markup Language, \xE8 un formato di serializzazione\
-  \ di dati leggibile dall'uomo."
+summary: "Leggere e scrivere YAML in Python in genere comporta l'utilizzo di una libreria\
+  \ di terze parti, con `PyYAML` che \xE8 la pi\xF9 popolare."
 title: Lavorare con YAML
 weight: 41
 ---

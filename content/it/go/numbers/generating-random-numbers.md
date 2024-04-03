@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:21.411954-07:00
-description: "Generare numeri casuali nella programmazione riguarda la creazione di\
-  \ una sequenza di numeri che non pu\xF2 essere prevista ragionevolmente meglio che\
-  \ a\u2026"
+description: "Come fare: In Go, i numeri casuali sono generati utilizzando il pacchetto\
+  \ `math/rand` per numeri pseudo-casuali o `crypto/rand` per numeri pseudo-casuali\u2026"
 lastmod: '2024-03-13T22:44:42.903510-06:00'
 model: gpt-4-0125-preview
-summary: "Generare numeri casuali nella programmazione riguarda la creazione di una\
-  \ sequenza di numeri che non pu\xF2 essere prevista ragionevolmente meglio che a\
-  \ caso."
+summary: In Go, i numeri casuali sono generati utilizzando il pacchetto `math/rand`
+  per numeri pseudo-casuali o `crypto/rand` per numeri pseudo-casuali criptograficamente
+  sicuri.
 title: Generazione di numeri casuali
 weight: 12
 ---

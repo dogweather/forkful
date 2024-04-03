@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:59:51.591440-07:00
-description: "Leggere gli argomenti della riga di comando in Google Apps Script \xE8\
-  \ un po' improprio perch\xE9, a differenza delle interfacce a riga di comando tradizionali\u2026"
+description: "Come fare: Per emulare il processo di lettura degli argomenti della\
+  \ riga di comando in Google Apps Script, in particolare per le applicazioni web,\
+  \ puoi\u2026"
 lastmod: '2024-03-13T22:44:42.972992-06:00'
 model: gpt-4-0125-preview
-summary: "Leggere gli argomenti della riga di comando in Google Apps Script \xE8 un\
-  \ po' improprio perch\xE9, a differenza delle interfacce a riga di comando tradizionali\
-  \ nei linguaggi di programmazione come Python o Node."
+summary: Per emulare il processo di lettura degli argomenti della riga di comando
+  in Google Apps Script, in particolare per le applicazioni web, puoi utilizzare i
+  parametri della stringa di query.
 title: Leggere gli argomenti della riga di comando
 weight: 23
 ---

@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:37:45.392595-07:00
-description: "Das Umwandeln eines Strings in Kleinbuchstaben bedeutet, alle Buchstaben\
-  \ des Strings in ihre entsprechenden Kleinbuchstabenversionen zu konvertieren.\u2026"
+description: 'So geht''s: Hier ist ein einfaches Beispiel, wie du einen String in
+  Kleinbuchstaben umwandelst.'
 lastmod: '2024-03-13T22:44:54.132348-06:00'
 model: gpt-4-1106-preview
-summary: Das Umwandeln eines Strings in Kleinbuchstaben bedeutet, alle Buchstaben
-  des Strings in ihre entsprechenden Kleinbuchstabenversionen zu konvertieren.
+summary: Hier ist ein einfaches Beispiel, wie du einen String in Kleinbuchstaben umwandelst.
 title: Umformung eines Strings in Kleinbuchstaben
 weight: 4
 ---

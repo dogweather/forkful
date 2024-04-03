@@ -1,11 +1,10 @@
 ---
 date: 2024-02-01 21:30:25.221283-07:00
-description: "Finding the length of a string in Visual Basic for Applications (VBA)\
-  \ involves determining the number of characters it contains. Programmers frequently\u2026"
+description: "How to: In VBA, the `Len` function is your go-to for finding the length\
+  \ of a string. It returns an integer representing the number of characters in a\u2026"
 lastmod: '2024-03-13T22:44:59.926341-06:00'
 model: gpt-4-0125-preview
-summary: Finding the length of a string in Visual Basic for Applications (VBA) involves
-  determining the number of characters it contains.
+summary: In VBA, the `Len` function is your go-to for finding the length of a string.
 title: Finding the length of a string
 weight: 7
 ---

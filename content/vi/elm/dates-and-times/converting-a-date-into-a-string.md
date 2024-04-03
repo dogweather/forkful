@@ -2,16 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:36.871157-07:00
-description: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i ngh\u0129\
-  a l\xE0 bi\u1EBFn m\u1ED9t gi\xE1 tr\u1ECB ng\xE0y, m\xE0 m\xE1y t\xEDnh c\xF3 th\u1EC3\
-  \ hi\u1EC3u, th\xE0nh \u0111\u1ECBnh d\u1EA1ng d\u1EC5 \u0111\u1ECDc cho con ng\u01B0\
-  \u1EDDi. Ch\xFAng ta l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3\u2026"
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong Elm, b\u1EA1n s\u1EED d\u1EE5ng module\
+  \ `Date` \u0111\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi ng\xE0y th\xE1ng, v\xE0 g\xF3i `elm/time`\
+  \ cung c\u1EA5p c\xE1c h\xE0m \u0111\u1EC3 chuy\u1EC3n \u0111\u1ED5i ng\xE0y th\xE0\
+  nh chu\u1ED7i. H\xE3y\u2026"
 lastmod: '2024-03-13T22:44:36.559790-06:00'
 model: gpt-4-0125-preview
-summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i ngh\u0129\
-  a l\xE0 bi\u1EBFn m\u1ED9t gi\xE1 tr\u1ECB ng\xE0y, m\xE0 m\xE1y t\xEDnh c\xF3 th\u1EC3\
-  \ hi\u1EC3u, th\xE0nh \u0111\u1ECBnh d\u1EA1ng d\u1EC5 \u0111\u1ECDc cho con ng\u01B0\
-  \u1EDDi."
+summary: "Trong Elm, b\u1EA1n s\u1EED d\u1EE5ng module `Date` \u0111\u1EC3 l\xE0m\
+  \ vi\u1EC7c v\u1EDBi ng\xE0y th\xE1ng, v\xE0 g\xF3i `elm/time` cung c\u1EA5p c\xE1\
+  c h\xE0m \u0111\u1EC3 chuy\u1EC3n \u0111\u1ED5i ng\xE0y th\xE0nh chu\u1ED7i."
 title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 weight: 28
 ---

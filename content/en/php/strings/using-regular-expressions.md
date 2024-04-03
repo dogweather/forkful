@@ -1,11 +1,11 @@
 ---
 date: 2024-02-03 19:03:06.388600-07:00
-description: "Regular expressions (regex) in PHP are patterns used to match character\
-  \ combinations in strings, allowing for sophisticated search-and-replace operations\u2026"
+description: "How to: PHP supports regular expressions through the PCRE (Perl Compatible\
+  \ Regular Expressions) library, offering a rich set of functions. Here's how to\u2026"
 lastmod: '2024-03-13T22:45:00.157455-06:00'
 model: gpt-4-0125-preview
-summary: Regular expressions (regex) in PHP are patterns used to match character combinations
-  in strings, allowing for sophisticated search-and-replace operations and data validation.
+summary: PHP supports regular expressions through the PCRE (Perl Compatible Regular
+  Expressions) library, offering a rich set of functions.
 title: Using regular expressions
 weight: 11
 ---

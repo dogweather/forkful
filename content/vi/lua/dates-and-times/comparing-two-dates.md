@@ -2,15 +2,17 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:40.735201-07:00
-description: "So s\xE1nh hai ng\xE0y c\xF3 ngh\u0129a l\xE0 x\xE1c \u0111\u1ECBnh\
-  \ xem m\u1ED9t ng\xE0y c\xF3 s\u1EDBm h\u01A1n, mu\u1ED9n h\u01A1n hay gi\u1ED1\
-  ng nh\u01B0 ng\xE0y kia kh\xF4ng. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111\
-  i\u1EC1u n\xE0y \u0111\u1EC3 theo d\xF5i s\u1EF1 ki\u1EC7n,\u2026"
+description: "L\xE0m th\u1EBF n\xE0o: Lua kh\xF4ng c\xF3 c\xE1c h\xE0m so s\xE1nh\
+  \ ng\xE0y \u0111\u01B0\u1EE3c t\xEDch h\u1EE3p s\u1EB5n, nh\u01B0ng ch\xFAng ta\
+  \ c\xF3 th\u1EC3 s\u1EED d\u1EE5ng h\xE0m `os.time()` \u0111\u1EC3 chuy\u1EC3n \u0111\
+  \u1ED5i c\xE1c ng\xE0y th\xE0nh \u0111\u1ECBnh d\u1EA1ng s\u1ED1\u2026"
 lastmod: '2024-03-13T22:44:36.838161-06:00'
 model: gpt-4-0125-preview
-summary: "So s\xE1nh hai ng\xE0y c\xF3 ngh\u0129a l\xE0 x\xE1c \u0111\u1ECBnh xem\
-  \ m\u1ED9t ng\xE0y c\xF3 s\u1EDBm h\u01A1n, mu\u1ED9n h\u01A1n hay gi\u1ED1ng nh\u01B0\
-  \ ng\xE0y kia kh\xF4ng."
+summary: "Lua kh\xF4ng c\xF3 c\xE1c h\xE0m so s\xE1nh ng\xE0y \u0111\u01B0\u1EE3c\
+  \ t\xEDch h\u1EE3p s\u1EB5n, nh\u01B0ng ch\xFAng ta c\xF3 th\u1EC3 s\u1EED d\u1EE5\
+  ng h\xE0m `os.time()` \u0111\u1EC3 chuy\u1EC3n \u0111\u1ED5i c\xE1c ng\xE0y th\xE0\
+  nh \u0111\u1ECBnh d\u1EA1ng s\u1ED1 (th\u1EDDi gian k\u1EF7 nguy\xEAn) v\xE0 sau\
+  \ \u0111\xF3 so s\xE1nh ch\xFAng."
 title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---

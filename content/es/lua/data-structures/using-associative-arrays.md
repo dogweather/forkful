@@ -2,15 +2,13 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:12:21.480911-07:00
-description: "Los arreglos asociativos son como apretones de manos secretos para datos\
-  \ en Lua\u2014en vez de solo n\xFAmeros aline\xE1ndose obedientemente por \xEDndice,\
-  \ tus llaves\u2026"
+description: "C\xF3mo hacerlo: En Lua, crear un arreglo asociativo (o una tabla, en\
+  \ t\xE9rminos de Lua) es sencillo. Dejas de lado los \xEDndices num\xE9ricos habituales\
+  \ por llaves\u2026"
 lastmod: '2024-03-13T22:44:59.194894-06:00'
 model: gpt-4-0125-preview
-summary: "Los arreglos asociativos son como apretones de manos secretos para datos\
-  \ en Lua\u2014en vez de solo n\xFAmeros aline\xE1ndose obedientemente por \xEDndice,\
-  \ tus llaves pueden ser lo que quieras, haciendo la recuperaci\xF3n de datos muy\
-  \ f\xE1cil."
+summary: "En Lua, crear un arreglo asociativo (o una tabla, en t\xE9rminos de Lua)\
+  \ es sencillo."
 title: Uso de matrices asociativas
 weight: 15
 ---

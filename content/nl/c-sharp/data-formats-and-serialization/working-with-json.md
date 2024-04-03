@@ -2,12 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:17.080361-07:00
-description: "Werken met JSON betekent het verwerken en genereren van JSON (JavaScript\
-  \ Object Notation) data in uw applicaties. Programmeurs doen dit omdat JSON een\u2026"
+description: 'Hoe: In C# zult u waarschijnlijk de `System.Text.Json` namespace gebruiken
+  voor JSON-verwerking. Stel dat u een eenvoudige klasse heeft.'
 lastmod: '2024-03-13T22:44:50.831515-06:00'
 model: gpt-4-0125-preview
-summary: Werken met JSON betekent het verwerken en genereren van JSON (JavaScript
-  Object Notation) data in uw applicaties.
+summary: In C# zult u waarschijnlijk de `System.Text.Json` namespace gebruiken voor
+  JSON-verwerking.
 title: Werken met JSON
 weight: 38
 ---

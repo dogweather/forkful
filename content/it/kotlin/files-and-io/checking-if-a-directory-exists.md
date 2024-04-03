@@ -2,12 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:50.433286-07:00
-description: "Verificare se una directory esiste in Kotlin comporta la verifica della\
-  \ presenza di una directory in un percorso specificato. I programmatori eseguono\u2026"
+description: "Come fare: Kotlin, eseguito sulla JVM, sfrutta l'API File di Java per\
+  \ le operazioni sui file, rendendo i controlli dell'esistenza delle directory\u2026"
 lastmod: '2024-03-13T22:44:43.405114-06:00'
 model: gpt-4-0125-preview
-summary: Verificare se una directory esiste in Kotlin comporta la verifica della presenza
-  di una directory in un percorso specificato.
+summary: Kotlin, eseguito sulla JVM, sfrutta l'API File di Java per le operazioni
+  sui file, rendendo i controlli dell'esistenza delle directory semplici.
 title: Verifica se una directory esiste
 weight: 20
 ---

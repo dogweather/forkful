@@ -1,11 +1,11 @@
 ---
 date: 2024-01-20 17:44:41.242455-07:00
-description: "\"Co to jest i po co?\" Pobieranie strony internetowej to zapisanie\
-  \ jej zawarto\u015Bci na dysk. Programi\u015Bci robi\u0105 to, aby przetworzy\u0107\
-  \ dane, pobra\u0107 wa\u017Cne\u2026"
+description: "How to: \"Jak to zrobi\u0107:\" Uruchom poni\u017Cszy skrypt, aby pobra\u0107\
+  \ zawarto\u015B\u0107 strony."
 lastmod: '2024-03-13T22:44:35.628653-06:00'
 model: gpt-4-1106-preview
-summary: '"Co to jest i po co.'
+summary: "\"Jak to zrobi\u0107:\"\nUruchom poni\u017Cszy skrypt, aby pobra\u0107 zawarto\u015B\
+  \u0107 strony."
 title: Pobieranie strony internetowej
 weight: 42
 ---

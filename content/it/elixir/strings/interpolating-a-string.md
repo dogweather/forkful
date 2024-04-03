@@ -1,11 +1,10 @@
 ---
 date: 2024-01-20 17:50:31.768803-07:00
-description: "L'interpolazione di stringhe permette di inserire valori variabili all'interno\
-  \ di una stringa. I programmatori la utilizzano per rendere il codice pi\xF9\u2026"
+description: 'How to: Elixir rende l''interpolazione di stringhe semplice. Usi il
+  carattere `#` seguito da `{}` per includere valori. Ecco come si fa.'
 lastmod: '2024-03-13T22:44:43.070459-06:00'
 model: gpt-4-1106-preview
-summary: L'interpolazione di stringhe permette di inserire valori variabili all'interno
-  di una stringa.
+summary: Elixir rende l'interpolazione di stringhe semplice.
 title: Interpolazione di una stringa
 weight: 8
 ---

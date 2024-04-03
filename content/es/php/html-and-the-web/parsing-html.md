@@ -2,13 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:51.801086-07:00
-description: "Analizar HTML en PHP implica extraer informaci\xF3n espec\xEDfica de\
-  \ documentos HTML. Los programadores realizan esta tarea para automatizar la extracci\xF3\
-  n de\u2026"
+description: "C\xF3mo hacerlo: Para analizar HTML, los programadores de PHP pueden\
+  \ utilizar funciones integradas o apoyarse en bibliotecas robustas como Simple HTML\
+  \ DOM\u2026"
 lastmod: '2024-03-13T22:44:59.158707-06:00'
 model: gpt-4-0125-preview
-summary: "Analizar HTML en PHP implica extraer informaci\xF3n espec\xEDfica de documentos\
-  \ HTML."
+summary: Para analizar HTML, los programadores de PHP pueden utilizar funciones integradas
+  o apoyarse en bibliotecas robustas como Simple HTML DOM Parser.
 title: Analizando HTML
 weight: 43
 ---

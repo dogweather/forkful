@@ -2,14 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:01.868856-07:00
-description: "\xC5 sette stor bokstav i en streng inneb\xE6rer \xE5 konvertere det\
-  \ f\xF8rste tegnet i hvert ord i en streng til stor bokstav mens resten forblir\
-  \ sm\xE5 bokstaver.\u2026"
+description: "Hvordan: Arduino, prim\xE6rt kjent for \xE5 samhandle med maskinvare,\
+  \ inkluderer ogs\xE5 grunnleggende funksjoner for manipulering av strenger gjennom\
+  \ sitt\u2026"
 lastmod: '2024-03-13T22:44:41.042241-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 sette stor bokstav i en streng inneb\xE6rer \xE5 konvertere det f\xF8\
-  rste tegnet i hvert ord i en streng til stor bokstav mens resten forblir sm\xE5\
-  \ bokstaver."
+summary: "Arduino, prim\xE6rt kjent for \xE5 samhandle med maskinvare, inkluderer\
+  \ ogs\xE5 grunnleggende funksjoner for manipulering av strenger gjennom sitt `String`-objekt."
 title: Sette stor bokstav i en streng
 weight: 2
 ---
