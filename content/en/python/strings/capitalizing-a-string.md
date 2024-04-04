@@ -7,7 +7,7 @@ summary: '#.'
 title: Capitalizing a string
 weight: 2
 changelog:
-- 2024-04-04 - dogweather - edited
+- 2024-04-04, dogweather, edited
 ---
 
 ## How to:

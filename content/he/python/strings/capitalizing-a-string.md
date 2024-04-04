@@ -1,6 +1,6 @@
 ---
 changelog:
-- 2024-04-04 - dogweather - edited
+- 2024-04-04, dogweather, edited
 - 2024-04-04, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:02:34.962078-07:00
 description: "\u05D0\u05D9\u05DA \u05DC\u05E2\u05E9\u05D5\u05EA: #."
