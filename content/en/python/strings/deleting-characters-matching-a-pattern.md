@@ -30,9 +30,9 @@ no_vowels = re.sub(r'[aeiouAEIOU]', '', text)
 print(no_vowels)  # Output: "Hll, Wrld! 1234"
 ```
 
-### A custom function I wrote
+### My custom function
 
-I do this frequently enough that I refactored it into this `delete()` function. It's also a good demonstration of [doctests](https://docs.python.org/3/library/doctest.html):
+I do this frequently enough that I refactored it into this simple `delete()` function. It's also a good demonstration of [doctests](https://docs.python.org/3/library/doctest.html):
 
 ```python
 def delete(string: str, regex: str) -> str:

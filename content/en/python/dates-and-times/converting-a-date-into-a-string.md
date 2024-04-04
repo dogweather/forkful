@@ -2,15 +2,17 @@
 date: 2024-01-20 17:37:21.660960-07:00
 description: 'How to: Python makes it easy to convert dates to strings. Use the `strftime`
   method available on date objects. Here''s how.'
-lastmod: '2024-03-13T22:44:59.718202-06:00'
+lastmod: 2024-04-04
 model: gpt-4-1106-preview
 summary: Python makes it easy to convert dates to strings.
 title: Converting a date into a string
 weight: 28
+changelog:
+- 2024-04-04, dogweather, edited
 ---
 
 ## How to:
-Python makes it easy to convert dates to strings. Use the `strftime` method available on date objects. Here's how:
+Python makes it easy to convert dates to strings. Use the [`strftime`](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior) method available on [date](https://docs.python.org/3/library/datetime.html#date-objects) objects. Here's how:
 
 ```Python
 from datetime import datetime
@@ -26,6 +28,28 @@ print(date_string)  # Output: March 29, 2023 (or current date)
 iso_date_string = now.strftime("%Y-%m-%d")
 print(iso_date_string)  # Output: 2023-03-29 (or current date)
 ```
+
+
+### How I do it
+
+This is how I get an [ISO 8601](https://www.w3.org/QA/Tips/iso-date) format date with timezone info:
+
+```python
+def datestamp() -> str:
+    """ 
+    The current date and time with timezone in ISO format.
+    """
+    return datetime.now().astimezone().isoformat()
+```
+
+#### Example output:
+
+```python
+>>> datestamp()
+'2024-04-04T01:50:04.169159-06:00'
+```
+
+
 
 ## Deep Dive
 Historically, date-string conversion has been a staple in programming due to the need to represent dates in a human-readable format. 

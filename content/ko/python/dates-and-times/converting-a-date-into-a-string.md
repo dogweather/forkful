@@ -1,38 +1,71 @@
 ---
-date: 2024-01-20 17:37:42.168689-07:00
-description: "How to: (\uBC29\uBC95) ."
-isCJKLanguage: true
-lastmod: '2024-03-13T22:44:54.615510-06:00'
-model: gpt-4-1106-preview
-summary: .
+changelog:
+- 2024-04-04, dogweather, edited
+- 2024-04-04, gpt-4-0125-preview, translated from English
+date: 2024-01-20 17:37:21.660960-07:00
+description: "\uBC29\uBC95: Python\uC740 \uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C\
+  \ \uBCC0\uD658\uD558\uB294 \uAC83\uC744 \uC27D\uAC8C \uB9CC\uB4ED\uB2C8\uB2E4. [\uB0A0\
+  \uC9DC](https://docs.python.org/3/library/datetime.html#date-objects) \uAC1D\uCCB4\
+  \uC5D0\uC11C \uC0AC\uC6A9 \uAC00\uB2A5\uD55C\u2026"
+lastmod: '2024-04-04T02:02:59.563460-06:00'
+model: gpt-4-0125-preview
+summary: "Python\uC740 \uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\
+  \uB294 \uAC83\uC744 \uC27D\uAC8C \uB9CC\uB4ED\uB2C8\uB2E4."
 title: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uAE30"
 weight: 28
 ---
 
-## How to: (방법)
-```python
+## 방법:
+Python은 날짜를 문자열로 변환하는 것을 쉽게 만듭니다. [날짜](https://docs.python.org/3/library/datetime.html#date-objects) 객체에서 사용 가능한 [`strftime`](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior) 메서드를 사용하세요. 방법은 다음과 같습니다:
+
+```Python
 from datetime import datetime
 
-# 현재 날짜와 시간을 구함
+# 현재 날짜와 시간을 얻기
 now = datetime.now()
 
-# 문자열로 변환: 기본 포맷
-date_string_basic = now.strftime("%Y-%m-%d %H:%M:%S")
-print(date_string_basic)  # 출력 예시: 2023-04-12 15:30:45
+# 월 일, 연도의 형식으로 문자열로 변환하기
+date_string = now.strftime("%B %d, %Y")
+print(date_string)  # 출력: 2023년 3월 29일 (혹은 현재 날짜)
 
-# 문자열로 변환: 사용자 정의 포맷
-date_string_custom = now.strftime("%Y년 %m월 %d일")
-print(date_string_custom)  # 출력 예시: 2023년 04월 12일
+# 형식: YYYY-MM-DD
+iso_date_string = now.strftime("%Y-%m-%d")
+print(iso_date_string)  # 출력: 2023-03-29 (혹은 현재 날짜)
 ```
 
-## Deep Dive (심화 탐구)
-날짜를 문자열로 바꾸는 일은 초기 컴퓨터 시대부터 있었습니다. 초기에는 데이터 저장 공간이 귀하여, 날짜를 다루기 위한 표준 방식이 중요했습니다. `strftime` 함수는 C 언어의 `strftime`에서 유래되었으며, 파이썬에서도 이를 계승하여 사용합니다.
 
-대안으로 `isoformat()`이 있습니다. 이는 ISO 8601 형식 (예: `2023-04-12T15:30:45.123456`)을 제공합니다. 간단한 경우 이 메소드를 사용하는 것이 유리할 수 있습니다.
+### 내가 하는 방법
 
-날짜를 문자열로 변환할 때 문화적인 요소도 고려해야 할 때가 있습니다. 다른 국가는 다른 날짜 포맷을 사용하기 때문에, 파이썬의 `locale` 모듈로 지역화된 포맷을 설정할 수도 있습니다.
+다음은 타임존 정보가 포함된 [ISO 8601](https://www.w3.org/QA/Tips/iso-date) 형식 날짜를 얻는 방법입니다:
 
-## See Also (추가 정보)
-- Python 공식 문서의 `datetime` 모듈 설명: [https://docs.python.org/3/library/datetime.html](https://docs.python.org/3/library/datetime.html)
-- strftime()과 strptime()의 포맷 코드: [https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes)
-- ISO 8601, 날짜와 시간의 국제 표준: [https://www.iso.org/iso-8601-date-and-time-format.html](https://www.iso.org/iso-8601-date-and-time-format.html)
+```python
+def datestamp() -> str:
+    """ 
+    타임존이 포함된 현재 날짜와 시간을 ISO 형식으로.
+    """
+    return datetime.now().astimezone().isoformat()
+```
+
+#### 예시 출력:
+
+```python
+>>> datestamp()
+'2024-04-04T01:50:04.169159-06:00'
+```
+
+
+
+## 깊이 들여다보기
+역사적으로, 날짜를 사람이 읽을 수 있는 형식으로 표현할 필요성 때문에, 날짜-문자열 변환은 프로그래밍에서 핵심 주제가 되어 왔습니다.
+
+`strftime`에 대한 대안으로는 ISO 8601 형식에 대한 `isoformat` 메서드나, 더 유연한 파싱 및 형식 지정 옵션을 제공하는 `arrow` 및 `dateutil`과 같은 타사 라이브러리를 사용하는 것이 있습니다.
+
+구현 관점에서 보면, `strftime`은 "string format time"의 약자이며 C 프로그래밍에서 그 기원을 찾을 수 있습니다. Python의 `strftime`은 연도를 위한 `%Y`, 월을 위한 `%m`과 같은 형식 코드를 해석하며, 거의 무한한 사용자 정의 가능성을 허용합니다.
+
+## 참고
+Python의 날짜 및 시간 함수에 대해 더 깊이 들어가고 싶다면:
+- Python 공식 `datetime` 문서: https://docs.python.org/3/library/datetime.html
+- `strftime` 지시어의 포괄적인 목록에 관심이 있다면: https://strftime.org/
+- 타사 날짜/시간 라이브러리 탐색하기:
+  - Arrow: https://arrow.readthedocs.io/en/latest/
+  - python-dateutil: https://dateutil.readthedocs.io/en/stable/
