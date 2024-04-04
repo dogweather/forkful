@@ -1,9 +1,10 @@
 ---
 changelog:
-- 2024-02-03, gpt-4-0125-preview, translated from English
-date: 2024-02-03 19:06:33.629381-07:00
+- 2024-04-04 - dogweather - edited
+- 2024-04-04, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:02:34.962078-07:00
 description: "\u05D0\u05D9\u05DA \u05DC\u05E2\u05E9\u05D5\u05EA: #."
-lastmod: '2024-03-13T22:44:38.608377-06:00'
+lastmod: '2024-04-04T00:27:07.183422-06:00'
 model: gpt-4-0125-preview
 summary: '#.'
 title: "\u05D4\u05D2\u05D3\u05DC\u05EA \u05D0\u05D5\u05EA\u05D9\u05D5\u05EA \u05D1\
@@ -14,8 +15,8 @@ weight: 2
 ## איך לעשות:
 
 
-### באמצעות שיטה מובנית של פייתון:
-פייתון מציע שיטה מובנית `.capitalize()` למחרוזות על מנת לבצע משימה זו בקלות.
+### באמצעות המתודה המובנית של פייתון:
+לפייתון יש מתודה מובנית `.capitalize()` עבור מחרוזות כדי לבצע פעולה זו בקלות.
 
 ```python
 my_string = "hello world"
@@ -27,8 +28,42 @@ print(capitalized_string)
 Hello world
 ```
 
+הנה ה`.capitalize()` המותאם אישית שלי שאני משתמש בו לבניית האתר הזה. הייתי צריך לוודא שמילים מיוחדות כמו **HTML** תמיד יישארו באותיות גדולות. זה גם מדגים [doctests](https://docs.python.org/3/library/doctest.html):
+
+```python
+def capitalize(string: str) -> str:
+    """
+    Capitalize a string, i.e. make the first letter uppercase.
+    Handle special cases like "HTML".
+
+    >>> capitalize("this is html, csv, xml, and http (no REPL).")
+    'This is HTML, CSV, XML, and HTTP (no REPL).'
+
+    >>> capitalize("this is json, VBA, an IDE, and yaml in the CLI.")
+    'This is JSON, VBA, an IDE, and YAML in the CLI.'
+    """
+    return (
+        string
+            .capitalize()
+            .replace('cli',  'CLI')
+            .replace('csv',  'CSV')
+            .replace('html', 'HTML')
+            .replace('http', 'HTTP')
+            .replace('ide',  'IDE')
+            .replace('json', 'JSON')
+            .replace('repl', 'REPL')
+            .replace('vba',  'VBA')
+            .replace('xml',  'XML')
+            .replace('yaml', 'YAML')
+    )
+
+```
+
+
+
+
 ### טיפול במספר מילים:
-לתסריטים בהם רוצים שכל מילה במחרוזת תתחיל באות רישית (כמו בכותרות), ניתן להשתמש בשיטה `.title()`.
+לסיטואציות שבהן אתה רוצה כל מילה במחרוזת להתחיל עם אות גדולה (כמו כותרות), ניתן להחיל את המתודה `.title()`.
 
 ```python
 my_title = "python programming essentials"
@@ -41,14 +76,14 @@ Python Programming Essentials
 ```
 
 ### שימוש בספריות צד שלישי:
-למרות שספריית הסטנדרט של פייתון מספקת כלים לרישום בסיסי של מחרוזות, ספריות כמו `textblob` יכולות להציע בקרה מעודנת יותר, במיוחד לעיבוד שפה טבעית.
+למרות שספריית הסטנדרט של פייתון מצוידת לתיקון ראשי תיבות בסיסי, ספריות כמו `textblob` יכולות להציע בקרה מעודנת יותר, במיוחד לעיבוד שפה טבעית.
 
-ראשית, וודאו ש-`textblob` מותקן:
+תחילה, וודא ש`textblob` מותקן אצלך:
 ```bash
 pip install textblob
 ```
 
-לאחר מכן, השתמשו בו לרישום מחרוזות, תוך שימת לב שרישום של `textblob` עשוי לעבוד שונה בהתאם להקשר שבו נעשה בו שימוש:
+לאחר מכן, השתמש בו כדי לעשות ראשי תיבות למחרוזות, תוך זכירה שהראשי תיבות של `textblob` עשויים לעבוד אחרת בהתאם להקשר של השימוש:
 
 ```python
 from textblob import TextBlob
@@ -63,4 +98,4 @@ print(capitalized_blob)
 This is a test sentence
 ```
 
-זכרו, למרות שהשיטות `capitalize()` ו-`title()` שימושיות באופן כללי, הפעלת ספריות כמו `textblob` יכולה להציע גמישות נוספת ליישומים ספציפיים.
+זכור, בזמן שהמתודות `capitalize()` ו`title()` שימושיות באופן כללי, שימוש בספריות כמו `textblob` יכול לספק גמישות נוספת ליישומים ספציפיים.

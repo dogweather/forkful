@@ -1,9 +1,10 @@
 ---
 changelog:
-- 2024-02-03, gpt-4-0125-preview, translated from English
-date: 2024-02-03 19:06:18.122719-07:00
+- 2024-04-04 - dogweather - edited
+- 2024-04-04, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:02:34.962078-07:00
 description: "\u65B9\u6CD5: #."
-lastmod: '2024-03-13T22:44:41.478117-06:00'
+lastmod: '2024-04-04T00:27:00.929442-06:00'
 model: gpt-4-0125-preview
 summary: '#.'
 title: "\u6587\u5B57\u5217\u3092\u5927\u6587\u5B57\u306B\u3059\u308B"
@@ -12,9 +13,8 @@ weight: 2
 
 ## 方法:
 
-
-### Pythonの組み込みメソッドを使用する:
-Pythonには、このタスクを簡単に実行するための文字列用の組み込みメソッド`.capitalize()`があります。
+### Python の組み込みメソッドを使用:
+Python には、このタスクを簡単に実行するための組み込みメソッド `.capitalize()` があります。
 
 ```python
 my_string = "hello world"
@@ -26,8 +26,42 @@ print(capitalized_string)
 Hello world
 ```
 
-### 複数の単語を扱う場合:
-文字列の中の各単語が大文字で始まるようにしたい場合（タイトルなど）、`.title()`メソッドを使用できます。
+ここでは、このサイトを構築するために使用している独自の `capitalize()` を紹介します。**HTML** のような特別な単語が常にすべて大文字であるようにする必要がありました。これは [doctests](https://docs.python.org/3/library/doctest.html) のデモンストレーションも兼ねています:
+
+```python
+def capitalize(string: str) -> str:
+    """
+    文字列の最初の文字を大文字にする、つまり文字列を大文字化します。
+    "HTML" のような特殊なケースを処理します。
+
+    >>> capitalize("this is html, csv, xml, and http (no REPL).")
+    'This is HTML, CSV, XML, and HTTP (no REPL).'
+
+    >>> capitalize("this is json, VBA, an IDE, and yaml in the CLI.")
+    'This is JSON, VBA, an IDE, and YAML in the CLI.'
+    """
+    return (
+        string
+            .capitalize()
+            .replace('cli',  'CLI')
+            .replace('csv',  'CSV')
+            .replace('html', 'HTML')
+            .replace('http', 'HTTP')
+            .replace('ide',  'IDE')
+            .replace('json', 'JSON')
+            .replace('repl', 'REPL')
+            .replace('vba',  'VBA')
+            .replace('xml',  'XML')
+            .replace('yaml', 'YAML')
+    )
+
+```
+
+
+
+
+### 複数の単語を処理する:
+文字列の各単語を大文字で始めたい場合（タイトルなど）には、`.title()` メソッドを適用できます。
 
 ```python
 my_title = "python programming essentials"
@@ -39,15 +73,15 @@ print(title_case)
 Python Programming Essentials
 ```
 
-### サードパーティのライブラリを使用する:
-Python標準ライブラリは基本的な文字列の大文字化に対応していますが、`textblob`のようなライブラリを使用すると、特に自然言語処理において、より細かな制御が可能です。
+### サードパーティのライブラリを使用:
+Python の標準ライブラリは基本的な文字列の大文字化に対応していますが、`textblob` のようなライブラリは、特に自然言語処理において、より洗練された制御を提供することができます。
 
-まず、`textblob`がインストールされていることを確認します:
+まず、`textblob` がインストールされていることを確認します：
 ```bash
 pip install textblob
 ```
 
-その後、`textblob`を使用して文字列を大文字化しますが、`textblob`の大文字化は使用する文脈によって異なる動作をするかもしれませんので注意してください:
+その後、使用の文脈に応じて `textblob` の大文字化が異なる動作をする可能性があることを念頭に置いて、文字列の大文字化にそれを使用します：
 
 ```python
 from textblob import TextBlob
@@ -62,4 +96,4 @@ print(capitalized_blob)
 This is a test sentence
 ```
 
-`capitalize()`や`title()`メソッドは万能に便利ですが、`textblob`のようなライブラリを活用することで、特定の用途に対して追加の柔軟性が得られることを覚えておいてください。
+`capitalize()` と `title()` メソッドは万能に役立ちますが、`textblob` のようなライブラリを活用することで、特定のアプリケーションにおける追加の柔軟性を提供できることを覚えておいてください。

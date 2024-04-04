@@ -1,48 +1,99 @@
 ---
 changelog:
-- 2024-01-28, gpt-4-0125-preview, translated from English
-date: 2024-01-28 21:56:00.534153-07:00
-description: 'Hoe te: Gebruik de ingebouwde `capitalize()` methode of `title()` methode
-  van Python voor deze klus.'
-lastmod: '2024-03-13T22:44:50.359138-06:00'
+- 2024-04-04 - dogweather - edited
+- 2024-04-04, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:02:34.962078-07:00
+description: 'Hoe te: #.'
+lastmod: '2024-04-04T00:27:00.827878-06:00'
 model: gpt-4-0125-preview
-summary: Gebruik de ingebouwde `capitalize()` methode of `title()` methode van Python
-  voor deze klus.
-title: Een string met hoofdletters maken
+summary: '#.'
+title: Een String Met Hoofdletters Maken
 weight: 2
 ---
 
 ## Hoe te:
-Gebruik de ingebouwde `capitalize()` methode of `title()` methode van Python voor deze klus.
 
-```Python
-# Alleen de eerste letter kapitaliseren
-tekst = "hallo, wereld!"
-print(tekst.capitalize())  # Uitvoer: "Hallo, wereld!"
+### Met Python's Ingebouwde Methode:
+Python heeft een ingebouwde methode `.capitalize()` voor strings om deze taak eenvoudig te voltooien.
 
-# De eerste letter van elk woord kapitaliseren
-titel_tekst = "hallo, wereld!"
-print(titel_tekst.title())  # Uitvoer: "Hallo, Wereld!"
+```python
+my_string = "hallo wereld"
+capitalized_string = my_string.capitalize()
+print(capitalized_string)
+```
+**Uitvoer:**
+```
+Hallo wereld
 ```
 
-## Dieper Duiken
-In vervlogen tijden was dataconsistentie een wilde westen. Inputs zwierven vrij in gevarieerde vormen rond. Naarmate databases groeiden, werd de behoefte aan gestandaardiseerde formaten duidelijk. Het kapitaliseren van strings voor namen, plaatsen en titels werd een gangbare praktijk.
+Hier is mijn eigen aangepaste `capitalize()` die ik gebruik om deze site te bouwen. Ik moest ervoor zorgen dat speciale woorden zoals **HTML** altijd volledig in hoofdletters blijven. Dit demonstreert ook [doctests](https://docs.python.org/3/library/doctest.html):
 
-Naast `capitalize()` en `title()`, heeft Python andere stringmethoden, zoals `lower()` voor volledig kleine letters of `upper()` voor volledig hoofdletters, die flexibiliteit bieden voor diverse gebruikssituaties. `capitalize()` en `title()` zijn handig wanneer de opmaak niet slechts cosmetisch is, maar noodzakelijk voor de betekenis van de data – zoals bij eigennamen of titels.
+```python
+def capitalize(string: str) -> str:
+    """
+    Maak de eerste letter van een string een hoofdletter.
+    Behandel speciale gevallen zoals "HTML".
 
-Intern werken methoden zoals `capitalize()` door over elk karakter in de string te itereren en Unicode-regels toe te passen om hun hoofdletter te veranderen. Dit brengt enige complexiteit met zich mee met internationale karakters, maar de sterke Unicode-ondersteuning van Python handelt dit goed af.
+    >>> capitalize("dit is html, csv, xml, en http (geen REPL).")
+    'Dit is HTML, CSV, XML, en HTTP (geen REPL).'
 
-Alternatieven zoals stringopmaak met `str.format()` of f-strings bieden niet direct hoofdlettertransformatie, maar kunnen worden gecombineerd met hoofdlettermethoden voor het gewenste effect:
+    >>> capitalize("dit is json, VBA, een IDE, en yaml in de CLI.")
+    'Dit is JSON, VBA, een IDE, en YAML in de CLI.'
+    """
+    return (
+        string
+            .capitalize()
+            .replace('cli',  'CLI')
+            .replace('csv',  'CSV')
+            .replace('html', 'HTML')
+            .replace('http', 'HTTP')
+            .replace('ide',  'IDE')
+            .replace('json', 'JSON')
+            .replace('repl', 'REPL')
+            .replace('vba',  'VBA')
+            .replace('xml',  'XML')
+            .replace('yaml', 'YAML')
+    )
 
-```Python
-naam = "jan jansen"
-geformatteerd = f"{naam.title()} is hier."
-print(geformatteerd)  # Uitvoer: "Jan Jansen is hier."
 ```
 
-Wees ervan bewust dat de `title()` methode zijn valkuilen heeft, vooral bij woorden die apostrofs of samenstellingen bevatten, controleer dus altijd je uitvoer of overweeg regex (reguliere expressies) voor complexere scenario's.
 
-## Zie Ook
-- Officiële documentatie van Python stringmethoden: https://docs.python.org/3/library/stdtypes.html#string-methods
-- Duik in Python's `re` module voor complexe stringmanipulatie: https://docs.python.org/3/library/re.html
-- Een tutorial over reguliere expressies in Python voor geavanceerdere stringoperaties: https://realpython.com/regex-python/
+
+
+### Voor Meerdere Woorden:
+Voor scenario's waarin je wilt dat elk woord in een string begint met een hoofdletter (zoals titels), kan de methode `.title()` worden toegepast.
+
+```python
+my_title = "python programmeren essentials"
+title_case = my_title.title()
+print(title_case)
+```
+**Uitvoer:**
+```
+Python Programmeren Essentials
+```
+
+### Gebruikmakend van Externe Bibliotheken:
+Hoewel Python's standaardbibliotheek is uitgerust voor basis stringkapitalisatie, kunnen bibliotheken zoals `textblob` meer genuanceerde controle bieden, vooral voor natuurlijke taalverwerking.
+
+Zorg eerst dat je `textblob` hebt geïnstalleerd:
+```bash
+pip install textblob
+```
+
+Gebruik het vervolgens om strings te kapitaliseren, waarbij je in gedachten houdt dat `textblob`'s kapitalisatie mogelijk anders werkt op basis van de gebruikte context:
+
+```python
+from textblob import TextBlob
+
+my_sentence = "dit is een test zin"
+blob = TextBlob(my_sentence)
+capitalized_blob = TextBlob(blob.string.capitalize())
+print(capitalized_blob)
+```
+**Uitvoer:**
+```
+Dit is een test zin
+```
+
+Onthoud dat, terwijl de `capitalize()` en `title()` methoden universeel nuttig zijn, het gebruik van bibliotheken zoals `textblob` extra flexibiliteit kan bieden voor specifieke toepassingen.

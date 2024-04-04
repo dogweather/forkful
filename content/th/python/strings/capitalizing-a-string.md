@@ -1,22 +1,22 @@
 ---
 changelog:
-- 2024-03-17, gpt-4-0125-preview, translated from English
-date: 2024-03-17 21:44:39.304202-06:00
+- 2024-04-04 - dogweather - edited
+- 2024-04-04, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:02:34.962078-07:00
 description: "\u0E27\u0E34\u0E18\u0E35\u0E01\u0E32\u0E23: #."
-lastmod: '2024-03-17T21:57:55.745184-06:00'
+lastmod: '2024-04-04T00:27:10.330055-06:00'
 model: gpt-4-0125-preview
 summary: '#.'
 title: "\u0E01\u0E32\u0E23\u0E17\u0E33\u0E43\u0E2B\u0E49\u0E15\u0E31\u0E27\u0E2D\u0E31\
-  \u0E01\u0E29\u0E23\u0E40\u0E1B\u0E47\u0E19\u0E15\u0E31\u0E27\u0E1E\u0E34\u0E21\u0E1E\
-  \u0E4C\u0E43\u0E2B\u0E0D\u0E48\u0E43\u0E19\u0E2A\u0E15\u0E23\u0E34\u0E07"
+  \u0E01\u0E29\u0E23\u0E40\u0E1B\u0E47\u0E19\u0E15\u0E31\u0E27\u0E43\u0E2B\u0E0D\u0E48\
+  \u0E43\u0E19\u0E2A\u0E15\u0E23\u0E34\u0E07"
 weight: 2
 ---
 
 ## วิธีการ:
 
-
-### โดยใช้วิธีที่ให้มาโดย Python:
-Python มีวิธีที่ให้มาเพื่อทำสิ่งนี้ได้อย่างง่ายดายด้วยเมธอด `.capitalize()` สำหรับสตริง
+### การใช้เมธอดในตัวของ Python:
+Python มีเมธอดในตัว `.capitalize()` สำหรับสตริงเพื่อทำภารกิจนี้ได้ง่ายขึ้น
 
 ```python
 my_string = "hello world"
@@ -28,8 +28,38 @@ print(capitalized_string)
 Hello world
 ```
 
-### การจัดการกับหลายคำ:
-สำหรับสถานการณ์ที่คุณต้องการให้ทุกคำในสตริงเริ่มต้นด้วยตัวพิมพ์ใหญ่ (เช่น ชื่อเรื่อง), สามารถใช้เมธอด `.title()` 
+นี่คือ `capitalize()` ที่ฉันปรับแต่งเองที่ฉันใช้ในการสร้างเว็บไซต์นี้ ฉันต้องการให้แน่ใจว่าคำพิเศษ เช่น **HTML** ยังคงเป็นตัวพิมพ์ใหญ่ทั้งหมด นอกจากนี้ยังแสดงถึงการใช้ [doctests](https://docs.python.org/3/library/doctest.html):
+
+```python
+def capitalize(string: str) -> str:
+    """
+    ทำให้ตัวอักษรตัวแรกเป็นตัวพิมพ์ใหญ่ รวมถึงการจัดการกับกรณีพิเศษ เช่น "HTML".
+    
+    >>> capitalize("this is html, csv, xml, and http (no REPL).")
+    'This is HTML, CSV, XML, and HTTP (no REPL).'
+    
+    >>> capitalize("this is json, VBA, an IDE, and yaml in the CLI.")
+    'This is JSON, VBA, an IDE, and YAML in the CLI.'
+    """
+    return (
+        string
+            .capitalize()
+            .replace('cli',  'CLI')
+            .replace('csv',  'CSV')
+            .replace('html', 'HTML')
+            .replace('http', 'HTTP')
+            .replace('ide',  'IDE')
+            .replace('json', 'JSON')
+            .replace('repl', 'REPL')
+            .replace('vba',  'VBA')
+            .replace('xml',  'XML')
+            .replace('yaml', 'YAML')
+    )
+
+```
+
+### การจัดการกับคำหลายคำ:
+สำหรับสถานการณ์ที่คุณต้องการให้ทุกคำในสตริงเริ่มต้นด้วยตัวพิมพ์ใหญ่ (เช่น ชื่อเรื่อง) คุณสามารถใช้เมธอด `.title()` ได้
 
 ```python
 my_title = "python programming essentials"
@@ -41,15 +71,15 @@ print(title_case)
 Python Programming Essentials
 ```
 
-### การใช้ไลบรารีของบุคคลที่สาม:
-แม้ว่าไลบรารีมาตรฐานของ Python จะเพียงพอสำหรับการทำให้สตริงเป็นตัวพิมพ์ใหญ่พื้นฐาน, ไลบรารีเช่น `textblob` สามารถเสนอการควบคุมที่ละเอียดยิ่งขึ้น, โดยเฉพาะสำหรับการประมวลผลภาษาธรรมชาติ
+### การใช้ไลบรารีจากบุคคลที่สาม:
+ในขณะที่ไลบรารีมาตรฐานของ Python สามารถใช้สำหรับการทำให้ตัวอักษรเป็นตัวพิมพ์ใหญ่ได้พื้นฐาน, ไลบรารีเช่น `textblob` สามารถให้การควบคุมที่ละเอียดอ่อนกว่า, เฉพาะสำหรับการประมวลผลภาษาธรรมชาติ
 
-ก่อนอื่น, ตรวจสอบให้แน่ใจว่าคุณได้ติดตั้ง `textblob`:
+ก่อนอื่น, ตรวจสอบว่าคุณมี `textblob` ติดตั้ง:
 ```bash
 pip install textblob
 ```
 
-จากนั้น, ใช้มันเพื่อทำให้สตริงเป็นตัวพิมพ์ใหญ่, โดยจำไว้ว่าการทำให้สตริงเป็นตัวพิมพ์ใหญ่ของ `textblob` อาจทำงานได้ต่างกันขึ้นอยู่กับบริบทการใช้งาน:
+จากนั้น, ใช้มันเพื่อทำให้สตริงเป็นตัวพิมพ์ใหญ่, โดยต้องจำไว้ว่า `textblob` อาจทำงานแตกต่างกันไปตามบริบทของการใช้งาน:
 
 ```python
 from textblob import TextBlob
@@ -64,4 +94,4 @@ print(capitalized_blob)
 This is a test sentence
 ```
 
-จำไว้ว่า, ในขณะที่เมธอด `capitalize()` และ `title()` มีประโยชน์ในทุกสถานการณ์, การใช้ไลบรารีเช่น `textblob` สามารถเสนอความยืดหยุ่นเพิ่มเติมสำหรับการใช้งานเฉพาะอย่างไรก็ตาม.
+จำไว้ว่า ในขณะที่เมธอด `capitalize()` และ `title()` เป็นประโยชน์โดยทั่วไป การใช้ไลบรารีเช่น `textblob` สามารถให้ความยืดหยุ่นเพิ่มเติมสำหรับการใช้งานเฉพาะ.

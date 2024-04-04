@@ -1,15 +1,23 @@
 ---
-date: 2024-01-26 04:36:10.513673-07:00
-description: null
-lastmod: '2024-03-13T22:44:48.185927-06:00'
+changelog:
+- 2024-04-04, gpt-4-0125-preview, translated from English
+date: 2024-01-25 03:39:31.391206-07:00
+description: "\u5982\u4F55\u64CD\u4F5C: Swift \u63D0\u4F9B\u4E86 `XMLParser` \u548C\
+  \ `XMLDocument` \u6765\u89E3\u6790XML\u6570\u636E\u3002\u8FD9\u91CC\u6709\u4E00\u4E2A\
+  \u89E3\u6790\u7B80\u5355XML\u5B57\u7B26\u4E32\u7684\u4EE3\u7801\u7247\u6BB5\uFF1A\
+  ."
+lastmod: '2024-04-04T00:26:47.117612-06:00'
 model: gpt-4-0125-preview
-summary: null
+summary: "Swift \u63D0\u4F9B\u4E86 `XMLParser` \u548C `XMLDocument` \u6765\u89E3\u6790\
+  XML\u6570\u636E\u3002\u8FD9\u91CC\u6709\u4E00\u4E2A\u89E3\u6790\u7B80\u5355XML\u5B57\
+  \u7B26\u4E32\u7684\u4EE3\u7801\u7247\u6BB5\uFF1A."
 title: "\u5904\u7406XML"
 weight: 40
 ---
 
-# 如何操作:
-Swift 提供了 `XMLParser` 和 `XMLDocument` 来解析 XML 数据。这里是一个解析简单 XML 字符串的代码片段：
+## 如何操作:
+
+Swift 提供了 `XMLParser` 和 `XMLDocument` 来解析XML数据。这里有一个解析简单XML字符串的代码片段：
 
 ```swift
 import Foundation
@@ -20,18 +28,18 @@ let xmlString = """
     <to>Tove</to>
     <from>Jani</from>
     <heading>Reminder</heading>
-    <body>Don't forget the party on Friday!</body>
+    <body>别忘了周五的派对！</body>
 </note>
 """
 
 if let xmlData = xmlString.data(using: .utf8) {
     let parser = XMLParser(data: xmlData)
-    parser.delegate = someParserDelegate // 您的 XMLParserDelegate
+    parser.delegate = someParserDelegate // 你的XMLParserDelegate
     parser.parse()
 }
 ```
 
-您还可以使用 `XMLDocument` 生成 XML：
+你也可以使用 `XMLDocument` 来生成XML：
 
 ```swift
 import Foundation
@@ -44,7 +52,7 @@ let xmlDoc = XMLDocument(rootElement: note)
 print(xmlDoc.xmlString(options: .nodePrettyPrint))
 ```
 
-样本输出：
+示例输出：
 
 ```xml
 <note>
@@ -52,13 +60,13 @@ print(xmlDoc.xmlString(options: .nodePrettyPrint))
 </note>
 ```
 
-# 深入探讨
-自 90 年代末以来，XML（扩展标记语言）已经存在。它冗长但可读性强，使其适合复杂的数据结构。与 Python 的 ElementTree 或 Java 的 JAXB 相比，Swift 的 XML 解析能力可能不那么强大，但对于基本需求来说足够了。
+## 深入探索
+XML，或可扩展标记语言，自90年代末以来就已存在。它冗长但人类可读，使其适合复杂数据结构。Swift 的 XML 解析功能不如 Python 的 ElementTree 或 Java 的 JAXB 那样强大，但对于基本需求来说已经足够了。
 
-由于 JSON 的体积更轻且解析器较简单，新系统中常常偏爱使用 JSON，但 XML 在许多企业和遗产系统中仍然占有一席之地。
+由于它们的轻量级和解析器不那么复杂，新系统中常常更喜欢用像 JSON 这样的替代品，但 XML 在许多企业和遗留系统中仍然占有一席之地。
 
-在 Swift 中处理 XML 时，`XMLParser` 是基于流的解析器，这意味着它会顺序读取 XML 文档。对于大型 XML 文件，这样做在内存效率上有优势。然而，如果您寻求的是简单性，并且您的 XML 数据相对较小，使用 `XMLDocument` 可能更直接。
+在 Swift 中处理 XML 时，`XMLParser` 是基于流的解析器，意味着它按顺序读取XML文档。对于大型 XML 文件，这种方式对内存是高效的。然而，如果你追求简单并且你的 XML 数据相对较小，使用 `XMLDocument` 可能会更直接。
 
-# 参考资料
-- [苹果的 XML 解析指南](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/XMLParsing/XMLParsing.html)
+## 另请参阅
+- [Apple 的 XML 解析指南](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/XMLParsing/XMLParsing.html)
 - [W3Schools XML 教程](https://www.w3schools.com/xml/)

@@ -1,11 +1,13 @@
 ---
 date: 2024-02-03 19:02:34.962078-07:00
 description: 'How to: #.'
-lastmod: '2024-03-13T22:44:59.693061-06:00'
+lastmod: '2024-04-04'
 model: gpt-4-0125-preview
 summary: '#.'
 title: Capitalizing a string
 weight: 2
+changelog:
+- 2024-04-04 - dogweather - edited
 ---
 
 ## How to:
@@ -23,6 +25,40 @@ print(capitalized_string)
 ```
 Hello world
 ```
+
+Here's my own customized `capitalize()` I use to build this site. I needed to make sure special words like **HTML** always stay all caps. This also demonstrates [doctests](https://docs.python.org/3/library/doctest.html):
+
+```python
+def capitalize(string: str) -> str:
+    """
+    Capitalize a string, i.e. make the first letter uppercase.
+    Handle special cases like "HTML".
+
+    >>> capitalize("this is html, csv, xml, and http (no REPL).")
+    'This is HTML, CSV, XML, and HTTP (no REPL).'
+
+    >>> capitalize("this is json, VBA, an IDE, and yaml in the CLI.")
+    'This is JSON, VBA, an IDE, and YAML in the CLI.'
+    """
+    return (
+        string
+            .capitalize()
+            .replace('cli',  'CLI')
+            .replace('csv',  'CSV')
+            .replace('html', 'HTML')
+            .replace('http', 'HTTP')
+            .replace('ide',  'IDE')
+            .replace('json', 'JSON')
+            .replace('repl', 'REPL')
+            .replace('vba',  'VBA')
+            .replace('xml',  'XML')
+            .replace('yaml', 'YAML')
+    )
+
+```
+
+
+
 
 ### Handling Multiple Words:
 For scenarios where you want each word in a string to start with a capital letter (such as titles), the `.title()` method can be applied.

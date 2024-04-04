@@ -1,43 +1,63 @@
 ---
-date: 2024-01-20 18:02:07.876945-07:00
-description: null
-lastmod: '2024-03-13T22:44:41.183441-06:00'
-model: gpt-4-1106-preview
-summary: null
-title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
+changelog:
+- 2024-04-04, gpt-4-0125-preview, translated from English
+date: 2024-01-20 18:01:57.938512-07:00
+description: 'Hvordan: Her er et raskt eksempel med bruk av JavaScripts Fetch API.'
+lastmod: '2024-04-04T00:26:49.361956-06:00'
+model: gpt-4-0125-preview
+summary: Her er et raskt eksempel med bruk av JavaScripts Fetch API.
+title: "Sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---
 
-# Slik gjør du:
-```Javascript
-const axios = require('axios');
-const base64 = require('base-64');
+## Hvordan:
+Her er et raskt eksempel med bruk av JavaScripts Fetch API:
 
-let username = 'dinbruker';
-let password = 'dittPassord';
-let basicAuth = 'Basic ' + base64.encode(username + ':' + password);
+```javascript
+const url = 'https://some-protected-resource.com/data';
+const brukernavn = 'DittBrukernavn';
+const passord = 'DittPassord';
 
-axios.get('http://eksempel.no/data', { headers: { 'Authorization': basicAuth } })
+const headers = new Headers();
+headers.set('Authorization', 'Basic ' + btoa(brukernavn + ':' + passord));
+
+fetch(url, { method: 'GET', headers: headers })
   .then(response => {
-    console.log(response.data);
+    if (response.ok) return response.json();
+    throw new Error('Nettverkssvaret var ikke ok.');
   })
-  .catch(error => {
-    console.error('Autentisering feilet: ', error);
-  });
+  .then(data => console.log(data))
+  .catch(error => console.error('Fetch-feil: ', error));
 ```
 
-Eksempelutdata:
+Eksempel på utskrift (skrevet ut til konsollen):
 
+```javascript
+{
+  "beskyttet": "data",
+  "merData": 12345
+}
 ```
-{ "id": 1, "navn": "Ola Nordmann", "data": "Hemmelig informasjon" }
-```
 
-# Dypdykk
-I gamle dager var grunnleggende autentisering over HTTP standard for å beskytte tilgangen. Men det er ikke så sikkert siden det er lett å avkode Base64-koding. I dag er alternativer som OAuth 2.0 og JWT (JSON Web Tokens) ofte brukt fordi de tilbyr større sikkerhet. Med grunnleggende autentisering, må du alltid bruke HTTPS for å kryptere brukerdata over nettverket.
+## Dypdykk
+Før vi dykker ned, la oss få litt kontekst. Grunnleggende autentisering er en av de enkleste formene for websikkerhet og sender legitimasjon i headere med hver forespørsel.
 
-Grunnleggende autentisering er enkel å implementere og forstå. Det krever bare at serveren sjekker 'Authorization'-hodet i HTTP-forespørselen. Men pass på: Lagre aldri passord i klar tekst i din kode. Bruk miljøvariabler eller en hemmelighetsbehandlingstjeneste for å holde din autentiseringsinfo sikker.
+Historisk kontekst:
+- Grunnleggende HTTP-autentisering er en gammel metode, opprinnelig skissert i RFC 7617 fra 2015, som erstatter den enda eldre RFC 2617 fra 1999.
+- Den var mye brukt på grunn av sin enkelhet, men er ikke like sikker uten HTTPS, ettersom base64-koding lett kan reverseres.
 
-# Se også:
-- MDN Web Docs om grunnleggende autentisering: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication_scheme
-- Axios GitHub repo for HTTP-forespørsler: https://github.com/axios/axios
-- Sikkerhetspraksis for autentisering: https://owasp.org/www-project-top-ten/
+Alternativer:
+- OAuth: En sikrere og mer kompleks standard for tilgangsdelegering, brukt i tilfeller hvor du trenger å gi tilgang uten å dele passordlegitimasjon.
+- API-nøkler: Et enkelt token som er lettere å håndtere enn komplekse OAuth-protokoller.
+- Bærertokens: Spesielt JWT (JSON Web Tokens), som kan bære mer informasjon.
+
+Implementeringsdetaljer:
+- Base64-koding omdanner strengen brukernavn:passord til en sekvens av tegn som er mer universelt overførbar.
+- Forsikre deg alltid om at tilkoblingen er HTTPS, for å forhindre at legitimasjon blir avlyttet.
+- Moderne utvikling foretrekker tokens og sesjonscookies for autentisering, da de er sikrere og mer allsidige.
+
+## Se også
+- [Mozilla Developer Network - Autorisasjon](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization)
+- [RFC 7617 - HTTP Basic Auth](https://tools.ietf.org/html/rfc7617)
+- [Introduksjon til OAuth 2.0](https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2)
+- [JSON Web Tokens (JWT)](https://jwt.io/introduction/)

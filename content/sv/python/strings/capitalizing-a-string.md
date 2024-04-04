@@ -1,9 +1,10 @@
 ---
 changelog:
-- 2024-02-03, gpt-4-0125-preview, translated from English
-date: 2024-02-03 19:06:16.105064-07:00
+- 2024-04-04 - dogweather - edited
+- 2024-04-04, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:02:34.962078-07:00
 description: "Hur man g\xF6r: #."
-lastmod: '2024-03-13T22:44:37.466527-06:00'
+lastmod: '2024-04-04T00:26:52.233938-06:00'
 model: gpt-4-0125-preview
 summary: '#.'
 title: "G\xF6r om en str\xE4ng till versaler"
@@ -13,8 +14,8 @@ weight: 2
 ## Hur man gör:
 
 
-### Använda Pythons inbyggda metod:
-Python har en inbyggd metod `.capitalize()` för strängar för att enkelt utföra denna uppgift.
+### Använder Pythons inbyggda metod:
+Python har en inbyggd metod `.capitalize()` för strängar för att enkelt genomföra denna uppgift.
 
 ```python
 my_string = "hello world"
@@ -26,8 +27,41 @@ print(capitalized_string)
 Hello world
 ```
 
+Här är min egen anpassade `capitalize()` som jag använder för att bygga denna webbplats. Jag behövde se till att särskilda ord som **HTML** alltid är skrivna med versaler. Detta demonstrerar också [doctests](https://docs.python.org/3/library/doctest.html):
+
+```python
+def capitalize(string: str) -> str:
+    """
+    Gör första bokstaven i en sträng stor, dvs. gör första bokstaven versal.
+    Hanterar särskilda fall som "HTML".
+
+    >>> capitalize("this is html, csv, xml, and http (no REPL).")
+    'This is HTML, CSV, XML, and HTTP (no REPL).'
+
+    >>> capitalize("this is json, VBA, an IDE, and yaml in the CLI.")
+    'This is JSON, VBA, an IDE, and YAML in the CLI.'
+    """
+    return (
+        string
+            .capitalize()
+            .replace('cli',  'CLI')
+            .replace('csv',  'CSV')
+            .replace('html', 'HTML')
+            .replace('http', 'HTTP')
+            .replace('ide',  'IDE')
+            .replace('json', 'JSON')
+            .replace('repl', 'REPL')
+            .replace('vba',  'VBA')
+            .replace('xml',  'XML')
+            .replace('yaml', 'YAML')
+    )
+
+```
+
+
+
 ### Hantera flera ord:
-För scenarier där du vill att varje ord i en sträng ska börja med en stor bokstav (såsom titlar), kan metoden `.title()` användas.
+För scenarier där du vill att varje ord i en sträng ska börja med en stor bokstav (som titlar), kan metoden `.title()` användas.
 
 ```python
 my_title = "python programming essentials"
@@ -40,14 +74,14 @@ Python Programming Essentials
 ```
 
 ### Använda tredjepartsbibliotek:
-Även om Pythons standardbibliotek är utrustat för grundläggande kapitalisering av strängar, kan bibliotek som `textblob` erbjuda mer nyanserad kontroll, särskilt för bearbetning av naturligt språk.
+Även om Pythons standardbibliotek är utrustat för grundläggande kapitalisering av strängar, kan bibliotek som `textblob` erbjuda en mer nyanserad kontroll, särskilt för bearbetning av naturligt språk.
 
-Först, se till att du har `textblob` installerat:
+Se först till att du har `textblob` installerat:
 ```bash
 pip install textblob
 ```
 
-Använd sedan det för att göra strängar med stor begynnelsebokstav, med i åtanke att `textblob`'s kapitalisering kan fungera annorlunda baserat på användningssammanhanget:
+Använd sedan det för att göra strängar med stora bokstäver, med tanke på att `textblob` kan fungera annorlunda baserat på användningssammanhang:
 
 ```python
 from textblob import TextBlob
@@ -62,4 +96,4 @@ print(capitalized_blob)
 This is a test sentence
 ```
 
-Kom ihåg, medan `capitalize()` och `title()`-metoderna är universellt användbara, kan att dra nytta av bibliotek som `textblob` ge ytterligare flexibilitet för specifika tillämpningar.
+Kom ihåg, medan metoderna `capitalize()` och `title()` är universellt användbara, kan användningen av bibliotek som `textblob` erbjuda ytterligare flexibilitet för specifika tillämpningar.

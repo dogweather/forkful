@@ -1,20 +1,20 @@
 ---
 changelog:
-- 2024-02-03, gpt-4-0125-preview, translated from English
-date: 2024-02-03 19:06:15.184201-07:00
-description: "\uC5B4\uB5BB\uAC8C \uD560\uAE4C: #."
-lastmod: '2024-03-13T22:44:54.572878-06:00'
+- 2024-04-04 - dogweather - edited
+- 2024-04-04, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:02:34.962078-07:00
+description: "\uC5B4\uB5BB\uAC8C \uD558\uB098: #."
+lastmod: '2024-04-04T00:26:59.395145-06:00'
 model: gpt-4-0125-preview
 summary: '#.'
 title: "\uBB38\uC790\uC5F4 \uB300\uBB38\uC790\uD654"
 weight: 2
 ---
 
-## 어떻게 할까:
+## 어떻게 하나:
 
-
-### 파이썬의 내장 메소드 사용하기:
-파이썬에는 문자열을 쉽게 대문자화할 수 있는 내장 메소드 `.capitalize()`가 있습니다.
+### 파이썬의 내장 메소드 사용:
+파이썬은 문자열을 쉽게 처리할 수 있는 `.capitalize()`라는 내장 메소드가 있습니다.
 
 ```python
 my_string = "hello world"
@@ -26,8 +26,42 @@ print(capitalized_string)
 Hello world
 ```
 
-### 여러 단어 처리하기:
-문자열의 각 단어가 대문자로 시작해야 하는 시나리오(예: 제목)의 경우, `.title()` 메소드를 적용할 수 있습니다.
+여기 제가 이 사이트를 구축하기 위해 사용한 맞춤형 `capitalize()` 함수가 있습니다. **HTML**과 같은 특수 단어들이 항상 대문자로 유지되도록 해야 했습니다. 이는 [doctests](https://docs.python.org/3/library/doctest.html)를 활용한 예시도 보여줍니다:
+
+```python
+def capitalize(string: str) -> str:
+    """
+    문자열의 첫 글자를 대문자로 만듭니다.
+    "HTML"과 같은 특수 케이스를 처리합니다.
+
+    >>> capitalize("this is html, csv, xml, and http (no REPL).")
+    'This is HTML, CSV, XML, and HTTP (no REPL).'
+
+    >>> capitalize("this is json, VBA, an IDE, and yaml in the CLI.")
+    'This is JSON, VBA, an IDE, and YAML in the CLI.'
+    """
+    return (
+        string
+            .capitalize()
+            .replace('cli',  'CLI')
+            .replace('csv',  'CSV')
+            .replace('html', 'HTML')
+            .replace('http', 'HTTP')
+            .replace('ide',  'IDE')
+            .replace('json', 'JSON')
+            .replace('repl', 'REPL')
+            .replace('vba',  'VBA')
+            .replace('xml',  'XML')
+            .replace('yaml', 'YAML')
+    )
+
+```
+
+
+
+
+### 여러 단어를 처리할 때:
+문자열의 각 단어가 대문자로 시작하길 원하는 시나리오(예: 제목)에서는 `.title()` 메소드를 사용할 수 있습니다.
 
 ```python
 my_title = "python programming essentials"
@@ -39,15 +73,15 @@ print(title_case)
 Python Programming Essentials
 ```
 
-### 타사 라이브러리 사용하기:
-파이썬의 표준 라이브러리가 기본 문자열 대문자화에 적합하지만, `textblob`과 같은 라이브러리는 특히 자연어 처리를 위해 더 세분화된 제어를 제공할 수 있습니다.
+### 서드 파티 라이브러리 사용하기:
+파이썬의 표준 라이브러리는 기본적인 문자열 대문자 변환을 위한 장비를 갖추고 있지만, `textblob`과 같은 라이브러리는 특히 자연어 처리를 위해 더 미묘한 제어를 제공할 수 있습니다.
 
-먼저 `textblob`이 설치되어 있는지 확인하세요:
+먼저, `textblob`이 설치되어 있는지 확인하세요:
 ```bash
 pip install textblob
 ```
 
-그런 다음, 사용 상황에 따라 `textblob`의 대문자화 기능이 다르게 작동할 수 있음을 염두에 두고 문자열을 대문자화하는 데 사용하세요:
+그런 다음, `textblob`을 사용해 문자열을 대문자로 만들어 보세요. `textblob`의 대문자화 기능은 사용 맥락에 따라 다르게 작동할 수 있다는 점을 유념하세요:
 
 ```python
 from textblob import TextBlob
@@ -62,4 +96,4 @@ print(capitalized_blob)
 This is a test sentence
 ```
 
-`capitalize()`와 `title()` 메소드가 보편적으로 유용하긴 하지만, `textblob`과 같은 라이브러리를 활용하면 특정 응용 프로그램에 대한 추가적인 유연성을 제공할 수 있다는 점을 기억하세요.
+`capitalize()` 및 `title()` 메소드가 보편적으로 유용하지만, `textblob`과 같은 라이브러리를 활용하면 특정 응용 프로그램에 대해 추가적인 유연성을 제공할 수 있습니다.

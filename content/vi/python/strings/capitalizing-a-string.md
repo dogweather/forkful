@@ -1,49 +1,100 @@
 ---
 changelog:
-- 2024-01-28, gpt-4-0125-preview, translated from English
-date: 2024-01-28 21:55:51.532865-07:00
-description: "L\xE0m th\u1EBF n\xE0o: S\u1EED d\u1EE5ng ph\u01B0\u01A1ng th\u1EE9\
-  c `capitalize()` ho\u1EB7c `title()` c\xF3 s\u1EB5n trong Python cho c\xF4ng vi\u1EC7\
-  c n\xE0y."
-lastmod: '2024-03-13T22:44:36.074522-06:00'
+- 2024-04-04 - dogweather - edited
+- 2024-04-04, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:02:34.962078-07:00
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: #."
+lastmod: '2024-04-04T00:27:19.394929-06:00'
 model: gpt-4-0125-preview
-summary: "S\u1EED d\u1EE5ng ph\u01B0\u01A1ng th\u1EE9c `capitalize()` ho\u1EB7c `title()`\
-  \ c\xF3 s\u1EB5n trong Python cho c\xF4ng vi\u1EC7c n\xE0y."
-title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
+summary: '#.'
+title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
 weight: 2
 ---
 
-## Làm thế nào:
-Sử dụng phương thức `capitalize()` hoặc `title()` có sẵn trong Python cho công việc này.
+## Cách thực hiện:
 
-```Python
-# Viết hoa chỉ chữ cái đầu tiên
-text = "hello, world!"
-print(text.capitalize())  # Kết quả: "Hello, world!"
 
-# Viết hoa chữ cái đầu tiên của mỗi từ
-title_text = "hello, world!"
-print(title_text.title())  # Kết quả: "Hello, World!"
+### Sử dụng Phương thức Có sẵn của Python:
+Python có một phương thức có sẵn `.capitalize()` cho chuỗi để thực hiện nhiệm vụ này một cách dễ dàng.
+
+```python
+my_string = "hello world"
+capitalized_string = my_string.capitalize()
+print(capitalized_string)
+```
+**Kết quả:**
+```
+Hello world
 ```
 
-## Sâu hơn
-Trong quá khứ, sự nhất quán của dữ liệu là một vùng đất hoang. Dữ liệu nhập vào tự do trong các hình thức đa dạng. Khi cơ sở dữ liệu phát triển, nhu cầu về định dạng chuẩn hóa trở nên rõ ràng. Việc viết hoa các chuỗi cho tên, địa điểm, và tiêu đề trở nên thực hành phổ biến.
+Dưới đây là `capitalize()` tùy chỉnh của riêng tôi mà tôi sử dụng để xây dựng trang web này. Tôi cần đảm bảo các từ đặc biệt như **HTML** luôn ở dạng chữ in hoa. Điều này cũng chứng minh [doctests](https://docs.python.org/3/library/doctest.html):
 
-Ngoài `capitalize()` và `title()`, Python còn có các phương thức xử lý chuỗi khác, như `lower()` để chuyển tất cả thành chữ thường hoặc `upper()` để chuyển tất cả thành chữ hoa, cung cấp sự linh hoạt cho nhiều trường hợp sử dụng. `capitalize()` và `title()` trở nên tiện lợi khi việc định dạng không chỉ là vấn đề thẩm mỹ mà còn cần thiết cho ý nghĩa của dữ liệu - như danh từ riêng hoặc tiêu đề.
+```python
+def capitalize(string: str) -> str:
+    """
+    Chuyển chữ cái đầu tiên của chuỗi thành chữ in hoa.
+    Xử lý các trường hợp đặc biệt như "HTML".
 
-Bản chất, các phương thức như `capitalize()` hoạt động bằng cách lặp qua từng ký tự trong chuỗi và áp dụng các quy tắc Unicode để thay đổi trường hợp của chúng. Điều này liên quan đến một số phức tạp với các ký tự quốc tế, nhưng sự hỗ trợ Unicode mạnh mẽ của Python xử lý tốt điều này.
+    >>> capitalize("this is html, csv, xml, and http (no REPL).")
+    'This is HTML, CSV, XML, and HTTP (no REPL).'
 
-Các phương án thay thế như định dạng chuỗi với `str.format()` hoặc f-strings không trực tiếp cung cấp chuyển đổi trường hợp, nhưng có thể kết hợp với các phương thức trường hợp để đạt được hiệu ứng mong muốn:
+    >>> capitalize("this is json, VBA, an IDE, and yaml in the CLI.")
+    'This is JSON, VBA, an IDE, and YAML in the CLI.'
+    """
+    return (
+        string
+            .capitalize()
+            .replace('cli',  'CLI')
+            .replace('csv',  'CSV')
+            .replace('html', 'HTML')
+            .replace('http', 'HTTP')
+            .replace('ide',  'IDE')
+            .replace('json', 'JSON')
+            .replace('repl', 'REPL')
+            .replace('vba',  'VBA')
+            .replace('xml',  'XML')
+            .replace('yaml', 'YAML')
+    )
 
-```Python
-name = "john doe"
-formatted = f"{name.title()} is here."
-print(formatted)  # Kết quả: "John Doe is here."
 ```
 
-Hãy chú ý rằng phương thức `title()` có những hạn chế của nó, đặc biệt với các từ chứa dấu nháy hoặc các từ ghép, vì vậy luôn kiểm tra kết quả đầu ra của bạn hoặc xem xét sử dụng regex (biểu thức chính quy) cho các trường hợp phức tạp hơn.
 
-## Xem thêm
-- Tài liệu chính thức về các phương thức chuỗi của Python: https://docs.python.org/3/library/stdtypes.html#string-methods
-- Tìm hiểu sâu hơn về mô-đun `re` của Python cho việc thao tác chuỗi phức tạp: https://docs.python.org/3/library/re.html
-- Hướng dẫn về biểu thức chính quy trong Python cho các thao tác chuỗi tiên tiến hơn: https://realpython.com/regex-python/
+
+
+### Xử lý Nhiều Từ:
+Đối với các trường hợp bạn muốn mỗi từ trong một chuỗi bắt đầu bằng một chữ cái in hoa (như tiêu đề), bạn có thể áp dụng phương thức `.title()`.
+
+```python
+my_title = "python programming essentials"
+title_case = my_title.title()
+print(title_case)
+```
+**Kết quả:**
+```
+Python Programming Essentials
+```
+
+### Sử dụng Thư viện Bên Thứ Ba:
+Mặc dù thư viện chuẩn của Python đủ khả năng cho việc viết hoa chuỗi cơ bản, thư viện như `textblob` có thể cung cấp kiểm soát tinh vi hơn, đặc biệt đối với xử lý ngôn ngữ tự nhiên.
+
+Đầu tiên, hãy chắc chắn bạn đã cài đặt `textblob`:
+```bash
+pip install textblob
+```
+
+Sau đó, sử dụng nó để viết hoa chuỗi, lưu ý rằng việc viết hoa của `textblob` có thể hoạt động khác nhau tùy thuộc vào ngữ cảnh sử dụng:
+
+```python
+from textblob import TextBlob
+
+my_sentence = "this is a test sentence"
+blob = TextBlob(my_sentence)
+capitalized_blob = TextBlob(blob.string.capitalize())
+print(capitalized_blob)
+```
+**Kết quả:**
+```
+This is a test sentence
+```
+
+Nhớ rằng, mặc dù các phương thức `capitalize()` và `title()` đều hữu ích một cách toàn diện, việc sử dụng thư viện như `textblob` có thể cung cấp thêm linh hoạt cho các ứng dụng cụ thể.

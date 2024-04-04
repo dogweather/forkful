@@ -1,20 +1,20 @@
 ---
 changelog:
-- 2024-02-03, gpt-4-0125-preview, translated from English
-date: 2024-02-03 19:06:19.749392-07:00
+- 2024-04-04 - dogweather - edited
+- 2024-04-04, gpt-4-0125-preview, translated from English
+date: 2024-02-03 19:02:34.962078-07:00
 description: 'Kuinka: #.'
-lastmod: '2024-03-13T22:44:56.126146-06:00'
+lastmod: '2024-04-04T00:26:58.809734-06:00'
 model: gpt-4-0125-preview
 summary: '#.'
-title: Merkkijonon muuttaminen isoiksi kirjaimiksi
+title: "Merkkijonon ensimm\xE4isen kirjaimen muuttaminen isoksi"
 weight: 2
 ---
 
 ## Kuinka:
 
-
-### Käyttäen Pythonin sisäänrakennettua metodia:
-Pythonissa on merkkijonoille sisäänrakennettu metodi `.capitalize()`, jolla tämä tehtävä on helppo suorittaa.
+### Pythonin sisäänrakennetun metodin avulla:
+Pythonissa on sisäänrakennettu metodi `.capitalize()` merkkijonojen muuttamiseksi niin, että tehtävä suoritetaan helposti.
 
 ```python
 my_string = "hello world"
@@ -26,7 +26,41 @@ print(capitalized_string)
 Hello world
 ```
 
-### Käsiteltäessä useita sanoja:
+Tässä on oma räätälöity `capitalize()`-metodini, jota käytän tämän sivuston rakentamiseen. Minun piti varmistaa, että erikoissanat kuten **HTML** pysyvät aina isoilla kirjaimilla. Tämä myös demonstroi [doctesteja](https://docs.python.org/3/library/doctest.html):
+
+```python
+def capitalize(string: str) -> str:
+    """
+    Muuttaa merkkijonon ensimmäisen kirjaimen isoksi.
+    Käsittelee erikoistapauksia, kuten "HTML".
+
+    >>> capitalize("this is html, csv, xml, and http (no REPL).")
+    'This is HTML, CSV, XML, and HTTP (no REPL).'
+
+    >>> capitalize("this is json, VBA, an IDE, and yaml in the CLI.")
+    'This is JSON, VBA, an IDE, and YAML in the CLI.'
+    """
+    return (
+        string
+            .capitalize()
+            .replace('cli',  'CLI')
+            .replace('csv',  'CSV')
+            .replace('html', 'HTML')
+            .replace('http', 'HTTP')
+            .replace('ide',  'IDE')
+            .replace('json', 'JSON')
+            .replace('repl', 'REPL')
+            .replace('vba',  'VBA')
+            .replace('xml',  'XML')
+            .replace('yaml', 'YAML')
+    )
+
+```
+
+
+
+
+### Useita sanoja käsiteltäessä:
 Skenaarioissa, joissa haluat jokaisen merkkijonon sanan alkavan isolla kirjaimella (kuten otsikoissa), voidaan käyttää `.title()`-metodia.
 
 ```python
@@ -39,15 +73,15 @@ print(title_case)
 Python Programming Essentials
 ```
 
-### Käyttäen kolmannen osapuolen kirjastoja:
-Vaikka Pythonin vakio kirjasto on varustettu perus merkkijonojen alkukirjaimen suurentamiseen, kirjastot kuten `textblob` voivat tarjota hienostuneempaa hallintaa, erityisesti luonnollisen kielen käsittelyssä.
+### Kolmannen osapuolen kirjastojen käyttö:
+Vaikka Pythonin vakio-kirjasto tarjoaa perustyökalut merkkijonojen isoilla kirjaimilla aloittamiseen, kirjastot kuten `textblob` voivat tarjota hienovaraisempaa kontrollia, erityisesti luonnollisen kielen käsittelyssä.
 
-Varmentaaksesi että sinulla on `textblob` asennettu:
+Varmista ensin, että sinulla on asennettuna `textblob`:
 ```bash
 pip install textblob
 ```
 
-Sen jälkeen voit käyttää sitä merkkijonojen alkukirjaimen suurentamiseen, pitäen mielessä, että `textblob`in capitalize voi toimia eri tavalla käyttökontekstista riippuen:
+Käytä sitten sitä merkkijonojen isoilla kirjaimilla aloittamiseen, pitäen mielessä, että `textblob`in capitalize voi toimia eri tavoin käyttöyhteydestä riippuen:
 
 ```python
 from textblob import TextBlob
@@ -62,4 +96,4 @@ print(capitalized_blob)
 This is a test sentence
 ```
 
-Muista, että vaikka `capitalize()`- ja `title()`-menetelmät ovat yleisesti hyödyllisiä, kirjastoja kuten `textblob` käyttämällä voidaan saada lisää joustavuutta tietyissä sovelluksissa.
+Muista, että vaikka `capitalize()`- ja `title()`-metodit ovat yleisesti hyödyllisiä, kirjastojen kuten `textblob` käyttö voi tarjota lisäjoustavuutta erityissovelluksiin.

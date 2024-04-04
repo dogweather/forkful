@@ -1,48 +1,52 @@
 ---
-date: 2024-01-20 18:02:08.531738-07:00
-description: null
-lastmod: '2024-03-13T22:44:56.615195-06:00'
-model: gpt-4-1106-preview
-summary: null
-title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
+changelog:
+- 2024-04-04, gpt-4-0125-preview, translated from English
+date: 2024-01-20 18:01:36.556352-07:00
+description: "Kuinka: Tarvitset `http-conduit`-paketin HTTP-toimintoihin ja `base64-bytestring`-paketin\
+  \ tunnistetietojen koodaamiseen. Tuo ne ja k\xE4yt\xE4\u2026"
+lastmod: '2024-04-04T00:26:53.591517-06:00'
+model: gpt-4-0125-preview
+summary: Tarvitset `http-conduit`-paketin HTTP-toimintoihin ja `base64-bytestring`-paketin
+  tunnistetietojen koodaamiseen.
+title: "L\xE4hett\xE4m\xE4ss\xE4 HTTP-pyynt\xF6\xE4 perusautentikoinnilla"
 weight: 45
 ---
 
-# Kuinka:
+## Kuinka:
+Tarvitset `http-conduit`-paketin HTTP-toimintoihin ja `base64-bytestring`-paketin tunnistetietojen koodaamiseen. Tuo ne ja käytä `applyBasicAuth`-funktiota lisätäksesi tunnistetiedot pyyntöösi.
+
 ```Haskell
 import Network.HTTP.Simple
-import Data.ByteString.Base64 (encode)
 import Data.ByteString.Char8 (pack)
+import Data.ByteString.Base64 (encode)
 
--- Käyttäjätunnuksesi ja salasanasi
-credentials :: String
-credentials = "kayttaja:salasana"
+-- Rakenna perusautentikointiotsikko
+let username = "user"
+let password = "pass"
+let auth = encode $ pack (username ++ ":" ++ password)
 
--- Muodosta 'Basic' autentikointiotsake
-basicAuth :: ByteString
-basicAuth = "Basic " <> (encode . pack $ credentials)
+-- Luo pyyntösi
+request' = parseRequest_ "GET http://example.com/secret"
+let request = setRequestHeader "Authorization" ["Basic " <> auth] request'
 
--- Valmistele ja lähetä pyyntö
-makeRequest :: IO ()
-makeRequest = do 
-    let request = setRequestHeader "Authorization" [basicAuth]
-                $ parseRequest_ "GET http://esimerkki.fi/suojattu/sisalto"
-    response <- httpLBS request
-    putStrLn $ "Statuskoodi: " ++ show (getResponseStatusCode response)
-    putStrLn $ "Vastauksen runko: " ++ show (getResponseBodys response)
+-- Suorita pyyntö
+response <- httpLBS request
 
-main :: IO ()
-main = makeRequest
+-- Käsittele vastaus
+print $ getResponseBody response
 ```
 
-Esimerkkikoodi luo HTTP-pyynnön ja liittää siihen Basic-autentikoinnin käyttäen annettuja käyttäjätunnuksia ja salasanoja. Käyttäjätunnuksia ja salasanoja ei koskaan pidä säilyttää kovakoodattuna tuotannossa.
+Tämä tulostaa API-vastauksen, jos tunnistetietosi ovat oikein.
 
-# Syväsukellus
-Ennen HTTPS:n ja monimutkaisempien autentikointiprotokollien yleistymistä perusautentikointi oli yleinen tapa suojata verkkosisältö. Se on yhä käytössä, mutta turvallisuusriskien vuoksi sen käyttö on suositeltavaa rajoittaa suojatun yhteyden yli.
+## Syventävä tarkastelu
+Perusautentikointi on muinaishistoriaa verkkovuosissa; se suunniteltiin 90-luvun alussa, ja se on niin yksinkertainen kuin olla ja voi: base64-koodattu `käyttäjänimi:salasana` lähetetään otsikossa. Siitä puuttuvat hienot ominaisuudet kuten poletin vanheneminen ja, koska se on salaamaton, sitä tulisi aina käyttää HTTPS-yhteyden yli.
 
-Vaihtoehtoja perusautentikoinnille ovat OAuth, JWT (JSON Web Token), ja muut täydellisempiä turvatoimia tarjoavat menetelmät. Nämä menetelmät mahdollistavat monimutkaisten sovellusten turvallisen käyttäjänhallinnan.
+Vaihtoehdot, kuten OAuth, tarjoavat turvallisemman, yksityiskohtaisemman hallinnan. Haskellille kirjastot kuten `http-client` ja `wreq` tarjoavat enemmän vaihtoehtoja ja joustavuutta.
 
-# Katso Myös
-- HTTP:n perusautentikointi: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication_scheme
-- Network.HTTP.Simple dokumentaatio: https://www.stackage.org/haddock/lts-18.18/http-conduit-2.3.8/Network-HTTP-Simple.html
-- Turvallisuus ja autentikointi Haskellissa: https://wiki.haskell.org/Web/Literature#Authentication
+Toteutuksessa muista, että tunnistetietoja ei pidä kovakoodata! Käytä tuotannossa ympäristömuuttujia tai turvallista holvia. Ja koska `base64`-koodaus ei ole salausta (kuka tahansa voi purkaa sen), HTTPS ei ole vain hyvä idea, se on välttämätön.
+
+## Katso myös
+- Haskell `http-conduit` dokumentaatio: https://hackage.haskell.org/package/http-conduit
+- `base64-bytestring` koodausta varten: https://hackage.haskell.org/package/base64-bytestring
+- Tiukkaan turvallisuuteen, lue Haskellissa OAuth2:sta: https://hackage.haskell.org/package/hoauth2
+- Lue parhaista käytännöistä salaisuuksien säilyttämiseen: https://www.yesodweb.com/book/security-considerations
