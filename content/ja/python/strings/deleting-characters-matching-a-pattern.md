@@ -1,42 +1,66 @@
 ---
-date: 2024-01-20 17:43:19.656117-07:00
-description: "How to (\u65B9\u6CD5): ."
-isCJKLanguage: true
-lastmod: '2024-03-13T22:44:41.479386-06:00'
-model: gpt-4-1106-preview
+changelog:
+- 2024-04-04, dogweather, edited
+- 2024-04-04, gpt-4-0125-preview, translated from English
+date: 2024-01-20 17:43:02.363431-07:00
+description: "\u65B9\u6CD5: ."
+lastmod: '2024-04-04T01:27:54.295778-06:00'
+model: gpt-4-0125-preview
 summary: .
-title: "\u30D1\u30BF\u30FC\u30F3\u306B\u4E00\u81F4\u3059\u308B\u6587\u5B57\u3092\u524A\
-  \u9664\u3059\u308B"
+title: "\u30D1\u30BF\u30FC\u30F3\u306B\u4E00\u81F4\u3059\u308B\u6587\u5B57\u306E\u524A\
+  \u9664"
 weight: 5
 ---
 
-## How to (方法):
+## 方法:
+
 ```Python
 import re
 
-# 文字列の例
-original_string = "123-456-7890"
+# 例の文字列
+text = "Hello, World! 1234"
 
-# パターンにマッチする文字を削除する
-cleaned_string = re.sub(r'-', '', original_string)  # ハイフンを削除
+# 数字をすべて削除
+no_digits = re.sub(r'\d', '', text)
+print(no_digits)  # 出力: "Hello, World! "
 
-print(cleaned_string)  # 出力: 1234567890
+# 句読点を削除
+no_punctuation = re.sub(r'[^\w\s]', '', text)
+print(no_punctuation)  # 出力: "Hello World 1234"
+
+# 母音を削除
+no_vowels = re.sub(r'[aeiouAEIOU]', '', text)
+print(no_vowels)  # 出力: "Hll, Wrld! 1234"
 ```
 
-## Deep Dive (詳細な潜水):
-パターンマッチで文字を削除する機能は、Perl言語の強力な正規表現の影響を受けてPythonにも実装されました。`re.sub()` 関数は正規表現を利用して柔軟な文字削除を可能にします。文字以外にも、特定のパターンを持つ部分文字列の置換や削除もできます。他の方法としては、`str.replace()`や文字列メソッドの組み合わせがありますが、正規表現はより複雑なパターンに対応しています。
+### 私が書いたカスタム関数
 
-```Python
-# str.replace() を使った例
-simple_string = "foobar"
-modified_string = simple_string.replace("o", "")  # 'o' を削除
-print(modified_string)  # 出力: fbar
+これを十分に頻繁に行うため、`delete()` 関数にリファクタリングしました。これは[doctests](https://docs.python.org/3/library/doctest.html)の良いデモンストレーションでもあります:
+
+```python
+def delete(string: str, regex: str) -> str:
+    """
+    >>> delete("Hello, world!", "l")
+    'Heo, word!'
+
+    >>> delete("Hello, world!", "[a-z]")
+    'H, !'
+    """
+    return re.sub(regex, "", string)
 ```
 
-正規表現の使用は、実行速度が比較的遅いため、パフォーマンスが重要な場面では注意が必要です。ただし、その強力さと柔軟性から、データクレンジングやテキスト処理では頻繁に用いられます。
 
-## See Also (関連項目):
-- Python公式ドキュメントの `re` モジュール: https://docs.python.org/3/library/re.html
-- 正規表現についての追加情報: https://www.regular-expressions.info/
-- `str.replace` メソッドのドキュメント: https://docs.python.org/3/library/stdtypes.html#str.replace
-- 文字列操作に関するPythonチュートリアル: https://docs.python.org/3/tutorial/introduction.html#strings
+
+## 深い洞察
+テキスト中のパターンに一致する文字を削除する実践は、コンピュータサイエンスに深く根ざしており、`sed` や `grep` などの初期の Unix ツールにまで遡ります。Pythonでは、`re` モジュールがこの機能を提供し、正規表現 - テキスト処理において強力で多用途なツールを活用しています。
+
+`re` モジュールの代替手段には以下が含まれます:
+- 簡単なケースには `replace()` のような文字列メソッド。
+- より複雑なパターンと、より良い Unicode サポートを提供するサードパーティのライブラリ、例えば `regex`。
+
+内部的には、`re.sub()` を使用すると、Python インタープリタはパターンを一連のバイトコードにコンパイルし、入力テキストに直接パターンマッチングを行うステートマシンによって処理されます。この操作は、大きな文字列または複雑なパターンに対してはリソースを多く消費するため、ビッグデータ処理においてはパフォーマンスの考慮が不可欠です。
+
+## 関連情報
+- [Python `re` モジュールのドキュメンテーション](https://docs.python.org/3/library/re.html): Pythonでの正規表現についての公式ドキュメント。
+- [Regular-Expressions.info](https://www.regular-expressions.info/): 正規表現についての包括的ガイド。
+- [Real Python の regex チュートリアル](https://realpython.com/regex-python/): Pythonでの正規表現の実世界応用。

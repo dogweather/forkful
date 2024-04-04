@@ -1,38 +1,64 @@
 ---
-date: 2024-01-20 17:42:42.569822-07:00
-description: 'So geht''s: .'
-lastmod: '2024-03-13T22:44:53.362495-06:00'
-model: gpt-4-1106-preview
+changelog:
+- 2024-04-04, dogweather, edited
+- 2024-04-04, gpt-4-0125-preview, translated from English
+date: 2024-01-20 17:43:02.363431-07:00
+description: 'Wie man es macht: .'
+lastmod: '2024-04-04T01:27:46.314406-06:00'
+model: gpt-4-0125-preview
 summary: .
-title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
+title: "Zeichen, die einem Muster entsprechen, l\xF6schen"
 weight: 5
 ---
 
-## So geht's:
+## Wie man es macht:
 ```Python
 import re
 
-# Ein Beispielstring
-text = "F1r Programm1er ist d1e Verwend1ng von Regex echt klasse!"
+# Beispiel-String
+text = "Hallo, Welt! 1234"
 
-# Das Muster: Alle Ziffern entfernen
-pattern = r'\d'
+# Alle Ziffern entfernen
+keine_ziffern = re.sub(r'\d', '', text)
+print(keine_ziffern)  # Ausgabe: "Hallo, Welt! "
 
-# Zeichen entfernen, die dem Muster entsprechen
-cleaned_text = re.sub(pattern, '', text)
+# Satzzeichen entfernen
+keine_satzzeichen = re.sub(r'[^\w\s]', '', text)
+print(keine_satzzeichen)  # Ausgabe: "Hallo Welt 1234"
 
-print(cleaned_text)
+# Vokale entfernen
+keine_vokale = re.sub(r'[aeiouAEIOU]', '', text)
+print(keine_vokale)  # Ausgabe: "Hll, Wlt! 1234"
 ```
 
-Ausgabe:
-```
-Für Programmierer ist die Verwendung von Regex echt klasse!
+### Eine von mir geschriebene benutzerdefinierte Funktion
+
+Da ich dies häufig genug mache, habe ich es in diese `delete()` Funktion refaktoriert. Es ist auch eine gute Demonstration von [Doctests](https://docs.python.org/3/library/doctest.html):
+
+```python
+def delete(zeichenkette: str, regex: str) -> str:
+    """
+    >>> delete("Hallo, Welt!", "l")
+    'Hao, Wet!'
+
+    >>> delete("Hallo, Welt!", "[a-z]")
+    'H, !'
+    """
+    return re.sub(regex, "", zeichenkette)
 ```
 
-## Tiefgang
-Das Löschen von Zeichen mit einem Muster ist ein klassischer Fall für reguläre Ausdrücke (Regex). Schon seit den 1950er Jahren verwenden Programmiersprachen Regex, aber erst seit den 1980er Jahren ist es in der allgemeinen Softwareentwicklung populär. Alternativen zu Regex sind spezialisierte String-Funktionen wie `str.replace()` für einfache Fälle oder Parsing-Bibliotheken für komplexere Anforderungen. Der Unterschied liegt in der Flexibilität und Performanz: Regex ist mächtig, aber manchmal langsamer als maßgeschneiderte Funktionen.
+
+
+## Tiefere Einblicke
+Die Praxis, Zeichen zu löschen, die einem Muster in einem Text entsprechen, hat tiefe Wurzeln in der Informatik, die bis zu frühen Unix-Tools wie `sed` und `grep` zurückreichen. In Python stellt das `re` Modul diese Fähigkeit bereit, wobei reguläre Ausdrücke genutzt werden – ein mächtiges und vielseitiges Werkzeug zur Textverarbeitung.
+
+Alternativen zum `re` Modul umfassen:
+- String-Methoden wie `replace()` für einfache Fälle.
+- Drittanbieter-Bibliotheken wie `regex` für komplexere Muster und bessere Unicode-Unterstützung.
+
+Unter der Haube kompiliert der Python-Interpreter das Muster bei Verwendung von `re.sub()` in eine Serie von Bytecodes, die von einer Zustandsmaschine verarbeitet werden, die das Muster-Abgleichen direkt im Eingabetext durchführt. Diese Operation kann ressourcenintensiv sein für große Zeichenketten oder komplexe Muster, deshalb sind Leistungserwägungen entscheidend für die Verarbeitung großer Datenmengen.
 
 ## Siehe auch
-- Python Dokumentation für reguläre Ausdrücke: https://docs.python.org/3/library/re.html
-- W3Schools Tutorial zu Python Regex: https://www.w3schools.com/python/python_regex.asp
-- Stack Overflow: Diskussionen und Lösungen für spezifische Regex-Probleme: https://stackoverflow.com/questions/tagged/regex
+- [Python `re` Modul-Dokumentation](https://docs.python.org/3/library/re.html): Offizielle Dokumentation für reguläre Ausdrücke in Python.
+- [Regular-Expressions.info](https://www.regular-expressions.info/): Ein umfassender Leitfaden zu regulären Ausdrücken.
+- [Real Python Tutorial zu Regex](https://realpython.com/regex-python/): Anwendungen von regulären Ausdrücken in Python im realen Leben.

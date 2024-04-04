@@ -1,40 +1,64 @@
 ---
-date: 2024-01-20 17:43:03.944658-07:00
-description: "C\xF3mo se hace: Digamos que tienes un texto con varios signos de puntuaci\xF3\
-  n y quieres dejar solo las letras y n\xFAmeros. Podemos usar el m\xF3dulo `re` de\
-  \ Python\u2026"
-lastmod: '2024-03-13T22:44:58.594248-06:00'
-model: gpt-4-1106-preview
-summary: "Digamos que tienes un texto con varios signos de puntuaci\xF3n y quieres\
-  \ dejar solo las letras y n\xFAmeros."
+changelog:
+- 2024-04-04, dogweather, edited
+- 2024-04-04, gpt-4-0125-preview, translated from English
+date: 2024-01-20 17:43:02.363431-07:00
+description: "C\xF3mo hacerlo: ."
+lastmod: '2024-04-04T01:27:54.244490-06:00'
+model: gpt-4-0125-preview
+summary: .
 title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---
 
-## Cómo se hace:
-Digamos que tienes un texto con varios signos de puntuación y quieres dejar solo las letras y números. Podemos usar el módulo `re` de Python para eliminar estos caracteres. 
-
-```python
+## Cómo hacerlo:
+```Python
 import re
 
-texto = "¡Hola, Mundo! ¿Esta es una prueba? Sí, es el día 26/03/2023."
-texto_limpio = re.sub(r"[^\w\s]", "", texto)
-print(texto_limpio)
+# Texto de ejemplo
+text = "Hello, World! 1234"
+
+# Eliminar todos los dígitos
+sin_digitos = re.sub(r'\d', '', text)
+print(sin_digitos)  # Salida: "Hello, World! "
+
+# Eliminar puntuación
+sin_puntuacion = re.sub(r'[^\w\s]', '', text)
+print(sin_puntuacion)  # Salida: "Hello World 1234"
+
+# Eliminar vocales
+sin_vocales = re.sub(r'[aeiouAEIOU]', '', text)
+print(sin_vocales)  # Salida: "Hll, Wrld! 1234"
 ```
-Salida:
+
+### Una función personalizada que escribí
+
+Lo hago con suficiente frecuencia como para haber refactorizado esto en la función `eliminar()`. También es una buena demostración de [doctests](https://docs.python.org/3/library/doctest.html):
+
+```python
+def eliminar(cadena: str, regex: str) -> str:
+    """
+    >>> eliminar("Hello, world!", "l")
+    'Heo, word!'
+
+    >>> eliminar("Hello, world!", "[a-z]")
+    'H, !'
+    """
+    return re.sub(regex, "", cadena)
 ```
-Hola Mundo Esta es una prueba Sí es el día 26032023
-```
-Este código elimina cualquier signo de puntuación, dejando letras, números y espacios.
 
-## Análisis Profundo
-Históricamente, el módulo `re` ha sido la herramienta estándar en Python para trabajar con expresiones regulares, que son patrones que definen conjuntos de caracteres a buscar o eliminar dentro de cadenas. Hay métodos alternativos, como usar listas de comprensión o funciones integradas como `str.replace()`, pero `re` es extremadamente poderoso y flexible para la mayoría de las necesidades.
 
-El proceso de eliminar caracteres de una cadena puede variar en complejidad. Para patrones simples, `str.replace()` es suficiente, pero para patrones complicados, necesitas `re.sub()`, el cual busca patrones con expresiones regulares y los reemplaza con otra cosa—en nuestro ejemplo, una cadena vacía.
 
-Detalles de implementación para la eliminación de caracteres pueden incluir la consideración de codificaciones de caracteres y el manejo de diferentes idiomas y alfabetos, lo que puede afectar los patrones que buscas.
+## Análisis profundo
+La práctica de eliminar caracteres que coinciden con un patrón en el texto tiene profundas raíces en la ciencia de la computación, remontándose a herramientas Unix tempranas como `sed` y `grep`. En Python, el módulo `re` proporciona esta capacidad, aprovechando las expresiones regulares—una herramienta poderosa y versátil para el procesamiento de texto.
 
-## Ver También
-- Documentación oficial de `re`: https://docs.python.org/3/library/re.html
-- Tutorial sobre expresiones regulares en Python: https://www.regular-expressions.info/python.html
-- Python how-to para strings: https://docs.python.org/3/howto/regex.html#regex-howto
+Alternativas al módulo `re` incluyen:
+- Métodos string como `replace()` para casos simples.
+- Librerías de terceros como `regex` para patrones más complejos y mejor soporte de Unicode.
+
+Entre bastidores, cuando usas `re.sub()`, el intérprete de Python compila el patrón en una serie de códigos de bytes, procesados por una máquina de estado que realiza el emparejamiento de patrones directamente en el texto de entrada. Esta operación puede ser intensiva en recursos para cadenas grandes o patrones complejos, por lo tanto, las consideraciones de rendimiento son cruciales para el procesamiento de grandes volúmenes de datos.
+
+## Ver también
+- [Documentación del módulo `re` de Python](https://docs.python.org/3/library/re.html): Documentos oficiales para expresiones regulares en Python.
+- [Regular-Expressions.info](https://www.regular-expressions.info/): Una guía completa para expresiones regulares.
+- [Tutorial de Real Python sobre regex](https://realpython.com/regex-python/): Aplicaciones del mundo real de expresiones regulares en Python.

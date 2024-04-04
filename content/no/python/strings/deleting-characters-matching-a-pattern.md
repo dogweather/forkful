@@ -1,8 +1,11 @@
 ---
-date: 2024-01-20 17:43:06.587399-07:00
+changelog:
+- 2024-04-04, dogweather, edited
+- 2024-04-04, gpt-4-0125-preview, translated from English
+date: 2024-01-20 17:43:02.363431-07:00
 description: 'Hvordan: .'
-lastmod: '2024-03-13T22:44:40.344823-06:00'
-model: gpt-4-1106-preview
+lastmod: '2024-04-04T01:28:33.998193-06:00'
+model: gpt-4-0125-preview
 summary: .
 title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
@@ -13,26 +16,48 @@ weight: 5
 import re
 
 # Eksempelstreng
-tekst = "Python3.9 er gøy, men Python3.10 er bedre!"
+tekst = "Hello, World! 1234"
 
-# Regex mønster for å fjerne tall
-mønster = r'\d+'
+# Fjern alle tall
+ingen_tall = re.sub(r'\d', '', tekst)
+print(ingen_tall)  # Utdata: "Hello, World! "
 
-# Bruk re.sub() for å erstatte alle forekomster av mønsteret med en tom streng
-renset_tekst = re.sub(mønster, '', tekst)
+# Fjern tegnsetting
+ingen_tegnsetting = re.sub(r'[^\w\s]', '', tekst)
+print(ingen_tegnsetting)  # Utdata: "Hello World 1234"
 
-print(renset_tekst)
+# Fjern vokaler
+ingen_vokaler = re.sub(r'[aeiouAEIOU]', '', tekst)
+print(ingen_vokaler)  # Utdata: "Hll, Wrld! 1234"
 ```
-Output:
+
+### En tilpasset funksjon jeg skrev
+
+Jeg gjør dette ofte nok til at jeg refaktorerte det til denne `slett()`-funksjonen. Det er også en god demonstrasjon av [doctests](https://docs.python.org/3/library/doctest.html):
+
+```python
+def slett(streng: str, regex: str) -> str:
+    """
+    >>> slett("Hello, world!", "l")
+    'Heo, word!'
+
+    >>> slett("Hello, world!", "[a-z]")
+    'H, !'
+    """
+    return re.sub(regex, "", streng)
 ```
-Python er gøy, men Python er bedre!
-```
+
 
 ## Dypdykk
-Sletting av tegn basert på mønstre har gammel data-treklang; folk har jobbet med tekstbehandling siden tidlig programmering. Alternativer til Python's `re` (regular expressions) modul inkluderer bruk av innebygde strengmetoder som `replace()` og `translate()`, men disse er mindre fleksible for komplekse mønstre. "Regular expressions" ble populær på 1960-tallet da Ken Thompson inkorporerte det i editoren QED og senere i Unix-verktøyet grep. Nøkkelaspektet ved å bruke `re` er effektiviteten og evnen til å håndtere avanserte tekstmanipulasjoner som ikke lar seg lett gjøre med enklere strengmetoder.
+Praksisen med å slette tegn som samsvarer med et mønster i tekst har dype røtter i datavitenskap, som går tilbake til tidlige Unix-verktøy som `sed` og `grep`. I Python gir `re`-modulen denne evnen, og benytter regulære uttrykk—et kraftfullt og fleksibelt verktøy for tekstbehandling.
 
-## Se Også
-- Python's offisielle `re` modul dokumentasjon: https://docs.python.org/3/library/re.html
-- En guide til Python's strengmetoder: https://docs.python.org/3/library/stdtypes.html#string-methods
-- Regular expression grunnleggende: https://www.regular-expressions.info/tutorial.html
-- Historien om regular expressions: https://www.garshol.priv.no/blog/207.html
+Alternativer til `re`-modulen inkluderer:
+- Strengmetoder som `replace()` for enkle tilfeller.
+- Tredjepartsbiblioteker som `regex` for mer komplekse mønstre og bedre Unicode-støtte.
+
+I bunn og grunn, når du bruker `re.sub()`, kompilerer Python-tolken mønsteret til en serie med bytekoder, behandlet av en tilstandsmaskin som utfører mønstersammenligning direkte på inngangsteksten. Denne operasjonen kan være ressurskrevende for store strenger eller komplekse mønstre, så ytelseshensyn er avgjørende for behandling av store datamengder.
+
+## Se også
+- [Python `re`-modul dokumentasjon](https://docs.python.org/3/library/re.html): Offisielle dokumenter for regulære uttrykk i Python.
+- [Regular-Expressions.info](https://www.regular-expressions.info/): En omfattende veiledning til regulære uttrykk.
+- [Real Python-tutorial om regex](https://realpython.com/regex-python/): Virkelige anvendelser av regulære uttrykk i Python.

@@ -1,7 +1,9 @@
 ---
 date: 2024-01-20 17:43:02.363431-07:00
 description: 'How to: .'
-lastmod: '2024-03-13T22:44:59.693938-06:00'
+lastmod: 2024-04-04
+changelog:
+- 2024-04-04, dogweather, edited
 model: gpt-4-1106-preview
 summary: .
 title: Deleting characters matching a pattern
@@ -27,6 +29,24 @@ print(no_punctuation)  # Output: "Hello World 1234"
 no_vowels = re.sub(r'[aeiouAEIOU]', '', text)
 print(no_vowels)  # Output: "Hll, Wrld! 1234"
 ```
+
+### A custom function I wrote
+
+I do this frequently enough that I refactored it into this `delete()` function. It's also a good demonstration of [doctests](https://docs.python.org/3/library/doctest.html):
+
+```python
+def delete(string: str, regex: str) -> str:
+    """
+    >>> delete("Hello, world!", "l")
+    'Heo, word!'
+
+    >>> delete("Hello, world!", "[a-z]")
+    'H, !'
+    """
+    return re.sub(regex, "", string)
+```
+
+
 
 ## Deep Dive
 The practice of deleting characters matching a pattern in text has deep roots in computer science, tracing back to early Unix tools like `sed` and `grep`. In Python, the `re` module provides this capability, leveraging regular expressions—a powerful and versatile tool for text processing.

@@ -1,52 +1,64 @@
 ---
-date: 2024-01-20 17:43:11.016280-07:00
-description: How to (Come fare) .
-lastmod: '2024-03-13T22:44:42.985471-06:00'
-model: gpt-4-1106-preview
+changelog:
+- 2024-04-04, dogweather, edited
+- 2024-04-04, gpt-4-0125-preview, translated from English
+date: 2024-01-20 17:43:02.363431-07:00
+description: 'Come fare: .'
+lastmod: '2024-04-04T01:27:40.087177-06:00'
+model: gpt-4-0125-preview
 summary: .
-title: Eliminazione di caratteri che corrispondono a un pattern
+title: Eliminare i caratteri corrispondenti a un modello
 weight: 5
 ---
 
-## How to (Come fare)
+## Come fare:
 ```Python
 import re
 
-# Esempio base: rimuovere tutti i punti dalla stringa
-stringa = "Esempio.di.stringa.con.punti."
-pattern = "\."
-stringa_senza_punti = re.sub(pattern, "", stringa)
-print(stringa_senza_punti)
+# Stringa di esempio
+testo = "Ciao, Mondo! 1234"
 
-# Esempio con numeri: rimuovere tutte le cifre
-stringa_numeri = "Anno2023, Mese 03."
-pattern_numeri = "\d"
-stringa_senza_numeri = re.sub(pattern_numeri, "", stringa_numeri)
-print(stringa_senza_numeri)
+# Rimuovere tutti i numeri
+senza_numeri = re.sub(r'\d', '', testo)
+print(senza_numeri)  # Output: "Ciao, Mondo! "
 
-# Esempio con caratteri speciali: rimuovere i segni di punteggiatura
-import string
+# Rimuovere la punteggiatura
+senza_punteggiatura = re.sub(r'[^\w\s]', '', testo)
+print(senza_punteggiatura)  # Output: "Ciao Mondo 1234"
 
-stringa_punteggiatura = "Ciao! Come va? Tutto bene."
-stringa_pulita = stringa_punteggiatura.translate(str.maketrans("", "", string.punctuation))
-print(stringa_pulita)
-```
-Output:
-```
-Esempiodistringaconpunti
-Anno, Mese .
-Ciao Come va Tutto bene
+# Rimuovere le vocali
+senza_vocali = re.sub(r'[aeiouAEIOU]', '', testo)
+print(senza_vocali)  # Output: "C, Mnd! 1234"
 ```
 
-## Deep Dive (Approfondimento)
-Cancellare caratteri seguendo un pattern in Python è spesso eseguito con il modulo `re`, che sta per regular expression (espressioni regolari). Dall'introduzione delle espressioni regolari negli anni '50, sono diventate uno strumento essenziale per la manipolazione di stringhe.
+### Una funzione personalizzata che ho scritto
 
-Le alternative all'uso delle regex possono essere metodi più semplici come `str.replace()` per sostituire occorrenze specifiche o `str.translate()` per una rimozione più generale dei caratteri. Per espressioni regolari complesse, le performance possono essere migliorate con l'utilizzo di moduli esterni come `regex`.
+Faccio questo abbastanza frequentemente da averlo rifattorizzato in questa funzione `delete()`. È anche una buona dimostrazione di [doctests](https://docs.python.org/3/library/doctest.html):
 
-Il modulo `regex` permette maggiore flessibilità e funzionalità rispetto al modulo `re` integrato. Tuttavia, `re` resta il punto di partenza per la maggior parte dei programmatori data la sua inclusione standard in Python.
+```python
+def delete(stringa: str, regex: str) -> str:
+    """
+    >>> delete("Ciao, mondo!", "l")
+    'Ciao, mondo!'
 
-## See Also (Vedi anche)
-- Documentazione Python sul modulo `re`: https://docs.python.org/3/library/re.html
-- Esercizi sulle espressioni regolari: https://regexone.com/
-- Tutorial ufficiale Python sulle stringhe e le espressioni regolari: https://docs.python.org/3/howto/regex.html
-- Documentazione sul modulo `regex`, alternativa a `re`: https://pypi.org/project/regex/
+    >>> delete("Ciao, mondo!", "[a-z]")
+    'C, !'
+    """
+    return re.sub(regex, "", stringa)
+```
+
+
+
+## Approfondimento
+La pratica di eliminare caratteri corrispondenti a un modello nel testo ha radici profonde nell'informatica, risalendo a strumenti Unix precoci come `sed` e `grep`. In Python, il modulo `re` fornisce questa capacità, sfruttando le espressioni regolari: uno strumento potente e versatile per l'elaborazione del testo.
+
+Alternative al modulo `re` includono:
+- Metodi di stringa come `replace()` per casi semplici.
+- Librerie di terze parti come `regex` per modelli più complessi e un migliore supporto Unicode.
+
+Sotto il cofano, quando si usa `re.sub()`, l'interprete Python compila il modello in una serie di bytecodes, elaborati da una macchina a stati che esegue il pattern-matching direttamente sul testo di input. Questa operazione può essere intensiva sulle risorse per stringhe grandi o modelli complessi, quindi le considerazioni sulla performance sono cruciali per l'elaborazione di grandi dati.
+
+## Vedi anche
+- [Documentazione modulo `re` Python](https://docs.python.org/3/library/re.html): Documentazione ufficiale per le espressioni regolari in Python.
+- [Regular-Expressions.info](https://www.regular-expressions.info/): Una guida completa alle espressioni regolari.
+- [Tutorial di Real Python su regex](https://realpython.com/regex-python/): Applicazioni del mondo reale delle espressioni regolari in Python.

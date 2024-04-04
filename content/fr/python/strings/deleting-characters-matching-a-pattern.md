@@ -1,42 +1,64 @@
 ---
-date: 2024-01-20 17:43:00.934252-07:00
+changelog:
+- 2024-04-04, dogweather, edited
+- 2024-04-04, gpt-4-0125-preview, translated from English
+date: 2024-01-20 17:43:02.363431-07:00
 description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:57.217777-06:00'
-model: gpt-4-1106-preview
+lastmod: '2024-04-04T01:27:54.819520-06:00'
+model: gpt-4-0125-preview
 summary: .
-title: "Suppression de caract\xE8res correspondant \xE0 un motif"
+title: "Supprimer des caract\xE8res correspondant \xE0 un mod\xE8le"
 weight: 5
 ---
 
 ## Comment faire :
-```python
+```Python
 import re
 
-# Exemple 1: Supprimer tous les chiffres d'une chaîne
-texte = "Paris75000"
-resultat = re.sub(r'\d', '', texte)
-print(resultat)  # Paris
+# Chaîne d'exemple
+text = "Hello, World! 1234"
 
-# Exemple 2: Supprimer les caractères spéciaux
-texte = "Bonjour! Comment ça va? #soleil"
-resultat = re.sub(r'[!#?]', '', texte)
-print(resultat)  # Bonjour Comment ça va soleil
+# Supprimer tous les chiffres
+sans_chiffres = re.sub(r'\d', '', text)
+print(sans_chiffres)  # Sortie : "Hello, World! "
 
-# Exemple 3: Utilisation de la méthode translate
-texte = "Il fait beau! 20°C aujourd'hui."
-a_supprimer = dict.fromkeys(map(ord, '°!'), None)
-resultat = texte.translate(a_supprimer)
-print(resultat)  # Il fait beau 20C aujourd'hui.
+# Supprimer la ponctuation
+sans_ponctuation = re.sub(r'[^\w\s]', '', text)
+print(sans_ponctuation)  # Sortie : "Hello World 1234"
+
+# Supprimer les voyelles
+sans_voyelles = re.sub(r'[aeiouAEIOU]', '', text)
+print(sans_voyelles)  # Sortie : "Hll, Wrld! 1234"
 ```
 
-## Plongée en profondeur
-Historiquement, les expressions régulières sont un outil utilisé en informatique depuis les années 1950. Elles permettent de décrire des motifs de chaînes de caractères. En Python, le module `re` nous offre cette capacité.
+### Une fonction personnalisée que j'ai écrite
 
-Il existe d'autres méthodes pour supprimer des caractères, comme `str.replace()` ou `str.strip()`, mais elles sont plus limitées car elles ne gèrent pas les motifs.
+Je fais cela assez souvent pour que j'ai refactorisé cela dans cette fonction `delete()`. C'est aussi une bonne démonstration des [doctests](https://docs.python.org/3/library/doctest.html) :
 
-Quand on utilise `re.sub()`, Python doit d'abord compiler le motif, puis l'appliquer à la chaîne. La méthode `translate()` peut être plus rapide pour des suppressions simples car elle évite cette compilation, mais elle est moins flexible.
+```python
+def delete(string: str, regex: str) -> str:
+    """
+    >>> delete("Hello, world!", "l")
+    'Heo, word!'
+
+    >>> delete("Hello, world!", "[a-z]")
+    'H, !'
+    """
+    return re.sub(regex, "", string)
+```
+
+
+
+## Approfondissement
+La pratique de supprimer des caractères correspondant à un motif dans un texte a des racines profondes en informatique, remontant à des outils Unix primitifs comme `sed` et `grep`. En Python, le module `re` fournit cette capacité, en exploitant les expressions régulières, un outil puissant et polyvalent pour le traitement de texte.
+
+Les alternatives au module `re` incluent :
+- Les méthodes de chaîne comme `replace()` pour les cas simples.
+- Les bibliothèques tierces comme `regex` pour des motifs plus complexes et une meilleure prise en charge d'Unicode.
+
+Sous le capot, lorsque vous utilisez `re.sub()`, l'interpréteur Python compile le motif en une série de bytecode, traité par une machine à états qui effectue la correspondance de motifs directement sur le texte d'entrée. Cette opération peut être intensive en ressources pour des chaînes de grande taille ou des motifs complexes, donc les considérations de performance sont cruciales pour le traitement de grandes données.
 
 ## Voir aussi
-- Documentation officielle Python sur les expressions régulières : [Expressions régulières](https://docs.python.org/3/library/re.html)
-- Tutoriel Python sur le traitement des chaînes de caractères : [Manipulation de texte](https://docs.python.org/3/howto/regex.html#regex-howto)
-- Comparaison de performances entre différentes méthodes de suppression de caractères : [Performances str.replace vs re.sub](https://stackoverflow.com/questions/3411771/best-way-to-replace-multiple-characters-in-a-string)
+- [Documentation du module `re` de Python](https://docs.python.org/3/library/re.html) : documents officiels pour les expressions régulières en Python.
+- [Regular-Expressions.info](https://www.regular-expressions.info/) : Un guide complet des expressions régulières.
+- [Tutoriel de Real Python sur regex](https://realpython.com/regex-python/) : Applications réelles des expressions régulières en Python.

@@ -1,40 +1,65 @@
 ---
-date: 2024-01-20 17:42:47.654872-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.137836-06:00'
-model: gpt-4-1106-preview
+changelog:
+- 2024-04-04, dogweather, edited
+- 2024-04-04, gpt-4-0125-preview, translated from English
+date: 2024-01-20 17:43:02.363431-07:00
+description: 'Como fazer: .'
+lastmod: '2024-04-04T01:27:42.959137-06:00'
+model: gpt-4-0125-preview
 summary: .
 title: "Excluindo caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---
 
-## Como Fazer:
+## Como fazer:
+
 ```Python
 import re
 
-# Exemplo 1: Deletar dígitos de uma string
-texto = "Ano2023, Mes03"
-padrao = r'\d+'  # dígitos
-texto_limpo = re.sub(padrao, '', texto)
-print(texto_limpo)  # Saída: Ano, Mes
+# Exemplo de string
+text = "Hello, World! 1234"
 
-# Exemplo 2: Remover caracteres especiais, exceto espaço
-descricao = "Produto#7 - @Excelente!"
-padrao = r'[^\w\s]'  # não-palavras e não-espaços
-descricao_limpa = re.sub(padrao, '', descricao)
-print(descricao_limpa)  # Saída: Produto7  Excelente
+# Remover todos os dígitos
+sem_digitos = re.sub(r'\d', '', text)
+print(sem_digitos)  # Saída: "Hello, World! "
+
+# Remover pontuação
+sem_pontuacao = re.sub(r'[^\w\s]', '', text)
+print(sem_pontuacao)  # Saída: "Hello World 1234"
+
+# Remover vogais
+sem_vogais = re.sub(r'[aeiouAEIOU]', '', text)
+print(sem_vogais)  # Saída: "Hll, Wrld! 1234"
 ```
 
-## Mergulho Profundo:
-Deletar caracteres específicos de uma string é uma operação comum que remonta às primeiras ferramentas de processamento de texto. No Python, usamos regular expressions (regex), disponíveis no módulo `re`, para definir padrões de caracteres a serem removidos.
+### Uma função personalizada que escrevi
 
-- **Contexto histórico:** O uso de expressões regulares começou nos anos 1950. O Python as adotou na sua biblioteca padrão, seguindo a tradição de outras linguagens de programação.
-  
-- **Alternativas:** Além de `re.sub()`, é possível usar list comprehensions ou funções como `str.replace()` para remover caracteres, mas essas abordagens são menos flexíveis para padrões complexos.
+Faço isso com frequência suficiente que refatorei isso na função `delete()`. É também uma boa demonstração de [doctests](https://docs.python.org/3/library/doctest.html):
 
-- **Detalhes de implementação:** Ao compilar o padrão com `re.compile()` antes de usá-lo pode-se melhorar a performance se o mesmo regex for utilizado várias vezes.
+```python
+def delete(string: str, regex: str) -> str:
+    """
+    >>> delete("Hello, world!", "l")
+    'Heo, word!'
 
-## Veja Também:
-- Documentação do módulo `re` do Python: https://docs.python.org/3/library/re.html
-- Tutorial de expressões regulares do Python: https://docs.python.org/3/howto/regex.html
-- Artigo sobre a história das expressões regulares: https://dl.acm.org/doi/10.1145/363347.363387
+    >>> delete("Hello, world!", "[a-z]")
+    'H, !'
+    """
+    return re.sub(regex, "", string)
+```
+
+
+
+## Mergulho Profundo
+A prática de deletar caracteres que correspondem a um padrão em texto tem raízes profundas na ciência da computação, remontando a ferramentas Unix antigas como `sed` e `grep`. No Python, o módulo `re` fornece essa capacidade, aproveitando expressões regulares — uma ferramenta poderosa e versátil para processamento de texto.
+
+Alternativas para o módulo `re` incluem:
+- Métodos de string como `replace()` para casos simples.
+- Bibliotecas de terceiros como `regex` para padrões mais complexos e melhor suporte a Unicode.
+
+Por debaixo dos panos, quando você usa `re.sub()`, o interpretador Python compila o padrão em uma série de bytecodes, processados por uma máquina de estado que realiza a correspondência de padrões diretamente no texto de entrada. Esta operação pode ser intensiva em recursos para strings grandes ou padrões complexos, portanto, considerações de desempenho são cruciais para o processamento de grandes volumes de dados.
+
+## Veja Também
+- [Documentação do módulo `re` do Python](https://docs.python.org/3/library/re.html): Documentos oficiais para expressões regulares no Python.
+- [Regular-Expressions.info](https://www.regular-expressions.info/): Um guia abrangente sobre expressões regulares.
+- [Tutorial do Real Python sobre regex](https://realpython.com/regex-python/): Aplicações do mundo real de expressões regulares em Python.

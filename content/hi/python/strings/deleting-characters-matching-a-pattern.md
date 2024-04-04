@@ -1,39 +1,65 @@
 ---
-date: 2024-01-20 17:43:48.982368-07:00
-description: "\u0924\u0930\u0940\u0915\u093E (How to:) ."
-lastmod: '2024-03-13T22:44:51.562411-06:00'
-model: gpt-4-1106-preview
+changelog:
+- 2024-04-04, dogweather, edited
+- 2024-04-04, gpt-4-0125-preview, translated from English
+date: 2024-01-20 17:43:02.363431-07:00
+description: "\u0915\u0948\u0938\u0947 \u0915\u0930\u0947\u0902: ."
+lastmod: '2024-04-04T01:28:42.397259-06:00'
+model: gpt-4-0125-preview
 summary: .
-title: "\u092A\u0948\u091F\u0930\u094D\u0928 \u0938\u0947 \u092E\u0947\u0932 \u0916\
-  \u093E\u0924\u0947 \u0905\u0915\u094D\u0937\u0930\u094B\u0902 \u0915\u094B \u0939\
-  \u091F\u093E\u0928\u093E"
+title: "\u092A\u0948\u091F\u0930\u094D\u0928 \u0938\u0947 \u092E\u093F\u0932\u0928\
+  \u0947 \u0935\u093E\u0932\u0947 \u0935\u0930\u094D\u0923\u094B\u0902 \u0915\u094B\
+  \ \u0939\u091F\u093E\u0928\u093E"
 weight: 5
 ---
 
-## तरीका (How to:)
+## कैसे करें:
+
 ```Python
 import re
 
 # उदाहरण स्ट्रिंग
-example_string = "Hello123, नमस्ते456, Bye789"
+text = "Hello, World! 1234"
 
-# पैटर्न: अंक हटाओ
-pattern = '[0-9]'
+# सभी अंकों को हटाएं
+no_digits = re.sub(r'\d', '', text)
+print(no_digits)  # आउटपुट: "Hello, World! "
 
-# उस पैटर्न को मिलाने वाले चरित्रों को हटाएं
-cleaned_string = re.sub(pattern, '', example_string)
+# विराम चिह्न हटाएँ
+no_punctuation = re.sub(r'[^\w\s]', '', text)
+print(no_punctuation)  # आउटपुट: "Hello World 1234"
 
-print(cleaned_string)  # 'Hello, नमस्ते, Bye'
+# स्वर वर्ण हटाएं
+no_vowels = re.sub(r'[aeiouAEIOU]', '', text)
+print(no_vowels)  # आउटपुट: "Hll, Wrld! 1234"
 ```
 
-## डीप डाइव (Deep Dive)
-पैटर्न मिलानकर्ता, जैसे की रेगुलर एक्सप्रेशन्स (regular expressions), शक्तिशाली उपकरण हैं जो 1950 के दशक से उपयोग में हैं। Python में `re` मॉड्यूल का उपयोग इन पैटर्न मिलानकर्ता के लिए किया जाता है। `re.sub()` फंक्शन आपको इस पैटर्न वाले अक्षरों को हटा के स्ट्रिंग को साफ करने देता है।
+### मैंने जो व्यक्तिगत फ़ंक्शन लिखा है
 
-एक और तरीका `str.translate()` हो सकता है, पर यह बहुत जटिल पैटर्न के लिए इतना अच्छा नहीं है। `re.sub()` आपको पॉवरफुल पैटर्न मैचिंग क्षमता देता है वो भी जटिलता को समझने में आसान तरीके से।
+मैं इसे पर्याप्त बार करता हूँ इसलिए मैंने इसे `delete()` फ़ंक्शन में पुनः रूपांतरित किया है। यह [doctests](https://docs.python.org/3/library/doctest.html) का एक अच्छा प्रदर्शन भी है:
 
-जब आप `re.sub()` का उपयोग करते हैं, आपको ध्यान देना होता है कि पैटर्न सही से लिखा जाए क्योंकि गलत पैटर्न का मतलब होगा गलत डेटा। इसलिए, जब भी पैटर्न लिखें, उसे टेस्ट करना ना भूलें।
+```python
+def delete(string: str, regex: str) -> str:
+    """
+    >>> delete("Hello, world!", "l")
+    'Heo, word!'
 
-## यह भी देखें (See Also)
-- Python `re` मॉड्यूल का दस्तावेज: [Python re documentation](https://docs.python.org/3/library/re.html)
-- रेगुलर एक्सप्रेशन्स क्विक स्टार्ट गाइड: [Regular Expressions Quick Start](https://www.regular-expressions.info/quickstart.html)
-- `re.sub()` के और उदाहरणों के लिए: [re.sub() examples](https://www.programiz.com/python-programming/methods/string/replace)
+    >>> delete("Hello, world!", "[a-z]")
+    'H, !'
+    """
+    return re.sub(regex, "", string)
+```
+
+## गहन अध्ययन
+पैटर्न के अनुरूप वर्णों को हटाने की प्रथा कंप्यूटर विज्ञान में गहरी जड़ें रखती है, `sed` और `grep` जैसे प्रारंभिक Unix उपकरणों में वापस जाती है। Python में, `re` मॉड्यूल इस क्षमता प्रदान करता है, नियमित अभिव्यक्तियों—पाठ प्रक्रिया करने के लिए एक शक्तिशाली और बहुमुखी उपकरण—का उपयोग करते हुए।
+
+`re` मॉड्यूल के विकल्प में शामिल हैं:
+- सरल मामलों के लिए `replace()` जैसे स्ट्रिंग मेथड्स।
+- अधिक जटिल पैटर्न और बेहतर यूनिकोड समर्थन के लिए `regex` जैसी तृतीय-पक्ष लाइब्रेरी।
+
+जब आप `re.sub()` का उपयोग करते हैं, तो Python इंटरप्रेटर पैटर्न को बाइटकोड की एक श्रृंखला में संकलित करता है, जिसे इनपुट टेक्स्ट पर सीधे पैटर्न-मैचिंग करने वाले एक राज्य मशीन द्वारा प्रसंस्कृत किया जाता है। बड़े स्ट्रिंग्स या जटिल पैटर्न के लिए यह ऑपरेशन संसाधन-गहन हो सकता है, इसलिए बड़े डेटा प्रक्रिया के लिए प्रदर्शन पर विचार करना महत्वपूर्ण है।
+
+## यह भी देखें
+- [Python `re` मॉड्यूल दस्तावेज़ीकरण](https://docs.python.org/3/library/re.html): Python में नियमित अभिव्यक्तियों के लिए आधिकारिक दस्तावेज़।
+- [Regular-Expressions.info](https://www.regular-expressions.info/): नियमित अभिव्यक्तियों के लिए एक व्यापक गाइड।
+- [Real Python ट्यूटोरियल ऑन रेजेक्स](https://realpython.com/regex-python/): Python में नियमित अभिव्यक्तियों के वास्तविक विश्व अनुप्रयोग।
