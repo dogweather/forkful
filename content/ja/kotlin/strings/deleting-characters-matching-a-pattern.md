@@ -1,8 +1,8 @@
 ---
 date: 2024-01-20 17:42:44.919696-07:00
-description: null
+description: ''
 isCJKLanguage: true
-lastmod: '2024-04-05T21:53:42.930569-06:00'
+lastmod: '2024-04-05T21:59:54.357487-06:00'
 model: gpt-4-1106-preview
 summary: "Kotlin\u3067\u306F\u3001\u6587\u5B57\u5217\u304B\u3089\u30D1\u30BF\u30FC\
   \u30F3\u306B\u4E00\u81F4\u3059\u308B\u6587\u5B57\u3092\u524A\u9664\u3059\u308B\u306B\

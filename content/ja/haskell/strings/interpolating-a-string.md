@@ -1,8 +1,8 @@
 ---
 date: 2024-01-20 17:50:59.001766-07:00
-description: null
+description: ''
 isCJKLanguage: true
-lastmod: '2024-04-05T21:53:43.033632-06:00'
+lastmod: '2024-04-05T21:59:54.455185-06:00'
 model: gpt-4-1106-preview
 summary: "(\u65B9\u6CD5) Haskell\u3067\u306F\u6587\u5B57\u5217\u88DC\u9593\u306F\u8A00\
   \u8A9E\u306E\u57FA\u672C\u6A5F\u80FD\u3067\u306F\u306A\u3044\u3002\u3057\u304B\u3057\

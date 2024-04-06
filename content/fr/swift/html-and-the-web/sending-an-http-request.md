@@ -1,7 +1,7 @@
 ---
 date: 2024-01-20 18:00:41.284427-07:00
-description: null
-lastmod: '2024-04-05T21:53:59.630724-06:00'
+description: ''
+lastmod: '2024-04-05T22:00:10.703872-06:00'
 model: gpt-4-1106-preview
 summary: ''
 title: "Envoi d'une requ\xEAte HTTP"

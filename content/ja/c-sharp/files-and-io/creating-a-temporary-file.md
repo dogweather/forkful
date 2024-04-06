@@ -1,8 +1,8 @@
 ---
 date: 2024-01-20 17:39:58.194789-07:00
-description: null
+description: ''
 isCJKLanguage: true
-lastmod: '2024-04-05T21:53:43.022565-06:00'
+lastmod: '2024-04-05T21:59:54.444063-06:00'
 model: gpt-4-1106-preview
 summary: "C#\u3067\u306E\u4E00\u6642\u30D5\u30A1\u30A4\u30EB\u4F5C\u6210\u306F\u3001\
   \u7D44\u307F\u8FBC\u307F\u95A2\u6570`Path.GetTempFileName()`\u3067\u7C21\u5358\u306B\

@@ -1,7 +1,7 @@
 ---
 date: 2024-02-03 19:02:40.859037-07:00
-description: null
-lastmod: '2024-04-05T21:53:35.677579-06:00'
+description: ''
+lastmod: '2024-04-05T21:59:47.285340-06:00'
 model: gpt-4-0125-preview
 summary: ''
 title: Parsing a date from a string

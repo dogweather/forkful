@@ -2,8 +2,8 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:21.812667-07:00
-description: null
-lastmod: '2024-04-05T21:53:43.573519-06:00'
+description: ''
+lastmod: '2024-04-05T21:59:54.960981-06:00'
 model: gpt-4-0125-preview
 summary: "C\u8A00\u8A9E\u3067\u306F\u3001\u6A19\u6E96\u30E9\u30A4\u30D6\u30E9\u30EA\
   `<stdlib.h>`\u306E\u4E00\u90E8\u3067\u3042\u308B`rand()`\u95A2\u6570\u3092\u4F7F\

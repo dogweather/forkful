@@ -2,8 +2,8 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:41.119953-07:00
-description: null
-lastmod: '2024-04-05T21:53:37.161603-06:00'
+description: ''
+lastmod: '2024-04-05T21:59:48.740570-06:00'
 model: gpt-4-0125-preview
 summary: ''
 title: Praca z plikami CSV

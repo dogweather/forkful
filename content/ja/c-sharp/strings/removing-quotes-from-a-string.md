@@ -1,7 +1,7 @@
 ---
 date: 2024-01-26 03:38:53.176588-07:00
-description: null
-lastmod: '2024-04-05T21:53:42.984560-06:00'
+description: ''
+lastmod: '2024-04-05T21:59:54.407998-06:00'
 model: gpt-4-0125-preview
 summary: "\u30AF\u30A9\u30FC\u30C8\u3092\u53D6\u308A\u9664\u304F\u6982\u5FF5\u306F\
   \u65B0\u3057\u3044\u3082\u306E\u3067\u3082\u7279\u306B\u8907\u96D1\u306A\u3082\u306E\

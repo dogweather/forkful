@@ -2,8 +2,8 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:08.701295-07:00
-description: null
-lastmod: '2024-04-05T21:53:42.972363-06:00'
+description: ''
+lastmod: '2024-04-05T21:59:54.397227-06:00'
 model: gpt-4-0125-preview
 summary: ''
 title: "YAML \u3092\u64CD\u4F5C\u3059\u308B"

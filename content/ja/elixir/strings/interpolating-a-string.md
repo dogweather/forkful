@@ -1,8 +1,8 @@
 ---
 date: 2024-01-20 17:50:30.712730-07:00
-description: null
+description: ''
 isCJKLanguage: true
-lastmod: '2024-04-05T21:53:42.541246-06:00'
+lastmod: '2024-04-05T21:59:54.006535-06:00'
 model: gpt-4-1106-preview
 summary: "(\u3084\u308A\u65B9) Elixir\u306B\u304A\u3051\u308B\u6587\u5B57\u5217\u88DC\
   \u9593\u306F\u3001Ruby\u8A00\u8A9E\u304B\u3089\u89E6\u767A\u3055\u308C\u307E\u3057\

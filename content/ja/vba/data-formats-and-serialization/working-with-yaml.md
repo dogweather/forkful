@@ -2,8 +2,8 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:31.153136-07:00
-description: null
-lastmod: '2024-04-05T21:53:42.813387-06:00'
+description: ''
+lastmod: '2024-04-05T21:59:54.251299-06:00'
 model: gpt-4-0125-preview
 summary: "VBA\u3067YAML\u3092\u6271\u3046\u306B\u306F\u3001YAML\u3092VBA\u304C\u5BB9\
   \u6613\u306B\u64CD\u4F5C\u3067\u304D\u308B\u5F62\u5F0F\u3001\u901A\u5E38\u306F\u8F9E\

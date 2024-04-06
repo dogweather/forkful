@@ -2,8 +2,8 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:45.600557-07:00
-description: null
-lastmod: '2024-04-05T21:53:42.975038-06:00'
+description: ''
+lastmod: '2024-04-05T21:59:54.399595-06:00'
 model: gpt-4-0125-preview
 summary: "Kotlin\u306F\u9759\u7684\u578B\u4ED8\u3051\u30D7\u30ED\u30B0\u30E9\u30DF\
   \u30F3\u30B0\u8A00\u8A9E\u3067\u3042\u308A\u3001JVM\u4E0A\u3067\u5B9F\u884C\u3055\

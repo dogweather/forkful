@@ -2,8 +2,8 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:15:24.046423-07:00
-description: null
-lastmod: '2024-04-05T21:53:42.333867-06:00'
+description: ''
+lastmod: '2024-04-05T21:59:53.825492-06:00'
 model: gpt-4-0125-preview
 summary: "`math.go`\u306B\u5B9A\u7FA9\u3055\u308C\u305F\u95A2\u6570`Add`\u306E\u7C21\
   \u5358\u306A\u30C6\u30B9\u30C8\u306E\u4F8B\uFF1A."

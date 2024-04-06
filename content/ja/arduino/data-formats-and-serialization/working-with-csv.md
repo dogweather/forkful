@@ -2,8 +2,8 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:20.558564-07:00
-description: null
-lastmod: '2024-04-05T21:53:43.340612-06:00'
+description: ''
+lastmod: '2024-04-05T21:59:54.743557-06:00'
 model: gpt-4-0125-preview
 summary: "**SD\u30AB\u30FC\u30C9\u304B\u3089\u306ECSV\u30C7\u30FC\u30BF\u306E\u8AAD\
   \u307F\u53D6\u308A\uFF1A**."

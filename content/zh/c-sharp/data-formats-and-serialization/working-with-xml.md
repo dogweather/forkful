@@ -1,7 +1,7 @@
 ---
 date: 2024-01-26 04:29:29.650786-07:00
-description: null
-lastmod: '2024-04-05T21:53:48.108099-06:00'
+description: ''
+lastmod: '2024-04-05T21:59:59.363277-06:00'
 model: gpt-4-0125-preview
 summary: "\u5728C#\u4E2D\uFF0C`System.Xml.Linq` \u548C `System.Xml` \u547D\u540D\u7A7A\
   \u95F4\u662F\u64CD\u4F5CXML\u7684\u4E24\u5927\u5229\u5668\u3002LINQ to XML\uFF08\

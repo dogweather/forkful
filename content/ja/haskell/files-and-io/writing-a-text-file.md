@@ -2,8 +2,8 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:16.227585-07:00
-description: null
-lastmod: '2024-04-05T21:53:43.072498-06:00'
+description: ''
+lastmod: '2024-04-05T21:59:54.491522-06:00'
 model: gpt-4-0125-preview
 summary: "Haskell\u306E\u6A19\u6E96Prelude\u306F\u3001`System.IO`\u30E2\u30B8\u30E5\
   \u30FC\u30EB\u306E`writeFile`\u95A2\u6570\u3068`appendFile`\u95A2\u6570\u3092\u4F7F\

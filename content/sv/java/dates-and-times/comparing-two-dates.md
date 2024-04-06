@@ -1,7 +1,7 @@
 ---
 date: 2024-01-20 17:33:25.104514-07:00
-description: null
-lastmod: '2024-04-05T21:53:39.133197-06:00'
+description: ''
+lastmod: '2024-04-05T21:59:50.693740-06:00'
 model: gpt-4-1106-preview
 summary: ''
 title: "J\xE4mf\xF6ra tv\xE5 datum"

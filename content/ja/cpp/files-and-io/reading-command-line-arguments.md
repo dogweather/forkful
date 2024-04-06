@@ -1,8 +1,8 @@
 ---
 date: 2024-01-20 17:55:45.713037-07:00
-description: null
+description: ''
 isCJKLanguage: true
-lastmod: '2024-04-05T21:53:43.382485-06:00'
+lastmod: '2024-04-05T21:59:54.785036-06:00'
 model: gpt-4-1106-preview
 summary: "(\u65B9\u6CD5) \u6700\u521D\u306EC\u8A00\u8A9E\u30D0\u30FC\u30B8\u30E7\u30F3\
   \u304B\u3089`main`\u95A2\u6570\u306F\u5F15\u6570\u3092\u53D7\u3051\u53D6\u308C\u308B\

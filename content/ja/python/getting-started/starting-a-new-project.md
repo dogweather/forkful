@@ -3,8 +3,8 @@ changelog:
 - 2024-02-22, dogweather, reviewed
 - 2024-02-22, gpt-4-0125-preview, translated from English
 date: 2024-02-22 17:30:27.950806-07:00
-description: null
-lastmod: '2024-04-05T21:53:42.454550-06:00'
+description: ''
+lastmod: '2024-04-05T21:59:53.926565-06:00'
 model: gpt-4-0125-preview
 summary: ''
 title: "\u65B0\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u306E\u958B\u59CB"

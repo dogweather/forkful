@@ -2,8 +2,8 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:20.976899-07:00
-description: null
-lastmod: '2024-04-05T21:53:42.916518-06:00'
+description: ''
+lastmod: '2024-04-05T21:59:54.345129-06:00'
 model: gpt-4-0125-preview
 summary: "Elm\u306F\u4E3B\u306B\u30A6\u30A7\u30D6\u958B\u767A\u3092\u5BFE\u8C61\u3068\
   \u3057\u3066\u304A\u308A\u3001\u4F1D\u7D71\u7684\u306A\u30B3\u30DE\u30F3\u30C9\u30E9\

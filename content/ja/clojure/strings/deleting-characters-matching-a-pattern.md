@@ -1,8 +1,8 @@
 ---
 date: 2024-01-20 17:42:31.216508-07:00
-description: null
+description: ''
 isCJKLanguage: true
-lastmod: '2024-04-05T21:53:42.485755-06:00'
+lastmod: '2024-04-05T21:59:53.955467-06:00'
 model: gpt-4-1106-preview
 summary: "(\u65B9\u6CD5) Clojure\u306F\u3001\u30B7\u30F3\u30DC\u30EA\u30C3\u30AF\u306A\
   \u30C7\u30FC\u30BF\u51E6\u7406\u306B\u9577\u3051\u308B\u95A2\u6570\u578B\u8A00\u8A9E\

@@ -1,7 +1,7 @@
 ---
 date: 2024-01-20 17:54:52.766937-07:00
-description: null
-lastmod: '2024-04-05T21:54:00.397073-06:00'
+description: ''
+lastmod: '2024-04-05T22:00:11.440162-06:00'
 model: gpt-4-1106-preview
 summary: ''
 title: Lectura de un archivo de texto

@@ -2,8 +2,8 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:21.185044-07:00
-description: null
-lastmod: '2024-04-05T21:53:59.150258-06:00'
+description: ''
+lastmod: '2024-04-05T22:00:10.242272-06:00'
 model: gpt-4-0125-preview
 summary: ''
 title: "Analyser une date depuis une cha\xEEne de caract\xE8res"

@@ -2,8 +2,8 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:47.156413-07:00
-description: null
-lastmod: '2024-04-05T21:53:42.818279-06:00'
+description: ''
+lastmod: '2024-04-05T21:59:54.255842-06:00'
 model: gpt-4-0125-preview
 summary: "**\u4F8B\u306ETOML\u30D5\u30A1\u30A4\u30EB** (`config.toml`)."
 title: "TOML\u3092\u6D3B\u7528\u3059\u308B"

@@ -2,8 +2,8 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:14:57.932296-07:00
-description: null
-lastmod: '2024-04-05T21:53:43.586827-06:00'
+description: ''
+lastmod: '2024-04-05T21:59:54.974274-06:00'
 model: gpt-4-0125-preview
 summary: ''
 title: "\u30C6\u30B9\u30C8\u306E\u4F5C\u6210"
