@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:51:13.626791-07:00
 description: 'How to: (Come fare:) Ecco come interpolare una stringa in Fish Shell.'
-lastmod: '2024-03-13T22:44:43.841950-06:00'
+lastmod: '2024-04-05T21:53:44.588514-06:00'
 model: gpt-4-1106-preview
-summary: Ecco come interpolare una stringa in Fish Shell.
+summary: (Come fare:) Ecco come interpolare una stringa in Fish Shell.
 title: Interpolazione di una stringa
 weight: 8
 ---

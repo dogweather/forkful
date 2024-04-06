@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 04:28:42.748220-07:00
-description: 'Wie geht das: .'
-lastmod: '2024-03-13T22:44:53.913460-06:00'
+description: "Wie geht das: XML gibt es schon seit Ende der 90er Jahre, was es in\
+  \ Tech-Jahren zum Gro\xDFvater macht. Es wurde f\xFCr die Datenportabilit\xE4t und\
+  \ die einfache\u2026"
+lastmod: '2024-04-05T21:53:55.796454-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "XML gibt es schon seit Ende der 90er Jahre, was es in Tech-Jahren zum Gro\xDF\
+  vater macht."
 title: Arbeiten mit XML
 weight: 40
 ---

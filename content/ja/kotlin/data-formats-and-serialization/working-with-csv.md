@@ -2,8 +2,8 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:45.600557-07:00
-description: "\u65B9\u6CD5:\u2026"
-lastmod: '2024-03-13T22:44:42.095572-06:00'
+description: null
+lastmod: '2024-04-05T21:53:42.975038-06:00'
 model: gpt-4-0125-preview
 summary: "Kotlin\u306F\u9759\u7684\u578B\u4ED8\u3051\u30D7\u30ED\u30B0\u30E9\u30DF\
   \u30F3\u30B0\u8A00\u8A9E\u3067\u3042\u308A\u3001JVM\u4E0A\u3067\u5B9F\u884C\u3055\
@@ -15,7 +15,7 @@ summary: "Kotlin\u306F\u9759\u7684\u578B\u4ED8\u3051\u30D7\u30ED\u30B0\u30E9\u30
   \u3002\u307E\u305F\u3001\u3088\u308A\u9AD8\u5EA6\u306A\u6A5F\u80FD\u306B\u306F\u3001\
   `kotlinx.serialization`\u3084`opencsv`\u306E\u3088\u3046\u306A\u4EBA\u6C17\u306E\
   \u3042\u308B\u30B5\u30FC\u30C9\u30D1\u30FC\u30C6\u30A3\u30E9\u30A4\u30D6\u30E9\u30EA\
-  \u3092\u6D3B\u7528\u3067\u304D\u307E\u3059."
+  \u3092\u6D3B\u7528\u3067\u304D\u307E\u3059\u3002"
 title: "CSV\u3068\u306E\u4F5C\u696D"
 weight: 37
 ---

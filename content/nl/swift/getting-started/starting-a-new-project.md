@@ -2,10 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:00.132208-07:00
-description: 'Hoe te: .'
-lastmod: '2024-03-13T22:44:51.157561-06:00'
+description: "Hoe te: Terug in de dagen v\xF3\xF3r Swift, was Objective-C de dominante\
+  \ taal en het starten van een nieuw project omvatte wat meer standaardcode. Swift\
+  \ heeft\u2026"
+lastmod: '2024-04-05T21:53:51.169809-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Terug in de dagen v\xF3\xF3r Swift, was Objective-C de dominante taal en\
+  \ het starten van een nieuw project omvatte wat meer standaardcode."
 title: Een nieuw project starten
 weight: 1
 ---

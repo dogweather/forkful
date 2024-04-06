@@ -2,10 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:53.221031-07:00
-description: 'Hoe: .'
-lastmod: '2024-03-13T22:44:50.551389-06:00'
+description: "Hoe: TypeScript, een superset van JavaScript, is ontwikkeld door Microsoft\
+  \ en voor het eerst uitgebracht in oktober 2012. Het voegt statische typen toe\u2026"
+lastmod: '2024-04-05T21:53:50.573915-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: TypeScript, een superset van JavaScript, is ontwikkeld door Microsoft en
+  voor het eerst uitgebracht in oktober 2012.
 title: Een nieuw project starten
 weight: 1
 ---

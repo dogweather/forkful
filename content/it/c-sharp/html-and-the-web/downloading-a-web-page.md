@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:43:42.256294-07:00
 description: "How to: (Come Fare:) In C# si pu\xF2 usare HttpClient. Ecco come."
-lastmod: '2024-03-13T22:44:43.432761-06:00'
+lastmod: '2024-04-05T21:53:44.200971-06:00'
 model: gpt-4-1106-preview
-summary: "In C# si pu\xF2 usare HttpClient."
+summary: "(Come Fare:) In C# si pu\xF2 usare HttpClient."
 title: Scaricare una pagina web
 weight: 42
 ---

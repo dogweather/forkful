@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:35:51.419531-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:40.986407-06:00'
+description: "How to: Konvertering av dato til tekst bruker ofte `date`-kommandoen\
+  \ i Bash, som har r\xF8tter tilbake til de f\xF8rste versjonene av UNIX. Du kan\
+  \ bruke The\u2026"
+lastmod: '2024-04-05T21:53:41.947790-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Konvertering av dato til tekst bruker ofte `date`-kommandoen i Bash, som\
+  \ har r\xF8tter tilbake til de f\xF8rste versjonene av UNIX."
 title: Konvertere en dato til en streng
 weight: 28
 ---

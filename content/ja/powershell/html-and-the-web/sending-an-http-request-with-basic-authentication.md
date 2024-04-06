@@ -1,10 +1,11 @@
 ---
 date: 2024-01-20 18:02:25.850235-07:00
-description: "How to: (\u3084\u308A\u65B9) ."
+description: "How to: (\u3084\u308A\u65B9) \u5B9F\u884C\u7D50\u679C\u306E\u30B5\u30F3\
+  \u30D7\u30EB."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:42.436886-06:00'
+lastmod: '2024-04-05T21:53:43.258714-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "\u57FA\u672C\u8A8D\u8A3C\u3092\u4F7F\u7528\u3057\u305FHTTP\u30EA\u30AF\u30A8\
   \u30B9\u30C8\u306E\u9001\u4FE1"
 weight: 45

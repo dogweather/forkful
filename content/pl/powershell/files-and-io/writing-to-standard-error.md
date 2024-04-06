@@ -1,9 +1,12 @@
 ---
 date: 2024-01-19
-description: "Jak to zrobi\u0107? ."
-lastmod: '2024-03-13T22:44:35.646320-06:00'
+description: "Jak to zrobi\u0107? W przyk\u0142adach powy\u017Cej ka\u017Cdy fragment\
+  \ kodu zapisuje informacje do strumienia b\u0142\u0119d\xF3w. `Write-Error` jest\
+  \ wbudowanym poleceniem.\u2026"
+lastmod: '2024-04-05T21:53:37.071675-06:00'
 model: unknown
-summary: .
+summary: "W przyk\u0142adach powy\u017Cej ka\u017Cdy fragment kodu zapisuje informacje\
+  \ do strumienia b\u0142\u0119d\xF3w."
 title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---

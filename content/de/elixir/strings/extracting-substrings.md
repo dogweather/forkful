@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:45:17.466899-07:00
-description: 'So geht''s: .'
-lastmod: '2024-03-13T22:44:53.451700-06:00'
+description: "So geht's: Teilstrings in Elixir zu extrahieren, ist dank des `String`-Moduls\
+  \ ein Kinderspiel. Fr\xFCher, in Sprachen wie C, musste man Zeichen f\xFCr Zeichen\u2026"
+lastmod: '2024-04-05T21:53:55.408695-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Teilstrings in Elixir zu extrahieren, ist dank des `String`-Moduls ein Kinderspiel.
 title: Teilstrings extrahieren
 weight: 6
 ---

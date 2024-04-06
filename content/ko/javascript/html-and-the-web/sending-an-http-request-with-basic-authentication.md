@@ -1,10 +1,17 @@
 ---
 date: 2024-01-20 18:01:53.067422-07:00
-description: "How to (\uC5B4\uB5BB\uAC8C): ."
+description: "How to (\uC5B4\uB5BB\uAC8C): \uAE30\uBCF8 \uC778\uC99D(Basic Authentication)\uC740\
+  \ HTTP 1.0\uBD80\uD130 \uC874\uC7AC\uD558\uB294 \uBC29\uC2DD\uC785\uB2C8\uB2E4.\
+  \ \uC778\uC99D \uC815\uBCF4\uAC00 base64 \uC778\uCF54\uB529\uC73C\uB85C \uC804\uC1A1\
+  \uB418\uAE30 \uB54C\uBB38\uC5D0 HTTPS\uC640 \uD568\uAED8 \uC0AC\uC6A9\uD558\uB294\
+  \ \uAC83\uC774 \uC88B\uC2B5\uB2C8\uB2E4. base64 \uC778\uCF54\uB529\uC740 \uC554\uD638\
+  \uD654\uAC00 \uC544\uB2C8\uB77C \uC778\uCF54\uB529\uC774\uB77C\uB294 \uC810\uC744\
+  \u2026"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.790121-06:00'
+lastmod: '2024-04-05T21:53:57.393009-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "\uAE30\uBCF8 \uC778\uC99D(Basic Authentication)\uC740 HTTP 1.0\uBD80\uD130\
+  \ \uC874\uC7AC\uD558\uB294 \uBC29\uC2DD\uC785\uB2C8\uB2E4."
 title: "\uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD55C HTTP \uC694\uCCAD \uBCF4\
   \uB0B4\uAE30"
 weight: 45

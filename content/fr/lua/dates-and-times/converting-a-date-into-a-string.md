@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:36:57.344496-07:00
 description: 'How to: Utilisons `os.date` pour formater une date .'
-lastmod: '2024-03-13T22:44:57.949305-06:00'
+lastmod: '2024-04-05T21:53:59.421083-06:00'
 model: gpt-4-1106-preview
-summary: Utilisons `os.date` pour formater une date.
+summary: Utilisons `os.date` pour formater une date .
 title: "Conversion d'une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---

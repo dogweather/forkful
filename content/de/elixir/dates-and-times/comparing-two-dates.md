@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:32:52.586950-07:00
-description: 'Vorgehensweise: .'
-lastmod: '2024-03-13T22:44:53.547810-06:00'
+description: "Vorgehensweise: Datumvergleiche in Elixir basieren historisch auf der\
+  \ Erlang-Standardbibliothek. Vor Elixir 1.3 war das Arbeiten mit Zeit und Datum\u2026"
+lastmod: '2024-04-05T21:53:55.431639-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Datumvergleiche in Elixir basieren historisch auf der Erlang-Standardbibliothek.
 title: Vergleich von zwei Daten
 weight: 27
 ---

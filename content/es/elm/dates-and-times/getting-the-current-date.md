@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 15:14:01.855312-07:00
-description: "C\xF3mo hacerlo: ."
-lastmod: '2024-03-13T22:44:59.003615-06:00'
+description: "C\xF3mo hacerlo: Sample output."
+lastmod: '2024-04-05T21:54:00.345929-06:00'
 model: unknown
-summary: .
+summary: ''
 title: Obteniendo la fecha actual
 weight: 29
 ---

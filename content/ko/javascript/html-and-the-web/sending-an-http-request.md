@@ -6,11 +6,11 @@ description: "How to: (\uBC29\uBC95) JavaScript\uC5D0\uC11C HTTP \uC694\uCCAD\uC
   \uB798\uB294 `fetch`\uB97C \uC774\uC6A9\uD574 \uAC04\uB2E8\uD55C `GET` \uC694\uCCAD\
   \uC744 \uBCF4\uB0B4\uB294 \uC608\uC81C \uCF54\uB4DC\uC785\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.786412-06:00'
+lastmod: '2024-04-05T21:53:57.390248-06:00'
 model: gpt-4-1106-preview
-summary: "JavaScript\uC5D0\uC11C HTTP \uC694\uCCAD\uC744 \uBCF4\uB0B4\uB294 \uAC00\
-  \uC7A5 \uAC04\uB2E8\uD55C \uBC29\uBC95 \uC911 \uD558\uB098\uB294 `fetch` API\uB97C\
-  \ \uC0AC\uC6A9\uD558\uB294 \uAC83\uC785\uB2C8\uB2E4."
+summary: "(\uBC29\uBC95) JavaScript\uC5D0\uC11C HTTP \uC694\uCCAD\uC744 \uBCF4\uB0B4\
+  \uB294 \uAC00\uC7A5 \uAC04\uB2E8\uD55C \uBC29\uBC95 \uC911 \uD558\uB098\uB294 `fetch`\
+  \ API\uB97C \uC0AC\uC6A9\uD558\uB294 \uAC83\uC785\uB2C8\uB2E4."
 title: "HTTP \uC694\uCCAD \uBCF4\uB0B4\uAE30"
 weight: 44
 ---

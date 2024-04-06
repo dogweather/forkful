@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:55:54.764022-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:38.353687-06:00'
+description: "How to: I historiens b\xF6rjan var terminalen det prim\xE4ra gr\xE4\
+  nssnittet mellan anv\xE4ndare och dator. Fish Shell moderniserar detta koncept med\
+  \ enkel syntax och\u2026"
+lastmod: '2024-04-05T21:53:39.691752-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "I historiens b\xF6rjan var terminalen det prim\xE4ra gr\xE4nssnittet mellan\
+  \ anv\xE4ndare och dator."
 title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---

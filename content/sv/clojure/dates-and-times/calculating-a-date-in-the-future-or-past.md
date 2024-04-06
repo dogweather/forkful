@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:30:48.016606-07:00
-description: "Hur man g\xF6r: ."
-lastmod: '2024-03-13T22:44:37.538458-06:00'
+description: "Hur man g\xF6r: Historiskt sett har datumber\xE4kningar varit viktigt\
+  \ f\xF6r att sp\xE5ra h\xE4ndelser \xF6ver tid. Idag finns det flera bibliotek f\xF6\
+  r att hantera\u2026"
+lastmod: '2024-04-05T21:53:38.866916-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historiskt sett har datumber\xE4kningar varit viktigt f\xF6r att sp\xE5\
+  ra h\xE4ndelser \xF6ver tid."
 title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutenheten"
 weight: 26
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:47:44.518007-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:45:00.040435-06:00'
+description: "How to: In the early days of computing, strings were handled differently,\
+  \ often with null-terminated arrays in languages like C. Kotlin, as a modern\u2026"
+lastmod: '2024-04-05T21:53:35.738912-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: In the early days of computing, strings were handled differently, often with
+  null-terminated arrays in languages like C.
 title: Finding the length of a string
 weight: 7
 ---

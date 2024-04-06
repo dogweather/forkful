@@ -1,10 +1,12 @@
 ---
 date: 2024-01-20 17:43:31.174335-07:00
-description: "\u5B9E\u73B0\u8FC7\u7A0B\uFF1A ."
+description: "\u5B9E\u73B0\u8FC7\u7A0B\uFF1A \u8FD9\u6BB5\u4EE3\u7801\u4F1A\u8FDE\u63A5\
+  \u5230WiFi\uFF0C\u7136\u540E\u4ECE`http://example.com`\u4E0B\u8F7D\u7F51\u9875\u5185\
+  \u5BB9\uFF0C\u5E76\u628A\u5B83\u6253\u5370\u51FA\u6765\u3002"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:48.060955-06:00'
+lastmod: '2024-04-05T21:53:48.357331-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "\u4E0B\u8F7D\u7F51\u9875"
 weight: 42
 ---

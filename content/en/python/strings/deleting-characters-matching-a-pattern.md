@@ -2,10 +2,12 @@
 changelog:
 - 2024-04-04, dogweather, edited
 date: 2024-01-20 17:43:02.363431-07:00
-description: 'How to: .'
-lastmod: 2024-04-04
+description: "How to: I do this frequently enough that I refactored it into this simple\
+  \ `delete()` function. It's also a good demonstration of\u2026"
+lastmod: '2024-04-05T21:53:35.374386-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: I do this frequently enough that I refactored it into this simple `delete()`
+  function.
 title: Deleting characters matching a pattern
 weight: 5
 ---

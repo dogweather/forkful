@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:51:32.663422-07:00
-description: "C\xF3mo Hacerlo: ."
-lastmod: '2024-03-13T22:44:59.146956-06:00'
+description: "C\xF3mo Hacerlo: La interpolaci\xF3n de cadenas en PHP ha sido una caracter\xED\
+  stica desde las primeras versiones, simplificando la concatenaci\xF3n de cadenas\
+  \ y\u2026"
+lastmod: '2024-04-05T21:54:00.492316-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "La interpolaci\xF3n de cadenas en PHP ha sido una caracter\xEDstica desde\
+  \ las primeras versiones, simplificando la concatenaci\xF3n de cadenas y variables."
 title: "Interpolaci\xF3n de cadenas de texto"
 weight: 8
 ---

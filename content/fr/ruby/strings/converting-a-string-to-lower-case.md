@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:39:10.893538-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:58.404431-06:00'
+description: "How to: En Ruby, `downcase` est une m\xE9thode int\xE9gr\xE9e pour les\
+  \ objets String, destin\xE9e \xE0 transformer les lettres majuscules en minuscules.\
+  \ Introduite d\xE8s\u2026"
+lastmod: '2024-04-05T21:53:59.809545-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "En Ruby, `downcase` est une m\xE9thode int\xE9gr\xE9e pour les objets String,\
+  \ destin\xE9e \xE0 transformer les lettres majuscules en minuscules."
 title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
 weight: 4
 ---

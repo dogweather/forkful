@@ -1,9 +1,10 @@
 ---
 date: 2024-01-25 03:00:08.560012-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:45:00.200963-06:00'
+description: "How to: Lua doesn't include a round function out of the box unlike some\
+  \ other languages. Historically, you need to write your own or use a third-party\u2026"
+lastmod: '2024-04-05T21:53:35.896372-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Lua doesn't include a round function out of the box unlike some other languages.
 title: Rounding numbers
 weight: 13
 ---

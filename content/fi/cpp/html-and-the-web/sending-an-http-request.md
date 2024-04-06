@@ -2,10 +2,9 @@
 date: 2024-01-20 17:59:04.545720-07:00
 description: "How to: - Kuinka tehd\xE4: C++ ei suoraan tue HTTP-pyynt\xF6j\xE4 standardikirjastossaan,\
   \ mutta kirjastoja kuten `libcurl` tai `cpp-httplib` voidaan k\xE4ytt\xE4\xE4."
-lastmod: '2024-03-13T22:44:56.862042-06:00'
+lastmod: '2024-04-05T21:53:58.439938-06:00'
 model: gpt-4-1106-preview
-summary: "C++ ei suoraan tue HTTP-pyynt\xF6j\xE4 standardikirjastossaan, mutta kirjastoja\
-  \ kuten `libcurl` tai `cpp-httplib` voidaan k\xE4ytt\xE4\xE4."
+summary: ''
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---

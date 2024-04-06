@@ -5,11 +5,11 @@ description: "How to: (\uBC29\uBC95) Clojure\uC5D0\uC11C \uC784\uC2DC \uD30C\uC7
   \uB4DC\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4. \uC608\uC81C\uB97C \uD655\uC778\uD574\
   \ \uBCF4\uC138\uC694."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:54.689588-06:00'
+lastmod: '2024-04-05T21:53:56.526994-06:00'
 model: gpt-4-1106-preview
-summary: "Clojure\uC5D0\uC11C \uC784\uC2DC \uD30C\uC77C\uC744 \uB9CC\uB4E4\uB824\uBA74\
-  \ `java.io.File`\uC758 `createTempFile` \uBA54\uC11C\uB4DC\uB97C \uC0AC\uC6A9\uD569\
-  \uB2C8\uB2E4."
+summary: "(\uBC29\uBC95) Clojure\uC5D0\uC11C \uC784\uC2DC \uD30C\uC77C\uC744 \uB9CC\
+  \uB4E4\uB824\uBA74 `java.io.File`\uC758 `createTempFile` \uBA54\uC11C\uB4DC\uB97C\
+  \ \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uC784\uC2DC \uD30C\uC77C \uC0DD\uC131\uD558\uAE30"
 weight: 21
 ---

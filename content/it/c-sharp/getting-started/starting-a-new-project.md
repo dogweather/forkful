@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 18:03:14.287298-07:00
-description: 'Come fare: .'
-lastmod: '2024-03-13T22:44:43.434570-06:00'
+description: "Come fare: Il comando `dotnet new console` \xE8 uno standard per iniziare\
+  \ un progetto console in C#. Prima del .NET 5, si usava .NET Framework o .NET Core\u2026"
+lastmod: '2024-04-05T21:53:44.202704-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Il comando `dotnet new console` \xE8 uno standard per iniziare un progetto\
+  \ console in C#."
 title: Avvio di un nuovo progetto
 weight: 1
 ---

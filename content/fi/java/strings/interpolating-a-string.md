@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:51:10.398125-07:00
-description: 'Kuinka: .'
-lastmod: '2024-03-13T22:44:56.431030-06:00'
+description: "Kuinka: Ennen Java 5:tt\xE4 merkkijonointerpolointia ei ollut suoraan\
+  \ kielen tukemana. K\xE4ytettiin yhdist\xE4mist\xE4 `+`:lla. Java 5 toi `String.format()`,\u2026"
+lastmod: '2024-04-05T21:53:57.997711-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Ennen Java 5:tt\xE4 merkkijonointerpolointia ei ollut suoraan kielen tukemana."
 title: Merkkijonon interpolointi
 weight: 8
 ---

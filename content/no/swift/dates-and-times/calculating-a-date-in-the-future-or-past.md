@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:32:11.584586-07:00
-description: "Slik Gj\xF8r Du: ."
-lastmod: '2024-03-13T22:44:41.155314-06:00'
+description: "Slik Gj\xF8r Du: Forventet output vil v\xE6re datoer for fem dager frem\
+  \ og tre uker tilbake, basert p\xE5 dagens dato."
+lastmod: '2024-04-05T21:53:42.115086-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Forventet output vil v\xE6re datoer for fem dager frem og tre uker tilbake,\
+  \ basert p\xE5 dagens dato."
 title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---

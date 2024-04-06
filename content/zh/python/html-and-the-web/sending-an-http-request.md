@@ -3,10 +3,10 @@ date: 2024-01-20 18:00:34.208592-07:00
 description: "How to: \u5982\u4F55\u64CD\u4F5C\uFF1A \u4F7F\u7528Python\u7684`requests`\u5E93\
   \uFF0C\u53D1\u9001\u4E00\u4E2A\u7B80\u5355\u7684HTTP GET\u8BF7\u6C42\uFF1A."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:47.251523-06:00'
+lastmod: '2024-04-05T21:53:47.606249-06:00'
 model: gpt-4-1106-preview
-summary: "\u5982\u4F55\u64CD\u4F5C\uFF1A\n\u4F7F\u7528Python\u7684`requests`\u5E93\
-  \uFF0C\u53D1\u9001\u4E00\u4E2A\u7B80\u5355\u7684HTTP GET\u8BF7\u6C42\uFF1A."
+summary: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u4F7F\u7528Python\u7684`requests`\u5E93\uFF0C\
+  \u53D1\u9001\u4E00\u4E2A\u7B80\u5355\u7684HTTP GET\u8BF7\u6C42\uFF1A."
 title: "\u53D1\u51FA HTTP \u8BF7\u6C42"
 weight: 44
 ---

@@ -2,8 +2,8 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:10.082931-07:00
-description: "\u65B9\u6CD5: ."
-lastmod: '2024-03-13T22:44:42.583980-06:00'
+description: null
+lastmod: '2024-04-05T21:53:43.391091-06:00'
 model: gpt-4-0125-preview
 summary: ''
 title: "CSV\u3068\u306E\u4F5C\u696D"

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:38:40.699836-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:43.379197-06:00'
+description: "How to: La funzione `lowercase()` in Kotlin \xE8 stata introdotta come\
+  \ sostituta di `toLowerCase()` per migliorare la leggibilit\xE0 e l'aderenza alle\u2026"
+lastmod: '2024-04-05T21:53:44.150091-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "La funzione `lowercase()` in Kotlin \xE8 stata introdotta come sostituta\
+  \ di `toLowerCase()` per migliorare la leggibilit\xE0 e l'aderenza alle convenzioni\
+  \ di denominazione di Kotlin."
 title: Conversione di una stringa in minuscolo
 weight: 4
 ---

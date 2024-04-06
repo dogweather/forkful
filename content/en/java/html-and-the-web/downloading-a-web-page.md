@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:44:06.931068-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:59.971330-06:00'
+description: 'How to: Sample output might look like this.'
+lastmod: '2024-04-05T21:53:35.668020-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Sample output might look like this.
 title: Downloading a web page
 weight: 42
 ---

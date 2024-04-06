@@ -1,9 +1,9 @@
 ---
 date: 2024-01-21 21:19:09.389800-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:45:00.251400-06:00'
+description: 'How to: Sample output when an error occurs.'
+lastmod: '2024-04-05T21:53:35.948721-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Sample output when an error occurs.
 title: Handling errors
 weight: 16
 ---

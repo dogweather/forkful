@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:00:46.377056-07:00
-description: 'Comment faire: .'
-lastmod: '2024-03-13T22:44:58.110145-06:00'
+description: "Comment faire: Historiquement, l'authentification de base HTTP a \xE9\
+  t\xE9 l'une des premi\xE8res m\xE9thodes pour s\xE9curiser l'acc\xE8s aux ressources\
+  \ web. Elle reste\u2026"
+lastmod: '2024-04-05T21:53:59.544713-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historiquement, l'authentification de base HTTP a \xE9t\xE9 l'une des premi\xE8\
+  res m\xE9thodes pour s\xE9curiser l'acc\xE8s aux ressources web."
 title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
 weight: 45
 ---

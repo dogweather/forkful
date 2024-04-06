@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:35:52.736175-07:00
-description: 'Come fare: .'
-lastmod: '2024-03-13T22:44:43.168016-06:00'
+description: "Come fare: Utilizzando i template literals per una sintassi pi\xF9 pulita."
+lastmod: '2024-04-05T21:53:43.942203-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Utilizzando i template literals per una sintassi pi\xF9 pulita."
 title: Concatenazione di stringhe
 weight: 3
 ---

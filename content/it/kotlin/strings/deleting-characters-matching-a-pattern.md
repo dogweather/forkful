@@ -2,10 +2,10 @@
 date: 2024-01-20 17:42:38.729741-07:00
 description: "How to: (Come fare) In Kotlin puoi usare la funzione `replace` con una\
   \ regex (Regular Expression) per cancellare tutti i caratteri che matchano un certo\u2026"
-lastmod: '2024-03-13T22:44:43.376489-06:00'
+lastmod: '2024-04-05T21:53:44.147502-06:00'
 model: gpt-4-1106-preview
-summary: In Kotlin puoi usare la funzione `replace` con una regex (Regular Expression)
-  per cancellare tutti i caratteri che matchano un certo pattern.
+summary: (Come fare) In Kotlin puoi usare la funzione `replace` con una regex (Regular
+  Expression) per cancellare tutti i caratteri che matchano un certo pattern.
 title: Eliminazione di caratteri che corrispondono a un pattern
 weight: 5
 ---

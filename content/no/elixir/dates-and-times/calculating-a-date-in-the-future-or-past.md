@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:30:52.206089-07:00
-description: "Slik gj\xF8r du: ."
-lastmod: '2024-03-13T22:44:40.456743-06:00'
+description: "Slik gj\xF8r du: I Elixir kan du h\xE5ndtere datoer med innebygde moduler\
+  \ som `Date`. Tidligere var det mer kronglete, med folk som stolte p\xE5\u2026"
+lastmod: '2024-04-05T21:53:41.435628-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "I Elixir kan du h\xE5ndtere datoer med innebygde moduler som `Date`."
 title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---

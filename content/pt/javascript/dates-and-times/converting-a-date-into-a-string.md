@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:37:04.274405-07:00
-description: 'Como fazer: .'
-lastmod: '2024-03-13T22:44:46.973861-06:00'
+description: "Como fazer: Historicamente, a manipula\xE7\xE3o de datas em JavaScript\
+  \ tem sido uma fonte de frustra\xE7\xE3o devido a quest\xF5es de fuso hor\xE1rio\
+  \ e formatos\u2026"
+lastmod: '2024-04-05T21:53:47.324913-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historicamente, a manipula\xE7\xE3o de datas em JavaScript tem sido uma\
+  \ fonte de frustra\xE7\xE3o devido a quest\xF5es de fuso hor\xE1rio e formatos inconsistentes."
 title: Convertendo uma data em uma string
 weight: 28
 ---

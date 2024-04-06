@@ -2,10 +2,10 @@
 date: 2024-01-20 17:36:52.201626-07:00
 description: "How to: (Slik gj\xF8r du det:) I moderne Java bruker vi `java.time.format.DateTimeFormatter`\
   \ sammen med `java.time.LocalDate` eller `java.time.LocalDateTime`\u2026"
-lastmod: '2024-03-13T22:44:40.677831-06:00'
+lastmod: '2024-04-05T21:53:41.658318-06:00'
 model: gpt-4-1106-preview
-summary: I moderne Java bruker vi `java.time.format.DateTimeFormatter` sammen med
-  `java.time.LocalDate` eller `java.time.LocalDateTime` for datokonvertering.
+summary: "(Slik gj\xF8r du det:) I moderne Java bruker vi `java.time.format.DateTimeFormatter`\
+  \ sammen med `java.time.LocalDate` eller `java.time.LocalDateTime` for datokonvertering."
 title: Konvertere en dato til en streng
 weight: 28
 ---

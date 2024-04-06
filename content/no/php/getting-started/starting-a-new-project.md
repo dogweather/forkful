@@ -2,9 +2,9 @@
 date: 2024-01-20 18:04:10.370550-07:00
 description: 'How to: (Hvordan) La oss lage en enkel PHP-fil som sier "Hei, verden!".
   Opprett en fil kalt `hello_world.php`.'
-lastmod: '2024-03-13T22:44:40.887108-06:00'
+lastmod: '2024-04-05T21:53:41.854846-06:00'
 model: gpt-4-1106-preview
-summary: La oss lage en enkel PHP-fil som sier "Hei, verden!".
+summary: (Hvordan) La oss lage en enkel PHP-fil som sier "Hei, verden!".
 title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---

@@ -5,11 +5,9 @@ description: "How to: (\uC5B4\uB5BB\uAC8C: ) C++\uC5D0\uB294 `std::string`\uC758
   \uC790\uC5F4 \uAE38\uC774\uB97C \uC27D\uAC8C \uCC3E\uC744 \uC218 \uC788\uC2B5\uB2C8\
   \uB2E4."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.655679-06:00'
+lastmod: '2024-04-05T21:53:57.290955-06:00'
 model: gpt-4-1106-preview
-summary: "C++\uC5D0\uB294 `std::string`\uC758 `size()` \uD639\uC740 `length()` \uBA54\
-  \uC18C\uB4DC\uB97C \uC0AC\uC6A9\uD558\uC5EC \uBB38\uC790\uC5F4 \uAE38\uC774\uB97C\
-  \ \uC27D\uAC8C \uCC3E\uC744 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
+summary: ''
 title: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774 \uCC3E\uAE30"
 weight: 7
 ---

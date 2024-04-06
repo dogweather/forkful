@@ -1,10 +1,17 @@
 ---
 date: 2024-01-20 17:55:21.881385-07:00
-description: "How to (\uBC29\uBC95) ."
+description: "How to (\uBC29\uBC95) \uCEE4\uB9E8\uB4DC \uB77C\uC778 \uC778\uC790\uB294\
+  \ UNIX \uC2DC\uB300\uBD80\uD130 \uC0AC\uC6A9\uB418\uC5B4\uC654\uACE0, \uC2A4\uD06C\
+  \uB9BD\uD2B8\uAC04\uC5D0 \uB370\uC774\uD130\uB97C \uB118\uAE30\uB294 \uC8FC\uB41C\
+  \ \uBC29\uBC95\uC785\uB2C8\uB2E4. `$1`, `$2`\uB294 \uC21C\uC11C\uB300\uB85C \uC778\
+  \uC790\uB97C \uAC00\uB9AC\uD0B5\uB2C8\uB2E4. `$@`\uB294 \uBAA8\uB4E0 \uC778\uC790\
+  \uB97C, `$#`\uB294 \uC778\uC790\uC758 \uAC1C\uC218\uB97C \uB098\uD0C0\uB0C5\uB2C8\
+  \uB2E4. \uB300\uC548\uC73C\uB85C\uB294 `getopts` \uB610\uB294 GNU\uC758\u2026"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.504380-06:00'
+lastmod: '2024-04-05T21:53:57.171184-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "`$1`, `$2`\uB294 \uC21C\uC11C\uB300\uB85C \uC778\uC790\uB97C \uAC00\uB9AC\
+  \uD0B5\uB2C8\uB2E4."
 title: "\uBA85\uB839\uC904 \uC778\uC218 \uC77D\uAE30"
 weight: 23
 ---

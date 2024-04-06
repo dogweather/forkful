@@ -1,10 +1,17 @@
 ---
 date: 2024-01-20 17:45:11.393115-07:00
-description: "How to: (\uBC29\uBC95) ."
+description: "How to: (\uBC29\uBC95) C#\uC5D0\uC11C \uBB38\uC790\uC5F4 \uCD94\uCD9C\
+  \uC740 \uC8FC\uB85C `Substring` \uBA54\uC18C\uB4DC\uB85C \uC218\uD589\uD569\uB2C8\
+  \uB2E4. 2000\uB144 .NET \uD504\uB808\uC784\uC6CC\uD06C\uC758 \uCCAB \uB4F1\uC7A5\
+  \uBD80\uD130 \uC0AC\uC6A9\uB410\uC5B4\uC694. \uB300\uC548\uC73C\uB85C\uB294 `Span<T>`\
+  \ \uD639\uC740 \uC815\uADDC \uD45C\uD604\uC2DD(Regex)\uC774 \uC788\uC2B5\uB2C8\uB2E4\
+  . `Substring`\uC740 \uC0C8\uB85C\uC6B4 \uBB38\uC790\uC5F4\uC744 \uBC18\uD658\uD558\
+  \uC9C0\uB9CC,\u2026"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.217929-06:00'
+lastmod: '2024-04-05T21:53:56.949049-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(\uBC29\uBC95) C#\uC5D0\uC11C \uBB38\uC790\uC5F4 \uCD94\uCD9C\uC740 \uC8FC\
+  \uB85C `Substring` \uBA54\uC18C\uB4DC\uB85C \uC218\uD589\uD569\uB2C8\uB2E4."
 title: "\uBD80\uBD84 \uBB38\uC790\uC5F4 \uCD94\uCD9C"
 weight: 6
 ---

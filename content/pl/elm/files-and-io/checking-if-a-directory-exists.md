@@ -3,11 +3,11 @@ date: 2024-01-19
 description: "How to: \"Jak to zrobi\u0107:\" Elm nie zapewnia natywnej mo\u017Cliwo\u015B\
   ci sprawdzania istnienia katalog\xF3w, poniewa\u017C dzia\u0142a w przegl\u0105\
   darce i nie ma bezpo\u015Bredniego\u2026"
-lastmod: '2024-03-13T22:44:35.336277-06:00'
+lastmod: '2024-04-05T21:53:36.774445-06:00'
 model: unknown
-summary: "\"Jak to zrobi\u0107:\"\n\nElm nie zapewnia natywnej mo\u017Cliwo\u015B\
-  ci sprawdzania istnienia katalog\xF3w, poniewa\u017C dzia\u0142a w przegl\u0105\
-  darce i nie ma bezpo\u015Bredniego dost\u0119pu do systemu plik\xF3w."
+summary: "\"Jak to zrobi\u0107:\" Elm nie zapewnia natywnej mo\u017Cliwo\u015Bci sprawdzania\
+  \ istnienia katalog\xF3w, poniewa\u017C dzia\u0142a w przegl\u0105darce i nie ma\
+  \ bezpo\u015Bredniego dost\u0119pu do systemu plik\xF3w."
 title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---

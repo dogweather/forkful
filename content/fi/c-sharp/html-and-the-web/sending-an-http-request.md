@@ -3,10 +3,9 @@ date: 2024-01-20 17:59:12.786156-07:00
 description: "How to: - Kuinka tehd\xE4: C# tekee HTTP-pyynt\xF6jen l\xE4hett\xE4\
   misest\xE4 suoraviivaista k\xE4ytt\xE4m\xE4ll\xE4 `HttpClient`-luokkaa. T\xE4ss\xE4\
   \ lyhyt demo."
-lastmod: '2024-03-13T22:44:56.570061-06:00'
+lastmod: '2024-04-05T21:53:58.137097-06:00'
 model: gpt-4-1106-preview
-summary: "C# tekee HTTP-pyynt\xF6jen l\xE4hett\xE4misest\xE4 suoraviivaista k\xE4\
-  ytt\xE4m\xE4ll\xE4 `HttpClient`-luokkaa."
+summary: ''
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---

@@ -1,9 +1,9 @@
 ---
 date: 2024-01-26 03:46:46.704963-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:47.088554-06:00'
+description: "Como Fazer: Sa\xEDda de Amostra."
+lastmod: '2024-04-05T21:53:47.449219-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: ''
 title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---

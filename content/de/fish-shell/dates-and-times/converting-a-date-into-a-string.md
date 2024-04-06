@@ -2,9 +2,10 @@
 date: 2024-01-20 17:36:30.954119-07:00
 description: "How to: (Wie geht das:) Fish hat eingebaute Funktionen, um mit Datum\
   \ und Zeit zu arbeiten. Hier ein paar Beispiele, wie man ein Datum in Fish in einen\u2026"
-lastmod: '2024-03-13T22:44:54.320720-06:00'
+lastmod: '2024-04-05T21:53:56.211007-06:00'
 model: gpt-4-1106-preview
-summary: Fish hat eingebaute Funktionen, um mit Datum und Zeit zu arbeiten.
+summary: (Wie geht das:) Fish hat eingebaute Funktionen, um mit Datum und Zeit zu
+  arbeiten.
 title: Datum in einen String umwandeln
 weight: 28
 ---

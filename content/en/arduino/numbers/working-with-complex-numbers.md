@@ -1,9 +1,9 @@
 ---
 date: 2024-01-25 02:59:36.547679-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:45:00.316687-06:00'
+description: 'How to: Sample output.'
+lastmod: '2024-04-05T21:53:36.014099-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: Working with complex numbers
 weight: 14
 ---

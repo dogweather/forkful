@@ -8,12 +8,9 @@ description: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u8981\u5728 Google Apps \u811A\u67
   \u6CD5\uFF1A\u4ECE Google Drive \u521B\u5EFA\u4E00\u4E2A\u811A\u672C\u3002 1. **\u5728\
   \ Google Drive \u4E2D\u521B\u5EFA\u9879\u76EE** - \u5BFC\u822A\u5230 Google Drive\uFF08\
   drive.google.com\uFF09\u3002 - \u70B9\u51FB\u201C+\u2026"
-lastmod: '2024-03-13T22:44:47.202211-06:00'
+lastmod: '2024-04-05T21:53:47.559125-06:00'
 model: gpt-4-0125-preview
-summary: "\u8981\u5728 Google Apps \u811A\u672C\u4E2D\u5F00\u59CB\u4E00\u4E2A\u65B0\
-  \u9879\u76EE\uFF0C\u4F60\u6709\u51E0\u4E2A\u5165\u53E3\u70B9\uFF0C\u4F46\u8BA9\u6211\
-  \u4EEC\u5173\u6CE8\u6700\u76F4\u63A5\u7684\u65B9\u6CD5\uFF1A\u4ECE Google Drive\
-  \ \u521B\u5EFA\u4E00\u4E2A\u811A\u672C."
+summary: ''
 title: "\u542F\u52A8\u65B0\u9879\u76EE"
 weight: 1
 ---

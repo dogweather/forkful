@@ -1,9 +1,11 @@
 ---
 date: 2024-01-26 04:28:58.945406-07:00
-description: "Jak to zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:35.433572-06:00'
+description: "Jak to zrobi\u0107: XML istnieje od ko\u0144ca lat '90, co czyni go\
+  \ dziadkiem w latach technologicznych. Zosta\u0142 wymy\u015Blony dla przeno\u015B\
+  no\u015Bci danych i \u0142atwo\u015Bci odczytu\u2026"
+lastmod: '2024-04-05T21:53:36.867249-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "XML istnieje od ko\u0144ca lat '90, co czyni go dziadkiem w latach technologicznych."
 title: Praca z XML
 weight: 40
 ---

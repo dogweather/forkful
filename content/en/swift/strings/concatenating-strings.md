@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:35:33.715662-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:45:00.389075-06:00'
+description: "How to: Way back, folks in programming languages like C had to manually\
+  \ shuffle strings around with functions, dealing with arrays and null-terminated\u2026"
+lastmod: '2024-04-05T21:53:36.089487-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Way back, folks in programming languages like C had to manually shuffle strings
+  around with functions, dealing with arrays and null-terminated strings.
 title: Concatenating strings
 weight: 3
 ---

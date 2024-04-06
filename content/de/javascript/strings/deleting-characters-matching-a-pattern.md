@@ -3,10 +3,10 @@ date: 2024-01-20 17:42:37.115483-07:00
 description: "How to: (Wie geht das?) In JavaScript benutzt man h\xE4ufig Regular\
   \ Expressions (Regex), um Muster in Texten zu identifizieren und zu l\xF6schen.\
   \ Hier ein\u2026"
-lastmod: '2024-03-13T22:44:54.250759-06:00'
+lastmod: '2024-04-05T21:53:56.138117-06:00'
 model: gpt-4-1106-preview
-summary: "In JavaScript benutzt man h\xE4ufig Regular Expressions (Regex), um Muster\
-  \ in Texten zu identifizieren und zu l\xF6schen."
+summary: "(Wie geht das?) In JavaScript benutzt man h\xE4ufig Regular Expressions\
+  \ (Regex), um Muster in Texten zu identifizieren und zu l\xF6schen."
 title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
 weight: 5
 ---

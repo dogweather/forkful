@@ -1,9 +1,14 @@
 ---
 date: 2024-01-20 17:40:37.475573-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.728253-06:00'
+description: "Como Fazer: Arquivos tempor\xE1rios s\xE3o uma pr\xE1tica antiga, comumente\
+  \ usados quando voc\xEA n\xE3o quer ou n\xE3o pode manter os dados em mem\xF3ria,\
+  \ como durante o\u2026"
+lastmod: '2024-04-05T21:53:47.074079-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Arquivos tempor\xE1rios s\xE3o uma pr\xE1tica antiga, comumente usados quando\
+  \ voc\xEA n\xE3o quer ou n\xE3o pode manter os dados em mem\xF3ria, como durante\
+  \ o manuseio de grandes volumes de informa\xE7\xE3o ou dados sens\xEDveis que precisam\
+  \ ser exclu\xEDdos ap\xF3s o uso."
 title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---

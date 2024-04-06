@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:42:03.943203-07:00
-description: "C\xF3mo hacerlo: ."
-lastmod: '2024-03-13T22:44:58.685349-06:00'
+description: "C\xF3mo hacerlo: La eliminaci\xF3n de caracteres que corresponden a\
+  \ un patr\xF3n no es algo nuevo. Desde los tiempos de Unix y sus expresiones regulares,\
+  \ esta\u2026"
+lastmod: '2024-04-05T21:54:00.040517-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "La eliminaci\xF3n de caracteres que corresponden a un patr\xF3n no es algo\
+  \ nuevo."
 title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---

@@ -2,9 +2,10 @@
 date: 2024-01-20 17:38:03.379665-07:00
 description: "How to: (Jak to zrobi\u0107:) W C# zamiana na ma\u0142e litery jest\
   \ prosta dzi\u0119ki metodzie `ToLower()`. Poni\u017Cej przyk\u0142ad u\u017Cycia."
-lastmod: '2024-03-13T22:44:35.394603-06:00'
+lastmod: '2024-04-05T21:53:36.831370-06:00'
 model: gpt-4-1106-preview
-summary: "W C# zamiana na ma\u0142e litery jest prosta dzi\u0119ki metodzie `ToLower()`."
+summary: "(Jak to zrobi\u0107:) W C# zamiana na ma\u0142e litery jest prosta dzi\u0119\
+  ki metodzie `ToLower()`."
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---

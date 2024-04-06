@@ -2,10 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:11.512055-07:00
-description: 'Hoe: .'
-lastmod: '2024-03-13T22:44:50.758563-06:00'
+description: "Hoe: In de begindagen van de informatica werden strings anders behandeld,\
+  \ vaak met null-afgesloten arrays in talen zoals C. Kotlin, als een moderne taal,\u2026"
+lastmod: '2024-04-05T21:53:50.781354-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: In de begindagen van de informatica werden strings anders behandeld, vaak
+  met null-afgesloten arrays in talen zoals C.
 title: De lengte van een string vinden
 weight: 7
 ---

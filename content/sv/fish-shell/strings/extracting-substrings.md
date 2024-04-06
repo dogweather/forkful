@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:45:37.058976-07:00
-description: "Hur man g\xF6r: ."
-lastmod: '2024-03-13T22:44:38.324534-06:00'
+description: "Hur man g\xF6r: Att extrahera substr\xE4ngar i Fish Shell \xE4r direkt\
+  \ och smidigt. Det har inte alltid varit s\xE5 i shell-programmering, d\xE4r beroende\
+  \ p\xE5 verktyg kan\u2026"
+lastmod: '2024-04-05T21:53:39.661990-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Att extrahera substr\xE4ngar i Fish Shell \xE4r direkt och smidigt."
 title: "Extrahera delstr\xE4ngar"
 weight: 6
 ---

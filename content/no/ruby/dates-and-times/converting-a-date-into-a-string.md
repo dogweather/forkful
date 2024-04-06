@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:37:25.673619-07:00
-description: 'Hvordan: .'
-lastmod: '2024-03-13T22:44:41.344650-06:00'
+description: "Hvordan: Langt tilbake i Ruby's historie har `Date` og `Time` klassene\
+  \ gjort det mulig \xE5 h\xE5ndtere datoer. Metoden `strftime` er universell og lar\
+  \ oss\u2026"
+lastmod: '2024-04-05T21:53:42.287816-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Langt tilbake i Ruby's historie har `Date` og `Time` klassene gjort det\
+  \ mulig \xE5 h\xE5ndtere datoer."
 title: Konvertere en dato til en streng
 weight: 28
 ---

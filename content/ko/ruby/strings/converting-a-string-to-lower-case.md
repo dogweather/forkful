@@ -1,10 +1,17 @@
 ---
 date: 2024-01-20 17:39:12.986139-07:00
-description: "How to: (\uBC29\uBC95) ."
+description: "How to: (\uBC29\uBC95) Ruby\uC5D0\uC11C `downcase` \uBA54\uC18C\uB4DC\
+  \uB294 ASCII \uBB38\uC790\uB9CC \uC544\uB2CC Unicode \uBB38\uC790\uC5D0 \uB300\uD574\
+  \uC11C\uB3C4 \uC18C\uBB38\uC790 \uBCC0\uD658\uC744 \uC9C0\uC6D0\uD569\uB2C8\uB2E4\
+  . \uC774 \uAE30\uB2A5\uC740 Ruby 2.4\uBD80\uD130 \uD5A5\uC0C1\uB418\uC5C8\uC2B5\uB2C8\
+  \uB2E4. `downcase` \uC774\uC678\uC5D0\uB3C4 `downcase!` \uBA54\uC18C\uB4DC\uAC00\
+  \ \uC788\uB294\uB370, \uC774\uAC83\uC740 \uC6D0\uBCF8\u2026"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.973063-06:00'
+lastmod: '2024-04-05T21:53:57.540565-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(\uBC29\uBC95) Ruby\uC5D0\uC11C `downcase` \uBA54\uC18C\uB4DC\uB294 ASCII\
+  \ \uBB38\uC790\uB9CC \uC544\uB2CC Unicode \uBB38\uC790\uC5D0 \uB300\uD574\uC11C\uB3C4\
+  \ \uC18C\uBB38\uC790 \uBCC0\uD658\uC744 \uC9C0\uC6D0\uD569\uB2C8\uB2E4."
 title: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD558\uAE30"
 weight: 4
 ---

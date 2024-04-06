@@ -1,9 +1,11 @@
 ---
 date: 2024-01-26 03:38:13.864532-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.572388-06:00'
+description: "Como Fazer: O conceito de remover aspas n\xE3o \xE9 novo ou particularmente\
+  \ complexo, mas \xE9 crucial porque as aspas frequentemente s\xE3o usadas para delimitar\u2026"
+lastmod: '2024-04-05T21:53:46.915292-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "O conceito de remover aspas n\xE3o \xE9 novo ou particularmente complexo,\
+  \ mas \xE9 crucial porque as aspas frequentemente s\xE3o usadas para delimitar strings."
 title: Removendo aspas de uma string
 weight: 9
 ---

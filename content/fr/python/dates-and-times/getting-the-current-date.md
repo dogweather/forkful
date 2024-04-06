@@ -5,9 +5,9 @@ date: 2024-02-03 19:10:28.434067-07:00
 description: "Comment faire : **En utilisant la biblioth\xE8que standard `datetime`\
   \ :** Le module `datetime` dans la biblioth\xE8que standard de Python fournit des\
   \ classes\u2026"
-lastmod: '2024-03-13T22:44:57.247791-06:00'
+lastmod: '2024-04-05T21:53:58.829438-06:00'
 model: gpt-4-0125-preview
-summary: "**En utilisant la biblioth\xE8que standard `datetime` :**\n\nLe module `datetime`\
+summary: "**En utilisant la biblioth\xE8que standard `datetime` :** Le module `datetime`\
   \ dans la biblioth\xE8que standard de Python fournit des classes pour manipuler\
   \ des dates et des heures."
 title: Obtenir la date actuelle

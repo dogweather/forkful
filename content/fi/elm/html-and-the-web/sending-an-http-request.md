@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:59:23.247905-07:00
-description: "How to: (Kuinka tehd\xE4:) ."
-lastmod: '2024-03-13T22:44:56.485419-06:00'
+description: "How to: (Kuinka tehd\xE4:) Kun suoritat t\xE4m\xE4n, saat k\xE4ytt\xE4\
+  j\xE4n tiedot, jos kaikki menee hyvin: `{ id = 1, name = \"Alice\" }`."
+lastmod: '2024-04-05T21:53:58.050521-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(Kuinka tehd\xE4:) Kun suoritat t\xE4m\xE4n, saat k\xE4ytt\xE4j\xE4n tiedot,\
+  \ jos kaikki menee hyvin."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:51:12.090083-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:57.863603-06:00'
+description: "How to: L'interpolation de cha\xEEnes a toujours fait partie de PHP.\
+  \ C'est rapide et facile, mais attention \xE0 ne pas l'utiliser avec des donn\xE9\
+  es non fiables\u2026"
+lastmod: '2024-04-05T21:53:59.348804-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "L'interpolation de cha\xEEnes a toujours fait partie de PHP."
 title: "Interpolation de cha\xEEnes de caract\xE8res"
 weight: 8
 ---

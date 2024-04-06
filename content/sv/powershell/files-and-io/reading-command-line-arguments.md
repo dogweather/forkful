@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:57:04.121592-07:00
-description: "Hur g\xF6r man: ."
-lastmod: '2024-03-13T22:44:38.141097-06:00'
+description: "Hur g\xF6r man: K\xF6r skript s\xE5 h\xE4r i PowerShell."
+lastmod: '2024-04-05T21:53:39.478724-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "K\xF6r skript s\xE5 h\xE4r i PowerShell."
 title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---

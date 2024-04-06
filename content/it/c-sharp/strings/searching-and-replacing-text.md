@@ -2,9 +2,9 @@
 date: 2024-01-20 17:57:39.956262-07:00
 description: How to (Come Fare) Ecco un esempio semplice in C# per cercare e sostituire
   testo.
-lastmod: '2024-03-13T22:44:43.418796-06:00'
+lastmod: '2024-04-05T21:53:44.187750-06:00'
 model: gpt-4-1106-preview
-summary: Ecco un esempio semplice in C# per cercare e sostituire testo.
+summary: ''
 title: Ricerca e sostituzione del testo
 weight: 10
 ---

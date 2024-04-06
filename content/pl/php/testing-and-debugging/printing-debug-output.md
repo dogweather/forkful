@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:53:13.121783-07:00
-description: "How to: (Jak to zrobi\u0107:) ."
-lastmod: '2024-03-13T22:44:35.499846-06:00'
+description: "How to: (Jak to zrobi\u0107:) Sample output (Przyk\u0142adowe wyj\u015B\
+  cie)."
+lastmod: '2024-04-05T21:53:36.930248-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(Jak to zrobi\u0107:) Sample output (Przyk\u0142adowe wyj\u015Bcie)."
 title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---

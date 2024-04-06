@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:33:25.243945-07:00
-description: 'Hvordan: .'
-lastmod: '2024-03-13T22:44:41.195793-06:00'
+description: "Hvordan: I gamle dager brukte man ofte biblioteker som Moment.js for\
+  \ datoh\xE5ndtering, men med tiden har JavaScript f\xE5tt bedre innebygd st\xF8\
+  tte for dette.\u2026"
+lastmod: '2024-04-05T21:53:42.155058-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "I gamle dager brukte man ofte biblioteker som Moment.js for datoh\xE5ndtering,\
+  \ men med tiden har JavaScript f\xE5tt bedre innebygd st\xF8tte for dette."
 title: Sammenlikning av to datoer
 weight: 27
 ---

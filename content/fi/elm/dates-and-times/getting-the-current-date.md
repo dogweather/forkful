@@ -3,10 +3,10 @@ date: 2024-01-20 15:14:14.752219-07:00
 description: "How to: (\"Kuinka tehd\xE4\xE4n:\") Elmiss\xE4 ty\xF6skennelless\xE4\
   \ voit k\xE4ytt\xE4\xE4 `Time` moduulia nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saamiseksi.\
   \ T\xE4ss\xE4 pikainen esimerkki."
-lastmod: '2024-03-13T22:44:56.499169-06:00'
+lastmod: '2024-04-05T21:53:58.064819-06:00'
 model: unknown
-summary: "Elmiss\xE4 ty\xF6skennelless\xE4 voit k\xE4ytt\xE4\xE4 `Time` moduulia nykyisen\
-  \ p\xE4iv\xE4m\xE4\xE4r\xE4n saamiseksi."
+summary: "(\"Kuinka tehd\xE4\xE4n:\") Elmiss\xE4 ty\xF6skennelless\xE4 voit k\xE4\
+  ytt\xE4\xE4 `Time` moduulia nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saamiseksi."
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---

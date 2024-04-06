@@ -3,10 +3,13 @@ changelog:
 - 2024-04-04, dogweather, edited
 - 2024-04-04, gpt-4-0125-preview, translated from English
 date: 2024-01-20 17:43:02.363431-07:00
-description: 'Como fazer: .'
-lastmod: '2024-04-04T02:02:34.759874-06:00'
+description: "Como fazer: Fa\xE7o isso com frequ\xEAncia suficiente para que eu refatorasse\
+  \ isso nesta simples fun\xE7\xE3o `delete()`. \xC9 tamb\xE9m uma boa demonstra\xE7\
+  \xE3o de\u2026"
+lastmod: '2024-04-05T21:53:46.460325-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Fa\xE7o isso com frequ\xEAncia suficiente para que eu refatorasse isso nesta\
+  \ simples fun\xE7\xE3o `delete()`."
 title: "Excluindo caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---

@@ -2,10 +2,10 @@
 date: 2024-01-20 17:53:20.346733-07:00
 description: "How to: (Comment faire :) Rust fournit la macro `println!` pour afficher\
   \ du texte et `dbg!` pour d\xE9boguer."
-lastmod: '2024-03-13T22:44:57.484592-06:00'
+lastmod: '2024-04-05T21:53:59.047410-06:00'
 model: gpt-4-1106-preview
-summary: "Rust fournit la macro `println!` pour afficher du texte et `dbg!` pour d\xE9\
-  boguer."
+summary: "(Comment faire :) Rust fournit la macro `println!` pour afficher du texte\
+  \ et `dbg!` pour d\xE9boguer."
 title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---

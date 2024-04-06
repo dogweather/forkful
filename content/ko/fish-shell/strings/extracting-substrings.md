@@ -1,10 +1,17 @@
 ---
 date: 2024-01-20 17:45:31.303140-07:00
-description: 'How to: .'
+description: "How to: Fish Shell\uC5D0\uC11C \uBB38\uC790\uC5F4\uC744 \uB2E4\uB8E8\
+  \uB294 \uAC83\uC740 \uC0C1\uB2F9\uD788 \uC9C1\uAD00\uC801\uC785\uB2C8\uB2E4. \uACFC\
+  \uAC70\uC5D0\uB294 UNIX \uD658\uACBD\uC5D0\uC11C `cut`, `awk`, `sed` \uAC19\uC740\
+  \ \uD234\uB4E4\uB85C \uC774 \uC791\uC5C5\uC744 \uD588\uC2B5\uB2C8\uB2E4. Fish\uB294\
+  \ \uC774\uB7EC\uD55C \uC791\uC5C5\uC744 \uB354 \uAC04\uB2E8\uD558\uAC8C \uD560 \uC218\
+  \ \uC788\uB294 `string` \uC790\uCCB4 \uBA85\uB839\uC5B4\uB97C \uC81C\uACF5\uD569\
+  \uB2C8\uB2E4. \uC608\uB97C\u2026"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.837057-06:00'
+lastmod: '2024-04-05T21:53:57.428230-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Fish Shell\uC5D0\uC11C \uBB38\uC790\uC5F4\uC744 \uB2E4\uB8E8\uB294 \uAC83\
+  \uC740 \uC0C1\uB2F9\uD788 \uC9C1\uAD00\uC801\uC785\uB2C8\uB2E4."
 title: "\uBD80\uBD84 \uBB38\uC790\uC5F4 \uCD94\uCD9C"
 weight: 6
 ---

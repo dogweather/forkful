@@ -2,10 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:47.484043-07:00
-description: "L\xE0m th\u1EBF n\xE0o: ."
-lastmod: '2024-03-13T22:44:37.086101-06:00'
+description: "L\xE0m th\u1EBF n\xE0o: Tr\u01B0\u1EDBc kia, trong c\xE1c ng\xF4n ng\u1EEF\
+  \ l\u1EADp tr\xECnh nh\u01B0 C, ng\u01B0\u1EDDi ta ph\u1EA3i th\u1EE7 c\xF4ng di\
+  \ chuy\u1EC3n chu\u1ED7i v\u1EDBi c\xE1c h\xE0m, \u0111\u1ED1i ph\xF3 v\u1EDBi m\u1EA3\
+  ng v\xE0 chu\u1ED7i k\u1EBFt th\xFAc b\u1EB1ng\u2026"
+lastmod: '2024-04-05T21:53:38.440544-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Tr\u01B0\u1EDBc kia, trong c\xE1c ng\xF4n ng\u1EEF l\u1EADp tr\xECnh nh\u01B0\
+  \ C, ng\u01B0\u1EDDi ta ph\u1EA3i th\u1EE7 c\xF4ng di chuy\u1EC3n chu\u1ED7i v\u1EDB\
+  i c\xE1c h\xE0m, \u0111\u1ED1i ph\xF3 v\u1EDBi m\u1EA3ng v\xE0 chu\u1ED7i k\u1EBF\
+  t th\xFAc b\u1EB1ng null."
 title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 weight: 3
 ---

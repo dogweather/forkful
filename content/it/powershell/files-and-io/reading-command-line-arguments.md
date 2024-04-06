@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:56:31.647075-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:43.657834-06:00'
+description: "How to: PowerShell ha introdotto il concetto di script parametrizzati\
+  \ dagli albori per offrire flessibilit\xE0 e riutilizzo del codice. Altri linguaggi\
+  \ usano\u2026"
+lastmod: '2024-04-05T21:53:44.418538-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "PowerShell ha introdotto il concetto di script parametrizzati dagli albori\
+  \ per offrire flessibilit\xE0 e riutilizzo del codice."
 title: Lettura degli argomenti della riga di comando
 weight: 23
 ---

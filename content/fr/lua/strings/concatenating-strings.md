@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:34:59.859798-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:57.916611-06:00'
+description: "Comment faire : Historiquement, la concat\xE9nation \xE9tait l'une des\
+  \ rares mani\xE8res d'assembler des textes dans la plupart des langages de programmation,\
+  \ Lua\u2026"
+lastmod: '2024-04-05T21:53:59.400679-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historiquement, la concat\xE9nation \xE9tait l'une des rares mani\xE8res\
+  \ d'assembler des textes dans la plupart des langages de programmation, Lua inclus."
 title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 weight: 3
 ---

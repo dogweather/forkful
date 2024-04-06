@@ -2,9 +2,9 @@
 date: 2024-01-20 17:40:56.523554-07:00
 description: "How to: (Jak to zrobi\u0107:) Tworzenie pliku tymczasowego w Kotlinie\
   \ jest proste. Kod wykorzystuje klas\u0119 `File` i jej metod\u0119 `createTempFile`."
-lastmod: '2024-03-13T22:44:35.384529-06:00'
+lastmod: '2024-04-05T21:53:36.821174-06:00'
 model: gpt-4-1106-preview
-summary: Tworzenie pliku tymczasowego w Kotlinie jest proste.
+summary: "(Jak to zrobi\u0107:) Tworzenie pliku tymczasowego w Kotlinie jest proste."
 title: Tworzenie pliku tymczasowego
 weight: 21
 ---

@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:34:12.191862-07:00
-description: "Jak to zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:35.198473-06:00'
+description: "Jak to zrobi\u0107: Wynik."
+lastmod: '2024-04-05T21:53:36.633762-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---

@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 18:02:19.860910-07:00
-description: 'Como fazer: .'
-lastmod: '2024-03-13T22:44:46.667075-06:00'
+description: "Como fazer: A autentica\xE7\xE3o b\xE1sica \xE9 um m\xE9todo antigo,\
+  \ mas ainda usado, de enviar credenciais de acesso via HTTP de forma n\xE3o muito\
+  \ segura, pois as\u2026"
+lastmod: '2024-04-05T21:53:47.011728-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "A autentica\xE7\xE3o b\xE1sica \xE9 um m\xE9todo antigo, mas ainda usado,\
+  \ de enviar credenciais de acesso via HTTP de forma n\xE3o muito segura, pois as\
+  \ credenciais s\xE3o enviadas em texto simples codificado em Base64."
 title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 weight: 45
 ---

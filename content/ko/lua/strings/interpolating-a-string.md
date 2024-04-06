@@ -4,11 +4,11 @@ description: "How to: (\uC5B4\uB5BB\uAC8C \uC0AC\uC6A9\uD558\uB294\uAC00) Lua\uC
   \uC11C \uBB38\uC790\uC5F4 \uB0B4\uC0BD\uC744 \uD560 \uB54C\uB294 `string.format`\
   \ \uD568\uC218\uB098 concat operator (`..`)\uB97C \uC0AC\uC6A9\uD574\uC694."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.397758-06:00'
+lastmod: '2024-04-05T21:53:57.090252-06:00'
 model: gpt-4-1106-preview
-summary: "Lua\uC5D0\uC11C \uBB38\uC790\uC5F4 \uB0B4\uC0BD\uC744 \uD560 \uB54C\uB294\
-  \ `string.format` \uD568\uC218\uB098 concat operator (`..`)\uB97C \uC0AC\uC6A9\uD574\
-  \uC694."
+summary: "(\uC5B4\uB5BB\uAC8C \uC0AC\uC6A9\uD558\uB294\uAC00) Lua\uC5D0\uC11C \uBB38\
+  \uC790\uC5F4 \uB0B4\uC0BD\uC744 \uD560 \uB54C\uB294 `string.format` \uD568\uC218\
+  \uB098 concat operator (`..`)\uB97C \uC0AC\uC6A9\uD574\uC694."
 title: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uD558\uAE30"
 weight: 8
 ---

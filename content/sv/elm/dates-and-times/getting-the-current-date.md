@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 15:14:10.019563-07:00
-description: "Hur man g\xF6r: ."
-lastmod: '2024-03-13T22:44:37.839943-06:00'
+description: "Hur man g\xF6r: K\xF6rningsexempel (output varierar)."
+lastmod: '2024-04-05T21:53:39.175267-06:00'
 model: unknown
-summary: .
+summary: "K\xF6rningsexempel (output varierar)."
 title: "Att h\xE4mta aktuellt datum"
 weight: 29
 ---

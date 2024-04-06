@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:42:18.558464-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:37.939966-06:00'
+description: "How to: Historiskt s\xE4tt har textmanipulering varit en del av programmering\
+  \ sedan b\xF6rjan. Haskell ger oss funktioner som `filter` ur standardbiblioteket\u2026"
+lastmod: '2024-04-05T21:53:39.278596-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historiskt s\xE4tt har textmanipulering varit en del av programmering sedan\
+  \ b\xF6rjan."
 title: "Ta bort tecken som matchar ett m\xF6nster"
 weight: 5
 ---

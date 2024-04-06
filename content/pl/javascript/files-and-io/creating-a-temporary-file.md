@@ -2,10 +2,10 @@
 date: 2024-01-20 17:40:53.662578-07:00
 description: "How to: (Jak to zrobi\u0107?) U\u017Cyjemy modu\u0142u `fs` w Node.js\
   \ do pracy z plikami, a `os` do uzyskania \u015Bcie\u017Cki tymczasowego folderu."
-lastmod: '2024-03-13T22:44:35.815649-06:00'
+lastmod: '2024-04-05T21:53:37.243157-06:00'
 model: gpt-4-1106-preview
-summary: "U\u017Cyjemy modu\u0142u `fs` w Node.js do pracy z plikami, a `os` do uzyskania\
-  \ \u015Bcie\u017Cki tymczasowego folderu."
+summary: "(Jak to zrobi\u0107?) U\u017Cyjemy modu\u0142u `fs` w Node.js do pracy z\
+  \ plikami, a `os` do uzyskania \u015Bcie\u017Cki tymczasowego folderu."
 title: Tworzenie pliku tymczasowego
 weight: 21
 ---

@@ -3,10 +3,13 @@ changelog:
 - 2024-04-04, dogweather, edited
 - 2024-04-04, gpt-4-0125-preview, translated from English
 date: 2024-01-20 17:43:02.363431-07:00
-description: 'Wie geht das: .'
-lastmod: '2024-04-04T02:02:45.443502-06:00'
+description: "Wie geht das: Da ich dies h\xE4ufig genug mache, habe ich es in diese\
+  \ einfache `delete()` Funktion umgearbeitet. Es ist auch eine gute Demonstration\
+  \ von\u2026"
+lastmod: '2024-04-05T21:53:55.319560-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Da ich dies h\xE4ufig genug mache, habe ich es in diese einfache `delete()`\
+  \ Funktion umgearbeitet."
 title: "Zeichen l\xF6schen, die einem Muster entsprechen"
 weight: 5
 ---

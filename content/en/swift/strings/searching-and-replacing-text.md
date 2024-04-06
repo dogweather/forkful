@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:58:44.178581-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:45:00.382591-06:00'
+description: "How to: We've been swapping text in strings since the early days of\
+  \ computing. Initially, it was with simple command-line tools like `sed`. In Swift,\u2026"
+lastmod: '2024-04-05T21:53:36.083364-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: We've been swapping text in strings since the early days of computing.
 title: Searching and replacing text
 weight: 10
 ---

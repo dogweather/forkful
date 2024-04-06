@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:35:31.345834-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:59.851142-06:00'
+description: "How to: Concatenation is fundamental; it's been around since the early\
+  \ days of programming. In TypeScript, which builds on JavaScript, we've come a long\u2026"
+lastmod: '2024-04-05T21:53:35.539516-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Concatenation is fundamental; it's been around since the early days of programming.
 title: Concatenating strings
 weight: 3
 ---

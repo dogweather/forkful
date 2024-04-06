@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:52:05.835018-07:00
-description: 'How to: Miten.'
-lastmod: '2024-03-13T22:44:56.575558-06:00'
+description: "How to: Syv\xE4 sukellus: Printtauksen historia juontuu laitteista,\
+  \ jotka oikeasti printtasivat paperille. Nyky\xE4\xE4n `Console.WriteLine` on standardi\
+  \ C#-metodi\u2026"
+lastmod: '2024-04-05T21:53:58.142967-06:00'
 model: gpt-4-1106-preview
-summary: Miten.
+summary: ''
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---

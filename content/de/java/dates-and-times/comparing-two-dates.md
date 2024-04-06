@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:33:15.967202-07:00
-description: 'So geht''s: .'
-lastmod: '2024-03-13T22:44:53.774829-06:00'
+description: "So geht's: Datumvergleiche in Java haben eine lange Historie. Urspr\xFC\
+  nglich nutzte man `java.util.Date` und `java.util.Calendar`, aber beide hatten ihre\u2026"
+lastmod: '2024-04-05T21:53:55.658165-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Datumvergleiche in Java haben eine lange Historie.
 title: Vergleich von zwei Daten
 weight: 27
 ---

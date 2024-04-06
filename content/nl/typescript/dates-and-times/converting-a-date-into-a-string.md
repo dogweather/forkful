@@ -2,10 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:22.489091-07:00
-description: 'Hoe te: .'
-lastmod: '2024-03-13T22:44:50.562697-06:00'
+description: "Hoe te: Beschouw het tekenreeksformaat van een datum als zijn paspoort,\
+  \ waarmee het kan reizen over systeemgrenzen - van databases naar webpagina's.\u2026"
+lastmod: '2024-04-05T21:53:50.584963-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: Beschouw het tekenreeksformaat van een datum als zijn paspoort, waarmee het
+  kan reizen over systeemgrenzen - van databases naar webpagina's.
 title: Een datum converteren naar een string
 weight: 28
 ---

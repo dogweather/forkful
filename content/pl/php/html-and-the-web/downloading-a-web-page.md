@@ -2,9 +2,9 @@
 date: 2024-01-20 17:44:28.395010-07:00
 description: "How to: (Jak to zrobi\u0107:) U\u017Cyjmy PHP i cURL, aby \u015Bci\u0105\
   gn\u0105\u0107 zawarto\u015B\u0107 strony. Oto przyk\u0142adowy kod."
-lastmod: '2024-03-13T22:44:35.495987-06:00'
+lastmod: '2024-04-05T21:53:36.926955-06:00'
 model: gpt-4-1106-preview
-summary: "(Jak to zrobi\u0107:)\n\nU\u017Cyjmy PHP i cURL, aby \u015Bci\u0105gn\u0105\
+summary: "(Jak to zrobi\u0107:) U\u017Cyjmy PHP i cURL, aby \u015Bci\u0105gn\u0105\
   \u0107 zawarto\u015B\u0107 strony."
 title: Pobieranie strony internetowej
 weight: 42

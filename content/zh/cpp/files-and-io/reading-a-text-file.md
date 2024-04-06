@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 17:53:56.781884-07:00
-description: "How to: (\u600E\u4E48\u505A\uFF1F) ."
+description: "How to: (\u600E\u4E48\u505A\uFF1F) **Sample Output:**."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:48.129449-06:00'
+lastmod: '2024-04-05T21:53:48.422217-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(\u600E\u4E48\u505A\uFF1F) **Sample Output:**."
 title: "\u9605\u8BFB\u6587\u672C\u6587\u4EF6"
 weight: 22
 ---

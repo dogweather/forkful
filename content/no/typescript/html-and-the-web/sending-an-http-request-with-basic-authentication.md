@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 18:02:43.682957-07:00
-description: 'Hvordan: .'
-lastmod: '2024-03-13T22:44:40.531985-06:00'
+description: "Hvordan: Historisk sett ble HTTP Basic Authentication introdusert med\
+  \ RFC 7617, og er en enkel, men mindre sikker autentiseringsform da det overf\xF8\
+  rer\u2026"
+lastmod: '2024-04-05T21:53:41.509205-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historisk sett ble HTTP Basic Authentication introdusert med RFC 7617, og\
+  \ er en enkel, men mindre sikker autentiseringsform da det overf\xF8rer brukernavn\
+  \ og passord i \xE5pen tekst."
 title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---

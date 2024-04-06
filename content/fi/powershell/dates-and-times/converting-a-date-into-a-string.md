@@ -3,10 +3,10 @@ date: 2024-01-20 17:37:26.096736-07:00
 description: "How to: (Kuinka Tehd\xE4:) PowerShellissa p\xE4iv\xE4m\xE4\xE4r\xE4\xE4\
   \ merkkijonoksi muuttaminen k\xE4ytt\xE4\xE4 `Get-Date` cmdleti\xE4 ja sen `-Format`\
   \ parametria."
-lastmod: '2024-03-13T22:44:56.793965-06:00'
+lastmod: '2024-04-05T21:53:58.369385-06:00'
 model: gpt-4-1106-preview
-summary: "PowerShellissa p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 merkkijonoksi muuttaminen k\xE4\
-  ytt\xE4\xE4 `Get-Date` cmdleti\xE4 ja sen `-Format` parametria."
+summary: "(Kuinka Tehd\xE4:) PowerShellissa p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 merkkijonoksi\
+  \ muuttaminen k\xE4ytt\xE4\xE4 `Get-Date` cmdleti\xE4 ja sen `-Format` parametria."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---

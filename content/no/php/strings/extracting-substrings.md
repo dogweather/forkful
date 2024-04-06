@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:46:26.574168-07:00
 description: 'Hvordan: La oss ta en titt. PHP har flere innebygde funksjoner for dette.'
-lastmod: '2024-03-13T22:44:40.874646-06:00'
+lastmod: '2024-04-05T21:53:41.843711-06:00'
 model: gpt-4-1106-preview
-summary: La oss ta en titt.
+summary: ''
 title: Uthenting av delstrenger
 weight: 6
 ---

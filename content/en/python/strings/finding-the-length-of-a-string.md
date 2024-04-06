@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:47:50.557306-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:59.700166-06:00'
+description: "How to: Historically, the `len()` function has been Python's go-to way\
+  \ to find a string's length. It's elegant and quick. Underneath, Python strings\
+  \ are\u2026"
+lastmod: '2024-04-05T21:53:35.381738-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Historically, the `len()` function has been Python's go-to way to find a
+  string's length.
 title: Finding the length of a string
 weight: 7
 ---

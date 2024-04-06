@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:46:06.879237-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.951919-06:00'
+description: "Como Fazer: Em detalhe: - `substring(start, end)` pega desde a posi\xE7\
+  \xE3o `start` at\xE9 `end - 1`. - `slice(start, end)` \xE9 similar, mas aceita \xED\
+  ndices\u2026"
+lastmod: '2024-04-05T21:53:47.302961-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: Extraindo substrings
 weight: 6
 ---

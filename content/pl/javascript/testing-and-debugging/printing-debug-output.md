@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:52:40.848285-07:00
 description: "How to: (Jak to zrobi\u0107?) Oto kilka przyk\u0142ad\xF3w."
-lastmod: '2024-03-13T22:44:35.799116-06:00'
+lastmod: '2024-04-05T21:53:37.225861-06:00'
 model: gpt-4-1106-preview
-summary: "Oto kilka przyk\u0142ad\xF3w."
+summary: "(Jak to zrobi\u0107?) Oto kilka przyk\u0142ad\xF3w."
 title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---

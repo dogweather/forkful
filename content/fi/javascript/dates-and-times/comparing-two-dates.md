@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:33:11.981800-07:00
-description: 'How to: (Kuinka:) .'
-lastmod: '2024-03-13T22:44:56.962345-06:00'
+description: "How to: (Kuinka:) Vertailemalla p\xE4iv\xE4m\xE4\xE4ri\xE4 JavaScriptiss\xE4\
+  \ olemme perinteisesti hy\xF6dynt\xE4neet `Date`-objektia, joka esiteltiin kieless\xE4\
+  \ jo aikaisin. Se\u2026"
+lastmod: '2024-04-05T21:53:58.540756-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(Kuinka:) Vertailemalla p\xE4iv\xE4m\xE4\xE4ri\xE4 JavaScriptiss\xE4 olemme\
+  \ perinteisesti hy\xF6dynt\xE4neet `Date`-objektia, joka esiteltiin kieless\xE4\
+  \ jo aikaisin."
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---

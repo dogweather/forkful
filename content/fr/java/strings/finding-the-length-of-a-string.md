@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:47:38.681256-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:57.629176-06:00'
+description: 'Comment faire : Sortie .'
+lastmod: '2024-04-05T21:53:59.132146-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "Trouver la longueur d'une cha\xEEne de caract\xE8res"
 weight: 7
 ---

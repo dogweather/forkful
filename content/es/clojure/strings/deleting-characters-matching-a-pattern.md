@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:41:46.947632-07:00
-description: "C\xF3mo hacerlo: ."
-lastmod: '2024-03-13T22:44:58.640901-06:00'
+description: "C\xF3mo hacerlo: Antes de Clojure, lenguajes como Perl o Python ya manejaban\
+  \ eliminaci\xF3n de caracteres con expresiones regulares. \xBFPor qu\xE9 importa?\
+  \ Porque\u2026"
+lastmod: '2024-04-05T21:53:59.996070-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Antes de Clojure, lenguajes como Perl o Python ya manejaban eliminaci\xF3\
+  n de caracteres con expresiones regulares."
 title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---

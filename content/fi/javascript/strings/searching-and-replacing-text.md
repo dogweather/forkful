@@ -2,9 +2,10 @@
 date: 2024-01-20 17:58:20.460227-07:00
 description: "How to: (Kuinka tehd\xE4:) JavaScriptissa `String`-objektilla teht\xE4\
   v\xE4 etsi ja korvaa on suoraviivaista. Tutkitaan `replace()`-metodia."
-lastmod: '2024-03-13T22:44:56.935021-06:00'
+lastmod: '2024-04-05T21:53:58.513721-06:00'
 model: gpt-4-1106-preview
-summary: "JavaScriptissa `String`-objektilla teht\xE4v\xE4 etsi ja korvaa on suoraviivaista."
+summary: "(Kuinka tehd\xE4:) JavaScriptissa `String`-objektilla teht\xE4v\xE4 etsi\
+  \ ja korvaa on suoraviivaista."
 title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---

@@ -5,9 +5,11 @@ date: 2024-03-08 21:56:02.723251-07:00
 description: "Jak to zrobi\u0107: Przed refaktoryzacj\u0105 mo\u017Cesz mie\u0107\
   \ fragment kodu, kt\xF3ry miesza r\xF3\u017Cne poziomy abstrakcji lub odpowiedzialno\u015B\
   ci, jak obliczanie zni\u017Cki, a\u2026"
-lastmod: '2024-03-13T22:44:35.100828-06:00'
+lastmod: '2024-04-05T21:53:36.538148-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Przed refaktoryzacj\u0105 mo\u017Cesz mie\u0107 fragment kodu, kt\xF3ry\
+  \ miesza r\xF3\u017Cne poziomy abstrakcji lub odpowiedzialno\u015Bci, jak obliczanie\
+  \ zni\u017Cki, a nast\u0119pnie jej stosowanie."
 title: Refaktoryzacja
 weight: 19
 ---

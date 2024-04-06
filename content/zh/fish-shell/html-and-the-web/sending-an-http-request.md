@@ -4,10 +4,11 @@ description: "How to: (\u5982\u4F55\u64CD\u4F5C\uFF1A) \u5728Fish Shell\u4E2D\uF
   \u53D1\u9001HTTP\u8BF7\u6C42\u53EF\u4EE5\u7528`curl`\u547D\u4EE4\u3002\u4E0B\u9762\
   \u662F\u4EE3\u7801\u793A\u4F8B\uFF1A."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:48.262126-06:00'
+lastmod: '2024-04-05T21:53:48.537348-06:00'
 model: gpt-4-1106-preview
-summary: "\u5728Fish Shell\u4E2D\uFF0C\u53D1\u9001HTTP\u8BF7\u6C42\u53EF\u4EE5\u7528\
-  `curl`\u547D\u4EE4\u3002\u4E0B\u9762\u662F\u4EE3\u7801\u793A\u4F8B\uFF1A."
+summary: "(\u5982\u4F55\u64CD\u4F5C\uFF1A) \u5728Fish Shell\u4E2D\uFF0C\u53D1\u9001\
+  HTTP\u8BF7\u6C42\u53EF\u4EE5\u7528`curl`\u547D\u4EE4\u3002\u4E0B\u9762\u662F\u4EE3\
+  \u7801\u793A\u4F8B\uFF1A."
 title: "\u53D1\u51FA HTTP \u8BF7\u6C42"
 weight: 44
 ---

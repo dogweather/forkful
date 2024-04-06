@@ -2,10 +2,9 @@
 date: 2024-01-26 00:58:15.719236-07:00
 description: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u5728TypeScript\u4E2D\uFF0C\u5904\u7406\
   \u9519\u8BEF\u901A\u5E38\u6D89\u53CA `try`\u3001`catch` \u548C `finally` \u5757\u3002"
-lastmod: '2024-03-13T22:44:47.480112-06:00'
+lastmod: '2024-04-05T21:53:47.804020-06:00'
 model: gpt-4-1106-preview
-summary: "\u5728TypeScript\u4E2D\uFF0C\u5904\u7406\u9519\u8BEF\u901A\u5E38\u6D89\u53CA\
-  \ `try`\u3001`catch` \u548C `finally` \u5757."
+summary: ''
 title: "\u5904\u7406\u9519\u8BEF"
 weight: 16
 ---

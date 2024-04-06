@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:33:15.856159-07:00
-description: 'Hvordan: .'
-lastmod: '2024-03-13T22:44:40.763297-06:00'
+description: "Hvordan: Tidligere brukte vi `java.util.Date` og `java.util.Calendar`\
+  \ for \xE5 h\xE5ndtere datoer i Java, men de hadde flere utfordringer, inkludert\
+  \ mutabilitet\u2026"
+lastmod: '2024-04-05T21:53:41.741099-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Tidligere brukte vi `java.util.Date` og `java.util.Calendar` for \xE5 h\xE5\
+  ndtere datoer i Java, men de hadde flere utfordringer, inkludert mutabilitet og\
+  \ d\xE5rlig design."
 title: Sammenlikning av to datoer
 weight: 27
 ---

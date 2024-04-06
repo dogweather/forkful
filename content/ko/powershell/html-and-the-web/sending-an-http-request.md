@@ -5,11 +5,12 @@ description: "How to: (\uC5B4\uB5BB\uAC8C \uD558\uB098\uC694?) PowerShell\uC5D0\
   \uBC95\uC740 `Invoke-WebRequest` \uBA85\uB839\uC5B4\uB97C \uC0AC\uC6A9\uD558\uB294\
   \ \uAC70\uC5D0\uC694. \uC608\uC2DC\uB97C \uB4E4\uC5B4 \uBCFC\uAE4C\uC694?."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.542174-06:00'
+lastmod: '2024-04-05T21:53:57.199178-06:00'
 model: gpt-4-1106-preview
-summary: "PowerShell\uC5D0\uC11C HTTP \uC694\uCCAD\uC744 \uBCF4\uB0B4\uB294 \uAC00\
-  \uC7A5 \uAC04\uB2E8\uD55C \uBC29\uBC95\uC740 `Invoke-WebRequest` \uBA85\uB839\uC5B4\
-  \uB97C \uC0AC\uC6A9\uD558\uB294 \uAC70\uC5D0\uC694."
+summary: "(\uC5B4\uB5BB\uAC8C \uD558\uB098\uC694?) PowerShell\uC5D0\uC11C HTTP \uC694\
+  \uCCAD\uC744 \uBCF4\uB0B4\uB294 \uAC00\uC7A5 \uAC04\uB2E8\uD55C \uBC29\uBC95\uC740\
+  \ `Invoke-WebRequest` \uBA85\uB839\uC5B4\uB97C \uC0AC\uC6A9\uD558\uB294 \uAC70\uC5D0\
+  \uC694."
 title: "HTTP \uC694\uCCAD \uBCF4\uB0B4\uAE30"
 weight: 44
 ---

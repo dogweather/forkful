@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:47:14.361246-07:00
-description: "So geht\u2019s: ."
-lastmod: '2024-03-13T22:44:54.175640-06:00'
+description: "So geht\u2019s: Fr\xFCher in C, vor C++, verwendeten Entwickler 'char'\
+  \ Arrays und die Funktion `strlen` aus der Standardbibliothek `<cstring>`, um die\
+  \ L\xE4nge eines\u2026"
+lastmod: '2024-04-05T21:53:56.061703-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Fr\xFCher in C, vor C++, verwendeten Entwickler 'char' Arrays und die Funktion\
+  \ `strlen` aus der Standardbibliothek `<cstring>`, um die L\xE4nge eines Strings\
+  \ zu finden."
 title: "Ermittlung der Zeichenkettenl\xE4nge"
 weight: 7
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:38:04.950570-07:00
-description: "Hur man g\xF6r: ."
-lastmod: '2024-03-13T22:44:37.512490-06:00'
+description: "Hur man g\xF6r: Att konvertera str\xE4ngar till sm\xE5 bokst\xE4ver\
+  \ \xE4r en standardoperation i de flesta programmeringsspr\xE5k, och Clojure \xE4\
+  r inget undantag. Historiskt\u2026"
+lastmod: '2024-04-05T21:53:38.840278-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Att konvertera str\xE4ngar till sm\xE5 bokst\xE4ver \xE4r en standardoperation\
+  \ i de flesta programmeringsspr\xE5k, och Clojure \xE4r inget undantag."
 title: "Konvertera en str\xE4ng till gemener"
 weight: 4
 ---

@@ -4,10 +4,11 @@ description: "How to: (\u600E\u4E48\u505A\uFF1A) Swift \u63D0\u4F9B\u4E86 `print
   \ \u548C `debugPrint` \u4E24\u4E2A\u51FD\u6570\u6765\u8F93\u51FA\u4FE1\u606F\u5230\
   \u63A7\u5236\u53F0\u3002"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:48.160463-06:00'
+lastmod: '2024-04-05T21:53:48.450380-06:00'
 model: gpt-4-1106-preview
-summary: "Swift \u63D0\u4F9B\u4E86 `print` \u548C `debugPrint` \u4E24\u4E2A\u51FD\u6570\
-  \u6765\u8F93\u51FA\u4FE1\u606F\u5230\u63A7\u5236\u53F0."
+summary: "(\u600E\u4E48\u505A\uFF1A) Swift \u63D0\u4F9B\u4E86 `print` \u548C `debugPrint`\
+  \ \u4E24\u4E2A\u51FD\u6570\u6765\u8F93\u51FA\u4FE1\u606F\u5230\u63A7\u5236\u53F0\
+  \u3002"
 title: "\u6253\u5370\u8C03\u8BD5\u8F93\u51FA"
 weight: 33
 ---

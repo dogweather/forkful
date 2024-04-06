@@ -2,9 +2,9 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:55.912776-07:00
-description: "Hoe: Ruby biedt verschillende methoden om willekeurige getallen te genereren,\
-  \ voornamelijk via de `Random` klasse. Om een basis willekeurig getal te\u2026"
-lastmod: '2024-03-13T22:44:51.331321-06:00'
+description: 'Hoe: Ruby biedt verschillende methoden om willekeurige getallen te genereren,
+  voornamelijk via de `Random` klasse.'
+lastmod: '2024-04-05T21:53:51.341725-06:00'
 model: gpt-4-0125-preview
 summary: Ruby biedt verschillende methoden om willekeurige getallen te genereren,
   voornamelijk via de `Random` klasse.

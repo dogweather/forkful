@@ -2,10 +2,9 @@
 date: 2024-01-20 18:02:38.022706-07:00
 description: "How to: - Kuinka tehd\xE4: PHP tarjoaa `curl`-toiminnon HTTP-pyynt\xF6\
   jen k\xE4sittelyyn perusautentikoinnin kanssa. T\xE4ss\xE4 nopea esimerkki."
-lastmod: '2024-03-13T22:44:56.655719-06:00'
+lastmod: '2024-04-05T21:53:58.227698-06:00'
 model: gpt-4-1106-preview
-summary: "PHP tarjoaa `curl`-toiminnon HTTP-pyynt\xF6jen k\xE4sittelyyn perusautentikoinnin\
-  \ kanssa."
+summary: ''
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---

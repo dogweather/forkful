@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:51:09.475999-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.949157-06:00'
+description: "Como Fazer: Antigamente no JavaScript, a interpola\xE7\xE3o de strings\
+  \ era uma dor de cabe\xE7a que envolvia uma enxurrada de sinais de mais (`+`) para\
+  \ concatenar\u2026"
+lastmod: '2024-04-05T21:53:47.299623-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Antigamente no JavaScript, a interpola\xE7\xE3o de strings era uma dor de\
+  \ cabe\xE7a que envolvia uma enxurrada de sinais de mais (`+`) para concatenar vari\xE1\
+  veis e strings."
 title: Interpolando uma string
 weight: 8
 ---

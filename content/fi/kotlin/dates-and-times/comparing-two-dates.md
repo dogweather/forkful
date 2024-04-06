@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:33:12.563256-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:56.543824-06:00'
+description: "How to: Vertailtiin p\xE4iv\xE4m\xE4\xE4ri\xE4 jo ennen tietokoneita,\
+  \ mutta tietokoneet nopeuttavat ja yksinkertaistavat prosessia. Vaihtoehtoja on\
+  \ monia:\u2026"
+lastmod: '2024-04-05T21:53:58.109441-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Vertailtiin p\xE4iv\xE4m\xE4\xE4ri\xE4 jo ennen tietokoneita, mutta tietokoneet\
+  \ nopeuttavat ja yksinkertaistavat prosessia."
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---

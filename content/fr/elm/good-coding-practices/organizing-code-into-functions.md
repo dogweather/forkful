@@ -2,9 +2,10 @@
 date: 2024-01-26 01:09:54.283376-07:00
 description: 'Comment faire : Voici un extrait de code Elm avec une fonction simple
   pour saluer un utilisateur .'
-lastmod: '2024-03-13T22:44:57.694953-06:00'
+lastmod: '2024-04-05T21:53:59.190706-06:00'
 model: gpt-4-1106-preview
-summary: Voici un extrait de code Elm avec une fonction simple pour saluer un utilisateur.
+summary: Voici un extrait de code Elm avec une fonction simple pour saluer un utilisateur
+  .
 title: Organisation du code en fonctions
 weight: 18
 ---

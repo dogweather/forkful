@@ -2,10 +2,10 @@
 date: 2024-01-20 17:36:03.527608-07:00
 description: "How to: (Jak to zrobi\u0107:) Arduino nie ma wbudowanej obs\u0142ugi\
   \ dat, ale mo\u017Cna u\u017Cy\u0107 biblioteki `TimeLib.h`. Oto przyk\u0142ad."
-lastmod: '2024-03-13T22:44:35.682793-06:00'
+lastmod: '2024-04-05T21:53:37.107777-06:00'
 model: gpt-4-1106-preview
-summary: "Arduino nie ma wbudowanej obs\u0142ugi dat, ale mo\u017Cna u\u017Cy\u0107\
-  \ biblioteki `TimeLib.h`."
+summary: "(Jak to zrobi\u0107:) Arduino nie ma wbudowanej obs\u0142ugi dat, ale mo\u017C\
+  na u\u017Cy\u0107 biblioteki `TimeLib.h`."
 title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---

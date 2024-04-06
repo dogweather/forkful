@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:53:35.831012-07:00
-description: 'So geht''s: .'
-lastmod: '2024-03-13T22:44:54.076766-06:00'
+description: "So geht's: Historisch gesehen ist das Lesen von Dateien eine der grundlegenden\
+  \ Operationen auf einem Unix-\xE4hnlichen Betriebssystem, und die Bash-Shell\u2026"
+lastmod: '2024-04-05T21:53:55.958650-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historisch gesehen ist das Lesen von Dateien eine der grundlegenden Operationen\
+  \ auf einem Unix-\xE4hnlichen Betriebssystem, und die Bash-Shell baut auf diesen\
+  \ Konventionen auf."
 title: Textdatei einlesen
 weight: 22
 ---

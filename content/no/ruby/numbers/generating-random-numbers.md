@@ -1,9 +1,8 @@
 ---
 date: 2024-01-27 20:35:17.135400-07:00
 description: "Hvordan: Ruby tilbyr flere metoder for \xE5 generere tilfeldige tall,\
-  \ hovedsakelig gjennom `Random`-klassen. For \xE5 generere et grunnleggende tilfeldig\
-  \ tall."
-lastmod: '2024-03-13T22:44:41.311757-06:00'
+  \ hovedsakelig gjennom `Random`-klassen."
+lastmod: '2024-04-05T21:53:42.272940-06:00'
 model: gpt-4-0125-preview
 summary: "Ruby tilbyr flere metoder for \xE5 generere tilfeldige tall, hovedsakelig\
   \ gjennom `Random`-klassen."

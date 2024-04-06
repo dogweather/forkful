@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 04:36:13.552322-07:00
-description: 'Kuinka: .'
-lastmod: '2024-03-13T22:44:56.339353-06:00'
+description: "Kuinka: XML eli Laajennettava Merkkauskieli on ollut olemassa 90-luvun\
+  \ lopulta l\xE4htien. Sen itsens\xE4 kuvaava luonne ja ihmisen luettava muoto tekiv\xE4\
+  t siit\xE4\u2026"
+lastmod: '2024-04-05T21:53:57.897717-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "XML eli Laajennettava Merkkauskieli on ollut olemassa 90-luvun lopulta l\xE4\
+  htien."
 title: "XML:n k\xE4sittely"
 weight: 40
 ---

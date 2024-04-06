@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 04:29:35.147376-07:00
-description: 'Como fazer: .'
-lastmod: '2024-03-13T22:44:46.608227-06:00'
+description: "Como fazer: O XML existe desde o final dos anos 90, o que o torna um\
+  \ av\xF4 em anos tecnol\xF3gicos. Foi inventado para portabilidade de dados e facilidade\
+  \ de\u2026"
+lastmod: '2024-04-05T21:53:46.952750-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "O XML existe desde o final dos anos 90, o que o torna um av\xF4 em anos\
+  \ tecnol\xF3gicos."
 title: Trabalhando com XML
 weight: 40
 ---

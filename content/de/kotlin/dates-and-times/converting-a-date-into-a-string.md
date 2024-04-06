@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:36:59.435363-07:00
-description: 'So geht''s: .'
-lastmod: '2024-03-13T22:44:53.857645-06:00'
+description: "So geht's: Urspr\xFCnglich verwendete Kotlin f\xFCr Datumsoperationen\
+  \ die Klassen aus `java.util` wie `Date` und `SimpleDateFormat`. Obwohl immer noch\u2026"
+lastmod: '2024-04-05T21:53:55.741985-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Urspr\xFCnglich verwendete Kotlin f\xFCr Datumsoperationen die Klassen aus\
+  \ `java.util` wie `Date` und `SimpleDateFormat`."
 title: Datum in einen String umwandeln
 weight: 28
 ---

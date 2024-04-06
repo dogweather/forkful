@@ -2,10 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:17.580075-07:00
-description: "L\xE0m th\u1EBF n\xE0o: ."
-lastmod: '2024-03-13T22:44:37.187141-06:00'
+description: "L\xE0m th\u1EBF n\xE0o: Trong Fish Shell, \u0111i\u1EC1u k\u1EF3 di\u1EC7\
+  u x\u1EA3y ra v\u1EDBi ti\u1EC7n \xEDch `string`, m\u1ED9t c\xF4ng c\u1EE5 ti\u1EC7\
+  n l\u1EE3i c\xF3 s\u1EB5n cho c\xE1c thao t\xE1c chu\u1ED7i - \u0111\u01B0\u1EE3\
+  c gi\u1EDBi thi\u1EC7u trong phi\xEAn\u2026"
+lastmod: '2024-04-05T21:53:38.530532-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Trong Fish Shell, \u0111i\u1EC1u k\u1EF3 di\u1EC7u x\u1EA3y ra v\u1EDBi\
+  \ ti\u1EC7n \xEDch `string`, m\u1ED9t c\xF4ng c\u1EE5 ti\u1EC7n l\u1EE3i c\xF3 s\u1EB5\
+  n cho c\xE1c thao t\xE1c chu\u1ED7i - \u0111\u01B0\u1EE3c gi\u1EDBi thi\u1EC7u trong\
+  \ phi\xEAn b\u1EA3n 2.3.0."
 title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
 weight: 5
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:39:01.725273-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:45:00.536966-06:00'
+description: "How to: Historically, case conversion has been a staple in programming\
+  \ languages to ensure text uniformity. It supports case-insensitive comparisons\
+  \ and\u2026"
+lastmod: '2024-04-05T21:53:36.244620-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Historically, case conversion has been a staple in programming languages
+  to ensure text uniformity.
 title: Converting a string to lower case
 weight: 4
 ---

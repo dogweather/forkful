@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:33:30.887383-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:54.278551-06:00'
+description: "How to: In JavaScript wurden Datumsvergleiche schon immer durchgef\xFC\
+  hrt, indem man `Date` Objekte umwandelt und deren Zeitstempel vergleicht. Das `Date`\u2026"
+lastmod: '2024-04-05T21:53:56.166739-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "In JavaScript wurden Datumsvergleiche schon immer durchgef\xFChrt, indem\
+  \ man `Date` Objekte umwandelt und deren Zeitstempel vergleicht."
 title: Vergleich von zwei Daten
 weight: 27
 ---

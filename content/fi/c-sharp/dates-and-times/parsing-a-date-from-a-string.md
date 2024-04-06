@@ -4,9 +4,9 @@ changelog:
 date: 2024-02-03 19:13:53.948286-07:00
 description: "Kuinka: **Perusj\xE4sennys:** `DateTime.Parse` ja `DateTime.TryParse`\
   \ -menetelm\xE4t ovat go-to-vaihtoehtoja muuntaaksesi merkkijonon `DateTime`-objektiksi.\u2026"
-lastmod: '2024-03-13T22:44:56.582679-06:00'
+lastmod: '2024-04-05T21:53:58.149837-06:00'
 model: gpt-4-0125-preview
-summary: "**Perusj\xE4sennys:**\n\n`DateTime.Parse` ja `DateTime.TryParse` -menetelm\xE4\
+summary: "**Perusj\xE4sennys:** `DateTime.Parse` ja `DateTime.TryParse` -menetelm\xE4\
   t ovat go-to-vaihtoehtoja muuntaaksesi merkkijonon `DateTime`-objektiksi."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
 weight: 30

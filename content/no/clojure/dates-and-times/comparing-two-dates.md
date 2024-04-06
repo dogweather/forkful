@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:32:30.657457-07:00
-description: 'Hvordan: .'
-lastmod: '2024-03-13T22:44:40.414237-06:00'
+description: "Hvordan: Her ser vi at `date1` kommer f\xF8r `date2` og det er 16 dager\
+  \ mellom dem."
+lastmod: '2024-04-05T21:53:41.394114-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Her ser vi at `date1` kommer f\xF8r `date2` og det er 16 dager mellom dem."
 title: Sammenlikning av to datoer
 weight: 27
 ---

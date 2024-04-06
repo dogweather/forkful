@@ -2,8 +2,8 @@
 date: 2024-01-20 17:45:19.404103-07:00
 description: "Vad & Varf\xF6r? H\xE4mtning av en webbsida inneb\xE4r att ladda ner\
   \ dess HTML-inneh\xE5ll. Programm\xF6rer g\xF6r detta f\xF6r att l\xE4sa eller bearbeta\
-  \ information fr\xE5n\u2026"
-lastmod: '2024-03-13T22:44:38.249953-06:00'
+  \ information fr\xE5n webben."
+lastmod: '2024-04-05T21:53:39.587091-06:00'
 model: gpt-4-1106-preview
 summary: "H\xE4mtning av en webbsida inneb\xE4r att ladda ner dess HTML-inneh\xE5\
   ll."

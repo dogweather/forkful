@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:33:48.428377-07:00
-description: 'How To: (Wie geht''s?) .'
-lastmod: '2024-03-13T22:44:54.412637-06:00'
+description: 'How To: (Wie geht''s?) Ausgabe.'
+lastmod: '2024-04-05T21:53:56.307051-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: (Wie geht's?) Ausgabe.
 title: Vergleich von zwei Daten
 weight: 27
 ---

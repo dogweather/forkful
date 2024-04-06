@@ -2,10 +2,10 @@
 date: 2024-01-20 17:41:48.811914-07:00
 description: "How to: Regardons comment effacer des caract\xE8res d'une string en\
   \ utilisant des regex et la librairie standard ."
-lastmod: '2024-03-13T22:44:58.142841-06:00'
+lastmod: '2024-04-05T21:53:59.573638-06:00'
 model: gpt-4-1106-preview
 summary: "Regardons comment effacer des caract\xE8res d'une string en utilisant des\
-  \ regex et la librairie standard."
+  \ regex et la librairie standard ."
 title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---

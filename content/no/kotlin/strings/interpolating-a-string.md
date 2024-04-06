@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:51:01.734972-07:00
-description: "Hvordan gj\xF8re det: ."
-lastmod: '2024-03-13T22:44:40.736399-06:00'
+description: "Hvordan gj\xF8re det: Utskrift."
+lastmod: '2024-04-05T21:53:41.715761-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: Interpolering av en streng
 weight: 8
 ---

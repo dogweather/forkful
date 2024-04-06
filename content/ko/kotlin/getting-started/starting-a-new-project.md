@@ -6,10 +6,10 @@ description: "How to: (\uBC29\uBC95) Kotlin \uD504\uB85C\uC81D\uD2B8\uB97C \uC2D
   \uD55C\uB2E4. 2. Kotlin/JVM\uC744 \uC120\uD0DD\uD558\uACE0 Next \uBC84\uD2BC\uC744\
   \ \uD074\uB9AD\uD55C\uB2E4. 3. \uD504\uB85C\uC81D\uD2B8 \uC774\uB984\uACFC\u2026"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.172448-06:00'
+lastmod: '2024-04-05T21:53:56.914151-06:00'
 model: gpt-4-1106-preview
-summary: "Kotlin \uD504\uB85C\uC81D\uD2B8\uB97C \uC2DC\uC791\uD558\uAE30 \uC704\uD574\
-  \ IntelliJ IDEA\uB97C \uC0AC\uC6A9\uD558\uB294 \uC608\uC81C\uB2E4."
+summary: "(\uBC29\uBC95) Kotlin \uD504\uB85C\uC81D\uD2B8\uB97C \uC2DC\uC791\uD558\uAE30\
+  \ \uC704\uD574 IntelliJ IDEA\uB97C \uC0AC\uC6A9\uD558\uB294 \uC608\uC81C\uB2E4."
 title: "\uC0C8 \uD504\uB85C\uC81D\uD2B8 \uC2DC\uC791\uD558\uAE30"
 weight: 1
 ---

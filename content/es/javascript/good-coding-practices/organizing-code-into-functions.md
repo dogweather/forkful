@@ -1,9 +1,13 @@
 ---
 date: 2024-01-26 01:10:51.916332-07:00
-description: "C\xF3mo hacerlo: ."
-lastmod: '2024-03-13T22:44:59.464182-06:00'
+description: "C\xF3mo hacerlo: Hist\xF3ricamente, lenguajes de programaci\xF3n imperativa\
+  \ como las primeras versiones de BASIC o Assembly carec\xEDan de la abstracci\xF3\
+  n que\u2026"
+lastmod: '2024-04-05T21:54:00.814164-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Hist\xF3ricamente, lenguajes de programaci\xF3n imperativa como las primeras\
+  \ versiones de BASIC o Assembly carec\xEDan de la abstracci\xF3n que proporcionan\
+  \ las funciones."
 title: "Organizando c\xF3digo en funciones"
 weight: 18
 ---

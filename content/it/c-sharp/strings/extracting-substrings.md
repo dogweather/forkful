@@ -2,11 +2,10 @@
 date: 2024-01-20 17:45:37.947278-07:00
 description: 'How to: (Come fare:) Utilizza `Substring`, `Span<T>`, `String.Split`,
   `^` e `..` per estrarre sottostringhe. Ecco degli esempi.'
-lastmod: '2024-03-13T22:44:43.422943-06:00'
+lastmod: '2024-04-05T21:53:44.192048-06:00'
 model: gpt-4-1106-preview
-summary: '(Come fare:)
-
-  Utilizza `Substring`, `Span<T>`, `String.Split`, `^` e `..` per estrarre sottostringhe.'
+summary: (Come fare:) Utilizza `Substring`, `Span<T>`, `String.Split`, `^` e `..`
+  per estrarre sottostringhe.
 title: Estrazione di sottostringhe
 weight: 6
 ---

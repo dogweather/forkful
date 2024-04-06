@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:32:56.677975-07:00
-description: 'How to: (Miten:).'
-lastmod: '2024-03-13T22:44:57.007584-06:00'
+description: "How to: (Syv\xE4sukellus) Alun perin p\xE4iv\xE4m\xE4\xE4rien vertailussa\
+  \ k\xE4ytettiin yksinkertaisia Unix-ajanhetki\xE4 (epoch), jotka ilmaisevat aikaa\
+  \ sekunteina vuoden\u2026"
+lastmod: '2024-04-05T21:53:58.586484-06:00'
 model: gpt-4-1106-preview
-summary: (Miten:).
+summary: "(Syv\xE4sukellus) Alun perin p\xE4iv\xE4m\xE4\xE4rien vertailussa k\xE4\
+  ytettiin yksinkertaisia Unix-ajanhetki\xE4 (epoch), jotka ilmaisevat aikaa sekunteina\
+  \ vuoden 1970 alusta."
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---

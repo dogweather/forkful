@@ -3,13 +3,10 @@ date: 2024-02-03 19:02:43.902298-07:00
 description: "How to: **Basic Parsing:** The `DateTime.Parse` and `DateTime.TryParse`\
   \ methods are the go-to options for converting a string into a `DateTime`. Here's\
   \ a\u2026"
-lastmod: '2024-03-13T22:45:00.097833-06:00'
+lastmod: '2024-04-05T21:53:35.794590-06:00'
 model: gpt-4-0125-preview
-summary: '**Basic Parsing:**
-
-
-  The `DateTime.Parse` and `DateTime.TryParse` methods are the go-to options for converting
-  a string into a `DateTime`.'
+summary: '**Basic Parsing:** The `DateTime.Parse` and `DateTime.TryParse` methods
+  are the go-to options for converting a string into a `DateTime`.'
 title: Parsing a date from a string
 weight: 30
 ---

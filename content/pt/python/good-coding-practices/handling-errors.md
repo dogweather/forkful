@@ -1,9 +1,11 @@
 ---
 date: 2024-01-26 00:56:28.520353-07:00
-description: 'Como fazer: .'
-lastmod: '2024-03-13T22:44:46.161720-06:00'
+description: "Como fazer: Exemplo de sa\xEDda ao digitar um n\xFAmero inv\xE1lido\
+  \ para o primeiro bloco."
+lastmod: '2024-04-05T21:53:46.482445-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Exemplo de sa\xEDda ao digitar um n\xFAmero inv\xE1lido para o primeiro\
+  \ bloco."
 title: Tratamento de erros
 weight: 16
 ---

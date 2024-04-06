@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:58:13.914510-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:56.601255-06:00'
+description: 'How to: Esimerkkitulostus.'
+lastmod: '2024-04-05T21:53:58.168880-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---

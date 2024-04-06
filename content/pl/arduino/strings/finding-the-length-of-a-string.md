@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:46:38.846670-07:00
-description: "Jak to zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:35.663395-06:00'
+description: "Jak to zrobi\u0107: W Sample Output widzimy."
+lastmod: '2024-04-05T21:53:37.088190-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: W Sample Output widzimy.
 title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 weight: 7
 ---

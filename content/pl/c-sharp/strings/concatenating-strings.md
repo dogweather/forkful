@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:34:15.756437-07:00
-description: "Jak to zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:35.400040-06:00'
+description: "Jak to zrobi\u0107: Konkatenacj\u0119 wykorzystujemy od samego pocz\u0105\
+  tku C#. Alternatywy? `String.Concat()`, `String.Format()` czy interpolacja, wprowadzona\
+  \ w C# 6.0\u2026"
+lastmod: '2024-04-05T21:53:36.835604-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Konkatenacj\u0119 wykorzystujemy od samego pocz\u0105tku C#."
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---

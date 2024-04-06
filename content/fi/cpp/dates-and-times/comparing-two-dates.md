@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:33:18.977052-07:00
-description: "How to: (Kuinka Tehd\xE4\xE4n:) ."
-lastmod: '2024-03-13T22:44:56.877652-06:00'
+description: "How to: (Kuinka Tehd\xE4\xE4n:) Esimerkkitulos."
+lastmod: '2024-04-05T21:53:58.456143-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(Kuinka Tehd\xE4\xE4n:) Esimerkkitulos."
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---

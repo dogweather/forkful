@@ -1,9 +1,10 @@
 ---
 date: 2024-01-21 21:19:35.648555-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:59.714733-06:00'
+description: 'How to: Sample output when entering an invalid number for the first
+  block.'
+lastmod: '2024-04-05T21:53:35.397976-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Sample output when entering an invalid number for the first block.
 title: Handling errors
 weight: 16
 ---

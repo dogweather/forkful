@@ -1,9 +1,9 @@
 ---
 date: 2024-01-26 04:33:46.666094-07:00
 description: 'Comment faire : Lire du XML avec SimpleXML .'
-lastmod: '2024-03-13T22:44:57.905145-06:00'
+lastmod: '2024-04-05T21:53:59.390041-06:00'
 model: gpt-4-0125-preview
-summary: Lire du XML avec SimpleXML.
+summary: Lire du XML avec SimpleXML .
 title: Travailler avec XML
 weight: 40
 ---

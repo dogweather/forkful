@@ -1,10 +1,12 @@
 ---
 date: 2024-01-20 17:56:27.052362-07:00
-description: "How to: \u5982\u4F55\u505A\uFF1F ."
+description: "How to: \u5982\u4F55\u505A\uFF1F \u8FD0\u884C\u811A\u672C `php script.php\
+  \ Neo` \u8F93\u51FA\u5C06\u4F1A\u662F `Hello, Neo!`\u3002"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:47.881209-06:00'
+lastmod: '2024-04-05T21:53:48.188144-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "\u5982\u4F55\u505A\uFF1F \u8FD0\u884C\u811A\u672C `php script.php Neo` \u8F93\
+  \u51FA\u5C06\u4F1A\u662F `Hello, Neo!`\u3002"
 title: "\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570"
 weight: 23
 ---

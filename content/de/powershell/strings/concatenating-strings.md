@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:35:34.323893-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:54.093497-06:00'
+description: "How to: String-Konkatenation ist so alt wie die Programmierung selbst\
+  \ und es gibt viele Wege, dies in PowerShell zu tun, wie etwa mit dem Plus-Operator,\u2026"
+lastmod: '2024-04-05T21:53:55.974951-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: String-Konkatenation ist so alt wie die Programmierung selbst und es gibt
+  viele Wege, dies in PowerShell zu tun, wie etwa mit dem Plus-Operator, dem Format-Operator,
+  der Join-Methode oder String-Interpolation.
 title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---

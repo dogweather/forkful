@@ -3,11 +3,11 @@ date: 2024-01-20 17:57:29.944599-07:00
 description: "How to: (Jak to zrobi\u0107?) W \u015Brodowisku Arduino szukanie i zamiana\
   \ tekstu nie jest funkcj\u0105 dost\u0119pn\u0105 \"od r\u0119ki\", ale mo\u017C\
   esz to osi\u0105gn\u0105\u0107, u\u017Cywaj\u0105c prostych\u2026"
-lastmod: '2024-03-13T22:44:35.657575-06:00'
+lastmod: '2024-04-05T21:53:37.082555-06:00'
 model: gpt-4-1106-preview
-summary: "W \u015Brodowisku Arduino szukanie i zamiana tekstu nie jest funkcj\u0105\
-  \ dost\u0119pn\u0105 \"od r\u0119ki\", ale mo\u017Cesz to osi\u0105gn\u0105\u0107\
-  , u\u017Cywaj\u0105c prostych funkcji."
+summary: "(Jak to zrobi\u0107?) W \u015Brodowisku Arduino szukanie i zamiana tekstu\
+  \ nie jest funkcj\u0105 dost\u0119pn\u0105 \"od r\u0119ki\", ale mo\u017Cesz to\
+  \ osi\u0105gn\u0105\u0107, u\u017Cywaj\u0105c prostych funkcji."
 title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---

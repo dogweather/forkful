@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:37:39.442593-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:38.155045-06:00'
+description: "How to: Str\xE4ngkonvertering finns i m\xE5nga programmeringsspr\xE5\
+  k och introducerades f\xF6r att hantera versalk\xE4nsligheten i text. Alternativ\
+  \ till\u2026"
+lastmod: '2024-04-05T21:53:39.492649-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Str\xE4ngkonvertering finns i m\xE5nga programmeringsspr\xE5k och introducerades\
+  \ f\xF6r att hantera versalk\xE4nsligheten i text."
 title: "Konvertera en str\xE4ng till gemener"
 weight: 4
 ---

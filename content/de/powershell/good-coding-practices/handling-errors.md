@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 00:55:37.846233-07:00
-description: 'Wie geht das: .'
-lastmod: '2024-03-13T22:44:54.111362-06:00'
+description: "Wie geht das: PowerShell hat seit seiner Einf\xFChrung als Monad einen\
+  \ langen Weg zur\xFCckgelegt. Die Fehlerbehandlung wurde im Laufe der Zeit robuster\
+  \ und bot\u2026"
+lastmod: '2024-04-05T21:53:55.992782-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "PowerShell hat seit seiner Einf\xFChrung als Monad einen langen Weg zur\xFC\
+  ckgelegt."
 title: Fehlerbehandlung
 weight: 16
 ---

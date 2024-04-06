@@ -4,10 +4,11 @@ description: "How to: (\u600E\u4E48\u505A\uFF1A) \u5728 Bash \u4E2D\uFF0C\u521B\
   \u4E34\u65F6\u6587\u4EF6\u53EF\u4EE5\u4F7F\u7528 `mktemp` \u547D\u4EE4\u3002\u4F8B\
   \u5B50\u5982\u4E0B\uFF1A."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:47.984895-06:00'
+lastmod: '2024-04-05T21:53:48.283940-06:00'
 model: gpt-4-1106-preview
-summary: "\u5728 Bash \u4E2D\uFF0C\u521B\u5EFA\u4E34\u65F6\u6587\u4EF6\u53EF\u4EE5\
-  \u4F7F\u7528 `mktemp` \u547D\u4EE4\u3002\u4F8B\u5B50\u5982\u4E0B\uFF1A."
+summary: "(\u600E\u4E48\u505A\uFF1A) \u5728 Bash \u4E2D\uFF0C\u521B\u5EFA\u4E34\u65F6\
+  \u6587\u4EF6\u53EF\u4EE5\u4F7F\u7528 `mktemp` \u547D\u4EE4\u3002\u4F8B\u5B50\u5982\
+  \u4E0B\uFF1A."
 title: "\u521B\u5EFA\u4E34\u65F6\u6587\u4EF6"
 weight: 21
 ---

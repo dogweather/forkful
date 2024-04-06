@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:50:58.052055-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.990556-06:00'
+description: "Como Fazer: A interpola\xE7\xE3o de strings no Fish Shell \xE9 direta\
+  \ e limpa, como visto acima. Historicamente, shells como o Bash exigiam uma sintaxe\
+  \ mais\u2026"
+lastmod: '2024-04-05T21:53:47.343237-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "A interpola\xE7\xE3o de strings no Fish Shell \xE9 direta e limpa, como\
+  \ visto acima."
 title: Interpolando uma string
 weight: 8
 ---

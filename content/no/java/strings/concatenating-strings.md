@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:34:59.188104-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:40.658200-06:00'
+description: "How to: Konkatenering av strenger har v\xE6rt en del av Java helt siden\
+  \ starten. Tidligere var det vanlig \xE5 bruke `+` operatoren, men dette kan bli\u2026"
+lastmod: '2024-04-05T21:53:41.638834-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Konkatenering av strenger har v\xE6rt en del av Java helt siden starten."
 title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---

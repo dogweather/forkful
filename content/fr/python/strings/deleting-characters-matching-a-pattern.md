@@ -3,10 +3,13 @@ changelog:
 - 2024-04-04, dogweather, edited
 - 2024-04-04, gpt-4-0125-preview, translated from English
 date: 2024-01-20 17:43:02.363431-07:00
-description: 'Comment faire : .'
-lastmod: '2024-04-04T02:02:35.204864-06:00'
+description: "Comment faire : Je fais cela assez souvent pour avoir refactoris\xE9\
+  \ cela dans cette simple fonction `delete()`. C'est aussi une bonne d\xE9monstration\
+  \ des\u2026"
+lastmod: '2024-04-05T21:53:58.801811-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Je fais cela assez souvent pour avoir refactoris\xE9 cela dans cette simple\
+  \ fonction `delete()`."
 title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---

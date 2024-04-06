@@ -1,9 +1,14 @@
 ---
 date: 2024-01-20 17:39:12.929944-07:00
-description: "C\xF3mo hacerlo: ."
-lastmod: '2024-03-13T22:44:58.833731-06:00'
+description: "C\xF3mo hacerlo: Hist\xF3ricamente, la necesidad de convertir texto\
+  \ a min\xFAsculas viene desde la clasificaci\xF3n y b\xFAsqueda de datos de texto,\
+  \ donde es com\xFAn que\u2026"
+lastmod: '2024-04-05T21:54:00.180893-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Hist\xF3ricamente, la necesidad de convertir texto a min\xFAsculas viene\
+  \ desde la clasificaci\xF3n y b\xFAsqueda de datos de texto, donde es com\xFAn que\
+  \ los programas deban ser agn\xF3sticos respecto al uso de may\xFAsculas o min\xFA\
+  sculas."
 title: "Conversi\xF3n de una cadena de texto a min\xFAsculas"
 weight: 4
 ---

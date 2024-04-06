@@ -1,10 +1,11 @@
 ---
 date: 2024-01-20 17:54:42.623259-07:00
-description: "How to: (\uBC29\uBC95:) ."
+description: "How to: (\uBC29\uBC95:) \uC2E4\uD589 \uC2DC \uC0D8\uD50C \uCD9C\uB825\
+  ."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.320648-06:00'
+lastmod: '2024-04-05T21:53:57.029252-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30"
 weight: 22
 ---

@@ -2,10 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:06.636785-07:00
-description: 'Hoe te: .'
-lastmod: '2024-03-13T22:44:51.005283-06:00'
+description: "Hoe te: JSON (JavaScript Object Notation) werd in de vroege jaren 2000\
+  \ geformaliseerd en werd snel een standaard voor gegevensuitwisseling. In een Bash-\u2026"
+lastmod: '2024-04-05T21:53:51.022424-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: JSON (JavaScript Object Notation) werd in de vroege jaren 2000 geformaliseerd
+  en werd snel een standaard voor gegevensuitwisseling.
 title: Werken met JSON
 weight: 38
 ---

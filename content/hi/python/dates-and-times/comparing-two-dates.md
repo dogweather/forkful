@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:34:05.528925-07:00
-description: "\u0915\u0948\u0938\u0947 \u0915\u0930\u0947\u0902? (How to:) ."
-lastmod: '2024-03-13T22:44:51.613288-06:00'
+description: "\u0915\u0948\u0938\u0947 \u0915\u0930\u0947\u0902? (How to:) Sample\
+  \ Output."
+lastmod: '2024-04-05T21:53:53.633742-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: (How to:) Sample Output.
 title: "\u0926\u094B \u0924\u093E\u0930\u0940\u0916\u094B\u0902 \u0915\u0940 \u0924\
   \u0941\u0932\u0928\u093E"
 weight: 27

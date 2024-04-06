@@ -3,10 +3,10 @@ date: 2024-01-20 17:42:39.040635-07:00
 description: "How to: (Jak to zrobi\u0107:) W JavaScript u\u017Cywamy metody `.replace()`\
   \ wraz z wyra\u017Ceniami regularnymi, by usun\u0105\u0107 znaki odpowiadaj\u0105\
   ce wzorcowi."
-lastmod: '2024-03-13T22:44:35.780880-06:00'
+lastmod: '2024-04-05T21:53:37.207744-06:00'
 model: gpt-4-1106-preview
-summary: "W JavaScript u\u017Cywamy metody `.replace()` wraz z wyra\u017Ceniami regularnymi,\
-  \ by usun\u0105\u0107 znaki odpowiadaj\u0105ce wzorcowi."
+summary: "(Jak to zrobi\u0107:) W JavaScript u\u017Cywamy metody `.replace()` wraz\
+  \ z wyra\u017Ceniami regularnymi, by usun\u0105\u0107 znaki odpowiadaj\u0105ce wzorcowi."
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---

@@ -2,10 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:08.816746-07:00
-description: 'Hoe: .'
-lastmod: '2024-03-13T22:44:50.361127-06:00'
+description: "Hoe: In de vroege dagen van programmeren was tekstbewerking een handmatige\
+  \ sleur. Toen kwamen regex (reguliere expressies), gebouwd in de jaren 1950,\u2026"
+lastmod: '2024-04-05T21:53:50.386678-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: In de vroege dagen van programmeren was tekstbewerking een handmatige sleur.
 title: Tekst zoeken en vervangen
 weight: 10
 ---

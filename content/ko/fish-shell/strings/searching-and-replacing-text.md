@@ -5,11 +5,11 @@ description: "\uC2E4\uD589 \uBC29\uBC95: (\"How to:\") Fish Shell\uC5D0\uC11C \u
   \uB2E8\uD558\uAC8C \uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4. \uC544\uB798 \uC608\uC2DC\
   \uB97C \uB530\uB77C \uD574\uBCF4\uC138\uC694."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.831662-06:00'
+lastmod: '2024-04-05T21:53:57.424115-06:00'
 model: gpt-4-1106-preview
-summary: "(\"How to:\")\n\nFish Shell\uC5D0\uC11C \uAC80\uC0C9 \uBC0F \uAD50\uCCB4\
-  \uB294 `string replace` \uBA85\uB839\uC5B4\uB85C \uAC04\uB2E8\uD558\uAC8C \uD560\
-  \ \uC218 \uC788\uC2B5\uB2C8\uB2E4."
+summary: "(\"How to:\") Fish Shell\uC5D0\uC11C \uAC80\uC0C9 \uBC0F \uAD50\uCCB4\uB294\
+  \ `string replace` \uBA85\uB839\uC5B4\uB85C \uAC04\uB2E8\uD558\uAC8C \uD560 \uC218\
+  \ \uC788\uC2B5\uB2C8\uB2E4."
 title: "\uD14D\uC2A4\uD2B8 \uAC80\uC0C9 \uBC0F \uAD50\uCCB4"
 weight: 10
 ---

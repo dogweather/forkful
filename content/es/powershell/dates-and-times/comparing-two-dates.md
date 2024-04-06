@@ -3,9 +3,9 @@ date: 2024-01-20 17:33:31.228950-07:00
 description: "C\xF3mo: Aqu\xED est\xE1 el c\xF3mo. Digamos que tienes dos fechas:\
   \ `$fecha1` y `$fecha2`. Quieres compararlas. Usa `-lt` para \"menor que\", `-gt`\
   \ para \"mayor que\" y\u2026"
-lastmod: '2024-03-13T22:44:59.304722-06:00'
+lastmod: '2024-04-05T21:54:00.649824-06:00'
 model: gpt-4-1106-preview
-summary: "Aqu\xED est\xE1 el c\xF3mo."
+summary: ''
 title: "Comparaci\xF3n de dos fechas"
 weight: 27
 ---

@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:56:15.469529-07:00
-description: "Jak to zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:35.293245-06:00'
+description: "Jak to zrobi\u0107: Uruchomienie programu z argumentami."
+lastmod: '2024-04-05T21:53:36.731510-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Uruchomienie programu z argumentami.
 title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---

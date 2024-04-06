@@ -2,10 +2,10 @@
 date: 2024-01-20 17:31:43.646671-07:00
 description: "How to: (Comment faire :) Kotlin rend ce calcul super simple avec `LocalDateTime`\
   \ et `Duration` de la biblioth\xE8que `java.time`. Voici comment ."
-lastmod: '2024-03-13T22:44:57.754700-06:00'
+lastmod: '2024-04-05T21:53:59.242819-06:00'
 model: gpt-4-1106-preview
-summary: "Kotlin rend ce calcul super simple avec `LocalDateTime` et `Duration` de\
-  \ la biblioth\xE8que `java.time`."
+summary: "(Comment faire :) Kotlin rend ce calcul super simple avec `LocalDateTime`\
+  \ et `Duration` de la biblioth\xE8que `java.time`."
 title: "Calcul d'une date future ou pass\xE9e"
 weight: 26
 ---

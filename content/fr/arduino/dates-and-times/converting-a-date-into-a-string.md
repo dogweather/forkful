@@ -2,10 +2,10 @@
 date: 2024-01-20 17:35:51.305895-07:00
 description: "How to: Utiliser `sprintf` pour formater une date en cha\xEEne de caract\xE8\
   res (la date ici est le 5 avril 2023) ."
-lastmod: '2024-03-13T22:44:58.126029-06:00'
+lastmod: '2024-04-05T21:53:59.556460-06:00'
 model: gpt-4-1106-preview
 summary: "Utiliser `sprintf` pour formater une date en cha\xEEne de caract\xE8res\
-  \ (la date ici est le 5 avril 2023)."
+  \ (la date ici est le 5 avril 2023) ."
 title: "Conversion d'une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---

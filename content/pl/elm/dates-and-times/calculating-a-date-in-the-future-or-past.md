@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:30:44.293435-07:00
-description: "Jak to zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:35.335319-06:00'
+description: "Jak to zrobi\u0107: Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142\
+  o\u015Bci nie jest now\u0105 potrzeb\u0105 \u2013 znajduje si\u0119 w historii technologii\
+  \ od momentu, gdy systemy zacz\u0119\u0142y\u2026"
+lastmod: '2024-04-05T21:53:36.773264-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci nie jest\
+  \ now\u0105 potrzeb\u0105 \u2013 znajduje si\u0119 w historii technologii od momentu,\
+  \ gdy systemy zacz\u0119\u0142y wykorzystywa\u0107 cykle czasowe."
 title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---

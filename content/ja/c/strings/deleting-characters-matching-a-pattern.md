@@ -2,8 +2,8 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:55:33.677821-07:00
-description: "\u65B9\u6CD5:\u2026"
-lastmod: '2024-03-13T22:44:42.774389-06:00'
+description: null
+lastmod: '2024-04-05T21:53:43.554041-06:00'
 model: gpt-4-0125-preview
 summary: "C\u8A00\u8A9E\u306B\u306F\u3001\u30D1\u30BF\u30FC\u30F3\u306B\u57FA\u3065\
   \u3044\u3066\u6587\u5B57\u5217\u304B\u3089\u6587\u5B57\u3092\u76F4\u63A5\u524A\u9664\

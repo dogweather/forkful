@@ -1,10 +1,16 @@
 ---
 date: 2024-01-20 17:40:01.433272-07:00
-description: "How to (\u5982\u4F55\u64CD\u4F5C) ."
+description: "How to (\u5982\u4F55\u64CD\u4F5C) Fish Shell \u7684\u4E34\u65F6\u6587\
+  \u4EF6\u5B9E\u8DF5\u6CBF\u88AD\u4E86Unix\u4F20\u7EDF\uFF0C`mktemp` \u547D\u4EE4\u6765\
+  \u81EA\u65E9\u671F\u7684Unix\u7CFB\u7EDF\uFF0C\u5E76\u88AB\u5927\u591A\u6570\u73B0\
+  \u4EE3Unix-like\u7CFB\u7EDF\u91C7\u7528\u3002\u4F5C\u4E3A\u5176\u4ED6\u9009\u9879\
+  \uFF0C`tempfile` \u6216\u76F4\u63A5\u5728 `/tmp` \u76EE\u5F55\u4E0B\u521B\u5EFA\u72EC\
+  \u4E00\u65E0\u4E8C\u7684\u6587\u4EF6\u540D\u4E5F\u662F\u53EF\u80FD\u7684\u3002\u5177\
+  \u4F53\u5230\u5B9E\u73B0\uFF0C`mktemp`\u2026"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:48.287363-06:00'
+lastmod: '2024-04-05T21:53:48.563114-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "\u521B\u5EFA\u4E34\u65F6\u6587\u4EF6"
 weight: 21
 ---

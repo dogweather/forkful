@@ -2,10 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:20.368435-07:00
-description: 'Hoe te: .'
-lastmod: '2024-03-13T22:44:50.367386-06:00'
+description: "Hoe te: Historisch gezien is de `len()` functie Python's standaard manier\
+  \ om de lengte van een string te vinden. Het is elegant en snel. Onderliggend zijn\u2026"
+lastmod: '2024-04-05T21:53:50.392843-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: Historisch gezien is de `len()` functie Python's standaard manier om de lengte
+  van een string te vinden.
 title: De lengte van een string vinden
 weight: 7
 ---

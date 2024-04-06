@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 04:26:15.269322-07:00
-description: 'Come fare: .'
-lastmod: '2024-03-13T22:44:43.241927-06:00'
+description: "Come fare: TOML, che sta per Tom's Obvious, Minimal Language, \xE8 stato\
+  \ creato da Tom Preston-Werner nel 2013. Il suo obiettivo \xE8 essere pi\xF9 leggibile\
+  \ di\u2026"
+lastmod: '2024-04-05T21:53:44.012191-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "TOML, che sta per Tom's Obvious, Minimal Language, \xE8 stato creato da\
+  \ Tom Preston-Werner nel 2013."
 title: Lavorare con TOML
 weight: 39
 ---

@@ -4,11 +4,11 @@ description: "How to: (\u5982\u4F55\u64CD\u4F5C\uFF1A) \u5728Fish Shell\u91CC\u6
   \u5370\u8C03\u8BD5\u4FE1\u606F\uFF0C\u4F60\u53EF\u4EE5\u4F7F\u7528 `echo` \u6216\
   \ `printf` \u547D\u4EE4\u3002\u770B\u4F8B\u5B50\uFF1A."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:48.268426-06:00'
+lastmod: '2024-04-05T21:53:48.543766-06:00'
 model: gpt-4-1106-preview
-summary: "\u5728Fish Shell\u91CC\u6253\u5370\u8C03\u8BD5\u4FE1\u606F\uFF0C\u4F60\u53EF\
-  \u4EE5\u4F7F\u7528 `echo` \u6216 `printf` \u547D\u4EE4\u3002\u770B\u4F8B\u5B50\uFF1A\
-  ."
+summary: "(\u5982\u4F55\u64CD\u4F5C\uFF1A) \u5728Fish Shell\u91CC\u6253\u5370\u8C03\
+  \u8BD5\u4FE1\u606F\uFF0C\u4F60\u53EF\u4EE5\u4F7F\u7528 `echo` \u6216 `printf` \u547D\
+  \u4EE4\u3002\u770B\u4F8B\u5B50\uFF1A."
 title: "\u6253\u5370\u8C03\u8BD5\u8F93\u51FA"
 weight: 33
 ---

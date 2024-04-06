@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:32:45.133861-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.891669-06:00'
+description: "Como Fazer: Sa\xEDda esperada."
+lastmod: '2024-04-05T21:53:47.242796-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: Comparando duas datas
 weight: 27
 ---

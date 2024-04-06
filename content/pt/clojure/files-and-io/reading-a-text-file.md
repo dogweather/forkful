@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:54:09.638781-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.213835-06:00'
+description: "Como Fazer: Ler arquivos de texto \xE9 uma opera\xE7\xE3o que data do\
+  \ in\xEDcio dos computadores: era uma forma b\xE1sica de armazenar e recuperar informa\xE7\
+  \xF5es. Em\u2026"
+lastmod: '2024-04-05T21:53:46.537842-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Ler arquivos de texto \xE9 uma opera\xE7\xE3o que data do in\xEDcio dos\
+  \ computadores."
 title: Lendo um arquivo de texto
 weight: 22
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:32:35.110405-07:00
-description: "Hur man g\xF6r: ."
-lastmod: '2024-03-13T22:44:37.537524-06:00'
+description: "Hur man g\xF6r: F\xF6r l\xE4nge sedan, i Java-v\xE4rlden, skapades `java.util.Date`\
+  \ f\xF6r att hantera datum och tid. Med tiden visade det sig ha designbrister, som\u2026"
+lastmod: '2024-04-05T21:53:38.865814-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "F\xF6r l\xE4nge sedan, i Java-v\xE4rlden, skapades `java.util.Date` f\xF6\
+  r att hantera datum och tid."
 title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---

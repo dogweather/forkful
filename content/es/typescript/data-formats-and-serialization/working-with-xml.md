@@ -1,9 +1,11 @@
 ---
 date: 2024-01-26 04:36:06.547868-07:00
-description: "C\xF3mo hacerlo: ."
-lastmod: '2024-03-13T22:44:58.828563-06:00'
+description: "C\xF3mo hacerlo: XML, o Lenguaje de Marcado Extensible, existe desde\
+  \ fines de los '90. Su naturaleza autodescriptiva y formato legible por humanos\
+  \ lo\u2026"
+lastmod: '2024-04-05T21:54:00.175213-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: XML, o Lenguaje de Marcado Extensible, existe desde fines de los '90.
 title: Trabajando con XML
 weight: 40
 ---

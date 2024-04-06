@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:41:25.213230-07:00
-description: "Slik gj\xF8r du: ."
-lastmod: '2024-03-13T22:44:41.043238-06:00'
+description: "Slik gj\xF8r du: Eksempel utdata: `Hll Wrld! `."
+lastmod: '2024-04-05T21:53:42.004828-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---

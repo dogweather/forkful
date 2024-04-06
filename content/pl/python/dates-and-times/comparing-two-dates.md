@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:33:31.971848-07:00
-description: "Jak to zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:34.962733-06:00'
+description: "Jak to zrobi\u0107: Por\xF3wnywanie dat to stara praktyka, zaawansowana\
+  \ dzi\u0119ki komputerom. W Pythonie, standardowa biblioteka `datetime` umo\u017C\
+  liwia operacje na\u2026"
+lastmod: '2024-04-05T21:53:36.410252-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Por\xF3wnywanie dat to stara praktyka, zaawansowana dzi\u0119ki komputerom."
 title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---

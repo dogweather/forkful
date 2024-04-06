@@ -3,10 +3,11 @@ date: 2024-01-19
 description: "How to: (Jak to zrobi\u0107:) Elm nie ma wbudowanego wsparcia dla YAML,\
   \ wi\u0119c trzeba u\u017Cy\u0107 zewn\u0119trznej biblioteki lub konwertowa\u0107\
   \ YAML do JSON. Oto przyk\u0142ad\u2026"
-lastmod: '2024-03-13T22:44:35.342159-06:00'
+lastmod: '2024-04-05T21:53:36.781103-06:00'
 model: unknown
-summary: "Elm nie ma wbudowanego wsparcia dla YAML, wi\u0119c trzeba u\u017Cy\u0107\
-  \ zewn\u0119trznej biblioteki lub konwertowa\u0107 YAML do JSON."
+summary: "(Jak to zrobi\u0107:) Elm nie ma wbudowanego wsparcia dla YAML, wi\u0119\
+  c trzeba u\u017Cy\u0107 zewn\u0119trznej biblioteki lub konwertowa\u0107 YAML do\
+  \ JSON."
 title: Praca z yaml
 weight: 41
 ---

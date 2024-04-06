@@ -3,10 +3,10 @@ date: 2024-01-20 18:02:56.304409-07:00
 description: "How to: (Kuinka tehd\xE4:) Swiftiss\xE4 perusautentikaatio tapahtuu\
   \ lis\xE4\xE4m\xE4ll\xE4 base64-koodattu \"Authorization\" header HTTP-pyynt\xF6\
   \xF6n. T\xE4ss\xE4 yksinkertainen\u2026"
-lastmod: '2024-03-13T22:44:56.906790-06:00'
+lastmod: '2024-04-05T21:53:58.485753-06:00'
 model: gpt-4-1106-preview
-summary: "Swiftiss\xE4 perusautentikaatio tapahtuu lis\xE4\xE4m\xE4ll\xE4 base64-koodattu\
-  \ \"Authorization\" header HTTP-pyynt\xF6\xF6n."
+summary: "(Kuinka tehd\xE4:) Swiftiss\xE4 perusautentikaatio tapahtuu lis\xE4\xE4\
+  m\xE4ll\xE4 base64-koodattu \"Authorization\" header HTTP-pyynt\xF6\xF6n."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---

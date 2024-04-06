@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:38:33.253146-07:00
-description: 'Hvordan: .'
-lastmod: '2024-03-13T22:44:40.828002-06:00'
+description: "Hvordan: Konvertering til sm\xE5 bokstaver har v\xE6rt en standard tekstbehandlingsoperasjon\
+  \ lenge siden f\xF8r dator\xE6raen, brukt i leksikografi og indeksering. I\u2026"
+lastmod: '2024-04-05T21:53:41.800477-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Konvertering til sm\xE5 bokstaver har v\xE6rt en standard tekstbehandlingsoperasjon\
+  \ lenge siden f\xF8r dator\xE6raen, brukt i leksikografi og indeksering."
 title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---

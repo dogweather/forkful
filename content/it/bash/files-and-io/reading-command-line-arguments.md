@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:55:24.572257-07:00
-description: 'Come fare: .'
-lastmod: '2024-03-13T22:44:43.614892-06:00'
+description: 'Come fare: Output esemplificativo quando si lancia `./script.sh uno
+  due tre`.'
+lastmod: '2024-04-05T21:53:44.377786-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Output esemplificativo quando si lancia `./script.sh uno due tre`.
 title: Lettura degli argomenti della riga di comando
 weight: 23
 ---

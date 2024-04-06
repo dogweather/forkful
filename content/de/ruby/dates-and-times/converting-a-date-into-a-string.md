@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:37:29.365665-07:00
-description: 'Anleitung: .'
-lastmod: '2024-03-13T22:44:54.411732-06:00'
+description: "Anleitung: Fr\xFCher mussten Entwickler oft manuell Datumswerte zusammensetzen.\
+  \ Mit der Einf\xFChrung der Standardbibliothek `date`, wurde das Prozedere in Ruby\u2026"
+lastmod: '2024-04-05T21:53:56.306052-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Fr\xFCher mussten Entwickler oft manuell Datumswerte zusammensetzen."
 title: Datum in einen String umwandeln
 weight: 28
 ---

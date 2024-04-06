@@ -2,9 +2,9 @@
 date: 2024-01-20 17:44:41.242455-07:00
 description: "How to: \"Jak to zrobi\u0107:\" Uruchom poni\u017Cszy skrypt, aby pobra\u0107\
   \ zawarto\u015B\u0107 strony."
-lastmod: '2024-03-13T22:44:35.628653-06:00'
+lastmod: '2024-04-05T21:53:37.053728-06:00'
 model: gpt-4-1106-preview
-summary: "\"Jak to zrobi\u0107:\"\nUruchom poni\u017Cszy skrypt, aby pobra\u0107 zawarto\u015B\
+summary: "\"Jak to zrobi\u0107:\" Uruchom poni\u017Cszy skrypt, aby pobra\u0107 zawarto\u015B\
   \u0107 strony."
 title: Pobieranie strony internetowej
 weight: 42

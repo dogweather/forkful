@@ -1,9 +1,10 @@
 ---
 date: 2024-01-26 00:56:36.079734-07:00
-description: 'Come fare: .'
-lastmod: '2024-03-13T22:44:43.650092-06:00'
+description: "Come fare: PowerShell ha fatto molta strada dalla sua nascita come Monad.\
+  \ La gestione degli errori \xE8 diventata pi\xF9 robusta nel tempo, offrendo\u2026"
+lastmod: '2024-04-05T21:53:44.410874-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: PowerShell ha fatto molta strada dalla sua nascita come Monad.
 title: Gestione degli errori
 weight: 16
 ---

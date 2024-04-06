@@ -3,11 +3,11 @@ date: 2024-01-20 17:41:49.390394-07:00
 description: "How to: (Comment faire :) Utilisons la fonction `String.replace/3` pour\
   \ supprimer les caract\xE8res qui correspondent \xE0 un mod\xE8le d\xE9fini par\
   \ une expression\u2026"
-lastmod: '2024-03-13T22:44:57.310263-06:00'
+lastmod: '2024-04-05T21:53:58.890840-06:00'
 model: gpt-4-1106-preview
-summary: "Utilisons la fonction `String.replace/3` pour supprimer les caract\xE8res\
-  \ qui correspondent \xE0 un mod\xE8le d\xE9fini par une expression r\xE9guli\xE8\
-  re (regex)."
+summary: "(Comment faire :) Utilisons la fonction `String.replace/3` pour supprimer\
+  \ les caract\xE8res qui correspondent \xE0 un mod\xE8le d\xE9fini par une expression\
+  \ r\xE9guli\xE8re (regex)."
 title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---

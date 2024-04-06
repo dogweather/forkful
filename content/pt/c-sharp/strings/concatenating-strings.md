@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:34:38.280980-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.576184-06:00'
+description: "Como Fazer: Na era pr\xE9-dotNET Framework 2.0, a concatena\xE7\xE3\
+  o era frequentemente feita com o operador `+`, mas isso podia ser ineficiente devido\
+  \ \xE0\u2026"
+lastmod: '2024-04-05T21:53:46.919488-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Na era pr\xE9-dotNET Framework 2.0, a concatena\xE7\xE3o era frequentemente\
+  \ feita com o operador `+`, mas isso podia ser ineficiente devido \xE0 imutabilidade\
+  \ das strings em C#."
 title: Concatenando strings
 weight: 3
 ---

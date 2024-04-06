@@ -2,10 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:34.623876-07:00
-description: 'Hoe te: .'
-lastmod: '2024-03-13T22:44:50.783290-06:00'
+description: "Hoe te: In de bovenstaande code is `args` een array die de commandoregelargumenten\
+  \ bevat. De `main`-functie controleert of we er een hebben ontvangen en\u2026"
+lastmod: '2024-04-05T21:53:50.807667-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: In de bovenstaande code is `args` een array die de commandoregelargumenten
+  bevat.
 title: Commandoregelargumenten lezen
 weight: 23
 ---

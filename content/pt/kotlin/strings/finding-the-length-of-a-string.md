@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:48:00.065528-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.532491-06:00'
+description: "Como Fazer: Uma opera\xE7\xE3o direta: use `length` para pegar o tamanho.\
+  \ Quer lidar com strings nulas com seguran\xE7a? Assim."
+lastmod: '2024-04-05T21:53:46.874682-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Uma opera\xE7\xE3o direta."
 title: Descobrindo o comprimento de uma string
 weight: 7
 ---

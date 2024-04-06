@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:58:43.656117-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:57.466543-06:00'
+description: "Comment faire : La recherche et le remplacement de texte remontent aux\
+  \ premiers \xE9diteurs de texte. En Rust, `str::replace` est simple \xE0 utiliser\
+  \ pour des\u2026"
+lastmod: '2024-04-05T21:53:59.029873-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "La recherche et le remplacement de texte remontent aux premiers \xE9diteurs\
+  \ de texte."
 title: Recherche et remplacement de texte
 weight: 10
 ---

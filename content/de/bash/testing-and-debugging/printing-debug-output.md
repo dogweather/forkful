@@ -2,9 +2,9 @@
 date: 2024-01-20 17:52:05.021967-07:00
 description: "How to (Wie geht das?) In Bash, benutze `echo` oder `printf` f\xFCr\
   \ Debug-Output. Hier ein paar Beispiele."
-lastmod: '2024-03-13T22:44:54.062185-06:00'
+lastmod: '2024-04-05T21:53:55.944429-06:00'
 model: gpt-4-1106-preview
-summary: "In Bash, benutze `echo` oder `printf` f\xFCr Debug-Output."
+summary: Hier ein paar Beispiele.
 title: Debug-Ausgaben drucken
 weight: 33
 ---

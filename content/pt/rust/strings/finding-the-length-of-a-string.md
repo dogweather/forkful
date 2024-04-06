@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:48:25.197261-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.358955-06:00'
+description: "Como Fazer: Se sua string usar somente ASCII, voc\xEA pode usar um m\xE9\
+  todo mais direto."
+lastmod: '2024-04-05T21:53:46.691498-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Se sua string usar somente ASCII, voc\xEA pode usar um m\xE9todo mais direto."
 title: Descobrindo o comprimento de uma string
 weight: 7
 ---

@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:35:33.731743-07:00
-description: 'Como Faz: .'
-lastmod: '2024-03-13T22:44:46.659420-06:00'
+description: "Como Faz: Voc\xEA pode tamb\xE9m concatenar e atribuir ao mesmo tempo."
+lastmod: '2024-04-05T21:53:47.004365-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Voc\xEA pode tamb\xE9m concatenar e atribuir ao mesmo tempo."
 title: Concatenando strings
 weight: 3
 ---

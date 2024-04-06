@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:43:02.203599-07:00
-description: "Slik gj\xF8r du det: ."
-lastmod: '2024-03-13T22:44:40.558242-06:00'
+description: "Slik gj\xF8r du det: Resultat."
+lastmod: '2024-04-05T21:53:41.536857-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---

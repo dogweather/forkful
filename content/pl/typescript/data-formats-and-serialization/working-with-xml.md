@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 04:36:46.287204-07:00
-description: "Jak to zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:35.165255-06:00'
+description: "Jak to zrobi\u0107: XML, czyli Rozszerzalny J\u0119zyk Znacznik\xF3\
+  w, istnieje od ko\u0144ca lat 90. Jego samoopisowa natura i format czytelny dla\
+  \ cz\u0142owieka szybko zyska\u0142y\u2026"
+lastmod: '2024-04-05T21:53:36.604569-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "XML, czyli Rozszerzalny J\u0119zyk Znacznik\xF3w, istnieje od ko\u0144ca\
+  \ lat 90."
 title: Praca z XML
 weight: 40
 ---

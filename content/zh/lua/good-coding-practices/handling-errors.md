@@ -3,11 +3,9 @@ date: 2024-01-26 00:56:01.161101-07:00
 description: "\u5982\u4F55\u64CD\u4F5C\uFF1A Lua \u4E3B\u8981\u4F7F\u7528\u4E24\u4E2A\
   \u51FD\u6570\u8FDB\u884C\u9519\u8BEF\u5904\u7406\uFF1A`pcall` \u548C `xpcall`\u3002\
   \u4E0B\u9762\u662F\u5982\u4F55\u4F7F\u7528\u5B83\u4EEC\uFF1A."
-lastmod: '2024-03-13T22:44:47.919828-06:00'
+lastmod: '2024-04-05T21:53:48.224122-06:00'
 model: gpt-4-1106-preview
-summary: "Lua \u4E3B\u8981\u4F7F\u7528\u4E24\u4E2A\u51FD\u6570\u8FDB\u884C\u9519\u8BEF\
-  \u5904\u7406\uFF1A`pcall` \u548C `xpcall`\u3002\u4E0B\u9762\u662F\u5982\u4F55\u4F7F\
-  \u7528\u5B83\u4EEC\uFF1A."
+summary: ''
 title: "\u5904\u7406\u9519\u8BEF"
 weight: 16
 ---

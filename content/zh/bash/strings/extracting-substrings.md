@@ -4,11 +4,11 @@ description: "How to: \u5728 Bash \u4E2D\uFF0C\u53EF\u4EE5\u7528 `${string:posit
   \ \u8FD9\u79CD\u65B9\u5F0F\u622A\u53D6\u5B57\u7B26\u4E32\u3002\u4E0B\u9762\u662F\
   \u4E2A\u7B80\u5355\u793A\u4F8B\u3002"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:47.946179-06:00'
+lastmod: '2024-04-05T21:53:48.250255-06:00'
 model: gpt-4-1106-preview
 summary: "\u5728 Bash \u4E2D\uFF0C\u53EF\u4EE5\u7528 `${string:position:length}` \u8FD9\
   \u79CD\u65B9\u5F0F\u622A\u53D6\u5B57\u7B26\u4E32\u3002\u4E0B\u9762\u662F\u4E2A\u7B80\
-  \u5355\u793A\u4F8B."
+  \u5355\u793A\u4F8B\u3002"
 title: "\u63D0\u53D6\u5B50\u5B57\u7B26\u4E32"
 weight: 6
 ---

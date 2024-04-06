@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:36:58.611362-07:00
-description: "C\xF3mo: ."
-lastmod: '2024-03-13T22:44:59.172063-06:00'
+description: "C\xF3mo: La funci\xF3n `date()` de PHP ha sido la base para la conversi\xF3\
+  n de fechas desde los inicios, pero con PHP 5.2.0, se introdujo la clase `DateTime`,\
+  \ que\u2026"
+lastmod: '2024-04-05T21:54:00.517441-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "La funci\xF3n `date()` de PHP ha sido la base para la conversi\xF3n de fechas\
+  \ desde los inicios, pero con PHP 5.2.0, se introdujo la clase `DateTime`, que ofrece\
+  \ una manera orientada a objetos para manejar fechas y horas."
 title: Convirtiendo una fecha en una cadena de texto
 weight: 28
 ---

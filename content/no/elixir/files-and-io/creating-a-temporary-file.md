@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:39:49.687813-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:40.462685-06:00'
+description: 'How to: Forventet resultat.'
+lastmod: '2024-04-05T21:53:41.441635-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: Opprette en midlertidig fil
 weight: 21
 ---

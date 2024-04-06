@@ -2,10 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:57.099731-07:00
-description: 'Hoe te: .'
-lastmod: '2024-03-13T22:44:50.404520-06:00'
+description: "Hoe te: Clojure is een beetje een asceet: geen ingebouwde stringinterpolatie.\
+  \ Echter, `str` en `format` zijn de go-to voor dynamische strings.\u2026"
+lastmod: '2024-04-05T21:53:50.430494-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: Clojure is een beetje een asceet.
 title: Een string interpoleren
 weight: 8
 ---

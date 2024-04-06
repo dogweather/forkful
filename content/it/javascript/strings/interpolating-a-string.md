@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:51:00.255099-07:00
-description: 'Come si fa: .'
-lastmod: '2024-03-13T22:44:43.798260-06:00'
+description: "Come si fa: Nel passato, JavaScript richiedeva l'uso dell'operatore\
+  \ `+` per unire le stringhe, il che poteva diventare ingombrante e confusionario.\
+  \ Con\u2026"
+lastmod: '2024-04-05T21:53:44.548842-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Nel passato, JavaScript richiedeva l'uso dell'operatore `+` per unire le
+  stringhe, il che poteva diventare ingombrante e confusionario.
 title: Interpolazione di una stringa
 weight: 8
 ---

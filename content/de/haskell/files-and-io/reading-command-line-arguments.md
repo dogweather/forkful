@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:56:02.681646-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:53.946356-06:00'
+description: "How to: Ausf\xFChren im Terminal."
+lastmod: '2024-04-05T21:53:55.830759-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Ausf\xFChren im Terminal."
 title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---

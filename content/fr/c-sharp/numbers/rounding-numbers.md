@@ -2,9 +2,9 @@
 date: 2024-01-26 03:43:36.676943-07:00
 description: 'Comment faire : Voici le billet aller-retour pour arrondir les nombres
   en C# .'
-lastmod: '2024-03-13T22:44:57.781527-06:00'
+lastmod: '2024-04-05T21:53:59.267865-06:00'
 model: gpt-4-0125-preview
-summary: Voici le billet aller-retour pour arrondir les nombres en C#.
+summary: Voici le billet aller-retour pour arrondir les nombres en C# .
 title: Arrondir les nombres
 weight: 13
 ---

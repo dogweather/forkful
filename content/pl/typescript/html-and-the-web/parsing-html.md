@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 15:34:39.122013-07:00
 description: "How to: (Jak to zrobi\u0107:) ."
-lastmod: '2024-03-13T22:44:35.136642-06:00'
+lastmod: '2024-04-05T21:53:36.577816-06:00'
 model: unknown
-summary: .
+summary: ''
 title: Przetwarzanie HTML
 weight: 43
 ---

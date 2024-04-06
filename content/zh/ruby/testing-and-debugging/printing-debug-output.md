@@ -3,10 +3,10 @@ date: 2024-01-20 17:53:38.880197-07:00
 description: "How to: (\u600E\u4E48\u505A\uFF1F) \u5728Ruby\u4E2D\uFF0C\u4F60\u53EF\
   \u4EE5\u4F7F\u7528 `puts` \u6216 `p` \u6765\u6253\u5370\u8C03\u8BD5\u4FE1\u606F\u3002"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:48.376037-06:00'
+lastmod: '2024-04-05T21:53:48.651396-06:00'
 model: gpt-4-1106-preview
-summary: "\u5728Ruby\u4E2D\uFF0C\u4F60\u53EF\u4EE5\u4F7F\u7528 `puts` \u6216 `p` \u6765\
-  \u6253\u5370\u8C03\u8BD5\u4FE1\u606F."
+summary: "(\u600E\u4E48\u505A\uFF1F) \u5728Ruby\u4E2D\uFF0C\u4F60\u53EF\u4EE5\u4F7F\
+  \u7528 `puts` \u6216 `p` \u6765\u6253\u5370\u8C03\u8BD5\u4FE1\u606F\u3002"
 title: "\u6253\u5370\u8C03\u8BD5\u8F93\u51FA"
 weight: 33
 ---

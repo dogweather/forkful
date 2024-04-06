@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:02:15.519500-07:00
-description: 'Come Fare: .'
-lastmod: '2024-03-13T22:44:43.308559-06:00'
+description: "Come Fare: L'autenticazione di base HTTP risale agli albori del web\
+  \ e si trova nella specifica HTTP 1.0 del 1996. Nonostante la sua semplicit\xE0\
+  , non \xE8 la\u2026"
+lastmod: '2024-04-05T21:53:44.079972-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: L'autenticazione di base HTTP risale agli albori del web e si trova nella
+  specifica HTTP 1.0 del 1996.
 title: Inviare una richiesta http con autenticazione di base
 weight: 45
 ---

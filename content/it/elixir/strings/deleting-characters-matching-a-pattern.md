@@ -2,10 +2,9 @@
 date: 2024-01-20 17:42:25.353191-07:00
 description: "How to (Come fare) In Elixir, possiamo utilizzare la funzione `String.replace/4`\
   \ per rimuovere i caratteri che corrispondono a un dato pattern utilizzando\u2026"
-lastmod: '2024-03-13T22:44:43.068727-06:00'
+lastmod: '2024-04-05T21:53:43.850297-06:00'
 model: gpt-4-1106-preview
-summary: In Elixir, possiamo utilizzare la funzione `String.replace/4` per rimuovere
-  i caratteri che corrispondono a un dato pattern utilizzando le espressioni regolari.
+summary: ''
 title: Eliminazione di caratteri che corrispondono a un pattern
 weight: 5
 ---

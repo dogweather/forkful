@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:38:17.134228-07:00
-description: 'Hvordan: .'
-lastmod: '2024-03-13T22:44:41.212374-06:00'
+description: "Hvordan: I gamle dager, f\xF8r Unicode og komplekse tegnsett, var strengkonvertering\
+  \ rettfram. N\xE5 m\xE5 moderne verkt\xF8y h\xE5ndtere et bredt spekter av tegn\
+  \ og\u2026"
+lastmod: '2024-04-05T21:53:42.171585-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "I gamle dager, f\xF8r Unicode og komplekse tegnsett, var strengkonvertering\
+  \ rettfram."
 title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---

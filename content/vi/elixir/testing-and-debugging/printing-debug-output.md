@@ -2,10 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:29.522030-07:00
-description: "C\xE1ch th\u1EF1c hi\u1EC7n: ."
-lastmod: '2024-03-13T22:44:36.211822-06:00'
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: \u0110i\u1EC1u n\xE0y th\u1EC3 hi\u1EC7\
+  n c\xE1ch \u0111\u01A1n gi\u1EA3n nh\u1EA5t \u0111\u1EC3 in m\u1ED9t c\xE1i g\xEC\
+  \ \u0111\xF3 ra b\u1EA3ng \u0111i\u1EC1u khi\u1EC3n s\u1EED d\u1EE5ng `IO.inspect/2`.\
+  \ T\xF9y ch\u1ECDn nh\xE3n th\xEAm m\u1ED9t ti\u1EC1n t\u1ED1 t\xF9y\u2026"
+lastmod: '2024-04-05T21:53:37.631295-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "\u0110i\u1EC1u n\xE0y th\u1EC3 hi\u1EC7n c\xE1ch \u0111\u01A1n gi\u1EA3\
+  n nh\u1EA5t \u0111\u1EC3 in m\u1ED9t c\xE1i g\xEC \u0111\xF3 ra b\u1EA3ng \u0111\
+  i\u1EC1u khi\u1EC3n s\u1EED d\u1EE5ng `IO.inspect/2`."
 title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 weight: 33
 ---

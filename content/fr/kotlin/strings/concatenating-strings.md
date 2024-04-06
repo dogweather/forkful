@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:35:06.076480-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:57.728904-06:00'
+description: "How to: Au d\xE9but, les d\xE9veloppeurs concat\xE9naient les cha\xEE\
+  nes avec l'op\xE9rateur `+`. C'\xE9tait simple mais pas tr\xE8s efficace pour de\
+  \ nombreux ajouts. Kotlin a\u2026"
+lastmod: '2024-04-05T21:53:59.220423-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Au d\xE9but, les d\xE9veloppeurs concat\xE9naient les cha\xEEnes avec l'op\xE9\
+  rateur `+`."
 title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 weight: 3
 ---

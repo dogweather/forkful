@@ -1,9 +1,9 @@
 ---
 date: 2024-01-26 03:40:29.117268-07:00
 description: "Comment faire : Voici comment \xE9liminer ces guillemets dans Lua ."
-lastmod: '2024-03-13T22:44:57.912516-06:00'
+lastmod: '2024-04-05T21:53:59.396697-06:00'
 model: gpt-4-0125-preview
-summary: "Voici comment \xE9liminer ces guillemets dans Lua."
+summary: "Voici comment \xE9liminer ces guillemets dans Lua ."
 title: "Retirer les guillemets d'une cha\xEEne"
 weight: 9
 ---

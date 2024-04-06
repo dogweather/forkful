@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:39:24.304740-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:59.884286-06:00'
+description: "How to: Before the `.to_lowercase()` method, you might have seen Rustaceans\
+  \ using `.to_ascii_lowercase()` for the same task, which only affected ASCII\u2026"
+lastmod: '2024-04-05T21:53:35.575190-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Before the `.to_lowercase()` method, you might have seen Rustaceans using
+  `.to_ascii_lowercase()` for the same task, which only affected ASCII characters.
 title: Converting a string to lower case
 weight: 4
 ---

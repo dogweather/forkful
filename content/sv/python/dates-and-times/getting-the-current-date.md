@@ -5,9 +5,9 @@ date: 2024-02-03 19:10:38.766158-07:00
 description: "Hur: **Anv\xE4nda standardbiblioteket `datetime`:** `datetime`-modulen\
   \ i Pythons standardbibliotek tillhandah\xE5ller klasser f\xF6r att manipulera datum\
   \ och\u2026"
-lastmod: '2024-03-13T22:44:37.493441-06:00'
+lastmod: '2024-04-05T21:53:38.820996-06:00'
 model: gpt-4-0125-preview
-summary: "**Anv\xE4nda standardbiblioteket `datetime`:**\n\n`datetime`-modulen i Pythons\
+summary: "**Anv\xE4nda standardbiblioteket `datetime`:** `datetime`-modulen i Pythons\
   \ standardbibliotek tillhandah\xE5ller klasser f\xF6r att manipulera datum och tider."
 title: "F\xE5 det aktuella datumet"
 weight: 29

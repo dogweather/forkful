@@ -2,9 +2,10 @@
 date: 2024-01-20 17:52:19.719039-07:00
 description: "How to: (Comment faire :) Voici un exemple de sortie de d\xE9bogage\
   \ simple avec `std::cout`."
-lastmod: '2024-03-13T22:44:58.164705-06:00'
+lastmod: '2024-04-05T21:53:59.593286-06:00'
 model: gpt-4-1106-preview
-summary: "Voici un exemple de sortie de d\xE9bogage simple avec `std::cout`."
+summary: "(Comment faire :) Voici un exemple de sortie de d\xE9bogage simple avec\
+  \ `std::cout`."
 title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---

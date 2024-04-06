@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:31:28.575657-07:00
-description: "Hvordan gj\xF8re det: ."
-lastmod: '2024-03-13T22:44:40.679664-06:00'
+description: "Hvordan gj\xF8re det: Eksempelutdata."
+lastmod: '2024-04-05T21:53:41.660007-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---

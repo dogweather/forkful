@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:46:00.519134-07:00
-description: "C\xF3mo hacerlo: ."
-lastmod: '2024-03-13T22:44:59.024872-06:00'
+description: "C\xF3mo hacerlo: Extraer subcadenas es antiguo como el manejo de cadenas\
+  \ de texto en programaci\xF3n. Kotlin maneja las cadenas de manera inmutable, por\
+  \ lo que\u2026"
+lastmod: '2024-04-05T21:54:00.368139-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Extraer subcadenas es antiguo como el manejo de cadenas de texto en programaci\xF3\
+  n."
 title: "Extracci\xF3n de subcadenas"
 weight: 6
 ---

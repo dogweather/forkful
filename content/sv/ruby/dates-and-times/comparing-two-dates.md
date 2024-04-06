@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:33:47.457858-07:00
-description: "Hur g\xF6r man? ."
-lastmod: '2024-03-13T22:44:38.443803-06:00'
+description: "Hur g\xF6r man? I Ruby hanteras datum med `Date`-klassen, som har funnits\
+  \ sedan den f\xF6rsta versionen. Sv\xE5righeterna med datumj\xE4mf\xF6relser inkluderar\
+  \ tidszoner\u2026"
+lastmod: '2024-04-05T21:53:39.782176-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "I Ruby hanteras datum med `Date`-klassen, som har funnits sedan den f\xF6\
+  rsta versionen."
 title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---

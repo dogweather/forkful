@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:54:14.153382-07:00
-description: 'Como fazer: .'
-lastmod: '2024-03-13T22:44:47.023052-06:00'
+description: "Como fazer: Exemplo de sa\xEDda para o comando `cat`."
+lastmod: '2024-04-05T21:53:47.377346-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Exemplo de sa\xEDda para o comando `cat`."
 title: Lendo um arquivo de texto
 weight: 22
 ---

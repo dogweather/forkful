@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 18:02:06.432200-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:54.266020-06:00'
+description: "How to: Basisauthentifizierung (Basic Authentication) ist ein alter\
+  \ Mechanismus aus den fr\xFChen HTTP-Tagen, um Login-Daten sicher zu \xFCbermitteln.\u2026"
+lastmod: '2024-04-05T21:53:56.153811-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Basisauthentifizierung (Basic Authentication) ist ein alter Mechanismus\
+  \ aus den fr\xFChen HTTP-Tagen, um Login-Daten sicher zu \xFCbermitteln."
 title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---

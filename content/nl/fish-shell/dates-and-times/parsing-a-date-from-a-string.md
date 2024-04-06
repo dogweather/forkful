@@ -2,10 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:56.155272-07:00
-description: 'Hoe: .'
-lastmod: '2024-03-13T22:44:51.256765-06:00'
+description: "Hoe: Fish Shell heeft geen ingebouwde datum parsing functies zoals sommige\
+  \ andere talen. In plaats daarvan leunt het op externe hulpmiddelen zoals `date`.\u2026"
+lastmod: '2024-04-05T21:53:51.264763-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: Fish Shell heeft geen ingebouwde datum parsing functies zoals sommige andere
+  talen.
 title: Een datum uit een string parsen
 weight: 30
 ---

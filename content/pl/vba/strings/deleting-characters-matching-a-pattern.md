@@ -4,8 +4,8 @@ changelog:
 date: 2024-02-01 21:52:35.715519-07:00
 description: "Jak to zrobi\u0107: W VBA, mo\u017Cesz u\u017Cy\u0107 funkcji `Replace`\
   \ lub wyra\u017Ce\u0144 regularnych, aby usun\u0105\u0107 znaki pasuj\u0105ce do\
-  \ wzorca. Oto przyk\u0142ady obu metod: Funkcja\u2026"
-lastmod: '2024-03-13T22:44:35.213004-06:00'
+  \ wzorca. Oto przyk\u0142ady obu metod."
+lastmod: '2024-04-05T21:53:36.648437-06:00'
 model: gpt-4-0125-preview
 summary: "W VBA, mo\u017Cesz u\u017Cy\u0107 funkcji `Replace` lub wyra\u017Ce\u0144\
   \ regularnych, aby usun\u0105\u0107 znaki pasuj\u0105ce do wzorca."

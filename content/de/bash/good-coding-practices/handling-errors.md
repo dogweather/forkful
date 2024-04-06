@@ -1,9 +1,9 @@
 ---
 date: 2024-01-26 00:36:56.268023-07:00
-description: 'Wie geht das: .'
-lastmod: '2024-03-13T22:44:54.066893-06:00'
+description: 'Wie geht das: Beispielausgabe, wenn ein Fehler auftritt.'
+lastmod: '2024-04-05T21:53:55.948874-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Beispielausgabe, wenn ein Fehler auftritt.
 title: Fehlerbehandlung
 weight: 16
 ---

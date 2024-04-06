@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:39:54.059651-07:00
-description: "Hur g\xF6r man: ."
-lastmod: '2024-03-13T22:44:37.544501-06:00'
+description: "Hur g\xF6r man: Output skulle vara texten skriven i temp-filen, t.ex.\
+  \ \"Hej fr\xE5n Clojure!\"."
+lastmod: '2024-04-05T21:53:38.873156-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Output skulle vara texten skriven i temp-filen, t.ex.
 title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:41:40.344530-07:00
-description: "Hur g\xF6r man?: ."
-lastmod: '2024-03-13T22:44:38.065125-06:00'
+description: "Hur g\xF6r man?: Bash anv\xE4nder verktyg som `tr`, `grep` och `sed`\
+  \ f\xF6r att hantera textstr\xE4ngar. Till exempel kommandot `tr` har anv\xE4nts\
+  \ sedan Unix skapades\u2026"
+lastmod: '2024-04-05T21:53:39.404546-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Bash anv\xE4nder verktyg som `tr`, `grep` och `sed` f\xF6r att hantera textstr\xE4\
+  ngar."
 title: "Ta bort tecken som matchar ett m\xF6nster"
 weight: 5
 ---

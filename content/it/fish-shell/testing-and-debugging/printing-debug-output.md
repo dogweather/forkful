@@ -2,9 +2,9 @@
 date: 2024-01-20 17:52:37.467564-07:00
 description: 'How to: (Come fare) Per stampare qualcosa a schermo in Fish, usi `echo`
   o `printf`. Ecco un esempio.'
-lastmod: '2024-03-13T22:44:43.861482-06:00'
+lastmod: '2024-04-05T21:53:44.606076-06:00'
 model: gpt-4-1106-preview
-summary: Per stampare qualcosa a schermo in Fish, usi `echo` o `printf`.
+summary: (Come fare) Per stampare qualcosa a schermo in Fish, usi `echo` o `printf`.
 title: Stampa dell'output di debug
 weight: 33
 ---

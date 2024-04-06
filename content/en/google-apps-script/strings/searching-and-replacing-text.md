@@ -1,9 +1,8 @@
 ---
 date: 2024-02-01 21:12:07.593467-07:00
-description: "How to: Google Apps Script offers a straightforward way to search and\
-  \ replace text, especially within Google Docs and Sheets. Below are examples for\
-  \ both.\u2026"
-lastmod: '2024-03-13T22:44:59.655813-06:00'
+description: 'How to: Google Apps Script offers a straightforward way to search and
+  replace text, especially within Google Docs and Sheets. Below are examples for both.'
+lastmod: '2024-04-05T21:53:35.333238-06:00'
 model: gpt-4-0125-preview
 summary: Google Apps Script offers a straightforward way to search and replace text,
   especially within Google Docs and Sheets.

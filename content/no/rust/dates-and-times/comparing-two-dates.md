@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:34:04.892679-07:00
-description: 'Hvordan: .'
-lastmod: '2024-03-13T22:44:40.586314-06:00'
+description: "Hvordan: F\xF8r `chrono` ble Rust-standard for dato/tidsoperasjoner,\
+  \ brukte folk ofte tid-modulen. `chrono` tilbyr flere funksjoner og bedre sikkerhet.\
+  \ N\xE5r\u2026"
+lastmod: '2024-04-05T21:53:41.565433-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "F\xF8r `chrono` ble Rust-standard for dato/tidsoperasjoner, brukte folk\
+  \ ofte tid-modulen."
 title: Sammenlikning av to datoer
 weight: 27
 ---

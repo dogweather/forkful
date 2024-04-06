@@ -2,10 +2,13 @@
 changelog:
 - 2024-03-17, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-17 17:47:51.233350-06:00
-description: "\u0995\u09C0\u09AD\u09BE\u09AC\u09C7: ."
-lastmod: '2024-03-17T18:47:43.903084-06:00'
+description: "\u0995\u09C0\u09AD\u09BE\u09AC\u09C7: \u09A8\u09AE\u09C1\u09A8\u09BE\
+  \ \u0986\u0989\u099F\u09AA\u09C1\u099F \u098F\u09B0\u0995\u09AE \u09A6\u09C7\u0996\
+  \u09BE\u09AC\u09C7."
+lastmod: '2024-04-05T21:53:52.155974-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "\u09A8\u09AE\u09C1\u09A8\u09BE \u0986\u0989\u099F\u09AA\u09C1\u099F \u098F\
+  \u09B0\u0995\u09AE \u09A6\u09C7\u0996\u09BE\u09AC\u09C7."
 title: "\u098F\u0995\u099F\u09BF \u0993\u09AF\u09BC\u09C7\u09AC\u09AA\u09C7\u099C\
   \ \u09A1\u09BE\u0989\u09A8\u09B2\u09CB\u09A1 \u0995\u09B0\u09BE"
 weight: 42

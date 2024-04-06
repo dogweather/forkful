@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:45:25.032817-07:00
-description: "C\xF3mo Hacerlo: ."
-lastmod: '2024-03-13T22:44:58.645596-06:00'
+description: "C\xF3mo Hacerlo: En Clojure, como en otros lenguajes de la familia Lisp,\
+  \ operar con textos es directo gracias a funciones bien definidas. Antes, en lenguajes\u2026"
+lastmod: '2024-04-05T21:54:00.001503-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: En Clojure, como en otros lenguajes de la familia Lisp, operar con textos
+  es directo gracias a funciones bien definidas.
 title: "Extracci\xF3n de subcadenas"
 weight: 6
 ---

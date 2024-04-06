@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:43:05.918600-07:00
-description: "Hur man g\xF6r: ."
-lastmod: '2024-03-13T22:44:37.682330-06:00'
+description: "Hur man g\xF6r: I exemplet ovan anv\xE4nds `regex`-paketet f\xF6r att\
+  \ matcha och ta bort tecken baserat p\xE5 ett specifikt m\xF6nster. Efter att koden\
+  \ k\xF6rs f\xE5r vi\u2026"
+lastmod: '2024-04-05T21:53:39.011055-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "I exemplet ovan anv\xE4nds `regex`-paketet f\xF6r att matcha och ta bort\
+  \ tecken baserat p\xE5 ett specifikt m\xF6nster."
 title: "Ta bort tecken som matchar ett m\xF6nster"
 weight: 5
 ---

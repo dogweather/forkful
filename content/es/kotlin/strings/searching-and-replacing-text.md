@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:58:21.811291-07:00
-description: "C\xF3mo hacerlo: ."
-lastmod: '2024-03-13T22:44:59.020934-06:00'
+description: "C\xF3mo hacerlo: El concepto de buscar y reemplazar tiene sus ra\xED\
+  ces en los procesadores de texto, pero en programaci\xF3n es vital para manejar\
+  \ y modificar\u2026"
+lastmod: '2024-04-05T21:54:00.364463-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "El concepto de buscar y reemplazar tiene sus ra\xEDces en los procesadores\
+  \ de texto, pero en programaci\xF3n es vital para manejar y modificar grandes cantidades\
+  \ de datos de forma eficiente."
 title: Buscando y reemplazando texto
 weight: 10
 ---

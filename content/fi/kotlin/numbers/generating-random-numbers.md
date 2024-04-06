@@ -1,8 +1,8 @@
 ---
 date: 2024-01-27 20:34:49.745033-07:00
 description: "Kuinka: Kotlin tarjoaa suoraviivaisen tavan satunnaislukujen tuottamiseen\
-  \ sen vakio kirjaston kautta. N\xE4in voit tuottaa erityyppisi\xE4 satunnaisia arvoja:\u2026"
-lastmod: '2024-03-13T22:44:56.526510-06:00'
+  \ sen vakio kirjaston kautta. N\xE4in voit tuottaa erityyppisi\xE4 satunnaisia arvoja."
+lastmod: '2024-04-05T21:53:58.093616-06:00'
 model: gpt-4-0125-preview
 summary: Kotlin tarjoaa suoraviivaisen tavan satunnaislukujen tuottamiseen sen vakio
   kirjaston kautta.

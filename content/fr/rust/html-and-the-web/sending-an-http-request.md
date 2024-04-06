@@ -2,9 +2,9 @@
 date: 2024-01-20 18:00:46.112683-07:00
 description: "How to: (Comment faire :) On va utiliser `reqwest`, une biblioth\xE8\
   que Rust populaire. Ajoutez d'abord `reqwest` \xE0 votre `Cargo.toml`."
-lastmod: '2024-03-13T22:44:57.478684-06:00'
+lastmod: '2024-04-05T21:53:59.041849-06:00'
 model: gpt-4-1106-preview
-summary: "On va utiliser `reqwest`, une biblioth\xE8que Rust populaire."
+summary: "(Comment faire :) On va utiliser `reqwest`, une biblioth\xE8que Rust populaire."
 title: "Envoi d'une requ\xEAte HTTP"
 weight: 44
 ---

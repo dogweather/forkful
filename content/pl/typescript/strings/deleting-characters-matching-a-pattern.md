@@ -1,9 +1,14 @@
 ---
 date: 2024-01-20 17:43:26.048214-07:00
-description: "How to: (Jak to zrobi\u0107?) ."
-lastmod: '2024-03-13T22:44:35.122073-06:00'
+description: "How to: (Jak to zrobi\u0107?) Zauwa\u017C, \u017Ce u\u017Cywamy `RegExp`\
+  \ (klasa wyra\u017Ce\u0144 regularnych w JavaScript) do definiowania wzorca znak\xF3\
+  w do usuni\u0119cia oraz globalnego\u2026"
+lastmod: '2024-04-05T21:53:36.559411-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(Jak to zrobi\u0107?) Zauwa\u017C, \u017Ce u\u017Cywamy `RegExp` (klasa\
+  \ wyra\u017Ce\u0144 regularnych w JavaScript) do definiowania wzorca znak\xF3w do\
+  \ usuni\u0119cia oraz globalnego flagi `g` do znalezienia wszystkich wyst\u0105\
+  pie\u0144."
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---

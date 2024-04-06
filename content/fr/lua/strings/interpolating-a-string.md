@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:51:04.219727-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:57.909822-06:00'
+description: "How to: Historiquement, Lua n'avait pas d'interpolation de cha\xEEne\
+  \ int\xE9gr\xE9e comme certaines autres langues; les d\xE9veloppeurs utilisaient\
+  \ la concat\xE9nation\u2026"
+lastmod: '2024-04-05T21:53:59.394688-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historiquement, Lua n'avait pas d'interpolation de cha\xEEne int\xE9gr\xE9\
+  e comme certaines autres langues; les d\xE9veloppeurs utilisaient la concat\xE9\
+  nation avec `..` ou `string.format()`."
 title: "Interpolation de cha\xEEnes de caract\xE8res"
 weight: 8
 ---

@@ -1,9 +1,8 @@
 ---
 date: 2024-01-27 20:35:00.980018-07:00
 description: "Hur man g\xF6r: Ruby erbjuder flera metoder f\xF6r att generera slumpm\xE4\
-  ssiga nummer, fr\xE4mst genom `Random`-klassen. F\xF6r att generera ett grundl\xE4\
-  ggande\u2026"
-lastmod: '2024-03-13T22:44:38.424419-06:00'
+  ssiga nummer, fr\xE4mst genom `Random`-klassen."
+lastmod: '2024-04-05T21:53:39.765061-06:00'
 model: gpt-4-0125-preview
 summary: "Ruby erbjuder flera metoder f\xF6r att generera slumpm\xE4ssiga nummer,\
   \ fr\xE4mst genom `Random`-klassen."

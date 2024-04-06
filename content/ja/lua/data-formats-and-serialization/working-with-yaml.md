@@ -2,8 +2,9 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:26:17.121788-07:00
-description: "\u65B9\u6CD5:\u2026"
-lastmod: '2024-03-13T22:44:42.336229-06:00'
+description: "\u65B9\u6CD5: \u6B21\u306EYAML\u5185\u5BB9\u304C`config.yaml`\u3068\u3044\
+  \u3046\u30D5\u30A1\u30A4\u30EB\u306B\u3042\u308B\u3068\u3057\u307E\u3059."
+lastmod: '2024-04-05T21:53:43.176208-06:00'
 model: gpt-4-0125-preview
 summary: "Lua\u306B\u306FYAML\u306E\u7D44\u307F\u8FBC\u307F\u30B5\u30DD\u30FC\u30C8\
   \u306F\u3042\u308A\u307E\u305B\u3093\u304C\u3001`lyaml`\u306A\u3069\u306E\u30B5\u30FC\

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 03:38:27.376379-07:00
-description: 'Hvordan: .'
-lastmod: '2024-03-13T22:44:40.783012-06:00'
+description: "Hvordan: Konseptet med \xE5 fjerne anf\xF8rselstegn er ikke nytt eller\
+  \ spesielt komplekst, men det er kritisk fordi anf\xF8rselstegn ofte brukes til\
+  \ \xE5 avgrense\u2026"
+lastmod: '2024-04-05T21:53:41.759177-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Konseptet med \xE5 fjerne anf\xF8rselstegn er ikke nytt eller spesielt komplekst,\
+  \ men det er kritisk fordi anf\xF8rselstegn ofte brukes til \xE5 avgrense strenger."
 title: "Fjerne anf\xF8rselstegn fra en streng"
 weight: 9
 ---

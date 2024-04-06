@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:40:55.011294-07:00
-description: 'So geht''s: .'
-lastmod: '2024-03-13T22:44:53.397950-06:00'
+description: "So geht's: In der Vergangenheit mussten Programmierer oft manuell tempor\xE4\
+  re Dateien verwalten, was zu Sicherheits- und Speicherproblemen f\xFChren k\xF6\
+  nnte.\u2026"
+lastmod: '2024-04-05T21:53:55.353766-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "In der Vergangenheit mussten Programmierer oft manuell tempor\xE4re Dateien\
+  \ verwalten, was zu Sicherheits- und Speicherproblemen f\xFChren k\xF6nnte."
 title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---

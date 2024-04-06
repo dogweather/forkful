@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:46:05.459832-07:00
-description: "So geht\u2019s: ."
-lastmod: '2024-03-13T22:44:54.255267-06:00'
+description: "So geht\u2019s: Das Extrahieren von Teilzeichenketten in JavaScript\
+  \ ist keine neue Erfindung. Funktionen wie `substring()`, `slice()` und `substr()`\
+  \ (veraltet)\u2026"
+lastmod: '2024-04-05T21:53:56.143368-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Das Extrahieren von Teilzeichenketten in JavaScript ist keine neue Erfindung.
 title: Teilstrings extrahieren
 weight: 6
 ---

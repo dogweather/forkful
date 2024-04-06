@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:32:32.610973-07:00
-description: "How to: (Kuinka tehd\xE4\xE4n:) ."
-lastmod: '2024-03-13T22:44:56.585819-06:00'
+description: "How to: (Kuinka tehd\xE4\xE4n:) Sample output."
+lastmod: '2024-04-05T21:53:58.153053-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(Kuinka tehd\xE4\xE4n:) Sample output."
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---

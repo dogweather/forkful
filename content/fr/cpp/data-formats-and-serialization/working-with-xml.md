@@ -2,10 +2,10 @@
 date: 2024-01-26 04:28:23.396727-07:00
 description: "Comment faire : Voici une mani\xE8re simple d'analyser le XML en utilisant\
   \ la biblioth\xE8que TinyXML-2 ."
-lastmod: '2024-03-13T22:44:58.195567-06:00'
+lastmod: '2024-04-05T21:53:59.616210-06:00'
 model: gpt-4-0125-preview
 summary: "Voici une mani\xE8re simple d'analyser le XML en utilisant la biblioth\xE8\
-  que TinyXML-2."
+  que TinyXML-2 ."
 title: Travailler avec XML
 weight: 40
 ---

@@ -2,10 +2,18 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:48.043131-07:00
-description: null
-lastmod: '2024-03-13T22:44:36.242726-06:00'
+description: "L\xFD do v\xE0 L\u1EE3i \xEDch T\xECm ki\u1EBFm v\xE0 thay th\u1EBF\
+  \ v\u0103n b\u1EA3n trong Dart bao g\u1ED3m vi\u1EC7c ki\u1EC3m tra c\xE1c chu\u1ED7\
+  i \u0111\u1EC3 t\xECm ki\u1EBFm c\xE1c m\u1EABu ho\u1EB7c chu\u1ED7i k\xFD t\u1EF1\
+  \ nh\u1EA5t \u0111\u1ECBnh v\xE0 thay th\u1EBF ch\xFAng\u2026"
+lastmod: '2024-04-05T21:53:37.660972-06:00'
 model: gpt-4-0125-preview
-summary: null
+summary: "Thao t\xE1c n\xE0y l\xE0 c\u01A1 b\u1EA3n cho c\xE1c nhi\u1EC7m v\u1EE5\
+  \ nh\u01B0 ki\u1EC3m tra d\u1EEF li\u1EC7u, \u0111\u1ECBnh d\u1EA1ng \u0111\u1EA7\
+  u ra, ph\xE2n t\xEDch \u0111\u1EA7u v\xE0o c\u1EE7a ng\u01B0\u1EDDi d\xF9ng, ho\u1EB7\
+  c th\u1EADm ch\xED l\xE0 manipul th\xF4ng tin URLs v\xE0 \u0111\u01B0\u1EDDng d\u1EAB\
+  n file, l\xE0m cho \u1EE9ng d\u1EE5ng tr\u1EDF n\xEAn linh ho\u1EA1t v\xE0 ph\u1EA3\
+  n h\u1ED3i v\u1EDBi nhu c\u1EA7u c\u1EE7a ng\u01B0\u1EDDi d\xF9ng."
 title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
 weight: 10
 ---

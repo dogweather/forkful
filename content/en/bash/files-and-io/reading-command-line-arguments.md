@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:55:14.838810-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:45:00.258264-06:00'
+description: 'How to: Sample output assuming your script is named ''example.sh'' and
+  you call `./example.sh arg1 arg2`.'
+lastmod: '2024-04-05T21:53:35.955630-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Sample output assuming your script is named 'example.sh' and you call `./example.sh
+  arg1 arg2`.
 title: Reading command line arguments
 weight: 23
 ---

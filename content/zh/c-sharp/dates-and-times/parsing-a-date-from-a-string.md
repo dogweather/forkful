@@ -6,12 +6,9 @@ description: "\u5982\u4F55\u64CD\u4F5C\uFF1A **\u57FA\u672C\u89E3\u6790\uFF1A** 
   \ \u548C `DateTime.TryParse` \u65B9\u6CD5\u662F\u5C06\u5B57\u7B26\u4E32\u8F6C\u6362\
   \u4E3A `DateTime` \u7684\u9996\u9009\u9009\u9879\u3002\u8FD9\u662F\u4E00\u4E2A\u5FEB\
   \u901F\u793A\u4F8B\uFF1A."
-lastmod: '2024-03-13T22:44:47.778060-06:00'
+lastmod: '2024-04-05T21:53:48.091785-06:00'
 model: gpt-4-0125-preview
-summary: "**\u57FA\u672C\u89E3\u6790\uFF1A**\n\n`DateTime.Parse` \u548C `DateTime.TryParse`\
-  \ \u65B9\u6CD5\u662F\u5C06\u5B57\u7B26\u4E32\u8F6C\u6362\u4E3A `DateTime` \u7684\
-  \u9996\u9009\u9009\u9879\u3002\u8FD9\u662F\u4E00\u4E2A\u5FEB\u901F\u793A\u4F8B\uFF1A\
-  ."
+summary: ''
 title: "\u4ECE\u5B57\u7B26\u4E32\u89E3\u6790\u65E5\u671F"
 weight: 30
 ---

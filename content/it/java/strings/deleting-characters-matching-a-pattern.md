@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:42:34.484093-07:00
-description: 'Come fare: .'
-lastmod: '2024-03-13T22:44:43.293068-06:00'
+description: "Come fare: Storicamente, le espressioni regolari derivano dalla teoria\
+  \ degli automi e sono state introdotte nei programmi di computer negli anni '50.\
+  \ Java\u2026"
+lastmod: '2024-04-05T21:53:44.065243-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Storicamente, le espressioni regolari derivano dalla teoria degli automi
+  e sono state introdotte nei programmi di computer negli anni '50.
 title: Eliminazione di caratteri che corrispondono a un pattern
 weight: 5
 ---

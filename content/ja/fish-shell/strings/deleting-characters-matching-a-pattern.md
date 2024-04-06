@@ -1,10 +1,13 @@
 ---
 date: 2024-01-20 17:42:13.581501-07:00
-description: "How to (\u3084\u308A\u65B9) ."
+description: "How to (\u3084\u308A\u65B9) Fish Shell\u306B\u304A\u3051\u308B\u30D1\
+  \u30BF\u30FC\u30F3\u30DE\u30C3\u30C1\u306F\u3001\u6B63\u898F\u8868\u73FE\u3092\u7528\
+  \u3044\u3066\u67D4\u8EDF\u306A\u6587\u5B57\u5217\u64CD\u4F5C\u3092\u53EF\u80FD\u306B\
+  \u3057\u307E\u3059\u3002\u4F1D\u7D71\u7684\u306AUnix\u2026"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:42.709836-06:00'
+lastmod: '2024-04-05T21:53:43.497647-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "\u30D1\u30BF\u30FC\u30F3\u306B\u4E00\u81F4\u3059\u308B\u6587\u5B57\u3092\u524A\
   \u9664\u3059\u308B"
 weight: 5

@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:51:22.180286-07:00
-description: "How to: (\u0915\u0948\u0938\u0947 \u0915\u0930\u0947\u0902:) ."
-lastmod: '2024-03-13T22:44:52.453078-06:00'
+description: "How to: (\u0915\u0948\u0938\u0947 \u0915\u0930\u0947\u0902:) Complex\
+  \ expression \u0915\u0947 \u0932\u093F\u090F curly braces \u0915\u093E \u0907\u0938\
+  \u094D\u0924\u0947\u092E\u093E\u0932."
+lastmod: '2024-04-05T21:53:54.442180-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(\u0915\u0948\u0938\u0947 \u0915\u0930\u0947\u0902:) Complex expression\
+  \ \u0915\u0947 \u0932\u093F\u090F curly braces \u0915\u093E \u0907\u0938\u094D\u0924\
+  \u0947\u092E\u093E\u0932."
 title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0907\u0902\u091F\u0930\u092A\
   \u094B\u0932\u0947\u0936\u0928"
 weight: 8

@@ -1,10 +1,16 @@
 ---
 date: 2024-01-20 17:37:30.776829-07:00
-description: "How to: (\uBC29\uBC95) ."
+description: "How to: (\uBC29\uBC95) \uB0A0\uC9DC \uD3EC\uB9F7\uD305\uC740 PHP\uC758\
+  \ \uCD08\uAE30 \uBC84\uC804\uBD80\uD130 \uC788\uC5B4\uC654\uC2B5\uB2C8\uB2E4. PHP\
+  \ 5.2.0\uBD80\uD130\uB294 `DateTime` \uD074\uB798\uC2A4\uC640 `date_format()` \uD568\
+  \uC218\uB97C \uC0AC\uC6A9\uD560 \uC218 \uC788\uAC8C \uB418\uC5C8\uC8E0. \uC774\uC804\
+  \uC5D0\uB294 `date()` \uD568\uC218\uC640 \uD0C0\uC784\uC2A4\uD0EC\uD504\uB97C \uC8FC\
+  \uB85C \uC0AC\uC6A9\uD588\uC2B5\uB2C8\uB2E4. `DateTime`\u2026"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.374389-06:00'
+lastmod: '2024-04-05T21:53:57.070324-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(\uBC29\uBC95) \uB0A0\uC9DC \uD3EC\uB9F7\uD305\uC740 PHP\uC758 \uCD08\uAE30\
+  \ \uBC84\uC804\uBD80\uD130 \uC788\uC5B4\uC654\uC2B5\uB2C8\uB2E4."
 title: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uAE30"
 weight: 28
 ---

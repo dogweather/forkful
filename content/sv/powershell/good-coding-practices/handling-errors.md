@@ -1,9 +1,11 @@
 ---
 date: 2024-01-26 00:56:01.079417-07:00
-description: "Hur man g\xF6r: ."
-lastmod: '2024-03-13T22:44:38.133271-06:00'
+description: "Hur man g\xF6r: PowerShell har kommit l\xE5ngt sedan dess b\xF6rjan\
+  \ som Monad. Felhanteringen har blivit robustare \xF6ver tiden, och erbjuder funktioner\
+  \ liknande\u2026"
+lastmod: '2024-04-05T21:53:39.470553-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "PowerShell har kommit l\xE5ngt sedan dess b\xF6rjan som Monad."
 title: Hantering av fel
 weight: 16
 ---

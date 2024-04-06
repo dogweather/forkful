@@ -2,9 +2,10 @@
 date: 2024-01-20 17:40:11.014365-07:00
 description: "How to: (Wie geht das:) In Fish Shell kannst du schnell und sicher eine\
   \ tempor\xE4re Datei erzeugen. Hier sind praktische Beispiele."
-lastmod: '2024-03-13T22:44:54.328059-06:00'
+lastmod: '2024-04-05T21:53:56.219076-06:00'
 model: gpt-4-1106-preview
-summary: "In Fish Shell kannst du schnell und sicher eine tempor\xE4re Datei erzeugen."
+summary: "(Wie geht das:) In Fish Shell kannst du schnell und sicher eine tempor\xE4\
+  re Datei erzeugen."
 title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---

@@ -1,10 +1,14 @@
 ---
 date: 2024-01-20 17:48:36.438276-07:00
-description: "How to (\u65B9\u6CD5) ."
+description: "How to (\u65B9\u6CD5) Swift\u3067\u306F\u3001`count`\u30D7\u30ED\u30D1\
+  \u30C6\u30A3\u3092\u4F7F\u3063\u3066\u6587\u5B57\u5217\u306E\u9577\u3055\u3092\u7C21\
+  \u5358\u306B\u898B\u3064\u3051\u308B\u3053\u3068\u304C\u3067\u304D\u307E\u3059\u3002\
+  \u3053\u306E\u30D7\u30ED\u30D1\u30C6\u30A3\u306F\u6587\u5B57\u5217\u306B\u542B\u307E\
+  \u308C\u308B\u6587\u5B57\u306E\u6570\u3092\u8FD4\u3057\u307E\u3059\u3002"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:42.599821-06:00'
+lastmod: '2024-04-05T21:53:43.403517-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "\u6587\u5B57\u5217\u306E\u9577\u3055\u3092\u6C42\u3081\u308B"
 weight: 7
 ---

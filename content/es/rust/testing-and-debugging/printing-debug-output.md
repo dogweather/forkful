@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:53:38.103179-07:00
-description: "How to: (C\xF3mo hacerlo:) ."
-lastmod: '2024-03-13T22:44:58.849202-06:00'
+description: "How to: (C\xF3mo hacerlo:) Salida."
+lastmod: '2024-04-05T21:54:00.196348-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(C\xF3mo hacerlo:) Salida."
 title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---

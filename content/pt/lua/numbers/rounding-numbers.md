@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 03:45:57.647203-07:00
-description: 'Como fazer: .'
-lastmod: '2024-03-13T22:44:46.704156-06:00'
+description: "Como fazer: Lua n\xE3o inclui uma fun\xE7\xE3o de arredondamento pronta\
+  \ como algumas outras linguagens. Historicamente, voc\xEA precisa escrever sua pr\xF3\
+  pria fun\xE7\xE3o ou\u2026"
+lastmod: '2024-04-05T21:53:47.049632-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Lua n\xE3o inclui uma fun\xE7\xE3o de arredondamento pronta como algumas\
+  \ outras linguagens."
 title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---

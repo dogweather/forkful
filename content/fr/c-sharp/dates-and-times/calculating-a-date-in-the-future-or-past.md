@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:28:42.102902-07:00
 description: 'Comment faire : Voici comment on joue avec les dates en C# .'
-lastmod: '2024-03-13T22:44:57.802084-06:00'
+lastmod: '2024-04-05T21:53:59.287160-06:00'
 model: gpt-4-1106-preview
-summary: Voici comment on joue avec les dates en C#.
+summary: Voici comment on joue avec les dates en C# .
 title: "Calcul d'une date future ou pass\xE9e"
 weight: 26
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:54:00.923897-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:53.437660-06:00'
+description: "How to: Das Auslesen von Textdateien ist grundlegend und wurde schon\
+  \ in fr\xFChen Programmiersprachen wie C implementiert. Clojure, eine moderne Lisp-\u2026"
+lastmod: '2024-04-05T21:53:55.394002-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Das Auslesen von Textdateien ist grundlegend und wurde schon in fr\xFChen\
+  \ Programmiersprachen wie C implementiert."
 title: Textdatei einlesen
 weight: 22
 ---

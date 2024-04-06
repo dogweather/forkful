@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:47:58.849875-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:47.084828-06:00'
+description: "Como Fazer: Historicamente, o m\xE9todo `length` existe desde as primeiras\
+  \ vers\xF5es do Ruby, oferecendo um jeito intuitivo de se obter a extens\xE3o de\
+  \ uma\u2026"
+lastmod: '2024-04-05T21:53:47.445709-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historicamente, o m\xE9todo `length` existe desde as primeiras vers\xF5\
+  es do Ruby, oferecendo um jeito intuitivo de se obter a extens\xE3o de uma string."
 title: Descobrindo o comprimento de uma string
 weight: 7
 ---

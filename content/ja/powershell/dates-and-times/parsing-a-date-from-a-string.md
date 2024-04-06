@@ -3,7 +3,7 @@ changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:30.498522-07:00
 description: "\u65B9\u6CD5: PowerShell\u306F`Get-\u2026"
-lastmod: '2024-03-13T22:44:42.450446-06:00'
+lastmod: '2024-04-05T21:53:43.270862-06:00'
 model: gpt-4-0125-preview
 summary: "PowerShell\u306F`Get-Date`\u30B3\u30DE\u30F3\u30C9\u30EC\u30C3\u30C8\u3068\
   `[datetime]`\u30BF\u30A4\u30D7\u30A2\u30AF\u30BB\u30E9\u30EC\u30FC\u30BF\u3092\u4F7F\
@@ -15,7 +15,7 @@ summary: "PowerShell\u306F`Get-Date`\u30B3\u30DE\u30F3\u30C9\u30EC\u30C3\u30C8\u
   \u6587\u5B57\u5217\u306B\u3064\u3044\u3066\u306F\u3001`[datetime]::ParseExact`\u30E1\
   \u30BD\u30C3\u30C9\u3092\u5229\u7528\u3057\u3066\u6B63\u78BA\u306A\u30D5\u30A9\u30FC\
   \u30DE\u30C3\u30C8\u3092\u6307\u5B9A\u3059\u308B\u3053\u3068\u304C\u3067\u304D\u307E\
-  \u3059."
+  \u3059\u3002"
 title: "\u6587\u5B57\u5217\u304B\u3089\u65E5\u4ED8\u3092\u30D1\u30FC\u30B9\u3059\u308B"
 weight: 30
 ---

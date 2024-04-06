@@ -1,9 +1,9 @@
 ---
 date: 2024-01-26 04:34:00.820735-07:00
 description: "\uBC29\uBC95: SimpleXML\uB85C XML \uC77D\uAE30."
-lastmod: '2024-03-13T22:44:55.392570-06:00'
+lastmod: '2024-04-05T21:53:57.085852-06:00'
 model: gpt-4-0125-preview
-summary: "SimpleXML\uB85C XML \uC77D\uAE30."
+summary: ''
 title: "XML \uB2E4\uB8E8\uAE30"
 weight: 40
 ---

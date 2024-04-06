@@ -2,10 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:52.626293-07:00
-description: 'Hoe te: .'
-lastmod: '2024-03-13T22:44:51.089218-06:00'
+description: "Hoe te: De verwachte uitvoer op de seri\xEBle monitor zal de inhoud\
+  \ van `voorbeeld.txt` zijn als alles correct is aangesloten en ge\xEFnitialiseerd."
+lastmod: '2024-04-05T21:53:51.103656-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "De verwachte uitvoer op de seri\xEBle monitor zal de inhoud van `voorbeeld.txt`\
+  \ zijn als alles correct is aangesloten en ge\xEFnitialiseerd."
 title: Een tekstbestand lezen
 weight: 22
 ---

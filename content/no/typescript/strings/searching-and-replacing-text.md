@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:58:50.456573-07:00
 description: "Hvordan gj\xF8re det: ."
-lastmod: '2024-03-13T22:44:40.517395-06:00'
+lastmod: '2024-04-05T21:53:41.496462-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---

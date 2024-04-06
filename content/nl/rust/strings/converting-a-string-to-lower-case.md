@@ -2,10 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:37.760875-07:00
-description: 'Hoe te: .'
-lastmod: '2024-03-13T22:44:50.581078-06:00'
+description: "Hoe te: Voor de methode `.to_lowercase()`, zou je Rustaceans `.to_ascii_lowercase()`\
+  \ voor dezelfde taak hebben kunnen zien gebruiken, wat alleen ASCII-\u2026"
+lastmod: '2024-04-05T21:53:50.602245-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Voor de methode `.to_lowercase()`, zou je Rustaceans `.to_ascii_lowercase()`\
+  \ voor dezelfde taak hebben kunnen zien gebruiken, wat alleen ASCII-karakters be\xEF\
+  nvloedde."
 title: Een string omzetten naar kleine letters
 weight: 4
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 04:25:53.837180-07:00
-description: "C\xF3mo hacerlo: ."
-lastmod: '2024-03-13T22:44:58.870139-06:00'
+description: "C\xF3mo hacerlo: TOML, que significa Lenguaje M\xEDnimo y Obvio de Tom,\
+  \ fue creado por Tom Preston-Werner en 2013. Su objetivo es ser m\xE1s legible que\
+  \ JSON o\u2026"
+lastmod: '2024-04-05T21:54:00.218889-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "TOML, que significa Lenguaje M\xEDnimo y Obvio de Tom, fue creado por Tom\
+  \ Preston-Werner en 2013."
 title: Trabajando con TOML
 weight: 39
 ---

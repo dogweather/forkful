@@ -1,9 +1,11 @@
 ---
 date: 2024-01-26 03:41:32.290827-07:00
-description: 'Wie man es macht: .'
-lastmod: '2024-03-13T22:44:53.660653-06:00'
+description: "Wie man es macht: Manchmal haben Sie einen String mit gemischten Anf\xFC\
+  hrungszeichen, wie diesen."
+lastmod: '2024-04-05T21:53:55.540022-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Manchmal haben Sie einen String mit gemischten Anf\xFChrungszeichen, wie\
+  \ diesen."
 title: "Anf\xFChrungszeichen aus einem String entfernen"
 weight: 9
 ---

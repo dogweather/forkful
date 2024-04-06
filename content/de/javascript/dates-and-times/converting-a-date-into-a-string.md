@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:37:24.682317-07:00
 description: How to (Wie geht's) .
-lastmod: '2024-03-13T22:44:54.277506-06:00'
+lastmod: '2024-04-05T21:53:56.165786-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: Datum in einen String umwandeln
 weight: 28
 ---

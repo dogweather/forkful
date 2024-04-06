@@ -1,9 +1,11 @@
 ---
 date: 2024-01-26 01:11:18.380176-07:00
-description: "Hur man g\xF6r: ."
-lastmod: '2024-03-13T22:44:38.298875-06:00'
+description: "Hur man g\xF6r: Historiskt sett saknade imperativa programmeringsspr\xE5\
+  k som tidiga versioner av BASIC eller Assembly den abstraktion som funktioner\u2026"
+lastmod: '2024-04-05T21:53:39.636212-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historiskt sett saknade imperativa programmeringsspr\xE5k som tidiga versioner\
+  \ av BASIC eller Assembly den abstraktion som funktioner tillhandah\xE5ller."
 title: Att organisera kod i funktioner
 weight: 18
 ---

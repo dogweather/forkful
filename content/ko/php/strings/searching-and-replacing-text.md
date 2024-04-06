@@ -4,10 +4,11 @@ description: "How to: (\uC5B4\uB5BB\uAC8C \uD558\uB098\uC694?) PHP\uC5D0\uC11C \
   \uC790\uC5F4 \uAC80\uC0C9 \uBC0F \uAD50\uCCB4\uB294 `str_replace` \uD568\uC218\uB97C\
   \ \uC0AC\uC6A9\uD569\uB2C8\uB2E4. \uC0B4\uD3B4\uBCF4\uACA0\uC2B5\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.335809-06:00'
+lastmod: '2024-04-05T21:53:57.040823-06:00'
 model: gpt-4-1106-preview
-summary: "PHP\uC5D0\uC11C \uBB38\uC790\uC5F4 \uAC80\uC0C9 \uBC0F \uAD50\uCCB4\uB294\
-  \ `str_replace` \uD568\uC218\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
+summary: "(\uC5B4\uB5BB\uAC8C \uD558\uB098\uC694?) PHP\uC5D0\uC11C \uBB38\uC790\uC5F4\
+  \ \uAC80\uC0C9 \uBC0F \uAD50\uCCB4\uB294 `str_replace` \uD568\uC218\uB97C \uC0AC\
+  \uC6A9\uD569\uB2C8\uB2E4."
 title: "\uD14D\uC2A4\uD2B8 \uAC80\uC0C9 \uBC0F \uAD50\uCCB4"
 weight: 10
 ---

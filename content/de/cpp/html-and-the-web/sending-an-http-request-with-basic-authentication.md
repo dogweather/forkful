@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 18:01:01.526459-07:00
-description: 'Vorgehensweise: .'
-lastmod: '2024-03-13T22:44:54.184446-06:00'
+description: "Vorgehensweise: **Achtung**: `user:password` muss in Base64 kodiert\
+  \ werden. Verwenden Sie den Header, wie er ist, nur mit Ihren echten Basis-\u2026"
+lastmod: '2024-04-05T21:53:56.070795-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---

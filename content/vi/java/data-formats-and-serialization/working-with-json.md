@@ -2,10 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:40.952032-07:00
-description: null
-lastmod: '2024-03-13T22:44:36.516981-06:00'
+description: "\u0110i\u1EC1u g\xEC & T\u1EA1i sao? L\xE0m vi\u1EC7c v\u1EDBi JSON\
+  \ (JavaScript Object Notation) c\xF3 ngh\u0129a l\xE0 b\u1EA1n \u0111ang x\u1EED\
+  \ l\xFD \u0111\u1ECBnh d\u1EA1ng trao \u0111\u1ED5i d\u1EEF li\u1EC7u nh\u1EB9 n\xE0\
+  y trong c\xE1c \u1EE9ng d\u1EE5ng Java\u2026"
+lastmod: '2024-04-05T21:53:37.920104-06:00'
 model: gpt-4-0125-preview
-summary: null
+summary: "L\xE0m vi\u1EC7c v\u1EDBi JSON (JavaScript Object Notation) c\xF3 ngh\u0129\
+  a l\xE0 b\u1EA1n \u0111ang x\u1EED l\xFD \u0111\u1ECBnh d\u1EA1ng trao \u0111\u1ED5\
+  i d\u1EEF li\u1EC7u nh\u1EB9 n\xE0y trong c\xE1c \u1EE9ng d\u1EE5ng Java c\u1EE7\
+  a m\xECnh."
 title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
 weight: 38
 ---

@@ -2,9 +2,9 @@
 date: 2024-01-20 17:35:12.789124-07:00
 description: "How to: | N\xE4in teet: Haskellissa on suoraan sanottuna nautinnollisen\
   \ puhdasta koodata. Katsoppas n\xE4it\xE4 esimerkkej\xE4."
-lastmod: '2024-03-13T22:44:56.607674-06:00'
+lastmod: '2024-04-05T21:53:58.176289-06:00'
 model: gpt-4-1106-preview
-summary: Haskellissa on suoraan sanottuna nautinnollisen puhdasta koodata.
+summary: ''
 title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---

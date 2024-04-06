@@ -1,9 +1,13 @@
 ---
 date: 2024-01-26 00:57:19.381929-07:00
-description: "\uC5B4\uB5BB\uAC8C \uD560\uAE4C: ."
-lastmod: '2024-03-13T22:44:54.609062-06:00'
+description: "\uC5B4\uB5BB\uAC8C \uD560\uAE4C: \uCCAB \uBC88\uC9F8 \uBE14\uB85D\uC5D0\
+  \ \uC720\uD6A8\uD558\uC9C0 \uC54A\uC740 \uC22B\uC790\uB97C \uC785\uB825\uD588\uC744\
+  \ \uB54C\uC758 \uC608\uC2DC \uCD9C\uB825."
+lastmod: '2024-04-05T21:53:56.464770-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "\uCCAB \uBC88\uC9F8 \uBE14\uB85D\uC5D0 \uC720\uD6A8\uD558\uC9C0 \uC54A\uC740\
+  \ \uC22B\uC790\uB97C \uC785\uB825\uD588\uC744 \uB54C\uC758 \uC608\uC2DC \uCD9C\uB825\
+  ."
 title: "\uC5D0\uB7EC \uCC98\uB9AC\uD558\uAE30"
 weight: 16
 ---

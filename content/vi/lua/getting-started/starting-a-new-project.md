@@ -2,10 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:12.366433-07:00
-description: "L\xE0m th\u1EBF n\xE0o: ."
-lastmod: '2024-03-13T22:44:36.822851-06:00'
+description: "L\xE0m th\u1EBF n\xE0o: Lua, ra \u0111\u1EDDi v\xE0o n\u0103m 1993,\
+  \ gi\u1EEF n\xF3 \u0111\u01A1n gi\u1EA3n v\xE0 d\u1EC5 th\u01B0\u01A1ng. N\xF3 nh\u1EB9\
+  , d\u1EC5 d\xE0ng t\xEDch h\u1EE3p, v\xE0 c\u1EA5u tr\xFAc d\u1EEF li\u1EC7u b\u1EA3\
+  ng c\u1EE7a n\xF3 l\xE0 m\u1ED9t c\xE1ch linh ho\u1EA1t \u0111\u1EC3 t\u1ED5\u2026"
+lastmod: '2024-04-05T21:53:38.199474-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Lua, ra \u0111\u1EDDi v\xE0o n\u0103m 1993, gi\u1EEF n\xF3 \u0111\u01A1\
+  n gi\u1EA3n v\xE0 d\u1EC5 th\u01B0\u01A1ng."
 title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---

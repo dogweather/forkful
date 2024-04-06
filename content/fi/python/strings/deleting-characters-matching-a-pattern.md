@@ -3,10 +3,12 @@ changelog:
 - 2024-04-04, dogweather, edited
 - 2024-04-04, gpt-4-0125-preview, translated from English
 date: 2024-01-20 17:43:02.363431-07:00
-description: 'Kuinka: .'
-lastmod: '2024-04-04T02:02:42.244023-06:00'
+description: "Kuinka: Teen t\xE4t\xE4 tarpeeksi usein, joten muodostin yksinkertaisen\
+  \ `delete()` funktion. Se on my\xF6s hyv\xE4 esimerkki\u2026"
+lastmod: '2024-04-05T21:53:57.684708-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Teen t\xE4t\xE4 tarpeeksi usein, joten muodostin yksinkertaisen `delete()`\
+  \ funktion."
 title: Kaavan mukaisten merkkien poistaminen
 weight: 5
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:35:06.461991-07:00
-description: 'So geht''s: .'
-lastmod: '2024-03-13T22:44:54.258065-06:00'
+description: "So geht's: Historisch wurde die String-Konkatenation haupts\xE4chlich\
+  \ mit dem Plus-Operator durchgef\xFChrt. Seit ECMAScript 6 (ES6) gibt es die eleganteren\u2026"
+lastmod: '2024-04-05T21:53:56.146315-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historisch wurde die String-Konkatenation haupts\xE4chlich mit dem Plus-Operator\
+  \ durchgef\xFChrt."
 title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---

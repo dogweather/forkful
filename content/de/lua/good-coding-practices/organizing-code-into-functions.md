@@ -1,9 +1,10 @@
 ---
 date: 2024-01-26 01:11:19.459170-07:00
-description: 'Wie geht das: .'
-lastmod: '2024-03-13T22:44:54.020745-06:00'
+description: "Wie geht das: Funktionen k\xF6nnen komplexer werden und verschiedene\
+  \ Aufgaben behandeln."
+lastmod: '2024-04-05T21:53:55.903663-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Funktionen k\xF6nnen komplexer werden und verschiedene Aufgaben behandeln."
 title: Code in Funktionen organisieren
 weight: 18
 ---

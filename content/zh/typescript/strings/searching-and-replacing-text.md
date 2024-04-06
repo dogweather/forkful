@@ -4,10 +4,9 @@ description: "How to (\u5982\u4F55\u64CD\u4F5C) \u5728 TypeScript \u4E2D\uFF0C\u
   \u4EEC\u7ECF\u5E38\u7528 `String.prototype.replace` \u65B9\u6CD5\u641C\u7D22\u5E76\
   \u66FF\u6362\u6587\u672C\uFF1A."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:47.455348-06:00'
+lastmod: '2024-04-05T21:53:47.781068-06:00'
 model: gpt-4-1106-preview
-summary: "\u5728 TypeScript \u4E2D\uFF0C\u6211\u4EEC\u7ECF\u5E38\u7528 `String.prototype.replace`\
-  \ \u65B9\u6CD5\u641C\u7D22\u5E76\u66FF\u6362\u6587\u672C\uFF1A."
+summary: ''
 title: "\u641C\u7D22\u548C\u66FF\u6362\u6587\u672C"
 weight: 10
 ---

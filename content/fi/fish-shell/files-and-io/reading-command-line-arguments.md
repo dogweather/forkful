@@ -3,9 +3,9 @@ date: 2024-01-20 17:56:17.063143-07:00
 description: "How to: (Kuinka tehd\xE4:) Fish Shellissa argumenttien lukeminen on\
   \ suoraviivaista. T\xE4ss\xE4 on esimerkki siit\xE4, miten luet ja k\xE4yt\xE4t\
   \ argumentteja."
-lastmod: '2024-03-13T22:44:57.010509-06:00'
+lastmod: '2024-04-05T21:53:58.589410-06:00'
 model: gpt-4-1106-preview
-summary: Fish Shellissa argumenttien lukeminen on suoraviivaista.
+summary: "(Kuinka tehd\xE4:) Fish Shellissa argumenttien lukeminen on suoraviivaista."
 title: Komennoriviparametrien lukeminen
 weight: 23
 ---

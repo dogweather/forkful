@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 00:56:05.110935-07:00
-description: 'Comment : .'
-lastmod: '2024-03-13T22:44:58.058646-06:00'
+description: "Comment : PowerShell a consid\xE9rablement \xE9volu\xE9 depuis ses d\xE9\
+  buts sous le nom de Monad. La gestion des erreurs est devenue plus robuste au fil\
+  \ du temps,\u2026"
+lastmod: '2024-04-05T21:53:59.507877-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "PowerShell a consid\xE9rablement \xE9volu\xE9 depuis ses d\xE9buts sous\
+  \ le nom de Monad."
 title: Gestion des erreurs
 weight: 16
 ---

@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:28:36.397173-07:00
-description: "Jak to zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:35.598629-06:00'
+description: "Jak to zrobi\u0107: Przyk\u0142adowe wyj\u015Bcie mo\u017Ce wygl\u0105\
+  da\u0107 tak."
+lastmod: '2024-04-05T21:53:37.024961-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Przyk\u0142adowe wyj\u015Bcie mo\u017Ce wygl\u0105da\u0107 tak."
 title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---

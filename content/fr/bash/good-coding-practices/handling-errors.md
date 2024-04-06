@@ -1,9 +1,9 @@
 ---
 date: 2024-01-26 00:49:29.212956-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:58.005287-06:00'
+description: 'Comment faire : Exemple de sortie lorsqu''une erreur se produit .'
+lastmod: '2024-04-05T21:53:59.462452-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Exemple de sortie lorsqu'une erreur se produit .
 title: Gestion des erreurs
 weight: 16
 ---

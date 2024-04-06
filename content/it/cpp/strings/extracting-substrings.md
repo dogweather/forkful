@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:45:24.400898-07:00
 description: 'How to: (Come fare:) .'
-lastmod: '2024-03-13T22:44:43.715440-06:00'
+lastmod: '2024-04-05T21:53:44.473101-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: Estrazione di sottostringhe
 weight: 6
 ---

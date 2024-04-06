@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:34:12.647902-07:00
-description: "Slik gj\xF8r du det: ."
-lastmod: '2024-03-13T22:44:40.964182-06:00'
+description: "Slik gj\xF8r du det: Tilbake p\xE5 70-tallet da Unix ble til, var bash'\
+  \ forgjenger, sh (Bourne shell), ogs\xE5 utstyrt med evnen til \xE5 sammenkjede\
+  \ strenger. Siden\u2026"
+lastmod: '2024-04-05T21:53:41.926795-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Tilbake p\xE5 70-tallet da Unix ble til, var bash' forgjenger, sh (Bourne\
+  \ shell), ogs\xE5 utstyrt med evnen til \xE5 sammenkjede strenger."
 title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---

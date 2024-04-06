@@ -2,10 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:45.722289-07:00
-description: "C\xE1ch th\u1EF1c hi\u1EC7n: ."
-lastmod: '2024-03-13T22:44:36.186222-06:00'
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Ngay t\u1EEB nh\u1EEFng ng\xE0y \u0111\u1EA7\
+  u c\u1EE7a ng\xE0nh c\xF4ng nghi\u1EC7p m\xE1y t\xEDnh, c\xE1c ng\xF4n ng\u1EEF\
+  \ l\u1EADp tr\xECnh th\u01B0\u1EDDng kh\xF4ng ch\xFA tr\u1ECDng t\u1EDBi vi\u1EC7\
+  c thao t\xE1c chu\u1ED7i nh\u01B0 m\u1ED9t ph\u1EA7n\u2026"
+lastmod: '2024-04-05T21:53:37.608108-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Ngay t\u1EEB nh\u1EEFng ng\xE0y \u0111\u1EA7u c\u1EE7a ng\xE0nh c\xF4ng\
+  \ nghi\u1EC7p m\xE1y t\xEDnh, c\xE1c ng\xF4n ng\u1EEF l\u1EADp tr\xECnh th\u01B0\
+  \u1EDDng kh\xF4ng ch\xFA tr\u1ECDng t\u1EDBi vi\u1EC7c thao t\xE1c chu\u1ED7i nh\u01B0\
+  \ m\u1ED9t ph\u1EA7n c\u1ED1t l\xF5i c\u1EE7a ng\xF4n ng\u1EEF."
 title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
 weight: 2
 ---

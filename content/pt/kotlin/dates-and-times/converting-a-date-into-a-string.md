@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:37:03.133034-07:00
-description: 'Como fazer: .'
-lastmod: '2024-03-13T22:44:46.553658-06:00'
+description: "Como fazer: Historicamente, a manipula\xE7\xE3o de datas no Java, herdada\
+  \ pelo Kotlin, era feita com classes como `java.util.Date` e\u2026"
+lastmod: '2024-04-05T21:53:46.895133-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historicamente, a manipula\xE7\xE3o de datas no Java, herdada pelo Kotlin,\
+  \ era feita com classes como `java.util.Date` e `java.text.SimpleDateFormat`."
 title: Convertendo uma data em uma string
 weight: 28
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:42:34.044073-07:00
-description: 'Como fazer: .'
-lastmod: '2024-03-13T22:44:46.693834-06:00'
+description: "Como fazer: O poder das express\xF5es regulares e padr\xF5es em Lua\
+  \ come\xE7ou a se tornar indispens\xE1vel na era do processamento de texto avan\xE7\
+  ado. A fun\xE7\xE3o\u2026"
+lastmod: '2024-04-05T21:53:47.038916-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "O poder das express\xF5es regulares e padr\xF5es em Lua come\xE7ou a se\
+  \ tornar indispens\xE1vel na era do processamento de texto avan\xE7ado."
 title: "Excluindo caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---

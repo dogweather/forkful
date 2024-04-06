@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:56:44.858783-07:00
-description: "C\xF3mo: ."
-lastmod: '2024-03-13T22:44:58.861869-06:00'
+description: "C\xF3mo: Ejecuci\xF3n en terminal y salida esperada."
+lastmod: '2024-04-05T21:54:00.209680-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Ejecuci\xF3n en terminal y salida esperada."
 title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---

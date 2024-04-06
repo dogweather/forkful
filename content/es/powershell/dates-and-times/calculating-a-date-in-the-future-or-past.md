@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:31:52.730962-07:00
-description: "C\xF3mo hacerlo: ."
-lastmod: '2024-03-13T22:44:59.305657-06:00'
+description: "C\xF3mo hacerlo: Calcular fechas no es un concepto nuevo; ha sido esencial\
+  \ desde la creaci\xF3n de computadoras. En PowerShell, usamos `Get-Date` para obtener\u2026"
+lastmod: '2024-04-05T21:54:00.650841-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Calcular fechas no es un concepto nuevo; ha sido esencial desde la creaci\xF3\
+  n de computadoras."
 title: Calcular una fecha en el futuro o pasado
 weight: 26
 ---

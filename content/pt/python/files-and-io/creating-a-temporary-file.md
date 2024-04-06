@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:41:09.754270-07:00
-description: 'How to: (Como Fazer:) .'
-lastmod: '2024-03-13T22:44:46.174479-06:00'
+description: "How to: (Como Fazer:) Sa\xEDda de Exemplo."
+lastmod: '2024-04-05T21:53:46.495724-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(Como Fazer:) Sa\xEDda de Exemplo."
 title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---

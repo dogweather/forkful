@@ -1,10 +1,13 @@
 ---
 date: 2024-01-20 17:53:01.947957-07:00
-description: "How to: (\u65B9\u6CD5) ."
+description: "How to: (\u65B9\u6CD5) \u51FA\u529B\u304C `table: ...` \u306E\u3088\u3046\
+  \u306B\u306A\u308B\u306E\u306F\u3001\u305F\u3060\u306E\u30C6\u30FC\u30D6\u30EB\u306E\
+  \u30A2\u30C9\u30EC\u30B9\u8868\u793A\u3067\u3059\u3002\u4E2D\u8EAB\u3092\u898B\u305F\
+  \u3044\u5834\u5408\u306F\u6B21\u306E\u3088\u3046\u306B\u3057\u307E\u3059\u3002"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:42.311694-06:00'
+lastmod: '2024-04-05T21:53:43.153716-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "\u30C7\u30D0\u30C3\u30B0\u51FA\u529B\u3092\u8868\u793A\u3059\u308B"
 weight: 33
 ---

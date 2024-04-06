@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:43:14.771222-07:00
-description: "Jak to zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:35.583786-06:00'
+description: "Jak to zrobi\u0107: Pobieranie stron ma bogat\u0105 histori\u0119, wystartowa\u0142\
+  o wraz z pojawieniem si\u0119 przegl\u0105darek. Alternatywami dla `curl` i `wget`\
+  \ s\u0105 narz\u0119dzia\u2026"
+lastmod: '2024-04-05T21:53:37.011181-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Pobieranie stron ma bogat\u0105 histori\u0119, wystartowa\u0142o wraz z\
+  \ pojawieniem si\u0119 przegl\u0105darek."
 title: Pobieranie strony internetowej
 weight: 42
 ---

@@ -5,11 +5,11 @@ description: "How to: (\uBC29\uBC95) Haskell\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uAC
   \ \uC4F8 \uC218 \uC788\uC2B5\uB2C8\uB2E4. \uC608\uC2DC\uC640 \uACB0\uACFC\uB97C\
   \ \uBD05\uC2DC\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.274753-06:00'
+lastmod: '2024-04-05T21:53:56.992630-06:00'
 model: gpt-4-1106-preview
-summary: "Haskell\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uAC80\uC0C9 \uBC0F \uB300\uCCB4\uB97C\
-  \ \uD558\uB824\uBA74 `Data.Text` \uBAA8\uB4C8\uC744 \uC4F8 \uC218 \uC788\uC2B5\uB2C8\
-  \uB2E4."
+summary: "(\uBC29\uBC95) Haskell\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uAC80\uC0C9 \uBC0F\
+  \ \uB300\uCCB4\uB97C \uD558\uB824\uBA74 `Data.Text` \uBAA8\uB4C8\uC744 \uC4F8 \uC218\
+  \ \uC788\uC2B5\uB2C8\uB2E4."
 title: "\uD14D\uC2A4\uD2B8 \uAC80\uC0C9 \uBC0F \uAD50\uCCB4"
 weight: 10
 ---

@@ -3,10 +3,15 @@ changelog:
 - 2024-04-04, dogweather, edited
 - 2024-04-04, gpt-4-0125-preview, translated from English
 date: 2024-01-20 17:43:02.363431-07:00
-description: "\uBC29\uBC95: ."
-lastmod: '2024-04-04T02:02:42.026857-06:00'
+description: "\uBC29\uBC95: \uC774 \uC791\uC5C5\uC744 \uC790\uC8FC \uC218\uD589\uD558\
+  \uAE30 \uB54C\uBB38\uC5D0 \uAC04\uB2E8\uD55C `delete()` \uD568\uC218\uB85C \uB9AC\
+  \uD329\uD1A0\uB9C1\uD588\uC2B5\uB2C8\uB2E4. \uC774\uAC74 [doctests](https://docs.python.org/3/library/doctest.html)\uB97C\
+  \ \uC2DC\uC5F0\uD558\uB294 \uC88B\uC740 \uBC29\uBC95\uC785\uB2C8\uB2E4."
+lastmod: '2024-04-05T21:53:56.438829-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "\uC774 \uC791\uC5C5\uC744 \uC790\uC8FC \uC218\uD589\uD558\uAE30 \uB54C\uBB38\
+  \uC5D0 \uAC04\uB2E8\uD55C `delete()` \uD568\uC218\uB85C \uB9AC\uD329\uD1A0\uB9C1\
+  \uD588\uC2B5\uB2C8\uB2E4."
 title: "\uD328\uD134\uC5D0 \uC77C\uCE58\uD558\uB294 \uBB38\uC790 \uC0AD\uC81C\uD558\
   \uAE30"
 weight: 5

@@ -2,9 +2,10 @@
 date: 2024-01-20 17:44:53.198425-07:00
 description: "How to: (Jak to zrobi\u0107:) Do pobierania stron internetowych w TypeScript\
   \ u\u017Cyjemy biblioteki `axios`. Oto przyk\u0142ad."
-lastmod: '2024-03-13T22:44:35.137740-06:00'
+lastmod: '2024-04-05T21:53:36.578627-06:00'
 model: gpt-4-1106-preview
-summary: "Do pobierania stron internetowych w TypeScript u\u017Cyjemy biblioteki `axios`."
+summary: "(Jak to zrobi\u0107:) Do pobierania stron internetowych w TypeScript u\u017C\
+  yjemy biblioteki `axios`."
 title: Pobieranie strony internetowej
 weight: 42
 ---

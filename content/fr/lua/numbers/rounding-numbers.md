@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 03:45:32.320720-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:57.921409-06:00'
+description: "Comment faire : Lua n'inclut pas de fonction d'arrondi directement,\
+  \ contrairement \xE0 certains autres langages. Historiquement, vous devez \xE9crire\
+  \ la v\xF4tre\u2026"
+lastmod: '2024-04-05T21:53:59.404079-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Lua n'inclut pas de fonction d'arrondi directement, contrairement \xE0 certains\
+  \ autres langages."
 title: Arrondir les nombres
 weight: 13
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-26 01:11:30.866170-07:00
-description: "\uBC29\uBC95: ."
-lastmod: '2024-03-13T22:44:55.424957-06:00'
+description: "\uBC29\uBC95: \uD568\uC218\uB294 \uB2E4\uC591\uD55C \uC791\uC5C5\uC744\
+  \ \uCC98\uB9AC\uD558\uBA74\uC11C \uB354 \uBCF5\uC7A1\uD574\uC9D1\uB2C8\uB2E4."
+lastmod: '2024-04-05T21:53:57.111798-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "\uD568\uC218\uB294 \uB2E4\uC591\uD55C \uC791\uC5C5\uC744 \uCC98\uB9AC\uD558\
+  \uBA74\uC11C \uB354 \uBCF5\uC7A1\uD574\uC9D1\uB2C8\uB2E4."
 title: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uAD6C\uC131\uD558\uAE30"
 weight: 18
 ---

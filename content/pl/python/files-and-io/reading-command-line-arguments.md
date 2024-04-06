@@ -2,9 +2,9 @@
 date: 2024-01-20 17:57:00.657515-07:00
 description: "How to: | Jak to zrobi\u0107: Po pierwsze, zaimportuj `argv` z modu\u0142\
   u `sys`. Potem mo\u017Cesz wykorzysta\u0107 `argv` do pobrania argument\xF3w."
-lastmod: '2024-03-13T22:44:34.965906-06:00'
+lastmod: '2024-04-05T21:53:36.413584-06:00'
 model: gpt-4-1106-preview
-summary: "Po pierwsze, zaimportuj `argv` z modu\u0142u `sys`."
+summary: ''
 title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---

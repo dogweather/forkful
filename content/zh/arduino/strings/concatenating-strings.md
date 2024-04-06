@@ -1,10 +1,16 @@
 ---
 date: 2024-01-20 17:33:54.603255-07:00
-description: "How to (\u600E\u4E48\u505A) ."
+description: "How to (\u600E\u4E48\u505A) \u8FC7\u53BB\uFF0CArduino\u4E0A\u7684\u5B57\
+  \u7B26\u4E32\u64CD\u4F5C\u4E3B\u8981\u4F9D\u8D56\u4E8E\u5B57\u7B26\u6570\u7EC4\u548C\
+  C\u6807\u51C6\u5E93\u51FD\u6570\u3002\u73B0\u5728\uFF0C`String` \u7C7B\u63D0\u4F9B\
+  \u4E86\u4E00\u4E2A\u66F4\u5BB9\u6613\u4F7F\u7528\u7684\u9009\u62E9\u3002\u4F46\u8BB0\
+  \u4F4F\uFF0C\u8FC7\u5EA6\u4F7F\u7528 `String` \u53EF\u80FD\u4F1A\u5BFC\u81F4\u5185\
+  \u5B58\u788E\u7247\u3002\u66FF\u4EE3\u65B9\u6CD5\u5305\u62EC\u4F7F\u7528 `strcat`,\
+  \ `strcpy`, \u548C C++\u4E2D\u7684\u2026"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:48.053470-06:00'
+lastmod: '2024-04-05T21:53:48.348525-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "\u5B57\u7B26\u4E32\u62FC\u63A5"
 weight: 3
 ---

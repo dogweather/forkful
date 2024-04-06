@@ -5,11 +5,11 @@ description: "How to: (\uBC29\uBC95) Clojure\uC5D0\uC11C \uBB38\uC790\uC5F4 \uAE
   \ \uC0AC\uC6A9\uD558\uB294 \uAC83\uC785\uB2C8\uB2E4. \uC608\uC2DC\uB97C \uBCF4\uACA0\
   \uC2B5\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:54.647513-06:00'
+lastmod: '2024-04-05T21:53:56.494770-06:00'
 model: gpt-4-1106-preview
-summary: "Clojure\uC5D0\uC11C \uBB38\uC790\uC5F4 \uAE38\uC774\uB97C \uCC3E\uB294 \uBC29\
-  \uBC95\uC740 `count` \uD568\uC218\uB098 `.length()`\uB97C \uC0AC\uC6A9\uD558\uB294\
-  \ \uAC83\uC785\uB2C8\uB2E4."
+summary: "(\uBC29\uBC95) Clojure\uC5D0\uC11C \uBB38\uC790\uC5F4 \uAE38\uC774\uB97C\
+  \ \uCC3E\uB294 \uBC29\uBC95\uC740 `count` \uD568\uC218\uB098 `.length()`\uB97C \uC0AC\
+  \uC6A9\uD558\uB294 \uAC83\uC785\uB2C8\uB2E4."
 title: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774 \uCC3E\uAE30"
 weight: 7
 ---

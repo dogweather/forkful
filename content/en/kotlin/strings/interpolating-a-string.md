@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:51:05.824126-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:45:00.036167-06:00'
+description: "How to: Kotlin, influenced by other modern languages, introduced string\
+  \ interpolation as a cleaner alternative to Java's string concatenation. It improves\u2026"
+lastmod: '2024-04-05T21:53:35.734435-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Kotlin, influenced by other modern languages, introduced string interpolation
+  as a cleaner alternative to Java's string concatenation.
 title: Interpolating a string
 weight: 8
 ---

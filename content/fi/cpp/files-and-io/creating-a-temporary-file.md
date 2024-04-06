@@ -2,10 +2,10 @@
 date: 2024-01-20 17:40:16.048506-07:00
 description: "How to: (Kuinka tehd\xE4\xE4n:) C++17 toi mukanaan `<filesystem>` kirjaston,\
   \ mik\xE4 helpottaa v\xE4liaikaisten tiedostojen k\xE4sittely\xE4."
-lastmod: '2024-03-13T22:44:56.884768-06:00'
+lastmod: '2024-04-05T21:53:58.462861-06:00'
 model: gpt-4-1106-preview
-summary: "C++17 toi mukanaan `<filesystem>` kirjaston, mik\xE4 helpottaa v\xE4liaikaisten\
-  \ tiedostojen k\xE4sittely\xE4."
+summary: "(Kuinka tehd\xE4\xE4n:) C++17 toi mukanaan `<filesystem>` kirjaston, mik\xE4\
+  \ helpottaa v\xE4liaikaisten tiedostojen k\xE4sittely\xE4."
 title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---

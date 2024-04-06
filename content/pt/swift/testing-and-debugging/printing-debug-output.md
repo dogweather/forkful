@@ -2,9 +2,9 @@
 date: 2024-01-20 17:53:36.671081-07:00
 description: "How To (Como Fazer) Simples e direto: use `print()` para jogar na tela\
   \ o que voc\xEA precisa. Se liga nos exemplos."
-lastmod: '2024-03-13T22:44:46.922957-06:00'
+lastmod: '2024-04-05T21:53:47.274182-06:00'
 model: gpt-4-1106-preview
-summary: Simples e direto.
+summary: "use `print()` para jogar na tela o que voc\xEA precisa."
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---

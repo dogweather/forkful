@@ -2,10 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:22.944482-07:00
-description: 'Hoe: .'
-lastmod: '2024-03-13T22:44:51.002163-06:00'
+description: 'Hoe: Uitvoer voor `cat hallo.txt`.'
+lastmod: '2024-04-05T21:53:51.019797-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: Uitvoer voor `cat hallo.txt`.
 title: Een tekstbestand schrijven
 weight: 24
 ---

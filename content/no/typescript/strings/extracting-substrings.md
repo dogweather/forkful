@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:46:40.079223-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:40.521188-06:00'
+description: 'How to: Eller, med moderne JavaScript/TypeScript, kan du bruke string
+  literal templates.'
+lastmod: '2024-04-05T21:53:41.499767-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Eller, med moderne JavaScript/TypeScript, kan du bruke string literal templates.
 title: Uthenting av delstrenger
 weight: 6
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:34:49.963072-07:00
-description: "S\xE5 h\xE4r g\xF6r du: ."
-lastmod: '2024-03-13T22:44:38.327395-06:00'
+description: "S\xE5 h\xE4r g\xF6r du: Konkatenering i Fish shell \xE4r rakt p\xE5\
+  \ sak \u2013 du placerar helt enkelt variablerna eller str\xE4ngarna intill varandra.\
+  \ Historiskt sett har m\xE5nga\u2026"
+lastmod: '2024-04-05T21:53:39.665136-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Konkatenering i Fish shell \xE4r rakt p\xE5 sak \u2013 du placerar helt\
+  \ enkelt variablerna eller str\xE4ngarna intill varandra."
 title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---

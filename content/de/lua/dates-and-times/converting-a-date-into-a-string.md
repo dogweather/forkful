@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:37:04.916331-07:00
-description: 'So geht''s: .'
-lastmod: '2024-03-13T22:44:54.026498-06:00'
+description: "So geht's: Das os.date-Modul in Lua bietet Funktionen, um Datums- und\
+  \ Zeitinformationen zu manipulieren. Seit Lua 5.1 gibt es diese Funktionen, und\
+  \ sie\u2026"
+lastmod: '2024-04-05T21:53:55.909580-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Das os.date-Modul in Lua bietet Funktionen, um Datums- und Zeitinformationen
+  zu manipulieren.
 title: Datum in einen String umwandeln
 weight: 28
 ---

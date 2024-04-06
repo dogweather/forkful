@@ -2,9 +2,10 @@
 date: 2024-01-20 17:44:57.283863-07:00
 description: "How to: (Kuinka tehd\xE4\xE4n:) Swiftiss\xE4 ladataan nettisivuja URLSession-entiteetin\
   \ avulla. T\xE4ss\xE4 simppeleit\xE4 esimerkkej\xE4."
-lastmod: '2024-03-13T22:44:56.905884-06:00'
+lastmod: '2024-04-05T21:53:58.484767-06:00'
 model: gpt-4-1106-preview
-summary: "Swiftiss\xE4 ladataan nettisivuja URLSession-entiteetin avulla."
+summary: "(Kuinka tehd\xE4\xE4n:) Swiftiss\xE4 ladataan nettisivuja URLSession-entiteetin\
+  \ avulla."
 title: Verkkosivun lataaminen
 weight: 42
 ---

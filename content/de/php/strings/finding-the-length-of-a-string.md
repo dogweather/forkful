@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:48:05.160031-07:00
-description: "So geht\u2019s: ."
-lastmod: '2024-03-13T22:44:53.963705-06:00'
+description: "So geht\u2019s: Mit `strlen()` bekommst du schnell und unkompliziert\
+  \ die L\xE4nge eines Strings. Leicht, oder?."
+lastmod: '2024-04-05T21:53:55.848254-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Mit `strlen()` bekommst du schnell und unkompliziert die L\xE4nge eines\
+  \ Strings."
 title: "Ermittlung der Zeichenkettenl\xE4nge"
 weight: 7
 ---

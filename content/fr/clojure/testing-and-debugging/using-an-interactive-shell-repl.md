@@ -1,9 +1,9 @@
 ---
 date: 2024-01-26 04:13:10.485438-07:00
 description: 'Comment faire : Commencez par lancer REPL .'
-lastmod: '2024-03-13T22:44:57.283855-06:00'
+lastmod: '2024-04-05T21:53:58.863850-06:00'
 model: gpt-4-0125-preview
-summary: Commencez par lancer REPL.
+summary: Commencez par lancer REPL .
 title: Utilisation d'une console interactive (REPL)
 weight: 34
 ---

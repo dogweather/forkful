@@ -1,9 +1,14 @@
 ---
 date: 2024-01-20 17:31:38.235458-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:56.628111-06:00'
+description: "How to: Haskellissa p\xE4iv\xE4m\xE4\xE4rien k\xE4sittelyyn voitiin\
+  \ kukin k\xE4ytt\xE4\xE4 vanhempia kirjastoja kuten `Time` pakettia, mutta nyky\xE4\
+  \xE4n `Data.Time` kirjasto on\u2026"
+lastmod: '2024-04-05T21:53:58.198467-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Haskellissa p\xE4iv\xE4m\xE4\xE4rien k\xE4sittelyyn voitiin kukin k\xE4\
+  ytt\xE4\xE4 vanhempia kirjastoja kuten `Time` pakettia, mutta nyky\xE4\xE4n `Data.Time`\
+  \ kirjasto on suosiossa, kiitos sen monipuolisemman ja k\xE4ytt\xE4j\xE4yst\xE4\
+  v\xE4llisen API:n."
 title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---

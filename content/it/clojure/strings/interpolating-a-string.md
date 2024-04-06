@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:50:32.143689-07:00
-description: 'Come fare: .'
-lastmod: '2024-03-13T22:44:43.028921-06:00'
+description: "Come fare: Storicamente, l'interpolazione di stringhe non era direttamente\
+  \ supportata in Clojure come in altri linguaggi, si usava la concatenazione o la\u2026"
+lastmod: '2024-04-05T21:53:43.811728-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Storicamente, l'interpolazione di stringhe non era direttamente supportata
+  in Clojure come in altri linguaggi, si usava la concatenazione o la funzione `format`.
 title: Interpolazione di una stringa
 weight: 8
 ---

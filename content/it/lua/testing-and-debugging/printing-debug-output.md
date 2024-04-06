@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:53:04.363386-07:00
-description: 'Come fare: .'
-lastmod: '2024-03-13T22:44:43.560174-06:00'
+description: "Come fare: Il debug esiste dai primi giorni della programmazione. Storicamente,\
+  \ veniva fatto tramite segnali di controllo o stampe su console. In Lua,\u2026"
+lastmod: '2024-04-05T21:53:44.323558-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Il debug esiste dai primi giorni della programmazione.
 title: Stampa dell'output di debug
 weight: 33
 ---

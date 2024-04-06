@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:45:40.968208-07:00
-description: 'Hvordan: .'
-lastmod: '2024-03-13T22:44:40.697565-06:00'
+description: "Hvordan: \xC5 trekke ut delstrenger er en vanlig operasjon som strekker\
+  \ seg tilbake til de tidligste programmeringsspr\xE5kene. I Elm utf\xF8rer vi dette\
+  \ med\u2026"
+lastmod: '2024-04-05T21:53:41.677487-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "\xC5 trekke ut delstrenger er en vanlig operasjon som strekker seg tilbake\
+  \ til de tidligste programmeringsspr\xE5kene."
 title: Uthenting av delstrenger
 weight: 6
 ---

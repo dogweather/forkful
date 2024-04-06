@@ -2,10 +2,9 @@
 date: 2024-01-26 04:28:26.054350-07:00
 description: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u4EE5\u4E0B\u662F\u4F7F\u7528TinyXML-2\u5E93\
   \u89E3\u6790XML\u7684\u7B80\u5355\u65B9\u6CD5\uFF1A."
-lastmod: '2024-03-13T22:44:48.137742-06:00'
+lastmod: '2024-04-05T21:53:48.429572-06:00'
 model: gpt-4-0125-preview
-summary: "\u4EE5\u4E0B\u662F\u4F7F\u7528TinyXML-2\u5E93\u89E3\u6790XML\u7684\u7B80\
-  \u5355\u65B9\u6CD5\uFF1A."
+summary: ''
 title: "\u5904\u7406XML"
 weight: 40
 ---

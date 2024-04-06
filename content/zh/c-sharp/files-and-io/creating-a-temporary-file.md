@@ -4,10 +4,9 @@ description: "How to (\u5982\u4F55\u64CD\u4F5C) \u5728C#\u4E2D\uFF0C\u4F60\u53EF
   \u7528`Path.GetTempFileName()`\u51FD\u6570\u5FEB\u901F\u521B\u5EFA\u4E34\u65F6\u6587\
   \u4EF6\u3002"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:47.789352-06:00'
+lastmod: '2024-04-05T21:53:48.102692-06:00'
 model: gpt-4-1106-preview
-summary: "\u5728C#\u4E2D\uFF0C\u4F60\u53EF\u4EE5\u7528`Path.GetTempFileName()`\u51FD\
-  \u6570\u5FEB\u901F\u521B\u5EFA\u4E34\u65F6\u6587\u4EF6."
+summary: ''
 title: "\u521B\u5EFA\u4E34\u65F6\u6587\u4EF6"
 weight: 21
 ---

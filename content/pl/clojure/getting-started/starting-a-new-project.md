@@ -3,10 +3,9 @@ date: 2024-01-20 18:03:18.761321-07:00
 description: "How to: | Jak to zrobi\u0107: Tworzenie nowego projektu w Clojure mo\u017C\
   e by\u0107 szybkie i proste przy u\u017Cyciu Leiningen lub Boot. Tutaj skupimy si\u0119\
   \ na Leiningen,\u2026"
-lastmod: '2024-03-13T22:44:34.995531-06:00'
+lastmod: '2024-04-05T21:53:36.441785-06:00'
 model: gpt-4-1106-preview
-summary: "Tworzenie nowego projektu w Clojure mo\u017Ce by\u0107 szybkie i proste\
-  \ przy u\u017Cyciu Leiningen lub Boot."
+summary: ''
 title: Rozpoczynanie nowego projektu
 weight: 1
 ---

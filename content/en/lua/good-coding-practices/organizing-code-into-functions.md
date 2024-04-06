@@ -1,9 +1,9 @@
 ---
 date: 2024-01-25 03:00:08.015698-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:45:00.210651-06:00'
+description: 'How to: Functions get more complex, handling various tasks.'
+lastmod: '2024-04-05T21:53:35.906472-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Functions get more complex, handling various tasks.
 title: Organizing code into functions
 weight: 18
 ---

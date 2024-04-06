@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:57:13.454196-07:00
-description: Wie geht das? .
-lastmod: '2024-03-13T22:44:54.169847-06:00'
+description: "Wie geht das? Das Konzept des Suchens und Ersetzens gab es schon lange\
+  \ bevor es moderne Computer gab. Urspr\xFCnglich manuell in Texten ausgef\xFChrt,\
+  \ wurde es\u2026"
+lastmod: '2024-04-05T21:53:56.055195-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Das Konzept des Suchens und Ersetzens gab es schon lange bevor es moderne
+  Computer gab.
 title: Suchen und Ersetzen von Text
 weight: 10
 ---

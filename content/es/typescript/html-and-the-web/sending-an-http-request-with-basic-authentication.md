@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 18:02:44.713444-07:00
-description: "C\xF3mo: ."
-lastmod: '2024-03-13T22:44:58.800261-06:00'
+description: "C\xF3mo: Salida de muestra."
+lastmod: '2024-04-05T21:54:00.149656-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
 weight: 45
 ---

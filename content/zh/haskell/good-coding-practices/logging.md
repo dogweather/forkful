@@ -4,11 +4,9 @@ description: "\u5982\u4F55\u8FDB\u884C\u65E5\u5FD7\u8BB0\u5F55\uFF1A \u5728Haske
   \uFF0C\u53EF\u4EE5\u4F7F\u7528`monad-logger`\u6216`hslogger`\u4E4B\u7C7B\u7684\u5E93\
   \u6765\u5B9E\u73B0\u65E5\u5FD7\u529F\u80FD\u3002\u8FD9\u91CC\u6709\u4E00\u4E2A\u4F7F\
   \u7528`monad-logger`\u7684\u7B80\u5355\u793A\u4F8B\uFF1A."
-lastmod: '2024-03-13T22:44:47.823305-06:00'
+lastmod: '2024-04-05T21:53:48.134665-06:00'
 model: gpt-4-1106-preview
-summary: "\u5728Haskell\u4E2D\uFF0C\u53EF\u4EE5\u4F7F\u7528`monad-logger`\u6216`hslogger`\u4E4B\
-  \u7C7B\u7684\u5E93\u6765\u5B9E\u73B0\u65E5\u5FD7\u529F\u80FD\u3002\u8FD9\u91CC\u6709\
-  \u4E00\u4E2A\u4F7F\u7528`monad-logger`\u7684\u7B80\u5355\u793A\u4F8B\uFF1A."
+summary: ''
 title: "\u65E5\u5FD7\u8BB0\u5F55"
 weight: 17
 ---

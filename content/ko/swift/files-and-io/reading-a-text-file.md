@@ -1,10 +1,17 @@
 ---
 date: 2024-01-20 17:55:10.575496-07:00
-description: "How to: (\uC5B4\uB5BB\uAC8C:) ."
+description: "How to: (\uC5B4\uB5BB\uAC8C:) Swift\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uD30C\
+  \uC77C\uC744 \uC77D\uB294 \uAE30\uB2A5\uC740 \uCD08\uAE30 Objective-C\uC640 Cocoa\
+  \ \uD130\uCE58 \uD504\uB808\uC784\uC6CC\uD06C\uC5D0\uC11C \uC720\uB798\uD569\uB2C8\
+  \uB2E4. `String(contentsOf:encoding:)` \uBA54\uC18C\uB4DC\uB294 Swift\uC758 String\
+  \ \uD0C0\uC785\uC5D0 \uCD94\uAC00\uB418\uC5C8\uC2B5\uB2C8\uB2E4. \uB300\uC548\uC73C\
+  \uB85C\uB294\u2026"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.756152-06:00'
+lastmod: '2024-04-05T21:53:57.366299-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(\uC5B4\uB5BB\uAC8C:) Swift\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC744\
+  \ \uC77D\uB294 \uAE30\uB2A5\uC740 \uCD08\uAE30 Objective-C\uC640 Cocoa \uD130\uCE58\
+  \ \uD504\uB808\uC784\uC6CC\uD06C\uC5D0\uC11C \uC720\uB798\uD569\uB2C8\uB2E4."
 title: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30"
 weight: 22
 ---

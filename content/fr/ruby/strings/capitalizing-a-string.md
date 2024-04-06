@@ -6,11 +6,11 @@ date: 2024-02-03 19:02:29.358527-07:00
 description: "Comment faire : Ruby propose [des m\xE9thodes directes pour la manipulation\
   \ de cha\xEEnes de caract\xE8res](https://docs.ruby-lang.org/en/3.3/String.html),\
   \ y\u2026"
-lastmod: '2024-03-25T19:21:58.508306-06:00'
+lastmod: '2024-04-05T21:53:59.805543-06:00'
 model: gpt-4-0125-preview
 summary: "Ruby propose [des m\xE9thodes directes pour la manipulation de cha\xEEnes\
   \ de caract\xE8res](https://docs.ruby-lang.org/en/3.3/String.html), y compris pour\
-  \ la capitalisation."
+  \ la capitalisation ."
 title: "Mettre en majuscule une cha\xEEne de caract\xE8res"
 weight: 2
 ---

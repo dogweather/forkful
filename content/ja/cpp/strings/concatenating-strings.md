@@ -1,10 +1,11 @@
 ---
 date: 2024-01-20 17:34:35.464211-07:00
-description: "How to: (\u65B9\u6CD5) ."
+description: "How to: (\u65B9\u6CD5) \u5B9F\u884C\u7D50\u679C: `\u3053\u3093\u306B\
+  \u3061\u306F\u3001\u4E16\u754C!`."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:42.539963-06:00'
+lastmod: '2024-04-05T21:53:43.353429-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "\u6587\u5B57\u5217\u306E\u9023\u7D50"
 weight: 3
 ---

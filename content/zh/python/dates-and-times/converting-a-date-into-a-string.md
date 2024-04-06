@@ -5,12 +5,9 @@ changelog:
 date: 2024-01-20 17:37:21.660960-07:00
 description: "\u5982\u4F55\u505A\uFF1A Python \u4F7F\u5F97\u5C06\u65E5\u671F\u8F6C\
   \u6362\u4E3A\u5B57\u7B26\u4E32\u53D8\u5F97\u7B80\u5355\u3002\u4F7F\u7528[date](https://docs.python.org/3/library/datetime.html#date-\u2026"
-lastmod: '2024-04-04T02:02:43.194394-06:00'
+lastmod: '2024-04-05T21:53:47.621481-06:00'
 model: gpt-4-0125-preview
-summary: "Python \u4F7F\u5F97\u5C06\u65E5\u671F\u8F6C\u6362\u4E3A\u5B57\u7B26\u4E32\
-  \u53D8\u5F97\u7B80\u5355\u3002\u4F7F\u7528[date](https://docs.python.org/3/library/datetime.html#date-objects)\u5BF9\
-  \u8C61\u4E0A\u53EF\u7528\u7684[`strftime`](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior)\u65B9\
-  \u6CD5\u3002\u65B9\u6CD5\u5982\u4E0B\uFF1A."
+summary: ''
 title: "\u5C06\u65E5\u671F\u8F6C\u6362\u4E3A\u5B57\u7B26\u4E32"
 weight: 28
 ---

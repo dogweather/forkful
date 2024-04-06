@@ -4,8 +4,8 @@ changelog:
 date: 2024-02-03 19:18:21.268634-07:00
 description: "Kuinka: Pythonissa regexin k\xE4ytt\xF6\xF6n liittyy `re`-moduuli, joka\
   \ tarjoaa joukon funktioita tekstin k\xE4sittelyyn s\xE4\xE4nn\xF6llisten lausekkeiden\
-  \ avulla. Jos haluat\u2026"
-lastmod: '2024-03-13T22:44:56.133589-06:00'
+  \ avulla."
+lastmod: '2024-04-05T21:53:57.690173-06:00'
 model: gpt-4-0125-preview
 summary: "Pythonissa regexin k\xE4ytt\xF6\xF6n liittyy `re`-moduuli, joka tarjoaa\
   \ joukon funktioita tekstin k\xE4sittelyyn s\xE4\xE4nn\xF6llisten lausekkeiden avulla."

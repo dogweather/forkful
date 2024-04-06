@@ -3,9 +3,9 @@ changelog:
 - 2024-04-04, gpt-4-0125-preview, translated from English
 date: 2024-01-20 17:40:08.399607-07:00
 description: null
-lastmod: '2024-04-04T00:29:05.160232-06:00'
+lastmod: '2024-04-05T21:53:52.271581-06:00'
 model: gpt-4-0125-preview
-summary: null
+summary: ''
 title: "\u098F\u0995\u099F\u09BF \u0985\u09B8\u09CD\u09A5\u09BE\u09AF\u09BC\u09C0\
   \ \u09AB\u09BE\u0987\u09B2 \u09A4\u09C8\u09B0\u09BF \u0995\u09B0\u09BE"
 weight: 21

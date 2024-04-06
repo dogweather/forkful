@@ -4,9 +4,9 @@ description: "\u4F55\u3068\u306A\u305C\uFF1F Dates are numbers and converting th
   \ to strings means making them readable. {\"1/1/2021\" instead of \"1609459200\"\
   }. Programmers do it to show users\u2026"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:42.324250-06:00'
+lastmod: '2024-04-05T21:53:43.165516-06:00'
 model: gpt-4-1106-preview
-summary: Dates are numbers and converting them to strings means making them readable.
+summary: '{"1/1/2021" instead of "1609459200"}.'
 title: "\u65E5\u4ED8\u3092\u6587\u5B57\u5217\u306B\u5909\u63DB\u3059\u308B"
 weight: 28
 ---

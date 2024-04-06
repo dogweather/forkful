@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:54:03.099492-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:45:00.373524-06:00'
+description: 'How to: If `example.txt` contains.'
+lastmod: '2024-04-05T21:53:36.073754-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: If `example.txt` contains.
 title: Reading a text file
 weight: 22
 ---

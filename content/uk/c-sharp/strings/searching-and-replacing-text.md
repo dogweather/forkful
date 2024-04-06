@@ -2,9 +2,9 @@
 date: 2024-01-20 17:57:59.650156-07:00
 description: "How to (\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\
   \u0438) C# provides `String.Replace` method to replace text. Here's a simple example."
-lastmod: '2024-03-13T22:44:49.264997-06:00'
+lastmod: '2024-04-05T21:53:49.457761-06:00'
 model: gpt-4-1106-preview
-summary: C# provides `String.Replace` method to replace text.
+summary: Here's a simple example.
 title: "\u041F\u043E\u0448\u0443\u043A \u0442\u0430 \u0437\u0430\u043C\u0456\u043D\
   \u0430 \u0442\u0435\u043A\u0441\u0442\u0443"
 weight: 10

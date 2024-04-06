@@ -3,10 +3,10 @@ date: 2024-01-20 17:37:37.166560-07:00
 description: "How to: (Jak to zrobi\u0107?) Na pocz\u0105tek, zaimportuj `chrono`\
   \ \u2013 popularn\u0105 bibliotek\u0119 do zarz\u0105dzania czasem. Potem u\u017C\
   yj w\u0142a\u015Bciwej metody do konwersji. Poka\u017C\u0119\u2026"
-lastmod: '2024-03-13T22:44:35.197269-06:00'
+lastmod: '2024-04-05T21:53:36.632931-06:00'
 model: gpt-4-1106-preview
-summary: "Na pocz\u0105tek, zaimportuj `chrono` \u2013 popularn\u0105 bibliotek\u0119\
-  \ do zarz\u0105dzania czasem."
+summary: "(Jak to zrobi\u0107?) Na pocz\u0105tek, zaimportuj `chrono` \u2013 popularn\u0105\
+  \ bibliotek\u0119 do zarz\u0105dzania czasem."
 title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---

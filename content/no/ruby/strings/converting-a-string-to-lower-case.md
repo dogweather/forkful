@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:39:20.967412-07:00
-description: 'Hvordan: .'
-lastmod: '2024-03-13T22:44:41.303024-06:00'
+description: 'Hvordan: En annen nyttig metode.'
+lastmod: '2024-04-05T21:53:42.264292-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: En annen nyttig metode.
 title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---

@@ -1,9 +1,10 @@
 ---
 date: 2024-01-26 03:42:19.545967-07:00
-description: "C\xF3mo hacerlo: ."
-lastmod: '2024-03-13T22:44:58.834674-06:00'
+description: "C\xF3mo hacerlo: A veces tienes una cadena con comillas mixtas, como\
+  \ esta."
+lastmod: '2024-04-05T21:54:00.182154-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: A veces tienes una cadena con comillas mixtas, como esta.
 title: Eliminando comillas de una cadena
 weight: 9
 ---

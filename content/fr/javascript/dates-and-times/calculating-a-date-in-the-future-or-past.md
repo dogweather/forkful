@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:31:12.060239-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:58.290106-06:00'
+description: "Comment faire : Historiquement, g\xE9rer le temps avec JavaScript pouvait\
+  \ \xEAtre frustrant \xE0 cause des incoh\xE9rences et du manque de fonctionnalit\xE9\
+  s. Des\u2026"
+lastmod: '2024-04-05T21:53:59.691391-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historiquement, g\xE9rer le temps avec JavaScript pouvait \xEAtre frustrant\
+  \ \xE0 cause des incoh\xE9rences et du manque de fonctionnalit\xE9s."
 title: "Calcul d'une date future ou pass\xE9e"
 weight: 26
 ---

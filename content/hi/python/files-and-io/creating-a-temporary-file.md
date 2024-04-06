@@ -3,9 +3,10 @@ date: 2024-01-20 17:41:16.053021-07:00
 description: "How to: (\u0915\u0948\u0938\u0947 \u0915\u0930\u0947\u0902:) Python\
   \ mein temporary file create karna bahut aasan hai. `tempfile` module ka use karke,\
   \ aaiye dekhte hain."
-lastmod: '2024-03-13T22:44:51.624455-06:00'
+lastmod: '2024-04-05T21:53:53.642524-06:00'
 model: gpt-4-1106-preview
-summary: Python mein temporary file create karna bahut aasan hai.
+summary: "(\u0915\u0948\u0938\u0947 \u0915\u0930\u0947\u0902:) Python mein temporary\
+  \ file create karna bahut aasan hai."
 title: "\u0905\u0938\u094D\u0925\u093E\u092F\u0940 \u092B\u093E\u0907\u0932 \u092C\
   \u0928\u093E\u0928\u093E"
 weight: 21

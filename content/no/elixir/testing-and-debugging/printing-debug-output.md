@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:52:10.489820-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:40.445988-06:00'
+description: 'How to: Output vil se slik ut.'
+lastmod: '2024-04-05T21:53:41.425410-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Output vil se slik ut.
 title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---

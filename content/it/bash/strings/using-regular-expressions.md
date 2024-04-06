@@ -1,9 +1,9 @@
 ---
 date: 2024-01-19
 description: 'How to: (Come fare:) Ecco alcuni esempi di base.'
-lastmod: '2024-03-13T22:44:43.588135-06:00'
+lastmod: '2024-04-05T21:53:44.352147-06:00'
 model: unknown
-summary: Ecco alcuni esempi di base.
+summary: (Come fare:) Ecco alcuni esempi di base.
 title: Utilizzo delle espressioni regolari
 weight: 11
 ---

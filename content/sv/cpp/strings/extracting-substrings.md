@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:45:12.247581-07:00
 description: "How to (Hur man g\xF6r) Exempel p\xE5 C++ med standardbiblioteket `<string>`."
-lastmod: '2024-03-13T22:44:38.198214-06:00'
+lastmod: '2024-04-05T21:53:39.536630-06:00'
 model: gpt-4-1106-preview
-summary: "Exempel p\xE5 C++ med standardbiblioteket `<string>`."
+summary: ''
 title: "Extrahera delstr\xE4ngar"
 weight: 6
 ---

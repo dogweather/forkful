@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:32:24.159803-07:00
-description: "How to: (Kuinka tehd\xE4:) ."
-lastmod: '2024-03-13T22:44:56.920079-06:00'
+description: "How to: (Kuinka tehd\xE4:) T\xE4m\xE4 yksinkertainen koodi tulostaa\
+  \ p\xE4iv\xE4m\xE4\xE4r\xE4n kaksi viikkoa t\xE4st\xE4 p\xE4iv\xE4st\xE4 eteenp\xE4\
+  in ja p\xE4iv\xE4m\xE4\xE4r\xE4n 30 p\xE4iv\xE4\xE4 taaksep\xE4in."
+lastmod: '2024-04-05T21:53:58.499051-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(Kuinka tehd\xE4:) T\xE4m\xE4 yksinkertainen koodi tulostaa p\xE4iv\xE4\
+  m\xE4\xE4r\xE4n kaksi viikkoa t\xE4st\xE4 p\xE4iv\xE4st\xE4 eteenp\xE4in ja p\xE4\
+  iv\xE4m\xE4\xE4r\xE4n 30 p\xE4iv\xE4\xE4 taaksep\xE4in."
 title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---

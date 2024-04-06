@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:37:04.615224-07:00
-description: "Hur g\xF6r man: ."
-lastmod: '2024-03-13T22:44:37.966169-06:00'
+description: "Hur g\xF6r man: Exempel p\xE5 utdata."
+lastmod: '2024-04-05T21:53:39.306383-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "Omvandla ett datum till en str\xE4ng"
 weight: 28
 ---

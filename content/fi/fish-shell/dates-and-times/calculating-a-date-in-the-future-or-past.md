@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:30:54.171443-07:00
-description: "How to: (Miten tehd\xE4:) ."
-lastmod: '2024-03-13T22:44:57.008490-06:00'
+description: "How to: (Miten tehd\xE4:) N\xE4ytt\xE4\xE4."
+lastmod: '2024-04-05T21:53:58.587431-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(Miten tehd\xE4:) N\xE4ytt\xE4\xE4."
 title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---

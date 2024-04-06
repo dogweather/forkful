@@ -3,11 +3,12 @@ date: 2024-01-20 17:40:13.191330-07:00
 description: "How to: (Miten Tehd\xE4\xE4n:) Elmiss\xE4 ei ole suoraa tapaa luoda\
   \ v\xE4liaikaisia tiedostoja, koska se keskittyy puhtaasti frontend-kehitykseen\
   \ ja py\xF6rii\u2026"
-lastmod: '2024-03-13T22:44:56.508186-06:00'
+lastmod: '2024-04-05T21:53:58.074883-06:00'
 model: gpt-4-1106-preview
-summary: "Elmiss\xE4 ei ole suoraa tapaa luoda v\xE4liaikaisia tiedostoja, koska se\
-  \ keskittyy puhtaasti frontend-kehitykseen ja py\xF6rii selainymp\xE4rist\xF6ss\xE4\
-  , miss\xE4 p\xE4\xE4sy tiedostoj\xE4rjestelm\xE4\xE4n on eritt\xE4in rajoitettua."
+summary: "(Miten Tehd\xE4\xE4n:) Elmiss\xE4 ei ole suoraa tapaa luoda v\xE4liaikaisia\
+  \ tiedostoja, koska se keskittyy puhtaasti frontend-kehitykseen ja py\xF6rii selainymp\xE4\
+  rist\xF6ss\xE4, miss\xE4 p\xE4\xE4sy tiedostoj\xE4rjestelm\xE4\xE4n on eritt\xE4\
+  in rajoitettua."
 title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---

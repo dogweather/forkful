@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:51:53.236357-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:56.893726-06:00'
+description: "How to: Merkkijonon interpolointi otettiin Swiftiin k\xE4ytt\xF6\xF6\
+  n heti kielen ensiversioissa, helpottamaan merkkijonojen muodostamista ilman ett\xE4\
+  \ tarvittaisiin\u2026"
+lastmod: '2024-04-05T21:53:58.471944-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Merkkijonon interpolointi otettiin Swiftiin k\xE4ytt\xF6\xF6n heti kielen\
+  \ ensiversioissa, helpottamaan merkkijonojen muodostamista ilman ett\xE4 tarvittaisiin\
+  \ monimutkaisia konkatenointeja kuten vaikkapa Objective-C:ss\xE4."
 title: Merkkijonon interpolointi
 weight: 8
 ---

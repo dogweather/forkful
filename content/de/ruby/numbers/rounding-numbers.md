@@ -1,9 +1,9 @@
 ---
 date: 2024-01-26 03:46:56.837698-07:00
-description: 'Wie: .'
-lastmod: '2024-03-13T22:44:54.393199-06:00'
+description: 'Wie: Beispielausgabe.'
+lastmod: '2024-04-05T21:53:56.290267-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: ''
 title: Zahlen runden
 weight: 13
 ---

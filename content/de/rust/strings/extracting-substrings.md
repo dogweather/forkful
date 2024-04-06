@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:46:25.015258-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:53.661718-06:00'
+description: "How to: In der Rust-Programmierung ist String-Handling besonders wichtig\
+  \ und manchmal knifflig, da Rust Speichersicherheit garantiert. Historisch gesehen,\u2026"
+lastmod: '2024-04-05T21:53:55.541012-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: In der Rust-Programmierung ist String-Handling besonders wichtig und manchmal
+  knifflig, da Rust Speichersicherheit garantiert.
 title: Teilstrings extrahieren
 weight: 6
 ---

@@ -3,10 +3,18 @@ changelog:
 - 2024-04-04, dogweather, edited
 - 2024-04-04, gpt-4-0125-preview, translated from English
 date: 2024-01-20 17:43:02.363431-07:00
-description: "\u65B9\u6CD5: ."
-lastmod: '2024-04-04T02:02:43.448956-06:00'
+description: "\u65B9\u6CD5: \u3053\u308C\u3092\u983B\u7E41\u306B\u884C\u3046\u306E\
+  \u3067\u3001`delete()` \u95A2\u6570\u306B\u30EA\u30D5\u30A1\u30AF\u30BF\u30EA\u30F3\
+  \u30B0\u3057\u307E\u3057\u305F\u3002[doctests](https://docs.python.org/3/library/doctest.html)\u306E\
+  \u826F\u3044\u30C7\u30E2\u30F3\u30B9\u30C8\u30EC\u30FC\u30B7\u30E7\u30F3\u306B\u3082\
+  \u306A\u308A\u307E\u3059\uFF1A."
+lastmod: '2024-04-05T21:53:42.435036-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "\u3053\u308C\u3092\u983B\u7E41\u306B\u884C\u3046\u306E\u3067\u3001`delete()`\
+  \ \u95A2\u6570\u306B\u30EA\u30D5\u30A1\u30AF\u30BF\u30EA\u30F3\u30B0\u3057\u307E\
+  \u3057\u305F\u3002[doctests](https://docs.python.org/3/library/doctest.html)\u306E\
+  \u826F\u3044\u30C7\u30E2\u30F3\u30B9\u30C8\u30EC\u30FC\u30B7\u30E7\u30F3\u306B\u3082\
+  \u306A\u308A\u307E\u3059\uFF1A."
 title: "\u30D1\u30BF\u30FC\u30F3\u306B\u4E00\u81F4\u3059\u308B\u6587\u5B57\u306E\u524A\
   \u9664"
 weight: 5

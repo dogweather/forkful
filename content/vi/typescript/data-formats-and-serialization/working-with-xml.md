@@ -2,10 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:22.634703-07:00
-description: "C\xE1ch th\u1EF1c hi\u1EC7n: ."
-lastmod: '2024-03-13T22:44:36.351844-06:00'
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: XML, hay Ng\xF4n ng\u1EEF \u0110\xE1nh\
+  \ d\u1EA5u M\u1EDF r\u1ED9ng, \u0111\xE3 xu\u1EA5t hi\u1EC7n t\u1EEB cu\u1ED1i nh\u1EEF\
+  ng n\u0103m '90. B\u1EA3n ch\u1EA5t t\u1EF1 m\xF4 t\u1EA3 v\xE0 d\u1EA1ng \u0111\
+  \u1ECBnh d\u1EA1ng d\u1EC5 \u0111\u1ECDc c\u1EE7a n\xF3 \u0111\xE3 l\xE0m cho n\xF3\
+  \u2026"
+lastmod: '2024-04-05T21:53:37.762619-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "XML, hay Ng\xF4n ng\u1EEF \u0110\xE1nh d\u1EA5u M\u1EDF r\u1ED9ng, \u0111\
+  \xE3 xu\u1EA5t hi\u1EC7n t\u1EEB cu\u1ED1i nh\u1EEFng n\u0103m '90."
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---

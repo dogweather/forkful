@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:55:09.181652-07:00
-description: "How to: (Kuinka tehd\xE4:) ."
-lastmod: '2024-03-13T22:44:56.160949-06:00'
+description: "How to: (Kuinka tehd\xE4:) Sample output."
+lastmod: '2024-04-05T21:53:57.716563-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(Kuinka tehd\xE4:) Sample output."
 title: Tekstitiedoston lukeminen
 weight: 22
 ---

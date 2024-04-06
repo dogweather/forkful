@@ -1,9 +1,9 @@
 ---
 date: 2024-01-25 20:50:00.647365-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:59.885114-06:00'
+description: 'How to: Sometimes you''ve got a string with mixed quotes, like this.'
+lastmod: '2024-04-05T21:53:35.576236-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Sometimes you've got a string with mixed quotes, like this.
 title: Removing quotes from a string
 weight: 9
 ---

@@ -4,10 +4,10 @@ changelog:
 date: 2024-02-03 19:23:26.887828-07:00
 description: "\u5982\u4F55\u64CD\u4F5C: \u8981\u5C06 JSON \u5B57\u7B26\u4E32\u8F6C\
   \u6362\u4E3A JavaScript \u5BF9\u8C61\uFF0C\u8BF7\u4F7F\u7528 `JSON.parse()`\u3002"
-lastmod: '2024-03-13T22:44:48.239881-06:00'
+lastmod: '2024-04-05T21:53:48.515504-06:00'
 model: gpt-4-0125-preview
 summary: "\u8981\u5C06 JSON \u5B57\u7B26\u4E32\u8F6C\u6362\u4E3A JavaScript \u5BF9\
-  \u8C61\uFF0C\u8BF7\u4F7F\u7528 `JSON.parse()`."
+  \u8C61\uFF0C\u8BF7\u4F7F\u7528 `JSON.parse()`\u3002"
 title: "\u4F7F\u7528JSON\u8FDB\u884C\u7F16\u7A0B"
 weight: 38
 ---

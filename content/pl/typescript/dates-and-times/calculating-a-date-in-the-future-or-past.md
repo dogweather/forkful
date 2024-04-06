@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:32:01.932467-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:35.153053-06:00'
+description: "How to: Data i czas to fundamentalne poj\u0119cia, z kt\xF3rymi programi\u015B\
+  ci musz\u0105 si\u0119 zmaga\u0107 od pocz\u0105tku ery komputer\xF3w. JavaScript\
+  \ (a wi\u0119c i TypeScript) u\u017Cywaj\u0105\u2026"
+lastmod: '2024-04-05T21:53:36.592834-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Data i czas to fundamentalne poj\u0119cia, z kt\xF3rymi programi\u015Bci\
+  \ musz\u0105 si\u0119 zmaga\u0107 od pocz\u0105tku ery komputer\xF3w."
 title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---

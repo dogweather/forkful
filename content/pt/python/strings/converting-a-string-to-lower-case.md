@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:39:19.942698-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.140984-06:00'
+description: "Como Fazer: Note que m\xE9todos especiais para idiomas com caracteres\
+  \ especiais tamb\xE9m podem ser utilizados, se necess\xE1rio."
+lastmod: '2024-04-05T21:53:46.463145-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Note que m\xE9todos especiais para idiomas com caracteres especiais tamb\xE9\
+  m podem ser utilizados, se necess\xE1rio."
 title: "Convertendo uma string para min\xFAsculas"
 weight: 4
 ---

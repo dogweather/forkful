@@ -2,10 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:00.948515-07:00
-description: 'Hoe te: .'
-lastmod: '2024-03-13T22:44:51.207411-06:00'
+description: "Hoe te: Historisch gezien misten imperatieve programmeertalen zoals\
+  \ vroege versies van BASIC of Assembly de abstractie die functies bieden. In de\
+  \ loop van\u2026"
+lastmod: '2024-04-05T21:53:51.216546-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: Historisch gezien misten imperatieve programmeertalen zoals vroege versies
+  van BASIC of Assembly de abstractie die functies bieden.
 title: Code organiseren in functies
 weight: 18
 ---

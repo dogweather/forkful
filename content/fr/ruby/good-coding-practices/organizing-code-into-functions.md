@@ -2,9 +2,10 @@
 date: 2024-01-26 01:11:29.912702-07:00
 description: "Comment faire : Imaginez que vous \xE9crivez un script rapide pour saluer\
   \ les utilisateurs ."
-lastmod: '2024-03-13T22:44:58.425470-06:00'
+lastmod: '2024-04-05T21:53:59.828284-06:00'
 model: gpt-4-1106-preview
-summary: "Imaginez que vous \xE9crivez un script rapide pour saluer les utilisateurs."
+summary: "Imaginez que vous \xE9crivez un script rapide pour saluer les utilisateurs\
+  \ ."
 title: Organisation du code en fonctions
 weight: 18
 ---

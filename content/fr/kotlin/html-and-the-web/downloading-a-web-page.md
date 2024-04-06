@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:44:21.158380-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:57.737759-06:00'
+description: 'Comment faire : Sortie exemple .'
+lastmod: '2024-04-05T21:53:59.227157-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "T\xE9l\xE9chargement d'une page web"
 weight: 42
 ---

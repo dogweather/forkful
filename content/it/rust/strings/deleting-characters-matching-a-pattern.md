@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:43:10.809689-07:00
-description: 'Come fare: .'
-lastmod: '2024-03-13T22:44:43.202474-06:00'
+description: 'Come fare: Un esempio semplice per editar stringhe elimina i caratteri
+  non desiderati.'
+lastmod: '2024-04-05T21:53:43.975172-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Un esempio semplice per editar stringhe elimina i caratteri non desiderati.
 title: Eliminazione di caratteri che corrispondono a un pattern
 weight: 5
 ---

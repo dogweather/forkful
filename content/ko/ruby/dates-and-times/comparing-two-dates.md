@@ -6,10 +6,10 @@ description: "How to: (\uC5B4\uB5BB\uAC8C \uD558\uB098\uC694?) Ruby\uC5D0\uC11C 
   \uCCB4\uB97C \uC0DD\uC131\uD558\uACE0, \uADF8\uB300\uB85C \uBE44\uAD50 \uC5F0\uC0B0\
   \uC790\uB97C \uC801\uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:56.014023-06:00'
+lastmod: '2024-04-05T21:53:57.569254-06:00'
 model: gpt-4-1106-preview
-summary: "Ruby\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uBE44\uAD50\uD558\uB294 \uAC83\uC740\
-  \ \uAC04\uB2E8\uD569\uB2C8\uB2E4."
+summary: "(\uC5B4\uB5BB\uAC8C \uD558\uB098\uC694?) Ruby\uC5D0\uC11C \uB0A0\uC9DC\uB97C\
+  \ \uBE44\uAD50\uD558\uB294 \uAC83\uC740 \uAC04\uB2E8\uD569\uB2C8\uB2E4."
 title: "\uB450 \uB0A0\uC9DC \uBE44\uAD50\uD558\uAE30"
 weight: 27
 ---

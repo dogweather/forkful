@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:47:56.699910-07:00
-description: 'Como fazer: .'
-lastmod: '2024-03-13T22:44:46.658536-06:00'
+description: "Como fazer: Note que `strlen` conta caracteres, ent\xE3o se o texto\
+  \ contiver caracteres especiais ou acentuados, os resultados podem variar dependendo\
+  \ da\u2026"
+lastmod: '2024-04-05T21:53:47.003533-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Note que `strlen` conta caracteres, ent\xE3o se o texto contiver caracteres\
+  \ especiais ou acentuados, os resultados podem variar dependendo da codifica\xE7\
+  \xE3o."
 title: Descobrindo o comprimento de uma string
 weight: 7
 ---

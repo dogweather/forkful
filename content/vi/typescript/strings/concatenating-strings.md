@@ -2,10 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:39.477634-07:00
-description: "C\xE1ch th\u1EF1c hi\u1EC7n: ."
-lastmod: '2024-03-13T22:44:36.307988-06:00'
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Vi\u1EC7c n\u1ED1i chu\u1ED7i l\xE0 c\u01A1\
+  \ b\u1EA3n; n\xF3 \u0111\xE3 xu\u1EA5t hi\u1EC7n t\u1EEB nh\u1EEFng ng\xE0y \u0111\
+  \u1EA7u c\u1EE7a ng\xE0nh l\u1EADp tr\xECnh. V\u1EDBi TypeScript, m\u1EDF ra t\u1EEB\
+  \ JavaScript, ch\xFAng ta \u0111\xE3 \u0111i xa\u2026"
+lastmod: '2024-04-05T21:53:37.724638-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Vi\u1EC7c n\u1ED1i chu\u1ED7i l\xE0 c\u01A1 b\u1EA3n; n\xF3 \u0111\xE3 xu\u1EA5\
+  t hi\u1EC7n t\u1EEB nh\u1EEFng ng\xE0y \u0111\u1EA7u c\u1EE7a ng\xE0nh l\u1EADp\
+  \ tr\xECnh."
 title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 weight: 3
 ---

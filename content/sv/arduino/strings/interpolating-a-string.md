@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:50:16.369718-07:00
-description: "Hur G\xF6r Man: ."
-lastmod: '2024-03-13T22:44:38.154190-06:00'
+description: "Hur G\xF6r Man: Exempel p\xE5 utskrift: `Temp: 24.5C`."
+lastmod: '2024-04-05T21:53:39.491703-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Exempel p\xE5 utskrift."
 title: "Interpolera en str\xE4ng"
 weight: 8
 ---

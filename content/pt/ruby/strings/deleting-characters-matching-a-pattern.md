@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:43:10.438361-07:00
-description: 'Como fazer: .'
-lastmod: '2024-03-13T22:44:47.078432-06:00'
+description: "Como fazer: A fun\xE7\xE3o de elimina\xE7\xE3o de caracteres remonta\
+  \ ao in\xEDcio da programa\xE7\xE3o. Em Ruby, m\xE9todos como `delete` e `gsub`\
+  \ s\xE3o comumente usados para essa\u2026"
+lastmod: '2024-04-05T21:53:47.438121-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "A fun\xE7\xE3o de elimina\xE7\xE3o de caracteres remonta ao in\xEDcio da\
+  \ programa\xE7\xE3o."
 title: "Excluindo caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---

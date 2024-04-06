@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:58:27.803192-07:00
-description: "C\xF3mo Hacerlo: ."
-lastmod: '2024-03-13T22:44:58.595369-06:00'
+description: "C\xF3mo Hacerlo: El proceso de buscar y reemplazar texto en programaci\xF3\
+  n no es nuevo. Nace de la necesidad de manejar y manipular texto de forma automatizada\u2026"
+lastmod: '2024-04-05T21:53:59.954643-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "El proceso de buscar y reemplazar texto en programaci\xF3n no es nuevo."
 title: Buscando y reemplazando texto
 weight: 10
 ---

@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:46:21.402076-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:57.470375-06:00'
+description: "How to: Historiquement, l'extraction de sous-cha\xEEnes en Rust peut\
+  \ \xEAtre pi\xE8geuse car elle op\xE8re directement avec les index des octets et\
+  \ non des\u2026"
+lastmod: '2024-04-05T21:53:59.033725-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historiquement, l'extraction de sous-cha\xEEnes en Rust peut \xEAtre pi\xE8\
+  geuse car elle op\xE8re directement avec les index des octets et non des caract\xE8\
+  res."
 title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---

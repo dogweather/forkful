@@ -1,10 +1,17 @@
 ---
 date: 2024-01-20 17:45:57.299342-07:00
-description: "How to: (\uBC29\uBC95) ."
+description: "How to: (\uBC29\uBC95) \uBB38\uC790\uC5F4 \uCD94\uCD9C\uC740 1950\uB144\
+  \uB300\uBD80\uD130 \uD504\uB85C\uADF8\uB798\uBC0D \uC5B8\uC5B4\uC5D0 \uD3EC\uD568\
+  \uB418\uC5C8\uC2B5\uB2C8\uB2E4. Haskell\uC5D0\uC11C\uB294 \uBA85\uC2DC\uC801\uC778\
+  \ \u2018substring\u2019 \uD568\uC218 \uB300\uC2E0 `take`, `drop`, `splitAt` \uAC19\
+  \uC740 \uD568\uC218\uB85C \uC774 \uAE30\uB2A5\uC744 \uAD6C\uD604\uD569\uB2C8\uB2E4\
+  . \uB610\uD55C, \uBB38\uC790\uC5F4 \uD328\uD0A4\uC9C0\uC778 `text`\uC640\u2026"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.279954-06:00'
+lastmod: '2024-04-05T21:53:56.996807-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(\uBC29\uBC95) \uBB38\uC790\uC5F4 \uCD94\uCD9C\uC740 1950\uB144\uB300\uBD80\
+  \uD130 \uD504\uB85C\uADF8\uB798\uBC0D \uC5B8\uC5B4\uC5D0 \uD3EC\uD568\uB418\uC5C8\
+  \uC2B5\uB2C8\uB2E4."
 title: "\uBD80\uBD84 \uBB38\uC790\uC5F4 \uCD94\uCD9C"
 weight: 6
 ---

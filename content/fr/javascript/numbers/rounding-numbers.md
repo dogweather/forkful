@@ -2,10 +2,10 @@
 date: 2024-01-26 03:45:22.383256-07:00
 description: 'Comment faire : Voici comment vous arrondissez les nombres en JavaScript
   en utilisant `Math.round()`, `Math.ceil()`, et `Math.floor()` .'
-lastmod: '2024-03-13T22:44:58.269620-06:00'
+lastmod: '2024-04-05T21:53:59.672809-06:00'
 model: gpt-4-0125-preview
 summary: Voici comment vous arrondissez les nombres en JavaScript en utilisant `Math.round()`,
-  `Math.ceil()`, et `Math.floor()`.
+  `Math.ceil()`, et `Math.floor()` .
 title: Arrondir les nombres
 weight: 13
 ---

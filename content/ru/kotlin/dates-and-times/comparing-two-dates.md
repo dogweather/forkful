@@ -2,10 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 23:55:50.287265-07:00
-description: "\u041A\u0430\u043A \u0441\u0434\u0435\u043B\u0430\u0442\u044C: ."
-lastmod: '2024-03-13T22:44:45.001947-06:00'
+description: "\u041A\u0430\u043A \u0441\u0434\u0435\u043B\u0430\u0442\u044C: \u041F\
+  \u0440\u0438\u043C\u0435\u0440 \u0432\u044B\u0432\u043E\u0434\u0430."
+lastmod: '2024-04-05T21:53:45.513404-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: ''
 title: "\u0421\u0440\u0430\u0432\u043D\u0435\u043D\u0438\u0435 \u0434\u0432\u0443\u0445\
   \ \u0434\u0430\u0442"
 weight: 27

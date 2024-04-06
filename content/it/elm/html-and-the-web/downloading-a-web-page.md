@@ -2,9 +2,9 @@
 date: 2024-01-20 17:43:48.272053-07:00
 description: "How to: (Come fare:) In Elm, usare `Http` per scaricare una pagina web\
   \ \xE8 diretto. Creiamo una richiesta e gestiamo la risposta."
-lastmod: '2024-03-13T22:44:43.348863-06:00'
+lastmod: '2024-04-05T21:53:44.119765-06:00'
 model: gpt-4-1106-preview
-summary: "In Elm, usare `Http` per scaricare una pagina web \xE8 diretto."
+summary: "(Come fare:) In Elm, usare `Http` per scaricare una pagina web \xE8 diretto."
 title: Scaricare una pagina web
 weight: 42
 ---

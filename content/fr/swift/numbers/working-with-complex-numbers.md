@@ -2,10 +2,10 @@
 date: 2024-01-26 04:45:39.345835-07:00
 description: "Comment faire : Swift n'a pas de support int\xE9gr\xE9 pour les nombres\
   \ complexes, mais nous pouvons d\xE9velopper le n\xF4tre ."
-lastmod: '2024-03-13T22:44:58.213270-06:00'
+lastmod: '2024-04-05T21:53:59.627995-06:00'
 model: gpt-4-0125-preview
 summary: "Swift n'a pas de support int\xE9gr\xE9 pour les nombres complexes, mais\
-  \ nous pouvons d\xE9velopper le n\xF4tre."
+  \ nous pouvons d\xE9velopper le n\xF4tre ."
 title: Manipulation des nombres complexes
 weight: 14
 ---

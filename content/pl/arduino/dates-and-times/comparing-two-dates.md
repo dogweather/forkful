@@ -3,10 +3,10 @@ date: 2024-01-20 17:32:29.281269-07:00
 description: "How to: (Jak to zrobi\u0107:) W Arduino u\u017Cywamy struktury `tmElements_t`\
   \ z biblioteki TimeLib do przechowywania dat. Por\xF3wnuj\u0105c dwa obiekty, sprawdzamy\
   \ ich\u2026"
-lastmod: '2024-03-13T22:44:35.683774-06:00'
+lastmod: '2024-04-05T21:53:37.108731-06:00'
 model: gpt-4-1106-preview
-summary: "W Arduino u\u017Cywamy struktury `tmElements_t` z biblioteki TimeLib do\
-  \ przechowywania dat."
+summary: "(Jak to zrobi\u0107:) W Arduino u\u017Cywamy struktury `tmElements_t` z\
+  \ biblioteki TimeLib do przechowywania dat."
 title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---

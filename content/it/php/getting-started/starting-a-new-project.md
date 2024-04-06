@@ -2,10 +2,10 @@
 date: 2024-01-20 18:03:58.829742-07:00
 description: 'How to: (Come fare:) Per iniziare, installa il PHP, usa Composer per
   gestire le dipendenze e crea il tuo primo script. Ecco i passi chiave.'
-lastmod: '2024-03-13T22:44:43.517294-06:00'
+lastmod: '2024-04-05T21:53:44.282105-06:00'
 model: gpt-4-1106-preview
-summary: Per iniziare, installa il PHP, usa Composer per gestire le dipendenze e crea
-  il tuo primo script.
+summary: (Come fare:) Per iniziare, installa il PHP, usa Composer per gestire le dipendenze
+  e crea il tuo primo script.
 title: Avvio di un nuovo progetto
 weight: 1
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:35:19.945849-07:00
-description: 'Hvordan: .'
-lastmod: '2024-03-13T22:44:40.922143-06:00'
+description: "Hvordan: Historisk sett har sammensl\xE5ing av strenger v\xE6rt en grunnleggende\
+  \ funksjon i de fleste programmeringsspr\xE5k. Lua bruker '..' (to prikker) for\
+  \ \xE5\u2026"
+lastmod: '2024-04-05T21:53:41.886507-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historisk sett har sammensl\xE5ing av strenger v\xE6rt en grunnleggende\
+  \ funksjon i de fleste programmeringsspr\xE5k."
 title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---

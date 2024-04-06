@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:42:52.715524-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:45:00.534456-06:00'
+description: "How to: Historically, Ruby has been a language with a strong focus on\
+  \ text processing, inheriting some of its philosophies from Perl. That's why it\
+  \ gives\u2026"
+lastmod: '2024-04-05T21:53:36.241687-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Historically, Ruby has been a language with a strong focus on text processing,
+  inheriting some of its philosophies from Perl.
 title: Deleting characters matching a pattern
 weight: 5
 ---

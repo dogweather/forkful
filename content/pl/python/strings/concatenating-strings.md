@@ -3,10 +3,10 @@ date: 2024-01-20 17:35:49.050839-07:00
 description: "How to: (Jak to zrobi\u0107?) \u0141\u0105czenie string\xF3w w Pythonie\
   \ mo\u017Cemy zrealizowa\u0107 na r\xF3\u017Cne sposoby. Tutaj kilka przyk\u0142\
   ad\xF3w."
-lastmod: '2024-03-13T22:44:34.940774-06:00'
+lastmod: '2024-04-05T21:53:36.389713-06:00'
 model: gpt-4-1106-preview
-summary: "\u0141\u0105czenie string\xF3w w Pythonie mo\u017Cemy zrealizowa\u0107 na\
-  \ r\xF3\u017Cne sposoby."
+summary: "(Jak to zrobi\u0107?) \u0141\u0105czenie string\xF3w w Pythonie mo\u017C\
+  emy zrealizowa\u0107 na r\xF3\u017Cne sposoby."
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---

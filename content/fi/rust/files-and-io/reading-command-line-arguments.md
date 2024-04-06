@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:56:51.570171-07:00
-description: "How to: (Kuinka tehd\xE4:) ."
-lastmod: '2024-03-13T22:44:56.372670-06:00'
+description: "How to: (Kuinka tehd\xE4:) K\xE4ynnist\xE4 ohjelma komennolla `cargo\
+  \ run` seuraten argumentteja. Esimerkkil\xE4ht\xF6: `$ cargo run terve`."
+lastmod: '2024-04-05T21:53:57.931906-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(Kuinka tehd\xE4:) K\xE4ynnist\xE4 ohjelma komennolla `cargo run` seuraten\
+  \ argumentteja."
 title: Komennoriviparametrien lukeminen
 weight: 23
 ---

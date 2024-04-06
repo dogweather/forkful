@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:55:20.388578-07:00
-description: 'Hvordan: .'
-lastmod: '2024-03-13T22:44:40.990176-06:00'
+description: "Hvordan: Kj\xF8r skriptet med `./hilsen.sh Verden`, og du f\xE5r."
+lastmod: '2024-04-05T21:53:41.951681-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Kj\xF8r skriptet med `./hilsen.sh Verden`, og du f\xE5r."
 title: Lese kommandolinjeargumenter
 weight: 23
 ---

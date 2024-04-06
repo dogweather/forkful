@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 04:28:56.214925-07:00
-description: 'Hvordan: .'
-lastmod: '2024-03-13T22:44:40.822591-06:00'
+description: "Hvordan: XML har eksistert siden slutten av 90-tallet, noe som gj\xF8\
+  r det til en bestefar i teknologi\xE5rene. Det ble skapt for dataoverf\xF8rbarhet\
+  \ og letthet i\u2026"
+lastmod: '2024-04-05T21:53:41.795052-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "XML har eksistert siden slutten av 90-tallet, noe som gj\xF8r det til en\
+  \ bestefar i teknologi\xE5rene."
 title: "\xC5 jobbe med XML"
 weight: 40
 ---

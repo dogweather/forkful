@@ -2,9 +2,9 @@
 date: 2024-01-20 17:46:33.980109-07:00
 description: 'How to: (Come fare:) In Ruby, possiamo usare diversi metodi per estrarre
   sottostringhe. Ecco alcuni esempi.'
-lastmod: '2024-03-13T22:44:44.038718-06:00'
+lastmod: '2024-04-05T21:53:44.684175-06:00'
 model: gpt-4-1106-preview
-summary: In Ruby, possiamo usare diversi metodi per estrarre sottostringhe.
+summary: (Come fare:) In Ruby, possiamo usare diversi metodi per estrarre sottostringhe.
 title: Estrazione di sottostringhe
 weight: 6
 ---

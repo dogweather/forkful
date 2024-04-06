@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:59:51.558220-07:00
-description: "How to / Jak to zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:35.318644-06:00'
+description: "How to / Jak to zrobi\u0107: Sample Output."
+lastmod: '2024-04-05T21:53:36.756205-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---

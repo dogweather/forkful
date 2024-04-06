@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:35:46.546659-07:00
-description: 'How to: (Miten:) .'
-lastmod: '2024-03-13T22:44:56.647830-06:00'
+description: "How to: (Miten:) Ennen PHP:n versiota 4, yleisin tapa yhdist\xE4\xE4\
+  \ merkkijonoja oli k\xE4ytt\xE4\xE4 `,`-operaattoria, mutta se korvattiin `.`-operaattorilla\
+  \ selkeyden\u2026"
+lastmod: '2024-04-05T21:53:58.219618-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(Miten:) Ennen PHP:n versiota 4, yleisin tapa yhdist\xE4\xE4 merkkijonoja\
+  \ oli k\xE4ytt\xE4\xE4 `,`-operaattoria, mutta se korvattiin `.`-operaattorilla\
+  \ selkeyden ja suorituskyvyn parantamiseksi."
 title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---

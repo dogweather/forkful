@@ -3,10 +3,14 @@ changelog:
 - 2024-01-21, dogweather, Reviewed for accuracy
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:50.147581-07:00
-description: "C\xE1ch th\u1EF1c hi\u1EC7n: ."
-lastmod: '2024-03-13T22:44:36.712963-06:00'
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: C\xE1c d\u1EF1 \xE1n Haskell th\u01B0\u1EDD\
+  ng ph\u1EE5 thu\u1ED9c v\xE0o c\xE1c c\xF4ng c\u1EE5 nh\u01B0 Stack ho\u1EB7c Cabal.\
+  \ Stack qu\u1EA3n l\xFD c\xE1c s\u1EF1 ph\u1EE5 thu\u1ED9c, \u0111\u1EA3m b\u1EA3\
+  o x\xE2y d\u1EF1ng nh\u1EA5t qu\xE1n. V\xE0o\u2026"
+lastmod: '2024-04-05T21:53:38.099392-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "C\xE1c d\u1EF1 \xE1n Haskell th\u01B0\u1EDDng ph\u1EE5 thu\u1ED9c v\xE0\
+  o c\xE1c c\xF4ng c\u1EE5 nh\u01B0 Stack ho\u1EB7c Cabal."
 title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---

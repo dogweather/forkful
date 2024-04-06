@@ -1,9 +1,11 @@
 ---
 date: 2024-01-26 01:11:36.313626-07:00
-description: "Jak to zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:35.545574-06:00'
+description: "Jak to zrobi\u0107: Funkcje mog\u0105 by\u0107 bardziej z\u0142o\u017C\
+  one, obs\u0142uguj\u0105ce r\xF3\u017Cne zadania."
+lastmod: '2024-04-05T21:53:36.974088-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Funkcje mog\u0105 by\u0107 bardziej z\u0142o\u017Cone, obs\u0142uguj\u0105\
+  ce r\xF3\u017Cne zadania."
 title: Organizacja kodu w funkcje
 weight: 18
 ---

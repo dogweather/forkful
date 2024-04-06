@@ -4,9 +4,9 @@ changelog:
 date: 2024-02-03 19:13:52.574322-07:00
 description: "C\xF3mo hacerlo: **An\xE1lisis B\xE1sico:** Los m\xE9todos `DateTime.Parse`\
   \ y `DateTime.TryParse` son las opciones predilectas para convertir una cadena en\u2026"
-lastmod: '2024-03-13T22:44:59.087206-06:00'
+lastmod: '2024-04-05T21:54:00.430457-06:00'
 model: gpt-4-0125-preview
-summary: "**An\xE1lisis B\xE1sico:**\n\nLos m\xE9todos `DateTime.Parse` y `DateTime.TryParse`\
+summary: "**An\xE1lisis B\xE1sico:** Los m\xE9todos `DateTime.Parse` y `DateTime.TryParse`\
   \ son las opciones predilectas para convertir una cadena en `DateTime`."
 title: Analizando una fecha a partir de una cadena de texto
 weight: 30

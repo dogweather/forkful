@@ -2,10 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:31.776699-07:00
-description: 'Hoe doe je dat: .'
-lastmod: '2024-03-13T22:44:50.464734-06:00'
+description: "Hoe doe je dat: Dit toont de eenvoudigste manier om iets naar de console\
+  \ te printen met `IO.inspect/2`. De label-optie voegt een aangepast voorvoegsel\u2026"
+lastmod: '2024-04-05T21:53:50.489499-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: Dit toont de eenvoudigste manier om iets naar de console te printen met `IO.inspect/2`.
 title: Debug-output afdrukken
 weight: 33
 ---

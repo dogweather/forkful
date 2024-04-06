@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 04:26:00.823060-07:00
-description: 'Wie man: .'
-lastmod: '2024-03-13T22:44:53.696503-06:00'
+description: "Wie man: TOML, das f\xFCr Toms Offensichtliche, Minimale Sprache steht,\
+  \ wurde 2013 von Tom Preston-Werner erschaffen. Es zielt darauf ab, lesbarer als\
+  \ JSON\u2026"
+lastmod: '2024-04-05T21:53:55.575907-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "TOML, das f\xFCr Toms Offensichtliche, Minimale Sprache steht, wurde 2013\
+  \ von Tom Preston-Werner erschaffen."
 title: Arbeiten mit TOML
 weight: 39
 ---

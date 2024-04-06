@@ -4,10 +4,11 @@ description: "How to: (\u5982\u4F55\u5B9E\u73B0\uFF1A) \u5728C++\u4E2D\uFF0C\u4F
   \u53EF\u4EE5\u4F7F\u7528`std::ostringstream`\u6216C++20\u4E2D\u7684`std::format`\u6765\
   \u63D2\u503C\u5B57\u7B26\u4E32\u3002"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:48.094956-06:00'
+lastmod: '2024-04-05T21:53:48.390592-06:00'
 model: gpt-4-1106-preview
-summary: "\u5728C++\u4E2D\uFF0C\u4F60\u53EF\u4EE5\u4F7F\u7528`std::ostringstream`\u6216\
-  C++20\u4E2D\u7684`std::format`\u6765\u63D2\u503C\u5B57\u7B26\u4E32."
+summary: "(\u5982\u4F55\u5B9E\u73B0\uFF1A) \u5728C++\u4E2D\uFF0C\u4F60\u53EF\u4EE5\
+  \u4F7F\u7528`std::ostringstream`\u6216C++20\u4E2D\u7684`std::format`\u6765\u63D2\
+  \u503C\u5B57\u7B26\u4E32\u3002"
 title: "\u5B57\u7B26\u4E32\u63D2\u503C"
 weight: 8
 ---

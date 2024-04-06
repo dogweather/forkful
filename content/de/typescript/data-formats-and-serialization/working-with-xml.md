@@ -1,9 +1,10 @@
 ---
 date: 2024-01-26 04:36:08.737058-07:00
-description: 'Wie geht das: .'
-lastmod: '2024-03-13T22:44:53.654985-06:00'
+description: "Wie geht das: XML oder Extensible Markup Language gibt es seit den sp\xE4\
+  ten 90ern. Seine selbstbeschreibende Natur und das f\xFCr Menschen lesbare Format\u2026"
+lastmod: '2024-04-05T21:53:55.534006-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "XML oder Extensible Markup Language gibt es seit den sp\xE4ten 90ern."
 title: Arbeiten mit XML
 weight: 40
 ---

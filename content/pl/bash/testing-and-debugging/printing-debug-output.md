@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:52:16.499802-07:00
-description: "How to (Jak to zrobi\u0107) ."
-lastmod: '2024-03-13T22:44:35.587469-06:00'
+description: "How to (Jak to zrobi\u0107) Wpisz powy\u017Cszy kod do skryptu i uruchom.\
+  \ Zobaczysz warto\u015Bci zmiennych i przebieg p\u0119tli for."
+lastmod: '2024-04-05T21:53:37.014520-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Zobaczysz warto\u015Bci zmiennych i przebieg p\u0119tli for."
 title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---

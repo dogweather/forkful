@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:40:10.029389-07:00
-description: "Jak to zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:35.016532-06:00'
+description: "Jak to zrobi\u0107: Przyk\u0142adowe wyj\u015Bcie."
+lastmod: '2024-04-05T21:53:36.460323-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Przyk\u0142adowe wyj\u015Bcie."
 title: Tworzenie pliku tymczasowego
 weight: 21
 ---

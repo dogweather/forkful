@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:55:30.025837-07:00
-description: "How to: (Jak to zrobi\u0107:) ."
-lastmod: '2024-03-13T22:44:35.728208-06:00'
+description: "How to: (Jak to zrobi\u0107:) Przyk\u0142adowe wyj\u015Bcie, gdy uruchamiasz\
+  \ `./program arg1 arg2 arg3`."
+lastmod: '2024-04-05T21:53:37.154366-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(Jak to zrobi\u0107:) Przyk\u0142adowe wyj\u015Bcie, gdy uruchamiasz `./program\
+  \ arg1 arg2 arg3`."
 title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---

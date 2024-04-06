@@ -2,9 +2,9 @@
 date: 2024-01-20 17:52:57.652041-07:00
 description: "How to: (Jak to zrobi\u0107:) W Kotlinie wypisywanie debugowania jest\
   \ banalne. U\u017Cywasz `println()` do wyrzucania warto\u015Bci na konsol\u0119."
-lastmod: '2024-03-13T22:44:35.367474-06:00'
+lastmod: '2024-04-05T21:53:36.804977-06:00'
 model: gpt-4-1106-preview
-summary: W Kotlinie wypisywanie debugowania jest banalne.
+summary: "(Jak to zrobi\u0107:) W Kotlinie wypisywanie debugowania jest banalne."
 title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---

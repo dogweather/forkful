@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:48:16.503417-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:44.040653-06:00'
+description: "How to: In Ruby, `.length` e `.size` sono sinonimi, entrambi restituiscono\
+  \ il numero di caratteri in una stringa. Questa funzionalit\xE0 esiste da molto\u2026"
+lastmod: '2024-04-05T21:53:44.686144-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: In Ruby, `.length` e `.size` sono sinonimi, entrambi restituiscono il numero
+  di caratteri in una stringa.
 title: Trovare la lunghezza di una stringa
 weight: 7
 ---

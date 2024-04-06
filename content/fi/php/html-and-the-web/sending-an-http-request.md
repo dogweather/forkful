@@ -2,9 +2,9 @@
 date: 2024-01-20 18:00:11.703472-07:00
 description: "How to: (Miten tehd\xE4\xE4n:) PHP:ss\xE4 HTTP-pyynt\xF6jen tekeminen\
   \ voi olla yksinkertaista. T\xE4ss\xE4 esimerkkej\xE4 `file_get_contents`- ja `cURL`-funktioilla."
-lastmod: '2024-03-13T22:44:56.652571-06:00'
+lastmod: '2024-04-05T21:53:58.224613-06:00'
 model: gpt-4-1106-preview
-summary: "PHP:ss\xE4 HTTP-pyynt\xF6jen tekeminen voi olla yksinkertaista."
+summary: "(Miten tehd\xE4\xE4n:) PHP:ss\xE4 HTTP-pyynt\xF6jen tekeminen voi olla yksinkertaista."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---

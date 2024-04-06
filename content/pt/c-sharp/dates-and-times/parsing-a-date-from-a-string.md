@@ -5,9 +5,9 @@ date: 2024-02-03 19:13:46.759690-07:00
 description: "Como Fazer: **An\xE1lise B\xE1sica:** Os m\xE9todos `DateTime.Parse`\
   \ e `DateTime.TryParse` s\xE3o as op\xE7\xF5es padr\xE3o para converter uma string\
   \ em um `DateTime`. Aqui\u2026"
-lastmod: '2024-03-13T22:44:46.593445-06:00'
+lastmod: '2024-04-05T21:53:46.937382-06:00'
 model: gpt-4-0125-preview
-summary: "**An\xE1lise B\xE1sica:**\n\nOs m\xE9todos `DateTime.Parse` e `DateTime.TryParse`\
+summary: "**An\xE1lise B\xE1sica:** Os m\xE9todos `DateTime.Parse` e `DateTime.TryParse`\
   \ s\xE3o as op\xE7\xF5es padr\xE3o para converter uma string em um `DateTime`."
 title: Analisando uma data a partir de uma string
 weight: 30

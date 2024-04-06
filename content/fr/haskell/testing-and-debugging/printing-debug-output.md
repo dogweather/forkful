@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:52:44.820887-07:00
 description: 'Comment faire : Voici quelques exemples simples en Haskell .'
-lastmod: '2024-03-13T22:44:57.836624-06:00'
+lastmod: '2024-04-05T21:53:59.321241-06:00'
 model: gpt-4-1106-preview
-summary: Voici quelques exemples simples en Haskell.
+summary: Voici quelques exemples simples en Haskell .
 title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---

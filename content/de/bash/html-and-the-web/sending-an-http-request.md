@@ -1,7 +1,7 @@
 ---
 date: 2024-01-20 17:59:02.407574-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:54.056437-06:00'
+description: null
+lastmod: '2024-04-05T21:53:55.938672-06:00'
 model: gpt-4-1106-preview
 summary: ''
 title: Einen HTTP-Request senden

@@ -1,10 +1,12 @@
 ---
 date: 2024-01-20 17:43:22.958736-07:00
-description: "How to: (\u65B9\u6CD5) ."
+description: "How to: (\u65B9\u6CD5) \u30B5\u30F3\u30D7\u30EB\u51FA\u529B\u306F `Hello\
+  \ Happy New Year` \u306B\u306A\u308A\u307E\u3059\u3002"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:42.590013-06:00'
+lastmod: '2024-04-05T21:53:43.395611-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(\u65B9\u6CD5) \u30B5\u30F3\u30D7\u30EB\u51FA\u529B\u306F `Hello Happy New\
+  \ Year` \u306B\u306A\u308A\u307E\u3059\u3002"
 title: "\u30D1\u30BF\u30FC\u30F3\u306B\u4E00\u81F4\u3059\u308B\u6587\u5B57\u3092\u524A\
   \u9664\u3059\u308B"
 weight: 5

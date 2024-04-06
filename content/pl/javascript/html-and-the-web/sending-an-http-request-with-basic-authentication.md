@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 18:02:04.934666-07:00
-description: "Jak to zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:35.796293-06:00'
+description: "Jak to zrobi\u0107: Przykladowy wynik."
+lastmod: '2024-04-05T21:53:37.223218-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
 weight: 45
 ---

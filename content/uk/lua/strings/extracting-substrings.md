@@ -2,9 +2,10 @@
 date: 2024-01-20 17:46:22.962303-07:00
 description: "How to: (\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\
   \u0438:) In Lua, you can extract substrings using the `string.sub` function."
-lastmod: '2024-03-13T22:44:49.482197-06:00'
+lastmod: '2024-04-05T21:53:49.640499-06:00'
 model: gpt-4-1106-preview
-summary: In Lua, you can extract substrings using the `string.sub` function.
+summary: "(\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\u0438:)\
+  \ In Lua, you can extract substrings using the `string.sub` function."
 title: "\u0412\u0438\u0434\u0456\u043B\u0435\u043D\u043D\u044F \u043F\u0456\u0434\u0440\
   \u044F\u0434\u043A\u0456\u0432"
 weight: 6

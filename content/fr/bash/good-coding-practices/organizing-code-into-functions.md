@@ -1,9 +1,9 @@
 ---
 date: 2024-01-26 01:09:02.789254-07:00
 description: "Comment faire : Cr\xE9ez une fonction simple en Bash ."
-lastmod: '2024-03-13T22:44:58.002644-06:00'
+lastmod: '2024-04-05T21:53:59.460664-06:00'
 model: gpt-4-1106-preview
-summary: "Cr\xE9ez une fonction simple en Bash."
+summary: "Cr\xE9ez une fonction simple en Bash ."
 title: Organisation du code en fonctions
 weight: 18
 ---

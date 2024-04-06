@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:46:48.693442-07:00
-description: "N\xE4in teet: ."
-lastmod: '2024-03-13T22:44:56.816039-06:00'
+description: "N\xE4in teet: Tuloste: `Merkkijonon pituus: 12`."
+lastmod: '2024-04-05T21:53:58.391742-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---

@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:44:42.311365-07:00
 description: 'How to: (Comment faire : ) Voici un exemple simple avec `requests` .'
-lastmod: '2024-03-13T22:44:57.234424-06:00'
+lastmod: '2024-04-05T21:53:58.816871-06:00'
 model: gpt-4-1106-preview
-summary: Voici un exemple simple avec `requests`.
+summary: ''
 title: "T\xE9l\xE9chargement d'une page web"
 weight: 42
 ---

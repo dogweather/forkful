@@ -1,9 +1,13 @@
 ---
 date: 2024-01-26 01:10:42.365157-07:00
-description: "Kuinka tehd\xE4: ."
-lastmod: '2024-03-13T22:44:56.955382-06:00'
+description: "Kuinka tehd\xE4: Perinteisesti, imperatiiviset ohjelmointikielet kuten\
+  \ alkuper\xE4iset BASIC- tai Assembly-versiot eiv\xE4t tarjonneet samaa abstraktiota\
+  \ kuin mit\xE4\u2026"
+lastmod: '2024-04-05T21:53:58.533559-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Perinteisesti, imperatiiviset ohjelmointikielet kuten alkuper\xE4iset BASIC-\
+  \ tai Assembly-versiot eiv\xE4t tarjonneet samaa abstraktiota kuin mit\xE4 funktiot\
+  \ tarjoavat."
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---

@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 18:03:50.627179-07:00
-description: "Jak to zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:35.365634-06:00'
+description: "Jak to zrobi\u0107: Historia Kotlin rozpocz\u0119\u0142a si\u0119 w\
+  \ 2011 roku, kiedy firma JetBrains postanowi\u0142a stworzy\u0107 j\u0119zyk, kt\xF3\
+  ry by\u0142by lepsz\u0105 alternatyw\u0105 dla Javy.\u2026"
+lastmod: '2024-04-05T21:53:36.802978-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historia Kotlin rozpocz\u0119\u0142a si\u0119 w 2011 roku, kiedy firma JetBrains\
+  \ postanowi\u0142a stworzy\u0107 j\u0119zyk, kt\xF3ry by\u0142by lepsz\u0105 alternatyw\u0105\
+  \ dla Javy."
 title: Rozpoczynanie nowego projektu
 weight: 1
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:43:02.287182-07:00
-description: "Slik gj\xF8r du: ."
-lastmod: '2024-03-13T22:44:41.126612-06:00'
+description: "Slik gj\xF8r du: Pattern-matching og sletting av tegn er vanlige tekstbehandlingsoperasjoner\
+  \ og har r\xF8tter i tidlige programmeringsspr\xE5k. Regex, eller\u2026"
+lastmod: '2024-04-05T21:53:42.087086-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Pattern-matching og sletting av tegn er vanlige tekstbehandlingsoperasjoner\
+  \ og har r\xF8tter i tidlige programmeringsspr\xE5k."
 title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---

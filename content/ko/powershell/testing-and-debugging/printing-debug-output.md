@@ -5,12 +5,12 @@ description: "How to: (\uC5B4\uB5BB\uAC8C:) PowerShell\uC5D0\uC11C \uB514\uBC84\
   \ `Write-Host`, `Write-Output` \uADF8\uB9AC\uACE0 `Write-Debug` \uBA85\uB839\uC5B4\
   \uB97C \uC0AC\uC6A9\uD558\uB294 \uAC83\uC785\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.550151-06:00'
+lastmod: '2024-04-05T21:53:57.205054-06:00'
 model: gpt-4-1106-preview
-summary: "PowerShell\uC5D0\uC11C \uB514\uBC84\uADF8 \uBA54\uC2DC\uC9C0\uB97C \uCD9C\
-  \uB825\uD558\uB294 \uAE30\uBCF8 \uBC29\uBC95\uC740 `Write-Host`, `Write-Output`\
-  \ \uADF8\uB9AC\uACE0 `Write-Debug` \uBA85\uB839\uC5B4\uB97C \uC0AC\uC6A9\uD558\uB294\
-  \ \uAC83\uC785\uB2C8\uB2E4."
+summary: "(\uC5B4\uB5BB\uAC8C:) PowerShell\uC5D0\uC11C \uB514\uBC84\uADF8 \uBA54\uC2DC\
+  \uC9C0\uB97C \uCD9C\uB825\uD558\uB294 \uAE30\uBCF8 \uBC29\uBC95\uC740 `Write-Host`,\
+  \ `Write-Output` \uADF8\uB9AC\uACE0 `Write-Debug` \uBA85\uB839\uC5B4\uB97C \uC0AC\
+  \uC6A9\uD558\uB294 \uAC83\uC785\uB2C8\uB2E4."
 title: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC744 \uCC0D\uC5B4\uBCF4\uAE30"
 weight: 33
 ---

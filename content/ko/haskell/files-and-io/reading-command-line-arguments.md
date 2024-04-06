@@ -5,10 +5,11 @@ description: "How to: (\uBC29\uBC95) Haskell\uC5D0\uC11C \uBA85\uB839\uC904 \uC7
   \uC6A9\uD569\uB2C8\uB2E4. \uAC04\uB2E8\uD55C \uC608\uC81C\uB97C \uBCF4\uACA0\uC2B5\
   \uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.317939-06:00'
+lastmod: '2024-04-05T21:53:57.027322-06:00'
 model: gpt-4-1106-preview
-summary: "Haskell\uC5D0\uC11C \uBA85\uB839\uC904 \uC778\uC218\uB97C \uC77D\uB294 \uAC83\
-  \uC740 `System.Environment` \uBAA8\uB4C8\uC744 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
+summary: "(\uBC29\uBC95) Haskell\uC5D0\uC11C \uBA85\uB839\uC904 \uC778\uC218\uB97C\
+  \ \uC77D\uB294 \uAC83\uC740 `System.Environment` \uBAA8\uB4C8\uC744 \uC0AC\uC6A9\
+  \uD569\uB2C8\uB2E4."
 title: "\uBA85\uB839\uC904 \uC778\uC218 \uC77D\uAE30"
 weight: 23
 ---

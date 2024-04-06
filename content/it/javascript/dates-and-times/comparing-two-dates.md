@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:33:22.434234-07:00
-description: 'Come fare: .'
-lastmod: '2024-03-13T22:44:43.825144-06:00'
+description: "Come fare: La comparazione di date \xE8 essenziale fin dai primi giorni\
+  \ della programmazione. JavaScript gestisce le date come oggetti `Date`, che\u2026"
+lastmod: '2024-04-05T21:53:44.573257-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "La comparazione di date \xE8 essenziale fin dai primi giorni della programmazione."
 title: Confronto tra due date
 weight: 27
 ---

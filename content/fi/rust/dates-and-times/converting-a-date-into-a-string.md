@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:37:40.919848-07:00
-description: 'How to: Miten.'
-lastmod: '2024-03-13T22:44:56.368381-06:00'
+description: "How to: Syv\xE4luotaus: Alun perin p\xE4iv\xE4m\xE4\xE4r\xE4n merkkijonomuotoon\
+  \ muuttaminen ei kuulunut Rustin peruskirjastoon. K\xE4ytt\xE4j\xE4t joutuivat tukeutumaan\
+  \ kolmannen\u2026"
+lastmod: '2024-04-05T21:53:57.927897-06:00'
 model: gpt-4-1106-preview
-summary: Miten.
+summary: ''
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---

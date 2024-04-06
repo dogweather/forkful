@@ -5,11 +5,12 @@ description: "How to: (\u5982\u4F55\u64CD\u4F5C\uFF1A) \u5C06\u5B57\u7B26\u4E32\
   \u4E2D\u7684 `std::transform()` \u51FD\u6570\u3002\u770B\u4E0B\u9762\u7684\u4F8B\
   \u5B50\uFF1A."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:48.095938-06:00'
+lastmod: '2024-04-05T21:53:48.391605-06:00'
 model: gpt-4-1106-preview
-summary: "\u5C06\u5B57\u7B26\u4E32\u8F6C\u6362\u6210\u5C0F\u5199\u53EF\u4EE5\u4F7F\
-  \u7528 `<algorithm>` \u5934\u6587\u4EF6\u4E2D\u7684 `std::transform()` \u51FD\u6570\
-  \u3002\u770B\u4E0B\u9762\u7684\u4F8B\u5B50\uFF1A."
+summary: "(\u5982\u4F55\u64CD\u4F5C\uFF1A) \u5C06\u5B57\u7B26\u4E32\u8F6C\u6362\u6210\
+  \u5C0F\u5199\u53EF\u4EE5\u4F7F\u7528 `<algorithm>` \u5934\u6587\u4EF6\u4E2D\u7684\
+  \ `std::transform()` \u51FD\u6570\u3002\u770B\u4E0B\u9762\u7684\u4F8B\u5B50\uFF1A\
+  ."
 title: "\u5C06\u5B57\u7B26\u4E32\u8F6C\u6362\u4E3A\u5C0F\u5199"
 weight: 4
 ---

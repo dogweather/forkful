@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:55:54.398186-07:00
-description: "Hur g\xF6r man: ."
-lastmod: '2024-03-13T22:44:37.540444-06:00'
+description: "Hur g\xF6r man: Kommandoradsargument har varit en grundsten i program\
+  \ sedan de tidigaste dagarna av datorer. I Clojure, som i m\xE5nga Lisp-dialekter,\
+  \ ger den\u2026"
+lastmod: '2024-04-05T21:53:38.869143-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Kommandoradsargument har varit en grundsten i program sedan de tidigaste
+  dagarna av datorer.
 title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---

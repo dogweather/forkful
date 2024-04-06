@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:45:17.492325-07:00
-description: "Jak to zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:35.571606-06:00'
+description: "Jak to zrobi\u0107: Wycinanie podci\u0105g\xF3w w Bashu ma d\u0142ug\u0105\
+  \ histori\u0119 \u2013 funkcjonalno\u015B\u0107 ta by\u0142a dost\u0119pna ju\u017C\
+  \ w wersjach przed Bash 4. Pozwala to na obs\u0142ug\u0119 zar\xF3wno\u2026"
+lastmod: '2024-04-05T21:53:36.999199-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Wycinanie podci\u0105g\xF3w w Bashu ma d\u0142ug\u0105 histori\u0119 \u2013\
+  \ funkcjonalno\u015B\u0107 ta by\u0142a dost\u0119pna ju\u017C w wersjach przed\
+  \ Bash 4."
 title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
 weight: 6
 ---

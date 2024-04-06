@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:50:04.699881-07:00
-description: "Slik gj\xF8r du: ."
-lastmod: '2024-03-13T22:44:41.045024-06:00'
+description: "Slik gj\xF8r du: Output: \"Temperaturen er 22 grader Celsius.\"."
+lastmod: '2024-04-05T21:53:42.006624-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: Interpolering av en streng
 weight: 8
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:37:01.513026-07:00
-description: "C\xF3mo hacerlo: ."
-lastmod: '2024-03-13T22:44:59.469943-06:00'
+description: "C\xF3mo hacerlo: Hist\xF3ricamente, JavaScript manejaba fechas como\
+  \ parte del objeto `Date`, basado en el tiempo Unix, contando milisegundos desde\
+  \ el 1 de enero\u2026"
+lastmod: '2024-04-05T21:54:00.820305-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Hist\xF3ricamente, JavaScript manejaba fechas como parte del objeto `Date`,\
+  \ basado en el tiempo Unix, contando milisegundos desde el 1 de enero de 1970."
 title: Convirtiendo una fecha en una cadena de texto
 weight: 28
 ---

@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:59:10.916264-07:00
-description: 'How to: (Comment faire :) .'
-lastmod: '2024-03-13T22:44:58.105812-06:00'
+description: 'How to: (Comment faire :) Sortie d''exemple .'
+lastmod: '2024-04-05T21:53:59.541632-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: (Comment faire :) Sortie d'exemple .
 title: "Envoi d'une requ\xEAte HTTP"
 weight: 44
 ---

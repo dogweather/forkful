@@ -3,9 +3,10 @@ date: 2024-01-20 15:32:11.518269-07:00
 description: "How to: (\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\
   \u0438:) Let's use Jsoup, a Java library for HTML parsing. Add it to your project\
   \ with Maven."
-lastmod: '2024-03-13T22:44:49.076348-06:00'
+lastmod: '2024-04-05T21:53:49.291569-06:00'
 model: unknown
-summary: Let's use Jsoup, a Java library for HTML parsing.
+summary: "(\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\u0438:)\
+  \ Let's use Jsoup, a Java library for HTML parsing."
 title: "\u041F\u0430\u0440\u0441\u0438\u043D\u0433 HTML"
 weight: 43
 ---

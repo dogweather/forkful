@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:02:43.912205-07:00
-description: "Jak to zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:35.184196-06:00'
+description: "Jak to zrobi\u0107: Je\u015Bli wszystko jest ok, zobaczysz w konsoli\
+  \ \"Odpowied\u017A:\" i tre\u015B\u0107 zasobu. W przypadku b\u0142\u0119du, pojawi\
+  \ si\u0119 \"B\u0142\u0105d:\" i kod statusu."
+lastmod: '2024-04-05T21:53:36.621059-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Je\u015Bli wszystko jest ok, zobaczysz w konsoli \"Odpowied\u017A:\" i tre\u015B\
+  \u0107 zasobu."
 title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
 weight: 45
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:36:02.668344-07:00
-description: 'Anleitung: .'
-lastmod: '2024-03-13T22:44:53.546773-06:00'
+description: "Anleitung: Elixir nutzte urspr\xFCnglich die `Ecto.DateTime` Bibliothek,\
+  \ \xFCbernahm aber sp\xE4ter die `DateTime` Struktur direkt ins Kernsystem. Alternativen\
+  \ f\xFCr\u2026"
+lastmod: '2024-04-05T21:53:55.430554-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Elixir nutzte urspr\xFCnglich die `Ecto.DateTime` Bibliothek, \xFCbernahm\
+  \ aber sp\xE4ter die `DateTime` Struktur direkt ins Kernsystem."
 title: Datum in einen String umwandeln
 weight: 28
 ---

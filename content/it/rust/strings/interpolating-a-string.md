@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:51:37.875780-07:00
-description: 'Come fare: .'
-lastmod: '2024-03-13T22:44:43.204255-06:00'
+description: "Come fare: L'interpolazione di stringhe non \xE8 presente in Rust come\
+  \ feature del linguaggio nativa, come in altri linguaggi (ad esempio, Python o Ruby).\
+  \ Si\u2026"
+lastmod: '2024-04-05T21:53:43.976826-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "L'interpolazione di stringhe non \xE8 presente in Rust come feature del\
+  \ linguaggio nativa, come in altri linguaggi (ad esempio, Python o Ruby)."
 title: Interpolazione di una stringa
 weight: 8
 ---

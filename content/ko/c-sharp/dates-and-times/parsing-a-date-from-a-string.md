@@ -7,9 +7,9 @@ description: "\uBC29\uBC95: **\uAE30\uBCF8 \uD30C\uC2F1:** \uBB38\uC790\uC5F4\uC
   \uD0DD\uC9C0\uB294 `DateTime.Parse` \uBC0F `DateTime.TryParse` \uBA54\uC11C\uB4DC\
   \uC785\uB2C8\uB2E4. \uB2E4\uC74C\uC740 \uAC04\uB2E8\uD55C \uC608\uC2DC\uC785\uB2C8\
   \uB2E4."
-lastmod: '2024-03-13T22:44:55.248197-06:00'
+lastmod: '2024-04-05T21:53:56.971912-06:00'
 model: gpt-4-0125-preview
-summary: "**\uAE30\uBCF8 \uD30C\uC2F1:**\n\n\uBB38\uC790\uC5F4\uC744 `DateTime`\uC73C\
+summary: "**\uAE30\uBCF8 \uD30C\uC2F1:** \uBB38\uC790\uC5F4\uC744 `DateTime`\uC73C\
   \uB85C \uBCC0\uD658\uD558\uAE30 \uC704\uD55C \uC8FC\uC694 \uC120\uD0DD\uC9C0\uB294\
   \ `DateTime.Parse` \uBC0F `DateTime.TryParse` \uBA54\uC11C\uB4DC\uC785\uB2C8\uB2E4\
   ."

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:48:15.593816-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:53.664028-06:00'
+description: "How to: Die L\xE4nge eines Strings in Rust zu bestimmen, war nicht immer\
+  \ so direkt wie heute. Fr\xFCher war es komplizierter, zuverl\xE4ssig die Zeichenzahl\
+  \ zu\u2026"
+lastmod: '2024-04-05T21:53:55.543220-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Die L\xE4nge eines Strings in Rust zu bestimmen, war nicht immer so direkt\
+  \ wie heute."
 title: "Ermittlung der Zeichenkettenl\xE4nge"
 weight: 7
 ---

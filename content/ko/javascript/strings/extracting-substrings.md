@@ -1,10 +1,17 @@
 ---
 date: 2024-01-20 17:45:59.706072-07:00
-description: "How to (\uBC29\uBC95): ."
+description: "How to (\uBC29\uBC95): substring, slice, \uADF8\uB9AC\uACE0 substr\uC740\
+  \ \uBAA8\uB450 JavaScript\uC5D0\uC11C \uBB38\uC790\uC5F4\uC744 \uCD94\uCD9C\uD558\
+  \uB294 \uBC29\uBC95\uC785\uB2C8\uB2E4. substring\uACFC slice\uB294 \uB9E4\uC6B0\
+  \ \uC720\uC0AC\uD558\uC9C0\uB9CC \uB9E4\uAC1C \uBCC0\uC218\uC5D0 \uC74C\uC218\uAC00\
+  \ \uB4E4\uC5B4\uAC08 \uACBD\uC6B0\uC758 \uD589\uB3D9\uC774 \uB2E4\uB985\uB2C8\uB2E4\
+  . substr\uC740 \uD604\uC7AC\uB294 \uAD8C\uC7A5\uB418\uC9C0 \uC54A\uC73C\uBA70\u2026"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.775550-06:00'
+lastmod: '2024-04-05T21:53:57.381792-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "substring, slice, \uADF8\uB9AC\uACE0 substr\uC740 \uBAA8\uB450 JavaScript\uC5D0\
+  \uC11C \uBB38\uC790\uC5F4\uC744 \uCD94\uCD9C\uD558\uB294 \uBC29\uBC95\uC785\uB2C8\
+  \uB2E4."
 title: "\uBD80\uBD84 \uBB38\uC790\uC5F4 \uCD94\uCD9C"
 weight: 6
 ---

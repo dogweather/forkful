@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:45:06.718289-07:00
-description: "C\xF3mo: ."
-lastmod: '2024-03-13T22:44:59.323561-06:00'
+description: "C\xF3mo: Extracting substrings is a common task in many programming\
+  \ environments, and it's been a part of Arduino's String class for as long as the\
+  \ String\u2026"
+lastmod: '2024-04-05T21:54:00.670219-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Extracting substrings is a common task in many programming environments,
+  and it's been a part of Arduino's String class for as long as the String class has
+  been around.
 title: "Extracci\xF3n de subcadenas"
 weight: 6
 ---

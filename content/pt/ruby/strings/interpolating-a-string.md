@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:51:42.187548-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:47.080255-06:00'
+description: "Como Fazer: Interpola\xE7\xE3o de strings existe em Ruby desde suas\
+  \ vers\xF5es iniciais, servindo como uma ferramenta conveniente e eficiente para\
+  \ combinar texto e\u2026"
+lastmod: '2024-04-05T21:53:47.440381-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Interpola\xE7\xE3o de strings existe em Ruby desde suas vers\xF5es iniciais,\
+  \ servindo como uma ferramenta conveniente e eficiente para combinar texto e c\xF3\
+  digo."
 title: Interpolando uma string
 weight: 8
 ---

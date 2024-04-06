@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 03:45:46.299743-07:00
-description: "Hur man g\xF6r: ."
-lastmod: '2024-03-13T22:44:38.033116-06:00'
+description: "Hur man g\xF6r: Lua inkluderar inte en avrundningsfunktion direkt ur\
+  \ l\xE5dan till skillnad fr\xE5n vissa andra spr\xE5k. Historiskt sett beh\xF6ver\
+  \ du skriva din egen\u2026"
+lastmod: '2024-04-05T21:53:39.373757-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Lua inkluderar inte en avrundningsfunktion direkt ur l\xE5dan till skillnad\
+  \ fr\xE5n vissa andra spr\xE5k."
 title: Avrundning av tal
 weight: 13
 ---

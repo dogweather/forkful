@@ -4,11 +4,10 @@ changelog:
 date: 2024-02-03 19:10:41.383441-07:00
 description: "Jak to zrobi\u0107: **Korzystaj\u0105c z biblioteki standardowej `datetime`:**\
   \ Modu\u0142 `datetime` w standardowej bibliotece Pythona dostarcza klasy do manipulowania\u2026"
-lastmod: '2024-03-13T22:44:34.960500-06:00'
+lastmod: '2024-04-05T21:53:36.408026-06:00'
 model: gpt-4-0125-preview
-summary: "**Korzystaj\u0105c z biblioteki standardowej `datetime`:**\n\nModu\u0142\
-  \ `datetime` w standardowej bibliotece Pythona dostarcza klasy do manipulowania\
-  \ datami i czasem."
+summary: "**Korzystaj\u0105c z biblioteki standardowej `datetime`:** Modu\u0142 `datetime`\
+  \ w standardowej bibliotece Pythona dostarcza klasy do manipulowania datami i czasem."
 title: Pobieranie aktualnej daty
 weight: 29
 ---

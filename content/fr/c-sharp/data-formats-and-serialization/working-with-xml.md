@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 04:28:40.575541-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:57.814729-06:00'
+description: "Comment faire : XML existe depuis la fin des ann\xE9es 90, ce qui en\
+  \ fait un grand-p\xE8re en ann\xE9es technologiques. Il a \xE9t\xE9 invent\xE9 pour\
+  \ la portabilit\xE9 des\u2026"
+lastmod: '2024-04-05T21:53:59.299093-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "XML existe depuis la fin des ann\xE9es 90, ce qui en fait un grand-p\xE8\
+  re en ann\xE9es technologiques."
 title: Travailler avec XML
 weight: 40
 ---

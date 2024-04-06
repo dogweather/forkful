@@ -2,9 +2,9 @@
 date: 2024-01-20 17:45:38.760040-07:00
 description: "How to: (Hur g\xF6r man?) Elm h\xE5ller det enkelt. H\xE4r \xE4r ett\
   \ exempel p\xE5 hur du extraherar delstr\xE4ngar med funktionen `String.slice`."
-lastmod: '2024-03-13T22:44:37.818397-06:00'
+lastmod: '2024-04-05T21:53:39.152450-06:00'
 model: gpt-4-1106-preview
-summary: "Elm h\xE5ller det enkelt."
+summary: "(Hur g\xF6r man?) Elm h\xE5ller det enkelt."
 title: "Extrahera delstr\xE4ngar"
 weight: 6
 ---

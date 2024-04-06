@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:31:54.270225-07:00
-description: 'Anleitung: .'
-lastmod: '2024-03-13T22:44:53.686254-06:00'
+description: "Anleitung: Fr\xFCher nutzte man einfache Arithmetik und ber\xFCcksichtigte\
+  \ manuell Schaltjahre und Monatsl\xE4ngen beim Berechnen von Daten. In Rust gibt's\
+  \ dank\u2026"
+lastmod: '2024-04-05T21:53:55.565570-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Fr\xFCher nutzte man einfache Arithmetik und ber\xFCcksichtigte manuell\
+  \ Schaltjahre und Monatsl\xE4ngen beim Berechnen von Daten."
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---

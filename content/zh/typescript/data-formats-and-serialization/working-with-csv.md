@@ -5,13 +5,10 @@ date: 2024-02-03 19:21:24.008893-07:00
 description: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u5728 TypeScript \u4E2D\uFF0C\u60A8\u53EF\
   \u4EE5\u901A\u8FC7\u539F\u751F\u4EE3\u7801\u6216\u5229\u7528\u7B2C\u4E09\u65B9\u5E93\
   \u5982 `csv-parser` \u8FDB\u884C\u8BFB\u53D6\u548C `csv-writer` \u8FDB\u884C\u5199\
-  \u5165 CSV \u6587\u4EF6\u3002 \u9996\u5148\uFF0C\u901A\u8FC7 npm \u5B89\u88C5 `csv-parser`\uFF1A\
-  ."
-lastmod: '2024-03-13T22:44:47.498185-06:00'
+  \u5165 CSV \u6587\u4EF6\u3002"
+lastmod: '2024-04-05T21:53:47.820806-06:00'
 model: gpt-4-0125-preview
-summary: "\u5728 TypeScript \u4E2D\uFF0C\u60A8\u53EF\u4EE5\u901A\u8FC7\u539F\u751F\
-  \u4EE3\u7801\u6216\u5229\u7528\u7B2C\u4E09\u65B9\u5E93\u5982 `csv-parser` \u8FDB\
-  \u884C\u8BFB\u53D6\u548C `csv-writer` \u8FDB\u884C\u5199\u5165 CSV \u6587\u4EF6."
+summary: ''
 title: "\u5904\u7406CSV\u6587\u4EF6"
 weight: 37
 ---

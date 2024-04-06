@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:46:41.484275-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:43.165262-06:00'
+description: "How to: In TypeScript, le sottostringhe si afferrano facilmente grazie\
+  \ ai metodi integrati di JavaScript. Nella storia, abbiamo visto `substr()`,\u2026"
+lastmod: '2024-04-05T21:53:43.939665-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: In TypeScript, le sottostringhe si afferrano facilmente grazie ai metodi
+  integrati di JavaScript.
 title: Estrazione di sottostringhe
 weight: 6
 ---

@@ -2,9 +2,9 @@
 date: 2024-01-26 01:07:40.281848-07:00
 description: "Comment faire : Voici le b.a.-ba pour int\xE9grer du logging basique\
   \ dans vos scripts ."
-lastmod: '2024-03-13T22:44:58.056835-06:00'
+lastmod: '2024-04-05T21:53:59.506778-06:00'
 model: gpt-4-1106-preview
-summary: "Voici le b.a.-ba pour int\xE9grer du logging basique dans vos scripts."
+summary: "Voici le b.a.-ba pour int\xE9grer du logging basique dans vos scripts ."
 title: Journalisation
 weight: 17
 ---

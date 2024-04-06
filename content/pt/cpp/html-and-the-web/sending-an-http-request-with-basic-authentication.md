@@ -3,9 +3,9 @@ date: 2024-01-20 18:01:31.866743-07:00
 description: "How to: (Como Fazer:) Vamos ver como fazer isso em C++. Primeiro, voc\xEA\
   \ precisa de uma biblioteca de rede, como a cURL. Instale-a se necess\xE1rio e aqui\
   \ est\xE1\u2026"
-lastmod: '2024-03-13T22:44:46.879341-06:00'
+lastmod: '2024-04-05T21:53:47.230528-06:00'
 model: gpt-4-1106-preview
-summary: Vamos ver como fazer isso em C++.
+summary: (Como Fazer:) Vamos ver como fazer isso em C++.
 title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 weight: 45
 ---

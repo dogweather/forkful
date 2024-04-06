@@ -1,10 +1,15 @@
 ---
 date: 2024-01-20 17:33:26.345705-07:00
-description: 'How to: .'
+description: "How to: \uB0A0\uC9DC \uBE44\uAD50\uB294 Java 8 \uC774\uC804\uC5D0\uB294\
+  \ `java.util.Date`\uC640 `java.util.Calendar`\uB97C \uC0AC\uC6A9\uD558\uC5EC \uC218\
+  \uD589\uD588\uC2B5\uB2C8\uB2E4. Java 8\uC5D0\uC11C `java.time` \uD328\uD0A4\uC9C0\
+  \uB294 \uBD88\uBCC0(immutable)\uC778 `LocalDate`, `LocalDateTime`,\u2026"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.067201-06:00'
+lastmod: '2024-04-05T21:53:56.831279-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "\uB0A0\uC9DC \uBE44\uAD50\uB294 Java 8 \uC774\uC804\uC5D0\uB294 `java.util.Date`\uC640\
+  \ `java.util.Calendar`\uB97C \uC0AC\uC6A9\uD558\uC5EC \uC218\uD589\uD588\uC2B5\uB2C8\
+  \uB2E4."
 title: "\uB450 \uB0A0\uC9DC \uBE44\uAD50\uD558\uAE30"
 weight: 27
 ---

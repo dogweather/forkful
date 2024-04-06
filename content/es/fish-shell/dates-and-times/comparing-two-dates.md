@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:33:01.806456-07:00
-description: "C\xF3mo: ."
-lastmod: '2024-03-13T22:44:59.513845-06:00'
+description: "C\xF3mo: Hist\xF3ricamente, comparar fechas ha sido un reto por la variedad\
+  \ de formatos y el manejo de zonas horarias. En Fish Shell, no hay una funci\xF3\
+  n\u2026"
+lastmod: '2024-04-05T21:54:00.866605-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Hist\xF3ricamente, comparar fechas ha sido un reto por la variedad de formatos\
+  \ y el manejo de zonas horarias."
 title: "Comparaci\xF3n de dos fechas"
 weight: 27
 ---

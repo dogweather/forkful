@@ -2,9 +2,10 @@
 date: 2024-01-20 17:33:32.346766-07:00
 description: "How to: (\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\
   \u0438:) Here's a simple way to compare dates using Python."
-lastmod: '2024-03-13T22:44:48.604112-06:00'
+lastmod: '2024-04-05T21:53:48.865233-06:00'
 model: gpt-4-1106-preview
-summary: Here's a simple way to compare dates using Python.
+summary: "(\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\u0438:)\
+  \ Here's a simple way to compare dates using Python."
 title: "\u041F\u043E\u0440\u0456\u0432\u043D\u044F\u043D\u043D\u044F \u0434\u0432\u043E\
   \u0445 \u0434\u0430\u0442"
 weight: 27

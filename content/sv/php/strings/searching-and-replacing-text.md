@@ -2,10 +2,9 @@
 date: 2024-01-20 17:58:28.465298-07:00
 description: "How to (Hur man g\xF6r) I PHP \xE4r `str_replace()` en v\xE4n i n\xF6\
   den f\xF6r att byta textstr\xE4ngar. H\xE4r \xE4r ett exempel."
-lastmod: '2024-03-13T22:44:37.981932-06:00'
+lastmod: '2024-04-05T21:53:39.322340-06:00'
 model: gpt-4-1106-preview
-summary: "I PHP \xE4r `str_replace()` en v\xE4n i n\xF6den f\xF6r att byta textstr\xE4\
-  ngar."
+summary: ''
 title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---

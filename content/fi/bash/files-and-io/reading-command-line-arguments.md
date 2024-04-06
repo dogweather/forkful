@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:55:32.343899-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:56.754377-06:00'
+description: "How to: K\xE4yt\xE4 skripti\xE4 n\xE4in."
+lastmod: '2024-04-05T21:53:58.329038-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "K\xE4yt\xE4 skripti\xE4 n\xE4in."
 title: Komennoriviparametrien lukeminen
 weight: 23
 ---

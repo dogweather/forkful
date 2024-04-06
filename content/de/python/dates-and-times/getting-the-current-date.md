@@ -5,11 +5,11 @@ date: 2024-02-03 19:10:27.296648-07:00
 description: "Wie geht das: **Verwendung der Standardbibliothek `datetime`:** Das\
   \ `datetime` Modul in Pythons Standardbibliothek bietet Klassen f\xFCr die Manipulation\
   \ von\u2026"
-lastmod: '2024-03-13T22:44:53.389407-06:00'
+lastmod: '2024-04-05T21:53:55.344797-06:00'
 model: gpt-4-0125-preview
-summary: "**Verwendung der Standardbibliothek `datetime`:**\n\nDas `datetime` Modul\
-  \ in Pythons Standardbibliothek bietet Klassen f\xFCr die Manipulation von Daten\
-  \ und Zeiten."
+summary: "**Verwendung der Standardbibliothek `datetime`:** Das `datetime` Modul in\
+  \ Pythons Standardbibliothek bietet Klassen f\xFCr die Manipulation von Daten und\
+  \ Zeiten."
 title: Den aktuellen Datum abrufen
 weight: 29
 ---

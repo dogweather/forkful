@@ -2,10 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:49.527155-07:00
-description: "L\xE0m th\u1EBF n\xE0o: ."
-lastmod: '2024-03-13T22:44:36.334583-06:00'
+description: "L\xE0m th\u1EBF n\xE0o: H\xE3y ngh\u0129 v\u1EC1 \u0111\u1ECBnh d\u1EA1\
+  ng chu\u1ED7i ng\xE0y nh\u01B0 l\xE0 h\u1ED9 chi\u1EBFu c\u1EE7a n\xF3, cho ph\xE9\
+  p n\xF3 di chuy\u1EC3n qua c\xE1c ranh gi\u1EDBi h\u1EC7 th\u1ED1ng - t\u1EEB c\u01A1\
+  \ s\u1EDF d\u1EEF li\u1EC7u \u0111\u1EBFn trang web.\u2026"
+lastmod: '2024-04-05T21:53:37.747958-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "H\xE3y ngh\u0129 v\u1EC1 \u0111\u1ECBnh d\u1EA1ng chu\u1ED7i ng\xE0y nh\u01B0\
+  \ l\xE0 h\u1ED9 chi\u1EBFu c\u1EE7a n\xF3, cho ph\xE9p n\xF3 di chuy\u1EC3n qua\
+  \ c\xE1c ranh gi\u1EDBi h\u1EC7 th\u1ED1ng - t\u1EEB c\u01A1 s\u1EDF d\u1EEF li\u1EC7\
+  u \u0111\u1EBFn trang web."
 title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 weight: 28
 ---

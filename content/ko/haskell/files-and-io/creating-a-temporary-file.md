@@ -1,10 +1,14 @@
 ---
 date: 2024-01-20 17:40:25.737732-07:00
-description: "How to: (\uBC29\uBC95) ."
+description: "How to: (\uBC29\uBC95) \uC2E4\uD589 \uACB0\uACFC\uB294 \uB9E4\uBC88\
+  \ \uB2E4\uB97C \uC218 \uC788\uC2B5\uB2C8\uB2E4. \uC784\uC2DC \uD30C\uC77C\uC758\
+  \ \uC704\uCE58\uB294 \uC2DC\uC2A4\uD15C\uC5D0 \uB530\uB77C \uB2EC\uB77C\uC9C8 \uAC83\
+  \uC785\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.323765-06:00'
+lastmod: '2024-04-05T21:53:57.031346-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(\uBC29\uBC95) \uC2E4\uD589 \uACB0\uACFC\uB294 \uB9E4\uBC88 \uB2E4\uB97C\
+  \ \uC218 \uC788\uC2B5\uB2C8\uB2E4."
 title: "\uC784\uC2DC \uD30C\uC77C \uC0DD\uC131\uD558\uAE30"
 weight: 21
 ---

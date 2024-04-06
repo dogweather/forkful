@@ -1,10 +1,12 @@
 ---
 date: 2024-01-20 17:56:08.389480-07:00
-description: "How to: (\u5982\u4F55\u64CD\u4F5C\uFF1A) ."
+description: "How to: (\u5982\u4F55\u64CD\u4F5C\uFF1A) \u5982\u679C\u8FD0\u884C `java\
+  \ CommandLineExample Hello World`\uFF0C\u8F93\u51FA\u5C06\u662F\uFF1A."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:47.642357-06:00'
+lastmod: '2024-04-05T21:53:47.961448-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(\u5982\u4F55\u64CD\u4F5C\uFF1A) \u5982\u679C\u8FD0\u884C `java CommandLineExample\
+  \ Hello World`\uFF0C\u8F93\u51FA\u5C06\u662F\uFF1A."
 title: "\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570"
 weight: 23
 ---

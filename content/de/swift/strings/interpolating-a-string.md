@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:51:57.174846-07:00
-description: 'So geht''s: .'
-lastmod: '2024-03-13T22:44:54.212222-06:00'
+description: "So geht's: In der Geschichte von Swift wurde String-Interpolation mit\
+  \ der ersten Version des Sprache eingef\xFChrt und ist seitdem eine Grundfunktion.\
+  \ Es\u2026"
+lastmod: '2024-04-05T21:53:56.098589-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "In der Geschichte von Swift wurde String-Interpolation mit der ersten Version\
+  \ des Sprache eingef\xFChrt und ist seitdem eine Grundfunktion."
 title: Zeichenketten interpolieren
 weight: 8
 ---

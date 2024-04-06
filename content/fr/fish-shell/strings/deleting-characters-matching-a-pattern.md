@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:42:06.281833-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:58.305677-06:00'
+description: "How to: Historiquement, la manipulation de texte en ligne de commande\
+  \ est domin\xE9e par des outils comme `sed` et `awk`. Fish Shell apporte une int\xE9\
+  gration\u2026"
+lastmod: '2024-04-05T21:53:59.705707-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historiquement, la manipulation de texte en ligne de commande est domin\xE9\
+  e par des outils comme `sed` et `awk`."
 title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---

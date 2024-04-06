@@ -2,10 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:33.796697-07:00
-description: "L\xE0m th\u1EBF n\xE0o: ."
-lastmod: '2024-03-13T22:44:36.967212-06:00'
+description: "L\xE0m th\u1EBF n\xE0o: K\u1EBFt qu\u1EA3 M\u1EABu."
+lastmod: '2024-04-05T21:53:38.329530-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: ''
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---

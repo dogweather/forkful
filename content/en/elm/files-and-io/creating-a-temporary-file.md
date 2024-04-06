@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:40:08.399607-07:00
 description: null
-lastmod: '2024-03-13T22:45:00.028025-06:00'
+lastmod: '2024-04-05T21:53:35.726239-06:00'
 model: gpt-4-1106-preview
-summary: null
+summary: ''
 title: Creating a temporary file
 weight: 21
 ---

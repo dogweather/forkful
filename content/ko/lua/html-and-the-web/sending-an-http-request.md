@@ -6,11 +6,11 @@ description: "How to: (\uC5B4\uB5BB\uAC8C \uD558\uB098\uC694?) Lua\uC5D0\uC11C H
   \uB2E4. \uBA3C\uC800 `luasocket`\uB97C \uC124\uCE58\uD574\uC57C \uD569\uB2C8\uB2E4\
   ."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.412678-06:00'
+lastmod: '2024-04-05T21:53:57.102120-06:00'
 model: gpt-4-1106-preview
-summary: "Lua\uC5D0\uC11C HTTP \uC694\uCCAD\uC744 \uD558\uB824\uBA74, `socket.http`\
-  \ \uB77C\uC774\uBE0C\uB7EC\uB9AC\uB098 `luasocket` \uBAA8\uB4C8\uC744 \uC0AC\uC6A9\
-  \uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
+summary: "(\uC5B4\uB5BB\uAC8C \uD558\uB098\uC694?) Lua\uC5D0\uC11C HTTP \uC694\uCCAD\
+  \uC744 \uD558\uB824\uBA74, `socket.http` \uB77C\uC774\uBE0C\uB7EC\uB9AC\uB098 `luasocket`\
+  \ \uBAA8\uB4C8\uC744 \uC0AC\uC6A9\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
 title: "HTTP \uC694\uCCAD \uBCF4\uB0B4\uAE30"
 weight: 44
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:32:14.134465-07:00
-description: "Jak to zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:35.510884-06:00'
+description: "Jak to zrobi\u0107: Mo\u017Cesz zmieni\u0107 'P10D' na odpowiedni\u0105\
+  \ warto\u015B\u0107, \u017Ceby uzyska\u0107 dok\u0142adn\u0105 dat\u0119, kt\xF3\
+  rej potrzebujesz."
+lastmod: '2024-04-05T21:53:36.940798-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Mo\u017Cesz zmieni\u0107 'P10D' na odpowiedni\u0105 warto\u015B\u0107, \u017C\
+  eby uzyska\u0107 dok\u0142adn\u0105 dat\u0119, kt\xF3rej potrzebujesz."
 title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---

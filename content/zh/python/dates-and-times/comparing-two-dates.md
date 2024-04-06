@@ -4,10 +4,10 @@ description: "How to: (\u5982\u4F55\u64CD\u4F5C\uFF1A) \u6BD4\u8F83\u65E5\u671F\
   \u7B80\u5355\u3002\u4F7F\u7528 `datetime` \u6A21\u5757\u3002\u6765\u4E2A\u4F8B\u5B50\
   \uFF1A."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:47.269740-06:00'
+lastmod: '2024-04-05T21:53:47.622460-06:00'
 model: gpt-4-1106-preview
-summary: "\u6BD4\u8F83\u65E5\u671F\u5F88\u7B80\u5355\u3002\u4F7F\u7528 `datetime`\
-  \ \u6A21\u5757\u3002\u6765\u4E2A\u4F8B\u5B50\uFF1A."
+summary: "(\u5982\u4F55\u64CD\u4F5C\uFF1A) \u6BD4\u8F83\u65E5\u671F\u5F88\u7B80\u5355\
+  \u3002\u4F7F\u7528 `datetime` \u6A21\u5757\u3002\u6765\u4E2A\u4F8B\u5B50\uFF1A."
 title: "\u6BD4\u8F83\u4E24\u4E2A\u65E5\u671F"
 weight: 27
 ---

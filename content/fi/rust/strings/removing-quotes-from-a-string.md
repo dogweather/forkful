@@ -1,9 +1,11 @@
 ---
 date: 2024-01-26 03:42:37.794706-07:00
-description: 'Miten: .'
-lastmod: '2024-03-13T22:44:56.344795-06:00'
+description: "Miten: Joskus saatat kohdata merkkijonon, jossa on sekaisin lainausmerkkej\xE4\
+  , kuten t\xE4ss\xE4."
+lastmod: '2024-04-05T21:53:57.903938-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Joskus saatat kohdata merkkijonon, jossa on sekaisin lainausmerkkej\xE4\
+  , kuten t\xE4ss\xE4."
 title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---

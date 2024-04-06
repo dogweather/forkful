@@ -1,9 +1,13 @@
 ---
 date: 2024-01-26 03:38:11.066663-07:00
-description: 'Wie zu: .'
-lastmod: '2024-03-13T22:44:53.876259-06:00'
+description: "Wie zu: Das Konzept, Anf\xFChrungszeichen zu entfernen, ist nicht neu\
+  \ oder besonders komplex, aber es ist entscheidend, weil Anf\xFChrungszeichen oft\
+  \ verwendet\u2026"
+lastmod: '2024-04-05T21:53:55.760582-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Das Konzept, Anf\xFChrungszeichen zu entfernen, ist nicht neu oder besonders\
+  \ komplex, aber es ist entscheidend, weil Anf\xFChrungszeichen oft verwendet werden,\
+  \ um Strings zu begrenzen."
 title: "Anf\xFChrungszeichen aus einem String entfernen"
 weight: 9
 ---

@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:32:39.584173-07:00
-description: 'Kuinka: .'
-lastmod: '2024-03-13T22:44:56.501254-06:00'
+description: "Kuinka: Elmiss\xE4 p\xE4iv\xE4m\xE4\xE4rien vertailu ei ole yht\xE4\
+  \ suoraviivaista kuin joissain muissa kieliss\xE4, johtuen kielisuunnittelusta,\
+  \ joka suosii puhtautta ja\u2026"
+lastmod: '2024-04-05T21:53:58.066687-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Elmiss\xE4 p\xE4iv\xE4m\xE4\xE4rien vertailu ei ole yht\xE4 suoraviivaista\
+  \ kuin joissain muissa kieliss\xE4, johtuen kielisuunnittelusta, joka suosii puhtautta\
+  \ ja turvallisuutta."
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---

@@ -2,10 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:03.721702-07:00
-description: 'Hoe te: .'
-lastmod: '2024-03-13T22:44:50.533443-06:00'
+description: "Hoe te: Historisch gezien kan het omgaan met strings in programmering\
+  \ worden herleid tot de dageraad van de informatica. In TypeScript, dat voortbouwt\
+  \ op\u2026"
+lastmod: '2024-04-05T21:53:50.556770-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: Historisch gezien kan het omgaan met strings in programmering worden herleid
+  tot de dageraad van de informatica.
 title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---

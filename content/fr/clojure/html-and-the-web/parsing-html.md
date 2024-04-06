@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 15:30:39.019288-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:57.280165-06:00'
+description: "Comment faire : Sortie pr\xE9vue ."
+lastmod: '2024-04-05T21:53:58.860604-06:00'
 model: unknown
-summary: .
+summary: ''
 title: Analyse syntaxique de HTML
 weight: 43
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:42:02.966039-07:00
-description: "Hur g\xF6r man: ."
-lastmod: '2024-03-13T22:44:38.193551-06:00'
+description: "Hur g\xF6r man: Historiskt sett har textmanipulering och m\xF6nstermatchning\
+  \ varit en viktig del i programmering, speciellt med verktyg som sed och grep i\
+  \ UNIX.\u2026"
+lastmod: '2024-04-05T21:53:39.531720-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historiskt sett har textmanipulering och m\xF6nstermatchning varit en viktig\
+  \ del i programmering, speciellt med verktyg som sed och grep i UNIX."
 title: "Ta bort tecken som matchar ett m\xF6nster"
 weight: 5
 ---

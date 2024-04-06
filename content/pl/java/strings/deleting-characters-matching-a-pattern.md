@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:42:19.378194-07:00
-description: "Jak to zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:35.261152-06:00'
+description: "Jak to zrobi\u0107: Usuwanie znak\xF3w pasuj\u0105cych do wzorca si\u0119\
+  ga pocz\u0105tk\xF3w programowania, gdzie oszcz\u0119dno\u015B\u0107 pami\u0119\
+  ci by\u0142a kluczowa. J\u0119zyk Java u\u0142atwia to zadanie\u2026"
+lastmod: '2024-04-05T21:53:36.701408-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca si\u0119ga pocz\u0105tk\xF3\
+  w programowania, gdzie oszcz\u0119dno\u015B\u0107 pami\u0119ci by\u0142a kluczowa."
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---

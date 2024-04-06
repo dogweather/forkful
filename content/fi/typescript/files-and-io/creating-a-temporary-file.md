@@ -3,10 +3,9 @@ date: 2024-01-20 17:41:42.172042-07:00
 description: "How to: - N\xE4in tehd\xE4\xE4n: TypeScriptiss\xE4 voit k\xE4ytt\xE4\
   \xE4 sis\xE4\xE4nrakennettua `fs`-moduulia tai kolmansien osapuolien kirjastoja,\
   \ kuten `tmp`. T\xE4ss\xE4 on esimerkki\u2026"
-lastmod: '2024-03-13T22:44:56.334165-06:00'
+lastmod: '2024-04-05T21:53:57.892187-06:00'
 model: gpt-4-1106-preview
-summary: "TypeScriptiss\xE4 voit k\xE4ytt\xE4\xE4 sis\xE4\xE4nrakennettua `fs`-moduulia\
-  \ tai kolmansien osapuolien kirjastoja, kuten `tmp`."
+summary: ''
 title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---

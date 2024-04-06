@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:39:33.123481-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.772471-06:00'
+description: "Como Fazer: Originalmente, arquivos tempor\xE1rios eram criados manualmente,\
+  \ com o risco de colis\xE3o de nomes e falhas de seguran\xE7a. Comandos como `mktemp`,\u2026"
+lastmod: '2024-04-05T21:53:47.118979-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Originalmente, arquivos tempor\xE1rios eram criados manualmente, com o risco\
+  \ de colis\xE3o de nomes e falhas de seguran\xE7a."
 title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---

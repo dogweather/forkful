@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:39:46.700926-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:54.203714-06:00'
+description: 'How to: **Ausgabe:**.'
+lastmod: '2024-04-05T21:53:56.089848-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---

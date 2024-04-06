@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:37:47.494662-07:00
-description: "Hur man g\xF6r: ."
-lastmod: '2024-03-13T22:44:38.442833-06:00'
+description: "Hur man g\xF6r: F\xF6rr i tiden var datumhantering mer komplicerad och\
+  \ beroende av operativsystemets funktioner. Med introduktionen av standardbibliotek\
+  \ som\u2026"
+lastmod: '2024-04-05T21:53:39.780802-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "F\xF6rr i tiden var datumhantering mer komplicerad och beroende av operativsystemets\
+  \ funktioner."
 title: "Omvandla ett datum till en str\xE4ng"
 weight: 28
 ---

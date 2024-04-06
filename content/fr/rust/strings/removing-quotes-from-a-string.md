@@ -1,9 +1,11 @@
 ---
 date: 2024-01-26 03:42:16.092336-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:57.469257-06:00'
+description: "Comment faire : Parfois, vous avez une cha\xEEne avec des guillemets\
+  \ mixtes, comme ceci ."
+lastmod: '2024-04-05T21:53:59.032804-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Parfois, vous avez une cha\xEEne avec des guillemets mixtes, comme ceci\
+  \ ."
 title: "Retirer les guillemets d'une cha\xEEne"
 weight: 9
 ---

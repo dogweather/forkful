@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:57:59.228887-07:00
 description: "How to (Kuinka tehd\xE4): ."
-lastmod: '2024-03-13T22:44:56.558500-06:00'
+lastmod: '2024-04-05T21:53:58.125358-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---

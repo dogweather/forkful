@@ -1,8 +1,8 @@
 ---
 date: 2024-02-01 21:30:25.216747-07:00
-description: "How to: In VBA, you can use the `Replace` function or regular expressions\
-  \ to delete characters matching a pattern. Here are examples of both methods: The\u2026"
-lastmod: '2024-03-13T22:44:59.920246-06:00'
+description: 'How to: In VBA, you can use the `Replace` function or regular expressions
+  to delete characters matching a pattern. Here are examples of both methods.'
+lastmod: '2024-04-05T21:53:35.611637-06:00'
 model: gpt-4-0125-preview
 summary: In VBA, you can use the `Replace` function or regular expressions to delete
   characters matching a pattern.

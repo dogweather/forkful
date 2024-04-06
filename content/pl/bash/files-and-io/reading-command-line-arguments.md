@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:55:28.350388-07:00
-description: "Jak to zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:35.600721-06:00'
+description: "Jak to zrobi\u0107: Uruchomienie skryptu."
+lastmod: '2024-04-05T21:53:37.026861-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Uruchomienie skryptu.
 title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---

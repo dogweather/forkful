@@ -3,10 +3,10 @@ date: 2024-01-20 15:33:59.514523-07:00
 description: "How to: (Jak to zrobi\u0107:) Swift nie ma wbudowanej obs\u0142ugi parsowania\
   \ HTML, wi\u0119c wykorzystamy bibliotek\u0119 zewn\u0119trzn\u0105, jak `SwiftSoup`.\
   \ Aby jej u\u017Cy\u0107, musisz\u2026"
-lastmod: '2024-03-13T22:44:35.752767-06:00'
+lastmod: '2024-04-05T21:53:37.179003-06:00'
 model: unknown
-summary: "Swift nie ma wbudowanej obs\u0142ugi parsowania HTML, wi\u0119c wykorzystamy\
-  \ bibliotek\u0119 zewn\u0119trzn\u0105, jak `SwiftSoup`."
+summary: "(Jak to zrobi\u0107:) Swift nie ma wbudowanej obs\u0142ugi parsowania HTML,\
+  \ wi\u0119c wykorzystamy bibliotek\u0119 zewn\u0119trzn\u0105, jak `SwiftSoup`."
 title: Przetwarzanie HTML
 weight: 43
 ---

@@ -2,10 +2,11 @@
 changelog:
 - 2024-03-17, gpt-4-0125-preview, translated from English
 date: 2024-03-17 18:20:44.348851-06:00
-description: "\u0995\u09BF\u09AD\u09BE\u09AC\u09C7: ."
-lastmod: '2024-03-17T18:47:44.498500-06:00'
+description: "\u0995\u09BF\u09AD\u09BE\u09AC\u09C7: \u09A8\u09AE\u09C1\u09A8\u09BE\
+  \ \u0986\u0989\u099F\u09AA\u09C1\u099F."
+lastmod: '2024-04-05T21:53:53.169682-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: ''
 title: "\u09A8\u09A4\u09C1\u09A8 \u09AA\u09CD\u09B0\u0995\u09B2\u09CD\u09AA \u09B6\
   \u09C1\u09B0\u09C1 \u0995\u09B0\u09BE"
 weight: 1

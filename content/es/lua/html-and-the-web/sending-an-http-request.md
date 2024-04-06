@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 18:00:04.229027-07:00
-description: "C\xF3mo hacerlo: ."
-lastmod: '2024-03-13T22:44:59.198672-06:00'
+description: "C\xF3mo hacerlo: Esto imprimir\xE1 el estado HTTP, los encabezados de\
+  \ la respuesta y el contenido retornado por el servidor."
+lastmod: '2024-04-05T21:54:00.545457-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Esto imprimir\xE1 el estado HTTP, los encabezados de la respuesta y el contenido\
+  \ retornado por el servidor."
 title: Enviando una solicitud http
 weight: 44
 ---

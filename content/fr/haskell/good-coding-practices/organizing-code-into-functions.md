@@ -2,9 +2,10 @@
 date: 2024-01-26 01:10:44.152654-07:00
 description: "Comment faire : Voici comment vous pouvez \xE9crire et utiliser des\
   \ fonctions dans Haskell ."
-lastmod: '2024-03-13T22:44:57.839647-06:00'
+lastmod: '2024-04-05T21:53:59.324311-06:00'
 model: gpt-4-1106-preview
-summary: "Voici comment vous pouvez \xE9crire et utiliser des fonctions dans Haskell."
+summary: "Voici comment vous pouvez \xE9crire et utiliser des fonctions dans Haskell\
+  \ ."
 title: Organisation du code en fonctions
 weight: 18
 ---

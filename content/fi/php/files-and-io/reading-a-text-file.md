@@ -2,9 +2,9 @@
 date: 2024-01-20 17:55:07.792215-07:00
 description: "How to: - Kuinka: PHP tarjoaa useita tapoja lukea tekstitiedostoja.\
   \ Alla on suoraviivainen esimerkki `file_get_contents` toiminnosta ja iteroinnista\u2026"
-lastmod: '2024-03-13T22:44:56.673153-06:00'
+lastmod: '2024-04-05T21:53:58.245157-06:00'
 model: gpt-4-1106-preview
-summary: PHP tarjoaa useita tapoja lukea tekstitiedostoja.
+summary: ''
 title: Tekstitiedoston lukeminen
 weight: 22
 ---

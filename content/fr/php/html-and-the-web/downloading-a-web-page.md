@@ -2,10 +2,10 @@
 date: 2024-01-20 17:44:23.256679-07:00
 description: "How to: Il n\u2019y a rien de plus simple que d'utiliser `file_get_contents`\
   \ pour attraper le contenu brut d'une page web ."
-lastmod: '2024-03-13T22:44:57.876946-06:00'
+lastmod: '2024-04-05T21:53:59.362793-06:00'
 model: gpt-4-1106-preview
 summary: "Il n\u2019y a rien de plus simple que d'utiliser `file_get_contents` pour\
-  \ attraper le contenu brut d'une page web."
+  \ attraper le contenu brut d'une page web ."
 title: "T\xE9l\xE9chargement d'une page web"
 weight: 42
 ---

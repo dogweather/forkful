@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:57:09.153762-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:56.330323-06:00'
+description: "How to: Komentoriviargumenttien lukeminen on ollut osa ohjelmoinnin\
+  \ perustoimintoja siit\xE4 asti, kun k\xE4ytt\xF6j\xE4rjestelm\xE4t alkoivat tukea\
+  \ komentorivikieltoja.\u2026"
+lastmod: '2024-04-05T21:53:57.887858-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Komentoriviargumenttien lukeminen on ollut osa ohjelmoinnin perustoimintoja\
+  \ siit\xE4 asti, kun k\xE4ytt\xF6j\xE4rjestelm\xE4t alkoivat tukea komentorivikieltoja."
 title: Komennoriviparametrien lukeminen
 weight: 23
 ---

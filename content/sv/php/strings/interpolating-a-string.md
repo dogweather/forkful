@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:51:26.930779-07:00
-description: "S\xE5 h\xE4r g\xF6r du: ."
-lastmod: '2024-03-13T22:44:37.982836-06:00'
+description: "S\xE5 h\xE4r g\xF6r du: Str\xE4nginterpolation har funnits i PHP sedan\
+  \ tidiga versioner och \xE4r en favorit p\xE5 grund av dess enkelhet. Alternativ\
+  \ till interpolation\u2026"
+lastmod: '2024-04-05T21:53:39.323257-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Str\xE4nginterpolation har funnits i PHP sedan tidiga versioner och \xE4\
+  r en favorit p\xE5 grund av dess enkelhet."
 title: "Interpolera en str\xE4ng"
 weight: 8
 ---

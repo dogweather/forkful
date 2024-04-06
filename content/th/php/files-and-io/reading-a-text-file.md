@@ -2,8 +2,9 @@
 changelog:
 - 2024-03-17, gpt-4-0125-preview, translated from English
 date: 2024-03-17 21:49:26.505658-06:00
-description: "\u0E27\u0E34\u0E18\u0E35\u0E01\u0E32\u0E23: ."
-lastmod: '2024-03-17T21:57:56.329428-06:00'
+description: "\u0E27\u0E34\u0E18\u0E35\u0E01\u0E32\u0E23: \u0E15\u0E31\u0E27\u0E2D\
+  \u0E22\u0E48\u0E32\u0E07\u0E1C\u0E25\u0E25\u0E31\u0E1E\u0E18\u0E4C."
+lastmod: '2024-04-05T21:54:02.065870-06:00'
 model: gpt-4-0125-preview
 summary: ''
 title: "\u0E01\u0E32\u0E23\u0E2D\u0E48\u0E32\u0E19\u0E44\u0E1F\u0E25\u0E4C\u0E02\u0E49\

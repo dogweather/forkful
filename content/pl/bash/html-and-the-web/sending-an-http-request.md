@@ -2,10 +2,10 @@
 date: 2024-01-20 17:59:12.897844-07:00
 description: "How to: (Jak to zrobi\u0107:) U\u017Cycie `curl` w Bashu to najprostsza\
   \ forma wysy\u0142ania zapytania HTTP. Oto jak to zrobi\u0107."
-lastmod: '2024-03-13T22:44:35.581770-06:00'
+lastmod: '2024-04-05T21:53:37.009019-06:00'
 model: gpt-4-1106-preview
-summary: "(Jak to zrobi\u0107:)\n\nU\u017Cycie `curl` w Bashu to najprostsza forma\
-  \ wysy\u0142ania zapytania HTTP."
+summary: "(Jak to zrobi\u0107:) U\u017Cycie `curl` w Bashu to najprostsza forma wysy\u0142\
+  ania zapytania HTTP."
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---

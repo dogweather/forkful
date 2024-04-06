@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 03:45:54.975555-07:00
-description: "Jak to zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:35.534944-06:00'
+description: "Jak to zrobi\u0107: Lua standardowo nie zawiera funkcji zaokr\u0105\
+  glania, w przeciwie\u0144stwie do niekt\xF3rych innych j\u0119zyk\xF3w. Historycznie,\
+  \ musisz napisa\u0107 w\u0142asn\u0105\u2026"
+lastmod: '2024-04-05T21:53:36.963753-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Lua standardowo nie zawiera funkcji zaokr\u0105glania, w przeciwie\u0144\
+  stwie do niekt\xF3rych innych j\u0119zyk\xF3w."
 title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---

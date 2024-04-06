@@ -2,10 +2,9 @@
 date: 2024-01-26 04:16:50.929403-07:00
 description: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u542F\u52A8PowerShell\uFF0C\u4F60\u5C31\
   \u8FDB\u5165\u4E86REPL\u3002\u5C1D\u8BD5\u4F7F\u7528`Get-Date` Cmdlet\uFF1A."
-lastmod: '2024-03-13T22:44:48.015285-06:00'
+lastmod: '2024-04-05T21:53:48.312581-06:00'
 model: gpt-4-0125-preview
-summary: "\u542F\u52A8PowerShell\uFF0C\u4F60\u5C31\u8FDB\u5165\u4E86REPL\u3002\u5C1D\
-  \u8BD5\u4F7F\u7528`Get-Date` Cmdlet\uFF1A."
+summary: ''
 title: "\u5728\u7F16\u7A0B\u4E2D\u4F7F\u7528\u4EA4\u4E92\u5F0FShell\uFF08REPL\uFF09"
 weight: 34
 ---

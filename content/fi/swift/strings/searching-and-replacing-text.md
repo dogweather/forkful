@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:58:54.829623-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:56.892833-06:00'
+description: "How to: Historia: Tekstin etsimis- ja korvaustoiminnot ovat keskeisi\xE4\
+  \ ty\xF6kaluja ohjelmoinnissa jo vuosikymmenten ajan. Unix-pohjaisissa j\xE4rjestelmiss\xE4\
+  \u2026"
+lastmod: '2024-04-05T21:53:58.470862-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---

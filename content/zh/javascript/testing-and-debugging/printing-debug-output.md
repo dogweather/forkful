@@ -3,10 +3,10 @@ date: 2024-01-20 17:52:43.260044-07:00
 description: "How to: (\u5982\u4F55\u64CD\u4F5C\uFF1A) JavaScript\u91CC\uFF0C`console.log()`\u662F\
   \u57FA\u672C\u5DE5\u5177\u6765\u8C03\u8BD5\u3002\u7B80\u660E\u793A\u4F8B\uFF1A."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:48.208324-06:00'
+lastmod: '2024-04-05T21:53:48.495406-06:00'
 model: gpt-4-1106-preview
-summary: "JavaScript\u91CC\uFF0C`console.log()`\u662F\u57FA\u672C\u5DE5\u5177\u6765\
-  \u8C03\u8BD5\u3002\u7B80\u660E\u793A\u4F8B\uFF1A."
+summary: "(\u5982\u4F55\u64CD\u4F5C\uFF1A) JavaScript\u91CC\uFF0C`console.log()`\u662F\
+  \u57FA\u672C\u5DE5\u5177\u6765\u8C03\u8BD5\u3002\u7B80\u660E\u793A\u4F8B\uFF1A."
 title: "\u6253\u5370\u8C03\u8BD5\u8F93\u51FA"
 weight: 33
 ---

@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:57:23.736260-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.341405-06:00'
+description: "Como Fazer: A hist\xF3ria de ler argumentos da linha de comando remonta\
+  \ aos prim\xF3rdios da inform\xE1tica, quando os GUIs (Graphical User Interfaces)\
+  \ eram\u2026"
+lastmod: '2024-04-05T21:53:46.672609-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "A hist\xF3ria de ler argumentos da linha de comando remonta aos prim\xF3\
+  rdios da inform\xE1tica, quando os GUIs (Graphical User Interfaces) eram inexistentes\
+  \ e tudo era feito no terminal."
 title: Lendo argumentos da linha de comando
 weight: 23
 ---

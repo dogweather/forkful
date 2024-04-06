@@ -1,9 +1,10 @@
 ---
 date: 2024-01-26 00:49:33.730980-07:00
-description: "S\xE5 h\xE4r g\xF6r man: ."
-lastmod: '2024-03-13T22:44:38.089715-06:00'
+description: "S\xE5 h\xE4r g\xF6r man: Exempel p\xE5 utmatning n\xE4r ett fel intr\xE4\
+  ffar."
+lastmod: '2024-04-05T21:53:39.427903-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Exempel p\xE5 utmatning n\xE4r ett fel intr\xE4ffar."
 title: Hantering av fel
 weight: 16
 ---

@@ -1,9 +1,10 @@
 ---
 date: 2024-01-26 00:57:58.607513-07:00
-description: 'Kuinka: .'
-lastmod: '2024-03-13T22:44:56.789817-06:00'
+description: "Kuinka: PowerShell on tullut pitk\xE4n matkan siit\xE4, kun se tunnettiin\
+  \ Monadina. Virheenk\xE4sittely on kehittynyt ajan my\xF6t\xE4, ja se tarjoaa ominaisuuksia,\u2026"
+lastmod: '2024-04-05T21:53:58.364386-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "PowerShell on tullut pitk\xE4n matkan siit\xE4, kun se tunnettiin Monadina."
 title: "Virheiden k\xE4sittely"
 weight: 16
 ---

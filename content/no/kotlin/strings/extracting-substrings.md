@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:46:11.625885-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:40.739161-06:00'
+description: "How to: Delstrengekstraksjon g\xE5r tilbake til de tidlige dagene av\
+  \ programmering. Spr\xE5k som C brukte funksjoner som `substr`. I Kotlin, er det\
+  \ innebygde\u2026"
+lastmod: '2024-04-05T21:53:41.718411-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Delstrengekstraksjon g\xE5r tilbake til de tidlige dagene av programmering."
 title: Uthenting av delstrenger
 weight: 6
 ---

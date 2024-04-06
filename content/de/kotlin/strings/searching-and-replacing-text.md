@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:58:00.793158-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:53.832698-06:00'
+description: "How to: Die Suche und Ersetzung von Text kommt aus den Anf\xE4ngen der\
+  \ Datenverarbeitung, als Texteditoren aufkamen. Fr\xFCher musste man Textzeilenweise\u2026"
+lastmod: '2024-04-05T21:53:55.716202-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Die Suche und Ersetzung von Text kommt aus den Anf\xE4ngen der Datenverarbeitung,\
+  \ als Texteditoren aufkamen."
 title: Suchen und Ersetzen von Text
 weight: 10
 ---

@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:51:30.648021-07:00
-description: "Hur man g\xF6r: ."
-lastmod: '2024-03-13T22:44:37.684150-06:00'
+description: "Hur man g\xF6r: Utskrift."
+lastmod: '2024-04-05T21:53:39.012918-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "Interpolera en str\xE4ng"
 weight: 8
 ---

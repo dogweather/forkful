@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:39:32.190917-07:00
-description: 'Comment : .'
-lastmod: '2024-03-13T22:44:58.135163-06:00'
+description: "Comment : Historiquement, la cr\xE9ation de fichiers temporaires sur\
+  \ des ordinateurs a servi \xE0 conserver des donn\xE9es pendant des processus qui\
+  \ ne pouvaient\u2026"
+lastmod: '2024-04-05T21:53:59.565618-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historiquement, la cr\xE9ation de fichiers temporaires sur des ordinateurs\
+  \ a servi \xE0 conserver des donn\xE9es pendant des processus qui ne pouvaient pas\
+  \ \xEAtre accomplis en une seule passe."
 title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---

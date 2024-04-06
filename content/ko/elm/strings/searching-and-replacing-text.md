@@ -1,10 +1,14 @@
 ---
 date: 2024-01-20 17:57:37.353680-07:00
-description: "How to: (\uBC29\uBC95) ."
+description: "How to: (\uBC29\uBC95) Elm\uC5D0\uC11C `String.replace` \uD568\uC218\
+  \uB97C \uC0AC\uC6A9\uD574 \uAC80\uC0C9 \uBC0F \uAD50\uCCB4\uB97C \uC218\uD589\uD569\
+  \uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.089605-06:00'
+lastmod: '2024-04-05T21:53:56.847944-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(\uBC29\uBC95) Elm\uC5D0\uC11C `String.replace` \uD568\uC218\uB97C \uC0AC\
+  \uC6A9\uD574 \uAC80\uC0C9 \uBC0F \uAD50\uCCB4\uB97C \uC218\uD589\uD569\uB2C8\uB2E4\
+  ."
 title: "\uD14D\uC2A4\uD2B8 \uAC80\uC0C9 \uBC0F \uAD50\uCCB4"
 weight: 10
 ---

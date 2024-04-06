@@ -4,8 +4,8 @@ changelog:
 date: 2024-02-03 17:54:14.282105-07:00
 description: "Jak to zrobi\u0107: W j\u0119zyku Go istnieje kilka sposob\xF3w na konkatenacj\u0119\
   \ \u0142a\u0144cuch\xF3w znak\xF3w. Oto przyk\u0142ady niekt\xF3rych popularnych\
-  \ metod: Najprostszym sposobem na\u2026"
-lastmod: '2024-03-13T22:44:34.840348-06:00'
+  \ metod."
+lastmod: '2024-04-05T21:53:36.289305-06:00'
 model: gpt-4-0125-preview
 summary: "W j\u0119zyku Go istnieje kilka sposob\xF3w na konkatenacj\u0119 \u0142\
   a\u0144cuch\xF3w znak\xF3w."

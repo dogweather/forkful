@@ -2,9 +2,9 @@
 date: 2024-01-20 17:45:00.781641-07:00
 description: "How to: (Slik gj\xF8r du:) Swift gir deg URLSession for nettverkskall.\
   \ Her er en kjapp m\xE5te \xE5 laste ned innhold fra en nettside."
-lastmod: '2024-03-13T22:44:41.140585-06:00'
+lastmod: '2024-04-05T21:53:42.101045-06:00'
 model: gpt-4-1106-preview
-summary: Swift gir deg URLSession for nettverkskall.
+summary: "(Slik gj\xF8r du:) Swift gir deg URLSession for nettverkskall."
 title: Nedlasting av en nettside
 weight: 42
 ---

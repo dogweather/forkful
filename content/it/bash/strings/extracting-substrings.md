@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:45:16.425975-07:00
 description: 'Come fare: Ecco alcuni esempi.'
-lastmod: '2024-03-13T22:44:43.587335-06:00'
+lastmod: '2024-04-05T21:53:44.351409-06:00'
 model: gpt-4-1106-preview
-summary: Ecco alcuni esempi.
+summary: ''
 title: Estrazione di sottostringhe
 weight: 6
 ---

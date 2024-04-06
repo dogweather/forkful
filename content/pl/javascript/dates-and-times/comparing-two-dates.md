@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:33:12.082695-07:00
-description: "Jak to zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:35.808865-06:00'
+description: "Jak to zrobi\u0107: Por\xF3wnywanie dat jest tak stare jak sama informatyka.\
+  \ Historia pokazuje, \u017Ce wczesne systemy mog\u0142y mie\u0107 problem z interpretacj\u0105\
+  \ dat (np.\u2026"
+lastmod: '2024-04-05T21:53:37.235328-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Por\xF3wnywanie dat jest tak stare jak sama informatyka."
 title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---

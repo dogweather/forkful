@@ -3,10 +3,12 @@ changelog:
 - 2024-04-04, dogweather, edited
 - 2024-04-04, gpt-4-0125-preview, translated from English
 date: 2024-01-20 17:43:02.363431-07:00
-description: 'Hoe te: .'
-lastmod: '2024-04-04T02:02:35.507079-06:00'
+description: "Hoe te: Ik doe dit vaak genoeg dat ik het heb geherstructureerd in deze\
+  \ eenvoudige `delete()` functie. Het is ook een goede demonstratie van\u2026"
+lastmod: '2024-04-05T21:53:50.385572-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: Ik doe dit vaak genoeg dat ik het heb geherstructureerd in deze eenvoudige
+  `delete()` functie.
 title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---

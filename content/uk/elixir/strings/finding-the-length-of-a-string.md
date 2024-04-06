@@ -2,10 +2,10 @@
 date: 2024-01-20 17:47:03.420251-07:00
 description: "How to: (\u042F\u043A \u0437\u0440\u043E\u0431\u0438\u0442\u0438:) In\
   \ Elixir, we use the `String.length/1` function. Here's how."
-lastmod: '2024-03-13T22:44:48.707860-06:00'
+lastmod: '2024-04-05T21:53:48.953910-06:00'
 model: gpt-4-1106-preview
-summary: "(\u042F\u043A \u0437\u0440\u043E\u0431\u0438\u0442\u0438:)\n\nIn Elixir,\
-  \ we use the `String.length/1` function."
+summary: "(\u042F\u043A \u0437\u0440\u043E\u0431\u0438\u0442\u0438:) In Elixir, we\
+  \ use the `String.length/1` function."
 title: "\u0412\u0438\u0437\u043D\u0430\u0447\u0435\u043D\u043D\u044F \u0434\u043E\u0432\
   \u0436\u0438\u043D\u0438 \u0440\u044F\u0434\u043A\u0430"
 weight: 7

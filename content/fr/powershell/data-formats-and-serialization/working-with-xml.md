@@ -1,9 +1,9 @@
 ---
 date: 2024-01-26 04:34:22.401599-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:58.087249-06:00'
+description: 'Comment faire : Exemple de sortie .'
+lastmod: '2024-04-05T21:53:59.526204-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: ''
 title: Travailler avec XML
 weight: 40
 ---

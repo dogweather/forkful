@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:56:07.895007-07:00
-description: How To (Hvordan) .
-lastmod: '2024-03-13T22:44:40.458886-06:00'
+description: "How To (Hvordan) I de tidlige dagene av datamaskiner ga kommandolinjeinteraksjon\
+  \ programmerere en direkte linje til operativsystemet. I Elixir, som er en\u2026"
+lastmod: '2024-04-05T21:53:41.437880-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "I\_Elixir, som er en moderne spr\xE5k, f\xE5r vi tilgang til kommandolinjeargumenter\
+  \ med `System.argv()`."
 title: Lese kommandolinjeargumenter
 weight: 23
 ---

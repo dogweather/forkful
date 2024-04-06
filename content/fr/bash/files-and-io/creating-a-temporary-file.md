@@ -2,9 +2,9 @@
 date: 2024-01-20 17:39:54.529152-07:00
 description: "How to (Comment faire) : Voici deux fa\xE7ons simples de cr\xE9er un\
   \ fichier temporaire en Bash ."
-lastmod: '2024-03-13T22:44:58.018427-06:00'
+lastmod: '2024-04-05T21:53:59.474773-06:00'
 model: gpt-4-1106-preview
-summary: "Voici deux fa\xE7ons simples de cr\xE9er un fichier temporaire en Bash."
+summary: "Voici deux fa\xE7ons simples de cr\xE9er un fichier temporaire en Bash ."
 title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---

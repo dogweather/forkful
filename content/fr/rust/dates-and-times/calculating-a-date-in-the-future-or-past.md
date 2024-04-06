@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:32:12.152076-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:57.496434-06:00'
+description: "Comment faire : R\xE9sultats."
+lastmod: '2024-04-05T21:53:59.058562-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "Calcul d'une date future ou pass\xE9e"
 weight: 26
 ---

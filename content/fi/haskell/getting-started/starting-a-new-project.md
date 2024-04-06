@@ -2,9 +2,9 @@
 date: 2024-01-20 18:03:57.146098-07:00
 description: "How to: \u2013 Kuinka tehd\xE4\xE4n: Aloita Stack-ty\xF6kalulla. Se\
   \ luo projektipohjan sinulle automaattisesti."
-lastmod: '2024-03-13T22:44:56.615895-06:00'
+lastmod: '2024-04-05T21:53:58.185478-06:00'
 model: gpt-4-1106-preview
-summary: "Aloita Stack-ty\xF6kalulla."
+summary: ''
 title: Uuden projektin aloittaminen
 weight: 1
 ---

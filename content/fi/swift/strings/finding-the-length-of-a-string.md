@@ -2,9 +2,9 @@
 date: 2024-01-20 17:48:29.771155-07:00
 description: "How to: \"N\xE4in tehd\xE4\xE4n:\" Swiftiss\xE4 voit selvitt\xE4\xE4\
   \ stringin pituuden k\xE4ytt\xE4m\xE4ll\xE4 `count` ominaisuutta. Kataotaanpa esimerkki."
-lastmod: '2024-03-13T22:44:56.898396-06:00'
+lastmod: '2024-04-05T21:53:58.477490-06:00'
 model: gpt-4-1106-preview
-summary: "\"N\xE4in tehd\xE4\xE4n:\"\nSwiftiss\xE4 voit selvitt\xE4\xE4 stringin pituuden\
+summary: "\"N\xE4in tehd\xE4\xE4n:\" Swiftiss\xE4 voit selvitt\xE4\xE4 stringin pituuden\
   \ k\xE4ytt\xE4m\xE4ll\xE4 `count` ominaisuutta."
 title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7

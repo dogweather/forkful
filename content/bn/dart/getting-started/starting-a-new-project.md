@@ -8,9 +8,9 @@ description: "\u0995\u09BF\u09AD\u09BE\u09AC\u09C7: 1. **Dart \u0987\u09A8\u09B8
   \u09B8\u09CD\u099F\u09C7\u09AE\u09C7 Dart \u0987\u09A8\u09B8\u09CD\u099F\u09B2 \u0995\
   \u09B0\u09BE \u0986\u099B\u09C7\u0964 \u09AF\u09A6\u09BF \u09A8\u09BE \u09A5\u09BE\
   \u0995\u09C7, \u0986\u09AA\u09A8\u09BF [https://dart.dev/get-dart](https://dart.dev/get-\u2026"
-lastmod: '2024-03-17T18:47:43.719502-06:00'
+lastmod: '2024-04-05T21:53:51.828415-06:00'
 model: gpt-4-0125-preview
-summary: '1.'
+summary: ''
 title: "\u09A8\u09A4\u09C1\u09A8 \u09AA\u09CD\u09B0\u0995\u09B2\u09CD\u09AA \u09B6\
   \u09C1\u09B0\u09C1 \u0995\u09B0\u09BE"
 weight: 1

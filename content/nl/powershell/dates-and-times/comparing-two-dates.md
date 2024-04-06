@@ -2,10 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:41.358845-07:00
-description: 'Hoe: .'
-lastmod: '2024-03-13T22:44:51.042633-06:00'
+description: "Hoe: Ver terug in de steentijd van het computeren\u2014niet echt, maar,\
+  \ je weet wel, de vroege dagen\u2014waren datums een rommeltje. We zijn een lange\
+  \ weg gekomen\u2026"
+lastmod: '2024-04-05T21:53:51.057626-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Ver terug in de steentijd van het computeren\u2014niet echt, maar, je weet\
+  \ wel, de vroege dagen\u2014waren datums een rommeltje."
 title: Twee datums vergelijken
 weight: 27
 ---

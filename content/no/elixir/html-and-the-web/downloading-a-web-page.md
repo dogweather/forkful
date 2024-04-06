@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:44:03.914534-07:00
-description: 'Hvordan: .'
-lastmod: '2024-03-13T22:44:40.442334-06:00'
+description: 'Hvordan: Eksempelutskrift.'
+lastmod: '2024-04-05T21:53:41.421918-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: Nedlasting av en nettside
 weight: 42
 ---

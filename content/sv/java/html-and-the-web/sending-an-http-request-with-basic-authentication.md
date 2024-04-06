@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 18:02:15.914307-07:00
-description: "Hur man g\xF6r: ."
-lastmod: '2024-03-13T22:44:37.787156-06:00'
+description: "Hur man g\xF6r: Sample output saknas h\xE4r eftersom det handlar mer\
+  \ om serverns respons \xE4n sj\xE4lva Java-koden."
+lastmod: '2024-04-05T21:53:39.120699-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Sample output saknas h\xE4r eftersom det handlar mer om serverns respons\
+  \ \xE4n sj\xE4lva Java-koden."
 title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
 weight: 45
 ---

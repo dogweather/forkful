@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:37:46.458283-07:00
-description: 'Vorgehensweise: .'
-lastmod: '2024-03-13T22:44:53.642231-06:00'
+description: "Vorgehensweise: Fr\xFCher verwendete man in JavaScript oft externe Bibliotheken\
+  \ wie `moment.js` f\xFCr Datumsoperationen. Heute bietet TypeScript, das Superset\u2026"
+lastmod: '2024-04-05T21:53:55.519501-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Fr\xFCher verwendete man in JavaScript oft externe Bibliotheken wie `moment.js`\
+  \ f\xFCr Datumsoperationen."
 title: Datum in einen String umwandeln
 weight: 28
 ---

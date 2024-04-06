@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:34:09.893713-07:00
-description: "Slik gj\xF8r du: ."
-lastmod: '2024-03-13T22:44:41.050768-06:00'
+description: "Slik gj\xF8r du: I Arduinos barndom, pre-2000-tallet, var strengmanipulering\
+  \ krevende grunnet begrenset minne og prosesseringskraft. Programmerere brukte\u2026"
+lastmod: '2024-04-05T21:53:42.012340-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: I Arduinos barndom, pre-2000-tallet, var strengmanipulering krevende grunnet
+  begrenset minne og prosesseringskraft.
 title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---

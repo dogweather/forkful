@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:45:56.336635-07:00
-description: 'How to: - Kuinka: .'
-lastmod: '2024-03-13T22:44:56.939031-06:00'
+description: "How to: - Kuinka: Substringit ovat vanhastaan osa ohjelmointia. JavaScriptiss\xE4\
+  \ on useita tapoja: `substr`, `substring` ja `slice`. - Historiallisesti\u2026"
+lastmod: '2024-04-05T21:53:58.517542-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: Merkkijonojen osien poimiminen
 weight: 6
 ---

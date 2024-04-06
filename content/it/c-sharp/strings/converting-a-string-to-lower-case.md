@@ -2,10 +2,10 @@
 date: 2024-01-20 17:38:08.491346-07:00
 description: 'How to: (Come fare:) In C#, per convertire una stringa in minuscolo,
   usiamo il metodo `.ToLower()` o `.ToLowerInvariant()`. Ecco come funziona.'
-lastmod: '2024-03-13T22:44:43.421043-06:00'
+lastmod: '2024-04-05T21:53:44.189789-06:00'
 model: gpt-4-1106-preview
-summary: In C#, per convertire una stringa in minuscolo, usiamo il metodo `.ToLower()`
-  o `.ToLowerInvariant()`.
+summary: (Come fare:) In C#, per convertire una stringa in minuscolo, usiamo il metodo
+  `.ToLower()` o `.ToLowerInvariant()`.
 title: Conversione di una stringa in minuscolo
 weight: 4
 ---

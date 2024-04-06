@@ -2,10 +2,11 @@
 date: 2024-01-20 17:53:20.875049-07:00
 description: "How to: (Kuinka tehd\xE4:) PowerShellissa debug-viestej\xE4 voi tulostaa\
   \ `Write-Host`, `Write-Output`, `Write-Verbose`, `Write-Debug` ja `Write-Information`\u2026"
-lastmod: '2024-03-13T22:44:56.784826-06:00'
+lastmod: '2024-04-05T21:53:58.359426-06:00'
 model: gpt-4-1106-preview
-summary: "PowerShellissa debug-viestej\xE4 voi tulostaa `Write-Host`, `Write-Output`,\
-  \ `Write-Verbose`, `Write-Debug` ja `Write-Information` komentojen avulla."
+summary: "(Kuinka tehd\xE4:) PowerShellissa debug-viestej\xE4 voi tulostaa `Write-Host`,\
+  \ `Write-Output`, `Write-Verbose`, `Write-Debug` ja `Write-Information` komentojen\
+  \ avulla."
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---

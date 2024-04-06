@@ -3,11 +3,9 @@ date: 2024-01-26 00:54:51.918823-07:00
 description: "\u5982\u4F55\u64CD\u4F5C\uFF1A Kotlin \u63D0\u4F9B\u4E86 `try`\u3001\
   `catch`\u3001`finally` \u548C `throw` \u6765\u7BA1\u7406\u9519\u8BEF\u3002\u4EE5\
   \u4E0B\u662F\u5B83\u4EEC\u7684\u4F7F\u7528\u65B9\u5F0F\uFF1A."
-lastmod: '2024-03-13T22:44:47.727886-06:00'
+lastmod: '2024-04-05T21:53:48.045236-06:00'
 model: gpt-4-1106-preview
-summary: "Kotlin \u63D0\u4F9B\u4E86 `try`\u3001`catch`\u3001`finally` \u548C `throw`\
-  \ \u6765\u7BA1\u7406\u9519\u8BEF\u3002\u4EE5\u4E0B\u662F\u5B83\u4EEC\u7684\u4F7F\
-  \u7528\u65B9\u5F0F\uFF1A."
+summary: ''
 title: "\u5904\u7406\u9519\u8BEF"
 weight: 16
 ---

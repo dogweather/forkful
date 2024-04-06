@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:35:44.480822-07:00
-description: 'Come fare: .'
-lastmod: '2024-03-13T22:44:42.993155-06:00'
+description: "Come fare: Prima dell'avvento del \"+\" per concatenare le stringhe,\
+  \ vari linguaggi di programmazione utilizzavano i propri metodi, spesso meno intuitivi.\u2026"
+lastmod: '2024-04-05T21:53:43.777491-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Prima dell'avvento del "+" per concatenare le stringhe, vari linguaggi di
+  programmazione utilizzavano i propri metodi, spesso meno intuitivi.
 title: Concatenazione di stringhe
 weight: 3
 ---

@@ -2,9 +2,10 @@
 date: 2024-01-20 18:04:22.817555-07:00
 description: "How to: (Jak to zrobi\u0107:) Zacznij od Cargo, narz\u0119dzia Rust\
   \ do zarz\u0105dzania projektami."
-lastmod: '2024-03-13T22:44:35.185368-06:00'
+lastmod: '2024-04-05T21:53:36.621947-06:00'
 model: gpt-4-1106-preview
-summary: "Zacznij od Cargo, narz\u0119dzia Rust do zarz\u0105dzania projektami."
+summary: "(Jak to zrobi\u0107:) Zacznij od Cargo, narz\u0119dzia Rust do zarz\u0105\
+  dzania projektami."
 title: Rozpoczynanie nowego projektu
 weight: 1
 ---

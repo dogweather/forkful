@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:33:52.760012-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:56.817164-06:00'
+description: "How to: Merkkijonojen yhdist\xE4minen ei ole aina ollut n\xE4in suoraviivaista.\
+  \ Aikaisemmissa C-kielen versioissa, johon Arduino-kieli perustuu, kehitt\xE4j\xE4\
+  t\u2026"
+lastmod: '2024-04-05T21:53:58.392595-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Merkkijonojen yhdist\xE4minen ei ole aina ollut n\xE4in suoraviivaista."
 title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---

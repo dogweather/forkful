@@ -4,10 +4,10 @@ changelog:
 date: 2024-02-03 19:32:51.573339-07:00
 description: "Comment faire : En Elixir, vous pouvez utiliser des fonctions du module\
   \ `IO` telles que `IO.puts/2` et `IO.warn/2` pour \xE9crire des messages sur l'erreur\u2026"
-lastmod: '2024-03-13T22:44:57.345085-06:00'
+lastmod: '2024-04-05T21:53:58.923941-06:00'
 model: gpt-4-0125-preview
 summary: "En Elixir, vous pouvez utiliser des fonctions du module `IO` telles que\
-  \ `IO.puts/2` et `IO.warn/2` pour \xE9crire des messages sur l'erreur standard."
+  \ `IO.puts/2` et `IO.warn/2` pour \xE9crire des messages sur l'erreur standard ."
 title: "\xC9crire sur l'erreur standard"
 weight: 25
 ---

@@ -5,11 +5,11 @@ description: "How to: (\uBC29\uBC95) Elixir\uC5D0\uC11C \uB450 \uB0A0\uC9DC\uB97
   \ \uAC04\uB2E8\uD569\uB2C8\uB2E4. \uC544\uB798\uB294 \uC608\uC2DC \uCF54\uB4DC\uC640\
   \ \uACB0\uACFC \uCD9C\uB825\uC785\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:54.740125-06:00'
+lastmod: '2024-04-05T21:53:56.570894-06:00'
 model: gpt-4-1106-preview
-summary: "Elixir\uC5D0\uC11C \uB450 \uB0A0\uC9DC\uB97C \uBE44\uAD50\uD558\uAE30\uB294\
-  \ DateTime \uBAA8\uB4C8\uC744 \uC0AC\uC6A9\uD558\uBA74 \uAC04\uB2E8\uD569\uB2C8\uB2E4\
-  ."
+summary: "(\uBC29\uBC95) Elixir\uC5D0\uC11C \uB450 \uB0A0\uC9DC\uB97C \uBE44\uAD50\
+  \uD558\uAE30\uB294 DateTime \uBAA8\uB4C8\uC744 \uC0AC\uC6A9\uD558\uBA74 \uAC04\uB2E8\
+  \uD569\uB2C8\uB2E4."
 title: "\uB450 \uB0A0\uC9DC \uBE44\uAD50\uD558\uAE30"
 weight: 27
 ---

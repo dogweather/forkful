@@ -3,11 +3,9 @@ date: 2024-01-26 03:45:46.308701-07:00
 description: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u4EE5\u4E0B\u662F\u5728JavaScript\u4E2D\
   \u4F7F\u7528`Math.round()`\u3001`Math.ceil()`\u548C`Math.floor()`\u8FDB\u884C\u6570\
   \u5B57\u820D\u5165\u7684\u65B9\u6CD5\uFF1A."
-lastmod: '2024-03-13T22:44:48.199878-06:00'
+lastmod: '2024-04-05T21:53:48.487845-06:00'
 model: gpt-4-0125-preview
-summary: "\u4EE5\u4E0B\u662F\u5728JavaScript\u4E2D\u4F7F\u7528`Math.round()`\u3001\
-  `Math.ceil()`\u548C`Math.floor()`\u8FDB\u884C\u6570\u5B57\u820D\u5165\u7684\u65B9\
-  \u6CD5\uFF1A."
+summary: ''
 title: "\u6570\u5B57\u53D6\u6574"
 weight: 13
 ---

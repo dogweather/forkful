@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:51:40.464485-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:35.124318-06:00'
+description: "How to: Historia interpolacji string\xF3w si\u0119ga j\u0119zyk\xF3\
+  w programowania, kt\xF3re u\u017Cywa\u0142y operator\xF3w konkatenacji do \u0142\
+  \u0105czenia ci\u0105g\xF3w znak\xF3w. W nowoczesnym\u2026"
+lastmod: '2024-04-05T21:53:36.565356-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historia interpolacji string\xF3w si\u0119ga j\u0119zyk\xF3w programowania,\
+  \ kt\xF3re u\u017Cywa\u0142y operator\xF3w konkatenacji do \u0142\u0105czenia ci\u0105\
+  g\xF3w znak\xF3w."
 title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 8
 ---

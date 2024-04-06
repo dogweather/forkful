@@ -2,13 +2,10 @@
 date: 2024-02-03 19:02:38.431289-07:00
 description: "How to: **Using the standard library `datetime`:** The `datetime` module\
   \ in Python's standard library provides classes for manipulating dates and times.\u2026"
-lastmod: '2024-03-13T22:44:59.717347-06:00'
+lastmod: '2024-04-05T21:53:35.400830-06:00'
 model: gpt-4-0125-preview
-summary: '**Using the standard library `datetime`:**
-
-
-  The `datetime` module in Python''s standard library provides classes for manipulating
-  dates and times.'
+summary: '**Using the standard library `datetime`:** The `datetime` module in Python''s
+  standard library provides classes for manipulating dates and times.'
 title: Getting the current date
 weight: 29
 ---

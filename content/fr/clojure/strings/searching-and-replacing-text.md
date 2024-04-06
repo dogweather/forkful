@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:57:46.519593-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:57.266182-06:00'
+description: null
+lastmod: '2024-04-05T21:53:58.846956-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: Recherche et remplacement de texte
 weight: 10
 ---

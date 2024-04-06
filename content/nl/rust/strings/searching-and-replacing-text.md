@@ -2,10 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:08.041509-07:00
-description: 'Hoe: .'
-lastmod: '2024-03-13T22:44:50.579131-06:00'
+description: 'Hoe: Voorbeelduitvoer.'
+lastmod: '2024-04-05T21:53:50.600477-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: ''
 title: Tekst zoeken en vervangen
 weight: 10
 ---

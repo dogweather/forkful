@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:30:43.570334-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:57.296295-06:00'
+description: "Comment faire : Calculer une date dans le futur ou le pass\xE9 n'est\
+  \ pas un concept nouveau. L'homme a toujours eu besoin de mesurer et de pr\xE9voir\
+  \ le temps.\u2026"
+lastmod: '2024-04-05T21:53:58.876432-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Calculer une date dans le futur ou le pass\xE9 n'est pas un concept nouveau."
 title: "Calcul d'une date future ou pass\xE9e"
 weight: 26
 ---

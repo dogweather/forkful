@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:04:08.885079-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:53.973070-06:00'
+description: "How to: Anf\xE4nge mit PHP reichen zur\xFCck in das Jahr 1995; heute\
+  \ ist PHP 8.x die aktuelle Version. Composer ist der De-facto-Standard f\xFCr das\
+  \ Management von\u2026"
+lastmod: '2024-04-05T21:53:55.857641-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Anf\xE4nge mit PHP reichen zur\xFCck in das Jahr 1995; heute ist PHP 8.x\
+  \ die aktuelle Version."
 title: Einen neuen Projekt starten
 weight: 1
 ---

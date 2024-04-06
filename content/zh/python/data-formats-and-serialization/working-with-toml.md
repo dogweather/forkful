@@ -3,11 +3,9 @@ date: 2024-01-26 04:25:52.199371-07:00
 description: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u5728\u5F00\u59CB\u4E4B\u524D\uFF0C\u4F7F\
   \u7528`pip install toml`\u5B89\u88C5`toml`\u5305\u3002\u8BA9\u6211\u4EEC\u89E3\u6790\
   \u4E00\u4E2ATOML\u6587\u4EF6\uFF1A."
-lastmod: '2024-03-13T22:44:47.282559-06:00'
+lastmod: '2024-04-05T21:53:47.634480-06:00'
 model: gpt-4-0125-preview
-summary: "\u5728\u5F00\u59CB\u4E4B\u524D\uFF0C\u4F7F\u7528`pip install toml`\u5B89\
-  \u88C5`toml`\u5305\u3002\u8BA9\u6211\u4EEC\u89E3\u6790\u4E00\u4E2ATOML\u6587\u4EF6\
-  \uFF1A."
+summary: ''
 title: "\u4F7F\u7528TOML"
 weight: 39
 ---

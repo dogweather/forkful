@@ -1,10 +1,14 @@
 ---
 date: 2024-01-20 17:55:58.925527-07:00
-description: "How to: (\uC5B4\uB5BB\uAC8C \uC0AC\uC6A9\uD558\uB098\uC694?) ."
+description: "How to: (\uC5B4\uB5BB\uAC8C \uC0AC\uC6A9\uD558\uB098\uC694?) \uCF58\uC194\
+  \uC5D0 \uC2E4\uD589\uD560 \uB54C \uC778\uC790\uB97C \uB2E4\uC74C\uACFC \uAC19\uC774\
+  \ \uB123\uC744 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.257362-06:00'
+lastmod: '2024-04-05T21:53:56.978824-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(\uC5B4\uB5BB\uAC8C \uC0AC\uC6A9\uD558\uB098\uC694?) \uCF58\uC194\uC5D0\
+  \ \uC2E4\uD589\uD560 \uB54C \uC778\uC790\uB97C \uB2E4\uC74C\uACFC \uAC19\uC774 \uB123\
+  \uC744 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
 title: "\uBA85\uB839\uC904 \uC778\uC218 \uC77D\uAE30"
 weight: 23
 ---

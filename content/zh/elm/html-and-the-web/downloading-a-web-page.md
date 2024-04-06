@@ -5,11 +5,9 @@ description: "How to \u5982\u4F55\u505A \u5728Elm\u4E2D\uFF0C\u4F60\u53EF\u4EE5\
   \u662F\u4E00\u4E2A\u5982\u4F55\u83B7\u53D6\u7F51\u9875\u5185\u5BB9\u7684\u4F8B\u5B50\
   \uFF1A."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:47.671307-06:00'
+lastmod: '2024-04-05T21:53:47.989157-06:00'
 model: gpt-4-1106-preview
-summary: "\u5728Elm\u4E2D\uFF0C\u4F60\u53EF\u4EE5\u4F7F\u7528`Http.get`\u51FD\u6570\
-  \u4E0B\u8F7D\u7F51\u9875\u5185\u5BB9\u3002\u4EE5\u4E0B\u662F\u4E00\u4E2A\u5982\u4F55\
-  \u83B7\u53D6\u7F51\u9875\u5185\u5BB9\u7684\u4F8B\u5B50\uFF1A."
+summary: ''
 title: "\u4E0B\u8F7D\u7F51\u9875"
 weight: 42
 ---

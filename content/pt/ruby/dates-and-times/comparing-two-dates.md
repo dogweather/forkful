@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:33:54.500063-07:00
-description: 'Como fazer: .'
-lastmod: '2024-03-13T22:44:47.107597-06:00'
+description: "Como fazer: Comparar datas \xE9 uma pr\xE1tica t\xE3o antiga quanto\
+  \ a pr\xF3pria no\xE7\xE3o de calend\xE1rio. No Ruby, a classe `Date` e a classe\
+  \ `DateTime` s\xE3o\u2026"
+lastmod: '2024-04-05T21:53:47.466924-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Comparar datas \xE9 uma pr\xE1tica t\xE3o antiga quanto a pr\xF3pria no\xE7\
+  \xE3o de calend\xE1rio."
 title: Comparando duas datas
 weight: 27
 ---

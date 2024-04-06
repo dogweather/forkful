@@ -2,8 +2,8 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:23.433070-07:00
-description: 'Jak: .'
-lastmod: '2024-03-13T22:44:35.286933-06:00'
+description: null
+lastmod: '2024-04-05T21:53:36.726064-06:00'
 model: gpt-4-0125-preview
 summary: ''
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:31:26.791419-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.680481-06:00'
+description: "Como Fazer: Historicamente, a fun\xE7\xE3o `strtotime` tem sido o workhorse\
+  \ no PHP para manipula\xE7\xE3o de datas. Alternativas como a classe `DateTime`\
+  \ introduzida\u2026"
+lastmod: '2024-04-05T21:53:47.025514-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historicamente, a fun\xE7\xE3o `strtotime` tem sido o workhorse no PHP para\
+  \ manipula\xE7\xE3o de datas."
 title: Calculando uma data no futuro ou passado
 weight: 26
 ---

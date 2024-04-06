@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:34:42.744165-07:00
 description: How to (Come Fare) Ecco alcuni modi per concatenare stringhe in C#.
-lastmod: '2024-03-13T22:44:43.426200-06:00'
+lastmod: '2024-04-05T21:53:44.194768-06:00'
 model: gpt-4-1106-preview
-summary: Ecco alcuni modi per concatenare stringhe in C#.
+summary: ''
 title: Concatenazione di stringhe
 weight: 3
 ---

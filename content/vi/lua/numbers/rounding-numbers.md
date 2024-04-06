@@ -2,10 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:05.933603-07:00
-description: "L\xE0m th\u1EBF n\xE0o: ."
-lastmod: '2024-03-13T22:44:36.815808-06:00'
+description: "L\xE0m th\u1EBF n\xE0o: Lua kh\xF4ng bao g\u1ED3m h\xE0m l\xE0m tr\xF2\
+  n ngay t\u1EEB \u0111\u1EA7u kh\xE1c v\u1EDBi m\u1ED9t s\u1ED1 ng\xF4n ng\u1EEF\
+  \ kh\xE1c. Theo truy\u1EC1n th\u1ED1ng, b\u1EA1n c\u1EA7n ph\u1EA3i vi\u1EBFt h\xE0\
+  m c\u1EE7a ri\xEAng m\xECnh ho\u1EB7c s\u1EED\u2026"
+lastmod: '2024-04-05T21:53:38.191866-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Lua kh\xF4ng bao g\u1ED3m h\xE0m l\xE0m tr\xF2n ngay t\u1EEB \u0111\u1EA7\
+  u kh\xE1c v\u1EDBi m\u1ED9t s\u1ED1 ng\xF4n ng\u1EEF kh\xE1c."
 title: "L\xE0m tr\xF2n s\u1ED1"
 weight: 13
 ---

@@ -3,10 +3,9 @@ date: 2024-01-20 18:01:05.092869-07:00
 description: "How to (Slik Gj\xF8r Du) For \xE5 sende en HTTP-foresp\xF8rsel i TypeScript,\
   \ kan du bruke den innebygde `fetch`-funksjonen eller et bibliotek som Axios. Her\
   \ er et\u2026"
-lastmod: '2024-03-13T22:44:40.528995-06:00'
+lastmod: '2024-04-05T21:53:41.506546-06:00'
 model: gpt-4-1106-preview
-summary: "For \xE5 sende en HTTP-foresp\xF8rsel i TypeScript, kan du bruke den innebygde\
-  \ `fetch`-funksjonen eller et bibliotek som Axios."
+summary: Her er et eksempel med `fetch`.
 title: "\xC5 sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---

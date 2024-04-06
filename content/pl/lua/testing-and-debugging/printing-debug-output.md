@@ -2,9 +2,10 @@
 date: 2024-01-20 17:52:53.764215-07:00
 description: "How to: (Jak to zrobi\u0107?) Aby wy\u015Bwietli\u0107 debug, u\u017C\
   yj standardowej funkcji `print()`. Oto przyk\u0142ad."
-lastmod: '2024-03-13T22:44:35.542483-06:00'
+lastmod: '2024-04-05T21:53:36.971291-06:00'
 model: gpt-4-1106-preview
-summary: "Aby wy\u015Bwietli\u0107 debug, u\u017Cyj standardowej funkcji `print()`."
+summary: "(Jak to zrobi\u0107?) Aby wy\u015Bwietli\u0107 debug, u\u017Cyj standardowej\
+  \ funkcji `print()`."
 title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---

@@ -1,9 +1,10 @@
 ---
 date: 2024-01-26 00:50:36.954903-07:00
-description: "\uC0AC\uC6A9 \uBC29\uBC95: ."
-lastmod: '2024-03-13T22:44:55.492662-06:00'
+description: "\uC0AC\uC6A9 \uBC29\uBC95: \uC5D0\uB7EC \uBC1C\uC0DD \uC2DC \uC0D8\uD50C\
+  \ \uCD9C\uB825 \uACB0\uACFC."
+lastmod: '2024-04-05T21:53:57.162726-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "\uC5D0\uB7EC \uCC98\uB9AC\uD558\uAE30"
 weight: 16
 ---

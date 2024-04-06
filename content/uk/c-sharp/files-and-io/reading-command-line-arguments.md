@@ -3,9 +3,10 @@ date: 2024-01-20 17:55:34.179201-07:00
 description: "How to: (\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\
   \u0438:) Here's a simple code snippet for grabbing command line arguments in C#.\
   \ Compile, run it via the console with some arguments, and\u2026"
-lastmod: '2024-03-13T22:44:49.313374-06:00'
+lastmod: '2024-04-05T21:53:49.498222-06:00'
 model: gpt-4-1106-preview
-summary: Here's a simple code snippet for grabbing command line arguments in C#.
+summary: "(\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\u0438:)\
+  \ Here's a simple code snippet for grabbing command line arguments in C#."
 title: "\u0427\u0438\u0442\u0430\u043D\u043D\u044F \u0430\u0440\u0433\u0443\u043C\u0435\
   \u043D\u0442\u0456\u0432 \u043A\u043E\u043C\u0430\u043D\u0434\u043D\u043E\u0433\u043E\
   \ \u0440\u044F\u0434\u043A\u0430"

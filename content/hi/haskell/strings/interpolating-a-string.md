@@ -5,12 +5,12 @@ description: "How to: (\u0915\u0948\u0938\u0947 \u0915\u0930\u0947\u0902:) Haske
   \ \u0932\u093F\u090F \u0939\u092E `printf` \u092F\u093E `interpolate` library \u0915\
   \u093E use \u0915\u0930 \u0938\u0915\u0924\u0947 \u0939\u0948\u0902. \u0928\u0940\
   \u091A\u0947 \u0926\u094B examples \u0939\u0948\u0902."
-lastmod: '2024-03-13T22:44:52.380282-06:00'
+lastmod: '2024-04-05T21:53:54.373751-06:00'
 model: gpt-4-1106-preview
-summary: "Haskell \u092E\u0947\u0902 string interpolation \u0915\u0930\u0928\u0947\
-  \ \u0915\u0947 \u0932\u093F\u090F \u0939\u092E `printf` \u092F\u093E `interpolate`\
-  \ library \u0915\u093E use \u0915\u0930 \u0938\u0915\u0924\u0947 \u0939\u0948\u0902\
-  ."
+summary: "(\u0915\u0948\u0938\u0947 \u0915\u0930\u0947\u0902:) Haskell \u092E\u0947\
+  \u0902 string interpolation \u0915\u0930\u0928\u0947 \u0915\u0947 \u0932\u093F\u090F\
+  \ \u0939\u092E `printf` \u092F\u093E `interpolate` library \u0915\u093E use \u0915\
+  \u0930 \u0938\u0915\u0924\u0947 \u0939\u0948\u0902."
 title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0907\u0902\u091F\u0930\u092A\
   \u094B\u0932\u0947\u0936\u0928"
 weight: 8

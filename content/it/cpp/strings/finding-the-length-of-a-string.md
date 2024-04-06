@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:46:51.573612-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:43.717339-06:00'
+description: "How to: Inizialmente, in C, la lunghezza di una stringa veniva trovata\
+  \ con `strlen`, che conta i caratteri fino al terminatore NULL (`'\\0'`). In C++,\
+  \ con\u2026"
+lastmod: '2024-04-05T21:53:44.474820-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Inizialmente, in C, la lunghezza di una stringa veniva trovata con `strlen`,
+  che conta i caratteri fino al terminatore NULL (`'\0'`).
 title: Trovare la lunghezza di una stringa
 weight: 7
 ---

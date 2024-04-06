@@ -3,9 +3,10 @@ date: 2024-01-20 17:28:30.640954-07:00
 description: "How to: (\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\
   \u0438:) C# makes date manipulation straightforward. Use `DateTime` and `TimeSpan`.\
   \ Here\u2019s how."
-lastmod: '2024-03-13T22:44:49.310616-06:00'
+lastmod: '2024-04-05T21:53:49.495332-06:00'
 model: gpt-4-1106-preview
-summary: C# makes date manipulation straightforward.
+summary: "(\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\u0438:)\
+  \ C# makes date manipulation straightforward."
 title: "\u041E\u0431\u0447\u0438\u0441\u043B\u0435\u043D\u043D\u044F \u0434\u0430\u0442\
   \u0438 \u0443 \u043C\u0430\u0439\u0431\u0443\u0442\u043D\u044C\u043E\u043C\u0443\
   \ \u0447\u0438 \u043C\u0438\u043D\u0443\u043B\u043E\u043C\u0443"

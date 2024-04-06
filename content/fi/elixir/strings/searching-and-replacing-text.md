@@ -2,10 +2,10 @@
 date: 2024-01-20 17:57:31.203811-07:00
 description: "How to: (Kuinka tehd\xE4:) Elixiriss\xE4 tekstin etsiminen ja korvaaminen\
   \ onnistuu `String`-moduulin avulla. Alapuolella pari esimerkki\xE4."
-lastmod: '2024-03-13T22:44:56.211356-06:00'
+lastmod: '2024-04-05T21:53:57.768355-06:00'
 model: gpt-4-1106-preview
-summary: "Elixiriss\xE4 tekstin etsiminen ja korvaaminen onnistuu `String`-moduulin\
-  \ avulla."
+summary: "(Kuinka tehd\xE4:) Elixiriss\xE4 tekstin etsiminen ja korvaaminen onnistuu\
+  \ `String`-moduulin avulla."
 title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---

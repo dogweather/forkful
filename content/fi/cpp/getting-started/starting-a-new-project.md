@@ -2,9 +2,10 @@
 date: 2024-01-20 18:03:15.293824-07:00
 description: "How to: (\"Kuinka se tehd\xE4\xE4n:\") Aloitetaan yksinkertaisella \"\
   Hello, World!\" esimerkill\xE4 C++:ssa. T\xE4m\xE4 asettaa perustan uudelle projektille."
-lastmod: '2024-03-13T22:44:56.865726-06:00'
+lastmod: '2024-04-05T21:53:58.444138-06:00'
 model: gpt-4-1106-preview
-summary: "Aloitetaan yksinkertaisella \"Hello, World!\" esimerkill\xE4 C++:ssa."
+summary: "(\"Kuinka se tehd\xE4\xE4n:\") Aloitetaan yksinkertaisella \"Hello, World!\"\
+  \ esimerkill\xE4 C++:ssa."
 title: Uuden projektin aloittaminen
 weight: 1
 ---

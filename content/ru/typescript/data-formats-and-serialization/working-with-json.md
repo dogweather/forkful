@@ -4,9 +4,9 @@ changelog:
 date: 2024-01-29 00:04:24.816535-07:00
 description: "\u041A\u0430\u043A \u044D\u0442\u043E \u0441\u0434\u0435\u043B\u0430\
   \u0442\u044C: **\u0420\u0430\u0437\u0431\u043E\u0440 JSON:**."
-lastmod: '2024-03-13T22:44:44.627736-06:00'
+lastmod: '2024-04-05T21:53:45.196158-06:00'
 model: gpt-4-0125-preview
-summary: "**\u0420\u0430\u0437\u0431\u043E\u0440 JSON:**."
+summary: ''
 title: "\u0420\u0430\u0431\u043E\u0442\u0430 \u0441 JSON"
 weight: 38
 ---

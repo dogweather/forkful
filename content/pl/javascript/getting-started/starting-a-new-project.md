@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 18:04:00.235267-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:35.797256-06:00'
+description: "How to: Zaczynanie projektu nie zawsze by\u0142o takie proste. W przesz\u0142\
+  o\u015Bci, bez narz\u0119dzi takich jak npm, konfiguracja \u015Brodowiska mog\u0142\
+  a zaj\u0105\u0107 godziny. Dzi\u015B,\u2026"
+lastmod: '2024-04-05T21:53:37.224088-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Zaczynanie projektu nie zawsze by\u0142o takie proste."
 title: Rozpoczynanie nowego projektu
 weight: 1
 ---

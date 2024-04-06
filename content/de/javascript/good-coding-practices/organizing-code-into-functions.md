@@ -1,9 +1,11 @@
 ---
 date: 2024-01-26 01:10:55.622364-07:00
-description: 'Wie man es macht: .'
-lastmod: '2024-03-13T22:44:54.271518-06:00'
+description: "Wie man es macht: Historisch gesehen fehlte imperativen Programmiersprachen\
+  \ wie fr\xFChen Versionen von BASIC oder Assembly die Abstraktion, die Funktionen\u2026"
+lastmod: '2024-04-05T21:53:56.159669-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historisch gesehen fehlte imperativen Programmiersprachen wie fr\xFChen\
+  \ Versionen von BASIC oder Assembly die Abstraktion, die Funktionen bieten."
 title: Code in Funktionen organisieren
 weight: 18
 ---

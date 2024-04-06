@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:35:46.690789-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:56.750579-06:00'
+description: "How to: Bash sis\xE4lt\xE4\xE4 `date`-komennon p\xE4iv\xE4m\xE4\xE4\
+  r\xE4n k\xE4sittelyyn, mukaan lukien muunnokset merkkijonoiksi. Historiallisesti\
+  \ Unix-j\xE4rjestelmiss\xE4 p\xE4iv\xE4m\xE4\xE4r\xE4n\u2026"
+lastmod: '2024-04-05T21:53:58.325249-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Bash sis\xE4lt\xE4\xE4 `date`-komennon p\xE4iv\xE4m\xE4\xE4r\xE4n k\xE4\
+  sittelyyn, mukaan lukien muunnokset merkkijonoiksi."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---

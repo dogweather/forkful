@@ -4,9 +4,11 @@ changelog:
 date: 2024-03-08 21:56:29.023166-07:00
 description: "Hoe te: Voor het refactoren heb je misschien een stuk code dat verschillende\
   \ niveaus van abstractie of verantwoordelijkheden mengt, zoals het berekenen\u2026"
-lastmod: '2024-03-13T22:44:50.514250-06:00'
+lastmod: '2024-04-05T21:53:50.537836-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: Voor het refactoren heb je misschien een stuk code dat verschillende niveaus
+  van abstractie of verantwoordelijkheden mengt, zoals het berekenen van een korting
+  en vervolgens toepassen.
 title: Refactoring
 weight: 19
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:53:43.918216-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:45:00.336566-06:00'
+description: 'How to: Expected output on the serial monitor will be the contents of
+  `example.txt` if everything is wired and initialized correctly.'
+lastmod: '2024-04-05T21:53:36.035113-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Expected output on the serial monitor will be the contents of `example.txt`
+  if everything is wired and initialized correctly.
 title: Reading a text file
 weight: 22
 ---

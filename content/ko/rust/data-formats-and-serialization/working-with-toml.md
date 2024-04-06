@@ -1,9 +1,16 @@
 ---
 date: 2024-01-26 04:26:30.893926-07:00
-description: "\uBC29\uBC95: ."
-lastmod: '2024-03-13T22:44:54.950205-06:00'
+description: "\uBC29\uBC95: TOML\uC740 2013\uB144\uC5D0 Tom Preston-Werner\uC5D0 \uC758\
+  \uD574 \uB9CC\uB4E4\uC5B4\uC9C4 \uAC83\uC73C\uB85C, Tom's Obvious, Minimal Language\uC758\
+  \ \uC57D\uC790\uC785\uB2C8\uB2E4. \uC124\uC815 \uD30C\uC77C\uC5D0 JSON\uC774\uB098\
+  \ YAML\uBCF4\uB2E4 \uB354 \uC77D\uAE30 \uC26C\uC6CC\uC57C \uD55C\uB2E4\uB294 \uBAA9\
+  \uD45C\uB97C \uAC00\uC9C0\uACE0 \uC788\uC73C\uBA70, TOML\uC758 \uB514\uC790\uC778\
+  \uC740 \uBAA8\uD638\uD558\uC9C0\u2026"
+lastmod: '2024-04-05T21:53:56.734537-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "TOML\uC740 2013\uB144\uC5D0 Tom Preston-Werner\uC5D0 \uC758\uD574 \uB9CC\
+  \uB4E4\uC5B4\uC9C4 \uAC83\uC73C\uB85C, Tom's Obvious, Minimal Language\uC758 \uC57D\
+  \uC790\uC785\uB2C8\uB2E4."
 title: "\uD504\uB85C\uADF8\uB798\uBA38\uB97C \uC704\uD55C TOML \uB2E4\uB8E8\uAE30"
 weight: 39
 ---

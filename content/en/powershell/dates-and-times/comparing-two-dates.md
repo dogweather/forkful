@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:33:40.084046-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:45:00.295696-06:00'
+description: "How to: Way back in the stone ages of computing\u2014not really, but,\
+  \ you know, the early days\u2014dates were messy. We've come a long way with standards\
+  \ and\u2026"
+lastmod: '2024-04-05T21:53:35.992785-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Way back in the stone ages of computing\u2014not really, but, you know,\
+  \ the early days\u2014dates were messy."
 title: Comparing two dates
 weight: 27
 ---

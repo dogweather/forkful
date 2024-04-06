@@ -2,10 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:33.007358-07:00
-description: "L\xE0m th\u1EBF n\xE0o: ."
-lastmod: '2024-03-13T22:44:36.621886-06:00'
+description: "L\xE0m th\u1EBF n\xE0o: Trong \u0111o\u1EA1n m\xE3 tr\xEAn, `args` l\xE0\
+  \ m\u1ED9t m\u1EA3ng ch\u1EE9a c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh. H\xE0\
+  m `main` ki\u1EC3m tra xem ch\xFAng ta c\xF3 nh\u1EADn \u0111\u01B0\u1EE3c \u0111\
+  \u1ED1i s\u1ED1 n\xE0o kh\xF4ng, v\xE0 ch\xE0o h\u1ECFi\u2026"
+lastmod: '2024-04-05T21:53:38.016040-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Trong \u0111o\u1EA1n m\xE3 tr\xEAn, `args` l\xE0 m\u1ED9t m\u1EA3ng ch\u1EE9\
+  a c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh."
 title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
 weight: 23
 ---

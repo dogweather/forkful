@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:34:40.566760-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:37.821262-06:00'
+description: "How to: Str\xE4ngkonkatenering har alltid varit en grundl\xE4ggande\
+  \ del av programmering. I Elm anv\xE4nds oftast (++) operatorn f\xF6r att enkelt\
+  \ s\xE4tta ihop\u2026"
+lastmod: '2024-04-05T21:53:39.155723-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Str\xE4ngkonkatenering har alltid varit en grundl\xE4ggande del av programmering."
 title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---

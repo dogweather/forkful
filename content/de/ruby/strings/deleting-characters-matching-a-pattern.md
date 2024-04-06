@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:43:02.508790-07:00
-description: 'So geht''s: .'
-lastmod: '2024-03-13T22:44:54.382279-06:00'
+description: "So geht's: Die Methode `gsub` in Ruby erm\xF6glicht das globale Ersetzen\
+  \ von Mustern in Strings und ist seit den Anf\xE4ngen der Sprache verf\xFCgbar.\
+  \ Alternativen\u2026"
+lastmod: '2024-04-05T21:53:56.278830-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Die Methode `gsub` in Ruby erm\xF6glicht das globale Ersetzen von Mustern\
+  \ in Strings und ist seit den Anf\xE4ngen der Sprache verf\xFCgbar."
 title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
 weight: 5
 ---

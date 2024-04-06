@@ -6,10 +6,11 @@ description: "How to: (\uBC29\uBC95) C#\uC5D0\uC11C HTTP \uC694\uCCAD\uC744 \uBC
   \uC744 \uBCF4\uB0B4\uB294 \uC608\uC81C\uCF54\uB4DC\uC640 \uCD9C\uB825 \uACB0\uACFC\
   \uC785\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.229212-06:00'
+lastmod: '2024-04-05T21:53:56.957216-06:00'
 model: gpt-4-1106-preview
-summary: "C#\uC5D0\uC11C HTTP \uC694\uCCAD\uC744 \uBCF4\uB0BC \uB54C\uB294 `HttpClient`\
-  \ \uD074\uB798\uC2A4\uB97C \uC8FC\uB85C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
+summary: "(\uBC29\uBC95) C#\uC5D0\uC11C HTTP \uC694\uCCAD\uC744 \uBCF4\uB0BC \uB54C\
+  \uB294 `HttpClient` \uD074\uB798\uC2A4\uB97C \uC8FC\uB85C \uC0AC\uC6A9\uD569\uB2C8\
+  \uB2E4."
 title: "HTTP \uC694\uCCAD \uBCF4\uB0B4\uAE30"
 weight: 44
 ---

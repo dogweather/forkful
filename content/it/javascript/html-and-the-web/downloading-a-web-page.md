@@ -2,9 +2,9 @@
 date: 2024-01-20 17:44:27.408580-07:00
 description: 'How to: (Come fare) Usiamo `fetch()` per prendere il contenuto di una
   pagina web. Guarda qui.'
-lastmod: '2024-03-13T22:44:43.810790-06:00'
+lastmod: '2024-04-05T21:53:44.560429-06:00'
 model: gpt-4-1106-preview
-summary: Usiamo `fetch()` per prendere il contenuto di una pagina web.
+summary: (Come fare) Usiamo `fetch()` per prendere il contenuto di una pagina web.
 title: Scaricare una pagina web
 weight: 42
 ---

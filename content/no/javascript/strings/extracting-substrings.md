@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:46:11.797273-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:41.173309-06:00'
+description: "How to: Bak i tida, n\xE5r Netscape navigerte veien, introduserte de\
+  \ `substring`. Siden da, 'slice' og moderne 'String' metoder kom, utvidet spr\xE5\
+  ket. Du\u2026"
+lastmod: '2024-04-05T21:53:42.132774-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Bak i tida, n\xE5r Netscape navigerte veien, introduserte de `substring`."
 title: Uthenting av delstrenger
 weight: 6
 ---

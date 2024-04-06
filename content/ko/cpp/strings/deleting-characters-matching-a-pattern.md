@@ -6,11 +6,12 @@ description: "How to: (\uBC29\uBC95) C++\uC5D0\uC11C\uB294 `<algorithm>` \uD5E4\
   \uB2C8\uB2E4. \uB2E4\uC74C \uC608\uC81C \uCF54\uB4DC\uC640 \uCD9C\uB825\uC744 \uD655\
   \uC778\uD574 \uBCF4\uC138\uC694."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.646151-06:00'
+lastmod: '2024-04-05T21:53:57.283757-06:00'
 model: gpt-4-1106-preview
-summary: "C++\uC5D0\uC11C\uB294 `<algorithm>` \uD5E4\uB354\uC5D0 \uC788\uB294 `erase()`\
-  \ \uBC0F `remove_if()` \uD568\uC218\uB97C \uC774\uC6A9\uD574\uC11C \uBB38\uC790\
-  \ \uD328\uD134\uC744 \uC0AD\uC81C\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
+summary: "(\uBC29\uBC95) C++\uC5D0\uC11C\uB294 `<algorithm>` \uD5E4\uB354\uC5D0 \uC788\
+  \uB294 `erase()` \uBC0F `remove_if()` \uD568\uC218\uB97C \uC774\uC6A9\uD574\uC11C\
+  \ \uBB38\uC790 \uD328\uD134\uC744 \uC0AD\uC81C\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4\
+  ."
 title: "\uD328\uD134\uC5D0 \uC77C\uCE58\uD558\uB294 \uBB38\uC790 \uC0AD\uC81C"
 weight: 5
 ---

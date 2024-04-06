@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:33:19.698842-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:43.321424-06:00'
+description: "How to: In Java, la comparazione di date \xE8 stata storicamente gestita\
+  \ con `java.util.Date`, ma questa classe aveva limitazioni e problemi di design.\
+  \ Dal\u2026"
+lastmod: '2024-04-05T21:53:44.091825-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "In Java, la comparazione di date \xE8 stata storicamente gestita con `java.util.Date`,\
+  \ ma questa classe aveva limitazioni e problemi di design."
 title: Confronto tra due date
 weight: 27
 ---

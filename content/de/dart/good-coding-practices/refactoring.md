@@ -5,9 +5,11 @@ date: 2024-03-08 21:56:08.357079-07:00
 description: "Wie geht das: Vor dem Refactoring haben Sie m\xF6glicherweise einen\
   \ Codeabschnitt, der verschiedene Abstraktionsebenen oder Verantwortlichkeiten mischt,\
   \ wie\u2026"
-lastmod: '2024-03-13T22:44:53.590245-06:00'
+lastmod: '2024-04-05T21:53:55.472976-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Vor dem Refactoring haben Sie m\xF6glicherweise einen Codeabschnitt, der\
+  \ verschiedene Abstraktionsebenen oder Verantwortlichkeiten mischt, wie zum Beispiel\
+  \ das Berechnen eines Rabatts und dann dessen Anwendung."
 title: Refaktorisierung
 weight: 19
 ---

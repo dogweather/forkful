@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 18:00:13.264394-07:00
-description: "How to: (C\xF3mo hacerlo:) ."
-lastmod: '2024-03-13T22:44:58.607521-06:00'
+description: "How to: (C\xF3mo hacerlo:) Output."
+lastmod: '2024-04-05T21:53:59.966266-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(C\xF3mo hacerlo:) Output."
 title: Enviando una solicitud http
 weight: 44
 ---

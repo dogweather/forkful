@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:44:56.986546-07:00
-description: 'Hvordan: .'
-lastmod: '2024-03-13T22:44:40.961385-06:00'
+description: "Hvordan: I tidlige dager, hadde vi ikke mange innebygde strengoperasjoner\
+  \ i Bash. Vi st\xF8ttet oss p\xE5 eksterne verkt\xF8y som `cut`, `awk`, `grep`.\
+  \ Med Bash\u2026"
+lastmod: '2024-04-05T21:53:41.923754-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: I tidlige dager, hadde vi ikke mange innebygde strengoperasjoner i Bash.
 title: Uthenting av delstrenger
 weight: 6
 ---

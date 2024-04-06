@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:45:16.064856-07:00
-description: 'Come fare: .'
-lastmod: '2024-03-13T22:44:43.031589-06:00'
+description: "Come fare: Le funzioni per estrarre sottostringhe esistono da quando\
+  \ sono nate le stringhe nei linguaggi di programmazione. In Clojure, `subs` \xE8\
+  \ la scelta\u2026"
+lastmod: '2024-04-05T21:53:43.815049-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Le funzioni per estrarre sottostringhe esistono da quando sono nate le stringhe
+  nei linguaggi di programmazione.
 title: Estrazione di sottostringhe
 weight: 6
 ---

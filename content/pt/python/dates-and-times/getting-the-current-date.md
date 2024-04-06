@@ -5,10 +5,10 @@ date: 2024-02-03 19:10:27.091886-07:00
 description: "Como Fazer: **Usando a biblioteca padr\xE3o `datetime`:** O m\xF3dulo\
   \ `datetime` na biblioteca padr\xE3o do Python fornece classes para manipula\xE7\
   \xE3o de datas e\u2026"
-lastmod: '2024-03-13T22:44:46.164846-06:00'
+lastmod: '2024-04-05T21:53:46.485728-06:00'
 model: gpt-4-0125-preview
-summary: "**Usando a biblioteca padr\xE3o `datetime`:**\n\nO m\xF3dulo `datetime`\
-  \ na biblioteca padr\xE3o do Python fornece classes para manipula\xE7\xE3o de datas\
+summary: "**Usando a biblioteca padr\xE3o `datetime`:** O m\xF3dulo `datetime` na\
+  \ biblioteca padr\xE3o do Python fornece classes para manipula\xE7\xE3o de datas\
   \ e hor\xE1rios."
 title: Obtendo a data atual
 weight: 29

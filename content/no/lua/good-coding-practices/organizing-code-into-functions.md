@@ -1,9 +1,9 @@
 ---
 date: 2024-01-26 01:10:59.078094-07:00
-description: 'Hvordan: .'
-lastmod: '2024-03-13T22:44:40.935776-06:00'
+description: "Hvordan: Funksjoner blir mer komplekse, og h\xE5ndterer ulike oppgaver."
+lastmod: '2024-04-05T21:53:41.899145-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Funksjoner blir mer komplekse, og h\xE5ndterer ulike oppgaver."
 title: Organisering av kode i funksjoner
 weight: 18
 ---

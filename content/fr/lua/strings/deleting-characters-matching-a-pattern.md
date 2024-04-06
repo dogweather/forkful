@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:42:40.188453-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:57.907220-06:00'
+description: "Comment faire : La suppression de caract\xE8res selon un motif est possible\
+  \ gr\xE2ce aux expressions r\xE9guli\xE8res, introduites dans les ann\xE9es 1950.\
+  \ En Lua, on\u2026"
+lastmod: '2024-04-05T21:53:59.392263-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "La suppression de caract\xE8res selon un motif est possible gr\xE2ce aux\
+  \ expressions r\xE9guli\xE8res, introduites dans les ann\xE9es 1950."
 title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---

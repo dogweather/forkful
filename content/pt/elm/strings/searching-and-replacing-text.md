@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:57:29.981247-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.484402-06:00'
+description: "Como Fazer: Substituir texto \xE9 uma opera\xE7\xE3o comum desde os\
+  \ prim\xF3rdios da programa\xE7\xE3o. Op\xE7\xF5es incluem express\xF5es regulares,\
+  \ mas no Elm atual, usamos\u2026"
+lastmod: '2024-04-05T21:53:46.824105-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Substituir texto \xE9 uma opera\xE7\xE3o comum desde os prim\xF3rdios da\
+  \ programa\xE7\xE3o."
 title: Pesquisando e substituindo texto
 weight: 10
 ---

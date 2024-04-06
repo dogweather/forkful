@@ -2,9 +2,9 @@
 date: 2024-01-20 17:36:29.612545-07:00
 description: "How to: (Hvordan:) Elm gir ikke innebygd datoformatering, s\xE5 vi bruker\
   \ ofte `justinmimbs/date` pakken. Her er et grunnleggende eksempel."
-lastmod: '2024-03-13T22:44:40.720857-06:00'
+lastmod: '2024-04-05T21:53:41.699270-06:00'
 model: gpt-4-1106-preview
-summary: "Elm gir ikke innebygd datoformatering, s\xE5 vi bruker ofte `justinmimbs/date`\
+summary: "(Hvordan:) Elm gir ikke innebygd datoformatering, s\xE5 vi bruker ofte `justinmimbs/date`\
   \ pakken."
 title: Konvertere en dato til en streng
 weight: 28

@@ -1,10 +1,16 @@
 ---
 date: 2024-01-20 17:59:43.263543-07:00
-description: "How to: \u5982\u4F55\u5B9E\u73B0\uFF1A ."
+description: "How to: \u5982\u4F55\u5B9E\u73B0\uFF1A \u5F53\u4F60\u6267\u884C`getText`\uFF0C\
+  \u5B83\u4F1A\u4ECE\u63D0\u4F9B\u7684URL\u83B7\u53D6\u6587\u672C\u3002`GotText`\u5305\
+  \u542B\u4E86\u54CD\u5E94\uFF0C\u800C`RequestFailed`\u5305\u542B\u4E86\u53EF\u80FD\
+  \u51FA\u73B0\u7684\u9519\u8BEF\u3002"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:47.669290-06:00'
+lastmod: '2024-04-05T21:53:47.986817-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "\u5982\u4F55\u5B9E\u73B0\uFF1A \u5F53\u4F60\u6267\u884C`getText`\uFF0C\u5B83\
+  \u4F1A\u4ECE\u63D0\u4F9B\u7684URL\u83B7\u53D6\u6587\u672C\u3002`GotText`\u5305\u542B\
+  \u4E86\u54CD\u5E94\uFF0C\u800C`RequestFailed`\u5305\u542B\u4E86\u53EF\u80FD\u51FA\
+  \u73B0\u7684\u9519\u8BEF\u3002"
 title: "\u53D1\u51FA HTTP \u8BF7\u6C42"
 weight: 44
 ---

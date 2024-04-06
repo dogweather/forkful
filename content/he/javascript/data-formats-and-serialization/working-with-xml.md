@@ -2,9 +2,9 @@
 date: 2024-01-26 04:33:09.215633-07:00
 description: "\u05D0\u05D9\u05DA \u05DC\u05E2\u05E9\u05D5\u05EA: \u05D4\u05E0\u05D4\
   \ \u05D0\u05D9\u05DA \u05DC\u05E0\u05EA\u05D7 XML."
-lastmod: '2024-03-13T22:44:40.015001-06:00'
+lastmod: '2024-04-05T21:53:41.040957-06:00'
 model: gpt-4-0125-preview
-summary: "\u05D4\u05E0\u05D4 \u05D0\u05D9\u05DA \u05DC\u05E0\u05EA\u05D7 XML."
+summary: ''
 title: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD XML"
 weight: 40
 ---

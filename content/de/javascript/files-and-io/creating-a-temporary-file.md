@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:40:31.765207-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:54.285746-06:00'
+description: "How to: Die Nutzung tempor\xE4rer Dateien ist keine neue Erfindung.\
+  \ Sie existieren, seit Rechner mit limitierten Ressourcen arbeiten mussten. Historisch\u2026"
+lastmod: '2024-04-05T21:53:56.173903-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Die Nutzung tempor\xE4rer Dateien ist keine neue Erfindung."
 title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---

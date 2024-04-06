@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:47:15.037114-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.229337-06:00'
+description: "Como Fazer: Historicamente, a contagem de caracteres em uma string \xE9\
+  \ uma opera\xE7\xE3o comum em programa\xE7\xE3o, mas ganhou complexidades com a\
+  \ ado\xE7\xE3o do padr\xE3o\u2026"
+lastmod: '2024-04-05T21:53:46.556503-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historicamente, a contagem de caracteres em uma string \xE9 uma opera\xE7\
+  \xE3o comum em programa\xE7\xE3o, mas ganhou complexidades com a ado\xE7\xE3o do\
+  \ padr\xE3o Unicode."
 title: Descobrindo o comprimento de uma string
 weight: 7
 ---

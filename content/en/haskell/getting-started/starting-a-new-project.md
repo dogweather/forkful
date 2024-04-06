@@ -2,10 +2,11 @@
 changelog:
 - 2024-01-21, dogweather, Reviewed for accuracy
 date: 2024-01-20 18:03:42.182088-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:45:00.129130-06:00'
+description: "How to: Haskell projects often rely on tools like Stack or Cabal. Stack\
+  \ manages dependencies, ensuring consistent builds. In 2008, Stack was a game-\u2026"
+lastmod: '2024-04-05T21:53:35.825589-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Haskell projects often rely on tools like Stack or Cabal.
 title: Starting a new project
 weight: 1
 ---

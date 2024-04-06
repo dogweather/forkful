@@ -2,10 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:29.817677-07:00
-description: "C\xE1ch th\u1EF1c hi\u1EC7n: ."
-lastmod: '2024-03-13T22:44:37.075709-06:00'
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Tr\u01B0\u1EDBc Swift v\xE0 l\u1EADp tr\xEC\
+  nh hi\u1EC7n \u0111\u1EA1i, vi\u1EC7c kh\u1EDBp m\u1EABu l\xE0 l\u0129nh v\u1EF1\
+  c c\u1EE7a nh\u1EEFng c\xF4ng c\u1EE5 v\xE0 ng\xF4n ng\u1EEF c\u1EE5 th\u1EC3 nh\u01B0\
+  \ `sed`, `awk`, hay Perl n\u1ED5i ti\u1EBFng v\u1EDBi\u2026"
+lastmod: '2024-04-05T21:53:38.430709-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Tr\u01B0\u1EDBc Swift v\xE0 l\u1EADp tr\xECnh hi\u1EC7n \u0111\u1EA1i, vi\u1EC7\
+  c kh\u1EDBp m\u1EABu l\xE0 l\u0129nh v\u1EF1c c\u1EE7a nh\u1EEFng c\xF4ng c\u1EE5\
+  \ v\xE0 ng\xF4n ng\u1EEF c\u1EE5 th\u1EC3 nh\u01B0 `sed`, `awk`, hay Perl n\u1ED5\
+  i ti\u1EBFng v\u1EDBi kh\u1EA3 n\u0103ng x\u1EED l\xFD v\u0103n b\u1EA3n."
 title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
 weight: 5
 ---

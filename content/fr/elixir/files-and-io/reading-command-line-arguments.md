@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:56:09.361779-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:57.343911-06:00'
+description: "Comment faire : Historiquement, la lecture des arguments de la ligne\
+  \ de commande vient des premiers jours de l'informatique, car c'\xE9tait le moyen\u2026"
+lastmod: '2024-04-05T21:53:58.922685-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historiquement, la lecture des arguments de la ligne de commande vient des\
+  \ premiers jours de l'informatique, car c'\xE9tait le moyen principal d'interagir\
+  \ avec les logiciels."
 title: Lecture des arguments de ligne de commande
 weight: 23
 ---

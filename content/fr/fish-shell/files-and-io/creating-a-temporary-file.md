@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:40:21.176089-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:58.345565-06:00'
+description: "Comment faire : Cr\xE9er des fichiers temporaires n'est pas nouveau;\
+  \ la commande `mktemp` existe depuis les premiers jours d'Unix et reste la m\xE9\
+  thode\u2026"
+lastmod: '2024-04-05T21:53:59.744141-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Cr\xE9er des fichiers temporaires n'est pas nouveau; la commande `mktemp`\
+  \ existe depuis les premiers jours d'Unix et reste la m\xE9thode standard sous Linux\
+  \ et les syst\xE8mes de type Unix."
 title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---

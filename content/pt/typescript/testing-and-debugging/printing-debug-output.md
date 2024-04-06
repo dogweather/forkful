@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:53:47.711536-07:00
-description: 'How to: (Como Fazer:) .'
-lastmod: '2024-03-13T22:44:46.328721-06:00'
+description: "How to: (Como Fazer:) _Sa\xEDda Exemplar:_."
+lastmod: '2024-04-05T21:53:46.658977-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(Como Fazer:) _Sa\xEDda Exemplar:_."
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---

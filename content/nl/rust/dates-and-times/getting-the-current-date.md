@@ -2,10 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:20.307595-07:00
-description: 'Hoe te: .'
-lastmod: '2024-03-13T22:44:50.604904-06:00'
+description: "Hoe te: Rust, een systeemtaal die zich richt op veiligheid en prestaties,\
+  \ is niet voorzien van datum- en tijdfunctionaliteiten in zijn\u2026"
+lastmod: '2024-04-05T21:53:50.626164-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: Rust, een systeemtaal die zich richt op veiligheid en prestaties, is niet
+  voorzien van datum- en tijdfunctionaliteiten in zijn standaardbibliotheek.
 title: Het huidige datum ophalen
 weight: 29
 ---

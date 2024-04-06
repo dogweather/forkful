@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:52:09.417331-07:00
-description: "Hur g\xF6r man: ."
-lastmod: '2024-03-13T22:44:37.527994-06:00'
+description: "Hur g\xF6r man: I f\xF6rhistorisk tid av programmering str\xE4ckte sig\
+  \ fels\xF6kning till att gr\xE4va igenom pappersutskrifter. Idag \xE4r `println`\
+  \ i Clojure enkelt och\u2026"
+lastmod: '2024-04-05T21:53:38.855497-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "I f\xF6rhistorisk tid av programmering str\xE4ckte sig fels\xF6kning till\
+  \ att gr\xE4va igenom pappersutskrifter."
 title: "Skriva ut fels\xF6kningsdata"
 weight: 33
 ---

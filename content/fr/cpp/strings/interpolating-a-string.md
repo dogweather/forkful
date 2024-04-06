@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:50:32.680269-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:58.145886-06:00'
+description: "Comment faire : Historiquement, en C++, l'interpolation \xE9tait souvent\
+  \ r\xE9alis\xE9e par des flux d\u2019entr\xE9e/sortie (iostream) ou des op\xE9rations\
+  \ de concat\xE9nation\u2026"
+lastmod: '2024-04-05T21:53:59.575700-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historiquement, en C++, l'interpolation \xE9tait souvent r\xE9alis\xE9e\
+  \ par des flux d\u2019entr\xE9e/sortie (iostream) ou des op\xE9rations de concat\xE9\
+  nation manuelles."
 title: "Interpolation de cha\xEEnes de caract\xE8res"
 weight: 8
 ---

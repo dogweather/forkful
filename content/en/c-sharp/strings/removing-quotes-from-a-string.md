@@ -1,9 +1,11 @@
 ---
 date: 2024-01-25 20:50:27.610858-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:45:00.076810-06:00'
+description: "How to: The concept of removing quotes isn't new or particularly complex,\
+  \ but it's crucial because quotation marks are often used to delimit strings. When\u2026"
+lastmod: '2024-04-05T21:53:35.774254-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: The concept of removing quotes isn't new or particularly complex, but it's
+  crucial because quotation marks are often used to delimit strings.
 title: Removing quotes from a string
 weight: 9
 ---

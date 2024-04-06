@@ -2,9 +2,10 @@
 date: 2024-01-20 17:56:23.750393-07:00
 description: "How to: (Jak to zrobi\u0107:) Oto jak \u0142atwo przeczyta\u0107 argumenty\
   \ z linii polece\u0144 w Lua."
-lastmod: '2024-03-13T22:44:35.555440-06:00'
+lastmod: '2024-04-05T21:53:36.983653-06:00'
 model: gpt-4-1106-preview
-summary: "Oto jak \u0142atwo przeczyta\u0107 argumenty z linii polece\u0144 w Lua."
+summary: "(Jak to zrobi\u0107:) Oto jak \u0142atwo przeczyta\u0107 argumenty z linii\
+  \ polece\u0144 w Lua."
 title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---

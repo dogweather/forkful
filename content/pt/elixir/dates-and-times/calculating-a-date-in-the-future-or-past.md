@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:30:54.497848-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.251421-06:00'
+description: "Como Fazer: Calcular datas no passado e no futuro n\xE3o \xE9 um conceito\
+  \ novo. Desde que os calend\xE1rios foram criados, as pessoas querem saber datas\
+  \ futuras ou\u2026"
+lastmod: '2024-04-05T21:53:46.579116-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Calcular datas no passado e no futuro n\xE3o \xE9 um conceito novo."
 title: Calculando uma data no futuro ou passado
 weight: 26
 ---

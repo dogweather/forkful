@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:36:36.523744-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:56.238699-06:00'
+description: "How to: Elixir tarjoaa `Date`-moduulin p\xE4iv\xE4m\xE4\xE4r\xE4k\xE4\
+  sittelyyn. Historiallisesti p\xE4iv\xE4m\xE4\xE4r\xE4n k\xE4sittely on ollut monimutkaista\
+  \ eri ohjelmointikieliss\xE4.\u2026"
+lastmod: '2024-04-05T21:53:57.794541-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Elixir tarjoaa `Date`-moduulin p\xE4iv\xE4m\xE4\xE4r\xE4k\xE4sittelyyn."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---

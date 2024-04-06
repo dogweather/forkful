@@ -1,9 +1,11 @@
 ---
 date: 2024-01-26 01:10:39.136816-07:00
-description: 'Come fare: .'
-lastmod: '2024-03-13T22:44:43.817923-06:00'
+description: "Come fare: Storicamente, i linguaggi di programmazione imperativa come\
+  \ le prime versioni di BASIC o Assembly mancavano dell'astrazione fornita dalle\u2026"
+lastmod: '2024-04-05T21:53:44.566426-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Storicamente, i linguaggi di programmazione imperativa come le prime versioni
+  di BASIC o Assembly mancavano dell'astrazione fornita dalle funzioni.
 title: Organizzazione del codice in funzioni
 weight: 18
 ---

@@ -2,9 +2,9 @@
 date: 2024-01-26 04:43:36.185998-07:00
 description: "Comment faire : D\xE9finissons une classe de nombre complexe de base\
   \ en Kotlin ."
-lastmod: '2024-03-13T22:44:57.731111-06:00'
+lastmod: '2024-04-05T21:53:59.222568-06:00'
 model: gpt-4-0125-preview
-summary: "D\xE9finissons une classe de nombre complexe de base en Kotlin."
+summary: "D\xE9finissons une classe de nombre complexe de base en Kotlin ."
 title: Manipulation des nombres complexes
 weight: 14
 ---

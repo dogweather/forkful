@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:35:49.184447-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:40.524140-06:00'
+description: 'How to: Eller med template literals.'
+lastmod: '2024-04-05T21:53:41.502146-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Eller med template literals.
 title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---

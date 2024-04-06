@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:52:08.301120-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:40.404844-06:00'
+description: "How to: I gamle dager, da skjermer var luksus, ble feils\xF8king gjort\
+  \ ved \xE5 analysere kodelister og tolke blinkende lys. Utskrift for feils\xF8king\
+  \ er et steg\u2026"
+lastmod: '2024-04-05T21:53:41.383442-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "I gamle dager, da skjermer var luksus, ble feils\xF8king gjort ved \xE5\
+  \ analysere kodelister og tolke blinkende lys."
 title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---

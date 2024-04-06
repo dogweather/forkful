@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:39:12.090187-07:00
-description: 'Anleitung: .'
-lastmod: '2024-03-13T22:44:54.385041-06:00'
+description: "Anleitung: In den Anf\xE4ngen der Computerprogrammierung waren viele\
+  \ Systeme casesensitiv, was bedeutet, dass Gro\xDF- und Kleinschreibung unterschieden\
+  \ wurde.\u2026"
+lastmod: '2024-04-05T21:53:56.281888-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "In den Anf\xE4ngen der Computerprogrammierung waren viele Systeme casesensitiv,\
+  \ was bedeutet, dass Gro\xDF- und Kleinschreibung unterschieden wurde."
 title: Umformung eines Strings in Kleinbuchstaben
 weight: 4
 ---

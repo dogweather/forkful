@@ -2,10 +2,10 @@
 date: 2024-01-20 17:53:28.788973-07:00
 description: "How to: (Jak to zrobi\u0107?) W TypeScript mo\u017Cesz wykorzysta\u0107\
   \ `console.log` do pokazywania debug info. Sp\xF3jrz jak to dzia\u0142a."
-lastmod: '2024-03-13T22:44:35.141461-06:00'
+lastmod: '2024-04-05T21:53:36.581976-06:00'
 model: gpt-4-1106-preview
-summary: "W TypeScript mo\u017Cesz wykorzysta\u0107 `console.log` do pokazywania debug\
-  \ info."
+summary: "(Jak to zrobi\u0107?) W TypeScript mo\u017Cesz wykorzysta\u0107 `console.log`\
+  \ do pokazywania debug info."
 title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---

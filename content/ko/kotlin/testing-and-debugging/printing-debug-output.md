@@ -4,11 +4,11 @@ description: "How to: (\uBC29\uBC95) Kotlin\uC5D0\uC11C\uB294 `println()` \uD568
   \uB85C \uB514\uBC84\uADF8 \uBA54\uC2DC\uC9C0\uB97C \uC27D\uAC8C \uCD9C\uB825\uD560\
   \ \uC218 \uC788\uC2B5\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.175042-06:00'
+lastmod: '2024-04-05T21:53:56.916249-06:00'
 model: gpt-4-1106-preview
-summary: "Kotlin\uC5D0\uC11C\uB294 `println()` \uD568\uC218\uB85C \uB514\uBC84\uADF8\
-  \ \uBA54\uC2DC\uC9C0\uB97C \uC27D\uAC8C \uCD9C\uB825\uD560 \uC218 \uC788\uC2B5\uB2C8\
-  \uB2E4."
+summary: "(\uBC29\uBC95) Kotlin\uC5D0\uC11C\uB294 `println()` \uD568\uC218\uB85C \uB514\
+  \uBC84\uADF8 \uBA54\uC2DC\uC9C0\uB97C \uC27D\uAC8C \uCD9C\uB825\uD560 \uC218 \uC788\
+  \uC2B5\uB2C8\uB2E4."
 title: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC744 \uCC0D\uC5B4\uBCF4\uAE30"
 weight: 33
 ---

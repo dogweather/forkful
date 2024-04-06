@@ -2,10 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:52.696086-07:00
-description: 'Hoe te: .'
-lastmod: '2024-03-13T22:44:51.321618-06:00'
+description: "Hoe te: Historisch gezien is het converteren van hoofdletter naar kleine\
+  \ letter een basis in programmeertalen om tekstuniformiteit te waarborgen. Het\u2026"
+lastmod: '2024-04-05T21:53:51.333195-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: Historisch gezien is het converteren van hoofdletter naar kleine letter een
+  basis in programmeertalen om tekstuniformiteit te waarborgen.
 title: Een string omzetten naar kleine letters
 weight: 4
 ---

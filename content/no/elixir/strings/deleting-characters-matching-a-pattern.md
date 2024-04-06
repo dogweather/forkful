@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:42:13.446821-07:00
-description: 'Hvordan: .'
-lastmod: '2024-03-13T22:44:40.428039-06:00'
+description: "Hvordan: Elixir bruker regex, eller regul\xE6re uttrykk, for \xE5 identifisere\
+  \ tegnm\xF8nstre. Regex har sine r\xF8tter i teoretisk informatikk og ble popul\xE6\
+  rt i\u2026"
+lastmod: '2024-04-05T21:53:41.408051-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Elixir bruker regex, eller regul\xE6re uttrykk, for \xE5 identifisere tegnm\xF8\
+  nstre."
 title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---

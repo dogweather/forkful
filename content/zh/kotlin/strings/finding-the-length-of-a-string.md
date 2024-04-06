@@ -4,10 +4,11 @@ description: "How to: (\u5982\u4F55\u505A\uFF1A) Kotlin \u91CC\uFF0C\u7528`.leng
   \u6027\u6765\u5F97\u5230\u5B57\u7B26\u4E32\u957F\u5EA6\u3002\u5C31\u8FD9\u4E48\u7B80\
   \u5355\uFF1A."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:47.709531-06:00'
+lastmod: '2024-04-05T21:53:48.028495-06:00'
 model: gpt-4-1106-preview
-summary: "Kotlin \u91CC\uFF0C\u7528`.length`\u5C5E\u6027\u6765\u5F97\u5230\u5B57\u7B26\
-  \u4E32\u957F\u5EA6\u3002\u5C31\u8FD9\u4E48\u7B80\u5355\uFF1A."
+summary: "(\u5982\u4F55\u505A\uFF1A) Kotlin \u91CC\uFF0C\u7528`.length`\u5C5E\u6027\
+  \u6765\u5F97\u5230\u5B57\u7B26\u4E32\u957F\u5EA6\u3002\u5C31\u8FD9\u4E48\u7B80\u5355\
+  \uFF1A."
 title: "\u83B7\u53D6\u5B57\u7B26\u4E32\u7684\u957F\u5EA6"
 weight: 7
 ---

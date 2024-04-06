@@ -2,10 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:19.939418-07:00
-description: "L\xE0m th\u1EBF n\xE0o: ."
-lastmod: '2024-03-13T22:44:36.297775-06:00'
+description: "L\xE0m th\u1EBF n\xE0o: X\u1EED l\xFD chu\u1ED7i trong l\u1EADp tr\xEC\
+  nh c\xF3 th\u1EC3 truy nguy\xEAn v\u1EC1 th\u1EDDi k\u1EF3 b\xECnh minh c\u1EE7\
+  a m\xE1y t\xEDnh. Trong TypeScript, d\u1EF1a tr\xEAn JavaScript, vi\u1EC7c thao\
+  \ t\xE1c v\u1EDBi\u2026"
+lastmod: '2024-04-05T21:53:37.714718-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "X\u1EED l\xFD chu\u1ED7i trong l\u1EADp tr\xECnh c\xF3 th\u1EC3 truy nguy\xEA\
+  n v\u1EC1 th\u1EDDi k\u1EF3 b\xECnh minh c\u1EE7a m\xE1y t\xEDnh."
 title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
 weight: 5
 ---

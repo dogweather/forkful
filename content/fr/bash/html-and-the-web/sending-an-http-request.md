@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:58:57.903787-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:57.991273-06:00'
+description: "Comment faire : Historiquement, l'envoi de requ\xEAtes HTTP \xE9tait\
+  \ limit\xE9 \xE0 des outils sp\xE9cifiques comme les navigateurs web. D\xE9sormais,\
+  \ des outils de ligne\u2026"
+lastmod: '2024-04-05T21:53:59.451962-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historiquement, l'envoi de requ\xEAtes HTTP \xE9tait limit\xE9 \xE0 des\
+  \ outils sp\xE9cifiques comme les navigateurs web."
 title: "Envoi d'une requ\xEAte HTTP"
 weight: 44
 ---

@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:47:06.833277-07:00
-description: "Slik gj\xF8r du: ."
-lastmod: '2024-03-13T22:44:40.963309-06:00'
+description: "Slik gj\xF8r du: Utdata."
+lastmod: '2024-04-05T21:53:41.925917-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "Finn lengden p\xE5 en streng"
 weight: 7
 ---

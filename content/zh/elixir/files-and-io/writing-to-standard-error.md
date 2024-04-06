@@ -6,11 +6,9 @@ description: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u5728 Elixir \u4E2D\uFF0C\u60A8\u5
   \u4EE5\u4F7F\u7528 `IO` \u6A21\u5757\u51FD\u6570\uFF0C\u4F8B\u5982 `IO.puts/2` \u548C\
   \ `IO.warn/2`\uFF0C\u6765\u5C06\u6D88\u606F\u5199\u5165\u6807\u51C6\u9519\u8BEF\uFF1A\
   ."
-lastmod: '2024-03-13T22:44:47.384807-06:00'
+lastmod: '2024-04-05T21:53:47.717104-06:00'
 model: gpt-4-0125-preview
-summary: "\u5728 Elixir \u4E2D\uFF0C\u60A8\u53EF\u4EE5\u4F7F\u7528 `IO` \u6A21\u5757\
-  \u51FD\u6570\uFF0C\u4F8B\u5982 `IO.puts/2` \u548C `IO.warn/2`\uFF0C\u6765\u5C06\u6D88\
-  \u606F\u5199\u5165\u6807\u51C6\u9519\u8BEF\uFF1A."
+summary: ''
 title: "\u5199\u5165\u6807\u51C6\u9519\u8BEF"
 weight: 25
 ---

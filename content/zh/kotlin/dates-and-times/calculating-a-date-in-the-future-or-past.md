@@ -1,10 +1,14 @@
 ---
 date: 2024-01-20 17:31:35.983596-07:00
-description: "\u5982\u4F55\u53BB\u505A\uFF1A ."
+description: "\u5982\u4F55\u53BB\u505A\uFF1A \u5386\u53F2\u4E0A\uFF0C\u65E5\u671F\u548C\
+  \u65F6\u95F4\u7684\u8BA1\u7B97\u662F\u56F0\u96BE\u7684\uFF0C\u5305\u62EC\u8003\u8651\
+  \u95F0\u5E74\u3001\u65F6\u533A\u548C\u65E5\u5386\u7CFB\u7EDF\u7684\u5DEE\u5F02\u3002\
+  Kotlin\u4F7F\u7528`java.time`\u5E93\uFF08\u57FA\u4E8EJoda-Time\uFF09\uFF0C\u5728\
+  Java\u2026"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:47.734312-06:00'
+lastmod: '2024-04-05T21:53:48.051420-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "\u8BA1\u7B97\u672A\u6765\u6216\u8FC7\u53BB\u7684\u65E5\u671F"
 weight: 26
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:45:08.864089-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:43.672712-06:00'
+description: "How to: Estrarre sottosequenze \xE8 un'operazione comune nella programmazione\
+  \ fin dai primi linguaggi, come C e Java. In Arduino, usiamo la classe `String`\u2026"
+lastmod: '2024-04-05T21:53:44.433775-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Estrarre sottosequenze \xE8 un'operazione comune nella programmazione fin\
+  \ dai primi linguaggi, come C e Java."
 title: Estrazione di sottostringhe
 weight: 6
 ---

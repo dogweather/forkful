@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:38:40.827708-07:00
-description: 'Como fazer: .'
-lastmod: '2024-03-13T22:44:46.443610-06:00'
+description: "Como fazer: Converter strings para min\xFAsculas pode parecer trivial,\
+  \ mas h\xE1 nuances. Historicamente, na computa\xE7\xE3o, havia a necessidade de\
+  \ padronizar texto\u2026"
+lastmod: '2024-04-05T21:53:46.782568-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Converter strings para min\xFAsculas pode parecer trivial, mas h\xE1 nuances."
 title: "Convertendo uma string para min\xFAsculas"
 weight: 4
 ---

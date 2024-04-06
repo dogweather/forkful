@@ -2,9 +2,10 @@
 date: 2024-01-20 17:43:54.263147-07:00
 description: "How to: (Comment faire :) En Elm, on utilise le package `Http` pour\
   \ les requ\xEAtes web. Voil\xE0 un exemple basique ."
-lastmod: '2024-03-13T22:44:57.687905-06:00'
+lastmod: '2024-04-05T21:53:59.183670-06:00'
 model: gpt-4-1106-preview
-summary: "En Elm, on utilise le package `Http` pour les requ\xEAtes web."
+summary: "(Comment faire :) En Elm, on utilise le package `Http` pour les requ\xEA\
+  tes web."
 title: "T\xE9l\xE9chargement d'une page web"
 weight: 42
 ---

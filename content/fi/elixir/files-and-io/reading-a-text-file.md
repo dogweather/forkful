@@ -2,9 +2,9 @@
 date: 2024-01-20 17:54:09.803081-07:00
 description: "How to: (Kuinka tehd\xE4:) Elixiri\xE4 k\xE4ytt\xE4en tekstitiedoston\
   \ lukeminen."
-lastmod: '2024-03-13T22:44:56.244339-06:00'
+lastmod: '2024-04-05T21:53:57.800247-06:00'
 model: gpt-4-1106-preview
-summary: "Elixiri\xE4 k\xE4ytt\xE4en tekstitiedoston lukeminen."
+summary: "(Kuinka tehd\xE4:) Elixiri\xE4 k\xE4ytt\xE4en tekstitiedoston lukeminen."
 title: Tekstitiedoston lukeminen
 weight: 22
 ---

@@ -2,10 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:15.121981-07:00
-description: 'Hoe te: .'
-lastmod: '2024-03-13T22:44:50.969620-06:00'
+description: "Hoe te: Reguliere expressies bestaan al sinds de jaren 1950, oorspronkelijk\
+  \ bedacht door wiskundige Stephen Kleene. Alternatieven voor Bash regex zijn het\u2026"
+lastmod: '2024-04-05T21:53:50.990697-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: Reguliere expressies bestaan al sinds de jaren 1950, oorspronkelijk bedacht
+  door wiskundige Stephen Kleene.
 title: Reguliere expressies gebruiken
 weight: 11
 ---

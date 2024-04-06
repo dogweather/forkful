@@ -3,9 +3,9 @@ date: 2024-01-20 17:31:54.761783-07:00
 description: "How to: (\u5982\u4F55\u64CD\u4F5C\uFF1A) Ruby makes playing with dates\
   \ quite friendly. Here's how you can do it."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:48.388572-06:00'
+lastmod: '2024-04-05T21:53:48.661903-06:00'
 model: gpt-4-1106-preview
-summary: Ruby makes playing with dates quite friendly.
+summary: "(\u5982\u4F55\u64CD\u4F5C\uFF1A) Ruby makes playing with dates quite friendly."
 title: "\u8BA1\u7B97\u672A\u6765\u6216\u8FC7\u53BB\u7684\u65E5\u671F"
 weight: 26
 ---

@@ -3,10 +3,13 @@ changelog:
 - 2024-04-04, dogweather, edited
 - 2024-04-04, gpt-4-0125-preview, translated from English
 date: 2024-01-20 17:43:02.363431-07:00
-description: "C\xF3mo hacerlo: ."
-lastmod: '2024-04-04T02:02:37.479626-06:00'
+description: "C\xF3mo hacerlo: Lo hago con suficiente frecuencia como para refactorizarlo\
+  \ en esta simple funci\xF3n `delete()`. Tambi\xE9n es una buena demostraci\xF3n\
+  \ de\u2026"
+lastmod: '2024-04-05T21:53:59.953477-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Lo hago con suficiente frecuencia como para refactorizarlo en esta simple\
+  \ funci\xF3n `delete()`."
 title: "Eliminaci\xF3n de caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---

@@ -3,10 +3,9 @@ date: 2024-01-26 01:16:35.694802-07:00
 description: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u5047\u8BBE\u4F60\u7684Arduino\u4E0A\
   \u6709\u4E00\u4E2A\u529F\u80FD\u505A\u5F97\u592A\u591A\uFF0C\u50CF\u8FD9\u6837\uFF1A\
   ."
-lastmod: '2024-03-13T22:44:48.071212-06:00'
+lastmod: '2024-04-05T21:53:48.367026-06:00'
 model: gpt-4-0125-preview
-summary: "\u5047\u8BBE\u4F60\u7684Arduino\u4E0A\u6709\u4E00\u4E2A\u529F\u80FD\u505A\
-  \u5F97\u592A\u591A\uFF0C\u50CF\u8FD9\u6837\uFF1A."
+summary: ''
 title: "\u4EE3\u7801\u91CD\u6784"
 weight: 19
 ---

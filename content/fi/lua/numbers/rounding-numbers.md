@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 03:46:13.983645-07:00
-description: 'Miten: .'
-lastmod: '2024-03-13T22:44:56.692758-06:00'
+description: "Miten: Lua ei sis\xE4ll\xE4 valmiina py\xF6ristysfunktiota toisin kuin\
+  \ jotkin muut kielet. Historiallisesti sinun on t\xE4ytynyt kirjoittaa oma tai k\xE4\
+  ytt\xE4\xE4 kolmannen\u2026"
+lastmod: '2024-04-05T21:53:58.263680-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Lua ei sis\xE4ll\xE4 valmiina py\xF6ristysfunktiota toisin kuin jotkin muut\
+  \ kielet."
 title: "Numerojen py\xF6rist\xE4minen"
 weight: 13
 ---

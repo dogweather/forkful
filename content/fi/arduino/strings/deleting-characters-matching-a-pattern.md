@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:41:35.654283-07:00
-description: "How to: - N\xE4in teet: ."
-lastmod: '2024-03-13T22:44:56.809505-06:00'
+description: "How to: - N\xE4in teet: Huomaa, ett\xE4 `remove()` ei tee mit\xE4\xE4\
+  n, jos merkki\xE4 ei l\xF6ydy."
+lastmod: '2024-04-05T21:53:58.385029-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---

@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:52:15.287957-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:59.784821-06:00'
+description: "How to: This shows the simplest way to print something to the console\
+  \ using `IO.inspect/2`. The label option adds a custom prefix, making the output\u2026"
+lastmod: '2024-04-05T21:53:35.471144-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: This shows the simplest way to print something to the console using `IO.inspect/2`.
 title: Printing debug output
 weight: 33
 ---

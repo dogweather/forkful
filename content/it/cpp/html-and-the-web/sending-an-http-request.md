@@ -2,10 +2,10 @@
 date: 2024-01-20 17:59:03.258985-07:00
 description: 'How to: (Come Fare:) Ecco un esempio usando `C++` e la libreria `C++
   Requests` (cpr), che semplifica il processo.'
-lastmod: '2024-03-13T22:44:43.723478-06:00'
+lastmod: '2024-04-05T21:53:44.480468-06:00'
 model: gpt-4-1106-preview
-summary: Ecco un esempio usando `C++` e la libreria `C++ Requests` (cpr), che semplifica
-  il processo.
+summary: (Come Fare:) Ecco un esempio usando `C++` e la libreria `C++ Requests` (cpr),
+  che semplifica il processo.
 title: Inviare una richiesta http
 weight: 44
 ---

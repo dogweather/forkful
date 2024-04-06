@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:56:05.146473-07:00
-description: "C\xF3mo hacerlo: ."
-lastmod: '2024-03-13T22:44:58.952684-06:00'
+description: "C\xF3mo hacerlo: Si compilas y ejecutas con `java Saludador Carlos`,\
+  \ la salida ser\xE1 `Hola, Carlos!`. Sin argumentos, la salida es `Hola, \xBFqui\xE9\
+  n eres?`."
+lastmod: '2024-04-05T21:54:00.305630-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Si compilas y ejecutas con `java Saludador Carlos`, la salida ser\xE1 `Hola,\
+  \ Carlos!`."
 title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---

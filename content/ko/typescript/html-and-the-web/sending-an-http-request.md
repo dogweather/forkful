@@ -5,10 +5,10 @@ description: "How to: (\uBC29\uBC95) `fetch` API\uC640 `axios` \uB77C\uC774\uBE0
   \uBCF8\uC801\uC778 `fetch` \uC0AC\uC6A9\uBC95\uC744 \uBCF4\uC5EC \uB4DC\uB9AC\uACA0\
   \uC2B5\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:54.848544-06:00'
+lastmod: '2024-04-05T21:53:56.654434-06:00'
 model: gpt-4-1106-preview
-summary: "`fetch` API\uC640 `axios` \uB77C\uC774\uBE0C\uB7EC\uB9AC\uB97C \uC0AC\uC6A9\
-  \uD55C \uC608\uC81C\uC785\uB2C8\uB2E4."
+summary: "(\uBC29\uBC95) `fetch` API\uC640 `axios` \uB77C\uC774\uBE0C\uB7EC\uB9AC\uB97C\
+  \ \uC0AC\uC6A9\uD55C \uC608\uC81C\uC785\uB2C8\uB2E4."
 title: "HTTP \uC694\uCCAD \uBCF4\uB0B4\uAE30"
 weight: 44
 ---

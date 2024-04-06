@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:51:31.230358-07:00
-description: "How to: (Slik gj\xF8r du det:) ."
-lastmod: '2024-03-13T22:44:40.560060-06:00'
+description: "How to: (Slik gj\xF8r du det:) Enkel fletting med `format!` makroen."
+lastmod: '2024-04-05T21:53:41.538749-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(Slik gj\xF8r du det:) Enkel fletting med `format!` makroen."
 title: Interpolering av en streng
 weight: 8
 ---

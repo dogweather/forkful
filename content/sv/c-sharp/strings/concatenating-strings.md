@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:34:47.036014-07:00
-description: "Hur g\xF6r man?: ."
-lastmod: '2024-03-13T22:44:37.905047-06:00'
+description: "Hur g\xF6r man?: F\xF6rr i tiden var sammanslagning av str\xE4ngar i\
+  \ C# mindre effektivt, s\xE4rskilt i l\xF6kker, p\xE5 grund av hur str\xE4ngar hanterades\
+  \ i minnet - varje\u2026"
+lastmod: '2024-04-05T21:53:39.242478-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "F\xF6rr i tiden var sammanslagning av str\xE4ngar i C# mindre effektivt,\
+  \ s\xE4rskilt i l\xF6kker, p\xE5 grund av hur str\xE4ngar hanterades i minnet -\
+  \ varje sammanslagning skapade en ny str\xE4ng."
 title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---

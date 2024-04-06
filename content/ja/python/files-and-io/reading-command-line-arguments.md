@@ -1,10 +1,16 @@
 ---
 date: 2024-01-20 17:56:44.494284-07:00
-description: 'How to: .'
+description: "How to: \u3053\u308C\u3092`example.py`\u3068\u3057\u3066\u4FDD\u5B58\
+  \u3057\u3001\u30BF\u30FC\u30DF\u30CA\u30EB\u3067`python example.py arg1`\u3092\u5B9F\
+  \u884C\u3059\u308B\u3068\u3001\u4EE5\u4E0B\u306E\u51FA\u529B\u304C\u5F97\u3089\u308C\
+  \u307E\u3059\u3002"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:41.519206-06:00'
+lastmod: '2024-04-05T21:53:42.471758-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "\u3053\u308C\u3092`example.py`\u3068\u3057\u3066\u4FDD\u5B58\u3057\u3001\
+  \u30BF\u30FC\u30DF\u30CA\u30EB\u3067`python example.py arg1`\u3092\u5B9F\u884C\u3059\
+  \u308B\u3068\u3001\u4EE5\u4E0B\u306E\u51FA\u529B\u304C\u5F97\u3089\u308C\u307E\u3059\
+  \u3002"
 title: "\u30B3\u30DE\u30F3\u30C9\u30E9\u30A4\u30F3\u5F15\u6570\u306E\u8AAD\u307F\u53D6\
   \u308A"
 weight: 23

@@ -1,9 +1,10 @@
 ---
 date: 2024-01-19
-description: 'Come fare: .'
-lastmod: '2024-03-13T22:44:43.673565-06:00'
+description: "Come fare: Le espressioni regolari esistono fin dagli anni '50. In Arduino,\
+  \ la libreria `<regex.h>` \xE8 spesso meno potente rispetto a linguaggi come Python\u2026"
+lastmod: '2024-04-05T21:53:44.434812-06:00'
 model: unknown
-summary: .
+summary: Le espressioni regolari esistono fin dagli anni '50.
 title: Utilizzo delle espressioni regolari
 weight: 11
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:32:42.846437-07:00
-description: "Hur g\xF6r man: ."
-lastmod: '2024-03-13T22:44:37.841831-06:00'
+description: "Hur g\xF6r man: Historiskt sett har datumhantering varit en knepig uppgift\
+  \ p\xE5 grund av olika tidszoner och datumformat. Elm anv\xE4nder UTC (Coordinated\u2026"
+lastmod: '2024-04-05T21:53:39.177053-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historiskt sett har datumhantering varit en knepig uppgift p\xE5 grund av\
+  \ olika tidszoner och datumformat."
 title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---

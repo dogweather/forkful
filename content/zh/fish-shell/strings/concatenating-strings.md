@@ -3,9 +3,10 @@ date: 2024-01-20 17:34:42.867040-07:00
 description: "How to: \u600E\u9EBC\u505A Fish Shell \u7EC4\u5408\u5B57\u7B26\u4E32\
   \u5F88\u76F4\u63A5\u3002"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:48.254067-06:00'
+lastmod: '2024-04-05T21:53:48.529304-06:00'
 model: gpt-4-1106-preview
-summary: "Fish Shell \u7EC4\u5408\u5B57\u7B26\u4E32\u5F88\u76F4\u63A5."
+summary: "\u600E\u9EBC\u505A Fish Shell \u7EC4\u5408\u5B57\u7B26\u4E32\u5F88\u76F4\
+  \u63A5\u3002"
 title: "\u5B57\u7B26\u4E32\u62FC\u63A5"
 weight: 3
 ---

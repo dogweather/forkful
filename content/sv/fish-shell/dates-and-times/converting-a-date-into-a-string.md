@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:36:25.780034-07:00
-description: 'Hur till: .'
-lastmod: '2024-03-13T22:44:38.349858-06:00'
+description: "Hur till: I tidiga datasystem var hantering av datumformat begr\xE4\
+  nsat och varierat stort mellan system. Moderna verktyg som Fish Shell anv\xE4nder\
+  \ inbyggda\u2026"
+lastmod: '2024-04-05T21:53:39.687776-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "I tidiga datasystem var hantering av datumformat begr\xE4nsat och varierat\
+  \ stort mellan system."
 title: "Omvandla ett datum till en str\xE4ng"
 weight: 28
 ---

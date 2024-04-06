@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:35:19.671365-07:00
-description: "Hur g\xF6r man: ."
-lastmod: '2024-03-13T22:44:37.863432-06:00'
+description: "Hur g\xF6r man: Stringkonkatenering har funnits s\xE5 l\xE4nge vi har\
+  \ programmerat. I tidigare spr\xE5k som C anv\xE4ndes funktioner som `strcat()`\
+  \ men kunde skapa\u2026"
+lastmod: '2024-04-05T21:53:39.199710-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Stringkonkatenering har funnits s\xE5 l\xE4nge vi har programmerat."
 title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---

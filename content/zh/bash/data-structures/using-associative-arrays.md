@@ -4,10 +4,9 @@ changelog:
 date: 2024-01-30 19:10:00.214919-07:00
 description: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u9996\u5148\uFF0C\u5728Bash\u4E2D\u58F0\
   \u660E\u4E00\u4E2A\u5173\u8054\u6570\u7EC4\uFF1A."
-lastmod: '2024-03-13T22:44:47.950529-06:00'
+lastmod: '2024-04-05T21:53:48.254302-06:00'
 model: gpt-4-0125-preview
-summary: "\u9996\u5148\uFF0C\u5728Bash\u4E2D\u58F0\u660E\u4E00\u4E2A\u5173\u8054\u6570\
-  \u7EC4\uFF1A."
+summary: ''
 title: "\u4F7F\u7528\u5173\u8054\u6570\u7EC4"
 weight: 15
 ---

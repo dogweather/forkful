@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:36:01.778499-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:57.800169-06:00'
+description: "How to: La conversion de dates en cha\xEEnes de caract\xE8res est un\
+  \ concept ancien en programmation. En C#, `DateTime.ToString()` a toujours \xE9\
+  t\xE9 le moyen\u2026"
+lastmod: '2024-04-05T21:53:59.285440-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "La conversion de dates en cha\xEEnes de caract\xE8res est un concept ancien\
+  \ en programmation."
 title: "Conversion d'une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---

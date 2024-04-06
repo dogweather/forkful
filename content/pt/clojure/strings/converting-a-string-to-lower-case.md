@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:38:04.842497-07:00
-description: 'Como fazer: .'
-lastmod: '2024-03-13T22:44:46.184357-06:00'
+description: "Como fazer: Historicamente, a necessidade de converter texto para um\
+  \ caso uniforme existe desde os primeiros dias da computa\xE7\xE3o para simplificar\
+  \ a\u2026"
+lastmod: '2024-04-05T21:53:46.506809-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historicamente, a necessidade de converter texto para um caso uniforme existe\
+  \ desde os primeiros dias da computa\xE7\xE3o para simplificar a compara\xE7\xE3\
+  o de strings."
 title: "Convertendo uma string para min\xFAsculas"
 weight: 4
 ---

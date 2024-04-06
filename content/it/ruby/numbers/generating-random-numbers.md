@@ -1,8 +1,8 @@
 ---
 date: 2024-01-27 20:34:50.133702-07:00
 description: 'Come fare: Ruby fornisce diversi metodi per generare numeri casuali,
-  principalmente tramite la classe `Random`. Per generare un numero casuale di base.'
-lastmod: '2024-03-13T22:44:44.045396-06:00'
+  principalmente tramite la classe `Random`.'
+lastmod: '2024-04-05T21:53:44.690581-06:00'
 model: gpt-4-0125-preview
 summary: Ruby fornisce diversi metodi per generare numeri casuali, principalmente
   tramite la classe `Random`.

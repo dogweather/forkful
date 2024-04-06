@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 18:02:29.512857-07:00
-description: "Hvordan \xE5: ."
-lastmod: '2024-03-13T22:44:40.360998-06:00'
+description: "Hvordan \xE5: Hvis alt g\xE5r bra, b\xF8r du se noe slik."
+lastmod: '2024-04-05T21:53:41.339032-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Hvis alt g\xE5r bra, b\xF8r du se noe slik."
 title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---

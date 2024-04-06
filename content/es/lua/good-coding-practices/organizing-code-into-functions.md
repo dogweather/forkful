@@ -1,9 +1,10 @@
 ---
 date: 2024-01-26 01:11:08.421501-07:00
-description: "C\xF3mo hacerlo: ."
-lastmod: '2024-03-13T22:44:59.207424-06:00'
+description: "C\xF3mo hacerlo: Las funciones se hacen m\xE1s complejas, manejando\
+  \ varias tareas."
+lastmod: '2024-04-05T21:54:00.553922-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Las funciones se hacen m\xE1s complejas, manejando varias tareas."
 title: "Organizando c\xF3digo en funciones"
 weight: 18
 ---

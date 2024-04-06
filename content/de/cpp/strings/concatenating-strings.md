@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:34:24.271687-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:54.176542-06:00'
+description: "How to: String-Konkatenation ist so alt wie das Programmieren mit h\xF6\
+  heren Sprachen selbst. Fr\xFChe Programmiersprachen wie C boten daf\xFCr low-level\u2026"
+lastmod: '2024-04-05T21:53:56.062923-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "String-Konkatenation ist so alt wie das Programmieren mit h\xF6heren Sprachen\
+  \ selbst."
 title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---

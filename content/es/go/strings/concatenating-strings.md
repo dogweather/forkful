@@ -3,9 +3,8 @@ changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:01.340309-07:00
 description: "C\xF3mo hacerlo: En Go, hay varias formas de concatenar cadenas. Aqu\xED\
-  \ hay un vistazo a algunos m\xE9todos comunes con ejemplos: La forma m\xE1s simple\
-  \ de\u2026"
-lastmod: '2024-03-13T22:44:58.458227-06:00'
+  \ hay un vistazo a algunos m\xE9todos comunes con ejemplos."
+lastmod: '2024-04-05T21:53:59.858534-06:00'
 model: gpt-4-0125-preview
 summary: En Go, hay varias formas de concatenar cadenas.
 title: Concatenando cadenas de texto

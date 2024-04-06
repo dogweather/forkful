@@ -4,10 +4,10 @@ description: "How to: (\u5982\u4F55\u64CD\u4F5C\uFF1A) PowerShell \u91CC\uFF0C\u
   \ `Invoke-WebRequest` \u53EF\u4EE5\u4E0B\u8F7D\u7F51\u9875\u3002\u7B80\u5355\u4F8B\
   \u5B50\uFF1A."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:48.012119-06:00'
+lastmod: '2024-04-05T21:53:48.309552-06:00'
 model: gpt-4-1106-preview
-summary: "PowerShell \u91CC\uFF0C\u7528 `Invoke-WebRequest` \u53EF\u4EE5\u4E0B\u8F7D\
-  \u7F51\u9875\u3002\u7B80\u5355\u4F8B\u5B50\uFF1A."
+summary: "(\u5982\u4F55\u64CD\u4F5C\uFF1A) PowerShell \u91CC\uFF0C\u7528 `Invoke-WebRequest`\
+  \ \u53EF\u4EE5\u4E0B\u8F7D\u7F51\u9875\u3002\u7B80\u5355\u4F8B\u5B50\uFF1A."
 title: "\u4E0B\u8F7D\u7F51\u9875"
 weight: 42
 ---

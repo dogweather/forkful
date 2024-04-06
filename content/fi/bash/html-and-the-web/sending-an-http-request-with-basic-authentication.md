@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 18:01:16.153281-07:00
-description: "How to: (Kuinka tehd\xE4:) ."
-lastmod: '2024-03-13T22:44:56.739291-06:00'
+description: "How to: (Kuinka tehd\xE4:) Voit my\xF6s koodata salasanan Base64-koodauksella."
+lastmod: '2024-04-05T21:53:58.313511-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(Kuinka tehd\xE4:) Voit my\xF6s koodata salasanan Base64-koodauksella."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---

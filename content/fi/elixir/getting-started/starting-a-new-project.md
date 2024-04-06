@@ -3,10 +3,10 @@ date: 2024-01-20 18:03:30.608583-07:00
 description: "How to: (Kuinka tehd\xE4\xE4n:) Elixiriss\xE4 projekti k\xE4ynnistet\xE4\
   \xE4n k\xE4ytt\xE4m\xE4ll\xE4 Mix-ty\xF6kalua. Mix on Elixiriin sis\xE4\xE4nrakennettu\
   \ ty\xF6kalu, joka hallinnoi\u2026"
-lastmod: '2024-03-13T22:44:56.227415-06:00'
+lastmod: '2024-04-05T21:53:57.783892-06:00'
 model: gpt-4-1106-preview
-summary: "Elixiriss\xE4 projekti k\xE4ynnistet\xE4\xE4n k\xE4ytt\xE4m\xE4ll\xE4 Mix-ty\xF6\
-  kalua."
+summary: "(Kuinka tehd\xE4\xE4n:) Elixiriss\xE4 projekti k\xE4ynnistet\xE4\xE4n k\xE4\
+  ytt\xE4m\xE4ll\xE4 Mix-ty\xF6kalua."
 title: Uuden projektin aloittaminen
 weight: 1
 ---

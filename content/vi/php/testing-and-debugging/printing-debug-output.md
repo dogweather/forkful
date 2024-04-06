@@ -2,10 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:00.301008-07:00
-description: "L\xE0m th\u1EBF n\xE0o: ."
-lastmod: '2024-03-13T22:44:36.769979-06:00'
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EA7u ra M\u1EABu."
+lastmod: '2024-04-05T21:53:38.152469-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: ''
 title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 weight: 33
 ---

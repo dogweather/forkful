@@ -3,10 +3,13 @@ changelog:
 - 2024-04-04, dogweather, edited
 - 2024-04-04, gpt-4-0125-preview, translated from English
 date: 2024-01-20 17:43:02.363431-07:00
-description: "Slik gj\xF8r du det: ."
-lastmod: '2024-04-04T02:02:34.738312-06:00'
+description: "Slik gj\xF8r du det: Jeg gj\xF8r dette ofte nok til at jeg omstrukturerte\
+  \ det til denne enkle `delete()`-funksjonen. Det er ogs\xE5 en god demonstrasjon\
+  \ av\u2026"
+lastmod: '2024-04-05T21:53:41.324369-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Jeg gj\xF8r dette ofte nok til at jeg omstrukturerte det til denne enkle\
+  \ `delete()`-funksjonen."
 title: "Slette tegn som samsvarer med et m\xF8nster"
 weight: 5
 ---

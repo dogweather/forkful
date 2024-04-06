@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:37:37.452913-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.932039-06:00'
+description: "Como Fazer: Sa\xEDda esperada pode parecer com isso, dependendo do momento\
+  \ em que voc\xEA executa."
+lastmod: '2024-04-05T21:53:47.283111-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Sa\xEDda esperada pode parecer com isso, dependendo do momento em que voc\xEA\
+  \ executa."
 title: Convertendo uma data em uma string
 weight: 28
 ---

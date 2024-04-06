@@ -2,9 +2,9 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:54:00.477216-07:00
-description: "Hoe: In Go zijn er verschillende manieren om strings samen te voegen.\
-  \ Hier volgt een blik op enkele gangbare methoden met voorbeelden: De eenvoudigste\u2026"
-lastmod: '2024-03-13T22:44:50.279017-06:00'
+description: 'Hoe: In Go zijn er verschillende manieren om strings samen te voegen.
+  Hier volgt een blik op enkele gangbare methoden met voorbeelden.'
+lastmod: '2024-04-05T21:53:50.299614-06:00'
 model: gpt-4-0125-preview
 summary: In Go zijn er verschillende manieren om strings samen te voegen.
 title: Strings samenvoegen

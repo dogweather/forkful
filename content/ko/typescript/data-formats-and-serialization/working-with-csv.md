@@ -7,8 +7,8 @@ description: "\uBC29\uBC95: TypeScript\uC5D0\uC11C\uB294 `csv-parser` \uAC19\uC7
   \uAC70\uB098, \uB124\uC774\uD2F0\uBE0C \uCF54\uB4DC\uB97C \uD1B5\uD574 CSV \uD30C\
   \uC77C\uC744 \uB2E4\uB8F0 \uC218 \uC788\uC2B5\uB2C8\uB2E4. `csv-parser`\uB294 \uC77D\
   \uAE30\uC6A9\uC774\uACE0, `csv-writer`\uB294 \uC4F0\uAE30\uC6A9\uC785\uB2C8\uB2E4\
-  . \uBA3C\uC800 npm\uC744 \uD1B5\uD574 `csv-parser`\uB97C\u2026"
-lastmod: '2024-03-13T22:44:54.885696-06:00'
+  ."
+lastmod: '2024-04-05T21:53:56.684556-06:00'
 model: gpt-4-0125-preview
 summary: "TypeScript\uC5D0\uC11C\uB294 `csv-parser` \uAC19\uC740 \uC11C\uB4DC \uD30C\
   \uD2F0 \uB77C\uC774\uBE0C\uB7EC\uB9AC\uB97C \uD65C\uC6A9\uD558\uAC70\uB098, \uB124\

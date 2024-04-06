@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:35:36.428529-07:00
 description: "How to: Concat\xE9ner avec le signe `+` ."
-lastmod: '2024-03-13T22:44:57.428091-06:00'
+lastmod: '2024-04-05T21:53:58.992314-06:00'
 model: gpt-4-1106-preview
-summary: "Concat\xE9ner avec le signe `+`."
+summary: "Concat\xE9ner avec le signe `+` ."
 title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 weight: 3
 ---

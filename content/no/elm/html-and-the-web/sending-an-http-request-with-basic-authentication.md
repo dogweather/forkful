@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 18:01:47.287386-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:40.708425-06:00'
+description: 'How to: Forventet output.'
+lastmod: '2024-04-05T21:53:41.687728-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---

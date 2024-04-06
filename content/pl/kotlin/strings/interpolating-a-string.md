@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:51:28.612652-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:35.350414-06:00'
+description: "How to: Interpolacj\u0119 string\xF3w wprowadzono, aby u\u0142atwi\u0107\
+  \ razem prac\u0119 z tekstami. W przesz\u0142o\u015Bci programi\u015Bci musieli\
+  \ r\u0119cznie skleja\u0107 stringi przy u\u017Cyciu\u2026"
+lastmod: '2024-04-05T21:53:36.789111-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Interpolacj\u0119 string\xF3w wprowadzono, aby u\u0142atwi\u0107 razem prac\u0119\
+  \ z tekstami."
 title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 8
 ---

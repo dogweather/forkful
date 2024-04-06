@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 18:02:44.035172-07:00
-description: "How to: (Kuinka tehd\xE4\xE4n:) ."
-lastmod: '2024-03-13T22:44:56.782107-06:00'
+description: "How to: (Kuinka tehd\xE4\xE4n:) Vastaussis\xE4lt\xF6 n\xE4kyy terminaalissa."
+lastmod: '2024-04-05T21:53:58.356778-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(Kuinka tehd\xE4\xE4n:) Vastaussis\xE4lt\xF6 n\xE4kyy terminaalissa."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---

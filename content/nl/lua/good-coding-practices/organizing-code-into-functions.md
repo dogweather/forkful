@@ -2,10 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:06.815827-07:00
-description: 'Hoe: .'
-lastmod: '2024-03-13T22:44:50.942911-06:00'
+description: 'Hoe: Functies worden complexer, met verschillende taken.'
+lastmod: '2024-04-05T21:53:50.965555-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: Functies worden complexer, met verschillende taken.
 title: Code organiseren in functies
 weight: 18
 ---

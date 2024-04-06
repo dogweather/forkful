@@ -2,10 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:29.159268-07:00
-description: "C\xE1ch th\u1EF1c hi\u1EC7n: ."
-lastmod: '2024-03-13T22:44:37.239464-06:00'
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: JSON, \u0111\u01B0\u1EE3c chu\u1EA9n h\xF3\
+  a v\xE0o \u0111\u1EA7u nh\u1EEFng n\u0103m 2000, c\xF3 g\u1ED1c r\u1EC5 t\u1EEB\
+  \ c\xFA ph\xE1p \u0111\u1ED1i t\u01B0\u1EE3ng trong JavaScript. N\xF3 nhanh ch\xF3\
+  ng thay th\u1EBF XML cho nhi\u1EC1u t\xE1c v\u1EE5\u2026"
+lastmod: '2024-04-05T21:53:38.578069-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "JSON, \u0111\u01B0\u1EE3c chu\u1EA9n h\xF3a v\xE0o \u0111\u1EA7u nh\u1EEF\
+  ng n\u0103m 2000, c\xF3 g\u1ED1c r\u1EC5 t\u1EEB c\xFA ph\xE1p \u0111\u1ED1i t\u01B0\
+  \u1EE3ng trong JavaScript."
 title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
 weight: 38
 ---

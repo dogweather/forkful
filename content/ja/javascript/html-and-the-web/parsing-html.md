@@ -5,10 +5,9 @@ changelog:
 date: 2024-01-28 03:00:57.304411-07:00
 description: "\u65B9\u6CD5\uFF1A JavaScript\u306E`DOMParser` API\u3092\u4F7F\u7528\
   \u3057\u3066HTML\u3092\u89E3\u6790\u3057\u307E\u3057\u3087\u3046\u3002"
-lastmod: '2024-03-13T22:44:42.673643-06:00'
+lastmod: '2024-04-05T21:53:43.462448-06:00'
 model: gpt-4-0125-preview
-summary: "JavaScript\u306E`DOMParser` API\u3092\u4F7F\u7528\u3057\u3066HTML\u3092\u89E3\
-  \u6790\u3057\u307E\u3057\u3087\u3046."
+summary: ''
 title: "HTML\u306E\u30D1\u30FC\u30B9"
 weight: 43
 ---

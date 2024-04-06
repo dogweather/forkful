@@ -5,11 +5,11 @@ description: "How to: (\uC5B4\uB5BB\uAC8C \uD558\uB098\uC694?) PHP\uB294 \uB0A0\
   \ `DateInterval` \uD074\uB798\uC2A4\uB97C \uC81C\uACF5\uD569\uB2C8\uB2E4. \uC5EC\
   \uAE30 \uAC04\uB2E8\uD55C \uC608\uC81C\uB4E4\uC774 \uC788\uC2B5\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.376754-06:00'
+lastmod: '2024-04-05T21:53:57.072688-06:00'
 model: gpt-4-1106-preview
-summary: "PHP\uB294 \uB0A0\uC9DC \uACC4\uC0B0\uC744 \uD558\uAE30 \uC704\uD574 `DateTime`\
-  \ \uD074\uB798\uC2A4\uC640 `DateInterval` \uD074\uB798\uC2A4\uB97C \uC81C\uACF5\uD569\
-  \uB2C8\uB2E4."
+summary: "(\uC5B4\uB5BB\uAC8C \uD558\uB098\uC694?) PHP\uB294 \uB0A0\uC9DC \uACC4\uC0B0\
+  \uC744 \uD558\uAE30 \uC704\uD574 `DateTime` \uD074\uB798\uC2A4\uC640 `DateInterval`\
+  \ \uD074\uB798\uC2A4\uB97C \uC81C\uACF5\uD569\uB2C8\uB2E4."
 title: "\uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\uC0B0\uD558\uAE30"
 weight: 26
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:56:16.539737-07:00
-description: 'Como fazer: .'
-lastmod: '2024-03-13T22:44:46.640647-06:00'
+description: "Como fazer: Se voc\xEA salvar isso como `Args.hs` e rod\xE1-lo com `runhaskell\
+  \ Args.hs um dois tr\xEAs`, voc\xEA ter\xE1 o seguinte resultado."
+lastmod: '2024-04-05T21:53:46.986036-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Se voc\xEA salvar isso como `Args.hs` e rod\xE1-lo com `runhaskell Args.hs\
+  \ um dois tr\xEAs`, voc\xEA ter\xE1 o seguinte resultado."
 title: Lendo argumentos da linha de comando
 weight: 23
 ---

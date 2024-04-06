@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:42:30.351248-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:45:00.113324-06:00'
+description: "How to: Haskell's rich set of libraries, such as 'Data.List', provides\
+  \ various tools for manipulating lists, which strings are essentially a special\
+  \ case\u2026"
+lastmod: '2024-04-05T21:53:35.810064-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Haskell's rich set of libraries, such as 'Data.List', provides various tools
+  for manipulating lists, which strings are essentially a special case of.
 title: Deleting characters matching a pattern
 weight: 5
 ---

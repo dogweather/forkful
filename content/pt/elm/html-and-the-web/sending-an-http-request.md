@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:59:38.705437-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.496996-06:00'
+description: "Como Fazer: Esse c\xF3digo envia uma requisi\xE7\xE3o HTTP GET e espera\
+  \ uma resposta em forma de texto. Quando a resposta chega, dependendo se foi sucesso\
+  \ ou\u2026"
+lastmod: '2024-04-05T21:53:46.836264-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Esse c\xF3digo envia uma requisi\xE7\xE3o HTTP GET e espera uma resposta\
+  \ em forma de texto."
 title: "Enviando uma requisi\xE7\xE3o HTTP"
 weight: 44
 ---

@@ -2,9 +2,10 @@
 date: 2024-01-20 17:44:08.930540-07:00
 description: "How to: (\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\
   \u0438:) Let's use `curl` in Fish to download a webpage."
-lastmod: '2024-03-13T22:44:50.066019-06:00'
+lastmod: '2024-04-05T21:53:50.112906-06:00'
 model: gpt-4-1106-preview
-summary: Let's use `curl` in Fish to download a webpage.
+summary: "(\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\u0438:)\
+  \ Let's use `curl` in Fish to download a webpage."
 title: "\u0417\u0430\u0432\u0430\u043D\u0442\u0430\u0436\u0435\u043D\u043D\u044F \u0432\
   \u0435\u0431-\u0441\u0442\u043E\u0440\u0456\u043D\u043A\u0438"
 weight: 42

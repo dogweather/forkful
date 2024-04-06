@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:39:15.122923-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:47.081147-06:00'
+description: "Como Fazer: Converter strings para min\xFAsculas \xE9 um recurso presente\
+  \ em muitas linguagens desde os prim\xF3rdios da programa\xE7\xE3o, pois \xE9 essencial\
+  \ para a\u2026"
+lastmod: '2024-04-05T21:53:47.441525-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Converter strings para min\xFAsculas \xE9 um recurso presente em muitas\
+  \ linguagens desde os prim\xF3rdios da programa\xE7\xE3o, pois \xE9 essencial para\
+  \ a normaliza\xE7\xE3o de dados textuais."
 title: "Convertendo uma string para min\xFAsculas"
 weight: 4
 ---

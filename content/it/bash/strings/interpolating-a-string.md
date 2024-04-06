@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:50:20.546010-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:43.584786-06:00'
+description: "How to: L'interpolazione di stringhe in Bash esiste da quando la shell\
+  \ \xE8 stata creata. \xC8 un aspetto fondamentale dello scripting perch\xE9 semplifica\u2026"
+lastmod: '2024-04-05T21:53:44.348659-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "L'interpolazione di stringhe in Bash esiste da quando la shell \xE8 stata\
+  \ creata."
 title: Interpolazione di una stringa
 weight: 8
 ---

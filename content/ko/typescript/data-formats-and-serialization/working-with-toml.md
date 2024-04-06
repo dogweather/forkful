@@ -5,9 +5,9 @@ description: "\uBC29\uBC95: \uBA3C\uC800, TOML \uD30C\uC11C\uAC00 \uD544\uC694\u
   \uB2E4. npm\uC744 \uD1B5\uD574 \uC124\uCE58\uD558\uC138\uC694: `npm install @iarna/toml\
   \ --save`. \uB2E4\uC74C\uC740 TOML \uD30C\uC77C\uC744 \uC77D\uACE0 JavaScript \uAC1D\
   \uCCB4\uB85C \uD30C\uC2F1\uD558\uB294 \uBC29\uBC95\uC785\uB2C8\uB2E4."
-lastmod: '2024-03-13T22:44:54.887320-06:00'
+lastmod: '2024-04-05T21:53:56.685860-06:00'
 model: gpt-4-0125-preview
-summary: "\uBA3C\uC800, TOML \uD30C\uC11C\uAC00 \uD544\uC694\uD569\uB2C8\uB2E4."
+summary: ''
 title: "\uD504\uB85C\uADF8\uB798\uBA38\uB97C \uC704\uD55C TOML \uB2E4\uB8E8\uAE30"
 weight: 39
 ---

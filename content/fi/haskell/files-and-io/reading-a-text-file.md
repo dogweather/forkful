@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:54:20.714393-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:56.631912-06:00'
+description: 'How to: Odotettu tuloste.'
+lastmod: '2024-04-05T21:53:58.202500-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: Tekstitiedoston lukeminen
 weight: 22
 ---

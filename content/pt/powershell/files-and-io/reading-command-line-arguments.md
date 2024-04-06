@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:56:36.425983-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.812193-06:00'
+description: "Como Fazer: Os argumentos de linha de comando existem desde os primeiros\
+  \ dias das interfaces de texto, uma forma de passar informa\xE7\xF5es adicionais\
+  \ aos\u2026"
+lastmod: '2024-04-05T21:53:47.159473-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Os argumentos de linha de comando existem desde os primeiros dias das interfaces\
+  \ de texto, uma forma de passar informa\xE7\xF5es adicionais aos programas que est\xE3\
+  o iniciando."
 title: Lendo argumentos da linha de comando
 weight: 23
 ---

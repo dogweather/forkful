@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:46:43.797135-07:00
-description: 'Anleitung: .'
-lastmod: '2024-03-13T22:44:54.387152-06:00'
+description: 'Anleitung: Erwartete Ausgabe.'
+lastmod: '2024-04-05T21:53:56.283895-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: Teilstrings extrahieren
 weight: 6
 ---

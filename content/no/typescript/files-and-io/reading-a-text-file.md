@@ -1,12 +1,10 @@
 ---
 date: 2024-01-20 17:55:12.435589-07:00
-description: "How to: \"## Slik gj\xF8r du:\" TypeScript bruker Node.js-funksjoner\
-  \ for filh\xE5ndtering. F\xF8rst, install\xE9r `fs`-modulen og `@types/node` for\
-  \ TypeScript-\u2026"
-lastmod: '2024-03-13T22:44:40.549300-06:00'
+description: "How to: TypeScript bruker Node.js-funksjoner for filh\xE5ndtering. F\xF8\
+  rst, install\xE9r `fs`-modulen og `@types/node` for TypeScript-typedefinisjoner."
+lastmod: '2024-04-05T21:53:41.526855-06:00'
 model: gpt-4-1106-preview
-summary: "\"## Slik gj\xF8r du:\"\n\nTypeScript bruker Node.js-funksjoner for filh\xE5\
-  ndtering."
+summary: "TypeScript bruker Node.js-funksjoner for filh\xE5ndtering."
 title: Lese en tekstfil
 weight: 22
 ---

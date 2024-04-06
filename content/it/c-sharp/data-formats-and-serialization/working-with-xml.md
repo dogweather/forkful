@@ -1,9 +1,11 @@
 ---
 date: 2024-01-26 04:28:59.620620-07:00
-description: 'Come fare: .'
-lastmod: '2024-03-13T22:44:43.457994-06:00'
+description: "Come fare: XML esiste fin dagli anni '90, rendendolo un nonno negli\
+  \ anni tecnologici. \xC8 stato concepito per la portabilit\xE0 dei dati e la facilit\xE0\
+  \ di\u2026"
+lastmod: '2024-04-05T21:53:44.225593-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: XML esiste fin dagli anni '90, rendendolo un nonno negli anni tecnologici.
 title: Lavorare con XML
 weight: 40
 ---

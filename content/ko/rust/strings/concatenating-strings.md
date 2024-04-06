@@ -7,10 +7,10 @@ description: "How to: (\uBC29\uBC95) Rust\uC5D0\uC11C \uBB38\uC790\uC5F4 \uC5F0\
   \ \uAC78 \uC0AC\uC6A9\uD560 \uC218 \uC788\uC8E0. \uC544\uB798 \uC608\uC2DC\uB97C\
   \ \uC0B4\uD3B4\uBCF4\uC138\uC694."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:54.902777-06:00'
+lastmod: '2024-04-05T21:53:56.697933-06:00'
 model: gpt-4-1106-preview
-summary: "Rust\uC5D0\uC11C \uBB38\uC790\uC5F4 \uC5F0\uACB0\uC740 \uC5EC\uB7EC \uBC29\
-  \uBC95\uC73C\uB85C \uD560 \uC218 \uC788\uC5B4\uC694."
+summary: "(\uBC29\uBC95) Rust\uC5D0\uC11C \uBB38\uC790\uC5F4 \uC5F0\uACB0\uC740 \uC5EC\
+  \uB7EC \uBC29\uBC95\uC73C\uB85C \uD560 \uC218 \uC788\uC5B4\uC694."
 title: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uD558\uAE30"
 weight: 3
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-26 01:11:34.374469-07:00
-description: 'Kuinka: .'
-lastmod: '2024-03-13T22:44:56.702527-06:00'
+description: "Kuinka: Funktiot muuttuvat monimutkaisemmiksi ja k\xE4sittelev\xE4t\
+  \ erilaisia teht\xE4vi\xE4."
+lastmod: '2024-04-05T21:53:58.274670-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Funktiot muuttuvat monimutkaisemmiksi ja k\xE4sittelev\xE4t erilaisia teht\xE4\
+  vi\xE4."
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---

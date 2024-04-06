@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:38:54.255310-07:00
 description: "How to: \"Kuinka tehd\xE4\xE4n:\"."
-lastmod: '2024-03-13T22:44:56.684958-06:00'
+lastmod: '2024-04-05T21:53:58.256783-06:00'
 model: gpt-4-1106-preview
-summary: "\"Kuinka tehd\xE4\xE4n:\"."
+summary: ''
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---

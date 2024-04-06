@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 15:33:03.842761-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:52.109775-06:00'
+description: "How to: \u092F\u0939\u093E\u0901 \u0938\u0948\u0902\u092A\u0932 \u0906\
+  \u0909\u091F\u092A\u0941\u091F."
+lastmod: '2024-04-05T21:53:54.125690-06:00'
 model: unknown
-summary: .
+summary: ''
 title: "HTML \u092A\u093E\u0930\u094D\u0938 \u0915\u0930\u0928\u093E"
 weight: 43
 ---

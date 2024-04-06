@@ -2,9 +2,9 @@
 date: 2024-01-20 17:56:06.744495-07:00
 description: 'How to: - Come fare: Per leggere gli argomenti dalla linea di comando
   in Node.js, puoi usare `process.argv`. Ecco un esempio.'
-lastmod: '2024-03-13T22:44:43.828578-06:00'
+lastmod: '2024-04-05T21:53:44.576211-06:00'
 model: gpt-4-1106-preview
-summary: Per leggere gli argomenti dalla linea di comando in Node.js, puoi usare `process.argv`.
+summary: ''
 title: Lettura degli argomenti della riga di comando
 weight: 23
 ---

@@ -3,10 +3,13 @@ changelog:
 - 2024-04-04, dogweather, edited
 - 2024-04-04, gpt-4-0125-preview, translated from English
 date: 2024-01-20 17:43:02.363431-07:00
-description: "Jak to zrobi\u0107: ."
-lastmod: '2024-04-04T02:02:48.722567-06:00'
+description: "Jak to zrobi\u0107: Poniewa\u017C robi\u0119 to do\u015B\u0107 cz\u0119\
+  sto, zrefaktoryzowa\u0142em to do tej prostej funkcji `delete()`. Jest to tak\u017C\
+  e dobra demonstracja\u2026"
+lastmod: '2024-04-05T21:53:36.381998-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Poniewa\u017C robi\u0119 to do\u015B\u0107 cz\u0119sto, zrefaktoryzowa\u0142\
+  em to do tej prostej funkcji `delete()`."
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---

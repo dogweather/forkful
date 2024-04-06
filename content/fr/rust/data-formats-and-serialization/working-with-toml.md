@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 04:26:11.605893-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:57.526578-06:00'
+description: "Comment faire : TOML, qui signifie \"Tom's Obvious, Minimal Language\"\
+  \ (Le Langage \xC9vident et Minimal de Tom), a \xE9t\xE9 cr\xE9\xE9 par Tom Preston-Werner\
+  \ en 2013. Il\u2026"
+lastmod: '2024-04-05T21:53:59.069191-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "TOML, qui signifie \"Tom's Obvious, Minimal Language\" (Le Langage \xC9\
+  vident et Minimal de Tom), a \xE9t\xE9 cr\xE9\xE9 par Tom Preston-Werner en 2013."
 title: Travailler avec TOML
 weight: 39
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:33:58.170392-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.831465-06:00'
+description: "Como Fazer: Concatenar strings \xE9 um conceito que existe desde os\
+  \ prim\xF3rdios da programa\xE7\xE3o. No contexto do Arduino, \xE9 importante ser\
+  \ eficiente com\u2026"
+lastmod: '2024-04-05T21:53:47.179165-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Concatenar strings \xE9 um conceito que existe desde os prim\xF3rdios da\
+  \ programa\xE7\xE3o."
 title: Concatenando strings
 weight: 3
 ---

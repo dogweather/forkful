@@ -1,9 +1,9 @@
 ---
 date: 2024-01-26 04:32:30.144854-07:00
 description: 'Wie geht das: So parsen Sie XML.'
-lastmod: '2024-03-13T22:44:54.290618-06:00'
+lastmod: '2024-04-05T21:53:56.179552-06:00'
 model: gpt-4-0125-preview
-summary: So parsen Sie XML.
+summary: ''
 title: Arbeiten mit XML
 weight: 40
 ---

@@ -1,10 +1,12 @@
 ---
 date: 2024-01-20 17:43:37.772706-07:00
-description: "How to (\uC5B4\uB5BB\uAC8C): ."
+description: "How to (\uC5B4\uB5BB\uAC8C): `example.html` \uD30C\uC77C\uC5D0 `http://example.com`\uC758\
+  \ \uB0B4\uC6A9\uC774 \uC800\uC7A5\uB429\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.480197-06:00'
+lastmod: '2024-04-05T21:53:57.152991-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "`example.html` \uD30C\uC77C\uC5D0 `http://example.com`\uC758 \uB0B4\uC6A9\
+  \uC774 \uC800\uC7A5\uB429\uB2C8\uB2E4."
 title: "\uC6F9 \uD398\uC774\uC9C0 \uB2E4\uC6B4\uB85C\uB4DC\uD558\uAE30"
 weight: 42
 ---

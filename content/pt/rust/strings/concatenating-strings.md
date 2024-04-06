@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:36:02.655305-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.359838-06:00'
+description: "Como Fazer: Concatenar strings \xE9 essencial e n\xE3o \xE9 nada novo.\
+  \ Em linguagens cl\xE1ssicas como C, era comum usar fun\xE7\xF5es como `strcat`\
+  \ para isso, mas Rust\u2026"
+lastmod: '2024-04-05T21:53:46.692487-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Concatenar strings \xE9 essencial e n\xE3o \xE9 nada novo."
 title: Concatenando strings
 weight: 3
 ---

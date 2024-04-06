@@ -1,9 +1,9 @@
 ---
 date: 2024-01-26 04:34:39.097866-07:00
-description: "Jak to zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:35.654287-06:00'
+description: "Jak to zrobi\u0107: Przyk\u0142adowe wyj\u015Bcie."
+lastmod: '2024-04-05T21:53:37.079556-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Przyk\u0142adowe wyj\u015Bcie."
 title: Praca z XML
 weight: 40
 ---

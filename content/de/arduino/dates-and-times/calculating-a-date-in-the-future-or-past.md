@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:30:58.557754-07:00
-description: 'So geht''s: .'
-lastmod: '2024-03-13T22:44:54.156657-06:00'
+description: "So geht's: Ausgabe k\xF6nnte sein."
+lastmod: '2024-04-05T21:53:56.040565-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Ausgabe k\xF6nnte sein."
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---

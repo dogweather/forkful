@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:30:45.944901-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.766125-06:00'
+description: "Como Fazer: A capacidade de manipular datas \xE9 essencial na automa\xE7\
+  \xE3o e no gerenciamento de tarefas baseadas em tempo. Tradicionalmente, Unix e\
+  \ sistemas\u2026"
+lastmod: '2024-04-05T21:53:47.113165-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "A capacidade de manipular datas \xE9 essencial na automa\xE7\xE3o e no gerenciamento\
+  \ de tarefas baseadas em tempo."
 title: Calculando uma data no futuro ou passado
 weight: 26
 ---

@@ -3,10 +3,12 @@ changelog:
 - 2024-04-04, dogweather, edited
 - 2024-04-04, gpt-4-0125-preview, translated from English
 date: 2024-01-20 17:43:02.363431-07:00
-description: 'Come fare: .'
-lastmod: '2024-04-04T02:02:34.898720-06:00'
+description: "Come fare: Faccio abbastanza spesso questo da averlo rifattorizzato\
+  \ in questa semplice funzione `delete()`. \xC8 anche una buona dimostrazione dei\u2026"
+lastmod: '2024-04-05T21:53:43.770160-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: Faccio abbastanza spesso questo da averlo rifattorizzato in questa semplice
+  funzione `delete()`.
 title: Eliminazione dei caratteri corrispondenti a un pattern
 weight: 5
 ---

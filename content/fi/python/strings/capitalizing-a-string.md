@@ -5,9 +5,10 @@ changelog:
 date: 2024-02-03 19:02:34.962078-07:00
 description: "Kuinka: Pythonissa on sis\xE4\xE4nrakennettu metodi `.capitalize()`\
   \ merkkijonojen muuttamiseksi niin, ett\xE4 teht\xE4v\xE4 suoritetaan helposti."
-lastmod: '2024-04-04T00:26:58.809734-06:00'
+lastmod: '2024-04-05T21:53:57.683492-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Pythonissa on sis\xE4\xE4nrakennettu metodi `.capitalize()` merkkijonojen\
+  \ muuttamiseksi niin, ett\xE4 teht\xE4v\xE4 suoritetaan helposti."
 title: "Merkkijonon ensimm\xE4isen kirjaimen muuttaminen isoksi"
 weight: 2
 ---

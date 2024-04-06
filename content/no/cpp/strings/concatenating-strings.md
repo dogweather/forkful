@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:34:24.608629-07:00
-description: "Slik gj\xF8r du: ."
-lastmod: '2024-03-13T22:44:41.091394-06:00'
+description: "Slik gj\xF8r du: Historisk sett var strengsammensl\xE5ing en operasjon\
+  \ som krevde h\xE5ndtering av char-arrays og null-terminert strenger i C. Med komme\
+  \ av C++ og\u2026"
+lastmod: '2024-04-05T21:53:42.053835-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historisk sett var strengsammensl\xE5ing en operasjon som krevde h\xE5ndtering\
+  \ av char-arrays og null-terminert strenger i C."
 title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---

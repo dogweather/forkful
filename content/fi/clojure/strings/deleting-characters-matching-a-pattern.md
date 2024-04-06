@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:42:00.366256-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:56.169630-06:00'
+description: "How to: Syvensin\xE4. Ennen satoja ohjelmointikieli\xE4, datan siivous\
+  \ oli manuaalista. Clojure, noin vuodesta 2007, tarjoaa modernit ty\xF6kalut kuten\
+  \ regex\u2026"
+lastmod: '2024-04-05T21:53:57.725723-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---

@@ -2,9 +2,9 @@
 date: 2024-01-20 17:35:34.538305-07:00
 description: "How to: (\u05D0\u05D9\u05DA \u05DC\u05E2\u05E9\u05D5\u05EA:) Ruby makes\
   \ it easy. You can use `+`, `<<`, or `concat`. Here's how."
-lastmod: '2024-03-13T22:44:40.186810-06:00'
+lastmod: '2024-04-05T21:53:41.184956-06:00'
 model: gpt-4-1106-preview
-summary: Ruby makes it easy.
+summary: "(\u05D0\u05D9\u05DA \u05DC\u05E2\u05E9\u05D5\u05EA:) Ruby makes it easy."
 title: "\u05E9\u05E8\u05E9\u05D5\u05E8 \u05DE\u05D7\u05E8\u05D5\u05D6\u05D5\u05EA"
 weight: 3
 ---

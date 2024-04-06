@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 18:01:59.630357-07:00
-description: "C\xF3mo Hacerlo: ."
-lastmod: '2024-03-13T22:44:59.035585-06:00'
+description: "C\xF3mo Hacerlo: El t\xE9rmino \"autenticaci\xF3n b\xE1sica\" proviene\
+  \ de los primeros d\xEDas de la web cuando se buscaban m\xE9todos seguros pero simples\
+  \ para verificar las\u2026"
+lastmod: '2024-04-05T21:54:00.378431-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "El t\xE9rmino \"autenticaci\xF3n b\xE1sica\" proviene de los primeros d\xED\
+  as de la web cuando se buscaban m\xE9todos seguros pero simples para verificar las\
+  \ identidades."
 title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
 weight: 45
 ---

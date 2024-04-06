@@ -2,9 +2,9 @@
 date: 2024-01-20 17:46:07.717593-07:00
 description: "How to (Wie geht das?) In PHP gibt es verschiedene Funktionen, um Substrings\
   \ zu extrahieren. Hier ein paar Beispiele: `substr()` extrahiert einen\u2026"
-lastmod: '2024-03-13T22:44:53.961245-06:00'
+lastmod: '2024-04-05T21:53:55.846266-06:00'
 model: gpt-4-1106-preview
-summary: In PHP gibt es verschiedene Funktionen, um Substrings zu extrahieren.
+summary: Hier ein paar Beispiele.
 title: Teilstrings extrahieren
 weight: 6
 ---

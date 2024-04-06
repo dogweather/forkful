@@ -2,9 +2,9 @@
 date: 2024-01-20 17:56:21.282050-07:00
 description: "Hur g\xF6r man: Enkelt! I din `main`-metod, de d\xE4r `String[] args`\
   \ \xE4r dina argument. Kika h\xE4r."
-lastmod: '2024-03-13T22:44:37.802467-06:00'
+lastmod: '2024-04-05T21:53:39.136222-06:00'
 model: gpt-4-1106-preview
-summary: Enkelt.
+summary: ''
 title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---

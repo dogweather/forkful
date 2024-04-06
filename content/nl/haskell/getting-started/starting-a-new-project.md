@@ -3,10 +3,11 @@ changelog:
 - 2024-01-21, dogweather, Reviewed for accuracy
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:15.634438-07:00
-description: 'Hoe te: .'
-lastmod: '2024-03-13T22:44:50.853008-06:00'
+description: "Hoe te: Haskell-projecten vertrouwen vaak op tools zoals Stack of Cabal.\
+  \ Stack beheert afhankelijkheden, wat zorgt voor consistente builds. In 2008 was\u2026"
+lastmod: '2024-04-05T21:53:50.877120-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: Haskell-projecten vertrouwen vaak op tools zoals Stack of Cabal.
 title: Een nieuw project starten
 weight: 1
 ---

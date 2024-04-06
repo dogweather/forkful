@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 17:33:33.436783-07:00
-description: "How to: (\u65B9\u6CD5) ."
+description: "How to: (\u65B9\u6CD5) Sample output."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:41.516038-06:00'
+lastmod: '2024-04-05T21:53:42.468500-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "\u65E5\u4ED8\u3092\u6BD4\u8F03\u3059\u308B"
 weight: 27
 ---

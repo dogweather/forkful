@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:46:46.874122-07:00
-description: "Jak to zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:35.616758-06:00'
+description: "Jak to zrobi\u0107: Historia m\xF3wi, \u017Ce wyci\u0105ganie podci\u0105\
+  g\xF3w istnia\u0142o od samego pocz\u0105tku programowania jako metoda obr\xF3bki\
+  \ tekst\xF3w. W PowerShell, kt\xF3ry pojawi\u0142\u2026"
+lastmod: '2024-04-05T21:53:37.041987-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historia m\xF3wi, \u017Ce wyci\u0105ganie podci\u0105g\xF3w istnia\u0142\
+  o od samego pocz\u0105tku programowania jako metoda obr\xF3bki tekst\xF3w."
 title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
 weight: 6
 ---

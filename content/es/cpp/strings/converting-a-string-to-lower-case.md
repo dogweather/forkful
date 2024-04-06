@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:38:09.241169-07:00
-description: "C\xF3mo hacerlo: ."
-lastmod: '2024-03-13T22:44:59.362818-06:00'
+description: "C\xF3mo hacerlo: Hist\xF3ricamente, convertir cadenas de texto a min\xFA\
+  sculas ha sido fundamental en la normalizaci\xF3n de datos y b\xFAsquedas insensibles\
+  \ a\u2026"
+lastmod: '2024-04-05T21:54:00.711576-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Hist\xF3ricamente, convertir cadenas de texto a min\xFAsculas ha sido fundamental\
+  \ en la normalizaci\xF3n de datos y b\xFAsquedas insensibles a may\xFAsculas/min\xFA\
+  sculas."
 title: "Conversi\xF3n de una cadena de texto a min\xFAsculas"
 weight: 4
 ---

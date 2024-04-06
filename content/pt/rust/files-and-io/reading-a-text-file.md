@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:55:11.546794-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.385036-06:00'
+description: "Como Fazer: Sa\xEDda (assumindo que o conte\xFAdo de `exemplo.txt` \xE9\
+  \ \"Ol\xE1, mundo!\")."
+lastmod: '2024-04-05T21:53:46.717871-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Sa\xEDda (assumindo que o conte\xFAdo de `exemplo.txt` \xE9 \"Ol\xE1, mundo!\"\
+  )."
 title: Lendo um arquivo de texto
 weight: 22
 ---

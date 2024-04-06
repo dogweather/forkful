@@ -2,10 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:08.948673-07:00
-description: "C\xE1ch th\u1EF1c hi\u1EC7n: ."
-lastmod: '2024-03-13T22:44:37.012232-06:00'
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: K\u1EBFt qu\u1EA3 mong \u0111\u1EE3i tr\xEA\
+  n m\xE0n h\xECnh serial s\u1EBD l\xE0 n\u1ED9i dung c\u1EE7a `example.txt` n\u1EBF\
+  u m\u1ECDi th\u1EE9 \u0111\u01B0\u1EE3c k\u1EBFt n\u1ED1i v\xE0 kh\u1EDFi t\u1EA1\
+  o \u0111\xFAng c\xE1ch."
+lastmod: '2024-04-05T21:53:38.371881-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "K\u1EBFt qu\u1EA3 mong \u0111\u1EE3i tr\xEAn m\xE0n h\xECnh serial s\u1EBD\
+  \ l\xE0 n\u1ED9i dung c\u1EE7a `example.txt` n\u1EBFu m\u1ECDi th\u1EE9 \u0111\u01B0\
+  \u1EE3c k\u1EBFt n\u1ED1i v\xE0 kh\u1EDFi t\u1EA1o \u0111\xFAng c\xE1ch."
 title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 22
 ---

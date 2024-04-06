@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:52:00.488180-07:00
-description: "Jak to zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:35.741042-06:00'
+description: "Jak to zrobi\u0107: Interpolacja string\xF3w w Swift zosta\u0142a wprowadzona\
+  \ razem z pierwsz\u0105 wersj\u0105 j\u0119zyka w 2014 roku, jako cz\u0119\u015B\
+  \u0107 jego flexybilno\u015Bci. Przed tym, w\u2026"
+lastmod: '2024-04-05T21:53:37.167316-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Interpolacja string\xF3w w Swift zosta\u0142a wprowadzona razem z pierwsz\u0105\
+  \ wersj\u0105 j\u0119zyka w 2014 roku, jako cz\u0119\u015B\u0107 jego flexybilno\u015B\
+  ci."
 title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 8
 ---

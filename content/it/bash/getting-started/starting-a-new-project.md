@@ -2,10 +2,10 @@
 date: 2024-01-20 18:03:06.133718-07:00
 description: 'How to: (Come fare:) Iniziamo creando una cartella per il progetto e
   poi generiamo un file script Bash di base.'
-lastmod: '2024-03-13T22:44:43.600477-06:00'
+lastmod: '2024-04-05T21:53:44.363724-06:00'
 model: gpt-4-1106-preview
-summary: Iniziamo creando una cartella per il progetto e poi generiamo un file script
-  Bash di base.
+summary: (Come fare:) Iniziamo creando una cartella per il progetto e poi generiamo
+  un file script Bash di base.
 title: Avvio di un nuovo progetto
 weight: 1
 ---

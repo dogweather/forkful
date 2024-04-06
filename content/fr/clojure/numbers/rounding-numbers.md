@@ -2,10 +2,10 @@
 date: 2024-01-26 03:44:38.241383-07:00
 description: 'Comment faire : En Clojure, nous utilisons principalement `Math/round`,
   `Math/floor`, et `Math/ceil` .'
-lastmod: '2024-03-13T22:44:57.276780-06:00'
+lastmod: '2024-04-05T21:53:58.857623-06:00'
 model: gpt-4-0125-preview
 summary: En Clojure, nous utilisons principalement `Math/round`, `Math/floor`, et
-  `Math/ceil`.
+  `Math/ceil` .
 title: Arrondir les nombres
 weight: 13
 ---

@@ -1,10 +1,14 @@
 ---
 date: 2024-01-20 17:43:56.695245-07:00
-description: "\u5982\u4F55\uFF1A ."
+description: "\u5982\u4F55\uFF1A \u4E0B\u8F7D\u7F51\u9875\u5176\u5B9E\u548C\u65E9\u5E74\
+  \u7528\u7535\u8BDD\u62E8\u53F7\u4E0A\u7F51\u7C7B\u4F3C\uFF0C\u53EA\u662F\u73B0\u5728\
+  \u66F4\u5FEB\u3001\u66F4\u81EA\u52A8\u5316\u3002\u53EF\u7528\u7684\u5E93\u6709\u5F88\
+  \u591A\uFF0C\u6BD4\u5982`clj-http`\u3002\u8FD9\u4E2A\u5E93\u80CC\u540E\u7528\u7684\
+  \u662FApache\u7684`HttpClient`\u3002`clj-\u2026"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:47.301429-06:00'
+lastmod: '2024-04-05T21:53:47.653076-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "\u4E0B\u8F7D\u7F51\u9875"
 weight: 42
 ---

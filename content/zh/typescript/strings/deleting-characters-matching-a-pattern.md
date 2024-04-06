@@ -4,11 +4,11 @@ description: "How to: (\u5982\u4F55\u64CD\u4F5C\uFF1A) \u5728TypeScript\u4E2D\uF
   \u53EF\u4F7F\u7528\u6B63\u5219\u8868\u8FBE\u5F0F\u914D\u5408 `String.prototype.replace()`\
   \ \u65B9\u6CD5\u6765\u5220\u9664\u5B57\u7B26\uFF1A."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:47.454341-06:00'
+lastmod: '2024-04-05T21:53:47.780071-06:00'
 model: gpt-4-1106-preview
-summary: "\u5728TypeScript\u4E2D\uFF0C\u53EF\u4F7F\u7528\u6B63\u5219\u8868\u8FBE\u5F0F\
-  \u914D\u5408 `String.prototype.replace()` \u65B9\u6CD5\u6765\u5220\u9664\u5B57\u7B26\
-  \uFF1A."
+summary: "(\u5982\u4F55\u64CD\u4F5C\uFF1A) \u5728TypeScript\u4E2D\uFF0C\u53EF\u4F7F\
+  \u7528\u6B63\u5219\u8868\u8FBE\u5F0F\u914D\u5408 `String.prototype.replace()` \u65B9\
+  \u6CD5\u6765\u5220\u9664\u5B57\u7B26\uFF1A."
 title: "\u5339\u914D\u6A21\u5F0F\u5220\u9664\u5B57\u7B26"
 weight: 5
 ---

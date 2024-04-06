@@ -2,9 +2,9 @@
 date: 2024-03-08 21:33:26.692396-07:00
 description: "How to: 1. **Install Dart**: Ensure Dart is installed on your system.\
   \ If not, you can download it from [https://dart.dev/get-dart](https://dart.dev/get-\u2026"
-lastmod: '2024-03-13T22:44:59.821410-06:00'
+lastmod: '2024-04-05T21:53:35.508406-06:00'
 model: gpt-4-0125-preview
-summary: '1.'
+summary: ''
 title: Starting a new project
 weight: 1
 ---

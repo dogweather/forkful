@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:42:59.254895-07:00
-description: "C\xF3mo hacerlo: ."
-lastmod: '2024-03-13T22:44:58.830705-06:00'
+description: "C\xF3mo hacerlo: Eliminar caracteres seg\xFAn un patr\xF3n no es nada\
+  \ nuevo, viene de mucho antes de que Rust apareciera en el panorama de programaci\xF3\
+  n. En\u2026"
+lastmod: '2024-04-05T21:54:00.177569-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Eliminar caracteres seg\xFAn un patr\xF3n no es nada nuevo, viene de mucho\
+  \ antes de que Rust apareciera en el panorama de programaci\xF3n."
 title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---

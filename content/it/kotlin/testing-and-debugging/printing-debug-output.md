@@ -2,9 +2,9 @@
 date: 2024-01-20 17:52:57.803047-07:00
 description: 'How to: Ecco la base: `println()` per mandare in stampa i tuoi messaggi
   di debug. Semplice.'
-lastmod: '2024-03-13T22:44:43.393570-06:00'
+lastmod: '2024-04-05T21:53:44.164172-06:00'
 model: gpt-4-1106-preview
-summary: Ecco la base.
+summary: ''
 title: Stampa dell'output di debug
 weight: 33
 ---

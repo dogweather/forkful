@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:43:29.550898-07:00
-description: "Hvordan gj\xF8r man det: ."
-lastmod: '2024-03-13T22:44:41.057435-06:00'
+description: "Hvordan gj\xF8r man det: Sample Output."
+lastmod: '2024-04-05T21:53:42.019442-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: Nedlasting av en nettside
 weight: 42
 ---

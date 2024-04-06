@@ -2,9 +2,9 @@
 date: 2024-01-20 17:53:00.316880-07:00
 description: "How to: **Slik gj\xF8r du:** I Kotlin bruker vi ofte `println()` for\
   \ \xE5 skrive ut til konsollen. Enkel og rett frem."
-lastmod: '2024-03-13T22:44:40.753129-06:00'
+lastmod: '2024-04-05T21:53:41.731480-06:00'
 model: gpt-4-1106-preview
-summary: "**Slik gj\xF8r du:**\n\nI Kotlin bruker vi ofte `println()` for \xE5 skrive\
+summary: "**Slik gj\xF8r du:** I Kotlin bruker vi ofte `println()` for \xE5 skrive\
   \ ut til konsollen."
 title: "Skrive ut feils\xF8kingsdata"
 weight: 33

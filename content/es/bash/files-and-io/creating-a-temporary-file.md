@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:39:25.826513-07:00
-description: "C\xF3mo Hacerlo: ."
-lastmod: '2024-03-13T22:44:59.266710-06:00'
+description: "C\xF3mo Hacerlo: Output esperado (el nombre del archivo temporal variar\xE1\
+  )."
+lastmod: '2024-04-05T21:54:00.611392-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Output esperado (el nombre del archivo temporal variar\xE1)."
 title: Creando un archivo temporal
 weight: 21
 ---

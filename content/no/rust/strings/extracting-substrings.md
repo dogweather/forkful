@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:46:54.432830-07:00
-description: 'Hvordan: .'
-lastmod: '2024-03-13T22:44:40.563097-06:00'
+description: "Hvordan: I Rust er en streng en rekke av UTF-8 bytes. Det er viktig\
+  \ \xE5 huske p\xE5 at \xE5 trekke ut substrings ikke n\xF8dvendigvis handler om\
+  \ antall tegn, men\u2026"
+lastmod: '2024-04-05T21:53:41.541597-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: I Rust er en streng en rekke av UTF-8 bytes.
 title: Uthenting av delstrenger
 weight: 6
 ---

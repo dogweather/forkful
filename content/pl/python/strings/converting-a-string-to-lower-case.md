@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:39:04.042949-07:00
-description: "Jak to zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:34.935663-06:00'
+description: "Jak to zrobi\u0107: W Pythonie metoda `.lower()` istnieje ju\u017C od\
+  \ dawna, oferuj\u0105c prosty spos\xF3b na konwersj\u0119 tekstu. Inne j\u0119zyki\
+  \ programowania te\u017C maj\u0105 swoje\u2026"
+lastmod: '2024-04-05T21:53:36.384964-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "W Pythonie metoda `.lower()` istnieje ju\u017C od dawna, oferuj\u0105c prosty\
+  \ spos\xF3b na konwersj\u0119 tekstu."
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---

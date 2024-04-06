@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 18:01:40.251626-07:00
-description: 'How to: | Kuinka: .'
-lastmod: '2024-03-13T22:44:56.488216-06:00'
+description: "How to: | Kuinka: Perusautentikointi (Basic Authentication) oli yksi\
+  \ ensimm\xE4isist\xE4 verkkopalvelujen tunnistusmenetelmist\xE4. Yksinkertaisuutensa\
+  \ vuoksi se\u2026"
+lastmod: '2024-04-05T21:53:58.053763-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---

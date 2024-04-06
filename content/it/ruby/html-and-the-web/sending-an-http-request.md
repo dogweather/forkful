@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 18:00:30.941065-07:00
-description: 'Come Fare: .'
-lastmod: '2024-03-13T22:44:44.048317-06:00'
+description: "Come Fare: Inviare richieste HTTP \xE8 una pratica comune fin dagli\
+  \ albori del web. `Net::HTTP` \xE8 la libreria standard di Ruby per HTTP ma non\
+  \ \xE8 l'unica\u2026"
+lastmod: '2024-04-05T21:53:44.693536-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Inviare richieste HTTP \xE8 una pratica comune fin dagli albori del web."
 title: Inviare una richiesta http
 weight: 44
 ---

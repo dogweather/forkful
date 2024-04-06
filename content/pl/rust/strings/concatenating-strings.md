@@ -2,9 +2,10 @@
 date: 2024-01-20 17:35:40.191452-07:00
 description: "How to: (Jak to zrobi\u0107:) Rust u\u017Cywa r\xF3\u017Cnych metod\
   \ do \u0142\u0105czenia string\xF3w. Oto kilka przyk\u0142ad\xF3w."
-lastmod: '2024-03-13T22:44:35.176168-06:00'
+lastmod: '2024-04-05T21:53:36.613568-06:00'
 model: gpt-4-1106-preview
-summary: "Rust u\u017Cywa r\xF3\u017Cnych metod do \u0142\u0105czenia string\xF3w."
+summary: "(Jak to zrobi\u0107:) Rust u\u017Cywa r\xF3\u017Cnych metod do \u0142\u0105\
+  czenia string\xF3w."
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---

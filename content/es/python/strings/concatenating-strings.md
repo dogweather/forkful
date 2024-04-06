@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:35:40.514603-07:00
-description: "C\xF3mo: ."
-lastmod: '2024-03-13T22:44:58.602475-06:00'
+description: "C\xF3mo: Hist\xF3ricamente, la concatenaci\xF3n de cadenas era una operaci\xF3\
+  n costosa en t\xE9rminos de rendimiento. Cada concatenaci\xF3n significaba crear\
+  \ una nueva\u2026"
+lastmod: '2024-04-05T21:53:59.961686-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Hist\xF3ricamente, la concatenaci\xF3n de cadenas era una operaci\xF3n costosa\
+  \ en t\xE9rminos de rendimiento."
 title: "Concatenaci\xF3n de cadenas de texto"
 weight: 3
 ---

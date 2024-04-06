@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:39:23.034853-07:00
-description: 'Hvordan: .'
-lastmod: '2024-03-13T22:44:41.077544-06:00'
+description: 'Hvordan: Sample output.'
+lastmod: '2024-04-05T21:53:42.038909-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: Opprette en midlertidig fil
 weight: 21
 ---

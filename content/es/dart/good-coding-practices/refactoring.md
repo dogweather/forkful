@@ -4,9 +4,11 @@ changelog:
 date: 2024-03-08 21:55:50.912313-07:00
 description: "C\xF3mo hacerlo: Antes de la refactorizaci\xF3n, es posible que tengas\
   \ un fragmento de c\xF3digo que mezcla diferentes niveles de abstracci\xF3n o responsabilidades,\u2026"
-lastmod: '2024-03-13T22:44:58.761892-06:00'
+lastmod: '2024-04-05T21:54:00.113148-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Antes de la refactorizaci\xF3n, es posible que tengas un fragmento de c\xF3\
+  digo que mezcla diferentes niveles de abstracci\xF3n o responsabilidades, como calcular\
+  \ un descuento y luego aplicarlo."
 title: "Refactorizaci\xF3n"
 weight: 19
 ---

@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:39:27.043380-07:00
-description: "Hur g\xF6r man: ."
-lastmod: '2024-03-13T22:44:37.643383-06:00'
+description: "Hur g\xF6r man: Om vi blickar bak\xE5t var textbehandling med olika\
+  \ skiftl\xE4gen v\xE4sentlig redan i tidiga databaser och textredigeringsprogram\
+  \ f\xF6r att s\xE4kerst\xE4lla\u2026"
+lastmod: '2024-04-05T21:53:38.972354-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Om vi blickar bak\xE5t var textbehandling med olika skiftl\xE4gen v\xE4\
+  sentlig redan i tidiga databaser och textredigeringsprogram f\xF6r att s\xE4kerst\xE4\
+  lla konsekvent datahantering."
 title: "Konvertera en str\xE4ng till gemener"
 weight: 4
 ---

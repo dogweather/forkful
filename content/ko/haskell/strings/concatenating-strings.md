@@ -5,11 +5,9 @@ description: "How to (\uC5B4\uB5BB\uAC8C \uD558\uB098\uC694?) Haskell\uC5D0\uC11
   \ `(++)` \uC5F0\uC0B0\uC790\uB97C \uC0AC\uC6A9\uD558\uB294 \uAC83\uC785\uB2C8\uB2E4\
   . \uAC04\uB2E8\uD558\uC8E0!."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.283822-06:00'
+lastmod: '2024-04-05T21:53:57.000673-06:00'
 model: gpt-4-1106-preview
-summary: "Haskell\uC5D0\uC11C \uBB38\uC790\uC5F4\uC744 \uC5F0\uACB0\uD558\uB294 \uAE30\
-  \uBCF8 \uBC29\uBC95\uC740 `(++)` \uC5F0\uC0B0\uC790\uB97C \uC0AC\uC6A9\uD558\uB294\
-  \ \uAC83\uC785\uB2C8\uB2E4."
+summary: ''
 title: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uD558\uAE30"
 weight: 3
 ---

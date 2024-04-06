@@ -2,10 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:16.930717-07:00
-description: 'Hoe te: .'
-lastmod: '2024-03-13T22:44:50.985210-06:00'
+description: "Hoe te: Oorspronkelijk betekende debuggen het verwijderen van fysieke\
+  \ bugs die vroege computers verstoorden. Tegenwoordig gaat het om het verpletteren\
+  \ van\u2026"
+lastmod: '2024-04-05T21:53:51.005361-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: Oorspronkelijk betekende debuggen het verwijderen van fysieke bugs die vroege
+  computers verstoorden.
 title: Debug-output afdrukken
 weight: 33
 ---

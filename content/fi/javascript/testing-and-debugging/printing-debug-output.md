@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:53:18.113790-07:00
-description: "How to: (Kuinka tehd\xE4:) ."
-lastmod: '2024-03-13T22:44:56.952349-06:00'
+description: "How to: (Kuinka tehd\xE4:) Tuloste."
+lastmod: '2024-04-05T21:53:58.530676-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(Kuinka tehd\xE4:) Tuloste."
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---

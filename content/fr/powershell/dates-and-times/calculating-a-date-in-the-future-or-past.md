@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:31:45.818745-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:58.069831-06:00'
+description: "Comment faire : Historiquement, la manipulation des dates a \xE9t\xE9\
+  \ source de multiples erreurs \xE0 cause de formats incoh\xE9rents et de la gestion\
+  \ des fuseaux\u2026"
+lastmod: '2024-04-05T21:53:59.514564-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historiquement, la manipulation des dates a \xE9t\xE9 source de multiples\
+  \ erreurs \xE0 cause de formats incoh\xE9rents et de la gestion des fuseaux horaires."
 title: "Calcul d'une date future ou pass\xE9e"
 weight: 26
 ---

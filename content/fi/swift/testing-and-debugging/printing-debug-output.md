@@ -2,9 +2,9 @@
 date: 2024-01-20 17:53:35.735646-07:00
 description: "How to: (Miten:) Swiftiss\xE4 tulostaminen konsoliin k\xE4y `print`-funktiolla.\
   \ Katsotaan pari esimerkki\xE4."
-lastmod: '2024-03-13T22:44:56.909493-06:00'
+lastmod: '2024-04-05T21:53:58.488661-06:00'
 model: gpt-4-1106-preview
-summary: "Swiftiss\xE4 tulostaminen konsoliin k\xE4y `print`-funktiolla."
+summary: "(Miten:) Swiftiss\xE4 tulostaminen konsoliin k\xE4y `print`-funktiolla."
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---

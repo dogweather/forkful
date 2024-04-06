@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:42:32.731276-07:00
-description: 'Hvordan: .'
-lastmod: '2024-03-13T22:44:40.650716-06:00'
+description: "Hvordan: Her bruker vi `replaceAll`-metoden til \xE5 fjerne alle tall\
+  \ fra en tekststreng, hvor `\\\\d+` er et regul\xE6rt uttrykk som matcher en eller\
+  \ flere\u2026"
+lastmod: '2024-04-05T21:53:41.631131-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Her bruker vi `replaceAll`-metoden til \xE5 fjerne alle tall fra en tekststreng,\
+  \ hvor `\\\\d+` er et regul\xE6rt uttrykk som matcher en eller flere siffer."
 title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---

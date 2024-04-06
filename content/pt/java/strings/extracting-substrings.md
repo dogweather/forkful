@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:46:14.847777-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:46.445472-06:00'
+description: "How to: Execute o c\xF3digo acima e voc\xEA vai ver as partes \"caf\xE9\
+  \" e \"quente\" sendo impressas na tela."
+lastmod: '2024-04-05T21:53:46.784523-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Execute o c\xF3digo acima e voc\xEA vai ver as partes \"caf\xE9\" e \"quente\"\
+  \ sendo impressas na tela."
 title: Extraindo substrings
 weight: 6
 ---

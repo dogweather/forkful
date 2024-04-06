@@ -1,9 +1,9 @@
 ---
 date: 2024-01-26 03:47:03.578337-07:00
-description: "Jak to zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:35.925729-06:00'
+description: "Jak to zrobi\u0107: Wynik przyk\u0142adowy."
+lastmod: '2024-04-05T21:53:37.357463-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: ''
 title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---

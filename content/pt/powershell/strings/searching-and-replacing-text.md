@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:58:21.361877-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.780707-06:00'
+description: "Como Fazer: A pesquisa e substitui\xE7\xE3o de texto \xE9 t\xE3o antiga\
+  \ quanto a pr\xF3pria programa\xE7\xE3o. Na verdade, \xE9 uma caracter\xEDstica\
+  \ fundamental de editores de\u2026"
+lastmod: '2024-04-05T21:53:47.127251-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "A pesquisa e substitui\xE7\xE3o de texto \xE9 t\xE3o antiga quanto a pr\xF3\
+  pria programa\xE7\xE3o."
 title: Pesquisando e substituindo texto
 weight: 10
 ---

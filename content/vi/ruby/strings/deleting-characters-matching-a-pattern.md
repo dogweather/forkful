@@ -2,10 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:40.357986-07:00
-description: "C\xE1ch th\u1EF1c hi\u1EC7n: ."
-lastmod: '2024-03-13T22:44:37.303289-06:00'
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong l\u1ECBch s\u1EED, Ruby \u0111\xE3\
+  \ l\xE0 m\u1ED9t ng\xF4n ng\u1EEF t\u1EADp trung m\u1EA1nh m\u1EBD v\xE0o x\u1EED\
+  \ l\xFD v\u0103n b\u1EA3n, k\u1EBF th\u1EEBa m\u1ED9t s\u1ED1 tri\u1EBFt l\xFD t\u1EEB\
+  \ Perl. \u0110\xF3 l\xE0 l\xFD do t\u1EA1i sao n\xF3 cung\u2026"
+lastmod: '2024-04-05T21:53:38.644921-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Trong l\u1ECBch s\u1EED, Ruby \u0111\xE3 l\xE0 m\u1ED9t ng\xF4n ng\u1EEF\
+  \ t\u1EADp trung m\u1EA1nh m\u1EBD v\xE0o x\u1EED l\xFD v\u0103n b\u1EA3n, k\u1EBF\
+  \ th\u1EEBa m\u1ED9t s\u1ED1 tri\u1EBFt l\xFD t\u1EEB Perl."
 title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
 weight: 5
 ---

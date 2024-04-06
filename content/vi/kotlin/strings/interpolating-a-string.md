@@ -2,10 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:09.131525-07:00
-description: "C\xE1ch th\u1EF1c hi\u1EC7n: ."
-lastmod: '2024-03-13T22:44:36.582636-06:00'
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Kotlin, \u0111\u01B0\u1EE3c \u1EA3nh h\u01B0\
+  \u1EDFng b\u1EDFi c\xE1c ng\xF4n ng\u1EEF hi\u1EC7n \u0111\u1EA1i kh\xE1c, \u0111\
+  \xE3 gi\u1EDBi thi\u1EC7u n\u1ED9i suy chu\u1ED7i nh\u01B0 m\u1ED9t ph\u01B0\u01A1\
+  ng \xE1n thay th\u1EBF s\u1EA1ch s\u1EBD h\u01A1n cho vi\u1EC7c gh\xE9p\u2026"
+lastmod: '2024-04-05T21:53:37.981971-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Kotlin, \u0111\u01B0\u1EE3c \u1EA3nh h\u01B0\u1EDFng b\u1EDFi c\xE1c ng\xF4\
+  n ng\u1EEF hi\u1EC7n \u0111\u1EA1i kh\xE1c, \u0111\xE3 gi\u1EDBi thi\u1EC7u n\u1ED9\
+  i suy chu\u1ED7i nh\u01B0 m\u1ED9t ph\u01B0\u01A1ng \xE1n thay th\u1EBF s\u1EA1\
+  ch s\u1EBD h\u01A1n cho vi\u1EC7c gh\xE9p n\u1ED1i chu\u1ED7i c\u1EE7a Java."
 title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
 weight: 8
 ---

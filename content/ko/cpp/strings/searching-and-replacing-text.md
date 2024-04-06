@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 17:57:15.553103-07:00
-description: "How to: (\uBC29\uBC95) ."
+description: "How to: (\uBC29\uBC95) Sample Output."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.647462-06:00'
+lastmod: '2024-04-05T21:53:57.284678-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "\uD14D\uC2A4\uD2B8 \uAC80\uC0C9 \uBC0F \uAD50\uCCB4"
 weight: 10
 ---

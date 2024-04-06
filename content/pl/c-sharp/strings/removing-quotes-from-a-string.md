@@ -1,9 +1,9 @@
 ---
 date: 2024-01-26 03:38:44.452190-07:00
-description: "Jak to zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:35.395567-06:00'
+description: "Jak to zrobi\u0107: Wynik."
+lastmod: '2024-04-05T21:53:36.832167-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: ''
 title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---

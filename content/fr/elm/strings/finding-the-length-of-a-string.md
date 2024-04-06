@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:47:04.638320-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:57.679398-06:00'
+description: "How to: Historiquement en Elm, `String.length` retourne la longueur\
+  \ en utilisant les unit\xE9s de code UTF-16, un standard pour coder les caract\xE8\
+  res. Cette\u2026"
+lastmod: '2024-04-05T21:53:59.175015-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historiquement en Elm, `String.length` retourne la longueur en utilisant\
+  \ les unit\xE9s de code UTF-16, un standard pour coder les caract\xE8res."
 title: "Trouver la longueur d'une cha\xEEne de caract\xE8res"
 weight: 7
 ---

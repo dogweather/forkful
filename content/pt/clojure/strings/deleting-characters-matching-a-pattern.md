@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:42:11.964307-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.181630-06:00'
+description: "Como Fazer: Historicamente, a manipula\xE7\xE3o de strings \xE9 um desafio\
+  \ comum na programa\xE7\xE3o, a necessidade de deletar caracteres de strings surge\
+  \ em diversos\u2026"
+lastmod: '2024-04-05T21:53:46.503127-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historicamente, a manipula\xE7\xE3o de strings \xE9 um desafio comum na\
+  \ programa\xE7\xE3o, a necessidade de deletar caracteres de strings surge em diversos\
+  \ contextos - desde processamento de textos a limpeza de dados para an\xE1lise."
 title: "Excluindo caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---

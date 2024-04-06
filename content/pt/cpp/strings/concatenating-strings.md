@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:34:06.730575-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.871831-06:00'
+description: "Como Fazer: Historicamente, em C++, os arrays de caracteres eram usados\
+  \ para strings, e a concatena\xE7\xE3o era manual e propensa a erros. Com a introdu\xE7\
+  \xE3o da\u2026"
+lastmod: '2024-04-05T21:53:47.222400-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historicamente, em C++, os arrays de caracteres eram usados para strings,\
+  \ e a concatena\xE7\xE3o era manual e propensa a erros."
 title: Concatenando strings
 weight: 3
 ---

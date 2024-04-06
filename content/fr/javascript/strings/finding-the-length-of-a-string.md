@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:47:48.924493-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:58.265245-06:00'
+description: "Comment faire : Historiquement, la propri\xE9t\xE9 `.length` existe\
+  \ depuis les premiers jours de JavaScript ; elle est simple et directe. Il n'y a\
+  \ pas vraiment\u2026"
+lastmod: '2024-04-05T21:53:59.668531-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historiquement, la propri\xE9t\xE9 `.length` existe depuis les premiers\
+  \ jours de JavaScript ; elle est simple et directe."
 title: "Trouver la longueur d'une cha\xEEne de caract\xE8res"
 weight: 7
 ---

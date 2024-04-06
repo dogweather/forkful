@@ -2,10 +2,9 @@
 date: 2024-01-20 17:51:45.604021-07:00
 description: "How to (Anleitung) In PowerShell realisierst du String-Interpolation\
   \ leicht mit dem Dollarzeichen und geschweiften Klammern innerhalb eines doppelten\u2026"
-lastmod: '2024-03-13T22:44:54.087936-06:00'
+lastmod: '2024-04-05T21:53:55.969433-06:00'
 model: gpt-4-1106-preview
-summary: "In PowerShell realisierst du String-Interpolation leicht mit dem Dollarzeichen\
-  \ und geschweiften Klammern innerhalb eines doppelten Anf\xFChrungszeichens."
+summary: Hier sind ein paar Beispiele.
 title: Zeichenketten interpolieren
 weight: 8
 ---

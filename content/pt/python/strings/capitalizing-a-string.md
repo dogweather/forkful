@@ -5,9 +5,10 @@ changelog:
 date: 2024-02-03 19:02:34.962078-07:00
 description: "Como Fazer: Python possui um m\xE9todo nativo `.capitalize()` para strings\
   \ que facilita essa tarefa."
-lastmod: '2024-04-04T00:26:53.755309-06:00'
+lastmod: '2024-04-05T21:53:46.459211-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Python possui um m\xE9todo nativo `.capitalize()` para strings que facilita\
+  \ essa tarefa."
 title: Capitalizando uma string
 weight: 2
 ---

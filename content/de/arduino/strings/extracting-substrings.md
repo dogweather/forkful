@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:44:58.321543-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:54.134176-06:00'
+description: "How to: Arduino-Programmierer extrahieren Substrings schon seit den\
+  \ fr\xFChen Tagen des Boards, um Sensordaten zu parsen oder Kommunikation zu erleichtern.\u2026"
+lastmod: '2024-04-05T21:53:56.016936-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Arduino-Programmierer extrahieren Substrings schon seit den fr\xFChen Tagen\
+  \ des Boards, um Sensordaten zu parsen oder Kommunikation zu erleichtern."
 title: Teilstrings extrahieren
 weight: 6
 ---

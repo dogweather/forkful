@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:32:53.849194-07:00
-description: 'Como fazer: .'
-lastmod: '2024-03-13T22:44:46.250496-06:00'
+description: "Como fazer: Historicamente, a manipula\xE7\xE3o de datas no Elixir foi\
+  \ evoluindo. Antes da vers\xE3o 1.3, o Elixir dependia de bibliotecas de terceiros,\
+  \ como o\u2026"
+lastmod: '2024-04-05T21:53:46.577931-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historicamente, a manipula\xE7\xE3o de datas no Elixir foi evoluindo."
 title: Comparando duas datas
 weight: 27
 ---

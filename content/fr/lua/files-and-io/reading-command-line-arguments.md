@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:56:23.737941-07:00
 description: 'How to: (Comment faire ?) .'
-lastmod: '2024-03-13T22:44:57.953993-06:00'
+lastmod: '2024-04-05T21:53:59.424892-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: Lecture des arguments de ligne de commande
 weight: 23
 ---

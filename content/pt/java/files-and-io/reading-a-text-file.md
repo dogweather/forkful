@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:54:33.548968-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.473136-06:00'
+description: "Como Fazer: Sa\xEDda de exemplo."
+lastmod: '2024-04-05T21:53:46.813374-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: Lendo um arquivo de texto
 weight: 22
 ---

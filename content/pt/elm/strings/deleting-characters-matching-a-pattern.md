@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:42:02.952252-07:00
-description: 'Como fazer: .'
-lastmod: '2024-03-13T22:44:46.483256-06:00'
+description: "Como fazer: Historicamente, manipula\xE7\xE3o de strings \xE9 cr\xED\
+  tica em programa\xE7\xE3o e cada linguagem tem sua abordagem. Em Elm, Regex e a\
+  \ fun\xE7\xE3o `filter` da\u2026"
+lastmod: '2024-04-05T21:53:46.823019-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historicamente, manipula\xE7\xE3o de strings \xE9 cr\xEDtica em programa\xE7\
+  \xE3o e cada linguagem tem sua abordagem."
 title: "Excluindo caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---

@@ -2,10 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:28.777368-07:00
-description: "L\xE0m th\u1EBF n\xE0o: ."
-lastmod: '2024-03-13T22:44:36.946326-06:00'
+description: "L\xE0m th\u1EBF n\xE0o: PowerShell \u0111\xE3 \u0111i m\u1ED9t ch\u1EB7\
+  ng \u0111\u01B0\u1EDDng d\xE0i k\u1EC3 t\u1EEB khi n\xF3 ra \u0111\u1EDDi d\u01B0\
+  \u1EDBi t\xEAn Monad. Vi\u1EC7c x\u1EED l\xFD l\u1ED7i tr\u1EDF n\xEAn m\u1EA1nh\
+  \ m\u1EBD h\u01A1n theo th\u1EDDi gian, mang l\u1EA1i nh\u1EEFng\u2026"
+lastmod: '2024-04-05T21:53:38.309496-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "PowerShell \u0111\xE3 \u0111i m\u1ED9t ch\u1EB7ng \u0111\u01B0\u1EDDng d\xE0\
+  i k\u1EC3 t\u1EEB khi n\xF3 ra \u0111\u1EDDi d\u01B0\u1EDBi t\xEAn Monad."
 title: "X\u1EED l\xFD l\u1ED7i"
 weight: 16
 ---

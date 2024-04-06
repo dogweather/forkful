@@ -1,9 +1,9 @@
 ---
 date: 2024-01-26 00:37:18.314422-07:00
-description: "C\xF3mo hacerlo: ."
-lastmod: '2024-03-13T22:44:59.253886-06:00'
+description: "C\xF3mo hacerlo: Salida de muestra cuando ocurre un error."
+lastmod: '2024-04-05T21:54:00.599981-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Salida de muestra cuando ocurre un error.
 title: Manejo de errores
 weight: 16
 ---

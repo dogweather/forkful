@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:56:52.640255-07:00
-description: 'How to / Kuinka: .'
-lastmod: '2024-03-13T22:44:56.797984-06:00'
+description: "How to / Kuinka: Aikoinaan, kun PowerShell syntyi, se korvasi vanhat\
+  \ komentosarjaohjelmat, kuten CMD-komennot, ja toi mukanaan edistyneemm\xE4t ominaisuudet\u2026"
+lastmod: '2024-04-05T21:53:58.373274-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Aikoinaan, kun PowerShell syntyi, se korvasi vanhat komentosarjaohjelmat,\
+  \ kuten CMD-komennot, ja toi mukanaan edistyneemm\xE4t ominaisuudet argumenttien\
+  \ k\xE4sittelyyn."
 title: Komennoriviparametrien lukeminen
 weight: 23
 ---

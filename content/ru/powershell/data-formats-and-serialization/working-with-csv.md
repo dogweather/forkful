@@ -2,8 +2,9 @@
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:03:55.896473-07:00
-description: "\u041A\u0430\u043A: ."
-lastmod: '2024-03-13T22:44:45.493161-06:00'
+description: "\u041A\u0430\u043A: **\u041F\u0440\u0438\u043C\u0435\u0440 \u0432\u044B\
+  \u0432\u043E\u0434\u0430:**."
+lastmod: '2024-04-05T21:53:45.902390-06:00'
 model: gpt-4-0125-preview
 summary: ''
 title: "\u0420\u0430\u0431\u043E\u0442\u0430 \u0441 CSV"

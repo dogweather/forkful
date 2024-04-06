@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:34:01.263593-07:00
-description: 'So geht''s: .'
-lastmod: '2024-03-13T22:44:54.136983-06:00'
+description: "So geht's: String-Konkatenation ist keine neue Idee. In C, der \"Gro\xDF\
+  vater\" der Arduino-Programmiersprache, wurden Zeichenketten mit der strcat-Funktion\u2026"
+lastmod: '2024-04-05T21:53:56.020758-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: String-Konkatenation ist keine neue Idee.
 title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---

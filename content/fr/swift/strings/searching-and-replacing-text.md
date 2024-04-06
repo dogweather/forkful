@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:58:37.325811-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:58.199575-06:00'
+description: "How to: L'histoire des recherches textuelles informatiques remonte aux\
+  \ premiers jours de programmation. \xC0 cette \xE9poque, la vitesse n'\xE9tait pas\
+  \ ouf, mais\u2026"
+lastmod: '2024-04-05T21:53:59.619433-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: L'histoire des recherches textuelles informatiques remonte aux premiers jours
+  de programmation.
 title: Recherche et remplacement de texte
 weight: 10
 ---

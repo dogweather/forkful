@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:31:41.411313-07:00
-description: 'So geht''s: .'
-lastmod: '2024-03-13T22:44:54.117036-06:00'
+description: 'So geht''s: Ausgabe: `19.04.2023` (angenommen, heute ist der 9. April
+  2023).'
+lastmod: '2024-04-05T21:53:55.998918-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---

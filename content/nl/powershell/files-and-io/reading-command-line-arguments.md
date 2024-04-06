@@ -4,9 +4,10 @@ changelog:
 date: 2024-01-28 22:05:12.895532-07:00
 description: "Hoe PowerShell leest command line argumenten met de `$args` array of\
   \ parameters. `$args` is snel voor eenmalige scripts; parameters zijn beter voor\u2026"
-lastmod: '2024-03-13T22:44:51.045654-06:00'
+lastmod: '2024-04-05T21:53:51.060700-06:00'
 model: gpt-4-0125-preview
-summary: PowerShell leest command line argumenten met de `$args` array of parameters.
+summary: '`$args` is snel voor eenmalige scripts; parameters zijn beter voor robuuste
+  tools.'
 title: Commandoregelargumenten lezen
 weight: 23
 ---

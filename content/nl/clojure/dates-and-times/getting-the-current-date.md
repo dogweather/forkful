@@ -2,10 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:19.863343-07:00
-description: 'Hoe: .'
-lastmod: '2024-03-13T22:44:50.430722-06:00'
+description: "Hoe: Clojure, een moderne dialect van Lisp, biedt Java-interoperabiliteit,\
+  \ dus we gebruiken vaak Java's rijke Date en Time API. Historisch gezien werden\u2026"
+lastmod: '2024-04-05T21:53:50.455895-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: Clojure, een moderne dialect van Lisp, biedt Java-interoperabiliteit, dus
+  we gebruiken vaak Java's rijke Date en Time API.
 title: Het huidige datum ophalen
 weight: 29
 ---

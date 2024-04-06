@@ -4,11 +4,11 @@ description: "How to: (\u5982\u4F55\u64CD\u4F5C\uFF1A) \u5728Elixir\u4E2D\uFF0C\
   \u7528`String.downcase/1`\u51FD\u6570\u5C06\u5B57\u7B26\u4E32\u8F6C\u6362\u4E3A\u5C0F\
   \u5199\u3002\u793A\u4F8B\u5982\u4E0B\uFF1A."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:47.337565-06:00'
+lastmod: '2024-04-05T21:53:47.686565-06:00'
 model: gpt-4-1106-preview
-summary: "\u5728Elixir\u4E2D\uFF0C\u4F7F\u7528`String.downcase/1`\u51FD\u6570\u5C06\
-  \u5B57\u7B26\u4E32\u8F6C\u6362\u4E3A\u5C0F\u5199\u3002\u793A\u4F8B\u5982\u4E0B\uFF1A\
-  ."
+summary: "(\u5982\u4F55\u64CD\u4F5C\uFF1A) \u5728Elixir\u4E2D\uFF0C\u4F7F\u7528`String.downcase/1`\u51FD\
+  \u6570\u5C06\u5B57\u7B26\u4E32\u8F6C\u6362\u4E3A\u5C0F\u5199\u3002\u793A\u4F8B\u5982\
+  \u4E0B\uFF1A."
 title: "\u5C06\u5B57\u7B26\u4E32\u8F6C\u6362\u4E3A\u5C0F\u5199"
 weight: 4
 ---

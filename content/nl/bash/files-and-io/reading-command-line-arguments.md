@@ -2,10 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:54.073574-07:00
-description: 'Hoe te: .'
-lastmod: '2024-03-13T22:44:50.999271-06:00'
+description: 'Hoe te: Voorbeelduitvoer ervan uitgaande dat je script ''example.sh''
+  heet en je roept `./example.sh arg1 arg2` aan.'
+lastmod: '2024-04-05T21:53:51.017345-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: Voorbeelduitvoer ervan uitgaande dat je script 'example.sh' heet en je roept
+  `./example.sh arg1 arg2` aan.
 title: Commandoregelargumenten lezen
 weight: 23
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:54:55.075228-07:00
-description: 'How to: .'
-lastmod: '2024-04-01'
+description: "How to: Reading text files is fundamental - and has been around since\
+  \ the early days of programming. Python's straightforward `open` function has roots\
+  \ in\u2026"
+lastmod: '2024-04-05T21:53:35.407068-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Reading text files is fundamental - and has been around since the early days
+  of programming.
 title: Reading a text file
 weight: 22
 ---

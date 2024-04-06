@@ -2,10 +2,10 @@
 date: 2024-01-20 17:59:57.707271-07:00
 description: "How to: (Kuinka tehd\xE4:) Fish Shellissa HTTP-pyynn\xF6n l\xE4hett\xE4\
   minen onnistuu `curl` tai `httpie` komentojen avulla."
-lastmod: '2024-03-13T22:44:56.991287-06:00'
+lastmod: '2024-04-05T21:53:58.569915-06:00'
 model: gpt-4-1106-preview
-summary: "Fish Shellissa HTTP-pyynn\xF6n l\xE4hett\xE4minen onnistuu `curl` tai `httpie`\
-  \ komentojen avulla."
+summary: "(Kuinka tehd\xE4:) Fish Shellissa HTTP-pyynn\xF6n l\xE4hett\xE4minen onnistuu\
+  \ `curl` tai `httpie` komentojen avulla."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---

@@ -3,10 +3,10 @@ date: 2024-01-20 17:41:07.241572-07:00
 description: "How to: (\uBC29\uBC95:) \uC5EC\uAE30\uC11C\uB294 Node.js\uC758 `fs`\
   \ \uBAA8\uB4C8\uC744 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.819132-06:00'
+lastmod: '2024-04-05T21:53:57.414827-06:00'
 model: gpt-4-1106-preview
-summary: "\uC5EC\uAE30\uC11C\uB294 Node.js\uC758 `fs` \uBAA8\uB4C8\uC744 \uC0AC\uC6A9\
-  \uD569\uB2C8\uB2E4."
+summary: "(\uBC29\uBC95:) \uC5EC\uAE30\uC11C\uB294 Node.js\uC758 `fs` \uBAA8\uB4C8\
+  \uC744 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uC784\uC2DC \uD30C\uC77C \uC0DD\uC131\uD558\uAE30"
 weight: 21
 ---

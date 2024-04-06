@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:37:47.932423-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:57.098735-06:00'
+description: "How to: P\xE4iv\xE4m\xE4\xE4rien muuntaminen merkkijonoksi Rubyssa perustuu\
+  \ `Date` ja `Time` -luokkiin, jotka ovat olleet osa kielt\xE4 melkein alusta asti.\
+  \ `strftime`,\u2026"
+lastmod: '2024-04-05T21:53:58.680506-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "P\xE4iv\xE4m\xE4\xE4rien muuntaminen merkkijonoksi Rubyssa perustuu `Date`\
+  \ ja `Time` -luokkiin, jotka ovat olleet osa kielt\xE4 melkein alusta asti."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---

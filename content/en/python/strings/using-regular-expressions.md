@@ -1,8 +1,8 @@
 ---
 date: 2024-02-03 19:03:03.774454-07:00
-description: "How to: Using regex in Python involves the `re` module, which provides\
-  \ a set of functions to process text using regular expressions. To search for a\u2026"
-lastmod: '2024-03-13T22:44:59.699294-06:00'
+description: 'How to: Using regex in Python involves the `re` module, which provides
+  a set of functions to process text using regular expressions.'
+lastmod: '2024-04-05T21:53:35.380717-06:00'
 model: gpt-4-0125-preview
 summary: Using regex in Python involves the `re` module, which provides a set of functions
   to process text using regular expressions.

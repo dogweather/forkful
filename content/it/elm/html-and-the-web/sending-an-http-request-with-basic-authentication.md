@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 18:01:23.725371-07:00
-description: 'How to - Come fare: .'
-lastmod: '2024-03-13T22:44:43.349732-06:00'
+description: 'How to - Come fare: Output dopo una request riuscita.'
+lastmod: '2024-04-05T21:53:44.120703-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Output dopo una request riuscita.
 title: Inviare una richiesta http con autenticazione di base
 weight: 45
 ---

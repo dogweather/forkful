@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:47:10.480137-07:00
-description: "Hur man g\xF6r: ."
-lastmod: '2024-03-13T22:44:37.516353-06:00'
+description: "Hur man g\xF6r: I Clojure, som i m\xE5nga funktionella spr\xE5k, \xE4\
+  r `count` en grundl\xE4ggande funktion som anv\xE4nds f\xF6r att hitta antalet element\
+  \ i en samling.\u2026"
+lastmod: '2024-04-05T21:53:38.844464-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "I Clojure, som i m\xE5nga funktionella spr\xE5k, \xE4r `count` en grundl\xE4\
+  ggande funktion som anv\xE4nds f\xF6r att hitta antalet element i en samling."
 title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---

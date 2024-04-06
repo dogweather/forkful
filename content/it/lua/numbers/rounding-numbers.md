@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 03:45:57.439841-07:00
-description: 'Come fare: .'
-lastmod: '2024-03-13T22:44:43.552950-06:00'
+description: "Come fare: Lua non include una funzione di arrotondamento pronta all'uso\
+  \ a differenza di alcuni altri linguaggi. Storicamente, \xE8 necessario scrivere\
+  \ la\u2026"
+lastmod: '2024-04-05T21:53:44.316375-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: Lua non include una funzione di arrotondamento pronta all'uso a differenza
+  di alcuni altri linguaggi.
 title: Arrotondamento dei numeri
 weight: 13
 ---

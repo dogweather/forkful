@@ -1,9 +1,9 @@
 ---
 date: 2024-01-26 04:36:58.626099-07:00
-description: 'Come fare: .'
-lastmod: '2024-03-13T22:44:43.677220-06:00'
+description: 'Come fare: Output di esempio.'
+lastmod: '2024-04-05T21:53:44.438391-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: ''
 title: Lavorare con i numeri complessi
 weight: 14
 ---

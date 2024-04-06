@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:44:54.760178-07:00
-description: 'How to: (Comment faire:) .'
-lastmod: '2024-03-13T22:44:58.097134-06:00'
+description: 'How to: (Comment faire:) Sortie: `Bonjour`.'
+lastmod: '2024-04-05T21:53:59.533680-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: (Comment faire:) Sortie.
 title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---

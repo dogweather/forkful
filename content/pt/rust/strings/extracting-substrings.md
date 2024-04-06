@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:46:25.082824-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:46.357049-06:00'
+description: "How to: Extrair substrings em Rust \xE9 um pouquinho diferente de outras\
+  \ linguagens. Ao contr\xE1rio de Python ou JavaScript, Rust lida com strings de\
+  \ forma\u2026"
+lastmod: '2024-04-05T21:53:46.689375-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Extrair substrings em Rust \xE9 um pouquinho diferente de outras linguagens."
 title: Extraindo substrings
 weight: 6
 ---

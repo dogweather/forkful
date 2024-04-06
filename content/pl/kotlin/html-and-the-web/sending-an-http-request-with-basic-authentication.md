@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:02:10.296949-07:00
-description: "Jak to zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:35.364696-06:00'
+description: "Jak to zrobi\u0107: Uwierzytelnianie podstawowe (Basic Authentication)\
+  \ to standardowy spos\xF3b na przekazanie nazwy u\u017Cytkownika i has\u0142a w\
+  \ nag\u0142\xF3wkach HTTP.\u2026"
+lastmod: '2024-04-05T21:53:36.801900-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Uwierzytelnianie podstawowe (Basic Authentication) to standardowy spos\xF3\
+  b na przekazanie nazwy u\u017Cytkownika i has\u0142a w nag\u0142\xF3wkach HTTP."
 title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
 weight: 45
 ---

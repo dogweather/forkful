@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:57:10.440034-07:00
-description: 'Kuinka: .'
-lastmod: '2024-03-13T22:44:56.810414-06:00'
+description: "Kuinka: Tekstin korvaaminen oli keskeist\xE4 varhaisissa tietokoneissa\
+  \ tekstipohjaisten k\xE4ytt\xF6liittymien ja ohjelmoinnin aikana. `String`-objektin\
+  \ metodit\u2026"
+lastmod: '2024-04-05T21:53:58.385972-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Tekstin korvaaminen oli keskeist\xE4 varhaisissa tietokoneissa tekstipohjaisten\
+  \ k\xE4ytt\xF6liittymien ja ohjelmoinnin aikana."
 title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---

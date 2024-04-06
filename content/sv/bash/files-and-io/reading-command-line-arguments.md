@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:55:19.417068-07:00
-description: "S\xE5 h\xE4r g\xF6r du: ."
-lastmod: '2024-03-13T22:44:38.097555-06:00'
+description: "S\xE5 h\xE4r g\xF6r du: K\xF6rning och utskrift."
+lastmod: '2024-04-05T21:53:39.435612-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "K\xF6rning och utskrift."
 title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---

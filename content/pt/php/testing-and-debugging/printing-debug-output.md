@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:53:11.278437-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.669912-06:00'
+description: "Como Fazer: Historicamente, a depura\xE7\xE3o sempre foi uma parte crucial\
+  \ do desenvolvimento de programas. Antes, poderia ser t\xE3o primitivo quanto analisar\
+  \ a\u2026"
+lastmod: '2024-04-05T21:53:47.014598-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historicamente, a depura\xE7\xE3o sempre foi uma parte crucial do desenvolvimento\
+  \ de programas."
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---

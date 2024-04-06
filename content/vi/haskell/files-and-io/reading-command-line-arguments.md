@@ -2,10 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:47.994790-07:00
-description: "L\xE0m th\u1EBF n\xE0o: ."
-lastmod: '2024-03-13T22:44:36.732273-06:00'
+description: "L\xE0m th\u1EBF n\xE0o: Ch\u1EA1y n\xF3 v\u1EDBi vi\u1EC7c truy\u1EC1\
+  n \"th\u1EBF gi\u1EDBi\" l\xE0m m\u1ED9t \u0111\u1ED1i s\u1ED1."
+lastmod: '2024-04-05T21:53:38.117470-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Ch\u1EA1y n\xF3 v\u1EDBi vi\u1EC7c truy\u1EC1n \"th\u1EBF gi\u1EDBi\" l\xE0\
+  m m\u1ED9t \u0111\u1ED1i s\u1ED1."
 title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
 weight: 23
 ---

@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:53:47.529705-07:00
-description: "Jak to zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:35.602781-06:00'
+description: "Jak to zrobi\u0107: Output przyk\u0142adowy dla `cat plik.txt`."
+lastmod: '2024-04-05T21:53:37.028640-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Output przyk\u0142adowy dla `cat plik.txt`."
 title: Odczytywanie pliku tekstowego
 weight: 22
 ---

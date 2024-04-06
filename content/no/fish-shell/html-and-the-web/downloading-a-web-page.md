@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:44:10.514583-07:00
-description: 'Hvordan: .'
-lastmod: '2024-03-13T22:44:41.225718-06:00'
+description: "Hvordan: Originally, nedlasting av webinnhold var en primitiv men kritisk\
+  \ oppgave for tidlige internett-brukere og utviklere. Verkt\xF8y som `wget` og `curl`\u2026"
+lastmod: '2024-04-05T21:53:42.185203-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Originally, nedlasting av webinnhold var en primitiv men kritisk oppgave
+  for tidlige internett-brukere og utviklere.
 title: Nedlasting av en nettside
 weight: 42
 ---

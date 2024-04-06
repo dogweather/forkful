@@ -2,10 +2,10 @@
 date: 2024-01-20 18:03:15.852054-07:00
 description: "How to: (Come fare:) In Fish Shell, iniziare un nuovo progetto pu\xF2\
   \ significare impostare una nuova directory con alcuni file base. Ecco un esempio\u2026"
-lastmod: '2024-03-13T22:44:43.859447-06:00'
+lastmod: '2024-04-05T21:53:44.604301-06:00'
 model: gpt-4-1106-preview
-summary: "In Fish Shell, iniziare un nuovo progetto pu\xF2 significare impostare una\
-  \ nuova directory con alcuni file base."
+summary: "(Come fare:) In Fish Shell, iniziare un nuovo progetto pu\xF2 significare\
+  \ impostare una nuova directory con alcuni file base."
 title: Avvio di un nuovo progetto
 weight: 1
 ---

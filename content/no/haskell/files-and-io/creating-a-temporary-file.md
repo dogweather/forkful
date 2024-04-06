@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:40:24.344850-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:40.862751-06:00'
+description: "How to: Kj\xF8re eksempel."
+lastmod: '2024-04-05T21:53:41.831874-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: Opprette en midlertidig fil
 weight: 21
 ---

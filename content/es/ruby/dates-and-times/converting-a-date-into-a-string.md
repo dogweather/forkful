@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:37:16.451158-07:00
-description: "C\xF3mo hacerlo: ."
-lastmod: '2024-03-13T22:44:59.602587-06:00'
+description: "C\xF3mo hacerlo: La conversi\xF3n de fechas a cadenas es un proceso\
+  \ tan antiguo como los propios lenguajes de programaci\xF3n, iniciando con lenguajes\
+  \ como COBOL y\u2026"
+lastmod: '2024-04-05T21:54:00.960090-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "La conversi\xF3n de fechas a cadenas es un proceso tan antiguo como los\
+  \ propios lenguajes de programaci\xF3n, iniciando con lenguajes como COBOL y FORTRAN."
 title: Convirtiendo una fecha en una cadena de texto
 weight: 28
 ---

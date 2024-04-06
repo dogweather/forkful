@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:41:59.426400-07:00
-description: "Jak to zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:35.822755-06:00'
+description: "Jak to zrobi\u0107: Fish Shell, kt\xF3ry zadebiutowa\u0142 w 2005 roku,\
+  \ jest wygodnym interpreterem z automatycznym uzupe\u0142nianiem i kolorowym wy\u015B\
+  wietlaniem,\u2026"
+lastmod: '2024-04-05T21:53:37.250653-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Fish Shell, kt\xF3ry zadebiutowa\u0142 w 2005 roku, jest wygodnym interpreterem\
+  \ z automatycznym uzupe\u0142nianiem i kolorowym wy\u015Bwietlaniem, skupiaj\u0105\
+  cym si\u0119 na u\u017Cyteczno\u015Bci."
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---

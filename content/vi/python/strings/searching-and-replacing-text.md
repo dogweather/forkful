@@ -2,10 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:33.742544-07:00
-description: "L\xE0m th\u1EBF n\xE0o: ."
-lastmod: '2024-03-13T22:44:36.077148-06:00'
+description: "L\xE0m th\u1EBF n\xE0o: Ng\xE0y x\u01B0a, ch\u1EC9nh s\u1EEDa v\u0103\
+  n b\u1EA3n l\xE0 m\u1ED9t qu\xE1 tr\xECnh th\u1EE7 c\xF4ng m\u1EC7t m\u1ECFi. V\xE0\
+  o \u0111\u1EA5y, regex (bi\u1EC3u th\u1EE9c ch\xEDnh quy), \u0111\u01B0\u1EE3c x\xE2\
+  y d\u1EF1ng trong nh\u1EEFng n\u0103m 1950, \u0111\xE3\u2026"
+lastmod: '2024-04-05T21:53:37.509399-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Ng\xE0y x\u01B0a, ch\u1EC9nh s\u1EEDa v\u0103n b\u1EA3n l\xE0 m\u1ED9t qu\xE1\
+  \ tr\xECnh th\u1EE7 c\xF4ng m\u1EC7t m\u1ECFi."
 title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
 weight: 10
 ---

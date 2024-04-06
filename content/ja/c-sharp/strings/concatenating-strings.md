@@ -1,10 +1,14 @@
 ---
 date: 2024-01-20 17:34:30.987909-07:00
-description: "How to: (\u65B9\u6CD5) ."
+description: "How to: (\u65B9\u6CD5) \u4E0A\u8A18\u306F\u6700\u3082\u57FA\u672C\u7684\
+  \u306A\u7D50\u5408\u65B9\u6CD5\u3067\u3059\u3002`String.Concat` \u3084 `StringBuilder`\
+  \ \u3082\u4F7F\u3048\u307E\u3059\u3002"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:42.110754-06:00'
+lastmod: '2024-04-05T21:53:42.989130-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(\u65B9\u6CD5) \u4E0A\u8A18\u306F\u6700\u3082\u57FA\u672C\u7684\u306A\u7D50\
+  \u5408\u65B9\u6CD5\u3067\u3059\u3002`String.Concat` \u3084 `StringBuilder` \u3082\
+  \u4F7F\u3048\u307E\u3059\u3002"
 title: "\u6587\u5B57\u5217\u306E\u9023\u7D50"
 weight: 3
 ---

@@ -5,11 +5,9 @@ date: 2024-02-03 19:32:22.413835-07:00
 description: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u5728 Bash \u4E2D\uFF0C\u60A8\u4F7F\u7528\
   \ `>&2` \u5C06\u8F93\u51FA\u91CD\u5B9A\u5411\u5230 stderr\u3002\u8FD9\u662F\u4E00\
   \u4E2A\u57FA\u672C\u793A\u4F8B\uFF1A."
-lastmod: '2024-03-13T22:44:47.981418-06:00'
+lastmod: '2024-04-05T21:53:48.280750-06:00'
 model: gpt-4-0125-preview
-summary: "\u5728 Bash \u4E2D\uFF0C\u60A8\u4F7F\u7528 `>&2` \u5C06\u8F93\u51FA\u91CD\
-  \u5B9A\u5411\u5230 stderr\u3002\u8FD9\u662F\u4E00\u4E2A\u57FA\u672C\u793A\u4F8B\uFF1A\
-  ."
+summary: ''
 title: "\u5199\u5165\u6807\u51C6\u9519\u8BEF"
 weight: 25
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:58:44.690394-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:54.383268-06:00'
+description: "How to: Urspr\xFCnglich stammt die Idee des Suchens und Ersetzens aus\
+  \ der Textverarbeitung und hat ihren Weg in die Programmierung gefunden. Fr\xFC\
+  he Editoren\u2026"
+lastmod: '2024-04-05T21:53:56.279980-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Urspr\xFCnglich stammt die Idee des Suchens und Ersetzens aus der Textverarbeitung\
+  \ und hat ihren Weg in die Programmierung gefunden."
 title: Suchen und Ersetzen von Text
 weight: 10
 ---

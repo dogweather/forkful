@@ -1,9 +1,11 @@
 ---
 date: 2024-01-26 00:57:09.081207-07:00
-description: "Jak to zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:34.957361-06:00'
+description: "Jak to zrobi\u0107: Przyk\u0142adowe wyj\u015Bcie po wprowadzeniu nieprawid\u0142\
+  owej liczby dla pierwszego bloku."
+lastmod: '2024-04-05T21:53:36.404815-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Przyk\u0142adowe wyj\u015Bcie po wprowadzeniu nieprawid\u0142owej liczby\
+  \ dla pierwszego bloku."
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---

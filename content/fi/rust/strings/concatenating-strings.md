@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:35:45.450160-07:00
-description: How to (Miten) .
-lastmod: '2024-03-13T22:44:56.348907-06:00'
+description: "How to (Miten) Konkatenointi on ollut keskeinen toiminto ohjelmissa\
+  \ alusta alkaen. Rustissa merkkijonojen yhdist\xE4mist\xE4 hoidetaan useilla tavoilla\
+  \ riippuen\u2026"
+lastmod: '2024-04-05T21:53:57.907841-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Rustissa merkkijonojen yhdist\xE4mist\xE4 hoidetaan useilla tavoilla riippuen\
+  \ siit\xE4, tarvitseeko muuttumattomuutta vai tehokkuutta."
 title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---

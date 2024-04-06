@@ -1,10 +1,17 @@
 ---
 date: 2024-01-20 18:03:10.746464-07:00
-description: "How to: (\uC5B4\uB5BB\uAC8C:) ."
+description: "How to: (\uC5B4\uB5BB\uAC8C:) .NET Core CLI\uB294 2016\uB144\uC5D0 \uB4F1\
+  \uC7A5, \uD50C\uB7AB\uD3FC \uAC04 \uAC1C\uBC1C\uC744 \uAC00\uB2A5\uCF00 \uD588\uC2B5\
+  \uB2C8\uB2E4. Visual Studio\uC640 \uAC19\uC740 IDE\uB97C \uC0AC\uC6A9\uD558\uC9C0\
+  \ \uC54A\uACE0\uB3C4 \uD504\uB85C\uC81D\uD2B8\uB97C \uC27D\uAC8C \uC2DC\uC791\uD560\
+  \ \uC218 \uC788\uC8E0. `dotnet new` \uBA85\uB839\uC740 \uB2E4\uC591\uD55C \uD15C\
+  \uD50C\uB9BF\uC744 \uC81C\uACF5\uD558\uC5EC \uC5EC\uB7EC \uC885\uB958\uC758\u2026"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.234897-06:00'
+lastmod: '2024-04-05T21:53:56.961993-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(\uC5B4\uB5BB\uAC8C:) .NET Core CLI\uB294 2016\uB144\uC5D0 \uB4F1\uC7A5\
+  , \uD50C\uB7AB\uD3FC \uAC04 \uAC1C\uBC1C\uC744 \uAC00\uB2A5\uCF00 \uD588\uC2B5\uB2C8\
+  \uB2E4."
 title: "\uC0C8 \uD504\uB85C\uC81D\uD2B8 \uC2DC\uC791\uD558\uAE30"
 weight: 1
 ---

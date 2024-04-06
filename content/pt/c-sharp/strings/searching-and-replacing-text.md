@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:57:33.335540-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.569468-06:00'
+description: "Como Fazer: Desde os primeiros dias da computa\xE7\xE3o, substituir\
+  \ texto foi essencial para editar c\xF3digos e conte\xFAdo. No C#, `String.Replace()`\
+  \ \xE9 o m\xE9todo\u2026"
+lastmod: '2024-04-05T21:53:46.912010-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Desde os primeiros dias da computa\xE7\xE3o, substituir texto foi essencial\
+  \ para editar c\xF3digos e conte\xFAdo."
 title: Pesquisando e substituindo texto
 weight: 10
 ---

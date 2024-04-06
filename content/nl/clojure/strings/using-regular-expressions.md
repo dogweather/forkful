@@ -2,10 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:20.369190-07:00
-description: 'Hoe te gebruiken: .'
-lastmod: '2024-03-13T22:44:50.408482-06:00'
+description: "Hoe te gebruiken: Reguliere expressies hebben een rijke geschiedenis,\
+  \ die teruggaat tot het theoretische werk van Stephen Cole Kleene in de jaren 1950.\u2026"
+lastmod: '2024-04-05T21:53:50.434653-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: Reguliere expressies hebben een rijke geschiedenis, die teruggaat tot het
+  theoretische werk van Stephen Cole Kleene in de jaren 1950.
 title: Reguliere expressies gebruiken
 weight: 11
 ---

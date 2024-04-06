@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:35:25.023138-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:57.473698-06:00'
+description: "Comment faire : Et avec plusieurs cha\xEEnes."
+lastmod: '2024-04-05T21:53:59.036914-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Et avec plusieurs cha\xEEnes."
 title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 weight: 3
 ---

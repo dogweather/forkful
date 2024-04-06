@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:54:14.683057-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:58.343141-06:00'
+description: "Comment faire : Historiquement, lire des fichiers est fondamental en\
+  \ programmation. En Unix, tout est fichier, d'o\xF9 l'importance de maitriser cette\u2026"
+lastmod: '2024-04-05T21:53:59.741867-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Historiquement, lire des fichiers est fondamental en programmation.
 title: Lecture d'un fichier texte
 weight: 22
 ---

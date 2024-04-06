@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:41:43.713822-07:00
-description: 'Miten: .'
-lastmod: '2024-03-13T22:44:56.557597-06:00'
+description: "Miten: Merkinmukaisen kuvion poistamisen historia juontaa juurensa varhaisiin\
+  \ tekstink\xE4sittelytarpeisiin. C#:ssa t\xE4m\xE4 on usein toteutettu s\xE4\xE4\
+  nn\xF6llisten\u2026"
+lastmod: '2024-04-05T21:53:58.124140-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Merkinmukaisen kuvion poistamisen historia juontaa juurensa varhaisiin tekstink\xE4\
+  sittelytarpeisiin."
 title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---

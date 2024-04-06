@@ -2,10 +2,10 @@
 date: 2024-01-20 17:36:52.957251-07:00
 description: "How to: (C\xF3mo hacerlo:) Java proporciona la clase `SimpleDateFormat`\
   \ para convertir fechas a texto. Aqu\xED est\xE1 la forma de hacerlo."
-lastmod: '2024-03-13T22:44:58.948810-06:00'
+lastmod: '2024-04-05T21:54:00.301023-06:00'
 model: gpt-4-1106-preview
-summary: "(C\xF3mo hacerlo:)\n\nJava proporciona la clase `SimpleDateFormat` para\
-  \ convertir fechas a texto."
+summary: "(C\xF3mo hacerlo:) Java proporciona la clase `SimpleDateFormat` para convertir\
+  \ fechas a texto."
 title: Convirtiendo una fecha en una cadena de texto
 weight: 28
 ---

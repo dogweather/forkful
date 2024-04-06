@@ -2,10 +2,10 @@
 date: 2024-01-20 17:38:00.054838-07:00
 description: "How to: (Comment faire :) En C#, convertir une cha\xEEne en minuscules\
   \ est simple avec la m\xE9thode `ToLower()`."
-lastmod: '2024-03-13T22:44:57.772999-06:00'
+lastmod: '2024-04-05T21:53:59.259641-06:00'
 model: gpt-4-1106-preview
-summary: "En C#, convertir une cha\xEEne en minuscules est simple avec la m\xE9thode\
-  \ `ToLower()`."
+summary: "(Comment faire :) En C#, convertir une cha\xEEne en minuscules est simple\
+  \ avec la m\xE9thode `ToLower()`."
 title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
 weight: 4
 ---

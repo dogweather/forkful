@@ -4,10 +4,9 @@ description: "\uBC29\uBC95: Rust\uB294 \uBC18\uC62C\uB9BC\uC744 \uC27D\uAC8C \uD
   \uC90D\uB2C8\uB2E4. `f32` \uB610\uB294 `f64` \uC720\uD615\uC5D0 \uB300\uD574 \uC774\
   \uB7EC\uD55C \uBA54\uC18C\uB4DC\uB4E4\uC744 \uD655\uC778\uD574\uBCF4\uC138\uC694\
   ."
-lastmod: '2024-03-13T22:44:54.907445-06:00'
+lastmod: '2024-04-05T21:53:56.701219-06:00'
 model: gpt-4-0125-preview
-summary: "Rust\uB294 \uBC18\uC62C\uB9BC\uC744 \uC27D\uAC8C \uD574\uC90D\uB2C8\uB2E4\
-  ."
+summary: ''
 title: "\uC22B\uC790 \uBC18\uC62C\uB9BC\uD558\uAE30"
 weight: 13
 ---

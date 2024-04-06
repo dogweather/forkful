@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:46:59.868967-07:00
-description: 'Kuinka: .'
-lastmod: '2024-03-13T22:44:56.728975-06:00'
+description: "Kuinka: Merkkijonon pituuden selvitt\xE4misen tarve on vanha kuin ohjelmointi\
+  \ itse. Komentotulkin alkuajoista l\xE4htien on tarvittu keinoja, joilla\u2026"
+lastmod: '2024-04-05T21:53:58.303216-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Merkkijonon pituuden selvitt\xE4misen tarve on vanha kuin ohjelmointi itse."
 title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---

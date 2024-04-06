@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:38:42.079104-07:00
-description: "So geht\u2019s: ."
-lastmod: '2024-03-13T22:44:53.750525-06:00'
+description: "So geht\u2019s: Die Methode `toLowerCase()` in Java stammt aus den Anfangszeiten\
+  \ von Java. Sie ist Teil der `String`-Klasse und verwendet lokalisierte Regeln,\u2026"
+lastmod: '2024-04-05T21:53:55.633744-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Die Methode `toLowerCase()` in Java stammt aus den Anfangszeiten von Java.
 title: Umformung eines Strings in Kleinbuchstaben
 weight: 4
 ---

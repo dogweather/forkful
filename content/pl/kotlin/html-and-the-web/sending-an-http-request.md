@@ -2,10 +2,10 @@
 date: 2024-01-20 17:59:55.549167-07:00
 description: "How to: (Jak to zrobi\u0107:) W Kotlinie najlepiej u\u017Cy\u0107 biblioteki\
   \ `khttp` do prostych \u017C\u0105da\u0144 HTTP. Dajmy na to tak."
-lastmod: '2024-03-13T22:44:35.361809-06:00'
+lastmod: '2024-04-05T21:53:36.799252-06:00'
 model: gpt-4-1106-preview
-summary: "W Kotlinie najlepiej u\u017Cy\u0107 biblioteki `khttp` do prostych \u017C\
-  \u0105da\u0144 HTTP."
+summary: "(Jak to zrobi\u0107:) W Kotlinie najlepiej u\u017Cy\u0107 biblioteki `khttp`\
+  \ do prostych \u017C\u0105da\u0144 HTTP."
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---

@@ -2,9 +2,10 @@
 date: 2024-01-20 18:00:20.366042-07:00
 description: "How to: (Comment faire :) PHP utilise cURL et file_get_contents pour\
   \ envoyer des requ\xEAtes HTTP. Voici un exemple simple avec cURL ."
-lastmod: '2024-03-13T22:44:57.874774-06:00'
+lastmod: '2024-04-05T21:53:59.360424-06:00'
 model: gpt-4-1106-preview
-summary: "PHP utilise cURL et file_get_contents pour envoyer des requ\xEAtes HTTP."
+summary: "(Comment faire :) PHP utilise cURL et file_get_contents pour envoyer des\
+  \ requ\xEAtes HTTP."
 title: "Envoi d'une requ\xEAte HTTP"
 weight: 44
 ---

@@ -3,9 +3,10 @@ date: 2024-01-20 18:02:37.871553-07:00
 description: "How to: (Jak to zrobi\u0107:) Ruby u\u017Cywa `net/http` do wysy\u0142\
   ania \u017C\u0105da\u0144 HTTP. Do\u0142\u0105czanie podstawowej autoryzacji jest\
   \ proste."
-lastmod: '2024-03-13T22:44:35.932203-06:00'
+lastmod: '2024-04-05T21:53:37.364328-06:00'
 model: gpt-4-1106-preview
-summary: "Ruby u\u017Cywa `net/http` do wysy\u0142ania \u017C\u0105da\u0144 HTTP."
+summary: "(Jak to zrobi\u0107:) Ruby u\u017Cywa `net/http` do wysy\u0142ania \u017C\
+  \u0105da\u0144 HTTP."
 title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
 weight: 45
 ---

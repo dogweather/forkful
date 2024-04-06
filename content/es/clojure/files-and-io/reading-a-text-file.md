@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:53:58.415796-07:00
-description: "C\xF3mo hacerlo: ."
-lastmod: '2024-03-13T22:44:58.675170-06:00'
+description: "C\xF3mo hacerlo: Leer archivos de texto no es nuevo. Desde los d\xED\
+  as de Lisp, leer archivos ha sido una operaci\xF3n b\xE1sica. En Clojure, `slurp`\
+  \ es una funci\xF3n\u2026"
+lastmod: '2024-04-05T21:54:00.030839-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Leer archivos de texto no es nuevo.
 title: Lectura de un archivo de texto
 weight: 22
 ---

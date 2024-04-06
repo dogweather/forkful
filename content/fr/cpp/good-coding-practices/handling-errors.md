@@ -2,9 +2,9 @@
 date: 2024-01-26 00:50:03.931001-07:00
 description: "Comment faire : Voici un bloc try-catch de base pour g\xE9rer une exception\
   \ ."
-lastmod: '2024-03-13T22:44:58.170770-06:00'
+lastmod: '2024-04-05T21:53:59.598707-06:00'
 model: gpt-4-1106-preview
-summary: "Voici un bloc try-catch de base pour g\xE9rer une exception."
+summary: "Voici un bloc try-catch de base pour g\xE9rer une exception ."
 title: Gestion des erreurs
 weight: 16
 ---

@@ -4,10 +4,10 @@ description: "How to: (\u5982\u4F55\u64CD\u4F5C\uFF1A) Elixir provides the `Stri
   \ module which contains functions to handle string manipulations. Here's a simple\
   \ example of deleting\u2026"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:47.334146-06:00'
+lastmod: '2024-04-05T21:53:47.683509-06:00'
 model: gpt-4-1106-preview
-summary: Elixir provides the `String` module which contains functions to handle string
-  manipulations.
+summary: "(\u5982\u4F55\u64CD\u4F5C\uFF1A) Elixir provides the `String` module which\
+  \ contains functions to handle string manipulations."
 title: "\u5339\u914D\u6A21\u5F0F\u5220\u9664\u5B57\u7B26"
 weight: 5
 ---

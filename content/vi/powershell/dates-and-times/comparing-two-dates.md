@@ -2,10 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:25.860601-07:00
-description: "L\xE0m th\u1EBF n\xE0o: ."
-lastmod: '2024-03-13T22:44:36.952672-06:00'
+description: "L\xE0m th\u1EBF n\xE0o: Ngay t\u1EEB th\u1EDDi k\u1EF3 \u0111\xE1 c\u1EE7\
+  a m\xE1y t\xEDnh - kh\xF4ng h\u1EB3n v\u1EADy, nh\u01B0ng b\u1EA1n bi\u1EBFt \u0111\
+  \u1EA5y, nh\u1EEFng ng\xE0y \u0111\u1EA7u - d\u1EEF li\u1EC7u ng\xE0y th\xE1ng r\u1EA5\
+  t l\u1ED9n x\u1ED9n. Ch\xFAng ta \u0111\xE3 ti\u1EBFn xa v\u1EDBi\u2026"
+lastmod: '2024-04-05T21:53:38.315969-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Ngay t\u1EEB th\u1EDDi k\u1EF3 \u0111\xE1 c\u1EE7a m\xE1y t\xEDnh - kh\xF4\
+  ng h\u1EB3n v\u1EADy, nh\u01B0ng b\u1EA1n bi\u1EBFt \u0111\u1EA5y, nh\u1EEFng ng\xE0\
+  y \u0111\u1EA7u - d\u1EEF li\u1EC7u ng\xE0y th\xE1ng r\u1EA5t l\u1ED9n x\u1ED9n."
 title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---

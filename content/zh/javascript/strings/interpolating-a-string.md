@@ -1,10 +1,19 @@
 ---
 date: 2024-01-20 17:51:05.859557-07:00
-description: "How to: (\u600E\u4E48\u505A:) ."
+description: "How to: (\u600E\u4E48\u505A:) \u5728ES6 (ECMAScript 2015) \u4E4B\u524D\
+  \uFF0CJavaScript \u4E2D\u62FC\u63A5\u5B57\u7B26\u4E32\u9700\u8981\u7528\u52A0\u53F7\
+  \ `+` \u8FDE\u63A5\u4E0D\u540C\u90E8\u5206\u3002ES6 \u5F15\u5165\u4E86\u6A21\u677F\
+  \u5B57\u7B26\u4E32(template literals)\uFF0C\u901A\u8FC7\u53CD\u5F15\u53F7 ( ` )\
+  \ \u5305\u56F4\u5B57\u7B26\u4E32\uFF0C\u5E76\u4F7F\u7528 `${ }` \u6765\u63D2\u503C\
+  \u3002 \u66FF\u4EE3\u65B9\u6848\u5305\u62EC\u4F7F\u7528\u52A0\u53F7\u2026"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:48.190176-06:00'
+lastmod: '2024-04-05T21:53:48.478108-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(\u600E\u4E48\u505A:) \u5728ES6 (ECMAScript 2015) \u4E4B\u524D\uFF0CJavaScript\
+  \ \u4E2D\u62FC\u63A5\u5B57\u7B26\u4E32\u9700\u8981\u7528\u52A0\u53F7 `+` \u8FDE\u63A5\
+  \u4E0D\u540C\u90E8\u5206\u3002ES6 \u5F15\u5165\u4E86\u6A21\u677F\u5B57\u7B26\u4E32\
+  (template literals)\uFF0C\u901A\u8FC7\u53CD\u5F15\u53F7 ( ` ) \u5305\u56F4\u5B57\
+  \u7B26\u4E32\uFF0C\u5E76\u4F7F\u7528 `${ }` \u6765\u63D2\u503C."
 title: "\u5B57\u7B26\u4E32\u63D2\u503C"
 weight: 8
 ---

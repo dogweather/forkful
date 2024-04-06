@@ -2,10 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:27.421033-07:00
-description: 'Hoe: .'
-lastmod: '2024-03-13T22:44:50.834483-06:00'
+description: "Hoe: XML is er al sinds de late jaren '90, waardoor het een opa is in\
+  \ technologiejaren. Het is bedacht voor draagbaarheid van gegevens en gemak van\u2026"
+lastmod: '2024-04-05T21:53:50.857720-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: XML is er al sinds de late jaren '90, waardoor het een opa is in technologiejaren.
 title: Werken met XML
 weight: 40
 ---

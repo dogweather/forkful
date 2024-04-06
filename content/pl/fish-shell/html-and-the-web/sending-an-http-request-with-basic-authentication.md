@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:01:50.556483-07:00
-description: "Jak to zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:35.841193-06:00'
+description: "Jak to zrobi\u0107: Podstawowe uwierzytelnienie (Basic Authentication)\
+  \ to stara metoda ochrony dost\u0119pu do webowych zasob\xF3w. U\u017Cytkownik przesy\u0142\
+  a nazw\u0119 i has\u0142o w\u2026"
+lastmod: '2024-04-05T21:53:37.268150-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Podstawowe uwierzytelnienie (Basic Authentication) to stara metoda ochrony\
+  \ dost\u0119pu do webowych zasob\xF3w."
 title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
 weight: 45
 ---

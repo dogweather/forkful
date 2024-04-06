@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:48:25.782262-07:00
-description: 'Como fazer: .'
-lastmod: '2024-03-13T22:44:46.912043-06:00'
+description: 'Como fazer: Para strings com caracteres especiais.'
+lastmod: '2024-04-05T21:53:47.263701-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Para strings com caracteres especiais.
 title: Descobrindo o comprimento de uma string
 weight: 7
 ---

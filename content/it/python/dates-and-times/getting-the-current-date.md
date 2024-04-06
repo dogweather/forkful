@@ -5,13 +5,10 @@ date: 2024-02-03 19:10:29.137653-07:00
 description: "Come fare: **Utilizzando la libreria standard `datetime`:** Il modulo\
   \ `datetime` nella libreria standard di Python fornisce classi per manipolare date\
   \ e\u2026"
-lastmod: '2024-03-13T22:44:43.011470-06:00'
+lastmod: '2024-04-05T21:53:43.794993-06:00'
 model: gpt-4-0125-preview
-summary: '**Utilizzando la libreria standard `datetime`:**
-
-
-  Il modulo `datetime` nella libreria standard di Python fornisce classi per manipolare
-  date e orari.'
+summary: '**Utilizzando la libreria standard `datetime`:** Il modulo `datetime` nella
+  libreria standard di Python fornisce classi per manipolare date e orari.'
 title: Ottenere la data corrente
 weight: 29
 ---

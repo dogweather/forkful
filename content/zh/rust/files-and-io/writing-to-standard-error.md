@@ -7,12 +7,9 @@ description: "\u5982\u4F55\u64CD\u4F5C\uFF1A Rust \u63D0\u4F9B\u4E86\u4E00\u79CD
   \u662F `eprintln!` \u5B8F\uFF0C\u7C7B\u4F3C\u4E8E `println!` \u7528\u4E8E stdout\
   \ \u7684\u65B9\u5F0F\u3002\u8FD9\u91CC\u662F\u4E00\u4E2A\u57FA\u672C\u793A\u4F8B\
   \uFF1A."
-lastmod: '2024-03-13T22:44:47.539511-06:00'
+lastmod: '2024-04-05T21:53:47.859270-06:00'
 model: gpt-4-0125-preview
-summary: "Rust \u63D0\u4F9B\u4E86\u4E00\u79CD\u76F4\u63A5\u5199\u5165 stderr \u7684\
-  \u7B80\u5355\u65B9\u5F0F\uFF0C\u4F7F\u7528\u7684\u662F `eprintln!` \u5B8F\uFF0C\u7C7B\
-  \u4F3C\u4E8E `println!` \u7528\u4E8E stdout \u7684\u65B9\u5F0F\u3002\u8FD9\u91CC\
-  \u662F\u4E00\u4E2A\u57FA\u672C\u793A\u4F8B\uFF1A."
+summary: ''
 title: "\u5199\u5165\u6807\u51C6\u9519\u8BEF"
 weight: 25
 ---

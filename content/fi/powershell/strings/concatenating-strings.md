@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:35:17.906022-07:00
-description: 'Kuinka: .'
-lastmod: '2024-03-13T22:44:56.772296-06:00'
+description: "Kuinka: Aikojen alussa, kun komentosarjoja ensin kirjoitettiin, merkkijonojen\
+  \ yhdist\xE4minen oli keino tuottaa dynaamista sis\xE4lt\xF6\xE4. PowerShelliss\xE4\
+  \u2026"
+lastmod: '2024-04-05T21:53:58.347165-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Aikojen alussa, kun komentosarjoja ensin kirjoitettiin, merkkijonojen yhdist\xE4\
+  minen oli keino tuottaa dynaamista sis\xE4lt\xF6\xE4."
 title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---

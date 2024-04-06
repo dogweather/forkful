@@ -2,10 +2,10 @@
 date: 2024-01-20 17:52:16.766141-07:00
 description: "How to: (Comment faire :) Pour imprimer des messages de d\xE9bogage\
   \ en Clojure, `println` est votre ami. Voyons quelques exemples ."
-lastmod: '2024-03-13T22:44:57.284831-06:00'
+lastmod: '2024-04-05T21:53:58.864713-06:00'
 model: gpt-4-1106-preview
-summary: "Pour imprimer des messages de d\xE9bogage en Clojure, `println` est votre\
-  \ ami."
+summary: "(Comment faire :) Pour imprimer des messages de d\xE9bogage en Clojure,\
+  \ `println` est votre ami."
 title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---

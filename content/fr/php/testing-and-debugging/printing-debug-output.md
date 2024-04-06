@@ -2,9 +2,10 @@
 date: 2024-01-20 17:53:14.443970-07:00
 description: 'Comment faire : Pour imprimer quelque chose rapidement, on utilise souvent
   `echo` ou `print` .'
-lastmod: '2024-03-13T22:44:57.881377-06:00'
+lastmod: '2024-04-05T21:53:59.366455-06:00'
 model: gpt-4-1106-preview
-summary: Pour imprimer quelque chose rapidement, on utilise souvent `echo` ou `print`.
+summary: Pour imprimer quelque chose rapidement, on utilise souvent `echo` ou `print`
+  .
 title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---

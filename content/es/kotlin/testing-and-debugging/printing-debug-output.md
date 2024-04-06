@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:52:51.002504-07:00
-description: "C\xF3mo se hace: ."
-lastmod: '2024-03-13T22:44:59.038442-06:00'
+description: "C\xF3mo se hace: Salida de ejemplo cuando `debugMode` est\xE1 activo."
+lastmod: '2024-04-05T21:54:00.381337-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Salida de ejemplo cuando `debugMode` est\xE1 activo."
 title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---

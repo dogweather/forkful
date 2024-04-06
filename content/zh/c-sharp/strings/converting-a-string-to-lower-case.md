@@ -1,10 +1,13 @@
 ---
 date: 2024-01-20 17:38:04.467472-07:00
-description: "How to: (\u5982\u4F55\u64CD\u4F5C) ."
+description: "How to: (\u5982\u4F55\u64CD\u4F5C) \u7B80\u5355\u7684`ToLower()`\u65B9\
+  \u6CD5\u5C31\u53EF\u4EE5\u628A\u5B57\u7B26\u4E32\u8F6C\u6362\u6210\u5168\u5C0F\u5199\
+  \u3002"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:47.752941-06:00'
+lastmod: '2024-04-05T21:53:48.068751-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(\u5982\u4F55\u64CD\u4F5C) \u7B80\u5355\u7684`ToLower()`\u65B9\u6CD5\u5C31\
+  \u53EF\u4EE5\u628A\u5B57\u7B26\u4E32\u8F6C\u6362\u6210\u5168\u5C0F\u5199\u3002"
 title: "\u5C06\u5B57\u7B26\u4E32\u8F6C\u6362\u4E3A\u5C0F\u5199"
 weight: 4
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:47:26.605605-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:53.922154-06:00'
+description: "How to: In Haskell, ist die Funktion `length` ein Teil der Prelude und\
+  \ z\xE4hlt die Elemente einer Liste. Da Strings in Haskell Listen von Charakteren\
+  \ sind,\u2026"
+lastmod: '2024-04-05T21:53:55.806140-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "In Haskell, ist die Funktion `length` ein Teil der Prelude und z\xE4hlt\
+  \ die Elemente einer Liste."
 title: "Ermittlung der Zeichenkettenl\xE4nge"
 weight: 7
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:32:34.069538-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:40.809479-06:00'
+description: "How to: Comparing dates in C# has been around since the .NET Framework's\
+  \ inception, intrinsic to the `DateTime` structure. Alternatives include `TimeSpan`\u2026"
+lastmod: '2024-04-05T21:53:41.782628-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Comparing dates in C# has been around since the .NET Framework's inception,
+  intrinsic to the `DateTime` structure.
 title: Sammenlikning av to datoer
 weight: 27
 ---

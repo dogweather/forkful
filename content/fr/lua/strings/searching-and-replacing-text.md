@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:58:22.057587-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:57.908690-06:00'
+description: "How to: La qu\xEAte de chercher et remplacer existe depuis que les gens\
+  \ ont commenc\xE9 \xE0 bidouiller avec du texte sur des ordis. Lua l'a rendu sympa\
+  \ gr\xE2ce \xE0\u2026"
+lastmod: '2024-04-05T21:53:59.393502-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "La qu\xEAte de chercher et remplacer existe depuis que les gens ont commenc\xE9\
+  \ \xE0 bidouiller avec du texte sur des ordis."
 title: Recherche et remplacement de texte
 weight: 10
 ---

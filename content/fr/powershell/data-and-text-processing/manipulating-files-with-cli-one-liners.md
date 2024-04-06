@@ -2,9 +2,10 @@
 date: 2024-01-27 16:20:55.315479-07:00
 description: 'Comment faire : Pour afficher rapidement le contenu d''un fichier, utilisez
   la commande `Get-Content` .'
-lastmod: '2024-03-13T22:44:58.040900-06:00'
+lastmod: '2024-04-05T21:53:59.495014-06:00'
 model: gpt-4-0125-preview
-summary: Pour afficher rapidement le contenu d'un fichier, utilisez la commande `Get-Content`.
+summary: Pour afficher rapidement le contenu d'un fichier, utilisez la commande `Get-Content`
+  .
 title: Manipulation de fichiers avec des commandes en une ligne en CLI
 weight: 31
 ---

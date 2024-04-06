@@ -5,9 +5,9 @@ date: 2024-02-03 19:10:24.024513-07:00
 description: "C\xF3mo hacerlo: **Usando la librer\xEDa est\xE1ndar `datetime`:** El\
   \ m\xF3dulo `datetime` en la librer\xEDa est\xE1ndar de Python provee clases para\
   \ manipular fechas y\u2026"
-lastmod: '2024-03-13T22:44:58.623434-06:00'
+lastmod: '2024-04-05T21:53:59.980143-06:00'
 model: gpt-4-0125-preview
-summary: "**Usando la librer\xEDa est\xE1ndar `datetime`:**\n\nEl m\xF3dulo `datetime`\
+summary: "**Usando la librer\xEDa est\xE1ndar `datetime`:** El m\xF3dulo `datetime`\
   \ en la librer\xEDa est\xE1ndar de Python provee clases para manipular fechas y\
   \ horas."
 title: Obteniendo la fecha actual

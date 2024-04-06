@@ -3,10 +3,10 @@ date: 2024-01-20 18:00:26.799250-07:00
 description: "How to: (Jak to zrobi\u0107:) Aby wys\u0142a\u0107 \u017C\u0105danie\
   \ HTTP w Rust, mo\u017Cesz u\u017Cy\u0107 popularnej biblioteki `reqwest`. Oto prosty\
   \ przyk\u0142ad."
-lastmod: '2024-03-13T22:44:35.181145-06:00'
+lastmod: '2024-04-05T21:53:36.618326-06:00'
 model: gpt-4-1106-preview
-summary: "Aby wys\u0142a\u0107 \u017C\u0105danie HTTP w Rust, mo\u017Cesz u\u017C\
-  y\u0107 popularnej biblioteki `reqwest`."
+summary: "(Jak to zrobi\u0107:) Aby wys\u0142a\u0107 \u017C\u0105danie HTTP w Rust,\
+  \ mo\u017Cesz u\u017Cy\u0107 popularnej biblioteki `reqwest`."
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---

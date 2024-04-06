@@ -7,12 +7,11 @@ description: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u8981\u5728 VBA \u4E2D\u4F7F\u7528
   \ VBScript Regular Expressions \u5E93\u3002\u5728 VBA \u7F16\u8F91\u5668\u4E2D\uFF0C\
   \u8F6C\u5230 `\u5DE5\u5177` -> `\u5F15\u7528`\uFF0C\u7136\u540E\u52FE\u9009 `Microsoft\
   \ VBScript Regular Expressions 5.5`\u3002\u2026"
-lastmod: '2024-03-13T22:44:47.559742-06:00'
+lastmod: '2024-04-05T21:53:47.878579-06:00'
 model: gpt-4-0125-preview
-summary: "\u8981\u5728 VBA \u4E2D\u4F7F\u7528\u6B63\u5219\u8868\u8FBE\u5F0F\uFF0C\u60A8\
-  \u9996\u5148\u9700\u8981\u542F\u7528 Microsoft VBScript Regular Expressions \u5E93\
-  \u3002\u5728 VBA \u7F16\u8F91\u5668\u4E2D\uFF0C\u8F6C\u5230 `\u5DE5\u5177` -> `\u5F15\
-  \u7528`\uFF0C\u7136\u540E\u52FE\u9009 `Microsoft VBScript Regular Expressions 5.5`."
+summary: "\u8FD9\u91CC\u6709\u4E00\u4E2A\u57FA\u672C\u793A\u4F8B\uFF0C\u7528\u6765\
+  \u67E5\u627E\u5B57\u7B26\u4E32\u4E2D\u662F\u5426\u5B58\u5728\u67D0\u4E2A\u6A21\u5F0F\
+  \uFF1A."
 title: "\u4F7F\u7528\u6B63\u5219\u8868\u8FBE\u5F0F"
 weight: 11
 ---

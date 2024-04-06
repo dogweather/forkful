@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:37:19.223982-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:56.961336-06:00'
+description: "How to: Ennen ECMAScriptin (JavaScriptin virallisen standardin) syntymist\xE4\
+  , p\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi oli usein selainkohtaista\
+  \ ja hankalaa\u2026"
+lastmod: '2024-04-05T21:53:58.539579-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Ennen ECMAScriptin (JavaScriptin virallisen standardin) syntymist\xE4, p\xE4\
+  iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi oli usein selainkohtaista ja hankalaa\
+  \ yhten\xE4ist\xE4\xE4."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---

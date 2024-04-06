@@ -2,10 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:27.389571-07:00
-description: null
-lastmod: '2024-03-13T22:44:37.061354-06:00'
+description: "L\xE0 g\xEC & T\u1EA1i sao? Ki\u1EC3m tra s\u1EF1 t\u1ED3n t\u1EA1i\
+  \ c\u1EE7a th\u01B0 m\u1EE5c l\xE0 \u0111\u1EC3 x\xE1c nh\u1EADn xem th\u01B0 m\u1EE5\
+  c ch\u1EC9 \u0111\u1ECBnh c\xF3 hi\u1EC7n di\u1EC7n tr\xEAn h\u1EC7 th\u1ED1ng t\u1EC7\
+  p hay kh\xF4ng. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y\u2026"
+lastmod: '2024-04-05T21:53:38.417262-06:00'
 model: gpt-4-0125-preview
-summary: null
+summary: "Ki\u1EC3m tra s\u1EF1 t\u1ED3n t\u1EA1i c\u1EE7a th\u01B0 m\u1EE5c l\xE0\
+  \ \u0111\u1EC3 x\xE1c nh\u1EADn xem th\u01B0 m\u1EE5c ch\u1EC9 \u0111\u1ECBnh c\xF3\
+  \ hi\u1EC7n di\u1EC7n tr\xEAn h\u1EC7 th\u1ED1ng t\u1EC7p hay kh\xF4ng."
 title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
 weight: 20
 ---

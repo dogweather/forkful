@@ -6,12 +6,9 @@ description: "How to (\u5982\u4F55\u64CD\u4F5C) \u5728 Rust \u4E2D\uFF0C\u4F60\u
   , variable);`\u3002\u7528 `{:?}` \u8868\u793A\u7B26\u9700\u8981\u7C7B\u578B\u5B9E\
   \u73B0\u4E86 `Debug` trait\u3002"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:47.523145-06:00'
+lastmod: '2024-04-05T21:53:47.844041-06:00'
 model: gpt-4-1106-preview
-summary: "\u5728 Rust \u4E2D\uFF0C\u4F60\u53EF\u4EE5\u4F7F\u7528 `println!` \u5B8F\
-  \u6765\u6253\u5370\u8F93\u51FA\u3002\u5982\u679C\u60F3\u6253\u5370\u8C03\u8BD5\u4FE1\
-  \u606F\uFF0C\u4F7F\u7528 `println!(\"{:?}\", variable);`\u3002\u7528 `{:?}` \u8868\
-  \u793A\u7B26\u9700\u8981\u7C7B\u578B\u5B9E\u73B0\u4E86 `Debug` trait."
+summary: ''
 title: "\u6253\u5370\u8C03\u8BD5\u8F93\u51FA"
 weight: 33
 ---

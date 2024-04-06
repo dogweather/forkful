@@ -2,9 +2,9 @@
 date: 2024-01-20 18:00:44.528628-07:00
 description: "How to: (Kuinka tehd\xE4\xE4n:) Esimerkki: Hae JSON-datan GET-pyynn\xF6\
   ll\xE4."
-lastmod: '2024-03-13T22:44:56.779321-06:00'
+lastmod: '2024-04-05T21:53:58.353979-06:00'
 model: gpt-4-1106-preview
-summary: Esimerkki.
+summary: "(Kuinka tehd\xE4\xE4n:) Esimerkki."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---

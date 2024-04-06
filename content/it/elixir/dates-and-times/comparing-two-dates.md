@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:32:58.667444-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:43.096348-06:00'
+description: "How to: Elixir fornisce la `Date.compare/2` per confrontare due date.\
+  \ La funzione ritorna `:lt` (less than), `:eq` (equal) o `:gt` (greater than). Prima\u2026"
+lastmod: '2024-04-05T21:53:43.876121-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Elixir fornisce la `Date.compare/2` per confrontare due date.
 title: Confronto tra due date
 weight: 27
 ---

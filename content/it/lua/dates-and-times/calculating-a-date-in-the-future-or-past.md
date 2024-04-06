@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:31:39.135210-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:43.570609-06:00'
+description: "How to: La gestione delle date in Lua si basa sul modulo 'os'. Il Lua\
+  \ fornisce funzioni di base e ne trovi di pi\xF9 in moduli esterni, come `luadate`.\
+  \ \xC8\u2026"
+lastmod: '2024-04-05T21:53:44.333689-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: La gestione delle date in Lua si basa sul modulo 'os'.
 title: Calcolo di una data futura o passata
 weight: 26
 ---

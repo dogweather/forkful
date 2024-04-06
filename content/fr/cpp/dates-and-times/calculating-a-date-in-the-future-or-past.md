@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:28:33.649013-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:58.177878-06:00'
+description: 'Comment faire : Sortie attendue (varie selon la date courante) .'
+lastmod: '2024-04-05T21:53:59.604970-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Sortie attendue (varie selon la date courante) .
 title: "Calcul d'une date future ou pass\xE9e"
 weight: 26
 ---

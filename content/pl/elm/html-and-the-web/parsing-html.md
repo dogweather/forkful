@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 15:32:09.180890-07:00
-description: "Jak to zrobi\u0107? ."
-lastmod: '2024-03-13T22:44:35.319587-06:00'
+description: "Jak to zrobi\u0107? Historia parseowania HTML si\u0119ga pocz\u0105\
+  tk\xF3w j\u0119zyk\xF3w skryptowych na przegl\u0105darki, kiedy to potrzebowano\
+  \ sposobu na manipulowanie DOM\u2026"
+lastmod: '2024-04-05T21:53:36.757066-06:00'
 model: unknown
-summary: .
+summary: "Historia parseowania HTML si\u0119ga pocz\u0105tk\xF3w j\u0119zyk\xF3w skryptowych\
+  \ na przegl\u0105darki, kiedy to potrzebowano sposobu na manipulowanie DOM bezpo\u015B\
+  rednio z kodu."
 title: Przetwarzanie HTML
 weight: 43
 ---

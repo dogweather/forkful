@@ -5,10 +5,11 @@ description: "How to: (\uC5B4\uB5BB\uAC8C \uD560\uAE4C?) Elm\uC5D0\uC11C \uBB38\
   \uB85C \uAC04\uB2E8\uD569\uB2C8\uB2E4. \uCF54\uB4DC \uC608\uC81C\uC640 \uACB0\uACFC\
   \uB294 \uB2E4\uC74C\uACFC \uAC19\uC2B5\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.098106-06:00'
+lastmod: '2024-04-05T21:53:56.854510-06:00'
 model: gpt-4-1106-preview
-summary: "Elm\uC5D0\uC11C \uBB38\uC790\uC5F4 \uAE38\uC774\uB97C \uCC3E\uB294 \uAC83\
-  \uC740 `String.length` \uD568\uC218\uB85C \uAC04\uB2E8\uD569\uB2C8\uB2E4."
+summary: "(\uC5B4\uB5BB\uAC8C \uD560\uAE4C?) Elm\uC5D0\uC11C \uBB38\uC790\uC5F4 \uAE38\
+  \uC774\uB97C \uCC3E\uB294 \uAC83\uC740 `String.length` \uD568\uC218\uB85C \uAC04\
+  \uB2E8\uD569\uB2C8\uB2E4."
 title: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774 \uCC3E\uAE30"
 weight: 7
 ---

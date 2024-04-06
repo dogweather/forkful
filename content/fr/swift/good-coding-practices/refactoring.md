@@ -2,10 +2,10 @@
 date: 2024-01-26 03:36:51.311926-07:00
 description: "Comment faire : Commen\xE7ons par un exemple simple en Swift o\xF9 nous\
   \ avons du code r\xE9p\xE9titif ."
-lastmod: '2024-03-13T22:44:58.231700-06:00'
+lastmod: '2024-04-05T21:53:59.642790-06:00'
 model: gpt-4-0125-preview
 summary: "Commen\xE7ons par un exemple simple en Swift o\xF9 nous avons du code r\xE9\
-  p\xE9titif."
+  p\xE9titif ."
 title: Remaniement de code
 weight: 19
 ---

@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:57:20.774285-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.182589-06:00'
+description: "Como Fazer: Substituir texto \xE9 uma opera\xE7\xE3o fundamental em\
+  \ muitas \xE1reas da computa\xE7\xE3o, com ra\xEDzes nos prim\xF3rdios da edi\xE7\
+  \xE3o de texto em terminais Unix.\u2026"
+lastmod: '2024-04-05T21:53:46.504443-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Substituir texto \xE9 uma opera\xE7\xE3o fundamental em muitas \xE1reas\
+  \ da computa\xE7\xE3o, com ra\xEDzes nos prim\xF3rdios da edi\xE7\xE3o de texto\
+  \ em terminais Unix."
 title: Pesquisando e substituindo texto
 weight: 10
 ---

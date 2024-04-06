@@ -2,9 +2,10 @@
 date: 2024-01-20 17:32:10.522439-07:00
 description: "How to: - \"Jak to zrobi\u0107:\" W Rust korzystamy z crate'a `chrono`\
   \ do \u0142atwego obliczania dat."
-lastmod: '2024-03-13T22:44:35.199445-06:00'
+lastmod: '2024-04-05T21:53:36.634551-06:00'
 model: gpt-4-1106-preview
-summary: "W Rust korzystamy z crate'a `chrono` do \u0142atwego obliczania dat."
+summary: "- \"Jak to zrobi\u0107:\" W Rust korzystamy z crate'a `chrono` do \u0142\
+  atwego obliczania dat."
 title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---

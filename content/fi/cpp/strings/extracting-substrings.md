@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:45:06.144602-07:00
 description: "How to - Miten tehd\xE4\xE4n ."
-lastmod: '2024-03-13T22:44:56.854111-06:00'
+lastmod: '2024-04-05T21:53:58.431528-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: Merkkijonojen osien poimiminen
 weight: 6
 ---

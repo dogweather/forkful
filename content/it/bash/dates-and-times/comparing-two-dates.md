@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:32:22.783074-07:00
-description: 'Come Fare: .'
-lastmod: '2024-03-13T22:44:43.612077-06:00'
+description: "Come Fare: Comparare date \xE8 un bisogno antico quanto la storia dell'informatica.\
+  \ Prima che i sistemi operativi moderni e i linguaggi di programmazione\u2026"
+lastmod: '2024-04-05T21:53:44.375044-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Comparare date \xE8 un bisogno antico quanto la storia dell'informatica."
 title: Confronto tra due date
 weight: 27
 ---

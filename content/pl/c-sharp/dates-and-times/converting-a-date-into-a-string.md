@@ -2,9 +2,9 @@
 date: 2024-01-20 17:36:20.953632-07:00
 description: "How to: (Jak to zrobi\u0107:) Wykorzystaj `ToString` z formatowaniem\
   \ lub bez. Przyk\u0142ady poni\u017Cej."
-lastmod: '2024-03-13T22:44:35.419833-06:00'
+lastmod: '2024-04-05T21:53:36.854393-06:00'
 model: gpt-4-1106-preview
-summary: Wykorzystaj `ToString` z formatowaniem lub bez.
+summary: "(Jak to zrobi\u0107:) Wykorzystaj `ToString` z formatowaniem lub bez."
 title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:30:55.147423-07:00
-description: 'Como fazer: .'
-lastmod: '2024-03-13T22:44:46.513298-06:00'
+description: "Como fazer: Calcular datas no futuro ou no passado \xE9 uma necessidade\
+  \ comum em programa\xE7\xE3o desde o princ\xEDpio dos computadores. Elm, sendo uma\
+  \ linguagem\u2026"
+lastmod: '2024-04-05T21:53:46.853389-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Calcular datas no futuro ou no passado \xE9 uma necessidade comum em programa\xE7\
+  \xE3o desde o princ\xEDpio dos computadores."
 title: Calculando uma data no futuro ou passado
 weight: 26
 ---

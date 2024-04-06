@@ -3,9 +3,11 @@ date: 2024-03-08 21:33:44.086666-07:00
 description: "How to: Before refactoring, you might have a piece of code that mixes\
   \ different levels of abstraction or responsibilities, like calculating a discount\
   \ and\u2026"
-lastmod: '2024-03-13T22:44:59.828183-06:00'
+lastmod: '2024-04-05T21:53:35.515325-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: Before refactoring, you might have a piece of code that mixes different levels
+  of abstraction or responsibilities, like calculating a discount and then applying
+  it.
 title: Refactoring
 weight: 19
 ---

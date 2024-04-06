@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 03:45:57.137329-07:00
-description: 'Hvordan: .'
-lastmod: '2024-03-13T22:44:40.925002-06:00'
+description: "Hvordan: Lua inkluderer ikke en avrundingsfunksjon rett ut av boksen,\
+  \ ulikt noen andre spr\xE5k. Historisk sett trenger du \xE5 skrive din egen eller\
+  \ bruke et\u2026"
+lastmod: '2024-04-05T21:53:41.889597-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Lua inkluderer ikke en avrundingsfunksjon rett ut av boksen, ulikt noen\
+  \ andre spr\xE5k."
 title: Avrunding av tall
 weight: 13
 ---

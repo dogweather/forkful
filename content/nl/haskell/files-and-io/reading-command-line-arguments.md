@@ -2,10 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:10.039512-07:00
-description: 'Hoe te: .'
-lastmod: '2024-03-13T22:44:50.867939-06:00'
+description: 'Hoe te: Voer het uit door "wereld" als een argument door te geven.'
+lastmod: '2024-04-05T21:53:50.892497-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: Voer het uit door "wereld" als een argument door te geven.
 title: Commandoregelargumenten lezen
 weight: 23
 ---

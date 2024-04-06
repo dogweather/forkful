@@ -3,10 +3,11 @@ date: 2024-01-20 17:44:53.258137-07:00
 description: "How to: (Kuinka tehd\xE4:) Rustissa web-sivun lataaminen onnistuu usealla\
   \ tavalla, mutta t\xE4ss\xE4 k\xE4yt\xE4mme `reqwest`-kirjastoa, joka on helppok\xE4\
   ytt\xF6inen ja\u2026"
-lastmod: '2024-03-13T22:44:56.355591-06:00'
+lastmod: '2024-04-05T21:53:57.915035-06:00'
 model: gpt-4-1106-preview
-summary: "Rustissa web-sivun lataaminen onnistuu usealla tavalla, mutta t\xE4ss\xE4\
-  \ k\xE4yt\xE4mme `reqwest`-kirjastoa, joka on helppok\xE4ytt\xF6inen ja tehokas."
+summary: "(Kuinka tehd\xE4:) Rustissa web-sivun lataaminen onnistuu usealla tavalla,\
+  \ mutta t\xE4ss\xE4 k\xE4yt\xE4mme `reqwest`-kirjastoa, joka on helppok\xE4ytt\xF6\
+  inen ja tehokas."
 title: Verkkosivun lataaminen
 weight: 42
 ---

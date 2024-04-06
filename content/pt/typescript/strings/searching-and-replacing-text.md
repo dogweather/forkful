@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:58:49.278091-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.311014-06:00'
+description: "Como Fazer: Neste exemplo, usamos `replace` com uma `RegExp` para substituir\
+  \ todas as ocorr\xEAncias da palavra \"mundo\" por \"planeta\"."
+lastmod: '2024-04-05T21:53:46.641259-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Neste exemplo, usamos `replace` com uma `RegExp` para substituir todas as\
+  \ ocorr\xEAncias da palavra \"mundo\" por \"planeta\"."
 title: Pesquisando e substituindo texto
 weight: 10
 ---

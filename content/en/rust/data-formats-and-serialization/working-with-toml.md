@@ -1,9 +1,12 @@
 ---
 date: 2024-01-25 03:39:53.079696-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:59.917567-06:00'
+description: "How to: TOML, which stands for Tom's Obvious, Minimal Language, was\
+  \ created by Tom Preston-Werner in 2013. It aims to be more readable than JSON or\
+  \ YAML\u2026"
+lastmod: '2024-04-05T21:53:35.608403-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: TOML, which stands for Tom's Obvious, Minimal Language, was created by Tom
+  Preston-Werner in 2013.
 title: Working with TOML
 weight: 39
 ---

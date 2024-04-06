@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 18:01:29.900699-07:00
-description: "Hur man g\xF6r: ."
-lastmod: '2024-03-13T22:44:37.525140-06:00'
+description: "Hur man g\xF6r: Output exempel."
+lastmod: '2024-04-05T21:53:38.852933-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
 weight: 45
 ---

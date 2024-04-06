@@ -4,10 +4,9 @@ description: "How to (\u5982\u4F55\u64CD\u4F5C) \u4F7F\u7528Node.js\u7684`fs`\u6
   \u5757\u548CTypeScript\u6765\u8BFB\u53D6\u6587\u4EF6\u3002\u9700\u8981\u6709`@types/node`\u5305\
   \u652F\u6301\u7C7B\u578B\u3002"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:47.491560-06:00'
+lastmod: '2024-04-05T21:53:47.814802-06:00'
 model: gpt-4-1106-preview
-summary: "\u4F7F\u7528Node.js\u7684`fs`\u6A21\u5757\u548CTypeScript\u6765\u8BFB\u53D6\
-  \u6587\u4EF6\u3002\u9700\u8981\u6709`@types/node`\u5305\u652F\u6301\u7C7B\u578B."
+summary: ''
 title: "\u9605\u8BFB\u6587\u672C\u6587\u4EF6"
 weight: 22
 ---

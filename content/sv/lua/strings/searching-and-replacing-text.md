@@ -2,9 +2,10 @@
 date: 2024-01-20 17:58:50.552621-07:00
 description: "How to: (S\xE5 H\xE4r G\xF6r Du:) I Lua \xE4r `string.gsub` din kompis\
   \ f\xF6r att byta ut text. Exempel."
-lastmod: '2024-03-13T22:44:38.023612-06:00'
+lastmod: '2024-04-05T21:53:39.364236-06:00'
 model: gpt-4-1106-preview
-summary: "I Lua \xE4r `string.gsub` din kompis f\xF6r att byta ut text."
+summary: "(S\xE5 H\xE4r G\xF6r Du:) I Lua \xE4r `string.gsub` din kompis f\xF6r att\
+  \ byta ut text."
 title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---

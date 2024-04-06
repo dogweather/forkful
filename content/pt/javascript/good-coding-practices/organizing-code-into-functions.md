@@ -1,9 +1,13 @@
 ---
 date: 2024-01-26 01:11:01.780022-07:00
-description: 'Como fazer: .'
-lastmod: '2024-03-13T22:44:46.968000-06:00'
+description: "Como fazer: Historicamente, linguagens de programa\xE7\xE3o imperativas\
+  \ como as primeiras vers\xF5es de BASIC ou Assembly careciam da abstra\xE7\xE3o\
+  \ que as fun\xE7\xF5es\u2026"
+lastmod: '2024-04-05T21:53:47.318947-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historicamente, linguagens de programa\xE7\xE3o imperativas como as primeiras\
+  \ vers\xF5es de BASIC ou Assembly careciam da abstra\xE7\xE3o que as fun\xE7\xF5\
+  es fornecem."
 title: "Organizando o c\xF3digo em fun\xE7\xF5es"
 weight: 18
 ---

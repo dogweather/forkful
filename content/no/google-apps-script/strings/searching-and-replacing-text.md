@@ -4,8 +4,8 @@ changelog:
 date: 2024-02-01 22:01:12.690197-07:00
 description: "Hvordan: Google Apps Script tilbyr en grei m\xE5te \xE5 s\xF8ke og erstatte\
   \ tekst p\xE5, spesielt innen Google Dokumenter og Regneark. Nedenfor er eksempler\
-  \ for\u2026"
-lastmod: '2024-03-13T22:44:40.297717-06:00'
+  \ for begge."
+lastmod: '2024-04-05T21:53:41.275830-06:00'
 model: gpt-4-0125-preview
 summary: "Google Apps Script tilbyr en grei m\xE5te \xE5 s\xF8ke og erstatte tekst\
   \ p\xE5, spesielt innen Google Dokumenter og Regneark."

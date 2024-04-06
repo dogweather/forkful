@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 00:56:36.064244-07:00
-description: "Jak to zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:35.637286-06:00'
+description: "Jak to zrobi\u0107: PowerShell przeszed\u0142 d\u0142ug\u0105 drog\u0119\
+  \ od czasu swoich pocz\u0105tk\xF3w jako Monad. Obs\u0142uga b\u0142\u0119d\xF3\
+  w sta\u0142a si\u0119 z czasem bardziej solidna, oferuj\u0105c funkcje\u2026"
+lastmod: '2024-04-05T21:53:37.061974-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "PowerShell przeszed\u0142 d\u0142ug\u0105 drog\u0119 od czasu swoich pocz\u0105\
+  tk\xF3w jako Monad."
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---

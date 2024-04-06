@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:43:53.139302-07:00
-description: "Hur man g\xF6r: ."
-lastmod: '2024-03-13T22:44:37.828020-06:00'
+description: "Hur man g\xF6r: Historiskt sett har webbsidor h\xE4mtats med m\xE5nga\
+  \ olika tekniker, fr\xE5n enkla HTTP-anrop till komplexa webbskrapningsverktyg.\
+  \ Elm \xE4r en\u2026"
+lastmod: '2024-04-05T21:53:39.163224-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historiskt sett har webbsidor h\xE4mtats med m\xE5nga olika tekniker, fr\xE5\
+  n enkla HTTP-anrop till komplexa webbskrapningsverktyg."
 title: "H\xE4mta en webbsida"
 weight: 42
 ---

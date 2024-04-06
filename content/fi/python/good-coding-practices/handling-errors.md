@@ -1,9 +1,11 @@
 ---
 date: 2024-01-26 00:56:22.955289-07:00
-description: 'Kuinka toimia: .'
-lastmod: '2024-03-13T22:44:56.150928-06:00'
+description: "Kuinka toimia: Esimerkkitulostus, kun annetaan virheellinen numero ensimm\xE4\
+  isess\xE4 lohkossa."
+lastmod: '2024-04-05T21:53:57.706145-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Esimerkkitulostus, kun annetaan virheellinen numero ensimm\xE4isess\xE4\
+  \ lohkossa."
 title: "Virheiden k\xE4sittely"
 weight: 16
 ---

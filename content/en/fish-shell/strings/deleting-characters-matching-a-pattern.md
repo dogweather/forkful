@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:42:13.044712-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:45:00.457776-06:00'
+description: "How to: In Fish Shell, the magic happens with the `string` utility,\
+  \ a handy built-in tool for string operations - introduced in version 2.3.0. Prior\
+  \ to\u2026"
+lastmod: '2024-04-05T21:53:36.157851-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: In Fish Shell, the magic happens with the `string` utility, a handy built-in
+  tool for string operations - introduced in version 2.3.0.
 title: Deleting characters matching a pattern
 weight: 5
 ---

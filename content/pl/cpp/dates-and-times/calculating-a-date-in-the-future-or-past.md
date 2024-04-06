@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:28:33.161906-07:00
-description: "Jak to zrobi\u0107? ."
-lastmod: '2024-03-13T22:44:35.726219-06:00'
+description: "Jak to zrobi\u0107? Sample Output."
+lastmod: '2024-04-05T21:53:37.152508-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---

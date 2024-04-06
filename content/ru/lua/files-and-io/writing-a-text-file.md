@@ -3,10 +3,12 @@ changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:06:20.773661-07:00
 description: "\u041A\u0430\u043A \u044D\u0442\u043E \u0441\u0434\u0435\u043B\u0430\
-  \u0442\u044C: ."
-lastmod: '2024-03-13T22:44:45.322528-06:00'
+  \u0442\u044C: \u041F\u0440\u0438\u043C\u0435\u0440 \u0432\u044B\u0432\u043E\u0434\
+  \u0430 \u0432 `example.txt`."
+lastmod: '2024-04-05T21:53:45.770724-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "\u041F\u0440\u0438\u043C\u0435\u0440 \u0432\u044B\u0432\u043E\u0434\u0430\
+  \ \u0432 `example.txt`."
 title: "\u0421\u043E\u0437\u0434\u0430\u043D\u0438\u0435 \u0442\u0435\u043A\u0441\u0442\
   \u043E\u0432\u043E\u0433\u043E \u0444\u0430\u0439\u043B\u0430"
 weight: 24

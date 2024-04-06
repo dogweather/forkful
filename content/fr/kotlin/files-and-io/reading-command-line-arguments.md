@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:56:12.949992-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:57.757034-06:00'
+description: "How to: Si on ex\xE9cute avec `kotlin MonProgramme.kt arg1 arg2`, l'output\
+  \ serait ."
+lastmod: '2024-04-05T21:53:59.244938-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Si on ex\xE9cute avec `kotlin MonProgramme.kt arg1 arg2`, l'output serait\
+  \ ."
 title: Lecture des arguments de ligne de commande
 weight: 23
 ---

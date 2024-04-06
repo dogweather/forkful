@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:30:54.641149-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.892567-06:00'
+description: "Como Fazer: Exemplo de sa\xEDda."
+lastmod: '2024-04-05T21:53:47.243518-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: Calculando uma data no futuro ou passado
 weight: 26
 ---

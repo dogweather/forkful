@@ -2,9 +2,10 @@
 date: 2024-01-26 03:47:54.214516-07:00
 description: 'Comment faire: Imaginez que vous avez un petit programme qui ne fonctionne
   pas correctement .'
-lastmod: '2024-03-13T22:44:57.792360-06:00'
+lastmod: '2024-04-05T21:53:59.278254-06:00'
 model: gpt-4-0125-preview
-summary: Imaginez que vous avez un petit programme qui ne fonctionne pas correctement.
+summary: Imaginez que vous avez un petit programme qui ne fonctionne pas correctement
+  .
 title: "Utilisation d'un d\xE9bogueur"
 weight: 35
 ---

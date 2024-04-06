@@ -2,9 +2,9 @@
 date: 2024-01-20 18:03:50.160767-07:00
 description: 'How to: (Come Fare:) Inizia creando un nuovo file `main.lua`. Ecco un
   esempio di codice Lua basilare.'
-lastmod: '2024-03-13T22:44:43.558406-06:00'
+lastmod: '2024-04-05T21:53:44.321920-06:00'
 model: gpt-4-1106-preview
-summary: Inizia creando un nuovo file `main.lua`.
+summary: (Come Fare:) Inizia creando un nuovo file `main.lua`.
 title: Avvio di un nuovo progetto
 weight: 1
 ---

@@ -1,9 +1,10 @@
 ---
 date: 2024-01-26 00:36:59.711946-07:00
-description: "Jak to zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:35.592686-06:00'
+description: "Jak to zrobi\u0107: Przyk\u0142adowe wyj\u015Bcie, gdy wyst\u0105pi\
+  \ b\u0142\u0105d."
+lastmod: '2024-04-05T21:53:37.019128-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Przyk\u0142adowe wyj\u015Bcie, gdy wyst\u0105pi b\u0142\u0105d."
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---

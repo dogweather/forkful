@@ -4,11 +4,11 @@ description: "How to: (\u5982\u4F55\u64CD\u4F5C\uFF1A) JavaScript \u63D0\u4F9B\u
   \u4E00\u4E2A\u7B80\u5355\u7684\u65B9\u6CD5 `.toLowerCase()` \u6765\u628A\u5B57\u7B26\
   \u4E32\u8F6C\u6362\u6210\u5C0F\u5199\u5B57\u6BCD\u3002"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:48.191140-06:00'
+lastmod: '2024-04-05T21:53:48.479212-06:00'
 model: gpt-4-1106-preview
-summary: "JavaScript \u63D0\u4F9B\u4E86\u4E00\u4E2A\u7B80\u5355\u7684\u65B9\u6CD5\
-  \ `.toLowerCase()` \u6765\u628A\u5B57\u7B26\u4E32\u8F6C\u6362\u6210\u5C0F\u5199\u5B57\
-  \u6BCD."
+summary: "(\u5982\u4F55\u64CD\u4F5C\uFF1A) JavaScript \u63D0\u4F9B\u4E86\u4E00\u4E2A\
+  \u7B80\u5355\u7684\u65B9\u6CD5 `.toLowerCase()` \u6765\u628A\u5B57\u7B26\u4E32\u8F6C\
+  \u6362\u6210\u5C0F\u5199\u5B57\u6BCD\u3002"
 title: "\u5C06\u5B57\u7B26\u4E32\u8F6C\u6362\u4E3A\u5C0F\u5199"
 weight: 4
 ---

@@ -1,9 +1,13 @@
 ---
 date: 2024-01-26 03:42:01.967313-07:00
-description: "\uBC29\uBC95: ."
-lastmod: '2024-03-13T22:44:54.897508-06:00'
+description: "\uBC29\uBC95: \uAC00\uB054 \uC774\uB807\uAC8C \uC11C\uB85C \uB2E4\uB978\
+  \ \uB530\uC634\uD45C\uAC00 \uC11E\uC778 \uBB38\uC790\uC5F4\uC774 \uC788\uC744 \uC218\
+  \ \uC788\uC2B5\uB2C8\uB2E4."
+lastmod: '2024-04-05T21:53:56.693650-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "\uAC00\uB054 \uC774\uB807\uAC8C \uC11C\uB85C \uB2E4\uB978 \uB530\uC634\uD45C\
+  \uAC00 \uC11E\uC778 \uBB38\uC790\uC5F4\uC774 \uC788\uC744 \uC218 \uC788\uC2B5\uB2C8\
+  \uB2E4."
 title: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB530\uC634\uD45C \uC81C\uAC70\uD558\uAE30"
 weight: 9
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:59:11.596561-07:00
-description: "C\xF3mo: ."
-lastmod: '2024-03-13T22:44:59.243307-06:00'
+description: "C\xF3mo: Muchas herramientas han permitido hacer solicitudes HTTP desde\
+  \ la l\xEDnea de comandos, pero cURL ha sobresalido desde su creaci\xF3n en 1997.\
+  \ Es\u2026"
+lastmod: '2024-04-05T21:54:00.589124-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Muchas herramientas han permitido hacer solicitudes HTTP desde la l\xED\
+  nea de comandos, pero cURL ha sobresalido desde su creaci\xF3n en 1997."
 title: Enviando una solicitud http
 weight: 44
 ---

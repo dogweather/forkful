@@ -1,10 +1,11 @@
 ---
 date: 2024-01-20 18:00:43.549718-07:00
-description: "\u5982\u4F55\u505A\uFF1A ."
+description: "\u5982\u4F55\u505A\uFF1A \u8F93\u51FA\u5E94\u8BE5\u663E\u793AHTTP\u72B6\
+  \u6001\u7801\u548C\u8BF7\u6C42\u7684\u6570\u636E\u3002"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:48.061946-06:00'
+lastmod: '2024-04-05T21:53:48.358196-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "\u4F7F\u7528\u57FA\u672C\u8BA4\u8BC1\u53D1\u9001 HTTP \u8BF7\u6C42"
 weight: 45
 ---

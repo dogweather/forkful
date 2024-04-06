@@ -3,10 +3,10 @@ date: 2024-01-20 18:04:56.012937-07:00
 description: "How to: (Kuinka tehd\xE4:) K\xE4yt\xE4 `cargo`, Rustin paketinhallintaa\
   \ ja k\xE4\xE4nn\xF6sty\xF6kalua, uuden projektin luomiseen. T\xE4ss\xE4 muutama\
   \ rivi koodia."
-lastmod: '2024-03-13T22:44:56.357427-06:00'
+lastmod: '2024-04-05T21:53:57.916835-06:00'
 model: gpt-4-1106-preview
-summary: "K\xE4yt\xE4 `cargo`, Rustin paketinhallintaa ja k\xE4\xE4nn\xF6sty\xF6kalua,\
-  \ uuden projektin luomiseen."
+summary: "(Kuinka tehd\xE4:) K\xE4yt\xE4 `cargo`, Rustin paketinhallintaa ja k\xE4\
+  \xE4nn\xF6sty\xF6kalua, uuden projektin luomiseen."
 title: Uuden projektin aloittaminen
 weight: 1
 ---

@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:58:19.172800-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.526897-06:00'
+description: "Como Fazer: Outro exemplo, com express\xF5es regulares."
+lastmod: '2024-04-05T21:53:46.869188-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Outro exemplo, com express\xF5es regulares."
 title: Pesquisando e substituindo texto
 weight: 10
 ---

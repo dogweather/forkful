@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 03:45:50.354192-07:00
-description: 'Wie geht das: .'
-lastmod: '2024-03-13T22:44:54.010015-06:00'
+description: "Wie geht das: Lua enth\xE4lt standardm\xE4\xDFig keine Rundungsfunktion,\
+  \ anders als einige andere Sprachen. Historisch gesehen m\xFCssen Sie Ihre eigene\
+  \ schreiben\u2026"
+lastmod: '2024-04-05T21:53:55.893305-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Lua enth\xE4lt standardm\xE4\xDFig keine Rundungsfunktion, anders als einige\
+  \ andere Sprachen."
 title: Zahlen runden
 weight: 13
 ---

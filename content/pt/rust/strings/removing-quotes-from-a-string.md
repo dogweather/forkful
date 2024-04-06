@@ -1,9 +1,10 @@
 ---
 date: 2024-01-26 03:42:07.682803-07:00
-description: 'Como fazer: .'
-lastmod: '2024-03-13T22:44:46.356133-06:00'
+description: "Como fazer: \xC0s vezes voc\xEA tem uma string com aspas misturadas,\
+  \ assim."
+lastmod: '2024-04-05T21:53:46.688357-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "\xC0s vezes voc\xEA tem uma string com aspas misturadas, assim."
 title: Removendo aspas de uma string
 weight: 9
 ---

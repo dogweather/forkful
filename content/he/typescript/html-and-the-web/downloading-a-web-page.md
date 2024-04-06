@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:45:28.226024-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:38.915229-06:00'
+description: "How to: \u05EA\u05D5\u05E6\u05D0\u05D4 (Sample output)."
+lastmod: '2024-04-05T21:53:40.183776-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "\u05EA\u05D5\u05E6\u05D0\u05D4 (Sample output)."
 title: "\u05D4\u05D5\u05E8\u05D3\u05EA \u05D3\u05E3 \u05D0\u05D9\u05E0\u05D8\u05E8\
   \u05E0\u05D8"
 weight: 42

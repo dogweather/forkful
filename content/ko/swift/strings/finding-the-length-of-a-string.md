@@ -4,10 +4,10 @@ description: "How to: (\uBC29\uBC95:) Swift\uC5D0\uC11C \uBB38\uC790\uC5F4\uC758
   \uC774\uB97C \uCC3E\uB294 \uAC83\uC740 \uAC04\uB2E8\uD569\uB2C8\uB2E4. \uC608\uC81C\
   \ \uCF54\uB4DC\uB97C \uD1B5\uD574 \uBCF4\uC138\uC694."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.718503-06:00'
+lastmod: '2024-04-05T21:53:57.337268-06:00'
 model: gpt-4-1106-preview
-summary: "Swift\uC5D0\uC11C \uBB38\uC790\uC5F4\uC758 \uAE38\uC774\uB97C \uCC3E\uB294\
-  \ \uAC83\uC740 \uAC04\uB2E8\uD569\uB2C8\uB2E4."
+summary: "(\uBC29\uBC95:) Swift\uC5D0\uC11C \uBB38\uC790\uC5F4\uC758 \uAE38\uC774\uB97C\
+  \ \uCC3E\uB294 \uAC83\uC740 \uAC04\uB2E8\uD569\uB2C8\uB2E4."
 title: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774 \uCC3E\uAE30"
 weight: 7
 ---

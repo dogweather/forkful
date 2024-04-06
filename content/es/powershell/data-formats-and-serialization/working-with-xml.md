@@ -1,9 +1,9 @@
 ---
 date: 2024-01-26 04:34:16.884464-07:00
-description: "C\xF3mo: ."
-lastmod: '2024-03-13T22:44:59.316928-06:00'
+description: "C\xF3mo: Salida de muestra."
+lastmod: '2024-04-05T21:54:00.662626-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: ''
 title: Trabajando con XML
 weight: 40
 ---

@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:31:06.115858-07:00
-description: 'Wie macht man das: .'
-lastmod: '2024-03-13T22:44:53.433459-06:00'
+description: 'Wie macht man das: Sample Output.'
+lastmod: '2024-04-05T21:53:55.390240-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---

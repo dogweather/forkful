@@ -1,10 +1,17 @@
 ---
 date: 2024-01-20 17:37:48.321703-07:00
-description: "How to: (\uBC29\uBC95) ."
+description: "How to: (\uBC29\uBC95) Java\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uBB38\uC790\
+  \uC5F4\uB85C \uBCC0\uD658\uD558\uAE30 \uC704\uD55C \uB450 \uAC00\uC9C0 \uC8FC\uC694\
+  \ \uD074\uB798\uC2A4\uAC00 \uC788\uC2B5\uB2C8\uB2E4: `java.util.Date`\uC640 `java.time.LocalDate`.\
+  \ `java.util.Date`\uB294 Java\uC758 \uCD08\uAE30 \uBC84\uC804\uC5D0\uC11C\uBD80\uD130\
+  \ \uC0AC\uC6A9\uB418\uC5B4 \uC654\uC73C\uB098, \uC2DC\uAC04\uB300 \uCC98\uB9AC \uB4F1\
+  \ \uC5EC\uB7EC\u2026"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.065886-06:00'
+lastmod: '2024-04-05T21:53:56.830166-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(\uBC29\uBC95) Java\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C\
+  \ \uBCC0\uD658\uD558\uAE30 \uC704\uD55C \uB450 \uAC00\uC9C0 \uC8FC\uC694 \uD074\uB798\
+  \uC2A4\uAC00 \uC788\uC2B5\uB2C8\uB2E4."
 title: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uAE30"
 weight: 28
 ---

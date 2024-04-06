@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:36:39.587688-07:00
-description: "C\xF3mo se hace: ."
-lastmod: '2024-03-13T22:44:59.004550-06:00'
+description: "C\xF3mo se hace: En Elm, trabajar con fechas implica usar el m\xF3dulo\
+  \ `Date`. Antes de Elm 0.19, otras bibliotecas como `elm-time` eran comunes, pero\
+  \ han sido\u2026"
+lastmod: '2024-04-05T21:54:00.346887-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "En Elm, trabajar con fechas implica usar el m\xF3dulo `Date`."
 title: Convirtiendo una fecha en una cadena de texto
 weight: 28
 ---

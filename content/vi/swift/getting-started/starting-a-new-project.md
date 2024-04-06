@@ -2,10 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:41.217063-07:00
-description: "C\xE1ch th\u1EF1c hi\u1EC7n: ."
-lastmod: '2024-03-13T22:44:37.098111-06:00'
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Tr\u01B0\u1EDBc k\u1EF7 nguy\xEAn Swift,\
+  \ Objective-C chi\u1EBFm \u01B0u th\u1EBF v\xE0 vi\u1EC7c b\u1EAFt \u0111\u1EA7\
+  u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi \u0111\xF2i h\u1ECFi nhi\u1EC1u b\u01B0\u1EDB\
+  c d\u1EF1ng s\u1EB5n h\u01A1n. Tuy nhi\xEAn, Swift \u0111\xE3 tinh\u2026"
+lastmod: '2024-04-05T21:53:38.451383-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Tr\u01B0\u1EDBc k\u1EF7 nguy\xEAn Swift, Objective-C chi\u1EBFm \u01B0u\
+  \ th\u1EBF v\xE0 vi\u1EC7c b\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDB\
+  i \u0111\xF2i h\u1ECFi nhi\u1EC1u b\u01B0\u1EDBc d\u1EF1ng s\u1EB5n h\u01A1n."
 title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---

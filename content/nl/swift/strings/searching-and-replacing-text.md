@@ -2,10 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:54.660899-07:00
-description: 'Hoe doe je het: .'
-lastmod: '2024-03-13T22:44:51.140964-06:00'
+description: "Hoe doe je het: We vervangen al tekst in strings sinds de vroege dagen\
+  \ van computertechniek. Aanvankelijk was dit met eenvoudige command-line tools zoals\u2026"
+lastmod: '2024-04-05T21:53:51.154251-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: We vervangen al tekst in strings sinds de vroege dagen van computertechniek.
 title: Tekst zoeken en vervangen
 weight: 10
 ---

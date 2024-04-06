@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:56:43.544888-07:00
-description: "How to (Hur g\xF6r man): ."
-lastmod: '2024-03-13T22:44:37.498272-06:00'
+description: "How to (Hur g\xF6r man): K\xF6r programmet s\xE5 h\xE4r i terminalen."
+lastmod: '2024-04-05T21:53:38.825767-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "K\xF6r programmet s\xE5 h\xE4r i terminalen."
 title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---

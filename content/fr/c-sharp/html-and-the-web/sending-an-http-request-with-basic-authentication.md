@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:01:13.989585-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:57.786908-06:00'
+description: "How to: L'authentification de base HTTP est une m\xE9thode standard\
+  \ de l'Internet vieille de plusieurs d\xE9cennies. Bien qu'elle soit simple \xE0\
+  \ impl\xE9menter,\u2026"
+lastmod: '2024-04-05T21:53:59.273149-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "L'authentification de base HTTP est une m\xE9thode standard de l'Internet\
+  \ vieille de plusieurs d\xE9cennies."
 title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
 weight: 45
 ---

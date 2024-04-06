@@ -4,10 +4,11 @@ description: "How to: (\u600E\u4E48\u505A\uFF1A) \u5047\u8BBEElm\u652F\u6301YAML
   \u524D\u4E0D\u652F\u6301\uFF0C\u9700\u7528Javascript\u4EA4\u4E92)\uFF0C\u4EE3\u7801\
   \u5982\u4E0B\uFF1A."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:47.694955-06:00'
+lastmod: '2024-04-05T21:53:48.014522-06:00'
 model: unknown
-summary: "\u5047\u8BBEElm\u652F\u6301YAML(\u76EE\u524D\u4E0D\u652F\u6301\uFF0C\u9700\
-  \u7528Javascript\u4EA4\u4E92)\uFF0C\u4EE3\u7801\u5982\u4E0B\uFF1A."
+summary: "(\u600E\u4E48\u505A\uFF1A) \u5047\u8BBEElm\u652F\u6301YAML(\u76EE\u524D\u4E0D\
+  \u652F\u6301\uFF0C\u9700\u7528Javascript\u4EA4\u4E92)\uFF0C\u4EE3\u7801\u5982\u4E0B\
+  \uFF1A."
 title: "\u5904\u7406 YAML \u6587\u4EF6"
 weight: 41
 ---

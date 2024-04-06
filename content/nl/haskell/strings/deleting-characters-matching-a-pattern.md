@@ -2,10 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:45.201706-07:00
-description: 'Hoe te: .'
-lastmod: '2024-03-13T22:44:50.836462-06:00'
+description: "Hoe te: Haskell's rijke set aan bibliotheken, zoals 'Data.List', biedt\
+  \ verschillende hulpmiddelen om lijsten te manipuleren, waarvan strings in essentie\u2026"
+lastmod: '2024-04-05T21:53:50.860019-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: Haskell's rijke set aan bibliotheken, zoals 'Data.List', biedt verschillende
+  hulpmiddelen om lijsten te manipuleren, waarvan strings in essentie een speciaal
+  geval zijn.
 title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---

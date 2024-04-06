@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:38:05.623499-07:00
 description: "How to: \"Kuinka tehd\xE4 se:\"."
-lastmod: '2024-03-13T22:44:56.326623-06:00'
+lastmod: '2024-04-05T21:53:57.883733-06:00'
 model: gpt-4-1106-preview
-summary: "\"Kuinka tehd\xE4 se:\"."
+summary: ''
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---

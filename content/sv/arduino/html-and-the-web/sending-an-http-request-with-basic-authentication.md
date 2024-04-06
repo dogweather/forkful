@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:00:51.982616-07:00
-description: "Hur man g\xF6r: ."
-lastmod: '2024-03-13T22:44:38.167857-06:00'
+description: "Hur man g\xF6r: HTTP Basic Authentication introducerades tidigt i webbens\
+  \ historia, som en del av HTTP/1.0-specifikationen. Det \xE4r inte det s\xE4kraste\
+  \ s\xE4ttet\u2026"
+lastmod: '2024-04-05T21:53:39.504843-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: HTTP Basic Authentication introducerades tidigt i webbens historia, som en
+  del av HTTP/1.0-specifikationen.
 title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
 weight: 45
 ---

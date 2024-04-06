@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:55:07.735854-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:57.255160-06:00'
+description: 'Comment faire : Sortie potentielle .'
+lastmod: '2024-04-05T21:53:58.836646-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: Sortie potentielle .
 title: Lecture d'un fichier texte
 weight: 22
 ---

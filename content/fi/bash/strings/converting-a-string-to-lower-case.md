@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:37:54.363733-07:00
-description: 'Miten: .'
-lastmod: '2024-03-13T22:44:56.725360-06:00'
+description: "Miten: Bashissa on alunperin k\xE4ytetty tr-komentoa tai awk-ohjelmaa\
+  \ muuntamaan kirjaimet pieniksi. Vuoden 2000 j\xE4lkeen Bash versio 4.0 toi mukanaan\u2026"
+lastmod: '2024-04-05T21:53:58.299250-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Bashissa on alunperin k\xE4ytetty tr-komentoa tai awk-ohjelmaa muuntamaan\
+  \ kirjaimet pieniksi."
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---

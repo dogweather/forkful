@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:51:32.803090-07:00
-description: "Kuinka tehd\xE4: ."
-lastmod: '2024-03-13T22:44:56.343087-06:00'
+description: "Kuinka tehd\xE4: Historiallisesti string-interpolointi on ollut ominaisuus\
+  \ monissa ohjelmointikieliss\xE4 ennen Rustia, kuten Perl, Python ja Ruby. Rustissa\u2026"
+lastmod: '2024-04-05T21:53:57.901990-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historiallisesti string-interpolointi on ollut ominaisuus monissa ohjelmointikieliss\xE4\
+  \ ennen Rustia, kuten Perl, Python ja Ruby."
 title: Merkkijonon interpolointi
 weight: 8
 ---

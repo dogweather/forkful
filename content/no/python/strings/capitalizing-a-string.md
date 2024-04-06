@@ -5,9 +5,10 @@ changelog:
 date: 2024-02-03 19:02:34.962078-07:00
 description: "Hvordan: Python har en innebygd metode `.capitalize()` for strenger\
   \ som gj\xF8r denne oppgaven enkel."
-lastmod: '2024-04-04T00:26:56.562654-06:00'
+lastmod: '2024-04-05T21:53:41.323164-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Python har en innebygd metode `.capitalize()` for strenger som gj\xF8r denne\
+  \ oppgaven enkel."
 title: Stor bokstav i en streng
 weight: 2
 ---

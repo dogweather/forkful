@@ -1,9 +1,10 @@
 ---
 date: 2024-01-26 01:11:29.392040-07:00
-description: 'Como fazer: .'
-lastmod: '2024-03-13T22:44:46.714521-06:00'
+description: "Como fazer: As fun\xE7\xF5es ficam mais complexas, lidando com v\xE1\
+  rias tarefas."
+lastmod: '2024-04-05T21:53:47.059950-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "As fun\xE7\xF5es ficam mais complexas, lidando com v\xE1rias tarefas."
 title: "Organizando o c\xF3digo em fun\xE7\xF5es"
 weight: 18
 ---

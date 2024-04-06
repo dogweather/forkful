@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:42:28.419043-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:58.922301-06:00'
+description: "How to: Historicamente, manipular strings ha sido un aspecto fundamental\
+  \ de la programaci\xF3n. Java ofrece la clase `Pattern` para trabajar con expresiones\u2026"
+lastmod: '2024-04-05T21:54:00.273715-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historicamente, manipular strings ha sido un aspecto fundamental de la programaci\xF3\
+  n."
 title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---

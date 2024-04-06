@@ -2,10 +2,10 @@
 date: 2024-01-20 17:37:51.443419-07:00
 description: "How to (Comment faire) : En C++, vous pouvez transformer une cha\xEE\
   ne en minuscules en utilisant la biblioth\xE8que standard ."
-lastmod: '2024-03-13T22:44:58.146902-06:00'
+lastmod: '2024-04-05T21:53:59.576913-06:00'
 model: gpt-4-1106-preview
 summary: "En C++, vous pouvez transformer une cha\xEEne en minuscules en utilisant\
-  \ la biblioth\xE8que standard."
+  \ la biblioth\xE8que standard ."
 title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
 weight: 4
 ---

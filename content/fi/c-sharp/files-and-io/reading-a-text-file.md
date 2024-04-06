@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:53:58.254534-07:00
-description: 'How to: (Kuinka?) .'
-lastmod: '2024-03-13T22:44:56.591437-06:00'
+description: 'How to: (Kuinka?) **Esimerkkituloste:**.'
+lastmod: '2024-04-05T21:53:58.158020-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: (Kuinka?) **Esimerkkituloste:**.
 title: Tekstitiedoston lukeminen
 weight: 22
 ---

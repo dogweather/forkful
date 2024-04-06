@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:37:32.272548-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:40.543588-06:00'
+description: "How to: Datoformat varierer over hele verden. Tidligere brukte programmerere\
+  \ egne funksjoner for \xE5 h\xE5ndtere dette, men JavaScripts `Date`-objekt forenkler\u2026"
+lastmod: '2024-04-05T21:53:41.521033-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Datoformat varierer over hele verden.
 title: Konvertere en dato til en streng
 weight: 28
 ---

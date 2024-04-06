@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:54:23.433679-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.642648-06:00'
+description: "Como Fazer: Sa\xEDda esperada (depende do conte\xFAdo do seu `meuArquivo.txt`)."
+lastmod: '2024-04-05T21:53:46.988001-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Sa\xEDda esperada (depende do conte\xFAdo do seu `meuArquivo.txt`)."
 title: Lendo um arquivo de texto
 weight: 22
 ---

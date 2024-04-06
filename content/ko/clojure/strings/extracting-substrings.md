@@ -5,10 +5,11 @@ description: "How to: (\uBC29\uBC95) Clojure\uC5D0\uC11C \uBD80\uBD84 \uBB38\uC7
   \uC6A9\uD569\uB2C8\uB2E4. \uB2E4\uC74C\uC740 \uAC04\uB2E8\uD55C \uC608\uC81C\uB4E4\
   \uC785\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:54.644620-06:00'
+lastmod: '2024-04-05T21:53:56.492335-06:00'
 model: gpt-4-1106-preview
-summary: "Clojure\uC5D0\uC11C \uBD80\uBD84 \uBB38\uC790\uC5F4\uC744 \uCD94\uCD9C\uD560\
-  \ \uB54C \uC8FC\uB85C `subs` \uD568\uC218\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
+summary: "(\uBC29\uBC95) Clojure\uC5D0\uC11C \uBD80\uBD84 \uBB38\uC790\uC5F4\uC744\
+  \ \uCD94\uCD9C\uD560 \uB54C \uC8FC\uB85C `subs` \uD568\uC218\uB97C \uC0AC\uC6A9\uD569\
+  \uB2C8\uB2E4."
 title: "\uBD80\uBD84 \uBB38\uC790\uC5F4 \uCD94\uCD9C"
 weight: 6
 ---

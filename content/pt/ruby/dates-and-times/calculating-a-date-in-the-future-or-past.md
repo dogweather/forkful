@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:31:59.997062-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:47.108489-06:00'
+description: "Como Fazer: Datas s\xE3o essenciais para a programa\xE7\xE3o desde o\
+  \ in\xEDcio dos computadores. No Ruby, a classe `Date` oferece m\xE9todos para manipular\
+  \ datas com\u2026"
+lastmod: '2024-04-05T21:53:47.468138-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Datas s\xE3o essenciais para a programa\xE7\xE3o desde o in\xEDcio dos computadores."
 title: Calculando uma data no futuro ou passado
 weight: 26
 ---

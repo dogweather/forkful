@@ -4,9 +4,9 @@ changelog:
 date: 2024-03-08 21:56:35.385289-07:00
 description: "Como fazer: 1. **Instale o Dart**: Certifique-se de que o Dart est\xE1\
   \ instalado no seu sistema. Se n\xE3o, voc\xEA pode baix\xE1-lo de [https://dart.dev/get-\u2026"
-lastmod: '2024-03-13T22:44:46.282358-06:00'
+lastmod: '2024-04-05T21:53:46.611745-06:00'
 model: gpt-4-0125-preview
-summary: '1.'
+summary: ''
 title: Iniciando um novo projeto
 weight: 1
 ---

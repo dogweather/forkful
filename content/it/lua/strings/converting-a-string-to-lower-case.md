@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:38:39.367255-07:00
-description: 'Come fare: .'
-lastmod: '2024-03-13T22:44:43.545807-06:00'
+description: "Come fare: La funzione `lower()` in Lua fa parte del repertorio standard\
+  \ dal suo debutto; \xE8 semplice ed efficiente per il trattamento delle stringhe.\u2026"
+lastmod: '2024-04-05T21:53:44.309112-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "La funzione `lower()` in Lua fa parte del repertorio standard dal suo debutto;\
+  \ \xE8 semplice ed efficiente per il trattamento delle stringhe."
 title: Conversione di una stringa in minuscolo
 weight: 4
 ---

@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:39:12.643401-07:00
-description: 'Como fazer: .'
-lastmod: '2024-03-13T22:44:46.355233-06:00'
+description: "Como fazer: Historicamente, a convers\xE3o de strings para caixa baixa\
+  \ \xE9 essencial em v\xE1rias opera\xE7\xF5es de software, como compara\xE7\xE3\
+  o de dados e ordena\xE7\xE3o\u2026"
+lastmod: '2024-04-05T21:53:46.687243-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historicamente, a convers\xE3o de strings para caixa baixa \xE9 essencial\
+  \ em v\xE1rias opera\xE7\xF5es de software, como compara\xE7\xE3o de dados e ordena\xE7\
+  \xE3o alfab\xE9tica."
 title: "Convertendo uma string para min\xFAsculas"
 weight: 4
 ---

@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:28:36.734807-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:57.341853-06:00'
+description: "Comment faire : Historiquement, manipuler des dates n'a jamais \xE9\
+  t\xE9 simple, surtout avec les variations de fuseaux horaires ou les r\xE8gles de\
+  \ l'heure d'\xE9t\xE9.\u2026"
+lastmod: '2024-04-05T21:53:58.920350-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historiquement, manipuler des dates n'a jamais \xE9t\xE9 simple, surtout\
+  \ avec les variations de fuseaux horaires ou les r\xE8gles de l'heure d'\xE9t\xE9\
+  ."
 title: "Calcul d'une date future ou pass\xE9e"
 weight: 26
 ---

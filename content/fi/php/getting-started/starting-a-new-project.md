@@ -2,9 +2,10 @@
 date: 2024-01-20 18:04:43.108160-07:00
 description: "How to: (Kuinka tehd\xE4:) Aloitetaan yksinkertaisella `\"Hello, world!\"\
   ` -esimerkill\xE4. Tallenna t\xE4m\xE4 tiedostoksi nimelt\xE4 `index.php`."
-lastmod: '2024-03-13T22:44:56.656657-06:00'
+lastmod: '2024-04-05T21:53:58.228588-06:00'
 model: gpt-4-1106-preview
-summary: "Aloitetaan yksinkertaisella `\"Hello, world!\"` -esimerkill\xE4."
+summary: "(Kuinka tehd\xE4:) Aloitetaan yksinkertaisella `\"Hello, world!\"` -esimerkill\xE4\
+  ."
 title: Uuden projektin aloittaminen
 weight: 1
 ---

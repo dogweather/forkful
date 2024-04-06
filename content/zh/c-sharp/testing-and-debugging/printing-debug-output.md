@@ -4,11 +4,11 @@ description: "How to: (\u5982\u4F55\u64CD\u4F5C\uFF1A) \u5728C#\u4E2D\u6253\u537
   \u8BD5\u4FE1\u606F\uFF0C\u901A\u5E38\u4F7F\u7528`Console.WriteLine()`\u3002\u4E0D\
   \u590D\u6742\uFF0C\u770B\u4EE3\u7801\uFF1A."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:47.770212-06:00'
+lastmod: '2024-04-05T21:53:48.084460-06:00'
 model: gpt-4-1106-preview
-summary: "\u5728C#\u4E2D\u6253\u5370\u8C03\u8BD5\u4FE1\u606F\uFF0C\u901A\u5E38\u4F7F\
-  \u7528`Console.WriteLine()`\u3002\u4E0D\u590D\u6742\uFF0C\u770B\u4EE3\u7801\uFF1A\
-  ."
+summary: "(\u5982\u4F55\u64CD\u4F5C\uFF1A) \u5728C#\u4E2D\u6253\u5370\u8C03\u8BD5\u4FE1\
+  \u606F\uFF0C\u901A\u5E38\u4F7F\u7528`Console.WriteLine()`\u3002\u4E0D\u590D\u6742\
+  \uFF0C\u770B\u4EE3\u7801\uFF1A."
 title: "\u6253\u5370\u8C03\u8BD5\u8F93\u51FA"
 weight: 33
 ---

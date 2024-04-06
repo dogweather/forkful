@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:32:24.569574-07:00
-description: 'Come Fare: .'
-lastmod: '2024-03-13T22:44:43.695187-06:00'
+description: 'Come Fare: Sample Output.'
+lastmod: '2024-04-05T21:53:44.455192-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: Confronto tra due date
 weight: 27
 ---

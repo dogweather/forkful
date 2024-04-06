@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:38:59.319736-07:00
-description: "Jak to zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:35.783562-06:00'
+description: "Jak to zrobi\u0107: Konwersja tekst\xF3w do ma\u0142ych liter jest standardowym\
+  \ narz\u0119dziem w programowaniu od lat. W JavaScript funkcja `toLowerCase()` istnieje\
+  \ od\u2026"
+lastmod: '2024-04-05T21:53:37.210421-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Konwersja tekst\xF3w do ma\u0142ych liter jest standardowym narz\u0119dziem\
+  \ w programowaniu od lat."
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---

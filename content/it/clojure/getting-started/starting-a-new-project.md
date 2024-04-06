@@ -2,9 +2,10 @@
 date: 2024-01-20 18:03:04.595548-07:00
 description: 'How to: (Come fare:) Clojure offre uno strumento integrato,`lein`, per
   iniziare nuovi progetti. Ecco come si usa.'
-lastmod: '2024-03-13T22:44:43.042895-06:00'
+lastmod: '2024-04-05T21:53:43.825298-06:00'
 model: gpt-4-1106-preview
-summary: Clojure offre uno strumento integrato,`lein`, per iniziare nuovi progetti.
+summary: (Come fare:) Clojure offre uno strumento integrato,`lein`, per iniziare nuovi
+  progetti.
 title: Avvio di un nuovo progetto
 weight: 1
 ---

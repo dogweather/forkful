@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:46:19.840973-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.698505-06:00'
+description: "Como Fazer: Historicamente, no mundo da programa\xE7\xE3o, extrair substrings\
+  \ se mostrou essencial para tratamento de texto. No Lua, a fun\xE7\xE3o `string.sub`\
+  \ \xE9\u2026"
+lastmod: '2024-04-05T21:53:47.043767-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historicamente, no mundo da programa\xE7\xE3o, extrair substrings se mostrou\
+  \ essencial para tratamento de texto."
 title: Extraindo substrings
 weight: 6
 ---

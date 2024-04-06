@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:42:45.307494-07:00
-description: 'How to: Miten.'
-lastmod: '2024-03-13T22:44:56.682296-06:00'
+description: "How to: Syv\xE4sukellus: Lua:n patterit ovat regexin (s\xE4\xE4nn\xF6\
+  lliset lausekkeet) kaltainen konsepti, mutta yksinkertaisempi. Ei ole aina ollut\
+  \ n\xE4in.\u2026"
+lastmod: '2024-04-05T21:53:58.253901-06:00'
 model: gpt-4-1106-preview
-summary: Miten.
+summary: ''
 title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---

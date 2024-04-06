@@ -5,10 +5,10 @@ description: "How to: (\uBC29\uBC95) Fish Shell\uC5D0\uC11C \uBB38\uC790\uC5F4 \
   \uC744 \uBC14\uB85C \uC774\uC5B4 \uBD99\uC774\uC138\uC694. \uADF8\uB9AC\uACE0 \uACB0\
   \uACFC\uB97C \uD655\uC778\uD558\uC138\uC694."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.840981-06:00'
+lastmod: '2024-04-05T21:53:57.431888-06:00'
 model: gpt-4-1106-preview
-summary: "Fish Shell\uC5D0\uC11C \uBB38\uC790\uC5F4 \uC5F0\uACB0\uC740 \uAC04\uB2E8\
-  \uD569\uB2C8\uB2E4."
+summary: "(\uBC29\uBC95) Fish Shell\uC5D0\uC11C \uBB38\uC790\uC5F4 \uC5F0\uACB0\uC740\
+  \ \uAC04\uB2E8\uD569\uB2C8\uB2E4."
 title: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uD558\uAE30"
 weight: 3
 ---

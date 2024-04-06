@@ -3,9 +3,8 @@ changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:53:31.462000-07:00
 description: "Como fazer: O Dart oferece v\xE1rias maneiras simples de concatenar\
-  \ strings. Abaixo est\xE3o os m\xE9todos mais comuns: O operador `+` \xE9 a maneira\
-  \ mais intuitiva\u2026"
-lastmod: '2024-03-13T22:44:46.272813-06:00'
+  \ strings. Abaixo est\xE3o os m\xE9todos mais comuns."
+lastmod: '2024-04-05T21:53:46.601805-06:00'
 model: gpt-4-0125-preview
 summary: "O Dart oferece v\xE1rias maneiras simples de concatenar strings."
 title: Concatenando strings

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:50:26.725662-07:00
-description: "S\xE5 h\xE4r g\xF6r du: ."
-lastmod: '2024-03-13T22:44:37.511569-06:00'
+description: "S\xE5 h\xE4r g\xF6r du: Interpolering av str\xE4ngar \xE4r inte en inbyggd\
+  \ funktion i Clojure p\xE5 samma s\xE4tt som i vissa andra spr\xE5k. Historiskt,\
+  \ i Lisp-dialekter var man\u2026"
+lastmod: '2024-04-05T21:53:38.839272-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Interpolering av str\xE4ngar \xE4r inte en inbyggd funktion i Clojure p\xE5\
+  \ samma s\xE4tt som i vissa andra spr\xE5k."
 title: "Interpolera en str\xE4ng"
 weight: 8
 ---

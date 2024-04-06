@@ -5,11 +5,11 @@ description: "How to: \u600E\u6837\u505A\uFF1F \u5728Haskell\u4E2D\uFF0C\u4F60\u
   \u9001HTTP\u8BF7\u6C42\u3002\u8FD9\u91CC\u6709\u4E00\u4E2A\u5C0F\u4F8B\u5B50\uFF1A\
   ."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:47.811803-06:00'
+lastmod: '2024-04-05T21:53:48.124435-06:00'
 model: gpt-4-1106-preview
-summary: "\u5728Haskell\u4E2D\uFF0C\u4F60\u53EF\u4EE5\u4F7F\u7528`http-client`\u548C\
-  `http-conduit`\u5E93\u7B80\u5355\u5730\u53D1\u9001HTTP\u8BF7\u6C42\u3002\u8FD9\u91CC\
-  \u6709\u4E00\u4E2A\u5C0F\u4F8B\u5B50\uFF1A."
+summary: "\u600E\u6837\u505A\uFF1F \u5728Haskell\u4E2D\uFF0C\u4F60\u53EF\u4EE5\u4F7F\
+  \u7528`http-client`\u548C`http-conduit`\u5E93\u7B80\u5355\u5730\u53D1\u9001HTTP\u8BF7\
+  \u6C42\u3002\u8FD9\u91CC\u6709\u4E00\u4E2A\u5C0F\u4F8B\u5B50\uFF1A."
 title: "\u53D1\u51FA HTTP \u8BF7\u6C42"
 weight: 44
 ---

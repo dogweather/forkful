@@ -4,11 +4,9 @@ description: "\u5B9E\u64CD\u6307\u5357 (How to) \u5728 Bash \u4E2D\uFF0C\u4F60\u
   \u4EE5\u7528 `date` \u547D\u4EE4\u548C `-d` \u53C2\u6570\u6765\u8BA1\u7B97\u65E5\
   \u671F\u3002\u4F8B\u5B50\u5982\u4E0B\uFF1A."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:47.977752-06:00'
+lastmod: '2024-04-05T21:53:48.277865-06:00'
 model: gpt-4-1106-preview
-summary: "\u5728 Bash \u4E2D\uFF0C\u4F60\u53EF\u4EE5\u7528 `date` \u547D\u4EE4\u548C\
-  \ `-d` \u53C2\u6570\u6765\u8BA1\u7B97\u65E5\u671F\u3002\u4F8B\u5B50\u5982\u4E0B\uFF1A\
-  ."
+summary: ''
 title: "\u8BA1\u7B97\u672A\u6765\u6216\u8FC7\u53BB\u7684\u65E5\u671F"
 weight: 26
 ---

@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:50:14.918678-07:00
-description: 'How to: - Kuinka: .'
-lastmod: '2024-03-13T22:44:56.724561-06:00'
+description: "How to: - Kuinka: Alun perin k\xE4ytettiin kovakoodattuja merkkijonoja,\
+  \ mutta interpolointi otettiin k\xE4ytt\xF6\xF6n, jotta koodi mukautuisi eri tilanteisiin.\u2026"
+lastmod: '2024-04-05T21:53:58.298242-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: Merkkijonon interpolointi
 weight: 8
 ---

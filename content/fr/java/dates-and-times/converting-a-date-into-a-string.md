@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:36:39.288532-07:00
 description: 'How to: Voici comment transformer une date en string en Java .'
-lastmod: '2024-03-13T22:44:57.654159-06:00'
+lastmod: '2024-04-05T21:53:59.152340-06:00'
 model: gpt-4-1106-preview
-summary: Voici comment transformer une date en string en Java.
+summary: Voici comment transformer une date en string en Java .
 title: "Conversion d'une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---

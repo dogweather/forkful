@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:34:49.613199-07:00
-description: "C\xF3mo hacerlo: ."
-lastmod: '2024-03-13T22:44:59.111296-06:00'
+description: "C\xF3mo hacerlo: Hist\xF3ricamente, la concatenaci\xF3n de cadenas es\
+  \ tan antigua como los primeros lenguajes de programaci\xF3n, la necesidad de manipular\
+  \ texto ha\u2026"
+lastmod: '2024-04-05T21:54:00.455923-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Hist\xF3ricamente, la concatenaci\xF3n de cadenas es tan antigua como los\
+  \ primeros lenguajes de programaci\xF3n, la necesidad de manipular texto ha sido\
+  \ siempre fundamental."
 title: "Concatenaci\xF3n de cadenas de texto"
 weight: 3
 ---

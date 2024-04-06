@@ -4,10 +4,11 @@ description: "How to: (\u65B9\u6CD5) Clojure\u3067\u306F`clojure.string/lower-ca
   \u6570\u3092\u4F7F\u3063\u3066\u6587\u5B57\u5217\u3092\u5C0F\u6587\u5B57\u306B\u5909\
   \u3048\u307E\u3059\u3002"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:41.539799-06:00'
+lastmod: '2024-04-05T21:53:42.489132-06:00'
 model: gpt-4-1106-preview
-summary: "Clojure\u3067\u306F`clojure.string/lower-case`\u95A2\u6570\u3092\u4F7F\u3063\
-  \u3066\u6587\u5B57\u5217\u3092\u5C0F\u6587\u5B57\u306B\u5909\u3048\u307E\u3059."
+summary: "(\u65B9\u6CD5) Clojure\u3067\u306F`clojure.string/lower-case`\u95A2\u6570\
+  \u3092\u4F7F\u3063\u3066\u6587\u5B57\u5217\u3092\u5C0F\u6587\u5B57\u306B\u5909\u3048\
+  \u307E\u3059\u3002"
 title: "\u6587\u5B57\u5217\u3092\u5C0F\u6587\u5B57\u306B\u5909\u63DB"
 weight: 4
 ---

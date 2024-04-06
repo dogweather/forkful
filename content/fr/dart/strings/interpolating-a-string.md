@@ -4,11 +4,11 @@ changelog:
 date: 2024-03-08 21:54:47.532900-07:00
 description: "Comment faire : En Dart, l'interpolation de cha\xEEnes est simple, en\
   \ utilisant le symbole `$` pour interpoler directement les expressions au sein des\u2026"
-lastmod: '2024-03-13T22:44:57.358514-06:00'
+lastmod: '2024-04-05T21:53:58.937316-06:00'
 model: gpt-4-0125-preview
 summary: "En Dart, l'interpolation de cha\xEEnes est simple, en utilisant le symbole\
   \ `$` pour interpoler directement les expressions au sein des litt\xE9raux de cha\xEE\
-  ne."
+  ne ."
 title: "Interpolation d'une cha\xEEne de caract\xE8res"
 weight: 8
 ---

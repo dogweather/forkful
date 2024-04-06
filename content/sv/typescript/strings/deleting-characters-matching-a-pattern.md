@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:43:22.307335-07:00
-description: "Hur man g\xF6r: ."
-lastmod: '2024-03-13T22:44:37.640633-06:00'
+description: "Hur man g\xF6r: I koden ovan definierar vi en funktion `removePatternFromString`\
+  \ som anv\xE4nder regulj\xE4ra uttryck f\xF6r att plocka bort tecken som matchar\
+  \ ett\u2026"
+lastmod: '2024-04-05T21:53:38.969313-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "I koden ovan definierar vi en funktion `removePatternFromString` som anv\xE4\
+  nder regulj\xE4ra uttryck f\xF6r att plocka bort tecken som matchar ett givet m\xF6\
+  nster fr\xE5n en str\xE4ng."
 title: "Ta bort tecken som matchar ett m\xF6nster"
 weight: 5
 ---

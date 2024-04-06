@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:57:13.979254-07:00
-description: "C\xF3mo: ."
-lastmod: '2024-03-13T22:44:58.817925-06:00'
+description: "C\xF3mo: Salida de muestra si ejecutas `ts-node tu_script.ts hola mundo`."
+lastmod: '2024-04-05T21:54:00.165649-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Salida de muestra si ejecutas `ts-node tu_script.ts hola mundo`.
 title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---

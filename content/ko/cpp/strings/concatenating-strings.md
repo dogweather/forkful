@@ -1,10 +1,17 @@
 ---
 date: 2024-01-20 17:34:06.573203-07:00
-description: "How to: (\uBC29\uBC95) ."
+description: "How to: (\uBC29\uBC95) \uBB38\uC790\uC5F4 \uC5F0\uACB0\uC740 \uCC98\uC74C\
+  \ C\uAC00 \uB4F1\uC7A5\uD588\uC744 \uB54C\uBD80\uD130 \uAE30\uBCF8\uC801\uC778 \uAE30\
+  \uB2A5\uC774\uC5C8\uC2B5\uB2C8\uB2E4. C++\uC5D0\uC11C\uB294 `std::string`\uC774\
+  \ \uC774\uB97C \uC27D\uAC8C \uD574\uC8FC\uBA70, `+` \uC5F0\uC0B0\uC790\uB97C \uC774\
+  \uC6A9\uD569\uB2C8\uB2E4. \uC5EC\uB7EC \uBC29\uBC95(\uC608: `append()`, `stringstream`,\
+  \ `fmt` \uB77C\uC774\uBE0C\uB7EC\uB9AC)\uC73C\uB85C\u2026"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.656651-06:00'
+lastmod: '2024-04-05T21:53:57.291835-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(\uBC29\uBC95) \uBB38\uC790\uC5F4 \uC5F0\uACB0\uC740 \uCC98\uC74C C\uAC00\
+  \ \uB4F1\uC7A5\uD588\uC744 \uB54C\uBD80\uD130 \uAE30\uBCF8\uC801\uC778 \uAE30\uB2A5\
+  \uC774\uC5C8\uC2B5\uB2C8\uB2E4."
 title: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uD558\uAE30"
 weight: 3
 ---

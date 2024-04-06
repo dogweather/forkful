@@ -4,11 +4,11 @@ description: "How to: (\u5982\u4F55\u64CD\u4F5C\uFF1A) \u5728TypeScript\u91CC, \
   \u7528`console.log`\u6765\u6253\u5370\u8C03\u8BD5\u4FE1\u606F\u3002\u66F4\u9AD8\u7EA7\
   \u7684\u8C03\u8BD5\uFF0C\u7528`console.debug`, `console.info`, `console.warn`, `console.error`."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:47.474451-06:00'
+lastmod: '2024-04-05T21:53:47.798427-06:00'
 model: gpt-4-1106-preview
-summary: "\u5728TypeScript\u91CC, \u4F7F\u7528`console.log`\u6765\u6253\u5370\u8C03\
-  \u8BD5\u4FE1\u606F\u3002\u66F4\u9AD8\u7EA7\u7684\u8C03\u8BD5\uFF0C\u7528`console.debug`,\
-  \ `console.info`, `console.warn`, `console.error`."
+summary: "(\u5982\u4F55\u64CD\u4F5C\uFF1A) \u5728TypeScript\u91CC, \u4F7F\u7528`console.log`\u6765\
+  \u6253\u5370\u8C03\u8BD5\u4FE1\u606F\u3002\u66F4\u9AD8\u7EA7\u7684\u8C03\u8BD5\uFF0C\
+  \u7528`console.debug`, `console.info`, `console.warn`, `console.error`."
 title: "\u6253\u5370\u8C03\u8BD5\u8F93\u51FA"
 weight: 33
 ---

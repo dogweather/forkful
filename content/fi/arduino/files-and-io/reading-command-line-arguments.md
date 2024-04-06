@@ -3,11 +3,11 @@ date: 2024-01-20 17:55:53.843687-07:00
 description: "How to: (Kuinka tehd\xE4\xE4n:) Arduino-ymp\xE4rist\xF6ss\xE4 ei k\xE4\
   ytet\xE4 perinteisi\xE4 komentoriviargumentteja kuten tietokoneen ohjelmissa, koska\
   \ Arduino koodi ladataan\u2026"
-lastmod: '2024-03-13T22:44:56.838880-06:00'
+lastmod: '2024-04-05T21:53:58.415730-06:00'
 model: gpt-4-1106-preview
-summary: "Arduino-ymp\xE4rist\xF6ss\xE4 ei k\xE4ytet\xE4 perinteisi\xE4 komentoriviargumentteja\
-  \ kuten tietokoneen ohjelmissa, koska Arduino koodi ladataan mikrokontrollerille,\
-  \ ja se ei k\xE4ynnisty komentorivilt\xE4."
+summary: "(Kuinka tehd\xE4\xE4n:) Arduino-ymp\xE4rist\xF6ss\xE4 ei k\xE4ytet\xE4 perinteisi\xE4\
+  \ komentoriviargumentteja kuten tietokoneen ohjelmissa, koska Arduino koodi ladataan\
+  \ mikrokontrollerille, ja se ei k\xE4ynnisty komentorivilt\xE4."
 title: Komennoriviparametrien lukeminen
 weight: 23
 ---

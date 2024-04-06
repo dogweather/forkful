@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:56:20.435559-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.724334-06:00'
+description: "Como Fazer: Sa\xEDda esperada se o nome foi fornecido."
+lastmod: '2024-04-05T21:53:47.070148-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Sa\xEDda esperada se o nome foi fornecido."
 title: Lendo argumentos da linha de comando
 weight: 23
 ---

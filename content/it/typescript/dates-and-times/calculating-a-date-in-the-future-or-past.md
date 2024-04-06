@@ -1,9 +1,14 @@
 ---
 date: 2024-01-20 17:32:29.412439-07:00
-description: 'Come fare: .'
-lastmod: '2024-03-13T22:44:43.189400-06:00'
+description: "Come fare: Storicamente, la gestione delle date in programmazione \xE8\
+  \ stata fonte di molti bug e complessit\xE0, per via delle diverse rappresentazioni\
+  \ di\u2026"
+lastmod: '2024-04-05T21:53:43.962273-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Storicamente, la gestione delle date in programmazione \xE8 stata fonte\
+  \ di molti bug e complessit\xE0, per via delle diverse rappresentazioni di tempo\
+  \ (locale, UTC, ecc.), dei fusi orari e delle regole sulle variazioni come le ore\
+  \ legali."
 title: Calcolo di una data futura o passata
 weight: 26
 ---

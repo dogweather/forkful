@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:30:54.796485-07:00
-description: "Hur man g\xF6r: ."
-lastmod: '2024-03-13T22:44:38.351681-06:00'
+description: "Hur man g\xF6r: Output exempel n\xE4r dagens datum \xE4r 2023-03-01."
+lastmod: '2024-04-05T21:53:39.689726-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Output exempel n\xE4r dagens datum \xE4r 2023-03-01."
 title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutenheten"
 weight: 26
 ---

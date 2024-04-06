@@ -2,10 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:06.332574-07:00
-description: "C\xE1ch th\u1EF1c hi\u1EC7n: ."
-lastmod: '2024-03-13T22:44:36.691786-06:00'
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: B\u1ED9 th\u01B0 vi\u1EC7n phong ph\xFA\
+  \ c\u1EE7a Haskell, nh\u01B0 'Data.List', cung c\u1EA5p nhi\u1EC1u c\xF4ng c\u1EE5\
+  \ \u0111\u1EC3 thao t\xE1c v\u1EDBi danh s\xE1ch, m\xE0 chu\u1ED7i v\u1EC1 c\u01A1\
+  \ b\u1EA3n l\xE0 m\u1ED9t tr\u01B0\u1EDDng h\u1EE3p\u2026"
+lastmod: '2024-04-05T21:53:38.078795-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "B\u1ED9 th\u01B0 vi\u1EC7n phong ph\xFA c\u1EE7a Haskell, nh\u01B0 'Data.List',\
+  \ cung c\u1EA5p nhi\u1EC1u c\xF4ng c\u1EE5 \u0111\u1EC3 thao t\xE1c v\u1EDBi danh\
+  \ s\xE1ch, m\xE0 chu\u1ED7i v\u1EC1 c\u01A1 b\u1EA3n l\xE0 m\u1ED9t tr\u01B0\u1EDD\
+  ng h\u1EE3p \u0111\u1EB7c bi\u1EC7t c\u1EE7a."
 title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
 weight: 5
 ---

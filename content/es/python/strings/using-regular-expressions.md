@@ -4,8 +4,8 @@ changelog:
 date: 2024-02-03 19:17:49.564032-07:00
 description: "C\xF3mo hacerlo: Usar regex en Python implica el m\xF3dulo `re`, que\
   \ proporciona un conjunto de funciones para procesar texto utilizando expresiones\
-  \ regulares.\u2026"
-lastmod: '2024-03-13T22:44:58.600509-06:00'
+  \ regulares."
+lastmod: '2024-04-05T21:53:59.959727-06:00'
 model: gpt-4-0125-preview
 summary: "Usar regex en Python implica el m\xF3dulo `re`, que proporciona un conjunto\
   \ de funciones para procesar texto utilizando expresiones regulares."

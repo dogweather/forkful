@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:42:31.299202-07:00
-description: "Jak to zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:35.435595-06:00'
+description: "Jak to zrobi\u0107: Output."
+lastmod: '2024-04-05T21:53:36.869416-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---

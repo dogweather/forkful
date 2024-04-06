@@ -4,11 +4,11 @@ description: "How to: (\uBC29\uBC95) Haskell\uC5D0\uC11C HTTP \uC694\uCCAD\uC744
   \uB0B4\uACE0 Basic \uC778\uC99D\uC744 \uCC98\uB9AC\uD558\uB294 \uAC04\uB2E8\uD55C\
   \ \uC608\uC2DC\uC785\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.295244-06:00'
+lastmod: '2024-04-05T21:53:57.009767-06:00'
 model: gpt-4-1106-preview
-summary: "Haskell\uC5D0\uC11C HTTP \uC694\uCCAD\uC744 \uBCF4\uB0B4\uACE0 Basic \uC778\
-  \uC99D\uC744 \uCC98\uB9AC\uD558\uB294 \uAC04\uB2E8\uD55C \uC608\uC2DC\uC785\uB2C8\
-  \uB2E4."
+summary: "(\uBC29\uBC95) Haskell\uC5D0\uC11C HTTP \uC694\uCCAD\uC744 \uBCF4\uB0B4\uACE0\
+  \ Basic \uC778\uC99D\uC744 \uCC98\uB9AC\uD558\uB294 \uAC04\uB2E8\uD55C \uC608\uC2DC\
+  \uC785\uB2C8\uB2E4."
 title: "\uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD55C HTTP \uC694\uCCAD \uBCF4\
   \uB0B4\uAE30"
 weight: 45

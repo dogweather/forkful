@@ -2,9 +2,9 @@
 date: 2024-01-20 17:50:21.617948-07:00
 description: "How to: \u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\
   \u0438: In C++, you can use `std::format` from C++20 to interpolate strings easily."
-lastmod: '2024-03-13T22:44:49.818312-06:00'
+lastmod: '2024-04-05T21:53:49.914065-06:00'
 model: gpt-4-1106-preview
-summary: "\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\u0438."
+summary: ''
 title: "\u0406\u043D\u0442\u0435\u0440\u043F\u043E\u043B\u044F\u0446\u0456\u044F \u0440\
   \u044F\u0434\u043A\u0456\u0432"
 weight: 8

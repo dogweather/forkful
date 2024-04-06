@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:44:05.141254-07:00
-description: "How to: (Jak to zrobi\u0107:) ."
-lastmod: '2024-03-13T22:44:35.840228-06:00'
+description: "How to: (Jak to zrobi\u0107:) Je\u015Bli wszystko przebiegnie pomy\u015B\
+  lnie, zobaczysz utworzony plik `example_page.html` z zawarto\u015Bci\u0105 strony\
+  \ `example.com`."
+lastmod: '2024-04-05T21:53:37.267174-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(Jak to zrobi\u0107:) Je\u015Bli wszystko przebiegnie pomy\u015Blnie, zobaczysz\
+  \ utworzony plik `example_page.html` z zawarto\u015Bci\u0105 strony `example.com`."
 title: Pobieranie strony internetowej
 weight: 42
 ---

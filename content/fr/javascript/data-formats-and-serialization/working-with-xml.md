@@ -1,9 +1,9 @@
 ---
 date: 2024-01-26 04:32:32.326243-07:00
 description: 'Comment faire : Voici comment analyser XML .'
-lastmod: '2024-03-13T22:44:58.303572-06:00'
+lastmod: '2024-04-05T21:53:59.703489-06:00'
 model: gpt-4-0125-preview
-summary: Voici comment analyser XML.
+summary: Voici comment analyser XML .
 title: Travailler avec XML
 weight: 40
 ---

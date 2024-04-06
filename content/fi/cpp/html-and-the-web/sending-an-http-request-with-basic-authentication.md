@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 18:01:03.439862-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:56.864822-06:00'
+description: "How to: HTTP Basic Authentication on vanhin verkkotunnistusmenetelm\xE4\
+  . Sen k\xE4ytt\xF6 on yksinkertaista: k\xE4ytt\xE4j\xE4tunnus ja salasana yhdistet\xE4\
+  \xE4n, koodataan\u2026"
+lastmod: '2024-04-05T21:53:58.443050-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "HTTP Basic Authentication on vanhin verkkotunnistusmenetelm\xE4."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---

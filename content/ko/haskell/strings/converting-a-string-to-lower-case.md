@@ -1,10 +1,16 @@
 ---
 date: 2024-01-20 17:38:47.321069-07:00
-description: "How to: (\uBC29\uBC95) ."
+description: "How to: (\uBC29\uBC95) \uC704 \uC608\uC81C\uC5D0\uC11C `toLower` \uD568\
+  \uC218\uB294 `Data.Char` \uBAA8\uB4C8 \uC548\uC5D0 \uC788\uC73C\uBA70, \uBAA8\uB4E0\
+  \ \uBB38\uC790\uB97C \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD569\uB2C8\uB2E4. \uD55C\
+  \uAE00 \uBB38\uC790\uC5D0 \uB300\uD574\uC11C\uB294 \uBCC0\uD658\uC774 \uC801\uC6A9\
+  \uB418\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.277203-06:00'
+lastmod: '2024-04-05T21:53:56.994766-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(\uBC29\uBC95) \uC704 \uC608\uC81C\uC5D0\uC11C `toLower` \uD568\uC218\uB294\
+  \ `Data.Char` \uBAA8\uB4C8 \uC548\uC5D0 \uC788\uC73C\uBA70, \uBAA8\uB4E0 \uBB38\uC790\
+  \uB97C \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD569\uB2C8\uB2E4."
 title: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD558\uAE30"
 weight: 4
 ---

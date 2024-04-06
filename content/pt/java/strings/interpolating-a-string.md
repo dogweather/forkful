@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:51:28.010121-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.442708-06:00'
+description: "Como Fazer: Antigamente, a interpola\xE7\xE3o de strings em Java era\
+  \ feita primariamente atrav\xE9s de concatena\xE7\xE3o direta com o operador `+`\
+  \ ou com o m\xE9todo\u2026"
+lastmod: '2024-04-05T21:53:46.781279-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Antigamente, a interpola\xE7\xE3o de strings em Java era feita primariamente\
+  \ atrav\xE9s de concatena\xE7\xE3o direta com o operador `+` ou com o m\xE9todo\
+  \ `String.format()`."
 title: Interpolando uma string
 weight: 8
 ---

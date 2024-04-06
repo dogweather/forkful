@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:54:45.586248-07:00
-description: 'How to: (Come fare:) .'
-lastmod: '2024-03-13T22:44:43.534058-06:00'
+description: 'How to: (Come fare:) Risultato esemplificativo.'
+lastmod: '2024-04-05T21:53:44.298079-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: (Come fare:) Risultato esemplificativo.
 title: Lettura di un file di testo
 weight: 22
 ---

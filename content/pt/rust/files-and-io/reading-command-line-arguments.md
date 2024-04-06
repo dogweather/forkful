@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:57:02.185620-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.383034-06:00'
+description: "Como Fazer: Execute o programa com `cargo run` seguido pelos argumentos.\
+  \ Aqui est\xE1 um exemplo de output."
+lastmod: '2024-04-05T21:53:46.715977-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Execute o programa com `cargo run` seguido pelos argumentos.
 title: Lendo argumentos da linha de comando
 weight: 23
 ---

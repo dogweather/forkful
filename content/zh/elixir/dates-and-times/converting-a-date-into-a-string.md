@@ -5,11 +5,9 @@ description: "How to (\u5982\u4F55\u64CD\u4F5C) Elixir\u63D0\u4F9B\u4E86\u5185\u
   `Date`\u6A21\u5757\u548C`to_string/1`\u51FD\u6570\u53EF\u4EE5\u7B80\u6D01\u5730\u5B8C\
   \u6210\u8F6C\u6362\u5DE5\u4F5C\uFF1A."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:47.379188-06:00'
+lastmod: '2024-04-05T21:53:47.712350-06:00'
 model: gpt-4-1106-preview
-summary: "Elixir\u63D0\u4F9B\u4E86\u5185\u5EFA\u7684\u65E5\u671F\u7C7B\u578B\u4EE5\
-  \u53CA\u8F6C\u6362\u529F\u80FD\u3002\u4F7F\u7528`Date`\u6A21\u5757\u548C`to_string/1`\u51FD\
-  \u6570\u53EF\u4EE5\u7B80\u6D01\u5730\u5B8C\u6210\u8F6C\u6362\u5DE5\u4F5C\uFF1A."
+summary: ''
 title: "\u5C06\u65E5\u671F\u8F6C\u6362\u4E3A\u5B57\u7B26\u4E32"
 weight: 28
 ---

@@ -2,10 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:08.503347-07:00
-description: 'Hoe: .'
-lastmod: '2024-03-13T22:44:51.073387-06:00'
+description: 'Hoe: Sluit je Arduino-bord aan, upload de schets en kijk hoe de ingebouwde
+  LED elke seconde knippert.'
+lastmod: '2024-04-05T21:53:51.087818-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: Sluit je Arduino-bord aan, upload de schets en kijk hoe de ingebouwde LED
+  elke seconde knippert.
 title: Een nieuw project starten
 weight: 1
 ---

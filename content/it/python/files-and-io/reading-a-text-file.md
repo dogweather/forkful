@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:54:59.837862-07:00
 description: How to (Come Fare) Ecco come leggere un file di testo in Python.
-lastmod: '2024-03-13T22:44:43.018452-06:00'
+lastmod: '2024-04-05T21:53:43.801457-06:00'
 model: gpt-4-1106-preview
-summary: Ecco come leggere un file di testo in Python.
+summary: ''
 title: Lettura di un file di testo
 weight: 22
 ---

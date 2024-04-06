@@ -2,10 +2,10 @@
 date: 2024-01-20 17:52:44.562989-07:00
 description: "How to: \"\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\
   \u0438:\" Print a simple message to the console."
-lastmod: '2024-03-13T22:44:49.997641-06:00'
+lastmod: '2024-04-05T21:53:50.055525-06:00'
 model: gpt-4-1106-preview
 summary: "\"\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\u0438:\"\
-  \nPrint a simple message to the console."
+  \ Print a simple message to the console."
 title: "\u0412\u0438\u0432\u0435\u0434\u0435\u043D\u043D\u044F \u043D\u0430\u043B\u0430\
   \u0433\u043E\u0434\u0436\u0443\u0432\u0430\u043B\u044C\u043D\u043E\u0457 \u0456\u043D\
   \u0444\u043E\u0440\u043C\u0430\u0446\u0456\u0457"

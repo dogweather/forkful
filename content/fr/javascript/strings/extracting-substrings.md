@@ -2,9 +2,10 @@
 date: 2024-01-20 17:45:48.246349-07:00
 description: "Comment faire : Voici trois m\xE9thodes courantes pour extraire des\
   \ sous-cha\xEEnes en JavaScript ."
-lastmod: '2024-03-13T22:44:58.263215-06:00'
+lastmod: '2024-04-05T21:53:59.666400-06:00'
 model: gpt-4-1106-preview
-summary: "Voici trois m\xE9thodes courantes pour extraire des sous-cha\xEEnes en JavaScript."
+summary: "Voici trois m\xE9thodes courantes pour extraire des sous-cha\xEEnes en JavaScript\
+  \ ."
 title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---

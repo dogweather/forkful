@@ -2,10 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:20.414469-07:00
-description: 'Hoe te: .'
-lastmod: '2024-03-13T22:44:50.940951-06:00'
+description: "Hoe te: Historisch gezien had Lua geen ingebouwd testframework, wat\
+  \ ertoe leidde dat ontwikkelaars hun eigen maakten of die van derden gebruikten,\
+  \ zoals\u2026"
+lastmod: '2024-04-05T21:53:50.963596-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: Historisch gezien had Lua geen ingebouwd testframework, wat ertoe leidde
+  dat ontwikkelaars hun eigen maakten of die van derden gebruikten, zoals LuaUnit
+  of busted.
 title: Tests Schrijven
 weight: 36
 ---

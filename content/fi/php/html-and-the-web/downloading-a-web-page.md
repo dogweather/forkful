@@ -3,9 +3,9 @@ date: 2024-01-20 17:44:46.068460-07:00
 description: "How to: (Kuinka tehd\xE4:) PHP:ll\xE4 webbisivun lataaminen onnistuu\
   \ `file_get_contents`-funktiolla tai cURL-kirjastolla. T\xE4ss\xE4 on esimerkki\
   \ molemmista."
-lastmod: '2024-03-13T22:44:56.654800-06:00'
+lastmod: '2024-04-05T21:53:58.226761-06:00'
 model: gpt-4-1106-preview
-summary: "PHP:ll\xE4 webbisivun lataaminen onnistuu `file_get_contents`-funktiolla\
+summary: "(Kuinka tehd\xE4:) PHP:ll\xE4 webbisivun lataaminen onnistuu `file_get_contents`-funktiolla\
   \ tai cURL-kirjastolla."
 title: Verkkosivun lataaminen
 weight: 42

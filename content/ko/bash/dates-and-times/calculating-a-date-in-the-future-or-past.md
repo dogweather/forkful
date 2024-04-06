@@ -1,10 +1,12 @@
 ---
 date: 2024-01-20 17:28:32.851851-07:00
-description: "How to (\uC2E4\uD589 \uBC29\uBC95) ."
+description: "How to (\uC2E4\uD589 \uBC29\uBC95) \uC704 \uBA85\uB839\uC740 \uAC01\uAC01\
+  \ \uB0B4\uC77C, 5\uC77C \uD6C4, \uADF8\uB9AC\uACE0 2\uC8FC \uC804\uC758 \uB0A0\uC9DC\
+  \uB97C \uCD9C\uB825\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.501307-06:00'
+lastmod: '2024-04-05T21:53:57.169090-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "\uBBF8\uB798 \uD639\uC740 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\uC0B0\uD558\
   \uAE30"
 weight: 26

@@ -2,9 +2,10 @@
 date: 2024-01-20 17:57:27.245107-07:00
 description: "How to: (Slik gj\xF8r du det:) For en enkel C++-oppgave kan du bruke\
   \ `std::string` og `std::string::replace`. Her er et eksempel."
-lastmod: '2024-03-13T22:44:41.084767-06:00'
+lastmod: '2024-04-05T21:53:42.046911-06:00'
 model: gpt-4-1106-preview
-summary: For en enkel C++-oppgave kan du bruke `std::string` og `std::string::replace`.
+summary: "(Slik gj\xF8r du det:) For en enkel C++-oppgave kan du bruke `std::string`\
+  \ og `std::string::replace`."
 title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---

@@ -1,10 +1,11 @@
 ---
 date: 2024-01-20 17:55:42.179585-07:00
-description: "How to: (\uC5B4\uB5BB\uAC8C \uD558\uB098\uC694?) ."
+description: "How to: (\uC5B4\uB5BB\uAC8C \uD558\uB098\uC694?) **\uC2E4\uD589 \uC608\
+  :**."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.691626-06:00'
+lastmod: '2024-04-05T21:53:57.317324-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(\uC5B4\uB5BB\uAC8C \uD558\uB098\uC694?) **\uC2E4\uD589 \uC608:**."
 title: "\uBA85\uB839\uC904 \uC778\uC218 \uC77D\uAE30"
 weight: 23
 ---

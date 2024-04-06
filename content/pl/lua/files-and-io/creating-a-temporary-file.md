@@ -2,10 +2,10 @@
 date: 2024-01-20 17:40:43.619873-07:00
 description: "How to: (Jak to zrobi\u0107:) Lua nie ma wbudowanej obs\u0142ugi dla\
   \ tymczasowych plik\xF3w, ale mo\u017Cemy to sobie oskryptowa\u0107."
-lastmod: '2024-03-13T22:44:35.559452-06:00'
+lastmod: '2024-04-05T21:53:36.987626-06:00'
 model: gpt-4-1106-preview
-summary: "Lua nie ma wbudowanej obs\u0142ugi dla tymczasowych plik\xF3w, ale mo\u017C\
-  emy to sobie oskryptowa\u0107."
+summary: "(Jak to zrobi\u0107:) Lua nie ma wbudowanej obs\u0142ugi dla tymczasowych\
+  \ plik\xF3w, ale mo\u017Cemy to sobie oskryptowa\u0107."
 title: Tworzenie pliku tymczasowego
 weight: 21
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:04:27.083983-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:59.859527-06:00'
+description: "How to: TypeScript, a superset of JavaScript, was developed by Microsoft\
+  \ and first released in October 2012. It adds static types to JavaScript, which\
+  \ can\u2026"
+lastmod: '2024-04-05T21:53:35.546952-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: TypeScript, a superset of JavaScript, was developed by Microsoft and first
+  released in October 2012.
 title: Starting a new project
 weight: 1
 ---

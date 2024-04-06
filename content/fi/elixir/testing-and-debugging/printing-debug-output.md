@@ -2,10 +2,10 @@
 date: 2024-01-20 17:52:20.220810-07:00
 description: "How to: (Kuinka tehd\xE4:) K\xE4ytet\xE4\xE4n `IO.puts` tai `IO.inspect`\
   \ n\xE4ytt\xE4m\xE4\xE4n tietoja konsolissa."
-lastmod: '2024-03-13T22:44:56.229542-06:00'
+lastmod: '2024-04-05T21:53:57.785668-06:00'
 model: gpt-4-1106-preview
-summary: "(Kuinka tehd\xE4:)\n\nK\xE4ytet\xE4\xE4n `IO.puts` tai `IO.inspect` n\xE4\
-  ytt\xE4m\xE4\xE4n tietoja konsolissa."
+summary: "(Kuinka tehd\xE4:) K\xE4ytet\xE4\xE4n `IO.puts` tai `IO.inspect` n\xE4ytt\xE4\
+  m\xE4\xE4n tietoja konsolissa."
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---

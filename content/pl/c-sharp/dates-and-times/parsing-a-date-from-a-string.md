@@ -5,9 +5,9 @@ date: 2024-02-03 19:13:49.071516-07:00
 description: "Jak to zrobi\u0107: **Podstawowe przetwarzanie:** Metody `DateTime.Parse`\
   \ i `DateTime.TryParse` to podstawowe opcje do konwertowania ci\u0105gu znak\xF3\
   w na\u2026"
-lastmod: '2024-03-13T22:44:35.417698-06:00'
+lastmod: '2024-04-05T21:53:36.852298-06:00'
 model: gpt-4-0125-preview
-summary: "**Podstawowe przetwarzanie:**\n\nMetody `DateTime.Parse` i `DateTime.TryParse`\
+summary: "**Podstawowe przetwarzanie:** Metody `DateTime.Parse` i `DateTime.TryParse`\
   \ to podstawowe opcje do konwertowania ci\u0105gu znak\xF3w na `DateTime`."
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30

@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:31:50.173067-07:00
 description: "How to: \"Kuinka tehd\xE4:\"."
-lastmod: '2024-03-13T22:44:57.100648-06:00'
+lastmod: '2024-04-05T21:53:58.682603-06:00'
 model: gpt-4-1106-preview
-summary: "\"Kuinka tehd\xE4:\"."
+summary: ''
 title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---

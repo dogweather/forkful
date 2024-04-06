@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:54:05.962758-07:00
 description: "How to: \"N\xE4in teet:\" Tiedoston lukeminen kokonaisuudessaan."
-lastmod: '2024-03-13T22:44:56.201513-06:00'
+lastmod: '2024-04-05T21:53:57.757648-06:00'
 model: gpt-4-1106-preview
-summary: "\"N\xE4in teet:\"\n\nTiedoston lukeminen kokonaisuudessaan."
+summary: "\"N\xE4in teet:\" Tiedoston lukeminen kokonaisuudessaan."
 title: Tekstitiedoston lukeminen
 weight: 22
 ---

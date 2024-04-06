@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 18:02:34.966925-07:00
 description: 'How to: Miten toteutetaan.'
-lastmod: '2024-03-13T22:44:56.356512-06:00'
+lastmod: '2024-04-05T21:53:57.915953-06:00'
 model: gpt-4-1106-preview
-summary: Miten toteutetaan.
+summary: ''
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---

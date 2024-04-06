@@ -2,10 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:58.233934-07:00
-description: 'Hoe te: .'
-lastmod: '2024-03-13T22:44:50.753616-06:00'
+description: "Hoe te: Kotlin, be\xEFnvloed door andere moderne talen, introduceerde\
+  \ stringinterpolatie als een schonere alternatief voor Java's string samenvoeging.\
+  \ Het\u2026"
+lastmod: '2024-04-05T21:53:50.776220-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Kotlin, be\xEFnvloed door andere moderne talen, introduceerde stringinterpolatie\
+  \ als een schonere alternatief voor Java's string samenvoeging."
 title: Een string interpoleren
 weight: 8
 ---

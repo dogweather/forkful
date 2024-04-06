@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 18:04:00.724342-07:00
-description: "How to: (Kuinka tehd\xE4:) ."
-lastmod: '2024-03-13T22:44:56.445785-06:00'
+description: "How to: (Kuinka tehd\xE4:) Kun olet suorittanut yll\xE4 olevat komennot,\
+  \ sinulla on uusi Java-projekti 'example-project' kansiossa, joka sis\xE4lt\xE4\xE4\
+  \ standardin\u2026"
+lastmod: '2024-04-05T21:53:58.012375-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(Kuinka tehd\xE4:) Kun olet suorittanut yll\xE4 olevat komennot, sinulla\
+  \ on uusi Java-projekti 'example-project' kansiossa, joka sis\xE4lt\xE4\xE4 standardin\
+  \ Maven-kansiokaavion ja yksinkertaisen `App.java` aloitusluokan."
 title: Uuden projektin aloittaminen
 weight: 1
 ---

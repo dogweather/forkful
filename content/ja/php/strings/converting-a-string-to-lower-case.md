@@ -1,10 +1,15 @@
 ---
 date: 2024-01-20 17:39:32.911595-07:00
-description: "How to (\u5B9F\u88C5\u65B9\u6CD5) ."
+description: "How to (\u5B9F\u88C5\u65B9\u6CD5) PHP\u3067\u306F\u3001`mb_strtolower()`\u95A2\
+  \u6570\u3092\u4F7F\u3063\u3066\u7C21\u5358\u306B\u6587\u5B57\u5217\u3092\u5C0F\u6587\
+  \u5B57\u306B\u5909\u63DB\u3067\u304D\u307E\u3059\u3002`mb_` \u306F\u30DE\u30EB\u30C1\
+  \u30D0\u30A4\u30C8\u6587\u5B57\u306B\u5BFE\u5FDC\u3057\u3066\u304A\u308A\u3001\u65E5\
+  \u672C\u8A9E\u3092\u542B\u3080\u591A\u304F\u306E\u8A00\u8A9E\u3067\u5FC5\u8981\u3067\
+  \u3059\u3002"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:42.227971-06:00'
+lastmod: '2024-04-05T21:53:43.085547-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "\u6587\u5B57\u5217\u3092\u5C0F\u6587\u5B57\u306B\u5909\u63DB"
 weight: 4
 ---

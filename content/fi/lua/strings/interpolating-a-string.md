@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:51:29.330391-07:00
-description: 'How to: - Kuinka: .'
-lastmod: '2024-03-13T22:44:56.684071-06:00'
+description: "How to: - Kuinka: Aiemmin, ennen kuin `string.format` tuli kuvioihin,\
+  \ merkkijonojen yhdist\xE4minen oli hankalampaa. Vanha koulu k\xE4ytti konkatenointia\
+  \ (`..`\u2026"
+lastmod: '2024-04-05T21:53:58.255895-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: Merkkijonon interpolointi
 weight: 8
 ---

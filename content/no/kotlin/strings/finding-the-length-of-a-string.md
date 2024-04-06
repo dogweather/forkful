@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:47:35.845942-07:00
-description: 'Hvordan: .'
-lastmod: '2024-03-13T22:44:40.741172-06:00'
+description: "Hvordan: I databehandlingens barndom, n\xE5r hvert byte teller, var\
+  \ det avgj\xF8rende \xE5 vite n\xF8yaktig hvor lang en streng var for \xE5 unng\xE5\
+  \ \xE5 sl\xF8se med plass. I\u2026"
+lastmod: '2024-04-05T21:53:41.720634-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "I databehandlingens barndom, n\xE5r hvert byte teller, var det avgj\xF8\
+  rende \xE5 vite n\xF8yaktig hvor lang en streng var for \xE5 unng\xE5 \xE5 sl\xF8\
+  se med plass."
 title: "Finn lengden p\xE5 en streng"
 weight: 7
 ---

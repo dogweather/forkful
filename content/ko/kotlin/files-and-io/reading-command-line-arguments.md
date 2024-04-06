@@ -5,10 +5,11 @@ description: "How to: (\uC5B4\uB5BB\uAC8C \uC0AC\uC6A9\uD558\uB098\uC694?) \uAC0
   \uB85C \uBC1B\uC544 \uC0AC\uC6A9\uD569\uB2C8\uB2E4. \uCF54\uB4DC \uC608\uC2DC\uC640\
   \ \uACB0\uACFC\uB97C \uBCF4\uC5EC\uB4DC\uB9AC\uC8E0."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.193891-06:00'
+lastmod: '2024-04-05T21:53:56.930905-06:00'
 model: gpt-4-1106-preview
-summary: "\uAC04\uB2E8\uD788, `Array<String>` \uD0C0\uC785\uC758 `args`\uB97C \uBA54\
-  \uC778 \uD568\uC218\uB85C \uBC1B\uC544 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
+summary: "(\uC5B4\uB5BB\uAC8C \uC0AC\uC6A9\uD558\uB098\uC694?) \uAC04\uB2E8\uD788\
+  , `Array<String>` \uD0C0\uC785\uC758 `args`\uB97C \uBA54\uC778 \uD568\uC218\uB85C\
+  \ \uBC1B\uC544 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uBA85\uB839\uC904 \uC778\uC218 \uC77D\uAE30"
 weight: 23
 ---

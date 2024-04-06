@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:37:38.018725-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:59.868985-06:00'
+description: "How to: Think of a date's string format as its passport, allowing it\
+  \ to travel across system boundaries - from databases to web pages. Historically,\
+  \ we've\u2026"
+lastmod: '2024-04-05T21:53:35.557239-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Think of a date's string format as its passport, allowing it to travel across
+  system boundaries - from databases to web pages.
 title: Converting a date into a string
 weight: 28
 ---

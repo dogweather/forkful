@@ -2,9 +2,9 @@
 date: 2024-01-26 04:34:14.688342-07:00
 description: "\u65B9\u6CD5\uFF1A SimpleXML\u3067\u306EXML\u8AAD\u307F\u8FBC\u307F\uFF1A\
   ."
-lastmod: '2024-03-13T22:44:42.278640-06:00'
+lastmod: '2024-04-05T21:53:43.130297-06:00'
 model: gpt-4-0125-preview
-summary: "SimpleXML\u3067\u306EXML\u8AAD\u307F\u8FBC\u307F\uFF1A."
+summary: ''
 title: "XML\u306E\u6271\u3044\u65B9"
 weight: 40
 ---

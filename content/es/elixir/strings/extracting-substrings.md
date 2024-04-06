@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:45:30.270259-07:00
-description: "C\xF3mo Hacerlo: ."
-lastmod: '2024-03-13T22:44:58.690734-06:00'
+description: "C\xF3mo Hacerlo: Antes de Elixir, ven\xEDan otros lenguajes como Ruby\
+  \ o Python, donde ya se extra\xEDan subcadenas, pero Elixir brinda un enfoque funcional\
+  \ y\u2026"
+lastmod: '2024-04-05T21:54:00.045683-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Antes de Elixir, ven\xEDan otros lenguajes como Ruby o Python, donde ya\
+  \ se extra\xEDan subcadenas, pero Elixir brinda un enfoque funcional y concurrente\
+  \ a esta operaci\xF3n."
 title: "Extracci\xF3n de subcadenas"
 weight: 6
 ---

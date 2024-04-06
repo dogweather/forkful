@@ -2,10 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:53.438951-07:00
-description: 'Hoe: .'
-lastmod: '2024-03-13T22:44:51.130586-06:00'
+description: 'Hoe: Als `voorbeeld.txt` bevat.'
+lastmod: '2024-04-05T21:53:51.144613-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: Als `voorbeeld.txt` bevat.
 title: Een tekstbestand lezen
 weight: 22
 ---

@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:53:42.738665-07:00
-description: "C\xF3mo Hacerlo: ."
-lastmod: '2024-03-13T22:44:59.419073-06:00'
+description: "C\xF3mo Hacerlo: Salida de muestra en consola."
+lastmod: '2024-04-05T21:54:00.768492-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Salida de muestra en consola.
 title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---

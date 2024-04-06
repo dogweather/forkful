@@ -2,9 +2,9 @@
 date: 2024-01-20 17:58:29.177150-07:00
 description: "How to: (\u65B9\u6CD5\uFF1A) Let\u2019s see it in action."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:41.480289-06:00'
+lastmod: '2024-04-05T21:53:42.436052-06:00'
 model: gpt-4-1106-preview
-summary: "Let\u2019s see it in action."
+summary: "(\u65B9\u6CD5\uFF1A) Let\u2019s see it in action."
 title: "\u30C6\u30AD\u30B9\u30C8\u306E\u691C\u7D22\u3068\u7F6E\u63DB"
 weight: 10
 ---

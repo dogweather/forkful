@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:35:33.067603-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.145781-06:00'
+description: "Como Fazer: Concatena\xE7\xE3o de strings \xE9 um conceito t\xE3o antigo\
+  \ quanto as pr\xF3prias linguagens de programa\xE7\xE3o. Em Python, al\xE9m do operador\
+  \ `+` e do m\xE9todo\u2026"
+lastmod: '2024-04-05T21:53:46.467552-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Concatena\xE7\xE3o de strings \xE9 um conceito t\xE3o antigo quanto as pr\xF3\
+  prias linguagens de programa\xE7\xE3o."
 title: Concatenando strings
 weight: 3
 ---

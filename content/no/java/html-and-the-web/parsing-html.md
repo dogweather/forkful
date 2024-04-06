@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 15:32:52.025900-07:00
-description: 'Hvordan: .'
-lastmod: '2024-03-13T22:44:40.664483-06:00'
+description: "Hvordan: Parsing av HTML startet s\xE5 snart webapplikasjoner trengte\
+  \ \xE5 interagere med websider utover \xE5 bare vise dem. Historisk har programmerere\
+  \ brukt\u2026"
+lastmod: '2024-04-05T21:53:41.645003-06:00'
 model: unknown
-summary: .
+summary: "Parsing av HTML startet s\xE5 snart webapplikasjoner trengte \xE5 interagere\
+  \ med websider utover \xE5 bare vise dem."
 title: Analyse av HTML
 weight: 43
 ---

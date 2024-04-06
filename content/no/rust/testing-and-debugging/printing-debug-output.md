@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:53:16.537521-07:00
-description: 'Hvordan: .'
-lastmod: '2024-03-13T22:44:40.576272-06:00'
+description: "Hvordan: Tilbake p\xE5 70-tallet var printf-deklarasjoner greia for\
+  \ feils\xF8king. I Rust bruker vi `println!` for vanlig output og `dbg!` makroen\
+  \ for debug.\u2026"
+lastmod: '2024-04-05T21:53:41.555275-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Tilbake p\xE5 70-tallet var printf-deklarasjoner greia for feils\xF8king."
 title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---

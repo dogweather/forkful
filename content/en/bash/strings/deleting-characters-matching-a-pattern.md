@@ -1,7 +1,7 @@
 ---
 date: 2024-01-20 17:41:29.677647-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:45:00.228963-06:00'
+description: 'How to: Output: `Hello, World!`.'
+lastmod: '2024-04-05T21:53:35.925940-06:00'
 model: gpt-4-1106-preview
 summary: ''
 title: Deleting characters matching a pattern

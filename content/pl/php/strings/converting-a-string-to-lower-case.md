@@ -2,9 +2,9 @@
 date: 2024-01-20 17:39:09.138522-07:00
 description: "How to: / Jak to zrobi\u0107: W PHP mo\u017Cemy to zrobi\u0107 u\u017C\
   ywaj\u0105c funkcji `strtolower()`. Oto jak to dzia\u0142a."
-lastmod: '2024-03-13T22:44:35.483610-06:00'
+lastmod: '2024-04-05T21:53:36.915286-06:00'
 model: gpt-4-1106-preview
-summary: "W PHP mo\u017Cemy to zrobi\u0107 u\u017Cywaj\u0105c funkcji `strtolower()`."
+summary: ''
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---

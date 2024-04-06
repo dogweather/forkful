@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:32:11.403089-07:00
-description: "Hur g\xF6r man: ."
-lastmod: '2024-03-13T22:44:38.179825-06:00'
+description: "Hur g\xF6r man: Exempelutmatning."
+lastmod: '2024-04-05T21:53:39.516264-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---

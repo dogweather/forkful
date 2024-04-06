@@ -4,10 +4,11 @@ description: "How to: (\u5982\u4F55\u64CD\u4F5C\uFF1A) Swift\u4E2D\uFF0C\u7528`C
   \u63A5\u8BBF\u95EE\u547D\u4EE4\u884C\u53C2\u6570\u3002\u770B\u4E2A\u7B80\u5355\u4F8B\
   \u5B50\uFF1A."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:48.175129-06:00'
+lastmod: '2024-04-05T21:53:48.464038-06:00'
 model: gpt-4-1106-preview
-summary: "Swift\u4E2D\uFF0C\u7528`CommandLine`\u76F4\u63A5\u8BBF\u95EE\u547D\u4EE4\
-  \u884C\u53C2\u6570\u3002\u770B\u4E2A\u7B80\u5355\u4F8B\u5B50\uFF1A."
+summary: "(\u5982\u4F55\u64CD\u4F5C\uFF1A) Swift\u4E2D\uFF0C\u7528`CommandLine`\u76F4\
+  \u63A5\u8BBF\u95EE\u547D\u4EE4\u884C\u53C2\u6570\u3002\u770B\u4E2A\u7B80\u5355\u4F8B\
+  \u5B50\uFF1A."
 title: "\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570"
 weight: 23
 ---

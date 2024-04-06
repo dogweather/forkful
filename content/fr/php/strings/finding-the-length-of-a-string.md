@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:47:50.837566-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:57.868632-06:00'
+description: "Comment faire : Historiquement, `strlen()` \xE9tait LA mani\xE8re de\
+  \ mesurer la longueur d'une cha\xEEne en PHP. Mais attention, `strlen()` compte\
+  \ les octets, pas\u2026"
+lastmod: '2024-04-05T21:53:59.353884-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historiquement, `strlen()` \xE9tait LA mani\xE8re de mesurer la longueur\
+  \ d'une cha\xEEne en PHP."
 title: "Trouver la longueur d'une cha\xEEne de caract\xE8res"
 weight: 7
 ---

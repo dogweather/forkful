@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:01:30.784809-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:46.499772-06:00'
+description: "How to: Autentica\xE7\xE3o b\xE1sica \xE9 um m\xE9todo antigo, introduzido\
+  \ pelo HTTP/1.0. Apesar de sua simplicidade, hoje em dia \xE9 considerada insegura\
+  \ se usada sem\u2026"
+lastmod: '2024-04-05T21:53:46.839048-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Autentica\xE7\xE3o b\xE1sica \xE9 um m\xE9todo antigo, introduzido pelo\
+  \ HTTP/1.0."
 title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 weight: 45
 ---

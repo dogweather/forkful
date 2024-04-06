@@ -3,11 +3,9 @@ date: 2024-01-26 04:29:18.762955-07:00
 description: "\u5982\u4F55\u64CD\u4F5C\uFF1A Clojure \u63D0\u4F9B\u4E86 `clojure.data.xml`\
   \ \u5E93\u7528\u4E8E XML \u7684\u89E3\u6790\u548C\u751F\u6210\u3002\u9996\u5148\uFF0C\
   \u8BA9\u6211\u4EEC\u6765\u89E3\u6790\u4E00\u4E9B XML\uFF1A."
-lastmod: '2024-03-13T22:44:47.331928-06:00'
+lastmod: '2024-04-05T21:53:47.681384-06:00'
 model: gpt-4-0125-preview
-summary: "Clojure \u63D0\u4F9B\u4E86 `clojure.data.xml` \u5E93\u7528\u4E8E XML \u7684\
-  \u89E3\u6790\u548C\u751F\u6210\u3002\u9996\u5148\uFF0C\u8BA9\u6211\u4EEC\u6765\u89E3\
-  \u6790\u4E00\u4E9B XML\uFF1A."
+summary: ''
 title: "\u5904\u7406XML"
 weight: 40
 ---

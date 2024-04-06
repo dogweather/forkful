@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:33:48.336528-07:00
-description: 'Come Fare: .'
-lastmod: '2024-03-13T22:44:44.063358-06:00'
+description: "Come Fare: Comparare date \xE8 essenziale fin dall'inizio della programmazione.\
+  \ Ruby usa la classe `Date` per la gestione delle date, permettendo di\u2026"
+lastmod: '2024-04-05T21:53:44.706641-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Comparare date \xE8 essenziale fin dall'inizio della programmazione."
 title: Confronto tra due date
 weight: 27
 ---

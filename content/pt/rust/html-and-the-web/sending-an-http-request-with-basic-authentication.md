@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 18:02:38.440396-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.367426-06:00'
+description: "Como Fazer: Exemplo de sa\xEDda."
+lastmod: '2024-04-05T21:53:46.700373-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 weight: 45
 ---

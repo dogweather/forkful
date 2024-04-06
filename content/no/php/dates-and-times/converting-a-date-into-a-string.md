@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:37:07.732561-07:00
 description: "Hvordan gj\xF8re det: ."
-lastmod: '2024-03-13T22:44:40.898014-06:00'
+lastmod: '2024-04-05T21:53:41.864966-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: Konvertere en dato til en streng
 weight: 28
 ---

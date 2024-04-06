@@ -2,9 +2,9 @@
 date: 2024-01-20 17:39:23.851647-07:00
 description: "How to: | Kuinka: PowerShellissa merkkijonon muuttaminen pieniksi kirjaimiksi\
   \ on yksinkertaista. K\xE4yt\xE4 `.ToLower()` -metodia tai `ToLowerInvariant()`\u2026"
-lastmod: '2024-03-13T22:44:56.767662-06:00'
+lastmod: '2024-04-05T21:53:58.342810-06:00'
 model: gpt-4-1106-preview
-summary: PowerShellissa merkkijonon muuttaminen pieniksi kirjaimiksi on yksinkertaista.
+summary: ''
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---

@@ -2,10 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:58.954335-07:00
-description: "C\xE1ch l\xE0m: ."
-lastmod: '2024-03-13T22:44:36.487671-06:00'
+description: "C\xE1ch l\xE0m: \u0110\u1EA7u ra m\u1EABu c\xF3 th\u1EC3 nh\xECn nh\u01B0\
+  \ n\xE0y."
+lastmod: '2024-04-05T21:53:37.893616-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "\u0110\u1EA7u ra m\u1EABu c\xF3 th\u1EC3 nh\xECn nh\u01B0 n\xE0y."
 title: "T\u1EA3i trang web"
 weight: 42
 ---

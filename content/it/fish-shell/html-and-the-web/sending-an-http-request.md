@@ -2,9 +2,10 @@
 date: 2024-01-20 17:59:37.240438-07:00
 description: 'How to: (Come fare:) Usiamo `curl`, un tool da linea di comando, per
   mandare richieste HTTP. Ecco degli esempi con output in Fish Shell.'
-lastmod: '2024-03-13T22:44:43.855504-06:00'
+lastmod: '2024-04-05T21:53:44.600496-06:00'
 model: gpt-4-1106-preview
-summary: Usiamo `curl`, un tool da linea di comando, per mandare richieste HTTP.
+summary: (Come fare:) Usiamo `curl`, un tool da linea di comando, per mandare richieste
+  HTTP.
 title: Inviare una richiesta http
 weight: 44
 ---

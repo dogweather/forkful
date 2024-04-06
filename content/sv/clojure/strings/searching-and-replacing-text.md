@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:57:27.875527-07:00
-description: "Hur g\xF6r man: ."
-lastmod: '2024-03-13T22:44:37.510660-06:00'
+description: "Hur g\xF6r man: I tidiga datortider hanterades texters\xE4ttningar med\
+  \ kommandon som 'sed' i Unix. Clojure, en modern Lisp-dialekt, erbjuder flexibel\u2026"
+lastmod: '2024-04-05T21:53:38.838072-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "I tidiga datortider hanterades texters\xE4ttningar med kommandon som 'sed'\
+  \ i Unix."
 title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---

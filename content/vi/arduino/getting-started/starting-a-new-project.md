@@ -2,10 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:23.919323-07:00
-description: "C\xE1ch th\u1EF1c hi\u1EC7n: ."
-lastmod: '2024-03-13T22:44:36.991009-06:00'
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: K\u1EBFt n\u1ED1i b\u1EA3ng Arduino c\u1EE7\
+  a b\u1EA1n, t\u1EA3i l\xEAn b\u1EA3n sketch v\xE0 quan s\xE1t LED n\u1ED9i b\u1ED9\
+  \ nh\u1EA5p nh\xE1y m\u1ED7i gi\xE2y."
+lastmod: '2024-04-05T21:53:38.352591-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "K\u1EBFt n\u1ED1i b\u1EA3ng Arduino c\u1EE7a b\u1EA1n, t\u1EA3i l\xEAn b\u1EA3\
+  n sketch v\xE0 quan s\xE1t LED n\u1ED9i b\u1ED9 nh\u1EA5p nh\xE1y m\u1ED7i gi\xE2\
+  y."
 title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---

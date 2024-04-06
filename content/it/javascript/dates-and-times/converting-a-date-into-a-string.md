@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:36:58.687298-07:00
-description: 'Come si fa: .'
-lastmod: '2024-03-13T22:44:43.824265-06:00'
+description: "Come si fa: Il metodo `Date` di JavaScript esiste sin dai primi giorni\
+  \ del linguaggio, evolvendosi per accogliere le esigenze della globalizzazione.\
+  \ Oltre\u2026"
+lastmod: '2024-04-05T21:53:44.572138-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Il metodo `Date` di JavaScript esiste sin dai primi giorni del linguaggio,
+  evolvendosi per accogliere le esigenze della globalizzazione.
 title: Conversione di una data in una stringa
 weight: 28
 ---

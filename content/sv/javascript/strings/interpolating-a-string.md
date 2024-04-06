@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:51:14.346851-07:00
-description: "Hur g\xF6r man: ."
-lastmod: '2024-03-13T22:44:38.279570-06:00'
+description: "Hur g\xF6r man: \xC4ldre s\xE4tt, innan ES6."
+lastmod: '2024-04-05T21:53:39.616740-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "\xC4ldre s\xE4tt, innan ES6."
 title: "Interpolera en str\xE4ng"
 weight: 8
 ---

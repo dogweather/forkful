@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 01:11:08.941884-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:58.281658-06:00'
+description: "Comment faire : Historiquement, les langages de programmation imp\xE9\
+  ratifs comme les premi\xE8res versions de BASIC ou l'Assembleur manquaient de l'abstraction\u2026"
+lastmod: '2024-04-05T21:53:59.683113-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historiquement, les langages de programmation imp\xE9ratifs comme les premi\xE8\
+  res versions de BASIC ou l'Assembleur manquaient de l'abstraction que les fonctions\
+  \ fournissent."
 title: Organisation du code en fonctions
 weight: 18
 ---

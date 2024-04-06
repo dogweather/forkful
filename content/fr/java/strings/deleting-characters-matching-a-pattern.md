@@ -3,9 +3,9 @@ date: 2024-01-20 17:42:44.276980-07:00
 description: "Comment faire : Parlons code. Pour effacer des caract\xE8res selon un\
   \ motif, on utilise souvent les expressions r\xE9guli\xE8res avec la classe `Pattern`\
   \ et\u2026"
-lastmod: '2024-03-13T22:44:57.618032-06:00'
+lastmod: '2024-04-05T21:53:59.125691-06:00'
 model: gpt-4-1106-preview
-summary: Parlons code.
+summary: ''
 title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---

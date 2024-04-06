@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 18:03:04.662709-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:35.673022-06:00'
+description: "How to: Sample output (Przyk\u0142adowe wyj\u015Bcie)."
+lastmod: '2024-04-05T21:53:37.097772-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Sample output (Przyk\u0142adowe wyj\u015Bcie)."
 title: Rozpoczynanie nowego projektu
 weight: 1
 ---

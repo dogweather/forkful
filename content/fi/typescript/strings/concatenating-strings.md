@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:35:39.169899-07:00
-description: 'Kuinka: .'
-lastmod: '2024-03-13T22:44:56.307553-06:00'
+description: "Kuinka: Aikoinaan, JavaScriptiss\xE4 merkkijonojen yhdist\xE4minen tapahtui\
+  \ vain `+` operaattorilla tai `concat()`-metodilla. TypeScript, JavaScriptin\u2026"
+lastmod: '2024-04-05T21:53:57.864949-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Aikoinaan, JavaScriptiss\xE4 merkkijonojen yhdist\xE4minen tapahtui vain\
+  \ `+` operaattorilla tai `concat()`-metodilla."
 title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---

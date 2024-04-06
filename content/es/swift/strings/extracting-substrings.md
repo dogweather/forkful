@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:46:42.829111-07:00
-description: "C\xF3mo hacerlo: ."
-lastmod: '2024-03-13T22:44:59.405866-06:00'
+description: "C\xF3mo hacerlo: Ejemplo de salida."
+lastmod: '2024-04-05T21:54:00.755165-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "Extracci\xF3n de subcadenas"
 weight: 6
 ---

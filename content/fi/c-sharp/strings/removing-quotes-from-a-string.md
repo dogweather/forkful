@@ -1,9 +1,13 @@
 ---
 date: 2024-01-26 03:38:27.288244-07:00
-description: 'Miten: .'
-lastmod: '2024-03-13T22:44:56.561336-06:00'
+description: "Miten: Lainausmerkkien poistamisen konsepti ei ole uusi tai erityisen\
+  \ monimutkainen, mutta se on kriittinen, koska lainausmerkkej\xE4 k\xE4ytet\xE4\xE4\
+  n usein\u2026"
+lastmod: '2024-04-05T21:53:58.128379-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Lainausmerkkien poistamisen konsepti ei ole uusi tai erityisen monimutkainen,\
+  \ mutta se on kriittinen, koska lainausmerkkej\xE4 k\xE4ytet\xE4\xE4n usein merkkijonojen\
+  \ rajaamiseen."
 title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---

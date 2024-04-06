@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:41:26.586975-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:57.457712-06:00'
+description: 'Comment faire : Sortie attendue .'
+lastmod: '2024-04-05T21:53:59.021205-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---

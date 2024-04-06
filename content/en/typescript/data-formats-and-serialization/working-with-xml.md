@@ -1,9 +1,11 @@
 ---
 date: 2024-01-25 03:39:28.770982-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:59.880123-06:00'
+description: "How to: XML, or Extensible Markup Language, has been around since the\
+  \ late '90s. Its self-descriptive nature and human-readable format made it a hit\
+  \ early\u2026"
+lastmod: '2024-04-05T21:53:35.569839-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: XML, or Extensible Markup Language, has been around since the late '90s.
 title: Working with XML
 weight: 40
 ---

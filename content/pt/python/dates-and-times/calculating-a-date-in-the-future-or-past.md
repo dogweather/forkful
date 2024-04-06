@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:31:42.520475-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.167610-06:00'
+description: "Como Fazer: Historicamente, a manipula\xE7\xE3o de datas tem sido um\
+  \ desafio em programa\xE7\xE3o devido a varia\xE7\xF5es de calend\xE1rio, fusos\
+  \ hor\xE1rios e regras de hor\xE1rio\u2026"
+lastmod: '2024-04-05T21:53:46.489290-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historicamente, a manipula\xE7\xE3o de datas tem sido um desafio em programa\xE7\
+  \xE3o devido a varia\xE7\xF5es de calend\xE1rio, fusos hor\xE1rios e regras de hor\xE1\
+  rio de ver\xE3o."
 title: Calculando uma data no futuro ou passado
 weight: 26
 ---

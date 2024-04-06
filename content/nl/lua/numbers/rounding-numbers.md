@@ -2,10 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:55.242693-07:00
-description: 'Hoe: .'
-lastmod: '2024-03-13T22:44:50.932391-06:00'
+description: "Hoe: Lua bevat standaard geen afrondfunctie, in tegenstelling tot sommige\
+  \ andere talen. Geschiedenlijk moet je je eigen schrijven of een bibliotheek van\u2026"
+lastmod: '2024-04-05T21:53:50.954179-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: Lua bevat standaard geen afrondfunctie, in tegenstelling tot sommige andere
+  talen.
 title: Afronden van getallen
 weight: 13
 ---

@@ -2,9 +2,9 @@
 date: 2024-01-20 18:03:14.329355-07:00
 description: "How to: / Kuinka: Aloitetaan uusi C#-projekti Visual Studio 2022:ssa.\
   \ Ei mit\xE4\xE4n ylim\xE4\xE4r\xE4ist\xE4."
-lastmod: '2024-03-13T22:44:56.573747-06:00'
+lastmod: '2024-04-05T21:53:58.141089-06:00'
 model: gpt-4-1106-preview
-summary: Aloitetaan uusi C#-projekti Visual Studio 2022:ssa.
+summary: ''
 title: Uuden projektin aloittaminen
 weight: 1
 ---

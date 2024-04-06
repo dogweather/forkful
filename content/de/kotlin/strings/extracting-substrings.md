@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:46:06.719912-07:00
-description: 'So geht''s: .'
-lastmod: '2024-03-13T22:44:53.836320-06:00'
+description: "So geht's: Das Extrahieren von Teil-Strings ist eine grundlegende Funktion\
+  \ vieler Programmiersprachen und schon lange vor Kotlin existent gewesen. Kotlin\u2026"
+lastmod: '2024-04-05T21:53:55.720147-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Das Extrahieren von Teil-Strings ist eine grundlegende Funktion vieler Programmiersprachen
+  und schon lange vor Kotlin existent gewesen.
 title: Teilstrings extrahieren
 weight: 6
 ---

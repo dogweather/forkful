@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:34:19.887590-07:00
-description: 'Como fazer: .'
-lastmod: '2024-03-13T22:44:46.338353-06:00'
+description: "Como fazer: Historicamente, a compara\xE7\xE3o de datas nos prim\xF3\
+  rdios da computa\xE7\xE3o era menos intuitiva devido a sistemas que n\xE3o representavam\
+  \ datas de forma\u2026"
+lastmod: '2024-04-05T21:53:46.669159-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historicamente, a compara\xE7\xE3o de datas nos prim\xF3rdios da computa\xE7\
+  \xE3o era menos intuitiva devido a sistemas que n\xE3o representavam datas de forma\
+  \ unificada."
 title: Comparando duas datas
 weight: 27
 ---

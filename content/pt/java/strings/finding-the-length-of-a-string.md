@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:47:37.851640-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.447358-06:00'
+description: "Como Fazer: Historicamente, a fun\xE7\xE3o `length()` faz parte do Java\
+  \ desde suas primeiras vers\xF5es, facilitando a vida dos desenvolvedores que precisam\
+  \ saber\u2026"
+lastmod: '2024-04-05T21:53:46.786719-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historicamente, a fun\xE7\xE3o `length()` faz parte do Java desde suas primeiras\
+  \ vers\xF5es, facilitando a vida dos desenvolvedores que precisam saber o tamanho\
+  \ de uma sequ\xEAncia de caracteres."
 title: Descobrindo o comprimento de uma string
 weight: 7
 ---

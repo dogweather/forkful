@@ -6,11 +6,12 @@ description: "How to: (\uC5B4\uB5BB\uAC8C \uD558\uB098\uC694?) PHP\uC5D0\uC11C \
   \ \uAC83\uC785\uB2C8\uB2E4. \uBA3C\uC800 `tmpfile()` \uC608\uC81C\uB97C \uBCF4\uC2DC\
   \uC8E0."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.385234-06:00'
+lastmod: '2024-04-05T21:53:57.079893-06:00'
 model: gpt-4-1106-preview
-summary: "PHP\uC5D0\uC11C \uC784\uC2DC \uD30C\uC77C\uC744 \uB9CC\uB4E4\uACE0 \uC0AC\
-  \uC6A9\uD558\uB294 \uBC29\uBC95\uC740 `tmpfile()`\uC640 `tempnam()` \uD568\uC218\
-  \uB97C \uC774\uC6A9\uD558\uB294 \uAC83\uC785\uB2C8\uB2E4."
+summary: "(\uC5B4\uB5BB\uAC8C \uD558\uB098\uC694?) PHP\uC5D0\uC11C \uC784\uC2DC \uD30C\
+  \uC77C\uC744 \uB9CC\uB4E4\uACE0 \uC0AC\uC6A9\uD558\uB294 \uBC29\uBC95\uC740 `tmpfile()`\uC640\
+  \ `tempnam()` \uD568\uC218\uB97C \uC774\uC6A9\uD558\uB294 \uAC83\uC785\uB2C8\uB2E4\
+  ."
 title: "\uC784\uC2DC \uD30C\uC77C \uC0DD\uC131\uD558\uAE30"
 weight: 21
 ---

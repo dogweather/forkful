@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:30:40.559247-07:00
-description: "Hur g\xF6r man: ."
-lastmod: '2024-03-13T22:44:37.580935-06:00'
+description: "Hur g\xF6r man: I Elixir kan du hantera datum med inbyggda moduler som\
+  \ `Date` och `DateTime`. F\xF6rm\xE5gan att manipulera datum \xE4r viktig sedan\
+  \ b\xF6rjan av\u2026"
+lastmod: '2024-04-05T21:53:38.908963-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: I Elixir kan du hantera datum med inbyggda moduler som `Date` och `DateTime`.
 title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutenheten"
 weight: 26
 ---

@@ -2,8 +2,9 @@
 changelog:
 - 2024-03-17, gpt-4-0125-preview, translated from English
 date: 2024-03-17 18:09:01.341071-06:00
-description: "\u0995\u09BF\u09AD\u09BE\u09AC\u09C7: ."
-lastmod: '2024-03-17T18:47:44.150762-06:00'
+description: "\u0995\u09BF\u09AD\u09BE\u09AC\u09C7: \u09A8\u09AE\u09C1\u09A8\u09BE\
+  \ \u0986\u0989\u099F\u09AA\u09C1\u099F."
+lastmod: '2024-04-05T21:53:52.577002-06:00'
 model: gpt-4-0125-preview
 summary: ''
 title: "\u099F\u09C7\u0995\u09CD\u09B8\u099F \u09AB\u09BE\u0987\u09B2 \u09AA\u09A1\

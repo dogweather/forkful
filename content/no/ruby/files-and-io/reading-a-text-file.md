@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:55:14.604834-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:41.350804-06:00'
+description: "How to: Lesing av tekstfiler i Ruby har r\xF8tter tilbake til UNIX-filosofien,\
+  \ der alt er en fil. Dette enkle konseptet gj\xF8r det kraftfullt og fleksibelt\
+  \ \xE5\u2026"
+lastmod: '2024-04-05T21:53:42.293790-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Lesing av tekstfiler i Ruby har r\xF8tter tilbake til UNIX-filosofien, der\
+  \ alt er en fil."
 title: Lese en tekstfil
 weight: 22
 ---

@@ -1,9 +1,10 @@
 ---
 date: 2024-01-26 03:41:31.811737-07:00
-description: 'Come fare: .'
-lastmod: '2024-03-13T22:44:43.206168-06:00'
+description: 'Come fare: A volte puoi avere una stringa con virgolette miste, come
+  questa.'
+lastmod: '2024-04-05T21:53:43.978535-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: A volte puoi avere una stringa con virgolette miste, come questa.
 title: Rimuovere le virgolette da una stringa
 weight: 9
 ---

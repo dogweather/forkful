@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:34:44.990911-07:00
-description: 'How to: - Kuinka: .'
-lastmod: '2024-03-13T22:44:56.480503-06:00'
+description: 'How to: - Kuinka: Sample output.'
+lastmod: '2024-04-05T21:53:58.045780-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---

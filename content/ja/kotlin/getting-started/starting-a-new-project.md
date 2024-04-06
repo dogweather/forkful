@@ -4,11 +4,9 @@ description: "How to (\u65B9\u6CD5) \u65B0\u3057\u3044Kotlin\u30D7\u30ED\u30B8\u
   \u30AF\u30C8\u3092\u59CB\u3081\u308B\u57FA\u672C\u7684\u306A\u30B9\u30C6\u30C3\u30D7\
   \u306F\u3053\u3061\u3089."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:42.066104-06:00'
+lastmod: '2024-04-05T21:53:42.948919-06:00'
 model: gpt-4-1106-preview
-summary: "\u65B0\u3057\u3044Kotlin\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u3092\u59CB\
-  \u3081\u308B\u57FA\u672C\u7684\u306A\u30B9\u30C6\u30C3\u30D7\u306F\u3053\u3061\u3089\
-  ."
+summary: ''
 title: "\u65B0\u3057\u3044\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u3092\u59CB\u3081\u308B"
 weight: 1
 ---

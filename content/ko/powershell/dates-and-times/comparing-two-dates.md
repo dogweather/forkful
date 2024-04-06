@@ -1,10 +1,17 @@
 ---
 date: 2024-01-20 17:33:35.702869-07:00
-description: "How to: (\uBC29\uBC95:) ."
+description: "How to: (\uBC29\uBC95:) PowerShell\uC5D0\uC11C \uB0A0\uC9DC \uBE44\uAD50\
+  \uB294 `Get-Date`, `-eq`, `-gt`, `-lt` \uC640 \uAC19\uC740 Cmdlet\uACFC \uC5F0\uC0B0\
+  \uC790\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4. \uC774 \uAE30\uB2A5\uC740 .NET\uC758\
+  \ DateTime \uAC1D\uCCB4\uB97C \uAE30\uBC18\uC73C\uB85C \uD569\uB2C8\uB2E4. \uCD08\
+  \uAE30 \uBC84\uC804\uC758 PowerShell\uC5D0\uB294 \uC774\uB807\uAC8C \uAC04\uACB0\
+  \uD558\uACE0\u2026"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.565418-06:00'
+lastmod: '2024-04-05T21:53:57.217151-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(\uBC29\uBC95:) PowerShell\uC5D0\uC11C \uB0A0\uC9DC \uBE44\uAD50\uB294 `Get-Date`,\
+  \ `-eq`, `-gt`, `-lt` \uC640 \uAC19\uC740 Cmdlet\uACFC \uC5F0\uC0B0\uC790\uB97C\
+  \ \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uB450 \uB0A0\uC9DC \uBE44\uAD50\uD558\uAE30"
 weight: 27
 ---

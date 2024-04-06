@@ -4,10 +4,9 @@ description: "How to:\uFF08\u5982\u4F55\u505A\uFF1A\uFF09 C#\u91CC\u53D1HTTP\u8B
   \u6C42\u7B80\u5355\u76F4\u63A5\u3002\u5148\u770B\u770B`HttpClient`\u7684\u7528\u6CD5\
   \uFF1A."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:47.763951-06:00'
+lastmod: '2024-04-05T21:53:48.078457-06:00'
 model: gpt-4-1106-preview
-summary: "C#\u91CC\u53D1HTTP\u8BF7\u6C42\u7B80\u5355\u76F4\u63A5\u3002\u5148\u770B\
-  \u770B`HttpClient`\u7684\u7528\u6CD5\uFF1A."
+summary: ''
 title: "\u53D1\u51FA HTTP \u8BF7\u6C42"
 weight: 44
 ---

@@ -2,10 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:14.469372-07:00
-description: "L\xE0m th\u1EBF n\xE0o: ."
-lastmod: '2024-03-13T22:44:37.223622-06:00'
+description: "L\xE0m th\u1EBF n\xE0o: Fish Shell kh\xF4ng c\xF3 c\xE1c h\xE0m ph\xE2\
+  n t\xEDch c\xFA ph\xE1p ng\xE0y \u0111\u01B0\u1EE3c t\xEDch h\u1EE3p s\u1EB5n nh\u01B0\
+  \ m\u1ED9t s\u1ED1 ng\xF4n ng\u1EEF kh\xE1c. Thay v\xE0o \u0111\xF3, n\xF3 d\u1EF1\
+  a v\xE0o c\xE1c c\xF4ng c\u1EE5 b\xEAn ngo\xE0i\u2026"
+lastmod: '2024-04-05T21:53:38.565400-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Fish Shell kh\xF4ng c\xF3 c\xE1c h\xE0m ph\xE2n t\xEDch c\xFA ph\xE1p ng\xE0\
+  y \u0111\u01B0\u1EE3c t\xEDch h\u1EE3p s\u1EB5n nh\u01B0 m\u1ED9t s\u1ED1 ng\xF4\
+  n ng\u1EEF kh\xE1c."
 title: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB chu\u1ED7i k\xED t\u1EF1"
 weight: 30
 ---

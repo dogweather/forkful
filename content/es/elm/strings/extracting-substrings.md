@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:45:37.460353-07:00
-description: "\xBFC\xF3mo? ."
-lastmod: '2024-03-13T22:44:58.968540-06:00'
+description: "\xBFC\xF3mo? Hist\xF3ricamente, la extracci\xF3n de subcadenas ha sido\
+  \ una operaci\xF3n fundamental en la manipulaci\xF3n de texto en muchos lenguajes\
+  \ de programaci\xF3n. En\u2026"
+lastmod: '2024-04-05T21:54:00.322103-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Hist\xF3ricamente, la extracci\xF3n de subcadenas ha sido una operaci\xF3\
+  n fundamental en la manipulaci\xF3n de texto en muchos lenguajes de programaci\xF3\
+  n."
 title: "Extracci\xF3n de subcadenas"
 weight: 6
 ---

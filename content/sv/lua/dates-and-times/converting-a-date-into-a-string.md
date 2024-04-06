@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:37:05.492103-07:00
-description: "Hur g\xF6r man: ."
-lastmod: '2024-03-13T22:44:38.050161-06:00'
+description: "Hur g\xF6r man: Ovanst\xE5ende kod visar hur du anv\xE4nder `os.date()`\
+  \ f\xF6r att konvertera dagens datum till en str\xE4ng."
+lastmod: '2024-04-05T21:53:39.389596-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Ovanst\xE5ende kod visar hur du anv\xE4nder `os.date()` f\xF6r att konvertera\
+  \ dagens datum till en str\xE4ng."
 title: "Omvandla ett datum till en str\xE4ng"
 weight: 28
 ---

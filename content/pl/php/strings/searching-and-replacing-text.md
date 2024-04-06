@@ -3,10 +3,10 @@ date: 2024-01-20 17:58:24.683887-07:00
 description: "How to: (Jak to zrobi\u0107?) W PHP szukanie i zamiana tekstu cz\u0119\
   sto przechodzi przez `str_replace` albo regex z `preg_replace`. Prosty przyk\u0142\
   ad."
-lastmod: '2024-03-13T22:44:35.481525-06:00'
+lastmod: '2024-04-05T21:53:36.913500-06:00'
 model: gpt-4-1106-preview
-summary: "W PHP szukanie i zamiana tekstu cz\u0119sto przechodzi przez `str_replace`\
-  \ albo regex z `preg_replace`."
+summary: "(Jak to zrobi\u0107?) W PHP szukanie i zamiana tekstu cz\u0119sto przechodzi\
+  \ przez `str_replace` albo regex z `preg_replace`."
 title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---

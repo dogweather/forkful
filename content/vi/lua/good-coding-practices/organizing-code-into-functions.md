@@ -2,10 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:18.600887-07:00
-description: "C\xE1ch th\u1EF1c hi\u1EC7n: ."
-lastmod: '2024-03-13T22:44:36.829096-06:00'
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: C\xE1c h\xE0m tr\u1EDF n\xEAn ph\u1EE9\
+  c t\u1EA1p h\u01A1n, x\u1EED l\xFD nhi\u1EC1u nhi\u1EC7m v\u1EE5 kh\xE1c nhau."
+lastmod: '2024-04-05T21:53:38.204611-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "C\xE1c h\xE0m tr\u1EDF n\xEAn ph\u1EE9c t\u1EA1p h\u01A1n, x\u1EED l\xFD\
+  \ nhi\u1EC1u nhi\u1EC7m v\u1EE5 kh\xE1c nhau."
 title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
 weight: 18
 ---

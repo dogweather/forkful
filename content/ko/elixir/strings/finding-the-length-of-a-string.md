@@ -5,11 +5,11 @@ description: "How to: (\uC5B4\uB5BB\uAC8C \uD558\uB098\uC694?) Elixir\uC5D0\uC11
   \ \uD568\uC218\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4. \uC27D\uACE0 \uC9C1\uAD00\uC801\
   \uC774\uC8E0."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:54.708879-06:00'
+lastmod: '2024-04-05T21:53:56.542448-06:00'
 model: gpt-4-1106-preview
-summary: "Elixir\uC5D0\uC11C \uBB38\uC790\uC5F4\uC758 \uAE38\uC774\uB97C \uC5BB\uAE30\
-  \ \uC704\uD574 `String.length/1` \uD568\uC218\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4\
-  ."
+summary: "(\uC5B4\uB5BB\uAC8C \uD558\uB098\uC694?) Elixir\uC5D0\uC11C \uBB38\uC790\
+  \uC5F4\uC758 \uAE38\uC774\uB97C \uC5BB\uAE30 \uC704\uD574 `String.length/1` \uD568\
+  \uC218\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774 \uCC3E\uAE30"
 weight: 7
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:41:21.850588-07:00
-description: "Slik gj\xF8r du det: ."
-lastmod: '2024-03-13T22:44:40.593183-06:00'
+description: "Slik gj\xF8r du det: Samplereksempelet viser hvordan du oppretter en\
+  \ midlertidig fil, skriver til den, og bekrefter opprettelsen. Husk \xE5 legge til\
+  \ `tempfile`\u2026"
+lastmod: '2024-04-05T21:53:41.571969-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Samplereksempelet viser hvordan du oppretter en midlertidig fil, skriver
+  til den, og bekrefter opprettelsen.
 title: Opprette en midlertidig fil
 weight: 21
 ---

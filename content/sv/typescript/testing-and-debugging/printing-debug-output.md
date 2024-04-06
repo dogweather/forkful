@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:53:25.853827-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:37.658676-06:00'
+description: 'How to: Sample output.'
+lastmod: '2024-04-05T21:53:38.986378-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "Skriva ut fels\xF6kningsdata"
 weight: 33
 ---

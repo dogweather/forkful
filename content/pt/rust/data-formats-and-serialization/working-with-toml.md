@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 04:26:21.103201-07:00
-description: 'Como fazer: .'
-lastmod: '2024-03-13T22:44:46.391313-06:00'
+description: "Como fazer: TOML, que significa Tom's Obvious, Minimal Language (Linguagem\
+  \ M\xEDnima e \xD3bvia do Tom), foi criada por Tom Preston-Werner em 2013. O objetivo\
+  \ \xE9\u2026"
+lastmod: '2024-04-05T21:53:46.724045-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "TOML, que significa Tom's Obvious, Minimal Language (Linguagem M\xEDnima\
+  \ e \xD3bvia do Tom), foi criada por Tom Preston-Werner em 2013."
 title: Trabalhando com TOML
 weight: 39
 ---

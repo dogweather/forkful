@@ -2,10 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:02:02.483064-07:00
-description: "L\xE0m c\xE1ch n\xE0o: ."
-lastmod: '2024-03-13T22:44:36.190057-06:00'
+description: "L\xE0m c\xE1ch n\xE0o: K\u1EBFt qu\u1EA3 m\u1EABu."
+lastmod: '2024-04-05T21:53:37.611924-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: ''
 title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
 weight: 8
 ---

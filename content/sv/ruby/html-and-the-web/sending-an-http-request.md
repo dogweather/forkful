@@ -3,10 +3,10 @@ date: 2024-01-20 18:00:28.526973-07:00
 description: "How to: (Hur man g\xF6r:) F\xF6r att skicka en HTTP-f\xF6rfr\xE5gan\
   \ i Ruby, kan man anv\xE4nda `net/http` biblioteket som \xE4r inbyggt. H\xE4r \xE4\
   r ett enkelt exempel p\xE5 en\u2026"
-lastmod: '2024-03-13T22:44:38.427322-06:00'
+lastmod: '2024-04-05T21:53:39.768160-06:00'
 model: gpt-4-1106-preview
-summary: "F\xF6r att skicka en HTTP-f\xF6rfr\xE5gan i Ruby, kan man anv\xE4nda `net/http`\
-  \ biblioteket som \xE4r inbyggt."
+summary: "(Hur man g\xF6r:) F\xF6r att skicka en HTTP-f\xF6rfr\xE5gan i Ruby, kan\
+  \ man anv\xE4nda `net/http` biblioteket som \xE4r inbyggt."
 title: "Skicka en http-f\xF6rfr\xE5gan"
 weight: 44
 ---

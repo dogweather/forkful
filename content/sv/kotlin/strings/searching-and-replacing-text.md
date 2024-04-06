@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:58:07.467950-07:00
-description: "Hur g\xF6r man: ."
-lastmod: '2024-03-13T22:44:37.856822-06:00'
+description: "Hur g\xF6r man: F\xF6r att byta ut alla f\xF6rekomster kan du anv\xE4\
+  nda `replace` med Regex."
+lastmod: '2024-04-05T21:53:39.193201-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "F\xF6r att byta ut alla f\xF6rekomster kan du anv\xE4nda `replace` med Regex."
 title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---

@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:51:08.674992-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.695687-06:00'
+description: "Como Fazer: Historicamente, a interpola\xE7\xE3o de strings era comum\
+  \ em muitas linguagens, e no Lua, a fun\xE7\xE3o `string.format` \xE9 inspirada\
+  \ no `printf` da\u2026"
+lastmod: '2024-04-05T21:53:47.040930-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historicamente, a interpola\xE7\xE3o de strings era comum em muitas linguagens,\
+  \ e no Lua, a fun\xE7\xE3o `string.format` \xE9 inspirada no `printf` da linguagem\
+  \ C."
 title: Interpolando uma string
 weight: 8
 ---

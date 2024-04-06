@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:57:08.775759-07:00
-description: 'How to: (Kuinka:) .'
-lastmod: '2024-03-13T22:44:56.850534-06:00'
+description: "How to: (Kuinka:) Vanhat C++-versiot vaativat manuaalista silmukointia\
+  \ tekstinkorjaukselle. Uudemmat standardit, kuten C++11 eteenp\xE4in, tuovat lambda-\u2026"
+lastmod: '2024-04-05T21:53:58.428147-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: (Kuinka:) Vanhat C++-versiot vaativat manuaalista silmukointia tekstinkorjaukselle.
 title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---

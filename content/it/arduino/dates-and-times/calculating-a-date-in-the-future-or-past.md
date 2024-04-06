@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:28:40.679439-07:00
-description: 'Come fare: .'
-lastmod: '2024-03-13T22:44:43.696098-06:00'
+description: "Come fare: Calcolare date future o passate \xE8 essenziale da quando\
+  \ i computer gestiscono appuntamenti e scadenze. Prima degli RTC (Real Time Clock)\u2026"
+lastmod: '2024-04-05T21:53:44.456017-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Calcolare date future o passate \xE8 essenziale da quando i computer gestiscono\
+  \ appuntamenti e scadenze."
 title: Calcolo di una data futura o passata
 weight: 26
 ---

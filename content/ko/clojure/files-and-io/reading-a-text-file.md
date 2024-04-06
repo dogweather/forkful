@@ -5,10 +5,11 @@ description: "How to: (\uC5B4\uB5BB\uAC8C \uD560\uAE4C\uC694?) Clojure\uC5D0\uC1
   \uB2C8\uB2E4. `slurp` \uD568\uC218\uB97C \uC0AC\uC6A9\uD558\uBA74 \uC804\uCCB4 \uB0B4\
   \uC6A9\uC744 \uBB38\uC790\uC5F4\uB85C \uBD88\uB7EC\uC62C \uC218 \uC788\uC8E0."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:54.686426-06:00'
+lastmod: '2024-04-05T21:53:56.524586-06:00'
 model: gpt-4-1106-preview
-summary: "Clojure\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC744 \uC27D\uAC8C \uC77D\
-  \uC744 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
+summary: "(\uC5B4\uB5BB\uAC8C \uD560\uAE4C\uC694?) Clojure\uC5D0\uC11C \uD14D\uC2A4\
+  \uD2B8 \uD30C\uC77C\uC744 \uC27D\uAC8C \uC77D\uC744 \uC218 \uC788\uC2B5\uB2C8\uB2E4\
+  ."
 title: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30"
 weight: 22
 ---

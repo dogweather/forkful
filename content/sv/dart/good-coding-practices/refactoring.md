@@ -5,9 +5,10 @@ date: 2024-03-08 21:56:31.329639-07:00
 description: "Hur man g\xF6r: Innan refaktorering kanske du har en kodsnutt som blandar\
   \ olika abstraktionsniv\xE5er eller ansvarsomr\xE5den, som att ber\xE4kna en rabatt\
   \ och sedan\u2026"
-lastmod: '2024-03-13T22:44:37.621266-06:00'
+lastmod: '2024-04-05T21:53:38.949382-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Innan refaktorering kanske du har en kodsnutt som blandar olika abstraktionsniv\xE5\
+  er eller ansvarsomr\xE5den, som att ber\xE4kna en rabatt och sedan till\xE4mpa den."
 title: Refaktorering
 weight: 19
 ---

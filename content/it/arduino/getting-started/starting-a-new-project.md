@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 18:02:45.058934-07:00
-description: 'How to: (Come fare:) .'
-lastmod: '2024-03-13T22:44:43.684282-06:00'
+description: 'How to: (Come fare:) Questo esempio accende e spegne il LED integrato
+  ogni secondo.'
+lastmod: '2024-04-05T21:53:44.444986-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: (Come fare:) Questo esempio accende e spegne il LED integrato ogni secondo.
 title: Avvio di un nuovo progetto
 weight: 1
 ---

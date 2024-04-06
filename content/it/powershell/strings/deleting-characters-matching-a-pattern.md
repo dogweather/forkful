@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:42:53.591916-07:00
 description: 'How to: Esempio 1: Rimuovere tutti i numeri da una stringa.'
-lastmod: '2024-03-13T22:44:43.625727-06:00'
+lastmod: '2024-04-05T21:53:44.388006-06:00'
 model: gpt-4-1106-preview
-summary: Esempio 1.
+summary: ''
 title: Eliminazione di caratteri che corrispondono a un pattern
 weight: 5
 ---

@@ -1,10 +1,15 @@
 ---
 date: 2024-01-20 17:32:15.713091-07:00
-description: 'How to: .'
+description: "How to: Ruby\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uB2E4\uB8E8\uB824\uBA74\
+  \ `date` \uB77C\uC774\uBE0C\uB7EC\uB9AC\uB97C \uC0AC\uC6A9\uD574\uC57C \uD569\uB2C8\
+  \uB2E4. `Date.today`\uB97C \uC774\uC6A9\uD574 \uD604\uC7AC \uB0A0\uC9DC\uB97C \uC5BB\
+  \uACE0, \uC774\uB97C \uAE30\uC900\uC73C\uB85C \uB354\uD558\uAC70\uB098 \uBE7C\uBA74\
+  \ \uB429\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:56.015326-06:00'
+lastmod: '2024-04-05T21:53:57.570134-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Ruby\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uB2E4\uB8E8\uB824\uBA74 `date` \uB77C\
+  \uC774\uBE0C\uB7EC\uB9AC\uB97C \uC0AC\uC6A9\uD574\uC57C \uD569\uB2C8\uB2E4."
 title: "\uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\uC0B0\uD558\uAE30"
 weight: 26
 ---

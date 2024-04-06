@@ -5,11 +5,11 @@ description: "How to: (\uC5B4\uB5BB\uAC8C:) Swift\uC5D0\uC11C\uB294 `SwiftSoup` 
   \ \uD30C\uC2F1\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4. \uC608\uC2DC\uB97C \uBCF4\uC2DC\
   \uC8E0."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.728775-06:00'
+lastmod: '2024-04-05T21:53:57.344400-06:00'
 model: unknown
-summary: "Swift\uC5D0\uC11C\uB294 `SwiftSoup` \uAC19\uC740 \uC11C\uB4DC\uD30C\uD2F0\
-  \ \uB77C\uC774\uBE0C\uB7EC\uB9AC\uB85C HTML\uC744 \uD30C\uC2F1\uD560 \uC218 \uC788\
-  \uC2B5\uB2C8\uB2E4."
+summary: "(\uC5B4\uB5BB\uAC8C:) Swift\uC5D0\uC11C\uB294 `SwiftSoup` \uAC19\uC740 \uC11C\
+  \uB4DC\uD30C\uD2F0 \uB77C\uC774\uBE0C\uB7EC\uB9AC\uB85C HTML\uC744 \uD30C\uC2F1\uD560\
+  \ \uC218 \uC788\uC2B5\uB2C8\uB2E4."
 title: "HTML \uD30C\uC2F1"
 weight: 43
 ---

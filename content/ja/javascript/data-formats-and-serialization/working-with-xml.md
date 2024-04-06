@@ -2,10 +2,9 @@
 date: 2024-01-26 04:32:52.181966-07:00
 description: "\u65B9\u6CD5\uFF1A XML\u306E\u89E3\u6790\u65B9\u6CD5\u306F\u4EE5\u4E0B\
   \u306E\u901A\u308A\u3067\u3059\uFF1A."
-lastmod: '2024-03-13T22:44:42.706600-06:00'
+lastmod: '2024-04-05T21:53:43.495137-06:00'
 model: gpt-4-0125-preview
-summary: "XML\u306E\u89E3\u6790\u65B9\u6CD5\u306F\u4EE5\u4E0B\u306E\u901A\u308A\u3067\
-  \u3059\uFF1A."
+summary: ''
 title: "XML\u306E\u6271\u3044\u65B9"
 weight: 40
 ---

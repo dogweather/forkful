@@ -2,10 +2,12 @@
 changelog:
 - 2024-03-17, gpt-4-0125-preview, translated from English
 date: 2024-03-17 18:08:11.250398-06:00
-description: "\u0995\u09BF\u09AD\u09BE\u09AC\u09C7: ."
-lastmod: '2024-03-17T18:47:44.382855-06:00'
+description: "\u0995\u09BF\u09AD\u09BE\u09AC\u09C7: \u09AF\u09A6\u09BF `example.txt`\
+  \ \u09AB\u09BE\u0987\u09B2\u09C7 \u09A5\u09BE\u0995\u09C7."
+lastmod: '2024-04-05T21:53:52.972667-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "\u09AF\u09A6\u09BF `example.txt` \u09AB\u09BE\u0987\u09B2\u09C7 \u09A5\u09BE\
+  \u0995\u09C7."
 title: "\u099F\u09C7\u0995\u09CD\u09B8\u099F \u09AB\u09BE\u0987\u09B2 \u09AA\u09A1\
   \u09BC\u09BE"
 weight: 22

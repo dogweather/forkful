@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:54:56.193566-07:00
-description: Wie geht das? .
-lastmod: '2024-03-13T22:44:53.396017-06:00'
+description: "Wie geht das? Das Lesen von Textdateien ist Grundlage der Programmierung.\
+  \ Es wurde schon in fr\xFChesten Programmiersprachen unterst\xFCtzt. Heutzutage\
+  \ nutzen\u2026"
+lastmod: '2024-04-05T21:53:55.351503-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Das Lesen von Textdateien ist Grundlage der Programmierung.
 title: Textdatei einlesen
 weight: 22
 ---

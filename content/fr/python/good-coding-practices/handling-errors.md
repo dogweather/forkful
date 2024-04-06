@@ -1,9 +1,11 @@
 ---
 date: 2024-01-26 00:56:07.758527-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:57.244469-06:00'
+description: 'Comment faire : Exemple de sortie lorsque l''on entre un nombre invalide
+  pour le premier bloc .'
+lastmod: '2024-04-05T21:53:58.825922-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Exemple de sortie lorsque l'on entre un nombre invalide pour le premier bloc
+  .
 title: Gestion des erreurs
 weight: 16
 ---

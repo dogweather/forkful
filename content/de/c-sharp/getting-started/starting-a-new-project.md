@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 18:03:07.778209-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:53.888965-06:00'
+description: "How to: Ein frisches C#-Projekt zu starten war nicht immer so straightforward.\
+  \ Fr\xFCher, vor der Entwicklung von integrierten Entwicklungsumgebungen (IDEs)\u2026"
+lastmod: '2024-04-05T21:53:55.772934-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Ein frisches C#-Projekt zu starten war nicht immer so straightforward.
 title: Einen neuen Projekt starten
 weight: 1
 ---

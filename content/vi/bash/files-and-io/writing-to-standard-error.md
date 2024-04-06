@@ -2,10 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:28.251142-07:00
-description: "L\xE0m th\u1EBF n\xE0o: ."
-lastmod: '2024-03-13T22:44:36.900411-06:00'
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EA7u ra m\u1EABu."
+lastmod: '2024-04-05T21:53:38.268508-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: ''
 title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---

@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:40:33.379451-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.475093-06:00'
+description: "Como Fazer: Arquivos tempor\xE1rios s\xE3o um conceito antigo, existente\
+  \ desde os prim\xF3rdios dos sistemas operacionais para lidar com armazenamento\
+  \ limitado e\u2026"
+lastmod: '2024-04-05T21:53:46.815498-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Arquivos tempor\xE1rios s\xE3o um conceito antigo, existente desde os prim\xF3\
+  rdios dos sistemas operacionais para lidar com armazenamento limitado e seguran\xE7\
+  a de dados."
 title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---

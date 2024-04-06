@@ -4,11 +4,9 @@ description: "\u5982\u4F55\u64CD\u4F5C\uFF1A Clojure \u901A\u8FC7 `clojure.lang.
   \ \u5DE5\u5177\u7C7B\u4E3A\u590D\u6570\u63D0\u4F9B\u4E86\u5185\u7F6E\u652F\u6301\
   \u3002\u4F7F\u7528 `complex` \u6765\u521B\u5EFA\u590D\u6570\u5E76\u6267\u884C\u7B97\
   \u672F\u8FD0\u7B97\u3002"
-lastmod: '2024-03-13T22:44:47.296370-06:00'
+lastmod: '2024-04-05T21:53:47.648021-06:00'
 model: gpt-4-0125-preview
-summary: "Clojure \u901A\u8FC7 `clojure.lang.Numbers` \u5DE5\u5177\u7C7B\u4E3A\u590D\
-  \u6570\u63D0\u4F9B\u4E86\u5185\u7F6E\u652F\u6301\u3002\u4F7F\u7528 `complex` \u6765\
-  \u521B\u5EFA\u590D\u6570\u5E76\u6267\u884C\u7B97\u672F\u8FD0\u7B97."
+summary: ''
 title: "\u5904\u7406\u590D\u6570"
 weight: 14
 ---

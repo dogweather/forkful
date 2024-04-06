@@ -6,10 +6,10 @@ description: "L\xE0m th\u1EBF n\xE0o PowerShell \u0111\u1ECDc c\xE1c \u0111\u1ED
   i s\u1ED1 d\xF2ng l\u1EC7nh b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng m\u1EA3ng `$args`\
   \ ho\u1EB7c c\xE1c tham s\u1ED1. `$args` nhanh cho c\xE1c k\u1ECBch b\u1EA3n s\u1EED\
   \ d\u1EE5ng m\u1ED9t l\u1EA7n; c\xE1c tham\u2026"
-lastmod: '2024-03-13T22:44:36.956511-06:00'
+lastmod: '2024-04-05T21:53:38.319527-06:00'
 model: gpt-4-0125-preview
-summary: "PowerShell \u0111\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh\
-  \ b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng m\u1EA3ng `$args` ho\u1EB7c c\xE1c tham s\u1ED1\
+summary: "`$args` nhanh cho c\xE1c k\u1ECBch b\u1EA3n s\u1EED d\u1EE5ng m\u1ED9t l\u1EA7\
+  n; c\xE1c tham s\u1ED1 t\u1ED1t h\u01A1n cho c\xE1c c\xF4ng c\u1EE5 m\u1EA1nh m\u1EBD\
   ."
 title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
 weight: 23

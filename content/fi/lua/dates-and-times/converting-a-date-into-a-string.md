@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:37:02.532785-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:56.708388-06:00'
+description: "How to: Lua-kielell\xE4 p\xE4iv\xE4m\xE4\xE4r\xE4n muunto merkkijonoksi\
+  \ on yleist\xE4, kun tallennetaan logitiedostoja tai k\xE4sitell\xE4\xE4n aikaleimoja.\
+  \ Os.date()-funktio on ollut\u2026"
+lastmod: '2024-04-05T21:53:58.280602-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Lua-kielell\xE4 p\xE4iv\xE4m\xE4\xE4r\xE4n muunto merkkijonoksi on yleist\xE4\
+  , kun tallennetaan logitiedostoja tai k\xE4sitell\xE4\xE4n aikaleimoja."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---

@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:39:11.716170-07:00
-description: 'So geht''s: .'
-lastmod: '2024-03-13T22:44:53.959395-06:00'
+description: 'So geht''s: Beispiel mit Umlauten.'
+lastmod: '2024-04-05T21:53:55.844464-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Beispiel mit Umlauten.
 title: Umformung eines Strings in Kleinbuchstaben
 weight: 4
 ---

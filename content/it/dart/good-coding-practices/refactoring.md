@@ -5,9 +5,10 @@ date: 2024-03-08 21:55:54.902524-07:00
 description: "Come fare: Prima del refactoring, potresti avere un pezzo di codice\
   \ che mescola diversi livelli di astrazione o responsabilit\xE0, come calcolare\
   \ uno sconto\u2026"
-lastmod: '2024-03-13T22:44:43.140267-06:00'
+lastmod: '2024-04-05T21:53:43.915665-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Prima del refactoring, potresti avere un pezzo di codice che mescola diversi\
+  \ livelli di astrazione o responsabilit\xE0, come calcolare uno sconto e poi applicarlo."
 title: Refactoring
 weight: 19
 ---

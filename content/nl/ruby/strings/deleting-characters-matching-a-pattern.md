@@ -2,10 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:13.077490-07:00
-description: 'Hoe te: .'
-lastmod: '2024-03-13T22:44:51.318461-06:00'
+description: "Hoe te: Historisch gezien is Ruby een taal geweest met een sterke focus\
+  \ op tekstverwerking, waarbij het enkele van zijn filosofie\xEBn van Perl heeft\u2026"
+lastmod: '2024-04-05T21:53:51.329913-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Historisch gezien is Ruby een taal geweest met een sterke focus op tekstverwerking,\
+  \ waarbij het enkele van zijn filosofie\xEBn van Perl heeft overgenomen."
 title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---

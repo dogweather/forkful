@@ -2,9 +2,10 @@
 date: 2024-01-20 17:56:54.670264-07:00
 description: "How to: (Miten:) Swiftiss\xE4 komentorivin argumentit luetaan `CommandLine`-luokan\
   \ avulla. T\xE4ss\xE4 yksinkertainen esimerkki."
-lastmod: '2024-03-13T22:44:56.922001-06:00'
+lastmod: '2024-04-05T21:53:58.501136-06:00'
 model: gpt-4-1106-preview
-summary: "Swiftiss\xE4 komentorivin argumentit luetaan `CommandLine`-luokan avulla."
+summary: "(Miten:) Swiftiss\xE4 komentorivin argumentit luetaan `CommandLine`-luokan\
+  \ avulla."
 title: Komennoriviparametrien lukeminen
 weight: 23
 ---

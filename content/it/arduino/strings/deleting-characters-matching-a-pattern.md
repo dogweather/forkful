@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:41:19.599089-07:00
-description: 'Come fare: .'
-lastmod: '2024-03-13T22:44:43.668417-06:00'
+description: "Come fare: La rimozione di caratteri corrispondenti in una stringa non\
+  \ \xE8 una funzione nativa dei linguaggi di programmazione pi\xF9 antichi, ma si\
+  \ \xE8 evoluta\u2026"
+lastmod: '2024-04-05T21:53:44.429013-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "La rimozione di caratteri corrispondenti in una stringa non \xE8 una funzione\
+  \ nativa dei linguaggi di programmazione pi\xF9 antichi, ma si \xE8 evoluta con\
+  \ l'introduzione delle espressioni regolari (regex)."
 title: Eliminazione di caratteri che corrispondono a un pattern
 weight: 5
 ---

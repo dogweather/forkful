@@ -4,11 +4,9 @@ description: "\u3069\u306E\u3088\u3046\u306B\uFF1A Kotlin\u306F\u30A8\u30E9\u30F
   \u7BA1\u7406\u3059\u308B\u305F\u3081\u306B`try`, `catch`, `finally`, `throw`\u3092\
   \u63D0\u4F9B\u3057\u3066\u3044\u307E\u3059\u3002\u3053\u3061\u3089\u304C\u4F7F\u3044\
   \u65B9\u3067\u3059\uFF1A."
-lastmod: '2024-03-13T22:44:42.075176-06:00'
+lastmod: '2024-04-05T21:53:42.957012-06:00'
 model: gpt-4-1106-preview
-summary: "Kotlin\u306F\u30A8\u30E9\u30FC\u3092\u7BA1\u7406\u3059\u308B\u305F\u3081\
-  \u306B`try`, `catch`, `finally`, `throw`\u3092\u63D0\u4F9B\u3057\u3066\u3044\u307E\
-  \u3059\u3002\u3053\u3061\u3089\u304C\u4F7F\u3044\u65B9\u3067\u3059\uFF1A."
+summary: ''
 title: "\u30A8\u30E9\u30FC\u51E6\u7406"
 weight: 16
 ---

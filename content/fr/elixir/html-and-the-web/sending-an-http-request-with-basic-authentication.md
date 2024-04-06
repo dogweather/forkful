@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 18:01:29.417273-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:57.326730-06:00'
+description: "Comment faire : L'authentification de base HTTP existe depuis les d\xE9\
+  buts du web, comme moyen simple mais moins s\xE9curis\xE9 d'acc\xE9der aux services\
+  \ en ligne,\u2026"
+lastmod: '2024-04-05T21:53:58.906355-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "L'authentification de base HTTP existe depuis les d\xE9buts du web, comme\
+  \ moyen simple mais moins s\xE9curis\xE9 d'acc\xE9der aux services en ligne, car\
+  \ les identifiants sont encod\xE9s mais non chiffr\xE9s."
 title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
 weight: 45
 ---

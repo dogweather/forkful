@@ -1,9 +1,11 @@
 ---
 date: 2024-01-26 00:57:13.390668-07:00
-description: "Hur man g\xF6r: ."
-lastmod: '2024-03-13T22:44:37.490433-06:00'
+description: "Hur man g\xF6r: Exempel p\xE5 utdata n\xE4r man matar in ett ogiltigt\
+  \ nummer f\xF6r den f\xF6rsta delen."
+lastmod: '2024-04-05T21:53:38.816815-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Exempel p\xE5 utdata n\xE4r man matar in ett ogiltigt nummer f\xF6r den\
+  \ f\xF6rsta delen."
 title: Hantering av fel
 weight: 16
 ---

@@ -1,9 +1,9 @@
 ---
 date: 2024-01-26 04:34:24.945957-07:00
-description: 'Miten: .'
-lastmod: '2024-03-13T22:44:56.807523-06:00'
+description: 'Miten: Esimerkkituloste.'
+lastmod: '2024-04-05T21:53:58.382892-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: ''
 title: "XML:n k\xE4sittely"
 weight: 40
 ---

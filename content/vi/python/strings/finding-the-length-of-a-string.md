@@ -2,10 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:45.484097-07:00
-description: "C\xE1ch l\xE0m: ."
-lastmod: '2024-03-13T22:44:36.084817-06:00'
+description: "C\xE1ch l\xE0m: Trong l\u1ECBch s\u1EED, h\xE0m `len()` lu\xF4n l\xE0\
+  \ c\xE1ch \u0111i t\u1EDBi c\u1EE7a Python \u0111\u1EC3 t\xECm chi\u1EC1u d\xE0\
+  i c\u1EE7a m\u1ED9t chu\u1ED7i. N\xF3 tinh t\u1EBF v\xE0 nhanh ch\xF3ng. B\xEAn\
+  \ d\u01B0\u1EDBi, chu\u1ED7i Python l\xE0\u2026"
+lastmod: '2024-04-05T21:53:37.516587-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Trong l\u1ECBch s\u1EED, h\xE0m `len()` lu\xF4n l\xE0 c\xE1ch \u0111i t\u1EDB\
+  i c\u1EE7a Python \u0111\u1EC3 t\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7\
+  i."
 title: "T\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
 weight: 7
 ---

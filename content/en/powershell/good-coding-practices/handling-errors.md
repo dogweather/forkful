@@ -1,9 +1,10 @@
 ---
 date: 2024-01-21 21:19:08.411809-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:45:00.291198-06:00'
+description: "How to: PowerShell has come a long way since its inception as Monad.\
+  \ Error handling became more robust over time, offering features similar to other\u2026"
+lastmod: '2024-04-05T21:53:35.988025-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: PowerShell has come a long way since its inception as Monad.
 title: Handling errors
 weight: 16
 ---

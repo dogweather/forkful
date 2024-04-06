@@ -5,9 +5,9 @@ date: 2024-02-03 19:14:00.955395-07:00
 description: "Hur man g\xF6r: **Grundl\xE4ggande tolkning:** Metoderna `DateTime.Parse`\
   \ och `DateTime.TryParse` \xE4r de fr\xE4msta alternativen f\xF6r att omvandla en\
   \ str\xE4ng till ett\u2026"
-lastmod: '2024-03-13T22:44:37.922668-06:00'
+lastmod: '2024-04-05T21:53:39.260254-06:00'
 model: gpt-4-0125-preview
-summary: "**Grundl\xE4ggande tolkning:**\n\nMetoderna `DateTime.Parse` och `DateTime.TryParse`\
+summary: "**Grundl\xE4ggande tolkning:** Metoderna `DateTime.Parse` och `DateTime.TryParse`\
   \ \xE4r de fr\xE4msta alternativen f\xF6r att omvandla en str\xE4ng till ett `DateTime`."
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30

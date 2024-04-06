@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 04:28:57.506935-07:00
-description: 'Kuinka: .'
-lastmod: '2024-03-13T22:44:56.598466-06:00'
+description: "Kuinka: XML on ollut olemassa 90-luvun lopulta l\xE4htien, tehden siit\xE4\
+  \ suorastaan isois\xE4n teknologiavuosissa. Se kehitettiin datan siirrett\xE4vyyden\
+  \ ja\u2026"
+lastmod: '2024-04-05T21:53:58.165624-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "XML on ollut olemassa 90-luvun lopulta l\xE4htien, tehden siit\xE4 suorastaan\
+  \ isois\xE4n teknologiavuosissa."
 title: "XML:n k\xE4sittely"
 weight: 40
 ---

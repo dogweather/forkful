@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:51:35.946663-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:53.658831-06:00'
+description: "How to: Die String-Interpolation in Rust wird haupts\xE4chlich durch\
+  \ das `format!` Makro erm\xF6glicht, \xE4hnlich zu Sprachen wie Python oder Ruby.\
+  \ Rust benutzt\u2026"
+lastmod: '2024-04-05T21:53:55.538053-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Die String-Interpolation in Rust wird haupts\xE4chlich durch das `format!`\
+  \ Makro erm\xF6glicht, \xE4hnlich zu Sprachen wie Python oder Ruby."
 title: Zeichenketten interpolieren
 weight: 8
 ---

@@ -1,10 +1,12 @@
 ---
 date: 2024-01-20 17:55:32.675950-07:00
-description: "How to: \u5982\u4F55\u505A\uFF1F ."
+description: "How to: \u5982\u4F55\u505A\uFF1F \u4FDD\u5B58\u6B64\u811A\u672C\u4E3A\
+  \ `example.sh` \u5E76\u8FD0\u884C\uFF1A."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:47.980231-06:00'
+lastmod: '2024-04-05T21:53:48.279777-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "\u5982\u4F55\u505A\uFF1F \u4FDD\u5B58\u6B64\u811A\u672C\u4E3A `example.sh`\
+  \ \u5E76\u8FD0\u884C\uFF1A."
 title: "\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570"
 weight: 23
 ---

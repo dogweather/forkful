@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 18:02:19.506035-07:00
-description: "Jak to zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:35.451578-06:00'
+description: "Jak to zrobi\u0107: Oczekiwana odpowied\u017A to kod statusu HTTP wraz\
+  \ z tre\u015Bci\u0105 odpowiedzi (je\u015Bli jest dost\u0119pna)."
+lastmod: '2024-04-05T21:53:36.884972-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Oczekiwana odpowied\u017A to kod statusu HTTP wraz z tre\u015Bci\u0105 odpowiedzi\
+  \ (je\u015Bli jest dost\u0119pna)."
 title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
 weight: 45
 ---

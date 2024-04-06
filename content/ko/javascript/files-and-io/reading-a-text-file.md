@@ -4,10 +4,10 @@ description: "How to: (\uBC29\uBC95) JavaScript\uC5D0\uC11C \uD30C\uC77C\uC744 \
   \uC73C\uB824\uBA74 `fs` \uBAA8\uB4C8\uC774 \uD544\uC694\uD569\uB2C8\uB2E4. \uC544\
   \uB798\uB294 \uAC04\uB2E8\uD55C \uC608\uC81C \uCF54\uB4DC\uC785\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.816164-06:00'
+lastmod: '2024-04-05T21:53:57.412637-06:00'
 model: gpt-4-1106-preview
-summary: "JavaScript\uC5D0\uC11C \uD30C\uC77C\uC744 \uC77D\uC73C\uB824\uBA74 `fs`\
-  \ \uBAA8\uB4C8\uC774 \uD544\uC694\uD569\uB2C8\uB2E4."
+summary: "(\uBC29\uBC95) JavaScript\uC5D0\uC11C \uD30C\uC77C\uC744 \uC77D\uC73C\uB824\
+  \uBA74 `fs` \uBAA8\uB4C8\uC774 \uD544\uC694\uD569\uB2C8\uB2E4."
 title: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30"
 weight: 22
 ---

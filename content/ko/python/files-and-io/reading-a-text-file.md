@@ -1,10 +1,19 @@
 ---
 date: 2024-01-20 17:55:05.327164-07:00
-description: "How to: (\uBC29\uBC95) ."
+description: "How to: (\uBC29\uBC95) \uC61B\uB0A0\uC5D0\uB294 \uD30C\uC77C\uC744 \uC77D\
+  \uC744 \uB54C `open()` \uD568\uC218\uB97C \uC0AC\uC6A9\uD55C \uD6C4 `close()` \uD568\
+  \uC218\uB85C \uB2EB\uC544 \uC8FC\uB294 \uAC83\uC774 \uAD00\uB840\uC600\uC2B5\uB2C8\
+  \uB2E4. \uD558\uC9C0\uB9CC Python 2.5 \uC774\uD6C4\uB85C `with` \uBB38\uC774 \uB3C4\
+  \uC785\uB418\uBA74\uC11C \uD30C\uC77C\uC744 \uC790\uB3D9\uC73C\uB85C \uB2EB\uC744\
+  \ \uC218 \uC788\uAC8C \uB418\uC5C8\uC2B5\uB2C8\uB2E4. `open()` \uD568\uC218\uC758\
+  \ \uB450 \uBC88\uC9F8\u2026"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:54.624433-06:00'
+lastmod: '2024-04-05T21:53:56.476276-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(\uBC29\uBC95) \uC61B\uB0A0\uC5D0\uB294 \uD30C\uC77C\uC744 \uC77D\uC744\
+  \ \uB54C `open()` \uD568\uC218\uB97C \uC0AC\uC6A9\uD55C \uD6C4 `close()` \uD568\uC218\
+  \uB85C \uB2EB\uC544 \uC8FC\uB294 \uAC83\uC774 \uAD00\uB840\uC600\uC2B5\uB2C8\uB2E4\
+  ."
 title: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30"
 weight: 22
 ---

@@ -2,9 +2,9 @@
 date: 2024-01-20 17:38:10.001335-07:00
 description: "How to: (\uC5B4\uB5BB\uAC8C \uD558\uB098\uC694?) ."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.091973-06:00'
+lastmod: '2024-04-05T21:53:56.849910-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD558\uAE30"
 weight: 4
 ---

@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:33:16.538684-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:53.858498-06:00'
+description: "How to: Historisch gesehen gab es viele Wege, Daten in Software zu vergleichen.\
+  \ Vor Java 8 war `java.util.Date` g\xE4ngig, doch umst\xE4ndlich, vor allem wegen\u2026"
+lastmod: '2024-04-05T21:53:55.743118-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Historisch gesehen gab es viele Wege, Daten in Software zu vergleichen.
 title: Vergleich von zwei Daten
 weight: 27
 ---

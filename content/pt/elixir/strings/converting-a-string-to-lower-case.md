@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:38:32.968740-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.225470-06:00'
+description: "Como Fazer: Converter strings para min\xFAsculas \xE9 um conceito t\xE3\
+  o antigo quanto a pr\xF3pria inform\xE1tica. A fun\xE7\xE3o `String.downcase` em\
+  \ Elixir utiliza regras\u2026"
+lastmod: '2024-04-05T21:53:46.552071-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Converter strings para min\xFAsculas \xE9 um conceito t\xE3o antigo quanto\
+  \ a pr\xF3pria inform\xE1tica."
 title: "Convertendo uma string para min\xFAsculas"
 weight: 4
 ---

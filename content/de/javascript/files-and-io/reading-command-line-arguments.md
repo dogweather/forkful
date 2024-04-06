@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:56:11.145890-07:00
-description: "So geht\u2019s: ."
-lastmod: '2024-03-13T22:44:54.281908-06:00'
+description: "So geht\u2019s: Nutze `process.argv` f\xFCr den einfachen Zugriff. Aber\
+  \ Achtung: Die ersten beiden Argumente sind der Node-Befehl und der Skriptpfad."
+lastmod: '2024-04-05T21:53:56.169902-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Nutze `process.argv` f\xFCr den einfachen Zugriff."
 title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---

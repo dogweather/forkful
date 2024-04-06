@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:43:24.112558-07:00
-description: 'Come Fare: .'
-lastmod: '2024-03-13T22:44:44.033836-06:00'
+description: "Come Fare: Cancellare caratteri si fa da quando esistono le stringhe\
+  \ nei linguaggi di programmazione. In Ruby, `.delete` e `.gsub` sono i metodi\u2026"
+lastmod: '2024-04-05T21:53:44.679816-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Cancellare caratteri si fa da quando esistono le stringhe nei linguaggi di
+  programmazione.
 title: Eliminazione di caratteri che corrispondono a un pattern
 weight: 5
 ---

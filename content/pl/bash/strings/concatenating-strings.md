@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:34:16.195536-07:00
-description: "How to: (Jak to zrobi\u0107:) ."
-lastmod: '2024-03-13T22:44:35.574594-06:00'
+description: "How to: (Jak to zrobi\u0107:) Output."
+lastmod: '2024-04-05T21:53:37.002434-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(Jak to zrobi\u0107:) Output."
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---

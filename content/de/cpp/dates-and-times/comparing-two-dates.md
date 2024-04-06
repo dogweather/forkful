@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:32:22.151859-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:54.197072-06:00'
+description: "How to: Ausgabe k\xF6nnte sein: `Heute ist nach dem 15. Oktober 2022.`."
+lastmod: '2024-04-05T21:53:56.082989-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Ausgabe k\xF6nnte sein."
 title: Vergleich von zwei Daten
 weight: 27
 ---

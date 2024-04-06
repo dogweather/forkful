@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:01:40.513552-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:57.833662-06:00'
+description: "Comment faire : Le concept d\u2019authentification basique pour les\
+  \ requ\xEAtes HTTP n\u2019est pas r\xE9cent. Il est d\xE9fini dans le RFC 7617,\
+  \ et bien qu'il soit simple \xE0\u2026"
+lastmod: '2024-04-05T21:53:59.318218-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Le concept d\u2019authentification basique pour les requ\xEAtes HTTP n\u2019\
+  est pas r\xE9cent."
 title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
 weight: 45
 ---

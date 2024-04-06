@@ -2,9 +2,10 @@
 date: 2024-01-20 17:53:32.458244-07:00
 description: "How to: (Hvordan:) Vi bruker `print()`-funksjonen i Swift til \xE5 skrive\
   \ ut verdier til konsollen. La oss sjekke det ut."
-lastmod: '2024-03-13T22:44:41.144514-06:00'
+lastmod: '2024-04-05T21:53:42.104595-06:00'
 model: gpt-4-1106-preview
-summary: "Vi bruker `print()`-funksjonen i Swift til \xE5 skrive ut verdier til konsollen."
+summary: "(Hvordan:) Vi bruker `print()`-funksjonen i Swift til \xE5 skrive ut verdier\
+  \ til konsollen."
 title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---

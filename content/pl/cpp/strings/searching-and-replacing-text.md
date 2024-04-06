@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:57:42.538266-07:00
-description: "Jak to zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:35.698018-06:00'
+description: "Jak to zrobi\u0107: Zast\u0119powanie tekstu to stary, uniwersalny trik.\
+  \ Programi\u015Bci korzystaj\u0105 z tego od dekad, szczeg\xF3lnie kiedy trzeba\
+  \ by\u0142o dba\u0107 o oszcz\u0119dno\u015B\u0107\u2026"
+lastmod: '2024-04-05T21:53:37.123848-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Zast\u0119powanie tekstu to stary, uniwersalny trik."
 title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---

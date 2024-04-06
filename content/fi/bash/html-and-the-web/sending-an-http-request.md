@@ -3,10 +3,10 @@ date: 2024-01-20 17:59:15.006325-07:00
 description: "How to: (Kuinka tehd\xE4:) Bashissa voit k\xE4ytt\xE4\xE4 `curl` tai\
   \ `wget` komentoa HTTP-pyynt\xF6jen tekemiseen. Yksinkertaisin esimerkki on GET-pyynt\xF6\
   ."
-lastmod: '2024-03-13T22:44:56.736547-06:00'
+lastmod: '2024-04-05T21:53:58.310580-06:00'
 model: gpt-4-1106-preview
-summary: "Bashissa voit k\xE4ytt\xE4\xE4 `curl` tai `wget` komentoa HTTP-pyynt\xF6\
-  jen tekemiseen."
+summary: "(Kuinka tehd\xE4:) Bashissa voit k\xE4ytt\xE4\xE4 `curl` tai `wget` komentoa\
+  \ HTTP-pyynt\xF6jen tekemiseen."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---

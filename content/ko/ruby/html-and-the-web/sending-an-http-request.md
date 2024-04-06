@@ -5,11 +5,11 @@ description: "How to: (\uBC29\uBC95) Ruby\uC5D0\uC11C HTTP \uC694\uCCAD\uC744 \u
   \ \uD65C\uC6A9\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4. \uC5EC\uAE30 \uAC04\uB2E8\uD55C\
   \ GET \uC694\uCCAD \uC608\uC2DC\uAC00 \uC788\uC5B4\uC694."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.990345-06:00'
+lastmod: '2024-04-05T21:53:57.554101-06:00'
 model: gpt-4-1106-preview
-summary: "Ruby\uC5D0\uC11C HTTP \uC694\uCCAD\uC744 \uBCF4\uB0B4\uB824\uBA74 \uD45C\
-  \uC900 \uB77C\uC774\uBE0C\uB7EC\uB9AC\uC778 'net/http'\uB97C \uD65C\uC6A9\uD560\
-  \ \uC218 \uC788\uC2B5\uB2C8\uB2E4."
+summary: "(\uBC29\uBC95) Ruby\uC5D0\uC11C HTTP \uC694\uCCAD\uC744 \uBCF4\uB0B4\uB824\
+  \uBA74 \uD45C\uC900 \uB77C\uC774\uBE0C\uB7EC\uB9AC\uC778 'net/http'\uB97C \uD65C\
+  \uC6A9\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
 title: "HTTP \uC694\uCCAD \uBCF4\uB0B4\uAE30"
 weight: 44
 ---

@@ -6,9 +6,10 @@ date: 2024-02-03 19:02:34.962078-07:00
 description: "Comment faire : Python dispose d'une m\xE9thode int\xE9gr\xE9e `.capitalize()`\
   \ pour les cha\xEEnes de caract\xE8res permettant de r\xE9aliser cette t\xE2che\
   \ facilement."
-lastmod: '2024-04-04T00:26:51.803717-06:00'
+lastmod: '2024-04-05T21:53:58.800592-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Python dispose d'une m\xE9thode int\xE9gr\xE9e `.capitalize()` pour les\
+  \ cha\xEEnes de caract\xE8res permettant de r\xE9aliser cette t\xE2che facilement."
 title: "Mettre une cha\xEEne en majuscules"
 weight: 2
 ---

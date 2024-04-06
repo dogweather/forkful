@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:51:40.946194-07:00
-description: "Hur g\xF6r man: ."
-lastmod: '2024-03-13T22:44:37.642489-06:00'
+description: "Hur g\xF6r man: F\xF6re ES6 (ECMAScript 2015) anv\xE4ndes konkatenering,\
+  \ som var klumpigt: `'Hej ' + anv\xE4ndare + ', v\xE4lkommen tillbaka!'`. Med ES6\
+  \ introducerades\u2026"
+lastmod: '2024-04-05T21:53:38.971355-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "F\xF6re ES6 (ECMAScript 2015) anv\xE4ndes konkatenering, som var klumpigt."
 title: "Interpolera en str\xE4ng"
 weight: 8
 ---

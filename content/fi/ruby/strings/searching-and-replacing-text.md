@@ -2,9 +2,9 @@
 date: 2024-01-20 17:58:31.216170-07:00
 description: "How to: (Kuinka tehd\xE4\xE4n:) Ruby tekee etsimisest\xE4 ja korvaamisesta\
   \ helppoa. T\xE4ss\xE4 on pari esimerkki\xE4."
-lastmod: '2024-03-13T22:44:57.070382-06:00'
+lastmod: '2024-04-05T21:53:58.654295-06:00'
 model: gpt-4-1106-preview
-summary: "Ruby tekee etsimisest\xE4 ja korvaamisesta helppoa."
+summary: "(Kuinka tehd\xE4\xE4n:) Ruby tekee etsimisest\xE4 ja korvaamisesta helppoa."
 title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---

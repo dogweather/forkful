@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:57:37.450373-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:58.090909-06:00'
+description: "Comment faire : La fonction de recherche et de remplacement de texte\
+  \ a des racines historiques dans les traitements de texte et les syst\xE8mes d'\xE9\
+  dition de\u2026"
+lastmod: '2024-04-05T21:53:59.529584-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "La fonction de recherche et de remplacement de texte a des racines historiques\
+  \ dans les traitements de texte et les syst\xE8mes d'\xE9dition de code source."
 title: Recherche et remplacement de texte
 weight: 10
 ---

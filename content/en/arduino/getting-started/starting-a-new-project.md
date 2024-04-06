@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 18:02:33.167744-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:45:00.322711-06:00'
+description: 'How to: Connect your Arduino board, upload the sketch, and watch the
+  built-in LED blink every second.'
+lastmod: '2024-04-05T21:53:36.020490-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Connect your Arduino board, upload the sketch, and watch the built-in LED
+  blink every second.
 title: Starting a new project
 weight: 1
 ---

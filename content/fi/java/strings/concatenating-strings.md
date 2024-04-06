@@ -2,9 +2,9 @@
 date: 2024-01-20 17:34:54.818501-07:00
 description: "How to: (Miten:) Java tarjoaa useita tapoja yhdist\xE4\xE4 merkkijonoja.\
   \ T\xE4ss\xE4 muutama esimerkki."
-lastmod: '2024-03-13T22:44:56.436734-06:00'
+lastmod: '2024-04-05T21:53:58.003381-06:00'
 model: gpt-4-1106-preview
-summary: "Java tarjoaa useita tapoja yhdist\xE4\xE4 merkkijonoja."
+summary: "(Miten:) Java tarjoaa useita tapoja yhdist\xE4\xE4 merkkijonoja."
 title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---

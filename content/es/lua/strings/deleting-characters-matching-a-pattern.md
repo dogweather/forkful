@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:42:36.497823-07:00
-description: "C\xF3mo hacerlo: ."
-lastmod: '2024-03-13T22:44:59.186738-06:00'
+description: "C\xF3mo hacerlo: En este ejemplo, `%D` busca todos los caracteres que\
+  \ no son d\xEDgitos. `gsub` los reemplaza por nada (los elimina)."
+lastmod: '2024-04-05T21:54:00.532407-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "En este ejemplo, `%D` busca todos los caracteres que no son d\xEDgitos."
 title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---

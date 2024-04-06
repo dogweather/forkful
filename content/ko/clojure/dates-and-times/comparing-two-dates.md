@@ -5,9 +5,10 @@ description: "How to: (\uBC29\uBC95) Clojure\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uBE
   \uC6A9\uD558\uC5EC \uC608\uC81C\uB97C \uC0B4\uD3B4\uBCFC \uC218 \uC788\uC2B5\uB2C8\
   \uB2E4."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:54.679379-06:00'
+lastmod: '2024-04-05T21:53:56.519115-06:00'
 model: gpt-4-1106-preview
-summary: "Clojure\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uBE44\uAD50\uD574\uBCF4\uC790."
+summary: "(\uBC29\uBC95) Clojure\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uBE44\uAD50\uD574\
+  \uBCF4\uC790."
 title: "\uB450 \uB0A0\uC9DC \uBE44\uAD50\uD558\uAE30"
 weight: 27
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-26 04:26:19.793875-07:00
-description: 'Kuinka toimia: .'
-lastmod: '2024-03-13T22:44:56.380653-06:00'
+description: "Kuinka toimia: TOML, joka tarkoittaa Tom's Obvious, Minimal Language,\
+  \ luotiin Tom Preston-Wernerin toimesta vuonna 2013. Sen tavoitteena on olla\u2026"
+lastmod: '2024-04-05T21:53:57.940705-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: TOML, joka tarkoittaa Tom's Obvious, Minimal Language, luotiin Tom Preston-Wernerin
+  toimesta vuonna 2013.
 title: "Ty\xF6skentely TOML:n kanssa"
 weight: 39
 ---

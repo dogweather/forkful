@@ -2,10 +2,10 @@
 date: 2024-01-20 17:59:25.263233-07:00
 description: "How to: (Comment faire :) Pour envoyer une requ\xEAte HTTP en C++, vous\
   \ pouvez utiliser la biblioth\xE8que `cpr`. Voici comment ."
-lastmod: '2024-03-13T22:44:58.158395-06:00'
+lastmod: '2024-04-05T21:53:59.587015-06:00'
 model: gpt-4-1106-preview
-summary: "Pour envoyer une requ\xEAte HTTP en C++, vous pouvez utiliser la biblioth\xE8\
-  que `cpr`."
+summary: "(Comment faire :) Pour envoyer une requ\xEAte HTTP en C++, vous pouvez utiliser\
+  \ la biblioth\xE8que `cpr`."
 title: "Envoi d'une requ\xEAte HTTP"
 weight: 44
 ---

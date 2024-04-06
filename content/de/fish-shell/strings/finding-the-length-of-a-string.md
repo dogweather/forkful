@@ -2,9 +2,10 @@
 date: 2024-01-20 17:47:14.918279-07:00
 description: "How to: (Wie geht das:) Ein Beispiel in Fish Shell zur Bestimmung der\
   \ L\xE4nge einer Zeichenkette."
-lastmod: '2024-03-13T22:44:54.298942-06:00'
+lastmod: '2024-04-05T21:53:56.188382-06:00'
 model: gpt-4-1106-preview
-summary: "Ein Beispiel in Fish Shell zur Bestimmung der L\xE4nge einer Zeichenkette."
+summary: "(Wie geht das:) Ein Beispiel in Fish Shell zur Bestimmung der L\xE4nge einer\
+  \ Zeichenkette."
 title: "Ermittlung der Zeichenkettenl\xE4nge"
 weight: 7
 ---

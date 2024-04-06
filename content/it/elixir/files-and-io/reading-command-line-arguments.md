@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:55:35.941248-07:00
-description: 'Come Fare: .'
-lastmod: '2024-03-13T22:44:43.099504-06:00'
+description: "Come Fare: In Elixir, `System.argv()` \xE8 il cavallo di battaglia per\
+  \ acciuffare gli argomenti da riga di comando. Prima di Elixir, altri linguaggi\
+  \ come\u2026"
+lastmod: '2024-04-05T21:53:43.878863-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "In Elixir, `System.argv()` \xE8 il cavallo di battaglia per acciuffare gli\
+  \ argomenti da riga di comando."
 title: Lettura degli argomenti della riga di comando
 weight: 23
 ---

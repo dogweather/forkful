@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:54:42.265959-07:00
-description: 'Hvordan: .'
-lastmod: '2024-03-13T22:44:40.860784-06:00'
+description: "Hvordan: _Det forventede utdata vil v\xE6re innholdet av `eksempel.txt`\
+  \ vist p\xE5 skjermen._ Eller med \"lazy IO\" for store filer."
+lastmod: '2024-04-05T21:53:41.829865-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "_Det forventede utdata vil v\xE6re innholdet av `eksempel.txt` vist p\xE5\
+  \ skjermen._ Eller med \"lazy IO\" for store filer."
 title: Lese en tekstfil
 weight: 22
 ---

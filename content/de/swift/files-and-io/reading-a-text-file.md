@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:55:14.749037-07:00
-description: 'So geht''s: .'
-lastmod: '2024-03-13T22:44:54.242288-06:00'
+description: "So geht's: Historisch gesehen, ist das Lesen von Dateien so alt wie\
+  \ die Datenspeicherung auf Computern. Swifts Ansatz vereinfacht diesen Vorgang im\u2026"
+lastmod: '2024-04-05T21:53:56.129018-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Historisch gesehen, ist das Lesen von Dateien so alt wie die Datenspeicherung
+  auf Computern.
 title: Textdatei einlesen
 weight: 22
 ---

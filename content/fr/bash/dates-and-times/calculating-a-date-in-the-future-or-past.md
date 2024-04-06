@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:28:37.090090-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:58.011765-06:00'
+description: "Comment faire : Historiquement, les calculs de dates \xE9taient plus\
+  \ compliqu\xE9s avec les versions ant\xE9rieures de Bash et d'autres outils de ligne\
+  \ de\u2026"
+lastmod: '2024-04-05T21:53:59.468785-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historiquement, les calculs de dates \xE9taient plus compliqu\xE9s avec\
+  \ les versions ant\xE9rieures de Bash et d'autres outils de ligne de commande."
 title: "Calcul d'une date future ou pass\xE9e"
 weight: 26
 ---

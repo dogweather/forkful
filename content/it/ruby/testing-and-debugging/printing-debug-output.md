@@ -2,9 +2,9 @@
 date: 2024-01-20 17:53:29.333388-07:00
 description: How to (Come fare) Ruby rende super semplice stampare cose a schermo.
   Ecco un esempio.
-lastmod: '2024-03-13T22:44:44.053857-06:00'
+lastmod: '2024-04-05T21:53:44.698107-06:00'
 model: gpt-4-1106-preview
-summary: Ruby rende super semplice stampare cose a schermo.
+summary: ''
 title: Stampa dell'output di debug
 weight: 33
 ---

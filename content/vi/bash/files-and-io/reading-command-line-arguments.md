@@ -2,10 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:22.981989-07:00
-description: "L\xE0m th\u1EBF n\xE0o: ."
-lastmod: '2024-03-13T22:44:36.899228-06:00'
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EA7u ra m\u1EABu gi\u1EA3 s\u1EED k\u1ECB\
+  ch b\u1EA3n c\u1EE7a b\u1EA1n \u0111\u01B0\u1EE3c \u0111\u1EB7t t\xEAn l\xE0 'example.sh'\
+  \ v\xE0 b\u1EA1n g\u1ECDi `./example.sh arg1 arg2`."
+lastmod: '2024-04-05T21:53:38.267568-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "\u0110\u1EA7u ra m\u1EABu gi\u1EA3 s\u1EED k\u1ECBch b\u1EA3n c\u1EE7a b\u1EA1\
+  n \u0111\u01B0\u1EE3c \u0111\u1EB7t t\xEAn l\xE0 'example.sh' v\xE0 b\u1EA1n g\u1ECD\
+  i `./example.sh arg1 arg2`."
 title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
 weight: 23
 ---

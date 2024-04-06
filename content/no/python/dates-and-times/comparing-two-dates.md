@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:33:37.803650-07:00
-description: 'Hvordan: .'
-lastmod: '2024-03-13T22:44:40.373759-06:00'
+description: "Hvordan: Dato sammenligning er viktig i mange programmeringsoppgaver.\
+  \ Historisk har detaljer som tidszoner og skuddsekunder komplisert dette. Alternativer\u2026"
+lastmod: '2024-04-05T21:53:41.351918-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Dato sammenligning er viktig i mange programmeringsoppgaver.
 title: Sammenlikning av to datoer
 weight: 27
 ---

@@ -1,10 +1,11 @@
 ---
 date: 2024-01-20 17:44:25.533331-07:00
 description: "How to: (\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\
-  \u0438:) ."
-lastmod: '2024-03-13T22:44:49.427966-06:00'
+  \u0438:) **Sample output:** The actual HTML content of http://example.com."
+lastmod: '2024-04-05T21:53:49.594405-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\u0438:)\
+  \ **Sample output:** The actual HTML content of http://example.com."
 title: "\u0417\u0430\u0432\u0430\u043D\u0442\u0430\u0436\u0435\u043D\u043D\u044F \u0432\
   \u0435\u0431-\u0441\u0442\u043E\u0440\u0456\u043D\u043A\u0438"
 weight: 42

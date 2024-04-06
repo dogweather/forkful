@@ -5,12 +5,12 @@ date: 2024-02-03 19:15:52.302471-07:00
 description: "Comment faire : Pour trouver si une cha\xEEne correspond \xE0 un motif,\
   \ vous pouvez utiliser `grep`, un utilitaire en ligne de commande pour rechercher\
   \ dans des\u2026"
-lastmod: '2024-03-13T22:44:57.978651-06:00'
+lastmod: '2024-04-05T21:53:59.442889-06:00'
 model: gpt-4-0125-preview
 summary: "Pour trouver si une cha\xEEne correspond \xE0 un motif, vous pouvez utiliser\
   \ `grep`, un utilitaire en ligne de commande pour rechercher dans des ensembles\
   \ de donn\xE9es en texte brut des lignes correspondant \xE0 une expression r\xE9\
-  guli\xE8re."
+  guli\xE8re ."
 title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---

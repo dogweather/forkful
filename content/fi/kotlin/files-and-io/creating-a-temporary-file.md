@@ -2,9 +2,9 @@
 date: 2024-01-20 17:40:53.145710-07:00
 description: "How to: (Kuinka tehd\xE4:) Kotlinissa voit luoda v\xE4liaikaisia tiedostoja\
   \ `createTempFile`-funktiolla."
-lastmod: '2024-03-13T22:44:56.550635-06:00'
+lastmod: '2024-04-05T21:53:58.116491-06:00'
 model: gpt-4-1106-preview
-summary: "Kotlinissa voit luoda v\xE4liaikaisia tiedostoja `createTempFile`-funktiolla."
+summary: "(Kuinka tehd\xE4:) Kotlinissa voit luoda v\xE4liaikaisia tiedostoja `createTempFile`-funktiolla."
 title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---

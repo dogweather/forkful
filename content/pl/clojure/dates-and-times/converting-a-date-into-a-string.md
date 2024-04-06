@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:36:04.984214-07:00
-description: "Jak to zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:35.008444-06:00'
+description: "Jak to zrobi\u0107: W Clojure konwersja daty do postaci \u0142a\u0144\
+  cucha znak\xF3w nie jest skomplikowana, ale wymaga zrozumienia biblioteki `java-time`.\
+  \ Ta biblioteka\u2026"
+lastmod: '2024-04-05T21:53:36.452763-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "W Clojure konwersja daty do postaci \u0142a\u0144cucha znak\xF3w nie jest\
+  \ skomplikowana, ale wymaga zrozumienia biblioteki `java-time`."
 title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---

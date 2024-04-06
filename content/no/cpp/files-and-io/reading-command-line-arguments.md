@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:55:29.219355-07:00
-description: "How to (Slik gj\xF8r du det) ."
-lastmod: '2024-03-13T22:44:41.115521-06:00'
+description: "How to (Slik gj\xF8r du det) Kj\xF8rer du `./programmet ditt klare fjellvann`,\
+  \ f\xE5r du."
+lastmod: '2024-04-05T21:53:42.076591-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: Lese kommandolinjeargumenter
 weight: 23
 ---

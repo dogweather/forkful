@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:41:42.671248-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:59.359988-06:00'
+description: "How to: En los viejos tiempos, los programadores ten\xEDan que recorrer\
+  \ una cadena car\xE1cter por car\xE1cter y manejar manualmente el proceso de eliminaci\xF3\
+  n.\u2026"
+lastmod: '2024-04-05T21:54:00.708389-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "En los viejos tiempos, los programadores ten\xEDan que recorrer una cadena\
+  \ car\xE1cter por car\xE1cter y manejar manualmente el proceso de eliminaci\xF3\
+  n."
 title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---

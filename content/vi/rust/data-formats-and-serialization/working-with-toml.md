@@ -2,10 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:04.737421-07:00
-description: "C\xE1ch th\u1EE9c: ."
-lastmod: '2024-03-13T22:44:36.407146-06:00'
+description: "C\xE1ch th\u1EE9c: TOML, vi\u1EBFt t\u1EAFt c\u1EE7a Tom's Obvious,\
+  \ Minimal Language, \u0111\u01B0\u1EE3c t\u1EA1o ra b\u1EDFi Tom Preston-Werner\
+  \ v\xE0o n\u0103m 2013. M\u1EE5c ti\xEAu c\u1EE7a n\xF3 l\xE0 \u0111\u1EC3 tr\u1EDF\
+  \ n\xEAn d\u1EC5 \u0111\u1ECDc h\u01A1n\u2026"
+lastmod: '2024-04-05T21:53:37.810153-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "TOML, vi\u1EBFt t\u1EAFt c\u1EE7a Tom's Obvious, Minimal Language, \u0111\
+  \u01B0\u1EE3c t\u1EA1o ra b\u1EDFi Tom Preston-Werner v\xE0o n\u0103m 2013."
 title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 weight: 39
 ---

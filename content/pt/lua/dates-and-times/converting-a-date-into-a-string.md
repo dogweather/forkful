@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:37:13.179955-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.720537-06:00'
+description: "Como Fazer: Historicamente, cada sistema operacional e linguagem de\
+  \ programa\xE7\xE3o tem seu pr\xF3prio jeito de manusear datas e strings, o que\
+  \ pode ser um\u2026"
+lastmod: '2024-04-05T21:53:47.066077-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historicamente, cada sistema operacional e linguagem de programa\xE7\xE3\
+  o tem seu pr\xF3prio jeito de manusear datas e strings, o que pode ser um problema\
+  \ na hora de compartilhar dados entre sistemas diferentes."
 title: Convertendo uma data em uma string
 weight: 28
 ---

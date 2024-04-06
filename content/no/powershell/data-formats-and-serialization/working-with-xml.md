@@ -1,9 +1,9 @@
 ---
 date: 2024-01-26 04:34:20.036693-07:00
-description: 'Hvordan: .'
-lastmod: '2024-03-13T22:44:41.041217-06:00'
+description: "Hvordan: Eksempel p\xE5 utdata."
+lastmod: '2024-04-05T21:53:42.002576-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: ''
 title: "\xC5 jobbe med XML"
 weight: 40
 ---

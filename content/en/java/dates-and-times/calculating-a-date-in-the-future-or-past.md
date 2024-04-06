@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:31:05.472226-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:59.984095-06:00'
+description: 'How to: Output could look like this.'
+lastmod: '2024-04-05T21:53:35.680901-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Output could look like this.
 title: Calculating a date in the future or past
 weight: 26
 ---

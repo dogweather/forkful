@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:57:17.349896-07:00
 description: 'How to: (Comment faire :) Exemple simple avec `sed` .'
-lastmod: '2024-03-13T22:44:57.972746-06:00'
+lastmod: '2024-04-05T21:53:59.438158-06:00'
 model: gpt-4-1106-preview
-summary: Exemple simple avec `sed`.
+summary: (Comment faire :) Exemple simple avec `sed` .
 title: Recherche et remplacement de texte
 weight: 10
 ---

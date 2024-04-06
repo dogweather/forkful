@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:33:29.857620-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:56.627184-06:00'
+description: 'How to: Esimerkin tulostus.'
+lastmod: '2024-04-05T21:53:58.197507-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---

@@ -2,10 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:35.067033-07:00
-description: "C\xE1ch th\u1EF1c hi\u1EC7n: ."
-lastmod: '2024-03-13T22:44:36.359447-06:00'
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: \u0110\xF4i khi b\u1EA1n c\xF3 m\u1ED9\
+  t chu\u1ED7i v\u1EDBi d\u1EA5u ngo\u1EB7c h\u1ED7n h\u1EE3p, nh\u01B0 th\u1EBF n\xE0\
+  y."
+lastmod: '2024-04-05T21:53:37.769278-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "\u0110\xF4i khi b\u1EA1n c\xF3 m\u1ED9t chu\u1ED7i v\u1EDBi d\u1EA5u ngo\u1EB7\
+  c h\u1ED7n h\u1EE3p, nh\u01B0 th\u1EBF n\xE0y."
 title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i"
 weight: 9
 ---

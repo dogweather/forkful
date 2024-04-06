@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 03:45:47.962019-07:00
-description: "C\xF3mo hacerlo: ."
-lastmod: '2024-03-13T22:44:59.196829-06:00'
+description: "C\xF3mo hacerlo: Lua no incluye una funci\xF3n de redondeo de manera\
+  \ predeterminada a diferencia de algunos otros lenguajes. Hist\xF3ricamente, necesitas\
+  \ escribir\u2026"
+lastmod: '2024-04-05T21:54:00.543313-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Lua no incluye una funci\xF3n de redondeo de manera predeterminada a diferencia\
+  \ de algunos otros lenguajes."
 title: "Redondeo de n\xFAmeros"
 weight: 13
 ---

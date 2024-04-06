@@ -1,10 +1,18 @@
 ---
 date: 2024-01-20 17:47:46.780211-07:00
-description: "How to: (\uC5B4\uB5BB\uAC8C:) ."
+description: "How to: (\uC5B4\uB5BB\uAC8C:) \uBB38\uC790\uC5F4\uC758 \uAE38\uC774\uB97C\
+  \ \uCC3E\uAE30 \uC704\uD574 Kotlin\uC740 `length` \uD504\uB85C\uD37C\uD2F0\uB97C\
+  \ \uC81C\uACF5\uD569\uB2C8\uB2E4. Java\uC5D0\uC11C \uC0C1\uC18D\uBC1B\uC740 \uBC29\
+  \uBC95\uC774\uC8E0. `length()` \uD568\uC218 \uB300\uC2E0 `length` \uD504\uB85C\uD37C\
+  \uD2F0\uB97C \uC4F0\uB294 \uAC81\uB2C8\uB2E4. \uC608\uC804\uC5D0\uB294 \uBB38\uC790\
+  \uC5F4 \uD06C\uAE30\uB97C \uCC3E\uC744 \uB54C \uC790\uC8FC `length()` \uD568\uC218\
+  \uB97C\u2026"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.158832-06:00'
+lastmod: '2024-04-05T21:53:56.903368-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(\uC5B4\uB5BB\uAC8C:) \uBB38\uC790\uC5F4\uC758 \uAE38\uC774\uB97C \uCC3E\
+  \uAE30 \uC704\uD574 Kotlin\uC740 `length` \uD504\uB85C\uD37C\uD2F0\uB97C \uC81C\uACF5\
+  \uD569\uB2C8\uB2E4."
 title: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774 \uCC3E\uAE30"
 weight: 7
 ---

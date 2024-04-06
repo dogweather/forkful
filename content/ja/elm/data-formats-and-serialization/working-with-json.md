@@ -2,8 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:56.161320-07:00
-description: "\u65B9\u6CD5:\u2026"
-lastmod: '2024-03-13T22:44:42.036373-06:00'
+description: "\u65B9\u6CD5: JSON\u6587\u5B57\u5217\u3092`UserProfile`\u578B\u306B\u30C7\
+  \u30B3\u30FC\u30C9\u3059\u308B\u305F\u3081\u306B\u30C7\u30B3\u30FC\u30C0\u3092\u4F5C\
+  \u6210\u3057\u307E\u3059\uFF1A."
+lastmod: '2024-04-05T21:53:42.924102-06:00'
 model: gpt-4-0125-preview
 summary: "Elm\u306FJSON\u306E\u53D6\u308A\u6271\u3044\u3092\u660E\u793A\u6027\u3068\
   \u5B89\u5168\u6027\u3092\u3082\u3063\u3066\u6271\u3044\u307E\u3059\u3002\u4E3B\u306B\

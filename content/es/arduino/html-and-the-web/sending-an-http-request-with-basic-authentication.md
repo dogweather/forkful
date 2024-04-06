@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:00:57.211237-07:00
-description: "C\xF3mo se hace: ."
-lastmod: '2024-03-13T22:44:59.334033-06:00'
+description: "C\xF3mo se hace: Enviar una solicitud HTTP con autenticaci\xF3n b\xE1\
+  sica no es nada nuevo; ha existido pr\xE1cticamente desde los inicios del protocolo\
+  \ HTTP.\u2026"
+lastmod: '2024-04-05T21:54:00.681383-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica no es nada nuevo;\
+  \ ha existido pr\xE1cticamente desde los inicios del protocolo HTTP."
 title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
 weight: 45
 ---

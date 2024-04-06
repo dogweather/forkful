@@ -3,10 +3,9 @@ date: 2024-01-26 03:44:39.958014-07:00
 description: "\u5982\u4F55\u5B9E\u73B0\uFF1A C++\u63D0\u4F9B\u4E86\u51E0\u79CD\u56DB\
   \u820D\u4E94\u5165\u6570\u5B57\u7684\u65B9\u6CD5\uFF0C\u6BD4\u5982`floor()`\u3001\
   `ceil()`\u548C`round()`\uFF1A."
-lastmod: '2024-03-13T22:44:48.104812-06:00'
+lastmod: '2024-04-05T21:53:48.399199-06:00'
 model: gpt-4-0125-preview
-summary: "C++\u63D0\u4F9B\u4E86\u51E0\u79CD\u56DB\u820D\u4E94\u5165\u6570\u5B57\u7684\
-  \u65B9\u6CD5\uFF0C\u6BD4\u5982`floor()`\u3001`ceil()`\u548C`round()`\uFF1A."
+summary: ''
 title: "\u6570\u5B57\u53D6\u6574"
 weight: 13
 ---

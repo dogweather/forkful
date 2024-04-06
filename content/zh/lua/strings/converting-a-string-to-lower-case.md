@@ -4,10 +4,9 @@ description: "How to: | \u600E\u4E48\u505A: \u5728Lua\u4E2D\uFF0C\u8F6C\u6362\u5
   \u7B26\u4E32\u5230\u5C0F\u5199\u5F88\u76F4\u63A5\u3002\u4F7F\u7528`string.lower()`\u51FD\
   \u6570\uFF1A."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:47.897282-06:00'
+lastmod: '2024-04-05T21:53:48.202689-06:00'
 model: gpt-4-1106-preview
-summary: "\u5728Lua\u4E2D\uFF0C\u8F6C\u6362\u5B57\u7B26\u4E32\u5230\u5C0F\u5199\u5F88\
-  \u76F4\u63A5\u3002\u4F7F\u7528`string.lower()`\u51FD\u6570\uFF1A."
+summary: ''
 title: "\u5C06\u5B57\u7B26\u4E32\u8F6C\u6362\u4E3A\u5C0F\u5199"
 weight: 4
 ---

@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:50:23.585788-07:00
-description: 'Anleitung: .'
-lastmod: '2024-03-13T22:44:54.043565-06:00'
+description: "Anleitung: Stringinterpolation in Bash gibt es schon seit den Anf\xE4\
+  ngen der Shell-Programmierung. Anstelle der Stringinterpolation k\xF6nnten Programmierer\u2026"
+lastmod: '2024-04-05T21:53:55.926597-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Stringinterpolation in Bash gibt es schon seit den Anf\xE4ngen der Shell-Programmierung."
 title: Zeichenketten interpolieren
 weight: 8
 ---

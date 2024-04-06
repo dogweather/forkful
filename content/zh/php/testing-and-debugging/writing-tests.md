@@ -5,10 +5,9 @@ date: 2024-02-03 19:31:23.357553-07:00
 description: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u4E00\u4E2A\u5728 PHP \u4E2D\u5E7F\u6CDB\
   \u4F7F\u7528\u7684\u6D4B\u8BD5\u5DE5\u5177\u662F PHPUnit\u3002\u901A\u8FC7 Composer\
   \ \u5B89\u88C5\uFF1A."
-lastmod: '2024-03-13T22:44:47.867656-06:00'
+lastmod: '2024-04-05T21:53:48.175513-06:00'
 model: gpt-4-0125-preview
-summary: "\u4E00\u4E2A\u5728 PHP \u4E2D\u5E7F\u6CDB\u4F7F\u7528\u7684\u6D4B\u8BD5\u5DE5\
-  \u5177\u662F PHPUnit\u3002\u901A\u8FC7 Composer \u5B89\u88C5\uFF1A."
+summary: ''
 title: "\u7F16\u5199\u6D4B\u8BD5"
 weight: 36
 ---

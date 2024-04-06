@@ -4,10 +4,11 @@ description: "How to: (\u5982\u4F55\u64CD\u4F5C\uFF1A) \u4F7F\u7528`Get-Date`\u5
   \u5EFA\u65E5\u671F\uFF0C`-lt`, `-gt`, `-eq`\u7B49\u6BD4\u8F83\u64CD\u4F5C\u7B26\u6765\
   \u6BD4\u8F83\u3002"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:48.027983-06:00'
+lastmod: '2024-04-05T21:53:48.324566-06:00'
 model: gpt-4-1106-preview
-summary: "\u4F7F\u7528`Get-Date`\u521B\u5EFA\u65E5\u671F\uFF0C`-lt`, `-gt`, `-eq`\u7B49\
-  \u6BD4\u8F83\u64CD\u4F5C\u7B26\u6765\u6BD4\u8F83."
+summary: "(\u5982\u4F55\u64CD\u4F5C\uFF1A) \u4F7F\u7528`Get-Date`\u521B\u5EFA\u65E5\
+  \u671F\uFF0C`-lt`, `-gt`, `-eq`\u7B49\u6BD4\u8F83\u64CD\u4F5C\u7B26\u6765\u6BD4\u8F83\
+  \u3002"
 title: "\u6BD4\u8F83\u4E24\u4E2A\u65E5\u671F"
 weight: 27
 ---

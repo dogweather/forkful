@@ -1,9 +1,10 @@
 ---
 date: 2024-01-26 03:41:46.337564-07:00
-description: 'Hvordan: .'
-lastmod: '2024-03-13T22:44:40.562108-06:00'
+description: "Hvordan: Noen ganger har du en streng med blandete anf\xF8rselstegn,\
+  \ slik som dette."
+lastmod: '2024-04-05T21:53:41.540563-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Noen ganger har du en streng med blandete anf\xF8rselstegn, slik som dette."
 title: "Fjerne anf\xF8rselstegn fra en streng"
 weight: 9
 ---

@@ -1,10 +1,18 @@
 ---
 date: 2024-01-20 17:50:36.937936-07:00
-description: "How to: (\uBC29\uBC95) ."
+description: "How to: (\uBC29\uBC95) \uBB38\uC790\uC5F4 \uBCF4\uAC04\uC740 Bash\uC5D0\
+  \uC11C `\" \"` \uC548\uC5D0\uC11C `$\uBCC0\uC218\uBA85`\uC744 \uC0AC\uC6A9\uD558\
+  \uBA70 \uBCC0\uC218\uC758 \uAC12\uC744 \uBB38\uC790\uC5F4\uC5D0 \uC0BD\uC785\uD569\
+  \uB2C8\uB2E4. 1990\uB144\uB300 \uCD08\uBC18 Bash\uB294 Bourne Again SHell\uB85C\uC11C\
+  , Steve Bourne\uC758 'sh'\uC5D0 \uAE30\uBC18\uD574 \uB9CC\uB4E4\uC5B4\uC9C4 Brian\
+  \ Fox\uC5D0 \uC758\uD574\u2026"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.458934-06:00'
+lastmod: '2024-04-05T21:53:57.137693-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(\uBC29\uBC95) \uBB38\uC790\uC5F4 \uBCF4\uAC04\uC740 Bash\uC5D0\uC11C `\"\
+  \ \"` \uC548\uC5D0\uC11C `$\uBCC0\uC218\uBA85`\uC744 \uC0AC\uC6A9\uD558\uBA70 \uBCC0\
+  \uC218\uC758 \uAC12\uC744 \uBB38\uC790\uC5F4\uC5D0 \uC0BD\uC785\uD569\uB2C8\uB2E4\
+  ."
 title: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uD558\uAE30"
 weight: 8
 ---

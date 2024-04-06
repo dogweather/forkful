@@ -2,10 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:52.617697-07:00
-description: 'Hoe te: .'
-lastmod: '2024-03-13T22:44:50.617334-06:00'
+description: "Hoe te: TOML, dat staat voor Tom's Obvious, Minimal Language, is gecre\xEB\
+  erd door Tom Preston-Werner in 2013. Het doel is om leesbaarder te zijn dan JSON\
+  \ of\u2026"
+lastmod: '2024-04-05T21:53:50.638662-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "TOML, dat staat voor Tom's Obvious, Minimal Language, is gecre\xEBerd door\
+  \ Tom Preston-Werner in 2013."
 title: Werken met TOML
 weight: 39
 ---

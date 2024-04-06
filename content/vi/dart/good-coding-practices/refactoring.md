@@ -7,9 +7,13 @@ description: "L\xE0m th\u1EBF n\xE0o: Tr\u01B0\u1EDBc khi t\xE1i c\u1EA5u tr\xFA
   n nhi\u1EC1u c\u1EA5p \u0111\u1ED9 tr\u1EEBu t\u01B0\u1EE3ng ho\u1EB7c tr\xE1ch\
   \ nhi\u1EC7m, nh\u01B0 t\xEDnh m\u1ED9t kho\u1EA3n gi\u1EA3m gi\xE1 v\xE0 sau \u0111\
   \xF3\u2026"
-lastmod: '2024-03-13T22:44:36.274300-06:00'
+lastmod: '2024-04-05T21:53:37.691502-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Tr\u01B0\u1EDBc khi t\xE1i c\u1EA5u tr\xFAc, b\u1EA1n c\xF3 th\u1EC3 c\xF3\
+  \ m\u1ED9t \u0111o\u1EA1n m\xE3 m\xE0 tr\u1ED9n l\u1EABn nhi\u1EC1u c\u1EA5p \u0111\
+  \u1ED9 tr\u1EEBu t\u01B0\u1EE3ng ho\u1EB7c tr\xE1ch nhi\u1EC7m, nh\u01B0 t\xEDnh\
+  \ m\u1ED9t kho\u1EA3n gi\u1EA3m gi\xE1 v\xE0 sau \u0111\xF3 \xE1p d\u1EE5ng n\xF3\
+  ."
 title: "T\xE1i c\u1EA5u tr\xFAc code"
 weight: 19
 ---

@@ -5,11 +5,11 @@ description: "How to: (\uC5B4\uB5BB\uAC8C \uD558\uB098\uC694?) C++\uC5D0\uC11C\u
   \ \uD30C\uC2F1\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4. `Gumbo-parser`\uB294 \uADF8\
   \uC911 \uD558\uB098\uC785\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.665078-06:00'
+lastmod: '2024-04-05T21:53:57.298388-06:00'
 model: unknown
-summary: "C++\uC5D0\uC11C\uB294 \uC5EC\uB7EC \uB77C\uC774\uBE0C\uB7EC\uB9AC\uB97C\
-  \ \uC0AC\uC6A9\uD574 HTML\uC744 \uD30C\uC2F1\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4\
-  ."
+summary: "(\uC5B4\uB5BB\uAC8C \uD558\uB098\uC694?) C++\uC5D0\uC11C\uB294 \uC5EC\uB7EC\
+  \ \uB77C\uC774\uBE0C\uB7EC\uB9AC\uB97C \uC0AC\uC6A9\uD574 HTML\uC744 \uD30C\uC2F1\
+  \uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
 title: "HTML \uD30C\uC2F1"
 weight: 43
 ---

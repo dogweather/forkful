@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:58:23.496288-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.652492-06:00'
+description: "Como Fazer: Note que `str_replace` \xE9 sens\xEDvel a mai\xFAsculas\
+  \ e min\xFAsculas. Para uma busca insens\xEDvel \xE0 caixa, use `str_ireplace`."
+lastmod: '2024-04-05T21:53:46.998128-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Note que `str_replace` \xE9 sens\xEDvel a mai\xFAsculas e min\xFAsculas."
 title: Pesquisando e substituindo texto
 weight: 10
 ---

@@ -3,9 +3,9 @@ date: 2024-01-20 18:03:37.633006-07:00
 description: "How to: Let's get to it. We'll create a simple Java project using the\
   \ command line and compile and run a classic \"Hello, World!\" program. First, make\
   \ a\u2026"
-lastmod: '2024-03-13T22:44:59.973048-06:00'
+lastmod: '2024-04-05T21:53:35.669974-06:00'
 model: gpt-4-1106-preview
-summary: Let's get to it.
+summary: ''
 title: Starting a new project
 weight: 1
 ---

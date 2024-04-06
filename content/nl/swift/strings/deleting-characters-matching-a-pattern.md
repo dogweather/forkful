@@ -2,10 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:06.937061-07:00
-description: 'Hoe te doen: .'
-lastmod: '2024-03-13T22:44:51.139929-06:00'
+description: "Hoe te doen: Voor Swift en moderne programmering was pattern matching\
+  \ het domein van specifieke tools en talen zoals `sed`, `awk`, of Perl, bekend om\
+  \ hun\u2026"
+lastmod: '2024-04-05T21:53:51.153029-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: Voor Swift en moderne programmering was pattern matching het domein van specifieke
+  tools en talen zoals `sed`, `awk`, of Perl, bekend om hun mogelijkheden voor tekstverwerking.
 title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---

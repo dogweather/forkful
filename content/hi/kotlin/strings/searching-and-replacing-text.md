@@ -1,9 +1,16 @@
 ---
 date: 2024-01-20 17:58:23.500870-07:00
-description: "How to: (\u0915\u0948\u0938\u0947 \u0915\u0930\u0947\u0902:) ."
-lastmod: '2024-03-13T22:44:52.232700-06:00'
+description: "How to: (\u0915\u0948\u0938\u0947 \u0915\u0930\u0947\u0902:) \u0909\u092A\
+  \u0930\u094B\u0915\u094D\u0924 \u0915\u094B\u0921 \u092E\u0947\u0902, `replace`\
+  \ \u092B\u0902\u0915\u094D\u0936\u0928 `originalText` \u092E\u0947\u0902 `searchText`\
+  \ \u0915\u094B `replaceWith` \u0938\u0947 \u092C\u0926\u0932\u0924\u093E \u0939\u0948\
+  \u0964."
+lastmod: '2024-04-05T21:53:54.247222-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(\u0915\u0948\u0938\u0947 \u0915\u0930\u0947\u0902:) \u0909\u092A\u0930\u094B\
+  \u0915\u094D\u0924 \u0915\u094B\u0921 \u092E\u0947\u0902, `replace` \u092B\u0902\
+  \u0915\u094D\u0936\u0928 `originalText` \u092E\u0947\u0902 `searchText` \u0915\u094B\
+  \ `replaceWith` \u0938\u0947 \u092C\u0926\u0932\u0924\u093E \u0939\u0948\u0964."
 title: "\u092A\u093E\u0920 \u0916\u094B\u091C\u0928\u093E \u0914\u0930 \u092C\u0926\
   \u0932\u0928\u093E"
 weight: 10

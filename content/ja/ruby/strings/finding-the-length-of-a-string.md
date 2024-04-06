@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 17:48:18.547239-07:00
-description: "How to: (\u3084\u308A\u65B9) ."
+description: "How to: (\u3084\u308A\u65B9) Sample output (\u51FA\u529B\u4F8B)."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:42.839006-06:00'
+lastmod: '2024-04-05T21:53:43.630802-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(\u3084\u308A\u65B9) Sample output (\u51FA\u529B\u4F8B)."
 title: "\u6587\u5B57\u5217\u306E\u9577\u3055\u3092\u6C42\u3081\u308B"
 weight: 7
 ---

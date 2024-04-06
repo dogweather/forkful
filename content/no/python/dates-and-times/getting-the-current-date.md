@@ -4,13 +4,10 @@ changelog:
 date: 2024-02-03 19:10:34.463824-07:00
 description: "Hvordan: **Bruke standardbiblioteket `datetime`:** `Datetime`-modulen\
   \ i Pythons standardbibliotek tilbyr klasser for manipulering av datoer og\u2026"
-lastmod: '2024-03-13T22:44:40.371779-06:00'
+lastmod: '2024-04-05T21:53:41.349595-06:00'
 model: gpt-4-0125-preview
-summary: '**Bruke standardbiblioteket `datetime`:**
-
-
-  `Datetime`-modulen i Pythons standardbibliotek tilbyr klasser for manipulering av
-  datoer og klokkeslett.'
+summary: '**Bruke standardbiblioteket `datetime`:** `Datetime`-modulen i Pythons standardbibliotek
+  tilbyr klasser for manipulering av datoer og klokkeslett.'
 title: "F\xE5 dagens dato"
 weight: 29
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:42:13.604867-07:00
-description: "Jak zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:35.024488-06:00'
+description: "Jak zrobi\u0107: Elixir, mocno osadzony w paradygmacie funkcyjnym, traktuje\
+  \ tekst jako seri\u0119 niezmienialnych danych. Usuwanie znak\xF3w opiera si\u0119\
+  \ na mechanizmach\u2026"
+lastmod: '2024-04-05T21:53:36.467847-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Elixir, mocno osadzony w paradygmacie funkcyjnym, traktuje tekst jako seri\u0119\
+  \ niezmienialnych danych."
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---

@@ -2,10 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:32.072862-07:00
-description: 'Hoe: .'
-lastmod: '2024-03-13T22:44:50.696036-06:00'
+description: 'Hoe: De output kan er als volgt uitzien.'
+lastmod: '2024-04-05T21:53:50.719541-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: De output kan er als volgt uitzien.
 title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---

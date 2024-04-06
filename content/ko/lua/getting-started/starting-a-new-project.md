@@ -5,10 +5,10 @@ description: "How to: (\uC5B4\uB5BB\uAC8C:) Lua\uB294 \uAC04\uB2E8\uD558\uACE0 \
   \ \uC2DC\uC791\uD558\uB824\uBA74, \uAE30\uBCF8\uC801\uC778 Lua \uD30C\uC77C\uC744\
   \ \uB9CC\uB4E4\uC5B4 \uBD05\uC2DC\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.418027-06:00'
+lastmod: '2024-04-05T21:53:57.106629-06:00'
 model: gpt-4-1106-preview
-summary: "Lua\uB294 \uAC04\uB2E8\uD558\uACE0 \uC720\uC5F0\uD55C \uC5B8\uC5B4\uC785\
-  \uB2C8\uB2E4."
+summary: "(\uC5B4\uB5BB\uAC8C:) Lua\uB294 \uAC04\uB2E8\uD558\uACE0 \uC720\uC5F0\uD55C\
+  \ \uC5B8\uC5B4\uC785\uB2C8\uB2E4."
 title: "\uC0C8 \uD504\uB85C\uC81D\uD2B8 \uC2DC\uC791\uD558\uAE30"
 weight: 1
 ---

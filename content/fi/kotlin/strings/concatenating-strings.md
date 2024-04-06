@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:34:59.845226-07:00
-description: 'Kuinka: .'
-lastmod: '2024-03-13T22:44:56.522746-06:00'
+description: "Kuinka: Historiallisesti, stringien yhdist\xE4minen oli hitaampaa ja\
+  \ tehotonta suurilla stringim\xE4\xE4rill\xE4, koska se luo uusia string-olioita\
+  \ muistiin.\u2026"
+lastmod: '2024-04-05T21:53:58.089960-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historiallisesti, stringien yhdist\xE4minen oli hitaampaa ja tehotonta suurilla\
+  \ stringim\xE4\xE4rill\xE4, koska se luo uusia string-olioita muistiin."
 title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---

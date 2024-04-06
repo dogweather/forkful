@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:36:17.479521-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:40.413357-06:00'
+description: "How to: Konvertering av datoer til strenger i Clojure skjer ofte via\
+  \ `java.time` biblioteket, en del av Java Platform Standard Ed. 8 (JSR-310). Historien\u2026"
+lastmod: '2024-04-05T21:53:41.393083-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Konvertering av datoer til strenger i Clojure skjer ofte via `java.time`
+  biblioteket, en del av Java Platform Standard Ed.
 title: Konvertere en dato til en streng
 weight: 28
 ---

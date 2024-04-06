@@ -2,10 +2,10 @@
 date: 2024-01-20 17:52:37.337410-07:00
 description: "How to: (Kuinka tehd\xE4:) Clojure tarjoaa `println` funktiota, kun\
   \ tarvitset katsoa, mit\xE4 koodissasi tapahtuu."
-lastmod: '2024-03-13T22:44:56.186953-06:00'
+lastmod: '2024-04-05T21:53:57.743461-06:00'
 model: gpt-4-1106-preview
-summary: "Clojure tarjoaa `println` funktiota, kun tarvitset katsoa, mit\xE4 koodissasi\
-  \ tapahtuu."
+summary: "(Kuinka tehd\xE4:) Clojure tarjoaa `println` funktiota, kun tarvitset katsoa,\
+  \ mit\xE4 koodissasi tapahtuu."
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---

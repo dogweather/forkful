@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:46:29.967487-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:59.579028-06:00'
+description: "How to: Extracting substrings es esencial desde los inicios del lenguaje\
+  \ por su utilidad en campos como el procesamiento de texto, parsing y en el\u2026"
+lastmod: '2024-04-05T21:54:00.938062-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Extracting substrings es esencial desde los inicios del lenguaje por su utilidad
+  en campos como el procesamiento de texto, parsing y en el desarrollo web.
 title: "Extracci\xF3n de subcadenas"
 weight: 6
 ---

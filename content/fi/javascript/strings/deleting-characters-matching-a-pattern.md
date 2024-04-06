@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:42:46.102568-07:00
-description: 'Miten: .'
-lastmod: '2024-03-13T22:44:56.934079-06:00'
+description: "Miten: JavaScriptin alkuaikoina merkkijonojen manipuloiminen oli yksinkertaisempaa.\
+  \ Ajan my\xF6t\xE4 s\xE4\xE4nn\xF6lliset lausekkeet ovat tulleet tarpeellisiksi\u2026"
+lastmod: '2024-04-05T21:53:58.512624-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: JavaScriptin alkuaikoina merkkijonojen manipuloiminen oli yksinkertaisempaa.
 title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---

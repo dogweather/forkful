@@ -1,9 +1,10 @@
 ---
 date: 2024-01-26 00:56:40.804817-07:00
-description: 'Como fazer: .'
-lastmod: '2024-03-13T22:44:46.804334-06:00'
+description: "Como fazer: O PowerShell evoluiu muito desde sua cria\xE7\xE3o como\
+  \ Monad. O tratamento de erros tornou-se mais robusto ao longo do tempo, oferecendo\u2026"
+lastmod: '2024-04-05T21:53:47.151414-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "O PowerShell evoluiu muito desde sua cria\xE7\xE3o como Monad."
 title: Tratamento de erros
 weight: 16
 ---

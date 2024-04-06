@@ -2,10 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:53.696607-07:00
-description: "C\xE1ch th\u1EF1c hi\u1EC7n: ."
-lastmod: '2024-03-13T22:44:36.175967-06:00'
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Truy\u1EC1n th\u1ED1ng, vi\u1EC7c \u0111\
+  \u1ECDc t\u1EC7p trong c\xE1c ng\xF4n ng\u1EEF l\u1EADp tr\xECnh l\xE0 m\u1ED9t\
+  \ nhi\u1EC7m v\u1EE5 d\xE0i d\xF2ng v\u1EDBi nhi\u1EC1u b\u01B0\u1EDBc \u0111\u1EC3\
+  \ x\u1EED l\xFD l\u1ED7i v\xE0 t\xE0i nguy\xEAn. V\u1EDBi Clojure,\u2026"
+lastmod: '2024-04-05T21:53:37.599006-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Truy\u1EC1n th\u1ED1ng, vi\u1EC7c \u0111\u1ECDc t\u1EC7p trong c\xE1c ng\xF4\
+  n ng\u1EEF l\u1EADp tr\xECnh l\xE0 m\u1ED9t nhi\u1EC7m v\u1EE5 d\xE0i d\xF2ng v\u1EDB\
+  i nhi\u1EC1u b\u01B0\u1EDBc \u0111\u1EC3 x\u1EED l\xFD l\u1ED7i v\xE0 t\xE0i nguy\xEA\
+  n."
 title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 22
 ---

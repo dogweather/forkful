@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:34:00.499087-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.742848-06:00'
+description: "Como Fazer: A concatena\xE7\xE3o de strings existe desde os primeiros\
+  \ dias da computa\xE7\xE3o, por ser um dos fundamentos para a manipula\xE7\xE3o\
+  \ de texto. Em Bash,\u2026"
+lastmod: '2024-04-05T21:53:47.090096-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "A concatena\xE7\xE3o de strings existe desde os primeiros dias da computa\xE7\
+  \xE3o, por ser um dos fundamentos para a manipula\xE7\xE3o de texto."
 title: Concatenando strings
 weight: 3
 ---

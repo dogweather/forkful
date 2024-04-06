@@ -1,10 +1,14 @@
 ---
 date: 2024-01-20 18:02:28.483490-07:00
-description: "How to (\u3084\u308A\u65B9) ."
+description: "How to (\u3084\u308A\u65B9) \u3053\u306E\u30B3\u30FC\u30C9\u306F`socket.http`\u3068\
+  `ltn12`\u3092\u4F7F\u3063\u3066HTTP GET\u30EA\u30AF\u30A8\u30B9\u30C8\u3092\u9001\
+  \u308A\u307E\u3059\u3002\u30E6\u30FC\u30B6\u30FC\u540D\u3068\u30D1\u30B9\u30EF\u30FC\
+  \u30C9\u3067\u8A8D\u8A3C\u3057\u3066\u3001\u30C7\u30FC\u30BF\u3092\u53D6\u5F97\u3057\
+  \u307E\u3059\u3002"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:42.307483-06:00'
+lastmod: '2024-04-05T21:53:43.150721-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "\u57FA\u672C\u8A8D\u8A3C\u3092\u4F7F\u7528\u3057\u305FHTTP\u30EA\u30AF\u30A8\
   \u30B9\u30C8\u306E\u9001\u4FE1"
 weight: 45

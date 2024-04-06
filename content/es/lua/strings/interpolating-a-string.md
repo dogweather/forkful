@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:51:21.906454-07:00
-description: "C\xF3mo se hace: ."
-lastmod: '2024-03-13T22:44:59.188538-06:00'
+description: "C\xF3mo se hace: Otra forma es con la funci\xF3n `string.format()`."
+lastmod: '2024-04-05T21:54:00.534221-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Otra forma es con la funci\xF3n `string.format()`."
 title: "Interpolaci\xF3n de cadenas de texto"
 weight: 8
 ---

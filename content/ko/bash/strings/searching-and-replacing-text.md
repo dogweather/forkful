@@ -1,10 +1,14 @@
 ---
 date: 2024-01-20 17:57:22.460847-07:00
-description: "How to: (\uD558\uB294 \uBC95) ."
+description: "How to: (\uD558\uB294 \uBC95) \uC2E4\uD589 \uD6C4 file.txt \uC548\uC758\
+  \ \uBAA8\uB4E0 'seoul' \uBB38\uC790\uC5F4\uC774 'busan'\uC73C\uB85C \uBCC0\uD658\
+  \uB429\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.457669-06:00'
+lastmod: '2024-04-05T21:53:57.136784-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(\uD558\uB294 \uBC95) \uC2E4\uD589 \uD6C4 file.txt \uC548\uC758 \uBAA8\uB4E0\
+  \ 'seoul' \uBB38\uC790\uC5F4\uC774 'busan'\uC73C\uB85C \uBCC0\uD658\uB429\uB2C8\uB2E4\
+  ."
 title: "\uD14D\uC2A4\uD2B8 \uAC80\uC0C9 \uBC0F \uAD50\uCCB4"
 weight: 10
 ---

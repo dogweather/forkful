@@ -2,10 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:55.508451-07:00
-description: 'Hoe te: .'
-lastmod: '2024-03-13T22:44:50.819585-06:00'
+description: "Hoe te: Voor `DateTime` vertrouwden programmeurs op eigen code om datums\
+  \ te verwerken, wat gevoelig was voor fouten en ineffici\xEBnties. De `DateTime`\u2026"
+lastmod: '2024-04-05T21:53:50.843612-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Voor `DateTime` vertrouwden programmeurs op eigen code om datums te verwerken,\
+  \ wat gevoelig was voor fouten en ineffici\xEBnties."
 title: Een datum uit een string parsen
 weight: 30
 ---

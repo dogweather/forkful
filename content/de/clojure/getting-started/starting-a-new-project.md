@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 18:03:20.162891-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:53.420225-06:00'
+description: "How to: Leiningen ist das de-facto Standard-Tool, um Clojure-Projekte\
+  \ zu verwalten. Es ist seit 2010 verf\xFCgbar und wurde von Phil Hagelberg entwickelt.\u2026"
+lastmod: '2024-04-05T21:53:55.378100-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Leiningen ist das de-facto Standard-Tool, um Clojure-Projekte zu verwalten.
 title: Einen neuen Projekt starten
 weight: 1
 ---

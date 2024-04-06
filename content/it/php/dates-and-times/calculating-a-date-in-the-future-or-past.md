@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:31:27.744524-07:00
-description: 'Come fare: .'
-lastmod: '2024-03-13T22:44:43.529789-06:00'
+description: "Come fare: Le funzioni per la manipolazione delle date in PHP sono evolute\
+  \ nel tempo. In PHP 5.2.0, \xE8 stata introdotta la classe `DateTime`, che fornisce\u2026"
+lastmod: '2024-04-05T21:53:44.294136-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Le funzioni per la manipolazione delle date in PHP sono evolute nel tempo.
 title: Calcolo di una data futura o passata
 weight: 26
 ---

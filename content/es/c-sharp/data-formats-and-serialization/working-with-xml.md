@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 04:29:21.385615-07:00
-description: "C\xF3mo hacerlo: ."
-lastmod: '2024-03-13T22:44:59.102009-06:00'
+description: "C\xF3mo hacerlo: XML existe desde fines de los '90, lo que lo convierte\
+  \ en un abuelo en a\xF1os tecnol\xF3gicos. Fue ideado para la portabilidad de datos\
+  \ y\u2026"
+lastmod: '2024-04-05T21:54:00.445637-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "XML existe desde fines de los '90, lo que lo convierte en un abuelo en a\xF1\
+  os tecnol\xF3gicos."
 title: Trabajando con XML
 weight: 40
 ---

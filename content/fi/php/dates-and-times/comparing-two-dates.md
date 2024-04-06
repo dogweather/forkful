@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:33:22.340326-07:00
-description: 'Kuinka: .'
-lastmod: '2024-03-13T22:44:56.668703-06:00'
+description: "Kuinka: P\xE4iv\xE4m\xE4\xE4rien vertailu on ollut PHP:n valikoimassa\
+  \ jo vuosikymmeni\xE4, mutta DateTime-luokka toi mukanaan monia parannuksia vanhoihin\
+  \ funktioihin.\u2026"
+lastmod: '2024-04-05T21:53:58.240072-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "P\xE4iv\xE4m\xE4\xE4rien vertailu on ollut PHP:n valikoimassa jo vuosikymmeni\xE4\
+  , mutta DateTime-luokka toi mukanaan monia parannuksia vanhoihin funktioihin."
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---

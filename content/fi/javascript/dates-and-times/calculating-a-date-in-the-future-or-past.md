@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:31:12.316430-07:00
-description: "Kuinka tehd\xE4\xE4n: ."
-lastmod: '2024-03-13T22:44:56.963276-06:00'
+description: "Kuinka tehd\xE4\xE4n: Historiallisesti JavaScriptin p\xE4iv\xE4m\xE4\
+  \xE4r\xE4k\xE4sittely on ollut hankalaa aikavy\xF6hykkeiden ja kes\xE4aikaan siirtymisen\
+  \ takia. ECMAScript 5 toi\u2026"
+lastmod: '2024-04-05T21:53:58.541785-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historiallisesti JavaScriptin p\xE4iv\xE4m\xE4\xE4r\xE4k\xE4sittely on ollut\
+  \ hankalaa aikavy\xF6hykkeiden ja kes\xE4aikaan siirtymisen takia."
 title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---

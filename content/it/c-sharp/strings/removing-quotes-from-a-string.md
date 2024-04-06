@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 03:38:13.664364-07:00
-description: 'Come fare: .'
-lastmod: '2024-03-13T22:44:43.421971-06:00'
+description: "Come fare: Il concetto di rimuovere le virgolette non \xE8 nuovo o particolarmente\
+  \ complesso, ma \xE8 fondamentale perch\xE9 le virgolette sono spesso utilizzate\u2026"
+lastmod: '2024-04-05T21:53:44.190869-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Il concetto di rimuovere le virgolette non \xE8 nuovo o particolarmente\
+  \ complesso, ma \xE8 fondamentale perch\xE9 le virgolette sono spesso utilizzate\
+  \ per delimitare le stringhe."
 title: Rimuovere le virgolette da una stringa
 weight: 9
 ---

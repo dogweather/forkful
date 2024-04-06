@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:38:56.746032-07:00
-description: "How to: (Jak to zrobi\u0107:) ."
-lastmod: '2024-03-13T22:44:35.351382-06:00'
+description: "How to: (Jak to zrobi\u0107:) Output."
+lastmod: '2024-04-05T21:53:36.790058-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(Jak to zrobi\u0107:) Output."
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---

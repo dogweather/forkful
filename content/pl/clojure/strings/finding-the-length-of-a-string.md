@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:47:18.254753-07:00
-description: "Jak zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:34.985428-06:00'
+description: "Jak zrobi\u0107: Funkcja `count` w Clojure dzia\u0142a nie tylko na\
+  \ stringach, ale i na innych kolekcjach. Historia Clojure, j\u0119zyka z rodziny\
+  \ Lisp, podkre\u015Bla\u2026"
+lastmod: '2024-04-05T21:53:36.432211-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Funkcja `count` w Clojure dzia\u0142a nie tylko na stringach, ale i na innych\
+  \ kolekcjach."
 title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 weight: 7
 ---

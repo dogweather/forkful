@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:38:07.352035-07:00
-description: 'How to: "Kuinka:".'
-lastmod: '2024-03-13T22:44:56.475305-06:00'
+description: "How to: \"Sukellus syvyyksiin\" Historiallisesti merkkijonon pienent\xE4\
+  minen on per\xE4isin ajoilta, jolloin ohjelmistojen piti vertailla teksti\xE4 ilman\u2026"
+lastmod: '2024-04-05T21:53:58.040799-06:00'
 model: gpt-4-1106-preview
-summary: '"Kuinka:".'
+summary: "\"Sukellus syvyyksiin\" Historiallisesti merkkijonon pienent\xE4minen on\
+  \ per\xE4isin ajoilta, jolloin ohjelmistojen piti vertailla teksti\xE4 ilman kirjainkokoon\
+  \ liittyv\xE4\xE4 herkkyytt\xE4."
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---

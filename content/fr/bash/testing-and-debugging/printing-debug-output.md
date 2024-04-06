@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:52:04.685758-07:00
-description: 'How to: (Comment faire:) .'
-lastmod: '2024-03-13T22:44:57.998062-06:00'
+description: 'How to: (Comment faire:) Sortie .'
+lastmod: '2024-04-05T21:53:59.457612-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: (Comment faire:) Sortie .
 title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:03:24.852961-07:00
-description: "Slik gj\xF8r du: ."
-lastmod: '2024-03-13T22:44:40.444217-06:00'
+description: "Slik gj\xF8r du: \xC5 starte et nytt prosjekt har alltid v\xE6rt en\
+  \ sentral del av utviklerens arbeidsflyt. I Elixir-verdenen er `mix` verkt\xF8yet\
+  \ for\u2026"
+lastmod: '2024-04-05T21:53:41.423701-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "\xC5 starte et nytt prosjekt har alltid v\xE6rt en sentral del av utviklerens\
+  \ arbeidsflyt."
 title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---

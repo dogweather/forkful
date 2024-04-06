@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:36:26.236342-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:43.738650-06:00'
+description: 'How to: Output: `Data corrente (UTC): 2023-04-07 15:45:12`.'
+lastmod: '2024-04-05T21:53:44.494344-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: Conversione di una data in una stringa
 weight: 28
 ---

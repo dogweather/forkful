@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:33:18.840648-07:00
-description: "C\xF3mo: ."
-lastmod: '2024-03-13T22:44:59.048467-06:00'
+description: "C\xF3mo: Hist\xF3ricamente, trabajar con fechas en Java y Kotlin era\
+  \ complicado. Antes de Java 8, la clase `Date` y `Calendar` eran las \xFAnicas opciones,\
+  \ llenas\u2026"
+lastmod: '2024-04-05T21:54:00.391854-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Hist\xF3ricamente, trabajar con fechas en Java y Kotlin era complicado."
 title: "Comparaci\xF3n de dos fechas"
 weight: 27
 ---

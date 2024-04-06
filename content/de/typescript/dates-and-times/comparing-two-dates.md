@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:34:06.548982-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:53.643074-06:00'
+description: "How to: Vor dem ECMAScript 2015 Standard war der Vergleich zweier Daten\
+  \ in JavaScript weniger direkt. Entwickler mussten manuell Zeitstempel vergleichen\u2026"
+lastmod: '2024-04-05T21:53:55.520696-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Vor dem ECMAScript 2015 Standard war der Vergleich zweier Daten in JavaScript
+  weniger direkt.
 title: Vergleich von zwei Daten
 weight: 27
 ---

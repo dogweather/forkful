@@ -3,10 +3,10 @@ date: 2024-01-20 17:59:56.930772-07:00
 description: "How to: (\uBC29\uBC95) Java\uC5D0\uC11C HTTP \uC694\uCCAD\uC744 \uBCF4\
   \uB0B4\uB294 \uAC04\uB2E8\uD55C \uC608\uC81C\uC785\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.043433-06:00'
+lastmod: '2024-04-05T21:53:56.814011-06:00'
 model: gpt-4-1106-preview
-summary: "Java\uC5D0\uC11C HTTP \uC694\uCCAD\uC744 \uBCF4\uB0B4\uB294 \uAC04\uB2E8\
-  \uD55C \uC608\uC81C\uC785\uB2C8\uB2E4."
+summary: "(\uBC29\uBC95) Java\uC5D0\uC11C HTTP \uC694\uCCAD\uC744 \uBCF4\uB0B4\uB294\
+  \ \uAC04\uB2E8\uD55C \uC608\uC81C\uC785\uB2C8\uB2E4."
 title: "HTTP \uC694\uCCAD \uBCF4\uB0B4\uAE30"
 weight: 44
 ---

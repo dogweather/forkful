@@ -4,9 +4,9 @@ description: "How to: (\uC5B4\uB5BB\uAC8C \uD558\uB098:) \uB2E4\uC74C\uC740 \uB4
   \ \uB0A0\uC9DC\uB97C \uBE44\uAD50\uD558\uB294 Haskell \uC608\uC81C\uC640 \uCD9C\uB825\
   \ \uACB0\uACFC\uC785\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.313611-06:00'
+lastmod: '2024-04-05T21:53:57.023969-06:00'
 model: gpt-4-1106-preview
-summary: "(\uC5B4\uB5BB\uAC8C \uD558\uB098:)\n\uB2E4\uC74C\uC740 \uB450 \uB0A0\uC9DC\
+summary: "(\uC5B4\uB5BB\uAC8C \uD558\uB098:) \uB2E4\uC74C\uC740 \uB450 \uB0A0\uC9DC\
   \uB97C \uBE44\uAD50\uD558\uB294 Haskell \uC608\uC81C\uC640 \uCD9C\uB825 \uACB0\uACFC\
   \uC785\uB2C8\uB2E4."
 title: "\uB450 \uB0A0\uC9DC \uBE44\uAD50\uD558\uAE30"

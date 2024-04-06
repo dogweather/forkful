@@ -3,10 +3,15 @@ changelog:
 - 2024-04-04, dogweather, edited
 - 2024-04-04, gpt-4-0125-preview, translated from English
 date: 2024-01-20 17:43:02.363431-07:00
-description: "C\xE1ch th\u1EF1c hi\u1EC7n: ."
-lastmod: '2024-04-04T02:02:41.806017-06:00'
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: T\xF4i th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0\
+  y \u0111\u1EE7 th\u01B0\u1EDDng xuy\xEAn n\xEAn t\xF4i \u0111\xE3 t\xE1i c\u1EA5\
+  u tr\xFAc n\xF3 th\xE0nh h\xE0m `delete()` \u0111\u01A1n gi\u1EA3n n\xE0y. \u0110\
+  \xE2y c\u0169ng l\xE0 m\u1ED9t v\xED d\u1EE5 t\u1ED1t v\u1EC1\u2026"
+lastmod: '2024-04-05T21:53:37.508209-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "T\xF4i th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\u1EE7 th\u01B0\u1EDD\
+  ng xuy\xEAn n\xEAn t\xF4i \u0111\xE3 t\xE1i c\u1EA5u tr\xFAc n\xF3 th\xE0nh h\xE0\
+  m `delete()` \u0111\u01A1n gi\u1EA3n n\xE0y."
 title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
 weight: 5
 ---

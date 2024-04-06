@@ -2,8 +2,8 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:33.339772-07:00
-description: 'Kuinka: .'
-lastmod: '2024-03-13T22:44:56.454632-06:00'
+description: null
+lastmod: '2024-04-05T21:53:58.020697-06:00'
 model: gpt-4-0125-preview
 summary: ''
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"

@@ -2,9 +2,9 @@
 date: 2024-01-20 17:54:00.831350-07:00
 description: "How to: (Jak to zrobi\u0107:) Czytanie pliku w Clojure mo\u017Ce by\u0107\
   \ proste jak bu\u0142ka z mas\u0142em. Oto przyk\u0142ady."
-lastmod: '2024-03-13T22:44:35.014544-06:00'
+lastmod: '2024-04-05T21:53:36.458442-06:00'
 model: gpt-4-1106-preview
-summary: "(Jak to zrobi\u0107:)\n\nCzytanie pliku w Clojure mo\u017Ce by\u0107 proste\
+summary: "(Jak to zrobi\u0107:) Czytanie pliku w Clojure mo\u017Ce by\u0107 proste\
   \ jak bu\u0142ka z mas\u0142em."
 title: Odczytywanie pliku tekstowego
 weight: 22

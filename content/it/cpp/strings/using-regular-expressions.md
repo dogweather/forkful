@@ -1,9 +1,12 @@
 ---
 date: 2024-01-19
-description: 'Come fare: .'
-lastmod: '2024-03-13T22:44:43.716366-06:00'
+description: "Come fare: Le regexp sono nate negli anni '50 con lavori teorici su\
+  \ automi e linguaggi formali. Alternative moderne includono parser dedicati per\
+  \ compiti\u2026"
+lastmod: '2024-04-05T21:53:44.473846-06:00'
 model: unknown
-summary: .
+summary: Le regexp sono nate negli anni '50 con lavori teorici su automi e linguaggi
+  formali.
 title: Utilizzo delle espressioni regolari
 weight: 11
 ---

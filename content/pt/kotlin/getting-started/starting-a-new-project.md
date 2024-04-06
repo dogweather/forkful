@@ -2,10 +2,10 @@
 date: 2024-01-20 18:03:54.669989-07:00
 description: "How to: (Como Fazer:) Vamos come\xE7ar um projeto Kotlin usando a ferramenta\
   \ de linha de comando do IntelliJ (o `IdeaProjects`)."
-lastmod: '2024-03-13T22:44:46.542248-06:00'
+lastmod: '2024-04-05T21:53:46.884069-06:00'
 model: gpt-4-1106-preview
-summary: "Vamos come\xE7ar um projeto Kotlin usando a ferramenta de linha de comando\
-  \ do IntelliJ (o `IdeaProjects`)."
+summary: "(Como Fazer:) Vamos come\xE7ar um projeto Kotlin usando a ferramenta de\
+  \ linha de comando do IntelliJ (o `IdeaProjects`)."
 title: Iniciando um novo projeto
 weight: 1
 ---

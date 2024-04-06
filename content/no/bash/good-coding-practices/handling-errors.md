@@ -1,9 +1,9 @@
 ---
 date: 2024-01-26 00:50:13.161501-07:00
-description: "Hvordan gj\xF8re: ."
-lastmod: '2024-03-13T22:44:40.982263-06:00'
+description: "Hvordan gj\xF8re: Eksempel p\xE5 utdata n\xE5r en feil forekommer."
+lastmod: '2024-04-05T21:53:41.943505-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Eksempel p\xE5 utdata n\xE5r en feil forekommer."
 title: "Feilh\xE5ndtering"
 weight: 16
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:32:00.602904-07:00
-description: "So geht\u2019s: ."
-lastmod: '2024-03-13T22:44:53.643943-06:00'
+description: "So geht\u2019s: Fr\xFCher haben Programmierer oft eigene Funktionen\
+  \ zur Datumsberechnung geschrieben. Diese basierten auf den Grundlagen, die bereits\
+  \ im ANSI C\u2026"
+lastmod: '2024-04-05T21:53:55.521817-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Fr\xFCher haben Programmierer oft eigene Funktionen zur Datumsberechnung\
+  \ geschrieben."
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---

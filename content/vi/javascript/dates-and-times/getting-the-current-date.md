@@ -2,10 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:14.804051-07:00
-description: "C\xE1ch th\u1EE9c: ."
-lastmod: '2024-03-13T22:44:37.167177-06:00'
+description: "C\xE1ch th\u1EE9c: Ng\xE0y x\u01B0a, \u0111\u1ED1i t\u01B0\u1EE3ng `Date`\
+  \ c\u1EE7a JavaScript \u0111\u01B0\u1EE3c x\xE2y d\u1EF1ng \u0111\u1EC3 x\u1EED\
+  \ l\xFD ng\xE0y v\xE0 gi\u1EDD. M\u1ED9t \u0111\u1ED1i t\u01B0\u1EE3ng `Date` \u0111\
+  \u1EA1i di\u1EC7n cho m\u1ED9t th\u1EDDi \u0111i\u1EC3m duy nh\u1EA5t trong\u2026"
+lastmod: '2024-04-05T21:53:38.512599-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Ng\xE0y x\u01B0a, \u0111\u1ED1i t\u01B0\u1EE3ng `Date` c\u1EE7a JavaScript\
+  \ \u0111\u01B0\u1EE3c x\xE2y d\u1EF1ng \u0111\u1EC3 x\u1EED l\xFD ng\xE0y v\xE0\
+  \ gi\u1EDD."
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 weight: 29
 ---

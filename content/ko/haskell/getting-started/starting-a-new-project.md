@@ -3,9 +3,9 @@ date: 2024-01-20 18:03:48.988858-07:00
 description: "How to: (\uBC29\uBC95) Let's start a new Haskell project with Stack.\
   \ First, install Stack if you haven't yet."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.296490-06:00'
+lastmod: '2024-04-05T21:53:57.010686-06:00'
 model: gpt-4-1106-preview
-summary: Let's start a new Haskell project with Stack.
+summary: "(\uBC29\uBC95) Let's start a new Haskell project with Stack."
 title: "\uC0C8 \uD504\uB85C\uC81D\uD2B8 \uC2DC\uC791\uD558\uAE30"
 weight: 1
 ---

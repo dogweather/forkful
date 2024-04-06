@@ -1,9 +1,12 @@
 ---
 date: 2024-01-19
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:43.548423-06:00'
+description: "How to: Le espressioni regolari, o regex, nascono negli anni '50 e si\
+  \ sono evolute in diversi standard. In Lua, le espressioni regolari sono pi\xF9\
+  \ semplici\u2026"
+lastmod: '2024-04-05T21:53:44.311507-06:00'
 model: unknown
-summary: .
+summary: Le espressioni regolari, o regex, nascono negli anni '50 e si sono evolute
+  in diversi standard.
 title: Utilizzo delle espressioni regolari
 weight: 11
 ---

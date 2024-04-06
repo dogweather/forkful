@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:51:09.315513-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:54.252558-06:00'
+description: "How to: Fr\xFCher wurden Strings in JavaScript mit Konkatenation gebaut\
+  \ \u2013 durch das Verkn\xFCpfen von Variablen mit statischen Strings mittels des\
+  \ `+`\u2026"
+lastmod: '2024-04-05T21:53:56.140156-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Fr\xFCher wurden Strings in JavaScript mit Konkatenation gebaut \u2013 durch\
+  \ das Verkn\xFCpfen von Variablen mit statischen Strings mittels des `+` Operators."
 title: Zeichenketten interpolieren
 weight: 8
 ---

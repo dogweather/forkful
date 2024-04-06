@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:51:49.826009-07:00
-description: 'How to: (Come Fare) .'
-lastmod: '2024-03-13T22:44:44.035725-06:00'
+description: 'How to: (Come Fare) Un altro esempio, con espressioni matematiche.'
+lastmod: '2024-04-05T21:53:44.681680-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: (Come Fare) Un altro esempio, con espressioni matematiche.
 title: Interpolazione di una stringa
 weight: 8
 ---

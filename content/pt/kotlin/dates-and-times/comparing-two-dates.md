@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:33:19.994850-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.554578-06:00'
+description: "Como Fazer: Historicamente, comparar datas no Java e Kotlin era complicado\
+  \ e propenso a erros com as antigas `Date` e `Calendar`. Com o Java 8, surgiu a\u2026"
+lastmod: '2024-04-05T21:53:46.896314-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Historicamente, comparar datas no Java e Kotlin era complicado e propenso
+  a erros com as antigas `Date` e `Calendar`.
 title: Comparando duas datas
 weight: 27
 ---

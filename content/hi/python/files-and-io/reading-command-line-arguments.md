@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:57:08.135486-07:00
-description: "How to: (\u0915\u0948\u0938\u0947 \u0915\u0930\u0947\u0902?) ."
-lastmod: '2024-03-13T22:44:51.618486-06:00'
+description: "How to: (\u0915\u0948\u0938\u0947 \u0915\u0930\u0947\u0902?) Sample\
+  \ Output: `Arguments received: ['arg1', 'arg2', 'arg3']`."
+lastmod: '2024-04-05T21:53:53.637142-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(\u0915\u0948\u0938\u0947 \u0915\u0930\u0947\u0902?) Sample Output."
 title: "\u0915\u092E\u093E\u0902\u0921 \u0932\u093E\u0907\u0928 \u0906\u0930\u094D\
   \u0917\u0941\u092E\u0947\u0902\u091F\u094D\u0938 \u092A\u0922\u093C\u0928\u093E"
 weight: 23

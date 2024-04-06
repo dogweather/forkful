@@ -6,11 +6,11 @@ description: "How to: (\uC5B4\uB5BB\uAC8C:) Fish Shell\uC5D0\uC11C\uB294 `curl`\
   \uC74C\uC740 \uAC04\uB2E8\uD55C \uC608\uC2DC\uC640 \uACB0\uACFC\uBB3C\uC785\uB2C8\
   \uB2E4."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.853872-06:00'
+lastmod: '2024-04-05T21:53:57.442937-06:00'
 model: gpt-4-1106-preview
-summary: "Fish Shell\uC5D0\uC11C\uB294 `curl`\uC774\uB098 `wget` \uBA85\uB839\uC5B4\
-  \uB97C \uC0AC\uC6A9\uD558\uC5EC \uC6F9 \uD398\uC774\uC9C0\uB97C \uB2E4\uC6B4\uB85C\
-  \uB4DC\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
+summary: "(\uC5B4\uB5BB\uAC8C:) Fish Shell\uC5D0\uC11C\uB294 `curl`\uC774\uB098 `wget`\
+  \ \uBA85\uB839\uC5B4\uB97C \uC0AC\uC6A9\uD558\uC5EC \uC6F9 \uD398\uC774\uC9C0\uB97C\
+  \ \uB2E4\uC6B4\uB85C\uB4DC\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
 title: "\uC6F9 \uD398\uC774\uC9C0 \uB2E4\uC6B4\uB85C\uB4DC\uD558\uAE30"
 weight: 42
 ---

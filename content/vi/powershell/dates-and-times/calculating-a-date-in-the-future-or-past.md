@@ -2,8 +2,8 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:48.996322-07:00
-description: "L\xE0m th\u1EBF n\xE0o: ."
-lastmod: '2024-03-13T22:44:36.953925-06:00'
+description: "L\xE0m th\u1EBF n\xE0o: K\u1EBFt qu\u1EA3 m\u1EABu."
+lastmod: '2024-04-05T21:53:38.317219-06:00'
 model: gpt-4-0125-preview
 summary: ''
 title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1EE9"

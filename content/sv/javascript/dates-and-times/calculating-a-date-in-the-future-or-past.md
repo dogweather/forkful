@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:31:33.527505-07:00
-description: "Hur g\xF6r man: ."
-lastmod: '2024-03-13T22:44:38.306740-06:00'
+description: "Hur g\xF6r man: Datumber\xE4kning har l\xE4nge varit en del av programmering.\
+  \ JavaScript erbjuder `Date` objektet f\xF6r s\xE5dan hantering. Det finns alternativ\
+  \ som\u2026"
+lastmod: '2024-04-05T21:53:39.643971-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Datumber\xE4kning har l\xE4nge varit en del av programmering."
 title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutenheten"
 weight: 26
 ---

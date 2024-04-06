@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:55:49.759452-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:58.341127-06:00'
+description: "How to: Ex\xE9cution et sortie ."
+lastmod: '2024-04-05T21:53:59.740035-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Ex\xE9cution et sortie ."
 title: Lecture des arguments de ligne de commande
 weight: 23
 ---

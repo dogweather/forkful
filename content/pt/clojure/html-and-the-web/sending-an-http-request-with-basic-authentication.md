@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 18:01:20.935594-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.196468-06:00'
+description: "Como Fazer: A fun\xE7\xE3o `fetch-protected-resource` recebe uma URL,\
+  \ um nome de usu\xE1rio e uma senha, constr\xF3i o cabe\xE7alho de autoriza\xE7\xE3\
+  o necess\xE1rio e faz a\u2026"
+lastmod: '2024-04-05T21:53:46.520105-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "A fun\xE7\xE3o `fetch-protected-resource` recebe uma URL, um nome de usu\xE1\
+  rio e uma senha, constr\xF3i o cabe\xE7alho de autoriza\xE7\xE3o necess\xE1rio e\
+  \ faz a requisi\xE7\xE3o HTTP GET usando `clj-http.client`."
 title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 weight: 45
 ---

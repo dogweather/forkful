@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 18:01:37.645944-07:00
-description: "Hvordan gj\xF8re det: ."
-lastmod: '2024-03-13T22:44:41.226633-06:00'
+description: "Hvordan gj\xF8re det: Eksempelutdata."
+lastmod: '2024-04-05T21:53:42.186371-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---

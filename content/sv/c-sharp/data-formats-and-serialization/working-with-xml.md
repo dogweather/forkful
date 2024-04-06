@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 04:29:10.377899-07:00
-description: "Hur man g\xF6r: ."
-lastmod: '2024-03-13T22:44:37.938006-06:00'
+description: "Hur man g\xF6r: XML har funnits sedan sent '90-tal, vilket g\xF6r det\
+  \ till en farfar i teknologi\xE5r. Det trollades fram f\xF6r portabilitet av data\
+  \ och l\xE4slighet\u2026"
+lastmod: '2024-04-05T21:53:39.275846-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "XML har funnits sedan sent '90-tal, vilket g\xF6r det till en farfar i teknologi\xE5\
+  r."
 title: Att arbeta med XML
 weight: 40
 ---

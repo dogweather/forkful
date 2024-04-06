@@ -5,10 +5,11 @@ description: "How to: (\uC5B4\uB5BB\uAC8C \uD558\uB098\uC694?) Lua\uC5D0\uC11C \
   \uB294 `string.sub`\uC785\uB2C8\uB2E4. \uC0AC\uC6A9\uBC95\uC744 \uBCF4\uC5EC\uC8FC\
   \uB294 \uAC04\uB2E8\uD55C \uC608\uC2DC\uB4E4\uC744 \uBD05\uC2DC\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.401696-06:00'
+lastmod: '2024-04-05T21:53:57.093209-06:00'
 model: gpt-4-1106-preview
-summary: "Lua\uC5D0\uC11C \uBD80\uBD84 \uBB38\uC790\uC5F4\uC744 \uCD94\uCD9C\uD558\
-  \uB294 \uAE30\uBCF8 \uD568\uC218\uB294 `string.sub`\uC785\uB2C8\uB2E4."
+summary: "(\uC5B4\uB5BB\uAC8C \uD558\uB098\uC694?) Lua\uC5D0\uC11C \uBD80\uBD84 \uBB38\
+  \uC790\uC5F4\uC744 \uCD94\uCD9C\uD558\uB294 \uAE30\uBCF8 \uD568\uC218\uB294 `string.sub`\uC785\
+  \uB2C8\uB2E4."
 title: "\uBD80\uBD84 \uBB38\uC790\uC5F4 \uCD94\uCD9C"
 weight: 6
 ---

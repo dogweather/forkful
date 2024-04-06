@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:43:12.150351-07:00
-description: 'How to: Miten.'
-lastmod: '2024-03-13T22:44:57.069436-06:00'
+description: "How to: Syv\xE4sukellus: Merkkien poistaminen kuvion mukaan Rubyss\xE4\
+  \ perustuu s\xE4\xE4nn\xF6llisiin lausekkeisiin (regular expressions), jotka tulivat\
+  \ mukaan\u2026"
+lastmod: '2024-04-05T21:53:58.653035-06:00'
 model: gpt-4-1106-preview
-summary: Miten.
+summary: ''
 title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---

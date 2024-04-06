@@ -4,11 +4,9 @@ description: "How to (\u5982\u4F55\u64CD\u4F5C) \u5728C#\u4E2D\uFF0C\u8FDE\u63A5
   \u7B26\u4E32\u53EF\u4EE5\u7528\u52A0\u53F7(`+`)\uFF0C`String.Concat`\uFF0C\u6216\
   \u8005`StringBuilder`\u3002\u770B\u4F8B\u5B50\uFF1A."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:47.758581-06:00'
+lastmod: '2024-04-05T21:53:48.073725-06:00'
 model: gpt-4-1106-preview
-summary: "\u5728C#\u4E2D\uFF0C\u8FDE\u63A5\u5B57\u7B26\u4E32\u53EF\u4EE5\u7528\u52A0\
-  \u53F7(`+`)\uFF0C`String.Concat`\uFF0C\u6216\u8005`StringBuilder`\u3002\u770B\u4F8B\
-  \u5B50\uFF1A."
+summary: ''
 title: "\u5B57\u7B26\u4E32\u62FC\u63A5"
 weight: 3
 ---

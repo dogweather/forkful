@@ -2,10 +2,10 @@
 date: 2024-01-26 01:07:17.220133-07:00
 description: "Comment faire : D'embl\xE9e, JavaScript offre un moyen simple de consigner\
   \ des messages dans la console ."
-lastmod: '2024-03-13T22:44:58.282613-06:00'
+lastmod: '2024-04-05T21:53:59.684373-06:00'
 model: gpt-4-1106-preview
 summary: "D'embl\xE9e, JavaScript offre un moyen simple de consigner des messages\
-  \ dans la console."
+  \ dans la console ."
 title: Journalisation
 weight: 17
 ---

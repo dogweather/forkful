@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:46:07.952590-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.530523-06:00'
+description: "Como Fazer: Historicamente, manipular strings sempre foi uma parte cr\xED\
+  tica da programa\xE7\xE3o, uma vez que muitos tipos de dados s\xE3o expressos como\
+  \ texto. O\u2026"
+lastmod: '2024-04-05T21:53:46.872529-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historicamente, manipular strings sempre foi uma parte cr\xEDtica da programa\xE7\
+  \xE3o, uma vez que muitos tipos de dados s\xE3o expressos como texto."
 title: Extraindo substrings
 weight: 6
 ---

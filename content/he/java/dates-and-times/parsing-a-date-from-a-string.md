@@ -2,8 +2,8 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:39.771195-07:00
-description: "\u05D0\u05D9\u05DA \u05DC\u05E2\u05E9\u05D5\u05EA: ."
-lastmod: '2024-03-13T22:44:39.146597-06:00'
+description: null
+lastmod: '2024-04-05T21:53:40.377585-06:00'
 model: gpt-4-0125-preview
 summary: ''
 title: "\u05E4\u05E8\u05E1\u05D5\u05DD \u05EA\u05D0\u05E8\u05D9\u05DA \u05DE\u05DE\

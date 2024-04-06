@@ -3,10 +3,10 @@ date: 2024-01-20 17:43:42.304225-07:00
 description: "How to: (\u600E\u4E48\u505A\uFF1A) \u4F7F\u7528C#\u4E0B\u8F7D\u4E00\u4E2A\
   \u7F51\u9875\u7684\u57FA\u672C\u6D41\u7A0B\u3002"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:47.766311-06:00'
+lastmod: '2024-04-05T21:53:48.080504-06:00'
 model: gpt-4-1106-preview
-summary: "\u4F7F\u7528C#\u4E0B\u8F7D\u4E00\u4E2A\u7F51\u9875\u7684\u57FA\u672C\u6D41\
-  \u7A0B."
+summary: "(\u600E\u4E48\u505A\uFF1A) \u4F7F\u7528C#\u4E0B\u8F7D\u4E00\u4E2A\u7F51\u9875\
+  \u7684\u57FA\u672C\u6D41\u7A0B\u3002"
 title: "\u4E0B\u8F7D\u7F51\u9875"
 weight: 42
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:58:24.262059-07:00
-description: "Slik gj\xF8r du: ."
-lastmod: '2024-03-13T22:44:40.345901-06:00'
+description: "Slik gj\xF8r du: Fra tidlige Unix-verkt\xF8y som `sed` til moderne programmeringsspr\xE5\
+  k, har s\xF8k og erstatt v\xE6rt essensielt. Python's `str.replace()` er enkel\u2026"
+lastmod: '2024-04-05T21:53:41.325454-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Fra tidlige Unix-verkt\xF8y som `sed` til moderne programmeringsspr\xE5\
+  k, har s\xF8k og erstatt v\xE6rt essensielt."
 title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---

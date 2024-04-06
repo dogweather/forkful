@@ -1,10 +1,16 @@
 ---
 date: 2024-01-20 17:28:39.552079-07:00
-description: "How to: (\uBC29\uBC95) ."
+description: "How to: (\uBC29\uBC95) .NET\uC5D0\uC11C \uB0A0\uC9DC \uACC4\uC0B0\uC740\
+  \ DateTime \uAD6C\uC870\uCCB4\uB97C \uD1B5\uD574 \uC218\uD589\uB429\uB2C8\uB2E4\
+  . 2002\uB144 .NET\uC758 \uCCAB \uBC84\uC804 \uBC1C\uD45C \uC774\uD6C4, \uC774 \uAD6C\
+  \uC870\uCCB4\uB294 \uB0A0\uC9DC\uC640 \uC2DC\uAC04\uACFC \uAD00\uB828\uB41C \uC5F0\
+  \uC0B0\uC744 \uC27D\uAC8C \uB9CC\uB4E4\uC5C8\uC2B5\uB2C8\uB2E4. `AddDays` \uBA54\
+  \uC11C\uB4DC \uC678\uC5D0\uB3C4 `AddMonths`, `AddYears` \uAC19\uC740\u2026"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.254100-06:00'
+lastmod: '2024-04-05T21:53:56.976443-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(\uBC29\uBC95) .NET\uC5D0\uC11C \uB0A0\uC9DC \uACC4\uC0B0\uC740 DateTime\
+  \ \uAD6C\uC870\uCCB4\uB97C \uD1B5\uD574 \uC218\uD589\uB429\uB2C8\uB2E4."
 title: "\uBBF8\uB798 \uD639\uC740 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\uC0B0\uD558\
   \uAE30"
 weight: 26

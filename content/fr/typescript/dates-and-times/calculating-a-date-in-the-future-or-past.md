@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:32:22.798814-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:57.450980-06:00'
+description: "Comment faire : Historiquement, les dates n'\xE9taient pas si simples\
+  \ \xE0 g\xE9rer, surtout \xE0 cause des fuseaux horaires et des formats. TypeScript\
+  \ est bas\xE9 sur\u2026"
+lastmod: '2024-04-05T21:53:59.014448-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historiquement, les dates n'\xE9taient pas si simples \xE0 g\xE9rer, surtout\
+  \ \xE0 cause des fuseaux horaires et des formats."
 title: "Calcul d'une date future ou pass\xE9e"
 weight: 26
 ---

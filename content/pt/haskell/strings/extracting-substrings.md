@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:46:07.683145-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.614653-06:00'
+description: "Como Fazer: Extrair substrings \xE9 uma opera\xE7\xE3o b\xE1sica, mas\
+  \ fundamental, das linguagens de programa\xE7\xE3o desde o in\xEDcio, porque processar\
+  \ texto \xE9\u2026"
+lastmod: '2024-04-05T21:53:46.959503-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Extrair substrings \xE9 uma opera\xE7\xE3o b\xE1sica, mas fundamental, das\
+  \ linguagens de programa\xE7\xE3o desde o in\xEDcio, porque processar texto \xE9\
+  \ incrivelmente comum."
 title: Extraindo substrings
 weight: 6
 ---

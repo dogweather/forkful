@@ -1,9 +1,9 @@
 ---
 date: 2024-01-26 04:36:37.615153-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:58.102696-06:00'
+description: 'Comment faire : Sortie de l''exemple .'
+lastmod: '2024-04-05T21:53:59.538788-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: Sortie de l'exemple .
 title: Manipulation des nombres complexes
 weight: 14
 ---

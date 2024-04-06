@@ -5,9 +5,9 @@ date: 2024-02-03 19:13:45.603181-07:00
 description: "Comment faire : **Analyse Basique :** Les m\xE9thodes `DateTime.Parse`\
   \ et `DateTime.TryParse` sont les options privil\xE9gi\xE9es pour convertir une\
   \ cha\xEEne en\u2026"
-lastmod: '2024-03-13T22:44:57.797937-06:00'
+lastmod: '2024-04-05T21:53:59.282982-06:00'
 model: gpt-4-0125-preview
-summary: "**Analyse Basique :**\n\nLes m\xE9thodes `DateTime.Parse` et `DateTime.TryParse`\
+summary: "**Analyse Basique :** Les m\xE9thodes `DateTime.Parse` et `DateTime.TryParse`\
   \ sont les options privil\xE9gi\xE9es pour convertir une cha\xEEne en `DateTime`."
 title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
 weight: 30

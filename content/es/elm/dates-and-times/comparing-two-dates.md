@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:32:53.065919-07:00
-description: "C\xF3mo Hacerlo: ."
-lastmod: '2024-03-13T22:44:59.005526-06:00'
+description: "C\xF3mo Hacerlo: Hist\xF3ricamente, la comparaci\xF3n de fechas ha sido\
+  \ un reto debido a zonas horarias y formatos distintos. En Elm, el tipo `Posix`\
+  \ y el m\xF3dulo\u2026"
+lastmod: '2024-04-05T21:54:00.348200-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Hist\xF3ricamente, la comparaci\xF3n de fechas ha sido un reto debido a\
+  \ zonas horarias y formatos distintos."
 title: "Comparaci\xF3n de dos fechas"
 weight: 27
 ---

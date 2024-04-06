@@ -1,9 +1,8 @@
 ---
 date: 2024-01-27 20:34:51.392934-07:00
 description: "Comment faire : Ruby fournit plusieurs m\xE9thodes pour g\xE9n\xE9rer\
-  \ des nombres al\xE9atoires, principalement via la classe `Random`. Pour g\xE9n\xE9\
-  rer un nombre\u2026"
-lastmod: '2024-03-13T22:44:58.413392-06:00'
+  \ des nombres al\xE9atoires, principalement via la classe `Random`."
+lastmod: '2024-04-05T21:53:59.818484-06:00'
 model: gpt-4-0125-preview
 summary: "Ruby fournit plusieurs m\xE9thodes pour g\xE9n\xE9rer des nombres al\xE9\
   atoires, principalement via la classe `Random`."

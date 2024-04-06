@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:34:12.534016-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:57.778304-06:00'
+description: "Comment faire : Historiquement, concat\xE9ner avec l'op\xE9rateur `+`\
+  \ \xE9tait simple mais risquait de mener \xE0 de mauvaises performances dans des\
+  \ boucles ou des\u2026"
+lastmod: '2024-04-05T21:53:59.264566-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historiquement, concat\xE9ner avec l'op\xE9rateur `+` \xE9tait simple mais\
+  \ risquait de mener \xE0 de mauvaises performances dans des boucles ou des sc\xE9\
+  narios complexes."
 title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 weight: 3
 ---

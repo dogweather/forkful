@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:34:03.021498-07:00
-description: 'How to: - Miten: .'
-lastmod: '2024-03-13T22:44:57.099704-06:00'
+description: "How to: - Miten: Rubyssa p\xE4iv\xE4m\xE4\xE4rien vertailu on helppoa\
+  \ `Date`-luokan avulla, joka on ollut osa kansallista kirjastoa (stdlib) vuodesta\
+  \ 2003.\u2026"
+lastmod: '2024-04-05T21:53:58.681610-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---

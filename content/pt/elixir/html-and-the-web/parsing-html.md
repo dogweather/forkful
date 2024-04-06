@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 15:31:00.134803-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.236061-06:00'
+description: "Como Fazer: O ato de parsear HTML \xE9 fundamental na web desde seus\
+  \ primeiros dias. No passado, outras linguagens como PHP e Python eram as mais comuns\
+  \ para\u2026"
+lastmod: '2024-04-05T21:53:46.563294-06:00'
 model: unknown
-summary: .
+summary: "O ato de parsear HTML \xE9 fundamental na web desde seus primeiros dias."
 title: "An\xE1lise de HTML"
 weight: 43
 ---

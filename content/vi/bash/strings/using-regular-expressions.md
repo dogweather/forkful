@@ -2,10 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:39.263001-07:00
-description: "C\xE1ch th\u1EF1c hi\u1EC7n: ."
-lastmod: '2024-03-13T22:44:36.863240-06:00'
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Bi\u1EC3u th\u1EE9c ch\xEDnh quy \u0111\
+  \xE3 c\xF3 t\u1EEB nh\u1EEFng n\u0103m 1950, ban \u0111\u1EA7u \u0111\u01B0\u1EE3\
+  c ngh\u0129 ra b\u1EDFi nh\xE0 to\xE1n h\u1ECDc Stephen Kleene. C\xE1c ph\u01B0\u01A1\
+  ng \xE1n thay th\u1EBF cho regex trong\u2026"
+lastmod: '2024-04-05T21:53:38.235401-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy \u0111\xE3 c\xF3 t\u1EEB nh\u1EEFng n\u0103\
+  m 1950, ban \u0111\u1EA7u \u0111\u01B0\u1EE3c ngh\u0129 ra b\u1EDFi nh\xE0 to\xE1\
+  n h\u1ECDc Stephen Kleene."
 title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---

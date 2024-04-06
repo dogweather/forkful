@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:39:49.482433-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.603073-06:00'
+description: "Como Fazer: Historicamente, arquivos tempor\xE1rios s\xE3o usados para\
+  \ gerenciamento de mem\xF3ria eficiente. Quando o processo precisa de mais mem\xF3\
+  ria do que est\xE1\u2026"
+lastmod: '2024-04-05T21:53:46.947087-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historicamente, arquivos tempor\xE1rios s\xE3o usados para gerenciamento\
+  \ de mem\xF3ria eficiente."
 title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---

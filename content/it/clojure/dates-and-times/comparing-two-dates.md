@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:32:48.829064-07:00
-description: 'Come Fare: .'
-lastmod: '2024-03-13T22:44:43.054810-06:00'
+description: "Come Fare: Comparare date \xE8 un'esigenza comune fin dall'inizio dell'era\
+  \ informatica. Prima di Clojure, i linguaggi come C++ e Java avevano le loro\u2026"
+lastmod: '2024-04-05T21:53:43.836490-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Comparare date \xE8 un'esigenza comune fin dall'inizio dell'era informatica."
 title: Confronto tra due date
 weight: 27
 ---

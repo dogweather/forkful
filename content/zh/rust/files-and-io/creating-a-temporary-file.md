@@ -1,10 +1,11 @@
 ---
 date: 2024-01-20 17:41:08.205305-07:00
-description: "How to: \u600E\u4E48\u505A\uFF1F ."
+description: "How to: \u600E\u4E48\u505A\uFF1F \u8F93\u51FA\u53EF\u80FD\u4F1A\u662F\
+  \u8FD9\u6837."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:47.543055-06:00'
+lastmod: '2024-04-05T21:53:47.862274-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "\u521B\u5EFA\u4E34\u65F6\u6587\u4EF6"
 weight: 21
 ---

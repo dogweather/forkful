@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:46:00.771951-07:00
-description: "C\xF3mo: ."
-lastmod: '2024-03-13T22:44:59.191211-06:00'
+description: "C\xF3mo: Lua tiene varias funciones para manejar cadenas, pero `string.sub`\
+  \ es la m\xE1s directa para extraer subcadenas. Desde sus primeras versiones, Lua\
+  \ ha\u2026"
+lastmod: '2024-04-05T21:54:00.537118-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Lua tiene varias funciones para manejar cadenas, pero `string.sub` es la\
+  \ m\xE1s directa para extraer subcadenas."
 title: "Extracci\xF3n de subcadenas"
 weight: 6
 ---

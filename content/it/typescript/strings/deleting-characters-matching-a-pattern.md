@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:43:05.715171-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:43.160842-06:00'
+description: "How to: Storica: L'uso delle espressioni regolari risale agli anni '50,\
+  \ ma sono diventate popolari in linguaggi di programmazione come Perl. In\u2026"
+lastmod: '2024-04-05T21:53:43.935188-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: Eliminazione di caratteri che corrispondono a un pattern
 weight: 5
 ---

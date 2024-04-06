@@ -2,9 +2,9 @@
 date: 2024-01-20 17:47:28.715522-07:00
 description: "How to: | Jak to zrobi\u0107: W Fish Shell mierzenie d\u0142ugo\u015B\
   ci stringa jest banalnie proste."
-lastmod: '2024-03-13T22:44:35.829810-06:00'
+lastmod: '2024-04-05T21:53:37.256816-06:00'
 model: gpt-4-1106-preview
-summary: "W Fish Shell mierzenie d\u0142ugo\u015Bci stringa jest banalnie proste."
+summary: ''
 title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 weight: 7
 ---

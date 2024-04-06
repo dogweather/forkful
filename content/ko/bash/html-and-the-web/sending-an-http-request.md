@@ -5,10 +5,10 @@ description: "How to: (\uBC29\uBC95) Bash\uC5D0\uC11C\uB294 `curl`\uC774\uB77C\u
   \uB2E8\uD55C GET \uC694\uCCAD\uBD80\uD130 \uC2DC\uC791\uD574\uBCF4\uACA0\uC2B5\uB2C8\
   \uB2E4."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.477581-06:00'
+lastmod: '2024-04-05T21:53:57.150695-06:00'
 model: gpt-4-1106-preview
-summary: "Bash\uC5D0\uC11C\uB294 `curl`\uC774\uB77C\uB294 \uBA85\uB839\uC5B4\uB85C\
-  \ HTTP \uC694\uCCAD\uC744 \uBCF4\uB0C5\uB2C8\uB2E4."
+summary: "(\uBC29\uBC95) Bash\uC5D0\uC11C\uB294 `curl`\uC774\uB77C\uB294 \uBA85\uB839\
+  \uC5B4\uB85C HTTP \uC694\uCCAD\uC744 \uBCF4\uB0C5\uB2C8\uB2E4."
 title: "HTTP \uC694\uCCAD \uBCF4\uB0B4\uAE30"
 weight: 44
 ---

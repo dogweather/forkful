@@ -1,7 +1,7 @@
 ---
 date: 2024-01-20 17:54:59.824232-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:45:00.182832-06:00'
+description: 'How to: Sample Output.'
+lastmod: '2024-04-05T21:53:35.879068-06:00'
 model: gpt-4-1106-preview
 summary: ''
 title: Reading a text file

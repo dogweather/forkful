@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:58:19.150246-07:00
-description: "Jak to zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:35.349441-06:00'
+description: "Jak to zrobi\u0107: Historia wyszukiwania i zamiany tekstu si\u0119\
+  ga pierwszych edytor\xF3w tekstu. Pojawi\u0142a si\u0119 konieczno\u015B\u0107 szybkiego\
+  \ poprawiania tekst\xF3w, co\u2026"
+lastmod: '2024-04-05T21:53:36.788064-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historia wyszukiwania i zamiany tekstu si\u0119ga pierwszych edytor\xF3\
+  w tekstu."
 title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:42:52.883098-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.525996-06:00'
+description: "Como Fazer: Desde os prim\xF3rdios da programa\xE7\xE3o, manipular strings\
+  \ tem sido uma tarefa comum. Linguagens antigas como Perl foram pioneiras em oferecer\u2026"
+lastmod: '2024-04-05T21:53:46.868121-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Desde os prim\xF3rdios da programa\xE7\xE3o, manipular strings tem sido\
+  \ uma tarefa comum."
 title: "Excluindo caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---

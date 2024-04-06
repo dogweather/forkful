@@ -3,9 +3,8 @@ changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:53:40.914376-07:00
 description: "C\xF3mo hacerlo: Dart ofrece varias formas sencillas de concatenar cadenas.\
-  \ A continuaci\xF3n, se muestran los m\xE9todos m\xE1s comunes: El operador `+`\
-  \ es la manera\u2026"
-lastmod: '2024-03-13T22:44:58.740154-06:00'
+  \ A continuaci\xF3n, se muestran los m\xE9todos m\xE1s comunes."
+lastmod: '2024-04-05T21:54:00.093890-06:00'
 model: gpt-4-0125-preview
 summary: Dart ofrece varias formas sencillas de concatenar cadenas.
 title: Concatenando cadenas de texto

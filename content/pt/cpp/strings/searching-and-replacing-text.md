@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:57:32.096500-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.865218-06:00'
+description: "Como Fazer: Procurar e substituir textos \xE9 fundamental desde os prim\xF3\
+  rdios da edi\xE7\xE3o de texto, sendo essencial em editores como sed e vim. Alternativas\u2026"
+lastmod: '2024-04-05T21:53:47.215330-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Procurar e substituir textos \xE9 fundamental desde os prim\xF3rdios da\
+  \ edi\xE7\xE3o de texto, sendo essencial em editores como sed e vim."
 title: Pesquisando e substituindo texto
 weight: 10
 ---

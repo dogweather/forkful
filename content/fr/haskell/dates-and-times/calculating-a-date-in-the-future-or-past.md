@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:31:04.597615-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:57.847814-06:00'
+description: "Comment faire : Historiquement, la manipulation des dates en programmation\
+  \ a \xE9t\xE9 complexe \xE0 cause des formats vari\xE9s et des fuseaux horaires.\
+  \ Haskell\u2026"
+lastmod: '2024-04-05T21:53:59.332617-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historiquement, la manipulation des dates en programmation a \xE9t\xE9 complexe\
+  \ \xE0 cause des formats vari\xE9s et des fuseaux horaires."
 title: "Calcul d'une date future ou pass\xE9e"
 weight: 26
 ---

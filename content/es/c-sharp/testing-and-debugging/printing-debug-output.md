@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:52:02.358908-07:00
-description: "C\xF3mo: ."
-lastmod: '2024-03-13T22:44:59.080688-06:00'
+description: "C\xF3mo: Salida esperada en consola."
+lastmod: '2024-04-05T21:54:00.423809-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Salida esperada en consola.
 title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---

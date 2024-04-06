@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:56:19.601839-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:45:00.063280-06:00'
+description: 'How to: In the code above, `args` is an array holding the command line
+  arguments. The `main` function checks if we got any, and greets accordingly.'
+lastmod: '2024-04-05T21:53:35.760659-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: In the code above, `args` is an array holding the command line arguments.
 title: Reading command line arguments
 weight: 23
 ---

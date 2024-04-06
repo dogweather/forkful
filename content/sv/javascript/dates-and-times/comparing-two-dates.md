@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:33:16.094292-07:00
 description: "How to: (Hur man g\xF6r:) ."
-lastmod: '2024-03-13T22:44:38.305836-06:00'
+lastmod: '2024-04-05T21:53:39.643079-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---

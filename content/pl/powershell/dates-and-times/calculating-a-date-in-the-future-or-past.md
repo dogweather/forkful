@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:31:55.983163-07:00
-description: "Jak to zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:35.643398-06:00'
+description: "Jak to zrobi\u0107: W przesz\u0142o\u015Bci do obliczania dat u\u017C\
+  ywano r\xF3\u017Cnych system\xF3w i narz\u0119dzi \u2013 od kalendarzy papierowych\
+  \ po proste programy komputerowe. W\u2026"
+lastmod: '2024-04-05T21:53:37.068514-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "W przesz\u0142o\u015Bci do obliczania dat u\u017Cywano r\xF3\u017Cnych system\xF3\
+  w i narz\u0119dzi \u2013 od kalendarzy papierowych po proste programy komputerowe."
 title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---

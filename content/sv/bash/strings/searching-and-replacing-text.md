@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:57:29.176776-07:00
-description: "Hur g\xF6r man: ."
-lastmod: '2024-03-13T22:44:38.066046-06:00'
+description: "Hur g\xF6r man: Exempel utdata: `sed` kommandot \xE4ndrar texten i filerna\
+  \ och den modifierade texten visas om inte `-i` (in-place) flaggan anv\xE4nds."
+lastmod: '2024-04-05T21:53:39.405514-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---

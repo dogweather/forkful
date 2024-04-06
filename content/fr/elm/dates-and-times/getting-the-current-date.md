@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 15:14:08.905113-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:57.700927-06:00'
+description: "Comment faire : Sortie \xE9chantillon : `Timestamp actuel: 1615322342819`."
+lastmod: '2024-04-05T21:53:59.196161-06:00'
 model: unknown
-summary: .
+summary: ''
 title: Obtenir la date actuelle
 weight: 29
 ---

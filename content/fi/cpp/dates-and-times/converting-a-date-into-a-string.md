@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:36:02.446846-07:00
-description: 'How to: - Kuinka: .'
-lastmod: '2024-03-13T22:44:56.876719-06:00'
+description: "How to: - Kuinka: Alkuper\xE4isess\xE4 C:ss\xE4 ja C++:n alkuajoissa\
+  \ p\xE4iv\xE4m\xE4\xE4r\xE4t k\xE4siteltiin `time_t`-tyyppisten muuttujien ja `strftime`-funktion\
+  \ avulla.\u2026"
+lastmod: '2024-04-05T21:53:58.455113-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---

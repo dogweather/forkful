@@ -2,10 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:59.729456-07:00
-description: 'Hoe: .'
-lastmod: '2024-03-13T22:44:50.797977-06:00'
+description: "Hoe: Het concept van het verwijderen van aanhalingstekens is niet nieuw\
+  \ of bijzonder complex, maar het is cruciaal omdat aanhalingstekens vaak worden\u2026"
+lastmod: '2024-04-05T21:53:50.821957-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: Het concept van het verwijderen van aanhalingstekens is niet nieuw of bijzonder
+  complex, maar het is cruciaal omdat aanhalingstekens vaak worden gebruikt om tekenreeksen
+  af te bakenen.
 title: Quotes verwijderen uit een string
 weight: 9
 ---

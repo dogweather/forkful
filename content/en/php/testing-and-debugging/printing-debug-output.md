@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:53:03.682497-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:45:00.169259-06:00'
+description: 'How to: Sample Output.'
+lastmod: '2024-04-05T21:53:35.865539-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: Printing debug output
 weight: 33
 ---

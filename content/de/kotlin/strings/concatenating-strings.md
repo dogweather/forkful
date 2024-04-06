@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:34:58.019054-07:00
 description: 'How to: (Wie macht man das:) .'
-lastmod: '2024-03-13T22:44:53.839116-06:00'
+lastmod: '2024-04-05T21:53:55.723143-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: (Wie macht man das:) .
 title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---

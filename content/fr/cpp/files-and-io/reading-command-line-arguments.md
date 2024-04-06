@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:55:29.369164-07:00
-description: How to (Comment faire) .
-lastmod: '2024-03-13T22:44:58.180621-06:00'
+description: "How to (Comment faire) Si vous lancez `./monprogramme Salut C++!`, l\u2019\
+  output sera."
+lastmod: '2024-04-05T21:53:59.607000-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: Lecture des arguments de ligne de commande
 weight: 23
 ---

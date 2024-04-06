@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:35:06.425337-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:43.550125-06:00'
+description: "How to: In Lua, la concatenazione di stringhe \xE8 stata da sempre un'operazione\
+  \ fondamentale. Nelle prime versioni di Lua, la concatenazione era gi\xE0\u2026"
+lastmod: '2024-04-05T21:53:44.313359-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "In Lua, la concatenazione di stringhe \xE8 stata da sempre un'operazione\
+  \ fondamentale."
 title: Concatenazione di stringhe
 weight: 3
 ---

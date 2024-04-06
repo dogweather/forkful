@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:33:07.367530-07:00
-description: 'Como fazer: .'
-lastmod: '2024-03-13T22:44:46.468249-06:00'
+description: "Como fazer: Antigamente, comparar datas em Java era mais complicado\
+  \ e impreciso, usando `java.util.Date` e `SimpleDateFormat`. Essas classes podiam\
+  \ ter\u2026"
+lastmod: '2024-04-05T21:53:46.808374-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Antigamente, comparar datas em Java era mais complicado e impreciso, usando
+  `java.util.Date` e `SimpleDateFormat`.
 title: Comparando duas datas
 weight: 27
 ---

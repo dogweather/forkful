@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:30:51.285777-07:00
-description: 'Miten: .'
-lastmod: '2024-03-13T22:44:56.752454-06:00'
+description: 'Miten: Esimerkkitulostus.'
+lastmod: '2024-04-05T21:53:58.327135-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---

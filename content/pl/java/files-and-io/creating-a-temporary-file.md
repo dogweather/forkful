@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:40:32.604185-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:35.298167-06:00'
+description: "How to: Pliki tymczasowe istniej\u0105 od czas\xF3w wcze\u015Bniejszych\
+  \ system\xF3w operacyjnych. W Javie, od JDK 1.2, mo\u017Cemy u\u017Cywa\u0107 `File.createTempFile`,\
+  \ a od Javy 7\u2026"
+lastmod: '2024-04-05T21:53:36.735694-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Pliki tymczasowe istniej\u0105 od czas\xF3w wcze\u015Bniejszych system\xF3\
+  w operacyjnych."
 title: Tworzenie pliku tymczasowego
 weight: 21
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:01:18.051876-07:00
-description: "C\xF3mo Hacerlo: ."
-lastmod: '2024-03-13T22:44:58.702221-06:00'
+description: "C\xF3mo Hacerlo: La autenticaci\xF3n b\xE1sica HTTP es un m\xE9todo\
+  \ antiguo pero simple para controlar el acceso a recursos web. No es el m\xE1s seguro\
+  \ porque las\u2026"
+lastmod: '2024-04-05T21:54:00.056745-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "La autenticaci\xF3n b\xE1sica HTTP es un m\xE9todo antiguo pero simple para\
+  \ controlar el acceso a recursos web."
 title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
 weight: 45
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:59:54.220058-07:00
-description: "C\xF3mo hacerlo: ."
-lastmod: '2024-03-13T22:44:58.976488-06:00'
+description: "C\xF3mo hacerlo: El env\xEDo de solicitudes HTTP es una parte crucial\
+  \ de las aplicaciones web modernas. Elm maneja las peticiones HTTP de manera diferente\
+  \ a\u2026"
+lastmod: '2024-04-05T21:54:00.330793-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "El env\xEDo de solicitudes HTTP es una parte crucial de las aplicaciones\
+  \ web modernas."
 title: Enviando una solicitud http
 weight: 44
 ---

@@ -1,10 +1,16 @@
 ---
 date: 2024-01-20 17:51:07.611270-07:00
-description: "How to: (\uC5B4\uB5BB\uAC8C:) ."
+description: "How to: (\uC5B4\uB5BB\uAC8C:) String interpolation\uC740 ES6\uBD80\uD130\
+  \ \uC2DC\uC791\uB41C \uC790\uBC14\uC2A4\uD06C\uB9BD\uD2B8\uC758 \uAE30\uB2A5\uC785\
+  \uB2C8\uB2E4. \uC774\uC804\uC5D0\uB294 \uBB38\uC790\uC5F4 \uC5F0\uACB0\uC744 \uC704\
+  \uD574 '+' \uC5F0\uC0B0\uC790\uB97C \uC0AC\uC6A9\uD588\uC5C8\uC8E0. \uC608\uB97C\
+  \ \uB4E4\uC5B4."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.771688-06:00'
+lastmod: '2024-04-05T21:53:57.378574-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(\uC5B4\uB5BB\uAC8C:) String interpolation\uC740 ES6\uBD80\uD130 \uC2DC\uC791\
+  \uB41C \uC790\uBC14\uC2A4\uD06C\uB9BD\uD2B8\uC758 \uAE30\uB2A5\uC785\uB2C8\uB2E4\
+  ."
 title: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uD558\uAE30"
 weight: 8
 ---

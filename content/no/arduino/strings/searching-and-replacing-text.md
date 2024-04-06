@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:56:57.507359-07:00
-description: 'Hvordan: .'
-lastmod: '2024-03-13T22:44:41.044150-06:00'
+description: "Hvordan: S\xF8k og erstatt funksjonaliteten har sine r\xF8tter i tidlige\
+  \ tekstbehandlingsverkt\xF8y. Alternativer inkluderer regex (regular expressions)\
+  \ for\u2026"
+lastmod: '2024-04-05T21:53:42.005732-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "S\xF8k og erstatt funksjonaliteten har sine r\xF8tter i tidlige tekstbehandlingsverkt\xF8\
+  y."
 title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---

@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:41:59.623503-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:46.864284-06:00'
+description: "Como Fazer: Antigamente, a manipula\xE7\xE3o de strings em C++ era feita\
+  \ principalmente utilizando fun\xE7\xF5es da biblioteca `<cstring>`, como `strtok()`\
+  \ e\u2026"
+lastmod: '2024-04-05T21:53:47.214123-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Antigamente, a manipula\xE7\xE3o de strings em C++ era feita principalmente\
+  \ utilizando fun\xE7\xF5es da biblioteca `<cstring>`, como `strtok()` e `strcspn()`,\
+  \ com opera\xE7\xF5es manuais de itera\xE7\xE3o e substitui\xE7\xE3o de caracteres."
 title: "Excluindo caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---

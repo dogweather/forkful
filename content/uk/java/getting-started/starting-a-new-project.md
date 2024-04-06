@@ -3,11 +3,11 @@ date: 2024-01-20 18:04:09.824858-07:00
 description: "How to: (\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\
   \u0438:) Let\u2019s kick off with a simple Hello World in Java, assuming you have\
   \ Java installed and your IDE (Integrated Development\u2026"
-lastmod: '2024-03-13T22:44:49.080242-06:00'
+lastmod: '2024-04-05T21:53:49.295169-06:00'
 model: gpt-4-1106-preview
-summary: "Let\u2019s kick off with a simple Hello World in Java, assuming you have\
-  \ Java installed and your IDE (Integrated Development Environment) is prepped for\
-  \ action."
+summary: "(\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\u0438:)\
+  \ Let\u2019s kick off with a simple Hello World in Java, assuming you have Java\
+  \ installed and your IDE (Integrated Development Environment) is prepped for action."
 title: "\u041F\u043E\u0447\u0438\u043D\u0430\u0454\u043C\u043E \u043D\u043E\u0432\u0438\
   \u0439 \u043F\u0440\u043E\u0435\u043A\u0442"
 weight: 1

@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:32:46.982365-07:00
-description: "C\xF3mo: ."
-lastmod: '2024-03-13T22:44:59.387429-06:00'
+description: "C\xF3mo: Salida de muestra: `La fecha1 es anterior a la fecha2.`."
+lastmod: '2024-04-05T21:54:00.736784-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "Comparaci\xF3n de dos fechas"
 weight: 27
 ---

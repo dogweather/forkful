@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:43:15.349400-07:00
-description: "Hvordan Gj\xF8re Det: ."
-lastmod: '2024-03-13T22:44:40.516499-06:00'
+description: "Hvordan Gj\xF8re Det: Her bruker vi `.replace()` med et regul\xE6rt\
+  \ uttrykk (`/[0-9]/g`) for \xE5 finne alle sifrene i strengen og erstatte dem med\
+  \ ingenting, noe\u2026"
+lastmod: '2024-04-05T21:53:41.495433-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Her bruker vi `.replace()` med et regul\xE6rt uttrykk (`/[0-9]/g`) for \xE5\
+  \ finne alle sifrene i strengen og erstatte dem med ingenting, noe som effektivt\
+  \ sletter dem."
 title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---

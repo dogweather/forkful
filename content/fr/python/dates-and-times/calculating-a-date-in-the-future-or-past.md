@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:31:47.372929-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:57.250717-06:00'
+description: "Comment faire : Historiquement, la manipulation de dates en programmation\
+  \ a toujours \xE9t\xE9 un peu ardue, principalement \xE0 cause de la complexit\xE9\
+  \ du\u2026"
+lastmod: '2024-04-05T21:53:58.832542-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historiquement, la manipulation de dates en programmation a toujours \xE9\
+  t\xE9 un peu ardue, principalement \xE0 cause de la complexit\xE9 du calendrier\
+  \ (mois de longueurs diff\xE9rentes, ann\xE9es bissextiles, etc.)."
 title: "Calcul d'une date future ou pass\xE9e"
 weight: 26
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:37:16.153655-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:44.062500-06:00'
+description: "How to: Convertire la data in una stringa \xE8 fondamentale per la leggibilit\xE0\
+  \ e il trattamento delle date nel mondo reale. Ruby usa il metodo `strftime`,\u2026"
+lastmod: '2024-04-05T21:53:44.705568-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Convertire la data in una stringa \xE8 fondamentale per la leggibilit\xE0\
+  \ e il trattamento delle date nel mondo reale."
 title: Conversione di una data in una stringa
 weight: 28
 ---

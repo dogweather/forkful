@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:39:18.230431-07:00
-description: "Hur man g\xF6r: ."
-lastmod: '2024-03-13T22:44:37.470518-06:00'
+description: "Hur man g\xF6r: Tidigare i datavetenskapen var det avg\xF6rande att\
+  \ effektivt behandla text d\xE5 datasystemen var k\xE4nsliga f\xF6r bokstavscase.\
+  \ Idag tillhandah\xE5ller\u2026"
+lastmod: '2024-04-05T21:53:38.797261-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Tidigare i datavetenskapen var det avg\xF6rande att effektivt behandla text\
+  \ d\xE5 datasystemen var k\xE4nsliga f\xF6r bokstavscase."
 title: "Konvertera en str\xE4ng till gemener"
 weight: 4
 ---

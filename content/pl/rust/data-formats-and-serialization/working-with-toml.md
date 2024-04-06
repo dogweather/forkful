@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 04:26:14.821380-07:00
-description: "Jak to zrobi\u0107: ."
-lastmod: '2024-03-13T22:44:35.209983-06:00'
+description: "Jak to zrobi\u0107: TOML, co oznacza Tom's Obvious, Minimal Language,\
+  \ zosta\u0142 stworzony przez Toma Preston-Wernera w 2013 roku. Jego celem jest\
+  \ bycie bardziej\u2026"
+lastmod: '2024-04-05T21:53:36.644944-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "TOML, co oznacza Tom's Obvious, Minimal Language, zosta\u0142 stworzony\
+  \ przez Toma Preston-Wernera w 2013 roku."
 title: Praca z TOML
 weight: 39
 ---

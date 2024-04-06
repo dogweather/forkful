@@ -3,10 +3,9 @@ date: 2024-01-20 18:00:58.220493-07:00
 description: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u4F7F\u7528 `curl` \u547D\u4EE4\u53D1\
   \u9001\u5E26\u6709\u57FA\u672C\u8BA4\u8BC1\u7684HTTP\u8BF7\u6C42\uFF1A."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:47.961051-06:00'
+lastmod: '2024-04-05T21:53:48.263325-06:00'
 model: gpt-4-1106-preview
-summary: "\u4F7F\u7528 `curl` \u547D\u4EE4\u53D1\u9001\u5E26\u6709\u57FA\u672C\u8BA4\
-  \u8BC1\u7684HTTP\u8BF7\u6C42\uFF1A."
+summary: ''
 title: "\u4F7F\u7528\u57FA\u672C\u8BA4\u8BC1\u53D1\u9001 HTTP \u8BF7\u6C42"
 weight: 45
 ---

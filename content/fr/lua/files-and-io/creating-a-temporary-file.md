@@ -3,9 +3,9 @@ date: 2024-01-20 17:41:35.373338-07:00
 description: "How to: (Comment faire :) En Lua, on peut utiliser les fonctions du\
   \ module `os` pour cr\xE9er et g\xE9rer des fichiers temporaires. Voici l'exemple\
   \ ."
-lastmod: '2024-03-13T22:44:57.959160-06:00'
+lastmod: '2024-04-05T21:53:59.428746-06:00'
 model: gpt-4-1106-preview
-summary: "(Comment faire :)\n\nEn Lua, on peut utiliser les fonctions du module `os`\
+summary: "(Comment faire :) En Lua, on peut utiliser les fonctions du module `os`\
   \ pour cr\xE9er et g\xE9rer des fichiers temporaires."
 title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21

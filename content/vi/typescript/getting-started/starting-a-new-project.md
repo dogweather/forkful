@@ -2,10 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:40.295460-07:00
-description: "C\xE1ch th\u1EF1c hi\u1EC7n: ."
-lastmod: '2024-03-13T22:44:36.319903-06:00'
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: TypeScript, m\u1ED9t si\xEAu t\u1EADp c\u1EE7\
+  a JavaScript, \u0111\u01B0\u1EE3c ph\xE1t tri\u1EC3n b\u1EDFi Microsoft v\xE0 l\u1EA7\
+  n \u0111\u1EA7u ti\xEAn \u0111\u01B0\u1EE3c ra m\u1EAFt v\xE0o th\xE1ng 10 n\u0103\
+  m 2012. N\xF3 th\xEAm ki\u1EC3u\u2026"
+lastmod: '2024-04-05T21:53:37.735110-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "TypeScript, m\u1ED9t si\xEAu t\u1EADp c\u1EE7a JavaScript, \u0111\u01B0\u1EE3\
+  c ph\xE1t tri\u1EC3n b\u1EDFi Microsoft v\xE0 l\u1EA7n \u0111\u1EA7u ti\xEAn \u0111\
+  \u01B0\u1EE3c ra m\u1EAFt v\xE0o th\xE1ng 10 n\u0103m 2012."
 title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---

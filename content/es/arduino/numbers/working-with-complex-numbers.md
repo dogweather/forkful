@@ -1,9 +1,9 @@
 ---
 date: 2024-01-26 04:36:35.120892-07:00
-description: "C\xF3mo hacerlo: ."
-lastmod: '2024-03-13T22:44:59.328253-06:00'
+description: "C\xF3mo hacerlo: Salida de muestra."
+lastmod: '2024-04-05T21:54:00.675318-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: ''
 title: "Trabajando con n\xFAmeros complejos"
 weight: 14
 ---

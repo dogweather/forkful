@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:54:46.014268-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:38.056177-06:00'
+description: 'How to: Sample output.'
+lastmod: '2024-04-05T21:53:39.395181-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "L\xE4sa en textfil"
 weight: 22
 ---

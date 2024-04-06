@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:55:11.280066-07:00
-description: "How to: (\u05D0\u05D9\u05DA \u05DC\u05E2\u05E9\u05D5\u05EA:) ."
-lastmod: '2024-03-13T22:44:39.934680-06:00'
+description: "How to: (\u05D0\u05D9\u05DA \u05DC\u05E2\u05E9\u05D5\u05EA:) Sample\
+  \ Output."
+lastmod: '2024-04-05T21:53:40.979323-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(\u05D0\u05D9\u05DA \u05DC\u05E2\u05E9\u05D5\u05EA:) Sample Output."
 title: "\u05E7\u05E8\u05D9\u05D0\u05EA \u05E7\u05D5\u05D1\u05E5 \u05D8\u05E7\u05E1\
   \u05D8"
 weight: 22

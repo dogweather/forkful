@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:51:03.376959-07:00
-description: 'Come Farlo: .'
-lastmod: '2024-03-13T22:44:43.295061-06:00'
+description: "Come Farlo: Prima di Java 15, l'interpolazione non era cos\xEC semplice.\
+  \ Si usava la concatenazione (`+`) o `String.format()`. Con Java 15, le stringhe\u2026"
+lastmod: '2024-04-05T21:53:44.067164-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Prima di Java 15, l'interpolazione non era cos\xEC semplice."
 title: Interpolazione di una stringa
 weight: 8
 ---

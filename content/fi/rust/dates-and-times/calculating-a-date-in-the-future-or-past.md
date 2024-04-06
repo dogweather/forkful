@@ -3,10 +3,9 @@ date: 2024-01-20 17:31:48.753427-07:00
 description: "How to: - Kuinka Tehd\xE4\xE4n: Rustissa p\xE4iv\xE4m\xE4\xE4r\xE4n\
   \ laskenta tulevaisuuteen tai menneisyyteen hoituu `chrono`-kirjaston avulla. Alla\
   \ esimerkkej\xE4."
-lastmod: '2024-03-13T22:44:56.370426-06:00'
+lastmod: '2024-04-05T21:53:57.929891-06:00'
 model: gpt-4-1106-preview
-summary: "Rustissa p\xE4iv\xE4m\xE4\xE4r\xE4n laskenta tulevaisuuteen tai menneisyyteen\
-  \ hoituu `chrono`-kirjaston avulla."
+summary: ''
 title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---

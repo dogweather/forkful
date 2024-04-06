@@ -1,10 +1,18 @@
 ---
 date: 2024-01-20 17:53:05.269028-07:00
-description: "How to: (\uBC29\uBC95\uC740?) ."
+description: "How to: (\uBC29\uBC95\uC740?) \uB514\uBC84\uADF8 \uCD9C\uB825\uC740\
+  \ \uD504\uB85C\uADF8\uB798\uBC0D \uCD08\uAE30\uBD80\uD130 \uC0AC\uC6A9\uB418\uC5C8\
+  \uC2B5\uB2C8\uB2E4. \uB2E4\uB978 \uC5B8\uC5B4\uB294 `print` \uB300\uC2E0 `console.log`,\
+  \ `println`, `echo` \uB4F1\uC744 \uC0AC\uC6A9\uD569\uB2C8\uB2E4. Lua\uC5D0\uC11C\
+  \ `print()` \uD568\uC218\uB294 \uAC04\uB2E8\uD558\uAC8C \uAC12\uACFC \uBCC0\uC218\
+  \uB97C \uCD9C\uB825\uD558\uB294\uB370, \uD14C\uC774\uBE14\uC744 \uD3EC\uD568\uD558\
+  \uC5EC\u2026"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.420317-06:00'
+lastmod: '2024-04-05T21:53:57.108450-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(\uBC29\uBC95\uC740?) \uB514\uBC84\uADF8 \uCD9C\uB825\uC740 \uD504\uB85C\
+  \uADF8\uB798\uBC0D \uCD08\uAE30\uBD80\uD130 \uC0AC\uC6A9\uB418\uC5C8\uC2B5\uB2C8\
+  \uB2E4."
 title: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC744 \uCC0D\uC5B4\uBCF4\uAE30"
 weight: 33
 ---

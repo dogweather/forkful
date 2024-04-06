@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:50:33.031347-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:57.673927-06:00'
+description: "Comment faire : Historiquement, Elm ne proposait pas d'interpolation\
+  \ de cha\xEEne comme d'autres langages. Pour fusionner des cha\xEEnes et des valeurs,\
+  \ on\u2026"
+lastmod: '2024-04-05T21:53:59.169559-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historiquement, Elm ne proposait pas d'interpolation de cha\xEEne comme\
+  \ d'autres langages."
 title: "Interpolation de cha\xEEnes de caract\xE8res"
 weight: 8
 ---

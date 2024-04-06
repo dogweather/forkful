@@ -1,10 +1,12 @@
 ---
 date: 2024-01-20 17:56:43.070625-07:00
-description: "\u600E\u4E48\u505A\uFF1A ."
+description: "\u600E\u4E48\u505A\uFF1A \u5982\u679C\u8FD0\u884C\u7A0B\u5E8F: `cargo\
+  \ run \u8FD9\u662F \u6D4B\u8BD5`\uFF0C\u8F93\u51FA\u5C06\u4F1A\u662F\uFF1A."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:47.538291-06:00'
+lastmod: '2024-04-05T21:53:47.858160-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "`cargo run \u8FD9\u662F \u6D4B\u8BD5`\uFF0C\u8F93\u51FA\u5C06\u4F1A\u662F\
+  \uFF1A."
 title: "\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570"
 weight: 23
 ---

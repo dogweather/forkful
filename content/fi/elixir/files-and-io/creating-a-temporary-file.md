@@ -3,9 +3,10 @@ date: 2024-01-20 17:40:25.530357-07:00
 description: "How to: (\"Kuinka tehd\xE4:\") Elixiriss\xE4 v\xE4liaikaistiedoston\
   \ luominen veet beekoon suoraviivaista. K\xE4ytet\xE4\xE4n `File` moduulia. T\xE4\
   ss\xE4 yksinkertainen esimerkki."
-lastmod: '2024-03-13T22:44:56.246213-06:00'
+lastmod: '2024-04-05T21:53:57.802258-06:00'
 model: gpt-4-1106-preview
-summary: "Elixiriss\xE4 v\xE4liaikaistiedoston luominen veet beekoon suoraviivaista."
+summary: "(\"Kuinka tehd\xE4:\") Elixiriss\xE4 v\xE4liaikaistiedoston luominen veet\
+  \ beekoon suoraviivaista."
 title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---

@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:39:25.300864-07:00
 description: 'How to: En TypeScript, c''est simple comme bonjour .'
-lastmod: '2024-03-13T22:44:57.422863-06:00'
+lastmod: '2024-04-05T21:53:58.987827-06:00'
 model: gpt-4-1106-preview
-summary: En TypeScript, c'est simple comme bonjour.
+summary: En TypeScript, c'est simple comme bonjour .
 title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
 weight: 4
 ---

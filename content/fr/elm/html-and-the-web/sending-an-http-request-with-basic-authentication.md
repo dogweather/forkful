@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 18:01:32.928982-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:57.688903-06:00'
+description: "Comment faire : Historiquement, l'authentification de base HTTP \xE9\
+  tait une des m\xE9thodes les plus simples pour s\xE9curiser l'acc\xE8s aux web services.\u2026"
+lastmod: '2024-04-05T21:53:59.184659-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historiquement, l'authentification de base HTTP \xE9tait une des m\xE9thodes\
+  \ les plus simples pour s\xE9curiser l'acc\xE8s aux web services."
 title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
 weight: 45
 ---

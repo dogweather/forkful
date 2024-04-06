@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:52:44.270186-07:00
-description: 'How to: Miten.'
-lastmod: '2024-03-13T22:44:56.617685-06:00'
+description: "How to: Syv\xE4sukellus Haskellissa `print` on k\xE4tev\xE4 funktio\
+  \ virheenetsint\xE4tietojen tulostamiseen. Se on lyhenne `putStrLn . show`:lle ja\
+  \ tulostaa\u2026"
+lastmod: '2024-04-05T21:53:58.187522-06:00'
 model: gpt-4-1106-preview
-summary: Miten.
+summary: "Syv\xE4sukellus Haskellissa `print` on k\xE4tev\xE4 funktio virheenetsint\xE4\
+  tietojen tulostamiseen."
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---

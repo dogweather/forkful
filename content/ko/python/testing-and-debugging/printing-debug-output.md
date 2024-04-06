@@ -3,10 +3,10 @@ date: 2024-01-20 17:53:24.594146-07:00
 description: "How to: (\uBC29\uBC95) \uAC04\uB2E8\uD558\uAC8C `print()` \uD568\uC218\
   \uB85C \uAC12\uC744 \uCD9C\uB825\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:54.601595-06:00'
+lastmod: '2024-04-05T21:53:56.459732-06:00'
 model: gpt-4-1106-preview
-summary: "\uAC04\uB2E8\uD558\uAC8C `print()` \uD568\uC218\uB85C \uAC12\uC744 \uCD9C\
-  \uB825\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
+summary: "(\uBC29\uBC95) \uAC04\uB2E8\uD558\uAC8C `print()` \uD568\uC218\uB85C \uAC12\
+  \uC744 \uCD9C\uB825\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
 title: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC744 \uCC0D\uC5B4\uBCF4\uAE30"
 weight: 33
 ---

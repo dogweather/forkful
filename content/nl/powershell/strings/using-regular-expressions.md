@@ -2,10 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:48.711581-07:00
-description: 'Hoe: .'
-lastmod: '2024-03-13T22:44:51.016441-06:00'
+description: "Hoe: Regex is sinds de jaren '50 een integraal onderdeel van programmeren.\
+  \ Hoewel PowerShell ingebouwde cmdlets heeft zoals `-match`, `-replace`, en\u2026"
+lastmod: '2024-04-05T21:53:51.032608-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: Regex is sinds de jaren '50 een integraal onderdeel van programmeren.
 title: Reguliere expressies gebruiken
 weight: 11
 ---

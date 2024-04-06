@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:38:58.061103-07:00
 description: "How to: (C\xF3mo hacerlo) ."
-lastmod: '2024-03-13T22:44:59.277214-06:00'
+lastmod: '2024-04-05T21:54:00.620963-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "Conversi\xF3n de una cadena de texto a min\xFAsculas"
 weight: 4
 ---

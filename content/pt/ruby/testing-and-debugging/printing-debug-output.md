@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:53:36.912117-07:00
-description: 'Como Fazer: .'
-lastmod: '2024-03-13T22:44:47.097914-06:00'
+description: "Como Fazer: O debug \xE9 uma t\xE9cnica antiga, quase t\xE3o velha quanto\
+  \ a programa\xE7\xE3o em si. Antigamente, era comum utilizar luzes e switches f\xED\
+  sicos para\u2026"
+lastmod: '2024-04-05T21:53:47.457510-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "O debug \xE9 uma t\xE9cnica antiga, quase t\xE3o velha quanto a programa\xE7\
+  \xE3o em si."
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---

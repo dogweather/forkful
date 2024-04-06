@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:37:35.676739-07:00
-description: "Hur g\xF6r man: ."
-lastmod: '2024-03-13T22:44:38.262401-06:00'
+description: "Hur g\xF6r man: Historiskt sett har datumhantering varit knepig p\xE5\
+  \ grund av olika tidzoner och format. Swift erbjuder `DateFormatter` f\xF6r att\
+  \ hantera dessa\u2026"
+lastmod: '2024-04-05T21:53:39.600000-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historiskt sett har datumhantering varit knepig p\xE5 grund av olika tidzoner\
+  \ och format."
 title: "Omvandla ett datum till en str\xE4ng"
 weight: 28
 ---

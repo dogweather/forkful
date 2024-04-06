@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:42:51.027534-07:00
-description: 'Anleitung: .'
-lastmod: '2024-03-13T22:44:53.999364-06:00'
+description: "Anleitung: Historisch ist das L\xF6schen von Zeichen, die einem Muster\
+  \ entsprechen, Teil der Standardbibliotheken vieler Programmiersprachen. Die Funktion\u2026"
+lastmod: '2024-04-05T21:53:55.883109-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historisch ist das L\xF6schen von Zeichen, die einem Muster entsprechen,\
+  \ Teil der Standardbibliotheken vieler Programmiersprachen."
 title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
 weight: 5
 ---

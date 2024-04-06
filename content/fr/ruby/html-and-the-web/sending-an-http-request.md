@@ -3,10 +3,10 @@ date: 2024-01-20 18:00:38.666488-07:00
 description: "How to: (Comment faire :) Ruby facilite l'envoi de requ\xEAtes HTTP\
   \ avec des biblioth\xE8ques comme Net::HTTP, qui vient int\xE9gr\xE9e, ou des gemmes\
   \ externes comme\u2026"
-lastmod: '2024-03-13T22:44:58.416563-06:00'
+lastmod: '2024-04-05T21:53:59.821700-06:00'
 model: gpt-4-1106-preview
-summary: "Ruby facilite l'envoi de requ\xEAtes HTTP avec des biblioth\xE8ques comme\
-  \ Net::HTTP, qui vient int\xE9gr\xE9e, ou des gemmes externes comme `httparty`."
+summary: "(Comment faire :) Ruby facilite l'envoi de requ\xEAtes HTTP avec des biblioth\xE8\
+  ques comme Net::HTTP, qui vient int\xE9gr\xE9e, ou des gemmes externes comme `httparty`."
 title: "Envoi d'une requ\xEAte HTTP"
 weight: 44
 ---

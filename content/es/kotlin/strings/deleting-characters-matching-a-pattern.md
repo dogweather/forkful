@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:42:43.450842-07:00
-description: "C\xF3mo hacerlo: ."
-lastmod: '2024-03-13T22:44:59.019935-06:00'
+description: "C\xF3mo hacerlo: El c\xF3digo elimina todos los d\xEDgitos del `textoOriginal`\
+  \ usando una expresi\xF3n regular (el patr\xF3n \"\\\\d\" que encuentra d\xEDgitos)\
+  \ y `replace`."
+lastmod: '2024-04-05T21:54:00.363398-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "El c\xF3digo elimina todos los d\xEDgitos del `textoOriginal` usando una\
+  \ expresi\xF3n regular (el patr\xF3n \"\\\\d\" que encuentra d\xEDgitos) y `replace`."
 title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---

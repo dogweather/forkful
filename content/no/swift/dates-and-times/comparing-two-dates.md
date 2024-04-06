@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:34:06.450092-07:00
-description: 'How to: (Hvordan:) .'
-lastmod: '2024-03-13T22:44:41.154427-06:00'
+description: 'How to: (Hvordan:) Sample Output.'
+lastmod: '2024-04-05T21:53:42.114292-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: (Hvordan:) Sample Output.
 title: Sammenlikning av to datoer
 weight: 27
 ---

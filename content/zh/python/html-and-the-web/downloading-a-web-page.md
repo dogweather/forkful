@@ -4,10 +4,11 @@ description: "How to: (\u5982\u4F55\u64CD\u4F5C) \u4F7F\u7528Python\u7684`reques
   \u80FD\u8F7B\u677E\u5B8C\u6210\u7F51\u9875\u4E0B\u8F7D\u3002\u4E0B\u9762\u662F\u4E2A\
   \u793A\u4F8B\uFF1A."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:47.253836-06:00'
+lastmod: '2024-04-05T21:53:47.608319-06:00'
 model: gpt-4-1106-preview
-summary: "\u4F7F\u7528Python\u7684`requests`\u5E93\u80FD\u8F7B\u677E\u5B8C\u6210\u7F51\
-  \u9875\u4E0B\u8F7D\u3002\u4E0B\u9762\u662F\u4E2A\u793A\u4F8B\uFF1A."
+summary: "(\u5982\u4F55\u64CD\u4F5C) \u4F7F\u7528Python\u7684`requests`\u5E93\u80FD\
+  \u8F7B\u677E\u5B8C\u6210\u7F51\u9875\u4E0B\u8F7D\u3002\u4E0B\u9762\u662F\u4E2A\u793A\
+  \u4F8B\uFF1A."
 title: "\u4E0B\u8F7D\u7F51\u9875"
 weight: 42
 ---

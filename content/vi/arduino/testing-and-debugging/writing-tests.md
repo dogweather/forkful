@@ -2,10 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:53.850550-07:00
-description: "C\xE1ch l\xE0m: ."
-lastmod: '2024-03-13T22:44:36.993544-06:00'
+description: "C\xE1ch l\xE0m: B\u1ED1i c\u1EA3nh l\u1ECBch s\u1EED: Ki\u1EC3m th\u1EED\
+  \ trong Arduino b\u1EAFt \u0111\u1EA7u mu\u1ED9n h\u01A1n trong ph\xE1t tri\u1EC3\
+  n ph\u1EA7n m\u1EC1m v\xE0 \xEDt ph\u1ED5 bi\u1EBFn h\u01A1n do t\u01B0\u01A1ng\
+  \ t\xE1c v\u1EDBi ph\u1EA7n c\u1EE9ng. C\xE1c ph\u01B0\u01A1ng \xE1n\u2026"
+lastmod: '2024-04-05T21:53:38.354605-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: ''
 title: "Vi\u1EBFt ki\u1EC3m th\u1EED"
 weight: 36
 ---

@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:53:09.841237-07:00
-description: "So geht\u2019s: ."
-lastmod: '2024-03-13T22:44:53.675363-06:00'
+description: "So geht\u2019s: Debugging-Ausdrucke gibt es, seit Programmierer Bugs\
+  \ jagen. `println!` ist einfach, aber roh. `dbg!` kam in Rust 1.32.0 und ist handlicher:\u2026"
+lastmod: '2024-04-05T21:53:55.554747-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Debugging-Ausdrucke gibt es, seit Programmierer Bugs jagen.
 title: Debug-Ausgaben drucken
 weight: 33
 ---

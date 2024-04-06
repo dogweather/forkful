@@ -1,9 +1,10 @@
 ---
 date: 2024-01-26 00:56:49.156281-07:00
-description: 'Come fare: .'
-lastmod: '2024-03-13T22:44:43.008475-06:00'
+description: 'Come fare: Esempio di output quando si inserisce un numero non valido
+  per il primo blocco.'
+lastmod: '2024-04-05T21:53:43.792001-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Esempio di output quando si inserisce un numero non valido per il primo blocco.
 title: Gestione degli errori
 weight: 16
 ---

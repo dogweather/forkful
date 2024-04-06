@@ -3,9 +3,9 @@ date: 2024-01-20 18:03:18.155298-07:00
 description: "How to: (C\xF3mo Hacerlo:) Crear un proyecto en Elm es sencillo. Utiliza\
   \ `elm init` en tu terminal para generar la estructura b\xE1sica, que incluye \"\
   elm.json\"\u2026"
-lastmod: '2024-03-13T22:44:58.986084-06:00'
+lastmod: '2024-04-05T21:54:00.335682-06:00'
 model: gpt-4-1106-preview
-summary: Crear un proyecto en Elm es sencillo.
+summary: "(C\xF3mo Hacerlo:) Crear un proyecto en Elm es sencillo."
 title: Iniciando un nuevo proyecto
 weight: 1
 ---

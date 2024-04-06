@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:34:34.275788-07:00
-description: 'Vorgehensweise: .'
-lastmod: '2024-03-13T22:44:53.796811-06:00'
+description: "Vorgehensweise: Ausgabe: \"Hallo Welt!\" Du kannst auch mehrere Strings\
+  \ mit der `++` Funktion zusammenh\xE4ngen."
+lastmod: '2024-04-05T21:53:55.679818-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---

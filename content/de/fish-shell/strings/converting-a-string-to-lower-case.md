@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:38:11.464868-07:00
-description: 'Wie geht das: .'
-lastmod: '2024-03-13T22:44:54.295196-06:00'
+description: "Wie geht das: Das Arbeiten mit Text in Skripten ist seit Anbeginn ein\
+  \ grundlegendes Element der Programmierung. Die Funktion `string tolower` in Fish\u2026"
+lastmod: '2024-04-05T21:53:56.184204-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Das Arbeiten mit Text in Skripten ist seit Anbeginn ein grundlegendes Element
+  der Programmierung.
 title: Umformung eines Strings in Kleinbuchstaben
 weight: 4
 ---

@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:32:16.945534-07:00
-description: Wie geht das? .
-lastmod: '2024-03-13T22:44:54.155756-06:00'
+description: Wie geht das? Sample Output.
+lastmod: '2024-04-05T21:53:56.039826-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: Vergleich von zwei Daten
 weight: 27
 ---

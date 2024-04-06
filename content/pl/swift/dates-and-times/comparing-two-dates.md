@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:33:53.911764-07:00
 description: "How to: (Jak to zrobi\u0107?) Por\xF3wnajmy dwie daty w Swift."
-lastmod: '2024-03-13T22:44:35.767172-06:00'
+lastmod: '2024-04-05T21:53:37.193877-06:00'
 model: gpt-4-1106-preview
-summary: "(Jak to zrobi\u0107?)\n\nPor\xF3wnajmy dwie daty w Swift."
+summary: "(Jak to zrobi\u0107?) Por\xF3wnajmy dwie daty w Swift."
 title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---

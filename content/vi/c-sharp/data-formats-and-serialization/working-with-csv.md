@@ -2,8 +2,8 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:41.641805-07:00
-description: "L\xE0m th\u1EBF n\xE0o ."
-lastmod: '2024-03-13T22:44:36.686653-06:00'
+description: "L\xE0m th\u1EBF n\xE0o **K\u1EBFt qu\u1EA3 m\u1EABu:**."
+lastmod: '2024-04-05T21:53:38.073917-06:00'
 model: gpt-4-0125-preview
 summary: ''
 title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"

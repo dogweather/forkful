@@ -2,11 +2,11 @@
 date: 2024-01-26 03:45:27.058769-07:00
 description: "Comment faire : En Kotlin, l'arrondi peut \xEAtre r\xE9alis\xE9 en utilisant\
   \ plusieurs fonctions telles que `roundToInt()`, `roundToDouble()`, et en utilisant\u2026"
-lastmod: '2024-03-13T22:44:57.733042-06:00'
+lastmod: '2024-04-05T21:53:59.223534-06:00'
 model: gpt-4-0125-preview
 summary: "En Kotlin, l'arrondi peut \xEAtre r\xE9alis\xE9 en utilisant plusieurs fonctions\
   \ telles que `roundToInt()`, `roundToDouble()`, et en utilisant `BigDecimal` pour\
-  \ plus de contr\xF4le."
+  \ plus de contr\xF4le ."
 title: Arrondir les nombres
 weight: 13
 ---

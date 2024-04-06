@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:46:11.015511-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:57.223452-06:00'
+description: "Comment faire : Historiquement, l'extraction de sous-cha\xEEnes \xE9\
+  tait plus compliqu\xE9e en Python. Avec l'\xE9volution du langage, des m\xE9thodes\
+  \ comme `split()` et\u2026"
+lastmod: '2024-04-05T21:53:58.806717-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Historiquement, l'extraction de sous-cha\xEEnes \xE9tait plus compliqu\xE9\
+  e en Python."
 title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---

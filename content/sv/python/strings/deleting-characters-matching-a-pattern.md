@@ -3,10 +3,13 @@ changelog:
 - 2024-04-04, dogweather, edited
 - 2024-04-04, gpt-4-0125-preview, translated from English
 date: 2024-01-20 17:43:02.363431-07:00
-description: 'Hur man: .'
-lastmod: '2024-04-04T02:02:46.448973-06:00'
+description: "Hur man: Jag g\xF6r detta tillr\xE4ckligt ofta f\xF6r att jag ska ha\
+  \ omstrukturerat det till denna enkla `delete()` funktion. Det \xE4r ocks\xE5 en\
+  \ bra demonstration av\u2026"
+lastmod: '2024-04-05T21:53:38.794319-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Jag g\xF6r detta tillr\xE4ckligt ofta f\xF6r att jag ska ha omstrukturerat\
+  \ det till denna enkla `delete()` funktion."
 title: "Radera tecken som matchar ett m\xF6nster"
 weight: 5
 ---

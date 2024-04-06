@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:54:42.931208-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:59.177853-06:00'
+description: "How to: Historically, PHP has evolved its file-reading functions, increasing\
+  \ efficiency and ease of use. `file_get_contents` es perfecto para archivos\u2026"
+lastmod: '2024-04-05T21:54:00.523402-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Historically, PHP has evolved its file-reading functions, increasing efficiency
+  and ease of use.
 title: Lectura de un archivo de texto
 weight: 22
 ---

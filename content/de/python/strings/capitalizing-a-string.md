@@ -5,9 +5,10 @@ changelog:
 date: 2024-02-03 19:02:34.962078-07:00
 description: "Wie man: Python verf\xFCgt \xFCber eine eingebaute Methode `.capitalize()`\
   \ f\xFCr Strings, um diese Aufgabe einfach zu bewerkstelligen."
-lastmod: '2024-04-04T00:26:53.357557-06:00'
+lastmod: '2024-04-05T21:53:55.318411-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Python verf\xFCgt \xFCber eine eingebaute Methode `.capitalize()` f\xFC\
+  r Strings, um diese Aufgabe einfach zu bewerkstelligen."
 title: "Einen String gro\xDFschreiben"
 weight: 2
 ---

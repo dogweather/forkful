@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:00:58.452125-07:00
-description: 'Come Fare: .'
-lastmod: '2024-03-13T22:44:43.683411-06:00'
+description: "Come Fare: L'autenticazione HTTP di base esiste da quando l'HTTP \xE8\
+  \ stato creato nei primi anni '90. \xC8 un metodo semplice ma meno sicuro rispetto\
+  \ a metodi\u2026"
+lastmod: '2024-04-05T21:53:44.444053-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "L'autenticazione HTTP di base esiste da quando l'HTTP \xE8 stato creato\
+  \ nei primi anni '90."
 title: Inviare una richiesta http con autenticazione di base
 weight: 45
 ---

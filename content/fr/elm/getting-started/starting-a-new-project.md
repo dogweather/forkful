@@ -2,9 +2,10 @@
 date: 2024-01-20 18:03:12.800214-07:00
 description: "How to: (Comment faire :) Pour commencer, installez Elm et cr\xE9ez\
   \ votre projet ."
-lastmod: '2024-03-13T22:44:57.689903-06:00'
+lastmod: '2024-04-05T21:53:59.185784-06:00'
 model: gpt-4-1106-preview
-summary: "Pour commencer, installez Elm et cr\xE9ez votre projet."
+summary: "(Comment faire :) Pour commencer, installez Elm et cr\xE9ez votre projet\
+  \ ."
 title: Lancement d'un nouveau projet
 weight: 1
 ---

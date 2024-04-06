@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:53:17.821961-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:58.225416-06:00'
+description: "Comment faire : Initialement, le d\xE9bogage se faisait avec des points\
+  \ d\u2019arr\xEAt et la v\xE9rification manuelle des \xE9tats. L'arriv\xE9e des\
+  \ fonctions d'affichage\u2026"
+lastmod: '2024-04-05T21:53:59.636084-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Initialement, le d\xE9bogage se faisait avec des points d\u2019arr\xEAt\
+  \ et la v\xE9rification manuelle des \xE9tats."
 title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---

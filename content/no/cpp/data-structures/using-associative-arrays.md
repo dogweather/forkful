@@ -3,8 +3,8 @@ changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:20.576425-07:00
 description: "Hvordan: I C++ blir assosiative tabeller levendegjort med hodefilene\
-  \ `<map>` og `<unordered_map>`. La oss ta noen eksempler for \xE5 se begge i aksjon.\u2026"
-lastmod: '2024-03-13T22:44:41.092309-06:00'
+  \ `<map>` og `<unordered_map>`. La oss ta noen eksempler for \xE5 se begge i aksjon."
+lastmod: '2024-04-05T21:53:42.055098-06:00'
 model: gpt-4-0125-preview
 summary: I C++ blir assosiative tabeller levendegjort med hodefilene `<map>` og `<unordered_map>`.
 title: Bruke associative tabeller

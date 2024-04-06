@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:53:05.198950-07:00
-description: "Hur man g\xF6r: ."
-lastmod: '2024-03-13T22:44:37.998809-06:00'
+description: "Hur man g\xF6r: Exempel p\xE5 utmatning."
+lastmod: '2024-04-05T21:53:39.338817-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Exempel p\xE5 utmatning."
 title: "Skriva ut fels\xF6kningsdata"
 weight: 33
 ---

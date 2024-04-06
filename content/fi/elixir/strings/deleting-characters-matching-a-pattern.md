@@ -3,10 +3,10 @@ date: 2024-01-20 17:41:57.682674-07:00
 description: "How to: \"N\xE4in teet:\" Elixiriss\xE4 RegExp-moduuli (regex) on ty\xF6\
   kalusi kun haluat poistaa merkkej\xE4. T\xE4ss\xE4 on esimerkki koodi miten poistat\
   \ kaikki numerot\u2026"
-lastmod: '2024-03-13T22:44:56.210441-06:00'
+lastmod: '2024-04-05T21:53:57.767330-06:00'
 model: gpt-4-1106-preview
-summary: "\"N\xE4in teet:\"\nElixiriss\xE4 RegExp-moduuli (regex) on ty\xF6kalusi\
-  \ kun haluat poistaa merkkej\xE4."
+summary: "\"N\xE4in teet:\" Elixiriss\xE4 RegExp-moduuli (regex) on ty\xF6kalusi kun\
+  \ haluat poistaa merkkej\xE4."
 title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---

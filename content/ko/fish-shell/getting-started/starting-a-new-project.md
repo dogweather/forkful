@@ -3,10 +3,10 @@ date: 2024-01-20 18:03:41.148159-07:00
 description: "How to: (\uBC29\uBC95) \uC0C8 \uD504\uB85C\uC81D\uD2B8\uB97C Fish Shell\uC5D0\
   \uC11C \uC2DC\uC791\uD558\uB294 \uAE30\uBCF8 \uB2E8\uACC4\uC785\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.856449-06:00'
+lastmod: '2024-04-05T21:53:57.445132-06:00'
 model: gpt-4-1106-preview
-summary: "\uC0C8 \uD504\uB85C\uC81D\uD2B8\uB97C Fish Shell\uC5D0\uC11C \uC2DC\uC791\
-  \uD558\uB294 \uAE30\uBCF8 \uB2E8\uACC4\uC785\uB2C8\uB2E4."
+summary: "(\uBC29\uBC95) \uC0C8 \uD504\uB85C\uC81D\uD2B8\uB97C Fish Shell\uC5D0\uC11C\
+  \ \uC2DC\uC791\uD558\uB294 \uAE30\uBCF8 \uB2E8\uACC4\uC785\uB2C8\uB2E4."
 title: "\uC0C8 \uD504\uB85C\uC81D\uD2B8 \uC2DC\uC791\uD558\uAE30"
 weight: 1
 ---

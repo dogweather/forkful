@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:54:07.059783-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:35.062026-06:00'
+description: "How to: Elixir korzysta z beamowego (wirtualna maszyna Erlanga) modelu\
+  \ obs\u0142ugi plik\xF3w. To pochodna erlangowego sposobu czytania plik\xF3w \u2013\
+  \ niezawodnego i\u2026"
+lastmod: '2024-04-05T21:53:36.500328-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Elixir korzysta z beamowego (wirtualna maszyna Erlanga) modelu obs\u0142\
+  ugi plik\xF3w."
 title: Odczytywanie pliku tekstowego
 weight: 22
 ---

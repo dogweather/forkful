@@ -3,9 +3,10 @@ date: 2024-01-20 18:03:55.102231-07:00
 description: "How to: (C\xF3mo hacerlo:) Para iniciar un proyecto en Java, necesitas\
   \ herramientas como JDK y un IDE. Aqu\xED te muestro c\xF3mo hacerlo con el JDK\
   \ actual y el\u2026"
-lastmod: '2024-03-13T22:44:58.938262-06:00'
+lastmod: '2024-04-05T21:54:00.290291-06:00'
 model: gpt-4-1106-preview
-summary: Para iniciar un proyecto en Java, necesitas herramientas como JDK y un IDE.
+summary: "(C\xF3mo hacerlo:) Para iniciar un proyecto en Java, necesitas herramientas\
+  \ como JDK y un IDE."
 title: Iniciando un nuevo proyecto
 weight: 1
 ---

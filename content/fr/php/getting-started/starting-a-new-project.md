@@ -3,10 +3,10 @@ date: 2024-01-20 18:04:07.151129-07:00
 description: "How to: (Comment faire :) Pour d\xE9marrer un projet PHP, vous devez\
   \ installer PHP et un serveur web comme Apache ou Nginx. Utilisez Composer pour\
   \ g\xE9rer les\u2026"
-lastmod: '2024-03-13T22:44:57.879332-06:00'
+lastmod: '2024-04-05T21:53:59.364597-06:00'
 model: gpt-4-1106-preview
-summary: "Pour d\xE9marrer un projet PHP, vous devez installer PHP et un serveur web\
-  \ comme Apache ou Nginx."
+summary: "(Comment faire :) Pour d\xE9marrer un projet PHP, vous devez installer PHP\
+  \ et un serveur web comme Apache ou Nginx."
 title: Lancement d'un nouveau projet
 weight: 1
 ---

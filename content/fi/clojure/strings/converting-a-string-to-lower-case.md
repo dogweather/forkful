@@ -2,9 +2,10 @@
 date: 2024-01-20 17:38:08.381675-07:00
 description: "How to: (Kuinka tehd\xE4\xE4n:) Clojure k\xE4ytt\xE4\xE4 `clojure.string/lower-case`\
   \ funktiota."
-lastmod: '2024-03-13T22:44:56.172133-06:00'
+lastmod: '2024-04-05T21:53:57.728298-06:00'
 model: gpt-4-1106-preview
-summary: "Clojure k\xE4ytt\xE4\xE4 `clojure.string/lower-case` funktiota."
+summary: "(Kuinka tehd\xE4\xE4n:) Clojure k\xE4ytt\xE4\xE4 `clojure.string/lower-case`\
+  \ funktiota."
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---

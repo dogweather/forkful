@@ -1,9 +1,9 @@
 ---
 date: 2024-01-26 04:36:48.404629-07:00
-description: 'Kuinka: .'
-lastmod: '2024-03-13T22:44:56.819164-06:00'
+description: 'Kuinka: Esimerkkituloste.'
+lastmod: '2024-04-05T21:53:58.394740-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: ''
 title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:57:30.235451-07:00
-description: 'So geht''s: .'
-lastmod: '2024-03-13T22:44:53.448095-06:00'
+description: "So geht's: Suchen und Ersetzen reicht zur\xFCck bis zu den fr\xFChen\
+  \ Texteditoren der Computerentwicklung. Elixir nutzt Regex (kurz f\xFCr Regular\
+  \ Expressions),\u2026"
+lastmod: '2024-04-05T21:53:55.404713-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Suchen und Ersetzen reicht zur\xFCck bis zu den fr\xFChen Texteditoren der\
+  \ Computerentwicklung."
 title: Suchen und Ersetzen von Text
 weight: 10
 ---

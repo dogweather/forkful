@@ -4,11 +4,11 @@ description: "How to: (\uC5B4\uB5BB\uAC8C:) PowerShell\uC5D0\uC11C \uBB38\uC790\
   \uC758 \uAE38\uC774\uB97C \uAD6C\uD558\uB294 \uCF54\uB4DC \uC608\uC81C\uC640 \uACB0\
   \uACFC\uB97C \uBD05\uC2DC\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.530579-06:00'
+lastmod: '2024-04-05T21:53:57.190556-06:00'
 model: gpt-4-1106-preview
-summary: "PowerShell\uC5D0\uC11C \uBB38\uC790\uC5F4\uC758 \uAE38\uC774\uB97C \uAD6C\
-  \uD558\uB294 \uCF54\uB4DC \uC608\uC81C\uC640 \uACB0\uACFC\uB97C \uBD05\uC2DC\uB2E4\
-  ."
+summary: "(\uC5B4\uB5BB\uAC8C:) PowerShell\uC5D0\uC11C \uBB38\uC790\uC5F4\uC758 \uAE38\
+  \uC774\uB97C \uAD6C\uD558\uB294 \uCF54\uB4DC \uC608\uC81C\uC640 \uACB0\uACFC\uB97C\
+  \ \uBD05\uC2DC\uB2E4."
 title: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774 \uCC3E\uAE30"
 weight: 7
 ---

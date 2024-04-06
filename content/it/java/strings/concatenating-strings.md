@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:35:04.416969-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:43.301032-06:00'
+description: "How to: Storicamente in Java, nella fase iniziale, l'operatore `+` era\
+  \ il metodo principale per concatenare le stringhe. Non era il pi\xF9 efficiente,\u2026"
+lastmod: '2024-04-05T21:53:44.072454-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Storicamente in Java, nella fase iniziale, l'operatore `+` era il metodo
+  principale per concatenare le stringhe.
 title: Concatenazione di stringhe
 weight: 3
 ---

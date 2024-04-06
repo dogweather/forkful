@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 18:00:29.362113-07:00
-description: 'Hvordan: .'
-lastmod: '2024-03-13T22:44:40.883018-06:00'
+description: "Hvordan: Dette vil skrive ut dataen hentet fra API-en. For en mer robust\
+  \ l\xF8sning, bruk cURL."
+lastmod: '2024-04-05T21:53:41.851144-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Dette vil skrive ut dataen hentet fra API-en.
 title: "\xC5 sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---

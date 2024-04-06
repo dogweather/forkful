@@ -2,9 +2,10 @@
 date: 2024-01-20 17:54:49.490954-07:00
 description: 'How to: (Comment faire :) Utilisons `file_get_contents()` pour lire
   un fichier entier .'
-lastmod: '2024-03-13T22:44:57.897749-06:00'
+lastmod: '2024-04-05T21:53:59.382269-06:00'
 model: gpt-4-1106-preview
-summary: Utilisons `file_get_contents()` pour lire un fichier entier.
+summary: (Comment faire :) Utilisons `file_get_contents()` pour lire un fichier entier
+  .
 title: Lecture d'un fichier texte
 weight: 22
 ---

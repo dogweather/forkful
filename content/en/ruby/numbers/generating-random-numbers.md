@@ -1,8 +1,8 @@
 ---
 date: 2024-01-27 20:26:06.703048-07:00
 description: 'How to: Ruby provides several methods to generate random numbers, primarily
-  via the `Random` class. To generate a basic random number.'
-lastmod: '2024-03-13T22:45:00.545034-06:00'
+  via the `Random` class.'
+lastmod: '2024-04-05T21:53:36.252409-06:00'
 model: gpt-4-0125-preview
 summary: Ruby provides several methods to generate random numbers, primarily via the
   `Random` class.

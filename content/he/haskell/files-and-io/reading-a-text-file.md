@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:54:29.070996-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:39.441520-06:00'
+description: "How to: \u05E4\u05DC\u05D8 (\u05E4\u05D9\u05E7\u05D8\u05D9\u05D1\u05D9\
+  )."
+lastmod: '2024-04-05T21:53:40.603901-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "\u05E7\u05E8\u05D9\u05D0\u05EA \u05E7\u05D5\u05D1\u05E5 \u05D8\u05E7\u05E1\
   \u05D8"
 weight: 22

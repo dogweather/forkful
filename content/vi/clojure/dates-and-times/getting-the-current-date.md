@@ -2,10 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:44.530543-07:00
-description: "C\xE1ch th\u1EF1c hi\u1EC7n: ."
-lastmod: '2024-03-13T22:44:36.166854-06:00'
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Clojure, m\u1ED9t ph\u01B0\u01A1ng ng\xF4\
+  n hi\u1EC7n \u0111\u1EA1i c\u1EE7a Lisp, cung c\u1EA5p kh\u1EA3 n\u0103ng t\u01B0\
+  \u01A1ng th\xEDch v\u1EDBi Java, v\xEC v\u1EADy ch\xFAng ta th\u01B0\u1EDDng s\u1EED\
+  \ d\u1EE5ng API Ng\xE0y v\xE0 Gi\u1EDD phong\u2026"
+lastmod: '2024-04-05T21:53:37.590704-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Clojure, m\u1ED9t ph\u01B0\u01A1ng ng\xF4n hi\u1EC7n \u0111\u1EA1i c\u1EE7\
+  a Lisp, cung c\u1EA5p kh\u1EA3 n\u0103ng t\u01B0\u01A1ng th\xEDch v\u1EDBi Java,\
+  \ v\xEC v\u1EADy ch\xFAng ta th\u01B0\u1EDDng s\u1EED d\u1EE5ng API Ng\xE0y v\xE0\
+  \ Gi\u1EDD phong ph\xFA c\u1EE7a Java."
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 weight: 29
 ---

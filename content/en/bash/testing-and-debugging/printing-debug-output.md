@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:51:53.543395-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:45:00.247182-06:00'
+description: "How to: Originally, debugging meant removing physical bugs that disrupted\
+  \ early computers. Nowadays, it's about squashing code bugs. Debug outputs are the\u2026"
+lastmod: '2024-04-05T21:53:35.944381-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Originally, debugging meant removing physical bugs that disrupted early computers.
 title: Printing debug output
 weight: 33
 ---

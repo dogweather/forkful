@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 18:00:23.507324-07:00
 description: 'How to: (Wie man''s macht:) .'
-lastmod: '2024-03-13T22:44:53.375198-06:00'
+lastmod: '2024-04-05T21:53:55.331486-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: (Wie man's macht:) .
 title: Einen HTTP-Request senden
 weight: 44
 ---

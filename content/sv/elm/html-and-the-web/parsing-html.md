@@ -3,9 +3,10 @@ date: 2024-01-20 15:31:08.369871-07:00
 description: "How to: (Hur man g\xF6r:) I Elm anv\xE4nder vi paketet `html-parser`\
   \ f\xF6r att parsa HTML. Dina Elm-modeller blir en representation av det parsade\
   \ inneh\xE5llet."
-lastmod: '2024-03-13T22:44:37.827117-06:00'
+lastmod: '2024-04-05T21:53:39.162220-06:00'
 model: unknown
-summary: "I Elm anv\xE4nder vi paketet `html-parser` f\xF6r att parsa HTML."
+summary: "(Hur man g\xF6r:) I Elm anv\xE4nder vi paketet `html-parser` f\xF6r att\
+  \ parsa HTML."
 title: Tolka HTML
 weight: 43
 ---

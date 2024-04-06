@@ -1,10 +1,12 @@
 ---
 date: 2024-01-20 17:56:55.846822-07:00
-description: "How to: (\u5982\u4F55\u64CD\u4F5C\uFF1A) ."
+description: "How to: (\u5982\u4F55\u64CD\u4F5C\uFF1A) \u8FD0\u884C `tsc app.ts` \u7F16\
+  \u8BD1\uFF0C\u7136\u540E\u6267\u884C `node app.js hello world`\uFF1A."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:47.489206-06:00'
+lastmod: '2024-04-05T21:53:47.812730-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(\u5982\u4F55\u64CD\u4F5C\uFF1A) \u8FD0\u884C `tsc app.ts` \u7F16\u8BD1\uFF0C\
+  \u7136\u540E\u6267\u884C `node app.js hello world`\uFF1A."
 title: "\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570"
 weight: 23
 ---

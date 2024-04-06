@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:50:48.153851-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:38.321651-06:00'
+description: "How to: Interpolering av str\xE4ngar har sina r\xF6tter i tidiga skriptspr\xE5\
+  k d\xE4r behovet av att enkelt s\xE4tta in variabler i textstr\xE4ngar blev uppenbart.\
+  \ I Fish\u2026"
+lastmod: '2024-04-05T21:53:39.659120-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Interpolering av str\xE4ngar har sina r\xF6tter i tidiga skriptspr\xE5k\
+  \ d\xE4r behovet av att enkelt s\xE4tta in variabler i textstr\xE4ngar blev uppenbart."
 title: "Interpolera en str\xE4ng"
 weight: 8
 ---

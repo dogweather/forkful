@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:42:56.546141-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:45:00.381727-06:00'
+description: "How to: Before Swift and modern programming, pattern matching was a\
+  \ realm of particular tools and languages like `sed`, `awk`, or Perl known for text\u2026"
+lastmod: '2024-04-05T21:53:36.082294-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Before Swift and modern programming, pattern matching was a realm of particular
+  tools and languages like `sed`, `awk`, or Perl known for text processing capabilities.
 title: Deleting characters matching a pattern
 weight: 5
 ---

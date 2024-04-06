@@ -4,9 +4,10 @@ changelog:
 date: 2024-02-03 19:02:34.962078-07:00
 description: 'How to: Python has a built-in method `.capitalize()` for strings to
   accomplish this task easily.'
-lastmod: '2024-04-04'
+lastmod: '2024-04-05T21:53:35.373328-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: Python has a built-in method `.capitalize()` for strings to accomplish this
+  task easily.
 title: Capitalizing a string
 weight: 2
 ---

@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:41:34.253078-07:00
-description: Wie geht das? .
-lastmod: '2024-03-13T22:44:54.041713-06:00'
+description: Wie geht das? Ausgabe.
+lastmod: '2024-04-05T21:53:55.924767-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
 weight: 5
 ---

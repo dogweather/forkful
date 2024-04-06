@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:58:09.251172-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:35.436496-06:00'
+description: "How to: Pod koniec lat 60. pojawi\u0142y si\u0119 pierwsze narz\u0119\
+  dzia do przetwarzania tekstu, jak `sed`. W Haskellu mo\u017Cna to robi\u0107 elegancko,\
+  \ korzystaj\u0105c z funkcji\u2026"
+lastmod: '2024-04-05T21:53:36.870212-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---

@@ -2,9 +2,10 @@
 date: 2024-01-20 17:58:35.578455-07:00
 description: 'How to: (Come Fare:) Ecco un po'' di Python semplice e diretto per cercare
   e sostituire del testo.'
-lastmod: '2024-03-13T22:44:42.986340-06:00'
+lastmod: '2024-04-05T21:53:43.771116-06:00'
 model: gpt-4-1106-preview
-summary: Ecco un po' di Python semplice e diretto per cercare e sostituire del testo.
+summary: (Come Fare:) Ecco un po' di Python semplice e diretto per cercare e sostituire
+  del testo.
 title: Ricerca e sostituzione del testo
 weight: 10
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:43:15.922411-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:54.058406-06:00'
+description: "How to: Fr\xFCher, als die Internetverbindung langsamer und weniger\
+  \ stabil war, haben Entwickler Webseiten oft heruntergeladen, um in Ruhe daran zu\
+  \ arbeiten.\u2026"
+lastmod: '2024-04-05T21:53:55.940980-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Fr\xFCher, als die Internetverbindung langsamer und weniger stabil war,\
+  \ haben Entwickler Webseiten oft heruntergeladen, um in Ruhe daran zu arbeiten."
 title: Webseite herunterladen
 weight: 42
 ---

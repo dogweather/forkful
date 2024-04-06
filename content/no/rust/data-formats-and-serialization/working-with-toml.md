@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 04:26:13.785024-07:00
-description: 'Hvordan: .'
-lastmod: '2024-03-13T22:44:40.597364-06:00'
+description: "Hvordan: TOML, som st\xE5r for Toms Opplysende, Minimalistiske Spr\xE5\
+  k, ble skapt av Tom Preston-Werner i 2013. Det tar sikte p\xE5 \xE5 v\xE6re mer\
+  \ leselig enn JSON\u2026"
+lastmod: '2024-04-05T21:53:41.576225-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "TOML, som st\xE5r for Toms Opplysende, Minimalistiske Spr\xE5k, ble skapt\
+  \ av Tom Preston-Werner i 2013."
 title: Jobbe med TOML
 weight: 39
 ---

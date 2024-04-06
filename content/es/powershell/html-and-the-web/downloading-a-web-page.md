@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:44:50.761976-07:00
-description: "C\xF3mo hacerlo: ."
-lastmod: '2024-03-13T22:44:59.291086-06:00'
+description: "C\xF3mo hacerlo: En PowerShell, `Invoke-WebRequest` es el cmdlet principal\
+  \ para interactuar con la web. Lanzado con la versi\xF3n 3.0, fue un gran avance\
+  \ para\u2026"
+lastmod: '2024-04-05T21:54:00.635072-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: En PowerShell, `Invoke-WebRequest` es el cmdlet principal para interactuar
+  con la web.
 title: "Descargando una p\xE1gina web"
 weight: 42
 ---

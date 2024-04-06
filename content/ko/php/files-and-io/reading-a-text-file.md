@@ -6,11 +6,11 @@ description: "How to: (\uBC29\uBC95) PHP\uB294 \uD14D\uC2A4\uD2B8 \uD30C\uC77C\u
   \ \uC870\uD569\uC744 \uC18C\uAC1C\uD569\uB2C8\uB2E4. `file_get_contents` \uC0AC\uC6A9\
   \ \uC608."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.382544-06:00'
+lastmod: '2024-04-05T21:53:57.077437-06:00'
 model: gpt-4-1106-preview
-summary: "PHP\uB294 \uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC744 \uC27D\uAC8C \uC77D\uC744\
-  \ \uC218 \uC788\uB294 \uC5EC\uB7EC \uD568\uC218\uB97C \uC81C\uACF5\uD569\uB2C8\uB2E4\
-  ."
+summary: "(\uBC29\uBC95) PHP\uB294 \uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC744 \uC27D\uAC8C\
+  \ \uC77D\uC744 \uC218 \uC788\uB294 \uC5EC\uB7EC \uD568\uC218\uB97C \uC81C\uACF5\uD569\
+  \uB2C8\uB2E4."
 title: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30"
 weight: 22
 ---

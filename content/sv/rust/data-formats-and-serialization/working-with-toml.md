@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 04:26:22.278021-07:00
-description: "Hur man g\xF6r: ."
-lastmod: '2024-03-13T22:44:37.722832-06:00'
+description: "Hur man g\xF6r: TOML, som st\xE5r f\xF6r Toms Uppenbara, Minimala Spr\xE5\
+  k, skapades av Tom Preston-Werner \xE5r 2013. Det syftar till att vara mer l\xE4\
+  sbart \xE4n JSON eller\u2026"
+lastmod: '2024-04-05T21:53:39.049638-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "TOML, som st\xE5r f\xF6r Toms Uppenbara, Minimala Spr\xE5k, skapades av\
+  \ Tom Preston-Werner \xE5r 2013."
 title: Att arbeta med TOML
 weight: 39
 ---

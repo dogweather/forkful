@@ -6,11 +6,9 @@ date: 2024-02-03 19:02:29.358527-07:00
 description: "\u5982\u4F55\u64CD\u4F5C\uFF1A Ruby\u63D0\u4F9B\u4E86[\u76F4\u63A5\u7684\
   \u5B57\u7B26\u4E32\u64CD\u4F5C\u65B9\u6CD5](https://docs.ruby-lang.org/en/3.3/String.html)\uFF0C\
   \u5305\u62EC\u5927\u5199\u5316\uFF1A."
-lastmod: '2024-03-25T19:21:58.466442-06:00'
+lastmod: '2024-04-05T21:53:48.629947-06:00'
 model: gpt-4-0125-preview
-summary: "Ruby\u63D0\u4F9B\u4E86[\u76F4\u63A5\u7684\u5B57\u7B26\u4E32\u64CD\u4F5C\u65B9\
-  \u6CD5](https://docs.ruby-lang.org/en/3.3/String.html)\uFF0C\u5305\u62EC\u5927\u5199\
-  \u5316\uFF1A."
+summary: ''
 title: "\u5B57\u7B26\u4E32\u9996\u5B57\u6BCD\u5927\u5199"
 weight: 2
 ---

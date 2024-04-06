@@ -2,10 +2,10 @@
 date: 2024-01-26 04:32:58.739123-07:00
 description: "Comment faire : En Kotlin, vous pouvez utiliser le `javax.xml.parsers`\
   \ int\xE9gr\xE9 pour l'analyse ."
-lastmod: '2024-03-13T22:44:57.767282-06:00'
+lastmod: '2024-04-05T21:53:59.254396-06:00'
 model: gpt-4-0125-preview
 summary: "En Kotlin, vous pouvez utiliser le `javax.xml.parsers` int\xE9gr\xE9 pour\
-  \ l'analyse."
+  \ l'analyse ."
 title: Travailler avec XML
 weight: 40
 ---

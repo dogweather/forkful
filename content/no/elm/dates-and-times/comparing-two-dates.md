@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:32:43.687186-07:00
-description: "How to: \"## Slik gj\xF8r du:\"."
-lastmod: '2024-03-13T22:44:40.721584-06:00'
+description: null
+lastmod: '2024-04-05T21:53:41.700132-06:00'
 model: gpt-4-1106-preview
-summary: "\"## Slik gj\xF8r du:\"."
+summary: ''
 title: Sammenlikning av to datoer
 weight: 27
 ---

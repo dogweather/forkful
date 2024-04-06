@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:38:01.315140-07:00
-description: 'Come Fare: .'
-lastmod: '2024-03-13T22:44:43.029784-06:00'
+description: "Come Fare: In passato, nelle prime fasi dello sviluppo del software,\
+  \ la gestione delle stringhe non prevedeva una standardized approach per la loro\u2026"
+lastmod: '2024-04-05T21:53:43.812878-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: In passato, nelle prime fasi dello sviluppo del software, la gestione delle
+  stringhe non prevedeva una standardized approach per la loro manipolazione.
 title: Conversione di una stringa in minuscolo
 weight: 4
 ---

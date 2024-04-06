@@ -2,10 +2,10 @@
 date: 2024-01-26 03:43:24.560143-07:00
 description: "Comment faire : C++ offre plusieurs fa\xE7ons d'arrondir les nombres,\
   \ comme `floor()`, `ceil()`, et `round()` ."
-lastmod: '2024-03-13T22:44:58.156462-06:00'
+lastmod: '2024-04-05T21:53:59.584861-06:00'
 model: gpt-4-0125-preview
 summary: "C++ offre plusieurs fa\xE7ons d'arrondir les nombres, comme `floor()`, `ceil()`,\
-  \ et `round()`."
+  \ et `round()` ."
 title: Arrondir les nombres
 weight: 13
 ---

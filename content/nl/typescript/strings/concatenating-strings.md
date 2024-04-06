@@ -2,10 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:05.282795-07:00
-description: 'Hoe doe je dat: .'
-lastmod: '2024-03-13T22:44:50.541918-06:00'
+description: "Hoe doe je dat: Samenvoeging is fundamenteel; het bestaat al sinds de\
+  \ vroege dagen van het programmeren. In TypeScript, dat voortbouwt op JavaScript,\
+  \ zijn\u2026"
+lastmod: '2024-04-05T21:53:50.565051-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: Samenvoeging is fundamenteel; het bestaat al sinds de vroege dagen van het
+  programmeren.
 title: Samenvoegen van strings
 weight: 3
 ---

@@ -5,9 +5,11 @@ date: 2024-03-08 21:56:35.672200-07:00
 description: "Como Fazer: Antes da refatora\xE7\xE3o, voc\xEA pode ter um trecho de\
   \ c\xF3digo que mistura diferentes n\xEDveis de abstra\xE7\xE3o ou responsabilidades,\
   \ como calcular um\u2026"
-lastmod: '2024-03-13T22:44:46.290791-06:00'
+lastmod: '2024-04-05T21:53:46.620347-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Antes da refatora\xE7\xE3o, voc\xEA pode ter um trecho de c\xF3digo que\
+  \ mistura diferentes n\xEDveis de abstra\xE7\xE3o ou responsabilidades, como calcular\
+  \ um desconto e depois aplic\xE1-lo."
 title: "Refatora\xE7\xE3o"
 weight: 19
 ---

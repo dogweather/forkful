@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:40:02.454738-07:00
-description: "C\xF3mo hacerlo: ."
-lastmod: '2024-03-13T22:44:59.520653-06:00'
+description: "C\xF3mo hacerlo: Los archivos temporales son fundamentales cuando se\
+  \ manejan datos que no necesitan persistencia o cuando se hacen operaciones que\
+  \ no deben\u2026"
+lastmod: '2024-04-05T21:54:00.873612-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Los archivos temporales son fundamentales cuando se manejan datos que no
+  necesitan persistencia o cuando se hacen operaciones que no deben interferir con
+  el estado permanente del sistema.
 title: Creando un archivo temporal
 weight: 21
 ---

@@ -2,9 +2,10 @@
 date: 2024-01-20 17:59:13.470592-07:00
 description: "Comment Faire : Voici comment envoyer une requ\xEAte GET simple en C#\
   \ en utilisant `HttpClient` ."
-lastmod: '2024-03-13T22:44:57.783615-06:00'
+lastmod: '2024-04-05T21:53:59.269868-06:00'
 model: gpt-4-1106-preview
-summary: "Voici comment envoyer une requ\xEAte GET simple en C# en utilisant `HttpClient`."
+summary: "Voici comment envoyer une requ\xEAte GET simple en C# en utilisant `HttpClient`\
+  \ ."
 title: "Envoi d'une requ\xEAte HTTP"
 weight: 44
 ---

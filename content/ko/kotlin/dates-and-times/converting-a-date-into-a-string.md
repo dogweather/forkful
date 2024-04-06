@@ -5,10 +5,11 @@ description: "How to: (\uBC29\uBC95) Kotlin\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uBB3
   \uD569\uB2C8\uB2E4. \uC544\uB798 \uCF54\uB4DC\uC640 \uAC19\uC774 \uC0AC\uC6A9\uD558\
   \uBA74 \uB429\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.188833-06:00'
+lastmod: '2024-04-05T21:53:56.926813-06:00'
 model: gpt-4-1106-preview
-summary: "Kotlin\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\
-  \uD558\uB824\uBA74 `SimpleDateFormat`\uC744 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
+summary: "(\uBC29\uBC95) Kotlin\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C\
+  \ \uBCC0\uD658\uD558\uB824\uBA74 `SimpleDateFormat`\uC744 \uC0AC\uC6A9\uD569\uB2C8\
+  \uB2E4."
 title: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uAE30"
 weight: 28
 ---

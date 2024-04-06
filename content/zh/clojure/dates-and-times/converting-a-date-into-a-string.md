@@ -1,10 +1,15 @@
 ---
 date: 2024-01-20 17:36:03.315927-07:00
-description: "How to: \u5982\u4F55\u64CD\u4F5C."
+description: "How to: \u6DF1\u5165\u7814\u7A76: \u65E9\u671F\u5728Java\u5E73\u53F0\
+  \u4E0A\u5904\u7406\u65F6\u95F4\u548C\u65E5\u671F\u4F7F\u7528\u7684\u662F`java.util.Date`\uFF0C\
+  \u4F46\u662F\u5176\u8BBE\u8BA1\u6709\u9650\u5236\uFF0C\u6BD4\u5982\u7EBF\u7A0B\u5B89\
+  \u5168\u95EE\u9898\u548C\u53EF\u8BFB\u6027\u5DEE\u3002`clj-time`\u5E93\u57FA\u4E8E\
+  Joda-Time\uFF0C\u7ED9Clojure\u63D0\u4F9B\u4E86\u66F4\u597D\u7684\u65E5\u671F\u65F6\
+  \u95F4API\u3002\u9664\u4E86`clj-\u2026"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:47.315989-06:00'
+lastmod: '2024-04-05T21:53:47.667544-06:00'
 model: gpt-4-1106-preview
-summary: "\u5982\u4F55\u64CD\u4F5C."
+summary: ''
 title: "\u5C06\u65E5\u671F\u8F6C\u6362\u4E3A\u5B57\u7B26\u4E32"
 weight: 28
 ---

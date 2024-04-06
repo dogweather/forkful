@@ -2,9 +2,9 @@
 date: 2024-01-20 17:47:39.979624-07:00
 description: "S\xE5 h\xE4r g\xF6r du: Haskell \xE4r enkelt. Anv\xE4nd `length` funktionen\
   \ p\xE5 en str\xE4ng f\xF6r att f\xE5 dess l\xE4ngd. H\xE4r \xE4r ett exempel."
-lastmod: '2024-03-13T22:44:37.946463-06:00'
+lastmod: '2024-04-05T21:53:39.285954-06:00'
 model: gpt-4-1106-preview
-summary: "Haskell \xE4r enkelt."
+summary: ''
 title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---

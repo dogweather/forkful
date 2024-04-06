@@ -1,10 +1,17 @@
 ---
 date: 2024-01-20 17:30:57.388306-07:00
-description: "How to: (\uBC29\uBC95) ."
+description: "How to: (\uBC29\uBC95) \uB0A0\uC9DC \uACC4\uC0B0\uC744 \uC704\uD574\
+  \ Clojure\uC5D0\uC11C\uB294 `clojure.java.time` \uB77C\uC774\uBE0C\uB7EC\uB9AC\uB97C\
+  \ \uC8FC\uB85C \uC0AC\uC6A9\uD569\uB2C8\uB2E4. \uC774\uB294 Joda-Time \uB77C\uC774\
+  \uBE0C\uB7EC\uB9AC\uC5D0 \uC601\uAC10\uC744 \uBC1B\uC740 \uC790\uBC14 8\uC758 java.time\
+  \ \uD328\uD0A4\uC9C0\uB97C \uB798\uD551\uD55C \uAC83\uC785\uB2C8\uB2E4. \uC774\uC804\
+  \uC5D0\uB294 clj-time \uB77C\uC774\uBE0C\uB7EC\uB9AC\uAC00 \uB9CE\uC774\u2026"
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:54.680617-06:00'
+lastmod: '2024-04-05T21:53:56.520065-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "(\uBC29\uBC95) \uB0A0\uC9DC \uACC4\uC0B0\uC744 \uC704\uD574 Clojure\uC5D0\
+  \uC11C\uB294 `clojure.java.time` \uB77C\uC774\uBE0C\uB7EC\uB9AC\uB97C \uC8FC\uB85C\
+  \ \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\uC0B0\uD558\uAE30"
 weight: 26
 ---

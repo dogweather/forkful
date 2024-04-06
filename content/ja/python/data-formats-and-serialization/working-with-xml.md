@@ -4,11 +4,9 @@ description: "\u65B9\u6CD5\uFF1A Python\u306E`xml.etree.ElementTree`\u30E2\u30B8
   \u30FC\u30EB\u306F\u3001XML\u3092\u6271\u3046\u305F\u3081\u306E\u30C4\u30FC\u30EB\
   \u3092\u63D0\u4F9B\u3057\u3066\u3044\u307E\u3059\u3002 XML\u30C9\u30AD\u30E5\u30E1\
   \u30F3\u30C8\u3092\u89E3\u6790\u3059\u308B\uFF1A."
-lastmod: '2024-03-13T22:44:41.532726-06:00'
+lastmod: '2024-04-05T21:53:42.483369-06:00'
 model: gpt-4-0125-preview
-summary: "Python\u306E`xml.etree.ElementTree`\u30E2\u30B8\u30E5\u30FC\u30EB\u306F\u3001\
-  XML\u3092\u6271\u3046\u305F\u3081\u306E\u30C4\u30FC\u30EB\u3092\u63D0\u4F9B\u3057\
-  \u3066\u3044\u307E\u3059."
+summary: ''
 title: "XML\u306E\u6271\u3044\u65B9"
 weight: 40
 ---

@@ -2,10 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:54.195018-07:00
-description: 'Hoe te: .'
-lastmod: '2024-03-13T22:44:50.437495-06:00'
+description: "Hoe te: Traditioneel was het lezen van bestanden in programmeertalen\
+  \ een langdradige taak met veel stappen om fouten en bronnen te beheren. In Clojure\u2026"
+lastmod: '2024-04-05T21:53:50.463004-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: Traditioneel was het lezen van bestanden in programmeertalen een langdradige
+  taak met veel stappen om fouten en bronnen te beheren.
 title: Een tekstbestand lezen
 weight: 22
 ---

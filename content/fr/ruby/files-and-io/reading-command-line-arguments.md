@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:56:47.320839-07:00
-description: 'Comment faire : .'
-lastmod: '2024-03-13T22:44:58.437205-06:00'
+description: "Comment faire : Ex\xE9cuter en terminal."
+lastmod: '2024-04-05T21:53:59.838249-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Ex\xE9cuter en terminal."
 title: Lecture des arguments de ligne de commande
 weight: 23
 ---

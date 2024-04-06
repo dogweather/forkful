@@ -2,10 +2,17 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:28.223225-07:00
-description: "L\xE0m th\u1EBF n\xE0o: ."
-lastmod: '2024-03-13T22:44:37.315018-06:00'
+description: "L\xE0m th\u1EBF n\xE0o: Theo l\u1ECBch s\u1EED, vi\u1EC7c chuy\u1EC3\
+  n \u0111\u1ED5i ki\u1EC3u ch\u1EEF \u0111\xE3 tr\u1EDF th\xE0nh m\u1ED9t \u0111\
+  i\u1EC1u c\u01A1 b\u1EA3n trong c\xE1c ng\xF4n ng\u1EEF l\u1EADp tr\xECnh \u0111\
+  \u1EC3 \u0111\u1EA3m b\u1EA3o t\xEDnh \u0111\u1ED3ng nh\u1EA5t c\u1EE7a v\u0103\
+  n b\u1EA3n. N\xF3 h\u1ED7\u2026"
+lastmod: '2024-04-05T21:53:38.648696-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: "Theo l\u1ECBch s\u1EED, vi\u1EC7c chuy\u1EC3n \u0111\u1ED5i ki\u1EC3u ch\u1EEF\
+  \ \u0111\xE3 tr\u1EDF th\xE0nh m\u1ED9t \u0111i\u1EC1u c\u01A1 b\u1EA3n trong c\xE1\
+  c ng\xF4n ng\u1EEF l\u1EADp tr\xECnh \u0111\u1EC3 \u0111\u1EA3m b\u1EA3o t\xEDnh\
+  \ \u0111\u1ED3ng nh\u1EA5t c\u1EE7a v\u0103n b\u1EA3n."
 title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
 weight: 4
 ---

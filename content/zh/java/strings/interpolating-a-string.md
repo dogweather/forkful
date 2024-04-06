@@ -3,9 +3,9 @@ date: 2024-01-20 17:50:59.920616-07:00
 description: "How to: \u600E\u6837\u8FDB\u884C\u5B57\u7B26\u4E32\u63D2\u503C\uFF1F\
   \ ."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:47.609728-06:00'
+lastmod: '2024-04-05T21:53:47.931402-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: ''
 title: "\u5B57\u7B26\u4E32\u63D2\u503C"
 weight: 8
 ---

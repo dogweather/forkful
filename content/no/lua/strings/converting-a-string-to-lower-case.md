@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:38:57.115800-07:00
-description: "Hvordan gj\xF8re det: ."
-lastmod: '2024-03-13T22:44:40.917308-06:00'
+description: "Hvordan gj\xF8re det: Her brukes `lower`-funksjonen til \xE5 gj\xF8\
+  re hele strengen sm\xE5 bokstaver. Husk \xE5 lagre resultatet i en variabel om du\
+  \ trenger det videre i\u2026"
+lastmod: '2024-04-05T21:53:41.882010-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Her brukes `lower`-funksjonen til \xE5 gj\xF8re hele strengen sm\xE5 bokstaver."
 title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---

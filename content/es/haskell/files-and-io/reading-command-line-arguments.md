@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:56:10.233077-07:00
-description: "C\xF3mo: ."
-lastmod: '2024-03-13T22:44:59.133713-06:00'
+description: "C\xF3mo: Si guardas esto como `args.hs` y lo ejecutas."
+lastmod: '2024-04-05T21:54:00.479101-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: Si guardas esto como `args.hs` y lo ejecutas.
 title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---

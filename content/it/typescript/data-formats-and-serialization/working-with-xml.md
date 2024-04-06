@@ -1,9 +1,10 @@
 ---
 date: 2024-01-26 04:36:09.367418-07:00
-description: 'Come fare: .'
-lastmod: '2024-03-13T22:44:43.200601-06:00'
+description: "Come fare: XML, o Extensible Markup Language, esiste dalla fine degli\
+  \ anni '90. La sua natura auto-descrittiva e il formato facilmente leggibile dall'uomo\u2026"
+lastmod: '2024-04-05T21:53:43.973213-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: XML, o Extensible Markup Language, esiste dalla fine degli anni '90.
 title: Lavorare con XML
 weight: 40
 ---

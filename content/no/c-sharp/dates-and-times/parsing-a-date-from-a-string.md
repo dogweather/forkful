@@ -5,9 +5,9 @@ date: 2024-02-03 19:13:48.803154-07:00
 description: "Hvordan: **Grunnleggende Analysering:** Metodene `DateTime.Parse` og\
   \ `DateTime.TryParse` er de g\xE5-til alternativene for \xE5 konvertere en tekststreng\
   \ til en\u2026"
-lastmod: '2024-03-13T22:44:40.806054-06:00'
+lastmod: '2024-04-05T21:53:41.779602-06:00'
 model: gpt-4-0125-preview
-summary: "**Grunnleggende Analysering:**\n\nMetodene `DateTime.Parse` og `DateTime.TryParse`\
+summary: "**Grunnleggende Analysering:** Metodene `DateTime.Parse` og `DateTime.TryParse`\
   \ er de g\xE5-til alternativene for \xE5 konvertere en tekststreng til en `DateTime`."
 title: Analysering av en dato fra en streng
 weight: 30

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:58:42.437495-07:00
-description: 'How to: .'
-lastmod: '2024-03-13T22:44:59.694868-06:00'
+description: "How to: In the early days of programming, text editing was a manual\
+  \ slog. Enter regex (regular expressions), built-in the 1950s, making searching\
+  \ a less\u2026"
+lastmod: '2024-04-05T21:53:35.375469-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: In the early days of programming, text editing was a manual slog.
 title: Searching and replacing text
 weight: 10
 ---

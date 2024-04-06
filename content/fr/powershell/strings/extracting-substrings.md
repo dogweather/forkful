@@ -2,9 +2,10 @@
 date: 2024-01-20 17:46:17.755008-07:00
 description: "How to: (Comment faire :) Voici le pain et le beurre de l'extraction\
   \ de sous-cha\xEEnes en PowerShell. Simple, direct."
-lastmod: '2024-03-13T22:44:58.031664-06:00'
+lastmod: '2024-04-05T21:53:59.486577-06:00'
 model: gpt-4-1106-preview
-summary: "Voici le pain et le beurre de l'extraction de sous-cha\xEEnes en PowerShell."
+summary: "(Comment faire :) Voici le pain et le beurre de l'extraction de sous-cha\xEE\
+  nes en PowerShell."
 title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---

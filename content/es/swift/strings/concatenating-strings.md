@@ -2,9 +2,9 @@
 date: 2024-01-20 17:35:47.845237-07:00
 description: "How to: (C\xF3mo hacerlo:) Swift simplifica la concatenaci\xF3n de cadenas.\
   \ Aqu\xED tienes diferentes formas de hacerlo."
-lastmod: '2024-03-13T22:44:59.408749-06:00'
+lastmod: '2024-04-05T21:54:00.758258-06:00'
 model: gpt-4-1106-preview
-summary: "Swift simplifica la concatenaci\xF3n de cadenas."
+summary: "(C\xF3mo hacerlo:) Swift simplifica la concatenaci\xF3n de cadenas."
 title: "Concatenaci\xF3n de cadenas de texto"
 weight: 3
 ---

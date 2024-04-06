@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:42:13.058642-07:00
-description: "Hur man g\xF6r: ."
-lastmod: '2024-03-13T22:44:37.551439-06:00'
+description: "Hur man g\xF6r: Att ta bort tecken baserat p\xE5 m\xF6nster \xE4r en\
+  \ grundl\xE4ggande del av textbearbetning och har sina r\xF6tter i tidiga programmeringsspr\xE5\
+  k som Perl\u2026"
+lastmod: '2024-04-05T21:53:38.880335-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "Att ta bort tecken baserat p\xE5 m\xF6nster \xE4r en grundl\xE4ggande del\
+  \ av textbearbetning och har sina r\xF6tter i tidiga programmeringsspr\xE5k som\
+  \ Perl och sed."
 title: "Ta bort tecken som matchar ett m\xF6nster"
 weight: 5
 ---

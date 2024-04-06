@@ -5,11 +5,9 @@ description: "How to (\uBC29\uBC95) C++\uC5D0\uC11C\uB294 `std::stringstream`, `
   \ \uBB38\uC790\uC5F4 \uBCF4\uAC04\uC744 \uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4.\
   \ \uC5EC\uAE30 \uB450 \uAC00\uC9C0 \uC608\uC2DC\uAC00 \uC788\uC2B5\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:55.648592-06:00'
+lastmod: '2024-04-05T21:53:57.285707-06:00'
 model: gpt-4-1106-preview
-summary: "C++\uC5D0\uC11C\uB294 `std::stringstream`, `std::format` (C++20\uBD80\uD130\
-  \ \uC0AC\uC6A9 \uAC00\uB2A5) \uB4F1\uC744 \uC0AC\uC6A9\uD558\uC5EC \uBB38\uC790\uC5F4\
-  \ \uBCF4\uAC04\uC744 \uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
+summary: ''
 title: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uD558\uAE30"
 weight: 8
 ---

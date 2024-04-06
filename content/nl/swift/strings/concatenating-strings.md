@@ -2,10 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:57:16.275230-07:00
-description: 'Hoe te: .'
-lastmod: '2024-03-13T22:44:51.148346-06:00'
+description: "Hoe te: Lang geleden, moesten mensen in programmeertalen zoals C handmatig\
+  \ strings rondschuiven met functies, omgaand met arrays en null-afgesloten\u2026"
+lastmod: '2024-04-05T21:53:51.161066-06:00'
 model: gpt-4-0125-preview
-summary: .
+summary: Lang geleden, moesten mensen in programmeertalen zoals C handmatig strings
+  rondschuiven met functies, omgaand met arrays en null-afgesloten strings.
 title: Samenvoegen van strings
 weight: 3
 ---

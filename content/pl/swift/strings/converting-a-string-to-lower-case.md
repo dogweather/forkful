@@ -2,10 +2,10 @@
 date: 2024-01-20 17:39:10.267180-07:00
 description: "How to: (Jak to zrobi\u0107:) Rozwa\u017Cmy przyk\u0142adowy string\
   \ i jego konwersj\u0119 do ma\u0142ych liter w Swift."
-lastmod: '2024-03-13T22:44:35.741954-06:00'
+lastmod: '2024-04-05T21:53:37.168384-06:00'
 model: gpt-4-1106-preview
-summary: "Rozwa\u017Cmy przyk\u0142adowy string i jego konwersj\u0119 do ma\u0142\
-  ych liter w Swift."
+summary: "(Jak to zrobi\u0107:) Rozwa\u017Cmy przyk\u0142adowy string i jego konwersj\u0119\
+  \ do ma\u0142ych liter w Swift."
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---

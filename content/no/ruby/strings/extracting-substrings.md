@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:46:24.864875-07:00
-description: 'Hvordan: .'
-lastmod: '2024-03-13T22:44:41.304867-06:00'
+description: "Hvordan: \xC5 hente ut substrings er en grunnleggende operasjon i de\
+  \ fleste programmeringsspr\xE5k, inkludert Ruby. Ruby\u2019s fleksible substring-metoder\
+  \ har\u2026"
+lastmod: '2024-04-05T21:53:42.266273-06:00'
 model: gpt-4-1106-preview
-summary: .
+summary: "\xC5 hente ut substrings er en grunnleggende operasjon i de fleste programmeringsspr\xE5\
+  k, inkludert Ruby."
 title: Uthenting av delstrenger
 weight: 6
 ---

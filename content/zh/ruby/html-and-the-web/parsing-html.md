@@ -6,12 +6,9 @@ description: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u8981\u5728Ruby\u4E2D\u89E3\u6790H
   \u8BF7\u7528`gem install nokogiri`\u5B89\u88C5'Nokogiri'\u5B9D\u77F3\u3002Nokogiri\u5C31\
   \u50CF\u662F\u7528\u4E8E\u5728Ruby\u4E2D\u5904\u7406HTML\u548CXML\u7684\u745E\u58EB\
   \u519B\u5200\u3002\u8FD9\u91CC\u6709\u4E00\u4E2A\u5FEB\u901F\u793A\u4F8B\uFF1A."
-lastmod: '2024-03-13T22:44:48.371196-06:00'
+lastmod: '2024-04-05T21:53:48.647656-06:00'
 model: gpt-4-0125-preview
-summary: "\u8981\u5728Ruby\u4E2D\u89E3\u6790HTML\uFF0C\u8BF7\u7528`gem install nokogiri`\u5B89\
-  \u88C5'Nokogiri'\u5B9D\u77F3\u3002Nokogiri\u5C31\u50CF\u662F\u7528\u4E8E\u5728Ruby\u4E2D\
-  \u5904\u7406HTML\u548CXML\u7684\u745E\u58EB\u519B\u5200\u3002\u8FD9\u91CC\u6709\u4E00\
-  \u4E2A\u5FEB\u901F\u793A\u4F8B\uFF1A."
+summary: ''
 title: "\u89E3\u6790HTML"
 weight: 43
 ---

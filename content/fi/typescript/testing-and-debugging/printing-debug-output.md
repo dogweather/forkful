@@ -3,10 +3,10 @@ date: 2024-01-20 17:53:39.278370-07:00
 description: "How to: (Kuinka tehd\xE4:) TypeScriptissa voit tulostaa debug-tietoja\
   \ k\xE4ytt\xE4en `console.log()`, `console.error()` ja muita `console`-objektin\
   \ metodeja. T\xE4ss\xE4\u2026"
-lastmod: '2024-03-13T22:44:56.317964-06:00'
+lastmod: '2024-04-05T21:53:57.874853-06:00'
 model: gpt-4-1106-preview
-summary: "TypeScriptissa voit tulostaa debug-tietoja k\xE4ytt\xE4en `console.log()`,\
-  \ `console.error()` ja muita `console`-objektin metodeja."
+summary: "(Kuinka tehd\xE4:) TypeScriptissa voit tulostaa debug-tietoja k\xE4ytt\xE4\
+  en `console.log()`, `console.error()` ja muita `console`-objektin metodeja."
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---
