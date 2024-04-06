@@ -1,9 +1,12 @@
 ---
 date: 2024-02-03 19:03:18.338680-07:00
-description: 'How to: #.'
+description: "How to: To convert a JSON string to a TypeScript object, you use the\
+  \ `JSON.parse()` method. This is useful when receiving JSON data from a web server\
+  \ or\u2026"
 lastmod: '2024-03-13T22:44:59.877551-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: To convert a JSON string to a TypeScript object, you use the `JSON.parse()`
+  method.
 title: Working with JSON
 weight: 38
 ---

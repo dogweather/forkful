@@ -3,10 +3,10 @@ changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 23:55:47.895640-07:00
 description: "\u041A\u0430\u043A \u044D\u0442\u043E \u0441\u0434\u0435\u043B\u0430\
-  \u0442\u044C: #."
+  \u0442\u044C: ."
 lastmod: '2024-03-13T22:44:45.476216-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: ''
 title: "\u0420\u0430\u0441\u0447\u0435\u0442 \u0434\u0430\u0442\u044B \u0432 \u0431\
   \u0443\u0434\u0443\u0449\u0435\u043C \u0438\u043B\u0438 \u043F\u0440\u043E\u0448\
   \u043B\u043E\u043C"

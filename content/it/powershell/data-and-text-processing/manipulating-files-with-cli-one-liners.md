@@ -1,9 +1,10 @@
 ---
 date: 2024-01-27 16:20:52.568059-07:00
-description: 'Come fare: #.'
+description: 'Come fare: Per visualizzare rapidamente il contenuto di un file, usare
+  il comando `Get-Content`.'
 lastmod: '2024-03-13T22:44:43.637885-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Per visualizzare rapidamente il contenuto di un file, usare il comando `Get-Content`.
 title: Manipolazione di file con one-liner da CLI
 weight: 31
 ---

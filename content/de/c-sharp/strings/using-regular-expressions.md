@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:27.551915-07:00
-description: 'Wie: #.'
+description: "Wie: Um zu \xFCberpr\xFCfen, ob eine Zeichenkette ein spezifisches Muster\
+  \ enth\xE4lt, k\xF6nnen Sie die `Regex.IsMatch` Methode aus dem\u2026"
 lastmod: '2024-03-13T22:44:53.878274-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Um zu \xFCberpr\xFCfen, ob eine Zeichenkette ein spezifisches Muster enth\xE4\
+  lt, k\xF6nnen Sie die `Regex.IsMatch` Methode aus dem `System.Text.RegularExpressions`\
+  \ Namensraum nutzen."
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

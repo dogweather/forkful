@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:35.075063-07:00
-description: 'Comment faire : #.'
+description: "Comment faire : La biblioth\xE8que standard de Swift inclut tous les\
+  \ outils n\xE9cessaires pour \xE9crire des fichiers texte. Voici une approche de\
+  \ base ."
 lastmod: '2024-03-13T22:44:58.247156-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "La biblioth\xE8que standard de Swift inclut tous les outils n\xE9cessaires\
+  \ pour \xE9crire des fichiers texte."
 title: "R\xE9diger un fichier texte"
 weight: 24
 ---

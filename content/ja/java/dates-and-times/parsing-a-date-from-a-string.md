@@ -2,10 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:26.323381-07:00
-description: "\u65B9\u6CD5\uFF1A #."
+description: "\u65B9\u6CD5\uFF1A ."
 lastmod: '2024-03-13T22:44:41.960633-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: ''
 title: "\u6587\u5B57\u5217\u304B\u3089\u65E5\u4ED8\u3092\u30D1\u30FC\u30B9\u3059\u308B"
 weight: 30
 ---

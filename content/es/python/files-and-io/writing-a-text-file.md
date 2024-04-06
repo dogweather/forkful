@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:54.472998-07:00
-description: "C\xF3mo hacerlo: #."
+description: "C\xF3mo hacerlo: La funci\xF3n incorporada `open()` de Python es la\
+  \ manera m\xE1s com\xFAn de escribir en archivos. La funci\xF3n permite especificar\
+  \ el modo en el que\u2026"
 lastmod: '2024-03-13T22:44:58.632420-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "La funci\xF3n incorporada `open()` de Python es la manera m\xE1s com\xFA\
+  n de escribir en archivos."
 title: Escribiendo un archivo de texto
 weight: 24
 ---

@@ -1,9 +1,10 @@
 ---
 date: 2024-01-27 16:20:58.789056-07:00
-description: 'Wie man: #.'
+description: 'Wie man: Um schnell den Inhalt einer Datei anzuzeigen, verwenden Sie
+  den Befehl `Get-Content`.'
 lastmod: '2024-03-13T22:44:54.098636-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Um schnell den Inhalt einer Datei anzuzeigen, verwenden Sie den Befehl `Get-Content`.
 title: Dateimanipulation mit CLI-One-Linern
 weight: 31
 ---

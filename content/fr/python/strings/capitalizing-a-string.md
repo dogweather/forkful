@@ -3,10 +3,12 @@ changelog:
 - 2024-04-04, dogweather, edited
 - 2024-04-04, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:02:34.962078-07:00
-description: 'Comment faire : #.'
+description: "Comment faire : Python dispose d'une m\xE9thode int\xE9gr\xE9e `.capitalize()`\
+  \ pour les cha\xEEnes de caract\xE8res permettant de r\xE9aliser cette t\xE2che\
+  \ facilement."
 lastmod: '2024-04-04T00:26:51.803717-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: ''
 title: "Mettre une cha\xEEne en majuscules"
 weight: 2
 ---

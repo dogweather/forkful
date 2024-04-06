@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:18:13.433636-07:00
 description: "Jak u\u017Cywa\u0107: U\u017Cycie regex w Pythonie wi\u0105\u017Ce si\u0119\
   \ z modu\u0142em `re`, kt\xF3ry dostarcza zestaw funkcji do przetwarzania tekstu\
-  \ przy u\u017Cyciu wyra\u017Ce\u0144 regularnych. #."
+  \ przy u\u017Cyciu wyra\u017Ce\u0144 regularnych. Aby\u2026"
 lastmod: '2024-03-13T22:44:34.938694-06:00'
 model: gpt-4-0125-preview
 summary: "U\u017Cycie regex w Pythonie wi\u0105\u017Ce si\u0119 z modu\u0142em `re`,\

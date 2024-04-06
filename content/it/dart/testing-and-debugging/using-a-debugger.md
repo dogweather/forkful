@@ -2,10 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:39.698164-07:00
-description: 'Come fare: #.'
+description: "Come fare: **1. Impostare i Breakpoint:** Per impostare un breakpoint,\
+  \ \xE8 sufficiente fare clic sul margine sinistro della riga di codice nel proprio\
+  \ IDE\u2026"
 lastmod: '2024-03-13T22:44:43.135754-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: ''
 title: Utilizzo di un debugger
 weight: 35
 ---

@@ -2,10 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:02.128649-07:00
-description: 'Comment faire : #.'
+description: "Comment faire : **1. D\xE9finir des Points d'Arr\xEAt :** Pour d\xE9\
+  finir un point d'arr\xEAt, cliquez simplement sur la marge gauche de la ligne de\
+  \ code dans votre\u2026"
 lastmod: '2024-03-13T22:44:57.395026-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: ''
 title: "Utiliser un d\xE9bogueur"
 weight: 35
 ---

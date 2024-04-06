@@ -3,10 +3,14 @@ changelog:
 - 2024-02-22, dogweather, reviewed
 - 2024-02-22, gpt-4-0125-preview, translated from English
 date: 2024-02-22 17:30:12.097340-07:00
-description: 'Wie man: #.'
+description: "Wie man: Eine virtuelle Umgebung ist ein eigenst\xE4ndiges Verzeichnis,\
+  \ das alle notwendigen Ausf\xFChrbaren enth\xE4lt, um die Pakete zu verwenden, die\
+  \ ein\u2026"
 lastmod: '2024-03-13T22:44:53.379042-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Eine virtuelle Umgebung ist ein eigenst\xE4ndiges Verzeichnis, das alle\
+  \ notwendigen Ausf\xFChrbaren enth\xE4lt, um die Pakete zu verwenden, die ein Python-Projekt\
+  \ ben\xF6tigen w\xFCrde."
 title: Ein neues Projekt starten
 weight: 1
 ---

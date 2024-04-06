@@ -1,9 +1,10 @@
 ---
 date: 2024-02-03 19:03:25.408183-07:00
-description: 'How to: #.'
+description: 'How to: Swift''s standard library includes all the tools needed to write
+  text files. Here''s a basic approach.'
 lastmod: '2024-03-13T22:45:00.412377-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Swift's standard library includes all the tools needed to write text files.
 title: Writing a text file
 weight: 24
 ---

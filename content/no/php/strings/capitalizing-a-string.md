@@ -3,8 +3,7 @@ changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:06:01.646920-07:00
 description: "Hvordan: PHP st\xF8tter natively forskjellige funksjoner for \xE5 kapitalisere\
-  \ strenger, hver med et forskjellig form\xE5l. Her er hvordan du kan bruke dem:\
-  \ #."
+  \ strenger, hver med et forskjellig form\xE5l. Her er hvordan du kan bruke dem."
 lastmod: '2024-03-13T22:44:40.868805-06:00'
 model: gpt-4-0125-preview
 summary: "PHP st\xF8tter natively forskjellige funksjoner for \xE5 kapitalisere strenger,\

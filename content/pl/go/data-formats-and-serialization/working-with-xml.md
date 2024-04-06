@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:15.375664-07:00
-description: "Jak to zrobi\u0107: #."
+description: "Jak to zrobi\u0107: Aby parsowa\u0107 XML w Go, u\u017Cywa si\u0119\
+  \ pakietu `encoding/xml`. Pakiet ten dostarcza niezb\u0119dne narz\u0119dzia do\
+  \ deserializacji (parsowania) XML do\u2026"
 lastmod: '2024-03-13T22:44:34.880686-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Aby parsowa\u0107 XML w Go, u\u017Cywa si\u0119 pakietu `encoding/xml`."
 title: Praca z XML
 weight: 40
 ---

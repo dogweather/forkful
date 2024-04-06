@@ -2,10 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:00.257544-07:00
-description: 'Come fare: #.'
+description: "Come fare: Per analizzare XML in Go, si utilizza il pacchetto `encoding/xml`.\
+  \ Questo pacchetto fornisce gli strumenti necessari per destrutturare\u2026"
 lastmod: '2024-03-13T22:44:42.934591-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Per analizzare XML in Go, si utilizza il pacchetto `encoding/xml`.
 title: Lavorare con XML
 weight: 40
 ---

@@ -2,10 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:25.143802-07:00
-description: 'Como Fazer: #.'
+description: "Como Fazer: A biblioteca padr\xE3o do Rust n\xE3o inclui diretamente\
+  \ a an\xE1lise de datas, mas o `crate chrono`, amplamente utilizado, \xE9 uma solu\xE7\
+  \xE3o robusta para\u2026"
 lastmod: '2024-03-13T22:44:46.376995-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "A biblioteca padr\xE3o do Rust n\xE3o inclui diretamente a an\xE1lise de\
+  \ datas, mas o `crate chrono`, amplamente utilizado, \xE9 uma solu\xE7\xE3o robusta\
+  \ para manipula\xE7\xE3o de data e hora."
 title: Analisando uma data a partir de uma string
 weight: 30
 ---

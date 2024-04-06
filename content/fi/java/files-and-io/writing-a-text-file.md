@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:25.215622-07:00
-description: 'Kuinka: #.'
+description: "Kuinka: Javan uusi I/O (NIO)-paketti (`java.nio.file`) tarjoaa monipuolisemman\
+  \ l\xE4hestymistavan tiedostojen k\xE4sittelyyn. T\xE4ss\xE4 on yksinkertainen tapa\u2026"
 lastmod: '2024-03-13T22:44:56.463997-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Javan uusi I/O (NIO)-paketti (`java.nio.file`) tarjoaa monipuolisemman l\xE4\
+  hestymistavan tiedostojen k\xE4sittelyyn."
 title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---

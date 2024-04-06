@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:35.938895-07:00
-description: 'Como fazer: #.'
+description: "Como fazer: A biblioteca padr\xE3o do Swift inclui todas as ferramentas\
+  \ necess\xE1rias para escrever arquivos de texto. Aqui est\xE1 uma abordagem b\xE1\
+  sica."
 lastmod: '2024-03-13T22:44:46.939092-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "A biblioteca padr\xE3o do Swift inclui todas as ferramentas necess\xE1rias\
+  \ para escrever arquivos de texto."
 title: Escrevendo um arquivo de texto
 weight: 24
 ---

@@ -2,10 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:07.105007-07:00
-description: 'Wie geht das: #.'
+description: "Wie geht das: In Dart definierst du eine Funktion mit dem Schl\xFCsselwort\
+  \ `void`, wenn sie keinen Wert zur\xFCckgibt, oder gibst andernfalls den Typ des\u2026"
 lastmod: '2024-03-13T22:44:53.587123-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "In Dart definierst du eine Funktion mit dem Schl\xFCsselwort `void`, wenn\
+  \ sie keinen Wert zur\xFCckgibt, oder gibst andernfalls den Typ des zur\xFCckgegebenen\
+  \ Werts an."
 title: Organisation von Code in Funktionen
 weight: 18
 ---

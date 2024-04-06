@@ -2,10 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:39.098128-07:00
-description: 'Kuinka: #.'
+description: "Kuinka: `spit` funktio on yksinkertaisin tapa kirjoittaa teksti\xE4\
+  \ tiedostoon Clojuressa. Se ottaa kaksi argumenttia: tiedostopolun ja kirjoitettavan\u2026"
 lastmod: '2024-03-13T22:44:56.202587-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "`spit` funktio on yksinkertaisin tapa kirjoittaa teksti\xE4 tiedostoon Clojuressa."
 title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---

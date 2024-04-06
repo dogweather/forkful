@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:26.600595-07:00
-description: 'Como fazer: #.'
+description: "Como fazer: Para ler ou analisar JSON no PowerShell, voc\xEA pode usar\
+  \ o cmdlet `ConvertFrom-Json`. Dada uma string JSON, este cmdlet a converte em um\
+  \ objeto\u2026"
 lastmod: '2024-03-13T22:44:46.818169-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Para ler ou analisar JSON no PowerShell, voc\xEA pode usar o cmdlet `ConvertFrom-Json`."
 title: Trabalhando com JSON
 weight: 38
 ---

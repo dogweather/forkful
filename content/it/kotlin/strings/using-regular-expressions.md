@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:31.437453-07:00
-description: 'Come fare: #.'
+description: 'Come fare: Per verificare se una stringa corrisponde a un modello specifico
+  in Kotlin, puoi usare il metodo `matches` della classe `Regex`.'
 lastmod: '2024-03-13T22:44:43.381887-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Per verificare se una stringa corrisponde a un modello specifico in Kotlin,
+  puoi usare il metodo `matches` della classe `Regex`.
 title: Utilizzo delle espressioni regolari
 weight: 11
 ---

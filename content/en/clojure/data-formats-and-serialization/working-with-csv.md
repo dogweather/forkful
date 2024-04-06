@@ -1,9 +1,11 @@
 ---
 date: 2024-02-03 19:03:00.222394-07:00
-description: 'How to: #.'
+description: "How to: Clojure doesn't have built-in CSV parsing in its standard library,\
+  \ but you can use the `clojure.data.csv` library for this purpose. First, add the\u2026"
 lastmod: '2024-03-13T22:44:59.765357-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Clojure doesn't have built-in CSV parsing in its standard library, but you
+  can use the `clojure.data.csv` library for this purpose.
 title: Working with CSV
 weight: 37
 ---

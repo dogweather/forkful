@@ -2,10 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:29.023166-07:00
-description: 'Hoe te: #.'
+description: "Hoe te: Voor het refactoren heb je misschien een stuk code dat verschillende\
+  \ niveaus van abstractie of verantwoordelijkheden mengt, zoals het berekenen\u2026"
 lastmod: '2024-03-13T22:44:50.514250-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: ''
 title: Refactoring
 weight: 19
 ---

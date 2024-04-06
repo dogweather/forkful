@@ -4,7 +4,7 @@ changelog:
 date: 2024-03-08 21:53:35.051792-07:00
 description: "Jak to zrobi\u0107: Dart oferuje kilka prostych sposob\xF3w na konkatenacj\u0119\
   \ \u0142a\u0144cuch\xF3w. Poni\u017Cej znajduj\u0105 si\u0119 najcz\u0119stsze metody:\
-  \ #."
+  \ Operator `+` jest najbardziej\u2026"
 lastmod: '2024-03-13T22:44:35.082199-06:00'
 model: gpt-4-0125-preview
 summary: "Dart oferuje kilka prostych sposob\xF3w na konkatenacj\u0119 \u0142a\u0144\

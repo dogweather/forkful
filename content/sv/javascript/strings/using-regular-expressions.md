@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:16.468807-07:00
-description: "Hur man g\xF6r: #."
+description: "Hur man g\xF6r: F\xF6r att b\xF6rja kan du skapa ett enkelt regex-m\xF6\
+  nster och anv\xE4nda det f\xF6r att hitta matchningar i en str\xE4ng. H\xE4r ska\
+  \ vi hitta ordet \"code\"."
 lastmod: '2024-03-13T22:44:38.283394-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "F\xF6r att b\xF6rja kan du skapa ett enkelt regex-m\xF6nster och anv\xE4\
+  nda det f\xF6r att hitta matchningar i en str\xE4ng."
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---

@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:28.224483-07:00
-description: 'Wie: #.'
+description: "Wie: Java bietet eine unkomplizierte M\xF6glichkeit, mit `System.err.print()`\
+  \ oder `System.err.println()` auf stderr zu schreiben. So geht's."
 lastmod: '2024-03-13T22:44:53.778833-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Java bietet eine unkomplizierte M\xF6glichkeit, mit `System.err.print()`\
+  \ oder `System.err.println()` auf stderr zu schreiben."
 title: Schreiben auf Standardfehler
 weight: 25
 ---

@@ -2,15 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:31.123791-07:00
-description: "C\xE1i g\xEC & T\u1EA1i sao? L\xE0m vi\u1EC7c v\u1EDBi TOML bao g\u1ED3\
-  m vi\u1EC7c ph\xE2n t\xEDch c\xFA ph\xE1p v\xE0 t\u1EA1o ra d\u1EEF li\u1EC7u TOML\
-  \ (Tom's Obvious, Minimal Language - Ng\xF4n ng\u1EEF T\u1ED1i gi\u1EA3n, R\xF5\
-  \ r\xE0ng\u2026"
+description: null
 lastmod: '2024-03-13T22:44:36.742071-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m vi\u1EC7c v\u1EDBi TOML bao g\u1ED3m vi\u1EC7c ph\xE2n t\xEDch c\xFA\
-  \ ph\xE1p v\xE0 t\u1EA1o ra d\u1EEF li\u1EC7u TOML (Tom's Obvious, Minimal Language\
-  \ - Ng\xF4n ng\u1EEF T\u1ED1i gi\u1EA3n, R\xF5 r\xE0ng c\u1EE7a Tom) b\u1EB1ng Haskell."
+summary: null
 title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 weight: 39
 ---

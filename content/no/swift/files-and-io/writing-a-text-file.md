@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:44.260035-07:00
-description: 'Hvordan: #.'
+description: "Hvordan: Swifts standardbibliotek inneholder alle verkt\xF8yene som\
+  \ trengs for \xE5 skrive tekstfiler. Her er en grunnleggende tiln\xE6rming."
 lastmod: '2024-03-13T22:44:41.160210-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Swifts standardbibliotek inneholder alle verkt\xF8yene som trengs for \xE5\
+  \ skrive tekstfiler."
 title: Skrive en tekstfil
 weight: 24
 ---

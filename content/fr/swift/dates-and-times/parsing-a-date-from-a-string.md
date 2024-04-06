@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:29.388608-07:00
-description: 'Comment faire : #.'
+description: "Comment faire : La biblioth\xE8que standard de Swift, Foundation, fournit\
+  \ `DateFormatter` pour convertir des cha\xEEnes en objets `Date` et vice versa.\
+  \ Pour\u2026"
 lastmod: '2024-03-13T22:44:58.233055-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "La biblioth\xE8que standard de Swift, Foundation, fournit `DateFormatter`\
+  \ pour convertir des cha\xEEnes en objets `Date` et vice versa."
 title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
 weight: 30
 ---

@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:16.105872-07:00
-description: 'Comment faire : #.'
+description: "Comment faire : Jest est un cadre de test populaire qui fournit une\
+  \ API conviviale pour \xE9crire des tests unitaires en JavaScript. Il n\xE9cessite\
+  \ une\u2026"
 lastmod: '2024-03-13T22:44:58.279605-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Jest est un cadre de test populaire qui fournit une API conviviale pour\
+  \ \xE9crire des tests unitaires en JavaScript."
 title: "R\xE9daction de tests"
 weight: 36
 ---

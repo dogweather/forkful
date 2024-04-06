@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:18:00.323314-07:00
 description: "Hvordan: \xC5 bruke regex i Python involverer `re`-modulen, som tilbyr\
   \ et sett med funksjoner for \xE5 behandle tekst ved hjelp av regul\xE6re uttrykk.\
-  \ #."
+  \ For \xE5 s\xF8ke\u2026"
 lastmod: '2024-03-13T22:44:40.351068-06:00'
 model: gpt-4-0125-preview
 summary: "\xC5 bruke regex i Python involverer `re`-modulen, som tilbyr et sett med\

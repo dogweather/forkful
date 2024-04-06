@@ -2,10 +2,17 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:24.041478-07:00
-description: "L\xE0m th\u1EBF n\xE0o: #."
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EC3 \u0111\u1ECDc d\u1EEF li\u1EC7\
+  u CSV t\u1EEB m\u1ED9t t\u1EC7p \u0111\u01B0\u1EE3c l\u01B0u tr\u1EEF tr\xEAn Google\
+  \ Drive, \u0111\u1EA7u ti\xEAn b\u1EA1n c\u1EA7n l\u1EA5y n\u1ED9i dung c\u1EE7\
+  a t\u1EC7p d\u01B0\u1EDBi d\u1EA1ng chu\u1ED7i, sau \u0111\xF3 ph\xE2n t\xEDch n\xF3\
+  .\u2026"
 lastmod: '2024-03-13T22:44:36.070638-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "\u0110\u1EC3 \u0111\u1ECDc d\u1EEF li\u1EC7u CSV t\u1EEB m\u1ED9t t\u1EC7\
+  p \u0111\u01B0\u1EE3c l\u01B0u tr\u1EEF tr\xEAn Google Drive, \u0111\u1EA7u ti\xEA\
+  n b\u1EA1n c\u1EA7n l\u1EA5y n\u1ED9i dung c\u1EE7a t\u1EC7p d\u01B0\u1EDBi d\u1EA1\
+  ng chu\u1ED7i, sau \u0111\xF3 ph\xE2n t\xEDch n\xF3."
 title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 weight: 37
 ---

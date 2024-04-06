@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:44.417085-07:00
-description: 'Kuinka: #.'
+description: "Kuinka: Tarkistaaksesi sis\xE4lt\xE4\xE4k\xF6 merkkijono tietyn mallin,\
+  \ voit k\xE4ytt\xE4\xE4 `Regex.IsMatch`-metodia `System.Text.RegularExpressions`-nimiavaruudesta."
 lastmod: '2024-03-13T22:44:56.563347-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Tarkistaaksesi sis\xE4lt\xE4\xE4k\xF6 merkkijono tietyn mallin, voit k\xE4\
+  ytt\xE4\xE4 `Regex.IsMatch`-metodia `System.Text.RegularExpressions`-nimiavaruudesta."
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---

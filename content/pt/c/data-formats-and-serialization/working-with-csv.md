@@ -2,10 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:52.007769-07:00
-description: 'Como fazer: #.'
+description: "Como fazer: Para ler um arquivo CSV em C, usamos fun\xE7\xF5es padr\xE3\
+  o de E/S de arquivos juntamente com fun\xE7\xF5es de manipula\xE7\xE3o de strings\
+  \ para analisar cada\u2026"
 lastmod: '2024-03-13T22:44:47.074215-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Para ler um arquivo CSV em C, usamos fun\xE7\xF5es padr\xE3o de E/S de arquivos\
+  \ juntamente com fun\xE7\xF5es de manipula\xE7\xE3o de strings para analisar cada\
+  \ linha."
 title: Trabalhando com CSV
 weight: 37
 ---

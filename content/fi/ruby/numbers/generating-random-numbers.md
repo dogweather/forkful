@@ -1,7 +1,7 @@
 ---
 date: 2024-01-27 20:35:02.855982-07:00
 description: "Kuinka: Ruby tarjoaa useita menetelmi\xE4 satunnaislukujen tuottamiseksi,\
-  \ p\xE4\xE4asiassa `Random`-luokan kautta. #."
+  \ p\xE4\xE4asiassa `Random`-luokan kautta. Perussatunnaisluvun tuottaminen."
 lastmod: '2024-03-13T22:44:57.080538-06:00'
 model: gpt-4-0125-preview
 summary: "Ruby tarjoaa useita menetelmi\xE4 satunnaislukujen tuottamiseksi, p\xE4\xE4\

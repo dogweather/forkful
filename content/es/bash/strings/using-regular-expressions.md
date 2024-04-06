@@ -2,10 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:53.962916-07:00
-description: "C\xF3mo hacerlo: #."
+description: "C\xF3mo hacerlo: Para encontrar si una cadena coincide con un patr\xF3\
+  n, puedes usar `grep`, una utilidad de l\xEDnea de comandos para buscar conjuntos\
+  \ de datos de\u2026"
 lastmod: '2024-03-13T22:44:59.234411-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Para encontrar si una cadena coincide con un patr\xF3n, puedes usar `grep`,\
+  \ una utilidad de l\xEDnea de comandos para buscar conjuntos de datos de texto plano\
+  \ por l\xEDneas que coincidan con una expresi\xF3n regular."
 title: Usando expresiones regulares
 weight: 11
 ---

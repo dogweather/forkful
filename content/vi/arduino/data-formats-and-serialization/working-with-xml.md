@@ -2,15 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:29.507750-07:00
-description: "L\xFD do & M\u1EE5c \u0111\xEDch L\xE0m vi\u1EC7c v\u1EDBi XML tr\xEA\
-  n Arduino bao g\u1ED3m vi\u1EC7c ph\xE2n t\xEDch v\xE0 x\u1EED l\xFD d\u1EEF li\u1EC7\
-  u XML, th\u01B0\u1EDDng \u0111\u1EBFn t\u1EEB c\xE1c API web ho\u1EB7c c\xE1c file\
-  \ c\u1EA5u h\xECnh. L\u1EADp tr\xECnh\u2026"
+description: null
 lastmod: '2024-03-13T22:44:37.019498-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m vi\u1EC7c v\u1EDBi XML tr\xEAn Arduino bao g\u1ED3m vi\u1EC7c ph\xE2\
-  n t\xEDch v\xE0 x\u1EED l\xFD d\u1EEF li\u1EC7u XML, th\u01B0\u1EDDng \u0111\u1EBF\
-  n t\u1EEB c\xE1c API web ho\u1EB7c c\xE1c file c\u1EA5u h\xECnh."
+summary: null
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---

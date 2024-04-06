@@ -2,10 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:13.071685-07:00
-description: "C\xF3mo hacerlo: #."
+description: "C\xF3mo hacerlo: La biblioteca est\xE1ndar de Rust no incluye directamente\
+  \ el an\xE1lisis de fechas, pero el crate `chrono`, ampliamente utilizado, es una\
+  \ soluci\xF3n\u2026"
 lastmod: '2024-03-13T22:44:58.856000-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "La biblioteca est\xE1ndar de Rust no incluye directamente el an\xE1lisis\
+  \ de fechas, pero el crate `chrono`, ampliamente utilizado, es una soluci\xF3n robusta\
+  \ para la manipulaci\xF3n de fechas y horas."
 title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---

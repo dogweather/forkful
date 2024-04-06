@@ -3,10 +3,13 @@ changelog:
 - 2024-02-22, dogweather, reviewed
 - 2024-02-22, gpt-4-0125-preview, translated from English
 date: 2024-02-22 17:29:57.476585-07:00
-description: 'Hvordan: #.'
+description: "Hvordan: Et virtuelt milj\xF8 er en selvstendig mappe som inneholder\
+  \ alle de n\xF8dvendige kj\xF8rbare filene for \xE5 bruke pakkene som et Python-prosjekt\
+  \ trenger.\u2026"
 lastmod: '2024-03-13T22:44:40.362023-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Et virtuelt milj\xF8 er en selvstendig mappe som inneholder alle de n\xF8\
+  dvendige kj\xF8rbare filene for \xE5 bruke pakkene som et Python-prosjekt trenger."
 title: Starter et nytt prosjekt
 weight: 1
 ---

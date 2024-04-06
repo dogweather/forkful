@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:36.201478-07:00
-description: 'Como Fazer: #.'
+description: "Como Fazer: A biblioteca padr\xE3o do Swift, Foundation, fornece `DateFormatter`\
+  \ para converter strings em objetos `Date` e vice-versa. Para analisar uma\u2026"
 lastmod: '2024-03-13T22:44:46.929582-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "A biblioteca padr\xE3o do Swift, Foundation, fornece `DateFormatter` para\
+  \ converter strings em objetos `Date` e vice-versa."
 title: Analisando uma data a partir de uma string
 weight: 30
 ---

@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:15.415186-07:00
-description: 'Comment faire : #.'
+description: "Comment faire : Le module int\xE9gr\xE9 `sys` de Python permet une \xE9\
+  criture explicite sur `stderr`. Cette approche est simple pour les messages d\u2019\
+  erreur ou\u2026"
 lastmod: '2024-03-13T22:44:57.254025-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Le module int\xE9gr\xE9 `sys` de Python permet une \xE9criture explicite\
+  \ sur `stderr`."
 title: "\xC9crire sur l'erreur standard"
 weight: 25
 ---

@@ -2,10 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:21.185044-07:00
-description: 'Comment faire : #.'
+description: 'Comment faire : .'
 lastmod: '2024-03-13T22:44:57.651057-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: ''
 title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
 weight: 30
 ---

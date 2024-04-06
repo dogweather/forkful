@@ -2,10 +2,14 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:39.007943-07:00
-description: "Jak to zrobi\u0107: #."
+description: "Jak to zrobi\u0107: W j\u0119zyku Dart definiujesz funkcj\u0119 u\u017C\
+  ywaj\u0105c s\u0142owa kluczowego `void`, je\u015Bli nie zwraca warto\u015Bci, lub\
+  \ okre\u015Blasz typ zwracanej warto\u015Bci w\u2026"
 lastmod: '2024-03-13T22:44:35.097513-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "W j\u0119zyku Dart definiujesz funkcj\u0119 u\u017Cywaj\u0105c s\u0142owa\
+  \ kluczowego `void`, je\u015Bli nie zwraca warto\u015Bci, lub okre\u015Blasz typ\
+  \ zwracanej warto\u015Bci w przeciwnym wypadku."
 title: Organizowanie kodu w funkcje
 weight: 18
 ---

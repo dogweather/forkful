@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:54.902858-07:00
-description: 'Hvordan: #.'
+description: "Hvordan: Rusts standardbibliotek inkluderer ikke direkte datoanalyse,\
+  \ men den mye brukte `chrono`-pakken er en robust l\xF8sning for dato- og\u2026"
 lastmod: '2024-03-13T22:44:40.583331-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Rusts standardbibliotek inkluderer ikke direkte datoanalyse, men den mye\
+  \ brukte `chrono`-pakken er en robust l\xF8sning for dato- og tidsmanipulasjon."
 title: Analysering av en dato fra en streng
 weight: 30
 ---

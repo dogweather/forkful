@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:00.253775-07:00
-description: "C\xF3mo hacerlo: #."
+description: "C\xF3mo hacerlo: C# proporciona el espacio de nombres `System.Text.Json`\
+  \ para el procesamiento eficiente de JSON. Para analizar una cadena JSON a un objeto\u2026"
 lastmod: '2024-03-13T22:44:59.098960-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: C# proporciona el espacio de nombres `System.Text.Json` para el procesamiento
+  eficiente de JSON.
 title: Trabajando con JSON
 weight: 38
 ---

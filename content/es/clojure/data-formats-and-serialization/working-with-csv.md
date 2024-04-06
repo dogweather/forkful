@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:03.050226-07:00
-description: "C\xF3mo: #."
+description: "C\xF3mo: Clojure no tiene an\xE1lisis de CSV incorporado en su biblioteca\
+  \ est\xE1ndar, pero puedes usar la biblioteca `clojure.data.csv` para este prop\xF3\
+  sito.\u2026"
 lastmod: '2024-03-13T22:44:58.681265-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Clojure no tiene an\xE1lisis de CSV incorporado en su biblioteca est\xE1\
+  ndar, pero puedes usar la biblioteca `clojure.data.csv` para este prop\xF3sito."
 title: Trabajando con CSV
 weight: 37
 ---

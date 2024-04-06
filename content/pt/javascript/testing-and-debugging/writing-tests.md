@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:13.270606-07:00
-description: 'Como fazer: #.'
+description: "Como fazer: Jest \xE9 um framework de testes popular que fornece uma\
+  \ API amig\xE1vel para escrever testes de unidade em JavaScript. Ele requer configura\xE7\
+  \xE3o\u2026"
 lastmod: '2024-03-13T22:44:46.966076-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Jest \xE9 um framework de testes popular que fornece uma API amig\xE1vel\
+  \ para escrever testes de unidade em JavaScript."
 title: Escrevendo testes
 weight: 36
 ---

@@ -2,10 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:21.609348-07:00
-description: 'Kuinka: #.'
+description: 'Kuinka: Ennen refaktorointia saatat omistaa koodin, joka sekoittaa eri
+  abstraktiotasoja tai vastuita, kuten alennuksen laskeminen ja sen soveltaminen.'
 lastmod: '2024-03-13T22:44:56.280052-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: ''
 title: "Koodin uudelleenj\xE4rjest\xE4minen"
 weight: 19
 ---

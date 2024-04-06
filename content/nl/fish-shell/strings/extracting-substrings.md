@@ -3,7 +3,7 @@ changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:39.239154-07:00
 description: 'Hoe te: In Fish gebruik je het `string` commando om met strings te werken.
-  Zo doe je dat: #.'
+  Zo doe je dat.'
 lastmod: '2024-03-13T22:44:51.234210-06:00'
 model: gpt-4-0125-preview
 summary: In Fish gebruik je het `string` commando om met strings te werken.

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:50:22.075818-07:00
 description: "Kuinka: Google Apps Scriptiss\xE4, joka perustuu JavaScriptiin, on useita\
   \ tapoja yhdist\xE4\xE4 merkkijonoja. T\xE4ss\xE4 on joitakin yleisi\xE4 menetelmi\xE4\
-  : #."
+  ."
 lastmod: '2024-03-13T22:44:56.087752-06:00'
 model: gpt-4-0125-preview
 summary: "Google Apps Scriptiss\xE4, joka perustuu JavaScriptiin, on useita tapoja\

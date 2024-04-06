@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:37.316881-07:00
-description: 'Hvordan: #.'
+description: "Hvordan: For \xE5 lese eller parse JSON i PowerShell, kan du bruke `ConvertFrom-Json`\
+  \ cmdlet. Gitt en JSON-streng, konverterer denne cmdleten den til et\u2026"
 lastmod: '2024-03-13T22:44:41.038305-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "For \xE5 lese eller parse JSON i PowerShell, kan du bruke `ConvertFrom-Json`\
+  \ cmdlet."
 title: Arbeider med JSON
 weight: 38
 ---

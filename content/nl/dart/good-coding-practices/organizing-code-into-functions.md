@@ -2,10 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:38.711688-07:00
-description: 'Hoe te: #.'
+description: "Hoe te: In Dart definieer je een functie met het trefwoord `void` als\
+  \ deze geen waarde teruggeeft, of je geeft anders het type waarde op dat het\u2026"
 lastmod: '2024-03-13T22:44:50.510879-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: In Dart definieer je een functie met het trefwoord `void` als deze geen waarde
+  teruggeeft, of je geeft anders het type waarde op dat het teruggeeft.
 title: Code organiseren in functies
 weight: 18
 ---

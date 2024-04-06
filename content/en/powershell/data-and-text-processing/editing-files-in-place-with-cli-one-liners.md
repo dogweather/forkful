@@ -1,9 +1,11 @@
 ---
 date: 2024-01-27 16:14:27.151355-07:00
-description: 'How to: #.'
+description: "How to: Let's start with a simple task: you want to replace all instances\
+  \ of \"oldtext\" with \"newtext\" in a file named example.txt. Here's how you would\
+  \ do\u2026"
 lastmod: '2024-03-13T22:45:00.280321-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Let's start with a simple task.
 title: Editing files in-place with CLI one-liners
 weight: 32
 ---

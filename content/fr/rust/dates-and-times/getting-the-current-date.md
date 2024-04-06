@@ -2,10 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:55.862777-07:00
-description: 'Comment faire : #.'
+description: "Comment faire : La biblioth\xE8que standard de Rust fournit un moyen\
+  \ limit\xE9 mais rapide d'obtenir l'heure actuelle, bien qu'elle ne donne pas directement\
+  \ la\u2026"
 lastmod: '2024-03-13T22:44:57.493309-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "La biblioth\xE8que standard de Rust fournit un moyen limit\xE9 mais rapide\
+  \ d'obtenir l'heure actuelle, bien qu'elle ne donne pas directement la date actuelle\
+  \ dans un format de calendrier."
 title: Obtenir la date actuelle
 weight: 29
 ---

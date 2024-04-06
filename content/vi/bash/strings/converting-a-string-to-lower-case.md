@@ -2,15 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:17.682458-07:00
-description: "C\xE1i g\xEC & T\u1EA1i sao? Bi\u1EBFn \u0111\u1ED5i chu\u1ED7i ch\u1EEF\
-  \ th\u01B0\u1EDDng l\xE0 qu\xE1 tr\xECnh chuy\u1EC3n t\u1EA5t c\u1EA3 c\xE1c k\xFD\
-  \ t\u1EF1 ch\u1EEF c\xE1i trong m\u1ED9t chu\u1ED7i sang d\u1EA1ng ch\u1EEF th\u01B0\
-  \u1EDDng. C\xE1c l\u1EADp tr\xECnh vi\xEAn bi\u1EBFn \u0111\u1ED5i\u2026"
+description: null
 lastmod: '2024-03-13T22:44:36.859624-06:00'
 model: gpt-4-0125-preview
-summary: "Bi\u1EBFn \u0111\u1ED5i chu\u1ED7i ch\u1EEF th\u01B0\u1EDDng l\xE0 qu\xE1\
-  \ tr\xECnh chuy\u1EC3n t\u1EA5t c\u1EA3 c\xE1c k\xFD t\u1EF1 ch\u1EEF c\xE1i trong\
-  \ m\u1ED9t chu\u1ED7i sang d\u1EA1ng ch\u1EEF th\u01B0\u1EDDng."
+summary: null
 title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
 weight: 4
 ---

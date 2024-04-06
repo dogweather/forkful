@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:39.349340-07:00
-description: 'Hvordan: #.'
+description: "Hvordan: For \xE5 lese en CSV-fil i C, bruker vi standard fil-I/O-funksjoner\
+  \ sammen med strengmanipulasjonsfunksjoner for \xE5 analysere hver linje. Nedenfor\
+  \ er\u2026"
 lastmod: '2024-03-13T22:44:41.296186-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "For \xE5 lese en CSV-fil i C, bruker vi standard fil-I/O-funksjoner sammen\
+  \ med strengmanipulasjonsfunksjoner for \xE5 analysere hver linje."
 title: Arbeide med CSV
 weight: 37
 ---

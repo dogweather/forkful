@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:10.377251-07:00
-description: 'Como Fazer: #.'
+description: "Como Fazer: A interoperabilidade sem emendas de Clojure com o Java permite\
+  \ que voc\xEA acesse diretamente a API de Data e Hora do Java. Veja como voc\xEA\
+  \ pode\u2026"
 lastmod: '2024-03-13T22:44:46.207160-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "A interoperabilidade sem emendas de Clojure com o Java permite que voc\xEA\
+  \ acesse diretamente a API de Data e Hora do Java."
 title: Obtendo a data atual
 weight: 29
 ---

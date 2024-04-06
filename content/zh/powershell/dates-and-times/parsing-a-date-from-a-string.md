@@ -8,7 +8,7 @@ description: "\u5982\u4F55\u505A\uFF1A PowerShell\u4F7F\u7528`Get-Date` cmdlet\u
   \u671F\u683C\u5F0F\u975E\u5E38\u6709\u6548\u3002\u5BF9\u4E8E\u66F4\u590D\u6742\u6216\
   \u975E\u6807\u51C6\u7684\u65E5\u671F\u5B57\u7B26\u4E32\uFF0C\u53EF\u4EE5\u5229\u7528\
   `[datetime]::ParseExact`\u65B9\u6CD5\u6765\u6307\u5B9A\u786E\u5207\u7684\u683C\u5F0F\
-  \u3002 #."
+  \u3002"
 lastmod: '2024-03-13T22:44:48.024615-06:00'
 model: gpt-4-0125-preview
 summary: "PowerShell\u4F7F\u7528`Get-Date` cmdlet\u548C`[datetime]`\u7C7B\u578B\u52A0\

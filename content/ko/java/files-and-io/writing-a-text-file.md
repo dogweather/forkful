@@ -2,10 +2,17 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:16.610967-07:00
-description: "\uBC29\uBC95: #."
+description: "\uBC29\uBC95: \uC790\uBC14\uC758 \uC0C8\uB85C\uC6B4 I/O(NIO) \uD328\uD0A4\
+  \uC9C0(`java.nio.file`)\uB294 \uD30C\uC77C\uC744 \uB2E4\uB8E8\uB294 \uB370 \uB354\
+  \ \uB2E4\uC591\uD55C \uC811\uADFC \uBC29\uC2DD\uC744 \uC81C\uACF5\uD569\uB2C8\uB2E4\
+  . `Files.write()`\uB97C \uC0AC\uC6A9\uD558\uC5EC \uD30C\uC77C\uC5D0 \uC791\uC131\
+  \uD558\uB294 \uAC04\uB2E8\uD55C \uBC29\uBC95\uC740 \uB2E4\uC74C\uACFC \uAC19\uC2B5\
+  \uB2C8\uB2E4."
 lastmod: '2024-03-13T22:44:55.076180-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "\uC790\uBC14\uC758 \uC0C8\uB85C\uC6B4 I/O(NIO) \uD328\uD0A4\uC9C0(`java.nio.file`)\uB294\
+  \ \uD30C\uC77C\uC744 \uB2E4\uB8E8\uB294 \uB370 \uB354 \uB2E4\uC591\uD55C \uC811\uADFC\
+  \ \uBC29\uC2DD\uC744 \uC81C\uACF5\uD569\uB2C8\uB2E4."
 title: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC4F0\uAE30"
 weight: 24
 ---

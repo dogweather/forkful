@@ -2,10 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:19.975870-07:00
-description: 'Hvordan: #.'
+description: "Hvordan: Et mye brukt verkt\xF8y for testing i PHP er PHPUnit. Installer\
+  \ det via Composer."
 lastmod: '2024-03-13T22:44:40.890241-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Et mye brukt verkt\xF8y for testing i PHP er PHPUnit."
 title: Skrive tester
 weight: 36
 ---

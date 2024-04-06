@@ -2,10 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:53:39.753046-07:00
-description: "C\xF3mo: #."
+description: "C\xF3mo: Dart ofrece m\xE9todos simples y directos para la manipulaci\xF3\
+  n de cadenas. Para capitalizar una palabra o una oraci\xF3n, t\xEDpicamente se toma\
+  \ el primer\u2026"
 lastmod: '2024-03-13T22:44:58.729020-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Dart ofrece m\xE9todos simples y directos para la manipulaci\xF3n de cadenas."
 title: Capitalizando una cadena de texto
 weight: 2
 ---

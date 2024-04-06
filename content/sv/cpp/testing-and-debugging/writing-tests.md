@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:00.015896-07:00
-description: "Hur man g\xF6r: #."
+description: "Hur man g\xF6r: Ett av de mest popul\xE4ra tredjepartsbiblioteken f\xF6\
+  r att skriva tester i C++ \xE4r Google Test. F\xF6rst beh\xF6ver du installera Google\
+  \ Test och l\xE4nka\u2026"
 lastmod: '2024-03-13T22:44:38.212574-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Ett av de mest popul\xE4ra tredjepartsbiblioteken f\xF6r att skriva tester\
+  \ i C++ \xE4r Google Test."
 title: Skriva tester
 weight: 36
 ---

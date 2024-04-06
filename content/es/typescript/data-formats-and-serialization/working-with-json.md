@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:29.321969-07:00
-description: "C\xF3mo: #."
+description: "C\xF3mo: Para convertir una cadena JSON a un objeto TypeScript, utilizas\
+  \ el m\xE9todo `JSON.parse()`. Esto es \xFAtil al recibir datos JSON de un servidor\
+  \ web o al\u2026"
 lastmod: '2024-03-13T22:44:58.824864-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Para convertir una cadena JSON a un objeto TypeScript, utilizas el m\xE9\
+  todo `JSON.parse()`."
 title: Trabajando con JSON
 weight: 38
 ---

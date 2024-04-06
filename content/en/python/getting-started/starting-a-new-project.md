@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-22, dogweather, reviewed
 date: 2024-02-22 14:52:40.960064-07:00
-description: 'How to: #.'
+description: "How to: A virtual environment is a self-contained directory that contains\
+  \ all the necessary executables to use the packages that a Python project would\u2026"
 lastmod: '2024-03-13T22:44:59.708814-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: A virtual environment is a self-contained directory that contains all the
+  necessary executables to use the packages that a Python project would need.
 title: Starting a new project
 weight: 1
 ---

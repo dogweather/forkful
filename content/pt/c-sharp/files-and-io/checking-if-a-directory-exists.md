@@ -2,10 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:05.609809-07:00
-description: 'Como Fazer: #.'
+description: "Como Fazer: C# fornece o namespace `System.IO`, que cont\xE9m a classe\
+  \ `Directory`, oferecendo uma maneira direta de verificar a exist\xEAncia de um\
+  \ diret\xF3rio\u2026"
 lastmod: '2024-03-13T22:44:46.598204-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "C# fornece o namespace `System.IO`, que cont\xE9m a classe `Directory`,\
+  \ oferecendo uma maneira direta de verificar a exist\xEAncia de um diret\xF3rio\
+  \ por meio do m\xE9todo `Exists`."
 title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---

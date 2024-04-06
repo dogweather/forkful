@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:57.152608-07:00
-description: 'Hvordan: #.'
+description: "Hvordan: For \xE5 starte, kan du lage et enkelt regex-m\xF8nster og\
+  \ bruke det til \xE5 finne samsvarende i en streng. Her vil vi finne ordet \"kode\"\
+  ."
 lastmod: '2024-03-13T22:44:41.174289-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "For \xE5 starte, kan du lage et enkelt regex-m\xF8nster og bruke det til\
+  \ \xE5 finne samsvarende i en streng."
 title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---

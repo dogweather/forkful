@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:53.119027-07:00
-description: 'Hvordan: #.'
+description: "Hvordan: Rusts standardbibliotek tilbyr en begrenset, men rask m\xE5\
+  te \xE5 f\xE5 tak i gjeldende tid p\xE5, om ikke direkte den gjeldende datoen i\
+  \ et kalenderformat.\u2026"
 lastmod: '2024-03-13T22:44:40.584397-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Rusts standardbibliotek tilbyr en begrenset, men rask m\xE5te \xE5 f\xE5\
+  \ tak i gjeldende tid p\xE5, om ikke direkte den gjeldende datoen i et kalenderformat."
 title: "F\xE5 dagens dato"
 weight: 29
 ---

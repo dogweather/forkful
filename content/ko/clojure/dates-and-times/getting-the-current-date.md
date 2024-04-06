@@ -2,10 +2,16 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:51.314135-07:00
-description: "\uC5B4\uB5BB\uAC8C \uD558\uB098\uC694: #."
+description: "\uC5B4\uB5BB\uAC8C \uD558\uB098\uC694: Clojure\uC758 Java\uC640\uC758\
+  \ \uB04A\uAE40\uC5C6\uB294 \uC0C1\uD638 \uC6B4\uC6A9\uC131\uC744 \uD1B5\uD574 Java\
+  \ Date-Time API\uB97C \uC9C1\uC811 \uC0AC\uC6A9\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4\
+  . \uD604\uC7AC \uB0A0\uC9DC\uB97C \uC5BB\uB294 \uBC29\uBC95\uC740 \uB2E4\uC74C\uACFC\
+  \ \uAC19\uC2B5\uB2C8\uB2E4."
 lastmod: '2024-03-13T22:44:54.676527-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Clojure\uC758 Java\uC640\uC758 \uB04A\uAE40\uC5C6\uB294 \uC0C1\uD638 \uC6B4\
+  \uC6A9\uC131\uC744 \uD1B5\uD574 Java Date-Time API\uB97C \uC9C1\uC811 \uC0AC\uC6A9\
+  \uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
 title: "\uD604\uC7AC \uB0A0\uC9DC \uAC00\uC838\uC624\uAE30"
 weight: 29
 ---

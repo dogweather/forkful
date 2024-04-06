@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:09.494018-07:00
-description: 'Kuinka: #.'
+description: "Kuinka: Yksi suosituimmista kolmannen osapuolen kirjastoista C++:n testien\
+  \ kirjoittamiseen on Google Test. Ensin sinun tulee asentaa Google Test ja\u2026"
 lastmod: '2024-03-13T22:44:56.868432-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Yksi suosituimmista kolmannen osapuolen kirjastoista C++:n testien kirjoittamiseen
+  on Google Test.
 title: Testien kirjoittaminen
 weight: 36
 ---

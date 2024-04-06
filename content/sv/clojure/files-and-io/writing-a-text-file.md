@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:37.359114-07:00
-description: "Hur man g\xF6r: #."
+description: "Hur man g\xF6r: Funktionen `spit` \xE4r det enklaste s\xE4ttet att skriva\
+  \ text till en fil i Clojure. Den tar tv\xE5 argument: fils\xF6kv\xE4gen och str\xE4\
+  ngen som ska\u2026"
 lastmod: '2024-03-13T22:44:37.543487-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Funktionen `spit` \xE4r det enklaste s\xE4ttet att skriva text till en fil\
+  \ i Clojure."
 title: Att skriva en textfil
 weight: 24
 ---

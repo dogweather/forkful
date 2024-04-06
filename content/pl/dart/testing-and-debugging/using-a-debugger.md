@@ -2,10 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:06.532837-07:00
-description: "Jak to zrobi\u0107: #."
+description: "Jak to zrobi\u0107: **1. Ustawianie punkt\xF3w przerwania:** Aby ustawi\u0107\
+  \ punkt przerwania, wystarczy klikn\u0105\u0107 na lewym marginesie linii kodu w\
+  \ swoim IDE (np.\u2026"
 lastmod: '2024-03-13T22:44:35.096452-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: ''
 title: Korzystanie z debugera
 weight: 35
 ---

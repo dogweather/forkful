@@ -2,10 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:07.501560-07:00
-description: 'Kuinka: #.'
+description: "Kuinka: Dart tarjoaa yksinkertaisia, suoraviivaisia menetelmi\xE4 merkkijonojen\
+  \ k\xE4sittelyyn. Sanan tai lauseen alkukirjaimen suurentamiseksi ottaisit\u2026"
 lastmod: '2024-03-13T22:44:56.252068-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Dart tarjoaa yksinkertaisia, suoraviivaisia menetelmi\xE4 merkkijonojen\
+  \ k\xE4sittelyyn."
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---

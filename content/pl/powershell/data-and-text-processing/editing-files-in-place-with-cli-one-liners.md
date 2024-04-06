@@ -1,9 +1,11 @@
 ---
 date: 2024-01-27 16:20:55.275241-07:00
-description: "Jak to zrobi\u0107: #."
+description: "Jak to zrobi\u0107: Zacznijmy od prostego zadania: chcesz zast\u0105\
+  pi\u0107 wszystkie wyst\u0105pienia \"oldtext\" na \"newtext\" w pliku o nazwie\
+  \ example.txt. Oto jak to\u2026"
 lastmod: '2024-03-13T22:44:35.625688-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Zacznijmy od prostego zadania.
 title: "Edycja plik\xF3w w miejscu przy u\u017Cyciu jednolinijkowc\xF3w CLI"
 weight: 32
 ---

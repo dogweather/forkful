@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:12.960837-07:00
-description: 'Comment faire : #.'
+description: "Comment faire : La fonction int\xE9gr\xE9e `date()` de PHP est le moyen\
+  \ le plus direct d'obtenir la date actuelle. Vous pouvez formater la date de diverses\u2026"
 lastmod: '2024-03-13T22:44:57.890174-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "La fonction int\xE9gr\xE9e `date()` de PHP est le moyen le plus direct d'obtenir\
+  \ la date actuelle."
 title: Obtenir la date actuelle
 weight: 29
 ---

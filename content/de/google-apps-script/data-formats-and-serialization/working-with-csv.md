@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:10.534955-07:00
-description: 'Wie zu: #.'
+description: "Wie zu: Um CSV-Daten aus einer in Google Drive gespeicherten Datei zu\
+  \ lesen, m\xFCssen Sie zun\xE4chst den Inhalt der Datei als Zeichenkette abrufen\
+  \ und dann\u2026"
 lastmod: '2024-03-13T22:44:53.358438-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Um CSV-Daten aus einer in Google Drive gespeicherten Datei zu lesen, m\xFC\
+  ssen Sie zun\xE4chst den Inhalt der Datei als Zeichenkette abrufen und dann parsen."
 title: Arbeiten mit CSV
 weight: 37
 ---

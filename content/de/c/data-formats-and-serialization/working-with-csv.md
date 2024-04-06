@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:52.995548-07:00
-description: 'Wie geht das: #.'
+description: "Wie geht das: Um eine CSV-Datei in C zu lesen, verwenden wir Standard-Datei-I/O-Funktionen\
+  \ zusammen mit Zeichenkettenmanipulationsfunktionen, um jede\u2026"
 lastmod: '2024-03-13T22:44:54.377606-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Um eine CSV-Datei in C zu lesen, verwenden wir Standard-Datei-I/O-Funktionen
+  zusammen mit Zeichenkettenmanipulationsfunktionen, um jede Zeile zu parsen.
 title: Arbeiten mit CSV
 weight: 37
 ---

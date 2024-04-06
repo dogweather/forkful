@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:58.917894-07:00
-description: 'Come fare: #.'
+description: "Come fare: Una delle librerie di terze parti pi\xF9 popolari per scrivere\
+  \ test in C++ \xE8 Google Test. Prima di tutto, dovrai installare Google Test e\u2026"
 lastmod: '2024-03-13T22:44:43.729823-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Una delle librerie di terze parti pi\xF9 popolari per scrivere test in C++\
+  \ \xE8 Google Test."
 title: Scrivere test
 weight: 36
 ---

@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:18.006849-07:00
-description: "C\xF3mo: #."
+description: "C\xF3mo: Para verificar si una cadena coincide con un patr\xF3n espec\xED\
+  fico en Kotlin, puedes usar el m\xE9todo `matches` de la clase `Regex`."
 lastmod: '2024-03-13T22:44:59.025781-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Para verificar si una cadena coincide con un patr\xF3n espec\xEDfico en\
+  \ Kotlin, puedes usar el m\xE9todo `matches` de la clase `Regex`."
 title: Usando expresiones regulares
 weight: 11
 ---

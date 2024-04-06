@@ -1,9 +1,11 @@
 ---
 date: 2024-02-03 19:03:12.497974-07:00
-description: 'How to: #.'
+description: 'How to: To check if a string contains a specific pattern, you can use
+  the `Regex.IsMatch` method from the `System.Text.RegularExpressions` namespace.'
 lastmod: '2024-03-13T22:45:00.078659-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: To check if a string contains a specific pattern, you can use the `Regex.IsMatch`
+  method from the `System.Text.RegularExpressions` namespace.
 title: Using regular expressions
 weight: 11
 ---

@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:11.318015-07:00
-description: "Jak to zrobi\u0107: #."
+description: "Jak to zrobi\u0107: Aby przekonwertowa\u0107 ci\u0105g JSON na obiekt\
+  \ JavaScript, u\u017Cyj `JSON.parse()`."
 lastmod: '2024-03-13T22:44:35.817689-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Aby przekonwertowa\u0107 ci\u0105g JSON na obiekt JavaScript, u\u017Cyj\
+  \ `JSON.parse()`."
 title: Praca z JSON
 weight: 38
 ---

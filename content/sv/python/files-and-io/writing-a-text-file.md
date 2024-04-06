@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:04.693224-07:00
-description: "Hur man g\xF6r: #."
+description: "Hur man g\xF6r: Pythons inbyggda `open()`-funktion \xE4r det vanligaste\
+  \ s\xE4ttet att skriva till filer. Funktionen m\xF6jligg\xF6r specificering av det\
+  \ l\xE4ge i vilket\u2026"
 lastmod: '2024-03-13T22:44:37.501401-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Pythons inbyggda `open()`-funktion \xE4r det vanligaste s\xE4ttet att skriva\
+  \ till filer."
 title: Att skriva en textfil
 weight: 24
 ---

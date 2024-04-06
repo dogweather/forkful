@@ -1,9 +1,10 @@
 ---
 date: 2024-02-03 19:03:41.170759-07:00
-description: 'How to: #.'
+description: 'How to: Python''s built-in `sys` module allows explicit writing to `stderr`.
+  This approach is straightforward for simple error messages or diagnostics.'
 lastmod: '2024-03-13T22:44:59.722573-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Python's built-in `sys` module allows explicit writing to `stderr`.
 title: Writing to standard error
 weight: 25
 ---

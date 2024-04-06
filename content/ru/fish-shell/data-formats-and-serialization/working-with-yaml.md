@@ -2,10 +2,10 @@
 changelog:
 - 2024-01-29, gpt-4-0125-preview, translated from English
 date: 2024-01-29 00:05:03.164541-07:00
-description: "\u041A\u0430\u043A: #."
+description: "\u041A\u0430\u043A: ."
 lastmod: '2024-03-13T22:44:45.876803-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: ''
 title: "\u0420\u0430\u0431\u043E\u0442\u0430 \u0441 YAML"
 weight: 41
 ---

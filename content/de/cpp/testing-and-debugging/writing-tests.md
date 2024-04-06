@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:07.863598-07:00
-description: 'Wie: #.'
+description: "Wie: Eine der beliebtesten Dritt-Bibliotheken zum Schreiben von Tests\
+  \ in C++ ist Google Test. Zuerst m\xFCssen Sie Google Test installieren und es mit\
+  \ Ihrem\u2026"
 lastmod: '2024-03-13T22:44:54.188301-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Eine der beliebtesten Dritt-Bibliotheken zum Schreiben von Tests in C++ ist
+  Google Test.
 title: Tests Schreiben
 weight: 36
 ---

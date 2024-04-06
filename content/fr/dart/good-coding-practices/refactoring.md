@@ -2,10 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:01.670315-07:00
-description: 'Comment faire : #.'
+description: "Comment faire : Avant le refactoring, vous pourriez avoir un morceau\
+  \ de code qui m\xE9lange diff\xE9rents niveaux d'abstraction ou de responsabilit\xE9\
+  s, comme\u2026"
 lastmod: '2024-03-13T22:44:57.399689-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: ''
 title: Refactorisation
 weight: 19
 ---

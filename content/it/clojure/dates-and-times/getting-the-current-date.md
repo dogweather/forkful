@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:12.327850-07:00
-description: 'Come fare: #.'
+description: "Come fare: L'interoperabilit\xE0 senza soluzione di continuit\xE0 di\
+  \ Clojure con Java ti consente di attingere direttamente all'API Java Date-Time.\
+  \ Ecco come\u2026"
 lastmod: '2024-03-13T22:44:43.052937-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "L'interoperabilit\xE0 senza soluzione di continuit\xE0 di Clojure con Java\
+  \ ti consente di attingere direttamente all'API Java Date-Time."
 title: Ottenere la data corrente
 weight: 29
 ---

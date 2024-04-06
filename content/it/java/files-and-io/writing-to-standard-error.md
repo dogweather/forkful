@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:40.778268-07:00
-description: 'Come fare: #.'
+description: 'Come fare: Java offre un modo semplice per scrivere su stderr utilizzando
+  `System.err.print()` o `System.err.println()`. Ecco come si fa.'
 lastmod: '2024-03-13T22:44:43.325509-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Java offre un modo semplice per scrivere su stderr utilizzando `System.err.print()`
+  o `System.err.println()`.
 title: Scrivere sull'errore standard
 weight: 25
 ---

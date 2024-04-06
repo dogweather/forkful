@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:46.747087-07:00
-description: "Jak to zrobi\u0107: #."
+description: "Jak to zrobi\u0107: C# dostarcza przestrze\u0144 nazw `System.Text.Json`\
+  \ dla efektywnego przetwarzania JSON. Aby przeprowadzi\u0107 parsowanie ci\u0105\
+  gu JSON do obiektu C#,\u2026"
 lastmod: '2024-03-13T22:44:35.430321-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "C# dostarcza przestrze\u0144 nazw `System.Text.Json` dla efektywnego przetwarzania\
+  \ JSON."
 title: Praca z JSON
 weight: 38
 ---

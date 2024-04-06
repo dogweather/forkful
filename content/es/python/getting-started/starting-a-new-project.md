@@ -3,10 +3,13 @@ changelog:
 - 2024-02-22, dogweather, reviewed
 - 2024-02-22, gpt-4-0125-preview, translated from English
 date: 2024-02-22 17:30:10.233314-07:00
-description: "C\xF3mo hacerlo: #."
+description: "C\xF3mo hacerlo: Un entorno virtual es un directorio autocontenido que\
+  \ contiene todos los ejecutables necesarios para usar los paquetes que un proyecto\u2026"
 lastmod: '2024-03-13T22:44:58.612199-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Un entorno virtual es un directorio autocontenido que contiene todos los\
+  \ ejecutables necesarios para usar los paquetes que un proyecto Python necesitar\xED\
+  a."
 title: Iniciando un nuevo proyecto
 weight: 1
 ---

@@ -2,10 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:12.231814-07:00
-description: 'Come fare: #.'
+description: "Come fare: C# fornisce il namespace `System.Text.Json` per un'elaborazione\
+  \ JSON efficiente. Per analizzare una stringa JSON in un oggetto C#, definisci\u2026"
 lastmod: '2024-03-13T22:44:43.454654-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: C# fornisce il namespace `System.Text.Json` per un'elaborazione JSON efficiente.
 title: Lavorare con JSON
 weight: 38
 ---

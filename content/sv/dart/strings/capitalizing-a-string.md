@@ -2,10 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:53:38.856579-07:00
-description: "Hur man g\xF6r: #."
+description: "Hur man g\xF6r: Dart erbjuder enkla, raka metoder f\xF6r str\xE4ngmanipulation.\
+  \ F\xF6r att g\xF6ra ett ord eller en mening med stor begynnelsebokstav skulle du\
+  \ typiskt\u2026"
 lastmod: '2024-03-13T22:44:37.592888-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Dart erbjuder enkla, raka metoder f\xF6r str\xE4ngmanipulation."
 title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---

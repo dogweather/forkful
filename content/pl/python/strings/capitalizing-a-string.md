@@ -3,10 +3,11 @@ changelog:
 - 2024-04-04, dogweather, edited
 - 2024-04-04, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:02:34.962078-07:00
-description: "Jak to zrobi\u0107: #."
+description: "Jak to zrobi\u0107: Python posiada wbudowan\u0105 metod\u0119 `.capitalize()`\
+  \ dla ci\u0105g\xF3w znak\xF3w, kt\xF3ra pozwala \u0142atwo wykona\u0107 to zadanie."
 lastmod: '2024-04-04T00:26:59.072204-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: ''
 title: "Zamiana liter w ci\u0105gu na wielkie"
 weight: 2
 ---

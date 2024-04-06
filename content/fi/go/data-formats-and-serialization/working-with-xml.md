@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:18.646173-07:00
-description: 'Miten: #.'
+description: "Miten: XML:n j\xE4sent\xE4miseksi Go:ssa k\xE4ytet\xE4\xE4n `encoding/xml`\
+  \ -pakettia. T\xE4m\xE4 paketti tarjoaa tarvittavat ty\xF6kalut XML:n j\xE4sent\xE4\
+  miseksi (unmarshalling) Go:n\u2026"
 lastmod: '2024-03-13T22:44:56.076742-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "XML:n j\xE4sent\xE4miseksi Go:ssa k\xE4ytet\xE4\xE4n `encoding/xml` -pakettia."
 title: "Ty\xF6skentely XML:n kanssa"
 weight: 40
 ---

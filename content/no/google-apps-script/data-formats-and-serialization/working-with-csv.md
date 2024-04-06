@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:02.763024-07:00
-description: 'Hvordan: #.'
+description: "Hvordan: For \xE5 lese CSV-data fra en fil lagret i Google Drive, m\xE5\
+  \ du f\xF8rst hente filens innhold som en streng, deretter analysere det. Google\
+  \ Apps Script\u2026"
 lastmod: '2024-03-13T22:44:40.340397-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "For \xE5 lese CSV-data fra en fil lagret i Google Drive, m\xE5 du f\xF8\
+  rst hente filens innhold som en streng, deretter analysere det."
 title: Arbeide med CSV
 weight: 37
 ---

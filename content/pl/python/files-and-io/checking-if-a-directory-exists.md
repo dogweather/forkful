@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:08:15.755911-07:00
 description: "Jak to zrobi\u0107: Python dostarcza natywne sposoby na sprawdzanie\
   \ istnienia katalogu, wykorzystuj\u0105c modu\u0142y `os` i `pathlib`. Oto przyk\u0142\
-  ady dla obu: #."
+  ady dla obu."
 lastmod: '2024-03-13T22:44:34.964756-06:00'
 model: gpt-4-0125-preview
 summary: "Python dostarcza natywne sposoby na sprawdzanie istnienia katalogu, wykorzystuj\u0105\

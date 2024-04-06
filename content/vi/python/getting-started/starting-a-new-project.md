@@ -3,10 +3,17 @@ changelog:
 - 2024-02-22, dogweather, reviewed
 - 2024-02-22, gpt-4-0125-preview, translated from English
 date: 2024-02-22 17:30:06.753054-07:00
-description: "L\xE0m th\u1EBF n\xE0o: #."
+description: "L\xE0m th\u1EBF n\xE0o: M\xF4i tr\u01B0\u1EDDng \u1EA3o l\xE0 m\u1ED9\
+  t th\u01B0 m\u1EE5c t\u1EF1 ch\u1EE9a t\u1EA5t c\u1EA3 c\xE1c t\u1EC7p th\u1EF1\
+  c thi c\u1EA7n thi\u1EBFt \u0111\u1EC3 s\u1EED d\u1EE5ng c\xE1c g\xF3i m\xE0 m\u1ED9\
+  t d\u1EF1 \xE1n Python c\u1EA7n. N\xEAn t\u1EA1o m\xF4i tr\u01B0\u1EDDng \u1EA3\
+  o cho\u2026"
 lastmod: '2024-03-13T22:44:36.097827-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "M\xF4i tr\u01B0\u1EDDng \u1EA3o l\xE0 m\u1ED9t th\u01B0 m\u1EE5c t\u1EF1\
+  \ ch\u1EE9a t\u1EA5t c\u1EA3 c\xE1c t\u1EC7p th\u1EF1c thi c\u1EA7n thi\u1EBFt \u0111\
+  \u1EC3 s\u1EED d\u1EE5ng c\xE1c g\xF3i m\xE0 m\u1ED9t d\u1EF1 \xE1n Python c\u1EA7\
+  n."
 title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---

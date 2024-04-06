@@ -2,8 +2,8 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:12.741764-07:00
-description: "Come fare: Python fornisce modi nativi per controllare l'esistenza di\
-  \ una directory utilizzando i moduli `os` e `pathlib`. Ecco degli esempi per entrambi:\u2026"
+description: 'Come fare: Python fornisce modi nativi per controllare l''esistenza
+  di una directory utilizzando i moduli `os` e `pathlib`. Ecco degli esempi per entrambi.'
 lastmod: '2024-03-13T22:44:43.015569-06:00'
 model: gpt-4-0125-preview
 summary: Python fornisce modi nativi per controllare l'esistenza di una directory

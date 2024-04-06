@@ -2,10 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:07.351975-07:00
-description: 'Hvordan: #.'
+description: "Hvordan: Dart tilbyr enkle, direkte metoder for strengmanipulering.\
+  \ For \xE5 sette stor forbokstav i et ord eller en setning, vil du vanligvis ta\
+  \ det f\xF8rste\u2026"
 lastmod: '2024-03-13T22:44:40.468537-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Dart tilbyr enkle, direkte metoder for strengmanipulering.
 title: Sette stor bokstav i en streng
 weight: 2
 ---

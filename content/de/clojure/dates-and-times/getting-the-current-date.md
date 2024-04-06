@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:19.061380-07:00
-description: 'Wie man es macht: #.'
+description: "Wie man es macht: Die nahtlose Interoperabilit\xE4t von Clojure mit\
+  \ Java erm\xF6glicht es Ihnen, direkt auf die Java Date-Time API zuzugreifen. So\
+  \ k\xF6nnen Sie\u2026"
 lastmod: '2024-03-13T22:44:53.430385-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Die nahtlose Interoperabilit\xE4t von Clojure mit Java erm\xF6glicht es\
+  \ Ihnen, direkt auf die Java Date-Time API zuzugreifen."
 title: Den aktuellen Datum abrufen
 weight: 29
 ---

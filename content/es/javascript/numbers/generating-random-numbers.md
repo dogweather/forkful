@@ -1,9 +1,12 @@
 ---
 date: 2024-01-27 20:34:25.002565-07:00
-description: "C\xF3mo hacerlo: #."
+description: "C\xF3mo hacerlo: La manera m\xE1s directa de generar un n\xFAmero aleatorio\
+  \ en JavaScript es usar `Math.random()`. Esta funci\xF3n retorna un n\xFAmero flotante,\
+  \ pseudo-\u2026"
 lastmod: '2024-03-13T22:44:59.454704-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "La manera m\xE1s directa de generar un n\xFAmero aleatorio en JavaScript\
+  \ es usar `Math.random()`."
 title: "Generaci\xF3n de n\xFAmeros aleatorios"
 weight: 12
 ---

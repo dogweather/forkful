@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:09.916572-07:00
-description: "C\xF3mo hacerlo: #."
+description: "C\xF3mo hacerlo: La interoperabilidad sin fisuras de Clojure con Java\
+  \ te permite acceder directamente a la API de Fecha y Hora de Java. As\xED es como\
+  \ puedes\u2026"
 lastmod: '2024-03-13T22:44:58.667857-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: La interoperabilidad sin fisuras de Clojure con Java te permite acceder directamente
+  a la API de Fecha y Hora de Java.
 title: Obteniendo la fecha actual
 weight: 29
 ---

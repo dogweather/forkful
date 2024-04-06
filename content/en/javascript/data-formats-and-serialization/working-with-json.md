@@ -1,9 +1,9 @@
 ---
 date: 2024-02-03 19:03:07.612668-07:00
-description: 'How to: #.'
+description: 'How to: To convert a JSON string into a JavaScript object, use `JSON.parse()`.'
 lastmod: '2024-03-13T22:45:00.453500-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: To convert a JSON string into a JavaScript object, use `JSON.parse()`.
 title: Working with JSON
 weight: 38
 ---

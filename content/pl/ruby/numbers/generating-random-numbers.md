@@ -1,7 +1,8 @@
 ---
 date: 2024-01-27 20:35:17.262703-07:00
 description: "Jak to zrobi\u0107: Ruby oferuje kilka metod generowania losowych liczb,\
-  \ g\u0142\xF3wnie za po\u015Brednictwem klasy `Random`. #."
+  \ g\u0142\xF3wnie za po\u015Brednictwem klasy `Random`. Aby wygenerowa\u0107 podstawow\u0105\
+  \ losow\u0105 liczb\u0119."
 lastmod: '2024-03-13T22:44:35.926664-06:00'
 model: gpt-4-0125-preview
 summary: "Ruby oferuje kilka metod generowania losowych liczb, g\u0142\xF3wnie za\

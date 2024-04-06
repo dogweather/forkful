@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:16.637262-07:00
-description: 'Como fazer: #.'
+description: "Como fazer: O m\xF3dulo interno `sys` do Python permite escrever explicitamente\
+  \ para `stderr`. Esta abordagem \xE9 direta para mensagens de erro simples ou\u2026"
 lastmod: '2024-03-13T22:44:46.170768-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "O m\xF3dulo interno `sys` do Python permite escrever explicitamente para\
+  \ `stderr`."
 title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-02-03 19:03:00.528809-07:00
-description: 'How to: #.'
+description: "How to: The Rust standard library does not include date parsing directly,\
+  \ but the widely-used `chrono` crate is a robust solution for date and time\u2026"
 lastmod: '2024-03-13T22:44:59.904457-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: The Rust standard library does not include date parsing directly, but the
+  widely-used `chrono` crate is a robust solution for date and time manipulation.
 title: Parsing a date from a string
 weight: 30
 ---

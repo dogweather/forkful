@@ -2,10 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:11.840105-07:00
-description: 'Hvordan: #.'
+description: "Hvordan: C# tilbyr navneomr\xE5det `System.Text.Json` for effektiv JSON-behandling.\
+  \ For \xE5 parse en JSON-streng til et C#-objekt, definerer du en klasse som\u2026"
 lastmod: '2024-03-13T22:44:40.819387-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "C# tilbyr navneomr\xE5det `System.Text.Json` for effektiv JSON-behandling."
 title: Arbeider med JSON
 weight: 38
 ---

@@ -2,10 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:07.756559-07:00
-description: "C\xE1ch th\u1EF1c hi\u1EC7n: #."
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: ."
 lastmod: '2024-03-13T22:44:37.238144-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: ''
 title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 weight: 41
 ---

@@ -1,7 +1,7 @@
 ---
 date: 2024-02-03 19:02:32.487209-07:00
 description: 'How to: PHP natively supports various functions to capitalize strings,
-  each serving a different purpose. Here''s how you can use them: #.'
+  each serving a different purpose. Here''s how you can use them.'
 lastmod: '2024-03-13T22:45:00.151054-06:00'
 model: gpt-4-0125-preview
 summary: PHP natively supports various functions to capitalize strings, each serving

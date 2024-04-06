@@ -3,10 +3,11 @@ changelog:
 - 2024-04-04, dogweather, edited
 - 2024-04-04, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:02:34.962078-07:00
-description: 'Come fare: #.'
+description: 'Come fare: Python dispone di un metodo integrato `.capitalize()` per
+  le stringhe per eseguire facilmente questo compito.'
 lastmod: '2024-04-04T00:27:01.440817-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: ''
 title: Capitalizzare una stringa
 weight: 2
 ---

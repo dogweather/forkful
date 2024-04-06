@@ -2,10 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:24.102120-07:00
-description: "Hur man g\xF6r: #."
+description: "Hur man g\xF6r: Ett brett anv\xE4nd verktyg f\xF6r att testa i PHP \xE4\
+  r PHPUnit. Installera det via Composer."
 lastmod: '2024-03-13T22:44:37.999744-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Ett brett anv\xE4nd verktyg f\xF6r att testa i PHP \xE4r PHPUnit."
 title: Skriva tester
 weight: 36
 ---

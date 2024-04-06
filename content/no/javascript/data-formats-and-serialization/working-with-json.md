@@ -2,10 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:17.054080-07:00
-description: 'Hvordan: #.'
+description: "Hvordan: For \xE5 konvertere en JSON-streng til et JavaScript-objekt,\
+  \ bruk `JSON.parse()`."
 lastmod: '2024-03-13T22:44:41.204593-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "For \xE5 konvertere en JSON-streng til et JavaScript-objekt, bruk `JSON.parse()`."
 title: Arbeider med JSON
 weight: 38
 ---

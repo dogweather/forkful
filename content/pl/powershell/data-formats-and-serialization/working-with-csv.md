@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:56.248166-07:00
-description: "Jak to zrobi\u0107: #."
+description: "Jak to zrobi\u0107: Aby odczyta\u0107 plik CSV, u\u017Cyj cmdletu `Import-Csv`.\
+  \ Ten cmdlet odczytuje plik i konwertuje go na niestandardowe obiekty PowerShell\
+  \ dla\u2026"
 lastmod: '2024-03-13T22:44:35.652356-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Aby odczyta\u0107 plik CSV, u\u017Cyj cmdletu `Import-Csv`."
 title: Praca z plikami CSV
 weight: 37
 ---

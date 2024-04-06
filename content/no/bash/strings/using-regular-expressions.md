@@ -2,10 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:18.947563-07:00
-description: 'Hvordan: #.'
+description: "Hvordan: For \xE5 finne ut om en streng matcher et m\xF8nster, kan du\
+  \ bruke `grep`, et kommandolinjeverkt\xF8y for \xE5 s\xF8ke i datasett med ren tekst\
+  \ etter linjer som\u2026"
 lastmod: '2024-03-13T22:44:40.962323-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "For \xE5 finne ut om en streng matcher et m\xF8nster, kan du bruke `grep`,\
+  \ et kommandolinjeverkt\xF8y for \xE5 s\xF8ke i datasett med ren tekst etter linjer\
+  \ som matcher et regul\xE6rt uttrykk."
 title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---

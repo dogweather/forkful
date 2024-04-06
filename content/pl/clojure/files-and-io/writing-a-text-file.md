@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:55.389469-07:00
-description: "Jak to zrobi\u0107: #."
+description: "Jak to zrobi\u0107: Funkcja `spit` jest najprostszym sposobem na zapis\
+  \ tekst do pliku w Clojure. Przyjmuje dwa argumenty: \u015Bcie\u017Ck\u0119 pliku\
+  \ i \u0142a\u0144cuch do zapisania.\u2026"
 lastmod: '2024-03-13T22:44:35.015521-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Funkcja `spit` jest najprostszym sposobem na zapis tekst do pliku w Clojure.
 title: Pisanie pliku tekstowego
 weight: 24
 ---

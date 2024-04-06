@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:22.762608-07:00
-description: 'Wie geht das: #.'
+description: "Wie geht das: Um zu \xFCberpr\xFCfen, ob eine Zeichenfolge in Kotlin\
+  \ einem bestimmten Muster entspricht, k\xF6nnen Sie die `matches` Methode der `Regex`\
+  \ Klasse\u2026"
 lastmod: '2024-03-13T22:44:53.837237-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Um zu \xFCberpr\xFCfen, ob eine Zeichenfolge in Kotlin einem bestimmten\
+  \ Muster entspricht, k\xF6nnen Sie die `matches` Methode der `Regex` Klasse verwenden."
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

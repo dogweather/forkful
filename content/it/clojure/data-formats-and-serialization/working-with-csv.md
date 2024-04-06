@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:02.289171-07:00
-description: 'Come fare: #.'
+description: "Come fare: Clojure non ha un'analisi CSV incorporata nella sua libreria\
+  \ standard, ma puoi usare la libreria `clojure.data.csv` per questo scopo. Prima,\u2026"
 lastmod: '2024-03-13T22:44:43.064869-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Clojure non ha un'analisi CSV incorporata nella sua libreria standard, ma
+  puoi usare la libreria `clojure.data.csv` per questo scopo.
 title: Lavorare con i CSV
 weight: 37
 ---

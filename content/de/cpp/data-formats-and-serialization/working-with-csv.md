@@ -2,10 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:26.999899-07:00
-description: 'Wie geht das: #.'
+description: 'Wie geht das: .'
 lastmod: '2024-03-13T22:44:54.206733-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: ''
 title: Arbeiten mit CSV
 weight: 37
 ---

@@ -2,10 +2,10 @@
 changelog:
 - 2024-03-17, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-17 17:47:51.151583-06:00
-description: "\u0995\u09BF\u09AD\u09BE\u09AC\u09C7: #."
+description: "\u0995\u09BF\u09AD\u09BE\u09AC\u09C7: ."
 lastmod: '2024-03-17T18:47:44.441678-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: ''
 title: "\u09B8\u09BE\u09AC\u09B8\u09CD\u099F\u09CD\u09B0\u09BF\u0982 \u09AC\u09C7\u09B0\
   \ \u0995\u09B0\u09BE"
 weight: 6

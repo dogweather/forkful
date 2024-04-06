@@ -1,9 +1,12 @@
 ---
 date: 2024-02-03 19:02:42.891176-07:00
-description: 'How to: #.'
+description: "How to: C# provides the `System.IO` namespace which contains the `Directory`\
+  \ class, offering a direct way to check for a directory's existence through the\u2026"
 lastmod: '2024-03-13T22:45:00.102348-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: C# provides the `System.IO` namespace which contains the `Directory` class,
+  offering a direct way to check for a directory's existence through the `Exists`
+  method.
 title: Checking if a directory exists
 weight: 20
 ---

@@ -2,10 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:14.581182-07:00
-description: 'Wie: #.'
+description: "Wie: Ein weit verbreitetes Werkzeug f\xFCr Tests in PHP ist PHPUnit.\
+  \ Installieren Sie es \xFCber Composer."
 lastmod: '2024-03-13T22:44:53.975877-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Ein weit verbreitetes Werkzeug f\xFCr Tests in PHP ist PHPUnit."
 title: Tests Schreiben
 weight: 36
 ---

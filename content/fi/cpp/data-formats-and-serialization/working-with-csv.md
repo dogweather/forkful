@@ -2,10 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:11.292775-07:00
-description: "Kuinka tehd\xE4: #."
+description: "Kuinka tehd\xE4: ."
 lastmod: '2024-03-13T22:44:56.887828-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: ''
 title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---

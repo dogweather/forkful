@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:57.154735-07:00
-description: "C\xF3mo hacerlo: #."
+description: "C\xF3mo hacerlo: Para hacer coincidir una cadena con un patr\xF3n simple,\
+  \ puedes usar el m\xE9todo `match`. A continuaci\xF3n, estamos verificando si la\
+  \ palabra\u2026"
 lastmod: '2024-03-13T22:44:59.579917-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Para hacer coincidir una cadena con un patr\xF3n simple, puedes usar el\
+  \ m\xE9todo `match`."
 title: Usando expresiones regulares
 weight: 11
 ---

@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:59:55.919454-07:00
 description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong Fish, b\u1EA1n s\u1EED d\u1EE5ng\
   \ l\u1EC7nh `string` \u0111\u1EC3 thao t\xE1c v\u1EDBi chu\u1ED7i. D\u01B0\u1EDB\
-  i \u0111\xE2y l\xE0 c\xE1ch l\xE0m: #."
+  i \u0111\xE2y l\xE0 c\xE1ch l\xE0m."
 lastmod: '2024-03-13T22:44:37.193514-06:00'
 model: gpt-4-0125-preview
 summary: "Trong Fish, b\u1EA1n s\u1EED d\u1EE5ng l\u1EC7nh `string` \u0111\u1EC3 thao\

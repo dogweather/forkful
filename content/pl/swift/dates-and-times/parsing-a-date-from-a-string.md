@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:43.926212-07:00
-description: "Jak to zrobi\u0107: #."
+description: "Jak to zrobi\u0107: Standardowa biblioteka Swifta, Foundation, dostarcza\
+  \ `DateFormatter` do konwertowania string\xF3w na obiekty `Date` i vice versa. Aby\u2026"
 lastmod: '2024-03-13T22:44:35.764172-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Standardowa biblioteka Swifta, Foundation, dostarcza `DateFormatter` do\
+  \ konwertowania string\xF3w na obiekty `Date` i vice versa."
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---

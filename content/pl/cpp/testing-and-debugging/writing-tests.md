@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:06.853562-07:00
-description: "Jak to zrobi\u0107: #."
+description: "Jak to zrobi\u0107: Jedn\u0105 z najpopularniejszych bibliotek firm\
+  \ trzecich do pisania test\xF3w w C++ jest Google Test. Najpierw musisz zainstalowa\u0107\
+  \ Google Test i\u2026"
 lastmod: '2024-03-13T22:44:35.716478-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Jedn\u0105 z najpopularniejszych bibliotek firm trzecich do pisania test\xF3\
+  w w C++ jest Google Test."
 title: "Pisanie test\xF3w"
 weight: 36
 ---

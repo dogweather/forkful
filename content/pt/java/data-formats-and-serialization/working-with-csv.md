@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:22.866362-07:00
-description: 'Como Fazer: #.'
+description: "Como Fazer: Java n\xE3o tem suporte embutido para CSV em sua biblioteca\
+  \ padr\xE3o, mas voc\xEA pode facilmente ler um arquivo CSV usando as classes `java.io`."
 lastmod: '2024-03-13T22:44:46.479091-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Java n\xE3o tem suporte embutido para CSV em sua biblioteca padr\xE3o, mas\
+  \ voc\xEA pode facilmente ler um arquivo CSV usando as classes `java.io`."
 title: Trabalhando com CSV
 weight: 37
 ---

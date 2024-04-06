@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:17.969039-07:00
-description: "Hur man g\xF6r: #."
+description: "Hur man g\xF6r: Jest \xE4r ett popul\xE4rt testramverk som tillhandah\xE5\
+  ller ett anv\xE4ndarv\xE4nligt API f\xF6r att skriva enhetstester i JavaScript.\
+  \ Det kr\xE4ver minimal\u2026"
 lastmod: '2024-03-13T22:44:38.296931-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Jest \xE4r ett popul\xE4rt testramverk som tillhandah\xE5ller ett anv\xE4\
+  ndarv\xE4nligt API f\xF6r att skriva enhetstester i JavaScript."
 title: Skriva tester
 weight: 36
 ---

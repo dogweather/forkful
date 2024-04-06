@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:16.655169-07:00
-description: 'Wie geht das: #.'
+description: "Wie geht das: Kotlin hat keine eigene Datum- und Zeit-API, sondern verl\xE4\
+  sst sich auf die Java Standardbibliothek f\xFCr diese Funktionalit\xE4t. So k\xF6\
+  nnen Sie\u2026"
 lastmod: '2024-03-13T22:44:53.856683-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Kotlin hat keine eigene Datum- und Zeit-API, sondern verl\xE4sst sich auf\
+  \ die Java Standardbibliothek f\xFCr diese Funktionalit\xE4t."
 title: Den aktuellen Datum abrufen
 weight: 29
 ---

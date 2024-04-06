@@ -4,7 +4,8 @@ changelog:
 date: 2024-01-28 22:01:40.337399-07:00
 description: "L\xE0m th\u1EBF n\xE0o: Ruby cung c\u1EA5p m\u1ED9t s\u1ED1 ph\u01B0\
   \u01A1ng ph\xE1p \u0111\u1EC3 t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn, ch\u1EE7 y\u1EBF\
-  u th\xF4ng qua l\u1EDBp `Random`. #."
+  u th\xF4ng qua l\u1EDBp `Random`. \u0110\u1EC3 t\u1EA1o m\u1ED9t s\u1ED1 ng\u1EAB\
+  u nhi\xEAn c\u01A1 b\u1EA3n."
 lastmod: '2024-03-13T22:44:37.331771-06:00'
 model: gpt-4-0125-preview
 summary: "Ruby cung c\u1EA5p m\u1ED9t s\u1ED1 ph\u01B0\u01A1ng ph\xE1p \u0111\u1EC3\

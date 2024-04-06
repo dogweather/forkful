@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:22.856652-07:00
-description: "C\xF3mo hacerlo: #."
+description: "C\xF3mo hacerlo: La funci\xF3n `spit` es la manera m\xE1s sencilla de\
+  \ escribir texto en un archivo en Clojure. Toma dos argumentos: la ruta del archivo\
+  \ y la cadena\u2026"
 lastmod: '2024-03-13T22:44:58.676450-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "La funci\xF3n `spit` es la manera m\xE1s sencilla de escribir texto en un\
+  \ archivo en Clojure."
 title: Escribiendo un archivo de texto
 weight: 24
 ---

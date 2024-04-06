@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:02.723870-07:00
-description: "Hur man g\xF6r: #."
+description: "Hur man g\xF6r: Rusts standardbibliotek inkluderar inte direkt datumtolkning,\
+  \ men den ofta anv\xE4nda `chrono`-craten \xE4r en robust l\xF6sning f\xF6r datum-\
+  \ och\u2026"
 lastmod: '2024-03-13T22:44:37.708354-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Rusts standardbibliotek inkluderar inte direkt datumtolkning, men den ofta\
+  \ anv\xE4nda `chrono`-craten \xE4r en robust l\xF6sning f\xF6r datum- och tidsmanipulation."
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---

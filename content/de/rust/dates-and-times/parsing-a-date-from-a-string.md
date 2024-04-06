@@ -2,10 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:32.801096-07:00
-description: 'Wie geht das: #.'
+description: "Wie geht das: Die Standardbibliothek von Rust enth\xE4lt keine direkte\
+  \ Datumsverarbeitung, aber das weit verbreitete `chrono` Crate ist eine robuste\
+  \ L\xF6sung\u2026"
 lastmod: '2024-03-13T22:44:53.682043-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Die Standardbibliothek von Rust enth\xE4lt keine direkte Datumsverarbeitung,\
+  \ aber das weit verbreitete `chrono` Crate ist eine robuste L\xF6sung f\xFCr die\
+  \ Manipulation von Datum und Uhrzeit."
 title: Einen Datum aus einem String analysieren
 weight: 30
 ---

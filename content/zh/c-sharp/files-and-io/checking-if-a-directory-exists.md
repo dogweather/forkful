@@ -2,10 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:04.975161-07:00
-description: "\u5982\u4F55\u64CD\u4F5C: #."
+description: "\u5982\u4F55\u64CD\u4F5C: C# \u63D0\u4F9B\u4E86 `System.IO` \u547D\u540D\
+  \u7A7A\u95F4\uFF0C\u5176\u4E2D\u5305\u542B\u4E86 `Directory` \u7C7B\uFF0C\u901A\u8FC7\
+  \ `Exists` \u65B9\u6CD5\u76F4\u63A5\u68C0\u67E5\u76EE\u5F55\u662F\u5426\u5B58\u5728\
+  \u3002"
 lastmod: '2024-03-13T22:44:47.783619-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "C# \u63D0\u4F9B\u4E86 `System.IO` \u547D\u540D\u7A7A\u95F4\uFF0C\u5176\u4E2D\
+  \u5305\u542B\u4E86 `Directory` \u7C7B\uFF0C\u901A\u8FC7 `Exists` \u65B9\u6CD5\u76F4\
+  \u63A5\u68C0\u67E5\u76EE\u5F55\u662F\u5426\u5B58\u5728."
 title: "\u68C0\u67E5\u76EE\u5F55\u662F\u5426\u5B58\u5728"
 weight: 20
 ---

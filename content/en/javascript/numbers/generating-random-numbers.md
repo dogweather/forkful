@@ -1,9 +1,12 @@
 ---
 date: 2024-01-27 20:26:13.875616-07:00
-description: 'How to: #.'
+description: "How to: The most straightforward way to generate a random number in\
+  \ JavaScript is to use `Math.random()`. This function returns a floating-point,\
+  \ pseudo-\u2026"
 lastmod: '2024-03-13T22:45:00.429777-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: The most straightforward way to generate a random number in JavaScript is
+  to use `Math.random()`.
 title: Generating random numbers
 weight: 12
 ---

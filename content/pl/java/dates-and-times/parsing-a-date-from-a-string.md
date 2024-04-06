@@ -2,10 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:23.433070-07:00
-description: 'Jak: #.'
+description: 'Jak: .'
 lastmod: '2024-03-13T22:44:35.286933-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: ''
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---

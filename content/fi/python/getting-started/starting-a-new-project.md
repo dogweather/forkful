@@ -3,10 +3,13 @@ changelog:
 - 2024-02-22, dogweather, reviewed
 - 2024-02-22, gpt-4-0125-preview, translated from English
 date: 2024-02-22 17:30:29.394060-07:00
-description: 'Kuinka: #.'
+description: "Kuinka: Virtuaaliymp\xE4rist\xF6 on itsen\xE4inen hakemisto, joka sis\xE4\
+  lt\xE4\xE4 kaikki tarvittavat suoritettavat tiedostot paketteja varten, joita Python-projekti\u2026"
 lastmod: '2024-03-13T22:44:56.144296-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Virtuaaliymp\xE4rist\xF6 on itsen\xE4inen hakemisto, joka sis\xE4lt\xE4\xE4\
+  \ kaikki tarvittavat suoritettavat tiedostot paketteja varten, joita Python-projekti\
+  \ saattaa tarvita."
 title: Uuden projektin aloittaminen
 weight: 1
 ---

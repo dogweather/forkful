@@ -2,10 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:49.480327-07:00
-description: 'Jak: #.'
+description: "Jak: Aby odczyta\u0107 plik CSV w j\u0119zyku C, u\u017Cywamy standardowych\
+  \ funkcji wej\u015Bcia/wyj\u015Bcia plik\xF3w wraz z funkcjami manipulacji ci\u0105\
+  gami znak\xF3w do parsowania\u2026"
 lastmod: '2024-03-13T22:44:35.910787-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Aby odczyta\u0107 plik CSV w j\u0119zyku C, u\u017Cywamy standardowych funkcji\
+  \ wej\u015Bcia/wyj\u015Bcia plik\xF3w wraz z funkcjami manipulacji ci\u0105gami\
+  \ znak\xF3w do parsowania ka\u017Cdej linii."
 title: Praca z plikami CSV
 weight: 37
 ---

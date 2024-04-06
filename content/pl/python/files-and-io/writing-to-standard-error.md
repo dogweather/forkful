@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:19.351279-07:00
-description: "Jak to zrobi\u0107: #."
+description: "Jak to zrobi\u0107: Wbudowany modu\u0142 `sys` w Pythonie pozwala na\
+  \ jawne pisanie do `stderr`. To podej\u015Bcie jest proste dla prostych komunikat\xF3\
+  w o b\u0142\u0119dach lub\u2026"
 lastmod: '2024-03-13T22:44:34.967044-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Wbudowany modu\u0142 `sys` w Pythonie pozwala na jawne pisanie do `stderr`."
 title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---

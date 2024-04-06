@@ -1,9 +1,12 @@
 ---
 date: 2024-01-27 20:34:33.525945-07:00
-description: 'Come Fare: #.'
+description: "Come Fare: Il modo pi\xF9 diretto per generare un numero casuale in\
+  \ JavaScript \xE8 usare `Math.random()`. Questa funzione restituisce un numero a\
+  \ virgola\u2026"
 lastmod: '2024-03-13T22:44:43.807788-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Il modo pi\xF9 diretto per generare un numero casuale in JavaScript \xE8\
+  \ usare `Math.random()`."
 title: Generazione di numeri casuali
 weight: 12
 ---

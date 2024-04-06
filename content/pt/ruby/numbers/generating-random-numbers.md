@@ -1,7 +1,8 @@
 ---
 date: 2024-01-27 20:34:54.698927-07:00
 description: "Como Fazer: Ruby oferece v\xE1rios m\xE9todos para gerar n\xFAmeros\
-  \ aleat\xF3rios, principalmente atrav\xE9s da classe `Random`. #."
+  \ aleat\xF3rios, principalmente atrav\xE9s da classe `Random`. Para gerar um n\xFA\
+  mero aleat\xF3rio b\xE1sico."
 lastmod: '2024-03-13T22:44:47.089512-06:00'
 model: gpt-4-0125-preview
 summary: "Ruby oferece v\xE1rios m\xE9todos para gerar n\xFAmeros aleat\xF3rios, principalmente\

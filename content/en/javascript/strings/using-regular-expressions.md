@@ -1,9 +1,11 @@
 ---
 date: 2024-02-03 19:02:56.534396-07:00
-description: 'How to: #.'
+description: 'How to: To start, you can create a simple regex pattern and use it to
+  find matches in a string. Here, we''ll find the word "code".'
 lastmod: '2024-03-13T22:45:00.424298-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: To start, you can create a simple regex pattern and use it to find matches
+  in a string.
 title: Using regular expressions
 weight: 11
 ---

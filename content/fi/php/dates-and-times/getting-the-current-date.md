@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:27.106553-07:00
-description: 'Miten: #.'
+description: "Miten: PHP:n sis\xE4\xE4nrakennettu `date()`-funktio on suoraviivaisin\
+  \ tapa saada nykyinen p\xE4iv\xE4m\xE4\xE4r\xE4. Voit muotoilla p\xE4iv\xE4m\xE4\
+  \xE4r\xE4\xE4 eri tavoin m\xE4\xE4rittelem\xE4ll\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.666685-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "PHP:n sis\xE4\xE4nrakennettu `date()`-funktio on suoraviivaisin tapa saada\
+  \ nykyinen p\xE4iv\xE4m\xE4\xE4r\xE4."
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---

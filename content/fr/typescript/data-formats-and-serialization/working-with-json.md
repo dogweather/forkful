@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:28.421063-07:00
-description: 'Comment faire : #.'
+description: "Comment faire : Pour convertir une cha\xEEne JSON en un objet TypeScript,\
+  \ vous utilisez la m\xE9thode `JSON.parse()`. Cela est utile lors de la r\xE9ception\
+  \ de\u2026"
 lastmod: '2024-03-13T22:44:57.460017-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Pour convertir une cha\xEEne JSON en un objet TypeScript, vous utilisez\
+  \ la m\xE9thode `JSON.parse()`."
 title: Travailler avec JSON
 weight: 38
 ---

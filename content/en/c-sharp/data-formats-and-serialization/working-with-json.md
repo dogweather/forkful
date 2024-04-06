@@ -1,9 +1,11 @@
 ---
 date: 2024-02-03 19:03:12.550269-07:00
-description: 'How to: #.'
+description: "How to: C# provides the `System.Text.Json` namespace for efficient JSON\
+  \ processing. To parse a JSON string to a C# object, define a class that matches\
+  \ the\u2026"
 lastmod: '2024-03-13T22:45:00.108721-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: C# provides the `System.Text.Json` namespace for efficient JSON processing.
 title: Working with JSON
 weight: 38
 ---

@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:03.604406-07:00
-description: "C\xF3mo hacerlo: #."
+description: "C\xF3mo hacerlo: C# proporciona el espacio de nombres `System.IO`, que\
+  \ contiene la clase `Directory`, ofreciendo una manera directa de verificar la\u2026"
 lastmod: '2024-03-13T22:44:59.091996-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "C# proporciona el espacio de nombres `System.IO`, que contiene la clase\
+  \ `Directory`, ofreciendo una manera directa de verificar la existencia de un directorio\
+  \ a trav\xE9s del m\xE9todo `Exists`."
 title: Comprobando si un directorio existe
 weight: 20
 ---

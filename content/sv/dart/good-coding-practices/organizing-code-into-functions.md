@@ -2,10 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:14.809323-07:00
-description: "Hur man g\xF6r: #."
+description: "Hur man g\xF6r: I Dart definierar du en funktion med hj\xE4lp av nyckelordet\
+  \ `void` om den inte returnerar ett v\xE4rde, eller anger vilken typ av v\xE4rde\
+  \ den annars\u2026"
 lastmod: '2024-03-13T22:44:37.618087-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "I Dart definierar du en funktion med hj\xE4lp av nyckelordet `void` om den\
+  \ inte returnerar ett v\xE4rde, eller anger vilken typ av v\xE4rde den annars returnerar."
 title: Organisera kod i funktioner
 weight: 18
 ---

@@ -2,10 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:24.100952-07:00
-description: 'Hoe te: #.'
+description: 'Hoe te: Om snel de inhoud van een bestand weer te geven, gebruik je
+  de `Get-Content` opdracht.'
 lastmod: '2024-03-13T22:44:51.023916-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Om snel de inhoud van een bestand weer te geven, gebruik je de `Get-Content`
+  opdracht.
 title: Bestanden manipuleren met CLI one-liners
 weight: 31
 ---

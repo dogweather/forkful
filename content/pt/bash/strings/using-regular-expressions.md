@@ -2,10 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:01.475370-07:00
-description: 'Como: #.'
+description: "Como: Para encontrar se uma string corresponde a um padr\xE3o, voc\xEA\
+  \ pode usar `grep`, uma utilidade de linha de comando para pesquisar conjuntos de\
+  \ dados de\u2026"
 lastmod: '2024-03-13T22:44:46.740993-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Para encontrar se uma string corresponde a um padr\xE3o, voc\xEA pode usar\
+  \ `grep`, uma utilidade de linha de comando para pesquisar conjuntos de dados de\
+  \ texto simples para linhas que correspondam a uma express\xE3o regular."
 title: "Usando express\xF5es regulares"
 weight: 11
 ---

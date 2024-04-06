@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:12.216046-07:00
-description: "C\xF3mo hacerlo: #."
+description: "C\xF3mo hacerlo: Para empezar, puedes crear un patr\xF3n de regex simple\
+  \ y usarlo para encontrar coincidencias en una cadena. Aqu\xED, encontraremos la\
+  \ palabra\u2026"
 lastmod: '2024-03-13T22:44:59.448879-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Para empezar, puedes crear un patr\xF3n de regex simple y usarlo para encontrar\
+  \ coincidencias en una cadena."
 title: Usando expresiones regulares
 weight: 11
 ---

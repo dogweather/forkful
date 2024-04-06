@@ -1,9 +1,9 @@
 ---
 date: 2024-02-03 19:03:14.488221-07:00
-description: 'How to: #.'
+description: 'How to: .'
 lastmod: '2024-03-13T22:45:00.378041-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: ''
 title: Working with CSV
 weight: 37
 ---

@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:32.805926-07:00
-description: 'Como fazer: #.'
+description: "Como fazer: A fun\xE7\xE3o `spit` \xE9 a maneira mais simples de escrever\
+  \ texto em um arquivo em Clojure. Ela recebe dois argumentos: o caminho do arquivo\
+  \ e a\u2026"
 lastmod: '2024-03-13T22:44:46.214785-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "A fun\xE7\xE3o `spit` \xE9 a maneira mais simples de escrever texto em um\
+  \ arquivo em Clojure."
 title: Escrevendo um arquivo de texto
 weight: 24
 ---

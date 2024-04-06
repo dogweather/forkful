@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:45.467398-07:00
-description: 'Kuinka: #.'
+description: "Kuinka: CSV-datatiedoston lukemiseksi Google Drivesta, sinun tulee ensin\
+  \ hankkia tiedoston sis\xE4lt\xF6 merkkijonona ja sitten j\xE4sent\xE4\xE4 se. Google\
+  \ Apps Script\u2026"
 lastmod: '2024-03-13T22:44:56.122716-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "CSV-datatiedoston lukemiseksi Google Drivesta, sinun tulee ensin hankkia\
+  \ tiedoston sis\xE4lt\xF6 merkkijonona ja sitten j\xE4sent\xE4\xE4 se."
 title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---

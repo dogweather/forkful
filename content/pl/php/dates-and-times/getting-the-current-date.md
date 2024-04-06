@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:30.944924-07:00
-description: "Jak to zrobi\u0107: #."
+description: "Jak to zrobi\u0107: Wbudowana funkcja `date()` w PHP jest najbardziej\
+  \ bezpo\u015Brednim sposobem na pobranie bie\u017C\u0105cej daty. Mo\u017Cna formatowa\u0107\
+  \ dat\u0119 na r\xF3\u017Cne sposoby,\u2026"
 lastmod: '2024-03-13T22:44:35.507885-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Wbudowana funkcja `date()` w PHP jest najbardziej bezpo\u015Brednim sposobem\
+  \ na pobranie bie\u017C\u0105cej daty."
 title: Pobieranie aktualnej daty
 weight: 29
 ---

@@ -3,10 +3,10 @@ changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:36.210589-07:00
 description: "\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\u0438\
-  : #."
+  : ."
 lastmod: '2024-03-13T22:44:49.885557-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: ''
 title: "\u0420\u043E\u0431\u043E\u0442\u0430 \u0437 CSV"
 weight: 37
 ---

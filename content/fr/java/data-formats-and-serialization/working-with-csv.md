@@ -2,10 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:20.716569-07:00
-description: 'Comment faire : #.'
+description: "Comment faire : Java ne dispose pas d'un support int\xE9gr\xE9 pour\
+  \ les CSV dans sa biblioth\xE8que standard, mais vous pouvez facilement lire un\
+  \ fichier CSV en\u2026"
 lastmod: '2024-03-13T22:44:57.667805-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Java ne dispose pas d'un support int\xE9gr\xE9 pour les CSV dans sa biblioth\xE8\
+  que standard, mais vous pouvez facilement lire un fichier CSV en utilisant les classes\
+  \ de `java.io`."
 title: Travailler avec CSV
 weight: 37
 ---

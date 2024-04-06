@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:22.215750-07:00
-description: "Jak to zrobi\u0107: #."
+description: "Jak to zrobi\u0107: Wbudowana funkcja `open()` w Pythonie jest najcz\u0119\
+  stsz\u0105 metod\u0105 zapisu do plik\xF3w. Funkcja pozwala na okre\u015Blenie trybu,\
+  \ w jakim plik jest\u2026"
 lastmod: '2024-03-13T22:44:34.969046-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Wbudowana funkcja `open()` w Pythonie jest najcz\u0119stsz\u0105 metod\u0105\
+  \ zapisu do plik\xF3w."
 title: Pisanie pliku tekstowego
 weight: 24
 ---

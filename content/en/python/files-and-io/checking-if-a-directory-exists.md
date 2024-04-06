@@ -1,7 +1,7 @@
 ---
 date: 2024-02-03 19:02:30.098252-07:00
 description: 'How to: Python provides native ways to check for a directory''s existence
-  using the `os` and `pathlib` modules. Here are examples for both: #.'
+  using the `os` and `pathlib` modules. Here are examples for both.'
 lastmod: '2024-03-13T22:44:59.720716-06:00'
 model: gpt-4-0125-preview
 summary: Python provides native ways to check for a directory's existence using the

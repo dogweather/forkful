@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:10.514260-07:00
-description: "C\xF3mo: #."
+description: "C\xF3mo: El paquete New I/O (NIO) de Java (`java.nio.file`) proporciona\
+  \ un enfoque m\xE1s vers\xE1til para tratar con archivos. Aqu\xED hay una manera\
+  \ simplista de\u2026"
 lastmod: '2024-03-13T22:44:58.955630-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "El paquete New I/O (NIO) de Java (`java.nio.file`) proporciona un enfoque\
+  \ m\xE1s vers\xE1til para tratar con archivos."
 title: Escribiendo un archivo de texto
 weight: 24
 ---

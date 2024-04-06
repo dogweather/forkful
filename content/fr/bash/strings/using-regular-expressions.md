@@ -2,10 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:52.302471-07:00
-description: 'Comment faire : #.'
+description: "Comment faire : Pour trouver si une cha\xEEne correspond \xE0 un motif,\
+  \ vous pouvez utiliser `grep`, un utilitaire en ligne de commande pour rechercher\
+  \ dans des\u2026"
 lastmod: '2024-03-13T22:44:57.978651-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Pour trouver si une cha\xEEne correspond \xE0 un motif, vous pouvez utiliser\
+  \ `grep`, un utilitaire en ligne de commande pour rechercher dans des ensembles\
+  \ de donn\xE9es en texte brut des lignes correspondant \xE0 une expression r\xE9\
+  guli\xE8re."
 title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---

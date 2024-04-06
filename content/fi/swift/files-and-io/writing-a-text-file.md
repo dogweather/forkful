@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:36.460168-07:00
-description: 'Miten: #.'
+description: "Miten: Swiftin vakiokirjasto sis\xE4lt\xE4\xE4 kaikki tarvittavat ty\xF6\
+  kalut tekstitiedostojen kirjoittamiseen. T\xE4ss\xE4 on perusl\xE4hestymistapa."
 lastmod: '2024-03-13T22:44:56.924810-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Swiftin vakiokirjasto sis\xE4lt\xE4\xE4 kaikki tarvittavat ty\xF6kalut tekstitiedostojen\
+  \ kirjoittamiseen."
 title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---

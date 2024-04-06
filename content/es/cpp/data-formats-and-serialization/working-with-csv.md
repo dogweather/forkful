@@ -2,10 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:00.274319-07:00
-description: "C\xF3mo: #."
+description: "C\xF3mo: ."
 lastmod: '2024-03-13T22:44:59.397348-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: ''
 title: Trabajando con CSV
 weight: 37
 ---

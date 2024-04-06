@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:04.430123-07:00
-description: 'Wie geht das: #.'
+description: "Wie geht das: Jest ist ein beliebtes Test-Framework, das eine benutzerfreundliche\
+  \ API f\xFCr das Schreiben von Unit-Tests in JavaScript bietet. Es erfordert\u2026"
 lastmod: '2024-03-13T22:44:54.269630-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Jest ist ein beliebtes Test-Framework, das eine benutzerfreundliche API\
+  \ f\xFCr das Schreiben von Unit-Tests in JavaScript bietet."
 title: Tests Schreiben
 weight: 36
 ---

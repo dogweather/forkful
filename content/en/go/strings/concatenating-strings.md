@@ -1,7 +1,7 @@
 ---
 date: 2024-02-03 17:50:07.427683-07:00
 description: "How to: In Go, there are several ways to concatenate strings. Here\u2019\
-  s a look at some common methods with examples: #."
+  s a look at some common methods with examples: The simplest way to concatenate strings\u2026"
 lastmod: '2024-03-13T22:44:59.623833-06:00'
 model: gpt-4-0125-preview
 summary: In Go, there are several ways to concatenate strings.

@@ -3,10 +3,11 @@ changelog:
 - 2024-04-04, dogweather, edited
 - 2024-04-04, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:02:34.962078-07:00
-description: 'Kuinka: #.'
+description: "Kuinka: Pythonissa on sis\xE4\xE4nrakennettu metodi `.capitalize()`\
+  \ merkkijonojen muuttamiseksi niin, ett\xE4 teht\xE4v\xE4 suoritetaan helposti."
 lastmod: '2024-04-04T00:26:58.809734-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: ''
 title: "Merkkijonon ensimm\xE4isen kirjaimen muuttaminen isoksi"
 weight: 2
 ---

@@ -2,10 +2,16 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:47.940621-07:00
-description: "\u5982\u4F55\u64CD\u4F5C\uFF1A #."
+description: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u8981\u4ECE CSV \u6587\u4EF6\u4E2D\u8BFB\
+  \u53D6\u6570\u636E\uFF0C\u8BF7\u4F7F\u7528 `Import-Csv` \u547D\u4EE4\u3002\u6B64\
+  \u547D\u4EE4\u8BFB\u53D6\u6587\u4EF6\u5E76\u5C06\u5176\u8F6C\u6362\u4E3A\u81EA\u5B9A\
+  \u4E49\u7684 PowerShell \u5BF9\u8C61\uFF0C\u6BCF\u884C\u4E00\u4E2A\u3002"
 lastmod: '2024-03-13T22:44:48.040413-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "\u8981\u4ECE CSV \u6587\u4EF6\u4E2D\u8BFB\u53D6\u6570\u636E\uFF0C\u8BF7\u4F7F\
+  \u7528 `Import-Csv` \u547D\u4EE4\u3002\u6B64\u547D\u4EE4\u8BFB\u53D6\u6587\u4EF6\
+  \u5E76\u5C06\u5176\u8F6C\u6362\u4E3A\u81EA\u5B9A\u4E49\u7684 PowerShell \u5BF9\u8C61\
+  \uFF0C\u6BCF\u884C\u4E00\u4E2A."
 title: "\u5904\u7406CSV\u6587\u4EF6"
 weight: 37
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-02-01 21:12:12.820946-07:00
-description: 'How to: #.'
+description: "How to: To read CSV data from a file stored in Google Drive, you first\
+  \ need to get the file's content as a string, then parse it. Google Apps Script\
+  \ makes\u2026"
 lastmod: '2024-03-13T22:44:59.690378-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: To read CSV data from a file stored in Google Drive, you first need to get
+  the file's content as a string, then parse it.
 title: Working with CSV
 weight: 37
 ---

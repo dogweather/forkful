@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:05.348433-07:00
-description: "Hur man g\xF6r: #."
+description: "Hur man g\xF6r: F\xF6r att matcha en str\xE4ng mot ett enkelt m\xF6\
+  nster kan du anv\xE4nda metoden `match`. Nedan kontrollerar vi om ordet \"Ruby\"\
+  \ finns i en given str\xE4ng."
 lastmod: '2024-03-13T22:44:38.418656-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "F\xF6r att matcha en str\xE4ng mot ett enkelt m\xF6nster kan du anv\xE4\
+  nda metoden `match`."
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---

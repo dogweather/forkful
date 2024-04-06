@@ -2,10 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:13.089329-07:00
-description: 'Kuinka: #.'
+description: "Kuinka: L\xF6yt\xE4\xE4ksesi, vastaako merkkijonoa malli, voit k\xE4\
+  ytt\xE4\xE4 `grep`-komentoa, komentorivin ty\xF6kalua, joka etsii tavallisen tekstin\
+  \ datajoukoista rivej\xE4,\u2026"
 lastmod: '2024-03-13T22:44:56.727989-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "L\xF6yt\xE4\xE4ksesi, vastaako merkkijonoa malli, voit k\xE4ytt\xE4\xE4\
+  \ `grep`-komentoa, komentorivin ty\xF6kalua, joka etsii tavallisen tekstin datajoukoista\
+  \ rivej\xE4, jotka vastaavat s\xE4\xE4nn\xF6llist\xE4 lauseketta."
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---

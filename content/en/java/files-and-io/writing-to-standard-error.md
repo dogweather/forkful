@@ -1,9 +1,11 @@
 ---
 date: 2024-02-03 19:03:34.687650-07:00
-description: 'How to: #.'
+description: 'How to: Java provides a straightforward way to write to stderr using
+  `System.err.print()` or `System.err.println()`. Here''s how you do it.'
 lastmod: '2024-03-13T22:44:59.986667-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Java provides a straightforward way to write to stderr using `System.err.print()`
+  or `System.err.println()`.
 title: Writing to standard error
 weight: 25
 ---

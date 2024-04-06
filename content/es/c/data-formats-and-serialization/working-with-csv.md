@@ -2,10 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:23.245684-07:00
-description: "C\xF3mo hacerlo: #."
+description: "C\xF3mo hacerlo: Para leer un archivo CSV en C, utilizamos funciones\
+  \ est\xE1ndar de E/S de archivos junto con funciones de manipulaci\xF3n de cadenas\
+  \ para analizar\u2026"
 lastmod: '2024-03-13T22:44:59.570252-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Para leer un archivo CSV en C, utilizamos funciones est\xE1ndar de E/S de\
+  \ archivos junto con funciones de manipulaci\xF3n de cadenas para analizar cada\
+  \ l\xEDnea."
 title: Trabajando con CSV
 weight: 37
 ---

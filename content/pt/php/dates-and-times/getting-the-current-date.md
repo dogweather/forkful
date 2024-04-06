@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:12.932403-07:00
-description: 'Como fazer: #.'
+description: "Como fazer: A fun\xE7\xE3o embutida `date()` do PHP \xE9 a maneira mais\
+  \ direta de obter a data atual. Voc\xEA pode formatar a data de v\xE1rias maneiras\
+  \ especificando o\u2026"
 lastmod: '2024-03-13T22:44:46.677734-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "A fun\xE7\xE3o embutida `date()` do PHP \xE9 a maneira mais direta de obter\
+  \ a data atual."
 title: Obtendo a data atual
 weight: 29
 ---

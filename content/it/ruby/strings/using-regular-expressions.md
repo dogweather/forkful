@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:22.752057-07:00
-description: 'Come fare: #.'
+description: "Come fare: Per confrontare una stringa con un modello semplice, puoi\
+  \ usare il metodo `match`. Di seguito, verifichiamo se la parola \"Ruby\" esiste\
+  \ in una\u2026"
 lastmod: '2024-03-13T22:44:44.039665-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Per confrontare una stringa con un modello semplice, puoi usare il metodo
+  `match`.
 title: Utilizzo delle espressioni regolari
 weight: 11
 ---

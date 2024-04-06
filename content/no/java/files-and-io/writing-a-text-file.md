@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:11.331189-07:00
-description: 'Hvordan: #.'
+description: "Hvordan: Java sitt New I/O (NIO) pakke (`java.nio.file`) tilbyr en mer\
+  \ allsidig tiln\xE6rming for \xE5 h\xE5ndtere filer. Her er en enkel m\xE5te \xE5\
+  \ skrive til en fil\u2026"
 lastmod: '2024-03-13T22:44:40.684733-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Java sitt New I/O (NIO) pakke (`java.nio.file`) tilbyr en mer allsidig tiln\xE6\
+  rming for \xE5 h\xE5ndtere filer."
 title: Skrive en tekstfil
 weight: 24
 ---

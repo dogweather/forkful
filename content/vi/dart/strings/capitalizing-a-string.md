@@ -2,10 +2,14 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:09.957909-07:00
-description: "L\xE0m th\u1EBF n\xE0o: #."
+description: "L\xE0m th\u1EBF n\xE0o: Dart cung c\u1EA5p c\xE1c ph\u01B0\u01A1ng th\u1EE9\
+  c \u0111\u01A1n gi\u1EA3n, d\u1EC5 hi\u1EC3u cho vi\u1EC7c thao t\xE1c chu\u1ED7\
+  i. \u0110\u1EC3 vi\u1EBFt hoa m\u1ED9t t\u1EEB ho\u1EB7c m\u1ED9t c\xE2u, b\u1EA1\
+  n th\u01B0\u1EDDng l\u1EA5y k\xFD t\u1EF1 \u0111\u1EA7u ti\xEAn,\u2026"
 lastmod: '2024-03-13T22:44:36.240320-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Dart cung c\u1EA5p c\xE1c ph\u01B0\u01A1ng th\u1EE9c \u0111\u01A1n gi\u1EA3\
+  n, d\u1EC5 hi\u1EC3u cho vi\u1EC7c thao t\xE1c chu\u1ED7i."
 title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
 weight: 2
 ---

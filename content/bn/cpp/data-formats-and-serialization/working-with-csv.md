@@ -2,10 +2,10 @@
 changelog:
 - 2024-03-17, gpt-4-0125-preview, translated from English
 date: 2024-03-17 18:27:40.040479-06:00
-description: "\u0995\u09BF\u09AD\u09BE\u09AC\u09C7: #."
+description: "\u0995\u09BF\u09AD\u09BE\u09AC\u09C7: ."
 lastmod: '2024-03-17T18:47:44.387701-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: ''
 title: "CSV \u098F\u09B0 \u09B8\u09BE\u09A5\u09C7 \u0995\u09BE\u099C \u0995\u09B0\u09BE"
 weight: 37
 ---

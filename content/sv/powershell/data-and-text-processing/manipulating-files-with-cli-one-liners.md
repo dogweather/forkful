@@ -1,9 +1,10 @@
 ---
 date: 2024-01-27 16:21:22.811186-07:00
-description: "Hur man g\xF6r: #."
+description: "Hur man g\xF6r: F\xF6r att snabbt visa inneh\xE5llet i en fil, anv\xE4\
+  nd kommandot `Get-Content`."
 lastmod: '2024-03-13T22:44:38.121005-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "F\xF6r att snabbt visa inneh\xE5llet i en fil, anv\xE4nd kommandot `Get-Content`."
 title: Hantera filer med CLI-engreppskommandon
 weight: 31
 ---

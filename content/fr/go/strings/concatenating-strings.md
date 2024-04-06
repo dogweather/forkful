@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 17:53:55.306351-07:00
 description: "Comment faire : En Go, il existe plusieurs fa\xE7ons de concat\xE9ner\
   \ des cha\xEEnes. Voici un aper\xE7u de certaines m\xE9thodes courantes avec des\
-  \ exemples : #."
+  \ exemples : La fa\xE7on\u2026"
 lastmod: '2024-03-13T22:44:57.124041-06:00'
 model: gpt-4-0125-preview
 summary: "En Go, il existe plusieurs fa\xE7ons de concat\xE9ner des cha\xEEnes."

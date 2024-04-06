@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:54.473087-07:00
-description: 'Hoe: #.'
+description: "Hoe: Om een CSV-bestand in C te lezen, gebruiken we standaardbestands-I/O-functies\
+  \ samen met tekenreeksmanipulatiefuncties om elke regel te ontleden.\u2026"
 lastmod: '2024-03-13T22:44:51.314394-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Om een CSV-bestand in C te lezen, gebruiken we standaardbestands-I/O-functies
+  samen met tekenreeksmanipulatiefuncties om elke regel te ontleden.
 title: Werken met CSV
 weight: 37
 ---

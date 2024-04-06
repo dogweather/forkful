@@ -1,9 +1,11 @@
 ---
 date: 2024-01-27 16:21:32.865679-07:00
-description: 'Jak: #.'
+description: "Jak: Aby szybko wy\u015Bwietli\u0107 zawarto\u015B\u0107 pliku, u\u017C\
+  yj polecenia `Get-Content`."
 lastmod: '2024-03-13T22:44:35.624722-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Aby szybko wy\u015Bwietli\u0107 zawarto\u015B\u0107 pliku, u\u017Cyj polecenia\
+  \ `Get-Content`."
 title: "Manipulowanie plikami za pomoc\u0105 jednolinijkowc\xF3w CLI"
 weight: 31
 ---

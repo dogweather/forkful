@@ -3,8 +3,7 @@ changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:12.621564-07:00
 description: "Hvordan: I Google Apps Script, som er basert p\xE5 JavaScript, finnes\
-  \ det flere m\xE5ter \xE5 konkatenere strenger p\xE5. Her er noen vanlige metoder:\
-  \ #."
+  \ det flere m\xE5ter \xE5 konkatenere strenger p\xE5. Her er noen vanlige metoder."
 lastmod: '2024-03-13T22:44:40.305209-06:00'
 model: gpt-4-0125-preview
 summary: "I Google Apps Script, som er basert p\xE5 JavaScript, finnes det flere m\xE5\

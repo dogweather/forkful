@@ -2,10 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:38.327069-07:00
-description: 'Comment faire : #.'
+description: "Comment faire : Pour lire un fichier CSV en C, nous utilisons des fonctions\
+  \ d'I/O de fichiers standards ainsi que des fonctions de manipulation de cha\xEE\
+  nes\u2026"
 lastmod: '2024-03-13T22:44:58.397094-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Pour lire un fichier CSV en C, nous utilisons des fonctions d'I/O de fichiers\
+  \ standards ainsi que des fonctions de manipulation de cha\xEEnes de caract\xE8\
+  res pour analyser chaque ligne."
 title: Travailler avec CSV
 weight: 37
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-02-03 19:03:12.778784-07:00
-description: 'How to: #.'
+description: "How to: The `spit` function is the simplest way to write text to a file\
+  \ in Clojure. It takes two arguments: the file path and the string to write. If\
+  \ the\u2026"
 lastmod: '2024-03-13T22:44:59.761934-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: The `spit` function is the simplest way to write text to a file in Clojure.
 title: Writing a text file
 weight: 24
 ---

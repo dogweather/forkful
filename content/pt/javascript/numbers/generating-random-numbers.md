@@ -1,9 +1,12 @@
 ---
 date: 2024-01-27 20:34:34.615838-07:00
-description: 'Como Fazer: #.'
+description: "Como Fazer: A maneira mais direta de gerar um n\xFAmero aleat\xF3rio\
+  \ em JavaScript \xE9 usar `Math.random()`. Esta fun\xE7\xE3o retorna um n\xFAmero\
+  \ pseudo-aleat\xF3rio de\u2026"
 lastmod: '2024-03-13T22:44:46.958499-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "A maneira mais direta de gerar um n\xFAmero aleat\xF3rio em JavaScript \xE9\
+  \ usar `Math.random()`."
 title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
 weight: 12
 ---

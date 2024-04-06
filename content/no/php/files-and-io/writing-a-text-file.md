@@ -3,7 +3,7 @@ changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:47.911480-07:00
 description: "Hvordan: PHP st\xF8tter nativt filskriving gjennom funksjoner som `file_put_contents`,\
-  \ `fopen` sammen med `fwrite`, og `fclose`. Slik bruker du dem: #."
+  \ `fopen` sammen med `fwrite`, og `fclose`. Slik bruker du dem: Denne\u2026"
 lastmod: '2024-03-13T22:44:40.904692-06:00'
 model: gpt-4-0125-preview
 summary: "PHP st\xF8tter nativt filskriving gjennom funksjoner som `file_put_contents`,\

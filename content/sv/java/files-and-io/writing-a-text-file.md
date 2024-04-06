@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:13.497732-07:00
-description: "Hur man g\xF6r: #."
+description: "Hur man g\xF6r: Javas New I/O (NIO)-paket (`java.nio.file`) erbjuder\
+  \ en mer m\xE5ngsidig metod f\xF6r att hantera filer. H\xE4r \xE4r ett f\xF6renklat\
+  \ s\xE4tt att skriva till\u2026"
 lastmod: '2024-03-13T22:44:37.805400-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Javas New I/O (NIO)-paket (`java.nio.file`) erbjuder en mer m\xE5ngsidig\
+  \ metod f\xF6r att hantera filer."
 title: Att skriva en textfil
 weight: 24
 ---

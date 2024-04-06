@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:35:48.126759-07:00
-description: 'How to: (".'
+description: 'How to: ("## Comment faire :").'
 lastmod: '2024-03-13T22:44:58.009908-06:00'
 model: gpt-4-1106-preview
-summary: (".
+summary: ("## Comment faire :").
 title: "Conversion d'une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---

@@ -2,10 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:03:53.471613-07:00
-description: "L\xE0m th\u1EBF n\xE0o: #."
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EC3 nhanh ch\xF3ng hi\u1EC3n th\u1ECB\
+  \ n\u1ED9i dung c\u1EE7a m\u1ED9t t\u1EC7p, s\u1EED d\u1EE5ng l\u1EC7nh `Get-Content`."
 lastmod: '2024-03-13T22:44:36.929303-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "\u0110\u1EC3 nhanh ch\xF3ng hi\u1EC3n th\u1ECB n\u1ED9i dung c\u1EE7a m\u1ED9\
+  t t\u1EC7p, s\u1EED d\u1EE5ng l\u1EC7nh `Get-Content`."
 title: "Thao t\xE1c v\u1EDBi c\xE1c t\u1EC7p tin b\u1EB1ng c\xE1c l\u1EC7nh CLI ch\u1EC9\
   \ m\u1ED9t d\xF2ng"
 weight: 31

@@ -3,10 +3,12 @@ changelog:
 - 2024-02-22, dogweather, reviewed
 - 2024-02-22, gpt-4-0125-preview, translated from English
 date: 2024-02-22 17:30:11.656533-07:00
-description: 'Hoe te: #.'
+description: "Hoe te: Een virtuele omgeving is een zelfstandige map die alle benodigde\
+  \ uitvoerbare bestanden bevat om de pakketten te gebruiken die een Python-project\u2026"
 lastmod: '2024-03-13T22:44:50.377378-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Een virtuele omgeving is een zelfstandige map die alle benodigde uitvoerbare
+  bestanden bevat om de pakketten te gebruiken die een Python-project nodig zou hebben.
 title: Een nieuw project starten
 weight: 1
 ---

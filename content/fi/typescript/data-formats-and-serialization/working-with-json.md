@@ -2,10 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:43.080864-07:00
-description: 'Kuinka: #.'
+description: "Kuinka: JSON-merkkijonon muuntamiseksi TypeScript-objektiksi k\xE4yt\xE4\
+  t `JSON.parse()`-metodia. T\xE4m\xE4 on hy\xF6dyllist\xE4, kun vastaanotat JSON-dataa\u2026"
 lastmod: '2024-03-13T22:44:56.336374-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "JSON-merkkijonon muuntamiseksi TypeScript-objektiksi k\xE4yt\xE4t `JSON.parse()`-metodia."
 title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---

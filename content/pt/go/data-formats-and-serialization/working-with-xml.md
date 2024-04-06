@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:04.856656-07:00
-description: 'Como fazer: #.'
+description: "Como fazer: Para fazer parsing de XML em Go, voc\xEA utiliza o pacote\
+  \ `encoding/xml`. Esse pacote fornece as ferramentas necess\xE1rias para unmarshal\
+  \ (fazer o\u2026"
 lastmod: '2024-03-13T22:44:46.087209-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Para fazer parsing de XML em Go, voc\xEA utiliza o pacote `encoding/xml`."
 title: Trabalhando com XML
 weight: 40
 ---

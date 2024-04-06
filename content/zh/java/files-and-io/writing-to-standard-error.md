@@ -2,10 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:32.558323-07:00
-description: "\u5982\u4F55\u64CD\u4F5C\uFF1A #."
+description: "\u5982\u4F55\u64CD\u4F5C\uFF1A Java\u63D0\u4F9B\u4E86\u4E00\u4E2A\u76F4\
+  \u63A5\u7684\u65B9\u5F0F\u6765\u901A\u8FC7`System.err.print()`\u6216`System.err.println()`\u5199\
+  \u5165stderr\u3002\u4EE5\u4E0B\u662F\u5982\u4F55\u505A\u5230\u7684\uFF1A."
 lastmod: '2024-03-13T22:44:47.643457-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Java\u63D0\u4F9B\u4E86\u4E00\u4E2A\u76F4\u63A5\u7684\u65B9\u5F0F\u6765\u901A\
+  \u8FC7`System.err.print()`\u6216`System.err.println()`\u5199\u5165stderr\u3002\u4EE5\
+  \u4E0B\u662F\u5982\u4F55\u505A\u5230\u7684\uFF1A."
 title: "\u5199\u5165\u6807\u51C6\u9519\u8BEF"
 weight: 25
 ---

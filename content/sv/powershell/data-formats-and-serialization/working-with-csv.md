@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:52.009439-07:00
-description: "Hur man g\xF6r: #."
+description: "Hur man g\xF6r: F\xF6r att l\xE4sa fr\xE5n en CSV-fil, anv\xE4nd cmdleten\
+  \ `Import-Csv`. Denna cmdlet l\xE4ser filen och omvandlar den till anpassade PowerShell-objekt\
+  \ f\xF6r\u2026"
 lastmod: '2024-03-13T22:44:38.148409-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "F\xF6r att l\xE4sa fr\xE5n en CSV-fil, anv\xE4nd cmdleten `Import-Csv`."
 title: Arbeta med CSV
 weight: 37
 ---

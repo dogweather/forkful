@@ -2,10 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:17.213264-07:00
-description: 'Como fazer: #.'
+description: "Como fazer: Uma ferramenta amplamente utilizada para testes em PHP \xE9\
+  \ o PHPUnit. Instale-a via Composer."
 lastmod: '2024-03-13T22:44:46.670930-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Uma ferramenta amplamente utilizada para testes em PHP \xE9 o PHPUnit."
 title: Escrevendo testes
 weight: 36
 ---

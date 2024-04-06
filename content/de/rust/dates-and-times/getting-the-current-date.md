@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:47.604989-07:00
-description: 'Wie geht das: #.'
+description: "Wie geht das: Rusts Standardbibliothek bietet eine begrenzte, aber schnelle\
+  \ M\xF6glichkeit, die aktuelle Zeit zu ermitteln, allerdings nicht direkt das\u2026"
 lastmod: '2024-03-13T22:44:53.683292-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Rusts Standardbibliothek bietet eine begrenzte, aber schnelle M\xF6glichkeit,\
+  \ die aktuelle Zeit zu ermitteln, allerdings nicht direkt das aktuelle Datum im\
+  \ Kalenderformat."
 title: Den aktuellen Datum abrufen
 weight: 29
 ---

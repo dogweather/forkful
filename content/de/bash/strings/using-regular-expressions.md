@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:58.614392-07:00
-description: 'Wie geht das: #.'
+description: "Wie geht das: Um zu finden, ob eine Zeichenkette einem Muster entspricht,\
+  \ k\xF6nnen Sie `grep` verwenden, ein Befehlszeilenprogramm zur Suche in reinen\u2026"
 lastmod: '2024-03-13T22:44:54.047485-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Um zu finden, ob eine Zeichenkette einem Muster entspricht, k\xF6nnen Sie\
+  \ `grep` verwenden, ein Befehlszeilenprogramm zur Suche in reinen Textdatens\xE4\
+  tzen nach Zeilen, die mit einem regul\xE4ren Ausdruck \xFCbereinstimmen."
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

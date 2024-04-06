@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:10.631344-07:00
-description: 'Wie geht das: #.'
+description: "Wie geht das: Zum Start k\xF6nnen Sie ein einfaches Regex-Muster erstellen\
+  \ und verwenden, um \xDCbereinstimmungen in einem String zu finden. Hier werden\
+  \ wir das\u2026"
 lastmod: '2024-03-13T22:44:54.256190-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Zum Start k\xF6nnen Sie ein einfaches Regex-Muster erstellen und verwenden,\
+  \ um \xDCbereinstimmungen in einem String zu finden."
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---

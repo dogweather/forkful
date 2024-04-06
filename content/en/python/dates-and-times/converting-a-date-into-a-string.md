@@ -1,14 +1,13 @@
 ---
+changelog:
+- 2024-04-04, dogweather, edited
 date: 2024-01-20 17:37:21.660960-07:00
-description: 'How to: Python makes it easy to convert dates to strings. Use the `strftime`
-  method available on date objects. Here''s how.'
+description: "How to: Python makes it easy to convert dates to strings. Use the [`strftime`](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-\u2026"
 lastmod: 2024-04-04
 model: gpt-4-1106-preview
 summary: Python makes it easy to convert dates to strings.
 title: Converting a date into a string
 weight: 28
-changelog:
-- 2024-04-04, dogweather, edited
 ---
 
 ## How to:

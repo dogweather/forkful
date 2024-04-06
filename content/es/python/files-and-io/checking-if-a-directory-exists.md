@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:08:09.195586-07:00
 description: "C\xF3mo hacerlo: Python ofrece formas nativas de comprobar si existe\
   \ un directorio utilizando los m\xF3dulos `os` y `pathlib`. Aqu\xED hay ejemplos\
-  \ para ambos: #."
+  \ para ambos."
 lastmod: '2024-03-13T22:44:58.628105-06:00'
 model: gpt-4-0125-preview
 summary: "Python ofrece formas nativas de comprobar si existe un directorio utilizando\

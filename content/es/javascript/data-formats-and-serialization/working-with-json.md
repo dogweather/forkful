@@ -2,10 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:18.444890-07:00
-description: "C\xF3mo hacerlo: #."
+description: "C\xF3mo hacerlo: Para convertir una cadena JSON en un objeto de JavaScript,\
+  \ utiliza `JSON.parse()`."
 lastmod: '2024-03-13T22:44:59.479778-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Para convertir una cadena JSON en un objeto de JavaScript, utiliza `JSON.parse()`.
 title: Trabajando con JSON
 weight: 38
 ---

@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:20.611025-07:00
-description: "Jak to zrobi\u0107: #."
+description: "Jak to zrobi\u0107: Pakiet New I/O (NIO) Javy (`java.nio.file`) oferuje\
+  \ bardziej wszechstronne podej\u015Bcie do pracy z plikami. Oto uproszczony spos\xF3\
+  b na zapis do\u2026"
 lastmod: '2024-03-13T22:44:35.297080-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Pakiet New I/O (NIO) Javy (`java.nio.file`) oferuje bardziej wszechstronne\
+  \ podej\u015Bcie do pracy z plikami."
 title: Pisanie pliku tekstowego
 weight: 24
 ---

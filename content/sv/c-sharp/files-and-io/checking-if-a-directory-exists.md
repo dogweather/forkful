@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:11.740296-07:00
-description: "Hur man g\xF6r: #."
+description: "Hur man g\xF6r: C# tillhandah\xE5ller namnrymden `System.IO` som inneh\xE5\
+  ller `Directory`-klassen, som erbjuder ett direkt s\xE4tt att kontrollera en katalogs\u2026"
 lastmod: '2024-03-13T22:44:37.927812-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "C# tillhandah\xE5ller namnrymden `System.IO` som inneh\xE5ller `Directory`-klassen,\
+  \ som erbjuder ett direkt s\xE4tt att kontrollera en katalogs existens genom metoden\
+  \ `Exists`."
 title: Kontrollera om en katalog existerar
 weight: 20
 ---

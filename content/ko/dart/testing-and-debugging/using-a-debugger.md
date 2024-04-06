@@ -2,10 +2,14 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:44.105563-07:00
-description: "\uBC29\uBC95: #."
+description: "\uBC29\uBC95: **1. \uC911\uB2E8\uC810 \uC124\uC815:** \uC911\uB2E8\uC810\
+  \uC744 \uC124\uC815\uD558\uB824\uBA74, \uC2E4\uD589\uC744 \uC77C\uC2DC \uC911\uC9C0\
+  \uD558\uACE0\uC790 \uD558\uB294 \uCF54\uB4DC \uB77C\uC778\uC758 \uC67C\uCABD \uC5EC\
+  \uBC31\uC744 IDE(\uC608: Visual Studio Code \uB610\uB294 Android Studio)\uC5D0\uC11C\
+  \ \uD074\uB9AD\uD558\uBA74 \uB429\uB2C8\uB2E4."
 lastmod: '2024-03-13T22:44:54.795994-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: ''
 title: "\uB514\uBC84\uAC70 \uC0AC\uC6A9\uD558\uAE30"
 weight: 35
 ---

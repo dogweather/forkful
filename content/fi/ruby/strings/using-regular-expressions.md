@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:20.906047-07:00
-description: 'Kuinka: #.'
+description: "Kuinka: Merkkijonon vastaavuuden tarkistamiseen yksinkertaisen mallin\
+  \ kanssa voi k\xE4ytt\xE4\xE4 `match`-metodia. Alla tarkistamme, l\xF6ytyyk\xF6\
+  \ sana \"Ruby\" annetusta\u2026"
 lastmod: '2024-03-13T22:44:57.074862-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Merkkijonon vastaavuuden tarkistamiseen yksinkertaisen mallin kanssa voi\
+  \ k\xE4ytt\xE4\xE4 `match`-metodia."
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---

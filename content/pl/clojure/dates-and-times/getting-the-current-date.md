@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:21.992312-07:00
-description: "Jak to zrobi\u0107: #."
+description: "Jak to zrobi\u0107: Bezproblemowa interoperacyjno\u015B\u0107 Clojure\
+  \ z Jav\u0105 umo\u017Cliwia bezpo\u015Brednie korzystanie z Java Date-Time API.\
+  \ Oto jak mo\u017Cna uzyska\u0107 bie\u017C\u0105c\u0105 dat\u0119."
 lastmod: '2024-03-13T22:44:35.007413-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Bezproblemowa interoperacyjno\u015B\u0107 Clojure z Jav\u0105 umo\u017C\
+  liwia bezpo\u015Brednie korzystanie z Java Date-Time API."
 title: Pobieranie aktualnej daty
 weight: 29
 ---

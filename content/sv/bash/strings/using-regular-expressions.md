@@ -2,10 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:59.286454-07:00
-description: "Hur man g\xF6r: #."
+description: "Hur man g\xF6r: F\xF6r att hitta om en str\xE4ng matchar ett m\xF6nster\
+  \ kan du anv\xE4nda `grep`, ett kommandoradsverktyg f\xF6r att s\xF6ka i vanliga\
+  \ textdataupps\xE4ttningar\u2026"
 lastmod: '2024-03-13T22:44:38.070677-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "F\xF6r att hitta om en str\xE4ng matchar ett m\xF6nster kan du anv\xE4nda\
+  \ `grep`, ett kommandoradsverktyg f\xF6r att s\xF6ka i vanliga textdataupps\xE4\
+  ttningar efter rader som matchar ett regulj\xE4rt uttryck."
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---

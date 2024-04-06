@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:05.435035-07:00
-description: 'Comment faire : #.'
+description: "Comment faire : Pour comparer une cha\xEEne de caract\xE8res \xE0 un\
+  \ motif simple, vous pouvez utiliser la m\xE9thode `match`. Ci-dessous, nous v\xE9\
+  rifions si le mot\u2026"
 lastmod: '2024-03-13T22:44:58.407417-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Pour comparer une cha\xEEne de caract\xE8res \xE0 un motif simple, vous\
+  \ pouvez utiliser la m\xE9thode `match`."
 title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---

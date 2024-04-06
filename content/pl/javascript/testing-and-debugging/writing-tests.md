@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:40.492830-07:00
-description: "Jak to zrobi\u0107: #."
+description: "Jak to zrobi\u0107: Jest to popularne narz\u0119dzie do testowania,\
+  \ kt\xF3re dostarcza przyjazne API do pisania test\xF3w jednostkowych w JavaScript.\
+  \ Wymaga minimalnej\u2026"
 lastmod: '2024-03-13T22:44:35.800089-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Jest to popularne narz\u0119dzie do testowania, kt\xF3re dostarcza przyjazne\
+  \ API do pisania test\xF3w jednostkowych w JavaScript."
 title: "Pisanie test\xF3w"
 weight: 36
 ---

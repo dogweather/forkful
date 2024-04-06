@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:17.564914-07:00
-description: 'Come fare: #.'
+description: "Come fare: Kotlin non ha una propria API per data e ora, ma si affida\
+  \ alla Java Standard Library per questa funzionalit\xE0. Ecco come puoi ottenere\
+  \ la data\u2026"
 lastmod: '2024-03-13T22:44:43.401186-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Kotlin non ha una propria API per data e ora, ma si affida alla Java Standard\
+  \ Library per questa funzionalit\xE0."
 title: Ottenere la data corrente
 weight: 29
 ---

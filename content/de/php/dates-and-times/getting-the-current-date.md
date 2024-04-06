@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:14.190544-07:00
-description: 'Wie geht das: #.'
+description: "Wie geht das: Die integrierte `date()`-Funktion von PHP ist der direkteste\
+  \ Weg, um das aktuelle Datum zu erhalten. Sie k\xF6nnen das Datum auf verschiedene\u2026"
 lastmod: '2024-03-13T22:44:53.983050-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Die integrierte `date()`-Funktion von PHP ist der direkteste Weg, um das
+  aktuelle Datum zu erhalten.
 title: Den aktuellen Datum abrufen
 weight: 29
 ---

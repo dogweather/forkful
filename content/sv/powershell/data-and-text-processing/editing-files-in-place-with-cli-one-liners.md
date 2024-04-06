@@ -1,9 +1,11 @@
 ---
 date: 2024-01-27 16:20:54.320777-07:00
-description: "Hur g\xF6r man: #."
+description: "Hur g\xF6r man: L\xE5t oss b\xF6rja med en enkel uppgift: du vill ers\xE4\
+  tta alla f\xF6rekomster av \"oldtext\" med \"newtext\" i en fil som heter example.txt.\
+  \ S\xE5 h\xE4r skulle\u2026"
 lastmod: '2024-03-13T22:44:38.121959-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "L\xE5t oss b\xF6rja med en enkel uppgift."
 title: "Redigera filer p\xE5 plats med kommandoradsenradare"
 weight: 32
 ---

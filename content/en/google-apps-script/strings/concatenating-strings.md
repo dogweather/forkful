@@ -1,7 +1,7 @@
 ---
 date: 2024-02-01 21:12:01.346171-07:00
 description: 'How to: In Google Apps Script, which is based on JavaScript, there are
-  several ways to concatenate strings. Here are some common methods: #.'
+  several ways to concatenate strings. Here are some common methods.'
 lastmod: '2024-03-13T22:44:59.662725-06:00'
 model: gpt-4-0125-preview
 summary: In Google Apps Script, which is based on JavaScript, there are several ways

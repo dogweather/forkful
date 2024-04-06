@@ -1,9 +1,11 @@
 ---
 date: 2024-01-27 16:20:49.785598-07:00
-description: "C\xF3mo hacerlo: #."
+description: "C\xF3mo hacerlo: Empecemos con una tarea sencilla: quieres reemplazar\
+  \ todas las instancias de \"oldtext\" con \"newtext\" en un archivo llamado example.txt.\
+  \ As\xED\u2026"
 lastmod: '2024-03-13T22:44:59.288237-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Empecemos con una tarea sencilla.
 title: "Editando archivos directamente con l\xEDneas de comandos"
 weight: 32
 ---

@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:07.187714-07:00
-description: 'Wie zu: #.'
+description: "Wie zu: C# stellt den `System.IO` Namespace bereit, der die `Directory`\
+  \ Klasse enth\xE4lt und somit eine direkte M\xF6glichkeit bietet, die Existenz eines\u2026"
 lastmod: '2024-03-13T22:44:53.902621-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "C# stellt den `System.IO` Namespace bereit, der die `Directory` Klasse enth\xE4\
+  lt und somit eine direkte M\xF6glichkeit bietet, die Existenz eines Verzeichnisses\
+  \ \xFCber die `Exists` Methode zu pr\xFCfen."
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---

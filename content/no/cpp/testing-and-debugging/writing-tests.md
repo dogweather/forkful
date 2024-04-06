@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:30:06.443239-07:00
-description: 'Hvordan: #.'
+description: "Hvordan: En av de mest popul\xE6re tredjepartsbibliotekene for \xE5\
+  \ skrive tester i C++ er Google Test. F\xF8rst m\xE5 du installere Google Test og\
+  \ lenke den med\u2026"
 lastmod: '2024-03-13T22:44:41.103478-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "En av de mest popul\xE6re tredjepartsbibliotekene for \xE5 skrive tester\
+  \ i C++ er Google Test."
 title: Skrive tester
 weight: 36
 ---

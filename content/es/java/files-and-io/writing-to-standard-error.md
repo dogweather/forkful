@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:30.444282-07:00
-description: "C\xF3mo hacerlo: #."
+description: "C\xF3mo hacerlo: Java proporciona una forma sencilla de escribir en\
+  \ stderr utilizando `System.err.print()` o `System.err.println()`. As\xED es c\xF3\
+  mo se hace."
 lastmod: '2024-03-13T22:44:58.953704-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Java proporciona una forma sencilla de escribir en stderr utilizando `System.err.print()`
+  o `System.err.println()`.
 title: "Escribiendo en el error est\xE1ndar"
 weight: 25
 ---

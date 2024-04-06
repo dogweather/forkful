@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:22.443214-07:00
-description: 'Hvordan: #.'
+description: "Hvordan: PHPs innebygde `date()`-funksjon er den mest direkte m\xE5\
+  ten \xE5 f\xE5 tak i den gjeldende datoen. Du kan formatere datoen p\xE5 forskjellige\
+  \ m\xE5ter ved \xE5\u2026"
 lastmod: '2024-03-13T22:44:40.896999-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "PHPs innebygde `date()`-funksjon er den mest direkte m\xE5ten \xE5 f\xE5\
+  \ tak i den gjeldende datoen."
 title: "F\xE5 dagens dato"
 weight: 29
 ---

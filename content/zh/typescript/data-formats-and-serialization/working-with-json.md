@@ -2,10 +2,16 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:29.242325-07:00
-description: "\u5982\u4F55\u64CD\u4F5C\uFF1A #."
+description: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u8981\u5C06 JSON \u5B57\u7B26\u4E32\u8F6C\
+  \u6362\u4E3A TypeScript \u5BF9\u8C61\uFF0C\u60A8\u4F7F\u7528 `JSON.parse()` \u65B9\
+  \u6CD5\u3002\u8FD9\u5728\u4ECE Web \u670D\u52A1\u5668\u63A5\u6536 JSON \u6570\u636E\
+  \u6216\u8BFB\u53D6 JSON \u6587\u4EF6\u65F6\u5F88\u6709\u7528\u3002"
 lastmod: '2024-03-13T22:44:47.496667-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "\u8981\u5C06 JSON \u5B57\u7B26\u4E32\u8F6C\u6362\u4E3A TypeScript \u5BF9\
+  \u8C61\uFF0C\u60A8\u4F7F\u7528 `JSON.parse()` \u65B9\u6CD5\u3002\u8FD9\u5728\u4ECE\
+  \ Web \u670D\u52A1\u5668\u63A5\u6536 JSON \u6570\u636E\u6216\u8BFB\u53D6 JSON \u6587\
+  \u4EF6\u65F6\u5F88\u6709\u7528."
 title: "\u4F7F\u7528JSON\u8FDB\u884C\u7F16\u7A0B"
 weight: 38
 ---

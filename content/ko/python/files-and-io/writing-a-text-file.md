@@ -2,10 +2,17 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:14.392285-07:00
-description: "\uBC29\uBC95: #."
+description: "\uBC29\uBC95: Python\uC758 \uB0B4\uC7A5 `open()` \uD568\uC218\uB294\
+  \ \uD30C\uC77C\uC5D0 \uC4F0\uB294 \uAC00\uC7A5 \uC77C\uBC18\uC801\uC778 \uBC29\uBC95\
+  \uC785\uB2C8\uB2E4. \uC774 \uD568\uC218\uB294 \uD30C\uC77C\uC744 \uC5F4 \uB54C \uC9C0\
+  \uC815\uD558\uB294 \uBAA8\uB4DC - 'w'\uB294 \uC4F0\uAE30(\uB36E\uC5B4\uC4F0\uAE30\
+  ), 'a'\uB294 \uCD94\uAC00, \uADF8\uB9AC\uACE0 'w+'\uB294 \uC4F0\uAE30+\uC77D\uAE30\
+  \uC785\uB2C8\uB2E4."
 lastmod: '2024-03-13T22:44:54.625939-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Python\uC758 \uB0B4\uC7A5 `open()` \uD568\uC218\uB294 \uD30C\uC77C\uC5D0\
+  \ \uC4F0\uB294 \uAC00\uC7A5 \uC77C\uBC18\uC801\uC778 \uBC29\uBC95\uC785\uB2C8\uB2E4\
+  ."
 title: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC4F0\uAE30"
 weight: 24
 ---

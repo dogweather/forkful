@@ -2,10 +2,14 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:35.718335-07:00
-description: 'Come fare: #.'
+description: "Come fare: In Dart, si definisce una funzione utilizzando la parola\
+  \ chiave `void` se questa non restituisce un valore, oppure si specifica il tipo\
+  \ di\u2026"
 lastmod: '2024-03-13T22:44:43.136979-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: In Dart, si definisce una funzione utilizzando la parola chiave `void` se
+  questa non restituisce un valore, oppure si specifica il tipo di valore che restituisce
+  altrimenti.
 title: Organizzare il codice in funzioni
 weight: 18
 ---

@@ -1,9 +1,10 @@
 ---
 date: 2024-03-08 21:33:42.632352-07:00
-description: 'How to: #.'
+description: "How to: **1. Setting Breakpoints:** To set a breakpoint, simply click\
+  \ on the left margin of the code line in your IDE (e.g., Visual Studio Code or Android\u2026"
 lastmod: '2024-03-13T22:44:59.824815-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: ''
 title: Using a debugger
 weight: 35
 ---

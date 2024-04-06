@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:33.434011-07:00
-description: "\uC0AC\uC6A9 \uBC29\uBC95: #."
+description: "\uC0AC\uC6A9 \uBC29\uBC95: JSON \uBB38\uC790\uC5F4\uC744 JavaScript\
+  \ \uAC1D\uCCB4\uB85C \uBCC0\uD658\uD558\uB824\uBA74 `JSON.parse()`\uB97C \uC0AC\uC6A9\
+  \uD558\uC138\uC694."
 lastmod: '2024-03-13T22:44:55.822376-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "JSON \uBB38\uC790\uC5F4\uC744 JavaScript \uAC1D\uCCB4\uB85C \uBCC0\uD658\
+  \uD558\uB824\uBA74 `JSON.parse()`\uB97C \uC0AC\uC6A9\uD558\uC138\uC694."
 title: "JSON\uACFC \uD568\uAED8 \uC77C\uD558\uAE30"
 weight: 38
 ---

@@ -3,7 +3,7 @@ changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:08:14.987121-07:00
 description: "Hvordan: Python gir innebygde m\xE5ter \xE5 sjekke for en katalogs eksistens\
-  \ ved hjelp av `os` og `pathlib` modulene. Her er eksempler for begge: #."
+  \ ved hjelp av `os` og `pathlib` modulene. Her er eksempler for begge."
 lastmod: '2024-03-13T22:44:40.375652-06:00'
 model: gpt-4-0125-preview
 summary: "Python gir innebygde m\xE5ter \xE5 sjekke for en katalogs eksistens ved\

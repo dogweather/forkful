@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:23.588643-07:00
-description: 'Kuinka: #.'
+description: "Kuinka: Tarkistaaksesi vastaako merkkijono tietty\xE4 mallia Kotlinissa,\
+  \ voit k\xE4ytt\xE4\xE4 `Regex`-luokan `matches`-metodia."
 lastmod: '2024-03-13T22:44:56.520852-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Tarkistaaksesi vastaako merkkijono tietty\xE4 mallia Kotlinissa, voit k\xE4\
+  ytt\xE4\xE4 `Regex`-luokan `matches`-metodia."
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---

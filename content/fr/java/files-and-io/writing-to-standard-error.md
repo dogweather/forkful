@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:38.923033-07:00
-description: 'Comment faire : #.'
+description: "Comment faire : Java fournit une mani\xE8re simple d'\xE9crire sur stderr\
+  \ en utilisant `System.err.print()` ou `System.err.println()`. Voici comment vous\
+  \ le\u2026"
 lastmod: '2024-03-13T22:44:57.660169-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Java fournit une mani\xE8re simple d'\xE9crire sur stderr en utilisant `System.err.print()`\
+  \ ou `System.err.println()`."
 title: "\xC9crire sur l'erreur standard"
 weight: 25
 ---

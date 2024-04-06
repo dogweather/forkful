@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:17.278123-07:00
-description: 'Comment faire : #.'
+description: "Comment faire : L\u2019interop\xE9rabilit\xE9 fluide de Clojure avec\
+  \ Java vous permet d\u2019acc\xE9der directement \xE0 l\u2019API Java Date-Time.\
+  \ Voici comment obtenir la date\u2026"
 lastmod: '2024-03-13T22:44:57.293154-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "L\u2019interop\xE9rabilit\xE9 fluide de Clojure avec Java vous permet d\u2019\
+  acc\xE9der directement \xE0 l\u2019API Java Date-Time."
 title: Obtenir la date actuelle
 weight: 29
 ---

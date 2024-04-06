@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:53.964526-07:00
-description: 'Comment faire : #.'
+description: "Comment faire : L'une des biblioth\xE8ques tierces les plus populaires\
+  \ pour \xE9crire des tests en C++ est Google Test. Tout d'abord, vous devrez installer\u2026"
 lastmod: '2024-03-13T22:44:58.165771-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "L'une des biblioth\xE8ques tierces les plus populaires pour \xE9crire des\
+  \ tests en C++ est Google Test."
 title: "R\xE9daction de tests"
 weight: 36
 ---

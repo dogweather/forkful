@@ -2,10 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:20.536942-07:00
-description: 'Hvordan: #.'
+description: "Hvordan: F\xF8r refaktorering, kan du ha et stykke kode som blander\
+  \ ulike niv\xE5er av abstraksjon eller ansvar, som \xE5 beregne en rabatt og deretter\
+  \ anvende den."
 lastmod: '2024-03-13T22:44:40.496455-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: ''
 title: Refaktorering
 weight: 19
 ---

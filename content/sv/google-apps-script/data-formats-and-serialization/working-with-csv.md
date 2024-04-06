@@ -2,10 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:23.713105-07:00
-description: "Hur man g\xF6r: #."
+description: "Hur man g\xF6r: F\xF6r att l\xE4sa CSV-data fr\xE5n en fil som \xE4\
+  r lagrad i Google Drive, beh\xF6ver du f\xF6rst h\xE4mta filens inneh\xE5ll som\
+  \ en str\xE4ng f\xF6r att sedan tolka det.\u2026"
 lastmod: '2024-03-13T22:44:37.463272-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "F\xF6r att l\xE4sa CSV-data fr\xE5n en fil som \xE4r lagrad i Google Drive,\
+  \ beh\xF6ver du f\xF6rst h\xE4mta filens inneh\xE5ll som en str\xE4ng f\xF6r att\
+  \ sedan tolka det."
 title: Att Arbeta med CSV
 weight: 37
 ---

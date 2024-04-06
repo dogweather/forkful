@@ -2,10 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:14.007126-07:00
-description: 'Hoe te: #.'
+description: "Hoe te: Dart biedt eenvoudige, directe methoden voor stringmanipulatie.\
+  \ Om een woord of een zin te kapitaliseren, neem je doorgaans het eerste karakter,\u2026"
 lastmod: '2024-03-13T22:44:50.487062-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Dart biedt eenvoudige, directe methoden voor stringmanipulatie.
 title: Een string met hoofdletters
 weight: 2
 ---

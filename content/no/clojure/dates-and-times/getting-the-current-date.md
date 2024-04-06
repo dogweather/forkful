@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:16.363112-07:00
-description: 'Hvordan: #.'
+description: "Hvordan: Clojures s\xF8ml\xF8se interoperabilitet med Java lar deg tappe\
+  \ direkte inn i Java Date-Time API-et. Slik kan du f\xE5 den n\xE5v\xE6rende datoen."
 lastmod: '2024-03-13T22:44:40.412405-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Clojures s\xF8ml\xF8se interoperabilitet med Java lar deg tappe direkte\
+  \ inn i Java Date-Time API-et."
 title: "F\xE5 dagens dato"
 weight: 29
 ---

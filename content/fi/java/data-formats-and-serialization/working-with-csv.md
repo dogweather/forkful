@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:28.500154-07:00
-description: 'Kuinka: #.'
+description: "Kuinka: Java ei tue CSV:t\xE4 sis\xE4\xE4nrakennetusti sen vakio-kirjastossa,\
+  \ mutta voit helposti lukea CSV-tiedoston k\xE4ytt\xE4m\xE4ll\xE4 `java.io` luokkia."
 lastmod: '2024-03-13T22:44:56.468113-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Java ei tue CSV:t\xE4 sis\xE4\xE4nrakennetusti sen vakio-kirjastossa, mutta\
+  \ voit helposti lukea CSV-tiedoston k\xE4ytt\xE4m\xE4ll\xE4 `java.io` luokkia."
 title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---

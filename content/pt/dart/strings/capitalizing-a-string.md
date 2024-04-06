@@ -2,10 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:53:52.918660-07:00
-description: 'Como Fazer: #.'
+description: "Como Fazer: O Dart fornece m\xE9todos simples e diretos para manipula\xE7\
+  \xE3o de strings. Para colocar uma palavra ou uma frase em mai\xFAscula, voc\xEA\
+  \ normalmente\u2026"
 lastmod: '2024-03-13T22:44:46.263178-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "O Dart fornece m\xE9todos simples e diretos para manipula\xE7\xE3o de strings."
 title: Capitalizando uma string
 weight: 2
 ---

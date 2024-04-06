@@ -3,7 +3,7 @@ changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:05:56.243136-07:00
 description: 'Come fare: PHP supporta nativamente diverse funzioni per capitalizzare
-  le stringhe, ognuna con uno scopo differente. Ecco come puoi utilizzarle: #.'
+  le stringhe, ognuna con uno scopo differente. Ecco come puoi utilizzarle.'
 lastmod: '2024-03-13T22:44:43.500667-06:00'
 model: gpt-4-0125-preview
 summary: PHP supporta nativamente diverse funzioni per capitalizzare le stringhe,

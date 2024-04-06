@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:27:35.103797-07:00
-description: 'Hvordan: #.'
+description: "Hvordan: `spit`-funksjonen er den enkleste m\xE5ten \xE5 skrive tekst\
+  \ til en fil i Clojure. Den tar to argumenter: filstien og strengen som skal skrives.\
+  \ Hvis\u2026"
 lastmod: '2024-03-13T22:44:40.419858-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "`spit`-funksjonen er den enkleste m\xE5ten \xE5 skrive tekst til en fil\
+  \ i Clojure."
 title: Skrive en tekstfil
 weight: 24
 ---

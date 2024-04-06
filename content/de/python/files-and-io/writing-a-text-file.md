@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:02.048691-07:00
-description: 'Wie geht das: #.'
+description: "Wie geht das: Die integrierte `open()` Funktion von Python ist die gebr\xE4\
+  uchlichste Methode, um in Dateien zu schreiben. Die Funktion erm\xF6glicht die Angabe\u2026"
 lastmod: '2024-03-13T22:44:53.396952-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Die integrierte `open()` Funktion von Python ist die gebr\xE4uchlichste\
+  \ Methode, um in Dateien zu schreiben."
 title: Eine Textdatei schreiben
 weight: 24
 ---

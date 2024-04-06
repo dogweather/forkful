@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:14.242754-07:00
-description: 'Hvordan: #.'
+description: "Hvordan: Jest er et popul\xE6rt testrammeverk som gir et vennlig API\
+  \ for \xE5 skrive enhetstester i JavaScript. Det krever minimal konfigurasjon og\
+  \ kommer med\u2026"
 lastmod: '2024-03-13T22:44:41.187066-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Jest er et popul\xE6rt testrammeverk som gir et vennlig API for \xE5 skrive\
+  \ enhetstester i JavaScript."
 title: Skrive tester
 weight: 36
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:56:27.568862-07:00
-description: 'How to: `.'
+description: "How to: `## Kuinka:` PHP:n komentoriviskripteiss\xE4 argumentteja luetaan\
+  \ `$argv` muuttujasta, joka on osa jokaista skripti\xE4. Ole kliffa ja tsekkaa n\xE4\
+  m\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.671430-06:00'
 model: gpt-4-1106-preview
-summary: '`.'
+summary: "`## Kuinka:`\n\nPHP:n komentoriviskripteiss\xE4 argumentteja luetaan `$argv`\
+  \ muuttujasta, joka on osa jokaista skripti\xE4."
 title: Komennoriviparametrien lukeminen
 weight: 23
 ---

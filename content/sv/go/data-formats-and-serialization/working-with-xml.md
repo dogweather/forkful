@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:15.274995-07:00
-description: "Hur man g\xF6r: #."
+description: "Hur man g\xF6r: F\xF6r att tolka XML i Go anv\xE4nder du paketet `encoding/xml`.\
+  \ Detta paket tillhandah\xE5ller n\xF6dv\xE4ndiga verktyg f\xF6r att avkoda (tolka)\
+  \ XML till Go-\u2026"
 lastmod: '2024-03-13T22:44:37.418348-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "F\xF6r att tolka XML i Go anv\xE4nder du paketet `encoding/xml`."
 title: Att arbeta med XML
 weight: 40
 ---

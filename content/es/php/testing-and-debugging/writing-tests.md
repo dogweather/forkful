@@ -2,10 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:17.430741-07:00
-description: "C\xF3mo hacerlo: #."
+description: "C\xF3mo hacerlo: Una herramienta ampliamente utilizada para pruebas\
+  \ en PHP es PHPUnit. Inst\xE1lalo v\xEDa Composer."
 lastmod: '2024-03-13T22:44:59.164353-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Una herramienta ampliamente utilizada para pruebas en PHP es PHPUnit.
 title: Escribiendo pruebas
 weight: 36
 ---

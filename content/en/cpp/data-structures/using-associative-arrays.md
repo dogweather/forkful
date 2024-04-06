@@ -1,7 +1,7 @@
 ---
 date: 2024-01-30 18:57:27.463113-07:00
-description: 'How to: In C++, associative arrays come to life with the `<map>` and
-  `<unordered_map>` headers. Let''s break into examples to see both in action. #.'
+description: "How to: In C++, associative arrays come to life with the `<map>` and\
+  \ `<unordered_map>` headers. Let's break into examples to see both in action.\u2026"
 lastmod: '2024-03-13T22:45:00.351368-06:00'
 model: gpt-4-0125-preview
 summary: In C++, associative arrays come to life with the `<map>` and `<unordered_map>`

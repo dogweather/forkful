@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:56.442243-07:00
-description: 'Comment faire : #.'
+description: "Comment faire : La fonction int\xE9gr\xE9e `open()` de Python est le\
+  \ moyen le plus courant d'\xE9crire dans des fichiers. La fonction permet de sp\xE9\
+  cifier le mode\u2026"
 lastmod: '2024-03-13T22:44:57.256234-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "La fonction int\xE9gr\xE9e `open()` de Python est le moyen le plus courant\
+  \ d'\xE9crire dans des fichiers."
 title: "R\xE9diger un fichier texte"
 weight: 24
 ---

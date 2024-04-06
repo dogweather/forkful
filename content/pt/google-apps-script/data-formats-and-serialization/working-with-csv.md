@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:22.348840-07:00
-description: 'Como fazer: #.'
+description: "Como fazer: Para ler dados CSV de um arquivo armazenado no Google Drive,\
+  \ voc\xEA precisa primeiro obter o conte\xFAdo do arquivo como uma string, depois\u2026"
 lastmod: '2024-03-13T22:44:46.133526-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Para ler dados CSV de um arquivo armazenado no Google Drive, voc\xEA precisa\
+  \ primeiro obter o conte\xFAdo do arquivo como uma string, depois analis\xE1-lo."
 title: Trabalhando com CSV
 weight: 37
 ---

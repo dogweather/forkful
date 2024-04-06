@@ -1,9 +1,11 @@
 ---
 date: 2024-02-03 19:02:39.616171-07:00
-description: 'How to: #.'
+description: "How to: PHP's built-in `date()` function is the most direct way to get\
+  \ the current date. You can format the date in various ways by specifying the format\u2026"
 lastmod: '2024-03-13T22:45:00.176473-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: PHP's built-in `date()` function is the most direct way to get the current
+  date.
 title: Getting the current date
 weight: 29
 ---

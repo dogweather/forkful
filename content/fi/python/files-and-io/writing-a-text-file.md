@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:10.979143-07:00
-description: 'Kuinka: #.'
+description: "Kuinka: Pythonin sis\xE4\xE4nrakennettu `open()` -funktio on yleisin\
+  \ tapa kirjoittaa tiedostoihin. Funktio mahdollistaa tiedoston avaamistilan m\xE4\
+  \xE4ritt\xE4misen -\u2026"
 lastmod: '2024-03-13T22:44:56.161881-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Pythonin sis\xE4\xE4nrakennettu `open()` -funktio on yleisin tapa kirjoittaa\
+  \ tiedostoihin."
 title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---

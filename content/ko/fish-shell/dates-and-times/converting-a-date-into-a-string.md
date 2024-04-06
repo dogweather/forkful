@@ -2,7 +2,7 @@
 date: 2024-01-20 17:36:41.924981-07:00
 description: "How to: (\uBC29\uBC95) Fish \uC258\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uBB38\
   \uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uB294 \uB450 \uAC00\uC9C0 \uBC29\uBC95\uC744\
-  \ \uBCF4\uC5EC\uB4DC\uB9AC\uACA0\uC2B5\uB2C8\uB2E4. #."
+  \ \uBCF4\uC5EC\uB4DC\uB9AC\uACA0\uC2B5\uB2C8\uB2E4."
 isCJKLanguage: true
 lastmod: '2024-03-13T22:44:55.872677-06:00'
 model: gpt-4-1106-preview

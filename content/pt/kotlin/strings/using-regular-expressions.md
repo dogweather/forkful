@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:32.989217-07:00
-description: 'Como Fazer: #.'
+description: "Como Fazer: Para verificar se uma string corresponde a um padr\xE3o\
+  \ espec\xEDfico em Kotlin, voc\xEA pode usar o m\xE9todo `matches` da classe `Regex`."
 lastmod: '2024-03-13T22:44:46.531453-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Para verificar se uma string corresponde a um padr\xE3o espec\xEDfico em\
+  \ Kotlin, voc\xEA pode usar o m\xE9todo `matches` da classe `Regex`."
 title: "Usando express\xF5es regulares"
 weight: 11
 ---

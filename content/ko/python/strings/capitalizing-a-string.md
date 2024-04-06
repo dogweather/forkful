@@ -3,10 +3,12 @@ changelog:
 - 2024-04-04, dogweather, edited
 - 2024-04-04, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:02:34.962078-07:00
-description: "\uC5B4\uB5BB\uAC8C \uD558\uB098: #."
+description: "\uC5B4\uB5BB\uAC8C \uD558\uB098: \uD30C\uC774\uC36C\uC740 \uBB38\uC790\
+  \uC5F4\uC744 \uC27D\uAC8C \uCC98\uB9AC\uD560 \uC218 \uC788\uB294 `.capitalize()`\uB77C\
+  \uB294 \uB0B4\uC7A5 \uBA54\uC18C\uB4DC\uAC00 \uC788\uC2B5\uB2C8\uB2E4."
 lastmod: '2024-04-04T00:26:59.395145-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: ''
 title: "\uBB38\uC790\uC5F4 \uB300\uBB38\uC790\uD654"
 weight: 2
 ---

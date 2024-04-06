@@ -2,10 +2,16 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:31.430929-07:00
-description: "\uBC29\uBC95: #."
+description: "\uBC29\uBC95: PHP\uC758 \uB0B4\uC7A5\uB41C `date()` \uD568\uC218\uB294\
+  \ \uD604\uC7AC \uB0A0\uC9DC\uB97C \uC5BB\uB294 \uAC00\uC7A5 \uC9C1\uC811\uC801\uC778\
+  \ \uBC29\uBC95\uC785\uB2C8\uB2E4. \uD615\uC2DD \uB9E4\uAC1C\uBCC0\uC218\uB97C \uC9C0\
+  \uC815\uD558\uC5EC \uB2E4\uC591\uD55C \uBC29\uC2DD\uC73C\uB85C \uB0A0\uC9DC\uB97C\
+  \ \uD615\uC2DD\uD654\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
 lastmod: '2024-03-13T22:44:55.372763-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "PHP\uC758 \uB0B4\uC7A5\uB41C `date()` \uD568\uC218\uB294 \uD604\uC7AC \uB0A0\
+  \uC9DC\uB97C \uC5BB\uB294 \uAC00\uC7A5 \uC9C1\uC811\uC801\uC778 \uBC29\uBC95\uC785\
+  \uB2C8\uB2E4."
 title: "\uD604\uC7AC \uB0A0\uC9DC \uAC00\uC838\uC624\uAE30"
 weight: 29
 ---

@@ -2,10 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:07.612132-07:00
-description: 'Comment : #.'
+description: "Comment : C# fournit l'espace de noms `System.IO` qui contient la classe\
+  \ `Directory`, offrant une mani\xE8re directe de v\xE9rifier l'existence d'un r\xE9\
+  pertoire\u2026"
 lastmod: '2024-03-13T22:44:57.803356-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "C# fournit l'espace de noms `System.IO` qui contient la classe `Directory`,\
+  \ offrant une mani\xE8re directe de v\xE9rifier l'existence d'un r\xE9pertoire gr\xE2\
+  ce \xE0 la m\xE9thode `Exists`."
 title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---

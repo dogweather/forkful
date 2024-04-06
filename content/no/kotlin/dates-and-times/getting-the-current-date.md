@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:18.788450-07:00
-description: 'Hvordan: #.'
+description: "Hvordan: Kotlin har ikke sitt eget dato- og klokkeslett-API, men stoler\
+  \ p\xE5 Java Standard Library for denne funksjonaliteten. Slik kan du f\xE5 tak\
+  \ i dagens\u2026"
 lastmod: '2024-03-13T22:44:40.761165-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Kotlin har ikke sitt eget dato- og klokkeslett-API, men stoler p\xE5 Java\
+  \ Standard Library for denne funksjonaliteten."
 title: "F\xE5 dagens dato"
 weight: 29
 ---

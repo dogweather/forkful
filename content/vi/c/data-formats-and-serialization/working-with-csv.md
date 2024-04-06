@@ -2,10 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:12:11.034955-07:00
-description: "L\xE0m th\u1EBF n\xE0o: #."
+description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EC3 \u0111\u1ECDc m\u1ED9t t\u1EC7\
+  p CSV trong C, ch\xFAng ta s\u1EED d\u1EE5ng c\xE1c h\xE0m I/O t\u1EC7p ti\xEAu\
+  \ chu\u1EA9n c\xF9ng v\u1EDBi c\xE1c h\xE0m x\u1EED l\xFD chu\u1ED7i \u0111\u1EC3\
+  \ ph\xE2n t\xEDch t\u1EEBng d\xF2ng. D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t\u2026"
 lastmod: '2024-03-13T22:44:37.297827-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "\u0110\u1EC3 \u0111\u1ECDc m\u1ED9t t\u1EC7p CSV trong C, ch\xFAng ta s\u1EED\
+  \ d\u1EE5ng c\xE1c h\xE0m I/O t\u1EC7p ti\xEAu chu\u1EA9n c\xF9ng v\u1EDBi c\xE1\
+  c h\xE0m x\u1EED l\xFD chu\u1ED7i \u0111\u1EC3 ph\xE2n t\xEDch t\u1EEBng d\xF2ng."
 title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 weight: 37
 ---

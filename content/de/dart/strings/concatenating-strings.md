@@ -3,7 +3,7 @@ changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:02.904634-07:00
 description: "Wie geht das: Dart bietet mehrere einfache Wege, um Strings zu verketten.\
-  \ Unten sind die g\xE4ngigsten Methoden: #."
+  \ Unten sind die g\xE4ngigsten Methoden: Der `+`-Operator ist die intuitivste\u2026"
 lastmod: '2024-03-13T22:44:53.571829-06:00'
 model: gpt-4-0125-preview
 summary: Dart bietet mehrere einfache Wege, um Strings zu verketten.

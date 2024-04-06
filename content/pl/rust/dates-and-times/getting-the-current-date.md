@@ -2,10 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:50.754375-07:00
-description: "Jak to zrobi\u0107: #."
+description: "Jak to zrobi\u0107: Biblioteka standardowa Rusta oferuje ograniczon\u0105\
+  , ale szybk\u0105 metod\u0119 uzyskania bie\u017C\u0105cego czasu, cho\u0107 nie\
+  \ bezpo\u015Brednio bie\u017C\u0105cej daty w\u2026"
 lastmod: '2024-03-13T22:44:35.196037-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Biblioteka standardowa Rusta oferuje ograniczon\u0105, ale szybk\u0105 metod\u0119\
+  \ uzyskania bie\u017C\u0105cego czasu, cho\u0107 nie bezpo\u015Brednio bie\u017C\
+  \u0105cej daty w formacie kalendarzowym."
 title: Pobieranie aktualnej daty
 weight: 29
 ---

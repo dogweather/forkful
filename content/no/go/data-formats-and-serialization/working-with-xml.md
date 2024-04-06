@@ -2,10 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:08.923417-07:00
-description: 'Hvordan: #.'
+description: "Hvordan: For \xE5 parse XML i Go, bruker du `encoding/xml`-pakken. Denne\
+  \ pakken gir de n\xF8dvendige verkt\xF8yene for \xE5 unmarshal (parse) XML til Go-strukturer.\u2026"
 lastmod: '2024-03-13T22:44:40.294554-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "For \xE5 parse XML i Go, bruker du `encoding/xml`-pakken."
 title: Arbeider med XML
 weight: 40
 ---

@@ -2,10 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:50.309025-07:00
-description: 'Como fazer: #.'
+description: "Como fazer: A biblioteca padr\xE3o do Rust oferece uma maneira limitada,\
+  \ mas r\xE1pida, de obter o hor\xE1rio atual, embora n\xE3o diretamente a data atual\
+  \ em um\u2026"
 lastmod: '2024-03-13T22:44:46.378096-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "A biblioteca padr\xE3o do Rust oferece uma maneira limitada, mas r\xE1pida,\
+  \ de obter o hor\xE1rio atual, embora n\xE3o diretamente a data atual em um formato\
+  \ calend\xE1rio."
 title: Obtendo a data atual
 weight: 29
 ---

@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 21:57:48.259364-07:00
 description: "L\xE0m th\u1EBF n\xE0o: Rust cung c\u1EA5p cho b\u1EA1n m\u1ED9t s\u1ED1\
   \ c\xE1ch \u0111\u1EC3 gh\xE9p c\xE1c v\u0103n b\u1EA3n l\u1EA1i v\u1EDBi nhau.\
-  \ H\xE3y c\xF9ng kh\xE1m ph\xE1. #."
+  \ H\xE3y c\xF9ng kh\xE1m ph\xE1."
 lastmod: '2024-03-13T22:44:36.364885-06:00'
 model: gpt-4-0125-preview
 summary: "Rust cung c\u1EA5p cho b\u1EA1n m\u1ED9t s\u1ED1 c\xE1ch \u0111\u1EC3 gh\xE9\

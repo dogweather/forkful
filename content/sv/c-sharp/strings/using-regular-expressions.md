@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:36.377958-07:00
-description: "Hur man g\xF6r: #."
+description: "Hur man g\xF6r: F\xF6r att kontrollera om en str\xE4ng inneh\xE5ller\
+  \ ett specifikt m\xF6nster kan du anv\xE4nda metoden `Regex.IsMatch` fr\xE5n namnrymden\u2026"
 lastmod: '2024-03-13T22:44:37.903085-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "F\xF6r att kontrollera om en str\xE4ng inneh\xE5ller ett specifikt m\xF6\
+  nster kan du anv\xE4nda metoden `Regex.IsMatch` fr\xE5n namnrymden `System.Text.RegularExpressions`."
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---

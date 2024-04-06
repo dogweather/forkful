@@ -1,9 +1,12 @@
 ---
 date: 2024-02-03 19:03:37.303108-07:00
-description: 'How to: #.'
+description: "How to: Jest is a popular testing framework that provides a friendly\
+  \ API for writing unit tests in JavaScript. It requires minimal configuration and\
+  \ comes\u2026"
 lastmod: '2024-03-13T22:45:00.436712-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Jest is a popular testing framework that provides a friendly API for writing
+  unit tests in JavaScript.
 title: Writing tests
 weight: 36
 ---

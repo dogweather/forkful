@@ -1,9 +1,12 @@
 ---
 date: 2024-01-27 20:34:12.340976-07:00
-description: "Jak to zrobi\u0107: #."
+description: "Jak to zrobi\u0107: Najprostszym sposobem na wygenerowanie losowej liczby\
+  \ w JavaScript jest u\u017Cycie `Math.random()`. Funkcja ta zwraca zmiennoprzecinkow\u0105\
+  ,\u2026"
 lastmod: '2024-03-13T22:44:35.792316-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Najprostszym sposobem na wygenerowanie losowej liczby w JavaScript jest\
+  \ u\u017Cycie `Math.random()`."
 title: Generowanie liczb losowych
 weight: 12
 ---

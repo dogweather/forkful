@@ -1,9 +1,11 @@
 ---
 date: 2024-02-03 19:02:56.530577-07:00
-description: 'How to: #.'
+description: 'How to: Clojure''s seamless interoperability with Java allows you to
+  tap into the Java Date-Time API directly. Here''s how you can get the current date.'
 lastmod: '2024-03-13T22:44:59.755034-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Clojure's seamless interoperability with Java allows you to tap into the
+  Java Date-Time API directly.
 title: Getting the current date
 weight: 29
 ---

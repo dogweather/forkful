@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:06:00.346637-07:00
 description: "Jak to zrobi\u0107: PHP natywnie obs\u0142uguje r\xF3\u017Cne funkcje\
   \ do kapitalizacji ci\u0105g\xF3w znak\xF3w, z kt\xF3rych ka\u017Cda s\u0142u\u017C\
-  y innemu celowi. Oto jak mo\u017Cesz ich u\u017Cywa\u0107: #."
+  y innemu celowi. Oto jak mo\u017Cesz ich u\u017Cywa\u0107."
 lastmod: '2024-03-13T22:44:35.479304-06:00'
 model: gpt-4-0125-preview
 summary: "PHP natywnie obs\u0142uguje r\xF3\u017Cne funkcje do kapitalizacji ci\u0105\

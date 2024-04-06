@@ -1,7 +1,8 @@
 ---
 date: 2024-01-27 20:34:50.289217-07:00
 description: "Wie zu: Ruby bietet mehrere Methoden zum Generieren von Zufallszahlen,\
-  \ haupts\xE4chlich \xFCber die `Random`-Klasse. #."
+  \ haupts\xE4chlich \xFCber die `Random`-Klasse. Um eine einfache Zufallszahl zu\
+  \ generieren."
 lastmod: '2024-03-13T22:44:54.394161-06:00'
 model: gpt-4-0125-preview
 summary: "Ruby bietet mehrere Methoden zum Generieren von Zufallszahlen, haupts\xE4\

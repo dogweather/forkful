@@ -1,9 +1,11 @@
 ---
 date: 2024-02-03 19:02:48.376116-07:00
-description: 'How to: #.'
+description: "How to: To find if a string matches a pattern, you can use `grep`, a\
+  \ command-line utility for searching plain-text data sets for lines that match a\u2026"
 lastmod: '2024-03-13T22:45:00.234108-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: To find if a string matches a pattern, you can use `grep`, a command-line
+  utility for searching plain-text data sets for lines that match a regular expression.
 title: Using regular expressions
 weight: 11
 ---

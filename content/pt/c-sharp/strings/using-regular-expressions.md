@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:25.293542-07:00
-description: 'Como fazer: #.'
+description: "Como fazer: Para verificar se uma string cont\xE9m um padr\xE3o espec\xED\
+  fico, voc\xEA pode usar o m\xE9todo `Regex.IsMatch` do namespace\u2026"
 lastmod: '2024-03-13T22:44:46.574244-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Para verificar se uma string cont\xE9m um padr\xE3o espec\xEDfico, voc\xEA\
+  \ pode usar o m\xE9todo `Regex.IsMatch` do namespace `System.Text.RegularExpressions`."
 title: "Usando express\xF5es regulares"
 weight: 11
 ---

@@ -2,10 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:42.696159-07:00
-description: "C\xE1ch th\u1EF1c hi\u1EC7n: #."
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: H\xE3y b\u1EAFt \u0111\u1EA7u v\u1EDBi\
+  \ m\u1ED9t nhi\u1EC7m v\u1EE5 \u0111\u01A1n gi\u1EA3n: b\u1EA1n mu\u1ED1n thay th\u1EBF\
+  \ t\u1EA5t c\u1EA3 c\xE1c tr\u01B0\u1EDDng h\u1EE3p c\u1EE7a \"oldtext\" b\u1EB1\
+  ng \"newtext\" trong m\u1ED9t t\u1EC7p c\xF3 t\xEAn l\xE0\u2026"
 lastmod: '2024-03-13T22:44:36.930664-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "H\xE3y b\u1EAFt \u0111\u1EA7u v\u1EDBi m\u1ED9t nhi\u1EC7m v\u1EE5 \u0111\
+  \u01A1n gi\u1EA3n."
 title: "Ch\u1EC9nh s\u1EEDa file t\u1EA1i ch\u1ED7 v\u1EDBi c\xE2u l\u1EC7nh CLI ng\u1EAF\
   n g\u1ECDn"
 weight: 32

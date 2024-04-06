@@ -2,10 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:10.662043-07:00
-description: 'Hoe: #.'
+description: "Hoe: Om XML in Go te parsen, gebruik je het `encoding/xml` pakket. Dit\
+  \ pakket biedt de nodige hulpmiddelen om XML naar Go structs te unmarshalen (parsen).\u2026"
 lastmod: '2024-03-13T22:44:50.312241-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Om XML in Go te parsen, gebruik je het `encoding/xml` pakket.
 title: Werken met XML
 weight: 40
 ---

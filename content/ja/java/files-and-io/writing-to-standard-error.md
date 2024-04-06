@@ -2,10 +2,16 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:50.035744-07:00
-description: "\u65B9\u6CD5: #."
+description: "\u65B9\u6CD5: Java\u3067\u306F\u3001`System.err.print()`\u307E\u305F\
+  \u306F`System.err.println()`\u3092\u4F7F\u7528\u3057\u3066stderr\u306B\u66F8\u304D\
+  \u8FBC\u3080\u7C21\u5358\u306A\u65B9\u6CD5\u3092\u63D0\u4F9B\u3057\u3066\u3044\u307E\
+  \u3059\u3002\u4EE5\u4E0B\u304C\u305D\u306E\u65B9\u6CD5\u3067\u3059\uFF1A."
 lastmod: '2024-03-13T22:44:41.971570-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Java\u3067\u306F\u3001`System.err.print()`\u307E\u305F\u306F`System.err.println()`\u3092\
+  \u4F7F\u7528\u3057\u3066stderr\u306B\u66F8\u304D\u8FBC\u3080\u7C21\u5358\u306A\u65B9\
+  \u6CD5\u3092\u63D0\u4F9B\u3057\u3066\u3044\u307E\u3059\u3002\u4EE5\u4E0B\u304C\u305D\
+  \u306E\u65B9\u6CD5\u3067\u3059\uFF1A."
 title: "\u6A19\u6E96\u30A8\u30E9\u30FC\u3078\u306E\u66F8\u304D\u8FBC\u307F"
 weight: 25
 ---

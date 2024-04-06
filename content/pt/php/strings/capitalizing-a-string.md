@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:05:55.318998-07:00
 description: "Como fazer: O PHP suporta nativamente v\xE1rias fun\xE7\xF5es para capitalizar\
   \ strings, cada uma servindo a um prop\xF3sito diferente. Veja como voc\xEA pode\
-  \ us\xE1-las: #."
+  \ us\xE1-las."
 lastmod: '2024-03-13T22:44:46.650573-06:00'
 model: gpt-4-0125-preview
 summary: "O PHP suporta nativamente v\xE1rias fun\xE7\xF5es para capitalizar strings,\

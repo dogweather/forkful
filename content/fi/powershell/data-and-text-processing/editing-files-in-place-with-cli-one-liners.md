@@ -1,9 +1,11 @@
 ---
 date: 2024-01-27 16:20:56.096811-07:00
-description: "Kuinka tehd\xE4: #."
+description: "Kuinka tehd\xE4: Aloitetaan yksinkertaisella teht\xE4v\xE4ll\xE4: haluat\
+  \ korvata kaikki \"oldtext\"-esiintym\xE4t \"newtext\"-tekstill\xE4 tiedostossa\
+  \ nimelt\xE4 example.txt. N\xE4in\u2026"
 lastmod: '2024-03-13T22:44:56.778256-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Aloitetaan yksinkertaisella teht\xE4v\xE4ll\xE4."
 title: "Tiedostojen muokkaaminen paikan p\xE4\xE4ll\xE4 komentorivin yhden rivin komennoilla"
 weight: 32
 ---

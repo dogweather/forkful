@@ -2,10 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:15.268075-07:00
-description: "C\xE1ch th\u1EE9c: #."
+description: "C\xE1ch th\u1EE9c: C\xE1ch \u0111\u01A1n gi\u1EA3n nh\u1EA5t \u0111\u1EC3\
+  \ t\u1EA1o m\u1ED9t s\u1ED1 ng\u1EABu nhi\xEAn trong JavaScript l\xE0 s\u1EED d\u1EE5\
+  ng `Math.random()`. H\xE0m n\xE0y tr\u1EA3 v\u1EC1 m\u1ED9t s\u1ED1 th\u1EF1c n\u1ED5\
+  i, s\u1ED1 ng\u1EABu nhi\xEAn gi\u1EA3 m\u1EA1o\u2026"
 lastmod: '2024-03-13T22:44:37.147824-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "C\xE1ch \u0111\u01A1n gi\u1EA3n nh\u1EA5t \u0111\u1EC3 t\u1EA1o m\u1ED9\
+  t s\u1ED1 ng\u1EABu nhi\xEAn trong JavaScript l\xE0 s\u1EED d\u1EE5ng `Math.random()`."
 title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 weight: 12
 ---

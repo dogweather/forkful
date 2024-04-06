@@ -1,7 +1,7 @@
 ---
 date: 2024-01-20 17:35:28.360233-07:00
 description: "How to: Rust gives you a few ways to piece texts together. Let\u2019\
-  s dig in. #."
+  s dig in."
 lastmod: '2024-03-13T22:44:59.888541-06:00'
 model: gpt-4-1106-preview
 summary: Rust gives you a few ways to piece texts together.

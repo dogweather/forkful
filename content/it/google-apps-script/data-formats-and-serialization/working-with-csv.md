@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:56.553234-07:00
-description: 'Come fare: #.'
+description: "Come fare: Per leggere dati CSV da un file memorizzato in Google Drive,\
+  \ \xE8 necessario prima ottenere il contenuto del file come stringa, poi analizzarlo.\u2026"
 lastmod: '2024-03-13T22:44:42.981275-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Per leggere dati CSV da un file memorizzato in Google Drive, \xE8 necessario\
+  \ prima ottenere il contenuto del file come stringa, poi analizzarlo."
 title: Lavorare con CSV
 weight: 37
 ---

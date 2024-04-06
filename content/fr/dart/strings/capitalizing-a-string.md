@@ -2,10 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:53:39.954536-07:00
-description: 'Comment faire : #.'
+description: "Comment faire : Dart fournit des m\xE9thodes simples et directes pour\
+  \ la manipulation des cha\xEEnes de caract\xE8res. Pour capitaliser un mot ou une\
+  \ phrase, vous\u2026"
 lastmod: '2024-03-13T22:44:57.355028-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Dart fournit des m\xE9thodes simples et directes pour la manipulation des\
+  \ cha\xEEnes de caract\xE8res."
 title: "Mettre une cha\xEEne de caract\xE8res en majuscules"
 weight: 2
 ---

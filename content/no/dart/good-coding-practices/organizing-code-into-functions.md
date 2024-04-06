@@ -2,10 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:12.234752-07:00
-description: 'Hvordan: #.'
+description: "Hvordan: I Dart definerer du en funksjon ved \xE5 bruke `void`-n\xF8\
+  kkelordet hvis den ikke returnerer en verdi, eller spesifiserer typen verdi den\
+  \ returnerer\u2026"
 lastmod: '2024-03-13T22:44:40.493307-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "I Dart definerer du en funksjon ved \xE5 bruke `void`-n\xF8kkelordet hvis\
+  \ den ikke returnerer en verdi, eller spesifiserer typen verdi den returnerer ellers."
 title: Organisering av kode i funksjoner
 weight: 18
 ---

@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:06:01.968609-07:00
 description: "Hur man g\xF6r: PHP st\xF6der medf\xF6tt olika funktioner f\xF6r att\
   \ versalisera str\xE4ngar, var och en tj\xE4nar ett olika syfte. H\xE4r \xE4r hur\
-  \ du kan anv\xE4nda dem: #."
+  \ du kan anv\xE4nda dem."
 lastmod: '2024-03-13T22:44:37.979971-06:00'
 model: gpt-4-0125-preview
 summary: "PHP st\xF6der medf\xF6tt olika funktioner f\xF6r att versalisera str\xE4\

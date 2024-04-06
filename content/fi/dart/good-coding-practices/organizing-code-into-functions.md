@@ -2,10 +2,14 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:13.438803-07:00
-description: 'Kuinka: #.'
+description: "Kuinka: Dartissa funktion m\xE4\xE4rittelee k\xE4ytt\xE4m\xE4ll\xE4\
+  \ `void` avainsanaa, jos se ei palauta arvoa, tai m\xE4\xE4rittelem\xE4ll\xE4 sen\
+  \ muutoin palautettavan arvon tyypin.\u2026"
 lastmod: '2024-03-13T22:44:56.276622-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Dartissa funktion m\xE4\xE4rittelee k\xE4ytt\xE4m\xE4ll\xE4 `void` avainsanaa,\
+  \ jos se ei palauta arvoa, tai m\xE4\xE4rittelem\xE4ll\xE4 sen muutoin palautettavan\
+  \ arvon tyypin."
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---

@@ -1,13 +1,14 @@
 ---
-date: 2024-02-03 19:02:34.962078-07:00
-description: 'How to: #.'
-lastmod: '2024-04-04'
-model: gpt-4-0125-preview
-summary: '#.'
-title: Capitalizing a string
-weight: 2
 changelog:
 - 2024-04-04, dogweather, edited
+date: 2024-02-03 19:02:34.962078-07:00
+description: 'How to: Python has a built-in method `.capitalize()` for strings to
+  accomplish this task easily.'
+lastmod: '2024-04-04'
+model: gpt-4-0125-preview
+summary: ''
+title: Capitalizing a string
+weight: 2
 ---
 
 ## How to:

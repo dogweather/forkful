@@ -2,10 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:37.721427-07:00
-description: "C\xF3mo hacerlo: #."
+description: "C\xF3mo hacerlo: En Dart, defines una funci\xF3n usando la palabra clave\
+  \ `void` si no devuelve un valor, o especificas el tipo de valor que devuelve de\
+  \ lo\u2026"
 lastmod: '2024-03-13T22:44:58.758013-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "En Dart, defines una funci\xF3n usando la palabra clave `void` si no devuelve\
+  \ un valor, o especificas el tipo de valor que devuelve de lo contrario."
 title: "Organizando el c\xF3digo en funciones"
 weight: 18
 ---

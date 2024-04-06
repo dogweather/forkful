@@ -2,10 +2,17 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:39.647709-07:00
-description: "\uC5B4\uB5BB\uAC8C \uC0AC\uC6A9\uD558\uB098\uC694? #."
+description: "\uC5B4\uB5BB\uAC8C \uC0AC\uC6A9\uD558\uB098\uC694? \uD2B9\uC815 \uD328\
+  \uD134\uC774 \uBB38\uC790\uC5F4\uC5D0 \uD3EC\uD568\uB418\uC5B4 \uC788\uB294\uC9C0\
+  \ \uD655\uC778\uD558\uB824\uBA74 `System.Text.RegularExpressions` \uB124\uC784\uC2A4\
+  \uD398\uC774\uC2A4\uC5D0\uC11C `Regex.IsMatch` \uBA54\uC11C\uB4DC\uB97C \uC0AC\uC6A9\
+  \uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
 lastmod: '2024-03-13T22:44:55.219372-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "\uD2B9\uC815 \uD328\uD134\uC774 \uBB38\uC790\uC5F4\uC5D0 \uD3EC\uD568\uB418\
+  \uC5B4 \uC788\uB294\uC9C0 \uD655\uC778\uD558\uB824\uBA74 `System.Text.RegularExpressions`\
+  \ \uB124\uC784\uC2A4\uD398\uC774\uC2A4\uC5D0\uC11C `Regex.IsMatch` \uBA54\uC11C\uB4DC\
+  \uB97C \uC0AC\uC6A9\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
 title: "\uC815\uADDC \uD45C\uD604\uC2DD \uC0AC\uC6A9\uD558\uAE30"
 weight: 11
 ---

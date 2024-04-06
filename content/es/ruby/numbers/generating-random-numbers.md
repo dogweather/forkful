@@ -1,7 +1,8 @@
 ---
 date: 2024-01-27 20:35:03.378023-07:00
 description: "C\xF3mo hacerlo: Ruby ofrece varios m\xE9todos para generar n\xFAmeros\
-  \ aleatorios, principalmente a trav\xE9s de la clase `Random`. #."
+  \ aleatorios, principalmente a trav\xE9s de la clase `Random`. Para generar un n\xFA\
+  mero aleatorio\u2026"
 lastmod: '2024-03-13T22:44:59.585605-06:00'
 model: gpt-4-0125-preview
 summary: "Ruby ofrece varios m\xE9todos para generar n\xFAmeros aleatorios, principalmente\

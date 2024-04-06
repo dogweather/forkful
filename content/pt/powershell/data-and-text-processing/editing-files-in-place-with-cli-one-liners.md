@@ -1,9 +1,10 @@
 ---
 date: 2024-01-27 16:20:40.576630-07:00
-description: 'Como fazer: #.'
+description: "Como fazer: Vamos come\xE7ar com uma tarefa simples: voc\xEA quer substituir\
+  \ todas as inst\xE2ncias de \"oldtext\" por \"newtext\" em um arquivo chamado example.txt.\u2026"
 lastmod: '2024-03-13T22:44:46.792955-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Vamos come\xE7ar com uma tarefa simples."
 title: Editando arquivos in loco com comandos de linha de comando
 weight: 32
 ---

@@ -2,10 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:12.335764-07:00
-description: 'Comment faire : #.'
+description: "Comment faire : Un outil largement utilis\xE9 pour les tests en PHP\
+  \ est PHPUnit. Installez-le via Composer ."
 lastmod: '2024-03-13T22:44:57.882433-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Un outil largement utilis\xE9 pour les tests en PHP est PHPUnit."
 title: "R\xE9daction de tests"
 weight: 36
 ---

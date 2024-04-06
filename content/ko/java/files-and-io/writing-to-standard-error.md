@@ -2,10 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:43.302533-07:00
-description: "\uC5B4\uB5BB\uAC8C: #."
+description: "\uC5B4\uB5BB\uAC8C: Java\uB294 `System.err.print()`\uB098 `System.err.println()`\uC744\
+  \ \uC0AC\uC6A9\uD558\uC5EC stderr\uC5D0 \uAE30\uB85D\uD558\uB294 \uAC04\uB2E8\uD55C\
+  \ \uBC29\uBC95\uC744 \uC81C\uACF5\uD569\uB2C8\uB2E4. \uB2E4\uC74C\uACFC \uAC19\uC774\
+  \ \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 lastmod: '2024-03-13T22:44:55.073384-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Java\uB294 `System.err.print()`\uB098 `System.err.println()`\uC744 \uC0AC\
+  \uC6A9\uD558\uC5EC stderr\uC5D0 \uAE30\uB85D\uD558\uB294 \uAC04\uB2E8\uD55C \uBC29\
+  \uBC95\uC744 \uC81C\uACF5\uD569\uB2C8\uB2E4."
 title: "\uD45C\uC900 \uC5D0\uB7EC\uC5D0 \uC4F0\uAE30"
 weight: 25
 ---

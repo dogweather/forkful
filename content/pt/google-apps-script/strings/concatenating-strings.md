@@ -3,8 +3,7 @@ changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:50:08.108299-07:00
 description: "Como fazer: No Google Apps Script, que \xE9 baseado em JavaScript, existem\
-  \ v\xE1rias maneiras de concatenar strings. Aqui est\xE3o alguns m\xE9todos comuns:\
-  \ #."
+  \ v\xE1rias maneiras de concatenar strings. Aqui est\xE3o alguns m\xE9todos comuns."
 lastmod: '2024-03-13T22:44:46.098398-06:00'
 model: gpt-4-0125-preview
 summary: "No Google Apps Script, que \xE9 baseado em JavaScript, existem v\xE1rias\

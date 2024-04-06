@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:21:17.368162-07:00
 description: "Jak to zrobi\u0107: Ruby domy\u015Blnie zawiera bibliotek\u0119 CSV,\
   \ kt\xF3ra upraszcza odczyt z i zapis do plik\xF3w CSV. Oto jak mo\u017Cesz to wykorzysta\u0107\
-  \ do typowych zada\u0144: #."
+  \ do typowych zada\u0144: Aby\u2026"
 lastmod: '2024-03-13T22:44:35.954651-06:00'
 model: gpt-4-0125-preview
 summary: "Ruby domy\u015Blnie zawiera bibliotek\u0119 CSV, kt\xF3ra upraszcza odczyt\

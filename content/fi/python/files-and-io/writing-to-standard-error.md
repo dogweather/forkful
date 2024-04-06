@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:29.743769-07:00
-description: 'Kuinka: #.'
+description: "Kuinka: Pythonin sis\xE4\xE4nrakennettu `sys`-moduuli mahdollistaa eksplisiittisen\
+  \ kirjoittamisen `stderr`-virtaan. T\xE4m\xE4 l\xE4hestymistapa on suoraviivainen\u2026"
 lastmod: '2024-03-13T22:44:56.159988-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Pythonin sis\xE4\xE4nrakennettu `sys`-moduuli mahdollistaa eksplisiittisen\
+  \ kirjoittamisen `stderr`-virtaan."
 title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---

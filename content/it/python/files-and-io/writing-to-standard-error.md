@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:11.475246-07:00
-description: 'Come fare: #.'
+description: "Come fare: Il modulo integrato `sys` di Python consente di scrivere\
+  \ esplicitamente su `stderr`. Questo approccio \xE8 diretto per messaggi di errore\
+  \ semplici\u2026"
 lastmod: '2024-03-13T22:44:43.017482-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Il modulo integrato `sys` di Python consente di scrivere esplicitamente su
+  `stderr`.
 title: Scrivere sull'errore standard
 weight: 25
 ---

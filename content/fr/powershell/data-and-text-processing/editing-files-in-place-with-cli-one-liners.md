@@ -1,9 +1,11 @@
 ---
 date: 2024-01-27 16:20:35.926975-07:00
-description: 'Comment faire : #.'
+description: "Comment faire : Commen\xE7ons par une t\xE2che simple : vous voulez\
+  \ remplacer toutes les instances de \"oldtext\" par \"newtext\" dans un fichier\
+  \ nomm\xE9 example.txt.\u2026"
 lastmod: '2024-03-13T22:44:58.042168-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Commen\xE7ons par une t\xE2che simple."
 title: "Modification de fichiers sur place avec des lignes de commande en une seule\
   \ \xE9tape"
 weight: 32

@@ -4,7 +4,7 @@ changelog:
 date: 2024-01-28 22:10:40.622214-07:00
 description: "L\xE0m th\u1EBF n\xE0o: L\xE0m vi\u1EC7c v\u1EDBi JSON trong Python\
   \ y\xEAu c\u1EA7u m\xF4-\u0111un `json`. D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9\
-  t h\u01B0\u1EDBng d\u1EABn nhanh: #."
+  t h\u01B0\u1EDBng d\u1EABn nhanh."
 lastmod: '2024-03-13T22:44:36.125392-06:00'
 model: gpt-4-0125-preview
 summary: "L\xE0m vi\u1EC7c v\u1EDBi JSON trong Python y\xEAu c\u1EA7u m\xF4-\u0111\

@@ -2,10 +2,16 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:15.606908-07:00
-description: "L\xE0m th\u1EBF n\xE0o: #."
+description: "L\xE0m th\u1EBF n\xE0o: Trong Dart, b\u1EA1n \u0111\u1ECBnh ngh\u0129\
+  a m\u1ED9t h\xE0m s\u1EED d\u1EE5ng t\u1EEB kh\xF3a `void` n\u1EBFu n\xF3 kh\xF4\
+  ng tr\u1EA3 v\u1EC1 gi\xE1 tr\u1ECB, ho\u1EB7c x\xE1c \u0111\u1ECBnh ki\u1EC3u gi\xE1\
+  \ tr\u1ECB m\xE0 n\xF3 tr\u1EA3 v\u1EC1 n\u1EBFu c\xF3. D\u01B0\u1EDBi\u2026"
 lastmod: '2024-03-13T22:44:36.270412-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Trong Dart, b\u1EA1n \u0111\u1ECBnh ngh\u0129a m\u1ED9t h\xE0m s\u1EED d\u1EE5\
+  ng t\u1EEB kh\xF3a `void` n\u1EBFu n\xF3 kh\xF4ng tr\u1EA3 v\u1EC1 gi\xE1 tr\u1ECB\
+  , ho\u1EB7c x\xE1c \u0111\u1ECBnh ki\u1EC3u gi\xE1 tr\u1ECB m\xE0 n\xF3 tr\u1EA3\
+  \ v\u1EC1 n\u1EBFu c\xF3."
 title: "S\u1EAFp x\u1EBFp m\xE3 l\u1EADp tr\xECnh v\xE0o h\xE0m s\u1ED1"
 weight: 18
 ---

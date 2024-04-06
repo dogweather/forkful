@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:56.687492-07:00
-description: "Hur man g\xF6r: #."
+description: "Hur man g\xF6r: Rusts standardbibliotek erbjuder ett begr\xE4nsat men\
+  \ snabbt s\xE4tt att f\xE5 den aktuella tiden, dock inte direkt det aktuella datumet\
+  \ i ett\u2026"
 lastmod: '2024-03-13T22:44:37.709474-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Rusts standardbibliotek erbjuder ett begr\xE4nsat men snabbt s\xE4tt att\
+  \ f\xE5 den aktuella tiden, dock inte direkt det aktuella datumet i ett kalenderformat."
 title: "F\xE5 det aktuella datumet"
 weight: 29
 ---

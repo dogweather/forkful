@@ -2,10 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:46.143478-07:00
-description: 'Como Fazer: #.'
+description: "Como Fazer: **1. Configurando Pontos de Interrup\xE7\xE3o:** Para configurar\
+  \ um ponto de interrup\xE7\xE3o, basta clicar na margem esquerda da linha de c\xF3\
+  digo no seu\u2026"
 lastmod: '2024-03-13T22:44:46.286557-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: ''
 title: Usando um depurador
 weight: 35
 ---

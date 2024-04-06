@@ -2,10 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:08.298215-07:00
-description: "Jak to zrobi\u0107: #."
+description: "Jak to zrobi\u0107: C# zapewnia przestrze\u0144 nazw `System.IO`, kt\xF3\
+  ra zawiera klas\u0119 `Directory`, oferuj\u0105c\u0105 bezpo\u015Bredni spos\xF3\
+  b na sprawdzenie istnienia katalogu za\u2026"
 lastmod: '2024-03-13T22:44:35.422745-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "C# zapewnia przestrze\u0144 nazw `System.IO`, kt\xF3ra zawiera klas\u0119\
+  \ `Directory`, oferuj\u0105c\u0105 bezpo\u015Bredni spos\xF3b na sprawdzenie istnienia\
+  \ katalogu za pomoc\u0105 metody `Exists`."
 title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---

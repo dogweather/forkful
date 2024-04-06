@@ -2,10 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:43.358852-07:00
-description: "Hur man g\xF6r: #."
+description: "Hur man g\xF6r: **1. St\xE4lla in brytpunkter:** F\xF6r att st\xE4lla\
+  \ in en brytpunkt, klicka helt enkelt p\xE5 v\xE4nsterkanten av koden p\xE5 den\
+  \ rad i din IDE (t.ex. Visual\u2026"
 lastmod: '2024-03-13T22:44:37.616959-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: ''
 title: "Att anv\xE4nda en debugger"
 weight: 35
 ---

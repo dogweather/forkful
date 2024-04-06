@@ -2,10 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:35.672200-07:00
-description: 'Como Fazer: #.'
+description: "Como Fazer: Antes da refatora\xE7\xE3o, voc\xEA pode ter um trecho de\
+  \ c\xF3digo que mistura diferentes n\xEDveis de abstra\xE7\xE3o ou responsabilidades,\
+  \ como calcular um\u2026"
 lastmod: '2024-03-13T22:44:46.290791-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: ''
 title: "Refatora\xE7\xE3o"
 weight: 19
 ---

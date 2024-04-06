@@ -1,9 +1,12 @@
 ---
 date: 2024-02-03 19:02:44.135326-07:00
-description: 'How to: #.'
+description: "How to: Swift's standard library, Foundation, provides `DateFormatter`\
+  \ for converting strings to `Date` objects and vice versa. To parse a date from\
+  \ a\u2026"
 lastmod: '2024-03-13T22:45:00.404732-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Swift's standard library, Foundation, provides `DateFormatter` for converting
+  strings to `Date` objects and vice versa.
 title: Parsing a date from a string
 weight: 30
 ---

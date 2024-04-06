@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:20.690532-07:00
-description: 'Come fare: #.'
+description: "Come fare: La libreria standard di Rust non include direttamente l'analisi\
+  \ delle date, ma la crate `chrono`, ampiamente utilizzata, \xE8 una soluzione\u2026"
 lastmod: '2024-03-13T22:44:43.227483-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "La libreria standard di Rust non include direttamente l'analisi delle date,\
+  \ ma la crate `chrono`, ampiamente utilizzata, \xE8 una soluzione robusta per la\
+  \ manipolazione di date e orari."
 title: Analisi di una data da una stringa
 weight: 30
 ---

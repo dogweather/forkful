@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:18.966699-07:00
-description: 'Hvordan: #.'
+description: "Hvordan: C# tilbyr `System.IO`-navnerommet som inneholder `Directory`-klassen,\
+  \ som tilbyr en direkte m\xE5te \xE5 sjekke for eksistensen av en mappe gjennom\u2026"
 lastmod: '2024-03-13T22:44:40.812204-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "C# tilbyr `System.IO`-navnerommet som inneholder `Directory`-klassen, som\
+  \ tilbyr en direkte m\xE5te \xE5 sjekke for eksistensen av en mappe gjennom `Exists`-metoden."
 title: Sjekker om en mappe eksisterer
 weight: 20
 ---

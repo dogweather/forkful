@@ -1,7 +1,7 @@
 ---
 date: 2024-01-20 17:54:08.055687-07:00
 description: "C\xF3mo hacerlo: C# ha simplificado este proceso con el tiempo. Aqu\xED\
-  \ hay ejemplos de c\xF3mo puedes leer un archivo de texto: #."
+  \ hay ejemplos de c\xF3mo puedes leer un archivo de texto."
 lastmod: '2024-03-13T22:44:59.094962-06:00'
 model: gpt-4-1106-preview
 summary: C# ha simplificado este proceso con el tiempo.

@@ -3,10 +3,14 @@ changelog:
 - 2024-02-22, dogweather, reviewed
 - 2024-02-22, gpt-4-0125-preview, translated from English
 date: 2024-02-22 17:30:10.136520-07:00
-description: "Jak to zrobi\u0107: #."
+description: "Jak to zrobi\u0107: \u015Arodowisko wirtualne to samodzielny katalog,\
+  \ kt\xF3ry zawiera wszystkie niezb\u0119dne pliki wykonywalne do u\u017Cytkowania\
+  \ pakiet\xF3w, kt\xF3rych projekt\u2026"
 lastmod: '2024-03-13T22:44:34.950070-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "\u015Arodowisko wirtualne to samodzielny katalog, kt\xF3ry zawiera wszystkie\
+  \ niezb\u0119dne pliki wykonywalne do u\u017Cytkowania pakiet\xF3w, kt\xF3rych projekt\
+  \ Pythona mo\u017Ce potrzebowa\u0107."
 title: Rozpoczynanie nowego projektu
 weight: 1
 ---

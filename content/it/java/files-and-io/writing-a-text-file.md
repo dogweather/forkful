@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:14.977883-07:00
-description: 'Come fare: #.'
+description: "Come fare: Il pacchetto New I/O (NIO) di Java (`java.nio.file`) offre\
+  \ un approccio pi\xF9 versatile per la gestione dei file. Ecco un modo semplicistico\
+  \ per\u2026"
 lastmod: '2024-03-13T22:44:43.327347-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Il pacchetto New I/O (NIO) di Java (`java.nio.file`) offre un approccio\
+  \ pi\xF9 versatile per la gestione dei file."
 title: Scrivere un file di testo
 weight: 24
 ---

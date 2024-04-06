@@ -2,10 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:06:11.168082-07:00
-description: "Jak to zrobi\u0107: #."
+description: "Jak to zrobi\u0107: Aby odczyta\u0107 dane CSV z pliku przechowywanego\
+  \ w Google Drive, najpierw musisz pobra\u0107 zawarto\u015B\u0107 pliku jako ci\u0105\
+  g znak\xF3w, a nast\u0119pnie j\u0105\u2026"
 lastmod: '2024-03-13T22:44:34.927919-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Aby odczyta\u0107 dane CSV z pliku przechowywanego w Google Drive, najpierw\
+  \ musisz pobra\u0107 zawarto\u015B\u0107 pliku jako ci\u0105g znak\xF3w, a nast\u0119\
+  pnie j\u0105 przeanalizowa\u0107."
 title: Praca z formatem CSV
 weight: 37
 ---

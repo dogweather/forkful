@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:19.849335-07:00
-description: "Hur g\xF6r man: #."
+description: "Hur g\xF6r man: PHP:s inbyggda `date()`-funktion \xE4r det mest direkta\
+  \ s\xE4ttet att f\xE5 det aktuella datumet. Du kan formatera datumet p\xE5 olika\
+  \ s\xE4tt genom att\u2026"
 lastmod: '2024-03-13T22:44:38.006632-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "PHP:s inbyggda `date()`-funktion \xE4r det mest direkta s\xE4ttet att f\xE5\
+  \ det aktuella datumet."
 title: "F\xE5 det aktuella datumet"
 weight: 29
 ---

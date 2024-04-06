@@ -1,9 +1,10 @@
 ---
 date: 2024-01-27 16:21:03.729322-07:00
-description: "C\xF3mo hacerlo: #."
+description: "C\xF3mo hacerlo: Para mostrar r\xE1pidamente el contenido de un archivo,\
+  \ usa el comando `Get-Content`."
 lastmod: '2024-03-13T22:44:59.287215-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Para mostrar r\xE1pidamente el contenido de un archivo, usa el comando `Get-Content`."
 title: "Manipulando archivos con comandos de l\xEDnea de una sola l\xEDnea"
 weight: 31
 ---

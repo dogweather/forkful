@@ -1,9 +1,12 @@
 ---
 date: 2024-01-27 20:34:14.825848-07:00
-description: 'Comment faire : #.'
+description: "Comment faire : La mani\xE8re la plus simple de g\xE9n\xE9rer un nombre\
+  \ al\xE9atoire en JavaScript est d'utiliser `Math.random()`. Cette fonction retourne\
+  \ un nombre \xE0\u2026"
 lastmod: '2024-03-13T22:44:58.270939-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "La mani\xE8re la plus simple de g\xE9n\xE9rer un nombre al\xE9atoire en\
+  \ JavaScript est d'utiliser `Math.random()`."
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---

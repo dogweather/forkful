@@ -2,10 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:17.809549-07:00
-description: 'Come fare: #.'
+description: "Come fare: Uno strumento ampiamente utilizzato per i test in PHP \xE8\
+  \ PHPUnit. Installalo tramite Composer."
 lastmod: '2024-03-13T22:44:43.520164-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Uno strumento ampiamente utilizzato per i test in PHP \xE8 PHPUnit."
 title: Scrivere test
 weight: 36
 ---

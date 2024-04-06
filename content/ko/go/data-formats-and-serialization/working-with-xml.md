@@ -2,10 +2,17 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:26.528930-07:00
-description: "\uBC29\uBC95: #."
+description: "\uBC29\uBC95: Go\uC5D0\uC11C XML\uC744 \uD30C\uC2F1\uD558\uB824\uBA74\
+  \ `encoding/xml` \uD328\uD0A4\uC9C0\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4. \uC774\
+  \ \uD328\uD0A4\uC9C0\uB294 XML\uC744 Go \uAD6C\uC870\uCCB4\uB85C \uC5B8\uB9C8\uC0EC\
+  \uB9C1(\uD30C\uC2F1)\uD560 \uD544\uC694\uD55C \uB3C4\uAD6C\uB97C \uC81C\uACF5\uD569\
+  \uB2C8\uB2E4. \uC608\uB97C \uB4E4\uC5B4, \uB2E4\uC74C\uACFC \uAC19\uC774 \uCC45\uC744\
+  \ \uB098\uD0C0\uB0B4\uB294 XML \uB370\uC774\uD130\uB97C \uACE0\uB824\uD574 \uBCF4\
+  \uC138\uC694."
 lastmod: '2024-03-13T22:44:54.498978-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Go\uC5D0\uC11C XML\uC744 \uD30C\uC2F1\uD558\uB824\uBA74 `encoding/xml` \uD328\
+  \uD0A4\uC9C0\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "XML\uB85C \uC791\uC5C5\uD558\uAE30"
 weight: 40
 ---

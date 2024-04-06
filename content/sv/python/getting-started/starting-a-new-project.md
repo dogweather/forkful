@@ -3,10 +3,14 @@ changelog:
 - 2024-02-22, dogweather, reviewed
 - 2024-02-22, gpt-4-0125-preview, translated from English
 date: 2024-02-22 17:30:17.778833-07:00
-description: "Hur man g\xF6r: #."
+description: "Hur man g\xF6r: En virtuell milj\xF6 \xE4r en sj\xE4lvst\xE4ndig katalog\
+  \ som inneh\xE5ller alla n\xF6dv\xE4ndiga exekverbara filer f\xF6r att anv\xE4nda\
+  \ de paket som ett Python-projekt\u2026"
 lastmod: '2024-03-13T22:44:37.483757-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "En virtuell milj\xF6 \xE4r en sj\xE4lvst\xE4ndig katalog som inneh\xE5ller\
+  \ alla n\xF6dv\xE4ndiga exekverbara filer f\xF6r att anv\xE4nda de paket som ett\
+  \ Python-projekt skulle beh\xF6va."
 title: Att starta ett nytt projekt
 weight: 1
 ---

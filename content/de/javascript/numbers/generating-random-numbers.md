@@ -1,9 +1,11 @@
 ---
 date: 2024-01-27 20:34:35.060108-07:00
-description: 'Wie geht das: #.'
+description: "Wie geht das: Die einfachste M\xF6glichkeit, eine Zufallszahl in JavaScript\
+  \ zu generieren, besteht darin, `Math.random()` zu verwenden. Diese Funktion gibt\u2026"
 lastmod: '2024-03-13T22:44:54.262186-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Die einfachste M\xF6glichkeit, eine Zufallszahl in JavaScript zu generieren,\
+  \ besteht darin, `Math.random()` zu verwenden."
 title: Generierung von Zufallszahlen
 weight: 12
 ---

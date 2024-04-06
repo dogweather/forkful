@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:21:00.832330-07:00
-description: "Jak to zrobi\u0107: #."
+description: "Jak to zrobi\u0107: Java nie ma wbudowanego wsparcia dla CSV w swojej\
+  \ standardowej bibliotece, ale mo\u017Cna \u0142atwo odczyta\u0107 plik CSV, u\u017C\
+  ywaj\u0105c klas z `java.io`."
 lastmod: '2024-03-13T22:44:35.301180-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Java nie ma wbudowanego wsparcia dla CSV w swojej standardowej bibliotece,\
+  \ ale mo\u017Cna \u0142atwo odczyta\u0107 plik CSV, u\u017Cywaj\u0105c klas z `java.io`."
 title: Praca z plikami CSV
 weight: 37
 ---

@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:17.934729-07:00
-description: 'Kuinka: #.'
+description: "Kuinka: Aloittaaksesi voit luoda yksinkertaisen regex-mallin ja k\xE4\
+  ytt\xE4\xE4 sit\xE4 l\xF6yt\xE4\xE4ksesi vastaavuuksia merkkijonosta. T\xE4ss\xE4\
+  \ etsimme sanaa \"code\"."
 lastmod: '2024-03-13T22:44:56.939977-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Aloittaaksesi voit luoda yksinkertaisen regex-mallin ja k\xE4ytt\xE4\xE4\
+  \ sit\xE4 l\xF6yt\xE4\xE4ksesi vastaavuuksia merkkijonosta."
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---

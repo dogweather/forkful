@@ -2,10 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:17.037311-07:00
-description: 'Kuinka: #.'
+description: "Kuinka: C# tarjoaa `System.IO` nimiavaruuden, joka sis\xE4lt\xE4\xE4\
+  \ `Directory` luokan, tarjoten suoran tavan tarkistaa hakemiston olemassaolo `Exists`\
+  \ metodin\u2026"
 lastmod: '2024-03-13T22:44:56.588152-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "C# tarjoaa `System.IO` nimiavaruuden, joka sis\xE4lt\xE4\xE4 `Directory`\
+  \ luokan, tarjoten suoran tavan tarkistaa hakemiston olemassaolo `Exists` metodin\
+  \ avulla."
 title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---

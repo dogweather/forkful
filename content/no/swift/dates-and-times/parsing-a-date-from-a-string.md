@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:58.798542-07:00
-description: 'Hvordan: #.'
+description: "Hvordan: Swifts standardbibliotek, Foundation, tilbyr `DateFormatter`\
+  \ for \xE5 konvertere strenger til `Date`-objekter og omvendt. For \xE5 analysere\
+  \ en dato\u2026"
 lastmod: '2024-03-13T22:44:41.151551-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Swifts standardbibliotek, Foundation, tilbyr `DateFormatter` for \xE5 konvertere\
+  \ strenger til `Date`-objekter og omvendt."
 title: Analysering av en dato fra en streng
 weight: 30
 ---

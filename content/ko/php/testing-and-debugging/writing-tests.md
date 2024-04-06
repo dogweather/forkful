@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:29.867020-07:00
-description: "\uC5B4\uB5BB\uAC8C: #."
+description: "\uC5B4\uB5BB\uAC8C: PHP\uC5D0\uC11C \uD14C\uC2A4\uD2B8\uB97C \uC704\uD574\
+  \ \uB110\uB9AC \uC0AC\uC6A9\uB418\uB294 \uB3C4\uAD6C\uB294 PHPUnit\uC785\uB2C8\uB2E4\
+  . Composer\uB97C \uD1B5\uD574 \uC124\uCE58\uD558\uC138\uC694."
 lastmod: '2024-03-13T22:44:55.361689-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "PHP\uC5D0\uC11C \uD14C\uC2A4\uD2B8\uB97C \uC704\uD574 \uB110\uB9AC \uC0AC\
+  \uC6A9\uB418\uB294 \uB3C4\uAD6C\uB294 PHPUnit\uC785\uB2C8\uB2E4."
 title: "\uD14C\uC2A4\uD2B8 \uC791\uC131\uD558\uAE30"
 weight: 36
 ---

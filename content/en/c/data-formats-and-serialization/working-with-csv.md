@@ -1,9 +1,12 @@
 ---
 date: 2024-02-03 17:50:09.981078-07:00
-description: 'How to: #.'
+description: "How to: To read a CSV file in C, we use standard file I/O functions\
+  \ along with string manipulation functions to parse each line. Below is a basic\
+  \ example\u2026"
 lastmod: '2024-03-13T22:45:00.531023-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: To read a CSV file in C, we use standard file I/O functions along with string
+  manipulation functions to parse each line.
 title: Working with CSV
 weight: 37
 ---

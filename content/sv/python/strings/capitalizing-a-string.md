@@ -3,10 +3,11 @@ changelog:
 - 2024-04-04, dogweather, edited
 - 2024-04-04, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:02:34.962078-07:00
-description: "Hur man g\xF6r: #."
+description: "Hur man g\xF6r: Python har en inbyggd metod `.capitalize()` f\xF6r str\xE4\
+  ngar f\xF6r att enkelt genomf\xF6ra denna uppgift."
 lastmod: '2024-04-04T00:26:52.233938-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: ''
 title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---

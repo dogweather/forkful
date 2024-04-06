@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:23.837602-07:00
-description: "Jak to zrobi\u0107: #."
+description: "Jak to zrobi\u0107: Aby dopasowa\u0107 ci\u0105g znak\xF3w do prostego\
+  \ wzorca, mo\u017Cesz u\u017Cy\u0107 metody `match`. Poni\u017Cej sprawdzamy, czy\
+  \ s\u0142owo \"Ruby\" wyst\u0119puje w danym ci\u0105gu."
 lastmod: '2024-03-13T22:44:35.920814-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Aby dopasowa\u0107 ci\u0105g znak\xF3w do prostego wzorca, mo\u017Cesz u\u017C\
+  y\u0107 metody `match`."
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---

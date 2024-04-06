@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:08.655958-07:00
-description: 'Come fare: #.'
+description: "Come fare: La funzione integrata `date()` di PHP \xE8 il modo pi\xF9\
+  \ diretto per ottenere la data corrente. Puoi formattare la data in vari modi specificando\
+  \ il\u2026"
 lastmod: '2024-03-13T22:44:43.527047-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "La funzione integrata `date()` di PHP \xE8 il modo pi\xF9 diretto per ottenere\
+  \ la data corrente."
 title: Ottenere la data corrente
 weight: 29
 ---

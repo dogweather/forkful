@@ -1,9 +1,11 @@
 ---
 date: 2024-02-03 19:02:48.540827-07:00
-description: 'How to: #.'
+description: "How to: Kotlin does not have its own date and time API, but relies on\
+  \ the Java Standard Library for this functionality. Here's how you can get the current\u2026"
 lastmod: '2024-03-13T22:45:00.058554-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Kotlin does not have its own date and time API, but relies on the Java Standard
+  Library for this functionality.
 title: Getting the current date
 weight: 29
 ---

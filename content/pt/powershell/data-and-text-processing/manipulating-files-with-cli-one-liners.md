@@ -1,9 +1,10 @@
 ---
 date: 2024-01-27 16:21:01.503705-07:00
-description: 'Como fazer: #.'
+description: "Como fazer: Para exibir rapidamente o conte\xFAdo de um arquivo, use\
+  \ o comando `Get-Content`."
 lastmod: '2024-03-13T22:44:46.791983-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Para exibir rapidamente o conte\xFAdo de um arquivo, use o comando `Get-Content`."
 title: Manipulando arquivos com one-liners de CLI
 weight: 31
 ---

@@ -2,10 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:14:29.595722-07:00
-description: "Hur man g\xF6r: #."
+description: "Hur man g\xF6r: ."
 lastmod: '2024-03-13T22:44:37.796436-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: ''
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---

@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:30.985712-07:00
-description: 'Come fare: #.'
+description: "Come fare: Per convertire una stringa JSON in un oggetto TypeScript,\
+  \ si utilizza il metodo `JSON.parse()`. Questo \xE8 utile quando si ricevono dati\
+  \ JSON da\u2026"
 lastmod: '2024-03-13T22:44:43.197485-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Per convertire una stringa JSON in un oggetto TypeScript, si utilizza il
+  metodo `JSON.parse()`.
 title: Lavorare con JSON
 weight: 38
 ---

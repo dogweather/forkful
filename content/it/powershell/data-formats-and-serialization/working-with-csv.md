@@ -2,10 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:39.251429-07:00
-description: 'Come fare: #.'
+description: "Come fare: Per leggere da un file CSV, utilizzare il cmdlet `Import-Csv`.\
+  \ Questo cmdlet legge il file e lo converte in oggetti personalizzati di\u2026"
 lastmod: '2024-03-13T22:44:43.664552-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Per leggere da un file CSV, utilizzare il cmdlet `Import-Csv`.
 title: Lavorare con i CSV
 weight: 37
 ---

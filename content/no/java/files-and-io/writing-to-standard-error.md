@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:38.901649-07:00
-description: 'Hvordan: #.'
+description: "Hvordan: Java gir en grei m\xE5te \xE5 skrive til stderr p\xE5 ved bruk\
+  \ av `System.err.print()` eller `System.err.println()`. Slik gj\xF8r du det."
 lastmod: '2024-03-13T22:44:40.682810-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Java gir en grei m\xE5te \xE5 skrive til stderr p\xE5 ved bruk av `System.err.print()`\
+  \ eller `System.err.println()`."
 title: Skriving til standardfeil
 weight: 25
 ---

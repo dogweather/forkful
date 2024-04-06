@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:17.352092-07:00
-description: "Hur man g\xF6r: #."
+description: "Hur man g\xF6r: Clojures s\xF6ml\xF6sa interoperabilitet med Java l\xE5\
+  ter dig direkt utnyttja Java Date-Time API. S\xE5 h\xE4r kan du f\xE5 det aktuella\
+  \ datumet."
 lastmod: '2024-03-13T22:44:37.535621-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Clojures s\xF6ml\xF6sa interoperabilitet med Java l\xE5ter dig direkt utnyttja\
+  \ Java Date-Time API."
 title: "F\xE5 det aktuella datumet"
 weight: 29
 ---

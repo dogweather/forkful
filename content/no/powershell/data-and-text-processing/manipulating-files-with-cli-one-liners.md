@@ -1,9 +1,9 @@
 ---
 date: 2024-01-27 16:20:40.431759-07:00
-description: 'Hvordan: #.'
+description: "Hvordan: For \xE5 raskt vise innholdet av en fil, bruk `Get-Content`-kommandoen."
 lastmod: '2024-03-13T22:44:41.012962-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "For \xE5 raskt vise innholdet av en fil, bruk `Get-Content`-kommandoen."
 title: Manipulering av filer med CLI-enkeltkommandoer
 weight: 31
 ---

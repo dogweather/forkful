@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:34.599150-07:00
-description: "Jak to zrobi\u0107: #."
+description: "Jak to zrobi\u0107: Aby odczyta\u0107 lub sparsowa\u0107 JSON w PowerShell,\
+  \ mo\u017Cna u\u017Cy\u0107 polecenia `ConvertFrom-Json`. Dla danego ci\u0105gu\
+  \ JSON, to polecenie przekszta\u0142ca go\u2026"
 lastmod: '2024-03-13T22:44:35.651312-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Aby odczyta\u0107 lub sparsowa\u0107 JSON w PowerShell, mo\u017Cna u\u017C\
+  y\u0107 polecenia `ConvertFrom-Json`."
 title: Praca z JSON
 weight: 38
 ---

@@ -1,7 +1,7 @@
 ---
 date: 2024-01-20 18:03:11.744288-07:00
 description: 'Como Fazer: Para iniciar um novo projeto C#, primeiro garanta de ter
-  o .NET SDK instalado. Depois, abra seu terminal favorito. #.'
+  o .NET SDK instalado. Depois, abra seu terminal favorito.'
 lastmod: '2024-03-13T22:44:46.584812-06:00'
 model: gpt-4-1106-preview
 summary: Para iniciar um novo projeto C#, primeiro garanta de ter o .NET SDK instalado.

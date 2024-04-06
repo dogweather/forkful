@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:48.111940-07:00
-description: 'Come fare: #.'
+description: "Come fare: La libreria standard di Rust fornisce un modo limitato ma\
+  \ rapido per ottenere il tempo corrente, anche se non direttamente la data corrente\
+  \ in\u2026"
 lastmod: '2024-03-13T22:44:43.228702-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: La libreria standard di Rust fornisce un modo limitato ma rapido per ottenere
+  il tempo corrente, anche se non direttamente la data corrente in un formato calendario.
 title: Ottenere la data corrente
 weight: 29
 ---

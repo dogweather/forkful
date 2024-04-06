@@ -3,10 +3,12 @@ changelog:
 - 2024-04-04, dogweather, edited
 - 2024-04-04, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:02:34.962078-07:00
-description: "C\xE1ch th\u1EF1c hi\u1EC7n: #."
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Python c\xF3 m\u1ED9t ph\u01B0\u01A1ng\
+  \ th\u1EE9c c\xF3 s\u1EB5n `.capitalize()` cho chu\u1ED7i \u0111\u1EC3 th\u1EF1\
+  c hi\u1EC7n nhi\u1EC7m v\u1EE5 n\xE0y m\u1ED9t c\xE1ch d\u1EC5 d\xE0ng."
 lastmod: '2024-04-04T00:27:19.394929-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: ''
 title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
 weight: 2
 ---

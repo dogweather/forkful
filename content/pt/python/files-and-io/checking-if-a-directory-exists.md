@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:08:13.860175-07:00
 description: "Como fazer: Python fornece maneiras nativas de verificar a exist\xEA\
   ncia de um diret\xF3rio usando os m\xF3dulos `os` e `pathlib`. Aqui est\xE3o exemplos\
-  \ para ambos:\u2026"
+  \ para ambos."
 lastmod: '2024-03-13T22:44:46.168612-06:00'
 model: gpt-4-0125-preview
 summary: "Python fornece maneiras nativas de verificar a exist\xEAncia de um diret\xF3\

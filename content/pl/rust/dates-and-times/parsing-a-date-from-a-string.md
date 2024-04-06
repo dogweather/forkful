@@ -2,10 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:02.639723-07:00
-description: "Jak to zrobi\u0107: #."
+description: "Jak to zrobi\u0107: Standardowa biblioteka Rusta bezpo\u015Brednio nie\
+  \ obejmuje parsowania daty, ale szeroko u\u017Cywany `chrono` crate jest solidnym\
+  \ rozwi\u0105zaniem do\u2026"
 lastmod: '2024-03-13T22:44:35.194954-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Standardowa biblioteka Rusta bezpo\u015Brednio nie obejmuje parsowania daty,\
+  \ ale szeroko u\u017Cywany `chrono` crate jest solidnym rozwi\u0105zaniem do manipulacji\
+  \ dat\u0105 i czasem."
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---

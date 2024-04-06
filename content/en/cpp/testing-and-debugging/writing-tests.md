@@ -1,9 +1,11 @@
 ---
 date: 2024-02-03 19:03:20.795391-07:00
-description: 'How to: #.'
+description: "How to: One of the most popular third-party libraries for writing tests\
+  \ in C++ is Google Test. First, you'll need to install Google Test and link it with\u2026"
 lastmod: '2024-03-13T22:45:00.360726-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: One of the most popular third-party libraries for writing tests in C++ is
+  Google Test.
 title: Writing tests
 weight: 36
 ---

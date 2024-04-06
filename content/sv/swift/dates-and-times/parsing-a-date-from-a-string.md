@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:51.130054-07:00
-description: "Hur man g\xF6r: #."
+description: "Hur man g\xF6r: Swifts standardbibliotek, Foundation, tillhandah\xE5\
+  ller `DateFormatter` f\xF6r att konvertera str\xE4ngar till `Date`-objekt och vice\
+  \ versa. F\xF6r att\u2026"
 lastmod: '2024-03-13T22:44:38.260308-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Swifts standardbibliotek, Foundation, tillhandah\xE5ller `DateFormatter`\
+  \ f\xF6r att konvertera str\xE4ngar till `Date`-objekt och vice versa."
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---

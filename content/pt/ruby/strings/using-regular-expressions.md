@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:07.664577-07:00
-description: 'Como fazer: #.'
+description: "Como fazer: Para combinar uma string com um padr\xE3o simples, voc\xEA\
+  \ pode usar o m\xE9todo `match`. Abaixo, estamos verificando se a palavra \"Ruby\"\
+  \ existe em uma\u2026"
 lastmod: '2024-03-13T22:44:47.083851-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Para combinar uma string com um padr\xE3o simples, voc\xEA pode usar o m\xE9\
+  todo `match`."
 title: "Usando express\xF5es regulares"
 weight: 11
 ---

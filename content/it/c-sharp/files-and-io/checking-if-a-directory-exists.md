@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:07:06.823694-07:00
-description: 'Come fare: #.'
+description: "Come fare: C# fornisce lo spazio dei nomi `System.IO` che contiene la\
+  \ classe `Directory`, offrendo un modo diretto per controllare l'esistenza di una\u2026"
 lastmod: '2024-03-13T22:44:43.447996-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: C# fornisce lo spazio dei nomi `System.IO` che contiene la classe `Directory`,
+  offrendo un modo diretto per controllare l'esistenza di una directory tramite il
+  metodo `Exists`.
 title: Verifica se una directory esiste
 weight: 20
 ---

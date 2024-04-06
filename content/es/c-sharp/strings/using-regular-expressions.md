@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:11.608543-07:00
-description: "C\xF3mo: #."
+description: "C\xF3mo: Para verificar si una cadena contiene un patr\xF3n espec\xED\
+  fico, puedes utilizar el m\xE9todo `Regex.IsMatch` del espacio de nombres\u2026"
 lastmod: '2024-03-13T22:44:59.068561-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Para verificar si una cadena contiene un patr\xF3n espec\xEDfico, puedes\
+  \ utilizar el m\xE9todo `Regex.IsMatch` del espacio de nombres `System.Text.RegularExpressions`."
 title: Usando expresiones regulares
 weight: 11
 ---

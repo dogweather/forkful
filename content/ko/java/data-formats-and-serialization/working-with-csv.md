@@ -2,10 +2,16 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:28.005793-07:00
-description: "\uBC29\uBC95: #."
+description: "\uBC29\uBC95: Java\uB294 \uD45C\uC900 \uB77C\uC774\uBE0C\uB7EC\uB9AC\
+  \uC5D0\uC11C CSV\uB97C \uC9C1\uC811 \uC9C0\uC6D0\uD558\uC9C0 \uC54A\uC9C0\uB9CC\
+  , `java.io` \uD074\uB798\uC2A4\uB97C \uC0AC\uC6A9\uD558\uC5EC \uC27D\uAC8C CSV \uD30C\
+  \uC77C\uC744 \uC77D\uC744 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
 lastmod: '2024-03-13T22:44:55.082632-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Java\uB294 \uD45C\uC900 \uB77C\uC774\uBE0C\uB7EC\uB9AC\uC5D0\uC11C CSV\uB97C\
+  \ \uC9C1\uC811 \uC9C0\uC6D0\uD558\uC9C0 \uC54A\uC9C0\uB9CC, `java.io` \uD074\uB798\
+  \uC2A4\uB97C \uC0AC\uC6A9\uD558\uC5EC \uC27D\uAC8C CSV \uD30C\uC77C\uC744 \uC77D\
+  \uC744 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
 title: "CSV\uC640 \uD568\uAED8 \uC791\uC5C5\uD558\uAE30"
 weight: 37
 ---

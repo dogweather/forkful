@@ -2,9 +2,8 @@
 changelog:
 - 2024-01-30, gpt-4-0125-preview, translated from English
 date: 2024-01-30 19:10:17.720316-07:00
-description: 'Come fare: In C++, gli array associativi prendono vita con gli header
-  `<map>` e `<unordered_map>`. Spezziamo in esempi per vedere entrambi in azione.
-  #.'
+description: "Come fare: In C++, gli array associativi prendono vita con gli header\
+  \ `<map>` e `<unordered_map>`. Spezziamo in esempi per vedere entrambi in azione.\u2026"
 lastmod: '2024-03-13T22:44:43.719423-06:00'
 model: gpt-4-0125-preview
 summary: In C++, gli array associativi prendono vita con gli header `<map>` e `<unordered_map>`.

@@ -2,10 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:49.209774-07:00
-description: 'Kuinka: #.'
+description: "Kuinka: Clojurella ei ole sis\xE4\xE4nrakennettua CSV:n j\xE4sent\xE4\
+  mist\xE4 sen vakio-kirjastossa, mutta voit k\xE4ytt\xE4\xE4 `clojure.data.csv` -kirjastoa\
+  \ t\xE4h\xE4n\u2026"
 lastmod: '2024-03-13T22:44:56.206630-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Clojurella ei ole sis\xE4\xE4nrakennettua CSV:n j\xE4sent\xE4mist\xE4 sen\
+  \ vakio-kirjastossa, mutta voit k\xE4ytt\xE4\xE4 `clojure.data.csv` -kirjastoa t\xE4\
+  h\xE4n tarkoitukseen."
 title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-03-08 21:33:29.906466-07:00
-description: 'How to: #.'
+description: "How to: In Dart, you define a function using the `void` keyword if it\
+  \ doesn't return a value, or specify the type of value it returns otherwise. Here's\
+  \ a\u2026"
 lastmod: '2024-03-13T22:44:59.825662-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: In Dart, you define a function using the `void` keyword if it doesn't return
+  a value, or specify the type of value it returns otherwise.
 title: Organizing code into functions
 weight: 18
 ---

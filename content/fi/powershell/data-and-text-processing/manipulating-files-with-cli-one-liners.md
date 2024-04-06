@@ -1,9 +1,11 @@
 ---
 date: 2024-01-27 16:21:20.706969-07:00
-description: "Miten tehd\xE4\xE4n: #."
+description: "Miten tehd\xE4\xE4n: Tiedoston sis\xE4ll\xF6n nopeaan n\xE4ytt\xE4miseen\
+  \ k\xE4yt\xE4 komentoa `Get-Content`."
 lastmod: '2024-03-13T22:44:56.777250-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Tiedoston sis\xE4ll\xF6n nopeaan n\xE4ytt\xE4miseen k\xE4yt\xE4 komentoa\
+  \ `Get-Content`."
 title: "Tiedostojen k\xE4sittely yhden rivin komentorivikomennoilla"
 weight: 31
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-27 20:34:14.904248-07:00
-description: 'Hvordan: #.'
+description: "Hvordan: Den mest direkte m\xE5ten \xE5 generere et tilfeldig tall i\
+  \ JavaScript p\xE5, er \xE5 bruke `Math.random()`. Denne funksjonen returnerer et\
+  \ flyttall, pseudo-\u2026"
 lastmod: '2024-03-13T22:44:41.179886-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Den mest direkte m\xE5ten \xE5 generere et tilfeldig tall i JavaScript p\xE5\
+  , er \xE5 bruke `Math.random()`."
 title: Generering av tilfeldige tall
 weight: 12
 ---

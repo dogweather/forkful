@@ -1,9 +1,11 @@
 ---
 date: 2024-02-03 19:03:27.488025-07:00
-description: 'How to: #.'
+description: 'How to: Java does not have built-in support for CSV in its standard
+  library, but you can easily read a CSV file using `java.io` classes.'
 lastmod: '2024-03-13T22:44:59.991798-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Java does not have built-in support for CSV in its standard library, but
+  you can easily read a CSV file using `java.io` classes.
 title: Working with CSV
 weight: 37
 ---

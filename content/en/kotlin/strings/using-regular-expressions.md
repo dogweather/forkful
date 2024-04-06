@@ -1,9 +1,11 @@
 ---
 date: 2024-02-03 19:03:08.406169-07:00
-description: 'How to: #.'
+description: 'How to: To check if a string matches a specific pattern in Kotlin, you
+  can use the `matches` method of the `Regex` class.'
 lastmod: '2024-03-13T22:45:00.039553-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: To check if a string matches a specific pattern in Kotlin, you can use the
+  `matches` method of the `Regex` class.
 title: Using regular expressions
 weight: 11
 ---

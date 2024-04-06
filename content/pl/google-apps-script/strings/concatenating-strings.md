@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-01 21:50:25.131500-07:00
 description: "Jak to zrobi\u0107: W Google Apps Script, kt\xF3ry opiera si\u0119 na\
   \ JavaScript, istnieje kilka sposob\xF3w na konkatenacj\u0119 \u0142a\u0144cuch\xF3\
-  w. Oto niekt\xF3re z popularnych metod:\u2026"
+  w. Oto niekt\xF3re z popularnych metod."
 lastmod: '2024-03-13T22:44:34.893335-06:00'
 model: gpt-4-0125-preview
 summary: "W Google Apps Script, kt\xF3ry opiera si\u0119 na JavaScript, istnieje kilka\

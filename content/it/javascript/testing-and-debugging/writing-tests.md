@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:31:02.773573-07:00
-description: 'Come fare: #.'
+description: "Come fare: Jest \xE8 un framework di test popolare che fornisce un'API\
+  \ amichevole per scrivere test unitari in JavaScript. Richiede una configurazione\
+  \ minima\u2026"
 lastmod: '2024-03-13T22:44:43.815625-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Jest \xE8 un framework di test popolare che fornisce un'API amichevole per\
+  \ scrivere test unitari in JavaScript."
 title: Scrivere test
 weight: 36
 ---

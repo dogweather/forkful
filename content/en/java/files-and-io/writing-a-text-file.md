@@ -1,9 +1,12 @@
 ---
 date: 2024-02-03 19:03:21.820214-07:00
-description: 'How to: #.'
+description: "How to: Java's New I/O (NIO) package (`java.nio.file`) provides a more\
+  \ versatile approach for dealing with files. Here's a simplistic way to write to\
+  \ a\u2026"
 lastmod: '2024-03-13T22:44:59.988377-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Java's New I/O (NIO) package (`java.nio.file`) provides a more versatile
+  approach for dealing with files.
 title: Writing a text file
 weight: 24
 ---

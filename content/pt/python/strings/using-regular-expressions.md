@@ -4,7 +4,7 @@ changelog:
 date: 2024-02-03 19:18:19.779729-07:00
 description: "Como usar: Usar regex em Python envolve o m\xF3dulo `re`, que fornece\
   \ um conjunto de fun\xE7\xF5es para processar texto usando express\xF5es regulares.\
-  \ #."
+  \ Para procurar\u2026"
 lastmod: '2024-03-13T22:44:46.143772-06:00'
 model: gpt-4-0125-preview
 summary: "Usar regex em Python envolve o m\xF3dulo `re`, que fornece um conjunto de\

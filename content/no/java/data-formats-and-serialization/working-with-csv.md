@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:30.137566-07:00
-description: 'Hvordan: #.'
+description: "Hvordan: Java har ikke innebygd st\xF8tte for CSV i sitt standardbibliotek,\
+  \ men du kan enkelt lese en CSV-fil ved \xE5 bruke `java.io`-klasser."
 lastmod: '2024-03-13T22:44:40.688758-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Java har ikke innebygd st\xF8tte for CSV i sitt standardbibliotek, men du\
+  \ kan enkelt lese en CSV-fil ved \xE5 bruke `java.io`-klasser."
 title: Arbeide med CSV
 weight: 37
 ---

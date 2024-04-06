@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:13.738766-07:00
-description: 'Como fazer: #.'
+description: "Como fazer: O Kotlin n\xE3o possui sua pr\xF3pria API de data e hora,\
+  \ mas depende da Biblioteca Padr\xE3o Java para essa funcionalidade. Veja como voc\xEA\
+  \ pode obter\u2026"
 lastmod: '2024-03-13T22:44:46.552694-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "O Kotlin n\xE3o possui sua pr\xF3pria API de data e hora, mas depende da\
+  \ Biblioteca Padr\xE3o Java para essa funcionalidade."
 title: Obtendo a data atual
 weight: 29
 ---

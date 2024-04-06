@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:33.541352-07:00
-description: "Jak to zrobi\u0107: #."
+description: "Jak to zrobi\u0107: Aby sprawdzi\u0107, czy ci\u0105g znak\xF3w pasuje\
+  \ do okre\u015Blonego wzorca w Kotlinie, mo\u017Cna u\u017Cy\u0107 metody `matches`\
+  \ klasy `Regex`."
 lastmod: '2024-03-13T22:44:35.354616-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Aby sprawdzi\u0107, czy ci\u0105g znak\xF3w pasuje do okre\u015Blonego wzorca\
+  \ w Kotlinie, mo\u017Cna u\u017Cy\u0107 metody `matches` klasy `Regex`."
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---

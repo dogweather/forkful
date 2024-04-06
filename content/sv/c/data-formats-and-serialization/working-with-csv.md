@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:11:46.372285-07:00
-description: 'Hur man: #.'
+description: "Hur man: F\xF6r att l\xE4sa en CSV-fil i C anv\xE4nder vi standardfiler\
+  \ I/O-funktioner tillsammans med str\xE4ngmanipulationsfunktioner f\xF6r att tolka\
+  \ varje rad. Nedan\u2026"
 lastmod: '2024-03-13T22:44:38.408195-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "F\xF6r att l\xE4sa en CSV-fil i C anv\xE4nder vi standardfiler I/O-funktioner\
+  \ tillsammans med str\xE4ngmanipulationsfunktioner f\xF6r att tolka varje rad."
 title: Arbeta med CSV
 weight: 37
 ---

@@ -2,10 +2,14 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:58.995631-07:00
-description: 'Como Fazer: #.'
+description: "Como Fazer: No Dart, voc\xEA define uma fun\xE7\xE3o usando a palavra-chave\
+  \ `void` se ela n\xE3o retornar um valor, ou especifica o tipo de valor que retorna\
+  \ de outra\u2026"
 lastmod: '2024-03-13T22:44:46.287624-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "No Dart, voc\xEA define uma fun\xE7\xE3o usando a palavra-chave `void` se\
+  \ ela n\xE3o retornar um valor, ou especifica o tipo de valor que retorna de outra\
+  \ forma."
 title: "Organizando c\xF3digo em fun\xE7\xF5es"
 weight: 18
 ---

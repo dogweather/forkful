@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:35.086469-07:00
-description: 'Hur man: #.'
+description: "Hur man: F\xF6r att l\xE4sa eller tolka JSON i PowerShell kan du anv\xE4\
+  nda `ConvertFrom-Json` cmdleten. Givet en JSON-str\xE4ng konverterar denna cmdlet\
+  \ den till ett\u2026"
 lastmod: '2024-03-13T22:44:38.147352-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "F\xF6r att l\xE4sa eller tolka JSON i PowerShell kan du anv\xE4nda `ConvertFrom-Json`\
+  \ cmdleten."
 title: Arbeta med JSON
 weight: 38
 ---

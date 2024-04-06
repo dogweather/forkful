@@ -1,9 +1,10 @@
 ---
 date: 2024-02-03 19:02:58.472005-07:00
-description: 'How to: #.'
+description: "How to: To read or parse JSON in PowerShell, you can use the `ConvertFrom-Json`\
+  \ cmdlet. Given a JSON string, this cmdlet converts it into a PowerShell\u2026"
 lastmod: '2024-03-13T22:45:00.303574-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: To read or parse JSON in PowerShell, you can use the `ConvertFrom-Json` cmdlet.
 title: Working with JSON
 weight: 38
 ---

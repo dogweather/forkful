@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:33:45.938050-07:00
-description: 'Kuinka: #.'
+description: "Kuinka: Java tarjoaa suoraviivaisen tavan kirjoittaa stderr:iin k\xE4\
+  ytt\xE4en `System.err.print()` tai `System.err.println()`. N\xE4in se tehd\xE4\xE4\
+  n."
 lastmod: '2024-03-13T22:44:56.462016-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Java tarjoaa suoraviivaisen tavan kirjoittaa stderr:iin k\xE4ytt\xE4en `System.err.print()`\
+  \ tai `System.err.println()`."
 title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---

@@ -2,10 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:28.085725-07:00
-description: "\u3069\u306E\u3088\u3046\u306B\u3057\u3066\uFF1A #."
+description: "\u3069\u306E\u3088\u3046\u306B\u3057\u3066\uFF1A JSON\u6587\u5B57\u5217\
+  \u3092JavaScript\u30AA\u30D6\u30B8\u30A7\u30AF\u30C8\u306B\u5909\u63DB\u3059\u308B\
+  \u306B\u306F\u3001`JSON.parse()`\u3092\u4F7F\u7528\u3057\u307E\u3059\u3002"
 lastmod: '2024-03-13T22:44:42.703201-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "JSON\u6587\u5B57\u5217\u3092JavaScript\u30AA\u30D6\u30B8\u30A7\u30AF\u30C8\
+  \u306B\u5909\u63DB\u3059\u308B\u306B\u306F\u3001`JSON.parse()`\u3092\u4F7F\u7528\
+  \u3057\u307E\u3059."
 title: "JSON\u3092\u6D3B\u7528\u3059\u308B"
 weight: 38
 ---

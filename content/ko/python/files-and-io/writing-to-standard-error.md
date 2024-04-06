@@ -2,10 +2,16 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:33.299970-07:00
-description: "\uBC29\uBC95: #."
+description: "\uBC29\uBC95: \uD30C\uC774\uC36C\uC758 \uB0B4\uC7A5 `sys` \uBAA8\uB4C8\
+  \uC740 `stderr`\uB85C \uBA85\uC2DC\uC801\uC73C\uB85C \uC4F0\uAE30\uB97C \uD5C8\uC6A9\
+  \uD569\uB2C8\uB2E4. \uC774 \uC811\uADFC \uBC29\uC2DD\uC740 \uB2E8\uC21C\uD55C \uC624\
+  \uB958 \uBA54\uC2DC\uC9C0\uB098 \uC9C4\uB2E8\uC5D0 \uC9C1\uAD00\uC801\uC785\uB2C8\
+  \uB2E4."
 lastmod: '2024-03-13T22:44:54.623009-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "\uD30C\uC774\uC36C\uC758 \uB0B4\uC7A5 `sys` \uBAA8\uB4C8\uC740 `stderr`\uB85C\
+  \ \uBA85\uC2DC\uC801\uC73C\uB85C \uC4F0\uAE30\uB97C \uD5C8\uC6A9\uD569\uB2C8\uB2E4\
+  ."
 title: "\uD45C\uC900 \uC5D0\uB7EC\uC5D0 \uC4F0\uAE30"
 weight: 25
 ---

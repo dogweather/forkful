@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:03.951636-07:00
-description: 'Como Fazer: #.'
+description: "Como Fazer: A fun\xE7\xE3o nativa `open()` do Python \xE9 a maneira\
+  \ mais comum de escrever em arquivos. A fun\xE7\xE3o permite especificar o modo\
+  \ no qual o arquivo \xE9\u2026"
 lastmod: '2024-03-13T22:44:46.173414-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "A fun\xE7\xE3o nativa `open()` do Python \xE9 a maneira mais comum de escrever\
+  \ em arquivos."
 title: Escrevendo um arquivo de texto
 weight: 24
 ---

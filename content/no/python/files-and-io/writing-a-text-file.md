@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:04.885979-07:00
-description: 'Hvordan: #.'
+description: "Hvordan: Pythons innebygde `open()`-funksjon er den vanligste m\xE5\
+  ten \xE5 skrive til filer p\xE5. Funksjonen tillater spesifisering av modusen som\
+  \ filen \xE5pnes i\u2026"
 lastmod: '2024-03-13T22:44:40.379381-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Pythons innebygde `open()`-funksjon er den vanligste m\xE5ten \xE5 skrive\
+  \ til filer p\xE5."
 title: Skrive en tekstfil
 weight: 24
 ---

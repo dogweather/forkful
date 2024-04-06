@@ -1,9 +1,10 @@
 ---
 date: 2024-02-03 19:03:13.807014-07:00
-description: 'How to: #.'
+description: 'How to: To read from a CSV file, use the `Import-Csv` cmdlet. This cmdlet
+  reads the file and converts it into custom PowerShell objects for each row.'
 lastmod: '2024-03-13T22:45:00.304439-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: To read from a CSV file, use the `Import-Csv` cmdlet.
 title: Working with CSV
 weight: 37
 ---

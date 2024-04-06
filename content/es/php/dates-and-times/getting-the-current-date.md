@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:10:15.616698-07:00
-description: "C\xF3mo hacerlo: #."
+description: "C\xF3mo hacerlo: La funci\xF3n incorporada `date()` de PHP es la manera\
+  \ m\xE1s directa de obtener la fecha actual. Puedes formatear la fecha de diversas\
+  \ maneras\u2026"
 lastmod: '2024-03-13T22:44:59.171141-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "La funci\xF3n incorporada `date()` de PHP es la manera m\xE1s directa de\
+  \ obtener la fecha actual."
 title: Obteniendo la fecha actual
 weight: 29
 ---

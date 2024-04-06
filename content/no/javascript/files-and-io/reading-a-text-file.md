@@ -1,7 +1,7 @@
 ---
 date: 2024-01-20 17:54:32.991132-07:00
 description: "Slik gj\xF8r du: JavaScript kan lese tekstfiler med fil-APIen i nettlesere\
-  \ eller `fs`-modulen i Node.js. Her er eksempler p\xE5 begge. ##."
+  \ eller `fs`-modulen i Node.js. Her er eksempler p\xE5 begge."
 lastmod: '2024-03-13T22:44:41.200568-06:00'
 model: gpt-4-1106-preview
 summary: JavaScript kan lese tekstfiler med fil-APIen i nettlesere eller `fs`-modulen

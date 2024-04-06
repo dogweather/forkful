@@ -2,10 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:02.723251-07:00
-description: "Jak to zrobi\u0107: #."
+description: "Jak to zrobi\u0107: Przed refaktoryzacj\u0105 mo\u017Cesz mie\u0107\
+  \ fragment kodu, kt\xF3ry miesza r\xF3\u017Cne poziomy abstrakcji lub odpowiedzialno\u015B\
+  ci, jak obliczanie zni\u017Cki, a\u2026"
 lastmod: '2024-03-13T22:44:35.100828-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: ''
 title: Refaktoryzacja
 weight: 19
 ---

@@ -2,10 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:50.912313-07:00
-description: "C\xF3mo hacerlo: #."
+description: "C\xF3mo hacerlo: Antes de la refactorizaci\xF3n, es posible que tengas\
+  \ un fragmento de c\xF3digo que mezcla diferentes niveles de abstracci\xF3n o responsabilidades,\u2026"
 lastmod: '2024-03-13T22:44:58.761892-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: ''
 title: "Refactorizaci\xF3n"
 weight: 19
 ---

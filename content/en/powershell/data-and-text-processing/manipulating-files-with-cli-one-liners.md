@@ -1,9 +1,10 @@
 ---
 date: 2024-01-27 16:10:03.494906-07:00
-description: 'How to: #.'
+description: 'How to: To quickly display the content of a file, use the `Get-Content`
+  command.'
 lastmod: '2024-03-13T22:45:00.279446-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: To quickly display the content of a file, use the `Get-Content` command.
 title: Manipulating files with CLI one-liners
 weight: 31
 ---

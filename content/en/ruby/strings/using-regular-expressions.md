@@ -1,9 +1,10 @@
 ---
 date: 2024-02-03 19:02:59.191386-07:00
-description: 'How to: #.'
+description: 'How to: To match a string against a simple pattern, you can use the
+  `match` method. Below, we''re checking if the word "Ruby" exists in a given string.'
 lastmod: '2024-03-13T22:45:00.539542-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: To match a string against a simple pattern, you can use the `match` method.
 title: Using regular expressions
 weight: 11
 ---

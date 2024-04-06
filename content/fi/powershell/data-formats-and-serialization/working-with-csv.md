@@ -2,10 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:59.839026-07:00
-description: 'Kuinka: #.'
+description: "Kuinka: CSV-tiedostosta lukemiseksi k\xE4yt\xE4 `Import-Csv` cmdlet-komentoa.\
+  \ T\xE4m\xE4 cmdlet lukee tiedoston ja muuntaa sen mukautetuiksi PowerShell-objekteiksi\u2026"
 lastmod: '2024-03-13T22:44:56.805327-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "CSV-tiedostosta lukemiseksi k\xE4yt\xE4 `Import-Csv` cmdlet-komentoa."
 title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---

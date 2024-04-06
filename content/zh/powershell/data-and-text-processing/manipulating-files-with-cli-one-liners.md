@@ -1,9 +1,11 @@
 ---
 date: 2024-01-27 16:22:05.636095-07:00
-description: "\u5982\u4F55\u64CD\u4F5C: #."
+description: "\u5982\u4F55\u64CD\u4F5C: \u8981\u5FEB\u901F\u663E\u793A\u6587\u4EF6\
+  \u7684\u5185\u5BB9\uFF0C\u4F7F\u7528 `Get-Content` \u547D\u4EE4\uFF1A."
 lastmod: '2024-03-13T22:44:48.007575-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "\u8981\u5FEB\u901F\u663E\u793A\u6587\u4EF6\u7684\u5185\u5BB9\uFF0C\u4F7F\
+  \u7528 `Get-Content` \u547D\u4EE4\uFF1A."
 title: "\u4F7F\u7528\u547D\u4EE4\u884C\u4E00\u884C\u547D\u4EE4\u64CD\u4F5C\u6587\u4EF6"
 weight: 31
 ---

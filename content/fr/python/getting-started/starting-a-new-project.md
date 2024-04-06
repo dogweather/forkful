@@ -3,10 +3,14 @@ changelog:
 - 2024-02-22, dogweather, reviewed
 - 2024-02-22, gpt-4-0125-preview, translated from English
 date: 2024-02-22 17:29:57.341989-07:00
-description: 'Comment faire : #.'
+description: "Comment faire : Un environnement virtuel est un r\xE9pertoire autonome\
+  \ qui contient tous les ex\xE9cutables n\xE9cessaires pour utiliser les paquets\
+  \ dont un projet\u2026"
 lastmod: '2024-03-13T22:44:57.236761-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Un environnement virtuel est un r\xE9pertoire autonome qui contient tous\
+  \ les ex\xE9cutables n\xE9cessaires pour utiliser les paquets dont un projet Python\
+  \ aurait besoin."
 title: "D\xE9marrer un nouveau projet"
 weight: 1
 ---

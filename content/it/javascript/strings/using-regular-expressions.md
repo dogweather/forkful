@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:12.320242-07:00
-description: 'Come fare: #.'
+description: 'Come fare: Per iniziare, puoi creare un semplice pattern regex e usarlo
+  per trovare corrispondenze in una stringa. Qui, troveremo la parola "code".'
 lastmod: '2024-03-13T22:44:43.801877-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Per iniziare, puoi creare un semplice pattern regex e usarlo per trovare
+  corrispondenze in una stringa.
 title: Utilizzo delle espressioni regolari
 weight: 11
 ---

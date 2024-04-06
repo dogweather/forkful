@@ -1,9 +1,11 @@
 ---
 date: 2024-01-27 16:20:46.274650-07:00
-description: 'Hvordan: #.'
+description: "Hvordan: La oss starte med en enkel oppgave: du \xF8nsker \xE5 erstatte\
+  \ alle forekomster av \"oldtext\" med \"newtext\" i en fil som heter example.txt.\
+  \ Slik gj\xF8r du\u2026"
 lastmod: '2024-03-13T22:44:41.013907-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: La oss starte med en enkel oppgave.
 title: "Redigering av filer p\xE5 stedet med CLI-enlinjerskommandoer"
 weight: 32
 ---

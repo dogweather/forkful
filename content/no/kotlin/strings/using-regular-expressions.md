@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:23.495514-07:00
-description: 'Hvordan: #.'
+description: "Hvordan: For \xE5 sjekke om en streng matcher et spesifikt m\xF8nster\
+  \ i Kotlin, kan du bruke `matches`-metoden til `Regex`-klassen."
 lastmod: '2024-03-13T22:44:40.740102-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "For \xE5 sjekke om en streng matcher et spesifikt m\xF8nster i Kotlin, kan\
+  \ du bruke `matches`-metoden til `Regex`-klassen."
 title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---

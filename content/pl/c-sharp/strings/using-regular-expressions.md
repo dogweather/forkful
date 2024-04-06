@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:39.477283-07:00
-description: "Jak to zrobi\u0107: #."
+description: "Jak to zrobi\u0107: Aby sprawdzi\u0107, czy ci\u0105g zawiera okre\u015B\
+  lony wzorzec, mo\u017Cna u\u017Cy\u0107 metody `Regex.IsMatch` z przestrzeni nazw\
+  \ `System.Text.RegularExpressions`."
 lastmod: '2024-03-13T22:44:35.397799-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Aby sprawdzi\u0107, czy ci\u0105g zawiera okre\u015Blony wzorzec, mo\u017C\
+  na u\u017Cy\u0107 metody `Regex.IsMatch` z przestrzeni nazw `System.Text.RegularExpressions`."
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---

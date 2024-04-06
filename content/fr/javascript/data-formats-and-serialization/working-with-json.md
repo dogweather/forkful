@@ -2,10 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:53.913724-07:00
-description: 'Comment faire : #.'
+description: "Comment faire : Pour convertir une cha\xEEne JSON en un objet JavaScript,\
+  \ utilisez `JSON.parse()`."
 lastmod: '2024-03-13T22:44:58.300392-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Pour convertir une cha\xEEne JSON en un objet JavaScript, utilisez `JSON.parse()`."
 title: Travailler avec JSON
 weight: 38
 ---

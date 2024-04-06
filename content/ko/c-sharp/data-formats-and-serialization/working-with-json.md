@@ -2,10 +2,16 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:19.765966-07:00
-description: "\uBC29\uBC95: #."
+description: "\uBC29\uBC95: C#\uC740 \uD6A8\uC728\uC801\uC778 JSON \uCC98\uB9AC\uB97C\
+  \ \uC704\uD574 `System.Text.Json` \uB124\uC784\uC2A4\uD398\uC774\uC2A4\uB97C \uC81C\
+  \uACF5\uD569\uB2C8\uB2E4. JSON \uBB38\uC790\uC5F4\uC744 C# \uAC1D\uCCB4\uB85C \uD30C\
+  \uC2F1\uD558\uB824\uBA74 JSON \uAD6C\uC870\uC640 \uC77C\uCE58\uD558\uB294 \uD074\
+  \uB798\uC2A4\uB97C \uC815\uC758\uD558\uACE0 `JsonSerializer.Deserialize` \uBA54\uC11C\
+  \uB4DC\uB97C \uC0AC\uC6A9\uD558\uC2ED\uC2DC\uC624."
 lastmod: '2024-03-13T22:44:55.266076-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "C#\uC740 \uD6A8\uC728\uC801\uC778 JSON \uCC98\uB9AC\uB97C \uC704\uD574 `System.Text.Json`\
+  \ \uB124\uC784\uC2A4\uD398\uC774\uC2A4\uB97C \uC81C\uACF5\uD569\uB2C8\uB2E4."
 title: "JSON\uACFC \uD568\uAED8 \uC77C\uD558\uAE30"
 weight: 38
 ---

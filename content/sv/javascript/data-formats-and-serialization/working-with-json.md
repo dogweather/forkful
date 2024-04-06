@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:11.781361-07:00
-description: "Hur man g\xF6r: #."
+description: "Hur man g\xF6r: F\xF6r att konvertera en JSON-str\xE4ng till ett JavaScript-objekt,\
+  \ anv\xE4nd `JSON.parse()`."
 lastmod: '2024-03-13T22:44:38.314652-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "F\xF6r att konvertera en JSON-str\xE4ng till ett JavaScript-objekt, anv\xE4\
+  nd `JSON.parse()`."
 title: Arbeta med JSON
 weight: 38
 ---

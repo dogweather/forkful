@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:08.675285-07:00
-description: 'Comment faire : #.'
+description: "Comment faire : C# fournit l'espace de noms `System.Text.Json` pour\
+  \ un traitement JSON efficace. Pour analyser une cha\xEEne JSON en un objet C#,\
+  \ d\xE9finissez\u2026"
 lastmod: '2024-03-13T22:44:57.811274-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: C# fournit l'espace de noms `System.Text.Json` pour un traitement JSON efficace.
 title: Travailler avec JSON
 weight: 38
 ---

@@ -2,10 +2,11 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:47.149600-07:00
-description: 'Comment faire : #.'
+description: "Comment faire : Pour lire un fichier CSV, utilisez l'applet de commande\
+  \ `Import-Csv`. Cet applet de commande lit le fichier et le convertit en objets\u2026"
 lastmod: '2024-03-13T22:44:58.084344-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Pour lire un fichier CSV, utilisez l'applet de commande `Import-Csv`.
 title: Travailler avec CSV
 weight: 37
 ---

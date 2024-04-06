@@ -2,10 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:13:42.738341-07:00
-description: "C\xE1ch th\u1EF1c hi\u1EC7n: #."
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: \u0110\u1EC3 ph\xE2n t\xEDch c\xFA ph\xE1\
+  p XML trong Go, b\u1EA1n s\u1EED d\u1EE5ng g\xF3i `encoding/xml`. G\xF3i n\xE0y\
+  \ cung c\u1EA5p c\xE1c c\xF4ng c\u1EE5 c\u1EA7n thi\u1EBFt \u0111\u1EC3 gi\u1EA3\
+  i m\xE3 (ph\xE2n t\xEDch c\xFA ph\xE1p)\u2026"
 lastmod: '2024-03-13T22:44:36.015176-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "\u0110\u1EC3 ph\xE2n t\xEDch c\xFA ph\xE1p XML trong Go, b\u1EA1n s\u1EED\
+  \ d\u1EE5ng g\xF3i `encoding/xml`."
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---

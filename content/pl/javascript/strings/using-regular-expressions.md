@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:17:27.387209-07:00
-description: "Jak to zrobi\u0107: #."
+description: "Jak to zrobi\u0107: Na pocz\u0105tek mo\u017Cesz stworzy\u0107 prosty\
+  \ wz\xF3r regex i u\u017Cy\u0107 go do znalezienia dopasowa\u0144 w ci\u0105gu tekstowym.\
+  \ Tutaj znajdziemy s\u0142owo \"kod\"."
 lastmod: '2024-03-13T22:44:35.786482-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Na pocz\u0105tek mo\u017Cesz stworzy\u0107 prosty wz\xF3r regex i u\u017C\
+  y\u0107 go do znalezienia dopasowa\u0144 w ci\u0105gu tekstowym."
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---

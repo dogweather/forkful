@@ -1,9 +1,11 @@
 ---
 date: 2024-01-27 16:20:40.454677-07:00
-description: 'Come fare: #.'
+description: 'Come fare: Cominciamo con un compito semplice: vuoi sostituire tutte
+  le istanze di "oldtext" con "newtext" in un file chiamato example.txt. Ecco come
+  fare.'
 lastmod: '2024-03-13T22:44:43.638840-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Cominciamo con un compito semplice.
 title: Modifica dei file sul posto con righe di comando CLI
 weight: 32
 ---

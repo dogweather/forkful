@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:15.701735-07:00
-description: "C\xF3mo hacerlo: #."
+description: "C\xF3mo hacerlo: Java no tiene soporte incorporado para CSV en su biblioteca\
+  \ est\xE1ndar, pero puedes leer f\xE1cilmente un archivo CSV utilizando clases de\u2026"
 lastmod: '2024-03-13T22:44:58.959803-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Java no tiene soporte incorporado para CSV en su biblioteca est\xE1ndar,\
+  \ pero puedes leer f\xE1cilmente un archivo CSV utilizando clases de `java.io`."
 title: Trabajando con CSV
 weight: 37
 ---

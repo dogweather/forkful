@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:11.853228-07:00
-description: 'Comment faire : #.'
+description: "Comment faire : Le package New I/O (NIO) de Java (`java.nio.file`) offre\
+  \ une approche plus polyvalente pour traiter avec les fichiers. Voici une mani\xE8\
+  re\u2026"
 lastmod: '2024-03-13T22:44:57.663128-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Le package New I/O (NIO) de Java (`java.nio.file`) offre une approche plus
+  polyvalente pour traiter avec les fichiers.
 title: "R\xE9diger un fichier texte"
 weight: 24
 ---

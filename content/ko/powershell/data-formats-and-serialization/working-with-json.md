@@ -2,10 +2,16 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:23:34.414430-07:00
-description: "\uBC29\uBC95: #."
+description: "\uBC29\uBC95: PowerShell\uC5D0\uC11C JSON\uC744 \uC77D\uAC70\uB098 \uD30C\
+  \uC2F1\uD558\uAE30 \uC704\uD574\uC11C\uB294 `ConvertFrom-Json` cmdlet\uC744 \uC0AC\
+  \uC6A9\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4. \uC8FC\uC5B4\uC9C4 JSON \uBB38\uC790\
+  \uC5F4\uC5D0 \uB300\uD574, \uC774 cmdlet\uC740 PowerShell \uAC1D\uCCB4\uB85C \uBCC0\
+  \uD658\uD569\uB2C8\uB2E4."
 lastmod: '2024-03-13T22:44:55.577918-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "PowerShell\uC5D0\uC11C JSON\uC744 \uC77D\uAC70\uB098 \uD30C\uC2F1\uD558\uAE30\
+  \ \uC704\uD574\uC11C\uB294 `ConvertFrom-Json` cmdlet\uC744 \uC0AC\uC6A9\uD560 \uC218\
+  \ \uC788\uC2B5\uB2C8\uB2E4."
 title: "JSON\uACFC \uD568\uAED8 \uC77C\uD558\uAE30"
 weight: 38
 ---

@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:24.297928-07:00
-description: "Hur g\xF6r man: #."
+description: "Hur g\xF6r man: Pythons inbyggda `sys`-modul till\xE5ter explicit skrivning\
+  \ till `stderr`. Detta tillv\xE4gag\xE5ngss\xE4tt \xE4r okomplicerat f\xF6r enkla\
+  \ felmeddelanden\u2026"
 lastmod: '2024-03-13T22:44:37.499221-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Pythons inbyggda `sys`-modul till\xE5ter explicit skrivning till `stderr`."
 title: Skriva till standardfel
 weight: 25
 ---

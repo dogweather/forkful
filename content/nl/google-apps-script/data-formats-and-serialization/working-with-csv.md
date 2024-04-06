@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:58.778489-07:00
-description: 'Hoe te: #.'
+description: "Hoe te: Om CSV-gegevens uit een bestand op Google Drive te lezen, moet\
+  \ u eerst de inhoud van het bestand als een string verkrijgen, vervolgens parseert\
+  \ u\u2026"
 lastmod: '2024-03-13T22:44:50.356053-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Om CSV-gegevens uit een bestand op Google Drive te lezen, moet u eerst de
+  inhoud van het bestand als een string verkrijgen, vervolgens parseert u het.
 title: Werken met CSV
 weight: 37
 ---

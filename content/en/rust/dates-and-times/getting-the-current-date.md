@@ -1,9 +1,11 @@
 ---
 date: 2024-02-03 19:02:38.356621-07:00
-description: 'How to: #.'
+description: "How to: Rust's standard library provides a limited but quick way to\
+  \ get the current time, though not directly the current date in a calendar format.\u2026"
 lastmod: '2024-03-13T22:44:59.905451-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Rust's standard library provides a limited but quick way to get the current
+  time, though not directly the current date in a calendar format.
 title: Getting the current date
 weight: 29
 ---

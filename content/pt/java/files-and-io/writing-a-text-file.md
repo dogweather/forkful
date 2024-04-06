@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:10.590064-07:00
-description: 'Como fazer: #.'
+description: "Como fazer: O pacote New I/O (NIO) do Java (`java.nio.file`) fornece\
+  \ uma abordagem mais vers\xE1til para lidar com arquivos. Aqui est\xE1 uma maneira\
+  \ simplista\u2026"
 lastmod: '2024-03-13T22:44:46.474132-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "O pacote New I/O (NIO) do Java (`java.nio.file`) fornece uma abordagem mais\
+  \ vers\xE1til para lidar com arquivos."
 title: Escrevendo um arquivo de texto
 weight: 24
 ---

@@ -1,9 +1,10 @@
 ---
 date: 2024-01-27 16:20:41.969806-07:00
-description: 'Wie geht das: #.'
+description: "Wie geht das: Beginnen wir mit einer einfachen Aufgabe: Sie m\xF6chten\
+  \ alle Instanzen von \"oldtext\" durch \"newtext\" in einer Datei namens example.txt\u2026"
 lastmod: '2024-03-13T22:44:54.099665-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Beginnen wir mit einer einfachen Aufgabe.
 title: Bearbeiten von Dateien im Place mit CLI-Einzeilern
 weight: 32
 ---

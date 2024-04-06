@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:16:20.962435-07:00
-description: 'Comment faire : #.'
+description: "Comment faire : Pour v\xE9rifier si une cha\xEEne contient un motif\
+  \ sp\xE9cifique, vous pouvez utiliser la m\xE9thode `Regex.IsMatch` de l'espace\
+  \ de noms\u2026"
 lastmod: '2024-03-13T22:44:57.775943-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Pour v\xE9rifier si une cha\xEEne contient un motif sp\xE9cifique, vous\
+  \ pouvez utiliser la m\xE9thode `Regex.IsMatch` de l'espace de noms `System.Text.RegularExpressions`."
 title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---

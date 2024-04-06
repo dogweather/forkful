@@ -1,8 +1,7 @@
 ---
 date: 2024-01-20 17:58:41.333882-07:00
 description: 'How to: PowerShell makes search and replace pretty straightforward.
-  Check out `-replace` for strings, and `Get-Content` with `Set-Content` for files.
-  #.'
+  Check out `-replace` for strings, and `Get-Content` with `Set-Content` for files.'
 lastmod: '2024-03-13T22:45:00.268682-06:00'
 model: gpt-4-1106-preview
 summary: PowerShell makes search and replace pretty straightforward.

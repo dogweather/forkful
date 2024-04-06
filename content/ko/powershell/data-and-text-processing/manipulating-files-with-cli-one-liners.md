@@ -1,9 +1,13 @@
 ---
 date: 2024-01-27 16:20:45.194990-07:00
-description: "\uC0AC\uC6A9 \uBC29\uBC95: #."
+description: "\uC0AC\uC6A9 \uBC29\uBC95: \uD30C\uC77C\uC758 \uB0B4\uC6A9\uC744 \uC2E0\
+  \uC18D\uD558\uAC8C \uD45C\uC2DC\uD558\uB824\uBA74 `Get-Content` \uBA85\uB839\uC744\
+  \ \uC0AC\uC6A9\uD558\uC138\uC694."
 lastmod: '2024-03-13T22:44:55.539172-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "\uD30C\uC77C\uC758 \uB0B4\uC6A9\uC744 \uC2E0\uC18D\uD558\uAC8C \uD45C\uC2DC\
+  \uD558\uB824\uBA74 `Get-Content` \uBA85\uB839\uC744 \uC0AC\uC6A9\uD558\uC138\uC694\
+  ."
 title: "CLI \uBA85\uB839\uC5B4\uB85C \uD30C\uC77C \uB2E4\uB8E8\uAE30"
 weight: 31
 ---

@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:34:10.778212-07:00
-description: 'Wie geht das: #.'
+description: "Wie geht das: Das in Python integrierte `sys`-Modul erm\xF6glicht ein\
+  \ explizites Schreiben auf `stderr`. Dieser Ansatz ist unkompliziert f\xFCr einfache\u2026"
 lastmod: '2024-03-13T22:44:53.395120-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Das in Python integrierte `sys`-Modul erm\xF6glicht ein explizites Schreiben\
+  \ auf `stderr`."
 title: Schreiben auf Standardfehler
 weight: 25
 ---

@@ -2,10 +2,13 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:05.224032-07:00
-description: "Jak to zrobi\u0107: #."
+description: "Jak to zrobi\u0107: Dart oferuje proste i bezpo\u015Brednie metody manipulacji\
+  \ ci\u0105gami znak\xF3w. Aby zamieni\u0107 liter\u0119 na wielk\u0105 w s\u0142\
+  owie lub zdaniu, zazwyczaj\u2026"
 lastmod: '2024-03-13T22:44:35.070694-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Dart oferuje proste i bezpo\u015Brednie metody manipulacji ci\u0105gami\
+  \ znak\xF3w."
 title: "Wielka litera w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---

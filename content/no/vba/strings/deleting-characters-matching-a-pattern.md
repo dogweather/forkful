@@ -3,8 +3,7 @@ changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:52:22.415154-07:00
 description: "Hvordan: I VBA kan du bruke `Replace`-funksjonen eller regul\xE6re uttrykk\
-  \ for \xE5 slette tegn som matcher et m\xF8nster. Her er eksempler p\xE5 begge metodene:\
-  \ #."
+  \ for \xE5 slette tegn som matcher et m\xF8nster. Her er eksempler p\xE5 begge metodene:\u2026"
 lastmod: '2024-03-13T22:44:40.600639-06:00'
 model: gpt-4-0125-preview
 summary: "I VBA kan du bruke `Replace`-funksjonen eller regul\xE6re uttrykk for \xE5\

@@ -2,10 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:53:28.683778-07:00
-description: 'Come fare: #.'
+description: "Come fare: Dart fornisce metodi semplici e diretti per la manipolazione\
+  \ delle stringhe. Per capitalizzare una parola o una frase, di solito si prende\
+  \ il\u2026"
 lastmod: '2024-03-13T22:44:43.109784-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Dart fornisce metodi semplici e diretti per la manipolazione delle stringhe.
 title: Capitalizzazione di una stringa
 weight: 2
 ---

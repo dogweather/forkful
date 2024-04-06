@@ -2,10 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:20:50.815471-07:00
-description: "\uC5B4\uB5BB\uAC8C: #."
+description: "\uC5B4\uB5BB\uAC8C: CSV \uD30C\uC77C\uC5D0\uC11C \uC77D\uC73C\uB824\uBA74\
+  \ `Import-Csv` cmdlet\uC744 \uC0AC\uC6A9\uD558\uC138\uC694. \uC774 cmdlet\uC740\
+  \ \uD30C\uC77C\uC744 \uC77D\uACE0 \uAC01 \uD589\uC5D0 \uB300\uD574 \uC0AC\uC6A9\uC790\
+  \ \uC9C0\uC815 PowerShell \uAC1D\uCCB4\uB85C \uBCC0\uD658\uD569\uB2C8\uB2E4."
 lastmod: '2024-03-13T22:44:55.579657-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "CSV \uD30C\uC77C\uC5D0\uC11C \uC77D\uC73C\uB824\uBA74 `Import-Csv` cmdlet\uC744\
+  \ \uC0AC\uC6A9\uD558\uC138\uC694."
 title: "CSV\uC640 \uD568\uAED8 \uC791\uC5C5\uD558\uAE30"
 weight: 37
 ---

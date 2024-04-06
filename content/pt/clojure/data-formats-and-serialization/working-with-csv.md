@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:19:09.728200-07:00
-description: 'Como fazer: #.'
+description: "Como fazer: Clojure n\xE3o tem an\xE1lise de CSV embutida em sua biblioteca\
+  \ padr\xE3o, mas voc\xEA pode usar a biblioteca `clojure.data.csv` para esse prop\xF3\
+  sito.\u2026"
 lastmod: '2024-03-13T22:44:46.218931-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Clojure n\xE3o tem an\xE1lise de CSV embutida em sua biblioteca padr\xE3\
+  o, mas voc\xEA pode usar a biblioteca `clojure.data.csv` para esse prop\xF3sito."
 title: Trabalhando com CSV
 weight: 37
 ---

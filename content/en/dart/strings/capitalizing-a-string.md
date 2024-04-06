@@ -1,9 +1,10 @@
 ---
 date: 2024-03-08 21:33:48.758582-07:00
-description: 'How to: #.'
+description: "How to: Dart provides simple, straightforward methods for string manipulation.\
+  \ To capitalize a word or a sentence, you would typically take the first\u2026"
 lastmod: '2024-03-13T22:44:59.805147-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Dart provides simple, straightforward methods for string manipulation.
 title: Capitalizing a string
 weight: 2
 ---

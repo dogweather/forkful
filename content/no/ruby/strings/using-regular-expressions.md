@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:18.139022-07:00
-description: 'Hvordan: #.'
+description: "Hvordan: For \xE5 matche en streng mot et enkelt m\xF8nster, kan du\
+  \ bruke `match`-metoden. Nedenfor sjekker vi om ordet \"Ruby\" finnes i en gitt\
+  \ streng."
 lastmod: '2024-03-13T22:44:41.305851-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "For \xE5 matche en streng mot et enkelt m\xF8nster, kan du bruke `match`-metoden."
 title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---

@@ -2,15 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:41.110280-07:00
-description: "L\xE0m g\xEC & T\u1EA1i sao? L\xE0m vi\u1EC7c v\u1EDBi XML ngh\u0129\
-  a l\xE0 ph\xE2n t\xEDch c\xFA ph\xE1p, t\u1EA1o v\xE0 thao t\xE1c v\u1EDBi c\xE1\
-  c t\xE0i li\u1EC7u XML (eXtensible Markup Language) th\xF4ng qua m\xE3 l\u1EC7nh.\
-  \ C\xE1c\u2026"
+description: null
 lastmod: '2024-03-13T22:44:37.372689-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE0m vi\u1EC7c v\u1EDBi XML ngh\u0129a l\xE0 ph\xE2n t\xEDch c\xFA ph\xE1\
-  p, t\u1EA1o v\xE0 thao t\xE1c v\u1EDBi c\xE1c t\xE0i li\u1EC7u XML (eXtensible Markup\
-  \ Language) th\xF4ng qua m\xE3 l\u1EC7nh."
+summary: null
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---

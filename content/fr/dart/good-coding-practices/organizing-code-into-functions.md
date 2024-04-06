@@ -2,10 +2,14 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:55:06.855592-07:00
-description: 'Comment faire : #.'
+description: "Comment faire : Dans Dart, vous d\xE9finissez une fonction en utilisant\
+  \ le mot-cl\xE9 `void` si elle ne retourne pas de valeur, ou vous sp\xE9cifiez le\
+  \ type de\u2026"
 lastmod: '2024-03-13T22:44:57.396152-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Dans Dart, vous d\xE9finissez une fonction en utilisant le mot-cl\xE9 `void`\
+  \ si elle ne retourne pas de valeur, ou vous sp\xE9cifiez le type de valeur qu'elle\
+  \ retourne autrement."
 title: Organiser le code en fonctions
 weight: 18
 ---

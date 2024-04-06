@@ -3,7 +3,8 @@ changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:54:02.608059-07:00
 description: "Come fare: Dart offre diversi modi diretti per concatenare le stringhe.\
-  \ Di seguito sono riportati i metodi pi\xF9 comuni: #."
+  \ Di seguito sono riportati i metodi pi\xF9 comuni: L'operatore `+` \xE8 il modo\
+  \ pi\xF9\u2026"
 lastmod: '2024-03-13T22:44:43.120519-06:00'
 model: gpt-4-0125-preview
 summary: Dart offre diversi modi diretti per concatenare le stringhe.

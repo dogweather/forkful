@@ -2,10 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:29:32.300544-07:00
-description: "\u5982\u4F55\u64CD\u4F5C\uFF1A #."
+description: "\u5982\u4F55\u64CD\u4F5C\uFF1A Swift \u7684\u6807\u51C6\u5E93\u5305\u542B\
+  \u4E86\u5199\u5165\u6587\u672C\u6587\u4EF6\u6240\u9700\u7684\u6240\u6709\u5DE5\u5177\
+  \u3002\u8FD9\u662F\u4E00\u4E2A\u57FA\u672C\u65B9\u6CD5\uFF1A."
 lastmod: '2024-03-13T22:44:48.178769-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Swift \u7684\u6807\u51C6\u5E93\u5305\u542B\u4E86\u5199\u5165\u6587\u672C\
+  \u6587\u4EF6\u6240\u9700\u7684\u6240\u6709\u5DE5\u5177\u3002\u8FD9\u662F\u4E00\u4E2A\
+  \u57FA\u672C\u65B9\u6CD5\uFF1A."
 title: "\u7F16\u5199\u6587\u672C\u6587\u4EF6"
 weight: 24
 ---

@@ -1,10 +1,10 @@
 ---
 date: 2024-01-20 17:51:14.625937-07:00
-description: 'How to: #.'
+description: 'How to: .'
 isCJKLanguage: true
 lastmod: '2024-03-13T22:44:42.656466-06:00'
 model: gpt-4-1106-preview
-summary: '#.'
+summary: ''
 title: "\u6587\u5B57\u5217\u306E\u88DC\u9593"
 weight: 8
 ---

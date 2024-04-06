@@ -2,10 +2,16 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:28:10.548851-07:00
-description: "\u5982\u4F55\u64CD\u4F5C\uFF1A #."
+description: "\u5982\u4F55\u64CD\u4F5C\uFF1A Java\u7684\u65B0I/O\uFF08NIO\uFF09\u5305\
+  \uFF08`java.nio.file`\uFF09\u4E3A\u5904\u7406\u6587\u4EF6\u63D0\u4F9B\u4E86\u66F4\
+  \u591A\u6837\u5316\u7684\u65B9\u6CD5\u3002\u4EE5\u4E0B\u662F\u4F7F\u7528`Files.write()`\u5199\
+  \u5165\u6587\u4EF6\u7684\u7B80\u5316\u65B9\u5F0F\uFF1A."
 lastmod: '2024-03-13T22:44:47.645538-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Java\u7684\u65B0I/O\uFF08NIO\uFF09\u5305\uFF08`java.nio.file`\uFF09\u4E3A\
+  \u5904\u7406\u6587\u4EF6\u63D0\u4F9B\u4E86\u66F4\u591A\u6837\u5316\u7684\u65B9\u6CD5\
+  \u3002\u4EE5\u4E0B\u662F\u4F7F\u7528`Files.write()`\u5199\u5165\u6587\u4EF6\u7684\
+  \u7B80\u5316\u65B9\u5F0F\uFF1A."
 title: "\u7F16\u5199\u6587\u672C\u6587\u4EF6"
 weight: 24
 ---

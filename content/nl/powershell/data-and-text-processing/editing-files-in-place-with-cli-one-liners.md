@@ -2,10 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:41.441612-07:00
-description: 'Hoe te: #.'
+description: "Hoe te: Laten we beginnen met een eenvoudige taak: je wilt alle instanties\
+  \ van \"oldtext\" vervangen door \"newtext\" in een bestand genaamd example.txt.\
+  \ Zo\u2026"
 lastmod: '2024-03-13T22:44:51.024962-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: Laten we beginnen met een eenvoudige taak.
 title: Bestanden ter plekke bewerken met CLI one-liners
 weight: 32
 ---

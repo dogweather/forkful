@@ -1,9 +1,12 @@
 ---
 date: 2024-01-27 20:34:36.795511-07:00
-description: 'Kuinka: #.'
+description: "Kuinka: Yksinkertaisin tapa generoida satunnaisluku JavaScriptill\xE4\
+  \ on k\xE4ytt\xE4\xE4 `Math.random()` -funktiota. T\xE4m\xE4 funktio palauttaa liukuluvun,\
+  \ pseudo-\u2026"
 lastmod: '2024-03-13T22:44:56.945630-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Yksinkertaisin tapa generoida satunnaisluku JavaScriptill\xE4 on k\xE4ytt\xE4\
+  \xE4 `Math.random()` -funktiota."
 title: Satunnaislukujen generointi
 weight: 12
 ---

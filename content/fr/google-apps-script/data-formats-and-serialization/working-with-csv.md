@@ -2,10 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:05:18.600574-07:00
-description: 'Comment : #.'
+description: "Comment : Pour lire des donn\xE9es CSV depuis un fichier stock\xE9 dans\
+  \ Google Drive, vous devez d'abord obtenir le contenu du fichier sous forme de cha\xEE\
+  ne,\u2026"
 lastmod: '2024-03-13T22:44:57.212958-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Pour lire des donn\xE9es CSV depuis un fichier stock\xE9 dans Google Drive,\
+  \ vous devez d'abord obtenir le contenu du fichier sous forme de cha\xEEne, puis\
+  \ l'analyser."
 title: Travailler avec CSV
 weight: 37
 ---

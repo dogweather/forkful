@@ -2,10 +2,12 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:22:14.487609-07:00
-description: "Hur man g\xF6r: #."
+description: "Hur man g\xF6r: C# tillhandah\xE5ller namnutrymmet `System.Text.Json`\
+  \ f\xF6r effektiv JSON-bearbetning. F\xF6r att parse:a en JSON-str\xE4ng till ett\
+  \ C#-objekt,\u2026"
 lastmod: '2024-03-13T22:44:37.934790-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "C# tillhandah\xE5ller namnutrymmet `System.Text.Json` f\xF6r effektiv JSON-bearbetning."
 title: Arbeta med JSON
 weight: 38
 ---

@@ -2,10 +2,11 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:56:59.126883-07:00
-description: 'Hvordan: #.'
+description: "Hvordan: **1. Sette brytepunkter:** For \xE5 sette et brytepunkt, klikk\
+  \ p\xE5 venstre marg av kodelinjen i din IDE (f.eks., Visual Studio Code eller Android\u2026"
 lastmod: '2024-03-13T22:44:40.492253-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: ''
 title: Bruke en debugger
 weight: 35
 ---

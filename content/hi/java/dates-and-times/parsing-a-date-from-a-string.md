@@ -2,10 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:14.580505-07:00
-description: "\u0915\u0948\u0938\u0947 \u0915\u0930\u0947\u0902: #."
+description: "\u0915\u0948\u0938\u0947 \u0915\u0930\u0947\u0902: ."
 lastmod: '2024-03-13T22:44:52.129904-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: ''
 title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0938\u0947 \u0924\u093E\
   \u0930\u0940\u0916 \u092A\u093E\u0930\u094D\u0938 \u0915\u0930\u0928\u093E"
 weight: 30

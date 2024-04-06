@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:40.722998-07:00
-description: 'Jak: #.'
+description: "Jak: Aby przekonwertowa\u0107 ci\u0105g JSON na obiekt TypeScript, u\u017C\
+  ywa si\u0119 metody `JSON.parse()`. Jest to przydatne przy odbieraniu danych JSON\
+  \ z serwera\u2026"
 lastmod: '2024-03-13T22:44:35.161951-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Aby przekonwertowa\u0107 ci\u0105g JSON na obiekt TypeScript, u\u017Cywa\
+  \ si\u0119 metody `JSON.parse()`."
 title: Praca z JSON
 weight: 38
 ---

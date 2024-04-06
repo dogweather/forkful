@@ -2,10 +2,13 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:09:17.315610-07:00
-description: "Kuinka tehd\xE4: #."
+description: "Kuinka tehd\xE4: Clojuren saumaton yhteentoimivuus Javan kanssa antaa\
+  \ sinun hy\xF6dynt\xE4\xE4 Java Date-Time API:a suoraan. N\xE4in voit saada nykyisen\
+  \ p\xE4iv\xE4m\xE4\xE4r\xE4n."
 lastmod: '2024-03-13T22:44:56.194639-06:00'
 model: gpt-4-0125-preview
-summary: '#.'
+summary: "Clojuren saumaton yhteentoimivuus Javan kanssa antaa sinun hy\xF6dynt\xE4\
+  \xE4 Java Date-Time API:a suoraan."
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---
