@@ -5,9 +5,11 @@ date: 2024-03-08 21:57:59.664849-07:00
 description: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u5728 Dart \u4E2D\uFF0C\u901A\u5E38\u4F7F\
   \u7528 `test` \u5305\u6765\u7F16\u5199\u6D4B\u8BD5\u3002\u9996\u5148\uFF0C\u5C06\
   \ `test` \u5305\u6DFB\u52A0\u5230\u4F60\u7684 `pubspec.yaml` \u4E2D\uFF1A."
-lastmod: '2024-04-05T21:53:47.752276-06:00'
+lastmod: '2024-04-05T22:38:46.585612-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u5728 Dart \u4E2D\uFF0C\u901A\u5E38\u4F7F\
+  \u7528 `test` \u5305\u6765\u7F16\u5199\u6D4B\u8BD5\u3002\u9996\u5148\uFF0C\u5C06\
+  \ `test` \u5305\u6DFB\u52A0\u5230\u4F60\u7684 `pubspec.yaml` \u4E2D\uFF1A."
 title: "\u7F16\u5199\u6D4B\u8BD5"
 weight: 36
 ---

@@ -8,10 +8,10 @@ description: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u5728 VBA \u4E2D\uFF0C`Dictionary`
   \ \u7684\u5F15\u7528\u624D\u80FD\u4F7F\u7528\u5B83\uFF1A 1. \u5728 VBA \u7F16\u8F91\
   \u5668\u4E2D\uFF0C\u8F6C\u81F3 \u5DE5\u5177 > \u5F15\u7528... 2. \u52FE\u9009 \u201C\
   Microsoft Scripting Runtime\u201D\u2026"
-lastmod: '2024-04-05T21:53:47.882450-06:00'
+lastmod: '2024-04-05T22:38:46.722435-06:00'
 model: gpt-4-0125-preview
 summary: "\u5728 VBA \u7F16\u8F91\u5668\u4E2D\uFF0C\u8F6C\u81F3 \u5DE5\u5177 > \u5F15\
-  \u7528.."
+  \u7528..."
 title: "\u4F7F\u7528\u5173\u8054\u6570\u7EC4"
 weight: 15
 ---

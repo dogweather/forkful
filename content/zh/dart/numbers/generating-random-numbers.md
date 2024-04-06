@@ -6,9 +6,10 @@ description: "\u5982\u4F55\u64CD\u4F5C\uFF1A Dart \u7684\u6838\u5FC3\u5E93\u652F
   \u4F7F\u7528 `dart:math` \u4E2D\u627E\u5230\u7684 `Random` \u7C7B\u6765\u751F\u6210\
   \u968F\u673A\u6570\u3002\u8FD9\u91CC\u6709\u4E00\u4E2A\u57FA\u672C\u793A\u4F8B\uFF1A\
   ."
-lastmod: '2024-04-05T21:53:47.742837-06:00'
+lastmod: '2024-04-05T22:38:46.575470-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "math` \u4E2D\u627E\u5230\u7684 `Random` \u7C7B\u6765\u751F\u6210\u968F\u673A\
+  \u6570\u3002\u8FD9\u91CC\u6709\u4E00\u4E2A\u57FA\u672C\u793A\u4F8B\uFF1A."
 title: "\u751F\u6210\u968F\u673A\u6570"
 weight: 12
 ---

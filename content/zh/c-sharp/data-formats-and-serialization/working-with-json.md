@@ -7,9 +7,13 @@ description: "\u5982\u4F55\u64CD\u4F5C\uFF1A C# \u63D0\u4F9B\u4E86 `System.Text.
   \ JSON \u5B57\u7B26\u4E32\u89E3\u6790\u4E3A C# \u5BF9\u8C61\uFF0C\u5B9A\u4E49\u4E00\
   \u4E2A\u4E0E JSON \u7ED3\u6784\u5339\u914D\u7684\u7C7B\u5E76\u4F7F\u7528 `JsonSerializer.Deserialize`\
   \ \u65B9\u6CD5\u3002"
-lastmod: '2024-04-05T21:53:48.104969-06:00'
+lastmod: '2024-04-05T22:38:46.953645-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "\u5982\u4F55\u64CD\u4F5C\uFF1A C# \u63D0\u4F9B\u4E86 `System.Text.Json`\
+  \ \u547D\u540D\u7A7A\u95F4\u6765\u9AD8\u6548\u5904\u7406 JSON\u3002\u8981\u5C06\
+  \ JSON \u5B57\u7B26\u4E32\u89E3\u6790\u4E3A C# \u5BF9\u8C61\uFF0C\u5B9A\u4E49\u4E00\
+  \u4E2A\u4E0E JSON \u7ED3\u6784\u5339\u914D\u7684\u7C7B\u5E76\u4F7F\u7528 `JsonSerializer.Deserialize`\
+  \ \u65B9\u6CD5\u3002"
 title: "\u4F7F\u7528JSON\u8FDB\u884C\u7F16\u7A0B"
 weight: 38
 ---

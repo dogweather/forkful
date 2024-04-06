@@ -2,10 +2,10 @@
 date: 2024-01-20 17:56:40.695084-07:00
 description: "Wie geht das? Ruby macht es einfach, auf Befehlszeilenargumente zuzugreifen\
   \ \u2013 sie werden in einem speziellen Array namens `ARGV` gespeichert."
-lastmod: '2024-03-13T22:44:54.415822-06:00'
+lastmod: '2024-04-05T22:38:55.288941-06:00'
 model: gpt-4-1106-preview
-summary: "Ruby macht es einfach, auf Befehlszeilenargumente zuzugreifen \u2013 sie\
-  \ werden in einem speziellen Array namens `ARGV` gespeichert."
+summary: "Wie geht das? Ruby macht es einfach, auf Befehlszeilenargumente zuzugreifen\
+  \ \u2013 sie werden in einem speziellen Array namens `ARGV` gespeichert."
 title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---

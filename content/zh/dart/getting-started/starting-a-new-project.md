@@ -7,12 +7,10 @@ description: "\u5982\u4F55\u64CD\u4F5C\uFF1A 1. **\u5B89\u88C5 Dart**\uFF1A \u78
   \u60A8\u53EF\u4EE5\u4ECE [https://dart.dev/get-dart](https://dart.dev/get-dart)\
   \ \u4E0B\u8F7D\u3002\u7528\u4E0B\u9762\u7684\u547D\u4EE4\u9A8C\u8BC1\u5B89\u88C5\
   \uFF1A."
-lastmod: '2024-04-05T21:53:47.748657-06:00'
+lastmod: '2024-04-05T22:38:46.581974-06:00'
 model: gpt-4-0125-preview
-summary: "**\u5B89\u88C5 Dart**\uFF1A \u786E\u4FDD\u7CFB\u7EDF\u4E0A\u5DF2\u5B89\u88C5\
-  \ Dart\u3002\u5982\u679C\u6CA1\u6709\uFF0C\u60A8\u53EF\u4EE5\u4ECE [https://dart.dev/get-dart](https://dart.dev/get-dart)\
-  \ \u4E0B\u8F7D\u3002\u7528\u4E0B\u9762\u7684\u547D\u4EE4\u9A8C\u8BC1\u5B89\u88C5\
-  \uFF1A."
+summary: "//dart.dev/get-dart](https://dart.dev/get-dart) \u4E0B\u8F7D\u3002\u7528\
+  \u4E0B\u9762\u7684\u547D\u4EE4\u9A8C\u8BC1\u5B89\u88C5\uFF1A."
 title: "\u542F\u52A8\u65B0\u9879\u76EE"
 weight: 1
 ---

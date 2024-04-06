@@ -3,10 +3,10 @@ date: 2024-01-27 16:21:18.345278-07:00
 description: "Comment proc\xE9der : Lorsqu'il s'agit de modifier des fichiers sur\
   \ place en utilisant Bash, deux outils pr\xE9dominants entrent en jeu : `sed` et\
   \ `awk`.\u2026"
-lastmod: '2024-03-13T22:44:57.990032-06:00'
+lastmod: '2024-04-05T22:38:58.504667-06:00'
 model: gpt-4-0125-preview
 summary: "Lorsqu'il s'agit de modifier des fichiers sur place en utilisant Bash, deux\
-  \ outils pr\xE9dominants entrent en jeu."
+  \ outils pr\xE9dominants entrent en jeu ."
 title: "Modification de fichiers sur place avec des lignes de commande en une seule\
   \ \xE9tape"
 weight: 32

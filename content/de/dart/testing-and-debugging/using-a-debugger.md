@@ -4,9 +4,11 @@ changelog:
 date: 2024-03-08 21:56:44.413329-07:00
 description: "Wie geht das: **1. Haltepunkte setzen:** Um einen Haltepunkt zu setzen,\
   \ klicken Sie einfach auf den linken Rand der Codezeile in Ihrer IDE (z. B. Visual\u2026"
-lastmod: '2024-03-13T22:44:53.586066-06:00'
+lastmod: '2024-04-05T22:38:54.424335-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "**1. Haltepunkte setzen:** Um einen Haltepunkt zu setzen, klicken Sie einfach\
+  \ auf den linken Rand der Codezeile in Ihrer IDE (z. B. Visual Studio Code oder\
+  \ Android Studio), an der die Ausf\xFChrung pausieren soll."
 title: Einen Debugger verwenden
 weight: 35
 ---

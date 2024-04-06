@@ -5,9 +5,11 @@ date: 2024-03-08 21:56:43.358852-07:00
 description: "Hur man g\xF6r: **1. St\xE4lla in brytpunkter:** F\xF6r att st\xE4lla\
   \ in en brytpunkt, klicka helt enkelt p\xE5 v\xE4nsterkanten av koden p\xE5 den\
   \ rad i din IDE (t.ex. Visual\u2026"
-lastmod: '2024-03-13T22:44:37.616959-06:00'
+lastmod: '2024-04-05T22:37:46.301595-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "**1. St\xE4lla in brytpunkter:** F\xF6r att st\xE4lla in en brytpunkt, klicka\
+  \ helt enkelt p\xE5 v\xE4nsterkanten av koden p\xE5 den rad i din IDE (t.ex. Visual\
+  \ Studio Code eller Android Studio) d\xE4r du vill att exekveringen ska pausa."
 title: "Att anv\xE4nda en debugger"
 weight: 35
 ---

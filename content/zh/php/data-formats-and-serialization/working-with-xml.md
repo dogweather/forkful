@@ -2,9 +2,10 @@
 date: 2024-01-26 04:34:24.936233-07:00
 description: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u4F7F\u7528SimpleXML\u8BFB\u53D6XML\uFF1A\
   ."
-lastmod: '2024-04-05T21:53:48.197557-06:00'
+lastmod: '2024-04-05T22:38:47.048789-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u4F7F\u7528SimpleXML\u8BFB\u53D6XML\uFF1A\
+  ."
 title: "\u5904\u7406XML"
 weight: 40
 ---

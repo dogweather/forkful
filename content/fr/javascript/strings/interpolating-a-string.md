@@ -2,9 +2,10 @@
 date: 2024-01-20 17:51:37.133763-07:00
 description: "How to (Comment faire :) Interpoler une cha\xEEne en JavaScript est\
   \ simple avec les litt\xE9raux de gabarits (template literals). Voici comment."
-lastmod: '2024-04-05T21:53:59.663524-06:00'
+lastmod: '2024-04-05T22:38:58.724868-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: ") Interpoler une cha\xEEne en JavaScript est simple avec les litt\xE9raux\
+  \ de gabarits (template literals). Voici comment."
 title: "Interpolation de cha\xEEnes de caract\xE8res"
 weight: 8
 ---

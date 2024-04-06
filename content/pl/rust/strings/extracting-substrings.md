@@ -2,9 +2,10 @@
 date: 2024-01-20 17:46:44.636267-07:00
 description: "How to (Jak to zrobi\u0107): Wskaz\xF3wka: Uwa\u017Caj na Unicode! `chars()`\
   \ iteruje po warto\u015Bciach znak\xF3w, a nie po bajtach."
-lastmod: '2024-04-05T21:53:36.610677-06:00'
+lastmod: '2024-04-05T22:37:43.870810-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Wskaz\xF3wka: Uwa\u017Caj na Unicode! `chars()` iteruje po warto\u015Bciach\
+  \ znak\xF3w, a nie po bajtach."
 title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
 weight: 6
 ---

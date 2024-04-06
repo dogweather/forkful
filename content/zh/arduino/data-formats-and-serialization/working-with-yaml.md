@@ -3,11 +3,11 @@ changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:24:43.065440-07:00
 description: ''
-lastmod: '2024-04-05T21:59:59.622385-06:00'
+lastmod: '2024-04-05T22:38:47.242029-06:00'
 model: gpt-4-0125-preview
 summary: "**\u6B65\u9AA4 1\uFF1A** \u5C06\u60A8\u7684YAML\u914D\u7F6E\u8F6C\u6362\u4E3A\
   JSON\u3002\u60A8\u53EF\u4EE5\u4F7F\u7528\u5728\u7EBF\u5DE5\u5177\u6216\u547D\u4EE4\
-  \u884C\u5B9E\u7528\u7A0B\u5E8F\u5982`yq`."
+  \u884C\u5B9E\u7528\u7A0B\u5E8F\u5982`yq`\u3002"
 title: "\u4F7F\u7528YAML\u5DE5\u4F5C"
 weight: 41
 ---

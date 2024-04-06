@@ -7,9 +7,13 @@ description: "\u5982\u4F55\u64CD\u4F5C\uFF1A Bash \u4E0D\u662F\u89E3\u6790 HTML 
   `awk`\u3001`sed` \u6216\u5916\u90E8\u5DE5\u5177\u5982 `lynx`\u3002\u4E3A\u4E86\u589E\
   \u5F3A\u9C81\u68D2\u6027\uFF0C\u6211\u4EEC\u5C06\u4F7F\u7528 `libxml2` \u5305\u4E2D\
   \u7684 `xmllint`\u3002"
-lastmod: '2024-04-05T21:53:48.261420-06:00'
+lastmod: '2024-04-05T22:38:47.115481-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "\u5982\u4F55\u64CD\u4F5C\uFF1A Bash \u4E0D\u662F\u89E3\u6790 HTML \u7684\
+  \u9996\u9009\u5DE5\u5177\uFF0C\u4F46\u53EF\u4EE5\u4F7F\u7528\u50CF `grep`\u3001\
+  `awk`\u3001`sed` \u6216\u5916\u90E8\u5DE5\u5177\u5982 `lynx`\u3002\u4E3A\u4E86\u589E\
+  \u5F3A\u9C81\u68D2\u6027\uFF0C\u6211\u4EEC\u5C06\u4F7F\u7528 `libxml2` \u5305\u4E2D\
+  \u7684 `xmllint`\u3002"
 title: "\u89E3\u6790HTML"
 weight: 43
 ---

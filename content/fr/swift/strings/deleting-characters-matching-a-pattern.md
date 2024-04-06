@@ -3,9 +3,11 @@ date: 2024-01-20 17:43:19.399530-07:00
 description: "How to: (Comment faire : ) En Swift, on peut utiliser les expressions\
   \ r\xE9guli\xE8res (regex) pour identifier et supprimer les caract\xE8res correspondant\
   \ \xE0 un\u2026"
-lastmod: '2024-04-05T21:53:59.618383-06:00'
+lastmod: '2024-04-05T22:38:58.679885-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Comment faire : ) En Swift, on peut utiliser les expressions r\xE9guli\xE8\
+  res (regex) pour identifier et supprimer les caract\xE8res correspondant \xE0 un\
+  \ motif. Voici comment on proc\xE8de ."
 title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---

@@ -2,10 +2,10 @@
 date: 2024-01-20 17:52:55.237695-07:00
 description: "How to (Comment faire ?) Pour afficher des messages, utilisez `console.log()`.\
   \ Pour des messages d'avertissement ou d'erreur, essayez `console.warn()` et\u2026"
-lastmod: '2024-04-05T21:53:59.679991-06:00'
+lastmod: '2024-04-05T22:38:58.741917-06:00'
 model: gpt-4-1106-preview
-summary: Pour des messages d'avertissement ou d'erreur, essayez `console.warn()` et
-  `console.error()`.
+summary: How to (Comment faire ?) Pour afficher des messages, utilisez `console.log()`.
+  Pour des messages d'avertissement ou d'erreur, essayez `console.warn()` et `console.error()`.
 title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---

@@ -4,9 +4,11 @@ changelog:
 date: 2024-03-08 21:56:29.278396-07:00
 description: "Wie geht das: 1. **Dart installieren**: Stellen Sie sicher, dass Dart\
   \ auf Ihrem System installiert ist. Wenn nicht, k\xF6nnen Sie es von\u2026"
-lastmod: '2024-04-05T21:53:55.464447-06:00'
+lastmod: '2024-04-05T22:38:54.419400-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "1. **Dart installieren**: Stellen Sie sicher, dass Dart auf Ihrem System\
+  \ installiert ist. Wenn nicht, k\xF6nnen Sie es von [https://dart.dev/get-dart](https://dart.dev/get-dart)\
+  \ herunterladen. Verifizieren Sie die Installation mit."
 title: Ein neues Projekt starten
 weight: 1
 ---

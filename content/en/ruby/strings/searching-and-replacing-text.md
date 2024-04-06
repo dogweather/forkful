@@ -2,9 +2,10 @@
 date: 2024-01-20 17:58:26.553026-07:00
 description: 'How to: Ruby makes it easy. Use `gsub` to globally substitute text,
   or `sub` for a single instance. Here''s a quick look.'
-lastmod: '2024-04-05T21:53:36.242857-06:00'
+lastmod: '2024-04-05T22:37:43.507472-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: Ruby makes it easy. Use `gsub` to globally substitute text, or `sub` for
+  a single instance. Here's a quick look.
 title: Searching and replacing text
 weight: 10
 ---

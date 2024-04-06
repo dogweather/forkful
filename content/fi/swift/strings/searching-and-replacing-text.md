@@ -3,9 +3,17 @@ date: 2024-01-20 17:58:54.829623-07:00
 description: "How to: Historia: Tekstin etsimis- ja korvaustoiminnot ovat keskeisi\xE4\
   \ ty\xF6kaluja ohjelmoinnissa jo vuosikymmenten ajan. Unix-pohjaisissa j\xE4rjestelmiss\xE4\
   \u2026"
-lastmod: '2024-04-05T21:53:58.470862-06:00'
+lastmod: '2024-04-05T22:38:57.505288-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Historia: Tekstin etsimis- ja korvaustoiminnot ovat keskeisi\xE4 ty\xF6\
+  kaluja ohjelmoinnissa jo vuosikymmenten ajan. Unix-pohjaisissa j\xE4rjestelmiss\xE4\
+  \ ty\xF6kalut kuten `sed` ovat tehneet t\xE4t\xE4 komentorivill\xE4. Vaihtoehdot:\
+  \ Swiftiss\xE4 `replacingOccurrences`-metodi tekee perusvaihdot. S\xE4\xE4nn\xF6\
+  llisten lausekkeiden kanssa, `NSRegularExpression` mahdollistaa monimutkaisemmat\
+  \ etsint\xE4- ja korvauskuviot. Toteutus: `replacingOccurrences` k\xE4ytt\xE4\xE4\
+  \ yksinkertaista merkkijonojen vertailua. `NSRegularExpression` hy\xF6dynt\xE4\xE4\
+  \ s\xE4\xE4nn\xF6llisi\xE4 lausekkeita, jotka ovat voimakas mutta monimutkainen\
+  \ tapa suorittaa tekstihakuja ja -muunnoksia."
 title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---

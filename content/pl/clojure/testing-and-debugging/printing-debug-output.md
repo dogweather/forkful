@@ -3,9 +3,11 @@ date: 2024-01-20 17:52:10.962410-07:00
 description: "How to: | Jak to zrobi\u0107: Clojure u\u017Cywa funkcji `println` do\
   \ wypisania na standardowe wyj\u015Bcie. Mo\u017Cesz te\u017C u\u017Cy\u0107 `prn`\
   \ dla danych w formacie czytelnym dla\u2026"
-lastmod: '2024-04-05T21:53:36.443442-06:00'
+lastmod: '2024-04-05T22:37:43.709303-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "| Jak to zrobi\u0107: Clojure u\u017Cywa funkcji `println` do wypisania\
+  \ na standardowe wyj\u015Bcie. Mo\u017Cesz te\u017C u\u017Cy\u0107 `prn` dla danych\
+  \ w formacie czytelnym dla Clojure, czy `printf` dla formatowania string\xF3w."
 title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---

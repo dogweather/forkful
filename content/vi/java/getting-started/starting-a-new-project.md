@@ -6,9 +6,14 @@ description: "C\xE1ch th\u1EF1c hi\u1EC7n: H\xE3y b\u1EAFt \u0111\u1EA7u th\xF4i
   \ Ch\xFAng t\xF4i s\u1EBD t\u1EA1o m\u1ED9t d\u1EF1 \xE1n Java \u0111\u01A1n gi\u1EA3\
   n s\u1EED d\u1EE5ng d\xF2ng l\u1EC7nh v\xE0 bi\xEAn d\u1ECBch v\xE0 ch\u1EA1y ch\u01B0\
   \u01A1ng tr\xECnh \"Hello, World!\" c\u1ED5 \u0111i\u1EC3n.\u2026"
-lastmod: '2024-04-05T21:53:37.896222-06:00'
+lastmod: '2024-04-05T22:37:45.238211-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "H\xE3y b\u1EAFt \u0111\u1EA7u th\xF4i. Ch\xFAng t\xF4i s\u1EBD t\u1EA1o\
+  \ m\u1ED9t d\u1EF1 \xE1n Java \u0111\u01A1n gi\u1EA3n s\u1EED d\u1EE5ng d\xF2ng\
+  \ l\u1EC7nh v\xE0 bi\xEAn d\u1ECBch v\xE0 ch\u1EA1y ch\u01B0\u01A1ng tr\xECnh \"\
+  Hello, World!\" c\u1ED5 \u0111i\u1EC3n. \u0110\u1EA7u ti\xEAn, h\xE3y t\u1EA1o m\u1ED9\
+  t th\u01B0 m\u1EE5c cho d\u1EF1 \xE1n c\u1EE7a b\u1EA1n v\xE0 di chuy\u1EC3n v\xE0\
+  o n\xF3."
 title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---

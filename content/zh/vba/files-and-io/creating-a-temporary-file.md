@@ -9,13 +9,13 @@ description: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u5728 VBA \u4E2D\uFF0C\u53EF\u4EE5
   \u6587\u4EF6\u548C\u6587\u4EF6\u5939\u7684\u65B9\u6CD5\u3002\u4EE5\u4E0B\u662F\u521B\
   \u5EFA\u4E34\u65F6\u6587\u4EF6\u7684\u5206\u6B65\u6307\u5357\uFF1A 1. **\u542F\u7528\
   \ Microsoft Scripting\u2026"
-lastmod: '2024-04-05T21:53:47.919909-06:00'
+lastmod: '2024-04-05T22:38:46.759559-06:00'
 model: gpt-4-0125-preview
 summary: "**\u542F\u7528 Microsoft Scripting Runtime**\uFF1A\u9996\u5148\uFF0C\u786E\
   \u4FDD\u5728\u60A8\u7684 VBA \u73AF\u5883\u4E2D\u542F\u7528\u4E86 Microsoft Scripting\
   \ Runtime \u53C2\u8003\u3002\u8F6C\u5230 VBA \u7F16\u8F91\u5668\u4E2D\u7684\u5DE5\
   \u5177 > \u5F15\u7528\uFF0C\u5E76\u52FE\u9009 \u201CMicrosoft Scripting Runtime\u201D\
-  ."
+  \u3002"
 title: "\u521B\u5EFA\u4E34\u65F6\u6587\u4EF6"
 weight: 21
 ---

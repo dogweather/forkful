@@ -3,9 +3,9 @@ date: 2024-01-26 00:57:51.098076-07:00
 description: "Comment faire : Rust g\xE8re les erreurs de deux mani\xE8res principales\
   \ : les erreurs r\xE9cup\xE9rables et les erreurs irr\xE9cup\xE9rables. Examinons\
   \ les deux. Pour les\u2026"
-lastmod: '2024-03-13T22:44:57.490094-06:00'
+lastmod: '2024-04-05T22:38:58.106530-06:00'
 model: gpt-4-1106-preview
-summary: "Rust g\xE8re les erreurs de deux mani\xE8res principales."
+summary: "Rust g\xE8re les erreurs de deux mani\xE8res principales ."
 title: Gestion des erreurs
 weight: 16
 ---

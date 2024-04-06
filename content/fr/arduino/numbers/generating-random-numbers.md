@@ -3,10 +3,10 @@ date: 2024-01-27 20:32:41.674315-07:00
 description: "Comment faire : Arduino fournit des fonctions simples pour g\xE9n\xE9\
   rer des nombres al\xE9atoires : `randomSeed()` et `random()`. Pour commencer, initialisez\
   \ le\u2026"
-lastmod: '2024-03-13T22:44:58.104765-06:00'
+lastmod: '2024-04-05T22:38:58.601920-06:00'
 model: gpt-4-0125-preview
 summary: "Arduino fournit des fonctions simples pour g\xE9n\xE9rer des nombres al\xE9\
-  atoires."
+  atoires ."
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---

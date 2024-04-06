@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:35:25.977007-07:00
 description: How to (Come Fare) .
-lastmod: '2024-04-05T21:53:44.273652-06:00'
+lastmod: '2024-04-05T22:38:43.001788-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: How to (Come Fare) .
 title: Concatenazione di stringhe
 weight: 3
 ---

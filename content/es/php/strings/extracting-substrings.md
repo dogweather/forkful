@@ -2,9 +2,9 @@
 date: 2024-01-20 17:46:09.231889-07:00
 description: "\xBFC\xF3mo se hace? Veamos c\xF3mo cortar esa cadena a punta de c\xF3\
   digo."
-lastmod: '2024-03-13T22:44:59.149809-06:00'
+lastmod: '2024-04-05T22:38:59.548384-06:00'
 model: gpt-4-1106-preview
-summary: "Veamos c\xF3mo cortar esa cadena a punta de c\xF3digo."
+summary: "\xBFC\xF3mo se hace? Veamos c\xF3mo cortar esa cadena a punta de c\xF3digo."
 title: "Extracci\xF3n de subcadenas"
 weight: 6
 ---

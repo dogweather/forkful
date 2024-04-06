@@ -2,9 +2,10 @@
 date: 2024-01-20 17:35:31.354207-07:00
 description: "How to (Slik gj\xF8r du det) Bruk punktum `.` for \xE5 koble sammen\
   \ strenger i PHP. Her er et enkelt eksempel."
-lastmod: '2024-04-05T21:53:41.846524-06:00'
+lastmod: '2024-04-05T22:37:49.240714-06:00'
 model: gpt-4-1106-preview
-summary: Her er et enkelt eksempel.
+summary: "How to (Slik gj\xF8r du det) Bruk punktum `.` for \xE5 koble sammen strenger\
+  \ i PHP. Her er et enkelt eksempel."
 title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---

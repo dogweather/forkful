@@ -4,9 +4,11 @@ changelog:
 date: 2024-03-08 21:56:41.654793-07:00
 description: "Hoe: **1. Breakpoints Zetten:** Om een breakpoint te zetten, klik simpelweg\
   \ op de linker marge van de code regel in je IDE (bijv., Visual Studio Code of\u2026"
-lastmod: '2024-03-13T22:44:50.509739-06:00'
+lastmod: '2024-04-05T22:38:49.372881-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: '**1. Breakpoints Zetten:** Om een breakpoint te zetten, klik simpelweg op
+  de linker marge van de code regel in je IDE (bijv., Visual Studio Code of Android
+  Studio) waar je de uitvoering wil pauzeren.'
 title: Het gebruik van een debugger
 weight: 35
 ---

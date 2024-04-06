@@ -3,9 +3,9 @@ changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:08.261235-07:00
 description: 'Hoe te: 1. Een CSV-bestand regel voor regel lezen.'
-lastmod: '2024-04-05T21:53:51.276820-06:00'
+lastmod: '2024-04-05T22:38:50.122842-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: 1. Een CSV-bestand regel voor regel lezen.
 title: Werken met CSV
 weight: 37
 ---

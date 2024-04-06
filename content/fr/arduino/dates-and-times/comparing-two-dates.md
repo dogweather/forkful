@@ -3,9 +3,12 @@ date: 2024-01-20 17:32:28.515744-07:00
 description: "How to: (Comment faire : ) Imagine t'as deux dates : d\xE9but et fin.\
   \ Tu veux savoir combien de temps s'est \xE9coul\xE9 entre elles. On va utiliser\
   \ les `DateTime`\u2026"
-lastmod: '2024-04-05T21:53:59.557425-06:00'
+lastmod: '2024-04-05T22:38:58.618505-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Comment faire : ) Imagine t'as deux dates : d\xE9but et fin. Tu veux savoir\
+  \ combien de temps s'est \xE9coul\xE9 entre elles. On va utiliser les `DateTime`\
+  \ de la biblioth\xE8que `RTClib`. Faut d'abord l'installer via le Gestionnaire de\
+  \ biblioth\xE8ques de l'EDI Arduino."
 title: Comparer deux dates
 weight: 27
 ---

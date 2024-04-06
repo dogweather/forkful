@@ -3,9 +3,11 @@ date: 2024-01-26 04:35:10.040963-07:00
 description: "\u5982\u4F55\u505A\uFF1A Python\u7684`xml.etree.ElementTree`\u6A21\u5757\
   \u63D0\u4F9B\u4E86\u5904\u7406XML\u7684\u5DE5\u5177\u3002 \u89E3\u6790XML\u6587\u6863\
   \uFF1A."
-lastmod: '2024-04-05T21:53:47.635340-06:00'
+lastmod: '2024-04-05T22:38:46.463040-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "\u5982\u4F55\u505A\uFF1A Python\u7684`xml.etree.ElementTree`\u6A21\u5757\
+  \u63D0\u4F9B\u4E86\u5904\u7406XML\u7684\u5DE5\u5177\u3002 \u89E3\u6790XML\u6587\u6863\
+  \uFF1A."
 title: "\u5904\u7406XML"
 weight: 40
 ---

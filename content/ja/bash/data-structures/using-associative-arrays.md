@@ -4,9 +4,10 @@ changelog:
 date: 2024-01-30 19:10:10.951532-07:00
 description: "\u65B9\u6CD5\uFF1A \u307E\u305A\u3001Bash\u3067\u9023\u60F3\u914D\u5217\
   \u3092\u5BA3\u8A00\u3057\u307E\u3059\uFF1A."
-lastmod: '2024-04-05T21:53:43.194610-06:00'
+lastmod: '2024-04-05T22:38:41.877052-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "\u65B9\u6CD5\uFF1A \u307E\u305A\u3001Bash\u3067\u9023\u60F3\u914D\u5217\u3092\
+  \u5BA3\u8A00\u3057\u307E\u3059\uFF1A."
 title: "\u9023\u60F3\u914D\u5217\u306E\u4F7F\u7528"
 weight: 15
 ---

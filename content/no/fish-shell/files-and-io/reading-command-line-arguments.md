@@ -2,9 +2,9 @@
 date: 2024-01-20 17:55:56.957456-07:00
 description: "Hvordan: Kj\xF8r skriptet: `fish eksempel_skript.fish ett to tre` Forventet\
   \ utskrift."
-lastmod: '2024-04-05T21:53:42.201394-06:00'
+lastmod: '2024-04-05T22:37:49.590464-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Kj\xF8r skriptet: `fish eksempel_skript.fish ett to tre` Forventet utskrift."
 title: Lese kommandolinjeargumenter
 weight: 23
 ---

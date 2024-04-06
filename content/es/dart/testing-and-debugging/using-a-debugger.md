@@ -5,9 +5,12 @@ date: 2024-03-08 21:57:04.696629-07:00
 description: "C\xF3mo: **1. Establecer Puntos de Interrupci\xF3n:** Para establecer\
   \ un punto de interrupci\xF3n, simplemente haz clic en el margen izquierdo de la\
   \ l\xEDnea de\u2026"
-lastmod: '2024-03-13T22:44:58.756925-06:00'
+lastmod: '2024-04-05T22:38:59.165147-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "**1. Establecer Puntos de Interrupci\xF3n:** Para establecer un punto de\
+  \ interrupci\xF3n, simplemente haz clic en el margen izquierdo de la l\xEDnea de\
+  \ c\xF3digo en tu IDE (p. ej., Visual Studio Code o Android Studio) donde deseas\
+  \ que se pause la ejecuci\xF3n."
 title: Usando un depurador
 weight: 35
 ---

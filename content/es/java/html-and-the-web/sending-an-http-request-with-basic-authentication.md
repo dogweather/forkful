@@ -2,9 +2,10 @@
 date: 2024-01-20 18:01:46.153866-07:00
 description: "C\xF3mo hacerlo: Nota: Debes reemplazar `http://tu-api.com/datos`, `usuario`,\
   \ y `contrase\xF1a` con tus propios valores."
-lastmod: '2024-04-05T21:54:00.289265-06:00'
+lastmod: '2024-04-05T22:38:59.344251-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Nota: Debes reemplazar `http://tu-api.com/datos`, `usuario`, y `contrase\xF1\
+  a` con tus propios valores."
 title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
 weight: 45
 ---

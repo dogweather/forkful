@@ -2,9 +2,10 @@
 date: 2024-01-20 18:00:30.101099-07:00
 description: "How to: \u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\
   \u0438: Ruby's standard library, Net::HTTP, is simple to use for sending requests."
-lastmod: '2024-04-05T21:53:50.253201-06:00'
+lastmod: '2024-04-05T22:38:49.077497-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\u0438: Ruby's\
+  \ standard library, Net::HTTP, is simple to use for sending requests."
 title: "\u041D\u0430\u0434\u0441\u0438\u043B\u0430\u043D\u043D\u044F HTTP-\u0437\u0430\
   \u043F\u0438\u0442\u0443"
 weight: 44

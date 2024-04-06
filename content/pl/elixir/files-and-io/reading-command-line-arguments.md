@@ -2,9 +2,10 @@
 date: 2024-01-20 17:55:48.556948-07:00
 description: "How to (Jak to zrobi\u0107?) Oto jak w Elixirze mo\u017Cemy odczyta\u0107\
   \ argumenty linii polece\u0144."
-lastmod: '2024-04-05T21:53:36.498457-06:00'
+lastmod: '2024-04-05T22:37:43.763777-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "How to (Jak to zrobi\u0107?) Oto jak w Elixirze mo\u017Cemy odczyta\u0107\
+  \ argumenty linii polece\u0144."
 title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---

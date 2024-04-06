@@ -2,9 +2,11 @@
 date: 2024-01-20 17:56:28.532678-07:00
 description: "How to: (Comment faire : ) En PHP, les arguments de ligne de commande\
   \ sont accessibles via le tableau `$argv`. Le script affiche le premier argument\u2026"
-lastmod: '2024-04-05T21:53:59.380090-06:00'
+lastmod: '2024-04-05T22:38:58.434745-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Comment faire : ) En PHP, les arguments de ligne de commande sont accessibles\
+  \ via le tableau `$argv`. Le script affiche le premier argument (apr\xE8s le nom\
+  \ du fichier script)."
 title: Lecture des arguments de ligne de commande
 weight: 23
 ---

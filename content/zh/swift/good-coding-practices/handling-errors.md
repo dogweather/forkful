@@ -3,9 +3,11 @@ date: 2024-01-26 00:58:05.450797-07:00
 description: "\u600E\u6837\u8FDB\u884C\u9519\u8BEF\u5904\u7406\uFF1A Swift \u4F7F\u7528\
   \ `do`\u3001`try` \u548C `catch` \u4EE3\u7801\u5757\u6765\u8FDB\u884C\u9519\u8BEF\
   \u5904\u7406\u3002\u8BA9\u6211\u4EEC\u6765\u770B\u4E00\u4E0B\uFF1A."
-lastmod: '2024-04-05T21:53:48.455552-06:00'
+lastmod: '2024-04-05T22:38:47.315508-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "\u600E\u6837\u8FDB\u884C\u9519\u8BEF\u5904\u7406\uFF1A Swift \u4F7F\u7528\
+  \ `do`\u3001`try` \u548C `catch` \u4EE3\u7801\u5757\u6765\u8FDB\u884C\u9519\u8BEF\
+  \u5904\u7406\u3002\u8BA9\u6211\u4EEC\u6765\u770B\u4E00\u4E0B\uFF1A."
 title: "\u5904\u7406\u9519\u8BEF"
 weight: 16
 ---

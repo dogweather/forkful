@@ -3,9 +3,11 @@ date: 2024-01-20 18:04:37.576833-07:00
 description: "How to: - Kuinka tehd\xE4\xE4n: Powershellill\xE4 uuden projektin pystytys\
   \ alkaa usein hakemiston luomisella ja sinne siirtymisell\xE4. Esimerkiksi - alla\
   \ koodi uuden\u2026"
-lastmod: '2024-04-05T21:53:58.357690-06:00'
+lastmod: '2024-04-05T22:38:57.394963-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "- Kuinka tehd\xE4\xE4n: Powershellill\xE4 uuden projektin pystytys alkaa\
+  \ usein hakemiston luomisella ja sinne siirtymisell\xE4. Esimerkiksi - alla koodi\
+  \ uuden hakemiston tekemiseen ja siell\xE4 projektin aloitukseen."
 title: Uuden projektin aloittaminen
 weight: 1
 ---

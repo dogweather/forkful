@@ -3,9 +3,17 @@ date: 2024-01-20 17:42:45.307494-07:00
 description: "How to: Syv\xE4sukellus: Lua:n patterit ovat regexin (s\xE4\xE4nn\xF6\
   lliset lausekkeet) kaltainen konsepti, mutta yksinkertaisempi. Ei ole aina ollut\
   \ n\xE4in.\u2026"
-lastmod: '2024-04-05T21:53:58.253901-06:00'
+lastmod: '2024-04-05T22:38:57.291489-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Syv\xE4sukellus: Lua:n patterit ovat regexin (s\xE4\xE4nn\xF6lliset lausekkeet)\
+  \ kaltainen konsepti, mutta yksinkertaisempi. Ei ole aina ollut n\xE4in. Aikaisemmissa\
+  \ Lua-versioissa oli rajoitetumpi sana- ja merkkik\xE4sittely, mutta versiosta 5.1\
+  \ l\xE4htien `string`-kirjasto on tarjonnut paremmat ty\xF6kalut kuvioon perustuvalle\
+  \ tekstink\xE4sittelylle. Vaihtoehtoisesti, kehitt\xE4j\xE4t voivat k\xE4ytt\xE4\
+  \xE4 `string.find`- tai `string.match`-funktioita etsimiseen, mutta `string.gsub`\
+  \ on tehokas ty\xF6kalu suoraan monen merkin poistoon. Suorituskyvyn kannalta, vaikka\
+  \ Lua ei tarjoa regexin t\xE4ytt\xE4 tehoa, sen kuvioratkaisut ovat optimoituja\
+  \ eiv\xE4tk\xE4 yleens\xE4 muodosta suorituskyvyn pullonkaulaa."
 title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---

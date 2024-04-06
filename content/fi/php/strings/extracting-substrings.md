@@ -2,9 +2,10 @@
 date: 2024-01-20 17:46:21.425376-07:00
 description: "How to: - Kuinka tehd\xE4: PHP:ss\xE4 alamerkkijonoja voi poimia `substr`-\
   \ ja `mb_substr`-funktioiden avulla. T\xE4ss\xE4 pari esimerkki\xE4."
-lastmod: '2024-04-05T21:53:58.216772-06:00'
+lastmod: '2024-04-05T22:38:57.254199-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "- Kuinka tehd\xE4: PHP:ss\xE4 alamerkkijonoja voi poimia `substr`- ja `mb_substr`-funktioiden\
+  \ avulla. T\xE4ss\xE4 pari esimerkki\xE4."
 title: Merkkijonojen osien poimiminen
 weight: 6
 ---

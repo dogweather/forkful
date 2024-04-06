@@ -2,9 +2,10 @@
 date: 2024-01-20 17:54:06.503662-07:00
 description: "How to: - Comment faire : Sortie d\u2019exemple (d\xE9pend du contenu\
   \ du fichier) ."
-lastmod: '2024-04-05T21:53:59.291039-06:00'
+lastmod: '2024-04-05T22:38:58.346435-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "- Comment faire : Sortie d\u2019exemple (d\xE9pend du contenu du fichier)\
+  \ ."
 title: Lecture d'un fichier texte
 weight: 22
 ---

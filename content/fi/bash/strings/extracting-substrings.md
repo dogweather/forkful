@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:45:03.252593-07:00
 description: "How to - Kuinka tehd\xE4\xE4n Sample output."
-lastmod: '2024-04-05T21:53:58.301026-06:00'
+lastmod: '2024-04-05T22:38:57.339711-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "How to - Kuinka tehd\xE4\xE4n Sample output."
 title: Merkkijonojen osien poimiminen
 weight: 6
 ---

@@ -2,9 +2,11 @@
 date: 2024-01-20 18:01:01.526459-07:00
 description: "Vorgehensweise: **Achtung**: `user:password` muss in Base64 kodiert\
   \ werden. Verwenden Sie den Header, wie er ist, nur mit Ihren echten Basis-\u2026"
-lastmod: '2024-04-05T21:53:56.070795-06:00'
+lastmod: '2024-04-05T22:38:55.044847-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "**Achtung**: `user:password` muss in Base64 kodiert werden. Verwenden Sie\
+  \ den Header, wie er ist, nur mit Ihren echten Basis-Authentifizierungsinformationen.\
+  \ Output (h\xE4ngt von der Ressource ab)."
 title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---

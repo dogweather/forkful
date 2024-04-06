@@ -3,9 +3,10 @@ date: 2024-01-20 17:44:32.244239-07:00
 description: "How to (\u5982\u4F55\u64CD\u4F5C) \u4F7F\u7528PHP\u4E0B\u8F7D\u7F51\u9875\
   \u7B80\u5355\u5FEB\u6377\u3002\u8FD9\u91CC\u6709\u4E2A\u4F8B\u5B50\uFF1A."
 isCJKLanguage: true
-lastmod: '2024-04-05T21:53:48.171312-06:00'
+lastmod: '2024-04-05T22:38:47.021841-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "How to (\u5982\u4F55\u64CD\u4F5C) \u4F7F\u7528PHP\u4E0B\u8F7D\u7F51\u9875\
+  \u7B80\u5355\u5FEB\u6377\u3002\u8FD9\u91CC\u6709\u4E2A\u4F8B\u5B50\uFF1A."
 title: "\u4E0B\u8F7D\u7F51\u9875"
 weight: 42
 ---

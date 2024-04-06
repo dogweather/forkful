@@ -3,9 +3,11 @@ date: 2024-01-26 04:44:42.751958-07:00
 description: "\u5982\u4F55\u64CD\u4F5C\uFF1A PHP\u901A\u8FC7 `ext-intl` \u6269\u5C55\
   \u548C `NumberFormatter` \u7C7B\u4E3A\u590D\u6570\u63D0\u4F9B\u4E86\u5185\u7F6E\u652F\
   \u6301\u3002\u8FD9\u91CC\u6709\u4E00\u4E2A\u4F8B\u5B50\uFF1A."
-lastmod: '2024-04-05T21:53:48.166024-06:00'
+lastmod: '2024-04-05T22:38:47.016835-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "\u5982\u4F55\u64CD\u4F5C\uFF1A PHP\u901A\u8FC7 `ext-intl` \u6269\u5C55\u548C\
+  \ `NumberFormatter` \u7C7B\u4E3A\u590D\u6570\u63D0\u4F9B\u4E86\u5185\u7F6E\u652F\
+  \u6301\u3002\u8FD9\u91CC\u6709\u4E00\u4E2A\u4F8B\u5B50\uFF1A."
 title: "\u5904\u7406\u590D\u6570"
 weight: 14
 ---

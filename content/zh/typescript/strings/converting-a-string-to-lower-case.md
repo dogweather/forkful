@@ -4,9 +4,10 @@ description: "How to (\u600E\u4E48\u505A) \u5728TypeScript\u4E2D\uFF0C\u4F7F\u75
   `toLowerCase()`\u65B9\u6CD5\u8F7B\u677E\u8F6C\u6362\u5B57\u7B26\u4E32\u5230\u5C0F\
   \u5199\uFF1A."
 isCJKLanguage: true
-lastmod: '2024-04-05T21:53:47.782954-06:00'
+lastmod: '2024-04-05T22:38:46.615931-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "How to (\u600E\u4E48\u505A) \u5728TypeScript\u4E2D\uFF0C\u4F7F\u7528`toLowerCase()`\u65B9\
+  \u6CD5\u8F7B\u677E\u8F6C\u6362\u5B57\u7B26\u4E32\u5230\u5C0F\u5199\uFF1A."
 title: "\u5C06\u5B57\u7B26\u4E32\u8F6C\u6362\u4E3A\u5C0F\u5199"
 weight: 4
 ---

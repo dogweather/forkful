@@ -5,9 +5,9 @@ date: 2024-01-28 22:05:04.610943-07:00
 description: "C\xE1ch th\u1EF1c hi\u1EC7n: Mu\u1ED1n in th\xF4ng tin debug trong TypeScript?\
   \ C\xE1c ph\u01B0\u01A1ng th\u1EE9c c\u1EE7a Console ch\xEDnh l\xE0 l\u1EF1a ch\u1ECD\
   n c\u1EE7a b\u1EA1n. Xem `console.log`, `console.error`, v\xE0\u2026"
-lastmod: '2024-03-13T22:44:36.322449-06:00'
+lastmod: '2024-04-05T22:40:24.575870-06:00'
 model: gpt-4-0125-preview
-summary: "Mu\u1ED1n in th\xF4ng tin debug trong TypeScript."
+summary: "Mu\u1ED1n in th\xF4ng tin debug trong TypeScript?"
 title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 weight: 33
 ---

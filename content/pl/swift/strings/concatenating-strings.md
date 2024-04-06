@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:35:51.847539-07:00
 description: "Jak to zrobi\u0107? Interpolacja napis\xF3w."
-lastmod: '2024-04-05T21:53:37.173565-06:00'
+lastmod: '2024-04-05T22:37:44.497985-06:00'
 model: gpt-4-1106-preview
-summary: "Interpolacja napis\xF3w."
+summary: "Jak to zrobi\u0107? Interpolacja napis\xF3w."
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---

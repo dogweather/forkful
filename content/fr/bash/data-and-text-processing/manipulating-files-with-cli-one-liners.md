@@ -2,9 +2,10 @@
 date: 2024-01-27 16:20:32.344618-07:00
 description: "Comment faire : Voici quelques lignes de commande puissantes et ce qu'elles\
   \ peuvent accomplir : 1. **Cr\xE9er un fichier et y \xE9crire du texte :**."
-lastmod: '2024-03-13T22:44:57.988856-06:00'
+lastmod: '2024-04-05T22:38:58.503274-06:00'
 model: gpt-4-0125-preview
-summary: Voici quelques lignes de commande puissantes et ce qu'elles peuvent accomplir.
+summary: Voici quelques lignes de commande puissantes et ce qu'elles peuvent accomplir
+  .
 title: Manipulation de fichiers avec des commandes en une ligne en CLI
 weight: 31
 ---

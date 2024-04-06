@@ -2,9 +2,9 @@
 date: 2024-01-20 17:50:17.202619-07:00
 description: "How to / \u65B9\u6CD5 Sample output."
 isCJKLanguage: true
-lastmod: '2024-04-05T21:53:43.347159-06:00'
+lastmod: '2024-04-05T22:38:42.042839-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "How to / \u65B9\u6CD5 Sample output."
 title: "\u6587\u5B57\u5217\u306E\u88DC\u9593"
 weight: 8
 ---

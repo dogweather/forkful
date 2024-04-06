@@ -4,9 +4,11 @@ changelog:
 date: 2024-03-08 21:56:31.007523-07:00
 description: "Comment faire : 1. **Installer Dart** : Assurez-vous que Dart est install\xE9\
   \ sur votre syst\xE8me. Sinon, vous pouvez le t\xE9l\xE9charger depuis\u2026"
-lastmod: '2024-04-05T21:53:58.954575-06:00'
+lastmod: '2024-04-05T22:38:58.006808-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "1. **Installer Dart** : Assurez-vous que Dart est install\xE9 sur votre\
+  \ syst\xE8me. Sinon, vous pouvez le t\xE9l\xE9charger depuis [https://dart.dev/get-dart](https://dart.dev/get-dart).\
+  \ V\xE9rifiez l'installation avec ."
 title: "D\xE9marrer un nouveau projet"
 weight: 1
 ---

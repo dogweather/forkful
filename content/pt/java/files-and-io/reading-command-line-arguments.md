@@ -3,9 +3,9 @@ date: 2024-01-20 17:56:13.429214-07:00
 description: "Como Fazer: Aquela linha de comando cl\xE1ssica `public static void\
   \ main(String[] args)`? Ela est\xE1 te dizendo \"Ei, me passa alguns argumentos!\"\
   \ Vamos ver\u2026"
-lastmod: '2024-03-13T22:44:46.471222-06:00'
+lastmod: '2024-04-05T22:40:32.998974-06:00'
 model: gpt-4-1106-preview
-summary: "Aquela linha de comando cl\xE1ssica `public static void main(String[] args)`."
+summary: "Aquela linha de comando cl\xE1ssica `public static void main(String[] args)`?"
 title: Lendo argumentos da linha de comando
 weight: 23
 ---

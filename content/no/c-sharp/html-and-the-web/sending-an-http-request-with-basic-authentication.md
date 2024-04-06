@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 18:01:18.344600-07:00
 description: "How to (Slik gj\xF8r du det) ."
-lastmod: '2024-04-05T21:53:41.770292-06:00'
+lastmod: '2024-04-05T22:37:49.163929-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "How to (Slik gj\xF8r du det) ."
 title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---

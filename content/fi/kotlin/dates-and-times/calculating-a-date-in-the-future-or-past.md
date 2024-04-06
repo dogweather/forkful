@@ -3,9 +3,11 @@ date: 2024-01-20 17:31:53.464183-07:00
 description: "How to: Miten: Kotlinissa p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen tehd\xE4\
   \xE4n `LocalDate`-luokan avulla. Seuraavilla esimerkeill\xE4 n\xE4ytet\xE4\xE4n,\
   \ kuinka lis\xE4t\xE4 ja v\xE4hent\xE4\xE4\u2026"
-lastmod: '2024-04-05T21:53:58.110575-06:00'
+lastmod: '2024-04-05T22:38:57.149824-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Miten: Kotlinissa p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen tehd\xE4\xE4n `LocalDate`-luokan\
+  \ avulla. Seuraavilla esimerkeill\xE4 n\xE4ytet\xE4\xE4n, kuinka lis\xE4t\xE4 ja\
+  \ v\xE4hent\xE4\xE4 p\xE4iv\xE4m\xE4\xE4ri\xE4."
 title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---

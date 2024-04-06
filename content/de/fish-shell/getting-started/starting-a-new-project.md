@@ -2,9 +2,9 @@
 date: 2024-01-20 18:03:45.968857-07:00
 description: 'How to: Ein neues Projekt in Fish beginnen? Kein Problem. Zuerst ein
   Verzeichnis erstellen und dann rein wechseln.'
-lastmod: '2024-03-13T22:44:54.310234-06:00'
+lastmod: '2024-04-05T22:40:41.772176-06:00'
 model: gpt-4-1106-preview
-summary: Ein neues Projekt in Fish beginnen.
+summary: Ein neues Projekt in Fish beginnen?
 title: Einen neuen Projekt starten
 weight: 1
 ---

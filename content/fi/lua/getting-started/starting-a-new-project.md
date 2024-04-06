@@ -2,9 +2,16 @@
 date: 2024-01-20 18:03:50.170752-07:00
 description: "How to: - Kuinka: Lua projektit starttaavat minimalistisesti. 1993 syntynyt\
   \ Lua tarjoaa yksinkertaisen syntaksin, nopean suorituksen ja sopii upotettaviin\u2026"
-lastmod: '2024-04-05T21:53:58.270041-06:00'
+lastmod: '2024-04-05T22:38:57.308802-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "- Kuinka: Lua projektit starttaavat minimalistisesti. 1993 syntynyt Lua\
+  \ tarjoaa yksinkertaisen syntaksin, nopean suorituksen ja sopii upotettaviin j\xE4\
+  rjestelmiin. Vaihtoehtoja Lua-projekteille voisi olla Python, Ruby tai JavaScript,\
+  \ jotka ovat selke\xE4mpi\xE4 suuremmissa j\xE4rjestelmiss\xE4. Projektin aloittamiseen\
+  \ ei ole monimutkaisia alustoja. Tiedoston nime\xE4minen `.lua` p\xE4\xE4tteell\xE4\
+  \ riitt\xE4\xE4 tulkitsemiseen. Luassa moduulien ja kirjastojen hallinta on yksinkertaista,\
+  \ `require()` funktiolla. Laajennettavuus on vahvuus, mutta muista: yksinkertaisuus\
+  \ on Luassa kaikkein t\xE4rkeint\xE4."
 title: Uuden projektin aloittaminen
 weight: 1
 ---

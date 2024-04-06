@@ -2,9 +2,9 @@
 date: 2024-01-20 18:00:36.038726-07:00
 description: "How to: Faire une requ\xEAte HTTP simple en PowerShell ? C'est assez\
   \ direct. Utilisez `Invoke-RestMethod` ou `Invoke-WebRequest`. Voil\xE0 deux exemples."
-lastmod: '2024-03-13T22:44:58.043496-06:00'
+lastmod: '2024-04-05T22:40:44.795287-06:00'
 model: gpt-4-1106-preview
-summary: "Faire une requ\xEAte HTTP simple en PowerShell."
+summary: "Faire une requ\xEAte HTTP simple en PowerShell ?"
 title: "Envoi d'une requ\xEAte HTTP"
 weight: 44
 ---

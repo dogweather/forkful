@@ -5,10 +5,10 @@ date: 2024-01-28 22:05:33.506876-07:00
 description: "L\xE0m th\u1EBF n\xE0o: H\xE3y b\u1EAFt \u0111\u1EA7u v\u1EDBi nh\u1EEF\
   ng \u0111i\u1EC1u c\u01A1 b\u1EA3n! D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch b\u1EA1\
   n \u0111\u1ECDc t\u1EEB m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong PowerShell."
-lastmod: '2024-03-13T22:44:36.959049-06:00'
+lastmod: '2024-04-05T22:37:45.671041-06:00'
 model: gpt-4-0125-preview
 summary: "H\xE3y b\u1EAFt \u0111\u1EA7u v\u1EDBi nh\u1EEFng \u0111i\u1EC1u c\u01A1\
-  \ b\u1EA3n."
+  \ b\u1EA3n!."
 title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 22
 ---

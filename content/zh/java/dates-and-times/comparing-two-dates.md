@@ -5,14 +5,14 @@ description: "How to: \u5982\u4F55\u64CD\u4F5C \u5728Java 8\u4E4B\u524D\uFF0C\u6
   \u73B0\u5728\uFF0C`java.time`\u5305\u63D0\u4F9B\u4E86`LocalDate`\u3001`LocalTime`\u3001\
   `LocalDateTime`\u7B49\u66F4\u597D\u7684API\u3002`java.time`\u662F\u57FA\u4E8EJoda-\u2026"
 isCJKLanguage: true
-lastmod: '2024-04-05T21:53:47.958295-06:00'
+lastmod: '2024-04-05T22:38:46.799033-06:00'
 model: gpt-4-1106-preview
 summary: "\u5982\u4F55\u64CD\u4F5C \u5728Java 8\u4E4B\u524D\uFF0C\u65E5\u671F\u6BD4\
   \u8F83\u901A\u5E38\u4F7F\u7528`java.util.Date`\u6216`java.util.Calendar`\u3002\u73B0\
   \u5728\uFF0C`java.time`\u5305\u63D0\u4F9B\u4E86`LocalDate`\u3001`LocalTime`\u3001\
   `LocalDateTime`\u7B49\u66F4\u597D\u7684API\u3002`java.time`\u662F\u57FA\u4E8EJoda-Time\u5E93\
   \uFF0C\u5904\u7406\u65E5\u671F\u548C\u65F6\u95F4\u66F4\u76F4\u89C2\u3001\u7B80\u6D01\
-  ."
+  \u3002"
 title: "\u6BD4\u8F83\u4E24\u4E2A\u65E5\u671F"
 weight: 27
 ---

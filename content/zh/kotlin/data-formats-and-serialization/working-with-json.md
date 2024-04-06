@@ -7,9 +7,13 @@ description: "\u5982\u4F55\u64CD\u4F5C\uFF1A Kotlin \u6CA1\u6709\u5185\u7F6E\u5B
   \u5F3A\u5927\u529F\u80FD\uFF0C\u5982 Google \u7684 `Gson` \u548C JetBrains \u7684\
   \ `Kotlinx.serialization`\u3002\u4EE5\u4E0B\u662F\u5982\u4F55\u4F7F\u7528\u8FD9\u4E24\
   \u8005\u6765\u5904\u7406 JSON\u3002"
-lastmod: '2024-04-05T21:53:48.060119-06:00'
+lastmod: '2024-04-05T22:38:46.906878-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "\u5982\u4F55\u64CD\u4F5C\uFF1A Kotlin \u6CA1\u6709\u5185\u7F6E\u5BF9 JSON\
+  \ \u7684\u652F\u6301\uFF0C\u4F46\u5229\u7528\u4E86\u7B2C\u4E09\u65B9\u5E93\u7684\
+  \u5F3A\u5927\u529F\u80FD\uFF0C\u5982 Google \u7684 `Gson` \u548C JetBrains \u7684\
+  \ `Kotlinx.serialization`\u3002\u4EE5\u4E0B\u662F\u5982\u4F55\u4F7F\u7528\u8FD9\u4E24\
+  \u8005\u6765\u5904\u7406 JSON\u3002"
 title: "\u4F7F\u7528JSON\u8FDB\u884C\u7F16\u7A0B"
 weight: 38
 ---

@@ -2,9 +2,10 @@
 date: 2024-01-20 17:37:37.173674-07:00
 description: "How to: Jak to zrobi\u0107? U\u017Cyj `DateFormatter` w Swift, aby przekszta\u0142\
   ci\u0107 `Date` w `String`."
-lastmod: '2024-04-05T21:53:37.193054-06:00'
+lastmod: '2024-04-05T22:37:44.518395-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Jak to zrobi\u0107? U\u017Cyj `DateFormatter` w Swift, aby przekszta\u0142\
+  ci\u0107 `Date` w `String`."
 title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---

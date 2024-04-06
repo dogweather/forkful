@@ -5,9 +5,12 @@ description: "\u600E\u4E48\u505A\uFF1A Ruby \u4F7F\u7528 `begin`\u3001`rescue`\u
   \u51FA\u98CE\u9669\u7684\u4EE3\u7801\u653E\u5728 `begin` \u548C `end` \u4E4B\u95F4\
   \u3002\u5982\u679C\u51FA\u73B0\u9519\u8BEF\uFF0C`rescue` \u5C31\u4F1A\u4ECB\u5165\
   \u3002"
-lastmod: '2024-04-05T21:53:48.655841-06:00'
+lastmod: '2024-04-05T22:38:47.517282-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "\u600E\u4E48\u505A\uFF1A Ruby \u4F7F\u7528 `begin`\u3001`rescue`\u3001`ensure`\
+  \ \u548C `end` \u6765\u5904\u7406\u9519\u8BEF\u3002\u4F60\u628A\u53EF\u80FD\u51FA\
+  \u98CE\u9669\u7684\u4EE3\u7801\u653E\u5728 `begin` \u548C `end` \u4E4B\u95F4\u3002\
+  \u5982\u679C\u51FA\u73B0\u9519\u8BEF\uFF0C`rescue` \u5C31\u4F1A\u4ECB\u5165\u3002"
 title: "\u5904\u7406\u9519\u8BEF"
 weight: 16
 ---

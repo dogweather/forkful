@@ -2,9 +2,9 @@
 date: 2024-01-20 17:51:10.611453-07:00
 description: "C\xF3mo Hacerlo: Interpolar en JavaScript? Pan comido con *template\
   \ literals*. Aqu\xED tienes ejemplos."
-lastmod: '2024-03-13T22:44:59.444843-06:00'
+lastmod: '2024-04-05T22:40:45.939028-06:00'
 model: gpt-4-1106-preview
-summary: Interpolar en JavaScript.
+summary: Interpolar en JavaScript?
 title: "Interpolaci\xF3n de cadenas de texto"
 weight: 8
 ---

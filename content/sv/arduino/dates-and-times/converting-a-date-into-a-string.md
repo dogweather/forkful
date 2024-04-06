@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:35:55.061520-07:00
 description: "Hur g\xF6r man: Exempelutskrift: 2023-03-14 21:45:58."
-lastmod: '2024-04-05T21:53:39.515532-06:00'
+lastmod: '2024-04-05T22:37:46.871693-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: 'Exempelutskrift: 2023-03-14 21:45:58.'
 title: "Omvandla ett datum till en str\xE4ng"
 weight: 28
 ---

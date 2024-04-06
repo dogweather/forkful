@@ -2,9 +2,9 @@
 date: 2024-01-20 17:55:00.852821-07:00
 description: 'How to: Let''s roll with the basics! Here''s how you read from a text
   file in PowerShell.'
-lastmod: '2024-03-13T22:45:00.300141-06:00'
+lastmod: '2024-04-05T22:37:43.262206-06:00'
 model: gpt-4-1106-preview
-summary: Let's roll with the basics.
+summary: Let's roll with the basics!.
 title: Reading a text file
 weight: 22
 ---

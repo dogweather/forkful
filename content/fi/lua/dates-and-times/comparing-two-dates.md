@@ -3,9 +3,16 @@ date: 2024-01-20 17:33:43.771227-07:00
 description: "How to: - Kuinka: P\xE4iv\xE4m\xE4\xE4rien vertaaminen Lua:ssa pohjautuu\
   \ `os.time` -funktioon, joka muuttaa p\xE4iv\xE4m\xE4\xE4r\xE4n sekuntteina ilmaistuksi\
   \ aikaleimaksi (Unix-\u2026"
-lastmod: '2024-04-05T21:53:58.281638-06:00'
+lastmod: '2024-04-05T22:38:57.320802-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "- Kuinka: P\xE4iv\xE4m\xE4\xE4rien vertaaminen Lua:ssa pohjautuu `os.time`\
+  \ -funktioon, joka muuttaa p\xE4iv\xE4m\xE4\xE4r\xE4n sekuntteina ilmaistuksi aikaleimaksi\
+  \ (Unix-aikaleima). Historiallisesti tietokoneet ovat k\xE4ytt\xE4neet Unix-aikaleimoja\
+  \ ajan seuraamiseen vuodesta 1970 (kutsutaan my\xF6s Epoch-alkuajankohdaksi). Muita\
+  \ menetelmi\xE4 p\xE4iv\xE4m\xE4\xE4rien vertailuun voisivat olla esimerkiksi kirjastot,\
+  \ kuten `date` LuaRocksista. Vertailu toimii, koska `os.time` palauttaa arvon sekunteina,\
+  \ jotka voidaan helposti vertailla. Suurempi arvo tarkoittaa my\xF6hemp\xE4\xE4\
+  \ ajankohtaa."
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---

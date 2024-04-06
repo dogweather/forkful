@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:36:21.778918-07:00
 description: How To (Comment faire ?) .
-lastmod: '2024-04-05T21:53:59.603367-06:00'
+lastmod: '2024-04-05T22:38:58.665080-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: How To (Comment faire ?) .
 title: "Conversion d'une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---

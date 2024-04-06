@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:34:12.320453-07:00
 description: 'How to: | Comment faire : Sortie.'
-lastmod: '2024-04-05T21:53:58.831654-06:00'
+lastmod: '2024-04-05T22:38:57.879344-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: '| Comment faire : Sortie.'
 title: Comparer deux dates
 weight: 27
 ---

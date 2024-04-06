@@ -6,9 +6,9 @@ description: "C\xE1ch th\u1EF1c hi\u1EC7n: H\xE3y c\xF9ng th\u1EF1c hi\u1EC7n vi
   c n\u1ED1i chu\u1ED7i! T\u1EA5t c\u1EA3 s\u1EBD \u0111\u01B0\u1EE3c th\u1EF1c hi\u1EC7\
   n trong h\xE0m setup v\xEC ch\xFAng ta ch\u1EC9 mu\u1ED1n xem qua m\u1ED9t l\u1EA7\
   n\u2014kh\xF4ng c\u1EA7n v\xF2ng l\u1EB7p l\u1EB7p\u2026"
-lastmod: '2024-03-13T22:44:36.980082-06:00'
+lastmod: '2024-04-05T22:37:45.691965-06:00'
 model: gpt-4-0125-preview
-summary: "H\xE3y c\xF9ng th\u1EF1c hi\u1EC7n vi\u1EC7c n\u1ED1i chu\u1ED7i."
+summary: "H\xE3y c\xF9ng th\u1EF1c hi\u1EC7n vi\u1EC7c n\u1ED1i chu\u1ED7i!."
 title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 weight: 3
 ---

@@ -2,9 +2,10 @@
 date: 2024-01-20 17:51:57.043248-07:00
 description: "How to / C\xF3mo hacerlo Para imprimir mensajes de depuraci\xF3n en\
   \ Bash, usamos `echo` o `printf`. Aqu\xED van ejemplos sencillos."
-lastmod: '2024-04-05T21:54:00.595381-06:00'
+lastmod: '2024-04-05T22:38:59.649790-06:00'
 model: gpt-4-1106-preview
-summary: "Aqu\xED van ejemplos sencillos."
+summary: "How to / C\xF3mo hacerlo Para imprimir mensajes de depuraci\xF3n en Bash,\
+  \ usamos `echo` o `printf`. Aqu\xED van ejemplos sencillos."
 title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---

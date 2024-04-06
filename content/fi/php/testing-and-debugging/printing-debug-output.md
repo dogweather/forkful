@@ -2,9 +2,10 @@
 date: 2024-01-20 17:53:07.984803-07:00
 description: "How to: - Kuinka: Debug-tulostusta voi tehd\xE4 `echo` ja `print_r`\
   \ avulla. T\xE4ss\xE4 pari esimerkki\xE4."
-lastmod: '2024-04-05T21:53:58.230318-06:00'
+lastmod: '2024-04-05T22:38:57.267852-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "- Kuinka: Debug-tulostusta voi tehd\xE4 `echo` ja `print_r` avulla. T\xE4\
+  ss\xE4 pari esimerkki\xE4."
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---

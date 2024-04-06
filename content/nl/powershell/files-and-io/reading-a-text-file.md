@@ -4,9 +4,9 @@ changelog:
 date: 2024-01-28 22:04:56.663855-07:00
 description: 'Hoe: Laten we beginnen met de basis! Zo lees je uit een tekstbestand
   in PowerShell.'
-lastmod: '2024-03-13T22:44:51.047541-06:00'
+lastmod: '2024-04-05T22:38:49.908927-06:00'
 model: gpt-4-0125-preview
-summary: Laten we beginnen met de basis.
+summary: Laten we beginnen met de basis!.
 title: Een tekstbestand lezen
 weight: 22
 ---

@@ -3,10 +3,10 @@ date: 2024-01-20 17:33:21.365582-07:00
 description: "Comment faire : Historiquement en Java, les dates \xE9taient g\xE9r\xE9\
   es par `java.util.Date`, mais cette classe avait des probl\xE8mes : difficile \xE0\
   \ utiliser et pas\u2026"
-lastmod: '2024-04-05T21:53:59.241655-06:00'
+lastmod: '2024-04-05T22:38:58.297767-06:00'
 model: gpt-4-1106-preview
 summary: "Historiquement en Java, les dates \xE9taient g\xE9r\xE9es par `java.util.Date`,\
-  \ mais cette classe avait des probl\xE8mes."
+  \ mais cette classe avait des probl\xE8mes ."
 title: Comparer deux dates
 weight: 27
 ---

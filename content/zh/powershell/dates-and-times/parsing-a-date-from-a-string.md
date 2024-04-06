@@ -9,9 +9,10 @@ description: "\u5982\u4F55\u505A\uFF1A PowerShell\u4F7F\u7528`Get-Date` cmdlet\u
   \u975E\u6807\u51C6\u7684\u65E5\u671F\u5B57\u7B26\u4E32\uFF0C\u53EF\u4EE5\u5229\u7528\
   `[datetime]::ParseExact`\u65B9\u6CD5\u6765\u6307\u5B9A\u786E\u5207\u7684\u683C\u5F0F\
   \u3002"
-lastmod: '2024-04-05T21:53:48.321231-06:00'
+lastmod: '2024-04-05T22:38:47.180380-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: ":ParseExact`\u65B9\u6CD5\u6765\u6307\u5B9A\u786E\u5207\u7684\u683C\u5F0F\
+  \u3002"
 title: "\u4ECE\u5B57\u7B26\u4E32\u89E3\u6790\u65E5\u671F"
 weight: 30
 ---

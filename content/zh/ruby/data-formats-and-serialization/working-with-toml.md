@@ -3,9 +3,11 @@ date: 2024-01-26 04:26:00.781831-07:00
 description: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u9996\u5148\uFF0C\u5B89\u88C5 `toml-rb`\
   \ gem\u3002\u5B83\u662F Ruby \u4E2D\u89E3\u6790 TOML \u7684\u6D41\u884C\u9009\u62E9\
   \u3002"
-lastmod: '2024-04-05T21:53:48.672991-06:00'
+lastmod: '2024-04-05T22:38:47.533593-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u9996\u5148\uFF0C\u5B89\u88C5 `toml-rb`\
+  \ gem\u3002\u5B83\u662F Ruby \u4E2D\u89E3\u6790 TOML \u7684\u6D41\u884C\u9009\u62E9\
+  \u3002"
 title: "\u4F7F\u7528TOML"
 weight: 39
 ---

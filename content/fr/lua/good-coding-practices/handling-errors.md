@@ -2,9 +2,9 @@
 date: 2024-01-26 00:55:27.363154-07:00
 description: 'Comment faire : Lua utilise deux fonctions principales pour la gestion
   des erreurs : `pcall` et `xpcall`. Voici comment les utiliser .'
-lastmod: '2024-03-13T22:44:57.944309-06:00'
+lastmod: '2024-04-05T22:38:58.471073-06:00'
 model: gpt-4-1106-preview
-summary: Lua utilise deux fonctions principales pour la gestion des erreurs.
+summary: Lua utilise deux fonctions principales pour la gestion des erreurs .
 title: Gestion des erreurs
 weight: 16
 ---

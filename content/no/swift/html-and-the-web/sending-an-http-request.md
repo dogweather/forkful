@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 18:00:57.433142-07:00
 description: 'Hvordan: Eksempelutdata: `Data mottatt: 101 bytes`.'
-lastmod: '2024-04-05T21:53:42.099238-06:00'
+lastmod: '2024-04-05T22:37:49.491124-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: 'Eksempelutdata: `Data mottatt: 101 bytes`.'
 title: "\xC5 sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---

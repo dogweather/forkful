@@ -4,9 +4,11 @@ description: "How to (\uC2E4\uD589 \uBC29\uBC95) \uC704 \uBA85\uB839\uC740 \uAC0
   \ \uB0B4\uC77C, 5\uC77C \uD6C4, \uADF8\uB9AC\uACE0 2\uC8FC \uC804\uC758 \uB0A0\uC9DC\
   \uB97C \uCD9C\uB825\uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-04-05T21:53:57.169090-06:00'
+lastmod: '2024-04-05T22:38:56.186513-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "How to (\uC2E4\uD589 \uBC29\uBC95) \uC704 \uBA85\uB839\uC740 \uAC01\uAC01\
+  \ \uB0B4\uC77C, 5\uC77C \uD6C4, \uADF8\uB9AC\uACE0 2\uC8FC \uC804\uC758 \uB0A0\uC9DC\
+  \uB97C \uCD9C\uB825\uD569\uB2C8\uB2E4."
 title: "\uBBF8\uB798 \uD639\uC740 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\uC0B0\uD558\
   \uAE30"
 weight: 26

@@ -3,9 +3,9 @@ date: 2024-01-20 17:41:55.769499-07:00
 description: "How to: (Como Fazer:) Vamos l\xE1! No Arduino, n\xE3o temos uma fun\xE7\
   \xE3o pronta pra isso, ent\xE3o vamos criar uma. Olha s\xF3 este exemplo, que remove\
   \ todos os d\xEDgitos\u2026"
-lastmod: '2024-04-05T21:53:47.171881-06:00'
+lastmod: '2024-04-05T22:38:46.002574-06:00'
 model: gpt-4-1106-preview
-summary: "(Como Fazer:) Vamos l\xE1."
+summary: "(Como Fazer:) Vamos l\xE1!."
 title: "Excluindo caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---

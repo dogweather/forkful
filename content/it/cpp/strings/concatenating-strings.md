@@ -2,9 +2,10 @@
 date: 2024-01-20 17:34:34.955581-07:00
 description: How to (Come fare) In C++ si possono concatenare stringhe con l'operatore
   `+` o con il metodo `append`. Ecco come.
-lastmod: '2024-04-05T21:53:44.475859-06:00'
+lastmod: '2024-04-05T22:38:43.213757-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: How to (Come fare) In C++ si possono concatenare stringhe con l'operatore
+  `+` o con il metodo `append`. Ecco come.
 title: Concatenazione di stringhe
 weight: 3
 ---

@@ -3,9 +3,11 @@ date: 2024-01-26 00:58:41.341745-07:00
 description: "\u65B9\u6CD5\uFF1A TypeScript\u3067\u306F\u3001\u30A8\u30E9\u30FC\u51E6\
   \u7406\u306B\u306F\u591A\u304F\u306E\u5834\u5408`try`\u3001`catch`\u3001`finally`\u30D6\
   \u30ED\u30C3\u30AF\u304C\u95A2\u308F\u3063\u3066\u304D\u307E\u3059\u3002"
-lastmod: '2024-04-05T21:53:42.681047-06:00'
+lastmod: '2024-04-05T22:37:50.064471-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "\u65B9\u6CD5\uFF1A TypeScript\u3067\u306F\u3001\u30A8\u30E9\u30FC\u51E6\u7406\
+  \u306B\u306F\u591A\u304F\u306E\u5834\u5408`try`\u3001`catch`\u3001`finally`\u30D6\
+  \u30ED\u30C3\u30AF\u304C\u95A2\u308F\u3063\u3066\u304D\u307E\u3059\u3002"
 title: "\u30A8\u30E9\u30FC\u51E6\u7406"
 weight: 16
 ---

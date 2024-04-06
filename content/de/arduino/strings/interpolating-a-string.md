@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:49:59.973310-07:00
 description: 'How to: Ausgabe: `Die aktuelle Temperatur ist: 23 Grad Celsius`.'
-lastmod: '2024-04-05T21:53:56.014098-06:00'
+lastmod: '2024-04-05T22:38:54.987741-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: 'Ausgabe: `Die aktuelle Temperatur ist: 23 Grad Celsius`.'
 title: Zeichenketten interpolieren
 weight: 8
 ---

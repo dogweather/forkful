@@ -5,10 +5,10 @@ date: 2024-02-03 19:06:23.170611-07:00
 description: "Comment faire : Pour mettre en majuscule la premi\xE8re lettre d'une\
   \ cha\xEEne de caract\xE8res en Rust, vous avez deux options principales : utiliser\
   \ les\u2026"
-lastmod: '2024-03-13T22:44:57.464555-06:00'
+lastmod: '2024-04-05T22:38:58.080709-06:00'
 model: gpt-4-0125-preview
 summary: "Pour mettre en majuscule la premi\xE8re lettre d'une cha\xEEne de caract\xE8\
-  res en Rust, vous avez deux options principales."
+  res en Rust, vous avez deux options principales ."
 title: "Mettre en majuscule une cha\xEEne"
 weight: 2
 ---

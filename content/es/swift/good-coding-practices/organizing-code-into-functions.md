@@ -2,9 +2,10 @@
 date: 2024-01-26 01:11:47.870517-07:00
 description: "C\xF3mo hacerlo: Imagina una tarea: calcular el promedio de un arreglo.\
   \ Sin funciones, lo pondr\xEDas todo en el main. Con funciones, har\xEDas esto."
-lastmod: '2024-04-05T21:54:00.771763-06:00'
+lastmod: '2024-04-05T22:38:59.823808-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Imagina una tarea: calcular el promedio de un arreglo. Sin funciones, lo\
+  \ pondr\xEDas todo en el main. Con funciones, har\xEDas esto."
 title: "Organizando c\xF3digo en funciones"
 weight: 18
 ---

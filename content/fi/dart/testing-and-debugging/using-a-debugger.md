@@ -5,9 +5,11 @@ date: 2024-03-08 21:56:44.735118-07:00
 description: "Kuinka: **1. Katkaisukohtien asettaminen:** Asettaaksesi katkaisukohdan,\
   \ klikkaa vain koodirivin vasenta reunaa IDE:ss\xE4si (esim. Visual Studio Code\
   \ tai\u2026"
-lastmod: '2024-03-13T22:44:56.275575-06:00'
+lastmod: '2024-04-05T22:38:56.875319-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "**1. Katkaisukohtien asettaminen:** Asettaaksesi katkaisukohdan, klikkaa\
+  \ vain koodirivin vasenta reunaa IDE:ss\xE4si (esim. Visual Studio Code tai Android\
+  \ Studio), jossa haluat suorituksen pys\xE4htyv\xE4n."
 title: "Debuggerin k\xE4ytt\xF6"
 weight: 35
 ---

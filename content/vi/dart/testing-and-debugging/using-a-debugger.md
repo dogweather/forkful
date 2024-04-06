@@ -6,9 +6,13 @@ description: "L\xE0m th\u1EBF n\xE0o: **1. \u0110\u1EB7t \u0111i\u1EC3m d\u1EEBn
   \ \u0110\u1EC3 \u0111\u1EB7t m\u1ED9t \u0111i\u1EC3m d\u1EEBng, ch\u1EC9 c\u1EA7\
   n nh\u1EA5p v\xE0o l\u1EC1 b\xEAn tr\xE1i c\u1EE7a d\xF2ng code trong IDE c\u1EE7\
   a b\u1EA1n (v\xED d\u1EE5, Visual Studio Code ho\u1EB7c\u2026"
-lastmod: '2024-03-13T22:44:36.269076-06:00'
+lastmod: '2024-04-05T22:37:45.025027-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "**1. \u0110\u1EB7t \u0111i\u1EC3m d\u1EEBng:** \u0110\u1EC3 \u0111\u1EB7\
+  t m\u1ED9t \u0111i\u1EC3m d\u1EEBng, ch\u1EC9 c\u1EA7n nh\u1EA5p v\xE0o l\u1EC1\
+  \ b\xEAn tr\xE1i c\u1EE7a d\xF2ng code trong IDE c\u1EE7a b\u1EA1n (v\xED d\u1EE5\
+  , Visual Studio Code ho\u1EB7c Android Studio) n\u01A1i b\u1EA1n mu\u1ED1n th\u1EF1\
+  c thi t\u1EA1m d\u1EEBng."
 title: "S\u1EED d\u1EE5ng m\u1ED9t c\xF4ng c\u1EE5 g\u1EE1 l\u1ED7i"
 weight: 35
 ---

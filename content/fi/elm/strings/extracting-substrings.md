@@ -3,9 +3,11 @@ date: 2024-01-20 17:45:23.694495-07:00
 description: "How to: - Kuinka tehd\xE4: N\xE4m\xE4 esimerkit k\xE4ytt\xE4v\xE4t `String.slice`\
   \ funktiota, joka ottaa alku- ja loppuindeksit sek\xE4 merkkijonon ja palauttaa\
   \ osajonon."
-lastmod: '2024-04-05T21:53:58.042730-06:00'
+lastmod: '2024-04-05T22:38:57.080278-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "- Kuinka tehd\xE4: N\xE4m\xE4 esimerkit k\xE4ytt\xE4v\xE4t `String.slice`\
+  \ funktiota, joka ottaa alku- ja loppuindeksit sek\xE4 merkkijonon ja palauttaa\
+  \ osajonon."
 title: Merkkijonojen osien poimiminen
 weight: 6
 ---

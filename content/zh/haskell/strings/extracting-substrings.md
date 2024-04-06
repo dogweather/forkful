@@ -3,9 +3,10 @@ date: 2024-01-20 17:45:44.606051-07:00
 description: "\u600E\u4E48\u505A\uFF1A \u4E0B\u9762\u7684\u4F8B\u5B50\u5C55\u73B0\u4E86\
   \u600E\u6837\u5728Haskell\u4E2D\u63D0\u53D6\u5B50\u4E32\u3002"
 isCJKLanguage: true
-lastmod: '2024-04-05T21:53:48.115384-06:00'
+lastmod: '2024-04-05T22:38:46.964802-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "\u600E\u4E48\u505A\uFF1A \u4E0B\u9762\u7684\u4F8B\u5B50\u5C55\u73B0\u4E86\
+  \u600E\u6837\u5728Haskell\u4E2D\u63D0\u53D6\u5B50\u4E32\u3002"
 title: "\u63D0\u53D6\u5B50\u5B57\u7B26\u4E32"
 weight: 6
 ---

@@ -2,9 +2,15 @@
 date: 2024-01-20 17:44:58.324776-07:00
 description: "How to: - Kuinka: Internetin alkuvuosina verkkosivujen lataus tapahtui\
   \ k\xE4sin, mutta skriptit ja ohjelmointikielet helpottivat prosessia. Rubyssa klassinen\u2026"
-lastmod: '2024-04-05T21:53:58.669719-06:00'
+lastmod: '2024-04-05T22:38:57.701525-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "- Kuinka: Internetin alkuvuosina verkkosivujen lataus tapahtui k\xE4sin,\
+  \ mutta skriptit ja ohjelmointikielet helpottivat prosessia. Rubyssa klassinen tapa\
+  \ on k\xE4ytt\xE4\xE4 `Net::HTTP`-kirjastoa, joka tulee Ruby standardikirjaston\
+  \ mukana. Vaihtoehtona on monia helppok\xE4ytt\xF6isempi\xE4 kirjastoja, kuten `open-uri`\
+  \ ja `httparty`. `Net::HTTP` kuitenkin seuraa Ruby-yhteis\xF6n minimalistista filosofiaa:\
+  \ se mahdollistaa suoran kontrollin HTTP-pyynn\xF6ist\xE4 ja vastauksista selvitt\xE4\
+  m\xE4tt\xF6m\xE4st\xE4 k\xE4ytt\xF6liittym\xE4st\xE4."
 title: Verkkosivun lataaminen
 weight: 42
 ---

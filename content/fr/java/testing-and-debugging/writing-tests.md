@@ -5,9 +5,9 @@ date: 2024-02-03 19:30:45.157987-07:00
 description: "Comment faire : Les d\xE9veloppeurs Java utilisent principalement deux\
   \ cadres de test : JUnit et TestNG. Ici, nous nous concentrerons sur JUnit, le choix\
   \ le\u2026"
-lastmod: '2024-03-13T22:44:57.643898-06:00'
+lastmod: '2024-04-05T22:38:58.199807-06:00'
 model: gpt-4-0125-preview
-summary: "Les d\xE9veloppeurs Java utilisent principalement deux cadres de test."
+summary: "Les d\xE9veloppeurs Java utilisent principalement deux cadres de test ."
 title: "R\xE9daction de tests"
 weight: 36
 ---

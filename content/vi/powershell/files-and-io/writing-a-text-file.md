@@ -6,11 +6,11 @@ description: "L\xE0m th\u1EBF n\xE0o: D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch \
   \u1EC3 vi\u1EBFt v\xE0o m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong PowerShell; n\xF3\
   \ c\u1EF1c k\u1EF3 d\u1EC5 d\xE0ng! T\u1EA1o v\xE0 vi\u1EBFt v\u0103n b\u1EA3n v\xE0\
   o m\u1ED9t t\u1EC7p m\u1EDBi."
-lastmod: '2024-03-13T22:44:36.960332-06:00'
+lastmod: '2024-04-05T22:37:45.672437-06:00'
 model: gpt-4-0125-preview
 summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch \u0111\u1EC3 vi\u1EBFt v\xE0o m\u1ED9\
   t t\u1EC7p v\u0103n b\u1EA3n trong PowerShell; n\xF3 c\u1EF1c k\u1EF3 d\u1EC5 d\xE0\
-  ng."
+  ng!."
 title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 24
 ---

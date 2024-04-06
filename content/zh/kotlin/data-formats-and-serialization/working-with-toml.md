@@ -4,9 +4,12 @@ description: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u8981\u5728 Kotlin \u4E2D\u5904\u7
   \ TOML\uFF0C\u4F60\u53EF\u4EE5\u4F7F\u7528\u50CF `ktoml` \u8FD9\u6837\u7684\u5E93\
   \u3002\u9996\u5148\uFF0C\u8BA9\u6211\u4EEC\u5728 `build.gradle.kts` \u4E2D\u6DFB\
   \u52A0\u4F9D\u8D56\u9879\uFF1A."
-lastmod: '2024-04-05T21:53:48.062529-06:00'
+lastmod: '2024-04-05T22:38:46.909156-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u8981\u5728 Kotlin \u4E2D\u5904\u7406 TOML\uFF0C\
+  \u4F60\u53EF\u4EE5\u4F7F\u7528\u50CF `ktoml` \u8FD9\u6837\u7684\u5E93\u3002\u9996\
+  \u5148\uFF0C\u8BA9\u6211\u4EEC\u5728 `build.gradle.kts` \u4E2D\u6DFB\u52A0\u4F9D\
+  \u8D56\u9879\uFF1A."
 title: "\u4F7F\u7528TOML"
 weight: 39
 ---

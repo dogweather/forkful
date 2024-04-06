@@ -2,9 +2,9 @@
 date: 2024-01-20 17:46:51.983544-07:00
 description: "How to: Extrahera en delstr\xE4ng i TypeScript? Anv\xE4nd `substring`,\
   \ `slice` eller `substr`. S\xE5 h\xE4r."
-lastmod: '2024-03-13T22:44:37.645294-06:00'
+lastmod: '2024-04-05T22:40:25.720004-06:00'
 model: gpt-4-1106-preview
-summary: "Extrahera en delstr\xE4ng i TypeScript."
+summary: "Extrahera en delstr\xE4ng i TypeScript?"
 title: "Extrahera delstr\xE4ngar"
 weight: 6
 ---

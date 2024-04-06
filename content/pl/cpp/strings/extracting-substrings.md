@@ -2,9 +2,10 @@
 date: 2024-01-20 17:45:25.531448-07:00
 description: "Jak to zrobi\u0107: Oto przyk\u0142ad w C++. Za\u0142\xF3\u017Cmy, \u017C\
   e chcesz wydoby\u0107 podci\u0105g z tekst \"Dzie\u0144 dobry, Coders!\"."
-lastmod: '2024-04-05T21:53:37.127897-06:00'
+lastmod: '2024-04-05T22:37:44.448412-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Oto przyk\u0142ad w C++. Za\u0142\xF3\u017Cmy, \u017Ce chcesz wydoby\u0107\
+  \ podci\u0105g z tekst \"Dzie\u0144 dobry, Coders!\"."
 title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
 weight: 6
 ---

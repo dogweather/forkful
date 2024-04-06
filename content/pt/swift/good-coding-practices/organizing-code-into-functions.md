@@ -3,9 +3,10 @@ date: 2024-01-26 01:16:10.636724-07:00
 description: "Como fazer: Imagine uma tarefa: calcular a m\xE9dia de um array. Sem\
   \ fun\xE7\xF5es, voc\xEA colocaria tudo no main. Com fun\xE7\xF5es, voc\xEA faria\
   \ assim."
-lastmod: '2024-04-05T21:53:47.277242-06:00'
+lastmod: '2024-04-05T22:38:46.105993-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Imagine uma tarefa: calcular a m\xE9dia de um array. Sem fun\xE7\xF5es,\
+  \ voc\xEA colocaria tudo no main. Com fun\xE7\xF5es, voc\xEA faria assim."
 title: "Organizando o c\xF3digo em fun\xE7\xF5es"
 weight: 18
 ---

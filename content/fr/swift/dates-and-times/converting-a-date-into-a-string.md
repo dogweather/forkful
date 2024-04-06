@@ -2,9 +2,10 @@
 date: 2024-01-20 17:37:37.481244-07:00
 description: "How to: *Sortie: \"1 janv. 2023 \xE0 00:00\" (la sortie peut varier\
   \ en fonction de l'instant o\xF9 le code est ex\xE9cut\xE9)*."
-lastmod: '2024-04-05T21:53:59.646325-06:00'
+lastmod: '2024-04-05T22:38:58.707594-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "*Sortie: \"1 janv. 2023 \xE0 00:00\" (la sortie peut varier en fonction\
+  \ de l'instant o\xF9 le code est ex\xE9cut\xE9)*."
 title: "Conversion d'une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---

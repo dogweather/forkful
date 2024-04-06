@@ -7,9 +7,10 @@ description: "\u5982\u4F55\uFF1A \u6211\u8FD9\u6837\u505A\u7684\u9891\u7387\u8DB
   \u9AD8\uFF0C\u4EE5\u81F3\u4E8E\u6211\u5C06\u5176\u91CD\u6784\u6210\u4E86\u8FD9\u4E2A\
   \u7B80\u5355\u7684 `delete()` \u51FD\u6570\u3002\u8FD9\u4E5F\u662F\u5BF9[doctests](https://docs.python.org/3/library/doctest.html)\u7684\
   \u4E00\u4E2A\u5F88\u597D\u7684\u6F14\u793A\uFF1A."
-lastmod: '2024-04-05T21:53:47.593995-06:00'
+lastmod: '2024-04-05T22:38:46.419096-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "//docs.python.org/3/library/doctest.html)\u7684\u4E00\u4E2A\u5F88\u597D\u7684\
+  \u6F14\u793A\uFF1A."
 title: "\u5220\u9664\u5339\u914D\u6A21\u5F0F\u7684\u5B57\u7B26"
 weight: 5
 ---

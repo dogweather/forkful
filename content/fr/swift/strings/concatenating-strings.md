@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:35:45.672979-07:00
 description: 'How to: (Comment faire : ) .'
-lastmod: '2024-04-05T21:53:59.626030-06:00'
+lastmod: '2024-04-05T22:38:58.687088-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: '(Comment faire : ) .'
 title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 weight: 3
 ---

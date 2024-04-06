@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:51:45.359252-07:00
 description: 'How to: Sortie: `Bonjour Marie, tu as 28 ans!`.'
-lastmod: '2024-04-05T21:53:59.620397-06:00'
+lastmod: '2024-04-05T22:38:58.681887-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: 'Sortie: `Bonjour Marie, tu as 28 ans!`.'
 title: "Interpolation de cha\xEEnes de caract\xE8res"
 weight: 8
 ---

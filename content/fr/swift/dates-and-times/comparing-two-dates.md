@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:34:09.350680-07:00
 description: 'How to: (Comment faire : ) Sample Output.'
-lastmod: '2024-04-05T21:53:59.647170-06:00'
+lastmod: '2024-04-05T22:38:58.708626-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: '(Comment faire : ) Sample Output.'
 title: Comparer deux dates
 weight: 27
 ---

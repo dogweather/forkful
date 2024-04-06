@@ -3,9 +3,17 @@ date: 2024-01-20 17:58:20.094070-07:00
 description: "How to: - Kuinka: Lua-kieless\xE4 tekstinkorvaus tehd\xE4\xE4n `string.gsub`\
   \ -funktiolla. `gsub` lyhenee \"global substitution\" eli globaalista korvauksesta.\
   \ Se l\xF6i\u2026"
-lastmod: '2024-04-05T21:53:58.254953-06:00'
+lastmod: '2024-04-05T22:38:57.293056-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "- Kuinka: Lua-kieless\xE4 tekstinkorvaus tehd\xE4\xE4n `string.gsub` -funktiolla.\
+  \ `gsub` lyhenee \"global substitution\" eli globaalista korvauksesta. Se l\xF6\
+  i l\xE4pi versiossa 5, joka toi mukanaan tehokkaat kuviovasteet ja s\xE4\xE4nn\xF6\
+  lliset lausekkeet. Vaihtoehdot? Voit k\xE4ytt\xE4\xE4 `string.find` etsi\xE4ksesi\
+  \ ennen korvausta tai koota monimutkaisempia k\xE4sittelyit\xE4. Mutta monesti `gsub`\
+  \ riitt\xE4\xE4. Mit\xE4 teknisempiin yksityiskohtiin tulee, `gsub` k\xE4ytt\xE4\
+  \xE4 'pattern matching' -tekniikkaa, joka on yksinkertaistettu s\xE4\xE4nn\xF6llisten\
+  \ lausekkeiden muoto. Huomaathan, ettei Lua tue t\xE4ysi\xE4 s\xE4\xE4nn\xF6llisi\xE4\
+  \ lausekkeita kuten jotkin muut kielet."
 title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---

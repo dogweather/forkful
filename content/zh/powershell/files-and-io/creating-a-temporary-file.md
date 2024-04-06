@@ -5,9 +5,12 @@ description: "\u5982\u4F55\uFF1A \u5982\u679C\u6B63\u786E\u65E0\u8BEF\uFF0C\u4F6
   \ \"Hello, temporary world!\"\u6587\u672C 3. \u7136\u540E\u6587\u4EF6\u6D88\u5931\
   \u4E0D\u89C1\u4E86."
 isCJKLanguage: true
-lastmod: '2024-04-05T21:53:48.332522-06:00'
+lastmod: '2024-04-05T22:38:47.192670-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "\u5982\u4F55\uFF1A \u5982\u679C\u6B63\u786E\u65E0\u8BEF\uFF0C\u4F60\u4F1A\
+  \u770B\u5230\uFF1A 1. \u521B\u5EFA\u7684\u4E34\u65F6\u6587\u4EF6\u8DEF\u5F84 2.\
+  \ \"Hello, temporary world!\"\u6587\u672C 3. \u7136\u540E\u6587\u4EF6\u6D88\u5931\
+  \u4E0D\u89C1\u4E86."
 title: "\u521B\u5EFA\u4E34\u65F6\u6587\u4EF6"
 weight: 21
 ---

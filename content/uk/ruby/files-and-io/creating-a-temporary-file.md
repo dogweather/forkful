@@ -3,9 +3,11 @@ date: 2024-01-20 17:41:11.103703-07:00
 description: "How to: / \u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\
   \u0438: Ruby provides a simple way to work with temporary files using the `Tempfile`\
   \ class. Here's an example."
-lastmod: '2024-04-05T21:53:50.281618-06:00'
+lastmod: '2024-04-05T22:38:49.105951-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "/ \u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\u0438:\
+  \ Ruby provides a simple way to work with temporary files using the `Tempfile` class.\
+  \ Here's an example."
 title: "\u0421\u0442\u0432\u043E\u0440\u0435\u043D\u043D\u044F \u0442\u0438\u043C\u0447\
   \u0430\u0441\u043E\u0432\u043E\u0433\u043E \u0444\u0430\u0439\u043B\u0443"
 weight: 21

@@ -2,9 +2,10 @@
 date: 2024-01-20 17:35:51.522305-07:00
 description: "How to: / Kuinka: Merkkijonojen yhdist\xE4minen eli \"concatenation\"\
   \ Rubyssa on suoraviivaista. T\xE4ss\xE4 pari tapaa."
-lastmod: '2024-04-05T21:53:58.660543-06:00'
+lastmod: '2024-04-05T22:38:57.692667-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "/ Kuinka: Merkkijonojen yhdist\xE4minen eli \"concatenation\" Rubyssa on\
+  \ suoraviivaista. T\xE4ss\xE4 pari tapaa."
 title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---

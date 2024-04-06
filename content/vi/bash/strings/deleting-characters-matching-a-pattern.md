@@ -4,9 +4,9 @@ changelog:
 date: 2024-01-28 21:59:11.242057-07:00
 description: "C\xE1ch th\u1EF1c hi\u1EC7n: K\u1EBFt qu\u1EA3: `Xin ch\xE0o, Th\u1EBF\
   \ gi\u1EDBi!`."
-lastmod: '2024-04-05T21:53:38.228632-06:00'
+lastmod: '2024-04-05T22:37:45.575110-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "K\u1EBFt qu\u1EA3: `Xin ch\xE0o, Th\u1EBF gi\u1EDBi!`."
 title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
 weight: 5
 ---

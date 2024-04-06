@@ -3,9 +3,9 @@ date: 2024-01-20 18:04:00.609836-07:00
 description: "Comment faire : Pour lancer un nouveau projet Kotlin, suivez ces \xE9\
   tapes : Installez IntelliJ IDEA, un environnement de d\xE9veloppement int\xE9gr\xE9\
   \ (IDE)\u2026"
-lastmod: '2024-03-13T22:44:57.739664-06:00'
+lastmod: '2024-04-05T22:38:58.284547-06:00'
 model: gpt-4-1106-preview
-summary: "Pour lancer un nouveau projet Kotlin, suivez ces \xE9tapes."
+summary: "Pour lancer un nouveau projet Kotlin, suivez ces \xE9tapes ."
 title: Lancement d'un nouveau projet
 weight: 1
 ---

@@ -4,9 +4,11 @@ description: "How to (\u5982\u4F55\u64CD\u4F5C) Python\u91CC\u641C\u7D22\u548C\u
   \u6362\u7684\u5F3A\u5927\u5DE5\u5177\u662F`str.replace()`\u65B9\u6CD5\u548C`re.sub()`\u51FD\
   \u6570\u3002\u4E0B\u9762\u662F\u7B80\u5355\u793A\u4F8B\uFF1A."
 isCJKLanguage: true
-lastmod: '2024-04-05T21:53:47.595041-06:00'
+lastmod: '2024-04-05T22:38:46.420252-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "How to (\u5982\u4F55\u64CD\u4F5C) Python\u91CC\u641C\u7D22\u548C\u66FF\u6362\
+  \u7684\u5F3A\u5927\u5DE5\u5177\u662F`str.replace()`\u65B9\u6CD5\u548C`re.sub()`\u51FD\
+  \u6570\u3002\u4E0B\u9762\u662F\u7B80\u5355\u793A\u4F8B\uFF1A."
 title: "\u641C\u7D22\u548C\u66FF\u6362\u6587\u672C"
 weight: 10
 ---

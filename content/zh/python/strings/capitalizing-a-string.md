@@ -6,9 +6,11 @@ date: 2024-02-03 19:02:34.962078-07:00
 description: "\u5982\u4F55\u64CD\u4F5C\uFF1A Python \u6709\u4E00\u4E2A\u5185\u5EFA\
   \u7684\u5B57\u7B26\u4E32\u65B9\u6CD5 `.capitalize()` \uFF0C\u53EF\u4EE5\u8F7B\u677E\
   \u5B8C\u6210\u8FD9\u4E2A\u4EFB\u52A1\u3002"
-lastmod: '2024-04-05T21:53:47.593041-06:00'
+lastmod: '2024-04-05T22:38:46.417832-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "\u5982\u4F55\u64CD\u4F5C\uFF1A Python \u6709\u4E00\u4E2A\u5185\u5EFA\u7684\
+  \u5B57\u7B26\u4E32\u65B9\u6CD5 `.capitalize()` \uFF0C\u53EF\u4EE5\u8F7B\u677E\u5B8C\
+  \u6210\u8FD9\u4E2A\u4EFB\u52A1\u3002"
 title: "\u5C06\u5B57\u7B26\u4E32\u8F6C\u5316\u4E3A\u5927\u5199"
 weight: 2
 ---

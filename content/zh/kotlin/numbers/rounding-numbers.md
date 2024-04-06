@@ -4,9 +4,12 @@ description: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u5728Kotlin\u4E2D\uFF0C\u53EF\u4EE
   \u7528\u51E0\u4E2A\u51FD\u6570\u8FDB\u884C\u56DB\u820D\u4E94\u5165\uFF0C\u5982`roundToInt()`\u3001\
   `roundToDouble()`\uFF0C\u5E76\u4E14\u4F7F\u7528`BigDecimal`\u8FDB\u884C\u66F4\u591A\
   \u63A7\u5236\uFF1A."
-lastmod: '2024-04-05T21:53:48.032193-06:00'
+lastmod: '2024-04-05T22:38:46.877827-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u5728Kotlin\u4E2D\uFF0C\u53EF\u4EE5\u4F7F\
+  \u7528\u51E0\u4E2A\u51FD\u6570\u8FDB\u884C\u56DB\u820D\u4E94\u5165\uFF0C\u5982`roundToInt()`\u3001\
+  `roundToDouble()`\uFF0C\u5E76\u4E14\u4F7F\u7528`BigDecimal`\u8FDB\u884C\u66F4\u591A\
+  \u63A7\u5236\uFF1A."
 title: "\u6570\u5B57\u53D6\u6574"
 weight: 13
 ---

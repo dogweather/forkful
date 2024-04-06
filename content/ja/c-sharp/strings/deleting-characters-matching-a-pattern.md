@@ -4,11 +4,11 @@ description: "How to: (\u65B9\u6CD5) \u3053\u306E\u30B3\u30FC\u30C9\u306F`input`
   \u5B57\u5217\u304B\u3089\u6570\u5B57\u3092\u53D6\u308A\u9664\u304D\u3001`output`\u306B\
   \"Hello, World! \"\u3092\u8868\u793A\u3057\u307E\u3059\u3002"
 isCJKLanguage: true
-lastmod: '2024-04-05T21:53:42.979647-06:00'
+lastmod: '2024-04-05T22:38:41.645324-06:00'
 model: gpt-4-1106-preview
 summary: "(\u65B9\u6CD5) \u3053\u306E\u30B3\u30FC\u30C9\u306F`input`\u6587\u5B57\u5217\
   \u304B\u3089\u6570\u5B57\u3092\u53D6\u308A\u9664\u304D\u3001`output`\u306B\"Hello,\
-  \ World."
+  \ World!."
 title: "\u30D1\u30BF\u30FC\u30F3\u306B\u4E00\u81F4\u3059\u308B\u6587\u5B57\u3092\u524A\
   \u9664\u3059\u308B"
 weight: 5

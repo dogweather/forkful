@@ -3,9 +3,11 @@ date: 2024-01-26 03:45:08.870136-07:00
 description: "\u5982\u4F55\u8FDB\u884C\uFF1A Haskell \u4F7F\u7528 `Prelude` \u4E2D\
   \u7684 `round`\u3001`ceiling`\u3001`floor` \u548C `truncate` \u51FD\u6570\u8FDB\u884C\
   \u56DB\u820D\u4E94\u5165\u64CD\u4F5C\u3002"
-lastmod: '2024-04-05T21:53:48.122286-06:00'
+lastmod: '2024-04-05T22:38:46.972008-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "\u5982\u4F55\u8FDB\u884C\uFF1A Haskell \u4F7F\u7528 `Prelude` \u4E2D\u7684\
+  \ `round`\u3001`ceiling`\u3001`floor` \u548C `truncate` \u51FD\u6570\u8FDB\u884C\
+  \u56DB\u820D\u4E94\u5165\u64CD\u4F5C\u3002"
 title: "\u6570\u5B57\u53D6\u6574"
 weight: 13
 ---

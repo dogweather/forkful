@@ -3,9 +3,9 @@ date: 2024-01-26 01:09:01.153070-07:00
 description: "Comment faire : Prenons une t\xE2che courante : calculer l'aire d'un\
   \ cercle. Au lieu d'\xE9crire la m\xEAme formule \xE0 chaque fois, nous l'encapsulons\
   \ dans une\u2026"
-lastmod: '2024-03-13T22:44:58.168142-06:00'
+lastmod: '2024-04-05T22:38:58.658215-06:00'
 model: gpt-4-1106-preview
-summary: "Prenons une t\xE2che courante."
+summary: "Prenons une t\xE2che courante ."
 title: Organisation du code en fonctions
 weight: 18
 ---

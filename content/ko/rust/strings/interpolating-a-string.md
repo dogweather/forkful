@@ -5,9 +5,12 @@ description: "How to (\uBC29\uBC95) Rust\uC5D0\uC11C \uBB38\uC790\uC5F4 \uBCF4\u
   \ \uC0AC\uC6A9\uD558\uC5EC \uC218\uD589\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4. \uC608\
   \uC81C\uB97C \uD1B5\uD574 \uC0B4\uD3B4\uBD05\uC2DC\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-04-05T21:53:56.691743-06:00'
+lastmod: '2024-04-05T22:38:55.683051-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "How to (\uBC29\uBC95) Rust\uC5D0\uC11C \uBB38\uC790\uC5F4 \uBCF4\uAC04\uC740\
+  \ `format!` \uB9E4\uD06C\uB85C \uB610\uB294 `println!` \uB9E4\uD06C\uB85C\uB97C\
+  \ \uC0AC\uC6A9\uD558\uC5EC \uC218\uD589\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4. \uC608\
+  \uC81C\uB97C \uD1B5\uD574 \uC0B4\uD3B4\uBD05\uC2DC\uB2E4."
 title: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uD558\uAE30"
 weight: 8
 ---

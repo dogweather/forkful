@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:34:47.179639-07:00
 description: "How to: P\xE5 norsk: Hvordan gj\xF8re det."
-lastmod: '2024-04-05T21:53:42.176394-06:00'
+lastmod: '2024-04-05T22:37:49.565899-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "P\xE5 norsk: Hvordan gj\xF8re det."
 title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---

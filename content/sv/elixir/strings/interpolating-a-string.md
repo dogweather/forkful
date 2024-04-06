@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:50:43.251886-07:00
 description: How to (Hur till) Output.
-lastmod: '2024-04-05T21:53:38.882147-06:00'
+lastmod: '2024-04-05T22:37:46.238980-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: How to (Hur till) Output.
 title: "Interpolera en str\xE4ng"
 weight: 8
 ---

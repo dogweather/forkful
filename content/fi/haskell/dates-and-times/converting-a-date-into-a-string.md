@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:36:59.458854-07:00
 description: "How to: - Kuinka tehd\xE4: Output."
-lastmod: '2024-04-05T21:53:58.196702-06:00'
+lastmod: '2024-04-05T22:38:57.234032-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "- Kuinka tehd\xE4: Output."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---

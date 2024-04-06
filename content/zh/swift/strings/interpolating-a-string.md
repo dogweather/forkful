@@ -7,12 +7,12 @@ description: "How to (\u600E\u4E48\u505A) \u5B57\u7B26\u4E32\u63D2\u503C\u5728Sw
   \u7C7B\u578B\u9075\u5FAA`CustomStringConvertible`\u534F\u8BAE\u3002 \u5BF9\u6BD4\
   \u65E7\u65B9\u6CD5\uFF0C\u5982Objective-C\u4E2D\u7684`NSString\u2026"
 isCJKLanguage: true
-lastmod: '2024-04-05T21:53:48.433498-06:00'
+lastmod: '2024-04-05T22:38:47.294040-06:00'
 model: gpt-4-1106-preview
 summary: "\u5BF9\u6BD4\u65E7\u65B9\u6CD5\uFF0C\u5982Objective-C\u4E2D\u7684`NSString\
   \ stringWithFormat:`\uFF0CSwift\u7684\u63D2\u503C\u66F4\u7B80\u6D01\uFF0C\u6613\u8BFB\
   \u3002\u4F46\u6CE8\u610F\uFF0C\u8FC7\u5EA6\u4F7F\u7528\u53EF\u80FD\u964D\u4F4E\u4EE3\
-  \u7801\u6E05\u6670\u5EA6."
+  \u7801\u6E05\u6670\u5EA6\u3002"
 title: "\u5B57\u7B26\u4E32\u63D2\u503C"
 weight: 8
 ---

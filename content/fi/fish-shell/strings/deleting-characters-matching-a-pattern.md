@@ -2,9 +2,10 @@
 date: 2024-01-20 17:42:26.009400-07:00
 description: "How to: - Miten: K\xE4yt\xE4 `string` komentoa kuvioita vastaavien merkkien\
   \ poistoon. T\xE4ss\xE4 esimerkki, jossa poistetaan kaikki pisteet merkkijonosta."
-lastmod: '2024-04-05T21:53:58.555259-06:00'
+lastmod: '2024-04-05T22:38:57.587414-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "- Miten: K\xE4yt\xE4 `string` komentoa kuvioita vastaavien merkkien poistoon.\
+  \ T\xE4ss\xE4 esimerkki, jossa poistetaan kaikki pisteet merkkijonosta."
 title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---

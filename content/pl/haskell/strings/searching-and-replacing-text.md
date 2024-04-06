@@ -3,9 +3,14 @@ date: 2024-01-20 17:58:09.251172-07:00
 description: "How to: Pod koniec lat 60. pojawi\u0142y si\u0119 pierwsze narz\u0119\
   dzia do przetwarzania tekstu, jak `sed`. W Haskellu mo\u017Cna to robi\u0107 elegancko,\
   \ korzystaj\u0105c z funkcji\u2026"
-lastmod: '2024-04-05T21:53:36.870212-06:00'
+lastmod: '2024-04-05T22:37:44.137720-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Pod koniec lat 60. pojawi\u0142y si\u0119 pierwsze narz\u0119dzia do przetwarzania\
+  \ tekstu, jak `sed`. W Haskellu mo\u017Cna to robi\u0107 elegancko, korzystaj\u0105\
+  c z funkcji wy\u017Cszego rz\u0119du i leniwego przetwarzania. Alternatyw\u0105\
+  \ jest regex, ale wzorce szukamyz `Data.Text` i `Data.ByteString` s\u0105 cz\u0119\
+  sto szybsze. Immutability w Haskellu oznacza, \u017Ce ka\u017Cde \"zamiany\" to\
+  \ tak naprawd\u0119 tworzenie nowego ci\u0105gu znak\xF3w."
 title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---

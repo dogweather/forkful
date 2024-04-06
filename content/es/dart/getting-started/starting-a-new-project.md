@@ -4,9 +4,11 @@ changelog:
 date: 2024-03-08 21:57:05.997315-07:00
 description: "C\xF3mo: 1. **Instalar Dart**: Aseg\xFArate de que Dart est\xE9 instalado\
   \ en tu sistema. Si no, puedes descargarlo desde [https://dart.dev/get-\u2026"
-lastmod: '2024-04-05T21:54:00.104296-06:00'
+lastmod: '2024-04-05T22:38:59.160495-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "1. **Instalar Dart**: Aseg\xFArate de que Dart est\xE9 instalado en tu sistema.\
+  \ Si no, puedes descargarlo desde [https://dart.dev/get-dart](https://dart.dev/get-dart).\
+  \ Verifica la instalaci\xF3n con."
 title: Iniciando un nuevo proyecto
 weight: 1
 ---

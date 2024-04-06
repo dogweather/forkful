@@ -3,9 +3,11 @@ date: 2024-01-20 17:48:16.208851-07:00
 description: "How to: Jak to zrobi\u0107: W Swift obliczenie d\u0142ugo\u015Bci stringa\
   \ to bu\u0142ka z mas\u0142em. U\u017Cyj w\u0142a\u015Bciwo\u015Bci `count` na instancji\
   \ `String`. Oto jak to wygl\u0105da w kodzie."
-lastmod: '2024-04-05T21:53:37.172733-06:00'
+lastmod: '2024-04-05T22:37:44.496994-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Jak to zrobi\u0107: W Swift obliczenie d\u0142ugo\u015Bci stringa to bu\u0142\
+  ka z mas\u0142em. U\u017Cyj w\u0142a\u015Bciwo\u015Bci `count` na instancji `String`.\
+  \ Oto jak to wygl\u0105da w kodzie."
 title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 weight: 7
 ---

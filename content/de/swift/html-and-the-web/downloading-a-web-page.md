@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:44:43.239527-07:00
 description: "So geht's: Ausgabe: Der vollst\xE4ndige HTML-Inhalt von 'https://beispiel.de'."
-lastmod: '2024-04-05T21:53:56.111257-06:00'
+lastmod: '2024-04-05T22:38:55.084217-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Ausgabe: Der vollst\xE4ndige HTML-Inhalt von 'https://beispiel.de'."
 title: Webseite herunterladen
 weight: 42
 ---

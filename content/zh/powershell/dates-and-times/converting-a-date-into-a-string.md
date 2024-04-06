@@ -7,7 +7,7 @@ description: "How to: (\u5982\u4F55\u64CD\u4F5C\uFF1A) \u5386\u53F2\u4E0A\uFF0C\
   \u4E86 `ToString()` \u548C `Format` \u53C2\u6570\uFF0C\u4F60\u8FD8\u53EF\u4EE5\u7528\
   \ `[datetime]::Parse()` \u548C\u2026"
 isCJKLanguage: true
-lastmod: '2024-04-05T21:53:48.323443-06:00'
+lastmod: '2024-04-05T22:38:47.182929-06:00'
 model: gpt-4-1106-preview
 summary: "(\u5982\u4F55\u64CD\u4F5C\uFF1A) \u5386\u53F2\u4E0A\uFF0C\u65E5\u671F\u683C\
   \u5F0F\u53D8\u5316\u591A\u7AEF\uFF0C\u4E0D\u540C\u6587\u5316\u6709\u5404\u81EA\u6807\
@@ -15,7 +15,7 @@ summary: "(\u5982\u4F55\u64CD\u4F5C\uFF1A) \u5386\u53F2\u4E0A\uFF0C\u65E5\u671F\
   \u671F\u548C\u5B57\u7B26\u4E32\u4E4B\u95F4\u7684\u8F6C\u6362\u3002\u9664\u4E86 `ToString()`\
   \ \u548C `Format` \u53C2\u6570\uFF0C\u4F60\u8FD8\u53EF\u4EE5\u7528 `[datetime]::Parse()`\
   \ \u548C `[datetime]::ParseExact()` \u6765\u4ECE\u5B57\u7B26\u4E32\u89E3\u6790\u51FA\
-  \u65E5\u671F."
+  \u65E5\u671F\u3002"
 title: "\u5C06\u65E5\u671F\u8F6C\u6362\u4E3A\u5B57\u7B26\u4E32"
 weight: 28
 ---

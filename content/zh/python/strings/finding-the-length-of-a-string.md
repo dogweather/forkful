@@ -4,9 +4,11 @@ description: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u6CE8\u610F\uFF1A\u5728Python\u4E2
   `len()`\u51FD\u6570\u76F4\u63A5\u8FD4\u56DE\u5B57\u7B26\u4E32\u4E2D\u7684\u5B57\u7B26\
   \u6570\u91CF\u3002"
 isCJKLanguage: true
-lastmod: '2024-04-05T21:53:47.600858-06:00'
+lastmod: '2024-04-05T22:38:46.426702-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u6CE8\u610F\uFF1A\u5728Python\u4E2D\uFF0C\
+  `len()`\u51FD\u6570\u76F4\u63A5\u8FD4\u56DE\u5B57\u7B26\u4E32\u4E2D\u7684\u5B57\u7B26\
+  \u6570\u91CF\u3002"
 title: "\u83B7\u53D6\u5B57\u7B26\u4E32\u7684\u957F\u5EA6"
 weight: 7
 ---

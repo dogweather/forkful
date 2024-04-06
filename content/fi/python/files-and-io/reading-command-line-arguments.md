@@ -2,9 +2,10 @@
 date: 2024-01-20 17:56:54.404931-07:00
 description: "How to: Kuinka se tehd\xE4\xE4n: Pythonissa komentoriviparametrit luetaan\
   \ `sys.argv` listan avulla. T\xE4ss\xE4 yksinkertainen esimerkki."
-lastmod: '2024-04-05T21:53:57.714513-06:00'
+lastmod: '2024-04-05T22:38:56.756903-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Kuinka se tehd\xE4\xE4n: Pythonissa komentoriviparametrit luetaan `sys.argv`\
+  \ listan avulla. T\xE4ss\xE4 yksinkertainen esimerkki."
 title: Komennoriviparametrien lukeminen
 weight: 23
 ---

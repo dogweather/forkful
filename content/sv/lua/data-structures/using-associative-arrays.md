@@ -5,10 +5,10 @@ date: 2024-01-30 19:12:23.113379-07:00
 description: "Hur man g\xF6r: I Lua \xE4r det rakt p\xE5 sak att skapa en associerad\
   \ array (eller en tabell, p\xE5 Lua-spr\xE5k) . Du skippar de vanliga numeriska\
   \ indexerna f\xF6r\u2026"
-lastmod: '2024-03-13T22:44:38.031168-06:00'
+lastmod: '2024-04-05T22:37:46.728301-06:00'
 model: gpt-4-0125-preview
 summary: "I Lua \xE4r det rakt p\xE5 sak att skapa en associerad array (eller en tabell,\
-  \ p\xE5 Lua-spr\xE5k)."
+  \ p\xE5 Lua-spr\xE5k) ."
 title: "Att anv\xE4nda associativa arrayer"
 weight: 15
 ---

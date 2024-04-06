@@ -4,9 +4,11 @@ description: "How to (\uBC29\uBC95) Lua\uC5D0\uC11C\uB294 `os.date`\uC640 `os.ti
   \ \uD568\uC218\uB97C \uC0AC\uC6A9\uD574 \uB0A0\uC9DC\uB97C \uACC4\uC0B0\uD569\uB2C8\
   \uB2E4."
 isCJKLanguage: true
-lastmod: '2024-04-05T21:53:57.120399-06:00'
+lastmod: '2024-04-05T22:38:56.134543-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "How to (\uBC29\uBC95) Lua\uC5D0\uC11C\uB294 `os.date`\uC640 `os.time` \uD568\
+  \uC218\uB97C \uC0AC\uC6A9\uD574 \uB0A0\uC9DC\uB97C \uACC4\uC0B0\uD569\uB2C8\uB2E4\
+  ."
 title: "\uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\uC0B0\uD558\uAE30"
 weight: 26
 ---

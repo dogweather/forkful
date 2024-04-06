@@ -4,9 +4,11 @@ changelog:
 date: 2024-03-08 21:56:37.073589-07:00
 description: "Hur man g\xF6r: 1. **Installera Dart**: Se till att Dart \xE4r installerat\
   \ p\xE5 ditt system. Om inte, kan du ladda ner det fr\xE5n [https://dart.dev/get-\u2026"
-lastmod: '2024-04-05T21:53:38.940770-06:00'
+lastmod: '2024-04-05T22:37:46.297196-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "1. **Installera Dart**: Se till att Dart \xE4r installerat p\xE5 ditt system.\
+  \ Om inte, kan du ladda ner det fr\xE5n [https://dart.dev/get-dart](https://dart.dev/get-dart).\
+  \ Verifiera installationen med."
 title: Att starta ett nytt projekt
 weight: 1
 ---

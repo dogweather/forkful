@@ -5,10 +5,12 @@ description: "How to (\uC5B4\uB5BB\uAC8C \uD558\uB098\uC694?) Kotlin\uC744 \uC0A
   . Java\uC758 `LocalDateTime`\uACFC `Period` \uD074\uB798\uC2A4\uB97C \uD65C\uC6A9\
   \uD569\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-04-05T21:53:56.928613-06:00'
+lastmod: '2024-04-05T22:38:55.931975-06:00'
 model: gpt-4-1106-preview
-summary: "Java\uC758 `LocalDateTime`\uACFC `Period` \uD074\uB798\uC2A4\uB97C \uD65C\
-  \uC6A9\uD569\uB2C8\uB2E4."
+summary: "How to (\uC5B4\uB5BB\uAC8C \uD558\uB098\uC694?) Kotlin\uC744 \uC0AC\uC6A9\
+  \uD574 \uB0A0\uC9DC\uB97C \uACC4\uC0B0\uD558\uB294 \uC608\uC81C\uC785\uB2C8\uB2E4\
+  . Java\uC758 `LocalDateTime`\uACFC `Period` \uD074\uB798\uC2A4\uB97C \uD65C\uC6A9\
+  \uD569\uB2C8\uB2E4."
 title: "\uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\uC0B0\uD558\uAE30"
 weight: 26
 ---

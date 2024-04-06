@@ -4,9 +4,11 @@ description: "How to (\u5982\u4F55\u64CD\u4F5C) \u5728Ruby\u91CC\uFF0C\u4F60\u53
   \u4EE5\u4F7F\u7528`net/http`\u5E93\u7B80\u5355\u5FEB\u901F\u5730\u4E0B\u8F7D\u7F51\
   \u9875\u3002\u4EE5\u4E0B\u662F\u4E2A\u793A\u4F8B\uFF1A."
 isCJKLanguage: true
-lastmod: '2024-04-05T21:53:48.648656-06:00'
+lastmod: '2024-04-05T22:38:47.510788-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "How to (\u5982\u4F55\u64CD\u4F5C) \u5728Ruby\u91CC\uFF0C\u4F60\u53EF\u4EE5\
+  \u4F7F\u7528`net/http`\u5E93\u7B80\u5355\u5FEB\u901F\u5730\u4E0B\u8F7D\u7F51\u9875\
+  \u3002\u4EE5\u4E0B\u662F\u4E2A\u793A\u4F8B\uFF1A."
 title: "\u4E0B\u8F7D\u7F51\u9875"
 weight: 42
 ---

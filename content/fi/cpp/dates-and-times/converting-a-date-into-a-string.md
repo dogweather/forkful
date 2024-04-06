@@ -3,9 +3,19 @@ date: 2024-01-20 17:36:02.446846-07:00
 description: "How to: - Kuinka: Alkuper\xE4isess\xE4 C:ss\xE4 ja C++:n alkuajoissa\
   \ p\xE4iv\xE4m\xE4\xE4r\xE4t k\xE4siteltiin `time_t`-tyyppisten muuttujien ja `strftime`-funktion\
   \ avulla.\u2026"
-lastmod: '2024-04-05T21:53:58.455113-06:00'
+lastmod: '2024-04-05T22:38:57.489784-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "- Kuinka: Alkuper\xE4isess\xE4 C:ss\xE4 ja C++:n alkuajoissa p\xE4iv\xE4\
+  m\xE4\xE4r\xE4t k\xE4siteltiin `time_t`-tyyppisten muuttujien ja `strftime`-funktion\
+  \ avulla. `strftime` on edelleen k\xE4ytett\xE4viss\xE4, mutta C++ tarjoaa `std::put_time`,\
+  \ joka integroituu suoraan iostream-kirjastoon paremman tyyppiturvallisuuden ja\
+  \ helpomman k\xE4yt\xF6n vuoksi. Vaihtoehtona `std::put_time`:lle, voit k\xE4ytt\xE4\
+  \xE4 vanhempaa C-tyylist\xE4 `strftime`-funktiota tai kolmannen osapuolen kirjastoja,\
+  \ kuten `boost::date_time`. Merkkijonomuunnoksen ymm\xE4rt\xE4minen vaatii tietoa\
+  \ ajan k\xE4sittelyst\xE4 C++-standardikirjastossa, joka on kehittynyt vuosien varrella.\
+  \ K\xE4yt\xE4nn\xF6ss\xE4 `time_t`, `tm`, ja string-streamit ovat avainkomponentteja\
+  \ t\xE4h\xE4n prosessiin. Muista ottaa huomioon aikavy\xF6hykkeet ja lokalisoinnit\
+  \ k\xE4sitelless\xE4si p\xE4iv\xE4m\xE4\xE4ri\xE4."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---

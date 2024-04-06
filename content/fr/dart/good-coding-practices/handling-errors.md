@@ -4,9 +4,9 @@ changelog:
 date: 2024-03-08 21:55:08.798500-07:00
 description: "Comment faire : Dart prend en charge deux types d'erreurs : les erreurs\
   \ *de compilation* et les erreurs *d'ex\xE9cution*. Les erreurs de compilation sont\u2026"
-lastmod: '2024-03-13T22:44:57.398552-06:00'
+lastmod: '2024-04-05T22:38:58.016261-06:00'
 model: gpt-4-0125-preview
-summary: Dart prend en charge deux types d'erreurs.
+summary: Dart prend en charge deux types d'erreurs .
 title: Gestion des erreurs
 weight: 16
 ---

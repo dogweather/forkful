@@ -2,9 +2,10 @@
 date: 2024-01-20 17:43:02.061984-07:00
 description: "How to: - Jak to zrobi\u0107: Wzorce mo\u017Cna te\u017C dostosowa\u0107\
   , na przyk\u0142ad."
-lastmod: '2024-04-05T21:53:36.954334-06:00'
+lastmod: '2024-04-05T22:37:44.224492-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "- Jak to zrobi\u0107: Wzorce mo\u017Cna te\u017C dostosowa\u0107, na przyk\u0142\
+  ad."
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---

@@ -4,9 +4,11 @@ description: "How to (\uBC29\uBC95) PHP\uC5D0\uC11C \uB0A0\uC9DC \uBE44\uAD50\uB
   \ `DateTime` \uD074\uB798\uC2A4\uC640 `>` , `<` , `==` \uC5F0\uC0B0\uC790\uB85C\
   \ \uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4. \uC608\uC81C\uB97C \uBCF4\uC8E0."
 isCJKLanguage: true
-lastmod: '2024-04-05T21:53:57.071603-06:00'
+lastmod: '2024-04-05T22:38:56.083721-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "How to (\uBC29\uBC95) PHP\uC5D0\uC11C \uB0A0\uC9DC \uBE44\uAD50\uB294 `DateTime`\
+  \ \uD074\uB798\uC2A4\uC640 `>` , `<` , `==` \uC5F0\uC0B0\uC790\uB85C \uD560 \uC218\
+  \ \uC788\uC2B5\uB2C8\uB2E4. \uC608\uC81C\uB97C \uBCF4\uC8E0."
 title: "\uB450 \uB0A0\uC9DC \uBE44\uAD50\uD558\uAE30"
 weight: 27
 ---

@@ -2,9 +2,9 @@
 date: 2024-01-20 17:38:39.408946-07:00
 description: 'Comment faire : Simple et direct. La fonction `toLowerCase()` fait tout
   le travail.'
-lastmod: '2024-04-05T21:53:59.664445-06:00'
+lastmod: '2024-04-05T22:38:58.726034-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: Simple et direct. La fonction `toLowerCase()` fait tout le travail.
 title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
 weight: 4
 ---

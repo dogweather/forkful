@@ -6,9 +6,11 @@ description: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u5728 Dart \u4E2D\uFF0C\u4F7F\u752
   \ `dart:io` \u4E2D\u53EF\u7528\u7684 `stderr` \u5BF9\u8C61\u6765\u5199\u5165 stderr\
   \ \u662F\u5F88\u76F4\u63A5\u7684\u3002\u8FD9\u662F\u4E00\u4E2A\u57FA\u672C\u793A\
   \u4F8B\uFF1A."
-lastmod: '2024-04-05T21:53:47.768197-06:00'
+lastmod: '2024-04-05T22:38:46.601002-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "io` \u4E2D\u53EF\u7528\u7684 `stderr` \u5BF9\u8C61\u6765\u5199\u5165 stderr\
+  \ \u662F\u5F88\u76F4\u63A5\u7684\u3002\u8FD9\u662F\u4E00\u4E2A\u57FA\u672C\u793A\
+  \u4F8B\uFF1A."
 title: "\u5199\u5165\u6807\u51C6\u9519\u8BEF"
 weight: 25
 ---

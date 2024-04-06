@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:48:51.167761-07:00
 description: "How to: - N\xE4in teet: Tulostus."
-lastmod: '2024-04-05T21:53:58.659727-06:00'
+lastmod: '2024-04-05T22:38:57.691893-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "- N\xE4in teet: Tulostus."
 title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---

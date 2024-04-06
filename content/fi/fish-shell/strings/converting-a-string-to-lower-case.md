@@ -2,9 +2,10 @@
 date: 2024-01-20 17:38:31.722334-07:00
 description: "How to: Kuinka? Fish Shellill\xE4 saat merkkijonon pieniksi kirjaimiksi\
   \ `string lower`-komennolla. Helppoa ja suoraviivaista. Kokeile itse."
-lastmod: '2024-04-05T21:53:58.557815-06:00'
+lastmod: '2024-04-05T22:38:57.590042-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Kuinka? Fish Shellill\xE4 saat merkkijonon pieniksi kirjaimiksi `string\
+  \ lower`-komennolla. Helppoa ja suoraviivaista. Kokeile itse."
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---

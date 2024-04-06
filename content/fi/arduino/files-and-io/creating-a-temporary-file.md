@@ -3,9 +3,13 @@ date: 2024-01-20 17:39:47.594551-07:00
 description: "How to: - N\xE4in teet sen: Arduino-ymp\xE4rist\xF6ss\xE4 v\xE4liaikaistiedostoja\
   \ ei tyypillisesti k\xE4ytet\xE4 samoin kuin ty\xF6p\xF6yt\xE4j\xE4rjestelmiss\xE4\
   , koska mikrokontrollereilla\u2026"
-lastmod: '2024-04-05T21:53:58.420054-06:00'
+lastmod: '2024-04-05T22:38:57.456188-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "- N\xE4in teet sen: Arduino-ymp\xE4rist\xF6ss\xE4 v\xE4liaikaistiedostoja\
+  \ ei tyypillisesti k\xE4ytet\xE4 samoin kuin ty\xF6p\xF6yt\xE4j\xE4rjestelmiss\xE4\
+  , koska mikrokontrollereilla on rajoitettu muisti ja ne k\xE4sittelev\xE4t tiedostoja\
+  \ eri tavalla. K\xE4yt\xE4mme alla SD-kirjastoa v\xE4liaikaisten tiedostojen k\xE4\
+  sittelyyn SD-kortilla."
 title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---

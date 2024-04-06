@@ -2,9 +2,11 @@
 date: 2024-01-20 17:51:09.685955-07:00
 description: "How to: - Miten tehd\xE4: Haskellissa merkkijonon interpolointi ei ole\
   \ yht\xE4 suoraviivaista kuin joissakin muissa kieliss\xE4, mutta se onnistuu kirjastoja\u2026"
-lastmod: '2024-04-05T21:53:58.169879-06:00'
+lastmod: '2024-04-05T22:38:57.207685-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "- Miten tehd\xE4: Haskellissa merkkijonon interpolointi ei ole yht\xE4 suoraviivaista\
+  \ kuin joissakin muissa kieliss\xE4, mutta se onnistuu kirjastoja hy\xF6dynt\xE4\
+  en. T\xE4ss\xE4 esimerkki `text`-kirjaston kanssa."
 title: Merkkijonon interpolointi
 weight: 8
 ---

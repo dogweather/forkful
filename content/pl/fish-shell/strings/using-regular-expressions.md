@@ -2,9 +2,10 @@
 date: 2024-01-19
 description: "How to: - Jak to zrobi\u0107: Znajdowanie s\u0142\xF3w zaczynaj\u0105\
   cych si\u0119 na \"pl\" w pliku `tekst.txt`."
-lastmod: '2024-04-05T21:53:37.255991-06:00'
+lastmod: '2024-04-05T22:37:44.587256-06:00'
 model: unknown
-summary: ''
+summary: "- Jak to zrobi\u0107: Znajdowanie s\u0142\xF3w zaczynaj\u0105cych si\u0119\
+  \ na \"pl\" w pliku `tekst.txt`."
 title: "Wykorzystanie wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---

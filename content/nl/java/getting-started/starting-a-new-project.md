@@ -5,9 +5,11 @@ date: 2024-01-28 22:08:18.828145-07:00
 description: "Hoe te: Laten we beginnen. We gaan een eenvoudig Java-project cre\xEB\
   ren met de opdrachtregel en een klassiek \"Hallo, Wereld!\" programma compileren\
   \ en\u2026"
-lastmod: '2024-04-05T21:53:50.707085-06:00'
+lastmod: '2024-04-05T22:38:49.549251-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Laten we beginnen. We gaan een eenvoudig Java-project cre\xEBren met de\
+  \ opdrachtregel en een klassiek \"Hallo, Wereld!\" programma compileren en uitvoeren.\
+  \ Maak eerst een directory voor je project en navigeer ernaar."
 title: Een nieuw project starten
 weight: 1
 ---

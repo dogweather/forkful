@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 18:01:47.128414-07:00
 description: "Steg f\xF6r steg Exempel output."
-lastmod: '2024-04-05T21:53:38.895587-06:00'
+lastmod: '2024-04-05T22:37:46.252332-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Steg f\xF6r steg Exempel output."
 title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
 weight: 45
 ---

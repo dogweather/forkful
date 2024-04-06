@@ -2,9 +2,10 @@
 date: 2024-01-20 17:56:44.477376-07:00
 description: "How to (Comment faire) Python utilise le module 'sys' pour acc\xE9der\
   \ aux arguments de ligne de commande."
-lastmod: '2024-04-05T21:53:58.834733-06:00'
+lastmod: '2024-04-05T22:38:57.882594-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "How to (Comment faire) Python utilise le module 'sys' pour acc\xE9der aux\
+  \ arguments de ligne de commande."
 title: Lecture des arguments de ligne de commande
 weight: 23
 ---

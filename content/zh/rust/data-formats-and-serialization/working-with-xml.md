@@ -5,9 +5,13 @@ description: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u5728Rust\u4E2D\uFF0C\u4F60\u53EF\
   \u8FC7\u5C06`xml-rs = \"0.8\"`\u6DFB\u52A0\u5230\u4F60\u7684`Cargo.toml`\u6765\u5B89\
   \u88C5\u3002\u4E0B\u9762\u662F\u89E3\u6790\u4E00\u4E2A\u7B80\u5355XML\u7684\u65B9\
   \u6CD5\uFF1A."
-lastmod: '2024-04-05T21:53:47.868046-06:00'
+lastmod: '2024-04-05T22:38:46.708864-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u5728Rust\u4E2D\uFF0C\u4F60\u53EF\u4EE5\u4F7F\
+  \u7528\u50CF`xml-rs`\u8FD9\u6837\u7684crate\u6765\u5904\u7406XML\u3002\u901A\u8FC7\
+  \u5C06`xml-rs = \"0.8\"`\u6DFB\u52A0\u5230\u4F60\u7684`Cargo.toml`\u6765\u5B89\u88C5\
+  \u3002\u4E0B\u9762\u662F\u89E3\u6790\u4E00\u4E2A\u7B80\u5355XML\u7684\u65B9\u6CD5\
+  \uFF1A."
 title: "\u5904\u7406XML"
 weight: 40
 ---

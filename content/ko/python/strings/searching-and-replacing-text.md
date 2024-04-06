@@ -5,9 +5,12 @@ description: "How to (\uBC29\uBC95) Python\uC5D0\uC11C \uD14D\uC2A4\uD2B8\uB97C 
   \uBC95\uC740 `replace()` \uBA54\uC18C\uB4DC\uB97C \uC0AC\uC6A9\uD558\uB294 \uAC83\
   \uC785\uB2C8\uB2E4."
 isCJKLanguage: true
-lastmod: '2024-04-05T21:53:56.439992-06:00'
+lastmod: '2024-04-05T22:38:55.425437-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "How to (\uBC29\uBC95) Python\uC5D0\uC11C \uD14D\uC2A4\uD2B8\uB97C \uAC80\
+  \uC0C9\uD558\uACE0 \uAD50\uCCB4\uD558\uB294 \uAC00\uC7A5 \uAC04\uB2E8\uD55C \uBC29\
+  \uBC95\uC740 `replace()` \uBA54\uC18C\uB4DC\uB97C \uC0AC\uC6A9\uD558\uB294 \uAC83\
+  \uC785\uB2C8\uB2E4."
 title: "\uD14D\uC2A4\uD2B8 \uAC80\uC0C9 \uBC0F \uAD50\uCCB4"
 weight: 10
 ---

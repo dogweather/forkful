@@ -4,9 +4,11 @@ changelog:
 date: 2024-03-08 21:56:31.314321-07:00
 description: "Hoe: 1. **Installeer Dart**: Zorg ervoor dat Dart op je systeem is ge\xEF\
   nstalleerd. Zo niet, dan kun je het downloaden van [https://dart.dev/get-\u2026"
-lastmod: '2024-04-05T21:53:50.529995-06:00'
+lastmod: '2024-04-05T22:38:49.368390-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "1. **Installeer Dart**: Zorg ervoor dat Dart op je systeem is ge\xEFnstalleerd.\
+  \ Zo niet, dan kun je het downloaden van [https://dart.dev/get-dart](https://dart.dev/get-dart).\
+  \ Verifieer de installatie met."
 title: Een nieuw project starten
 weight: 1
 ---

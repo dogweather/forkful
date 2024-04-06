@@ -3,9 +3,10 @@ date: 2024-01-26 03:43:33.888055-07:00
 description: "\u5982\u4F55\u5B9E\u73B0\uFF1A \u5728 Clojure \u4E2D\uFF0C\u6211\u4EEC\
   \u4E3B\u8981\u4F7F\u7528 `Math/round`\u3001`Math/floor` \u548C `Math/ceil`\uFF1A\
   ."
-lastmod: '2024-04-05T21:53:47.648867-06:00'
+lastmod: '2024-04-05T22:38:46.478239-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "\u5982\u4F55\u5B9E\u73B0\uFF1A \u5728 Clojure \u4E2D\uFF0C\u6211\u4EEC\u4E3B\
+  \u8981\u4F7F\u7528 `Math/round`\u3001`Math/floor` \u548C `Math/ceil`\uFF1A."
 title: "\u6570\u5B57\u53D6\u6574"
 weight: 13
 ---

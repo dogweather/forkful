@@ -3,9 +3,13 @@ date: 2024-01-20 17:42:00.366256-07:00
 description: "How to: Syvensin\xE4. Ennen satoja ohjelmointikieli\xE4, datan siivous\
   \ oli manuaalista. Clojure, noin vuodesta 2007, tarjoaa modernit ty\xF6kalut kuten\
   \ regex\u2026"
-lastmod: '2024-04-05T21:53:57.725723-06:00'
+lastmod: '2024-04-05T22:38:56.769675-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Syvensin\xE4. Ennen satoja ohjelmointikieli\xE4, datan siivous oli manuaalista.\
+  \ Clojure, noin vuodesta 2007, tarjoaa modernit ty\xF6kalut kuten regex (s\xE4\xE4\
+  nn\xF6lliset lausekkeet) ja string-manipulaatio funktiot. Alternatiiveja? Muut kielet,\
+  \ funktiot. Mutta Clojuren funktionaalinen luonne tekee patterneihin sopivien merkkien\
+  \ poistosta yksinkertaista."
 title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---

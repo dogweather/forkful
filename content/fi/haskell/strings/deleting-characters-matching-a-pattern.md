@@ -3,9 +3,11 @@ date: 2024-01-20 17:42:19.161789-07:00
 description: "How to: - Kuinka tehd\xE4: Haskellissa voimme poistaa merkkej\xE4 merkkijonosta\
   \ k\xE4ytt\xE4m\xE4ll\xE4 `filter`-funktiota yhdess\xE4 ehtojen kanssa, jotka m\xE4\
   \xE4rittelev\xE4t,\u2026"
-lastmod: '2024-04-05T21:53:58.167832-06:00'
+lastmod: '2024-04-05T22:38:57.205816-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "- Kuinka tehd\xE4: Haskellissa voimme poistaa merkkej\xE4 merkkijonosta\
+  \ k\xE4ytt\xE4m\xE4ll\xE4 `filter`-funktiota yhdess\xE4 ehtojen kanssa, jotka m\xE4\
+  \xE4rittelev\xE4t, mitk\xE4 merkit halutaan j\xE4tt\xE4\xE4 pois."
 title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---

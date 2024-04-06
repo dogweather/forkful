@@ -3,7 +3,7 @@ changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 17:57:21.812667-07:00
 description: ''
-lastmod: '2024-04-05T21:59:54.960981-06:00'
+lastmod: '2024-04-05T22:38:42.273567-06:00'
 model: gpt-4-0125-preview
 summary: "C\u8A00\u8A9E\u3067\u306F\u3001\u6A19\u6E96\u30E9\u30A4\u30D6\u30E9\u30EA\
   `<stdlib.h>`\u306E\u4E00\u90E8\u3067\u3042\u308B`rand()`\u95A2\u6570\u3092\u4F7F\
@@ -13,7 +13,7 @@ summary: "C\u8A00\u8A9E\u3067\u306F\u3001\u6A19\u6E96\u30E9\u30A4\u30D6\u30E9\u3
   \u306E\u7591\u4F3C\u4E71\u6570\u3092\u751F\u6210\u3057\u307E\u3059\u3002\u7BC4\u56F2\
   \u3092\u3088\u308A\u7D30\u304B\u304F\u5236\u5FA1\u3059\u308B\u305F\u3081\u306B\u3001\
   \u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F`rand()`\u306E\u51FA\u529B\u3092\u64CD\
-  \u4F5C\u3067\u304D\u307E\u3059."
+  \u4F5C\u3067\u304D\u307E\u3059\u3002"
 title: "\u4E71\u6570\u306E\u751F\u6210"
 weight: 12
 ---

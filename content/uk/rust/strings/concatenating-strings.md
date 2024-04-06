@@ -2,9 +2,10 @@
 date: 2024-01-20 17:35:49.684161-07:00
 description: "How to (\u042F\u043A \u0446\u0435 \u0440\u043E\u0431\u0438\u0442\u0438\
   ) Here's how you glue strings together in Rust."
-lastmod: '2024-04-05T21:53:49.144468-06:00'
+lastmod: '2024-04-05T22:38:48.010628-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "How to (\u042F\u043A \u0446\u0435 \u0440\u043E\u0431\u0438\u0442\u0438)\
+  \ Here's how you glue strings together in Rust."
 title: "\u041E\u0431'\u0454\u0434\u043D\u0430\u043D\u043D\u044F \u0440\u044F\u0434\
   \u043A\u0456\u0432"
 weight: 3

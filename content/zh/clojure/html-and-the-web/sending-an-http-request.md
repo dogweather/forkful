@@ -4,11 +4,11 @@ description: "How to: Clojure \u63D0\u4F9B\u4E86\u597D\u51E0\u79CD\u53D1\u8D77HT
   \ \u8BF7\u6C42\u7684\u65B9\u6CD5\u3002\u8FD9\u91CC, \u6211\u4EEC\u4F1A\u7528 `clj-http`\
   \ \u5E93\u3002 \u9996\u5148, \u6DFB\u52A0\u4F9D\u8D56\u5230\u4F60\u7684 `project.clj`."
 isCJKLanguage: true
-lastmod: '2024-03-13T22:44:47.299409-06:00'
+lastmod: '2024-04-05T22:38:46.480378-06:00'
 model: gpt-4-1106-preview
 summary: "Clojure \u63D0\u4F9B\u4E86\u597D\u51E0\u79CD\u53D1\u8D77HTTP \u8BF7\u6C42\
   \u7684\u65B9\u6CD5\u3002\u8FD9\u91CC, \u6211\u4EEC\u4F1A\u7528 `clj-http` \u5E93\
-  ."
+  \u3002"
 title: "\u53D1\u51FA HTTP \u8BF7\u6C42"
 weight: 44
 ---

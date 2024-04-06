@@ -10,12 +10,12 @@ description: "\u5982\u4F55\u64CD\u4F5C\uFF1A VBA \u63D0\u4F9B\u4E86\u51E0\u79CD\
   \ Microsoft \u811A\u672C\u8FD0\u884C\u65F6**\uFF1A\u9996\u5148\uFF0C\u786E\u4FDD\
   \u4F60\u7684 VBA \u7F16\u8F91\u5668\u53EF\u4EE5\u8BBF\u95EE `FileSystemObject`\u3002\
   \u5728\u2026"
-lastmod: '2024-04-05T21:53:47.918364-06:00'
+lastmod: '2024-04-05T22:38:46.757987-06:00'
 model: gpt-4-0125-preview
 summary: "**\u5F15\u7528 Microsoft \u811A\u672C\u8FD0\u884C\u65F6**\uFF1A\u9996\u5148\
   \uFF0C\u786E\u4FDD\u4F60\u7684 VBA \u7F16\u8F91\u5668\u53EF\u4EE5\u8BBF\u95EE `FileSystemObject`\u3002\
   \u5728 VBA \u7F16\u8F91\u5668\u4E2D\uFF0C\u8F6C\u5230 \u5DE5\u5177 > \u5F15\u7528\
-  \ \u5E76\u52FE\u9009 \"Microsoft Scripting Runtime\"."
+  \ \u5E76\u52FE\u9009 \"Microsoft Scripting Runtime\"\u3002"
 title: "\u7F16\u5199\u6587\u672C\u6587\u4EF6"
 weight: 24
 ---

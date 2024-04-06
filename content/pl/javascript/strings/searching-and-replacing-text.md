@@ -3,10 +3,11 @@ date: 2024-01-20 17:57:57.891942-07:00
 description: "How to (Jak to zrobi\u0107) Proste, prawda? U\u017Cywamy `.replace()`\
   \ z wyra\u017Ceniem regularnym `/blue/g` by zamieni\u0107 wszystkie przyk\u0142\
   ady \"blue\" na \"red\"."
-lastmod: '2024-04-05T21:53:37.208585-06:00'
+lastmod: '2024-04-05T22:37:44.535235-06:00'
 model: gpt-4-1106-preview
-summary: "U\u017Cywamy `.replace()` z wyra\u017Ceniem regularnym `/blue/g` by zamieni\u0107\
-  \ wszystkie przyk\u0142ady \"blue\" na \"red\"."
+summary: "How to (Jak to zrobi\u0107) Proste, prawda? U\u017Cywamy `.replace()` z\
+  \ wyra\u017Ceniem regularnym `/blue/g` by zamieni\u0107 wszystkie przyk\u0142ady\
+  \ \"blue\" na \"red\"."
 title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---

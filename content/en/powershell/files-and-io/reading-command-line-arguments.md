@@ -2,9 +2,11 @@
 date: 2024-01-20 17:56:46.323173-07:00
 description: "How to PowerShell reads command line arguments using the `$args` array\
   \ or parameters. `$args` is quick for one-off scripts; parameters are better for\u2026"
-lastmod: '2024-04-05T21:53:35.995462-06:00'
+lastmod: '2024-04-05T22:37:43.258693-06:00'
 model: gpt-4-1106-preview
-summary: '`$args` is quick for one-off scripts; parameters are better for robust tools.'
+summary: How to PowerShell reads command line arguments using the `$args` array or
+  parameters. `$args` is quick for one-off scripts; parameters are better for robust
+  tools.
 title: Reading command line arguments
 weight: 23
 ---

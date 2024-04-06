@@ -3,9 +3,11 @@ date: 2024-01-20 17:59:18.647136-07:00
 description: "How to: (Comment faire : ) Pour envoyer une requ\xEAte HTTP en Elixir,\
   \ on utilise souvent la biblioth\xE8que HTTPoison. Assurez-vous de l'avoir ajout\xE9\
   e \xE0 votre\u2026"
-lastmod: '2024-04-05T21:53:58.903243-06:00'
+lastmod: '2024-04-05T22:38:57.955289-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Comment faire : ) Pour envoyer une requ\xEAte HTTP en Elixir, on utilise\
+  \ souvent la biblioth\xE8que HTTPoison. Assurez-vous de l'avoir ajout\xE9e \xE0\
+  \ votre `mix.exs`."
 title: "Envoi d'une requ\xEAte HTTP"
 weight: 44
 ---

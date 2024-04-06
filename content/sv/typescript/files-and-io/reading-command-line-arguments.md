@@ -2,9 +2,10 @@
 date: 2024-01-20 17:57:10.723284-07:00
 description: "Hur g\xF6r man: Dags att dyka in. F\xF6r att b\xF6rja, installera `ts-node`\
   \ f\xF6r att kunna k\xF6ra TypeScript filer direkt."
-lastmod: '2024-04-05T21:53:38.999433-06:00'
+lastmod: '2024-04-05T22:37:46.357300-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Dags att dyka in. F\xF6r att b\xF6rja, installera `ts-node` f\xF6r att kunna\
+  \ k\xF6ra TypeScript filer direkt."
 title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---

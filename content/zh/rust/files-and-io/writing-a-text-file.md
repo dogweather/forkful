@@ -7,9 +7,10 @@ description: "\u5982\u4F55\u505A\uFF1A Rust \u7684\u6807\u51C6\u5E93\u63D0\u4F9B
   \u5728 `std::fs` \u548C `std::io` \u6A21\u5757\u4E2D\u3002\u8FD9\u91CC\u662F\u521B\
   \u5EFA\u548C\u5199\u5165\u6587\u672C\u6587\u4EF6\u7684\u57FA\u672C\u793A\u4F8B\uFF1A\
   ."
-lastmod: '2024-04-05T21:53:47.861441-06:00'
+lastmod: '2024-04-05T22:38:46.702112-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: ":fs` \u548C `std::io` \u6A21\u5757\u4E2D\u3002\u8FD9\u91CC\u662F\u521B\u5EFA\
+  \u548C\u5199\u5165\u6587\u672C\u6587\u4EF6\u7684\u57FA\u672C\u793A\u4F8B\uFF1A."
 title: "\u7F16\u5199\u6587\u672C\u6587\u4EF6"
 weight: 24
 ---

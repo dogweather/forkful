@@ -2,9 +2,14 @@
 date: 2024-01-20 17:45:56.336635-07:00
 description: "How to: - Kuinka: Substringit ovat vanhastaan osa ohjelmointia. JavaScriptiss\xE4\
   \ on useita tapoja: `substr`, `substring` ja `slice`. - Historiallisesti\u2026"
-lastmod: '2024-04-05T21:53:58.517542-06:00'
+lastmod: '2024-04-05T22:38:57.550529-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "- Kuinka: Substringit ovat vanhastaan osa ohjelmointia. JavaScriptiss\xE4\
+  \ on useita tapoja: `substr`, `substring` ja `slice`. - Historiallisesti `substring`\
+  \ ja `substr` olivat p\xE4\xE4menetelmi\xE4, mutta `substr` on vanhentunut. - `slice`\
+  \ on joustava: se toimii my\xF6s taulukoissa ja sallii negatiiviset indeksit. -\
+  \ Suorituskyvyss\xE4 erot ovat nykyisin minimaalisia, mutta eri selaimissa tilanne\
+  \ on saattanut vaihdella."
 title: Merkkijonojen osien poimiminen
 weight: 6
 ---

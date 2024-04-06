@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:58:00.452548-07:00
 description: "How to: - Jak to zrobi\u0107: Output."
-lastmod: '2024-04-05T21:53:37.251586-06:00'
+lastmod: '2024-04-05T22:37:44.581905-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "- Jak to zrobi\u0107: Output."
 title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---

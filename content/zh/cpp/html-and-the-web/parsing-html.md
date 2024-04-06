@@ -6,9 +6,12 @@ description: "\u5982\u4F55\u64CD\u4F5C\uFF1A C++ \u5E76\u4E0D\u81EA\u5E26 HTML \
   \u6790\u529F\u80FD\u3002\u4F60\u901A\u5E38\u4F1A\u4F7F\u7528\u50CF Google \u7684\
   \ Gumbo-parser \u6216\u7C7B\u4F3C\u7684\u5E93\u3002\u8FD9\u91CC\u662F\u4F7F\u7528\
   \ Gumbo-parser \u7684\u4E00\u4E2A\u5FEB\u901F\u793A\u4F8B\uFF1A."
-lastmod: '2024-04-05T21:53:48.402059-06:00'
+lastmod: '2024-04-05T22:38:47.262219-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "\u5982\u4F55\u64CD\u4F5C\uFF1A C++ \u5E76\u4E0D\u81EA\u5E26 HTML \u89E3\u6790\
+  \u529F\u80FD\u3002\u4F60\u901A\u5E38\u4F1A\u4F7F\u7528\u50CF Google \u7684 Gumbo-parser\
+  \ \u6216\u7C7B\u4F3C\u7684\u5E93\u3002\u8FD9\u91CC\u662F\u4F7F\u7528 Gumbo-parser\
+  \ \u7684\u4E00\u4E2A\u5FEB\u901F\u793A\u4F8B\uFF1A."
 title: "\u89E3\u6790HTML"
 weight: 43
 ---

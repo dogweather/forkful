@@ -2,9 +2,9 @@
 date: 2024-01-20 17:53:22.659427-07:00
 description: 'How to: Want to print debug output in TypeScript? Console methods are
   your go-to. See `console.log`, `console.error`, and friends in action.'
-lastmod: '2024-03-13T22:44:59.861274-06:00'
+lastmod: '2024-04-05T22:40:22.595667-06:00'
 model: gpt-4-1106-preview
-summary: Want to print debug output in TypeScript.
+summary: Want to print debug output in TypeScript?
 title: Printing debug output
 weight: 33
 ---

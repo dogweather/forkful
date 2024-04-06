@@ -2,9 +2,10 @@
 date: 2024-01-20 18:02:33.782761-07:00
 description: "How to: - Kuinka tehd\xE4: Kun ajat t\xE4m\xE4n koodin, saat vastaukseksi\
   \ HTTP-palvelimen vastauksen, joka sis\xE4lt\xE4\xE4 pyydetyt tiedot tai virheilmoituksen."
-lastmod: '2024-04-05T21:53:58.670675-06:00'
+lastmod: '2024-04-05T22:38:57.702700-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "- Kuinka tehd\xE4: Kun ajat t\xE4m\xE4n koodin, saat vastaukseksi HTTP-palvelimen\
+  \ vastauksen, joka sis\xE4lt\xE4\xE4 pyydetyt tiedot tai virheilmoituksen."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---

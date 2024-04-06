@@ -4,9 +4,11 @@ changelog:
 date: 2024-03-08 21:56:33.253982-07:00
 description: "Kuinka: 1. **Asenna Dart**: Varmista, ett\xE4 Dart on asennettu j\xE4\
   rjestelm\xE4\xE4si. Jos ei, voit ladata sen osoitteesta [https://dart.dev/get-\u2026"
-lastmod: '2024-04-05T21:53:57.828362-06:00'
+lastmod: '2024-04-05T22:38:56.870967-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "1. **Asenna Dart**: Varmista, ett\xE4 Dart on asennettu j\xE4rjestelm\xE4\
+  \xE4si. Jos ei, voit ladata sen osoitteesta [https://dart.dev/get-dart](https://dart.dev/get-dart).\
+  \ Vahvista asennus komennolla."
 title: Uuden projektin aloittaminen
 weight: 1
 ---

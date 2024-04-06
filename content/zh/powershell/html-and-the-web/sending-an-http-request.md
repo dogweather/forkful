@@ -7,13 +7,13 @@ description: "\u5982\u4F55\uFF1A \u65E9\u5728PowerShell 1.0\u7684\u65F6\u5019\u5
   \ \u7C7B\u3002\u73B0\u5728\uFF0CPowerShell \u63D0\u4F9B\u4E86`Invoke-WebRequest`\u548C\
   `Invoke-\u2026"
 isCJKLanguage: true
-lastmod: '2024-04-05T21:53:48.307168-06:00'
+lastmod: '2024-04-05T22:38:47.165748-06:00'
 model: gpt-4-1106-preview
 summary: "\u5982\u679C\u9700\u8981\u5904\u7406RESTful API\u7684\u8BDD\uFF0C`Invoke-RestMethod`\u662F\
   \u4E2A\u4E0D\u9519\u7684\u9009\u62E9\u3002\u4E0E`Invoke-WebRequest`\u4E0D\u540C\u7684\
   \u662F\uFF0C\u5B83\u4F1A\u81EA\u52A8\u5904\u7406JSON\u548CXML\u683C\u5F0F\u7684\u54CD\
   \u5E94\u5185\u5BB9\uFF0C\u76F4\u63A5\u8FD4\u56DE\u5BF9\u8C61\uFF0C\u4E0D\u5FC5\u624B\
-  \u52A8\u8F6C\u6362."
+  \u52A8\u8F6C\u6362\u3002"
 title: "\u53D1\u51FA HTTP \u8BF7\u6C42"
 weight: 44
 ---

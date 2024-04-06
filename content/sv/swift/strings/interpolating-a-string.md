@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:51:35.717719-07:00
 description: "Hur man g\xF6r: Utskrift: `Hej Erik, du \xE4r 29 \xE5r gammal.`."
-lastmod: '2024-04-05T21:53:39.574833-06:00'
+lastmod: '2024-04-05T22:37:46.931485-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Utskrift: `Hej Erik, du \xE4r 29 \xE5r gammal.`."
 title: "Interpolera en str\xE4ng"
 weight: 8
 ---

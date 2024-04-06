@@ -2,9 +2,10 @@
 date: 2024-01-20 17:40:59.283394-07:00
 description: "How to: - Miten: PHP:ss\xE4 on sis\xE4\xE4nrakennettuja funktioita v\xE4\
   liaikaisten tiedostojen k\xE4sittelyyn."
-lastmod: '2024-04-05T21:53:58.247036-06:00'
+lastmod: '2024-04-05T22:38:57.284156-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "- Miten: PHP:ss\xE4 on sis\xE4\xE4nrakennettuja funktioita v\xE4liaikaisten\
+  \ tiedostojen k\xE4sittelyyn."
 title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---

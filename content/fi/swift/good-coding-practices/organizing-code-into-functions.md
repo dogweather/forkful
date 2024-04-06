@@ -2,9 +2,10 @@
 date: 2024-01-26 01:11:55.630004-07:00
 description: "Kuinka: Kuvittele teht\xE4v\xE4: laske taulukon keskiarvo. Ilman funktioita,\
   \ liitt\xE4isit kaiken p\xE4\xE4ohjelmaan. Funktioiden avulla tekisit n\xE4in."
-lastmod: '2024-04-05T21:53:58.491566-06:00'
+lastmod: '2024-04-05T22:38:57.524690-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Kuvittele teht\xE4v\xE4: laske taulukon keskiarvo. Ilman funktioita, liitt\xE4\
+  isit kaiken p\xE4\xE4ohjelmaan. Funktioiden avulla tekisit n\xE4in."
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---

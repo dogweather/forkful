@@ -3,9 +3,10 @@ date: 2024-01-20 17:54:08.726613-07:00
 description: "How to / \u600E\u4E48\u505A \u4EE5\u4E0B\u662FElixir\u4EE3\u7801\u793A\
   \u4F8B\uFF1A."
 isCJKLanguage: true
-lastmod: '2024-04-05T21:53:47.717975-06:00'
+lastmod: '2024-04-05T22:38:46.551221-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "How to / \u600E\u4E48\u505A \u4EE5\u4E0B\u662FElixir\u4EE3\u7801\u793A\u4F8B\
+  \uFF1A."
 title: "\u9605\u8BFB\u6587\u672C\u6587\u4EF6"
 weight: 22
 ---

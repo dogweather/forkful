@@ -3,10 +3,11 @@ date: 2024-01-20 18:01:25.700822-07:00
 description: "C\xF3mo Hacerlo Primero, aseg\xFArate de tener `using System.Net;` y\
   \ `using System.Text;` en tu archivo. Aqu\xED hay un ejemplo de c\xF3mo enviar una\
   \ solicitud con\u2026"
-lastmod: '2024-04-05T21:54:00.420928-06:00'
+lastmod: '2024-04-05T22:38:59.474237-06:00'
 model: gpt-4-1106-preview
-summary: "Aqu\xED hay un ejemplo de c\xF3mo enviar una solicitud con autenticaci\xF3\
-  n b\xE1sica."
+summary: "C\xF3mo Hacerlo Primero, aseg\xFArate de tener `using System.Net;` y `using\
+  \ System.Text;` en tu archivo. Aqu\xED hay un ejemplo de c\xF3mo enviar una solicitud\
+  \ con autenticaci\xF3n b\xE1sica."
 title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
 weight: 45
 ---

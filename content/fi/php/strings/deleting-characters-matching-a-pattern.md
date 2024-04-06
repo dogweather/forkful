@@ -2,9 +2,10 @@
 date: 2024-01-20 17:42:48.527320-07:00
 description: "How to: - Kuinka: PHP:ss\xE4 `preg_replace`-funktio on yleisin tapa\
   \ poistaa merkkej\xE4, jotka vastaavat tietty\xE4 mallia. Katsotaanpa miten."
-lastmod: '2024-04-05T21:53:58.212395-06:00'
+lastmod: '2024-04-05T22:38:57.249409-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "- Kuinka: PHP:ss\xE4 `preg_replace`-funktio on yleisin tapa poistaa merkkej\xE4\
+  , jotka vastaavat tietty\xE4 mallia. Katsotaanpa miten."
 title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---

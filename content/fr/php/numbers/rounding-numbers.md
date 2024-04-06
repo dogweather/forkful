@@ -2,9 +2,9 @@
 date: 2024-01-26 03:46:00.669325-07:00
 description: "Comment faire : PHP propose quelques m\xE9thodes pour arrondir les nombres\
   \ : `round()`, `ceil()` et `floor()`. Voici comment elles fonctionnent ."
-lastmod: '2024-03-13T22:44:57.872712-06:00'
+lastmod: '2024-04-05T22:38:58.413644-06:00'
 model: gpt-4-0125-preview
-summary: "PHP propose quelques m\xE9thodes pour arrondir les nombres."
+summary: "PHP propose quelques m\xE9thodes pour arrondir les nombres ."
 title: Arrondir les nombres
 weight: 13
 ---

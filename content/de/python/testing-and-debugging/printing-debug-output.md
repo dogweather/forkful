@@ -2,9 +2,9 @@
 date: 2024-01-20 17:53:22.791929-07:00
 description: 'How to: Du willst wissen, wie dein Code tickt? `print()` ist dein Freund.
   Platziere es neben Variablen und sieh dir die Magie an.'
-lastmod: '2024-03-13T22:44:53.381262-06:00'
+lastmod: '2024-04-05T22:40:40.997429-06:00'
 model: gpt-4-1106-preview
-summary: Du willst wissen, wie dein Code tickt.
+summary: Du willst wissen, wie dein Code tickt?
 title: Debug-Ausgaben drucken
 weight: 33
 ---

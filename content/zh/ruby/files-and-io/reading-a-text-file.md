@@ -4,9 +4,11 @@ description: "\u5982\u4F55\u505A\uFF1A \u8F93\u51FA\u793A\u4F8B\uFF08\u4EE5\"exa
   \u6587\u4EF6\u5185\u5BB9\u4E3A\u201C\u4F60\u597D\uFF0C\u4E16\u754C\uFF01\u201D\u4E3A\
   \u4F8B\uFF09\uFF1A."
 isCJKLanguage: true
-lastmod: '2024-04-05T21:53:48.665920-06:00'
+lastmod: '2024-04-05T22:38:47.527383-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "\u5982\u4F55\u505A\uFF1A \u8F93\u51FA\u793A\u4F8B\uFF08\u4EE5\"example.txt\"\
+  \u6587\u4EF6\u5185\u5BB9\u4E3A\u201C\u4F60\u597D\uFF0C\u4E16\u754C\uFF01\u201D\u4E3A\
+  \u4F8B\uFF09\uFF1A."
 title: "\u9605\u8BFB\u6587\u672C\u6587\u4EF6"
 weight: 22
 ---

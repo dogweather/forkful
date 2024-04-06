@@ -7,10 +7,10 @@ description: "\u5982\u4F55\u64CD\u4F5C\uFF1A PowerShell \u901A\u8FC7\u4F7F\u7528
   \ \u65B9\u6CD5\u6765\u7B80\u5316\u5199\u5165 stderr \u7684\u8FC7\u7A0B\u3002\u7136\
   \u800C\uFF0C\u5BF9\u4E8E\u76F4\u63A5\u7684 stderr \u91CD\u5B9A\u5411\uFF0C\u4F60\
   \u53EF\u80FD\u66F4\u503E\u5411\u4E8E\u4F7F\u7528 .NET \u65B9\u6CD5\u6216 PowerShell\u2026"
-lastmod: '2024-04-05T21:53:48.329068-06:00'
+lastmod: '2024-04-05T22:38:47.188879-06:00'
 model: gpt-4-0125-preview
-summary: "**\u793A\u4F8B 1:** \u4F7F\u7528 `Write-Error` \u5C06\u9519\u8BEF\u6D88\u606F\
-  \u5199\u5165 stderr\u3002"
+summary: "** \u4F7F\u7528 `Write-Error` \u5C06\u9519\u8BEF\u6D88\u606F\u5199\u5165\
+  \ stderr\u3002"
 title: "\u5199\u5165\u6807\u51C6\u9519\u8BEF"
 weight: 25
 ---

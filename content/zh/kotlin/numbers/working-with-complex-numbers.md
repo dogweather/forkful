@@ -2,9 +2,10 @@
 date: 2024-01-26 04:43:13.584784-07:00
 description: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u8BA9\u6211\u4EEC\u5728Kotlin\u4E2D\u5B9A\
   \u4E49\u4E00\u4E2A\u57FA\u672C\u7684\u590D\u6570\u7C7B\uFF1A."
-lastmod: '2024-04-05T21:53:48.031278-06:00'
+lastmod: '2024-04-05T22:38:46.876977-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u8BA9\u6211\u4EEC\u5728Kotlin\u4E2D\u5B9A\
+  \u4E49\u4E00\u4E2A\u57FA\u672C\u7684\u590D\u6570\u7C7B\uFF1A."
 title: "\u5904\u7406\u590D\u6570"
 weight: 14
 ---

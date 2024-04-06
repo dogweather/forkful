@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:38:00.222280-07:00
 description: 'How to: Esempio: usando la funzione `std::transform` e `::tolower`.'
-lastmod: '2024-04-05T21:53:44.471685-06:00'
+lastmod: '2024-04-05T22:38:43.209295-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: 'Esempio: usando la funzione `std::transform` e `::tolower`.'
 title: Conversione di una stringa in minuscolo
 weight: 4
 ---

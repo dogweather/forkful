@@ -3,9 +3,11 @@ date: 2024-01-20 17:43:14.076075-07:00
 description: "How to: / Kuinka: Swiftiss\xE4 merkkien poistaminen kuviota k\xE4ytt\xE4\
   en onnistuu `String` laajennoksilla ja s\xE4\xE4nn\xF6llisill\xE4 lausekkeilla (regexp).\
   \ T\xE4ss\xE4 helppo\u2026"
-lastmod: '2024-04-05T21:53:58.469821-06:00'
+lastmod: '2024-04-05T22:38:57.504222-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "/ Kuinka: Swiftiss\xE4 merkkien poistaminen kuviota k\xE4ytt\xE4en onnistuu\
+  \ `String` laajennoksilla ja s\xE4\xE4nn\xF6llisill\xE4 lausekkeilla (regexp). T\xE4\
+  ss\xE4 helppo esimerkki."
 title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---

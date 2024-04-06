@@ -2,9 +2,10 @@
 date: 2024-01-20 17:59:56.180525-07:00
 description: "How to: - Kuinka: Haskellissa HTTP-pyynt\xF6jen l\xE4hett\xE4miseen\
   \ k\xE4ytet\xE4\xE4n kirjastoja, kuten `http-conduit`. Esimerkiksi n\xE4in."
-lastmod: '2024-04-05T21:53:58.181328-06:00'
+lastmod: '2024-04-05T22:38:57.219346-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "- Kuinka: Haskellissa HTTP-pyynt\xF6jen l\xE4hett\xE4miseen k\xE4ytet\xE4\
+  \xE4n kirjastoja, kuten `http-conduit`. Esimerkiksi n\xE4in."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---

@@ -2,9 +2,10 @@
 date: 2024-01-20 18:02:18.264751-07:00
 description: "How to: _Output: (dipende dalla risposta dell'API/service, mostrer\xE0\
   \ i dati recuperati o un messaggio di stato)_."
-lastmod: '2024-04-05T21:53:44.403751-06:00'
+lastmod: '2024-04-05T22:38:43.138734-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "_Output: (dipende dalla risposta dell'API/service, mostrer\xE0 i dati recuperati\
+  \ o un messaggio di stato)_."
 title: Inviare una richiesta http con autenticazione di base
 weight: 45
 ---

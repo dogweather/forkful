@@ -3,9 +3,11 @@ date: 2024-01-20 17:44:26.387677-07:00
 description: "How to: Czyli po polsku: \"Jak to zrobi\u0107:\" W Haskellu, mo\u017C\
   emy u\u017Cy\u0107 biblioteki `http-conduit` do pobierania stron internetowych.\
   \ Oto przyk\u0142ad u\u017Cycia."
-lastmod: '2024-04-05T21:53:36.884164-06:00'
+lastmod: '2024-04-05T22:37:44.152027-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Czyli po polsku: \"Jak to zrobi\u0107:\" W Haskellu, mo\u017Cemy u\u017C\
+  y\u0107 biblioteki `http-conduit` do pobierania stron internetowych. Oto przyk\u0142\
+  ad u\u017Cycia."
 title: Pobieranie strony internetowej
 weight: 42
 ---

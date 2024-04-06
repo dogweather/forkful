@@ -3,9 +3,9 @@ changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:24.800564-07:00
 description: 'Hoe: Wil je sommige tekens kwijt? Zo doe je dat in C#.'
-lastmod: '2024-03-13T22:44:50.794066-06:00'
+lastmod: '2024-04-05T22:40:36.750664-06:00'
 model: gpt-4-0125-preview
-summary: Wil je sommige tekens kwijt.
+summary: Wil je sommige tekens kwijt?
 title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---

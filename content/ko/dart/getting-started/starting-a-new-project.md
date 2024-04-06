@@ -7,9 +7,13 @@ description: "\uBC29\uBC95: 1. **Dart \uC124\uCE58\uD558\uAE30**: \uC2DC\uC2A4\u
   \uC138\uC694. \uC124\uCE58\uB418\uC5B4 \uC788\uC9C0 \uC54A\uB2E4\uBA74, [https://dart.dev/get-dart](https://dart.dev/get-dart)\uC5D0\
   \uC11C \uB2E4\uC6B4\uB85C\uB4DC\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4. \uC124\uCE58\
   \uB97C \uD655\uC778\uD558\uB824\uBA74."
-lastmod: '2024-04-05T21:53:56.608581-06:00'
+lastmod: '2024-04-05T22:38:55.595985-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "1. **Dart \uC124\uCE58\uD558\uAE30**: \uC2DC\uC2A4\uD15C\uC5D0 Dart\uAC00\
+  \ \uC124\uCE58\uB418\uC5B4 \uC788\uB294\uC9C0 \uD655\uC778\uD558\uC138\uC694. \uC124\
+  \uCE58\uB418\uC5B4 \uC788\uC9C0 \uC54A\uB2E4\uBA74, [https://dart.dev/get-dart](https://dart.dev/get-dart)\uC5D0\
+  \uC11C \uB2E4\uC6B4\uB85C\uB4DC\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4. \uC124\uCE58\
+  \uB97C \uD655\uC778\uD558\uB824\uBA74."
 title: "\uC0C8 \uD504\uB85C\uC81D\uD2B8 \uC2DC\uC791\uD558\uAE30"
 weight: 1
 ---

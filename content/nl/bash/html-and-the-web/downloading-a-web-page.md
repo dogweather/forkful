@@ -4,9 +4,9 @@ changelog:
 date: 2024-01-28 21:59:01.096203-07:00
 description: "Hoe: Het gereedschap bij uitstek voor deze klus? `curl`. Het is een\
   \ krachtige opdrachtregel-tool die gegevens van het web haalt. Hier is het eenvoudigste\u2026"
-lastmod: '2024-03-13T22:44:50.981188-06:00'
+lastmod: '2024-04-05T22:40:36.920140-06:00'
 model: gpt-4-0125-preview
-summary: Het gereedschap bij uitstek voor deze klus.
+summary: Het gereedschap bij uitstek voor deze klus?
 title: Een webpagina downloaden
 weight: 42
 ---

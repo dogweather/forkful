@@ -3,9 +3,11 @@ date: 2024-01-26 03:46:35.865150-07:00
 description: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u5728PowerShell\u4E2D\uFF0C\u4F60\u6709\
   \u4E00\u4E9B\u65B9\u4FBF\u7684cmdlet\u548C\u65B9\u6CD5\u7528\u4E8E\u56DB\u820D\u4E94\
   \u5165\uFF1A - \u6765\u81EAMath\u7C7B\u7684`Round()`\u65B9\u6CD5."
-lastmod: '2024-04-05T21:53:48.303308-06:00'
+lastmod: '2024-04-05T22:38:47.161664-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u5728PowerShell\u4E2D\uFF0C\u4F60\u6709\u4E00\
+  \u4E9B\u65B9\u4FBF\u7684cmdlet\u548C\u65B9\u6CD5\u7528\u4E8E\u56DB\u820D\u4E94\u5165\
+  \uFF1A - \u6765\u81EAMath\u7C7B\u7684`Round()`\u65B9\u6CD5."
 title: "\u6570\u5B57\u53D6\u6574"
 weight: 13
 ---

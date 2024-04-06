@@ -4,9 +4,9 @@ changelog:
 date: 2024-01-28 22:01:17.236156-07:00
 description: 'Hoe te: De huidige datum krijgen? Roep gewoon `DateTime.Now` aan. Dit
   stukje code laat zien hoe.'
-lastmod: '2024-03-13T22:44:50.820544-06:00'
+lastmod: '2024-04-05T22:40:36.775864-06:00'
 model: gpt-4-0125-preview
-summary: De huidige datum krijgen.
+summary: De huidige datum krijgen?
 title: Het huidige datum ophalen
 weight: 29
 ---

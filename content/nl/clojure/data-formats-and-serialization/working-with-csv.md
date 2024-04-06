@@ -3,9 +3,9 @@ changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:02.630943-07:00
 description: Hoe? Laten we onze mouwen opstropen en een CSV-bestand parsen in Clojure.
-lastmod: '2024-03-13T22:44:50.442325-06:00'
+lastmod: '2024-04-05T22:38:49.302121-06:00'
 model: gpt-4-0125-preview
-summary: Laten we onze mouwen opstropen en een CSV-bestand parsen in Clojure.
+summary: Hoe? Laten we onze mouwen opstropen en een CSV-bestand parsen in Clojure.
 title: Werken met CSV
 weight: 37
 ---

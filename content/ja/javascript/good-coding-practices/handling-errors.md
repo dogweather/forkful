@@ -2,9 +2,10 @@
 date: 2024-01-26 00:54:05.055833-07:00
 description: "\u3069\u3046\u3084\u3063\u3066\uFF1A \u3053\u3053\u306B\u53E4\u5178\u7684\
   \u306A `try-catch` \u30D6\u30ED\u30C3\u30AF\u304C\u3042\u308A\u307E\u3059\u3002"
-lastmod: '2024-04-05T21:53:43.473572-06:00'
+lastmod: '2024-04-05T22:38:42.173080-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "\u3069\u3046\u3084\u3063\u3066\uFF1A \u3053\u3053\u306B\u53E4\u5178\u7684\
+  \u306A `try-catch` \u30D6\u30ED\u30C3\u30AF\u304C\u3042\u308A\u307E\u3059\u3002"
 title: "\u30A8\u30E9\u30FC\u51E6\u7406"
 weight: 16
 ---

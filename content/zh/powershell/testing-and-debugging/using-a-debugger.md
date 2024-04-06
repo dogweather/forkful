@@ -5,9 +5,13 @@ description: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u5728 PowerShell \u4E2D\uFF0C\u60A
   \ (ISE) \u6216\u5E26\u6709 PowerShell \u6269\u5C55\u7684 Visual Studio Code (VS\
   \ Code) \u6765\u8C03\u8BD5\u811A\u672C\u3002\u4EE5\u4E0B\u662F\u5728\u4E24\u8005\
   \u4E2D\u4F7F\u7528\u65AD\u70B9\u7684\u65B9\u6CD5\uFF1A."
-lastmod: '2024-04-05T21:53:48.315984-06:00'
+lastmod: '2024-04-05T22:38:47.174738-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u5728 PowerShell \u4E2D\uFF0C\u60A8\u53EF\
+  \u4EE5\u4F7F\u7528\u5185\u7F6E\u7684 PowerShell Integrated Scripting Environment\
+  \ (ISE) \u6216\u5E26\u6709 PowerShell \u6269\u5C55\u7684 Visual Studio Code (VS\
+  \ Code) \u6765\u8C03\u8BD5\u811A\u672C\u3002\u4EE5\u4E0B\u662F\u5728\u4E24\u8005\
+  \u4E2D\u4F7F\u7528\u65AD\u70B9\u7684\u65B9\u6CD5\uFF1A."
 title: "\u4F7F\u7528\u8C03\u8BD5\u5668"
 weight: 35
 ---

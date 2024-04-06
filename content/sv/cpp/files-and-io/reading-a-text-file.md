@@ -2,9 +2,10 @@
 date: 2024-01-20 17:53:42.215753-07:00
 description: "Hur man g\xF6r: Output: Inneh\xE5llet i `exempel.txt`, varje rad skriven\
   \ p\xE5 en ny rad i konsolen."
-lastmod: '2024-04-05T21:53:39.564105-06:00'
+lastmod: '2024-04-05T22:37:46.920326-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Output: Inneh\xE5llet i `exempel.txt`, varje rad skriven p\xE5 en ny rad\
+  \ i konsolen."
 title: "L\xE4sa en textfil"
 weight: 22
 ---

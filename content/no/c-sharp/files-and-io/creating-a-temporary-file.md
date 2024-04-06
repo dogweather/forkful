@@ -2,9 +2,10 @@
 date: 2024-01-20 17:40:07.580006-07:00
 description: "How to (Slik gj\xF8r du det) C# tilbyr flere m\xE5ter \xE5 opprette\
   \ midlertidige filer. Her er et enkelt eksempel med `Path.GetTempFileName()`."
-lastmod: '2024-04-05T21:53:41.789635-06:00'
+lastmod: '2024-04-05T22:37:49.183457-06:00'
 model: gpt-4-1106-preview
-summary: Her er et enkelt eksempel med `Path.GetTempFileName()`.
+summary: "How to (Slik gj\xF8r du det) C# tilbyr flere m\xE5ter \xE5 opprette midlertidige\
+  \ filer. Her er et enkelt eksempel med `Path.GetTempFileName()`."
 title: Opprette en midlertidig fil
 weight: 21
 ---

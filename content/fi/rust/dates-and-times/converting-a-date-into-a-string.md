@@ -3,9 +3,18 @@ date: 2024-01-20 17:37:40.919848-07:00
 description: "How to: Syv\xE4luotaus: Alun perin p\xE4iv\xE4m\xE4\xE4r\xE4n merkkijonomuotoon\
   \ muuttaminen ei kuulunut Rustin peruskirjastoon. K\xE4ytt\xE4j\xE4t joutuivat tukeutumaan\
   \ kolmannen\u2026"
-lastmod: '2024-04-05T21:53:57.927897-06:00'
+lastmod: '2024-04-05T22:38:56.967711-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Syv\xE4luotaus: Alun perin p\xE4iv\xE4m\xE4\xE4r\xE4n merkkijonomuotoon\
+  \ muuttaminen ei kuulunut Rustin peruskirjastoon. K\xE4ytt\xE4j\xE4t joutuivat tukeutumaan\
+  \ kolmannen osapuolen kirjastoihin, kuten `chrono`. `chrono` on edelleen suosittu\
+  \ vaihtoehto sen joustavuuden ja suorituskyvyn ansiosta. Vaihtoehtoja `chrono`-kirjastossa\
+  \ on useita. Voit k\xE4ytt\xE4\xE4 `format`-metodia luodaksesi mukautettuja p\xE4\
+  iv\xE4m\xE4\xE4r\xE4muotoja. Lis\xE4ksi `to_rfc2822` ja `to_rfc3339` kaltaiset funktiot\
+  \ tarjoavat vakiomuotoisia merkkijonoja. Muuntamisen takana oleva toteutus perustuu\
+  \ usein ajanhetken esitt\xE4miseen sekuntien tai nanosekuntien m\xE4\xE4r\xE4n\xE4\
+  \ vuoden 1970 alusta (epoch time). T\xE4st\xE4 internaalisesta muodosta muodostetaan\
+  \ sitten ihmislukukelpoinen merkkijono."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---

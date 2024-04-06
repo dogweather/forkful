@@ -4,9 +4,11 @@ description: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u8981\u5728Clojure\u4E2D\u4F7F\u75
   TOML\uFF0C\u4F60\u9700\u8981\u4E00\u4E2A\u50CF`clj-toml`\u8FD9\u6837\u7684\u5E93\
   \u3002\u9996\u5148\uFF0C\u5C06\u5B83\u6DFB\u52A0\u5230\u4F60\u7684`deps.edn`\u4E2D\
   \uFF1A."
-lastmod: '2024-04-05T21:53:47.680474-06:00'
+lastmod: '2024-04-05T22:38:46.511759-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u8981\u5728Clojure\u4E2D\u4F7F\u7528TOML\uFF0C\
+  \u4F60\u9700\u8981\u4E00\u4E2A\u50CF`clj-toml`\u8FD9\u6837\u7684\u5E93\u3002\u9996\
+  \u5148\uFF0C\u5C06\u5B83\u6DFB\u52A0\u5230\u4F60\u7684`deps.edn`\u4E2D\uFF1A."
 title: "\u4F7F\u7528TOML"
 weight: 39
 ---

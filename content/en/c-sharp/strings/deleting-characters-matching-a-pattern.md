@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:41:45.761521-07:00
 description: 'How to: Want to ditch some characters? Here''s how in C#.'
-lastmod: '2024-03-13T22:45:00.073137-06:00'
+lastmod: '2024-04-05T22:40:22.794459-06:00'
 model: gpt-4-1106-preview
-summary: Want to ditch some characters.
+summary: Want to ditch some characters?
 title: Deleting characters matching a pattern
 weight: 5
 ---

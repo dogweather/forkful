@@ -2,9 +2,9 @@
 date: 2024-01-20 18:04:32.695449-07:00
 description: "How to: Jak to zrobi\u0107: Nowy projekt w \u015Awifcie zaczynasz w\
   \ Xcode. Wystartujmy!."
-lastmod: '2024-04-05T21:53:37.181762-06:00'
+lastmod: '2024-04-05T22:37:44.506462-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Jak to zrobi\u0107: Nowy projekt w \u015Awifcie zaczynasz w Xcode. Wystartujmy!."
 title: Rozpoczynanie nowego projektu
 weight: 1
 ---

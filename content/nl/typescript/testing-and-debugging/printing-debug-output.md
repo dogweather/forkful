@@ -4,9 +4,9 @@ changelog:
 date: 2024-01-28 22:04:45.089280-07:00
 description: 'Hoe te: Wil je debugoutput afdrukken in TypeScript? Consolemethoden
   zijn je beste keuze. Zie `console.log`, `console.error` en vrienden in actie.'
-lastmod: '2024-03-13T22:44:50.553444-06:00'
+lastmod: '2024-04-05T22:40:36.528530-06:00'
 model: gpt-4-0125-preview
-summary: Wil je debugoutput afdrukken in TypeScript.
+summary: Wil je debugoutput afdrukken in TypeScript?
 title: Debug-output afdrukken
 weight: 33
 ---

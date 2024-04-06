@@ -4,9 +4,11 @@ changelog:
 date: 2024-03-08 21:56:51.554502-07:00
 description: "Hvordan: 1. **Installer Dart**: S\xF8rg for at Dart er installert p\xE5\
   \ systemet ditt. Hvis ikke, kan du laste det ned fra [https://dart.dev/get-\u2026"
-lastmod: '2024-04-05T21:53:41.466784-06:00'
+lastmod: '2024-04-05T22:37:48.862851-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "1. **Installer Dart**: S\xF8rg for at Dart er installert p\xE5 systemet\
+  \ ditt. Hvis ikke, kan du laste det ned fra [https://dart.dev/get-dart](https://dart.dev/get-dart).\
+  \ Verifiser installasjonen med."
 title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---

@@ -2,9 +2,10 @@
 date: 2024-01-20 17:59:24.222044-07:00
 description: 'How to: Alright, code time. Elm makes HTTP requests using the `Http`
   module. Here''s a quick example to fetch some JSON.'
-lastmod: '2024-04-05T21:53:35.704019-06:00'
+lastmod: '2024-04-05T22:36:41.471495-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: Alright, code time. Elm makes HTTP requests using the `Http` module. Here's
+  a quick example to fetch some JSON.
 title: Sending an HTTP request
 weight: 44
 ---

@@ -4,9 +4,9 @@ changelog:
 date: 2024-01-28 22:12:55.124870-07:00
 description: 'Hoe te: Hier is hoe je naar een tekstbestand schrijft in PowerShell;
   het is supergemakkelijk! Een nieuw bestand maken en tekst daarnaar schrijven.'
-lastmod: '2024-03-13T22:44:51.048537-06:00'
+lastmod: '2024-04-05T22:38:49.909912-06:00'
 model: gpt-4-0125-preview
-summary: Hier is hoe je naar een tekstbestand schrijft in PowerShell; het is supergemakkelijk.
+summary: Hier is hoe je naar een tekstbestand schrijft in PowerShell; het is supergemakkelijk!.
 title: Een tekstbestand schrijven
 weight: 24
 ---

@@ -3,9 +3,11 @@ date: 2024-01-20 17:39:29.234329-07:00
 description: "How to (\"Slik gj\xF8r du det\") TypeScript gj\xF8r det lett \xE5 konvertere\
   \ tekst til sm\xE5 bokstaver med den innebygde metoden `.toLowerCase()`. Her er\
   \ et eksempel."
-lastmod: '2024-04-05T21:53:41.498089-06:00'
+lastmod: '2024-04-05T22:37:48.894699-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "How to (\"Slik gj\xF8r du det\") TypeScript gj\xF8r det lett \xE5 konvertere\
+  \ tekst til sm\xE5 bokstaver med den innebygde metoden `.toLowerCase()`. Her er\
+  \ et eksempel."
 title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---

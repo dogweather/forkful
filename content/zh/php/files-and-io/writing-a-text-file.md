@@ -6,9 +6,12 @@ description: "\u5982\u4F55\u505A\uFF1A PHP\u901A\u8FC7`file_put_contents`\u3001`
   `fwrite`\u548C`fclose`\u7B49\u51FD\u6570\u539F\u751F\u652F\u6301\u6587\u4EF6\u5199\
   \u5165\u3002\u4EE5\u4E0B\u662F\u5982\u4F55\u4F7F\u7528\u5B83\u4EEC\u7684\u65B9\u6CD5\
   \uFF1A."
-lastmod: '2024-04-05T21:53:48.191168-06:00'
+lastmod: '2024-04-05T22:38:47.042392-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "\u5982\u4F55\u505A\uFF1A PHP\u901A\u8FC7`file_put_contents`\u3001`fopen`\u4E0E\
+  `fwrite`\u548C`fclose`\u7B49\u51FD\u6570\u539F\u751F\u652F\u6301\u6587\u4EF6\u5199\
+  \u5165\u3002\u4EE5\u4E0B\u662F\u5982\u4F55\u4F7F\u7528\u5B83\u4EEC\u7684\u65B9\u6CD5\
+  \uFF1A."
 title: "\u7F16\u5199\u6587\u672C\u6587\u4EF6"
 weight: 24
 ---

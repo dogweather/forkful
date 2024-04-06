@@ -6,9 +6,12 @@ description: "L\xFD do & M\u1EE5c \u0111\xEDch L\xE0m vi\u1EC7c v\u1EDBi XML tr\
   n Arduino bao g\u1ED3m vi\u1EC7c ph\xE2n t\xEDch v\xE0 x\u1EED l\xFD d\u1EEF li\u1EC7\
   u XML, th\u01B0\u1EDDng \u0111\u1EBFn t\u1EEB c\xE1c API web ho\u1EB7c c\xE1c file\
   \ c\u1EA5u h\xECnh. L\u1EADp tr\xECnh\u2026"
-lastmod: '2024-04-05T21:53:38.378936-06:00'
+lastmod: '2024-04-05T22:37:45.730467-06:00'
 model: gpt-4-0125-preview
-summary: "L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\
+summary: "L\xFD do & M\u1EE5c \u0111\xEDch L\xE0m vi\u1EC7c v\u1EDBi XML tr\xEAn Arduino\
+  \ bao g\u1ED3m vi\u1EC7c ph\xE2n t\xEDch v\xE0 x\u1EED l\xFD d\u1EEF li\u1EC7u XML,\
+  \ th\u01B0\u1EDDng \u0111\u1EBFn t\u1EEB c\xE1c API web ho\u1EB7c c\xE1c file c\u1EA5\
+  u h\xECnh. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\
   \u1EC3 t\xEDch h\u1EE3p v\u1EDBi c\xE1c d\u1ECBch v\u1EE5 s\u1EED d\u1EE5ng XML\
   \ cho vi\u1EC7c trao \u0111\u1ED5i d\u1EEF li\u1EC7u ho\u1EB7c \u0111\u1EC3 l\u01B0\
   u tr\u1EEF d\u1EEF li\u1EC7u theo m\u1ED9t \u0111\u1ECBnh d\u1EA1ng c\xF3 c\u1EA5\
